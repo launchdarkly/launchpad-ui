@@ -1,0 +1,19 @@
+{
+  "name": "launchpad-ui",
+  "private": true,
+  "version": "0.0.1",
+  "description": "LaunchDarkly's design system",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/launchdarkly/launchpad-ui.git"
+  },
+  "author": "Catamorphic Co.",
+  "license": "",
+  "bugs": {
+    "url": "https://github.com/launchdarkly/launchpad-ui/issues"
+  },
+  "homepage": "https://github.com/launchdarkly/launchpad-ui#readme"
+}
