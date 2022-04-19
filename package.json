@@ -7,6 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "lint": "eslint '*.{ts,tsx,js}' --ignore-pattern '/packages/'",
+    "lint:packages": "turbo run lint --filter=...[HEAD^1]",
     "storybook": "start-storybook -p 6006",
     "storybook:build": "build-storybook --quiet",
     "prepare": "husky install"
