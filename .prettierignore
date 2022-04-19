@@ -3,3 +3,4 @@ dist/
 storybook-static/
 package.json
 pnpm-lock.yaml
+.turbo
