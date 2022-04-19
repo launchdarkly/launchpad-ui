@@ -23,6 +23,8 @@
   "homepage": "https://github.com/launchdarkly/launchpad-ui#readme",
   "devDependencies": {
     "@babel/core": "^7.17.9",
+    "@changesets/changelog-github": "^0.4.4",
+    "@changesets/cli": "^2.22.0",
     "@commitlint/cli": "^16.2.3",
     "@commitlint/config-conventional": "^16.2.1",
     "@storybook/addon-a11y": "^6.4.22",
