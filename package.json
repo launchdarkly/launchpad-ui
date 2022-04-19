@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
-    "lint": "eslint '*.{ts,tsx,js}'",
+    "lint": "eslint '*.{ts,tsx,js}' --ignore-pattern '/packages/'",
     "storybook": "start-storybook -p 6006",
     "storybook:build": "build-storybook --quiet",
     "prepare": "husky install"
@@ -46,6 +46,7 @@
     "prettier": "^2.6.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "turbo": "^1.2.4",
     "typescript": "^4.6.3",
     "webpack": "^5.72.0"
   },

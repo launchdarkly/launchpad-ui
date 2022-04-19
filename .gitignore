@@ -5,3 +5,6 @@ storybook-static/
 .eslintcache
 .cache
 .env
+.DS_Store
+*.log
+.turbo
