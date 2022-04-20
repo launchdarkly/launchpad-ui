@@ -48,5 +48,5 @@ jobs:
       - name: Install Dependencies
         run: pnpm install
 
-      - name: Lint
+      - name: Test
         run: pnpm test:packages
