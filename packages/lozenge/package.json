@@ -8,15 +8,15 @@
   ],
   "type": "module",
   "main": "dist/index.js",
-	"module": "dist/index.es.js",
+  "module": "dist/index.es.js",
   "types": "dist/index.d.ts",
   "sideEffects": false,
   "exports": {
     ".": {
-			"types": "./dist/index.d.ts",
-			"import": "./dist/index.es.js",
-			"require": "./dist/index.js"
-		},
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.es.js",
+      "require": "./dist/index.js"
+    },
     "./package.json": "./package.json"
   },
   "source": "src/index.tsx",
