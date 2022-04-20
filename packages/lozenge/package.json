@@ -6,7 +6,6 @@
   "files": [
     "dist"
   ],
-  "type": "module",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
   "types": "dist/index.d.ts",
@@ -21,7 +20,7 @@
   },
   "source": "src/index.tsx",
   "scripts": {
-    "build": "tsc && node --experimental-json-modules build.js",
+    "build": "tsc && node --experimental-json-modules build.mjs",
     "lint": "eslint '**/*.{ts,tsx,js}'",
     "test": "vitest run --coverage"
   },
