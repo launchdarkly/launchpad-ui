@@ -4,7 +4,7 @@
   "version": "0.0.1",
   "description": "Lozenge component",
   "scripts": {
-    "lint": "eslint '*.{ts,tsx,js}'",
+    "lint": "eslint '**/*.{ts,tsx,js}'",
     "test": "vitest run --coverage"
   },
   "peerDependencies": {
