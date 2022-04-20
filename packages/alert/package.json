@@ -1,9 +1,0 @@
-{
-  "name": "@launchpad-ui/alert",
-  "private": true,
-  "version": "0.0.1",
-  "description": "Alert component",
-  "scripts": {
-    "lint": "eslint '*.{ts,tsx,js}'"
-  }
-}
