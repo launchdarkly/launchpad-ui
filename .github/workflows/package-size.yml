@@ -20,5 +20,3 @@ jobs:
           cache: pnpm
 
       - uses: preactjs/compressed-size-action@v2
-        with:
-          build-script: build:packages
