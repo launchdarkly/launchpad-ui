@@ -20,7 +20,7 @@
   },
   "source": "src/index.tsx",
   "scripts": {
-    "build": "tsc && node --experimental-json-modules build.mjs",
+    "build": "tsc && node build.js",
     "lint": "eslint '**/*.{ts,tsx,js}'",
     "test": "vitest run --coverage"
   },
