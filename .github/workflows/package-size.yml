@@ -1,0 +1,22 @@
+name: Compressed Size
+
+on: [pull_request]
+
+jobs:
+  build:
+    name: Package Size
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 2
+
+      - uses: pnpm/action-setup@v2.2.1
+
+      - name: Setup Node 16.x
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16.x
+          cache: pnpm
+
+      - uses: preactjs/compressed-size-action@v2
