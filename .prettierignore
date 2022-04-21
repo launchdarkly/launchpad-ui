@@ -1,7 +1,6 @@
 node_modules/
 dist/
 storybook-static/
-package.json
 pnpm-lock.yaml
 .turbo
 coverage

@@ -3,7 +3,24 @@
   "private": true,
   "version": "0.0.1",
   "description": "Lozenge component",
+  "files": [
+    "dist"
+  ],
+  "main": "dist/index.js",
+  "module": "dist/index.es.js",
+  "types": "dist/index.d.ts",
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.es.js",
+      "require": "./dist/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "source": "src/index.tsx",
   "scripts": {
+    "build": "tsc && node --experimental-json-modules build.mjs",
     "lint": "eslint '**/*.{ts,tsx,js}'",
     "test": "vitest run --coverage"
   },
