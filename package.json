@@ -4,6 +4,7 @@
   "version": "0.0.1",
   "description": "LaunchDarkly's design system",
   "scripts": {
+    "build": "turbo run build",
     "build:packages": "turbo run build --filter=...[HEAD^1]",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "lint": "eslint '**/*.{ts,tsx,js}' --ignore-pattern '/packages/'",
