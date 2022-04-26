@@ -23,7 +23,7 @@
   },
   "scripts": {
     "build": "style-dictionary build --config ./sd.config.js",
-    "lint": "exit 0",
+    "lint": "eslint '**/*.{ts,tsx,js}'",
     "test": "exit 0"
   },
   "devDependencies": {
