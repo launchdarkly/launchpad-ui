@@ -6,6 +6,13 @@
   "files": [
     "dist"
   ],
+  "style": "dist/index.css",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "sideEffects": [
+    "**/*.css"
+  ],
   "scripts": {
     "build": "style-dictionary build --config ./sd.config.js",
     "lint": "exit 0",

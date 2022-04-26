@@ -1,7 +1,7 @@
 border:
   width:
     0:
-      value: 0
+      value: 0px
     1:
       value: 1px
     2:

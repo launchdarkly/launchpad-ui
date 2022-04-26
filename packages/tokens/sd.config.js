@@ -22,11 +22,25 @@ module.exports = {
       buildPath: 'dist/',
       files: [
         {
-          destination: 'variables.css',
+          destination: 'index.css',
           format: 'css/variables',
           options: {
             outputReferences: true,
           },
+        },
+      ],
+    },
+    ts: {
+      transformGroup: 'js',
+      buildPath: 'dist/',
+      files: [
+        {
+          format: 'javascript/es6',
+          destination: 'index.js',
+        },
+        {
+          format: 'typescript/es6-declarations',
+          destination: 'index.d.ts',
         },
       ],
     },
