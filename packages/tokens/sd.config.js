@@ -36,11 +36,15 @@ module.exports = {
       files: [
         {
           format: 'javascript/es6',
-          destination: 'index.js',
+          destination: 'index.es.js',
         },
         {
           format: 'typescript/es6-declarations',
           destination: 'index.d.ts',
+        },
+        {
+          format: 'javascript/module',
+          destination: 'index.js',
         },
       ],
     },
