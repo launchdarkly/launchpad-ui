@@ -1,7 +1,3 @@
-import type { ReactNode } from 'react';
-
-const Lozenge = ({ children }: { children: ReactNode }) => (
-  <span style={{ background: 'lightcyan' }}>{children}</span>
-);
-
-export { Lozenge };
+export type { LozengeProps } from './Lozenge';
+export { Lozenge } from './Lozenge';
+export { LozengeKind, LozengeSize } from './types';

@@ -87,8 +87,11 @@ importers:
 
   packages/lozenge:
     specifiers:
+      classnames: ^2.3.1
       react: ^17.0.2
       react-dom: ^17.0.2
+    dependencies:
+      classnames: 2.3.1
     devDependencies:
       react: 17.0.2
       react-dom: 17.0.2_react@17.0.2
@@ -5690,6 +5693,10 @@ packages:
       isobject: 3.0.1
       static-extend: 0.1.2
     dev: true
+
+  /classnames/2.3.1:
+    resolution: {integrity: sha512-OlQdbZ7gLfGarSqxesMesDa5uz7KFbID8Kpq/SxIoNGDqY8lSYs0D+hhtBXhcdB3rcbXArFr7vlHheLk1voeNA==}
+    dev: false
 
   /clean-css/4.2.4:
     resolution: {integrity: sha512-EJUDT7nDVFDvaQgAo2G/PJvxmp1o/c6iXLbswsBbUFXi1Nr+AjA2cKmfbKDMjMvzEe75g3P6JkaDDAKk96A85A==}

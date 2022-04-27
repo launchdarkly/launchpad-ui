@@ -2,7 +2,7 @@
 const tokens = require('../dist/index');
 
 export default {
-  title: 'Tokens',
+  title: 'Tokens/Colors',
 };
 
 const colors = Object.values(tokens.color).map((color) => Object.values(color));
