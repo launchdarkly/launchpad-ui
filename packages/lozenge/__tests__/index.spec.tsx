@@ -1,10 +1,19 @@
 import { it, expect, describe, vi } from 'vitest';
-import { fireEvent, render, screen } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
+import { axe } from 'jest-axe';
 
-import { axe } from '../../../tests/utils';
 import { Lozenge, LozengeKind, LozengeSize } from '../src';
 
 describe('Lozenge', () => {
+  beforeEach(() => {
+    vi.useRealTimers();
+  });
+
+  afterEach(() => {
+    vi.useFakeTimers();
+  });
+
   it('renders', () => {
     render(<Lozenge size={LozengeSize.NORMAL}>Default Lozenge</Lozenge>);
     expect(screen.getByText('Default Lozenge')).toBeInTheDocument();
@@ -24,7 +33,9 @@ describe('Lozenge', () => {
       </Lozenge>
     );
 
-    fireEvent.click(screen.getByRole('button'));
+    userEvent.setup();
+    await userEvent.click(screen.getByRole('button'));
+
     expect(spy).toHaveBeenCalledTimes(1);
   });
 });
