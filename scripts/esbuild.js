@@ -13,7 +13,10 @@ const build = async (packageJSON) => {
     entryPoints,
     platform: 'node',
     sourcemap: true,
-    external: Object.keys(packageJSON.peerDependencies),
+    external: [
+      ...Object.keys(packageJSON.dependencies || {}),
+      ...Object.keys(packageJSON.peerDependencies || {}),
+    ],
     inject: [path.resolve(__dirname, './react-shim.js')],
   };
 
