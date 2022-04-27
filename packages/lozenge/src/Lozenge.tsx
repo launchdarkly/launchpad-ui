@@ -59,6 +59,4 @@ const Lozenge = ({
   );
 };
 
-Lozenge.displayName = 'Lozenge';
-
 export { Lozenge };
