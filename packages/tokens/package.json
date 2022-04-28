@@ -19,7 +19,8 @@
       "import": "./dist/index.es.js",
       "require": "./dist/index.js"
     },
-    "./package.json": "./package.json"
+    "./package.json": "./package.json",
+    "./index.css": "./dist/index.css"
   },
   "scripts": {
     "build": "style-dictionary build --config ./sd.config.js",

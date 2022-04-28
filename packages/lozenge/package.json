@@ -18,7 +18,8 @@
       "import": "./dist/index.es.js",
       "require": "./dist/index.js"
     },
-    "./package.json": "./package.json"
+    "./package.json": "./package.json",
+    "./styles.css": "./dist/styles.css"
   },
   "source": "src/index.tsx",
   "scripts": {
