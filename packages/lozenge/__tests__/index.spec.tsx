@@ -1,18 +1,41 @@
-import { it, expect, describe } from 'vitest';
+import { it, expect, describe, vi } from 'vitest';
 import { render, screen } from '@testing-library/react';
-import { axe } from '../../../tests/utils';
+import userEvent from '@testing-library/user-event';
+import { axe } from 'jest-axe';
 
-import { Lozenge } from '../src';
+import { Lozenge, LozengeKind, LozengeSize } from '../src';
 
 describe('Lozenge', () => {
+  beforeEach(() => {
+    vi.useRealTimers();
+  });
+
+  afterEach(() => {
+    vi.useFakeTimers();
+  });
+
   it('renders', () => {
-    render(<Lozenge>hi</Lozenge>);
-    expect(screen.getByText('hi')).toBeInTheDocument();
+    render(<Lozenge size={LozengeSize.NORMAL}>Default Lozenge</Lozenge>);
+    expect(screen.getByText('Default Lozenge')).toBeInTheDocument();
   });
 
   it('is accessible', async () => {
-    const { container } = render(<Lozenge>hi</Lozenge>);
+    const { container } = render(<Lozenge>Default Lozenge</Lozenge>);
     const results = await axe(container);
     expect(results).toHaveNoViolations();
+  });
+
+  it('can be clickable', async () => {
+    const spy = vi.fn();
+    render(
+      <Lozenge kind={LozengeKind.NEW} isClickable handleClick={spy}>
+        New Lozenge
+      </Lozenge>
+    );
+
+    userEvent.setup();
+    await userEvent.click(screen.getByRole('button'));
+
+    expect(spy).toHaveBeenCalledTimes(1);
   });
 });

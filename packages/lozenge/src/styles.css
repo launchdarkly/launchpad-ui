@@ -1,0 +1,196 @@
+:root {
+  --Lozenge-default-color: var(--color-gray-700);
+  --Lozenge-info-color: var(--color-blue-500);
+  --Lozenge-warning-color: var(--color-system-yellow-900);
+  --Lozenge-error-color: var(--color-system-red-600);
+  --Lozenge-success-color: var(--color-system-green-900);
+  --Lozenge-inactive-color: var(--color-gray-200);
+  --Lozenge-label-color: var(--color-white-100);
+  --Lozenge-border-color: var(--color-gray-200);
+  --Lozenge-beta-color: var(--color-purple-600);
+  --Lozenge-invited-color: var(--color-system-yellow-200);
+  --Lozenge-federal-color: var(--color-yellow-500);
+}
+
+.Lozenge {
+  display: inline-block;
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--osmo-font-size-smaller);
+  line-height: 1.2;
+  border: 1px solid var(--Lozenge-border-color);
+  border-radius: var(--border-radius);
+  vertical-align: bottom;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+
+.Lozenge--normal {
+  font-size: var(--osmo-font-size-smaller);
+  line-height: 1.4;
+  padding: 0.3em;
+}
+
+.Lozenge--large {
+  font-size: var(--osmo-font-size-small);
+  line-height: 1.6;
+  padding: 0.5em;
+}
+
+.Lozenge--subtle {
+  background: var(--color-white);
+}
+
+.Lozenge--default {
+  border-color: var(--color-gray-500);
+  color: var(--color-gray-600);
+}
+
+.Lozenge--info {
+  border-color: var(--Lozenge-info-color);
+  color: var(--Lozenge-info-color);
+}
+
+.Lozenge--info:not(.Lozenge--subtle) {
+  background-color: var(--Lozenge-info-color);
+  color: var(--color-white);
+}
+
+.Lozenge--new {
+  border-color: var(--Lozenge-success-color);
+  color: var(--Lozenge-success-color);
+}
+
+.Lozenge--new:not(.Lozenge--subtle) {
+  background-color: var(--Lozenge-success-color);
+  color: var(--color-white);
+}
+
+.Lozenge--beta {
+  border-color: var(--Lozenge-beta-color);
+  color: var(--Lozenge-beta-color);
+}
+
+.Lozenge--beta:not(.Lozenge--subtle) {
+  background-color: var(--Lozenge-beta-color);
+  color: var(--color-white);
+}
+
+.Lozenge--invited {
+  border-color: var(--Lozenge-invited-color);
+  color: var(--color-system-yellow-900);
+}
+
+.Lozenge--invited:not(.Lozenge--subtle) {
+  background-color: var(--Lozenge-invited-color);
+}
+
+.Lozenge--success {
+  border-color: var(--Lozenge-success-color);
+  color: var(--Lozenge-success-color);
+}
+
+.Lozenge--success:not(.Lozenge--subtle) {
+  background-color: var(--Lozenge-success-color);
+  color: var(--color-white);
+}
+
+.Lozenge--warning {
+  border-color: var(--Lozenge-warning-color);
+  color: var(--Lozenge-warning-color);
+}
+
+.Lozenge--warning:not(.Lozenge--subtle) {
+  background-color: var(--Lozenge-warning-color);
+  color: var(--color-white);
+}
+
+.Lozenge--error {
+  border-color: var(--Lozenge-error-color);
+  color: var(--Lozenge-error-color);
+}
+
+.Lozenge--error:not(.Lozenge--subtle) {
+  background-color: var(--Lozenge-error-color);
+  color: var(--color-white);
+}
+
+.Lozenge--inactive {
+  border-color: var(--Lozenge-inactive-color);
+  color: var(--Lozenge-inactive-color);
+}
+
+.Lozenge--inactive:not(.Lozenge--subtle) {
+  background-color: var(--Lozenge-inactive-color);
+  color: var(--color-black-200);
+  border: 1px var(--Lozenge-inactive-color) solid;
+}
+
+.Lozenge--label {
+  background-color: var(--Lozenge-label-color);
+  color: var(--subtle-text-color);
+}
+
+.Lozenge .Icon {
+  margin-right: 0.2rem;
+  vertical-align: top;
+}
+
+.Lozenge--clickable:hover {
+  cursor: pointer;
+  background: var(--color-gray-100);
+  border: 1px solid var(--color-gray-200);
+}
+
+.Lozenge--clickable:focus {
+  outline: 0;
+  border-radius: var(--border-radius);
+  box-shadow: 0 0 4px var(--focus-color);
+  z-index: 2;
+}
+
+.Lozenge--flag {
+  border-radius: 1.5rem;
+  font-size: var(--osmo-font-size-small);
+  padding: 0.2rem;
+  width: 4.8rem;
+}
+
+.Lozenge--flag--small {
+  border-radius: 1rem;
+  font-size: 1rem;
+  width: 2.8rem;
+}
+
+.Lozenge--flagOn {
+  border: var(--color-system-green-900) 1px solid;
+  color: var(--color-system-green-900);
+  max-height: 2.5rem;
+}
+
+.Lozenge--flagOff {
+  border: var(--color-gray-700) 1px solid;
+  color: var(--color-gray-700);
+  background-color: var(--color-gray-100);
+  max-height: 2.5rem;
+}
+
+.Lozenge--navbar {
+  align-self: flex-start;
+  border-radius: 0.4rem;
+  margin-top: 0.4rem;
+  min-width: 3.5rem;
+  padding: 0.1rem 0;
+}
+
+.Lozenge--federal {
+  background-color: var(--Lozenge-federal-color);
+  border-color: var(--Lozenge-federal-color);
+  color: var(--color-black-300);
+}
+
+.Lozenge--topbar {
+  margin-left: 0.3rem;
+}

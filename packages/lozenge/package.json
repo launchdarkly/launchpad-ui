@@ -9,7 +9,9 @@
   "main": "dist/index.js",
   "module": "dist/index.es.js",
   "types": "dist/index.d.ts",
-  "sideEffects": false,
+  "sideEffects": [
+    "**/*.css"
+  ],
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
@@ -24,7 +26,11 @@
     "lint": "eslint '**/*.{ts,tsx,js}'",
     "test": "vitest run --coverage"
   },
+  "dependencies": {
+    "classnames": "^2.3.1"
+  },
   "peerDependencies": {
+    "@launchpad-ui/tokens": "workspace:~",
     "react": "^16.8.0 || ^17.0.0",
     "react-dom": "^16.8.0 || ^17.0.0"
   },
