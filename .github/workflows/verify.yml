@@ -70,5 +70,8 @@ jobs:
       - name: Install Dependencies
         run: pnpm install
 
+      - name: Install Playwright
+        run: pnpm dlx playwright install --with-deps
+
       - name: Test
         run: pnpm e2e:ci
