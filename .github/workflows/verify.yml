@@ -50,3 +50,25 @@ jobs:
 
       - name: Test
         run: pnpm test:packages
+
+  e2e:
+    name: e2e
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 2
+
+      - uses: pnpm/action-setup@v2.2.1
+
+      - name: Setup Node 16.x
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16.x
+          cache: pnpm
+
+      - name: Install Dependencies
+        run: pnpm install
+
+      - name: Test
+        run: pnpm e2e:ci
