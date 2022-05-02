@@ -85,10 +85,10 @@ jobs:
 
       - name: Install Playwright
         if: steps.cache-browsers.outputs.cache-hit != 'true'
-        run: pnpm dlx playwright install
+        run: pnpm playwright install
 
       - name: Install Browsers Dependencies
-        run: pnpm dlx playwright install-deps
+        run: pnpm playwright install-deps
 
       - name: Test
         run: pnpm e2e:ci
