@@ -28,6 +28,7 @@
     "build": "tsc && node build.js",
     "e2e": "playwright test --config=../../playwright.config.ts",
     "lint": "eslint '**/*.{ts,tsx,js}'",
+    "prepublishOnly": "pnpm build",
     "test": "vitest run --coverage"
   },
   "dependencies": {
