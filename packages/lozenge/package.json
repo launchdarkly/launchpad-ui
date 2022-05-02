@@ -4,7 +4,7 @@
   "publishConfig": {
     "access": "public"
   },
-  "description": "Lozenge component",
+  "description": "An element representing keywords that categorize feature states for quick recognition.",
   "files": [
     "dist"
   ],

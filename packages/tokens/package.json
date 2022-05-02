@@ -4,7 +4,7 @@
   "publishConfig": {
     "access": "public"
   },
-  "description": "Launchpad design tokens",
+  "description": "Launchpad design tokens delivered as CSS custom properties, CommonJS modules, and ES modules.",
   "files": [
     "dist"
   ],
