@@ -1,7 +1,9 @@
 {
   "name": "@launchpad-ui/lozenge",
-  "private": true,
   "version": "0.0.1",
+  "publishConfig": {
+    "access": "public"
+  },
   "description": "Lozenge component",
   "files": [
     "dist"
