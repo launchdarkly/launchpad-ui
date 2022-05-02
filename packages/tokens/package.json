@@ -1,8 +1,10 @@
 {
   "name": "@launchpad-ui/tokens",
-  "private": true,
   "version": "0.0.1",
-  "description": "Launchpad design tokens",
+  "publishConfig": {
+    "access": "public"
+  },
+  "description": "Launchpad design tokens delivered as CSS custom properties, CommonJS modules, and ES modules.",
   "files": [
     "dist"
   ],
@@ -26,6 +28,7 @@
     "build": "style-dictionary build --config ./sd.config.js",
     "e2e": "exit 0",
     "lint": "eslint '**/*.{ts,tsx,js}'",
+    "prepublishOnly": "pnpm build",
     "test": "exit 0"
   },
   "devDependencies": {

@@ -19,7 +19,8 @@
     "test": "vitest run --coverage",
     "test:packages": "turbo run test --filter=...[HEAD^1]",
     "test:watch": "vitest",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "release": "pnpm -r publish"
   },
   "repository": {
     "type": "git",

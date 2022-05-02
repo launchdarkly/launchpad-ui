@@ -1,8 +1,10 @@
 {
   "name": "@launchpad-ui/lozenge",
-  "private": true,
   "version": "0.0.1",
-  "description": "Lozenge component",
+  "publishConfig": {
+    "access": "public"
+  },
+  "description": "An element representing keywords that categorize feature states for quick recognition.",
   "files": [
     "dist"
   ],
@@ -26,6 +28,7 @@
     "build": "tsc && node build.js",
     "e2e": "playwright test --config=../../playwright.config.ts",
     "lint": "eslint '**/*.{ts,tsx,js}'",
+    "prepublishOnly": "pnpm build",
     "test": "vitest run --coverage"
   },
   "dependencies": {
