@@ -5,5 +5,9 @@ export const parameters = {
   options: {
     showPanel: true,
     panelPosition: 'bottom',
+    storySort: {
+      order: ['Components', 'Tokens'],
+      locales: 'en-US',
+    },
   },
 };
