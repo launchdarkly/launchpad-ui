@@ -34,6 +34,7 @@ jobs:
           commit: 'chore: version packages'
           title: 'chore: version packages'
           publish: pnpm release
+          cwd: ${{ github.workspace }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
