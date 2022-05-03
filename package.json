@@ -20,7 +20,7 @@
     "test:packages": "turbo run test --filter=...[HEAD^1]",
     "test:watch": "vitest",
     "prepare": "husky install",
-    "release": "pnpm -r publish"
+    "release": "changeset publish && git push --follow-tags && pnpm -r publish"
   },
   "repository": {
     "type": "git",
