@@ -32,15 +32,14 @@
     "test": "vitest run --coverage"
   },
   "dependencies": {
+    "@launchpad-ui/tokens": "workspace:~",
     "classnames": "^2.3.1"
   },
   "peerDependencies": {
-    "@launchpad-ui/tokens": "workspace:~",
     "react": "^16.8.0 || ^17.0.0",
     "react-dom": "^16.8.0 || ^17.0.0"
   },
   "devDependencies": {
-    "@launchpad-ui/tokens": "workspace:~",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
   }

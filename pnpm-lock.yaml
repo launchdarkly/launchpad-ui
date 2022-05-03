@@ -110,9 +110,9 @@ importers:
       react: ^17.0.2
       react-dom: ^17.0.2
     dependencies:
+      '@launchpad-ui/tokens': link:../tokens
       classnames: 2.3.1
     devDependencies:
-      '@launchpad-ui/tokens': link:../tokens
       react: 17.0.2
       react-dom: 17.0.2_react@17.0.2
 
