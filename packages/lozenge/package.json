@@ -23,7 +23,7 @@
     "./package.json": "./package.json",
     "./styles.css": "./dist/styles.css"
   },
-  "source": "src/index.tsx",
+  "source": "src/index.ts",
   "scripts": {
     "build": "tsc && node build.js",
     "e2e": "playwright test --config=../../playwright.config.ts",
