@@ -156,7 +156,7 @@ export class Button extends PureComponent<ButtonProps> {
     kind: ButtonKind.DEFAULT,
     size: ButtonSize.NORMAL,
     disabled: false,
-    tooltipOptions: {},
+    // tooltipOptions: {},
     outlined: false,
     onClick: undefined,
     renderIconFirst: false,

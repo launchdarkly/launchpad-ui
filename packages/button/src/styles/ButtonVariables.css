@@ -1,0 +1,182 @@
+:root {
+  /* Remaining Legacy Tokens */
+  --Button-border-default: 1px solid transparent;
+  --Button-border-radius-default: var(--border-radius);
+  --Button-box-shadow-default-active: none;
+
+  --Button-color-boxShadow-1-default-active: var(--color-white);
+  --Button-color-boxShadow-2-default-active: hsl(231.5, 100%, 62.5%, 0.1);
+  --Button-color-boxShadow-1-default-withIcon-focus: var(--focus-color);
+  --Button-color-boxShadow-2-default-withIcon-focus: hsl(231.5, 100%, 62.5%, 0.1);
+
+  --Button-box-shadow-withIcon-focus: 0 0 0 1px
+      var(--Button-color-boxShadow-1-default-withIcon-focus),
+    0 0 0 4px var(--Button-color-boxShadow-2-default-withIcon-focus);
+
+  --Button-color-text-destructive-focus: var(--color-white);
+
+  --Button-color-background-disabled-hover: var(--color-white);
+  --Button-color-border-disabled: var(--color-gray-200);
+  --Button-color-background-disabled-withIcon: var(--color-white);
+  --Button-color-border-disabled-withIcon: transparent;
+
+  /* End Remaining Legacy Tokens */
+
+  --Button-font-size-default: 1.2rem;
+  --Button-font-size-small: 1.1rem;
+  --Button-font-size-large: 1.7rem;
+
+  --Button-font-weight: var(--font-weight-bold);
+
+  --Button-line-height-default: 1.666666667; /* 20px */
+  --Button-line-height-small: 1.545454545; /* 17px */
+  --Button-line-height-large: 1.111; /* 20px */
+
+  --Button-border-radius-default: 0.6rem;
+  --Button-border-radius-small: var(--border-radius);
+  --Button-border-radius-link: 1px;
+  --Button-border-radius-withIcon: 50%;
+
+  --Button-text-transform: none;
+
+  /* ------- DEFAULT ------- */
+  --Button-color-background-default: var(--color-white);
+  --Button-color-background-default-hover: var(--color-gray-100);
+  --Button-color-background-default-focus: var(--color-gray-200);
+  --Button-color-background-default-active: var(--color-gray-200);
+
+  --Button-color-border-default: var(--color-gray-300);
+  --Button-color-border-default-hover: var(--color-gray-600);
+  --Button-color-border-default-focus: var(--color-gray-700);
+  --Button-color-border-default-active: var(--color-gray-700);
+
+  /* TODO: group the box shadow variables better */
+  --Button-box-shadow-0x2y-blur8-sp2-4prc-black: 0 2px 8px -2px hsl(0, 0%, 0%, 0.04);
+  --Button-box-shadow-0x2y-blur4-sp2-8prc-black: 0 2px 4px 2px hsl(0, 0%, 0%, 0.08);
+  --Button-box-shadow-0x1y-blur2-sp2-8prc-black: 0 1px 2px 2px hsl(0, 0%, 0%, 0.08);
+
+  /* named for hover state for default, primary, destructive */
+  --Button-box-shadow-hover: none;
+
+  --Button-color-boxShadow-1-default-focus: var(--color-white);
+  --Button-color-boxShadow-2-default-focus: var(--color-blue-500);
+
+  /* named for focus state for default, primary, destructive */
+  --Button-box-shadow-focus: 0 0 0 2px var(--Button-color-boxShadow-1-default-focus),
+    0 0 0 4px var(--Button-color-boxShadow-2-default-focus);
+
+  /* named for active state for default, primary, destructive */
+  --Button-box-shadow-active: none;
+
+  --Button-box-shadow-link-hover: none;
+
+  --Button-box-shadow-link-focus: 0 0 0 2px var(--Button-color-boxShadow-1-default-focus),
+    0 0 0 4px var(--Button-color-boxShadow-2-default-focus);
+
+  --Button-box-shadow-link-active: none;
+
+  --Button-color-link-default: var(--color-blue-500);
+  --Button-color-link-active: var(--color-purple-600);
+
+  --Button-color-text-default: var(--color-black-300);
+  --Button-color-text-default-hover: var(--color-black-300);
+  --Button-color-text-default-focus: var(--color-black-300);
+  --Button-color-text-default-active: var(--color-black-300);
+
+  /* DEFAULT WITH ICON */
+
+  --Button-border-default-withIcon: transparent;
+  --Button-color-border-default-withIcon: var(--color-blue-700);
+
+  --Button-color-background-default-withIcon: var(--color-white);
+
+  --Button-color-border-default-withIcon: var(--color-blue-600);
+
+  /* ------- PRIMARY ------- */
+  --Button-color-background-primary: var(--color-blue-500);
+  --Button-color-background-primary-hover: var(--color-blue-600);
+  --Button-color-background-primary-focus: var(--color-blue-700);
+  --Button-color-background-primary-active: var(--color-blue-700);
+
+  --Button-color-border-primary: var(--color-blue-500);
+  --Button-color-border-primary-hover: var(--color-blue-600);
+  --Button-color-border-primary-focus: var(--color-blue-700);
+  --Button-color-border-primary-active: var(--color-blue-700);
+
+  --Button-color-text-primary: var(--color-white);
+  --Button-color-text-primary-hover: var(--color-white);
+
+  /* PRIMARY WITH ICON */
+  --Button-color-background-primary-withIcon: var(--color-blue-500);
+  --Button-color-border-primary-withIcon: var(--color-blue-500);
+  --Button-color-text-primary-withIcon: var(--color-white);
+
+  /* ------- DESTRUCTIVE ------- */
+  --Button-color-background-destructive: var(--color-white);
+  --Button-color-background-destructive-hover: var(--color-system-red-100);
+  --Button-color-background-destructive-focus: var(--color-system-red-200);
+  --Button-color-background-destructive-active: var(--color-system-red-200);
+
+  --Button-color-border-destructive: var(--color-system-red-700);
+
+  --Button-color-text-destructive: var(--color-system-red-700);
+  --Button-color-text-destructive-hover: var(--color-system-red-700);
+  --Button-color-text-destructive-active: var(--color-system-red-700);
+
+  /* DESTRUCTIVE WITH ICON */
+  --Button-color-background-destructive-withIcon-hover: var(--color-system-red-100);
+  --Button-color-background-destructive-withIcon-focus: var(--color-system-red-200);
+  --Button-color-background-destructive-withIcon-active: var(--color-system-red-200);
+
+  --Button-color-border-destructive-withIcon: var(--color-system-red-700);
+  --Button-color-border-destructive-withIcon-hover: var(--color-system-red-700);
+  --Button-color-border-destructive-withIcon-focus: var(--color-system-red-700);
+  --Button-color-border-destructive-withIcon-active: var(--color-system-red-700);
+
+  /* ------- DISABLED ------- */
+  --Button-color-background-disabled: var(--color-gray-100);
+
+  /* why do we need states for disabled buttons? */
+  --Button-color-background-disabled-hover: var(--color-gray-100);
+  --Button-color-background-disabled-active: var(--color-gray-100);
+
+  /* what about borders for disabled buttons? */
+  --Button-color-border-disabled: var(--color-gray-100);
+  --Button-color-border-disabled-hover: var(--color-gray-100);
+  --Button-color-border-disabled-active: var(--color-gray-100);
+
+  --Button-color-link-disabled: var(--color-gray-600);
+  --Button-color-link-disabled-hover: var(--color-gray-600);
+
+  --Button-color-text-disabled: var(--color-gray-700);
+  --Button-color-text-disabled-hover: var(--color-gray-700);
+  --Button-color-text-disabled-active: var(--color-gray-700);
+
+  /* ------- BUTTON ICONS ------- */
+
+  /* BUTTON ICON DEFAULT */
+  --Button-icon-color-default: var(--color-black-300);
+  --Button-icon-color-fill-default: var(--color-black-300);
+  --Button-icon-color-text-default: var(--text-color);
+
+  /* BUTTON ICON PRIMARY */
+  --Button-icon-color-fill-primary: var(--color-white);
+  --Button-icon-color-fill-primary-hover: var(--color-white);
+  --Button-icon-color-fill-primary-focus: var(--color-white);
+  --Button-icon-color-fill-primary-active: var(--color-white);
+
+  /* BUTTON ICON DESTRUCTIVE */
+  --Button-icon-color-fill-destructive: var(--color-system-red-700);
+  --Button-icon-color-fill-destructive-hover: var(--color-system-red-700);
+  --Button-icon-color-fill-destructive-focus: var(--color-system-red-700);
+  --Button-icon-color-fill-destructive-active: var(--color-system-red-700);
+
+  /* BUTTON ICON DISABLED */
+  --Button-icon-color-fill-disabled: var(--color-gray-700);
+  --Button-icon-color-fill-disabled-hover: var(--color-gray-700);
+  --Button-icon-color-fill-disabled-active: var(--color-gray-700);
+
+  /* SEARCH BAR CLEAR BUTTON ICON */
+  --Button-icon-clear-color-fill: var(--color-blue-600);
+  --Button-icon-clear-color-text: var(--color-blue-600);
+}
