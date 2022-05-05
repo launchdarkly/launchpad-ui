@@ -2,7 +2,7 @@ import { Fragment } from 'react';
 import type { DecoratorFn, Meta } from '@storybook/react';
 
 import { Button, ButtonKind, ButtonSize } from '../src';
-import '../src/styles/Button.stories.css';
+import './Button.stories.css';
 
 const buttonTemplateWithStates: DecoratorFn = (storyComponent, context) => {
   const { viewMode, parameters } = context;

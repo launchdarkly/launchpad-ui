@@ -45,6 +45,7 @@ const build = async (packageJSON) => {
       entryPoints: cssPaths,
       sourcemap: true,
       outdir: 'dist',
+      outbase: 'src',
     })
     .catch(() => process.exit(1));
 };
