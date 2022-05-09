@@ -1,6 +1,8 @@
 import { PlaywrightTestConfig, devices } from '@playwright/test';
+import path from 'path';
 
 const config: PlaywrightTestConfig = {
+  testDir: path.resolve(),
   testMatch: /.*\.e2e\.ts/,
   forbidOnly: !!process.env.CI,
   retries: process.env.CI ? 2 : 0,

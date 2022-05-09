@@ -1,10 +1,10 @@
 {
-  "name": "@launchpad-ui/lozenge",
-  "version": "0.1.1",
+  "name": "@launchpad-ui/button",
+  "version": "0.0.1",
   "publishConfig": {
     "access": "public"
   },
-  "description": "An element representing keywords that categorize feature states for quick recognition.",
+  "description": "An element that triggers an action based on user interaction.",
   "files": [
     "dist"
   ],
@@ -21,7 +21,7 @@
       "require": "./dist/index.js"
     },
     "./package.json": "./package.json",
-    "./styles.css": "./dist/styles.css"
+    "./styles/*": "./dist/styles/*"
   },
   "source": "src/index.ts",
   "scripts": {
@@ -33,6 +33,7 @@
   },
   "dependencies": {
     "@launchpad-ui/tokens": "workspace:~",
+    "@types/history": "^4.7.11",
     "classnames": "^2.3.1"
   },
   "peerDependencies": {
