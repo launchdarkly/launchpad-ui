@@ -1,5 +1,11 @@
 # @launchpad-ui/lozenge
 
+## 0.1.2
+
+### Patch Changes
+
+- [#26](https://github.com/launchdarkly/launchpad-ui/pull/26) [`871c5c7`](https://github.com/launchdarkly/launchpad-ui/commit/871c5c7ed9e8910e4f17932e9e64dfd0e6b19261) Thanks [@Niznikr](https://github.com/Niznikr)! - Add React 18 support
+
 ## 0.1.1
 
 ### Patch Changes
