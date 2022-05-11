@@ -1,6 +1,6 @@
 const template = ({ imports, interfaces, componentName, props, jsx }, { tpl }) => {
-  const comp = componentName.replace('Svg', '');
-  const name = comp[0].toLowerCase() + comp.slice(1);
+  const component = componentName.replace('Svg', '');
+  const name = component[0].toLowerCase() + component.slice(1);
 
   return tpl`
 ${imports};
@@ -20,8 +20,8 @@ const IconWrapped = ({ className, size, ...props }: IconProps) => (
     <ForwardRef />
   </Icon>
 );
- 
-export default IconWrapped;
+
+export { IconWrapped as ${component} };
 `;
 };
 
