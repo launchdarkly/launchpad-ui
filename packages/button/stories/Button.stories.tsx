@@ -4,6 +4,9 @@ import type { DecoratorFn, Meta } from '@storybook/react';
 import { Button, ButtonKind, ButtonSize } from '../src';
 import './Button.stories.css';
 
+import { Add } from '../../icon/src';
+import { IconSize } from '../../icon/src/types';
+
 const buttonTemplateWithStates: DecoratorFn = (storyComponent, context) => {
   const { viewMode, parameters } = context;
 
@@ -219,3 +222,7 @@ export const BasicTiny = { args: { children: 'Example button', size: ButtonSize.
 export const BasicSmall = { args: { children: 'Example button', size: ButtonSize.SMALL } };
 
 export const BasicBig = { args: { children: 'Example button', size: ButtonSize.BIG } };
+
+export const WithIcon = {
+  args: { children: 'With icon', icon: <Add size={IconSize.MEDIUM} /> },
+};

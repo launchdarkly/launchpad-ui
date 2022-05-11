@@ -1,0 +1,3 @@
+src/*.tsx
+!src/Icon.tsx
+src/index.ts
