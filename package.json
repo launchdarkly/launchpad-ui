@@ -69,7 +69,7 @@
     "fast-glob": "^3.2.11",
     "fsevents": "^2.3.2",
     "http-server": "^14.1.0",
-    "husky": "^7.0.4",
+    "husky": "^8.0.1",
     "jest-axe": "^6.0.0",
     "jsdom": "^19.0.0",
     "lint-staged": "^12.3.8",
