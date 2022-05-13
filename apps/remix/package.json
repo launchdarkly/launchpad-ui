@@ -1,0 +1,34 @@
+{
+  "name": "@launchpad-ui/remix",
+  "private": true,
+  "version": "0.0.1",
+  "description": "Remix playground to test SSR",
+  "sideEffects": false,
+  "scripts": {
+    "dev": "remix dev",
+    "build": "remix build",
+    "e2e": "playwright test --config=../../playwright.config.ts",
+    "lint": "eslint '**/*.{ts,tsx,js}'",
+    "start": "remix-serve build",
+    "test": "exit 0"
+  },
+  "dependencies": {
+    "@launchpad-ui/button": "workspace:~",
+    "@launchpad-ui/lozenge": "workspace:~",
+    "@launchpad-ui/tokens": "workspace:~",
+    "@remix-run/node": "^1.4.3",
+    "@remix-run/react": "^1.4.3",
+    "@remix-run/serve": "^1.4.3",
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0"
+  },
+  "devDependencies": {
+    "@remix-run/dev": "^1.4.3",
+    "@remix-run/eslint-config": "^1.4.3",
+    "eslint": "^8.13.0",
+    "typescript": "^4.6.3"
+  },
+  "engines": {
+    "node": ">=14"
+  }
+}

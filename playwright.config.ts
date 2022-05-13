@@ -9,7 +9,7 @@ const config: PlaywrightTestConfig = {
   reporter: process.env.CI ? 'github' : 'list',
   workers: process.env.CI ? 2 : undefined,
   use: {
-    baseURL: 'http://localhost:6006/iframe.html',
+    baseURL: 'http://localhost:3000/iframe.html',
     trace: 'on-first-retry',
   },
   projects: [
