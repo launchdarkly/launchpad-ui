@@ -92,3 +92,6 @@ jobs:
 
       - name: Test
         run: pnpm e2e:ci
+
+      - name: SSR
+        run: pnpm e2e:ssr
