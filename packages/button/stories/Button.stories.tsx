@@ -1,7 +1,7 @@
 import { Fragment } from 'react';
 import type { DecoratorFn, Meta } from '@storybook/react';
 
-import { Button, ButtonKind, ButtonSize } from '../src';
+import { Button, ButtonKind, ButtonSize, ButtonType } from '../src';
 import './Button.stories.css';
 
 import { Add } from '../../icon/src';
@@ -217,12 +217,46 @@ export const Destructive = { args: { children: 'Destructive', kind: ButtonKind.D
 
 export const Link = { args: { children: 'Link', kind: ButtonKind.LINK } };
 
+export const WithIcon = {
+  args: { children: 'With icon', icon: <Add size={IconSize.MEDIUM} /> },
+};
+
+export const WithIconPrimary = {
+  args: { children: 'With icon', icon: <Add size={IconSize.MEDIUM} />, kind: ButtonKind.PRIMARY },
+};
+
+export const WithIconDestructive = {
+  args: {
+    children: 'With icon',
+    icon: <Add size={IconSize.MEDIUM} />,
+    kind: ButtonKind.DESTRUCTIVE,
+  },
+};
+
+export const IconOnly = {
+  args: { children: '', icon: <Add size={IconSize.MEDIUM} />, type: ButtonType.ICON },
+};
+
+export const IconOnlyPrimary = {
+  args: {
+    children: '',
+    icon: <Add size={IconSize.MEDIUM} />,
+    type: ButtonType.ICON,
+    kind: ButtonKind.PRIMARY,
+  },
+};
+
+export const IconOnlyDestructive = {
+  args: {
+    children: '',
+    icon: <Add size={IconSize.MEDIUM} />,
+    type: ButtonType.ICON,
+    kind: ButtonKind.DESTRUCTIVE,
+  },
+};
+
 export const BasicTiny = { args: { children: 'Example button', size: ButtonSize.TINY } };
 
 export const BasicSmall = { args: { children: 'Example button', size: ButtonSize.SMALL } };
 
 export const BasicBig = { args: { children: 'Example button', size: ButtonSize.BIG } };
-
-export const WithIcon = {
-  args: { children: 'With icon', icon: <Add size={IconSize.MEDIUM} /> },
-};
