@@ -113,6 +113,7 @@ importers:
   apps/remix:
     specifiers:
       '@launchpad-ui/button': workspace:~
+      '@launchpad-ui/icon': workspace:~
       '@launchpad-ui/lozenge': workspace:~
       '@launchpad-ui/tokens': workspace:~
       '@remix-run/dev': ^1.4.3
@@ -126,6 +127,7 @@ importers:
       typescript: ^4.6.3
     dependencies:
       '@launchpad-ui/button': link:../../packages/button
+      '@launchpad-ui/icon': link:../../packages/icon
       '@launchpad-ui/lozenge': link:../../packages/lozenge
       '@launchpad-ui/tokens': link:../../packages/tokens
       '@remix-run/node': 1.4.3_ef5jwxihqo6n7gxfmzogljlgcm

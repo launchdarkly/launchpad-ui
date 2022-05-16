@@ -1,6 +1,6 @@
 import type { Meta } from '@storybook/react';
 
-import { Icon } from '../src';
+import { Icon, IconSize } from '../src';
 import * as icons from '../src';
 
 type IconName = Exclude<keyof typeof icons, 'Icon' | 'IconSize'>;
@@ -43,7 +43,7 @@ export const Default = {
         if (!['Icon', 'IconSize', '__namedExportsOrder'].includes(key))
           return (
             <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }} key={index}>
-              <div style={{ height: 24, width: 24 }}>{icons[key as IconName]({})}</div>
+              {icons[key as IconName]({ size: IconSize.MEDIUM })}
               <span>{key}</span>
             </div>
           );

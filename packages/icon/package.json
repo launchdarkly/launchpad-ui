@@ -31,7 +31,7 @@
     "e2e": "exit 0",
     "lint": "eslint '**/*.{ts,tsx,js}'",
     "prepublishOnly": "pnpm build",
-    "test": "exit 0"
+    "test": "vitest run --coverage"
   },
   "dependencies": {
     "@launchpad-ui/tokens": "workspace:~",
