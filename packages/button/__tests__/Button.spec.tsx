@@ -6,14 +6,6 @@ import { axe } from 'jest-axe';
 import { Button, ButtonKind, ButtonSize } from '../src';
 
 describe('Button', () => {
-  beforeEach(() => {
-    vi.useRealTimers();
-  });
-
-  afterEach(() => {
-    vi.useFakeTimers();
-  });
-
   it('renders', () => {
     render(<Button size={ButtonSize.NORMAL}>Default Button</Button>);
     expect(screen.getByText('Default Button')).toBeInTheDocument();
