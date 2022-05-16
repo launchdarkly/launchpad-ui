@@ -13,6 +13,7 @@ import launchpadStyles from '@launchpad-ui/tokens/index.css';
 import globalStyles from './styles/global.css';
 
 import buttonStyles from '@launchpad-ui/button/styles/Button.css';
+import iconStyles from '@launchpad-ui/icons/styles.css';
 import lozengeStyles from '@launchpad-ui/lozenge/styles.css';
 
 export const links: LinksFunction = () => {
@@ -20,6 +21,7 @@ export const links: LinksFunction = () => {
     { rel: 'stylesheet', href: launchpadStyles },
     { rel: 'stylesheet', href: globalStyles },
     { rel: 'stylesheet', href: buttonStyles },
+    { rel: 'stylesheet', href: iconStyles },
     { rel: 'stylesheet', href: lozengeStyles },
   ];
 };

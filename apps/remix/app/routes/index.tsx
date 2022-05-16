@@ -14,6 +14,10 @@ export const loader: LoaderFunction = async () => {
         name: 'Button',
       },
       {
+        to: 'components/icon',
+        name: 'Icon',
+      },
+      {
         to: 'components/lozenge',
         name: 'Lozenge',
       },

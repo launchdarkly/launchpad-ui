@@ -14,6 +14,7 @@
   },
   "dependencies": {
     "@launchpad-ui/button": "workspace:~",
+    "@launchpad-ui/icons": "workspace:~",
     "@launchpad-ui/lozenge": "workspace:~",
     "@launchpad-ui/tokens": "workspace:~",
     "@remix-run/node": "^1.4.3",
