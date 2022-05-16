@@ -7,6 +7,12 @@ test.describe('Remix SSR', () => {
     await expect(button).toBeVisible();
   });
 
+  test('icon renders', async ({ page }) => {
+    await page.goto('/components/icon');
+    const icon = page.locator('.Icon');
+    await expect(icon).toBeVisible();
+  });
+
   test('lozenge renders', async ({ page }) => {
     await page.goto('/components/lozenge');
     const lozenge = page.locator('.Lozenge');
