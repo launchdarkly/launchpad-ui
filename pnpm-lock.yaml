@@ -637,7 +637,7 @@ packages:
       '@babel/helper-environment-visitor': 7.16.7
       '@babel/helper-member-expression-to-functions': 7.17.7
       '@babel/helper-optimise-call-expression': 7.16.7
-      '@babel/traverse': 7.17.9
+      '@babel/traverse': 7.17.10
       '@babel/types': 7.17.10
     transitivePeerDependencies:
       - supports-color
