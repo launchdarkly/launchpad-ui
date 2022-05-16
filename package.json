@@ -6,7 +6,7 @@
   "scripts": {
     "build": "turbo run build --filter=!@launchpad-ui/remix",
     "build:packages": "turbo run build --filter=...[HEAD^1]",
-    "build:icons": "turbo run build --filter=@launchpad-ui/icon",
+    "build:icons": "turbo run build --filter=@launchpad-ui/icons",
     "build:tokens": "turbo run build --filter=@launchpad-ui/tokens",
     "chromatic": "chromatic",
     "e2e": "playwright test",
