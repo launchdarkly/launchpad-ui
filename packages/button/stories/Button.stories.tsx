@@ -4,8 +4,8 @@ import type { DecoratorFn, Meta } from '@storybook/react';
 import { Button, ButtonKind, ButtonSize, ButtonType } from '../src';
 import './Button.stories.css';
 
-import { Add } from '../../icon/src';
-import { IconSize } from '../../icon/src/types';
+import { Add } from '../../icons/src';
+import { IconSize } from '../../icons/src/types';
 
 const buttonTemplateWithStates: DecoratorFn = (storyComponent, context) => {
   const { viewMode, parameters } = context;
