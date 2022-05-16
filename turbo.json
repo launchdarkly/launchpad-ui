@@ -7,11 +7,11 @@
       "outputs": ["dist/**", "public/build/**"]
     },
     "e2e": {
-      "dependsOn": ["^build"],
+      "dependsOn": [],
       "outputs": ["coverage/**"]
     },
     "test": {
-      "dependsOn": ["^build"],
+      "dependsOn": [],
       "outputs": ["coverage/**"]
     },
     "lint": {
