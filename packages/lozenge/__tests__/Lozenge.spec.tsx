@@ -6,14 +6,6 @@ import { axe } from 'jest-axe';
 import { Lozenge, LozengeKind, LozengeSize } from '../src';
 
 describe('Lozenge', () => {
-  beforeEach(() => {
-    vi.useRealTimers();
-  });
-
-  afterEach(() => {
-    vi.useFakeTimers();
-  });
-
   it('renders', () => {
     render(<Lozenge size={LozengeSize.NORMAL}>Default Lozenge</Lozenge>);
     expect(screen.getByText('Default Lozenge')).toBeInTheDocument();
