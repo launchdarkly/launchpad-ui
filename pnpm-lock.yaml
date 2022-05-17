@@ -10,6 +10,7 @@ importers:
       '@changesets/cli': ^2.22.0
       '@commitlint/cli': ^17.0.0
       '@commitlint/config-conventional': ^17.0.0
+      '@parcel/css': ^1.8.3
       '@playwright/test': ^1.22.0
       '@storybook/addon-a11y': ^6.5.0-beta.3
       '@storybook/addon-essentials': ^6.5.0-beta.3
@@ -30,6 +31,7 @@ importers:
       '@typescript-eslint/parser': ^5.19.0
       '@vitejs/plugin-react': ^1.3.2
       babel-loader: ^8.2.4
+      browserslist: ^4.20.3
       chokidar-cli: ^3.0.0
       chromatic: ^6.5.4
       concurrently: ^7.1.0
@@ -70,6 +72,7 @@ importers:
       '@changesets/cli': 2.22.0
       '@commitlint/cli': 17.0.0
       '@commitlint/config-conventional': 17.0.0
+      '@parcel/css': 1.8.3
       '@playwright/test': 1.22.0
       '@storybook/addon-a11y': 6.5.0-beta.3_ef5jwxihqo6n7gxfmzogljlgcm
       '@storybook/addon-essentials': 6.5.0-beta.3_xr5cohw2tpmdfywhl7onacrx64
@@ -90,6 +93,7 @@ importers:
       '@typescript-eslint/parser': 5.19.0_jzhokl4shvj5szf5bgr66kln2a
       '@vitejs/plugin-react': 1.3.2
       babel-loader: 8.2.4_vs5hf2sl7hjtttp43d2vzw3qay
+      browserslist: 4.20.3
       chokidar-cli: 3.0.0
       chromatic: 6.5.4
       concurrently: 7.1.0
@@ -126,6 +130,7 @@ importers:
 
   apps/remix:
     specifiers:
+      '@launchpad-ui/alert': workspace:~
       '@launchpad-ui/button': workspace:~
       '@launchpad-ui/icons': workspace:~
       '@launchpad-ui/lozenge': workspace:~
@@ -140,6 +145,7 @@ importers:
       react-dom: ^18.1.0
       typescript: ^4.6.3
     dependencies:
+      '@launchpad-ui/alert': link:../../packages/alert
       '@launchpad-ui/button': link:../../packages/button
       '@launchpad-ui/icons': link:../../packages/icons
       '@launchpad-ui/lozenge': link:../../packages/lozenge
@@ -441,7 +447,7 @@ packages:
       '@babel/compat-data': 7.17.7
       '@babel/core': 7.17.9
       '@babel/helper-validator-option': 7.16.7
-      browserslist: 4.20.2
+      browserslist: 4.20.3
       semver: 6.3.0
     dev: true
 
@@ -3583,6 +3589,94 @@ packages:
     engines: {node: ^12.13.0 || ^14.15.0 || >=16.0.0}
     dependencies:
       json-parse-even-better-errors: 2.3.1
+    dev: true
+
+  /@parcel/css-darwin-arm64/1.8.3:
+    resolution: {integrity: sha512-qh/Ig6GfVjGoiGSWjIYDo6Ghwmyy/9BXvYS1l3R+Bp50F300cq84Czfl6wxaL+aFmghdHzhjJuGfWmZlcYliPA==}
+    engines: {node: '>= 12.0.0'}
+    cpu: [arm64]
+    os: [darwin]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  /@parcel/css-darwin-x64/1.8.3:
+    resolution: {integrity: sha512-gTUIoRgwyYr4UuH7sSn3gOuMlIshJBOJLmjL+E/mR5lqdYabguiKiRORvkrnb/gHBmOUF9re0RcTaFmJ2VOAlg==}
+    engines: {node: '>= 12.0.0'}
+    cpu: [x64]
+    os: [darwin]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  /@parcel/css-linux-arm-gnueabihf/1.8.3:
+    resolution: {integrity: sha512-4P1r0BvL9dPz70py2xLg/jEvWJmKNyokPgafyrDP+GbpPTfH5NYJJkVRGo/TkKsp3Rv8SJhV9fdlpFKC6BI92A==}
+    engines: {node: '>= 12.0.0'}
+    cpu: [arm]
+    os: [linux]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  /@parcel/css-linux-arm64-gnu/1.8.3:
+    resolution: {integrity: sha512-1fUy94eaqdzum+C7bsYVF2AgxjLGR/qppArn/4HTQyydHR5QeV+Uoyqo5vdnO5Vclj8eQwlgR9OyAOlmzXxFDA==}
+    engines: {node: '>= 12.0.0'}
+    cpu: [arm64]
+    os: [linux]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  /@parcel/css-linux-arm64-musl/1.8.3:
+    resolution: {integrity: sha512-ct1QRK5gAP8sO22NZ7RULZQB7dbHpou+WMa4z0LJb+Fho13a1JNw931vNHbeI5cRr1fCTDq76pz/+Valgetzcw==}
+    engines: {node: '>= 12.0.0'}
+    cpu: [arm64]
+    os: [linux]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  /@parcel/css-linux-x64-gnu/1.8.3:
+    resolution: {integrity: sha512-pg/mahoogzjbaZcW76rrTZ64tEu8Wok4Gm0sW/dXHJEJD2QVJ6GxLP4UVNBuhaV0GrNFHggp9pcdhTtLGkKl/g==}
+    engines: {node: '>= 12.0.0'}
+    cpu: [x64]
+    os: [linux]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  /@parcel/css-linux-x64-musl/1.8.3:
+    resolution: {integrity: sha512-4Iwawy28HQ2yAgbuyR60bgO+8oE+OiWpE02eNjbgqnDpTsfmXFMt4l5OYgZwJJ7DlaZqm+/yO8RPMd+EzwtNzg==}
+    engines: {node: '>= 12.0.0'}
+    cpu: [x64]
+    os: [linux]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  /@parcel/css-win32-x64-msvc/1.8.3:
+    resolution: {integrity: sha512-vnHUdzIVjqONa5ALFzMJ3ZHt6NiaYTHW/lqzP+AR4l+bq+UTXD2Q75/RgirY5NYwdfy1VPy/jI82jAtLOCymkw==}
+    engines: {node: '>= 12.0.0'}
+    cpu: [x64]
+    os: [win32]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  /@parcel/css/1.8.3:
+    resolution: {integrity: sha512-6qUN4iicr8f9Q6UUZttwwHMzrb65BRX46PHWq0icA4KEmvmfR9cSYlp/hJH8F4stg3Wncx12Bnw+EuPf5OAEPQ==}
+    engines: {node: '>= 12.0.0'}
+    dependencies:
+      detect-libc: 1.0.3
+    optionalDependencies:
+      '@parcel/css-darwin-arm64': 1.8.3
+      '@parcel/css-darwin-x64': 1.8.3
+      '@parcel/css-linux-arm-gnueabihf': 1.8.3
+      '@parcel/css-linux-arm64-gnu': 1.8.3
+      '@parcel/css-linux-arm64-musl': 1.8.3
+      '@parcel/css-linux-x64-gnu': 1.8.3
+      '@parcel/css-linux-x64-musl': 1.8.3
+      '@parcel/css-win32-x64-msvc': 1.8.3
     dev: true
 
   /@playwright/test/1.22.0:
@@ -7214,7 +7308,7 @@ packages:
     engines: {node: ^6 || ^7 || ^8 || ^9 || ^10 || ^11 || ^12 || >=13.7}
     hasBin: true
     dependencies:
-      caniuse-lite: 1.0.30001332
+      caniuse-lite: 1.0.30001341
       electron-to-chromium: 1.4.137
       escalade: 3.1.1
       node-releases: 2.0.3
@@ -8645,6 +8739,12 @@ packages:
   /detect-indent/6.1.0:
     resolution: {integrity: sha512-reYkTUJAZb9gUuZ2RvVCNhVHdg62RHnJ7WJl8ftMi4diZ6NWlciOzQN88pUhSELEwflJht4oQDv0F0BMlwaYtA==}
     engines: {node: '>=8'}
+    dev: true
+
+  /detect-libc/1.0.3:
+    resolution: {integrity: sha1-+hN8S9aY7fVc1c0CrFWfkaTEups=}
+    engines: {node: '>=0.10'}
+    hasBin: true
     dev: true
 
   /detect-newline/3.1.0:
@@ -18074,7 +18174,7 @@ packages:
       '@webassemblyjs/wasm-parser': 1.11.1
       acorn: 8.7.0
       acorn-import-assertions: 1.8.0_acorn@8.7.0
-      browserslist: 4.20.2
+      browserslist: 4.20.3
       chrome-trace-event: 1.0.3
       enhanced-resolve: 5.9.3
       es-module-lexer: 0.9.3

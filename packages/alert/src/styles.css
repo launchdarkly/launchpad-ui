@@ -241,7 +241,7 @@
   height: 2.2rem;
   margin-left: auto;
 
-  svg {
+  & svg {
     fill: var(--Alert-closeButton-color-fill);
   }
 }
@@ -251,7 +251,7 @@
   border-color: var(--Alert-closeButton-color-border);
   color: var(--Alert-closeButton-color-text);
 
-  .Icon {
+  & .Icon {
     background-color: transparent;
     border-radius: 50%;
     fill: var(--Alert-closeButton-color-fill);
@@ -264,7 +264,7 @@
 .Alert-close.Button--icon.Button--default:hover {
   background-color: transparent;
 
-  .Icon {
+  & .Icon {
     background-color: var(--Alert-closeButton-icon-color-background-hover);
     box-shadow: var(--Alert-closeButton-icon-box-shadow-hover);
   }
@@ -273,7 +273,7 @@
 .Alert-close.Button--icon.Button--default:focus {
   box-shadow: none;
 
-  .Icon {
+  & .Icon {
     background-color: var(--Alert-closeButton-icon-color-background-focus);
     box-shadow: var(--Alert-closeButton-icon-box-shadow-focus);
   }
@@ -282,12 +282,12 @@
 .Alert-close.Button--icon.Button--default:active {
   background-color: transparent;
 
-  .Icon {
+  & .Icon {
     background-color: var(--Alert-closeButton-icon-color-background-active);
     box-shadow: var(--Alert-closeButton-icon-box-shadow-active);
     color: var(--Alert-closeButton-icon-color-active);
 
-    > svg {
+    & > svg {
       fill: currentcolor;
     }
   }
