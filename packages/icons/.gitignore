@@ -1,3 +1,4 @@
 src/*.tsx
 !src/Icon.tsx
+!src/KindIcon.tsx
 src/index.ts
