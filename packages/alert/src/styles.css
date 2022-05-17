@@ -1,31 +1,27 @@
+/* stylelint-disable no-descending-specificity */
 :root {
-  --reskin-text-color: hsl(240, 2.2%, 35.3%);
-  --reskin-success-green-safe: hsl(142.4, 71.8%, 29.2%);
-  --reskin-info-blue-safe: hsl(207.2, 86%, 39.2%);
-  --reskin-warn-gold-safe: hsl(42.9, 100%, 29.6%);
-  --reskin-error-red-safe: hsl(0, 100%, 41.6%);
-  --hsl-info-bg-color-alpha10: hsl(207.2, 86.4%, 49%, 0.1);
-  --hsl-success-bg-color-alpha10: hsl(142.1, 70.9%, 39%, 0.1);
-  --hsl-warning-bg-color-alpha10: hsl(43.1, 100%, 37.6%, 0.1);
-  --hsl-error-bg-color-alpha10: hsl(0, 75.5%, 61.6%, 0.1);
-
+  --reskin-text-color: hsl(240 2.2% 35.3%);
+  --reskin-success-green-safe: hsl(142.4 71.8% 29.2%);
+  --reskin-info-blue-safe: hsl(207.2 86% 39.2%);
+  --reskin-warn-gold-safe: hsl(42.9 100% 29.6%);
+  --reskin-error-red-safe: hsl(0 100% 41.6%);
+  --hsl-info-bg-color-alpha10: hsl(207.2 86.4% 49% / 0.1);
+  --hsl-success-bg-color-alpha10: hsl(142.1 70.9% 39% / 0.1);
+  --hsl-warning-bg-color-alpha10: hsl(43.1 100% 37.6% / 0.1);
+  --hsl-error-bg-color-alpha10: hsl(0 75.5% 61.6% / 0.1);
   --Alert-closeButton-color-border: transparent;
-  --Alert-closeButton-color-fill: var(--gray-dark);
-  --Alert-closeButton-color-text: var(--gray-dark);
-
-  --Alert-closeButton-icon-color-background-hover: var(--hsl-white-alpha10);
-  --Alert-closeButton-icon-color-background-focus: var(--hsl-white-alpha10);
-  --Alert-closeButton-icon-color-background-active: var(--hsl-gray-black-alpha70);
-
-  --Alert-closeButton-icon-box-shadow-hover: 0 0 0 1px var(--hsl-gray-base-alpha70),
-    0 0 0 4px var(--hsl-gray-black-alpha10);
-  --Alert-closeButton-icon-box-shadow-focus: 0 0 0 1px var(--hsl-gray-safe-alpha70),
-    0 0 0 4px var(--hsl-gray-black-alpha10);
-  --Alert-closeButton-icon-box-shadow-active: 0 0 0 1px var(--gray-black),
-    0 0 0 4px var(--hsl-gray-black-alpha10);
-
-  --Alert-closeButton-icon-color-active: var(--white);
-
+  --Alert-closeButton-color-fill: var(--color-gray-700);
+  --Alert-closeButton-color-text: var(--color-gray-700);
+  --Alert-closeButton-icon-color-background-hover: hsl(0 0 100% / 0.1);
+  --Alert-closeButton-icon-color-background-focus: hsl(0 0 100% / 0.1);
+  --Alert-closeButton-icon-color-background-active: hsl(0 0% 12.9% / 0.7);
+  --Alert-closeButton-icon-box-shadow-hover: 0 0 0 1px hsl(216 2.4% 58.6% / 0.7),
+    0 0 0 4px hsl(0 0% 12.9% / 0.1);
+  --Alert-closeButton-icon-box-shadow-focus: 0 0 0 1px hsl(225 1.8% 43.5% / 0.7),
+    0 0 0 4px hsl(0 0% 12.9% / 0.1);
+  --Alert-closeButton-icon-box-shadow-active: 0 0 0 1px var(--color-black-200),
+    0 0 0 4px hsl(0 0% 12.9% / 0.1);
+  --Alert-closeButton-icon-color-active: var(--color-white);
   --reskin-success-green-light: var(--color-system-green-200);
   --reskin-success-green-base: var(--color-system-green-700);
   --reskin-info-blue-light: var(--color-blue-200);
@@ -36,10 +32,9 @@
   --reskin-error-red-base: var(--color-system-red-700);
 
   /* TODO: name better, improve a11y support — convert to rem once we migrate */
-  --box-shadow-0x2y-blur8-sp1-4prc-black: 0 8px 2px -1px var(--hsl-color-black-200-alpha04);
-  --box-shadow-0x2y-blur4-sp0-8prc-black: 0 2px 4px 0 var(--hsl-color-black-200-alpha08);
-  --box-shadow-0x1y-blur2-sp0-14prc-black: 0 1px 2px 0 var(--hsl-color-black-200-alpha14);
-
+  --box-shadow-0x2y-blur8-sp1-4prc-black: 0 8px 2px -1px hsl(0 0% 12.9% / 0.04);
+  --box-shadow-0x2y-blur4-sp0-8prc-black: 0 2px 4px 0 hsl(0 0% 12.9% / 0.08);
+  --box-shadow-0x1y-blur2-sp0-14prc-black: 0 1px 2px 0 hsl(0 0% 12.9% / 0.14);
   --reskin-box-shadow-triple: var(--box-shadow-0x2y-blur8-sp1-4prc-black),
     var(--box-shadow-0x2y-blur4-sp0-8prc-black), var(--box-shadow-0x1y-blur2-sp0-14prc-black);
 
@@ -52,27 +47,22 @@
     var(--color-white-100) 20px,
     var(--color-white-100) 40px
   );
-
   --reskin-border-radius-6px: 6px;
-
   --Alert-color-background-info: var(--reskin-info-blue-light);
   --Alert-color-background-success: var(--reskin-success-green-light);
   --Alert-color-background-warning: var(--reskin-warn-gold-light);
   --Alert-color-background-error: var(--reskin-error-red-light);
   --Alert-color-background-striped: var(--reskin-striped-base);
-
   --Alert-color-border-info: var(--reskin-info-blue-base);
   --Alert-color-border-success: var(--reskin-success-green-base);
   --Alert-color-border-warning: var(--reskin-warn-gold-base);
   --Alert-color-border-error: var(--reskin-error-red-base);
-  --Alert-color-border-striped: var(--gray-base);
-
+  --Alert-color-border-striped: var(--color-gray-500);
   --Alert-icon-color-info: var(--reskin-info-blue-base);
   --Alert-icon-color-success: var(--reskin-success-green-base);
   --Alert-icon-color-warning: var(--reskin-warn-gold-base);
   --Alert-icon-color-error: var(--reskin-error-red-base);
-  --Alert-icon-color-striped: var(--gray-black);
-
+  --Alert-icon-color-striped: var(--color-black-200);
   --Alert-border-radius: var(--reskin-border-radius-6px);
   --Alert-text-color: var(--color-gray-700);
 
@@ -85,10 +75,15 @@
   --LEGACY-Alert-warning-color: var(--reskin-warn-gold-base);
   --LEGACY-Alert-error-bg-color: var(--hsl-error-bg-color-alpha10);
   --LEGACY-Alert-error-color: var(--reskin-error-red-base);
-  --LEGACY-Alert-striped-bg-color: var(--striped-base);
-  --LEGACY-Alert-striped-color: var(--gray-black);
-
-  --LEGACY-border-large: 1px solid var(--gray-med);
+  --LEGACY-Alert-striped-bg-color: repeating-linear-gradient(
+    45deg,
+    var(--color-white),
+    var(--color-white) 20px,
+    var(--color-white-100) 20px,
+    var(--color-white-100) 40px
+  );
+  --LEGACY-Alert-striped-color: var(--color-black-200);
+  --LEGACY-border-large: 1px solid var(--color-gray-200);
 }
 
 .Alert {
@@ -97,19 +92,19 @@
 
   /* adjust for vertical rhythm with icon */
   padding: 1rem 0.8rem;
-  font-size: var(--font-size-base);
+  font-size: 1.5rem;
   font-weight: var(--font-weight-medium);
   line-height: 1.45;
   white-space: normal;
-  background-color: var(--white);
+  background-color: var(--color-white);
   color: var(--Alert-text-color);
-  border: var(--border-width-1) solid var(--white);
+  border: var(--border-width-1) solid var(--color-white);
   border-radius: var(--Alert-border-radius);
   box-sizing: border-box;
 }
 
 .Alert-icon {
-  line-height: var(--line-height-small);
+  line-height: 1.2857;
 
   /* adjust for vertical rhythm with icon */
 }
@@ -122,7 +117,7 @@
 /* Alert size variants */
 
 .Alert--small {
-  font-size: var(--font-size-small);
+  font-size: 1.3rem;
 }
 
 .Alert--small .Alert-icon {
@@ -211,7 +206,7 @@
   }
 
   &:focus {
-    box-shadow: 0 0 0 1px var(--hsl-text-color-alpha70), 0 0 0 4px var(--hsl-text-color-alpha10);
+    box-shadow: 0 0 0 1px hsl(0 0% 9.8% / 0.7), 0 0 0 4px hsl(0 0% 9.8% / 0.1);
   }
 
   &:focus:not(:focus-visible) {
@@ -220,7 +215,7 @@
   }
 
   &:active {
-    color: var(--text-color);
+    color: var(--color-black-300);
     box-shadow: none;
     text-decoration: underline;
   }
@@ -293,7 +288,7 @@
     color: var(--Alert-closeButton-icon-color-active);
 
     > svg {
-      fill: currentColor;
+      fill: currentcolor;
     }
   }
 }
@@ -307,12 +302,12 @@
 
   /* adjust for vertical rhythm with icon */
   padding: 1rem 0.8rem;
-  font-size: var(--font-size-base);
+  font-size: 1.5rem;
   line-height: 1.45;
 }
 
 .LegacyStyles > .Alert-icon {
-  line-height: var(--line-height-small);
+  line-height: 1.2857;
 
   /* adjust for vertical rhythm with icon */
 }
@@ -325,7 +320,7 @@
 /* Alert size variants */
 
 .LegacyStyles.Alert--small {
-  font-size: var(--font-size-small);
+  font-size: 1.3rem;
 }
 
 .LegacyStyles.Alert--small .Alert-icon {
@@ -395,7 +390,7 @@
   border-top: var(--LEGACY-border-large);
   border-right: var(--LEGACY-border-large);
   border-bottom: var(--LEGACY-border-large);
-  background-color: var(--white);
+  background-color: var(--color-white);
   border-radius: 2px;
 }
 
@@ -414,7 +409,7 @@
   }
 
   &:focus {
-    box-shadow: 0 0 0 1px var(--hsl-white-alpha70), 0 0 0 4px var(--hsl-text-color-alpha10);
+    box-shadow: 0 0 0 1px hsl(0 0 100% / 0.7), 0 0 0 4px hsl(0 0% 9.8% / 0.1);
   }
 
   &:focus:not(:focus-visible) {
@@ -441,3 +436,4 @@
 .LegacyStyles.Alert ul {
   list-style-position: outside;
 }
+/* stylelint-enable no-descending-specificity */
