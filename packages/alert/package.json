@@ -27,7 +27,7 @@
   "scripts": {
     "build": "tsc && node build.js",
     "e2e": "playwright test --config=../../playwright.config.ts",
-    "lint": "eslint '**/*.{ts,tsx,js}'",
+    "lint": "eslint '**/*.{ts,tsx,js}' && stylelint '**/*.css' --ignore-path ../../.stylelintignore",
     "prepublishOnly": "pnpm build",
     "test": "vitest run --coverage"
   },
