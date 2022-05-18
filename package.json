@@ -23,7 +23,7 @@
     "test:packages": "turbo run build --filter=[HEAD^1]^... && turbo run test --filter=...[HEAD^1]",
     "test:watch": "vitest",
     "prepare": "husky install",
-    "release": "changeset publish"
+    "release": "turbo run build --filter=[HEAD^1]... && changeset publish"
   },
   "repository": {
     "type": "git",
