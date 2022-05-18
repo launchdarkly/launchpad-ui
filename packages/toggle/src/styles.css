@@ -1,6 +1,6 @@
 :root {
   --Toggle-box-shadow: 0 0 0 1px var(--color-gray-500);
-  --Toggle-box-shadow-disabled: 0 0 0 1px var(--hsl-gray-base-alpha70);
+  --Toggle-box-shadow-disabled: 0 0 0 1px hsl(216 2.4% 58.6% / 0.7);
   --Toggle-box-shadow-disabled-on: 0 0 0 1px hsl(154 100% 28% / 0.55);
   --Toggle-box-shadow-on: 0 0 0 1px var(--color-system-green-900);
   --Toggle-color-background: var(--color-gray-100);
@@ -9,28 +9,27 @@
   --Toggle-color-background-on: var(--color-system-green-700);
   --Toggle-color-text: var(--color-black-300);
   --Toggle-color-text-disabled: var(--color-gray-500);
-  --Toggle-color-text-disabled-on: var(--white);
-  --Toggle-color-text-on: var(--white);
+  --Toggle-color-text-disabled-on: var(--color-white);
+  --Toggle-color-text-on: var(--color-white);
   --Toggle-height: 2.4rem; /* 24px */
   --Toggle-transition-timing-function: ease-in-out;
   --Toggle-transition-duration: 100ms;
   --Toggle-width: 5.4rem; /* 54px */
-  --Toggle-input-box-shadow-focus: 0 0 0 1px var(--color-gray-300), 0 0 0 3px var(--white),
-    0 0 0 5px var(--focus-color);
+  --Toggle-input-box-shadow-focus: 0 0 0 1px var(--color-gray-300), 0 0 0 3px var(--color-white),
+    0 0 0 5px var(--color-blue-500);
   --Toggle-input-box-shadow-focus-on: 0 0 0 1px var(--color-system-green-800),
-    0 0 0 3px var(--white), 0 0 0 5px var(--focus-color);
+    0 0 0 3px var(--color-white), 0 0 0 5px var(--color-blue-500);
   --Toggle-label-font-size: 1.4rem; /* 14px */
   --Toggle-label-text-transform: none;
   --Toggle-labels-transform: translateX(-2.8rem); /* -28px */
   --Toggle-labels-transform-on: translateX(0);
   --Toggle-labels-width: 8.2rem; /* 82px */
-  --Toggle-pin-box-shadow: 0 0 1px 0 var(--hsl-color-black-200-alpha35),
-    0 0 2px 0 var(--hsl-color-black-200-alpha75), 0 0 1px 0 var(--hsl-color-black-200-alpha75);
-  --Toggle-pin-box-shadow-disabled: 0 0 1px var(--hsl-color-black-200-alpha50),
-    0 1px 2px var(--hsl-color-black-200-alpha04), 0 1px 1px var(--hsl-color-black-200-alpha14);
-  --Toggle-pin-box-shadow-on: 0 0 1px 0 var(--hsl-color-system-green-900-alpha35),
-    0 0 2px 0 var(--hsl-color-system-green-900-alpha06),
-    0 0 1px 0 var(--hsl-color-system-green-900-alpha75);
+  --Toggle-pin-box-shadow: 0 0 1px 0 hsl(0 0% 12.9% / 0.35), 0 0 2px 0 hsl(0 0% 12.9% / 0.75),
+    0 0 1px 0 hsl(0 0% 12.9% / 0.75);
+  --Toggle-pin-box-shadow-disabled: 0 0 1px hsl(0 0% 12.9% / 0.5), 0 1px 2px hsl(0 0% 12.9% / 0.04),
+    0 1px 1px hsl(0 0% 12.9% / 0.14);
+  --Toggle-pin-box-shadow-on: 0 0 1px 0 hsl(154 100% 23.5% / 0.35),
+    0 0 2px 0 hsl(154 100% 23.5% / 0.06), 0 0 1px 0 hsl(154 100% 23.5% / 0.75);
   --Toggle-pin-size: 1.6rem; /* 16px */
   --Toggle-pin-transform: translateX(0.4rem) translateY(-50%); /* 4px */
   --Toggle-pin-transform-on: translateX(3.4rem) translateY(-50%); /* 34px */
@@ -147,7 +146,7 @@
  * contrast to pass Level AA contrast checks. */
 .Toggle--on .Toggle-on {
   color: var(--Toggle-color-text-on);
-  text-shadow: 0 0 1px var(--hsl-color-black-100-alpha70);
+  text-shadow: 0 0 1px hsl(0 0% 15.7% / 0.7);
 }
 
 .Toggle-pin {
@@ -156,7 +155,7 @@
   left: 0;
   width: var(--Toggle-pin-size);
   height: var(--Toggle-pin-size);
-  background-color: var(--white);
+  background-color: var(--color-white);
   border-radius: 50%;
   box-shadow: var(--Toggle-pin-box-shadow);
   transform: var(--Toggle-pin-transform);
