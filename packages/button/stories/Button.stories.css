@@ -1,6 +1,7 @@
 .storygroup-wrapper > * {
   margin: auto 0;
 }
+
 .storygroup-wrapper {
   display: grid;
   grid-template-rows: 1fr;
@@ -8,6 +9,7 @@
   grid-gap: 1.2rem;
   justify-items: flex-start;
 }
+
 .button-state-label {
   text-align: right;
   font-weight: bold;

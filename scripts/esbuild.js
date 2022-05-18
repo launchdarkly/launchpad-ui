@@ -2,12 +2,14 @@
 const esbuild = require('esbuild');
 const path = require('path');
 const fg = require('fast-glob');
+const browserslist = require('browserslist');
+const fs = require('fs');
+const css = require('@parcel/css');
 
 const build = async (packageJSON) => {
   const outFileMain = packageJSON.main;
   const outFileModule = packageJSON.module;
   const entryPoints = [packageJSON.source];
-  const cssPaths = await fg([`${path.resolve()}/src/**/*.css`]);
 
   const config = {
     bundle: true,
@@ -39,15 +41,32 @@ const build = async (packageJSON) => {
     })
     .catch(() => process.exit(1));
 
-  await esbuild
-    .build({
-      bundle: true,
-      entryPoints: cssPaths,
-      sourcemap: true,
-      outdir: 'dist',
-      outbase: 'src',
-    })
-    .catch(() => process.exit(1));
+  await buildCss();
+};
+
+const buildCss = async () => {
+  const targets = css.browserslistToTargets(browserslist('last 2 versions, not dead, not IE 11'));
+  const cssPaths = await fg([`src/**/*.css`]);
+
+  cssPaths.forEach((cssPath) => {
+    const outFile = path.relative('src', cssPath);
+    const dest = `dist/${outFile}`;
+    const name = cssPath.split('/').pop();
+
+    let { code, map } = css.bundle({
+      filename: cssPath,
+      minify: true,
+      targets,
+      drafts: { nesting: true, customMedia: true },
+      sourceMap: true,
+    });
+
+    code = code.toString() + `\n/*# sourceMappingURL=${name}.map */\n`;
+
+    fs.mkdirSync(path.dirname(dest), { recursive: true });
+    fs.writeFileSync(dest, code);
+    fs.writeFileSync(`${dest}.map`, map);
+  });
 };
 
 module.exports = { build };

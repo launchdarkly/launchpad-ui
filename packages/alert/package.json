@@ -1,14 +1,13 @@
 {
-  "name": "@launchpad-ui/icons",
+  "name": "@launchpad-ui/alert",
   "version": "0.0.1",
   "publishConfig": {
     "access": "public"
   },
-  "description": "An element that supplements content and represents an action or feature within LaunchDarkly.",
+  "description": "An element that informs users of a state or function of the product at a more granular level than banners.",
   "files": [
     "dist"
   ],
-  "style": "dist/index.css",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
   "types": "dist/index.d.ts",
@@ -22,29 +21,27 @@
       "require": "./dist/index.js"
     },
     "./package.json": "./package.json",
-    "./styles.css": "./dist/styles.css"
+    "./styles/*": "./dist/styles/*"
   },
   "source": "src/index.ts",
   "scripts": {
-    "build": "pnpm build:icons && tsc && node build.js",
-    "build:icons": "svgr --silent -- icons",
-    "e2e": "exit 0",
+    "build": "tsc && node build.js",
+    "e2e": "playwright test --config=../../playwright.config.ts",
     "lint": "eslint '**/*.{ts,tsx,js}' && stylelint '**/*.css' --ignore-path ../../.stylelintignore",
     "prepublishOnly": "pnpm build",
-    "test": "pnpm build:icons && vitest run --coverage"
+    "test": "vitest run --coverage"
   },
   "dependencies": {
+    "@launchpad-ui/button": "workspace:~",
+    "@launchpad-ui/icons": "workspace:~",
     "@launchpad-ui/tokens": "workspace:~",
-    "classnames": "^2.3.1",
-    "uuid": "^8.3.2"
+    "classnames": "^2.3.1"
   },
   "peerDependencies": {
     "react": "^16.8.0 || ^17.0.0 || ^18.0.0",
     "react-dom": "^16.8.0 || ^17.0.0 || ^18.0.0"
   },
   "devDependencies": {
-    "@svgr/cli": "^6.2.1",
-    "@types/uuid": "^8.3.4",
     "react": "^18.1.0",
     "react-dom": "^18.1.0"
   }

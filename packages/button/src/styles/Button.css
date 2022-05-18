@@ -1,3 +1,4 @@
+/* stylelint-disable no-descending-specificity */
 @import './ButtonVariables.css';
 
 .Button {
@@ -17,7 +18,7 @@
   border-radius: var(--Button-border-radius-default);
   cursor: default;
   user-select: none;
-  -webkit-appearance: none;
+  appearance: none;
 }
 
 .Button--tiny {
@@ -410,3 +411,4 @@
 .Button--icon.Button[disabled] .Icon:active {
   fill: var(--Button-icon-color-fill-disabled);
 }
+/* stylelint-enable no-descending-specificity */

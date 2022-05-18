@@ -10,6 +10,10 @@ export const loader: LoaderFunction = async () => {
   const data: IndexData = {
     components: [
       {
+        to: 'components/alert',
+        name: 'Alert',
+      },
+      {
         to: 'components/button',
         name: 'Button',
       },

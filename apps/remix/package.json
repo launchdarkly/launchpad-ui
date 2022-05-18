@@ -13,6 +13,7 @@
     "test": "exit 0"
   },
   "dependencies": {
+    "@launchpad-ui/alert": "workspace:~",
     "@launchpad-ui/button": "workspace:~",
     "@launchpad-ui/icons": "workspace:~",
     "@launchpad-ui/lozenge": "workspace:~",
