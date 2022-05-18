@@ -17,7 +17,7 @@
     "lint": "eslint '**/*.{ts,tsx,js}' --ignore-pattern '/packages/'",
     "lint:packages": "turbo run lint --filter=...[HEAD^1]",
     "remix": "pnpm build && turbo run build --filter=@launchpad-ui/remix && pnpm --filter=\"@launchpad-ui/remix\" start",
-    "storybook": "pnpm build && start-storybook -p 6006",
+    "storybook": "pnpm build && start-storybook -p 3000",
     "storybook:build": "pnpm build && build-storybook --quiet",
     "test": "vitest run --coverage",
     "test:packages": "turbo run build --filter=[HEAD^1]^... && turbo run test --filter=...[HEAD^1]",
