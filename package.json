@@ -20,10 +20,10 @@
     "storybook": "pnpm build && start-storybook -p 3000",
     "storybook:build": "pnpm build && build-storybook --quiet",
     "test": "vitest run --coverage",
-    "test:packages": "turbo run build --filter=[HEAD^1]^... && turbo run test --filter=...[HEAD^1]",
+    "test:packages": "turbo run test --filter=...[HEAD^1]",
     "test:watch": "vitest",
     "prepare": "husky install",
-    "release": "turbo run build --filter=[HEAD^1]... && changeset publish"
+    "release": "turbo run build --filter=[HEAD^1] && changeset publish"
   },
   "repository": {
     "type": "git",
