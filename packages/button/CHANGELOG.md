@@ -1,5 +1,14 @@
 # @launchpad-ui/button
 
+## 0.1.2
+
+### Patch Changes
+
+- [#35](https://github.com/launchdarkly/launchpad-ui/pull/35) [`ed49480`](https://github.com/launchdarkly/launchpad-ui/commit/ed494805b41e86019fb31483ef3e880313f88f4e) Thanks [@Niznikr](https://github.com/Niznikr)! - Build packages first for release
+
+- Updated dependencies [[`ed49480`](https://github.com/launchdarkly/launchpad-ui/commit/ed494805b41e86019fb31483ef3e880313f88f4e)]:
+  - @launchpad-ui/tokens@0.1.2
+
 ## 0.1.1
 
 ### Patch Changes
