@@ -140,6 +140,7 @@ importers:
       '@launchpad-ui/button': workspace:~
       '@launchpad-ui/icons': workspace:~
       '@launchpad-ui/lozenge': workspace:~
+      '@launchpad-ui/toggle': workspace:~
       '@launchpad-ui/tokens': workspace:~
       '@remix-run/dev': ^1.4.3
       '@remix-run/eslint-config': ^1.4.3
@@ -155,6 +156,7 @@ importers:
       '@launchpad-ui/button': link:../../packages/button
       '@launchpad-ui/icons': link:../../packages/icons
       '@launchpad-ui/lozenge': link:../../packages/lozenge
+      '@launchpad-ui/toggle': link:../../packages/toggle
       '@launchpad-ui/tokens': link:../../packages/tokens
       '@remix-run/node': 1.4.3_ef5jwxihqo6n7gxfmzogljlgcm
       '@remix-run/react': 1.4.3_ef5jwxihqo6n7gxfmzogljlgcm
