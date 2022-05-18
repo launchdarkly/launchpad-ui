@@ -28,7 +28,6 @@
     "build": "style-dictionary build --config ./sd.config.js",
     "e2e": "exit 0",
     "lint": "eslint '**/*.{ts,tsx,js}'",
-    "prepublishOnly": "pnpm build",
     "test": "exit 0"
   },
   "devDependencies": {

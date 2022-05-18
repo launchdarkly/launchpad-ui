@@ -30,7 +30,6 @@
     "build:icons": "svgr --silent -- icons",
     "e2e": "exit 0",
     "lint": "eslint '**/*.{ts,tsx,js}' && stylelint '**/*.css' --ignore-path ../../.stylelintignore",
-    "prepublishOnly": "pnpm build",
     "test": "pnpm build:icons && vitest run --coverage"
   },
   "dependencies": {
