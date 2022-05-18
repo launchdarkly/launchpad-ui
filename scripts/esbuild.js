@@ -46,36 +46,26 @@ const build = async (packageJSON) => {
 
 const buildCss = async () => {
   const targets = css.browserslistToTargets(browserslist('last 2 versions, not dead, not IE 11'));
-  const cssPaths = await fg([`${path.resolve()}/src/**/*.css`]);
-
-  const config = {
-    minify: false,
-    targets,
-    drafts: { nesting: true },
-  };
+  const cssPaths = await fg([`src/**/*.css`]);
 
   cssPaths.forEach((cssPath) => {
+    const outFile = path.relative('src', cssPath);
+    const dest = `dist/${outFile}`;
     const name = cssPath.split('/').pop();
-    const outFile = path.relative(`${path.resolve()}/src`, cssPath);
 
-    const { code: bundled } = css.bundle({
-      ...config,
+    let { code, map } = css.bundle({
       filename: cssPath,
-    });
-
-    const { code, map } = css.transform({
-      ...config,
-      filename: name,
-      code: bundled,
+      minify: true,
+      targets,
+      drafts: { nesting: true, customMedia: true },
       sourceMap: true,
     });
 
-    fs.writeFile(`${path.resolve()}/dist/${outFile}`, code, { flag: 'w' }, (err) => {
-      if (err) throw err;
-    });
-    fs.writeFile(`${path.resolve()}/dist/${outFile}.map`, map, { flag: 'w' }, (err) => {
-      if (err) throw err;
-    });
+    code = code.toString() + `\n/*# sourceMappingURL=${name}.map */\n`;
+
+    fs.mkdirSync(path.dirname(dest), { recursive: true });
+    fs.writeFileSync(dest, code);
+    fs.writeFileSync(`${dest}.map`, map);
   });
 };
 
