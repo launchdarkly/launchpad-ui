@@ -1,0 +1,173 @@
+:root {
+  --Toggle-box-shadow: 0 0 0 1px var(--color-gray-500);
+  --Toggle-box-shadow-disabled: 0 0 0 1px var(--hsl-gray-base-alpha70);
+  --Toggle-box-shadow-disabled-on: 0 0 0 1px hsl(154 100% 28% / 0.55);
+  --Toggle-box-shadow-on: 0 0 0 1px var(--color-system-green-900);
+  --Toggle-color-background: var(--color-gray-100);
+  --Toggle-color-background-disabled: hsl(0 0% 90% / 0.55);
+  --Toggle-color-background-disabled-on: hsl(154 100% 36% / 0.55);
+  --Toggle-color-background-on: var(--color-system-green-700);
+  --Toggle-color-text: var(--color-black-300);
+  --Toggle-color-text-disabled: var(--color-gray-500);
+  --Toggle-color-text-disabled-on: var(--white);
+  --Toggle-color-text-on: var(--white);
+  --Toggle-height: 2.4rem; /* 24px */
+  --Toggle-transition-timing-function: ease-in-out;
+  --Toggle-transition-duration: 100ms;
+  --Toggle-width: 5.4rem; /* 54px */
+  --Toggle-input-box-shadow-focus: 0 0 0 1px var(--color-gray-300), 0 0 0 3px var(--white),
+    0 0 0 5px var(--focus-color);
+  --Toggle-input-box-shadow-focus-on: 0 0 0 1px var(--color-system-green-800),
+    0 0 0 3px var(--white), 0 0 0 5px var(--focus-color);
+  --Toggle-label-font-size: 1.4rem; /* 14px */
+  --Toggle-label-text-transform: none;
+  --Toggle-labels-transform: translateX(-2.8rem); /* -28px */
+  --Toggle-labels-transform-on: translateX(0);
+  --Toggle-labels-width: 8.2rem; /* 82px */
+  --Toggle-pin-box-shadow: 0 0 1px 0 var(--hsl-color-black-200-alpha35),
+    0 0 2px 0 var(--hsl-color-black-200-alpha75), 0 0 1px 0 var(--hsl-color-black-200-alpha75);
+  --Toggle-pin-box-shadow-disabled: 0 0 1px var(--hsl-color-black-200-alpha50),
+    0 1px 2px var(--hsl-color-black-200-alpha04), 0 1px 1px var(--hsl-color-black-200-alpha14);
+  --Toggle-pin-box-shadow-on: 0 0 1px 0 var(--hsl-color-system-green-900-alpha35),
+    0 0 2px 0 var(--hsl-color-system-green-900-alpha06),
+    0 0 1px 0 var(--hsl-color-system-green-900-alpha75);
+  --Toggle-pin-size: 1.6rem; /* 16px */
+  --Toggle-pin-transform: translateX(0.4rem) translateY(-50%); /* 4px */
+  --Toggle-pin-transform-on: translateX(3.4rem) translateY(-50%); /* 34px */
+}
+
+.Toggle {
+  display: inline-block;
+  vertical-align: middle;
+  width: var(--Toggle-width);
+  height: var(--Toggle-height);
+  position: relative;
+  background-color: var(--Toggle-color-background);
+  border-radius: calc(var(--Toggle-height) / 2);
+  box-shadow: var(--Toggle-box-shadow);
+  color: var(--Toggle-color-text);
+  transition: background-color var(--Toggle-transition-duration)
+    var(--Toggle-transition-timing-function);
+  user-select: none;
+}
+
+.Toggle--on {
+  background-color: var(--Toggle-color-background-on);
+  box-shadow: var(--Toggle-box-shadow-on);
+}
+
+.Toggle--disabled {
+  background-color: var(--Toggle-color-background-disabled);
+  box-shadow: var(--Toggle-box-shadow-disabled);
+  color: var(--Toggle-color-text-disabled);
+  cursor: not-allowed;
+}
+
+.Toggle--disabled.Toggle--on {
+  background-color: var(--Toggle-color-background-disabled-on);
+  box-shadow: var(--Toggle-box-shadow-disabled-on);
+}
+
+.Toggle-input {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+}
+
+.Toggle-wrapper {
+  width: var(--Toggle-width);
+  height: var(--Toggle-height);
+  border-radius: calc(var(--Toggle-height) / 2);
+  display: block;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.Toggle--disabled .Toggle-wrapper {
+  cursor: not-allowed;
+}
+
+.Toggle-input:focus ~ .Toggle-wrapper {
+  box-shadow: var(--Toggle-input-box-shadow-focus);
+}
+
+.Toggle--on .Toggle-input:focus ~ .Toggle-wrapper {
+  box-shadow: var(--Toggle-input-box-shadow-focus-on);
+}
+
+.Toggle-labels {
+  display: flex;
+  align-items: center;
+  height: var(--Toggle-height);
+  width: var(--Toggle-labels-width);
+  transform: var(--Toggle-labels-transform);
+  transition: transform var(--Toggle-transition-duration) var(--Toggle-transition-timing-function);
+}
+
+.Toggle--on .Toggle-labels {
+  transform: var(--Toggle-labels-transform-on);
+}
+
+.Toggle-label {
+  flex: auto;
+  position: relative;
+  width: 50%;
+  padding: 0 9px;
+  text-transform: var(--Toggle-label-text-transform);
+  font-size: var(--Toggle-label-font-size);
+  line-height: 1;
+  font-weight: var(--font-weight-semibold);
+}
+
+.Toggle-on {
+  text-align: left;
+}
+
+.Toggle-on,
+.Toggle-off {
+  opacity: 1;
+  transition: all var(--Toggle-transition-duration) var(--Toggle-transition-timing-function);
+}
+
+.Toggle--disabled .Toggle-on {
+  color: var(--Toggle-color-text-disabled-on);
+}
+
+.Toggle-off {
+  text-align: right;
+}
+
+.Toggle--on .Toggle-off,
+.Toggle--off .Toggle-on {
+  opacity: 0;
+}
+
+/* This needs to be specified independently of the regular `.Toggle-on`
+ * CSS or the WCAG contrast checker believes there isn't enough
+ * contrast to pass Level AA contrast checks. */
+.Toggle--on .Toggle-on {
+  color: var(--Toggle-color-text-on);
+  text-shadow: 0 0 1px var(--hsl-color-black-100-alpha70);
+}
+
+.Toggle-pin {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: var(--Toggle-pin-size);
+  height: var(--Toggle-pin-size);
+  background-color: var(--white);
+  border-radius: 50%;
+  box-shadow: var(--Toggle-pin-box-shadow);
+  transform: var(--Toggle-pin-transform);
+  transition: transform var(--Toggle-transition-duration) var(--Toggle-transition-timing-function);
+}
+
+.Toggle--disabled .Toggle-pin {
+  box-shadow: var(--Toggle-pin-box-shadow-disabled);
+}
+
+.Toggle--on .Toggle-pin {
+  box-shadow: var(--Toggle-pin-box-shadow-on);
+  transform: var(--Toggle-pin-transform-on);
+}
