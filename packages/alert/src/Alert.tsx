@@ -3,7 +3,7 @@ import cx from 'classnames';
 import { Button, ButtonType } from '@launchpad-ui/button';
 import { Close, IconSize, KindIcon } from '@launchpad-ui/icons';
 
-import './styles.css';
+import './styles/Alert.css';
 
 import { AlertKind, AlertSize } from './types';
 
