@@ -1,0 +1,48 @@
+{
+  "name": "@launchpad-ui/toggle",
+  "version": "0.0.1",
+  "publishConfig": {
+    "access": "public"
+  },
+  "description": "An element that represents on/off values as opposed to selection.",
+  "files": [
+    "dist"
+  ],
+  "main": "dist/index.js",
+  "module": "dist/index.es.js",
+  "types": "dist/index.d.ts",
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.es.js",
+      "require": "./dist/index.js"
+    },
+    "./package.json": "./package.json",
+    "./styles.css": "./dist/styles.css"
+  },
+  "source": "src/index.ts",
+  "scripts": {
+    "build": "tsc && node build.js",
+    "e2e": "exit 0",
+    "lint": "eslint '**/*.{ts,tsx,js}' && stylelint '**/*.css' --ignore-path ../../.stylelintignore",
+    "test": "vitest run --coverage"
+  },
+  "dependencies": {
+    "@launchpad-ui/tokens": "workspace:~",
+    "@react-aria/switch": "^3.1.8",
+    "@react-aria/visually-hidden": "^3.2.8",
+    "@react-stately/toggle": "^3.2.7",
+    "classnames": "^2.3.1"
+  },
+  "peerDependencies": {
+    "react": "^16.8.0 || ^17.0.0 || ^18.0.0",
+    "react-dom": "^16.8.0 || ^17.0.0 || ^18.0.0"
+  },
+  "devDependencies": {
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0"
+  }
+}

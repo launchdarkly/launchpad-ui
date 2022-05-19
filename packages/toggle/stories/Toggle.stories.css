@@ -1,0 +1,27 @@
+.toggle-storygroup-wrapper {
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 8rem auto;
+  grid-gap: 1.2rem;
+  justify-items: flex-start;
+  align-items: center;
+}
+
+.toggle-state-label {
+  text-align: right;
+  font-weight: bold;
+  text-transform: capitalize;
+}
+
+.toggle-iggy-grid {
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 8rem auto;
+  grid-gap: 1.2rem;
+  justify-items: flex-start;
+  align-items: center;
+
+  & h3 {
+    font-size: 1.2rem;
+  }
+}

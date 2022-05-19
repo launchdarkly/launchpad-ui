@@ -25,6 +25,10 @@ export const loader: LoaderFunction = async () => {
         to: 'components/lozenge',
         name: 'Lozenge',
       },
+      {
+        to: 'components/toggle',
+        name: 'Toggle',
+      },
     ],
   };
 

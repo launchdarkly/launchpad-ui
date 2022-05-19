@@ -16,6 +16,7 @@ import buttonStyles from '@launchpad-ui/button/styles/Button.css';
 import iconStyles from '@launchpad-ui/icons/styles.css';
 import lozengeStyles from '@launchpad-ui/lozenge/styles.css';
 import alertStyles from '@launchpad-ui/alert/styles/Alert.css';
+import toggleStyles from '@launchpad-ui/toggle/styles.css';
 
 export const links: LinksFunction = () => {
   return [
@@ -25,6 +26,7 @@ export const links: LinksFunction = () => {
     { rel: 'stylesheet', href: iconStyles },
     { rel: 'stylesheet', href: lozengeStyles },
     { rel: 'stylesheet', href: alertStyles },
+    { rel: 'stylesheet', href: toggleStyles },
   ];
 };
 
