@@ -51,7 +51,7 @@ importers:
       husky: ^8.0.1
       jest-axe: ^6.0.0
       jsdom: ^19.0.0
-      lint-staged: ^12.3.8
+      lint-staged: ^12.4.1
       lodash.clonedeep: ^4.5.0
       postcss: ^8.4.13
       postcss-nested: ^5.0.6
@@ -118,7 +118,7 @@ importers:
       husky: 8.0.1
       jest-axe: 6.0.0
       jsdom: 19.0.0
-      lint-staged: 12.3.8
+      lint-staged: 12.4.1
       lodash.clonedeep: 4.5.0
       postcss: 8.4.13
       postcss-nested: 5.0.6_postcss@8.4.13
@@ -607,7 +607,7 @@ packages:
     resolution: {integrity: sha512-thxXgnQ8qQ11W2wVUObIqDL4p148VMxkt5T/qpN5k2fboRyzFGFmKsTGViquyM5QHKUy48OZoca8kw4ajaDPyw==}
     engines: {node: '>=6.9.0'}
     dependencies:
-      '@babel/types': 7.17.10
+      '@babel/types': 7.18.0
     dev: true
 
   /@babel/helper-module-imports/7.16.7:
@@ -705,7 +705,7 @@ packages:
     resolution: {integrity: sha512-+il1gTy0oHwUsBQZyJvukbB4vPMdcYBrFHa0Uc4AizLxbq6BOYC51Rv4tWocX9BLBDLZ4kc6qUFpQ6HRgL+3zw==}
     engines: {node: '>=6.9.0'}
     dependencies:
-      '@babel/types': 7.17.10
+      '@babel/types': 7.18.0
     dev: true
 
   /@babel/helper-split-export-declaration/7.16.7:
@@ -830,7 +830,7 @@ packages:
     dependencies:
       '@babel/core': 7.17.10
       '@babel/helper-create-class-features-plugin': 7.17.9_@babel+core@7.17.10
-      '@babel/helper-plugin-utils': 7.16.7
+      '@babel/helper-plugin-utils': 7.17.12
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -843,7 +843,7 @@ packages:
     dependencies:
       '@babel/core': 7.18.0
       '@babel/helper-create-class-features-plugin': 7.17.9_@babel+core@7.18.0
-      '@babel/helper-plugin-utils': 7.16.7
+      '@babel/helper-plugin-utils': 7.17.12
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -941,7 +941,7 @@ packages:
       '@babel/core': ^7.0.0-0
     dependencies:
       '@babel/core': 7.17.10
-      '@babel/helper-plugin-utils': 7.16.7
+      '@babel/helper-plugin-utils': 7.17.12
       '@babel/plugin-syntax-nullish-coalescing-operator': 7.8.3_@babel+core@7.17.10
     dev: true
 
@@ -952,7 +952,7 @@ packages:
       '@babel/core': ^7.0.0-0
     dependencies:
       '@babel/core': 7.18.0
-      '@babel/helper-plugin-utils': 7.16.7
+      '@babel/helper-plugin-utils': 7.17.12
       '@babel/plugin-syntax-nullish-coalescing-operator': 7.8.3_@babel+core@7.18.0
     dev: true
 
@@ -1010,7 +1010,7 @@ packages:
       '@babel/core': ^7.0.0-0
     dependencies:
       '@babel/core': 7.17.10
-      '@babel/helper-plugin-utils': 7.16.7
+      '@babel/helper-plugin-utils': 7.17.12
       '@babel/helper-skip-transparent-expression-wrappers': 7.16.0
       '@babel/plugin-syntax-optional-chaining': 7.8.3_@babel+core@7.17.10
     dev: true
@@ -1022,7 +1022,7 @@ packages:
       '@babel/core': ^7.0.0-0
     dependencies:
       '@babel/core': 7.18.0
-      '@babel/helper-plugin-utils': 7.16.7
+      '@babel/helper-plugin-utils': 7.17.12
       '@babel/helper-skip-transparent-expression-wrappers': 7.16.0
       '@babel/plugin-syntax-optional-chaining': 7.8.3_@babel+core@7.18.0
     dev: true
@@ -1531,8 +1531,8 @@ packages:
       '@babel/core': ^7.0.0-0
     dependencies:
       '@babel/core': 7.17.10
-      '@babel/helper-module-transforms': 7.17.7
-      '@babel/helper-plugin-utils': 7.16.7
+      '@babel/helper-module-transforms': 7.18.0
+      '@babel/helper-plugin-utils': 7.17.12
       '@babel/helper-simple-access': 7.17.7
       babel-plugin-dynamic-import-node: 2.3.3
     transitivePeerDependencies:
@@ -1546,8 +1546,8 @@ packages:
       '@babel/core': ^7.0.0-0
     dependencies:
       '@babel/core': 7.18.0
-      '@babel/helper-module-transforms': 7.17.7
-      '@babel/helper-plugin-utils': 7.16.7
+      '@babel/helper-module-transforms': 7.18.0
+      '@babel/helper-plugin-utils': 7.17.12
       '@babel/helper-simple-access': 7.17.7
       babel-plugin-dynamic-import-node: 2.3.3
     transitivePeerDependencies:
@@ -11961,8 +11961,8 @@ packages:
     resolution: {integrity: sha512-7ylylesZQ/PV29jhEDl3Ufjo6ZX7gCqJr5F7PKrqc93v7fzSymt1BpwEU8nAUXs8qzzvqhbjhK5QZg6Mt/HkBg==}
     dev: true
 
-  /lint-staged/12.3.8:
-    resolution: {integrity: sha512-0+UpNaqIwKRSGAFOCcpuYNIv/j5QGVC+xUVvmSdxHO+IfIGoHbFLo3XcPmV/LLnsVj5EAncNHVtlITSoY5qWGQ==}
+  /lint-staged/12.4.1:
+    resolution: {integrity: sha512-PTXgzpflrQ+pODQTG116QNB+Q6uUTDg5B5HqGvNhoQSGt8Qy+MA/6zSnR8n38+sxP5TapzeQGTvoKni0KRS8Vg==}
     engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
     hasBin: true
     dependencies:
