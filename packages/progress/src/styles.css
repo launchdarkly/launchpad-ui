@@ -1,0 +1,30 @@
+@keyframes indeterminate {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(359deg);
+  }
+}
+
+.Progress {
+  display: inline-block;
+  vertical-align: middle;
+  transform: rotate(-90deg);
+}
+
+.Progress--indeterminate {
+  animation: indeterminate 350ms linear infinite;
+}
+
+.Progress-track {
+  fill: none;
+  stroke: var(--color-white-100);
+}
+
+.Progress-head {
+  transition: stroke-dashoffset 0.35s;
+  fill: none;
+  stroke: var(--color-gray-500);
+}

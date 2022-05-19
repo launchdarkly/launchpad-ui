@@ -1,0 +1,48 @@
+{
+  "name": "@launchpad-ui/progress",
+  "version": "0.0.1",
+  "publishConfig": {
+    "access": "public"
+  },
+  "description": "An element that indicates a page or content is loading.",
+  "files": [
+    "dist"
+  ],
+  "main": "dist/index.js",
+  "module": "dist/index.es.js",
+  "types": "dist/index.d.ts",
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.es.js",
+      "require": "./dist/index.js"
+    },
+    "./package.json": "./package.json",
+    "./styles.css": "./dist/styles.css"
+  },
+  "source": "src/index.ts",
+  "scripts": {
+    "build": "tsc --project tsconfig.build.json && node build.js",
+    "clean": "rm -rf .turbo && rm -rf dist",
+    "e2e": "playwright test --config=../../playwright.config.ts",
+    "lint": "eslint '**/*.{ts,tsx,js}' && stylelint '**/*.css' --ignore-path ../../.stylelintignore",
+    "test": "vitest run --coverage"
+  },
+  "dependencies": {
+    "@launchpad-ui/tokens": "workspace:~",
+    "classnames": "^2.3.1",
+    "lodash.clamp": "^4.0.3"
+  },
+  "peerDependencies": {
+    "react": "^16.8.0 || ^17.0.0 || ^18.0.0",
+    "react-dom": "^16.8.0 || ^17.0.0 || ^18.0.0"
+  },
+  "devDependencies": {
+    "@types/lodash.clamp": "^4.0.7",
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0"
+  }
+}
