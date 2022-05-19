@@ -401,7 +401,7 @@
 }
 
 .LegacyStyles.Alert-content a {
-  color: var(--link-color);
+  color: var(--color-blue-500);
 
   &:hover {
     text-decoration: none;
@@ -418,7 +418,7 @@
   }
 
   &:active {
-    color: var(--link-color);
+    color: var(--color-blue-500);
     box-shadow: none;
     text-decoration: underline;
   }

@@ -130,7 +130,7 @@
 
 .Lozenge--label {
   background-color: var(--Lozenge-label-color);
-  color: var(--subtle-text-color);
+  color: var(--color-gray-700);
 }
 
 .Lozenge .Icon {
@@ -147,7 +147,7 @@
 .Lozenge--clickable:focus {
   outline: 0;
   border-radius: var(--border-radius);
-  box-shadow: 0 0 4px var(--focus-color);
+  box-shadow: 0 0 4px var(--color-blue-500);
   z-index: 2;
 }
 

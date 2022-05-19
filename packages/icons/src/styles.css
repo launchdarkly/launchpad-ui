@@ -7,7 +7,7 @@
 }
 
 .Icon--subtle {
-  fill: var(--subtle-icon-color);
+  fill: var(--color-gray-600);
 }
 
 .Icon--small {
@@ -112,7 +112,7 @@
 }
 
 .Icon--marker svg rect {
-  fill: var(--text-color);
+  fill: var(--color-black-300);
 }
 
 .Icon[class*='--lang-'] {
@@ -124,7 +124,7 @@
 }
 
 .Icon[class*='--lang-'] path {
-  fill: var(--text-color);
+  fill: var(--color-black-300);
 }
 
 .Icon--thumbsUp {
@@ -158,7 +158,7 @@
 }
 
 .Icon--trashcan svg {
-  fill: var(--gray-base);
+  fill: var(--color-gray-500);
 }
 
 .Icon--check-circle svg {
@@ -185,7 +185,7 @@
 
 .Icon--star-outlined,
 .Icon--star-filled {
-  fill: var(--gray-safe);
+  fill: var(--color-gray-600);
 }
 
 .Icon--star-outlined:hover {

@@ -5,7 +5,7 @@
   --Button-box-shadow-default-active: none;
   --Button-color-boxShadow-1-default-active: var(--color-white);
   --Button-color-boxShadow-2-default-active: hsl(231.5 100% 62.5% / 0.1);
-  --Button-color-boxShadow-1-default-withIcon-focus: var(--focus-color);
+  --Button-color-boxShadow-1-default-withIcon-focus: var(--color-blue-500);
   --Button-color-boxShadow-2-default-withIcon-focus: hsl(231.5 100% 62.5% / 0.1);
   --Button-box-shadow-withIcon-focus: 0 0 0 1px
       var(--Button-color-boxShadow-1-default-withIcon-focus),
@@ -133,7 +133,7 @@
   /* BUTTON ICON DEFAULT */
   --Button-icon-color-default: var(--color-black-300);
   --Button-icon-color-fill-default: var(--color-black-300);
-  --Button-icon-color-text-default: var(--text-color);
+  --Button-icon-color-text-default: var(--color-black-300);
 
   /* BUTTON ICON PRIMARY */
   --Button-icon-color-fill-primary: var(--color-white);
