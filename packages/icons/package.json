@@ -28,6 +28,7 @@
   "scripts": {
     "build": "pnpm build:icons && tsc && node build.js",
     "build:icons": "svgr --silent -- icons",
+    "clean": "rm -rf .turbo && rm -rf dist",
     "e2e": "exit 0",
     "lint": "eslint '**/*.{ts,tsx,js}' && stylelint '**/*.css' --ignore-path ../../.stylelintignore",
     "test": "pnpm build:icons && vitest run --coverage"

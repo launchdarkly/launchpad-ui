@@ -9,6 +9,7 @@
     "build:icons": "turbo run build --filter=@launchpad-ui/icons",
     "build:tokens": "turbo run build --filter=@launchpad-ui/tokens",
     "chromatic": "chromatic",
+    "clean": "turbo run clean",
     "e2e": "playwright test",
     "e2e:ci": "concurrently -k -s first -n \"SB,e2e\" -c \"magenta,blue\" \"pnpm storybook:build && http-server storybook-static --port 3000 --silent\" \"wait-on tcp:3000 && turbo run e2e --filter=...[HEAD^1] --filter=!@launchpad-ui/remix\"",
     "e2e:ssr": "concurrently -k -s first -n \"Remix,e2e\" -c \"magenta,blue\" \"pnpm remix\" \"wait-on tcp:3000 && turbo run e2e --filter=@launchpad-ui/remix\"",
