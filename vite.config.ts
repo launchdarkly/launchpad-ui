@@ -4,8 +4,19 @@ import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import path from 'path';
 
+import tsconfig from './tsconfig.json';
+
+const paths = tsconfig.compilerOptions.paths;
+const alias: Record<string, string> = {};
+Object.keys(paths).forEach((key) => {
+  alias[key] = path.resolve(__dirname, paths[key as keyof typeof paths][0]);
+});
+
 export default defineConfig({
   plugins: [react()],
+  resolve: {
+    alias,
+  },
   test: {
     globals: true,
     environment: 'jsdom',

@@ -25,7 +25,7 @@
   },
   "source": "src/index.ts",
   "scripts": {
-    "build": "tsc && node build.js",
+    "build": "tsc --project tsconfig.build.json && node build.js",
     "clean": "rm -rf .turbo && rm -rf dist",
     "e2e": "exit 0",
     "lint": "eslint '**/*.{ts,tsx,js}' && stylelint '**/*.css' --ignore-path ../../.stylelintignore",
