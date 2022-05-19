@@ -37,7 +37,7 @@ importers:
       browserslist: ^4.20.3
       chokidar-cli: ^3.0.0
       chromatic: ^6.5.4
-      concurrently: ^7.1.0
+      concurrently: ^7.2.0
       esbuild: ^0.14.36
       eslint: ^8.13.0
       eslint-config-prettier: ^8.5.0
@@ -104,7 +104,7 @@ importers:
       browserslist: 4.20.3
       chokidar-cli: 3.0.0
       chromatic: 6.5.4
-      concurrently: 7.1.0
+      concurrently: 7.2.0
       esbuild: 0.14.36
       eslint: 8.13.0
       eslint-config-prettier: 8.5.0_eslint@8.13.0
@@ -8206,8 +8206,8 @@ packages:
       typedarray: 0.0.6
     dev: true
 
-  /concurrently/7.1.0:
-    resolution: {integrity: sha512-Bz0tMlYKZRUDqJlNiF/OImojMB9ruKUz6GCfmhFnSapXgPe+3xzY4byqoKG9tUZ7L2PGEUjfLPOLfIX3labnmw==}
+  /concurrently/7.2.0:
+    resolution: {integrity: sha512-4KIVY5HopDRhN3ndAgfFOLsMk1PZUPgghlgTMZ5Pb5aTrqYg86RcZaIZC2Cz+qpZ9DsX36WHGjvWnXPqdnblhw==}
     engines: {node: ^12.20.0 || ^14.13.0 || >=16.0.0}
     hasBin: true
     dependencies:
@@ -8215,10 +8215,11 @@ packages:
       date-fns: 2.28.0
       lodash: 4.17.21
       rxjs: 6.6.7
+      shell-quote: 1.7.3
       spawn-command: 0.0.2-1
       supports-color: 8.1.1
       tree-kill: 1.2.2
-      yargs: 16.2.0
+      yargs: 17.4.1
     dev: true
 
   /console-browserify/1.2.0:
@@ -13764,6 +13765,7 @@ packages:
 
   /nan/2.15.0:
     resolution: {integrity: sha512-8ZtvEnA2c5aYCZYd1cvgdnU6cqwixRoYg70xPLWUws5ORTa/lnw+u4amixRS/Ac5U5mQVgp9pnlSUnbNWFaWZQ==}
+    requiresBuild: true
     dev: true
     optional: true
 
@@ -16287,6 +16289,10 @@ packages:
   /shebang-regex/3.0.0:
     resolution: {integrity: sha512-7++dFhtcx3353uBaq8DDR4NuxBetBzC7ZQOhmTQInHEd6bSrXdiEyzCvG07Z44UYdLShWUyXt5M/yhz8ekcb1A==}
     engines: {node: '>=8'}
+    dev: true
+
+  /shell-quote/1.7.3:
+    resolution: {integrity: sha512-Vpfqwm4EnqGdlsBFNmHhxhElJYrdfcxPThu+ryKS5J8L/fhAwLazFZtq+S+TWZ9ANj2piSQLGj6NQg+lKPmxrw==}
     dev: true
 
   /side-channel/1.0.4:
