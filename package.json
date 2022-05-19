@@ -6,7 +6,6 @@
   "scripts": {
     "build": "turbo run build --filter=!remix",
     "build:packages": "turbo run build --filter=...[HEAD^1]",
-    "build:tokens": "turbo run build --filter=tokens",
     "chromatic": "chromatic",
     "clean": "turbo run clean",
     "e2e": "playwright test",
@@ -15,7 +14,7 @@
     "e2e:watch": "chokidar packages/**/*.e2e.ts -c \"pnpm e2e\"",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "lint": "eslint '**/*.{ts,tsx,js}' --ignore-pattern '/packages/' && stylelint '**/*.css' --ignore-pattern 'packages/**'",
-    "lint:ci": "pnpm build:tokens && pnpm lint && pnpm lint:packages",
+    "lint:ci": "turbo run build --filter=tokens && pnpm lint && pnpm lint:packages",
     "lint:packages": "turbo run lint --filter=...[HEAD^1]",
     "remix": "turbo run build --filter=remix && pnpm --filter=\"remix\" start",
     "storybook": "turbo run build --filter=tokens --filter=icons && start-storybook -p 3000",
