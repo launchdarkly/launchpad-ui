@@ -1,5 +1,18 @@
 # @launchpad-ui/alert
 
+## 0.1.2
+
+### Patch Changes
+
+- [#40](https://github.com/launchdarkly/launchpad-ui/pull/40) [`69c5602`](https://github.com/launchdarkly/launchpad-ui/commit/69c56021b0815e2da5861a696de0453447958cf0) Thanks [@Niznikr](https://github.com/Niznikr)! - Update unknown custom properties:
+
+  - Add `stylelint-value-no-unknown-custom-properties` to check for unknown custom props
+  - Pull in vars from all stylesheets
+
+- Updated dependencies [[`69c5602`](https://github.com/launchdarkly/launchpad-ui/commit/69c56021b0815e2da5861a696de0453447958cf0)]:
+  - @launchpad-ui/button@0.1.3
+  - @launchpad-ui/icons@0.1.2
+
 ## 0.1.1
 
 ### Patch Changes
