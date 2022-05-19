@@ -18,26 +18,6 @@
     {
       "matchPackagePatterns": ["^stylelint"],
       "groupName": "stylelint packages"
-    },
-    {
-      "matchPackagePatterns": ["^@storybook/"],
-      "groupName": "storybook packages"
-    },
-    {
-      "matchPackagePatterns": ["^@testing-library/"],
-      "groupName": "testing-library packages"
-    },
-    {
-      "matchPackagePatterns": ["^@remix-run/"],
-      "groupName": "remix packages"
-    },
-    {
-      "matchPackagePatterns": ["^@react-aria/"],
-      "groupName": "react-aria packages"
-    },
-    {
-      "matchPackagePatterns": ["^@react-stately/"],
-      "groupName": "react-stately packages"
     }
   ],
   "rangeStrategy": "bump"
