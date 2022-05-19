@@ -259,10 +259,10 @@ importers:
   packages/tokens:
     specifiers:
       style-dictionary: ^3.7.0
-      yaml: ^2.0.1
+      yaml: ^2.1.0
     devDependencies:
       style-dictionary: 3.7.0
-      yaml: 2.0.1
+      yaml: 2.1.0
 
 packages:
 
@@ -18021,8 +18021,8 @@ packages:
     engines: {node: '>= 6'}
     dev: true
 
-  /yaml/2.0.1:
-    resolution: {integrity: sha512-1NpAYQ3wjzIlMs0mgdBmYzLkFgWBIWrzYVDYfrixhoFNNgJ444/jT2kUT2sicRbJES3oQYRZugjB6Ro8SjKeFg==}
+  /yaml/2.1.0:
+    resolution: {integrity: sha512-OuAINfTsoJrY5H7CBWnKZhX6nZciXBydrMtTHr1dC4nP40X5jyTIVlogZHxSlVZM8zSgXRfgZGsaHF4+pV+JRw==}
     engines: {node: '>= 14'}
     dev: true
 
