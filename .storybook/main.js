@@ -1,3 +1,6 @@
+const path = require('path');
+const tsconfig = require('../tsconfig.json');
+
 module.exports = {
   core: {
     builder: 'webpack5',
@@ -20,4 +23,24 @@ module.exports = {
   features: {
     storyStoreV7: true,
   },
+  webpackFinal: async (config) => ({
+    ...config,
+    resolve: {
+      ...config.resolve,
+      alias: {
+        ...config.resolve.alias,
+        ...getAliases(),
+      },
+    },
+  }),
+};
+
+const getAliases = () => {
+  const paths = tsconfig.compilerOptions.paths;
+  const alias = {};
+  Object.keys(paths).forEach((key) => {
+    alias[key] = path.resolve(__dirname, `.${paths[key][0]}`);
+  });
+
+  return alias;
 };
