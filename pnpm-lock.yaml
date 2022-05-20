@@ -22,8 +22,8 @@ importers:
       '@storybook/react': ^6.5.0
       '@testing-library/dom': ^8.13.0
       '@testing-library/jest-dom': ^5.16.4
-      '@testing-library/react': ^13.1.1
-      '@testing-library/user-event': ^14.1.1
+      '@testing-library/react': ^13.2.0
+      '@testing-library/user-event': ^14.2.0
       '@types/jest-axe': ^3.5.3
       '@types/lodash.clonedeep': ^4.5.7
       '@types/node': ^17.0.31
@@ -89,8 +89,8 @@ importers:
       '@storybook/react': 6.5.0_kax5cwn6itbqlbxqmkqvyr3iim
       '@testing-library/dom': 8.13.0
       '@testing-library/jest-dom': 5.16.4
-      '@testing-library/react': 13.1.1_ef5jwxihqo6n7gxfmzogljlgcm
-      '@testing-library/user-event': 14.1.1_tlwynutqiyp5mns3woioasuxnq
+      '@testing-library/react': 13.2.0_ef5jwxihqo6n7gxfmzogljlgcm
+      '@testing-library/user-event': 14.2.0_tlwynutqiyp5mns3woioasuxnq
       '@types/jest-axe': 3.5.3
       '@types/lodash.clonedeep': 4.5.7
       '@types/node': 17.0.31
@@ -5078,8 +5078,8 @@ packages:
       redent: 3.0.0
     dev: true
 
-  /@testing-library/react/13.1.1_ef5jwxihqo6n7gxfmzogljlgcm:
-    resolution: {integrity: sha512-8mirlAa0OKaUvnqnZF6MdAh2tReYA2KtWVw1PKvaF5EcCZqgK5pl8iF+3uW90JdG5Ua2c2c2E2wtLdaug3dsVg==}
+  /@testing-library/react/13.2.0_ef5jwxihqo6n7gxfmzogljlgcm:
+    resolution: {integrity: sha512-Bprbz/SZVONCJy5f7hcihNCv313IJXdYiv0nSJklIs1SQCIHHNlnGNkosSXnGZTmesyGIcBGNppYhXcc11pb7g==}
     engines: {node: '>=12'}
     peerDependencies:
       react: ^18.0.0 || 18
@@ -5092,8 +5092,8 @@ packages:
       react-dom: 18.1.0_react@18.1.0
     dev: true
 
-  /@testing-library/user-event/14.1.1_tlwynutqiyp5mns3woioasuxnq:
-    resolution: {integrity: sha512-XrjH/iEUqNl9lF2HX9YhPNV7Amntkcnpw0Bo1KkRzowNDcgSN9i0nm4Q8Oi5wupgdfPaJNMAWa61A+voD6Kmwg==}
+  /@testing-library/user-event/14.2.0_tlwynutqiyp5mns3woioasuxnq:
+    resolution: {integrity: sha512-+hIlG4nJS6ivZrKnOP7OGsDu9Fxmryj9vCl8x0ZINtTJcCHs2zLsYif5GzuRiBF2ck5GZG2aQr7Msg+EHlnYVQ==}
     engines: {node: '>=12', npm: '>=6'}
     peerDependencies:
       '@testing-library/dom': '>=7.21.4'
