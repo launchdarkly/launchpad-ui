@@ -144,6 +144,7 @@ importers:
       '@launchpad-ui/button': workspace:~
       '@launchpad-ui/icons': workspace:~
       '@launchpad-ui/lozenge': workspace:~
+      '@launchpad-ui/progress': workspace:~
       '@launchpad-ui/toggle': workspace:~
       '@launchpad-ui/tokens': workspace:~
       '@remix-run/dev': ^1.5.1
@@ -160,6 +161,7 @@ importers:
       '@launchpad-ui/button': link:../../packages/button
       '@launchpad-ui/icons': link:../../packages/icons
       '@launchpad-ui/lozenge': link:../../packages/lozenge
+      '@launchpad-ui/progress': link:../../packages/progress
       '@launchpad-ui/toggle': link:../../packages/toggle
       '@launchpad-ui/tokens': link:../../packages/tokens
       '@remix-run/node': 1.5.1_ef5jwxihqo6n7gxfmzogljlgcm
@@ -234,6 +236,23 @@ importers:
       '@launchpad-ui/tokens': link:../tokens
       classnames: 2.3.1
     devDependencies:
+      react: 18.1.0
+      react-dom: 18.1.0_react@18.1.0
+
+  packages/progress:
+    specifiers:
+      '@launchpad-ui/tokens': workspace:~
+      '@types/lodash.clamp': ^4.0.7
+      classnames: ^2.3.1
+      lodash.clamp: ^4.0.3
+      react: ^18.1.0
+      react-dom: ^18.1.0
+    dependencies:
+      '@launchpad-ui/tokens': link:../tokens
+      classnames: 2.3.1
+      lodash.clamp: 4.0.3
+    devDependencies:
+      '@types/lodash.clamp': 4.0.7
       react: 18.1.0
       react-dom: 18.1.0_react@18.1.0
 
@@ -5067,6 +5086,12 @@ packages:
     resolution: {integrity: sha512-BQ5aZNSCpj7D6K2ksrRCTmKRLEpnPvWDiLPfoGyhZ++8YtiK9d/3DBKPJgry359X/P1PfruyYwvnvwFjuEiEIg==}
     dependencies:
       '@types/node': 17.0.31
+    dev: true
+
+  /@types/lodash.clamp/4.0.7:
+    resolution: {integrity: sha512-qr2pQl+7Ntd/5q9sZfY/MUOMd7FgGvfyTwqutf1c/mwZiVseaoD/xsp/OeOLAkT/XmM7wGfZcm6vzNShnNF2+g==}
+    dependencies:
+      '@types/lodash': 4.14.182
     dev: true
 
   /@types/lodash.clonedeep/4.5.7:
@@ -12083,6 +12108,10 @@ packages:
     dependencies:
       p-locate: 5.0.0
     dev: true
+
+  /lodash.clamp/4.0.3:
+    resolution: {integrity: sha1-XCS+3u7vB1NWDcK0y0Zx+Qpt36o=}
+    dev: false
 
   /lodash.clonedeep/4.5.0:
     resolution: {integrity: sha1-4j8/nE+Pvd6HJSnBBxhXoIblzO8=}

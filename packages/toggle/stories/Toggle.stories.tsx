@@ -1,5 +1,5 @@
 import { useEffect } from '@storybook/addons';
-import { DecoratorFn, Story } from '@storybook/react';
+import type { DecoratorFn, Story } from '@storybook/react';
 
 import { createWithClassesDecorator, PseudoClasses } from '../../../.storybook/utils';
 

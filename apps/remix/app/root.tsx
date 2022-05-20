@@ -17,6 +17,7 @@ import iconStyles from '@launchpad-ui/icons/styles.css';
 import lozengeStyles from '@launchpad-ui/lozenge/styles.css';
 import alertStyles from '@launchpad-ui/alert/styles/Alert.css';
 import toggleStyles from '@launchpad-ui/toggle/styles.css';
+import progressStyles from '@launchpad-ui/progress/styles.css';
 
 export const links: LinksFunction = () => {
   return [
@@ -27,6 +28,7 @@ export const links: LinksFunction = () => {
     { rel: 'stylesheet', href: lozengeStyles },
     { rel: 'stylesheet', href: alertStyles },
     { rel: 'stylesheet', href: toggleStyles },
+    { rel: 'stylesheet', href: progressStyles },
   ];
 };
 

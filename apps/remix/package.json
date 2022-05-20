@@ -17,6 +17,7 @@
     "@launchpad-ui/button": "workspace:~",
     "@launchpad-ui/icons": "workspace:~",
     "@launchpad-ui/lozenge": "workspace:~",
+    "@launchpad-ui/progress": "workspace:~",
     "@launchpad-ui/toggle": "workspace:~",
     "@launchpad-ui/tokens": "workspace:~",
     "@remix-run/node": "^1.5.1",
