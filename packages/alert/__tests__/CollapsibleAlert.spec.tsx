@@ -2,7 +2,7 @@ import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { axe } from 'jest-axe';
 
-import { AlertKind, CollapsibleAlert } from '../src/index';
+import { AlertKind, CollapsibleAlert } from '../src';
 
 describe('CollapsibleAlert', () => {
   it('renders', () => {
