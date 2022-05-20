@@ -2,8 +2,8 @@ import { it, expect, describe, vi } from 'vitest';
 import { fireEvent, render, screen } from '@testing-library/react';
 import { axe } from 'jest-axe';
 
-import type { AlertProps } from '../src';
-import { Alert, AlertKind, AlertSize } from '../src';
+import type { AlertProps } from '../src/index';
+import { Alert, AlertKind, AlertSize } from '../src/index';
 
 const createComponent = (props?: AlertProps) => <Alert {...props}>Alert text!</Alert>;
 
