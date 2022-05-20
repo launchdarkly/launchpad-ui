@@ -13,7 +13,7 @@ describe('CollapsibleAlert', () => {
   it('is accessible', async () => {
     const { container } = render(
       <CollapsibleAlert message="A test message." kind={AlertKind.WARNING}>
-        <>Hello</>
+        Hello
       </CollapsibleAlert>
     );
     const results = await axe(container);
@@ -23,7 +23,7 @@ describe('CollapsibleAlert', () => {
   test('shows and hides child component on click', async () => {
     const node = render(
       <CollapsibleAlert message="A test message." kind={AlertKind.WARNING}>
-        <>Hello</>
+        Hello
       </CollapsibleAlert>
     );
 
