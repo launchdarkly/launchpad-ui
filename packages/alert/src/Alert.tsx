@@ -64,7 +64,7 @@ export type AlertProps = {
   noIcon?: boolean;
 };
 
-export function Alert({
+const Alert = ({
   children,
   className,
   compact,
@@ -76,7 +76,7 @@ export function Alert({
   dismissible,
   onDismiss,
   noIcon,
-}: AlertProps) {
+}: AlertProps) => {
   const [dismissed, setDismissed] = useState(false);
 
   const defaultClasses = ['Alert', `Alert--${kind}`, className];
@@ -129,4 +129,6 @@ export function Alert({
       )}
     </div>
   );
-}
+};
+
+export { Alert };
