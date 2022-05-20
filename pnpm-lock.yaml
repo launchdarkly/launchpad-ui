@@ -144,6 +144,7 @@ importers:
       '@launchpad-ui/button': workspace:~
       '@launchpad-ui/icons': workspace:~
       '@launchpad-ui/lozenge': workspace:~
+      '@launchpad-ui/progress': workspace:~
       '@launchpad-ui/toggle': workspace:~
       '@launchpad-ui/tokens': workspace:~
       '@remix-run/dev': ^1.5.1
@@ -160,6 +161,7 @@ importers:
       '@launchpad-ui/button': link:../../packages/button
       '@launchpad-ui/icons': link:../../packages/icons
       '@launchpad-ui/lozenge': link:../../packages/lozenge
+      '@launchpad-ui/progress': link:../../packages/progress
       '@launchpad-ui/toggle': link:../../packages/toggle
       '@launchpad-ui/tokens': link:../../packages/tokens
       '@remix-run/node': 1.5.1_ef5jwxihqo6n7gxfmzogljlgcm
