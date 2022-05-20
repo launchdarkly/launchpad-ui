@@ -6,11 +6,7 @@ import { AlertKind, CollapsibleAlert } from '../src';
 
 describe('CollapsibleAlert', () => {
   it('renders', () => {
-    render(
-      <CollapsibleAlert message="A test message." kind={AlertKind.WARNING}>
-        <></>
-      </CollapsibleAlert>
-    );
+    render(<CollapsibleAlert message="A test message." kind={AlertKind.WARNING} />);
     expect(screen.getByText('A test message.')).toBeInTheDocument();
   });
 
