@@ -4,7 +4,7 @@ import clamp from 'lodash.clamp';
 
 import { DelayedIndicator } from './DelayedIndicator';
 
-import './styles';
+import './styles.css';
 
 export enum ProgressSize {
   Small = 'small',
