@@ -15,7 +15,7 @@
     "e2e:watch": "chokidar packages/**/*.e2e.ts -c \"pnpm e2e\"",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "lint": "eslint '**/*.{ts,tsx,js}' --ignore-pattern '/packages/' --ignore-pattern '/apps/'",
-    "lint:ci": "turbo run build --filter=tokens && pnpm lint && pnpm lint:packages",
+    "lint:ci": "pnpm build:transform && pnpm lint && pnpm lint:packages",
     "lint:packages": "turbo run lint --filter=...[HEAD^1]",
     "remix": "turbo run build --filter=remix && pnpm --filter=\"remix\" start",
     "storybook": "pnpm build:transform && start-storybook -p 3000",
