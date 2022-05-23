@@ -19,6 +19,7 @@ describe('Button', () => {
 
   it('can render as a link', () => {
     const { container } = render(<Button href="#">Default Button Link</Button>);
+    // eslint-disable-next-line testing-library/no-container, testing-library/no-node-access
     expect(container.querySelector('a')).not.toBeNull();
   });
 

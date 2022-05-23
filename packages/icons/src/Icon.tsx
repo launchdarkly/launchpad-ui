@@ -35,7 +35,7 @@ const Icon = ({ name, subtle, className, size, children, ...props }: IconProps) 
       desc.setAttribute('id', id);
       svgRef.current?.setAttribute('aria-describedby', id);
     }
-  }, []);
+  }, [name]);
 
   return (
     <span {...props} className={classes}>

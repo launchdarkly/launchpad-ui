@@ -1,5 +1,6 @@
 import { it, expect, describe, vi } from 'vitest';
-import { fireEvent, render, screen } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import { axe } from 'jest-axe';
 
 import type { AlertProps } from '../src';
@@ -24,13 +25,14 @@ describe('Alert', () => {
       expect(closeButton).toBeInTheDocument();
     });
 
-    it('close button should trigger onDismiss when clicked and hide Alert', () => {
+    it('close button should trigger onDismiss when clicked and hide Alert', async () => {
       const onDismiss = vi.fn();
       render(createComponent({ dismissible: true, onDismiss }));
 
       const closeButton = screen.getByLabelText('Close this alert.');
 
-      fireEvent.click(closeButton);
+      userEvent.setup();
+      await userEvent.click(closeButton);
 
       expect(onDismiss).toHaveBeenCalledTimes(1);
       expect(screen.queryByText('Alert text!')).not.toBeInTheDocument();
