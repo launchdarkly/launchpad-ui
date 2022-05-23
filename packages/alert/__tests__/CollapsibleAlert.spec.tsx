@@ -21,15 +21,15 @@ describe('CollapsibleAlert', () => {
   });
 
   test('shows and hides child component on click', async () => {
-    const node = render(
+    render(
       <CollapsibleAlert message="A test message." kind={AlertKind.WARNING}>
         Hello
       </CollapsibleAlert>
     );
 
     userEvent.setup();
-    await userEvent.click(node.getByText(/Show more/i));
+    await userEvent.click(screen.getByText(/Show more/i));
 
-    expect(node.queryByText(/Hello/i)).toBeTruthy();
+    expect(screen.getByText(/Hello/i)).toBeTruthy();
   });
 });

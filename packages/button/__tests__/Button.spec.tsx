@@ -1,7 +1,7 @@
-import { it, expect, describe, vi } from 'vitest';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { axe } from 'jest-axe';
+import { it, expect, describe, vi } from 'vitest';
 
 import { Button, ButtonKind, ButtonSize } from '../src';
 
@@ -19,6 +19,7 @@ describe('Button', () => {
 
   it('can render as a link', () => {
     const { container } = render(<Button href="#">Default Button Link</Button>);
+    // eslint-disable-next-line testing-library/no-container, testing-library/no-node-access
     expect(container.querySelector('a')).not.toBeNull();
   });
 

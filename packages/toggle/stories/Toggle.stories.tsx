@@ -1,9 +1,10 @@
-import { useEffect } from '@storybook/addons';
 import type { DecoratorFn, Story } from '@storybook/react';
 
-import { createWithClassesDecorator, PseudoClasses } from '../../../.storybook/utils';
+import { useEffect } from '@storybook/addons';
 
+import { createWithClassesDecorator, PseudoClasses } from '../../../.storybook/utils';
 import { Toggle } from '../src';
+
 import './Toggle.stories.css';
 
 const testingChromaticClassNames = [PseudoClasses.HOVER, PseudoClasses.FOCUS, PseudoClasses.ACTIVE];
@@ -32,12 +33,12 @@ const useModifiedClassLists: DecoratorFn = (story, context) => {
   }
 
   return (
-    <div className="toggle-storygroup-wrapper ">
-      <span className="toggle-state-label">Resting</span>
+    <div className="Toggle-storygroup-wrapper ">
+      <span className="Toggle-state-label">Resting</span>
       {story()}
       {originalTemplate && (
         <>
-          <span className="toggle-state-label">Disabled</span>
+          <span className="Toggle-state-label">Disabled</span>
           {originalTemplate({ ...args, disabled: true, id: 'disabled-toggle' }, context)}
         </>
       )}
@@ -52,7 +53,7 @@ export default {
   decorators: [
     createWithClassesDecorator(testingChromaticClassNames, (args, originalStory, context) => (
       <>
-        <span className="toggle-state-label">{`${
+        <span className="Toggle-state-label">{`${
           args.className?.replace('pseudo-', '') || ''
         }`}</span>
         {originalStory({ ...args, id: args.className }, context)}
@@ -71,7 +72,7 @@ export const WithoutOnText = { args: { checked: true, toggleOnText: '' } };
 export const WithoutOffText = { args: { checked: false, toggleOffText: '' } };
 
 export const AriaLabelledByExample = () => (
-  <div className="toggle-iggy-grid">
+  <div className="Toggle-iggy-grid">
     <h3 id="Iggy">Activate Iggy</h3>
     <Toggle aria-labelledby="Iggy" checked />
   </div>

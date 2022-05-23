@@ -1,11 +1,12 @@
-import { Fragment } from 'react';
 import type { DecoratorFn, Meta } from '@storybook/react';
 
-import { Button, ButtonKind, ButtonSize, ButtonType } from '../src';
-import './Button.stories.css';
+import { Fragment } from 'react';
 
 import { Add } from '../../icons/src';
 import { IconSize } from '../../icons/src/types';
+import { Button, ButtonKind, ButtonSize, ButtonType } from '../src';
+
+import './Button.stories.css';
 
 const buttonTemplateWithStates: DecoratorFn = (storyComponent, context) => {
   const { viewMode, parameters } = context;
@@ -18,7 +19,7 @@ const buttonTemplateWithStates: DecoratorFn = (storyComponent, context) => {
 
   const PseudoStateButtons = ButtonStates.map((className, index) => (
     <Fragment key={`${className}_Button`}>
-      <span className="button-state-label">
+      <span className="Button-state-label">
         {ButtonLabels[ButtonLabels.length - 1 >= index ? index : ButtonLabels.length - 1]}
       </span>
       <div className={className}>
@@ -30,11 +31,11 @@ const buttonTemplateWithStates: DecoratorFn = (storyComponent, context) => {
     return storyComponent();
   }
   return (
-    <div className="storygroup-wrapper">
-      <span className="button-state-label">Resting</span>
+    <div className="Storygroup-wrapper">
+      <span className="Button-state-label">Resting</span>
       {storyComponent()}
       {PseudoStateButtons}
-      <span className="button-state-label">Disabled</span>
+      <span className="Button-state-label">Disabled</span>
       <Button {...storyArgs} disabled>
         {buttonLabel}
       </Button>

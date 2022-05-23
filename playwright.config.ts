@@ -1,5 +1,6 @@
-import { PlaywrightTestConfig, devices } from '@playwright/test';
 import path from 'path';
+
+import { PlaywrightTestConfig, devices } from '@playwright/test';
 
 const config: PlaywrightTestConfig = {
   testDir: path.resolve(),

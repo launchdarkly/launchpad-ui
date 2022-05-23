@@ -1,7 +1,6 @@
 import classNames from 'classnames';
 
 import './styles.css';
-
 import { LozengeKind, LozengeSize } from './types';
 
 export type LozengeProps = {

@@ -1,6 +1,6 @@
+import { Button, ButtonKind } from '@launchpad-ui/button';
 import { Item } from '@react-stately/collections';
 
-import { Button, ButtonKind } from '@launchpad-ui/button';
 import { TabList } from '../src';
 
 export default {

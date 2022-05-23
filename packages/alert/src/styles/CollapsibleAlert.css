@@ -65,7 +65,7 @@ backround support in CollapsibleAlert */
 while respecting CSS transitions
 https://www.scottohara.me/blog/2017/04/14/inclusively-hidden.html
  */
-.CollapsibleAlert--content-container {
+.CollapsibleAlert--contentContainer {
   width: 100%;
   padding-top: 0;
   border-top: none;
@@ -118,7 +118,7 @@ https://www.scottohara.me/blog/2017/04/14/inclusively-hidden.html
 }
 
 /* animate content container when button toggled */
-[aria-expanded='true'] + .CollapsibleAlert--content-container {
+[aria-expanded='true'] + .CollapsibleAlert--contentContainer {
   margin-top: 0.4rem;
   visibility: visible;
   max-height: 31.25rem;
@@ -132,7 +132,7 @@ https://www.scottohara.me/blog/2017/04/14/inclusively-hidden.html
   width: 100%;
 }
 
-.LegacyStyles .CollapsibleAlert--content-container a {
+.LegacyStyles .CollapsibleAlert--contentContainer a {
   color: var(--color-blue-500);
 
   &:hover {
@@ -157,7 +157,7 @@ https://www.scottohara.me/blog/2017/04/14/inclusively-hidden.html
 }
 
 /* reset specific table overrides in Collapsible Alert */
-.LegacyStyles .CollapsibleAlert--content-container {
+.LegacyStyles .CollapsibleAlert--contentContainer {
   & .Table-header {
     border-bottom: 1px solid var(--CollapsibleAlert-Table-color-border);
   }

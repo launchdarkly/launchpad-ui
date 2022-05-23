@@ -1,9 +1,8 @@
-import { Component } from 'react';
 import cx from 'classnames';
 import clamp from 'lodash.clamp';
+import { Component } from 'react';
 
 import { DelayedIndicator } from './DelayedIndicator';
-
 import './styles.css';
 
 export enum ProgressSize {

@@ -1,6 +1,6 @@
-import { it, expect, describe, vi } from 'vitest';
 import { render, screen, waitFor } from '@testing-library/react';
 import { axe } from 'jest-axe';
+import { it, expect, describe, vi } from 'vitest';
 
 import { AnimationDelay, Progress, ProgressSize } from '../src';
 

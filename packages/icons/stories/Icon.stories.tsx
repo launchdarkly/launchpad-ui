@@ -1,3 +1,4 @@
+/* eslint-disable import/namespace */
 import type { Meta } from '@storybook/react';
 
 import { Icon, IconSize } from '../src';

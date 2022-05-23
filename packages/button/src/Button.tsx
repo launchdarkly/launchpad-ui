@@ -1,12 +1,12 @@
-import { cloneElement, createRef, PureComponent } from 'react';
-import classNames from 'classnames';
 import type { LocationDescriptor } from 'history';
+
+import classNames from 'classnames';
+import { cloneElement, createRef, PureComponent } from 'react';
 
 // TODO: Implement tooltip
 // import { Tooltip } from '@launchpad-ui/tooltip';
 
 import './styles/Button.css';
-
 import { ButtonKind, ButtonSize, ButtonType } from './types';
 
 export type ButtonProps = {

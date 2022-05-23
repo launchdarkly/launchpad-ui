@@ -1,10 +1,11 @@
-import { useRef } from 'react';
-import { useTab, useTabList, useTabPanel } from '@react-aria/tabs';
 import type { TabListState } from '@react-stately/tabs';
-import { useTabListState } from '@react-stately/tabs';
 import type { ItemElement, Node } from '@react-types/shared';
 import type { AriaTabListProps, AriaTabPanelProps } from '@react-types/tabs';
+
+import { useTab, useTabList, useTabPanel } from '@react-aria/tabs';
+import { useTabListState } from '@react-stately/tabs';
 import cx from 'classnames';
+import { useRef } from 'react';
 
 import './styles.css';
 

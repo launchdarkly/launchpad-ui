@@ -4,7 +4,10 @@ module.exports = {
     'eslint:recommended',
     'plugin:react/recommended',
     'plugin:react/jsx-runtime',
+    'plugin:react-hooks/recommended',
     'plugin:@typescript-eslint/recommended',
+    'plugin:import/recommended',
+    'plugin:import/typescript',
     'plugin:prettier/recommended',
   ],
   parser: '@typescript-eslint/parser',
@@ -15,7 +18,7 @@ module.exports = {
       jsx: true,
     },
   },
-  plugins: ['react', '@typescript-eslint'],
+  plugins: ['react', '@typescript-eslint', 'testing-library'],
   settings: {
     react: {
       version: 'detect',
@@ -25,7 +28,13 @@ module.exports = {
     browser: true,
     node: true,
   },
-  ignorePatterns: ['dist', 'node_modules'],
+  ignorePatterns: [
+    'dist',
+    'node_modules',
+    '/packages/icons/src/*.tsx',
+    '!/packages/icons/src/Icon.tsx',
+    '!/packages/icons/src/KindIcon.tsx',
+  ],
   rules: {
     'no-unused-vars': 'off',
     '@typescript-eslint/no-unused-vars': [
@@ -34,6 +43,27 @@ module.exports = {
         ignoreRestSiblings: true,
       },
     ],
+    'testing-library/prefer-user-event': 'error',
+    'import/order': [
+      'error',
+      {
+        alphabetize: {
+          order: 'asc',
+        },
+        groups: ['type', 'builtin', 'external', 'internal', 'parent', ['sibling', 'index']],
+        'newlines-between': 'always',
+        pathGroups: [],
+        pathGroupsExcludedImportTypes: [],
+        warnOnUnassignedImports: true,
+      },
+    ],
+    'import/no-unresolved': ['error', { ignore: ['^@launchpad-ui/'] }],
     'react/function-component-definition': [2, { namedComponents: 'arrow-function' }],
   },
+  overrides: [
+    {
+      files: ['**/__tests__/**/*.[jt]s?(x)', '**/?(*.)+(spec|test).[jt]s?(x)'],
+      extends: ['plugin:testing-library/react'],
+    },
+  ],
 };

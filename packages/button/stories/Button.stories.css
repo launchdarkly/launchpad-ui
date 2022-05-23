@@ -1,8 +1,8 @@
-.storygroup-wrapper > * {
+.Storygroup-wrapper > * {
   margin: auto 0;
 }
 
-.storygroup-wrapper {
+.Storygroup-wrapper {
   display: grid;
   grid-template-rows: 1fr;
   grid-template-columns: 8rem auto;
@@ -10,7 +10,7 @@
   justify-items: flex-start;
 }
 
-.button-state-label {
+.Button-state-label {
   text-align: right;
   font-weight: bold;
 }
