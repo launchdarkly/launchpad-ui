@@ -51,6 +51,7 @@ module.exports = {
         warnOnUnassignedImports: true,
       },
     ],
+    'import/no-unresolved': ['error', { ignore: ['^@launchpad-ui/'] }],
   },
   overrides: [
     {
