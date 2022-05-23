@@ -1,4 +1,4 @@
-.toggle-storygroup-wrapper {
+.Toggle-storygroup-wrapper {
   display: grid;
   grid-template-rows: 1fr;
   grid-template-columns: 8rem auto;
@@ -7,13 +7,13 @@
   align-items: center;
 }
 
-.toggle-state-label {
+.Toggle-state-label {
   text-align: right;
   font-weight: bold;
   text-transform: capitalize;
 }
 
-.toggle-iggy-grid {
+.Toggle-iggy-grid {
   display: grid;
   grid-template-rows: 1fr;
   grid-template-columns: 8rem auto;

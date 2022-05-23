@@ -54,7 +54,7 @@ export function CollapsibleAlert({ children, kind, message }: CollapsibleAlertPr
               </>
             )}
           </button>
-          <div className="CollapsibleAlert--content-container">
+          <div className="CollapsibleAlert--contentContainer">
             {!alertCollapsed && <>{children}</>}
           </div>
         </Alert>
