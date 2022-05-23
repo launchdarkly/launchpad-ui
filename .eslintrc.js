@@ -28,7 +28,13 @@ module.exports = {
     browser: true,
     node: true,
   },
-  ignorePatterns: ['dist', 'node_modules'],
+  ignorePatterns: [
+    'dist',
+    'node_modules',
+    '/packages/icons/src/*.tsx',
+    '!/packages/icons/src/Icon.tsx',
+    '!/packages/icons/src/KindIcon.tsx',
+  ],
   rules: {
     'no-unused-vars': 'off',
     '@typescript-eslint/no-unused-vars': [
