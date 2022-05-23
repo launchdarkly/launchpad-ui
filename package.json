@@ -37,6 +37,7 @@
   },
   "homepage": "https://github.com/launchdarkly/launchpad-ui#readme",
   "devDependencies": {
+    "@axe-core/playwright": "^4.4.2",
     "@babel/core": "^7.18.0",
     "@babel/preset-react": "^7.17.12",
     "@changesets/changelog-github": "^0.4.4",
@@ -57,7 +58,6 @@
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.2.0",
     "@testing-library/user-event": "^14.2.0",
-    "@types/jest-axe": "^3.5.3",
     "@types/lodash.clonedeep": "^4.5.7",
     "@types/node": "^17.0.31",
     "@types/react": "^18.0.8",
@@ -84,7 +84,6 @@
     "fsevents": "^2.3.2",
     "http-server": "^14.1.0",
     "husky": "^8.0.1",
-    "jest-axe": "^6.0.0",
     "jsdom": "^19.0.0",
     "lint-staged": "^12.4.1",
     "lodash.clonedeep": "^4.5.0",

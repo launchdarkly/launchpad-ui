@@ -4,6 +4,7 @@ importers:
 
   .:
     specifiers:
+      '@axe-core/playwright': ^4.4.2
       '@babel/core': ^7.18.0
       '@babel/preset-react': ^7.17.12
       '@changesets/changelog-github': ^0.4.4
@@ -24,7 +25,6 @@ importers:
       '@testing-library/jest-dom': ^5.16.4
       '@testing-library/react': ^13.2.0
       '@testing-library/user-event': ^14.2.0
-      '@types/jest-axe': ^3.5.3
       '@types/lodash.clonedeep': ^4.5.7
       '@types/node': ^17.0.31
       '@types/react': ^18.0.8
@@ -51,7 +51,6 @@ importers:
       fsevents: ^2.3.2
       http-server: ^14.1.0
       husky: ^8.0.1
-      jest-axe: ^6.0.0
       jsdom: ^19.0.0
       lint-staged: ^12.4.1
       lodash.clonedeep: ^4.5.0
@@ -73,6 +72,7 @@ importers:
       wait-on: ^6.0.1
       webpack: ^5.72.0
     devDependencies:
+      '@axe-core/playwright': 4.4.2
       '@babel/core': 7.18.0
       '@babel/preset-react': 7.17.12_@babel+core@7.18.0
       '@changesets/changelog-github': 0.4.4
@@ -93,7 +93,6 @@ importers:
       '@testing-library/jest-dom': 5.16.4
       '@testing-library/react': 13.2.0_ef5jwxihqo6n7gxfmzogljlgcm
       '@testing-library/user-event': 14.2.0_tlwynutqiyp5mns3woioasuxnq
-      '@types/jest-axe': 3.5.3
       '@types/lodash.clonedeep': 4.5.7
       '@types/node': 17.0.35
       '@types/react': 18.0.9
@@ -120,7 +119,6 @@ importers:
       fsevents: 2.3.2
       http-server: 14.1.0
       husky: 8.0.1
-      jest-axe: 6.0.0
       jsdom: 19.0.0
       lint-staged: 12.4.1
       lodash.clonedeep: 4.5.0
@@ -326,6 +324,13 @@ packages:
     dependencies:
       '@jridgewell/gen-mapping': 0.1.1
       '@jridgewell/trace-mapping': 0.3.13
+    dev: true
+
+  /@axe-core/playwright/4.4.2:
+    resolution: {integrity: sha512-PzdGAG4ybVfu/hgMRiMdirSGhwZf/hHlfEDmr/WFdcYv60XhQKSgb5h9B2H+6WN17hTmbacbQigq/4r5b7Ok4g==}
+    dependencies:
+      axe-core: 4.4.2
+      playwright: 1.22.2
     dev: true
 
   /@babel/code-frame/7.16.7:
@@ -5203,13 +5208,6 @@ packages:
       '@types/istanbul-lib-report': 3.0.0
     dev: true
 
-  /@types/jest-axe/3.5.3:
-    resolution: {integrity: sha512-ad9qI9f+00N8IlOuGh6dnZ6o0BDdV9VhGfTUr1zCejsPvOfZd6eohffe4JYxUoUuRYEftyMcaJ6Ux4+MsOpGHg==}
-    dependencies:
-      '@types/jest': 27.5.1
-      axe-core: 3.5.6
-    dev: true
-
   /@types/jest/27.5.1:
     resolution: {integrity: sha512-fUy7YRpT+rHXto1YlL+J9rs0uLGyiqVt3ZOTQR+4ROc47yNl8WLdVLgUloBRhOxP1PZvguHl44T3H0wAWxahYQ==}
     dependencies:
@@ -6333,16 +6331,6 @@ packages:
     resolution: {integrity: sha512-DMD0KiN46eipeziST1LPP/STfDU0sufISXmjSgvVsoU2tqxctQeASejWcfNtxYKqETM1UxQ8sp2OrSBWpHY6sw==}
     engines: {node: '>= 0.4'}
     dev: false
-
-  /axe-core/3.5.6:
-    resolution: {integrity: sha512-LEUDjgmdJoA3LqklSTwKYqkjcZ4HKc4ddIYGSAiSkr46NTjzg2L9RNB+lekO9P7Dlpa87+hBtzc2Fzn/+GUWMQ==}
-    engines: {node: '>=4'}
-    dev: true
-
-  /axe-core/4.4.1:
-    resolution: {integrity: sha512-gd1kmb21kwNuWr6BQz8fv6GNECPBnUasepcoLbekws23NVBLODdsClRZ+bQ8+9Uomf3Sm3+Vwn0oYG9NvwnJCw==}
-    engines: {node: '>=4'}
-    dev: true
 
   /axe-core/4.4.2:
     resolution: {integrity: sha512-LVAaGp/wkkgYJcjmHsoKx4juT1aQvJyPcW09MLCjVTh3V2cc6PnyempiLMNH5iMdfIX/zdbjUx2KDjMLCTdPeA==}
@@ -11691,16 +11679,6 @@ packages:
       iterate-iterator: 1.0.2
     dev: true
 
-  /jest-axe/6.0.0:
-    resolution: {integrity: sha512-gAh/2zoWii4Rbhe6IUIo5TTiseGJDCitFnDFwBNpIuaOciyQgVZue6jtd4W7oMoKHewKoRSuIol7t/MuGx+mqg==}
-    engines: {node: '>= 10.0.0'}
-    dependencies:
-      axe-core: 4.4.1
-      chalk: 4.1.0
-      jest-matcher-utils: 27.0.2
-      lodash.merge: 4.6.2
-    dev: true
-
   /jest-diff/27.5.1:
     resolution: {integrity: sha512-m0NvkX55LDt9T4mctTEgnZk3fmEg3NRYutvMPWM/0iPnkFj2wIeF45O1718cMSOFO1vINkqmxqD8vE37uTEbqw==}
     engines: {node: ^10.13.0 || ^12.13.0 || ^14.15.0 || >=15.0.0}
@@ -11737,16 +11715,6 @@ packages:
       fsevents: 2.3.2
     transitivePeerDependencies:
       - supports-color
-    dev: true
-
-  /jest-matcher-utils/27.0.2:
-    resolution: {integrity: sha512-Qczi5xnTNjkhcIB0Yy75Txt+Ez51xdhOxsukN7awzq2auZQGPHcQrJ623PZj0ECDEMOk2soxWx05EXdXGd1CbA==}
-    engines: {node: ^10.13.0 || ^12.13.0 || ^14.15.0 || >=15.0.0}
-    dependencies:
-      chalk: 4.1.0
-      jest-diff: 27.5.1
-      jest-get-type: 27.5.1
-      pretty-format: 27.5.1
     dev: true
 
   /jest-matcher-utils/27.5.1:
@@ -14057,6 +14025,15 @@ packages:
     resolution: {integrity: sha512-w/hc/Ld0RM4pmsNeE6aL/fPNWw8BWit2tg+TfqJ3+p59c6s3B6C8mXvXrIPmfQEobkcFDc+4KirNzOQ+uBSP1Q==}
     engines: {node: '>=14'}
     hasBin: true
+    dev: true
+
+  /playwright/1.22.2:
+    resolution: {integrity: sha512-hUTpg7LytIl3/O4t0AQJS1V6hWsaSY5uZ7w1oCC8r3a1AQN5d6otIdCkiB3cbzgQkcMaRxisinjMFMVqZkybdQ==}
+    engines: {node: '>=14'}
+    hasBin: true
+    requiresBuild: true
+    dependencies:
+      playwright-core: 1.22.2
     dev: true
 
   /pnp-webpack-plugin/1.6.4_typescript@4.7.2:
