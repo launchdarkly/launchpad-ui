@@ -7,6 +7,8 @@
       "@launchpad-ui/button": ["./packages/button/src"],
       "@launchpad-ui/icons": ["./packages/icons/src"],
       "@launchpad-ui/lozenge": ["./packages/lozenge/src"],
+      "@launchpad-ui/progress": ["./packages/progress/src"],
+      "@launchpad-ui/tab-list": ["./packages/tab-list/src"],
       "@launchpad-ui/toggle": ["./packages/toggle/src"]
     }
   }

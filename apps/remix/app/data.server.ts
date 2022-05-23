@@ -23,6 +23,10 @@ export async function getComponents() {
       name: 'Progress',
     },
     {
+      to: 'components/tab-list',
+      name: 'TabList',
+    },
+    {
       to: 'components/toggle',
       name: 'Toggle',
     },

@@ -57,7 +57,7 @@ export type ToggleProps = {
  * goodness (the useFocus hook is leveraged).
  */
 
-export function Toggle(props: ToggleProps) {
+const Toggle = (props: ToggleProps) => {
   const {
     'aria-label': ariaLabel,
     'aria-labelledby': ariaLabelledby,
@@ -112,4 +112,6 @@ export function Toggle(props: ToggleProps) {
       </label>
     </div>
   );
-}
+};
+
+export { Toggle };

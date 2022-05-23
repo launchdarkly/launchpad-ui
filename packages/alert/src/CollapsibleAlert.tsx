@@ -23,7 +23,7 @@ export type CollapsibleAlertProps = {
   message: string | JSX.Element;
 };
 
-export function CollapsibleAlert({ children, kind, message }: CollapsibleAlertProps) {
+const CollapsibleAlert = ({ children, kind, message }: CollapsibleAlertProps) => {
   const [alertCollapsed, setAlertCollapsed] = useState(true);
   const buttonRef = useRef(null);
 
@@ -62,4 +62,6 @@ export function CollapsibleAlert({ children, kind, message }: CollapsibleAlertPr
       </div>
     </>
   );
-}
+};
+
+export { CollapsibleAlert };
