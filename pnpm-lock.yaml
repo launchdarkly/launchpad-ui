@@ -155,6 +155,7 @@ importers:
       '@remix-run/react': ^1.5.1
       '@remix-run/serve': ^1.5.1
       eslint: ^8.16.0
+      isbot: ^3.5.0
       react: ^18.1.0
       react-dom: ^18.1.0
       typescript: ^4.6.3
@@ -171,6 +172,7 @@ importers:
       '@remix-run/node': 1.5.1_ef5jwxihqo6n7gxfmzogljlgcm
       '@remix-run/react': 1.5.1_ef5jwxihqo6n7gxfmzogljlgcm
       '@remix-run/serve': 1.5.1_ef5jwxihqo6n7gxfmzogljlgcm
+      isbot: 3.5.0
       react: 18.1.0
       react-dom: 18.1.0_react@18.1.0
     devDependencies:
@@ -3629,7 +3631,7 @@ packages:
       '@storybook/core-events': 6.5.0
       '@storybook/csf': 0.0.2--canary.4566f4d.1
       '@storybook/docs-tools': 6.5.0_ef5jwxihqo6n7gxfmzogljlgcm
-      '@storybook/mdx1-csf': 0.0.1-canary.1.867dcd5.0_@babel+core@7.18.0
+      '@storybook/mdx1-csf': 0.0.1-canary.1.eed86d7.0_@babel+core@7.18.0
       '@storybook/node-logger': 6.5.0
       '@storybook/postinstall': 6.5.0
       '@storybook/preview-web': 6.5.0_ef5jwxihqo6n7gxfmzogljlgcm
@@ -4404,7 +4406,7 @@ packages:
       '@babel/traverse': 7.18.0
       '@babel/types': 7.18.0
       '@storybook/csf': 0.0.2--canary.4566f4d.1
-      '@storybook/mdx1-csf': 0.0.1-canary.1.867dcd5.0_@babel+core@7.18.0
+      '@storybook/mdx1-csf': 0.0.1-canary.1.eed86d7.0_@babel+core@7.18.0
       core-js: 3.22.0
       fs-extra: 9.1.0
       global: 4.4.0
@@ -4551,8 +4553,8 @@ packages:
       - webpack-command
     dev: true
 
-  /@storybook/mdx1-csf/0.0.1-canary.1.867dcd5.0_@babel+core@7.18.0:
-    resolution: {integrity: sha512-VnlE825M9SpjyJCPLCXbo+RbvqllsqXqRDCouzHKSpCE3Q79KR7MMURBsJo/vrTG1zeNG68Z4TZrLAu6IoyYaA==}
+  /@storybook/mdx1-csf/0.0.1-canary.1.eed86d7.0_@babel+core@7.18.0:
+    resolution: {integrity: sha512-KOoTWeseRyJYU5qzEWahgNRhRLgHzPrWx4jIiK4oI9MmNx81cD0B0o24Gq04Iyt89X4jTk+VPHc5REJO1Gs99Q==}
     dependencies:
       '@babel/generator': 7.18.0
       '@babel/parser': 7.18.0
@@ -11682,6 +11684,11 @@ packages:
   /isarray/2.0.5:
     resolution: {integrity: sha512-xHjhDr3cNBK0BzdUJSPXZntQUx/mwMS5Rw4A7lPJ90XGAO6ISP/ePDNuo0vhqOZU+UD5JoodwCAAoZQd3FeAKw==}
     dev: true
+
+  /isbot/3.5.0:
+    resolution: {integrity: sha512-QOFF7IE7hUdzo8pbhCubeiMzKdLZt+W/UwRZWwg+zghmnqXoMwh2V0bi5UT+oIvoD0IWCWjzAtp30ZrrRwJVCg==}
+    engines: {node: '>=12'}
+    dev: false
 
   /isexe/2.0.0:
     resolution: {integrity: sha1-6PvzdNxVb/iUehDcsFctYz8s+hA=}
