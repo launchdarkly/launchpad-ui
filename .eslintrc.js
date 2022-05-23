@@ -52,6 +52,7 @@ module.exports = {
       },
     ],
     'import/no-unresolved': ['error', { ignore: ['^@launchpad-ui/'] }],
+    'react/function-component-definition': [2, { namedComponents: 'arrow-function' }],
   },
   overrides: [
     {

@@ -1,0 +1,54 @@
+.TabList-list {
+  display: flex;
+  flex-direction: row;
+  background-color: var(--color-white);
+  border-bottom: 1px solid var(--color-gray-200);
+}
+
+.TabList-item {
+  display: block;
+  padding: 0.6rem 1rem;
+  font-size: 1.3rem;
+  font-weight: var(--font-weight-medium);
+  text-decoration: none;
+  color: var(--color-gray-600);
+  position: relative;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.TabList-item:focus {
+  outline: none;
+  background-color: var(--color-gray-100);
+}
+
+.TabList-item:hover {
+  outline: none;
+  background-color: var(--color-gray-100);
+}
+
+.TabList-item.is-active {
+  color: var(--color-black-300);
+}
+
+.TabList-item.is-active::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  background-color: var(--color-blue-500);
+  height: 2px;
+}
+
+.TabList-item[aria-disabled],
+.TabList-item[aria-disabled]:hover,
+.TabList-item[aria-disabled]:active {
+  cursor: not-allowed;
+  background-color: var(--color-white);
+  color: var(--color-gray-500);
+}
+
+.TabList-panel {
+  display: block;
+}

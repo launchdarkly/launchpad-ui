@@ -6,18 +6,14 @@ import { AlertKind, CollapsibleAlert } from '../src';
 
 describe('CollapsibleAlert', () => {
   it('renders', () => {
-    render(
-      <CollapsibleAlert message="A test message." kind={AlertKind.WARNING}>
-        <></>
-      </CollapsibleAlert>
-    );
+    render(<CollapsibleAlert message="A test message." kind={AlertKind.WARNING} />);
     expect(screen.getByText('A test message.')).toBeInTheDocument();
   });
 
   it('is accessible', async () => {
     const { container } = render(
       <CollapsibleAlert message="A test message." kind={AlertKind.WARNING}>
-        <>Hello</>
+        Hello
       </CollapsibleAlert>
     );
     const results = await axe(container);
@@ -27,7 +23,7 @@ describe('CollapsibleAlert', () => {
   test('shows and hides child component on click', async () => {
     render(
       <CollapsibleAlert message="A test message." kind={AlertKind.WARNING}>
-        <>Hello</>
+        Hello
       </CollapsibleAlert>
     );
 
