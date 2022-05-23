@@ -59,7 +59,7 @@ importers:
       prettier: ^2.6.2
       react: ^18.1.0
       react-dom: ^18.1.0
-      storybook-addon-pseudo-states: ^1.9.0
+      storybook-addon-pseudo-states: ^1.12.0
       stylelint: ^14.8.2
       stylelint-config-prettier: ^9.0.3
       stylelint-config-standard: ^25.0.0
@@ -126,7 +126,7 @@ importers:
       prettier: 2.6.2
       react: 18.1.0
       react-dom: 18.1.0_react@18.1.0
-      storybook-addon-pseudo-states: 1.9.0_znykdglusxniwf7linpfmk4arm
+      storybook-addon-pseudo-states: 1.12.0_znykdglusxniwf7linpfmk4arm
       stylelint: 14.8.2
       stylelint-config-prettier: 9.0.3_stylelint@14.8.2
       stylelint-config-standard: 25.0.0_stylelint@14.8.2
@@ -3629,7 +3629,7 @@ packages:
       '@storybook/core-events': 6.5.0
       '@storybook/csf': 0.0.2--canary.4566f4d.1
       '@storybook/docs-tools': 6.5.0_ef5jwxihqo6n7gxfmzogljlgcm
-      '@storybook/mdx1-csf': 0.0.1-canary.1.867dcd5.0_@babel+core@7.18.0
+      '@storybook/mdx1-csf': 0.0.1-canary.1.eed86d7.0_@babel+core@7.18.0
       '@storybook/node-logger': 6.5.0
       '@storybook/postinstall': 6.5.0
       '@storybook/preview-web': 6.5.0_ef5jwxihqo6n7gxfmzogljlgcm
@@ -4404,7 +4404,7 @@ packages:
       '@babel/traverse': 7.18.0
       '@babel/types': 7.18.0
       '@storybook/csf': 0.0.2--canary.4566f4d.1
-      '@storybook/mdx1-csf': 0.0.1-canary.1.867dcd5.0_@babel+core@7.18.0
+      '@storybook/mdx1-csf': 0.0.1-canary.1.eed86d7.0_@babel+core@7.18.0
       core-js: 3.22.0
       fs-extra: 9.1.0
       global: 4.4.0
@@ -4551,8 +4551,8 @@ packages:
       - webpack-command
     dev: true
 
-  /@storybook/mdx1-csf/0.0.1-canary.1.867dcd5.0_@babel+core@7.18.0:
-    resolution: {integrity: sha512-VnlE825M9SpjyJCPLCXbo+RbvqllsqXqRDCouzHKSpCE3Q79KR7MMURBsJo/vrTG1zeNG68Z4TZrLAu6IoyYaA==}
+  /@storybook/mdx1-csf/0.0.1-canary.1.eed86d7.0_@babel+core@7.18.0:
+    resolution: {integrity: sha512-KOoTWeseRyJYU5qzEWahgNRhRLgHzPrWx4jIiK4oI9MmNx81cD0B0o24Gq04Iyt89X4jTk+VPHc5REJO1Gs99Q==}
     dependencies:
       '@babel/generator': 7.18.0
       '@babel/parser': 7.18.0
@@ -16165,8 +16165,8 @@ packages:
     resolution: {integrity: sha512-CMtO2Uneg3SAz/d6fZ/6qbqqQHi2ynq6/KzMD/26gTkiEShCcpqFfTHgOxsE0egAq6SX3FmN4CeSqn8BzXQkJg==}
     dev: true
 
-  /storybook-addon-pseudo-states/1.9.0_znykdglusxniwf7linpfmk4arm:
-    resolution: {integrity: sha512-2zhpAsmXUv1P8z9z+WOp4er9IxM0RCQZDu18lwkXf3yafrf5aLv1fzqK8EAPNNdYOeNHQPfjJZpMlDigUjDuOg==}
+  /storybook-addon-pseudo-states/1.12.0_znykdglusxniwf7linpfmk4arm:
+    resolution: {integrity: sha512-8W9pVRTWox7t9lXfLyPIThV5bziuhlDB64Ea+gshs/N4Q3ILCDpvQyhFcNNgX6K3qHTQKGvKIX0BjFshnxcAHg==}
     peerDependencies:
       '@storybook/addons': ^6.4.19
       '@storybook/api': ^6.4.19
