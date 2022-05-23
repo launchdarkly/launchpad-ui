@@ -5,3 +5,8 @@ build/
 public/build/
 .turbo
 coverage
+
+packages/icons/src/*.tsx
+!packages/icons/src/Icon.tsx
+!packages/icons/src/KindIcon.tsx
+packages/icons/src/index.ts
