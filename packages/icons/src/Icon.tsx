@@ -1,8 +1,8 @@
-import { Children, cloneElement, isValidElement, useEffect, useRef } from 'react';
-import classNames from 'classnames';
-import { v4 } from 'uuid';
-
 import type { IconSize } from './types';
+
+import classNames from 'classnames';
+import { Children, cloneElement, isValidElement, useEffect, useRef } from 'react';
+import { v4 } from 'uuid';
 
 import './styles.css';
 

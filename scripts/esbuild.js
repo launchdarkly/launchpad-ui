@@ -1,10 +1,11 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
-const esbuild = require('esbuild');
-const path = require('path');
-const fg = require('fast-glob');
-const browserslist = require('browserslist');
 const fs = require('fs');
+const path = require('path');
+
 const css = require('@parcel/css');
+const browserslist = require('browserslist');
+const esbuild = require('esbuild');
+const fg = require('fast-glob');
 
 const build = async (packageJSON) => {
   const outFileMain = packageJSON.main;

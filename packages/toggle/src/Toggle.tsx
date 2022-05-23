@@ -1,8 +1,8 @@
-import { useRef } from 'react';
 import { useSwitch } from '@react-aria/switch';
 import { VisuallyHidden } from '@react-aria/visually-hidden';
 import { useToggleState } from '@react-stately/toggle';
 import classNames from 'classnames';
+import { useRef } from 'react';
 
 import './styles.css';
 

@@ -6,6 +6,8 @@ module.exports = {
     'plugin:react/jsx-runtime',
     'plugin:react-hooks/recommended',
     'plugin:@typescript-eslint/recommended',
+    'plugin:import/recommended',
+    'plugin:import/typescript',
     'plugin:prettier/recommended',
   ],
   parser: '@typescript-eslint/parser',
@@ -36,6 +38,19 @@ module.exports = {
       },
     ],
     'testing-library/prefer-user-event': 'error',
+    'import/order': [
+      'error',
+      {
+        alphabetize: {
+          order: 'asc',
+        },
+        groups: ['type', 'builtin', 'external', 'internal', 'parent', ['sibling', 'index']],
+        'newlines-between': 'always',
+        pathGroups: [],
+        pathGroupsExcludedImportTypes: [],
+        warnOnUnassignedImports: true,
+      },
+    ],
   },
   overrides: [
     {

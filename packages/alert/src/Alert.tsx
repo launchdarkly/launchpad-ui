@@ -1,10 +1,9 @@
-import { useState } from 'react';
-import cx from 'classnames';
 import { Button, ButtonType } from '@launchpad-ui/button';
 import { Close, IconSize, KindIcon } from '@launchpad-ui/icons';
+import cx from 'classnames';
+import { useState } from 'react';
 
 import './styles/Alert.css';
-
 import { AlertKind, AlertSize } from './types';
 
 export type AlertProps = {

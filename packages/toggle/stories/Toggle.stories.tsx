@@ -1,9 +1,10 @@
-import { useEffect } from '@storybook/addons';
 import type { DecoratorFn, Story } from '@storybook/react';
 
-import { createWithClassesDecorator, PseudoClasses } from '../../../.storybook/utils';
+import { useEffect } from '@storybook/addons';
 
+import { createWithClassesDecorator, PseudoClasses } from '../../../.storybook/utils';
 import { Toggle } from '../src';
+
 import './Toggle.stories.css';
 
 const testingChromaticClassNames = [PseudoClasses.HOVER, PseudoClasses.FOCUS, PseudoClasses.ACTIVE];

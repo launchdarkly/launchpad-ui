@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 const path = require('path');
+
 const fg = require('fast-glob');
 
 let cssPaths = [];
