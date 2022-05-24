@@ -1,6 +1,28 @@
+import type { Page, PlaywrightTestConfig } from '@playwright/test';
+
 import path from 'path';
 
-import { PlaywrightTestConfig, devices } from '@playwright/test';
+import { devices, expect } from '@playwright/test';
+
+import { axe } from './tests/axe';
+
+expect.extend({
+  async toHaveNoViolations(page: Page) {
+    const results = await axe(page);
+    const pass = results.violations.length === 0;
+    if (pass) {
+      return {
+        message: () => 'passed',
+        pass: true,
+      };
+    } else {
+      return {
+        message: () => 'failed',
+        pass: false,
+      };
+    }
+  },
+});
 
 const config: PlaywrightTestConfig = {
   testDir: path.resolve(),

@@ -1,12 +1,9 @@
 import { test, expect } from '@playwright/test';
 
-import { axe } from '../../../tests/axe';
-
 test.describe('Button', () => {
   test('is accessible', async ({ page }) => {
     await page.goto('?id=components-button--basic&viewMode=story');
-    const results = await axe(page);
-    await expect(results.violations.length).toBe(0);
+    await expect(page).toHaveNoViolations();
   });
 
   test('is not clickable when disabled', async ({ page }) => {
