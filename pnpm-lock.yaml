@@ -61,7 +61,7 @@ importers:
       prettier: ^2.6.2
       react: ^18.1.0
       react-dom: ^18.1.0
-      storybook-addon-pseudo-states: ^1.9.0
+      storybook-addon-pseudo-states: ^1.13.0
       stylelint: ^14.8.2
       stylelint-config-prettier: ^9.0.3
       stylelint-config-standard: ^25.0.0
@@ -130,7 +130,7 @@ importers:
       prettier: 2.6.2
       react: 18.1.0
       react-dom: 18.1.0_react@18.1.0
-      storybook-addon-pseudo-states: 1.12.0_tqzj646axv4nznf6srgcw2qnki
+      storybook-addon-pseudo-states: 1.14.0_tqzj646axv4nznf6srgcw2qnki
       stylelint: 14.8.3
       stylelint-config-prettier: 9.0.3_stylelint@14.8.3
       stylelint-config-standard: 25.0.0_stylelint@14.8.3
@@ -16134,8 +16134,8 @@ packages:
     resolution: {integrity: sha512-CMtO2Uneg3SAz/d6fZ/6qbqqQHi2ynq6/KzMD/26gTkiEShCcpqFfTHgOxsE0egAq6SX3FmN4CeSqn8BzXQkJg==}
     dev: true
 
-  /storybook-addon-pseudo-states/1.12.0_tqzj646axv4nznf6srgcw2qnki:
-    resolution: {integrity: sha512-8W9pVRTWox7t9lXfLyPIThV5bziuhlDB64Ea+gshs/N4Q3ILCDpvQyhFcNNgX6K3qHTQKGvKIX0BjFshnxcAHg==}
+  /storybook-addon-pseudo-states/1.14.0_tqzj646axv4nznf6srgcw2qnki:
+    resolution: {integrity: sha512-flX5u6DvN3Vj6wmOR8jgq9qujCdLgF+AvINefYUBC7IRsTzWaURuphFCa32g1al/vX9rDq9KWz8qi2UNjTSB2g==}
     peerDependencies:
       '@storybook/addons': ^6.4.19
       '@storybook/api': ^6.4.19
