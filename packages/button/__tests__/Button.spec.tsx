@@ -1,6 +1,5 @@
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { axe } from 'jest-axe';
 import { it, expect, describe, vi } from 'vitest';
 
 import { Button, ButtonKind, ButtonSize } from '../src';
@@ -9,12 +8,6 @@ describe('Button', () => {
   it('renders', () => {
     render(<Button size={ButtonSize.NORMAL}>Default Button</Button>);
     expect(screen.getByText('Default Button')).toBeInTheDocument();
-  });
-
-  it('is accessible', async () => {
-    const { container } = render(<Button>Default Button</Button>);
-    const results = await axe(container);
-    expect(results).toHaveNoViolations();
   });
 
   it('can render as a link', () => {
