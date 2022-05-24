@@ -19,17 +19,10 @@ test.afterAll(async () => {
   await page.close();
 });
 
-test.describe('Button', () => {
+test.describe('TabList', () => {
   test('is accessible', async ({ page }) => {
-    await page.goto('?id=components-button--basic&viewMode=story');
+    await page.goto('?id=components-tablist--tab-list-example&viewMode=story');
     const results = await builder.analyze();
     await expect(results.violations.length).toBe(0);
-  });
-
-  test('is not clickable when disabled', async ({ page }) => {
-    await page.goto('?id=components-button--basic&viewMode=story&args=disabled:true');
-    const button = await page.locator('.Button').nth(0);
-
-    await expect(button).toBeDisabled();
   });
 });
