@@ -17,7 +17,7 @@ expect.extend({
       };
     } else {
       return {
-        message: () => 'failed',
+        message: () => JSON.stringify(results.violations, null, 2),
         pass: false,
       };
     }
