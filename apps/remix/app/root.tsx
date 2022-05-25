@@ -1,4 +1,5 @@
 import type { LinksFunction, MetaFunction } from '@remix-run/node';
+import { SSRProvider } from '@react-aria/ssr';
 import {
   Links,
   LiveReload,
@@ -41,11 +42,13 @@ export const meta: MetaFunction = () => ({
 
 export default function App() {
   return (
-    <Document>
-      <Layout>
-        <Outlet />
-      </Layout>
-    </Document>
+    <SSRProvider>
+      <Document>
+        <Layout>
+          <Outlet />
+        </Layout>
+      </Document>
+    </SSRProvider>
   );
 }
 
