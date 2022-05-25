@@ -39,7 +39,10 @@ const useModifiedClassLists: DecoratorFn = (story, context) => {
       {originalTemplate && (
         <>
           <span className="Toggle-state-label">Disabled</span>
-          {originalTemplate({ ...args, disabled: true, id: 'disabled-toggle' }, context)}
+          {originalTemplate(
+            { ...args, disabled: true, id: 'disabled-toggle', 'aria-label': 'disabled' },
+            context
+          )}
         </>
       )}
     </div>
@@ -56,20 +59,25 @@ export default {
         <span className="Toggle-state-label">{`${
           args.className?.replace('pseudo-', '') || ''
         }`}</span>
-        {originalStory({ ...args, id: args.className }, context)}
+        {originalStory(
+          { ...args, id: args.className?.trim(), 'aria-label': args.className?.trim() },
+          context
+        )}
       </>
     )),
     useModifiedClassLists,
   ],
 };
 
-export const On = { args: { checked: true } };
+export const On = { args: { checked: true, 'aria-label': 'resting' } };
 
-export const Off = { args: { checked: false } };
+export const Off = { args: { checked: false, 'aria-label': 'resting' } };
 
-export const WithoutOnText = { args: { checked: true, toggleOnText: '' } };
+export const WithoutOnText = { args: { checked: true, toggleOnText: '', 'aria-label': 'resting' } };
 
-export const WithoutOffText = { args: { checked: false, toggleOffText: '' } };
+export const WithoutOffText = {
+  args: { checked: false, toggleOffText: '', 'aria-label': 'resting' },
+};
 
 export const AriaLabelledByExample = () => (
   <div className="Toggle-iggy-grid">
