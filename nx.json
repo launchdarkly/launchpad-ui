@@ -22,7 +22,8 @@
       "options": {
         "cacheableOperations": ["build", "lint", "test", "e2e"],
         "canTrackAnalytics": false,
-        "runtimeCacheInputs": ["node -v"]
+        "runtimeCacheInputs": ["node -v"],
+        "parallel": 10
       }
     }
   },
