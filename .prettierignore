@@ -4,5 +4,4 @@ storybook-static/
 build/
 public/build/
 pnpm-lock.yaml
-.turbo
 coverage

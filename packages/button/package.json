@@ -26,7 +26,7 @@
   "source": "src/index.ts",
   "scripts": {
     "build": "tsc --project tsconfig.build.json && node build.js",
-    "clean": "rm -rf .turbo && rm -rf dist",
+    "clean": "rm -rf dist",
     "e2e": "playwright test --config=../../playwright.config.ts",
     "lint": "eslint '**/*.{ts,tsx,js}' && stylelint '**/*.css' --ignore-path ../../.stylelintignore",
     "test": "vitest run --coverage"

@@ -3,5 +3,4 @@ dist/
 storybook-static/
 build/
 public/build/
-.turbo
 coverage
