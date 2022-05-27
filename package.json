@@ -8,7 +8,7 @@
     "build:packages": "turbo run build --filter=...[HEAD^1]",
     "build:transform": "turbo run build --filter=tokens --filter=icons",
     "chromatic": "chromatic",
-    "clean": "turbo run clean",
+    "clean": "nx run-many --target=clean --all",
     "e2e": "playwright test",
     "e2e:ci": "concurrently -k -s first -n \"SB,e2e\" -c \"magenta,blue\" \"pnpm storybook:build && http-server storybook-static --port 3000 --silent\" \"wait-on tcp:3000 && turbo run e2e --filter=...[HEAD^1] --filter=!remix\"",
     "e2e:ssr": "concurrently -k -s first -n \"Remix,e2e\" -c \"magenta,blue\" \"pnpm remix\" \"wait-on tcp:3000 && turbo run e2e --filter=remix\"",
@@ -21,10 +21,10 @@
     "storybook": "pnpm build:transform && start-storybook -p 3000",
     "storybook:build": "pnpm build:transform && build-storybook --quiet",
     "test": "vitest run --coverage",
-    "test:packages": "pnpm build:transform && turbo run test --filter=...[HEAD^1]",
+    "test:packages": "pnpm build:transform && nx affected --target=test",
     "test:watch": "vitest",
     "prepare": "husky install",
-    "release": "turbo run build --filter=[HEAD^1] && changeset publish"
+    "release": "nx affected --target=build && changeset publish"
   },
   "repository": {
     "type": "git",
@@ -88,6 +88,7 @@
     "jsdom": "^19.0.0",
     "lint-staged": "^12.4.1",
     "lodash.clonedeep": "^4.5.0",
+    "nx": "^14.1.9",
     "postcss": "^8.4.13",
     "postcss-nested": "^5.0.6",
     "postcss-preset-env": "^7.6.0",
@@ -99,7 +100,6 @@
     "stylelint-config-standard": "^25.0.0",
     "stylelint-config-prettier": "^9.0.3",
     "stylelint-value-no-unknown-custom-properties": "^4.0.0",
-    "turbo": "^1.2.4",
     "typescript": "^4.7.2",
     "vite": "^2.9.9",
     "vitest": "^0.13.0",
