@@ -31,6 +31,7 @@ const config: PlaywrightTestConfig = {
   retries: process.env.CI ? 2 : 0,
   reporter: process.env.CI ? 'github' : 'list',
   workers: process.env.CI ? 2 : undefined,
+  fullyParallel: true,
   use: {
     baseURL: 'http://localhost:3000/iframe.html',
     trace: 'on-first-retry',
