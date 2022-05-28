@@ -22,7 +22,7 @@ importers:
       '@storybook/react': ^6.5.0
       '@testing-library/dom': ^8.13.0
       '@testing-library/jest-dom': ^5.16.4
-      '@testing-library/react': ^13.2.0
+      '@testing-library/react': ^13.3.0
       '@testing-library/user-event': ^14.2.0
       '@types/jest-axe': ^3.5.3
       '@types/lodash.clonedeep': ^4.5.7
@@ -91,7 +91,7 @@ importers:
       '@storybook/react': 6.5.4_4wqanxly4su3rqajqzlszrwona
       '@testing-library/dom': 8.13.0
       '@testing-library/jest-dom': 5.16.4
-      '@testing-library/react': 13.2.0_ef5jwxihqo6n7gxfmzogljlgcm
+      '@testing-library/react': 13.3.0_ef5jwxihqo6n7gxfmzogljlgcm
       '@testing-library/user-event': 14.2.0_tlwynutqiyp5mns3woioasuxnq
       '@types/jest-axe': 3.5.3
       '@types/lodash.clonedeep': 4.5.7
@@ -5027,8 +5027,8 @@ packages:
       redent: 3.0.0
     dev: true
 
-  /@testing-library/react/13.2.0_ef5jwxihqo6n7gxfmzogljlgcm:
-    resolution: {integrity: sha512-Bprbz/SZVONCJy5f7hcihNCv313IJXdYiv0nSJklIs1SQCIHHNlnGNkosSXnGZTmesyGIcBGNppYhXcc11pb7g==}
+  /@testing-library/react/13.3.0_ef5jwxihqo6n7gxfmzogljlgcm:
+    resolution: {integrity: sha512-DB79aA426+deFgGSjnf5grczDPiL4taK3hFaa+M5q7q20Kcve9eQottOG5kZ74KEr55v0tU2CQormSSDK87zYQ==}
     engines: {node: '>=12'}
     peerDependencies:
       react: ^18.0.0 || 18
@@ -8133,7 +8133,7 @@ packages:
     dev: true
 
   /default-browser-id/1.0.4:
-    resolution: {integrity: sha1-5Z0JpdFXuCi4dsJoFuYcPSosIDo=}
+    resolution: {integrity: sha512-qPy925qewwul9Hifs+3sx1ZYn14obHxpkX+mPD369w4Rzg+YkJBgi3SOvwUq81nWSjqGUegIgEPwD8u+HUnxlw==}
     engines: {node: '>=0.10.0'}
     hasBin: true
     requiresBuild: true
