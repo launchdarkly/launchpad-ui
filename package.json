@@ -86,7 +86,7 @@
     "husky": "^8.0.1",
     "jest-axe": "^6.0.0",
     "jsdom": "^19.0.0",
-    "lint-staged": "^12.4.1",
+    "lint-staged": "^12.5.0",
     "lodash.clonedeep": "^4.5.0",
     "postcss": "^8.4.13",
     "postcss-nested": "^5.0.6",
