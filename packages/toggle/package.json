@@ -35,7 +35,7 @@
     "@launchpad-ui/tokens": "workspace:~",
     "@react-aria/switch": "^3.1.8",
     "@react-aria/visually-hidden": "^3.2.8",
-    "@react-stately/toggle": "^3.2.7",
+    "@react-stately/toggle": "^3.3.0",
     "classnames": "^2.3.1"
   },
   "peerDependencies": {
