@@ -6,7 +6,7 @@ import { useRef } from 'react';
 
 import './styles.css';
 
-export type ToggleProps = {
+type ToggleProps = {
   /**
    * Use an aria-label if you don't pass in children and don't have a visible label to associate with the input element.
    */
@@ -115,3 +115,4 @@ const Toggle = (props: ToggleProps) => {
 };
 
 export { Toggle };
+export type { ToggleProps };

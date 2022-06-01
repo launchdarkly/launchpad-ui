@@ -1,0 +1,91 @@
+@import '../../tokens/dist/media-queries.css';
+
+.has-modal {
+  overflow: hidden;
+}
+
+.Modal {
+  z-index: 10000;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transform: translateZ(0);
+}
+
+.Modal-overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: hsl(0 0% 20% / 0.5);
+}
+
+.Modal-content {
+  background-color: var(--color-white);
+}
+
+.ModalSheet .Modal-content {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  overflow: auto;
+  width: 100vw;
+  max-width: 100vw;
+  box-shadow: -1px 0 4px var(--color-gray-700);
+}
+
+/* On mobile, all modal sheets will cover the entire viewport. Above that, you may customize
+as needed. */
+@media (--tablet) {
+  .ModalSheet--small .Modal-content {
+    width: 45rem;
+  }
+
+  .ModalSheet--medium .Modal-content {
+    width: 65rem;
+  }
+
+  .ModalSheet--large .Modal-content {
+    width: 80rem;
+  }
+
+  /* stylelint-disable-next-line selector-class-pattern */
+  .ModalSheet--x-large .Modal-content {
+    width: 120rem;
+  }
+
+  .ModalSheet--full .Modal-content {
+    width: 100%;
+    max-width: unset;
+  }
+}
+
+.ModalSheet .Modal-content .Subhead h1 {
+  display: flex;
+  align-items: center;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.ModalSheet .Modal-content section {
+  padding: 3.2rem 1rem;
+}
+
+.ModalSheet .Modal-content section + section {
+  border-top: 1px dotted var(--color-gray-100);
+}
+
+.ModalSheet .Modal-close {
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+}
+
+.ModalSheet .Modal-content > .Spinner {
+  margin: 3.5rem auto;
+  display: block;
+}

@@ -1,4 +1,4 @@
-export enum AlertKind {
+enum AlertKind {
   INFO = 'info',
   SUCCESS = 'success',
   WARNING = 'warning',
@@ -6,7 +6,9 @@ export enum AlertKind {
   STRIPED = 'striped',
 }
 
-export enum AlertSize {
+enum AlertSize {
   SMALL = 'small',
   MEDIUM = 'medium',
 }
+
+export { AlertKind, AlertSize };

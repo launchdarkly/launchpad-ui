@@ -65,5 +65,9 @@ module.exports = {
       files: ['**/__tests__/**/*.[jt]s?(x)', '**/?(*.)+(spec|test).[jt]s?(x)'],
       extends: ['plugin:testing-library/react'],
     },
+    {
+      files: ['**/src/**/*.[jt]s?(x)'],
+      rules: { 'import/no-default-export': 2, 'import/exports-last': 2, 'import/group-exports': 2 },
+    },
   ],
 };

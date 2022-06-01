@@ -9,7 +9,7 @@ import { useRef } from 'react';
 
 import './styles.css';
 
-export type TabListProps<T extends string | number> =
+type TabListProps<T extends string | number> =
   | AriaTabListProps<HTMLDivElement> & {
       /** The active Tab to show on render. The value passed in here should match the value of the active Tab's Item key. */
       activeTab?: T;
@@ -114,3 +114,4 @@ const TabItemPanel = ({ state, ...props }: TabItemPanelProps) => {
 };
 
 export { TabList };
+export type { TabListProps };

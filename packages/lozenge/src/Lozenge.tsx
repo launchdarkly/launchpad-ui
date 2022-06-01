@@ -3,7 +3,7 @@ import classNames from 'classnames';
 import './styles.css';
 import { LozengeKind, LozengeSize } from './types';
 
-export type LozengeProps = {
+type LozengeProps = {
   kind?: LozengeKind;
   size?: LozengeSize;
   subtle?: boolean;
@@ -59,3 +59,4 @@ const Lozenge = ({
 };
 
 export { Lozenge };
+export type { LozengeProps };

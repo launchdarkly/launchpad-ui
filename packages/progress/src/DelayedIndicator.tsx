@@ -2,7 +2,7 @@ import { Component } from 'react';
 
 import { AnimationDelay } from './types';
 
-export type DelayedIndicatorProps = {
+type DelayedIndicatorProps = {
   children: React.ReactNode;
   delayMs?: number;
 };
@@ -11,7 +11,7 @@ type DelayedIndicatorState = {
   renderChildren: boolean;
 };
 
-export class DelayedIndicator extends Component<DelayedIndicatorProps> {
+class DelayedIndicator extends Component<DelayedIndicatorProps> {
   static defaultProps = {
     delayMs: AnimationDelay.DEFAULT,
   };
@@ -47,3 +47,6 @@ export class DelayedIndicator extends Component<DelayedIndicatorProps> {
     return this.state.renderChildren ? children : null;
   }
 }
+
+export { DelayedIndicator };
+export type { DelayedIndicatorProps };

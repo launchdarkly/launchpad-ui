@@ -6,7 +6,7 @@ import { v4 } from 'uuid';
 
 import './styles.css';
 
-export type IconProps = Omit<React.HTMLProps<HTMLSpanElement>, 'size'> & {
+type IconProps = Omit<React.HTMLProps<HTMLSpanElement>, 'size'> & {
   name?: string;
   subtle?: boolean;
   size?: IconSize;
@@ -52,3 +52,4 @@ const Icon = ({ name, subtle, className, size, children, ...props }: IconProps) 
 };
 
 export { Icon };
+export type { IconProps };
