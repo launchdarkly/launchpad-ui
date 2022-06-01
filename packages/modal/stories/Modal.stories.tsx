@@ -1,19 +1,48 @@
+/* eslint-disable react-hooks/rules-of-hooks */
+import { Button } from '@launchpad-ui/button';
+import { useState } from '@storybook/client-api';
+
 import { ModalBody, ModalFooter, ModalHeader, ModalTransition, Prompt } from '../src';
 
 export default {
   component: ModalTransition,
+  subcomponents: { ModalBody, ModalFooter, ModalHeader, Prompt },
   title: 'Components/Modal',
   description: 'Modals presents users information and actions over a page.',
+  parameters: {
+    docs: {
+      page: null,
+    },
+  },
 };
 
 export const Default = {
-  render: () => (
-    <Prompt>
-      <ModalTransition transition="pop" withCloseButton>
-        <ModalHeader>Example modal title</ModalHeader>
-        <ModalBody>Body</ModalBody>
-        <ModalFooter>Footer</ModalFooter>
-      </ModalTransition>
-    </Prompt>
-  ),
+  render: () => {
+    const [show, setShow] = useState(true);
+    const button = <Button onClick={() => setShow(true)}>Open modal</Button>;
+    return show ? (
+      <>
+        {button}
+        <Prompt>
+          <ModalTransition
+            transition="pop"
+            withCloseButton
+            cancelWithOverlayClick
+            onCancel={() => setShow(!show)}
+          >
+            <ModalHeader>Example modal title</ModalHeader>
+            <ModalBody>Hi there I&apos;m a modal</ModalBody>
+            <ModalFooter>
+              <Button onClick={() => setShow(false)}>Cancel</Button>
+            </ModalFooter>
+          </ModalTransition>
+        </Prompt>
+      </>
+    ) : (
+      button
+    );
+  },
 };
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
+Default.parameters = { docs: { disable: true } };

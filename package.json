@@ -50,6 +50,7 @@
     "@storybook/addon-essentials": "^6.5.0",
     "@storybook/addons": "^6.5.0",
     "@storybook/api": "^6.5.0",
+    "@storybook/client-api": "^6.5.0",
     "@storybook/builder-webpack5": "^6.5.0",
     "@storybook/manager-webpack5": "^6.5.0",
     "@storybook/addon-postcss": "^2.0.0",
