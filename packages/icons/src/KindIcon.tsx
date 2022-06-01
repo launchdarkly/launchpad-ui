@@ -12,7 +12,7 @@ type KindIconProps = {
   className?: string;
 };
 
-export class KindIcon extends Component<KindIconProps> {
+class KindIcon extends Component<KindIconProps> {
   render() {
     const { kind, size, className } = this.props;
     const iconSize = size ? size : IconSize.MEDIUM;
@@ -38,3 +38,6 @@ export class KindIcon extends Component<KindIconProps> {
     return <span className={className}>{body}</span>;
   }
 }
+
+export { KindIcon };
+export type { KindIconProps };

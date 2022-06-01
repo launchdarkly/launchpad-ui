@@ -13,7 +13,7 @@ type PortalProps = {
   children?: React.ReactNode;
 };
 
-export const Portal = ({ children, containerRef, onChildrenMount, ...props }: PortalProps) => {
+const Portal = ({ children, containerRef, onChildrenMount, ...props }: PortalProps) => {
   const [portal] = useState<HTMLDivElement>(() => document.createElement('div'));
 
   useEffect(() => {
@@ -32,3 +32,6 @@ export const Portal = ({ children, containerRef, onChildrenMount, ...props }: Po
     portal
   );
 };
+
+export { Portal };
+export type { PortalProps };

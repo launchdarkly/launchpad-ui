@@ -9,7 +9,7 @@ import { cloneElement, createRef, PureComponent } from 'react';
 import './styles/Button.css';
 import { ButtonKind, ButtonSize, ButtonType } from './types';
 
-export type ButtonProps = {
+type ButtonProps = {
   /**
    * Text for screenreaders to use if the content of the button isn't descriptive (text)
    */
@@ -151,7 +151,7 @@ export type ButtonProps = {
   children?: React.ReactNode;
 };
 
-export class Button extends PureComponent<ButtonProps> {
+class Button extends PureComponent<ButtonProps> {
   static defaultProps = {
     kind: ButtonKind.DEFAULT,
     size: ButtonSize.NORMAL,
@@ -338,3 +338,6 @@ export class Button extends PureComponent<ButtonProps> {
     }
   };
 }
+
+export { Button };
+export type { ButtonProps };

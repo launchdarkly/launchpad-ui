@@ -1,4 +1,4 @@
-export enum ButtonType {
+enum ButtonType {
   BUTTON = 'button',
   SUBMIT = 'submit',
   RESET = 'reset',
@@ -6,7 +6,7 @@ export enum ButtonType {
   BORDERLESS = 'borderless',
 }
 
-export enum EllipsisButtonType {
+enum EllipsisButtonType {
   VERTICAL = 'vertical',
   HORIZONTAL = 'horizontal',
   HAMBURGER = 'hamburger',
@@ -14,7 +14,7 @@ export enum EllipsisButtonType {
   CHART = 'chart',
 }
 
-export enum ButtonKind {
+enum ButtonKind {
   DEFAULT = 'default',
   PRIMARY = 'primary',
   DESTRUCTIVE = 'destructive',
@@ -22,15 +22,17 @@ export enum ButtonKind {
   SUBMIT = 'submit',
 }
 
-export enum ButtonSize {
+enum ButtonSize {
   TINY = 'tiny',
   SMALL = 'small',
   NORMAL = 'normal',
   BIG = 'big',
 }
 
-export enum ButtonGroupSpacing {
+enum ButtonGroupSpacing {
   COMPACT = 'compact',
   NORMAL = 'normal',
   LARGE = 'large',
 }
+
+export { ButtonType, EllipsisButtonType, ButtonKind, ButtonSize, ButtonGroupSpacing };

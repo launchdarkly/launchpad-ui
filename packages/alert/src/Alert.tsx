@@ -6,7 +6,7 @@ import { useState } from 'react';
 import './styles/Alert.css';
 import { AlertKind, AlertSize } from './types';
 
-export type AlertProps = {
+type AlertProps = {
   /**
    * Child nodes to pass into the Alert.
    */
@@ -131,3 +131,4 @@ const Alert = ({
 };
 
 export { Alert };
+export type { AlertProps };

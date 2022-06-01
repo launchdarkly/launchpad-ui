@@ -5,20 +5,20 @@ import { Component } from 'react';
 import { DelayedIndicator } from './DelayedIndicator';
 import './styles.css';
 
-export enum ProgressSize {
+enum ProgressSize {
   Small = 'small',
   Large = 'large',
   XLarge = 'xLarge',
 }
 
-export type ProgressProps = {
+type ProgressProps = {
   value?: number;
   size: ProgressSize;
   className?: string;
   delayMs?: number;
 };
 
-export class Progress extends Component<ProgressProps> {
+class Progress extends Component<ProgressProps> {
   static defaultProps = {
     size: ProgressSize.Small,
     delayMs: 0,
@@ -89,3 +89,6 @@ export class Progress extends Component<ProgressProps> {
   radius = () => this.diameter() * 0.5 - this.strokeWidth() * 0.5;
   circumference = () => 2 * Math.PI * this.radius();
 }
+
+export { Progress, ProgressSize };
+export type { ProgressProps };

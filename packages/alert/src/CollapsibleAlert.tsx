@@ -5,7 +5,7 @@ import { Alert } from './Alert';
 import './styles/CollapsibleAlert.css';
 import { AlertKind, AlertSize } from './types';
 
-export type CollapsibleAlertProps = {
+type CollapsibleAlertProps = {
   /**
    * Child nodes to pass into the Alert.
    */
@@ -64,3 +64,4 @@ const CollapsibleAlert = ({ children, kind, message }: CollapsibleAlertProps) =>
 };
 
 export { CollapsibleAlert };
+export type { CollapsibleAlertProps };

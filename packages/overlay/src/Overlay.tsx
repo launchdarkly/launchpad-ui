@@ -6,7 +6,7 @@ import isFunction from 'lodash.isfunction';
 import isNil from 'lodash.isnil';
 import React, { Component } from 'react';
 
-export type OverlayProps = {
+type OverlayProps = {
   isOpen: boolean;
   isModal: boolean;
   canEscapeKeyClose: boolean;
@@ -22,7 +22,7 @@ type OverlayStateType = {
   hasEverOpened: boolean;
 };
 
-export class Overlay extends Component<OverlayProps> {
+class Overlay extends Component<OverlayProps> {
   static defaultProps = {
     lazy: true,
     autoFocus: true,
@@ -175,3 +175,6 @@ export class Overlay extends Component<OverlayProps> {
     );
   }
 }
+
+export { Overlay };
+export type { OverlayProps };

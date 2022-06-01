@@ -1,4 +1,4 @@
-export enum LozengeKind {
+enum LozengeKind {
   DEFAULT = 'default',
   SUCCESS = 'success',
   WARNING = 'warning',
@@ -12,7 +12,9 @@ export enum LozengeKind {
   FEDERAL = 'federal',
 }
 
-export enum LozengeSize {
+enum LozengeSize {
   NORMAL = 'normal',
   LARGE = 'large',
 }
+
+export { LozengeKind, LozengeSize };
