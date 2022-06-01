@@ -274,7 +274,7 @@ importers:
       '@react-aria/tabs': ^3.1.5
       '@react-stately/collections': ^3.4.0
       '@react-stately/tabs': ^3.1.0
-      '@react-types/shared': ^3.12.0
+      '@react-types/shared': ^3.13.0
       '@react-types/tabs': ^3.0.5
       classnames: ^2.3.1
       react: ^18.1.0
@@ -283,7 +283,7 @@ importers:
       '@launchpad-ui/tokens': link:../tokens
       '@react-aria/tabs': 3.1.5_react@18.1.0
       '@react-stately/tabs': 3.1.0_react@18.1.0
-      '@react-types/shared': 3.12.0_react@18.1.0
+      '@react-types/shared': 3.13.0_react@18.1.0
       '@react-types/tabs': 3.0.5_react@18.1.0
       classnames: 2.3.1
     devDependencies:
@@ -3105,7 +3105,7 @@ packages:
       '@react-aria/utils': 3.12.0_react@18.1.0
       '@react-stately/list': 3.4.5_react@18.1.0
       '@react-stately/tabs': 3.1.0_react@18.1.0
-      '@react-types/shared': 3.12.0_react@18.1.0
+      '@react-types/shared': 3.13.0_react@18.1.0
       '@react-types/tabs': 3.0.5_react@18.1.0
       react: 18.1.0
     dev: false
@@ -3240,14 +3240,6 @@ packages:
       react: 18.1.0
     dev: false
 
-  /@react-types/shared/3.12.0_react@18.1.0:
-    resolution: {integrity: sha512-faGr9xOjtMlkQPfA1i36iUmWS/hpPPtxIwdAtBi6p7rCejmShMLFZ2YN4DxzbJUCVubF2S1+rMMIKuXG17DkEw==}
-    peerDependencies:
-      react: ^16.8.0 || ^17.0.0-rc.1 || 18
-    dependencies:
-      react: 18.1.0
-    dev: false
-
   /@react-types/shared/3.13.0_react@18.1.0:
     resolution: {integrity: sha512-ha+Xzn6gG/aww2nl7A6kYSJdYQypTxdYgNrJvddDB7h0QuyVQTf27iVleOWrmkHQ1TM9Q/FUbMdJ93CgdtP26g==}
     peerDependencies:
@@ -3270,7 +3262,7 @@ packages:
     peerDependencies:
       react: ^16.8.0 || ^17.0.0-rc.1 || 18
     dependencies:
-      '@react-types/shared': 3.12.0_react@18.1.0
+      '@react-types/shared': 3.13.0_react@18.1.0
       react: 18.1.0
     dev: false
 
