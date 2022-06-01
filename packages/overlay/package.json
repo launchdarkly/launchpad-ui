@@ -27,10 +27,11 @@
     "build": "tsc --project tsconfig.build.json && node build.js",
     "clean": "rm -rf dist",
     "e2e": "exit 0",
-    "lint": "eslint '**/*.{ts,tsx,js}' && stylelint '**/*.css' --ignore-path ../../.stylelintignore",
+    "lint": "eslint '**/*.{ts,tsx,js}'",
     "test": "vitest run --coverage"
   },
   "dependencies": {
+    "@launchpad-ui/modal": "workspace:~",
     "lodash.isequal": "^4.5.0",
     "lodash.isfunction": "^3.0.9",
     "lodash.isnil": "^4.0.0"
