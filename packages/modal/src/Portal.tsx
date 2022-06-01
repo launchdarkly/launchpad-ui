@@ -3,7 +3,7 @@ import type { KeyboardEvent } from 'react';
 import { useEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
 
-import './styles.css';
+import './styles/Modal.css';
 
 type PortalProps = {
   containerRef?: (node: HTMLDivElement) => void;
