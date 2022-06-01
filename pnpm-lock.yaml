@@ -275,7 +275,7 @@ importers:
       '@react-stately/collections': ^3.4.0
       '@react-stately/tabs': ^3.1.0
       '@react-types/shared': ^3.13.0
-      '@react-types/tabs': ^3.0.5
+      '@react-types/tabs': ^3.1.0
       classnames: ^2.3.1
       react: ^18.1.0
       react-dom: ^18.1.0
@@ -284,7 +284,7 @@ importers:
       '@react-aria/tabs': 3.1.5_react@18.1.0
       '@react-stately/tabs': 3.1.0_react@18.1.0
       '@react-types/shared': 3.13.0_react@18.1.0
-      '@react-types/tabs': 3.0.5_react@18.1.0
+      '@react-types/tabs': 3.1.0_react@18.1.0
       classnames: 2.3.1
     devDependencies:
       '@react-stately/collections': 3.4.0_react@18.1.0
@@ -3106,7 +3106,7 @@ packages:
       '@react-stately/list': 3.4.5_react@18.1.0
       '@react-stately/tabs': 3.1.0_react@18.1.0
       '@react-types/shared': 3.13.0_react@18.1.0
-      '@react-types/tabs': 3.0.5_react@18.1.0
+      '@react-types/tabs': 3.1.0_react@18.1.0
       react: 18.1.0
     dev: false
 
@@ -3253,15 +3253,6 @@ packages:
       react: ^16.8.0 || ^17.0.0-rc.1 || 18
     dependencies:
       '@react-types/checkbox': 3.3.0_react@18.1.0
-      '@react-types/shared': 3.13.0_react@18.1.0
-      react: 18.1.0
-    dev: false
-
-  /@react-types/tabs/3.0.5_react@18.1.0:
-    resolution: {integrity: sha512-ZUIUeOJ7Nv5aoYPv7ThIgnFo4iM/r4i2mSUeOk0frcZRO1maVnD7Xcp/8xuRmT1rn7tzId/hZkXgFjVcUCtgVw==}
-    peerDependencies:
-      react: ^16.8.0 || ^17.0.0-rc.1 || 18
-    dependencies:
       '@react-types/shared': 3.13.0_react@18.1.0
       react: 18.1.0
     dev: false
