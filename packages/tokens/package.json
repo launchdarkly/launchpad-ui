@@ -22,7 +22,8 @@
       "require": "./dist/index.js"
     },
     "./package.json": "./package.json",
-    "./index.css": "./dist/index.css"
+    "./index.css": "./dist/index.css",
+    "./media-queries.css": "./dist/media-queries.css"
   },
   "scripts": {
     "build": "style-dictionary build --config ./sd.config.js",

@@ -1,4 +1,5 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
+const StyleDictionary = require('style-dictionary');
 const yaml = require('yaml');
 
 module.exports = {
@@ -48,5 +49,29 @@ module.exports = {
         },
       ],
     },
+    'media-query': {
+      transformGroup: 'css',
+      buildPath: 'dist/',
+      files: [
+        {
+          destination: `media-queries.css`,
+          format: 'custom/format/custom-media',
+          filter: { attributes: { category: 'viewport' } },
+        },
+      ],
+    },
   },
 };
+
+StyleDictionary.registerFormat({
+  name: 'custom/format/custom-media',
+  formatter(dictionary) {
+    return dictionary.allProperties
+      .map((prop) => {
+        const { attributes, value } = prop;
+        const size = attributes.type;
+        return `@custom-media --${size} screen and (min-width: ${value});`;
+      })
+      .join('\n');
+  },
+});
