@@ -32,6 +32,7 @@
     "test": "vitest run --coverage"
   },
   "dependencies": {
+    "@launchpad-ui/tokens": "workspace:~",
     "classnames": "^2.3.1"
   },
   "peerDependencies": {

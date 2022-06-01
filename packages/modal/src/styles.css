@@ -1,4 +1,4 @@
-@import 'media-queries';
+@import '../../tokens/dist/media-queries.css';
 
 .has-modal {
   overflow: hidden;
