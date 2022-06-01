@@ -32,7 +32,7 @@
     "test": "vitest run --coverage"
   },
   "dependencies": {
-    "@react-aria/tabs": "^3.1.5",
+    "@react-aria/tabs": "^3.2.0",
     "@react-stately/tabs": "^3.1.0",
     "@react-types/shared": "^3.13.0",
     "@react-types/tabs": "^3.0.5",

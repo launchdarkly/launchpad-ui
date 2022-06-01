@@ -152,7 +152,7 @@ importers:
       '@launchpad-ui/tab-list': workspace:~
       '@launchpad-ui/toggle': workspace:~
       '@launchpad-ui/tokens': workspace:~
-      '@react-aria/ssr': ^3.1.2
+      '@react-aria/ssr': ^3.2.0
       '@react-stately/collections': ^3.4.0
       '@remix-run/dev': ^1.5.1
       '@remix-run/eslint-config': ^1.5.1
@@ -173,7 +173,7 @@ importers:
       '@launchpad-ui/tab-list': link:../../packages/tab-list
       '@launchpad-ui/toggle': link:../../packages/toggle
       '@launchpad-ui/tokens': link:../../packages/tokens
-      '@react-aria/ssr': 3.1.2_react@18.1.0
+      '@react-aria/ssr': 3.2.0_react@18.1.0
       '@react-stately/collections': 3.4.0_react@18.1.0
       '@remix-run/node': 1.5.1_ef5jwxihqo6n7gxfmzogljlgcm
       '@remix-run/react': 1.5.1_ef5jwxihqo6n7gxfmzogljlgcm
@@ -271,7 +271,7 @@ importers:
   packages/tab-list:
     specifiers:
       '@launchpad-ui/tokens': workspace:~
-      '@react-aria/tabs': ^3.1.5
+      '@react-aria/tabs': ^3.2.0
       '@react-stately/collections': ^3.4.0
       '@react-stately/tabs': ^3.1.0
       '@react-types/shared': ^3.13.0
@@ -281,7 +281,7 @@ importers:
       react-dom: ^18.1.0
     dependencies:
       '@launchpad-ui/tokens': link:../tokens
-      '@react-aria/tabs': 3.1.5_react@18.1.0
+      '@react-aria/tabs': 3.2.0_react@18.1.0
       '@react-stately/tabs': 3.1.0_react@18.1.0
       '@react-types/shared': 3.13.0_react@18.1.0
       '@react-types/tabs': 3.0.5_react@18.1.0
@@ -294,16 +294,16 @@ importers:
   packages/toggle:
     specifiers:
       '@launchpad-ui/tokens': workspace:~
-      '@react-aria/switch': ^3.1.8
-      '@react-aria/visually-hidden': ^3.2.8
+      '@react-aria/switch': ^3.2.0
+      '@react-aria/visually-hidden': ^3.3.0
       '@react-stately/toggle': ^3.3.0
       classnames: ^2.3.1
       react: ^18.1.0
       react-dom: ^18.1.0
     dependencies:
       '@launchpad-ui/tokens': link:../tokens
-      '@react-aria/switch': 3.1.8_react@18.1.0
-      '@react-aria/visually-hidden': 3.2.8_react@18.1.0
+      '@react-aria/switch': 3.2.0_react@18.1.0
+      '@react-aria/visually-hidden': 3.3.0_react@18.1.0
       '@react-stately/toggle': 3.3.0_react@18.1.0
       classnames: 2.3.1
     devDependencies:
@@ -2617,21 +2617,21 @@ packages:
     resolution: {integrity: sha512-ZnQMnLV4e7hDlUvw8H+U8ASL02SS2Gn6+9Ac3wGGLIe7+je2AeAOxPY+izIPJDfFDb7eDjev0Us8MO1iFRN8hA==}
     dev: true
 
-  /@internationalized/date/3.0.0-rc.0:
-    resolution: {integrity: sha512-R8ui3O2G43fZ/z5cBdJuU6nswKtuVrKloDE6utvqKEeGf6igFoiapcjg7jbQ+WvWIDGtdUytOp2fOq/X4efBdQ==}
+  /@internationalized/date/3.0.0-rc.1:
+    resolution: {integrity: sha512-IHc1NqUTA/fo9nf0pwRXrMjrabJ/9vTw5RIFAF3qS8JsdEGnw3dIyDb/+ipjEEqZyHVHHXwnqD8hKM18gGoWTg==}
     dependencies:
       '@babel/runtime': 7.18.3
     dev: false
 
-  /@internationalized/message/3.0.6:
-    resolution: {integrity: sha512-ECk3toFy87I2z5zipRNwdbouvRlIyMKb/FzKj1upMaNS52AKhpvrLgo3CY/ZXQKm4CRIbeh6p/F/Ztt+enhIEA==}
+  /@internationalized/message/3.0.7:
+    resolution: {integrity: sha512-f+3VC8NIR5rbk3un9WnGRNpAViWOUbnB2LfzYGlpC38XZ1GzCzi2AcCQ8qhgENXiNk8qetZ1TwJYmCZ/M8UM4Q==}
     dependencies:
       '@babel/runtime': 7.18.3
       intl-messageformat: 9.13.0
     dev: false
 
-  /@internationalized/number/3.1.0:
-    resolution: {integrity: sha512-CEts+2rIB4QveKeeF6xIHdn8aLVvUt5aiarkpCZgtMyYqfqo/ZBELf2UyhvLPGpRxcF24ClCISMTP9BTVreSAg==}
+  /@internationalized/number/3.1.1:
+    resolution: {integrity: sha512-dBxCQKIxvsZvW2IBt3KsqrCfaw2nV6o6a8xsloJn/hjW0ayeyhKuiiMtTwW3/WGNPP7ZRyDbtuiUEjMwif1ENQ==}
     dependencies:
       '@babel/runtime': 7.18.3
     dev: false
@@ -3016,137 +3016,137 @@ packages:
       webpack: 5.72.1_esbuild@0.14.42
     dev: true
 
-  /@react-aria/focus/3.5.5_react@18.1.0:
-    resolution: {integrity: sha512-scv+jhbQ25JCh36gu8a++edvdEFdlRScdQdnkJOB4NbHbYYfY36APtI70hgQHdfq9dDl5fJ9LMsH9hoF7X3gLw==}
+  /@react-aria/focus/3.6.0_react@18.1.0:
+    resolution: {integrity: sha512-1XuwDvhrmLcNnYHBFzwmZOoXuxkybRc8MUhiGLYRD1aVX1h9GarglYo9sfbGZNRO5jxMptXjtJv2rdWz1mHmQw==}
     peerDependencies:
-      react: ^16.8.0 || ^17.0.0-rc.1 || 18
+      react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0 || 18
     dependencies:
       '@babel/runtime': 7.18.3
-      '@react-aria/interactions': 3.8.4_react@18.1.0
-      '@react-aria/utils': 3.12.0_react@18.1.0
+      '@react-aria/interactions': 3.9.0_react@18.1.0
+      '@react-aria/utils': 3.13.0_react@18.1.0
       '@react-types/shared': 3.13.0_react@18.1.0
       clsx: 1.1.1
       react: 18.1.0
     dev: false
 
-  /@react-aria/i18n/3.3.9_react@18.1.0:
-    resolution: {integrity: sha512-EOqiOu84NYH/CW0s/tt3yDqDsjHlrHdi5qzrOGpGN/BvxtA/4UkMBdi8TTKXdRk8oHUIdNW1z5mZxzxkLDy1sA==}
+  /@react-aria/i18n/3.4.0_react@18.1.0:
+    resolution: {integrity: sha512-2pU13zT9bgD4eMlqfJ/Um2wjYRS7ORvR0jqGSfNzY9Lx+1IeSCqTkBNubT7bCV+Oc0LMUR93fGRDxfdtMyJCog==}
     peerDependencies:
-      react: ^16.8.0 || ^17.0.0-rc.1 || 18
+      react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0 || 18
     dependencies:
       '@babel/runtime': 7.18.3
-      '@internationalized/date': 3.0.0-rc.0
-      '@internationalized/message': 3.0.6
-      '@internationalized/number': 3.1.0
-      '@react-aria/ssr': 3.1.2_react@18.1.0
-      '@react-aria/utils': 3.12.0_react@18.1.0
+      '@internationalized/date': 3.0.0-rc.1
+      '@internationalized/message': 3.0.7
+      '@internationalized/number': 3.1.1
+      '@react-aria/ssr': 3.2.0_react@18.1.0
+      '@react-aria/utils': 3.13.0_react@18.1.0
       '@react-types/shared': 3.13.0_react@18.1.0
       react: 18.1.0
     dev: false
 
-  /@react-aria/interactions/3.8.4_react@18.1.0:
-    resolution: {integrity: sha512-6EHFKK8pmjSJSKcBbduijPETKqE669XZ1VaEY8ubr6VnlVhCszvKHoxpU384CkNiDNLJOVkK6HDzPXsn3lxhng==}
+  /@react-aria/interactions/3.9.0_react@18.1.0:
+    resolution: {integrity: sha512-tf9vJtHf7DSnj4e/q19hoO5h61xb0qxNXUkOwaVwU1XlaA+eh+Qas2RF0GIMARLj+JhGX9y2nLjw3FK8F+pItQ==}
     peerDependencies:
-      react: ^16.8.0 || ^17.0.0-rc.1 || 18
+      react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0 || 18
     dependencies:
       '@babel/runtime': 7.18.3
-      '@react-aria/utils': 3.12.0_react@18.1.0
+      '@react-aria/utils': 3.13.0_react@18.1.0
       '@react-types/shared': 3.13.0_react@18.1.0
       react: 18.1.0
     dev: false
 
-  /@react-aria/selection/3.8.2_react@18.1.0:
-    resolution: {integrity: sha512-sBkSza8kT06tUKzIX68H2k+svYNCBOwhHmU0gbx164CmitCLk/akDGIds3LeoA9FhFFXw6/5CuLp6SNhmqlLWw==}
+  /@react-aria/selection/3.9.0_react@18.1.0:
+    resolution: {integrity: sha512-dDtMpi1RkG056zKQEzI8bm3p4KvRjq7+qqPEXTSQIqVU2+SfaiPo3Kmx26whN8Yd5tOcGQyNrKAZbC0GriqOFA==}
     peerDependencies:
-      react: ^16.8.0 || ^17.0.0-rc.1 || 18
+      react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0 || 18
     dependencies:
       '@babel/runtime': 7.18.3
-      '@react-aria/focus': 3.5.5_react@18.1.0
-      '@react-aria/i18n': 3.3.9_react@18.1.0
-      '@react-aria/interactions': 3.8.4_react@18.1.0
-      '@react-aria/utils': 3.12.0_react@18.1.0
+      '@react-aria/focus': 3.6.0_react@18.1.0
+      '@react-aria/i18n': 3.4.0_react@18.1.0
+      '@react-aria/interactions': 3.9.0_react@18.1.0
+      '@react-aria/utils': 3.13.0_react@18.1.0
       '@react-stately/collections': 3.4.0_react@18.1.0
       '@react-stately/selection': 3.10.0_react@18.1.0
       '@react-types/shared': 3.13.0_react@18.1.0
       react: 18.1.0
     dev: false
 
-  /@react-aria/ssr/3.1.2_react@18.1.0:
-    resolution: {integrity: sha512-amXY11ImpokvkTMeKRHjsSsG7v1yzzs6yeqArCyBIk60J3Yhgxwx9Cah+Uu/804ATFwqzN22AXIo7SdtIaMP+g==}
+  /@react-aria/ssr/3.2.0_react@18.1.0:
+    resolution: {integrity: sha512-wwJFdkl+Q8NU5yJ4NvdAOqx5LM3QtUVoSjuK7Ey8jZ4WS4bB0EqT3Kr3IInBs257HzZ5nXCiKXKE4NGXXuIRWA==}
     peerDependencies:
-      react: ^16.8.0 || ^17.0.0-rc.1 || 18
+      react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0 || 18
     dependencies:
       '@babel/runtime': 7.18.3
       react: 18.1.0
     dev: false
 
-  /@react-aria/switch/3.1.8_react@18.1.0:
-    resolution: {integrity: sha512-bnZZMMIcWoPLPPrI6Pl31h0rdhP7xAcUKtgM47iVpT99wyitcjjRcqJAaKVQsGnfdsIWeR85+a7QnOI3NByjCA==}
+  /@react-aria/switch/3.2.0_react@18.1.0:
+    resolution: {integrity: sha512-MAYwMLg/SqVFbpPZ2Inhcflbk6V3+3Yj3XD4P5S7+PdqztJ76g0mPkduieP+n+5+ovGDvF9mpJ2JzAwAAtkm9g==}
     peerDependencies:
-      react: ^16.8.0 || ^17.0.0-rc.1 || 18
+      react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0 || 18
     dependencies:
       '@babel/runtime': 7.18.3
-      '@react-aria/toggle': 3.2.4_react@18.1.0
+      '@react-aria/toggle': 3.3.0_react@18.1.0
       '@react-stately/toggle': 3.3.0_react@18.1.0
-      '@react-types/switch': 3.1.6_react@18.1.0
+      '@react-types/switch': 3.2.0_react@18.1.0
       react: 18.1.0
     dev: false
 
-  /@react-aria/tabs/3.1.5_react@18.1.0:
-    resolution: {integrity: sha512-CJ33b1IW3i0ZJaGAExpR3g2ZHAzpiOQpZEm4NpQlgtPFlcvcNCQu15SYu2fPXEyczc1+LA9eOeRbXwwYfUYO3A==}
+  /@react-aria/tabs/3.2.0_react@18.1.0:
+    resolution: {integrity: sha512-CBSjO34ZBgb5WAEBcWIkIWcvFuJ/rgnG5Zc0Z7mGWEgCsqSpwCXAz4RYoIdK7uyLPrlxTdglw/OJfF4iEbR23Q==}
     peerDependencies:
-      react: ^16.8.0 || ^17.0.0-rc.1 || 18
+      react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0 || 18
     dependencies:
       '@babel/runtime': 7.18.3
-      '@react-aria/focus': 3.5.5_react@18.1.0
-      '@react-aria/i18n': 3.3.9_react@18.1.0
-      '@react-aria/interactions': 3.8.4_react@18.1.0
-      '@react-aria/selection': 3.8.2_react@18.1.0
-      '@react-aria/utils': 3.12.0_react@18.1.0
-      '@react-stately/list': 3.4.5_react@18.1.0
+      '@react-aria/focus': 3.6.0_react@18.1.0
+      '@react-aria/i18n': 3.4.0_react@18.1.0
+      '@react-aria/interactions': 3.9.0_react@18.1.0
+      '@react-aria/selection': 3.9.0_react@18.1.0
+      '@react-aria/utils': 3.13.0_react@18.1.0
+      '@react-stately/list': 3.5.0_react@18.1.0
       '@react-stately/tabs': 3.1.0_react@18.1.0
       '@react-types/shared': 3.13.0_react@18.1.0
-      '@react-types/tabs': 3.0.5_react@18.1.0
+      '@react-types/tabs': 3.1.0_react@18.1.0
       react: 18.1.0
     dev: false
 
-  /@react-aria/toggle/3.2.4_react@18.1.0:
-    resolution: {integrity: sha512-q1NiUKkWt9trgVj/VvKrTpe/tvNcsM9ie5JJVxikF4moPCyIqxRWaDzi2/g/63c1I6LZDMVT4v6V5tk9xgfuiQ==}
+  /@react-aria/toggle/3.3.0_react@18.1.0:
+    resolution: {integrity: sha512-Z186VPuZkgYCsueQV4Wyv6r10HjhnC9i8NUHTB8Z0up85rH3MLCQ2x3otTbc0Wrkuqggfw4jF7CfnCM/l+XxVw==}
     peerDependencies:
-      react: ^16.8.0 || ^17.0.0-rc.1 || 18
+      react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0 || 18
     dependencies:
       '@babel/runtime': 7.18.3
-      '@react-aria/focus': 3.5.5_react@18.1.0
-      '@react-aria/interactions': 3.8.4_react@18.1.0
-      '@react-aria/utils': 3.12.0_react@18.1.0
+      '@react-aria/focus': 3.6.0_react@18.1.0
+      '@react-aria/interactions': 3.9.0_react@18.1.0
+      '@react-aria/utils': 3.13.0_react@18.1.0
       '@react-stately/toggle': 3.3.0_react@18.1.0
       '@react-types/checkbox': 3.3.0_react@18.1.0
       '@react-types/shared': 3.13.0_react@18.1.0
-      '@react-types/switch': 3.1.6_react@18.1.0
+      '@react-types/switch': 3.2.0_react@18.1.0
       react: 18.1.0
     dev: false
 
-  /@react-aria/utils/3.12.0_react@18.1.0:
-    resolution: {integrity: sha512-1TMrE7UpgTgQHgW3z0r6Zo4CTUDwNsZEwzg+mQVub8ZalonhuNs5OrulUn+lRIsGELNktGNkeh/29WsS1Od8eg==}
+  /@react-aria/utils/3.13.0_react@18.1.0:
+    resolution: {integrity: sha512-iF/yYkUVCc2Cgyu7o8oE6w7a67P/M8gXKDR2tp592Be6iUKQPy2kb49VvSh+Bom6Wq/To3h4UBOLFI6I0VXJYA==}
     peerDependencies:
-      react: ^16.8.0 || ^17.0.0-rc.1 || 18
+      react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0 || 18
     dependencies:
       '@babel/runtime': 7.18.3
-      '@react-aria/ssr': 3.1.2_react@18.1.0
+      '@react-aria/ssr': 3.2.0_react@18.1.0
       '@react-stately/utils': 3.5.0_react@18.1.0
       '@react-types/shared': 3.13.0_react@18.1.0
       clsx: 1.1.1
       react: 18.1.0
     dev: false
 
-  /@react-aria/visually-hidden/3.2.8_react@18.1.0:
-    resolution: {integrity: sha512-SLBID66sUZrCdxaxLhgxypF/UyGuFVFGc+VhqmFi9QacDfAQcoT3DQyXEaKUIDMVtwAtSuWl7BpuooEctKBe6Q==}
+  /@react-aria/visually-hidden/3.3.0_react@18.1.0:
+    resolution: {integrity: sha512-pnm4CzO/pI/2xfDMY9OcnlLqYYpaE1bIAwDdFzkXr6ldcR+4kG6N0dJprL6x+ZMgXbztfxUDSPLmexVQShmFsQ==}
     peerDependencies:
-      react: ^16.8.0 || ^17.0.0-rc.1 || 18
+      react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0 || 18
     dependencies:
       '@babel/runtime': 7.18.3
-      '@react-aria/interactions': 3.8.4_react@18.1.0
-      '@react-aria/utils': 3.12.0_react@18.1.0
+      '@react-aria/interactions': 3.9.0_react@18.1.0
+      '@react-aria/utils': 3.13.0_react@18.1.0
       clsx: 1.1.1
       react: 18.1.0
     dev: false
@@ -3159,19 +3159,6 @@ packages:
       '@babel/runtime': 7.18.3
       '@react-types/shared': 3.13.0_react@18.1.0
       react: 18.1.0
-
-  /@react-stately/list/3.4.5_react@18.1.0:
-    resolution: {integrity: sha512-ylUu9xH+cw7KlEM3rByIcTTeVGAKvscGlj0lVqhn48azqhqEPIDDxlIx3fE4yIKHhXBsscvdp0l8eldJGRvMVA==}
-    peerDependencies:
-      react: ^16.8.0 || ^17.0.0-rc.1 || 18
-    dependencies:
-      '@babel/runtime': 7.18.3
-      '@react-stately/collections': 3.4.0_react@18.1.0
-      '@react-stately/selection': 3.10.0_react@18.1.0
-      '@react-stately/utils': 3.5.0_react@18.1.0
-      '@react-types/shared': 3.13.0_react@18.1.0
-      react: 18.1.0
-    dev: false
 
   /@react-stately/list/3.5.0_react@18.1.0:
     resolution: {integrity: sha512-lQUOD8iee1r3lWpZ2lwB2MPLx9G61UmrTDyq0LzrOl4gTej9k4Ihm4IGDGoY1wJ7bV3wfolIdFNbjmL5Y7or9A==}
@@ -3247,10 +3234,10 @@ packages:
     dependencies:
       react: 18.1.0
 
-  /@react-types/switch/3.1.6_react@18.1.0:
-    resolution: {integrity: sha512-H9ECjBeEK82tGGiCNx2gQfrx5nJEviICAvUCfemLCS4zdUxs9NUYxIfI12v1Bl5NJ1dD0Cyc0hb4haiB+mX1ig==}
+  /@react-types/switch/3.2.0_react@18.1.0:
+    resolution: {integrity: sha512-VZEDYBWRqwU8wKsoM81g5OwUTIc+twF5dDIPd0aJXrW9oI3Cp/w3ZP9ldcvgWygzTsSF2DaKMI2/dafFYfqHQg==}
     peerDependencies:
-      react: ^16.8.0 || ^17.0.0-rc.1 || 18
+      react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0 || 18
     dependencies:
       '@react-types/checkbox': 3.3.0_react@18.1.0
       '@react-types/shared': 3.13.0_react@18.1.0
