@@ -92,6 +92,7 @@
     "lodash.clonedeep": "^4.5.0",
     "nx": "^14.1.9",
     "postcss": "^8.4.13",
+    "postcss-import": "^14.1.0",
     "postcss-nested": "^5.0.6",
     "postcss-preset-env": "^7.6.0",
     "prettier": "^2.6.2",
