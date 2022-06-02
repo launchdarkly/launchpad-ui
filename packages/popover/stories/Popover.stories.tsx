@@ -1,3 +1,5 @@
+import type { Story } from '@storybook/react';
+
 import { Button } from '@launchpad-ui/button';
 import { userEvent, within } from '@storybook/testing-library';
 
@@ -39,6 +41,21 @@ export default {
       },
     },
   },
+  decorators: [
+    (Story: Story) => (
+      <div
+        style={{
+          width: '100vw',
+          height: '100vh',
+          display: 'grid',
+          alignItems: 'center',
+          justifyContent: 'center',
+        }}
+      >
+        <Story />
+      </div>
+    ),
+  ],
 };
 
 export const Default = {
