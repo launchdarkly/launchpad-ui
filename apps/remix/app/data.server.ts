@@ -19,6 +19,10 @@ export async function getComponents() {
       name: 'Lozenge',
     },
     {
+      to: 'components/modal',
+      name: 'Modal',
+    },
+    {
       to: 'components/progress',
       name: 'Progress',
     },

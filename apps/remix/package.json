@@ -18,6 +18,7 @@
     "@launchpad-ui/button": "workspace:~",
     "@launchpad-ui/icons": "workspace:~",
     "@launchpad-ui/lozenge": "workspace:~",
+    "@launchpad-ui/modal": "workspace:~",
     "@launchpad-ui/progress": "workspace:~",
     "@launchpad-ui/tab-list": "workspace:~",
     "@launchpad-ui/toggle": "workspace:~",
