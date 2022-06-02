@@ -12,7 +12,6 @@ importers:
       '@commitlint/config-conventional': ^17.0.0
       '@parcel/css': ^1.9.0
       '@playwright/test': ^1.22.0
-      '@react-spring/web': ^9.4.5
       '@storybook/addon-a11y': ^6.5.0
       '@storybook/addon-essentials': ^6.5.0
       '@storybook/addon-postcss': ^2.0.0
@@ -84,7 +83,6 @@ importers:
       '@commitlint/config-conventional': 17.0.0
       '@parcel/css': 1.9.0
       '@playwright/test': 1.22.2
-      '@react-spring/web': 9.4.5_ef5jwxihqo6n7gxfmzogljlgcm
       '@storybook/addon-a11y': 6.5.6_ef5jwxihqo6n7gxfmzogljlgcm
       '@storybook/addon-essentials': 6.5.6_42ajxon36irvpqcunewwl7kapu
       '@storybook/addon-postcss': 2.0.0_webpack@5.72.1
@@ -3227,6 +3225,7 @@ packages:
       '@react-spring/shared': 9.4.5_react@18.1.0
       '@react-spring/types': 9.4.5
       react: 18.1.0
+    dev: false
 
   /@react-spring/core/9.4.5_react@18.1.0:
     resolution: {integrity: sha512-83u3FzfQmGMJFwZLAJSwF24/ZJctwUkWtyPD7KYtNagrFeQKUH1I05ZuhmCmqW+2w1KDW1SFWQ43RawqfXKiiQ==}
@@ -3238,9 +3237,11 @@ packages:
       '@react-spring/shared': 9.4.5_react@18.1.0
       '@react-spring/types': 9.4.5
       react: 18.1.0
+    dev: false
 
   /@react-spring/rafz/9.4.5:
     resolution: {integrity: sha512-swGsutMwvnoyTRxvqhfJBtGM8Ipx6ks0RkIpNX9F/U7XmyPvBMGd3GgX/mqxZUpdlsuI1zr/jiYw+GXZxAlLcQ==}
+    dev: false
 
   /@react-spring/shared/9.4.5_react@18.1.0:
     resolution: {integrity: sha512-JhMh3nFKsqyag0KM5IIM8BQANGscTdd0mMv3BXsUiMZrcjQTskyfnv5qxEeGWbJGGar52qr5kHuBHtCjQOzniA==}
@@ -3250,9 +3251,11 @@ packages:
       '@react-spring/rafz': 9.4.5
       '@react-spring/types': 9.4.5
       react: 18.1.0
+    dev: false
 
   /@react-spring/types/9.4.5:
     resolution: {integrity: sha512-mpRIamoHwql0ogxEUh9yr4TP0xU5CWyZxVQeccGkHHF8kPMErtDXJlxyo0lj+telRF35XNihtPTWoflqtyARmg==}
+    dev: false
 
   /@react-spring/web/9.4.5_ef5jwxihqo6n7gxfmzogljlgcm:
     resolution: {integrity: sha512-NGAkOtKmOzDEctL7MzRlQGv24sRce++0xAY7KlcxmeVkR7LRSGkoXHaIfm9ObzxPMcPHQYQhf3+X9jepIFNHQA==}
@@ -3266,6 +3269,7 @@ packages:
       '@react-spring/types': 9.4.5
       react: 18.1.0
       react-dom: 18.1.0_react@18.1.0
+    dev: false
 
   /@react-stately/collections/3.4.0_react@18.1.0:
     resolution: {integrity: sha512-ODS/Nm5OH4XqLugKII7jGc698XnaQEJo423jKa0jhyIpSnviqFRpXRbrPiFPAcaE3S4d/pp20HdDotWZAbM8Ww==}

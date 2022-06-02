@@ -13,6 +13,7 @@ export default {
     docs: {
       page: null,
     },
+    chromatic: { delay: 1000 },
   },
 };
 
