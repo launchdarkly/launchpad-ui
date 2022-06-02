@@ -30,5 +30,9 @@ export async function getComponents() {
       to: 'components/toggle',
       name: 'Toggle',
     },
+    {
+      to: 'components/notification',
+      name: 'Notification',
+    },
   ];
 }

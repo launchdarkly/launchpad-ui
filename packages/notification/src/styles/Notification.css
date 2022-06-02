@@ -1,0 +1,319 @@
+/* IMPORTANT: all rems are based on a 10px system */
+
+:root {
+  --reskin-text-color: hsl(240 2.2% 35.3%);
+  --Notification-icon-color-info: var(--reskin-info-blue-base);
+  --Notification-icon-color-success: var(--reskin-success-green-base);
+  --Notification-icon-color-warning: var(--reskin-warn-gold-base);
+  --Notification-icon-color-error: var(--reskin-error-red-base);
+  --reskin-success-green-safe: hsl(142.4 71.8% 29.2%);
+  --reskin-success-green-light: var(--color-system-green-200);
+  --reskin-success-green-base: var(--color-system-green-700);
+  --reskin-info-blue-safe: hsl(207.2 86% 39.2%);
+  --reskin-info-blue-light: var(--color-blue-200);
+  --reskin-info-blue-base: var(--color-blue-700);
+  --reskin-warn-gold-safe: hsl(42.9 100% 29.6%);
+  --reskin-warn-gold-light: var(--color-system-yellow-200);
+  --reskin-warn-gold-base: var(--color-system-yellow-700);
+  --reskin-error-red-safe: hsl(0 100% 41.6%);
+  --reskin-error-red-light: var(--color-system-red-200);
+  --reskin-error-red-base: var(--color-system-red-700);
+  --Notification-box-shadow-0x2y-blur8-sp2-4prc-black: 0 2px 8px -2px hsl(0 0% 0% / 0.04);
+  --Notification-box-shadow-0x2y-blur4-sp2-8prc-black: 0 2px 4px 2px hsl(0 0% 0% / 0.08);
+  --Notification-box-shadow-0x1y-blur2-sp2-8prc-black: 0 1px 2px 2px hsl(0 0% 0% / 0.08);
+  --Notification-box-shadow-hover: var(--Notification-box-shadow-0x2y-blur8-sp2-4prc-black),
+    var(--Notification-box-shadow-0x2y-blur4-sp2-8prc-black),
+    var(--Notification-box-shadow-0x1y-blur2-sp2-8prc-black);
+
+  /* TODO: name better, improve a11y support — convert to rem once we migrate */
+  --box-shadow-0x2y-blur8-sp1-4prc-black: 0 8px 2px -1px hsl(0 0% 12.9% / 0.04);
+  --box-shadow-0x2y-blur4-sp0-8prc-black: 0 2px 4px 0 hsl(0 0% 12.9% / 0.08);
+  --box-shadow-0x1y-blur2-sp0-14prc-black: 0 1px 2px 0 hsl(0 0% 12.9% / 0.14);
+  --reskin-box-shadow-triple: var(--box-shadow-0x2y-blur8-sp1-4prc-black),
+    var(--box-shadow-0x2y-blur4-sp0-8prc-black), var(--box-shadow-0x1y-blur2-sp0-14prc-black);
+  --Notification-border-radius: 6px;
+  --Notification-color-background-info: var(--reskin-info-blue-light);
+  --Notification-color-background-success: var(--reskin-success-green-light);
+  --Notification-color-background-warning: var(--reskin-warn-gold-light);
+  --Notification-color-background-error: var(--reskin-error-red-light);
+  --Notification-color-border-info: var(--reskin-info-blue-base);
+  --Notification-color-border-success: var(--reskin-success-green-base);
+  --Notification-color-border-warning: var(--reskin-warn-gold-base);
+  --Notification-color-border-error: var(--reskin-error-red-base);
+  --Notification-color-text: var(--color-gray-700);
+  --Notification-closeButton-color-border: var(--color-gray-600);
+  --Notification-closeButton-color-fill: var(--color-gray-600);
+  --Notification-closeButton-color-text: var(--color-gray-600);
+  --Notification-copyDetailsButton-color-background-default: var(--color-white);
+  --Notification-copyDetailsButton-color-background-default-hover: var(--color-gray-100);
+  --Notification-copyDetailsButton-color-background-default-focus: var(--color-white);
+  --Notification-copyDetailsButton-color-background-default-active: var(--color-gray-100);
+  --Notification-copyDetailsButton-color-border: var(--color-gray-600);
+  --Notification-copyDetailsButton-color-boxShadow-1-default-focus: var(--reskin-error-red-light);
+  --Notification-copyDetailsButton-color-boxShadow-2-default-focus: var(--color-gray-600);
+  --Notification-copyDetailsButton-box-shadow-focus: 0 0 0 2px
+      var(--Notification-copyDetailsButton-color-boxShadow-1-default-focus),
+    0 0 0 4px var(--Notification-copyDetailsButton-color-boxShadow-2-default-focus);
+  --Notification-copyDetailsButton-color-text: var(--color-black-300);
+}
+
+/* ------- TODO: make component tokens when design done ------- */
+.Notification {
+  display: flex;
+  position: relative;
+  min-height: 4.4rem;
+  padding: 0;
+  font-size: var(--osmo-font-size-base);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-small);
+  white-space: normal;
+  background-color: var(--color-white);
+  color: var(--Notification-color-text);
+  border: 0.0625em solid var(--color-white);
+  border-radius: var(--Notification-border-radius);
+  box-shadow: var(--reskin-box-shadow-triple);
+  box-sizing: border-box;
+
+  .Notification-body {
+    padding: 1rem 1.2rem 1rem 0.8rem;
+  }
+}
+
+.Notification-icon {
+  line-height: 1.25;
+  padding: 1rem 0 1rem 1.2rem;
+
+  .Icon {
+    width: 2.4rem;
+    height: 2.4rem;
+  }
+}
+
+.Notification-detailsExpand {
+  display: block;
+  font-weight: var(--font-weight-medium);
+  cursor: pointer;
+
+  &:hover {
+    text-decoration: underline;
+  }
+
+  .Icon {
+    fill: var(--color-gray-700);
+    top: -1px;
+  }
+}
+
+/* Many of the icons have positioning overrides happening
+in the Icon component style.css file. This temporary fix
+will zero out that positioning adjustment for now */
+.Notification--info {
+  border: 0.0625em solid var(--Notification-color-border-info);
+  background-color: var(--Notification-color-background-info);
+
+  .Notification-icon .Icon {
+    fill: var(--Notification-icon-color-info);
+    top: 0;
+  }
+}
+
+.Notification--success {
+  border: 0.0625em solid var(--Notification-color-border-success);
+  background-color: var(--Notification-color-background-success);
+
+  .Notification-icon .Icon > svg {
+    fill: var(--Notification-icon-color-success);
+  }
+}
+
+.Notification--warning {
+  border: 0.0625em solid var(--Notification-color-border-warning);
+  background-color: var(--Notification-color-background-warning);
+
+  .Notification-icon .Icon {
+    fill: var(--Notification-icon-color-warning);
+    line-height: 1;
+  }
+}
+
+/* targeting icon path element until we standardize icon fills */
+.Notification--error {
+  border: 0.0625em solid var(--Notification-color-border-error);
+  background-color: var(--Notification-color-background-error);
+
+  .Notification-icon .Icon > svg > path {
+    fill: var(--Notification-icon-color-error);
+  }
+}
+
+.Notification-close {
+  min-width: 2.2rem;
+  width: 2.2rem;
+  height: 2.2rem;
+  margin-left: auto;
+  margin-top: 1.1rem;
+  margin-right: 1.1rem;
+}
+
+.Notification-close.Button--icon.Button--default {
+  background-color: transparent;
+  border-color: var(--Notification-closeButton-color-border);
+  color: var(--Notification-closeButton-color-text);
+
+  .Icon {
+    background-color: transparent;
+    border-radius: 50%;
+    fill: var(--Notification-closeButton-color-fill);
+    width: 2rem;
+    height: 2rem;
+    padding: 0.2rem;
+  }
+}
+
+.Notification-close.Button--icon.Button--default:hover {
+  background-color: transparent;
+
+  .Icon {
+    background-color: hsl(0 0% 12.9% / 0.1);
+    box-shadow: 0 0 0 1px hsl(220 1.7% 35.1% / 0.7), 0 0 0 4px hsl(0 0% 12.9% / 0.1);
+  }
+}
+
+.Notification-close.Button--icon.Button--default:focus {
+  box-shadow: none;
+
+  .Icon {
+    box-shadow: 0 0 0 1px hsl(220 1.7% 35.1% / 0.7), 0 0 0 4px hsl(0 0% 12.9% / 0.1);
+  }
+}
+
+.Notification-close.Button--icon.Button--default:active {
+  background-color: transparent;
+
+  .Icon {
+    background-color: hsl(0 0% 12.9% / 0.7);
+    box-shadow: 0 0 0 1px var(--color-black-200), 0 0 0 4px hsl(0 0% 12.9% / 0.1);
+    color: var(--color-white);
+
+    > svg {
+      fill: currentcolor;
+    }
+  }
+}
+
+/* Adjust typographical rhythm to offset --line-height-small */
+.Notification-message {
+  position: relative;
+  top: 0.15rem;
+}
+
+.Notification-message a {
+  color: var(--Notification-color-text);
+
+  &:hover {
+    text-decoration: none;
+    box-shadow: none;
+  }
+
+  &:active {
+    color: var(--color-black-300);
+    box-shadow: none;
+    text-decoration: underline;
+  }
+
+  &:focus {
+    box-shadow: 0 0 0 1px hsl(0 0% 9.8% / 0.7), 0 0 0 4px hsl(0 0% 9.8% / 0.1);
+  }
+
+  &:focus:not(:focus-visible) {
+    outline: none;
+    box-shadow: none;
+  }
+}
+
+.Notification-details {
+  color: var(--color-gray-700);
+  font-size: var(--osmo-font-size-small);
+  font-weight: var(--font-weight-regular);
+  line-height: 18px;
+  height: 18px;
+  margin-top: 1rem;
+  overflow: hidden;
+
+  :focus {
+    outline: none;
+  }
+
+  &.is-expanded {
+    height: auto;
+    overflow: visible;
+  }
+}
+
+/* ask Alexis why this is hidden */
+.Notification-details.is-expanded .Notification-detailsExpand {
+  display: none;
+}
+
+.Notification-detailsContent {
+  margin-bottom: 1rem;
+  white-space: nowrap;
+  overflow: auto;
+  padding: 0 0 1rem;
+
+  /* detail content has little structure, but generally, it'll consist
+  of short paragraphs or lists */
+  & li + li,
+  & p + p {
+    margin-top: 5px;
+  }
+}
+
+.Notification-copyDetailsButton {
+  background-color: var(--Notification-copyDetailsButton-color-background-default);
+  border-color: var(--Notification-copyDetailsButton-color-border);
+  color: var(--Notification-copyDetailsButton-color-text);
+
+  &:hover {
+    background-color: var(--Notification-copyDetailsButton-color-background-default-hover);
+    border-color: var(--Notification-copyDetailsButton-color-border);
+    color: var(--Notification-copyDetailsButton-color-text);
+  }
+
+  &:focus {
+    background-color: var(--Notification-copyDetailsButton-color-background-default-focus);
+    border-color: var(--Notification-copyDetailsButton-color-border);
+    box-shadow: var(--Notification-copyDetailsButton-box-shadow-focus);
+    color: var(--Notification-copyDetailsButton-color-text);
+  }
+
+  &:active {
+    background-color: var(--Notification-copyDetailsButton-color-background-default-active);
+    border-color: var(--Notification-copyDetailsButton-color-border);
+    color: var(--Notification-copyDetailsButton-color-text);
+  }
+}
+
+/* ------- TRANSITIONS ------- */
+
+.Notification-enter {
+  opacity: 0;
+  transform: translate3d(40%, 0, 0);
+  transition: transform 100ms, opacity 100ms;
+}
+
+.Notification-enter.Notification-enter-active {
+  transform: translate3d(0, 0, 0);
+  opacity: 1;
+}
+
+.Notification-leave {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+  transition: transform 100ms, opacity 100ms;
+}
+
+.Notification-leave.Notification-leave-active {
+  opacity: 0;
+  transform: translate3d(40%, 0, 0);
+}

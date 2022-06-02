@@ -1,0 +1,52 @@
+{
+  "name": "@launchpad-ui/notification",
+  "version": "0.1.5",
+  "publishConfig": {
+    "access": "public"
+  },
+  "description": "An element representing keywords that categorize feature states for quick recognition.",
+  "files": [
+    "dist"
+  ],
+  "main": "dist/index.js",
+  "module": "dist/index.es.js",
+  "types": "dist/index.d.ts",
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.es.js",
+      "require": "./dist/index.js"
+    },
+    "./package.json": "./package.json",
+    "./styles/*": "./dist/styles/*"
+  },
+  "source": "src/index.ts",
+  "scripts": {
+    "build": "tsc --project tsconfig.build.json && node build.js",
+    "clean": "rm -rf dist",
+    "e2e": "playwright test --config=../../playwright.config.ts",
+    "lint": "eslint '**/*.{ts,tsx,js}' && stylelint '**/*.css' --ignore-path ../../.stylelintignore",
+    "test": "vitest run --coverage"
+  },
+  "dependencies": {
+    "@launchpad-ui/button": "workspace:~",
+    "@launchpad-ui/icons": "workspace:~",
+    "@launchpad-ui/tokens": "workspace:~",
+    "@react-spring/web": "9.4.4",
+    "classnames": "^2.3.1",
+    "focus-trap": "6.7.3",
+    "uuid": "^8.3.2"
+  },
+  "peerDependencies": {
+    "react": "^16.8.0 || ^17.0.0 || ^18.0.0",
+    "react-dom": "^16.8.0 || ^17.0.0 || ^18.0.0"
+  },
+  "devDependencies": {
+    "@types/uuid": "^8.3.4",
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0"
+  }
+}
