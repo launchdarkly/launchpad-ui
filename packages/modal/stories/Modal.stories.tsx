@@ -21,7 +21,7 @@ export const Default = {
     const [show, setShow] = useState(true);
     const button = <Button onClick={() => setShow(true)}>Open modal</Button>;
     return show ? (
-      <>
+      <div style={{ width: '100vw', height: '100vh' }}>
         {button}
         <Prompt>
           <ModalTransition
@@ -37,7 +37,7 @@ export const Default = {
             </ModalFooter>
           </ModalTransition>
         </Prompt>
-      </>
+      </div>
     ) : (
       button
     );
@@ -52,7 +52,7 @@ export const Sheet = {
     const [show, setShow] = useState(true);
     const button = <Button onClick={() => setShow(true)}>Open modal</Button>;
     return show ? (
-      <>
+      <div style={{ width: '100vw', height: '100vh' }}>
         {button}
 
         <ModalSheet withCloseButton onCancel={() => setShow(!show)}>
@@ -60,7 +60,7 @@ export const Sheet = {
             <ModalHeader>Example modal title</ModalHeader>
           </section>
         </ModalSheet>
-      </>
+      </div>
     ) : (
       button
     );
