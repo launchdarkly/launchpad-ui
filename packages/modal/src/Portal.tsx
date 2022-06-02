@@ -14,23 +14,28 @@ type PortalProps = {
 };
 
 const Portal = ({ children, containerRef, onChildrenMount, ...props }: PortalProps) => {
-  const [portal] = useState<HTMLDivElement>(() => document.createElement('div'));
+  const [portal, setPortal] = useState<HTMLDivElement | null>(null);
 
   useEffect(() => {
+    const portal = document.createElement('div');
     portal.classList.add('Portal');
+
+    setPortal(portal);
     document.body.appendChild(portal);
 
     return () => {
       document.body.removeChild(portal);
     };
-  }, [portal]);
+  }, []);
 
-  return createPortal(
-    <div {...props} ref={containerRef}>
-      {children}
-    </div>,
-    portal
-  );
+  return portal
+    ? createPortal(
+        <div {...props} ref={containerRef}>
+          {children}
+        </div>,
+        portal
+      )
+    : null;
 };
 
 export { Portal };

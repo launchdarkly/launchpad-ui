@@ -152,6 +152,7 @@ importers:
       '@launchpad-ui/button': workspace:~
       '@launchpad-ui/icons': workspace:~
       '@launchpad-ui/lozenge': workspace:~
+      '@launchpad-ui/modal': workspace:~
       '@launchpad-ui/progress': workspace:~
       '@launchpad-ui/tab-list': workspace:~
       '@launchpad-ui/toggle': workspace:~
@@ -173,6 +174,7 @@ importers:
       '@launchpad-ui/button': link:../../packages/button
       '@launchpad-ui/icons': link:../../packages/icons
       '@launchpad-ui/lozenge': link:../../packages/lozenge
+      '@launchpad-ui/modal': link:../../packages/modal
       '@launchpad-ui/progress': link:../../packages/progress
       '@launchpad-ui/tab-list': link:../../packages/tab-list
       '@launchpad-ui/toggle': link:../../packages/toggle
