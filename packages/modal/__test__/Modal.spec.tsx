@@ -4,7 +4,7 @@ import { it, expect, describe } from 'vitest';
 
 import { ModalBody, ModalFooter, ModalHeader, ModalTransition, Prompt } from '../src';
 
-describe('Lozenge', () => {
+describe('Modal', () => {
   it('renders', () => {
     render(
       <Prompt>
