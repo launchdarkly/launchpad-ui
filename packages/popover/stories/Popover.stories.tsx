@@ -44,10 +44,10 @@ export default {
 export const Default = {
   args: {
     children: [
-      // eslint-disable-next-line react/jsx-key
-      <Button>Target</Button>,
-      // eslint-disable-next-line react/jsx-key
-      <div style={{ padding: '2rem' }}>Content to show</div>,
+      <Button key="1">Target</Button>,
+      <div key="2" style={{ padding: '2rem' }}>
+        Content to show
+      </div>,
     ],
   },
   play: async ({ canvasElement }: { canvasElement: HTMLElement }) => {
