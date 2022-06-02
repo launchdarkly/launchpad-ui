@@ -317,6 +317,41 @@ importers:
       react: 18.1.0
       react-dom: 18.1.0_react@18.1.0
 
+  packages/popover:
+    specifiers:
+      '@floating-ui/core': ^0.7.2
+      '@floating-ui/dom': ^0.5.2
+      '@launchpad-ui/overlay': workspace:~
+      '@launchpad-ui/tokens': workspace:~
+      '@react-aria/focus': ^3.6.0
+      '@react-spring/web': ^9.4.5
+      '@types/lodash.isfunction': ^3.0.7
+      '@types/lodash.isnil': ^4.0.7
+      '@types/uuid': ^8.3.4
+      classnames: ^2.3.1
+      lodash.isfunction: ^3.0.9
+      lodash.isnil: ^4.0.0
+      react: ^18.1.0
+      react-dom: ^18.1.0
+      uuid: ^8.3.2
+    dependencies:
+      '@floating-ui/core': 0.7.2
+      '@floating-ui/dom': 0.5.2
+      '@launchpad-ui/overlay': link:../overlay
+      '@launchpad-ui/tokens': link:../tokens
+      '@react-aria/focus': 3.6.0_react@18.1.0
+      '@react-spring/web': 9.4.5_ef5jwxihqo6n7gxfmzogljlgcm
+      classnames: 2.3.1
+      lodash.isfunction: 3.0.9
+      lodash.isnil: 4.0.0
+      uuid: 8.3.2
+    devDependencies:
+      '@types/lodash.isfunction': 3.0.7
+      '@types/lodash.isnil': 4.0.7
+      '@types/uuid': 8.3.4
+      react: 18.1.0
+      react-dom: 18.1.0_react@18.1.0
+
   packages/progress:
     specifiers:
       '@launchpad-ui/tokens': workspace:~
@@ -2619,6 +2654,16 @@ packages:
     transitivePeerDependencies:
       - supports-color
     dev: true
+
+  /@floating-ui/core/0.7.2:
+    resolution: {integrity: sha512-FRVAkSNU/vGXLIsgbggcs70GkXKEOXgBBbNpYPNHSaKsCAMMd00NrjbtKTesxkdv9xm9N3+XiDlcFGY6WnatBg==}
+    dev: false
+
+  /@floating-ui/dom/0.5.2:
+    resolution: {integrity: sha512-z1DnEa7F3d8Fm/eXSbii8UEGpcjZGkQaYYUI0WpEVgD3vBfebDW8j/3ysusxonuMexoigA+A3b/fYH7sEqiwyg==}
+    dependencies:
+      '@floating-ui/core': 0.7.2
+    dev: false
 
   /@formatjs/ecma402-abstract/1.11.4:
     resolution: {integrity: sha512-EBikYFp2JCdIfGEb5G9dyCkTGDmC57KSHhRQOC3aYxoPWVZvfWCDjZwkGYHN7Lis/fmuWl906bnNTJifDQ3sXw==}
