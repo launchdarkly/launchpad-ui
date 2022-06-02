@@ -3,3 +3,5 @@ export type { NotificationCenterProps } from './NotificationCenter';
 
 export { Notification } from './Notification';
 export type { NotificationProps } from './Notification';
+
+export type { NotificationRecord, NotificationLevel } from './types';

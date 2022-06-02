@@ -1,5 +1,5 @@
 /* IMPORTANT: all rems are based on a 10px system */
-
+/* stylelint-disable no-descending-specificity */
 :root {
   --reskin-text-color: hsl(240 2.2% 35.3%);
   --Notification-icon-color-info: var(--reskin-info-blue-base);
@@ -74,75 +74,8 @@
   box-shadow: var(--reskin-box-shadow-triple);
   box-sizing: border-box;
 
-  .Notification-body {
+  & .Notification-body {
     padding: 1rem 1.2rem 1rem 0.8rem;
-  }
-}
-
-.Notification-icon {
-  line-height: 1.25;
-  padding: 1rem 0 1rem 1.2rem;
-
-  .Icon {
-    width: 2.4rem;
-    height: 2.4rem;
-  }
-}
-
-.Notification-detailsExpand {
-  display: block;
-  font-weight: var(--font-weight-medium);
-  cursor: pointer;
-
-  &:hover {
-    text-decoration: underline;
-  }
-
-  .Icon {
-    fill: var(--color-gray-700);
-    top: -1px;
-  }
-}
-
-/* Many of the icons have positioning overrides happening
-in the Icon component style.css file. This temporary fix
-will zero out that positioning adjustment for now */
-.Notification--info {
-  border: 0.0625em solid var(--Notification-color-border-info);
-  background-color: var(--Notification-color-background-info);
-
-  .Notification-icon .Icon {
-    fill: var(--Notification-icon-color-info);
-    top: 0;
-  }
-}
-
-.Notification--success {
-  border: 0.0625em solid var(--Notification-color-border-success);
-  background-color: var(--Notification-color-background-success);
-
-  .Notification-icon .Icon > svg {
-    fill: var(--Notification-icon-color-success);
-  }
-}
-
-.Notification--warning {
-  border: 0.0625em solid var(--Notification-color-border-warning);
-  background-color: var(--Notification-color-background-warning);
-
-  .Notification-icon .Icon {
-    fill: var(--Notification-icon-color-warning);
-    line-height: 1;
-  }
-}
-
-/* targeting icon path element until we standardize icon fills */
-.Notification--error {
-  border: 0.0625em solid var(--Notification-color-border-error);
-  background-color: var(--Notification-color-background-error);
-
-  .Notification-icon .Icon > svg > path {
-    fill: var(--Notification-icon-color-error);
   }
 }
 
@@ -160,7 +93,7 @@ will zero out that positioning adjustment for now */
   border-color: var(--Notification-closeButton-color-border);
   color: var(--Notification-closeButton-color-text);
 
-  .Icon {
+  & .Icon {
     background-color: transparent;
     border-radius: 50%;
     fill: var(--Notification-closeButton-color-fill);
@@ -173,7 +106,7 @@ will zero out that positioning adjustment for now */
 .Notification-close.Button--icon.Button--default:hover {
   background-color: transparent;
 
-  .Icon {
+  & .Icon {
     background-color: hsl(0 0% 12.9% / 0.1);
     box-shadow: 0 0 0 1px hsl(220 1.7% 35.1% / 0.7), 0 0 0 4px hsl(0 0% 12.9% / 0.1);
   }
@@ -182,7 +115,7 @@ will zero out that positioning adjustment for now */
 .Notification-close.Button--icon.Button--default:focus {
   box-shadow: none;
 
-  .Icon {
+  & .Icon {
     box-shadow: 0 0 0 1px hsl(220 1.7% 35.1% / 0.7), 0 0 0 4px hsl(0 0% 12.9% / 0.1);
   }
 }
@@ -190,14 +123,24 @@ will zero out that positioning adjustment for now */
 .Notification-close.Button--icon.Button--default:active {
   background-color: transparent;
 
-  .Icon {
+  & .Icon {
     background-color: hsl(0 0% 12.9% / 0.7);
     box-shadow: 0 0 0 1px var(--color-black-200), 0 0 0 4px hsl(0 0% 12.9% / 0.1);
     color: var(--color-white);
 
-    > svg {
+    & > svg {
       fill: currentcolor;
     }
+  }
+}
+
+.Notification-icon {
+  line-height: 1.25;
+  padding: 1rem 0 1rem 1.2rem;
+
+  & .Icon {
+    width: 2.4rem;
+    height: 2.4rem;
   }
 }
 
@@ -215,12 +158,6 @@ will zero out that positioning adjustment for now */
     box-shadow: none;
   }
 
-  &:active {
-    color: var(--color-black-300);
-    box-shadow: none;
-    text-decoration: underline;
-  }
-
   &:focus {
     box-shadow: 0 0 0 1px hsl(0 0% 9.8% / 0.7), 0 0 0 4px hsl(0 0% 9.8% / 0.1);
   }
@@ -228,6 +165,54 @@ will zero out that positioning adjustment for now */
   &:focus:not(:focus-visible) {
     outline: none;
     box-shadow: none;
+  }
+
+  &:active {
+    color: var(--color-black-300);
+    box-shadow: none;
+    text-decoration: underline;
+  }
+}
+
+/* Many of the icons have positioning overrides happening
+in the Icon component style.css file. This temporary fix
+will zero out that positioning adjustment for now */
+.Notification--info {
+  border: 0.0625em solid var(--Notification-color-border-info);
+  background-color: var(--Notification-color-background-info);
+
+  & .Notification-icon .Icon {
+    fill: var(--Notification-icon-color-info);
+    top: 0;
+  }
+}
+
+.Notification--success {
+  border: 0.0625em solid var(--Notification-color-border-success);
+  background-color: var(--Notification-color-background-success);
+
+  & .Notification-icon .Icon > svg {
+    fill: var(--Notification-icon-color-success);
+  }
+}
+
+.Notification--warning {
+  border: 0.0625em solid var(--Notification-color-border-warning);
+  background-color: var(--Notification-color-background-warning);
+
+  & .Notification-icon .Icon {
+    fill: var(--Notification-icon-color-warning);
+    line-height: 1;
+  }
+}
+
+/* targeting icon path element until we standardize icon fills */
+.Notification--error {
+  border: 0.0625em solid var(--Notification-color-border-error);
+  background-color: var(--Notification-color-background-error);
+
+  & .Notification-icon .Icon > svg > path {
+    fill: var(--Notification-icon-color-error);
   }
 }
 
@@ -240,13 +225,28 @@ will zero out that positioning adjustment for now */
   margin-top: 1rem;
   overflow: hidden;
 
-  :focus {
+  &:focus {
     outline: none;
   }
 
   &.is-expanded {
     height: auto;
     overflow: visible;
+  }
+}
+
+.Notification-detailsExpand {
+  display: block;
+  font-weight: var(--font-weight-medium);
+  cursor: pointer;
+
+  &:hover {
+    text-decoration: underline;
+  }
+
+  & .Icon {
+    fill: var(--color-gray-700);
+    top: -1px;
   }
 }
 
@@ -317,3 +317,5 @@ will zero out that positioning adjustment for now */
   opacity: 0;
   transform: translate3d(40%, 0, 0);
 }
+
+/* stylelint-enable no-descending-specificity */
