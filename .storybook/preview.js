@@ -1,4 +1,13 @@
+import { Globals } from '@react-spring/web';
+import isChromatic from 'chromatic/isChromatic';
+
 import '../packages/tokens/dist/index.css';
+
+if (isChromatic()) {
+  Globals.assign({
+    skipAnimation: true,
+  });
+}
 
 export const parameters = {
   actions: { argTypesRegex: '^on.*' },

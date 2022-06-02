@@ -45,7 +45,7 @@ export const Default = {
 };
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
-Default.parameters = { docs: { disable: true }, chromatic: { pauseAnimationAtEnd: true } };
+Default.parameters = { docs: { disable: true } };
 
 export const Sheet = {
   render: () => {
@@ -68,4 +68,4 @@ export const Sheet = {
 };
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
-Sheet.parameters = { docs: { disable: true }, chromatic: { pauseAnimationAtEnd: true } };
+Sheet.parameters = { docs: { disable: true } };

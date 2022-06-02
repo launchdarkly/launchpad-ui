@@ -92,7 +92,7 @@ class Modal extends Component<ModalProps> {
     const options: FocusTrapOptions = {
       onActivate: onReady,
       clickOutsideDeactivates: true,
-      checkCanFocusTrap: () => new Promise((resolve) => setTimeout(resolve, 50)),
+      checkCanFocusTrap: () => new Promise((resolve) => setTimeout(resolve, 100)),
     };
 
     if (!node) {
