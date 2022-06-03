@@ -1,5 +1,12 @@
 # @launchpad-ui/lozenge
 
+## 0.1.7
+
+### Patch Changes
+
+- Updated dependencies [[`64596df`](https://github.com/launchdarkly/launchpad-ui/commit/64596df8d4116e0008f135867b47a64cb175977c)]:
+  - @launchpad-ui/tokens@0.1.4
+
 ## 0.1.6
 
 ### Patch Changes
