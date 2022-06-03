@@ -1,4 +1,14 @@
-@import '../../tokens/dist/media-queries.css';
+@import '../../../tokens/dist/media-queries.css';
+
+:root {
+  --page-gutter-width: 1rem;
+}
+
+@media (--tablet) {
+  :root {
+    --page-gutter-width: 4rem;
+  }
+}
 
 .has-modal {
   overflow: hidden;
@@ -72,7 +82,7 @@ as needed. */
 }
 
 .ModalSheet .Modal-content section {
-  padding: 3.2rem 1rem;
+  padding: 3.2rem var(--page-gutter-width);
 }
 
 .ModalSheet .Modal-content section + section {

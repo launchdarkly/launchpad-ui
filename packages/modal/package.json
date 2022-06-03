@@ -1,6 +1,6 @@
 {
   "name": "@launchpad-ui/modal",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "publishConfig": {
     "access": "public"
   },
@@ -21,7 +21,7 @@
       "require": "./dist/index.js"
     },
     "./package.json": "./package.json",
-    "./styles.css": "./dist/styles.css"
+    "./styles/*": "./dist/styles/*"
   },
   "source": "src/index.ts",
   "scripts": {
@@ -32,14 +32,26 @@
     "test": "vitest run --coverage"
   },
   "dependencies": {
+    "@launchpad-ui/button": "workspace:~",
+    "@launchpad-ui/icons": "workspace:~",
+    "@launchpad-ui/progress": "workspace:~",
     "@launchpad-ui/tokens": "workspace:~",
-    "classnames": "^2.3.1"
+    "@react-aria/focus": "^3.6.0",
+    "@react-spring/web": "^9.4.5",
+    "classnames": "^2.3.1",
+    "focus-trap": "^6.9.3",
+    "lodash.defer": "^4.1.0",
+    "lodash.filter": "^4.6.0",
+    "no-scroll": "^2.1.1"
   },
   "peerDependencies": {
     "react": "^16.8.0 || ^17.0.0 || ^18.0.0",
     "react-dom": "^16.8.0 || ^17.0.0 || ^18.0.0"
   },
   "devDependencies": {
+    "@types/lodash.defer": "^4.1.7",
+    "@types/lodash.filter": "^4.6.7",
+    "@types/no-scroll": "^2.1.0",
     "react": "^18.1.0",
     "react-dom": "^18.1.0"
   }

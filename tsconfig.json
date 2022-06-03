@@ -9,6 +9,7 @@
       "@launchpad-ui/lozenge": ["./packages/lozenge/src"],
       "@launchpad-ui/modal": ["./packages/modal/src"],
       "@launchpad-ui/overlay": ["./packages/overlay/src"],
+      "@launchpad-ui/popover": ["./packages/popover/src"],
       "@launchpad-ui/progress": ["./packages/progress/src"],
       "@launchpad-ui/tab-list": ["./packages/tab-list/src"],
       "@launchpad-ui/toggle": ["./packages/toggle/src"]

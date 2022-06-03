@@ -158,7 +158,7 @@ class Button extends PureComponent<ButtonProps> {
     disabled: false,
     // tooltipOptions: {},
     outlined: false,
-    onClick: undefined,
+    onClick: () => undefined,
     renderIconFirst: false,
   };
 

@@ -25,7 +25,7 @@
     "test:packages": "pnpm build:transform && nx affected --target=test --base=origin/main --head=HEAD",
     "test:watch": "vitest",
     "prepare": "husky install",
-    "release": "nx affected --target=build --base=origin/main~1 --head=origin/main && changeset publish"
+    "release": "nx affected --target=build --base=origin/main~1 --head=origin/main --exclude=@launchpad-ui/remix && changeset publish"
   },
   "repository": {
     "type": "git",
@@ -48,12 +48,15 @@
     "@playwright/test": "^1.22.0",
     "@storybook/addon-a11y": "^6.5.0",
     "@storybook/addon-essentials": "^6.5.0",
+    "@storybook/addon-interactions": "^6.5.0",
     "@storybook/addons": "^6.5.0",
     "@storybook/api": "^6.5.0",
+    "@storybook/client-api": "^6.5.0",
     "@storybook/builder-webpack5": "^6.5.0",
     "@storybook/manager-webpack5": "^6.5.0",
     "@storybook/addon-postcss": "^2.0.0",
     "@storybook/react": "^6.5.0",
+    "@storybook/testing-library": "^0.0.11",
     "@testing-library/dom": "^8.13.0",
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.3.0",
@@ -91,6 +94,7 @@
     "lodash.clonedeep": "^4.5.0",
     "nx": "^14.1.9",
     "postcss": "^8.4.13",
+    "postcss-import": "^14.1.0",
     "postcss-nested": "^5.0.6",
     "postcss-preset-env": "^7.6.0",
     "prettier": "^2.6.2",
