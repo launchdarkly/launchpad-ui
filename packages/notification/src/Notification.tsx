@@ -11,11 +11,11 @@ import { Component, KeyboardEvent } from 'react';
 import './styles/Notification.css';
 
 type NotificationProps = {
+  details?: string;
   level: NotificationLevel;
-  ttl: number;
   message: ReactNode;
-  details: string;
   onDismiss: () => void;
+  ttl?: number;
 };
 
 type StateProps = {
@@ -34,7 +34,7 @@ class Notification extends Component<NotificationProps, StateProps> {
   componentDidMount() {
     const { ttl, onDismiss } = this.props;
 
-    if (ttl > 0) {
+    if (ttl) {
       this.timeout = setTimeout(onDismiss, ttl);
     }
   }
