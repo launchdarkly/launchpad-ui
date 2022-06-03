@@ -97,7 +97,7 @@ class Notification extends Component<NotificationProps, StateProps> {
   };
 
   handleDetailsKeyPress = (e: KeyboardEvent) => {
-    if (e.keyCode === 13) {
+    if (e.key === 'Enter') {
       this.handleDetailsClick();
     }
   };

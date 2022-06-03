@@ -1,4 +1,3 @@
-/* eslint-disable testing-library/no-node-access */
 import { screen, render } from '@testing-library/react';
 import { axe } from 'jest-axe';
 import { it, expect, describe } from 'vitest';
@@ -19,7 +18,7 @@ const notifications: NotificationRecord[] = [
   },
 ];
 
-describe('notification', () => {
+describe('NotificationCenter', () => {
   it('renders', () => {
     render(<NotificationCenter notifications={notifications} onDismiss={() => undefined} />);
     const items = screen.getAllByRole('alert');
