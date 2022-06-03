@@ -10,9 +10,9 @@ enum NotificationLevel {
 type NotificationRecord = {
   _id: string;
   level: NotificationLevel;
-  ttl: number;
   message: ReactNode;
-  details: string;
+  details?: string;
+  ttl?: number;
 };
 
 export { NotificationLevel };

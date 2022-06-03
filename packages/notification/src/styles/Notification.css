@@ -55,6 +55,8 @@
       var(--Notification-copyDetailsButton-color-boxShadow-1-default-focus),
     0 0 0 4px var(--Notification-copyDetailsButton-color-boxShadow-2-default-focus);
   --Notification-copyDetailsButton-color-text: var(--color-black-300);
+  --Notification-detailsExpand-color-text: var(--color-gray-800);
+  --Notification-detailsExpand-color-text-active: var(--color-black-200);
 }
 
 /* ------- TODO: make component tokens when design done ------- */
@@ -236,17 +238,38 @@ will zero out that positioning adjustment for now */
 }
 
 .Notification-detailsExpand {
-  display: block;
-  font-weight: var(--font-weight-medium);
-  cursor: pointer;
+  display: flex;
+  align-items: center;
+  min-width: 9rem;
+  padding: 0;
+  font-size: 1.3rem;
+  line-height: 1.5;
+  text-align: left;
+  color: var(--Notification-detailsExpand-color-text);
+  background-color: transparent;
+  border: hsl(0 0% 0% / 0);
+  border-radius: var(--border-radius);
 
-  &:hover {
+  &:focus {
+    outline: none;
+  }
+
+  &:focus:not(:focus-visible) {
+    box-shadow: none;
+  }
+
+  &:active {
+    color: var(--Notification-detailsExpand-color-text-active);
+    box-shadow: none;
+  }
+
+  &:hover,
+  &:focus {
     text-decoration: underline;
   }
 
   & .Icon {
     fill: var(--color-gray-700);
-    top: -1px;
   }
 }
 

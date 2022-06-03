@@ -56,7 +56,9 @@ class Notification extends Component<NotificationProps, StateProps> {
       return;
     }
     if (!this.focusTrap) {
-      this.focusTrap = createFocusTrap(this.node);
+      this.focusTrap = createFocusTrap(this.node, {
+        checkCanFocusTrap: () => new Promise((resolve) => setTimeout(resolve, 50)),
+      });
     }
     this.focusTrap.activate();
   }
@@ -131,17 +133,18 @@ class Notification extends Component<NotificationProps, StateProps> {
         <div className="Notification-body">
           <div className="Notification-message">{message}</div>
           {details && (
-            <div className={detailsClasses}>
-              <div
-                role="button"
-                tabIndex={0}
+            <div className={detailsClasses} data-testid="details-container">
+              <button
                 aria-label="More details"
+                aria-expanded={this.state.showDetails}
+                aria-haspopup
                 className="Notification-detailsExpand"
                 onClick={this.handleDetailsClick}
                 onKeyPress={this.handleDetailsKeyPress}
               >
                 More details <ExpandMore size={IconSize.SMALL} />
-              </div>
+              </button>
+
               <div className="Notification-detailsContent">{details}</div>
               {/* TODO: implement CopyButton for copying JSON to clipboard */}
             </div>
@@ -153,6 +156,7 @@ class Notification extends Component<NotificationProps, StateProps> {
           className="Notification-close"
           onClick={this.handleCloseClick}
           aria-label="Close"
+          tabIndex={0}
           data-test-id="notification-close"
         />
       </div>
