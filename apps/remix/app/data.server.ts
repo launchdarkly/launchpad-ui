@@ -23,6 +23,10 @@ export async function getComponents() {
       name: 'Modal',
     },
     {
+      to: 'components/notification',
+      name: 'Notification',
+    },
+    {
       to: 'components/popover',
       name: 'Popover',
     },

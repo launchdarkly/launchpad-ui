@@ -40,3 +40,12 @@ osmo:
         value: 3.2rem
       giga:
         value: 4.6rem
+line-height:
+  smaller:
+    value: 1.12
+  small:
+    value: 1.285714286
+  base:
+    value: 1.5
+  large:
+    value: 2

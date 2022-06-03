@@ -1,0 +1,20 @@
+:root {
+  --NotificationCenter-z-index: 10001;
+  --NotificationCenter-max-width: 70ch;
+  --NotificationCenter-min-width: 45ch;
+}
+
+.NotificationCenter {
+  max-width: var(--NotificationCenter-max-width);
+  min-width: var(--NotificationCenter-min-width);
+  position: fixed;
+  top: 1rem;
+  right: 2rem;
+  bottom: auto;
+  left: auto;
+  z-index: var(--NotificationCenter-z-index);
+}
+
+.NotificationCenter .NotificationAnimatedDiv + .NotificationAnimatedDiv {
+  margin-top: 5px;
+}

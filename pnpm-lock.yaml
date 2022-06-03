@@ -157,6 +157,7 @@ importers:
       '@launchpad-ui/icons': workspace:~
       '@launchpad-ui/lozenge': workspace:~
       '@launchpad-ui/modal': workspace:~
+      '@launchpad-ui/notification': workspace:~
       '@launchpad-ui/popover': workspace:~
       '@launchpad-ui/progress': workspace:~
       '@launchpad-ui/tab-list': workspace:~
@@ -181,6 +182,7 @@ importers:
       '@launchpad-ui/icons': link:../../packages/icons
       '@launchpad-ui/lozenge': link:../../packages/lozenge
       '@launchpad-ui/modal': link:../../packages/modal
+      '@launchpad-ui/notification': link:../../packages/notification
       '@launchpad-ui/popover': link:../../packages/popover
       '@launchpad-ui/progress': link:../../packages/progress
       '@launchpad-ui/tab-list': link:../../packages/tab-list
@@ -299,6 +301,31 @@ importers:
       '@types/lodash.defer': 4.1.7
       '@types/lodash.filter': 4.6.7
       '@types/no-scroll': 2.1.0
+      react: 18.1.0
+      react-dom: 18.1.0_react@18.1.0
+
+  packages/notification:
+    specifiers:
+      '@launchpad-ui/button': workspace:~
+      '@launchpad-ui/icons': workspace:~
+      '@launchpad-ui/tokens': workspace:~
+      '@react-spring/web': ^9.4.5
+      '@types/uuid': ^8.3.4
+      classnames: ^2.3.1
+      focus-trap: ^6.9.3
+      react: ^18.1.0
+      react-dom: ^18.1.0
+      uuid: ^8.3.2
+    dependencies:
+      '@launchpad-ui/button': link:../button
+      '@launchpad-ui/icons': link:../icons
+      '@launchpad-ui/tokens': link:../tokens
+      '@react-spring/web': 9.4.5_ef5jwxihqo6n7gxfmzogljlgcm
+      classnames: 2.3.1
+      focus-trap: 6.9.3
+      uuid: 8.3.2
+    devDependencies:
+      '@types/uuid': 8.3.4
       react: 18.1.0
       react-dom: 18.1.0_react@18.1.0
 
