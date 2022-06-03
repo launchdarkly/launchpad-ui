@@ -57,7 +57,7 @@ class Notification extends Component<NotificationProps, StateProps> {
     }
     if (!this.focusTrap) {
       this.focusTrap = createFocusTrap(this.node, {
-        checkCanFocusTrap: () => new Promise((resolve) => setTimeout(resolve, 50)),
+        checkCanFocusTrap: () => new Promise((resolve) => setTimeout(resolve, 100)),
       });
     }
     this.focusTrap.activate();
