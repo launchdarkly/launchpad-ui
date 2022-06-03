@@ -1,5 +1,5 @@
 /* eslint-disable testing-library/no-node-access */
-import { render } from '@testing-library/react';
+import { screen, render } from '@testing-library/react';
 import { axe } from 'jest-axe';
 import { it, expect, describe } from 'vitest';
 
@@ -16,13 +16,12 @@ const props = {
 describe('notification', () => {
   it('renders', () => {
     render(<Notification {...props} />);
-    expect(document.querySelector('.Notification')).not.toBeNull();
+    expect(screen.getByRole('alert')).not.toBeNull();
   });
 
   it('is accessible', async () => {
-    render(<Notification {...props} />);
-    const notification = document.querySelector('.Notification') as Element;
-    const results = await axe(notification);
+    const { container } = render(<Notification {...props} />);
+    const results = await axe(container);
     expect(results).toHaveNoViolations();
   });
 });

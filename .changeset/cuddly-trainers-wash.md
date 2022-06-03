@@ -1,6 +1,5 @@
 ---
-'@launchpad-ui/remix': patch
-'@launchpad-ui/notification': patch
+'@launchpad-ui/notification': minor
 '@launchpad-ui/tokens': patch
 ---
 
