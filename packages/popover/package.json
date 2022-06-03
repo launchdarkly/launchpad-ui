@@ -1,0 +1,57 @@
+{
+  "name": "@launchpad-ui/popover",
+  "version": "0.0.1",
+  "publishConfig": {
+    "access": "public"
+  },
+  "description": "An element that displays content within a portal triggered by user interactions.",
+  "files": [
+    "dist"
+  ],
+  "main": "dist/index.js",
+  "module": "dist/index.es.js",
+  "types": "dist/index.d.ts",
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.es.js",
+      "require": "./dist/index.js"
+    },
+    "./package.json": "./package.json",
+    "./styles.css": "./dist/styles.css"
+  },
+  "source": "src/index.ts",
+  "scripts": {
+    "build": "tsc --project tsconfig.build.json && node build.js",
+    "clean": "rm -rf dist",
+    "e2e": "exit 0",
+    "lint": "eslint '**/*.{ts,tsx,js}' && stylelint '**/*.css' --ignore-path ../../.stylelintignore",
+    "test": "vitest run --coverage"
+  },
+  "dependencies": {
+    "@floating-ui/core": "^0.7.2",
+    "@floating-ui/dom": "^0.5.2",
+    "@launchpad-ui/overlay": "workspace:~",
+    "@launchpad-ui/tokens": "workspace:~",
+    "@react-aria/focus": "^3.6.0",
+    "@react-spring/web": "^9.4.5",
+    "classnames": "^2.3.1",
+    "lodash.isfunction": "^3.0.9",
+    "lodash.isnil": "^4.0.0",
+    "uuid": "^8.3.2"
+  },
+  "peerDependencies": {
+    "react": "^16.8.0 || ^17.0.0 || ^18.0.0",
+    "react-dom": "^16.8.0 || ^17.0.0 || ^18.0.0"
+  },
+  "devDependencies": {
+    "@types/lodash.isfunction": "^3.0.7",
+    "@types/lodash.isnil": "^4.0.7",
+    "@types/uuid": "^8.3.4",
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0"
+  }
+}

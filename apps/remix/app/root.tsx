@@ -22,6 +22,7 @@ import progressStyles from '@launchpad-ui/progress/styles.css';
 import tabListStyles from '@launchpad-ui/tab-list/styles.css';
 import modalStyles from '@launchpad-ui/modal/styles/Modal.css';
 import promptStyles from '@launchpad-ui/modal/styles/Prompt.css';
+import popoverStyles from '@launchpad-ui/popover/styles.css';
 
 export const links: LinksFunction = () => {
   return [
@@ -36,6 +37,7 @@ export const links: LinksFunction = () => {
     { rel: 'stylesheet', href: tabListStyles },
     { rel: 'stylesheet', href: modalStyles },
     { rel: 'stylesheet', href: promptStyles },
+    { rel: 'stylesheet', href: popoverStyles },
   ];
 };
 
