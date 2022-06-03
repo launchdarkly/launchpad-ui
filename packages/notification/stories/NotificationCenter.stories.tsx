@@ -1,8 +1,11 @@
+import type { Story } from '@storybook/react';
+
 import { Button } from '@launchpad-ui/button';
+import { userEvent, within } from '@storybook/testing-library';
 import { useState } from 'react';
 import { v4 } from 'uuid';
 
-import { NotificationCenter } from '../src';
+import { NotificationCenter, NotificationCenterProps } from '../src';
 import { NotificationLevel, NotificationRecord } from '../src/types';
 
 export default {
@@ -19,7 +22,7 @@ const makeNotification = () => ({
   details: '',
 });
 
-export const Default = () => {
+const Template: Story<NotificationCenterProps> = () => {
   const [items, setItems] = useState<NotificationRecord[]>([]);
 
   const removeItem = (id: string) => {
@@ -36,4 +39,10 @@ export const Default = () => {
       <NotificationCenter notifications={items} onDismiss={removeItem} />
     </>
   );
+};
+
+export const Default = Template.bind({});
+Default.play = async ({ canvasElement }: { canvasElement: HTMLElement }) => {
+  const canvas = within(canvasElement);
+  await userEvent.click(canvas.getByRole('button'));
 };
