@@ -26,7 +26,7 @@
 /* Popover content */
 
 .Popover-content {
-  background: #fff;
+  background: var(--color-white);
   border-radius: var(--border-radius);
   box-shadow: 0 0 0 1px var(--color-gray-200), 0 0 10px var(--color-gray-200);
 

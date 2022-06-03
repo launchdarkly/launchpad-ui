@@ -54,7 +54,6 @@ type PopoverProps = {
   target?: string | JSX.Element;
   targetElementRef?: Ref<Element>;
   targetClassName?: string;
-  allowedAutoPlacements?: Placement[];
   enableArrow?: boolean;
 };
 
