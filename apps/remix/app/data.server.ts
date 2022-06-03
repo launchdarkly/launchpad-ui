@@ -23,6 +23,10 @@ export async function getComponents() {
       name: 'Modal',
     },
     {
+      to: 'components/notification',
+      name: 'Notification',
+    },
+    {
       to: 'components/popover',
       name: 'Popover',
     },
@@ -39,8 +43,8 @@ export async function getComponents() {
       name: 'Toggle',
     },
     {
-      to: 'components/notification',
-      name: 'Notification',
+      to: 'components/tooltip',
+      name: 'Tooltip',
     },
   ];
 }

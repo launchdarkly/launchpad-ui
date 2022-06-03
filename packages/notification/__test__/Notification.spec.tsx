@@ -11,10 +11,10 @@ const props = {
   details: 'This is a detail',
 };
 
-describe('notification', () => {
-  it('renders', () => {
+describe('Notification', () => {
+  it('renders', async () => {
     render(<Notification {...props} />);
-    expect(screen.getByRole('alert')).not.toBeNull();
+    expect(await screen.findByRole('alert')).toBeInTheDocument();
   });
 
   test('hides details action on click', async () => {

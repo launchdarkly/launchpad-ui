@@ -163,6 +163,7 @@ importers:
       '@launchpad-ui/tab-list': workspace:~
       '@launchpad-ui/toggle': workspace:~
       '@launchpad-ui/tokens': workspace:~
+      '@launchpad-ui/tooltip': workspace:~
       '@react-aria/ssr': ^3.2.0
       '@react-stately/collections': ^3.4.0
       '@remix-run/dev': ^1.5.1
@@ -187,6 +188,7 @@ importers:
       '@launchpad-ui/tab-list': link:../../packages/tab-list
       '@launchpad-ui/toggle': link:../../packages/toggle
       '@launchpad-ui/tokens': link:../../packages/tokens
+      '@launchpad-ui/tooltip': link:../../packages/tooltip
       '@react-aria/ssr': 3.2.0_react@18.1.0
       '@react-stately/collections': 3.4.0_react@18.1.0
       '@remix-run/node': 1.5.1_ef5jwxihqo6n7gxfmzogljlgcm
@@ -451,6 +453,21 @@ importers:
     devDependencies:
       style-dictionary: 3.7.0
       yaml: 2.1.1
+
+  packages/tooltip:
+    specifiers:
+      '@launchpad-ui/popover': workspace:~
+      '@launchpad-ui/tokens': workspace:~
+      classnames: ^2.3.1
+      react: ^18.1.0
+      react-dom: ^18.1.0
+    dependencies:
+      '@launchpad-ui/popover': link:../popover
+      '@launchpad-ui/tokens': link:../tokens
+      classnames: 2.3.1
+    devDependencies:
+      react: 18.1.0
+      react-dom: 18.1.0_react@18.1.0
 
 packages:
 

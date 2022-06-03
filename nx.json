@@ -5,7 +5,7 @@
       "dependencies": "*",
       "devDependencies": "*"
     },
-    ".github/workflows/ci.yml": "*",
+    ".github/workflows/verify.yml": "*",
     "tsconfig.base.json": "*",
     "nx.json": "*"
   },
