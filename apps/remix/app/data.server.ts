@@ -38,5 +38,9 @@ export async function getComponents() {
       to: 'components/toggle',
       name: 'Toggle',
     },
+    {
+      to: 'components/tooltip',
+      name: 'Tooltip',
+    },
   ];
 }

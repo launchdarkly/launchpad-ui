@@ -24,6 +24,7 @@
     "@launchpad-ui/tab-list": "workspace:~",
     "@launchpad-ui/toggle": "workspace:~",
     "@launchpad-ui/tokens": "workspace:~",
+    "@launchpad-ui/tooltip": "workspace:~",
     "@react-aria/ssr": "^3.2.0",
     "@react-stately/collections": "^3.4.0",
     "@remix-run/node": "^1.5.1",

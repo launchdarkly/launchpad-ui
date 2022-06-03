@@ -1,0 +1,21 @@
+.Tooltip {
+  z-index: 30000;
+}
+
+.Tooltip .Popover-content {
+  font-size: 1.3rem;
+  background: var(--color-black-300);
+  color: var(--color-white);
+  padding: 0.5rem 1rem;
+
+  /* --color-black-100 */
+  box-shadow: 0 0 4px hsl(0 0% 15.7% / 0.12), 0 1px 2px hsl(0 0% 15.7% / 0.1),
+    0 4px 4px hsl(0 0% 15.7% / 0.08);
+}
+
+.Tooltip .Popover-content kbd {
+  color: var(--color-gray-100);
+  background-color: var(--color-black-100);
+  border: 0.1rem solid var(--color-gray-700);
+  box-shadow: inset 0 -0.1rem 0 var(--color-gray-700);
+}

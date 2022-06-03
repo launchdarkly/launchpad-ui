@@ -12,7 +12,8 @@
       "@launchpad-ui/popover": ["./packages/popover/src"],
       "@launchpad-ui/progress": ["./packages/progress/src"],
       "@launchpad-ui/tab-list": ["./packages/tab-list/src"],
-      "@launchpad-ui/toggle": ["./packages/toggle/src"]
+      "@launchpad-ui/toggle": ["./packages/toggle/src"],
+      "@launchpad-ui/tooltip": ["./packages/tooltip/src"]
     }
   }
 }
