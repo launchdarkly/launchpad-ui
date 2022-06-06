@@ -256,6 +256,25 @@ importers:
       react: 18.1.0
       react-dom: 18.1.0_react@18.1.0
 
+  packages/clipboard:
+    specifiers:
+      '@launchpad-ui/icons': workspace:~
+      '@launchpad-ui/tokens': workspace:~
+      '@launchpad-ui/tooltip': workspace:~
+      '@react-aria/live-announcer': ^3.1.0
+      '@react-aria/visually-hidden': ^3.3.0
+      react: ^18.1.0
+      react-dom: ^18.1.0
+    dependencies:
+      '@launchpad-ui/icons': link:../icons
+      '@launchpad-ui/tokens': link:../tokens
+      '@launchpad-ui/tooltip': link:../tooltip
+      '@react-aria/live-announcer': 3.1.0
+      '@react-aria/visually-hidden': 3.3.0_react@18.1.0
+    devDependencies:
+      react: 18.1.0
+      react-dom: 18.1.0_react@18.1.0
+
   packages/icons:
     specifiers:
       '@launchpad-ui/tokens': workspace:~
@@ -3334,6 +3353,12 @@ packages:
       '@react-aria/utils': 3.13.0_react@18.1.0
       '@react-types/shared': 3.13.0_react@18.1.0
       react: 18.1.0
+    dev: false
+
+  /@react-aria/live-announcer/3.1.0:
+    resolution: {integrity: sha512-YEaGJh1ELho3G9zvUZGOsKsSNEqHsm0fb3Ngvj9z0tjZCXa0867h8YWKuiyTA9BG7WhH8eeJq07WN4nDvYU7fg==}
+    dependencies:
+      '@babel/runtime': 7.18.3
     dev: false
 
   /@react-aria/selection/3.9.0_react@18.1.0:
