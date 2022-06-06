@@ -46,6 +46,6 @@ export const Default = {
     const canvas = within(canvasElement);
     await sleep(500);
     await userEvent.click(canvas.getByRole('button'));
-    await screen.findByText('Copied!');
+    await screen.findByText('Copied!', undefined, { timeout: 2000 });
   },
 };
