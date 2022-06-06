@@ -155,6 +155,7 @@ importers:
       '@launchpad-ui/alert': workspace:~
       '@launchpad-ui/banner': workspace:~
       '@launchpad-ui/button': workspace:~
+      '@launchpad-ui/clipboard': workspace:~
       '@launchpad-ui/icons': workspace:~
       '@launchpad-ui/lozenge': workspace:~
       '@launchpad-ui/modal': workspace:~
@@ -181,6 +182,7 @@ importers:
       '@launchpad-ui/alert': link:../../packages/alert
       '@launchpad-ui/banner': link:../../packages/banner
       '@launchpad-ui/button': link:../../packages/button
+      '@launchpad-ui/clipboard': link:../../packages/clipboard
       '@launchpad-ui/icons': link:../../packages/icons
       '@launchpad-ui/lozenge': link:../../packages/lozenge
       '@launchpad-ui/modal': link:../../packages/modal

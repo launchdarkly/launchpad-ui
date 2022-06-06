@@ -6,6 +6,7 @@
       "@launchpad-ui/alert": ["./packages/alert/src"],
       "@launchpad-ui/banner": ["./packages/banner/src"],
       "@launchpad-ui/button": ["./packages/button/src"],
+      "@launchpad-ui/clipboard": ["./packages/clipboard/src"],
       "@launchpad-ui/icons": ["./packages/icons/src"],
       "@launchpad-ui/lozenge": ["./packages/lozenge/src"],
       "@launchpad-ui/modal": ["./packages/modal/src"],

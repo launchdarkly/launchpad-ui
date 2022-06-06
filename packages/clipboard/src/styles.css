@@ -29,11 +29,11 @@
     }
   }
 
-  .Popover-target {
+  & .Popover-target {
     display: flex; /* center text in span */
   }
 
-  .Popover-target code {
+  & .Popover-target code {
     flex: 1;
     min-width: 0;
     white-space: nowrap;
