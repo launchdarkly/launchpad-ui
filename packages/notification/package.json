@@ -35,9 +35,9 @@
     "@launchpad-ui/button": "workspace:~",
     "@launchpad-ui/icons": "workspace:~",
     "@launchpad-ui/tokens": "workspace:~",
+    "@react-aria/focus": "^3.6.0",
     "@react-spring/web": "^9.4.5",
     "classnames": "^2.3.1",
-    "focus-trap": "^6.9.3",
     "uuid": "^8.3.2"
   },
   "peerDependencies": {

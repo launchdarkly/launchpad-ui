@@ -1,5 +1,6 @@
 import { screen, render } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+import { axe } from 'jest-axe';
 import { it, expect, describe } from 'vitest';
 
 import { Notification } from '../src';
@@ -17,18 +18,23 @@ describe('Notification', () => {
     expect(await screen.findByRole('alert')).toBeInTheDocument();
   });
 
-  test('hides details action on click', async () => {
+  it('is accessible', async () => {
+    const { container } = render(<Notification {...props} />);
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
+  });
+
+  it('hides details action on click', async () => {
     render(<Notification {...props} />);
 
     const user = userEvent.setup();
 
-    const button = screen.getByText(new RegExp('More details', 'i'));
-    const detailsContainer = screen.getByTestId('details-container');
+    const button = screen.getByLabelText('More details');
 
-    expect(detailsContainer).not.toHaveClass('is-expanded');
+    expect(button).toBeVisible();
 
     await user.click(button);
 
-    expect(detailsContainer).toHaveClass('is-expanded');
+    expect(button).not.toBeVisible();
   });
 });
