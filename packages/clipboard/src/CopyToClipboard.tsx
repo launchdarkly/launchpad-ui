@@ -1,7 +1,6 @@
 import { CheckCircle, IconSize } from '@launchpad-ui/icons';
 import { Tooltip } from '@launchpad-ui/tooltip';
 import { announce } from '@react-aria/live-announcer';
-import { VisuallyHidden } from '@react-aria/visually-hidden';
 import { Component } from 'react';
 
 import './styles.css';
@@ -32,7 +31,6 @@ const CopyConfirmation = () => (
 );
 
 class CopyToClipboard extends Component<CopyToClipboardProps, State> {
-  inputElement?: HTMLTextAreaElement;
   buttonElement?: HTMLButtonElement;
   static defaultProps = {
     tooltipOptions: {
@@ -64,9 +62,6 @@ class CopyToClipboard extends Component<CopyToClipboardProps, State> {
     const testIdOrFallback = testId ? testId : 'temp-test-id';
     return (
       <span className="CopyToClipboard" data-test-id={testIdOrFallback}>
-        <VisuallyHidden elementType="span">
-          <textarea value={text} readOnly ref={this.setInputRef} aria-hidden tabIndex={-1} />
-        </VisuallyHidden>
         <button
           className="CopyToClipboard-button"
           onBlur={this.handleBlur}
@@ -93,22 +88,16 @@ class CopyToClipboard extends Component<CopyToClipboardProps, State> {
     this.buttonElement = node;
   };
 
-  setInputRef = (node: HTMLTextAreaElement) => {
-    this.inputElement = node;
-  };
+  handleClick = async () => {
+    const { onClick, text } = this.props;
+    await navigator.clipboard.writeText(text);
+    this.buttonElement?.focus();
+    this.setState(() => ({
+      isOpen: true,
+      wasCopied: true,
+    }));
+    announce('Copied!', 'polite', 300);
 
-  handleClick = () => {
-    const { onClick } = this.props;
-    if (this.inputElement) {
-      this.inputElement.select();
-      document.execCommand('copy');
-      this.buttonElement?.focus();
-      this.setState(() => ({
-        isOpen: true,
-        wasCopied: true,
-      }));
-      announce('Copied!', 'polite', 300);
-    }
     onClick?.();
   };
 
