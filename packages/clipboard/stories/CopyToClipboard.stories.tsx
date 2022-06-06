@@ -1,6 +1,6 @@
 import type { Story } from '@storybook/react';
 
-import { screen, userEvent, within } from '@storybook/testing-library';
+import { userEvent, within } from '@storybook/testing-library';
 
 import { sleep } from '../../../.storybook/utils';
 import { CopyToClipboard } from '../src';
@@ -46,6 +46,5 @@ export const Default = {
     const canvas = within(canvasElement);
     await sleep(500);
     await userEvent.click(canvas.getByRole('button'));
-    await screen.findByText('Copied!', undefined, { timeout: 2000 });
   },
 };
