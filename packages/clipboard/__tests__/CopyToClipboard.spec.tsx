@@ -2,6 +2,7 @@ import type { CopyToClipboardProps } from '../src';
 
 import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+import { axe } from 'jest-axe';
 import { it, expect, describe, vi } from 'vitest';
 
 import { CopyToClipboard } from '../src';
@@ -17,6 +18,12 @@ const createComponent = (props?: Partial<CopyToClipboardProps>) => (
 );
 
 describe('CopyToClipboard', () => {
+  it('is accessible', async () => {
+    const { container } = render(createComponent());
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
+  });
+
   it('copies text when clicked on', async () => {
     render(createComponent());
     const user = userEvent.setup();
