@@ -1,11 +1,10 @@
 import type { NotificationLevel } from './types';
-import type { FocusTrap } from 'focus-trap';
 import type { ReactNode } from 'react';
 
 import { Button, ButtonType } from '@launchpad-ui/button';
 import { KindIcon, Close, ExpandMore, IconSize } from '@launchpad-ui/icons';
+import { FocusScope } from '@react-aria/focus';
 import classNames from 'classnames';
-import { createFocusTrap } from 'focus-trap';
 import { Component, KeyboardEvent } from 'react';
 
 import './styles/Notification.css';
@@ -20,12 +19,11 @@ type NotificationProps = {
 
 type StateProps = {
   showDetails?: boolean;
+  containFocus?: boolean;
 };
 
 class Notification extends Component<NotificationProps, StateProps> {
   timeout?: ReturnType<typeof setTimeout> = undefined;
-  focusTrap?: FocusTrap;
-  node?: HTMLDivElement | null;
 
   static defaultProps = {
     onDismiss: () => undefined,
@@ -46,25 +44,9 @@ class Notification extends Component<NotificationProps, StateProps> {
       clearTimeout(this.timeout);
     }
 
-    if (this.focusTrap) {
-      this.clearFocus();
+    if (this.state.containFocus) {
+      this.setState({ containFocus: false });
     }
-  }
-
-  setupFocus() {
-    if (!this.node) {
-      return;
-    }
-    if (!this.focusTrap) {
-      this.focusTrap = createFocusTrap(this.node, {
-        checkCanFocusTrap: () => new Promise((resolve) => setTimeout(resolve, 100)),
-      });
-    }
-    this.focusTrap.activate();
-  }
-
-  clearFocus() {
-    this.focusTrap?.deactivate();
   }
 
   close() {
@@ -73,7 +55,7 @@ class Notification extends Component<NotificationProps, StateProps> {
 
   constructor(props: NotificationProps) {
     super(props);
-    this.state = { showDetails: false };
+    this.state = { showDetails: false, containFocus: false };
   }
 
   handleEscape = (event: globalThis.KeyboardEvent) => {
@@ -83,12 +65,12 @@ class Notification extends Component<NotificationProps, StateProps> {
   };
 
   handleMouseEnter = () => {
-    this.setupFocus();
+    this.setState({ containFocus: true });
     document.addEventListener('keydown', this.handleEscape);
   };
 
   handleMouseLeave = () => {
-    this.clearFocus();
+    this.setState({ containFocus: false });
     document.removeEventListener('keydown', this.handleEscape);
   };
 
@@ -118,17 +100,8 @@ class Notification extends Component<NotificationProps, StateProps> {
       'is-expanded': this.state.showDetails,
     });
 
-    return (
-      <div
-        role="alert"
-        {...props}
-        className={classes}
-        ref={(node) => {
-          this.node = node;
-        }}
-        onMouseEnter={this.handleMouseEnter}
-        onMouseLeave={this.handleMouseLeave}
-      >
+    const content = (
+      <>
         <KindIcon kind={level} className="Notification-icon" />
         <div className="Notification-body">
           <div className="Notification-message">{message}</div>
@@ -159,6 +132,24 @@ class Notification extends Component<NotificationProps, StateProps> {
           tabIndex={0}
           data-test-id="notification-close"
         />
+      </>
+    );
+
+    return (
+      <div
+        role="alert"
+        {...props}
+        className={classes}
+        onMouseEnter={this.handleMouseEnter}
+        onMouseLeave={this.handleMouseLeave}
+      >
+        {this.state.containFocus ? (
+          <FocusScope contain autoFocus>
+            {content}
+          </FocusScope>
+        ) : (
+          content
+        )}
       </div>
     );
   }
