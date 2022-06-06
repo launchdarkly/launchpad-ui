@@ -1,6 +1,6 @@
 import type { Story } from '@storybook/react';
 
-import { userEvent, within } from '@storybook/testing-library';
+import { screen, userEvent, within } from '@storybook/testing-library';
 
 import { sleep } from '../../../.storybook/utils';
 import { CopyToClipboard } from '../src';
@@ -45,8 +45,7 @@ export const Default = {
   play: async ({ canvasElement }: { canvasElement: HTMLElement }) => {
     const canvas = within(canvasElement);
     await sleep(500);
-    await userEvent.hover(canvas.getByRole('button'));
     await userEvent.click(canvas.getByRole('button'));
-    await sleep(500);
+    await screen.findByText('Copied!');
   },
 };
