@@ -7,6 +7,7 @@ export const parameters = {
     showPanel: true,
     panelPosition: 'bottom',
     storySort: {
+      method: 'alphabetical',
       order: ['Components', 'Tokens'],
       locales: 'en-US',
     },

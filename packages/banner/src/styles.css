@@ -1,6 +1,13 @@
-@import '../../../tokens/dist/media-queries.css';
+@import '../../tokens/dist/media-queries.css';
 
 :root {
+  --reskin-striped-base: repeating-linear-gradient(
+    45deg,
+    var(--color-white),
+    var(--color-white) 20px,
+    var(--color-white-100) 20px,
+    var(--color-white-100) 40px
+  );
   --Banner-color-border-top: var(--color-gray-200);
   --Banner-color-text: var(--color-black-100);
   --Banner-color-background: var(--color-white);
@@ -8,10 +15,12 @@
   --Banner-color-background-success: var(--color-system-green-200);
   --Banner-color-background-warning: var(--color-system-yellow-200);
   --Banner-color-background-error: var(--color-system-red-200);
+  --Banner-color-background-striped: var(--reskin-striped-base);
   --Banner-icon-color-info: var(--color-blue-700);
   --Banner-icon-color-success: var(--color-system-green-700);
   --Banner-icon-color-warning: var(--color-system-yellow-700);
   --Banner-icon-color-error: var(--color-system-red-700);
+  --Banner-icon-color-striped: var(--color-black-100);
   --Banner-closeButton-color-border: hsl(225 1.8% 43.5% / 0.6);
   --Banner-closeButton-color-fill: var(--color-gray-600);
   --Banner-closeButton-color-text: var(--color-gray-600);
@@ -72,6 +81,11 @@
   background-color: var(--Banner-color-background-success);
 }
 
+.Banner--striped {
+  background-image: var(--reskin-striped-base);
+  position: relative;
+}
+
 /* reset Icon--info positioning hack */
 .Banner--info .Icon--info {
   top: 0;
@@ -102,6 +116,10 @@
 
 .Banner--warning .Banner-icon svg {
   fill: var(--Banner-icon-color-warning);
+}
+
+.Banner--striped .Banner-icon .Icon {
+  fill: var(--Banner-icon-color-striped);
 }
 
 .Banner-close.Button--icon.Button--default {
