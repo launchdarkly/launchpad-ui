@@ -4,6 +4,7 @@
     "baseUrl": ".",
     "paths": {
       "@launchpad-ui/alert": ["./packages/alert/src"],
+      "@launchpad-ui/banner": ["./packages/banner/src"],
       "@launchpad-ui/button": ["./packages/button/src"],
       "@launchpad-ui/icons": ["./packages/icons/src"],
       "@launchpad-ui/lozenge": ["./packages/lozenge/src"],

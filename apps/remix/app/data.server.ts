@@ -7,6 +7,10 @@ export async function getComponents() {
       name: 'Alert',
     },
     {
+      to: 'components/banner',
+      name: 'Banner',
+    },
+    {
       to: 'components/button',
       name: 'Button',
     },

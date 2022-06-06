@@ -15,6 +15,7 @@
   },
   "dependencies": {
     "@launchpad-ui/alert": "workspace:~",
+    "@launchpad-ui/banner": "workspace:~",
     "@launchpad-ui/button": "workspace:~",
     "@launchpad-ui/icons": "workspace:~",
     "@launchpad-ui/lozenge": "workspace:~",

@@ -1,0 +1,170 @@
+@import '../../tokens/dist/media-queries.css';
+
+:root {
+  --reskin-striped-base: repeating-linear-gradient(
+    45deg,
+    var(--color-white),
+    var(--color-white) 20px,
+    var(--color-white-100) 20px,
+    var(--color-white-100) 40px
+  );
+  --Banner-color-border-top: var(--color-gray-200);
+  --Banner-color-text: var(--color-black-100);
+  --Banner-color-background: var(--color-white);
+  --Banner-color-background-info: var(--color-blue-200);
+  --Banner-color-background-success: var(--color-system-green-200);
+  --Banner-color-background-warning: var(--color-system-yellow-200);
+  --Banner-color-background-error: var(--color-system-red-200);
+  --Banner-color-background-striped: var(--reskin-striped-base);
+  --Banner-icon-color-info: var(--color-blue-700);
+  --Banner-icon-color-success: var(--color-system-green-700);
+  --Banner-icon-color-warning: var(--color-system-yellow-700);
+  --Banner-icon-color-error: var(--color-system-red-700);
+  --Banner-icon-color-striped: var(--color-black-100);
+  --Banner-closeButton-color-border: hsl(225 1.8% 43.5% / 0.6);
+  --Banner-closeButton-color-fill: var(--color-gray-600);
+  --Banner-closeButton-color-text: var(--color-gray-600);
+  --Banner-closeButton-icon-color-background-hover: hsl(0 0 100% / 0.1);
+  --Banner-closeButton-icon-color-background-focus: hsl(0 0 100% / 0.1);
+  --Banner-closeButton-icon-color-background-active: hsl(0 0% 15.7% / 0.7);
+  --Banner-closeButton-icon-box-shadow-hover: 0 0 0 1px hsl(216 2.4% 58.6% / 0.6),
+    0 0 0 4px hsl(0 0% 15.7% / 0.1);
+  --Banner-closeButton-icon-box-shadow-focus: 0 0 0 1px hsl(225 1.8% 43.5% / 0.6),
+    0 0 0 4px hsl(0 0% 15.7% / 0.1);
+  --Banner-closeButton-icon-box-shadow-active: 0 0 0 1px var(--color-black-100),
+    0 0 0 4px hsl(0 0% 15.7% / 0.1);
+  --Banner-closeButton-icon-color-active: var(--color-white);
+  --page-gutter-width: 1rem;
+}
+
+@media (--tablet) {
+  :root {
+    --page-gutter-width: 4rem;
+  }
+}
+
+.Banner {
+  background: var(--Banner-color-background);
+  display: flex;
+  padding: 1rem 1.5rem 1rem var(--page-gutter-width);
+}
+
+.Banner + .Banner {
+  border-top: 1px solid var(--Banner-color-border-top);
+}
+
+.Banner-text {
+  color: var(--Banner-color-text);
+  display: inline-block;
+  flex-grow: 1;
+  margin-left: 1rem;
+}
+
+.Banner-icon {
+  display: flex;
+  align-items: center;
+}
+
+.Banner--error {
+  background-color: var(--Banner-color-background-error);
+}
+
+.Banner--warning {
+  background-color: var(--Banner-color-background-warning);
+}
+
+.Banner--info {
+  background-color: var(--Banner-color-background-info);
+}
+
+.Banner--success {
+  background-color: var(--Banner-color-background-success);
+}
+
+.Banner--striped {
+  background-image: var(--reskin-striped-base);
+  position: relative;
+}
+
+/* reset Icon--info positioning hack */
+.Banner--info .Icon--info {
+  top: 0;
+}
+
+.Banner-close {
+  min-width: 2.2rem;
+  width: 2.2rem;
+  height: 2.2rem;
+  margin-left: auto;
+
+  & svg {
+    fill: var(--Banner-closeButton-color-fill);
+  }
+}
+
+.Banner--success .Banner-icon svg {
+  fill: var(--Banner-icon-color-success);
+}
+
+.Banner--info .Banner-icon svg {
+  fill: var(--Banner-icon-color-info);
+}
+
+.Banner--error .Banner-icon svg > path {
+  fill: var(--Banner-icon-color-error);
+}
+
+.Banner--warning .Banner-icon svg {
+  fill: var(--Banner-icon-color-warning);
+}
+
+.Banner--striped .Banner-icon .Icon {
+  fill: var(--Banner-icon-color-striped);
+}
+
+.Banner-close.Button--icon.Button--default {
+  background-color: transparent;
+  border-color: var(--Banner-closeButton-color-border);
+  color: var(--Banner-closeButton-color-text);
+
+  & .Icon {
+    background-color: transparent;
+    border-radius: 50%;
+    fill: var(--Banner-closeButton-color-fill);
+    width: 2rem;
+    height: 2rem;
+    padding: 0.2rem;
+  }
+}
+
+.Banner-close.Button--icon.Button--default:hover {
+  background-color: transparent;
+
+  & .Icon {
+    background-color: var(--Banner-closeButton-icon-color-background-hover);
+    box-shadow: var(--Banner-closeButton-icon-box-shadow-hover);
+  }
+}
+
+.Banner-close.Button--icon.Button--default:focus {
+  box-shadow: none;
+
+  & .Icon {
+    background-color: var(--Banner-closeButton-icon-color-background-focus);
+    box-shadow: var(--Banner-closeButton-icon-box-shadow-focus);
+  }
+}
+
+.Banner-close.Button--icon.Button--default:active {
+  background-color: transparent;
+
+  & .Icon {
+    background-color: var(--Banner-closeButton-icon-color-background-active);
+    box-shadow: var(--Banner-closeButton-icon-box-shadow-active);
+    color: var(--Banner-closeButton-icon-color-active);
+
+    & > svg {
+      fill: currentcolor;
+    }
+  }
+}
