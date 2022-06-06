@@ -3,6 +3,7 @@ import type { Story } from '@storybook/react';
 import { Button } from '@launchpad-ui/button';
 import { userEvent, within } from '@storybook/testing-library';
 
+import { sleep } from '../../../.storybook/utils';
 import { Tooltip } from '../src';
 
 export default {
@@ -49,6 +50,7 @@ export const Default = {
   },
   play: async ({ canvasElement }: { canvasElement: HTMLElement }) => {
     const canvas = within(canvasElement);
+    await sleep(500);
     await userEvent.click(canvas.getByRole('button'));
   },
 };

@@ -67,3 +67,7 @@ export enum PseudoClasses {
   FOCUS_VISIBLE = 'pseudo-focus-visible',
   ACTIVE = 'pseudo-active',
 }
+
+export const sleep = (ms: number) => {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+};
