@@ -6,20 +6,22 @@ import { it, expect, describe, vi } from 'vitest';
 
 import { CopyToClipboard } from '../src';
 
-document.execCommand = vi.fn();
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
+window.navigator = { clipboard: { writeText: vi.fn() } };
 
 const createComponent = (props?: Partial<CopyToClipboardProps>) => (
-  <CopyToClipboard text="Copy to clipboard" tooltipOptions={{ hoverOpenDelay: 0 }} {...props}>
-    <span className="copy-content">Copy content</span>
+  <CopyToClipboard text="Copy content" tooltipOptions={{ hoverOpenDelay: 0 }} {...props}>
+    <span>Copy content</span>
   </CopyToClipboard>
 );
 
 describe('CopyToClipboard', () => {
-  it('should copy text when clicked on', async () => {
+  it('copies text when clicked on', async () => {
     render(createComponent());
     const user = userEvent.setup();
     await user.click(screen.getByRole('button'));
-    expect(document.execCommand).toHaveBeenCalledWith('copy');
+    expect(navigator.clipboard.writeText).toHaveBeenCalledWith('Copy content');
   });
 
   it('handles MouseEnter and MouseLeave', async () => {
@@ -46,14 +48,14 @@ describe('CopyToClipboard', () => {
     expect(screen.queryByRole('tooltip')).toBeNull();
   });
 
-  it('should not show copy tooltip on hover', async () => {
+  it('does not show copy tooltip on hover', async () => {
     render(createComponent({ shouldOnlyShowTooltipAfterCopy: true }));
     const user = userEvent.setup();
     await user.hover(screen.getByText('Copy content'));
     expect(screen.queryByRole('tooltip')).toBeNull();
   });
 
-  it('should show the confirmation tooltip when clicked', async () => {
+  it('shows the confirmation tooltip when clicked', async () => {
     render(createComponent({ shouldOnlyShowTooltipAfterCopy: true }));
     const user = userEvent.setup();
     await waitFor(async () => {
@@ -62,7 +64,7 @@ describe('CopyToClipboard', () => {
     });
   });
 
-  it('should use the custom copied text when provided', async () => {
+  it('uses the custom copied text when provided', async () => {
     const FAKE_CUSTOM_COPIED_TEXT = 'Fake custom text';
     render(createComponent({ customCopiedText: FAKE_CUSTOM_COPIED_TEXT }));
     const user = userEvent.setup();
