@@ -25,6 +25,7 @@ import promptStyles from '@launchpad-ui/modal/styles/Prompt.css';
 import popoverStyles from '@launchpad-ui/popover/styles.css';
 import tooltipStyles from '@launchpad-ui/tooltip/styles.css';
 import notificationStyles from '@launchpad-ui/notification/styles/Notification.css';
+import bannerStyles from '@launchpad-ui/banner/styles.css';
 
 export const links: LinksFunction = () => {
   return [
@@ -42,6 +43,7 @@ export const links: LinksFunction = () => {
     { rel: 'stylesheet', href: popoverStyles },
     { rel: 'stylesheet', href: tooltipStyles },
     { rel: 'stylesheet', href: notificationStyles },
+    { rel: 'stylesheet', href: bannerStyles },
   ];
 };
 

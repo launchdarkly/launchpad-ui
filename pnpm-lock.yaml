@@ -153,6 +153,7 @@ importers:
   apps/remix:
     specifiers:
       '@launchpad-ui/alert': workspace:~
+      '@launchpad-ui/banner': workspace:~
       '@launchpad-ui/button': workspace:~
       '@launchpad-ui/icons': workspace:~
       '@launchpad-ui/lozenge': workspace:~
@@ -178,6 +179,7 @@ importers:
       typescript: ^4.7.2
     dependencies:
       '@launchpad-ui/alert': link:../../packages/alert
+      '@launchpad-ui/banner': link:../../packages/banner
       '@launchpad-ui/button': link:../../packages/button
       '@launchpad-ui/icons': link:../../packages/icons
       '@launchpad-ui/lozenge': link:../../packages/lozenge

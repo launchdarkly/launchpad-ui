@@ -97,7 +97,7 @@
   height: 2.2rem;
   margin-left: auto;
 
-  svg {
+  & svg {
     fill: var(--Banner-closeButton-color-fill);
   }
 }
@@ -127,7 +127,7 @@
   border-color: var(--Banner-closeButton-color-border);
   color: var(--Banner-closeButton-color-text);
 
-  .Icon {
+  & .Icon {
     background-color: transparent;
     border-radius: 50%;
     fill: var(--Banner-closeButton-color-fill);
@@ -140,7 +140,7 @@
 .Banner-close.Button--icon.Button--default:hover {
   background-color: transparent;
 
-  .Icon {
+  & .Icon {
     background-color: var(--Banner-closeButton-icon-color-background-hover);
     box-shadow: var(--Banner-closeButton-icon-box-shadow-hover);
   }
@@ -149,7 +149,7 @@
 .Banner-close.Button--icon.Button--default:focus {
   box-shadow: none;
 
-  .Icon {
+  & .Icon {
     background-color: var(--Banner-closeButton-icon-color-background-focus);
     box-shadow: var(--Banner-closeButton-icon-box-shadow-focus);
   }
@@ -158,12 +158,12 @@
 .Banner-close.Button--icon.Button--default:active {
   background-color: transparent;
 
-  .Icon {
+  & .Icon {
     background-color: var(--Banner-closeButton-icon-color-background-active);
     box-shadow: var(--Banner-closeButton-icon-box-shadow-active);
     color: var(--Banner-closeButton-icon-color-active);
 
-    > svg {
+    & > svg {
       fill: currentcolor;
     }
   }
