@@ -45,6 +45,8 @@ export const Default = {
   play: async ({ canvasElement }: { canvasElement: HTMLElement }) => {
     const canvas = within(canvasElement);
     await sleep(500);
+    await userEvent.hover(canvas.getByRole('button'));
     await userEvent.click(canvas.getByRole('button'));
+    await sleep(500);
   },
 };
