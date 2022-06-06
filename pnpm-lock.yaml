@@ -220,6 +220,25 @@ importers:
       react: 18.1.0
       react-dom: 18.1.0_react@18.1.0
 
+  packages/banner:
+    specifiers:
+      '@launchpad-ui/alert': workspace:~
+      '@launchpad-ui/button': workspace:~
+      '@launchpad-ui/icons': workspace:~
+      '@launchpad-ui/tokens': workspace:~
+      classnames: ^2.3.1
+      react: ^18.1.0
+      react-dom: ^18.1.0
+    dependencies:
+      '@launchpad-ui/alert': link:../alert
+      '@launchpad-ui/button': link:../button
+      '@launchpad-ui/icons': link:../icons
+      '@launchpad-ui/tokens': link:../tokens
+      classnames: 2.3.1
+    devDependencies:
+      react: 18.1.0
+      react-dom: 18.1.0_react@18.1.0
+
   packages/button:
     specifiers:
       '@launchpad-ui/tokens': workspace:~
