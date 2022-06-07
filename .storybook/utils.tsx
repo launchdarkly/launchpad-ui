@@ -2,7 +2,7 @@ import type { ArgsStoryFn } from '@storybook/addons';
 import type { Args } from '@storybook/api';
 import type { DecoratorFn, ReactFramework, StoryContext } from '@storybook/react';
 import { Fragment } from 'react';
-import cloneDeep from 'lodash.clonedeep';
+import { cloneDeep } from 'lodash-es';
 
 /**
  * Creates a decorator function that returns a new component with that class name added.

@@ -40,8 +40,7 @@
     "@react-spring/web": "^9.4.5",
     "classnames": "^2.3.1",
     "focus-trap": "^6.9.3",
-    "lodash.defer": "^4.1.0",
-    "lodash.filter": "^4.6.0",
+    "lodash-es": "^4.17.21",
     "no-scroll": "^2.1.1"
   },
   "peerDependencies": {
@@ -49,8 +48,7 @@
     "react-dom": "^16.8.0 || ^17.0.0 || ^18.0.0"
   },
   "devDependencies": {
-    "@types/lodash.defer": "^4.1.7",
-    "@types/lodash.filter": "^4.6.7",
+    "@types/lodash-es": "^4.17.6",
     "@types/no-scroll": "^2.1.0",
     "react": "^18.1.0",
     "react-dom": "^18.1.0"
