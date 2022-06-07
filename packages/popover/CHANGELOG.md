@@ -1,5 +1,14 @@
 # @launchpad-ui/popover
 
+## 0.1.1
+
+### Patch Changes
+
+- [#99](https://github.com/launchdarkly/launchpad-ui/pull/99) [`3ebbc38`](https://github.com/launchdarkly/launchpad-ui/commit/3ebbc38cb1dab6c1c3da1f6285fb7056a9be1d4d) Thanks [@Niznikr](https://github.com/Niznikr)! - Use lodash-es in place of per-method packages
+
+- Updated dependencies [[`3ebbc38`](https://github.com/launchdarkly/launchpad-ui/commit/3ebbc38cb1dab6c1c3da1f6285fb7056a9be1d4d)]:
+  - @launchpad-ui/overlay@0.1.2
+
 ## 0.1.0
 
 ### Minor Changes
