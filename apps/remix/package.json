@@ -17,6 +17,7 @@
     "@launchpad-ui/alert": "workspace:~",
     "@launchpad-ui/banner": "workspace:~",
     "@launchpad-ui/button": "workspace:~",
+    "@launchpad-ui/clipboard": "workspace:~",
     "@launchpad-ui/icons": "workspace:~",
     "@launchpad-ui/lozenge": "workspace:~",
     "@launchpad-ui/modal": "workspace:~",

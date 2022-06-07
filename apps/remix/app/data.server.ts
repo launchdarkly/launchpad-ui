@@ -15,6 +15,10 @@ export async function getComponents() {
       name: 'Button',
     },
     {
+      to: 'components/clipboard',
+      name: 'CopyToClipboard',
+    },
+    {
       to: 'components/icon',
       name: 'Icon',
     },
