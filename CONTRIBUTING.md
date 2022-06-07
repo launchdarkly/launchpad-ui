@@ -23,18 +23,18 @@ The following is a set of guidelines for contributing to Launchpad and its packa
 
 [Styleguides](#styleguides)
 
-- [Javascript Styleguide](javascript-styleguide)
-- [CSS Styleguide](css-styleguide)
-- [Specs Styleguide](specs-styleguide)
+- [Javascript Styleguide](#javascript-styleguide)
+- [CSS Styleguide](#css-styleguide)
+- [Specs Styleguide](#specs-styleguide)
 
 [Migrating a component from Gonfalon to Launchpad](#migrating-a-component-from-gonfalon-to-launchpad)
 
-- [Creating a new package in Launchpad](creating-a-new-package-in-launchpad)
-- [Package-specific changes](package-specific-changes)
-- [Importing new dependencies](importing-new-dependencies)
-- [Updating CSS tokens from Gonfalon for use in Launchpad](updating-css-tokens-from-gonfalon-for-use-in-launchpad)
-- [Test your code](test-your-code)
-- [Pushing your code](pushing-your-code)
+- [Creating a new package in Launchpad](#creating-a-new-package-in-launchpad)
+- [Package-specific changes](#package-specific-changes)
+- [Importing new dependencies](#importing-new-dependencies)
+- [Updating CSS tokens from Gonfalon for use in Launchpad](#updating-css-tokens-from-gonfalon-for-use-in-launchpad)
+- [Test your code](#test-your-code)
+- [Pushing your code](#pushing-your-code)
 
 ---
 
@@ -196,7 +196,7 @@ As we migrate to Launchpad, we've selectively chosen to update or replace some d
 
 `focus-trap` caused flaky tests that were difficult to fix.
 
-- Replace with `@react-aria/focus` as shown in this [https://github.com/launchdarkly/launchpad-ui/pull/94](pull request).
+- Replace with `@react-aria/focus` as shown here: https://github.com/launchdarkly/launchpad-ui/pull/94
 
 #### `immutable`
 
