@@ -13,6 +13,7 @@ The following is a set of guidelines for contributing to Launchpad and its packa
 - [Monorepo architecture](#monorepo-architecture)
 - [What's in the packages directory?](#whats-in-the-packages-directory)
 - [What's in the apps directory?](#whats-in-the-apps-directory)
+- [How does versioning work in Launchpad?](#how-does-versioning-work-in-launchpad)
 
 [How Can I Contribute?](#how-can-i-contribute)
 
