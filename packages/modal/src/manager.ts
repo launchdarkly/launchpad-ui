@@ -3,7 +3,7 @@
 // that was initiated inside a modal (eg. delete an environment). To
 // handle that we need to keep track of active modals.
 
-import filter from 'lodash.filter';
+import { filter } from 'lodash-es';
 
 type Focusable = {
   setupFocus(): void;

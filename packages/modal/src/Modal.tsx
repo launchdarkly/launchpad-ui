@@ -6,7 +6,7 @@ import { FocusScope } from '@react-aria/focus';
 import { animated } from '@react-spring/web';
 import classNames from 'classnames';
 import { createFocusTrap } from 'focus-trap';
-import defer from 'lodash.defer';
+import { defer } from 'lodash-es';
 import noScroll from 'no-scroll';
 import { Component, createRef } from 'react';
 

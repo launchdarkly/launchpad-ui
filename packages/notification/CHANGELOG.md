@@ -1,5 +1,11 @@
 # @launchpad-ui/notification
 
+## 0.1.1
+
+### Patch Changes
+
+- [#94](https://github.com/launchdarkly/launchpad-ui/pull/94) [`5545b66`](https://github.com/launchdarkly/launchpad-ui/commit/5545b6666d2f42c47277d927cf679ea4f98c722c) Thanks [@Niznikr](https://github.com/Niznikr)! - Use React Aria to trap focus
+
 ## 0.1.0
 
 ### Minor Changes

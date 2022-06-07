@@ -1,5 +1,5 @@
 import cx from 'classnames';
-import clamp from 'lodash.clamp';
+import { clamp } from 'lodash-es';
 import { Component } from 'react';
 
 import { DelayedIndicator } from './DelayedIndicator';

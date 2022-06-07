@@ -1,9 +1,7 @@
 import type { KeyboardEvent } from 'react';
 
 import { Portal } from '@launchpad-ui/modal';
-import isEqual from 'lodash.isequal';
-import isFunction from 'lodash.isfunction';
-import isNil from 'lodash.isnil';
+import { isEqual, isFunction, isNil } from 'lodash-es';
 import React, { Component } from 'react';
 
 type OverlayProps = {

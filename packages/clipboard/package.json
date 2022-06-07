@@ -1,10 +1,10 @@
 {
-  "name": "@launchpad-ui/notification",
-  "version": "0.1.1",
+  "name": "@launchpad-ui/clipboard",
+  "version": "0.1.0",
   "publishConfig": {
     "access": "public"
   },
-  "description": "An element representing keywords that categorize feature states for quick recognition.",
+  "description": "An element that copies text to the clipboard.",
   "files": [
     "dist"
   ],
@@ -21,7 +21,7 @@
       "require": "./dist/index.js"
     },
     "./package.json": "./package.json",
-    "./styles/*": "./dist/styles/*"
+    "./styles.css": "./dist/styles.css"
   },
   "source": "src/index.ts",
   "scripts": {
@@ -32,20 +32,16 @@
     "test": "vitest run --coverage"
   },
   "dependencies": {
-    "@launchpad-ui/button": "workspace:~",
     "@launchpad-ui/icons": "workspace:~",
     "@launchpad-ui/tokens": "workspace:~",
-    "@react-aria/focus": "^3.6.0",
-    "@react-spring/web": "^9.4.5",
-    "classnames": "^2.3.1",
-    "uuid": "^8.3.2"
+    "@launchpad-ui/tooltip": "workspace:~",
+    "@react-aria/live-announcer": "^3.1.0"
   },
   "peerDependencies": {
     "react": "^16.8.0 || ^17.0.0 || ^18.0.0",
     "react-dom": "^16.8.0 || ^17.0.0 || ^18.0.0"
   },
   "devDependencies": {
-    "@types/uuid": "^8.3.4",
     "react": "^18.1.0",
     "react-dom": "^18.1.0"
   }

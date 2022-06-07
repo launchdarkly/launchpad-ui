@@ -28,7 +28,7 @@ importers:
       '@testing-library/react': ^13.3.0
       '@testing-library/user-event': ^14.2.0
       '@types/jest-axe': ^3.5.3
-      '@types/lodash.clonedeep': ^4.5.7
+      '@types/lodash-es': ^4.17.6
       '@types/node': ^17.0.31
       '@types/react': ^18.0.8
       '@types/react-dom': ^18.0.3
@@ -42,7 +42,7 @@ importers:
       chromatic: ^6.5.4
       concurrently: ^7.2.0
       esbuild: ^0.14.36
-      eslint: ^8.16.0
+      eslint: ^8.17.0
       eslint-config-prettier: ^8.5.0
       eslint-plugin-import: ^2.26.0
       eslint-plugin-jsx-a11y: ^6.5.1
@@ -57,7 +57,7 @@ importers:
       jest-axe: ^6.0.0
       jsdom: ^19.0.0
       lint-staged: ^13.0.0
-      lodash.clonedeep: ^4.5.0
+      lodash-es: ^4.17.21
       nx: ^14.1.9
       postcss: ^8.4.13
       postcss-import: ^14.1.0
@@ -73,7 +73,7 @@ importers:
       stylelint-value-no-unknown-custom-properties: ^4.0.0
       typescript: ^4.7.2
       vite: ^2.9.9
-      vitest: ^0.13.0
+      vitest: ^0.14.1
       wait-on: ^6.0.1
       webpack: ^5.72.0
     devDependencies:
@@ -101,7 +101,7 @@ importers:
       '@testing-library/react': 13.3.0_ef5jwxihqo6n7gxfmzogljlgcm
       '@testing-library/user-event': 14.2.0_tlwynutqiyp5mns3woioasuxnq
       '@types/jest-axe': 3.5.3
-      '@types/lodash.clonedeep': 4.5.7
+      '@types/lodash-es': 4.17.6
       '@types/node': 17.0.40
       '@types/react': 18.0.12
       '@types/react-dom': 18.0.5
@@ -130,7 +130,7 @@ importers:
       jest-axe: 6.0.0
       jsdom: 19.0.0
       lint-staged: 13.0.0
-      lodash.clonedeep: 4.5.0
+      lodash-es: 4.17.21
       nx: 14.1.9_typescript@4.7.3
       postcss: 8.4.14
       postcss-import: 14.1.0_postcss@8.4.14
@@ -146,7 +146,7 @@ importers:
       stylelint-value-no-unknown-custom-properties: 4.0.0_stylelint@14.8.5
       typescript: 4.7.3
       vite: 2.9.9
-      vitest: 0.13.1_jsdom@19.0.0
+      vitest: 0.14.1_jsdom@19.0.0
       wait-on: 6.0.1
       webpack: 5.73.0_esbuild@0.14.42
 
@@ -155,6 +155,7 @@ importers:
       '@launchpad-ui/alert': workspace:~
       '@launchpad-ui/banner': workspace:~
       '@launchpad-ui/button': workspace:~
+      '@launchpad-ui/clipboard': workspace:~
       '@launchpad-ui/icons': workspace:~
       '@launchpad-ui/lozenge': workspace:~
       '@launchpad-ui/modal': workspace:~
@@ -172,7 +173,7 @@ importers:
       '@remix-run/node': ^1.5.1
       '@remix-run/react': ^1.5.1
       '@remix-run/serve': ^1.5.1
-      eslint: ^8.16.0
+      eslint: ^8.17.0
       isbot: ^3.5.0
       react: ^18.1.0
       react-dom: ^18.1.0
@@ -181,6 +182,7 @@ importers:
       '@launchpad-ui/alert': link:../../packages/alert
       '@launchpad-ui/banner': link:../../packages/banner
       '@launchpad-ui/button': link:../../packages/button
+      '@launchpad-ui/clipboard': link:../../packages/clipboard
       '@launchpad-ui/icons': link:../../packages/icons
       '@launchpad-ui/lozenge': link:../../packages/lozenge
       '@launchpad-ui/modal': link:../../packages/modal
@@ -256,6 +258,23 @@ importers:
       react: 18.1.0
       react-dom: 18.1.0_react@18.1.0
 
+  packages/clipboard:
+    specifiers:
+      '@launchpad-ui/icons': workspace:~
+      '@launchpad-ui/tokens': workspace:~
+      '@launchpad-ui/tooltip': workspace:~
+      '@react-aria/live-announcer': ^3.1.0
+      react: ^18.1.0
+      react-dom: ^18.1.0
+    dependencies:
+      '@launchpad-ui/icons': link:../icons
+      '@launchpad-ui/tokens': link:../tokens
+      '@launchpad-ui/tooltip': link:../tooltip
+      '@react-aria/live-announcer': 3.1.0
+    devDependencies:
+      react: 18.1.0
+      react-dom: 18.1.0_react@18.1.0
+
   packages/icons:
     specifiers:
       '@launchpad-ui/tokens': workspace:~
@@ -296,13 +315,11 @@ importers:
       '@launchpad-ui/tokens': workspace:~
       '@react-aria/focus': ^3.6.0
       '@react-spring/web': ^9.4.5
-      '@types/lodash.defer': ^4.1.7
-      '@types/lodash.filter': ^4.6.7
+      '@types/lodash-es': ^4.17.6
       '@types/no-scroll': ^2.1.0
       classnames: ^2.3.1
       focus-trap: ^6.9.3
-      lodash.defer: ^4.1.0
-      lodash.filter: ^4.6.0
+      lodash-es: ^4.17.21
       no-scroll: ^2.1.1
       react: ^18.1.0
       react-dom: ^18.1.0
@@ -315,12 +332,10 @@ importers:
       '@react-spring/web': 9.4.5_ef5jwxihqo6n7gxfmzogljlgcm
       classnames: 2.3.1
       focus-trap: 6.9.3
-      lodash.defer: 4.1.0
-      lodash.filter: 4.6.0
+      lodash-es: 4.17.21
       no-scroll: 2.1.1
     devDependencies:
-      '@types/lodash.defer': 4.1.7
-      '@types/lodash.filter': 4.6.7
+      '@types/lodash-es': 4.17.6
       '@types/no-scroll': 2.1.0
       react: 18.1.0
       react-dom: 18.1.0_react@18.1.0
@@ -353,23 +368,15 @@ importers:
   packages/overlay:
     specifiers:
       '@launchpad-ui/modal': workspace:~
-      '@types/lodash.isequal': ^4.5.6
-      '@types/lodash.isfunction': ^3.0.7
-      '@types/lodash.isnil': ^4.0.7
-      lodash.isequal: ^4.5.0
-      lodash.isfunction: ^3.0.9
-      lodash.isnil: ^4.0.0
+      '@types/lodash-es': ^4.17.6
+      lodash-es: ^4.17.21
       react: ^18.1.0
       react-dom: ^18.1.0
     dependencies:
       '@launchpad-ui/modal': link:../modal
-      lodash.isequal: 4.5.0
-      lodash.isfunction: 3.0.9
-      lodash.isnil: 4.0.0
+      lodash-es: 4.17.21
     devDependencies:
-      '@types/lodash.isequal': 4.5.6
-      '@types/lodash.isfunction': 3.0.7
-      '@types/lodash.isnil': 4.0.7
+      '@types/lodash-es': 4.17.6
       react: 18.1.0
       react-dom: 18.1.0_react@18.1.0
 
@@ -381,12 +388,10 @@ importers:
       '@launchpad-ui/tokens': workspace:~
       '@react-aria/focus': ^3.6.0
       '@react-spring/web': ^9.4.5
-      '@types/lodash.isfunction': ^3.0.7
-      '@types/lodash.isnil': ^4.0.7
+      '@types/lodash-es': ^4.17.6
       '@types/uuid': ^8.3.4
       classnames: ^2.3.1
-      lodash.isfunction: ^3.0.9
-      lodash.isnil: ^4.0.0
+      lodash-es: ^4.17.21
       react: ^18.1.0
       react-dom: ^18.1.0
       uuid: ^8.3.2
@@ -398,12 +403,10 @@ importers:
       '@react-aria/focus': 3.6.0_react@18.1.0
       '@react-spring/web': 9.4.5_ef5jwxihqo6n7gxfmzogljlgcm
       classnames: 2.3.1
-      lodash.isfunction: 3.0.9
-      lodash.isnil: 4.0.0
+      lodash-es: 4.17.21
       uuid: 8.3.2
     devDependencies:
-      '@types/lodash.isfunction': 3.0.7
-      '@types/lodash.isnil': 4.0.7
+      '@types/lodash-es': 4.17.6
       '@types/uuid': 8.3.4
       react: 18.1.0
       react-dom: 18.1.0_react@18.1.0
@@ -411,17 +414,17 @@ importers:
   packages/progress:
     specifiers:
       '@launchpad-ui/tokens': workspace:~
-      '@types/lodash.clamp': ^4.0.7
+      '@types/lodash-es': ^4.17.6
       classnames: ^2.3.1
-      lodash.clamp: ^4.0.3
+      lodash-es: ^4.17.21
       react: ^18.1.0
       react-dom: ^18.1.0
     dependencies:
       '@launchpad-ui/tokens': link:../tokens
       classnames: 2.3.1
-      lodash.clamp: 4.0.3
+      lodash-es: 4.17.21
     devDependencies:
-      '@types/lodash.clamp': 4.0.7
+      '@types/lodash-es': 4.17.6
       react: 18.1.0
       react-dom: 18.1.0_react@18.1.0
 
@@ -3336,6 +3339,12 @@ packages:
       react: 18.1.0
     dev: false
 
+  /@react-aria/live-announcer/3.1.0:
+    resolution: {integrity: sha512-YEaGJh1ELho3G9zvUZGOsKsSNEqHsm0fb3Ngvj9z0tjZCXa0867h8YWKuiyTA9BG7WhH8eeJq07WN4nDvYU7fg==}
+    dependencies:
+      '@babel/runtime': 7.18.3
+    dev: false
+
   /@react-aria/selection/3.9.0_react@18.1.0:
     resolution: {integrity: sha512-dDtMpi1RkG056zKQEzI8bm3p4KvRjq7+qqPEXTSQIqVU2+SfaiPo3Kmx26whN8Yd5tOcGQyNrKAZbC0GriqOFA==}
     peerDependencies:
@@ -5841,44 +5850,8 @@ packages:
       '@types/node': 17.0.40
     dev: true
 
-  /@types/lodash.clamp/4.0.7:
-    resolution: {integrity: sha512-qr2pQl+7Ntd/5q9sZfY/MUOMd7FgGvfyTwqutf1c/mwZiVseaoD/xsp/OeOLAkT/XmM7wGfZcm6vzNShnNF2+g==}
-    dependencies:
-      '@types/lodash': 4.14.182
-    dev: true
-
-  /@types/lodash.clonedeep/4.5.7:
-    resolution: {integrity: sha512-ccNqkPptFIXrpVqUECi60/DFxjNKsfoQxSQsgcBJCX/fuX1wgyQieojkcWH/KpE3xzLoWN/2k+ZeGqIN3paSvw==}
-    dependencies:
-      '@types/lodash': 4.14.182
-    dev: true
-
-  /@types/lodash.defer/4.1.7:
-    resolution: {integrity: sha512-PfggyHhNfmwRdWHwAPXy+wJbNrEeQmdvYodYQ8q5xQea6oDsG69TrTqkYv9KtxTJUlILLcN4mICU+smloz21FQ==}
-    dependencies:
-      '@types/lodash': 4.14.182
-    dev: true
-
-  /@types/lodash.filter/4.6.7:
-    resolution: {integrity: sha512-ka742YGB8YavNRe8grQ5zFBiJBHPjmgT99lAq4Od5FwKKege5pTd/b8arGGzVePc2x90C7U7jcLeaQw+q0lFBA==}
-    dependencies:
-      '@types/lodash': 4.14.182
-    dev: true
-
-  /@types/lodash.isequal/4.5.6:
-    resolution: {integrity: sha512-Ww4UGSe3DmtvLLJm2F16hDwEQSv7U0Rr8SujLUA2wHI2D2dm8kPu6Et+/y303LfjTIwSBKXB/YTUcAKpem/XEg==}
-    dependencies:
-      '@types/lodash': 4.14.182
-    dev: true
-
-  /@types/lodash.isfunction/3.0.7:
-    resolution: {integrity: sha512-kpYexfS7OvD8Gb74F2ogdHVbeWpYsiP8cadpIBBbJivG0i7kQ0xEn3V78jhFiJN6HfZhggWhbP659+HYMnFFHw==}
-    dependencies:
-      '@types/lodash': 4.14.182
-    dev: true
-
-  /@types/lodash.isnil/4.0.7:
-    resolution: {integrity: sha512-jMMa3G3nJCk+agAWJmrmpr4dYurU6F5SdhQuouhFxKE3mdmqI0lLAI6G72NBW+sxfLVnxZymjqj5nRwonqASZw==}
+  /@types/lodash-es/4.17.6:
+    resolution: {integrity: sha512-R+zTeVUKDdfoRxpAryaQNRKk3105Rrgx2CFRClIgRGaqDTdjsm8h6IYA8ir584W3ePzkZfst5xIgDwYrlh9HLg==}
     dependencies:
       '@types/lodash': 4.14.182
     dev: true
@@ -12942,37 +12915,12 @@ packages:
       p-locate: 5.0.0
     dev: true
 
-  /lodash.clamp/4.0.3:
-    resolution: {integrity: sha512-HvzRFWjtcguTW7yd8NJBshuNaCa8aqNFtnswdT7f/cMd/1YKy5Zzoq4W/Oxvnx9l7aeY258uSdDfM793+eLsVg==}
-    dev: false
-
-  /lodash.clonedeep/4.5.0:
-    resolution: {integrity: sha512-H5ZhCF25riFd9uB5UCkVKo61m3S/xZk1x4wA6yp/L3RFP6Z/eHH1ymQcGLo7J3GMPfm0V/7m1tryHuGVxpqEBQ==}
-    dev: true
+  /lodash-es/4.17.21:
+    resolution: {integrity: sha512-mKnC+QJ9pWVzv+C4/U3rRsHapFfHvQFoFB92e52xeyGMcX6/OlIl78je1u8vePzYZSkkogMPJ2yjxxsb89cxyw==}
 
   /lodash.debounce/4.0.8:
     resolution: {integrity: sha512-FT1yDzDYEoYWhnSGnpE/4Kj1fLZkDFyqRb7fNt6FdYOSxlUWAtp42Eh6Wb0rGIv/m9Bgo7x4GhQbm5Ys4SG5ow==}
     dev: true
-
-  /lodash.defer/4.1.0:
-    resolution: {integrity: sha512-Cn8ZyNc6qu5pZyoF8ydQ6p2Jyr0rTK9AlghrsxeU/u1nrG38lJBOBSM+mj+OeEfm97G+aBDxXs3MxX6bULG56Q==}
-    dev: false
-
-  /lodash.filter/4.6.0:
-    resolution: {integrity: sha512-pXYUy7PR8BCLwX5mgJ/aNtyOvuJTdZAo9EQFUvMIYugqmJxnrYaANvTbgndOzHSCSR0wnlBBfRXJL5SbWxo3FQ==}
-    dev: false
-
-  /lodash.isequal/4.5.0:
-    resolution: {integrity: sha512-pDo3lu8Jhfjqls6GkMgpahsF9kCyayhgykjyLMNFTKWrpVdAQtYyB4muAMWozBB4ig/dtWAmsMxLEI8wuz+DYQ==}
-    dev: false
-
-  /lodash.isfunction/3.0.9:
-    resolution: {integrity: sha512-AirXNj15uRIMMPihnkInB4i3NHeb4iBtNg9WRWuK2o31S+ePwwNmDPaTL3o7dTJ+VXNZim7rFs4rxN4YU1oUJw==}
-    dev: false
-
-  /lodash.isnil/4.0.0:
-    resolution: {integrity: sha512-up2Mzq3545mwVnMhTDMdfoG1OurpA/s5t88JmQX809eH3C8491iu2sfKhTfhQtKY78oPNhiaHJUpT/dUDAAtng==}
-    dev: false
 
   /lodash.merge/4.6.2:
     resolution: {integrity: sha512-0KpjqXRVvrYyCsX1swR/XTK0va6VQkQM6MNo7PqW77ByjAhoARA8EfrP1N4+KlKj8YS0ZUCtRT/YUuhyYDujIQ==}
@@ -18442,8 +18390,8 @@ packages:
       fsevents: 2.3.2
     dev: true
 
-  /vitest/0.13.1_jsdom@19.0.0:
-    resolution: {integrity: sha512-CfSBf7YFw/i8HumSUQRtZKs0aV91DC9WU8nAgIJAlawKHaFuPHQohDwOTPIFgrxySiuFYUa0Yohf9gDFfBwjxA==}
+  /vitest/0.14.1_jsdom@19.0.0:
+    resolution: {integrity: sha512-2UUm6jYgkwh7Y3VKSRR8OuaNCm+iA5LPDnal7jyITN39maZK9L+JVxqjtQ39PSFo5Fl3/BgaJvER6GGHX9JLxg==}
     engines: {node: '>=v14.16.0'}
     hasBin: true
     peerDependencies:

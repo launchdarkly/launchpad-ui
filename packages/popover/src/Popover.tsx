@@ -7,8 +7,7 @@ import { Overlay } from '@launchpad-ui/overlay';
 import { FocusScope } from '@react-aria/focus';
 import { animated, Spring } from '@react-spring/web';
 import cx from 'classnames';
-import isFunction from 'lodash.isfunction';
-import isNil from 'lodash.isnil';
+import { isFunction, isNil } from 'lodash-es';
 import {
   Children,
   cloneElement,

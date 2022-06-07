@@ -17,6 +17,7 @@
     "@launchpad-ui/alert": "workspace:~",
     "@launchpad-ui/banner": "workspace:~",
     "@launchpad-ui/button": "workspace:~",
+    "@launchpad-ui/clipboard": "workspace:~",
     "@launchpad-ui/icons": "workspace:~",
     "@launchpad-ui/lozenge": "workspace:~",
     "@launchpad-ui/modal": "workspace:~",
@@ -39,7 +40,7 @@
   "devDependencies": {
     "@remix-run/dev": "^1.5.1",
     "@remix-run/eslint-config": "^1.5.1",
-    "eslint": "^8.16.0",
+    "eslint": "^8.17.0",
     "typescript": "^4.7.2"
   },
   "engines": {
