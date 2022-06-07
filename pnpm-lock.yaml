@@ -42,7 +42,7 @@ importers:
       chromatic: ^6.5.4
       concurrently: ^7.2.0
       esbuild: ^0.14.36
-      eslint: ^8.16.0
+      eslint: ^8.17.0
       eslint-config-prettier: ^8.5.0
       eslint-plugin-import: ^2.26.0
       eslint-plugin-jsx-a11y: ^6.5.1
@@ -172,7 +172,7 @@ importers:
       '@remix-run/node': ^1.5.1
       '@remix-run/react': ^1.5.1
       '@remix-run/serve': ^1.5.1
-      eslint: ^8.16.0
+      eslint: ^8.17.0
       isbot: ^3.5.0
       react: ^18.1.0
       react-dom: ^18.1.0
