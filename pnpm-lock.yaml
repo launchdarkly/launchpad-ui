@@ -279,6 +279,23 @@ importers:
       react: 18.1.0
       react-dom: 18.1.0_react@18.1.0
 
+  packages/dropdown:
+    specifiers:
+      '@launchpad-ui/button': workspace:~
+      '@launchpad-ui/popover': workspace:~
+      '@launchpad-ui/tokens': workspace:~
+      classnames: ^2.3.1
+      react: ^18.1.0
+      react-dom: ^18.1.0
+    dependencies:
+      '@launchpad-ui/button': link:../button
+      '@launchpad-ui/popover': link:../popover
+      '@launchpad-ui/tokens': link:../tokens
+      classnames: 2.3.1
+    devDependencies:
+      react: 18.1.0
+      react-dom: 18.1.0_react@18.1.0
+
   packages/icons:
     specifiers:
       '@launchpad-ui/tokens': workspace:~
