@@ -27,6 +27,10 @@ export async function getComponents() {
       name: 'Lozenge',
     },
     {
+      to: 'components/menu',
+      name: 'Menu',
+    },
+    {
       to: 'components/modal',
       name: 'Modal',
     },

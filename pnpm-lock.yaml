@@ -160,6 +160,7 @@ importers:
       '@launchpad-ui/clipboard': workspace:~
       '@launchpad-ui/icons': workspace:~
       '@launchpad-ui/lozenge': workspace:~
+      '@launchpad-ui/menu': workspace:~
       '@launchpad-ui/modal': workspace:~
       '@launchpad-ui/notification': workspace:~
       '@launchpad-ui/popover': workspace:~
@@ -187,6 +188,7 @@ importers:
       '@launchpad-ui/clipboard': link:../../packages/clipboard
       '@launchpad-ui/icons': link:../../packages/icons
       '@launchpad-ui/lozenge': link:../../packages/lozenge
+      '@launchpad-ui/menu': link:../../packages/menu
       '@launchpad-ui/modal': link:../../packages/modal
       '@launchpad-ui/notification': link:../../packages/notification
       '@launchpad-ui/popover': link:../../packages/popover

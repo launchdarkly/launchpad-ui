@@ -20,6 +20,7 @@
     "@launchpad-ui/clipboard": "workspace:~",
     "@launchpad-ui/icons": "workspace:~",
     "@launchpad-ui/lozenge": "workspace:~",
+    "@launchpad-ui/menu": "workspace:~",
     "@launchpad-ui/modal": "workspace:~",
     "@launchpad-ui/notification": "workspace:~",
     "@launchpad-ui/popover": "workspace:~",
