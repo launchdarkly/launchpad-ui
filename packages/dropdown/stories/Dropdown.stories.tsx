@@ -14,7 +14,16 @@ export default {
   description: 'Dropdowns display a list of actions or options to a user.',
   decorators: [
     (Story: Story) => (
-      <div style={{ position: 'relative', marginBottom: '10rem' }}>
+      <div
+        style={{
+          position: 'relative',
+          width: '100vw',
+          height: '100vh',
+          display: 'grid',
+          alignItems: 'center',
+          justifyContent: 'center',
+        }}
+      >
         <Story />
       </div>
     ),
