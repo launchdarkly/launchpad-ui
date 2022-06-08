@@ -20,19 +20,19 @@
       "import": "./dist/index.es.js",
       "require": "./dist/index.js"
     },
-    "./package.json": "./package.json",
-    "./styles/*": "./dist/styles/*"
+    "./package.json": "./package.json"
   },
   "source": "src/index.ts",
   "scripts": {
     "build": "tsc --project tsconfig.build.json && node build.js",
     "clean": "rm -rf dist",
     "e2e": "exit 0",
-    "lint": "eslint '**/*.{ts,tsx,js}' && stylelint '**/*.css' --ignore-path ../../.stylelintignore",
+    "lint": "eslint '**/*.{ts,tsx,js}'",
     "test": "vitest run --coverage"
   },
   "dependencies": {
     "@launchpad-ui/button": "workspace:~",
+    "@launchpad-ui/icons": "workspace:~",
     "@launchpad-ui/popover": "workspace:~",
     "@launchpad-ui/tokens": "workspace:~",
     "classnames": "^2.3.1"

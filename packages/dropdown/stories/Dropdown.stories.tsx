@@ -2,7 +2,9 @@ import type { Story } from '@storybook/react';
 
 import { ButtonKind, ButtonSize } from '@launchpad-ui/button';
 import { Menu, MenuItem } from '@launchpad-ui/menu';
+import { userEvent, within } from '@storybook/testing-library';
 
+import { sleep } from '../../../.storybook/utils';
 import { Dropdown, DropdownButton } from '../src';
 
 export default {
@@ -10,6 +12,13 @@ export default {
   subcomponents: { DropdownButton },
   title: 'Components/Dropdown',
   description: 'Dropdowns display a list of actions or options to a user.',
+  decorators: [
+    (Story: Story) => (
+      <div style={{ position: 'relative', marginBottom: '10rem' }}>
+        <Story />
+      </div>
+    ),
+  ],
 };
 
 export const Example = {
@@ -28,13 +37,11 @@ export const Example = {
       </Menu>,
     ],
   },
-  decorators: [
-    (Story: Story) => (
-      <div style={{ position: 'relative', marginBottom: '10rem' }}>
-        <Story />
-      </div>
-    ),
-  ],
+  play: async ({ canvasElement }: { canvasElement: HTMLElement }) => {
+    const canvas = within(canvasElement);
+    await sleep(500);
+    await userEvent.click(canvas.getByRole('button'));
+  },
 };
 
 export const WithHtmlButton = {

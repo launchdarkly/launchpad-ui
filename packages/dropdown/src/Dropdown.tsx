@@ -74,7 +74,7 @@ class Dropdown<T extends string | object | number> extends Component<
       ...rest
     } = this.props;
     const { isOpen } = this.state;
-    const popoverTargetClassname = cx('Dropdown-target', targetClassName);
+    const popoverTargetClassname = cx('Dropdown', targetClassName);
 
     return (
       <Popover

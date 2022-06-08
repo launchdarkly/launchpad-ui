@@ -19,6 +19,10 @@ export async function getComponents() {
       name: 'CopyToClipboard',
     },
     {
+      to: 'components/dropdown',
+      name: 'Dropdown',
+    },
+    {
       to: 'components/icon',
       name: 'Icon',
     },
