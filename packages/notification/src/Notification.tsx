@@ -106,7 +106,7 @@ class Notification extends Component<NotificationProps, StateProps> {
         <div className="Notification-body">
           <div className="Notification-message">{message}</div>
           {details && (
-            <div className={detailsClasses} data-testid="details-container">
+            <div className={detailsClasses} data-test-id="details-container">
               <button
                 aria-label="More details"
                 aria-expanded={this.state.showDetails}

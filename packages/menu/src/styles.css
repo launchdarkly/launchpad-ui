@@ -1,0 +1,217 @@
+/* stylelint-disable no-descending-specificity */
+.Menu {
+  &:focus {
+    outline: none;
+  }
+
+  & [hidden]:first-child + & .Menu-item-list,
+  & .Menu-item-list:first-child {
+    & > .Menu-item:first-child {
+      border-top-left-radius: var(--border-radius);
+      border-top-right-radius: var(--border-radius);
+    }
+
+    & > .VirtualMenu-item-list .VirtualMenu-item:first-child .Menu-item {
+      border-top-left-radius: var(--border-radius);
+      border-top-right-radius: var(--border-radius);
+    }
+  }
+}
+
+.Menu-item-list {
+  min-width: 12rem;
+  overflow: auto;
+  max-height: 55vh;
+
+  /* use the child selector due to MenuItems being nested in divs for virtualization */
+  & > .Menu-item:last-child {
+    border-bottom-left-radius: var(--border-radius);
+    border-bottom-right-radius: var(--border-radius);
+  }
+
+  & > .VirtualMenu-item-list .VirtualMenu-item:last-child .Menu-item {
+    border-bottom-left-radius: var(--border-radius);
+    border-bottom-right-radius: var(--border-radius);
+  }
+}
+
+.Menu-item-list:first-child {
+  border-top-left-radius: var(--border-radius);
+  border-top-right-radius: var(--border-radius);
+}
+
+.Menu-item-list:last-child {
+  border-bottom-left-radius: var(--border-radius);
+  border-bottom-right-radius: var(--border-radius);
+}
+
+.Menu-item {
+  display: block;
+  position: relative;
+  color: var(--color-black-300);
+  background: var(--color-white);
+  text-decoration: none;
+  cursor: pointer;
+  outline: none;
+  padding: 0.6rem 2.5rem;
+  text-align: left;
+  font-size: 1.3rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  user-select: none;
+  line-height: inherit;
+  border-width: 0;
+  width: 100%;
+}
+
+/* stylelint-disable-next-line no-duplicate-selectors */
+.Menu {
+  & .Menu-item:not([disabled]):not([aria-disabled]) {
+    &:hover:not(:active):not(.has-focus) {
+      background-color: var(--color-gray-100);
+      box-shadow: inset 0 0 0 1px var(--color-gray-600);
+    }
+
+    &.has-focus {
+      background-color: var(--color-gray-100);
+      box-shadow: inset 0 0 0 2px var(--color-blue-500);
+    }
+
+    &:active {
+      text-decoration: none;
+      box-shadow: none;
+      background-color: var(--color-blue-200);
+      color: var(--color-blue-600);
+    }
+  }
+
+  /* Override our link styles for MenuItemLink component */
+  & a.Menu-item {
+    &:focus:not(:hover):not(.has-focus) {
+      text-decoration: none;
+      box-shadow: none;
+    }
+
+    /* Ensures that links that are disabled don't show active styles */
+    &:active[disabled],
+    &:active[aria-disabled] {
+      text-decoration: none;
+      color: var(--color-gray-800);
+    }
+  }
+}
+
+.Menu-item--nested {
+  padding-left: 4rem;
+}
+
+.Menu-item .Gravatar {
+  margin-right: 0.5rem;
+}
+
+.Menu-item.is-highlighted {
+  background-color: var(--color-gray-100);
+  box-shadow: inset 0 0 0 1px var(--color-gray-600);
+
+  &:active {
+    background-color: var(--color-blue-200);
+    color: var(--color-blue-600);
+    box-shadow: none;
+  }
+}
+
+.Menu-item[aria-disabled],
+.Menu-item[disabled] {
+  color: var(--color-gray-800);
+  cursor: default;
+}
+
+.Menu-item-icon {
+  position: absolute;
+  left: 0.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.Menu-divider {
+  border-top: 1px solid var(--color-gray-200);
+}
+
+.Menu-search {
+  padding: 1rem;
+  font-size: 1.3rem;
+  border-bottom: 1px solid var(--color-gray-200);
+}
+
+.Menu-search:first-child {
+  border-top-left-radius: var(--border-radius);
+  border-top-right-radius: var(--border-radius);
+}
+
+.Menu-clear.Button {
+  text-decoration: none;
+  color: var(--color-system-red-600);
+  font-size: 1.3rem;
+  font-weight: var(--font-weight-medium);
+  padding: 1rem;
+  width: 100%;
+  border-bottom: 1px solid var(--color-gray-200);
+}
+
+.Menu-clear.Button:active,
+.Menu-clear.Button:focus,
+.Menu-clear.Button:hover {
+  outline: none;
+  box-shadow: unset;
+  color: var(--color-system-red-600);
+  border-bottom-color: var(--color-gray-200);
+  background-color: var(--color-gray-100);
+}
+
+.Popover-content .Menu-search {
+  width: 100%;
+
+  /* Removing anything that could give it some height */
+  & .Menu-search-hidden-placeholder {
+    padding-top: 0;
+    padding-bottom: 0;
+    height: 0;
+    border: none;
+    visibility: hidden;
+  }
+}
+
+.Menu--isVirtual {
+  display: flex;
+  align-items: stretch;
+  flex-direction: column;
+}
+
+.MenuSize--xLarge {
+  width: 32rem;
+}
+
+.MenuSize--large {
+  width: 24rem;
+}
+
+.MenuSize--med {
+  width: 16rem;
+}
+
+.MenuSize--small {
+  width: 12rem;
+}
+
+.VirtualMenu-item-list {
+  width: 100%;
+  position: relative;
+}
+
+.VirtualMenu-item {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}

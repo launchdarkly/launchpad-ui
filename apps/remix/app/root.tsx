@@ -27,6 +27,7 @@ import tooltipStyles from '@launchpad-ui/tooltip/styles.css';
 import notificationStyles from '@launchpad-ui/notification/styles/Notification.css';
 import bannerStyles from '@launchpad-ui/banner/styles.css';
 import clipboardStyles from '@launchpad-ui/clipboard/styles.css';
+import menuStyles from '@launchpad-ui/menu/styles.css';
 
 export const links: LinksFunction = () => {
   return [
@@ -46,6 +47,7 @@ export const links: LinksFunction = () => {
     { rel: 'stylesheet', href: notificationStyles },
     { rel: 'stylesheet', href: bannerStyles },
     { rel: 'stylesheet', href: clipboardStyles },
+    { rel: 'stylesheet', href: menuStyles },
   ];
 };
 
