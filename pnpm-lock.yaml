@@ -300,6 +300,29 @@ importers:
       react: 18.1.0
       react-dom: 18.1.0_react@18.1.0
 
+  packages/form:
+    specifiers:
+      '@launchpad-ui/button': workspace:~
+      '@launchpad-ui/icons': workspace:~
+      '@launchpad-ui/tokens': workspace:~
+      '@react-aria/visually-hidden': ^3.3.0
+      '@types/lodash-es': ^4.17.6
+      clsx: ^1.1.1
+      lodash-es: ^4.17.21
+      react: ^18.1.0
+      react-dom: ^18.1.0
+    dependencies:
+      '@launchpad-ui/button': link:../button
+      '@launchpad-ui/icons': link:../icons
+      '@launchpad-ui/tokens': link:../tokens
+      '@react-aria/visually-hidden': 3.3.0_react@18.1.0
+      clsx: 1.1.1
+      lodash-es: 4.17.21
+    devDependencies:
+      '@types/lodash-es': 4.17.6
+      react: 18.1.0
+      react-dom: 18.1.0_react@18.1.0
+
   packages/icons:
     specifiers:
       '@launchpad-ui/tokens': workspace:~

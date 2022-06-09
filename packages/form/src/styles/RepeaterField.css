@@ -1,0 +1,13 @@
+:root {
+  --Button-size: 1.8rem;
+  --Button-margin: 1rem;
+}
+
+.RepeaterField-item {
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+}
+
+.RepeaterField-item:first-child {
+  padding-top: 1rem;
+}

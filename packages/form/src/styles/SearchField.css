@@ -1,0 +1,43 @@
+.SearchField {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.SearchField--fullWidth {
+  width: 100%;
+}
+
+.SearchField .FormInput {
+  padding: 0.6rem 2.75rem;
+  padding-left: 3rem;
+}
+
+.SearchField-pending-indicator ~ .FormInput {
+  background: var(--color-gray-200);
+  padding-right: 3rem;
+}
+
+.SearchField .SearchField-icon {
+  fill: var(--color-gray-600);
+  position: absolute;
+  left: 1rem;
+}
+
+.SearchField-clearButton {
+  display: block;
+  position: absolute;
+  right: 1rem;
+  cursor: pointer;
+}
+
+.SearchField-clearButton .Popover-target,
+.SearchField-clearButton .Popover-target .Button {
+  display: block;
+}
+
+.SearchField .SearchField-pending-indicator {
+  display: block;
+  position: absolute;
+  right: 1rem;
+}

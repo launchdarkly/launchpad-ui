@@ -1,0 +1,15 @@
+.IconField {
+  position: relative;
+}
+
+.IconField .FormInput {
+  padding-left: 3rem;
+}
+
+.FormInput ~ .Icon {
+  position: absolute;
+  fill: var(--color-gray-600);
+  top: 50%;
+  transform: translateY(-50%);
+  left: 1rem;
+}
