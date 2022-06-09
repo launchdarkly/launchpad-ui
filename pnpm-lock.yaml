@@ -287,7 +287,7 @@ importers:
       '@launchpad-ui/icons': workspace:~
       '@launchpad-ui/popover': workspace:~
       '@launchpad-ui/tokens': workspace:~
-      classnames: ^2.3.1
+      clsx: ^1.1.1
       react: ^18.1.0
       react-dom: ^18.1.0
     dependencies:
@@ -295,7 +295,7 @@ importers:
       '@launchpad-ui/icons': link:../icons
       '@launchpad-ui/popover': link:../popover
       '@launchpad-ui/tokens': link:../tokens
-      classnames: 2.3.1
+      clsx: 1.1.1
     devDependencies:
       react: 18.1.0
       react-dom: 18.1.0_react@18.1.0
@@ -7765,10 +7765,6 @@ packages:
       isobject: 3.0.1
       static-extend: 0.1.2
     dev: true
-
-  /classnames/2.3.1:
-    resolution: {integrity: sha512-OlQdbZ7gLfGarSqxesMesDa5uz7KFbID8Kpq/SxIoNGDqY8lSYs0D+hhtBXhcdB3rcbXArFr7vlHheLk1voeNA==}
-    dev: false
 
   /clean-css/4.2.4:
     resolution: {integrity: sha512-EJUDT7nDVFDvaQgAo2G/PJvxmp1o/c6iXLbswsBbUFXi1Nr+AjA2cKmfbKDMjMvzEe75g3P6JkaDDAKk96A85A==}

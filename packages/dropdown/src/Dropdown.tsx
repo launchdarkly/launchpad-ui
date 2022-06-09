@@ -2,7 +2,7 @@ import type { PopoverPlacement } from '@launchpad-ui/popover';
 
 import { Button } from '@launchpad-ui/button';
 import { Popover } from '@launchpad-ui/popover';
-import cx from 'classnames';
+import cx from 'clsx';
 import { Children, cloneElement, Component } from 'react';
 
 type DropdownState = {
