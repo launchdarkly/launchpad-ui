@@ -2,4 +2,4 @@
 '@launchpad-ui/button': patch
 ---
 
-Add tooltip prop
+Remove duplicate custom properties
