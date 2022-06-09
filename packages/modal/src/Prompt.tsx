@@ -1,4 +1,4 @@
-import cx from 'classnames';
+import cx from 'clsx';
 
 import { Portal } from './Portal';
 import './styles/Prompt.css';

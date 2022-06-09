@@ -4,7 +4,7 @@ import type { AriaTabListProps, AriaTabPanelProps } from '@react-types/tabs';
 
 import { useTab, useTabList, useTabPanel } from '@react-aria/tabs';
 import { useTabListState } from '@react-stately/tabs';
-import cx from 'classnames';
+import cx from 'clsx';
 import { useRef } from 'react';
 
 import './styles.css';

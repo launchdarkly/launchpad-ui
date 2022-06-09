@@ -2,7 +2,7 @@ import type { AlertKind } from '@launchpad-ui/alert';
 
 import { Button, ButtonType } from '@launchpad-ui/button';
 import { Close, IconSize, KindIcon } from '@launchpad-ui/icons';
-import cx from 'classnames';
+import cx from 'clsx';
 
 import './styles.css';
 

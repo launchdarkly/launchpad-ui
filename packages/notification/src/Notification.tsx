@@ -4,7 +4,7 @@ import type { ReactNode } from 'react';
 import { Button, ButtonType } from '@launchpad-ui/button';
 import { KindIcon, Close, ExpandMore, IconSize } from '@launchpad-ui/icons';
 import { FocusScope } from '@react-aria/focus';
-import classNames from 'classnames';
+import cx from 'clsx';
 import { Component, KeyboardEvent } from 'react';
 
 import './styles/Notification.css';
@@ -95,8 +95,8 @@ class Notification extends Component<NotificationProps, StateProps> {
 
   render() {
     const { level, message, details, onDismiss, ...props } = this.props;
-    const classes = classNames('Notification', `Notification--${level}`);
-    const detailsClasses = classNames('Notification-details', {
+    const classes = cx('Notification', `Notification--${level}`);
+    const detailsClasses = cx('Notification-details', {
       'is-expanded': this.state.showDetails,
     });
 

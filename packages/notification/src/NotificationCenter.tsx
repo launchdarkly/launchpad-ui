@@ -1,7 +1,7 @@
 import type { NotificationRecord } from './types';
 
 import { animated, useTransition } from '@react-spring/web';
-import classNames from 'classnames';
+import cx from 'clsx';
 
 import { Notification } from './Notification';
 import './styles/NotificationCenter.css';
@@ -27,7 +27,7 @@ const NotificationCenter = ({ notifications, onDismiss, className }: Notificatio
     ...notificationTransitions,
   });
 
-  const classes = classNames('NotificationCenter', className);
+  const classes = cx('NotificationCenter', className);
 
   return (
     <div className={classes}>

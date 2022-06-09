@@ -3,7 +3,7 @@ import type { PopoverPlacement } from '@launchpad-ui/popover';
 import { Icon, IconSize } from '@launchpad-ui/icons';
 import { Tooltip } from '@launchpad-ui/tooltip';
 import { FocusRing } from '@react-aria/focus';
-import cx from 'classnames';
+import cx from 'clsx';
 import { Link } from 'react-router-dom';
 
 import './styles.css';

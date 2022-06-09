@@ -1,4 +1,4 @@
-import cx from 'classnames';
+import cx from 'clsx';
 import { forwardRef } from 'react';
 
 import './styles.css';

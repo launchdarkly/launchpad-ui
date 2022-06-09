@@ -1,6 +1,6 @@
 import { Button, ButtonType } from '@launchpad-ui/button';
 import { Close, IconSize, KindIcon } from '@launchpad-ui/icons';
-import cx from 'classnames';
+import cx from 'clsx';
 import { useState } from 'react';
 
 import './styles/Alert.css';

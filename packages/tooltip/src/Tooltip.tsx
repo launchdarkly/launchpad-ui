@@ -2,7 +2,7 @@ import type { Offset, PopoverPlacement } from '@launchpad-ui/popover';
 import type { CSSProperties, Ref } from 'react';
 
 import { Popover } from '@launchpad-ui/popover';
-import cx from 'classnames';
+import cx from 'clsx';
 import { forwardRef } from 'react';
 
 import './styles.css';
