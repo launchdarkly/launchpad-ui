@@ -1,7 +1,7 @@
 import type { KeyboardEvent, ReactElement } from 'react';
 
 import { FocusManager, useFocusManager } from '@react-aria/focus';
-import cx from 'classnames';
+import cx from 'clsx';
 import { isNil, noop } from 'lodash-es';
 import { Children, cloneElement, useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { useVirtual } from 'react-virtual';

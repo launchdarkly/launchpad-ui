@@ -1,5 +1,5 @@
 import { Close, IconSize } from '@launchpad-ui/icons';
-import classNames from 'classnames';
+import cx from 'clsx';
 import { Component } from 'react';
 
 import './styles/Modal.css';
@@ -21,11 +21,11 @@ class ModalHeader extends Component<ModalHeaderProps> {
 
   render() {
     const { className, closeable, onClose, children, titleID, titleClassName } = this.props;
-    const classes = classNames('Modal-header', className);
+    const classes = cx('Modal-header', className);
 
     return (
       <div className={classes}>
-        <h2 id={titleID || 'Modal-title'} className={classNames('Modal-title', titleClassName)}>
+        <h2 id={titleID || 'Modal-title'} className={cx('Modal-title', titleClassName)}>
           {children}
         </h2>
         {closeable && <Close className="Modal-close" onClick={onClose} size={IconSize.TINY} />}

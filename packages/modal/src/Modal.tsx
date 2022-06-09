@@ -4,7 +4,7 @@ import { Button, ButtonSize, ButtonType } from '@launchpad-ui/button';
 import { Close, IconSize } from '@launchpad-ui/icons';
 import { FocusScope } from '@react-aria/focus';
 import { animated } from '@react-spring/web';
-import classNames from 'classnames';
+import cx from 'clsx';
 import { createFocusTrap } from 'focus-trap';
 import { defer } from 'lodash-es';
 import noScroll from 'no-scroll';
@@ -127,7 +127,7 @@ class Modal extends Component<ModalProps> {
       children,
       modalLabelID,
     } = this.props;
-    const modalClasses = classNames('Modal', className);
+    const modalClasses = cx('Modal', className);
 
     return (
       <div ref={this.rootRef} className={modalClasses}>

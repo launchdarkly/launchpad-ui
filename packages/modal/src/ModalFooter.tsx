@@ -1,4 +1,4 @@
-import classNames from 'classnames';
+import cx from 'clsx';
 import { Component } from 'react';
 
 import './styles/Modal.css';
@@ -12,7 +12,7 @@ type ModalFooterProps = {
 class ModalFooter extends Component<ModalFooterProps> {
   render() {
     const { className, testId, children } = this.props;
-    const classes = classNames('Modal-footer', className);
+    const classes = cx('Modal-footer', className);
 
     return (
       <div className={classes} data-test-id={testId}>

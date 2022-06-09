@@ -1,4 +1,4 @@
-import classNames from 'classnames';
+import cx from 'clsx';
 
 import './styles.css';
 import { LozengeKind, LozengeSize } from './types';
@@ -26,7 +26,7 @@ const Lozenge = ({
   children,
   ariaDisabled,
 }: LozengeProps) => {
-  const classes = classNames(
+  const classes = cx(
     'Lozenge',
     `Lozenge--${kind}`,
     `Lozenge--${size}`,

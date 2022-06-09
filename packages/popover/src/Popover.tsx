@@ -6,7 +6,7 @@ import { arrow, computePosition, flip, offset as floatOffset, shift } from '@flo
 import { Overlay } from '@launchpad-ui/overlay';
 import { FocusScope } from '@react-aria/focus';
 import { animated, Spring } from '@react-spring/web';
-import cx from 'classnames';
+import cx from 'clsx';
 import { isFunction, isNil } from 'lodash-es';
 import {
   Children,

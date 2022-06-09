@@ -1,5 +1,5 @@
 import { Progress } from '@launchpad-ui/progress';
-import classNames from 'classnames';
+import cx from 'clsx';
 import { Component, Suspense } from 'react';
 
 import { ModalTransition } from './ModalTransition';
@@ -27,7 +27,7 @@ class ModalSheet extends Component<ModalSheetProps> {
       withCloseButton = true,
       ...props
     } = this.props;
-    const classes = classNames('ModalSheet', `ModalSheet--${size}`);
+    const classes = cx('ModalSheet', `ModalSheet--${size}`);
 
     return (
       <Portal {...props} className={classes}>

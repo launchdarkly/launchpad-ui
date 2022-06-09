@@ -1,6 +1,6 @@
 import type { LocationDescriptor } from 'history';
 
-import classNames from 'classnames';
+import cx from 'clsx';
 import { cloneElement, createRef, PureComponent } from 'react';
 
 // TODO: Implement tooltip
@@ -186,7 +186,7 @@ class Button extends PureComponent<ButtonProps> {
 
     const kindClass = `Button--${kind}`;
     const sizeClass = `Button--${size}`;
-    const classes = classNames('Button', className, kindClass, sizeClass, {
+    const classes = cx('Button', className, kindClass, sizeClass, {
       'Button--fit': fit,
       'Button--icon': type === 'icon',
       'Button--outlined': type === 'icon' && outlined,

@@ -1,6 +1,6 @@
 import type { IconSize } from './types';
 
-import classNames from 'classnames';
+import cx from 'clsx';
 import { Children, cloneElement, isValidElement, useEffect, useRef } from 'react';
 import { v4 } from 'uuid';
 
@@ -14,7 +14,7 @@ type IconProps = Omit<React.HTMLProps<HTMLSpanElement>, 'size'> & {
 
 const Icon = ({ name, subtle, className, size, children, ...props }: IconProps) => {
   const sizeClass = size ? `Icon--${size}` : false;
-  const classes = classNames('Icon', `Icon--${name}`, sizeClass, className, {
+  const classes = cx('Icon', `Icon--${name}`, sizeClass, className, {
     'Icon--subtle': subtle,
   });
 
