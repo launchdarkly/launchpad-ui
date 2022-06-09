@@ -53,4 +53,15 @@ describe('Button', () => {
     await userEvent.tab();
     expect(screen.getByRole('button')).toHaveFocus();
   });
+
+  it('renders a tooltip with a prop', async () => {
+    render(
+      <Button kind={ButtonKind.PRIMARY} tooltip="hi">
+        Primary Button
+      </Button>
+    );
+    userEvent.setup();
+    await userEvent.click(screen.getByRole('button'));
+    expect(screen.getByRole('tooltip')).toBeInTheDocument();
+  });
 });
