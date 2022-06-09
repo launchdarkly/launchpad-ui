@@ -1,0 +1,48 @@
+{
+  "name": "@launchpad-ui/dropdown",
+  "version": "0.0.1",
+  "publishConfig": {
+    "access": "public"
+  },
+  "description": "An element that displays a list of actions or options to a user.",
+  "files": [
+    "dist"
+  ],
+  "main": "dist/index.js",
+  "module": "dist/index.es.js",
+  "types": "dist/index.d.ts",
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.es.js",
+      "require": "./dist/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "source": "src/index.ts",
+  "scripts": {
+    "build": "tsc --project tsconfig.build.json && node build.js",
+    "clean": "rm -rf dist",
+    "e2e": "exit 0",
+    "lint": "eslint '**/*.{ts,tsx,js}'",
+    "test": "vitest run --coverage"
+  },
+  "dependencies": {
+    "@launchpad-ui/button": "workspace:~",
+    "@launchpad-ui/icons": "workspace:~",
+    "@launchpad-ui/popover": "workspace:~",
+    "@launchpad-ui/tokens": "workspace:~",
+    "classnames": "^2.3.1"
+  },
+  "peerDependencies": {
+    "react": "^16.8.0 || ^17.0.0 || ^18.0.0",
+    "react-dom": "^16.8.0 || ^17.0.0 || ^18.0.0"
+  },
+  "devDependencies": {
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0"
+  }
+}

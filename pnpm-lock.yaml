@@ -158,6 +158,7 @@ importers:
       '@launchpad-ui/banner': workspace:~
       '@launchpad-ui/button': workspace:~
       '@launchpad-ui/clipboard': workspace:~
+      '@launchpad-ui/dropdown': workspace:~
       '@launchpad-ui/icons': workspace:~
       '@launchpad-ui/lozenge': workspace:~
       '@launchpad-ui/menu': workspace:~
@@ -186,6 +187,7 @@ importers:
       '@launchpad-ui/banner': link:../../packages/banner
       '@launchpad-ui/button': link:../../packages/button
       '@launchpad-ui/clipboard': link:../../packages/clipboard
+      '@launchpad-ui/dropdown': link:../../packages/dropdown
       '@launchpad-ui/icons': link:../../packages/icons
       '@launchpad-ui/lozenge': link:../../packages/lozenge
       '@launchpad-ui/menu': link:../../packages/menu
@@ -275,6 +277,25 @@ importers:
       '@launchpad-ui/tokens': link:../tokens
       '@launchpad-ui/tooltip': link:../tooltip
       '@react-aria/live-announcer': 3.1.0
+    devDependencies:
+      react: 18.1.0
+      react-dom: 18.1.0_react@18.1.0
+
+  packages/dropdown:
+    specifiers:
+      '@launchpad-ui/button': workspace:~
+      '@launchpad-ui/icons': workspace:~
+      '@launchpad-ui/popover': workspace:~
+      '@launchpad-ui/tokens': workspace:~
+      classnames: ^2.3.1
+      react: ^18.1.0
+      react-dom: ^18.1.0
+    dependencies:
+      '@launchpad-ui/button': link:../button
+      '@launchpad-ui/icons': link:../icons
+      '@launchpad-ui/popover': link:../popover
+      '@launchpad-ui/tokens': link:../tokens
+      classnames: 2.3.1
     devDependencies:
       react: 18.1.0
       react-dom: 18.1.0_react@18.1.0
@@ -7744,6 +7765,10 @@ packages:
       isobject: 3.0.1
       static-extend: 0.1.2
     dev: true
+
+  /classnames/2.3.1:
+    resolution: {integrity: sha512-OlQdbZ7gLfGarSqxesMesDa5uz7KFbID8Kpq/SxIoNGDqY8lSYs0D+hhtBXhcdB3rcbXArFr7vlHheLk1voeNA==}
+    dev: false
 
   /clean-css/4.2.4:
     resolution: {integrity: sha512-EJUDT7nDVFDvaQgAo2G/PJvxmp1o/c6iXLbswsBbUFXi1Nr+AjA2cKmfbKDMjMvzEe75g3P6JkaDDAKk96A85A==}

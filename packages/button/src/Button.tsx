@@ -3,9 +3,6 @@ import type { LocationDescriptor } from 'history';
 import cx from 'clsx';
 import { cloneElement, createRef, PureComponent } from 'react';
 
-// TODO: Implement tooltip
-// import { Tooltip } from '@launchpad-ui/tooltip';
-
 import './styles/Button.css';
 import { ButtonKind, ButtonSize, ButtonType } from './types';
 
@@ -76,18 +73,6 @@ type ButtonProps = {
   disabled?: boolean;
 
   /**
-   * Content to display when hovering over the button
-   */
-  // TODO: Implement tooltip
-  // tooltip?: string | JSX.Element;
-
-  /**
-   * Content to display when hovering over the button
-   */
-  // TODO: Implement tooltip
-  // tooltipOptions?: object;
-
-  /**
    * Function to execute button is clicked
    */
   onClick?(event: React.MouseEvent): void;
@@ -156,7 +141,6 @@ class Button extends PureComponent<ButtonProps> {
     kind: ButtonKind.DEFAULT,
     size: ButtonSize.NORMAL,
     disabled: false,
-    // tooltipOptions: {},
     outlined: false,
     onClick: () => undefined,
     renderIconFirst: false,
@@ -178,8 +162,6 @@ class Button extends PureComponent<ButtonProps> {
       children,
       isLoading,
       loadingText,
-      // tooltip,
-      // tooltipOptions,
       renderIconFirst,
       onKeyDown,
     } = this.props;
@@ -222,10 +204,6 @@ class Button extends PureComponent<ButtonProps> {
       finalChildren
     );
 
-    // TODO: Implement tooltip
-    // if (tooltip) {
-    //   return <Tooltip {...tooltipOptions} content={tooltip} target={content} />;
-    // }
     return content;
   }
 
@@ -239,8 +217,6 @@ class Button extends PureComponent<ButtonProps> {
       fit,
       icon,
       outlined,
-      // tooltip,
-      // tooltipOptions,
       renderIconFirst,
       testId,
       ...props
@@ -267,8 +243,6 @@ class Button extends PureComponent<ButtonProps> {
       fit,
       icon,
       outlined,
-      // tooltip,
-      // tooltipOptions,
       renderIconFirst,
       testId,
       ...props
@@ -301,7 +275,7 @@ class Button extends PureComponent<ButtonProps> {
 
   /**
    * GOTCHA: focus only works with native dom elements: a and button. Since this
-   * component can render Tooltip, Link and in fact it can render any custom react components, this
+   * component can render Link and in fact it can render any custom react components, this
    * method is an anti-pattern.
    */
   focus = () => {
