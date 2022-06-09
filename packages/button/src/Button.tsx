@@ -1,10 +1,8 @@
 import type { LocationDescriptor } from 'history';
 
+import { Tooltip } from '@launchpad-ui/tooltip';
 import classNames from 'classnames';
 import { cloneElement, createRef, PureComponent } from 'react';
-
-// TODO: Implement tooltip
-// import { Tooltip } from '@launchpad-ui/tooltip';
 
 import './styles/Button.css';
 import { ButtonKind, ButtonSize, ButtonType } from './types';
@@ -78,14 +76,12 @@ type ButtonProps = {
   /**
    * Content to display when hovering over the button
    */
-  // TODO: Implement tooltip
-  // tooltip?: string | JSX.Element;
+  tooltip?: string | JSX.Element;
 
   /**
    * Content to display when hovering over the button
    */
-  // TODO: Implement tooltip
-  // tooltipOptions?: object;
+  tooltipOptions?: object;
 
   /**
    * Function to execute button is clicked
@@ -178,8 +174,8 @@ class Button extends PureComponent<ButtonProps> {
       children,
       isLoading,
       loadingText,
-      // tooltip,
-      // tooltipOptions,
+      tooltip,
+      tooltipOptions,
       renderIconFirst,
       onKeyDown,
     } = this.props;
@@ -222,10 +218,9 @@ class Button extends PureComponent<ButtonProps> {
       finalChildren
     );
 
-    // TODO: Implement tooltip
-    // if (tooltip) {
-    //   return <Tooltip {...tooltipOptions} content={tooltip} target={content} />;
-    // }
+    if (tooltip) {
+      return <Tooltip {...tooltipOptions} content={tooltip} target={content} />;
+    }
     return content;
   }
 

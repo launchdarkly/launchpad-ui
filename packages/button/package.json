@@ -33,6 +33,7 @@
   },
   "dependencies": {
     "@launchpad-ui/tokens": "workspace:~",
+    "@launchpad-ui/tooltip": "workspace:~",
     "@types/history": "^4.7.11",
     "classnames": "^2.3.1"
   },

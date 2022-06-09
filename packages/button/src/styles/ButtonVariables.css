@@ -1,7 +1,6 @@
 :root {
   /* Remaining Legacy Tokens */
   --Button-border-default: 1px solid transparent;
-  --Button-border-radius-default: var(--border-radius);
   --Button-box-shadow-default-active: none;
   --Button-color-boxShadow-1-default-active: var(--color-white);
   --Button-color-boxShadow-2-default-active: hsl(231.5 100% 62.5% / 0.1);
@@ -11,8 +10,6 @@
       var(--Button-color-boxShadow-1-default-withIcon-focus),
     0 0 0 4px var(--Button-color-boxShadow-2-default-withIcon-focus);
   --Button-color-text-destructive-focus: var(--color-white);
-  --Button-color-background-disabled-hover: var(--color-white);
-  --Button-color-border-disabled: var(--color-gray-200);
   --Button-color-background-disabled-withIcon: var(--color-white);
   --Button-color-border-disabled-withIcon: transparent;
 
@@ -71,7 +68,6 @@
   /* DEFAULT WITH ICON */
 
   --Button-border-default-withIcon: transparent;
-  --Button-color-border-default-withIcon: var(--color-blue-700);
   --Button-color-background-default-withIcon: var(--color-white);
   --Button-color-border-default-withIcon: var(--color-blue-600);
 
