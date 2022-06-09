@@ -1,5 +1,14 @@
 # @launchpad-ui/tooltip
 
+## 0.1.2
+
+### Patch Changes
+
+- [#109](https://github.com/launchdarkly/launchpad-ui/pull/109) [`5e26ff6`](https://github.com/launchdarkly/launchpad-ui/commit/5e26ff6ed36e712fa31dcd0c4362178e0075cb28) Thanks [@chasedarkly](https://github.com/chasedarkly)! - Migrate from classnames to clsx package
+
+- Updated dependencies [[`5e26ff6`](https://github.com/launchdarkly/launchpad-ui/commit/5e26ff6ed36e712fa31dcd0c4362178e0075cb28)]:
+  - @launchpad-ui/popover@0.1.2
+
 ## 0.1.1
 
 ### Patch Changes
