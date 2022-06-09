@@ -4,6 +4,7 @@ import { Menu, MenuDivider, MenuItem, MenuSearch } from '../src';
 
 export default {
   component: Menu,
+  subcomponents: { MenuDivider, MenuItem, MenuSearch },
   title: 'Components/Menu',
   description: 'Menus present a list of items a user can choose from.',
 };

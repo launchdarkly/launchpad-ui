@@ -2,12 +2,11 @@ import type { PopoverPlacement } from '@launchpad-ui/popover';
 
 import { Icon, IconSize } from '@launchpad-ui/icons';
 import { Tooltip } from '@launchpad-ui/tooltip';
-import { FocusRing, useFocusManager } from '@react-aria/focus';
+import { FocusRing } from '@react-aria/focus';
 import cx from 'classnames';
 import { Link } from 'react-router-dom';
 
 import './styles.css';
-import { chainEventHandlers } from './utils';
 
 // Merge two types and get rid of overlapping definitions
 type Merge<T, U> = Omit<T, keyof U> & U;
@@ -51,23 +50,6 @@ type MenuItemProps<
 const MenuItem = <P, T extends React.ElementType = typeof defaultElement>({
   ...props
 }: MenuItemProps<P, T>) => {
-  const focusManager = useFocusManager();
-
-  const handleOnKeyDown = (e: React.KeyboardEvent) => {
-    switch (e.key) {
-      case 'ArrowDown':
-        e?.preventDefault();
-        focusManager.focusNext({ wrap: true });
-        break;
-      case 'ArrowUp':
-        e?.preventDefault();
-        focusManager.focusPrevious({ wrap: true });
-        break;
-      default:
-        break;
-    }
-  };
-
   const {
     component,
     children,
@@ -94,7 +76,7 @@ const MenuItem = <P, T extends React.ElementType = typeof defaultElement>({
       <Component
         {...rest}
         ref={innerRef}
-        disabled={undefined}
+        disabled={disabled}
         aria-disabled={disabled ? disabled : undefined}
         className={cx(
           'Menu-item',
@@ -104,7 +86,7 @@ const MenuItem = <P, T extends React.ElementType = typeof defaultElement>({
           { 'u-fw-medium': groupHeader }
         )}
         role={role}
-        onKeyDown={chainEventHandlers(handleOnKeyDown, onKeyDown)}
+        onKeyDown={onKeyDown}
       >
         {Icon && (
           <span className="Menu-item-icon">

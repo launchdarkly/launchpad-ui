@@ -7,6 +7,7 @@
       "@launchpad-ui/banner": ["./packages/banner/src"],
       "@launchpad-ui/button": ["./packages/button/src"],
       "@launchpad-ui/clipboard": ["./packages/clipboard/src"],
+      "@launchpad-ui/dropdown": ["./packages/dropdown/src"],
       "@launchpad-ui/icons": ["./packages/icons/src"],
       "@launchpad-ui/lozenge": ["./packages/lozenge/src"],
       "@launchpad-ui/menu": ["./packages/menu/src"],
