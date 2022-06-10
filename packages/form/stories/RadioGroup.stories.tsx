@@ -2,10 +2,6 @@ import type { Story } from '@storybook/react';
 
 import { RadioGroup, RadioGroupProps, Radio, Label } from '../src';
 
-/** import Radio from forms path because it's gated, otherwise
- * Storybook doesn't render the Radio at all.
- */
-
 export default {
   component: RadioGroup,
   title: 'Components/Form/RadioGroup',
@@ -46,8 +42,8 @@ export default {
 
 const Template: Story<RadioGroupProps> = (args) => <RadioGroup {...args} />;
 
-export const Example = Template.bind({});
-Example.args = {
+export const Default = Template.bind({});
+Default.args = {
   name: 'kind',
   value: 'kindA',
   children: (

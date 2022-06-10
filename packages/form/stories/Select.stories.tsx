@@ -55,8 +55,8 @@ export default {
 
 const Template: Story<SelectProps> = (args) => <Select {...args} />;
 
-export const Example = Template.bind({});
-Example.args = {
+export const Default = Template.bind({});
+Default.args = {
   value: 'a',
   children: (
     <>

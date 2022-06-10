@@ -45,8 +45,8 @@ export default {
   },
 };
 
-export const Example: Story<LabelProps> = (args) => <Label {...args} />;
-Example.args = {
+export const Default: Story<LabelProps> = (args) => <Label {...args} />;
+Default.args = {
   htmlFor: 'name',
   children: (
     <>

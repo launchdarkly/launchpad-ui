@@ -19,6 +19,7 @@
     "@launchpad-ui/button": "workspace:~",
     "@launchpad-ui/clipboard": "workspace:~",
     "@launchpad-ui/dropdown": "workspace:~",
+    "@launchpad-ui/form": "workspace:~",
     "@launchpad-ui/icons": "workspace:~",
     "@launchpad-ui/lozenge": "workspace:~",
     "@launchpad-ui/menu": "workspace:~",

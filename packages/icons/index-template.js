@@ -7,7 +7,8 @@ const defaultIndexTemplate = (filePaths) => {
     const exportName = /^\d/.test(basename) ? `Svg${basename}` : basename;
     return `export { ${exportName} } from './${basename}'`;
   });
-  exportEntries.push(`export { Icon, IconProps } from './Icon';`);
+  exportEntries.push(`export type { IconProps } from './Icon';`);
+  exportEntries.push(`export { Icon } from './Icon';`);
   exportEntries.push(`export { IconSize } from './types';`);
   exportEntries.push(`export { KindIcon } from './KindIcon';`);
   exportEntries.unshift('/* c8 ignore start */');

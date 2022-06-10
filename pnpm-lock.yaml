@@ -159,6 +159,7 @@ importers:
       '@launchpad-ui/button': workspace:~
       '@launchpad-ui/clipboard': workspace:~
       '@launchpad-ui/dropdown': workspace:~
+      '@launchpad-ui/form': workspace:~
       '@launchpad-ui/icons': workspace:~
       '@launchpad-ui/lozenge': workspace:~
       '@launchpad-ui/menu': workspace:~
@@ -188,6 +189,7 @@ importers:
       '@launchpad-ui/button': link:../../packages/button
       '@launchpad-ui/clipboard': link:../../packages/clipboard
       '@launchpad-ui/dropdown': link:../../packages/dropdown
+      '@launchpad-ui/form': link:../../packages/form
       '@launchpad-ui/icons': link:../../packages/icons
       '@launchpad-ui/lozenge': link:../../packages/lozenge
       '@launchpad-ui/menu': link:../../packages/menu

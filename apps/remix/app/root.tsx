@@ -28,6 +28,7 @@ import notificationStyles from '@launchpad-ui/notification/styles/Notification.c
 import bannerStyles from '@launchpad-ui/banner/styles.css';
 import clipboardStyles from '@launchpad-ui/clipboard/styles.css';
 import menuStyles from '@launchpad-ui/menu/styles.css';
+import formStyles from '@launchpad-ui/form/styles/styles.css';
 
 export const links: LinksFunction = () => {
   return [
@@ -48,6 +49,7 @@ export const links: LinksFunction = () => {
     { rel: 'stylesheet', href: bannerStyles },
     { rel: 'stylesheet', href: clipboardStyles },
     { rel: 'stylesheet', href: menuStyles },
+    { rel: 'stylesheet', href: formStyles },
   ];
 };
 

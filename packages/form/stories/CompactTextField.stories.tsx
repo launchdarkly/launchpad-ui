@@ -6,9 +6,6 @@ export default {
   component: CompactTextField,
   title: 'Components/Form/CompactTextField',
   description: 'A compact text field allows the user to provide values.',
-  parameters: {
-    storyshots: { disable: true }, // disable snapshot tests due to error with `formState`
-  },
   argTypes: {
     testId: {
       control: 'text',
@@ -71,13 +68,25 @@ export default {
   },
 };
 
-export const Example: Story<CompactTextFieldProps> = (args) => <CompactTextField {...args} />;
+const Template: Story<CompactTextFieldProps> = (args) => <CompactTextField {...args} />;
 
-Example.args = {
+export const Default = Template.bind({});
+Default.args = {
   id: 'Email',
   label: 'Email',
   tiny: false,
   disabled: false,
   value: 'testing@launchdarkly.com',
+  onChange: () => undefined,
+};
+
+export const WithSuffix = Template.bind({});
+WithSuffix.args = {
+  id: 'Time',
+  label: 'Time',
+  suffix: 'seconds',
+  tiny: false,
+  disabled: false,
+  value: '120',
   onChange: () => undefined,
 };

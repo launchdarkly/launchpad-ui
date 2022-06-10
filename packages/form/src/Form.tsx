@@ -18,7 +18,6 @@ type FormProps = {
   onBlurCapture?(e: FocusEvent): void;
   onSubmit?(e: FormEvent<EventTarget>): void;
   ariaLabel?: string;
-  hasAccessibilityUpdates?: boolean;
   children: ReactNode;
 };
 
@@ -32,7 +31,6 @@ export class Form extends Component<FormProps> {
       children,
       ariaLabel,
       hasIncreasedErrorMargin,
-      hasAccessibilityUpdates,
       ...finalProps
     } = this.props;
     const classes = cx('Form', className, {

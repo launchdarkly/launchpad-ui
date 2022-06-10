@@ -23,6 +23,10 @@ export async function getComponents() {
       name: 'Dropdown',
     },
     {
+      to: 'components/form',
+      name: 'Form',
+    },
+    {
       to: 'components/icon',
       name: 'Icon',
     },
