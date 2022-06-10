@@ -110,7 +110,7 @@
     "vite": "^2.9.9",
     "vitest": "^0.14.1",
     "wait-on": "^6.0.1",
-    "webpack": "^5.72.0"
+    "webpack": "^5.73.0"
   },
   "packageManager": "pnpm@7.1.2",
   "pnpm": {

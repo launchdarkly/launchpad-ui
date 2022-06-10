@@ -76,7 +76,7 @@ importers:
       vite: ^2.9.9
       vitest: ^0.14.1
       wait-on: ^6.0.1
-      webpack: ^5.72.0
+      webpack: ^5.73.0
     devDependencies:
       '@babel/core': 7.18.2
       '@babel/preset-react': 7.17.12_@babel+core@7.18.2
