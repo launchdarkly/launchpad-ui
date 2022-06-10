@@ -32,7 +32,6 @@
     "test": "vitest run --coverage"
   },
   "dependencies": {
-    "@launchpad-ui/button": "workspace:~",
     "@launchpad-ui/icons": "workspace:~",
     "@launchpad-ui/tokens": "workspace:~",
     "@react-aria/visually-hidden": "^3.3.0",

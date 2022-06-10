@@ -29,7 +29,7 @@
 }
 
 .Form-label {
-  font-size: var(--osmo-font-size-small);
+  font-size: 1.3rem;
   font-family: var(--font-family-base);
   word-break: break-word;
 }
@@ -66,7 +66,7 @@
 
 .Form-fieldError {
   color: var(--color-system-red-600);
-  font-size: var(--osmo-font-size-small);
+  font-size: 1.3rem;
 }
 
 /* The margin for .Form-group and the min-height of .Form-fieldError

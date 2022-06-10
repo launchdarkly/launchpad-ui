@@ -1,6 +1,6 @@
 .FormField-hint {
   margin: 0;
-  font-size: var(--osmo-font-size-small);
+  font-size: 1.3rem;
   color: var(--color-gray-700);
   fill: var(--color-gray-700);
 }
@@ -12,7 +12,7 @@
 
 .FormField-errorMessage {
   color: var(--color-system-red-600);
-  font-size: var(--osmo-font-size-small);
+  font-size: 1.3rem;
 }
 
 .FormField.Form-group {

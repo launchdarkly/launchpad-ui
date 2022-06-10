@@ -4,7 +4,7 @@
   display: block;
   width: 100%;
   padding: 0.6rem 1rem;
-  font-size: var(--osmo-font-size-small);
+  font-size: 1.3rem;
   font-family: var(--font-family-base);
   line-height: var(--line-height-base);
   background-color: #fff;
