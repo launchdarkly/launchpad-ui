@@ -5,6 +5,7 @@ import { Component, FocusEvent } from 'react';
 import { Label } from './Label';
 import { TextField, TextFieldProps } from './TextField';
 import './styles/CompactTextField.css';
+import './styles/FormInput.css';
 
 type CompactTextFieldProps = TextFieldProps & {
   label: string;
