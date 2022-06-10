@@ -1,7 +1,7 @@
 import cx from 'clsx';
 import { Component, createRef, RefObject, TextareaHTMLAttributes } from 'react';
 
-import './styles/Form.css';
+import './styles/FormInput.css';
 import { createFieldErrorId } from './utils';
 
 type TextAreaProps = TextareaHTMLAttributes<HTMLTextAreaElement>;
