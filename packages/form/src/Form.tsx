@@ -1,5 +1,6 @@
+import type { FocusEvent, FormEvent, ReactNode } from 'react';
+
 import cx from 'clsx';
-import { Component, FocusEvent, FormEvent, ReactNode } from 'react';
 
 import './styles/Form.css';
 
@@ -21,27 +22,20 @@ type FormProps = {
   children: ReactNode;
 };
 
-export class Form extends Component<FormProps> {
-  render() {
-    const {
-      id,
-      name,
-      className,
-      inline,
-      children,
-      ariaLabel,
-      hasIncreasedErrorMargin,
-      ...finalProps
-    } = this.props;
-    const classes = cx('Form', className, {
-      'Form--inline': inline,
-      'Form--increasedErrorMargin': !!hasIncreasedErrorMargin,
-    });
+const Form = (props: FormProps) => {
+  const { id, name, className, inline, children, ariaLabel, hasIncreasedErrorMargin, ...rest } =
+    props;
+  const classes = cx('Form', className, {
+    'Form--inline': inline,
+    'Form--increasedErrorMargin': !!hasIncreasedErrorMargin,
+  });
 
-    return (
-      <form id={id} name={name} aria-label={ariaLabel} {...finalProps} className={classes}>
-        {children}
-      </form>
-    );
-  }
-}
+  return (
+    <form id={id} name={name} aria-label={ariaLabel} {...rest} className={classes}>
+      {children}
+    </form>
+  );
+};
+
+export { Form };
+export type { FormProps };
