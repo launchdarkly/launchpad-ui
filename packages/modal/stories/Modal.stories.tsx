@@ -1,4 +1,6 @@
 /* eslint-disable react-hooks/rules-of-hooks */
+import type { ComponentStoryObj } from '@storybook/react';
+
 import { Button } from '@launchpad-ui/button';
 import { useState } from '@storybook/client-api';
 
@@ -16,7 +18,9 @@ export default {
   },
 };
 
-export const Default = {
+type Story = ComponentStoryObj<typeof ModalTransition>;
+
+export const Default: Story = {
   render: () => {
     const [show, setShow] = useState(true);
     const button = <Button onClick={() => setShow(true)}>Open modal</Button>;
@@ -43,11 +47,9 @@ export const Default = {
     );
   },
 };
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-ignore
 Default.parameters = { docs: { disable: true } };
 
-export const Sheet = {
+export const Sheet: Story = {
   render: () => {
     const [show, setShow] = useState(true);
     const button = <Button onClick={() => setShow(true)}>Open modal</Button>;
@@ -66,6 +68,4 @@ export const Sheet = {
     );
   },
 };
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-ignore
 Sheet.parameters = { docs: { disable: true } };

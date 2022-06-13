@@ -444,11 +444,11 @@ importers:
       '@react-aria/focus': 3.6.0_react@18.1.0
       '@react-spring/web': 9.4.5_ef5jwxihqo6n7gxfmzogljlgcm
       clsx: 1.1.1
-      uuid: 8.3.2
     devDependencies:
       '@types/uuid': 8.3.4
       react: 18.1.0
       react-dom: 18.1.0_react@18.1.0
+      uuid: 8.3.2
 
   packages/overlay:
     specifiers:
@@ -18320,7 +18320,6 @@ packages:
   /uuid/8.3.2:
     resolution: {integrity: sha512-+NYs2QeMWy+GWFOEm9xnn6HCDp0l7QBD7ml8zLUmJ+93Q5NF0NocErnwkTkXVFNiX3/fpC6afS8Dhb/gz7R7eg==}
     hasBin: true
-    dev: false
 
   /uvu/0.5.3:
     resolution: {integrity: sha512-brFwqA3FXzilmtnIyJ+CxdkInkY/i4ErvP7uV0DnUVxQcQ55reuHphorpF+tZoVHK2MniZ/VJzI7zJQoc9T9Yw==}

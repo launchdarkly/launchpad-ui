@@ -1,3 +1,5 @@
+import type { ComponentStoryObj } from '@storybook/react';
+
 import { Notification } from '../src/Notification';
 import { NotificationLevel } from '../src/types';
 
@@ -37,6 +39,8 @@ export default {
   },
 };
 
+type Story = ComponentStoryObj<typeof Notification>;
+
 const makeMessage = (type: NotificationLevel) => (
   <span>
     A message using the {type} level, with a <a href="https://launchdarkly.com">contextual link</a>.
@@ -49,14 +53,14 @@ const makeNotificationArgs = (level: NotificationLevel, details?: string) => ({
   details: details ?? '',
 });
 
-export const Success = { args: makeNotificationArgs(NotificationLevel.SUCCESS) };
+export const Success: Story = { args: makeNotificationArgs(NotificationLevel.SUCCESS) };
 
-export const Error = { args: makeNotificationArgs(NotificationLevel.ERROR) };
+export const Error: Story = { args: makeNotificationArgs(NotificationLevel.ERROR) };
 
-export const Warning = { args: makeNotificationArgs(NotificationLevel.WARNING) };
+export const Warning: Story = { args: makeNotificationArgs(NotificationLevel.WARNING) };
 
-export const Info = { args: makeNotificationArgs(NotificationLevel.INFO) };
+export const Info: Story = { args: makeNotificationArgs(NotificationLevel.INFO) };
 
-export const ErrorDetails = {
+export const ErrorDetails: Story = {
   args: makeNotificationArgs(NotificationLevel.ERROR, 'This notification has details.'),
 };

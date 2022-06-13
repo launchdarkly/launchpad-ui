@@ -1,3 +1,5 @@
+import type { ComponentStoryObj } from '@storybook/react';
+
 import { userEvent } from '@storybook/testing-library';
 
 import { Menu, MenuDivider, MenuItem, MenuSearch } from '../src';
@@ -9,7 +11,9 @@ export default {
   description: 'Menus present a list of items a user can choose from.',
 };
 
-export const Example = {
+type Story = ComponentStoryObj<typeof Menu>;
+
+export const Example: Story = {
   args: {
     children: [<MenuItem key="1">item 1</MenuItem>, <MenuItem key="2">item 2</MenuItem>],
   },
@@ -18,7 +22,7 @@ export const Example = {
   },
 };
 
-export const ExampleWithDisabledItems = {
+export const ExampleWithDisabledItems: Story = {
   args: {
     children: [
       <MenuItem key="1" disabled>
@@ -29,7 +33,7 @@ export const ExampleWithDisabledItems = {
   },
 };
 
-export const ExampleWithSearch = {
+export const ExampleWithSearch: Story = {
   args: {
     children: [
       <MenuSearch key="search" />,

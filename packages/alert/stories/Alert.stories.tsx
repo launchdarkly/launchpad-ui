@@ -1,3 +1,5 @@
+import type { ComponentStoryObj } from '@storybook/react';
+
 import { Alert, AlertKind, AlertSize } from '../src';
 
 export default {
@@ -67,23 +69,25 @@ export default {
   },
 };
 
-export const Success = {
+type Story = ComponentStoryObj<typeof Alert>;
+
+export const Success: Story = {
   args: { kind: AlertKind.SUCCESS, children: 'Success alert', dismissible: false },
 };
 
-export const Warning = {
+export const Warning: Story = {
   args: { kind: AlertKind.WARNING, children: 'Warning alert', dismissible: false },
 };
 
-export const Info = {
+export const Info: Story = {
   args: { kind: AlertKind.INFO, children: 'Info alert', dismissible: false },
 };
 
-export const Error = {
+export const Error: Story = {
   args: { kind: AlertKind.ERROR, children: 'Error alert', dismissible: false },
 };
 
-export const SmallInlineSuccess = {
+export const SmallInlineSuccess: Story = {
   args: {
     isInline: true,
     kind: AlertKind.SUCCESS,
@@ -92,7 +96,7 @@ export const SmallInlineSuccess = {
   },
 };
 
-export const SmallInlineWarning = {
+export const SmallInlineWarning: Story = {
   args: {
     isInline: true,
     kind: AlertKind.WARNING,
@@ -101,7 +105,7 @@ export const SmallInlineWarning = {
   },
 };
 
-export const SmallInlineInfo = {
+export const SmallInlineInfo: Story = {
   args: {
     isInline: true,
     kind: AlertKind.INFO,
@@ -110,7 +114,7 @@ export const SmallInlineInfo = {
   },
 };
 
-export const SmallInlineError = {
+export const SmallInlineError: Story = {
   args: {
     isInline: true,
     kind: AlertKind.ERROR,

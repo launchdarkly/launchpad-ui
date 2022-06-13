@@ -1,3 +1,5 @@
+import type { ComponentStoryObj } from '@storybook/react';
+
 import { Button, ButtonKind } from '@launchpad-ui/button';
 import { Item } from '@react-stately/collections';
 
@@ -9,7 +11,9 @@ export default {
   description: 'TabList navigates between related sections of content on the same page.',
 };
 
-export const TabListExample = {
+type Story = ComponentStoryObj<typeof TabList>;
+
+export const TabListExample: Story = {
   args: {
     children: [
       <Item key="1" title="Active tab">
@@ -22,7 +26,7 @@ export const TabListExample = {
   },
 };
 
-export const TabListActiveTabExample = {
+export const TabListActiveTabExample: Story = {
   args: {
     activeTab: '2',
     children: [
@@ -36,7 +40,7 @@ export const TabListActiveTabExample = {
   },
 };
 
-export const TabListDisabledTabsExample = {
+export const TabListDisabledTabsExample: Story = {
   args: {
     disabledTabs: ['3', '4'],
     children: [
@@ -56,7 +60,7 @@ export const TabListDisabledTabsExample = {
   },
 };
 
-export const TabListFocusableContent = {
+export const TabListFocusableContent: Story = {
   args: {
     children: [
       <Item key="3" title="Active tab">

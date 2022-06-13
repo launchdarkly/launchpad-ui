@@ -1,4 +1,4 @@
-import type { Story } from '@storybook/react';
+import type { ComponentStoryObj, Story } from '@storybook/react';
 
 import { Button } from '@launchpad-ui/button';
 import { userEvent, within } from '@storybook/testing-library';
@@ -59,7 +59,9 @@ export default {
   ],
 };
 
-export const Default = {
+type StoryType = ComponentStoryObj<typeof Popover>;
+
+export const Default: StoryType = {
   args: {
     children: [
       <Button key="1">Target</Button>,
