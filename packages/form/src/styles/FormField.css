@@ -1,0 +1,24 @@
+.FormField-hint {
+  margin: 0;
+  font-size: 1.3rem;
+  color: var(--color-gray-700);
+  fill: var(--color-gray-700);
+}
+
+.Form .FormField .Form-label,
+.Form .FormField .is-invalid .Form-label {
+  color: var(--color-black-300);
+}
+
+.FormField-errorMessage {
+  color: var(--color-system-red-600);
+  font-size: 1.3rem;
+}
+
+.FormField.Form-group {
+  margin: 1rem 0;
+}
+
+.FormField.Form-group:first-child {
+  margin-top: 0;
+}

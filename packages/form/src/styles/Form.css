@@ -1,0 +1,118 @@
+/* stylelint-disable no-descending-specificity */
+.Form-group {
+  margin: 2rem 0;
+}
+
+/* The margin for .Form-group and the min-height of .Form-fieldError
+  should be equal to avoid content shift when errors are shown */
+.Form--increasedErrorMargin .Form-group {
+  margin: 2.8rem 0;
+}
+
+.Form .Form-group:first-child {
+  margin-top: 0;
+}
+
+.Form .Form-group:last-child {
+  margin-bottom: 0;
+}
+
+.Form--inline .Form-group {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0;
+}
+
+.Form--inline .Form-group + .Form-group,
+.Form--inline .Form-group + .Button {
+  margin-left: 1rem;
+}
+
+.Form-label {
+  font-size: 1.3rem;
+  font-family: var(--font-family-base);
+  word-break: break-word;
+}
+
+.Form-label--disabled {
+  color: var(--color-gray-800);
+}
+
+.Form-labelOptional {
+  margin-left: 0.4em;
+}
+
+.u-d-inline .Form-label + .Form-label {
+  margin-left: 1rem;
+}
+
+.Form-group .Form-label {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.2rem;
+}
+
+.Form-group .Form-label + .Form-label {
+  margin-top: 0.5rem;
+}
+
+.Form .Form-error {
+  background: var(--color-system-red-600);
+  color: #fff;
+  font-weight: var(--font-weight-regular);
+  padding: 0.7rem 1.4rem;
+  border-radius: var(--border-radius);
+}
+
+.Form-fieldError {
+  color: var(--color-system-red-600);
+  font-size: 1.3rem;
+}
+
+/* The margin for .Form-group and the min-height of .Form-fieldError
+  should be equal to avoid content shift when errors are shown */
+.Form--increasedErrorMargin .Form-fieldError {
+  min-height: 2.8rem;
+}
+
+.Form:not(.Form--inline) .Form-fieldError {
+  display: block;
+  padding-top: 0.5rem;
+  text-align: left;
+}
+
+.Form--increasedErrorMargin:not(.Form--inline) .Form-fieldError {
+  padding-top: 0.1rem;
+  padding-bottom: 0.5rem;
+}
+
+.Form-label .Form-fieldError {
+  float: right;
+}
+
+.Form .is-invalid .Form-label {
+  color: var(--color-system-red-600);
+}
+
+::placeholder {
+  color: var(--color-gray-600);
+}
+
+.Form .is-invalid .Select-control,
+.Form .is-invalid .CustomSelect > div,
+.Form .is-invalid .FormInput {
+  border-color: var(--color-system-red-600);
+}
+
+.Form--increasedErrorMargin .Form-group.is-invalid {
+  margin-bottom: 0;
+}
+
+.Form--increasedErrorMargin .Form-group.is-invalid + .Form-group {
+  margin-top: 0;
+}
+
+.Form--increasedErrorMargin .Form-group.is-invalid + .Form-hint {
+  margin-top: 0;
+}
+/* stylelint-enable no-descending-specificity */

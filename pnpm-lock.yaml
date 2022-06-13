@@ -159,6 +159,7 @@ importers:
       '@launchpad-ui/button': workspace:~
       '@launchpad-ui/clipboard': workspace:~
       '@launchpad-ui/dropdown': workspace:~
+      '@launchpad-ui/form': workspace:~
       '@launchpad-ui/icons': workspace:~
       '@launchpad-ui/lozenge': workspace:~
       '@launchpad-ui/menu': workspace:~
@@ -188,6 +189,7 @@ importers:
       '@launchpad-ui/button': link:../../packages/button
       '@launchpad-ui/clipboard': link:../../packages/clipboard
       '@launchpad-ui/dropdown': link:../../packages/dropdown
+      '@launchpad-ui/form': link:../../packages/form
       '@launchpad-ui/icons': link:../../packages/icons
       '@launchpad-ui/lozenge': link:../../packages/lozenge
       '@launchpad-ui/menu': link:../../packages/menu
@@ -297,6 +299,27 @@ importers:
       '@launchpad-ui/tokens': link:../tokens
       clsx: 1.1.1
     devDependencies:
+      react: 18.1.0
+      react-dom: 18.1.0_react@18.1.0
+
+  packages/form:
+    specifiers:
+      '@launchpad-ui/icons': workspace:~
+      '@launchpad-ui/tokens': workspace:~
+      '@react-aria/visually-hidden': ^3.3.0
+      '@types/lodash-es': ^4.17.6
+      clsx: ^1.1.1
+      lodash-es: ^4.17.21
+      react: ^18.1.0
+      react-dom: ^18.1.0
+    dependencies:
+      '@launchpad-ui/icons': link:../icons
+      '@launchpad-ui/tokens': link:../tokens
+      '@react-aria/visually-hidden': 3.3.0_react@18.1.0
+      clsx: 1.1.1
+      lodash-es: 4.17.21
+    devDependencies:
+      '@types/lodash-es': 4.17.6
       react: 18.1.0
       react-dom: 18.1.0_react@18.1.0
 

@@ -1,0 +1,7 @@
+.Form-hint {
+  display: block;
+  margin-top: 0.3rem;
+  font-size: 1.3rem;
+  font-weight: var(--font-weight-regular);
+  color: var(--color-gray-700);
+}

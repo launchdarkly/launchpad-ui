@@ -1,0 +1,25 @@
+.CompactTextField {
+  position: relative;
+  width: 100%;
+}
+
+.CompactTextField .Form-label {
+  position: absolute;
+  top: -2px;
+  left: 10px;
+  padding: 0 3px;
+  color: var(--color-gray-600);
+  opacity: 0;
+  pointer-events: none;
+  background-color: #fff;
+  transform-origin: 0 0; /* preserve left alignment after scaling */
+  transition: all 100ms ease-in-out;
+  z-index: 1; /* Fixes layout issue in Firefox */
+}
+
+.CompactTextField.is-active .Form-label {
+  border-radius: var(--border-radius);
+  opacity: 1;
+  pointer-events: auto;
+  transform: translate(0, -8px) scale(0.9); /* 2d transform to avoid webkit blurry text */
+}
