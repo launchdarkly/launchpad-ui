@@ -1,3 +1,5 @@
+import type { ComponentStoryObj } from '@storybook/react';
+
 import { Lozenge, LozengeKind, LozengeSize } from '../src';
 
 export default {
@@ -53,32 +55,36 @@ export default {
   },
 };
 
-export const Default = { args: { children: 'Example Lozenge', kind: LozengeKind.DEFAULT } };
+type Story = ComponentStoryObj<typeof Lozenge>;
 
-export const Success = { args: { children: 'Success Lozenge', kind: LozengeKind.SUCCESS } };
+export const Default: Story = { args: { children: 'Example Lozenge', kind: LozengeKind.DEFAULT } };
 
-export const Warning = { args: { children: 'Warning Lozenge', kind: LozengeKind.WARNING } };
+export const Success: Story = { args: { children: 'Success Lozenge', kind: LozengeKind.SUCCESS } };
 
-export const Inactive = { args: { children: 'Inactive Lozenge', kind: LozengeKind.INACTIVE } };
+export const Warning: Story = { args: { children: 'Warning Lozenge', kind: LozengeKind.WARNING } };
 
-export const Info = { args: { children: 'Info Lozenge', kind: LozengeKind.INFO } };
+export const Inactive: Story = {
+  args: { children: 'Inactive Lozenge', kind: LozengeKind.INACTIVE },
+};
 
-export const Label = { args: { children: 'Label Lozenge', kind: LozengeKind.LABEL } };
+export const Info: Story = { args: { children: 'Info Lozenge', kind: LozengeKind.INFO } };
 
-export const Large = { args: { children: 'Large Lozenge', kind: LozengeSize.LARGE } };
+export const Label: Story = { args: { children: 'Label Lozenge', kind: LozengeKind.LABEL } };
 
-export const New = { args: { children: 'New Lozenge', kind: LozengeKind.NEW } };
+export const Large: Story = { args: { children: 'Large Lozenge', size: LozengeSize.LARGE } };
 
-export const Flag = { args: { children: 'Flag', kind: LozengeKind.FLAG } };
+export const New: Story = { args: { children: 'New Lozenge', kind: LozengeKind.NEW } };
 
-export const FlagOn = {
+export const Flag: Story = { args: { children: 'Flag', kind: LozengeKind.FLAG } };
+
+export const FlagOn: Story = {
   args: { children: 'ON', kind: LozengeKind.FLAG, className: 'Lozenge--flagOn' },
 };
 
-export const FlagOff = {
+export const FlagOff: Story = {
   args: { children: 'OFF', kind: LozengeKind.FLAG, className: 'Lozenge--flagOff' },
 };
 
-export const Federal = { args: { children: 'Federal Lozenge', kind: LozengeKind.FEDERAL } };
+export const Federal: Story = { args: { children: 'Federal Lozenge', kind: LozengeKind.FEDERAL } };
 
-export const Beta = { args: { children: 'Beta Lozenge', kind: LozengeKind.BETA } };
+export const Beta: Story = { args: { children: 'Beta Lozenge', kind: LozengeKind.BETA } };

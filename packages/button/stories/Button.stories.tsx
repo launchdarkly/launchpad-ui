@@ -1,4 +1,4 @@
-import type { DecoratorFn, Meta } from '@storybook/react';
+import type { ComponentStoryObj, DecoratorFn, Meta } from '@storybook/react';
 
 import { Fragment } from 'react';
 
@@ -156,18 +156,6 @@ export default {
         subcategory: 'Link Button',
       },
     },
-    /* tooltip: {
-      table: {
-        category: 'Content',
-        subcategory: 'Button with Tooltip',
-      },
-    },
-    tooltipOptions: {
-      table: {
-        category: 'Content',
-        subcategory: 'Button with Tooltip',
-      },
-    }, */
     id: {
       table: {
         category: 'DOM attributes',
@@ -210,23 +198,27 @@ export default {
   },
 } as Meta;
 
-export const Basic = { args: { children: 'Basic' } };
+type Story = ComponentStoryObj<typeof Button>;
 
-export const Primary = { args: { children: 'Primary', kind: ButtonKind.PRIMARY } };
+export const Basic: Story = { args: { children: 'Basic' } };
 
-export const Destructive = { args: { children: 'Destructive', kind: ButtonKind.DESTRUCTIVE } };
+export const Primary: Story = { args: { children: 'Primary', kind: ButtonKind.PRIMARY } };
 
-export const Link = { args: { children: 'Link', kind: ButtonKind.LINK } };
+export const Destructive: Story = {
+  args: { children: 'Destructive', kind: ButtonKind.DESTRUCTIVE },
+};
 
-export const WithIcon = {
+export const Link: Story = { args: { children: 'Link', kind: ButtonKind.LINK } };
+
+export const WithIcon: Story = {
   args: { children: 'With icon', icon: <Add size={IconSize.MEDIUM} /> },
 };
 
-export const WithIconPrimary = {
+export const WithIconPrimary: Story = {
   args: { children: 'With icon', icon: <Add size={IconSize.MEDIUM} />, kind: ButtonKind.PRIMARY },
 };
 
-export const WithIconDestructive = {
+export const WithIconDestructive: Story = {
   args: {
     children: 'With icon',
     icon: <Add size={IconSize.MEDIUM} />,
@@ -234,11 +226,11 @@ export const WithIconDestructive = {
   },
 };
 
-export const IconOnly = {
+export const IconOnly: Story = {
   args: { children: '', icon: <Add size={IconSize.MEDIUM} />, type: ButtonType.ICON },
 };
 
-export const IconOnlyPrimary = {
+export const IconOnlyPrimary: Story = {
   args: {
     children: '',
     icon: <Add size={IconSize.MEDIUM} />,
@@ -247,7 +239,7 @@ export const IconOnlyPrimary = {
   },
 };
 
-export const IconOnlyDestructive = {
+export const IconOnlyDestructive: Story = {
   args: {
     children: '',
     icon: <Add size={IconSize.MEDIUM} />,
@@ -256,8 +248,8 @@ export const IconOnlyDestructive = {
   },
 };
 
-export const BasicTiny = { args: { children: 'Example button', size: ButtonSize.TINY } };
+export const BasicTiny: Story = { args: { children: 'Example button', size: ButtonSize.TINY } };
 
-export const BasicSmall = { args: { children: 'Example button', size: ButtonSize.SMALL } };
+export const BasicSmall: Story = { args: { children: 'Example button', size: ButtonSize.SMALL } };
 
-export const BasicBig = { args: { children: 'Example button', size: ButtonSize.BIG } };
+export const BasicBig: Story = { args: { children: 'Example button', size: ButtonSize.BIG } };

@@ -1,3 +1,5 @@
+import type { ComponentStoryObj } from '@storybook/react';
+
 import { AlertKind } from '@launchpad-ui/alert';
 
 import { Banner } from '../src';
@@ -43,22 +45,24 @@ export default {
   },
 };
 
-export const Success = {
+type Story = ComponentStoryObj<typeof Banner>;
+
+export const Success: Story = {
   args: { children: 'Success banner with icon', dismissible: true, kind: AlertKind.SUCCESS },
 };
 
-export const Error = {
+export const Error: Story = {
   args: { children: 'Error banner with icon', dismissible: true, kind: AlertKind.ERROR },
 };
 
-export const Warning = {
+export const Warning: Story = {
   args: { children: 'Warning banner with icon', dismissible: true, kind: AlertKind.WARNING },
 };
 
-export const Info = {
+export const Info: Story = {
   args: { children: 'Info banner with icon', dismissible: true, kind: AlertKind.INFO },
 };
 
-export const Striped = {
+export const Striped: Story = {
   args: { children: 'Striped banner with icon', dismissible: true, kind: AlertKind.STRIPED },
 };

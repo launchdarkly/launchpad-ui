@@ -1,4 +1,4 @@
-import type { DecoratorFn, Story } from '@storybook/react';
+import type { ComponentStoryObj, DecoratorFn, Story } from '@storybook/react';
 
 import { useEffect } from '@storybook/addons';
 
@@ -63,13 +63,15 @@ export default {
   ],
 };
 
-export const On = { args: { checked: true } };
+type StoryType = ComponentStoryObj<typeof Toggle>;
 
-export const Off = { args: { checked: false } };
+export const On: StoryType = { args: { checked: true } };
 
-export const WithoutOnText = { args: { checked: true, toggleOnText: '' } };
+export const Off: StoryType = { args: { checked: false } };
 
-export const WithoutOffText = { args: { checked: false, toggleOffText: '' } };
+export const WithoutOnText: StoryType = { args: { checked: true, toggleOnText: '' } };
+
+export const WithoutOffText: StoryType = { args: { checked: false, toggleOffText: '' } };
 
 export const AriaLabelledByExample = () => (
   <div className="Toggle-iggy-grid">

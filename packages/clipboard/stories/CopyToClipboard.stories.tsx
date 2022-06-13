@@ -1,4 +1,4 @@
-import type { Story } from '@storybook/react';
+import type { ComponentStoryObj, Story } from '@storybook/react';
 
 import { userEvent, within } from '@storybook/testing-library';
 
@@ -40,7 +40,9 @@ export default {
   ],
 };
 
-export const Default = {
+type StoryType = ComponentStoryObj<typeof CopyToClipboard>;
+
+export const Default: StoryType = {
   args: { text: 'Code content', children: <code>Code content</code> },
   play: async ({ canvasElement }: { canvasElement: HTMLElement }) => {
     const canvas = within(canvasElement);

@@ -1,3 +1,5 @@
+import type { ComponentStoryObj } from '@storybook/react';
+
 import { AlertKind, CollapsibleAlert } from '../src';
 
 export default {
@@ -23,7 +25,9 @@ export default {
   },
 };
 
-export const Collapsible = {
+type Story = ComponentStoryObj<typeof CollapsibleAlert>;
+
+export const Collapsible: Story = {
   args: {
     kind: AlertKind.INFO,
     message: (
