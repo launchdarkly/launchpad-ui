@@ -18,7 +18,7 @@ module.exports = {
       jsx: true,
     },
   },
-  plugins: ['react', '@typescript-eslint', 'testing-library'],
+  plugins: ['react', '@typescript-eslint', 'testing-library', 'functional'],
   settings: {
     react: {
       version: 'detect',
@@ -59,6 +59,7 @@ module.exports = {
     ],
     'import/no-unresolved': ['error', { ignore: ['^@launchpad-ui/'] }],
     'react/function-component-definition': [2, { namedComponents: 'arrow-function' }],
+    'functional/no-class': 'error',
   },
   overrides: [
     {

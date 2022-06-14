@@ -1,3 +1,4 @@
+/* eslint-disable functional/no-class */
 import type { PopoverPlacement } from '@launchpad-ui/popover';
 
 import { Button } from '@launchpad-ui/button';

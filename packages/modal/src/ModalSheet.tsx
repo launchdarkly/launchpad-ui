@@ -1,6 +1,6 @@
 import { Progress } from '@launchpad-ui/progress';
 import cx from 'clsx';
-import { Component, Suspense } from 'react';
+import { Suspense } from 'react';
 
 import { ModalTransition } from './ModalTransition';
 import { Portal } from './Portal';
@@ -17,27 +17,22 @@ type ModalSheetProps = {
   children: React.ReactNode;
 };
 
-class ModalSheet extends Component<ModalSheetProps> {
-  render() {
-    const {
-      size = 'small',
-      children,
-      shouldScroll,
-      resetScrollState,
-      withCloseButton = true,
-      ...props
-    } = this.props;
-    const classes = cx('ModalSheet', `ModalSheet--${size}`);
+const ModalSheet = ({
+  size = 'small',
+  children,
+  withCloseButton = true,
+  ...props
+}: ModalSheetProps) => {
+  const classes = cx('ModalSheet', `ModalSheet--${size}`);
 
-    return (
-      <Portal {...props} className={classes}>
-        <ModalTransition {...this.props} transition="slideRight" withCloseButton={withCloseButton}>
-          <Suspense fallback={<Progress />}>{children}</Suspense>
-        </ModalTransition>
-      </Portal>
-    );
-  }
-}
+  return (
+    <Portal className={classes}>
+      <ModalTransition {...props} transition="slideRight" withCloseButton={withCloseButton}>
+        <Suspense fallback={<Progress />}>{children}</Suspense>
+      </ModalTransition>
+    </Portal>
+  );
+};
 
 export { ModalSheet };
 export type { ModalSheetProps };

@@ -1,3 +1,4 @@
+/* eslint-disable functional/no-class */
 import { Component, createRef, InputHTMLAttributes, RefObject } from 'react';
 
 import { Label } from './Label';

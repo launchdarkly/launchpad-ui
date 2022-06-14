@@ -1,3 +1,4 @@
+/* eslint-disable functional/no-class */
 import cx from 'clsx';
 import { Component, createRef, RefObject, TextareaHTMLAttributes } from 'react';
 

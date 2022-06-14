@@ -1,3 +1,4 @@
+/* eslint-disable functional/no-class */
 import type { LocationDescriptor } from 'history';
 
 import cx from 'clsx';

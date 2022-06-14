@@ -1,3 +1,4 @@
+/* eslint-disable functional/no-class */
 import type { FocusTrap, Options as FocusTrapOptions } from 'focus-trap';
 
 import { Button, ButtonSize, ButtonType } from '@launchpad-ui/button';

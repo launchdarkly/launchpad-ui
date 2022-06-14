@@ -1,3 +1,4 @@
+/* eslint-disable functional/no-class */
 import { Component } from 'react';
 
 import { AnimationDelay } from './types';
