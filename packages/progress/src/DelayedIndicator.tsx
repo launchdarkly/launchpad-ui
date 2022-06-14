@@ -1,4 +1,4 @@
-/* eslint-disable react-prefer-function-component/react-prefer-function-component */
+/* eslint-disable functional/no-class */
 import { Component } from 'react';
 
 import { AnimationDelay } from './types';

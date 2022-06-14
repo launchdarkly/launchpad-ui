@@ -1,4 +1,4 @@
-/* eslint-disable react-prefer-function-component/react-prefer-function-component */
+/* eslint-disable functional/no-class */
 import cx from 'clsx';
 import { Component, createRef, InputHTMLAttributes, RefObject } from 'react';
 

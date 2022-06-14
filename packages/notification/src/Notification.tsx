@@ -1,4 +1,4 @@
-/* eslint-disable react-prefer-function-component/react-prefer-function-component */
+/* eslint-disable functional/no-class */
 import type { NotificationLevel } from './types';
 import type { ReactNode } from 'react';
 

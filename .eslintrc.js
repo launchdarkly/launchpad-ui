@@ -8,7 +8,6 @@ module.exports = {
     'plugin:@typescript-eslint/recommended',
     'plugin:import/recommended',
     'plugin:import/typescript',
-    'plugin:react-prefer-function-component/recommended',
     'plugin:prettier/recommended',
   ],
   parser: '@typescript-eslint/parser',
@@ -19,7 +18,7 @@ module.exports = {
       jsx: true,
     },
   },
-  plugins: ['react', '@typescript-eslint', 'testing-library', 'react-prefer-function-component'],
+  plugins: ['react', '@typescript-eslint', 'testing-library', 'functional'],
   settings: {
     react: {
       version: 'detect',
@@ -60,6 +59,7 @@ module.exports = {
     ],
     'import/no-unresolved': ['error', { ignore: ['^@launchpad-ui/'] }],
     'react/function-component-definition': [2, { namedComponents: 'arrow-function' }],
+    'functional/no-class': 'error',
   },
   overrides: [
     {

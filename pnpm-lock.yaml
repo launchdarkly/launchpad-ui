@@ -45,12 +45,12 @@ importers:
       esbuild: ^0.14.36
       eslint: ^8.17.0
       eslint-config-prettier: ^8.5.0
+      eslint-plugin-functional: ^4.2.1
       eslint-plugin-import: ^2.26.0
       eslint-plugin-jsx-a11y: ^6.5.1
       eslint-plugin-prettier: ^4.0.0
       eslint-plugin-react: ^7.30.0
       eslint-plugin-react-hooks: ^4.5.0
-      eslint-plugin-react-prefer-function-component: ^2.0.0
       eslint-plugin-testing-library: ^5.5.0
       fast-glob: ^3.2.11
       fsevents: ^2.3.2
@@ -120,12 +120,12 @@ importers:
       esbuild: 0.14.43
       eslint: 8.17.0
       eslint-config-prettier: 8.5.0_eslint@8.17.0
+      eslint-plugin-functional: 4.2.1_ud6rd4xtew5bv4yhvkvu24pzm4
       eslint-plugin-import: 2.26.0_pv5w3e62ssxduf5aiwxbc3knra
       eslint-plugin-jsx-a11y: 6.5.1_eslint@8.17.0
       eslint-plugin-prettier: 4.0.0_nguwan5pqsajixjz57ffz7bkde
       eslint-plugin-react: 7.30.0_eslint@8.17.0
       eslint-plugin-react-hooks: 4.5.0_eslint@8.17.0
-      eslint-plugin-react-prefer-function-component: 2.0.0
       eslint-plugin-testing-library: 5.5.1_ud6rd4xtew5bv4yhvkvu24pzm4
       fast-glob: 3.2.11
       fsevents: 2.3.2
@@ -8686,6 +8686,11 @@ packages:
     resolution: {integrity: sha512-oIPzksmTg4/MriiaYGO+okXDT7ztn/w3Eptv/+gSIdMdKsJo0u4CfYNFJPy+4SKMuCqGw2wxnA+URMg3t8a/bQ==}
     dev: true
 
+  /deepmerge-ts/4.1.0:
+    resolution: {integrity: sha512-+uGH1tqZTZlOB2yGhLyhbz25VMgjzfwfVko/TyiW5qdaRd7x/gWerZXy9UV0YM3hdLXvxenlyoSlaX3lG3vd0g==}
+    engines: {node: '>=12.4.0'}
+    dev: true
+
   /deepmerge/4.2.2:
     resolution: {integrity: sha512-FJ3UgI4gIl+PHZm53knsuSFpE+nESMr7M4v9QcgB7S63Kj/6WqMiFQJpBBYz1Pt+66bZpP3Q7Lye0Oo9MPKEdg==}
     engines: {node: '>=0.10.0'}
@@ -9697,6 +9702,28 @@ packages:
       regexpp: 3.2.0
     dev: true
 
+  /eslint-plugin-functional/4.2.1_ud6rd4xtew5bv4yhvkvu24pzm4:
+    resolution: {integrity: sha512-j16ozgXrr0UdPBirdbgDZgRBPr9Prj3j1xoisE435wzRDMWQlSHHJ41LCzNrlfGDb7OFAyXVcVatVwALz2jckw==}
+    engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
+    peerDependencies:
+      eslint: ^8.0.0
+      tsutils: ^3.0.0
+      typescript: ^3.4.1 || ^4.0.0
+    peerDependenciesMeta:
+      tsutils:
+        optional: true
+      typescript:
+        optional: true
+    dependencies:
+      '@typescript-eslint/utils': 5.27.1_ud6rd4xtew5bv4yhvkvu24pzm4
+      deepmerge-ts: 4.1.0
+      escape-string-regexp: 4.0.0
+      eslint: 8.17.0
+      typescript: 4.7.3
+    transitivePeerDependencies:
+      - supports-color
+    dev: true
+
   /eslint-plugin-import/2.26.0_pv5w3e62ssxduf5aiwxbc3knra:
     resolution: {integrity: sha512-hYfi3FXaM8WPLf4S1cikh/r4IxnO6zrhZbEGz2b660EJRbuxgpDS5gkCuYgGWg2xxh2rBuIr4Pvhve/7c31koA==}
     engines: {node: '>=4'}
@@ -9852,10 +9879,6 @@ packages:
       eslint: ^3.0.0 || ^4.0.0 || ^5.0.0 || ^6.0.0 || ^7.0.0 || ^8.0.0-0
     dependencies:
       eslint: 8.17.0
-    dev: true
-
-  /eslint-plugin-react-prefer-function-component/2.0.0:
-    resolution: {integrity: sha512-f/S1k3FXEGk5s+q2nOL4VxAXWGbWElVidmXcDlulo7kt5py5OS2dB0NzuAH6bASihJWEM9GqFXfBmyiYRvR55A==}
     dev: true
 
   /eslint-plugin-react/7.30.0_eslint@8.17.0:

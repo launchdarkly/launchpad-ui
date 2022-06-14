@@ -1,3 +1,4 @@
+/* eslint-disable functional/no-class */
 import type { Component as ReactComponent } from 'react';
 
 /**
