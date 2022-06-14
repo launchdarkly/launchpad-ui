@@ -30,15 +30,15 @@ const Progress = ({ value, size = ProgressSize.Small, className, delayMs = 0 }: 
     },
   };
 
-  const isIndeterminate = () => value === undefined || value === null;
+  const isIndeterminate = value === undefined || value === null;
   const diameter = (dimensions[size] && dimensions[size].diameter) || dimensions.small.diameter;
-  const strokeWidth = diameter * (isIndeterminate() ? 0.1 : 0.5);
+  const strokeWidth = diameter * (isIndeterminate ? 0.1 : 0.5);
   const radius = diameter * 0.5 - strokeWidth * 0.5;
   const circumference = 2 * Math.PI * radius;
 
   const indicator = (
     <svg
-      className={cx('Progress', { 'Progress--indeterminate': isIndeterminate() }, className)}
+      className={cx('Progress', { 'Progress--indeterminate': isIndeterminate }, className)}
       width={diameter}
       height={diameter}
       viewBox={`0 0 ${diameter} ${diameter}`}
