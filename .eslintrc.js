@@ -8,6 +8,7 @@ module.exports = {
     'plugin:@typescript-eslint/recommended',
     'plugin:import/recommended',
     'plugin:import/typescript',
+    'plugin:react-prefer-function-component/recommended',
     'plugin:prettier/recommended',
   ],
   parser: '@typescript-eslint/parser',
@@ -18,7 +19,7 @@ module.exports = {
       jsx: true,
     },
   },
-  plugins: ['react', '@typescript-eslint', 'testing-library'],
+  plugins: ['react', '@typescript-eslint', 'testing-library', 'react-prefer-function-component'],
   settings: {
     react: {
       version: 'detect',

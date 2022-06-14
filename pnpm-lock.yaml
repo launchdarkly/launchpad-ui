@@ -50,6 +50,7 @@ importers:
       eslint-plugin-prettier: ^4.0.0
       eslint-plugin-react: ^7.30.0
       eslint-plugin-react-hooks: ^4.5.0
+      eslint-plugin-react-prefer-function-component: ^2.0.0
       eslint-plugin-testing-library: ^5.5.0
       fast-glob: ^3.2.11
       fsevents: ^2.3.2
@@ -124,6 +125,7 @@ importers:
       eslint-plugin-prettier: 4.0.0_nguwan5pqsajixjz57ffz7bkde
       eslint-plugin-react: 7.30.0_eslint@8.17.0
       eslint-plugin-react-hooks: 4.5.0_eslint@8.17.0
+      eslint-plugin-react-prefer-function-component: 2.0.0
       eslint-plugin-testing-library: 5.5.1_ud6rd4xtew5bv4yhvkvu24pzm4
       fast-glob: 3.2.11
       fsevents: 2.3.2
@@ -9850,6 +9852,10 @@ packages:
       eslint: ^3.0.0 || ^4.0.0 || ^5.0.0 || ^6.0.0 || ^7.0.0 || ^8.0.0-0
     dependencies:
       eslint: 8.17.0
+    dev: true
+
+  /eslint-plugin-react-prefer-function-component/2.0.0:
+    resolution: {integrity: sha512-f/S1k3FXEGk5s+q2nOL4VxAXWGbWElVidmXcDlulo7kt5py5OS2dB0NzuAH6bASihJWEM9GqFXfBmyiYRvR55A==}
     dev: true
 
   /eslint-plugin-react/7.30.0_eslint@8.17.0:

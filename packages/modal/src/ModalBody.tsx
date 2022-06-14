@@ -1,5 +1,4 @@
 import cx from 'clsx';
-import { Component } from 'react';
 
 import './styles/Modal.css';
 
@@ -9,18 +8,15 @@ type ModalBodyProps = {
   onKeyDown?: (e: React.KeyboardEvent) => void;
 };
 
-class ModalBody extends Component<ModalBodyProps> {
-  render() {
-    const { className, children, ...other } = this.props;
-    const classes = cx('Modal-body', className);
+const ModalBody = ({ className, children, ...other }: ModalBodyProps) => {
+  const classes = cx('Modal-body', className);
 
-    return (
-      <div className={classes} {...other}>
-        {children}
-      </div>
-    );
-  }
-}
+  return (
+    <div className={classes} {...other}>
+      {children}
+    </div>
+  );
+};
 
 export { ModalBody };
 export type { ModalBodyProps };
