@@ -1,5 +1,15 @@
 # @launchpad-ui/modal
 
+## 0.1.4
+
+### Patch Changes
+
+- [#122](https://github.com/launchdarkly/launchpad-ui/pull/122) [`c325186`](https://github.com/launchdarkly/launchpad-ui/commit/c325186e06042d5b87ec93ed2f7fb150e96c9024) Thanks [@Niznikr](https://github.com/Niznikr)! - Update stateless components to functional components
+
+- Updated dependencies [[`c325186`](https://github.com/launchdarkly/launchpad-ui/commit/c325186e06042d5b87ec93ed2f7fb150e96c9024)]:
+  - @launchpad-ui/icons@0.1.6
+  - @launchpad-ui/progress@0.1.5
+
 ## 0.1.3
 
 ### Patch Changes
