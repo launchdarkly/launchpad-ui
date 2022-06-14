@@ -1,3 +1,4 @@
+/* eslint-disable react-prefer-function-component/react-prefer-function-component */
 import type { LocationDescriptor } from 'history';
 
 import cx from 'clsx';

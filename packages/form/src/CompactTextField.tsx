@@ -1,3 +1,4 @@
+/* eslint-disable react-prefer-function-component/react-prefer-function-component */
 import cx from 'clsx';
 import { isBoolean } from 'lodash-es';
 import { Component, FocusEvent } from 'react';

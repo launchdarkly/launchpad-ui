@@ -1,3 +1,4 @@
+/* eslint-disable react-prefer-function-component/react-prefer-function-component */
 import type { PopoverPlacement } from '@launchpad-ui/popover';
 
 import { Button } from '@launchpad-ui/button';

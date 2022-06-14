@@ -1,3 +1,4 @@
+/* eslint-disable react-prefer-function-component/react-prefer-function-component */
 import type { KeyboardEvent } from 'react';
 
 import { Portal } from '@launchpad-ui/modal';

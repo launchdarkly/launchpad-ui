@@ -1,3 +1,4 @@
+/* eslint-disable react-prefer-function-component/react-prefer-function-component */
 import { Component, createRef, InputHTMLAttributes, RefObject } from 'react';
 
 import { Label } from './Label';

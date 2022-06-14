@@ -1,3 +1,4 @@
+/* eslint-disable react-prefer-function-component/react-prefer-function-component */
 import type { OffsetOptions } from '@floating-ui/core';
 import type { ComputePositionConfig, Placement, Strategy } from '@floating-ui/dom';
 import type { CSSProperties } from 'react';
