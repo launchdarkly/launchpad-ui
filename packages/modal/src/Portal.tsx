@@ -7,13 +7,12 @@ import './styles/Modal.css';
 
 type PortalProps = {
   containerRef?: (node: HTMLDivElement) => void;
-  onChildrenMount?: () => void;
   onKeyDown?: (event: KeyboardEvent<HTMLInputElement>) => void;
   className?: string;
   children?: React.ReactNode;
 };
 
-const Portal = ({ children, containerRef, onChildrenMount, ...props }: PortalProps) => {
+const Portal = ({ children, containerRef, ...props }: PortalProps) => {
   const [portal, setPortal] = useState<HTMLDivElement | null>(null);
 
   useEffect(() => {

@@ -45,4 +45,17 @@ describe('Overlay', () => {
 
     expect(spy).toHaveBeenCalledTimes(1);
   });
+
+  it('enforces focus', async () => {
+    render(
+      <Overlay isOpen onClose={() => undefined}>
+        <button>test</button>
+      </Overlay>
+    );
+
+    userEvent.setup();
+    await userEvent.tab();
+
+    expect(screen.getByRole('button')).toHaveFocus();
+  });
 });

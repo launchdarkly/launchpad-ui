@@ -1,3 +1,4 @@
+import { Add } from '@launchpad-ui/icons';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { axe } from 'jest-axe';
@@ -52,5 +53,11 @@ describe('Button', () => {
     userEvent.setup();
     await userEvent.tab();
     expect(screen.getByRole('button')).toHaveFocus();
+  });
+
+  it('can render an icon', async () => {
+    const { container } = render(<Button kind={ButtonKind.PRIMARY} icon={<Add />} />);
+    // eslint-disable-next-line testing-library/no-container, testing-library/no-node-access
+    expect(container.querySelector('svg')).not.toBeNull();
   });
 });
