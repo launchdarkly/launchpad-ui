@@ -12,7 +12,7 @@ enum ProgressSize {
 
 type ProgressProps = {
   value?: number;
-  size: ProgressSize;
+  size?: ProgressSize;
   className?: string;
   delayMs?: number;
 };
