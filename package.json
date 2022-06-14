@@ -15,7 +15,7 @@
     "e2e:watch": "chokidar packages/**/*.e2e.ts -c \"pnpm e2e\"",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "graph": "nx affected:graph",
-    "lint": "eslint '**/*.{ts,tsx,js}'",
+    "lint": "eslint '**/*.{ts,tsx,js}' --ignore-pattern '/packages/' --ignore-pattern '/apps/'",
     "lint:ci": "pnpm build:transform && pnpm lint && pnpm lint:packages",
     "lint:packages": "nx affected --target=lint --base=origin/main --head=HEAD",
     "remix": "nx run-many --target=build --projects=@launchpad-ui/remix && pnpm --filter=\"remix\" start",
