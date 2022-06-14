@@ -67,14 +67,6 @@ class Overlay extends Component<OverlayProps> {
     }
   }
 
-  handleContentMount = () => {
-    const { autoFocus } = this.props;
-
-    if (autoFocus) {
-      this.focusContainer();
-    }
-  };
-
   handleKeyDown = (event: KeyboardEvent<HTMLInputElement>) => {
     const { canEscapeKeyClose, onClose } = this.props;
     if (canEscapeKeyClose && event.key === 'Escape') {
@@ -163,11 +155,7 @@ class Overlay extends Component<OverlayProps> {
     }
 
     return (
-      <Portal
-        onKeyDown={this.handleKeyDown}
-        containerRef={this.setContainerRef}
-        onChildrenMount={this.handleContentMount}
-      >
+      <Portal onKeyDown={this.handleKeyDown} containerRef={this.setContainerRef}>
         {isOpen ? children : null}
       </Portal>
     );

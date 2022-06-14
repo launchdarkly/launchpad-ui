@@ -22,11 +22,12 @@ export default defineConfig({
     globals: true,
     environment: 'jsdom',
     setupFiles: [path.resolve(__dirname, './tests/setupTests.ts')],
+    include: ['**/__tests__/*.spec.{ts,tsx}'],
     coverage: {
-      lines: 50,
+      lines: 80,
       functions: 50,
-      branches: 50,
-      statements: 50,
+      branches: 60,
+      statements: 80,
     },
   },
 });
