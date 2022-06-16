@@ -1,53 +1,40 @@
-/* eslint-disable functional/no-class */
-import { Component } from 'react';
+import { useEffect, useState } from 'react';
 
 import { AnimationDelay } from './types';
 
 type DelayedIndicatorProps = {
-  children: React.ReactNode;
+  children: React.ReactElement;
   delayMs?: number;
 };
 
-type DelayedIndicatorState = {
-  renderChildren: boolean;
-};
+const DelayedIndicator = ({
+  children,
+  delayMs = AnimationDelay.DEFAULT,
+}: DelayedIndicatorProps) => {
+  const [renderChildren, setRenderChildren] = useState(false);
 
-class DelayedIndicator extends Component<DelayedIndicatorProps> {
-  static defaultProps = {
-    delayMs: AnimationDelay.DEFAULT,
-  };
-
-  _delay?: ReturnType<typeof setTimeout> = undefined;
-
-  state: DelayedIndicatorState = {
-    renderChildren: false,
-  };
-
-  componentDidMount() {
-    const { delayMs } = this.props;
+  useEffect(() => {
+    let delay: NodeJS.Timeout | undefined = undefined;
 
     if (typeof delayMs === 'number') {
       if (delayMs === 0) {
-        this.setState({ renderChildren: true });
+        setRenderChildren(true);
       } else {
-        this._delay = setTimeout(() => {
-          this.setState({ renderChildren: true });
+        delay = setTimeout(() => {
+          setRenderChildren(true);
         }, delayMs);
       }
     }
-  }
 
-  componentWillUnmount() {
-    if (this._delay) {
-      clearTimeout(this._delay);
-    }
-  }
+    return () => {
+      if (delay) {
+        clearTimeout(delay);
+      }
+    };
+  }, [delayMs]);
 
-  render() {
-    const { children } = this.props;
-    return this.state.renderChildren ? children : null;
-  }
-}
+  return renderChildren ? children : null;
+};
 
 export { DelayedIndicator };
 export type { DelayedIndicatorProps };
