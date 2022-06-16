@@ -14,7 +14,7 @@ const DelayedIndicator = ({
   const [renderChildren, setRenderChildren] = useState(false);
 
   useEffect(() => {
-    let delay: NodeJS.Timeout | undefined = undefined;
+    let delay: ReturnType<typeof setTimeout> | undefined = undefined;
 
     if (typeof delayMs === 'number') {
       if (delayMs === 0) {
