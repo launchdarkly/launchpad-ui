@@ -1,5 +1,15 @@
 # @launchpad-ui/dropdown
 
+## 0.1.2
+
+### Patch Changes
+
+- [#131](https://github.com/launchdarkly/launchpad-ui/pull/131) [`c71028b`](https://github.com/launchdarkly/launchpad-ui/commit/c71028b236caa85cc38af5644104d15da55ec1f9) Thanks [@Niznikr](https://github.com/Niznikr)! - Update Button to functional component
+
+- Updated dependencies [[`c71028b`](https://github.com/launchdarkly/launchpad-ui/commit/c71028b236caa85cc38af5644104d15da55ec1f9)]:
+  - @launchpad-ui/button@0.2.0
+  - @launchpad-ui/popover@0.1.4
+
 ## 0.1.1
 
 ### Patch Changes

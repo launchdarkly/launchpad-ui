@@ -1,5 +1,12 @@
 # @launchpad-ui/notification
 
+## 0.1.4
+
+### Patch Changes
+
+- Updated dependencies [[`c71028b`](https://github.com/launchdarkly/launchpad-ui/commit/c71028b236caa85cc38af5644104d15da55ec1f9)]:
+  - @launchpad-ui/button@0.2.0
+
 ## 0.1.3
 
 ### Patch Changes

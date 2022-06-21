@@ -1,5 +1,14 @@
 # @launchpad-ui/clipboard
 
+## 0.1.3
+
+### Patch Changes
+
+- [#127](https://github.com/launchdarkly/launchpad-ui/pull/127) [`c50f7c1`](https://github.com/launchdarkly/launchpad-ui/commit/c50f7c1b93b96ac0c4f3d2cf0827e91ee683c137) Thanks [@Niznikr](https://github.com/Niznikr)! - Update to functional component
+
+- Updated dependencies []:
+  - @launchpad-ui/tooltip@0.1.4
+
 ## 0.1.2
 
 ### Patch Changes

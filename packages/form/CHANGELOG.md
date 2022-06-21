@@ -1,5 +1,11 @@
 # @launchpad-ui/form
 
+## 0.2.0
+
+### Minor Changes
+
+- [#134](https://github.com/launchdarkly/launchpad-ui/pull/134) [`e67e23c`](https://github.com/launchdarkly/launchpad-ui/commit/e67e23c857c47bbbeb09cba81f2f9bbfcc0e2b1d) Thanks [@Niznikr](https://github.com/Niznikr)! - Update to functional components
+
 ## 0.1.1
 
 ### Patch Changes
