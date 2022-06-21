@@ -1,0 +1,23 @@
+.Textarea-storygroup-wrapper > * {
+  margin: auto 0;
+}
+
+.Textarea-storygroup-wrapper {
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 8rem auto;
+  grid-gap: 1.2rem;
+  justify-items: flex-start;
+}
+
+.Textarea-state-label {
+  text-align: right;
+  font-weight: bold;
+  text-transform: capitalize;
+}
+
+.Textarea-number-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
