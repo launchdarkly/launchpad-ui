@@ -19,3 +19,4 @@ const RequiredAsterisk = ({ className, testId, ...rest }: RequiredAsteriskProps)
 };
 
 export { RequiredAsterisk };
+export type { RequiredAsteriskProps };

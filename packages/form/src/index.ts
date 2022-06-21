@@ -1,14 +1,20 @@
 export type { CheckboxProps } from './Checkbox';
 export type { CompactTextFieldProps } from './CompactTextField';
-export type { FormFieldProps } from './FormField';
-export type { FormHintProps } from './FormHint';
+export type { FieldErrorProps } from './FieldError';
+export type { FieldSetProps } from './FieldSet';
 export type { FormProps } from './Form';
+export type { FormFieldProps } from './FormField';
+export type { FormGroupProps } from './FormGroup';
+export type { FormHintProps } from './FormHint';
 export type { IconFieldProps } from './IconField';
+export type { InputGroupProps } from './InputGroup';
 export type { LabelProps } from './Label';
-export type { RadioGroupProps } from './RadioGroup';
 export type { RadioProps } from './Radio';
+export type { RadioGroupProps } from './RadioGroup';
+export type { RequiredAsteriskProps } from './RequiredAsterisk';
 export type { SelectProps } from './Select';
 export type { TextAreaProps } from './TextArea';
+export type { TextFieldProps } from './TextField';
 
 export { Checkbox } from './Checkbox';
 export { CompactTextField } from './CompactTextField';

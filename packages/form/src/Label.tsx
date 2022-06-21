@@ -3,7 +3,7 @@ import cx from 'clsx';
 import { RequiredAsterisk } from './RequiredAsterisk';
 import './styles/Form.css';
 
-export type LabelProps = {
+type LabelProps = {
   htmlFor?: string;
   required?: boolean;
   optional?: boolean;
@@ -14,7 +14,7 @@ export type LabelProps = {
   hidden?: boolean;
 };
 
-export const Label = ({
+const Label = ({
   htmlFor,
   disabled,
   className,
@@ -32,3 +32,6 @@ export const Label = ({
     </label>
   );
 };
+
+export { Label };
+export type { LabelProps };

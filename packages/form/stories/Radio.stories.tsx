@@ -1,6 +1,6 @@
-import type { Story } from '@storybook/react';
+import type { ComponentStoryObj } from '@storybook/react';
 
-import { Radio, RadioProps } from '../src';
+import { Radio } from '../src';
 
 export default {
   component: Radio,
@@ -8,11 +8,12 @@ export default {
   description: 'A radio button allows the user to select one of a set of options."',
 };
 
-const Template: Story<RadioProps> = (args) => <Radio {...args} />;
+type Story = ComponentStoryObj<typeof Radio>;
 
-export const Default = Template.bind({});
-Default.args = {
-  id: 'optionOne',
-  value: 'Option One',
-  checked: true,
+export const Default: Story = {
+  args: {
+    id: 'optionOne',
+    value: 'Option One',
+    checked: true,
+  },
 };

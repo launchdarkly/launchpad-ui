@@ -1,6 +1,6 @@
-import type { Story } from '@storybook/react';
+import type { ComponentStoryObj } from '@storybook/react';
 
-import { Label, LabelProps, TextField } from '../src';
+import { Label, TextField } from '../src';
 
 export default {
   component: Label,
@@ -45,13 +45,16 @@ export default {
   },
 };
 
-export const Default: Story<LabelProps> = (args) => <Label {...args} />;
-Default.args = {
-  htmlFor: 'name',
-  children: (
-    <>
-      Name
-      <TextField id="name" />
-    </>
-  ),
+type Story = ComponentStoryObj<typeof Label>;
+
+export const Default: Story = {
+  args: {
+    htmlFor: 'name',
+    children: (
+      <>
+        Name
+        <TextField id="name" />
+      </>
+    ),
+  },
 };

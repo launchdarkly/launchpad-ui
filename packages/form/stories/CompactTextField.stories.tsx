@@ -1,6 +1,6 @@
-import type { Story } from '@storybook/react';
+import type { ComponentStoryObj } from '@storybook/react';
 
-import { CompactTextField, CompactTextFieldProps } from '../src';
+import { CompactTextField } from '../src';
 
 export default {
   component: CompactTextField,
@@ -68,25 +68,27 @@ export default {
   },
 };
 
-const Template: Story<CompactTextFieldProps> = (args) => <CompactTextField {...args} />;
+type Story = ComponentStoryObj<typeof CompactTextField>;
 
-export const Default = Template.bind({});
-Default.args = {
-  id: 'Email',
-  label: 'Email',
-  tiny: false,
-  disabled: false,
-  value: 'testing@launchdarkly.com',
-  onChange: () => undefined,
+export const Default: Story = {
+  args: {
+    id: 'Email',
+    label: 'Email',
+    tiny: false,
+    disabled: false,
+    value: 'testing@launchdarkly.com',
+    onChange: () => undefined,
+  },
 };
 
-export const WithSuffix = Template.bind({});
-WithSuffix.args = {
-  id: 'Time',
-  label: 'Time',
-  suffix: 'seconds',
-  tiny: false,
-  disabled: false,
-  value: '120',
-  onChange: () => undefined,
+export const WithSuffix: Story = {
+  args: {
+    id: 'Time',
+    label: 'Time',
+    suffix: 'seconds',
+    tiny: false,
+    disabled: false,
+    value: '120',
+    onChange: () => undefined,
+  },
 };
