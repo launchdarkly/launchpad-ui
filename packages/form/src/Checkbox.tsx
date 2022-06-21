@@ -1,5 +1,6 @@
-/* eslint-disable functional/no-class */
-import { Component, createRef, InputHTMLAttributes, RefObject } from 'react';
+import type { InputHTMLAttributes } from 'react';
+
+import { forwardRef } from 'react';
 
 import { Label } from './Label';
 import './styles/Form.css';
@@ -29,24 +30,9 @@ type CheckboxProps = InputHTMLAttributes<HTMLInputElement> & {
   testId?: string;
 };
 
-class Checkbox extends Component<CheckboxProps> {
-  inputRef: RefObject<HTMLInputElement>;
-
-  constructor(props: CheckboxProps) {
-    super(props);
-    this.inputRef = createRef();
-  }
-
-  value() {
-    return this.inputRef.current?.value;
-  }
-
-  checked() {
-    return this.inputRef.current?.checked;
-  }
-
-  render() {
-    const {
+const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
+  (
+    {
       'aria-label': ariaLabel,
       'aria-labelledby': ariaLabelledby,
       children,
@@ -55,8 +41,9 @@ class Checkbox extends Component<CheckboxProps> {
       checked,
       labelClassName,
       ...other
-    } = this.props;
-
+    },
+    ref
+  ) => {
     const hasAriaLabel = ariaLabel !== undefined || ariaLabelledby !== undefined;
     if (!children && !hasAriaLabel) {
       console.warn(
@@ -68,7 +55,7 @@ class Checkbox extends Component<CheckboxProps> {
       <Label className={labelClassName}>
         <input
           {...other}
-          ref={this.inputRef}
+          ref={ref}
           checked={checked}
           aria-checked={checked ? 'true' : 'false'}
           aria-label={ariaLabel}
@@ -82,7 +69,9 @@ class Checkbox extends Component<CheckboxProps> {
       </Label>
     );
   }
-}
+);
+
+Checkbox.displayName = 'Checkbox';
 
 export { Checkbox };
 export type { CheckboxProps };

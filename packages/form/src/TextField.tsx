@@ -1,6 +1,7 @@
-/* eslint-disable functional/no-class */
+import type { InputHTMLAttributes } from 'react';
+
 import cx from 'clsx';
-import { Component, createRef, InputHTMLAttributes, RefObject } from 'react';
+import { forwardRef } from 'react';
 
 import './styles/FormInput.css';
 import { createFieldErrorId } from './utils';
@@ -12,15 +13,9 @@ type TextFieldProps = InputHTMLAttributes<HTMLInputElement> & {
   overrideWidth?: string;
 };
 
-class TextField extends Component<TextFieldProps> {
-  inputRef: RefObject<HTMLInputElement>;
-  constructor(props: TextFieldProps) {
-    super(props);
-    this.inputRef = createRef();
-  }
-
-  render() {
-    const {
+const TextField = forwardRef<HTMLInputElement, TextFieldProps>(
+  (
+    {
       className,
       type = 'text',
       tiny = false,
@@ -30,7 +25,9 @@ class TextField extends Component<TextFieldProps> {
       suffix,
       overrideWidth,
       ...rest
-    } = this.props;
+    },
+    ref
+  ) => {
     const classes = overrideWidth
       ? className
       : cx('FormInput', `FormInput-${type}`, className, {
@@ -44,7 +41,7 @@ class TextField extends Component<TextFieldProps> {
             type={type}
             className={cx(classes, 'FormInput-suffix')}
             readOnly={readOnly}
-            ref={this.inputRef}
+            ref={ref}
             data-test-id={testId}
             aria-describedby={rest['aria-describedby'] || createFieldErrorId(rest.id)}
           />
@@ -62,7 +59,7 @@ class TextField extends Component<TextFieldProps> {
         className={classes}
         readOnly={readOnly}
         tabIndex={tabIndex}
-        ref={this.inputRef}
+        ref={ref}
         data-test-id={testId}
         style={
           overrideWidth
@@ -75,27 +72,9 @@ class TextField extends Component<TextFieldProps> {
       />
     );
   }
+);
 
-  getElement() {
-    return this.inputRef.current;
-  }
+TextField.displayName = 'TextField';
 
-  value() {
-    return this.inputRef.current?.value;
-  }
-
-  focus() {
-    this.inputRef.current?.focus();
-  }
-
-  blur() {
-    this.inputRef.current?.blur();
-  }
-
-  select() {
-    this.inputRef.current?.focus();
-  }
-}
-
-export type { TextFieldProps };
 export { TextField };
+export type { TextFieldProps };
