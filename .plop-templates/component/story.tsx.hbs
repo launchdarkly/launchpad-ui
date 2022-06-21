@@ -1,0 +1,17 @@
+import type { ComponentStoryObj } from '@storybook/react';
+
+import { {{pascalCase name}} } from '../src';
+
+export default {
+  component: {{pascalCase name}},
+  title: 'Components/{{pascalCase name}}',
+  description: {{description}}
+};
+
+type Story = ComponentStoryObj<typeof {{pascalCase name}}>;
+
+export const Example: Story = {
+  args: {
+    // arguments for your story
+  },
+};
