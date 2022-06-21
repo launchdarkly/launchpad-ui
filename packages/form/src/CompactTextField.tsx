@@ -1,7 +1,8 @@
-/* eslint-disable functional/no-class */
+import type { FocusEvent } from 'react';
+
 import cx from 'clsx';
 import { isBoolean } from 'lodash-es';
-import { Component, FocusEvent } from 'react';
+import { forwardRef, useState } from 'react';
 
 import { Label } from './Label';
 import { TextField, TextFieldProps } from './TextField';
@@ -13,27 +14,37 @@ type CompactTextFieldProps = TextFieldProps & {
   needsErrorFeedback?: boolean;
 };
 
-class CompactTextField extends Component<CompactTextFieldProps, { isActive: boolean }> {
-  textField?: TextField | null;
+const CompactTextField = forwardRef<HTMLInputElement, CompactTextFieldProps>(
+  (
+    { className, id, name, label, type, needsErrorFeedback, value, onFocus, onBlur, ...rest },
+    ref
+  ) => {
+    const [isActive, setIsActive] = useState(
+      (isBoolean(value) || value ? value.toString() : '').trim().length !== 0
+    );
 
-  constructor(props: CompactTextFieldProps) {
-    super(props);
-    const value = props.value;
-
-    this.state = {
-      isActive: (isBoolean(value) || value ? value.toString() : '').trim().length !== 0,
-    };
-  }
-
-  render() {
-    const { className, id, name, label, type, needsErrorFeedback, ...rest } = this.props;
-    const isActive = this.state.isActive || needsErrorFeedback;
+    const isActiveState = isActive || needsErrorFeedback;
 
     const classes = cx('CompactTextField', className, {
-      'is-active': isActive,
+      'is-active': isActiveState,
     });
 
-    const placeholder = isActive ? '' : label;
+    const placeholder = isActiveState ? '' : label;
+
+    const handleFocus = (event: FocusEvent<HTMLInputElement>) => {
+      setIsActive(true);
+      if (onFocus) {
+        onFocus(event);
+      }
+    };
+
+    const handleBlur = (event: FocusEvent<HTMLInputElement>) => {
+      const value = event.target.value || '';
+      setIsActive(value.trim().length !== 0);
+      if (onBlur) {
+        onBlur(event);
+      }
+    };
 
     return (
       <div className={classes}>
@@ -44,39 +55,17 @@ class CompactTextField extends Component<CompactTextFieldProps, { isActive: bool
           name={name}
           type={type}
           placeholder={placeholder}
-          ref={(textField) => {
-            this.textField = textField;
-          }}
-          onFocus={this.handleFocus}
-          onBlur={this.handleBlur}
+          value={value}
+          ref={ref}
+          onFocus={handleFocus}
+          onBlur={handleBlur}
         />
       </div>
     );
   }
+);
 
-  handleFocus = (event: FocusEvent<HTMLInputElement>) => {
-    this.setState({ isActive: true });
-    if (this.props.onFocus) {
-      this.props.onFocus(event);
-    }
-  };
-
-  handleBlur = (event: FocusEvent<HTMLInputElement>) => {
-    const value = event.target.value || '';
-    this.setState({ isActive: value.trim().length !== 0 });
-    if (this.props.onBlur) {
-      this.props.onBlur(event);
-    }
-  };
-
-  value = () => (this.textField ? this.textField.value() : '');
-
-  focus = () => {
-    if (this.textField) {
-      this.textField.focus();
-    }
-  };
-}
+CompactTextField.displayName = 'CompactTextField';
 
 export { CompactTextField };
 export type { CompactTextFieldProps };
