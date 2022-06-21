@@ -1,6 +1,6 @@
-import type { Story } from '@storybook/react';
+import type { ComponentStoryObj } from '@storybook/react';
 
-import { Select, SelectProps } from '../src';
+import { Select } from '../src';
 
 export default {
   component: Select,
@@ -53,17 +53,18 @@ export default {
   },
 };
 
-const Template: Story<SelectProps> = (args) => <Select {...args} />;
+type Story = ComponentStoryObj<typeof Select>;
 
-export const Default = Template.bind({});
-Default.args = {
-  value: 'a',
-  children: (
-    <>
-      <option value="a">a</option>
-      <option value="b">b</option>
-      <option value="c">c</option>
-    </>
-  ),
-  onChange: () => undefined,
+export const Default: Story = {
+  args: {
+    value: 'a',
+    children: (
+      <>
+        <option value="a">a</option>
+        <option value="b">b</option>
+        <option value="c">c</option>
+      </>
+    ),
+    onChange: () => undefined,
+  },
 };

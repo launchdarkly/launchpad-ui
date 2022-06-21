@@ -1,6 +1,6 @@
-import type { Story } from '@storybook/react';
+import type { ComponentStoryObj } from '@storybook/react';
 
-import { Checkbox, CheckboxProps } from '../src';
+import { Checkbox } from '../src';
 
 export default {
   component: Checkbox,
@@ -48,12 +48,13 @@ export default {
   },
 };
 
-const Template: Story<CheckboxProps> = (args) => <Checkbox {...args} />;
+type Story = ComponentStoryObj<typeof Checkbox>;
 
-export const Default = Template.bind({});
-Default.args = {
-  onChange: () => undefined,
-  checked: false,
-  disabled: false,
-  children: 'This is the label',
+export const Default: Story = {
+  args: {
+    onChange: () => undefined,
+    checked: false,
+    disabled: false,
+    children: 'This is the label',
+  },
 };

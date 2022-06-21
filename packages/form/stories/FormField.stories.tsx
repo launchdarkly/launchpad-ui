@@ -1,6 +1,6 @@
-import type { Story } from '@storybook/react';
+import type { ComponentStoryObj } from '@storybook/react';
 
-import { FormField, FormFieldProps, TextField } from '../src';
+import { FormField, TextField } from '../src';
 
 export default {
   component: FormField,
@@ -54,34 +54,37 @@ export default {
   },
 };
 
-const Template: Story<FormFieldProps> = (args) => <FormField {...args} />;
+type Story = ComponentStoryObj<typeof FormField>;
 
-export const Default = Template.bind({});
-Default.args = {
-  isRequired: true,
-  label: 'Email',
-  name: 'Email',
-  htmlFor: 'Email',
-  children: <TextField id="Email" value="testing@launchdarkly.com" />,
+export const Default: Story = {
+  args: {
+    isRequired: true,
+    label: 'Email',
+    name: 'Email',
+    htmlFor: 'Email',
+    children: <TextField id="Email" value="testing@launchdarkly.com" />,
+  },
 };
 
-export const WithError = Template.bind({});
-WithError.args = {
-  isRequired: true,
-  label: 'Email',
-  name: 'Email',
-  htmlFor: 'Email',
-  errorMessage: 'Oops, you entered an incorrect email.',
-  isInvalid: true,
-  children: <TextField id="Email" value="testing@launchdarkly.com" />,
+export const WithError: Story = {
+  args: {
+    isRequired: true,
+    label: 'Email',
+    name: 'Email',
+    htmlFor: 'Email',
+    errorMessage: 'Oops, you entered an incorrect email.',
+    isInvalid: true,
+    children: <TextField id="Email" value="testing@launchdarkly.com" />,
+  },
 };
 
-export const WithHint = Template.bind({});
-WithHint.args = {
-  isRequired: true,
-  label: 'Email',
-  name: 'Email',
-  htmlFor: 'Email',
-  hint: 'Must be a valid email.',
-  children: <TextField id="Email" value="testing@launchdarkly.com" />,
+export const WithHint: Story = {
+  args: {
+    isRequired: true,
+    label: 'Email',
+    name: 'Email',
+    htmlFor: 'Email',
+    hint: 'Must be a valid email.',
+    children: <TextField id="Email" value="testing@launchdarkly.com" />,
+  },
 };

@@ -1,6 +1,6 @@
-import type { Story } from '@storybook/react';
+import type { ComponentStoryObj } from '@storybook/react';
 
-import { RadioGroup, RadioGroupProps, Radio, Label } from '../src';
+import { RadioGroup, Radio, Label } from '../src';
 
 export default {
   component: RadioGroup,
@@ -40,18 +40,19 @@ export default {
   },
 };
 
-const Template: Story<RadioGroupProps> = (args) => <RadioGroup {...args} />;
+type Story = ComponentStoryObj<typeof RadioGroup>;
 
-export const Default = Template.bind({});
-Default.args = {
-  name: 'kind',
-  value: 'kindA',
-  children: (
-    <>
-      <Radio id="A" value="kindA" checked />
-      <Label htmlFor="A">A</Label>
-      <Radio id="B" value="kindB" />
-      <Label htmlFor="B">B</Label>
-    </>
-  ),
+export const Default: Story = {
+  args: {
+    name: 'kind',
+    value: 'kindA',
+    children: (
+      <>
+        <Radio id="A" value="kindA" checked />
+        <Label htmlFor="A">A</Label>
+        <Radio id="B" value="kindB" />
+        <Label htmlFor="B">B</Label>
+      </>
+    ),
+  },
 };

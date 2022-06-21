@@ -6,7 +6,7 @@ import './styles/InputGroup.css';
 
 type InputGroupProps = ComponentPropsWithRef<'div'>;
 
-export const InputGroup = ({ className, children, ...other }: InputGroupProps) => {
+const InputGroup = ({ className, children, ...other }: InputGroupProps) => {
   const classes = cx('InputGroup', className);
 
   return (
@@ -15,3 +15,6 @@ export const InputGroup = ({ className, children, ...other }: InputGroupProps) =
     </div>
   );
 };
+
+export { InputGroup };
+export type { InputGroupProps };
