@@ -1,5 +1,11 @@
 # @launchpad-ui/progress
 
+## 0.1.6
+
+### Patch Changes
+
+- [#130](https://github.com/launchdarkly/launchpad-ui/pull/130) [`805d629`](https://github.com/launchdarkly/launchpad-ui/commit/805d629a5f09b5a16db121aedf165feff74dbde9) Thanks [@Niznikr](https://github.com/Niznikr)! - Update `DelayedIndicator` to functional component
+
 ## 0.1.5
 
 ### Patch Changes
