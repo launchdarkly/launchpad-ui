@@ -15,7 +15,7 @@ type DropdownButtonProps = {
   testId?: string;
 };
 
-const DropdownButton = forwardRef<Button, DropdownButtonProps>((props, ref) => {
+const DropdownButton = forwardRef<typeof Button, DropdownButtonProps>((props, ref) => {
   const { children, hideCaret, ...rest } = props;
 
   return (

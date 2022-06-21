@@ -1,7 +1,7 @@
 /* eslint-disable functional/no-class */
+import type { Button } from '@launchpad-ui/button';
 import type { PopoverPlacement } from '@launchpad-ui/popover';
 
-import { Button } from '@launchpad-ui/button';
 import { Popover } from '@launchpad-ui/popover';
 import cx from 'clsx';
 import { Children, cloneElement, Component } from 'react';
@@ -28,9 +28,9 @@ class Dropdown<T extends string | object | number> extends Component<
   DropdownProps<T>,
   DropdownState
 > {
-  triggerElement: HTMLElement | null | Button = null;
+  triggerElement: HTMLElement | null | typeof Button = null;
   refHandlers = {
-    trigger: (node: HTMLElement | null | Button) => {
+    trigger: (node: HTMLElement | null | typeof Button) => {
       this.triggerElement = node;
     },
   };
@@ -47,20 +47,18 @@ class Dropdown<T extends string | object | number> extends Component<
     // Focus the button upon closing for convenient tabbing
     if (prevState.isOpen !== this.state.isOpen && this.state.isOpen === false) {
       requestAnimationFrame(() => {
-        const current = this.triggerElement;
+        const current = this.triggerElement as HTMLElement;
         if (!current) {
           return;
         }
-        // Button can either be our own custom Button component or the native html button
-        const buttonElement = (current instanceof Button && current.getDomElement?.()) || current;
 
         // If a dropdown menu item triggers a modal, we do not want to focus the trigger. Instead
         // we let the modal components control their own focus.
         // Note that this is not ideal since closing the modal will not cause the dropdown trigger
         // to regain focus.
-        const hasModal = (buttonElement as HTMLElement)?.closest?.('.has-modal');
+        const hasModal = current.closest?.('.has-modal');
 
-        !hasModal && buttonElement?.focus();
+        !hasModal && current.focus?.();
       });
     }
   }

@@ -1,8 +1,7 @@
-/* eslint-disable functional/no-class */
 import type { LocationDescriptor } from 'history';
 
 import cx from 'clsx';
-import { cloneElement, createRef, PureComponent } from 'react';
+import { cloneElement, forwardRef, memo } from 'react';
 
 import './styles/Button.css';
 import { ButtonKind, ButtonSize, ButtonType } from './types';
@@ -137,135 +136,38 @@ type ButtonProps = {
   children?: React.ReactNode;
 };
 
-class Button extends PureComponent<ButtonProps> {
-  static defaultProps = {
-    kind: ButtonKind.DEFAULT,
-    size: ButtonSize.NORMAL,
-    disabled: false,
-    outlined: false,
-    onClick: () => undefined,
-    renderIconFirst: false,
-  };
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const ButtonComponent = forwardRef<any, ButtonProps>((props: ButtonProps, ref) => {
+  const {
+    className,
+    size = ButtonSize.NORMAL,
+    fit,
+    kind = ButtonKind.DEFAULT,
+    icon,
+    outlined = false,
+    type,
+    children,
+    isLoading,
+    loadingText,
+    renderIconFirst = false,
+    onKeyDown,
+    disabled = false,
+    href,
+    target,
+    onClick = () => undefined,
+    to,
+  } = props;
 
-  rootRef = createRef<HTMLElement>();
+  const kindClass = `Button--${kind}`;
+  const sizeClass = `Button--${size}`;
+  const classes = cx('Button', className, kindClass, sizeClass, {
+    'Button--fit': fit,
+    'Button--icon': type === 'icon',
+    'Button--outlined': type === 'icon' && outlined,
+    'Button--borderless': type === 'borderless',
+  });
 
-  render() {
-    const { href, target } = this.props;
-    const {
-      disabled,
-      className,
-      size,
-      fit,
-      kind,
-      icon,
-      outlined,
-      type,
-      children,
-      isLoading,
-      loadingText,
-      renderIconFirst,
-      onKeyDown,
-    } = this.props;
-
-    const kindClass = `Button--${kind}`;
-    const sizeClass = `Button--${size}`;
-    const classes = cx('Button', className, kindClass, sizeClass, {
-      'Button--fit': fit,
-      'Button--icon': type === 'icon',
-      'Button--outlined': type === 'icon' && outlined,
-      'Button--borderless': type === 'borderless',
-    });
-
-    const extraProps = {
-      disabled: disabled || isLoading,
-      className: classes,
-      onClick: this.handleClick,
-      ref: this.rootRef,
-      onKeyDown: onKeyDown || this.handleKeyDown,
-    };
-
-    const renderIcon =
-      icon &&
-      cloneElement(icon, {
-        key: 'icon',
-        size: icon.props.size || 'small',
-        'aria-hidden': true,
-      });
-
-    const finalChildren = [
-      renderIconFirst && renderIcon,
-      isLoading && <span key="text">{loadingText || children}</span>,
-      !isLoading && children && <span key="text">{children}</span>,
-      !renderIconFirst && renderIcon,
-      isLoading && <span key="spinner">…</span>,
-    ];
-
-    const content = this[href || target ? 'renderAnchor' : 'renderButton'](
-      extraProps,
-      finalChildren
-    );
-
-    return content;
-  }
-
-  renderAnchor(extraProps: object, children: React.ReactNode) {
-    const {
-      component,
-      isLoading,
-      loadingText,
-      size,
-      kind,
-      fit,
-      icon,
-      outlined,
-      renderIconFirst,
-      testId,
-      ...props
-    } = this.props;
-
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const ButtonComponent: any = component || 'a';
-
-    return (
-      <ButtonComponent {...props} {...extraProps} role="button" data-test-id={testId}>
-        {children}
-      </ButtonComponent>
-    );
-  }
-
-  renderButton(extraProps: object, children: React.ReactNode) {
-    const {
-      component,
-      type,
-      isLoading,
-      loadingText,
-      size,
-      kind,
-      fit,
-      icon,
-      outlined,
-      renderIconFirst,
-      testId,
-      ...props
-    } = this.props;
-
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const ButtonComponent: any = component || 'button';
-
-    return (
-      <ButtonComponent
-        {...props}
-        {...extraProps}
-        type={type && type !== ButtonType.ICON ? type : ButtonType.BUTTON}
-        data-test-id={testId}
-      >
-        {children}
-      </ButtonComponent>
-    );
-  }
-
-  handleClick = (event: React.MouseEvent) => {
-    const { disabled, onClick } = this.props;
+  const handleClick = (event: React.MouseEvent) => {
     if (disabled) {
       event.preventDefault();
       return;
@@ -274,33 +176,7 @@ class Button extends PureComponent<ButtonProps> {
     onClick && onClick(event);
   };
 
-  /**
-   * GOTCHA: focus only works with native dom elements: a and button. Since this
-   * component can render Link and in fact it can render any custom react components, this
-   * method is an anti-pattern.
-   */
-  focus = () => {
-    const { current } = this.rootRef;
-
-    if (current && !current.focus) {
-      if (process.env.NODE_ENV === 'development') {
-        console.warn(
-          'Button.focus() is called on a custom class component which does not have a focus method.'
-        );
-      }
-      return;
-    }
-    if (current && current.focus) {
-      current.focus();
-    }
-  };
-
-  getDomElement = () => this.rootRef.current;
-
-  handleKeyDown = (event: KeyboardEvent) => {
-    const { to, href, target } = this.props;
-    const { current } = this.rootRef;
-
+  const handleKeyDown = (event: KeyboardEvent) => {
     const spacebarKeys = ['Spacebar', ' '];
 
     // if we're using a 'link' as 'button', handle 'spacebar' event for accessibility.
@@ -308,11 +184,102 @@ class Button extends PureComponent<ButtonProps> {
     if (!!to || !!href || !!target) {
       if (spacebarKeys.includes(event.key)) {
         event.preventDefault();
-        current?.click();
+        const link = event.target as HTMLAnchorElement;
+        link.click();
       }
     }
   };
-}
+
+  const extraProps = {
+    disabled: disabled || isLoading,
+    className: classes,
+    onClick: handleClick,
+    ref,
+    onKeyDown: onKeyDown || handleKeyDown,
+  };
+
+  const renderIcon =
+    icon &&
+    cloneElement(icon, {
+      key: 'icon',
+      size: icon.props.size || 'small',
+      'aria-hidden': true,
+    });
+
+  const finalChildren = [
+    renderIconFirst && renderIcon,
+    isLoading && <span key="text">{loadingText || children}</span>,
+    !isLoading && children && <span key="text">{children}</span>,
+    !renderIconFirst && renderIcon,
+    isLoading && <span key="spinner">…</span>,
+  ];
+
+  const renderAnchor = (extraProps: object, children: React.ReactNode) => {
+    const {
+      component,
+      isLoading,
+      loadingText,
+      size,
+      kind,
+      fit,
+      icon,
+      outlined,
+      renderIconFirst,
+      testId,
+      ...otherProps
+    } = props;
+
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const ButtonComponent: any = component || 'a';
+
+    return (
+      <ButtonComponent {...otherProps} {...extraProps} role="button" data-test-id={testId}>
+        {children}
+      </ButtonComponent>
+    );
+  };
+
+  const renderButton = (extraProps: object, children: React.ReactNode) => {
+    const {
+      component,
+      type,
+      isLoading,
+      loadingText,
+      size,
+      kind,
+      fit,
+      icon,
+      outlined,
+      renderIconFirst,
+      testId,
+      ...otherProps
+    } = props;
+
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const ButtonComponent: any = component || 'button';
+
+    return (
+      <ButtonComponent
+        {...otherProps}
+        {...extraProps}
+        type={type && type !== ButtonType.ICON ? type : ButtonType.BUTTON}
+        data-test-id={testId}
+      >
+        {children}
+      </ButtonComponent>
+    );
+  };
+
+  const renderFunc = href || target ? renderAnchor : renderButton;
+
+  const content = renderFunc(extraProps, finalChildren);
+
+  return content;
+});
+
+ButtonComponent.displayName = 'Button';
+
+const Button = memo(ButtonComponent);
 
 export { Button };
 export type { ButtonProps };
