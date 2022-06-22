@@ -105,8 +105,8 @@ module.exports = (plop) => {
         path: 'apps/remix/app/root.tsx',
         pattern:
           /({ rel: 'stylesheet', href: [^\s]+ },\n)(?!.*({ rel: 'stylesheet', href: [^\s]+ },\n))/g,
-        template: "    { rel: 'stylesheet', href: {{camelCase name}}Styles },\n",
-        type: 'append',
+        template: "$1    { rel: 'stylesheet', href: {{camelCase name}}Styles },\n",
+        type: 'modify',
         // transform: (file) =>
         //   sortModification(file, {
         //     openPatternStr: 'Launchpad start links',
