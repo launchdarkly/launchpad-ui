@@ -1,5 +1,5 @@
 import { Button } from '@launchpad-ui/button';
-import { ModalBody, ModalFooter, ModalHeader, ModalTransition, Prompt } from '@launchpad-ui/modal';
+import { Modal, ModalBody, ModalFooter, ModalHeader, Prompt } from '@launchpad-ui/modal';
 import { useState } from 'react';
 
 export default function Index() {
@@ -9,7 +9,7 @@ export default function Index() {
     <>
       {button}
       <Prompt>
-        <ModalTransition
+        <Modal
           transition="pop"
           withCloseButton
           cancelWithOverlayClick
@@ -20,7 +20,7 @@ export default function Index() {
           <ModalFooter>
             <Button onClick={() => setShow(false)}>Cancel</Button>
           </ModalFooter>
-        </ModalTransition>
+        </Modal>
       </Prompt>
     </>
   ) : (

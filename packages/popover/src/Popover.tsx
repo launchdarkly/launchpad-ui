@@ -6,8 +6,8 @@ import type { CSSProperties } from 'react';
 import { arrow, computePosition, flip, offset as floatOffset, shift } from '@floating-ui/dom';
 import { Overlay } from '@launchpad-ui/overlay';
 import { FocusScope } from '@react-aria/focus';
-import { animated, Spring } from '@react-spring/web';
 import cx from 'clsx';
+import { LazyMotion, m } from 'framer-motion';
 import { isFunction, isNil } from 'lodash-es';
 import {
   Children,
@@ -22,6 +22,8 @@ import { v4 } from 'uuid';
 
 import './styles.css';
 import { withTimeouts } from './withTimeouts';
+
+const loadFeatures = () => import('./features').then((res) => res.default);
 
 type Offset = OffsetOptions;
 
@@ -123,9 +125,9 @@ class Popover extends withTimeouts<PopoverProps>(Component) {
     target: (node: Element | null) => {
       this.targetElement = node;
     },
-    content: async (node: HTMLElement | null) => {
+    content: (node: HTMLDivElement | null) => {
       this.contentElement = node;
-      await this.updatePopover();
+      this.updatePopover().finally(() => undefined);
     },
     arrow: (node: HTMLElement | null) => {
       this.arrowElement = node;
@@ -215,7 +217,7 @@ class Popover extends withTimeouts<PopoverProps>(Component) {
         enforceFocus={enforceFocus}
         onClose={this.handleOverlayClose}
       >
-        {this.renderPopover(content)}
+        <div>{this.renderPopover(content)}</div>
       </Overlay>
     );
   }
@@ -244,44 +246,45 @@ class Popover extends withTimeouts<PopoverProps>(Component) {
     if (interactionKind !== 'hover-target-only') {
       handlers.onClick = this.handlePopoverClick;
     }
+
     const popoverContent = (
-      <div
-        className={cx(
-          'Popover-content',
-          {
-            'Popover-content--restrict-width': restrictWidth,
-          },
-          popoverContentClassName
-        )}
-      >
-        {restrictHeight ? <div className="Popover-scroller">{content}</div> : content}
-      </div>
+      <LazyMotion strict features={loadFeatures}>
+        <m.div
+          transition={{ duration: 0.15 }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          className={cx(
+            'Popover-content',
+            {
+              'Popover-content--restrict-width': restrictWidth,
+            },
+            popoverContentClassName
+          )}
+        >
+          {restrictHeight ? <div className="Popover-scroller">{content}</div> : content}
+        </m.div>
+      </LazyMotion>
     );
 
     return (
-      <Spring from={{ opacity: 0 }} to={{ opacity: 1 }} config={{ duration: 150 }}>
-        {(styles) => (
-          <animated.div
-            id={this.id}
-            data-test-id="popover-with-spring"
-            ref={this.refHandlers.content}
-            style={styles}
-            className={classes}
-            role="tooltip"
-            aria-hidden={!isOpen}
-            {...handlers}
-          >
-            {enableArrow && <div id="arrow" ref={this.refHandlers.arrow}></div>}
-            {interactionKind === 'click' ? (
-              <FocusScope autoFocus contain>
-                {popoverContent}
-              </FocusScope>
-            ) : (
-              popoverContent
-            )}
-          </animated.div>
+      <div
+        id={this.id}
+        data-test-id="popover-with-spring"
+        ref={this.refHandlers.content}
+        className={classes}
+        role="tooltip"
+        aria-hidden={!isOpen}
+        {...handlers}
+      >
+        {enableArrow && <div id="arrow" ref={this.refHandlers.arrow}></div>}
+        {interactionKind === 'click' ? (
+          <FocusScope autoFocus contain>
+            {popoverContent}
+          </FocusScope>
+        ) : (
+          popoverContent
         )}
-      </Spring>
+      </div>
     );
   }
 

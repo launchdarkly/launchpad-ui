@@ -37,9 +37,9 @@
     "@launchpad-ui/progress": "workspace:~",
     "@launchpad-ui/tokens": "workspace:~",
     "@react-aria/focus": "^3.6.0",
-    "@react-spring/web": "^9.4.5",
     "clsx": "^1.1.1",
     "focus-trap": "^6.9.3",
+    "framer-motion": "^6.3.13",
     "lodash-es": "^4.17.21",
     "no-scroll": "^2.1.1"
   },
