@@ -35,6 +35,7 @@
 
 .Modal-content {
   background-color: var(--color-white);
+  position: relative;
 }
 
 .ModalSheet .Modal-content {
