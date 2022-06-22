@@ -18,7 +18,7 @@ import alertStyles from '@launchpad-ui/alert/styles/Alert.css';
 import bannerStyles from '@launchpad-ui/banner/styles/Banner.css';
 import buttonStyles from '@launchpad-ui/button/styles/Button.css';
 import clipboardStyles from '@launchpad-ui/clipboard/styles/Clipboard.css';
-import formStyles from '@launchpad-ui/form/styles/styles.css';
+import formStyles from '@launchpad-ui/form/styles/Form.css';
 import iconStyles from '@launchpad-ui/icons/styles/Icon.css';
 import lozengeStyles from '@launchpad-ui/lozenge/styles/Lozenge.css';
 import menuStyles from '@launchpad-ui/menu/styles/Menu.css';
