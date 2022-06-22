@@ -7,7 +7,7 @@ import { Close, IconSize } from '@launchpad-ui/icons';
 import { FocusScope } from '@react-aria/focus';
 import cx from 'clsx';
 import { createFocusTrap } from 'focus-trap';
-import { m } from 'framer-motion';
+import { LazyMotion, domAnimation, m } from 'framer-motion';
 import { defer } from 'lodash-es';
 import noScroll from 'no-scroll';
 import { Component, createRef } from 'react';
@@ -141,41 +141,45 @@ class Modal extends Component<ModalProps> {
     const modalClasses = cx('Modal', className);
 
     return (
-      <div ref={this.rootRef} className={modalClasses}>
-        <m.div
-          initial="hidden"
-          animate="visible"
-          variants={overlay}
-          transition={{ duration: 0.15 }}
-          onMouseDown={this.handleOverlayClick}
-        >
-          <FocusScope autoFocus restoreFocus>
-            <m.div
-              initial="hidden"
-              animate="visible"
-              variants={content[transition]}
-              role="dialog"
-              aria-labelledby={modalLabelID}
-              aria-modal
-              className="Modal-content"
-              ref={this.scrollRef}
-            >
-              {withCloseButton && (
-                <Button
-                  aria-label="close"
-                  size={ButtonSize.SMALL}
-                  type={ButtonType.ICON}
-                  icon={<Close size={IconSize.MEDIUM} />}
-                  className="Modal-close"
-                  onClick={onCancel}
-                  testId="Modal-close"
-                />
-              )}
-              {children}
-            </m.div>
-          </FocusScope>
-        </m.div>
-      </div>
+      <LazyMotion strict features={domAnimation}>
+        <div ref={this.rootRef} className={modalClasses}>
+          <m.div
+            initial="hidden"
+            animate="visible"
+            variants={overlay}
+            transition={{ duration: 0.15 }}
+            role="presentation"
+            className="Modal-overlay"
+            onMouseDown={this.handleOverlayClick}
+          >
+            <FocusScope autoFocus restoreFocus>
+              <m.div
+                initial="hidden"
+                animate="visible"
+                variants={content[transition]}
+                role="dialog"
+                aria-labelledby={modalLabelID}
+                aria-modal
+                className="Modal-content"
+                ref={this.scrollRef}
+              >
+                {withCloseButton && (
+                  <Button
+                    aria-label="close"
+                    size={ButtonSize.SMALL}
+                    type={ButtonType.ICON}
+                    icon={<Close size={IconSize.MEDIUM} />}
+                    className="Modal-close"
+                    onClick={onCancel}
+                    testId="Modal-close"
+                  />
+                )}
+                {children}
+              </m.div>
+            </FocusScope>
+          </m.div>
+        </div>
+      </LazyMotion>
     );
   }
 

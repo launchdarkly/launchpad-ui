@@ -1,7 +1,5 @@
 :root {
-  --duration: 1500ms;
   --gap: 1rem;
-  --arrow-gap: 0.5rem;
 }
 
 .Popover {

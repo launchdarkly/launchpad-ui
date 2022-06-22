@@ -7,7 +7,7 @@ import { arrow, computePosition, flip, offset as floatOffset, shift } from '@flo
 import { Overlay } from '@launchpad-ui/overlay';
 import { FocusScope } from '@react-aria/focus';
 import cx from 'clsx';
-import { m } from 'framer-motion';
+import { LazyMotion, domAnimation, m } from 'framer-motion';
 import { isFunction, isNil } from 'lodash-es';
 import {
   Children,
@@ -246,20 +246,22 @@ class Popover extends withTimeouts<PopoverProps>(Component) {
     }
 
     const popoverContent = (
-      <m.div
-        transition={{ duration: 0.15 }}
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        className={cx(
-          'Popover-content',
-          {
-            'Popover-content--restrict-width': restrictWidth,
-          },
-          popoverContentClassName
-        )}
-      >
-        {restrictHeight ? <div className="Popover-scroller">{content}</div> : content}
-      </m.div>
+      <LazyMotion strict features={domAnimation}>
+        <m.div
+          transition={{ duration: 0.15 }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          className={cx(
+            'Popover-content',
+            {
+              'Popover-content--restrict-width': restrictWidth,
+            },
+            popoverContentClassName
+          )}
+        >
+          {restrictHeight ? <div className="Popover-scroller">{content}</div> : content}
+        </m.div>
+      </LazyMotion>
     );
 
     return (
