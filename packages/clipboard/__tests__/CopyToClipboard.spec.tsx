@@ -65,8 +65,8 @@ describe('CopyToClipboard', () => {
   it('shows the confirmation tooltip when clicked', async () => {
     render(createComponent({ shouldOnlyShowTooltipAfterCopy: true }));
     const user = userEvent.setup();
+    await user.click(screen.getByRole('button'));
     await waitFor(async () => {
-      await user.click(screen.getByRole('button'));
       expect(await screen.findByText('Copied!')).toBeVisible();
     });
   });
@@ -75,8 +75,8 @@ describe('CopyToClipboard', () => {
     const FAKE_CUSTOM_COPIED_TEXT = 'Fake custom text';
     render(createComponent({ customCopiedText: FAKE_CUSTOM_COPIED_TEXT }));
     const user = userEvent.setup();
+    await user.click(screen.getByRole('button'));
     await waitFor(async () => {
-      await user.click(screen.getByRole('button'));
       expect(await screen.findByText(FAKE_CUSTOM_COPIED_TEXT)).toBeVisible();
     });
   });

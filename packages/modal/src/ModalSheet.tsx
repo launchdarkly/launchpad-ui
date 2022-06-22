@@ -2,7 +2,7 @@ import { Progress } from '@launchpad-ui/progress';
 import cx from 'clsx';
 import { Suspense } from 'react';
 
-import { ModalTransition } from './ModalTransition';
+import { Modal } from './Modal';
 import { Portal } from './Portal';
 import './styles/Modal.css';
 
@@ -27,9 +27,9 @@ const ModalSheet = ({
 
   return (
     <Portal className={classes}>
-      <ModalTransition {...props} transition="slideRight" withCloseButton={withCloseButton}>
+      <Modal {...props} transition="slideRight" withCloseButton={withCloseButton}>
         <Suspense fallback={<Progress />}>{children}</Suspense>
-      </ModalTransition>
+      </Modal>
     </Portal>
   );
 };

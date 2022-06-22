@@ -1,7 +1,5 @@
 :root {
-  --duration: 150ms;
   --gap: 1rem;
-  --arrow-gap: 0.5rem;
 }
 
 .Popover {
@@ -61,30 +59,6 @@
 
 .Popover[data-popover-placement^='right'] {
   padding-left: var(--gap);
-}
-
-/* Transition */
-
-.Popover.Popover-appear {
-  opacity: 0;
-  visibility: hidden;
-}
-
-.Popover.Popover-appear.Popover-appear-active {
-  opacity: 1;
-  visibility: visible;
-  transition: visibility var(--duration), opacity var(--duration) ease-out;
-}
-
-.Popover.Popover-enter {
-  opacity: 0;
-  visibility: hidden;
-}
-
-.Popover.Popover-enter.Popover-enter-active {
-  opacity: 1;
-  visibility: visible;
-  transition: visibility var(--duration), opacity var(--duration) ease-out;
 }
 
 #arrow,
