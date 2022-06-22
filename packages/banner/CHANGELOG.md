@@ -1,5 +1,17 @@
 # @launchpad-ui/banner
 
+## 0.2.0
+
+### Minor Changes
+
+- [#138](https://github.com/launchdarkly/launchpad-ui/pull/138) [`7918749`](https://github.com/launchdarkly/launchpad-ui/commit/79187498674a2218102f2835e58d7a735129d4f4) Thanks [@chasedarkly](https://github.com/chasedarkly)! - Move stylesheets to styles folder in src for more consistency across packages
+
+### Patch Changes
+
+- Updated dependencies [[`982ce37`](https://github.com/launchdarkly/launchpad-ui/commit/982ce37db3605f091a5689a245e4517f63b67524)]:
+  - @launchpad-ui/icons@0.2.0
+  - @launchpad-ui/alert@0.1.8
+
 ## 0.1.3
 
 ### Patch Changes

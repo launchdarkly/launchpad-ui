@@ -1,5 +1,16 @@
 # @launchpad-ui/notification
 
+## 0.1.5
+
+### Patch Changes
+
+- [#137](https://github.com/launchdarkly/launchpad-ui/pull/137) [`735ebd5`](https://github.com/launchdarkly/launchpad-ui/commit/735ebd5ac2983af54fe1e55ced68435f432476cf) Thanks [@Niznikr](https://github.com/Niznikr)! - Replace react-spring with framer-motion:
+
+  - Remove `ModalTransition` and use `Modal` instead
+
+- Updated dependencies [[`982ce37`](https://github.com/launchdarkly/launchpad-ui/commit/982ce37db3605f091a5689a245e4517f63b67524)]:
+  - @launchpad-ui/icons@0.2.0
+
 ## 0.1.4
 
 ### Patch Changes
