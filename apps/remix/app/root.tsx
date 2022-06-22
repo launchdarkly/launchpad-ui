@@ -13,22 +13,24 @@ import {
 import launchpadStyles from '@launchpad-ui/tokens/index.css';
 import globalStyles from './styles/global.css';
 
+// plop start imports
+import alertStyles from '@launchpad-ui/alert/styles/Alert.css';
+import bannerStyles from '@launchpad-ui/banner/styles.css';
 import buttonStyles from '@launchpad-ui/button/styles/Button.css';
+import clipboardStyles from '@launchpad-ui/clipboard/styles.css';
+import formStyles from '@launchpad-ui/form/styles/styles.css';
 import iconStyles from '@launchpad-ui/icons/styles.css';
 import lozengeStyles from '@launchpad-ui/lozenge/styles.css';
-import alertStyles from '@launchpad-ui/alert/styles/Alert.css';
-import toggleStyles from '@launchpad-ui/toggle/styles.css';
-import progressStyles from '@launchpad-ui/progress/styles.css';
-import tabListStyles from '@launchpad-ui/tab-list/styles.css';
-import modalStyles from '@launchpad-ui/modal/styles/Modal.css';
-import promptStyles from '@launchpad-ui/modal/styles/Prompt.css';
-import popoverStyles from '@launchpad-ui/popover/styles.css';
-import tooltipStyles from '@launchpad-ui/tooltip/styles.css';
-import notificationStyles from '@launchpad-ui/notification/styles/Notification.css';
-import bannerStyles from '@launchpad-ui/banner/styles.css';
-import clipboardStyles from '@launchpad-ui/clipboard/styles.css';
 import menuStyles from '@launchpad-ui/menu/styles.css';
-import formStyles from '@launchpad-ui/form/styles/styles.css';
+import modalStyles from '@launchpad-ui/modal/styles/Modal.css';
+import notificationStyles from '@launchpad-ui/notification/styles/Notification.css';
+import popoverStyles from '@launchpad-ui/popover/styles.css';
+import progressStyles from '@launchpad-ui/progress/styles.css';
+import promptStyles from '@launchpad-ui/modal/styles/Prompt.css';
+import tabListStyles from '@launchpad-ui/tab-list/styles.css';
+import toggleStyles from '@launchpad-ui/toggle/styles.css';
+import tooltipStyles from '@launchpad-ui/tooltip/styles.css';
+// plop end imports
 
 export const links: LinksFunction = () => {
   return [

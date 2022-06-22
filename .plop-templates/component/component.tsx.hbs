@@ -1,0 +1,19 @@
+import cx from 'clsx';
+
+import './styles/{{pascalCase name}}.css';
+
+type {{pascalCase name}}Props = {
+  className?: string;
+  children: React.ReactNode;
+};
+
+const {{pascalCase name}} = ({ children, className }: {{pascalCase name}}Props) => {
+  return (
+    <div className={cx('{{pascalCase name}}', className)}>
+      <span>{children}</span>
+    </div>
+  );
+};
+
+export { {{pascalCase name}} };
+export type { {{pascalCase name}}Props };

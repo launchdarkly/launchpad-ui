@@ -1,0 +1,18 @@
+import { render, screen } from '@testing-library/react';
+import { axe } from 'jest-axe';
+import { it, expect, describe } from 'vitest';
+
+import { {{pascalCase name}} } from '../src';
+
+describe('{{pascalCase name}}', () => {
+  it('renders', () => {
+    render(<{{pascalCase name}}>An important message</{{pascalCase name}}>);
+    expect(screen.getByText('An important message')).toBeInTheDocument();
+  });
+
+  it('is accessible', async () => {
+    const { container } = render(<{{pascalCase name}}>An important message</{{pascalCase name}}>);
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
+  });
+});
