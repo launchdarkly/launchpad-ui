@@ -15,20 +15,20 @@ import globalStyles from './styles/global.css';
 
 // plop start imports
 import alertStyles from '@launchpad-ui/alert/styles/Alert.css';
-import bannerStyles from '@launchpad-ui/banner/styles.css';
+import bannerStyles from '@launchpad-ui/banner/styles/Banner.css';
 import buttonStyles from '@launchpad-ui/button/styles/Button.css';
 import clipboardStyles from '@launchpad-ui/clipboard/styles/Clipboard.css';
 import formStyles from '@launchpad-ui/form/styles/styles.css';
 import iconStyles from '@launchpad-ui/icons/styles/Icon.css';
-import lozengeStyles from '@launchpad-ui/lozenge/styles.css';
+import lozengeStyles from '@launchpad-ui/lozenge/styles/Lozenge.css';
 import menuStyles from '@launchpad-ui/menu/styles/Menu.css';
 import modalStyles from '@launchpad-ui/modal/styles/Modal.css';
 import notificationStyles from '@launchpad-ui/notification/styles/Notification.css';
-import popoverStyles from '@launchpad-ui/popover/styles.css';
-import progressStyles from '@launchpad-ui/progress/styles.css';
+import popoverStyles from '@launchpad-ui/popover/styles/Popover.css';
+import progressStyles from '@launchpad-ui/progress/styles/Progress.css';
 import promptStyles from '@launchpad-ui/modal/styles/Prompt.css';
 import tabListStyles from '@launchpad-ui/tab-list/styles/TabList.css';
-import toggleStyles from '@launchpad-ui/toggle/styles.css';
+import toggleStyles from '@launchpad-ui/toggle/styles/Toggle.css';
 import tooltipStyles from '@launchpad-ui/tooltip/styles/Tooltip.css';
 // plop end imports
 

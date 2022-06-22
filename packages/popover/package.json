@@ -21,7 +21,7 @@
       "require": "./dist/index.js"
     },
     "./package.json": "./package.json",
-    "./styles.css": "./dist/styles.css"
+    "./styles/*": "./dist/styles/*"
   },
   "source": "src/index.ts",
   "scripts": {

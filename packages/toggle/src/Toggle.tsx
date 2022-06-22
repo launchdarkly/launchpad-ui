@@ -4,7 +4,7 @@ import { useToggleState } from '@react-stately/toggle';
 import cx from 'clsx';
 import { useRef } from 'react';
 
-import './styles.css';
+import './styles/Toggle.css';
 
 type ToggleProps = {
   /**

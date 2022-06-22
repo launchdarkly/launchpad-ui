@@ -4,7 +4,7 @@ import { Button, ButtonType } from '@launchpad-ui/button';
 import { Close, IconSize, KindIcon } from '@launchpad-ui/icons';
 import cx from 'clsx';
 
-import './styles.css';
+import './styles/Banner.css';
 
 type BannerProps = {
   kind: AlertKind;
