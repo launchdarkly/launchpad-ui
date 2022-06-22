@@ -7,7 +7,7 @@ import { arrow, computePosition, flip, offset as floatOffset, shift } from '@flo
 import { Overlay } from '@launchpad-ui/overlay';
 import { FocusScope } from '@react-aria/focus';
 import cx from 'clsx';
-import { LazyMotion, domAnimation, m } from 'framer-motion';
+import { LazyMotion, m } from 'framer-motion';
 import { isFunction, isNil } from 'lodash-es';
 import {
   Children,
@@ -22,6 +22,8 @@ import { v4 } from 'uuid';
 
 import './styles.css';
 import { withTimeouts } from './withTimeouts';
+
+const loadFeatures = () => import('./features').then((res) => res.default);
 
 type Offset = OffsetOptions;
 
@@ -246,7 +248,7 @@ class Popover extends withTimeouts<PopoverProps>(Component) {
     }
 
     const popoverContent = (
-      <LazyMotion strict features={domAnimation}>
+      <LazyMotion strict features={loadFeatures}>
         <m.div
           transition={{ duration: 0.15 }}
           initial={{ opacity: 0 }}

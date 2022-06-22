@@ -1,10 +1,12 @@
 import type { NotificationRecord } from './types';
 
 import cx from 'clsx';
-import { AnimatePresence, LazyMotion, domAnimation, m } from 'framer-motion';
+import { AnimatePresence, LazyMotion, m } from 'framer-motion';
 
 import { Notification } from './Notification';
 import './styles/NotificationCenter.css';
+
+const loadFeatures = () => import('./features').then((res) => res.default);
 
 type NotificationCenterProps = {
   className?: string;
@@ -16,7 +18,7 @@ const NotificationCenter = ({ notifications, onDismiss, className }: Notificatio
   const classes = cx('NotificationCenter', className);
 
   return (
-    <LazyMotion strict features={domAnimation}>
+    <LazyMotion strict features={loadFeatures}>
       <div className={classes}>
         <AnimatePresence initial={false}>
           {notifications.map((item) => (

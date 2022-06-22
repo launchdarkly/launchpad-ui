@@ -7,7 +7,7 @@ import { Close, IconSize } from '@launchpad-ui/icons';
 import { FocusScope } from '@react-aria/focus';
 import cx from 'clsx';
 import { createFocusTrap } from 'focus-trap';
-import { LazyMotion, domAnimation, m } from 'framer-motion';
+import { LazyMotion, m } from 'framer-motion';
 import { defer } from 'lodash-es';
 import noScroll from 'no-scroll';
 import { Component, createRef } from 'react';
@@ -33,6 +33,8 @@ const content: { [name: string]: Variants } = {
     },
   },
 };
+
+const loadFeatures = () => import('./features').then((res) => res.default);
 
 type ModalProps = {
   children?: React.ReactNode;
@@ -141,7 +143,7 @@ class Modal extends Component<ModalProps> {
     const modalClasses = cx('Modal', className);
 
     return (
-      <LazyMotion strict features={domAnimation}>
+      <LazyMotion strict features={loadFeatures}>
         <div ref={this.rootRef} className={modalClasses}>
           <m.div
             initial="hidden"
