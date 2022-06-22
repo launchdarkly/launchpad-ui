@@ -4,10 +4,10 @@ import type { ComponentStoryObj } from '@storybook/react';
 import { Button } from '@launchpad-ui/button';
 import { useState } from '@storybook/client-api';
 
-import { ModalBody, ModalFooter, ModalHeader, ModalSheet, ModalTransition, Prompt } from '../src';
+import { Modal, ModalBody, ModalFooter, ModalHeader, ModalSheet, Prompt } from '../src';
 
 export default {
-  component: ModalTransition,
+  component: Modal,
   subcomponents: { ModalBody, ModalFooter, ModalHeader, ModalSheet, Prompt },
   title: 'Components/Modal',
   description: 'Modals presents users information and actions over a page.',
@@ -18,7 +18,7 @@ export default {
   },
 };
 
-type Story = ComponentStoryObj<typeof ModalTransition>;
+type Story = ComponentStoryObj<typeof Modal>;
 
 export const Default: Story = {
   render: () => {
@@ -28,7 +28,7 @@ export const Default: Story = {
       <div style={{ width: '100vw', height: '100vh' }}>
         {button}
         <Prompt>
-          <ModalTransition
+          <Modal
             transition="pop"
             withCloseButton
             cancelWithOverlayClick
@@ -39,7 +39,7 @@ export const Default: Story = {
             <ModalFooter>
               <Button onClick={() => setShow(false)}>Cancel</Button>
             </ModalFooter>
-          </ModalTransition>
+          </Modal>
         </Prompt>
       </div>
     ) : (
