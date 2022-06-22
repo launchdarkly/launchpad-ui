@@ -2,7 +2,7 @@ import type { ChangeEvent } from 'react';
 
 import { forwardRef } from 'react';
 
-import './styles.css';
+import './styles/Menu.css';
 
 type MenuSearchProps = {
   ariaLabel?: string;

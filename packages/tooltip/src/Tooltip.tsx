@@ -5,7 +5,7 @@ import { Popover } from '@launchpad-ui/popover';
 import cx from 'clsx';
 import { forwardRef } from 'react';
 
-import './styles.css';
+import './styles/Tooltip.css';
 
 type TooltipProps = {
   isOpen?: boolean;
