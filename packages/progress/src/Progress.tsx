@@ -2,7 +2,7 @@ import cx from 'clsx';
 import { clamp } from 'lodash-es';
 
 import { DelayedIndicator } from './DelayedIndicator';
-import './styles.css';
+import './styles/Progress.css';
 
 enum ProgressSize {
   Small = 'small',

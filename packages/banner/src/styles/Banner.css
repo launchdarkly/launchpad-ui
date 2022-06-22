@@ -1,4 +1,4 @@
-@import '../../tokens/dist/media-queries.css';
+@import '../../../tokens/dist/media-queries.css';
 
 :root {
   --reskin-striped-base: repeating-linear-gradient(

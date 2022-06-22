@@ -20,7 +20,7 @@ import {
 } from 'react';
 import { v4 } from 'uuid';
 
-import './styles.css';
+import './styles/Popover.css';
 import { withTimeouts } from './withTimeouts';
 
 type Offset = OffsetOptions;

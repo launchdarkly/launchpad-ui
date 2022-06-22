@@ -1,6 +1,6 @@
 import cx from 'clsx';
 
-import './styles.css';
+import './styles/Lozenge.css';
 import { LozengeKind, LozengeSize } from './types';
 
 type LozengeProps = {
