@@ -35,6 +35,7 @@ backround support in CollapsibleAlert */
   background-color: transparent;
   border: hsl(0 0% 0% / 0);
   border-radius: var(--border-radius);
+  cursor: pointer;
 
   &:focus {
     outline: 1px solid var(--CollapsibleAlert-button-color-outline-focus);
@@ -72,7 +73,7 @@ https://www.scottohara.me/blog/2017/04/14/inclusively-hidden.html
   border-radius: 0;
   margin-top: 0;
   visibility: hidden;
-  overflow: hidden;
+  overflow: auto;
   max-height: 0;
   opacity: 0;
   transform: translate3d(0, -1rem, 0);
