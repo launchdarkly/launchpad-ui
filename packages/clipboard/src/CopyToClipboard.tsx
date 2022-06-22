@@ -3,7 +3,7 @@ import { Tooltip } from '@launchpad-ui/tooltip';
 import { announce } from '@react-aria/live-announcer';
 import { useRef, useState } from 'react';
 
-import './styles.css';
+import './styles/Clipboard.css';
 
 type CopyToClipboardProps = {
   children: React.ReactNode;

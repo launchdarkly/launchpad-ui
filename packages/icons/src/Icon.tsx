@@ -4,7 +4,7 @@ import cx from 'clsx';
 import { Children, cloneElement, isValidElement, useEffect, useRef } from 'react';
 import { v4 } from 'uuid';
 
-import './styles.css';
+import './styles/Icon.css';
 
 type IconProps = Omit<React.HTMLProps<HTMLSpanElement>, 'size'> & {
   name?: string;
