@@ -41,7 +41,7 @@ module.exports = (plop) => {
       },
       {
         type: 'add',
-        path: 'packages/{{dashCase name}}/tests/{{pascalCase name}}.spec.tsx',
+        path: 'packages/{{dashCase name}}/__tests__/{{pascalCase name}}.spec.tsx',
         templateFile: '.plop-templates/component/spec.tsx.hbs',
       },
       {
