@@ -91,14 +91,14 @@ module.exports = (plop) => {
       },
       {
         path: 'apps/remix/app/root.tsx',
-        pattern: /(Launchpad start imports)/g,
+        pattern: /(plop start imports)/g,
         template:
           "$1\nimport {{camelCase name}}Styles from '@launchpad-ui/{{dashCase name}}/styles/{{pascalCase name}}.css';",
         type: 'modify',
         transform: (file) =>
           sortModification(file, {
-            openPatternStr: 'Launchpad start imports',
-            closePatternStr: 'Launchpad end imports',
+            openPatternStr: 'plop start imports',
+            closePatternStr: 'plop end imports',
           }),
       },
       {
@@ -107,21 +107,16 @@ module.exports = (plop) => {
           /({ rel: 'stylesheet', href: [^\s]+ },\n)(?!.*({ rel: 'stylesheet', href: [^\s]+ },\n))/g,
         template: "$1    { rel: 'stylesheet', href: {{camelCase name}}Styles },\n",
         type: 'modify',
-        // transform: (file) =>
-        //   sortModification(file, {
-        //     openPatternStr: 'Launchpad start links',
-        //     closePatternStr: 'Launchpad end links',
-        //   }),
       },
       {
         path: 'apps/remix/app/data.server.ts',
-        pattern: /(Launchpad start components)/g,
+        pattern: /(plop start components)/g,
         template: "$1\n    { to: 'components/{{dashCase name}}', name: '{{pascalCase name}}' },",
         type: 'modify',
         transform: (file) =>
           sortModification(file, {
-            openPatternStr: 'Launchpad start components',
-            closePatternStr: 'Launchpad end components',
+            openPatternStr: 'plop start components',
+            closePatternStr: 'plop end components',
           }),
       },
     ],

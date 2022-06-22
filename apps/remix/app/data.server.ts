@@ -2,7 +2,7 @@ export type Component = { name: string; to: string };
 
 export async function getComponents() {
   return [
-    // Launchpad start components
+    // plop start components
     { to: 'components/alert', name: 'Alert' },
     { to: 'components/banner', name: 'Banner' },
     { to: 'components/button', name: 'Button' },
@@ -19,6 +19,6 @@ export async function getComponents() {
     { to: 'components/tab-list', name: 'TabList' },
     { to: 'components/toggle', name: 'Toggle' },
     { to: 'components/tooltip', name: 'Tooltip' },
-    // Launchpad end components
+    // plop end components
   ];
 }

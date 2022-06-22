@@ -13,7 +13,7 @@ import {
 import launchpadStyles from '@launchpad-ui/tokens/index.css';
 import globalStyles from './styles/global.css';
 
-// Launchpad start imports
+// plop start imports
 import alertStyles from '@launchpad-ui/alert/styles/Alert.css';
 import bannerStyles from '@launchpad-ui/banner/styles.css';
 import buttonStyles from '@launchpad-ui/button/styles/Button.css';
@@ -30,7 +30,7 @@ import promptStyles from '@launchpad-ui/modal/styles/Prompt.css';
 import tabListStyles from '@launchpad-ui/tab-list/styles.css';
 import toggleStyles from '@launchpad-ui/toggle/styles.css';
 import tooltipStyles from '@launchpad-ui/tooltip/styles.css';
-// Launchpad end imports
+// plop end imports
 
 export const links: LinksFunction = () => {
   return [
