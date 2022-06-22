@@ -1,5 +1,11 @@
 # @launchpad-ui/icons
 
+## 0.2.0
+
+### Minor Changes
+
+- [#139](https://github.com/launchdarkly/launchpad-ui/pull/139) [`982ce37`](https://github.com/launchdarkly/launchpad-ui/commit/982ce37db3605f091a5689a245e4517f63b67524) Thanks [@chasedarkly](https://github.com/chasedarkly)! - Move stylesheets to styles folder in src for more consistency across packages
+
 ## 0.1.6
 
 ### Patch Changes

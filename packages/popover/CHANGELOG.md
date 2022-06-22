@@ -1,5 +1,20 @@
 # @launchpad-ui/popover
 
+## 0.2.0
+
+### Minor Changes
+
+- [#138](https://github.com/launchdarkly/launchpad-ui/pull/138) [`7918749`](https://github.com/launchdarkly/launchpad-ui/commit/79187498674a2218102f2835e58d7a735129d4f4) Thanks [@chasedarkly](https://github.com/chasedarkly)! - Move stylesheets to styles folder in src for more consistency across packages
+
+### Patch Changes
+
+- [#137](https://github.com/launchdarkly/launchpad-ui/pull/137) [`735ebd5`](https://github.com/launchdarkly/launchpad-ui/commit/735ebd5ac2983af54fe1e55ced68435f432476cf) Thanks [@Niznikr](https://github.com/Niznikr)! - Replace react-spring with framer-motion:
+
+  - Remove `ModalTransition` and use `Modal` instead
+
+- Updated dependencies []:
+  - @launchpad-ui/overlay@0.1.6
+
 ## 0.1.4
 
 ### Patch Changes
