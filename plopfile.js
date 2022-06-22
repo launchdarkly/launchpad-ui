@@ -103,14 +103,15 @@ module.exports = (plop) => {
       },
       {
         path: 'apps/remix/app/root.tsx',
-        pattern: /(Launchpad start links)/g,
-        template: "$1\n    { rel: 'stylesheet', href: {{camelCase name}}Styles },",
-        type: 'modify',
-        transform: (file) =>
-          sortModification(file, {
-            openPatternStr: 'Launchpad start links',
-            closePatternStr: 'Launchpad end links',
-          }),
+        pattern:
+          /({ rel: 'stylesheet', href: [^\s]+ },\n)(?!.*({ rel: 'stylesheet', href: [^\s]+ },\n))/g,
+        template: "    { rel: 'stylesheet', href: {{camelCase name}}Styles },\n",
+        type: 'append',
+        // transform: (file) =>
+        //   sortModification(file, {
+        //     openPatternStr: 'Launchpad start links',
+        //     closePatternStr: 'Launchpad end links',
+        //   }),
       },
       {
         path: 'apps/remix/app/data.server.ts',

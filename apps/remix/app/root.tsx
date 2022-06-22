@@ -34,26 +34,24 @@ import tooltipStyles from '@launchpad-ui/tooltip/styles.css';
 
 export const links: LinksFunction = () => {
   return [
-    // Launchpad start links
-    { rel: 'stylesheet', href: alertStyles },
-    { rel: 'stylesheet', href: bannerStyles },
-    { rel: 'stylesheet', href: buttonStyles },
-    { rel: 'stylesheet', href: clipboardStyles },
-    { rel: 'stylesheet', href: formStyles },
-    { rel: 'stylesheet', href: globalStyles },
-    { rel: 'stylesheet', href: iconStyles },
     { rel: 'stylesheet', href: launchpadStyles },
+    { rel: 'stylesheet', href: globalStyles },
+    { rel: 'stylesheet', href: buttonStyles },
+    { rel: 'stylesheet', href: iconStyles },
     { rel: 'stylesheet', href: lozengeStyles },
-    { rel: 'stylesheet', href: menuStyles },
-    { rel: 'stylesheet', href: modalStyles },
-    { rel: 'stylesheet', href: notificationStyles },
-    { rel: 'stylesheet', href: popoverStyles },
-    { rel: 'stylesheet', href: progressStyles },
-    { rel: 'stylesheet', href: promptStyles },
-    { rel: 'stylesheet', href: tabListStyles },
+    { rel: 'stylesheet', href: alertStyles },
     { rel: 'stylesheet', href: toggleStyles },
+    { rel: 'stylesheet', href: progressStyles },
+    { rel: 'stylesheet', href: tabListStyles },
+    { rel: 'stylesheet', href: modalStyles },
+    { rel: 'stylesheet', href: promptStyles },
+    { rel: 'stylesheet', href: popoverStyles },
     { rel: 'stylesheet', href: tooltipStyles },
-    // Launchpad end links
+    { rel: 'stylesheet', href: notificationStyles },
+    { rel: 'stylesheet', href: bannerStyles },
+    { rel: 'stylesheet', href: clipboardStyles },
+    { rel: 'stylesheet', href: menuStyles },
+    { rel: 'stylesheet', href: formStyles },
   ];
 };
 
