@@ -1,7 +1,7 @@
 import type { NotificationRecord } from './types';
 
-import { animated, useTransition } from '@react-spring/web';
 import cx from 'clsx';
+import { AnimatePresence, m } from 'framer-motion';
 
 import { Notification } from './Notification';
 import './styles/NotificationCenter.css';
@@ -13,35 +13,30 @@ type NotificationCenterProps = {
 };
 
 const NotificationCenter = ({ notifications, onDismiss, className }: NotificationCenterProps) => {
-  const notificationTransitions = {
-    from: { transform: 'translate3d(100%,0,0)', opacity: 0 },
-    enter: { transform: 'translate3d(0%,0,0)', opacity: 1 },
-    leave: { transform: 'translate3d(100%,0,0)', opacity: 0 },
-    config: {
-      tension: 270,
-    },
-  };
-
-  const transitions = useTransition(notifications, {
-    keys: (item) => item._id,
-    ...notificationTransitions,
-  });
-
   const classes = cx('NotificationCenter', className);
 
   return (
     <div className={classes}>
-      {transitions((style, item) => (
-        <animated.div className="NotificationAnimatedDiv" style={style}>
-          <Notification
-            level={item.level}
-            ttl={item.ttl}
-            message={item.message}
-            details={item.details}
-            onDismiss={() => onDismiss(item._id)}
-          />
-        </animated.div>
-      ))}
+      <AnimatePresence initial={false}>
+        {notifications.map((item) => (
+          <m.div
+            className="NotificationContainer"
+            key={item._id}
+            transition={{ type: 'spring', delay: 0.15, duration: 0.45 }}
+            initial={{ x: '100%', opacity: 0 }}
+            animate={{ x: '0%', opacity: 1 }}
+            exit={{ x: '100%', opacity: 0 }}
+          >
+            <Notification
+              level={item.level}
+              ttl={item.ttl}
+              message={item.message}
+              details={item.details}
+              onDismiss={() => onDismiss(item._id)}
+            />
+          </m.div>
+        ))}
+      </AnimatePresence>
     </div>
   );
 };

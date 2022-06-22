@@ -316,29 +316,4 @@ will zero out that positioning adjustment for now */
     color: var(--Notification-copyDetailsButton-color-text);
   }
 }
-
-/* ------- TRANSITIONS ------- */
-
-.Notification-enter {
-  opacity: 0;
-  transform: translate3d(40%, 0, 0);
-  transition: transform 100ms, opacity 100ms;
-}
-
-.Notification-enter.Notification-enter-active {
-  transform: translate3d(0, 0, 0);
-  opacity: 1;
-}
-
-.Notification-leave {
-  opacity: 1;
-  transform: translate3d(0, 0, 0);
-  transition: transform 100ms, opacity 100ms;
-}
-
-.Notification-leave.Notification-leave-active {
-  opacity: 0;
-  transform: translate3d(40%, 0, 0);
-}
-
 /* stylelint-enable no-descending-specificity */

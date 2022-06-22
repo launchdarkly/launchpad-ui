@@ -15,6 +15,6 @@
   z-index: var(--NotificationCenter-z-index);
 }
 
-.NotificationCenter .NotificationAnimatedDiv + .NotificationAnimatedDiv {
+.NotificationCenter .NotificationContainer + .NotificationContainer {
   margin-top: 5px;
 }
