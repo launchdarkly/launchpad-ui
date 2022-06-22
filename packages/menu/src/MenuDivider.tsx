@@ -1,6 +1,6 @@
 import { SeparatorProps, useSeparator } from '@react-aria/separator';
 
-import './styles.css';
+import './styles/Menu.css';
 
 type MenuDividerProps = SeparatorProps & {
   innerRef?: React.RefObject<HTMLDivElement>;

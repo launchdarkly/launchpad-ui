@@ -1,6 +1,6 @@
 import { forwardRef } from 'react';
 
-import './styles.css';
+import './styles/Menu.css';
 
 type MenuItemListProps = Omit<React.ComponentPropsWithRef<'div'>, 'className'>;
 

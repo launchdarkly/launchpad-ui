@@ -7,7 +7,7 @@ import { useTabListState } from '@react-stately/tabs';
 import cx from 'clsx';
 import { useRef } from 'react';
 
-import './styles.css';
+import './styles/TabList.css';
 
 type TabListProps<T extends string | number> =
   | AriaTabListProps<HTMLDivElement> & {

@@ -1,7 +1,7 @@
 import cx from 'clsx';
 import { forwardRef } from 'react';
 
-import './styles.css';
+import './styles/Menu.css';
 
 type MenuBaseProps = React.ComponentPropsWithRef<'div'>;
 

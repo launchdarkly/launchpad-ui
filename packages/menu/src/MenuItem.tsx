@@ -6,7 +6,7 @@ import { FocusRing } from '@react-aria/focus';
 import cx from 'clsx';
 import { Link } from 'react-router-dom';
 
-import './styles.css';
+import './styles/Menu.css';
 
 // Merge two types and get rid of overlapping definitions
 type Merge<T, U> = Omit<T, keyof U> & U;
