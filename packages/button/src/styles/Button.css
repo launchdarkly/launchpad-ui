@@ -104,6 +104,7 @@
 .Button--icon.Button--default:hover {
   background-color: var(--Button-color-background-default-hover);
   color: var(--Button-color-text-default-hover);
+  box-shadow: var(--Button-box-shadow-hover);
 }
 
 .Button--default:focus {
@@ -138,6 +139,7 @@
 .Button--primary:hover {
   background-color: var(--Button-color-background-primary-hover);
   color: var(--Button-color-text-primary-hover);
+  box-shadow: var(--Button-box-shadow-hover);
 }
 
 .Button--icon.Button--primary {
@@ -149,6 +151,7 @@
 .Button--icon.Button--primary:hover {
   background-color: var(--Button-color-background-primary-focus);
   border: 1px solid var(--Button-color-border-primary-focus);
+  box-shadow: var(--Button-box-shadow-hover);
 }
 
 .Button--borderless,
@@ -212,9 +215,11 @@
 .Button--destructive:hover {
   background-color: var(--Button-color-background-destructive-hover);
   color: var(--Button-color-text-destructive-hover);
+  box-shadow: var(--Button-box-shadow-hover);
 }
 
 .Button--destructive:focus {
+  background-color: var(--Button-color-background-destructive-focus);
   box-shadow: var(--Button-box-shadow-focus);
 }
 
