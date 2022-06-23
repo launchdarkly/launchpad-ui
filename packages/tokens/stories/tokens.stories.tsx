@@ -5,8 +5,15 @@ export default {
   title: 'Tokens/Colors',
 };
 
-const colors = Object.values(tokens.color).map((color) => Object.values(color));
-colors.pop();
+const global = Object.keys(tokens.color)
+  .filter((key) =>
+    ['yellow', 'blue', 'pink', 'cyan', 'purple', 'white', 'gray', 'black'].includes(key)
+  )
+  .reduce((obj, key) => {
+    obj[key] = tokens.color[key];
+    return obj;
+  }, {});
+const colors = Object.values(global).map((color) => Object.values(color));
 const system = Object.values(tokens.color.system).map((color) => Object.values(color));
 
 export const Colors = {
