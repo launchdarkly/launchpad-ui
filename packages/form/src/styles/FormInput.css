@@ -7,8 +7,8 @@
   font-size: 1.3rem;
   font-family: var(--font-family-base);
   line-height: var(--line-height-base);
-  background-color: #fff;
-  color: var(--color-black-300);
+  background-color: var(--color-background-field);
+  color: var(--color-text);
   border: 1px solid var(--color-gray-500);
   border-radius: var(--border-radius);
   transition: all 100ms linear;
@@ -47,7 +47,7 @@ textarea.FormInput:read-only {
 }
 
 input.FormInput::-webkit-autofill {
-  box-shadow: 0 0 0 50px #fff inset;
+  box-shadow: 0 0 0 50px var(--color-background-field) inset;
 }
 
 /* Hide the type=search cancel button in Webkit for consistency */
@@ -85,13 +85,13 @@ input.FormInput--tiny {
 .FormInput.is-focused,
 .FormInput:focus {
   outline: 0;
-  border-color: var(--color-blue-500);
+  border-color: var(--color-focus);
   box-shadow: 0 0 0 3px hsl(231.5 100% 62.5% / 0.1);
 }
 
 .FormInput[readonly],
 .FormInput[readonly]:focus {
-  color: var(--color-gray-700);
+  color: var(--color-text-subtle-primary);
   border-color: var(--color-gray-500);
   box-shadow: none;
 }
@@ -130,7 +130,7 @@ input.FormInput--tiny {
 }
 
 .FormInput-suffixContainer:focus-within {
-  border-color: var(--color-blue-500);
+  border-color: var(--color-focus);
   box-shadow: 0 0 0 3px hsl(231.5 100% 62.5% / 0.1);
 }
 

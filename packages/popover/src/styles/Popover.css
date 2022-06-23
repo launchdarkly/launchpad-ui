@@ -24,7 +24,7 @@
 /* Popover content */
 
 .Popover-content {
-  background: var(--color-white);
+  background: var(--color-background);
   border-radius: var(--border-radius);
   box-shadow: 0 0 0 1px var(--color-gray-200), 0 0 10px var(--color-gray-200);
 
@@ -67,8 +67,8 @@
   width: 10px;
   height: 10px;
   background: inherit;
-  background-color: var(--color-black-300);
-  color: var(--color-black-300);
+  background-color: var(--color-text);
+  color: var(--color-text);
 }
 
 #arrow {

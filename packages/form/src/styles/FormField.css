@@ -1,13 +1,13 @@
 .FormField-hint {
   margin: 0;
   font-size: 1.3rem;
-  color: var(--color-gray-700);
-  fill: var(--color-gray-700);
+  color: var(--color-text-subtle-primary);
+  fill: var(--color-text-subtle-primary);
 }
 
 .Form .FormField .Form-label,
 .Form .FormField .is-invalid .Form-label {
-  color: var(--color-black-300);
+  color: var(--color-text);
 }
 
 .FormField-errorMessage {

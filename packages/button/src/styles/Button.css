@@ -304,7 +304,7 @@
   text-decoration: none;
   background-color: transparent;
   border-color: transparent;
-  color: var(--color-blue-500); /* do we have a different color here by theme? */
+  color: var(--color-link); /* do we have a different color here by theme? */
 }
 
 .Button--link:active {

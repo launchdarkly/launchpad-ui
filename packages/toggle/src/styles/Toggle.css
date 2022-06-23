@@ -3,11 +3,11 @@
   --Toggle-box-shadow-disabled: 0 0 0 1px hsl(216 2.4% 58.6% / 0.7);
   --Toggle-box-shadow-disabled-on: 0 0 0 1px hsl(154 100% 28% / 0.55);
   --Toggle-box-shadow-on: 0 0 0 1px var(--color-system-green-900);
-  --Toggle-color-background: var(--color-gray-100);
+  --Toggle-color-background: var(--color-background-hover);
   --Toggle-color-background-disabled: hsl(0 0% 90% / 0.55);
   --Toggle-color-background-disabled-on: hsl(154 100% 36% / 0.55);
   --Toggle-color-background-on: var(--color-system-green-700);
-  --Toggle-color-text: var(--color-black-300);
+  --Toggle-color-text: var(--color-text);
   --Toggle-color-text-disabled: var(--color-gray-500);
   --Toggle-color-text-disabled-on: var(--color-white);
   --Toggle-color-text-on: var(--color-white);
@@ -16,9 +16,9 @@
   --Toggle-transition-duration: 100ms;
   --Toggle-width: 5.4rem; /* 54px */
   --Toggle-input-box-shadow-focus: 0 0 0 1px var(--color-gray-300), 0 0 0 3px var(--color-white),
-    0 0 0 5px var(--color-blue-500);
+    0 0 0 5px var(--color-focus);
   --Toggle-input-box-shadow-focus-on: 0 0 0 1px var(--color-system-green-800),
-    0 0 0 3px var(--color-white), 0 0 0 5px var(--color-blue-500);
+    0 0 0 3px var(--color-white), 0 0 0 5px var(--color-focus);
   --Toggle-label-font-size: 1.4rem; /* 14px */
   --Toggle-label-text-transform: none;
   --Toggle-labels-transform: translateX(-2.8rem); /* -28px */

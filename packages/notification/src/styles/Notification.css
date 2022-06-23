@@ -40,21 +40,21 @@
   --Notification-color-border-success: var(--reskin-success-green-base);
   --Notification-color-border-warning: var(--reskin-warn-gold-base);
   --Notification-color-border-error: var(--reskin-error-red-base);
-  --Notification-color-text: var(--color-gray-700);
+  --Notification-color-text: var(--color-text-subtle-primary);
   --Notification-closeButton-color-border: var(--color-gray-600);
   --Notification-closeButton-color-fill: var(--color-gray-600);
   --Notification-closeButton-color-text: var(--color-gray-600);
-  --Notification-copyDetailsButton-color-background-default: var(--color-white);
-  --Notification-copyDetailsButton-color-background-default-hover: var(--color-gray-100);
+  --Notification-copyDetailsButton-color-background-default: var(--color-background);
+  --Notification-copyDetailsButton-color-background-default-hover: var(--color-background-hover);
   --Notification-copyDetailsButton-color-background-default-focus: var(--color-white);
-  --Notification-copyDetailsButton-color-background-default-active: var(--color-gray-100);
+  --Notification-copyDetailsButton-color-background-default-active: var(--color-background-hover);
   --Notification-copyDetailsButton-color-border: var(--color-gray-600);
   --Notification-copyDetailsButton-color-boxShadow-1-default-focus: var(--reskin-error-red-light);
   --Notification-copyDetailsButton-color-boxShadow-2-default-focus: var(--color-gray-600);
   --Notification-copyDetailsButton-box-shadow-focus: 0 0 0 2px
       var(--Notification-copyDetailsButton-color-boxShadow-1-default-focus),
     0 0 0 4px var(--Notification-copyDetailsButton-color-boxShadow-2-default-focus);
-  --Notification-copyDetailsButton-color-text: var(--color-black-300);
+  --Notification-copyDetailsButton-color-text: var(--color-text);
   --Notification-detailsExpand-color-text: var(--color-gray-800);
   --Notification-detailsExpand-color-text-active: var(--color-black-200);
 }
@@ -170,7 +170,7 @@
   }
 
   &:active {
-    color: var(--color-black-300);
+    color: var(--color-text);
     box-shadow: none;
     text-decoration: underline;
   }
@@ -219,7 +219,7 @@ will zero out that positioning adjustment for now */
 }
 
 .Notification-details {
-  color: var(--color-gray-700);
+  color: var(--color-text-subtle-primary);
   font-size: var(--osmo-font-size-small);
   font-weight: var(--font-weight-regular);
   line-height: 18px;

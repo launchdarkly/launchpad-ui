@@ -58,7 +58,7 @@
 
 .Form .Form-error {
   background: var(--color-system-red-600);
-  color: #fff;
+  color: var(--color-white);
   font-weight: var(--font-weight-regular);
   padding: 0.7rem 1.4rem;
   border-radius: var(--border-radius);
