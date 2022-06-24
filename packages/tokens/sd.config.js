@@ -104,6 +104,6 @@ StyleDictionary.registerFormat({
       })
       .join(`\n`);
 
-    return fileHeader({ file }) + `:root[data-${theme}] {\n` + tokens + '\n}\n';
+    return fileHeader({ file }) + `:root[data-theme='${theme}'] {\n` + tokens + '\n}\n';
   },
 });

@@ -1,3 +1,5 @@
+import { useState } from 'react';
+
 import '../packages/tokens/dist/index.css';
 import '../packages/tokens/dist/dark.css';
 
@@ -32,11 +34,9 @@ export const globalTypes = {
 
 export const decorators = [
   (StoryFn, { globals, parameters }) => {
-    const theme = globals.theme || parameters.theme;
+    const theme = globals.theme || parameters.theme || 'light';
 
-    theme === 'dark'
-      ? document.documentElement.setAttribute('data-dark', '')
-      : document.documentElement.removeAttribute('data-dark');
+    document.documentElement.setAttribute('data-theme', theme);
 
     return <StoryFn />;
   },
