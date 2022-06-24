@@ -90,17 +90,17 @@ StyleDictionary.registerFormat({
 StyleDictionary.registerFormat({
   name: 'css/variables-themed',
   formatter: function ({ dictionary, file, options }) {
-    const { theme } = options;
+    const { theme, outputReferences } = options;
     const tokens = dictionary.allTokens
       .map((token) => {
-        let value = JSON.stringify(token[theme]);
-        if (dictionary.usesReference(token.original[theme])) {
+        let value = token[theme];
+        if (outputReferences && dictionary.usesReference(token.original[theme])) {
           const refs = dictionary.getReferences(token.original[theme]);
           refs.forEach((ref) => {
-            value = ref.name;
+            value = `var(--${ref.name})`;
           });
         }
-        return `  --${token.name}: var(--${value});`;
+        return `  --${token.name}: ${value};`;
       })
       .join(`\n`);
 
