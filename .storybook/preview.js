@@ -1,4 +1,5 @@
 import '../packages/tokens/dist/index.css';
+import '../packages/tokens/dist/dark.css';
 
 export const parameters = {
   actions: { argTypesRegex: '^on.*' },
@@ -13,3 +14,30 @@ export const parameters = {
     },
   },
 };
+
+export const globalTypes = {
+  theme: {
+    name: 'Theme',
+    description: 'Global theme for components',
+    toolbar: {
+      icon: 'circlehollow',
+      title: 'Theme',
+      items: [
+        { value: 'light', icon: 'circlehollow', title: 'light' },
+        { value: 'dark', icon: 'circle', title: 'dark' },
+      ],
+    },
+  },
+};
+
+export const decorators = [
+  (StoryFn, { globals, parameters }) => {
+    const theme = globals.theme || parameters.theme;
+
+    theme === 'dark'
+      ? document.documentElement.setAttribute('data-dark', '')
+      : document.documentElement.removeAttribute('data-dark');
+
+    return <StoryFn />;
+  },
+];
