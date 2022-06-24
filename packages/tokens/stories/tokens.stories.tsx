@@ -7,7 +7,7 @@ export default {
 
 const global = Object.keys(tokens.color)
   .filter((key) =>
-    ['yellow', 'blue', 'pink', 'cyan', 'purple', 'white', 'gray', 'black'].includes(key)
+    ['black', 'blue', 'cyan', 'gray', 'pink', 'purple', 'white', 'yellow'].includes(key)
   )
   .reduce((obj, key) => {
     obj[key] = tokens.color[key];
@@ -28,7 +28,7 @@ export const Colors = {
                   backgroundColor: token.value,
                   height: '100px',
                   width: '100px',
-                  border: '1px solid rgba(0, 0, 0, 0.1)',
+                  border: '1px solid var(--color-border)',
                 }}
               ></div>
             </li>

@@ -2,6 +2,8 @@
 const StyleDictionary = require('style-dictionary');
 const yaml = require('yaml');
 
+const { fileHeader } = StyleDictionary.formatHelpers;
+
 module.exports = {
   parsers: [
     {
@@ -28,6 +30,15 @@ module.exports = {
           options: {
             outputReferences: true,
           },
+        },
+        {
+          destination: 'dark.css',
+          format: 'css/variables-themed',
+          options: {
+            outputReferences: true,
+            theme: 'dark',
+          },
+          filter: (token) => token.dark && token.attributes.category === `color`,
         },
       ],
     },
@@ -73,5 +84,26 @@ StyleDictionary.registerFormat({
         return `@custom-media --${size} screen and (min-width: ${value});`;
       })
       .join('\n');
+  },
+});
+
+StyleDictionary.registerFormat({
+  name: 'css/variables-themed',
+  formatter: function ({ dictionary, file, options }) {
+    const { theme } = options;
+    const tokens = dictionary.allTokens
+      .map((token) => {
+        let value = JSON.stringify(token[theme]);
+        if (dictionary.usesReference(token.original[theme])) {
+          const refs = dictionary.getReferences(token.original[theme]);
+          refs.forEach((ref) => {
+            value = ref.name;
+          });
+        }
+        return `  --${token.name}: var(--${value});`;
+      })
+      .join(`\n`);
+
+    return fileHeader({ file }) + `:root[data-${theme}] {\n` + tokens + '\n}\n';
   },
 });
