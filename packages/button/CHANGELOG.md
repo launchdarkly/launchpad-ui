@@ -1,5 +1,20 @@
 # @launchpad-ui/button
 
+## 0.2.1
+
+### Patch Changes
+
+- [#146](https://github.com/launchdarkly/launchpad-ui/pull/146) [`e081ce3`](https://github.com/launchdarkly/launchpad-ui/commit/e081ce335848eef3041212964f2e65d72870fbea) Thanks [@Niznikr](https://github.com/Niznikr)! - Add alias tokens:
+
+  - Add alias tokens and use in component styles
+  - Add dark theme custom properties and deliver as `dark.css`
+  - Add theme toggle in Storybook
+
+* [#144](https://github.com/launchdarkly/launchpad-ui/pull/144) [`18e7961`](https://github.com/launchdarkly/launchpad-ui/commit/18e7961b7274ca4843a0d2f3069f79a9a18af235) Thanks [@chasedarkly](https://github.com/chasedarkly)! - Add shadow to hover state, bg color to destructive focus state
+
+* Updated dependencies [[`e081ce3`](https://github.com/launchdarkly/launchpad-ui/commit/e081ce335848eef3041212964f2e65d72870fbea)]:
+  - @launchpad-ui/tokens@0.1.5
+
 ## 0.2.0
 
 ### Minor Changes
