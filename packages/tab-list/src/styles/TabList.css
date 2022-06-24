@@ -1,8 +1,8 @@
 .TabList-list {
   display: flex;
   flex-direction: row;
-  background-color: var(--color-white);
-  border-bottom: 1px solid var(--color-gray-200);
+  background-color: var(--color-background);
+  border-bottom: 1px solid var(--color-border);
 }
 
 .TabList-item {
@@ -11,7 +11,7 @@
   font-size: 1.3rem;
   font-weight: var(--font-weight-medium);
   text-decoration: none;
-  color: var(--color-gray-600);
+  color: var(--color-text-subtle-secondary);
   position: relative;
   cursor: pointer;
   white-space: nowrap;
@@ -19,16 +19,16 @@
 
 .TabList-item:focus {
   outline: none;
-  background-color: var(--color-gray-100);
+  background-color: var(--color-background-hover);
 }
 
 .TabList-item:hover {
   outline: none;
-  background-color: var(--color-gray-100);
+  background-color: var(--color-background-hover);
 }
 
 .TabList-item.is-active {
-  color: var(--color-black-300);
+  color: var(--color-text);
 }
 
 .TabList-item.is-active::after {
@@ -37,7 +37,7 @@
   bottom: -1px;
   left: 0;
   right: 0;
-  background-color: var(--color-blue-500);
+  background-color: var(--color-focus);
   height: 2px;
 }
 
@@ -45,7 +45,7 @@
 .TabList-item[aria-disabled]:hover,
 .TabList-item[aria-disabled]:active {
   cursor: not-allowed;
-  background-color: var(--color-white);
+  background-color: var(--color-background);
   color: var(--color-gray-500);
 }
 

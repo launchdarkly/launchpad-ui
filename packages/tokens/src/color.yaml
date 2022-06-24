@@ -183,3 +183,45 @@ color:
         value: hsl(45.1, 57.4%, 38.6%)
       900:
         value: hsl(45, 57.8%, 32.5%)
+  background:
+    ' ':
+      value: '{ color.white. .value }'
+      dark: '{ color.black. .value }'
+    hover:
+      value: '{ color.gray.100.value }'
+      dark: '{ color.gray.700.value }'
+    active:
+      value: '{ color.gray.200.value }'
+      dark: '{ color.gray.800.value }'
+    field:
+      value: '{ color.white. .value }'
+      dark: '{ color.gray.800.value }'
+  border:
+    value: '{ color.gray.200.value }'
+    dark: '{ color.gray.800.value }'
+  focus:
+    value: '{ color.blue.500.value }'
+  heading:
+    value: '{ color.black.300.value }'
+    dark: '{ color.gray.100.value }'
+  link:
+    ' ':
+      value: '{ color.blue.600.value }'
+      dark: '{ color.white. .value }'
+    active:
+      value: '{ color.purple.600.value }'
+      dark: '{ color.purple.300.value }'
+  text:
+    ' ':
+      value: '{ color.black.300.value }'
+      dark: '{ color.white. .value }'
+    inverse:
+      value: '{ color.white. .value }'
+      dark: '{ color.black.300.value }'
+    subtle:
+      primary:
+        value: '{ color.gray.700.value }'
+        dark: '{ color.gray.300.value }'
+      secondary:
+        value: '{ color.gray.600.value }'
+        dark: '{ color.gray.200.value }'

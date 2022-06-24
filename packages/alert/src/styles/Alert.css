@@ -21,7 +21,7 @@
     0 0 0 4px hsl(0 0% 12.9% / 0.1);
   --Alert-closeButton-icon-box-shadow-active: 0 0 0 1px var(--color-black-200),
     0 0 0 4px hsl(0 0% 12.9% / 0.1);
-  --Alert-closeButton-icon-color-active: var(--color-white);
+  --Alert-closeButton-icon-color-active: var(--color-text-inverse);
   --reskin-success-green-light: var(--color-system-green-200);
   --reskin-success-green-base: var(--color-system-green-700);
   --reskin-info-blue-light: var(--color-blue-200);
@@ -64,7 +64,7 @@
   --Alert-icon-color-error: var(--reskin-error-red-base);
   --Alert-icon-color-striped: var(--color-black-200);
   --Alert-border-radius: var(--reskin-border-radius-6px);
-  --Alert-text-color: var(--color-gray-700);
+  --Alert-text-color: var(--color-text-subtle-primary);
 
   /* LEGACY TOKENS */
   --LEGACY-Alert-info-bg-color: var(--hsl-info-bg-color-alpha10);
@@ -83,7 +83,7 @@
     var(--color-white-100) 40px
   );
   --LEGACY-Alert-striped-color: var(--color-black-200);
-  --LEGACY-border-large: 1px solid var(--color-gray-200);
+  --LEGACY-border-large: 1px solid var(--color-border);
 }
 
 .Alert {
@@ -96,9 +96,9 @@
   font-weight: var(--font-weight-medium);
   line-height: 1.45;
   white-space: normal;
-  background-color: var(--color-white);
+  background-color: var(--color-background);
   color: var(--Alert-text-color);
-  border: var(--border-width-1) solid var(--color-white);
+  border: var(--border-width-1) solid var(--color-border);
   border-radius: var(--Alert-border-radius);
   box-sizing: border-box;
 }
@@ -215,7 +215,7 @@
   }
 
   &:active {
-    color: var(--color-black-300);
+    color: var(--color-text);
     box-shadow: none;
     text-decoration: underline;
   }
@@ -390,7 +390,7 @@
   border-top: var(--LEGACY-border-large);
   border-right: var(--LEGACY-border-large);
   border-bottom: var(--LEGACY-border-large);
-  background-color: var(--color-white);
+  background-color: var(--color-background);
   border-radius: 2px;
 }
 
@@ -401,7 +401,7 @@
 }
 
 .LegacyStyles.Alert-content a {
-  color: var(--color-blue-500);
+  color: var(--color-link);
 
   &:hover {
     text-decoration: none;
@@ -418,7 +418,7 @@
   }
 
   &:active {
-    color: var(--color-blue-500);
+    color: var(--color-link);
     box-shadow: none;
     text-decoration: underline;
   }

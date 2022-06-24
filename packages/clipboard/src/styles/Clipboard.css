@@ -3,6 +3,7 @@
 }
 
 .CopyToClipboard-button {
+  color: var(--color-text);
   background: none;
   border-radius: 12px;
   border: none;
@@ -47,7 +48,7 @@
 }
 
 .CopyToClipboard:focus-visible {
-  outline-color: var(--color-gray-200);
+  outline-color: var(--color-background-hover);
 }
 
 .Clipboard-checkmark svg {
@@ -56,5 +57,5 @@
 
 .CopyToClipboard-button:focus code,
 .CopyToClipboard:hover code {
-  background-color: var(--color-gray-200);
+  background-color: var(--color-background-hover);
 }

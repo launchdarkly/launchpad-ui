@@ -8,7 +8,7 @@
     var(--color-white-100) 20px,
     var(--color-white-100) 40px
   );
-  --Banner-color-border-top: var(--color-gray-200);
+  --Banner-color-border-top: var(--color-border);
   --Banner-color-text: var(--color-black-100);
   --Banner-color-background: var(--color-white);
   --Banner-color-background-info: var(--color-blue-200);

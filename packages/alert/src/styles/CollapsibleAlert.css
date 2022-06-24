@@ -98,7 +98,7 @@ https://www.scottohara.me/blog/2017/04/14/inclusively-hidden.html
     }
 
     &:active {
-      color: var(--color-black-300);
+      color: var(--color-text);
       box-shadow: none;
       text-decoration: underline;
     }
@@ -134,7 +134,7 @@ https://www.scottohara.me/blog/2017/04/14/inclusively-hidden.html
 }
 
 .LegacyStyles .CollapsibleAlert--contentContainer a {
-  color: var(--color-blue-500);
+  color: var(--color-link);
 
   &:hover {
     text-decoration: none;
@@ -151,7 +151,7 @@ https://www.scottohara.me/blog/2017/04/14/inclusively-hidden.html
   }
 
   &:active {
-    color: var(--color-blue-500);
+    color: var(--color-link);
     box-shadow: none;
     text-decoration: underline;
   }

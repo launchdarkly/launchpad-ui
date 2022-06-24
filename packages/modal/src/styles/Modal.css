@@ -34,7 +34,7 @@
 }
 
 .Modal-content {
-  background-color: var(--color-white);
+  background-color: var(--color-background);
   position: relative;
 }
 

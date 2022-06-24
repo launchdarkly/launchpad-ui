@@ -28,7 +28,7 @@
   font-size: 1.5rem;
   line-height: 24px;
   padding: 0 2rem 2rem;
-  color: var(--color-black-300);
+  color: var(--color-text);
 }
 
 .Prompt .Modal-footer {

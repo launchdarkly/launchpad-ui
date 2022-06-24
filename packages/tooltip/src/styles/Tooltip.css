@@ -4,8 +4,8 @@
 
 .Tooltip .Popover-content {
   font-size: 1.3rem;
-  background: var(--color-black-300);
-  color: var(--color-white);
+  background: var(--color-text);
+  color: var(--color-text-inverse);
   padding: 0.5rem 1rem;
 
   /* --color-black-100 */

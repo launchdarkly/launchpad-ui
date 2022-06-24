@@ -112,7 +112,7 @@
 }
 
 .Icon--marker svg rect {
-  fill: var(--color-black-300);
+  fill: var(--color-text);
 }
 
 .Icon[class*='--lang-'] {
@@ -124,7 +124,7 @@
 }
 
 .Icon[class*='--lang-'] path {
-  fill: var(--color-black-300);
+  fill: var(--color-text);
 }
 
 .Icon--thumbsUp {

@@ -4,7 +4,7 @@
   --Button-box-shadow-default-active: none;
   --Button-color-boxShadow-1-default-active: var(--color-white);
   --Button-color-boxShadow-2-default-active: hsl(231.5 100% 62.5% / 0.1);
-  --Button-color-boxShadow-1-default-withIcon-focus: var(--color-blue-500);
+  --Button-color-boxShadow-1-default-withIcon-focus: var(--color-focus);
   --Button-color-boxShadow-2-default-withIcon-focus: hsl(231.5 100% 62.5% / 0.1);
   --Button-box-shadow-withIcon-focus: 0 0 0 1px
       var(--Button-color-boxShadow-1-default-withIcon-focus),
@@ -29,10 +29,10 @@
   --Button-text-transform: none;
 
   /* ------- DEFAULT ------- */
-  --Button-color-background-default: var(--color-white);
-  --Button-color-background-default-hover: var(--color-gray-100);
-  --Button-color-background-default-focus: var(--color-gray-200);
-  --Button-color-background-default-active: var(--color-gray-200);
+  --Button-color-background-default: var(--color-background);
+  --Button-color-background-default-hover: var(--color-background-hover);
+  --Button-color-background-default-focus: var(--color-background-active);
+  --Button-color-background-default-active: var(--color-background-active);
   --Button-color-border-default: var(--color-gray-300);
   --Button-color-border-default-hover: var(--color-gray-600);
   --Button-color-border-default-focus: var(--color-gray-700);
@@ -42,7 +42,7 @@
   --Button-box-shadow-hover: 0 2px 8px -1px hsl(0 0% 0% / 0.04), 0 2px 4px 0 hsl(0 0% 0% / 0.08),
     0 1px 2px 0 hsl(0 0% 0% / 0.14);
   --Button-color-boxShadow-1-default-focus: var(--color-white);
-  --Button-color-boxShadow-2-default-focus: var(--color-blue-500);
+  --Button-color-boxShadow-2-default-focus: var(--color-focus);
 
   /* named for focus state for default, primary, destructive */
   --Button-box-shadow-focus: 0 0 0 2px var(--Button-color-boxShadow-1-default-focus),
@@ -54,12 +54,12 @@
   --Button-box-shadow-link-focus: 0 0 0 2px var(--Button-color-boxShadow-1-default-focus),
     0 0 0 4px var(--Button-color-boxShadow-2-default-focus);
   --Button-box-shadow-link-active: none;
-  --Button-color-link-default: var(--color-blue-500);
-  --Button-color-link-active: var(--color-purple-600);
-  --Button-color-text-default: var(--color-black-300);
-  --Button-color-text-default-hover: var(--color-black-300);
-  --Button-color-text-default-focus: var(--color-black-300);
-  --Button-color-text-default-active: var(--color-black-300);
+  --Button-color-link-default: var(--color-link);
+  --Button-color-link-active: var(--color-link-active);
+  --Button-color-text-default: var(--color-text);
+  --Button-color-text-default-hover: var(--color-text);
+  --Button-color-text-default-focus: var(--color-text);
+  --Button-color-text-default-active: var(--color-text);
 
   /* DEFAULT WITH ICON */
 
@@ -123,9 +123,9 @@
   /* ------- BUTTON ICONS ------- */
 
   /* BUTTON ICON DEFAULT */
-  --Button-icon-color-default: var(--color-black-300);
-  --Button-icon-color-fill-default: var(--color-black-300);
-  --Button-icon-color-text-default: var(--color-black-300);
+  --Button-icon-color-default: var(--color-text);
+  --Button-icon-color-fill-default: var(--color-text);
+  --Button-icon-color-text-default: var(--color-text);
 
   /* BUTTON ICON PRIMARY */
   --Button-icon-color-fill-primary: var(--color-white);
