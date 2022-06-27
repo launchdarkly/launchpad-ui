@@ -10,10 +10,7 @@ type ModalSheetProps = {
   className?: string;
   onCancel?(): void;
   size?: 'small' | 'medium' | 'large' | 'x-large' | 'full';
-  returnFocus?: boolean;
-  shouldScroll?: boolean;
   withCloseButton?: boolean;
-  resetScrollState?(): void;
   children: React.ReactNode;
 };
 
