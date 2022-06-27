@@ -11,7 +11,6 @@ type OverlayProps = {
   canEscapeKeyClose: boolean;
   canOutsideClickClose: boolean;
   enforceFocus: boolean;
-  autoFocus: boolean;
   lazy: boolean;
   onClose: (event: React.MouseEvent | React.KeyboardEvent) => void;
   children?: React.ReactNode;
@@ -24,7 +23,6 @@ type OverlayStateType = {
 class Overlay extends Component<OverlayProps> {
   static defaultProps = {
     lazy: true,
-    autoFocus: true,
     enforceFocus: true,
     isModal: false,
     canOutsideClickClose: true,

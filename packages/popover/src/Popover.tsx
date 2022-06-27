@@ -29,7 +29,6 @@ type Offset = OffsetOptions;
 
 type PopoverProps = {
   allowBoundaryElementOverflow?: boolean;
-  autoFocus?: boolean;
   content?: string | JSX.Element | JSX.Element[];
   children: React.ReactNode;
   disabled?: boolean;
@@ -157,7 +156,6 @@ class Popover extends withTimeouts<PopoverProps>(Component) {
       rootElementTag = 'span',
       rootElementStyle,
       interactionKind,
-      autoFocus,
       enforceFocus,
       targetClassName,
       isModal,
@@ -202,7 +200,6 @@ class Popover extends withTimeouts<PopoverProps>(Component) {
         isOpen={!!isOpen && !hasEmptyContent}
         canOutsideClickClose={interactionKind === 'click'}
         isModal={isModal}
-        autoFocus={autoFocus}
         enforceFocus={enforceFocus}
         onClose={this.handleOverlayClose}
       >
