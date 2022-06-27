@@ -143,17 +143,6 @@ class Popover extends withTimeouts<PopoverProps>(Component) {
   async componentDidUpdate(prevProps: PopoverProps) {
     if (this.props.isOpen !== prevProps.isOpen) {
       this.setState({ isOpen: this.props.isOpen });
-
-      if (this.props.interactionKind === 'click') {
-        // pause focus trap in modal/s since popover has its own
-        document
-          .querySelectorAll('.Modal')
-          .forEach((modal) =>
-            modal.dispatchEvent(
-              new CustomEvent(`modal-trap-${this.props.isOpen ? 'pause' : 'start'}`)
-            )
-          );
-      }
     }
 
     await this.updatePopover();
