@@ -4,6 +4,7 @@ const template = ({ imports, interfaces, componentName, props, jsx }, { tpl }) =
 
   return tpl`
 ${imports};
+/* c8 ignore start */
 import { Icon } from './Icon';
 import type { IconProps } from './Icon';
 
@@ -22,6 +23,7 @@ const IconWrapped = ({ className, size, ...props }: IconProps) => (
 );
 
 export { IconWrapped as ${component} };
+/* c8 ignore stop */
 `;
 };
 

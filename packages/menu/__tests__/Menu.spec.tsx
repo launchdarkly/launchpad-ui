@@ -1,11 +1,12 @@
 import type { MenuProps } from '../src';
 
-import { render, screen } from '@testing-library/react';
+import { Dropdown, DropdownButton } from '@launchpad-ui/dropdown';
+import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { axe } from 'jest-axe';
 import { it, expect, describe, vi } from 'vitest';
 
-import { Menu, MenuDivider, MenuItem, MenuSearch } from '../src';
+import { Menu, MenuDivider, MenuItem, MenuItemLink, MenuSearch } from '../src';
 
 type TestMenu = {
   hideSearch?: boolean;
@@ -89,5 +90,56 @@ describe('Menu', () => {
     expect(search).toBeInTheDocument();
     await userEvent.tab();
     expect(search).toHaveFocus();
+    await userEvent.tab();
+    expect(search).not.toHaveFocus();
+  });
+
+  it('can render a tooltip', async () => {
+    render(
+      <Menu>
+        <MenuItem item="one" tooltip="hi">
+          one
+        </MenuItem>
+      </Menu>
+    );
+    userEvent.setup();
+    await userEvent.hover(screen.getByRole('menuitem'));
+    await waitFor(() => {
+      expect(screen.getByRole('tooltip')).toBeInTheDocument();
+    });
+  });
+
+  it('can cycle through items with keyboard', async () => {
+    render(
+      <Dropdown>
+        <DropdownButton>Target</DropdownButton>
+        <Menu>
+          <MenuItem item="one">one</MenuItem>
+          <MenuItem item="two">two</MenuItem>
+          <MenuItem item="three">three</MenuItem>
+        </Menu>
+      </Dropdown>
+    );
+    const user = userEvent.setup();
+    await user.click(screen.getByText('Target'));
+    const items = screen.getAllByRole('menuitem');
+
+    expect(items[0]).toHaveFocus();
+    await user.keyboard('{arrowdown}');
+    expect(items[1]).toHaveFocus();
+    await user.keyboard('{arrowup}');
+    expect(items[0]).toHaveFocus();
+  });
+
+  it('can render items as links', async () => {
+    const { container } = render(
+      <Menu>
+        <MenuItemLink to="#" useHistory={false}>
+          link
+        </MenuItemLink>
+      </Menu>
+    );
+    // eslint-disable-next-line testing-library/no-container, testing-library/no-node-access
+    expect(container.querySelector('a')).not.toBeNull();
   });
 });

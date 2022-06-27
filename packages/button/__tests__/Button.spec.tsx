@@ -4,11 +4,15 @@ import userEvent from '@testing-library/user-event';
 import { axe } from 'jest-axe';
 import { it, expect, describe, vi } from 'vitest';
 
-import { Button, ButtonKind, ButtonSize } from '../src';
+import { Button, ButtonKind, ButtonSize, ButtonType } from '../src';
 
 describe('Button', () => {
   it('renders', () => {
-    render(<Button size={ButtonSize.NORMAL}>Default Button</Button>);
+    render(
+      <Button size={ButtonSize.NORMAL} type={ButtonType.BUTTON}>
+        Default Button
+      </Button>
+    );
     expect(screen.getByText('Default Button')).toBeInTheDocument();
   });
 
@@ -59,5 +63,14 @@ describe('Button', () => {
     const { container } = render(<Button kind={ButtonKind.PRIMARY} icon={<Add />} />);
     // eslint-disable-next-line testing-library/no-container, testing-library/no-node-access
     expect(container.querySelector('svg')).not.toBeNull();
+  });
+
+  it('shows loading text when loading', async () => {
+    render(
+      <Button isLoading loadingText="loading">
+        Primary Button
+      </Button>
+    );
+    expect(screen.getByText('loading')).toBeInTheDocument();
   });
 });
