@@ -25,8 +25,8 @@ export default defineConfig({
     include: ['**/__tests__/*.spec.{ts,tsx}'],
     coverage: {
       lines: 80,
-      functions: 50,
-      branches: 60,
+      functions: 70,
+      branches: 70,
       statements: 80,
     },
   },

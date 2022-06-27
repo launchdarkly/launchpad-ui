@@ -10,24 +10,6 @@ const createItemId = (index: number, id: string) => `${id}-item-${index}`;
 const getNodeForIndex = (index: number | null, menuId: string) =>
   index === null ? index : document.getElementById(createItemId(index, menuId));
 
-const normalizeIndex = (index: undefined | null | number, delta: number, count: number) => {
-  if (index === undefined || index === null) {
-    if (delta < 0) {
-      return count - 1;
-    } else {
-      return 0;
-    }
-  }
-
-  let normalized = index + delta;
-  if (normalized > count - 1) {
-    normalized = 0;
-  } else if (normalized < 0) {
-    normalized = count - 1;
-  }
-  return normalized;
-};
-
 const handleKeyboardInteractions = (
   event: React.KeyboardEvent,
   keyHandlers: Partial<
@@ -53,10 +35,4 @@ const chainEventHandlers =
     handlers.forEach((h) => isFunction(h) && h(event));
   };
 
-export {
-  createItemId,
-  getNodeForIndex,
-  normalizeIndex,
-  handleKeyboardInteractions,
-  chainEventHandlers,
-};
+export { createItemId, getNodeForIndex, handleKeyboardInteractions, chainEventHandlers };
