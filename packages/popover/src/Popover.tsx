@@ -29,7 +29,6 @@ type Offset = OffsetOptions;
 
 type PopoverProps = {
   allowBoundaryElementOverflow?: boolean;
-  autoFocus?: boolean;
   content?: string | JSX.Element | JSX.Element[];
   children: React.ReactNode;
   disabled?: boolean;
@@ -143,17 +142,6 @@ class Popover extends withTimeouts<PopoverProps>(Component) {
   async componentDidUpdate(prevProps: PopoverProps) {
     if (this.props.isOpen !== prevProps.isOpen) {
       this.setState({ isOpen: this.props.isOpen });
-
-      if (this.props.interactionKind === 'click') {
-        // pause focus trap in modal/s since popover has its own
-        document
-          .querySelectorAll('.Modal')
-          .forEach((modal) =>
-            modal.dispatchEvent(
-              new CustomEvent(`modal-trap-${this.props.isOpen ? 'pause' : 'start'}`)
-            )
-          );
-      }
     }
 
     await this.updatePopover();
@@ -168,7 +156,6 @@ class Popover extends withTimeouts<PopoverProps>(Component) {
       rootElementTag = 'span',
       rootElementStyle,
       interactionKind,
-      autoFocus,
       enforceFocus,
       targetClassName,
       isModal,
@@ -213,7 +200,6 @@ class Popover extends withTimeouts<PopoverProps>(Component) {
         isOpen={!!isOpen && !hasEmptyContent}
         canOutsideClickClose={interactionKind === 'click'}
         isModal={isModal}
-        autoFocus={autoFocus}
         enforceFocus={enforceFocus}
         onClose={this.handleOverlayClose}
       >

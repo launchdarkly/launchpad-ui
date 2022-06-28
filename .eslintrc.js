@@ -61,6 +61,7 @@ module.exports = {
     'import/no-unresolved': ['error', { ignore: ['^@launchpad-ui/'] }],
     'react/function-component-definition': [2, { namedComponents: 'arrow-function' }],
     'functional/no-class': 'error',
+    'react/no-unused-prop-types': 'error',
     'jsx-a11y/no-autofocus': [
       2,
       {
