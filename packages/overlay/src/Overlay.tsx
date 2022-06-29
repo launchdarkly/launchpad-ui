@@ -1,117 +1,61 @@
-/* eslint-disable functional/no-class */
 import type { KeyboardEvent } from 'react';
 
 import { Portal } from '@launchpad-ui/modal';
-import { isEqual, isFunction, isNil } from 'lodash-es';
-import React, { Component } from 'react';
+import { isFunction, isNil } from 'lodash-es';
+import { useCallback, useEffect, useRef, useState } from 'react';
 
 type OverlayProps = {
   isOpen: boolean;
-  isModal: boolean;
-  canEscapeKeyClose: boolean;
-  canOutsideClickClose: boolean;
-  enforceFocus: boolean;
-  lazy: boolean;
+  isModal?: boolean;
+  canEscapeKeyClose?: boolean;
+  canOutsideClickClose?: boolean;
+  enforceFocus?: boolean;
+  lazy?: boolean;
   onClose: (event: React.MouseEvent | React.KeyboardEvent) => void;
   children?: React.ReactNode;
 };
 
-type OverlayStateType = {
-  hasEverOpened: boolean;
-};
+const Overlay = ({
+  isOpen,
+  lazy = true,
+  enforceFocus = true,
+  isModal = false,
+  canOutsideClickClose = true,
+  canEscapeKeyClose = true,
+  onClose,
+  children,
+}: OverlayProps) => {
+  const [hasEverOpened, setHasEverOpened] = useState(isOpen);
+  const containerElement = useRef<HTMLDivElement>(null);
 
-class Overlay extends Component<OverlayProps> {
-  static defaultProps = {
-    lazy: true,
-    enforceFocus: true,
-    isModal: false,
-    canOutsideClickClose: true,
-    canEscapeKeyClose: true,
-  };
+  const handleDocumentClick = useCallback(
+    (event: Event) => {
+      const eventTarget = event.target as Element;
+      const wasClickInOverlay =
+        !isNil(containerElement.current) && containerElement.current.contains(eventTarget);
+      // wasClickInBody accounts for clicks in portals within the popover, which are outside of the body and therefore not in the overlay
+      const wasClickInBody = !!eventTarget.closest('body');
 
-  state: OverlayStateType = {
-    hasEverOpened: this.props.isOpen,
-  };
+      if (isOpen && canOutsideClickClose && !wasClickInOverlay && wasClickInBody) {
+        isFunction(onClose) && onClose(event as unknown as React.MouseEvent);
+      }
+    },
+    [canOutsideClickClose, isOpen, onClose]
+  );
 
-  containerElement!: HTMLDivElement;
-
-  setContainerRef = (node: HTMLDivElement) => {
-    this.containerElement = node;
-  };
-
-  handleOverlayOpen() {
-    const { canOutsideClickClose, enforceFocus, isModal } = this.props;
-
-    if (canOutsideClickClose) {
-      document.addEventListener('mousedown', this.handleDocumentClick);
-    }
-
-    if (enforceFocus) {
-      document.addEventListener('focus', this.handleDocumentFocus, true);
-    }
-
-    if (isModal) {
-      document.body.classList.add('has-modal');
-    }
-  }
-
-  handleOverlayClose() {
-    const { isModal } = this.props;
-
-    document.removeEventListener('mousedown', this.handleDocumentClick);
-    document.removeEventListener('focus', this.handleDocumentFocus, true);
-
-    if (isModal) {
-      document.body.classList.remove('has-modal');
-    }
-  }
-
-  handleKeyDown = (event: KeyboardEvent<HTMLInputElement>) => {
-    const { canEscapeKeyClose, onClose } = this.props;
-    if (canEscapeKeyClose && event.key === 'Escape') {
-      isFunction(onClose) && onClose(event);
-      event.preventDefault();
-    }
-  };
-
-  handleDocumentClick = (event: Event) => {
-    const { isOpen, onClose, canOutsideClickClose } = this.props;
-    const eventTarget = event.target as Element;
-    const wasClickInOverlay =
-      !isNil(this.containerElement) && this.containerElement.contains(eventTarget);
-    // wasClickInBody accounts for clicks in portals within the popover, which are outside of the body and therefore not in the overlay
-    const wasClickInBody = !!eventTarget.closest('body');
-
-    if (isOpen && canOutsideClickClose && !wasClickInOverlay && wasClickInBody) {
-      isFunction(onClose) && onClose(event as unknown as React.MouseEvent);
-    }
-  };
-
-  handleDocumentFocus = (event: Event) => {
-    const { enforceFocus } = this.props;
-    const eventTarget = event.target as Element;
-
-    if (
-      enforceFocus &&
-      !isNil(this.containerElement) &&
-      !this.containerElement.contains(eventTarget)
-    ) {
-      event.stopImmediatePropagation();
-      this.focusContainer();
-    }
-  };
-
-  focusContainer() {
+  const focusContainer = useCallback(() => {
     requestAnimationFrame(() => {
-      if (!this.props.isOpen || isNil(this.containerElement) || isNil(document.activeElement)) {
+      if (!isOpen || isNil(containerElement.current) || isNil(document.activeElement)) {
         return;
       }
 
-      if (!this.containerElement.contains(document.activeElement)) {
-        const autofocusElement = this.containerElement.querySelector(
+      if (!containerElement.current.contains(document.activeElement)) {
+        const autofocusElement = containerElement.current.querySelector(
           '[autofocus]'
         ) as HTMLDivElement;
-        const tabbableElement = this.containerElement.querySelector('[tabindex]') as HTMLDivElement;
+        const tabbableElement = containerElement.current.querySelector(
+          '[tabindex]'
+        ) as HTMLDivElement;
         if (!isNil(autofocusElement)) {
           autofocusElement.focus();
         } else if (!isNil(tabbableElement)) {
@@ -119,47 +63,78 @@ class Overlay extends Component<OverlayProps> {
         }
       }
     });
-  }
+  }, [isOpen]);
 
-  componentDidMount() {
-    if (this.props.isOpen) {
-      this.handleOverlayOpen();
-    }
-  }
+  const handleDocumentFocus = useCallback(
+    (event: Event) => {
+      const eventTarget = event.target as Element;
 
-  componentWillUnmount() {
-    this.handleOverlayClose();
-  }
+      if (
+        enforceFocus &&
+        !isNil(containerElement.current) &&
+        !containerElement.current.contains(eventTarget)
+      ) {
+        event.stopImmediatePropagation();
+        focusContainer();
+      }
+    },
+    [enforceFocus, focusContainer]
+  );
 
-  componentDidUpdate(prevProps: OverlayProps) {
-    if (!isEqual(this.props, prevProps)) {
-      this.setState((state: OverlayStateType) => ({
-        hasEverOpened: state.hasEverOpened || this.props.isOpen,
-      }));
-    }
-
-    if (prevProps.isOpen && !this.props.isOpen) {
-      this.handleOverlayClose();
-    } else if (!prevProps.isOpen && this.props.isOpen) {
-      this.handleOverlayOpen();
-    }
-  }
-
-  render() {
-    const { lazy, isOpen, children } = this.props;
-    const { hasEverOpened } = this.state;
-
-    if (lazy && !hasEverOpened) {
-      return null;
+  const handleOverlayOpen = useCallback(() => {
+    if (canOutsideClickClose) {
+      document.addEventListener('mousedown', handleDocumentClick);
     }
 
-    return (
-      <Portal onKeyDown={this.handleKeyDown} containerRef={this.setContainerRef}>
-        {isOpen ? children : null}
-      </Portal>
-    );
+    if (enforceFocus) {
+      document.addEventListener('focus', handleDocumentFocus, true);
+    }
+
+    if (isModal) {
+      document.body.classList.add('has-modal');
+    }
+  }, [handleDocumentClick, handleDocumentFocus, canOutsideClickClose, enforceFocus, isModal]);
+
+  const handleOverlayClose = useCallback(() => {
+    document.removeEventListener('mousedown', handleDocumentClick);
+    document.removeEventListener('focus', handleDocumentFocus, true);
+
+    if (isModal) {
+      document.body.classList.remove('has-modal');
+    }
+  }, [handleDocumentClick, handleDocumentFocus, isModal]);
+
+  useEffect(() => {
+    if (isOpen) {
+      handleOverlayOpen();
+    } else {
+      handleOverlayClose();
+    }
+
+    setHasEverOpened(hasEverOpened || isOpen);
+
+    return () => {
+      handleOverlayClose();
+    };
+  }, [isOpen, handleOverlayOpen, handleOverlayClose, hasEverOpened]);
+
+  const handleKeyDown = (event: KeyboardEvent<HTMLInputElement>) => {
+    if (canEscapeKeyClose && event.key === 'Escape') {
+      isFunction(onClose) && onClose(event);
+      event.preventDefault();
+    }
+  };
+
+  if (lazy && !hasEverOpened) {
+    return null;
   }
-}
+
+  return (
+    <Portal onKeyDown={handleKeyDown} containerRef={containerElement}>
+      {isOpen ? children : null}
+    </Portal>
+  );
+};
 
 export { Overlay };
 export type { OverlayProps };

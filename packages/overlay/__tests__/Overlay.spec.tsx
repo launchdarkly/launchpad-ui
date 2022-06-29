@@ -48,7 +48,7 @@ describe('Overlay', () => {
 
   it('enforces focus', async () => {
     render(
-      <Overlay isOpen onClose={() => undefined}>
+      <Overlay isOpen onClose={() => undefined} isModal>
         <button>test</button>
       </Overlay>
     );

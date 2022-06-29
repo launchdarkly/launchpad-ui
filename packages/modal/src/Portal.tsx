@@ -6,7 +6,7 @@ import { createPortal } from 'react-dom';
 import './styles/Modal.css';
 
 type PortalProps = {
-  containerRef?: (node: HTMLDivElement) => void;
+  containerRef?: React.RefObject<HTMLDivElement>;
   onKeyDown?: (event: KeyboardEvent<HTMLInputElement>) => void;
   className?: string;
   children?: React.ReactNode;
