@@ -40,7 +40,7 @@
     "@react-aria/separator": "^3.2.0",
     "clsx": "^1.1.1",
     "lodash-es": "^4.17.21",
-    "react-router-dom": "^5.3.3",
+    "react-router-dom": "^6.3.0",
     "react-virtual": "^2.10.4",
     "uuid": "^8.3.2"
   },
@@ -50,7 +50,6 @@
   },
   "devDependencies": {
     "@types/lodash-es": "^4.17.6",
-    "@types/react-router-dom": "^5.3.3",
     "@types/uuid": "^8.3.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
