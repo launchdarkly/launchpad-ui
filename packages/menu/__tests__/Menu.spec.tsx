@@ -1,11 +1,11 @@
 import type { MenuProps } from '../src';
 
-import { Dropdown, DropdownButton } from '@launchpad-ui/dropdown';
 import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { axe } from 'jest-axe';
 import { it, expect, describe, vi } from 'vitest';
 
+import { Dropdown, DropdownButton } from '../../dropdown/src';
 import { Menu, MenuDivider, MenuItem, MenuItemLink, MenuSearch } from '../src';
 
 type TestMenu = {
