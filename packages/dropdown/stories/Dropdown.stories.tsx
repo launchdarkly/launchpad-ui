@@ -1,10 +1,10 @@
 import type { ComponentStoryObj, Story } from '@storybook/react';
 
 import { ButtonKind, ButtonSize } from '@launchpad-ui/button';
-import { Menu, MenuItem } from '@launchpad-ui/menu';
 import { userEvent, within } from '@storybook/testing-library';
 
 import { sleep } from '../../../.storybook/utils';
+import { Menu, MenuItem } from '../../menu/src';
 import { Dropdown, DropdownButton } from '../src';
 
 export default {
