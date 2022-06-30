@@ -10,26 +10,25 @@ import {
   useCatch,
 } from '@remix-run/react';
 
-import launchpadStyles from '@launchpad-ui/tokens/index.css';
+import launchpadStyles from '@launchpad-ui/core/styles/tokens.css';
 import globalStyles from './styles/global.css';
 
 // plop start imports
-import alertStyles from '@launchpad-ui/alert/styles/Alert.css';
-import bannerStyles from '@launchpad-ui/banner/styles/Banner.css';
-import buttonStyles from '@launchpad-ui/button/styles/Button.css';
-import clipboardStyles from '@launchpad-ui/clipboard/styles/Clipboard.css';
-import formStyles from '@launchpad-ui/form/styles/styles.css';
-import iconStyles from '@launchpad-ui/icons/styles/Icon.css';
-import lozengeStyles from '@launchpad-ui/lozenge/styles/Lozenge.css';
-import menuStyles from '@launchpad-ui/menu/styles/Menu.css';
-import modalStyles from '@launchpad-ui/modal/styles/Modal.css';
-import notificationStyles from '@launchpad-ui/notification/styles/Notification.css';
-import popoverStyles from '@launchpad-ui/popover/styles/Popover.css';
-import progressStyles from '@launchpad-ui/progress/styles/Progress.css';
-import promptStyles from '@launchpad-ui/modal/styles/Prompt.css';
-import tabListStyles from '@launchpad-ui/tab-list/styles/TabList.css';
-import toggleStyles from '@launchpad-ui/toggle/styles/Toggle.css';
-import tooltipStyles from '@launchpad-ui/tooltip/styles/Tooltip.css';
+import alertStyles from '@launchpad-ui/core/styles/alert.css';
+import bannerStyles from '@launchpad-ui/core/styles/banner.css';
+import buttonStyles from '@launchpad-ui/core/styles/button.css';
+import clipboardStyles from '@launchpad-ui/core/styles/clipboard.css';
+import formStyles from '@launchpad-ui/core/styles/form.css';
+import iconStyles from '@launchpad-ui/core/styles/icons.css';
+import lozengeStyles from '@launchpad-ui/core/styles/lozenge.css';
+import menuStyles from '@launchpad-ui/core/styles/menu.css';
+import modalStyles from '@launchpad-ui/core/styles/modal.css';
+import notificationStyles from '@launchpad-ui/core/styles/notification.css';
+import popoverStyles from '@launchpad-ui/core/styles/popover.css';
+import progressStyles from '@launchpad-ui/core/styles/progress.css';
+import tabListStyles from '@launchpad-ui/core/styles/tab-list.css';
+import toggleStyles from '@launchpad-ui/core/styles/toggle.css';
+import tooltipStyles from '@launchpad-ui/core/styles/tooltip.css';
 // plop end imports
 
 export const links: LinksFunction = () => {
@@ -44,7 +43,6 @@ export const links: LinksFunction = () => {
     { rel: 'stylesheet', href: progressStyles },
     { rel: 'stylesheet', href: tabListStyles },
     { rel: 'stylesheet', href: modalStyles },
-    { rel: 'stylesheet', href: promptStyles },
     { rel: 'stylesheet', href: popoverStyles },
     { rel: 'stylesheet', href: tooltipStyles },
     { rel: 'stylesheet', href: notificationStyles },

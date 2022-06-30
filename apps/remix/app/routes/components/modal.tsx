@@ -1,5 +1,4 @@
-import { Button } from '@launchpad-ui/button';
-import { Modal, ModalBody, ModalFooter, ModalHeader, Prompt } from '@launchpad-ui/modal';
+import { Button, Modal, ModalBody, ModalFooter, ModalHeader, Prompt } from '@launchpad-ui/core';
 import { useState } from 'react';
 
 export default function Index() {

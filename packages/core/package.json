@@ -1,0 +1,62 @@
+{
+  "name": "@launchpad-ui/core",
+  "version": "0.0.1",
+  "publishConfig": {
+    "access": "public"
+  },
+  "description": "Contains all Launchpad design system packages.",
+  "files": [
+    "dist"
+  ],
+  "main": "dist/index.js",
+  "module": "dist/index.es.js",
+  "types": "dist/index.d.ts",
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.es.js",
+      "require": "./dist/index.js"
+    },
+    "./package.json": "./package.json",
+    "./styles/*": "./dist/styles/*"
+  },
+  "source": "src/index.ts",
+  "scripts": {
+    "build": "tsc --project tsconfig.build.json && node build.js",
+    "clean": "rm -rf dist",
+    "e2e": "exit 0",
+    "lint": "eslint '**/*.{ts,tsx,js}' && stylelint '**/*.css' --ignore-path ../../.stylelintignore",
+    "test": "exit 0"
+  },
+  "dependencies": {
+    "@launchpad-ui/alert": "workspace:~",
+    "@launchpad-ui/banner": "workspace:~",
+    "@launchpad-ui/button": "workspace:~",
+    "@launchpad-ui/clipboard": "workspace:~",
+    "@launchpad-ui/dropdown": "workspace:~",
+    "@launchpad-ui/form": "workspace:~",
+    "@launchpad-ui/icons": "workspace:~",
+    "@launchpad-ui/lozenge": "workspace:~",
+    "@launchpad-ui/menu": "workspace:~",
+    "@launchpad-ui/modal": "workspace:~",
+    "@launchpad-ui/notification": "workspace:~",
+    "@launchpad-ui/overlay": "workspace:~",
+    "@launchpad-ui/popover": "workspace:~",
+    "@launchpad-ui/progress": "workspace:~",
+    "@launchpad-ui/tab-list": "workspace:~",
+    "@launchpad-ui/toggle": "workspace:~",
+    "@launchpad-ui/tokens": "workspace:~",
+    "@launchpad-ui/tooltip": "workspace:~"
+  },
+  "peerDependencies": {
+    "react": "^16.8.0 || ^17.0.0 || ^18.0.0",
+    "react-dom": "^16.8.0 || ^17.0.0 || ^18.0.0"
+  },
+  "devDependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}
