@@ -158,23 +158,7 @@ importers:
 
   apps/remix:
     specifiers:
-      '@launchpad-ui/alert': workspace:~
-      '@launchpad-ui/banner': workspace:~
-      '@launchpad-ui/button': workspace:~
-      '@launchpad-ui/clipboard': workspace:~
-      '@launchpad-ui/dropdown': workspace:~
-      '@launchpad-ui/form': workspace:~
-      '@launchpad-ui/icons': workspace:~
-      '@launchpad-ui/lozenge': workspace:~
-      '@launchpad-ui/menu': workspace:~
-      '@launchpad-ui/modal': workspace:~
-      '@launchpad-ui/notification': workspace:~
-      '@launchpad-ui/popover': workspace:~
-      '@launchpad-ui/progress': workspace:~
-      '@launchpad-ui/tab-list': workspace:~
-      '@launchpad-ui/toggle': workspace:~
-      '@launchpad-ui/tokens': workspace:~
-      '@launchpad-ui/tooltip': workspace:~
+      '@launchpad-ui/core': workspace:~
       '@react-aria/ssr': ^3.2.0
       '@react-stately/collections': ^3.4.0
       '@remix-run/dev': ^1.6.0
@@ -188,23 +172,7 @@ importers:
       react-dom: ^18.2.0
       typescript: ^4.7.2
     dependencies:
-      '@launchpad-ui/alert': link:../../packages/alert
-      '@launchpad-ui/banner': link:../../packages/banner
-      '@launchpad-ui/button': link:../../packages/button
-      '@launchpad-ui/clipboard': link:../../packages/clipboard
-      '@launchpad-ui/dropdown': link:../../packages/dropdown
-      '@launchpad-ui/form': link:../../packages/form
-      '@launchpad-ui/icons': link:../../packages/icons
-      '@launchpad-ui/lozenge': link:../../packages/lozenge
-      '@launchpad-ui/menu': link:../../packages/menu
-      '@launchpad-ui/modal': link:../../packages/modal
-      '@launchpad-ui/notification': link:../../packages/notification
-      '@launchpad-ui/popover': link:../../packages/popover
-      '@launchpad-ui/progress': link:../../packages/progress
-      '@launchpad-ui/tab-list': link:../../packages/tab-list
-      '@launchpad-ui/toggle': link:../../packages/toggle
-      '@launchpad-ui/tokens': link:../../packages/tokens
-      '@launchpad-ui/tooltip': link:../../packages/tooltip
+      '@launchpad-ui/core': link:../../packages/core
       '@react-aria/ssr': 3.2.0_react@18.2.0
       '@react-stately/collections': 3.4.1_react@18.2.0
       '@remix-run/node': 1.6.3_biqbaboplfbrettd7655fr4n2y
@@ -283,6 +251,51 @@ importers:
       '@launchpad-ui/tokens': link:../tokens
       '@launchpad-ui/tooltip': link:../tooltip
       '@react-aria/live-announcer': 3.1.0
+    devDependencies:
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
+
+  packages/core:
+    specifiers:
+      '@launchpad-ui/alert': workspace:~
+      '@launchpad-ui/banner': workspace:~
+      '@launchpad-ui/button': workspace:~
+      '@launchpad-ui/clipboard': workspace:~
+      '@launchpad-ui/dropdown': workspace:~
+      '@launchpad-ui/form': workspace:~
+      '@launchpad-ui/icons': workspace:~
+      '@launchpad-ui/lozenge': workspace:~
+      '@launchpad-ui/menu': workspace:~
+      '@launchpad-ui/modal': workspace:~
+      '@launchpad-ui/notification': workspace:~
+      '@launchpad-ui/overlay': workspace:~
+      '@launchpad-ui/popover': workspace:~
+      '@launchpad-ui/progress': workspace:~
+      '@launchpad-ui/tab-list': workspace:~
+      '@launchpad-ui/toggle': workspace:~
+      '@launchpad-ui/tokens': workspace:~
+      '@launchpad-ui/tooltip': workspace:~
+      react: ^18.2.0
+      react-dom: ^18.2.0
+    dependencies:
+      '@launchpad-ui/alert': link:../alert
+      '@launchpad-ui/banner': link:../banner
+      '@launchpad-ui/button': link:../button
+      '@launchpad-ui/clipboard': link:../clipboard
+      '@launchpad-ui/dropdown': link:../dropdown
+      '@launchpad-ui/form': link:../form
+      '@launchpad-ui/icons': link:../icons
+      '@launchpad-ui/lozenge': link:../lozenge
+      '@launchpad-ui/menu': link:../menu
+      '@launchpad-ui/modal': link:../modal
+      '@launchpad-ui/notification': link:../notification
+      '@launchpad-ui/overlay': link:../overlay
+      '@launchpad-ui/popover': link:../popover
+      '@launchpad-ui/progress': link:../progress
+      '@launchpad-ui/tab-list': link:../tab-list
+      '@launchpad-ui/toggle': link:../toggle
+      '@launchpad-ui/tokens': link:../tokens
+      '@launchpad-ui/tooltip': link:../tooltip
     devDependencies:
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0

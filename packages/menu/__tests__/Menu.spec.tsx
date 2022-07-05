@@ -1,6 +1,6 @@
 import type { MenuProps } from '../src';
 
-import { Dropdown, DropdownButton } from '@launchpad-ui/dropdown';
+import { Popover } from '@launchpad-ui/popover';
 import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { axe } from 'jest-axe';
@@ -111,14 +111,14 @@ describe('Menu', () => {
 
   it('can cycle through items with keyboard', async () => {
     render(
-      <Dropdown>
-        <DropdownButton>Target</DropdownButton>
+      <Popover>
+        <button>Target</button>
         <Menu>
           <MenuItem item="one">one</MenuItem>
           <MenuItem item="two">two</MenuItem>
           <MenuItem item="three">three</MenuItem>
         </Menu>
-      </Dropdown>
+      </Popover>
     );
     const user = userEvent.setup();
     await user.click(screen.getByText('Target'));
