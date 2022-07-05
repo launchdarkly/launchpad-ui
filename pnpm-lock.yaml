@@ -11935,9 +11935,6 @@ packages:
     hasBin: true
     peerDependencies:
       '@babel/preset-env': ^7.1.6
-    peerDependenciesMeta:
-      '@babel/preset-env':
-        optional: true
     dependencies:
       '@babel/core': 7.18.6
       '@babel/parser': 7.18.6
@@ -16243,10 +16240,6 @@ packages:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0 || 18
       react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0 || 18
     peerDependenciesMeta:
-      '@storybook/addons':
-        optional: true
-      '@storybook/api':
-        optional: true
       '@storybook/components':
         optional: true
       '@storybook/core-events':

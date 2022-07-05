@@ -120,9 +120,6 @@
   "pnpm": {
     "peerDependencyRules": {
       "ignoreMissing": [
-        "@babel/preset-env",
-        "@storybook/addons",
-        "@storybook/api",
         "@storybook/components",
         "@storybook/core-events",
         "@storybook/theming",
