@@ -3,7 +3,7 @@ const tsconfig = require('../tsconfig.json');
 
 module.exports = {
   core: {
-    builder: 'webpack5',
+    builder: { name: '@storybook/builder-webpack5' },
   },
   stories: ['../packages/**/*.stories.@(js|jsx|ts|tsx)'],
   addons: [
@@ -20,9 +20,10 @@ module.exports = {
     },
     '@storybook/addon-interactions',
   ],
-  framework: '@storybook/react',
+  framework: '@storybook/react-webpack5',
   features: {
     storyStoreV7: true,
+    babelModeV7: true,
   },
   webpackFinal: async (config) => ({
     ...config,
