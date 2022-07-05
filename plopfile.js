@@ -14,6 +14,9 @@ module.exports = (plop) => {
       },
     ],
     actions: [
+      /*
+       * Component package
+       */
       {
         type: 'add',
         path: 'packages/{{dashCase name}}/README.md',
@@ -59,11 +62,9 @@ module.exports = (plop) => {
         path: 'packages/{{dashCase name}}/src/styles/{{pascalCase name}}.css',
         templateFile: '.plop-templates/component/styles.css.hbs',
       },
-      {
-        type: 'add',
-        path: 'apps/remix/app/routes/components/{{dashCase name}}.tsx',
-        templateFile: '.plop-templates/component/remix-example.tsx.hbs',
-      },
+      /*
+       * Monorepo config
+       */
       {
         path: 'tsconfig.json',
         pattern: /("paths": {)/g,
@@ -77,6 +78,9 @@ module.exports = (plop) => {
             handleNonTrailingCommas: true,
           }),
       },
+      /*
+       * Core package integration
+       */
       {
         path: 'packages/core/package.json',
         pattern: /("dependencies": {)/g,
@@ -104,6 +108,14 @@ module.exports = (plop) => {
             openPatternStr: 'plop start imports',
             closePatternStr: 'plop end imports',
           }),
+      },
+      /*
+       * Local Remix integration
+       */
+      {
+        type: 'add',
+        path: 'apps/remix/app/routes/components/{{dashCase name}}.tsx',
+        templateFile: '.plop-templates/component/remix-example.tsx.hbs',
       },
       {
         path: 'apps/remix/app/root.tsx',
