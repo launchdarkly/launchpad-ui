@@ -95,7 +95,7 @@ module.exports = (plop) => {
         templateFile: '.plop-templates/component/core-styles.css.hbs',
       },
       {
-        path: 'packages/core/src/index.tsx',
+        path: 'packages/core/src/index.ts',
         pattern: /(plop start imports)/g,
         template: "$1\nexport * from '@launchpad-ui/{{dashCase name}}';",
         type: 'modify',
@@ -103,18 +103,6 @@ module.exports = (plop) => {
           sortModification(file, {
             openPatternStr: 'plop start imports',
             closePatternStr: 'plop end imports',
-          }),
-      },
-      {
-        path: 'apps/remix/package.json',
-        pattern: /("dependencies": {)/g,
-        template: '$1\n    "@launchpad-ui/{{dashCase name}}": "workspace:~",',
-        type: 'modify',
-        transform: (file) =>
-          sortModification(file, {
-            openPatternStr: '"dependencies": {',
-            closePatternStr: '  },',
-            handleNonTrailingCommas: true,
           }),
       },
       {
