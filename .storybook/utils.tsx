@@ -1,6 +1,8 @@
 import type { ArgsStoryFn } from '@storybook/addons';
 import type { Args } from '@storybook/api';
-import type { DecoratorFn, ReactFramework, StoryContext } from '@storybook/react';
+import type { StoryContext } from '@storybook/csf';
+// @ts-ignore
+import type { DecoratorFn, ReactFramework } from '@storybook/react';
 import { Fragment } from 'react';
 import { cloneDeep } from 'lodash-es';
 
@@ -20,7 +22,7 @@ export const createWithClassesDecorator = (
   // Create a function of type DecoratorFn
   const withStateDecorator: DecoratorFn = (storyFn, Context) => {
     const pseudoStates = classes || [];
-    const { viewMode, args, name, parameters } = Context;
+    const { viewMode, args, name, component } = Context;
     // This decorator is explicitly made for react
     const originalStoryFn = Context.originalStoryFn as
       | ArgsStoryFn<React.ReactElement<unknown>>
@@ -36,7 +38,7 @@ export const createWithClassesDecorator = (
       const componentKey = `${name} with ${state}`;
       // We don't want to modify the original props
       const modifiedProps = cloneDeep(args);
-      const DecoratedComponent = parameters.component;
+      const DecoratedComponent = component;
       modifiedProps.className = classWithState;
       if (renderFunc) {
         if (!originalStoryFn) {
