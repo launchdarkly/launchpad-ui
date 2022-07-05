@@ -18,6 +18,7 @@ importers:
       '@storybook/addon-postcss': ^2.0.0
       '@storybook/addons': ^7.0.0-alpha.10
       '@storybook/api': ^7.0.0-alpha.10
+      '@storybook/cli': ^7.0.0-alpha.10
       '@storybook/client-api': ^7.0.0-alpha.10
       '@storybook/csf': ^0.0.2--canary.4566f4d.1
       '@storybook/react': ^7.0.0-alpha.10
@@ -69,7 +70,6 @@ importers:
       prettier: ^2.7.0
       react: ^18.2.0
       react-dom: ^18.2.0
-      sb: ^7.0.0-alpha.10
       storybook-addon-pseudo-states: ^1.15.1
       stylelint: ^14.9.0
       stylelint-config-prettier: ^9.0.3
@@ -95,6 +95,7 @@ importers:
       '@storybook/addon-postcss': 2.0.0_webpack@5.73.0
       '@storybook/addons': 7.0.0-alpha.10_biqbaboplfbrettd7655fr4n2y
       '@storybook/api': 7.0.0-alpha.10_biqbaboplfbrettd7655fr4n2y
+      '@storybook/cli': 7.0.0-alpha.10_bi7zelh7maftsaz4ghwgpbjqxu
       '@storybook/client-api': 7.0.0-alpha.10_biqbaboplfbrettd7655fr4n2y
       '@storybook/csf': 0.0.2--canary.7c6c115.0
       '@storybook/react': 7.0.0-alpha.10_xrxvbtylmve4l2tr3vmmqgfp7q
@@ -146,7 +147,6 @@ importers:
       prettier: 2.7.1
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
-      sb: 7.0.0-alpha.10_bi7zelh7maftsaz4ghwgpbjqxu
       storybook-addon-pseudo-states: 1.15.1_6sopoym2alf2el2b5lswmxpsui
       stylelint: 14.9.1
       stylelint-config-prettier: 9.0.3_stylelint@14.9.1
@@ -15699,27 +15699,6 @@ packages:
     engines: {node: '>=v12.22.7'}
     dependencies:
       xmlchars: 2.2.0
-    dev: true
-
-  /sb/7.0.0-alpha.10_bi7zelh7maftsaz4ghwgpbjqxu:
-    resolution: {integrity: sha512-2gn1VMCQLxaOyNUlQ8gDjoqrh2HpyVRKA/X5f8aSoUuN3VXsiyMfxodxm387yi/IZVrfIWhy85BkqowvNSwpfA==}
-    hasBin: true
-    dependencies:
-      '@storybook/cli': 7.0.0-alpha.10_bi7zelh7maftsaz4ghwgpbjqxu
-    transitivePeerDependencies:
-      - '@storybook/builder-webpack5'
-      - '@swc/core'
-      - bufferutil
-      - encoding
-      - esbuild
-      - react
-      - react-dom
-      - supports-color
-      - typescript
-      - uglify-js
-      - utf-8-validate
-      - webpack
-      - webpack-cli
     dev: true
 
   /scheduler/0.23.0:
