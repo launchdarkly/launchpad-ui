@@ -24,7 +24,7 @@ const handleKeyboardInteractions = (
 
   if (ops[event.key]) {
     event.preventDefault();
-    ops[event.key]?.call(this, event);
+    ops[event.key]?.call(globalThis, event);
   }
 };
 

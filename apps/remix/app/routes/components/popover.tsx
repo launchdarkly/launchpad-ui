@@ -1,5 +1,4 @@
-import { Button } from '@launchpad-ui/button';
-import { Popover } from '@launchpad-ui/popover';
+import { Button, Popover } from '@launchpad-ui/core';
 
 export default function Index() {
   return (

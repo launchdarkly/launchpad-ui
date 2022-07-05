@@ -10,8 +10,8 @@ import {
   Select,
   TextArea,
   Checkbox,
-} from '@launchpad-ui/form';
-import { Info } from '@launchpad-ui/icons';
+  Info,
+} from '@launchpad-ui/core';
 
 export default function Index() {
   return (
