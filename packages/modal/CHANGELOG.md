@@ -1,5 +1,11 @@
 # @launchpad-ui/modal
 
+## 0.3.0
+
+### Minor Changes
+
+- [#148](https://github.com/launchdarkly/launchpad-ui/pull/148) [`11953df`](https://github.com/launchdarkly/launchpad-ui/commit/11953dff46822400fbb218d5a6b09ee539f43ec5) Thanks [@Niznikr](https://github.com/Niznikr)! - Update to functional component
+
 ## 0.2.1
 
 ### Patch Changes
