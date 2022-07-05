@@ -36,7 +36,7 @@
     "@launchpad-ui/icons": "workspace:~",
     "@launchpad-ui/tokens": "workspace:~",
     "@react-aria/focus": "^3.6.0",
-    "clsx": "^1.1.1",
+    "clsx": "^1.2.0",
     "framer-motion": "^6.3.13"
   },
   "peerDependencies": {
