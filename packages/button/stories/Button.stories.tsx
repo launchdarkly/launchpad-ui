@@ -1,4 +1,4 @@
-import type { ComponentStoryObj, DecoratorFn, Meta } from '@storybook/react';
+import type { ComponentStoryObj, DecoratorFn } from '@storybook/react';
 
 import { Fragment } from 'react';
 
@@ -9,9 +9,9 @@ import { Button, ButtonKind, ButtonSize, ButtonType } from '../src';
 import './Button.stories.css';
 
 const buttonTemplateWithStates: DecoratorFn = (storyComponent, context) => {
-  const { viewMode, parameters } = context;
+  const { viewMode, args } = context;
 
-  const storyArgs = parameters.args;
+  const storyArgs = args;
   const buttonLabel = storyArgs?.children || '';
 
   const ButtonLabels = ['Hover', 'Focus', 'Active'];
@@ -196,7 +196,7 @@ export default {
       },
     },
   },
-} as Meta;
+};
 
 type Story = ComponentStoryObj<typeof Button>;
 

@@ -1,4 +1,4 @@
-import type { ComponentStoryObj, DecoratorFn, Story } from '@storybook/react';
+import type { ComponentStoryObj, DecoratorFn, StoryFn } from '@storybook/react';
 
 import { useEffect } from '@storybook/addons';
 
@@ -27,7 +27,7 @@ const useModifiedClassLists: DecoratorFn = (story, context) => {
   // Original typing is not entirely accurate.
   // It passes everything in the first arg as a prop
   // to the component which it not ideal
-  const originalTemplate = originalStoryFn as unknown as Story;
+  const originalTemplate = originalStoryFn as StoryFn;
   if (viewMode === 'docs') {
     return story();
   }

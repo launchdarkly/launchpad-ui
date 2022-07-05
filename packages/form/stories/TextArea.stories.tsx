@@ -1,4 +1,4 @@
-import type { Args, ComponentStoryObj, DecoratorFn, Story } from '@storybook/react';
+import type { ComponentStoryObj, DecoratorFn, StoryFn } from '@storybook/react';
 
 import { createWithClassesDecorator, PseudoClasses } from '../../../.storybook/utils';
 import { Label, TextArea } from '../src';
@@ -12,11 +12,11 @@ const withRestingAndDisabledStates: DecoratorFn = (story, context) => {
   // componentId for example is required but it is
   // being passed as a prop to the component causing
   // errors to be shown the in console.
-  const originalTemplate = originalStoryFn as unknown as Story;
+  const originalTemplate = originalStoryFn as StoryFn;
   if (viewMode === 'docs') {
     return story();
   }
-  const finalArgs: Args = {
+  const finalArgs = {
     ...args,
     id: 'Disabled',
     disabled: true,
