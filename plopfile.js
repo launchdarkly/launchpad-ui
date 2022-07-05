@@ -78,6 +78,34 @@ module.exports = (plop) => {
           }),
       },
       {
+        path: 'packages/core/package.json',
+        pattern: /("dependencies": {)/g,
+        template: '$1\n    "@launchpad-ui/{{dashCase name}}": "workspace:~",',
+        type: 'modify',
+        transform: (file) =>
+          sortModification(file, {
+            openPatternStr: '"dependencies": {',
+            closePatternStr: '  },',
+            handleNonTrailingCommas: true,
+          }),
+      },
+      {
+        type: 'add',
+        path: 'packages/core/src/styles/{{dashCase name}}.css',
+        templateFile: '.plop-templates/component/core-styles.css.hbs',
+      },
+      {
+        path: 'packages/core/src/index.tsx',
+        pattern: /(plop start imports)/g,
+        template: "$1\nexport * from '@launchpad-ui/{{dashCase name}}';",
+        type: 'modify',
+        transform: (file) =>
+          sortModification(file, {
+            openPatternStr: 'plop start imports',
+            closePatternStr: 'plop end imports',
+          }),
+      },
+      {
         path: 'apps/remix/package.json',
         pattern: /("dependencies": {)/g,
         template: '$1\n    "@launchpad-ui/{{dashCase name}}": "workspace:~",',
@@ -93,7 +121,7 @@ module.exports = (plop) => {
         path: 'apps/remix/app/root.tsx',
         pattern: /(plop start imports)/g,
         template:
-          "$1\nimport {{camelCase name}}Styles from '@launchpad-ui/{{dashCase name}}/styles/{{pascalCase name}}.css';",
+          "$1\nimport {{camelCase name}}Styles from '@launchpad-ui/core/styles/{{dashCase name}}.css';",
         type: 'modify',
         transform: (file) =>
           sortModification(file, {
