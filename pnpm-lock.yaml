@@ -62,6 +62,7 @@ importers:
       jsdom: ^20.0.0
       lint-staged: ^13.0.0
       lodash-es: ^4.17.21
+      mini-css-extract-plugin: ^2.6.1
       nx: ^14.4.1
       plop: ^3.1.1
       prettier: ^2.7.0
@@ -136,6 +137,7 @@ importers:
       jsdom: 20.0.0
       lint-staged: 13.0.3
       lodash-es: 4.17.21
+      mini-css-extract-plugin: 2.6.1_webpack@5.73.0
       nx: 14.4.1
       plop: 3.1.1
       prettier: 2.7.1
@@ -13046,6 +13048,16 @@ packages:
   /min-indent/1.0.1:
     resolution: {integrity: sha512-I9jwMn07Sy/IwOj3zVkVik2JTvgpaykDZEigL6Rx6N9LbMywwUSMtxET+7lVoDLLd3O3IXwJwvuuns8UB/HeAg==}
     engines: {node: '>=4'}
+    dev: true
+
+  /mini-css-extract-plugin/2.6.1_webpack@5.73.0:
+    resolution: {integrity: sha512-wd+SD57/K6DiV7jIR34P+s3uckTRuQvx0tKPcvjFlrEylk6P4mQ2KSWk1hblj1Kxaqok7LogKOieygXqBczNlg==}
+    engines: {node: '>= 12.13.0'}
+    peerDependencies:
+      webpack: ^5.0.0
+    dependencies:
+      schema-utils: 4.0.0
+      webpack: 5.73.0_esbuild@0.14.48
     dev: true
 
   /minimatch/3.0.5:

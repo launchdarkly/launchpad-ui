@@ -1,4 +1,5 @@
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const css = require('@parcel/css');
 const browserslist = require('browserslist');
 const path = require('path');
@@ -44,7 +45,12 @@ module.exports = {
           }),
         ],
       },
+      plugins: [...config.plugins, new MiniCssExtractPlugin()],
     };
+
+    const cssRule = custom.module.rules.findIndex((rule) => rule.test.test('.css'));
+    custom.module.rules[cssRule].use.shift();
+    custom.module.rules[cssRule].use.unshift(MiniCssExtractPlugin.loader);
 
     // Keep terser for prod builds
     if (process.env.NODE_ENV === 'production') {
