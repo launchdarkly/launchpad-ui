@@ -83,7 +83,7 @@ As mentioned above, single components are deployed as versioned NPM packages, an
 When a component package version changes, this will create a version bump in `@launchpad-ui/core` as well according to this strategy:
 
 - `core` receives a version bump whenever one of its dependencies (e.g. button, modal) is updated.
-- The `core` version bump is equivalent to the highest semver version bump of an underlying dependency received when a new release.
+- The `core` version bump is equivalent to the highest semver version bump of an underlying dependency in the release.
   - For example, if `core` were at `0.1.0`, and then the `button` package gets bumped from `0.2.1` to `0.3.0` (minor) and the `alert` package gets bumped from `0.5.1` to `0.5.2` (patch), `core` package will get bumped to `0.2.0`. (minor)
 
 ---
@@ -201,4 +201,12 @@ You should also consider adding `axe` accessibility tests. See other packages fo
 
 ### Okay, I'm ready to deploy my code
 
-Perfect! Just a few final steps that we'll document soon in the `RELEASE.md` file.
+Perfect! Just a few final steps:
+
+- Run `npx changeset` before making a pull request. You'll see a list of packages Changeset has determined have changed, and they'll want you to tell them if it's a major, minor, or patch version bump.
+  - A brand new package should receive a "minor" bump, which should set it at `0.1.0`.
+  - For other version bumps, refer to [the semantic versioning docs](https://semver.org/spec/v0.1.0.html).
+  - When making any changes to components, make sure to also include `core` in your release [according to the version strategy described here](#how-does-versioning-work-in-launchpad).
+- Changeset will create a new `.md` file in the `.changeset` directory. Find it, and update the description to be more human readable. See the [change descriptions here](https://github.com/launchdarkly/launchpad-ui/releases) for an idea of how to write this.
+
+You're ready to go! Just post a PR and the `UX Next` squad will be automatically assigned to take a look. Happy launching.
