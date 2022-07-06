@@ -14,6 +14,9 @@ module.exports = (plop) => {
       },
     ],
     actions: [
+      /*
+       * Component package
+       */
       {
         type: 'add',
         path: 'packages/{{dashCase name}}/README.md',
@@ -59,11 +62,9 @@ module.exports = (plop) => {
         path: 'packages/{{dashCase name}}/src/styles/{{pascalCase name}}.css',
         templateFile: '.plop-templates/component/styles.css.hbs',
       },
-      {
-        type: 'add',
-        path: 'apps/remix/app/routes/components/{{dashCase name}}.tsx',
-        templateFile: '.plop-templates/component/remix-example.tsx.hbs',
-      },
+      /*
+       * Monorepo config
+       */
       {
         path: 'tsconfig.json',
         pattern: /("paths": {)/g,
@@ -77,8 +78,11 @@ module.exports = (plop) => {
             handleNonTrailingCommas: true,
           }),
       },
+      /*
+       * Core package integration
+       */
       {
-        path: 'apps/remix/package.json',
+        path: 'packages/core/package.json',
         pattern: /("dependencies": {)/g,
         template: '$1\n    "@launchpad-ui/{{dashCase name}}": "workspace:~",',
         type: 'modify',
@@ -90,10 +94,34 @@ module.exports = (plop) => {
           }),
       },
       {
+        type: 'add',
+        path: 'packages/core/src/styles/{{dashCase name}}.css',
+        templateFile: '.plop-templates/component/core-styles.css.hbs',
+      },
+      {
+        path: 'packages/core/src/index.ts',
+        pattern: /(plop start imports)/g,
+        template: "$1\nexport * from '@launchpad-ui/{{dashCase name}}';",
+        type: 'modify',
+        transform: (file) =>
+          sortModification(file, {
+            openPatternStr: 'plop start imports',
+            closePatternStr: 'plop end imports',
+          }),
+      },
+      /*
+       * Local Remix integration
+       */
+      {
+        type: 'add',
+        path: 'apps/remix/app/routes/components/{{dashCase name}}.tsx',
+        templateFile: '.plop-templates/component/remix-example.tsx.hbs',
+      },
+      {
         path: 'apps/remix/app/root.tsx',
         pattern: /(plop start imports)/g,
         template:
-          "$1\nimport {{camelCase name}}Styles from '@launchpad-ui/{{dashCase name}}/styles/{{pascalCase name}}.css';",
+          "$1\nimport {{camelCase name}}Styles from '@launchpad-ui/core/styles/{{dashCase name}}.css';",
         type: 'modify',
         transform: (file) =>
           sortModification(file, {

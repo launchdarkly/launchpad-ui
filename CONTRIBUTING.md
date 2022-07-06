@@ -49,19 +49,18 @@ The following is a set of guidelines for contributing to Launchpad and its packa
 
 ### Monorepo architecture
 
-Launchpad is set up as a monorepo where each component package is bundled and delivered as its own NPM package. This has some key advantages over deploying the entire design system as one package:
-
-- Improved maintenance process for Launchpad team:
-  - CI/CD process can be configured per component.
-  - Internal dependencies have strong boundaries, making it easier to avoid introducing bugs elsewhere in the system.
-  - Versions are scoped to single components, allowing us to specify granularly what has changed.
-- Improved experience for consumer teams:
-  - Easy to understand per-component incremental update path.
-  - Feature flag and install aliases of multiple individual packages.
-  - Bugs or incompatibilities introduced in the design system may be rolled back per component.
-  - Potentially decreased bundle-sizes due to inherent tree-shaking benefits.
+Launchpad is set up as a monorepo where each component package is bundled and delivered as its own NPM package. While you can technically import each component package separately, we do recommend using the "bundled" version of Launchpad at `@launchpad-ui/core`. The team chose to treat each component as a separate package internally for improved testing, version management, and isolation guarantees.
 
 At the time of writing this, we are using the [pnpm package manager](https://pnpm.io/) for its workspace feature and the [Nx build system](https://nx.dev/) for monorepo support. Each component is defined as a directory under the `packages` directory. It's advised to understand generally how these works when contributing.
+
+### Should I import each component package separately, or import everything at once via the `core` package?
+
+To guarantee strict compatibility between the component packages your app uses, we suggest importing `@launchpad-ui/core` instead of importing each component package separately.
+
+If you choose to use Launchpad via single component imports (e.g. `@launchpad-ui/button`) on its own, there are two big issues to be aware of:
+
+1. You may create token conflicts that expose difficult to diagnose bugs [as described here.](https://launchdarkly.atlassian.net/wiki/spaces/ENG/pages/2120908865/Supporting+a+Single+NPM+Package+for+Launchpad#Token-package-conflicts)
+2. You may create inconsistencies in UI styling where subdependencies are used in components [as shown here.](https://launchdarkly.atlassian.net/wiki/spaces/ENG/pages/2120908865/Supporting+a+Single+NPM+Package+for+Launchpad#Subdependency-package-conflicts)
 
 ### What's in the `packages` directory?
 
@@ -78,6 +77,14 @@ The apps directory is essentially a standalone project that has easy access to o
 ### How does versioning work in Launchpad?
 
 We are using [major version zero (0.y.z) semantic versioning](https://semver.org/spec/v0.1.0.html) to indicate that the project is still in an "initial development" phase and anything may change at any time. When a new package is introduced, the initial version is set to `0.1.0`.
+
+As mentioned above, single components are deployed as versioned NPM packages, and `@launchpad-ui/core` is versioned too.
+
+When a component package version changes, this will create a version bump in `@launchpad-ui/core` as well according to this strategy:
+
+- `core` receives a version bump whenever one of its dependencies (e.g. button, modal) is updated.
+- The `core` version bump is equivalent to the highest semver version bump of an underlying dependency in the release.
+  - For example, if `core` were at `0.1.0`, and then the `button` package gets bumped from `0.2.1` to `0.3.0` (minor) and the `alert` package gets bumped from `0.5.1` to `0.5.2` (patch), `core` package will get bumped to `0.2.0`. (minor)
 
 ---
 
@@ -156,43 +163,6 @@ With the help of [plop](https://plopjs.com), we can quickly scaffold new compone
 
 Simply run `pnpm generate component` and follow the prompts, and you'll be well on your way to adding a new component package to Launchpad.
 
-#### Without Plop
-
-If for some reason you need to create a new package in a more custom way, you can do so as follows:
-
-##### Duplicate an existing package
-
-It's easiest to copy an existing package like `alert` and rename the files and content. Duplicate a directory and do the following:
-
-- Change the duplicated directory's name to your component name in the singular (e.g. `notification`, not `notifications`).
-- Make the following changes to the files in the new directory:
-  - `package.json`
-    - Change the `name` to `@launchpad-ui/{your package name}`.
-    - Change the `version` to `0.0.1`.
-    - Add a unique description explaining briefly what the package does.
-    - For the `styles` export, if your package has multiple stylesheets, use `"./styles/*": "./dist/styles/*"`. If there is only a single export at the root, use `"./styles.css": "./dist/styles.css"`.
-    - If you do not plan on adding e2e tests yet, replace the `e2e` script value with `"exit 0"`.
-  - `README.md`
-    - Replace existing package name with your package name everywhere.
-    - If there is a "Usage" tab in Zeroheight for your component, you may copy the description from there, otherwise you can write one or copy the one you wrote for the `package.json`.
-  - `build.js`
-    - No changes necessary.
-  - `tsconfig.build.json`
-    - No changes necessary.
-  - `CHANGELOG.md`
-    - Delete this if you cloned it into this package. It gets autogenerated..
-
-##### Add references to the package throughout the monorepo
-
-Now that you have a package, let's make it known throughout Launchpad:
-
-- Add your package's path to the root `tsconfig.json`.
-- In `apps/remix`:
-  - Create a new `tsx` component file in the `app/routes/components` folder that imports your package and exports a React view using your component. This will be a new page in our Remix sandbox.
-  - The Remix app doesn't actually yet know how to resolve your dependency, so add it to the `package.json`, just like how the existing packages are being imported.
-  - In `app/data.server.ts`, add a new object that will function as a nav item that can bring the user to your new component view.
-  - In `app/root.tsx`, import your component's stylesheet.
-
 ### Package-specific changes
 
 As we migrate to Launchpad, we've selectively chosen to update or replace some dependencies:
@@ -236,6 +206,7 @@ Perfect! Just a few final steps:
 - Run `npx changeset` before making a pull request. You'll see a list of packages Changeset has determined have changed, and they'll want you to tell them if it's a major, minor, or patch version bump.
   - A brand new package should receive a "minor" bump, which should set it at `0.1.0`.
   - For other version bumps, refer to [the semantic versioning docs](https://semver.org/spec/v0.1.0.html).
+  - When making any changes to components, make sure to also include `core` in your release [according to the version strategy described here](#how-does-versioning-work-in-launchpad).
 - Changeset will create a new `.md` file in the `.changeset` directory. Find it, and update the description to be more human readable. See the [change descriptions here](https://github.com/launchdarkly/launchpad-ui/releases) for an idea of how to write this.
 
 You're ready to go! Just post a PR and the `UX Next` squad will be automatically assigned to take a look. Happy launching.
