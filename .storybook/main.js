@@ -1,5 +1,10 @@
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
+const css = require('@parcel/css');
+const browserslist = require('browserslist');
 const path = require('path');
+
 const tsconfig = require('../tsconfig.json');
+const pkg = require('../package.json');
 
 module.exports = {
   core: {
@@ -10,14 +15,6 @@ module.exports = {
     '@storybook/addon-a11y',
     '@storybook/addon-essentials',
     'storybook-addon-pseudo-states',
-    {
-      name: '@storybook/addon-postcss',
-      options: {
-        postcssLoaderOptions: {
-          implementation: require('postcss'),
-        },
-      },
-    },
     '@storybook/addon-interactions',
   ],
   framework: '@storybook/react-webpack5',
@@ -25,16 +22,36 @@ module.exports = {
     storyStoreV7: true,
     babelModeV7: true,
   },
-  webpackFinal: async (config) => ({
-    ...config,
-    resolve: {
-      ...config.resolve,
-      alias: {
-        ...config.resolve.alias,
-        ...getAliases(),
+  webpackFinal: async (config) => {
+    const custom = {
+      ...config,
+      resolve: {
+        ...config.resolve,
+        alias: {
+          ...config.resolve.alias,
+          ...getAliases(),
+        },
       },
-    },
-  }),
+      optimization: {
+        minimize: true,
+        minimizer: [
+          new CssMinimizerPlugin({
+            minify: CssMinimizerPlugin.parcelCssMinify,
+            minimizerOptions: {
+              targets: css.browserslistToTargets(browserslist(pkg.browserslist.join(', '))),
+              drafts: { nesting: true, customMedia: true },
+            },
+          }),
+        ],
+      },
+    };
+
+    // Keep terser for prod builds
+    if (process.env.NODE_ENV === 'production') {
+      custom.optimization.minimizer.unshift(`...`);
+    }
+    return custom;
+  },
 };
 
 const getAliases = () => {
