@@ -1,4 +1,4 @@
-import { Notification, NotificationLevel } from '@launchpad-ui/notification';
+import { Notification, NotificationLevel } from '@launchpad-ui/core';
 
 export default function Index() {
   return (

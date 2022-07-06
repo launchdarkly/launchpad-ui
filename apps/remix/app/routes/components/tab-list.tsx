@@ -1,4 +1,4 @@
-import { TabList } from '@launchpad-ui/tab-list';
+import { TabList } from '@launchpad-ui/core';
 import { Item } from '@react-stately/collections';
 
 export default function Index() {

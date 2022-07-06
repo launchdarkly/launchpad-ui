@@ -1,5 +1,4 @@
-import { CopyToClipboard } from '@launchpad-ui/clipboard';
-import { Lozenge } from '@launchpad-ui/lozenge';
+import { CopyToClipboard, Lozenge } from '@launchpad-ui/core';
 
 export default function Index() {
   return (

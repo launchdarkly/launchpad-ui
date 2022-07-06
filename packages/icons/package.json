@@ -35,7 +35,7 @@
   },
   "dependencies": {
     "@launchpad-ui/tokens": "workspace:~",
-    "clsx": "^1.1.1",
+    "clsx": "^1.2.0",
     "uuid": "^8.3.2"
   },
   "peerDependencies": {

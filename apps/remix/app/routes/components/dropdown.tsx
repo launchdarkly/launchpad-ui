@@ -1,5 +1,4 @@
-import { Dropdown, DropdownButton } from '@launchpad-ui/dropdown';
-import { Menu, MenuItem } from '@launchpad-ui/menu';
+import { Dropdown, DropdownButton, Menu, MenuItem } from '@launchpad-ui/core';
 
 export default function Index() {
   return (

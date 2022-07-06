@@ -1,6 +1,6 @@
 {
   "name": "@launchpad-ui/modal",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "publishConfig": {
     "access": "public"
   },
@@ -37,7 +37,7 @@
     "@launchpad-ui/progress": "workspace:~",
     "@launchpad-ui/tokens": "workspace:~",
     "@react-aria/focus": "^3.6.0",
-    "clsx": "^1.1.1",
+    "clsx": "^1.2.0",
     "framer-motion": "^6.3.13",
     "lodash-es": "^4.17.21",
     "no-scroll": "^2.1.1"

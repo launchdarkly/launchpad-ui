@@ -14,23 +14,7 @@
     "test": "exit 0"
   },
   "dependencies": {
-    "@launchpad-ui/alert": "workspace:~",
-    "@launchpad-ui/banner": "workspace:~",
-    "@launchpad-ui/button": "workspace:~",
-    "@launchpad-ui/clipboard": "workspace:~",
-    "@launchpad-ui/dropdown": "workspace:~",
-    "@launchpad-ui/form": "workspace:~",
-    "@launchpad-ui/icons": "workspace:~",
-    "@launchpad-ui/lozenge": "workspace:~",
-    "@launchpad-ui/menu": "workspace:~",
-    "@launchpad-ui/modal": "workspace:~",
-    "@launchpad-ui/notification": "workspace:~",
-    "@launchpad-ui/popover": "workspace:~",
-    "@launchpad-ui/progress": "workspace:~",
-    "@launchpad-ui/tab-list": "workspace:~",
-    "@launchpad-ui/toggle": "workspace:~",
-    "@launchpad-ui/tokens": "workspace:~",
-    "@launchpad-ui/tooltip": "workspace:~",
+    "@launchpad-ui/core": "workspace:~",
     "@react-aria/ssr": "^3.2.0",
     "@react-stately/collections": "^3.4.0",
     "@remix-run/node": "^1.6.0",
@@ -43,7 +27,7 @@
   "devDependencies": {
     "@remix-run/dev": "^1.6.0",
     "@remix-run/eslint-config": "^1.6.0",
-    "eslint": "^8.18.0",
+    "eslint": "^8.19.0",
     "typescript": "^4.7.2"
   },
   "engines": {

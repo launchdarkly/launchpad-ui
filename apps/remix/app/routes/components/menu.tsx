@@ -1,4 +1,4 @@
-import { Menu, MenuItem } from '@launchpad-ui/menu';
+import { Menu, MenuItem } from '@launchpad-ui/core';
 
 export default function Index() {
   return (

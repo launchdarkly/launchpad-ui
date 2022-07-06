@@ -1,6 +1,6 @@
 {
   "name": "@launchpad-ui/menu",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "publishConfig": {
     "access": "public"
   },
@@ -38,7 +38,7 @@
     "@launchpad-ui/tooltip": "workspace:~",
     "@react-aria/focus": "^3.6.0",
     "@react-aria/separator": "^3.2.0",
-    "clsx": "^1.1.1",
+    "clsx": "^1.2.0",
     "lodash-es": "^4.17.21",
     "react-router-dom": "^6.3.0",
     "react-virtual": "^2.10.4",

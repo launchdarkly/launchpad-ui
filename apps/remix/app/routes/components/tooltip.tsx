@@ -1,5 +1,4 @@
-import { Button } from '@launchpad-ui/button';
-import { Tooltip } from '@launchpad-ui/tooltip';
+import { Button, Tooltip } from '@launchpad-ui/core';
 
 export default function Index() {
   return (
