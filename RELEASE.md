@@ -9,4 +9,4 @@ Releases are done via the [Changesets Action](https://github.com/changesets/acti
 3. Push your branch to remote
 4. Branch off the release branch and create PRs with changesets (as you would normally do in `main`) with the release branch set as the base
 5. Observe that the Changesets Action opens prerelease PRs and the same process as noted above takes place
-6. When the release branch is finished and the package/s are stable, exit pre mode with `pnpm changeset pre exit` and open a PR from the release branch into `main`
+6. When the release branch is finished and the packages are stable, exit pre mode with `pnpm changeset pre exit` and open a PR from the release branch into `main`
