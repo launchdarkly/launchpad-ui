@@ -65,6 +65,8 @@ type PopoverState = {
 type PopoverTargetProps = {
   onMouseEnter?: (event: React.MouseEvent) => void;
   onMouseLeave?: (event: React.MouseEvent) => void;
+  onPointerEnter?: (event: React.PointerEvent) => void;
+  onPointerLeave?: (event: React.PointerEvent) => void;
   onFocus?: (event: React.FocusEvent) => void;
   onBlur?: (event: React.FocusEvent) => void;
   onClick?: (event: React.MouseEvent) => void;
@@ -77,6 +79,8 @@ type PopoverTargetProps = {
 type PopoverContentProps = {
   onMouseEnter?: (event: React.MouseEvent) => void;
   onMouseLeave?: (event: React.MouseEvent) => void;
+  onPointerEnter?: (event: React.PointerEvent) => void;
+  onPointerLeave?: (event: React.PointerEvent) => void;
   onClick?: (event: React.MouseEvent) => void;
 };
 
@@ -181,6 +185,8 @@ class Popover extends withTimeouts<PopoverProps>(Component) {
     ) {
       targetProps.onMouseEnter = this.handleMouseEnter;
       targetProps.onMouseLeave = this.handleMouseLeave;
+      targetProps.onPointerEnter = this.handleMouseEnter;
+      targetProps.onPointerLeave = this.handleMouseLeave;
       if (interactionKind === 'hover-or-focus') {
         targetProps.onFocus = this.handleFocus;
         targetProps.onBlur = this.handleBlur;
@@ -226,6 +232,8 @@ class Popover extends withTimeouts<PopoverProps>(Component) {
       handlers = {
         onMouseEnter: this.handleMouseEnter,
         onMouseLeave: this.handleMouseLeave,
+        onPointerEnter: this.handleMouseEnter,
+        onPointerLeave: this.handleMouseLeave,
       };
     }
 
