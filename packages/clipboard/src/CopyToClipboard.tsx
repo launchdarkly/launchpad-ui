@@ -1,7 +1,7 @@
 import { CheckCircle, IconSize } from '@launchpad-ui/icons';
 import { Tooltip } from '@launchpad-ui/tooltip';
 import { announce } from '@react-aria/live-announcer';
-import { useRef, useState } from 'react';
+import { forwardRef, useCallback, useImperativeHandle, useRef, useState } from 'react';
 
 import './styles/Clipboard.css';
 
@@ -18,6 +18,10 @@ type CopyToClipboardProps = {
   onClick?(): void;
 };
 
+type CopyToClipboardHandleRef = {
+  handleCopy: () => void;
+};
+
 const CopyConfirmation = () => (
   <span className="u-flex-middle">
     <CheckCircle className="Clipboard-checkmark" size={IconSize.MEDIUM} />
@@ -25,80 +29,102 @@ const CopyConfirmation = () => (
   </span>
 );
 
-const CopyToClipboard = ({
-  customCopiedText,
-  text,
-  tooltip,
-  tooltipOptions = {
-    placement: 'bottom',
-  },
-  popoverTargetClassName,
-  children,
-  ariaLabel,
-  testId,
-  shouldOnlyShowTooltipAfterCopy,
-  onClick,
-}: CopyToClipboardProps) => {
-  const [isOpen, setIsOpen] = useState(false);
-  const [wasCopied, setWasCopied] = useState(false);
-  const buttonElement = useRef<HTMLButtonElement>(null);
+const CopyToClipboard = forwardRef<CopyToClipboardHandleRef, CopyToClipboardProps>(
+  (
+    {
+      customCopiedText,
+      text,
+      tooltip,
+      tooltipOptions = {
+        placement: 'bottom',
+      },
+      popoverTargetClassName,
+      children,
+      ariaLabel,
+      testId,
+      shouldOnlyShowTooltipAfterCopy,
+      onClick,
+    },
+    ref
+  ) => {
+    const [isOpen, setIsOpen] = useState(false);
+    const [wasCopied, setWasCopied] = useState(false);
+    const buttonRef = useRef<HTMLButtonElement>(null);
 
-  const tooltipText = wasCopied
-    ? customCopiedText || <CopyConfirmation />
-    : tooltip || 'Copy to clipboard';
-  const ariaLabelText = ariaLabel ? ariaLabel : `Copy ${text} to your clipboard.`;
-  const testIdOrFallback = testId ? testId : 'temp-test-id';
+    const handleCopy = useCallback(async () => {
+      await navigator.clipboard.writeText(text);
+      const node = buttonRef.current;
 
-  const handleClick = async () => {
-    await navigator.clipboard.writeText(text);
-    buttonElement.current?.focus();
-    setIsOpen(true);
-    setWasCopied(true);
-    announce('Copied!', 'polite', 300);
+      if (node) {
+        node.focus();
+      }
 
-    onClick?.();
-  };
-
-  const handleFocus = () => {
-    if (!shouldOnlyShowTooltipAfterCopy) {
       setIsOpen(true);
-    }
-  };
+      setWasCopied(true);
+      announce('Copied!', 'polite', 300);
 
-  const handleBlur = () => {
-    setIsOpen(false);
-    setWasCopied(false);
-  };
+      onClick?.();
+    }, [onClick, buttonRef, text, setIsOpen, setWasCopied]);
 
-  // This is only triggered when hovering over it
-  const handleInteraction = (isOpen: boolean) => {
-    setIsOpen(shouldOnlyShowTooltipAfterCopy ? false : isOpen);
-    setWasCopied((prev) => (!isOpen ? isOpen : prev));
-  };
+    // this imperative handle is useful when a parent needs to programmatically
+    // call `handleCopy`, e.g. when the parent node is clicked
+    useImperativeHandle(
+      ref,
+      () => ({
+        handleCopy,
+      }),
+      [handleCopy]
+    );
 
-  return (
-    <span className="CopyToClipboard" data-test-id={testIdOrFallback}>
-      <button
-        className="CopyToClipboard-button"
-        onBlur={handleBlur}
-        onFocus={handleFocus}
-        onClick={handleClick}
-        ref={buttonElement}
-        aria-label={ariaLabelText}
-      >
-        <Tooltip
-          {...tooltipOptions}
-          isOpen={isOpen}
-          content={tooltipText}
-          onInteraction={handleInteraction}
-          targetClassName={popoverTargetClassName}
+    const tooltipText = wasCopied
+      ? customCopiedText || <CopyConfirmation />
+      : tooltip || 'Copy to clipboard';
+    const ariaLabelText = ariaLabel ? ariaLabel : `Copy ${text} to your clipboard.`;
+    const testIdOrFallback = testId ? testId : 'temp-test-id';
+
+    const handleFocus = () => {
+      if (!shouldOnlyShowTooltipAfterCopy) {
+        setIsOpen(true);
+      }
+    };
+
+    const handleBlur = () => {
+      setIsOpen(false);
+      setWasCopied(false);
+    };
+
+    // This is only triggered when hovering over it
+    const handleInteraction = (isOpen: boolean) => {
+      setIsOpen(shouldOnlyShowTooltipAfterCopy ? false : isOpen);
+      setWasCopied((prev) => (!isOpen ? isOpen : prev));
+    };
+
+    return (
+      <span className="CopyToClipboard" data-test-id={testIdOrFallback}>
+        <button
+          className="CopyToClipboard-button"
+          onBlur={handleBlur}
+          onFocus={handleFocus}
+          onClick={handleCopy}
+          ref={buttonRef}
+          aria-label={ariaLabelText}
         >
-          {children}
-        </Tooltip>
-      </button>
-    </span>
-  );
-};
+          <Tooltip
+            {...tooltipOptions}
+            isOpen={isOpen}
+            content={tooltipText}
+            onInteraction={handleInteraction}
+            targetClassName={popoverTargetClassName}
+          >
+            {children}
+          </Tooltip>
+        </button>
+      </span>
+    );
+  }
+);
+
+CopyToClipboard.displayName = 'CopyToClipboard';
 
 export { CopyConfirmation, CopyToClipboard };
 export type { CopyToClipboardProps };
