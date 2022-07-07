@@ -1,5 +1,11 @@
 # @launchpad-ui/popover
 
+## 0.2.3
+
+### Patch Changes
+
+- [#161](https://github.com/launchdarkly/launchpad-ui/pull/161) [`cc0a367`](https://github.com/launchdarkly/launchpad-ui/commit/cc0a367f7d67f8c974b46c0b1ac743e7b020c0f2) Thanks [@Niznikr](https://github.com/Niznikr)! - [Popover] Handle pointer events
+
 ## 0.2.2
 
 ### Patch Changes
