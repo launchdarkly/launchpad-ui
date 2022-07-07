@@ -1,5 +1,15 @@
 # @launchpad-ui/menu
 
+## 0.2.3
+
+### Patch Changes
+
+- [#152](https://github.com/launchdarkly/launchpad-ui/pull/152) [`dcbbb0d`](https://github.com/launchdarkly/launchpad-ui/commit/dcbbb0ddb030e57bad5a983db873d9311c86df66) Thanks [@Niznikr](https://github.com/Niznikr)! - Upgrade react-router-dom
+
+- Updated dependencies [[`cc0a367`](https://github.com/launchdarkly/launchpad-ui/commit/cc0a367f7d67f8c974b46c0b1ac743e7b020c0f2)]:
+  - @launchpad-ui/popover@0.2.3
+  - @launchpad-ui/tooltip@0.2.3
+
 ## 0.2.2
 
 ### Patch Changes
