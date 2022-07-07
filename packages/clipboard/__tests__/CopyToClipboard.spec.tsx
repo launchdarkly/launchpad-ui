@@ -1,8 +1,10 @@
 import type { CopyToClipboardProps } from '../src';
+import type { CopyToClipboardHandleRef } from '../src/CopyToClipboard';
 
 import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { axe } from 'jest-axe';
+import { useRef } from 'react';
 import { it, expect, describe, vi } from 'vitest';
 
 import { CopyToClipboard } from '../src';
@@ -79,5 +81,30 @@ describe('CopyToClipboard', () => {
     await waitFor(async () => {
       expect(await screen.findByText(FAKE_CUSTOM_COPIED_TEXT)).toBeVisible();
     });
+  });
+
+  it('copies imperatively when a ref is passed', async () => {
+    const WrappedComponent = () => {
+      const ref = useRef<CopyToClipboardHandleRef>(null);
+
+      const handleClick = () => {
+        ref.current?.handleCopy();
+      };
+
+      return (
+        // eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions
+        <div data-test-id="wrapper" onClick={handleClick}>
+          <CopyToClipboard text="Copy content" ref={ref}>
+            <code>Copy</code>
+          </CopyToClipboard>
+        </div>
+      );
+    };
+
+    render(<WrappedComponent />);
+
+    const user = userEvent.setup();
+    await user.click(screen.getByTestId('wrapper'));
+    expect(navigator.clipboard.writeText).toHaveBeenCalledWith('Copy content');
   });
 });
