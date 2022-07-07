@@ -127,4 +127,4 @@ const CopyToClipboard = forwardRef<CopyToClipboardHandleRef, CopyToClipboardProp
 CopyToClipboard.displayName = 'CopyToClipboard';
 
 export { CopyConfirmation, CopyToClipboard };
-export type { CopyToClipboardProps };
+export type { CopyToClipboardProps, CopyToClipboardHandleRef };
