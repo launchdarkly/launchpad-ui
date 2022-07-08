@@ -1,5 +1,6 @@
 ---
 '@launchpad-ui/clipboard': patch
+'@launchpad-ui/core': patch
 ---
 
-expose ref to imperatively call copy function from parent
+[Clipboard] Expose ref to imperatively call copy function from parent
