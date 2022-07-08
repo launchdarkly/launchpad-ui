@@ -1,5 +1,14 @@
 # @launchpad-ui/clipboard
 
+## 0.2.4
+
+### Patch Changes
+
+- [#163](https://github.com/launchdarkly/launchpad-ui/pull/163) [`c1321e9`](https://github.com/launchdarkly/launchpad-ui/commit/c1321e934e37b31b3a56ff5c8b8163c53cee2d62) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Clipboard] Expose ref to imperatively call copy function from parent
+
+- Updated dependencies []:
+  - @launchpad-ui/tooltip@0.2.4
+
 ## 0.2.3
 
 ### Patch Changes

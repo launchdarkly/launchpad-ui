@@ -1,5 +1,21 @@
 # @launchpad-ui/notification
 
+## 0.2.0
+
+### Minor Changes
+
+- [#166](https://github.com/launchdarkly/launchpad-ui/pull/166) [`d0cadcb`](https://github.com/launchdarkly/launchpad-ui/commit/d0cadcb6f13297e02fd7e8a0007b06a0bc1c66c6) Thanks [@Niznikr](https://github.com/Niznikr)! - [Modal, Notification, Popover] Remove LazyMotion:
+
+  This requires that you wrap your app with [LazyMotion](https://www.framer.com/docs/lazy-motion/) to use these components:
+
+  ```jsx
+  import { LazyMotion, domAnimation } from 'framer-motion';
+
+  <LazyMotion features={domAnimation}>
+    <App />
+  </LazyMotion>;
+  ```
+
 ## 0.1.6
 
 ### Patch Changes
