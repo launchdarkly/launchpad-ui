@@ -15,7 +15,7 @@
 .Lozenge {
   display: inline-block;
   font-weight: var(--font-weight-semibold);
-  font-size: var(--osmo-font-size-smaller);
+  font-size: 1.1rem;
   line-height: 1.2;
   border: 1px solid var(--Lozenge-border-color);
   border-radius: var(--border-radius);
@@ -28,13 +28,13 @@
 }
 
 .Lozenge--normal {
-  font-size: var(--osmo-font-size-smaller);
+  font-size: 1.1rem;
   line-height: 1.4;
   padding: 0.3em;
 }
 
 .Lozenge--large {
-  font-size: var(--osmo-font-size-small);
+  font-size: 1.3rem;
   line-height: 1.6;
   padding: 0.5em;
 }
@@ -153,7 +153,7 @@
 
 .Lozenge--flag {
   border-radius: 1.5rem;
-  font-size: var(--osmo-font-size-small);
+  font-size: 1.3rem;
   padding: 0.2rem;
   width: 4.8rem;
 }
