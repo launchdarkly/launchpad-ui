@@ -1,8 +1,8 @@
 import { AlertKind } from '@launchpad-ui/alert';
-import { render, screen } from '@testing-library/react';
 import { axe } from 'jest-axe';
 import { it, expect, describe } from 'vitest';
 
+import { render, screen } from '../../../tests/utils';
 import { Banner } from '../src';
 
 describe('Banner', () => {

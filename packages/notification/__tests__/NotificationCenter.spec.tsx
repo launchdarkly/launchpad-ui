@@ -1,7 +1,7 @@
-import { screen, render } from '@testing-library/react';
 import { axe } from 'jest-axe';
 import { it, expect, describe } from 'vitest';
 
+import { render, screen } from '../../../tests/utils';
 import { NotificationCenter } from '../src';
 import { NotificationLevel, NotificationRecord } from '../src/types';
 

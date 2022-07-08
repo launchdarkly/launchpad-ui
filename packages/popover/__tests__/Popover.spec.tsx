@@ -1,8 +1,7 @@
-import { render, screen, waitFor } from '@testing-library/react';
-import userEvent from '@testing-library/user-event';
 import { axe } from 'jest-axe';
 import { it, expect, describe } from 'vitest';
 
+import { render, screen, userEvent, waitFor } from '../../../tests/utils';
 import { Popover } from '../src';
 
 describe('Popover', () => {

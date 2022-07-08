@@ -1,8 +1,7 @@
-import { render, screen } from '@testing-library/react';
-import userEvent from '@testing-library/user-event';
 import { axe } from 'jest-axe';
 import { it, expect, describe, vi } from 'vitest';
 
+import { render, screen, userEvent } from '../../../tests/utils';
 import { Lozenge, LozengeKind, LozengeSize } from '../src';
 
 describe('Lozenge', () => {

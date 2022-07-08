@@ -1,9 +1,8 @@
 /* eslint-disable testing-library/no-node-access */
-import { render, screen } from '@testing-library/react';
-import userEvent from '@testing-library/user-event';
 import { axe } from 'jest-axe';
 import { it, expect, describe, vi } from 'vitest';
 
+import { render, screen, userEvent } from '../../../tests/utils';
 import { Overlay } from '../src';
 
 describe('Overlay', () => {

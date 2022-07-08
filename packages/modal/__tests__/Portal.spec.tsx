@@ -1,8 +1,8 @@
 /* eslint-disable testing-library/no-node-access */
-import { render } from '@testing-library/react';
 import { axe } from 'jest-axe';
 import { it, expect, describe } from 'vitest';
 
+import { render } from '../../../tests/utils';
 import { Portal } from '../src';
 
 describe('Portal', () => {

@@ -1,10 +1,9 @@
 import type { CopyToClipboardProps } from '../src';
 
-import { render, screen, waitFor } from '@testing-library/react';
-import userEvent from '@testing-library/user-event';
 import { axe } from 'jest-axe';
 import { it, expect, describe, vi } from 'vitest';
 
+import { render, screen, userEvent, waitFor } from '../../../tests/utils';
 import { CopyToClipboard } from '../src';
 
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
