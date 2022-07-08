@@ -1,7 +1,6 @@
-import { render, screen } from '@testing-library/react';
-import userEvent from '@testing-library/user-event';
 import { axe } from 'jest-axe';
 
+import { render, screen, userEvent } from '../../../test/utils';
 import { AlertKind, CollapsibleAlert } from '../src';
 
 describe('CollapsibleAlert', () => {

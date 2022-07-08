@@ -1,8 +1,8 @@
 import { Info } from '@launchpad-ui/icons';
-import { render, screen } from '@testing-library/react';
 import { axe } from 'jest-axe';
 import { it, expect, describe } from 'vitest';
 
+import { render, screen } from '../../../test/utils';
 import { IconField } from '../src';
 
 describe('IconField', () => {

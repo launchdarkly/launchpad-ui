@@ -1,6 +1,6 @@
-import { render, screen } from '@testing-library/react';
 import { it, expect, describe } from 'vitest';
 
+import { render, screen } from '../../../test/utils';
 import { RequiredAsterisk } from '../src';
 
 describe('RequiredAsterisk', () => {

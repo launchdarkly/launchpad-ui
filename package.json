@@ -89,6 +89,7 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-testing-library": "^5.5.0",
     "fast-glob": "^3.2.11",
+    "framer-motion": "^6.3.13",
     "fsevents": "^2.3.2",
     "http-server": "^14.1.0",
     "husky": "^8.0.1",

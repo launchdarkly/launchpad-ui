@@ -1,9 +1,8 @@
 import { Button, ButtonKind } from '@launchpad-ui/button';
 import { Item } from '@react-stately/collections';
-import { render, screen } from '@testing-library/react';
-import userEvent from '@testing-library/user-event';
 import { axe } from 'jest-axe';
 
+import { render, screen, userEvent } from '../../../test/utils';
 import { TabList } from '../src';
 
 describe('TabList', () => {

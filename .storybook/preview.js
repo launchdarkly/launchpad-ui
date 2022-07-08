@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { LazyMotion, domAnimation } from 'framer-motion';
 
 import '../packages/tokens/dist/index.css';
 import '../packages/tokens/dist/dark.css';
@@ -38,6 +38,10 @@ export const decorators = [
 
     document.documentElement.setAttribute('data-theme', theme);
 
-    return <StoryFn />;
+    return (
+      <LazyMotion strict features={domAnimation}>
+        <StoryFn />
+      </LazyMotion>
+    );
   },
 ];

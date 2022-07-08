@@ -1,7 +1,6 @@
-import { render, screen, waitFor } from '@testing-library/react';
-import userEvent from '@testing-library/user-event';
 import { axe } from 'jest-axe';
 
+import { render, screen, userEvent, waitFor } from '../../../test/utils';
 import { Toggle } from '../src';
 
 describe('Toggle', () => {

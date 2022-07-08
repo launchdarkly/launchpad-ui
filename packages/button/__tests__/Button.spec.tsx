@@ -1,9 +1,8 @@
 import { Add } from '@launchpad-ui/icons';
-import { render, screen } from '@testing-library/react';
-import userEvent from '@testing-library/user-event';
 import { axe } from 'jest-axe';
 import { it, expect, describe, vi } from 'vitest';
 
+import { render, screen, userEvent } from '../../../test/utils';
 import { Button, ButtonKind, ButtonSize, ButtonType } from '../src';
 
 describe('Button', () => {

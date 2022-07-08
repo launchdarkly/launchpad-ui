@@ -1,7 +1,7 @@
-import { render, screen } from '@testing-library/react';
 import { axe } from 'jest-axe';
 import { it, expect, describe } from 'vitest';
 
+import { render, screen } from '../../../test/utils';
 import { CompactTextField } from '../src';
 
 describe('CompactTextField', () => {

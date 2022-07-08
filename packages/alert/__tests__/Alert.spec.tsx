@@ -1,10 +1,9 @@
 import type { AlertProps } from '../src';
 
-import { render, screen } from '@testing-library/react';
-import userEvent from '@testing-library/user-event';
 import { axe } from 'jest-axe';
 import { it, expect, describe, vi } from 'vitest';
 
+import { render, screen, userEvent } from '../../../test/utils';
 import { Alert, AlertKind, AlertSize } from '../src';
 
 const createComponent = (props?: AlertProps) => <Alert {...props}>Alert text!</Alert>;

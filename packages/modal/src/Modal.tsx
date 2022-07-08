@@ -4,7 +4,7 @@ import { Button, ButtonSize, ButtonType } from '@launchpad-ui/button';
 import { Close, IconSize } from '@launchpad-ui/icons';
 import { FocusScope } from '@react-aria/focus';
 import cx from 'clsx';
-import { LazyMotion, m } from 'framer-motion';
+import { m } from 'framer-motion';
 import { defer } from 'lodash-es';
 import noScroll from 'no-scroll';
 import { useEffect, useRef } from 'react';
@@ -28,8 +28,6 @@ const content: { [name: string]: Variants } = {
     },
   },
 };
-
-const loadFeatures = () => import('./features').then((res) => res.default);
 
 type ModalProps = {
   children?: React.ReactNode;
@@ -87,44 +85,42 @@ const Modal = ({
   const modalClasses = cx('Modal', className);
 
   return (
-    <LazyMotion strict features={loadFeatures}>
-      <div className={modalClasses} ref={ref}>
-        <m.div
-          initial="hidden"
-          animate="visible"
-          variants={overlay}
-          transition={{ duration: 0.15 }}
-          role="presentation"
-          className="Modal-overlay"
-          onMouseDown={handleOverlayClick}
-        >
-          <FocusScope autoFocus restoreFocus contain>
-            <m.div
-              initial="hidden"
-              animate="visible"
-              variants={content[transition]}
-              role="dialog"
-              aria-labelledby={modalLabelID}
-              aria-modal
-              className="Modal-content"
-            >
-              {withCloseButton && (
-                <Button
-                  aria-label="close"
-                  size={ButtonSize.SMALL}
-                  type={ButtonType.ICON}
-                  icon={<Close size={IconSize.MEDIUM} />}
-                  className="Modal-close"
-                  onClick={onCancel}
-                  testId="Modal-close"
-                />
-              )}
-              {children}
-            </m.div>
-          </FocusScope>
-        </m.div>
-      </div>
-    </LazyMotion>
+    <div className={modalClasses} ref={ref}>
+      <m.div
+        initial="hidden"
+        animate="visible"
+        variants={overlay}
+        transition={{ duration: 0.15 }}
+        role="presentation"
+        className="Modal-overlay"
+        onMouseDown={handleOverlayClick}
+      >
+        <FocusScope autoFocus restoreFocus contain>
+          <m.div
+            initial="hidden"
+            animate="visible"
+            variants={content[transition]}
+            role="dialog"
+            aria-labelledby={modalLabelID}
+            aria-modal
+            className="Modal-content"
+          >
+            {withCloseButton && (
+              <Button
+                aria-label="close"
+                size={ButtonSize.SMALL}
+                type={ButtonType.ICON}
+                icon={<Close size={IconSize.MEDIUM} />}
+                className="Modal-close"
+                onClick={onCancel}
+                testId="Modal-close"
+              />
+            )}
+            {children}
+          </m.div>
+        </FocusScope>
+      </m.div>
+    </div>
   );
 };
 
