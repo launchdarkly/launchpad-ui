@@ -1,5 +1,11 @@
 # @launchpad-ui/lozenge
 
+## 0.2.2
+
+### Patch Changes
+
+- [#167](https://github.com/launchdarkly/launchpad-ui/pull/167) [`19ef59b`](https://github.com/launchdarkly/launchpad-ui/commit/19ef59bf64050529d8f6555a5bea1474988a4157) Thanks [@chasedarkly](https://github.com/chasedarkly)! - Update font sizing used with lozenge
+
 ## 0.2.1
 
 ### Patch Changes

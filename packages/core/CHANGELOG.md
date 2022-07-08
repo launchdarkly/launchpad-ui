@@ -1,5 +1,40 @@
 # @launchpad-ui/core
 
+## 0.2.0
+
+### Minor Changes
+
+- [#166](https://github.com/launchdarkly/launchpad-ui/pull/166) [`d0cadcb`](https://github.com/launchdarkly/launchpad-ui/commit/d0cadcb6f13297e02fd7e8a0007b06a0bc1c66c6) Thanks [@Niznikr](https://github.com/Niznikr)! - [Modal, Notification, Popover] Remove LazyMotion:
+
+  This requires that you wrap your app with [LazyMotion](https://www.framer.com/docs/lazy-motion/) to use these components:
+
+  ```jsx
+  import { LazyMotion, domAnimation } from 'framer-motion';
+
+  <LazyMotion features={domAnimation}>
+    <App />
+  </LazyMotion>;
+  ```
+
+### Patch Changes
+
+- [#164](https://github.com/launchdarkly/launchpad-ui/pull/164) [`e711a77`](https://github.com/launchdarkly/launchpad-ui/commit/e711a7753aedad207d0f8328e34dd8b5471096ae) Thanks [@Niznikr](https://github.com/Niznikr)! - [Modal] Add class to body when open
+
+* [#163](https://github.com/launchdarkly/launchpad-ui/pull/163) [`c1321e9`](https://github.com/launchdarkly/launchpad-ui/commit/c1321e934e37b31b3a56ff5c8b8163c53cee2d62) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Clipboard] Expose ref to imperatively call copy function from parent
+
+- [#167](https://github.com/launchdarkly/launchpad-ui/pull/167) [`19ef59b`](https://github.com/launchdarkly/launchpad-ui/commit/19ef59bf64050529d8f6555a5bea1474988a4157) Thanks [@chasedarkly](https://github.com/chasedarkly)! - Update font sizing used with lozenge
+
+- Updated dependencies [[`e711a77`](https://github.com/launchdarkly/launchpad-ui/commit/e711a7753aedad207d0f8328e34dd8b5471096ae), [`c1321e9`](https://github.com/launchdarkly/launchpad-ui/commit/c1321e934e37b31b3a56ff5c8b8163c53cee2d62), [`19ef59b`](https://github.com/launchdarkly/launchpad-ui/commit/19ef59bf64050529d8f6555a5bea1474988a4157), [`d0cadcb`](https://github.com/launchdarkly/launchpad-ui/commit/d0cadcb6f13297e02fd7e8a0007b06a0bc1c66c6)]:
+  - @launchpad-ui/modal@0.4.0
+  - @launchpad-ui/clipboard@0.2.4
+  - @launchpad-ui/lozenge@0.2.2
+  - @launchpad-ui/notification@0.2.0
+  - @launchpad-ui/popover@0.3.0
+  - @launchpad-ui/overlay@0.1.9
+  - @launchpad-ui/dropdown@0.1.7
+  - @launchpad-ui/menu@0.2.4
+  - @launchpad-ui/tooltip@0.2.4
+
 ## 0.1.1
 
 ### Patch Changes
