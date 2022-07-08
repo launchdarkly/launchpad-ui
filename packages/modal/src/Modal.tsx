@@ -68,10 +68,12 @@ const Modal = ({
 
     defer(noScroll.on);
     onReady && onReady();
+    document.body.classList.add('has-modal');
     document.addEventListener('keydown', handleEscape);
 
     return () => {
       defer(noScroll.off);
+      document.body.classList.remove('has-modal');
       document.removeEventListener('keydown', handleEscape);
     };
   }, [onReady, onCancel]);
