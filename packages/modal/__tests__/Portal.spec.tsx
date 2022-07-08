@@ -2,7 +2,7 @@
 import { axe } from 'jest-axe';
 import { it, expect, describe } from 'vitest';
 
-import { render } from '../../../tests/utils';
+import { render } from '../../../test/utils';
 import { Portal } from '../src';
 
 describe('Portal', () => {

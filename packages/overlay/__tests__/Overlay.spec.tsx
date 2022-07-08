@@ -2,7 +2,7 @@
 import { axe } from 'jest-axe';
 import { it, expect, describe, vi } from 'vitest';
 
-import { render, screen, userEvent } from '../../../tests/utils';
+import { render, screen, userEvent } from '../../../test/utils';
 import { Overlay } from '../src';
 
 describe('Overlay', () => {

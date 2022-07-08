@@ -1,6 +1,6 @@
 import { it, expect, describe } from 'vitest';
 
-import { render, screen } from '../../../tests/utils';
+import { render, screen } from '../../../test/utils';
 import { RequiredAsterisk } from '../src';
 
 describe('RequiredAsterisk', () => {

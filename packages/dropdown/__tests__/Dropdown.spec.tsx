@@ -1,7 +1,7 @@
 import { axe } from 'jest-axe';
 import { it, expect, describe } from 'vitest';
 
-import { render, screen, userEvent } from '../../../tests/utils';
+import { render, screen, userEvent } from '../../../test/utils';
 import { Dropdown, DropdownButton } from '../src';
 
 describe('Dropdown', () => {

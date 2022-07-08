@@ -1,7 +1,7 @@
 import { axe } from 'jest-axe';
 import { it, expect, describe } from 'vitest';
 
-import { render, screen } from '../../../tests/utils';
+import { render, screen } from '../../../test/utils';
 import { FormGroup } from '../src';
 
 describe('FormGroup', () => {

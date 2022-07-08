@@ -1,6 +1,6 @@
 import { axe } from 'jest-axe';
 
-import { render, screen, userEvent } from '../../../tests/utils';
+import { render, screen, userEvent } from '../../../test/utils';
 import { AlertKind, CollapsibleAlert } from '../src';
 
 describe('CollapsibleAlert', () => {

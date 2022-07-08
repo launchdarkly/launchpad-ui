@@ -1,7 +1,7 @@
 import { axe } from 'jest-axe';
 import { it, expect, describe } from 'vitest';
 
-import { render, screen, userEvent, waitFor } from '../../../tests/utils';
+import { render, screen, userEvent, waitFor } from '../../../test/utils';
 import { Popover } from '../src';
 
 describe('Popover', () => {

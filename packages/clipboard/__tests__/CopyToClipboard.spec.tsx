@@ -3,7 +3,7 @@ import type { CopyToClipboardProps } from '../src';
 import { axe } from 'jest-axe';
 import { it, expect, describe, vi } from 'vitest';
 
-import { render, screen, userEvent, waitFor } from '../../../tests/utils';
+import { render, screen, userEvent, waitFor } from '../../../test/utils';
 import { CopyToClipboard } from '../src';
 
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment

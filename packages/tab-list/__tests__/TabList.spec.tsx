@@ -2,7 +2,7 @@ import { Button, ButtonKind } from '@launchpad-ui/button';
 import { Item } from '@react-stately/collections';
 import { axe } from 'jest-axe';
 
-import { render, screen, userEvent } from '../../../tests/utils';
+import { render, screen, userEvent } from '../../../test/utils';
 import { TabList } from '../src';
 
 describe('TabList', () => {
