@@ -1,5 +1,14 @@
 # @launchpad-ui/core
 
+## 0.2.1
+
+### Patch Changes
+
+- [#168](https://github.com/launchdarkly/launchpad-ui/pull/168) [`4adb50f`](https://github.com/launchdarkly/launchpad-ui/commit/4adb50f20abb36770c0f94fed68dceb80f484aa8) Thanks [@chasedarkly](https://github.com/chasedarkly)! - Expose clipboard handle type
+
+- Updated dependencies [[`4adb50f`](https://github.com/launchdarkly/launchpad-ui/commit/4adb50f20abb36770c0f94fed68dceb80f484aa8)]:
+  - @launchpad-ui/clipboard@0.2.5
+
 ## 0.2.0
 
 ### Minor Changes
