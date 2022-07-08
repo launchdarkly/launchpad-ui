@@ -1,2 +1,2 @@
-export type { CopyToClipboardProps } from './CopyToClipboard';
+export type { CopyToClipboardProps, CopyToClipboardHandleRef } from './CopyToClipboard';
 export { CopyConfirmation, CopyToClipboard } from './CopyToClipboard';
