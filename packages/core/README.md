@@ -34,3 +34,32 @@ return (
   </Alert>
 )
 ```
+
+### Prerelease Testing
+
+To feature flag and test a prerelease version of a component, first install the prerelease:
+
+```sh
+$ yarn add @launchpad-ui/alert@0.10.0-beta.0
+```
+
+Then import and use the prerelease version alongside the version from `core`:
+
+```jsx
+import { Alert, AlertKind } from '@launchpad-ui/core';
+import { Alert as BetaAlert } from '@launchpad-ui/alert';
+
+...
+
+if (enableNewAlert()) {
+  return (
+    <BetaAlert>...</BetaAlert>
+  );
+}
+
+return (
+  <Alert kind={AlertKind.ERROR}>
+    An unexpected error occurred.
+  </Alert>
+)
+```
