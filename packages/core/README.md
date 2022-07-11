@@ -12,3 +12,25 @@ $ yarn add @launchpad-ui/core
 # or
 $ npm install @launchpad-ui/core
 ```
+
+## Usage
+
+### Design Tokens
+
+```css
+@import '@launchpad-ui/core/dist/styles/tokens.css';
+```
+
+### Components
+
+```jsx
+import { Alert, AlertKind } from '@launchpad-ui/core';
+
+...
+
+return (
+  <Alert kind={AlertKind.ERROR}>
+    An unexpected error occurred.
+  </Alert>
+)
+```
