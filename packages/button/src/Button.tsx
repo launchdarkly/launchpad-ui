@@ -1,4 +1,4 @@
-import type { LocationDescriptor } from 'history';
+import type { To } from 'react-router-dom';
 
 import cx from 'clsx';
 import { cloneElement, forwardRef, memo } from 'react';
@@ -80,7 +80,7 @@ type ButtonProps = {
   /**
    * React router location to take user to when button is clicked
    */
-  to?: LocationDescriptor;
+  to?: To;
 
   /**
    * When true, renders the icon before the text
