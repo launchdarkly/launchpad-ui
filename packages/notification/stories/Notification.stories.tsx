@@ -47,10 +47,11 @@ const makeMessage = (type: NotificationLevel) => (
   </span>
 );
 
-const makeNotificationArgs = (level: NotificationLevel, details?: string) => ({
+const makeNotificationArgs = (level: NotificationLevel, details?: string, json?: string) => ({
   level,
   message: makeMessage(level),
   details: details ?? '',
+  json: json ?? '',
 });
 
 export const Success: Story = { args: makeNotificationArgs(NotificationLevel.SUCCESS) };
@@ -62,5 +63,9 @@ export const Warning: Story = { args: makeNotificationArgs(NotificationLevel.WAR
 export const Info: Story = { args: makeNotificationArgs(NotificationLevel.INFO) };
 
 export const ErrorDetails: Story = {
-  args: makeNotificationArgs(NotificationLevel.ERROR, 'This notification has details.'),
+  args: makeNotificationArgs(
+    NotificationLevel.ERROR,
+    'This notification has details.',
+    "{ details: 'I am a detail' }"
+  ),
 };

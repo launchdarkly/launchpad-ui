@@ -2,7 +2,8 @@
 import type { NotificationLevel } from './types';
 import type { ReactNode } from 'react';
 
-import { Button, ButtonType } from '@launchpad-ui/button';
+import { Button, ButtonSize, ButtonType } from '@launchpad-ui/button';
+import { CopyToClipboard } from '@launchpad-ui/clipboard';
 import { KindIcon, Close, ExpandMore, IconSize } from '@launchpad-ui/icons';
 import { FocusScope } from '@react-aria/focus';
 import cx from 'clsx';
@@ -16,6 +17,7 @@ type NotificationProps = {
   message: ReactNode;
   onDismiss: () => void;
   ttl?: number;
+  json?: string;
 };
 
 type StateProps = {
@@ -95,7 +97,7 @@ class Notification extends Component<NotificationProps, StateProps> {
   };
 
   render() {
-    const { level, message, details, onDismiss, ...props } = this.props;
+    const { level, message, details, onDismiss, json, ...props } = this.props;
     const classes = cx('Notification', `Notification--${level}`);
     const detailsClasses = cx('Notification-details', {
       'is-expanded': this.state.showDetails,
@@ -120,7 +122,17 @@ class Notification extends Component<NotificationProps, StateProps> {
               </button>
 
               <div className="Notification-detailsContent">{details}</div>
-              {/* TODO: implement CopyButton for copying JSON to clipboard */}
+              {json && (
+                <CopyToClipboard text={json}>
+                  <Button
+                    component="span"
+                    size={ButtonSize.TINY}
+                    className="Notification-copyDetailsButton"
+                  >
+                    Copy details
+                  </Button>
+                </CopyToClipboard>
+              )}
             </div>
           )}
         </div>
