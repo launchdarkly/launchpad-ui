@@ -54,6 +54,7 @@ const Modal = ({
 
   useEffect(() => {
     const handleEscape = (event: KeyboardEvent) => {
+      event.stopImmediatePropagation();
       const latest = [...document.querySelectorAll('.Modal')].pop();
       if (event.key === 'Escape' && latest === ref.current) {
         close();
