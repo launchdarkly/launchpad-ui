@@ -232,14 +232,14 @@ importers:
   packages/button:
     specifiers:
       '@launchpad-ui/tokens': workspace:~
-      '@types/history': ^4.7.11
       clsx: ^1.2.0
       react: ^18.2.0
       react-dom: ^18.2.0
+      react-router-dom: ^6.3.0
     dependencies:
       '@launchpad-ui/tokens': link:../tokens
-      '@types/history': 4.7.11
       clsx: 1.2.0
+      react-router-dom: 6.3.0_biqbaboplfbrettd7655fr4n2y
     devDependencies:
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
@@ -5676,10 +5676,6 @@ packages:
     dependencies:
       '@types/unist': 2.0.6
     dev: true
-
-  /@types/history/4.7.11:
-    resolution: {integrity: sha512-qjDJRrmvBMiTx+jyLxvLfJU7UznFuokDv4f3WRuriHKERccVpFU+8XMQUAbDzoiJCsmexxRExQeMwwCdamSKDA==}
-    dev: false
 
   /@types/html-minifier-terser/6.1.0:
     resolution: {integrity: sha512-oh/6byDPnL1zeNXFrDXFLyZjkr1MsBG667IM792caf1L2UPOOMf65NFzjUH/ltyfwjAGfs1rsX1eftK0jC/KIg==}
