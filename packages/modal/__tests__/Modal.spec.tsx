@@ -43,17 +43,6 @@ describe('Modal', () => {
     expect(await screen.findByRole('dialog')).toBeInTheDocument();
   });
 
-  it('can render as a sheet', async () => {
-    render(
-      <ModalSheet withCloseButton>
-        <section>
-          <ModalHeader closeable>Modal</ModalHeader>
-        </section>
-      </ModalSheet>
-    );
-    expect(await screen.findByRole('dialog')).toBeInTheDocument();
-  });
-
   it('calls onCancel when escape key is pressed', async () => {
     const spy = vi.fn();
     render(
