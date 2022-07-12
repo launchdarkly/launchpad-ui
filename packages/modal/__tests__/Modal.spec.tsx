@@ -1,7 +1,7 @@
 import { axe } from 'jest-axe';
-import { it, expect, describe } from 'vitest';
+import { it, expect, describe, vi } from 'vitest';
 
-import { render, screen } from '../../../test/utils';
+import { render, screen, userEvent } from '../../../test/utils';
 import { Modal, ModalBody, ModalFooter, ModalHeader, ModalSheet, Prompt } from '../src';
 
 describe('Modal', () => {
@@ -41,5 +41,23 @@ describe('Modal', () => {
       </ModalSheet>
     );
     expect(await screen.findByRole('dialog')).toBeInTheDocument();
+  });
+
+  it('calls onCancel when escape key is pressed', async () => {
+    const spy = vi.fn();
+    render(
+      <Prompt>
+        <Modal transition="pop" onCancel={spy}>
+          <ModalHeader>Modal</ModalHeader>
+          <ModalBody>Body</ModalBody>
+          <ModalFooter>Footer</ModalFooter>
+        </Modal>
+      </Prompt>
+    );
+
+    userEvent.setup();
+    await userEvent.keyboard('{Escape}');
+
+    expect(spy).toHaveBeenCalledTimes(1);
   });
 });
