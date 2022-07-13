@@ -54,5 +54,5 @@ const Tooltip = forwardRef<Element, TooltipProps>((props, ref) => (
 
 Tooltip.displayName = 'Tooltip';
 
-export { Tooltip };
+export { Tooltip, TooltipComponent };
 export type { TooltipProps };
