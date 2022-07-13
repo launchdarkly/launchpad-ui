@@ -235,7 +235,7 @@
   margin-left: 2rem;
 }
 
-.Alert-close {
+.Alert-close.Button {
   min-width: 2.2rem;
   width: 2.2rem;
   height: 2.2rem;

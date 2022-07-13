@@ -122,3 +122,7 @@ export const SmallInlineError: Story = {
     children: 'Small Inline Error alert',
   },
 };
+
+export const Dismissible: Story = {
+  args: { kind: AlertKind.INFO, children: 'Dismissible alert', dismissible: true },
+};
