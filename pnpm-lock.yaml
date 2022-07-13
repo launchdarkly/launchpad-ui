@@ -447,6 +447,7 @@ importers:
   packages/notification:
     specifiers:
       '@launchpad-ui/button': workspace:~
+      '@launchpad-ui/clipboard': workspace:~
       '@launchpad-ui/icons': workspace:~
       '@launchpad-ui/tokens': workspace:~
       '@react-aria/focus': ^3.6.0
@@ -458,6 +459,7 @@ importers:
       uuid: ^8.3.2
     dependencies:
       '@launchpad-ui/button': link:../button
+      '@launchpad-ui/clipboard': link:../clipboard
       '@launchpad-ui/icons': link:../icons
       '@launchpad-ui/tokens': link:../tokens
       '@react-aria/focus': 3.6.1_react@18.2.0
