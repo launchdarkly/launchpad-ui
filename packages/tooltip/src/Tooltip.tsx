@@ -27,7 +27,7 @@ type TooltipProps = {
   interactionKind?: 'click' | 'hover-or-focus' | 'hover-target-only' | 'hover' | undefined;
 };
 
-const TooltipComponent = ({
+const TooltipBase = ({
   className,
   children,
   targetClassName,
@@ -49,10 +49,10 @@ const TooltipComponent = ({
 };
 
 const Tooltip = forwardRef<Element, TooltipProps>((props, ref) => (
-  <TooltipComponent {...props} targetElementRef={ref} />
+  <TooltipBase {...props} targetElementRef={ref} />
 ));
 
 Tooltip.displayName = 'Tooltip';
 
-export { Tooltip, TooltipComponent };
+export { Tooltip, TooltipBase };
 export type { TooltipProps };

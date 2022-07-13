@@ -2,7 +2,7 @@ import { axe } from 'jest-axe';
 import { it, expect, describe } from 'vitest';
 
 import { render, screen } from '../../../test/utils';
-import { Tooltip, TooltipComponent } from '../src';
+import { Tooltip, TooltipBase } from '../src';
 
 describe('Tooltip', () => {
   it('renders', () => {
@@ -28,10 +28,10 @@ describe('Tooltip', () => {
 
   it('exposes the base component', () => {
     render(
-      <TooltipComponent isOpen>
+      <TooltipBase isOpen>
         <button>Target</button>
         <span>Content</span>
-      </TooltipComponent>
+      </TooltipBase>
     );
     expect(screen.getByRole('tooltip')).toBeInTheDocument();
   });
