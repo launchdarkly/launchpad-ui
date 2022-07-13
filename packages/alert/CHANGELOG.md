@@ -1,5 +1,14 @@
 # @launchpad-ui/alert
 
+## 0.1.10
+
+### Patch Changes
+
+- [#177](https://github.com/launchdarkly/launchpad-ui/pull/177) [`63ebd7e`](https://github.com/launchdarkly/launchpad-ui/commit/63ebd7ef0f7e490bec8852a71f30ee2eb5fb7ba6) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Alert] Increase the specificity on .Alert-close to fix style conflict with buttons
+
+- Updated dependencies [[`4434cca`](https://github.com/launchdarkly/launchpad-ui/commit/4434cca48c1c6025d297fb2ae5f646c726473f64)]:
+  - @launchpad-ui/button@0.2.2
+
 ## 0.1.9
 
 ### Patch Changes

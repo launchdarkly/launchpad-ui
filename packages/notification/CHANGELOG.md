@@ -1,5 +1,15 @@
 # @launchpad-ui/notification
 
+## 0.2.1
+
+### Patch Changes
+
+- [#174](https://github.com/launchdarkly/launchpad-ui/pull/174) [`3052465`](https://github.com/launchdarkly/launchpad-ui/commit/30524654c1c553623ea7633ca6d27c003acc1729) Thanks [@Niznikr](https://github.com/Niznikr)! - [Notification] Add json prop
+
+- Updated dependencies [[`4434cca`](https://github.com/launchdarkly/launchpad-ui/commit/4434cca48c1c6025d297fb2ae5f646c726473f64)]:
+  - @launchpad-ui/button@0.2.2
+  - @launchpad-ui/clipboard@0.2.6
+
 ## 0.2.0
 
 ### Minor Changes

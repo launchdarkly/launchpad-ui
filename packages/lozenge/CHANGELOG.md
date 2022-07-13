@@ -1,5 +1,11 @@
 # @launchpad-ui/lozenge
 
+## 0.2.3
+
+### Patch Changes
+
+- [#175](https://github.com/launchdarkly/launchpad-ui/pull/175) [`1601139`](https://github.com/launchdarkly/launchpad-ui/commit/16011393d1c9dda8ebd2647c6b9963984175dd21) Thanks [@jennifro](https://github.com/jennifro)! - [Lozenge] Update flag variant styles
+
 ## 0.2.2
 
 ### Patch Changes

@@ -1,5 +1,35 @@
 # @launchpad-ui/core
 
+## 0.2.2
+
+### Patch Changes
+
+- [#176](https://github.com/launchdarkly/launchpad-ui/pull/176) [`8314a19`](https://github.com/launchdarkly/launchpad-ui/commit/8314a19fbaa532e296b7fcfe5b05b0a1da70447f) Thanks [@Niznikr](https://github.com/Niznikr)! - [Modal] Stop escape propagation
+
+* [#174](https://github.com/launchdarkly/launchpad-ui/pull/174) [`3052465`](https://github.com/launchdarkly/launchpad-ui/commit/30524654c1c553623ea7633ca6d27c003acc1729) Thanks [@Niznikr](https://github.com/Niznikr)! - [Notification] Add json prop
+
+- [#172](https://github.com/launchdarkly/launchpad-ui/pull/172) [`4434cca`](https://github.com/launchdarkly/launchpad-ui/commit/4434cca48c1c6025d297fb2ae5f646c726473f64) Thanks [@Niznikr](https://github.com/Niznikr)! - [Button] Update `to` type for rr6
+
+* [#177](https://github.com/launchdarkly/launchpad-ui/pull/177) [`63ebd7e`](https://github.com/launchdarkly/launchpad-ui/commit/63ebd7ef0f7e490bec8852a71f30ee2eb5fb7ba6) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Alert] Increase the specificity on .Alert-close to fix style conflict with buttons
+
+- [#178](https://github.com/launchdarkly/launchpad-ui/pull/178) [`111376d`](https://github.com/launchdarkly/launchpad-ui/commit/111376d9e26d00f5d7757e127d539daed1e6e3ed) Thanks [@Niznikr](https://github.com/Niznikr)! - [Tooltip] Expose base component
+
+* [#175](https://github.com/launchdarkly/launchpad-ui/pull/175) [`1601139`](https://github.com/launchdarkly/launchpad-ui/commit/16011393d1c9dda8ebd2647c6b9963984175dd21) Thanks [@jennifro](https://github.com/jennifro)! - [Lozenge] Update flag variant styles
+
+* Updated dependencies [[`8314a19`](https://github.com/launchdarkly/launchpad-ui/commit/8314a19fbaa532e296b7fcfe5b05b0a1da70447f), [`3052465`](https://github.com/launchdarkly/launchpad-ui/commit/30524654c1c553623ea7633ca6d27c003acc1729), [`4434cca`](https://github.com/launchdarkly/launchpad-ui/commit/4434cca48c1c6025d297fb2ae5f646c726473f64), [`63ebd7e`](https://github.com/launchdarkly/launchpad-ui/commit/63ebd7ef0f7e490bec8852a71f30ee2eb5fb7ba6), [`111376d`](https://github.com/launchdarkly/launchpad-ui/commit/111376d9e26d00f5d7757e127d539daed1e6e3ed), [`1601139`](https://github.com/launchdarkly/launchpad-ui/commit/16011393d1c9dda8ebd2647c6b9963984175dd21)]:
+  - @launchpad-ui/modal@0.4.1
+  - @launchpad-ui/notification@0.2.1
+  - @launchpad-ui/button@0.2.2
+  - @launchpad-ui/alert@0.1.10
+  - @launchpad-ui/tooltip@0.2.5
+  - @launchpad-ui/lozenge@0.2.3
+  - @launchpad-ui/overlay@0.1.10
+  - @launchpad-ui/banner@0.2.2
+  - @launchpad-ui/dropdown@0.1.8
+  - @launchpad-ui/clipboard@0.2.6
+  - @launchpad-ui/menu@0.2.5
+  - @launchpad-ui/popover@0.3.1
+
 ## 0.2.1
 
 ### Patch Changes

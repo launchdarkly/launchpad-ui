@@ -1,5 +1,14 @@
 # @launchpad-ui/tooltip
 
+## 0.2.5
+
+### Patch Changes
+
+- [#178](https://github.com/launchdarkly/launchpad-ui/pull/178) [`111376d`](https://github.com/launchdarkly/launchpad-ui/commit/111376d9e26d00f5d7757e127d539daed1e6e3ed) Thanks [@Niznikr](https://github.com/Niznikr)! - [Tooltip] Expose base component
+
+- Updated dependencies []:
+  - @launchpad-ui/popover@0.3.1
+
 ## 0.2.4
 
 ### Patch Changes
