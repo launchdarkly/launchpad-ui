@@ -1,5 +1,11 @@
 # @launchpad-ui/button
 
+## 0.2.2
+
+### Patch Changes
+
+- [#172](https://github.com/launchdarkly/launchpad-ui/pull/172) [`4434cca`](https://github.com/launchdarkly/launchpad-ui/commit/4434cca48c1c6025d297fb2ae5f646c726473f64) Thanks [@Niznikr](https://github.com/Niznikr)! - [Button] Update `to` type for rr6
+
 ## 0.2.1
 
 ### Patch Changes

@@ -1,5 +1,14 @@
 # @launchpad-ui/modal
 
+## 0.4.1
+
+### Patch Changes
+
+- [#176](https://github.com/launchdarkly/launchpad-ui/pull/176) [`8314a19`](https://github.com/launchdarkly/launchpad-ui/commit/8314a19fbaa532e296b7fcfe5b05b0a1da70447f) Thanks [@Niznikr](https://github.com/Niznikr)! - [Modal] Stop escape propagation
+
+- Updated dependencies [[`4434cca`](https://github.com/launchdarkly/launchpad-ui/commit/4434cca48c1c6025d297fb2ae5f646c726473f64)]:
+  - @launchpad-ui/button@0.2.2
+
 ## 0.4.0
 
 ### Minor Changes
