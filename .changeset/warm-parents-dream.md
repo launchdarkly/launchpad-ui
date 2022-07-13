@@ -1,5 +1,6 @@
 ---
-'@launchpad-ui/lozenge': minor
+'@launchpad-ui/lozenge': patch
+'@launchpad-ui/core': patch
 ---
 
-Changes the width of `.lozenge--flag--small` to 3rem and adds padding of .4rem to same selector. This fixes an issue with the text alignment inside the lozenge.
+[Lozenge] Update flag variant styles
