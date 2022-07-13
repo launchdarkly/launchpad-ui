@@ -235,7 +235,7 @@
   margin-left: 2rem;
 }
 
-.Alert-close {
+.Alert-close.Button {
   min-width: 2.2rem;
   width: 2.2rem;
   height: 2.2rem;
@@ -246,7 +246,7 @@
   }
 }
 
-.Alert-close .Button--icon.Button--default {
+.Alert-close.Button--icon.Button--default {
   background-color: transparent;
   border-color: var(--Alert-closeButton-color-border);
   color: var(--Alert-closeButton-color-text);
@@ -261,7 +261,7 @@
   }
 }
 
-.Alert-close .Button--icon.Button--default:hover {
+.Alert-close.Button--icon.Button--default:hover {
   background-color: transparent;
 
   & .Icon {
@@ -270,7 +270,7 @@
   }
 }
 
-.Alert-close .Button--icon.Button--default:focus {
+.Alert-close.Button--icon.Button--default:focus {
   box-shadow: none;
 
   & .Icon {
@@ -279,7 +279,7 @@
   }
 }
 
-.Alert-close .Button--icon.Button--default:active {
+.Alert-close.Button--icon.Button--default:active {
   background-color: transparent;
 
   & .Icon {

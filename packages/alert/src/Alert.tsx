@@ -117,15 +117,14 @@ const Alert = ({
       )}
       <div className="Alert-content">{children}</div>
       {dismissible && (
-        <div className="Alert-close">
-          <Button
-            aria-label="Close this alert."
-            type={ButtonType.ICON}
-            icon={<Close size={IconSize.SMALL} />}
-            onClick={handleDismissClicked}
-            testId={testId ? `${testId}-dismiss-button` : undefined}
-          />
-        </div>
+        <Button
+          aria-label="Close this alert."
+          type={ButtonType.ICON}
+          icon={<Close size={IconSize.SMALL} />}
+          className="Alert-close"
+          onClick={handleDismissClicked}
+          testId={testId ? `${testId}-dismiss-button` : undefined}
+        />
       )}
     </div>
   );
