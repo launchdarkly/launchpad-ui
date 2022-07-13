@@ -3,4 +3,4 @@
 '@launchpad-ui/core': patch
 ---
 
-[Alert] Increase the specifity on .Alert-close to fix style conflict with buttons
+[Alert] Increase the specificity on .Alert-close to fix style conflict with buttons
