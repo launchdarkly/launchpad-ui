@@ -3,4 +3,4 @@
 '@launchpad-ui/core': patch
 ---
 
-Moved .Alert-close class to its own wrapper div to avoid Button styling collisions
+[Alert] Increase the specifity on .Alert-close to fix style conflict with buttons
