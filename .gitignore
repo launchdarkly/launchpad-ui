@@ -4,6 +4,7 @@ storybook-static/
 build/
 public/build/
 coverage
+test-results/
 
 .eslintcache
 .cache

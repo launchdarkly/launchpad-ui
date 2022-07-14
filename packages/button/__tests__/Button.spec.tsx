@@ -1,5 +1,4 @@
 import { Add } from '@launchpad-ui/icons';
-import { axe } from 'jest-axe';
 import { it, expect, describe, vi } from 'vitest';
 
 import { render, screen, userEvent } from '../../../test/utils';
@@ -13,12 +12,6 @@ describe('Button', () => {
       </Button>
     );
     expect(screen.getByText('Default Button')).toBeInTheDocument();
-  });
-
-  it('is accessible', async () => {
-    const { container } = render(<Button>Default Button</Button>);
-    const results = await axe(container);
-    expect(results).toHaveNoViolations();
   });
 
   it('can render as a link', () => {

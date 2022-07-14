@@ -1,6 +1,9 @@
 import path from 'path';
 
-import { type PlaywrightTestConfig, devices } from '@playwright/experimental-ct-react';
+import { type PlaywrightTestConfig, devices, expect } from '@playwright/experimental-ct-react';
+import matchers from 'expect-axe-playwright';
+
+expect.extend(matchers);
 
 const config: PlaywrightTestConfig = {
   testDir: path.resolve(),

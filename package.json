@@ -89,6 +89,7 @@
     "eslint-plugin-react": "^7.30.0",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-testing-library": "^5.5.0",
+    "expect-axe-playwright": "^2.2.1",
     "fast-glob": "^3.2.11",
     "framer-motion": "^6.4.3",
     "fsevents": "^2.3.2",
