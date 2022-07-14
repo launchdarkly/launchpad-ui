@@ -9,7 +9,7 @@
     "build:transform": "nx run-many --target=build --projects=@launchpad-ui/tokens,@launchpad-ui/icons",
     "chromatic": "chromatic",
     "clean": "nx run-many --target=clean --all",
-    "e2e": "playwright test",
+    "e2e": "playwright test --config=./playwright.config.ct.ts",
     "e2e:ci": "concurrently -k -s first -n \"SB,e2e\" -c \"magenta,blue\" \"pnpm storybook:build && http-server storybook-static --port 3000 --silent\" \"wait-on tcp:3000 && nx affected --target=e2e --base=origin/main --head=HEAD --exclude=@launchpad-ui/remix\"",
     "e2e:ssr": "concurrently -k -s first -n \"Remix,e2e\" -c \"magenta,blue\" \"pnpm remix\" \"wait-on tcp:3000 && nx run-many --target=e2e --projects=@launchpad-ui/remix\"",
     "e2e:watch": "chokidar packages/**/*.e2e.ts -c \"pnpm e2e\"",
@@ -47,6 +47,7 @@
     "@commitlint/config-conventional": "^17.0.0",
     "@parcel/css": "^1.11.2",
     "@playwright/test": "^1.23.0",
+    "@playwright/experimental-ct-react": "^1.23.0",
     "@storybook/addon-a11y": "^7.0.0-alpha.10",
     "@storybook/addon-essentials": "^7.0.0-alpha.10",
     "@storybook/addon-interactions": "^7.0.0-alpha.10",
@@ -133,6 +134,10 @@
         "react": "18",
         "react-dom": "18"
       }
+    },
+    "overrides": {
+      "@vitejs/plugin-react": "^2.0.0",
+      "vite": "^3.0.0"
     }
   }
 }

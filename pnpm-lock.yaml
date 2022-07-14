@@ -1,5 +1,9 @@
 lockfileVersion: 5.4
 
+overrides:
+  '@vitejs/plugin-react': ^2.0.0
+  vite: ^3.0.0
+
 importers:
 
   .:
@@ -11,6 +15,7 @@ importers:
       '@commitlint/cli': ^17.0.0
       '@commitlint/config-conventional': ^17.0.0
       '@parcel/css': ^1.11.2
+      '@playwright/experimental-ct-react': ^1.23.0
       '@playwright/test': ^1.23.0
       '@storybook/addon-a11y': ^7.0.0-alpha.10
       '@storybook/addon-essentials': ^7.0.0-alpha.10
@@ -89,7 +94,8 @@ importers:
       '@commitlint/cli': 17.0.3
       '@commitlint/config-conventional': 17.0.3
       '@parcel/css': 1.11.2
-      '@playwright/test': 1.23.1
+      '@playwright/experimental-ct-react': 1.23.3
+      '@playwright/test': 1.23.3
       '@storybook/addon-a11y': 7.0.0-alpha.10_biqbaboplfbrettd7655fr4n2y
       '@storybook/addon-essentials': 7.0.0-alpha.10_k6qy7mccskig7nvnonbclzozom
       '@storybook/addon-interactions': 7.0.0-alpha.10_3yc4ut4eesneinyzqq5g445ppe
@@ -3222,13 +3228,28 @@ packages:
       node-gyp-build: 4.5.0
     dev: true
 
-  /@playwright/test/1.23.1:
-    resolution: {integrity: sha512-dKplLPSYPZgnsBk1xxOophhpx3ZVg8DveoNJgLPe096lDCfmaIIreLsYF+4hqzy3PG61IP+aEnG5VAOjC3bhbA==}
+  /@playwright/experimental-ct-react/1.23.3:
+    resolution: {integrity: sha512-cFFPrt9Zt4GdjATwSyYCVsoKY38LcjSlA5Mz0Ai/h+Q0SerWAeCefP/x8NbQGMII7Ix9wD0sGcTZEUDRhySwQg==}
+    engines: {node: '>=14'}
+    dependencies:
+      '@playwright/test': 1.23.3
+      '@vitejs/plugin-react': 2.0.0_vite@3.0.0
+      vite: 3.0.0
+    transitivePeerDependencies:
+      - less
+      - sass
+      - stylus
+      - supports-color
+      - terser
+    dev: true
+
+  /@playwright/test/1.23.3:
+    resolution: {integrity: sha512-kR4vo2UGHC84DGqE6EwvAeaehj3xCAK6LoC1P1eu6ZGdC79rlqRKf8cFDx6q6c9T8MQSL1O9eOlup0BpwqNF0w==}
     engines: {node: '>=14'}
     hasBin: true
     dependencies:
-      '@types/node': 17.0.45
-      playwright-core: 1.23.1
+      '@types/node': 18.0.1
+      playwright-core: 1.23.3
     dev: true
 
   /@pmmmwh/react-refresh-webpack-plugin/0.5.7_aumhct55s6lhceplyc622fxoum:
@@ -14082,8 +14103,8 @@ packages:
       find-up: 5.0.0
     dev: true
 
-  /playwright-core/1.23.1:
-    resolution: {integrity: sha512-9CXsE0gawph4KXl6oUaa0ehHRySZjHvly4TybcBXDvzK3N3o6L/eZ8Q6iVWUiMn0LLS5bRFxo1qEtOETlYJxjw==}
+  /playwright-core/1.23.3:
+    resolution: {integrity: sha512-x35yzsXDyo0BIXYimLnUFNyb42c//NadUNH6IPGOteZm96oTGA1kn4Hq6qJTI1/f9wEc1F9O1DsznXIgXMil7A==}
     engines: {node: '>=14'}
     hasBin: true
     dev: true
