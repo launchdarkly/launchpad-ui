@@ -1,4 +1,3 @@
-import { axe } from 'jest-axe';
 import { it, expect, describe, vi } from 'vitest';
 
 import { render, screen, userEvent } from '../../../test/utils';
@@ -16,20 +15,6 @@ describe('Modal', () => {
       </Prompt>
     );
     expect(await screen.findByRole('dialog')).toBeInTheDocument();
-  });
-
-  it('is accessible', async () => {
-    const { container } = render(
-      <Prompt>
-        <Modal transition="pop" withCloseButton>
-          <ModalHeader>Modal</ModalHeader>
-          <ModalBody>Body</ModalBody>
-          <ModalFooter>Footer</ModalFooter>
-        </Modal>
-      </Prompt>
-    );
-    const results = await axe(container);
-    expect(results).toHaveNoViolations();
   });
 
   it('can render as a sheet', async () => {

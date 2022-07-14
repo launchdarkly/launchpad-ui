@@ -1,4 +1,3 @@
-import { axe } from 'jest-axe';
 import { it, expect, describe } from 'vitest';
 
 import { render, screen } from '../../../test/utils';
@@ -43,21 +42,5 @@ describe('RadioGroup', () => {
       </RadioGroup>
     );
     expect(screen.getByLabelText('Two')).toBeInTheDocument();
-  });
-
-  it('is accessible', async () => {
-    const { container } = render(
-      <RadioGroup name="radio group" value="one" onChange={() => undefined}>
-        <Radio value="one" aria-label="radio one">
-          One
-        </Radio>
-        <Radio value="two" aria-label="radio one">
-          Two
-        </Radio>
-      </RadioGroup>
-    );
-
-    const results = await axe(container);
-    expect(results).toHaveNoViolations();
   });
 });

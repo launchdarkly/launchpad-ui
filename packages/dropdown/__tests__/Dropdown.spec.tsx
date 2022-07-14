@@ -1,4 +1,3 @@
-import { axe } from 'jest-axe';
 import { it, expect, describe } from 'vitest';
 
 import { render, screen, userEvent } from '../../../test/utils';
@@ -13,17 +12,6 @@ describe('Dropdown', () => {
       </Dropdown>
     );
     expect(screen.getByRole('button', { expanded: false })).toBeInTheDocument();
-  });
-
-  it('is accessible', async () => {
-    const { container } = render(
-      <Dropdown>
-        <DropdownButton>Target</DropdownButton>
-        <div>content</div>
-      </Dropdown>
-    );
-    const results = await axe(container);
-    expect(results).toHaveNoViolations();
   });
 
   it('expands on click', async () => {

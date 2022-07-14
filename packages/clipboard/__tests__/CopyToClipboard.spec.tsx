@@ -1,7 +1,6 @@
 import type { CopyToClipboardProps } from '../src';
 import type { CopyToClipboardHandleRef } from '../src/CopyToClipboard';
 
-import { axe } from 'jest-axe';
 import { useRef } from 'react';
 import { it, expect, describe, vi } from 'vitest';
 
@@ -19,12 +18,6 @@ const createComponent = (props?: Partial<CopyToClipboardProps>) => (
 );
 
 describe('CopyToClipboard', () => {
-  it('is accessible', async () => {
-    const { container } = render(createComponent());
-    const results = await axe(container);
-    expect(results).toHaveNoViolations();
-  });
-
   it('copies text when clicked on', async () => {
     render(createComponent());
     const user = userEvent.setup();

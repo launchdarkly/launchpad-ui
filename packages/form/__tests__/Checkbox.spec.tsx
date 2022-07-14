@@ -1,4 +1,3 @@
-import { axe } from 'jest-axe';
 import { it, expect, describe } from 'vitest';
 
 import { render, screen } from '../../../test/utils';
@@ -26,15 +25,5 @@ describe('Checkbox', () => {
       </Checkbox>
     );
     expect(screen.getByText('Label')).toBeInTheDocument();
-  });
-
-  it('is accessible', async () => {
-    const { container } = render(
-      <Checkbox checked={false} onChange={() => undefined}>
-        Label
-      </Checkbox>
-    );
-    const results = await axe(container);
-    expect(results).toHaveNoViolations();
   });
 });

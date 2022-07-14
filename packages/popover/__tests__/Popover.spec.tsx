@@ -1,4 +1,3 @@
-import { axe } from 'jest-axe';
 import { it, expect, describe } from 'vitest';
 
 import { render, screen, userEvent, waitFor } from '../../../test/utils';
@@ -13,17 +12,6 @@ describe('Popover', () => {
       </Popover>
     );
     expect(screen.getByRole('tooltip')).toBeInTheDocument();
-  });
-
-  it('is accessible', async () => {
-    const { container } = render(
-      <Popover isOpen>
-        <button>Target</button>
-        <span>Content</span>
-      </Popover>
-    );
-    const results = await axe(container);
-    expect(results).toHaveNoViolations();
   });
 
   it('opens on click of the target', async () => {

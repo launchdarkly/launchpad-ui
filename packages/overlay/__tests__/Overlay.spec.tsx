@@ -1,5 +1,3 @@
-/* eslint-disable testing-library/no-node-access */
-import { axe } from 'jest-axe';
 import { it, expect, describe, vi } from 'vitest';
 
 import { render, screen, userEvent } from '../../../test/utils';
@@ -9,13 +7,6 @@ describe('Overlay', () => {
   it('renders', () => {
     render(<Overlay isOpen onClose={() => undefined} />);
     expect(document.querySelector('.Portal')).not.toBeNull();
-  });
-
-  it('is accessible', async () => {
-    render(<Overlay isOpen onClose={() => undefined} />);
-    const portal = document.querySelector('.Portal') as Element;
-    const results = await axe(portal);
-    expect(results).toHaveNoViolations();
   });
 
   it('renders children when open', () => {

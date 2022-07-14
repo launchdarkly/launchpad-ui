@@ -1,4 +1,3 @@
-import { axe } from 'jest-axe';
 import { it, expect, describe } from 'vitest';
 
 import { render, screen } from '../../../test/utils';
@@ -12,15 +11,5 @@ describe('Radio', () => {
       </Radio>
     );
     expect(screen.getByLabelText('Test Radio')).toBeInTheDocument();
-  });
-
-  it('is accessible', async () => {
-    const { container } = render(
-      <Radio value="one" aria-label="radio one" onChange={() => undefined}>
-        Label
-      </Radio>
-    );
-    const results = await axe(container);
-    expect(results).toHaveNoViolations();
   });
 });

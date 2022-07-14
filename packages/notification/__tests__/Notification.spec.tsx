@@ -1,4 +1,3 @@
-import { axe } from 'jest-axe';
 import { it, expect, describe, vi } from 'vitest';
 
 import { render, screen, userEvent, waitFor } from '../../../test/utils';
@@ -14,12 +13,6 @@ describe('Notification', () => {
   it('renders', async () => {
     render(<Notification {...props} />);
     expect(await screen.findByRole('alert')).toBeInTheDocument();
-  });
-
-  it('is accessible', async () => {
-    const { container } = render(<Notification {...props} />);
-    const results = await axe(container);
-    expect(results).toHaveNoViolations();
   });
 
   it('hides details action on click', async () => {

@@ -1,4 +1,3 @@
-import { axe } from 'jest-axe';
 import { it, expect, describe } from 'vitest';
 
 import { render, screen } from '../../../test/utils';
@@ -28,18 +27,5 @@ describe('TextField', () => {
       />
     );
     expect(screen.getByText('my suffix')).toBeInTheDocument();
-  });
-
-  it('is accessible', async () => {
-    const { container } = render(
-      <TextField
-        value="my text"
-        aria-label="My Text Field"
-        name="myTextField"
-        onChange={() => undefined}
-      />
-    );
-    const results = await axe(container);
-    expect(results).toHaveNoViolations();
   });
 });
