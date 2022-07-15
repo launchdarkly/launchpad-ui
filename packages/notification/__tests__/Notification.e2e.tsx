@@ -1,12 +1,13 @@
 import { test, expect } from '@playwright/experimental-ct-react';
 
-import { Lozenge } from '../src/Lozenge';
+import { Notification } from '../src/Notification';
+import { NotificationLevel } from '../src/types';
 
 test.use({ viewport: { width: 500, height: 500 } });
 
-test.describe('Lozenge', () => {
+test.describe('Notification', () => {
   test('is accessible', async ({ mount, page }) => {
-    await mount(<Lozenge>Lozenge</Lozenge>);
+    await mount(<Notification message="hi" level={NotificationLevel.INFO} />);
     await expect(page).toBeAccessible();
   });
 });

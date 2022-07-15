@@ -1,12 +1,16 @@
 import { test, expect } from '@playwright/experimental-ct-react';
 
-import { Lozenge } from '../src/Lozenge';
+import { CopyToClipboard } from '../src/CopyToClipboard';
 
 test.use({ viewport: { width: 500, height: 500 } });
 
-test.describe('Lozenge', () => {
+test.describe('CopyToClipboard', () => {
   test('is accessible', async ({ mount, page }) => {
-    await mount(<Lozenge>Lozenge</Lozenge>);
+    await mount(
+      <CopyToClipboard text="Copy content">
+        <span>Copy content</span>
+      </CopyToClipboard>
+    );
     await expect(page).toBeAccessible();
   });
 });

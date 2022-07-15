@@ -7,7 +7,7 @@ expect.extend(matchers);
 
 const config: PlaywrightTestConfig = {
   testDir: path.resolve(),
-  testMatch: /.*\.e2e\.tsx/,
+  testMatch: /\.e2e\.tsx/,
   forbidOnly: !!process.env.CI,
   retries: process.env.CI ? 2 : 0,
   reporter: process.env.CI ? 'github' : 'list',
@@ -26,6 +26,13 @@ const config: PlaywrightTestConfig = {
       use: { ...devices['Desktop Safari'] },
     },
   ],
+  use: {
+    axeOptions: {
+      rules: {
+        region: { enabled: false },
+      },
+    },
+  },
 };
 
 export default config;

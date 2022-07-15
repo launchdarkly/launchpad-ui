@@ -48,6 +48,7 @@
     "@parcel/css": "^1.11.2",
     "@playwright/test": "^1.23.0",
     "@playwright/experimental-ct-react": "^1.23.0",
+    "@react-stately/collections": "^3.4.0",
     "@storybook/addon-a11y": "^7.0.0-alpha.10",
     "@storybook/addon-essentials": "^7.0.0-alpha.10",
     "@storybook/addon-interactions": "^7.0.0-alpha.10",

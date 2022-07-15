@@ -17,6 +17,7 @@ importers:
       '@parcel/css': ^1.11.2
       '@playwright/experimental-ct-react': ^1.23.0
       '@playwright/test': ^1.23.0
+      '@react-stately/collections': ^3.4.0
       '@storybook/addon-a11y': ^7.0.0-alpha.10
       '@storybook/addon-essentials': ^7.0.0-alpha.10
       '@storybook/addon-interactions': ^7.0.0-alpha.10
@@ -94,6 +95,7 @@ importers:
       '@parcel/css': 1.11.2
       '@playwright/experimental-ct-react': 1.23.3
       '@playwright/test': 1.23.3
+      '@react-stately/collections': 3.4.1_react@18.2.0
       '@storybook/addon-a11y': 7.0.0-alpha.10_biqbaboplfbrettd7655fr4n2y
       '@storybook/addon-essentials': 7.0.0-alpha.10_k6qy7mccskig7nvnonbclzozom
       '@storybook/addon-interactions': 7.0.0-alpha.10_3yc4ut4eesneinyzqq5g445ppe

@@ -1,12 +1,13 @@
 import { test, expect } from '@playwright/experimental-ct-react';
 
-import { Lozenge } from '../src/Lozenge';
+import { AlertKind } from '../../alert/src/types';
+import { Banner } from '../src/Banner';
 
 test.use({ viewport: { width: 500, height: 500 } });
 
-test.describe('Lozenge', () => {
+test.describe('Banner', () => {
   test('is accessible', async ({ mount, page }) => {
-    await mount(<Lozenge>Lozenge</Lozenge>);
+    await mount(<Banner kind={AlertKind.INFO}>Banner</Banner>);
     await expect(page).toBeAccessible();
   });
 });
