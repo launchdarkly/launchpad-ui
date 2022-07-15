@@ -9,4 +9,10 @@ test.describe('Toggle', () => {
     await mount(<Toggle>Toggle</Toggle>);
     await expect(page).toBeAccessible();
   });
+
+  test('is accessible in dark mode', async ({ mount, page }) => {
+    await page.emulateMedia({ colorScheme: 'dark' });
+    await mount(<Toggle>Toggle</Toggle>);
+    await expect(page).toBeAccessible();
+  });
 });

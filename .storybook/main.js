@@ -25,6 +25,7 @@ module.exports = {
     storyStoreV7: true,
     babelModeV7: true,
   },
+  staticDirs: ['.'],
   webpackFinal: async (config) => ({
     ...config,
     resolve: {
