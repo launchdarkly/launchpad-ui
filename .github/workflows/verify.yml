@@ -107,7 +107,7 @@ jobs:
         uses: actions/upload-artifact@v3
         if: failure()
         with:
-          name: my-artifact
+          name: a11y-test-results
           path: test-results/
 
       - name: SSR
