@@ -34,9 +34,7 @@ test.describe('Form', () => {
         <CompactTextField label="Email" aria-label="Email" onChange={() => undefined} />
         <h4>Icon Field</h4>
         <IconField icon={Info}>
-          <FormField isRequired={true} label="Date" name="Date" htmlFor="Date">
-            <TextField id="Date" value="12/01/2022" />
-          </FormField>
+          <TextField id="Date" value="12/01/2022" />
         </IconField>
         <h4>Select</h4>
         <Select name="select" aria-label="My select" value="one" onChange={() => undefined}>

@@ -103,5 +103,12 @@ jobs:
       - name: Test
         run: pnpm e2e:ci
 
+      - name: Upload Results
+      - uses: actions/upload-artifact@v3
+        with:
+          name: my-artifact
+          path: test-results/
+          if-no-files-found: ignore
+
       - name: SSR
         run: pnpm e2e:ssr
