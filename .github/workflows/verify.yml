@@ -101,7 +101,7 @@ jobs:
         run: pnpm playwright install-deps
 
       - name: Test
-        run: pnpm e2e:ci
+        run: pnpm e2e:packages
 
       - name: Upload Results
       - uses: actions/upload-artifact@v3

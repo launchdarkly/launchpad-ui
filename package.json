@@ -10,7 +10,7 @@
     "chromatic": "chromatic",
     "clean": "nx run-many --target=clean --all",
     "e2e": "playwright test --config=./playwright.config.ct.ts",
-    "e2e:ci": "nx affected --target=e2e --base=origin/main --head=HEAD --exclude=@launchpad-ui/remix",
+    "e2e:packages": "nx affected --target=e2e --base=origin/main --head=HEAD --exclude=@launchpad-ui/remix",
     "e2e:ssr": "concurrently -k -s first -n \"Remix,e2e\" -c \"magenta,blue\" \"pnpm remix\" \"wait-on tcp:3000 && pnpm --filter=\"remix\" e2e\"",
     "e2e:watch": "chokidar packages/**/*.e2e.ts -c \"pnpm e2e\"",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
