@@ -56,7 +56,6 @@ export const globalTypes = {
 export const decorators = [
   (StoryFn, { globals, parameters }) => {
     const theme = globals.theme || parameters.theme || 'light';
-    console.log(globals);
     document.documentElement.setAttribute('data-theme', theme);
 
     return (
