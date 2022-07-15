@@ -44,6 +44,13 @@ The following command will run e2e tests in every package of the monorepo:
 $ pnpm e2e
 ```
 
+To debug a particular test, go to the package and run it in headed mode:
+
+```sh
+$ cd packages/alert
+$ pnpm e2e --headed --debug
+```
+
 ### SSR Tests
 
 SSR support is tested using a [Remix](https://remix.run/) app [found in the monorepo](./apps/remix/README.md).
