@@ -6,6 +6,11 @@ export default {
   component: Radio,
   title: 'Components/Form/Radio',
   description: 'A radio button allows the user to select one of a set of options."',
+  parameters: {
+    status: {
+      type: process.env.PACKAGE_STATUS__FORM,
+    },
+  },
 };
 
 type Story = ComponentStoryObj<typeof Radio>;

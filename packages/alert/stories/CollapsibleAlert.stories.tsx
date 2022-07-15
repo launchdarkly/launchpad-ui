@@ -6,6 +6,11 @@ export default {
   component: CollapsibleAlert,
   title: 'Components/CollapsibleAlert',
   description: 'Actions trigger alerts based on user interaction.',
+  parameters: {
+    status: {
+      type: process.env.PACKAGE_STATUS__ALERT,
+    },
+  },
   argTypes: {
     kind: {
       table: {

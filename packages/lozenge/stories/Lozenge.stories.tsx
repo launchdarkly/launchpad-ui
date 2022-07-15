@@ -6,6 +6,11 @@ export default {
   component: Lozenge,
   title: 'Components/Lozenge',
   description: 'Lozenges can be used as visual indicators for tags.',
+  parameters: {
+    status: {
+      type: process.env.PACKAGE_STATUS__LOZENGE,
+    },
+  },
   argTypes: {
     className: {
       table: {

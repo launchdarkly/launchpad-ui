@@ -6,6 +6,11 @@ export default {
   component: CompactTextField,
   title: 'Components/Form/CompactTextField',
   description: 'A compact text field allows the user to provide values.',
+  parameters: {
+    status: {
+      type: process.env.PACKAGE_STATUS__FORM,
+    },
+  },
   argTypes: {
     testId: {
       control: 'text',

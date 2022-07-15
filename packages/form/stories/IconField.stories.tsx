@@ -7,6 +7,11 @@ export default {
   component: IconField,
   title: 'Components/Form/IconField',
   description: 'An IconField renders an icon placed next to a passed field."',
+  parameters: {
+    status: {
+      type: process.env.PACKAGE_STATUS__FORM,
+    },
+  },
 };
 
 type Story = ComponentStoryObj<typeof IconField>;

@@ -8,6 +8,11 @@ export default {
   component: Banner,
   title: 'Components/Banner',
   description: 'Banners contain a system-wide message or status.',
+  parameters: {
+    status: {
+      type: process.env.PACKAGE_STATUS__BANNER,
+    },
+  },
   argTypes: {
     testId: {
       control: 'text',

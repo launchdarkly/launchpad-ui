@@ -13,6 +13,11 @@ export default {
   component: CopyToClipboard,
   title: 'Components/CopyToClipboard',
   description: 'Clipboards copy text to the clipboard.',
+  parameters: {
+    status: {
+      type: process.env.PACKAGE_STATUS__CLIPBOARD,
+    },
+  },
   argTypes: {
     children: {
       table: {

@@ -6,6 +6,11 @@ export default {
   component: Progress,
   title: 'Components/Progress',
   description: 'Progress indicates a page or content is loading.',
+  parameters: {
+    status: {
+      type: process.env.PACKAGE_STATUS__PROGRESS,
+    },
+  },
   argTypes: {
     className: {
       table: {

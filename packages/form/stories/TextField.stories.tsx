@@ -49,6 +49,11 @@ export default {
     }),
     withRestingAndDisabledStates,
   ],
+  parameters: {
+    status: {
+      type: process.env.PACKAGE_STATUS__FORM,
+    },
+  },
   argTypes: {
     testId: {
       control: 'text',
