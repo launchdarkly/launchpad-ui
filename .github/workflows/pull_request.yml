@@ -1,0 +1,15 @@
+on: pull_request
+name: Pull request
+jobs:
+  setShortcutLinkInPR:
+    name: Set Shortcut Link in PR
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set Shortcut Link in PR
+        uses: launchdarkly-labs/ld-gh-actions-shortcut/set-link@main
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          AUTOLINK_PREFIX: 'SC-'
+          STORY_LINK_TEXT: <!-- Story link goes here. If you named your branch using the Shortcut suggested name, this link will autopopulate. -->
+          CREATE_STORY_URL: https://app.shortcut.com/launchdarkly/stories/new?template_id=5d3749a8-93bf-48e1-b8fc-1bfa7c74a625
