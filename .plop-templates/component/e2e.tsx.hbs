@@ -1,0 +1,12 @@
+import { test, expect } from '@playwright/experimental-ct-react';
+
+import { {{pascalCase name}} } from '../src/{{pascalCase name}}';
+
+test.use({ viewport: { width: 500, height: 500 } });
+
+test.describe('{{pascalCase name}}', () => {
+  test('is accessible', async ({ mount, page }) => {
+    await mount(<{{pascalCase name}}>An important message</{{pascalCase name}}>);
+    await expect(page).toBeAccessible();
+  });
+});
