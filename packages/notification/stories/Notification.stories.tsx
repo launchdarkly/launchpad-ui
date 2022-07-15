@@ -7,6 +7,11 @@ export default {
   component: Notification,
   title: 'Components/Notification',
   description: 'Actions trigger notifications based on user interaction.',
+  parameters: {
+    status: {
+      type: process.env.PACKAGE_STATUS__NOTIFICATION,
+    },
+  },
   argTypes: {
     ttl: {
       table: {

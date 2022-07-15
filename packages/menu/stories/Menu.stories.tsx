@@ -9,6 +9,11 @@ export default {
   subcomponents: { MenuDivider, MenuItem, MenuSearch },
   title: 'Components/Menu',
   description: 'Menus present a list of items a user can choose from.',
+  parameters: {
+    status: {
+      type: process.env.PACKAGE_STATUS__MENU,
+    },
+  },
 };
 
 type Story = ComponentStoryObj<typeof Menu>;

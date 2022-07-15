@@ -5,7 +5,12 @@ import { {{pascalCase name}} } from '../src';
 export default {
   component: {{pascalCase name}},
   title: 'Components/{{pascalCase name}}',
-  description: '{{description}}'
+  description: '{{description}}',
+  parameters: {
+    status: {
+      type: process.env.PACKAGE_STATUS__{{constantCase name}},
+    },
+  },
 };
 
 type Story = ComponentStoryObj<typeof {{pascalCase name}}>;

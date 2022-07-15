@@ -44,6 +44,7 @@
     "@changesets/cli": "^2.23.0",
     "@commitlint/cli": "^17.0.0",
     "@commitlint/config-conventional": "^17.0.0",
+    "@etchteam/storybook-addon-status": "^4.2.1",
     "@parcel/css": "^1.11.2",
     "@playwright/test": "^1.23.0",
     "@playwright/experimental-ct-react": "^1.23.0",

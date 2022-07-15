@@ -1,6 +1,7 @@
 {
   "name": "@launchpad-ui/lozenge",
   "version": "0.2.3",
+  "status": "beta",
   "publishConfig": {
     "access": "public"
   },

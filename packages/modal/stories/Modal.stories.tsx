@@ -15,6 +15,9 @@ export default {
     docs: {
       page: null,
     },
+    status: {
+      type: process.env.PACKAGE_STATUS__MODAL,
+    },
   },
 };
 

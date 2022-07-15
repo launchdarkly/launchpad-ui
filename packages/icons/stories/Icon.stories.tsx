@@ -10,6 +10,11 @@ export default {
   component: Icon,
   title: 'Components/Icon',
   description: 'Icons supplement content and represent an action or feature within LaunchDarkly.',
+  parameters: {
+    status: {
+      type: process.env.PACKAGE_STATUS__ICONS,
+    },
+  },
   argTypes: {
     name: {
       table: {

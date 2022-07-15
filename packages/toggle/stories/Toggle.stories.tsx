@@ -50,6 +50,11 @@ export default {
   component: Toggle,
   title: 'Components/Toggle',
   description: 'Toggles represent on/off values as opposed to selection.',
+  parameters: {
+    status: {
+      type: process.env.PACKAGE_STATUS__TOGGLE,
+    },
+  },
   decorators: [
     createWithClassesDecorator(testingChromaticClassNames, (args, originalStory, context) => (
       <>

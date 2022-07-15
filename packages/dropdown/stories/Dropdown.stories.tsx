@@ -12,6 +12,11 @@ export default {
   subcomponents: { DropdownButton },
   title: 'Components/Dropdown',
   description: 'Dropdowns display a list of actions or options to a user.',
+  parameters: {
+    status: {
+      type: process.env.PACKAGE_STATUS__DROPDOWN,
+    },
+  },
   decorators: [
     (Story: Story) => (
       <div

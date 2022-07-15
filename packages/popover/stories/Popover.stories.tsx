@@ -10,6 +10,11 @@ export default {
   component: Popover,
   title: 'Components/Popover',
   description: 'Popovers display content within a portal triggered by user interactions.',
+  parameters: {
+    status: {
+      type: process.env.PACKAGE_STATUS__POPOVER,
+    },
+  },
   argTypes: {
     placement: {
       table: {

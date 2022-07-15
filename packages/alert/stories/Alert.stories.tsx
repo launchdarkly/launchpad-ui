@@ -6,6 +6,11 @@ export default {
   component: Alert,
   title: 'Components/Alert',
   description: 'Actions trigger alerts based on user interaction.',
+  parameters: {
+    status: {
+      type: process.env.PACKAGE_STATUS__ALERT,
+    },
+  },
   argTypes: {
     testId: {
       control: 'text',
