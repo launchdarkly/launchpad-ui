@@ -18,4 +18,9 @@ describe('Progress', () => {
     expect(setTimeout).toHaveBeenLastCalledWith(expect.any(Function), AnimationDelay.LONG);
     expect(screen.queryByRole('progressbar')).toBeNull();
   });
+
+  it('renders a svg with no delay', async () => {
+    render(<Progress value={2} />);
+    expect(screen.getByRole('progressbar')).toBeInTheDocument();
+  });
 });
