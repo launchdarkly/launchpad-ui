@@ -1,6 +1,5 @@
 import type { AlertProps } from '../src';
 
-import { axe } from 'jest-axe';
 import { it, expect, describe, vi } from 'vitest';
 
 import { render, screen, userEvent } from '../../../test/utils';
@@ -40,12 +39,6 @@ describe('Alert', () => {
   });
 
   describe('a11y', () => {
-    it('is accessible', async () => {
-      const { container } = render(createComponent());
-      const results = await axe(container);
-      expect(results).toHaveNoViolations();
-    });
-
     it('renders with role status by default', () => {
       render(createComponent({ size: AlertSize.MEDIUM }));
       expect(screen.getByRole('status')).toBeInTheDocument();

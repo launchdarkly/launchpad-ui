@@ -28,6 +28,7 @@ export default defineConfig({
       functions: 70,
       branches: 70,
       statements: 80,
+      exclude: ['**/*.spec.tsx', '**/test/'],
     },
   },
 });

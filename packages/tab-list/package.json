@@ -28,7 +28,7 @@
   "scripts": {
     "build": "tsc --project tsconfig.build.json && node build.js",
     "clean": "rm -rf dist",
-    "e2e": "exit 0",
+    "e2e": "playwright test --config=../../playwright.config.ct.ts",
     "lint": "eslint '**/*.{ts,tsx,js}' && stylelint '**/*.css' --ignore-path ../../.stylelintignore",
     "test": "vitest run --coverage"
   },
@@ -41,7 +41,7 @@
     "clsx": "^1.2.0"
   },
   "peerDependencies": {
-    "@react-stately/collections": "^3.3.8",
+    "@react-stately/collections": "^3.4.0",
     "react": "^16.8.0 || ^17.0.0 || ^18.0.0",
     "react-dom": "^16.8.0 || ^17.0.0 || ^18.0.0"
   },

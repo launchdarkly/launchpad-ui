@@ -27,6 +27,7 @@ module.exports = {
     storyStoreV7: true,
     babelModeV7: true,
   },
+  staticDirs: ['.'],
   env: (config) => {
     const packageStatuses = getPackageStatusEnvVars();
 

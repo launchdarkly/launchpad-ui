@@ -1,4 +1,3 @@
-import { axe } from 'jest-axe';
 import { it, expect, describe } from 'vitest';
 
 import { render, screen } from '../../../test/utils';
@@ -13,17 +12,6 @@ describe('Tooltip', () => {
       </Tooltip>
     );
     expect(screen.getByRole('tooltip')).toBeInTheDocument();
-  });
-
-  it('is accessible', async () => {
-    const { container } = render(
-      <Tooltip isOpen>
-        <button>Target</button>
-        <span>Content</span>
-      </Tooltip>
-    );
-    const results = await axe(container);
-    expect(results).toHaveNoViolations();
   });
 
   it('exposes the base component', () => {

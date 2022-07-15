@@ -1,5 +1,3 @@
-import { axe } from 'jest-axe';
-
 import { render, screen, userEvent, waitFor } from '../../../test/utils';
 import { Toggle } from '../src';
 
@@ -9,10 +7,9 @@ describe('Toggle', () => {
       value: 'cats',
       children: 'Cats',
     };
-    const { container } = render(<Toggle {...toggleProps} />);
-    const results = await axe(container);
+    render(<Toggle {...toggleProps} />);
 
-    expect(results).toHaveNoViolations();
+    expect(screen.getByRole('switch')).toBeInTheDocument();
   });
 
   it('can be reached with the keyboard', async () => {
@@ -20,13 +17,12 @@ describe('Toggle', () => {
       value: 'cats',
       children: 'Cats',
     };
-    const { container } = render(<Toggle {...toggleProps} />);
-    const results = await axe(container);
+    render(<Toggle {...toggleProps} />);
+
     const toggle = screen.getByRole('switch');
     const user = userEvent.setup();
     await user.tab();
 
-    expect(results).toHaveNoViolations();
     expect(toggle).toHaveFocus();
     await user.keyboard('[Space]');
     expect(toggle).toBeChecked();
@@ -37,8 +33,8 @@ describe('Toggle', () => {
       value: 'cats',
       children: 'Cats',
     };
-    const { container } = render(<Toggle {...toggleProps} />);
-    const results = await axe(container);
+    render(<Toggle {...toggleProps} />);
+
     const toggle = screen.getByRole('switch');
     const toggleLabel = screen.getByText('Cats');
 
@@ -46,7 +42,6 @@ describe('Toggle', () => {
     expect((toggle as HTMLInputElement).value).toBe('cats');
     expect(toggle).not.toBeChecked();
     expect(toggle).toHaveAttribute('aria-checked', 'false');
-    expect(results).toHaveNoViolations();
   });
 
   it('renders a checked Toggle', async () => {
@@ -54,8 +49,8 @@ describe('Toggle', () => {
       value: 'cats',
       children: 'Cats',
     };
-    const { container } = render(<Toggle {...toggleProps} />);
-    const results = await axe(container);
+    render(<Toggle {...toggleProps} />);
+
     const toggle = screen.getByRole('switch');
 
     const user = userEvent.setup();
@@ -63,7 +58,6 @@ describe('Toggle', () => {
       await user.click(toggle);
     });
 
-    expect(results).toHaveNoViolations();
     expect(toggle).toBeChecked();
   });
 
@@ -72,12 +66,11 @@ describe('Toggle', () => {
       'aria-label': 'Cats',
       value: 'cats',
     };
-    const { container } = render(<Toggle {...toggleProps} />);
-    const results = await axe(container);
+    render(<Toggle {...toggleProps} />);
+
     const toggle = screen.getByRole('switch');
 
     expect(toggle).toHaveAttribute('aria-label', 'Cats');
-    expect(results).toHaveNoViolations();
   });
 
   it('renders a Toggle with aria-labelledby', async () => {
@@ -85,17 +78,16 @@ describe('Toggle', () => {
       'aria-labelledby': 'CatsId',
       value: 'cats',
     };
-    const { container } = render(
+    render(
       <div>
         <span id="CatsId">Cats</span>
         <Toggle {...toggleProps} />
       </div>
     );
-    const results = await axe(container);
+
     const toggle = screen.getByRole('switch');
 
     expect(toggle).toHaveAttribute('aria-labelledby', 'CatsId');
-    expect(results).toHaveNoViolations();
   });
 
   it('renders a disabled Toggle', async () => {
@@ -104,12 +96,11 @@ describe('Toggle', () => {
       children: 'Cats',
       disabled: true,
     };
-    const { container } = render(<Toggle {...toggleProps} />);
-    const results = await axe(container);
+    render(<Toggle {...toggleProps} />);
+
     const toggle = screen.getByRole('switch');
 
     expect(toggle).toBeDisabled();
-    expect(results).toHaveNoViolations();
   });
 
   it('renders a Toggle with custom toggleText', async () => {
@@ -119,13 +110,12 @@ describe('Toggle', () => {
       toggleOnText: 'Yas',
       toggleOffText: 'Nope',
     };
-    const { container } = render(<Toggle {...toggleProps} />);
-    const results = await axe(container);
+    render(<Toggle {...toggleProps} />);
+
     const toggleOn = screen.getByText('Yas');
     const toggleOff = screen.getByText('Nope');
 
     expect(toggleOn).toBeInTheDocument();
     expect(toggleOff).toBeInTheDocument();
-    expect(results).toHaveNoViolations();
   });
 });

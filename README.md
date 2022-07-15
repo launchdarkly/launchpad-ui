@@ -38,7 +38,7 @@ $ pnpm test
 
 [Playwright](https://playwright.dev/) is used to run e2e browser tests to validate interactivity and accessibility features of components in real browser contexts.
 
-To run e2e tests, start up Storybook on your machine and then run the following command in another tab of your terminal:
+The following command will run e2e tests in every package of the monorepo:
 
 ```sh
 $ pnpm e2e

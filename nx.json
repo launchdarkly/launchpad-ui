@@ -33,6 +33,9 @@
     },
     "test": {
       "dependsOn": ["build"]
+    },
+    "e2e": {
+      "dependsOn": ["build"]
     }
   }
 }

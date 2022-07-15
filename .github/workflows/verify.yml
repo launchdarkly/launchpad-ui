@@ -101,7 +101,14 @@ jobs:
         run: pnpm playwright install-deps
 
       - name: Test
-        run: pnpm e2e:ci
+        run: pnpm e2e
+
+      - name: Upload Results
+        uses: actions/upload-artifact@v3
+        if: failure()
+        with:
+          name: a11y-test-results
+          path: test-results/
 
       - name: SSR
         run: pnpm e2e:ssr

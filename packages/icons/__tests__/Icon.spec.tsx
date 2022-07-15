@@ -1,4 +1,3 @@
-import { axe } from 'jest-axe';
 import { it, expect, describe } from 'vitest';
 
 import { render, screen } from '../../../test/utils';
@@ -8,12 +7,6 @@ describe('Icon', () => {
   it('renders', () => {
     render(<Add size={IconSize.MEDIUM} />);
     expect(screen.getByRole('img', { hidden: true })).toBeInTheDocument();
-  });
-
-  it('is accessible', async () => {
-    const { container } = render(<Add size={IconSize.MEDIUM} />);
-    const results = await axe(container);
-    expect(results).toHaveNoViolations();
   });
 
   it('is labelled by a title', () => {

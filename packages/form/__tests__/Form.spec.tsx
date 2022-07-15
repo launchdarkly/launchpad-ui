@@ -1,4 +1,3 @@
-import { axe } from 'jest-axe';
 import { it, expect, describe } from 'vitest';
 
 import { render, screen } from '../../../test/utils';
@@ -12,15 +11,5 @@ describe('Form', () => {
       </Form>
     );
     expect(screen.getByLabelText('My Form')).toBeInTheDocument();
-  });
-
-  it('is accessible', async () => {
-    const { container } = render(
-      <Form id="testing" name="My Form" ariaLabel="My Form">
-        <></>
-      </Form>
-    );
-    const results = await axe(container);
-    expect(results).toHaveNoViolations();
   });
 });

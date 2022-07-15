@@ -5,3 +5,5 @@ build/
 public/build/
 pnpm-lock.yaml
 coverage
+test-results/
+.plop-templates/component/package.json.hbs

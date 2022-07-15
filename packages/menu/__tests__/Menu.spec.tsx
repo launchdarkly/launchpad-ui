@@ -1,7 +1,6 @@
 import type { MenuProps } from '../src';
 
 import { Popover } from '@launchpad-ui/popover';
-import { axe } from 'jest-axe';
 import { it, expect, describe, vi } from 'vitest';
 
 import { render, screen, userEvent, waitFor } from '../../../test/utils';
@@ -31,12 +30,6 @@ describe('Menu', () => {
   it('renders', () => {
     render(createMenu());
     expect(screen.getByRole('menu')).toBeInTheDocument();
-  });
-
-  it('is accessible', async () => {
-    const { container } = render(createMenu());
-    const results = await axe(container);
-    expect(results).toHaveNoViolations();
   });
 
   it('renders with virtualization', () => {
