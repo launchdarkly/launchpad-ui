@@ -104,7 +104,7 @@ jobs:
         run: pnpm e2e:packages
 
       - name: Upload Results
-      - uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v3
         with:
           name: my-artifact
           path: test-results/
