@@ -10,6 +10,11 @@ export default {
   component: Tooltip,
   title: 'Components/Tooltip',
   description: 'Tooltips provide additional information on hover or focus.',
+  parameters: {
+    status: {
+      type: process.env.PACKAGE_STATUS__TOOLTIP,
+    },
+  },
   argTypes: {
     placement: {
       table: {

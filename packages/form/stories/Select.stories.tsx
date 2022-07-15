@@ -6,6 +6,11 @@ export default {
   component: Select,
   title: 'Components/Form/Select',
   description: 'A select field allows the user to select a value from a set of options."',
+  parameters: {
+    status: {
+      type: process.env.PACKAGE_STATUS__FORM,
+    },
+  },
   argTypes: {
     testId: {
       control: 'text',

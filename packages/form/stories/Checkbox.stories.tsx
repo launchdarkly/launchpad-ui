@@ -6,6 +6,11 @@ export default {
   component: Checkbox,
   title: 'Components/Form/Checkbox',
   description: 'A checkbox allows the user to toggle between checked and unchecked states.',
+  parameters: {
+    status: {
+      type: process.env.PACKAGE_STATUS__FORM,
+    },
+  },
   argTypes: {
     testId: {
       control: 'text',

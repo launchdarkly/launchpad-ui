@@ -6,6 +6,11 @@ export default {
   component: Label,
   title: 'Components/Form/Label',
   description: 'A label describes a form field.',
+  parameters: {
+    status: {
+      type: process.env.PACKAGE_STATUS__FORM,
+    },
+  },
   argTypes: {
     className: {
       table: {

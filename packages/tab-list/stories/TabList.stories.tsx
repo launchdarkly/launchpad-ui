@@ -9,6 +9,11 @@ export default {
   component: TabList,
   title: 'Components/TabList',
   description: 'TabList navigates between related sections of content on the same page.',
+  parameters: {
+    status: {
+      type: process.env.PACKAGE_STATUS__TAB_LIST,
+    },
+  },
 };
 
 type Story = ComponentStoryObj<typeof TabList>;

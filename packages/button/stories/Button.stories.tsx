@@ -48,6 +48,11 @@ export default {
   title: 'Components/Button',
   description: 'Buttons trigger actions based on user interaction.',
   decorators: [buttonTemplateWithStates],
+  parameters: {
+    status: {
+      type: process.env.PACKAGE_STATUS__BUTTON,
+    },
+  },
   argTypes: {
     testId: {
       control: 'text',

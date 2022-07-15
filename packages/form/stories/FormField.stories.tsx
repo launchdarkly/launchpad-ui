@@ -7,6 +7,11 @@ export default {
   title: 'Components/Form/FormField',
   description:
     'A FormField is an opinionated way to organize form field components like labels, errors, hints, and the field itself."',
+  parameters: {
+    status: {
+      type: process.env.PACKAGE_STATUS__FORM,
+    },
+  },
   argTypes: {
     testId: {
       control: 'text',
