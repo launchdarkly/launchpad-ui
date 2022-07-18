@@ -1,18 +1,24 @@
 import { test, expect } from '@playwright/experimental-ct-react';
 
-import { Toggle } from '../src/Toggle';
+import { Toggle, type ToggleProps } from '../src/Toggle';
 
 test.use({ viewport: { width: 500, height: 500 } });
 
+const createComponent = (props?: ToggleProps) => <Toggle {...props}>Toggle</Toggle>;
+
 test.describe('Toggle', () => {
   test('is accessible', async ({ mount, page }) => {
-    await mount(<Toggle>Toggle</Toggle>);
+    const component = await mount(createComponent());
+
+    await expect(component).toBeVisible();
     await expect(page).toBeAccessible();
   });
 
   test('is accessible in dark mode', async ({ mount, page }) => {
     await page.emulateMedia({ colorScheme: 'dark' });
-    await mount(<Toggle>Toggle</Toggle>);
+    const component = await mount(createComponent());
+
+    await expect(component).toBeVisible();
     await expect(page).toBeAccessible();
   });
 });
