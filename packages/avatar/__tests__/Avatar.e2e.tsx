@@ -8,7 +8,7 @@ test.use({ viewport: { width: 500, height: 500 } });
 const createComponent = (props?: AvatarProps) => <Avatar {...props} url="" defaultIcon={Person} />;
 
 test.describe('Avatar', () => {
-  test('is accessible', async ({ mount, page }) => {
+  test.skip('is accessible', async ({ mount, page }) => {
     const component = await mount(createComponent());
 
     await expect(component).toBeVisible();
