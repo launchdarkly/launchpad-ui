@@ -1,12 +1,16 @@
 import { test, expect } from '@playwright/experimental-ct-react';
 
-import { {{pascalCase name}} } from '../src/{{pascalCase name}}';
+import { {{pascalCase name}}, type {{pascalCase name}}Props } from '../src/{{pascalCase name}}';
 
 test.use({ viewport: { width: 500, height: 500 } });
 
+const createComponent = (props?: {{pascalCase name}}Props) => <{{pascalCase name}} {...props}>An important message</{{pascalCase name}}>;
+
 test.describe('{{pascalCase name}}', () => {
   test('is accessible', async ({ mount, page }) => {
-    await mount(<{{pascalCase name}}>An important message</{{pascalCase name}}>);
+    const component = await mount(createComponent());
+
+    await expect(component).toBeVisible();
     await expect(page).toBeAccessible();
   });
 });

@@ -21,14 +21,14 @@
     "@remix-run/react": "^1.6.0",
     "@remix-run/serve": "^1.6.0",
     "isbot": "^3.5.0",
-    "framer-motion": "^6.4.3",
+    "framer-motion": "^6.5.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
     "@remix-run/dev": "^1.6.0",
     "@remix-run/eslint-config": "^1.6.0",
-    "eslint": "^8.19.0",
+    "eslint": "^8.20.0",
     "typescript": "^4.7.2"
   },
   "engines": {
