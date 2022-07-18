@@ -1,11 +1,11 @@
 {
-  "name": "@launchpad-ui/core",
-  "version": "0.2.2",
+  "name": "@launchpad-ui/avatar",
+  "version": "0.0.1",
   "status": "beta",
   "publishConfig": {
     "access": "public"
   },
-  "description": "Contains all Launchpad design system packages.",
+  "description": "An element that represents a user visually.",
   "files": [
     "dist"
   ],
@@ -28,30 +28,14 @@
   "scripts": {
     "build": "tsc --project tsconfig.build.json && node build.js",
     "clean": "rm -rf dist",
-    "e2e": "exit 0",
+    "e2e": "playwright test --config=../../playwright.config.ct.ts",
     "lint": "eslint '**/*.{ts,tsx,js}' && stylelint '**/*.css' --ignore-path ../../.stylelintignore",
-    "test": "exit 0"
+    "test": "vitest run --coverage"
   },
   "dependencies": {
-    "@launchpad-ui/alert": "workspace:~",
-    "@launchpad-ui/avatar": "workspace:~",
-    "@launchpad-ui/banner": "workspace:~",
-    "@launchpad-ui/button": "workspace:~",
-    "@launchpad-ui/clipboard": "workspace:~",
-    "@launchpad-ui/dropdown": "workspace:~",
-    "@launchpad-ui/form": "workspace:~",
     "@launchpad-ui/icons": "workspace:~",
-    "@launchpad-ui/lozenge": "workspace:~",
-    "@launchpad-ui/menu": "workspace:~",
-    "@launchpad-ui/modal": "workspace:~",
-    "@launchpad-ui/notification": "workspace:~",
-    "@launchpad-ui/overlay": "workspace:~",
-    "@launchpad-ui/popover": "workspace:~",
-    "@launchpad-ui/progress": "workspace:~",
-    "@launchpad-ui/tab-list": "workspace:~",
-    "@launchpad-ui/toggle": "workspace:~",
     "@launchpad-ui/tokens": "workspace:~",
-    "@launchpad-ui/tooltip": "workspace:~"
+    "clsx": "^1.2.0"
   },
   "peerDependencies": {
     "react": "^16.8.0 || ^17.0.0 || ^18.0.0",

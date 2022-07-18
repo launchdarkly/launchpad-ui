@@ -1,5 +1,6 @@
 // plop start imports
 export * from '@launchpad-ui/alert';
+export * from '@launchpad-ui/avatar';
 export * from '@launchpad-ui/banner';
 export * from '@launchpad-ui/button';
 export * from '@launchpad-ui/clipboard';

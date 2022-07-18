@@ -212,6 +212,21 @@ importers:
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
 
+  packages/avatar:
+    specifiers:
+      '@launchpad-ui/icons': workspace:~
+      '@launchpad-ui/tokens': workspace:~
+      clsx: ^1.2.0
+      react: ^18.2.0
+      react-dom: ^18.2.0
+    dependencies:
+      '@launchpad-ui/icons': link:../icons
+      '@launchpad-ui/tokens': link:../tokens
+      clsx: 1.2.0
+    devDependencies:
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
+
   packages/banner:
     specifiers:
       '@launchpad-ui/alert': workspace:~
@@ -266,6 +281,7 @@ importers:
   packages/core:
     specifiers:
       '@launchpad-ui/alert': workspace:~
+      '@launchpad-ui/avatar': workspace:~
       '@launchpad-ui/banner': workspace:~
       '@launchpad-ui/button': workspace:~
       '@launchpad-ui/clipboard': workspace:~
@@ -287,6 +303,7 @@ importers:
       react-dom: ^18.2.0
     dependencies:
       '@launchpad-ui/alert': link:../alert
+      '@launchpad-ui/avatar': link:../avatar
       '@launchpad-ui/banner': link:../banner
       '@launchpad-ui/button': link:../button
       '@launchpad-ui/clipboard': link:../clipboard
@@ -10352,6 +10369,7 @@ packages:
     resolution: {integrity: sha512-xiqMQR4xAeHTuB9uWm+fFRcIOgKBMiOBP+eXiyT7jsgVCq1bkVygt00oASowB7EdtpOHaaPgKt812P9ab+DDKA==}
     engines: {node: ^8.16.0 || ^10.6.0 || >=11.0.0}
     os: [darwin]
+    requiresBuild: true
     dev: true
     optional: true
 
