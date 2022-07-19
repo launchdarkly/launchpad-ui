@@ -25,6 +25,13 @@ import { withTimeouts } from './withTimeouts';
 
 type Offset = OffsetOptions;
 
+enum PopoverInteractionKind {
+  HOVER = 'hover',
+  HOVER_TARGET_ONLY = 'hover-target-only',
+  HOVER_OR_FOCUS = 'hover-or-focus',
+  CLICK = 'click',
+}
+
 type PopoverProps = {
   allowBoundaryElementOverflow?: boolean;
   content?: string | JSX.Element | JSX.Element[];
@@ -35,7 +42,7 @@ type PopoverProps = {
   enforceFocus?: boolean;
   hoverCloseDelay?: number;
   hoverOpenDelay?: number;
-  interactionKind?: 'hover' | 'hover-target-only' | 'hover-or-focus' | 'click';
+  interactionKind?: PopoverInteractionKind;
   isFixed?: boolean;
   isModal?: boolean;
   isOpen?: boolean;
@@ -488,5 +495,5 @@ class Popover extends withTimeouts<PopoverProps>(Component) {
   }
 }
 
-export { Popover };
+export { Popover, PopoverInteractionKind };
 export type { Offset, PopoverProps };
