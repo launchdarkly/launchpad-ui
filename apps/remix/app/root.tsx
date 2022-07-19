@@ -28,6 +28,7 @@ import modalStyles from '@launchpad-ui/core/styles/modal.css';
 import navigationStyles from '@launchpad-ui/core/styles/navigation.css';
 import notificationStyles from '@launchpad-ui/core/styles/notification.css';
 import popoverStyles from '@launchpad-ui/core/styles/popover.css';
+import progressBubblesStyles from '@launchpad-ui/core/styles/progress-bubbles.css';
 import progressStyles from '@launchpad-ui/core/styles/progress.css';
 import tabListStyles from '@launchpad-ui/core/styles/tab-list.css';
 import toggleStyles from '@launchpad-ui/core/styles/toggle.css';
@@ -55,6 +56,7 @@ export const links: LinksFunction = () => {
     { rel: 'stylesheet', href: formStyles },
     { rel: 'stylesheet', href: avatarStyles },
     { rel: 'stylesheet', href: navigationStyles },
+    { rel: 'stylesheet', href: progressBubblesStyles },
   ];
 };
 
