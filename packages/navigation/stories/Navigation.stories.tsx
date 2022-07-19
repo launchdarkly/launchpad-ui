@@ -1,5 +1,5 @@
 import type { NavigationItemProps } from '../src';
-import type { ComponentStoryObj, Story } from '@storybook/react';
+import type { ComponentStoryObj, StoryFn } from '@storybook/react';
 
 import { MemoryRouter } from 'react-router-dom';
 
@@ -29,17 +29,17 @@ export default {
     },
   },
   decorators: [
-    (Story: Story) => (
+    (StoryFn: StoryFn) => (
       <MemoryRouter>
-        <Story />
+        <StoryFn />
       </MemoryRouter>
     ),
   ],
 };
 
-type StoryType = ComponentStoryObj<typeof Navigation<NavigationItemProps>>;
+type Story = ComponentStoryObj<typeof Navigation<NavigationItemProps>>;
 
-export const Primary: StoryType = {
+export const Primary: Story = {
   args: {
     title: 'Page menu',
     items: [
@@ -64,7 +64,7 @@ export const Primary: StoryType = {
   },
 };
 
-export const Secondary: StoryType = {
+export const Secondary: Story = {
   args: {
     kind: NavKind.SECONDARY,
     children: [

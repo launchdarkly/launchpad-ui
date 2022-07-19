@@ -1,4 +1,4 @@
-import type { ComponentStoryObj, Story } from '@storybook/react';
+import type { ComponentStoryObj, StoryFn } from '@storybook/react';
 
 import { ButtonKind, ButtonSize } from '@launchpad-ui/button';
 import { Menu, MenuItem } from '@launchpad-ui/menu';
@@ -18,7 +18,7 @@ export default {
     },
   },
   decorators: [
-    (Story: Story) => (
+    (StoryFn: StoryFn) => (
       <div
         style={{
           position: 'relative',
@@ -29,15 +29,15 @@ export default {
           justifyContent: 'center',
         }}
       >
-        <Story />
+        <StoryFn />
       </div>
     ),
   ],
 };
 
-type StoryType = ComponentStoryObj<typeof Dropdown>;
+type Story = ComponentStoryObj<typeof Dropdown>;
 
-export const Example: StoryType = {
+export const Example: Story = {
   args: {
     onInteraction: undefined,
     onStateChange: () => undefined,
@@ -60,7 +60,7 @@ export const Example: StoryType = {
   },
 };
 
-export const WithHtmlButton: StoryType = {
+export const WithHtmlButton: Story = {
   args: {
     onInteraction: undefined,
     onStateChange: () => undefined,
@@ -74,7 +74,7 @@ export const WithHtmlButton: StoryType = {
   },
 };
 
-export const NoArrow: StoryType = {
+export const NoArrow: Story = {
   args: {
     onInteraction: undefined,
     onStateChange: () => undefined,
