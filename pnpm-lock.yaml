@@ -74,6 +74,7 @@ importers:
       prettier: ^2.7.0
       react: ^18.2.0
       react-dom: ^18.2.0
+      react-router-dom: ^6.3.0
       storybook-addon-pseudo-states: ^1.15.1
       stylelint: ^14.9.0
       stylelint-config-prettier: ^9.0.3
@@ -151,6 +152,7 @@ importers:
       prettier: 2.7.1
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
+      react-router-dom: 6.3.0_biqbaboplfbrettd7655fr4n2y
       storybook-addon-pseudo-states: 1.15.1_6sopoym2alf2el2b5lswmxpsui
       stylelint: 14.9.1
       stylelint-config-prettier: 9.0.3_stylelint@14.9.1
