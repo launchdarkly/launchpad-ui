@@ -74,6 +74,7 @@ importers:
       prettier: ^2.7.0
       react: ^18.2.0
       react-dom: ^18.2.0
+      react-router-dom: ^6.3.0
       storybook-addon-pseudo-states: ^1.15.1
       stylelint: ^14.9.0
       stylelint-config-prettier: ^9.0.3
@@ -151,6 +152,7 @@ importers:
       prettier: 2.7.1
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
+      react-router-dom: 6.3.0_biqbaboplfbrettd7655fr4n2y
       storybook-addon-pseudo-states: 1.15.1_6sopoym2alf2el2b5lswmxpsui
       stylelint: 14.9.1
       stylelint-config-prettier: 9.0.3_stylelint@14.9.1
@@ -291,6 +293,7 @@ importers:
       '@launchpad-ui/lozenge': workspace:~
       '@launchpad-ui/menu': workspace:~
       '@launchpad-ui/modal': workspace:~
+      '@launchpad-ui/navigation': workspace:~
       '@launchpad-ui/notification': workspace:~
       '@launchpad-ui/overlay': workspace:~
       '@launchpad-ui/popover': workspace:~
@@ -314,6 +317,7 @@ importers:
       '@launchpad-ui/lozenge': link:../lozenge
       '@launchpad-ui/menu': link:../menu
       '@launchpad-ui/modal': link:../modal
+      '@launchpad-ui/navigation': link:../navigation
       '@launchpad-ui/notification': link:../notification
       '@launchpad-ui/overlay': link:../overlay
       '@launchpad-ui/popover': link:../popover
@@ -462,6 +466,37 @@ importers:
     devDependencies:
       '@types/lodash-es': 4.17.6
       '@types/no-scroll': 2.1.0
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
+
+  packages/navigation:
+    specifiers:
+      '@launchpad-ui/dropdown': workspace:~
+      '@launchpad-ui/lozenge': workspace:~
+      '@launchpad-ui/menu': workspace:~
+      '@launchpad-ui/popover': workspace:~
+      '@launchpad-ui/tokens': workspace:~
+      '@launchpad-ui/tooltip': workspace:~
+      '@react-aria/utils': ^3.13.1
+      '@react-stately/list': ^3.5.1
+      '@react-types/shared': ^3.13.0
+      clsx: ^1.2.0
+      react: ^18.2.0
+      react-dom: ^18.2.0
+      react-router-dom: ^6.3.0
+    dependencies:
+      '@launchpad-ui/dropdown': link:../dropdown
+      '@launchpad-ui/lozenge': link:../lozenge
+      '@launchpad-ui/menu': link:../menu
+      '@launchpad-ui/popover': link:../popover
+      '@launchpad-ui/tokens': link:../tokens
+      '@launchpad-ui/tooltip': link:../tooltip
+      '@react-aria/utils': 3.13.1_react@18.2.0
+      '@react-stately/list': 3.5.1_react@18.2.0
+      '@react-types/shared': 3.13.1_react@18.2.0
+      clsx: 1.2.0
+      react-router-dom: 6.3.0_biqbaboplfbrettd7655fr4n2y
+    devDependencies:
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
 

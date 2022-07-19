@@ -1,11 +1,11 @@
 {
-  "name": "@launchpad-ui/core",
-  "version": "0.2.2",
+  "name": "@launchpad-ui/navigation",
+  "version": "0.0.1",
   "status": "beta",
   "publishConfig": {
     "access": "public"
   },
-  "description": "Contains all Launchpad design system packages.",
+  "description": "An element used to provide navigation links to help users move through an app.",
   "files": [
     "dist"
   ],
@@ -28,32 +28,22 @@
   "scripts": {
     "build": "tsc --project tsconfig.build.json && node build.js",
     "clean": "rm -rf dist",
-    "e2e": "exit 0",
+    "e2e": "playwright test --config=../../playwright.config.ct.ts",
     "lint": "eslint '**/*.{ts,tsx,js}' && stylelint '**/*.css' --ignore-path ../../.stylelintignore",
-    "test": "exit 0"
+    "test": "vitest run --coverage"
   },
   "dependencies": {
-    "@launchpad-ui/alert": "workspace:~",
-    "@launchpad-ui/avatar": "workspace:~",
-    "@launchpad-ui/banner": "workspace:~",
-    "@launchpad-ui/button": "workspace:~",
-    "@launchpad-ui/clipboard": "workspace:~",
     "@launchpad-ui/dropdown": "workspace:~",
-    "@launchpad-ui/form": "workspace:~",
-    "@launchpad-ui/icons": "workspace:~",
     "@launchpad-ui/lozenge": "workspace:~",
     "@launchpad-ui/menu": "workspace:~",
-    "@launchpad-ui/modal": "workspace:~",
-    "@launchpad-ui/navigation": "workspace:~",
-    "@launchpad-ui/notification": "workspace:~",
-    "@launchpad-ui/overlay": "workspace:~",
     "@launchpad-ui/popover": "workspace:~",
-    "@launchpad-ui/progress": "workspace:~",
-    "@launchpad-ui/progress-bubbles": "workspace:~",
-    "@launchpad-ui/tab-list": "workspace:~",
-    "@launchpad-ui/toggle": "workspace:~",
     "@launchpad-ui/tokens": "workspace:~",
-    "@launchpad-ui/tooltip": "workspace:~"
+    "@launchpad-ui/tooltip": "workspace:~",
+    "@react-aria/utils": "^3.13.1",
+    "@react-stately/list": "^3.5.1",
+    "@react-types/shared": "^3.13.0",
+    "clsx": "^1.2.0",
+    "react-router-dom": "^6.3.0"
   },
   "peerDependencies": {
     "react": "^16.8.0 || ^17.0.0 || ^18.0.0",

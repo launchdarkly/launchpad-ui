@@ -89,9 +89,9 @@ export default {
   },
 };
 
-type StoryType = ComponentStoryObj<typeof TextArea>;
+type Story = ComponentStoryObj<typeof TextArea>;
 
-export const Example: StoryType = {
+export const Example: Story = {
   render: ({ id = '', ...args }) => {
     const textAreaId = `${id} Textarea`;
     return (

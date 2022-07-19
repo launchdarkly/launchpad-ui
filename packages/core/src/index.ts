@@ -10,6 +10,7 @@ export * from '@launchpad-ui/icons';
 export * from '@launchpad-ui/lozenge';
 export * from '@launchpad-ui/menu';
 export * from '@launchpad-ui/modal';
+export * from '@launchpad-ui/navigation';
 export * from '@launchpad-ui/notification';
 export * from '@launchpad-ui/overlay';
 export * from '@launchpad-ui/popover';

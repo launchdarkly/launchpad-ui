@@ -1,5 +1,5 @@
 import type { CopyToClipboardHandleRef } from '../src/CopyToClipboard';
-import type { ComponentStoryObj, Story } from '@storybook/react';
+import type { ComponentStoryObj, StoryFn } from '@storybook/react';
 
 import { userEvent, within } from '@storybook/testing-library';
 import { useRef } from 'react';
@@ -31,7 +31,7 @@ export default {
     },
   },
   decorators: [
-    (Story: Story) => (
+    (StoryFn: StoryFn) => (
       <div
         style={{
           width: '100vw',
@@ -41,15 +41,15 @@ export default {
           justifyContent: 'center',
         }}
       >
-        <Story />
+        <StoryFn />
       </div>
     ),
   ],
 };
 
-type StoryType = ComponentStoryObj<typeof CopyToClipboard>;
+type Story = ComponentStoryObj<typeof CopyToClipboard>;
 
-export const Default: StoryType = {
+export const Default: Story = {
   args: { text: 'Code content', children: <code>Code content</code> },
   play: async ({ canvasElement }: { canvasElement: HTMLElement }) => {
     const canvas = within(canvasElement);
@@ -84,7 +84,7 @@ const WithImperativeHandleWrapper = () => {
   );
 };
 
-export const ImperativeHandleWrapper: StoryType = {
+export const ImperativeHandleWrapper: Story = {
   render: () => {
     return <WithImperativeHandleWrapper />;
   },

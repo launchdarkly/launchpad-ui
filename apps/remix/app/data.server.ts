@@ -14,6 +14,7 @@ export async function getComponents() {
     { to: 'components/lozenge', name: 'Lozenge' },
     { to: 'components/menu', name: 'Menu' },
     { to: 'components/modal', name: 'Modal' },
+    { to: 'components/navigation', name: 'Navigation' },
     { to: 'components/notification', name: 'Notification' },
     { to: 'components/popover', name: 'Popover' },
     { to: 'components/progress', name: 'Progress' },
