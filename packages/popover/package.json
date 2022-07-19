@@ -33,8 +33,8 @@
     "test": "vitest run --coverage"
   },
   "dependencies": {
-    "@floating-ui/core": "^0.7.2",
-    "@floating-ui/dom": "^0.5.2",
+    "@floating-ui/core": "^1.0.0",
+    "@floating-ui/dom": "^1.0.0",
     "@launchpad-ui/overlay": "workspace:~",
     "@launchpad-ui/tokens": "workspace:~",
     "@react-aria/focus": "^3.6.0",
