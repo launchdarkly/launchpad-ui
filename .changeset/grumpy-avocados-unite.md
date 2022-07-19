@@ -3,4 +3,4 @@
 '@launchpad-ui/core': patch
 ---
 
-Add correct header styles for menu item headers
+[Menu] Add correct header styles for menu item headers
