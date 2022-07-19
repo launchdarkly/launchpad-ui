@@ -1,4 +1,4 @@
-import type { Offset } from '@launchpad-ui/core';
+import type { Offset } from '@launchpad-ui/popover';
 
 import { Popover } from '@launchpad-ui/popover';
 import cx from 'clsx';
