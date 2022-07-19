@@ -1,7 +1,7 @@
 import type { NavItemProps } from './NavItem';
 import type { NavItemWithTooltipProps } from './NavItemWithTooltip';
 import type { CollectionBase } from '@react-types/shared';
-import type { Key, ReactElement, RefObject } from 'react';
+import type { ReactElement, RefObject } from 'react';
 
 import { Dropdown, DropdownButton } from '@launchpad-ui/dropdown';
 import { Lozenge } from '@launchpad-ui/lozenge';
@@ -9,8 +9,8 @@ import { Menu, MenuItem } from '@launchpad-ui/menu';
 import { useResizeObserver, useValueEffect } from '@react-aria/utils';
 import { useListState } from '@react-stately/list';
 import cx from 'clsx';
-import history from 'history/browser';
 import { createContext, useCallback, useContext, useEffect, useRef } from 'react';
+import { NavLink } from 'react-router-dom';
 
 import { Nav } from './Nav';
 import { NavItem } from './NavItem';
@@ -46,21 +46,18 @@ type NavigationMenuButtonProps<T extends object> = CollectionBase<T> & {
 const NavigationMenuButton = <T extends object>(props: NavigationMenuButtonProps<T>) => {
   const state = useListState(props);
 
-  const handleSelect = (itemKey: Key) => {
-    const item = state.collection.getItem(itemKey);
-    if (!item) {
-      return;
-    }
-
-    history.push({ pathname: item.props.to });
-  };
-
   return (
-    <Dropdown onSelect={handleSelect}>
+    <Dropdown>
       <DropdownButton>{props.title}</DropdownButton>
       <Menu>
         {[...state.collection].map((item) => (
-          <MenuItem key={item.key} item={item.key} onClick={item.props.onClick}>
+          <MenuItem
+            key={item.key}
+            item={item.key}
+            component={NavLink}
+            to={item.props.to}
+            onClick={item.props.onClick}
+          >
             <div style={{ display: 'flex', gap: 'var(--spacing-2)', alignItems: 'center' }}>
               <div>{item.props.name}</div>
               {item.props.status ? (

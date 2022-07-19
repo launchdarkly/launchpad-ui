@@ -14,7 +14,6 @@ export default {
     status: {
       type: process.env.PACKAGE_STATUS__NAVIGATION,
     },
-    chromatic: { viewports: [320, 1200] },
   },
   argTypes: {
     kind: {
@@ -61,6 +60,9 @@ export const Primary: Story = {
       },
     ],
     children: (item) => <NavigationItem key={item.to} name={item.name} to={item.to} />,
+  },
+  parameters: {
+    chromatic: { viewports: [320, 1200] },
   },
 };
 
