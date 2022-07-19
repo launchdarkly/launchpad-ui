@@ -68,15 +68,15 @@ export default {
   ],
 };
 
-type StoryType = ComponentStoryObj<typeof Toggle>;
+type Story = ComponentStoryObj<typeof Toggle>;
 
-export const On: StoryType = { args: { checked: true } };
+export const On: Story = { args: { checked: true } };
 
-export const Off: StoryType = { args: { checked: false } };
+export const Off: Story = { args: { checked: false } };
 
-export const WithoutOnText: StoryType = { args: { checked: true, toggleOnText: '' } };
+export const WithoutOnText: Story = { args: { checked: true, toggleOnText: '' } };
 
-export const WithoutOffText: StoryType = { args: { checked: false, toggleOffText: '' } };
+export const WithoutOffText: Story = { args: { checked: false, toggleOffText: '' } };
 
 export const AriaLabelledByExample = () => (
   <div className="Toggle-iggy-grid">

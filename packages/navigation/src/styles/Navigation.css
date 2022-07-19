@@ -1,0 +1,25 @@
+@import '../../../tokens/dist/media-queries.css';
+
+:root {
+  --page-gutter-width: 1rem;
+}
+
+@media (--tablet) {
+  :root {
+    --page-gutter-width: 4rem;
+  }
+}
+
+.Navigation .Nav--primary {
+  padding: 0 2.5rem;
+}
+
+.Navigation--collapsed {
+  background-color: #fff;
+  box-shadow: 0 1px 2px hsl(0 0% 0% / 0.12);
+  padding: 1rem var(--page-gutter-width);
+}
+
+.Navigation--collapsed .NavigationList-wrapper {
+  padding: 1 1.4rem;
+}

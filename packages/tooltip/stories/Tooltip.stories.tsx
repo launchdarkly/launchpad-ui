@@ -1,4 +1,4 @@
-import type { ComponentStoryObj, Story } from '@storybook/react';
+import type { ComponentStoryObj, StoryFn } from '@storybook/react';
 
 import { Button } from '@launchpad-ui/button';
 import { userEvent, within } from '@storybook/testing-library';
@@ -33,7 +33,7 @@ export default {
     },
   },
   decorators: [
-    (Story: Story) => (
+    (StoryFn: StoryFn) => (
       <div
         style={{
           width: '100vw',
@@ -43,15 +43,15 @@ export default {
           justifyContent: 'center',
         }}
       >
-        <Story />
+        <StoryFn />
       </div>
     ),
   ],
 };
 
-type StoryType = ComponentStoryObj<typeof Tooltip>;
+type Story = ComponentStoryObj<typeof Tooltip>;
 
-export const Default: StoryType = {
+export const Default: Story = {
   args: {
     children: [<Button key="1">Target</Button>, <span key="2">Content to show</span>],
   },

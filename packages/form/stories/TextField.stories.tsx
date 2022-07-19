@@ -96,9 +96,9 @@ export default {
   },
 };
 
-type StoryType = ComponentStoryObj<typeof TextField>;
+type Story = ComponentStoryObj<typeof TextField>;
 
-export const Example: StoryType = {
+export const Example: Story = {
   render: ({ id = '', ...args }) => {
     const textFieldId = `${id} Text Field`;
     return (
@@ -117,7 +117,7 @@ export const Example: StoryType = {
   },
 };
 
-export const NumberWithSuffix: StoryType = {
+export const NumberWithSuffix: Story = {
   render: ({ id = '', ...args }) => {
     const numberFieldId = `${id} Number Field`;
     return (
