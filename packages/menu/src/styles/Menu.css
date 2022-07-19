@@ -106,6 +106,10 @@
   padding-left: 4rem;
 }
 
+.Menu-item--header {
+  font-weight: var(--font-weight-medium);
+}
+
 .Menu-item .Gravatar {
   margin-right: 0.5rem;
 }
