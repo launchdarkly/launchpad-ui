@@ -55,6 +55,14 @@
   fill: var(--color-system-green-500);
 }
 
+.Clipboard-confirmation {
+  align-items: center;
+}
+
+.Clipboard-copied {
+  margin-left: 0.5rem;
+}
+
 .CopyToClipboard-button:focus code,
 .CopyToClipboard:hover code {
   background-color: var(--color-background-hover);
