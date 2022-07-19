@@ -16,6 +16,7 @@ import globalStyles from './styles/global.css';
 
 // plop start imports
 import alertStyles from '@launchpad-ui/core/styles/alert.css';
+import avatarStyles from '@launchpad-ui/core/styles/avatar.css';
 import bannerStyles from '@launchpad-ui/core/styles/banner.css';
 import buttonStyles from '@launchpad-ui/core/styles/button.css';
 import clipboardStyles from '@launchpad-ui/core/styles/clipboard.css';
@@ -51,6 +52,7 @@ export const links: LinksFunction = () => {
     { rel: 'stylesheet', href: clipboardStyles },
     { rel: 'stylesheet', href: menuStyles },
     { rel: 'stylesheet', href: formStyles },
+    { rel: 'stylesheet', href: avatarStyles },
   ];
 };
 

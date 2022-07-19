@@ -4,6 +4,7 @@ export async function getComponents() {
   return [
     // plop start components
     { to: 'components/alert', name: 'Alert' },
+    { to: 'components/avatar', name: 'Avatar' },
     { to: 'components/banner', name: 'Banner' },
     { to: 'components/button', name: 'Button' },
     { to: 'components/clipboard', name: 'CopyToClipboard' },
