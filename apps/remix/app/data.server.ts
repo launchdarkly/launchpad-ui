@@ -17,6 +17,7 @@ export async function getComponents() {
     { to: 'components/notification', name: 'Notification' },
     { to: 'components/popover', name: 'Popover' },
     { to: 'components/progress', name: 'Progress' },
+    { to: 'components/progress-bubbles', name: 'ProgressBubbles' },
     { to: 'components/tab-list', name: 'TabList' },
     { to: 'components/toggle', name: 'Toggle' },
     { to: 'components/tooltip', name: 'Tooltip' },

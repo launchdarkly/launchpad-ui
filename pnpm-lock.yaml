@@ -295,6 +295,7 @@ importers:
       '@launchpad-ui/overlay': workspace:~
       '@launchpad-ui/popover': workspace:~
       '@launchpad-ui/progress': workspace:~
+      '@launchpad-ui/progress-bubbles': workspace:~
       '@launchpad-ui/tab-list': workspace:~
       '@launchpad-ui/toggle': workspace:~
       '@launchpad-ui/tokens': workspace:~
@@ -317,6 +318,7 @@ importers:
       '@launchpad-ui/overlay': link:../overlay
       '@launchpad-ui/popover': link:../popover
       '@launchpad-ui/progress': link:../progress
+      '@launchpad-ui/progress-bubbles': link:../progress-bubbles
       '@launchpad-ui/tab-list': link:../tab-list
       '@launchpad-ui/toggle': link:../toggle
       '@launchpad-ui/tokens': link:../tokens
@@ -550,6 +552,21 @@ importers:
       lodash-es: 4.17.21
     devDependencies:
       '@types/lodash-es': 4.17.6
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
+
+  packages/progress-bubbles:
+    specifiers:
+      '@launchpad-ui/popover': workspace:~
+      '@launchpad-ui/tokens': workspace:~
+      clsx: ^1.2.0
+      react: ^18.2.0
+      react-dom: ^18.2.0
+    dependencies:
+      '@launchpad-ui/popover': link:../popover
+      '@launchpad-ui/tokens': link:../tokens
+      clsx: 1.2.0
+    devDependencies:
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
 
