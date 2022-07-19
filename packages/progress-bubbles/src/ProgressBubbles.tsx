@@ -1,4 +1,6 @@
-import { Offset, Popover } from '@launchpad-ui/popover';
+import type { Offset } from '@launchpad-ui/core';
+
+import { Popover } from '@launchpad-ui/popover';
 import cx from 'clsx';
 import { Fragment } from 'react';
 
