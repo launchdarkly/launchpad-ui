@@ -83,7 +83,7 @@ const MenuItem = <P, T extends React.ElementType = typeof defaultElement>({
           className,
           { 'is-highlighted': isHighlighted },
           { 'Menu-item--nested': nested },
-          { 'u-fw-medium': groupHeader }
+          { 'Menu-item--header': groupHeader }
         )}
         role={role}
         onKeyDown={onKeyDown}
