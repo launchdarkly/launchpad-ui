@@ -27,7 +27,7 @@ const Label = ({
   return (
     <label {...other} className={classes} htmlFor={htmlFor}>
       {children}
-      {optional && !required && <small className="Form-labelOptional u-subtle">(optional)</small>}
+      {optional && !required && <small className="Form-labelOptional">(optional)</small>}
       {required && !optional && <RequiredAsterisk />}
     </label>
   );

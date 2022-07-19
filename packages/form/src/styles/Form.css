@@ -40,6 +40,8 @@
 
 .Form-labelOptional {
   margin-left: 0.4em;
+  color: var(--color-text-subtle-primary);
+  fill: var(--color-text-subtle-primary);
 }
 
 .u-d-inline .Form-label + .Form-label {
