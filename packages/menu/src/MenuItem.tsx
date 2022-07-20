@@ -1,6 +1,7 @@
+import type { Icon } from '@launchpad-ui/icons';
 import type { PopoverPlacement } from '@launchpad-ui/popover';
 
-import { Icon, IconSize } from '@launchpad-ui/icons';
+import { IconSize } from '@launchpad-ui/icons';
 import { Tooltip } from '@launchpad-ui/tooltip';
 import { FocusRing } from '@react-aria/focus';
 import cx from 'clsx';

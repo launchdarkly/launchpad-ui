@@ -1,9 +1,11 @@
+import type { AlertKind } from './types';
+
 import { ExpandMore, IconSize } from '@launchpad-ui/icons';
 import { useRef, useState } from 'react';
 
 import { Alert } from './Alert';
 import './styles/CollapsibleAlert.css';
-import { AlertKind, AlertSize } from './types';
+import { AlertSize } from './types';
 
 type CollapsibleAlertProps = {
   /**

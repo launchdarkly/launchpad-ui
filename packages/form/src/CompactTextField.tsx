@@ -1,3 +1,4 @@
+import type { TextFieldProps } from './TextField';
 import type { FocusEvent } from 'react';
 
 import cx from 'clsx';
@@ -5,7 +6,7 @@ import { isBoolean } from 'lodash-es';
 import { forwardRef, useState } from 'react';
 
 import { Label } from './Label';
-import { TextField, TextFieldProps } from './TextField';
+import { TextField } from './TextField';
 import './styles/CompactTextField.css';
 import './styles/FormInput.css';
 

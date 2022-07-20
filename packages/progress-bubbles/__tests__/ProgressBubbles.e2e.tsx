@@ -1,6 +1,8 @@
+import type { ProgressBubblesProps } from '../src/ProgressBubbles';
+
 import { test, expect } from '@playwright/experimental-ct-react';
 
-import { ProgressBubbles, ProgressBubblesProps } from '../src/ProgressBubbles';
+import { ProgressBubbles } from '../src/ProgressBubbles';
 
 test.use({ viewport: { width: 500, height: 500 } });
 

@@ -1,4 +1,6 @@
-import { Button, ButtonKind, ButtonSize } from '@launchpad-ui/button';
+import type { ButtonKind, ButtonSize } from '@launchpad-ui/button';
+
+import { Button } from '@launchpad-ui/button';
 import { ExpandMore, IconSize } from '@launchpad-ui/icons';
 import { forwardRef } from 'react';
 

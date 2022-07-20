@@ -1,4 +1,5 @@
 /* eslint-disable react-hooks/rules-of-hooks */
+import type { NotificationRecord } from '../src/types';
 import type { ComponentStoryObj } from '@storybook/react';
 
 import { Button } from '@launchpad-ui/button';
@@ -7,7 +8,7 @@ import { useState } from 'react';
 import { v4 } from 'uuid';
 
 import { NotificationCenter } from '../src';
-import { NotificationLevel, NotificationRecord } from '../src/types';
+import { NotificationLevel } from '../src/types';
 
 export default {
   component: NotificationCenter,
