@@ -1,5 +1,43 @@
 # @launchpad-ui/core
 
+## 0.2.3
+
+### Patch Changes
+
+- [#196](https://github.com/launchdarkly/launchpad-ui/pull/196) [`fe655ed`](https://github.com/launchdarkly/launchpad-ui/commit/fe655ed4fbae593826f9f872e80dfbca5cd0baf7) Thanks [@Niznikr](https://github.com/Niznikr)! - [Notification] Increase close button specificity
+
+* [#190](https://github.com/launchdarkly/launchpad-ui/pull/190) [`e267bae`](https://github.com/launchdarkly/launchpad-ui/commit/e267baef8266ecc163866b3ac9e03abed4aef9e7) Thanks [@chasedarkly](https://github.com/chasedarkly)! - Add progress-bubbles package:
+
+  - [ProgressBubbles] Add ProgressBubbles code, stories, and tests
+
+- [#191](https://github.com/launchdarkly/launchpad-ui/pull/191) [`0b17691`](https://github.com/launchdarkly/launchpad-ui/commit/0b1769100c9d5d21345ad9636de4fc277c19ba5b) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Menu] Add correct header styles for menu item headers
+
+* [#186](https://github.com/launchdarkly/launchpad-ui/pull/186) [`dcbb98d`](https://github.com/launchdarkly/launchpad-ui/commit/dcbb98d771845740af3306c5c46774df0840deb4) Thanks [@Niznikr](https://github.com/Niznikr)! - Add avatar package:
+
+  - [Icon] Add dimension enum and person icon
+  - [Avatar] Add avatar code, stories, and tests
+
+- [#189](https://github.com/launchdarkly/launchpad-ui/pull/189) [`a73a79b`](https://github.com/launchdarkly/launchpad-ui/commit/a73a79b1ddbb22bb7a1d481720d19015bacd1584) Thanks [@Niznikr](https://github.com/Niznikr)! - Add navigation package:
+
+  - [Navigation] Add navigation code, stories, and tests
+
+- Updated dependencies [[`fe655ed`](https://github.com/launchdarkly/launchpad-ui/commit/fe655ed4fbae593826f9f872e80dfbca5cd0baf7), [`e267bae`](https://github.com/launchdarkly/launchpad-ui/commit/e267baef8266ecc163866b3ac9e03abed4aef9e7), [`0b17691`](https://github.com/launchdarkly/launchpad-ui/commit/0b1769100c9d5d21345ad9636de4fc277c19ba5b), [`dcbb98d`](https://github.com/launchdarkly/launchpad-ui/commit/dcbb98d771845740af3306c5c46774df0840deb4), [`a73a79b`](https://github.com/launchdarkly/launchpad-ui/commit/a73a79b1ddbb22bb7a1d481720d19015bacd1584)]:
+  - @launchpad-ui/notification@0.2.2
+  - @launchpad-ui/progress-bubbles@0.1.0
+  - @launchpad-ui/menu@0.2.6
+  - @launchpad-ui/avatar@0.1.0
+  - @launchpad-ui/icons@0.2.2
+  - @launchpad-ui/navigation@0.1.0
+  - @launchpad-ui/alert@0.1.11
+  - @launchpad-ui/banner@0.2.3
+  - @launchpad-ui/clipboard@0.2.7
+  - @launchpad-ui/dropdown@0.1.9
+  - @launchpad-ui/form@0.2.3
+  - @launchpad-ui/modal@0.4.2
+  - @launchpad-ui/overlay@0.1.11
+  - @launchpad-ui/popover@0.3.2
+  - @launchpad-ui/tooltip@0.2.6
+
 ## 0.2.2
 
 ### Patch Changes
