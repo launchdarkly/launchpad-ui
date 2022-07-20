@@ -4,6 +4,8 @@ import { Item } from '@react-stately/collections';
 import { render, screen, userEvent } from '../../../test/utils';
 import { TabList } from '../src';
 
+// @vitest-environment jsdom
+
 describe('TabList', () => {
   it('renders', async () => {
     render(

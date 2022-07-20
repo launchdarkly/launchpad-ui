@@ -1,6 +1,8 @@
 import { render, screen, userEvent, waitFor } from '../../../test/utils';
 import { Toggle } from '../src';
 
+// @vitest-environment jsdom
+
 describe('Toggle', () => {
   it('renders a Toggle', async () => {
     const toggleProps = {

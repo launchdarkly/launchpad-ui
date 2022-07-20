@@ -20,7 +20,7 @@ export default defineConfig({
   },
   test: {
     globals: true,
-    environment: 'jsdom',
+    environment: 'happy-dom',
     setupFiles: [path.resolve(__dirname, './test/setup.ts')],
     include: ['**/__tests__/*.spec.{ts,tsx}'],
     coverage: {

@@ -6,6 +6,8 @@ import { it, expect, describe, vi } from 'vitest';
 import { render, screen, userEvent, waitFor } from '../../../test/utils';
 import { Menu, MenuDivider, MenuItem, MenuItemLink, MenuSearch } from '../src';
 
+// @vitest-environment jsdom
+
 type TestMenu = {
   hideSearch?: boolean;
 };
