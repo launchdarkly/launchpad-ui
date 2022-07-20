@@ -8,6 +8,7 @@ export async function getComponents() {
     { to: 'components/banner', name: 'Banner' },
     { to: 'components/button', name: 'Button' },
     { to: 'components/clipboard', name: 'CopyToClipboard' },
+    { to: 'components/counter', name: 'Counter' },
     { to: 'components/dropdown', name: 'Dropdown' },
     { to: 'components/form', name: 'Form' },
     { to: 'components/icon', name: 'Icon' },
