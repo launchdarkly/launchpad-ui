@@ -51,7 +51,7 @@ const FormField = ({
           {isRequired && <RequiredAsterisk />}
         </label>
       )}
-      {hint && <FormHint className="FormField-hint u-subtle">{hint}</FormHint>}
+      {hint && <FormHint className="FormField-hint">{hint}</FormHint>}
       {children}
       <FieldError className="FormField-errorMessage" name={name} errorMessage={errorMessage} />
     </FormGroup>
