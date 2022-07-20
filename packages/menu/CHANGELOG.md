@@ -1,5 +1,16 @@
 # @launchpad-ui/menu
 
+## 0.2.6
+
+### Patch Changes
+
+- [#191](https://github.com/launchdarkly/launchpad-ui/pull/191) [`0b17691`](https://github.com/launchdarkly/launchpad-ui/commit/0b1769100c9d5d21345ad9636de4fc277c19ba5b) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Menu] Add correct header styles for menu item headers
+
+- Updated dependencies [[`dcbb98d`](https://github.com/launchdarkly/launchpad-ui/commit/dcbb98d771845740af3306c5c46774df0840deb4)]:
+  - @launchpad-ui/icons@0.2.2
+  - @launchpad-ui/popover@0.3.2
+  - @launchpad-ui/tooltip@0.2.6
+
 ## 0.2.5
 
 ### Patch Changes
