@@ -1,4 +1,5 @@
 /* eslint-disable functional/no-class */
+import type { PopoverInteractionKind } from './types';
 import type { OffsetOptions } from '@floating-ui/core';
 import type { ComputePositionConfig, Placement, Strategy } from '@floating-ui/dom';
 import type { CSSProperties, ReactHTML, Ref } from 'react';
@@ -27,7 +28,7 @@ type PopoverProps = {
   enforceFocus?: boolean;
   hoverCloseDelay?: number;
   hoverOpenDelay?: number;
-  interactionKind?: 'hover' | 'hover-target-only' | 'hover-or-focus' | 'click';
+  interactionKind?: PopoverInteractionKind;
   isFixed?: boolean;
   isModal?: boolean;
   isOpen?: boolean;

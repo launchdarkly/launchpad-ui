@@ -1,7 +1,7 @@
 import { it, expect, describe } from 'vitest';
 
 import { render, screen, userEvent, waitFor } from '../../../test/utils';
-import { Popover } from '../src';
+import { Popover, PopoverInteractionKind } from '../src';
 
 describe('Popover', () => {
   it('renders', () => {
@@ -29,7 +29,7 @@ describe('Popover', () => {
 
   it('opens and closes on mouse hover/unhover of the target', async () => {
     render(
-      <Popover interactionKind="hover">
+      <Popover interactionKind={PopoverInteractionKind.HOVER}>
         <button>Target</button>
         <span>Content</span>
       </Popover>
@@ -48,7 +48,7 @@ describe('Popover', () => {
 
   it('opens and closes on mouse focus/blur of the target', async () => {
     render(
-      <Popover interactionKind="hover-or-focus">
+      <Popover interactionKind={PopoverInteractionKind.HOVER_OR_FOCUS}>
         <button>Target</button>
         <span>Content</span>
       </Popover>
@@ -67,7 +67,7 @@ describe('Popover', () => {
 
   it('closes when the Escape key is pressed', async () => {
     render(
-      <Popover interactionKind="hover">
+      <Popover interactionKind={PopoverInteractionKind.HOVER}>
         <button>Target</button>
         <span>Content</span>
       </Popover>

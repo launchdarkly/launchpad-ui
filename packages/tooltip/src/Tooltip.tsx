@@ -1,7 +1,7 @@
 import type { Offset, PopoverPlacement } from '@launchpad-ui/popover';
 import type { CSSProperties, Ref } from 'react';
 
-import { Popover } from '@launchpad-ui/popover';
+import { Popover, PopoverInteractionKind } from '@launchpad-ui/popover';
 import cx from 'clsx';
 import { forwardRef } from 'react';
 
@@ -24,7 +24,7 @@ type TooltipProps = {
   hoverCloseDelay?: number;
   offset?: Offset;
   enableArrow?: boolean;
-  interactionKind?: 'click' | 'hover-or-focus' | 'hover-target-only' | 'hover' | undefined;
+  interactionKind?: PopoverInteractionKind | undefined;
 };
 
 const TooltipBase = ({
@@ -37,7 +37,7 @@ const TooltipBase = ({
   return (
     <Popover
       enforceFocus={false}
-      interactionKind="hover-or-focus"
+      interactionKind={PopoverInteractionKind.HOVER_OR_FOCUS}
       hoverCloseDelay={hoverCloseDelay}
       popoverClassName={cx('Tooltip', className)}
       targetClassName={targetClassName}
