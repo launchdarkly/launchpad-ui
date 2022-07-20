@@ -13,6 +13,7 @@ export async function getComponents() {
     { to: 'components/form', name: 'Form' },
     { to: 'components/icon', name: 'Icon' },
     { to: 'components/lozenge', name: 'Lozenge' },
+    { to: 'components/markdown', name: 'Markdown' },
     { to: 'components/menu', name: 'Menu' },
     { to: 'components/modal', name: 'Modal' },
     { to: 'components/navigation', name: 'Navigation' },

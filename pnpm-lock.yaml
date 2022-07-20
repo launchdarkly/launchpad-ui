@@ -292,6 +292,7 @@ importers:
       '@launchpad-ui/form': workspace:~
       '@launchpad-ui/icons': workspace:~
       '@launchpad-ui/lozenge': workspace:~
+      '@launchpad-ui/markdown': workspace:~
       '@launchpad-ui/menu': workspace:~
       '@launchpad-ui/modal': workspace:~
       '@launchpad-ui/navigation': workspace:~
@@ -317,6 +318,7 @@ importers:
       '@launchpad-ui/form': link:../form
       '@launchpad-ui/icons': link:../icons
       '@launchpad-ui/lozenge': link:../lozenge
+      '@launchpad-ui/markdown': link:../markdown
       '@launchpad-ui/menu': link:../menu
       '@launchpad-ui/modal': link:../modal
       '@launchpad-ui/navigation': link:../navigation
@@ -415,6 +417,27 @@ importers:
       '@launchpad-ui/tokens': link:../tokens
       clsx: 1.2.0
     devDependencies:
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
+
+  packages/markdown:
+    specifiers:
+      '@launchpad-ui/tokens': workspace:~
+      '@types/dompurify': ^2.2.9
+      '@types/marked': ^4.0.3
+      clsx: ^1.2.0
+      dompurify: ^2.2.9
+      marked: ^4.0.12
+      react: ^18.2.0
+      react-dom: ^18.2.0
+    dependencies:
+      '@launchpad-ui/tokens': link:../tokens
+      clsx: 1.2.0
+      dompurify: 2.3.10
+      marked: 4.0.18
+    devDependencies:
+      '@types/dompurify': 2.3.3
+      '@types/marked': 4.0.3
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
 
@@ -5752,6 +5775,12 @@ packages:
       '@types/ms': 0.7.31
     dev: true
 
+  /@types/dompurify/2.3.3:
+    resolution: {integrity: sha512-nnVQSgRVuZ/843oAfhA25eRSNzUFcBPk/LOiw5gm8mD9/X7CNcbRkQu/OsjCewO8+VIYfPxUnXvPEVGenw14+w==}
+    dependencies:
+      '@types/trusted-types': 2.0.2
+    dev: true
+
   /@types/ejs/3.1.1:
     resolution: {integrity: sha512-RQul5wEfY7BjWm0sYY86cmUN/pcXWGyVxWX93DFFJvcrxax5zKlieLwA3T77xJGwNcZW0YW6CYG70p1m8xPFmA==}
     dev: true
@@ -5907,6 +5936,10 @@ packages:
     resolution: {integrity: sha512-/THyiqyQAP9AfARo4pF+aCGcyiQ94tX/Is2I7HofNRqoYLgN1PBoOWu2/zTA5zMxzP5EFutMtWtGAFRKUe961Q==}
     dev: true
 
+  /@types/marked/4.0.3:
+    resolution: {integrity: sha512-HnMWQkLJEf/PnxZIfbm0yGJRRZYYMhb++O9M36UCTA9z53uPvVoSlAwJr3XOpDEryb7Hwl1qAx/MV6YIW1RXxg==}
+    dev: true
+
   /@types/mdast/3.0.10:
     resolution: {integrity: sha512-W864tg/Osz1+9f4lrGTZpCSO5/z4608eUp19tbozkq2HJK6i3z1kT0H9tlADXuYIb1YYOBByU4Jsqkk75q48qA==}
     dependencies:
@@ -6051,6 +6084,10 @@ packages:
     resolution: {integrity: sha512-FvnCJljyxhPM3gkRgWmxmDZyAQSiBQQWLI0A0VFL0K7W1oRUrPJSqNO0NvTnLkBcotdlp3lKvaT0JrnyRDkzOg==}
     dependencies:
       '@types/node': 18.0.1
+    dev: true
+
+  /@types/trusted-types/2.0.2:
+    resolution: {integrity: sha512-F5DIZ36YVLE+PN+Zwws4kJogq47hNgX3Nx6WyDJ3kcplxyke3XIzB8uK5n/Lpm1HBsbGzd6nmGehL8cPekP+Tg==}
     dev: true
 
   /@types/unist/2.0.6:
@@ -8547,6 +8584,10 @@ packages:
     dependencies:
       domelementtype: 2.3.0
     dev: true
+
+  /dompurify/2.3.10:
+    resolution: {integrity: sha512-o7Fg/AgC7p/XpKjf/+RC3Ok6k4St5F7Q6q6+Nnm3p2zGWioAY6dh0CbbuwOhH2UcSzKsdniE/YnE2/92JcsA+g==}
+    dev: false
 
   /domutils/2.8.0:
     resolution: {integrity: sha512-w96Cjofp72M5IIhpjgobBimYEfoPjx1Vx0BSX9P30WBdZW2WIKU0T1Bd0kz2eNZ9ikjKgHbEyKx8BB6H1L3h3A==}
@@ -12614,6 +12655,12 @@ packages:
     dependencies:
       react: 18.2.0
     dev: true
+
+  /marked/4.0.18:
+    resolution: {integrity: sha512-wbLDJ7Zh0sqA0Vdg6aqlbT+yPxqLblpAZh1mK2+AO2twQkPywvvqQNfEPVwSSRjZ7dZcdeVBIAgiO7MMp3Dszw==}
+    engines: {node: '>= 12'}
+    hasBin: true
+    dev: false
 
   /mathml-tag-names/2.1.3:
     resolution: {integrity: sha512-APMBEanjybaPzUrfqU0IMU5I0AswKMH7k8OTLs0vvV4KZpExkTkY87nR/zpbuTPj+gARop7aGUbl11pnDfW6xg==}

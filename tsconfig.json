@@ -14,6 +14,7 @@
       "@launchpad-ui/form": ["./packages/form/src"],
       "@launchpad-ui/icons": ["./packages/icons/src"],
       "@launchpad-ui/lozenge": ["./packages/lozenge/src"],
+      "@launchpad-ui/markdown": ["./packages/markdown/src"],
       "@launchpad-ui/menu": ["./packages/menu/src"],
       "@launchpad-ui/modal": ["./packages/modal/src"],
       "@launchpad-ui/navigation": ["./packages/navigation/src"],

@@ -43,6 +43,7 @@
     "@launchpad-ui/form": "workspace:~",
     "@launchpad-ui/icons": "workspace:~",
     "@launchpad-ui/lozenge": "workspace:~",
+    "@launchpad-ui/markdown": "workspace:~",
     "@launchpad-ui/menu": "workspace:~",
     "@launchpad-ui/modal": "workspace:~",
     "@launchpad-ui/navigation": "workspace:~",
