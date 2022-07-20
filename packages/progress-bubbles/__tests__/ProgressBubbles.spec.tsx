@@ -1,8 +1,10 @@
+import type { ProgressBubblesProps } from '../src';
+
 import { Info } from '@launchpad-ui/icons';
 import { it, expect, describe } from 'vitest';
 
 import { render, screen } from '../../../test/utils';
-import { ProgressBubbles, ProgressBubblesProps } from '../src';
+import { ProgressBubbles } from '../src';
 
 const createComponent = (props?: Partial<ProgressBubblesProps>) => {
   const allProps = {

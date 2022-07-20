@@ -1,13 +1,13 @@
 /* eslint-disable functional/no-class */
 import type { NotificationLevel } from './types';
-import type { ReactNode } from 'react';
+import type { KeyboardEvent, ReactNode } from 'react';
 
 import { Button, ButtonSize, ButtonType } from '@launchpad-ui/button';
 import { CopyToClipboard } from '@launchpad-ui/clipboard';
 import { KindIcon, Close, ExpandMore, IconSize } from '@launchpad-ui/icons';
 import { FocusScope } from '@react-aria/focus';
 import cx from 'clsx';
-import { Component, KeyboardEvent } from 'react';
+import { Component } from 'react';
 
 import './styles/Notification.css';
 

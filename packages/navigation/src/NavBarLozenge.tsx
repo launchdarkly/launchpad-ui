@@ -1,4 +1,6 @@
-import { Lozenge, LozengeKind } from '@launchpad-ui/lozenge';
+import type { LozengeKind } from '@launchpad-ui/lozenge';
+
+import { Lozenge } from '@launchpad-ui/lozenge';
 import cx from 'clsx';
 
 import { titlecase } from './utils';

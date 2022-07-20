@@ -1,6 +1,8 @@
+import type { MenuItemProps } from './MenuItem';
+import type { FocusManager } from '@react-aria/focus';
 import type { KeyboardEvent, ReactElement } from 'react';
 
-import { FocusManager, useFocusManager } from '@react-aria/focus';
+import { useFocusManager } from '@react-aria/focus';
 import cx from 'clsx';
 import { isNil, noop } from 'lodash-es';
 import { Children, cloneElement, useCallback, useEffect, useMemo, useRef, useState } from 'react';
@@ -9,7 +11,7 @@ import { v4 } from 'uuid';
 
 import { MenuBase } from './MenuBase';
 import { MenuDivider } from './MenuDivider';
-import { MenuItem, MenuItemLink, MenuItemProps } from './MenuItem';
+import { MenuItem, MenuItemLink } from './MenuItem';
 import { MenuItemList } from './MenuItemList';
 import { MenuSearch } from './MenuSearch';
 import {

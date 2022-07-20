@@ -1,7 +1,7 @@
 /* eslint-disable functional/no-class */
 import type { OffsetOptions } from '@floating-ui/core';
 import type { ComputePositionConfig, Placement, Strategy } from '@floating-ui/dom';
-import type { CSSProperties } from 'react';
+import type { CSSProperties, ReactHTML, Ref } from 'react';
 
 import { arrow, computePosition, flip, offset as floatOffset, shift } from '@floating-ui/dom';
 import { Overlay } from '@launchpad-ui/overlay';
@@ -9,15 +9,7 @@ import { FocusScope } from '@react-aria/focus';
 import cx from 'clsx';
 import { m } from 'framer-motion';
 import { isFunction, isNil } from 'lodash-es';
-import {
-  Children,
-  cloneElement,
-  Component,
-  createElement,
-  isValidElement,
-  ReactHTML,
-  Ref,
-} from 'react';
+import { Children, cloneElement, Component, createElement, isValidElement } from 'react';
 import { v4 } from 'uuid';
 
 import './styles/Popover.css';
