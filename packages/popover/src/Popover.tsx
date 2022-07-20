@@ -1,4 +1,5 @@
 /* eslint-disable functional/no-class */
+import type { PopoverInteractionKind } from './types';
 import type { OffsetOptions } from '@floating-ui/core';
 import type { ComputePositionConfig, Placement, Strategy } from '@floating-ui/dom';
 import type { CSSProperties } from 'react';
@@ -24,13 +25,6 @@ import './styles/Popover.css';
 import { withTimeouts } from './withTimeouts';
 
 type Offset = OffsetOptions;
-
-enum PopoverInteractionKind {
-  HOVER = 'hover',
-  HOVER_TARGET_ONLY = 'hover-target-only',
-  HOVER_OR_FOCUS = 'hover-or-focus',
-  CLICK = 'click',
-}
 
 type PopoverProps = {
   allowBoundaryElementOverflow?: boolean;
@@ -495,5 +489,5 @@ class Popover extends withTimeouts<PopoverProps>(Component) {
   }
 }
 
-export { Popover, PopoverInteractionKind };
+export { Popover };
 export type { Offset, PopoverProps };
