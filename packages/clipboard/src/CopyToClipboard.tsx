@@ -23,9 +23,9 @@ type CopyToClipboardHandleRef = {
 };
 
 const CopyConfirmation = () => (
-  <span className="u-flex-middle">
+  <span className="Clipboard-confirmation">
     <CheckCircle className="Clipboard-checkmark" size={IconSize.MEDIUM} />
-    <span className="u-ml-s">Copied!</span>
+    <span className="Clipboard-copied">Copied!</span>
   </span>
 );
 
