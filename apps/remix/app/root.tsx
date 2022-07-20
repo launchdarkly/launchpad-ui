@@ -20,6 +20,7 @@ import avatarStyles from '@launchpad-ui/core/styles/avatar.css';
 import bannerStyles from '@launchpad-ui/core/styles/banner.css';
 import buttonStyles from '@launchpad-ui/core/styles/button.css';
 import clipboardStyles from '@launchpad-ui/core/styles/clipboard.css';
+import counterStyles from '@launchpad-ui/core/styles/counter.css';
 import formStyles from '@launchpad-ui/core/styles/form.css';
 import iconStyles from '@launchpad-ui/core/styles/icons.css';
 import lozengeStyles from '@launchpad-ui/core/styles/lozenge.css';
@@ -57,6 +58,7 @@ export const links: LinksFunction = () => {
     { rel: 'stylesheet', href: avatarStyles },
     { rel: 'stylesheet', href: navigationStyles },
     { rel: 'stylesheet', href: progressBubblesStyles },
+    { rel: 'stylesheet', href: counterStyles },
   ];
 };
 

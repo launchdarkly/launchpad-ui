@@ -38,6 +38,7 @@
     "@launchpad-ui/banner": "workspace:~",
     "@launchpad-ui/button": "workspace:~",
     "@launchpad-ui/clipboard": "workspace:~",
+    "@launchpad-ui/counter": "workspace:~",
     "@launchpad-ui/dropdown": "workspace:~",
     "@launchpad-ui/form": "workspace:~",
     "@launchpad-ui/icons": "workspace:~",

@@ -9,6 +9,7 @@
       "@launchpad-ui/button": ["./packages/button/src"],
       "@launchpad-ui/clipboard": ["./packages/clipboard/src"],
       "@launchpad-ui/core": ["./packages/core/src"],
+      "@launchpad-ui/counter": ["./packages/counter/src"],
       "@launchpad-ui/dropdown": ["./packages/dropdown/src"],
       "@launchpad-ui/form": ["./packages/form/src"],
       "@launchpad-ui/icons": ["./packages/icons/src"],

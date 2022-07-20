@@ -4,6 +4,7 @@ export * from '@launchpad-ui/avatar';
 export * from '@launchpad-ui/banner';
 export * from '@launchpad-ui/button';
 export * from '@launchpad-ui/clipboard';
+export * from '@launchpad-ui/counter';
 export * from '@launchpad-ui/dropdown';
 export * from '@launchpad-ui/form';
 export * from '@launchpad-ui/icons';
