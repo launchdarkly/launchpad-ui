@@ -87,7 +87,6 @@ const Alert = ({
     'Alert--compact': compact,
     'Alert--inline': isInline,
     'Alert--wide': wide,
-    LegacyStyles: true,
   });
 
   const handleDismissClicked = () => {
