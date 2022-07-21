@@ -1,6 +1,4 @@
-/* stylelint-disable no-descending-specificity */
-
-/* TODO: name box-shadow specific variables bette
+/* TODO: name box-shadow specific variables better
 try out semitransparent borders for light/dark
 backround support in CollapsibleAlert */
 :root {
@@ -41,13 +39,13 @@ backround support in CollapsibleAlert */
     outline: 1px solid var(--CollapsibleAlert-button-color-outline-focus);
   }
 
-  &:focus:not(:focus-visible) {
-    outline: none;
+  &:active {
+    color: var(--CollapsibleAlert-button-color-text-active);
     box-shadow: none;
   }
 
-  &:active {
-    color: var(--CollapsibleAlert-button-color-text-active);
+  &:focus:not(:focus-visible) {
+    outline: none;
     box-shadow: none;
   }
 }
@@ -92,15 +90,15 @@ https://www.scottohara.me/blog/2017/04/14/inclusively-hidden.html
       box-shadow: 0 0 0 1px hsl(0 0% 9.8% / 0.7), 0 0 0 4px hsl(0 0% 9.8% / 0.1);
     }
 
-    &:focus:not(:focus-visible) {
-      outline: none;
-      box-shadow: none;
-    }
-
     &:active {
       color: var(--color-text);
       box-shadow: none;
       text-decoration: underline;
+    }
+
+    &:focus:not(:focus-visible) {
+      outline: none;
+      box-shadow: none;
     }
   }
 
@@ -126,45 +124,3 @@ https://www.scottohara.me/blog/2017/04/14/inclusively-hidden.html
   opacity: 1;
   transform: translate3d(0, 0, 0);
 }
-
-/* -------------- LEGACY STYLING -------------- */
-
-.LegacyStyles .CollapsibleAlert--container {
-  width: 100%;
-}
-
-.LegacyStyles .CollapsibleAlert--contentContainer a {
-  color: var(--color-link);
-
-  &:hover {
-    text-decoration: none;
-    box-shadow: none;
-  }
-
-  &:focus {
-    box-shadow: 0 0 0 1px hsl(0 0 100% / 0.7), 0 0 0 4px hsl(0 0% 9.8% / 0.1);
-  }
-
-  &:focus:not(:focus-visible) {
-    outline: none;
-    box-shadow: none;
-  }
-
-  &:active {
-    color: var(--color-link);
-    box-shadow: none;
-    text-decoration: underline;
-  }
-}
-
-/* reset specific table overrides in Collapsible Alert */
-.LegacyStyles .CollapsibleAlert--contentContainer {
-  & .Table-header {
-    border-bottom: 1px solid var(--CollapsibleAlert-Table-color-border);
-  }
-
-  & .Table-body .Table-row + .Table-row {
-    border-top: 1px solid var(--CollapsibleAlert-Table-color-border);
-  }
-}
-/* stylelint-enable no-descending-specificity */
