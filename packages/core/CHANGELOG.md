@@ -1,5 +1,52 @@
 # @launchpad-ui/core
 
+## 0.3.0
+
+### Minor Changes
+
+- [#192](https://github.com/launchdarkly/launchpad-ui/pull/192) [`eb6e44c`](https://github.com/launchdarkly/launchpad-ui/commit/eb6e44c7853a7263511cdf7aeaeb0d83a83d78b9) Thanks [@chasedarkly](https://github.com/chasedarkly)! - Change from string literal union type to `PopoverInteractionKind` enum type used across Launchpad:
+
+  - [Popover] Add and export `PopoverInteractionKind` type
+  - [ProgressBubbles] Consume `PopoverInteractionKind`
+  - [Tooltip] Consume `PopoverInteractionKind`
+
+* [#201](https://github.com/launchdarkly/launchpad-ui/pull/201) [`69aef79`](https://github.com/launchdarkly/launchpad-ui/commit/69aef79a108c5d827fa42a814c249865ab6d7bc2) Thanks [@Niznikr](https://github.com/Niznikr)! - [Dropdown] Rename target class and remove legacy props:
+
+  - Rename `Dropdown` class to `Dropdown-target` on target
+  - Add `Dropdown` class to popover
+  - Remove legacy tooltip props from `DropdownButton`
+
+### Patch Changes
+
+- [#199](https://github.com/launchdarkly/launchpad-ui/pull/199) [`aa5e5d5`](https://github.com/launchdarkly/launchpad-ui/commit/aa5e5d5af054186cbfae08e5cbbf09beb112c46f) Thanks [@chasedarkly](https://github.com/chasedarkly)! - Add counter package:
+
+  - [Counter] Add counter code, stories, and tests
+
+* [#193](https://github.com/launchdarkly/launchpad-ui/pull/193) [`ceaee6b`](https://github.com/launchdarkly/launchpad-ui/commit/ceaee6b61a1fe16dd7b4e70ab4005d40203f2ba4) Thanks [@chasedarkly](https://github.com/chasedarkly)! - Removed or moved styles for u- classes in form package
+
+  - [Form] removed or moved styles for u- classes
+
+- [#194](https://github.com/launchdarkly/launchpad-ui/pull/194) [`814d444`](https://github.com/launchdarkly/launchpad-ui/commit/814d444146667c0f7f384772032a96252e0c1b57) Thanks [@chasedarkly](https://github.com/chasedarkly)! - Removed or moved styles for u- classes in clipboard package
+
+  - [Clipboard] removed or moved styles for u- classes
+
+* [#200](https://github.com/launchdarkly/launchpad-ui/pull/200) [`bf9d67a`](https://github.com/launchdarkly/launchpad-ui/commit/bf9d67a045d20c91f912817adf2d7af3122158f2) Thanks [@chasedarkly](https://github.com/chasedarkly)! - Add markdown package:
+
+  - [Markdown] Add markdown code, stories, and tests
+
+* Updated dependencies [[`aa5e5d5`](https://github.com/launchdarkly/launchpad-ui/commit/aa5e5d5af054186cbfae08e5cbbf09beb112c46f), [`eb6e44c`](https://github.com/launchdarkly/launchpad-ui/commit/eb6e44c7853a7263511cdf7aeaeb0d83a83d78b9), [`ceaee6b`](https://github.com/launchdarkly/launchpad-ui/commit/ceaee6b61a1fe16dd7b4e70ab4005d40203f2ba4), [`69aef79`](https://github.com/launchdarkly/launchpad-ui/commit/69aef79a108c5d827fa42a814c249865ab6d7bc2), [`814d444`](https://github.com/launchdarkly/launchpad-ui/commit/814d444146667c0f7f384772032a96252e0c1b57), [`bf9d67a`](https://github.com/launchdarkly/launchpad-ui/commit/bf9d67a045d20c91f912817adf2d7af3122158f2)]:
+  - @launchpad-ui/counter@0.1.0
+  - @launchpad-ui/popover@0.4.0
+  - @launchpad-ui/progress-bubbles@0.2.0
+  - @launchpad-ui/tooltip@0.3.0
+  - @launchpad-ui/form@0.2.4
+  - @launchpad-ui/dropdown@0.2.0
+  - @launchpad-ui/clipboard@0.2.8
+  - @launchpad-ui/markdown@0.1.0
+  - @launchpad-ui/menu@0.2.7
+  - @launchpad-ui/navigation@0.1.1
+  - @launchpad-ui/notification@0.2.3
+
 ## 0.2.3
 
 ### Patch Changes
