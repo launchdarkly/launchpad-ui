@@ -2,7 +2,7 @@ import { Dropdown, DropdownButton, Menu, MenuItem } from '@launchpad-ui/core';
 
 export default function Index() {
   return (
-    <Dropdown>
+    <Dropdown isOpen>
       <DropdownButton>Target</DropdownButton>
       <Menu>
         <MenuItem>Item 1</MenuItem>

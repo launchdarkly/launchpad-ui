@@ -12,8 +12,6 @@ type DropdownButtonProps = {
   disabled?: boolean;
   children?: React.ReactNode;
   onClick?(v: React.MouseEvent): void;
-  tooltip?: string;
-  tooltipOptions?: object;
   testId?: string;
 };
 

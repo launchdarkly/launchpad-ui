@@ -68,12 +68,14 @@ class Dropdown<T extends string | object | number> extends Component<
       placement,
       disabled,
       targetClassName,
+      popoverClassName,
       isOpen: isOpenProp,
       onInteraction,
       ...rest
     } = this.props;
     const { isOpen } = this.state;
-    const popoverTargetClassname = cx('Dropdown', targetClassName);
+    const popoverTargetClasses = cx('Dropdown-target', targetClassName);
+    const popoverClasses = cx('Dropdown', popoverClassName);
 
     return (
       <Popover
@@ -82,7 +84,8 @@ class Dropdown<T extends string | object | number> extends Component<
         onInteraction={onInteraction || this.handlePopoverInteraction}
         restrictHeight={false}
         disabled={disabled}
-        targetClassName={popoverTargetClassname}
+        targetClassName={popoverTargetClasses}
+        popoverClassName={popoverClasses}
         {...rest}
       >
         {this.renderTrigger()}
