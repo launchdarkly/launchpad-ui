@@ -1,5 +1,4 @@
 /* IMPORTANT: all rems are based on a 10px system */
-/* stylelint-disable no-descending-specificity */
 :root {
   --reskin-text-color: hsl(240 2.2% 35.3%);
   --Notification-icon-color-info: var(--reskin-info-blue-base);
@@ -90,6 +89,75 @@
   margin-right: 1.1rem;
 }
 
+.Notification-icon {
+  line-height: 1.25;
+  padding: 1rem 0 1rem 1.2rem;
+
+  & .Icon {
+    width: 2.4rem;
+    height: 2.4rem;
+  }
+}
+
+.Notification-detailsExpand {
+  display: flex;
+  align-items: center;
+  min-width: 9rem;
+  padding: 0;
+  font-size: 1.3rem;
+  line-height: 1.5;
+  text-align: left;
+  color: var(--Notification-detailsExpand-color-text);
+  background-color: transparent;
+  border: hsl(0 0% 0% / 0);
+  border-radius: var(--border-radius);
+
+  &:focus {
+    outline: none;
+  }
+
+  &:active {
+    color: var(--Notification-detailsExpand-color-text-active);
+    box-shadow: none;
+  }
+
+  &:hover,
+  &:focus {
+    text-decoration: underline;
+  }
+
+  & .Icon {
+    fill: var(--color-gray-700);
+  }
+
+  &:focus:not(:focus-visible) {
+    box-shadow: none;
+  }
+}
+
+/* Many of the icons have positioning overrides happening
+in the Icon component style.css file. This temporary fix
+will zero out that positioning adjustment for now */
+.Notification--info {
+  border: 0.0625em solid var(--Notification-color-border-info);
+  background-color: var(--Notification-color-background-info);
+
+  & .Notification-icon .Icon {
+    fill: var(--Notification-icon-color-info);
+    top: 0;
+  }
+}
+
+.Notification--warning {
+  border: 0.0625em solid var(--Notification-color-border-warning);
+  background-color: var(--Notification-color-background-warning);
+
+  & .Notification-icon .Icon {
+    fill: var(--Notification-icon-color-warning);
+    line-height: 1;
+  }
+}
+
 .Notification-close.Button--icon.Button--default {
   background-color: transparent;
   border-color: var(--Notification-closeButton-color-border);
@@ -122,30 +190,6 @@
   }
 }
 
-.Notification-close.Button--icon.Button--default:active {
-  background-color: transparent;
-
-  & .Icon {
-    background-color: hsl(0 0% 12.9% / 0.7);
-    box-shadow: 0 0 0 1px var(--color-black-200), 0 0 0 4px hsl(0 0% 12.9% / 0.1);
-    color: var(--color-white);
-
-    & > svg {
-      fill: currentcolor;
-    }
-  }
-}
-
-.Notification-icon {
-  line-height: 1.25;
-  padding: 1rem 0 1rem 1.2rem;
-
-  & .Icon {
-    width: 2.4rem;
-    height: 2.4rem;
-  }
-}
-
 /* Adjust typographical rhythm to offset --line-height-small */
 .Notification-message {
   position: relative;
@@ -164,28 +208,15 @@
     box-shadow: 0 0 0 1px hsl(0 0% 9.8% / 0.7), 0 0 0 4px hsl(0 0% 9.8% / 0.1);
   }
 
-  &:focus:not(:focus-visible) {
-    outline: none;
-    box-shadow: none;
-  }
-
   &:active {
     color: var(--color-text);
     box-shadow: none;
     text-decoration: underline;
   }
-}
 
-/* Many of the icons have positioning overrides happening
-in the Icon component style.css file. This temporary fix
-will zero out that positioning adjustment for now */
-.Notification--info {
-  border: 0.0625em solid var(--Notification-color-border-info);
-  background-color: var(--Notification-color-background-info);
-
-  & .Notification-icon .Icon {
-    fill: var(--Notification-icon-color-info);
-    top: 0;
+  &:focus:not(:focus-visible) {
+    outline: none;
+    box-shadow: none;
   }
 }
 
@@ -195,16 +226,6 @@ will zero out that positioning adjustment for now */
 
   & .Notification-icon .Icon > svg {
     fill: var(--Notification-icon-color-success);
-  }
-}
-
-.Notification--warning {
-  border: 0.0625em solid var(--Notification-color-border-warning);
-  background-color: var(--Notification-color-background-warning);
-
-  & .Notification-icon .Icon {
-    fill: var(--Notification-icon-color-warning);
-    line-height: 1;
   }
 }
 
@@ -234,42 +255,6 @@ will zero out that positioning adjustment for now */
   &.is-expanded {
     height: auto;
     overflow: visible;
-  }
-}
-
-.Notification-detailsExpand {
-  display: flex;
-  align-items: center;
-  min-width: 9rem;
-  padding: 0;
-  font-size: 1.3rem;
-  line-height: 1.5;
-  text-align: left;
-  color: var(--Notification-detailsExpand-color-text);
-  background-color: transparent;
-  border: hsl(0 0% 0% / 0);
-  border-radius: var(--border-radius);
-
-  &:focus {
-    outline: none;
-  }
-
-  &:focus:not(:focus-visible) {
-    box-shadow: none;
-  }
-
-  &:active {
-    color: var(--Notification-detailsExpand-color-text-active);
-    box-shadow: none;
-  }
-
-  &:hover,
-  &:focus {
-    text-decoration: underline;
-  }
-
-  & .Icon {
-    fill: var(--color-gray-700);
   }
 }
 
@@ -316,4 +301,17 @@ will zero out that positioning adjustment for now */
     color: var(--Notification-copyDetailsButton-color-text);
   }
 }
-/* stylelint-enable no-descending-specificity */
+
+.Notification-close.Button--icon.Button--default:active {
+  background-color: transparent;
+
+  & .Icon {
+    background-color: hsl(0 0% 12.9% / 0.7);
+    box-shadow: 0 0 0 1px var(--color-black-200), 0 0 0 4px hsl(0 0% 12.9% / 0.1);
+    color: var(--color-white);
+
+    & > svg {
+      fill: currentcolor;
+    }
+  }
+}
