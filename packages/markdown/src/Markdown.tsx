@@ -32,7 +32,7 @@ const Markdown = ({
   textRef,
 }: MarkdownProps) => {
   const Container = container;
-  const classes = cx('GeneratedContent', className);
+  const classes = cx('Markdown', className);
   return (
     <Container
       className={classes}
