@@ -9,6 +9,7 @@ export * from '@launchpad-ui/dropdown';
 export * from '@launchpad-ui/form';
 export * from '@launchpad-ui/icons';
 export * from '@launchpad-ui/lozenge';
+export * from '@launchpad-ui/markdown';
 export * from '@launchpad-ui/menu';
 export * from '@launchpad-ui/modal';
 export * from '@launchpad-ui/navigation';
