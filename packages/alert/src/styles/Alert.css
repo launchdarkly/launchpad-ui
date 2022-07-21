@@ -64,9 +64,6 @@
   --Alert-icon-color-striped: var(--color-black-200);
   --Alert-border-radius: var(--reskin-border-radius-6px);
   --Alert-text-color: var(--color-text-subtle-primary);
-
-  /* LEGACY TOKENS */
-  --LEGACY-border-large: 1px solid var(--color-border);
 }
 
 .Alert {
