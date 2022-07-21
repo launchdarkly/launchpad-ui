@@ -1,4 +1,4 @@
-import DOMPurify from 'dompurify';
+import DOMPurify from 'isomorphic-dompurify';
 import { marked } from 'marked';
 
 function isAnchorNode(node: Element): node is HTMLAnchorElement {

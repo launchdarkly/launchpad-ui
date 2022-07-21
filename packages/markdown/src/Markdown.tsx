@@ -1,7 +1,7 @@
 import type { RefObject } from 'react';
 
 import cx from 'clsx';
-import DOMPurify from 'dompurify';
+import DOMPurify from 'isomorphic-dompurify';
 
 import { isAnchorNode, renderMarkdown } from './utils';
 
