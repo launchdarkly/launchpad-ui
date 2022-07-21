@@ -1,5 +1,16 @@
 # @launchpad-ui/clipboard
 
+## 0.2.8
+
+### Patch Changes
+
+- [#194](https://github.com/launchdarkly/launchpad-ui/pull/194) [`814d444`](https://github.com/launchdarkly/launchpad-ui/commit/814d444146667c0f7f384772032a96252e0c1b57) Thanks [@chasedarkly](https://github.com/chasedarkly)! - Removed or moved styles for u- classes in clipboard package
+
+  - [Clipboard] removed or moved styles for u- classes
+
+- Updated dependencies [[`eb6e44c`](https://github.com/launchdarkly/launchpad-ui/commit/eb6e44c7853a7263511cdf7aeaeb0d83a83d78b9)]:
+  - @launchpad-ui/tooltip@0.3.0
+
 ## 0.2.7
 
 ### Patch Changes

@@ -1,5 +1,20 @@
 # @launchpad-ui/dropdown
 
+## 0.2.0
+
+### Minor Changes
+
+- [#201](https://github.com/launchdarkly/launchpad-ui/pull/201) [`69aef79`](https://github.com/launchdarkly/launchpad-ui/commit/69aef79a108c5d827fa42a814c249865ab6d7bc2) Thanks [@Niznikr](https://github.com/Niznikr)! - [Dropdown] Rename target class and remove legacy props:
+
+  - Rename `Dropdown` class to `Dropdown-target` on target
+  - Add `Dropdown` class to popover
+  - Remove legacy tooltip props from `DropdownButton`
+
+### Patch Changes
+
+- Updated dependencies [[`eb6e44c`](https://github.com/launchdarkly/launchpad-ui/commit/eb6e44c7853a7263511cdf7aeaeb0d83a83d78b9)]:
+  - @launchpad-ui/popover@0.4.0
+
 ## 0.1.9
 
 ### Patch Changes

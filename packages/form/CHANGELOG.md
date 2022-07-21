@@ -1,5 +1,13 @@
 # @launchpad-ui/form
 
+## 0.2.4
+
+### Patch Changes
+
+- [#193](https://github.com/launchdarkly/launchpad-ui/pull/193) [`ceaee6b`](https://github.com/launchdarkly/launchpad-ui/commit/ceaee6b61a1fe16dd7b4e70ab4005d40203f2ba4) Thanks [@chasedarkly](https://github.com/chasedarkly)! - Removed or moved styles for u- classes in form package
+
+  - [Form] removed or moved styles for u- classes
+
 ## 0.2.3
 
 ### Patch Changes
