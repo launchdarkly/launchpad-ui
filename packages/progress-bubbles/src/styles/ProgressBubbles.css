@@ -1,4 +1,3 @@
-/* stylelint-disable no-descending-specificity */
 .ProgressBubbles {
   display: flex;
   align-items: center;
@@ -95,6 +94,16 @@ div.ProgressBubbles-icon--current {
   border: var(--border-width-2) solid var(--color-system-green-700);
 }
 
+.ProgressBubbles-icon--pending svg {
+  fill: var(--color-white);
+}
+
+.ProgressBubbles-icon svg {
+  fill: var(--color-white);
+  height: 1.6rem;
+  width: 1.6rem;
+}
+
 div.ProgressBubbles-icon--current svg {
   fill: var(--color-system-green-700);
 }
@@ -116,12 +125,6 @@ div.ProgressBubbles-icon--warning svg {
 
 .ProgressBubbles-icon--multiple {
   border-radius: 2.4rem;
-}
-
-.ProgressBubbles-icon svg {
-  fill: var(--color-white);
-  height: 1.6rem;
-  width: 1.6rem;
 }
 
 .ProgressBubbles-text {
@@ -153,8 +156,3 @@ div.ProgressBubbles-icon--warning svg {
     color: var(--color-gray-700);
   }
 }
-
-.ProgressBubbles-icon--pending svg {
-  fill: var(--color-white);
-}
-/* stylelint-enable no-descending-specificity */

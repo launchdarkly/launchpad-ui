@@ -1,50 +1,3 @@
-/* stylelint-disable no-descending-specificity */
-.Menu {
-  &:focus {
-    outline: none;
-  }
-
-  & [hidden]:first-child + & .Menu-item-list,
-  & .Menu-item-list:first-child {
-    & > .Menu-item:first-child {
-      border-top-left-radius: var(--border-radius);
-      border-top-right-radius: var(--border-radius);
-    }
-
-    & > .VirtualMenu-item-list .VirtualMenu-item:first-child .Menu-item {
-      border-top-left-radius: var(--border-radius);
-      border-top-right-radius: var(--border-radius);
-    }
-  }
-}
-
-.Menu-item-list {
-  min-width: 12rem;
-  overflow: auto;
-  max-height: 55vh;
-
-  /* use the child selector due to MenuItems being nested in divs for virtualization */
-  & > .Menu-item:last-child {
-    border-bottom-left-radius: var(--border-radius);
-    border-bottom-right-radius: var(--border-radius);
-  }
-
-  & > .VirtualMenu-item-list .VirtualMenu-item:last-child .Menu-item {
-    border-bottom-left-radius: var(--border-radius);
-    border-bottom-right-radius: var(--border-radius);
-  }
-}
-
-.Menu-item-list:first-child {
-  border-top-left-radius: var(--border-radius);
-  border-top-right-radius: var(--border-radius);
-}
-
-.Menu-item-list:last-child {
-  border-bottom-left-radius: var(--border-radius);
-  border-bottom-right-radius: var(--border-radius);
-}
-
 .Menu-item {
   display: block;
   position: relative;
@@ -63,27 +16,56 @@
   line-height: inherit;
   border-width: 0;
   width: 100%;
+
+  &:first-child {
+    border-top-left-radius: var(--border-radius);
+    border-top-right-radius: var(--border-radius);
+  }
+
+  &:last-child {
+    border-bottom-left-radius: var(--border-radius);
+    border-bottom-right-radius: var(--border-radius);
+  }
 }
 
-/* stylelint-disable-next-line no-duplicate-selectors */
+.Menu-item-list {
+  min-width: 12rem;
+  overflow: auto;
+  max-height: 55vh;
+}
+
+.Menu-item-list > .Menu-item:last-child {
+  border-bottom-left-radius: var(--border-radius);
+  border-bottom-right-radius: var(--border-radius);
+}
+
+.Menu .Menu-item:not([disabled], [aria-disabled]) {
+  &:active {
+    text-decoration: none;
+    box-shadow: none;
+    background-color: var(--color-blue-200);
+    color: var(--color-blue-600);
+  }
+
+  &:hover:not(:active, .has-focus) {
+    background-color: var(--color-background-hover);
+    box-shadow: inset 0 0 0 1px var(--color-gray-600);
+  }
+
+  &.has-focus {
+    background-color: var(--color-background-hover);
+    box-shadow: inset 0 0 0 2px var(--color-focus);
+  }
+}
+
+.Menu-item-list > .VirtualMenu-item-list .VirtualMenu-item:last-child .Menu-item {
+  border-bottom-left-radius: var(--border-radius);
+  border-bottom-right-radius: var(--border-radius);
+}
+
 .Menu {
-  & .Menu-item:not([disabled], [aria-disabled]) {
-    &:hover:not(:active, .has-focus) {
-      background-color: var(--color-background-hover);
-      box-shadow: inset 0 0 0 1px var(--color-gray-600);
-    }
-
-    &.has-focus {
-      background-color: var(--color-background-hover);
-      box-shadow: inset 0 0 0 2px var(--color-focus);
-    }
-
-    &:active {
-      text-decoration: none;
-      box-shadow: none;
-      background-color: var(--color-blue-200);
-      color: var(--color-blue-600);
-    }
+  &:focus {
+    outline: none;
   }
 
   /* Override our link styles for MenuItemLink component */
@@ -98,6 +80,19 @@
     &:active[aria-disabled] {
       text-decoration: none;
       color: var(--color-text-subtle-primary);
+    }
+  }
+
+  & .Menu-item-list:first-child,
+  & [hidden]:first-child + & .Menu-item-list {
+    & > .Menu-item:first-child {
+      border-top-left-radius: var(--border-radius);
+      border-top-right-radius: var(--border-radius);
+    }
+
+    & > .VirtualMenu-item-list .VirtualMenu-item:first-child .Menu-item {
+      border-top-left-radius: var(--border-radius);
+      border-top-right-radius: var(--border-radius);
     }
   }
 }
