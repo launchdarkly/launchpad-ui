@@ -11,14 +11,6 @@ module.exports = {
     '@storybook/addon-a11y',
     '@storybook/addon-essentials',
     'storybook-addon-pseudo-states',
-    {
-      name: '@storybook/addon-postcss',
-      options: {
-        postcssLoaderOptions: {
-          implementation: require('postcss'),
-        },
-      },
-    },
     '@storybook/addon-interactions',
     '@etchteam/storybook-addon-status',
   ],
@@ -35,6 +27,16 @@ module.exports = {
   },
   webpackFinal: async (config) => ({
     ...config,
+    module: {
+      ...config.module,
+      rules: [
+        ...config.module.rules,
+        {
+          test: /\.css$/,
+          use: [path.resolve(__dirname, './parcel-css-loader.js')],
+        },
+      ],
+    },
     resolve: {
       ...config.resolve,
       alias: {

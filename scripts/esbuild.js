@@ -7,6 +7,8 @@ const browserslist = require('browserslist');
 const esbuild = require('esbuild');
 const fg = require('fast-glob');
 
+const pkg = require('../package.json');
+
 const build = async (packageJSON) => {
   const outFileMain = packageJSON.main;
   const outFileModule = packageJSON.module;
@@ -46,7 +48,7 @@ const build = async (packageJSON) => {
 };
 
 const buildCss = async () => {
-  const targets = css.browserslistToTargets(browserslist('last 2 versions, not dead, not IE 11'));
+  const targets = css.browserslistToTargets(browserslist(pkg.browserslist.join(', ')));
   const cssPaths = await fg([`src/**/*.css`]);
 
   cssPaths.forEach((cssPath) => {
