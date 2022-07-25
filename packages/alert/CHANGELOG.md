@@ -1,5 +1,11 @@
 # @launchpad-ui/alert
 
+## 0.1.12
+
+### Patch Changes
+
+- [#202](https://github.com/launchdarkly/launchpad-ui/pull/202) [`6836a14`](https://github.com/launchdarkly/launchpad-ui/commit/6836a148988c7e0907920ecdcfaf4c4d8da086f8) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Alert] Remove legacy styles and reorder css to fix no-descending-specificity
+
 ## 0.1.11
 
 ### Patch Changes
