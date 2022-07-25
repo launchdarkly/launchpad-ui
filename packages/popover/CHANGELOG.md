@@ -1,5 +1,11 @@
 # @launchpad-ui/popover
 
+## 0.4.1
+
+### Patch Changes
+
+- [#208](https://github.com/launchdarkly/launchpad-ui/pull/208) [`590838e`](https://github.com/launchdarkly/launchpad-ui/commit/590838e7744058324fc5223b6cb39f01a88f6e1a) Thanks [@Niznikr](https://github.com/Niznikr)! - [Popover] Apply strategy to popover position
+
 ## 0.4.0
 
 ### Minor Changes
