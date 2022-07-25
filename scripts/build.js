@@ -7,7 +7,8 @@ const browserslist = require('browserslist');
 const esbuild = require('esbuild');
 const fg = require('fast-glob');
 
-const build = async (packageJSON) => {
+const build = async () => {
+  const packageJSON = require(path.resolve('./package.json'));
   const outFileMain = packageJSON.main;
   const outFileModule = packageJSON.module;
   const entryPoints = [packageJSON.source];
@@ -70,4 +71,4 @@ const buildCss = async () => {
   });
 };
 
-module.exports = { build };
+build();
