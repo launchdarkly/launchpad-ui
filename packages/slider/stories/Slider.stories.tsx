@@ -1,4 +1,4 @@
-import type { ComponentStoryObj } from '@storybook/react';
+import type { ComponentStoryObj, StoryFn } from '@storybook/react';
 
 import { Slider } from '../src';
 
@@ -11,6 +11,18 @@ export default {
       type: process.env.PACKAGE_STATUS__SLIDER,
     },
   },
+  decorators: [
+    (StoryFn: StoryFn) => (
+      <div
+        style={{
+          height: '100px',
+          padding: '1rem 0',
+        }}
+      >
+        <StoryFn />
+      </div>
+    ),
+  ],
 };
 
 type Story = ComponentStoryObj<typeof Slider>;
