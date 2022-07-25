@@ -187,19 +187,19 @@
   flex-direction: column;
 }
 
-.MenuSize--xLarge {
+.MenuSize--xl {
   width: 32rem;
 }
 
-.MenuSize--large {
+.MenuSize--lg {
   width: 24rem;
 }
 
-.MenuSize--med {
+.MenuSize--md {
   width: 16rem;
 }
 
-.MenuSize--small {
+.MenuSize--sm {
   width: 12rem;
 }
 

@@ -35,6 +35,7 @@
   "dependencies": {
     "@launchpad-ui/icons": "workspace:~",
     "@launchpad-ui/popover": "workspace:~",
+    "@launchpad-ui/slot": "workspace:~",
     "@launchpad-ui/tokens": "workspace:~",
     "@launchpad-ui/tooltip": "workspace:~",
     "@react-aria/focus": "^3.6.0",

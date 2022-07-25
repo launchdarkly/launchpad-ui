@@ -18,6 +18,7 @@ export * from '@launchpad-ui/overlay';
 export * from '@launchpad-ui/popover';
 export * from '@launchpad-ui/progress';
 export * from '@launchpad-ui/progress-bubbles';
+export * from '@launchpad-ui/slot';
 export * from '@launchpad-ui/tab-list';
 export * from '@launchpad-ui/toggle';
 export * from '@launchpad-ui/tokens';

@@ -1,5 +1,3 @@
-import type { To } from 'react-router-dom';
-
 import cx from 'clsx';
 import { cloneElement, forwardRef, memo } from 'react';
 
@@ -78,9 +76,9 @@ type ButtonProps = {
   onClick?(event: React.MouseEvent): void;
 
   /**
-   * React router location to take user to when button is clicked
+   * React router compatible location to take user to when button is clicked
    */
-  to?: To;
+  to?: string;
 
   /**
    * When true, renders the icon before the text

@@ -1,7 +1,7 @@
 import type { Icon } from '@launchpad-ui/icons';
 import type { PopoverPlacement } from '@launchpad-ui/popover';
 
-import { IconSize } from '@launchpad-ui/icons';
+import { Slot } from '@launchpad-ui/slot';
 import { Tooltip } from '@launchpad-ui/tooltip';
 import { FocusRing } from '@react-aria/focus';
 import cx from 'clsx';
@@ -27,10 +27,10 @@ type MenuItemOwnProps = {
   disabled?: boolean;
   nested?: boolean;
   groupHeader?: boolean;
-  innerRef?: React.RefObject<HTMLDivElement>;
   tooltip?: string | React.ReactElement;
   tooltipOptions?: typeof Tooltip;
   tooltipPlacement?: PopoverPlacement;
+  asChild?: boolean;
 };
 
 const defaultElement = 'button';
@@ -61,22 +61,22 @@ const MenuItem = <P, T extends React.ElementType = typeof defaultElement>({
     item,
     disabled,
     className,
-    innerRef,
     tooltip,
     role = 'menuitem',
     tooltipPlacement,
     onKeyDown,
     tooltipOptions,
+    asChild,
     ...rest
   } = props;
 
-  const Component: React.ElementType = component || defaultElement;
+  const Component: React.ElementType = asChild ? Slot : defaultElement;
+  // const Component: React.ElementType = component || defaultElement;
 
   const renderedItem = (
     <FocusRing focusRingClass="has-focus">
       <Component
         {...rest}
-        ref={innerRef}
         disabled={disabled}
         aria-disabled={disabled ? disabled : undefined}
         className={cx(
@@ -89,11 +89,11 @@ const MenuItem = <P, T extends React.ElementType = typeof defaultElement>({
         role={role}
         onKeyDown={onKeyDown}
       >
-        {Icon && (
+        {/* {!asChild && Icon && (
           <span className="Menu-item-icon">
             <Icon size={IconSize.SMALL} />
           </span>
-        )}
+        )} */}
         {children}
       </Component>
     </FocusRing>

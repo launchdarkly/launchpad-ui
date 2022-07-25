@@ -291,6 +291,7 @@ importers:
       '@launchpad-ui/popover': workspace:~
       '@launchpad-ui/progress': workspace:~
       '@launchpad-ui/progress-bubbles': workspace:~
+      '@launchpad-ui/slot': workspace:~
       '@launchpad-ui/tab-list': workspace:~
       '@launchpad-ui/toggle': workspace:~
       '@launchpad-ui/tokens': workspace:~
@@ -317,6 +318,7 @@ importers:
       '@launchpad-ui/popover': link:../popover
       '@launchpad-ui/progress': link:../progress
       '@launchpad-ui/progress-bubbles': link:../progress-bubbles
+      '@launchpad-ui/slot': link:../slot
       '@launchpad-ui/tab-list': link:../tab-list
       '@launchpad-ui/toggle': link:../toggle
       '@launchpad-ui/tokens': link:../tokens
@@ -435,10 +437,12 @@ importers:
     specifiers:
       '@launchpad-ui/icons': workspace:~
       '@launchpad-ui/popover': workspace:~
+      '@launchpad-ui/slot': workspace:~
       '@launchpad-ui/tokens': workspace:~
       '@launchpad-ui/tooltip': workspace:~
       '@react-aria/focus': ^3.6.0
       '@react-aria/separator': ^3.2.0
+      '@tanstack/react-virtual': 3.0.0-beta.13
       '@types/lodash-es': ^4.17.6
       '@types/uuid': ^8.3.4
       clsx: ^1.2.0
@@ -451,10 +455,12 @@ importers:
     dependencies:
       '@launchpad-ui/icons': link:../icons
       '@launchpad-ui/popover': link:../popover
+      '@launchpad-ui/slot': link:../slot
       '@launchpad-ui/tokens': link:../tokens
       '@launchpad-ui/tooltip': link:../tooltip
       '@react-aria/focus': 3.6.1_react@18.2.0
       '@react-aria/separator': 3.2.1_react@18.2.0
+      '@tanstack/react-virtual': 3.0.0-beta.13_react@18.2.0
       clsx: 1.2.0
       lodash-es: 4.17.21
       react-router-dom: 6.3.0_biqbaboplfbrettd7655fr4n2y
@@ -629,6 +635,14 @@ importers:
       '@launchpad-ui/popover': link:../popover
       '@launchpad-ui/tokens': link:../tokens
       clsx: 1.2.0
+    devDependencies:
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
+
+  packages/slot:
+    specifiers:
+      react: ^18.2.0
+      react-dom: ^18.2.0
     devDependencies:
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
@@ -5439,6 +5453,24 @@ packages:
     dependencies:
       defer-to-connect: 2.0.1
     dev: true
+
+  /@tanstack/react-virtual/3.0.0-beta.13_react@18.2.0:
+    resolution: {integrity: sha512-FDyKbo3ncoOR1rsEURQJ5U+inUV7YC7lcP02Tw5N7oAz/DKWm/uifvWYM7MW0eKSyNCrVPJvlDrgdg0vb7f22Q==}
+    engines: {node: '>=12'}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0 || ^18.0.0 || 18
+    dependencies:
+      '@reach/observe-rect': 1.2.0
+      '@tanstack/virtual-core': 3.0.0-beta.13
+      react: 18.2.0
+    dev: false
+
+  /@tanstack/virtual-core/3.0.0-beta.13:
+    resolution: {integrity: sha512-T7ZwIYYeQEiq0KKYLr0GMQsr4U2VaHXzna3PgooJTh91bEFwDU7bol/1GixCDqLOs+CkjRoVjFdSIo25jgzhnw==}
+    engines: {node: '>=12'}
+    dependencies:
+      '@reach/observe-rect': 1.2.0
+    dev: false
 
   /@testing-library/dom/8.14.0:
     resolution: {integrity: sha512-m8FOdUo77iMTwVRCyzWcqxlEIk+GnopbrRI15a0EaLbpZSCinIVI4kSQzWhkShK83GogvEFJSsHF3Ws0z1vrqA==}

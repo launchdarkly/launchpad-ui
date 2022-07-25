@@ -52,6 +52,7 @@
     "@launchpad-ui/popover": "workspace:~",
     "@launchpad-ui/progress": "workspace:~",
     "@launchpad-ui/progress-bubbles": "workspace:~",
+    "@launchpad-ui/slot": "workspace:~",
     "@launchpad-ui/tab-list": "workspace:~",
     "@launchpad-ui/toggle": "workspace:~",
     "@launchpad-ui/tokens": "workspace:~",

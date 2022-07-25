@@ -49,3 +49,14 @@ export const ExampleWithSearch: Story = {
     ],
   },
 };
+
+export const ExampleWithTooltips: Story = {
+  args: {
+    children: [
+      <MenuItem key="1" tooltip="Hello" asChild>
+        <a href="https://www.google.com">Item 1</a>
+      </MenuItem>,
+      <MenuItem key="2">item 2</MenuItem>,
+    ],
+  },
+};
