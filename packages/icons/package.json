@@ -27,7 +27,7 @@
   },
   "source": "src/index.ts",
   "scripts": {
-    "build": "pnpm build:icons && tsc --project tsconfig.build.json && node build.js",
+    "build": "pnpm build:icons && tsc --project tsconfig.build.json && node ../../scripts/build.js",
     "build:icons": "svgr --silent -- icons",
     "clean": "rm -rf dist",
     "e2e": "playwright test --config=../../playwright.config.ct.ts",

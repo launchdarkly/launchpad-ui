@@ -24,11 +24,6 @@ module.exports = (plop) => {
       },
       {
         type: 'add',
-        path: 'packages/{{dashCase name}}/build.js',
-        templateFile: '.plop-templates/component/build.js.hbs',
-      },
-      {
-        type: 'add',
         path: 'packages/{{dashCase name}}/package.json',
         templateFile: '.plop-templates/component/package.json.hbs',
       },
