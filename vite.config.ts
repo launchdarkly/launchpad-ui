@@ -5,6 +5,7 @@ import path from 'path';
 import react from '@vitejs/plugin-react';
 import { defineConfig } from 'vite';
 
+import parcelCssPlugin from './parcel-css-plugin';
 import tsconfig from './tsconfig.json';
 
 const paths = tsconfig.compilerOptions.paths;
@@ -14,7 +15,7 @@ Object.keys(paths).forEach((key) => {
 });
 
 export default defineConfig({
-  plugins: [react()],
+  plugins: [react(), parcelCssPlugin()],
   resolve: {
     alias,
   },
