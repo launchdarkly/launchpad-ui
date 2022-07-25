@@ -1,0 +1,47 @@
+{
+  "name": "@launchpad-ui/slider",
+  "version": "0.0.1",
+  "status": "beta",
+  "publishConfig": {
+    "access": "public"
+  },
+  "description": "An element used to set a value within a range.",
+  "files": [
+    "dist"
+  ],
+  "main": "dist/index.js",
+  "module": "dist/index.es.js",
+  "types": "dist/index.d.ts",
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.es.js",
+      "require": "./dist/index.js"
+    },
+    "./package.json": "./package.json",
+    "./styles/*": "./dist/styles/*"
+  },
+  "source": "src/index.ts",
+  "scripts": {
+    "build": "tsc --project tsconfig.build.json && node ../../scripts/build.js",
+    "clean": "rm -rf dist",
+    "e2e": "playwright test --config=../../playwright.config.ct.ts",
+    "lint": "eslint '**/*.{ts,tsx,js}' && stylelint '**/*.css' --ignore-path ../../.stylelintignore",
+    "test": "vitest run --coverage"
+  },
+  "dependencies": {
+    "@launchpad-ui/tokens": "workspace:~",
+    "clsx": "^1.2.0"
+  },
+  "peerDependencies": {
+    "react": "^16.8.0 || ^17.0.0 || ^18.0.0",
+    "react-dom": "^16.8.0 || ^17.0.0 || ^18.0.0"
+  },
+  "devDependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}
