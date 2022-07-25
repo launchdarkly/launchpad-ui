@@ -1,7 +1,10 @@
 import path from 'path';
 
 import { type PlaywrightTestConfig, devices, expect } from '@playwright/experimental-ct-react';
+import react from '@vitejs/plugin-react';
 import matchers from 'expect-axe-playwright';
+
+import parcelCssPlugin from './parcel-css-plugin';
 
 expect.extend(matchers);
 
@@ -32,6 +35,7 @@ const config: PlaywrightTestConfig = {
         region: { enabled: false },
       },
     },
+    ctViteConfig: { plugins: [react(), parcelCssPlugin()] },
   },
 };
 
