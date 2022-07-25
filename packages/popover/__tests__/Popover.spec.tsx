@@ -80,4 +80,18 @@ describe('Popover', () => {
       expect(screen.queryByRole('tooltip')).toBeNull();
     });
   });
+
+  it('updates to fixed position in a modal', async () => {
+    document.body.classList.add('has-modal');
+    render(
+      <Popover>
+        <button>Target</button>
+        <span>Content</span>
+      </Popover>
+    );
+
+    userEvent.setup();
+    await userEvent.click(screen.getByRole('button'));
+    expect(screen.getByRole('tooltip').style.position).toBe('fixed');
+  });
 });

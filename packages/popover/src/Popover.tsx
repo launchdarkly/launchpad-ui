@@ -432,12 +432,14 @@ class Popover extends withTimeouts<PopoverProps>(Component) {
       y,
       placement: floatPlacement,
       middlewareData,
+      strategy: floatStrategy,
     } = await computePosition(target, this.contentElement, this.options);
 
     if (this.contentElement) {
       Object.assign(this.contentElement.style, {
         left: `${x}px`,
         top: `${y}px`,
+        position: floatStrategy,
       });
 
       this.contentElement.dataset.popoverPlacement = floatPlacement;
