@@ -29,7 +29,7 @@ const content: { [name: string]: Variants } = {
   },
 };
 
-const loadFeatures = () => import('../../../utils/framer-features').then((res) => res.default);
+const loadFeatures = () => import('./framer-features').then((res) => res.default);
 
 type ModalProps = {
   children?: React.ReactNode;

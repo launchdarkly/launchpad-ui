@@ -16,7 +16,7 @@ import { v4 } from 'uuid';
 import './styles/Popover.css';
 import { withTimeouts } from './withTimeouts';
 
-const loadFeatures = () => import('../../../utils/framer-features').then((res) => res.default);
+const loadFeatures = () => import('./framer-features').then((res) => res.default);
 
 type Offset = OffsetOptions;
 
