@@ -154,7 +154,7 @@ const Menu = <T extends number | string>(props: MenuProps<T>) => {
 
   if (enableVirtualization) {
     return (
-      <MenuBase isVirtual size={size} role="menu">
+      <MenuBase isVirtual size={size}>
         <ItemVirtualizer<T>
           items={Children.toArray(reduceItems.items) as ReactElement[]}
           searchElement={reduceItems.searchElement}
