@@ -288,6 +288,7 @@ importers:
       '@launchpad-ui/navigation': workspace:~
       '@launchpad-ui/notification': workspace:~
       '@launchpad-ui/overlay': workspace:~
+      '@launchpad-ui/pagination': workspace:~
       '@launchpad-ui/popover': workspace:~
       '@launchpad-ui/progress': workspace:~
       '@launchpad-ui/progress-bubbles': workspace:~
@@ -316,6 +317,7 @@ importers:
       '@launchpad-ui/navigation': link:../navigation
       '@launchpad-ui/notification': link:../notification
       '@launchpad-ui/overlay': link:../overlay
+      '@launchpad-ui/pagination': link:../pagination
       '@launchpad-ui/popover': link:../popover
       '@launchpad-ui/progress': link:../progress
       '@launchpad-ui/progress-bubbles': link:../progress-bubbles
@@ -571,6 +573,19 @@ importers:
       lodash-es: 4.17.21
     devDependencies:
       '@types/lodash-es': 4.17.6
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
+
+  packages/pagination:
+    specifiers:
+      '@launchpad-ui/tokens': workspace:~
+      clsx: ^1.2.0
+      react: ^18.2.0
+      react-dom: ^18.2.0
+    dependencies:
+      '@launchpad-ui/tokens': link:../tokens
+      clsx: 1.2.0
+    devDependencies:
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
 

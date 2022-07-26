@@ -18,6 +18,7 @@ export async function getComponents() {
     { to: 'components/modal', name: 'Modal' },
     { to: 'components/navigation', name: 'Navigation' },
     { to: 'components/notification', name: 'Notification' },
+    { to: 'components/pagination', name: 'Pagination' },
     { to: 'components/popover', name: 'Popover' },
     { to: 'components/progress', name: 'Progress' },
     { to: 'components/progress-bubbles', name: 'ProgressBubbles' },
