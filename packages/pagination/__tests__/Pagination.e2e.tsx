@@ -12,7 +12,7 @@ test.describe('Pagination', () => {
   test('is accessible', async ({ mount, page }) => {
     const component = await mount(
       createComponent({
-        resourceName: 'rocketship',
+        resourceName: 'flags',
         onChange: () => undefined,
         currentOffset: 0,
         pageSize: 2,

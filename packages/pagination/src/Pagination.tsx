@@ -32,7 +32,7 @@ const Pagination = ({
   totalCount,
 }: PaginationProps) => {
   return (
-    <PaginationContainer className={className}>
+    <PaginationContainer resourceName={resourceName} className={className}>
       <PaginationButton
         resourceName={resourceName}
         kind={PaginationChange.FIRST}

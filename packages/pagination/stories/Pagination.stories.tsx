@@ -17,7 +17,7 @@ type Story = ComponentStoryObj<typeof Pagination>;
 
 export const Example: Story = {
   args: {
-    resourceName: 'rocketship',
+    resourceName: 'flags',
     onChange: () => undefined,
     currentOffset: 0,
     pageSize: 2,

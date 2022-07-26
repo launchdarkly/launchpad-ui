@@ -7,7 +7,7 @@ describe('Pagination', () => {
   it('renders', () => {
     render(
       <Pagination
-        resourceName={'rocketship'}
+        resourceName={'flags'}
         onChange={() => undefined}
         currentOffset={0}
         pageSize={2}
@@ -15,9 +15,9 @@ describe('Pagination', () => {
         totalCount={4}
       />
     );
-    expect(screen.getByLabelText('first rocketship page')).toBeInTheDocument();
-    expect(screen.getByLabelText('previous rocketship page')).toBeInTheDocument();
-    expect(screen.getByLabelText('next rocketship page')).toBeInTheDocument();
-    expect(screen.getByLabelText('last rocketship page')).toBeInTheDocument();
+    expect(screen.getByLabelText('first flags page')).toBeInTheDocument();
+    expect(screen.getByLabelText('previous flags page')).toBeInTheDocument();
+    expect(screen.getByLabelText('next flags page')).toBeInTheDocument();
+    expect(screen.getByLabelText('last flags page')).toBeInTheDocument();
   });
 });

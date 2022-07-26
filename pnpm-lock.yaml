@@ -582,6 +582,7 @@ importers:
       '@launchpad-ui/icons': workspace:~
       '@launchpad-ui/progress': workspace:~
       '@launchpad-ui/tokens': workspace:~
+      '@react-aria/visually-hidden': ^3.3.0
       clsx: ^1.2.0
       react: ^18.2.0
       react-dom: ^18.2.0
@@ -590,6 +591,7 @@ importers:
       '@launchpad-ui/icons': link:../icons
       '@launchpad-ui/progress': link:../progress
       '@launchpad-ui/tokens': link:../tokens
+      '@react-aria/visually-hidden': 3.3.1_react@18.2.0
       clsx: 1.2.0
     devDependencies:
       react: 18.2.0

@@ -1,4 +1,5 @@
 import { Progress } from '@launchpad-ui/progress';
+import { VisuallyHidden } from '@react-aria/visually-hidden';
 
 type PaginationTextProps = {
   currentOffset: number;
@@ -24,12 +25,17 @@ const PaginationText = ({ currentOffset, pageSize, isReady, totalCount }: Pagina
     return <strong>No results</strong>;
   }
 
+  const screenReaderLabel = `Viewing records ${from} through ${to} of ${totalCount} total.`;
+
   return (
     <div className="PaginationText">
-      <strong>
-        {from}-{to}
-      </strong>{' '}
-      of <strong>{totalCount}</strong>
+      <VisuallyHidden>{screenReaderLabel}</VisuallyHidden>
+      <span aria-hidden>
+        <strong>
+          {from}-{to}
+        </strong>{' '}
+        of <strong>{totalCount}</strong>
+      </span>
     </div>
   );
 };

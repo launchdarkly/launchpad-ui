@@ -5,11 +5,16 @@ import './styles/Pagination.css';
 type PaginationContainerProps = {
   className?: string;
   children?: React.ReactNode;
+  resourceName: string;
 };
 
-const PaginationContainer = ({ className, children }: PaginationContainerProps) => {
+const PaginationContainer = ({ className, children, resourceName }: PaginationContainerProps) => {
   return (
-    <div className={cx('Pagination', className)}>
+    <div
+      className={cx('Pagination', className)}
+      role="navigation"
+      aria-label={`Pagination for ${resourceName} list.`}
+    >
       <div className="Pagination--body">{children}</div>
     </div>
   );
