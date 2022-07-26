@@ -78,7 +78,7 @@ type ButtonProps = {
   /**
    * React router compatible location to take user to when button is clicked
    */
-  to?: string;
+  to?: string | Record<string, unknown>;
 
   /**
    * When true, renders the icon before the text
