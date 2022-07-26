@@ -4,4 +4,7 @@
 '@launchpad-ui/core': patch
 ---
 
-Add slot dependency and remove dependency on react router for button and menu
+Add slot to menu and remove dependency on RR for button & menu
+
+- [Menu]: Add slot package to remove React Router dependency, add MenuSize enum.
+- [Button]: Remove React Router dependency by generalizing the `to` prop. In the future, we will look into allowing slottable buttons.
