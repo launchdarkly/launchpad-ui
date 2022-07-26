@@ -1,4 +1,6 @@
 module.exports = (plop) => {
+  plop.load('./.plop/actions/install-dependencies.js');
+
   plop.setGenerator('component', {
     description: 'A Launchpad UI component',
     prompts: [
@@ -20,47 +22,47 @@ module.exports = (plop) => {
       {
         type: 'add',
         path: 'packages/{{dashCase name}}/README.md',
-        templateFile: '.plop-templates/component/README.md.hbs',
+        templateFile: '.plop/templates/component/README.md.hbs',
       },
       {
         type: 'add',
         path: 'packages/{{dashCase name}}/package.json',
-        templateFile: '.plop-templates/component/package.json.hbs',
+        templateFile: '.plop/templates/component/package.json.hbs',
       },
       {
         type: 'add',
         path: 'packages/{{dashCase name}}/tsconfig.build.json',
-        templateFile: '.plop-templates/component/tsconfig.build.json.hbs',
+        templateFile: '.plop/templates/component/tsconfig.build.json.hbs',
       },
       {
         type: 'add',
         path: 'packages/{{dashCase name}}/stories/{{pascalCase name}}.stories.tsx',
-        templateFile: '.plop-templates/component/story.tsx.hbs',
+        templateFile: '.plop/templates/component/story.tsx.hbs',
       },
       {
         type: 'add',
         path: 'packages/{{dashCase name}}/__tests__/{{pascalCase name}}.spec.tsx',
-        templateFile: '.plop-templates/component/spec.tsx.hbs',
+        templateFile: '.plop/templates/component/spec.tsx.hbs',
       },
       {
         type: 'add',
         path: 'packages/{{dashCase name}}/__tests__/{{pascalCase name}}.e2e.tsx',
-        templateFile: '.plop-templates/component/e2e.tsx.hbs',
+        templateFile: '.plop/templates/component/e2e.tsx.hbs',
       },
       {
         type: 'add',
         path: 'packages/{{dashCase name}}/src/{{pascalCase name}}.tsx',
-        templateFile: '.plop-templates/component/component.tsx.hbs',
+        templateFile: '.plop/templates/component/component.tsx.hbs',
       },
       {
         type: 'add',
         path: 'packages/{{dashCase name}}/src/index.ts',
-        templateFile: '.plop-templates/component/src-index.ts.hbs',
+        templateFile: '.plop/templates/component/src-index.ts.hbs',
       },
       {
         type: 'add',
         path: 'packages/{{dashCase name}}/src/styles/{{pascalCase name}}.css',
-        templateFile: '.plop-templates/component/styles.css.hbs',
+        templateFile: '.plop/templates/component/styles.css.hbs',
       },
       /*
        * Monorepo config
@@ -96,7 +98,7 @@ module.exports = (plop) => {
       {
         type: 'add',
         path: 'packages/core/src/styles/{{dashCase name}}.css',
-        templateFile: '.plop-templates/component/core-styles.css.hbs',
+        templateFile: '.plop/templates/component/core-styles.css.hbs',
       },
       {
         path: 'packages/core/src/index.ts',
@@ -115,7 +117,7 @@ module.exports = (plop) => {
       {
         type: 'add',
         path: 'apps/remix/app/routes/components/{{dashCase name}}.tsx',
-        templateFile: '.plop-templates/component/remix-example.tsx.hbs',
+        templateFile: '.plop/templates/component/remix-example.tsx.hbs',
       },
       {
         path: 'apps/remix/app/root.tsx',
@@ -146,6 +148,10 @@ module.exports = (plop) => {
             openPatternStr: 'plop start components',
             closePatternStr: 'plop end components',
           }),
+      },
+      {
+        type: 'installDependencies',
+        path: process.cwd(),
       },
     ],
   });
