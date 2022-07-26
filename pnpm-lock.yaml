@@ -293,6 +293,7 @@ importers:
       '@launchpad-ui/progress-bubbles': workspace:~
       '@launchpad-ui/slider': workspace:~
       '@launchpad-ui/tab-list': workspace:~
+      '@launchpad-ui/table': workspace:~
       '@launchpad-ui/toggle': workspace:~
       '@launchpad-ui/tokens': workspace:~
       '@launchpad-ui/tooltip': workspace:~
@@ -320,6 +321,7 @@ importers:
       '@launchpad-ui/progress-bubbles': link:../progress-bubbles
       '@launchpad-ui/slider': link:../slider
       '@launchpad-ui/tab-list': link:../tab-list
+      '@launchpad-ui/table': link:../table
       '@launchpad-ui/toggle': link:../toggle
       '@launchpad-ui/tokens': link:../tokens
       '@launchpad-ui/tooltip': link:../tooltip
@@ -668,6 +670,19 @@ importers:
       clsx: 1.2.0
     devDependencies:
       '@react-stately/collections': 3.4.1_react@18.2.0
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
+
+  packages/table:
+    specifiers:
+      '@launchpad-ui/tokens': workspace:~
+      clsx: ^1.2.0
+      react: ^18.2.0
+      react-dom: ^18.2.0
+    dependencies:
+      '@launchpad-ui/tokens': link:../tokens
+      clsx: 1.2.0
+    devDependencies:
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
 

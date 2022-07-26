@@ -25,6 +25,7 @@
       "@launchpad-ui/progress-bubbles": ["./packages/progress-bubbles/src"],
       "@launchpad-ui/slider": ["./packages/slider/src"],
       "@launchpad-ui/tab-list": ["./packages/tab-list/src"],
+      "@launchpad-ui/table": ["./packages/table/src"],
       "@launchpad-ui/toggle": ["./packages/toggle/src"],
       "@launchpad-ui/tooltip": ["./packages/tooltip/src"]
     }

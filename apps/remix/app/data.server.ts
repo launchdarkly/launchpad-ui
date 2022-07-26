@@ -23,6 +23,7 @@ export async function getComponents() {
     { to: 'components/progress-bubbles', name: 'ProgressBubbles' },
     { to: 'components/slider', name: 'Slider' },
     { to: 'components/tab-list', name: 'TabList' },
+    { to: 'components/table', name: 'Table' },
     { to: 'components/toggle', name: 'Toggle' },
     { to: 'components/tooltip', name: 'Tooltip' },
     // plop end components
