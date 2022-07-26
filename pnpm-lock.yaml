@@ -289,7 +289,6 @@ importers:
       '@launchpad-ui/popover': workspace:~
       '@launchpad-ui/progress': workspace:~
       '@launchpad-ui/progress-bubbles': workspace:~
-      '@launchpad-ui/slot': workspace:~
       '@launchpad-ui/tab-list': workspace:~
       '@launchpad-ui/toggle': workspace:~
       '@launchpad-ui/tokens': workspace:~
@@ -316,7 +315,6 @@ importers:
       '@launchpad-ui/popover': link:../popover
       '@launchpad-ui/progress': link:../progress
       '@launchpad-ui/progress-bubbles': link:../progress-bubbles
-      '@launchpad-ui/slot': link:../slot
       '@launchpad-ui/tab-list': link:../tab-list
       '@launchpad-ui/toggle': link:../toggle
       '@launchpad-ui/tokens': link:../tokens
@@ -435,9 +433,9 @@ importers:
     specifiers:
       '@launchpad-ui/icons': workspace:~
       '@launchpad-ui/popover': workspace:~
-      '@launchpad-ui/slot': workspace:~
       '@launchpad-ui/tokens': workspace:~
       '@launchpad-ui/tooltip': workspace:~
+      '@radix-ui/react-slot': ^1.0.0
       '@react-aria/focus': ^3.6.0
       '@react-aria/separator': ^3.2.0
       '@types/lodash-es': ^4.17.6
@@ -452,9 +450,9 @@ importers:
     dependencies:
       '@launchpad-ui/icons': link:../icons
       '@launchpad-ui/popover': link:../popover
-      '@launchpad-ui/slot': link:../slot
       '@launchpad-ui/tokens': link:../tokens
       '@launchpad-ui/tooltip': link:../tooltip
+      '@radix-ui/react-slot': 1.0.0_react@18.2.0
       '@react-aria/focus': 3.6.1_react@18.2.0
       '@react-aria/separator': 3.2.1_react@18.2.0
       clsx: 1.2.0
@@ -631,14 +629,6 @@ importers:
       '@launchpad-ui/popover': link:../popover
       '@launchpad-ui/tokens': link:../tokens
       clsx: 1.2.0
-    devDependencies:
-      react: 18.2.0
-      react-dom: 18.2.0_react@18.2.0
-
-  packages/slot:
-    specifiers:
-      react: ^18.2.0
-      react-dom: ^18.2.0
     devDependencies:
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
@@ -3293,6 +3283,25 @@ packages:
       source-map: 0.7.4
       webpack: 5.74.0_esbuild@0.14.48
     dev: true
+
+  /@radix-ui/react-compose-refs/1.0.0_react@18.2.0:
+    resolution: {integrity: sha512-0KaSv6sx787/hK3eF53iOkiSLwAGlFMx5lotrqD2pTjB18KbybKoEIgkNZTKC60YECDQTKGTRcDBILwZVqVKvA==}
+    peerDependencies:
+      react: ^16.8 || ^17.0 || ^18.0 || 18
+    dependencies:
+      '@babel/runtime': 7.18.6
+      react: 18.2.0
+    dev: false
+
+  /@radix-ui/react-slot/1.0.0_react@18.2.0:
+    resolution: {integrity: sha512-3mrKauI/tWXo1Ll+gN5dHcxDPdm/Df1ufcDLCecn+pnCIVcdWE7CujXo8QaXOWRJyZyQWWbpB8eFwHzWXlv5mQ==}
+    peerDependencies:
+      react: ^16.8 || ^17.0 || ^18.0 || 18
+    dependencies:
+      '@babel/runtime': 7.18.6
+      '@radix-ui/react-compose-refs': 1.0.0_react@18.2.0
+      react: 18.2.0
+    dev: false
 
   /@reach/observe-rect/1.2.0:
     resolution: {integrity: sha512-Ba7HmkFgfQxZqqaeIWWkNK0rEhpxVQHIoVyW1YDSkGsGIXzcaW4deC8B0pZrNSSyLTdIk7y+5olKt5+g0GmFIQ==}
