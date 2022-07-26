@@ -1,10 +1,10 @@
-enum AlignType {
+enum TableAlignType {
   LEFT = 'left',
   CENTER = 'center',
   RIGHT = 'right',
 }
 
-enum VerticalAlignType {
+enum TableVerticalAlignType {
   TOP = 'top',
   MIDDLE = 'middle',
   BOTTOM = 'bottom',
@@ -20,4 +20,4 @@ enum TableColumnWidths {
   SIX_OF_TWELVE = 'six-of-twelve',
 }
 
-export { AlignType, VerticalAlignType, TableColumnWidths };
+export { TableAlignType, TableVerticalAlignType, TableColumnWidths };

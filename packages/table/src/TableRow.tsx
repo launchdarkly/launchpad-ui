@@ -1,4 +1,4 @@
-import type { VerticalAlignType } from './types';
+import type { TableVerticalAlignType } from './types';
 
 import cx from 'clsx';
 
@@ -6,7 +6,7 @@ import './styles/Table.css';
 
 type TableRowProps = React.HTMLProps<HTMLTableRowElement> & {
   testId?: string;
-  verticalAlign?: VerticalAlignType;
+  verticalAlign?: TableVerticalAlignType;
 };
 
 const TableRow = ({ className, children, testId, verticalAlign, ...props }: TableRowProps) => {

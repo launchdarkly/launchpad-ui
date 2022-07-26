@@ -1,12 +1,13 @@
 import type { TableColumnWidths } from './types';
 
+import camelCase from 'camelcase';
 import cx from 'clsx';
 
 import './styles/Table.css';
-import { AlignType } from './types';
+import { TableAlignType } from './types';
 
 type TableHeadCellProps = {
-  align?: AlignType;
+  align?: TableAlignType;
   'aria-label'?: string;
   className?: string;
   children?: React.ReactNode;
@@ -16,7 +17,7 @@ type TableHeadCellProps = {
 };
 
 const TableHeadCell = ({
-  align = AlignType.LEFT,
+  align = TableAlignType.LEFT,
   'aria-label': ariaLabel,
   className,
   children,
@@ -24,8 +25,15 @@ const TableHeadCell = ({
   id,
   scope = 'col',
 }: TableHeadCellProps) => {
-  const width = defaultColWidth ? `Table-cell--width-${defaultColWidth}` : '';
-  const classes = cx('Table-cell', 'Table-cell--head', `Table-cell--${align}`, width, className);
+  const width = camelCase(`width-${defaultColWidth}`);
+  const widthClass = defaultColWidth ? `Table-cell--${width}` : '';
+  const classes = cx(
+    'Table-cell',
+    'Table-cell--head',
+    `Table-cell--${align}`,
+    widthClass,
+    className
+  );
 
   return (
     <th aria-label={ariaLabel} className={classes} id={id} scope={scope}>

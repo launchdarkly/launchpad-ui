@@ -1,12 +1,12 @@
 import cx from 'clsx';
 
 import './styles/Table.css';
-import { AlignType } from './types';
+import { TableAlignType } from './types';
 
 type CommonTableCellProps = {
   className?: string;
   children: React.ReactNode;
-  align?: AlignType;
+  align?: TableAlignType;
   colSpan?: number;
   rowSpan?: number;
 };
@@ -35,7 +35,12 @@ type TableCellProps =
   | TableCellWithScopeProps
   | (TableCellWithHeadersProps & TableCellWithScopeProps);
 
-const TableCell = ({ align = AlignType.LEFT, className, children, ...props }: TableCellProps) => {
+const TableCell = ({
+  align = TableAlignType.LEFT,
+  className,
+  children,
+  ...props
+}: TableCellProps) => {
   const classes = cx('Table-cell', `Table-cell--${align}`, className);
 
   // remove hasScope from rest props so we don't pollute the dom element

@@ -108,17 +108,14 @@
 }
 
 /* Used for "smallest possible table column". Table cell will expand to fit content. */
-/* stylelint-disable-next-line selector-class-pattern */
-.Table-cell--width-zero {
+.Table-cell--widthZero {
   width: 0;
 }
 
-/* stylelint-disable-next-line selector-class-pattern */
-.Table-cell--width-one-of-twelve {
+.Table-cell--widthOneOfTwelve {
   width: var(--one-of-twelve);
 }
 
-/* stylelint-disable-next-line selector-class-pattern */
-.Table-cell--width-two-of-twelve {
+.Table-cell--widthTwoOfTwelve {
   width: var(--two-of-twelve);
 }
