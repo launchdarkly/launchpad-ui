@@ -25,10 +25,6 @@ test.describe('Modal', () => {
   test('is accessible', async ({ mount, page }) => {
     const component = await mount(createComponent());
 
-    // skip animations
-    await page.locator('.Modal-overlay').evaluate((node) => (node.style.opacity = '1'));
-    await page.locator('[role="dialog"]').evaluate((node) => (node.style.opacity = '1'));
-
     await expect(component).toBeVisible();
     await expect(page).toBeAccessible();
   });

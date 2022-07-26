@@ -165,7 +165,6 @@ importers:
       '@remix-run/react': ^1.6.0
       '@remix-run/serve': ^1.6.0
       eslint: ^8.20.0
-      framer-motion: ^6.5.1
       isbot: ^3.5.0
       react: ^18.2.0
       react-dom: ^18.2.0
@@ -177,7 +176,6 @@ importers:
       '@remix-run/node': 1.6.3_biqbaboplfbrettd7655fr4n2y
       '@remix-run/react': 1.6.3_biqbaboplfbrettd7655fr4n2y
       '@remix-run/serve': 1.6.3_biqbaboplfbrettd7655fr4n2y
-      framer-motion: 6.5.1_biqbaboplfbrettd7655fr4n2y
       isbot: 3.5.0
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
