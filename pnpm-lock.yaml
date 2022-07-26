@@ -578,11 +578,17 @@ importers:
 
   packages/pagination:
     specifiers:
+      '@launchpad-ui/button': workspace:~
+      '@launchpad-ui/icons': workspace:~
+      '@launchpad-ui/progress': workspace:~
       '@launchpad-ui/tokens': workspace:~
       clsx: ^1.2.0
       react: ^18.2.0
       react-dom: ^18.2.0
     dependencies:
+      '@launchpad-ui/button': link:../button
+      '@launchpad-ui/icons': link:../icons
+      '@launchpad-ui/progress': link:../progress
       '@launchpad-ui/tokens': link:../tokens
       clsx: 1.2.0
     devDependencies:

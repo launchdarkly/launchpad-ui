@@ -1,7 +1,7 @@
 {
   "name": "@launchpad-ui/pagination",
   "version": "0.0.1",
-  "status": "alpha",
+  "status": "beta",
   "publishConfig": {
     "access": "public"
   },
@@ -33,6 +33,9 @@
     "test": "vitest run --coverage"
   },
   "dependencies": {
+    "@launchpad-ui/button": "workspace:~",
+    "@launchpad-ui/icons": "workspace:~",
+    "@launchpad-ui/progress": "workspace:~",
     "@launchpad-ui/tokens": "workspace:~",
     "clsx": "^1.2.0"
   },
