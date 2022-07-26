@@ -1,6 +1,6 @@
 @import '../../../tokens/dist/media-queries.css';
 
-.Pagination--body {
+.Pagination {
   display: inline-flex;
   align-items: center;
 }

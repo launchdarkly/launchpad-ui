@@ -1,5 +1,6 @@
+import cx from 'clsx';
+
 import { PaginationButton } from './PaginationButton';
-import { PaginationContainer } from './PaginationContainer';
 import { PaginationText } from './PaginationText';
 import './styles/Pagination.css';
 import { PaginationChange } from './types';
@@ -32,7 +33,10 @@ const Pagination = ({
   totalCount,
 }: PaginationProps) => {
   return (
-    <PaginationContainer resourceName={resourceName} className={className}>
+    <nav
+      className={cx('Pagination', className)}
+      aria-label={`Pagination for ${resourceName} list.`}
+    >
       <PaginationButton
         resourceName={resourceName}
         kind={PaginationChange.FIRST}
@@ -63,7 +67,7 @@ const Pagination = ({
         disabled={!!isLastDisabled}
         onClick={onChange}
       />
-    </PaginationContainer>
+    </nav>
   );
 };
 
