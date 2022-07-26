@@ -1,5 +1,14 @@
 import { Pagination } from '@launchpad-ui/core';
 
 export default function Index() {
-  return <Pagination>A lovely Pagination component.</Pagination>;
+  return (
+    <Pagination
+      resourceName="rocketship"
+      onChange={() => undefined}
+      currentOffset={0}
+      pageSize={2}
+      isReady={true}
+      totalCount={4}
+    />
+  );
 }
