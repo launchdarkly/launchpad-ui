@@ -169,7 +169,7 @@ const Menu = <T extends number | string>(props: MenuProps<T>) => {
   }
 
   return (
-    <MenuBase size={size} role="menu">
+    <MenuBase size={size}>
       {reduceItems.searchElement}
       <MenuItemList role="presentation">{reduceItems.items}</MenuItemList>
     </MenuBase>
