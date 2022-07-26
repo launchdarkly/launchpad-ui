@@ -31,7 +31,9 @@ import notificationStyles from '@launchpad-ui/core/styles/notification.css';
 import popoverStyles from '@launchpad-ui/core/styles/popover.css';
 import progressBubblesStyles from '@launchpad-ui/core/styles/progress-bubbles.css';
 import progressStyles from '@launchpad-ui/core/styles/progress.css';
+import sliderStyles from '@launchpad-ui/core/styles/slider.css';
 import tabListStyles from '@launchpad-ui/core/styles/tab-list.css';
+import tableStyles from '@launchpad-ui/core/styles/table.css';
 import toggleStyles from '@launchpad-ui/core/styles/toggle.css';
 import tooltipStyles from '@launchpad-ui/core/styles/tooltip.css';
 // plop end imports
@@ -59,6 +61,8 @@ export const links: LinksFunction = () => {
     { rel: 'stylesheet', href: navigationStyles },
     { rel: 'stylesheet', href: progressBubblesStyles },
     { rel: 'stylesheet', href: counterStyles },
+    { rel: 'stylesheet', href: sliderStyles },
+    { rel: 'stylesheet', href: tableStyles },
   ];
 };
 
