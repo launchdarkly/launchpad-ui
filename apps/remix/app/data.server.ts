@@ -10,6 +10,7 @@ export async function getComponents() {
     { to: 'components/clipboard', name: 'CopyToClipboard' },
     { to: 'components/counter', name: 'Counter' },
     { to: 'components/dropdown', name: 'Dropdown' },
+    { to: 'components/filter', name: 'Filter' },
     { to: 'components/form', name: 'Form' },
     { to: 'components/icon', name: 'Icon' },
     { to: 'components/lozenge', name: 'Lozenge' },

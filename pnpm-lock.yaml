@@ -279,6 +279,7 @@ importers:
       '@launchpad-ui/clipboard': workspace:~
       '@launchpad-ui/counter': workspace:~
       '@launchpad-ui/dropdown': workspace:~
+      '@launchpad-ui/filter': workspace:~
       '@launchpad-ui/form': workspace:~
       '@launchpad-ui/icons': workspace:~
       '@launchpad-ui/lozenge': workspace:~
@@ -309,6 +310,7 @@ importers:
       '@launchpad-ui/clipboard': link:../clipboard
       '@launchpad-ui/counter': link:../counter
       '@launchpad-ui/dropdown': link:../dropdown
+      '@launchpad-ui/filter': link:../filter
       '@launchpad-ui/form': link:../form
       '@launchpad-ui/icons': link:../icons
       '@launchpad-ui/lozenge': link:../lozenge
@@ -359,6 +361,21 @@ importers:
       '@launchpad-ui/button': link:../button
       '@launchpad-ui/icons': link:../icons
       '@launchpad-ui/popover': link:../popover
+      '@launchpad-ui/tokens': link:../tokens
+      clsx: 1.2.0
+    devDependencies:
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
+
+  packages/filter:
+    specifiers:
+      '@launchpad-ui/button': workspace:~
+      '@launchpad-ui/tokens': workspace:~
+      clsx: ^1.2.0
+      react: ^18.2.0
+      react-dom: ^18.2.0
+    dependencies:
+      '@launchpad-ui/button': link:../button
       '@launchpad-ui/tokens': link:../tokens
       clsx: 1.2.0
     devDependencies:
