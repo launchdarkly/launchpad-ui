@@ -1,0 +1,121 @@
+@import '../../../tokens/dist/media-queries.css';
+
+:root {
+  --one-of-twelve: 8.333%;
+  --two-of-twelve: 16.667%;
+  --three-of-twelve: 25%;
+  --four-of-twelve: 33.333%;
+  --five-of-twelve: 41.667%;
+  --six-of-twelve: 50%;
+}
+
+.Table {
+  table-layout: fixed;
+  border-collapse: collapse;
+}
+
+.Table:not(.Table--auto) {
+  width: 100%;
+}
+
+.Table--compact {
+  font-size: 1.3rem;
+}
+
+.Table-header {
+  border-bottom: 1px solid var(--color-gray-100);
+}
+
+.Table-cell {
+  padding: 1rem 2rem;
+}
+
+.Table-cell--left {
+  text-align: left;
+}
+
+.Table-cell--center {
+  text-align: center;
+}
+
+.Table-cell--right {
+  text-align: right;
+}
+
+.Table--compact .Table-cell {
+  padding: 0.5rem 1rem;
+}
+
+.Table-cell--head {
+  white-space: nowrap;
+  color: var(--color-text-subtle-secondary);
+  font-weight: var(--font-weight-semibold);
+}
+
+@media (--tablet) {
+  .Table-cell--head {
+    white-space: normal;
+  }
+}
+
+.Table--resourceTable .Table-cell--head {
+  background: var(--color-white-100);
+  color: var(--color-text-subtle-primary);
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.TableHeader-title {
+  font-size: var(--osmo-font-size-large);
+  font-weight: var(--font-weight-regular);
+  line-height: 1.5;
+  display: flex;
+  align-items: center;
+}
+
+.TableHeader-description {
+  font-size: 1.3rem;
+}
+
+.TableHeader-counter {
+  margin-top: -3px;
+}
+
+.TableHeaderToolbar-secondRow {
+  padding-bottom: 0.75rem;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.Table--resourceTable .Table-row,
+.Table-row--top {
+  vertical-align: top;
+}
+
+.Table-row--middle,
+.Table--resourceTable .Table-row--middle,
+.Table--resourceTable .Table-row .Table-cell--head {
+  vertical-align: middle;
+}
+
+.Table-row--bottom,
+.Table--resourceTable .Table-row--bottom {
+  vertical-align: bottom;
+}
+
+.Table-body .Table-row + .Table-row {
+  border-top: 1px solid var(--color-gray-100);
+}
+
+/* Used for "smallest possible table column". Table cell will expand to fit content. */
+.Table-cell--widthZero {
+  width: 0;
+}
+
+.Table-cell--widthOneOfTwelve {
+  width: var(--one-of-twelve);
+}
+
+.Table-cell--widthTwoOfTwelve {
+  width: var(--two-of-twelve);
+}

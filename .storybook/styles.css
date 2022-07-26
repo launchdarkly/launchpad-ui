@@ -17,6 +17,7 @@ body {
   color: var(--color-gray-800);
   font-size: var(--osmo-font-size-base);
   background-color: var(--color-background);
+  line-height: var(--line-height-base);
 }
 
 [data-theme='dark'] body {
