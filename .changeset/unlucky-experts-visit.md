@@ -1,7 +1,7 @@
 ---
 '@launchpad-ui/menu': minor
 '@launchpad-ui/button': patch
-'@launchpad-ui/core': patch
+'@launchpad-ui/core': minor
 ---
 
 Add slot to menu and remove dependency on RR for button & menu
