@@ -1,6 +1,6 @@
 const { spawn } = require('child_process');
 
-function installPackages(_, config) {
+function installDependencies(_, config) {
   return new Promise((resolve, reject) => {
     const process = spawn('pnpm', ['install'], {
       cwd: config.path,
@@ -9,7 +9,6 @@ function installPackages(_, config) {
     });
 
     process.on('close', (code) => {
-      console.log(code);
       `${code}` === '0'
         ? resolve('Installed packages.')
         : reject(`Failed to install packages. Exited with ${code}.`);
@@ -19,5 +18,5 @@ function installPackages(_, config) {
 
 module.exports = function (plop) {
   plop.setDefaultInclude({ actionTypes: true });
-  plop.setActionType('installPackages', installPackages);
+  plop.setActionType('installDependencies', installDependencies);
 };

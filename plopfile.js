@@ -1,5 +1,5 @@
 module.exports = (plop) => {
-  plop.load('./.plop/actions/install-packages.js');
+  plop.load('./.plop/actions/install-dependencies.js');
 
   plop.setGenerator('component', {
     description: 'A Launchpad UI component',
@@ -150,7 +150,7 @@ module.exports = (plop) => {
           }),
       },
       {
-        type: 'installPackages',
+        type: 'installDependencies',
         path: process.cwd(),
       },
     ],
