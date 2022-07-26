@@ -9,7 +9,6 @@ import {
   ScrollRestoration,
   useCatch,
 } from '@remix-run/react';
-import { LazyMotion } from 'framer-motion';
 
 import launchpadStyles from '@launchpad-ui/core/styles/tokens.css';
 import globalStyles from './styles/global.css';
@@ -71,8 +70,6 @@ export const meta: MetaFunction = () => ({
   viewport: 'width=device-width,initial-scale=1',
 });
 
-const loadFeatures = async () => import('./utils/framer-features').then((res) => res.default);
-
 export default function App() {
   return (
     <SSRProvider>
@@ -94,9 +91,7 @@ function Document({ children, title }: { children: React.ReactNode; title?: stri
         <Links />
       </head>
       <body>
-        <LazyMotion strict features={loadFeatures}>
-          {children}
-        </LazyMotion>
+        {children}
         <ScrollRestoration />
         <Scripts />
         <LiveReload />

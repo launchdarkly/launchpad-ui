@@ -17,8 +17,6 @@ test.describe('Dropdown', () => {
     const component = await mount(createComponent());
 
     await component.locator('.Button').click();
-    // skip animations
-    await page.locator('.Popover-content').evaluate((node) => (node.style.opacity = '1'));
 
     await expect(component).toBeVisible();
     await expect(page).toBeAccessible();

@@ -1,6 +1,5 @@
 /* eslint-disable import/export */
 import { cleanup, render } from '@testing-library/react';
-import { LazyMotion, domAnimation } from 'framer-motion';
 import { afterEach } from 'vitest';
 
 afterEach(() => {
@@ -10,11 +9,7 @@ afterEach(() => {
 const customRender = (ui: React.ReactElement, options = {}): ReturnType<typeof render> =>
   render(ui, {
     // wrap provider(s) here if needed
-    wrapper: ({ children }) => (
-      <LazyMotion strict features={domAnimation}>
-        {children}
-      </LazyMotion>
-    ),
+    wrapper: ({ children }) => <>{children}</>,
     ...options,
   });
 

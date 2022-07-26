@@ -38,8 +38,6 @@ test.describe('Navigation', () => {
     });
 
     await page.locator('text=Page menu').click();
-    // skip animations
-    await page.locator('.Popover-content').evaluate((node) => (node.style.opacity = '1'));
 
     const element = page.locator('[role="menu"]');
     await expect(element).toBeVisible();
