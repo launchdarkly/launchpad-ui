@@ -35,6 +35,8 @@
   "dependencies": {
     "@launchpad-ui/button": "workspace:~",
     "@launchpad-ui/tokens": "workspace:~",
+    "@react-aria/utils": "^3.13.1",
+    "@react-aria/visually-hidden": "^3.3.0",
     "clsx": "^1.2.0"
   },
   "peerDependencies": {
