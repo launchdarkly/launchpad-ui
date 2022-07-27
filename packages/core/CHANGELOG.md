@@ -1,5 +1,23 @@
 # @launchpad-ui/core
 
+## 0.4.2
+
+### Patch Changes
+
+- [#219](https://github.com/launchdarkly/launchpad-ui/pull/219) [`b2a8ff5`](https://github.com/launchdarkly/launchpad-ui/commit/b2a8ff5f87c95be17c5749998f74f8bcedba65e8) Thanks [@Niznikr](https://github.com/Niznikr)! - [Modal, Notification, Popover] Add chunk names
+
+- Updated dependencies [[`b2a8ff5`](https://github.com/launchdarkly/launchpad-ui/commit/b2a8ff5f87c95be17c5749998f74f8bcedba65e8)]:
+  - @launchpad-ui/modal@0.5.2
+  - @launchpad-ui/notification@0.2.7
+  - @launchpad-ui/popover@0.5.2
+  - @launchpad-ui/overlay@0.1.14
+  - @launchpad-ui/dropdown@0.2.4
+  - @launchpad-ui/menu@0.3.2
+  - @launchpad-ui/navigation@0.2.2
+  - @launchpad-ui/progress-bubbles@0.2.4
+  - @launchpad-ui/tooltip@0.3.4
+  - @launchpad-ui/clipboard@0.2.12
+
 ## 0.4.1
 
 ### Patch Changes

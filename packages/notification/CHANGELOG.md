@@ -1,5 +1,14 @@
 # @launchpad-ui/notification
 
+## 0.2.7
+
+### Patch Changes
+
+- [#219](https://github.com/launchdarkly/launchpad-ui/pull/219) [`b2a8ff5`](https://github.com/launchdarkly/launchpad-ui/commit/b2a8ff5f87c95be17c5749998f74f8bcedba65e8) Thanks [@Niznikr](https://github.com/Niznikr)! - [Modal, Notification, Popover] Add chunk names
+
+- Updated dependencies []:
+  - @launchpad-ui/clipboard@0.2.12
+
 ## 0.2.6
 
 ### Patch Changes
