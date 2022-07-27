@@ -53,15 +53,6 @@ Launchpad is set up as a monorepo where each component package is bundled and de
 
 At the time of writing this, we are using the [pnpm package manager](https://pnpm.io/) for its workspace feature and the [Nx build system](https://nx.dev/) for monorepo support. Each component is defined as a directory under the `packages` directory. It's advised to understand generally how these works when contributing.
 
-### Should I import each component package separately, or import everything at once via the `core` package?
-
-To guarantee strict compatibility between the component packages your app uses, we suggest importing `@launchpad-ui/core` instead of importing each component package separately.
-
-If you choose to use Launchpad via single component imports (e.g. `@launchpad-ui/button`) on its own, there are two big issues to be aware of:
-
-1. You may create token conflicts that expose difficult to diagnose bugs [as described here.](https://launchdarkly.atlassian.net/wiki/spaces/ENG/pages/2120908865/Supporting+a+Single+NPM+Package+for+Launchpad#Token-package-conflicts)
-2. You may create inconsistencies in UI styling where subdependencies are used in components [as shown here.](https://launchdarkly.atlassian.net/wiki/spaces/ENG/pages/2120908865/Supporting+a+Single+NPM+Package+for+Launchpad#Subdependency-package-conflicts)
-
 ### What's in the `packages` directory?
 
 When we talk about "components" in Launchpad, we're talking about a UI component library implemented as a package in our monorepo. It is a standalone library that can be imported and used by other JS applications.

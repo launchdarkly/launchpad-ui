@@ -1,8 +1,20 @@
-# launchpad-ui
+# Launchpad
 
-LaunchDarkly's design system
+A modern, intuitive, and accessible design system built and used by the LaunchDarkly team.
+
+## Resources
+
+For a demo of all components available in Launchpad, visit [our Storybook](https://main--626696a2018c1f004a1cde86.chromatic.com/).
 
 ## Installation
+
+Full installation instructions can be found here: https://www.npmjs.com/package/@launchpad-ui/core
+
+---
+
+## Running Launchpad locally
+
+### Installation
 
 [pnpm](https://pnpm.io/) is the package manager used in this monorepo.
 
@@ -12,7 +24,7 @@ LaunchDarkly's design system
 $ pnpm install
 ```
 
-## Storybook
+### Storybook
 
 [Storybook](https://storybook.js.org/) is used for local development of components.
 
@@ -22,9 +34,9 @@ Run this command to start a local instance in your browser:
 $ pnpm storybook
 ```
 
-## Running Tests
+### Running Tests
 
-### Unit Tests
+#### Unit Tests
 
 [Vitest](https://vitest.dev/) and [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/) are used to unit test the code.
 
@@ -34,7 +46,7 @@ The following command will run unit tests in every package of the monorepo:
 $ pnpm test
 ```
 
-### E2E Tests
+#### E2E Tests
 
 [Playwright](https://playwright.dev/) is used to run e2e browser tests to validate interactivity and accessibility features of components in real browser contexts.
 
@@ -51,7 +63,7 @@ $ cd packages/alert
 $ pnpm e2e --headed --debug
 ```
 
-### SSR Tests
+#### SSR Tests
 
 SSR support is tested using a [Remix](https://remix.run/) app [found in the monorepo](./apps/remix/README.md).
 
