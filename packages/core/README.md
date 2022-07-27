@@ -41,7 +41,20 @@ In some frameworks, such as Remix, adding styles via `<link rel="stylesheet">` t
 
 ---
 
-### Prerelease Testing
+## FAQs
+
+### Should I import each component package separately, or import everything at once via the `core` package?
+
+To guarantee strict compatibility between the component packages your app uses, we suggest importing `@launchpad-ui/core` instead of importing each component package separately.
+
+If you choose to use Launchpad via single component imports (e.g. `@launchpad-ui/button`) on its own, there are two things to be aware of:
+
+1. You may create token conflicts that expose difficult to diagnose bugs [as described here.](https://launchdarkly.atlassian.net/wiki/spaces/ENG/pages/2120908865/Supporting+a+Single+NPM+Package+for+Launchpad#Token-package-conflicts)
+2. You may create inconsistencies in UI styling where subdependencies are used in components [as shown here.](https://launchdarkly.atlassian.net/wiki/spaces/ENG/pages/2120908865/Supporting+a+Single+NPM+Package+for+Launchpad#Subdependency-package-conflicts)
+
+View the list of component NPM packages here: https://www.npmjs.com/search?q=%40launchpad-ui
+
+### Can I test prerelease versions of components?
 
 To feature flag and test a prerelease version of a component, first install the prerelease:
 
