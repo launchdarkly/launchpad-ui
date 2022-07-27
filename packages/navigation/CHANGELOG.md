@@ -1,5 +1,15 @@
 # @launchpad-ui/navigation
 
+## 0.2.2
+
+### Patch Changes
+
+- Updated dependencies [[`b2a8ff5`](https://github.com/launchdarkly/launchpad-ui/commit/b2a8ff5f87c95be17c5749998f74f8bcedba65e8)]:
+  - @launchpad-ui/popover@0.5.2
+  - @launchpad-ui/dropdown@0.2.4
+  - @launchpad-ui/menu@0.3.2
+  - @launchpad-ui/tooltip@0.3.4
+
 ## 0.2.1
 
 ### Patch Changes
