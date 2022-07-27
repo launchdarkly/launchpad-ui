@@ -16,7 +16,8 @@ import { v4 } from 'uuid';
 import './styles/Popover.css';
 import { withTimeouts } from './withTimeouts';
 
-const loadFeatures = () => import('./framer-features').then((res) => res.default);
+const loadFeatures = () =>
+  import(/* webpackExports: "domAnimation" */ 'framer-motion').then((res) => res.domAnimation);
 
 type Offset = OffsetOptions;
 
