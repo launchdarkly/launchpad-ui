@@ -1,5 +1,12 @@
 # @launchpad-ui/overlay
 
+## 0.1.12
+
+### Patch Changes
+
+- Updated dependencies [[`1fbb858`](https://github.com/launchdarkly/launchpad-ui/commit/1fbb858c8baaaa2f7cced15c81d1c2b0d49a7836)]:
+  - @launchpad-ui/modal@0.5.0
+
 ## 0.1.11
 
 ### Patch Changes

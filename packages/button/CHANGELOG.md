@@ -1,5 +1,14 @@
 # @launchpad-ui/button
 
+## 0.2.3
+
+### Patch Changes
+
+- [#211](https://github.com/launchdarkly/launchpad-ui/pull/211) [`b822656`](https://github.com/launchdarkly/launchpad-ui/commit/b82265611bbe1295cf2c4565a0ffed8e19640fd7) Thanks [@chasedarkly](https://github.com/chasedarkly)! - Add slot to menu and remove dependency on RR for button & menu
+
+  - [Menu]: Add slot package to remove React Router dependency, add MenuSize enum.
+  - [Button]: Remove React Router dependency by generalizing the `to` prop. In the future, we will look into allowing slottable buttons.
+
 ## 0.2.2
 
 ### Patch Changes

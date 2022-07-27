@@ -1,5 +1,21 @@
 # @launchpad-ui/navigation
 
+## 0.2.0
+
+### Minor Changes
+
+- [#215](https://github.com/launchdarkly/launchpad-ui/pull/215) [`1fbb858`](https://github.com/launchdarkly/launchpad-ui/commit/1fbb858c8baaaa2f7cced15c81d1c2b0d49a7836) Thanks [@Niznikr](https://github.com/Niznikr)! - [Modal, Notification, Popover] Add LazyMotion:
+
+  - Add `LazyMotion` to the individual components to remove the need for consumers to wrap their app with it
+
+### Patch Changes
+
+- Updated dependencies [[`1fbb858`](https://github.com/launchdarkly/launchpad-ui/commit/1fbb858c8baaaa2f7cced15c81d1c2b0d49a7836), [`b822656`](https://github.com/launchdarkly/launchpad-ui/commit/b82265611bbe1295cf2c4565a0ffed8e19640fd7)]:
+  - @launchpad-ui/popover@0.5.0
+  - @launchpad-ui/menu@0.3.0
+  - @launchpad-ui/dropdown@0.2.2
+  - @launchpad-ui/tooltip@0.3.2
+
 ## 0.1.2
 
 ### Patch Changes
