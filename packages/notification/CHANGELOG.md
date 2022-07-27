@@ -1,5 +1,15 @@
 # @launchpad-ui/notification
 
+## 0.2.6
+
+### Patch Changes
+
+- [#218](https://github.com/launchdarkly/launchpad-ui/pull/218) [`204e574`](https://github.com/launchdarkly/launchpad-ui/commit/204e574344367cdd653b141d067ee6dcef74c17d) Thanks [@Niznikr](https://github.com/Niznikr)! - [Modal, Notification, Popover] Update framer dynamic import
+
+- Updated dependencies [[`f567202`](https://github.com/launchdarkly/launchpad-ui/commit/f567202860088b877a2a4edbbb1c90dc0906ab3b)]:
+  - @launchpad-ui/icons@0.2.3
+  - @launchpad-ui/clipboard@0.2.11
+
 ## 0.2.5
 
 ### Patch Changes

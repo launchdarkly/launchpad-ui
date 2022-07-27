@@ -1,5 +1,11 @@
 # @launchpad-ui/icons
 
+## 0.2.3
+
+### Patch Changes
+
+- [#216](https://github.com/launchdarkly/launchpad-ui/pull/216) [`f567202`](https://github.com/launchdarkly/launchpad-ui/commit/f567202860088b877a2a4edbbb1c90dc0906ab3b) Thanks [@Niznikr](https://github.com/Niznikr)! - [Icons] Add ChevronLeft, ChevronRight, KeyboardDoubleArrowLeft, KeyboardDoubleArrowRight
+
 ## 0.2.2
 
 ### Patch Changes

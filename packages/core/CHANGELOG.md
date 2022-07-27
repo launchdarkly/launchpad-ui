@@ -1,5 +1,31 @@
 # @launchpad-ui/core
 
+## 0.4.1
+
+### Patch Changes
+
+- [#216](https://github.com/launchdarkly/launchpad-ui/pull/216) [`f567202`](https://github.com/launchdarkly/launchpad-ui/commit/f567202860088b877a2a4edbbb1c90dc0906ab3b) Thanks [@Niznikr](https://github.com/Niznikr)! - [Icons] Add ChevronLeft, ChevronRight, KeyboardDoubleArrowLeft, KeyboardDoubleArrowRight
+
+* [#218](https://github.com/launchdarkly/launchpad-ui/pull/218) [`204e574`](https://github.com/launchdarkly/launchpad-ui/commit/204e574344367cdd653b141d067ee6dcef74c17d) Thanks [@Niznikr](https://github.com/Niznikr)! - [Modal, Notification, Popover] Update framer dynamic import
+
+* Updated dependencies [[`f567202`](https://github.com/launchdarkly/launchpad-ui/commit/f567202860088b877a2a4edbbb1c90dc0906ab3b), [`204e574`](https://github.com/launchdarkly/launchpad-ui/commit/204e574344367cdd653b141d067ee6dcef74c17d)]:
+  - @launchpad-ui/icons@0.2.3
+  - @launchpad-ui/modal@0.5.1
+  - @launchpad-ui/notification@0.2.6
+  - @launchpad-ui/popover@0.5.1
+  - @launchpad-ui/alert@0.1.14
+  - @launchpad-ui/avatar@0.1.1
+  - @launchpad-ui/banner@0.2.6
+  - @launchpad-ui/clipboard@0.2.11
+  - @launchpad-ui/dropdown@0.2.3
+  - @launchpad-ui/form@0.2.6
+  - @launchpad-ui/menu@0.3.1
+  - @launchpad-ui/pagination@0.0.3
+  - @launchpad-ui/overlay@0.1.13
+  - @launchpad-ui/navigation@0.2.1
+  - @launchpad-ui/progress-bubbles@0.2.3
+  - @launchpad-ui/tooltip@0.3.3
+
 ## 0.4.0
 
 ### Minor Changes

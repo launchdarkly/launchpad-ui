@@ -1,5 +1,14 @@
 # @launchpad-ui/popover
 
+## 0.5.1
+
+### Patch Changes
+
+- [#218](https://github.com/launchdarkly/launchpad-ui/pull/218) [`204e574`](https://github.com/launchdarkly/launchpad-ui/commit/204e574344367cdd653b141d067ee6dcef74c17d) Thanks [@Niznikr](https://github.com/Niznikr)! - [Modal, Notification, Popover] Update framer dynamic import
+
+- Updated dependencies []:
+  - @launchpad-ui/overlay@0.1.13
+
 ## 0.5.0
 
 ### Minor Changes
