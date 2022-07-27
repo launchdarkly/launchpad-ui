@@ -7,7 +7,11 @@ import { Notification } from './Notification';
 import './styles/NotificationCenter.css';
 
 const loadFeatures = () =>
-  import(/* webpackExports: "domAnimation" */ 'framer-motion').then((res) => res.domAnimation);
+  import(
+    /* webpackChunkName: "lp-notification-framer-features" */
+    /* webpackExports: "domAnimation" */
+    'framer-motion'
+  ).then((res) => res.domAnimation);
 
 type NotificationCenterProps = {
   className?: string;

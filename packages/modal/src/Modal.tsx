@@ -30,7 +30,11 @@ const content: { [name: string]: Variants } = {
 };
 
 const loadFeatures = () =>
-  import(/* webpackExports: "domAnimation" */ 'framer-motion').then((res) => res.domAnimation);
+  import(
+    /* webpackChunkName: "lp-modal-framer-features" */
+    /* webpackExports: "domAnimation" */
+    'framer-motion'
+  ).then((res) => res.domAnimation);
 
 type ModalProps = {
   children?: React.ReactNode;
