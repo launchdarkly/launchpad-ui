@@ -369,12 +369,16 @@ importers:
     specifiers:
       '@launchpad-ui/button': workspace:~
       '@launchpad-ui/tokens': workspace:~
+      '@react-aria/utils': ^3.13.1
+      '@react-aria/visually-hidden': ^3.3.0
       clsx: ^1.2.0
       react: ^18.2.0
       react-dom: ^18.2.0
     dependencies:
       '@launchpad-ui/button': link:../button
       '@launchpad-ui/tokens': link:../tokens
+      '@react-aria/utils': 3.13.1_react@18.2.0
+      '@react-aria/visually-hidden': 3.3.1_react@18.2.0
       clsx: 1.2.0
     devDependencies:
       react: 18.2.0
