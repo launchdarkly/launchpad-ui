@@ -1,5 +1,46 @@
 # @launchpad-ui/core
 
+## 0.4.0
+
+### Minor Changes
+
+- [#215](https://github.com/launchdarkly/launchpad-ui/pull/215) [`1fbb858`](https://github.com/launchdarkly/launchpad-ui/commit/1fbb858c8baaaa2f7cced15c81d1c2b0d49a7836) Thanks [@Niznikr](https://github.com/Niznikr)! - [Modal, Notification, Popover] Add LazyMotion:
+
+  - Add `LazyMotion` to the individual components to remove the need for consumers to wrap their app with it
+
+* [#211](https://github.com/launchdarkly/launchpad-ui/pull/211) [`b822656`](https://github.com/launchdarkly/launchpad-ui/commit/b82265611bbe1295cf2c4565a0ffed8e19640fd7) Thanks [@chasedarkly](https://github.com/chasedarkly)! - Add slot to menu and remove dependency on RR for button & menu
+
+  - [Menu]: Add slot package to remove React Router dependency, add MenuSize enum.
+  - [Button]: Remove React Router dependency by generalizing the `to` prop. In the future, we will look into allowing slottable buttons.
+
+### Patch Changes
+
+- [#212](https://github.com/launchdarkly/launchpad-ui/pull/212) [`5cad98b`](https://github.com/launchdarkly/launchpad-ui/commit/5cad98b8b53f54a59f72f23a6c7f948f9a091b63) Thanks [@Niznikr](https://github.com/Niznikr)! - Add table package:
+
+  - [Table] Add table code, stories, and tests
+
+* [#209](https://github.com/launchdarkly/launchpad-ui/pull/209) [`371444d`](https://github.com/launchdarkly/launchpad-ui/commit/371444de984821011c601ad6e45959db66808d56) Thanks [@Niznikr](https://github.com/Niznikr)! - Add slider package:
+
+  - [Slider] Add slider code, stories, and tests
+
+* Updated dependencies [[`5cad98b`](https://github.com/launchdarkly/launchpad-ui/commit/5cad98b8b53f54a59f72f23a6c7f948f9a091b63), [`371444d`](https://github.com/launchdarkly/launchpad-ui/commit/371444de984821011c601ad6e45959db66808d56), [`1fbb858`](https://github.com/launchdarkly/launchpad-ui/commit/1fbb858c8baaaa2f7cced15c81d1c2b0d49a7836), [`b822656`](https://github.com/launchdarkly/launchpad-ui/commit/b82265611bbe1295cf2c4565a0ffed8e19640fd7)]:
+  - @launchpad-ui/table@0.1.0
+  - @launchpad-ui/slider@0.1.0
+  - @launchpad-ui/modal@0.5.0
+  - @launchpad-ui/navigation@0.2.0
+  - @launchpad-ui/popover@0.5.0
+  - @launchpad-ui/menu@0.3.0
+  - @launchpad-ui/button@0.2.3
+  - @launchpad-ui/overlay@0.1.12
+  - @launchpad-ui/dropdown@0.2.2
+  - @launchpad-ui/progress-bubbles@0.2.2
+  - @launchpad-ui/tooltip@0.3.2
+  - @launchpad-ui/alert@0.1.13
+  - @launchpad-ui/banner@0.2.5
+  - @launchpad-ui/notification@0.2.5
+  - @launchpad-ui/pagination@0.0.2
+  - @launchpad-ui/clipboard@0.2.10
+
 ## 0.3.1
 
 ### Patch Changes
