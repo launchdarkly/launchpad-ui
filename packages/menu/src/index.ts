@@ -10,3 +10,4 @@ export { MenuItem, MenuItemLink } from './MenuItem';
 export { MenuItemList } from './MenuItemList';
 export { MenuSearch } from './MenuSearch';
 export { Menu } from './Menu';
+export { MenuSize } from './types';

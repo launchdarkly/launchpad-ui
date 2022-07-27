@@ -49,3 +49,27 @@ export const ExampleWithSearch: Story = {
     ],
   },
 };
+
+export const ExampleWithTooltips: Story = {
+  args: {
+    children: [
+      <MenuItem key="1" tooltip="Hello">
+        item 1
+      </MenuItem>,
+      <MenuItem key="2">item 2</MenuItem>,
+    ],
+  },
+};
+
+export const ExampleWithSlottedChild: Story = {
+  args: {
+    children: [
+      <MenuItem key="1" asChild>
+        <a href="https://www.launchdarkly.com" target="_blank" rel="noreferrer">
+          Item 1
+        </a>
+      </MenuItem>,
+      <MenuItem key="2">item 2</MenuItem>,
+    ],
+  },
+};

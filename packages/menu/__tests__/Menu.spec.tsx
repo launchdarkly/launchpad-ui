@@ -134,4 +134,16 @@ describe('Menu', () => {
     // eslint-disable-next-line testing-library/no-container, testing-library/no-node-access
     expect(container.querySelector('a')).not.toBeNull();
   });
+
+  it('can render items into child slot', async () => {
+    const text = 'Click me';
+    render(
+      <Menu>
+        <MenuItem asChild item="one" disabled>
+          <a href="https://www.launchdarkly.com">{text}</a>
+        </MenuItem>
+      </Menu>
+    );
+    expect(screen.getByText(text)).toHaveAttribute('disabled');
+  });
 });

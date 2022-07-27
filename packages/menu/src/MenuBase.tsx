@@ -1,16 +1,24 @@
+import type { MenuSize } from './types';
+
 import cx from 'clsx';
 import { forwardRef } from 'react';
 
 import './styles/Menu.css';
 
-type MenuBaseProps = React.ComponentPropsWithRef<'div'>;
+type MenuBaseProps = React.ComponentPropsWithRef<'div'> & {
+  isVirtual?: boolean;
+  size?: MenuSize;
+};
 
-// This is the pure presentational component that contains menu items
-const MenuBase = forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElement>>(
-  ({ children, ...props }, ref) => {
-    const className = cx('Menu', props.className);
+const MenuBase = forwardRef<HTMLDivElement, MenuBaseProps>(
+  ({ children, size, isVirtual, ...props }, ref) => {
+    const classes = cx('Menu', {
+      'Menu--isVirtual': isVirtual,
+      [`MenuSize--${size}`]: size,
+    });
+
     return (
-      <div {...props} className={className} ref={ref}>
+      <div {...props} role="menu" className={classes} ref={ref}>
         {children}
       </div>
     );

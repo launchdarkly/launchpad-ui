@@ -1,4 +1,5 @@
 import type { MenuItemProps } from './MenuItem';
+import type { MenuSize } from './types';
 import type { FocusManager } from '@react-aria/focus';
 import type { KeyboardEvent, ReactElement } from 'react';
 
@@ -38,7 +39,7 @@ type ControlledMenuProps<T> = {
    * Sets the width of the menu. This is especially useful when using virtual items
    * since the width cannot be automatically set by the widest element.
    */
-  menuWidth?: 'tiny' | 'small' | 'med' | 'large' | 'xLarge';
+  size?: MenuSize;
   /**
    * Sets the number out of elements rendered outside of the view window
    * when using virtualization
@@ -60,7 +61,7 @@ const Menu = <T extends number | string>(props: MenuProps<T>) => {
     onSelect,
     enableVirtualization,
     itemHeight,
-    menuWidth,
+    size,
     overscan = 1,
   } = props;
 
@@ -151,14 +152,9 @@ const Menu = <T extends number | string>(props: MenuProps<T>) => {
     );
   }, [children, enableVirtualization, menuItemClassName, handleArrowDown, handleArrowUp, onSelect]);
 
-  const menuClassName = cx(
-    { 'Menu--isVirtual': enableVirtualization },
-    { [`MenuSize--${menuWidth}`]: menuWidth }
-  );
-
   if (enableVirtualization) {
     return (
-      <MenuBase role="menu" className={menuClassName}>
+      <MenuBase isVirtual size={size}>
         <ItemVirtualizer<T>
           items={Children.toArray(reduceItems.items) as ReactElement[]}
           searchElement={reduceItems.searchElement}
@@ -173,7 +169,7 @@ const Menu = <T extends number | string>(props: MenuProps<T>) => {
   }
 
   return (
-    <MenuBase role="menu" className={menuClassName}>
+    <MenuBase size={size}>
       {reduceItems.searchElement}
       <MenuItemList role="presentation">{reduceItems.items}</MenuItemList>
     </MenuBase>

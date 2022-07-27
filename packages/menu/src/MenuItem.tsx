@@ -3,6 +3,7 @@ import type { PopoverPlacement } from '@launchpad-ui/popover';
 
 import { IconSize } from '@launchpad-ui/icons';
 import { Tooltip } from '@launchpad-ui/tooltip';
+import { Slot } from '@radix-ui/react-slot';
 import { FocusRing } from '@react-aria/focus';
 import cx from 'clsx';
 import { Link } from 'react-router-dom';
@@ -27,10 +28,10 @@ type MenuItemOwnProps = {
   disabled?: boolean;
   nested?: boolean;
   groupHeader?: boolean;
-  innerRef?: React.RefObject<HTMLDivElement>;
   tooltip?: string | React.ReactElement;
   tooltipOptions?: typeof Tooltip;
   tooltipPlacement?: PopoverPlacement;
+  asChild?: boolean;
 };
 
 const defaultElement = 'button';
@@ -52,6 +53,7 @@ const MenuItem = <P, T extends React.ElementType = typeof defaultElement>({
   ...props
 }: MenuItemProps<P, T>) => {
   const {
+    // TODO: remove component prop once we migrate over to asChild format
     component,
     children,
     isHighlighted,
@@ -61,22 +63,21 @@ const MenuItem = <P, T extends React.ElementType = typeof defaultElement>({
     item,
     disabled,
     className,
-    innerRef,
     tooltip,
     role = 'menuitem',
     tooltipPlacement,
     onKeyDown,
     tooltipOptions,
+    asChild,
     ...rest
   } = props;
 
-  const Component: React.ElementType = component || defaultElement;
+  const Component: React.ElementType = component || (asChild ? Slot : defaultElement);
 
   const renderedItem = (
     <FocusRing focusRingClass="has-focus">
       <Component
         {...rest}
-        ref={innerRef}
         disabled={disabled}
         aria-disabled={disabled ? disabled : undefined}
         className={cx(
@@ -89,12 +90,18 @@ const MenuItem = <P, T extends React.ElementType = typeof defaultElement>({
         role={role}
         onKeyDown={onKeyDown}
       >
-        {Icon && (
-          <span className="Menu-item-icon">
-            <Icon size={IconSize.SMALL} />
-          </span>
+        {asChild ? (
+          children
+        ) : (
+          <>
+            {Icon && (
+              <span className="Menu-item-icon">
+                <Icon size={IconSize.SMALL} />
+              </span>
+            )}
+            {children}
+          </>
         )}
-        {children}
       </Component>
     </FocusRing>
   );
@@ -135,6 +142,7 @@ type MenuItemLinkProps<P, T extends React.ElementType = typeof Link> =
 
 // By default, this is a Link component whenever useHistory is
 // explicitly not false
+// TODO: deprecate this component
 const MenuItemLink = <P, T extends React.ElementType = typeof Link>({
   to,
   disabled = false,

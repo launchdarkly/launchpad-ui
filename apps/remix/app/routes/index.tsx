@@ -1,3 +1,4 @@
+import { Menu, MenuItem } from '@launchpad-ui/core';
 import type { LoaderFunction, MetaFunction } from '@remix-run/node';
 import { json } from '@remix-run/node';
 import { Link, useLoaderData } from '@remix-run/react';
@@ -26,15 +27,15 @@ export default function Index() {
   return (
     <>
       <h1>Remix SSR</h1>
-      <ul>
+      <Menu>
         {data.components.map((component) => (
-          <li key={component.to}>
-            <Link to={component.to} prefetch="intent">
+          <MenuItem asChild key={component.to}>
+            <Link to={component.to} prefetch="intent" target="_blank">
               {component.name}
             </Link>
-          </li>
+          </MenuItem>
         ))}
-      </ul>
+      </Menu>
     </>
   );
 }
