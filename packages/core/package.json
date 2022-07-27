@@ -54,6 +54,7 @@
     "@launchpad-ui/progress": "workspace:~",
     "@launchpad-ui/progress-bubbles": "workspace:~",
     "@launchpad-ui/slider": "workspace:~",
+    "@launchpad-ui/split-button": "workspace:~",
     "@launchpad-ui/tab-list": "workspace:~",
     "@launchpad-ui/table": "workspace:~",
     "@launchpad-ui/toggle": "workspace:~",

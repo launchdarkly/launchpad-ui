@@ -23,6 +23,7 @@ export async function getComponents() {
     { to: 'components/progress', name: 'Progress' },
     { to: 'components/progress-bubbles', name: 'ProgressBubbles' },
     { to: 'components/slider', name: 'Slider' },
+    { to: 'components/split-button', name: 'SplitButton' },
     { to: 'components/tab-list', name: 'TabList' },
     { to: 'components/table', name: 'Table' },
     { to: 'components/toggle', name: 'Toggle' },
