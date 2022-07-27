@@ -1,9 +1,47 @@
-import type { ComponentStoryObj } from '@storybook/react';
+import type { SplitButtonProps } from '../src';
+import type { ComponentStoryObj, DecoratorFn } from '@storybook/react';
 
-import { ButtonKind } from '@launchpad-ui/button';
+import { ButtonKind, ButtonSize } from '@launchpad-ui/button';
+import { Person } from '@launchpad-ui/icons';
 import { Menu, MenuItem } from '@launchpad-ui/menu';
+import { Fragment } from 'react';
 
 import { SplitButton } from '../src';
+
+import './SplitButton.stories.css';
+
+const splitButtonTemplateWithStates: DecoratorFn = (storyComponent, context) => {
+  const { viewMode, args } = context;
+
+  const storyArgs = args as SplitButtonProps;
+
+  const SplitButtonLabels = ['Hover', 'Focus', 'Active'];
+  const SplitButtonStates = ['pseudo-hover', 'pseudo-focus', 'pseudo-active'];
+
+  const PseudoStateButtons = SplitButtonStates.map((className, index) => (
+    <Fragment key={`${className}_Button`}>
+      <span className="Button-state-label">
+        {
+          SplitButtonLabels[
+            SplitButtonLabels.length - 1 >= index ? index : SplitButtonLabels.length - 1
+          ]
+        }{' '}
+      </span>
+      <SplitButton {...storyArgs} className={className} />
+    </Fragment>
+  ));
+  if (viewMode === 'docs') {
+    return storyComponent();
+  }
+  return (
+    <div className="Storygroup-wrapper">
+      <span className="Button-state-label">Resting </span>
+      {storyComponent()}
+      {PseudoStateButtons}
+      <span className="Button-state-label">Disabled</span> <SplitButton {...storyArgs} disabled />
+    </div>
+  );
+};
 
 export default {
   component: SplitButton,
@@ -130,6 +168,7 @@ export default {
       },
     },
   },
+  decorators: [splitButtonTemplateWithStates],
 };
 
 type Story = ComponentStoryObj<typeof SplitButton>;
@@ -151,5 +190,38 @@ export const Example: Story = {
   args: {
     ...SplitButtonArgs,
     kind: ButtonKind.DEFAULT,
+  },
+};
+
+export const Primary: Story = {
+  args: {
+    ...SplitButtonArgs,
+    kind: ButtonKind.PRIMARY,
+  },
+};
+
+export const DefaultSmall: Story = {
+  args: {
+    ...SplitButtonArgs,
+    kind: ButtonKind.DEFAULT,
+    size: ButtonSize.SMALL,
+  },
+};
+
+export const PrimarySmall: Story = {
+  args: {
+    ...SplitButtonArgs,
+    kind: ButtonKind.PRIMARY,
+    size: ButtonSize.SMALL,
+  },
+};
+
+export const Icon: Story = {
+  args: {
+    ...SplitButtonArgs,
+    kind: ButtonKind.DEFAULT,
+    size: ButtonSize.SMALL,
+    icon: <Person />,
+    name: '',
   },
 };
