@@ -6,7 +6,8 @@ import { AnimatePresence, LazyMotion, m } from 'framer-motion';
 import { Notification } from './Notification';
 import './styles/NotificationCenter.css';
 
-const loadFeatures = () => import('./framer-features').then((res) => res.default);
+const loadFeatures = () =>
+  import(/* webpackExports: "domAnimation" */ 'framer-motion').then((res) => res.domAnimation);
 
 type NotificationCenterProps = {
   className?: string;
