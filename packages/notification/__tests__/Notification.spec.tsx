@@ -7,6 +7,7 @@ const props = {
   level: NotificationLevel.INFO,
   message: <>{NotificationLevel.INFO}</>,
   details: 'This is a detail',
+  onDismiss: () => undefined,
 };
 
 describe('Notification', () => {
@@ -59,5 +60,27 @@ describe('Notification', () => {
     await user.keyboard('{escape}');
 
     expect(spy).toHaveBeenCalledTimes(1);
+  });
+
+  it('traps focus on hover and blurs when mouse leaves', async () => {
+    render(
+      <Notification
+        {...props}
+        message={
+          <>
+            hi there <a href="link">link</a>
+          </>
+        }
+      />
+    );
+
+    const user = userEvent.setup();
+
+    await user.hover(screen.getByText(/hi there/));
+    expect(screen.getByRole('link')).toHaveFocus();
+
+    await user.hover(document.body);
+    await user.click(document.body);
+    expect(screen.getByRole('link')).not.toHaveFocus();
   });
 });
