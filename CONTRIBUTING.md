@@ -33,6 +33,7 @@ The following is a set of guidelines for contributing to Launchpad and its packa
 - [Package-specific changes](#package-specific-changes)
 - [Importing new dependencies](#importing-new-dependencies)
 - [Updating CSS tokens from Gonfalon for use in Launchpad](#updating-css-tokens-from-gonfalon-for-use-in-launchpad)
+- [Adding an icon to Launchpad](#adding-an-icon-to-launchpad)
 - [Test your code](#test-your-code)
 - [Pushing your code](#pushing-your-code)
 
@@ -184,6 +185,14 @@ Tokens are configured as a shared package in Launchpad, so any package that take
 
 - If a token is not found in Launchpad's token package already, and if the token is an alias variable for a base token that IS available in Launchpad, just use the base token.
 - If a token is not found in Launchpad's token package already, and the token is not an alias, just use a hardcoded CSS value.
+
+### Adding an icon to Launchpad
+To add an icon to Launchpad, drop the SVG inside of the `/icons` directory in the `@launchpad/icons` package, and run the below script to generate the component for it. It's intended that consumers will utilize the icon components rather than the raw SVGs.
+
+From the root of launchpad-ui (preferred):
+```js
+pnpm build:transform
+```
 
 ### Test your code
 
