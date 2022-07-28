@@ -17,7 +17,7 @@ type CopyToClipboardProps = {
   popoverTargetClassName?: string;
   shouldOnlyShowTooltipAfterCopy?: boolean;
   onClick?(): void;
-  asChild?: React.ReactNode;
+  asChild?: boolean;
 };
 
 type CopyToClipboardHandleRef = {
