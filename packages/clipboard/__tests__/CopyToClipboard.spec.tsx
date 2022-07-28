@@ -99,4 +99,16 @@ describe('CopyToClipboard', () => {
     await user.click(screen.getByTestId('wrapper'));
     expect(navigator.clipboard.writeText).toHaveBeenCalledWith('Copy content');
   });
+
+  it('renders a button when asChild is false', async () => {
+    render(createComponent({ asChild: false }));
+    const trigger = screen.getByTestId('copyToClipboardButton');
+    expect(trigger.tagName).toBe('BUTTON');
+  });
+
+  it('renders as child when asChild is true', async () => {
+    render(createComponent({ asChild: true }));
+    const trigger = screen.getByTestId('copyToClipboardButton');
+    expect(trigger.tagName).toBe('SPAN');
+  });
 });
