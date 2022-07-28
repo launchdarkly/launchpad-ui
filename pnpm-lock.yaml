@@ -289,6 +289,7 @@ importers:
       '@launchpad-ui/progress': workspace:~
       '@launchpad-ui/progress-bubbles': workspace:~
       '@launchpad-ui/slider': workspace:~
+      '@launchpad-ui/split-button': workspace:~
       '@launchpad-ui/tab-list': workspace:~
       '@launchpad-ui/table': workspace:~
       '@launchpad-ui/toggle': workspace:~
@@ -318,6 +319,7 @@ importers:
       '@launchpad-ui/progress': link:../progress
       '@launchpad-ui/progress-bubbles': link:../progress-bubbles
       '@launchpad-ui/slider': link:../slider
+      '@launchpad-ui/split-button': link:../split-button
       '@launchpad-ui/tab-list': link:../tab-list
       '@launchpad-ui/table': link:../table
       '@launchpad-ui/toggle': link:../toggle
@@ -666,6 +668,27 @@ importers:
       react-dom: ^18.2.0
     dependencies:
       '@launchpad-ui/tokens': link:../tokens
+      clsx: 1.2.0
+    devDependencies:
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
+
+  packages/split-button:
+    specifiers:
+      '@launchpad-ui/button': workspace:~
+      '@launchpad-ui/dropdown': workspace:~
+      '@launchpad-ui/popover': workspace:~
+      '@launchpad-ui/tokens': workspace:~
+      '@launchpad-ui/tooltip': workspace:~
+      clsx: ^1.2.0
+      react: ^18.2.0
+      react-dom: ^18.2.0
+    dependencies:
+      '@launchpad-ui/button': link:../button
+      '@launchpad-ui/dropdown': link:../dropdown
+      '@launchpad-ui/popover': link:../popover
+      '@launchpad-ui/tokens': link:../tokens
+      '@launchpad-ui/tooltip': link:../tooltip
       clsx: 1.2.0
     devDependencies:
       react: 18.2.0

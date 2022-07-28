@@ -6,4 +6,5 @@ public/build/
 pnpm-lock.yaml
 coverage
 test-results/
-.plop-templates/component/package.json.hbs
+.plop/templates/component/package.json.hbs
+.plop/templates/component/tsconfig.build.json.hbs

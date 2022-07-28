@@ -1,0 +1,16 @@
+.Storygroup-wrapper > * {
+  margin: auto 0;
+}
+
+.Storygroup-wrapper {
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 8rem auto;
+  grid-gap: 1.2rem;
+  justify-items: flex-start;
+}
+
+.Button-state-label {
+  text-align: right;
+  font-weight: bold;
+}

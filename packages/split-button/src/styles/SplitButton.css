@@ -1,0 +1,138 @@
+:root {
+  --SplitButton-color-border-primary: var(--color-blue-500);
+  --SplitButton-focus-margin: -0.5rem;
+  --SplitButton-focus-radius: 1rem;
+  --SplitButton-focus-radius-small: 0.6rem;
+  --SplitButton-drop-border-left: 1px;
+  --SplitButton-drop-line-height: 1.7;
+  --SplitButton-drop-margin: 0.1rem;
+  --SplitButton-drop-padding: 0.4rem 0 0.6rem;
+  --SplitButton-drop-padding-small: 0.2rem 0 0.3rem;
+  --SplitButton-popoverTarget-line-height: 1;
+  --SplitButton-border-focus-color: var(--color-focus);
+  --SplitButton-box-shadow-focus: none;
+  --SplitButton-drop-width: 3.4rem;
+}
+
+.SplitButton-drop.Button {
+  border-left-width: var(--SplitButton-drop-border-left);
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  padding: var(--SplitButton-drop-padding);
+  margin-left: -0.1rem;
+  width: calc(var(--SplitButton-drop-width) + 0.2rem);
+
+  & .Icon--navigateDown {
+    transform: translate(0.1rem, 0);
+  }
+}
+
+.SplitButton {
+  align-items: flex-start;
+  display: flex;
+
+  & .Button--default.SplitButton-main {
+    --SplitButton-color-border-primary: var(--color-gray-300);
+  }
+
+  & .Button--primary.SplitButton-drop {
+    margin-left: var(--SplitButton-drop-margin);
+    width: var(--SplitButton-drop-width);
+
+    & .Icon--navigateDown {
+      transform: none;
+    }
+  }
+}
+
+.SplitButton-main.Button,
+.SplitButton-drop.Button {
+  min-height: 2.5rem;
+}
+
+.SplitButton-main.Button {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.SplitButton-main.Button:not([disabled]) {
+  border-right: 1px solid var(--SplitButton-color-border-primary);
+}
+
+.SplitButton-main.Button:active,
+.SplitButton-main.Button:focus {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  box-shadow: var(--SplitButton-box-shadow-focus);
+}
+
+.SplitButton-drop.Button--small {
+  padding: var(--SplitButton-drop-padding-small);
+}
+
+.SplitButton-drop.Button:active,
+.SplitButton-drop.Button:focus {
+  box-shadow: var(--SplitButton-box-shadow-focus);
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  border-left-width: var(--SplitButton-drop-border-left);
+}
+
+.SplitButton .Popover-target {
+  display: block;
+  line-height: var(--SplitButton-popoverTarget-line-height);
+}
+
+.SplitButton .Popover-target--disabled {
+  cursor: not-allowed;
+}
+
+.SplitButton:focus-within {
+  & .SplitButton-main.Button,
+  & .SplitButton-drop.Button {
+    position: relative;
+
+    &::after {
+      pointer-events: none;
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+    }
+  }
+
+  & .SplitButton-main.Button::after {
+    margin: var(--SplitButton-focus-margin);
+    border: 2px solid var(--SplitButton-border-focus-color);
+    border-right: none;
+  }
+
+  & .SplitButton-main.Button--normal::after {
+    border-top-left-radius: var(--SplitButton-focus-radius);
+    border-bottom-left-radius: var(--SplitButton-focus-radius);
+  }
+
+  & .SplitButton-main.Button--small::after {
+    border-top-left-radius: var(--SplitButton-focus-radius-small);
+    border-bottom-left-radius: var(--SplitButton-focus-radius-small);
+  }
+
+  & .SplitButton-drop.Button::after {
+    margin: var(--SplitButton-focus-margin);
+    border: 2px solid var(--SplitButton-border-focus-color);
+    border-left: none;
+  }
+
+  & .SplitButton-drop.Button--normal::after {
+    border-top-right-radius: var(--SplitButton-focus-radius);
+    border-bottom-right-radius: var(--SplitButton-focus-radius);
+  }
+
+  & .SplitButton-drop.Button--small::after {
+    border-top-right-radius: var(--SplitButton-focus-radius-small);
+    border-bottom-right-radius: var(--SplitButton-focus-radius-small);
+  }
+}
