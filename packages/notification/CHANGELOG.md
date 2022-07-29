@@ -1,5 +1,25 @@
 # @launchpad-ui/notification
 
+## 0.2.9
+
+### Patch Changes
+
+- [#229](https://github.com/launchdarkly/launchpad-ui/pull/229) [`2968646`](https://github.com/launchdarkly/launchpad-ui/commit/2968646c12846699b18d5dc9e99cc1187ec1f589) Thanks [@Niznikr](https://github.com/Niznikr)! - [Notification] Make More details button clickable
+
+* [#227](https://github.com/launchdarkly/launchpad-ui/pull/227) [`c1a926b`](https://github.com/launchdarkly/launchpad-ui/commit/c1a926bff13e33f89eaefc8eed588927333d4620) Thanks [@chasedarkly](https://github.com/chasedarkly)! - Improve Button and Clipboard ergonomics
+
+  - [Button] Remove component prop, assign correct roles based on anchor/button rendering
+  - [Clipboard] Improve slotting capabilities, default rendering to button component
+  - [Notification] Consume new CopyToClipboard updates
+
+- [#226](https://github.com/launchdarkly/launchpad-ui/pull/226) [`85b7586`](https://github.com/launchdarkly/launchpad-ui/commit/85b75863a97457d225c0b91c1ff29ec2441a0c43) Thanks [@chasedarkly](https://github.com/chasedarkly)! - Make onDismiss optional in Notification component:
+
+  - [Notification] Make onDismiss optional
+
+- Updated dependencies [[`c1a926b`](https://github.com/launchdarkly/launchpad-ui/commit/c1a926bff13e33f89eaefc8eed588927333d4620)]:
+  - @launchpad-ui/button@0.3.0
+  - @launchpad-ui/clipboard@0.3.0
+
 ## 0.2.8
 
 ### Patch Changes

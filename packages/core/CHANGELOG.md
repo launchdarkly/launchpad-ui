@@ -1,5 +1,40 @@
 # @launchpad-ui/core
 
+## 0.5.0
+
+### Minor Changes
+
+- [#227](https://github.com/launchdarkly/launchpad-ui/pull/227) [`c1a926b`](https://github.com/launchdarkly/launchpad-ui/commit/c1a926bff13e33f89eaefc8eed588927333d4620) Thanks [@chasedarkly](https://github.com/chasedarkly)! - Improve Button and Clipboard ergonomics
+
+  - [Button] Remove component prop, assign correct roles based on anchor/button rendering
+  - [Clipboard] Improve slotting capabilities, default rendering to button component
+  - [Notification] Consume new CopyToClipboard updates
+
+### Patch Changes
+
+- [#229](https://github.com/launchdarkly/launchpad-ui/pull/229) [`2968646`](https://github.com/launchdarkly/launchpad-ui/commit/2968646c12846699b18d5dc9e99cc1187ec1f589) Thanks [@Niznikr](https://github.com/Niznikr)! - [Notification] Make More details button clickable
+
+* [#226](https://github.com/launchdarkly/launchpad-ui/pull/226) [`85b7586`](https://github.com/launchdarkly/launchpad-ui/commit/85b75863a97457d225c0b91c1ff29ec2441a0c43) Thanks [@chasedarkly](https://github.com/chasedarkly)! - Make onDismiss optional in Notification component:
+
+  - [Notification] Make onDismiss optional
+
+* Updated dependencies [[`2968646`](https://github.com/launchdarkly/launchpad-ui/commit/2968646c12846699b18d5dc9e99cc1187ec1f589), [`c1a926b`](https://github.com/launchdarkly/launchpad-ui/commit/c1a926bff13e33f89eaefc8eed588927333d4620), [`85b7586`](https://github.com/launchdarkly/launchpad-ui/commit/85b75863a97457d225c0b91c1ff29ec2441a0c43)]:
+  - @launchpad-ui/notification@0.2.9
+  - @launchpad-ui/button@0.3.0
+  - @launchpad-ui/clipboard@0.3.0
+  - @launchpad-ui/alert@0.1.15
+  - @launchpad-ui/banner@0.2.7
+  - @launchpad-ui/dropdown@0.2.5
+  - @launchpad-ui/modal@0.5.3
+  - @launchpad-ui/pagination@0.0.4
+  - @launchpad-ui/split-button@0.1.1
+  - @launchpad-ui/navigation@0.2.3
+  - @launchpad-ui/overlay@0.1.15
+  - @launchpad-ui/popover@0.5.3
+  - @launchpad-ui/menu@0.3.3
+  - @launchpad-ui/progress-bubbles@0.2.5
+  - @launchpad-ui/tooltip@0.3.5
+
 ## 0.4.3
 
 ### Patch Changes
