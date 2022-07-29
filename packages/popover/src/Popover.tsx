@@ -1,8 +1,6 @@
-/* eslint-disable functional/no-class */
-import type { PopoverInteractionKind } from './types';
 import type { OffsetOptions } from '@floating-ui/core';
 import type { ComputePositionConfig, Placement, Strategy } from '@floating-ui/dom';
-import type { CSSProperties, ReactHTML, Ref } from 'react';
+import type { CSSProperties, ReactHTML, Ref, RefObject } from 'react';
 
 import { arrow, computePosition, flip, offset as floatOffset, shift } from '@floating-ui/dom';
 import { Overlay } from '@launchpad-ui/overlay';
@@ -10,11 +8,20 @@ import { FocusScope } from '@react-aria/focus';
 import cx from 'clsx';
 import { LazyMotion, m } from 'framer-motion';
 import { isFunction, isNil } from 'lodash-es';
-import { Children, cloneElement, Component, createElement, isValidElement } from 'react';
+import {
+  Children,
+  cloneElement,
+  createElement,
+  isValidElement,
+  useCallback,
+  useEffect,
+  useRef,
+  useState,
+} from 'react';
 import { v4 } from 'uuid';
 
 import './styles/Popover.css';
-import { withTimeouts } from './withTimeouts';
+import { PopoverInteractionKind } from './types';
 
 const loadFeatures = () =>
   import(
@@ -30,7 +37,6 @@ type PopoverProps = {
   content?: string | JSX.Element | JSX.Element[];
   children: React.ReactNode;
   disabled?: boolean;
-  destroyOnUpdate?: boolean;
   disablePlacementFlip?: boolean;
   enforceFocus?: boolean;
   hoverCloseDelay?: number;
@@ -56,10 +62,6 @@ type PopoverProps = {
   enableArrow?: boolean;
 };
 
-type PopoverState = {
-  isOpen: boolean | null;
-};
-
 type PopoverTargetProps = {
   onMouseEnter?: (event: React.MouseEvent) => void;
   onMouseLeave?: (event: React.MouseEvent) => void;
@@ -68,7 +70,7 @@ type PopoverTargetProps = {
   onFocus?: (event: React.FocusEvent) => void;
   onBlur?: (event: React.FocusEvent) => void;
   onClick?: (event: React.MouseEvent) => void;
-  ref: (node: Element | null) => void;
+  ref: RefObject<HTMLElement>;
   className?: string;
   isopen?: boolean;
   style?: CSSProperties;
@@ -94,149 +96,264 @@ const isOrContainsElement = (referenceElement: Element, element: Element) => {
  * in controlled mode.
  *
  */
-class Popover extends withTimeouts<PopoverProps>(Component) {
-  targetElement: Element | null = null;
-  contentElement: HTMLElement | null = null;
-  arrowElement: HTMLElement | null = null;
-  cancelHoverTimeout?: () => void = undefined;
-  options: Partial<ComputePositionConfig> | undefined;
+const Popover = ({
+  rootElementTag = 'span',
+  placement = 'bottom',
+  restrictHeight = true,
+  restrictWidth = true,
+  isModal = false,
+  isFixed = false,
+  interactionKind = PopoverInteractionKind.CLICK,
+  hoverOpenDelay = 250,
+  hoverCloseDelay = 250,
+  disablePlacementFlip = false,
+  allowBoundaryElementOverflow = false,
+  isOpen: isOpenProp,
+  enableArrow,
+  enforceFocus,
+  onClick,
+  onInteraction,
+  onClose,
+  disabled,
+  children,
+  target: targetProp,
+  content: contentProp,
+  targetClassName,
+  popoverClassName,
+  popoverContentClassName,
+  rootElementStyle,
+  offset,
+  targetElementRef,
+}: PopoverProps) => {
+  const [isOpen, setIsOpen] = useState(!isNil(isOpenProp) ? isOpenProp : undefined);
+  const targetRef = useRef<HTMLElement>(null);
+  const contentRef = useRef<HTMLDivElement>(null);
+  const arrowRef = useRef<HTMLDivElement>(null);
+  const cancelHoverTimeoutRef = useRef<() => void>();
+  const optionsRef = useRef<Partial<ComputePositionConfig> | undefined>();
+  const popoverId = useRef(`popover-${v4()}`);
 
-  constructor(props: PopoverProps) {
-    super(props);
-    this.handleKeyDown = this.handleKeyDown.bind(this);
-    this.updatePosition = this.updatePosition.bind(this);
-  }
+  const updatePosition = useCallback(async () => {
+    const middleware = [];
 
-  static defaultProps = {
-    rootElementTag: 'span' as const,
-    placement: 'bottom' as const,
-    restrictHeight: true,
-    restrictWidth: true,
-    isModal: false,
-    isFixed: false,
-    interactionKind: 'click' as const,
-    hoverOpenDelay: 250,
-    hoverCloseDelay: 250,
-    disablePlacementFlip: false,
-    allowBoundaryElementOverflow: false,
-    destroyOnUpdate: false,
-  };
-
-  refHandlers = {
-    target: (node: Element | null) => {
-      this.targetElement = node;
-    },
-    content: (node: HTMLDivElement | null) => {
-      this.contentElement = node;
-      this.updatePopover().finally(() => undefined);
-    },
-    arrow: (node: HTMLElement | null) => {
-      this.arrowElement = node;
-    },
-  };
-
-  state = {
-    isOpen: !isNil(this.props.isOpen) ? this.props.isOpen : null,
-  };
-
-  id = `popover-${v4()}`;
-
-  async componentDidUpdate(prevProps: PopoverProps) {
-    if (this.props.isOpen !== prevProps.isOpen) {
-      this.setState({ isOpen: this.props.isOpen });
+    if (isNil(contentRef.current)) {
+      return;
     }
 
-    await this.updatePopover();
-  }
+    if (!allowBoundaryElementOverflow) {
+      middleware.push(shift({ padding: 5 }));
+    }
 
-  componentWillUnmount() {
-    super.componentWillUnmount();
-  }
+    if (!disablePlacementFlip && !offset) {
+      middleware.push(flip({ padding: 5 }));
+    }
 
-  render() {
-    const {
-      rootElementTag = 'span',
-      rootElementStyle,
-      interactionKind,
-      enforceFocus,
-      targetClassName,
-      isModal,
-    } = this.props;
-    const { isOpen } = this.state;
-    const { target, content } = this.parseChildren();
-    const hasEmptyContent = isNil(content);
-    const isTargetDisabled = isValidElement(target) ? !!target?.props?.disabled : false;
+    if (offset) {
+      middleware.push(floatOffset(offset));
+    }
 
-    const targetProps: PopoverTargetProps = {
-      ref: this.refHandlers.target,
-      className: cx('Popover-target', targetClassName, {
-        'Popover-target--active': isOpen,
-        'Popover-target--disabled': isTargetDisabled,
-      }),
-      style: rootElementStyle,
+    if (enableArrow && arrowRef.current) {
+      middleware.push(arrow({ element: arrowRef.current }));
+    }
+
+    const hasModal = targetRef.current?.closest('.has-modal');
+    const inModal = targetRef.current?.closest('.Modal');
+    const strategy: Strategy = isFixed || hasModal ? 'fixed' : 'absolute';
+
+    // no-scroll on modals fires scroll callback so we want to ignore this update for popover menus that open a modal
+    if (isOpen && hasModal && !inModal) {
+      return;
+    }
+
+    optionsRef.current = {
+      placement,
+      middleware,
+      strategy,
     };
 
-    if (
-      interactionKind === 'hover' ||
-      interactionKind === 'hover-target-only' ||
-      interactionKind === 'hover-or-focus'
-    ) {
-      targetProps.onMouseEnter = this.handleMouseEnter;
-      targetProps.onMouseLeave = this.handleMouseLeave;
-      targetProps.onPointerEnter = this.handleMouseEnter;
-      targetProps.onPointerLeave = this.handleMouseLeave;
-      if (interactionKind === 'hover-or-focus') {
-        targetProps.onFocus = this.handleFocus;
-        targetProps.onBlur = this.handleBlur;
-      }
-    } else {
-      targetProps.onClick = this.handleTargetClick;
+    const parentNode = targetRef.current;
+    if (!parentNode || !parentNode.childNodes) {
+      return;
     }
 
-    return createElement(
-      rootElementTag,
-      targetProps,
-      cloneElement(target as React.ReactElement, {
-        ref: this.props.targetElementRef,
-        ...(isOpen && { 'aria-describedby': this.id }),
-      }),
-      <Overlay
-        isOpen={!!isOpen && !hasEmptyContent}
-        canOutsideClickClose={interactionKind === 'click'}
-        isModal={isModal}
-        enforceFocus={enforceFocus}
-        onClose={this.handleOverlayClose}
-      >
-        <div>{this.renderPopover(content)}</div>
-      </Overlay>
-    );
-  }
-
-  renderPopover(content: React.ReactNode) {
+    const target = parentNode.childNodes[0] as Element;
     const {
-      interactionKind,
-      popoverClassName,
-      popoverContentClassName,
-      restrictHeight,
-      restrictWidth,
-      enableArrow,
-    } = this.props;
-    const { isOpen } = this.state;
+      x,
+      y,
+      placement: floatPlacement,
+      middlewareData,
+      strategy: floatStrategy,
+    } = await computePosition(target, contentRef.current, optionsRef.current);
+
+    if (contentRef.current) {
+      Object.assign(contentRef.current.style, {
+        left: `${x}px`,
+        top: `${y}px`,
+        position: floatStrategy,
+      });
+
+      contentRef.current.dataset.popoverPlacement = floatPlacement;
+    }
+
+    if (enableArrow && arrowRef.current && middlewareData.arrow) {
+      const { x: arrowX, y: arrowY } = middlewareData.arrow;
+
+      const staticSide = {
+        top: 'bottom',
+        right: 'left',
+        bottom: 'top',
+        left: 'right',
+      }[floatPlacement.split('-')[0]];
+
+      if (staticSide) {
+        Object.assign(arrowRef.current?.style, {
+          left: arrowX !== null ? `${arrowX}px` : '',
+          top: arrowY !== null ? `${arrowY}px` : '',
+          right: '',
+          bottom: '',
+          [staticSide]: '5px',
+        });
+      }
+    }
+  }, [
+    allowBoundaryElementOverflow,
+    disablePlacementFlip,
+    enableArrow,
+    isFixed,
+    isOpen,
+    offset,
+    placement,
+  ]);
+
+  const updatePopover = useCallback(async () => {
+    if (isOpen && !isNil(contentRef.current)) {
+      window.addEventListener('scroll', updatePosition, { passive: true });
+      window.addEventListener('resize', updatePosition, { passive: true });
+      await updatePosition();
+    } else {
+      window.removeEventListener('scroll', updatePosition);
+      window.removeEventListener('resize', updatePosition);
+    }
+  }, [isOpen, updatePosition]);
+
+  useEffect(() => {
+    setIsOpen(isOpenProp);
+
+    updatePopover();
+  }, [isOpenProp, updatePopover]);
+
+  const handleTargetClick = (event: React.MouseEvent) => {
+    const eventTarget = event.target as Element;
+    onClick?.();
+    if (!disabled && targetRef.current && isOrContainsElement(targetRef.current, eventTarget)) {
+      // always close the menu, and only open unless something prevented the default
+      setOpenState(isOpen ? false : !event.defaultPrevented);
+    }
+  };
+
+  const handleMouseEnter = () => {
+    if (!disabled) {
+      setOpenState(true, hoverOpenDelay);
+      attachGlobalListener();
+    }
+  };
+
+  const handleMouseLeave = () => {
+    setOpenState(false, hoverCloseDelay);
+    removeGlobalListener();
+  };
+
+  const handleFocus = () => {
+    if (!disabled) {
+      setOpenState(true);
+      attachGlobalListener();
+    }
+  };
+
+  const handleBlur = () => {
+    setOpenState(false);
+    removeGlobalListener();
+  };
+
+  const handlePopoverClick = (event: React.MouseEvent) => {
+    const eventTarget = event.target as Element;
+    if (eventTarget?.closest?.('.popover-dismiss')) {
+      setOpenState(false);
+    }
+  };
+
+  const handleOverlayClose = (event: React.MouseEvent | React.KeyboardEvent) => {
+    const eventTarget = event.target as Element;
+    if (
+      (targetRef.current && !isOrContainsElement(targetRef.current, eventTarget)) ||
+      event.nativeEvent instanceof KeyboardEvent
+    ) {
+      setOpenState(false);
+    }
+  };
+
+  const setOpenState = (nextIsOpen: boolean, timeout?: number) => {
+    isFunction(cancelHoverTimeoutRef.current) && cancelHoverTimeoutRef.current();
+
+    if (typeof timeout !== 'undefined' && timeout > 0) {
+      //cancelHoverTimeoutRef.current = this.setTimeout(() => this.setOpenState(isOpen), timeout);
+    } else {
+      // controlled mode
+      if (isNil(isOpenProp)) {
+        setIsOpen(nextIsOpen);
+      } else {
+        isFunction(onInteraction) && onInteraction(nextIsOpen);
+      }
+
+      if (!nextIsOpen) {
+        isFunction(onClose) && onClose();
+      }
+    }
+  };
+
+  const parseChildren = (): {
+    target: React.ReactNode;
+    content: React.ReactNode;
+  } => {
+    const [targetChild, contentChild] = Children.toArray(children);
+
+    return {
+      target: isNil(targetChild) ? targetProp : targetChild,
+      content: isNil(contentChild) ? contentProp : contentChild,
+    };
+  };
+
+  const attachGlobalListener = () => {
+    document.addEventListener('keydown', handleKeyDown);
+  };
+
+  const removeGlobalListener = () => {
+    document.removeEventListener('keydown', handleKeyDown);
+  };
+
+  const handleKeyDown = (event: KeyboardEvent) => {
+    if (event.key === 'Escape') {
+      setIsOpen(false);
+      removeGlobalListener();
+    }
+  };
+
+  const renderPopover = (content: React.ReactNode) => {
     const classes = cx('Popover', popoverClassName);
 
     let handlers: PopoverContentProps = {};
 
     if (interactionKind === 'hover') {
       handlers = {
-        onMouseEnter: this.handleMouseEnter,
-        onMouseLeave: this.handleMouseLeave,
-        onPointerEnter: this.handleMouseEnter,
-        onPointerLeave: this.handleMouseLeave,
+        onMouseEnter: handleMouseEnter,
+        onMouseLeave: handleMouseLeave,
+        onPointerEnter: handleMouseEnter,
+        onPointerLeave: handleMouseLeave,
       };
     }
 
     if (interactionKind !== 'hover-target-only') {
-      handlers.onClick = this.handlePopoverClick;
+      handlers.onClick = handlePopoverClick;
     }
 
     const popoverContent = (
@@ -260,15 +377,15 @@ class Popover extends withTimeouts<PopoverProps>(Component) {
 
     return (
       <div
-        id={this.id}
+        id={popoverId.current}
         data-test-id="popover-with-spring"
-        ref={this.refHandlers.content}
+        ref={contentRef}
         className={classes}
         role="tooltip"
         aria-hidden={!isOpen}
         {...handlers}
       >
-        {enableArrow && <div id="arrow" ref={this.refHandlers.arrow}></div>}
+        {enableArrow && <div id="arrow" ref={arrowRef}></div>}
         {interactionKind === 'click' ? (
           <FocusScope autoFocus contain>
             {popoverContent}
@@ -278,219 +395,56 @@ class Popover extends withTimeouts<PopoverProps>(Component) {
         )}
       </div>
     );
-  }
-
-  parseChildren(): {
-    target: React.ReactNode;
-    content: React.ReactNode;
-  } {
-    const { children, target: targetProp, content: contentProp } = this.props;
-    const [targetChild, contentChild] = Children.toArray(children);
-
-    return {
-      target: isNil(targetChild) ? targetProp : targetChild,
-      content: isNil(contentChild) ? contentProp : contentChild,
-    };
-  }
-
-  handleTargetClick = (event: React.MouseEvent) => {
-    const { disabled } = this.props;
-    const eventTarget = event.target as Element;
-    this.props.onClick?.();
-    if (!disabled && this.targetElement && isOrContainsElement(this.targetElement, eventTarget)) {
-      // always close the menu, and only open unless something prevented the default
-      this.setOpenState((prevState: PopoverState) =>
-        prevState.isOpen ? false : !event.defaultPrevented
-      );
-    }
   };
 
-  handleMouseEnter = () => {
-    const { disabled } = this.props;
-    if (!disabled) {
-      this.setOpenState(true, this.props.hoverOpenDelay);
-      this.attachGlobalListener();
-    }
+  const { target, content } = parseChildren();
+  const hasEmptyContent = isNil(content);
+  const isTargetDisabled = isValidElement(target) ? !!target?.props?.disabled : false;
+
+  const targetProps: PopoverTargetProps = {
+    ref: targetRef,
+    className: cx('Popover-target', targetClassName, {
+      'Popover-target--active': isOpen,
+      'Popover-target--disabled': isTargetDisabled,
+    }),
+    style: rootElementStyle,
   };
 
-  handleMouseLeave = () => {
-    const { hoverCloseDelay } = this.props;
-    this.setOpenState(false, hoverCloseDelay);
-    this.removeGlobalListener();
-  };
-
-  handleFocus = () => {
-    const { disabled } = this.props;
-    if (!disabled) {
-      this.setOpenState(true);
-      this.attachGlobalListener();
+  if (
+    interactionKind === 'hover' ||
+    interactionKind === 'hover-target-only' ||
+    interactionKind === 'hover-or-focus'
+  ) {
+    targetProps.onMouseEnter = handleMouseEnter;
+    targetProps.onMouseLeave = handleMouseLeave;
+    targetProps.onPointerEnter = handleMouseEnter;
+    targetProps.onPointerLeave = handleMouseLeave;
+    if (interactionKind === 'hover-or-focus') {
+      targetProps.onFocus = handleFocus;
+      targetProps.onBlur = handleBlur;
     }
-  };
-
-  handleBlur = () => {
-    this.setOpenState(false);
-    this.removeGlobalListener();
-  };
-
-  handlePopoverClick = (event: React.MouseEvent) => {
-    const eventTarget = event.target as Element;
-    if (eventTarget?.closest?.('.popover-dismiss')) {
-      this.setOpenState(false);
-    }
-  };
-
-  handleOverlayClose = (event: React.MouseEvent | React.KeyboardEvent) => {
-    const eventTarget = event.target as Element;
-    if (
-      (this.targetElement && !isOrContainsElement(this.targetElement, eventTarget)) ||
-      event.nativeEvent instanceof KeyboardEvent
-    ) {
-      this.setOpenState(false);
-    }
-  };
-
-  setOpenState(isOpen: boolean | ((prevState: PopoverState) => boolean), timeout?: number) {
-    const { onInteraction, onClose } = this.props;
-    const nextIsOpen = isFunction(isOpen) ? isOpen(this.state) : isOpen;
-
-    isFunction(this.cancelHoverTimeout) && this.cancelHoverTimeout();
-
-    if (typeof timeout !== 'undefined' && timeout > 0) {
-      this.cancelHoverTimeout = this.setTimeout(() => this.setOpenState(isOpen), timeout);
-    } else {
-      // controlled mode
-      if (isNil(this.props.isOpen)) {
-        this.setState({ isOpen: nextIsOpen });
-      } else {
-        isFunction(onInteraction) && onInteraction(nextIsOpen);
-      }
-
-      if (!nextIsOpen) {
-        isFunction(onClose) && onClose();
-      }
-    }
+  } else {
+    targetProps.onClick = handleTargetClick;
   }
 
-  async updatePopover() {
-    if (this.state.isOpen && !isNil(this.contentElement)) {
-      window.addEventListener('scroll', this.updatePosition, { passive: true });
-      window.addEventListener('resize', this.updatePosition, { passive: true });
-      await this.updatePosition();
-    } else {
-      window.removeEventListener('scroll', this.updatePosition);
-      window.removeEventListener('resize', this.updatePosition);
-    }
-  }
-
-  async updatePosition() {
-    const {
-      placement,
-      disablePlacementFlip,
-      allowBoundaryElementOverflow,
-      isFixed,
-      offset,
-      enableArrow,
-      isOpen,
-    } = this.props;
-
-    const middleware = [];
-
-    if (isNil(this.contentElement)) {
-      return;
-    }
-
-    if (!allowBoundaryElementOverflow) {
-      middleware.push(shift({ padding: 5 }));
-    }
-
-    if (!disablePlacementFlip && !offset) {
-      middleware.push(flip({ padding: 5 }));
-    }
-
-    if (offset) {
-      middleware.push(floatOffset(offset));
-    }
-
-    if (enableArrow && this.arrowElement) {
-      middleware.push(arrow({ element: this.arrowElement }));
-    }
-
-    const hasModal = this.targetElement?.closest('.has-modal');
-    const inModal = this.targetElement?.closest('.Modal');
-    const strategy: Strategy = isFixed || hasModal ? 'fixed' : 'absolute';
-
-    // no-scroll on modals fires scroll callback so we want to ignore this update for popover menus that open a modal
-    if (isOpen && hasModal && !inModal) {
-      return;
-    }
-
-    this.options = {
-      placement,
-      middleware,
-      strategy,
-    };
-
-    const parentNode = this.targetElement;
-    if (!parentNode || !parentNode.childNodes) {
-      return;
-    }
-
-    const target = parentNode.childNodes[0] as Element;
-    const {
-      x,
-      y,
-      placement: floatPlacement,
-      middlewareData,
-      strategy: floatStrategy,
-    } = await computePosition(target, this.contentElement, this.options);
-
-    if (this.contentElement) {
-      Object.assign(this.contentElement.style, {
-        left: `${x}px`,
-        top: `${y}px`,
-        position: floatStrategy,
-      });
-
-      this.contentElement.dataset.popoverPlacement = floatPlacement;
-    }
-
-    if (enableArrow && this.arrowElement && middlewareData.arrow) {
-      const { x: arrowX, y: arrowY } = middlewareData.arrow;
-
-      const staticSide = {
-        top: 'bottom',
-        right: 'left',
-        bottom: 'top',
-        left: 'right',
-      }[floatPlacement.split('-')[0]];
-
-      if (staticSide) {
-        Object.assign(this.arrowElement?.style, {
-          left: arrowX !== null ? `${arrowX}px` : '',
-          top: arrowY !== null ? `${arrowY}px` : '',
-          right: '',
-          bottom: '',
-          [staticSide]: '5px',
-        });
-      }
-    }
-  }
-
-  attachGlobalListener() {
-    document.addEventListener('keydown', this.handleKeyDown);
-  }
-
-  removeGlobalListener() {
-    document.removeEventListener('keydown', this.handleKeyDown);
-  }
-
-  handleKeyDown(event: KeyboardEvent) {
-    if (event.key === 'Escape') {
-      this.setState({ isOpen: false });
-      this.removeGlobalListener();
-    }
-  }
-}
+  return createElement(
+    rootElementTag,
+    targetProps,
+    cloneElement(target as React.ReactElement, {
+      ref: targetElementRef,
+      ...(isOpen && { 'aria-describedby': popoverId.current }),
+    }),
+    <Overlay
+      isOpen={!!isOpen && !hasEmptyContent}
+      canOutsideClickClose={interactionKind === 'click'}
+      isModal={isModal}
+      enforceFocus={enforceFocus}
+      onClose={handleOverlayClose}
+    >
+      <div>{renderPopover(content)}</div>
+    </Overlay>
+  );
+};
 
 export { Popover };
 export type { Offset, PopoverProps };
