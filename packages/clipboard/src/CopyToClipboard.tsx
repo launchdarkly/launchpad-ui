@@ -1,5 +1,6 @@
 import { CheckCircle, IconSize } from '@launchpad-ui/icons';
 import { Tooltip } from '@launchpad-ui/tooltip';
+import { Slot } from '@radix-ui/react-slot';
 import { announce } from '@react-aria/live-announcer';
 import { forwardRef, useCallback, useImperativeHandle, useRef, useState } from 'react';
 
@@ -16,6 +17,7 @@ type CopyToClipboardProps = {
   popoverTargetClassName?: string;
   shouldOnlyShowTooltipAfterCopy?: boolean;
   onClick?(): void;
+  asChild?: boolean;
 };
 
 type CopyToClipboardHandleRef = {
@@ -44,6 +46,7 @@ const CopyToClipboard = forwardRef<CopyToClipboardHandleRef, CopyToClipboardProp
       testId,
       shouldOnlyShowTooltipAfterCopy,
       onClick,
+      asChild,
     },
     ref
   ) => {
@@ -99,26 +102,29 @@ const CopyToClipboard = forwardRef<CopyToClipboardHandleRef, CopyToClipboardProp
       setWasCopied((prev) => (!isOpen ? isOpen : prev));
     };
 
+    const Component = asChild ? Slot : 'button';
+
     return (
       <span className="CopyToClipboard" data-test-id={testIdOrFallback}>
-        <button
-          className="CopyToClipboard-button"
-          onBlur={handleBlur}
-          onFocus={handleFocus}
-          onClick={handleCopy}
-          ref={buttonRef}
-          aria-label={ariaLabelText}
+        <Tooltip
+          {...tooltipOptions}
+          isOpen={isOpen}
+          content={tooltipText}
+          onInteraction={handleInteraction}
+          targetClassName={popoverTargetClassName}
         >
-          <Tooltip
-            {...tooltipOptions}
-            isOpen={isOpen}
-            content={tooltipText}
-            onInteraction={handleInteraction}
-            targetClassName={popoverTargetClassName}
+          <Component
+            className="CopyToClipboard-button"
+            onBlur={handleBlur}
+            onFocus={handleFocus}
+            onClick={handleCopy}
+            ref={buttonRef}
+            aria-label={ariaLabelText}
+            data-test-id="copyToClipboardButton"
           >
             {children}
-          </Tooltip>
-        </button>
+          </Component>
+        </Tooltip>
       </span>
     );
   }

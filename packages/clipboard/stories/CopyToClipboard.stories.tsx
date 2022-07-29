@@ -1,6 +1,8 @@
 import type { CopyToClipboardHandleRef } from '../src/CopyToClipboard';
 import type { ComponentStoryObj, StoryFn } from '@storybook/react';
 
+import { Button, ButtonType } from '@launchpad-ui/button';
+import { Add, IconSize } from '@launchpad-ui/icons';
 import { userEvent, within } from '@storybook/testing-library';
 import { useRef } from 'react';
 
@@ -55,6 +57,14 @@ export const Default: Story = {
     const canvas = within(canvasElement);
     await sleep(500);
     await userEvent.click(canvas.getByRole('button'));
+  },
+};
+
+export const ExampleWithSlottedChild: Story = {
+  args: {
+    text: 'Code content',
+    asChild: true,
+    children: <Button icon={<Add size={IconSize.MEDIUM} />} type={ButtonType.ICON} />,
   },
 };
 
