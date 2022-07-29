@@ -39,7 +39,7 @@ describe('Button', () => {
     );
 
     userEvent.setup();
-    await userEvent.type(screen.getByRole('button'), '{space}');
+    await userEvent.type(screen.getByRole('link'), '{space}');
 
     expect(spy).toHaveBeenCalledTimes(1);
   });

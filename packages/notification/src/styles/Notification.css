@@ -43,17 +43,6 @@
   --Notification-closeButton-color-border: var(--color-gray-600);
   --Notification-closeButton-color-fill: var(--color-gray-600);
   --Notification-closeButton-color-text: var(--color-gray-600);
-  --Notification-copyDetailsButton-color-background-default: var(--color-background);
-  --Notification-copyDetailsButton-color-background-default-hover: var(--color-background-hover);
-  --Notification-copyDetailsButton-color-background-default-focus: var(--color-white);
-  --Notification-copyDetailsButton-color-background-default-active: var(--color-background-hover);
-  --Notification-copyDetailsButton-color-border: var(--color-gray-600);
-  --Notification-copyDetailsButton-color-boxShadow-1-default-focus: var(--reskin-error-red-light);
-  --Notification-copyDetailsButton-color-boxShadow-2-default-focus: var(--color-gray-600);
-  --Notification-copyDetailsButton-box-shadow-focus: 0 0 0 2px
-      var(--Notification-copyDetailsButton-color-boxShadow-1-default-focus),
-    0 0 0 4px var(--Notification-copyDetailsButton-color-boxShadow-2-default-focus);
-  --Notification-copyDetailsButton-color-text: var(--color-text);
   --Notification-detailsExpand-color-text: var(--color-gray-800);
   --Notification-detailsExpand-color-text-active: var(--color-black-200);
 }
@@ -274,31 +263,6 @@ will zero out that positioning adjustment for now */
   & li + li,
   & p + p {
     margin-top: 5px;
-  }
-}
-
-.Notification-copyDetailsButton {
-  background-color: var(--Notification-copyDetailsButton-color-background-default);
-  border-color: var(--Notification-copyDetailsButton-color-border);
-  color: var(--Notification-copyDetailsButton-color-text);
-
-  &:hover {
-    background-color: var(--Notification-copyDetailsButton-color-background-default-hover);
-    border-color: var(--Notification-copyDetailsButton-color-border);
-    color: var(--Notification-copyDetailsButton-color-text);
-  }
-
-  &:focus {
-    background-color: var(--Notification-copyDetailsButton-color-background-default-focus);
-    border-color: var(--Notification-copyDetailsButton-color-border);
-    box-shadow: var(--Notification-copyDetailsButton-box-shadow-focus);
-    color: var(--Notification-copyDetailsButton-color-text);
-  }
-
-  &:active {
-    background-color: var(--Notification-copyDetailsButton-color-background-default-active);
-    border-color: var(--Notification-copyDetailsButton-color-border);
-    color: var(--Notification-copyDetailsButton-color-text);
   }
 }
 

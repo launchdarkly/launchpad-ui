@@ -11,22 +11,22 @@ import { CopyToClipboard } from '../src';
 // @ts-ignore
 window.navigator = { clipboard: { writeText: vi.fn() } };
 
-const createComponent = (props?: Partial<CopyToClipboardProps>) => (
-  <CopyToClipboard text="Copy content" tooltipOptions={{ hoverOpenDelay: 0 }} {...props}>
-    <span>Copy content</span>
+const createComponent = ({ children, ...rest }: Partial<CopyToClipboardProps>) => (
+  <CopyToClipboard text="Copy content" tooltipOptions={{ hoverOpenDelay: 0 }} {...rest}>
+    {children || 'Copy content'}
   </CopyToClipboard>
 );
 
 describe('CopyToClipboard', () => {
   it('copies text when clicked on', async () => {
-    render(createComponent());
+    render(createComponent({}));
     const user = userEvent.setup();
     await user.click(screen.getByRole('button'));
     expect(navigator.clipboard.writeText).toHaveBeenCalledWith('Copy content');
   });
 
   it('handles MouseEnter and MouseLeave', async () => {
-    render(createComponent());
+    render(createComponent({}));
     expect(screen.queryByRole('tooltip')).toBeNull();
 
     const user = userEvent.setup();
@@ -38,7 +38,7 @@ describe('CopyToClipboard', () => {
   });
 
   it('handles keyboard interactions', async () => {
-    render(createComponent());
+    render(createComponent({}));
     expect(screen.queryByRole('tooltip')).toBeNull();
 
     const user = userEvent.setup();
@@ -87,7 +87,7 @@ describe('CopyToClipboard', () => {
         // eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions
         <div data-test-id="wrapper" onClick={handleClick}>
           <CopyToClipboard text="Copy content" ref={ref}>
-            <code>Copy</code>
+            Copy
           </CopyToClipboard>
         </div>
       );
@@ -101,14 +101,14 @@ describe('CopyToClipboard', () => {
   });
 
   it('renders a button when asChild is false', async () => {
-    render(createComponent({ asChild: false }));
-    const trigger = screen.getByTestId('copyToClipboardButton');
+    render(createComponent({}));
+    const trigger = screen.getByTestId('copyToClipboardTrigger');
     expect(trigger.tagName).toBe('BUTTON');
   });
 
   it('renders as child when asChild is true', async () => {
-    render(createComponent({ asChild: true }));
-    const trigger = screen.getByTestId('copyToClipboardButton');
+    render(createComponent({ asChild: true, children: <span>click me</span> }));
+    const trigger = screen.getByTestId('copyToClipboardTrigger');
     expect(trigger.tagName).toBe('SPAN');
   });
 });

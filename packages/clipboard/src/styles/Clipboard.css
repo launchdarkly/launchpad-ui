@@ -2,47 +2,6 @@
   position: relative;
 }
 
-.CopyToClipboard-button {
-  color: var(--color-text);
-  background: none;
-  border-radius: 12px;
-  border: none;
-  cursor: pointer;
-  font-size: 1.5rem;
-  max-width: 100%;
-  padding: 0;
-  position: relative;
-
-  &:focus {
-    outline: transparent; /* Done for better compatibility with high contrast mode */
-
-    &::after {
-      position: absolute;
-      content: '';
-      display: block;
-      margin: -3px;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      border-radius: 6.25rem; /* change border of box shadow */
-      box-shadow: 0 0 0 2px var(--color-blue-700);
-    }
-  }
-
-  & .Popover-target {
-    display: flex; /* center text in span */
-  }
-
-  & .Popover-target code {
-    flex: 1;
-    min-width: 0;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-}
-
 .u-fs-sm .CopyToClipboard {
   font-size: 1.3rem;
 }
@@ -63,7 +22,6 @@
   margin-left: 0.5rem;
 }
 
-.CopyToClipboard-button:focus code,
 .CopyToClipboard:hover code {
   background-color: var(--color-background-hover);
 }

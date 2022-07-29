@@ -1,8 +1,6 @@
 import type { CopyToClipboardHandleRef } from '../src/CopyToClipboard';
 import type { ComponentStoryObj, StoryFn } from '@storybook/react';
 
-import { Button, ButtonType } from '@launchpad-ui/button';
-import { Add, IconSize } from '@launchpad-ui/icons';
 import { userEvent, within } from '@storybook/testing-library';
 import { useRef } from 'react';
 
@@ -52,7 +50,7 @@ export default {
 type Story = ComponentStoryObj<typeof CopyToClipboard>;
 
 export const Default: Story = {
-  args: { text: 'Code content', children: <code>Code content</code> },
+  args: { text: 'Code content', children: 'Copy content' },
   play: async ({ canvasElement }: { canvasElement: HTMLElement }) => {
     const canvas = within(canvasElement);
     await sleep(500);
@@ -64,7 +62,7 @@ export const ExampleWithSlottedChild: Story = {
   args: {
     text: 'Code content',
     asChild: true,
-    children: <Button icon={<Add size={IconSize.MEDIUM} />} type={ButtonType.ICON} />,
+    children: <code>Code content</code>,
   },
 };
 
@@ -88,7 +86,7 @@ const WithImperativeHandleWrapper = () => {
         event in a customized way from the parent.
       </p>
       <CopyToClipboard text="Content" ref={ref}>
-        <code>Click the text above</code>
+        Copy content
       </CopyToClipboard>
     </div>
   );

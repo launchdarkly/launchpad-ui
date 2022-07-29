@@ -1,5 +1,5 @@
 :root {
-  --code-color-background: var(--color-background-hover);
+  --code-color-background: var(--color-gray-200);
   --code-border-radius: 12px;
   --code-padding: 0.4rem 0.8rem;
   --code-font-size: 90%;

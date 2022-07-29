@@ -11,11 +11,6 @@ type ButtonProps = {
   'aria-label'?: string;
 
   /**
-   * Component to use for the button; defaults to `button`, or `a` if `href` or `target` is provided
-   */
-  component?: unknown;
-
-  /**
    * When true, this property will disable the button and show the `loadingText`
    */
   isLoading?: boolean;
@@ -214,7 +209,6 @@ const ButtonComponent = forwardRef<any, ButtonProps>((props: ButtonProps, ref) =
 
   const renderAnchor = (extraProps: object, children: React.ReactNode) => {
     const {
-      component,
       isLoading,
       loadingText,
       size,
@@ -227,19 +221,15 @@ const ButtonComponent = forwardRef<any, ButtonProps>((props: ButtonProps, ref) =
       ...otherProps
     } = props;
 
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const ButtonComponent: any = component || 'a';
-
     return (
-      <ButtonComponent {...otherProps} {...extraProps} role="button" data-test-id={testId}>
+      <a {...otherProps} {...extraProps} data-test-id={testId}>
         {children}
-      </ButtonComponent>
+      </a>
     );
   };
 
   const renderButton = (extraProps: object, children: React.ReactNode) => {
     const {
-      component,
       type,
       isLoading,
       loadingText,
@@ -253,18 +243,16 @@ const ButtonComponent = forwardRef<any, ButtonProps>((props: ButtonProps, ref) =
       ...otherProps
     } = props;
 
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const ButtonComponent: any = component || 'button';
+    // Our `type` prop is currently supporting `ICON` and `BORDERLESS` values, which
+    // isn't quite right and we should update this to only allow for the passing of native button types
+    // TODO: `ICON` type is logically equivalent to `!!icon` and `borderless` can be a standalone prop.
+    const buttonType =
+      type && type !== ButtonType.ICON && type !== ButtonType.BORDERLESS ? type : ButtonType.BUTTON;
 
     return (
-      <ButtonComponent
-        {...otherProps}
-        {...extraProps}
-        type={type && type !== ButtonType.ICON ? type : ButtonType.BUTTON}
-        data-test-id={testId}
-      >
+      <button {...otherProps} {...extraProps} type={buttonType} data-test-id={testId}>
         {children}
-      </ButtonComponent>
+      </button>
     );
   };
 
