@@ -1,5 +1,13 @@
 # @launchpad-ui/clipboard
 
+## 0.2.13
+
+### Patch Changes
+
+- [#225](https://github.com/launchdarkly/launchpad-ui/pull/225) [`b1106b5`](https://github.com/launchdarkly/launchpad-ui/commit/b1106b5533953089048deffc404f59422741f9d6) Thanks [@chasedarkly](https://github.com/chasedarkly)! - Enable custom triggers when using CopyToClipboard
+
+  - [Clipboard]: Add asChild prop to CopyToClipboard to enable consumers to use custom triggers.
+
 ## 0.2.12
 
 ### Patch Changes

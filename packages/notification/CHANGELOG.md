@@ -1,5 +1,14 @@
 # @launchpad-ui/notification
 
+## 0.2.8
+
+### Patch Changes
+
+- [#224](https://github.com/launchdarkly/launchpad-ui/pull/224) [`1286c63`](https://github.com/launchdarkly/launchpad-ui/commit/1286c637aafd69e2a72d9d753c0bdb73b6fb4a0f) Thanks [@Niznikr](https://github.com/Niznikr)! - [Notification] Update to functional component
+
+- Updated dependencies [[`b1106b5`](https://github.com/launchdarkly/launchpad-ui/commit/b1106b5533953089048deffc404f59422741f9d6)]:
+  - @launchpad-ui/clipboard@0.2.13
+
 ## 0.2.7
 
 ### Patch Changes
