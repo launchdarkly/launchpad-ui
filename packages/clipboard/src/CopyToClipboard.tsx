@@ -1,3 +1,6 @@
+import type { KeyboardEventHandler } from 'react';
+
+import { Button, ButtonSize } from '@launchpad-ui/button';
 import { CheckCircle, IconSize } from '@launchpad-ui/icons';
 import { Tooltip } from '@launchpad-ui/tooltip';
 import { Slot } from '@radix-ui/react-slot';
@@ -102,7 +105,16 @@ const CopyToClipboard = forwardRef<CopyToClipboardHandleRef, CopyToClipboardProp
       setWasCopied((prev) => (!isOpen ? isOpen : prev));
     };
 
-    const Component = asChild ? Slot : 'button';
+    const handleKeyDown: KeyboardEventHandler<HTMLElement> = (event) => {
+      const validKeys = ['Spacebar', ' ', 'Enter'];
+
+      if (validKeys.includes(event.key)) {
+        event.preventDefault();
+        handleCopy();
+      }
+    };
+
+    const Component = asChild ? Slot : Button;
 
     return (
       <span className="CopyToClipboard" data-test-id={testIdOrFallback}>
@@ -114,13 +126,17 @@ const CopyToClipboard = forwardRef<CopyToClipboardHandleRef, CopyToClipboardProp
           targetClassName={popoverTargetClassName}
         >
           <Component
-            className="CopyToClipboard-button"
             onBlur={handleBlur}
             onFocus={handleFocus}
             onClick={handleCopy}
+            onKeyDown={handleKeyDown}
+            size={ButtonSize.TINY}
             ref={buttonRef}
             aria-label={ariaLabelText}
-            data-test-id="copyToClipboardButton"
+            data-test-id="copyToClipboardTrigger"
+            testId="copyToClipboardTrigger"
+            role="button"
+            tabIndex={0}
           >
             {children}
           </Component>

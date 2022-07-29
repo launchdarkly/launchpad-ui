@@ -1,7 +1,7 @@
 import type { NotificationLevel } from './types';
 import type { KeyboardEvent, ReactNode } from 'react';
 
-import { Button, ButtonSize, ButtonType } from '@launchpad-ui/button';
+import { Button, ButtonType } from '@launchpad-ui/button';
 import { CopyToClipboard } from '@launchpad-ui/clipboard';
 import { KindIcon, Close, ExpandMore, IconSize } from '@launchpad-ui/icons';
 import { FocusScope } from '@react-aria/focus';
@@ -116,13 +116,7 @@ const Notification = ({
             </button>
 
             <div className="Notification-detailsContent">{details}</div>
-            {json && (
-              <CopyToClipboard asChild text={json}>
-                <Button size={ButtonSize.TINY} className="Notification-copyDetailsButton">
-                  Copy details
-                </Button>
-              </CopyToClipboard>
-            )}
+            {json && <CopyToClipboard text={json}>Copy details</CopyToClipboard>}
           </div>
         )}
       </div>
