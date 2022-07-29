@@ -122,11 +122,6 @@ export default {
         category: 'Content',
       },
     },
-    component: {
-      table: {
-        category: 'Content',
-      },
-    },
     href: {
       table: {
         category: 'Content',
