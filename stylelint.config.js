@@ -24,5 +24,6 @@ module.exports = {
         importFrom: [path.resolve(__dirname, 'packages/tokens/dist/index.css'), ...cssPaths],
       },
     ],
+    'selector-not-notation': 'simple',
   },
 };
