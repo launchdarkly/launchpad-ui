@@ -14,7 +14,7 @@ type NotificationProps = {
   details?: string;
   level: NotificationLevel;
   message: ReactNode;
-  onDismiss: () => void;
+  onDismiss?: () => void;
   ttl?: number;
   json?: string;
 };
