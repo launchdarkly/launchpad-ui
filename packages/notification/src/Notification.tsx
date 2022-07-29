@@ -50,6 +50,12 @@ const Notification = ({
       timeout.current = setTimeout(onDismiss, ttl);
     }
 
+    if (containFocus) {
+      document.addEventListener('keydown', handleEscape);
+    } else {
+      document.removeEventListener('keydown', handleEscape);
+    }
+
     return () => {
       document.removeEventListener('keydown', handleEscape);
       if (timeout) {
@@ -70,12 +76,10 @@ const Notification = ({
 
   const handleMouseOver = () => {
     setContainFocus(true);
-    document.addEventListener('keydown', handleEscape);
   };
 
   const handleMouseOut = () => {
     setContainFocus(false);
-    document.removeEventListener('keydown', handleEscape);
   };
 
   const handleCloseClick = () => {
@@ -152,13 +156,7 @@ const Notification = ({
       onFocus={handleMouseOver}
       onBlur={handleMouseOut}
     >
-      {containFocus ? (
-        <FocusScope contain autoFocus>
-          {content}
-        </FocusScope>
-      ) : (
-        content
-      )}
+      {containFocus ? <FocusScope contain>{content}</FocusScope> : content}
     </div>
   );
 };
