@@ -46,7 +46,7 @@ class Dropdown<T extends string | object | number> extends Component<
 
     // Focus the button upon closing for convenient tabbing
     if (prevState.isOpen !== this.state.isOpen && this.state.isOpen === false) {
-      requestAnimationFrame(() => {
+      setTimeout(() => {
         const current = this.triggerElement as HTMLElement;
         if (!current) {
           return;

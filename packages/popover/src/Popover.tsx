@@ -126,11 +126,12 @@ const Popover = ({
   targetElementRef,
 }: PopoverProps) => {
   const [isOpen, setIsOpen] = useState(!isNil(isOpenProp) ? isOpenProp : undefined);
+
   const targetRef = useRef<HTMLElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
   const arrowRef = useRef<HTMLDivElement>(null);
-  const cancelHoverTimeoutRef = useRef<() => void>();
-  const optionsRef = useRef<Partial<ComputePositionConfig> | undefined>();
+  const timeoutRef = useRef<ReturnType<typeof setTimeout>>();
+  const optionsRef = useRef<Partial<ComputePositionConfig>>();
   const popoverId = useRef(`popover-${v4()}`);
 
   const updatePosition = useCallback(async () => {
@@ -157,13 +158,7 @@ const Popover = ({
     }
 
     const hasModal = targetRef.current?.closest('.has-modal');
-    const inModal = targetRef.current?.closest('.Modal');
     const strategy: Strategy = isFixed || hasModal ? 'fixed' : 'absolute';
-
-    // no-scroll on modals fires scroll callback so we want to ignore this update for popover menus that open a modal
-    if (isOpen && hasModal && !inModal) {
-      return;
-    }
 
     optionsRef.current = {
       placement,
@@ -215,15 +210,7 @@ const Popover = ({
         });
       }
     }
-  }, [
-    allowBoundaryElementOverflow,
-    disablePlacementFlip,
-    enableArrow,
-    isFixed,
-    isOpen,
-    offset,
-    placement,
-  ]);
+  }, [allowBoundaryElementOverflow, disablePlacementFlip, enableArrow, isFixed, offset, placement]);
 
   const updatePopover = useCallback(async () => {
     if (isOpen && !isNil(contentRef.current)) {
@@ -237,10 +224,16 @@ const Popover = ({
   }, [isOpen, updatePosition]);
 
   useEffect(() => {
-    setIsOpen(isOpenProp);
+    setTimeout(() => updatePopover());
 
-    updatePopover();
-  }, [isOpenProp, updatePopover]);
+    return () => {
+      clearTimeout(timeoutRef.current);
+    };
+  }, [isOpen, updatePopover]);
+
+  useEffect(() => {
+    setIsOpen(isOpenProp);
+  }, [isOpenProp]);
 
   const handleTargetClick = (event: React.MouseEvent) => {
     const eventTarget = event.target as Element;
@@ -293,10 +286,10 @@ const Popover = ({
   };
 
   const setOpenState = (nextIsOpen: boolean, timeout?: number) => {
-    isFunction(cancelHoverTimeoutRef.current) && cancelHoverTimeoutRef.current();
+    timeoutRef.current && clearTimeout(timeoutRef.current);
 
     if (typeof timeout !== 'undefined' && timeout > 0) {
-      //cancelHoverTimeoutRef.current = this.setTimeout(() => this.setOpenState(isOpen), timeout);
+      timeoutRef.current = setTimeout(() => setOpenState(nextIsOpen), timeout);
     } else {
       // controlled mode
       if (isNil(isOpenProp)) {
