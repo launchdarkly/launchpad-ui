@@ -50,14 +50,14 @@ describe('Notification', () => {
     });
   });
 
-  it('dismisses when escape key is pressed and hovered', async () => {
+  it('dismisses when hovered and escape key is pressed', async () => {
     const spy = vi.fn();
     render(<Notification {...props} onDismiss={spy} />);
 
     const user = userEvent.setup();
 
-    await user.hover(screen.getByText(NotificationLevel.INFO));
-    await user.keyboard('{escape}');
+    await user.hover(screen.getByRole('alert'));
+    await user.keyboard('{Escape}');
 
     expect(spy).toHaveBeenCalledTimes(1);
   });
@@ -77,10 +77,27 @@ describe('Notification', () => {
     const user = userEvent.setup();
 
     await user.hover(screen.getByText(/hi there/));
+    await user.tab();
     expect(screen.getByRole('link')).toHaveFocus();
 
     await user.hover(document.body);
     await user.click(document.body);
+    await user.tab();
     expect(screen.getByRole('link')).not.toHaveFocus();
+  });
+
+  it('dismisses when close button is clicked', async () => {
+    const spy = vi.fn();
+    render(<Notification {...props} onDismiss={spy} />);
+
+    const user = userEvent.setup();
+    user.tab();
+    user.tab();
+    user.tab();
+    await user.keyboard('{enter}');
+
+    await waitFor(() => {
+      expect(spy).toHaveBeenCalledTimes(1);
+    });
   });
 });
