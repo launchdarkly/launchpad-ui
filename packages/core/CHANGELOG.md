@@ -1,5 +1,24 @@
 # @launchpad-ui/core
 
+## 0.4.3
+
+### Patch Changes
+
+- [#222](https://github.com/launchdarkly/launchpad-ui/pull/222) [`cb55147`](https://github.com/launchdarkly/launchpad-ui/commit/cb55147c231f94b9ea303ead60ef3f695b119874) Thanks [@Niznikr](https://github.com/Niznikr)! - Add split-button package:
+
+  - [SplitButton] Add split-button code, stories, and tests
+
+* [#224](https://github.com/launchdarkly/launchpad-ui/pull/224) [`1286c63`](https://github.com/launchdarkly/launchpad-ui/commit/1286c637aafd69e2a72d9d753c0bdb73b6fb4a0f) Thanks [@Niznikr](https://github.com/Niznikr)! - [Notification] Update to functional component
+
+- [#225](https://github.com/launchdarkly/launchpad-ui/pull/225) [`b1106b5`](https://github.com/launchdarkly/launchpad-ui/commit/b1106b5533953089048deffc404f59422741f9d6) Thanks [@chasedarkly](https://github.com/chasedarkly)! - Enable custom triggers when using CopyToClipboard
+
+  - [Clipboard]: Add asChild prop to CopyToClipboard to enable consumers to use custom triggers.
+
+- Updated dependencies [[`cb55147`](https://github.com/launchdarkly/launchpad-ui/commit/cb55147c231f94b9ea303ead60ef3f695b119874), [`1286c63`](https://github.com/launchdarkly/launchpad-ui/commit/1286c637aafd69e2a72d9d753c0bdb73b6fb4a0f), [`b1106b5`](https://github.com/launchdarkly/launchpad-ui/commit/b1106b5533953089048deffc404f59422741f9d6)]:
+  - @launchpad-ui/split-button@0.1.0
+  - @launchpad-ui/notification@0.2.8
+  - @launchpad-ui/clipboard@0.2.13
+
 ## 0.4.2
 
 ### Patch Changes
