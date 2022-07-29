@@ -117,12 +117,8 @@ const Notification = ({
 
             <div className="Notification-detailsContent">{details}</div>
             {json && (
-              <CopyToClipboard text={json}>
-                <Button
-                  component="span"
-                  size={ButtonSize.TINY}
-                  className="Notification-copyDetailsButton"
-                >
+              <CopyToClipboard asChild text={json}>
+                <Button size={ButtonSize.TINY} className="Notification-copyDetailsButton">
                   Copy details
                 </Button>
               </CopyToClipboard>
