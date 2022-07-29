@@ -85,4 +85,19 @@ describe('Notification', () => {
     await user.tab();
     expect(screen.getByRole('link')).not.toHaveFocus();
   });
+
+  it('dismisses when close button is clicked', async () => {
+    const spy = vi.fn();
+    render(<Notification {...props} onDismiss={spy} />);
+
+    const user = userEvent.setup();
+    user.tab();
+    user.tab();
+    user.tab();
+    await user.keyboard('{enter}');
+
+    await waitFor(() => {
+      expect(spy).toHaveBeenCalledTimes(1);
+    });
+  });
 });
