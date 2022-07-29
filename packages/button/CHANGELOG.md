@@ -1,5 +1,15 @@
 # @launchpad-ui/button
 
+## 0.3.0
+
+### Minor Changes
+
+- [#227](https://github.com/launchdarkly/launchpad-ui/pull/227) [`c1a926b`](https://github.com/launchdarkly/launchpad-ui/commit/c1a926bff13e33f89eaefc8eed588927333d4620) Thanks [@chasedarkly](https://github.com/chasedarkly)! - Improve Button and Clipboard ergonomics
+
+  - [Button] Remove component prop, assign correct roles based on anchor/button rendering
+  - [Clipboard] Improve slotting capabilities, default rendering to button component
+  - [Notification] Consume new CopyToClipboard updates
+
 ## 0.2.3
 
 ### Patch Changes
