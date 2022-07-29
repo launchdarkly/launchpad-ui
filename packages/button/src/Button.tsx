@@ -243,17 +243,14 @@ const ButtonComponent = forwardRef<any, ButtonProps>((props: ButtonProps, ref) =
       ...otherProps
     } = props;
 
+    // Our `type` prop is currently supporting `ICON` and `BORDERLESS` values, which
+    // isn't quite right and we should update this to only allow for the passing of native button types
+    // TODO: `ICON` type is logically equivalent to `!!icon` and `borderless` can be a standalone prop.
+    const buttonType =
+      type && type !== ButtonType.ICON && type !== ButtonType.BORDERLESS ? type : ButtonType.BUTTON;
+
     return (
-      <button
-        {...otherProps}
-        {...extraProps}
-        type={
-          type && type !== ButtonType.ICON && type !== ButtonType.BORDERLESS
-            ? type
-            : ButtonType.BUTTON
-        }
-        data-test-id={testId}
-      >
+      <button {...otherProps} {...extraProps} type={buttonType} data-test-id={testId}>
         {children}
       </button>
     );
