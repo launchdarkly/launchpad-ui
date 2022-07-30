@@ -58,7 +58,7 @@ const FilterButton = forwardRef<Ref, FilterButtonProps>((props, ref) => {
         aria-labelledby={`${nameId} ${hasDescription ? descriptionId : ''}`}
         aria-haspopup
         className={cx('Filter-button', className, {
-          isClearable: isClearable || isSelected,
+          'is-clearable': isClearable || isSelected,
         })}
         ref={ref}
         onClick={onClickFilterButton}
