@@ -4,7 +4,7 @@ import { FilterButton } from '../src';
 
 export default {
   component: FilterButton,
-  title: 'Components/FilterButton',
+  title: 'Components/Filter/FilterButton',
   description: 'filter a list of results',
   parameters: {
     status: {
