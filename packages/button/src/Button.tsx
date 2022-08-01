@@ -129,139 +129,142 @@ type ButtonProps = {
   children?: React.ReactNode;
 };
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-const ButtonComponent = forwardRef<any, ButtonProps>((props: ButtonProps, ref) => {
-  const {
-    className,
-    size = ButtonSize.NORMAL,
-    fit,
-    kind = ButtonKind.DEFAULT,
-    icon,
-    outlined = false,
-    type,
-    children,
-    isLoading,
-    loadingText,
-    renderIconFirst = false,
-    onKeyDown,
-    disabled = false,
-    href,
-    target,
-    onClick = () => undefined,
-    to,
-  } = props;
+const ButtonComponent = forwardRef<HTMLButtonElement | HTMLAnchorElement, ButtonProps>(
+  (props: ButtonProps, ref) => {
+    const {
+      className,
+      size = ButtonSize.NORMAL,
+      fit,
+      kind = ButtonKind.DEFAULT,
+      icon,
+      outlined = false,
+      type,
+      children,
+      isLoading,
+      loadingText,
+      renderIconFirst = false,
+      onKeyDown,
+      disabled = false,
+      href,
+      target,
+      onClick = () => undefined,
+      to,
+    } = props;
 
-  const kindClass = `Button--${kind}`;
-  const sizeClass = `Button--${size}`;
-  const classes = cx('Button', className, kindClass, sizeClass, {
-    'Button--fit': fit,
-    'Button--icon': type === 'icon',
-    'Button--outlined': type === 'icon' && outlined,
-    'Button--borderless': type === 'borderless',
-  });
-
-  const handleClick = (event: React.MouseEvent) => {
-    if (disabled) {
-      event.preventDefault();
-      return;
-    }
-
-    onClick && onClick(event);
-  };
-
-  const handleKeyDown = (event: KeyboardEvent) => {
-    const spacebarKeys = ['Spacebar', ' '];
-
-    // if we're using a 'link' as 'button', handle 'spacebar' event for accessibility.
-    // 'enter' already works by default.
-    if (!!to || !!href || !!target) {
-      if (spacebarKeys.includes(event.key)) {
-        event.preventDefault();
-        const link = event.target as HTMLAnchorElement;
-        link.click();
-      }
-    }
-  };
-
-  const extraProps = {
-    disabled: disabled || isLoading,
-    className: classes,
-    onClick: handleClick,
-    ref,
-    onKeyDown: onKeyDown || handleKeyDown,
-  };
-
-  const renderIcon =
-    icon &&
-    cloneElement(icon, {
-      key: 'icon',
-      size: icon.props.size || 'small',
-      'aria-hidden': true,
+    const kindClass = `Button--${kind}`;
+    const sizeClass = `Button--${size}`;
+    const classes = cx('Button', className, kindClass, sizeClass, {
+      'Button--fit': fit,
+      'Button--icon': type === 'icon',
+      'Button--outlined': type === 'icon' && outlined,
+      'Button--borderless': type === 'borderless',
     });
 
-  const finalChildren = [
-    renderIconFirst && renderIcon,
-    isLoading && <span key="text">{loadingText || children}</span>,
-    !isLoading && children && <span key="text">{children}</span>,
-    !renderIconFirst && renderIcon,
-    isLoading && <span key="spinner">…</span>,
-  ];
+    const handleClick = (event: React.MouseEvent) => {
+      if (disabled) {
+        event.preventDefault();
+        return;
+      }
 
-  const renderAnchor = (extraProps: object, children: React.ReactNode) => {
-    const {
-      isLoading,
-      loadingText,
-      size,
-      kind,
-      fit,
-      icon,
-      outlined,
-      renderIconFirst,
-      testId,
-      ...otherProps
-    } = props;
+      onClick && onClick(event);
+    };
 
-    return (
-      <a {...otherProps} {...extraProps} data-test-id={testId}>
-        {children}
-      </a>
-    );
-  };
+    const handleKeyDown = (event: KeyboardEvent) => {
+      const spacebarKeys = ['Spacebar', ' '];
 
-  const renderButton = (extraProps: object, children: React.ReactNode) => {
-    const {
-      type,
-      isLoading,
-      loadingText,
-      size,
-      kind,
-      fit,
-      icon,
-      outlined,
-      renderIconFirst,
-      testId,
-      ...otherProps
-    } = props;
+      // if we're using a 'link' as 'button', handle 'spacebar' event for accessibility.
+      // 'enter' already works by default.
+      if (!!to || !!href || !!target) {
+        if (spacebarKeys.includes(event.key)) {
+          event.preventDefault();
+          const link = event.target as HTMLAnchorElement;
+          link.click();
+        }
+      }
+    };
 
-    // Our `type` prop is currently supporting `ICON` and `BORDERLESS` values, which
-    // isn't quite right and we should update this to only allow for the passing of native button types
-    // TODO: `ICON` type is logically equivalent to `!!icon` and `borderless` can be a standalone prop.
-    const buttonType =
-      type && type !== ButtonType.ICON && type !== ButtonType.BORDERLESS ? type : ButtonType.BUTTON;
+    const extraProps = {
+      disabled: disabled || isLoading,
+      className: classes,
+      onClick: handleClick,
+      ref,
+      onKeyDown: onKeyDown || handleKeyDown,
+    };
 
-    return (
-      <button {...otherProps} {...extraProps} type={buttonType} data-test-id={testId}>
-        {children}
-      </button>
-    );
-  };
+    const renderIcon =
+      icon &&
+      cloneElement(icon, {
+        key: 'icon',
+        size: icon.props.size || 'small',
+        'aria-hidden': true,
+      });
 
-  const renderFunc = href || target ? renderAnchor : renderButton;
+    const finalChildren = [
+      renderIconFirst && renderIcon,
+      isLoading && <span key="text">{loadingText || children}</span>,
+      !isLoading && children && <span key="text">{children}</span>,
+      !renderIconFirst && renderIcon,
+      isLoading && <span key="spinner">…</span>,
+    ];
 
-  const content = renderFunc(extraProps, finalChildren);
+    const renderAnchor = (extraProps: object, children: React.ReactNode) => {
+      const {
+        isLoading,
+        loadingText,
+        size,
+        kind,
+        fit,
+        icon,
+        outlined,
+        renderIconFirst,
+        testId,
+        ...otherProps
+      } = props;
 
-  return content;
-});
+      return (
+        <a {...otherProps} {...extraProps} data-test-id={testId}>
+          {children}
+        </a>
+      );
+    };
+
+    const renderButton = (extraProps: object, children: React.ReactNode) => {
+      const {
+        type,
+        isLoading,
+        loadingText,
+        size,
+        kind,
+        fit,
+        icon,
+        outlined,
+        renderIconFirst,
+        testId,
+        ...otherProps
+      } = props;
+
+      // Our `type` prop is currently supporting `ICON` and `BORDERLESS` values, which
+      // isn't quite right and we should update this to only allow for the passing of native button types
+      // TODO: `ICON` type is logically equivalent to `!!icon` and `borderless` can be a standalone prop.
+      const buttonType =
+        type && type !== ButtonType.ICON && type !== ButtonType.BORDERLESS
+          ? type
+          : ButtonType.BUTTON;
+
+      return (
+        <button {...otherProps} {...extraProps} type={buttonType} data-test-id={testId}>
+          {children}
+        </button>
+      );
+    };
+
+    const renderFunc = href || target ? renderAnchor : renderButton;
+
+    const content = renderFunc(extraProps, finalChildren);
+
+    return content;
+  }
+);
 
 ButtonComponent.displayName = 'Button';
 

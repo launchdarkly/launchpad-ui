@@ -38,9 +38,7 @@ const Markdown = ({
       className={classes}
       // We sanitize "source" (via DOMPurify) before inserting it into the DOM, to protect against XSS attacks.
       // Using dangerouslySetInnerHTML is safe.
-      // eslint-disable-next-line react/no-danger
       dangerouslySetInnerHTML={{
-        // eslint-disable-next-line @typescript-eslint/naming-convention
         __html: renderMarkdown(source, { baseUri, allowedTags }),
       }}
       ref={textRef}
