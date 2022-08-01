@@ -46,10 +46,20 @@ const Notification = ({
   );
 
   useEffect(() => {
+    return () => {
+      if (timeout.current) {
+        clearTimeout(timeout.current);
+      }
+    };
+  }, []);
+
+  useEffect(() => {
     if (ttl) {
       timeout.current = setTimeout(onDismiss, ttl);
     }
+  }, [ttl, onDismiss]);
 
+  useEffect(() => {
     if (containFocus) {
       document.addEventListener('keydown', handleEscape);
     } else {
@@ -58,14 +68,12 @@ const Notification = ({
 
     return () => {
       document.removeEventListener('keydown', handleEscape);
-      if (timeout) {
-        clearTimeout(timeout.current);
-      }
+
       if (containFocus) {
         setContainFocus(false);
       }
     };
-  }, [containFocus, handleEscape, onDismiss, ttl]);
+  }, [containFocus, handleEscape]);
 
   useEffect(() => {
     if (showDetails && timeout.current) {
