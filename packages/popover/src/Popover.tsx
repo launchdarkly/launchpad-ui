@@ -126,9 +126,15 @@ const Popover = ({
   targetElementRef,
 }: PopoverProps) => {
   const [isOpen, setIsOpen] = useState(!isNil(isOpenProp) ? isOpenProp : undefined);
+  const [popoverElement, setPopoverElement] = useState<HTMLElement | null>();
 
   const targetRef = useRef<HTMLElement>(null);
-  const contentRef = useRef<HTMLDivElement>(null);
+  const contentRef = useCallback((node: HTMLElement | null) => {
+    if (node !== null) {
+      return setPopoverElement(node);
+    }
+    return;
+  }, []);
   const arrowRef = useRef<HTMLDivElement>(null);
   const timeoutRef = useRef<ReturnType<typeof setTimeout>>();
   const optionsRef = useRef<Partial<ComputePositionConfig>>();
@@ -137,7 +143,7 @@ const Popover = ({
   const updatePosition = useCallback(async () => {
     const middleware = [];
 
-    if (isNil(contentRef.current)) {
+    if (isNil(popoverElement)) {
       return;
     }
 
@@ -178,16 +184,16 @@ const Popover = ({
       placement: floatPlacement,
       middlewareData,
       strategy: floatStrategy,
-    } = await computePosition(target, contentRef.current, optionsRef.current);
+    } = await computePosition(target, popoverElement, optionsRef.current);
 
-    if (contentRef.current) {
-      Object.assign(contentRef.current.style, {
+    if (popoverElement) {
+      Object.assign(popoverElement.style, {
         left: `${x}px`,
         top: `${y}px`,
         position: floatStrategy,
       });
 
-      contentRef.current.dataset.popoverPlacement = floatPlacement;
+      popoverElement.dataset.popoverPlacement = floatPlacement;
     }
 
     if (enableArrow && arrowRef.current && middlewareData.arrow) {
@@ -210,26 +216,37 @@ const Popover = ({
         });
       }
     }
-  }, [allowBoundaryElementOverflow, disablePlacementFlip, enableArrow, isFixed, offset, placement]);
-
-  const updatePopover = useCallback(async () => {
-    if (isOpen && !isNil(contentRef.current)) {
-      window.addEventListener('scroll', updatePosition, { passive: true });
-      window.addEventListener('resize', updatePosition, { passive: true });
-      await updatePosition();
-    } else {
-      window.removeEventListener('scroll', updatePosition);
-      window.removeEventListener('resize', updatePosition);
-    }
-  }, [isOpen, updatePosition]);
+  }, [
+    allowBoundaryElementOverflow,
+    disablePlacementFlip,
+    enableArrow,
+    isFixed,
+    offset,
+    placement,
+    popoverElement,
+  ]);
 
   useEffect(() => {
-    setTimeout(() => updatePopover());
-
     return () => {
-      clearTimeout(timeoutRef.current);
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current);
+      }
     };
-  }, [isOpen, updatePopover]);
+  }, []);
+
+  useEffect(() => {
+    const updatePopover = async () => {
+      if (isOpen && !isNil(popoverElement)) {
+        window.addEventListener('scroll', updatePosition, { passive: true });
+        window.addEventListener('resize', updatePosition, { passive: true });
+        await updatePosition();
+      } else {
+        window.removeEventListener('scroll', updatePosition);
+        window.removeEventListener('resize', updatePosition);
+      }
+    };
+    updatePopover();
+  }, [isOpen, contentProp, popoverElement, updatePosition]);
 
   useEffect(() => {
     setIsOpen(isOpenProp);
