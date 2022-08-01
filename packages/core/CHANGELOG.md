@@ -1,5 +1,30 @@
 # @launchpad-ui/core
 
+## 0.5.1
+
+### Patch Changes
+
+- [#237](https://github.com/launchdarkly/launchpad-ui/pull/237) [`d2d29a2`](https://github.com/launchdarkly/launchpad-ui/commit/d2d29a2489ab111511e98ce1036d419d97ffa0ed) Thanks [@Niznikr](https://github.com/Niznikr)! - Update `@react-aria` for smaller bundle sizes
+
+* [#230](https://github.com/launchdarkly/launchpad-ui/pull/230) [`8500c8c`](https://github.com/launchdarkly/launchpad-ui/commit/8500c8cea32760b9ca5abf5495045f29062d4c19) Thanks [@Niznikr](https://github.com/Niznikr)! - [Menu] Use simple not selectors to fix item styles
+
+* Updated dependencies [[`d2d29a2`](https://github.com/launchdarkly/launchpad-ui/commit/d2d29a2489ab111511e98ce1036d419d97ffa0ed), [`8500c8c`](https://github.com/launchdarkly/launchpad-ui/commit/8500c8cea32760b9ca5abf5495045f29062d4c19)]:
+  - @launchpad-ui/clipboard@0.3.1
+  - @launchpad-ui/form@0.2.7
+  - @launchpad-ui/menu@0.3.4
+  - @launchpad-ui/modal@0.5.4
+  - @launchpad-ui/navigation@0.2.4
+  - @launchpad-ui/notification@0.2.10
+  - @launchpad-ui/pagination@0.0.5
+  - @launchpad-ui/popover@0.5.4
+  - @launchpad-ui/tab-list@0.2.2
+  - @launchpad-ui/toggle@0.2.2
+  - @launchpad-ui/overlay@0.1.16
+  - @launchpad-ui/dropdown@0.2.6
+  - @launchpad-ui/progress-bubbles@0.2.6
+  - @launchpad-ui/split-button@0.1.2
+  - @launchpad-ui/tooltip@0.3.6
+
 ## 0.5.0
 
 ### Minor Changes

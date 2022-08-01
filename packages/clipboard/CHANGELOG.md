@@ -1,5 +1,14 @@
 # @launchpad-ui/clipboard
 
+## 0.3.1
+
+### Patch Changes
+
+- [#237](https://github.com/launchdarkly/launchpad-ui/pull/237) [`d2d29a2`](https://github.com/launchdarkly/launchpad-ui/commit/d2d29a2489ab111511e98ce1036d419d97ffa0ed) Thanks [@Niznikr](https://github.com/Niznikr)! - Update `@react-aria` for smaller bundle sizes
+
+- Updated dependencies []:
+  - @launchpad-ui/tooltip@0.3.6
+
 ## 0.3.0
 
 ### Minor Changes

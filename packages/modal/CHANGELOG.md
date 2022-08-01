@@ -1,5 +1,11 @@
 # @launchpad-ui/modal
 
+## 0.5.4
+
+### Patch Changes
+
+- [#237](https://github.com/launchdarkly/launchpad-ui/pull/237) [`d2d29a2`](https://github.com/launchdarkly/launchpad-ui/commit/d2d29a2489ab111511e98ce1036d419d97ffa0ed) Thanks [@Niznikr](https://github.com/Niznikr)! - Update `@react-aria` for smaller bundle sizes
+
 ## 0.5.3
 
 ### Patch Changes
