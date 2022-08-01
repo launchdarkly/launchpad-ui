@@ -15,15 +15,17 @@ type DropdownButtonProps = {
   testId?: string;
 };
 
-const DropdownButton = forwardRef<typeof Button, DropdownButtonProps>((props, ref) => {
-  const { children, hideCaret, ...rest } = props;
+const DropdownButton = forwardRef<React.ElementRef<typeof Button>, DropdownButtonProps>(
+  (props, ref) => {
+    const { children, hideCaret, ...rest } = props;
 
-  return (
-    <Button {...rest} ref={ref}>
-      {children} {!hideCaret && <ExpandMore size={IconSize.SMALL} />}
-    </Button>
-  );
-});
+    return (
+      <Button {...rest} ref={ref}>
+        {children} {!hideCaret && <ExpandMore size={IconSize.SMALL} />}
+      </Button>
+    );
+  }
+);
 
 DropdownButton.displayName = 'DropdownButton';
 

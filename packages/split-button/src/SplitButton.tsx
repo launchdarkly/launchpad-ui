@@ -35,7 +35,7 @@ type SplitButtonProps = {
   children?: React.ReactNode;
 };
 
-const SplitButton = forwardRef<typeof Button, SplitButtonProps>(
+const SplitButton = forwardRef<React.ElementRef<typeof Button>, SplitButtonProps>(
   (
     {
       disabled,
