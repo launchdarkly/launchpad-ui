@@ -15,7 +15,7 @@
   },
   "dependencies": {
     "@launchpad-ui/core": "workspace:~",
-    "@react-aria/ssr": "^3.2.0",
+    "@react-aria/ssr": "^3.3.0",
     "@react-stately/collections": "^3.4.0",
     "@remix-run/node": "^1.6.0",
     "@remix-run/react": "^1.6.0",
@@ -27,7 +27,7 @@
   "devDependencies": {
     "@remix-run/dev": "^1.6.0",
     "@remix-run/eslint-config": "^1.6.0",
-    "eslint": "^8.20.0",
+    "eslint": "^8.21.0",
     "typescript": "^4.7.2"
   },
   "engines": {

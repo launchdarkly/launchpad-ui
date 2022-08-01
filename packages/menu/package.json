@@ -38,7 +38,7 @@
     "@launchpad-ui/tokens": "workspace:~",
     "@launchpad-ui/tooltip": "workspace:~",
     "@radix-ui/react-slot": "^1.0.0",
-    "@react-aria/focus": "^3.6.0",
+    "@react-aria/focus": "^3.7.0",
     "@react-aria/separator": "^3.2.0",
     "clsx": "^1.2.0",
     "lodash-es": "^4.17.21",
