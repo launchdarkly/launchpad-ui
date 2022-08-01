@@ -1,5 +1,17 @@
 # @launchpad-ui/navigation
 
+## 0.2.4
+
+### Patch Changes
+
+- [#237](https://github.com/launchdarkly/launchpad-ui/pull/237) [`d2d29a2`](https://github.com/launchdarkly/launchpad-ui/commit/d2d29a2489ab111511e98ce1036d419d97ffa0ed) Thanks [@Niznikr](https://github.com/Niznikr)! - Update `@react-aria` for smaller bundle sizes
+
+- Updated dependencies [[`d2d29a2`](https://github.com/launchdarkly/launchpad-ui/commit/d2d29a2489ab111511e98ce1036d419d97ffa0ed), [`8500c8c`](https://github.com/launchdarkly/launchpad-ui/commit/8500c8cea32760b9ca5abf5495045f29062d4c19)]:
+  - @launchpad-ui/menu@0.3.4
+  - @launchpad-ui/popover@0.5.4
+  - @launchpad-ui/dropdown@0.2.6
+  - @launchpad-ui/tooltip@0.3.6
+
 ## 0.2.3
 
 ### Patch Changes
