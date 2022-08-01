@@ -49,15 +49,8 @@ describe('CopyToClipboard', () => {
     expect(screen.queryByRole('tooltip')).toBeNull();
   });
 
-  it('does not show copy tooltip on hover', async () => {
-    render(createComponent({ shouldOnlyShowTooltipAfterCopy: true }));
-    const user = userEvent.setup();
-    await user.hover(screen.getByText('Copy content'));
-    expect(screen.queryByRole('tooltip')).toBeNull();
-  });
-
   it('shows the confirmation tooltip when clicked', async () => {
-    render(createComponent({ shouldOnlyShowTooltipAfterCopy: true }));
+    render(createComponent({}));
     const user = userEvent.setup();
     await user.click(screen.getByRole('button'));
     await waitFor(async () => {
