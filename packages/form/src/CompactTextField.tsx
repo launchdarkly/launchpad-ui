@@ -2,7 +2,6 @@ import type { TextFieldProps } from './TextField';
 import type { FocusEvent } from 'react';
 
 import cx from 'clsx';
-import { isBoolean } from 'lodash-es';
 import { forwardRef, useState } from 'react';
 
 import { Label } from './Label';
@@ -21,7 +20,7 @@ const CompactTextField = forwardRef<HTMLInputElement, CompactTextFieldProps>(
     ref
   ) => {
     const [isActive, setIsActive] = useState(
-      (isBoolean(value) || value ? value.toString() : '').trim().length !== 0
+      (typeof value === 'boolean' || value ? value.toString() : '').trim().length !== 0
     );
 
     const isActiveState = isActive || needsErrorFeedback;
