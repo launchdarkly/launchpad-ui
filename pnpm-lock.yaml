@@ -564,15 +564,11 @@ importers:
   packages/overlay:
     specifiers:
       '@launchpad-ui/modal': workspace:~
-      '@types/lodash-es': ^4.17.6
-      lodash-es: ^4.17.21
       react: ^18.2.0
       react-dom: ^18.2.0
     dependencies:
       '@launchpad-ui/modal': link:../modal
-      lodash-es: 4.17.21
     devDependencies:
-      '@types/lodash-es': 4.17.6
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
 
@@ -604,11 +600,9 @@ importers:
       '@launchpad-ui/overlay': workspace:~
       '@launchpad-ui/tokens': workspace:~
       '@react-aria/focus': ^3.7.0
-      '@types/lodash-es': ^4.17.6
       '@types/uuid': ^8.3.4
       clsx: ^1.2.0
       framer-motion: ^6.5.1
-      lodash-es: ^4.17.21
       react: ^18.2.0
       react-dom: ^18.2.0
       uuid: ^8.3.2
@@ -620,10 +614,8 @@ importers:
       '@react-aria/focus': 3.7.0_react@18.2.0
       clsx: 1.2.0
       framer-motion: 6.5.1_biqbaboplfbrettd7655fr4n2y
-      lodash-es: 4.17.21
       uuid: 8.3.2
     devDependencies:
-      '@types/lodash-es': 4.17.6
       '@types/uuid': 8.3.4
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0

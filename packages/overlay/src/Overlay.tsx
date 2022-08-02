@@ -1,7 +1,6 @@
 import type { KeyboardEvent } from 'react';
 
 import { Portal } from '@launchpad-ui/modal';
-import { isFunction, isNil } from 'lodash-es';
 import { useCallback, useEffect, useRef, useState } from 'react';
 
 type OverlayProps = {
@@ -29,15 +28,15 @@ const Overlay = ({
   const containerElement = useRef<HTMLDivElement>(null);
 
   const handleDocumentClick = useCallback(
-    (event: Event) => {
+    (event: MouseEvent) => {
       const eventTarget = event.target as Element;
       const wasClickInOverlay =
-        !isNil(containerElement.current) && containerElement.current.contains(eventTarget);
+        containerElement.current && containerElement.current.contains(eventTarget);
       // wasClickInBody accounts for clicks in portals within the popover, which are outside of the body and therefore not in the overlay
       const wasClickInBody = !!eventTarget.closest('body');
 
       if (isOpen && canOutsideClickClose && !wasClickInOverlay && wasClickInBody) {
-        isFunction(onClose) && onClose(event as unknown as React.MouseEvent);
+        typeof onClose === 'function' && onClose(event as unknown as React.MouseEvent);
       }
     },
     [canOutsideClickClose, isOpen, onClose]
@@ -45,7 +44,7 @@ const Overlay = ({
 
   const focusContainer = useCallback(() => {
     requestAnimationFrame(() => {
-      if (!isOpen || isNil(containerElement.current) || isNil(document.activeElement)) {
+      if (!isOpen || containerElement.current === null || document.activeElement === null) {
         return;
       }
 
@@ -56,9 +55,9 @@ const Overlay = ({
         const tabbableElement = containerElement.current.querySelector(
           '[tabindex]'
         ) as HTMLDivElement;
-        if (!isNil(autofocusElement)) {
+        if (autofocusElement) {
           autofocusElement.focus();
-        } else if (!isNil(tabbableElement)) {
+        } else if (tabbableElement) {
           tabbableElement.focus();
         }
       }
@@ -71,7 +70,7 @@ const Overlay = ({
 
       if (
         enforceFocus &&
-        !isNil(containerElement.current) &&
+        containerElement.current &&
         !containerElement.current.contains(eventTarget)
       ) {
         event.stopImmediatePropagation();
@@ -120,7 +119,7 @@ const Overlay = ({
 
   const handleKeyDown = (event: KeyboardEvent<HTMLInputElement>) => {
     if (canEscapeKeyClose && event.key === 'Escape') {
-      isFunction(onClose) && onClose(event);
+      typeof onClose === 'function' && onClose(event);
       event.preventDefault();
     }
   };
