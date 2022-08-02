@@ -5,7 +5,6 @@ import type { KeyboardEvent, ReactElement } from 'react';
 
 import { useFocusManager } from '@react-aria/focus';
 import cx from 'clsx';
-import { isNil, noop } from 'lodash-es';
 import { Children, cloneElement, useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { useVirtual } from 'react-virtual';
 import { v4 } from 'uuid';
@@ -121,8 +120,8 @@ const Menu = <T extends number | string>(props: MenuProps<T>) => {
               items: items.concat(
                 child.props.disabled
                   ? cloneElement(child, {
-                      onClick: noop,
-                      onKeyDown: noop,
+                      onClick: () => undefined,
+                      onKeyDown: () => undefined,
                       tabIndex: -1,
                       disabled: true,
                     })
@@ -231,7 +230,7 @@ const ItemVirtualizer = <T extends number | string>(props: ItemVirtualizerProps<
 
   const handleKeyboardFocusInteraction = useCallback(
     (direction: 'next' | 'previous') => {
-      if (isNil(focusedItemIndex.current)) {
+      if (focusedItemIndex.current === null || focusedItemIndex.current === undefined) {
         return;
       }
       const nextIndex =
@@ -276,7 +275,7 @@ const ItemVirtualizer = <T extends number | string>(props: ItemVirtualizerProps<
             className: cx(childProps.className, menuItemClassName),
             // set focus on the first menu item if there is no search input, and set in the tab order
             onKeyDown: childProps.disabled
-              ? noop
+              ? () => undefined
               : (e: KeyboardEvent) =>
                   handleKeyboardFocusKeydown(e, {
                     handleFocusBackward: handleKeyboardFocusInteraction,
@@ -290,7 +289,7 @@ const ItemVirtualizer = <T extends number | string>(props: ItemVirtualizerProps<
               focusedItemIndex.current = null;
             }),
             onClick: childProps.disabled
-              ? noop
+              ? () => undefined
               : chainEventHandlers(childProps.onClick, () => {
                   onSelect?.(childProps.item as T);
                 }),
