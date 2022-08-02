@@ -7,7 +7,6 @@ import { Overlay } from '@launchpad-ui/overlay';
 import { FocusScope } from '@react-aria/focus';
 import cx from 'clsx';
 import { LazyMotion, m } from 'framer-motion';
-import { isFunction, isNil } from 'lodash-es';
 import {
   Children,
   cloneElement,
@@ -125,7 +124,7 @@ const Popover = ({
   offset,
   targetElementRef,
 }: PopoverProps) => {
-  const [isOpen, setIsOpen] = useState(!isNil(isOpenProp) ? isOpenProp : undefined);
+  const [isOpen, setIsOpen] = useState(isOpenProp ?? undefined);
   const [popoverElement, setPopoverElement] = useState<HTMLElement | null>();
 
   const targetRef = useRef<HTMLElement>(null);
@@ -143,7 +142,7 @@ const Popover = ({
   const updatePosition = useCallback(async () => {
     const middleware = [];
 
-    if (isNil(popoverElement)) {
+    if (popoverElement === null || popoverElement === undefined) {
       return;
     }
 
@@ -236,7 +235,7 @@ const Popover = ({
 
   useEffect(() => {
     const updatePopover = async () => {
-      if (isOpen && !isNil(popoverElement)) {
+      if (isOpen && !(popoverElement === null || popoverElement === undefined)) {
         window.addEventListener('scroll', updatePosition, { passive: true });
         window.addEventListener('resize', updatePosition, { passive: true });
         await updatePosition();
@@ -309,14 +308,14 @@ const Popover = ({
       timeoutRef.current = setTimeout(() => setOpenState(nextIsOpen), timeout);
     } else {
       // controlled mode
-      if (isNil(isOpenProp)) {
+      if (isOpenProp === null || isOpenProp === undefined) {
         setIsOpen(nextIsOpen);
       } else {
-        isFunction(onInteraction) && onInteraction(nextIsOpen);
+        typeof onInteraction === 'function' && onInteraction(nextIsOpen);
       }
 
       if (!nextIsOpen) {
-        isFunction(onClose) && onClose();
+        typeof onClose === 'function' && onClose();
       }
     }
   };
@@ -328,8 +327,8 @@ const Popover = ({
     const [targetChild, contentChild] = Children.toArray(children);
 
     return {
-      target: isNil(targetChild) ? targetProp : targetChild,
-      content: isNil(contentChild) ? contentProp : contentChild,
+      target: targetChild ?? targetProp,
+      content: contentChild ?? contentProp,
     };
   };
 
@@ -408,7 +407,7 @@ const Popover = ({
   };
 
   const { target, content } = parseChildren();
-  const hasEmptyContent = isNil(content);
+  const hasEmptyContent = content === null || content === undefined;
   const isTargetDisabled = isValidElement(target) ? !!target?.props?.disabled : false;
 
   const targetProps: PopoverTargetProps = {
