@@ -4,7 +4,7 @@ import { Popover } from '@launchpad-ui/popover';
 import { it, expect, describe, vi } from 'vitest';
 
 import { render, screen, userEvent, waitFor } from '../../../test/utils';
-import { Menu, MenuDivider, MenuItem, MenuItemLink, MenuSearch } from '../src';
+import { Menu, MenuDivider, MenuItem, MenuItemLink, MenuSearch, MenuSize } from '../src';
 
 type TestMenu = {
   hideSearch?: boolean;
@@ -28,7 +28,7 @@ const createMenu = ({
 
 describe('Menu', () => {
   it('renders', () => {
-    render(createMenu());
+    render(createMenu({ size: MenuSize.SMALL }));
     expect(screen.getByRole('menu')).toBeInTheDocument();
   });
 

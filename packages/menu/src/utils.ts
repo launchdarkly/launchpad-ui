@@ -1,9 +1,4 @@
-import type { KeyboardEvent } from 'react';
-
-import { isFunction } from 'lodash-es';
-
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-type AnyFunction = (...args: any[]) => any;
+import type { EventHandler, KeyboardEvent, SyntheticEvent } from 'react';
 
 const createItemId = (index: number, id: string) => `${id}-item-${index}`;
 
@@ -29,10 +24,9 @@ const handleKeyboardInteractions = (
 };
 
 const chainEventHandlers =
-  (...handlers: Array<AnyFunction | undefined>) =>
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  (event: any) => {
-    handlers.forEach((h) => isFunction(h) && h(event));
+  (...handlers: Array<EventHandler<SyntheticEvent> | undefined>) =>
+  (event: SyntheticEvent) => {
+    handlers.forEach((h) => typeof h === 'function' && h(event));
   };
 
 export { createItemId, getNodeForIndex, handleKeyboardInteractions, chainEventHandlers };

@@ -448,10 +448,8 @@ importers:
       '@radix-ui/react-slot': ^1.0.0
       '@react-aria/focus': ^3.7.0
       '@react-aria/separator': ^3.2.0
-      '@types/lodash-es': ^4.17.6
       '@types/uuid': ^8.3.4
       clsx: ^1.2.0
-      lodash-es: ^4.17.21
       react: ^18.2.0
       react-dom: ^18.2.0
       react-router-dom: ^6.3.0
@@ -466,12 +464,10 @@ importers:
       '@react-aria/focus': 3.7.0_react@18.2.0
       '@react-aria/separator': 3.2.1_react@18.2.0
       clsx: 1.2.0
-      lodash-es: 4.17.21
       react-router-dom: 6.3.0_biqbaboplfbrettd7655fr4n2y
       react-virtual: 2.10.4_react@18.2.0
       uuid: 8.3.2
     devDependencies:
-      '@types/lodash-es': 4.17.6
       '@types/uuid': 8.3.4
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
