@@ -35,8 +35,10 @@
   "dependencies": {
     "@launchpad-ui/button": "workspace:~",
     "@launchpad-ui/dropdown": "workspace:~",
+    "@launchpad-ui/icons": "workspace:~",
     "@launchpad-ui/menu": "workspace:~",
     "@launchpad-ui/tokens": "workspace:~",
+    "@launchpad-ui/tooltip": "workspace:~",
     "@react-aria/utils": "^3.13.1",
     "@react-aria/visually-hidden": "^3.3.0",
     "clsx": "^1.2.0"

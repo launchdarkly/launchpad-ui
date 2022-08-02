@@ -368,8 +368,11 @@ importers:
   packages/filter:
     specifiers:
       '@launchpad-ui/button': workspace:~
+      '@launchpad-ui/dropdown': workspace:~
+      '@launchpad-ui/icons': workspace:~
       '@launchpad-ui/menu': workspace:~
       '@launchpad-ui/tokens': workspace:~
+      '@launchpad-ui/tooltip': workspace:~
       '@react-aria/utils': ^3.13.1
       '@react-aria/visually-hidden': ^3.3.0
       clsx: ^1.2.0
@@ -377,10 +380,13 @@ importers:
       react-dom: ^18.2.0
     dependencies:
       '@launchpad-ui/button': link:../button
+      '@launchpad-ui/dropdown': link:../dropdown
+      '@launchpad-ui/icons': link:../icons
       '@launchpad-ui/menu': link:../menu
       '@launchpad-ui/tokens': link:../tokens
+      '@launchpad-ui/tooltip': link:../tooltip
       '@react-aria/utils': 3.13.1_react@18.2.0
-      '@react-aria/visually-hidden': 3.3.1_react@18.2.0
+      '@react-aria/visually-hidden': 3.4.0_react@18.2.0
       clsx: 1.2.0
     devDependencies:
       react: 18.2.0
