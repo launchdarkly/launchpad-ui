@@ -1,8 +1,7 @@
-import type { ArgsStoryFn } from '@storybook/addons';
 import type { Args } from '@storybook/api';
 import type { StoryContext } from '@storybook/csf';
 // @ts-ignore
-import type { DecoratorFn, ReactFramework } from '@storybook/react';
+import type { DecoratorFn, ReactFramework, StoryFn } from '@storybook/react';
 import { Fragment } from 'react';
 import { cloneDeep } from 'lodash-es';
 
@@ -15,7 +14,7 @@ export const createWithClassesDecorator = (
   classes: string[] = [],
   renderFunc?: (
     props: Args & { className?: string },
-    originalStoryFn: ArgsStoryFn<React.ReactElement<unknown>>,
+    originalStoryFn: StoryFn<ReactFramework>,
     context: StoryContext<ReactFramework>
   ) => JSX.Element
 ): DecoratorFn => {
@@ -24,9 +23,7 @@ export const createWithClassesDecorator = (
     const pseudoStates = classes || [];
     const { viewMode, args, name, component } = Context;
     // This decorator is explicitly made for react
-    const originalStoryFn = Context.originalStoryFn as
-      | ArgsStoryFn<React.ReactElement<unknown>>
-      | undefined;
+    const originalStoryFn = Context.originalStoryFn;
     // Just render the component without decoration if viewing the docs
     if (viewMode === 'docs') {
       return storyFn();

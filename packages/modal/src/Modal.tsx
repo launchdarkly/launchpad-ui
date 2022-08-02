@@ -5,7 +5,6 @@ import { Close, IconSize } from '@launchpad-ui/icons';
 import { FocusScope } from '@react-aria/focus';
 import cx from 'clsx';
 import { LazyMotion, m } from 'framer-motion';
-import { defer } from 'lodash-es';
 import noScroll from 'no-scroll';
 import { useEffect, useRef } from 'react';
 
@@ -72,13 +71,13 @@ const Modal = ({
       onCancel && onCancel();
     };
 
-    defer(noScroll.on);
+    setTimeout(noScroll.on, 1);
     onReady && onReady();
     document.body.classList.add('has-modal');
     document.addEventListener('keydown', handleEscape);
 
     return () => {
-      defer(noScroll.off);
+      setTimeout(noScroll.off, 1);
       document.body.classList.remove('has-modal');
       document.removeEventListener('keydown', handleEscape);
     };
