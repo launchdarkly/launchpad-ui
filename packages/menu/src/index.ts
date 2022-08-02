@@ -4,10 +4,14 @@ export type { MenuItemProps, MenuItemLinkProps } from './MenuItem';
 export type { MenuItemListProps } from './MenuItemList';
 export type { MenuSearchProps } from './MenuSearch';
 export type { MenuProps } from './Menu';
+/* c8 ignore start */
 export { MenuBase } from './MenuBase';
+/* c8 ignore stop */
 export { MenuDivider } from './MenuDivider';
 export { MenuItem, MenuItemLink } from './MenuItem';
+/* c8 ignore start */
 export { MenuItemList } from './MenuItemList';
+/* c8 ignore stop */
 export { MenuSearch } from './MenuSearch';
 export { Menu } from './Menu';
 export { MenuSize } from './types';

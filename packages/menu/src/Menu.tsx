@@ -116,7 +116,6 @@ const Menu = <T extends number | string>(props: MenuProps<T>) => {
             };
           case MenuItem:
           case MenuItemLink:
-            /* c8 ignore start */
             return {
               items: items.concat(
                 child.props.disabled
@@ -142,7 +141,6 @@ const Menu = <T extends number | string>(props: MenuProps<T>) => {
               ),
               searchElement,
             };
-          /* c8 ignore stop */
           case MenuDivider:
             return { items: items.concat(child), searchElement };
           default:
@@ -273,7 +271,6 @@ const ItemVirtualizer = <T extends number | string>(props: ItemVirtualizerProps<
       switch (itemElem.type) {
         case MenuItem:
         case MenuItemLink:
-          /* c8 ignore start */
           return {
             className: cx(childProps.className, menuItemClassName),
             // set focus on the first menu item if there is no search input, and set in the tab order
@@ -297,7 +294,6 @@ const ItemVirtualizer = <T extends number | string>(props: ItemVirtualizerProps<
                   onSelect?.(childProps.item as T);
                 }),
           } as MenuItemProps<T>;
-        /* c8 ignore stop */
         default:
           return {};
       }
