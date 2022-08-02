@@ -31,5 +31,13 @@ export default defineConfig({
       statements: 80,
       exclude: ['**/*.spec.tsx', '**/test/'],
     },
+    /*
+     * An issue occurs when running all the unit tests with vitest
+     * See: https://github.com/vitest-dev/vitest/issues/1753
+     * TODO: remove the registerNodeLoader workaround when the issue has been resolved
+     */
+    deps: {
+      registerNodeLoader: false,
+    },
   },
 });
