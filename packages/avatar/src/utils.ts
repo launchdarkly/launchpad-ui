@@ -1,30 +1,16 @@
-import type { DependencyList } from 'react';
+import { useCallback, useEffect, useRef } from 'react';
 
-import { useCallback, useLayoutEffect, useRef } from 'react';
-
-const useCallbackIfMounted = <T extends Parameters<typeof useCallback>[0]>(
-  callback: T,
-  deps: DependencyList = []
-) => {
+const useIsMounted = () => {
   const isMounted = useRef(false);
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     isMounted.current = true;
-
     return () => {
       isMounted.current = false;
     };
   }, []);
 
-  return useCallback(
-    (...params: unknown[]) => {
-      if (isMounted.current) {
-        callback(...params);
-      }
-    },
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    [...deps, callback]
-  );
+  return useCallback(() => isMounted.current, []);
 };
 
-export { useCallbackIfMounted };
+export { useIsMounted };

@@ -2,10 +2,10 @@ import type { IconProps } from '@launchpad-ui/icons';
 
 import { IconDimension, IconSize } from '@launchpad-ui/icons';
 import cx from 'clsx';
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 
 import './styles/Avatar.css';
-import { useCallbackIfMounted } from './utils';
+import { useIsMounted } from './utils';
 
 type AvatarProps = {
   alt?: string;
@@ -22,6 +22,7 @@ const Avatar = ({
   className,
   size = IconSize.MEDIUM,
 }: AvatarProps) => {
+  const isMounted = useIsMounted();
   const [useDefaultAvatar, setUseDefaultAvatar] = useState(!url);
   const [imageSource, setImageSource] = useState('');
   const classes = cx(
@@ -32,22 +33,28 @@ const Avatar = ({
     className
   );
 
-  const processImageSource = useCallbackIfMounted(async (res: Response) => {
+  const processImageSource = useCallback(async (res: Response) => {
     if (res.status === 404 || res.headers.get('Content-type')?.includes('image/svg')) {
       setImageSource('');
     } else {
       const img = await res.blob();
       setImageSource(URL.createObjectURL(img));
     }
-  });
+  }, []);
 
   useEffect(() => {
     if (url) {
-      fetch(url).then(processImageSource).catch();
+      fetch(url)
+        .then((res) => {
+          if (isMounted()) {
+            processImageSource(res);
+          }
+        })
+        .catch();
     } else {
       setImageSource('');
     }
-  }, [url, processImageSource]);
+  }, [url, processImageSource, isMounted]);
 
   if (useDefaultAvatar || !imageSource) {
     return <DefaultIcon className={classes} size={size} />;
