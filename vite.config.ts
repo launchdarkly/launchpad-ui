@@ -31,5 +31,8 @@ export default defineConfig({
       statements: 80,
       exclude: ['**/*.spec.tsx', '**/test/'],
     },
+    deps: {
+      registerNodeLoader: false,
+    },
   },
 });
