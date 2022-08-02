@@ -158,3 +158,23 @@ export const WithoutName: Story = {
     className: 'u-xs-mw5',
   },
 };
+
+export const WithAllMenuOptionVariants: Story = {
+  args: {
+    searchValue: '',
+    searchPlaceholder: 'filter here',
+    onSearchChange: () => undefined,
+    isClearable: false,
+    onClear: () => undefined,
+    className: 'u-xs-mw5',
+    name: 'Author',
+    description: 'Osmo',
+    disabledOptionTooltip: 'tooltip for disabled options',
+    options: [
+      { name: 'Mickey Mouse', value: 'mickey', isDisabled: true },
+      { value: '', isDivider: true },
+      { name: 'Osmo', value: 'osmo', isChecked: true },
+      { name: 'Pluto', value: 'pluto' },
+    ],
+  },
+};
