@@ -10,7 +10,7 @@ import { FilterMenu } from './FilterMenu';
 
 const SEARCH_INPUT_THRESHOLD = 4;
 
-type FilterProps = Pick<MenuProps<string>, 'menuWidth' | 'enableVirtualization'> & {
+type FilterProps = Pick<MenuProps<string>, 'size' | 'enableVirtualization'> & {
   searchValue?: string;
   onSearchChange?(event: React.ChangeEvent<HTMLInputElement>): void;
   searchPlaceholder?: string;
@@ -50,7 +50,7 @@ const Filter = ({
   onClickFilterButton,
   disabledOptionTooltip,
   testId,
-  menuWidth,
+  size,
   enableVirtualization,
   ...props
 }: FilterProps) => {
@@ -86,7 +86,7 @@ const Filter = ({
         onSearchChange={onSearchChange}
         isLoading={isLoading}
         disabledOptionTooltip={disabledOptionTooltip}
-        menuWidth={menuWidth}
+        size={size}
         enableVirtualization={enableVirtualization}
       />
     </Dropdown>
