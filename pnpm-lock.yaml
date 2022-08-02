@@ -475,11 +475,9 @@ importers:
       '@launchpad-ui/progress': workspace:~
       '@launchpad-ui/tokens': workspace:~
       '@react-aria/focus': ^3.7.0
-      '@types/lodash-es': ^4.17.6
       '@types/no-scroll': ^2.1.0
       clsx: ^1.2.0
       framer-motion: ^6.5.1
-      lodash-es: ^4.17.21
       no-scroll: ^2.1.1
       react: ^18.2.0
       react-dom: ^18.2.0
@@ -491,10 +489,8 @@ importers:
       '@react-aria/focus': 3.7.0_react@18.2.0
       clsx: 1.2.0
       framer-motion: 6.5.1_biqbaboplfbrettd7655fr4n2y
-      lodash-es: 4.17.21
       no-scroll: 2.1.1
     devDependencies:
-      '@types/lodash-es': 4.17.6
       '@types/no-scroll': 2.1.0
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
