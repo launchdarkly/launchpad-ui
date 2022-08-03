@@ -1,5 +1,17 @@
 # @launchpad-ui/core
 
+## 0.6.0
+
+### Minor Changes
+
+- [#248](https://github.com/launchdarkly/launchpad-ui/pull/248) [`acea794`](https://github.com/launchdarkly/launchpad-ui/commit/acea79446ead1ea50e6ae5c38c4aac1d34e86c8d) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Clipboard] Remove testId from CopyToClipboard and improve focus state styling
+
+### Patch Changes
+
+- Updated dependencies [[`acea794`](https://github.com/launchdarkly/launchpad-ui/commit/acea79446ead1ea50e6ae5c38c4aac1d34e86c8d)]:
+  - @launchpad-ui/clipboard@0.4.0
+  - @launchpad-ui/notification@0.2.12
+
 ## 0.5.2
 
 ### Patch Changes

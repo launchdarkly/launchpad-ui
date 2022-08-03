@@ -1,5 +1,11 @@
 # @launchpad-ui/clipboard
 
+## 0.4.0
+
+### Minor Changes
+
+- [#248](https://github.com/launchdarkly/launchpad-ui/pull/248) [`acea794`](https://github.com/launchdarkly/launchpad-ui/commit/acea79446ead1ea50e6ae5c38c4aac1d34e86c8d) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Clipboard] Remove testId from CopyToClipboard and improve focus state styling
+
 ## 0.3.2
 
 ### Patch Changes
