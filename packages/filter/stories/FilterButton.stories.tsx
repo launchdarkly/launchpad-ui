@@ -5,7 +5,8 @@ import { FilterButton } from '../src';
 export default {
   component: FilterButton,
   title: 'Components/Filter/FilterButton',
-  description: 'filter a list of results',
+  description:
+    "When the Filter component doesn't suffice, construct your own custom filter using the FilterButton.",
   parameters: {
     status: {
       type: process.env.PACKAGE_STATUS__FILTER,
@@ -17,20 +18,39 @@ type Story = ComponentStoryObj<typeof FilterButton>;
 
 export const Basic: Story = {
   args: {
-    name: 'Filter by Name',
+    name: 'Author',
+    children: 'Osmo',
   },
 };
 
-export const IconOnly: Story = {
+export const WithDescriptionOnly: Story = {
   args: {
-    name: 'Filter by Name',
+    name: 'Author',
+    hideName: true,
+    children: 'Osmo',
+  },
+};
+
+export const WithIconOnly: Story = {
+  args: {
+    name: 'Author',
     hideName: true,
   },
 };
 
-export const Clearable: Story = {
+export const WithClearButton: Story = {
   args: {
-    name: 'Filter by Name',
+    name: 'Author',
+    children: 'Osmo',
     isClearable: true,
+  },
+};
+
+export const WithClearButtonCustomTooltip: Story = {
+  args: {
+    name: 'Author',
+    children: 'Osmo',
+    isClearable: true,
+    clearTooltip: <span>custom message goes here</span>,
   },
 };
