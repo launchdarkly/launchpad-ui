@@ -3,6 +3,7 @@ import type { RefObject } from 'react';
 import cx from 'clsx';
 import DOMPurify from 'isomorphic-dompurify';
 
+import './styles/Markdown.css';
 import { isAnchorNode, renderMarkdown } from './utils';
 
 DOMPurify.addHook('afterSanitizeAttributes', (node) => {

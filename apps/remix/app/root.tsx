@@ -23,6 +23,7 @@ import counterStyles from '@launchpad-ui/core/styles/counter.css';
 import formStyles from '@launchpad-ui/core/styles/form.css';
 import iconStyles from '@launchpad-ui/core/styles/icons.css';
 import lozengeStyles from '@launchpad-ui/core/styles/lozenge.css';
+import markdownStyles from '@launchpad-ui/core/styles/markdown.css';
 import menuStyles from '@launchpad-ui/core/styles/menu.css';
 import modalStyles from '@launchpad-ui/core/styles/modal.css';
 import navigationStyles from '@launchpad-ui/core/styles/navigation.css';
@@ -66,6 +67,7 @@ export const links: LinksFunction = () => {
     { rel: 'stylesheet', href: tableStyles },
     { rel: 'stylesheet', href: paginationStyles },
     { rel: 'stylesheet', href: splitButtonStyles },
+    { rel: 'stylesheet', href: markdownStyles },
   ];
 };
 

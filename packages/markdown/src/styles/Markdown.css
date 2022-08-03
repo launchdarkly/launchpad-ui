@@ -1,0 +1,26 @@
+.Markdown {
+  margin-top: 0.5rem;
+}
+
+.Markdown ol,
+.Markdown ul {
+  padding-left: 2rem;
+}
+
+.Markdown ul li + li,
+.Markdown ol li + li,
+.Markdown > * :not(:first-child) {
+  margin-top: 0.2rem;
+}
+
+.Markdown > p {
+  word-break: normal;
+}
+
+.Markdown p + p {
+  padding-top: 1.5rem;
+}
+
+.Markdown blockquote {
+  line-height: 2;
+}
