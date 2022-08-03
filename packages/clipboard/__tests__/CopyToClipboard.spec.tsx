@@ -95,13 +95,20 @@ describe('CopyToClipboard', () => {
 
   it('renders a button when asChild is false', async () => {
     render(createComponent({}));
-    const trigger = screen.getByTestId('copyToClipboardTrigger');
+    const trigger = screen.getByRole('button');
     expect(trigger.tagName).toBe('BUTTON');
   });
 
   it('renders as child when asChild is true', async () => {
     render(createComponent({ asChild: true, children: <span>click me</span> }));
-    const trigger = screen.getByTestId('copyToClipboardTrigger');
+    const trigger = screen.getByRole('button');
     expect(trigger.tagName).toBe('SPAN');
+  });
+
+  it('merges classNames when asChild is true', async () => {
+    render(createComponent({ asChild: true, children: <span className="testing">click me</span> }));
+    const trigger = screen.getByRole('button');
+    expect(trigger).toHaveClass('testing');
+    expect(trigger).toHaveClass('CopyToClipboard-trigger');
   });
 });

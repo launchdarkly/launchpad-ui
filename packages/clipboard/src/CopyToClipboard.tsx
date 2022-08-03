@@ -18,6 +18,7 @@ type CopyToClipboardProps = {
   tooltip?: string | JSX.Element;
   tooltipOptions?: object;
   popoverTargetClassName?: string;
+  shouldOnlyShowTooltipAfterCopy?: boolean;
   onClick?(): void;
   asChild?: boolean;
 };
@@ -46,6 +47,7 @@ const CopyToClipboard = forwardRef<CopyToClipboardHandleRef, CopyToClipboardProp
       children,
       ariaLabel,
       testId,
+      shouldOnlyShowTooltipAfterCopy,
       onClick,
       asChild,
     },
@@ -86,9 +88,21 @@ const CopyToClipboard = forwardRef<CopyToClipboardHandleRef, CopyToClipboardProp
     const ariaLabelText = ariaLabel ? ariaLabel : `Copy ${text} to your clipboard.`;
     const testIdOrFallback = testId ? testId : 'temp-test-id';
 
+    const handleFocus = () => {
+      if (!shouldOnlyShowTooltipAfterCopy) {
+        setIsOpen(true);
+      }
+    };
+
+    const handleBlur = () => {
+      setIsOpen(false);
+      setWasCopied(false);
+    };
+
+    // This is only triggered when hovering over it
     const handleInteraction = (isOpen: boolean) => {
-      setIsOpen(isOpen);
-      setTimeout(() => setWasCopied((prev) => (!isOpen ? isOpen : prev)));
+      setIsOpen(shouldOnlyShowTooltipAfterCopy ? false : isOpen);
+      setWasCopied((prev) => (!isOpen ? isOpen : prev));
     };
 
     const handleKeyDown: KeyboardEventHandler<HTMLElement> = (event) => {
@@ -112,14 +126,15 @@ const CopyToClipboard = forwardRef<CopyToClipboardHandleRef, CopyToClipboardProp
           targetClassName={popoverTargetClassName}
         >
           <Component
+            onBlur={handleBlur}
+            onFocus={handleFocus}
             onClick={handleCopy}
             onKeyDown={handleKeyDown}
             size={ButtonSize.TINY}
             ref={buttonRef}
             aria-label={ariaLabelText}
-            data-test-id="copyToClipboardTrigger"
-            testId="copyToClipboardTrigger"
             role="button"
+            className="CopyToClipboard-trigger"
             tabIndex={0}
           >
             {children}
