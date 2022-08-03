@@ -1,17 +1,15 @@
 import type { FilterButtonProps } from '../src/FilterButton';
 
-import { it, expect, describe } from 'vitest';
+import { it, expect, describe, vi } from 'vitest';
 
 import { render, screen, userEvent, waitFor } from '../../../test/utils';
 import { FilterButton } from '../src/FilterButton';
 
-const createComponent = ({ children, ...rest }: Partial<FilterButtonProps>) => {
-  return (
-    <FilterButton name="author" {...rest}>
-      {children}
-    </FilterButton>
-  );
-};
+const createComponent = ({ children, ...rest }: Partial<FilterButtonProps>) => (
+  <FilterButton name="author" {...rest}>
+    {children}
+  </FilterButton>
+);
 
 describe('FilterButton', () => {
   it('should render name and description', () => {
@@ -34,6 +32,13 @@ describe('FilterButton', () => {
   it('should render ExpandMore icon if isClearable is false', () => {
     render(createComponent({ isClearable: false }));
     expect(screen.getByRole('img', { hidden: true })).toBeVisible();
+  });
+
+  it('fires onClickFilterButton on click', async () => {
+    const spy = vi.fn();
+    render(createComponent({ onClickFilterButton: spy }));
+    await userEvent.click(screen.getByRole('button'));
+    expect(spy).toHaveBeenCalled();
   });
 
   describe('clear button', () => {
@@ -62,6 +67,13 @@ describe('FilterButton', () => {
       await waitFor(() => {
         expect(screen.getByText('Bananas')).toBeInTheDocument();
       });
+    });
+
+    it('fires onClear on click', async () => {
+      const spy = vi.fn();
+      render(createComponent({ isClearable: true, onClear: spy }));
+      await userEvent.click(screen.getByRole('button', { name: '' }));
+      expect(spy).toHaveBeenCalled();
     });
   });
 });

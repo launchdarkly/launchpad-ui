@@ -33,19 +33,23 @@ const getClearButton = () => screen.queryByRole('button', { name: 'CLEAR FILTER'
 describe('FilterMenu', () => {
   it('should create unchecked, named menu items and dividers', () => {
     render(createComponent({ options: twoOptions }));
-    expect(screen.getByText('one')).toBeVisible();
-    expect(screen.getByText('one')).not.toBeChecked();
+    expect(screen.getByRole('menuitemradio', { name: 'one' })).toBeVisible();
+    expect(screen.getByRole('menuitemradio', { name: 'one' })).not.toBeChecked();
 
-    expect(screen.getByText('two')).toBeVisible();
-    expect(screen.getByText('two')).not.toBeChecked();
+    expect(screen.getByRole('menuitemradio', { name: 'two' })).toBeVisible();
+    expect(screen.getByRole('menuitemradio', { name: 'two' })).not.toBeChecked();
 
-    expect(screen.getByText('two').parentElement?.querySelector('div.Menu-divider')).toBeVisible();
+    expect(
+      screen
+        .getByRole('menuitemradio', { name: 'two' })
+        .parentElement?.querySelector('div.Menu-divider')
+    ).toBeVisible();
   });
 
   it('should create checked menu items', () => {
     const checkedOptions = [{ name: 'one', value: 1, isChecked: true }];
     render(createComponent({ options: checkedOptions }));
-    expect(screen.getByText('one')).toBeChecked();
+    expect(screen.getByRole('menuitemradio', { name: 'one' })).toBeChecked();
   });
 
   it('should display a tooltip on a disabled menu item when a title is provided', async () => {
@@ -53,7 +57,7 @@ describe('FilterMenu', () => {
     const props = { options: disabledOptions, disabledOptionTooltip: 'disabled tooltip' };
 
     render(createComponent(props));
-    await userEvent.hover(screen.getByText('one'));
+    await userEvent.hover(screen.getByRole('menuitemradio', { name: 'one' }));
 
     await waitFor(() => {
       expect(screen.getByText('disabled tooltip')).toBeInTheDocument();
@@ -62,7 +66,7 @@ describe('FilterMenu', () => {
 
   it('should display a search field when enableSearch is true', () => {
     render(createComponent({ enableSearch: true, options: oneOption }));
-    expect(screen.getByLabelText('Search', { selector: 'input' })).toBeVisible();
+    expect(screen.getByRole('searchbox', { name: 'Search' })).toBeVisible();
   });
 
   it('should display a disabled loading menu item when isLoading is true', () => {
