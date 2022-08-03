@@ -26,11 +26,6 @@
   cursor: pointer;
 }
 
-.CopyToClipboard-trigger:hover,
-.CopyToClipboard-trigger:focus {
-  background-color: var(--color-background-hover);
-}
-
 .CopyToClipboard-trigger:focus {
   outline: 0;
   box-shadow: 0 0 0 2px var(--color-white), 0 0 0 4px var(--color-focus);
