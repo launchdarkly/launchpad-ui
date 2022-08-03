@@ -1,5 +1,11 @@
 # @launchpad-ui/button
 
+## 0.3.1
+
+### Patch Changes
+
+- [#239](https://github.com/launchdarkly/launchpad-ui/pull/239) [`6bbb5e9`](https://github.com/launchdarkly/launchpad-ui/commit/6bbb5e9713180d76c6ff2cc6c3fd6b2c4f2a449c) Thanks [@Niznikr](https://github.com/Niznikr)! - [Button] Update forwarded ref type to `HTMLButtonElement | HTMLAnchorElement`
+
 ## 0.3.0
 
 ### Minor Changes

@@ -1,5 +1,18 @@
 # @launchpad-ui/popover
 
+## 0.5.5
+
+### Patch Changes
+
+- [#242](https://github.com/launchdarkly/launchpad-ui/pull/242) [`532cbe4`](https://github.com/launchdarkly/launchpad-ui/commit/532cbe4ecb0a41f4eef3725a2ccfacf7d6586011) Thanks [@Niznikr](https://github.com/Niznikr)! - [Overlay, Popover] Remove lodash
+
+* [#235](https://github.com/launchdarkly/launchpad-ui/pull/235) [`e5e01c2`](https://github.com/launchdarkly/launchpad-ui/commit/e5e01c26a4d20686489aac7d2106b939d5071037) Thanks [@Niznikr](https://github.com/Niznikr)! - [Popover] Update to functional component:
+
+  - [Clipboard] Remove unused prop `shouldOnlyShowTooltipAfterCopy`
+
+* Updated dependencies [[`532cbe4`](https://github.com/launchdarkly/launchpad-ui/commit/532cbe4ecb0a41f4eef3725a2ccfacf7d6586011)]:
+  - @launchpad-ui/overlay@0.1.17
+
 ## 0.5.4
 
 ### Patch Changes

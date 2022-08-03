@@ -1,5 +1,15 @@
 # @launchpad-ui/modal
 
+## 0.5.5
+
+### Patch Changes
+
+- [#244](https://github.com/launchdarkly/launchpad-ui/pull/244) [`f2c8830`](https://github.com/launchdarkly/launchpad-ui/commit/f2c88303271c7503be33511ed620e53dd0ebef00) Thanks [@Niznikr](https://github.com/Niznikr)! - [Modal] Remove lodash
+
+- Updated dependencies [[`6bbb5e9`](https://github.com/launchdarkly/launchpad-ui/commit/6bbb5e9713180d76c6ff2cc6c3fd6b2c4f2a449c), [`3d1d8c8`](https://github.com/launchdarkly/launchpad-ui/commit/3d1d8c8ebb855c1263f4ffd5b766fda9aa134ddc)]:
+  - @launchpad-ui/button@0.3.1
+  - @launchpad-ui/progress@0.2.2
+
 ## 0.5.4
 
 ### Patch Changes

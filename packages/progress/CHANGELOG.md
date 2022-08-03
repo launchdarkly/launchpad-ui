@@ -1,5 +1,11 @@
 # @launchpad-ui/progress
 
+## 0.2.2
+
+### Patch Changes
+
+- [#246](https://github.com/launchdarkly/launchpad-ui/pull/246) [`3d1d8c8`](https://github.com/launchdarkly/launchpad-ui/commit/3d1d8c8ebb855c1263f4ffd5b766fda9aa134ddc) Thanks [@Niznikr](https://github.com/Niznikr)! - [Progress] Remove lodash
+
 ## 0.2.1
 
 ### Patch Changes

@@ -1,5 +1,17 @@
 # @launchpad-ui/clipboard
 
+## 0.3.2
+
+### Patch Changes
+
+- [#235](https://github.com/launchdarkly/launchpad-ui/pull/235) [`e5e01c2`](https://github.com/launchdarkly/launchpad-ui/commit/e5e01c26a4d20686489aac7d2106b939d5071037) Thanks [@Niznikr](https://github.com/Niznikr)! - [Popover] Update to functional component:
+
+  - [Clipboard] Remove unused prop `shouldOnlyShowTooltipAfterCopy`
+
+- Updated dependencies [[`6bbb5e9`](https://github.com/launchdarkly/launchpad-ui/commit/6bbb5e9713180d76c6ff2cc6c3fd6b2c4f2a449c)]:
+  - @launchpad-ui/button@0.3.1
+  - @launchpad-ui/tooltip@0.3.7
+
 ## 0.3.1
 
 ### Patch Changes

@@ -1,5 +1,15 @@
 # @launchpad-ui/menu
 
+## 0.3.5
+
+### Patch Changes
+
+- [#241](https://github.com/launchdarkly/launchpad-ui/pull/241) [`58d91e4`](https://github.com/launchdarkly/launchpad-ui/commit/58d91e4e9606bc509f0cb9dfa68a0203df70b97c) Thanks [@Niznikr](https://github.com/Niznikr)! - [Menu] Remove lodash
+
+- Updated dependencies [[`532cbe4`](https://github.com/launchdarkly/launchpad-ui/commit/532cbe4ecb0a41f4eef3725a2ccfacf7d6586011), [`e5e01c2`](https://github.com/launchdarkly/launchpad-ui/commit/e5e01c26a4d20686489aac7d2106b939d5071037)]:
+  - @launchpad-ui/popover@0.5.5
+  - @launchpad-ui/tooltip@0.3.7
+
 ## 0.3.4
 
 ### Patch Changes
