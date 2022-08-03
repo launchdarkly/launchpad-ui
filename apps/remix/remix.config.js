@@ -7,5 +7,5 @@ module.exports = {
   assetsBuildDirectory: 'public/build',
   serverBuildPath: 'build/index.js',
   publicPath: '/build/',
-  serverDependenciesToBundle: [/^@launchpad-ui.*/, 'lodash-es', 'camelcase'],
+  serverDependenciesToBundle: [/^@launchpad-ui.*/, 'camelcase'],
 };
