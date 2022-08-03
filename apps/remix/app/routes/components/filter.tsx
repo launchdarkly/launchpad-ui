@@ -1,5 +1,5 @@
 import { Filter } from '@launchpad-ui/core';
 
 export default function Index() {
-  return <Filter>A lovely Filter component.</Filter>;
+  return <Filter name="author" description="osmo" options={[]} />;
 }

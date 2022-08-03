@@ -57,7 +57,7 @@ const Filter = ({
   const enableSearch =
     onSearchChange && (!!searchValue || options.length > SEARCH_INPUT_THRESHOLD || !isEmpty);
 
-  const dropdownClasses = cx('Filter-target', className);
+  const dropdownClasses = cx('Filter', 'Filter-target', className);
 
   const handleClear = (event: SyntheticEvent) => {
     event.preventDefault();
