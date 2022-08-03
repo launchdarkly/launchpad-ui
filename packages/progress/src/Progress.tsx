@@ -1,5 +1,4 @@
 import cx from 'clsx';
-import { clamp } from 'lodash-es';
 
 import { DelayedIndicator } from './DelayedIndicator';
 import './styles/Progress.css';
@@ -16,6 +15,9 @@ type ProgressProps = {
   className?: string;
   delayMs?: number;
 };
+
+const clamp = (number: number, lower: number, upper?: number) =>
+  upper ? Math.min(Math.max(number, lower), upper) : Math.min(number, lower);
 
 const Progress = ({ value, size = ProgressSize.Small, className, delayMs = 0 }: ProgressProps) => {
   const dimensions = {

@@ -34,15 +34,13 @@
   },
   "dependencies": {
     "@launchpad-ui/tokens": "workspace:~",
-    "clsx": "^1.2.0",
-    "lodash-es": "^4.17.21"
+    "clsx": "^1.2.0"
   },
   "peerDependencies": {
     "react": "^16.8.0 || ^17.0.0 || ^18.0.0",
     "react-dom": "^16.8.0 || ^17.0.0 || ^18.0.0"
   },
   "devDependencies": {
-    "@types/lodash-es": "^4.17.6",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   }
