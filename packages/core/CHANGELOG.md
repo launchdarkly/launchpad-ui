@@ -1,5 +1,52 @@
 # @launchpad-ui/core
 
+## 0.5.2
+
+### Patch Changes
+
+- [#239](https://github.com/launchdarkly/launchpad-ui/pull/239) [`6bbb5e9`](https://github.com/launchdarkly/launchpad-ui/commit/6bbb5e9713180d76c6ff2cc6c3fd6b2c4f2a449c) Thanks [@Niznikr](https://github.com/Niznikr)! - [Button] Update forwarded ref type to `HTMLButtonElement | HTMLAnchorElement`
+
+* [#240](https://github.com/launchdarkly/launchpad-ui/pull/240) [`2147008`](https://github.com/launchdarkly/launchpad-ui/commit/21470088fad06b658d2dbe44b2b10055ae56989e) Thanks [@Niznikr](https://github.com/Niznikr)! - [Avatar]: Simplify mounted hook util
+
+- [#246](https://github.com/launchdarkly/launchpad-ui/pull/246) [`3d1d8c8`](https://github.com/launchdarkly/launchpad-ui/commit/3d1d8c8ebb855c1263f4ffd5b766fda9aa134ddc) Thanks [@Niznikr](https://github.com/Niznikr)! - [Progress] Remove lodash
+
+* [#247](https://github.com/launchdarkly/launchpad-ui/pull/247) [`f7252c0`](https://github.com/launchdarkly/launchpad-ui/commit/f7252c0eccf670ba30f16dcef1e89600ab6e03e6) Thanks [@Niznikr](https://github.com/Niznikr)! - [Markdown] Add styles
+
+- [#242](https://github.com/launchdarkly/launchpad-ui/pull/242) [`532cbe4`](https://github.com/launchdarkly/launchpad-ui/commit/532cbe4ecb0a41f4eef3725a2ccfacf7d6586011) Thanks [@Niznikr](https://github.com/Niznikr)! - [Overlay, Popover] Remove lodash
+
+* [#244](https://github.com/launchdarkly/launchpad-ui/pull/244) [`f2c8830`](https://github.com/launchdarkly/launchpad-ui/commit/f2c88303271c7503be33511ed620e53dd0ebef00) Thanks [@Niznikr](https://github.com/Niznikr)! - [Modal] Remove lodash
+
+- [#235](https://github.com/launchdarkly/launchpad-ui/pull/235) [`e5e01c2`](https://github.com/launchdarkly/launchpad-ui/commit/e5e01c26a4d20686489aac7d2106b939d5071037) Thanks [@Niznikr](https://github.com/Niznikr)! - [Popover] Update to functional component:
+
+  - [Clipboard] Remove unused prop `shouldOnlyShowTooltipAfterCopy`
+
+* [#236](https://github.com/launchdarkly/launchpad-ui/pull/236) [`3856df8`](https://github.com/launchdarkly/launchpad-ui/commit/3856df872ead9ab8eaf6095bbad55b95b85288f0) Thanks [@Niznikr](https://github.com/Niznikr)! - [Notification] Correct timeout logic in hooks
+
+- [#243](https://github.com/launchdarkly/launchpad-ui/pull/243) [`1835250`](https://github.com/launchdarkly/launchpad-ui/commit/1835250f2a851b6478c749ec17f5a8fbb0ac0b0c) Thanks [@Niznikr](https://github.com/Niznikr)! - [Form] Remove lodash
+
+* [#241](https://github.com/launchdarkly/launchpad-ui/pull/241) [`58d91e4`](https://github.com/launchdarkly/launchpad-ui/commit/58d91e4e9606bc509f0cb9dfa68a0203df70b97c) Thanks [@Niznikr](https://github.com/Niznikr)! - [Menu] Remove lodash
+
+* Updated dependencies [[`6bbb5e9`](https://github.com/launchdarkly/launchpad-ui/commit/6bbb5e9713180d76c6ff2cc6c3fd6b2c4f2a449c), [`2147008`](https://github.com/launchdarkly/launchpad-ui/commit/21470088fad06b658d2dbe44b2b10055ae56989e), [`3d1d8c8`](https://github.com/launchdarkly/launchpad-ui/commit/3d1d8c8ebb855c1263f4ffd5b766fda9aa134ddc), [`f7252c0`](https://github.com/launchdarkly/launchpad-ui/commit/f7252c0eccf670ba30f16dcef1e89600ab6e03e6), [`532cbe4`](https://github.com/launchdarkly/launchpad-ui/commit/532cbe4ecb0a41f4eef3725a2ccfacf7d6586011), [`f2c8830`](https://github.com/launchdarkly/launchpad-ui/commit/f2c88303271c7503be33511ed620e53dd0ebef00), [`e5e01c2`](https://github.com/launchdarkly/launchpad-ui/commit/e5e01c26a4d20686489aac7d2106b939d5071037), [`3856df8`](https://github.com/launchdarkly/launchpad-ui/commit/3856df872ead9ab8eaf6095bbad55b95b85288f0), [`1835250`](https://github.com/launchdarkly/launchpad-ui/commit/1835250f2a851b6478c749ec17f5a8fbb0ac0b0c), [`58d91e4`](https://github.com/launchdarkly/launchpad-ui/commit/58d91e4e9606bc509f0cb9dfa68a0203df70b97c)]:
+  - @launchpad-ui/button@0.3.1
+  - @launchpad-ui/dropdown@0.2.7
+  - @launchpad-ui/split-button@0.1.3
+  - @launchpad-ui/avatar@0.1.2
+  - @launchpad-ui/progress@0.2.2
+  - @launchpad-ui/markdown@0.1.1
+  - @launchpad-ui/overlay@0.1.17
+  - @launchpad-ui/popover@0.5.5
+  - @launchpad-ui/modal@0.5.5
+  - @launchpad-ui/clipboard@0.3.2
+  - @launchpad-ui/notification@0.2.11
+  - @launchpad-ui/form@0.2.8
+  - @launchpad-ui/menu@0.3.5
+  - @launchpad-ui/alert@0.1.16
+  - @launchpad-ui/banner@0.2.8
+  - @launchpad-ui/pagination@0.0.6
+  - @launchpad-ui/navigation@0.2.5
+  - @launchpad-ui/progress-bubbles@0.2.7
+  - @launchpad-ui/tooltip@0.3.7
+
 ## 0.5.1
 
 ### Patch Changes

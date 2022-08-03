@@ -1,5 +1,14 @@
 # @launchpad-ui/overlay
 
+## 0.1.17
+
+### Patch Changes
+
+- [#242](https://github.com/launchdarkly/launchpad-ui/pull/242) [`532cbe4`](https://github.com/launchdarkly/launchpad-ui/commit/532cbe4ecb0a41f4eef3725a2ccfacf7d6586011) Thanks [@Niznikr](https://github.com/Niznikr)! - [Overlay, Popover] Remove lodash
+
+- Updated dependencies [[`f2c8830`](https://github.com/launchdarkly/launchpad-ui/commit/f2c88303271c7503be33511ed620e53dd0ebef00)]:
+  - @launchpad-ui/modal@0.5.5
+
 ## 0.1.16
 
 ### Patch Changes

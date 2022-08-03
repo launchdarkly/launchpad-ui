@@ -1,6 +1,6 @@
 {
   "name": "@launchpad-ui/dropdown",
-  "version": "0.2.6",
+  "version": "0.2.7",
   "status": "beta",
   "publishConfig": {
     "access": "public"

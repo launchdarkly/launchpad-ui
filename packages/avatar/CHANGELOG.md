@@ -1,5 +1,11 @@
 # @launchpad-ui/avatar
 
+## 0.1.2
+
+### Patch Changes
+
+- [#240](https://github.com/launchdarkly/launchpad-ui/pull/240) [`2147008`](https://github.com/launchdarkly/launchpad-ui/commit/21470088fad06b658d2dbe44b2b10055ae56989e) Thanks [@Niznikr](https://github.com/Niznikr)! - [Avatar]: Simplify mounted hook util
+
 ## 0.1.1
 
 ### Patch Changes

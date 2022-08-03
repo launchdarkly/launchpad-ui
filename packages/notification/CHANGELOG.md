@@ -1,5 +1,15 @@
 # @launchpad-ui/notification
 
+## 0.2.11
+
+### Patch Changes
+
+- [#236](https://github.com/launchdarkly/launchpad-ui/pull/236) [`3856df8`](https://github.com/launchdarkly/launchpad-ui/commit/3856df872ead9ab8eaf6095bbad55b95b85288f0) Thanks [@Niznikr](https://github.com/Niznikr)! - [Notification] Correct timeout logic in hooks
+
+- Updated dependencies [[`6bbb5e9`](https://github.com/launchdarkly/launchpad-ui/commit/6bbb5e9713180d76c6ff2cc6c3fd6b2c4f2a449c), [`e5e01c2`](https://github.com/launchdarkly/launchpad-ui/commit/e5e01c26a4d20686489aac7d2106b939d5071037)]:
+  - @launchpad-ui/button@0.3.1
+  - @launchpad-ui/clipboard@0.3.2
+
 ## 0.2.10
 
 ### Patch Changes

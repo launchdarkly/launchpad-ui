@@ -1,5 +1,11 @@
 # @launchpad-ui/form
 
+## 0.2.8
+
+### Patch Changes
+
+- [#243](https://github.com/launchdarkly/launchpad-ui/pull/243) [`1835250`](https://github.com/launchdarkly/launchpad-ui/commit/1835250f2a851b6478c749ec17f5a8fbb0ac0b0c) Thanks [@Niznikr](https://github.com/Niznikr)! - [Form] Remove lodash
+
 ## 0.2.7
 
 ### Patch Changes
