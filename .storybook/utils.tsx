@@ -3,7 +3,7 @@ import type { StoryContext } from '@storybook/csf';
 // @ts-ignore
 import type { DecoratorFn, ReactFramework, StoryFn } from '@storybook/react';
 import { Fragment } from 'react';
-import { cloneDeep } from 'lodash-es';
+import merge from 'deepmerge';
 
 /**
  * Creates a decorator function that returns a new component with that class name added.
@@ -34,7 +34,7 @@ export const createWithClassesDecorator = (
       const classWithState = `${state} ${args.className || ''}`;
       const componentKey = `${name} with ${state}`;
       // We don't want to modify the original props
-      const modifiedProps = cloneDeep(args);
+      const modifiedProps = merge(args, {});
       const DecoratedComponent = component;
       modifiedProps.className = classWithState;
       if (renderFunc) {

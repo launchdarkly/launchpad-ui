@@ -160,7 +160,7 @@ As we migrate to Launchpad, we've selectively chosen to update or replace some d
 
 #### `lodash`
 
-- Replace the `lodash` library with `lodash-es`.
+- Replace methods from `lodash` with a [native equivalent](https://youmightnotneed.com/lodash).
 - Where `noop` is used, remove lodash dependency and replace usage of `noop` with `() => undefined` as it is effectively the same.
 
 #### `focus-trap`
