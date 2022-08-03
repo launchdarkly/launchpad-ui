@@ -1,17 +1,9 @@
 import type { FilterMenuProps } from '../src/FilterMenu';
 
-import { it, expect, describe } from 'vitest';
+import { it, expect, describe, vi } from 'vitest';
 
 import { render, screen, userEvent } from '../../../test/utils';
-import { Filter } from '../src';
 import { FilterMenu } from '../src/FilterMenu';
-
-describe('Filter', () => {
-  it('renders', () => {
-    render(<Filter>An important message</Filter>);
-    expect(screen.getByText('An important message')).toBeInTheDocument();
-  });
-});
 
 const createComponent = (props?: Partial<FilterMenuProps>) => (
   <FilterMenu options={[]} {...props} />
@@ -36,8 +28,6 @@ const twoOptions = [
   },
 ];
 
-const getClearButton = () => screen.queryByRole('button', { name: 'CLEAR FILTER' });
-
 describe('FilterMenu', () => {
   it('should create the right menu items', () => {
     render(createComponent({ options: twoOptions }));
@@ -55,19 +45,21 @@ describe('FilterMenu', () => {
     render(createComponent({ isLoading: true }));
     expect(screen.getByText('loading...')).toBeVisible();
   });
+
   it('should render a clear filter button in menu when the onClearFilter function is passed', async () => {
-    const onClearFilter = jest.fn();
+    const onClearFilter = vi.fn();
     render(createComponent({ options: twoOptions, onClearFilter }));
 
-    expect(getClearButton()).toBeVisible();
+    const clearButton = await screen.findByRole('button', { name: 'CLEAR FILTER' });
+    expect(clearButton).toBeVisible();
 
     const user = userEvent.setup();
-    await user.click(getClearButton()!);
+    await user.click(clearButton);
     expect(onClearFilter).toHaveBeenCalled();
   });
 
-  it('should not render a clear filter button in menu when no onClearFilter function is passed', () => {
+  it('should not render a clear filter button in menu when no onClearFilter function is passed', async () => {
     render(createComponent({ options: twoOptions }));
-    expect(getClearButton()).not.toBeInTheDocument();
+    expect(screen.queryByRole('button', { name: 'CLEAR FILTER' })).not.toBeInTheDocument();
   });
 });

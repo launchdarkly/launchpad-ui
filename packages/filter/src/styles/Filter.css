@@ -120,7 +120,7 @@
   border-color: var(--color-text-subtle-secondary);
 }
 
-.Filter-button:focus:not(:focus-visible, .is-clearable) {
+.Filter-button:focus:not(:focus-visible):not(.is-clearable) {
   &:hover {
     background-color: var(--color-background-hover);
   }
