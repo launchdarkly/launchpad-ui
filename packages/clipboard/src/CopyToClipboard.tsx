@@ -117,9 +117,8 @@ const CopyToClipboard = forwardRef<CopyToClipboardHandleRef, CopyToClipboardProp
             size={ButtonSize.TINY}
             ref={buttonRef}
             aria-label={ariaLabelText}
-            data-test-id="copyToClipboardTrigger"
-            testId="copyToClipboardTrigger"
             role="button"
+            className="CopyToClipboard-trigger"
             tabIndex={0}
           >
             {children}
