@@ -29,8 +29,38 @@ test.describe('Filter', () => {
     await expect(component).toContainText('author:one');
   });
 
-  test.skip('can search for an option', async ({ mount }) => {
-    const component = await mount(createComponent());
-    await expect(component).toBeVisible();
+  test('can search for an option', async ({ mount, page }) => {
+    const options = [
+      { name: 'one', value: 'one' },
+      { name: 'two', value: 'two' },
+      { name: 'three', value: 'three' },
+      { name: 'four', value: 'four' },
+      { name: 'five', value: 'five' },
+    ];
+    const component = await mount(createComponent({ options }));
+
+    await component.locator('.Filter-button').click();
+    await expect(page.locator('.Menu-search')).toBeVisible();
+
+    const searchInput = page.locator('input.Menu-search-input');
+    searchInput.fill('fo');
+
+    const searchResult = page.locator('.Menu-item').nth(0);
+    await expect(searchResult).toContainText('four');
+  });
+
+  test('can clear an applied filter', async ({ mount, page }) => {
+    const options = [
+      { name: 'one', value: '1' },
+      { name: 'two', value: '2' },
+    ];
+    const component = await mount(createComponent({ options, isClearable: true }));
+
+    await component.locator('.Filter-button').click();
+    await page.locator('.Menu-item').nth(0).click();
+    await expect(component).toContainText('author:one');
+
+    await component.locator('.Filter-clear').click();
+    await expect(component).toContainText('author:osmo');
   });
 });
