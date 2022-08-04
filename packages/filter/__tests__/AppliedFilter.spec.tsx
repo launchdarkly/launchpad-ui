@@ -1,12 +1,10 @@
-import type { FilterProps } from '../src';
-
 import { it, expect, describe, vi } from 'vitest';
 
 import { render, screen, userEvent, waitFor } from '../../../test/utils';
-import { Filter } from '../src';
+import { AppliedFilter, type AppliedFilterProps } from '../src/';
 
-const createComponent = (props?: Partial<FilterProps>) => (
-  <Filter name="author" description="osmo" options={[]} {...props} />
+const createComponent = (props?: Partial<AppliedFilterProps>) => (
+  <AppliedFilter name="author" description="osmo" options={[]} {...props} />
 );
 
 const oneOption = [
@@ -16,26 +14,25 @@ const oneOption = [
   },
 ];
 
-describe('Filter', () => {
+describe('AppliedFilter', () => {
   it('renders the filter button', () => {
     render(createComponent({ options: oneOption }));
     expect(screen.getByRole('button', { name: 'author: osmo' })).toBeInTheDocument();
   });
 
-  it('renders the filter button when hideName is true', () => {
-    render(createComponent({ options: oneOption, hideName: true }));
-    expect(screen.getByRole('button', { name: 'author: osmo' })).toBeInTheDocument();
+  it('renders the filter button when there is no name', () => {
+    render(createComponent({ options: oneOption, name: undefined }));
+    expect(screen.getByRole('button', { name: 'osmo' })).toBeInTheDocument();
   });
 
   it('renders the filter button when there is no description', () => {
-    render(createComponent({ options: oneOption, description: null }));
+    render(createComponent({ options: oneOption, description: undefined }));
     expect(screen.getByRole('button', { name: 'author' })).toBeInTheDocument();
   });
 
   it('opens the menu on click', async () => {
     render(createComponent({ options: oneOption }));
     await userEvent.click(screen.getByRole('button'));
-    expect(screen.getByRole('button', { expanded: true })).toBeInTheDocument();
 
     await waitFor(() => {
       expect(screen.getByRole('menuitemradio', { name: 'one' })).toBeVisible();
@@ -51,31 +48,16 @@ describe('Filter', () => {
     });
   });
 
-  it('should render a button to clear the filter if isClearable is true', () => {
-    render(createComponent({ options: oneOption, isClearable: true }));
-    expect(screen.getByRole('button', { name: '' })).toBeVisible();
-  });
-
-  it('should fire onClear when clear button is clicked', async () => {
+  it('should fire onClearFilter when clear button in menu is clicked', async () => {
     const spy = vi.fn();
-    render(createComponent({ options: oneOption, isClearable: true, onClear: spy }));
-    await userEvent.click(screen.getByRole('button', { name: '' }));
-    expect(spy).toHaveBeenCalled();
-  });
+    render(createComponent({ options: oneOption, onClearFilter: spy }));
 
-  it('should display a tooltip on a disabled menu item when a title is provided', async () => {
-    const disabledOptions = [{ name: 'one', value: 1, isDisabled: true }];
-    const props = { options: disabledOptions, disabledOptionTooltip: 'disabled tooltip' };
-
-    render(createComponent(props));
     const user = userEvent.setup();
     await user.click(screen.getByRole('button'));
-    const menuItem = await screen.findByRole('menuitemradio', { name: 'one' });
-    await user.hover(menuItem);
+    const clearButton = await screen.findByRole('button', { name: 'CLEAR FILTER' });
+    await user.click(clearButton);
 
-    await waitFor(() => {
-      expect(screen.getByText('disabled tooltip')).toBeInTheDocument();
-    });
+    expect(spy).toHaveBeenCalled();
   });
 
   describe('menu search', () => {
