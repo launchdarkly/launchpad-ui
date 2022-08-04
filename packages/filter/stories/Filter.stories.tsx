@@ -164,7 +164,6 @@ export const WithAllMenuOptionVariants: Story = {
     onSearchChange: () => undefined,
     isClearable: false,
     onClear: () => undefined,
-    className: 'u-xs-mw5',
     name: 'Author',
     description: 'Osmo',
     disabledOptionTooltip: 'tooltip for disabled options',
