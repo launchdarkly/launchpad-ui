@@ -1,9 +1,7 @@
-import type { AppliedFilterProps } from '../src/AppliedFilter';
-
 import { it, expect, describe, vi } from 'vitest';
 
 import { render, screen, userEvent, waitFor } from '../../../test/utils';
-import { AppliedFilter } from '../src/AppliedFilter';
+import { AppliedFilter, type AppliedFilterProps } from '../src/';
 
 const createComponent = (props?: Partial<AppliedFilterProps>) => (
   <AppliedFilter name="author" description="osmo" options={[]} {...props} />

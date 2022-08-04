@@ -56,6 +56,13 @@ describe('Filter', () => {
     expect(screen.getByRole('button', { name: '' })).toBeVisible();
   });
 
+  it('should fire onClear when clear button is clicked', async () => {
+    const spy = vi.fn();
+    render(createComponent({ options: oneOption, isClearable: true, onClear: spy }));
+    await userEvent.click(screen.getByRole('button', { name: '' }));
+    expect(spy).toHaveBeenCalled();
+  });
+
   it('should display a tooltip on a disabled menu item when a title is provided', async () => {
     const disabledOptions = [{ name: 'one', value: 1, isDisabled: true }];
     const props = { options: disabledOptions, disabledOptionTooltip: 'disabled tooltip' };
