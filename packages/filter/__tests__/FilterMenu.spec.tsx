@@ -28,8 +28,6 @@ const twoOptions = [
   },
 ];
 
-const getClearButton = () => screen.queryByRole('button', { name: 'CLEAR FILTER' });
-
 describe('FilterMenu', () => {
   it('should create unchecked, named menu items and dividers', () => {
     render(createComponent({ options: twoOptions }));
@@ -79,15 +77,15 @@ describe('FilterMenu', () => {
     const onClearFilter = vi.fn();
     render(createComponent({ options: twoOptions, onClearFilter }));
 
-    expect(getClearButton()).toBeVisible();
+    const clearButton = await screen.findByRole('button', { name: 'CLEAR FILTER' });
+    expect(clearButton).toBeVisible();
 
-    const user = userEvent.setup();
-    await user.click(getClearButton()!);
+    await userEvent.click(clearButton);
     expect(onClearFilter).toHaveBeenCalled();
   });
 
   it('should not render a clear filter button in menu when no onClearFilter function is passed', () => {
     render(createComponent({ options: twoOptions }));
-    expect(getClearButton()).not.toBeInTheDocument();
+    expect(screen.queryByRole('button', { name: 'CLEAR FILTER' })).not.toBeInTheDocument();
   });
 });

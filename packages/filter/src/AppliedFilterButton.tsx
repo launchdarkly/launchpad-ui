@@ -7,7 +7,7 @@ import { Children, forwardRef } from 'react';
 import './styles/Filter.css';
 
 type AppliedFilterButtonProps = {
-  name: ReactNode;
+  name?: ReactNode;
   className?: string;
   isSelected?: boolean;
   children: ReactNode;
@@ -18,6 +18,9 @@ type Ref = HTMLButtonElement;
 
 const AppliedFilterButton = forwardRef<Ref, AppliedFilterButtonProps>((props, ref) => {
   const { name, className, isSelected, children, onClickFilterButton } = props;
+
+  const hasDescription = Children.count(children) !== 0;
+
   return (
     <div className="AppliedFilter-buttonContainer">
       <button
@@ -35,12 +38,10 @@ const AppliedFilterButton = forwardRef<Ref, AppliedFilterButtonProps>((props, re
         {name && (
           <span className="AppliedFilter-name">
             {name}
-            {Children.count(children) !== 0 && ':'}
+            {hasDescription && ':'}
           </span>
         )}
-        {Children.count(children) !== 0 && (
-          <span className="AppliedFilter-description">{children}</span>
-        )}
+        {hasDescription && <span className="AppliedFilter-description">{children}</span>}
         <ExpandMore size={IconSize.SMALL} />
       </button>
     </div>

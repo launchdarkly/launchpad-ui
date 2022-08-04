@@ -62,10 +62,10 @@ const AppliedFilter = ({
         searchValue={searchValue}
         searchPlaceholder={searchPlaceholder}
         enableSearch={enableSearch}
+        searchAriaLabel={searchAriaLabel}
         onSearchChange={onSearchChange}
         onClearFilter={onClearFilter}
         isLoading={isLoading}
-        searchAriaLabel={searchAriaLabel}
       />
     </Dropdown>
   );
