@@ -1,0 +1,127 @@
+.Filter-buttonContainer {
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+}
+
+.Filter-button {
+  cursor: pointer;
+  border-radius: var(--border-radius);
+  padding-top: 0;
+  padding-bottom: 0;
+  font-size: var(--osmo-font-size-small);
+  line-height: 3.2rem;
+  display: flex;
+  align-items: center;
+  margin: 0;
+  color: var(--color-text);
+  background-color: var(--color-white);
+}
+
+.AppliedFilter-button {
+  color: var(--color-text);
+  height: 2rem;
+  background-color: var(--color-gray-100);
+  font-size: var(--osmo-font-size-small);
+  padding: 0.2rem 0.6rem;
+  border-radius: 0.2rem;
+  display: flex;
+}
+
+.Filter-button,
+.AppliedFilter-button {
+  cursor: pointer;
+  border-width: 1px;
+  border-style: solid;
+  border-color: var(--color-white);
+
+  &:hover {
+    background-color: var(--color-background-hover);
+    border-color: var(--color-border);
+  }
+
+  &:focus {
+    box-shadow: 0 0 0 2px var(--color-white), 0 0 0 4px var(--color-focus);
+    border-color: var(--color-border);
+    outline: none;
+  }
+
+  &:focus:not(:focus-visible) {
+    box-shadow: unset;
+    border-color: var(--color-white);
+  }
+}
+
+.is-clearable {
+  background-color: var(--color-blue-200);
+  padding-right: 3.1rem;
+}
+
+.Filter-name {
+  margin-right: 0.5rem;
+  font-weight: var(--font-weight-medium);
+}
+
+.AppliedFilter-name {
+  margin-right: 0.3rem;
+}
+
+.Filter-description {
+  color: var(--color-text);
+  font-weight: var(--font-weight-medium);
+}
+
+.Filter-button .Filter-description,
+.AppliedFilter-button .AppliedFilter-description {
+  margin-right: 0.5rem;
+  max-width: 16rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.Filter-description .Gravatar:first-child {
+  margin-right: 0.5rem;
+}
+
+.Filter-clear {
+  cursor: pointer;
+  padding: 0.3rem;
+}
+
+.Filter-target--usage {
+  border: 1px solid var(--color-text-subtle-secondary);
+}
+
+.Filter-button.is-clearable {
+  background-color: var(--color-blue-200);
+  padding-right: 3.1rem;
+
+  &:focus,
+  &:hover,
+  &:active {
+    background-color: var(--color-blue-300);
+  }
+}
+
+.Filter-button.is-clearable:focus:not(:focus-visible) {
+  background-color: unset;
+
+  &:hover {
+    background-color: var(--color-blue-300);
+  }
+}
+
+.Filter-button:hover:not(.is-clearable),
+.Filter-button:focus:not(.is-clearable),
+.Popover-target--active .Filter-button:not(.is-clearable) {
+  background-color: var(--color-background-hover);
+  border-color: var(--color-text-subtle-secondary);
+}
+
+.Filter-button:focus:not(:focus-visible):not(.is-clearable) {
+  &:hover {
+    background-color: var(--color-background-hover);
+  }
+}
