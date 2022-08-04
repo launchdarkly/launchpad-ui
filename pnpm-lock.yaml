@@ -374,7 +374,7 @@ importers:
       '@launchpad-ui/tokens': workspace:~
       '@launchpad-ui/tooltip': workspace:~
       '@react-aria/utils': ^3.13.1
-      '@react-aria/visually-hidden': ^3.3.0
+      '@react-aria/visually-hidden': ^3.4.0
       clsx: ^1.2.0
       react: ^18.2.0
       react-dom: ^18.2.0

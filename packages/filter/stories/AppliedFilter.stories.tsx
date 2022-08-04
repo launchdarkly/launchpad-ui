@@ -132,7 +132,6 @@ export const Basic: Story = {
     searchValue: '',
     searchPlaceholder: 'filter here',
     onSearchChange: () => undefined,
-    className: 'u-xs-mw5',
     name: 'Author',
     description: 'Osmo',
     options: [

@@ -134,7 +134,6 @@ export const Basic: Story = {
     onSearchChange: () => undefined,
     isClearable: false,
     onClear: () => undefined,
-    className: 'u-xs-mw5',
     name: 'Author',
     description: 'Osmo',
     options: [
@@ -155,6 +154,5 @@ export const WithoutName: Story = {
     onSearchChange: () => undefined,
     isClearable: false,
     onClear: () => undefined,
-    className: 'u-xs-mw5',
   },
 };
