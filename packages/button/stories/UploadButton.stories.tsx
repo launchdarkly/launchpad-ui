@@ -1,9 +1,5 @@
 import type { ComponentStoryObj } from '@storybook/react';
 
-import { Button } from '@launchpad-ui/button';
-import { userEvent, within } from '@storybook/testing-library';
-
-import { sleep } from '../../../.storybook/utils';
 import { UploadButton } from '../src';
 
 export default {
@@ -48,16 +44,10 @@ type Story = ComponentStoryObj<typeof UploadButton>;
 
 export const Default: Story = {
   args: {
-    children: [
-      <Button key="1">Target</Button>,
-      <div key="2" style={{ padding: '2rem' }}>
-        Content to show
-      </div>,
-    ],
-  },
-  play: async ({ canvasElement }: { canvasElement: HTMLElement }) => {
-    const canvas = within(canvasElement);
-    await sleep(500);
-    await userEvent.click(canvas.getByRole('button'));
+    onSelect: (file) => {
+      alert(file?.name);
+    },
+    id: 'upload-button',
+    children: 'Select file',
   },
 };
