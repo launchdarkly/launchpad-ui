@@ -1,0 +1,65 @@
+import { it, expect, describe, vi } from 'vitest';
+
+import { render, screen, userEvent } from '../../../test/utils';
+import { Button, ButtonGroup, ButtonGroupSpacing } from '../src';
+
+describe('ButtonGroup', () => {
+  it('renders', () => {
+    render(
+      <ButtonGroup>
+        <Button>One</Button>
+        <Button>Two</Button>
+      </ButtonGroup>
+    );
+    expect(screen.getByText('One')).toBeInTheDocument();
+    expect(screen.getByText('Two')).toBeInTheDocument();
+  });
+
+  it('renders with compact spacing', () => {
+    const { container } = render(
+      <ButtonGroup spacing={ButtonGroupSpacing.COMPACT}>
+        <Button>One</Button>
+        <Button>Two</Button>
+      </ButtonGroup>
+    );
+    // eslint-disable-next-line testing-library/no-container, testing-library/no-node-access
+    expect(container.querySelector('.ButtonGroup--compact')).not.toBeNull();
+    expect(screen.getByText('One')).toBeInTheDocument();
+    expect(screen.getByText('Two')).toBeInTheDocument();
+  });
+
+  it('renders with large spacing', () => {
+    const { container } = render(
+      <ButtonGroup spacing={ButtonGroupSpacing.LARGE}>
+        <Button>One</Button>
+        <Button>Two</Button>
+      </ButtonGroup>
+    );
+    // eslint-disable-next-line testing-library/no-container, testing-library/no-node-access
+    expect(container.querySelector('.ButtonGroup--large')).not.toBeNull();
+    expect(screen.getByText('One')).toBeInTheDocument();
+    expect(screen.getByText('Two')).toBeInTheDocument();
+  });
+
+  it('handles clicks', async () => {
+    const spyOne = vi.fn();
+    const spyTwo = vi.fn();
+    render(
+      <ButtonGroup spacing={ButtonGroupSpacing.LARGE}>
+        <Button aria-label="one" onClick={spyOne}>
+          One
+        </Button>
+        <Button aria-label="two" onClick={spyTwo}>
+          Two
+        </Button>
+      </ButtonGroup>
+    );
+
+    userEvent.setup();
+    await userEvent.click(screen.getByLabelText('one'));
+    await userEvent.click(screen.getByLabelText('two'));
+
+    expect(spyOne).toHaveBeenCalledTimes(1);
+    expect(spyTwo).toHaveBeenCalledTimes(1);
+  });
+});

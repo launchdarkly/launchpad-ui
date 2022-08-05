@@ -1,0 +1,39 @@
+.ButtonGroup {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.ButtonGroup--normal {
+  gap: 1rem;
+}
+
+.ButtonGroup--large {
+  gap: 2rem;
+}
+
+.ButtonGroup--compact > .Button + .Button,
+.ButtonGroup--compact > .Popover-target + .Button,
+.ButtonGroup--compact > .Button + .Popover-target,
+.ButtonGroup--compact > .Popover-target + .Popover-target {
+  margin-left: -1px;
+}
+
+.ButtonGroup--compact > .Button:not(:first-child),
+.ButtonGroup--compact > .Button:not(:last-child),
+.ButtonGroup--compact > .Popover-target:not(:first-child),
+.ButtonGroup--compact > .Popover-target:not(:last-child) {
+  border-radius: 0;
+}
+
+.ButtonGroup--compact > .Button:first-child,
+.ButtonGroup--compact > .Popover-target:first-child {
+  border-top-left-radius: var(--border-radius);
+  border-bottom-left-radius: var(--border-radius);
+}
+
+.ButtonGroup--compact > .Button:last-child,
+.ButtonGroup--compact > .Popover-target:last-child {
+  border-top-right-radius: var(--border-radius);
+  border-bottom-right-radius: var(--border-radius);
+}
