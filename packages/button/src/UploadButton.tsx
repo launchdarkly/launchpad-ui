@@ -5,19 +5,9 @@ import { Button } from '@launchpad-ui/core';
 import cx from 'clsx';
 import { useRef } from 'react';
 
-import './styles/UploadButton.css';
-
-type HTMLInputEvent = Event & {
-  target: HTMLInputElement & EventTarget;
-};
-
 type UploadButtonProps = ButtonProps & {
   onSelect(file?: File | null): void;
-  id: string;
   maxSize: number;
-  children: React.ReactNode;
-  className?: string;
-  disabled?: boolean;
   accept?: string;
 };
 
@@ -46,7 +36,7 @@ const UploadButton = ({
   const handleChange: ChangeEventHandler<HTMLInputElement> = (event) => {
     let file;
     if (event) {
-      const e = event as unknown as HTMLInputEvent;
+      const e = event;
       file = e.target.files?.[0];
     }
 
@@ -68,6 +58,7 @@ const UploadButton = ({
         className="UploadButton-input"
         id={id}
         type="file"
+        style={{ display: 'none' }}
         onChange={handleChange}
         disabled={disabled}
         accept={accept}
