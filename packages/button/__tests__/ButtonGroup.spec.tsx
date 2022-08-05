@@ -11,8 +11,8 @@ describe('ButtonGroup', () => {
         <Button>Two</Button>
       </ButtonGroup>
     );
-    expect(screen.getByText('One')).toBeInTheDocument();
-    expect(screen.getByText('Two')).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: 'One' })).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: 'Two' })).toBeInTheDocument();
   });
 
   it('renders with compact spacing', () => {
@@ -24,8 +24,8 @@ describe('ButtonGroup', () => {
     );
     // eslint-disable-next-line testing-library/no-container, testing-library/no-node-access
     expect(container.querySelector('.ButtonGroup--compact')).not.toBeNull();
-    expect(screen.getByText('One')).toBeInTheDocument();
-    expect(screen.getByText('Two')).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: 'One' })).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: 'Two' })).toBeInTheDocument();
   });
 
   it('renders with large spacing', () => {
@@ -37,8 +37,8 @@ describe('ButtonGroup', () => {
     );
     // eslint-disable-next-line testing-library/no-container, testing-library/no-node-access
     expect(container.querySelector('.ButtonGroup--large')).not.toBeNull();
-    expect(screen.getByText('One')).toBeInTheDocument();
-    expect(screen.getByText('Two')).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: 'One' })).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: 'Two' })).toBeInTheDocument();
   });
 
   it('handles clicks', async () => {
