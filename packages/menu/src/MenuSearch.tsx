@@ -1,5 +1,6 @@
 import type { ChangeEvent } from 'react';
 
+import { TextField } from '@launchpad-ui/form';
 import { forwardRef } from 'react';
 
 import './styles/Menu.css';
@@ -16,21 +17,16 @@ const MenuSearch = forwardRef<HTMLInputElement, MenuSearchProps>((props, ref) =>
 
   return (
     <div className="Menu-search">
-      <input
+      <TextField
         {...finalProps}
         ref={ref}
-        className="Menu-search-input FormInput FormInput--tiny"
+        className="Menu-search-input"
+        tiny
         type="search"
         autoComplete="off"
         placeholder={placeholder}
         aria-label={ariaLabel || 'Search'}
       />
-      <div
-        className="Menu-search-hidden-placeholder Menu-search-input FormInput FormInput--tiny"
-        aria-hidden="true"
-      >
-        {placeholder}
-      </div>
     </div>
   );
 });
