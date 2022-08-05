@@ -1,7 +1,7 @@
 ---
-'@launchpad-ui/core': minor
+'@launchpad-ui/core': patch
 '@launchpad-ui/filter': minor
-'@launchpad-ui/icons': minor
+'@launchpad-ui/icons': patch
 ---
 
 Introduce Filter component and Check icon
