@@ -1,5 +1,21 @@
 # @launchpad-ui/dropdown
 
+## 0.2.8
+
+### Patch Changes
+
+- [#259](https://github.com/launchdarkly/launchpad-ui/pull/259) [`ffb8b91`](https://github.com/launchdarkly/launchpad-ui/commit/ffb8b91991020e15a44ded38e02947c445ca1900) Thanks [@Niznikr](https://github.com/Niznikr)! - [Dropdown] Update to functional component:
+
+  - [Dropdown] Extend `Popover` props
+  - [Tooltip] Extend `Popover` props
+
+* [#261](https://github.com/launchdarkly/launchpad-ui/pull/261) [`78813c2`](https://github.com/launchdarkly/launchpad-ui/commit/78813c22f8f9f2ab68d47db53135f384407329b2) Thanks [@Niznikr](https://github.com/Niznikr)! - [Dropdown] Prevent rerender loops
+
+* Updated dependencies [[`a276064`](https://github.com/launchdarkly/launchpad-ui/commit/a27606486f3aa56cd8e7772bbdda0bc0f4aa1ec6), [`08b8cc0`](https://github.com/launchdarkly/launchpad-ui/commit/08b8cc0f27154e4103861b0233b979e4f4c30baa), [`9ea9b63`](https://github.com/launchdarkly/launchpad-ui/commit/9ea9b63f1db11ce782d9a1e3848ec8d22c7be634)]:
+  - @launchpad-ui/icons@0.2.4
+  - @launchpad-ui/button@0.3.2
+  - @launchpad-ui/popover@0.5.6
+
 ## 0.2.7
 
 ### Patch Changes

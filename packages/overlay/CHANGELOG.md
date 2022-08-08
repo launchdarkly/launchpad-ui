@@ -1,5 +1,12 @@
 # @launchpad-ui/overlay
 
+## 0.1.18
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @launchpad-ui/modal@0.5.6
+
 ## 0.1.17
 
 ### Patch Changes

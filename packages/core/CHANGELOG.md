@@ -1,5 +1,52 @@
 # @launchpad-ui/core
 
+## 0.6.1
+
+### Patch Changes
+
+- [#250](https://github.com/launchdarkly/launchpad-ui/pull/250) [`a276064`](https://github.com/launchdarkly/launchpad-ui/commit/a27606486f3aa56cd8e7772bbdda0bc0f4aa1ec6) Thanks [@vroske-ld](https://github.com/vroske-ld)! - Introduce Filter component and Check icon
+
+  - [Filter] New package
+  - [Icons] Add check icon
+
+* [#259](https://github.com/launchdarkly/launchpad-ui/pull/259) [`ffb8b91`](https://github.com/launchdarkly/launchpad-ui/commit/ffb8b91991020e15a44ded38e02947c445ca1900) Thanks [@Niznikr](https://github.com/Niznikr)! - [Dropdown] Update to functional component:
+
+  - [Dropdown] Extend `Popover` props
+  - [Tooltip] Extend `Popover` props
+
+- [#261](https://github.com/launchdarkly/launchpad-ui/pull/261) [`78813c2`](https://github.com/launchdarkly/launchpad-ui/commit/78813c22f8f9f2ab68d47db53135f384407329b2) Thanks [@Niznikr](https://github.com/Niznikr)! - [Dropdown] Prevent rerender loops
+
+* [#255](https://github.com/launchdarkly/launchpad-ui/pull/255) [`08b8cc0`](https://github.com/launchdarkly/launchpad-ui/commit/08b8cc0f27154e4103861b0233b979e4f4c30baa) Thanks [@chasedarkly](https://github.com/chasedarkly)! - - [Button] Add UploadButton to Button package
+
+- [#260](https://github.com/launchdarkly/launchpad-ui/pull/260) [`5e4a3bd`](https://github.com/launchdarkly/launchpad-ui/commit/5e4a3bd1c3c332cb698664a0c753485af3068a82) Thanks [@Niznikr](https://github.com/Niznikr)! - Remove use of object in prop types:
+
+  - [Clipboard] Update `tooltipOptions` type
+  - [Form] Update Radio `labelStyle` type
+  - [SplitButton] Update `tooltipOptions` type
+
+* [#254](https://github.com/launchdarkly/launchpad-ui/pull/254) [`9ea9b63`](https://github.com/launchdarkly/launchpad-ui/commit/9ea9b63f1db11ce782d9a1e3848ec8d22c7be634) Thanks [@chasedarkly](https://github.com/chasedarkly)! - - [Button] Add ButtonGroup component to Button package
+
+* Updated dependencies [[`a276064`](https://github.com/launchdarkly/launchpad-ui/commit/a27606486f3aa56cd8e7772bbdda0bc0f4aa1ec6), [`ffb8b91`](https://github.com/launchdarkly/launchpad-ui/commit/ffb8b91991020e15a44ded38e02947c445ca1900), [`78813c2`](https://github.com/launchdarkly/launchpad-ui/commit/78813c22f8f9f2ab68d47db53135f384407329b2), [`08b8cc0`](https://github.com/launchdarkly/launchpad-ui/commit/08b8cc0f27154e4103861b0233b979e4f4c30baa), [`5e4a3bd`](https://github.com/launchdarkly/launchpad-ui/commit/5e4a3bd1c3c332cb698664a0c753485af3068a82), [`9ea9b63`](https://github.com/launchdarkly/launchpad-ui/commit/9ea9b63f1db11ce782d9a1e3848ec8d22c7be634), [`f717441`](https://github.com/launchdarkly/launchpad-ui/commit/f717441bb18e168053a920e7bc0a88402465a1eb), [`36ad0da`](https://github.com/launchdarkly/launchpad-ui/commit/36ad0dafa1bb25f68401221df0a221c2924bc163)]:
+  - @launchpad-ui/filter@0.1.0
+  - @launchpad-ui/icons@0.2.4
+  - @launchpad-ui/dropdown@0.2.8
+  - @launchpad-ui/split-button@0.1.4
+  - @launchpad-ui/tooltip@0.3.8
+  - @launchpad-ui/button@0.3.2
+  - @launchpad-ui/clipboard@0.4.1
+  - @launchpad-ui/form@0.2.9
+  - @launchpad-ui/menu@0.3.6
+  - @launchpad-ui/alert@0.1.17
+  - @launchpad-ui/avatar@0.1.3
+  - @launchpad-ui/banner@0.2.9
+  - @launchpad-ui/modal@0.5.6
+  - @launchpad-ui/notification@0.2.13
+  - @launchpad-ui/pagination@0.0.7
+  - @launchpad-ui/navigation@0.2.6
+  - @launchpad-ui/overlay@0.1.18
+  - @launchpad-ui/popover@0.5.6
+  - @launchpad-ui/progress-bubbles@0.2.8
+
 ## 0.6.0
 
 ### Minor Changes

@@ -1,5 +1,18 @@
 # @launchpad-ui/form
 
+## 0.2.9
+
+### Patch Changes
+
+- [#260](https://github.com/launchdarkly/launchpad-ui/pull/260) [`5e4a3bd`](https://github.com/launchdarkly/launchpad-ui/commit/5e4a3bd1c3c332cb698664a0c753485af3068a82) Thanks [@Niznikr](https://github.com/Niznikr)! - Remove use of object in prop types:
+
+  - [Clipboard] Update `tooltipOptions` type
+  - [Form] Update Radio `labelStyle` type
+  - [SplitButton] Update `tooltipOptions` type
+
+- Updated dependencies [[`a276064`](https://github.com/launchdarkly/launchpad-ui/commit/a27606486f3aa56cd8e7772bbdda0bc0f4aa1ec6)]:
+  - @launchpad-ui/icons@0.2.4
+
 ## 0.2.8
 
 ### Patch Changes

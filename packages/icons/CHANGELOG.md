@@ -1,5 +1,14 @@
 # @launchpad-ui/icons
 
+## 0.2.4
+
+### Patch Changes
+
+- [#250](https://github.com/launchdarkly/launchpad-ui/pull/250) [`a276064`](https://github.com/launchdarkly/launchpad-ui/commit/a27606486f3aa56cd8e7772bbdda0bc0f4aa1ec6) Thanks [@vroske-ld](https://github.com/vroske-ld)! - Introduce Filter component and Check icon
+
+  - [Filter] New package
+  - [Icons] Add check icon
+
 ## 0.2.3
 
 ### Patch Changes
