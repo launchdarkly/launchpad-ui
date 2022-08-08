@@ -60,7 +60,8 @@ const Dropdown = <T extends string | object | number>(props: DropdownProps<T>) =
   useEffect(() => {
     setHasOpened(isOpen);
     onStateChange?.({ isOpen });
-  }, [isOpen, onStateChange]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isOpen]);
 
   const renderTrigger = () => {
     return cloneElement(parseChildren().target, {
