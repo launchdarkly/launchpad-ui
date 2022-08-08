@@ -1,5 +1,6 @@
 import type { ButtonKind, ButtonSize } from '@launchpad-ui/button';
 import type { PopoverPlacement } from '@launchpad-ui/popover';
+import type { TooltipProps } from '@launchpad-ui/tooltip';
 
 import { Button } from '@launchpad-ui/button';
 import { Dropdown, DropdownButton } from '@launchpad-ui/dropdown';
@@ -29,7 +30,7 @@ type SplitButtonProps = {
   isDropdownButtonDisabled?: boolean;
   mainButtonTooltip?: string;
   dropButtonTooltip?: string;
-  tooltipOptions?: object;
+  tooltipOptions?: Partial<TooltipProps>;
   dropdownAriaLabel?: string;
   ariaLabel?: string;
   children?: React.ReactNode;

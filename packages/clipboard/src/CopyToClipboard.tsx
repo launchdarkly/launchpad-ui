@@ -1,3 +1,4 @@
+import type { TooltipProps } from '@launchpad-ui/tooltip';
 import type { KeyboardEventHandler } from 'react';
 
 import { Button, ButtonSize } from '@launchpad-ui/button';
@@ -16,7 +17,7 @@ type CopyToClipboardProps = {
   customCopiedText?: string;
   text: string;
   tooltip?: string | JSX.Element;
-  tooltipOptions?: object;
+  tooltipOptions?: Partial<TooltipProps>;
   popoverTargetClassName?: string;
   onClick?(): void;
   asChild?: boolean;
