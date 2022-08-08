@@ -23,6 +23,12 @@ export const Basic: Story = {
   },
 };
 
+export const WithNameOnly: Story = {
+  args: {
+    name: 'Author',
+  },
+};
+
 export const WithDescriptionOnly: Story = {
   args: {
     name: 'Author',

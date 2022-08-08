@@ -76,7 +76,7 @@ const FilterButton = forwardRef<Ref, FilterButtonProps>((props, ref) => {
         {!isClearable && <ExpandMore size={IconSize.SMALL} />}
       </button>
       {isClearable && (
-        <Tooltip className="Filter-clearTooltip" content={clearTooltip}>
+        <Tooltip targetClassName="Filter-clearTooltip" content={clearTooltip}>
           <Button
             className="Filter-clear"
             size={ButtonSize.SMALL}

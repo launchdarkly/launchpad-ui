@@ -129,29 +129,52 @@ type Story = ComponentStoryObj<typeof Filter>;
 
 export const Basic: Story = {
   args: {
-    searchValue: '',
-    searchPlaceholder: 'filter here',
-    onSearchChange: () => undefined,
-    isClearable: false,
-    onClear: () => undefined,
     name: 'Author',
     description: 'Osmo',
     options: [
       { name: 'Mickey Mouse', value: 'mickey' },
       { name: 'Osmo', value: 'osmo' },
     ],
+    isClearable: false,
+    onClear: () => undefined,
   },
 };
 
-export const WithoutName: Story = {
+export const IsLoading: Story = {
+  args: {
+    name: 'Author',
+    isLoading: true,
+    options: [{ name: 'Osmo', value: 'osmo' }],
+    isClearable: false,
+    onClear: () => undefined,
+  },
+};
+
+export const WithNameOnly: Story = {
+  args: {
+    name: 'Author',
+    options: [{ name: 'Osmo', value: 'osmo' }],
+    isClearable: false,
+    onClear: () => undefined,
+  },
+};
+
+export const WithDescriptionOnly: Story = {
   args: {
     hideName: true,
-    searchValue: '',
-    searchPlaceholder: 'filter here',
-    name: 'created by',
-    description: 'description',
-    options: [{ value: 'value' }],
-    onSearchChange: () => undefined,
+    name: 'Author',
+    description: 'Osmo',
+    options: [{ name: 'Osmo', value: 'osmo' }],
+    isClearable: false,
+    onClear: () => undefined,
+  },
+};
+
+export const WithIconOnly: Story = {
+  args: {
+    hideName: true,
+    name: 'Author',
+    options: [{ name: 'Osmo', value: 'osmo' }],
     isClearable: false,
     onClear: () => undefined,
   },
@@ -159,11 +182,6 @@ export const WithoutName: Story = {
 
 export const WithAllMenuOptionVariants: Story = {
   args: {
-    searchValue: '',
-    searchPlaceholder: 'filter here',
-    onSearchChange: () => undefined,
-    isClearable: false,
-    onClear: () => undefined,
     name: 'Author',
     description: 'Osmo',
     disabledOptionTooltip: 'tooltip for disabled options',
@@ -173,5 +191,19 @@ export const WithAllMenuOptionVariants: Story = {
       { name: 'Osmo', value: 'osmo', isChecked: true },
       { name: 'Pluto', value: 'pluto' },
     ],
+    searchPlaceholder: 'filter here',
+    onSearchChange: () => undefined,
+    isClearable: false,
+    onClear: () => undefined,
+  },
+};
+
+export const WithClearButton: Story = {
+  args: {
+    name: 'Author',
+    description: 'Osmo',
+    options: [{ name: 'Osmo', value: 'osmo' }],
+    isClearable: true,
+    onClear: () => undefined,
   },
 };
