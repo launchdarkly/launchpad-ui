@@ -52,6 +52,24 @@ describe('UploadButton', () => {
     expect(spy).toHaveBeenCalledWith(file);
   });
 
+  it('handles file upload when enter is pressed', async () => {
+    const spy = vi.fn();
+
+    render(
+      <UploadButton maxSize={1000000} onSelect={spy} id="test" testId="upload-btn">
+        Upload
+      </UploadButton>
+    );
+
+    userEvent.setup();
+
+    await userEvent.type(screen.getByRole('button', { name: 'Upload' }), 'enter');
+    await userEvent.upload(screen.getByTestId('upload-button-input'), file);
+
+    expect(spy).toHaveBeenCalledTimes(1);
+    expect(spy).toHaveBeenCalledWith(file);
+  });
+
   it('does not trigger onSelect when disabled', async () => {
     const spy = vi.fn();
 
@@ -72,7 +90,7 @@ describe('UploadButton', () => {
     const spy = vi.fn();
 
     render(
-      <UploadButton maxSize={1} onSelect={spy} disabled id="test" testId="upload-btn">
+      <UploadButton maxSize={1} onSelect={spy} id="test" testId="upload-btn">
         Upload
       </UploadButton>
     );
