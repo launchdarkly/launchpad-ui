@@ -1,5 +1,6 @@
 ---
 '@launchpad-ui/dropdown': patch
+'@launchpad-ui/filter': patch
 '@launchpad-ui/split-button': patch
 '@launchpad-ui/tooltip': patch
 '@launchpad-ui/core': patch
