@@ -47,7 +47,7 @@ type RadioProps = {
   /**
    * Optional inline CSS styles to add to the Radio label.
    */
-  labelStyle?: object;
+  labelStyle?: React.CSSProperties;
   /**
    * The value passed into Radio.
    */
