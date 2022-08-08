@@ -114,7 +114,7 @@ const SplitButton = forwardRef<React.ElementRef<typeof Button>, SplitButtonProps
           mainButton
         )}
         <Dropdown
-          showArrow={false}
+          enableArrow={false}
           placement={placement}
           disabled={disabled || isDropdownButtonDisabled}
           onSelect={onSelect}

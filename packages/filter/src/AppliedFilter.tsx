@@ -50,7 +50,7 @@ const AppliedFilter = ({
     <Dropdown
       targetClassName={dropdownClasses}
       placement="bottom-start"
-      showArrow={false}
+      enableArrow={false}
       {...props}
     >
       <AppliedFilterButton name={name} onClickFilterButton={onClickFilterButton}>
