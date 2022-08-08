@@ -1,5 +1,4 @@
-import type { Offset, PopoverPlacement } from '@launchpad-ui/popover';
-import type { CSSProperties, Ref } from 'react';
+import type { PopoverProps } from '@launchpad-ui/popover';
 
 import { Popover, PopoverInteractionKind } from '@launchpad-ui/popover';
 import cx from 'clsx';
@@ -7,24 +6,8 @@ import { forwardRef } from 'react';
 
 import './styles/Tooltip.css';
 
-type TooltipProps = {
-  isOpen?: boolean;
-  content?: string | JSX.Element;
+type TooltipProps = PopoverProps & {
   className?: string;
-  targetClassName?: string;
-  disablePlacementFlip?: boolean;
-  allowBoundaryElementOverflow?: boolean;
-  placement?: PopoverPlacement;
-  target?: string | JSX.Element;
-  targetElementRef?: Ref<Element>;
-  restrictWidth?: boolean;
-  rootElementStyle?: CSSProperties;
-  onInteraction?(isOpen: boolean): void;
-  children?: React.ReactNode;
-  hoverCloseDelay?: number;
-  offset?: Offset;
-  enableArrow?: boolean;
-  interactionKind?: PopoverInteractionKind | undefined;
 };
 
 const TooltipBase = ({
