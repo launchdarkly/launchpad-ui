@@ -22,8 +22,8 @@ describe('Popover', () => {
       </Popover>
     );
 
-    userEvent.setup();
-    await userEvent.click(screen.getByRole('button'));
+    const user = userEvent.setup();
+    await user.click(screen.getByRole('button'));
     expect(screen.getByRole('tooltip')).toBeInTheDocument();
   });
 
@@ -34,10 +34,10 @@ describe('Popover', () => {
       </Popover>
     );
 
-    userEvent.setup();
-    await userEvent.click(screen.getByRole('button'));
+    const user = userEvent.setup();
+    await user.click(screen.getByRole('button'));
     await waitFor(() => {
-      expect(screen.queryByRole('tooltip')).toBeNull();
+      expect(screen.queryByRole('tooltip')).not.toBeInTheDocument();
     });
   });
 
@@ -49,14 +49,14 @@ describe('Popover', () => {
       </Popover>
     );
 
-    userEvent.setup();
-    await userEvent.hover(screen.getByRole('button'));
+    const user = userEvent.setup();
+    await user.hover(screen.getByRole('button'));
     await waitFor(() => {
       expect(screen.getByRole('tooltip')).toBeInTheDocument();
     });
-    await userEvent.unhover(screen.getByRole('button'));
+    await user.unhover(screen.getByRole('button'));
     await waitFor(() => {
-      expect(screen.queryByRole('tooltip')).toBeNull();
+      expect(screen.queryByRole('tooltip')).not.toBeInTheDocument();
     });
   });
 
@@ -68,14 +68,14 @@ describe('Popover', () => {
       </Popover>
     );
 
-    userEvent.setup();
-    await userEvent.tab();
+    const user = userEvent.setup();
+    await user.tab();
     await waitFor(() => {
       expect(screen.getByRole('tooltip')).toBeInTheDocument();
     });
-    await userEvent.tab({ shift: true });
+    await user.tab({ shift: true });
     await waitFor(() => {
-      expect(screen.queryByRole('tooltip')).toBeNull();
+      expect(screen.queryByRole('tooltip')).not.toBeInTheDocument();
     });
   });
 
@@ -87,11 +87,11 @@ describe('Popover', () => {
       </Popover>
     );
 
-    userEvent.setup();
-    await userEvent.hover(screen.getByRole('button'));
-    await userEvent.keyboard('{Escape}');
+    const user = userEvent.setup();
+    await user.hover(screen.getByRole('button'));
+    await user.keyboard('{Escape}');
     await waitFor(() => {
-      expect(screen.queryByRole('tooltip')).toBeNull();
+      expect(screen.queryByRole('tooltip')).not.toBeInTheDocument();
     });
   });
 
@@ -104,8 +104,8 @@ describe('Popover', () => {
       </Popover>
     );
 
-    userEvent.setup();
-    await userEvent.click(screen.getByRole('button'));
+    const user = userEvent.setup();
+    await user.click(screen.getByRole('button'));
     expect(screen.getByRole('tooltip').style.position).toBe('fixed');
   });
 });
