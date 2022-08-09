@@ -110,6 +110,7 @@ describe('Popover', () => {
   });
 
   it('calls onClose when closed', async () => {
+    const user = userEvent.setup();
     const spy = vi.fn();
     render(
       <Popover interactionKind={PopoverInteractionKind.HOVER} onClose={spy}>
@@ -118,9 +119,8 @@ describe('Popover', () => {
       </Popover>
     );
 
-    userEvent.setup();
-    await userEvent.hover(screen.getByRole('button'));
-    await userEvent.unhover(screen.getByRole('button'));
+    await user.hover(screen.getByRole('button'));
+    await user.unhover(screen.getByRole('button'));
     await waitFor(() => {
       expect(spy).toHaveBeenCalledTimes(1);
     });

@@ -10,25 +10,25 @@ describe('CompactTextField', () => {
   });
 
   it('calls onFocus when focused', async () => {
+    const user = userEvent.setup();
     const spy = vi.fn();
     render(
       <CompactTextField label="Email" aria-label="Email" onChange={() => undefined} onFocus={spy} />
     );
 
-    userEvent.setup();
-    await userEvent.tab();
+    await user.tab();
     expect(spy).toHaveBeenCalledTimes(1);
   });
 
   it('calls onBlur when blurred', async () => {
+    const user = userEvent.setup();
     const spy = vi.fn();
     render(
       <CompactTextField label="Email" aria-label="Email" onChange={() => undefined} onBlur={spy} />
     );
 
-    userEvent.setup();
-    await userEvent.tab();
-    await userEvent.tab();
+    await user.tab();
+    await user.tab();
     expect(spy).toHaveBeenCalledTimes(1);
   });
 });
