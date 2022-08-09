@@ -27,6 +27,20 @@ describe('Popover', () => {
     expect(screen.getByRole('tooltip')).toBeInTheDocument();
   });
 
+  it('does not open when content is empty string', async () => {
+    render(
+      <Popover content="">
+        <button>Target</button>
+      </Popover>
+    );
+
+    const user = userEvent.setup();
+    await user.click(screen.getByRole('button'));
+    await waitFor(() => {
+      expect(screen.queryByRole('tooltip')).not.toBeInTheDocument();
+    });
+  });
+
   it('opens and closes on mouse hover/unhover of the target', async () => {
     const user = userEvent.setup();
     render(
@@ -42,7 +56,7 @@ describe('Popover', () => {
     });
     await user.unhover(screen.getByRole('button'));
     await waitFor(() => {
-      expect(screen.queryByRole('tooltip')).toBeNull();
+      expect(screen.queryByRole('tooltip')).not.toBeInTheDocument();
     });
   });
 
@@ -61,7 +75,7 @@ describe('Popover', () => {
     });
     await user.tab({ shift: true });
     await waitFor(() => {
-      expect(screen.queryByRole('tooltip')).toBeNull();
+      expect(screen.queryByRole('tooltip')).not.toBeInTheDocument();
     });
   });
 
@@ -77,7 +91,7 @@ describe('Popover', () => {
     await user.hover(screen.getByRole('button'));
     await user.keyboard('{Escape}');
     await waitFor(() => {
-      expect(screen.queryByRole('tooltip')).toBeNull();
+      expect(screen.queryByRole('tooltip')).not.toBeInTheDocument();
     });
   });
 

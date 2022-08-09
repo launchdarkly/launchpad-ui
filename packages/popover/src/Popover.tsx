@@ -407,7 +407,8 @@ const Popover = ({
   };
 
   const { target, content } = parseChildren();
-  const hasEmptyContent = content === null || content === undefined;
+  const hasEmptyContent =
+    content === null || content === undefined || (typeof content === 'string' && !content);
   const isTargetDisabled = isValidElement(target) ? !!target?.props?.disabled : false;
 
   const targetProps: PopoverTargetProps = {
