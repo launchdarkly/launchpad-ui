@@ -26,12 +26,12 @@ describe('Alert', () => {
 
     it('triggers onDismiss when close button is clicked and hides the alert', async () => {
       const onDismiss = vi.fn();
+      const user = userEvent.setup();
       render(createComponent({ dismissible: true, onDismiss }));
 
       const closeButton = screen.getByLabelText('Close this alert.');
 
-      userEvent.setup();
-      await userEvent.click(closeButton);
+      await user.click(closeButton);
 
       expect(onDismiss).toHaveBeenCalledTimes(1);
       expect(screen.queryByText('Alert text!')).not.toBeInTheDocument();

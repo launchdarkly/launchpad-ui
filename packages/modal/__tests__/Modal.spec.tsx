@@ -30,6 +30,7 @@ describe('Modal', () => {
 
   it('calls onCancel when escape key is pressed', async () => {
     const spy = vi.fn();
+    const user = userEvent.setup();
     render(
       <Prompt>
         <Modal transition="pop" onCancel={spy}>
@@ -40,8 +41,7 @@ describe('Modal', () => {
       </Prompt>
     );
 
-    userEvent.setup();
-    await userEvent.keyboard('{Escape}');
+    await user.keyboard('{Escape}');
 
     expect(spy).toHaveBeenCalledTimes(1);
   });

@@ -19,17 +19,18 @@ const createComponent = ({ children, ...rest }: Partial<CopyToClipboardProps>) =
 
 describe('CopyToClipboard', () => {
   it('copies text when clicked on', async () => {
-    render(createComponent({ testId: 'test' }));
     const user = userEvent.setup();
+    render(createComponent({ testId: 'test' }));
+
     await user.click(screen.getByRole('button'));
     expect(navigator.clipboard.writeText).toHaveBeenCalledWith('Copy content');
   });
 
   it('handles MouseEnter and MouseLeave', async () => {
+    const user = userEvent.setup();
     render(createComponent({ ariaLabel: 'copy to clipboard' }));
     expect(screen.queryByRole('tooltip')).toBeNull();
 
-    const user = userEvent.setup();
     await user.hover(screen.getByText('Copy content'));
     expect(await screen.findByRole('tooltip')).toBeInTheDocument();
 
@@ -38,10 +39,10 @@ describe('CopyToClipboard', () => {
   });
 
   it('handles keyboard interactions', async () => {
+    const user = userEvent.setup();
     render(createComponent({}));
     expect(screen.queryByRole('tooltip')).toBeNull();
 
-    const user = userEvent.setup();
     await user.tab();
     expect(await screen.findByRole('tooltip')).toBeInTheDocument();
 
@@ -50,8 +51,9 @@ describe('CopyToClipboard', () => {
   });
 
   it('shows the confirmation tooltip when clicked', async () => {
-    render(createComponent({}));
     const user = userEvent.setup();
+    render(createComponent({}));
+
     await user.click(screen.getByRole('button'));
     await waitFor(async () => {
       expect(await screen.findByText('Copied!')).toBeVisible();
@@ -60,8 +62,9 @@ describe('CopyToClipboard', () => {
 
   it('uses the custom copied text when provided', async () => {
     const FAKE_CUSTOM_COPIED_TEXT = 'Fake custom text';
-    render(createComponent({ customCopiedText: FAKE_CUSTOM_COPIED_TEXT }));
     const user = userEvent.setup();
+    render(createComponent({ customCopiedText: FAKE_CUSTOM_COPIED_TEXT }));
+
     await user.click(screen.getByRole('button'));
     await waitFor(async () => {
       expect(await screen.findByText(FAKE_CUSTOM_COPIED_TEXT)).toBeVisible();
@@ -86,9 +89,9 @@ describe('CopyToClipboard', () => {
       );
     };
 
+    const user = userEvent.setup();
     render(<WrappedComponent />);
 
-    const user = userEvent.setup();
     await user.click(screen.getByTestId('wrapper'));
     expect(navigator.clipboard.writeText).toHaveBeenCalledWith('Copy content');
   });
