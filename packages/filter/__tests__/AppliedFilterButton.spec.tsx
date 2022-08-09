@@ -32,8 +32,9 @@ describe('AppliedFilterButton', () => {
 
   it('fires onClickFilterButton on click', async () => {
     const spy = vi.fn();
+    const user = userEvent.setup();
     render(createComponent({ onClickFilterButton: spy }));
-    await userEvent.click(screen.getByRole('button'));
+    await user.click(screen.getByRole('button'));
     expect(spy).toHaveBeenCalled();
   });
 });

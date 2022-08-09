@@ -21,6 +21,7 @@ describe('TabList', () => {
   });
 
   it('can be reached with the keyboard', async () => {
+    const user = userEvent.setup();
     render(
       <TabList>
         <Item key="1" title="First Tab">
@@ -34,7 +35,6 @@ describe('TabList', () => {
 
     const tabs = screen.getAllByRole('tab');
     const tabpanels = screen.getAllByRole('tabpanel');
-    const user = userEvent.setup();
     await user.tab();
 
     expect(tabs[0]).toHaveFocus();
@@ -43,6 +43,7 @@ describe('TabList', () => {
   });
 
   it('can cycle through tabs with keyboard', async () => {
+    const user = userEvent.setup();
     render(
       <TabList>
         <Item key="1" title="First Tab">
@@ -55,7 +56,6 @@ describe('TabList', () => {
     );
 
     const tabs = screen.getAllByRole('tab');
-    const user = userEvent.setup();
     await user.tab();
 
     expect(tabs[0]).toHaveFocus();
@@ -110,6 +110,7 @@ describe('TabList', () => {
   });
 
   it('renders with focusable content', async () => {
+    const user = userEvent.setup();
     render(
       <TabList>
         <Item key="3" title="First Tab">
@@ -129,7 +130,7 @@ describe('TabList', () => {
     const tabs = screen.getAllByRole('tab');
     const button = screen.getByRole('button');
     const buttonText = screen.getByText('Click me once');
-    const user = userEvent.setup();
+
     await user.tab();
 
     expect(tabs[0]).toHaveFocus();

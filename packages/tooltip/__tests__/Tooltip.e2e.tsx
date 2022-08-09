@@ -4,7 +4,7 @@ import { Tooltip, type TooltipProps } from '../src/Tooltip';
 
 test.use({ viewport: { width: 500, height: 500 } });
 
-const createComponent = (props?: TooltipProps) => (
+const createComponent = (props?: Partial<TooltipProps>) => (
   <Tooltip {...props}>
     <button>Target</button>
     <span>Content</span>

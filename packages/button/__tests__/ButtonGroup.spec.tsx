@@ -44,6 +44,7 @@ describe('ButtonGroup', () => {
   it('handles clicks', async () => {
     const spyOne = vi.fn();
     const spyTwo = vi.fn();
+    const user = userEvent.setup();
     render(
       <ButtonGroup spacing={ButtonGroupSpacing.LARGE}>
         <Button aria-label="one" onClick={spyOne}>
@@ -55,9 +56,8 @@ describe('ButtonGroup', () => {
       </ButtonGroup>
     );
 
-    userEvent.setup();
-    await userEvent.click(screen.getByLabelText('one'));
-    await userEvent.click(screen.getByLabelText('two'));
+    await user.click(screen.getByLabelText('one'));
+    await user.click(screen.getByLabelText('two'));
 
     expect(spyOne).toHaveBeenCalledTimes(1);
     expect(spyTwo).toHaveBeenCalledTimes(1);

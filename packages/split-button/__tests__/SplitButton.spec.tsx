@@ -24,6 +24,7 @@ describe('SplitButton', () => {
   });
 
   it('can render tooltips', async () => {
+    const user = userEvent.setup();
     render(
       <SplitButton
         kind={ButtonKind.DEFAULT}
@@ -40,13 +41,12 @@ describe('SplitButton', () => {
       </SplitButton>
     );
 
-    userEvent.setup();
-    await userEvent.hover(screen.getByText('test'));
+    await user.hover(screen.getByText('test'));
     await waitFor(() => {
       expect(screen.getByRole('tooltip')).toBeInTheDocument();
     });
 
-    await userEvent.hover(screen.getByLabelText('Explore dropdown'));
+    await user.hover(screen.getByLabelText('Explore dropdown'));
     await waitFor(() => {
       expect(screen.getByRole('tooltip')).toBeInTheDocument();
     });

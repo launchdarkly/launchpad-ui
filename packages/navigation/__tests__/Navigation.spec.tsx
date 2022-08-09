@@ -52,6 +52,7 @@ describe('Navigation', () => {
   });
 
   it('can render items with a tooltip', async () => {
+    const user = userEvent.setup();
     render(
       createComponent([
         {
@@ -66,8 +67,8 @@ describe('Navigation', () => {
         },
       ])
     );
-    userEvent.setup();
-    await userEvent.hover(screen.getByText('First'));
+
+    await user.hover(screen.getByText('First'));
     await waitFor(() => {
       expect(screen.getByRole('tooltip')).toBeInTheDocument();
     });

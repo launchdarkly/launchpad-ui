@@ -22,32 +22,33 @@ describe('Button', () => {
 
   it('handles clicks', async () => {
     const spy = vi.fn();
+    const user = userEvent.setup();
     render(<Button onClick={spy}>Default Button</Button>);
 
-    userEvent.setup();
-    await userEvent.click(screen.getByRole('button'));
+    await user.click(screen.getByRole('button'));
 
     expect(spy).toHaveBeenCalledTimes(1);
   });
 
   it('clicks the link when spacebar is pressed', async () => {
     const spy = vi.fn();
+    const user = userEvent.setup();
     render(
       <Button href="#" onClick={spy}>
         Default Button Link
       </Button>
     );
 
-    userEvent.setup();
-    await userEvent.type(screen.getByRole('link'), '{space}');
+    await user.type(screen.getByRole('link'), '{space}');
 
     expect(spy).toHaveBeenCalledTimes(1);
   });
 
   it('is focusable', async () => {
+    const user = userEvent.setup();
     render(<Button kind={ButtonKind.PRIMARY}>Primary Button</Button>);
-    userEvent.setup();
-    await userEvent.tab();
+
+    await user.tab();
     expect(screen.getByRole('button')).toHaveFocus();
   });
 
