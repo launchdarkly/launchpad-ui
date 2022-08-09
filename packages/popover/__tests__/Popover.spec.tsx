@@ -27,6 +27,20 @@ describe('Popover', () => {
     expect(screen.getByRole('tooltip')).toBeInTheDocument();
   });
 
+  it('does not open when content is empty string', async () => {
+    render(
+      <Popover content="">
+        <button>Target</button>
+      </Popover>
+    );
+
+    userEvent.setup();
+    await userEvent.click(screen.getByRole('button'));
+    await waitFor(() => {
+      expect(screen.queryByRole('tooltip')).toBeNull();
+    });
+  });
+
   it('opens and closes on mouse hover/unhover of the target', async () => {
     render(
       <Popover interactionKind={PopoverInteractionKind.HOVER}>
