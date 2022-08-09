@@ -19,14 +19,14 @@ const createComponent = ({ children, ...rest }: Partial<CopyToClipboardProps>) =
 
 describe('CopyToClipboard', () => {
   it('copies text when clicked on', async () => {
-    render(createComponent({}));
+    render(createComponent({ testId: 'test' }));
     const user = userEvent.setup();
     await user.click(screen.getByRole('button'));
     expect(navigator.clipboard.writeText).toHaveBeenCalledWith('Copy content');
   });
 
   it('handles MouseEnter and MouseLeave', async () => {
-    render(createComponent({}));
+    render(createComponent({ ariaLabel: 'copy to clipboard' }));
     expect(screen.queryByRole('tooltip')).toBeNull();
 
     const user = userEvent.setup();

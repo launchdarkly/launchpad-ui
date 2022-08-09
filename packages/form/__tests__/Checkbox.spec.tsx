@@ -1,4 +1,4 @@
-import { it, expect, describe } from 'vitest';
+import { it, expect, describe, vi } from 'vitest';
 
 import { render, screen } from '../../../test/utils';
 import { Checkbox } from '../src';
@@ -25,5 +25,13 @@ describe('Checkbox', () => {
       </Checkbox>
     );
     expect(screen.getByText('Label')).toBeInTheDocument();
+  });
+
+  it('warns about a11y requirements', () => {
+    console.warn = vi.fn();
+    render(<Checkbox checked={true} onChange={() => undefined} />);
+    expect(console.warn).toHaveBeenCalledWith(
+      'If you do not provide children, you must specify an aria-label for accessibility'
+    );
   });
 });

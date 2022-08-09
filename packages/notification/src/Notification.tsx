@@ -94,7 +94,7 @@ const Notification = ({
     onDismiss();
   };
 
-  const handleDetailsKeyPress = (e: KeyboardEvent) => {
+  const handleDetailsKeyDown = (e: KeyboardEvent) => {
     if (e.key === 'Enter') {
       handleDetailsClick();
     }
@@ -122,7 +122,7 @@ const Notification = ({
               aria-haspopup
               className="Notification-detailsExpand"
               onClick={handleDetailsClick}
-              onKeyPress={handleDetailsKeyPress}
+              onKeyDown={handleDetailsKeyDown}
             >
               More details <ExpandMore size={IconSize.SMALL} />
             </button>
