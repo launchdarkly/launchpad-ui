@@ -49,7 +49,23 @@ describe('Overlay', () => {
     );
 
     await user.tab();
+    expect(screen.getByRole('button')).toHaveFocus();
+  });
 
+  it('enforces focus outside the container', async () => {
+    const user = userEvent.setup();
+    render(
+      <>
+        <button>test</button>
+        <Overlay isOpen onClose={() => undefined}>
+          <div tabIndex={0} role="tab">
+            div
+          </div>
+        </Overlay>
+      </>
+    );
+
+    await user.tab();
     await waitFor(() => {
       expect(screen.getByRole('tab')).toHaveFocus();
     });
