@@ -1,5 +1,17 @@
 # @launchpad-ui/tooltip
 
+## 0.3.8
+
+### Patch Changes
+
+- [#259](https://github.com/launchdarkly/launchpad-ui/pull/259) [`ffb8b91`](https://github.com/launchdarkly/launchpad-ui/commit/ffb8b91991020e15a44ded38e02947c445ca1900) Thanks [@Niznikr](https://github.com/Niznikr)! - [Dropdown] Update to functional component:
+
+  - [Dropdown] Extend `Popover` props
+  - [Tooltip] Extend `Popover` props
+
+- Updated dependencies []:
+  - @launchpad-ui/popover@0.5.6
+
 ## 0.3.7
 
 ### Patch Changes
