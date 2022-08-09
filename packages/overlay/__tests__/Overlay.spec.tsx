@@ -27,11 +27,15 @@ describe('Overlay', () => {
 
   it('calls onClose when escape is pressed', async () => {
     const spy = vi.fn();
-    render(<Overlay isOpen onClose={spy} />);
+    render(
+      <Overlay isOpen onClose={spy}>
+        <button>test</button>
+      </Overlay>
+    );
 
-    const portal = document.querySelector('.Portal') as Element;
     userEvent.setup();
-    await userEvent.type(portal, '{esc}');
+    await userEvent.tab();
+    await userEvent.keyboard('{Escape}');
 
     expect(spy).toHaveBeenCalledTimes(1);
   });
