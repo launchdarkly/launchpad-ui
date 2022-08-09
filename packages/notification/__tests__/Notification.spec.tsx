@@ -17,9 +17,8 @@ describe('Notification', () => {
   });
 
   it('hides details action on click', async () => {
-    render(<Notification {...props} />);
-
     const user = userEvent.setup();
+    render(<Notification {...props} />);
 
     const button = screen.getByLabelText('More details');
 
@@ -31,9 +30,8 @@ describe('Notification', () => {
   });
 
   it('shows details when enter key is pressed', async () => {
-    render(<Notification {...props} />);
-
     const user = userEvent.setup();
+    render(<Notification {...props} />);
 
     await user.tab();
     await user.keyboard('{enter}');
@@ -52,9 +50,8 @@ describe('Notification', () => {
 
   it('dismisses when hovered and escape key is pressed', async () => {
     const spy = vi.fn();
-    render(<Notification {...props} onDismiss={spy} />);
-
     const user = userEvent.setup();
+    render(<Notification {...props} onDismiss={spy} />);
 
     await user.hover(screen.getByRole('alert'));
     await user.keyboard('{Escape}');
@@ -63,6 +60,7 @@ describe('Notification', () => {
   });
 
   it('traps focus on hover and blurs when mouse leaves', async () => {
+    const user = userEvent.setup();
     render(
       <Notification
         {...props}
@@ -73,8 +71,6 @@ describe('Notification', () => {
         }
       />
     );
-
-    const user = userEvent.setup();
 
     await user.hover(screen.getByText(/hi there/));
     await user.tab();
@@ -88,9 +84,9 @@ describe('Notification', () => {
 
   it('dismisses when close button is clicked', async () => {
     const spy = vi.fn();
+    const user = userEvent.setup();
     render(<Notification {...props} onDismiss={spy} />);
 
-    const user = userEvent.setup();
     user.tab();
     user.tab();
     user.tab();

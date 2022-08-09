@@ -33,8 +33,9 @@ describe('Filter', () => {
   });
 
   it('opens the menu on click', async () => {
+    const user = userEvent.setup();
     render(createComponent({ options: oneOption }));
-    await userEvent.click(screen.getByRole('button'));
+    await user.click(screen.getByRole('button'));
     expect(screen.getByRole('button', { expanded: true })).toBeInTheDocument();
 
     await waitFor(() => {
@@ -43,8 +44,9 @@ describe('Filter', () => {
   });
 
   it('should display a disabled loading menu item when isLoading is true', async () => {
+    const user = userEvent.setup();
     render(createComponent({ options: oneOption, isLoading: true }));
-    await userEvent.click(screen.getByRole('button'));
+    await user.click(screen.getByRole('button'));
 
     await waitFor(() => {
       expect(screen.getByText('loading...')).toBeVisible();
@@ -58,8 +60,9 @@ describe('Filter', () => {
 
   it('should fire onClear when clear button is clicked', async () => {
     const spy = vi.fn();
+    const user = userEvent.setup();
     render(createComponent({ options: oneOption, isClearable: true, onClear: spy }));
-    await userEvent.click(screen.getByRole('button', { name: '' }));
+    await user.click(screen.getByRole('button', { name: '' }));
     expect(spy).toHaveBeenCalled();
   });
 
@@ -67,8 +70,9 @@ describe('Filter', () => {
     const disabledOptions = [{ name: 'one', value: 1, isDisabled: true }];
     const props = { options: disabledOptions, disabledOptionTooltip: 'disabled tooltip' };
 
-    render(createComponent(props));
     const user = userEvent.setup();
+    render(createComponent(props));
+
     await user.click(screen.getByRole('button'));
     const menuItem = await screen.findByRole('menuitemradio', { name: 'one' });
     await user.hover(menuItem);
@@ -80,10 +84,11 @@ describe('Filter', () => {
 
   describe('menu search', () => {
     it('should display a search field when a searchValue is provided', async () => {
+      const user = userEvent.setup();
       render(
         createComponent({ options: oneOption, onSearchChange: vi.fn(), searchValue: 'something' })
       );
-      await userEvent.click(screen.getByRole('button'));
+      await user.click(screen.getByRole('button'));
 
       await waitFor(() => {
         expect(screen.getByRole('searchbox', { name: 'Search' })).toBeVisible();
@@ -91,6 +96,7 @@ describe('Filter', () => {
     });
 
     it('should display a search field with a custom placeholder when provided', async () => {
+      const user = userEvent.setup();
       render(
         createComponent({
           options: oneOption,
@@ -99,7 +105,7 @@ describe('Filter', () => {
           searchPlaceholder: 'placeholder text',
         })
       );
-      await userEvent.click(screen.getByRole('button'));
+      await user.click(screen.getByRole('button'));
 
       await waitFor(() => {
         expect(screen.getByPlaceholderText('placeholder text')).toBeVisible();
@@ -107,6 +113,7 @@ describe('Filter', () => {
     });
 
     it('should display a search field with custom aria label when provided', async () => {
+      const user = userEvent.setup();
       render(
         createComponent({
           options: oneOption,
@@ -115,7 +122,7 @@ describe('Filter', () => {
           searchAriaLabel: 'custom searchbox',
         })
       );
-      await userEvent.click(screen.getByRole('button'));
+      await user.click(screen.getByRole('button'));
 
       await waitFor(() => {
         expect(screen.getByRole('searchbox', { name: 'custom searchbox' })).toBeVisible();
@@ -123,6 +130,7 @@ describe('Filter', () => {
     });
 
     it('should NOT display a search field when a searchValue is NOT provided', async () => {
+      const user = userEvent.setup();
       render(
         createComponent({
           options: oneOption,
@@ -131,7 +139,7 @@ describe('Filter', () => {
           isEmpty: true,
         })
       );
-      await userEvent.click(screen.getByRole('button'));
+      await user.click(screen.getByRole('button'));
 
       await waitFor(() => {
         expect(screen.queryByRole('searchbox', { name: 'Search' })).not.toBeInTheDocument();
@@ -147,8 +155,9 @@ describe('Filter', () => {
         { name: 'five', value: 5 },
       ];
 
+      const user = userEvent.setup();
       render(createComponent({ options: manyOptions, onSearchChange: vi.fn() }));
-      await userEvent.click(screen.getByRole('button'));
+      await user.click(screen.getByRole('button'));
 
       await waitFor(() => {
         expect(screen.getByRole('searchbox', { name: 'Search' })).toBeVisible();
@@ -156,8 +165,9 @@ describe('Filter', () => {
     });
 
     it('should NOT display a search field when there are fewer than 4 options', async () => {
+      const user = userEvent.setup();
       render(createComponent({ options: oneOption, onSearchChange: vi.fn(), isEmpty: true }));
-      await userEvent.click(screen.getByRole('button'));
+      await user.click(screen.getByRole('button'));
 
       await waitFor(() => {
         expect(screen.queryByRole('searchbox', { name: 'Search' })).not.toBeInTheDocument();
@@ -165,8 +175,9 @@ describe('Filter', () => {
     });
 
     it('should display a search field when isEmpty is false', async () => {
+      const user = userEvent.setup();
       render(createComponent({ options: oneOption, onSearchChange: vi.fn(), isEmpty: false }));
-      await userEvent.click(screen.getByRole('button'));
+      await user.click(screen.getByRole('button'));
 
       await waitFor(() => {
         expect(screen.getByRole('searchbox', { name: 'Search' })).toBeVisible();
@@ -174,8 +185,9 @@ describe('Filter', () => {
     });
 
     it('should NOT display a search field when onSearchChange is NOT provided', async () => {
+      const user = userEvent.setup();
       render(createComponent({ options: oneOption, onSearchChange: undefined }));
-      await userEvent.click(screen.getByRole('button'));
+      await user.click(screen.getByRole('button'));
 
       await waitFor(() => {
         expect(screen.queryByRole('searchbox', { name: 'Search' })).not.toBeInTheDocument();

@@ -17,10 +17,11 @@ describe('Toggle', () => {
       value: 'cats',
       children: 'Cats',
     };
+    const user = userEvent.setup();
     render(<Toggle {...toggleProps} />);
 
     const toggle = screen.getByRole('switch');
-    const user = userEvent.setup();
+
     await user.tab();
 
     expect(toggle).toHaveFocus();
@@ -49,11 +50,11 @@ describe('Toggle', () => {
       value: 'cats',
       children: 'Cats',
     };
+    const user = userEvent.setup();
     render(<Toggle {...toggleProps} />);
 
     const toggle = screen.getByRole('switch');
 
-    const user = userEvent.setup();
     await waitFor(async () => {
       await user.click(toggle);
     });

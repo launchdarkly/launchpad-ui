@@ -15,6 +15,7 @@ describe('Popover', () => {
   });
 
   it('opens on click of the target', async () => {
+    const user = userEvent.setup();
     render(
       <Popover>
         <button>Target</button>
@@ -22,7 +23,6 @@ describe('Popover', () => {
       </Popover>
     );
 
-    const user = userEvent.setup();
     await user.click(screen.getByRole('button'));
     expect(screen.getByRole('tooltip')).toBeInTheDocument();
   });
@@ -42,6 +42,7 @@ describe('Popover', () => {
   });
 
   it('opens and closes on mouse hover/unhover of the target', async () => {
+    const user = userEvent.setup();
     render(
       <Popover interactionKind={PopoverInteractionKind.HOVER}>
         <button>Target</button>
@@ -49,7 +50,6 @@ describe('Popover', () => {
       </Popover>
     );
 
-    const user = userEvent.setup();
     await user.hover(screen.getByRole('button'));
     await waitFor(() => {
       expect(screen.getByRole('tooltip')).toBeInTheDocument();
@@ -61,6 +61,7 @@ describe('Popover', () => {
   });
 
   it('opens and closes on mouse focus/blur of the target', async () => {
+    const user = userEvent.setup();
     render(
       <Popover interactionKind={PopoverInteractionKind.HOVER_OR_FOCUS}>
         <button>Target</button>
@@ -68,7 +69,6 @@ describe('Popover', () => {
       </Popover>
     );
 
-    const user = userEvent.setup();
     await user.tab();
     await waitFor(() => {
       expect(screen.getByRole('tooltip')).toBeInTheDocument();
@@ -80,6 +80,7 @@ describe('Popover', () => {
   });
 
   it('closes when the Escape key is pressed', async () => {
+    const user = userEvent.setup();
     render(
       <Popover interactionKind={PopoverInteractionKind.HOVER}>
         <button>Target</button>
@@ -87,7 +88,6 @@ describe('Popover', () => {
       </Popover>
     );
 
-    const user = userEvent.setup();
     await user.hover(screen.getByRole('button'));
     await user.keyboard('{Escape}');
     await waitFor(() => {
@@ -97,6 +97,7 @@ describe('Popover', () => {
 
   it('updates to fixed position in a modal', async () => {
     document.body.classList.add('has-modal');
+    const user = userEvent.setup();
     render(
       <Popover>
         <button>Target</button>
@@ -104,7 +105,6 @@ describe('Popover', () => {
       </Popover>
     );
 
-    const user = userEvent.setup();
     await user.click(screen.getByRole('button'));
     expect(screen.getByRole('tooltip').style.position).toBe('fixed');
   });

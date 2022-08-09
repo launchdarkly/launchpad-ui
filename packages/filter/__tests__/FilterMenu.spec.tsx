@@ -54,8 +54,9 @@ describe('FilterMenu', () => {
     const disabledOptions = [{ name: 'one', value: 1, isDisabled: true }];
     const props = { options: disabledOptions, disabledOptionTooltip: 'disabled tooltip' };
 
+    const user = userEvent.setup();
     render(createComponent(props));
-    await userEvent.hover(screen.getByRole('menuitemradio', { name: 'one' }));
+    await user.hover(screen.getByRole('menuitemradio', { name: 'one' }));
 
     await waitFor(() => {
       expect(screen.getByText('disabled tooltip')).toBeInTheDocument();
@@ -75,12 +76,13 @@ describe('FilterMenu', () => {
 
   it('should render a clear filter button in menu when the onClearFilter function is passed', async () => {
     const onClearFilter = vi.fn();
+    const user = userEvent.setup();
     render(createComponent({ options: twoOptions, onClearFilter }));
 
     const clearButton = await screen.findByRole('button', { name: 'CLEAR FILTER' });
     expect(clearButton).toBeVisible();
 
-    await userEvent.click(clearButton);
+    await user.click(clearButton);
     expect(onClearFilter).toHaveBeenCalled();
   });
 

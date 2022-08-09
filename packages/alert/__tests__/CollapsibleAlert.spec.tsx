@@ -8,14 +8,14 @@ describe('CollapsibleAlert', () => {
   });
 
   test('shows and hides child component on click', async () => {
+    const user = userEvent.setup();
     render(
       <CollapsibleAlert message="A test message." kind={AlertKind.WARNING}>
         Hello
       </CollapsibleAlert>
     );
 
-    userEvent.setup();
-    await userEvent.click(screen.getByText(/Show more/i));
+    await user.click(screen.getByText(/Show more/i));
 
     expect(screen.getByText(/Hello/i)).toBeTruthy();
   });

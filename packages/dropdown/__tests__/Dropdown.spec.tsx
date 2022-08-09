@@ -16,6 +16,7 @@ describe('Dropdown', () => {
   });
 
   it('expands on click', async () => {
+    const user = userEvent.setup();
     render(
       <Dropdown>
         <DropdownButton>Target</DropdownButton>
@@ -23,12 +24,12 @@ describe('Dropdown', () => {
       </Dropdown>
     );
 
-    userEvent.setup();
-    await userEvent.click(screen.getByRole('button'));
+    await user.click(screen.getByRole('button'));
     expect(screen.getByRole('button', { expanded: true })).toBeInTheDocument();
   });
 
   it('focuses target when closed', async () => {
+    const user = userEvent.setup();
     render(
       <Dropdown>
         <DropdownButton>Target</DropdownButton>
@@ -40,16 +41,16 @@ describe('Dropdown', () => {
       </Dropdown>
     );
 
-    userEvent.setup();
-    await userEvent.click(screen.getByRole('button'));
-    await userEvent.tab();
-    await userEvent.keyboard('{Escape}');
+    await user.click(screen.getByRole('button'));
+    await user.tab();
+    await user.keyboard('{Escape}');
 
     expect(screen.getByRole('button')).toHaveFocus();
   });
 
   it('calls onSelect when a menu item is selected', async () => {
     const spy = vi.fn();
+    const user = userEvent.setup();
     render(
       <Dropdown onSelect={spy}>
         <DropdownButton>Target</DropdownButton>
@@ -61,10 +62,9 @@ describe('Dropdown', () => {
       </Dropdown>
     );
 
-    userEvent.setup();
-    await userEvent.click(screen.getByRole('button'));
-    await userEvent.tab();
-    await userEvent.keyboard('{Enter}');
+    await user.click(screen.getByRole('button'));
+    await user.tab();
+    await user.keyboard('{Enter}');
 
     expect(spy).toHaveBeenCalledTimes(1);
   });

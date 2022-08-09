@@ -75,18 +75,20 @@ describe('Menu', () => {
   });
 
   it('makes the search field focusable if there is one', async () => {
+    const user = userEvent.setup();
     render(createMenu({ hideSearch: false }));
     const search = screen.getByRole('searchbox', {
       name: /search/i,
     });
     expect(search).toBeInTheDocument();
-    await userEvent.tab();
+    await user.tab();
     expect(search).toHaveFocus();
-    await userEvent.tab();
+    await user.tab();
     expect(search).not.toHaveFocus();
   });
 
   it('can render a tooltip', async () => {
+    const user = userEvent.setup();
     render(
       <Menu>
         <MenuItem item="one" tooltip="hi">
@@ -94,14 +96,14 @@ describe('Menu', () => {
         </MenuItem>
       </Menu>
     );
-    userEvent.setup();
-    await userEvent.hover(screen.getByRole('menuitem'));
+    await user.hover(screen.getByRole('menuitem'));
     await waitFor(() => {
       expect(screen.getByRole('tooltip')).toBeInTheDocument();
     });
   });
 
   it('can cycle through items with keyboard', async () => {
+    const user = userEvent.setup();
     render(
       <Popover>
         <button>Target</button>
@@ -112,7 +114,7 @@ describe('Menu', () => {
         </Menu>
       </Popover>
     );
-    const user = userEvent.setup();
+
     await user.click(screen.getByText('Target'));
     const items = screen.getAllByRole('menuitem');
 

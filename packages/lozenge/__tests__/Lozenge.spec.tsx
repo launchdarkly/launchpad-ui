@@ -11,14 +11,14 @@ describe('Lozenge', () => {
 
   it('can be clickable', async () => {
     const spy = vi.fn();
+    const user = userEvent.setup();
     render(
       <Lozenge kind={LozengeKind.NEW} isClickable handleClick={spy}>
         New Lozenge
       </Lozenge>
     );
 
-    userEvent.setup();
-    await userEvent.click(screen.getByRole('button'));
+    await user.click(screen.getByRole('button'));
 
     expect(spy).toHaveBeenCalledTimes(1);
   });
