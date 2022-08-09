@@ -1,6 +1,6 @@
 import { it, expect, describe, vi } from 'vitest';
 
-import { render, screen, userEvent } from '../../../test/utils';
+import { render, screen, userEvent, waitFor } from '../../../test/utils';
 import { Overlay } from '../src';
 
 describe('Overlay', () => {
@@ -47,5 +47,25 @@ describe('Overlay', () => {
     await userEvent.tab();
 
     expect(screen.getByRole('button')).toHaveFocus();
+  });
+
+  it('enforces focus outside the container', async () => {
+    render(
+      <>
+        <button>test</button>
+        <Overlay isOpen onClose={() => undefined}>
+          <div tabIndex={0} role="tab">
+            div
+          </div>
+        </Overlay>
+      </>
+    );
+
+    userEvent.setup();
+    await userEvent.tab();
+
+    await waitFor(() => {
+      expect(screen.getByRole('tab')).toHaveFocus();
+    });
   });
 });
