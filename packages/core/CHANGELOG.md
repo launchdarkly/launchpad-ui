@@ -1,5 +1,20 @@
 # @launchpad-ui/core
 
+## 0.6.3
+
+### Patch Changes
+
+- [#267](https://github.com/launchdarkly/launchpad-ui/pull/267) [`ff2e97f`](https://github.com/launchdarkly/launchpad-ui/commit/ff2e97f1675f30c95ffa0b7772477a1961d163a3) Thanks [@Niznikr](https://github.com/Niznikr)! - [Tooltip] Make children optional
+
+- Updated dependencies [[`ff2e97f`](https://github.com/launchdarkly/launchpad-ui/commit/ff2e97f1675f30c95ffa0b7772477a1961d163a3)]:
+  - @launchpad-ui/tooltip@0.3.10
+  - @launchpad-ui/clipboard@0.4.3
+  - @launchpad-ui/filter@0.1.2
+  - @launchpad-ui/menu@0.3.8
+  - @launchpad-ui/navigation@0.2.8
+  - @launchpad-ui/split-button@0.1.6
+  - @launchpad-ui/notification@0.2.15
+
 ## 0.6.2
 
 ### Patch Changes
