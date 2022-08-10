@@ -442,7 +442,6 @@ importers:
   packages/markdown:
     specifiers:
       '@launchpad-ui/tokens': workspace:~
-      '@types/dompurify': ^2.2.9
       '@types/marked': ^4.0.3
       clsx: ^1.2.0
       isomorphic-dompurify: ^0.20.0
@@ -455,7 +454,6 @@ importers:
       isomorphic-dompurify: 0.20.0
       marked: 4.0.18
     devDependencies:
-      '@types/dompurify': 2.3.3
       '@types/marked': 4.0.3
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
@@ -5855,6 +5853,7 @@ packages:
     resolution: {integrity: sha512-nnVQSgRVuZ/843oAfhA25eRSNzUFcBPk/LOiw5gm8mD9/X7CNcbRkQu/OsjCewO8+VIYfPxUnXvPEVGenw14+w==}
     dependencies:
       '@types/trusted-types': 2.0.2
+    dev: false
 
   /@types/ejs/3.1.1:
     resolution: {integrity: sha512-RQul5wEfY7BjWm0sYY86cmUN/pcXWGyVxWX93DFFJvcrxax5zKlieLwA3T77xJGwNcZW0YW6CYG70p1m8xPFmA==}
@@ -6157,6 +6156,7 @@ packages:
 
   /@types/trusted-types/2.0.2:
     resolution: {integrity: sha512-F5DIZ36YVLE+PN+Zwws4kJogq47hNgX3Nx6WyDJ3kcplxyke3XIzB8uK5n/Lpm1HBsbGzd6nmGehL8cPekP+Tg==}
+    dev: false
 
   /@types/unist/2.0.6:
     resolution: {integrity: sha512-PBjIUxZHOuj0R15/xuwJYjFi+KZdNFrehocChv4g5hu6aFroHue8m0lBP0POdK2nKzbw0cgV1mws8+V/JAcEkQ==}

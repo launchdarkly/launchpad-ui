@@ -6,8 +6,9 @@ import { forwardRef } from 'react';
 
 import './styles/Tooltip.css';
 
-type TooltipProps = PopoverProps & {
+type TooltipProps = Omit<PopoverProps, 'children'> & {
   className?: string;
+  children?: React.ReactNode;
 };
 
 const TooltipBase = ({
