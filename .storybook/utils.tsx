@@ -1,5 +1,5 @@
+import type { StoryContext } from '@storybook/addons';
 import type { Args } from '@storybook/api';
-import type { StoryContext } from '@storybook/csf';
 // @ts-ignore
 import type { DecoratorFn, ReactFramework, StoryFn } from '@storybook/react';
 import { Fragment } from 'react';
