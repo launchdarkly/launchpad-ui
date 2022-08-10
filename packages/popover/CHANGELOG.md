@@ -1,5 +1,11 @@
 # @launchpad-ui/popover
 
+## 0.5.7
+
+### Patch Changes
+
+- [#262](https://github.com/launchdarkly/launchpad-ui/pull/262) [`d8d52bc`](https://github.com/launchdarkly/launchpad-ui/commit/d8d52bca9583789c0f1cb155812585f03d682f3f) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Popover] Add condition for empty content string when deciding to render popover.
+
 ## 0.5.6
 
 ### Patch Changes
