@@ -1,5 +1,23 @@
 # @launchpad-ui/core
 
+## 0.6.2
+
+### Patch Changes
+
+- [#262](https://github.com/launchdarkly/launchpad-ui/pull/262) [`d8d52bc`](https://github.com/launchdarkly/launchpad-ui/commit/d8d52bca9583789c0f1cb155812585f03d682f3f) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Popover] Add condition for empty content string when deciding to render popover.
+
+- Updated dependencies [[`d8d52bc`](https://github.com/launchdarkly/launchpad-ui/commit/d8d52bca9583789c0f1cb155812585f03d682f3f)]:
+  - @launchpad-ui/popover@0.5.7
+  - @launchpad-ui/dropdown@0.2.9
+  - @launchpad-ui/menu@0.3.7
+  - @launchpad-ui/navigation@0.2.7
+  - @launchpad-ui/progress-bubbles@0.2.9
+  - @launchpad-ui/split-button@0.1.5
+  - @launchpad-ui/tooltip@0.3.9
+  - @launchpad-ui/filter@0.1.1
+  - @launchpad-ui/clipboard@0.4.2
+  - @launchpad-ui/notification@0.2.14
+
 ## 0.6.1
 
 ### Patch Changes
