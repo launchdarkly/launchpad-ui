@@ -1,5 +1,6 @@
 ---
-'@launchpad-ui/navigation': major
+'@launchpad-ui/navigation': patch
+'@launchpad-ui/core': patch
 ---
 
-export nav and navItem
+[Navigation] Export nav and navItem
