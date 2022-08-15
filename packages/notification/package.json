@@ -39,7 +39,7 @@
     "@launchpad-ui/tokens": "workspace:~",
     "@react-aria/focus": "^3.7.0",
     "clsx": "^1.2.0",
-    "framer-motion": "^6.5.1"
+    "framer-motion": "^7.1.0"
   },
   "peerDependencies": {
     "react": "^16.8.0 || ^17.0.0 || ^18.0.0",
