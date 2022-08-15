@@ -1,5 +1,20 @@
 # @launchpad-ui/filter
 
+## 0.2.0
+
+### Minor Changes
+
+- [#273](https://github.com/launchdarkly/launchpad-ui/pull/273) [`d74c632`](https://github.com/launchdarkly/launchpad-ui/commit/d74c6321e0359b7a328acf33eaecef6937448356) Thanks [@Niznikr](https://github.com/Niznikr)! - Set minimum React version to 18
+
+### Patch Changes
+
+- Updated dependencies [[`d74c632`](https://github.com/launchdarkly/launchpad-ui/commit/d74c6321e0359b7a328acf33eaecef6937448356)]:
+  - @launchpad-ui/button@0.4.0
+  - @launchpad-ui/dropdown@0.3.0
+  - @launchpad-ui/icons@0.3.0
+  - @launchpad-ui/menu@0.4.0
+  - @launchpad-ui/tooltip@0.4.0
+
 ## 0.1.2
 
 ### Patch Changes
