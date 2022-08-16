@@ -22,4 +22,9 @@ describe('Avatar', () => {
     render(<Avatar url="" defaultIcon={Person} />);
     expect(screen.getByRole('img', { hidden: true })).toBeInTheDocument();
   });
+
+  it('renders initials', () => {
+    render(<Avatar url="" defaultIcon={Person} initials="LD" />);
+    expect(screen.getByText('LD')).toBeInTheDocument();
+  });
 });
