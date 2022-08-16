@@ -40,9 +40,9 @@ importers:
       '@typescript-eslint/eslint-plugin': ^5.33.0
       '@typescript-eslint/parser': ^5.33.0
       '@vitejs/plugin-react': ^2.0.0
+      '@vitest/coverage-c8': ^0.22.0
       babel-loader: ^8.2.4
       browserslist: ^4.21.1
-      c8: ^7.12.0
       chromatic: ^6.7.0
       concurrently: ^7.3.0
       deepmerge: ^4.2.2
@@ -75,7 +75,7 @@ importers:
       stylelint-value-no-unknown-custom-properties: ^4.0.0
       typescript: ^4.7.2
       vite: ^3.0.0
-      vitest: ^0.21.0
+      vitest: ^0.22.0
       wait-on: ^6.0.1
       webpack: ^5.74.0
     devDependencies:
@@ -111,9 +111,9 @@ importers:
       '@typescript-eslint/eslint-plugin': 5.33.0_yy5c4q6zhpajzhorvwhnwvctfe
       '@typescript-eslint/parser': 5.33.0_4rv7y5c6xz3vfxwhbrcxxi73bq
       '@vitejs/plugin-react': 2.0.0_vite@3.0.0
+      '@vitest/coverage-c8': 0.22.0_jsdom@20.0.0
       babel-loader: 8.2.5_m3opitmgss2x7fiy6klia7uvaa
       browserslist: 4.21.1
-      c8: 7.12.0
       chromatic: 6.7.0
       concurrently: 7.3.0
       deepmerge: 4.2.2
@@ -146,7 +146,7 @@ importers:
       stylelint-value-no-unknown-custom-properties: 4.0.0_stylelint@14.10.0
       typescript: 4.7.4
       vite: 3.0.0
-      vitest: 0.21.0_c8@7.12.0+jsdom@20.0.0
+      vitest: 0.22.0_jsdom@20.0.0
       wait-on: 6.0.1
       webpack: 5.74.0_esbuild@0.15.3
 
@@ -5836,11 +5836,11 @@ packages:
   /@types/chai-subset/1.3.3:
     resolution: {integrity: sha512-frBecisrNGz+F4T6bcc+NLeolfiojh5FxW2klu669+8BARtyQv2C/GkNW6FUodVe4BroGMP/wER/YDGc7rEllw==}
     dependencies:
-      '@types/chai': 4.3.1
+      '@types/chai': 4.3.3
     dev: true
 
-  /@types/chai/4.3.1:
-    resolution: {integrity: sha512-/zPMqDkzSZ8t3VtxOa4KPq7uzzW978M9Tvh+j7GHKuo6k6GTLxPJ4J5gE5cjfJ26pnXst0N5Hax8Sr0T2Mi9zQ==}
+  /@types/chai/4.3.3:
+    resolution: {integrity: sha512-hC7OMnszpxhZPduX+m+nrx+uFoLkWOMiR4oa/AZF3MuSETYTZmFfJAHqZEM8MVlvfG7BEUcgvtwoCTxBp6hm3g==}
     dev: true
 
   /@types/connect/3.4.35:
@@ -6523,6 +6523,24 @@ packages:
       vite: 3.0.0
     transitivePeerDependencies:
       - supports-color
+    dev: true
+
+  /@vitest/coverage-c8/0.22.0_jsdom@20.0.0:
+    resolution: {integrity: sha512-jwW6b8U+h9nbzQfKoRmpf2xjDg+mcAjLIdVUrZGhjTnIdekGfvoqFoeiXzsLv2HwYBeFi4943lYUftuj8qD1FQ==}
+    dependencies:
+      c8: 7.12.0
+      vitest: 0.22.0_jsdom@20.0.0
+    transitivePeerDependencies:
+      - '@edge-runtime/vm'
+      - '@vitest/browser'
+      - '@vitest/ui'
+      - happy-dom
+      - jsdom
+      - less
+      - sass
+      - stylus
+      - supports-color
+      - terser
     dev: true
 
   /@web3-storage/multipart-parser/1.0.0:
@@ -7509,7 +7527,7 @@ packages:
       foreground-child: 2.0.0
       istanbul-lib-coverage: 3.2.0
       istanbul-lib-report: 3.0.0
-      istanbul-reports: 3.1.4
+      istanbul-reports: 3.1.5
       rimraf: 3.0.2
       test-exclude: 6.0.0
       v8-to-istanbul: 9.0.1
@@ -8165,8 +8183,8 @@ packages:
     engines: {node: '>=10'}
     hasBin: true
     dependencies:
-      JSONStream: 1.3.5
       is-text-path: 1.0.1
+      JSONStream: 1.3.5
       lodash: 4.17.21
       meow: 8.1.2
       split2: 3.2.2
@@ -12266,8 +12284,8 @@ packages:
       supports-color: 7.2.0
     dev: true
 
-  /istanbul-reports/3.1.4:
-    resolution: {integrity: sha512-r1/DshN4KSE7xWEknZLLLLDn5CJybV3nw01VTkp6D5jzLuELlcbudfj/eSQFvrKsJuTVCGnePO7ho82Nw9zzfw==}
+  /istanbul-reports/3.1.5:
+    resolution: {integrity: sha512-nUsEMa9pBt/NOHqbcbeJEgqIlY/K7rVWUX6Lql2orY5e9roQOthbR3vtY4zzf2orPELg80fnxxk9zUyPlgwD1w==}
     engines: {node: '>=8'}
     dependencies:
       html-escaper: 2.0.2
@@ -17519,15 +17537,14 @@ packages:
       fsevents: 2.3.2
     dev: true
 
-  /vitest/0.21.0_c8@7.12.0+jsdom@20.0.0:
-    resolution: {integrity: sha512-+BQB2swk4wQdw5loOoL8esIYh/1ifAliuwj2HWHNE2F8SAl/jF7/aoCJBoXGSf/Ws19k3pH4NrWeVtcSwM0j2w==}
+  /vitest/0.22.0_jsdom@20.0.0:
+    resolution: {integrity: sha512-BSIro/QOHLaQY08FHwT6THWhqLQ+VPU+N4Rdo4pcP+16XB6oLmNNAXGcSh/MOLUhfUy+mqCwx7AyKmU7Ms5R+g==}
     engines: {node: '>=v14.16.0'}
     hasBin: true
     peerDependencies:
       '@edge-runtime/vm': '*'
       '@vitest/browser': '*'
       '@vitest/ui': '*'
-      c8: '*'
       happy-dom: '*'
       jsdom: '*'
     peerDependenciesMeta:
@@ -17537,17 +17554,14 @@ packages:
         optional: true
       '@vitest/ui':
         optional: true
-      c8:
-        optional: true
       happy-dom:
         optional: true
       jsdom:
         optional: true
     dependencies:
-      '@types/chai': 4.3.1
+      '@types/chai': 4.3.3
       '@types/chai-subset': 1.3.3
       '@types/node': 18.6.5
-      c8: 7.12.0
       chai: 4.3.6
       debug: 4.3.4
       jsdom: 20.0.0
