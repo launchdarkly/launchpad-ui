@@ -1,21 +1,21 @@
 import { it, expect, describe, vi } from 'vitest';
 
 import { render, screen, userEvent } from '../../../test/utils';
-import { Lozenge, LozengeKind, LozengeSize } from '../src';
+import { Chip, ChipKind, ChipSize } from '../src';
 
-describe('Lozenge', () => {
+describe('Chip', () => {
   it('renders', () => {
-    render(<Lozenge size={LozengeSize.NORMAL}>Default Lozenge</Lozenge>);
-    expect(screen.getByText('Default Lozenge')).toBeInTheDocument();
+    render(<Chip size={ChipSize.NORMAL}>Default Chip</Chip>);
+    expect(screen.getByText('Default Chip')).toBeInTheDocument();
   });
 
   it('can be clickable', async () => {
     const spy = vi.fn();
     const user = userEvent.setup();
     render(
-      <Lozenge kind={LozengeKind.NEW} isClickable handleClick={spy}>
-        New Lozenge
-      </Lozenge>
+      <Chip kind={ChipKind.NEW} isClickable handleClick={spy}>
+        New Chip
+      </Chip>
     );
 
     await user.click(screen.getByRole('button'));

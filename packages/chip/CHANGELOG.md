@@ -1,4 +1,4 @@
-# @launchpad-ui/lozenge
+# @launchpad-ui/chip
 
 ## 0.3.0
 

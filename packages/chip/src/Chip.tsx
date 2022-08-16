@@ -1,11 +1,11 @@
 import cx from 'clsx';
 
-import './styles/Lozenge.css';
-import { LozengeKind, LozengeSize } from './types';
+import './styles/Chip.css';
+import { ChipKind, ChipSize } from './types';
 
-type LozengeProps = {
-  kind?: LozengeKind;
-  size?: LozengeSize;
+type ChipProps = {
+  kind?: ChipKind;
+  size?: ChipSize;
   subtle?: boolean;
   isClickable?: boolean;
   handleClick?(): void;
@@ -15,9 +15,9 @@ type LozengeProps = {
   ariaDisabled?: boolean;
 };
 
-const Lozenge = ({
-  kind = LozengeKind.DEFAULT,
-  size = LozengeSize.NORMAL,
+const Chip = ({
+  kind = ChipKind.DEFAULT,
+  size = ChipSize.NORMAL,
   subtle = false,
   isClickable,
   handleClick,
@@ -25,16 +25,16 @@ const Lozenge = ({
   className,
   children,
   ariaDisabled,
-}: LozengeProps) => {
+}: ChipProps) => {
   const classes = cx(
-    'Lozenge',
-    `Lozenge--${kind}`,
-    `Lozenge--${size}`,
+    'Chip',
+    `Chip--${kind}`,
+    `Chip--${size}`,
     className,
     {
-      'Lozenge--subtle': subtle,
+      'Chip--subtle': subtle,
     },
-    { 'Lozenge--clickable': isClickable }
+    { 'Chip--clickable': isClickable }
   );
 
   if (isClickable) {
@@ -58,5 +58,5 @@ const Lozenge = ({
   );
 };
 
-export { Lozenge };
-export type { LozengeProps };
+export { Chip };
+export type { ChipProps };

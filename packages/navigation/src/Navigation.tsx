@@ -3,8 +3,8 @@ import type { NavItemWithTooltipProps } from './NavItemWithTooltip';
 import type { CollectionBase } from '@react-types/shared';
 import type { ReactElement, RefObject } from 'react';
 
+import { Chip } from '@launchpad-ui/chip';
 import { Dropdown, DropdownButton } from '@launchpad-ui/dropdown';
-import { Lozenge } from '@launchpad-ui/lozenge';
 import { Menu, MenuItem } from '@launchpad-ui/menu';
 import { useResizeObserver, useValueEffect } from '@react-aria/utils';
 import { useListState } from '@react-stately/list';
@@ -62,7 +62,7 @@ const NavigationMenuButton = <T extends object>(props: NavigationMenuButtonProps
               <div>{item.props.name}</div>
               {item.props.status ? (
                 <div>
-                  <Lozenge kind={item.props.status}>{titlecase(item.props.status)}</Lozenge>
+                  <Chip kind={item.props.status}>{titlecase(item.props.status)}</Chip>
                 </div>
               ) : undefined}
             </div>

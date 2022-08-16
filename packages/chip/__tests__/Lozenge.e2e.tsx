@@ -1,12 +1,12 @@
 import { test, expect } from '@playwright/experimental-ct-react';
 
-import { Lozenge, type LozengeProps } from '../src/Lozenge';
+import { Chip, type ChipProps } from '../src/Chip';
 
 test.use({ viewport: { width: 500, height: 500 } });
 
-const createComponent = (props?: LozengeProps) => <Lozenge {...props}>Lozenge</Lozenge>;
+const createComponent = (props?: ChipProps) => <Chip {...props}>Chip</Chip>;
 
-test.describe('Lozenge', () => {
+test.describe('Chip', () => {
   test('is accessible', async ({ mount, page }) => {
     const component = await mount(createComponent());
 

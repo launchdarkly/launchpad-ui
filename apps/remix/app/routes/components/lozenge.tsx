@@ -1,5 +1,5 @@
-import { Lozenge } from '@launchpad-ui/core';
+import { Chip } from '@launchpad-ui/core';
 
 export default function Index() {
-  return <Lozenge>Lozenge</Lozenge>;
+  return <Chip>Chip</Chip>;
 }

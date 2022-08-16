@@ -1,6 +1,6 @@
 import type { NavigationItemProps } from '../src';
 
-import { LozengeKind } from '@launchpad-ui/lozenge';
+import { ChipKind } from '@launchpad-ui/chip';
 import { MemoryRouter } from 'react-router-dom';
 import { it, expect, describe, vi } from 'vitest';
 
@@ -74,13 +74,13 @@ describe('Navigation', () => {
     });
   });
 
-  it('can render items with a lozenge', async () => {
+  it('can render items with a chip', async () => {
     const { container } = render(
       createComponent([
         {
           name: 'First',
           to: '/first',
-          status: LozengeKind.NEW,
+          status: ChipKind.NEW,
         },
         {
           name: 'Second',
@@ -89,6 +89,6 @@ describe('Navigation', () => {
       ])
     );
     // eslint-disable-next-line testing-library/no-container, testing-library/no-node-access
-    expect(container.querySelector('.Lozenge--navbar')).not.toBeNull();
+    expect(container.querySelector('.Chip--navbar')).not.toBeNull();
   });
 });
