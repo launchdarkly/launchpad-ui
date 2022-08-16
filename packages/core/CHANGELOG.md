@@ -1,5 +1,33 @@
 # @launchpad-ui/core
 
+## 0.7.1
+
+### Patch Changes
+
+- [#275](https://github.com/launchdarkly/launchpad-ui/pull/275) [`7fb3d52`](https://github.com/launchdarkly/launchpad-ui/commit/7fb3d5256821e10a4ad4892e47fa88a2a8cee94c) Thanks [@Niznikr](https://github.com/Niznikr)! - [Icons] Add osmo and custom icons
+
+* [#280](https://github.com/launchdarkly/launchpad-ui/pull/280) [`f471218`](https://github.com/launchdarkly/launchpad-ui/commit/f4712188797cd19273ec888d1a2ff88a4d29b716) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Avatar] Add Avatar props: initials, ariaLabel, testId. Make defaultIcon prop optional.
+
+* Updated dependencies [[`7fb3d52`](https://github.com/launchdarkly/launchpad-ui/commit/7fb3d5256821e10a4ad4892e47fa88a2a8cee94c), [`f471218`](https://github.com/launchdarkly/launchpad-ui/commit/f4712188797cd19273ec888d1a2ff88a4d29b716)]:
+  - @launchpad-ui/icons@0.3.1
+  - @launchpad-ui/avatar@0.2.1
+  - @launchpad-ui/alert@0.2.1
+  - @launchpad-ui/banner@0.3.1
+  - @launchpad-ui/clipboard@0.5.1
+  - @launchpad-ui/dropdown@0.3.1
+  - @launchpad-ui/filter@0.2.1
+  - @launchpad-ui/form@0.3.1
+  - @launchpad-ui/menu@0.4.1
+  - @launchpad-ui/modal@0.6.1
+  - @launchpad-ui/notification@0.3.1
+  - @launchpad-ui/pagination@0.1.1
+  - @launchpad-ui/navigation@0.3.1
+  - @launchpad-ui/split-button@0.2.1
+  - @launchpad-ui/overlay@0.2.1
+  - @launchpad-ui/popover@0.6.1
+  - @launchpad-ui/progress-bubbles@0.3.1
+  - @launchpad-ui/tooltip@0.4.1
+
 ## 0.7.0
 
 ### Minor Changes

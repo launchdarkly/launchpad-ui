@@ -1,5 +1,14 @@
 # @launchpad-ui/avatar
 
+## 0.2.1
+
+### Patch Changes
+
+- [#280](https://github.com/launchdarkly/launchpad-ui/pull/280) [`f471218`](https://github.com/launchdarkly/launchpad-ui/commit/f4712188797cd19273ec888d1a2ff88a4d29b716) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Avatar] Add Avatar props: initials, ariaLabel, testId. Make defaultIcon prop optional.
+
+- Updated dependencies [[`7fb3d52`](https://github.com/launchdarkly/launchpad-ui/commit/7fb3d5256821e10a4ad4892e47fa88a2a8cee94c)]:
+  - @launchpad-ui/icons@0.3.1
+
 ## 0.2.0
 
 ### Minor Changes
