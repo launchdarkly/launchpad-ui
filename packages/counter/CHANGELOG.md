@@ -1,5 +1,11 @@
 # @launchpad-ui/counter
 
+## 0.2.0
+
+### Minor Changes
+
+- [#273](https://github.com/launchdarkly/launchpad-ui/pull/273) [`d74c632`](https://github.com/launchdarkly/launchpad-ui/commit/d74c6321e0359b7a328acf33eaecef6937448356) Thanks [@Niznikr](https://github.com/Niznikr)! - Set minimum React version to 18
+
 ## 0.1.0
 
 ### Minor Changes

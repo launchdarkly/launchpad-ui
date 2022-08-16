@@ -7,7 +7,6 @@ const props = {
   level: NotificationLevel.INFO,
   message: <>{NotificationLevel.INFO}</>,
   details: 'This is a detail',
-  onDismiss: () => undefined,
 };
 
 describe('Notification', () => {

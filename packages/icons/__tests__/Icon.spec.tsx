@@ -17,5 +17,11 @@ describe('Icon', () => {
   it('returns an icon based on the kind passed', () => {
     render(<KindIcon kind="warning" />);
     expect(screen.getByTitle('Warning')).toBeInTheDocument();
+
+    render(<KindIcon kind="error" />);
+    expect(screen.getByTitle('Error')).toBeInTheDocument();
+
+    render(<KindIcon kind="info" />);
+    expect(screen.getByTitle('Info')).toBeInTheDocument();
   });
 });

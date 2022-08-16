@@ -1,5 +1,29 @@
 # @launchpad-ui/tooltip
 
+## 0.4.0
+
+### Minor Changes
+
+- [#273](https://github.com/launchdarkly/launchpad-ui/pull/273) [`d74c632`](https://github.com/launchdarkly/launchpad-ui/commit/d74c6321e0359b7a328acf33eaecef6937448356) Thanks [@Niznikr](https://github.com/Niznikr)! - Set minimum React version to 18
+
+### Patch Changes
+
+- Updated dependencies [[`d74c632`](https://github.com/launchdarkly/launchpad-ui/commit/d74c6321e0359b7a328acf33eaecef6937448356), [`dfe9d18`](https://github.com/launchdarkly/launchpad-ui/commit/dfe9d1861a1b3cc3e84583539b2446f63932512e)]:
+  - @launchpad-ui/popover@0.6.0
+
+## 0.3.10
+
+### Patch Changes
+
+- [#267](https://github.com/launchdarkly/launchpad-ui/pull/267) [`ff2e97f`](https://github.com/launchdarkly/launchpad-ui/commit/ff2e97f1675f30c95ffa0b7772477a1961d163a3) Thanks [@Niznikr](https://github.com/Niznikr)! - [Tooltip] Make children optional
+
+## 0.3.9
+
+### Patch Changes
+
+- Updated dependencies [[`d8d52bc`](https://github.com/launchdarkly/launchpad-ui/commit/d8d52bca9583789c0f1cb155812585f03d682f3f)]:
+  - @launchpad-ui/popover@0.5.7
+
 ## 0.3.8
 
 ### Patch Changes

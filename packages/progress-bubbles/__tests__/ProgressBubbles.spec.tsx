@@ -1,6 +1,6 @@
 import type { ProgressBubblesProps } from '../src';
 
-import { Info } from '@launchpad-ui/icons';
+import { Add, Info } from '@launchpad-ui/icons';
 import { it, expect, describe } from 'vitest';
 
 import { render, screen } from '../../../test/utils';
@@ -34,6 +34,12 @@ describe('ProgressBubbles', () => {
       },
       {
         label: 'Stage 4',
+        icons: (
+          <>
+            <Info />
+            <Add />
+          </>
+        ),
       },
       {
         label: 'Complete',

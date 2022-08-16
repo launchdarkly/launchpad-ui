@@ -1,6 +1,6 @@
 {
   "name": "@launchpad-ui/tab-list",
-  "version": "0.2.2",
+  "version": "0.3.0",
   "status": "beta",
   "publishConfig": {
     "access": "public"
@@ -42,8 +42,8 @@
   },
   "peerDependencies": {
     "@react-stately/collections": "^3.4.0",
-    "react": "^16.8.0 || ^17.0.0 || ^18.0.0",
-    "react-dom": "^16.8.0 || ^17.0.0 || ^18.0.0"
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
   },
   "devDependencies": {
     "@react-stately/collections": "^3.4.0",

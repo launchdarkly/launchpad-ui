@@ -1,6 +1,6 @@
 {
   "name": "@launchpad-ui/icons",
-  "version": "0.2.4",
+  "version": "0.3.0",
   "status": "beta",
   "publishConfig": {
     "access": "public"
@@ -40,8 +40,8 @@
     "uuid": "^8.3.2"
   },
   "peerDependencies": {
-    "react": "^16.8.0 || ^17.0.0 || ^18.0.0",
-    "react-dom": "^16.8.0 || ^17.0.0 || ^18.0.0"
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
   },
   "devDependencies": {
     "@svgr/cli": "^6.3.1",

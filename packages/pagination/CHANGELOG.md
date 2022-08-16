@@ -1,5 +1,18 @@
 # @launchpad-ui/pagination
 
+## 0.1.0
+
+### Minor Changes
+
+- [#273](https://github.com/launchdarkly/launchpad-ui/pull/273) [`d74c632`](https://github.com/launchdarkly/launchpad-ui/commit/d74c6321e0359b7a328acf33eaecef6937448356) Thanks [@Niznikr](https://github.com/Niznikr)! - Set minimum React version to 18
+
+### Patch Changes
+
+- Updated dependencies [[`d74c632`](https://github.com/launchdarkly/launchpad-ui/commit/d74c6321e0359b7a328acf33eaecef6937448356)]:
+  - @launchpad-ui/button@0.4.0
+  - @launchpad-ui/icons@0.3.0
+  - @launchpad-ui/progress@0.3.0
+
 ## 0.0.7
 
 ### Patch Changes

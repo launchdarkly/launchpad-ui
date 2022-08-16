@@ -1,5 +1,77 @@
 # @launchpad-ui/core
 
+## 0.7.0
+
+### Minor Changes
+
+- [#273](https://github.com/launchdarkly/launchpad-ui/pull/273) [`d74c632`](https://github.com/launchdarkly/launchpad-ui/commit/d74c6321e0359b7a328acf33eaecef6937448356) Thanks [@Niznikr](https://github.com/Niznikr)! - Set minimum React version to 18
+
+* [#258](https://github.com/launchdarkly/launchpad-ui/pull/258) [`dfe9d18`](https://github.com/launchdarkly/launchpad-ui/commit/dfe9d1861a1b3cc3e84583539b2446f63932512e) Thanks [@renovate](https://github.com/apps/renovate)! - [Modal, Notification, Popover] Update framer-motion to v7
+
+### Patch Changes
+
+- Updated dependencies [[`d74c632`](https://github.com/launchdarkly/launchpad-ui/commit/d74c6321e0359b7a328acf33eaecef6937448356), [`dfe9d18`](https://github.com/launchdarkly/launchpad-ui/commit/dfe9d1861a1b3cc3e84583539b2446f63932512e)]:
+  - @launchpad-ui/alert@0.2.0
+  - @launchpad-ui/avatar@0.2.0
+  - @launchpad-ui/banner@0.3.0
+  - @launchpad-ui/button@0.4.0
+  - @launchpad-ui/clipboard@0.5.0
+  - @launchpad-ui/counter@0.2.0
+  - @launchpad-ui/dropdown@0.3.0
+  - @launchpad-ui/filter@0.2.0
+  - @launchpad-ui/form@0.3.0
+  - @launchpad-ui/icons@0.3.0
+  - @launchpad-ui/lozenge@0.3.0
+  - @launchpad-ui/markdown@0.2.0
+  - @launchpad-ui/menu@0.4.0
+  - @launchpad-ui/modal@0.6.0
+  - @launchpad-ui/navigation@0.3.0
+  - @launchpad-ui/notification@0.3.0
+  - @launchpad-ui/overlay@0.2.0
+  - @launchpad-ui/pagination@0.1.0
+  - @launchpad-ui/popover@0.6.0
+  - @launchpad-ui/progress@0.3.0
+  - @launchpad-ui/progress-bubbles@0.3.0
+  - @launchpad-ui/slider@0.2.0
+  - @launchpad-ui/split-button@0.2.0
+  - @launchpad-ui/tab-list@0.3.0
+  - @launchpad-ui/table@0.2.0
+  - @launchpad-ui/toggle@0.3.0
+  - @launchpad-ui/tooltip@0.4.0
+
+## 0.6.3
+
+### Patch Changes
+
+- [#267](https://github.com/launchdarkly/launchpad-ui/pull/267) [`ff2e97f`](https://github.com/launchdarkly/launchpad-ui/commit/ff2e97f1675f30c95ffa0b7772477a1961d163a3) Thanks [@Niznikr](https://github.com/Niznikr)! - [Tooltip] Make children optional
+
+- Updated dependencies [[`ff2e97f`](https://github.com/launchdarkly/launchpad-ui/commit/ff2e97f1675f30c95ffa0b7772477a1961d163a3)]:
+  - @launchpad-ui/tooltip@0.3.10
+  - @launchpad-ui/clipboard@0.4.3
+  - @launchpad-ui/filter@0.1.2
+  - @launchpad-ui/menu@0.3.8
+  - @launchpad-ui/navigation@0.2.8
+  - @launchpad-ui/split-button@0.1.6
+  - @launchpad-ui/notification@0.2.15
+
+## 0.6.2
+
+### Patch Changes
+
+- [#262](https://github.com/launchdarkly/launchpad-ui/pull/262) [`d8d52bc`](https://github.com/launchdarkly/launchpad-ui/commit/d8d52bca9583789c0f1cb155812585f03d682f3f) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Popover] Add condition for empty content string when deciding to render popover.
+
+- Updated dependencies [[`d8d52bc`](https://github.com/launchdarkly/launchpad-ui/commit/d8d52bca9583789c0f1cb155812585f03d682f3f)]:
+  - @launchpad-ui/popover@0.5.7
+  - @launchpad-ui/dropdown@0.2.9
+  - @launchpad-ui/menu@0.3.7
+  - @launchpad-ui/navigation@0.2.7
+  - @launchpad-ui/progress-bubbles@0.2.9
+  - @launchpad-ui/split-button@0.1.5
+  - @launchpad-ui/tooltip@0.3.9
+  - @launchpad-ui/filter@0.1.1
+  - @launchpad-ui/clipboard@0.4.2
+  - @launchpad-ui/notification@0.2.14
+
 ## 0.6.1
 
 ### Patch Changes

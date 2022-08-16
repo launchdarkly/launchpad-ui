@@ -148,4 +148,27 @@ describe('Menu', () => {
     );
     expect(screen.getByText(text)).toHaveAttribute('disabled');
   });
+
+  it('can cycle through items with keyboard and virtualization enabled', async () => {
+    render(
+      <Popover>
+        <button>Target</button>
+        <Menu enableVirtualization>
+          <MenuItem item="one">one</MenuItem>
+          <MenuItem item="two">two</MenuItem>
+          <MenuItem item="three">three</MenuItem>
+        </Menu>
+      </Popover>
+    );
+
+    const user = userEvent.setup();
+    await user.click(screen.getByText('Target'));
+    const items = screen.getAllByRole('menuitem');
+
+    expect(items[0]).toHaveFocus();
+    await user.keyboard('{arrowdown}');
+    expect(items[1]).toHaveFocus();
+    await user.keyboard('{arrowup}');
+    expect(items[0]).toHaveFocus();
+  });
 });

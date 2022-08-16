@@ -1,4 +1,4 @@
-import { it, expect, describe } from 'vitest';
+import { it, expect, describe, vi } from 'vitest';
 
 import { render, screen, userEvent, waitFor } from '../../../test/utils';
 import { Popover, PopoverInteractionKind } from '../src';
@@ -6,7 +6,7 @@ import { Popover, PopoverInteractionKind } from '../src';
 describe('Popover', () => {
   it('renders', () => {
     render(
-      <Popover isOpen>
+      <Popover isOpen enableArrow>
         <button>Target</button>
         <span>Content</span>
       </Popover>
@@ -107,5 +107,22 @@ describe('Popover', () => {
 
     await user.click(screen.getByRole('button'));
     expect(screen.getByRole('tooltip').style.position).toBe('fixed');
+  });
+
+  it('calls onClose when closed', async () => {
+    const user = userEvent.setup();
+    const spy = vi.fn();
+    render(
+      <Popover interactionKind={PopoverInteractionKind.HOVER} onClose={spy}>
+        <button>Target</button>
+        <span>Content</span>
+      </Popover>
+    );
+
+    await user.hover(screen.getByRole('button'));
+    await user.unhover(screen.getByRole('button'));
+    await waitFor(() => {
+      expect(spy).toHaveBeenCalledTimes(1);
+    });
   });
 });
