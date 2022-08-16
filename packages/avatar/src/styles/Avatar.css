@@ -6,7 +6,7 @@
   max-width: unset;
   overflow: hidden;
   color: var(--color-black);
-  display: flex;
+  display: inline-flex;
   justify-content: center;
   align-items: center;
   font-weight: var(--font-weight-bold);
