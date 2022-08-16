@@ -1,5 +1,11 @@
 # @launchpad-ui/avatar
 
+## 0.2.2
+
+### Patch Changes
+
+- [#283](https://github.com/launchdarkly/launchpad-ui/pull/283) [`2f170db`](https://github.com/launchdarkly/launchpad-ui/commit/2f170dbc653be61dd77574e13e576a18f2c7f109) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Avatar] Change avatar from flex to inline-flex
+
 ## 0.2.1
 
 ### Patch Changes
