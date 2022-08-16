@@ -7,6 +7,7 @@
   overflow: hidden;
   color: var(--color-black);
   display: inline-flex;
+  vertical-align: top;
   justify-content: center;
   align-items: center;
   font-weight: var(--font-weight-bold);
