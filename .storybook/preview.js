@@ -52,10 +52,10 @@ export const globalTypes = {
 };
 
 export const decorators = [
-  (StoryFn, { globals, parameters }) => {
+  (story, { globals, parameters }) => {
     const theme = globals.theme || parameters.theme || 'light';
     document.documentElement.setAttribute('data-theme', theme);
 
-    return <StoryFn />;
+    return story();
   },
 ];
