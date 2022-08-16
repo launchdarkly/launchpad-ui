@@ -28,6 +28,7 @@ describe('Overlay', () => {
   it('calls onClose when escape is pressed', async () => {
     const spy = vi.fn();
     const user = userEvent.setup();
+
     render(
       <Overlay isOpen onClose={spy}>
         <button>test</button>
@@ -49,6 +50,7 @@ describe('Overlay', () => {
     );
 
     await user.tab();
+
     expect(screen.getByRole('button')).toHaveFocus();
   });
 

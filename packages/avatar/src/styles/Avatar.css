@@ -2,30 +2,66 @@
   background-color: var(--color-background);
   border: 1px solid var(--color-gray-100);
   border-radius: 100%;
-  display: inline-block;
   flex-shrink: 0;
-  vertical-align: middle;
   max-width: unset;
   overflow: hidden;
   color: var(--color-black);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: var(--font-weight-bold);
+}
+
+.Avatar--initials {
+  border: none;
+  color: var(--color-white);
+}
+
+.Avatar--color0 {
+  background-color: var(--color-yellow-800);
+}
+
+.Avatar--color1 {
+  background-color: var(--color-blue-500);
+}
+
+.Avatar--color2 {
+  background-color: var(--color-pink-500);
+}
+
+.Avatar--color3 {
+  background-color: var(--color-cyan-600);
+}
+
+.Avatar--color4 {
+  background-color: var(--color-purple-500);
+}
+
+.Avatar-initials-content {
+  line-height: 1;
+  position: relative;
 }
 
 .Avatar--tiny {
   height: 1rem;
   width: 1rem;
+  font-size: 0.5rem;
 }
 
 .Avatar--small {
   height: 1.6rem;
   width: 1.6rem;
+  font-size: 0.8rem;
 }
 
 .Avatar--medium {
   height: 2.4rem;
   width: 2.4rem;
+  font-size: 1.1rem;
 }
 
 .Avatar--large {
   height: 4rem;
   width: 4rem;
+  font-size: 2rem;
 }
