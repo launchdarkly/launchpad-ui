@@ -1,4 +1,4 @@
-import type { ChipKind } from 'packages/chip/src';
+import type { ChipKind } from '@launchpad-ui/chip';
 
 import { NavLink, useLocation } from 'react-router-dom';
 
