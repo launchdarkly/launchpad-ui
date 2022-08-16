@@ -61,10 +61,7 @@ const Avatar = ({
     if (initials) {
       const color = (initials.charCodeAt(0) + initials.charCodeAt(1)) % 5;
 
-      const initialsContainerClasses = cx(
-        classes,
-        `Avatar-initials Avatar--${size} Avatar-initials--color${color}`
-      );
+      const initialsContainerClasses = cx(classes, `Avatar--initials Avatar--color${color}`);
 
       return (
         <div className={initialsContainerClasses} aria-label={ariaLabel} data-test-id={testId}>
