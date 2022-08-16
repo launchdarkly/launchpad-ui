@@ -14,10 +14,9 @@ module.exports = {
     '@storybook/addon-interactions',
     '@etchteam/storybook-addon-status',
   ],
-  framework: '@storybook/react-webpack5',
-  features: {
-    storyStoreV7: true,
-    babelModeV7: true,
+  framework: {
+    name: '@storybook/react-webpack5',
+    options: { fastRefresh: true, strictMode: true },
   },
   staticDirs: ['.'],
   env: (config) => {
