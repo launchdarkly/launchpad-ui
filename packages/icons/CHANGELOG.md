@@ -1,5 +1,11 @@
 # @launchpad-ui/icons
 
+## 0.3.1
+
+### Patch Changes
+
+- [#275](https://github.com/launchdarkly/launchpad-ui/pull/275) [`7fb3d52`](https://github.com/launchdarkly/launchpad-ui/commit/7fb3d5256821e10a4ad4892e47fa88a2a8cee94c) Thanks [@Niznikr](https://github.com/Niznikr)! - [Icons] Add osmo and custom icons
+
 ## 0.3.0
 
 ### Minor Changes
