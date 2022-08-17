@@ -7,11 +7,11 @@ import { forwardRef, useContext, useMemo } from 'react';
 import { SplitButtonContext } from './context';
 import './styles/SplitButton.css';
 
-type SplitButtonDropdownButtonProps = Omit<DropdownButtonProps, 'kind' | 'size'>;
+type SplitButtonDropdownButtonProps = Omit<DropdownButtonProps, 'kind' | 'size' | 'children'>;
 
 const SplitButtonDropdownButton = forwardRef<HTMLButtonElement, SplitButtonDropdownButtonProps>(
   (props, ref) => {
-    const { disabled, children, testId, className, 'aria-label': ariaLabel, ...rest } = props;
+    const { disabled, className, 'aria-label': ariaLabel, ...rest } = props;
     const { disabled: parentDisabled, kind, size } = useContext(SplitButtonContext);
 
     const isDisabled = parentDisabled || disabled;

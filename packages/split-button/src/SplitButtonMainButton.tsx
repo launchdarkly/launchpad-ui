@@ -15,7 +15,7 @@ const SplitButtonMainButton = forwardRef<
   HTMLButtonElement | HTMLAnchorElement,
   SplitButtonMainButtonProps
 >((props, ref) => {
-  const { disabled, children, testId, className, 'aria-label': ariaLabel, ...rest } = props;
+  const { disabled, children, className, 'aria-label': ariaLabel, ...rest } = props;
   const { disabled: parentDisabled, kind, size } = useContext(SplitButtonContext);
 
   const isDisabled = parentDisabled || disabled;
