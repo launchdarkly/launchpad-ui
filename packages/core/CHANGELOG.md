@@ -1,5 +1,20 @@
 # @launchpad-ui/core
 
+## 0.8.0
+
+### Minor Changes
+
+- [#289](https://github.com/launchdarkly/launchpad-ui/pull/289) [`b89ace7`](https://github.com/launchdarkly/launchpad-ui/commit/b89ace7f4715c9ee27b076ec3b8390c8bf0a29af) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [SplitButton]: Rework SplitButton so that it is more composable, introducing SplitButtonMainButton, SplitButtonDropdownButton, and SplitButtonDropdown
+  [Dropdown]: Explicitly support passing an aria label
+
+### Patch Changes
+
+- Updated dependencies [[`b89ace7`](https://github.com/launchdarkly/launchpad-ui/commit/b89ace7f4715c9ee27b076ec3b8390c8bf0a29af)]:
+  - @launchpad-ui/split-button@0.3.0
+  - @launchpad-ui/dropdown@0.3.3
+  - @launchpad-ui/filter@0.2.3
+  - @launchpad-ui/navigation@0.3.3
+
 ## 0.7.4
 
 ### Patch Changes
