@@ -1,5 +1,14 @@
 # @launchpad-ui/core
 
+## 0.8.1
+
+### Patch Changes
+
+- [#293](https://github.com/launchdarkly/launchpad-ui/pull/293) [`27f5655`](https://github.com/launchdarkly/launchpad-ui/commit/27f5655dfbe58fcbe4dcb62a20c676778d71da14) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [SplitButton] Pass through test ids for split button components
+
+- Updated dependencies [[`27f5655`](https://github.com/launchdarkly/launchpad-ui/commit/27f5655dfbe58fcbe4dcb62a20c676778d71da14)]:
+  - @launchpad-ui/split-button@0.3.1
+
 ## 0.8.0
 
 ### Minor Changes
