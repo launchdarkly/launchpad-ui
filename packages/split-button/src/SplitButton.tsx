@@ -22,7 +22,7 @@ type SplitButtonProps = {
   onClickMainButton(v: React.MouseEvent): void;
   onClickDropdownButton?(v: React.MouseEvent): void;
   loadingText?: string;
-  onSelect(item: string): void;
+  onSelect(item: string | object | number): void;
   testId?: string;
   isOpen?: boolean;
   onInteraction?(): void;

@@ -4,11 +4,31 @@ import type { ComponentStoryObj, DecoratorFn } from '@storybook/react';
 import { ButtonKind, ButtonSize } from '@launchpad-ui/button';
 import { Person } from '@launchpad-ui/icons';
 import { Menu, MenuItem } from '@launchpad-ui/menu';
-import { Fragment } from 'react';
+import { Fragment, useState } from 'react';
 
 import { SplitButton } from '../src';
 
 import './SplitButton.stories.css';
+
+const SplitButtonWithMenu = (props: SplitButtonProps) => {
+  const [open, setOpen] = useState(false);
+
+  const handleSelect = (data: object) => {
+    alert(JSON.stringify(data));
+    setOpen(!open);
+  };
+
+  return (
+    <SplitButton
+      {...props}
+      isOpen={open}
+      onInteraction={() => setOpen(!open)}
+      onSelect={handleSelect}
+    >
+      {props.children}
+    </SplitButton>
+  );
+};
 
 const splitButtonTemplateWithStates: DecoratorFn = (storyComponent, context) => {
   const { viewMode, args } = context;
@@ -27,7 +47,7 @@ const splitButtonTemplateWithStates: DecoratorFn = (storyComponent, context) => 
           ]
         }{' '}
       </span>
-      <SplitButton {...storyArgs} className={className} />
+      <SplitButtonWithMenu {...storyArgs} className={className} />
     </Fragment>
   ));
   if (viewMode === 'docs') {
@@ -38,13 +58,14 @@ const splitButtonTemplateWithStates: DecoratorFn = (storyComponent, context) => 
       <span className="Button-state-label">Resting </span>
       {storyComponent()}
       {PseudoStateButtons}
-      <span className="Button-state-label">Disabled</span> <SplitButton {...storyArgs} disabled />
+      <span className="Button-state-label">Disabled</span>{' '}
+      <SplitButtonWithMenu {...storyArgs} disabled />
     </div>
   );
 };
 
 export default {
-  component: SplitButton,
+  component: SplitButtonWithMenu,
   title: 'Components/SplitButton',
   description:
     'An element that presents an immediate action and additional options from a dropdown.',
