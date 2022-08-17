@@ -13,6 +13,7 @@ type DropdownButtonProps = {
   children?: React.ReactNode;
   onClick?(v: React.MouseEvent): void;
   testId?: string;
+  'aria-label'?: string;
 };
 
 const DropdownButton = forwardRef<React.ElementRef<typeof Button>, DropdownButtonProps>(
