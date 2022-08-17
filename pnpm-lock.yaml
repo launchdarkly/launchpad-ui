@@ -500,10 +500,9 @@ importers:
       '@launchpad-ui/progress': workspace:~
       '@launchpad-ui/tokens': workspace:~
       '@react-aria/focus': ^3.7.0
-      '@types/no-scroll': ^2.1.0
+      '@react-aria/overlays': ^3.10.0
       clsx: ^1.2.0
       framer-motion: ^7.1.0
-      no-scroll: ^2.1.1
       react: ^18.2.0
       react-dom: ^18.2.0
     dependencies:
@@ -512,11 +511,10 @@ importers:
       '@launchpad-ui/progress': link:../progress
       '@launchpad-ui/tokens': link:../tokens
       '@react-aria/focus': 3.7.0_react@18.2.0
+      '@react-aria/overlays': 3.10.0_biqbaboplfbrettd7655fr4n2y
       clsx: 1.2.0
       framer-motion: 7.1.0_biqbaboplfbrettd7655fr4n2y
-      no-scroll: 2.1.1
     devDependencies:
-      '@types/no-scroll': 2.1.0
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
 
@@ -3477,6 +3475,26 @@ packages:
       '@babel/runtime': 7.18.6
     dev: false
 
+  /@react-aria/overlays/3.10.0_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-A7aI59/o4tUAISjyyRfJz3833SLe4ZKPNoxOVUzgjfkfnCKq7YDSSEC5poxDqYD9bq/NBXK6stdgaGLXQSirNw==}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0 || 18
+      react-dom: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0 || 18
+    dependencies:
+      '@babel/runtime': 7.18.6
+      '@react-aria/i18n': 3.5.1_react@18.2.0
+      '@react-aria/interactions': 3.10.0_react@18.2.0
+      '@react-aria/ssr': 3.3.0_react@18.2.0
+      '@react-aria/utils': 3.13.2_react@18.2.0
+      '@react-aria/visually-hidden': 3.4.0_react@18.2.0
+      '@react-stately/overlays': 3.4.0_react@18.2.0
+      '@react-types/button': 3.6.0_react@18.2.0
+      '@react-types/overlays': 3.6.2_react@18.2.0
+      '@react-types/shared': 3.14.0_react@18.2.0
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
+    dev: false
+
   /@react-aria/selection/3.10.0_react@18.2.0:
     resolution: {integrity: sha512-VvFgNRrM0kK6aqyMTeTN+pguyvYN9Wu3viftnZyk89uo2+9hfmU7DLhz5kXkdJY9UNzn033jYGwJdWEuqRq65g==}
     peerDependencies:
@@ -3652,6 +3670,17 @@ packages:
       react: 18.2.0
     dev: false
 
+  /@react-stately/overlays/3.4.0_react@18.2.0:
+    resolution: {integrity: sha512-jXVm1V91lWOKh73cFvE9W9JtAE8idSWEUtFlVrlBI/jh0ZOt148UlRVWgHrm7FhaUpyvOFNUyfidRmKMuB+hgw==}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0 || 18
+    dependencies:
+      '@babel/runtime': 7.18.6
+      '@react-stately/utils': 3.5.1_react@18.2.0
+      '@react-types/overlays': 3.6.2_react@18.2.0
+      react: 18.2.0
+    dev: false
+
   /@react-stately/selection/3.10.1_react@18.2.0:
     resolution: {integrity: sha512-5b68yo4kD1kxAyFJTsGRfMsVCkRS45EgpFCqpNkJzcNQj8YK2IlrqCkb+fM7J0IblbHeVcM5KHf3zGsZA39kog==}
     peerDependencies:
@@ -3718,6 +3747,15 @@ packages:
       react: 18.2.0
     dev: false
 
+  /@react-types/button/3.6.0_react@18.2.0:
+    resolution: {integrity: sha512-ijCi07TkLmwU3Qtn8IzKJi1nugZj8Ln0+w2OZPRJS/tRFv48qgNsOXum54W5i9W0yg/I7VQiPjm+YsQS51g7gA==}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0 || 18
+    dependencies:
+      '@react-types/shared': 3.14.0_react@18.2.0
+      react: 18.2.0
+    dev: false
+
   /@react-types/checkbox/3.3.1_react@18.2.0:
     resolution: {integrity: sha512-6PlyvfqisuObrltmJdBx88t143NaQ/ibkvuDdsEaiMlJbHKU4m0dbxaYNhGNQ0Jm4AK/x9Rig0tbpMeXjBXaDA==}
     peerDependencies:
@@ -3729,6 +3767,15 @@ packages:
 
   /@react-types/checkbox/3.3.2_react@18.2.0:
     resolution: {integrity: sha512-s1bgqL4qfEMEasePayukZ6pzpIzfAG1OuVmpARz0kVdVaN7e+B4+dRJ0nDtiQf/TjNLg45ZlG3NTXJ1hsZPelQ==}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0 || 18
+    dependencies:
+      '@react-types/shared': 3.14.0_react@18.2.0
+      react: 18.2.0
+    dev: false
+
+  /@react-types/overlays/3.6.2_react@18.2.0:
+    resolution: {integrity: sha512-ag9UCIlcNCvMHBORRksdLnQK3ef+CEbrt+TydOxBAxAf+87fXJ/0H6hP/4QTebEA2ixA0qz8CFga81S8ZGnOsQ==}
     peerDependencies:
       react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0 || 18
     dependencies:
@@ -6049,10 +6096,6 @@ packages:
 
   /@types/ms/0.7.31:
     resolution: {integrity: sha512-iiUgKzV9AuaEkZqkOLDIvlQiL6ltuZd9tGcW3gwpnX8JbuiuhFlEGmmFXEXkN50Cvq7Os88IY2v0dkDqXYWVgA==}
-    dev: true
-
-  /@types/no-scroll/2.1.0:
-    resolution: {integrity: sha512-67oe0I3SZeEsCIcf5MT4yKrcJOIZn5g+ytPEn+JQQnM4IprztFAWg9T3ngVGbxkceJlLYBsqIfvHl9xEGTuPyA==}
     dev: true
 
   /@types/node-fetch/2.6.2:
@@ -13884,10 +13927,6 @@ packages:
       lower-case: 2.0.2
       tslib: 2.4.0
     dev: true
-
-  /no-scroll/2.1.1:
-    resolution: {integrity: sha512-YTzGAJOo/B6hkodeT5SKKHpOhAzjMfkUCCXjLJwjWk2F4/InIg+HbdH9kmT7bKpleDuqLZDTRy2OdNtAj0IVyQ==}
-    dev: false
 
   /node-addon-api/1.7.2:
     resolution: {integrity: sha512-ibPK3iA+vaY1eEjESkQkM0BbCqFOaZMiXRTtdB0u7b4djtY6JnsjvPdUHVMg6xQt3B8fpTTWHI9A+ADjM9frzg==}

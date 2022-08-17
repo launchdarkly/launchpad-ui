@@ -3,9 +3,9 @@ import type { Variants } from 'framer-motion';
 import { Button, ButtonSize, ButtonType } from '@launchpad-ui/button';
 import { Close, IconSize } from '@launchpad-ui/icons';
 import { FocusScope } from '@react-aria/focus';
+import { usePreventScroll } from '@react-aria/overlays';
 import cx from 'clsx';
 import { LazyMotion, m } from 'framer-motion';
-import noScroll from 'no-scroll';
 import { useEffect, useRef } from 'react';
 
 const overlay: Variants = {
@@ -58,6 +58,8 @@ const Modal = ({
 }: ModalProps) => {
   const ref = useRef<HTMLDivElement>(null);
 
+  usePreventScroll();
+
   useEffect(() => {
     const handleEscape = (event: KeyboardEvent) => {
       event.stopImmediatePropagation();
@@ -71,13 +73,11 @@ const Modal = ({
       onCancel && onCancel();
     };
 
-    setTimeout(noScroll.on, 1);
     onReady && onReady();
     document.body.classList.add('has-modal');
     document.addEventListener('keydown', handleEscape);
 
     return () => {
-      setTimeout(noScroll.off, 1);
       document.body.classList.remove('has-modal');
       document.removeEventListener('keydown', handleEscape);
     };
