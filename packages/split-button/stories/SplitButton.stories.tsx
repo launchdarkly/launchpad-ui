@@ -50,34 +50,6 @@ const SplitButtonExample = ({ icon, ...props }: SplitButtonStoryProps) => {
   );
 };
 
-// <div className={cx('SplitButton', className)}>
-//         {mainButtonTooltip ? (
-//           <Tooltip content={mainButtonTooltip} {...tooltipOptions}>
-//             {mainButton}
-//           </Tooltip>
-//         ) : (
-//           mainButton
-//         )}
-//         <Dropdown
-//           enableArrow={false}
-//           placement={placement}
-//           disabled={disabled || isDropdownButtonDisabled}
-//           onSelect={onSelect}
-//           isOpen={isOpen}
-//           onInteraction={onInteraction}
-//           restrictWidth={false}
-//         >
-//           {dropButtonTooltip ? (
-//             <Tooltip content={dropButtonTooltip} {...tooltipOptions}>
-//               {dropdownButton}
-//             </Tooltip>
-//           ) : (
-//             dropdownButton
-//           )}
-//           {children}
-//         </Dropdown>
-//       </div>
-
 const splitButtonTemplateWithStates: DecoratorFn = (storyComponent, context) => {
   const { viewMode, args } = context;
 
