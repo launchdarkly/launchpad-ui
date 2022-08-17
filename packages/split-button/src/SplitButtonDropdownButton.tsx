@@ -17,14 +17,12 @@ const SplitButtonDropdownButton = forwardRef<HTMLButtonElement, SplitButtonDropd
     const isDisabled = parentDisabled || disabled;
 
     const label = useMemo(() => {
-      let value;
+      let value = 'More options';
 
       if (isDisabled) {
         value = 'These options are unavailable';
       } else if (ariaLabel) {
         value = ariaLabel;
-      } else {
-        value = 'More options';
       }
 
       return value;
