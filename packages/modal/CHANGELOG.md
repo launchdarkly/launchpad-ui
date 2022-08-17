@@ -1,5 +1,11 @@
 # @launchpad-ui/modal
 
+## 0.6.2
+
+### Patch Changes
+
+- [#288](https://github.com/launchdarkly/launchpad-ui/pull/288) [`2bbb092`](https://github.com/launchdarkly/launchpad-ui/commit/2bbb0927864af0f87e9fe67d6bb4a22300ca0d2b) Thanks [@Niznikr](https://github.com/Niznikr)! - [Modal] Replace no-scroll with react-aria
+
 ## 0.6.1
 
 ### Patch Changes

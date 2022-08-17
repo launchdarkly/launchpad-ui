@@ -1,5 +1,27 @@
 # @launchpad-ui/core
 
+## 0.7.4
+
+### Patch Changes
+
+- [#291](https://github.com/launchdarkly/launchpad-ui/pull/291) [`315a528`](https://github.com/launchdarkly/launchpad-ui/commit/315a528ce6db2a84fbc161ad202e9235b5046bf8) Thanks [@Niznikr](https://github.com/Niznikr)! - [ProgressBubbles] Up icon class specificity
+
+* [#288](https://github.com/launchdarkly/launchpad-ui/pull/288) [`2bbb092`](https://github.com/launchdarkly/launchpad-ui/commit/2bbb0927864af0f87e9fe67d6bb4a22300ca0d2b) Thanks [@Niznikr](https://github.com/Niznikr)! - [Modal] Replace no-scroll with react-aria
+
+* Updated dependencies [[`315a528`](https://github.com/launchdarkly/launchpad-ui/commit/315a528ce6db2a84fbc161ad202e9235b5046bf8), [`2bbb092`](https://github.com/launchdarkly/launchpad-ui/commit/2bbb0927864af0f87e9fe67d6bb4a22300ca0d2b)]:
+  - @launchpad-ui/progress-bubbles@0.3.2
+  - @launchpad-ui/modal@0.6.2
+  - @launchpad-ui/overlay@0.2.2
+  - @launchpad-ui/popover@0.6.2
+  - @launchpad-ui/dropdown@0.3.2
+  - @launchpad-ui/menu@0.4.2
+  - @launchpad-ui/navigation@0.3.2
+  - @launchpad-ui/split-button@0.2.3
+  - @launchpad-ui/tooltip@0.4.2
+  - @launchpad-ui/filter@0.2.2
+  - @launchpad-ui/clipboard@0.5.2
+  - @launchpad-ui/notification@0.3.2
+
 ## 0.7.3
 
 ### Patch Changes

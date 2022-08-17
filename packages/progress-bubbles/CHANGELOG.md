@@ -1,5 +1,14 @@
 # @launchpad-ui/progress-bubbles
 
+## 0.3.2
+
+### Patch Changes
+
+- [#291](https://github.com/launchdarkly/launchpad-ui/pull/291) [`315a528`](https://github.com/launchdarkly/launchpad-ui/commit/315a528ce6db2a84fbc161ad202e9235b5046bf8) Thanks [@Niznikr](https://github.com/Niznikr)! - [ProgressBubbles] Up icon class specificity
+
+- Updated dependencies []:
+  - @launchpad-ui/popover@0.6.2
+
 ## 0.3.1
 
 ### Patch Changes
