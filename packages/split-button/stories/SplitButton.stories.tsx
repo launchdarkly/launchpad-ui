@@ -4,28 +4,48 @@ import type { ComponentStoryObj, DecoratorFn } from '@storybook/react';
 import { ButtonKind, ButtonSize } from '@launchpad-ui/button';
 import { Person } from '@launchpad-ui/icons';
 import { Menu, MenuItem } from '@launchpad-ui/menu';
+import { Tooltip } from '@launchpad-ui/tooltip';
 import { Fragment, useState } from 'react';
 
-import { SplitButton } from '../src';
+import {
+  SplitButton,
+  SplitButtonDropdown,
+  SplitButtonDropdownButton,
+  SplitButtonMainButton,
+} from '../src';
 
 import './SplitButton.stories.css';
 
-const SplitButtonWithMenu = (props: SplitButtonProps) => {
+type SplitButtonStoryProps = SplitButtonProps & {
+  icon?: React.ReactElement<{ size?: string; key: string; 'aria-hidden': boolean }>;
+};
+
+const SplitButtonExample = ({ icon, ...props }: SplitButtonStoryProps) => {
   const [open, setOpen] = useState(false);
 
-  const handleSelect = (data: object) => {
+  const handleSelect = (data: string | number | object) => {
     alert(JSON.stringify(data));
     setOpen(!open);
   };
 
   return (
-    <SplitButton
-      {...props}
-      isOpen={open}
-      onInteraction={() => setOpen(!open)}
-      onSelect={handleSelect}
-    >
-      {props.children}
+    <SplitButton {...props}>
+      <Tooltip content={!props.disabled ? 'Main tooltip' : ''}>
+        <SplitButtonMainButton icon={icon}>{!icon && 'Save changes'}</SplitButtonMainButton>
+      </Tooltip>
+      <SplitButtonDropdown
+        isOpen={open}
+        onInteraction={() => setOpen(!open)}
+        onSelect={handleSelect}
+      >
+        <Tooltip content={!props.disabled ? 'Dropdown tooltip' : ''}>
+          <SplitButtonDropdownButton />
+        </Tooltip>
+        <Menu>
+          <MenuItem item={{ key: 'Saved changes' }}>Save changes</MenuItem>
+          <MenuItem item={{ key: 'Saved with comment' }}>Save with comment</MenuItem>
+        </Menu>
+      </SplitButtonDropdown>
     </SplitButton>
   );
 };
@@ -47,7 +67,7 @@ const splitButtonTemplateWithStates: DecoratorFn = (storyComponent, context) => 
           ]
         }{' '}
       </span>
-      <SplitButtonWithMenu {...storyArgs} className={className} />
+      <SplitButtonExample {...storyArgs} className={className} />
     </Fragment>
   ));
   if (viewMode === 'docs') {
@@ -59,13 +79,14 @@ const splitButtonTemplateWithStates: DecoratorFn = (storyComponent, context) => 
       {storyComponent()}
       {PseudoStateButtons}
       <span className="Button-state-label">Disabled</span>{' '}
-      <SplitButtonWithMenu {...storyArgs} disabled />
+      <SplitButtonExample {...storyArgs} disabled />
     </div>
   );
 };
 
 export default {
-  component: SplitButtonWithMenu,
+  component: SplitButtonExample,
+  subcomponents: { SplitButtonMainButton, SplitButtonDropdownButton, SplitButtonDropdown },
   title: 'Components/SplitButton',
   description:
     'An element that presents an immediate action and additional options from a dropdown.',
@@ -192,7 +213,7 @@ export default {
   decorators: [splitButtonTemplateWithStates],
 };
 
-type Story = ComponentStoryObj<typeof SplitButton>;
+type Story = ComponentStoryObj<typeof SplitButtonExample>;
 
 const SplitButtonArgs = {
   onSelect: () => undefined,
@@ -243,6 +264,5 @@ export const Icon: Story = {
     kind: ButtonKind.DEFAULT,
     size: ButtonSize.SMALL,
     icon: <Person />,
-    name: '',
   },
 };
