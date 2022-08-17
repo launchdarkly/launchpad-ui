@@ -1,5 +1,11 @@
 # @launchpad-ui/split-button
 
+## 0.2.2
+
+### Patch Changes
+
+- [#285](https://github.com/launchdarkly/launchpad-ui/pull/285) [`edd400d`](https://github.com/launchdarkly/launchpad-ui/commit/edd400d9a45e6a38a7c39a214c1fdb7d0f543ce1) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [SplitButton] Enhance type for onSelect
+
 ## 0.2.1
 
 ### Patch Changes
