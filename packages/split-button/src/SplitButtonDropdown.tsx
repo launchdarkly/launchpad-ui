@@ -11,13 +11,24 @@ type SplitButtonDropdownProps = Omit<
   'enableArrow' | 'restrictWidth'
 >;
 
-const SplitButtonDropdown = ({ disabled, children, ...rest }: SplitButtonDropdownProps) => {
+const SplitButtonDropdown = ({
+  disabled,
+  children,
+  placement = 'bottom-end',
+  ...rest
+}: SplitButtonDropdownProps) => {
   const { disabled: parentDisabled } = useContext(SplitButtonContext);
 
   const isDisabled = parentDisabled || disabled;
 
   return (
-    <Dropdown {...rest} enableArrow={false} restrictWidth={false} disabled={isDisabled}>
+    <Dropdown
+      {...rest}
+      placement={placement}
+      enableArrow={false}
+      restrictWidth={false}
+      disabled={isDisabled}
+    >
       {children}
     </Dropdown>
   );
