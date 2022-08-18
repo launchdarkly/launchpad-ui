@@ -1,5 +1,23 @@
 # @launchpad-ui/core
 
+## 0.8.3
+
+### Patch Changes
+
+- [#301](https://github.com/launchdarkly/launchpad-ui/pull/301) [`534ebde`](https://github.com/launchdarkly/launchpad-ui/commit/534ebde2f8bb6abb53cb0443f4e3b2eee0a2064f) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Popover] Change popover target prop to data-test-id
+
+- Updated dependencies [[`534ebde`](https://github.com/launchdarkly/launchpad-ui/commit/534ebde2f8bb6abb53cb0443f4e3b2eee0a2064f)]:
+  - @launchpad-ui/popover@0.6.4
+  - @launchpad-ui/dropdown@0.3.5
+  - @launchpad-ui/menu@0.4.4
+  - @launchpad-ui/navigation@0.3.5
+  - @launchpad-ui/progress-bubbles@0.3.4
+  - @launchpad-ui/split-button@0.3.3
+  - @launchpad-ui/tooltip@0.4.4
+  - @launchpad-ui/filter@0.2.5
+  - @launchpad-ui/clipboard@0.5.4
+  - @launchpad-ui/notification@0.3.4
+
 ## 0.8.2
 
 ### Patch Changes
