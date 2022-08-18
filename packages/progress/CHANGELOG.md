@@ -1,5 +1,13 @@
 # @launchpad-ui/progress
 
+## 0.3.1
+
+### Patch Changes
+
+- [#299](https://github.com/launchdarkly/launchpad-ui/pull/299) [`273180e`](https://github.com/launchdarkly/launchpad-ui/commit/273180e0a8d6851292a6c33bcccaadc9efe215f6) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Markdown] Add testId param to component
+  [Popover] Add testId param to component
+  [Progress] Add testId param to component
+
 ## 0.3.0
 
 ### Minor Changes

@@ -1,5 +1,16 @@
 # @launchpad-ui/split-button
 
+## 0.3.2
+
+### Patch Changes
+
+- [#300](https://github.com/launchdarkly/launchpad-ui/pull/300) [`4a703fb`](https://github.com/launchdarkly/launchpad-ui/commit/4a703fb267aa4b4a7a1de2b029d68f5cb93e5dcc) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [SplitButton]: Add default placement for SplitButtonDropdown
+
+- Updated dependencies [[`273180e`](https://github.com/launchdarkly/launchpad-ui/commit/273180e0a8d6851292a6c33bcccaadc9efe215f6)]:
+  - @launchpad-ui/popover@0.6.3
+  - @launchpad-ui/dropdown@0.3.4
+  - @launchpad-ui/tooltip@0.4.3
+
 ## 0.3.1
 
 ### Patch Changes

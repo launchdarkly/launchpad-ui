@@ -1,5 +1,39 @@
 # @launchpad-ui/core
 
+## 0.8.2
+
+### Patch Changes
+
+- [#299](https://github.com/launchdarkly/launchpad-ui/pull/299) [`273180e`](https://github.com/launchdarkly/launchpad-ui/commit/273180e0a8d6851292a6c33bcccaadc9efe215f6) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Markdown] Add testId param to component
+  [Popover] Add testId param to component
+  [Progress] Add testId param to component
+
+* [#295](https://github.com/launchdarkly/launchpad-ui/pull/295) [`c5d00b2`](https://github.com/launchdarkly/launchpad-ui/commit/c5d00b204a9682a5ba3f883de4c830b67caf0c8b) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Icons] Remove unused styles
+
+- [#300](https://github.com/launchdarkly/launchpad-ui/pull/300) [`4a703fb`](https://github.com/launchdarkly/launchpad-ui/commit/4a703fb267aa4b4a7a1de2b029d68f5cb93e5dcc) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [SplitButton]: Add default placement for SplitButtonDropdown
+
+- Updated dependencies [[`273180e`](https://github.com/launchdarkly/launchpad-ui/commit/273180e0a8d6851292a6c33bcccaadc9efe215f6), [`c5d00b2`](https://github.com/launchdarkly/launchpad-ui/commit/c5d00b204a9682a5ba3f883de4c830b67caf0c8b), [`4a703fb`](https://github.com/launchdarkly/launchpad-ui/commit/4a703fb267aa4b4a7a1de2b029d68f5cb93e5dcc)]:
+  - @launchpad-ui/markdown@0.2.1
+  - @launchpad-ui/popover@0.6.3
+  - @launchpad-ui/progress@0.3.1
+  - @launchpad-ui/icons@0.3.2
+  - @launchpad-ui/split-button@0.3.2
+  - @launchpad-ui/dropdown@0.3.4
+  - @launchpad-ui/menu@0.4.3
+  - @launchpad-ui/navigation@0.3.4
+  - @launchpad-ui/progress-bubbles@0.3.3
+  - @launchpad-ui/tooltip@0.4.3
+  - @launchpad-ui/modal@0.6.3
+  - @launchpad-ui/pagination@0.1.2
+  - @launchpad-ui/alert@0.2.2
+  - @launchpad-ui/avatar@0.2.3
+  - @launchpad-ui/banner@0.3.2
+  - @launchpad-ui/clipboard@0.5.3
+  - @launchpad-ui/filter@0.2.4
+  - @launchpad-ui/form@0.3.2
+  - @launchpad-ui/notification@0.3.3
+  - @launchpad-ui/overlay@0.2.3
+
 ## 0.8.1
 
 ### Patch Changes

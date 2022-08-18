@@ -1,5 +1,11 @@
 # @launchpad-ui/icons
 
+## 0.3.2
+
+### Patch Changes
+
+- [#295](https://github.com/launchdarkly/launchpad-ui/pull/295) [`c5d00b2`](https://github.com/launchdarkly/launchpad-ui/commit/c5d00b204a9682a5ba3f883de4c830b67caf0c8b) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Icons] Remove unused styles
+
 ## 0.3.1
 
 ### Patch Changes
