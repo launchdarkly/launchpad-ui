@@ -23,7 +23,7 @@ import counterStyles from '@launchpad-ui/core/styles/counter.css';
 import filterStyles from '@launchpad-ui/core/styles/filter.css';
 import formStyles from '@launchpad-ui/core/styles/form.css';
 import iconStyles from '@launchpad-ui/core/styles/icons.css';
-import lozengeStyles from '@launchpad-ui/core/styles/lozenge.css';
+import chipStyles from '@launchpad-ui/core/styles/chip.css';
 import markdownStyles from '@launchpad-ui/core/styles/markdown.css';
 import menuStyles from '@launchpad-ui/core/styles/menu.css';
 import modalStyles from '@launchpad-ui/core/styles/modal.css';
@@ -47,7 +47,7 @@ export const links: LinksFunction = () => {
     { rel: 'stylesheet', href: globalStyles },
     { rel: 'stylesheet', href: buttonStyles },
     { rel: 'stylesheet', href: iconStyles },
-    { rel: 'stylesheet', href: lozengeStyles },
+    { rel: 'stylesheet', href: chipStyles },
     { rel: 'stylesheet', href: alertStyles },
     { rel: 'stylesheet', href: toggleStyles },
     { rel: 'stylesheet', href: progressStyles },

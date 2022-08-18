@@ -1,4 +1,4 @@
-enum LozengeKind {
+enum ChipKind {
   DEFAULT = 'default',
   SUCCESS = 'success',
   WARNING = 'warning',
@@ -12,9 +12,9 @@ enum LozengeKind {
   FEDERAL = 'federal',
 }
 
-enum LozengeSize {
+enum ChipSize {
   NORMAL = 'normal',
   LARGE = 'large',
 }
 
-export { LozengeKind, LozengeSize };
+export { ChipKind, ChipSize };

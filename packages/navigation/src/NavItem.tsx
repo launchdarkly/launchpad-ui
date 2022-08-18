@@ -1,8 +1,8 @@
-import type { LozengeKind } from '@launchpad-ui/lozenge';
+import type { ChipKind } from '@launchpad-ui/chip';
 
 import { NavLink, useLocation } from 'react-router-dom';
 
-import { NavBarLozenge } from './NavBarLozenge';
+import { NavBarChip } from './NavBarChip';
 import './styles/Nav.css';
 
 type NavItemProps = {
@@ -11,7 +11,7 @@ type NavItemProps = {
   end?: boolean;
   onClick?(event: React.MouseEvent): void;
   activeClassName?: string;
-  status?: LozengeKind;
+  status?: ChipKind;
   id?: string;
   role?: string;
 };
@@ -34,7 +34,7 @@ const NavItem = ({ to, name, onClick, status, role, end, ...other }: NavItemProp
       {status ? (
         <div style={{ display: 'flex', alignItems: 'flex-end' }}>
           <span className="NavItem-name">{name}</span>
-          <NavBarLozenge kind={status} />
+          <NavBarChip kind={status} />
         </div>
       ) : (
         <span className="NavItem-name">{name}</span>

@@ -245,6 +245,19 @@ importers:
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
 
+  packages/chip:
+    specifiers:
+      '@launchpad-ui/tokens': workspace:~
+      clsx: ^1.2.0
+      react: ^18.2.0
+      react-dom: ^18.2.0
+    dependencies:
+      '@launchpad-ui/tokens': link:../tokens
+      clsx: 1.2.0
+    devDependencies:
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
+
   packages/clipboard:
     specifiers:
       '@launchpad-ui/button': workspace:~
@@ -272,13 +285,13 @@ importers:
       '@launchpad-ui/avatar': workspace:~
       '@launchpad-ui/banner': workspace:~
       '@launchpad-ui/button': workspace:~
+      '@launchpad-ui/chip': workspace:~
       '@launchpad-ui/clipboard': workspace:~
       '@launchpad-ui/counter': workspace:~
       '@launchpad-ui/dropdown': workspace:~
       '@launchpad-ui/filter': workspace:~
       '@launchpad-ui/form': workspace:~
       '@launchpad-ui/icons': workspace:~
-      '@launchpad-ui/lozenge': workspace:~
       '@launchpad-ui/markdown': workspace:~
       '@launchpad-ui/menu': workspace:~
       '@launchpad-ui/modal': workspace:~
@@ -303,13 +316,13 @@ importers:
       '@launchpad-ui/avatar': link:../avatar
       '@launchpad-ui/banner': link:../banner
       '@launchpad-ui/button': link:../button
+      '@launchpad-ui/chip': link:../chip
       '@launchpad-ui/clipboard': link:../clipboard
       '@launchpad-ui/counter': link:../counter
       '@launchpad-ui/dropdown': link:../dropdown
       '@launchpad-ui/filter': link:../filter
       '@launchpad-ui/form': link:../form
       '@launchpad-ui/icons': link:../icons
-      '@launchpad-ui/lozenge': link:../lozenge
       '@launchpad-ui/markdown': link:../markdown
       '@launchpad-ui/menu': link:../menu
       '@launchpad-ui/modal': link:../modal
@@ -426,19 +439,6 @@ importers:
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
 
-  packages/lozenge:
-    specifiers:
-      '@launchpad-ui/tokens': workspace:~
-      clsx: ^1.2.0
-      react: ^18.2.0
-      react-dom: ^18.2.0
-    dependencies:
-      '@launchpad-ui/tokens': link:../tokens
-      clsx: 1.2.0
-    devDependencies:
-      react: 18.2.0
-      react-dom: 18.2.0_react@18.2.0
-
   packages/markdown:
     specifiers:
       '@launchpad-ui/tokens': workspace:~
@@ -520,8 +520,8 @@ importers:
 
   packages/navigation:
     specifiers:
+      '@launchpad-ui/chip': workspace:~
       '@launchpad-ui/dropdown': workspace:~
-      '@launchpad-ui/lozenge': workspace:~
       '@launchpad-ui/menu': workspace:~
       '@launchpad-ui/popover': workspace:~
       '@launchpad-ui/tokens': workspace:~
@@ -534,8 +534,8 @@ importers:
       react-dom: ^18.2.0
       react-router-dom: ^6.3.0
     dependencies:
+      '@launchpad-ui/chip': link:../chip
       '@launchpad-ui/dropdown': link:../dropdown
-      '@launchpad-ui/lozenge': link:../lozenge
       '@launchpad-ui/menu': link:../menu
       '@launchpad-ui/popover': link:../popover
       '@launchpad-ui/tokens': link:../tokens
