@@ -73,7 +73,7 @@ type PopoverTargetProps = {
   ref: RefObject<HTMLElement>;
   className?: string;
   isopen?: boolean;
-  testId: string;
+  'data-test-id': string;
   style?: CSSProperties;
 };
 
@@ -421,7 +421,7 @@ const Popover = ({
       'Popover-target--disabled': isTargetDisabled,
     }),
     style: rootElementStyle,
-    testId: targetTestId || 'popover-target',
+    'data-test-id': targetTestId || 'popover-target',
   };
 
   if (
