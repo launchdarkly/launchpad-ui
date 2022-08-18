@@ -1,5 +1,11 @@
 # @launchpad-ui/popover
 
+## 0.6.4
+
+### Patch Changes
+
+- [#301](https://github.com/launchdarkly/launchpad-ui/pull/301) [`534ebde`](https://github.com/launchdarkly/launchpad-ui/commit/534ebde2f8bb6abb53cb0443f4e3b2eee0a2064f) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Popover] Change popover target prop to data-test-id
+
 ## 0.6.3
 
 ### Patch Changes
