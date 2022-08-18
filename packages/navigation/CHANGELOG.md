@@ -1,5 +1,16 @@
 # @launchpad-ui/navigation
 
+## 0.4.0
+
+### Minor Changes
+
+- [#276](https://github.com/launchdarkly/launchpad-ui/pull/276) [`bdf0c5d`](https://github.com/launchdarkly/launchpad-ui/commit/bdf0c5d9a304b455e137d412734de2603808b218) Thanks [@Niznikr](https://github.com/Niznikr)! - [Lozenge, Navigation] Rename lozenge to chip
+
+### Patch Changes
+
+- Updated dependencies [[`bdf0c5d`](https://github.com/launchdarkly/launchpad-ui/commit/bdf0c5d9a304b455e137d412734de2603808b218)]:
+  - @launchpad-ui/chip@0.4.0
+
 ## 0.3.5
 
 ### Patch Changes
