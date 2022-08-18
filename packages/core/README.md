@@ -54,19 +54,19 @@ If you choose to use Launchpad via single component imports (e.g. `@launchpad-ui
 
 View the list of component NPM packages here: https://www.npmjs.com/search?q=%40launchpad-ui
 
-### Can I test prerelease versions of components?
+### Can I test pre-release versions of components?
 
-To feature flag and test a prerelease version of a component, first install the prerelease:
+To feature flag and test a pre-release version of a component, first install the pre-release using an alias:
 
 ```sh
-$ yarn add @launchpad-ui/alert@0.10.0-beta.0
+$ yarn add @launchpad-ui/alert-beta@npm:@launchpad-ui/alert@0.10.0-beta.0
 ```
 
-Then import and use the prerelease version alongside the version from `core`:
+Then import and use the pre-release version alongside the version from `core`:
 
 ```jsx
 import { Alert, AlertKind } from '@launchpad-ui/core';
-import { Alert as BetaAlert } from '@launchpad-ui/alert';
+import { Alert as BetaAlert } from '@launchpad-ui/alert-beta';
 
 ...
 
