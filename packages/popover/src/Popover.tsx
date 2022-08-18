@@ -58,6 +58,7 @@ type PopoverProps = {
   target?: string | JSX.Element;
   targetElementRef?: Ref<Element>;
   targetClassName?: string;
+  targetTestId?: string;
   enableArrow?: boolean;
 };
 
@@ -72,6 +73,7 @@ type PopoverTargetProps = {
   ref: RefObject<HTMLElement>;
   className?: string;
   isopen?: boolean;
+  testId: string;
   style?: CSSProperties;
 };
 
@@ -118,6 +120,7 @@ const Popover = ({
   target: targetProp,
   content: contentProp,
   targetClassName,
+  targetTestId,
   popoverClassName,
   popoverContentClassName,
   rootElementStyle,
@@ -418,6 +421,7 @@ const Popover = ({
       'Popover-target--disabled': isTargetDisabled,
     }),
     style: rootElementStyle,
+    testId: targetTestId || 'popover-target',
   };
 
   if (

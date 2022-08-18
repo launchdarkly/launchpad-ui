@@ -14,12 +14,19 @@ type ProgressProps = {
   size?: ProgressSize;
   className?: string;
   delayMs?: number;
+  testId?: string;
 };
 
 const clamp = (number: number, lower: number, upper?: number) =>
   upper ? Math.min(Math.max(number, lower), upper) : Math.min(number, lower);
 
-const Progress = ({ value, size = ProgressSize.Small, className, delayMs = 0 }: ProgressProps) => {
+const Progress = ({
+  value,
+  size = ProgressSize.Small,
+  testId,
+  className,
+  delayMs = 0,
+}: ProgressProps) => {
   const dimensions = {
     small: {
       diameter: 16,
@@ -44,7 +51,7 @@ const Progress = ({ value, size = ProgressSize.Small, className, delayMs = 0 }: 
       width={diameter}
       height={diameter}
       viewBox={`0 0 ${diameter} ${diameter}`}
-      data-test-id="progress"
+      data-test-id={testId || 'progress'}
       role="progressbar"
       aria-valuemin={0}
       aria-valuetext="loading"
