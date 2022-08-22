@@ -176,14 +176,14 @@
   );
 }
 
-.Alert--bordered {
+/* .Alert--bordered {
   box-shadow: var(--reskin-box-shadow-triple);
   border-top: 1px solid var(--color-border);
   border-right: 1px solid var(--color-border);
   border-bottom: 1px solid var(--color-border);
   background-color: var(--color-background);
   border-radius: 2px;
-}
+} */
 
 /* Alert content styles */
 
