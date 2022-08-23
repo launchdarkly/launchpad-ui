@@ -9,6 +9,11 @@
     var(--color-white-100) 40px
   );
   --Banner-color-border-top: var(--color-border);
+  --Banner-color-border-bottom-info: var(--color-blue-700);
+  --Banner-color-border-bottom-success: var(--color-border);
+  /* stylelint-disable-next-line value-keyword-case */
+  --Banner-color-border-bottom-warning: var(--color-system-yellow-700);
+  --Banner-color-border-bottom-error: var(--color-system-red-700);
   --Banner-color-text: var(--color-black-100);
   --Banner-color-background: var(--color-white);
   --Banner-color-background-info: var(--color-blue-200);
