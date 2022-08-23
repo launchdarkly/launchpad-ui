@@ -39,7 +39,6 @@
     "@launchpad-ui/menu": "workspace:~",
     "@launchpad-ui/tokens": "workspace:~",
     "@launchpad-ui/tooltip": "workspace:~",
-    "@react-aria/utils": "^3.13.1",
     "@react-aria/visually-hidden": "^3.4.0",
     "clsx": "^1.2.0"
   },
