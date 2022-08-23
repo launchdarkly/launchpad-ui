@@ -43,15 +43,13 @@
     "@react-aria/separator": "^3.2.0",
     "clsx": "^1.2.0",
     "react-router-dom": "^6.3.0",
-    "react-virtual": "^2.10.4",
-    "uuid": "^8.3.2"
+    "react-virtual": "^2.10.4"
   },
   "peerDependencies": {
     "react": "^18.0.0",
     "react-dom": "^18.0.0"
   },
   "devDependencies": {
-    "@types/uuid": "^8.3.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   }

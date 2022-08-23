@@ -384,7 +384,6 @@ importers:
       '@launchpad-ui/menu': workspace:~
       '@launchpad-ui/tokens': workspace:~
       '@launchpad-ui/tooltip': workspace:~
-      '@react-aria/utils': ^3.13.1
       '@react-aria/visually-hidden': ^3.4.0
       clsx: ^1.2.0
       react: ^18.2.0
@@ -396,7 +395,6 @@ importers:
       '@launchpad-ui/menu': link:../menu
       '@launchpad-ui/tokens': link:../tokens
       '@launchpad-ui/tooltip': link:../tooltip
-      '@react-aria/utils': 3.13.1_react@18.2.0
       '@react-aria/visually-hidden': 3.4.0_react@18.2.0
       clsx: 1.2.0
     devDependencies:
@@ -424,18 +422,14 @@ importers:
     specifiers:
       '@launchpad-ui/tokens': workspace:~
       '@svgr/cli': ^6.3.1
-      '@types/uuid': ^8.3.4
       clsx: ^1.2.0
       react: ^18.2.0
       react-dom: ^18.2.0
-      uuid: ^8.3.2
     dependencies:
       '@launchpad-ui/tokens': link:../tokens
       clsx: 1.2.0
-      uuid: 8.3.2
     devDependencies:
       '@svgr/cli': 6.3.1
-      '@types/uuid': 8.3.4
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
 
@@ -468,13 +462,11 @@ importers:
       '@radix-ui/react-slot': ^1.0.0
       '@react-aria/focus': ^3.7.0
       '@react-aria/separator': ^3.2.0
-      '@types/uuid': ^8.3.4
       clsx: ^1.2.0
       react: ^18.2.0
       react-dom: ^18.2.0
       react-router-dom: ^6.3.0
       react-virtual: ^2.10.4
-      uuid: ^8.3.2
     dependencies:
       '@launchpad-ui/form': link:../form
       '@launchpad-ui/icons': link:../icons
@@ -487,9 +479,7 @@ importers:
       clsx: 1.2.0
       react-router-dom: 6.3.0_biqbaboplfbrettd7655fr4n2y
       react-virtual: 2.10.4_react@18.2.0
-      uuid: 8.3.2
     devDependencies:
-      '@types/uuid': 8.3.4
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
 
@@ -615,12 +605,10 @@ importers:
       '@launchpad-ui/overlay': workspace:~
       '@launchpad-ui/tokens': workspace:~
       '@react-aria/focus': ^3.7.0
-      '@types/uuid': ^8.3.4
       clsx: ^1.2.0
       framer-motion: ^7.2.0
       react: ^18.2.0
       react-dom: ^18.2.0
-      uuid: ^8.3.2
     dependencies:
       '@floating-ui/core': 1.0.0
       '@floating-ui/dom': 1.0.0
@@ -629,9 +617,7 @@ importers:
       '@react-aria/focus': 3.7.0_react@18.2.0
       clsx: 1.2.0
       framer-motion: 7.2.0_biqbaboplfbrettd7655fr4n2y
-      uuid: 8.3.2
     devDependencies:
-      '@types/uuid': 8.3.4
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
 
@@ -8226,8 +8212,8 @@ packages:
     engines: {node: '>=10'}
     hasBin: true
     dependencies:
-      JSONStream: 1.3.5
       is-text-path: 1.0.1
+      JSONStream: 1.3.5
       lodash: 4.17.21
       meow: 8.1.2
       split2: 3.2.2
@@ -17461,6 +17447,7 @@ packages:
   /uuid/8.3.2:
     resolution: {integrity: sha512-+NYs2QeMWy+GWFOEm9xnn6HCDp0l7QBD7ml8zLUmJ+93Q5NF0NocErnwkTkXVFNiX3/fpC6afS8Dhb/gz7R7eg==}
     hasBin: true
+    dev: true
 
   /uvu/0.5.6:
     resolution: {integrity: sha512-+g8ENReyr8YsOc6fv/NVJs2vFdHBnBNdfE49rshrTzDWOlUx4Gq7KOS2GD8eqhy2j+Ejq29+SbKH8yjkAqXqoA==}
