@@ -1,6 +1,10 @@
 import type { ComponentStoryObj } from '@storybook/react';
 
+import { Button, ButtonKind } from '@launchpad-ui/button';
+
 import { Alert, AlertKind, AlertSize } from '../src';
+import { AlertActions } from '../src/AlertActions';
+import { AlertHeading } from '../src/AlertHeading';
 
 export default {
   component: Alert,
@@ -77,7 +81,20 @@ export default {
 type Story = ComponentStoryObj<typeof Alert>;
 
 export const Success: Story = {
-  args: { kind: AlertKind.SUCCESS, children: 'Success alert', dismissible: false },
+  args: {
+    kind: AlertKind.SUCCESS,
+    children: (
+      <div>
+        <AlertHeading>Success Alert</AlertHeading>
+        <p>My description</p>
+        <AlertActions>
+          <Button kind={ButtonKind.PRIMARY}>Label</Button>
+          <Button>Label</Button>
+        </AlertActions>
+      </div>
+    ),
+    dismissible: false,
+  },
 };
 
 export const Warning: Story = {

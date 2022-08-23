@@ -79,16 +79,14 @@ const Alert = ({
   const [dismissed, setDismissed] = useState(false);
 
   const defaultClasses = ['Alert', `Alert--${kind}`, className];
-  const borderedClasses = `Alert--${kind}--bordered Alert--bordered`;
   const sizeClass = `Alert--${size}`;
-  const classes = cx(
-    ...defaultClasses,
-    !isInline && borderedClasses,
-    size && sizeClass,
-    compact && 'Alert--compact',
-    isInline && 'Alert--inline',
-    wide && 'Alert--wide'
-  );
+  const classes = cx(defaultClasses, {
+    [borderedClasses]: !isInline,
+    [sizeClass]: size,
+    'Alert--compact': compact,
+    'Alert--inline': isInline,
+    'Alert--wide': wide,
+  });
 
   const handleDismissClicked = () => {
     if (onDismiss) {
