@@ -4,8 +4,7 @@ import type { ComponentStoryObj } from '@storybook/react';
 
 import { Button } from '@launchpad-ui/button';
 import { userEvent, within } from '@storybook/testing-library';
-import { useState } from 'react';
-import { v4 } from 'uuid';
+import { useId, useState } from 'react';
 
 import { NotificationCenter } from '../src';
 import { NotificationLevel } from '../src/types';
@@ -18,8 +17,8 @@ export default {
 
 type Story = ComponentStoryObj<typeof NotificationCenter>;
 
-const makeNotification = () => ({
-  _id: v4(),
+const makeNotification = (id: string) => ({
+  _id: id,
   level: NotificationLevel.SUCCESS,
   ttl: 5000,
   message: 'The notification message',
@@ -29,13 +28,16 @@ const makeNotification = () => ({
 export const Default: Story = {
   render: () => {
     const [items, setItems] = useState<NotificationRecord[]>([]);
+    const [counter, setCounter] = useState(0);
+    const messageId = useId();
 
     const removeItem = (id: string) => {
       setItems((updatingItems) => updatingItems.filter(({ _id }) => _id !== id));
     };
 
     const addItem = () => {
-      setItems((updatingItems) => [...updatingItems, makeNotification()]);
+      setItems((updatingItems) => [...updatingItems, makeNotification(`${messageId}-${counter}`)]);
+      setCounter(counter + 1);
     };
 
     return (
