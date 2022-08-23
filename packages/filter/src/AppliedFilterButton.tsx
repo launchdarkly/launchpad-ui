@@ -25,13 +25,7 @@ const AppliedFilterButton = forwardRef<Ref, AppliedFilterButtonProps>((props, re
     <div className="AppliedFilter-buttonContainer">
       <button
         aria-haspopup
-        className={cx(
-          'AppliedFilter-button',
-          {
-            isSelected,
-          },
-          className
-        )}
+        className={cx('AppliedFilter-button', isSelected && 'isSelected', className)}
         ref={ref}
         onClick={onClickFilterButton}
       >

@@ -23,11 +23,9 @@ const Table = ({
 }: TableProps) => {
   const classes = cx(
     'Table',
-    {
-      'Table--auto': auto,
-      'Table--compact': compact,
-      'Table--resourceTable': isResourceTable,
-    },
+    auto && 'Table--auto',
+    compact && 'Table--compact',
+    isResourceTable && 'Table--resourceTable',
     className
   );
 

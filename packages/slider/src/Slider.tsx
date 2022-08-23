@@ -32,7 +32,7 @@ const Slider = ({
       callback(parseFloat(event.currentTarget.value));
 
   return (
-    <div className={cx('Slider', { 'Slider--disabled': disabled || readOnly }, className)}>
+    <div className={cx('Slider', (disabled || readOnly) && 'Slider--disabled', className)}>
       {!hideTrack && <div className="Slider-track" />}
       {!hideTrack && <div className="Slider-fill" style={{ width: `${value}%` }} />}
       <input

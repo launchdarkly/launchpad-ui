@@ -25,9 +25,7 @@ const CompactTextField = forwardRef<HTMLInputElement, CompactTextFieldProps>(
 
     const isActiveState = isActive || needsErrorFeedback;
 
-    const classes = cx('CompactTextField', className, {
-      'is-active': isActiveState,
-    });
+    const classes = cx('CompactTextField', className, isActiveState && 'is-active');
 
     const placeholder = isActiveState ? '' : label;
 

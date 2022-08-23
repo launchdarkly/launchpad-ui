@@ -105,9 +105,7 @@ const Notification = ({
   };
 
   const classes = cx('Notification', `Notification--${level}`);
-  const detailsClasses = cx('Notification-details', {
-    'is-expanded': showDetails,
-  });
+  const detailsClasses = cx('Notification-details', showDetails && 'is-expanded');
 
   const content = (
     <>

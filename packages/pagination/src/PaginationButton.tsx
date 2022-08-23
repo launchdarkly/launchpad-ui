@@ -38,13 +38,7 @@ const PaginationButton = ({
   onClick,
   className,
 }: PaginationButtonProps) => {
-  const classes = cx(
-    'PaginationButton',
-    {
-      'PaginationButton--disabled': disabled,
-    },
-    className
-  );
+  const classes = cx('PaginationButton', disabled && 'PaginationButton--disabled', className);
 
   const Icon = ICON_MAP[kind];
 

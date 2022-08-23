@@ -197,7 +197,7 @@ const Navigation = <T extends object>(props: NavigationProps<T>) => {
   useResizeObserver({ ref: wrapperRef, onResize: checkShouldCollapse });
 
   return (
-    <div className={cx('Navigation', { 'Navigation--collapsed': shouldCollapse })}>
+    <div className={cx('Navigation', shouldCollapse && 'Navigation--collapsed')}>
       <NavigationContext.Provider
         value={{
           shouldCollapse,

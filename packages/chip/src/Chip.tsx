@@ -31,10 +31,8 @@ const Chip = ({
     `Chip--${kind}`,
     `Chip--${size}`,
     className,
-    {
-      'Chip--subtle': subtle,
-    },
-    { 'Chip--clickable': isClickable }
+    subtle && 'Chip--subtle',
+    isClickable && 'Chip--clickable'
   );
 
   if (isClickable) {

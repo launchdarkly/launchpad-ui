@@ -25,10 +25,12 @@ type FormProps = {
 const Form = (props: FormProps) => {
   const { id, name, className, inline, children, ariaLabel, hasIncreasedErrorMargin, ...rest } =
     props;
-  const classes = cx('Form', className, {
-    'Form--inline': inline,
-    'Form--increasedErrorMargin': !!hasIncreasedErrorMargin,
-  });
+  const classes = cx(
+    'Form',
+    className,
+    inline && 'Form--inline',
+    !!hasIncreasedErrorMargin && 'Form--increasedErrorMargin'
+  );
 
   return (
     <form id={id} name={name} aria-label={ariaLabel} {...rest} className={classes}>
