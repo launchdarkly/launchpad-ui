@@ -1,8 +1,7 @@
 import type { IconSize } from './types';
 
 import { cx } from 'classix';
-import { Children, cloneElement, isValidElement, useEffect, useRef } from 'react';
-import { v4 } from 'uuid';
+import { Children, cloneElement, isValidElement, useEffect, useId, useRef } from 'react';
 
 import './styles/Icon.css';
 
@@ -17,11 +16,11 @@ const Icon = ({ name, subtle, className, size, children, ...props }: IconProps) 
   const classes = cx('Icon', `Icon--${name}`, sizeClass, className, subtle && 'Icon--subtle');
 
   const svgRef = useRef<SVGElement>(null);
+  const prefix = `svg-${useId()}`;
 
   useEffect(() => {
     const title = svgRef.current?.querySelector('title');
     const desc = svgRef.current?.querySelector('desc');
-    const prefix = `svg-${v4()}`;
 
     if (title) {
       const id = `${prefix}-${name}-title`;
@@ -33,7 +32,7 @@ const Icon = ({ name, subtle, className, size, children, ...props }: IconProps) 
       desc.setAttribute('id', id);
       svgRef.current?.setAttribute('aria-describedby', id);
     }
-  }, [name]);
+  }, [name, prefix]);
 
   return (
     <span {...props} className={classes}>

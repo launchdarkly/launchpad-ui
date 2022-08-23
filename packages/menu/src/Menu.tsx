@@ -5,9 +5,17 @@ import type { KeyboardEvent, ReactElement } from 'react';
 
 import { useFocusManager } from '@react-aria/focus';
 import { cx } from 'classix';
-import { Children, cloneElement, useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import {
+  Children,
+  cloneElement,
+  useCallback,
+  useEffect,
+  useId,
+  useMemo,
+  useRef,
+  useState,
+} from 'react';
 import { useVirtual } from 'react-virtual';
-import { v4 } from 'uuid';
 
 import { MenuBase } from './MenuBase';
 import { MenuDivider } from './MenuDivider';
@@ -192,7 +200,7 @@ const ItemVirtualizer = <T extends number | string>(props: ItemVirtualizerProps<
     onSelect,
   } = props;
 
-  const menuId = useRef(`menu-ctrl-${v4()}`);
+  const menuId = useRef(`menu-ctrl-${useId()}`);
 
   const focusedItemIndex = useRef<number | null>(null);
   const parentRef = useRef<HTMLDivElement | null>(null);

@@ -26,7 +26,6 @@ const build = async () => {
       ...Object.keys(packageJSON.peerDependencies || {}),
       '*.css',
     ],
-    inject: [path.resolve(__dirname, './react-shim.js')],
   };
 
   await esbuild

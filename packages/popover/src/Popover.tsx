@@ -14,10 +14,10 @@ import {
   isValidElement,
   useCallback,
   useEffect,
+  useId,
   useRef,
   useState,
 } from 'react';
-import { v4 } from 'uuid';
 
 import './styles/Popover.css';
 import { PopoverInteractionKind } from './types';
@@ -140,7 +140,7 @@ const Popover = ({
   const arrowRef = useRef<HTMLDivElement>(null);
   const timeoutRef = useRef<ReturnType<typeof setTimeout>>();
   const optionsRef = useRef<Partial<ComputePositionConfig>>();
-  const popoverId = useRef(`popover-${v4()}`);
+  const popoverId = useRef(`popover-${useId()}`);
 
   const updatePosition = useCallback(async () => {
     const middleware = [];

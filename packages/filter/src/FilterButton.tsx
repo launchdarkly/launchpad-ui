@@ -3,10 +3,9 @@ import type { ReactNode, SyntheticEvent } from 'react';
 import { Button, ButtonSize, ButtonType } from '@launchpad-ui/button';
 import { Close, ExpandMore, IconSize } from '@launchpad-ui/icons';
 import { Tooltip } from '@launchpad-ui/tooltip';
-import { useId } from '@react-aria/utils';
 import { VisuallyHidden } from '@react-aria/visually-hidden';
 import { cx } from 'classix';
-import { Children, forwardRef } from 'react';
+import { Children, forwardRef, useId } from 'react';
 
 import './styles/Filter.css';
 
