@@ -90,7 +90,6 @@
 }
 
 div.ProgressBubbles-icon--current {
-  background-color: var(--color-white);
   border: var(--border-width-2) solid var(--color-system-green-700);
 }
 
