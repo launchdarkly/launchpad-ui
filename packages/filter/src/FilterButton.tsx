@@ -5,7 +5,7 @@ import { Close, ExpandMore, IconSize } from '@launchpad-ui/icons';
 import { Tooltip } from '@launchpad-ui/tooltip';
 import { useId } from '@react-aria/utils';
 import { VisuallyHidden } from '@react-aria/visually-hidden';
-import cx from 'clsx';
+import { cx } from 'classix';
 import { Children, forwardRef } from 'react';
 
 import './styles/Filter.css';

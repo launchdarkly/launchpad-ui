@@ -1,7 +1,7 @@
 import type { ReactNode } from 'react';
 
 import { ExpandMore, IconSize } from '@launchpad-ui/icons';
-import cx from 'clsx';
+import { cx } from 'classix';
 import { Children, forwardRef } from 'react';
 
 import './styles/Filter.css';

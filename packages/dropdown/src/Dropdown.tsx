@@ -1,7 +1,7 @@
 import type { PopoverProps } from '@launchpad-ui/popover';
 
 import { Popover } from '@launchpad-ui/popover';
-import cx from 'clsx';
+import { cx } from 'classix';
 import { Children, cloneElement, useEffect, useRef, useState } from 'react';
 
 type DropdownState = {

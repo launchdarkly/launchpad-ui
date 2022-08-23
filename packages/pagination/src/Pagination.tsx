@@ -1,4 +1,4 @@
-import cx from 'clsx';
+import { cx } from 'classix';
 
 import { PaginationButton } from './PaginationButton';
 import { PaginationText } from './PaginationText';

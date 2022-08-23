@@ -1,7 +1,7 @@
 import type { PopoverProps } from '@launchpad-ui/popover';
 
 import { Popover, PopoverInteractionKind } from '@launchpad-ui/popover';
-import cx from 'clsx';
+import { cx } from 'classix';
 import { forwardRef } from 'react';
 
 import './styles/Tooltip.css';

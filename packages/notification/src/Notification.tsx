@@ -5,7 +5,7 @@ import { Button, ButtonType } from '@launchpad-ui/button';
 import { CopyToClipboard } from '@launchpad-ui/clipboard';
 import { KindIcon, Close, ExpandMore, IconSize } from '@launchpad-ui/icons';
 import { FocusScope } from '@react-aria/focus';
-import cx from 'clsx';
+import { cx } from 'classix';
 import { useCallback, useEffect, useRef, useState } from 'react';
 
 import './styles/Notification.css';

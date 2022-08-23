@@ -1,4 +1,4 @@
-import cx from 'clsx';
+import { cx } from 'classix';
 
 import { DelayedIndicator } from './DelayedIndicator';
 import './styles/Progress.css';

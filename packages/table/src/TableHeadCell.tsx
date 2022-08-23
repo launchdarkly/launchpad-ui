@@ -1,7 +1,7 @@
 import type { TableColumnWidths } from './types';
 
 import camelCase from 'camelcase';
-import cx from 'clsx';
+import { cx } from 'classix';
 
 import './styles/Table.css';
 import { TableAlignType } from './types';

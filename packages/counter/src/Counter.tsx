@@ -1,4 +1,4 @@
-import cx from 'clsx';
+import { cx } from 'classix';
 
 import './styles/Counter.css';
 
@@ -9,9 +9,7 @@ type CounterProps = {
 };
 
 const Counter = ({ value, className, subtle }: CounterProps) => {
-  const classes = cx('Counter', className, {
-    'Counter--subtle': subtle,
-  });
+  const classes = cx('Counter', className, subtle && 'Counter--subtle');
 
   return <span className={classes}>{value}</span>;
 };

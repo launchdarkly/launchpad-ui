@@ -5,7 +5,7 @@ import { IconSize } from '@launchpad-ui/icons';
 import { Tooltip } from '@launchpad-ui/tooltip';
 import { Slot } from '@radix-ui/react-slot';
 import { FocusRing } from '@react-aria/focus';
-import cx from 'clsx';
+import { cx } from 'classix';
 import { Link } from 'react-router-dom';
 
 import './styles/Menu.css';

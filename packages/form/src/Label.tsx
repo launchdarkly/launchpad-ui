@@ -1,4 +1,4 @@
-import cx from 'clsx';
+import { cx } from 'classix';
 
 import { RequiredAsterisk } from './RequiredAsterisk';
 import './styles/Form.css';

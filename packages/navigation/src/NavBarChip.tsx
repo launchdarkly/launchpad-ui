@@ -1,7 +1,7 @@
 import type { ChipKind } from '@launchpad-ui/chip';
 
 import { Chip } from '@launchpad-ui/chip';
-import cx from 'clsx';
+import { cx } from 'classix';
 
 import { titlecase } from './utils';
 

@@ -1,6 +1,6 @@
 import type { ButtonKind, ButtonSize } from '@launchpad-ui/button';
 
-import cx from 'clsx';
+import { cx } from 'classix';
 
 import { SplitButtonContext } from './context';
 import './styles/SplitButton.css';

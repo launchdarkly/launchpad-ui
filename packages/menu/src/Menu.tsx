@@ -4,7 +4,7 @@ import type { FocusManager } from '@react-aria/focus';
 import type { KeyboardEvent, ReactElement } from 'react';
 
 import { useFocusManager } from '@react-aria/focus';
-import cx from 'clsx';
+import { cx } from 'classix';
 import { Children, cloneElement, useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { useVirtual } from 'react-virtual';
 import { v4 } from 'uuid';

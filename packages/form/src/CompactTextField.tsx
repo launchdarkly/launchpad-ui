@@ -1,7 +1,7 @@
 import type { TextFieldProps } from './TextField';
 import type { FocusEvent } from 'react';
 
-import cx from 'clsx';
+import { cx } from 'classix';
 import { forwardRef, useState } from 'react';
 
 import { Label } from './Label';

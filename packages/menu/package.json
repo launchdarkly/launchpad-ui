@@ -41,7 +41,7 @@
     "@radix-ui/react-slot": "^1.0.0",
     "@react-aria/focus": "^3.7.0",
     "@react-aria/separator": "^3.2.0",
-    "clsx": "^1.2.0",
+    "classix": "^2.1.13",
     "react-router-dom": "^6.3.0",
     "react-virtual": "^2.10.4",
     "uuid": "^8.3.2"

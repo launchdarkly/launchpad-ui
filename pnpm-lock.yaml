@@ -186,14 +186,14 @@ importers:
       '@launchpad-ui/button': workspace:~
       '@launchpad-ui/icons': workspace:~
       '@launchpad-ui/tokens': workspace:~
-      clsx: ^1.2.0
+      classix: ^2.1.13
       react: ^18.2.0
       react-dom: ^18.2.0
     dependencies:
       '@launchpad-ui/button': link:../button
       '@launchpad-ui/icons': link:../icons
       '@launchpad-ui/tokens': link:../tokens
-      clsx: 1.2.0
+      classix: 2.1.13
     devDependencies:
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
@@ -202,13 +202,13 @@ importers:
     specifiers:
       '@launchpad-ui/icons': workspace:~
       '@launchpad-ui/tokens': workspace:~
-      clsx: ^1.2.0
+      classix: ^2.1.13
       react: ^18.2.0
       react-dom: ^18.2.0
     dependencies:
       '@launchpad-ui/icons': link:../icons
       '@launchpad-ui/tokens': link:../tokens
-      clsx: 1.2.0
+      classix: 2.1.13
     devDependencies:
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
@@ -219,7 +219,7 @@ importers:
       '@launchpad-ui/button': workspace:~
       '@launchpad-ui/icons': workspace:~
       '@launchpad-ui/tokens': workspace:~
-      clsx: ^1.2.0
+      classix: ^2.1.13
       react: ^18.2.0
       react-dom: ^18.2.0
     dependencies:
@@ -227,7 +227,7 @@ importers:
       '@launchpad-ui/button': link:../button
       '@launchpad-ui/icons': link:../icons
       '@launchpad-ui/tokens': link:../tokens
-      clsx: 1.2.0
+      classix: 2.1.13
     devDependencies:
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
@@ -235,12 +235,12 @@ importers:
   packages/button:
     specifiers:
       '@launchpad-ui/tokens': workspace:~
-      clsx: ^1.2.0
+      classix: ^2.1.13
       react: ^18.2.0
       react-dom: ^18.2.0
     dependencies:
       '@launchpad-ui/tokens': link:../tokens
-      clsx: 1.2.0
+      classix: 2.1.13
     devDependencies:
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
@@ -248,12 +248,12 @@ importers:
   packages/chip:
     specifiers:
       '@launchpad-ui/tokens': workspace:~
-      clsx: ^1.2.0
+      classix: ^2.1.13
       react: ^18.2.0
       react-dom: ^18.2.0
     dependencies:
       '@launchpad-ui/tokens': link:../tokens
-      clsx: 1.2.0
+      classix: 2.1.13
     devDependencies:
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
@@ -347,12 +347,12 @@ importers:
   packages/counter:
     specifiers:
       '@launchpad-ui/tokens': workspace:~
-      clsx: ^1.2.0
+      classix: ^2.1.13
       react: ^18.2.0
       react-dom: ^18.2.0
     dependencies:
       '@launchpad-ui/tokens': link:../tokens
-      clsx: 1.2.0
+      classix: 2.1.13
     devDependencies:
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
@@ -363,7 +363,7 @@ importers:
       '@launchpad-ui/icons': workspace:~
       '@launchpad-ui/popover': workspace:~
       '@launchpad-ui/tokens': workspace:~
-      clsx: ^1.2.0
+      classix: ^2.1.13
       react: ^18.2.0
       react-dom: ^18.2.0
     dependencies:
@@ -371,7 +371,7 @@ importers:
       '@launchpad-ui/icons': link:../icons
       '@launchpad-ui/popover': link:../popover
       '@launchpad-ui/tokens': link:../tokens
-      clsx: 1.2.0
+      classix: 2.1.13
     devDependencies:
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
@@ -386,7 +386,7 @@ importers:
       '@launchpad-ui/tooltip': workspace:~
       '@react-aria/utils': ^3.13.1
       '@react-aria/visually-hidden': ^3.4.0
-      clsx: ^1.2.0
+      classix: ^2.1.13
       react: ^18.2.0
       react-dom: ^18.2.0
     dependencies:
@@ -398,7 +398,7 @@ importers:
       '@launchpad-ui/tooltip': link:../tooltip
       '@react-aria/utils': 3.13.1_react@18.2.0
       '@react-aria/visually-hidden': 3.4.0_react@18.2.0
-      clsx: 1.2.0
+      classix: 2.1.13
     devDependencies:
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
@@ -408,14 +408,14 @@ importers:
       '@launchpad-ui/icons': workspace:~
       '@launchpad-ui/tokens': workspace:~
       '@react-aria/visually-hidden': ^3.4.0
-      clsx: ^1.2.0
+      classix: ^2.1.13
       react: ^18.2.0
       react-dom: ^18.2.0
     dependencies:
       '@launchpad-ui/icons': link:../icons
       '@launchpad-ui/tokens': link:../tokens
       '@react-aria/visually-hidden': 3.4.0_react@18.2.0
-      clsx: 1.2.0
+      classix: 2.1.13
     devDependencies:
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
@@ -425,13 +425,13 @@ importers:
       '@launchpad-ui/tokens': workspace:~
       '@svgr/cli': ^6.3.1
       '@types/uuid': ^8.3.4
-      clsx: ^1.2.0
+      classix: ^2.1.13
       react: ^18.2.0
       react-dom: ^18.2.0
       uuid: ^8.3.2
     dependencies:
       '@launchpad-ui/tokens': link:../tokens
-      clsx: 1.2.0
+      classix: 2.1.13
       uuid: 8.3.2
     devDependencies:
       '@svgr/cli': 6.3.1
@@ -443,14 +443,14 @@ importers:
     specifiers:
       '@launchpad-ui/tokens': workspace:~
       '@types/marked': ^4.0.3
-      clsx: ^1.2.0
+      classix: ^2.1.13
       isomorphic-dompurify: ^0.20.0
       marked: ^4.0.12
       react: ^18.2.0
       react-dom: ^18.2.0
     dependencies:
       '@launchpad-ui/tokens': link:../tokens
-      clsx: 1.2.0
+      classix: 2.1.13
       isomorphic-dompurify: 0.20.0
       marked: 4.0.18
     devDependencies:
@@ -469,7 +469,7 @@ importers:
       '@react-aria/focus': ^3.7.0
       '@react-aria/separator': ^3.2.0
       '@types/uuid': ^8.3.4
-      clsx: ^1.2.0
+      classix: ^2.1.13
       react: ^18.2.0
       react-dom: ^18.2.0
       react-router-dom: ^6.3.0
@@ -484,7 +484,7 @@ importers:
       '@radix-ui/react-slot': 1.0.0_react@18.2.0
       '@react-aria/focus': 3.7.0_react@18.2.0
       '@react-aria/separator': 3.2.1_react@18.2.0
-      clsx: 1.2.0
+      classix: 2.1.13
       react-router-dom: 6.3.0_biqbaboplfbrettd7655fr4n2y
       react-virtual: 2.10.4_react@18.2.0
       uuid: 8.3.2
@@ -501,7 +501,7 @@ importers:
       '@launchpad-ui/tokens': workspace:~
       '@react-aria/focus': ^3.7.0
       '@react-aria/overlays': ^3.10.0
-      clsx: ^1.2.0
+      classix: ^2.1.13
       framer-motion: ^7.2.0
       react: ^18.2.0
       react-dom: ^18.2.0
@@ -512,7 +512,7 @@ importers:
       '@launchpad-ui/tokens': link:../tokens
       '@react-aria/focus': 3.7.0_react@18.2.0
       '@react-aria/overlays': 3.10.0_biqbaboplfbrettd7655fr4n2y
-      clsx: 1.2.0
+      classix: 2.1.13
       framer-motion: 7.2.0_biqbaboplfbrettd7655fr4n2y
     devDependencies:
       react: 18.2.0
@@ -529,7 +529,7 @@ importers:
       '@react-aria/utils': ^3.13.1
       '@react-stately/list': ^3.5.1
       '@react-types/shared': ^3.14.0
-      clsx: ^1.2.0
+      classix: ^2.1.13
       react: ^18.2.0
       react-dom: ^18.2.0
       react-router-dom: ^6.3.0
@@ -543,7 +543,7 @@ importers:
       '@react-aria/utils': 3.13.1_react@18.2.0
       '@react-stately/list': 3.5.1_react@18.2.0
       '@react-types/shared': 3.14.0_react@18.2.0
-      clsx: 1.2.0
+      classix: 2.1.13
       react-router-dom: 6.3.0_biqbaboplfbrettd7655fr4n2y
     devDependencies:
       react: 18.2.0
@@ -557,7 +557,7 @@ importers:
       '@launchpad-ui/tokens': workspace:~
       '@react-aria/focus': ^3.7.0
       '@types/uuid': ^8.3.4
-      clsx: ^1.2.0
+      classix: ^2.1.13
       framer-motion: ^7.2.0
       react: ^18.2.0
       react-dom: ^18.2.0
@@ -568,7 +568,7 @@ importers:
       '@launchpad-ui/icons': link:../icons
       '@launchpad-ui/tokens': link:../tokens
       '@react-aria/focus': 3.7.0_react@18.2.0
-      clsx: 1.2.0
+      classix: 2.1.13
       framer-motion: 7.2.0_biqbaboplfbrettd7655fr4n2y
     devDependencies:
       '@types/uuid': 8.3.4
@@ -594,7 +594,7 @@ importers:
       '@launchpad-ui/progress': workspace:~
       '@launchpad-ui/tokens': workspace:~
       '@react-aria/visually-hidden': ^3.4.0
-      clsx: ^1.2.0
+      classix: ^2.1.13
       react: ^18.2.0
       react-dom: ^18.2.0
     dependencies:
@@ -603,7 +603,7 @@ importers:
       '@launchpad-ui/progress': link:../progress
       '@launchpad-ui/tokens': link:../tokens
       '@react-aria/visually-hidden': 3.4.0_react@18.2.0
-      clsx: 1.2.0
+      classix: 2.1.13
     devDependencies:
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
@@ -616,7 +616,7 @@ importers:
       '@launchpad-ui/tokens': workspace:~
       '@react-aria/focus': ^3.7.0
       '@types/uuid': ^8.3.4
-      clsx: ^1.2.0
+      classix: ^2.1.13
       framer-motion: ^7.2.0
       react: ^18.2.0
       react-dom: ^18.2.0
@@ -627,7 +627,7 @@ importers:
       '@launchpad-ui/overlay': link:../overlay
       '@launchpad-ui/tokens': link:../tokens
       '@react-aria/focus': 3.7.0_react@18.2.0
-      clsx: 1.2.0
+      classix: 2.1.13
       framer-motion: 7.2.0_biqbaboplfbrettd7655fr4n2y
       uuid: 8.3.2
     devDependencies:
@@ -638,12 +638,12 @@ importers:
   packages/progress:
     specifiers:
       '@launchpad-ui/tokens': workspace:~
-      clsx: ^1.2.0
+      classix: ^2.1.13
       react: ^18.2.0
       react-dom: ^18.2.0
     dependencies:
       '@launchpad-ui/tokens': link:../tokens
-      clsx: 1.2.0
+      classix: 2.1.13
     devDependencies:
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
@@ -652,13 +652,13 @@ importers:
     specifiers:
       '@launchpad-ui/popover': workspace:~
       '@launchpad-ui/tokens': workspace:~
-      clsx: ^1.2.0
+      classix: ^2.1.13
       react: ^18.2.0
       react-dom: ^18.2.0
     dependencies:
       '@launchpad-ui/popover': link:../popover
       '@launchpad-ui/tokens': link:../tokens
-      clsx: 1.2.0
+      classix: 2.1.13
     devDependencies:
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
@@ -666,12 +666,12 @@ importers:
   packages/slider:
     specifiers:
       '@launchpad-ui/tokens': workspace:~
-      clsx: ^1.2.0
+      classix: ^2.1.13
       react: ^18.2.0
       react-dom: ^18.2.0
     dependencies:
       '@launchpad-ui/tokens': link:../tokens
-      clsx: 1.2.0
+      classix: 2.1.13
     devDependencies:
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
@@ -683,7 +683,7 @@ importers:
       '@launchpad-ui/popover': workspace:~
       '@launchpad-ui/tokens': workspace:~
       '@launchpad-ui/tooltip': workspace:~
-      clsx: ^1.2.0
+      classix: ^2.1.13
       react: ^18.2.0
       react-dom: ^18.2.0
     dependencies:
@@ -692,7 +692,7 @@ importers:
       '@launchpad-ui/popover': link:../popover
       '@launchpad-ui/tokens': link:../tokens
       '@launchpad-ui/tooltip': link:../tooltip
-      clsx: 1.2.0
+      classix: 2.1.13
     devDependencies:
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
@@ -705,7 +705,7 @@ importers:
       '@react-stately/tabs': ^3.2.0
       '@react-types/shared': ^3.14.0
       '@react-types/tabs': ^3.1.0
-      clsx: ^1.2.0
+      classix: ^2.1.13
       react: ^18.2.0
       react-dom: ^18.2.0
     dependencies:
@@ -714,7 +714,7 @@ importers:
       '@react-stately/tabs': 3.2.0_react@18.2.0
       '@react-types/shared': 3.14.0_react@18.2.0
       '@react-types/tabs': 3.1.1_react@18.2.0
-      clsx: 1.2.0
+      classix: 2.1.13
     devDependencies:
       '@react-stately/collections': 3.4.1_react@18.2.0
       react: 18.2.0
@@ -724,13 +724,13 @@ importers:
     specifiers:
       '@launchpad-ui/tokens': workspace:~
       camelcase: ^7.0.0
-      clsx: ^1.2.0
+      classix: ^2.1.13
       react: ^18.2.0
       react-dom: ^18.2.0
     dependencies:
       '@launchpad-ui/tokens': link:../tokens
       camelcase: 7.0.0
-      clsx: 1.2.0
+      classix: 2.1.13
     devDependencies:
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
@@ -741,7 +741,7 @@ importers:
       '@react-aria/switch': ^3.2.0
       '@react-aria/visually-hidden': ^3.4.0
       '@react-stately/toggle': ^3.4.0
-      clsx: ^1.2.0
+      classix: ^2.1.13
       react: ^18.2.0
       react-dom: ^18.2.0
     dependencies:
@@ -749,7 +749,7 @@ importers:
       '@react-aria/switch': 3.2.1_react@18.2.0
       '@react-aria/visually-hidden': 3.4.0_react@18.2.0
       '@react-stately/toggle': 3.4.0_react@18.2.0
-      clsx: 1.2.0
+      classix: 2.1.13
     devDependencies:
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
@@ -766,13 +766,13 @@ importers:
     specifiers:
       '@launchpad-ui/popover': workspace:~
       '@launchpad-ui/tokens': workspace:~
-      clsx: ^1.2.0
+      classix: ^2.1.13
       react: ^18.2.0
       react-dom: ^18.2.0
     dependencies:
       '@launchpad-ui/popover': link:../popover
       '@launchpad-ui/tokens': link:../tokens
-      clsx: 1.2.0
+      classix: 2.1.13
     devDependencies:
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
@@ -7887,6 +7887,10 @@ packages:
       static-extend: 0.1.2
     dev: true
 
+  /classix/2.1.13:
+    resolution: {integrity: sha512-5eTXgHrGwrdC2s4X5k5VypDCamRU8E0VP0hoKLH+WHWmr/ypGNwdVA/Dje9KQugs6YGGI0RLjWt8y2z+wUKphA==}
+    dev: false
+
   /clean-css/5.3.0:
     resolution: {integrity: sha512-YYuuxv4H/iNb1Z/5IbMRoxgrzjWGhOEFfd+groZ5dMCVkpENiMZmwspdrzBo9286JjM1gZJPAyL7ZIdzuvu2AQ==}
     engines: {node: '>= 10.0'}
@@ -8226,8 +8230,8 @@ packages:
     engines: {node: '>=10'}
     hasBin: true
     dependencies:
-      JSONStream: 1.3.5
       is-text-path: 1.0.1
+      JSONStream: 1.3.5
       lodash: 4.17.21
       meow: 8.1.2
       split2: 3.2.2

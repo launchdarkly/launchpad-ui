@@ -1,6 +1,6 @@
 import type { InputHTMLAttributes } from 'react';
 
-import cx from 'clsx';
+import { cx } from 'classix';
 import { forwardRef } from 'react';
 
 import './styles/FormInput.css';

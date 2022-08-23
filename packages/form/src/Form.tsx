@@ -1,6 +1,6 @@
 import type { FocusEvent, FormEvent, ReactNode } from 'react';
 
-import cx from 'clsx';
+import { cx } from 'classix';
 
 import './styles/Form.css';
 

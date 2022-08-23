@@ -8,7 +8,7 @@ import { Dropdown, DropdownButton } from '@launchpad-ui/dropdown';
 import { Menu, MenuItem } from '@launchpad-ui/menu';
 import { useResizeObserver, useValueEffect } from '@react-aria/utils';
 import { useListState } from '@react-stately/list';
-import cx from 'clsx';
+import { cx } from 'classix';
 import { createContext, useCallback, useContext, useEffect, useRef } from 'react';
 import { NavLink } from 'react-router-dom';
 

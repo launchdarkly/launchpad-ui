@@ -1,4 +1,4 @@
-import cx from 'clsx';
+import { cx } from 'classix';
 
 import './styles/Chip.css';
 import { ChipKind, ChipSize } from './types';

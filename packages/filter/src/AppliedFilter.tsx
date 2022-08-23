@@ -2,7 +2,7 @@ import type { FilterOption } from './FilterMenu';
 import type { ReactNode } from 'react';
 
 import { Dropdown } from '@launchpad-ui/dropdown';
-import cx from 'clsx';
+import { cx } from 'classix';
 
 import { AppliedFilterButton } from './AppliedFilterButton';
 import { FilterMenu } from './FilterMenu';

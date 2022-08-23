@@ -1,4 +1,4 @@
-import cx from 'clsx';
+import { cx } from 'classix';
 import { cloneElement, forwardRef, memo } from 'react';
 
 import './styles/Button.css';

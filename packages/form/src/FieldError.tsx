@@ -1,6 +1,6 @@
 import type { FieldPath } from './utils';
 
-import cx from 'clsx';
+import { cx } from 'classix';
 
 import './styles/Form.css';
 import { createFieldErrorId } from './utils';

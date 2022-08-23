@@ -1,6 +1,6 @@
 import type { ChangeEvent, ReactNode } from 'react';
 
-import cx from 'clsx';
+import { cx } from 'classix';
 
 import './styles/FormInput.css';
 

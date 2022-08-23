@@ -5,7 +5,7 @@ import {
   KeyboardDoubleArrowLeft,
   KeyboardDoubleArrowRight,
 } from '@launchpad-ui/icons';
-import cx from 'clsx';
+import { cx } from 'classix';
 
 import { PaginationChange } from './types';
 
