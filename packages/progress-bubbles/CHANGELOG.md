@@ -1,5 +1,16 @@
 # @launchpad-ui/progress-bubbles
 
+## 0.3.5
+
+### Patch Changes
+
+- [#310](https://github.com/launchdarkly/launchpad-ui/pull/310) [`f60754c`](https://github.com/launchdarkly/launchpad-ui/commit/f60754c7d96c4c40e11a707ff06b78b86f8513a7) Thanks [@jagarnica](https://github.com/jagarnica)! - [ProgressBubbles] Change background color of progress bubbles in "Current State" to green
+
+* [#308](https://github.com/launchdarkly/launchpad-ui/pull/308) [`57e9aa3`](https://github.com/launchdarkly/launchpad-ui/commit/57e9aa3748b59b2601be5ede39423dcc79c0fa43) Thanks [@Niznikr](https://github.com/Niznikr)! - Replace clsx with classix for joining classNames
+
+* Updated dependencies [[`d5272f3`](https://github.com/launchdarkly/launchpad-ui/commit/d5272f36dd1fb23443a1e831748900c21444482d), [`57e9aa3`](https://github.com/launchdarkly/launchpad-ui/commit/57e9aa3748b59b2601be5ede39423dcc79c0fa43)]:
+  - @launchpad-ui/popover@0.6.5
+
 ## 0.3.4
 
 ### Patch Changes

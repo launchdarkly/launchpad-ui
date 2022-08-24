@@ -1,5 +1,11 @@
 # @launchpad-ui/table
 
+## 0.2.1
+
+### Patch Changes
+
+- [#308](https://github.com/launchdarkly/launchpad-ui/pull/308) [`57e9aa3`](https://github.com/launchdarkly/launchpad-ui/commit/57e9aa3748b59b2601be5ede39423dcc79c0fa43) Thanks [@Niznikr](https://github.com/Niznikr)! - Replace clsx with classix for joining classNames
+
 ## 0.2.0
 
 ### Minor Changes

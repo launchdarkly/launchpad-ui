@@ -1,5 +1,20 @@
 # @launchpad-ui/filter
 
+## 0.2.6
+
+### Patch Changes
+
+- [#306](https://github.com/launchdarkly/launchpad-ui/pull/306) [`d5272f3`](https://github.com/launchdarkly/launchpad-ui/commit/d5272f36dd1fb23443a1e831748900c21444482d) Thanks [@Niznikr](https://github.com/Niznikr)! - [Filter, Icons, Menu, Popover] Create ids with useId
+
+* [#308](https://github.com/launchdarkly/launchpad-ui/pull/308) [`57e9aa3`](https://github.com/launchdarkly/launchpad-ui/commit/57e9aa3748b59b2601be5ede39423dcc79c0fa43) Thanks [@Niznikr](https://github.com/Niznikr)! - Replace clsx with classix for joining classNames
+
+* Updated dependencies [[`d5272f3`](https://github.com/launchdarkly/launchpad-ui/commit/d5272f36dd1fb23443a1e831748900c21444482d), [`57e9aa3`](https://github.com/launchdarkly/launchpad-ui/commit/57e9aa3748b59b2601be5ede39423dcc79c0fa43)]:
+  - @launchpad-ui/icons@0.3.3
+  - @launchpad-ui/menu@0.4.5
+  - @launchpad-ui/button@0.4.1
+  - @launchpad-ui/dropdown@0.3.6
+  - @launchpad-ui/tooltip@0.4.5
+
 ## 0.2.5
 
 ### Patch Changes
