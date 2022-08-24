@@ -1,5 +1,5 @@
 import { Progress } from '@launchpad-ui/progress';
-import cx from 'clsx';
+import { cx } from 'classix';
 import { Suspense } from 'react';
 
 import { Modal } from './Modal';

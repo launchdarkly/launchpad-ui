@@ -1,6 +1,6 @@
 import type { RefObject } from 'react';
 
-import cx from 'clsx';
+import { cx } from 'classix';
 import DOMPurify from 'isomorphic-dompurify';
 
 import './styles/Markdown.css';

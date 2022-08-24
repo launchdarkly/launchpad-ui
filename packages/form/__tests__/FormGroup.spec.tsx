@@ -6,7 +6,7 @@ import { FormGroup } from '../src';
 describe('FormGroup', () => {
   it('renders', () => {
     render(
-      <FormGroup testId="testing">
+      <FormGroup testId="testing" isInvalid>
         <></>
       </FormGroup>
     );

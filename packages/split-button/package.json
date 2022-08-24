@@ -38,7 +38,7 @@
     "@launchpad-ui/popover": "workspace:~",
     "@launchpad-ui/tokens": "workspace:~",
     "@launchpad-ui/tooltip": "workspace:~",
-    "clsx": "^1.2.0"
+    "classix": "^2.1.13"
   },
   "peerDependencies": {
     "react": "^18.0.0",

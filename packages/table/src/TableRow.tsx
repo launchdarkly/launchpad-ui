@@ -1,6 +1,6 @@
 import type { TableVerticalAlignType } from './types';
 
-import cx from 'clsx';
+import { cx } from 'classix';
 
 import './styles/Table.css';
 

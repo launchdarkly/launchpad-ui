@@ -1,7 +1,7 @@
 import { useSwitch } from '@react-aria/switch';
 import { VisuallyHidden } from '@react-aria/visually-hidden';
 import { useToggleState } from '@react-stately/toggle';
-import cx from 'clsx';
+import { cx } from 'classix';
 import { useRef } from 'react';
 
 import './styles/Toggle.css';
@@ -73,10 +73,7 @@ const Toggle = (props: ToggleProps) => {
   const state = useToggleState(props);
   const inputRef = useRef<HTMLInputElement>(null);
   const { inputProps } = useSwitch(props, state, inputRef);
-  const classes = cx('Toggle', className, {
-    'Toggle--on': checked,
-    'Toggle--disabled': disabled,
-  });
+  const classes = cx('Toggle', className, checked && 'Toggle--on', disabled && 'Toggle--disabled');
 
   const handleChange = () => {
     if (disabled || !onChange) {

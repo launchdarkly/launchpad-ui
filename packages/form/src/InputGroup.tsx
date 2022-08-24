@@ -1,6 +1,6 @@
 import type { ComponentPropsWithRef } from 'react';
 
-import cx from 'clsx';
+import { cx } from 'classix';
 
 import './styles/InputGroup.css';
 

@@ -4,7 +4,7 @@ import { Button, ButtonSize, ButtonType } from '@launchpad-ui/button';
 import { Close, IconSize } from '@launchpad-ui/icons';
 import { FocusScope } from '@react-aria/focus';
 import { usePreventScroll } from '@react-aria/overlays';
-import cx from 'clsx';
+import { cx } from 'classix';
 import { LazyMotion, m } from 'framer-motion';
 import { useEffect, useRef } from 'react';
 

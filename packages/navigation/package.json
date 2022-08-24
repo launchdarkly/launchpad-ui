@@ -42,7 +42,7 @@
     "@react-aria/utils": "^3.13.1",
     "@react-stately/list": "^3.5.1",
     "@react-types/shared": "^3.14.0",
-    "clsx": "^1.2.0",
+    "classix": "^2.1.13",
     "react-router-dom": "^6.3.0"
   },
   "peerDependencies": {

@@ -34,7 +34,7 @@
   },
   "dependencies": {
     "@launchpad-ui/tokens": "workspace:~",
-    "clsx": "^1.2.0",
+    "classix": "^2.1.13",
     "isomorphic-dompurify": "^0.20.0",
     "marked": "^4.0.12"
   },

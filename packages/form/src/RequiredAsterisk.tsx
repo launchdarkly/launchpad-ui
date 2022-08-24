@@ -1,6 +1,6 @@
 import type { HTMLAttributes } from 'react';
 
-import cx from 'clsx';
+import { cx } from 'classix';
 
 import './styles/RequiredAsterisk.css';
 

@@ -1,5 +1,5 @@
 import { Close, IconSize } from '@launchpad-ui/icons';
-import cx from 'clsx';
+import { cx } from 'classix';
 
 import './styles/Modal.css';
 

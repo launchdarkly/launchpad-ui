@@ -1,6 +1,6 @@
 import { Button, ButtonType } from '@launchpad-ui/button';
 import { Close, IconSize, KindIcon } from '@launchpad-ui/icons';
-import cx from 'clsx';
+import { cx } from 'classix';
 import { useState } from 'react';
 
 import './styles/Alert.css';
@@ -81,13 +81,14 @@ const Alert = ({
   const defaultClasses = ['Alert', `Alert--${kind}`, className];
   const borderedClasses = `Alert--${kind}--bordered Alert--bordered`;
   const sizeClass = `Alert--${size}`;
-  const classes = cx(defaultClasses, {
-    [borderedClasses]: !isInline,
-    [sizeClass]: size,
-    'Alert--compact': compact,
-    'Alert--inline': isInline,
-    'Alert--wide': wide,
-  });
+  const classes = cx(
+    ...defaultClasses,
+    !isInline && borderedClasses,
+    size && sizeClass,
+    compact && 'Alert--compact',
+    isInline && 'Alert--inline',
+    wide && 'Alert--wide'
+  );
 
   const handleDismissClicked = () => {
     if (onDismiss) {

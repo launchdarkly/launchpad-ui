@@ -5,7 +5,7 @@ import type { CSSProperties, ReactHTML, Ref, RefObject } from 'react';
 import { arrow, computePosition, flip, offset as floatOffset, shift } from '@floating-ui/dom';
 import { Overlay } from '@launchpad-ui/overlay';
 import { FocusScope } from '@react-aria/focus';
-import cx from 'clsx';
+import { cx } from 'classix';
 import { LazyMotion, m } from 'framer-motion';
 import {
   Children,
@@ -376,9 +376,9 @@ const Popover = ({
           animate={{ opacity: 1 }}
           className={cx(
             'Popover-content',
-            {
-              'Popover-content--restrict-width': restrictWidth,
-            },
+
+            restrictWidth && 'Popover-content--restrict-width',
+
             popoverContentClassName
           )}
         >
@@ -416,10 +416,12 @@ const Popover = ({
 
   const targetProps: PopoverTargetProps = {
     ref: targetRef,
-    className: cx('Popover-target', targetClassName, {
-      'Popover-target--active': isOpen,
-      'Popover-target--disabled': isTargetDisabled,
-    }),
+    className: cx(
+      'Popover-target',
+      targetClassName,
+      isOpen && 'Popover-target--active',
+      isTargetDisabled && 'Popover-target--disabled'
+    ),
     style: rootElementStyle,
     'data-test-id': targetTestId || 'popover-target',
   };

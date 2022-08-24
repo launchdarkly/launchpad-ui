@@ -3,7 +3,7 @@ import type { MenuProps } from '@launchpad-ui/menu';
 import type { ReactNode, SyntheticEvent } from 'react';
 
 import { Dropdown } from '@launchpad-ui/dropdown';
-import cx from 'clsx';
+import { cx } from 'classix';
 
 import { FilterButton } from './FilterButton';
 import { FilterMenu } from './FilterMenu';

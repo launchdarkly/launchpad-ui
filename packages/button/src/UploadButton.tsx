@@ -1,7 +1,7 @@
 import type { ButtonProps } from './';
 import type { ChangeEventHandler, KeyboardEvent } from 'react';
 
-import cx from 'clsx';
+import { cx } from 'classix';
 import { useRef } from 'react';
 
 import { Button } from './';

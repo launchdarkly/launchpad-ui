@@ -1,7 +1,7 @@
 import type { ButtonProps } from '@launchpad-ui/button';
 
 import { Button } from '@launchpad-ui/button';
-import cx from 'clsx';
+import { cx } from 'classix';
 import { forwardRef, useContext, useMemo } from 'react';
 
 import { SplitButtonContext } from './context';

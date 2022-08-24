@@ -1,7 +1,7 @@
 import type { IconProps } from '@launchpad-ui/icons';
 
 import { IconSize, Person } from '@launchpad-ui/icons';
-import cx from 'clsx';
+import { cx } from 'classix';
 import { useCallback, useEffect, useState } from 'react';
 
 import './styles/Avatar.css';

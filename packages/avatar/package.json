@@ -35,7 +35,7 @@
   "dependencies": {
     "@launchpad-ui/icons": "workspace:~",
     "@launchpad-ui/tokens": "workspace:~",
-    "clsx": "^1.2.0"
+    "classix": "^2.1.13"
   },
   "peerDependencies": {
     "react": "^18.0.0",

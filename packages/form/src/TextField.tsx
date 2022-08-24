@@ -1,6 +1,6 @@
 import type { InputHTMLAttributes } from 'react';
 
-import cx from 'clsx';
+import { cx } from 'classix';
 import { forwardRef } from 'react';
 
 import './styles/FormInput.css';
@@ -30,9 +30,7 @@ const TextField = forwardRef<HTMLInputElement, TextFieldProps>(
   ) => {
     const classes = overrideWidth
       ? className
-      : cx('FormInput', `FormInput-${type}`, className, {
-          'FormInput--tiny': tiny,
-        });
+      : cx('FormInput', `FormInput-${type}`, className, tiny && 'FormInput--tiny');
     if (suffix) {
       return (
         <div className="FormInput-suffixContainer">

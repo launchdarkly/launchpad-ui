@@ -1,4 +1,4 @@
-import cx from 'clsx';
+import { cx } from 'classix';
 
 import { DelayedIndicator } from './DelayedIndicator';
 import './styles/Progress.css';
@@ -47,7 +47,7 @@ const Progress = ({
 
   const indicator = (
     <svg
-      className={cx('Progress', { 'Progress--indeterminate': isIndeterminate }, className)}
+      className={cx('Progress', isIndeterminate && 'Progress--indeterminate', className)}
       width={diameter}
       height={diameter}
       viewBox={`0 0 ${diameter} ${diameter}`}

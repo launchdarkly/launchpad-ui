@@ -1,6 +1,6 @@
 import type { Ref } from 'react';
 
-import cx from 'clsx';
+import { cx } from 'classix';
 import { forwardRef } from 'react';
 
 import './styles/Nav.css';

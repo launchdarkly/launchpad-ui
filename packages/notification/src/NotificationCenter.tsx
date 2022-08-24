@@ -1,6 +1,6 @@
 import type { NotificationRecord } from './types';
 
-import cx from 'clsx';
+import { cx } from 'classix';
 import { AnimatePresence, LazyMotion, m } from 'framer-motion';
 
 import { Notification } from './Notification';

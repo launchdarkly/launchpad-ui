@@ -6,7 +6,7 @@ import { Form } from '../src';
 describe('Form', () => {
   it('renders', () => {
     render(
-      <Form id="testing" name="My Form" ariaLabel="My Form">
+      <Form id="testing" name="My Form" ariaLabel="My Form" inline>
         <></>
       </Form>
     );

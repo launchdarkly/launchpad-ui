@@ -1,4 +1,4 @@
-import cx from 'clsx';
+import { cx } from 'classix';
 
 import './styles/ButtonGroup.css';
 import { ButtonGroupSpacing } from './types';

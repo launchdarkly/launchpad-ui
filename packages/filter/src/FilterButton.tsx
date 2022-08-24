@@ -4,7 +4,7 @@ import { Button, ButtonSize, ButtonType } from '@launchpad-ui/button';
 import { Close, ExpandMore, IconSize } from '@launchpad-ui/icons';
 import { Tooltip } from '@launchpad-ui/tooltip';
 import { VisuallyHidden } from '@react-aria/visually-hidden';
-import cx from 'clsx';
+import { cx } from 'classix';
 import { Children, forwardRef, useId } from 'react';
 
 import './styles/Filter.css';
@@ -56,9 +56,7 @@ const FilterButton = forwardRef<Ref, FilterButtonProps>((props, ref) => {
         {...rest}
         aria-labelledby={`${nameId} ${hasDescription ? descriptionId : ''}`}
         aria-haspopup
-        className={cx('Filter-button', className, {
-          'is-clearable': isClearable || isSelected,
-        })}
+        className={cx('Filter-button', className, (isClearable || isSelected) && 'is-clearable')}
         ref={ref}
         onClick={onClickFilterButton}
       >

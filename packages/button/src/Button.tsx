@@ -1,4 +1,4 @@
-import cx from 'clsx';
+import { cx } from 'classix';
 import { cloneElement, forwardRef, memo } from 'react';
 
 import './styles/Button.css';
@@ -153,12 +153,16 @@ const ButtonComponent = forwardRef<HTMLButtonElement | HTMLAnchorElement, Button
 
     const kindClass = `Button--${kind}`;
     const sizeClass = `Button--${size}`;
-    const classes = cx('Button', className, kindClass, sizeClass, {
-      'Button--fit': fit,
-      'Button--icon': type === 'icon',
-      'Button--outlined': type === 'icon' && outlined,
-      'Button--borderless': type === 'borderless',
-    });
+    const classes = cx(
+      'Button',
+      className,
+      kindClass,
+      sizeClass,
+      fit && 'Button--fit',
+      type === 'icon' && 'Button--icon',
+      type === 'icon' && outlined && 'Button--outlined',
+      type === 'borderless' && 'Button--borderless'
+    );
 
     const handleClick = (event: React.MouseEvent) => {
       if (disabled) {

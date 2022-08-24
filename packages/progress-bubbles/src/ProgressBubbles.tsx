@@ -1,7 +1,7 @@
 import type { Offset } from '@launchpad-ui/popover';
 
 import { Popover, PopoverInteractionKind } from '@launchpad-ui/popover';
-import cx from 'clsx';
+import { cx } from 'classix';
 import { Fragment } from 'react';
 
 import './styles/ProgressBubbles.css';
@@ -57,12 +57,13 @@ const ProgressBubbles = ({
 
       const bubble = (
         <div
-          className={cx('ProgressBubbles-icon', {
-            'ProgressBubbles-icon--multiple': hasMultipleIcons,
-            'ProgressBubbles-icon--current': idx === currentBubble,
-            'ProgressBubbles-icon--pending': idx > currentBubble,
-            'ProgressBubbles-icon--warning': item.isWarning,
-          })}
+          className={cx(
+            'ProgressBubbles-icon',
+            hasMultipleIcons && 'ProgressBubbles-icon--multiple',
+            idx === currentBubble && 'ProgressBubbles-icon--current',
+            idx > currentBubble && 'ProgressBubbles-icon--pending',
+            item.isWarning && 'ProgressBubbles-icon--warning'
+          )}
           style={{ width: `${iconWidth}rem` }}
         >
           {item.icons}
@@ -81,9 +82,10 @@ const ProgressBubbles = ({
         <Fragment key={idx}>
           {!!idx && (
             <div
-              className={cx('ProgressBubblesUsingItems-line', {
-                'ProgressBubblesUsingItems-line--completed': idx <= currentBubble,
-              })}
+              className={cx(
+                'ProgressBubblesUsingItems-line',
+                idx <= currentBubble && 'ProgressBubblesUsingItems-line--completed'
+              )}
             />
           )}
           <div className="ProgressBubblesIconContainer">
@@ -113,17 +115,19 @@ const ProgressBubbles = ({
         <Fragment key={i}>
           {!!i && (
             <div
-              className={cx('ProgressBubbles-line', {
-                'ProgressBubbles--filled': i <= currentBubble,
-              })}
+              className={cx(
+                'ProgressBubbles-line',
+                i <= currentBubble && 'ProgressBubbles--filled'
+              )}
             ></div>
           )}
           <div
-            className={cx('ProgressBubbles-bubble', {
-              'ProgressBubbles--filled': i <= currentBubble,
-              'ProgressBubbles-bubble--first': i === 0,
-              'ProgressBubbles-bubble--last': i === numBubbles - 1,
-            })}
+            className={cx(
+              'ProgressBubbles-bubble',
+              i <= currentBubble && 'ProgressBubbles--filled',
+              i === 0 && 'ProgressBubbles-bubble--first',
+              i === numBubbles - 1 && 'ProgressBubbles-bubble--last'
+            )}
           >
             <span className="ProgressBubbles-text">
               {!!bubbleLabels &&
@@ -139,7 +143,7 @@ const ProgressBubbles = ({
 
   return (
     <div
-      className={cx('ProgressBubbles', className, { 'ProgressBubbles--vertical': vertical })}
+      className={cx('ProgressBubbles', className, vertical && 'ProgressBubbles--vertical')}
       ref={ref}
     >
       {children}

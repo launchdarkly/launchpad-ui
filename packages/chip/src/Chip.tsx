@@ -1,4 +1,4 @@
-import cx from 'clsx';
+import { cx } from 'classix';
 
 import './styles/Chip.css';
 import { ChipKind, ChipSize } from './types';
@@ -31,10 +31,8 @@ const Chip = ({
     `Chip--${kind}`,
     `Chip--${size}`,
     className,
-    {
-      'Chip--subtle': subtle,
-    },
-    { 'Chip--clickable': isClickable }
+    subtle && 'Chip--subtle',
+    isClickable && 'Chip--clickable'
   );
 
   if (isClickable) {

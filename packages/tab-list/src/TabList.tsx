@@ -4,7 +4,7 @@ import type { AriaTabListProps, AriaTabPanelProps } from '@react-types/tabs';
 
 import { useTab, useTabList, useTabPanel } from '@react-aria/tabs';
 import { useTabListState } from '@react-stately/tabs';
-import cx from 'clsx';
+import { cx } from 'classix';
 import { useRef } from 'react';
 
 import './styles/TabList.css';
@@ -80,13 +80,7 @@ const TabItem = ({ className, item: { key, rendered }, state }: TabItemProps) =>
   const { tabProps } = useTab({ key }, state, ref);
   const isSelected = state.selectedKey === key;
 
-  const classes = cx(
-    'TabList-item',
-    {
-      'is-active': isSelected,
-    },
-    className
-  );
+  const classes = cx('TabList-item', isSelected && 'is-active', className);
 
   return (
     <div {...tabProps} ref={ref} className={classes}>

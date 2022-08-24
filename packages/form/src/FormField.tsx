@@ -1,4 +1,4 @@
-import cx from 'clsx';
+import { cx } from 'classix';
 
 import { FieldError } from './FieldError';
 import { FormGroup } from './FormGroup';

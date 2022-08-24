@@ -1,7 +1,7 @@
 import type { DropdownButtonProps } from '@launchpad-ui/dropdown';
 
 import { DropdownButton } from '@launchpad-ui/dropdown';
-import cx from 'clsx';
+import { cx } from 'classix';
 import { forwardRef, useContext, useMemo } from 'react';
 
 import { SplitButtonContext } from './context';

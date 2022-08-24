@@ -1,6 +1,6 @@
 import type { ReactNode } from 'react';
 
-import cx from 'clsx';
+import { cx } from 'classix';
 
 import './styles/Form.css';
 
@@ -17,9 +17,7 @@ type FormGroupProps = {
 const FormGroup = (props: FormGroupProps) => {
   const { className, name, ignoreValidation, isInvalid, children, testId, ...other } = props;
 
-  const classes = cx('Form-group', className, {
-    'is-invalid': !ignoreValidation && isInvalid,
-  });
+  const classes = cx('Form-group', className, !ignoreValidation && isInvalid && 'is-invalid');
 
   return (
     <div className={classes} data-test-id={testId} {...other}>

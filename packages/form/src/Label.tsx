@@ -1,4 +1,4 @@
-import cx from 'clsx';
+import { cx } from 'classix';
 
 import { RequiredAsterisk } from './RequiredAsterisk';
 import './styles/Form.css';
@@ -23,7 +23,7 @@ const Label = ({
   optional = false,
   ...other
 }: LabelProps) => {
-  const classes = cx('Form-label', className, { 'Form-label--disabled': disabled });
+  const classes = cx('Form-label', className, disabled && 'Form-label--disabled');
   return (
     <label {...other} className={classes} htmlFor={htmlFor}>
       {children}

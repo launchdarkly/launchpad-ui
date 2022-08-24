@@ -1,7 +1,7 @@
 import type { TextFieldProps } from './TextField';
 import type { FocusEvent } from 'react';
 
-import cx from 'clsx';
+import { cx } from 'classix';
 import { forwardRef, useState } from 'react';
 
 import { Label } from './Label';
@@ -25,9 +25,7 @@ const CompactTextField = forwardRef<HTMLInputElement, CompactTextFieldProps>(
 
     const isActiveState = isActive || needsErrorFeedback;
 
-    const classes = cx('CompactTextField', className, {
-      'is-active': isActiveState,
-    });
+    const classes = cx('CompactTextField', className, isActiveState && 'is-active');
 
     const placeholder = isActiveState ? '' : label;
 
