@@ -177,6 +177,7 @@
 
 .Alert-content {
   margin-left: 1.4rem;
+  margin-top: 0.2rem;
 }
 
 .Alert-content a:not(.Button) {
