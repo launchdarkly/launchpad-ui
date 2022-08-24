@@ -1,5 +1,44 @@
 # @launchpad-ui/core
 
+## 0.9.1
+
+### Patch Changes
+
+- [#306](https://github.com/launchdarkly/launchpad-ui/pull/306) [`d5272f3`](https://github.com/launchdarkly/launchpad-ui/commit/d5272f36dd1fb23443a1e831748900c21444482d) Thanks [@Niznikr](https://github.com/Niznikr)! - [Filter, Icons, Menu, Popover] Create ids with useId
+
+* [#310](https://github.com/launchdarkly/launchpad-ui/pull/310) [`f60754c`](https://github.com/launchdarkly/launchpad-ui/commit/f60754c7d96c4c40e11a707ff06b78b86f8513a7) Thanks [@jagarnica](https://github.com/jagarnica)! - [ProgressBubbles] Change background color of progress bubbles in "Current State" to green
+
+- [#308](https://github.com/launchdarkly/launchpad-ui/pull/308) [`57e9aa3`](https://github.com/launchdarkly/launchpad-ui/commit/57e9aa3748b59b2601be5ede39423dcc79c0fa43) Thanks [@Niznikr](https://github.com/Niznikr)! - Replace clsx with classix for joining classNames
+
+- Updated dependencies [[`d5272f3`](https://github.com/launchdarkly/launchpad-ui/commit/d5272f36dd1fb23443a1e831748900c21444482d), [`f60754c`](https://github.com/launchdarkly/launchpad-ui/commit/f60754c7d96c4c40e11a707ff06b78b86f8513a7), [`57e9aa3`](https://github.com/launchdarkly/launchpad-ui/commit/57e9aa3748b59b2601be5ede39423dcc79c0fa43)]:
+  - @launchpad-ui/filter@0.2.6
+  - @launchpad-ui/icons@0.3.3
+  - @launchpad-ui/menu@0.4.5
+  - @launchpad-ui/popover@0.6.5
+  - @launchpad-ui/progress-bubbles@0.3.5
+  - @launchpad-ui/alert@0.2.3
+  - @launchpad-ui/avatar@0.2.4
+  - @launchpad-ui/banner@0.3.3
+  - @launchpad-ui/button@0.4.1
+  - @launchpad-ui/chip@0.4.1
+  - @launchpad-ui/counter@0.2.1
+  - @launchpad-ui/dropdown@0.3.6
+  - @launchpad-ui/form@0.3.3
+  - @launchpad-ui/markdown@0.2.2
+  - @launchpad-ui/modal@0.6.4
+  - @launchpad-ui/navigation@0.4.1
+  - @launchpad-ui/notification@0.3.5
+  - @launchpad-ui/pagination@0.1.3
+  - @launchpad-ui/progress@0.3.2
+  - @launchpad-ui/slider@0.2.1
+  - @launchpad-ui/split-button@0.3.4
+  - @launchpad-ui/tab-list@0.3.1
+  - @launchpad-ui/table@0.2.1
+  - @launchpad-ui/toggle@0.3.1
+  - @launchpad-ui/tooltip@0.4.5
+  - @launchpad-ui/clipboard@0.5.5
+  - @launchpad-ui/overlay@0.2.4
+
 ## 0.9.0
 
 ### Minor Changes
