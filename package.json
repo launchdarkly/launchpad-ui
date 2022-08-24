@@ -22,6 +22,7 @@
     "storybook:build": "pnpm build:transform && sb build --quiet",
     "test": "pnpm build && vitest run --coverage",
     "test:packages": "nx affected --target=test --base=origin/main --head=HEAD --exclude=@launchpad-ui/remix",
+    "test:ui": "vitest --ui",
     "test:watch": "vitest",
     "prepare": "husky install",
     "release": "nx affected --target=build --base=origin/main~1 --head=origin/main --exclude=@launchpad-ui/remix && changeset publish"
@@ -70,6 +71,7 @@
     "@typescript-eslint/parser": "^5.34.0",
     "@vitejs/plugin-react": "^2.0.0",
     "@vitest/coverage-c8": "^0.22.0",
+    "@vitest/ui": "^0.22.0",
     "babel-loader": "^8.2.4",
     "browserslist": "^4.21.1",
     "chromatic": "^6.7.0",
