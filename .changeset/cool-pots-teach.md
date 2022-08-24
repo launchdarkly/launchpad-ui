@@ -1,5 +1,6 @@
 ---
 '@launchpad-ui/progress-bubbles': patch
+'@launchpad-ui/core': patch
 ---
 
-Change background color of progress bubbles in "Current State" to green
+[ProgressBubbles] Change background color of progress bubbles in "Current State" to green
