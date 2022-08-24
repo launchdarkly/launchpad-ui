@@ -1,3 +1,5 @@
+import { it, expect, describe, vi } from 'vitest';
+
 import { render, screen, userEvent, waitFor } from '../../../test/utils';
 import { Toggle } from '../src';
 
@@ -7,7 +9,7 @@ describe('Toggle', () => {
       value: 'cats',
       children: 'Cats',
     };
-    render(<Toggle {...toggleProps} />);
+    render(<Toggle {...toggleProps} checked />);
 
     expect(screen.getByRole('switch')).toBeInTheDocument();
   });
@@ -118,5 +120,23 @@ describe('Toggle', () => {
 
     expect(toggleOn).toBeInTheDocument();
     expect(toggleOff).toBeInTheDocument();
+  });
+
+  it('calls onChange when toggled', async () => {
+    const spy = vi.fn();
+    const toggleProps = {
+      value: 'cats',
+      children: 'Cats',
+    };
+    const user = userEvent.setup();
+    render(<Toggle {...toggleProps} onChange={spy} />);
+
+    const toggle = screen.getByRole('switch');
+
+    await waitFor(async () => {
+      await user.click(toggle);
+    });
+
+    expect(spy).toHaveBeenCalledTimes(1);
   });
 });

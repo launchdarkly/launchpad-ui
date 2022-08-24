@@ -1,15 +1,24 @@
 import { it, expect, describe } from 'vitest';
 
 import { render, screen } from '../../../test/utils';
-import { Table, TableBody, TableCell, TableHead, TableHeadCell, TableRow } from '../src';
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeadCell,
+  TableRow,
+  TableVerticalAlignType,
+  TableColumnWidths,
+} from '../src';
 
 describe('Table', () => {
   it('renders', () => {
     render(
-      <Table>
+      <Table auto compact isResourceTable>
         <TableHead>
-          <TableRow>
-            <TableHeadCell id="1" scope="col">
+          <TableRow verticalAlign={TableVerticalAlignType.MIDDLE}>
+            <TableHeadCell id="1" scope="col" defaultColWidth={TableColumnWidths.ONE_OF_TWELVE}>
               Col 1
             </TableHeadCell>
             <TableHeadCell id="2" scope="col">
