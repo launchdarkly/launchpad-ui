@@ -1,5 +1,14 @@
 # @launchpad-ui/core
 
+## 0.9.2
+
+### Patch Changes
+
+- [#312](https://github.com/launchdarkly/launchpad-ui/pull/312) [`35430ca`](https://github.com/launchdarkly/launchpad-ui/commit/35430ca01e3dc3fbdd3bd8a6a6ec86a714f83f84) Thanks [@Niznikr](https://github.com/Niznikr)! - [Navigation] Add optional chaining to collapse logic
+
+- Updated dependencies [[`35430ca`](https://github.com/launchdarkly/launchpad-ui/commit/35430ca01e3dc3fbdd3bd8a6a6ec86a714f83f84)]:
+  - @launchpad-ui/navigation@0.4.2
+
 ## 0.9.1
 
 ### Patch Changes
