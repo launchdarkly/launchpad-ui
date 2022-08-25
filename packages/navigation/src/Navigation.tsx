@@ -171,7 +171,7 @@ const Navigation = <T extends object>(props: NavigationProps<T>) => {
       const lastTab = tabs[tabs.length - 1];
 
       const containerEdge = wrapperRef.current.getBoundingClientRect().right;
-      const lastTabEdge = lastTab.getBoundingClientRect().right;
+      const lastTabEdge = lastTab?.getBoundingClientRect().right;
 
       return containerEdge < lastTabEdge;
     }
