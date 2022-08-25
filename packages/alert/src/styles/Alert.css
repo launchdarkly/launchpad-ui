@@ -84,10 +84,10 @@
   margin-bottom: 0.4rem;
   font-size: 1.6rem;
   font-weight: var(--font-weight-medium);
-  line-height: 1.5;
+  line-height: 1.25;
 }
 
-.Alert-actions {
+.Alert .ButtonGroup {
   margin-top: 1.2rem;
 }
 
@@ -177,7 +177,6 @@
 
 .Alert-content {
   margin-left: 1.4rem;
-  margin-top: 0.2rem;
 }
 
 .Alert-content a:not(.Button) {

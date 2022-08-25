@@ -61,6 +61,8 @@ type AlertProps = {
    * When true no icon is rendered
    */
   noIcon?: boolean;
+
+  title?: string;
 };
 
 const Alert = ({
@@ -75,18 +77,20 @@ const Alert = ({
   dismissible,
   onDismiss,
   noIcon,
+  title,
 }: AlertProps) => {
   const [dismissed, setDismissed] = useState(false);
 
-  const defaultClasses = ['Alert', `Alert--${kind}`, className];
+  const defaultClasses = `Alert Alert--${kind}`;
   const sizeClass = `Alert--${size}`;
-  const classes = cx(defaultClasses, {
-    [borderedClasses]: !isInline,
-    [sizeClass]: size,
-    'Alert--compact': compact,
-    'Alert--inline': isInline,
-    'Alert--wide': wide,
-  });
+  const classes = cx(
+    defaultClasses,
+    className,
+    isInline ? 'Alert--inline' : 'Alert--bordered',
+    size && sizeClass,
+    compact && 'Alert--compact',
+    wide && 'Alert--wide'
+  );
 
   const handleDismissClicked = () => {
     if (onDismiss) {
@@ -113,7 +117,10 @@ const Alert = ({
           size={size === AlertSize.SMALL ? IconSize.SMALL : IconSize.MEDIUM}
         />
       )}
-      <div className="Alert-content">{children}</div>
+      <div className="Alert-content">
+        {title && <h4 className="Alert-heading">{title}</h4>}
+        {children}
+      </div>
       {dismissible && (
         <Button
           aria-label="Close this alert."
