@@ -119,7 +119,7 @@ const Alert = ({
       )}
       <div className="Alert-content">
         {title && <h4 className="Alert-heading">{title}</h4>}
-        {children}
+        <div>{children}</div>
       </div>
       {dismissible && (
         <Button

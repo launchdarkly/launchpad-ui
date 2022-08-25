@@ -91,11 +91,6 @@
   margin-top: 1.2rem;
 }
 
-.Alert p {
-  margin-top: 0;
-  margin-bottom: 0;
-}
-
 .Alert-icon {
   line-height: 1.2857;
 }
@@ -211,6 +206,7 @@
   margin-bottom: 0;
 }
 
+.Alert-content p,
 .Alert ul {
   list-style-position: outside;
   margin-left: 2rem;
