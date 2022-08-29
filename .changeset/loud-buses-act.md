@@ -11,12 +11,12 @@
 ---
 
 - Add new `IconButton` component
-- Abstract shared logic into `BaseButton` and improve types via `PolymorphicButtonProps` type
+- Handle button links with `asChild` instead of internally in `Button`
 - Add minimal variant for both `Button` and `IconButton`
 - Consume `IconButton` in downstream components
 
-[Button]: Add new `IconButton` component, abstract shared logic into `BaseButton` and improve types via `PolymorphicButtonProps` type, and add minimal variant for both `Button` and `IconButton`
-[SplitButton]: Consume `PolymorphicButtonProps`
+[Button]: Add new `IconButton` component, move link button implementation to asChild, and add minimal variant for both `Button` and `IconButton`
+[SplitButton]: Remove `HTMLAnchorElement` type from `SplitButtonMainButton`
 [Alert]: Consume `IconButton` instead of `Button`
 [Banner]: Consume `IconButton` instead of `Button`
 [Filter]: Consume `IconButton` instead of `Button`
