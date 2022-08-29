@@ -7,16 +7,16 @@ import { forwardRef, useContext, useMemo } from 'react';
 import { SplitButtonContext } from './context';
 import './styles/SplitButton.css';
 
-type SplitButtonMainButtonProps = Omit<ButtonProps, 'kind' | 'size'> & {
-  icon?: React.ReactElement<{ size?: string; key: string; 'aria-hidden': boolean }>;
-};
+type SplitButtonMainButtonProps = Omit<ButtonProps, 'kind' | 'size'>;
 
 const SplitButtonMainButton = forwardRef<HTMLButtonElement, SplitButtonMainButtonProps>(
   (props, ref) => {
-    const { disabled, children, className, 'aria-label': ariaLabel } = props;
+    const { disabled, children, className, 'aria-label': ariaLabel, ...rest } = props;
     const { disabled: parentDisabled, kind, size } = useContext(SplitButtonContext);
 
     const isDisabled = parentDisabled || disabled;
+
+    const classes = cx('SplitButton-main', className);
 
     const label = useMemo(() => {
       let value;
@@ -32,16 +32,16 @@ const SplitButtonMainButton = forwardRef<HTMLButtonElement, SplitButtonMainButto
       return value;
     }, [ariaLabel, isDisabled]);
 
-    const sharedProps = {
-      disabled: isDisabled,
-      'aria-label': label,
-      kind: kind,
-      size: size,
-      className: cx('SplitButton-main', className),
-    };
-
     return (
-      <Button {...props} {...sharedProps} ref={ref}>
+      <Button
+        className={classes}
+        disabled={isDisabled}
+        kind={kind}
+        size={size}
+        aria-label={label}
+        ref={ref}
+        {...rest}
+      >
         {children}
       </Button>
     );
