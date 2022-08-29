@@ -34,7 +34,7 @@ importers:
       '@testing-library/react': ^13.3.0
       '@testing-library/user-event': ^14.4.2
       '@types/node': ^18.6.5
-      '@types/react': ^18.0.8
+      '@types/react': ^18.0.17
       '@types/react-dom': ^18.0.3
       '@types/testing-library__jest-dom': ^5.14.3
       '@typescript-eslint/eslint-plugin': ^5.35.1
@@ -93,7 +93,7 @@ importers:
       '@react-stately/collections': 3.4.1_react@18.2.0
       '@storybook/addon-a11y': 7.0.0-alpha.10_biqbaboplfbrettd7655fr4n2y
       '@storybook/addon-essentials': 7.0.0-alpha.10_rresp4ailxkmybejsll2dzszb4
-      '@storybook/addon-interactions': 7.0.0-alpha.10_26i5l2bbj42ggajoqlscv7ime4
+      '@storybook/addon-interactions': 7.0.0-alpha.10_vxkb3unx545obrl42ghj4zu5zq
       '@storybook/addons': 7.0.0-alpha.10_biqbaboplfbrettd7655fr4n2y
       '@storybook/api': 7.0.0-alpha.10_biqbaboplfbrettd7655fr4n2y
       '@storybook/cli': 7.0.0-alpha.10_fbbv32fkcyzycud52kfpmmbsbi
@@ -106,7 +106,7 @@ importers:
       '@testing-library/react': 13.3.0_biqbaboplfbrettd7655fr4n2y
       '@testing-library/user-event': 14.4.2_wl4iynrlixafokvgqnhzlvigei
       '@types/node': 18.6.5
-      '@types/react': 18.0.14
+      '@types/react': 18.0.17
       '@types/react-dom': 18.0.6
       '@types/testing-library__jest-dom': 5.14.5
       '@typescript-eslint/eslint-plugin': 5.35.1_pfwtupu3r4wxmgbx6hj7gwmyuu
@@ -2663,7 +2663,7 @@ packages:
       postcss-selector-parser: 6.0.10
     dev: true
 
-  /@design-systems/utils/2.12.0_twyhzqqpkwvvgrmyeapdo6i4my:
+  /@design-systems/utils/2.12.0_zxljzmqdrxwnuenbkrz77w74uy:
     resolution: {integrity: sha512-Y/d2Zzr+JJfN6u1gbuBUb1ufBuLMJJRZQk+dRmw8GaTpqKx5uf7cGUYGTwN02dIb3I+Tf+cW8jcGBTRiFxdYFg==}
     peerDependencies:
       '@types/react': '*'
@@ -2671,7 +2671,7 @@ packages:
       react-dom: '>= 16.8.6 || 18'
     dependencies:
       '@babel/runtime': 7.18.6
-      '@types/react': 18.0.14
+      '@types/react': 18.0.17
       clsx: 1.2.0
       focus-lock: 0.8.1
       react: 18.2.0
@@ -2679,15 +2679,15 @@ packages:
       react-merge-refs: 1.1.0
     dev: true
 
-  /@devtools-ds/object-inspector/1.2.0_twyhzqqpkwvvgrmyeapdo6i4my:
+  /@devtools-ds/object-inspector/1.2.0_zxljzmqdrxwnuenbkrz77w74uy:
     resolution: {integrity: sha512-VztcwqVwScSvYdvJVZBJYsVO/2Pew3JPpFV3T9fuCHQLlHcLYOV3aU/kBS2ScuE2O1JN0ZbobLqFLa3vQF54Fw==}
     peerDependencies:
       react: '>= 16.8.6 || 18'
     dependencies:
       '@babel/runtime': 7.7.2
       '@devtools-ds/object-parser': 1.2.0
-      '@devtools-ds/themes': 1.2.0_twyhzqqpkwvvgrmyeapdo6i4my
-      '@devtools-ds/tree': 1.2.0_twyhzqqpkwvvgrmyeapdo6i4my
+      '@devtools-ds/themes': 1.2.0_zxljzmqdrxwnuenbkrz77w74uy
+      '@devtools-ds/tree': 1.2.0_zxljzmqdrxwnuenbkrz77w74uy
       clsx: 1.1.0
       react: 18.2.0
     transitivePeerDependencies:
@@ -2701,13 +2701,13 @@ packages:
       '@babel/runtime': 7.5.5
     dev: true
 
-  /@devtools-ds/themes/1.2.0_twyhzqqpkwvvgrmyeapdo6i4my:
+  /@devtools-ds/themes/1.2.0_zxljzmqdrxwnuenbkrz77w74uy:
     resolution: {integrity: sha512-LimEITorE6yWZWWuMc6OiBfLQgPrQqWbyMEmfRUDPa3PHXoAY4SpDxczfg31fgyRDUNWnZhjaJH5bBbu8VEbIw==}
     peerDependencies:
       react: '>= 16.8.6 || 18'
     dependencies:
       '@babel/runtime': 7.5.5
-      '@design-systems/utils': 2.12.0_twyhzqqpkwvvgrmyeapdo6i4my
+      '@design-systems/utils': 2.12.0_zxljzmqdrxwnuenbkrz77w74uy
       clsx: 1.1.0
       react: 18.2.0
     transitivePeerDependencies:
@@ -2715,13 +2715,13 @@ packages:
       - react-dom
     dev: true
 
-  /@devtools-ds/tree/1.2.0_twyhzqqpkwvvgrmyeapdo6i4my:
+  /@devtools-ds/tree/1.2.0_zxljzmqdrxwnuenbkrz77w74uy:
     resolution: {integrity: sha512-hC4g4ocuo2eg7jsnzKdauxH0sDQiPW3KSM2+uK3kRgcmr9PzpBD5Kob+Y/WFSVKswFleftOGKL4BQLuRv0sPxA==}
     peerDependencies:
       react: '>= 16.8.6 || 18'
     dependencies:
       '@babel/runtime': 7.7.2
-      '@devtools-ds/themes': 1.2.0_twyhzqqpkwvvgrmyeapdo6i4my
+      '@devtools-ds/themes': 1.2.0_zxljzmqdrxwnuenbkrz77w74uy
       clsx: 1.1.0
       react: 18.2.0
     transitivePeerDependencies:
@@ -4363,7 +4363,7 @@ packages:
       - react-dom
     dev: true
 
-  /@storybook/addon-interactions/7.0.0-alpha.10_26i5l2bbj42ggajoqlscv7ime4:
+  /@storybook/addon-interactions/7.0.0-alpha.10_vxkb3unx545obrl42ghj4zu5zq:
     resolution: {integrity: sha512-DT3wcTnGZRcomoTWSkbNc+hF80Aj1gCwETfXSEAkTlWdiKv3069i6dcbh6td7TqI20/krOc8fmcPTB+6QyR7rw==}
     peerDependencies:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0 || 18
@@ -4374,7 +4374,7 @@ packages:
       react-dom:
         optional: true
     dependencies:
-      '@devtools-ds/object-inspector': 1.2.0_twyhzqqpkwvvgrmyeapdo6i4my
+      '@devtools-ds/object-inspector': 1.2.0_zxljzmqdrxwnuenbkrz77w74uy
       '@storybook/addons': 7.0.0-alpha.10_biqbaboplfbrettd7655fr4n2y
       '@storybook/api': 7.0.0-alpha.10_biqbaboplfbrettd7655fr4n2y
       '@storybook/client-logger': 7.0.0-alpha.10
@@ -6182,17 +6182,17 @@ packages:
   /@types/react-dom/18.0.6:
     resolution: {integrity: sha512-/5OFZgfIPSwy+YuIBP/FgJnQnsxhZhjjrnxudMddeblOouIodEQ75X14Rr4wGSG/bknL+Omy9iWlLo1u/9GzAA==}
     dependencies:
-      '@types/react': 18.0.14
+      '@types/react': 18.0.17
     dev: true
 
   /@types/react-syntax-highlighter/11.0.5:
     resolution: {integrity: sha512-VIOi9i2Oj5XsmWWoB72p3KlZoEbdRAcechJa8Ztebw7bDl2YmR+odxIqhtJGp1q2EozHs02US+gzxJ9nuf56qg==}
     dependencies:
-      '@types/react': 18.0.14
+      '@types/react': 18.0.17
     dev: true
 
-  /@types/react/18.0.14:
-    resolution: {integrity: sha512-x4gGuASSiWmo0xjDLpm5mPb52syZHJx02VKbqUKdLmKtAwIh63XClGsiTI1K6DO5q7ox4xAsQrU+Gl3+gGXF9Q==}
+  /@types/react/18.0.17:
+    resolution: {integrity: sha512-38ETy4tL+rn4uQQi7mB81G7V1g0u2ryquNmsVIOKUAEIDK+3CUjZ6rSRpdvS99dNBnkLFL83qfmtLacGOTIhwQ==}
     dependencies:
       '@types/prop-types': 15.7.5
       '@types/scheduler': 0.16.2
@@ -17169,6 +17169,7 @@ packages:
   /unified/9.2.0:
     resolution: {integrity: sha512-vx2Z0vY+a3YoTj8+pttM3tiJHCwY5UFbYdiWrwBEbHmK8pvsPj2rtAX2BFfgXen8T39CJWblWRDT4L5WGXtDdg==}
     dependencies:
+      '@types/unist': 2.0.6
       bail: 1.0.5
       extend: 3.0.2
       is-buffer: 2.0.5
