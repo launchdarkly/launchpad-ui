@@ -51,6 +51,8 @@ type AlertProps = HTMLAttributes<HTMLDivElement> & {
    * When true no icon is rendered
    */
   noIcon?: boolean;
+
+  title?: string;
 };
 
 const Alert = ({
@@ -64,20 +66,20 @@ const Alert = ({
   dismissible,
   onDismiss,
   noIcon,
+  title,
   'data-test-id': testId,
   ...rest
 }: AlertProps) => {
   const [dismissed, setDismissed] = useState(false);
 
-  const defaultClasses = ['Alert', `Alert--${kind}`, className];
-  const borderedClasses = `Alert--${kind}--bordered Alert--bordered`;
+  const defaultClasses = `Alert Alert--${kind}`;
   const sizeClass = `Alert--${size}`;
   const classes = cx(
-    ...defaultClasses,
-    !isInline && borderedClasses,
+    defaultClasses,
+    className,
+    isInline ? 'Alert--inline' : 'Alert--bordered',
     size && sizeClass,
     compact && 'Alert--compact',
-    isInline && 'Alert--inline',
     wide && 'Alert--wide'
   );
 
@@ -103,7 +105,10 @@ const Alert = ({
       {!noIcon && (
         <KindIcon kind={kind} className="Alert-icon" size={size === 'small' ? 'small' : 'medium'} />
       )}
-      <div className="Alert-content">{children}</div>
+      <div className="Alert-content">
+        {title && <h4 className="Alert-heading">{title}</h4>}
+        <div>{children}</div>
+      </div>
       {dismissible && (
         <IconButton
           aria-label="Close this alert."
