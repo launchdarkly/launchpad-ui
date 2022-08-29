@@ -1,7 +1,7 @@
 import type { IconSize } from './types';
 
 import { cx } from 'classix';
-import { Children, cloneElement, isValidElement, useEffect, useId, useRef } from 'react';
+import { useEffect, useId, useRef } from 'react';
 
 import './styles/Icon.css';
 
@@ -15,35 +15,29 @@ const Icon = ({ name, subtle, className, size, children, ...props }: IconProps) 
   const sizeClass = size ? `Icon--${size}` : false;
   const classes = cx('Icon', `Icon--${name}`, sizeClass, className, subtle && 'Icon--subtle');
 
-  const svgRef = useRef<SVGElement>(null);
+  const ref = useRef<HTMLSpanElement>(null);
   const prefix = `svg-${useId()}`;
 
   useEffect(() => {
-    const title = svgRef.current?.querySelector('title');
-    const desc = svgRef.current?.querySelector('desc');
+    const title = ref.current?.querySelector('title');
+    const desc = ref.current?.querySelector('desc');
+    const svg = ref.current?.querySelector('svg');
 
     if (title) {
       const id = `${prefix}-${name}-title`;
       title.setAttribute('id', id);
-      svgRef.current?.setAttribute('aria-labelledby', id);
+      svg?.setAttribute('aria-labelledby', id);
     }
     if (desc) {
       const id = `${prefix}-${name}-description`;
       desc.setAttribute('id', id);
-      svgRef.current?.setAttribute('aria-describedby', id);
+      svg?.setAttribute('aria-describedby', id);
     }
   }, [name, prefix]);
 
   return (
-    <span {...props} className={classes}>
-      {Children.map(children, (child) => {
-        if (isValidElement(child)) {
-          return cloneElement(child, {
-            ref: svgRef,
-          });
-        }
-        return null;
-      })}
+    <span {...props} className={classes} ref={ref}>
+      {children}
     </span>
   );
 };
