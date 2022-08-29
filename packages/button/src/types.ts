@@ -37,18 +37,6 @@ enum ButtonGroupSpacing {
   LARGE = 'large',
 }
 
-type AsButton<T extends object> = T &
-  React.ButtonHTMLAttributes<HTMLButtonElement> & {
-    as?: 'button';
-  };
-
-type AsLink<T extends object> = T &
-  React.AnchorHTMLAttributes<HTMLAnchorElement> & {
-    as: 'a';
-  };
-
-type PolymorphicButtonProps<BaseProps extends object> = AsButton<BaseProps> | AsLink<BaseProps>;
-
 export {
   ButtonType,
   EllipsisButtonType,
@@ -56,5 +44,4 @@ export {
   ButtonSize,
   IconButtonSize,
   ButtonGroupSpacing,
-  PolymorphicButtonProps,
 };

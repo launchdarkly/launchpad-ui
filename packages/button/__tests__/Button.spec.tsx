@@ -14,10 +14,10 @@ describe('Button', () => {
     expect(screen.getByText('Default Button')).toBeInTheDocument();
   });
 
-  it('can render as a link', () => {
+  it('can render links into child slot', () => {
     const { container } = render(
-      <Button as="a" href="#">
-        Default Button Link
+      <Button asChild>
+        <a href="/">Default Button Link</a>
       </Button>
     );
     // eslint-disable-next-line testing-library/no-container, testing-library/no-node-access
@@ -34,12 +34,12 @@ describe('Button', () => {
     expect(spy).toHaveBeenCalledTimes(1);
   });
 
-  it('clicks the link when spacebar is pressed', async () => {
+  it('clicks a slotted link when spacebar is pressed', async () => {
     const spy = vi.fn();
     const user = userEvent.setup();
     render(
-      <Button as="a" href="#" onClick={spy}>
-        Default Button Link
+      <Button onClick={spy} asChild>
+        <a href="/">Default Button Link</a>
       </Button>
     );
 

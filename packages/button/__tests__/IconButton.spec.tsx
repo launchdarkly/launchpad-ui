@@ -10,9 +10,11 @@ describe('Button', () => {
     expect(screen.getByRole('button', { name: 'Close' })).toBeInTheDocument();
   });
 
-  it('can render as a link', () => {
+  it('can render as a slotted link', () => {
     const { container } = render(
-      <IconButton aria-label="Close" icon={<Close />} as="a" href="#" />
+      <IconButton aria-label="Close" icon={<Close />} asChild>
+        <a href="/">Test</a>
+      </IconButton>
     );
     // eslint-disable-next-line testing-library/no-container, testing-library/no-node-access
     expect(container.querySelector('a')).not.toBeNull();
@@ -28,10 +30,14 @@ describe('Button', () => {
     expect(spy).toHaveBeenCalledTimes(1);
   });
 
-  it('clicks the link when spacebar is pressed', async () => {
+  it('clicks a slotted link when spacebar is pressed', async () => {
     const spy = vi.fn();
     const user = userEvent.setup();
-    render(<IconButton aria-label="Close" icon={<Close />} as="a" href="#" onClick={spy} />);
+    render(
+      <IconButton aria-label="Close" icon={<Close />} onClick={spy} asChild>
+        <a href="/">Test</a>
+      </IconButton>
+    );
 
     await user.type(screen.getByRole('link'), '{space}');
 

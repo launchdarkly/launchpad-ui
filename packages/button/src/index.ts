@@ -8,11 +8,4 @@ export { ButtonGroup } from './ButtonGroup';
 export { UploadButton } from './UploadButton';
 export { IconButton } from './IconButton';
 
-export {
-  ButtonGroupSpacing,
-  ButtonKind,
-  ButtonSize,
-  ButtonType,
-  IconButtonSize,
-  PolymorphicButtonProps,
-} from './types';
+export { ButtonGroupSpacing, ButtonKind, ButtonSize, ButtonType, IconButtonSize } from './types';

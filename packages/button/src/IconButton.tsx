@@ -1,53 +1,95 @@
-import type { PolymorphicButtonProps } from './types';
 import type React from 'react';
+import type { ButtonHTMLAttributes, KeyboardEventHandler } from 'react';
 
-import { cloneElement, forwardRef, memo } from 'react';
+import { Slot } from '@radix-ui/react-slot';
+import { cx } from 'classix';
+import { isValidElement, cloneElement, forwardRef, memo } from 'react';
 
-import { BaseButton } from './BaseButton';
 import './styles/Button.css';
-import { ButtonKind, ButtonSize, IconButtonSize } from './types';
+import { ButtonKind, IconButtonSize } from './types';
 
-type BaseProps = {
+type IconButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
   kind?: ButtonKind;
   icon: React.ReactElement<{ size?: string; key: string; 'aria-hidden': boolean }>;
   size?: IconButtonSize;
   disabled?: boolean;
   'aria-label': string;
+  asChild?: boolean;
 };
 
-type IconButtonProps = PolymorphicButtonProps<BaseProps>;
+const IconButtonComponent = forwardRef<HTMLButtonElement, IconButtonProps>((props, ref) => {
+  const {
+    icon,
+    children,
+    className,
+    size = IconButtonSize.NORMAL,
+    kind = ButtonKind.MINIMAL,
+    disabled = false,
+    asChild = false,
+    onKeyDown,
+    onClick,
+    ...rest
+  } = props;
 
-const IconButtonComponent = forwardRef<HTMLButtonElement | HTMLAnchorElement, IconButtonProps>(
-  (props: IconButtonProps, ref) => {
-    const { kind = ButtonKind.MINIMAL, size = IconButtonSize.NORMAL, icon, ...rest } = props;
+  const Component: React.ElementType = asChild ? Slot : 'button';
 
-    const clonedIcon = cloneElement(icon, {
-      key: 'icon',
-      size: icon.props.size || 'medium',
-      'aria-hidden': true,
-    });
+  const classes = cx(
+    'IconButton',
+    'Button',
+    'Button--icon',
+    `Button--${kind}`,
+    disabled && 'Button--disabled',
+    size && `Button--${size}`,
+    className
+  );
 
-    const sharedProps = {
-      kind,
-      size: ButtonSize[size.toUpperCase() as keyof typeof IconButtonSize],
-      onlyIcon: true,
-    };
+  const clonedIcon = cloneElement(icon, {
+    key: 'icon',
+    size: icon.props.size || 'medium',
+    'aria-hidden': true,
+  });
 
-    if (props.as === 'a') {
-      return (
-        <BaseButton ref={ref} {...rest} {...sharedProps}>
-          {clonedIcon}
-        </BaseButton>
-      );
+  const renderChildren = () => {
+    if (asChild && isValidElement(children)) {
+      return cloneElement(children, undefined, clonedIcon);
     }
 
-    return (
-      <BaseButton ref={ref} {...rest} {...sharedProps}>
-        {clonedIcon}
-      </BaseButton>
-    );
-  }
-);
+    return clonedIcon;
+  };
+
+  const handleClick = (
+    event: React.MouseEvent<HTMLAnchorElement> & React.MouseEvent<HTMLButtonElement>
+  ) => {
+    if (disabled) return event.preventDefault();
+
+    onClick && onClick(event);
+  };
+
+  const handleKeyDown: KeyboardEventHandler<HTMLButtonElement> = (event) => {
+    if (event.target instanceof HTMLAnchorElement) {
+      const spacebarKeys = ['Spacebar', ' '];
+
+      if (spacebarKeys.includes(event.key)) {
+        event.preventDefault();
+        const link = event.target as HTMLAnchorElement;
+        link.click();
+      }
+    }
+  };
+
+  return (
+    <Component
+      className={classes}
+      ref={ref}
+      onClick={handleClick}
+      disabled={disabled}
+      onKeyDown={onKeyDown || handleKeyDown}
+      {...rest}
+    >
+      {renderChildren()}
+    </Component>
+  );
+});
 
 IconButtonComponent.displayName = 'IconButton';
 

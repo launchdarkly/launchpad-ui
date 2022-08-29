@@ -91,29 +91,6 @@ export default {
         subcategory: 'Accessibility',
       },
     },
-    href: {
-      table: {
-        category: 'Content',
-        subcategory: 'Link Button',
-      },
-    },
-    label: {
-      table: {
-        category: 'Content',
-      },
-    },
-    rel: {
-      table: {
-        category: 'Content',
-        subcategory: 'Link Button',
-      },
-    },
-    target: {
-      table: {
-        category: 'Content',
-        subcategory: 'Link Button',
-      },
-    },
     id: {
       table: {
         category: 'DOM attributes',
@@ -161,12 +138,13 @@ type Story = ComponentStoryObj<typeof IconButton>;
 const icon = <Add size={IconSize.MEDIUM} />;
 
 export const Minimal: Story = {
-  args: { icon },
+  args: { icon, 'aria-label': 'Button' },
 };
 
 export const Basic: Story = {
   args: {
     icon,
+    'aria-label': 'Button',
     kind: ButtonKind.DEFAULT,
   },
 };
@@ -174,12 +152,24 @@ export const Basic: Story = {
 export const Primary: Story = {
   args: {
     icon,
+    'aria-label': 'Button',
     kind: ButtonKind.PRIMARY,
   },
 };
 
 export const Destructive: Story = {
   args: {
+    icon,
+    'aria-label': 'Button',
+    kind: ButtonKind.DESTRUCTIVE,
+  },
+};
+
+export const AsAnchorChild: Story = {
+  args: {
+    children: <a href="/">Anchor tag</a>,
+    asChild: true,
+    'aria-label': 'Anchor child',
     icon,
     kind: ButtonKind.DESTRUCTIVE,
   },

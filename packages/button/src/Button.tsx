@@ -1,69 +1,114 @@
-import type { ButtonKind, ButtonSize, PolymorphicButtonProps } from './types';
+import type { ButtonSize } from './types';
 import type React from 'react';
+import type { ButtonHTMLAttributes, KeyboardEventHandler } from 'react';
 
-import { cloneElement, forwardRef, memo } from 'react';
+import { Slot } from '@radix-ui/react-slot';
+import { cx } from 'classix';
+import { isValidElement, cloneElement, forwardRef, memo } from 'react';
 
-import { BaseButton } from './BaseButton';
 import './styles/Button.css';
+import { ButtonKind } from './types';
 
-type BaseProps = {
+type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
   isLoading?: boolean;
   loadingText?: string | JSX.Element;
   size?: ButtonSize;
   kind?: ButtonKind;
   fit?: boolean;
-  icon?: React.ReactElement<{ size?: string; key: string; 'aria-hidden': boolean }>;
   disabled?: boolean;
+  icon?: React.ReactElement<{ size?: string; key: string; 'aria-hidden': boolean }>;
   renderIconFirst?: boolean;
+  asChild?: boolean;
 };
 
-type ButtonProps = PolymorphicButtonProps<BaseProps>;
+const ButtonComponent = forwardRef<HTMLButtonElement, ButtonProps>((props, ref) => {
+  const {
+    icon,
+    children,
+    className,
+    size,
+    fit,
+    kind = ButtonKind.DEFAULT,
+    isLoading = false,
+    loadingText,
+    renderIconFirst = false,
+    disabled = false,
+    asChild = false,
+    onKeyDown,
+    onClick,
+    ...rest
+  } = props;
 
-const ButtonComponent = forwardRef<HTMLButtonElement | HTMLAnchorElement, ButtonProps>(
-  (props: ButtonProps, ref) => {
-    const {
-      icon,
-      children,
-      isLoading = false,
-      loadingText,
-      renderIconFirst = false,
-      disabled = false,
-      as = 'button',
-    } = props;
+  const Component: React.ElementType = asChild ? Slot : 'button';
 
-    const renderIcon =
-      icon &&
-      cloneElement(icon, {
-        key: 'icon',
-        size: icon.props.size || 'small',
-        'aria-hidden': true,
-      });
+  const classes = cx(
+    'Button',
+    `Button--${kind}`,
+    disabled && 'Button--disabled',
+    size && `Button--${size}`,
+    fit && 'Button--fit',
+    className
+  );
 
-    const finalChildren = [
-      renderIconFirst && renderIcon,
-      isLoading && <span key="text">{loadingText || children}</span>,
-      !isLoading && children && <span key="text">{children}</span>,
-      !renderIconFirst && renderIcon,
-      isLoading && <span key="spinner">…</span>,
-    ];
+  const renderIcon =
+    icon &&
+    cloneElement(icon, {
+      key: 'icon',
+      size: icon.props.size || 'small',
+      'aria-hidden': true,
+    });
 
-    const isDisabled = disabled || isLoading;
+  const getFinalChildren = (c: React.ReactNode) => [
+    renderIconFirst && renderIcon,
+    isLoading && <span key="text">{loadingText || c}</span>,
+    !isLoading && c && <span key="text">{c}</span>,
+    !renderIconFirst && renderIcon,
+    isLoading && <span key="spinner">…</span>,
+  ];
 
-    if (as === 'a') {
-      return (
-        <BaseButton ref={ref} {...props} disabled={isDisabled}>
-          {finalChildren}
-        </BaseButton>
-      );
+  const renderChildren = () => {
+    if (asChild && isValidElement(children)) {
+      return cloneElement(children, undefined, getFinalChildren(children.props.children));
     }
 
-    return (
-      <BaseButton ref={ref} {...props} disabled={isDisabled}>
-        {finalChildren}
-      </BaseButton>
-    );
-  }
-);
+    return getFinalChildren(children);
+  };
+
+  const isDisabled = disabled || isLoading;
+
+  const handleClick = (
+    event: React.MouseEvent<HTMLAnchorElement> & React.MouseEvent<HTMLButtonElement>
+  ) => {
+    if (disabled) return event.preventDefault();
+
+    onClick && onClick(event);
+  };
+
+  const handleKeyDown: KeyboardEventHandler<HTMLButtonElement> = (event) => {
+    if (event.target instanceof HTMLAnchorElement) {
+      const spacebarKeys = ['Spacebar', ' '];
+
+      if (spacebarKeys.includes(event.key)) {
+        event.preventDefault();
+        const link = event.target as HTMLAnchorElement;
+        link.click();
+      }
+    }
+  };
+
+  return (
+    <Component
+      className={classes}
+      ref={ref}
+      onClick={handleClick}
+      onKeyDown={onKeyDown || handleKeyDown}
+      disabled={isDisabled}
+      {...rest}
+    >
+      {renderChildren()}
+    </Component>
+  );
+});
 
 ButtonComponent.displayName = 'Button';
 

@@ -117,32 +117,9 @@ export default {
         category: 'Content',
       },
     },
-    href: {
-      table: {
-        category: 'Content',
-        subcategory: 'Link Button',
-      },
-    },
-    label: {
-      table: {
-        category: 'Content',
-      },
-    },
     loadingText: {
       table: {
         category: 'Content',
-      },
-    },
-    rel: {
-      table: {
-        category: 'Content',
-        subcategory: 'Link Button',
-      },
-    },
-    target: {
-      table: {
-        category: 'Content',
-        subcategory: 'Link Button',
       },
     },
     id: {
@@ -200,6 +177,15 @@ export const Destructive: Story = {
 };
 
 export const Link: Story = { args: { children: 'Link', kind: ButtonKind.LINK } };
+
+export const AsAnchorChild: Story = {
+  args: {
+    children: <a href="/">Anchor tag</a>,
+    asChild: true,
+    icon: <Add size={IconSize.MEDIUM} />,
+    kind: ButtonKind.DESTRUCTIVE,
+  },
+};
 
 export const WithIcon: Story = {
   args: { children: 'With icon', icon: <Add size={IconSize.MEDIUM} /> },
