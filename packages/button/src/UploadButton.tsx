@@ -1,5 +1,4 @@
 import type { ButtonProps } from './';
-import type { ChangeEventHandler, KeyboardEvent } from 'react';
 
 import { cx } from 'classix';
 import { useRef } from 'react';
@@ -30,7 +29,7 @@ const UploadButton = ({
     inputRef.current?.click();
   };
 
-  const handleKeyDown = (event: KeyboardEvent<Element>) => {
+  const handleKeyDown = (event: React.KeyboardEvent<Element>) => {
     const actionKeys = ['Spacebar', ' ', 'Enter'];
 
     if (actionKeys.includes(event.key)) {
@@ -39,7 +38,7 @@ const UploadButton = ({
     }
   };
 
-  const handleChange: ChangeEventHandler<HTMLInputElement> = (event) => {
+  const handleChange: React.ChangeEventHandler<HTMLInputElement> = (event) => {
     let file;
 
     if (event) {

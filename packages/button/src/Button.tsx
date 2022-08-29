@@ -1,6 +1,4 @@
 import type { ButtonSize } from './types';
-import type React from 'react';
-import type { ButtonHTMLAttributes, KeyboardEventHandler } from 'react';
 
 import { Slot } from '@radix-ui/react-slot';
 import { cx } from 'classix';
@@ -9,7 +7,7 @@ import { isValidElement, cloneElement, forwardRef, memo } from 'react';
 import './styles/Button.css';
 import { ButtonKind } from './types';
 
-type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
+type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
   isLoading?: boolean;
   loadingText?: string | JSX.Element;
   size?: ButtonSize;
@@ -84,7 +82,7 @@ const ButtonComponent = forwardRef<HTMLButtonElement, ButtonProps>((props, ref) 
     onClick && onClick(event);
   };
 
-  const handleKeyDown: KeyboardEventHandler<HTMLButtonElement> = (event) => {
+  const handleKeyDown: React.KeyboardEventHandler<HTMLButtonElement> = (event) => {
     if (event.target instanceof HTMLAnchorElement) {
       const spacebarKeys = ['Spacebar', ' '];
 

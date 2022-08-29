@@ -1,6 +1,3 @@
-import type React from 'react';
-import type { ButtonHTMLAttributes, KeyboardEventHandler } from 'react';
-
 import { Slot } from '@radix-ui/react-slot';
 import { cx } from 'classix';
 import { isValidElement, cloneElement, forwardRef, memo } from 'react';
@@ -8,7 +5,7 @@ import { isValidElement, cloneElement, forwardRef, memo } from 'react';
 import './styles/Button.css';
 import { ButtonKind, IconButtonSize } from './types';
 
-type IconButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
+type IconButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
   kind?: ButtonKind;
   icon: React.ReactElement<{ size?: string; key: string; 'aria-hidden': boolean }>;
   size?: IconButtonSize;
@@ -65,7 +62,7 @@ const IconButtonComponent = forwardRef<HTMLButtonElement, IconButtonProps>((prop
     onClick && onClick(event);
   };
 
-  const handleKeyDown: KeyboardEventHandler<HTMLButtonElement> = (event) => {
+  const handleKeyDown: React.KeyboardEventHandler<HTMLButtonElement> = (event) => {
     if (event.target instanceof HTMLAnchorElement) {
       const spacebarKeys = ['Spacebar', ' '];
 
