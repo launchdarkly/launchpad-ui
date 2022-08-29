@@ -50,38 +50,40 @@ const RadioGroup = (props: RadioGroupProps) => {
       return elem;
     }
 
-    if (elem?.type && elem.type === Radio) {
-      return cloneElement(elem, {
-        ...elem.props,
+    const item = elem as React.ReactElement;
+
+    if (item?.type && item.type === Radio) {
+      return cloneElement(item, {
+        ...item.props,
         name,
-        checked: elem.props.value === value,
+        checked: item.props.value === value,
         onChange,
-        disabled: typeof elem.props?.disabled !== 'undefined' ? elem.props.disabled : disabled,
+        disabled: typeof item.props?.disabled !== 'undefined' ? item.props.disabled : disabled,
       });
     }
 
-    if (elem?.type && elem.type === Label) {
-      return cloneElement(elem, {
-        ...elem.props,
+    if (item?.type && item.type === Label) {
+      return cloneElement(item, {
+        ...item.props,
         onChange,
         disabled,
       });
     }
 
-    const elemChildren = elem?.props?.children;
+    const elemChildren = item?.props?.children;
     if (elemChildren) {
       if (Array.isArray(elemChildren)) {
-        return cloneElement(elem, {
+        return cloneElement(item, {
           children: Children.map(elemChildren, (elemChild) => updateRadioElems(elemChild)),
         });
       }
-      return cloneElement(elem, {
+      return cloneElement(item, {
         children: updateRadioElems(elemChildren),
       });
     }
 
-    if (elem?.type && elem.type !== Radio && elem.type !== Label) {
-      return elem;
+    if (item?.type && item.type !== Radio && item.type !== Label) {
+      return item;
     }
 
     return null;

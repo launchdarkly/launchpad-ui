@@ -38,7 +38,7 @@ const Icon = ({ name, subtle, className, size, children, ...props }: IconProps) 
     <span {...props} className={classes}>
       {Children.map(children, (child) => {
         if (isValidElement(child)) {
-          return cloneElement(child, {
+          return cloneElement(child as React.ReactElement, {
             ref: svgRef,
           });
         }
