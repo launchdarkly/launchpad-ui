@@ -1,7 +1,8 @@
-import { Button, ButtonSize, ButtonType } from '@launchpad-ui/button';
+import { IconButton } from '@launchpad-ui/button';
 import {
   ChevronLeft,
   ChevronRight,
+  IconSize,
   KeyboardDoubleArrowLeft,
   KeyboardDoubleArrowRight,
 } from '@launchpad-ui/icons';
@@ -45,13 +46,11 @@ const PaginationButton = ({
   const label = `${LABEL_MAP[kind]} ${resourceName} page`;
 
   return (
-    <Button
+    <IconButton
       disabled={disabled}
       className={classes}
       onClick={() => onClick(kind)}
-      size={ButtonSize.SMALL}
-      type={ButtonType.ICON}
-      icon={<Icon />}
+      icon={<Icon size={IconSize.SMALL} />}
       aria-label={label}
     />
   );

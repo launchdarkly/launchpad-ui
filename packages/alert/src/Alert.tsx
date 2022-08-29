@@ -1,4 +1,4 @@
-import { Button, ButtonType } from '@launchpad-ui/button';
+import { IconButton, IconButtonSize } from '@launchpad-ui/button';
 import { Close, IconSize, KindIcon } from '@launchpad-ui/icons';
 import { cx } from 'classix';
 import { useState } from 'react';
@@ -117,13 +117,13 @@ const Alert = ({
       )}
       <div className="Alert-content">{children}</div>
       {dismissible && (
-        <Button
+        <IconButton
           aria-label="Close this alert."
-          type={ButtonType.ICON}
+          size={IconButtonSize.SMALL}
           icon={<Close size={IconSize.SMALL} />}
           className="Alert-close"
           onClick={handleDismissClicked}
-          testId={testId ? `${testId}-dismiss-button` : undefined}
+          data-test-id={testId ? `${testId}-dismiss-button` : undefined}
         />
       )}
     </div>

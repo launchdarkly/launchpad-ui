@@ -122,10 +122,8 @@
   fill: var(--Banner-icon-color-striped);
 }
 
-.Banner-close.Button--icon.Button--default {
+.Banner-close.Button--icon {
   background-color: transparent;
-  border-color: var(--Banner-closeButton-color-border);
-  color: var(--Banner-closeButton-color-text);
 
   & .Icon {
     background-color: transparent;
@@ -137,7 +135,7 @@
   }
 }
 
-.Banner-close.Button--icon.Button--default:hover {
+.Banner-close.Button--icon:hover {
   background-color: transparent;
 
   & .Icon {
@@ -146,7 +144,7 @@
   }
 }
 
-.Banner-close.Button--icon.Button--default:focus {
+.Banner-close.Button--icon:focus {
   box-shadow: none;
 
   & .Icon {
@@ -155,7 +153,7 @@
   }
 }
 
-.Banner-close.Button--icon.Button--default:active {
+.Banner-close.Button--icon:active {
   background-color: transparent;
 
   & .Icon {

@@ -1,6 +1,6 @@
 import type { ReactNode, SyntheticEvent } from 'react';
 
-import { Button, ButtonSize, ButtonType } from '@launchpad-ui/button';
+import { IconButton } from '@launchpad-ui/button';
 import { Close, ExpandMore, IconSize } from '@launchpad-ui/icons';
 import { Tooltip } from '@launchpad-ui/tooltip';
 import { VisuallyHidden } from '@react-aria/visually-hidden';
@@ -74,10 +74,9 @@ const FilterButton = forwardRef<Ref, FilterButtonProps>((props, ref) => {
       </button>
       {isClearable && (
         <Tooltip targetClassName="Filter-clearTooltip" content={clearTooltip}>
-          <Button
+          <IconButton
+            aria-label="Clear filter"
             className="Filter-clear"
-            size={ButtonSize.SMALL}
-            type={ButtonType.ICON}
             icon={<Close size={IconSize.TINY} />}
             onClick={onClear}
           />

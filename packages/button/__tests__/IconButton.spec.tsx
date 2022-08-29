@@ -1,24 +1,18 @@
-import { Add } from '@launchpad-ui/icons';
+import { Close } from '@launchpad-ui/icons';
 import { it, expect, describe, vi } from 'vitest';
 
 import { render, screen, userEvent } from '../../../test/utils';
-import { Button, ButtonKind, ButtonSize, ButtonType } from '../src';
+import { IconButton } from '../src';
 
 describe('Button', () => {
   it('renders', () => {
-    render(
-      <Button size={ButtonSize.NORMAL} type={ButtonType.BUTTON}>
-        Default Button
-      </Button>
-    );
-    expect(screen.getByText('Default Button')).toBeInTheDocument();
+    render(<IconButton aria-label="Close" icon={<Close />} />);
+    expect(screen.getByRole('button', { name: 'Close' })).toBeInTheDocument();
   });
 
   it('can render as a link', () => {
     const { container } = render(
-      <Button as="a" href="#">
-        Default Button Link
-      </Button>
+      <IconButton aria-label="Close" icon={<Close />} as="a" href="#" />
     );
     // eslint-disable-next-line testing-library/no-container, testing-library/no-node-access
     expect(container.querySelector('a')).not.toBeNull();
@@ -27,9 +21,9 @@ describe('Button', () => {
   it('handles clicks', async () => {
     const spy = vi.fn();
     const user = userEvent.setup();
-    render(<Button onClick={spy}>Default Button</Button>);
+    render(<IconButton aria-label="Close" icon={<Close />} onClick={spy} />);
 
-    await user.click(screen.getByRole('button'));
+    await user.click(screen.getByRole('button', { name: 'Close' }));
 
     expect(spy).toHaveBeenCalledTimes(1);
   });
@@ -37,11 +31,7 @@ describe('Button', () => {
   it('clicks the link when spacebar is pressed', async () => {
     const spy = vi.fn();
     const user = userEvent.setup();
-    render(
-      <Button as="a" href="#" onClick={spy}>
-        Default Button Link
-      </Button>
-    );
+    render(<IconButton aria-label="Close" icon={<Close />} as="a" href="#" onClick={spy} />);
 
     await user.type(screen.getByRole('link'), '{space}');
 
@@ -50,24 +40,15 @@ describe('Button', () => {
 
   it('is focusable', async () => {
     const user = userEvent.setup();
-    render(<Button kind={ButtonKind.PRIMARY}>Primary Button</Button>);
+    render(<IconButton aria-label="Close" icon={<Close />} />);
 
     await user.tab();
-    expect(screen.getByRole('button')).toHaveFocus();
+    expect(screen.getByRole('button', { name: 'Close' })).toHaveFocus();
   });
 
   it('can render an icon', async () => {
-    const { container } = render(<Button kind={ButtonKind.PRIMARY} icon={<Add />} />);
+    const { container } = render(<IconButton aria-label="Close" icon={<Close />} />);
     // eslint-disable-next-line testing-library/no-container, testing-library/no-node-access
     expect(container.querySelector('svg')).not.toBeNull();
-  });
-
-  it('shows loading text when loading', async () => {
-    render(
-      <Button isLoading loadingText="loading">
-        Primary Button
-      </Button>
-    );
-    expect(screen.getByText('loading')).toBeInTheDocument();
   });
 });

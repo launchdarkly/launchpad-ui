@@ -1,9 +1,11 @@
 enum ButtonType {
   BUTTON = 'button',
   SUBMIT = 'submit',
-  RESET = 'reset',
-  ICON = 'icon',
-  BORDERLESS = 'borderless',
+}
+
+enum IconButtonSize {
+  SMALL = 'small',
+  NORMAL = 'normal',
 }
 
 enum EllipsisButtonType {
@@ -18,8 +20,8 @@ enum ButtonKind {
   DEFAULT = 'default',
   PRIMARY = 'primary',
   DESTRUCTIVE = 'destructive',
+  MINIMAL = 'minimal',
   LINK = 'link',
-  SUBMIT = 'submit',
 }
 
 enum ButtonSize {
@@ -35,4 +37,24 @@ enum ButtonGroupSpacing {
   LARGE = 'large',
 }
 
-export { ButtonType, EllipsisButtonType, ButtonKind, ButtonSize, ButtonGroupSpacing };
+type AsButton<T extends object> = T &
+  React.ButtonHTMLAttributes<HTMLButtonElement> & {
+    as?: 'button';
+  };
+
+type AsLink<T extends object> = T &
+  React.AnchorHTMLAttributes<HTMLAnchorElement> & {
+    as: 'a';
+  };
+
+type PolymorphicButtonProps<BaseProps extends object> = AsButton<BaseProps> | AsLink<BaseProps>;
+
+export {
+  ButtonType,
+  EllipsisButtonType,
+  ButtonKind,
+  ButtonSize,
+  IconButtonSize,
+  ButtonGroupSpacing,
+  PolymorphicButtonProps,
+};

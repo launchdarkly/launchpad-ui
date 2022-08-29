@@ -1,7 +1,7 @@
 import type { NotificationLevel } from './types';
 import type { KeyboardEvent, ReactNode } from 'react';
 
-import { Button, ButtonType } from '@launchpad-ui/button';
+import { IconButton } from '@launchpad-ui/button';
 import { CopyToClipboard } from '@launchpad-ui/clipboard';
 import { KindIcon, Close, ExpandMore, IconSize } from '@launchpad-ui/icons';
 import { FocusScope } from '@react-aria/focus';
@@ -130,8 +130,7 @@ const Notification = ({
           </div>
         )}
       </div>
-      <Button
-        type={ButtonType.ICON}
+      <IconButton
         icon={<Close size={IconSize.SMALL} />}
         className="Notification-close"
         onClick={handleCloseClick}
