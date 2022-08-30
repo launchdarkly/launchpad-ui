@@ -13,13 +13,25 @@ type BannerProps = {
   onDismiss?(): void;
   dismissible?: boolean;
   testId?: string;
+  title?: string;
 };
 
-const Banner = ({ kind, className, children, onDismiss, dismissible, testId }: BannerProps) => {
+const Banner = ({
+  kind,
+  className,
+  children,
+  onDismiss,
+  dismissible,
+  testId,
+  title,
+}: BannerProps) => {
   return (
     <div className={cx('Banner', `Banner--${kind}`, className)} data-test-id={testId}>
-      <KindIcon kind={kind} className="Banner-icon" />
-      <span className="Banner-text">{children}</span>
+      {<KindIcon kind={kind} className="Banner-icon" />}
+      <div className="Banner-content">
+        {title && <h4 className="Banner-heading">{title}</h4>}
+        <div> {children}</div>
+      </div>
       {dismissible && (
         <Button
           aria-label="Close this notification."
