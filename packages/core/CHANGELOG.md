@@ -1,5 +1,17 @@
 # @launchpad-ui/core
 
+## 0.9.4
+
+### Patch Changes
+
+- [#321](https://github.com/launchdarkly/launchpad-ui/pull/321) [`5938ae8`](https://github.com/launchdarkly/launchpad-ui/commit/5938ae86eb6c28d57a4ef185c306c8328007cfd9) Thanks [@Niznikr](https://github.com/Niznikr)! - [Form] Remove margin from `RequiredAsterisk`
+
+- Updated dependencies [[`5938ae8`](https://github.com/launchdarkly/launchpad-ui/commit/5938ae86eb6c28d57a4ef185c306c8328007cfd9)]:
+  - @launchpad-ui/form@0.3.5
+  - @launchpad-ui/menu@0.4.7
+  - @launchpad-ui/filter@0.2.8
+  - @launchpad-ui/navigation@0.4.4
+
 ## 0.9.3
 
 ### Patch Changes
