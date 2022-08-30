@@ -23,11 +23,11 @@
       "require": "./dist/index.js"
     },
     "./package.json": "./package.json",
-    "./styles/*": "./dist/styles/*"
+    "./style.css": "./dist/style.css"
   },
   "source": "src/index.ts",
   "scripts": {
-    "build": "pnpm build:icons && tsc --project tsconfig.build.json && node ../../scripts/build.js",
+    "build": "pnpm build:icons && vite build -c ../../vite.config.ts && tsc --project tsconfig.build.json",
     "build:icons": "svgr --silent -- icons",
     "clean": "rm -rf dist",
     "e2e": "playwright test --config=../../playwright.config.ct.ts",

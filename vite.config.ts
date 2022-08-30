@@ -5,7 +5,6 @@ import path from 'path';
 import react from '@vitejs/plugin-react';
 import { defineConfig } from 'vite';
 
-import parcelCssPlugin from './parcel-css-plugin';
 import tsconfig from './tsconfig.json';
 
 const paths = tsconfig.compilerOptions.paths;
@@ -14,8 +13,11 @@ Object.keys(paths).forEach((key) => {
   alias[key] = path.resolve(__dirname, paths[key as keyof typeof paths][0]);
 });
 
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const packageJSON = require(path.resolve('./package.json'));
+
 export default defineConfig({
-  plugins: [react(), parcelCssPlugin()],
+  plugins: [react()],
   resolve: {
     alias,
   },
@@ -39,5 +41,20 @@ export default defineConfig({
     deps: {
       registerNodeLoader: false,
     },
+  },
+  build: {
+    lib: {
+      entry: packageJSON.source,
+      formats: ['es', 'cjs'],
+      fileName: (format) => (format === 'es' ? 'index.es.js' : 'index.js'),
+    },
+    rollupOptions: {
+      external: [
+        ...Object.keys(packageJSON.dependencies || {}),
+        ...Object.keys(packageJSON.peerDependencies || {}),
+        'react/jsx-runtime',
+      ],
+    },
+    sourcemap: true,
   },
 });

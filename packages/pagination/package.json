@@ -22,11 +22,11 @@
       "require": "./dist/index.js"
     },
     "./package.json": "./package.json",
-    "./styles/*": "./dist/styles/*"
+    "./style.css": "./dist/style.css"
   },
   "source": "src/index.ts",
   "scripts": {
-    "build": "tsc --project tsconfig.build.json && node ../../scripts/build.js",
+    "build": "vite build -c ../../vite.config.ts && tsc --project tsconfig.build.json",
     "clean": "rm -rf dist",
     "e2e": "playwright test --config=../../playwright.config.ct.ts",
     "lint": "eslint '**/*.{ts,tsx,js}' && stylelint '**/*.css' --ignore-path ../../.stylelintignore",
