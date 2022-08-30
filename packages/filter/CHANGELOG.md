@@ -1,5 +1,12 @@
 # @launchpad-ui/filter
 
+## 0.2.7
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @launchpad-ui/menu@0.4.6
+
 ## 0.2.6
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @launchpad-ui/form
 
+## 0.3.4
+
+### Patch Changes
+
+- [#318](https://github.com/launchdarkly/launchpad-ui/pull/318) [`f3e9080`](https://github.com/launchdarkly/launchpad-ui/commit/f3e90806342f7faeb20936c0b25d0695e1e83c06) Thanks [@Niznikr](https://github.com/Niznikr)! - [Form] Add placeholder and onBlur to Select props
+
 ## 0.3.3
 
 ### Patch Changes

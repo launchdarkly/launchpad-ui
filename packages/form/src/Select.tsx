@@ -1,4 +1,4 @@
-import type { ChangeEvent, ReactNode } from 'react';
+import type { ChangeEvent, FocusEvent, ReactNode } from 'react';
 
 import { cx } from 'classix';
 
@@ -11,8 +11,10 @@ type SelectProps = {
   id?: string;
   name?: string;
   onChange?(event: ChangeEvent<HTMLInputElement> | ChangeEvent<HTMLSelectElement>): void;
+  onBlur?(event: FocusEvent<HTMLSelectElement, HTMLElement>): void;
   testId?: string;
   value?: number | string;
+  placeholder?: string;
   'aria-label'?: string;
 };
 
