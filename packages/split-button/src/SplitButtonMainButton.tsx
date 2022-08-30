@@ -1,4 +1,5 @@
 import type { ButtonProps } from '@launchpad-ui/button';
+import type { ReactElement } from 'react';
 
 import { Button } from '@launchpad-ui/button';
 import { cx } from 'classix';
@@ -8,7 +9,7 @@ import { SplitButtonContext } from './context';
 import './styles/SplitButton.css';
 
 type SplitButtonMainButtonProps = Omit<ButtonProps, 'kind' | 'size'> & {
-  icon?: React.ReactElement<{ size?: string; key: string; 'aria-hidden': boolean }>;
+  icon?: ReactElement<{ size?: string; key: string; 'aria-hidden': boolean }>;
 };
 
 const SplitButtonMainButton = forwardRef<

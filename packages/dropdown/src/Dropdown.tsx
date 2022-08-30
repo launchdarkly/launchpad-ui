@@ -1,4 +1,5 @@
 import type { PopoverProps } from '@launchpad-ui/popover';
+import type { ReactElement } from 'react';
 
 import { Popover } from '@launchpad-ui/popover';
 import { cx } from 'classix';
@@ -90,8 +91,8 @@ const Dropdown = <T extends string | object | number>(props: DropdownProps<T>) =
   const parseChildren = () => {
     const [targetChild, contentChild] = Children.toArray(children);
     return {
-      target: targetChild as React.ReactElement,
-      content: contentChild as React.ReactElement,
+      target: targetChild as ReactElement,
+      content: contentChild as ReactElement,
     };
   };
 

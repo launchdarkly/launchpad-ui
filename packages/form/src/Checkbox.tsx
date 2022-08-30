@@ -1,4 +1,4 @@
-import type { InputHTMLAttributes } from 'react';
+import type { InputHTMLAttributes, ReactNode } from 'react';
 
 import { forwardRef } from 'react';
 
@@ -19,7 +19,7 @@ type CheckboxProps = InputHTMLAttributes<HTMLInputElement> & {
   /**
    * Label for the Checkbox
    */
-  children?: React.ReactNode;
+  children?: ReactNode;
   /**
    * The className to pass into the Checkbox's Label component
    */

@@ -1,3 +1,5 @@
+import type { KeyboardEvent, MouseEvent, ReactElement, ReactNode } from 'react';
+
 import { cx } from 'classix';
 import { cloneElement, forwardRef, memo } from 'react';
 
@@ -53,7 +55,7 @@ type ButtonProps = {
   /**
    * Icon to add to the contents of the button
    */
-  icon?: React.ReactElement<{ size?: string; key: string; 'aria-hidden': boolean }>;
+  icon?: ReactElement<{ size?: string; key: string; 'aria-hidden': boolean }>;
 
   /**
    * When true, adds an outline to icon buttons
@@ -68,7 +70,7 @@ type ButtonProps = {
   /**
    * Function to execute button is clicked
    */
-  onClick?(event: React.MouseEvent): void;
+  onClick?(event: MouseEvent): void;
 
   /**
    * React router compatible location to take user to when button is clicked
@@ -124,9 +126,9 @@ type ButtonProps = {
   /**
    * Function to execute when a keyboard key is pressed
    */
-  onKeyDown?(event: React.KeyboardEvent): void;
+  onKeyDown?(event: KeyboardEvent): void;
 
-  children?: React.ReactNode;
+  children?: ReactNode;
 };
 
 const ButtonComponent = forwardRef<HTMLButtonElement | HTMLAnchorElement, ButtonProps>(
@@ -164,7 +166,7 @@ const ButtonComponent = forwardRef<HTMLButtonElement | HTMLAnchorElement, Button
       type === 'borderless' && 'Button--borderless'
     );
 
-    const handleClick = (event: React.MouseEvent) => {
+    const handleClick = (event: MouseEvent) => {
       if (disabled) {
         event.preventDefault();
         return;
@@ -211,7 +213,7 @@ const ButtonComponent = forwardRef<HTMLButtonElement | HTMLAnchorElement, Button
       isLoading && <span key="spinner">…</span>,
     ];
 
-    const renderAnchor = (extraProps: object, children: React.ReactNode) => {
+    const renderAnchor = (extraProps: object, children: ReactNode) => {
       const {
         isLoading,
         loadingText,
@@ -232,7 +234,7 @@ const ButtonComponent = forwardRef<HTMLButtonElement | HTMLAnchorElement, Button
       );
     };
 
-    const renderButton = (extraProps: object, children: React.ReactNode) => {
+    const renderButton = (extraProps: object, children: ReactNode) => {
       const {
         type,
         isLoading,

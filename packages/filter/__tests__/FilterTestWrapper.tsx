@@ -1,4 +1,5 @@
 import type { FilterOption } from '../src/FilterMenu';
+import type { ChangeEvent } from 'react';
 
 import { useState } from 'react';
 
@@ -13,7 +14,7 @@ const FilterTestWrapper = (props?: Partial<FilterProps>) => {
     setDescription(item);
   };
 
-  const onSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const onSearchChange = (event: ChangeEvent<HTMLInputElement>) => {
     const filteredOptions = options.filter((option) => option?.value.includes(event.target.value));
 
     setOptions(filteredOptions);

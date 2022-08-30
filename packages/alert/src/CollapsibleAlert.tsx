@@ -1,4 +1,5 @@
 import type { AlertKind } from './types';
+import type { ReactNode } from 'react';
 
 import { ExpandMore, IconSize } from '@launchpad-ui/icons';
 import { useRef, useState } from 'react';
@@ -11,7 +12,7 @@ type CollapsibleAlertProps = {
   /**
    * Child nodes to pass into the Alert.
    */
-  children?: React.ReactNode;
+  children?: ReactNode;
   /**
    * Passing in one of `info`, `success`, `warning`, `error`, `striped`
    * displays the style and icon pair associated with the variant.

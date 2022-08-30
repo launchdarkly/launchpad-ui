@@ -1,9 +1,11 @@
+import type { ReactNode } from 'react';
+
 import { cx } from 'classix';
 
 import './styles/Modal.css';
 
 type ModalFooterProps = {
-  children: React.ReactNode;
+  children: ReactNode;
   className?: string;
   testId?: string;
 };

@@ -1,3 +1,5 @@
+import type { ReactNode } from 'react';
+
 import { cx } from 'classix';
 
 import './styles/ButtonGroup.css';
@@ -7,7 +9,7 @@ type ButtonGroupProps = {
   spacing?: ButtonGroupSpacing;
   className?: string;
   testId?: string;
-  children: React.ReactNode;
+  children: ReactNode;
 };
 
 const ButtonGroup = ({

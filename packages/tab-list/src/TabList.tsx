@@ -1,6 +1,7 @@
 import type { TabListState } from '@react-stately/tabs';
 import type { ItemElement, Node } from '@react-types/shared';
 import type { AriaTabListProps, AriaTabPanelProps } from '@react-types/tabs';
+import type { ReactNode } from 'react';
 
 import { useTab, useTabList, useTabPanel } from '@react-aria/tabs';
 import { useTabListState } from '@react-stately/tabs';
@@ -16,7 +17,7 @@ type TabListProps<T extends string | number> =
       /** CSS classes to pass into the TabList wrapper div. */
       className?: string;
       /** The children passed into the TabList. This is a react-stately Item with JSX children. */
-      children: ItemElement<React.ReactNode> | Array<ItemElement<React.ReactNode>>;
+      children: ItemElement<ReactNode> | Array<ItemElement<ReactNode>>;
       /** Array of any disabled Tabs in the grouping. */
       disabledTabs?: string[];
       /** Called when the user clicks on a different tab */

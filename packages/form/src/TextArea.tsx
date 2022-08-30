@@ -1,4 +1,4 @@
-import type { TextareaHTMLAttributes } from 'react';
+import type { KeyboardEvent, TextareaHTMLAttributes } from 'react';
 
 import { cx } from 'classix';
 import { forwardRef } from 'react';
@@ -9,7 +9,7 @@ import { createFieldErrorId } from './utils';
 type TextAreaProps = TextareaHTMLAttributes<HTMLTextAreaElement>;
 
 const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(({ className, ...props }, ref) => {
-  const onKeyDown = (e: React.KeyboardEvent<HTMLTextAreaElement>) => {
+  const onKeyDown = (e: KeyboardEvent<HTMLTextAreaElement>) => {
     if (
       e.key === 'ArrowRight' ||
       e.key === 'ArrowDown' ||

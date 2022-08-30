@@ -1,3 +1,5 @@
+import type { ReactNode } from 'react';
+
 import { cx } from 'classix';
 
 import { Portal } from './Portal';
@@ -5,7 +7,7 @@ import './styles/Prompt.css';
 
 type PromptProps = {
   className?: string;
-  children?: React.ReactNode;
+  children?: ReactNode;
 };
 
 const Prompt = ({ className, children }: PromptProps) => {

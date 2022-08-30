@@ -1,3 +1,5 @@
+import type { SyntheticEvent } from 'react';
+
 import { cx } from 'classix';
 
 import './styles/Slider.css';
@@ -28,7 +30,7 @@ const Slider = ({
   id,
 }: SliderProps) => {
   const valueHandler =
-    (callback: (value: number) => void) => (event: React.SyntheticEvent<HTMLInputElement>) =>
+    (callback: (value: number) => void) => (event: SyntheticEvent<HTMLInputElement>) =>
       callback(parseFloat(event.currentTarget.value));
 
   return (

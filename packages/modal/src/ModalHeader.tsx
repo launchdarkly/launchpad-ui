@@ -1,10 +1,12 @@
+import type { ReactNode } from 'react';
+
 import { Close, IconSize } from '@launchpad-ui/icons';
 import { cx } from 'classix';
 
 import './styles/Modal.css';
 
 type ModalHeaderProps = {
-  children: React.ReactNode;
+  children: ReactNode;
   className?: string;
   closeable?: boolean;
   titleID?: string;

@@ -1,3 +1,5 @@
+import type { ChangeEvent, FormEvent, ReactElement, ReactNode } from 'react';
+
 import { VisuallyHidden } from '@react-aria/visually-hidden';
 import { Children, cloneElement, isValidElement, useRef } from 'react';
 
@@ -14,7 +16,7 @@ type RadioGroupProps = {
   /**
    * The children passed into the RadioGroup.
    */
-  children?: React.ReactNode;
+  children?: ReactNode;
   /**
    * Custom classname(s) passed to the fieldset inner div.
    */
@@ -34,7 +36,7 @@ type RadioGroupProps = {
   /**
    * This function is passed into each Radio onChange synthetic event handler.
    */
-  onChange?(e: React.ChangeEvent | React.FormEvent<HTMLInputElement>): void;
+  onChange?(e: ChangeEvent | FormEvent<HTMLInputElement>): void;
   /**
    * The value to compare against the Radio's value to determine if the Radio will be checked.
    */
@@ -45,12 +47,12 @@ const RadioGroup = (props: RadioGroupProps) => {
   const { name, value, onChange, children, disabled, legend, ...other } = props;
   const fieldsetRef = useRef<HTMLFieldSetElement>(null);
 
-  function updateRadioElems(elem: React.ReactNode): React.ReactNode {
+  function updateRadioElems(elem: ReactNode): ReactNode {
     if (!isValidElement(elem)) {
       return elem;
     }
 
-    const item = elem as React.ReactElement;
+    const item = elem as ReactElement;
 
     if (item?.type && item.type === Radio) {
       return cloneElement(item, {

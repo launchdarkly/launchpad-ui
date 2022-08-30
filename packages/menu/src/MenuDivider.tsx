@@ -1,11 +1,12 @@
 import type { SeparatorProps } from '@react-aria/separator';
+import type { RefObject } from 'react';
 
 import { useSeparator } from '@react-aria/separator';
 
 import './styles/Menu.css';
 
 type MenuDividerProps = SeparatorProps & {
-  innerRef?: React.RefObject<HTMLDivElement>;
+  innerRef?: RefObject<HTMLDivElement>;
 };
 
 const MenuDivider = ({ elementType = 'div', orientation, innerRef }: MenuDividerProps) => {

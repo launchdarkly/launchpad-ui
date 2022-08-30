@@ -1,3 +1,5 @@
+import type { ReactNode } from 'react';
+
 import { useSwitch } from '@react-aria/switch';
 import { VisuallyHidden } from '@react-aria/visually-hidden';
 import { useToggleState } from '@react-stately/toggle';
@@ -22,7 +24,7 @@ type ToggleProps = {
   /**
    * The text to pass into the Toggle label.
    */
-  children?: React.ReactNode;
+  children?: ReactNode;
   /**
    * Custom classname(s) to add to the Toggle.
    */

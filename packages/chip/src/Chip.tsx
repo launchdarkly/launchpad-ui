@@ -1,3 +1,5 @@
+import type { KeyboardEvent, ReactNode } from 'react';
+
 import { cx } from 'classix';
 
 import './styles/Chip.css';
@@ -9,9 +11,9 @@ type ChipProps = {
   subtle?: boolean;
   isClickable?: boolean;
   handleClick?(): void;
-  handleKeyPress?(e: React.KeyboardEvent<HTMLSpanElement>): void;
+  handleKeyPress?(e: KeyboardEvent<HTMLSpanElement>): void;
   className?: string;
-  children?: React.ReactNode;
+  children?: ReactNode;
   ariaDisabled?: boolean;
 };
 

@@ -1,4 +1,5 @@
 import type { Variants } from 'framer-motion';
+import type { MouseEvent, ReactNode } from 'react';
 
 import { Button, ButtonSize, ButtonType } from '@launchpad-ui/button';
 import { Close, IconSize } from '@launchpad-ui/icons';
@@ -36,7 +37,7 @@ const loadFeatures = () =>
   ).then((res) => res.domAnimation);
 
 type ModalProps = {
-  children?: React.ReactNode;
+  children?: ReactNode;
   className?: string;
   withCloseButton?: boolean;
   cancelWithOverlayClick?: boolean;
@@ -83,7 +84,7 @@ const Modal = ({
     };
   }, [onReady, onCancel]);
 
-  const handleOverlayClick = (event: React.MouseEvent<HTMLDivElement>) => {
+  const handleOverlayClick = (event: MouseEvent<HTMLDivElement>) => {
     if (cancelWithOverlayClick && event.target === event.currentTarget) {
       onCancel && onCancel();
     }

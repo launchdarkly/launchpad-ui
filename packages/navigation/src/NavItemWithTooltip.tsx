@@ -1,4 +1,5 @@
 import type { Offset, PopoverPlacement } from '@launchpad-ui/popover';
+import type { MouseEvent } from 'react';
 
 import { Tooltip } from '@launchpad-ui/tooltip';
 
@@ -12,7 +13,7 @@ type NavItemWithTooltipProps = {
   tooltipContent?: string | JSX.Element;
   tooltipPlacement?: PopoverPlacement;
   tooltipOffset?: Offset;
-  onClick?(event: React.MouseEvent): void;
+  onClick?(event: MouseEvent): void;
   id?: string;
   role?: string;
   'aria-controls'?: string;

@@ -1,6 +1,17 @@
 import type { OffsetOptions } from '@floating-ui/core';
 import type { ComputePositionConfig, Placement, Strategy } from '@floating-ui/dom';
-import type { CSSProperties, ReactHTML, Ref, RefObject } from 'react';
+import type {
+  CSSProperties,
+  FocusEvent,
+  KeyboardEvent as ReactKeyboardEvent,
+  MouseEvent,
+  PointerEvent,
+  ReactElement,
+  ReactHTML,
+  ReactNode,
+  Ref,
+  RefObject,
+} from 'react';
 
 import { arrow, computePosition, flip, offset as floatOffset, shift } from '@floating-ui/dom';
 import { Overlay } from '@launchpad-ui/overlay';
@@ -34,7 +45,7 @@ type Offset = OffsetOptions;
 type PopoverProps = {
   allowBoundaryElementOverflow?: boolean;
   content?: string | JSX.Element | JSX.Element[];
-  children: React.ReactNode;
+  children: ReactNode;
   disabled?: boolean;
   disablePlacementFlip?: boolean;
   enforceFocus?: boolean;
@@ -63,13 +74,13 @@ type PopoverProps = {
 };
 
 type PopoverTargetProps = {
-  onMouseEnter?: (event: React.MouseEvent) => void;
-  onMouseLeave?: (event: React.MouseEvent) => void;
-  onPointerEnter?: (event: React.PointerEvent) => void;
-  onPointerLeave?: (event: React.PointerEvent) => void;
-  onFocus?: (event: React.FocusEvent) => void;
-  onBlur?: (event: React.FocusEvent) => void;
-  onClick?: (event: React.MouseEvent) => void;
+  onMouseEnter?: (event: MouseEvent) => void;
+  onMouseLeave?: (event: MouseEvent) => void;
+  onPointerEnter?: (event: PointerEvent) => void;
+  onPointerLeave?: (event: PointerEvent) => void;
+  onFocus?: (event: FocusEvent) => void;
+  onBlur?: (event: FocusEvent) => void;
+  onClick?: (event: MouseEvent) => void;
   ref: RefObject<HTMLElement>;
   className?: string;
   isopen?: boolean;
@@ -78,11 +89,11 @@ type PopoverTargetProps = {
 };
 
 type PopoverContentProps = {
-  onMouseEnter?: (event: React.MouseEvent) => void;
-  onMouseLeave?: (event: React.MouseEvent) => void;
-  onPointerEnter?: (event: React.PointerEvent) => void;
-  onPointerLeave?: (event: React.PointerEvent) => void;
-  onClick?: (event: React.MouseEvent) => void;
+  onMouseEnter?: (event: MouseEvent) => void;
+  onMouseLeave?: (event: MouseEvent) => void;
+  onPointerEnter?: (event: PointerEvent) => void;
+  onPointerLeave?: (event: PointerEvent) => void;
+  onClick?: (event: MouseEvent) => void;
 };
 
 const isOrContainsElement = (referenceElement: Element, element: Element) => {
@@ -254,7 +265,7 @@ const Popover = ({
     setIsOpen(isOpenProp);
   }, [isOpenProp]);
 
-  const handleTargetClick = (event: React.MouseEvent) => {
+  const handleTargetClick = (event: MouseEvent) => {
     const eventTarget = event.target as Element;
     onClick?.();
     if (!disabled && targetRef.current && isOrContainsElement(targetRef.current, eventTarget)) {
@@ -287,14 +298,14 @@ const Popover = ({
     removeGlobalListener();
   };
 
-  const handlePopoverClick = (event: React.MouseEvent) => {
+  const handlePopoverClick = (event: MouseEvent) => {
     const eventTarget = event.target as Element;
     if (eventTarget?.closest?.('.popover-dismiss')) {
       setOpenState(false);
     }
   };
 
-  const handleOverlayClose = (event: React.MouseEvent | React.KeyboardEvent) => {
+  const handleOverlayClose = (event: MouseEvent | ReactKeyboardEvent) => {
     const eventTarget = event.target as Element;
     if (
       (targetRef.current && !isOrContainsElement(targetRef.current, eventTarget)) ||
@@ -324,8 +335,8 @@ const Popover = ({
   };
 
   const parseChildren = (): {
-    target: React.ReactNode;
-    content: React.ReactNode;
+    target: ReactNode;
+    content: ReactNode;
   } => {
     const [targetChild, contentChild] = Children.toArray(children);
 
@@ -350,7 +361,7 @@ const Popover = ({
     }
   };
 
-  const renderPopover = (content: React.ReactNode) => {
+  const renderPopover = (content: ReactNode) => {
     const classes = cx('Popover', popoverClassName);
 
     let handlers: PopoverContentProps = {};
@@ -446,7 +457,7 @@ const Popover = ({
   return createElement(
     rootElementTag,
     targetProps,
-    cloneElement(target as React.ReactElement, {
+    cloneElement(target as ReactElement, {
       ref: targetElementRef,
       ...(isOpen && { 'aria-describedby': popoverId.current }),
     }),

@@ -1,10 +1,12 @@
+import type { ReactNode } from 'react';
+
 import { cx } from 'classix';
 
 import './styles/Table.css';
 
 type TableHeadProps = {
   className?: string;
-  children: React.ReactNode;
+  children: ReactNode;
 };
 
 const TableHead = ({ className, children, ...props }: TableHeadProps) => {

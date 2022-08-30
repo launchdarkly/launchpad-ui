@@ -1,5 +1,5 @@
 import type { TooltipProps } from '@launchpad-ui/tooltip';
-import type { KeyboardEventHandler } from 'react';
+import type { KeyboardEventHandler, ReactNode } from 'react';
 
 import { Button, ButtonSize } from '@launchpad-ui/button';
 import { CheckCircle, IconSize } from '@launchpad-ui/icons';
@@ -11,7 +11,7 @@ import { forwardRef, useCallback, useImperativeHandle, useRef, useState } from '
 import './styles/Clipboard.css';
 
 type CopyToClipboardProps = {
-  children: React.ReactNode;
+  children: ReactNode;
   testId?: string;
   ariaLabel?: string;
   customCopiedText?: string;

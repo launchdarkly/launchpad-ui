@@ -1,10 +1,11 @@
 import type { TableVerticalAlignType } from './types';
+import type { HTMLProps } from 'react';
 
 import { cx } from 'classix';
 
 import './styles/Table.css';
 
-type TableRowProps = React.HTMLProps<HTMLTableRowElement> & {
+type TableRowProps = HTMLProps<HTMLTableRowElement> & {
   testId?: string;
   verticalAlign?: TableVerticalAlignType;
 };

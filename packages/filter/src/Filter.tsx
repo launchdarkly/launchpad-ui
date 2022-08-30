@@ -1,6 +1,6 @@
 import type { FilterOption } from './FilterMenu';
 import type { MenuProps } from '@launchpad-ui/menu';
-import type { ReactNode, SyntheticEvent } from 'react';
+import type { ChangeEvent, ReactNode, SyntheticEvent } from 'react';
 
 import { Dropdown } from '@launchpad-ui/dropdown';
 import { cx } from 'classix';
@@ -12,7 +12,7 @@ const SEARCH_INPUT_THRESHOLD = 4;
 
 type FilterProps = Pick<MenuProps<string>, 'size' | 'enableVirtualization'> & {
   searchValue?: string;
-  onSearchChange?(event: React.ChangeEvent<HTMLInputElement>): void;
+  onSearchChange?(event: ChangeEvent<HTMLInputElement>): void;
   searchPlaceholder?: string;
   searchAriaLabel?: string;
   name: ReactNode;
