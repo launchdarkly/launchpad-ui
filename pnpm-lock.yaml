@@ -88,8 +88,8 @@ importers:
       '@commitlint/config-conventional': 17.1.0
       '@etchteam/storybook-addon-status': 4.2.1_biqbaboplfbrettd7655fr4n2y
       '@parcel/css': 1.13.0
-      '@playwright/experimental-ct-react': 1.25.1
-      '@playwright/test': 1.25.1
+      '@playwright/experimental-ct-react': 1.25.0
+      '@playwright/test': 1.25.0
       '@react-stately/collections': 3.4.1_react@18.2.0
       '@storybook/addon-a11y': 7.0.0-alpha.10_biqbaboplfbrettd7655fr4n2y
       '@storybook/addon-essentials': 7.0.0-alpha.10_rresp4ailxkmybejsll2dzszb4
@@ -3312,11 +3312,11 @@ packages:
       node-gyp-build: 4.5.0
     dev: true
 
-  /@playwright/experimental-ct-react/1.25.1:
-    resolution: {integrity: sha512-0XIqKPp7lblVrLmBkxtjMTU6PlN6rJuwTUFEO/jvjx722S+jDAdbAxjInzIb+3Wu7Sr6DgfJqHdBU/gqzI4TtA==}
+  /@playwright/experimental-ct-react/1.25.0:
+    resolution: {integrity: sha512-tF6i6L4NqcKyRwv/zf3WohDifEE65T7VAMmmEGTwHpMImT1p8r/3r6KpRf+7vJ2Kqzo16QTNoShX068Nas7x/w==}
     engines: {node: '>=14'}
     dependencies:
-      '@playwright/test': 1.25.1
+      '@playwright/test': 1.25.0
       '@vitejs/plugin-react': 2.0.0_vite@3.0.0
       vite: 3.0.0
     transitivePeerDependencies:
@@ -3327,13 +3327,13 @@ packages:
       - terser
     dev: true
 
-  /@playwright/test/1.25.1:
-    resolution: {integrity: sha512-IJ4X0yOakXtwkhbnNzKkaIgXe6df7u3H3FnuhI9Jqh+CdO0e/lYQlDLYiyI9cnXK8E7UAppAWP+VqAv6VX7HQg==}
+  /@playwright/test/1.25.0:
+    resolution: {integrity: sha512-j4EZhTTQI3dBeWblE21EV//swwmBtOpIrLdOIJIRv4uqsLdHgBg1z+JtTg+AeC5o2bAXIE26kDNW5A0TimG8Bg==}
     engines: {node: '>=14'}
     hasBin: true
     dependencies:
       '@types/node': 18.6.5
-      playwright-core: 1.25.1
+      playwright-core: 1.25.0
     dev: true
 
   /@pmmmwh/react-refresh-webpack-plugin/0.5.7_metx475lqcp4j5c75za4zf7xbi:
@@ -14680,8 +14680,8 @@ packages:
       find-up: 5.0.0
     dev: true
 
-  /playwright-core/1.25.1:
-    resolution: {integrity: sha512-lSvPCmA2n7LawD2Hw7gSCLScZ+vYRkhU8xH0AapMyzwN+ojoDqhkH/KIEUxwNu2PjPoE/fcE0wLAksdOhJ2O5g==}
+  /playwright-core/1.25.0:
+    resolution: {integrity: sha512-kZ3Jwaf3wlu0GgU0nB8UMQ+mXFTqBIFz9h1svTlNduNKjnbPXFxw7mJanLVjqxHJRn62uBfmgBj93YHidk2N5Q==}
     engines: {node: '>=14'}
     hasBin: true
     dev: true
