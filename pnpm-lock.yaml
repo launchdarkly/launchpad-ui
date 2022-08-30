@@ -217,10 +217,10 @@ importers:
 
   packages/banner:
     specifiers:
-      '@launchpad-ui/alert': workspace:^0.2.3
-      '@launchpad-ui/button': workspace:^0.4.1
-      '@launchpad-ui/icons': workspace:^0.3.3
-      '@launchpad-ui/tokens': workspace:^0.1.5
+      '@launchpad-ui/alert': workspace:~
+      '@launchpad-ui/button': workspace:~
+      '@launchpad-ui/icons': workspace:~
+      '@launchpad-ui/tokens': workspace:~
       classix: ^2.1.13
       react: ^18.2.0
       react-dom: ^18.2.0
