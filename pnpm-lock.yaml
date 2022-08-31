@@ -160,7 +160,34 @@ importers:
 
   apps/remix:
     specifiers:
+      '@launchpad-ui/alert': workspace:~
+      '@launchpad-ui/avatar': workspace:~
+      '@launchpad-ui/banner': workspace:~
+      '@launchpad-ui/button': workspace:~
+      '@launchpad-ui/chip': workspace:~
+      '@launchpad-ui/clipboard': workspace:~
       '@launchpad-ui/core': workspace:~
+      '@launchpad-ui/counter': workspace:~
+      '@launchpad-ui/dropdown': workspace:~
+      '@launchpad-ui/filter': workspace:~
+      '@launchpad-ui/form': workspace:~
+      '@launchpad-ui/icons': workspace:~
+      '@launchpad-ui/markdown': workspace:~
+      '@launchpad-ui/menu': workspace:~
+      '@launchpad-ui/modal': workspace:~
+      '@launchpad-ui/navigation': workspace:~
+      '@launchpad-ui/notification': workspace:~
+      '@launchpad-ui/pagination': workspace:~
+      '@launchpad-ui/popover': workspace:~
+      '@launchpad-ui/progress': workspace:~
+      '@launchpad-ui/progress-bubbles': workspace:~
+      '@launchpad-ui/slider': workspace:~
+      '@launchpad-ui/split-button': workspace:~
+      '@launchpad-ui/tab-list': workspace:~
+      '@launchpad-ui/table': workspace:~
+      '@launchpad-ui/toggle': workspace:~
+      '@launchpad-ui/tokens': workspace:~
+      '@launchpad-ui/tooltip': workspace:~
       '@react-aria/ssr': ^3.3.0
       '@react-stately/collections': ^3.4.0
       '@remix-run/dev': ^1.7.0
@@ -174,7 +201,34 @@ importers:
       react-dom: ^18.2.0
       typescript: ^4.8.2
     dependencies:
+      '@launchpad-ui/alert': link:../../packages/alert
+      '@launchpad-ui/avatar': link:../../packages/avatar
+      '@launchpad-ui/banner': link:../../packages/banner
+      '@launchpad-ui/button': link:../../packages/button
+      '@launchpad-ui/chip': link:../../packages/chip
+      '@launchpad-ui/clipboard': link:../../packages/clipboard
       '@launchpad-ui/core': link:../../packages/core
+      '@launchpad-ui/counter': link:../../packages/counter
+      '@launchpad-ui/dropdown': link:../../packages/dropdown
+      '@launchpad-ui/filter': link:../../packages/filter
+      '@launchpad-ui/form': link:../../packages/form
+      '@launchpad-ui/icons': link:../../packages/icons
+      '@launchpad-ui/markdown': link:../../packages/markdown
+      '@launchpad-ui/menu': link:../../packages/menu
+      '@launchpad-ui/modal': link:../../packages/modal
+      '@launchpad-ui/navigation': link:../../packages/navigation
+      '@launchpad-ui/notification': link:../../packages/notification
+      '@launchpad-ui/pagination': link:../../packages/pagination
+      '@launchpad-ui/popover': link:../../packages/popover
+      '@launchpad-ui/progress': link:../../packages/progress
+      '@launchpad-ui/progress-bubbles': link:../../packages/progress-bubbles
+      '@launchpad-ui/slider': link:../../packages/slider
+      '@launchpad-ui/split-button': link:../../packages/split-button
+      '@launchpad-ui/tab-list': link:../../packages/tab-list
+      '@launchpad-ui/table': link:../../packages/table
+      '@launchpad-ui/toggle': link:../../packages/toggle
+      '@launchpad-ui/tokens': link:../../packages/tokens
+      '@launchpad-ui/tooltip': link:../../packages/tooltip
       '@react-aria/ssr': 3.3.0_react@18.2.0
       '@react-stately/collections': 3.4.1_react@18.2.0
       '@remix-run/node': 1.7.0_biqbaboplfbrettd7655fr4n2y
