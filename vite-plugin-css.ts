@@ -6,6 +6,8 @@ const path = require('path');
 
 const cssImport = (): Plugin => {
   let config: ResolvedConfig;
+  let cssFile: string | undefined = undefined;
+
   return {
     name: 'css-import',
     apply: 'build',
@@ -21,6 +23,14 @@ const cssImport = (): Plugin => {
       }
 
       const files = Object.keys(bundle);
+
+      if (option.format === 'es') {
+        cssFile = files.find((v) => v.endsWith('.css'));
+      }
+
+      if (cssFile === undefined) {
+        return;
+      }
 
       for (const file of files) {
         // eslint-disable-next-line @typescript-eslint/ban-ts-comment
