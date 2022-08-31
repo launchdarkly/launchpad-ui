@@ -28,7 +28,7 @@
     "build": "vite build -c ../../vite.config.ts && tsc --project tsconfig.build.json",
     "clean": "rm -rf dist",
     "e2e": "exit 0",
-    "lint": "eslint '**/*.{ts,tsx,js}' && stylelint '**/*.css' --ignore-path ../../.stylelintignore",
+    "lint": "eslint '**/*.{ts,tsx,js}'",
     "test": "exit 0"
   },
   "dependencies": {
