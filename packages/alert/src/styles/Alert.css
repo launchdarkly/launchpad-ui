@@ -8,19 +8,6 @@
   --hsl-success-bg-color-alpha10: hsl(142.1 70.9% 39% / 0.1);
   --hsl-warning-bg-color-alpha10: hsl(43.1 100% 37.6% / 0.1);
   --hsl-error-bg-color-alpha10: hsl(0 75.5% 61.6% / 0.1);
-  --Alert-closeButton-color-border: transparent;
-  --Alert-closeButton-color-fill: var(--color-gray-700);
-  --Alert-closeButton-color-text: var(--color-gray-700);
-  --Alert-closeButton-icon-color-background-hover: hsl(0 0 100% / 0.1);
-  --Alert-closeButton-icon-color-background-focus: hsl(0 0 100% / 0.1);
-  --Alert-closeButton-icon-color-background-active: hsl(0 0% 12.9% / 0.7);
-  --Alert-closeButton-icon-box-shadow-hover: 0 0 0 1px hsl(216 2.4% 58.6% / 0.7),
-    0 0 0 4px hsl(0 0% 12.9% / 0.1);
-  --Alert-closeButton-icon-box-shadow-focus: 0 0 0 1px hsl(225 1.8% 43.5% / 0.7),
-    0 0 0 4px hsl(0 0% 12.9% / 0.1);
-  --Alert-closeButton-icon-box-shadow-active: 0 0 0 1px var(--color-black-200),
-    0 0 0 4px hsl(0 0% 12.9% / 0.1);
-  --Alert-closeButton-icon-color-active: var(--color-text-inverse);
   --reskin-success-green-light: var(--color-system-green-200);
   --reskin-success-green-base: var(--color-system-green-700);
   --reskin-info-blue-light: var(--color-blue-200);
@@ -189,6 +176,7 @@
 
 .Alert-content {
   margin-left: 0.5rem;
+  margin-right: auto;
 }
 
 .Alert-content a:not(.Button) {
@@ -227,59 +215,4 @@
 .Alert ul {
   list-style-position: outside;
   margin-left: 2rem;
-}
-
-.Alert-close.Button {
-  margin-left: auto;
-
-  & svg {
-    fill: var(--Alert-closeButton-color-fill);
-  }
-}
-
-.Alert-close.Button--icon.Button--default {
-  background-color: transparent;
-  border-color: var(--Alert-closeButton-color-border);
-  color: var(--Alert-closeButton-color-text);
-
-  & .Icon {
-    background-color: transparent;
-    border-radius: 50%;
-    fill: var(--Alert-closeButton-color-fill);
-    width: 2rem;
-    height: 2rem;
-    padding: 0.2rem;
-  }
-}
-
-.Alert-close.Button--icon.Button--default:hover {
-  background-color: transparent;
-
-  & .Icon {
-    background-color: var(--Alert-closeButton-icon-color-background-hover);
-    box-shadow: var(--Alert-closeButton-icon-box-shadow-hover);
-  }
-}
-
-.Alert-close.Button--icon.Button--default:focus {
-  box-shadow: none;
-
-  & .Icon {
-    background-color: var(--Alert-closeButton-icon-color-background-focus);
-    box-shadow: var(--Alert-closeButton-icon-box-shadow-focus);
-  }
-}
-
-.Alert-close.Button--icon.Button--default:active {
-  background-color: transparent;
-
-  & .Icon {
-    background-color: var(--Alert-closeButton-icon-color-background-active);
-    box-shadow: var(--Alert-closeButton-icon-box-shadow-active);
-    color: var(--Alert-closeButton-icon-color-active);
-
-    & > svg {
-      fill: currentcolor;
-    }
-  }
 }

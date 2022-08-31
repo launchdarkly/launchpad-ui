@@ -40,9 +40,6 @@
   --Notification-color-border-warning: var(--reskin-warn-gold-base);
   --Notification-color-border-error: var(--reskin-error-red-base);
   --Notification-color-text: var(--color-text-subtle-primary);
-  --Notification-closeButton-color-border: var(--color-gray-600);
-  --Notification-closeButton-color-fill: var(--color-gray-600);
-  --Notification-closeButton-color-text: var(--color-gray-600);
   --Notification-detailsExpand-color-text: var(--color-gray-800);
   --Notification-detailsExpand-color-text-active: var(--color-black-200);
 }
@@ -67,15 +64,6 @@
   & .Notification-body {
     padding: 1rem 1.2rem 1rem 0.8rem;
   }
-}
-
-.Notification-close.Button {
-  min-width: 2.2rem;
-  width: 2.2rem;
-  height: 2.2rem;
-  margin-left: auto;
-  margin-top: 1.1rem;
-  margin-right: 1.1rem;
 }
 
 .Notification-icon {
@@ -144,38 +132,6 @@ will zero out that positioning adjustment for now */
   & .Notification-icon .Icon {
     fill: var(--Notification-icon-color-warning);
     line-height: 1;
-  }
-}
-
-.Notification-close.Button--icon.Button--default {
-  background-color: transparent;
-  border-color: var(--Notification-closeButton-color-border);
-  color: var(--Notification-closeButton-color-text);
-
-  & .Icon {
-    background-color: transparent;
-    border-radius: 50%;
-    fill: var(--Notification-closeButton-color-fill);
-    width: 2rem;
-    height: 2rem;
-    padding: 0.2rem;
-  }
-}
-
-.Notification-close.Button--icon.Button--default:hover {
-  background-color: transparent;
-
-  & .Icon {
-    background-color: hsl(0 0% 12.9% / 0.1);
-    box-shadow: 0 0 0 1px hsl(220 1.7% 35.1% / 0.7), 0 0 0 4px hsl(0 0% 12.9% / 0.1);
-  }
-}
-
-.Notification-close.Button--icon.Button--default:focus {
-  box-shadow: none;
-
-  & .Icon {
-    box-shadow: 0 0 0 1px hsl(220 1.7% 35.1% / 0.7), 0 0 0 4px hsl(0 0% 12.9% / 0.1);
   }
 }
 
@@ -263,19 +219,5 @@ will zero out that positioning adjustment for now */
   & li + li,
   & p + p {
     margin-top: 5px;
-  }
-}
-
-.Notification-close.Button--icon.Button--default:active {
-  background-color: transparent;
-
-  & .Icon {
-    background-color: hsl(0 0% 12.9% / 0.7);
-    box-shadow: 0 0 0 1px var(--color-black-200), 0 0 0 4px hsl(0 0% 12.9% / 0.1);
-    color: var(--color-white);
-
-    & > svg {
-      fill: currentcolor;
-    }
   }
 }

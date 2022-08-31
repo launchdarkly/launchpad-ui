@@ -193,6 +193,40 @@
   color: var(--color-gray-500);
 }
 
+/* ------- CLOSE ICON BUTTON ------- */
+
+.Button.Button--close {
+  background-color: transparent;
+  fill: var(--color-gray-700);
+}
+
+.Button.Button--close svg {
+  fill: currentcolor;
+}
+
+.Button.Button--close:hover {
+  background-color: hsl(0 0 100% / 0.1);
+  box-shadow: 0 0 0 1px hsl(216 2.4% 58.6% / 0.7), 0 0 0 4px hsl(0 0% 12.9% / 0.1);
+}
+
+.Button.Button--close:focus {
+  background-color: hsl(0 0 100% / 0.1);
+  box-shadow: 0 0 0 1px hsl(225 1.8% 43.5% / 0.7), 0 0 0 4px hsl(0 0% 12.9% / 0.1);
+}
+
+.Button.Button--close:active {
+  background-color: hsl(0 0% 12.9% / 0.7);
+  box-shadow: 0 0 0 1px var(--color-black-200), 0 0 0 4px hsl(0 0% 12.9% / 0.1);
+  color: var(--color-text-inverse);
+}
+
+.Button.Button--close[disabled],
+.Button.Button--close[disabled]:hover {
+  background-color: transparent;
+  border: none;
+  color: var(--color-gray-500);
+}
+
 /* ------- DESTRUCTIVE ------- */
 
 .Button--destructive {

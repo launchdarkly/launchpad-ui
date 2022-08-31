@@ -22,6 +22,7 @@ enum ButtonKind {
   DESTRUCTIVE = 'destructive',
   MINIMAL = 'minimal',
   LINK = 'link',
+  CLOSE = 'close',
 }
 
 enum ButtonSize {

@@ -21,20 +21,6 @@
   --Banner-icon-color-warning: var(--color-system-yellow-700);
   --Banner-icon-color-error: var(--color-system-red-700);
   --Banner-icon-color-striped: var(--color-black-100);
-  --Banner-closeButton-color-border: hsl(225 1.8% 43.5% / 0.6);
-  --Banner-closeButton-color-fill: var(--color-gray-600);
-  --Banner-closeButton-color-text: var(--color-gray-600);
-  --Banner-closeButton-icon-color-background-hover: hsl(0 0 100% / 0.1);
-  --Banner-closeButton-icon-color-background-focus: hsl(0 0 100% / 0.1);
-  --Banner-closeButton-icon-color-background-active: hsl(0 0% 15.7% / 0.7);
-  --Banner-closeButton-icon-box-shadow-hover: 0 0 0 1px hsl(216 2.4% 58.6% / 0.6),
-    0 0 0 4px hsl(0 0% 15.7% / 0.1);
-  --Banner-closeButton-icon-box-shadow-focus: 0 0 0 1px hsl(225 1.8% 43.5% / 0.6),
-    0 0 0 4px hsl(0 0% 15.7% / 0.1);
-  --Banner-closeButton-icon-box-shadow-active: 0 0 0 1px var(--color-black-100),
-    0 0 0 4px hsl(0 0% 15.7% / 0.1);
-  --Banner-closeButton-icon-color-active: var(--color-white);
-  --page-gutter-width: 1rem;
 }
 
 @media (--tablet) {
@@ -91,17 +77,6 @@
   top: 0;
 }
 
-.Banner-close {
-  min-width: 2.2rem;
-  width: 2.2rem;
-  height: 2.2rem;
-  margin-left: auto;
-
-  & svg {
-    fill: var(--Banner-closeButton-color-fill);
-  }
-}
-
 .Banner--success .Banner-icon svg {
   fill: var(--Banner-icon-color-success);
 }
@@ -120,49 +95,4 @@
 
 .Banner--striped .Banner-icon .Icon {
   fill: var(--Banner-icon-color-striped);
-}
-
-.Banner-close.Button--icon {
-  background-color: transparent;
-
-  & .Icon {
-    background-color: transparent;
-    border-radius: 50%;
-    fill: var(--Banner-closeButton-color-fill);
-    width: 2rem;
-    height: 2rem;
-    padding: 0.2rem;
-  }
-}
-
-.Banner-close.Button--icon:hover {
-  background-color: transparent;
-
-  & .Icon {
-    background-color: var(--Banner-closeButton-icon-color-background-hover);
-    box-shadow: var(--Banner-closeButton-icon-box-shadow-hover);
-  }
-}
-
-.Banner-close.Button--icon:focus {
-  box-shadow: none;
-
-  & .Icon {
-    background-color: var(--Banner-closeButton-icon-color-background-focus);
-    box-shadow: var(--Banner-closeButton-icon-box-shadow-focus);
-  }
-}
-
-.Banner-close.Button--icon:active {
-  background-color: transparent;
-
-  & .Icon {
-    background-color: var(--Banner-closeButton-icon-color-background-active);
-    box-shadow: var(--Banner-closeButton-icon-box-shadow-active);
-    color: var(--Banner-closeButton-icon-color-active);
-
-    & > svg {
-      fill: currentcolor;
-    }
-  }
 }

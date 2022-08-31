@@ -1,6 +1,6 @@
 import type { AlertKind } from '@launchpad-ui/alert';
 
-import { IconButton, IconButtonSize } from '@launchpad-ui/button';
+import { ButtonKind, IconButton, IconButtonSize } from '@launchpad-ui/button';
 import { Close, IconSize, KindIcon } from '@launchpad-ui/icons';
 import { cx } from 'classix';
 
@@ -27,6 +27,7 @@ const Banner = ({ kind, className, children, onDismiss, dismissible, testId }: B
           size={IconButtonSize.SMALL}
           className="Banner-close"
           onClick={onDismiss}
+          kind={ButtonKind.CLOSE}
           data-test-id={testId ? `${testId}-dismiss-button` : undefined}
         />
       )}

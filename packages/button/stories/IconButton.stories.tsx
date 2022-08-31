@@ -165,6 +165,14 @@ export const Destructive: Story = {
   },
 };
 
+export const Close: Story = {
+  args: {
+    icon,
+    'aria-label': 'Button',
+    kind: ButtonKind.CLOSE,
+  },
+};
+
 export const AsAnchorChild: Story = {
   args: {
     children: <a href="/">Anchor tag</a>,
