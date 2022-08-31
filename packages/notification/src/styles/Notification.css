@@ -49,7 +49,6 @@
   display: flex;
   position: relative;
   min-height: 4.4rem;
-  padding: 0;
   font-size: var(--osmo-font-size-base);
   font-weight: var(--font-weight-medium);
   line-height: var(--line-height-small);
@@ -60,15 +59,20 @@
   border-radius: var(--Notification-border-radius);
   box-shadow: var(--reskin-box-shadow-triple);
   box-sizing: border-box;
+  padding: 1rem 1.2rem;
 
   & .Notification-body {
-    padding: 1rem 1.2rem 1rem 0.8rem;
+    margin: 0 1.2rem 0 0.8rem;
+    flex-grow: 1;
   }
+}
+
+.Notification-closeIcon {
+  margin-top: 0.1rem;
 }
 
 .Notification-icon {
   line-height: 1.25;
-  padding: 1rem 0 1rem 1.2rem;
 
   & .Icon {
     width: 2.4rem;

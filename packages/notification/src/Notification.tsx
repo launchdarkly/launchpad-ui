@@ -1,7 +1,7 @@
 import type { NotificationLevel } from './types';
 import type { KeyboardEvent, ReactNode } from 'react';
 
-import { ButtonKind, IconButton } from '@launchpad-ui/button';
+import { ButtonKind, IconButton, IconButtonSize } from '@launchpad-ui/button';
 import { CopyToClipboard } from '@launchpad-ui/clipboard';
 import { KindIcon, Close, ExpandMore, IconSize } from '@launchpad-ui/icons';
 import { FocusScope } from '@react-aria/focus';
@@ -132,10 +132,12 @@ const Notification = ({
       </div>
       <IconButton
         icon={<Close size={IconSize.SMALL} />}
+        size={IconButtonSize.SMALL}
         onClick={handleCloseClick}
         aria-label="Close"
         kind={ButtonKind.CLOSE}
         tabIndex={0}
+        className="Notification-closeIcon"
         data-test-id="notification-close"
       />
     </>

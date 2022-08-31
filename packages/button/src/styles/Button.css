@@ -205,7 +205,7 @@
 }
 
 .Button.Button--close:hover {
-  background-color: hsl(0 0 100% / 0.1);
+  background-color: rgb(33 33 33 / 0.1);
   box-shadow: 0 0 0 1px hsl(216 2.4% 58.6% / 0.7), 0 0 0 4px hsl(0 0% 12.9% / 0.1);
 }
 
