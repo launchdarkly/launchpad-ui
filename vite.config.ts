@@ -6,6 +6,7 @@ import react from '@vitejs/plugin-react';
 import { defineConfig } from 'vite';
 
 import tsconfig from './tsconfig.json';
+import { cssImport } from './vite-plugin-css';
 
 const paths = tsconfig.compilerOptions.paths;
 const alias: Record<string, string> = {};
@@ -17,7 +18,7 @@ Object.keys(paths).forEach((key) => {
 const packageJSON = require(path.resolve('./package.json'));
 
 export default defineConfig({
-  plugins: [react()],
+  plugins: [react(), cssImport()],
   resolve: {
     alias,
   },
