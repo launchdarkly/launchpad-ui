@@ -2,7 +2,7 @@
 
 :root {
   --Banner-color-border-bottom-info: var(--color-blue-700);
-  --Banner-color-border-bottom-success: var(--color-border);
+  --Banner-color-border-bottom-success: var(--color-system-green-700);
   /* stylelint-disable-next-line value-keyword-case */
   --Banner-color-border-bottom-warning: var(--color-system-yellow-700);
   --Banner-color-border-bottom-error: var(--color-system-red-700);
@@ -46,7 +46,8 @@
   line-height: 1.45;
   white-space: normal;
   background-color: ;
-  border-radius: 2px;
+  border-bottom: 1px;
+  border-bottom-style: solid;
 }
 
 .Banner-heading {
@@ -67,21 +68,22 @@
 
 .Banner--error {
   background-color: var(--Banner-color-background-error);
-  border-bottom: 1px solid var(--Banner-color-border-bottom-error);
+  border-bottom-color: var(--Banner-color-border-bottom-error);
 }
 
 .Banner--warning {
   background-color: var(--Banner-color-background-warning);
-  border-bottom: 1px solid var(--Banner-color-border-bottom-warning);
+  border-bottom-color: var(--Banner-color-border-bottom-warning);
 }
 
 .Banner--info {
   background-color: var(--Banner-color-background-info);
-  border-bottom: 1px solid var(--Banner-color-border-bottom-info);
+  border-bottom-color: var(--Banner-color-border-bottom-info);
 }
 
 .Banner--success {
   background-color: var(--Banner-color-background-success);
+  border-bottom-color: var(--Banner-color-border-bottom-success);
 }
 
 /* reset Icon--info positioning hack */

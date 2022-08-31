@@ -27,14 +27,14 @@ const Banner = ({
 }: BannerProps) => {
   return (
     <div className={cx('Banner', `Banner--${kind}`, className)} data-test-id={testId}>
-      {<KindIcon kind={kind} className="Banner-icon" />}
+      <KindIcon kind={kind} className="Banner-icon" />
       <div className="Banner-content">
         {title && <h4 className="Banner-heading">{title}</h4>}
-        <div> {children}</div>
+        <div>{children}</div>
       </div>
       {dismissible && (
         <Button
-          aria-label="Close this notification."
+          aria-label="Close banner"
           type={ButtonType.ICON}
           icon={<Close size={IconSize.SMALL} />}
           className="Banner-close"

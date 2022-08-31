@@ -72,8 +72,8 @@ export const WithStackedBanners: Story = {
   render: () => {
     return (
       <>
-        <Banner kind={AlertKind.ERROR}>children</Banner>
-        <Banner kind={AlertKind.ERROR}>children</Banner>
+        <Banner kind={AlertKind.ERROR}>This is an example of Banners that are stacked</Banner>
+        <Banner kind={AlertKind.ERROR}>This is an example of Banners that are stacked</Banner>
       </>
     );
   },
