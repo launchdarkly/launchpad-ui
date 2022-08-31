@@ -13,9 +13,10 @@
 - Add new `IconButton` component
 - Handle button links with `asChild` instead of internally in `Button`
 - Add minimal variant for both `Button` and `IconButton`
+- Add close variant for `IconButton`
 - Consume `IconButton` in downstream components
 
-[Button]: Add new `IconButton` component, move link button implementation to asChild, and add minimal variant for both `Button` and `IconButton`
+[Button]: Add new `IconButton` component, move link button implementation to asChild, and add minimal and close variants
 [SplitButton]: Remove `HTMLAnchorElement` type from `SplitButtonMainButton`
 [Alert]: Consume `IconButton` instead of `Button`
 [Banner]: Consume `IconButton` instead of `Button`
