@@ -1,4 +1,4 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
+/*
 const tokens = require('../dist/index');
 
 export default {
@@ -38,3 +38,4 @@ export const Colors = {
     </>
   ),
 };
+*/

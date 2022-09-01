@@ -1,7 +1,6 @@
 import type { ComponentStoryObj, StoryFn } from '@storybook/react';
 
 import { Person } from '../../icons/src';
-import { IconSize } from '../../icons/src/types';
 import { Avatar, AvatarSize } from '../src';
 
 export default {
@@ -15,7 +14,6 @@ export default {
   },
   argTypes: {
     size: {
-      defaultValue: IconSize.MEDIUM,
       table: {
         category: 'Presentation',
       },
