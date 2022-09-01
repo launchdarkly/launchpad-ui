@@ -1,4 +1,5 @@
 import type { PopoverProps } from '@launchpad-ui/popover';
+import type { ReactNode } from 'react';
 
 import { Popover, PopoverInteractionKind } from '@launchpad-ui/popover';
 import { cx } from 'classix';
@@ -8,7 +9,7 @@ import './styles/Tooltip.css';
 
 type TooltipProps = Omit<PopoverProps, 'children'> & {
   className?: string;
-  children?: React.ReactNode;
+  children?: ReactNode;
 };
 
 const TooltipBase = ({

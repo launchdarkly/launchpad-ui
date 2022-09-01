@@ -1,4 +1,5 @@
 import type { IconProps } from '@launchpad-ui/icons';
+import type { ComponentType } from 'react';
 
 import { IconSize, Person } from '@launchpad-ui/icons';
 import { cx } from 'classix';
@@ -14,7 +15,7 @@ type AvatarProps = {
   size?: AvatarSize;
   initials?: string;
   'aria-label'?: string;
-  defaultIcon?: React.ComponentType<IconProps>;
+  defaultIcon?: ComponentType<IconProps>;
   testId?: string;
   className?: string;
 };

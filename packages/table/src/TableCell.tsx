@@ -1,3 +1,5 @@
+import type { ReactNode } from 'react';
+
 import { cx } from 'classix';
 
 import './styles/Table.css';
@@ -5,7 +7,7 @@ import { TableAlignType } from './types';
 
 type CommonTableCellProps = {
   className?: string;
-  children: React.ReactNode;
+  children: ReactNode;
   align?: TableAlignType;
   colSpan?: number;
   rowSpan?: number;

@@ -1,3 +1,5 @@
+import type { ReactNode } from 'react';
+
 import { ButtonKind, IconButton, IconButtonSize } from '@launchpad-ui/button';
 import { Close, IconSize, KindIcon } from '@launchpad-ui/icons';
 import { cx } from 'classix';
@@ -10,7 +12,7 @@ type AlertProps = {
   /**
    * Child nodes to pass into the Alert.
    */
-  children?: React.ReactNode;
+  children?: ReactNode;
   /**
    * Custom classname(s) to add to the Alert.
    */

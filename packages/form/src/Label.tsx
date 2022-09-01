@@ -1,3 +1,5 @@
+import type { CSSProperties, ReactNode } from 'react';
+
 import { cx } from 'classix';
 
 import { RequiredAsterisk } from './RequiredAsterisk';
@@ -8,9 +10,9 @@ type LabelProps = {
   required?: boolean;
   optional?: boolean;
   disabled?: boolean;
-  children?: React.ReactNode;
+  children?: ReactNode;
   className?: string;
-  style?: React.CSSProperties;
+  style?: CSSProperties;
   hidden?: boolean;
 };
 

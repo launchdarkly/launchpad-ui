@@ -1,5 +1,5 @@
 import type { FilterOption } from './FilterMenu';
-import type { ReactNode } from 'react';
+import type { ChangeEvent, ReactNode } from 'react';
 
 import { Dropdown } from '@launchpad-ui/dropdown';
 import { cx } from 'classix';
@@ -11,7 +11,7 @@ const SEARCH_INPUT_THRESHOLD = 4;
 
 type AppliedFilterProps = {
   searchValue?: string;
-  onSearchChange?(event: React.ChangeEvent<HTMLInputElement>): void;
+  onSearchChange?(event: ChangeEvent<HTMLInputElement>): void;
   onClearFilter?(): void;
   searchPlaceholder?: string;
   name?: ReactNode;

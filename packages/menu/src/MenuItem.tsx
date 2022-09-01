@@ -1,5 +1,6 @@
 import type { Icon } from '@launchpad-ui/icons';
 import type { PopoverPlacement } from '@launchpad-ui/popover';
+import type { ComponentPropsWithRef, ElementType, PropsWithRef, ReactElement } from 'react';
 
 import { IconSize } from '@launchpad-ui/icons';
 import { Tooltip } from '@launchpad-ui/tooltip';
@@ -13,12 +14,12 @@ import './styles/Menu.css';
 // Merge two types and get rid of overlapping definitions
 type Merge<T, U> = Omit<T, keyof U> & U;
 
-type PropsWithComponent<P, T extends React.ElementType> = P & { component?: T };
+type PropsWithComponent<P, T extends ElementType> = P & { component?: T };
 
-type PolymorphicPropsWithRef<P, T extends React.ElementType> = Merge<
+type PolymorphicPropsWithRef<P, T extends ElementType> = Merge<
   T extends keyof JSX.IntrinsicElements
-    ? React.PropsWithRef<JSX.IntrinsicElements[T]>
-    : React.ComponentPropsWithRef<T>,
+    ? PropsWithRef<JSX.IntrinsicElements[T]>
+    : ComponentPropsWithRef<T>,
   PropsWithComponent<P, T>
 >;
 
@@ -28,7 +29,7 @@ type MenuItemOwnProps = {
   disabled?: boolean;
   nested?: boolean;
   groupHeader?: boolean;
-  tooltip?: string | React.ReactElement;
+  tooltip?: string | ReactElement;
   tooltipOptions?: typeof Tooltip;
   tooltipPlacement?: PopoverPlacement;
   asChild?: boolean;
@@ -36,10 +37,7 @@ type MenuItemOwnProps = {
 
 const defaultElement = 'button';
 
-type MenuItemProps<
-  P,
-  T extends React.ElementType = typeof defaultElement
-> = PolymorphicPropsWithRef<
+type MenuItemProps<P, T extends ElementType = typeof defaultElement> = PolymorphicPropsWithRef<
   | (MenuItemOwnProps & {
       item: P; // Infer the type if it is included
     })
@@ -49,7 +47,7 @@ type MenuItemProps<
   T
 >;
 
-const MenuItem = <P, T extends React.ElementType = typeof defaultElement>({
+const MenuItem = <P, T extends ElementType = typeof defaultElement>({
   ...props
 }: MenuItemProps<P, T>) => {
   const {
@@ -72,7 +70,7 @@ const MenuItem = <P, T extends React.ElementType = typeof defaultElement>({
     ...rest
   } = props;
 
-  const Component: React.ElementType = component || (asChild ? Slot : defaultElement);
+  const Component: ElementType = component || (asChild ? Slot : defaultElement);
 
   const renderedItem = (
     <FocusRing focusRingClass="has-focus">
@@ -129,7 +127,7 @@ type MenuItemLinkOwnProps = {
   newTab?: boolean;
 };
 
-type MenuItemLinkProps<P, T extends React.ElementType = typeof Link> =
+type MenuItemLinkProps<P, T extends ElementType = typeof Link> =
   | Merge<Omit<MenuItemProps<P, T>, 'component' | 'item'>, MenuItemLinkOwnProps> &
       (
         | {
@@ -143,7 +141,7 @@ type MenuItemLinkProps<P, T extends React.ElementType = typeof Link> =
 // By default, this is a Link component whenever useHistory is
 // explicitly not false
 // TODO: deprecate this component
-const MenuItemLink = <P, T extends React.ElementType = typeof Link>({
+const MenuItemLink = <P, T extends ElementType = typeof Link>({
   to,
   disabled = false,
   useHistory = true,

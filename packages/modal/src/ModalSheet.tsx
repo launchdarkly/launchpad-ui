@@ -1,3 +1,5 @@
+import type { ReactNode } from 'react';
+
 import { Progress } from '@launchpad-ui/progress';
 import { cx } from 'classix';
 import { Suspense } from 'react';
@@ -11,7 +13,7 @@ type ModalSheetProps = {
   onCancel?(): void;
   size?: 'small' | 'medium' | 'large' | 'x-large' | 'full';
   withCloseButton?: boolean;
-  children: React.ReactNode;
+  children: ReactNode;
 };
 
 const ModalSheet = ({

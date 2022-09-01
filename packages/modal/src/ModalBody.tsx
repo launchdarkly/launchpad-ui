@@ -1,11 +1,13 @@
+import type { KeyboardEvent, ReactNode } from 'react';
+
 import { cx } from 'classix';
 
 import './styles/Modal.css';
 
 type ModalBodyProps = {
-  children: React.ReactNode;
+  children: ReactNode;
   className?: string;
-  onKeyDown?: (e: React.KeyboardEvent) => void;
+  onKeyDown?: (e: KeyboardEvent) => void;
 };
 
 const ModalBody = ({ className, children, ...other }: ModalBodyProps) => {

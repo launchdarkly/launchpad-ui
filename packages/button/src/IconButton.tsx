@@ -1,3 +1,11 @@
+import type {
+  ButtonHTMLAttributes,
+  ElementType,
+  KeyboardEventHandler,
+  MouseEvent,
+  ReactElement,
+} from 'react';
+
 import { Slot } from '@radix-ui/react-slot';
 import { cx } from 'classix';
 import { isValidElement, cloneElement, forwardRef, memo } from 'react';
@@ -5,9 +13,9 @@ import { isValidElement, cloneElement, forwardRef, memo } from 'react';
 import './styles/Button.css';
 import { ButtonKind, IconButtonSize } from './types';
 
-type IconButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
+type IconButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
   kind?: ButtonKind;
-  icon: React.ReactElement<{ size?: string; key: string; 'aria-hidden': boolean }>;
+  icon: ReactElement<{ size?: string; key: string; 'aria-hidden': boolean }>;
   size?: IconButtonSize;
   disabled?: boolean;
   'aria-label': string;
@@ -28,7 +36,7 @@ const IconButtonComponent = forwardRef<HTMLButtonElement, IconButtonProps>((prop
     ...rest
   } = props;
 
-  const Component: React.ElementType = asChild ? Slot : 'button';
+  const Component: ElementType = asChild ? Slot : 'button';
 
   const classes = cx(
     'IconButton',
@@ -54,15 +62,13 @@ const IconButtonComponent = forwardRef<HTMLButtonElement, IconButtonProps>((prop
     return clonedIcon;
   };
 
-  const handleClick = (
-    event: React.MouseEvent<HTMLAnchorElement> & React.MouseEvent<HTMLButtonElement>
-  ) => {
+  const handleClick = (event: MouseEvent<HTMLAnchorElement> & MouseEvent<HTMLButtonElement>) => {
     if (disabled) return event.preventDefault();
 
     onClick && onClick(event);
   };
 
-  const handleKeyDown: React.KeyboardEventHandler<HTMLButtonElement> = (event) => {
+  const handleKeyDown: KeyboardEventHandler<HTMLButtonElement> = (event) => {
     if (event.target instanceof HTMLAnchorElement) {
       const spacebarKeys = ['Spacebar', ' '];
 

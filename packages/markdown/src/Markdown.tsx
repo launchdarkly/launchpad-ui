@@ -1,4 +1,4 @@
-import type { RefObject } from 'react';
+import type { ElementType, RefObject } from 'react';
 
 import { cx } from 'classix';
 import DOMPurify from 'isomorphic-dompurify';
@@ -20,7 +20,7 @@ type MarkdownProps = {
   className?: string;
   baseUri?: string;
   allowedTags?: string[];
-  container?: React.ElementType;
+  container?: ElementType;
   textRef?: RefObject<HTMLElement>;
   testId?: string;
 };

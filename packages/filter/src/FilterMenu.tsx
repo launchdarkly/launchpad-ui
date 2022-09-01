@@ -1,5 +1,5 @@
 import type { MenuProps } from '@launchpad-ui/menu';
-import type { ReactNode } from 'react';
+import type { ChangeEvent, ReactNode } from 'react';
 
 import { Button, ButtonKind } from '@launchpad-ui/button';
 import { Check } from '@launchpad-ui/icons';
@@ -24,7 +24,7 @@ type FilterMenuProps = Pick<MenuProps<string>, 'enableVirtualization' | 'size'> 
   searchValue?: string;
   searchPlaceholder?: string;
   searchAriaLabel?: string;
-  onSearchChange?(event: React.ChangeEvent<HTMLInputElement>): void;
+  onSearchChange?(event: ChangeEvent<HTMLInputElement>): void;
   onSelect?(): void;
   isLoading?: boolean;
   disabledOptionTooltip?: string;

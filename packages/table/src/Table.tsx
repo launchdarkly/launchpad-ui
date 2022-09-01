@@ -1,3 +1,5 @@
+import type { ReactNode } from 'react';
+
 import { cx } from 'classix';
 
 import './styles/Table.css';
@@ -5,7 +7,7 @@ import './styles/Table.css';
 type TableProps = {
   auto?: boolean;
   compact?: boolean;
-  children: React.ReactNode;
+  children: ReactNode;
   className?: string;
   isResourceTable?: boolean;
   summary?: string;

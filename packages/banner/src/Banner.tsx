@@ -1,4 +1,5 @@
 import type { AlertKind } from '@launchpad-ui/alert';
+import type { ReactNode } from 'react';
 
 import { ButtonKind, IconButton, IconButtonSize } from '@launchpad-ui/button';
 import { Close, IconSize, KindIcon } from '@launchpad-ui/icons';
@@ -9,7 +10,7 @@ import './styles/Banner.css';
 type BannerProps = {
   kind: AlertKind;
   className?: string;
-  children: React.ReactNode;
+  children: ReactNode;
   onDismiss?(): void;
   dismissible?: boolean;
   testId?: string;

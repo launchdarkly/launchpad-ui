@@ -1,4 +1,6 @@
 import type { LinksFunction, MetaFunction } from '@remix-run/node';
+import type { PropsWithChildren, ReactNode } from 'react';
+
 import { SSRProvider } from '@react-aria/ssr';
 import {
   Links,
@@ -90,7 +92,7 @@ export default function App() {
   );
 }
 
-function Document({ children, title }: { children: React.ReactNode; title?: string }) {
+function Document({ children, title }: { children: ReactNode; title?: string }) {
   return (
     <html lang="en">
       <head>
@@ -108,7 +110,7 @@ function Document({ children, title }: { children: React.ReactNode; title?: stri
   );
 }
 
-function Layout({ children }: React.PropsWithChildren<unknown>) {
+function Layout({ children }: PropsWithChildren<unknown>) {
   return <main>{children}</main>;
 }
 

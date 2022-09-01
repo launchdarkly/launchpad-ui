@@ -70,6 +70,13 @@ module.exports = {
         ignoreNonDOM: true,
       },
     ],
+    'no-restricted-syntax': [
+      'error',
+      {
+        selector: 'TSQualifiedName[left.name=React]',
+        message: "Don't use the React namespace. Import the type instead.",
+      },
+    ],
   },
   overrides: [
     {

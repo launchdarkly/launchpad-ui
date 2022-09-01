@@ -1,4 +1,4 @@
-import type { Ref } from 'react';
+import type { ReactNode, Ref } from 'react';
 
 import { cx } from 'classix';
 import { forwardRef } from 'react';
@@ -9,7 +9,7 @@ import { NavKind } from './types';
 type NavBaseProps = {
   kind?: NavKind;
   className?: string;
-  children?: React.ReactNode;
+  children?: ReactNode;
   role?: string;
   innerRef?: Ref<HTMLDivElement>;
 };

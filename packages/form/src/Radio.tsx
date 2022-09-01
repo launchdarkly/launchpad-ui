@@ -1,3 +1,5 @@
+import type { ChangeEvent, CSSProperties, ReactNode } from 'react';
+
 import { cx } from 'classix';
 
 import { Label } from './Label';
@@ -19,7 +21,7 @@ type RadioProps = {
   /**
    * Label for the Checkbox
    */
-  children?: React.ReactNode;
+  children?: ReactNode;
   /**
    * Custom classname(s) to add to the Radio.
    */
@@ -43,11 +45,11 @@ type RadioProps = {
   /**
    * The function to pass into the Radio onChange synthetic event handler.
    */
-  onChange?(e: React.ChangeEvent): void;
+  onChange?(e: ChangeEvent): void;
   /**
    * Optional inline CSS styles to add to the Radio label.
    */
-  labelStyle?: React.CSSProperties;
+  labelStyle?: CSSProperties;
   /**
    * The value passed into Radio.
    */

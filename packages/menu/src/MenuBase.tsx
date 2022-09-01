@@ -1,11 +1,12 @@
 import type { MenuSize } from './types';
+import type { ComponentPropsWithRef } from 'react';
 
 import { cx } from 'classix';
 import { forwardRef } from 'react';
 
 import './styles/Menu.css';
 
-type MenuBaseProps = React.ComponentPropsWithRef<'div'> & {
+type MenuBaseProps = ComponentPropsWithRef<'div'> & {
   isVirtual?: boolean;
   size?: MenuSize;
 };

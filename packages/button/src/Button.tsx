@@ -1,4 +1,12 @@
 import type { ButtonSize } from './types';
+import type {
+  ButtonHTMLAttributes,
+  ElementType,
+  KeyboardEventHandler,
+  MouseEvent,
+  ReactElement,
+  ReactNode,
+} from 'react';
 
 import { Slot } from '@radix-ui/react-slot';
 import { cx } from 'classix';
@@ -7,14 +15,14 @@ import { isValidElement, cloneElement, forwardRef, memo } from 'react';
 import './styles/Button.css';
 import { ButtonKind } from './types';
 
-type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
+type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
   isLoading?: boolean;
   loadingText?: string | JSX.Element;
   size?: ButtonSize;
   kind?: ButtonKind;
   fit?: boolean;
   disabled?: boolean;
-  icon?: React.ReactElement<{ size?: string; key: string; 'aria-hidden': boolean }>;
+  icon?: ReactElement<{ size?: string; key: string; 'aria-hidden': boolean }>;
   renderIconFirst?: boolean;
   asChild?: boolean;
 };
@@ -37,7 +45,7 @@ const ButtonComponent = forwardRef<HTMLButtonElement, ButtonProps>((props, ref) 
     ...rest
   } = props;
 
-  const Component: React.ElementType = asChild ? Slot : 'button';
+  const Component: ElementType = asChild ? Slot : 'button';
 
   const classes = cx(
     'Button',
@@ -56,7 +64,7 @@ const ButtonComponent = forwardRef<HTMLButtonElement, ButtonProps>((props, ref) 
       'aria-hidden': true,
     });
 
-  const getFinalChildren = (c: React.ReactNode) => [
+  const getFinalChildren = (c: ReactNode) => [
     renderIconFirst && renderIcon,
     isLoading && <span key="text">{loadingText || c}</span>,
     !isLoading && c && <span key="text">{c}</span>,
@@ -74,15 +82,13 @@ const ButtonComponent = forwardRef<HTMLButtonElement, ButtonProps>((props, ref) 
 
   const isDisabled = disabled || isLoading;
 
-  const handleClick = (
-    event: React.MouseEvent<HTMLAnchorElement> & React.MouseEvent<HTMLButtonElement>
-  ) => {
+  const handleClick = (event: MouseEvent<HTMLAnchorElement> & MouseEvent<HTMLButtonElement>) => {
     if (disabled) return event.preventDefault();
 
     onClick && onClick(event);
   };
 
-  const handleKeyDown: React.KeyboardEventHandler<HTMLButtonElement> = (event) => {
+  const handleKeyDown: KeyboardEventHandler<HTMLButtonElement> = (event) => {
     if (event.target instanceof HTMLAnchorElement) {
       const spacebarKeys = ['Spacebar', ' '];
 

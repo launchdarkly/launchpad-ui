@@ -6,7 +6,7 @@ const getNodeForIndex = (index: number | null, menuId: string) =>
   index === null ? index : document.getElementById(createItemId(index, menuId));
 
 const handleKeyboardInteractions = (
-  event: React.KeyboardEvent,
+  event: KeyboardEvent,
   keyHandlers: Partial<
     Record<'handleUp' | 'handleDown' | 'handleEnter', (e: KeyboardEvent) => void>
   >

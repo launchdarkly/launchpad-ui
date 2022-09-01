@@ -1,11 +1,12 @@
 import type { IconSize } from './types';
+import type { HTMLProps, ReactElement } from 'react';
 
 import { cx } from 'classix';
 import { Children, cloneElement, isValidElement, useEffect, useId, useRef } from 'react';
 
 import './styles/Icon.css';
 
-type IconProps = Omit<React.HTMLProps<HTMLSpanElement>, 'size'> & {
+type IconProps = Omit<HTMLProps<HTMLSpanElement>, 'size'> & {
   name?: string;
   subtle?: boolean;
   size?: IconSize;
@@ -38,7 +39,7 @@ const Icon = ({ name, subtle, className, size, children, ...props }: IconProps) 
     <span {...props} className={classes}>
       {Children.map(children, (child) => {
         if (isValidElement(child)) {
-          return cloneElement(child as React.ReactElement, {
+          return cloneElement(child as ReactElement, {
             ref: svgRef,
           });
         }

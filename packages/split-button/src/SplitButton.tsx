@@ -1,4 +1,5 @@
 import type { ButtonKind, ButtonSize } from '@launchpad-ui/button';
+import type { ReactNode } from 'react';
 
 import { cx } from 'classix';
 
@@ -11,7 +12,7 @@ type SplitButtonProps = {
   size?: ButtonSize;
   disabled?: boolean;
   testId?: string;
-  children?: React.ReactNode;
+  children?: ReactNode;
 };
 
 const SplitButton = ({ disabled, kind, size, children, testId, className }: SplitButtonProps) => {

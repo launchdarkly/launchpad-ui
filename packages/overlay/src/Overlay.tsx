@@ -1,4 +1,4 @@
-import type { KeyboardEvent } from 'react';
+import type { KeyboardEvent, MouseEvent as ReactMouseEvent, ReactNode } from 'react';
 
 import { Portal } from '@launchpad-ui/modal';
 import { useCallback, useEffect, useRef, useState } from 'react';
@@ -10,8 +10,8 @@ type OverlayProps = {
   canOutsideClickClose?: boolean;
   enforceFocus?: boolean;
   lazy?: boolean;
-  onClose: (event: React.MouseEvent | React.KeyboardEvent) => void;
-  children?: React.ReactNode;
+  onClose: (event: ReactMouseEvent | KeyboardEvent) => void;
+  children?: ReactNode;
 };
 
 const Overlay = ({
@@ -36,7 +36,7 @@ const Overlay = ({
       const wasClickInBody = !!eventTarget.closest('body');
 
       if (isOpen && canOutsideClickClose && !wasClickInOverlay && wasClickInBody) {
-        typeof onClose === 'function' && onClose(event as unknown as React.MouseEvent);
+        typeof onClose === 'function' && onClose(event as unknown as ReactMouseEvent);
       }
     },
     [canOutsideClickClose, isOpen, onClose]

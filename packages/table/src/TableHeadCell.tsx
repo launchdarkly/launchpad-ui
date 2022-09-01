@@ -1,4 +1,5 @@
 import type { TableColumnWidths } from './types';
+import type { ReactNode } from 'react';
 
 import camelCase from 'camelcase';
 import { cx } from 'classix';
@@ -10,7 +11,7 @@ type TableHeadCellProps = {
   align?: TableAlignType;
   'aria-label'?: string;
   className?: string;
-  children?: React.ReactNode;
+  children?: ReactNode;
   defaultColWidth?: TableColumnWidths;
   id?: string;
   scope?: 'col' | 'row' | 'colgroup' | 'rowgroup';

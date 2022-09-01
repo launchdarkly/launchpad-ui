@@ -1,7 +1,7 @@
 import type { MenuItemProps } from './MenuItem';
 import type { MenuSize } from './types';
 import type { FocusManager } from '@react-aria/focus';
-import type { KeyboardEvent, ReactElement } from 'react';
+import type { KeyboardEvent, ReactElement, ReactNode } from 'react';
 
 import { useFocusManager } from '@react-aria/focus';
 import { cx } from 'classix';
@@ -30,7 +30,7 @@ import {
 } from './utils';
 
 type ControlledMenuProps<T> = {
-  children: React.ReactNode;
+  children: ReactNode;
   onSelect?: (item: T) => void;
   /**
    * Menus items are rendered using react-virtual for
@@ -185,7 +185,7 @@ const Menu = <T extends number | string>(props: MenuProps<T>) => {
 
 type ItemVirtualizerProps<T> = Omit<ControlledMenuProps<T>, 'children'> & {
   items: ReactElement[] | null;
-  searchElement?: React.ReactElement | null;
+  searchElement?: ReactElement | null;
   focusManager: FocusManager;
 };
 

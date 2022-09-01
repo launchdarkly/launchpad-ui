@@ -1,9 +1,11 @@
+import type { ReactElement } from 'react';
+
 import { useEffect, useState } from 'react';
 
 import { AnimationDelay } from './types';
 
 type DelayedIndicatorProps = {
-  children: React.ReactElement;
+  children: ReactElement;
   delayMs?: number;
 };
 

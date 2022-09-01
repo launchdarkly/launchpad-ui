@@ -1,5 +1,6 @@
 import type { SplitButtonProps } from '../src';
 import type { ComponentStoryObj, DecoratorFn } from '@storybook/react';
+import type { ReactElement } from 'react';
 
 import { ButtonKind, ButtonSize } from '@launchpad-ui/button';
 import { Person } from '@launchpad-ui/icons';
@@ -17,7 +18,7 @@ import {
 import './SplitButton.stories.css';
 
 type SplitButtonStoryProps = SplitButtonProps & {
-  icon?: React.ReactElement<{ size?: string; key: string; 'aria-hidden': boolean }>;
+  icon?: ReactElement<{ size?: string; key: string; 'aria-hidden': boolean }>;
 };
 
 const SplitButtonExample = ({ icon, ...props }: SplitButtonStoryProps) => {
