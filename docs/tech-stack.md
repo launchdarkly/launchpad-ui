@@ -26,7 +26,7 @@ We use [Storybook](https://storybook.js.org/) to build and test our components i
 
 ## Build
 
-Our packages are built using [esbuild](https://esbuild.github.io/) for its speed, tree shaking of modules, and flexible API. Packages are built in ESM and CJS formats. Our CSS is processed, transformed, and minified using [@parcel/css](https://github.com/parcel-bundler/parcel-css). It is performant, applies vendor prefixes, and supports modern features (such as CSS nesting and custom media queries). Type declarations are emmitted using the TypeScript compiler.
+Our packages are built using [Vite](https://vitejs.dev/) for its speed, rich features, and ease to customize. Packages are built in ESM and CJS formats. Type declarations are emitted using the TypeScript compiler.
 
 [Nx](https://nx.dev/) is used to run lint, test, and build scripts on only the packages affected by code changes. Its speed, caching abilities, and project graph features make it ideal for our project.
 

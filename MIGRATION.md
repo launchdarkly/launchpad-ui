@@ -1,5 +1,65 @@
 # Migration @launchpad-ui/core
 
+## 0.11.0
+
+### Styles path
+
+Due to the switch to Vite, each package's styles are now located in a single `style.css` within the root:
+
+Before:
+
+```js
+import alertStyles from '@launchpad-ui/alert/styles/Alert.css';
+```
+
+After:
+
+```js
+import alertStyles from '@launchpad-ui/alert/style.css';
+```
+
+The `core` package no longer bundles styles. If you need to import stylesheets for the components (in a Remix app for example) simply import them from the individual packages that come included when you install the `core` package.
+
+## 0.10.0
+
+### Link button asChild
+
+`href` and other anchor element attributes have been removed from `Button`. Instead use the `asChild` prop to render link buttons:
+
+Before:
+
+```jsx
+<Button href="/">I am a link</Button>
+```
+
+After:
+
+```jsx
+<Button asChild>
+  <a href="/">I am a link</a>
+</Button>
+```
+
+As a result, the type `HTMLAnchorElement` has been removed from `SplitButtonMainButton`.
+
+## 0.9.0
+
+### Renamed lozenge to chip
+
+The `lozenge` package and its components have been renamed to `chip`:
+
+Before:
+
+```jsx
+<Lozenge size={LozengeSize.NORMAL}>Default Lozenge</Lozenge>
+```
+
+After:
+
+```jsx
+<Chip size={ChipSize.NORMAL}>Default Chip</Chip>
+```
+
 ## 0.8.0
 
 ### Reworked split-button

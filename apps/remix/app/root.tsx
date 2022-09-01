@@ -12,35 +12,35 @@ import {
   useCatch,
 } from '@remix-run/react';
 
-import launchpadStyles from '@launchpad-ui/core/styles/tokens.css';
+import launchpadStyles from '@launchpad-ui/tokens/index.css';
 import globalStyles from './styles/global.css';
 
 // plop start imports
-import alertStyles from '@launchpad-ui/core/styles/alert.css';
-import avatarStyles from '@launchpad-ui/core/styles/avatar.css';
-import bannerStyles from '@launchpad-ui/core/styles/banner.css';
-import buttonStyles from '@launchpad-ui/core/styles/button.css';
-import clipboardStyles from '@launchpad-ui/core/styles/clipboard.css';
-import counterStyles from '@launchpad-ui/core/styles/counter.css';
-import filterStyles from '@launchpad-ui/core/styles/filter.css';
-import formStyles from '@launchpad-ui/core/styles/form.css';
-import iconStyles from '@launchpad-ui/core/styles/icons.css';
-import chipStyles from '@launchpad-ui/core/styles/chip.css';
-import markdownStyles from '@launchpad-ui/core/styles/markdown.css';
-import menuStyles from '@launchpad-ui/core/styles/menu.css';
-import modalStyles from '@launchpad-ui/core/styles/modal.css';
-import navigationStyles from '@launchpad-ui/core/styles/navigation.css';
-import notificationStyles from '@launchpad-ui/core/styles/notification.css';
-import paginationStyles from '@launchpad-ui/core/styles/pagination.css';
-import popoverStyles from '@launchpad-ui/core/styles/popover.css';
-import progressBubblesStyles from '@launchpad-ui/core/styles/progress-bubbles.css';
-import progressStyles from '@launchpad-ui/core/styles/progress.css';
-import sliderStyles from '@launchpad-ui/core/styles/slider.css';
-import splitButtonStyles from '@launchpad-ui/core/styles/split-button.css';
-import tabListStyles from '@launchpad-ui/core/styles/tab-list.css';
-import tableStyles from '@launchpad-ui/core/styles/table.css';
-import toggleStyles from '@launchpad-ui/core/styles/toggle.css';
-import tooltipStyles from '@launchpad-ui/core/styles/tooltip.css';
+import alertStyles from '@launchpad-ui/alert/style.css';
+import avatarStyles from '@launchpad-ui/avatar/style.css';
+import bannerStyles from '@launchpad-ui/banner/style.css';
+import buttonStyles from '@launchpad-ui/button/style.css';
+import clipboardStyles from '@launchpad-ui/clipboard/style.css';
+import counterStyles from '@launchpad-ui/counter/style.css';
+import filterStyles from '@launchpad-ui/filter/style.css';
+import formStyles from '@launchpad-ui/form/style.css';
+import iconStyles from '@launchpad-ui/icons/style.css';
+import chipStyles from '@launchpad-ui/chip/style.css';
+import markdownStyles from '@launchpad-ui/markdown/style.css';
+import menuStyles from '@launchpad-ui/menu/style.css';
+import modalStyles from '@launchpad-ui/modal/style.css';
+import navigationStyles from '@launchpad-ui/navigation/style.css';
+import notificationStyles from '@launchpad-ui/notification/style.css';
+import paginationStyles from '@launchpad-ui/pagination/style.css';
+import popoverStyles from '@launchpad-ui/popover/style.css';
+import progressBubblesStyles from '@launchpad-ui/progress-bubbles/style.css';
+import progressStyles from '@launchpad-ui/progress/style.css';
+import sliderStyles from '@launchpad-ui/slider/style.css';
+import splitButtonStyles from '@launchpad-ui/split-button/style.css';
+import tabListStyles from '@launchpad-ui/tab-list/style.css';
+import tableStyles from '@launchpad-ui/table/style.css';
+import toggleStyles from '@launchpad-ui/toggle/style.css';
+import tooltipStyles from '@launchpad-ui/tooltip/style.css';
 // plop end imports
 
 export const links: LinksFunction = () => {
