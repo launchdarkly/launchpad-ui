@@ -1,9 +1,11 @@
 enum ButtonType {
   BUTTON = 'button',
   SUBMIT = 'submit',
-  RESET = 'reset',
-  ICON = 'icon',
-  BORDERLESS = 'borderless',
+}
+
+enum IconButtonSize {
+  SMALL = 'small',
+  NORMAL = 'normal',
 }
 
 enum EllipsisButtonType {
@@ -18,8 +20,9 @@ enum ButtonKind {
   DEFAULT = 'default',
   PRIMARY = 'primary',
   DESTRUCTIVE = 'destructive',
+  MINIMAL = 'minimal',
   LINK = 'link',
-  SUBMIT = 'submit',
+  CLOSE = 'close',
 }
 
 enum ButtonSize {
@@ -35,4 +38,11 @@ enum ButtonGroupSpacing {
   LARGE = 'large',
 }
 
-export { ButtonType, EllipsisButtonType, ButtonKind, ButtonSize, ButtonGroupSpacing };
+export {
+  ButtonType,
+  EllipsisButtonType,
+  ButtonKind,
+  ButtonSize,
+  IconButtonSize,
+  ButtonGroupSpacing,
+};

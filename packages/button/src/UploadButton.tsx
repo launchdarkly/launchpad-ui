@@ -1,10 +1,10 @@
-import type { ButtonProps } from './';
+import type { ButtonProps } from './Button';
 import type { ChangeEventHandler, KeyboardEvent } from 'react';
 
 import { cx } from 'classix';
 import { useRef } from 'react';
 
-import { Button } from './';
+import { Button } from './Button';
 
 type UploadButtonProps = ButtonProps & {
   onSelect(file?: File | null): void;

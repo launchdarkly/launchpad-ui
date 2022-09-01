@@ -1,7 +1,7 @@
 import type { AlertKind } from '@launchpad-ui/alert';
 import type { ReactNode } from 'react';
 
-import { Button, ButtonType } from '@launchpad-ui/button';
+import { ButtonKind, IconButton, IconButtonSize } from '@launchpad-ui/button';
 import { Close, IconSize, KindIcon } from '@launchpad-ui/icons';
 import { cx } from 'classix';
 
@@ -22,13 +22,14 @@ const Banner = ({ kind, className, children, onDismiss, dismissible, testId }: B
       <KindIcon kind={kind} className="Banner-icon" />
       <span className="Banner-text">{children}</span>
       {dismissible && (
-        <Button
+        <IconButton
           aria-label="Close this notification."
-          type={ButtonType.ICON}
           icon={<Close size={IconSize.SMALL} />}
+          size={IconButtonSize.SMALL}
           className="Banner-close"
           onClick={onDismiss}
-          testId={testId ? `${testId}-dismiss-button` : undefined}
+          kind={ButtonKind.CLOSE}
+          data-test-id={testId ? `${testId}-dismiss-button` : undefined}
         />
       )}
     </div>

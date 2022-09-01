@@ -1,11 +1,9 @@
-import type { ButtonSize } from './types';
 import type {
   ButtonHTMLAttributes,
   ElementType,
   KeyboardEventHandler,
   MouseEvent,
   ReactElement,
-  ReactNode,
 } from 'react';
 
 import { Slot } from '@radix-ui/react-slot';
@@ -13,31 +11,24 @@ import { cx } from 'classix';
 import { isValidElement, cloneElement, forwardRef, memo } from 'react';
 
 import './styles/Button.css';
-import { ButtonKind } from './types';
+import { ButtonKind, IconButtonSize } from './types';
 
-type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
-  isLoading?: boolean;
-  loadingText?: string | JSX.Element;
-  size?: ButtonSize;
+type IconButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
   kind?: ButtonKind;
-  fit?: boolean;
+  icon: ReactElement<{ size?: string; key: string; 'aria-hidden': boolean }>;
+  size?: IconButtonSize;
   disabled?: boolean;
-  icon?: ReactElement<{ size?: string; key: string; 'aria-hidden': boolean }>;
-  renderIconFirst?: boolean;
+  'aria-label': string;
   asChild?: boolean;
 };
 
-const ButtonComponent = forwardRef<HTMLButtonElement, ButtonProps>((props, ref) => {
+const IconButtonComponent = forwardRef<HTMLButtonElement, IconButtonProps>((props, ref) => {
   const {
     icon,
     children,
     className,
-    size,
-    fit,
-    kind = ButtonKind.DEFAULT,
-    isLoading = false,
-    loadingText,
-    renderIconFirst = false,
+    size = IconButtonSize.NORMAL,
+    kind = ButtonKind.MINIMAL,
     disabled = false,
     asChild = false,
     onKeyDown,
@@ -48,39 +39,28 @@ const ButtonComponent = forwardRef<HTMLButtonElement, ButtonProps>((props, ref) 
   const Component: ElementType = asChild ? Slot : 'button';
 
   const classes = cx(
+    'IconButton',
     'Button',
+    'Button--icon',
     `Button--${kind}`,
     disabled && 'Button--disabled',
     size && `Button--${size}`,
-    fit && 'Button--fit',
     className
   );
 
-  const renderIcon =
-    icon &&
-    cloneElement(icon, {
-      key: 'icon',
-      size: icon.props.size || 'small',
-      'aria-hidden': true,
-    });
-
-  const getFinalChildren = (c: ReactNode) => [
-    renderIconFirst && renderIcon,
-    isLoading && <span key="text">{loadingText || c}</span>,
-    !isLoading && c && <span key="text">{c}</span>,
-    !renderIconFirst && renderIcon,
-    isLoading && <span key="spinner">…</span>,
-  ];
+  const clonedIcon = cloneElement(icon, {
+    key: 'icon',
+    size: icon.props.size || 'medium',
+    'aria-hidden': true,
+  });
 
   const renderChildren = () => {
     if (asChild && isValidElement(children)) {
-      return cloneElement(children, undefined, getFinalChildren(children.props.children));
+      return cloneElement(children, undefined, clonedIcon);
     }
 
-    return getFinalChildren(children);
+    return clonedIcon;
   };
-
-  const isDisabled = disabled || isLoading;
 
   const handleClick = (event: MouseEvent<HTMLAnchorElement> & MouseEvent<HTMLButtonElement>) => {
     if (disabled) return event.preventDefault();
@@ -105,8 +85,8 @@ const ButtonComponent = forwardRef<HTMLButtonElement, ButtonProps>((props, ref) 
       className={classes}
       ref={ref}
       onClick={handleClick}
+      disabled={disabled}
       onKeyDown={onKeyDown || handleKeyDown}
-      disabled={isDisabled}
       {...rest}
     >
       {renderChildren()}
@@ -114,9 +94,9 @@ const ButtonComponent = forwardRef<HTMLButtonElement, ButtonProps>((props, ref) 
   );
 });
 
-ButtonComponent.displayName = 'Button';
+IconButtonComponent.displayName = 'IconButton';
 
-const Button = memo(ButtonComponent);
+const IconButton = memo(IconButtonComponent);
 
-export { Button };
-export type { ButtonProps };
+export { IconButton };
+export type { IconButtonProps };
