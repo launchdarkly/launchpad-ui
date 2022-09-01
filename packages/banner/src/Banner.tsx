@@ -12,6 +12,7 @@ type BannerProps = HTMLAttributes<HTMLDivElement> & {
   kind: AlertProps['kind'];
   onDismiss?(): void;
   dismissible?: boolean;
+  title?: string;
 };
 
 const Banner = ({
@@ -20,6 +21,7 @@ const Banner = ({
   children,
   onDismiss,
   dismissible,
+  title,
   'data-test-id': testId,
   ...rest
 }: BannerProps) => {
@@ -28,10 +30,13 @@ const Banner = ({
   return (
     <div className={classes} data-test-id={testId} {...rest}>
       <KindIcon kind={kind} className="Banner-icon" />
-      <span className="Banner-text">{children}</span>
+      <div className="Banner-content">
+        {title && <h4 className="Banner-heading">{title}</h4>}
+        <div>{children}</div>
+      </div>
       {dismissible && (
         <IconButton
-          aria-label="Close this notification."
+          aria-label="Close banner"
           icon={<Close size="small" />}
           size="small"
           className="Banner-close"

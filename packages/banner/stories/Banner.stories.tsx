@@ -66,6 +66,22 @@ export const Info: Story = {
   args: { children: 'Info banner with icon', dismissible: true, kind: 'info' },
 };
 
-export const Striped: Story = {
-  args: { children: 'Striped banner with icon', dismissible: true, kind: 'striped' },
+export const WithStackedBanners: Story = {
+  render: () => {
+    return (
+      <>
+        <Banner kind="error">This is an example of Banners that are stacked</Banner>
+        <Banner kind="error">This is an example of Banners that are stacked</Banner>
+      </>
+    );
+  },
+};
+
+export const WithTitle: Story = {
+  args: {
+    title: 'Banner header',
+    children: 'This is an example of a banner with a header',
+    dismissible: true,
+    kind: 'error',
+  },
 };
