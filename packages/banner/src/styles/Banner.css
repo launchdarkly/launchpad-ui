@@ -1,26 +1,22 @@
 @import '../../../tokens/dist/media-queries.css';
 
 :root {
-  --reskin-striped-base: repeating-linear-gradient(
-    45deg,
-    var(--color-white),
-    var(--color-white) 20px,
-    var(--color-white-100) 20px,
-    var(--color-white-100) 40px
-  );
-  --Banner-color-border-top: var(--color-border);
+  --Banner-color-border-bottom-info: var(--color-blue-700);
+  --Banner-color-border-bottom-success: var(--color-system-green-700);
+  /* stylelint-disable-next-line value-keyword-case */
+  --Banner-color-border-bottom-warning: var(--color-system-yellow-700);
+  --Banner-color-border-bottom-error: var(--color-system-red-700);
   --Banner-color-text: var(--color-black-100);
   --Banner-color-background: var(--color-white);
-  --Banner-color-background-info: var(--color-blue-200);
+  --Banner-color-background-info: var(--color-blue-100);
   --Banner-color-background-success: var(--color-system-green-200);
   --Banner-color-background-warning: var(--color-system-yellow-200);
   --Banner-color-background-error: var(--color-system-red-200);
-  --Banner-color-background-striped: var(--reskin-striped-base);
   --Banner-icon-color-info: var(--color-blue-700);
   --Banner-icon-color-success: var(--color-system-green-700);
   --Banner-icon-color-warning: var(--color-system-yellow-700);
   --Banner-icon-color-error: var(--color-system-red-700);
-  --Banner-icon-color-striped: var(--color-black-100);
+  --page-gutter-width: 1rem;
 }
 
 @media (--tablet) {
@@ -32,44 +28,49 @@
 .Banner {
   background: var(--Banner-color-background);
   display: flex;
-  padding: 1rem 1.5rem 1rem var(--page-gutter-width);
+  padding: 1.4rem 1.8rem;
+  font-size: 1.4rem;
+  line-height: 1.45;
+  white-space: normal;
+  background-color: ;
+  border-bottom: 1px;
+  border-bottom-style: solid;
 }
 
-.Banner + .Banner {
-  border-top: 1px solid var(--Banner-color-border-top);
+.Banner-heading {
+  margin-top: 0;
+  margin-bottom: 0.4rem;
+  font-size: 1.6rem;
+  font-weight: var(--font-weight-medium);
+  line-height: 1.25;
 }
 
-.Banner-text {
+.Banner-content {
   color: var(--Banner-color-text);
-  display: inline-block;
-  flex-grow: 1;
-  margin-left: 1rem;
-}
-
-.Banner-icon {
-  display: flex;
-  align-items: center;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  margin-left: 1.4rem;
 }
 
 .Banner--error {
   background-color: var(--Banner-color-background-error);
+  border-bottom-color: var(--Banner-color-border-bottom-error);
 }
 
 .Banner--warning {
   background-color: var(--Banner-color-background-warning);
+  border-bottom-color: var(--Banner-color-border-bottom-warning);
 }
 
 .Banner--info {
   background-color: var(--Banner-color-background-info);
+  border-bottom-color: var(--Banner-color-border-bottom-info);
 }
 
 .Banner--success {
   background-color: var(--Banner-color-background-success);
-}
-
-.Banner--striped {
-  background-image: var(--reskin-striped-base);
-  position: relative;
+  border-bottom-color: var(--Banner-color-border-bottom-success);
 }
 
 /* reset Icon--info positioning hack */
@@ -91,8 +92,4 @@
 
 .Banner--warning .Banner-icon svg {
   fill: var(--Banner-icon-color-warning);
-}
-
-.Banner--striped .Banner-icon .Icon {
-  fill: var(--Banner-icon-color-striped);
 }
