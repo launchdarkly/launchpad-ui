@@ -16,6 +16,9 @@
   white-space: nowrap;
   border: var(--Button-border-default);
   border-radius: var(--Button-border-radius-default);
+  font-size: var(--Button-font-size-default);
+  line-height: var(--Button-line-height-default);
+  padding: 0.5rem 0.8rem;
   cursor: default;
   user-select: none;
   appearance: none;
@@ -33,12 +36,6 @@
   font-size: var(--Button-font-size-small);
   line-height: var(--Button-line-height-small);
   padding: 0.3rem 0.7rem;
-}
-
-.Button--normal {
-  font-size: var(--Button-font-size-default);
-  line-height: var(--Button-line-height-default);
-  padding: 0.5rem 0.8rem;
 }
 
 .Button--big {
@@ -118,24 +115,14 @@
   color: var(--Button-color-text-default-active);
 }
 
-.Button--icon.Button--outlined.Button--default:hover {
-  background-color: var(--Button-color-background-default-hover);
-}
+/* ------- PRIMARY, ICON, SUBMIT, MINIMAL ------- */
 
-.Button--icon.Button--outlined.Button--default:active {
-  background-color: var(--Button-color-background-default-active);
-}
-
-/* ------- PRIMARY, ICON, SUBMIT, BORDERLESS ------- */
-
-.Button--submit,
 .Button--primary {
   background-color: var(--Button-color-background-primary);
   border-color: var(--Button-color-border-primary);
   color: var(--Button-color-text-primary);
 }
 
-.Button--submit:hover,
 .Button--primary:hover {
   background-color: var(--Button-color-background-primary-hover);
   color: var(--Button-color-text-primary-hover);
@@ -154,13 +141,6 @@
   box-shadow: var(--Button-box-shadow-hover);
 }
 
-.Button--borderless,
-.Button--borderless.Button[disabled] {
-  background-color: transparent;
-  border: none;
-}
-
-/* Why are we missing hover/active states for .Button--icon.Button--primary? */
 .Button--primary:focus,
 .Button--icon.Button--primary:focus {
   background-color: var(--Button-color-background-primary-focus);
@@ -190,18 +170,61 @@
   fill: var(--Button-icon-color-fill-primary-active);
 }
 
-.Button--icon.Button--outlined.Button--primary:hover {
-  background-color: var(--Button-color-background-primary-hover);
-  border: 1px solid var(--Button-color-border-primary-hover);
+/* ------- MINIMAL ------- */
+
+.Button.Button--minimal {
+  background-color: transparent;
+  color: var(--color-text);
 }
 
-/* Why are we missing focus state for
-.Button--icon.Button-outlined.Button--primary? */
+.Button.Button--minimal:hover,
+.Button--minimal:focus {
+  background-color: var(--color-gray-100);
+}
 
-.Button--icon.Button--outlined.Button--primary:active {
-  background-color: var(--Button-color-background-primary-active);
-  border: 1px solid var(--Button-color-border-primary-active);
-  box-shadow: var(--Button-box-shadow-active);
+.Button.Button--minimal:active {
+  background-color: var(--color-gray-200);
+}
+
+.Button.Button--minimal[disabled],
+.Button.Button--minimal[disabled]:hover {
+  background-color: transparent;
+  border: none;
+  color: var(--color-gray-500);
+}
+
+/* ------- CLOSE ICON BUTTON ------- */
+
+.Button.Button--close {
+  background-color: transparent;
+  fill: var(--color-gray-700);
+}
+
+.Button.Button--close svg {
+  fill: currentcolor;
+}
+
+.Button.Button--close:hover {
+  background-color: rgb(33 33 33 / 0.1);
+  box-shadow: 0 0 0 1px hsl(216 2.4% 58.6% / 0.7), 0 0 0 4px hsl(0 0% 12.9% / 0.1);
+}
+
+.Button.Button--close:focus {
+  background-color: hsl(0 0 100% / 0.1);
+  box-shadow: 0 0 0 1px hsl(225 1.8% 43.5% / 0.7), 0 0 0 4px hsl(0 0% 12.9% / 0.1);
+}
+
+.Button.Button--close:active {
+  background-color: hsl(0 0% 12.9% / 0.7);
+  box-shadow: 0 0 0 1px var(--color-black-200), 0 0 0 4px hsl(0 0% 12.9% / 0.1);
+  color: var(--color-text-inverse);
+}
+
+.Button.Button--close[disabled],
+.Button.Button--close[disabled]:hover {
+  background-color: transparent;
+  border: none;
+  color: var(--color-gray-500);
 }
 
 /* ------- DESTRUCTIVE ------- */
@@ -271,14 +294,6 @@
   fill: var(--Button-icon-color-fill-destructive-active);
 }
 
-.Button--icon.Button--outlined.Button--destructive:hover {
-  background-color: var(--Button-color-background-destructive-withIcon-hover);
-}
-
-.Button--icon.Button--outlined.Button--destructive:active {
-  background-color: var(--Button-color-background-destructive-withIcon-active);
-}
-
 /* ------- LINK ------- */
 
 /* Inherit line height from current font size */
@@ -327,36 +342,7 @@
   color: var(--Button-color-link-disabled-hover);
 }
 
-/* ------- OUTLINED, CLEAR ------- */
-
-/* 1. inherit line height from current font size */
-.Button--icon {
-  padding: 0;
-  line-height: 1; /* 1 */
-  border: var(--Button-border-default-withIcon);
-  border-color: var(--Button-color-border-default-withIcon);
-  border-radius: var(--Button-border-radius-withIcon);
-  background-color: transparent;
-  height: 2.5rem;
-  width: 2.5rem;
-  flex-shrink: 0;
-}
-
-.Button--icon.Button--outlined {
-  background-color: var(--Button-color-background-default-withIcon);
-  border: 1px solid var(--Button-color-border-default-withIcon);
-}
-
-.Button--icon.Button--outlined[disabled] {
-  background-color: var(--Button-color-background-disabled-withIcon);
-}
-
-/* Use inset box-shadow to avoid introducing a physical border  */
-.Button--icon:focus,
-.Button--icon.Button--outlined:focus {
-  border-radius: var(--Button-border-radius-withIcon);
-  box-shadow: var(--Button-box-shadow-focus);
-}
+/* ------- CLEAR ------- */
 
 /* Set the color for the clear button in search bars */
 
@@ -400,20 +386,21 @@
   border-color: var(--Button-color-border-disabled);
 }
 
-.Button--icon.Button[disabled] {
-  border-color: var(--Button-color-border-disabled-withIcon);
-}
-
-.Button[disabled] .Icon,
-.Button--icon.Button[disabled] .Icon {
+.Button[disabled] .Icon {
   fill: var(--Button-icon-color-fill-disabled);
 }
 
-.Button--icon.Button[disabled] .Icon:hover {
-  fill: var(--Button-icon-color-fill-disabled);
+.Button.Button--icon {
+  padding: 0;
+  line-height: 1;
+  border-radius: 50%;
+  height: 2.5rem;
+  width: 2.5rem;
+  flex-shrink: 0;
 }
 
-.Button--icon.Button[disabled] .Icon:active {
-  fill: var(--Button-icon-color-fill-disabled);
+.Button.Button--icon.Button--small {
+  height: 2.2rem;
+  width: 2.2rem;
 }
 /* stylelint-enable no-descending-specificity */

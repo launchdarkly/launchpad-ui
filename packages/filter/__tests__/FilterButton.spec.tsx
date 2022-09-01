@@ -43,7 +43,7 @@ describe('FilterButton', () => {
   describe('clear button', () => {
     it('should render a button to clear the filter if isClearable is true', () => {
       render(createComponent({ isClearable: true }));
-      expect(screen.getByRole('button', { name: '' })).toBeVisible();
+      expect(screen.getByRole('button', { name: 'Clear filter' })).toBeVisible();
     });
 
     it('should render a tooltip with default label', async () => {
@@ -51,7 +51,7 @@ describe('FilterButton', () => {
       render(createComponent({ isClearable: true }));
       expect(true).toBe(true);
 
-      await user.hover(screen.getByRole('button', { name: '' }));
+      await user.hover(screen.getByRole('button', { name: 'Clear filter' }));
 
       await waitFor(() => {
         expect(screen.getByText('Clear filter')).toBeInTheDocument();
@@ -63,7 +63,7 @@ describe('FilterButton', () => {
       render(createComponent({ isClearable: true, clearTooltip: <span>Bananas</span> }));
       expect(true).toBe(true);
 
-      await user.hover(screen.getByRole('button', { name: '' }));
+      await user.hover(screen.getByRole('button', { name: 'Clear filter' }));
 
       await waitFor(() => {
         expect(screen.getByText('Bananas')).toBeInTheDocument();
@@ -74,7 +74,7 @@ describe('FilterButton', () => {
       const spy = vi.fn();
       const user = userEvent.setup();
       render(createComponent({ isClearable: true, onClear: spy }));
-      await user.click(screen.getByRole('button', { name: '' }));
+      await user.click(screen.getByRole('button', { name: 'Clear filter' }));
       expect(spy).toHaveBeenCalled();
     });
   });

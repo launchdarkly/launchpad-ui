@@ -55,14 +55,14 @@ describe('Filter', () => {
 
   it('should render a button to clear the filter if isClearable is true', () => {
     render(createComponent({ options: oneOption, isClearable: true }));
-    expect(screen.getByRole('button', { name: '' })).toBeVisible();
+    expect(screen.getByRole('button', { name: 'Clear filter' })).toBeVisible();
   });
 
   it('should fire onClear when clear button is clicked', async () => {
     const spy = vi.fn();
     const user = userEvent.setup();
     render(createComponent({ options: oneOption, isClearable: true, onClear: spy }));
-    await user.click(screen.getByRole('button', { name: '' }));
+    await user.click(screen.getByRole('button', { name: 'Clear filter' }));
     expect(spy).toHaveBeenCalled();
   });
 

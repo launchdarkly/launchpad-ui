@@ -14,6 +14,7 @@ export async function getComponents() {
     { to: 'components/filter', name: 'Filter' },
     { to: 'components/form', name: 'Form' },
     { to: 'components/icon', name: 'Icon' },
+    { to: 'components/icon-button', name: 'IconButton' },
     { to: 'components/markdown', name: 'Markdown' },
     { to: 'components/menu', name: 'Menu' },
     { to: 'components/modal', name: 'Modal' },

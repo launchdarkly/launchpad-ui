@@ -4,14 +4,14 @@ import { Fragment } from 'react';
 
 import { Add } from '../../icons/src';
 import { IconSize } from '../../icons/src/types';
-import { Button, ButtonKind, ButtonSize } from '../src';
+import { IconButton, ButtonKind } from '../src';
 
 import './Button.stories.css';
 
 const buttonTemplateWithStates: DecoratorFn = (storyComponent, context) => {
   const { viewMode, args } = context;
 
-  const storyArgs = args;
+  const storyArgs = args as any;
   const buttonLabel = storyArgs?.children || '';
 
   const ButtonLabels = ['Hover', 'Focus', 'Active'];
@@ -23,29 +23,31 @@ const buttonTemplateWithStates: DecoratorFn = (storyComponent, context) => {
         {ButtonLabels[ButtonLabels.length - 1 >= index ? index : ButtonLabels.length - 1]}
       </span>
       <div className={className}>
-        <Button {...storyArgs}>{buttonLabel}</Button>
+        <IconButton {...storyArgs}>{buttonLabel}</IconButton>
       </div>
     </Fragment>
   ));
+
   if (viewMode === 'docs') {
     return storyComponent();
   }
+
   return (
     <div className="Storygroup-wrapper">
       <span className="Button-state-label">Resting</span>
       {storyComponent()}
       {PseudoStateButtons}
       <span className="Button-state-label">Disabled</span>
-      <Button {...storyArgs} disabled>
+      <IconButton {...storyArgs} disabled>
         {buttonLabel}
-      </Button>
+      </IconButton>
     </div>
   );
 };
 
 export default {
-  component: Button,
-  title: 'Components/Button',
+  component: IconButton,
+  title: 'Components/Button/IconButton',
   description: 'Buttons trigger actions based on user interaction.',
   decorators: [buttonTemplateWithStates],
   parameters: {
@@ -54,7 +56,7 @@ export default {
     },
   },
   argTypes: {
-    testId: {
+    'data-test-id': {
       control: 'text',
       table: {
         category: 'Testing',
@@ -72,36 +74,13 @@ export default {
         category: 'Presentation',
       },
     },
-    fit: {
-      control: 'boolean',
-      table: {
-        category: 'Presentation',
-      },
-    },
     icon: {
       table: {
         category: 'Presentation',
         subcategory: 'Icon Button',
       },
     },
-    isLoading: {
-      control: 'boolean',
-      table: {
-        category: 'Presentation',
-      },
-    },
     kind: {
-      table: {
-        category: 'Presentation',
-      },
-    },
-    renderIconFirst: {
-      table: {
-        category: 'Presentation',
-        subcategory: 'Icon Button',
-      },
-    },
-    size: {
       table: {
         category: 'Presentation',
       },
@@ -110,16 +89,6 @@ export default {
       table: {
         category: 'Content',
         subcategory: 'Accessibility',
-      },
-    },
-    children: {
-      table: {
-        category: 'Content',
-      },
-    },
-    loadingText: {
-      table: {
-        category: 'Content',
       },
     },
     id: {
@@ -164,47 +133,52 @@ export default {
   },
 };
 
-type Story = ComponentStoryObj<typeof Button>;
+type Story = ComponentStoryObj<typeof IconButton>;
 
-export const Basic: Story = { args: { children: 'Basic' } };
+const icon = <Add size={IconSize.MEDIUM} />;
 
-export const Minimal: Story = { args: { children: 'Minimal', kind: ButtonKind.MINIMAL } };
-
-export const Primary: Story = { args: { children: 'Primary', kind: ButtonKind.PRIMARY } };
-
-export const Destructive: Story = {
-  args: { children: 'Destructive', kind: ButtonKind.DESTRUCTIVE },
+export const Minimal: Story = {
+  args: { icon, 'aria-label': 'Button' },
 };
 
-export const Link: Story = { args: { children: 'Link', kind: ButtonKind.LINK } };
+export const Basic: Story = {
+  args: {
+    icon,
+    'aria-label': 'Button',
+    kind: ButtonKind.DEFAULT,
+  },
+};
+
+export const Primary: Story = {
+  args: {
+    icon,
+    'aria-label': 'Button',
+    kind: ButtonKind.PRIMARY,
+  },
+};
+
+export const Destructive: Story = {
+  args: {
+    icon,
+    'aria-label': 'Button',
+    kind: ButtonKind.DESTRUCTIVE,
+  },
+};
+
+export const Close: Story = {
+  args: {
+    icon,
+    'aria-label': 'Button',
+    kind: ButtonKind.CLOSE,
+  },
+};
 
 export const AsAnchorChild: Story = {
   args: {
     children: <a href="/">Anchor tag</a>,
     asChild: true,
-    icon: <Add size={IconSize.MEDIUM} />,
+    'aria-label': 'Anchor child',
+    icon,
     kind: ButtonKind.DESTRUCTIVE,
   },
 };
-
-export const WithIcon: Story = {
-  args: { children: 'With icon', icon: <Add size={IconSize.MEDIUM} /> },
-};
-
-export const WithIconPrimary: Story = {
-  args: { children: 'With icon', icon: <Add size={IconSize.MEDIUM} />, kind: ButtonKind.PRIMARY },
-};
-
-export const WithIconDestructive: Story = {
-  args: {
-    children: 'With icon',
-    icon: <Add size={IconSize.MEDIUM} />,
-    kind: ButtonKind.DESTRUCTIVE,
-  },
-};
-
-export const BasicTiny: Story = { args: { children: 'Example button', size: ButtonSize.TINY } };
-
-export const BasicSmall: Story = { args: { children: 'Example button', size: ButtonSize.SMALL } };
-
-export const BasicBig: Story = { args: { children: 'Example button', size: ButtonSize.BIG } };
