@@ -1,6 +1,6 @@
 # Migration @launchpad-ui/core
 
-## 0.10.0
+## 0.11.0
 
 ### Styles path
 
@@ -19,6 +19,28 @@ import alertStyles from '@launchpad-ui/alert/style.css';
 ```
 
 The `core` package no longer bundles styles. If you need to import stylesheets for the components (in a Remix app for example) simply import them from the individual packages that come included when you install the `core` package.
+
+## 0.10.0
+
+### Link button asChild
+
+`href` and other anchor element attributes have been removed from `Button`. Instead use the `asChild` prop to render link buttons:
+
+Before:
+
+```jsx
+<Button href="/">I am a link</Button>
+```
+
+After:
+
+```jsx
+<Button asChild>
+  <a href="/">I am a link</a>
+</Button>
+```
+
+As a result, the type `HTMLAnchorElement` has been removed from `SplitButtonMainButton`.
 
 ## 0.9.0
 
