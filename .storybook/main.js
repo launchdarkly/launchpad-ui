@@ -4,7 +4,12 @@ const fs = require('fs');
 
 module.exports = {
   features: {
+    // https://github.com/storybookjs/storybook/issues/19094
     storyStoreV7: false,
+  },
+  docs: {
+    // https://github.com/storybookjs/builder-vite/issues/492
+    docsPage: false,
   },
   stories: ['../packages/**/*.stories.@(js|jsx|ts|tsx)'],
   addons: [

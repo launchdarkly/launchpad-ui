@@ -1,5 +1,4 @@
-/*
-const tokens = require('../dist/index');
+import tokens from './tokens.json';
 
 export default {
   title: 'Tokens/Colors',
@@ -38,4 +37,3 @@ export const Colors = {
     </>
   ),
 };
-*/
