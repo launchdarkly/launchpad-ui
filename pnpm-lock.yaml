@@ -57,7 +57,7 @@ importers:
       '@vitest/ui': ^0.22.0
       babel-loader: ^8.2.4
       browserslist: ^4.21.1
-      chromatic: ^6.8.0
+      chromatic: ^6.9.0
       concurrently: ^7.3.0
       deepmerge: ^4.2.2
       eslint: ^8.23.0
@@ -144,7 +144,7 @@ importers:
       '@vitest/ui': 0.22.1
       babel-loader: 8.2.5_@babel+core@7.18.6
       browserslist: 4.21.1
-      chromatic: 6.8.0
+      chromatic: 6.9.0
       concurrently: 7.3.0
       deepmerge: 4.2.2
       eslint: 8.23.0
@@ -7777,8 +7777,8 @@ packages:
     engines: {node: '>=10'}
     dev: true
 
-  /chromatic/6.8.0:
-    resolution: {integrity: sha512-8xwweZKZMO+DlvbLTcn08sl0yM+SHlBtr7FilglaF7HZKvjvlXe+3DKtsB2YKRPEiEVeaOsZ4hCQSQCiEGAw7A==}
+  /chromatic/6.9.0:
+    resolution: {integrity: sha512-ykfUHLyznZTPi8djKMfrBoOpWinSUfa2HDLmvHgYc2e6Jc4Oqm5jYW9S7l92navSF+EOzov90L7W8rX2NpiBjQ==}
     hasBin: true
     dependencies:
       '@discoveryjs/json-ext': 0.5.7

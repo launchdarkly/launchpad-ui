@@ -87,7 +87,7 @@
     "@vitest/ui": "^0.22.0",
     "babel-loader": "^8.2.4",
     "browserslist": "^4.21.1",
-    "chromatic": "^6.8.0",
+    "chromatic": "^6.9.0",
     "concurrently": "^7.3.0",
     "deepmerge": "^4.2.2",
     "eslint": "^8.23.0",

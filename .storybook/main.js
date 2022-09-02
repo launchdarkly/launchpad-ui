@@ -1,6 +1,7 @@
 const path = require('path');
 const tsconfig = require('../tsconfig.json');
 const fs = require('fs');
+const { mergeConfig } = require('vite');
 
 module.exports = {
   features: {
@@ -14,15 +15,7 @@ module.exports = {
   stories: ['../packages/**/*.stories.@(js|jsx|ts|tsx)'],
   addons: [
     '@storybook/addon-a11y',
-    '@storybook/addon-actions',
-    '@storybook/addon-backgrounds',
-    '@storybook/addon-docs',
-    '@storybook/addon-highlight',
-    '@storybook/addon-interactions',
-    '@storybook/addon-measure',
-    '@storybook/addon-outline',
-    '@storybook/addon-toolbars',
-    '@storybook/addon-viewport',
+    '@storybook/addon-essentials',
     'storybook-addon-pseudo-states',
     //'@etchteam/storybook-addon-status',
   ],
@@ -35,6 +28,24 @@ module.exports = {
     const packageStatuses = getPackageStatusEnvVars();
 
     return { ...config, ...packageStatuses };
+  },
+  async viteFinal(config) {
+    return mergeConfig(config, {
+      optimizeDeps: {
+        include: [
+          '@storybook/addon-a11y/manager',
+          '@storybook/addon-actions/manager',
+          '@storybook/addon-backgrounds/manager',
+          '@storybook/addon-docs/manager',
+          '@storybook/addon-highlight/manager',
+          '@storybook/addon-interactions/manager',
+          '@storybook/addon-measure/manager',
+          '@storybook/addon-outline/manager',
+          '@storybook/addon-toolbars/manager',
+          '@storybook/addon-viewport/manager',
+        ],
+      },
+    });
   },
 };
 
