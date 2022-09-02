@@ -1,5 +1,17 @@
 # @launchpad-ui/core
 
+## 0.11.1
+
+### Patch Changes
+
+- [#330](https://github.com/launchdarkly/launchpad-ui/pull/330) [`f440fa1`](https://github.com/launchdarkly/launchpad-ui/commit/f440fa17747771566dcc58db873f7167093df921) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Dropdown] Update prop passing to allow button props from dropdown button
+
+- Updated dependencies [[`f440fa1`](https://github.com/launchdarkly/launchpad-ui/commit/f440fa17747771566dcc58db873f7167093df921)]:
+  - @launchpad-ui/dropdown@0.4.1
+  - @launchpad-ui/split-button@0.5.1
+  - @launchpad-ui/filter@0.3.1
+  - @launchpad-ui/navigation@0.5.1
+
 ## 0.11.0
 
 ### Minor Changes

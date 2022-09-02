@@ -1,5 +1,11 @@
 # @launchpad-ui/dropdown
 
+## 0.4.1
+
+### Patch Changes
+
+- [#330](https://github.com/launchdarkly/launchpad-ui/pull/330) [`f440fa1`](https://github.com/launchdarkly/launchpad-ui/commit/f440fa17747771566dcc58db873f7167093df921) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Dropdown] Update prop passing to allow button props from dropdown button
+
 ## 0.4.0
 
 ### Minor Changes
