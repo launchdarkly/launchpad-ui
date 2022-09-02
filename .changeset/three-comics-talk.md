@@ -4,4 +4,4 @@
 '@launchpad-ui/split-button': patch
 ---
 
-Update prop passing to allow button props from dropdown button
+[Dropdown] Update prop passing to allow button props from dropdown button
