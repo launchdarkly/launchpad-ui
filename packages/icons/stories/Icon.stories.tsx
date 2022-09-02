@@ -12,7 +12,7 @@ export default {
   description: 'Icons supplement content and represent an action or feature within LaunchDarkly.',
   parameters: {
     status: {
-      type: process.env.PACKAGE_STATUS__ICONS,
+      type: import.meta.env.PACKAGE_STATUS__ICONS,
     },
   },
   argTypes: {

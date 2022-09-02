@@ -10,7 +10,7 @@ export default {
   description: 'Banners contain a system-wide message or status.',
   parameters: {
     status: {
-      type: process.env.PACKAGE_STATUS__BANNER,
+      type: import.meta.env.PACKAGE_STATUS__BANNER,
     },
   },
   argTypes: {

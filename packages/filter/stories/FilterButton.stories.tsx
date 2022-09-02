@@ -9,7 +9,7 @@ export default {
     "When the Filter component doesn't suffice, construct your own custom filter using the FilterButton.",
   parameters: {
     status: {
-      type: process.env.PACKAGE_STATUS__FILTER,
+      type: import.meta.env.PACKAGE_STATUS__FILTER,
     },
   },
 };

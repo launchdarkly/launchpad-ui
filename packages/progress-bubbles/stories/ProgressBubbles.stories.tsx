@@ -10,7 +10,7 @@ export default {
   description: 'Shows current progress through a multistep flow.',
   parameters: {
     status: {
-      type: process.env.PACKAGE_STATUS__PROGRESS_BUBBLES,
+      type: import.meta.env.PACKAGE_STATUS__PROGRESS_BUBBLES,
     },
   },
 };

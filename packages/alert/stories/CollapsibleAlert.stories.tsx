@@ -8,7 +8,7 @@ export default {
   description: 'Actions trigger alerts based on user interaction.',
   parameters: {
     status: {
-      type: process.env.PACKAGE_STATUS__ALERT,
+      type: import.meta.env.PACKAGE_STATUS__ALERT,
     },
   },
   argTypes: {

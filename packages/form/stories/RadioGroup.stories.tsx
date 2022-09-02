@@ -8,7 +8,7 @@ export default {
   description: 'A radio button group allows the user to select one of a set of options."',
   parameters: {
     status: {
-      type: process.env.PACKAGE_STATUS__FORM,
+      type: import.meta.env.PACKAGE_STATUS__FORM,
     },
   },
   argTypes: {

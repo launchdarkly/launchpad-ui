@@ -8,7 +8,7 @@ export default {
   description: 'A label describes a form field.',
   parameters: {
     status: {
-      type: process.env.PACKAGE_STATUS__FORM,
+      type: import.meta.env.PACKAGE_STATUS__FORM,
     },
   },
   argTypes: {

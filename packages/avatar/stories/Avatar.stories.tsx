@@ -9,7 +9,7 @@ export default {
   description: 'An element that represents a user visually.',
   parameters: {
     status: {
-      type: process.env.PACKAGE_STATUS__AVATAR,
+      type: import.meta.env.PACKAGE_STATUS__AVATAR,
     },
   },
   argTypes: {

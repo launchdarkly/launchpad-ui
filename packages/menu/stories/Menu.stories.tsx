@@ -11,7 +11,7 @@ export default {
   description: 'Menus present a list of items a user can choose from.',
   parameters: {
     status: {
-      type: process.env.PACKAGE_STATUS__MENU,
+      type: import.meta.env.PACKAGE_STATUS__MENU,
     },
   },
 };
