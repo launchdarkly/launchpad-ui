@@ -1,5 +1,29 @@
 # @launchpad-ui/core
 
+## 0.11.2
+
+### Patch Changes
+
+- [#334](https://github.com/launchdarkly/launchpad-ui/pull/334) [`143b8c6`](https://github.com/launchdarkly/launchpad-ui/commit/143b8c668986a88f335ffd28a4171c8bfafb1d9c) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Button] Update onSelect type for UploadButton component
+
+- Updated dependencies [[`143b8c6`](https://github.com/launchdarkly/launchpad-ui/commit/143b8c668986a88f335ffd28a4171c8bfafb1d9c)]:
+  - @launchpad-ui/button@0.6.1
+  - @launchpad-ui/alert@0.3.1
+  - @launchpad-ui/banner@0.4.1
+  - @launchpad-ui/clipboard@0.6.1
+  - @launchpad-ui/dropdown@0.4.2
+  - @launchpad-ui/filter@0.3.2
+  - @launchpad-ui/modal@0.7.1
+  - @launchpad-ui/notification@0.4.1
+  - @launchpad-ui/pagination@0.2.1
+  - @launchpad-ui/split-button@0.5.2
+  - @launchpad-ui/navigation@0.5.2
+  - @launchpad-ui/overlay@0.3.1
+  - @launchpad-ui/popover@0.7.1
+  - @launchpad-ui/menu@0.5.1
+  - @launchpad-ui/progress-bubbles@0.4.1
+  - @launchpad-ui/tooltip@0.5.1
+
 ## 0.11.1
 
 ### Patch Changes
