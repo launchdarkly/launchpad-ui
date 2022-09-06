@@ -1,7 +1,6 @@
 const path = require('path');
 const tsconfig = require('../tsconfig.json');
 const fs = require('fs');
-const { mergeConfig } = require('vite');
 
 module.exports = {
   features: {
@@ -36,24 +35,6 @@ module.exports = {
     const packageStatuses = getPackageStatusEnvVars();
 
     return { ...config, ...packageStatuses };
-  },
-  async viteFinal(config) {
-    return mergeConfig(config, {
-      optimizeDeps: {
-        include: [
-          '@storybook/addon-a11y/manager',
-          '@storybook/addon-actions/manager.js',
-          '@storybook/addon-backgrounds/manager',
-          '@storybook/addon-docs/preview.js',
-          '@storybook/addon-highlight/preview.js',
-          '@storybook/addon-interactions/manager.js',
-          '@storybook/addon-measure/manager',
-          '@storybook/addon-outline/manager',
-          '@storybook/addon-toolbars/manager',
-          '@storybook/addon-viewport/manager',
-        ],
-      },
-    });
   },
 };
 
