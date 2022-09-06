@@ -6,7 +6,7 @@ import { useRef } from 'react';
 
 import { Button } from './Button';
 
-type UploadButtonProps = ButtonProps & {
+type UploadButtonProps = Omit<ButtonProps, 'onSelect'> & {
   onSelect(file?: File | null): void;
   maxSize: number;
   accept?: string;
