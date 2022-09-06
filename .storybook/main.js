@@ -1,17 +1,13 @@
 const path = require('path');
 const tsconfig = require('../tsconfig.json');
 const fs = require('fs');
+const fg = require('fast-glob');
+
+const getStories = () =>
+  fg.sync([path.resolve(__dirname, `../packages/**/stories/*.stories.tsx`), '!**/node_modules']);
 
 module.exports = {
-  features: {
-    // https://github.com/storybookjs/storybook/issues/19094
-    storyStoreV7: false,
-  },
-  docs: {
-    // https://github.com/storybookjs/builder-vite/issues/492
-    docsPage: false,
-  },
-  stories: ['../packages/**/*.stories.@(js|jsx|ts|tsx)'],
+  stories: async () => [...getStories()],
   addons: [
     '@storybook/addon-a11y',
     '@storybook/addon-actions',
