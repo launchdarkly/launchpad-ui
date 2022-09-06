@@ -31,6 +31,7 @@ const Notification = ({
   const timeout = useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
   const [showDetails, setShowDetails] = useState(false);
   const [containFocus, setContainFocus] = useState(false);
+  const [isCommandBarOpen, setIsCommandBarOpen] = useState<() => boolean | undefined>();
 
   const close = useCallback(() => {
     onDismiss();
@@ -46,6 +47,8 @@ const Notification = ({
   );
 
   useEffect(() => {
+    setIsCommandBarOpen(() => window.CommandBar?.isOpen);
+
     return () => {
       if (timeout.current) {
         clearTimeout(timeout.current);
@@ -153,11 +156,7 @@ const Notification = ({
       onFocus={handleMouseOver}
       onBlur={handleMouseOut}
     >
-      {containFocus ? (
-        <FocusScope contain={!window.CommandBar?.isOpen()}>{content}</FocusScope>
-      ) : (
-        content
-      )}
+      {containFocus ? <FocusScope contain={!isCommandBarOpen?.()}>{content}</FocusScope> : content}
     </div>
   );
 };
