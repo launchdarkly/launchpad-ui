@@ -65,7 +65,7 @@ importers:
       nx: ^14.6.4
       plop: ^3.1.1
       postcss: ^8.4.16
-      postcss-import: ^14.1.0
+      postcss-import: ^15.0.0
       postcss-nested: ^5.0.6
       postcss-preset-env: ^7.8.0
       prettier: ^2.7.0
@@ -140,7 +140,7 @@ importers:
       nx: 14.6.4
       plop: 3.1.1
       postcss: 8.4.16
-      postcss-import: 14.1.0_postcss@8.4.16
+      postcss-import: 15.0.0_postcss@8.4.16
       postcss-nested: 5.0.6_postcss@8.4.16
       postcss-preset-env: 7.8.0_postcss@8.4.16
       prettier: 2.7.1
@@ -15985,9 +15985,9 @@ packages:
       postcss-value-parser: 4.2.0
     dev: true
 
-  /postcss-import/14.1.0_postcss@8.4.16:
-    resolution: {integrity: sha512-flwI+Vgm4SElObFVPpTIT7SU7R3qk2L7PyduMcokiaVKuWv9d/U+Gm/QAd8NDLuykTWTkcrjOeD2Pp1rMeBTGw==}
-    engines: {node: '>=10.0.0'}
+  /postcss-import/15.0.0_postcss@8.4.16:
+    resolution: {integrity: sha512-Y20shPQ07RitgBGv2zvkEAu9bqvrD77C9axhj/aA1BQj4czape2MdClCExvB27EwYEJdGgKZBpKanb0t1rK2Kg==}
+    engines: {node: '>=14.0.0'}
     peerDependencies:
       postcss: ^8.0.0
     dependencies:
