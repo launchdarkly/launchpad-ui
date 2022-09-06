@@ -1,23 +1,14 @@
-import type { ButtonKind, ButtonSize } from '@launchpad-ui/button';
-import type { ElementRef, MouseEvent, ReactNode } from 'react';
+import type { ButtonProps } from '@launchpad-ui/button';
 
 import { Button } from '@launchpad-ui/button';
 import { ExpandMore, IconSize } from '@launchpad-ui/icons';
 import { forwardRef } from 'react';
 
-type DropdownButtonProps = {
+type DropdownButtonProps = ButtonProps & {
   hideCaret?: boolean;
-  kind?: ButtonKind;
-  size?: ButtonSize;
-  className?: string;
-  disabled?: boolean;
-  children?: ReactNode;
-  onClick?(v: MouseEvent): void;
-  testId?: string;
-  'aria-label'?: string;
 };
 
-const DropdownButton = forwardRef<ElementRef<typeof Button>, DropdownButtonProps>((props, ref) => {
+const DropdownButton = forwardRef<HTMLButtonElement, DropdownButtonProps>((props, ref) => {
   const { children, hideCaret, ...rest } = props;
 
   return (

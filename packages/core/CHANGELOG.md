@@ -1,5 +1,70 @@
 # @launchpad-ui/core
 
+## 0.11.1
+
+### Patch Changes
+
+- [#330](https://github.com/launchdarkly/launchpad-ui/pull/330) [`f440fa1`](https://github.com/launchdarkly/launchpad-ui/commit/f440fa17747771566dcc58db873f7167093df921) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Dropdown] Update prop passing to allow button props from dropdown button
+
+- Updated dependencies [[`f440fa1`](https://github.com/launchdarkly/launchpad-ui/commit/f440fa17747771566dcc58db873f7167093df921)]:
+  - @launchpad-ui/dropdown@0.4.1
+  - @launchpad-ui/split-button@0.5.1
+  - @launchpad-ui/filter@0.3.1
+  - @launchpad-ui/navigation@0.5.1
+
+## 0.11.0
+
+### Minor Changes
+
+- [#324](https://github.com/launchdarkly/launchpad-ui/pull/324) [`0ce0a50`](https://github.com/launchdarkly/launchpad-ui/commit/0ce0a50b8401ec39ef290605a2789c987c6264ce) Thanks [@Niznikr](https://github.com/Niznikr)! - Use vite for builds:
+
+  Each package's styles are now located in a single `style.css` within the root:
+
+  Before:
+
+  ```js
+  import alertStyles from '@launchpad-ui/alert/styles/Alert.css';
+  ```
+
+  After:
+
+  ```js
+  import alertStyles from '@launchpad-ui/alert/style.css';
+  ```
+
+  The `core` package no longer bundles styles. If you need to import stylesheets for the components (in a Remix app for example) simply import them from the individual packages that come included when you install the `core` package.
+
+### Patch Changes
+
+- Updated dependencies [[`0ce0a50`](https://github.com/launchdarkly/launchpad-ui/commit/0ce0a50b8401ec39ef290605a2789c987c6264ce)]:
+  - @launchpad-ui/alert@0.3.0
+  - @launchpad-ui/avatar@0.3.0
+  - @launchpad-ui/banner@0.4.0
+  - @launchpad-ui/button@0.6.0
+  - @launchpad-ui/chip@0.5.0
+  - @launchpad-ui/clipboard@0.6.0
+  - @launchpad-ui/counter@0.3.0
+  - @launchpad-ui/dropdown@0.4.0
+  - @launchpad-ui/filter@0.3.0
+  - @launchpad-ui/form@0.4.0
+  - @launchpad-ui/icons@0.4.0
+  - @launchpad-ui/markdown@0.3.0
+  - @launchpad-ui/menu@0.5.0
+  - @launchpad-ui/modal@0.7.0
+  - @launchpad-ui/navigation@0.5.0
+  - @launchpad-ui/notification@0.4.0
+  - @launchpad-ui/overlay@0.3.0
+  - @launchpad-ui/pagination@0.2.0
+  - @launchpad-ui/popover@0.7.0
+  - @launchpad-ui/progress@0.4.0
+  - @launchpad-ui/progress-bubbles@0.4.0
+  - @launchpad-ui/slider@0.3.0
+  - @launchpad-ui/split-button@0.5.0
+  - @launchpad-ui/tab-list@0.4.0
+  - @launchpad-ui/table@0.3.0
+  - @launchpad-ui/toggle@0.4.0
+  - @launchpad-ui/tooltip@0.5.0
+
 ## 0.10.0
 
 ### Minor Changes
