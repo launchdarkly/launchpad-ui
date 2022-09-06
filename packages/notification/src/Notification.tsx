@@ -153,7 +153,11 @@ const Notification = ({
       onFocus={handleMouseOver}
       onBlur={handleMouseOut}
     >
-      {containFocus ? <FocusScope contain>{content}</FocusScope> : content}
+      {containFocus ? (
+        <FocusScope contain={!window.CommandBar?.isOpen()}>{content}</FocusScope>
+      ) : (
+        content
+      )}
     </div>
   );
 };

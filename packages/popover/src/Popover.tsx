@@ -410,7 +410,7 @@ const Popover = ({
       >
         {enableArrow && <div id="arrow" ref={arrowRef}></div>}
         {interactionKind === 'click' ? (
-          <FocusScope autoFocus contain>
+          <FocusScope autoFocus contain={!window.CommandBar?.isOpen()}>
             {popoverContent}
           </FocusScope>
         ) : (

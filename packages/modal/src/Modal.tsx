@@ -104,7 +104,7 @@ const Modal = ({
           className="Modal-overlay"
           onMouseDown={handleOverlayClick}
         >
-          <FocusScope autoFocus restoreFocus contain>
+          <FocusScope autoFocus restoreFocus contain={!window.CommandBar?.isOpen()}>
             <m.div
               initial="hidden"
               animate="visible"

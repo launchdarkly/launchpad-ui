@@ -1,6 +1,3 @@
-/* eslint-disable no-var */
-declare global {
-  var IS_REACT_ACT_ENVIRONMENT: boolean;
-}
-
-export {};
+import 'commandbar';
+// eslint-disable-next-line import/no-unresolved
+import 'vite/client';
