@@ -1,5 +1,5 @@
 import type { AlertKind } from '@launchpad-ui/alert';
-import type { ReactNode } from 'react';
+import type { HTMLAttributes } from 'react';
 
 import { ButtonKind, IconButton, IconButtonSize } from '@launchpad-ui/button';
 import { Close, IconSize, KindIcon } from '@launchpad-ui/icons';
@@ -7,18 +7,26 @@ import { cx } from 'classix';
 
 import './styles/Banner.css';
 
-type BannerProps = {
+type BannerProps = HTMLAttributes<HTMLDivElement> & {
+  'data-test-id'?: string;
   kind: AlertKind;
-  className?: string;
-  children: ReactNode;
   onDismiss?(): void;
   dismissible?: boolean;
-  testId?: string;
 };
 
-const Banner = ({ kind, className, children, onDismiss, dismissible, testId }: BannerProps) => {
+const Banner = ({
+  kind,
+  className,
+  children,
+  onDismiss,
+  dismissible,
+  'data-test-id': testId,
+  ...rest
+}: BannerProps) => {
+  const classes = cx('Banner', `Banner--${kind}`, className);
+
   return (
-    <div className={cx('Banner', `Banner--${kind}`, className)} data-test-id={testId}>
+    <div className={classes} data-test-id={testId} {...rest}>
       <KindIcon kind={kind} className="Banner-icon" />
       <span className="Banner-text">{children}</span>
       {dismissible && (
