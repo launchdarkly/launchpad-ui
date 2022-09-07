@@ -1,7 +1,10 @@
 const path = require('path');
-const tsconfig = require('../tsconfig.json');
 const fs = require('fs');
+
 const fg = require('fast-glob');
+const turbosnap = require('vite-plugin-turbosnap');
+
+const tsconfig = require('../tsconfig.json');
 
 const getStories = () =>
   fg.sync([path.resolve(__dirname, `../packages/**/stories/*.stories.tsx`), '!**/node_modules']);
@@ -31,6 +34,13 @@ module.exports = {
     const packageStatuses = getPackageStatusEnvVars();
 
     return { ...config, ...packageStatuses };
+  },
+  async viteFinal(config, { configType }) {
+    if (configType === 'PRODUCTION') {
+      config.plugins.push(turbosnap({ rootDir: config.root }));
+    }
+
+    return config;
   },
 };
 
