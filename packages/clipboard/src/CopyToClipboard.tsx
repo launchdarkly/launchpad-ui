@@ -1,25 +1,24 @@
 import type { TooltipProps } from '@launchpad-ui/tooltip';
-import type { KeyboardEventHandler, ReactNode } from 'react';
+import type { HTMLAttributes, KeyboardEventHandler } from 'react';
 
 import { Button, ButtonSize } from '@launchpad-ui/button';
 import { CheckCircle, IconSize } from '@launchpad-ui/icons';
 import { Tooltip } from '@launchpad-ui/tooltip';
 import { Slot } from '@radix-ui/react-slot';
 import { announce } from '@react-aria/live-announcer';
+import { cx } from 'classix';
 import { forwardRef, useCallback, useImperativeHandle, useRef, useState } from 'react';
 
 import './styles/Clipboard.css';
 
-type CopyToClipboardProps = {
-  children: ReactNode;
-  testId?: string;
-  ariaLabel?: string;
+type CopyToClipboardProps = HTMLAttributes<HTMLSpanElement> & {
+  triggerAriaLabel?: string;
   customCopiedText?: string;
   text: string;
   tooltip?: string | JSX.Element;
   tooltipOptions?: Partial<TooltipProps>;
   popoverTargetClassName?: string;
-  onClick?(): void;
+  onCopy?(): void;
   asChild?: boolean;
 };
 
@@ -43,18 +42,21 @@ const CopyToClipboard = forwardRef<CopyToClipboardHandleRef, CopyToClipboardProp
       tooltipOptions = {
         placement: 'bottom',
       },
+      className,
       popoverTargetClassName,
       children,
-      ariaLabel,
-      testId,
-      onClick,
+      triggerAriaLabel,
+      onCopy,
       asChild,
+      ...rest
     },
     ref
   ) => {
     const [isOpen, setIsOpen] = useState(false);
     const [wasCopied, setWasCopied] = useState(false);
     const buttonRef = useRef<HTMLButtonElement>(null);
+
+    const classes = cx('CopyToClipboard', className);
 
     const handleCopy = useCallback(async () => {
       await navigator.clipboard.writeText(text);
@@ -68,8 +70,8 @@ const CopyToClipboard = forwardRef<CopyToClipboardHandleRef, CopyToClipboardProp
       setWasCopied(true);
       announce('Copied!', 'polite', 300);
 
-      onClick?.();
-    }, [onClick, buttonRef, text, setIsOpen, setWasCopied]);
+      onCopy?.();
+    }, [onCopy, buttonRef, text, setIsOpen, setWasCopied]);
 
     // this imperative handle is useful when a parent needs to programmatically
     // call `handleCopy`, e.g. when the parent node is clicked
@@ -84,8 +86,7 @@ const CopyToClipboard = forwardRef<CopyToClipboardHandleRef, CopyToClipboardProp
     const tooltipText = wasCopied
       ? customCopiedText || <CopyConfirmation />
       : tooltip || 'Copy to clipboard';
-    const ariaLabelText = ariaLabel ? ariaLabel : `Copy ${text} to your clipboard.`;
-    const testIdOrFallback = testId ? testId : 'temp-test-id';
+    const triggerAriaLabelText = triggerAriaLabel || `Copy ${text} to your clipboard.`;
 
     const handleInteraction = (isOpen: boolean) => {
       setIsOpen(isOpen);
@@ -104,7 +105,7 @@ const CopyToClipboard = forwardRef<CopyToClipboardHandleRef, CopyToClipboardProp
     const Component = asChild ? Slot : Button;
 
     return (
-      <span className="CopyToClipboard" data-test-id={testIdOrFallback}>
+      <span className={classes} {...rest}>
         <Tooltip
           {...tooltipOptions}
           isOpen={isOpen}
@@ -117,7 +118,7 @@ const CopyToClipboard = forwardRef<CopyToClipboardHandleRef, CopyToClipboardProp
             onKeyDown={handleKeyDown}
             size={ButtonSize.TINY}
             ref={buttonRef}
-            aria-label={ariaLabelText}
+            aria-label={triggerAriaLabelText}
             role="button"
             className="CopyToClipboard-trigger"
             tabIndex={0}
