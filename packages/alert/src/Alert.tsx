@@ -8,7 +8,7 @@ import { useState } from 'react';
 import './styles/Alert.css';
 import { AlertKind, AlertSize } from './types';
 
-type AlertProps = HTMLAttributes<HTMLElement> & {
+type AlertProps = HTMLAttributes<HTMLDivElement> & {
   'data-test-id'?: string;
   /**
    * When true, shows the compact Alert variant,
