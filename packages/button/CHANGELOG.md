@@ -1,5 +1,11 @@
 # @launchpad-ui/button
 
+## 0.6.2
+
+### Patch Changes
+
+- [#340](https://github.com/launchdarkly/launchpad-ui/pull/340) [`fee517a`](https://github.com/launchdarkly/launchpad-ui/commit/fee517a3ee1329d311a634ea0fad09bc37e7a33a) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Button] Improve prop object type for ButtonGroup and IconButton components to pass through HTML attributes
+
 ## 0.6.1
 
 ### Patch Changes

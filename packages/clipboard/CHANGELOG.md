@@ -1,5 +1,15 @@
 # @launchpad-ui/clipboard
 
+## 0.6.2
+
+### Patch Changes
+
+- [#343](https://github.com/launchdarkly/launchpad-ui/pull/343) [`b1f98a8`](https://github.com/launchdarkly/launchpad-ui/commit/b1f98a8a8a3c8bc4f69c0097c90304bf030115ee) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [CopyToClipboard] Enhance object prop type for CopyToClipboard component to support passing html attributes
+
+- Updated dependencies [[`fee517a`](https://github.com/launchdarkly/launchpad-ui/commit/fee517a3ee1329d311a634ea0fad09bc37e7a33a)]:
+  - @launchpad-ui/button@0.6.2
+  - @launchpad-ui/tooltip@0.5.2
+
 ## 0.6.1
 
 ### Patch Changes

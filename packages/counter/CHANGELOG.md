@@ -1,5 +1,11 @@
 # @launchpad-ui/counter
 
+## 0.3.1
+
+### Patch Changes
+
+- [#344](https://github.com/launchdarkly/launchpad-ui/pull/344) [`a11629f`](https://github.com/launchdarkly/launchpad-ui/commit/a11629fa23c8e4e9d9c353f7eb00cdbaf3e4f8e4) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Counter] Enhance object prop type for Counter so HTML attributes can be passed
+
 ## 0.3.0
 
 ### Minor Changes

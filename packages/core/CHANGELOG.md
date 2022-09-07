@@ -1,5 +1,46 @@
 # @launchpad-ui/core
 
+## 0.11.3
+
+### Patch Changes
+
+- [#342](https://github.com/launchdarkly/launchpad-ui/pull/342) [`f2be6b7`](https://github.com/launchdarkly/launchpad-ui/commit/f2be6b78e3024c58c7e01c6b154322f3558e8032) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Chip] Improve prop object type for Chip component to pass through HTML attributes
+
+* [#339](https://github.com/launchdarkly/launchpad-ui/pull/339) [`0ce7371`](https://github.com/launchdarkly/launchpad-ui/commit/0ce7371aac311cf9db707381e2988bebc5873538) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Alert] Improve prop object type for Alert and CollapsibleAlert component to support passing generic HTML attributes
+
+- [#340](https://github.com/launchdarkly/launchpad-ui/pull/340) [`fee517a`](https://github.com/launchdarkly/launchpad-ui/commit/fee517a3ee1329d311a634ea0fad09bc37e7a33a) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Button] Improve prop object type for ButtonGroup and IconButton components to pass through HTML attributes
+
+* [#341](https://github.com/launchdarkly/launchpad-ui/pull/341) [`b9ce34a`](https://github.com/launchdarkly/launchpad-ui/commit/b9ce34a7393d32e9657ddd921532b3ab3a7e597b) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Banner] Improve prop object type for Banner component to support passing in generic HTML attributes
+
+- [#343](https://github.com/launchdarkly/launchpad-ui/pull/343) [`b1f98a8`](https://github.com/launchdarkly/launchpad-ui/commit/b1f98a8a8a3c8bc4f69c0097c90304bf030115ee) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [CopyToClipboard] Enhance object prop type for CopyToClipboard component to support passing html attributes
+
+* [#336](https://github.com/launchdarkly/launchpad-ui/pull/336) [`28ffe4d`](https://github.com/launchdarkly/launchpad-ui/commit/28ffe4dd8608c71a5ff20c8b574b1a6d0e592a11) Thanks [@Niznikr](https://github.com/Niznikr)! - [Modal, Notification, Popover]: Stop focus trap when commandbar is open
+
+- [#338](https://github.com/launchdarkly/launchpad-ui/pull/338) [`295692f`](https://github.com/launchdarkly/launchpad-ui/commit/295692fb70f6deb1a39fbc0a6bcb92f06bb1b24c) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Avatar] Improve prop object type for Avatar component to support passing generic HTML attributes
+
+* [#344](https://github.com/launchdarkly/launchpad-ui/pull/344) [`a11629f`](https://github.com/launchdarkly/launchpad-ui/commit/a11629fa23c8e4e9d9c353f7eb00cdbaf3e4f8e4) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Counter] Enhance object prop type for Counter so HTML attributes can be passed
+
+* Updated dependencies [[`f2be6b7`](https://github.com/launchdarkly/launchpad-ui/commit/f2be6b78e3024c58c7e01c6b154322f3558e8032), [`0ce7371`](https://github.com/launchdarkly/launchpad-ui/commit/0ce7371aac311cf9db707381e2988bebc5873538), [`fee517a`](https://github.com/launchdarkly/launchpad-ui/commit/fee517a3ee1329d311a634ea0fad09bc37e7a33a), [`b9ce34a`](https://github.com/launchdarkly/launchpad-ui/commit/b9ce34a7393d32e9657ddd921532b3ab3a7e597b), [`b1f98a8`](https://github.com/launchdarkly/launchpad-ui/commit/b1f98a8a8a3c8bc4f69c0097c90304bf030115ee), [`28ffe4d`](https://github.com/launchdarkly/launchpad-ui/commit/28ffe4dd8608c71a5ff20c8b574b1a6d0e592a11), [`295692f`](https://github.com/launchdarkly/launchpad-ui/commit/295692fb70f6deb1a39fbc0a6bcb92f06bb1b24c), [`a11629f`](https://github.com/launchdarkly/launchpad-ui/commit/a11629fa23c8e4e9d9c353f7eb00cdbaf3e4f8e4)]:
+  - @launchpad-ui/chip@0.5.1
+  - @launchpad-ui/alert@0.3.2
+  - @launchpad-ui/button@0.6.2
+  - @launchpad-ui/banner@0.4.2
+  - @launchpad-ui/clipboard@0.6.2
+  - @launchpad-ui/modal@0.7.2
+  - @launchpad-ui/notification@0.4.2
+  - @launchpad-ui/popover@0.7.2
+  - @launchpad-ui/avatar@0.3.1
+  - @launchpad-ui/counter@0.3.1
+  - @launchpad-ui/navigation@0.5.3
+  - @launchpad-ui/dropdown@0.4.3
+  - @launchpad-ui/filter@0.3.3
+  - @launchpad-ui/pagination@0.2.2
+  - @launchpad-ui/split-button@0.5.3
+  - @launchpad-ui/overlay@0.3.2
+  - @launchpad-ui/menu@0.5.2
+  - @launchpad-ui/progress-bubbles@0.4.2
+  - @launchpad-ui/tooltip@0.5.2
+
 ## 0.11.2
 
 ### Patch Changes

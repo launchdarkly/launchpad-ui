@@ -1,5 +1,11 @@
 # @launchpad-ui/chip
 
+## 0.5.1
+
+### Patch Changes
+
+- [#342](https://github.com/launchdarkly/launchpad-ui/pull/342) [`f2be6b7`](https://github.com/launchdarkly/launchpad-ui/commit/f2be6b78e3024c58c7e01c6b154322f3558e8032) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Chip] Improve prop object type for Chip component to pass through HTML attributes
+
 ## 0.5.0
 
 ### Minor Changes

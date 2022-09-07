@@ -1,5 +1,14 @@
 # @launchpad-ui/alert
 
+## 0.3.2
+
+### Patch Changes
+
+- [#339](https://github.com/launchdarkly/launchpad-ui/pull/339) [`0ce7371`](https://github.com/launchdarkly/launchpad-ui/commit/0ce7371aac311cf9db707381e2988bebc5873538) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Alert] Improve prop object type for Alert and CollapsibleAlert component to support passing generic HTML attributes
+
+- Updated dependencies [[`fee517a`](https://github.com/launchdarkly/launchpad-ui/commit/fee517a3ee1329d311a634ea0fad09bc37e7a33a)]:
+  - @launchpad-ui/button@0.6.2
+
 ## 0.3.1
 
 ### Patch Changes

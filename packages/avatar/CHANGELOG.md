@@ -1,5 +1,11 @@
 # @launchpad-ui/avatar
 
+## 0.3.1
+
+### Patch Changes
+
+- [#338](https://github.com/launchdarkly/launchpad-ui/pull/338) [`295692f`](https://github.com/launchdarkly/launchpad-ui/commit/295692fb70f6deb1a39fbc0a6bcb92f06bb1b24c) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Avatar] Improve prop object type for Avatar component to support passing generic HTML attributes
+
 ## 0.3.0
 
 ### Minor Changes
