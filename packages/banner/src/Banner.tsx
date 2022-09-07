@@ -7,7 +7,7 @@ import { cx } from 'classix';
 
 import './styles/Banner.css';
 
-type BannerProps = HTMLAttributes<HTMLElement> & {
+type BannerProps = HTMLAttributes<HTMLDivElement> & {
   'data-test-id'?: string;
   kind: AlertKind;
   onDismiss?(): void;
