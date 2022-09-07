@@ -24,7 +24,7 @@ module.exports = {
   ],
   framework: {
     name: '@storybook/react-vite',
-    options: { fastRefresh: true, strictMode: true },
+    options: { fastRefresh: true },
   },
   staticDirs: ['.'],
   env: (config) => {
