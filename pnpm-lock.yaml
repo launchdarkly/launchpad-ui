@@ -3,6 +3,7 @@ lockfileVersion: 5.4
 overrides:
   '@vitejs/plugin-react': ^2.0.0
   vite: ^3.0.0
+  io-ts: ^2.2.18
 
 importers:
 
@@ -45,6 +46,7 @@ importers:
       babel-loader: ^8.2.4
       browserslist: ^4.21.1
       chromatic: ^6.9.0
+      commandbar: ^1.6.15
       concurrently: ^7.3.0
       deepmerge: ^4.2.2
       eslint: ^8.23.0
@@ -120,6 +122,7 @@ importers:
       babel-loader: 8.2.5_z22tmofudeh3tyeifpjvwjl5ei
       browserslist: 4.21.1
       chromatic: 6.9.0
+      commandbar: 1.6.15
       concurrently: 7.3.0
       deepmerge: 4.2.2
       eslint: 8.23.0
@@ -9366,6 +9369,13 @@ packages:
     resolution: {integrity: sha512-G5yTt3KQN4Yn7Yk4ed73hlZ1evrFKXeUW3086p3PRFNp7m2vIjI6Pg+Kgb+oyzhd9F2qdcoj67+y3SdxL5XWsg==}
     dev: true
 
+  /commandbar/1.6.15:
+    resolution: {integrity: sha512-iM9akRYKrDk1pYaiFxOfNFPPynnKNqOCuyMZLaG7MG1y/v8RaHLfGKAaEdypL40HjEm3XUteLBFaLPfiyRGr/w==}
+    dependencies:
+      fp-ts: 2.10.5
+      io-ts: 2.2.18_fp-ts@2.10.5
+    dev: true
+
   /commander/2.20.3:
     resolution: {integrity: sha512-GpVkmM8vF2vQUkj2LvZmD35JxeJOLCwJ9cUkugyk2nuhbv3+mJvpLYYt+0+USMxE+oj+ey/lJEnhZw75x/OMcQ==}
     dev: true
@@ -11925,6 +11935,10 @@ packages:
     resolution: {integrity: sha512-buRG0fpBtRHSTCOASe6hD258tEubFoRLb4ZNA6NxMVHNw2gOcwHo9wyablzMzOA5z9xA9L1KNjk/Nt6MT9aYow==}
     engines: {node: '>= 0.6'}
 
+  /fp-ts/2.10.5:
+    resolution: {integrity: sha512-X2KfTIV0cxIk3d7/2Pvp/pxL/xr2MV1WooyEzKtTWYSc1+52VF4YzjBTXqeOlSiZsPCxIBpDGfT9Dyo7WEY0DQ==}
+    dev: true
+
   /fraction.js/4.2.0:
     resolution: {integrity: sha512-MhLuK+2gUcnZe8ZHlaaINnQLl0xRIGRfcGk2yl8xoQAfHrSsL3rYu6FCmBdkdbhc9EPlwyGHewaRsvwRMJtAlA==}
     dev: true
@@ -12865,6 +12879,14 @@ packages:
     resolution: {integrity: sha512-phJfQVBuaJM5raOpJjSfkiD6BpbCE4Ns//LaXl6wGYtUBY83nWS6Rf9tXm2e8VaK60JEjYldbPif/A2B1C2gNA==}
     dependencies:
       loose-envify: 1.4.0
+    dev: true
+
+  /io-ts/2.2.18_fp-ts@2.10.5:
+    resolution: {integrity: sha512-3JxUUzRtPQPs5sOwB7pW0+Xb54nOzqA6M1sRB1hwgsRmkWMeGTjtOrCynGTJhIj+mBLUj2S37DAq2+BrPh9kTQ==}
+    peerDependencies:
+      fp-ts: ^2.5.0
+    dependencies:
+      fp-ts: 2.10.5
     dev: true
 
   /ip/2.0.0:
