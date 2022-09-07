@@ -3,4 +3,4 @@
 '@launchpad-ui/core': patch
 ---
 
-Enhance object prop type for Counter so HTML attributes can be passed
+[Counter] Enhance object prop type for Counter so HTML attributes can be passed
