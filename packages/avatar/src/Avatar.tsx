@@ -1,5 +1,5 @@
 import type { IconProps } from '@launchpad-ui/icons';
-import type { ComponentType } from 'react';
+import type { ComponentType, HTMLAttributes } from 'react';
 
 import { IconSize, Person } from '@launchpad-ui/icons';
 import { cx } from 'classix';
@@ -9,15 +9,12 @@ import './styles/Avatar.css';
 import { AvatarSize, AvatarDimension } from './types';
 import { useIsMounted } from './utils';
 
-type AvatarProps = {
+type AvatarProps = HTMLAttributes<HTMLDivElement> & {
   alt?: string;
   url: string;
   size?: AvatarSize;
   initials?: string;
-  'aria-label'?: string;
   defaultIcon?: ComponentType<IconProps>;
-  testId?: string;
-  className?: string;
 };
 
 const Avatar = ({
@@ -26,9 +23,8 @@ const Avatar = ({
   defaultIcon: DefaultIcon = Person,
   className,
   initials,
-  testId,
-  'aria-label': ariaLabel,
   size = AvatarSize.MEDIUM,
+  ...rest
 }: AvatarProps) => {
   const isMounted = useIsMounted();
   const [useDefaultAvatar, setUseDefaultAvatar] = useState(!url);
@@ -65,17 +61,16 @@ const Avatar = ({
       const initialsContainerClasses = cx(classes, `Avatar--initials Avatar--color${color}`);
 
       return (
-        <div className={initialsContainerClasses} aria-label={ariaLabel} data-test-id={testId}>
+        <div className={initialsContainerClasses} {...rest}>
           <span className="Avatar-initials-content">{initials}</span>
         </div>
       );
     } else {
       return (
         <DefaultIcon
-          aria-label={ariaLabel}
           className={classes}
-          data-test-id={testId}
           size={IconSize[size.toUpperCase() as keyof typeof AvatarSize]}
+          {...rest}
         />
       );
     }
@@ -85,12 +80,12 @@ const Avatar = ({
 
   return (
     <img
+      {...rest}
       alt={alt}
       className={classes}
       src={imageSource}
       width={dimension}
       height={dimension}
-      data-test-id={testId}
       onError={() => setUseDefaultAvatar(true)}
     />
   );
