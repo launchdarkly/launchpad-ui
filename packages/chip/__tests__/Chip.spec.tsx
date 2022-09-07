@@ -13,7 +13,7 @@ describe('Chip', () => {
     const spy = vi.fn();
     const user = userEvent.setup();
     render(
-      <Chip kind={ChipKind.NEW} isClickable handleClick={spy}>
+      <Chip kind={ChipKind.NEW} onClick={spy}>
         New Chip
       </Chip>
     );

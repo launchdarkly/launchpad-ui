@@ -17,11 +17,6 @@ export default {
         category: 'Presentation',
       },
     },
-    isClickable: {
-      table: {
-        category: 'Presentation',
-      },
-    },
     kind: {
       table: {
         category: 'Presentation',
@@ -42,19 +37,14 @@ export default {
         category: 'Content',
       },
     },
-    handleClick: {
+    onClick: {
       table: {
         category: 'Functions',
       },
     },
-    handleKeyPress: {
+    onKeyDown: {
       table: {
         category: 'Functions',
-      },
-    },
-    ariaDisabled: {
-      table: {
-        category: 'Accessibility',
       },
     },
   },
