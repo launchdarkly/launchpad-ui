@@ -1,17 +1,22 @@
+import type { HTMLAttributes } from 'react';
+
 import { cx } from 'classix';
 
 import './styles/Counter.css';
 
-type CounterProps = {
+type CounterProps = HTMLAttributes<HTMLSpanElement> & {
   value: number;
-  className?: string;
   subtle?: boolean;
 };
 
-const Counter = ({ value, className, subtle }: CounterProps) => {
+const Counter = ({ value, className, subtle, ...rest }: CounterProps) => {
   const classes = cx('Counter', className, subtle && 'Counter--subtle');
 
-  return <span className={classes}>{value}</span>;
+  return (
+    <span className={classes} {...rest}>
+      {value}
+    </span>
+  );
 };
 
 export { Counter };
