@@ -7,7 +7,7 @@ import { FocusScope } from '@react-aria/focus';
 import { usePreventScroll } from '@react-aria/overlays';
 import { cx } from 'classix';
 import { LazyMotion, m } from 'framer-motion';
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 const overlay: Variants = {
   visible: { opacity: 1, transition: { duration: 0.15 } },
@@ -58,8 +58,13 @@ const Modal = ({
   transition,
 }: ModalProps) => {
   const ref = useRef<HTMLDivElement>(null);
+  const [isCommandBarOpen, setIsCommandBarOpen] = useState<() => boolean | undefined>();
 
   usePreventScroll();
+
+  useEffect(() => {
+    setIsCommandBarOpen(() => window.CommandBar?.isOpen);
+  }, []);
 
   useEffect(() => {
     const handleEscape = (event: KeyboardEvent) => {
@@ -104,7 +109,7 @@ const Modal = ({
           className="Modal-overlay"
           onMouseDown={handleOverlayClick}
         >
-          <FocusScope autoFocus restoreFocus contain>
+          <FocusScope autoFocus restoreFocus contain={!isCommandBarOpen?.()}>
             <m.div
               initial="hidden"
               animate="visible"
