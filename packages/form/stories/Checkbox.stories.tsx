@@ -8,7 +8,7 @@ export default {
   description: 'A checkbox allows the user to toggle between checked and unchecked states.',
   parameters: {
     status: {
-      type: process.env.PACKAGE_STATUS__FORM,
+      type: import.meta.env.PACKAGE_STATUS__FORM,
     },
   },
   argTypes: {

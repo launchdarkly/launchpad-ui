@@ -52,7 +52,7 @@ export default {
   description: 'Toggles represent on/off values as opposed to selection.',
   parameters: {
     status: {
-      type: process.env.PACKAGE_STATUS__TOGGLE,
+      type: import.meta.env.PACKAGE_STATUS__TOGGLE,
     },
   },
   decorators: [

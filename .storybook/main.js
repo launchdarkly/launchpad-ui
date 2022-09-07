@@ -1,29 +1,29 @@
 const path = require('path');
 const tsconfig = require('../tsconfig.json');
 const fs = require('fs');
+const fg = require('fast-glob');
+
+const getStories = () =>
+  fg.sync([path.resolve(__dirname, `../packages/**/stories/*.stories.tsx`), '!**/node_modules']);
 
 module.exports = {
-  core: {
-    builder: { name: '@storybook/builder-webpack5' },
-  },
-  stories: ['../packages/**/*.stories.@(js|jsx|ts|tsx)'],
+  stories: async () => [...getStories()],
   addons: [
     '@storybook/addon-a11y',
-    '@storybook/addon-essentials',
-    'storybook-addon-pseudo-states',
-    {
-      name: '@storybook/addon-postcss',
-      options: {
-        postcssLoaderOptions: {
-          implementation: require('postcss'),
-        },
-      },
-    },
+    '@storybook/addon-actions',
+    '@storybook/addon-backgrounds',
+    '@storybook/addon-docs',
+    '@storybook/addon-highlight',
     '@storybook/addon-interactions',
-    '@etchteam/storybook-addon-status',
+    '@storybook/addon-measure',
+    '@storybook/addon-outline',
+    '@storybook/addon-toolbars',
+    '@storybook/addon-viewport',
+    'storybook-addon-pseudo-states',
+    //'@etchteam/storybook-addon-status',
   ],
   framework: {
-    name: '@storybook/react-webpack5',
+    name: '@storybook/react-vite',
     options: { fastRefresh: true },
   },
   staticDirs: ['.'],
@@ -32,27 +32,6 @@ module.exports = {
 
     return { ...config, ...packageStatuses };
   },
-  webpackFinal: async (config) => ({
-    ...config,
-    resolve: {
-      ...config.resolve,
-      alias: {
-        ...config.resolve.alias,
-        ...getAliases(),
-      },
-    },
-  }),
-};
-
-const getAliases = () => {
-  const paths = tsconfig.compilerOptions.paths;
-  const alias = {};
-
-  Object.keys(paths).forEach((key) => {
-    alias[key] = path.resolve(__dirname, `.${paths[key][0]}`);
-  });
-
-  return alias;
 };
 
 const getPackageStatusEnvVars = () => {

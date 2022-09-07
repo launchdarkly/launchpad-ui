@@ -8,7 +8,7 @@ export default {
   description: 'A select field allows the user to select a value from a set of options."',
   parameters: {
     status: {
-      type: process.env.PACKAGE_STATUS__FORM,
+      type: import.meta.env.PACKAGE_STATUS__FORM,
     },
   },
   argTypes: {

@@ -1,7 +1,6 @@
 import type { ComponentStoryObj, StoryFn } from '@storybook/react';
 
 import { Person } from '../../icons/src';
-import { IconSize } from '../../icons/src/types';
 import { Avatar, AvatarSize } from '../src';
 
 export default {
@@ -10,12 +9,11 @@ export default {
   description: 'An element that represents a user visually.',
   parameters: {
     status: {
-      type: process.env.PACKAGE_STATUS__AVATAR,
+      type: import.meta.env.PACKAGE_STATUS__AVATAR,
     },
   },
   argTypes: {
     size: {
-      defaultValue: IconSize.MEDIUM,
       table: {
         category: 'Presentation',
       },

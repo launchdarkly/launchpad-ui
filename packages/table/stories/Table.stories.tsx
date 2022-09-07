@@ -9,7 +9,7 @@ export default {
   description: 'An element used to organize and display data to users.',
   parameters: {
     status: {
-      type: process.env.PACKAGE_STATUS__TABLE,
+      type: import.meta.env.PACKAGE_STATUS__TABLE,
     },
   },
 };

@@ -12,7 +12,7 @@ export default {
   description: 'Popovers display content within a portal triggered by user interactions.',
   parameters: {
     status: {
-      type: process.env.PACKAGE_STATUS__POPOVER,
+      type: import.meta.env.PACKAGE_STATUS__POPOVER,
     },
   },
   argTypes: {

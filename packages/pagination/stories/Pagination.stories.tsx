@@ -8,7 +8,7 @@ export default {
   description: 'Navigate through a paged list.',
   parameters: {
     status: {
-      type: process.env.PACKAGE_STATUS__PAGINATION,
+      type: import.meta.env.PACKAGE_STATUS__PAGINATION,
     },
   },
 };

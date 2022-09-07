@@ -16,7 +16,7 @@ export default {
       page: null,
     },
     status: {
-      type: process.env.PACKAGE_STATUS__MODAL,
+      type: import.meta.env.PACKAGE_STATUS__MODAL,
     },
   },
 };

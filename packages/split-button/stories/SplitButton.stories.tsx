@@ -93,7 +93,7 @@ export default {
     'An element that presents an immediate action and additional options from a dropdown.',
   parameters: {
     status: {
-      type: process.env.PACKAGE_STATUS__SPLIT_BUTTON,
+      type: import.meta.env.PACKAGE_STATUS__SPLIT_BUTTON,
     },
   },
   argTypes: {

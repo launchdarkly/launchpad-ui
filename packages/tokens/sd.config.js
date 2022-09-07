@@ -71,6 +71,15 @@ module.exports = {
         },
       ],
     },
+    json: {
+      buildPath: 'stories/',
+      files: [
+        {
+          format: 'json',
+          destination: 'tokens.json',
+        },
+      ],
+    },
   },
 };
 

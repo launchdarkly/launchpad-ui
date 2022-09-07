@@ -11,3 +11,5 @@ test-results/
 .env
 .DS_Store
 *.log
+
+packages/tokens/stories/tokens.json

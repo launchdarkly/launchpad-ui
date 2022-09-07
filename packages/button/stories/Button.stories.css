@@ -1,5 +1,6 @@
 .Storygroup-wrapper > * {
-  margin: auto 0;
+  /* stylelint-disable-next-line declaration-no-important */
+  margin: auto 0 !important;
 }
 
 .Storygroup-wrapper {

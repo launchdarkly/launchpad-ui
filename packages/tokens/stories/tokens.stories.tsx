@@ -1,5 +1,4 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
-const tokens = require('../dist/index');
+import tokens from './tokens.json';
 
 export default {
   title: 'Tokens/Colors',
