@@ -17,7 +17,6 @@ type IconButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
   kind?: ButtonKind;
   icon: ReactElement<{ size?: string; key: string; 'aria-hidden': boolean }>;
   size?: IconButtonSize;
-  disabled?: boolean;
   'aria-label': string;
   asChild?: boolean;
 };
