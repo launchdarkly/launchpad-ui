@@ -1,4 +1,4 @@
-import type { ReactNode } from 'react';
+import type { HTMLAttributes } from 'react';
 
 import { ButtonKind, IconButton, IconButtonSize } from '@launchpad-ui/button';
 import { Close, IconSize, KindIcon } from '@launchpad-ui/icons';
@@ -8,15 +8,8 @@ import { useState } from 'react';
 import './styles/Alert.css';
 import { AlertKind, AlertSize } from './types';
 
-type AlertProps = {
-  /**
-   * Child nodes to pass into the Alert.
-   */
-  children?: ReactNode;
-  /**
-   * Custom classname(s) to add to the Alert.
-   */
-  className?: string;
+type AlertProps = HTMLAttributes<HTMLElement> & {
+  'data-test-id'?: string;
   /**
    * When true, shows the compact Alert variant,
    * width of Alert fits content.
@@ -38,10 +31,6 @@ type AlertProps = {
    * The default is AlertSize.MEDIUM.
    */
   size?: AlertSize;
-  /**
-   * Sets the value for the `data-test-id` attribute.
-   */
-  testId?: string;
   /**
    * When true, shows the wide Alert variant, adds top margin,
    * sets width to 86% (why?).
@@ -72,11 +61,12 @@ const Alert = ({
   isInline,
   kind = AlertKind.INFO,
   size = AlertSize.MEDIUM,
-  testId,
   wide,
   dismissible,
   onDismiss,
   noIcon,
+  'data-test-id': testId,
+  ...rest
 }: AlertProps) => {
   const [dismissed, setDismissed] = useState(false);
 
@@ -106,6 +96,7 @@ const Alert = ({
 
   return (
     <div
+      {...rest}
       className={classes}
       data-test-id={testId}
       role={[AlertKind.INFO, AlertKind.SUCCESS].includes(kind) ? 'status' : 'alert'}
