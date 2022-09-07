@@ -5,7 +5,7 @@ import { cx } from 'classix';
 import './styles/ButtonGroup.css';
 import { ButtonGroupSpacing } from './types';
 
-type ButtonGroupProps = HTMLAttributes<HTMLElement> & {
+type ButtonGroupProps = HTMLAttributes<HTMLDivElement> & {
   spacing?: ButtonGroupSpacing;
 };
 
