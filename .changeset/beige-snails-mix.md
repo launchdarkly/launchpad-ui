@@ -3,4 +3,4 @@
 '@launchpad-ui/core': patch
 ---
 
-Improve prop object type for Chip component to pass through HTML attributes
+[Chip] Improve prop object type for Chip component to pass through HTML attributes
