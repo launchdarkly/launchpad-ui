@@ -9,7 +9,7 @@ import './styles/Avatar.css';
 import { AvatarSize, AvatarDimension } from './types';
 import { useIsMounted } from './utils';
 
-type AvatarProps = HTMLAttributes<HTMLElement> & {
+type AvatarProps = HTMLAttributes<HTMLDivElement> & {
   alt?: string;
   url: string;
   size?: AvatarSize;
