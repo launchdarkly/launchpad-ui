@@ -12,7 +12,12 @@ import { CopyToClipboard } from '../src';
 window.navigator = { clipboard: { writeText: vi.fn() } };
 
 const createComponent = ({ children, ...rest }: Partial<CopyToClipboardProps>) => (
-  <CopyToClipboard text="Copy content" tooltipOptions={{ hoverOpenDelay: 0 }} {...rest}>
+  <CopyToClipboard
+    text="Copy content"
+    tooltipOptions={{ hoverOpenDelay: 0 }}
+    data-test-id="test-component"
+    {...rest}
+  >
     {children || 'Copy content'}
   </CopyToClipboard>
 );
@@ -21,7 +26,7 @@ describe('CopyToClipboard', () => {
   it('copies text when clicked on', async () => {
     const user = userEvent.setup();
 
-    render(createComponent({ testId: 'test' }));
+    render(createComponent({}));
 
     await user.click(screen.getByRole('button'));
     expect(navigator.clipboard.writeText).toHaveBeenCalledWith('Copy content');
@@ -30,7 +35,7 @@ describe('CopyToClipboard', () => {
   it('handles MouseEnter and MouseLeave', async () => {
     const user = userEvent.setup();
 
-    render(createComponent({ ariaLabel: 'copy to clipboard' }));
+    render(createComponent({ triggerAriaLabel: 'copy to clipboard' }));
 
     expect(screen.queryByRole('tooltip')).toBeNull();
 
