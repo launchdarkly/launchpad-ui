@@ -1,5 +1,15 @@
 # @launchpad-ui/notification
 
+## 0.4.2
+
+### Patch Changes
+
+- [#336](https://github.com/launchdarkly/launchpad-ui/pull/336) [`28ffe4d`](https://github.com/launchdarkly/launchpad-ui/commit/28ffe4dd8608c71a5ff20c8b574b1a6d0e592a11) Thanks [@Niznikr](https://github.com/Niznikr)! - [Modal, Notification, Popover]: Stop focus trap when commandbar is open
+
+- Updated dependencies [[`fee517a`](https://github.com/launchdarkly/launchpad-ui/commit/fee517a3ee1329d311a634ea0fad09bc37e7a33a), [`b1f98a8`](https://github.com/launchdarkly/launchpad-ui/commit/b1f98a8a8a3c8bc4f69c0097c90304bf030115ee)]:
+  - @launchpad-ui/button@0.6.2
+  - @launchpad-ui/clipboard@0.6.2
+
 ## 0.4.1
 
 ### Patch Changes

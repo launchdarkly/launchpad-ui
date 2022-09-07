@@ -1,5 +1,15 @@
 # @launchpad-ui/banner
 
+## 0.4.2
+
+### Patch Changes
+
+- [#341](https://github.com/launchdarkly/launchpad-ui/pull/341) [`b9ce34a`](https://github.com/launchdarkly/launchpad-ui/commit/b9ce34a7393d32e9657ddd921532b3ab3a7e597b) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Banner] Improve prop object type for Banner component to support passing in generic HTML attributes
+
+- Updated dependencies [[`0ce7371`](https://github.com/launchdarkly/launchpad-ui/commit/0ce7371aac311cf9db707381e2988bebc5873538), [`fee517a`](https://github.com/launchdarkly/launchpad-ui/commit/fee517a3ee1329d311a634ea0fad09bc37e7a33a)]:
+  - @launchpad-ui/alert@0.3.2
+  - @launchpad-ui/button@0.6.2
+
 ## 0.4.1
 
 ### Patch Changes
