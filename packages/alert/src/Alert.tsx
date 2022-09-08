@@ -53,7 +53,7 @@ type AlertProps = HTMLAttributes<HTMLDivElement> & {
    */
   noIcon?: boolean;
 
-  title?: string;
+  header?: string;
 };
 
 const Alert = ({
@@ -67,7 +67,7 @@ const Alert = ({
   dismissible,
   onDismiss,
   noIcon,
-  title,
+  header,
   'data-test-id': testId,
   ...rest
 }: AlertProps) => {
@@ -111,7 +111,7 @@ const Alert = ({
         />
       )}
       <div className="Alert-content">
-        {title && <h4 className="Alert-heading">{title}</h4>}
+        {header && <h4 className="Alert-heading">{header}</h4>}
         <div>{children}</div>
       </div>
       {dismissible && (
