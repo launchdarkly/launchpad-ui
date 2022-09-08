@@ -39,6 +39,13 @@
   & a {
     color: var(--color-cyan-500);
   }
+
+  & .Snackbar-description,
+  a {
+    font-size: var(--osmo-font-size-small);
+    font-weight: var(--font-weight-regular);
+    line-height: 1.5;
+  }
 }
 
 .Snackbar-close.Button--close svg {

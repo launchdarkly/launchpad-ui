@@ -17,23 +17,19 @@ type SnackbarProps = HTMLAttributes<HTMLDivElement> & {
 const Snackbar = ({ className, kind, title, description, cta, ...rest }: SnackbarProps) => {
   return (
     <div {...rest} className={cx('Snackbar', `Snackbar--${kind}`, className)} role="status">
-      <>
-        <KindIcon kind={kind} size={IconSize.SMALL} className="Snackbar-icon" />
-        <div className="Snackbar-content">
-          <>
-            {title && <h4 className="Snackbar-heading">{title}</h4>}
-            <span>{description}</span> {cta}
-          </>
-        </div>
-        <IconButton
-          icon={<Close size={IconSize.SMALL} />}
-          size={IconButtonSize.SMALL}
-          aria-label="Dismiss"
-          kind={ButtonKind.CLOSE}
-          className="Snackbar-close"
-          data-test-id="snackbar-dismiss"
-        />
-      </>
+      <KindIcon kind={kind} className="Snackbar-icon" />
+      <div className="Snackbar-content">
+        {title && <h4 className="Snackbar-heading">{title}</h4>}
+        <span className="Snackbar-description">{description}</span> {cta}
+      </div>
+      <IconButton
+        icon={<Close size={IconSize.SMALL} />}
+        size={IconButtonSize.SMALL}
+        aria-label="Dismiss"
+        kind={ButtonKind.CLOSE}
+        className="Snackbar-close"
+        data-test-id="snackbar-dismiss"
+      />
     </div>
   );
 };
