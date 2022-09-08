@@ -1,45 +1,43 @@
-import type { SnackbarRecord } from './types';
+import type { ToastRecord } from './types';
 
 import { cx } from 'classix';
 import { AnimatePresence, LazyMotion, m } from 'framer-motion';
 
-import { Snackbar } from './Snackbar';
-import './styles/SnackbarCenter.css';
+import { Toast } from './Toast';
+import styles from './styles/ToastCenter.module.css';
 
 const loadFeatures = () =>
   import(
-    /* webpackChunkName: "lp-snackbar-framer-features" */
+    /* webpackChunkName: "lp-toast-framer-features" */
     /* webpackExports: "domAnimation" */
     'framer-motion'
   ).then((res) => res.domAnimation);
 
-type SnackbarCenterProps = {
+type ToastCenterProps = {
   className?: string;
-  snackbars: SnackbarRecord[];
-  onDismiss(snackbarId: string): void;
+  toasts: ToastRecord[];
+  onDismiss(toastId: string): void;
 };
 
-const SnackbarCenter = ({ snackbars, onDismiss, className }: SnackbarCenterProps) => {
-  const classes = cx('SnackbarCenter', className);
+const ToastCenter = ({ toasts, onDismiss, className }: ToastCenterProps) => {
+  const classes = cx(styles.ToastCenter, className);
 
   return (
     <LazyMotion strict features={loadFeatures}>
       <div className={classes}>
         <AnimatePresence initial={false}>
-          {snackbars.map((item) => (
+          {toasts.map((item) => (
             <m.div
-              className="SnackbarCenter-item"
+              className={styles['ToastCenter-item']}
               key={item._id}
               transition={{ ease: 'easeInOut' }}
               initial={{ x: '100%' }}
               animate={{ x: '0%' }}
               exit={{ x: '100%' }}
             >
-              <Snackbar
+              <Toast
                 kind={item.kind}
-                description={item.description}
-                header={item.header}
-                cta={item.cta}
+                content={item.content}
                 onDismiss={() => onDismiss(item._id)}
               />
             </m.div>
@@ -50,5 +48,5 @@ const SnackbarCenter = ({ snackbars, onDismiss, className }: SnackbarCenterProps
   );
 };
 
-export { SnackbarCenter };
-export type { SnackbarCenterProps };
+export { ToastCenter };
+export type { ToastCenterProps };

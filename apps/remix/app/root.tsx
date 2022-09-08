@@ -40,6 +40,7 @@ import snackbarStyles from '@launchpad-ui/snackbar/style.css';
 import splitButtonStyles from '@launchpad-ui/split-button/style.css';
 import tabListStyles from '@launchpad-ui/tab-list/style.css';
 import tableStyles from '@launchpad-ui/table/style.css';
+import toastStyles from '@launchpad-ui/toast/style.css';
 import toggleStyles from '@launchpad-ui/toggle/style.css';
 import tooltipStyles from '@launchpad-ui/tooltip/style.css';
 // plop end imports
@@ -74,6 +75,7 @@ export const links: LinksFunction = () => {
     { rel: 'stylesheet', href: markdownStyles },
     { rel: 'stylesheet', href: filterStyles },
     { rel: 'stylesheet', href: snackbarStyles },
+    { rel: 'stylesheet', href: toastStyles },
   ];
 };
 

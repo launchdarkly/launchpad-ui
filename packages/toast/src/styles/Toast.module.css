@@ -1,0 +1,33 @@
+.Toast {
+  background-color: var(--color-gray-800);
+  color: var(--color-text-inverse);
+  padding: var(--spacing-2) var(--spacing-4);
+  display: inline-flex;
+  gap: var(--spacing-2);
+  box-sizing: border-box;
+  width: auto;
+  border-radius: 3px;
+}
+
+.Toast--error .Toast-icon :global(.Icon) svg {
+  color: var(--color-pink-500);
+}
+
+.Toast--warning .Toast-icon :global(.Icon) svg {
+  color: var(--color-yellow-500);
+}
+
+.Toast--success .Toast-icon :global(.Icon--checkCircle) svg {
+  color: var(--color-yellow-500);
+}
+
+.Toast--info {
+  /* no styles */
+}
+
+.Toast-content {
+  flex-grow: 1;
+  margin: 0;
+  line-height: 1.5;
+  font-size: 1.6rem;
+}

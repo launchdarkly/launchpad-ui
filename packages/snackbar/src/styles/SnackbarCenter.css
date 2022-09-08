@@ -7,6 +7,6 @@
   z-index: 10001;
 }
 
-.SnackbarCenter .Snackbar-container:not(:first-child) {
+.SnackbarCenter .SnackbarCenter-item:not(:first-child) {
   margin-top: 2rem;
 }

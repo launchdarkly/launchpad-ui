@@ -221,6 +221,7 @@ importers:
       '@launchpad-ui/split-button': workspace:~
       '@launchpad-ui/tab-list': workspace:~
       '@launchpad-ui/table': workspace:~
+      '@launchpad-ui/toast': workspace:~
       '@launchpad-ui/toggle': workspace:~
       '@launchpad-ui/tokens': workspace:~
       '@launchpad-ui/tooltip': workspace:~
@@ -263,6 +264,7 @@ importers:
       '@launchpad-ui/split-button': link:../../packages/split-button
       '@launchpad-ui/tab-list': link:../../packages/tab-list
       '@launchpad-ui/table': link:../../packages/table
+      '@launchpad-ui/toast': link:../../packages/toast
       '@launchpad-ui/toggle': link:../../packages/toggle
       '@launchpad-ui/tokens': link:../../packages/tokens
       '@launchpad-ui/tooltip': link:../../packages/tooltip
@@ -410,6 +412,7 @@ importers:
       '@launchpad-ui/split-button': workspace:~
       '@launchpad-ui/tab-list': workspace:~
       '@launchpad-ui/table': workspace:~
+      '@launchpad-ui/toast': workspace:~
       '@launchpad-ui/toggle': workspace:~
       '@launchpad-ui/tokens': workspace:~
       '@launchpad-ui/tooltip': workspace:~
@@ -442,6 +445,7 @@ importers:
       '@launchpad-ui/split-button': link:../split-button
       '@launchpad-ui/tab-list': link:../tab-list
       '@launchpad-ui/table': link:../table
+      '@launchpad-ui/toast': link:../toast
       '@launchpad-ui/toggle': link:../toggle
       '@launchpad-ui/tokens': link:../tokens
       '@launchpad-ui/tooltip': link:../tooltip
@@ -836,6 +840,19 @@ importers:
     dependencies:
       '@launchpad-ui/tokens': link:../tokens
       camelcase: 7.0.0
+      classix: 2.1.13
+    devDependencies:
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
+
+  packages/toast:
+    specifiers:
+      '@launchpad-ui/tokens': workspace:~
+      classix: ^2.1.13
+      react: ^18.2.0
+      react-dom: ^18.2.0
+    dependencies:
+      '@launchpad-ui/tokens': link:../tokens
       classix: 2.1.13
     devDependencies:
       react: 18.2.0
