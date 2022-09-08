@@ -32,6 +32,7 @@ const IconButtonComponent = forwardRef<HTMLButtonElement, IconButtonProps>((prop
     asChild = false,
     onKeyDown,
     onClick,
+    type = 'button',
     ...rest
   } = props;
 
@@ -86,6 +87,7 @@ const IconButtonComponent = forwardRef<HTMLButtonElement, IconButtonProps>((prop
       onClick={handleClick}
       disabled={disabled}
       onKeyDown={onKeyDown || handleKeyDown}
+      type={type}
       {...rest}
     >
       {renderChildren()}
