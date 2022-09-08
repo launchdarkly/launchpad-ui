@@ -86,7 +86,7 @@
 }
 
 .Alert--small .Alert-icon {
-  top: 0.8em;
+  margin-top: 0.1em;
 }
 
 .Alert--wide {

@@ -82,12 +82,11 @@
   top: -2px;
 }
 
-.Icon--checkCircle svg {
+.Icon--checkCircle {
   fill: var(--color-system-green-800);
 }
 
-.Icon--starOutline,
-.Icon--starFilled {
+.Icon--starOutline {
   fill: var(--color-gray-600);
 }
 

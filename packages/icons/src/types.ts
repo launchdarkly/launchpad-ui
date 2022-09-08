@@ -16,4 +16,12 @@ enum IconSize {
   HUGE = 'huge',
 }
 
-export { IconDimension, IconSize };
+enum StatusIconKind {
+  INFO = 'info',
+  SUCCESS = 'success',
+  WARNING = 'warning',
+  ERROR = 'error',
+  STRIPED = 'striped',
+}
+
+export { IconDimension, IconSize, StatusIconKind };

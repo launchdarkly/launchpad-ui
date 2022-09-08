@@ -3,7 +3,7 @@ import type { KeyboardEvent, ReactNode } from 'react';
 
 import { ButtonKind, IconButton, IconButtonSize } from '@launchpad-ui/button';
 import { CopyToClipboard } from '@launchpad-ui/clipboard';
-import { KindIcon, Close, ExpandMore, IconSize } from '@launchpad-ui/icons';
+import { StatusIcon, Close, ExpandMore, IconSize, StatusIconKind } from '@launchpad-ui/icons';
 import { FocusScope } from '@react-aria/focus';
 import { cx } from 'classix';
 import { useCallback, useEffect, useRef, useState } from 'react';
@@ -110,9 +110,11 @@ const Notification = ({
   const classes = cx('Notification', `Notification--${level}`);
   const detailsClasses = cx('Notification-details', showDetails && 'is-expanded');
 
+  const iconKind = StatusIconKind[level.toUpperCase() as keyof typeof NotificationLevel];
+
   const content = (
     <>
-      <KindIcon kind={level} className="Notification-icon" />
+      <StatusIcon kind={iconKind} className="Notification-icon" />
       <div className="Notification-body">
         <div className="Notification-message">{message}</div>
         {details && (

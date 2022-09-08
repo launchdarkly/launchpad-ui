@@ -1,7 +1,7 @@
 import type { HTMLAttributes } from 'react';
 
 import { ButtonKind, IconButton, IconButtonSize } from '@launchpad-ui/button';
-import { Close, IconSize, KindIcon } from '@launchpad-ui/icons';
+import { Close, IconSize, StatusIcon, StatusIconKind } from '@launchpad-ui/icons';
 import { cx } from 'classix';
 import { useState } from 'react';
 
@@ -102,8 +102,8 @@ const Alert = ({
       role={[AlertKind.INFO, AlertKind.SUCCESS].includes(kind) ? 'status' : 'alert'}
     >
       {!noIcon && (
-        <KindIcon
-          kind={kind}
+        <StatusIcon
+          kind={StatusIconKind[kind.toUpperCase() as keyof typeof AlertKind]}
           className="Alert-icon"
           size={size === AlertSize.SMALL ? IconSize.SMALL : IconSize.MEDIUM}
         />

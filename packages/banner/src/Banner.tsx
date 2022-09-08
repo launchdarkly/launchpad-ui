@@ -2,7 +2,7 @@ import type { AlertKind } from '@launchpad-ui/alert';
 import type { HTMLAttributes } from 'react';
 
 import { ButtonKind, IconButton, IconButtonSize } from '@launchpad-ui/button';
-import { Close, IconSize, KindIcon } from '@launchpad-ui/icons';
+import { Close, IconSize, StatusIcon, StatusIconKind } from '@launchpad-ui/icons';
 import { cx } from 'classix';
 
 import './styles/Banner.css';
@@ -24,10 +24,11 @@ const Banner = ({
   ...rest
 }: BannerProps) => {
   const classes = cx('Banner', `Banner--${kind}`, className);
+  const iconKind = StatusIconKind[kind.toUpperCase() as keyof typeof AlertKind];
 
   return (
     <div className={classes} data-test-id={testId} {...rest}>
-      <KindIcon kind={kind} className="Banner-icon" />
+      <StatusIcon kind={iconKind} className="Banner-icon" />
       <span className="Banner-text">{children}</span>
       {dismissible && (
         <IconButton

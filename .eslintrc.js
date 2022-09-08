@@ -34,7 +34,7 @@ module.exports = {
     'node_modules',
     '/packages/icons/src/*.tsx',
     '!/packages/icons/src/Icon.tsx',
-    '!/packages/icons/src/KindIcon.tsx',
+    '!/packages/icons/src/StatusIcon.tsx',
   ],
   rules: {
     'no-unused-vars': 'off',
