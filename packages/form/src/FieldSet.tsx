@@ -1,15 +1,18 @@
-import type { ReactNode } from 'react';
+import type { HTMLAttributes } from 'react';
+
+import { cx } from 'classix';
 
 import './styles/FieldSet.css';
 
-type FieldSetProps = {
-  children?: ReactNode;
-  testId?: string;
+type FieldSetProps = HTMLAttributes<HTMLFieldSetElement> & {
+  'data-test-id'?: string;
 };
 
-const FieldSet = ({ children, testId }: FieldSetProps) => {
+const FieldSet = ({ children, className, ...rest }: FieldSetProps) => {
+  const classes = cx('FieldSet', className);
+
   return (
-    <fieldset className="FieldSet" data-test-id={testId}>
+    <fieldset className={classes} {...rest}>
       {children}
     </fieldset>
   );
