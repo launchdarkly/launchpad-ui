@@ -1,5 +1,4 @@
-import type { ToastProps } from './Toast';
-import type { HTMLAttributes } from 'react';
+import type { ToastBaseProps } from './Toast';
 
 enum ToastKind {
   INFO = 'info',
@@ -8,7 +7,7 @@ enum ToastKind {
   WARNING = 'warning',
 }
 
-type ToastRecord = Omit<ToastProps, keyof HTMLAttributes<HTMLDivElement>> & {
+type ToastRecord = ToastBaseProps & {
   _id: string;
 };
 

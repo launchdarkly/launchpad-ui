@@ -8,6 +8,10 @@
   z-index: 10001;
 }
 
-.ToastCenter .ToastCenter-item:not(:first-child) {
+.ToastCenter-item {
+  text-align: center;
+}
+
+.ToastCenter-item:not(:first-child) {
   margin-top: 2rem;
 }

@@ -1,25 +1,27 @@
-import type { ToastKind } from './types';
-import type { HTMLAttributes } from 'react';
+import type { HTMLAttributes, ReactNode } from 'react';
 
 import { KindIcon } from '@launchpad-ui/icons';
 import { cx } from 'classix';
 
 import styles from './styles/Toast.module.css';
+import { ToastKind } from './types';
 
-type ToastProps = HTMLAttributes<HTMLDivElement> & {
+type ToastBaseProps = {
   kind: ToastKind;
-  content: string;
   onDismiss?: () => void;
+  content: ReactNode;
 };
 
-const Toast = ({ className, kind, content, onDismiss, ...rest }: ToastProps) => {
+type ToastProps = Omit<HTMLAttributes<HTMLDivElement>, 'children'> & ToastBaseProps;
+
+const Toast = ({ className, kind, onDismiss, content, ...rest }: ToastProps) => {
   return (
     <div {...rest} className={cx(styles.Toast, styles[`Toast--${kind}`], className)} role="status">
-      <KindIcon kind={kind} className={styles['Toast-icon']} />
+      {kind !== ToastKind.INFO && <KindIcon kind={kind} className={styles['Toast-icon']} />}
       <p className={styles['Toast-content']}>{content}</p>
     </div>
   );
 };
 
 export { Toast };
-export type { ToastProps };
+export type { ToastBaseProps, ToastProps };

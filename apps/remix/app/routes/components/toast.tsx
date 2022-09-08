@@ -1,5 +1,5 @@
-import { Toast } from '@launchpad-ui/core';
+import { Toast, ToastKind } from '@launchpad-ui/core';
 
 export default function Index() {
-  return <Toast>A lovely Toast component.</Toast>;
+  return <Toast kind={ToastKind.INFO} content="This is a toast." />;
 }

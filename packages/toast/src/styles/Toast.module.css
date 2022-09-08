@@ -7,18 +7,20 @@
   box-sizing: border-box;
   width: auto;
   border-radius: 3px;
+  box-shadow: 0 4px 4px 0 rgb(0 0 0 / 0.06), 0 1px 2px 0 rgb(0 0 0 / 0.14),
+    0 0 1px 0 rgb(0 0 0 / 0.25);
 }
 
 .Toast--error .Toast-icon :global(.Icon) svg {
-  color: var(--color-pink-500);
+  fill: var(--color-pink-500);
 }
 
 .Toast--warning .Toast-icon :global(.Icon) svg {
-  color: var(--color-yellow-500);
+  fill: var(--color-yellow-500);
 }
 
-.Toast--success .Toast-icon :global(.Icon--checkCircle) svg {
-  color: var(--color-yellow-500);
+.Toast--success .Toast-icon :global(.Icon) svg {
+  fill: var(--color-system-green-500);
 }
 
 .Toast--info {
