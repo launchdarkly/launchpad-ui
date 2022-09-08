@@ -50,6 +50,6 @@
   }
 }
 
-.Snackbar-close.Button--close svg {
+.Snackbar-close.Button.Button--close svg {
   fill: var(--color-gray-400);
 }
