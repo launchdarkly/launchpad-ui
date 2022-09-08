@@ -138,8 +138,8 @@ export const Dismissible: Story = {
   args: { kind: 'info', children: 'Dismissible alert', dismissible: true },
 };
 
-export const WithTitle: Story = {
-  args: { title: 'With Title', children: 'Warning alert', dismissible: false },
+export const WithHeader: Story = {
+  args: { header: 'With Header', children: 'Warning alert', dismissible: false },
 };
 
 export const WithActions: Story = {
