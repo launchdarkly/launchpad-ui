@@ -1,12 +1,12 @@
 .SnackbarCenter {
   position: fixed;
-  top: 0;
+  top: 2rem;
   right: 2rem;
   bottom: auto;
   left: auto;
   z-index: 10001;
 }
 
-.SnackbarCenter .Snackbar {
+.SnackbarCenter .Snackbar-container:not(:first-child) {
   margin-top: 2rem;
 }

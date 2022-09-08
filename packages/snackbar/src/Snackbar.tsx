@@ -21,13 +21,9 @@ const Snackbar = ({
   header,
   description,
   cta,
-  onDismiss = () => undefined,
+  onDismiss,
   ...rest
 }: SnackbarProps) => {
-  const handleCloseClick = () => {
-    onDismiss();
-  };
-
   return (
     <div {...rest} className={cx('Snackbar', `Snackbar--${kind}`, className)} role="status">
       <KindIcon kind={kind} className="Snackbar-icon" />
@@ -42,7 +38,7 @@ const Snackbar = ({
         kind={ButtonKind.CLOSE}
         className="Snackbar-close"
         data-test-id="snackbar-dismiss"
-        onClick={handleCloseClick}
+        onClick={onDismiss}
       />
     </div>
   );
