@@ -79,9 +79,9 @@ export const WithStackedBanners: Story = {
   },
 };
 
-export const WithTitle: Story = {
+export const WithHeader: Story = {
   args: {
-    title: 'Banner header',
+    header: 'Banner header',
     children: 'This is an example of a banner with a header',
     dismissible: true,
     kind: AlertKind.ERROR,
