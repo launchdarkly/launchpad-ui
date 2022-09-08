@@ -12,7 +12,7 @@ type BannerProps = HTMLAttributes<HTMLDivElement> & {
   kind: AlertProps['kind'];
   onDismiss?(): void;
   dismissible?: boolean;
-  title?: string;
+  header?: string;
 };
 
 const Banner = ({
@@ -21,7 +21,7 @@ const Banner = ({
   children,
   onDismiss,
   dismissible,
-  title,
+  header,
   'data-test-id': testId = 'banner',
   ...rest
 }: BannerProps) => {
@@ -31,7 +31,7 @@ const Banner = ({
     <div className={classes} data-test-id={testId} {...rest}>
       <KindIcon kind={kind} className="Banner-icon" />
       <div className="Banner-content">
-        {title && <h4 className="Banner-heading">{title}</h4>}
+        {header && <h4 className="Banner-heading">{header}</h4>}
         <div>{children}</div>
       </div>
       {dismissible && (
