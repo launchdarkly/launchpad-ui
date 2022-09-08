@@ -1,5 +1,29 @@
 # @launchpad-ui/core
 
+## 0.11.4
+
+### Patch Changes
+
+- [#347](https://github.com/launchdarkly/launchpad-ui/pull/347) [`91fcfae`](https://github.com/launchdarkly/launchpad-ui/commit/91fcfae53d4b7c57f4d40a7d2b6a3c0bd7cb4e62) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Button] Change default button type from submit to button
+
+- Updated dependencies [[`91fcfae`](https://github.com/launchdarkly/launchpad-ui/commit/91fcfae53d4b7c57f4d40a7d2b6a3c0bd7cb4e62)]:
+  - @launchpad-ui/button@0.6.3
+  - @launchpad-ui/alert@0.3.3
+  - @launchpad-ui/banner@0.4.3
+  - @launchpad-ui/clipboard@0.6.3
+  - @launchpad-ui/dropdown@0.4.4
+  - @launchpad-ui/filter@0.3.4
+  - @launchpad-ui/modal@0.7.3
+  - @launchpad-ui/notification@0.4.3
+  - @launchpad-ui/pagination@0.2.3
+  - @launchpad-ui/split-button@0.5.4
+  - @launchpad-ui/navigation@0.5.4
+  - @launchpad-ui/overlay@0.3.3
+  - @launchpad-ui/popover@0.7.3
+  - @launchpad-ui/menu@0.5.3
+  - @launchpad-ui/progress-bubbles@0.4.3
+  - @launchpad-ui/tooltip@0.5.3
+
 ## 0.11.3
 
 ### Patch Changes

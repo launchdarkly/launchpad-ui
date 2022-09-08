@@ -1,5 +1,11 @@
 # @launchpad-ui/button
 
+## 0.6.3
+
+### Patch Changes
+
+- [#347](https://github.com/launchdarkly/launchpad-ui/pull/347) [`91fcfae`](https://github.com/launchdarkly/launchpad-ui/commit/91fcfae53d4b7c57f4d40a7d2b6a3c0bd7cb4e62) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Button] Change default button type from submit to button
+
 ## 0.6.2
 
 ### Patch Changes
