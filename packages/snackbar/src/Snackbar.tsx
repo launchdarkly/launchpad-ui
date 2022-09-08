@@ -9,17 +9,30 @@ import './styles/Snackbar.css';
 
 type SnackbarProps = HTMLAttributes<HTMLDivElement> & {
   kind: SnackbarKind;
-  title?: string;
+  header?: string;
   description: string;
   cta?: ReactElement<HTMLAnchorElement>;
+  onDismiss?: () => void;
 };
 
-const Snackbar = ({ className, kind, title, description, cta, ...rest }: SnackbarProps) => {
+const Snackbar = ({
+  className,
+  kind,
+  header,
+  description,
+  cta,
+  onDismiss = () => undefined,
+  ...rest
+}: SnackbarProps) => {
+  const handleCloseClick = () => {
+    onDismiss();
+  };
+
   return (
     <div {...rest} className={cx('Snackbar', `Snackbar--${kind}`, className)} role="status">
       <KindIcon kind={kind} className="Snackbar-icon" />
       <div className="Snackbar-content">
-        {title && <h4 className="Snackbar-heading">{title}</h4>}
+        {header && <h4 className="Snackbar-heading">{header}</h4>}
         <span className="Snackbar-description">{description}</span> {cta}
       </div>
       <IconButton
@@ -29,6 +42,7 @@ const Snackbar = ({ className, kind, title, description, cta, ...rest }: Snackba
         kind={ButtonKind.CLOSE}
         className="Snackbar-close"
         data-test-id="snackbar-dismiss"
+        onClick={handleCloseClick}
       />
     </div>
   );

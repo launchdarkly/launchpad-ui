@@ -36,6 +36,8 @@
 }
 
 .Snackbar-content {
+  flex-grow: 1;
+
   & a {
     color: var(--color-cyan-500);
   }

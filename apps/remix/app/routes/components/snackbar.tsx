@@ -1,5 +1,5 @@
-import { Snackbar } from '@launchpad-ui/core';
+import { Snackbar, SnackbarKind } from '@launchpad-ui/core';
 
 export default function Index() {
-  return <Snackbar>A lovely Snackbar component.</Snackbar>;
+  return <Snackbar kind={SnackbarKind.INFO} description="This is a snackbar." />;
 }

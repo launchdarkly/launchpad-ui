@@ -1,0 +1,12 @@
+.SnackbarCenter {
+  position: fixed;
+  top: 0;
+  right: 2rem;
+  bottom: auto;
+  left: auto;
+  z-index: 10001;
+}
+
+.SnackbarCenter .Snackbar {
+  margin-top: 2rem;
+}
