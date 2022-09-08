@@ -26,15 +26,15 @@ describe('Banner', () => {
     expect(screen.getByRole('button')).toBeVisible();
   });
 
-  it('renders a title when passed', async () => {
-    const title = 'My title';
+  it('renders a header when passed', async () => {
+    const header = 'My header';
     render(
-      <Banner kind="info" title={title}>
+      <Banner kind="info" header={header}>
         An important message
       </Banner>
     );
 
-    expect(screen.getByText(title)).toBeVisible();
+    expect(screen.getByText(header)).toBeVisible();
   });
 
   it('triggers onDismiss when close button is clicked', async () => {

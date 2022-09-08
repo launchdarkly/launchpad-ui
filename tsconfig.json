@@ -27,6 +27,7 @@
       "@launchpad-ui/progress": ["./packages/progress/src"],
       "@launchpad-ui/progress-bubbles": ["./packages/progress-bubbles/src"],
       "@launchpad-ui/slider": ["./packages/slider/src"],
+      "@launchpad-ui/snackbar": ["./packages/snackbar/src"],
       "@launchpad-ui/split-button": ["./packages/split-button/src"],
       "@launchpad-ui/tab-list": ["./packages/tab-list/src"],
       "@launchpad-ui/table": ["./packages/table/src"],
