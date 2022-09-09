@@ -15,10 +15,7 @@ type CompactTextFieldProps = TextFieldProps & {
 };
 
 const CompactTextField = forwardRef<HTMLInputElement, CompactTextFieldProps>(
-  (
-    { className, id, name, label, type, needsErrorFeedback, value, onFocus, onBlur, ...rest },
-    ref
-  ) => {
+  ({ className, id, label, needsErrorFeedback, value, onFocus, onBlur, ...rest }, ref) => {
     const [isActive, setIsActive] = useState(
       (typeof value === 'boolean' || value ? value.toString() : '').trim().length !== 0
     );
@@ -50,8 +47,6 @@ const CompactTextField = forwardRef<HTMLInputElement, CompactTextFieldProps>(
         <TextField
           {...rest}
           id={id}
-          name={name}
-          type={type}
           placeholder={placeholder}
           value={value}
           ref={ref}

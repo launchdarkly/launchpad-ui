@@ -18,6 +18,7 @@ type FormFieldProps = {
   children: JSX.Element;
   className?: string;
   onBlur?: (field: string) => void;
+  'data-test-id': string;
 };
 
 const FormField = ({
@@ -32,6 +33,7 @@ const FormField = ({
   children,
   className,
   onBlur,
+  'data-test-id': testId,
 }: FormFieldProps) => {
   const handleBlur = () => {
     onBlur && onBlur(name);
@@ -44,6 +46,7 @@ const FormField = ({
       ignoreValidation={ignoreValidation}
       isInvalid={isInvalid}
       onBlur={handleBlur}
+      data-test-id={testId}
     >
       {label && (
         <label htmlFor={htmlFor}>

@@ -4,15 +4,13 @@ import { cx } from 'classix';
 
 import './styles/RequiredAsterisk.css';
 
-type RequiredAsteriskProps = HTMLAttributes<HTMLSpanElement> & {
-  testId?: string;
-};
+type RequiredAsteriskProps = HTMLAttributes<HTMLSpanElement>;
 
-const RequiredAsterisk = ({ className, testId, ...rest }: RequiredAsteriskProps) => {
-  const classes = cx('RequiredAsterisk');
+const RequiredAsterisk = ({ className, ...rest }: RequiredAsteriskProps) => {
+  const classes = cx('RequiredAsterisk', className);
 
   return (
-    <span className={classes} data-test-id={testId} {...rest}>
+    <span {...rest} className={classes}>
       *
     </span>
   );
