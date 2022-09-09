@@ -1,3 +1,5 @@
+import type { HTMLAttributes } from 'react';
+
 import { cx } from 'classix';
 
 import { PaginationButton } from './PaginationButton';
@@ -5,8 +7,7 @@ import { PaginationText } from './PaginationText';
 import './styles/Pagination.css';
 import { PaginationChange } from './types';
 
-type PaginationProps = {
-  className?: string;
+type PaginationProps = HTMLAttributes<HTMLElement> & {
   resourceName: string;
   isFirstDisabled?: boolean;
   isPrevDisabled?: boolean;
@@ -31,11 +32,14 @@ const Pagination = ({
   pageSize,
   isReady,
   totalCount,
+  'aria-label': ariaLabel,
+  ...rest
 }: PaginationProps) => {
   return (
     <nav
+      {...rest}
       className={cx('Pagination', className)}
-      aria-label={`Pagination for ${resourceName} list.`}
+      aria-label={ariaLabel ?? `Pagination for ${resourceName} list.`}
     >
       <PaginationButton
         resourceName={resourceName}
