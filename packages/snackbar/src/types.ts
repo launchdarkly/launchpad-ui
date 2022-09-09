@@ -1,5 +1,4 @@
-import type { SnackbarProps } from './Snackbar';
-import type { HTMLAttributes } from 'react';
+import type { SnackbarBaseProps } from './Snackbar';
 
 enum SnackbarKind {
   INFO = 'info',
@@ -7,7 +6,7 @@ enum SnackbarKind {
   WARNING = 'warning',
 }
 
-type SnackbarRecord = Omit<SnackbarProps, keyof HTMLAttributes<HTMLDivElement>> & {
+type SnackbarRecord = Omit<SnackbarBaseProps, 'onDismiss'> & {
   _id: string;
 };
 
