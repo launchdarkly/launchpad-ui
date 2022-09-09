@@ -6,7 +6,12 @@ import { SnackbarKind } from '../src/types';
 test.use({ viewport: { width: 500, height: 500 } });
 
 const createComponent = (props?: SnackbarProps) => (
-  <Snackbar kind={SnackbarKind.INFO} description="Hi there" {...props} />
+  <Snackbar
+    onDismiss={() => undefined}
+    kind={SnackbarKind.INFO}
+    description="Hi there"
+    {...props}
+  />
 );
 
 test.describe('Snackbar', () => {

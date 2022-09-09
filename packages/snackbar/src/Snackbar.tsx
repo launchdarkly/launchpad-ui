@@ -29,7 +29,7 @@ const Snackbar = ({
   return (
     <div
       {...rest}
-      className={cx(styles.Snackbar, styles[`Snackbar--${kind}`], className)}
+      className={cx('Snackbar', styles.Snackbar, styles[`Snackbar--${kind}`], className)}
       role="status"
     >
       <KindIcon kind={kind} className={styles['Snackbar-icon']} />
