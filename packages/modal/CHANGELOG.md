@@ -1,5 +1,11 @@
 # @launchpad-ui/modal
 
+## 0.7.4
+
+### Patch Changes
+
+- [#354](https://github.com/launchdarkly/launchpad-ui/pull/354) [`77e57c5`](https://github.com/launchdarkly/launchpad-ui/commit/77e57c5b4307c02836544b7535c2a3cea1b0af9c) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Modal] Enhance component API to allow HTML attribute passthrough
+
 ## 0.7.3
 
 ### Patch Changes

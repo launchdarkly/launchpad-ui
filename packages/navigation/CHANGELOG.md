@@ -1,5 +1,17 @@
 # @launchpad-ui/navigation
 
+## 0.5.5
+
+### Patch Changes
+
+- [#355](https://github.com/launchdarkly/launchpad-ui/pull/355) [`e5e9541`](https://github.com/launchdarkly/launchpad-ui/commit/e5e95415621822b3ba11a6c659deff12eb4cd0b0) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Navigation] Enhance Nav component prop types to allow HTML attribute passthrough
+
+- Updated dependencies []:
+  - @launchpad-ui/popover@0.7.4
+  - @launchpad-ui/dropdown@0.4.5
+  - @launchpad-ui/menu@0.5.4
+  - @launchpad-ui/tooltip@0.5.4
+
 ## 0.5.4
 
 ### Patch Changes
