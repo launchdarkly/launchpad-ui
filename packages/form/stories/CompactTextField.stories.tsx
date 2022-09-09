@@ -12,13 +12,6 @@ export default {
     },
   },
   argTypes: {
-    testId: {
-      control: 'text',
-      table: {
-        category: 'Testing',
-        subcategory: 'Data attributes',
-      },
-    },
     disabled: {
       table: {
         category: 'Presentation',

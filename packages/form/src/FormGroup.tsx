@@ -8,7 +8,6 @@ type FormGroupProps = HTMLAttributes<HTMLDivElement> & {
   name?: string | string[];
   ignoreValidation?: boolean;
   isInvalid?: boolean;
-  'data-test-id'?: string;
 };
 
 const FormGroup = (props: FormGroupProps) => {

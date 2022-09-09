@@ -13,13 +13,6 @@ export default {
     },
   },
   argTypes: {
-    testId: {
-      control: 'text',
-      table: {
-        category: 'Testing',
-        subcategory: 'Data attributes',
-      },
-    },
     className: {
       table: {
         category: 'Presentation',

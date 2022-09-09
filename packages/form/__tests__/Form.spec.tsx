@@ -6,10 +6,10 @@ import { Form } from '../src';
 describe('Form', () => {
   it('renders', () => {
     render(
-      <Form id="testing" name="My Form" ariaLabel="My Form" inline>
+      <Form id="testing" name="My Form" data-test-id="My Form" inline>
         <></>
       </Form>
     );
-    expect(screen.getByLabelText('My Form')).toBeInTheDocument();
+    expect(screen.getByTestId('My Form')).toBeInTheDocument();
   });
 });

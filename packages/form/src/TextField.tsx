@@ -8,7 +8,6 @@ import { createFieldErrorId } from './utils';
 
 type TextFieldProps = InputHTMLAttributes<HTMLInputElement> & {
   suffix?: string;
-  testId?: string;
   tiny?: boolean;
   overrideWidth?: string;
 };
@@ -21,7 +20,6 @@ const TextField = forwardRef<HTMLInputElement, TextFieldProps>(
       tiny = false,
       readOnly,
       tabIndex = 0,
-      testId,
       suffix,
       overrideWidth,
       ...rest
@@ -31,6 +29,7 @@ const TextField = forwardRef<HTMLInputElement, TextFieldProps>(
     const classes = overrideWidth
       ? className
       : cx('FormInput', `FormInput-${type}`, className, tiny && 'FormInput--tiny');
+
     if (suffix) {
       return (
         <div className="FormInput-suffixContainer">
@@ -40,7 +39,6 @@ const TextField = forwardRef<HTMLInputElement, TextFieldProps>(
             className={cx(classes, 'FormInput-suffix')}
             readOnly={readOnly}
             ref={ref}
-            data-test-id={testId}
             aria-describedby={rest['aria-describedby'] || createFieldErrorId(rest.id)}
           />
           <label className="FormInput-suffix" htmlFor={rest.id}>
@@ -58,7 +56,6 @@ const TextField = forwardRef<HTMLInputElement, TextFieldProps>(
         readOnly={readOnly}
         tabIndex={tabIndex}
         ref={ref}
-        data-test-id={testId}
         style={
           overrideWidth
             ? {

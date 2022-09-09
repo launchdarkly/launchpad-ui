@@ -44,7 +44,7 @@ type RadioGroupProps = {
 };
 
 const RadioGroup = (props: RadioGroupProps) => {
-  const { name, value, onChange, children, disabled, legend, ...other } = props;
+  const { name, value, onChange, children, disabled, legend, ...rest } = props;
   const fieldsetRef = useRef<HTMLFieldSetElement>(null);
 
   function updateRadioElems(elem: ReactNode): ReactNode {
@@ -99,7 +99,7 @@ const RadioGroup = (props: RadioGroupProps) => {
           <VisuallyHidden>{legend}</VisuallyHidden>
         </legend>
       )}
-      <div {...other}>{radios}</div>
+      <div {...rest}>{radios}</div>
     </fieldset>
   );
 };

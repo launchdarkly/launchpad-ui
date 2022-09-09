@@ -4,9 +4,7 @@ import { cx } from 'classix';
 
 import './styles/FieldSet.css';
 
-type FieldSetProps = HTMLAttributes<HTMLFieldSetElement> & {
-  'data-test-id'?: string;
-};
+type FieldSetProps = HTMLAttributes<HTMLFieldSetElement>;
 
 const FieldSet = ({ children, className, ...rest }: FieldSetProps) => {
   const classes = cx('FieldSet', className);
