@@ -1,13 +1,11 @@
-import type { ReactNode } from 'react';
+import type { HTMLAttributes } from 'react';
 
 import { Close, IconSize } from '@launchpad-ui/icons';
 import { cx } from 'classix';
 
 import './styles/Modal.css';
 
-type ModalHeaderProps = {
-  children: ReactNode;
-  className?: string;
+type ModalHeaderProps = HTMLAttributes<HTMLDivElement> & {
   closeable?: boolean;
   titleID?: string;
   titleClassName?: string;
@@ -21,11 +19,12 @@ const ModalHeader = ({
   children,
   titleID,
   titleClassName,
+  ...rest
 }: ModalHeaderProps) => {
   const classes = cx('Modal-header', className);
 
   return (
-    <div className={classes}>
+    <div {...rest} className={classes}>
       <h2 id={titleID || 'Modal-title'} className={cx('Modal-title', titleClassName)}>
         {children}
       </h2>
