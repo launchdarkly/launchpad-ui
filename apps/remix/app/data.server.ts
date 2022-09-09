@@ -29,6 +29,7 @@ export async function getComponents() {
     { to: 'components/split-button', name: 'SplitButton' },
     { to: 'components/tab-list', name: 'TabList' },
     { to: 'components/table', name: 'Table' },
+    { to: 'components/toast', name: 'Toast' },
     { to: 'components/toggle', name: 'Toggle' },
     { to: 'components/tooltip', name: 'Tooltip' },
     // plop end components

@@ -7,13 +7,15 @@ import { cx } from 'classix';
 
 import './styles/Snackbar.css';
 
-type SnackbarProps = HTMLAttributes<HTMLDivElement> & {
+type SnackbarBaseProps = {
   kind: SnackbarKind;
   header?: string;
   description: string;
   cta?: ReactElement<HTMLAnchorElement>;
-  onDismiss?: () => void;
+  onDismiss: () => void;
 };
+
+type SnackbarProps = Omit<HTMLAttributes<HTMLDivElement>, 'children'> & SnackbarBaseProps;
 
 const Snackbar = ({
   className,
@@ -45,4 +47,4 @@ const Snackbar = ({
 };
 
 export { Snackbar };
-export type { SnackbarProps };
+export type { SnackbarBaseProps, SnackbarProps };
