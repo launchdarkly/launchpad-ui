@@ -1,40 +1,40 @@
 /* eslint-disable react-hooks/rules-of-hooks */
-import type { SnackbarRecord } from '../src/types';
+import type { ToastRecord } from '../src/types';
 import type { ComponentStoryObj } from '@storybook/react';
 
 import { Button } from '@launchpad-ui/button';
 import { userEvent, within } from '@storybook/testing-library';
 import { useId, useState } from 'react';
 
-import { SnackbarCenter } from '../src';
-import { SnackbarKind } from '../src/types';
+import { ToastCenter } from '../src';
+import { ToastKind } from '../src/types';
 
 export default {
-  component: SnackbarCenter,
-  title: 'Components/Snackbar/SnackbarCenter',
-  description: 'A container for snackbars.',
+  component: ToastCenter,
+  title: 'Components/Toast/ToastCenter',
+  description: 'A container for toasts.',
 };
 
-type Story = ComponentStoryObj<typeof SnackbarCenter>;
+type Story = ComponentStoryObj<typeof ToastCenter>;
 
-const kinds = Object.values(SnackbarKind);
+const kinds = Object.values(ToastKind);
 let kindIndex = 0;
 const loopIndices = (i: number) => (kindIndex < kinds.length ? i + 1 : 0);
 
-const makeSnackbar = (id: string) => {
+const makeToast = (id: string) => {
   const kind = kinds[kindIndex];
   kindIndex = loopIndices(kindIndex);
 
   return {
     _id: id,
     kind,
-    description: 'The snackbar description.',
+    content: 'Try to keep your message under 70 characters',
   };
 };
 
 export const Default: Story = {
   render: () => {
-    const [items, setItems] = useState<SnackbarRecord[]>([]);
+    const [items, setItems] = useState<ToastRecord[]>([]);
     const [counter, setCounter] = useState(0);
     const snackId = useId();
 
@@ -43,14 +43,14 @@ export const Default: Story = {
     };
 
     const addItem = () => {
-      setItems((updatingItems) => [...updatingItems, makeSnackbar(`${snackId}-${counter}`)]);
+      setItems((updatingItems) => [...updatingItems, makeToast(`${snackId}-${counter}`)]);
       setCounter(counter + 1);
     };
 
     return (
       <>
-        <Button onClick={addItem}>Add snackbar</Button>
-        <SnackbarCenter snackbars={items} onDismiss={removeItem} />
+        <Button onClick={addItem}>Add toast</Button>
+        <ToastCenter toasts={items} onDismiss={removeItem} />
       </>
     );
   },

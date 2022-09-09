@@ -24,6 +24,12 @@ module.exports = {
         importFrom: [path.resolve(__dirname, 'packages/tokens/dist/index.css'), ...cssPaths],
       },
     ],
+    'selector-pseudo-class-no-unknown': [
+      true,
+      {
+        ignorePseudoClasses: ['global'],
+      },
+    ],
     'selector-not-notation': 'simple',
   },
 };
