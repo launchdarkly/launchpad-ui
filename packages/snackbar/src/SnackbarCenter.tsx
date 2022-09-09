@@ -28,7 +28,7 @@ const SnackbarCenter = ({ snackbars, onDismiss, className }: SnackbarCenterProps
         <AnimatePresence initial={false}>
           {snackbars.map((item) => (
             <m.div
-              className="Snackbar-container"
+              className="SnackbarCenter-item"
               key={item._id}
               transition={{ ease: 'easeInOut' }}
               initial={{ x: '100%' }}
