@@ -1,7 +1,7 @@
 import type { IconProps } from './Icon';
 
-import { AlertRhombus } from './AlertRhombus';
 import { CheckCircle } from './CheckCircle';
+import { ErrorCircle } from './ErrorCircle';
 import { Info } from './Info';
 import { Warning } from './Warning';
 import { IconSize, StatusIconKind } from './types';
@@ -22,7 +22,7 @@ const StatusIcon = ({ kind, size = IconSize.MEDIUM, ...rest }: StatusIconProps) 
       Component = Warning;
       break;
     case StatusIconKind.ERROR:
-      Component = AlertRhombus;
+      Component = ErrorCircle;
       break;
     case StatusIconKind.INFO:
       Component = Info;
