@@ -4,7 +4,7 @@ import { cx } from 'classix';
 import { AnimatePresence, LazyMotion, m } from 'framer-motion';
 
 import { Snackbar } from './Snackbar';
-import './styles/SnackbarCenter.css';
+import styles from './styles/SnackbarCenter.module.css';
 
 const loadFeatures = () =>
   import(
@@ -20,7 +20,7 @@ type SnackbarCenterProps = {
 };
 
 const SnackbarCenter = ({ snackbars, onDismiss, className }: SnackbarCenterProps) => {
-  const classes = cx('SnackbarCenter', className);
+  const classes = cx('SnackbarCenter', styles.SnackbarCenter, className);
 
   return (
     <LazyMotion strict features={loadFeatures}>
@@ -28,7 +28,7 @@ const SnackbarCenter = ({ snackbars, onDismiss, className }: SnackbarCenterProps
         <AnimatePresence initial={false}>
           {snackbars.map((item) => (
             <m.div
-              className="SnackbarCenter-item"
+              className={styles['SnackbarCenter-item']}
               key={item._id}
               transition={{ ease: 'easeInOut' }}
               initial={{ x: '100%' }}

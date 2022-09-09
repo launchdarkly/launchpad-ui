@@ -7,6 +7,7 @@ const props = {
   kind: SnackbarKind.INFO,
   description: 'This is a message',
   header: 'Snackbar header',
+  onDismiss: () => undefined,
 };
 
 describe('Snackbar', () => {
