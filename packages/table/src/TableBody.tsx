@@ -1,19 +1,16 @@
-import type { ReactNode } from 'react';
+import type { HTMLAttributes } from 'react';
 
 import { cx } from 'classix';
 
 import './styles/Table.css';
 
-type TableBodyProps = {
-  className?: string;
-  children: ReactNode;
-};
+type TableBodyProps = HTMLAttributes<HTMLTableSectionElement>;
 
-const TableBody = ({ className, children, ...props }: TableBodyProps) => {
+const TableBody = ({ className, children, ...rest }: TableBodyProps) => {
   const classes = cx('Table-body', className);
 
   return (
-    <tbody {...props} className={classes}>
+    <tbody {...rest} className={classes}>
       {children}
     </tbody>
   );
