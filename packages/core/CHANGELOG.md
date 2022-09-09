@@ -1,5 +1,36 @@
 # @launchpad-ui/core
 
+## 0.11.5
+
+### Patch Changes
+
+- [#352](https://github.com/launchdarkly/launchpad-ui/pull/352) [`406b42f`](https://github.com/launchdarkly/launchpad-ui/commit/406b42f3e96fff9784b622f2597485413ade2638) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Counter] Add type to disallow children
+
+* [#354](https://github.com/launchdarkly/launchpad-ui/pull/354) [`77e57c5`](https://github.com/launchdarkly/launchpad-ui/commit/77e57c5b4307c02836544b7535c2a3cea1b0af9c) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Modal] Enhance component API to allow HTML attribute passthrough
+
+- [`f44797d`](https://github.com/launchdarkly/launchpad-ui/commit/f44797df5c09a9125de600de5112557b399a3542) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Pagination] Enhance component prop API to allow HTML attribute passthrough
+
+* [#355](https://github.com/launchdarkly/launchpad-ui/pull/355) [`e5e9541`](https://github.com/launchdarkly/launchpad-ui/commit/e5e95415621822b3ba11a6c659deff12eb4cd0b0) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Navigation] Enhance Nav component prop types to allow HTML attribute passthrough
+
+- [#358](https://github.com/launchdarkly/launchpad-ui/pull/358) [`5c1a4de`](https://github.com/launchdarkly/launchpad-ui/commit/5c1a4de0ef9054644cf8307279929285dd08dcf4) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Table] Enhance component API with html attribute passthrough
+
+- Updated dependencies [[`406b42f`](https://github.com/launchdarkly/launchpad-ui/commit/406b42f3e96fff9784b622f2597485413ade2638), [`77e57c5`](https://github.com/launchdarkly/launchpad-ui/commit/77e57c5b4307c02836544b7535c2a3cea1b0af9c), [`f44797d`](https://github.com/launchdarkly/launchpad-ui/commit/f44797df5c09a9125de600de5112557b399a3542), [`e5e9541`](https://github.com/launchdarkly/launchpad-ui/commit/e5e95415621822b3ba11a6c659deff12eb4cd0b0), [`5c1a4de`](https://github.com/launchdarkly/launchpad-ui/commit/5c1a4de0ef9054644cf8307279929285dd08dcf4)]:
+  - @launchpad-ui/counter@0.3.2
+  - @launchpad-ui/modal@0.7.4
+  - @launchpad-ui/pagination@0.2.4
+  - @launchpad-ui/navigation@0.5.5
+  - @launchpad-ui/table@0.3.1
+  - @launchpad-ui/overlay@0.3.4
+  - @launchpad-ui/popover@0.7.4
+  - @launchpad-ui/dropdown@0.4.5
+  - @launchpad-ui/menu@0.5.4
+  - @launchpad-ui/progress-bubbles@0.4.4
+  - @launchpad-ui/split-button@0.5.5
+  - @launchpad-ui/tooltip@0.5.4
+  - @launchpad-ui/filter@0.3.5
+  - @launchpad-ui/clipboard@0.6.4
+  - @launchpad-ui/notification@0.4.4
+
 ## 0.11.4
 
 ### Patch Changes

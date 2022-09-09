@@ -1,5 +1,11 @@
 # @launchpad-ui/table
 
+## 0.3.1
+
+### Patch Changes
+
+- [#358](https://github.com/launchdarkly/launchpad-ui/pull/358) [`5c1a4de`](https://github.com/launchdarkly/launchpad-ui/commit/5c1a4de0ef9054644cf8307279929285dd08dcf4) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Table] Enhance component API with html attribute passthrough
+
 ## 0.3.0
 
 ### Minor Changes
