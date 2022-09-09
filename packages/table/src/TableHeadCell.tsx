@@ -1,5 +1,5 @@
 import type { TableColumnWidths } from './types';
-import type { ReactNode } from 'react';
+import type { ThHTMLAttributes } from 'react';
 
 import camelCase from 'camelcase';
 import { cx } from 'classix';
@@ -7,24 +7,18 @@ import { cx } from 'classix';
 import './styles/Table.css';
 import { TableAlignType } from './types';
 
-type TableHeadCellProps = {
-  align?: TableAlignType;
-  'aria-label'?: string;
-  className?: string;
-  children?: ReactNode;
+type TableHeadCellProps = ThHTMLAttributes<HTMLTableCellElement> & {
   defaultColWidth?: TableColumnWidths;
-  id?: string;
   scope?: 'col' | 'row' | 'colgroup' | 'rowgroup';
 };
 
 const TableHeadCell = ({
   align = TableAlignType.LEFT,
-  'aria-label': ariaLabel,
   className,
   children,
   defaultColWidth,
-  id,
   scope = 'col',
+  ...rest
 }: TableHeadCellProps) => {
   const width = camelCase(`width-${defaultColWidth}`);
   const widthClass = defaultColWidth ? `Table-cell--${width}` : '';
@@ -37,7 +31,7 @@ const TableHeadCell = ({
   );
 
   return (
-    <th aria-label={ariaLabel} className={classes} id={id} scope={scope}>
+    <th {...rest} className={classes} scope={scope}>
       {children}
     </th>
   );
