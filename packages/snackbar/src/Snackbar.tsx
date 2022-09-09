@@ -5,7 +5,7 @@ import { ButtonKind, IconButton, IconButtonSize } from '@launchpad-ui/button';
 import { Close, IconSize, KindIcon } from '@launchpad-ui/icons';
 import { cx } from 'classix';
 
-import './styles/Snackbar.css';
+import styles from './styles/Snackbar.module.css';
 
 type SnackbarBaseProps = {
   kind: SnackbarKind;
@@ -27,18 +27,22 @@ const Snackbar = ({
   ...rest
 }: SnackbarProps) => {
   return (
-    <div {...rest} className={cx('Snackbar', `Snackbar--${kind}`, className)} role="status">
-      <KindIcon kind={kind} className="Snackbar-icon" />
-      <div className="Snackbar-content">
-        {header && <h4 className="Snackbar-heading">{header}</h4>}
-        <span className="Snackbar-description">{description}</span> {cta}
+    <div
+      {...rest}
+      className={cx(styles.Snackbar, styles[`Snackbar--${kind}`], className)}
+      role="status"
+    >
+      <KindIcon kind={kind} className={styles['Snackbar-icon']} />
+      <div className={styles['Snackbar-content']}>
+        {header && <h4 className={styles['Snackbar-heading']}>{header}</h4>}
+        <span className={styles['Snackbar-description']}>{description}</span> {cta}
       </div>
       <IconButton
         icon={<Close size={IconSize.SMALL} />}
         size={IconButtonSize.SMALL}
         aria-label="Dismiss"
         kind={ButtonKind.CLOSE}
-        className="Snackbar-close"
+        className={styles['Snackbar-close']}
         data-test-id="snackbar-dismiss"
         onClick={onDismiss}
       />
