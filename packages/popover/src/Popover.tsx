@@ -140,7 +140,6 @@ const Popover = ({
 }: PopoverProps) => {
   const [isOpen, setIsOpen] = useState(isOpenProp ?? undefined);
   const [popoverElement, setPopoverElement] = useState<HTMLElement | null>();
-  const [isCommandBarOpen, setIsCommandBarOpen] = useState<() => boolean | undefined>();
 
   const targetRef = useRef<HTMLElement>(null);
   const contentRef = useCallback((node: HTMLElement | null) => {
@@ -241,8 +240,6 @@ const Popover = ({
   ]);
 
   useEffect(() => {
-    setIsCommandBarOpen(() => window.CommandBar?.isOpen);
-
     return () => {
       if (timeoutRef.current) {
         clearTimeout(timeoutRef.current);
@@ -413,7 +410,7 @@ const Popover = ({
       >
         {enableArrow && <div id="arrow" ref={arrowRef}></div>}
         {interactionKind === 'click' ? (
-          <FocusScope autoFocus contain={!isCommandBarOpen?.()}>
+          <FocusScope autoFocus contain>
             {popoverContent}
           </FocusScope>
         ) : (
