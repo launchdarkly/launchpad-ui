@@ -1,28 +1,16 @@
-import type { ChangeEvent, FocusEvent, ReactNode } from 'react';
+import type { SelectHTMLAttributes } from 'react';
 
 import { cx } from 'classix';
 
 import './styles/FormInput.css';
 
-type SelectProps = {
-  children: ReactNode;
-  className?: string;
-  disabled?: boolean;
-  id?: string;
-  name?: string;
-  onChange?(event: ChangeEvent<HTMLInputElement> | ChangeEvent<HTMLSelectElement>): void;
-  onBlur?(event: FocusEvent<HTMLSelectElement, HTMLElement>): void;
-  testId?: string;
-  value?: number | string;
-  placeholder?: string;
-  'aria-label'?: string;
-};
+type SelectProps = SelectHTMLAttributes<HTMLSelectElement>;
 
-const Select = ({ className, children, testId, ...rest }: SelectProps) => {
+const Select = ({ className, children, ...rest }: SelectProps) => {
   const classes = cx('FormInput', 'FormInput-select', className);
 
   return (
-    <select {...rest} className={classes} data-test-id={testId}>
+    <select {...rest} className={classes}>
       {children}
     </select>
   );

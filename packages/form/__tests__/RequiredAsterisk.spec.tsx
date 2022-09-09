@@ -5,7 +5,7 @@ import { RequiredAsterisk } from '../src';
 
 describe('RequiredAsterisk', () => {
   it('renders', () => {
-    render(<RequiredAsterisk testId="test id" />);
+    render(<RequiredAsterisk data-test-id="test id" />);
     expect(screen.getByTestId('test id')).toBeInTheDocument();
   });
 });

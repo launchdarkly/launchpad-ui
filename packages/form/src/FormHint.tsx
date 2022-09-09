@@ -1,14 +1,10 @@
-import type { ReactNode } from 'react';
+import type { HTMLAttributes } from 'react';
 
 import { cx } from 'classix';
 
 import './styles/FormHint.css';
 
-type FormHintProps = {
-  children: ReactNode;
-  className?: string;
-  id?: string;
-};
+type FormHintProps = HTMLAttributes<HTMLDivElement>;
 
 const FormHint = ({ className, children, ...rest }: FormHintProps) => {
   const classes = cx('Form-hint', className);

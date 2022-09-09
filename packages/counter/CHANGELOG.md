@@ -1,5 +1,11 @@
 # @launchpad-ui/counter
 
+## 0.3.2
+
+### Patch Changes
+
+- [#352](https://github.com/launchdarkly/launchpad-ui/pull/352) [`406b42f`](https://github.com/launchdarkly/launchpad-ui/commit/406b42f3e96fff9784b622f2597485413ade2638) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Counter] Add type to disallow children
+
 ## 0.3.1
 
 ### Patch Changes

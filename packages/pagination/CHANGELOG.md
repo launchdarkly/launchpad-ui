@@ -1,5 +1,11 @@
 # @launchpad-ui/pagination
 
+## 0.2.4
+
+### Patch Changes
+
+- [`f44797d`](https://github.com/launchdarkly/launchpad-ui/commit/f44797df5c09a9125de600de5112557b399a3542) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Pagination] Enhance component prop API to allow HTML attribute passthrough
+
 ## 0.2.3
 
 ### Patch Changes

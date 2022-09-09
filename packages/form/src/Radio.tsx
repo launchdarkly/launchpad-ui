@@ -1,59 +1,13 @@
-import type { ChangeEvent, CSSProperties, ReactNode } from 'react';
+import type { CSSProperties, InputHTMLAttributes } from 'react';
 
 import { cx } from 'classix';
 
 import { Label } from './Label';
 import './styles/Form.css';
 
-type RadioProps = {
-  /**
-   * Use an aria-label if you don't pass in children and don't have a visible label to associate with the input element.
-   */
-  'aria-label'?: string;
-  /**
-   * id attribute of the label text elsewhere in the app, used for screen reader support. Use this for cases where you have a visible label on the page that **is not close to** to the input. https://tink.uk/the-difference-between-aria-label-and-aria-labelledby/
-   */
-  'aria-labelledby'?: string;
-  /**
-   * Is the Radio checked?
-   */
-  checked?: boolean;
-  /**
-   * Label for the Checkbox
-   */
-  children?: ReactNode;
-  /**
-   * Custom classname(s) to add to the Radio.
-   */
-  className?: string;
-  /**
-   * Is the Radio disabled?
-   */
-  disabled?: boolean;
-  /**
-   * The id to pair the Radio input with the label for screen reader support.
-   */
-  id?: string;
-  /**
-   * The className to pass into the Radio's Label component
-   */
+type RadioProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'type'> & {
   labelClassName?: string;
-  /**
-   * Name to apply to the underlying Radio. Pass in the same name value to each Radio when grouping in a RadioGroup for screen reader support.
-   */
-  name?: string;
-  /**
-   * The function to pass into the Radio onChange synthetic event handler.
-   */
-  onChange?(e: ChangeEvent): void;
-  /**
-   * Optional inline CSS styles to add to the Radio label.
-   */
   labelStyle?: CSSProperties;
-  /**
-   * The value passed into Radio.
-   */
-  value: number | string;
 };
 
 const Radio = ({
@@ -65,11 +19,8 @@ const Radio = ({
   disabled = false,
   id,
   labelClassName,
-  name,
-  onChange = () => undefined,
   labelStyle,
-  value,
-  ...props
+  ...rest
 }: RadioProps) => {
   const hasAriaLabel = ariaLabel !== undefined || ariaLabelledby !== undefined;
 
@@ -82,17 +33,14 @@ const Radio = ({
   return (
     <>
       <input
+        {...rest}
         aria-label={ariaLabel}
         aria-labelledby={ariaLabelledby}
         className={cx('Form-radio', className)}
         checked={checked}
         disabled={disabled}
         id={id}
-        name={name}
-        onChange={onChange}
         type="radio"
-        value={value}
-        {...props}
       />
       <Label className={labelClassName} htmlFor={id} style={labelStyle}>
         {disabled ? <span className="Form-label--disabled">{children}</span> : children}

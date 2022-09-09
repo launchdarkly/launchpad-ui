@@ -1,5 +1,20 @@
 # @launchpad-ui/split-button
 
+## 0.5.6
+
+### Patch Changes
+
+- [#357](https://github.com/launchdarkly/launchpad-ui/pull/357) [`04492c3`](https://github.com/launchdarkly/launchpad-ui/commit/04492c37238ab9ef97695f5a9f968973a05b7083) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [SplitButton] Enhance component API with HTML attribute passthrough
+
+## 0.5.5
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @launchpad-ui/popover@0.7.4
+  - @launchpad-ui/dropdown@0.4.5
+  - @launchpad-ui/tooltip@0.5.4
+
 ## 0.5.4
 
 ### Patch Changes

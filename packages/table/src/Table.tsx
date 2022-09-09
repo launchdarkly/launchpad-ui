@@ -1,28 +1,17 @@
-import type { ReactNode } from 'react';
+import type { TableHTMLAttributes } from 'react';
 
 import { cx } from 'classix';
 
 import './styles/Table.css';
 
-type TableProps = {
+type TableProps = TableHTMLAttributes<HTMLTableElement> & {
   auto?: boolean;
   compact?: boolean;
-  children: ReactNode;
-  className?: string;
   isResourceTable?: boolean;
   summary?: string;
-  testId?: string;
 };
 
-const Table = ({
-  auto,
-  compact,
-  className,
-  children,
-  isResourceTable,
-  testId,
-  ...props
-}: TableProps) => {
+const Table = ({ auto, compact, className, children, isResourceTable, ...rest }: TableProps) => {
   const classes = cx(
     'Table',
     auto && 'Table--auto',
@@ -32,7 +21,7 @@ const Table = ({
   );
 
   return (
-    <table {...props} className={classes} data-test-id={testId}>
+    <table {...rest} className={classes}>
       {children}
     </table>
   );

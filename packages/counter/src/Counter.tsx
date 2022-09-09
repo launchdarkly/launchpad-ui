@@ -7,6 +7,7 @@ import './styles/Counter.css';
 type CounterProps = HTMLAttributes<HTMLSpanElement> & {
   value: number;
   subtle?: boolean;
+  children?: never;
 };
 
 const Counter = ({ value, className, subtle, ...rest }: CounterProps) => {
