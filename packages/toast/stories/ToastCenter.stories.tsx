@@ -19,7 +19,7 @@ type Story = ComponentStoryObj<typeof ToastCenter>;
 
 const kinds = Object.values(ToastKind);
 let kindIndex = 0;
-const loopIndices = (i: number) => (kindIndex < kinds.length ? i + 1 : 0);
+const loopIndices = (i: number) => (kindIndex === kinds.length - 1 ? 0 : i + 1);
 
 const makeToast = (id: string) => {
   const kind = kinds[kindIndex];
