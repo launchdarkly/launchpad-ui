@@ -16,7 +16,11 @@ type ToastProps = Omit<HTMLAttributes<HTMLDivElement>, 'children'> & ToastBasePr
 
 const Toast = ({ className, kind, onDismiss, content, ...rest }: ToastProps) => {
   return (
-    <div {...rest} className={cx(styles.Toast, styles[`Toast--${kind}`], className)} role="status">
+    <div
+      {...rest}
+      className={cx('Toast', styles.Toast, styles[`Toast--${kind}`], className)}
+      role="status"
+    >
       {kind !== ToastKind.INFO && <KindIcon kind={kind} className={styles['Toast-icon']} />}
       <p className={styles['Toast-content']}>{content}</p>
     </div>
