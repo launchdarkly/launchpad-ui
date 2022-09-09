@@ -1,4 +1,4 @@
-import type { ReactNode, Ref } from 'react';
+import type { HTMLAttributes, Ref } from 'react';
 
 import { cx } from 'classix';
 import { forwardRef } from 'react';
@@ -6,20 +6,24 @@ import { forwardRef } from 'react';
 import './styles/Nav.css';
 import { NavKind } from './types';
 
-type NavBaseProps = {
+type NavBaseProps = HTMLAttributes<HTMLElement> & {
   kind?: NavKind;
-  className?: string;
-  children?: ReactNode;
-  role?: string;
   innerRef?: Ref<HTMLDivElement>;
 };
 
-const NavBase = ({ kind = NavKind.PRIMARY, className, children, role, innerRef }: NavBaseProps) => {
+const NavBase = ({
+  kind = NavKind.PRIMARY,
+  className,
+  children,
+  innerRef,
+  'aria-label': ariaLabel,
+  ...rest
+}: NavBaseProps) => {
   return (
     <nav
-      aria-label={`${kind} navigation`}
+      {...rest}
+      aria-label={ariaLabel ?? `${kind} navigation`}
       className={cx('Nav', `Nav--${kind}`, className)}
-      role={role}
       ref={innerRef}
     >
       {children}
