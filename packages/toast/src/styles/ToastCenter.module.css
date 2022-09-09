@@ -1,0 +1,17 @@
+.ToastCenter {
+  position: fixed;
+  bottom: 7.25rem;
+  left: 50%;
+  transform: translateX(-50%);
+  right: auto;
+  top: auto;
+  z-index: 10001;
+}
+
+.ToastCenter-item {
+  text-align: center;
+}
+
+.ToastCenter-item:not(:first-child) {
+  margin-top: 2rem;
+}
