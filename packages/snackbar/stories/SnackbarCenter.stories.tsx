@@ -19,7 +19,7 @@ type Story = ComponentStoryObj<typeof SnackbarCenter>;
 
 const kinds = Object.values(SnackbarKind);
 let kindIndex = 0;
-const loopIndices = (i: number) => (kindIndex < kinds.length ? i + 1 : 0);
+const loopIndices = (i: number) => (kindIndex === kinds.length - 1 ? 0 : i + 1);
 
 const makeSnackbar = (id: string) => {
   const kind = kinds[kindIndex];
