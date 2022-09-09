@@ -33,7 +33,7 @@ const ToastCenter = ({ toasts, onDismiss, className }: ToastCenterProps) => {
               transition={{ ease: 'easeInOut' }}
               initial={{ y: '100%' }}
               animate={{ y: '0%' }}
-              exit={{ y: '100%' }}
+              exit={{ y: '0%' }}
             >
               <Toast
                 kind={item.kind}

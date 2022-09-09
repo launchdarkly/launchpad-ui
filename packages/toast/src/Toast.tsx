@@ -2,19 +2,26 @@ import type { HTMLAttributes, ReactNode } from 'react';
 
 import { KindIcon } from '@launchpad-ui/icons';
 import { cx } from 'classix';
+import { useEffect } from 'react';
 
 import styles from './styles/Toast.module.css';
 import { ToastKind } from './types';
 
 type ToastBaseProps = {
   kind: ToastKind;
-  onDismiss?: () => void;
+  onDismiss: () => void;
   content: ReactNode;
 };
 
 type ToastProps = Omit<HTMLAttributes<HTMLDivElement>, 'children'> & ToastBaseProps;
 
 const Toast = ({ className, kind, onDismiss, content, ...rest }: ToastProps) => {
+  useEffect(() => {
+    setTimeout(() => {
+      onDismiss();
+    }, 6000);
+  }, []);
+
   return (
     <div
       {...rest}

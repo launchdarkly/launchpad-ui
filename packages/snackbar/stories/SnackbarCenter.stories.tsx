@@ -17,9 +17,13 @@ export default {
 
 type Story = ComponentStoryObj<typeof SnackbarCenter>;
 
+const kinds = Object.values(SnackbarKind);
+let kindIndex = 0;
+const loopIndices = (i: number) => (kindIndex < kinds.length ? i + 1 : 0);
+
 const makeSnackbar = (id: string) => {
-  const kinds = Object.values(SnackbarKind);
-  const kind = kinds[Math.floor(Math.random() * kinds.length)];
+  const kind = kinds[kindIndex];
+  kindIndex = loopIndices(kindIndex);
 
   return {
     _id: id,

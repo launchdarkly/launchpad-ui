@@ -12,7 +12,7 @@ type SnackbarBaseProps = {
   header?: string;
   description: string;
   cta?: ReactElement<HTMLAnchorElement>;
-  onDismiss?: () => void;
+  onDismiss: () => void;
 };
 
 type SnackbarProps = Omit<HTMLAttributes<HTMLDivElement>, 'children'> & SnackbarBaseProps;

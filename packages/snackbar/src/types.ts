@@ -6,7 +6,7 @@ enum SnackbarKind {
   WARNING = 'warning',
 }
 
-type SnackbarRecord = SnackbarBaseProps & {
+type SnackbarRecord = Omit<SnackbarBaseProps, 'onDismiss'> & {
   _id: string;
 };
 

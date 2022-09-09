@@ -7,7 +7,7 @@ enum ToastKind {
   WARNING = 'warning',
 }
 
-type ToastRecord = ToastBaseProps & {
+type ToastRecord = Omit<ToastBaseProps, 'onDismiss'> & {
   _id: string;
 };
 
