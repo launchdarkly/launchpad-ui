@@ -1,5 +1,22 @@
 # @launchpad-ui/core
 
+## 0.12.0
+
+### Minor Changes
+
+- [#353](https://github.com/launchdarkly/launchpad-ui/pull/353) [`77d3033`](https://github.com/launchdarkly/launchpad-ui/commit/77d30335d2f4e04b5775d4e3bdde7c35a176f211) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Form] Enhance component API to support HTML attribute passthrough where possible
+
+### Patch Changes
+
+- [#357](https://github.com/launchdarkly/launchpad-ui/pull/357) [`04492c3`](https://github.com/launchdarkly/launchpad-ui/commit/04492c37238ab9ef97695f5a9f968973a05b7083) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [SplitButton] Enhance component API with HTML attribute passthrough
+
+- Updated dependencies [[`04492c3`](https://github.com/launchdarkly/launchpad-ui/commit/04492c37238ab9ef97695f5a9f968973a05b7083), [`77d3033`](https://github.com/launchdarkly/launchpad-ui/commit/77d30335d2f4e04b5775d4e3bdde7c35a176f211)]:
+  - @launchpad-ui/split-button@0.5.6
+  - @launchpad-ui/form@0.5.0
+  - @launchpad-ui/menu@0.5.5
+  - @launchpad-ui/filter@0.3.6
+  - @launchpad-ui/navigation@0.5.6
+
 ## 0.11.5
 
 ### Patch Changes

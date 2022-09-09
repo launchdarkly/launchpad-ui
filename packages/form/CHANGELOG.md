@@ -1,5 +1,11 @@
 # @launchpad-ui/form
 
+## 0.5.0
+
+### Minor Changes
+
+- [#353](https://github.com/launchdarkly/launchpad-ui/pull/353) [`77d3033`](https://github.com/launchdarkly/launchpad-ui/commit/77d30335d2f4e04b5775d4e3bdde7c35a176f211) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Form] Enhance component API to support HTML attribute passthrough where possible
+
 ## 0.4.0
 
 ### Minor Changes
