@@ -11,6 +11,10 @@
     0 0 1px 0 rgb(0 0 0 / 0.25);
 }
 
+.Toast-icon {
+  transform: translateY(-1px);
+}
+
 .Toast--error .Toast-icon :global(.Icon) svg {
   fill: var(--color-pink-500);
 }
