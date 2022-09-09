@@ -1,20 +1,16 @@
-import type { KeyboardEvent, ReactNode } from 'react';
+import type { HTMLAttributes } from 'react';
 
 import { cx } from 'classix';
 
 import './styles/Modal.css';
 
-type ModalBodyProps = {
-  children: ReactNode;
-  className?: string;
-  onKeyDown?: (e: KeyboardEvent) => void;
-};
+type ModalBodyProps = HTMLAttributes<HTMLDivElement>;
 
-const ModalBody = ({ className, children, ...other }: ModalBodyProps) => {
+const ModalBody = ({ className, children, ...rest }: ModalBodyProps) => {
   const classes = cx('Modal-body', className);
 
   return (
-    <div className={classes} {...other}>
+    <div {...rest} className={classes}>
       {children}
     </div>
   );
