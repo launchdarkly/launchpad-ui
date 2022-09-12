@@ -5,7 +5,7 @@ import { IconButton } from '@launchpad-ui/button';
 import { Close, KindIcon } from '@launchpad-ui/icons';
 import { cx } from 'classix';
 
-import './styles/Banner.css';
+import styles from './styles/Banner.module.css';
 
 type BannerProps = HTMLAttributes<HTMLDivElement> & {
   'data-test-id'?: string;
@@ -25,13 +25,13 @@ const Banner = ({
   'data-test-id': testId,
   ...rest
 }: BannerProps) => {
-  const classes = cx('Banner', `Banner--${kind}`, className);
+  const classes = cx('Banner', styles.Banner, styles[`Banner--${kind}`], className);
 
   return (
     <div className={classes} data-test-id={testId} {...rest}>
-      <KindIcon kind={kind} className="Banner-icon" />
-      <div className="Banner-content">
-        {header && <h4 className="Banner-heading">{header}</h4>}
+      <KindIcon kind={kind} className={styles['Banner-icon']} />
+      <div className={styles['Banner-content']}>
+        {header && <h4 className={styles['Banner-heading']}>{header}</h4>}
         <div>{children}</div>
       </div>
       {dismissible && (
@@ -39,7 +39,6 @@ const Banner = ({
           aria-label="Close banner"
           icon={<Close size="small" />}
           size="small"
-          className="Banner-close"
           onClick={onDismiss}
           kind="close"
           data-test-id={testId ? `${testId}-dismiss-button` : undefined}
