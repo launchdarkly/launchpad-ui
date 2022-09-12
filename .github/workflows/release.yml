@@ -21,7 +21,7 @@ jobs:
       - uses: pnpm/action-setup@v2.2.1
 
       - name: Derive appropriate SHAs for base and head for `nx affected` commands
-        uses: nrwl/nx-set-shas@v2
+        uses: nrwl/nx-set-shas@v3
 
       - name: Setup Node 16.x
         uses: actions/setup-node@v3
