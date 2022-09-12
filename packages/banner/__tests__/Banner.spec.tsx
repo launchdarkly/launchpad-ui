@@ -1,13 +1,12 @@
 import type { BannerProps } from '../src';
 
-import { AlertKind } from '@launchpad-ui/alert';
 import { it, expect, describe, vi } from 'vitest';
 
 import { render, screen, userEvent } from '../../../test/utils';
-import { Banner } from '../src';
+import { Banner, BannerKind } from '../src';
 
 const createComponent = (props?: BannerProps) => (
-  <Banner kind={AlertKind.INFO} {...props}>
+  <Banner kind={BannerKind.INFO} {...props}>
     Banner
   </Banner>
 );
@@ -20,7 +19,7 @@ describe('Banner', () => {
 
   it('can be dismissible', async () => {
     render(
-      <Banner kind={AlertKind.INFO} dismissible>
+      <Banner kind={BannerKind.INFO} dismissible>
         An important message
       </Banner>
     );
@@ -30,7 +29,7 @@ describe('Banner', () => {
   it('renders a header when passed', async () => {
     const header = 'My header';
     render(
-      <Banner kind={AlertKind.INFO} header={header}>
+      <Banner kind={BannerKind.INFO} header={header}>
         An important message
       </Banner>
     );
@@ -43,7 +42,7 @@ describe('Banner', () => {
     const user = userEvent.setup();
     const content = 'An important message';
     render(
-      <Banner kind={AlertKind.INFO} onDismiss={onDismiss} dismissible>
+      <Banner kind={BannerKind.INFO} onDismiss={onDismiss} dismissible>
         {content}
       </Banner>
     );
