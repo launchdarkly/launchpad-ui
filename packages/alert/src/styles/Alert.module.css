@@ -61,7 +61,7 @@
   line-height: 1.25;
 }
 
-.Alert .ButtonGroup {
+.Alert :global(.ButtonGroup) {
   margin-top: 1.2rem;
 }
 
@@ -102,19 +102,19 @@
 
 /* Alert kind variants */
 
-.Alert--info .Alert-icon svg {
+.Alert--info .Alert-icon :global(svg) {
   fill: var(--reskin-info-blue-base);
 }
 
-.Alert--success .Alert-icon svg {
+.Alert--success .Alert-icon :global(svg) {
   fill: var(--reskin-success-green-base);
 }
 
-.Alert--warning .Alert-icon svg {
+.Alert--warning .Alert-icon :global(svg) {
   fill: var(--reskin-warn-gold-base);
 }
 
-.Alert--error .Alert-icon svg > path {
+.Alert--error .Alert-icon :global(svg) > :global(path) {
   fill: var(--reskin-error-red-base);
 }
 
@@ -145,7 +145,7 @@
   flex-grow: 1;
 }
 
-.Alert-content a:not(.Button) {
+.Alert-content :global(a:not(.Button)) {
   color: var(--color-link);
 
   &:hover {
@@ -169,7 +169,7 @@
   }
 }
 
-.Alert-content ul {
+.Alert-content :global(ul) {
   margin: 0 0 0.5em;
 }
 
@@ -177,8 +177,8 @@
   margin-bottom: 0;
 }
 
-.Alert-content p,
-.Alert ul {
+.Alert-content :global(p),
+.Alert :global(ul) {
   list-style-position: outside;
   margin-left: 2rem;
 }
