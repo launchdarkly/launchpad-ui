@@ -1,5 +1,12 @@
 # @launchpad-ui/icons
 
+## 0.4.1-alpha.0
+
+### Patch Changes
+
+- [#316](https://github.com/launchdarkly/launchpad-ui/pull/316) [`e860080`](https://github.com/launchdarkly/launchpad-ui/commit/e86008076dc61cfcfc4c22317021e793d4fd59a9) Thanks [@github-actions](https://github.com/apps/github-actions)! - [Alert]: Update styles for system message redesign project
+  [Icons]: Add AlertRhombus icon
+
 ## 0.4.0
 
 ### Minor Changes
