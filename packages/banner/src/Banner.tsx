@@ -1,4 +1,3 @@
-import type { AlertProps } from '@launchpad-ui/alert';
 import type { HTMLAttributes } from 'react';
 
 import { IconButton } from '@launchpad-ui/button';
@@ -9,7 +8,7 @@ import styles from './styles/Banner.module.css';
 
 type BannerProps = HTMLAttributes<HTMLDivElement> & {
   'data-test-id'?: string;
-  kind: AlertProps['kind'];
+  kind: 'info' | 'warning' | 'error';
   onDismiss?(): void;
   dismissible?: boolean;
   header?: string;
