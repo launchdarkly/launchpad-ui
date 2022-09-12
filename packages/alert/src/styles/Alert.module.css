@@ -23,32 +23,19 @@
   --box-shadow-0x1y-blur2-sp0-14prc-black: 0 1px 2px 0 hsl(0 0% 12.9% / 0.14);
   --reskin-box-shadow-triple: var(--box-shadow-0x2y-blur8-sp1-4prc-black),
     var(--box-shadow-0x2y-blur4-sp0-8prc-black), var(--box-shadow-0x1y-blur2-sp0-14prc-black);
-
-  /* TODO: figure out if this the better
-  https://www.quackit.com/css/codes/patterns/css_background_stripes.cfm */
-  --reskin-striped-base: repeating-linear-gradient(
-    45deg,
-    var(--color-white),
-    var(--color-white) 20px,
-    var(--color-white-100) 20px,
-    var(--color-white-100) 40px
-  );
   --reskin-border-radius-6px: 6px;
   --Alert-color-background-info: var(--reskin-info-blue-light);
   --Alert-color-background-success: var(--reskin-success-green-light);
   --Alert-color-background-warning: var(--reskin-warn-gold-light);
   --Alert-color-background-error: var(--reskin-error-red-light);
-  --Alert-color-background-striped: var(--reskin-striped-base);
   --Alert-color-border-info: var(--reskin-info-blue-base);
   --Alert-color-border-success: var(--reskin-success-green-base);
   --Alert-color-border-warning: var(--reskin-warn-gold-base);
   --Alert-color-border-error: var(--reskin-error-red-base);
-  --Alert-color-border-striped: var(--color-gray-500);
   --Alert-icon-color-info: var(--reskin-info-blue-base);
   --Alert-icon-color-success: var(--reskin-success-green-base);
   --Alert-icon-color-warning: var(--reskin-warn-gold-base);
   --Alert-icon-color-error: var(--reskin-error-red-base);
-  --Alert-icon-color-striped: var(--color-black-200);
   --Alert-text-color: var(--color-text-subtle-primary);
 }
 
@@ -74,7 +61,7 @@
   line-height: 1.25;
 }
 
-.Alert .ButtonGroup {
+.Alert :global(.ButtonGroup) {
   margin-top: 1.2rem;
 }
 
@@ -115,24 +102,20 @@
 
 /* Alert kind variants */
 
-.Alert--info .Alert-icon svg {
+.Alert--info .Alert-icon :global(svg) {
   fill: var(--reskin-info-blue-base);
 }
 
-.Alert--success .Alert-icon svg {
+.Alert--success .Alert-icon :global(svg) {
   fill: var(--reskin-success-green-base);
 }
 
-.Alert--warning .Alert-icon svg {
+.Alert--warning .Alert-icon :global(svg) {
   fill: var(--reskin-warn-gold-base);
 }
 
-.Alert--error .Alert-icon svg > path {
+.Alert--error .Alert-icon :global(svg) > :global(path) {
   fill: var(--reskin-error-red-base);
-}
-
-.Alert--striped .Alert-icon svg {
-  fill: var(--color-black-200);
 }
 
 .Alert--info.Alert--bordered {
@@ -162,7 +145,7 @@
   flex-grow: 1;
 }
 
-.Alert-content a:not(.Button) {
+.Alert-content :global(a:not(.Button)) {
   color: var(--color-link);
 
   &:hover {
@@ -186,7 +169,7 @@
   }
 }
 
-.Alert-content ul {
+.Alert-content :global(ul) {
   margin: 0 0 0.5em;
 }
 
@@ -194,8 +177,8 @@
   margin-bottom: 0;
 }
 
-.Alert-content p,
-.Alert ul {
+.Alert-content :global(p),
+.Alert :global(ul) {
   list-style-position: outside;
   margin-left: 2rem;
 }

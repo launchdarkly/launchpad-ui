@@ -4,6 +4,7 @@ import { it, expect, describe, vi } from 'vitest';
 
 import { render, screen, userEvent } from '../../../test/utils';
 import { Alert } from '../src';
+import styles from '../src/styles/Alert.module.css';
 
 const createComponent = (props?: AlertProps) => <Alert {...props}>Alert text!</Alert>;
 
@@ -35,6 +36,54 @@ describe('Alert', () => {
 
       expect(onDismiss).toHaveBeenCalledTimes(1);
       expect(screen.queryByText('Alert text!')).not.toBeInTheDocument();
+    });
+  });
+
+  describe('with header', () => {
+    it('renders header', () => {
+      render(createComponent({ header: 'This is a header' }));
+      const text = screen.getByText('This is a header');
+      expect(text).toBeInTheDocument();
+    });
+  });
+
+  describe('respects noIcon prop', () => {
+    it('renders icon by default', () => {
+      render(createComponent());
+      const infoIcon = screen.getByRole('img', { name: 'Info' });
+      expect(infoIcon).toBeInTheDocument();
+    });
+
+    it('renders noIcon when prop is passed', () => {
+      render(createComponent({ noIcon: true }));
+      const infoIcon = screen.queryByRole('img', { name: 'Info' });
+      expect(infoIcon).not.toBeInTheDocument();
+    });
+  });
+
+  describe('applies class modifiers', () => {
+    it('applies size small class when passed', () => {
+      render(createComponent({ size: 'small', 'data-test-id': 'alert' }));
+      const component = screen.getByTestId('alert');
+      expect(component).toHaveClass(styles['Alert--small']);
+    });
+
+    it('applies isInline class when passed', () => {
+      render(createComponent({ isInline: true, 'data-test-id': 'alert' }));
+      const component = screen.getByTestId('alert');
+      expect(component).toHaveClass(styles['Alert--inline']);
+    });
+
+    it('applies compact class when passed', () => {
+      render(createComponent({ compact: true, 'data-test-id': 'alert' }));
+      const component = screen.getByTestId('alert');
+      expect(component).toHaveClass(styles['Alert--compact']);
+    });
+
+    it('applies wide class when passed', () => {
+      render(createComponent({ wide: true, 'data-test-id': 'alert' }));
+      const component = screen.getByTestId('alert');
+      expect(component).toHaveClass(styles['Alert--wide']);
     });
   });
 
