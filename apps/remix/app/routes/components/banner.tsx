@@ -1,5 +1,5 @@
-import { AlertKind, Banner } from '@launchpad-ui/core';
+import { BannerKind, Banner } from '@launchpad-ui/core';
 
 export default function Index() {
-  return <Banner kind={AlertKind.SUCCESS}>Banner</Banner>;
+  return <Banner kind={BannerKind.INFO}>Banner</Banner>;
 }
