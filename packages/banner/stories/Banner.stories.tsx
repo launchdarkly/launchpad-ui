@@ -50,10 +50,6 @@ export default {
 
 type Story = ComponentStoryObj<typeof Banner>;
 
-export const Success: Story = {
-  args: { children: 'Success banner with icon', dismissible: true, kind: 'success' },
-};
-
 export const Error: Story = {
   args: { children: 'Error banner with icon', dismissible: true, kind: 'error' },
 };
