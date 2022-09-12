@@ -6,6 +6,13 @@
 
 - [#386](https://github.com/launchdarkly/launchpad-ui/pull/386) [`86b0120`](https://github.com/launchdarkly/launchpad-ui/commit/86b0120c548063baba69205215f644b4a2d9a7fd) Thanks [@Niznikr](https://github.com/Niznikr)! - Replace enums with string union types
 
+## 0.4.1-alpha.0
+
+### Patch Changes
+
+- [#316](https://github.com/launchdarkly/launchpad-ui/pull/316) [`e860080`](https://github.com/launchdarkly/launchpad-ui/commit/e86008076dc61cfcfc4c22317021e793d4fd59a9) Thanks [@github-actions](https://github.com/apps/github-actions)! - [Alert]: Update styles for system message redesign project
+  [Icons]: Add AlertRhombus icon
+
 ## 0.4.0
 
 ### Minor Changes

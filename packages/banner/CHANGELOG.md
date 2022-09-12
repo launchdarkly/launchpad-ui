@@ -13,6 +13,28 @@
   - @launchpad-ui/button@0.7.0
   - @launchpad-ui/icons@0.5.0
 
+## 0.5.0-alpha.0
+
+### Minor Changes
+
+- [#368](https://github.com/launchdarkly/launchpad-ui/pull/368) [`1216745`](https://github.com/launchdarkly/launchpad-ui/commit/12167451d680618008ee9a0957062f2bf33b57a9) Thanks [@Niznikr](https://github.com/Niznikr)! - [Banner]: Use BannerKind and remove success kind:
+
+  - Replace usage of `AlertKind` for banner kinds with `BannerKind`
+
+* [#316](https://github.com/launchdarkly/launchpad-ui/pull/316) [`47cd7ca`](https://github.com/launchdarkly/launchpad-ui/commit/47cd7ca3c49e0585b9b80ac9a2986701dff586de) Thanks [@github-actions](https://github.com/apps/github-actions)! - [Banner]: Update styles for system message redesign project
+
+### Patch Changes
+
+- [#316](https://github.com/launchdarkly/launchpad-ui/pull/316) [`db79758`](https://github.com/launchdarkly/launchpad-ui/commit/db79758ae6ff29282b85a1897aec577821b8247f) Thanks [@github-actions](https://github.com/apps/github-actions)! - Integrates IconButton component into new system notification designs
+
+  [Alert]: Update styles to accommodate new IconButton
+  [Banner]: Update styles to accommodate new IconButton
+
+* [#366](https://github.com/launchdarkly/launchpad-ui/pull/366) [`247d6bb`](https://github.com/launchdarkly/launchpad-ui/commit/247d6bb833353f8fdc8275e33e7b82f86848c3b5) Thanks [@Niznikr](https://github.com/Niznikr)! - [Banner] Update to use CSS modules
+
+* Updated dependencies [[`e860080`](https://github.com/launchdarkly/launchpad-ui/commit/e86008076dc61cfcfc4c22317021e793d4fd59a9)]:
+  - @launchpad-ui/icons@0.4.1-alpha.0
+
 ## 0.4.3
 
 ### Patch Changes
