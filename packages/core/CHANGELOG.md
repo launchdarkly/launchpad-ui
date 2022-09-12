@@ -1,5 +1,25 @@
 # @launchpad-ui/core
 
+## 0.12.1
+
+### Patch Changes
+
+- [#360](https://github.com/launchdarkly/launchpad-ui/pull/360) [`c392a08`](https://github.com/launchdarkly/launchpad-ui/commit/c392a08a3d83fcd3cbc0213510c5a19174f925af) Thanks [@Niznikr](https://github.com/Niznikr)! - [Modal, Notification, Popover]: Remove commandbar focus trap logic
+
+- Updated dependencies [[`c392a08`](https://github.com/launchdarkly/launchpad-ui/commit/c392a08a3d83fcd3cbc0213510c5a19174f925af)]:
+  - @launchpad-ui/modal@0.7.5
+  - @launchpad-ui/notification@0.4.5
+  - @launchpad-ui/popover@0.7.5
+  - @launchpad-ui/overlay@0.3.5
+  - @launchpad-ui/dropdown@0.4.6
+  - @launchpad-ui/menu@0.5.6
+  - @launchpad-ui/navigation@0.5.7
+  - @launchpad-ui/progress-bubbles@0.4.5
+  - @launchpad-ui/split-button@0.5.7
+  - @launchpad-ui/tooltip@0.5.5
+  - @launchpad-ui/filter@0.3.7
+  - @launchpad-ui/clipboard@0.6.5
+
 ## 0.12.0
 
 ### Minor Changes

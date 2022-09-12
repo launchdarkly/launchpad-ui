@@ -1,5 +1,14 @@
 # @launchpad-ui/popover
 
+## 0.7.5
+
+### Patch Changes
+
+- [#360](https://github.com/launchdarkly/launchpad-ui/pull/360) [`c392a08`](https://github.com/launchdarkly/launchpad-ui/commit/c392a08a3d83fcd3cbc0213510c5a19174f925af) Thanks [@Niznikr](https://github.com/Niznikr)! - [Modal, Notification, Popover]: Remove commandbar focus trap logic
+
+- Updated dependencies []:
+  - @launchpad-ui/overlay@0.3.5
+
 ## 0.7.4
 
 ### Patch Changes
