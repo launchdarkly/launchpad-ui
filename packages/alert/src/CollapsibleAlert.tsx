@@ -6,7 +6,7 @@ import { cx } from 'classix';
 import { useRef, useState } from 'react';
 
 import { Alert } from './Alert';
-import './styles/CollapsibleAlert.css';
+import styles from './styles/CollapsibleAlert.module.css';
 
 type CollapsibleAlertProps = HTMLAttributes<HTMLElement> & {
   /**
@@ -31,7 +31,7 @@ const CollapsibleAlert = ({
   const [alertCollapsed, setAlertCollapsed] = useState(true);
   const buttonRef = useRef(null);
 
-  const classes = cx('CollapsibleAlert--container', className);
+  const classes = cx(styles['CollapsibleAlert--container'], className);
 
   const toggleOpen = () => {
     setAlertCollapsed(!alertCollapsed);
@@ -39,28 +39,28 @@ const CollapsibleAlert = ({
 
   return (
     <div className={classes} {...rest}>
-      <Alert kind={kind} size="medium" className="CollapsibleAlert">
+      <Alert kind={kind} size="medium" className={cx('CollapsibleAlert', styles.CollapsibleAlert)}>
         <div>{message}</div>
         <button
           aria-expanded={!alertCollapsed}
           aria-haspopup
           ref={buttonRef}
           onClick={toggleOpen}
-          className="CollapsibleAlert-button"
+          className={styles['CollapsibleAlert-button']}
         >
           {alertCollapsed ? (
             <>
               <span>Show more</span>
-              <ExpandMore className="CollapsibleAlert--icon" size="medium" />
+              <ExpandMore className={styles['CollapsibleAlert--icon']} size="medium" />
             </>
           ) : (
             <>
               <span>Show less</span>
-              <ExpandMore className="CollapsibleAlert--icon" size="medium" />
+              <ExpandMore className={styles['CollapsibleAlert--icon']} size="medium" />
             </>
           )}
         </button>
-        <div className="CollapsibleAlert--contentContainer">
+        <div className={styles['CollapsibleAlert--contentContainer']}>
           {!alertCollapsed && <>{children}</>}
         </div>
       </Alert>
