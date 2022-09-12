@@ -139,7 +139,7 @@ export const Dismissible: Story = {
 };
 
 export const WithHeader: Story = {
-  args: { header: 'With Header', children: 'Warning alert', dismissible: false },
+  args: { header: 'With Header', children: 'Warning alert', dismissible: true },
 };
 
 export const WithActions: Story = {
@@ -153,6 +153,6 @@ export const WithActions: Story = {
         </ButtonGroup>
       </div>
     ),
-    dismissible: false,
+    dismissible: true,
   },
 };
