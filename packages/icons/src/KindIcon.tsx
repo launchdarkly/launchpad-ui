@@ -5,7 +5,7 @@ import { Warning } from './Warning';
 import { IconSize } from './types';
 
 type KindIconProps = {
-  kind: 'info' | 'success' | 'warning' | 'error' | 'striped';
+  kind: 'info' | 'success' | 'warning' | 'error';
   size?: IconSize;
   className?: string;
 };
@@ -19,7 +19,6 @@ const KindIcon = ({ kind, size, className }: KindIconProps) => {
       body = <CheckCircle size={iconSize} />;
       break;
     case 'warning':
-    case 'striped':
       body = <Warning size={iconSize} />;
       break;
     case 'error':
