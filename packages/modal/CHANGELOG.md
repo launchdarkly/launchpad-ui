@@ -90,6 +90,13 @@
 - Updated dependencies [[`91d68ca`](https://github.com/launchdarkly/launchpad-ui/commit/91d68ca61f45c4f7a0f38b4e869f650a5202a74c)]:
   - @launchpad-ui/focus-trap@0.1.0
 
+## 0.7.6-alpha.0
+
+### Patch Changes
+
+- Updated dependencies [[`e860080`](https://github.com/launchdarkly/launchpad-ui/commit/e86008076dc61cfcfc4c22317021e793d4fd59a9)]:
+  - @launchpad-ui/icons@0.4.1-alpha.0
+
 ## 0.7.5
 
 ### Patch Changes

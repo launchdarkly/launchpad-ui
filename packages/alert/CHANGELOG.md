@@ -70,6 +70,27 @@
   - @launchpad-ui/button@0.7.0
   - @launchpad-ui/icons@0.5.0
 
+## 0.4.0-alpha.0
+
+### Minor Changes
+
+- [#316](https://github.com/launchdarkly/launchpad-ui/pull/316) [`e860080`](https://github.com/launchdarkly/launchpad-ui/commit/e86008076dc61cfcfc4c22317021e793d4fd59a9) Thanks [@github-actions](https://github.com/apps/github-actions)! - [Alert]: Update styles for system message redesign project
+  [Icons]: Add AlertRhombus icon
+
+### Patch Changes
+
+- [#316](https://github.com/launchdarkly/launchpad-ui/pull/316) [`db79758`](https://github.com/launchdarkly/launchpad-ui/commit/db79758ae6ff29282b85a1897aec577821b8247f) Thanks [@github-actions](https://github.com/apps/github-actions)! - Integrates IconButton component into new system notification designs
+
+  [Alert]: Update styles to accommodate new IconButton
+  [Banner]: Update styles to accommodate new IconButton
+
+* [#369](https://github.com/launchdarkly/launchpad-ui/pull/369) [`5e1f989`](https://github.com/launchdarkly/launchpad-ui/commit/5e1f989207aab9cfbc0248a2e1bae4292dea2500) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Alert] Add max width to Alert
+
+- [#367](https://github.com/launchdarkly/launchpad-ui/pull/367) [`5c12123`](https://github.com/launchdarkly/launchpad-ui/commit/5c12123bcc31cc65b322f63794999045f7063109) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Alert] Update to use CSS modules
+
+- Updated dependencies [[`e860080`](https://github.com/launchdarkly/launchpad-ui/commit/e86008076dc61cfcfc4c22317021e793d4fd59a9)]:
+  - @launchpad-ui/icons@0.4.1-alpha.0
+
 ## 0.3.3
 
 ### Patch Changes

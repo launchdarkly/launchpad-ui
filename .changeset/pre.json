@@ -35,5 +35,16 @@
     "@launchpad-ui/tokens": "0.1.5",
     "@launchpad-ui/tooltip": "0.5.5"
   },
-  "changesets": []
+  "changesets": [
+    "empty-needles-teach",
+    "fair-oranges-deny",
+    "friendly-files-roll",
+    "honest-fans-bathe",
+    "quick-donuts-double",
+    "red-colts-fail",
+    "tender-pumas-cover",
+    "two-humans-worry",
+    "two-tigers-matter",
+    "yellow-rivers-train"
+  ]
 }

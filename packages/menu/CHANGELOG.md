@@ -113,6 +113,16 @@
   - @launchpad-ui/popover@0.7.6
   - @launchpad-ui/tooltip@0.5.6
 
+## 0.5.7-alpha.0
+
+### Patch Changes
+
+- Updated dependencies [[`e860080`](https://github.com/launchdarkly/launchpad-ui/commit/e86008076dc61cfcfc4c22317021e793d4fd59a9)]:
+  - @launchpad-ui/icons@0.4.1-alpha.0
+  - @launchpad-ui/form@0.5.1-alpha.0
+  - @launchpad-ui/popover@0.7.6-alpha.0
+  - @launchpad-ui/tooltip@0.5.6-alpha.0
+
 ## 0.5.6
 
 ### Patch Changes
