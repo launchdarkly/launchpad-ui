@@ -771,7 +771,7 @@ importers:
       '@launchpad-ui/icons': workspace:~
       '@launchpad-ui/tokens': workspace:~
       classix: ^2.1.13
-      framer-motion: ^7.2.0
+      framer-motion: ^7.3.2
       react: ^18.2.0
       react-dom: ^18.2.0
     dependencies:
@@ -846,7 +846,7 @@ importers:
       '@launchpad-ui/icons': workspace:~
       '@launchpad-ui/tokens': workspace:~
       classix: ^2.1.13
-      framer-motion: ^7.2.0
+      framer-motion: ^7.3.2
       react: ^18.2.0
       react-dom: ^18.2.0
     dependencies:
