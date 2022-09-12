@@ -3,7 +3,6 @@ enum AlertKind {
   SUCCESS = 'success',
   WARNING = 'warning',
   ERROR = 'error',
-  STRIPED = 'striped',
 }
 
 enum AlertSize {

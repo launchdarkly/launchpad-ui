@@ -23,32 +23,19 @@
   --box-shadow-0x1y-blur2-sp0-14prc-black: 0 1px 2px 0 hsl(0 0% 12.9% / 0.14);
   --reskin-box-shadow-triple: var(--box-shadow-0x2y-blur8-sp1-4prc-black),
     var(--box-shadow-0x2y-blur4-sp0-8prc-black), var(--box-shadow-0x1y-blur2-sp0-14prc-black);
-
-  /* TODO: figure out if this the better
-  https://www.quackit.com/css/codes/patterns/css_background_stripes.cfm */
-  --reskin-striped-base: repeating-linear-gradient(
-    45deg,
-    var(--color-white),
-    var(--color-white) 20px,
-    var(--color-white-100) 20px,
-    var(--color-white-100) 40px
-  );
   --reskin-border-radius-6px: 6px;
   --Alert-color-background-info: var(--reskin-info-blue-light);
   --Alert-color-background-success: var(--reskin-success-green-light);
   --Alert-color-background-warning: var(--reskin-warn-gold-light);
   --Alert-color-background-error: var(--reskin-error-red-light);
-  --Alert-color-background-striped: var(--reskin-striped-base);
   --Alert-color-border-info: var(--reskin-info-blue-base);
   --Alert-color-border-success: var(--reskin-success-green-base);
   --Alert-color-border-warning: var(--reskin-warn-gold-base);
   --Alert-color-border-error: var(--reskin-error-red-base);
-  --Alert-color-border-striped: var(--color-gray-500);
   --Alert-icon-color-info: var(--reskin-info-blue-base);
   --Alert-icon-color-success: var(--reskin-success-green-base);
   --Alert-icon-color-warning: var(--reskin-warn-gold-base);
   --Alert-icon-color-error: var(--reskin-error-red-base);
-  --Alert-icon-color-striped: var(--color-black-200);
   --Alert-text-color: var(--color-text-subtle-primary);
 }
 
@@ -129,10 +116,6 @@
 
 .Alert--error .Alert-icon svg > path {
   fill: var(--reskin-error-red-base);
-}
-
-.Alert--striped .Alert-icon svg {
-  fill: var(--color-black-200);
 }
 
 .Alert--info.Alert--bordered {

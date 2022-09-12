@@ -5,7 +5,7 @@ import { Close, IconSize, KindIcon } from '@launchpad-ui/icons';
 import { cx } from 'classix';
 import { useState } from 'react';
 
-import './styles/Alert.css';
+import styles from './styles/Alert.module.css';
 import { AlertKind, AlertSize } from './types';
 
 type AlertProps = HTMLAttributes<HTMLDivElement> & {
@@ -73,15 +73,15 @@ const Alert = ({
 }: AlertProps) => {
   const [dismissed, setDismissed] = useState(false);
 
-  const defaultClasses = `Alert Alert--${kind}`;
-  const sizeClass = `Alert--${size}`;
+  const defaultClasses = `Alert ${styles.Alert} ${styles[`Alert--${kind}`]}`;
+  const sizeClass = size === 'small' && styles[`Alert--${size}`];
   const classes = cx(
     defaultClasses,
     className,
-    isInline ? 'Alert--inline' : 'Alert--bordered',
-    size && sizeClass,
-    compact && 'Alert--compact',
-    wide && 'Alert--wide'
+    isInline ? styles['Alert--inline'] : styles['Alert--bordered'],
+    sizeClass,
+    compact && styles['Alert--compact'],
+    wide && styles['Alert--wide']
   );
 
   const handleDismissClicked = () => {
@@ -106,12 +106,12 @@ const Alert = ({
       {!noIcon && (
         <KindIcon
           kind={kind}
-          className="Alert-icon"
+          className={styles['Alert-icon']}
           size={size === AlertSize.SMALL ? IconSize.SMALL : IconSize.MEDIUM}
         />
       )}
-      <div className="Alert-content">
-        {header && <h4 className="Alert-heading">{header}</h4>}
+      <div className={styles['Alert-content']}>
+        {header && <h4 className={styles['Alert-heading']}>{header}</h4>}
         <div>{children}</div>
       </div>
       {dismissible && (
@@ -120,7 +120,6 @@ const Alert = ({
           size={IconButtonSize.SMALL}
           icon={<Close size={IconSize.SMALL} />}
           kind={ButtonKind.CLOSE}
-          className="Alert-close"
           onClick={handleDismissClicked}
           data-test-id={testId ? `${testId}-dismiss-button` : undefined}
         />
