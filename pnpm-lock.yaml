@@ -779,7 +779,7 @@ importers:
       '@launchpad-ui/icons': link:../icons
       '@launchpad-ui/tokens': link:../tokens
       classix: 2.1.13
-      framer-motion: 7.2.0_biqbaboplfbrettd7655fr4n2y
+      framer-motion: 7.3.2_biqbaboplfbrettd7655fr4n2y
     devDependencies:
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
@@ -855,7 +855,7 @@ importers:
       '@launchpad-ui/icons': link:../icons
       '@launchpad-ui/tokens': link:../tokens
       classix: 2.1.13
-      framer-motion: 7.2.0_biqbaboplfbrettd7655fr4n2y
+      framer-motion: 7.3.2_biqbaboplfbrettd7655fr4n2y
     devDependencies:
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
@@ -13012,7 +13012,7 @@ packages:
       '@babel/plugin-proposal-nullish-coalescing-operator': 7.18.6_@babel+core@7.19.0
       '@babel/plugin-proposal-optional-chaining': 7.18.6_@babel+core@7.19.0
       '@babel/plugin-transform-modules-commonjs': 7.18.6_@babel+core@7.19.0
-      '@babel/preset-env': 7.18.6_@babel+core@7.18.6
+      '@babel/preset-env': 7.18.6_@babel+core@7.19.0
       '@babel/preset-flow': 7.18.6_@babel+core@7.19.0
       '@babel/preset-typescript': 7.18.6_@babel+core@7.19.0
       '@babel/register': 7.18.6_@babel+core@7.19.0
