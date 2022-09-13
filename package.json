@@ -51,6 +51,7 @@
     "@storybook/addon-a11y": "^7.0.0-alpha.31",
     "@storybook/addon-actions": "^7.0.0-alpha.31",
     "@storybook/addon-backgrounds": "^7.0.0-alpha.31",
+    "@storybook/addon-controls": "^7.0.0-alpha.31",
     "@storybook/addon-docs": "^7.0.0-alpha.31",
     "@storybook/addon-essentials": "^7.0.0-alpha.31",
     "@storybook/addon-highlight": "^7.0.0-alpha.31",
