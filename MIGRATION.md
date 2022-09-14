@@ -1,5 +1,23 @@
 # Migration @launchpad-ui/core
 
+## 0.12.0
+
+### Support HTML attributes passthrough for component APIs
+
+Replace instances of `testId` on Launchpad components with the HTML attribute `data-test-id`:
+
+Before:
+
+```jsx
+<Button testId="test-button">button</Button>
+```
+
+After:
+
+```jsx
+<Button data-test-id="test-button">button</Button>
+```
+
 ## 0.11.0
 
 ### Styles path
