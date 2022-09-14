@@ -1,5 +1,15 @@
 # @launchpad-ui/core
 
+## 0.13.0-alpha.1
+
+### Patch Changes
+
+- [#374](https://github.com/launchdarkly/launchpad-ui/pull/374) [`79ce3aa`](https://github.com/launchdarkly/launchpad-ui/commit/79ce3aa6243a2595f8daad11919fbf67f64d18fe) Thanks [@Niznikr](https://github.com/Niznikr)! - [Snackbar, Toast]: Export record types
+
+- Updated dependencies [[`79ce3aa`](https://github.com/launchdarkly/launchpad-ui/commit/79ce3aa6243a2595f8daad11919fbf67f64d18fe)]:
+  - @launchpad-ui/snackbar@0.1.0-alpha.1
+  - @launchpad-ui/toast@0.1.0-alpha.1
+
 ## 0.13.0-alpha.0
 
 ### Minor Changes
