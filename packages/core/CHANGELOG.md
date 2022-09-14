@@ -1,5 +1,11 @@
 # @launchpad-ui/core
 
+## 0.13.0-alpha.2
+
+### Patch Changes
+
+- [#376](https://github.com/launchdarkly/launchpad-ui/pull/376) [`fb38743`](https://github.com/launchdarkly/launchpad-ui/commit/fb3874332d59be07815a53c789d979f77e691fdf) Thanks [@Niznikr](https://github.com/Niznikr)! - Republish
+
 ## 0.13.0-alpha.1
 
 ### Patch Changes
