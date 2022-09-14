@@ -214,6 +214,16 @@
   - @launchpad-ui/filter@0.3.8
   - @launchpad-ui/clipboard@0.6.6
 
+## 0.13.0-alpha.3
+
+### Patch Changes
+
+- [#378](https://github.com/launchdarkly/launchpad-ui/pull/378) [`e4b6408`](https://github.com/launchdarkly/launchpad-ui/commit/e4b6408ff671c42a437f0cb21bafe84e9cfb14ac) Thanks [@Niznikr](https://github.com/Niznikr)! - Republish
+
+- Updated dependencies [[`e4b6408`](https://github.com/launchdarkly/launchpad-ui/commit/e4b6408ff671c42a437f0cb21bafe84e9cfb14ac)]:
+  - @launchpad-ui/snackbar@0.1.0-alpha.2
+  - @launchpad-ui/toast@0.1.0-alpha.2
+
 ## 0.13.0-alpha.2
 
 ### Patch Changes
