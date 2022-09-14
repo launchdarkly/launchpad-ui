@@ -19,7 +19,7 @@ module.exports = {
       jsx: true,
     },
   },
-  plugins: ['react', '@typescript-eslint', 'testing-library', 'functional', 'jsx-a11y'],
+  plugins: ['react', '@typescript-eslint', 'functional', 'jsx-a11y'],
   settings: {
     react: {
       version: 'detect',
@@ -46,7 +46,6 @@ module.exports = {
     ],
     '@typescript-eslint/consistent-type-imports': 'error',
     '@typescript-eslint/consistent-type-definitions': ['error', 'type'],
-    'testing-library/prefer-user-event': 'error',
     'import/order': [
       'error',
       {
@@ -79,10 +78,6 @@ module.exports = {
     ],
   },
   overrides: [
-    {
-      files: ['**/__tests__/**/*.[jt]s?(x)', '**/?(*.)+(spec|test).[jt]s?(x)'],
-      extends: ['plugin:testing-library/react'],
-    },
     {
       files: ['**/src/**/*.[jt]s?(x)'],
       rules: { 'import/no-default-export': 2, 'import/exports-last': 2, 'import/group-exports': 2 },

@@ -4,6 +4,7 @@ import path from 'path';
 
 import react from '@vitejs/plugin-react';
 import { defineConfig } from 'vite';
+import istanbul from 'vite-plugin-istanbul';
 
 import tsconfig from './tsconfig.json';
 import { cssImport } from './vite-plugin-css';
@@ -18,7 +19,7 @@ Object.keys(paths).forEach((key) => {
 const packageJSON = require(path.resolve('./package.json'));
 
 export default defineConfig({
-  plugins: [react(), cssImport()],
+  plugins: [react(), cssImport(), istanbul({ cypress: true })],
   resolve: {
     alias,
   },
