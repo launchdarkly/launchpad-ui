@@ -1,5 +1,11 @@
 # @launchpad-ui/toast
 
+## 0.1.0-alpha.2
+
+### Patch Changes
+
+- [#378](https://github.com/launchdarkly/launchpad-ui/pull/378) [`e4b6408`](https://github.com/launchdarkly/launchpad-ui/commit/e4b6408ff671c42a437f0cb21bafe84e9cfb14ac) Thanks [@Niznikr](https://github.com/Niznikr)! - Republish
+
 ## 0.1.0-alpha.1
 
 ### Patch Changes
