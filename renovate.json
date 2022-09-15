@@ -13,5 +13,6 @@
       "enabled": false
     }
   ],
-  "rangeStrategy": "bump"
+  "rangeStrategy": "bump",
+  "ignoreDeps": ["react-router-dom"]
 }
