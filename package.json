@@ -5,7 +5,7 @@
   "description": "LaunchDarkly's design system",
   "scripts": {
     "build": "nx run-many --target=build --all --exclude=@launchpad-ui/remix",
-    "build:packages": "nx affected --target=build --base=origin/main --head=HEAD",
+    "build:packages": "nx affected --target=build",
     "build:transform": "nx run-many --target=build --projects=@launchpad-ui/tokens,@launchpad-ui/icons",
     "chromatic": "chromatic",
     "clean": "nx run-many --target=clean --all",
@@ -16,16 +16,16 @@
     "graph": "nx affected:graph",
     "lint": "eslint '**/*.{ts,tsx,js}' --ignore-pattern '/packages/' --ignore-pattern '/apps/'",
     "lint:ci": "pnpm build:transform && pnpm lint && pnpm lint:packages",
-    "lint:packages": "nx affected --target=lint --base=origin/main --head=HEAD",
+    "lint:packages": "nx affected --target=lint",
     "remix": "nx run-many --target=build --projects=@launchpad-ui/remix && pnpm --filter=\"remix\" start",
     "storybook": "pnpm build:transform && sb dev -p 3000",
     "storybook:build": "pnpm build:transform && sb build --quiet",
     "test": "pnpm build && vitest run --coverage",
-    "test:packages": "nx affected --target=test --base=origin/main --head=HEAD --exclude=@launchpad-ui/remix",
+    "test:packages": "nx affected --target=test --exclude=@launchpad-ui/remix",
     "test:ui": "vitest --ui",
     "test:watch": "vitest",
     "prepare": "husky install",
-    "release": "nx run-many --target=build --projects=@launchpad-ui/core && changeset publish"
+    "release": "nx affected --target=build --base=HEAD~1 --head=HEAD --exclude=@launchpad-ui/remix && changeset publish"
   },
   "repository": {
     "type": "git",
