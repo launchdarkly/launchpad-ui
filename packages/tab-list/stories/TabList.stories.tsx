@@ -1,6 +1,6 @@
 import type { ComponentStoryObj } from '@storybook/react';
 
-import { Button, ButtonKind } from '@launchpad-ui/button';
+import { Button } from '@launchpad-ui/button';
 import { Item } from '@react-stately/collections';
 
 import { TabList } from '../src';
@@ -71,13 +71,13 @@ export const TabListFocusableContent: Story = {
       <Item key="3" title="Active tab">
         <div>
           <p style={{ padding: '1rem 0' }}>Active tab</p>
-          <Button kind={ButtonKind.PRIMARY}>Click me</Button>
+          <Button kind="primary">Click me</Button>
         </div>
       </Item>,
       <Item key="4" title="Another tab">
         <div>
           <p style={{ padding: '1rem 0' }}>Another tab</p>
-          <Button kind={ButtonKind.PRIMARY}>Click me</Button>
+          <Button kind="primary">Click me</Button>
         </div>
       </Item>,
     ],
