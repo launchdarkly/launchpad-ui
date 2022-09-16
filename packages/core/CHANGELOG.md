@@ -297,6 +297,15 @@
   - @launchpad-ui/filter@0.3.8
   - @launchpad-ui/clipboard@0.6.6
 
+## 0.13.0-alpha.5
+
+### Patch Changes
+
+- [#387](https://github.com/launchdarkly/launchpad-ui/pull/387) [`a96b70a`](https://github.com/launchdarkly/launchpad-ui/commit/a96b70a6ea35f08ae1aa4b2b980576bdb7549b95) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Alert] Add margin to left of alert close icon
+
+- Updated dependencies [[`a96b70a`](https://github.com/launchdarkly/launchpad-ui/commit/a96b70a6ea35f08ae1aa4b2b980576bdb7549b95)]:
+  - @launchpad-ui/alert@0.4.0-alpha.2
+
 ## 0.13.0-alpha.4
 
 ### Patch Changes
