@@ -20,9 +20,13 @@ const createMenu = ({
     <MenuItem item="two" disabled>
       two
     </MenuItem>
-    <MenuItem item="three">three</MenuItem>
+    <MenuItem item="three" isHighlighted>
+      three
+    </MenuItem>
     <MenuDivider />
-    <MenuItem item="four">four</MenuItem>
+    <MenuItem item="four" nested>
+      four
+    </MenuItem>
   </Menu>
 );
 

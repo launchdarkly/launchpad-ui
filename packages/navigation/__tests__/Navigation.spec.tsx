@@ -84,6 +84,7 @@ describe('Navigation', () => {
         {
           name: 'Second',
           to: '/second',
+          tooltip: <>tooltip</>,
         },
       ])
     );
