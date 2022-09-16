@@ -1,5 +1,11 @@
 # @launchpad-ui/alert
 
+## 0.4.0-alpha.1
+
+### Patch Changes
+
+- [#384](https://github.com/launchdarkly/launchpad-ui/pull/384) [`c2b2f9a`](https://github.com/launchdarkly/launchpad-ui/commit/c2b2f9a48aa238ed9341fb880bee8ca9c9f0cd27) Thanks [@chasedarkly](https://github.com/chasedarkly)! - Modify styles for Alert component contents
+
 ## 0.4.0-alpha.0
 
 ### Minor Changes
