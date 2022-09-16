@@ -110,7 +110,11 @@ const Alert = ({
         />
       )}
       <div className={styles['Alert-content']}>
-        {header && <h4 className={styles['Alert-heading']}>{header}</h4>}
+        {header && (
+          <h4 className={styles['Alert-heading']} data-test-id={`${testId}-header`}>
+            {header}
+          </h4>
+        )}
         <div>{children}</div>
       </div>
       {dismissible && (
