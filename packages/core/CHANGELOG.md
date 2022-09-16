@@ -76,6 +76,15 @@
   - @launchpad-ui/filter@0.3.8
   - @launchpad-ui/clipboard@0.6.6
 
+## 0.13.0-alpha.4
+
+### Patch Changes
+
+- [#384](https://github.com/launchdarkly/launchpad-ui/pull/384) [`c2b2f9a`](https://github.com/launchdarkly/launchpad-ui/commit/c2b2f9a48aa238ed9341fb880bee8ca9c9f0cd27) Thanks [@chasedarkly](https://github.com/chasedarkly)! - Modify styles for Alert component contents
+
+- Updated dependencies [[`c2b2f9a`](https://github.com/launchdarkly/launchpad-ui/commit/c2b2f9a48aa238ed9341fb880bee8ca9c9f0cd27)]:
+  - @launchpad-ui/alert@0.4.0-alpha.1
+
 ## 0.13.0-alpha.3
 
 ### Patch Changes
