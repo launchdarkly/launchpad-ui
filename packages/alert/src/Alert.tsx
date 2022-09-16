@@ -117,6 +117,7 @@ const Alert = ({
       {dismissible && (
         <IconButton
           aria-label="Close this alert."
+          className={styles['Alert-close']}
           size={IconButtonSize.SMALL}
           icon={<Close size={IconSize.SMALL} />}
           kind={ButtonKind.CLOSE}

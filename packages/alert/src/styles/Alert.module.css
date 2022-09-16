@@ -183,3 +183,7 @@
   list-style-position: outside;
   margin: 0 0 0.5em;
 }
+
+.Alert-close {
+  margin-left: 1rem;
+}
