@@ -146,13 +146,33 @@ export const WithActions: Story = {
   args: {
     children: (
       <div>
-        <div>My description</div>
+        My description
         <ButtonGroup>
-          <Button kind="primary">Label</Button>
           <Button>Label</Button>
+          <Button kind="minimal">Label</Button>
         </ButtonGroup>
       </div>
     ),
+    dismissible: true,
+  },
+};
+
+export const WithContent: Story = {
+  args: {
+    children: (
+      <>
+        <p>My description</p>
+        <ul>
+          <li>This is item one of a list</li>
+          <li>This is item two of a list</li>
+        </ul>
+        <ButtonGroup>
+          <Button kind="default">Label</Button>
+          <Button kind="minimal">Label</Button>
+        </ButtonGroup>
+      </>
+    ),
+    header: 'My title',
     dismissible: true,
   },
 };
