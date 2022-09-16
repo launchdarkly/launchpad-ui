@@ -3,17 +3,27 @@ import type { HTMLAttributes } from 'react';
 import { cx } from 'classix';
 
 import './styles/Chip.css';
-import { ChipKind, ChipSize } from './types';
 
 type ChipProps = HTMLAttributes<HTMLSpanElement> & {
-  kind?: ChipKind;
-  size?: ChipSize;
+  kind?:
+    | 'default'
+    | 'success'
+    | 'warning'
+    | 'inactive'
+    | 'flag'
+    | 'info'
+    | 'label'
+    | 'new'
+    | 'beta'
+    | 'invited'
+    | 'federal';
+  size?: 'normal' | 'large';
   subtle?: boolean;
 };
 
 const Chip = ({
-  kind = ChipKind.DEFAULT,
-  size = ChipSize.NORMAL,
+  kind = 'default',
+  size = 'normal',
   subtle = false,
   onClick,
   onKeyDown,

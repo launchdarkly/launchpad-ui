@@ -2,7 +2,6 @@ import type { Icon } from '@launchpad-ui/icons';
 import type { PopoverPlacement } from '@launchpad-ui/popover';
 import type { ComponentPropsWithRef, ElementType, PropsWithRef, ReactElement } from 'react';
 
-import { IconSize } from '@launchpad-ui/icons';
 import { Tooltip } from '@launchpad-ui/tooltip';
 import { Slot } from '@radix-ui/react-slot';
 import { FocusRing } from '@react-aria/focus';
@@ -94,7 +93,7 @@ const MenuItem = <P, T extends ElementType = typeof defaultElement>({
           <>
             {Icon && (
               <span className="Menu-item-icon">
-                <Icon size={IconSize.SMALL} />
+                <Icon size="small" />
               </span>
             )}
             {children}

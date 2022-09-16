@@ -1,5 +1,4 @@
 import type { MenuItemProps } from './MenuItem';
-import type { MenuSize } from './types';
 import type { FocusManager } from '@react-aria/focus';
 import type { KeyboardEvent, ReactElement, ReactNode } from 'react';
 
@@ -46,7 +45,7 @@ type ControlledMenuProps<T> = {
    * Sets the width of the menu. This is especially useful when using virtual items
    * since the width cannot be automatically set by the widest element.
    */
-  size?: MenuSize;
+  size?: 'sm' | 'md' | 'lg' | 'xl';
   /**
    * Sets the number out of elements rendered outside of the view window
    * when using virtualization

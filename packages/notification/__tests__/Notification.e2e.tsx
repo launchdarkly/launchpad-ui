@@ -1,12 +1,11 @@
 import { test, expect } from '@playwright/experimental-ct-react';
 
 import { Notification, type NotificationProps } from '../src/Notification';
-import { NotificationLevel } from '../src/types';
 
 test.use({ viewport: { width: 500, height: 500 } });
 
 const createComponent = (props?: NotificationProps) => (
-  <Notification message="hi" level={NotificationLevel.INFO} {...props} />
+  <Notification message="hi" level="info" {...props} />
 );
 
 test.describe('Notification', () => {

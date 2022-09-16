@@ -1,10 +1,10 @@
 /* eslint-disable import/namespace */
 import type { Meta } from '@storybook/react';
 
-import { Icon, IconSize } from '../src';
+import { Icon } from '../src';
 import * as icons from '../src';
 
-type IconName = Exclude<keyof typeof icons, 'Icon' | 'IconSize' | 'KindIcon' | 'IconDimension'>;
+type IconName = Exclude<keyof typeof icons, 'Icon' | 'KindIcon'>;
 
 export default {
   component: Icon,
@@ -46,10 +46,10 @@ export const Default = {
       }}
     >
       {Object.keys(icons).map((key, index) => {
-        if (!['Icon', 'IconSize', 'KindIcon', 'IconDimension', '__namedExportsOrder'].includes(key))
+        if (!['Icon', 'KindIcon', '__namedExportsOrder'].includes(key))
           return (
             <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }} key={index}>
-              {icons[key as IconName]({ size: IconSize.MEDIUM })}
+              {icons[key as IconName]({ size: 'medium' })}
               <span>{key}</span>
             </div>
           );

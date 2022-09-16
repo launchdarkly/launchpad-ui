@@ -1,4 +1,4 @@
-import type { ChipKind } from '@launchpad-ui/chip';
+import type { ChipProps } from '@launchpad-ui/chip';
 import type { MouseEvent } from 'react';
 
 import { NavLink, useLocation } from 'react-router-dom';
@@ -12,7 +12,7 @@ type NavItemProps = {
   end?: boolean;
   onClick?(event: MouseEvent): void;
   activeClassName?: string;
-  status?: ChipKind;
+  status?: ChipProps['kind'];
   id?: string;
   role?: string;
 };

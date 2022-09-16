@@ -1,4 +1,3 @@
-import type { TableVerticalAlignType } from './types';
 import type { HTMLProps } from 'react';
 
 import { cx } from 'classix';
@@ -6,7 +5,7 @@ import { cx } from 'classix';
 import './styles/Table.css';
 
 type TableRowProps = HTMLProps<HTMLTableRowElement> & {
-  verticalAlign?: TableVerticalAlignType;
+  verticalAlign?: 'top' | 'middle' | 'bottom';
 };
 
 const TableRow = ({ className, children, verticalAlign, ...rest }: TableRowProps) => {

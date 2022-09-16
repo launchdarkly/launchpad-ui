@@ -1,4 +1,3 @@
-import type { IconSize } from './types';
 import type { HTMLProps, ReactElement } from 'react';
 
 import { cx } from 'classix';
@@ -9,7 +8,7 @@ import './styles/Icon.css';
 type IconProps = Omit<HTMLProps<HTMLSpanElement>, 'size'> & {
   name?: string;
   subtle?: boolean;
-  size?: IconSize;
+  size?: 'micro' | 'tiny' | 'small' | 'medium' | 'mlarge' | 'large' | 'xlarge' | 'huge';
 };
 
 const Icon = ({ name, subtle, className, size, children, ...props }: IconProps) => {

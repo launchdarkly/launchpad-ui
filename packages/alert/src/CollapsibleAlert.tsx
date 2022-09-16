@@ -1,21 +1,20 @@
-import type { AlertKind } from './types';
+import type { AlertProps } from './Alert';
 import type { HTMLAttributes } from 'react';
 
-import { ExpandMore, IconSize } from '@launchpad-ui/icons';
+import { ExpandMore } from '@launchpad-ui/icons';
 import { cx } from 'classix';
 import { useRef, useState } from 'react';
 
 import { Alert } from './Alert';
 import './styles/CollapsibleAlert.css';
-import { AlertSize } from './types';
 
 type CollapsibleAlertProps = HTMLAttributes<HTMLElement> & {
   /**
    * Passing in one of `info`, `success`, `warning`, `error`, `striped`
    * displays the style and icon pair associated with the variant.
-   * The default is AlertKind.INFO.
+   * The default is info.
    */
-  kind?: AlertKind;
+  kind?: AlertProps['kind'];
   /**
    * The message to pass into the Alert.
    */
@@ -40,7 +39,7 @@ const CollapsibleAlert = ({
 
   return (
     <div className={classes} {...rest}>
-      <Alert kind={kind} size={AlertSize.MEDIUM} className="CollapsibleAlert">
+      <Alert kind={kind} size="medium" className="CollapsibleAlert">
         <div>{message}</div>
         <button
           aria-expanded={!alertCollapsed}
@@ -52,12 +51,12 @@ const CollapsibleAlert = ({
           {alertCollapsed ? (
             <>
               <span>Show more</span>
-              <ExpandMore className="CollapsibleAlert--icon" size={IconSize.MEDIUM} />
+              <ExpandMore className="CollapsibleAlert--icon" size="medium" />
             </>
           ) : (
             <>
               <span>Show less</span>
-              <ExpandMore className="CollapsibleAlert--icon" size={IconSize.MEDIUM} />
+              <ExpandMore className="CollapsibleAlert--icon" size="medium" />
             </>
           )}
         </button>

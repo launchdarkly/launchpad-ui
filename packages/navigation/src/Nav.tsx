@@ -4,15 +4,14 @@ import { cx } from 'classix';
 import { forwardRef } from 'react';
 
 import './styles/Nav.css';
-import { NavKind } from './types';
 
 type NavBaseProps = HTMLAttributes<HTMLElement> & {
-  kind?: NavKind;
+  kind?: 'primary' | 'secondary';
   innerRef?: Ref<HTMLDivElement>;
 };
 
 const NavBase = ({
-  kind = NavKind.PRIMARY,
+  kind = 'primary',
   className,
   children,
   innerRef,

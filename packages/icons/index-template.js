@@ -9,7 +9,6 @@ const defaultIndexTemplate = (filePaths) => {
   });
   exportEntries.push(`export type { IconProps } from './Icon';`);
   exportEntries.push(`export { Icon } from './Icon';`);
-  exportEntries.push(`export { IconDimension, IconSize } from './types';`);
   exportEntries.push(`export { KindIcon } from './KindIcon';`);
   exportEntries.unshift('/* c8 ignore start */');
   exportEntries.push('/* c8 ignore stop */');

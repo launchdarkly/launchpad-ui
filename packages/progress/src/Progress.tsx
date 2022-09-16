@@ -1,32 +1,22 @@
+import type { DelayedIndicatorProps } from './DelayedIndicator';
+
 import { cx } from 'classix';
 
 import { DelayedIndicator } from './DelayedIndicator';
 import './styles/Progress.css';
 
-enum ProgressSize {
-  Small = 'small',
-  Large = 'large',
-  XLarge = 'xLarge',
-}
-
 type ProgressProps = {
   value?: number;
-  size?: ProgressSize;
+  size?: 'small' | 'large' | 'xLarge';
   className?: string;
-  delayMs?: number;
+  delayMs?: DelayedIndicatorProps['delayMs'];
   testId?: string;
 };
 
 const clamp = (number: number, lower: number, upper?: number) =>
   upper ? Math.min(Math.max(number, lower), upper) : Math.min(number, lower);
 
-const Progress = ({
-  value,
-  size = ProgressSize.Small,
-  testId,
-  className,
-  delayMs = 0,
-}: ProgressProps) => {
+const Progress = ({ value, size = 'small', testId, className, delayMs = 0 }: ProgressProps) => {
   const dimensions = {
     small: {
       diameter: 16,
@@ -81,5 +71,5 @@ const Progress = ({
   return delayMs ? <DelayedIndicator delayMs={delayMs}>{indicator}</DelayedIndicator> : indicator;
 };
 
-export { Progress, ProgressSize };
+export { Progress };
 export type { ProgressProps };

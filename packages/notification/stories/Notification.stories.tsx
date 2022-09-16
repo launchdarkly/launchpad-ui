@@ -1,7 +1,7 @@
+import type { NotificationProps } from '../src/Notification';
 import type { ComponentStoryObj } from '@storybook/react';
 
 import { Notification } from '../src/Notification';
-import { NotificationLevel } from '../src/types';
 
 export default {
   component: Notification,
@@ -46,30 +46,34 @@ export default {
 
 type Story = ComponentStoryObj<typeof Notification>;
 
-const makeMessage = (type: NotificationLevel) => (
+const makeMessage = (type: NotificationProps['level']) => (
   <span>
     A message using the {type} level, with a <a href="https://launchdarkly.com">contextual link</a>.
   </span>
 );
 
-const makeNotificationArgs = (level: NotificationLevel, details?: string, json?: string) => ({
+const makeNotificationArgs = (
+  level: NotificationProps['level'],
+  details?: string,
+  json?: string
+) => ({
   level,
   message: makeMessage(level),
   details: details ?? '',
   json: json ?? '',
 });
 
-export const Success: Story = { args: makeNotificationArgs(NotificationLevel.SUCCESS) };
+export const Success: Story = { args: makeNotificationArgs('success') };
 
-export const Error: Story = { args: makeNotificationArgs(NotificationLevel.ERROR) };
+export const Error: Story = { args: makeNotificationArgs('error') };
 
-export const Warning: Story = { args: makeNotificationArgs(NotificationLevel.WARNING) };
+export const Warning: Story = { args: makeNotificationArgs('warning') };
 
-export const Info: Story = { args: makeNotificationArgs(NotificationLevel.INFO) };
+export const Info: Story = { args: makeNotificationArgs('info') };
 
 export const ErrorDetails: Story = {
   args: makeNotificationArgs(
-    NotificationLevel.ERROR,
+    'error',
     'This notification has details.',
     "{ details: 'I am a detail' }"
   ),

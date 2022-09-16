@@ -1,19 +1,23 @@
-import type { TableColumnWidths } from './types';
 import type { ThHTMLAttributes } from 'react';
 
 import camelCase from 'camelcase';
 import { cx } from 'classix';
 
 import './styles/Table.css';
-import { TableAlignType } from './types';
 
 type TableHeadCellProps = ThHTMLAttributes<HTMLTableCellElement> & {
-  defaultColWidth?: TableColumnWidths;
-  scope?: 'col' | 'row' | 'colgroup' | 'rowgroup';
+  defaultColWidth?:
+    | 'zero'
+    | 'one-of-twelve'
+    | 'two-of-twelve'
+    | 'three-of-twelve'
+    | 'four-of-twelve'
+    | 'five-of-twelve'
+    | 'six-of-twelve';
 };
 
 const TableHeadCell = ({
-  align = TableAlignType.LEFT,
+  align = 'left',
   className,
   children,
   defaultColWidth,

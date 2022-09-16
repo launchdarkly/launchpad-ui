@@ -1,6 +1,6 @@
 import type { ComponentStoryObj } from '@storybook/react';
 
-import { Chip, ChipKind, ChipSize } from '../src';
+import { Chip } from '../src';
 
 export default {
   component: Chip,
@@ -52,34 +52,34 @@ export default {
 
 type Story = ComponentStoryObj<typeof Chip>;
 
-export const Default: Story = { args: { children: 'Example Chip', kind: ChipKind.DEFAULT } };
+export const Default: Story = { args: { children: 'Example Chip', kind: 'default' } };
 
-export const Success: Story = { args: { children: 'Success Chip', kind: ChipKind.SUCCESS } };
+export const Success: Story = { args: { children: 'Success Chip', kind: 'success' } };
 
-export const Warning: Story = { args: { children: 'Warning Chip', kind: ChipKind.WARNING } };
+export const Warning: Story = { args: { children: 'Warning Chip', kind: 'warning' } };
 
 export const Inactive: Story = {
-  args: { children: 'Inactive Chip', kind: ChipKind.INACTIVE },
+  args: { children: 'Inactive Chip', kind: 'inactive' },
 };
 
-export const Info: Story = { args: { children: 'Info Chip', kind: ChipKind.INFO } };
+export const Info: Story = { args: { children: 'Info Chip', kind: 'info' } };
 
-export const Label: Story = { args: { children: 'Label Chip', kind: ChipKind.LABEL } };
+export const Label: Story = { args: { children: 'Label Chip', kind: 'label' } };
 
-export const Large: Story = { args: { children: 'Large Chip', size: ChipSize.LARGE } };
+export const Large: Story = { args: { children: 'Large Chip', size: 'large' } };
 
-export const New: Story = { args: { children: 'New Chip', kind: ChipKind.NEW } };
+export const New: Story = { args: { children: 'New Chip', kind: 'new' } };
 
-export const Flag: Story = { args: { children: 'Flag', kind: ChipKind.FLAG } };
+export const Flag: Story = { args: { children: 'Flag', kind: 'flag' } };
 
 export const FlagOn: Story = {
-  args: { children: 'ON', kind: ChipKind.FLAG, className: 'Chip--flagOn' },
+  args: { children: 'ON', kind: 'flag', className: 'Chip--flagOn' },
 };
 
 export const FlagOff: Story = {
-  args: { children: 'OFF', kind: ChipKind.FLAG, className: 'Chip--flagOff' },
+  args: { children: 'OFF', kind: 'flag', className: 'Chip--flagOff' },
 };
 
-export const Federal: Story = { args: { children: 'Federal Chip', kind: ChipKind.FEDERAL } };
+export const Federal: Story = { args: { children: 'Federal Chip', kind: 'federal' } };
 
-export const Beta: Story = { args: { children: 'Beta Chip', kind: ChipKind.BETA } };
+export const Beta: Story = { args: { children: 'Beta Chip', kind: 'beta' } };

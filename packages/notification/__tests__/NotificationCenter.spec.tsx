@@ -1,21 +1,20 @@
-import type { NotificationRecord } from '../src/types';
+import type { NotificationRecord } from '../src';
 
 import { it, expect, describe } from 'vitest';
 
 import { render, screen } from '../../../test/utils';
 import { NotificationCenter } from '../src';
-import { NotificationLevel } from '../src/types';
 
 const notifications: NotificationRecord[] = [
   {
     _id: '1',
-    level: NotificationLevel.INFO,
-    message: NotificationLevel.INFO,
+    level: 'info',
+    message: 'info',
   },
   {
     _id: '2',
-    level: NotificationLevel.INFO,
-    message: NotificationLevel.INFO,
+    level: 'info',
+    message: 'info',
   },
 ];
 

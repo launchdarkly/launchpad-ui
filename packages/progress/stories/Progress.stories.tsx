@@ -1,6 +1,6 @@
 import type { ComponentStoryObj } from '@storybook/react';
 
-import { Progress, ProgressSize } from '../src';
+import { Progress } from '../src';
 
 export default {
   component: Progress,
@@ -37,4 +37,4 @@ export default {
 
 type Story = ComponentStoryObj<typeof Progress>;
 
-export const Default: Story = { args: { size: ProgressSize.Small } };
+export const Default: Story = { args: { size: 'small' } };

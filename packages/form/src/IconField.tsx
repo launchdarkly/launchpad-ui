@@ -1,7 +1,6 @@
 import type { IconProps } from '@launchpad-ui/icons';
 import type { HTMLAttributes } from 'react';
 
-import { IconSize } from '@launchpad-ui/icons';
 import { cx } from 'classix';
 
 import './styles/IconField.css';
@@ -19,7 +18,7 @@ const IconField = ({ icon, children, className, ...rest }: IconFieldProps) => {
   return (
     <div className={classes} {...rest}>
       {children}
-      <Icon size={IconSize.SMALL} />
+      <Icon size="small" />
     </div>
   );
 };

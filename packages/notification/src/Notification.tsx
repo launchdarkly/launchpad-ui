@@ -1,9 +1,8 @@
-import type { NotificationLevel } from './types';
 import type { KeyboardEvent, ReactNode } from 'react';
 
-import { ButtonKind, IconButton, IconButtonSize } from '@launchpad-ui/button';
+import { IconButton } from '@launchpad-ui/button';
 import { CopyToClipboard } from '@launchpad-ui/clipboard';
-import { KindIcon, Close, ExpandMore, IconSize } from '@launchpad-ui/icons';
+import { KindIcon, Close, ExpandMore } from '@launchpad-ui/icons';
 import { FocusScope } from '@react-aria/focus';
 import { cx } from 'classix';
 import { useCallback, useEffect, useRef, useState } from 'react';
@@ -12,7 +11,7 @@ import './styles/Notification.css';
 
 type NotificationProps = {
   details?: string;
-  level: NotificationLevel;
+  level: 'error' | 'info' | 'success' | 'warning';
   message: ReactNode;
   onDismiss?: () => void;
   ttl?: number;
@@ -122,7 +121,7 @@ const Notification = ({
               onClick={handleDetailsClick}
               onKeyDown={handleDetailsKeyDown}
             >
-              More details <ExpandMore size={IconSize.SMALL} />
+              More details <ExpandMore size="small" />
             </button>
 
             <div className="Notification-detailsContent">{details}</div>
@@ -131,11 +130,11 @@ const Notification = ({
         )}
       </div>
       <IconButton
-        icon={<Close size={IconSize.SMALL} />}
-        size={IconButtonSize.SMALL}
+        icon={<Close size="small" />}
+        size="small"
         onClick={handleCloseClick}
         aria-label="Close"
-        kind={ButtonKind.CLOSE}
+        kind="close"
         tabIndex={0}
         className="Notification-closeIcon"
         data-test-id="notification-close"

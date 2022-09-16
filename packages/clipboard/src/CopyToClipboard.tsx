@@ -1,8 +1,8 @@
 import type { TooltipProps } from '@launchpad-ui/tooltip';
 import type { HTMLAttributes, KeyboardEventHandler } from 'react';
 
-import { Button, ButtonSize } from '@launchpad-ui/button';
-import { CheckCircle, IconSize } from '@launchpad-ui/icons';
+import { Button } from '@launchpad-ui/button';
+import { CheckCircle } from '@launchpad-ui/icons';
 import { Tooltip } from '@launchpad-ui/tooltip';
 import { Slot } from '@radix-ui/react-slot';
 import { announce } from '@react-aria/live-announcer';
@@ -28,7 +28,7 @@ type CopyToClipboardHandleRef = {
 
 const CopyConfirmation = () => (
   <span className="Clipboard-confirmation">
-    <CheckCircle className="Clipboard-checkmark" size={IconSize.MEDIUM} />
+    <CheckCircle className="Clipboard-checkmark" size="medium" />
     <span className="Clipboard-copied">Copied!</span>
   </span>
 );
@@ -116,7 +116,7 @@ const CopyToClipboard = forwardRef<CopyToClipboardHandleRef, CopyToClipboardProp
           <Component
             onClick={handleCopy}
             onKeyDown={handleKeyDown}
-            size={ButtonSize.TINY}
+            size="tiny"
             ref={buttonRef}
             aria-label={triggerAriaLabelText}
             role="button"

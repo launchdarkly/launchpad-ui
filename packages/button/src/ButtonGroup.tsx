@@ -3,18 +3,12 @@ import type { HTMLAttributes } from 'react';
 import { cx } from 'classix';
 
 import './styles/ButtonGroup.css';
-import { ButtonGroupSpacing } from './types';
 
 type ButtonGroupProps = HTMLAttributes<HTMLDivElement> & {
-  spacing?: ButtonGroupSpacing;
+  spacing?: 'compact' | 'normal' | 'large';
 };
 
-const ButtonGroup = ({
-  spacing = ButtonGroupSpacing.NORMAL,
-  className,
-  children,
-  ...rest
-}: ButtonGroupProps) => {
+const ButtonGroup = ({ spacing = 'normal', className, children, ...rest }: ButtonGroupProps) => {
   const classes = cx('ButtonGroup', `ButtonGroup--${spacing}`, className);
 
   return (
