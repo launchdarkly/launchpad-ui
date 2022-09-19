@@ -391,6 +391,7 @@ importers:
       '@launchpad-ui/counter': workspace:~
       '@launchpad-ui/dropdown': workspace:~
       '@launchpad-ui/filter': workspace:~
+      '@launchpad-ui/focus-trap': workspace:~
       '@launchpad-ui/form': workspace:~
       '@launchpad-ui/icons': workspace:~
       '@launchpad-ui/markdown': workspace:~
@@ -422,6 +423,7 @@ importers:
       '@launchpad-ui/counter': link:../counter
       '@launchpad-ui/dropdown': link:../dropdown
       '@launchpad-ui/filter': link:../filter
+      '@launchpad-ui/focus-trap': link:../focus-trap
       '@launchpad-ui/form': link:../form
       '@launchpad-ui/icons': link:../icons
       '@launchpad-ui/markdown': link:../markdown
