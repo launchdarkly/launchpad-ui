@@ -41,6 +41,7 @@
     "@launchpad-ui/counter": "workspace:~",
     "@launchpad-ui/dropdown": "workspace:~",
     "@launchpad-ui/filter": "workspace:~",
+    "@launchpad-ui/focus-trap": "workspace:~",
     "@launchpad-ui/form": "workspace:~",
     "@launchpad-ui/icons": "workspace:~",
     "@launchpad-ui/markdown": "workspace:~",
