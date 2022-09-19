@@ -1,5 +1,4 @@
 :root {
-  --Chip-default-color: var(--color-text-subtle-primary);
   --Chip-info-color: var(--color-link);
   --Chip-warning-color: var(--color-system-yellow-900);
   --Chip-error-color: var(--color-system-red-600);
@@ -133,7 +132,7 @@
   color: var(--color-text-subtle-primary);
 }
 
-.Chip .Icon {
+.Chip :global(.Icon) {
   margin-right: 0.2rem;
   vertical-align: top;
 }

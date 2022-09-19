@@ -2,7 +2,7 @@ import type { HTMLAttributes } from 'react';
 
 import { cx } from 'classix';
 
-import './styles/Chip.css';
+import styles from './styles/Chip.module.css';
 import { ChipKind, ChipSize } from './types';
 
 type ChipProps = HTMLAttributes<HTMLSpanElement> & {
@@ -25,11 +25,12 @@ const Chip = ({
 
   const classes = cx(
     'Chip',
-    `Chip--${kind}`,
-    `Chip--${size}`,
+    styles.Chip,
+    styles[`Chip--${kind}`],
+    styles[`Chip--${size}`],
     className,
-    subtle && 'Chip--subtle',
-    isInteractive && 'Chip--clickable'
+    subtle && styles['Chip--subtle'],
+    isInteractive && styles['Chip--clickable']
   );
 
   return (
