@@ -19,6 +19,9 @@ type NotificationProps = {
   'data-test-id'?: string;
 };
 
+/**
+ * @deprecated use snackbar or toast instead
+ */
 const Notification = ({
   level,
   message,
