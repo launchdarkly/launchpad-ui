@@ -2,8 +2,8 @@ import type { KeyboardEvent, ReactNode } from 'react';
 
 import { IconButton } from '@launchpad-ui/button';
 import { CopyToClipboard } from '@launchpad-ui/clipboard';
+import { FocusTrap } from '@launchpad-ui/focus-trap';
 import { KindIcon, Close, ExpandMore } from '@launchpad-ui/icons';
-import { FocusScope } from '@react-aria/focus';
 import { cx } from 'classix';
 import { useCallback, useEffect, useRef, useState } from 'react';
 
@@ -152,7 +152,7 @@ const Notification = ({
       onFocus={handleMouseOver}
       onBlur={handleMouseOut}
     >
-      {containFocus ? <FocusScope contain>{content}</FocusScope> : content}
+      {containFocus ? <FocusTrap>{content}</FocusTrap> : content}
     </div>
   );
 };
