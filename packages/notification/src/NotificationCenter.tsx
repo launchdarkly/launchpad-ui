@@ -19,6 +19,9 @@ type NotificationCenterProps = {
   onDismiss(notificationId: string): void;
 };
 
+/**
+ * @deprecated use snackbar or toast instead
+ */
 const NotificationCenter = ({ notifications, onDismiss, className }: NotificationCenterProps) => {
   const classes = cx('NotificationCenter', className);
 
