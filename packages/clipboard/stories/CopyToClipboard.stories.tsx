@@ -7,8 +7,6 @@ import { useRef } from 'react';
 import { sleep } from '../../../.storybook/utils';
 import { CopyToClipboard } from '../src';
 
-import './CopyToClipboard.stories.css';
-
 export default {
   component: CopyToClipboard,
   title: 'Components/CopyToClipboard',
@@ -58,7 +56,7 @@ export const Default: Story = {
   },
 };
 
-export const ExampleWithSlottedChild: Story = {
+export const ExampleWithSlottedCodeChild: Story = {
   args: {
     text: 'Code content',
     asChild: true,

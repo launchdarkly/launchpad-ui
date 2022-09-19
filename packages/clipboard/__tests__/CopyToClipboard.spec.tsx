@@ -115,11 +115,4 @@ describe('CopyToClipboard', () => {
     const trigger = screen.getByRole('button');
     expect(trigger.tagName).toBe('SPAN');
   });
-
-  it('merges classNames when asChild is true', async () => {
-    render(createComponent({ asChild: true, children: <span className="testing">click me</span> }));
-    const trigger = screen.getByRole('button');
-    expect(trigger).toHaveClass('testing');
-    expect(trigger).toHaveClass('CopyToClipboard-trigger');
-  });
 });
