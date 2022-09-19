@@ -62,6 +62,7 @@ importers:
       babel-loader: ^8.2.4
       browserslist: ^4.21.1
       chromatic: ^6.9.0
+      commandbar: ^1.7.0
       concurrently: ^7.4.0
       deepmerge: ^4.2.2
       eslint: ^8.23.0
@@ -154,6 +155,7 @@ importers:
       babel-loader: 8.2.5_@babel+core@7.19.0
       browserslist: 4.21.1
       chromatic: 6.9.0
+      commandbar: 1.7.0_react@18.2.0
       concurrently: 7.4.0
       deepmerge: 4.2.2
       eslint: 8.23.0
@@ -502,6 +504,17 @@ importers:
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
 
+  packages/focus-trap:
+    specifiers:
+      '@react-aria/focus': ^3.8.0
+      react: ^18.2.0
+      react-dom: ^18.2.0
+    dependencies:
+      '@react-aria/focus': 3.8.0_react@18.2.0
+    devDependencies:
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
+
   packages/form:
     specifiers:
       '@launchpad-ui/icons': workspace:~
@@ -587,10 +600,10 @@ importers:
   packages/modal:
     specifiers:
       '@launchpad-ui/button': workspace:~
+      '@launchpad-ui/focus-trap': workspace:~
       '@launchpad-ui/icons': workspace:~
       '@launchpad-ui/progress': workspace:~
       '@launchpad-ui/tokens': workspace:~
-      '@react-aria/focus': ^3.8.0
       '@react-aria/overlays': ^3.10.0
       classix: ^2.1.13
       framer-motion: ^7.3.2
@@ -598,10 +611,10 @@ importers:
       react-dom: ^18.2.0
     dependencies:
       '@launchpad-ui/button': link:../button
+      '@launchpad-ui/focus-trap': link:../focus-trap
       '@launchpad-ui/icons': link:../icons
       '@launchpad-ui/progress': link:../progress
       '@launchpad-ui/tokens': link:../tokens
-      '@react-aria/focus': 3.8.0_react@18.2.0
       '@react-aria/overlays': 3.10.0_biqbaboplfbrettd7655fr4n2y
       classix: 2.1.13
       framer-motion: 7.3.2_biqbaboplfbrettd7655fr4n2y
@@ -644,9 +657,9 @@ importers:
     specifiers:
       '@launchpad-ui/button': workspace:~
       '@launchpad-ui/clipboard': workspace:~
+      '@launchpad-ui/focus-trap': workspace:~
       '@launchpad-ui/icons': workspace:~
       '@launchpad-ui/tokens': workspace:~
-      '@react-aria/focus': ^3.8.0
       classix: ^2.1.13
       framer-motion: ^7.3.2
       react: ^18.2.0
@@ -654,9 +667,9 @@ importers:
     dependencies:
       '@launchpad-ui/button': link:../button
       '@launchpad-ui/clipboard': link:../clipboard
+      '@launchpad-ui/focus-trap': link:../focus-trap
       '@launchpad-ui/icons': link:../icons
       '@launchpad-ui/tokens': link:../tokens
-      '@react-aria/focus': 3.8.0_react@18.2.0
       classix: 2.1.13
       framer-motion: 7.3.2_biqbaboplfbrettd7655fr4n2y
     devDependencies:
@@ -699,9 +712,9 @@ importers:
     specifiers:
       '@floating-ui/core': ^1.0.0
       '@floating-ui/dom': ^1.0.0
+      '@launchpad-ui/focus-trap': workspace:~
       '@launchpad-ui/overlay': workspace:~
       '@launchpad-ui/tokens': workspace:~
-      '@react-aria/focus': ^3.8.0
       classix: ^2.1.13
       framer-motion: ^7.3.2
       react: ^18.2.0
@@ -709,9 +722,9 @@ importers:
     dependencies:
       '@floating-ui/core': 1.0.0
       '@floating-ui/dom': 1.0.0
+      '@launchpad-ui/focus-trap': link:../focus-trap
       '@launchpad-ui/overlay': link:../overlay
       '@launchpad-ui/tokens': link:../tokens
-      '@react-aria/focus': 3.8.0_react@18.2.0
       classix: 2.1.13
       framer-motion: 7.3.2_biqbaboplfbrettd7655fr4n2y
     devDependencies:
@@ -4611,32 +4624,6 @@ packages:
     resolution: {integrity: sha512-Ba7HmkFgfQxZqqaeIWWkNK0rEhpxVQHIoVyW1YDSkGsGIXzcaW4deC8B0pZrNSSyLTdIk7y+5olKt5+g0GmFIQ==}
     dev: false
 
-  /@react-aria/focus/3.6.1_react@18.2.0:
-    resolution: {integrity: sha512-4IHAu+826jC3SjWwuaYhCr0qhWg4XwmJIUEhcL1wbw3fq2dsjIBwEJ5HoayhluiVCfjGbcQcJNf1L4Vj3VTp4w==}
-    peerDependencies:
-      react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0 || 18
-    dependencies:
-      '@babel/runtime': 7.18.6
-      '@react-aria/interactions': 3.10.0_react@18.2.0
-      '@react-aria/utils': 3.13.2_react@18.2.0
-      '@react-types/shared': 3.14.0_react@18.2.0
-      clsx: 1.2.0
-      react: 18.2.0
-    dev: false
-
-  /@react-aria/focus/3.7.0_react@18.2.0:
-    resolution: {integrity: sha512-LydZSLBLEUklakM0Ogdk17F3f/Uwaj5Nl1mfcK8HhrroGT8A8XH0KjA9D6gM6JGHgxZemx0ufOgxhQZeBGQMQw==}
-    peerDependencies:
-      react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0 || 18
-    dependencies:
-      '@babel/runtime': 7.18.6
-      '@react-aria/interactions': 3.10.0_react@18.2.0
-      '@react-aria/utils': 3.13.2_react@18.2.0
-      '@react-types/shared': 3.14.0_react@18.2.0
-      clsx: 1.2.0
-      react: 18.2.0
-    dev: false
-
   /@react-aria/focus/3.8.0_react@18.2.0:
     resolution: {integrity: sha512-XuaLFdqf/6OyILifkVJo++5k2O+wlpNvXgsJkRWn/wSmB77pZKURm2MMGiSg2u911NqY+829UrSlpmhCZrc8RA==}
     peerDependencies:
@@ -4694,8 +4681,8 @@ packages:
       react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0 || 18
     dependencies:
       '@babel/runtime': 7.18.6
-      '@react-aria/utils': 3.13.2_react@18.2.0
-      '@react-types/shared': 3.14.0_react@18.2.0
+      '@react-aria/utils': 3.13.3_react@18.2.0
+      '@react-types/shared': 3.14.1_react@18.2.0
       react: 18.2.0
     dev: false
 
@@ -4731,7 +4718,7 @@ packages:
       react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0 || 18
     dependencies:
       '@babel/runtime': 7.18.6
-      '@react-aria/focus': 3.7.0_react@18.2.0
+      '@react-aria/focus': 3.8.0_react@18.2.0
       '@react-aria/i18n': 3.5.1_react@18.2.0
       '@react-aria/interactions': 3.10.0_react@18.2.0
       '@react-aria/utils': 3.13.2_react@18.2.0
@@ -4788,7 +4775,7 @@ packages:
       react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0 || 18
     dependencies:
       '@babel/runtime': 7.18.6
-      '@react-aria/focus': 3.7.0_react@18.2.0
+      '@react-aria/focus': 3.8.0_react@18.2.0
       '@react-aria/i18n': 3.5.1_react@18.2.0
       '@react-aria/interactions': 3.10.0_react@18.2.0
       '@react-aria/selection': 3.10.0_react@18.2.0
@@ -4806,7 +4793,7 @@ packages:
       react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0 || 18
     dependencies:
       '@babel/runtime': 7.18.6
-      '@react-aria/focus': 3.6.1_react@18.2.0
+      '@react-aria/focus': 3.8.0_react@18.2.0
       '@react-aria/interactions': 3.9.1_react@18.2.0
       '@react-aria/utils': 3.13.1_react@18.2.0
       '@react-stately/toggle': 3.4.0_react@18.2.0
@@ -4883,7 +4870,7 @@ packages:
       react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0 || 18
     dependencies:
       '@babel/runtime': 7.18.6
-      '@react-types/shared': 3.14.0_react@18.2.0
+      '@react-types/shared': 3.14.1_react@18.2.0
       react: 18.2.0
     dev: false
 
@@ -4944,7 +4931,7 @@ packages:
       '@babel/runtime': 7.18.6
       '@react-stately/collections': 3.4.2_react@18.2.0
       '@react-stately/utils': 3.5.1_react@18.2.0
-      '@react-types/shared': 3.14.0_react@18.2.0
+      '@react-types/shared': 3.14.1_react@18.2.0
       react: 18.2.0
     dev: false
 
@@ -5004,7 +4991,7 @@ packages:
     peerDependencies:
       react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0 || 18
     dependencies:
-      '@react-types/shared': 3.14.0_react@18.2.0
+      '@react-types/shared': 3.14.1_react@18.2.0
       react: 18.2.0
     dev: false
 
@@ -8919,6 +8906,25 @@ packages:
     resolution: {integrity: sha512-G5yTt3KQN4Yn7Yk4ed73hlZ1evrFKXeUW3086p3PRFNp7m2vIjI6Pg+Kgb+oyzhd9F2qdcoj67+y3SdxL5XWsg==}
     dev: true
 
+  /commandbar-launcher/1.1.9_react@18.2.0:
+    resolution: {integrity: sha512-sumGhBp0B7dEL+kCtXgPtAUF12u1znmE0HI3jkcugxFZnznQWdhs8N7snrc1abMsYjtlBjoDH/WuD7uZYXvUdA==}
+    peerDependencies:
+      react: 16.x || 18
+    dependencies:
+      react: 18.2.0
+      react-icons: 3.11.0_react@18.2.0
+    dev: true
+
+  /commandbar/1.7.0_react@18.2.0:
+    resolution: {integrity: sha512-HpsmMT9+rNGPLrKj0pwpaiJwIU3vPjXu2j2MLvuEoz2GsWAcWmOcnIU35odtHdRQVDex8HZ58Awi/2No1bvV8Q==}
+    dependencies:
+      commandbar-launcher: 1.1.9_react@18.2.0
+      fp-ts: 2.10.5
+      io-ts: 2.2.18_fp-ts@2.10.5
+    transitivePeerDependencies:
+      - react
+    dev: true
+
   /commander/2.20.3:
     resolution: {integrity: sha512-GpVkmM8vF2vQUkj2LvZmD35JxeJOLCwJ9cUkugyk2nuhbv3+mJvpLYYt+0+USMxE+oj+ey/lJEnhZw75x/OMcQ==}
     dev: true
@@ -11440,6 +11446,10 @@ packages:
     resolution: {integrity: sha512-buRG0fpBtRHSTCOASe6hD258tEubFoRLb4ZNA6NxMVHNw2gOcwHo9wyablzMzOA5z9xA9L1KNjk/Nt6MT9aYow==}
     engines: {node: '>= 0.6'}
 
+  /fp-ts/2.10.5:
+    resolution: {integrity: sha512-X2KfTIV0cxIk3d7/2Pvp/pxL/xr2MV1WooyEzKtTWYSc1+52VF4YzjBTXqeOlSiZsPCxIBpDGfT9Dyo7WEY0DQ==}
+    dev: true
+
   /fraction.js/4.2.0:
     resolution: {integrity: sha512-MhLuK+2gUcnZe8ZHlaaINnQLl0xRIGRfcGk2yl8xoQAfHrSsL3rYu6FCmBdkdbhc9EPlwyGHewaRsvwRMJtAlA==}
     dev: true
@@ -12345,6 +12355,14 @@ packages:
       loose-envify: 1.4.0
     dev: true
 
+  /io-ts/2.2.18_fp-ts@2.10.5:
+    resolution: {integrity: sha512-3JxUUzRtPQPs5sOwB7pW0+Xb54nOzqA6M1sRB1hwgsRmkWMeGTjtOrCynGTJhIj+mBLUj2S37DAq2+BrPh9kTQ==}
+    peerDependencies:
+      fp-ts: ^2.5.0
+    dependencies:
+      fp-ts: 2.10.5
+    dev: true
+
   /ip/2.0.0:
     resolution: {integrity: sha512-WKa+XuLG1A1R0UWhl2+1XQSi+fZWMsYKffMZTTYsiZaUD8k2yDAj5atimTUD2TZkyCkNEeYE5NhFZmupOGtjYQ==}
     dev: true
@@ -13041,7 +13059,7 @@ packages:
       '@babel/plugin-proposal-nullish-coalescing-operator': 7.18.6_@babel+core@7.19.0
       '@babel/plugin-proposal-optional-chaining': 7.18.6_@babel+core@7.19.0
       '@babel/plugin-transform-modules-commonjs': 7.18.6_@babel+core@7.19.0
-      '@babel/preset-env': 7.18.6_@babel+core@7.18.6
+      '@babel/preset-env': 7.18.6_@babel+core@7.19.0
       '@babel/preset-flow': 7.18.6_@babel+core@7.19.0
       '@babel/preset-typescript': 7.18.6_@babel+core@7.19.0
       '@babel/register': 7.18.6_@babel+core@7.19.0
@@ -16034,6 +16052,15 @@ packages:
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
       react-is: 18.1.0
+    dev: true
+
+  /react-icons/3.11.0_react@18.2.0:
+    resolution: {integrity: sha512-JRgiI/vdF6uyBgyZhVyYJUZAop95Sy4XDe/jmT3R/bKliFWpO/uZBwvSjWEdxwzec7SYbEPNPck0Kff2tUGM2Q==}
+    peerDependencies:
+      react: '*'
+    dependencies:
+      camelcase: 5.3.1
+      react: 18.2.0
     dev: true
 
   /react-inspector/6.0.1_react@18.2.0:

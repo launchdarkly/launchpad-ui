@@ -2,8 +2,8 @@ import type { Variants } from 'framer-motion';
 import type { MouseEvent, ReactNode } from 'react';
 
 import { IconButton } from '@launchpad-ui/button';
+import { FocusTrap } from '@launchpad-ui/focus-trap';
 import { Close, IconSize } from '@launchpad-ui/icons';
-import { FocusScope } from '@react-aria/focus';
 import { usePreventScroll } from '@react-aria/overlays';
 import { cx } from 'classix';
 import { LazyMotion, m } from 'framer-motion';
@@ -52,8 +52,8 @@ const Modal = ({
   withCloseButton = false,
   cancelWithOverlayClick = true,
   children,
-  onReady = () => undefined,
-  onCancel = () => undefined,
+  onReady,
+  onCancel,
   modalLabelID = 'Modal-title',
   transition,
 }: ModalProps) => {
@@ -71,10 +71,10 @@ const Modal = ({
     };
 
     const close = () => {
-      onCancel && onCancel();
+      onCancel?.();
     };
 
-    onReady && onReady();
+    onReady?.();
     document.body.classList.add('has-modal');
     document.addEventListener('keydown', handleEscape);
 
@@ -104,7 +104,7 @@ const Modal = ({
           className="Modal-overlay"
           onMouseDown={handleOverlayClick}
         >
-          <FocusScope autoFocus restoreFocus contain>
+          <FocusTrap autoFocus restoreFocus>
             <m.div
               initial="hidden"
               animate="visible"
@@ -125,7 +125,7 @@ const Modal = ({
               )}
               {children}
             </m.div>
-          </FocusScope>
+          </FocusTrap>
         </m.div>
       </div>
     </LazyMotion>
