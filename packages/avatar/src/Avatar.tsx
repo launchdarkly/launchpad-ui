@@ -29,7 +29,7 @@ const Avatar = ({
   const isMounted = useIsMounted();
   const [useDefaultAvatar, setUseDefaultAvatar] = useState(!url);
   const [imageSource, setImageSource] = useState<string | null>(null);
-  const classes = cx(`Avatar, ${styles.Avatar} ${styles[`Avatar--${size}`]}`, className);
+  const classes = cx('Avatar', styles.Avatar, styles[`Avatar--${size}`], className);
 
   const processImageSource = useCallback(async (res: Response) => {
     if (res.status === 404 || res.headers.get('Content-type')?.includes('image/svg')) {
