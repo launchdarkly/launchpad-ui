@@ -1,5 +1,28 @@
 # @launchpad-ui/core
 
+## 0.12.2
+
+### Patch Changes
+
+- [#390](https://github.com/launchdarkly/launchpad-ui/pull/390) [`91d68ca`](https://github.com/launchdarkly/launchpad-ui/commit/91d68ca61f45c4f7a0f38b4e869f650a5202a74c) Thanks [@Niznikr](https://github.com/Niznikr)! - [Modal, Notification, Popover]: Add focus-trap package to toggle traps via context
+
+* [#392](https://github.com/launchdarkly/launchpad-ui/pull/392) [`9b9a355`](https://github.com/launchdarkly/launchpad-ui/commit/9b9a355d26d11c06160cc0bc6540d290066e09e6) Thanks [@Niznikr](https://github.com/Niznikr)! - Add focus-trap to core
+
+* Updated dependencies [[`91d68ca`](https://github.com/launchdarkly/launchpad-ui/commit/91d68ca61f45c4f7a0f38b4e869f650a5202a74c)]:
+  - @launchpad-ui/focus-trap@0.1.0
+  - @launchpad-ui/modal@0.7.6
+  - @launchpad-ui/notification@0.4.6
+  - @launchpad-ui/popover@0.7.6
+  - @launchpad-ui/overlay@0.3.6
+  - @launchpad-ui/dropdown@0.4.7
+  - @launchpad-ui/menu@0.5.7
+  - @launchpad-ui/navigation@0.5.8
+  - @launchpad-ui/progress-bubbles@0.4.6
+  - @launchpad-ui/split-button@0.5.8
+  - @launchpad-ui/tooltip@0.5.6
+  - @launchpad-ui/filter@0.3.8
+  - @launchpad-ui/clipboard@0.6.6
+
 ## 0.12.1
 
 ### Patch Changes
