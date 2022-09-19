@@ -4,7 +4,7 @@ import { Popover, PopoverInteractionKind } from '@launchpad-ui/popover';
 import { cx } from 'classix';
 import { Fragment } from 'react';
 
-import './styles/ProgressBubbles.css';
+import styles from './styles/ProgressBubbles.module.css';
 import { useDimensions } from './utils';
 
 const ICON_WIDTH = 2.8;
@@ -58,11 +58,11 @@ const ProgressBubbles = ({
       const bubble = (
         <div
           className={cx(
-            'ProgressBubbles-icon',
-            hasMultipleIcons && 'ProgressBubbles-icon--multiple',
-            idx === currentBubble && 'ProgressBubbles-icon--current',
-            idx > currentBubble && 'ProgressBubbles-icon--pending',
-            item.isWarning && 'ProgressBubbles-icon--warning'
+            styles['ProgressBubbles-icon'],
+            hasMultipleIcons && styles['ProgressBubbles-icon--multiple'],
+            idx === currentBubble && styles['ProgressBubbles-icon--current'],
+            idx > currentBubble && styles['ProgressBubbles-icon--pending'],
+            item.isWarning && styles['ProgressBubbles-icon--warning']
           )}
           style={{ width: `${iconWidth}rem` }}
         >
@@ -70,7 +70,7 @@ const ProgressBubbles = ({
           <label
             id={item.popover?.props.stageId}
             aria-hidden={hideLabel}
-            className="ProgressBubbles-label"
+            className={styles['ProgressBubbles-label']}
             style={{ width: `${labelWidth}px` }}
           >
             {showCurrentLabelOnly ? idx === currentBubble && item.label : item.label}
@@ -83,15 +83,15 @@ const ProgressBubbles = ({
           {!!idx && (
             <div
               className={cx(
-                'ProgressBubblesUsingItems-line',
-                idx <= currentBubble && 'ProgressBubblesUsingItems-line--completed'
+                styles['ProgressBubblesUsingItems-line'],
+                idx <= currentBubble && styles['ProgressBubblesUsingItems-line--completed']
               )}
             />
           )}
-          <div className="ProgressBubblesIconContainer">
+          <div className={styles['ProgressBubblesIconContainer']}>
             {item.popover ? (
               <Popover
-                targetClassName="ProgressBubblesPopoverTarget"
+                targetClassName={styles['ProgressBubblesPopoverTarget']}
                 restrictWidth={false}
                 interactionKind={popoverInteraction}
                 offset={item.popoverOffset}
@@ -116,20 +116,20 @@ const ProgressBubbles = ({
           {!!i && (
             <div
               className={cx(
-                'ProgressBubbles-line',
-                i <= currentBubble && 'ProgressBubbles--filled'
+                styles['ProgressBubbles-line'],
+                i <= currentBubble && styles['ProgressBubbles--filled']
               )}
             ></div>
           )}
           <div
             className={cx(
-              'ProgressBubbles-bubble',
-              i <= currentBubble && 'ProgressBubbles--filled',
-              i === 0 && 'ProgressBubbles-bubble--first',
-              i === numBubbles - 1 && 'ProgressBubbles-bubble--last'
+              styles['ProgressBubbles-bubble'],
+              i <= currentBubble && styles['ProgressBubbles--filled'],
+              i === 0 && styles['ProgressBubbles-bubble--first'],
+              i === numBubbles - 1 && styles['ProgressBubbles-bubble--last']
             )}
           >
-            <span className="ProgressBubbles-text">
+            <span className={styles['ProgressBubbles-text']}>
               {!!bubbleLabels &&
                 (showCurrentLabelOnly
                   ? i === currentBubble && bubbleLabels[currentBubble]
@@ -143,7 +143,12 @@ const ProgressBubbles = ({
 
   return (
     <div
-      className={cx('ProgressBubbles', className, vertical && 'ProgressBubbles--vertical')}
+      className={cx(
+        'ProgressBubbles',
+        styles.ProgressBubbles,
+        className,
+        vertical && styles['ProgressBubbles--vertical']
+      )}
       ref={ref}
     >
       {children}
