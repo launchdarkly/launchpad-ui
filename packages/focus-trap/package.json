@@ -33,14 +33,8 @@
     "@react-aria/focus": "^3.8.0"
   },
   "peerDependencies": {
-    "commandbar": "^1.7.0",
     "react": "^18.0.0",
     "react-dom": "^18.0.0"
-  },
-  "peerDependenciesMeta": {
-    "commandbar": {
-      "optional": true
-    }
   },
   "devDependencies": {
     "react": "^18.2.0",

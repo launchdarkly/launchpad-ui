@@ -1,29 +1,17 @@
 import type { FocusScopeProps } from '@react-aria/focus';
 
 import { FocusScope } from '@react-aria/focus';
-import { useEffect, useState } from 'react';
+import { createContext, useContext } from 'react';
 
 type FocusTrapProps = Omit<FocusScopeProps, 'contain'>;
 
+const FocusTrapContext = createContext(true);
+
 const FocusTrap = (props: FocusTrapProps) => {
-  const [contain, setContain] = useState(true);
+  const context = useContext(FocusTrapContext);
 
-  useEffect(() => {
-    const unsubscribe = window.CommandBar?.addEventSubscriber((eventType) => {
-      if (eventType === 'opened') {
-        setContain(false);
-      } else if (eventType === 'closed') {
-        setContain(true);
-      }
-    });
-
-    return () => {
-      unsubscribe?.then((unsubscribeFn) => unsubscribeFn());
-    };
-  }, []);
-
-  return <FocusScope contain={contain} {...props} />;
+  return <FocusScope contain={context} {...props} />;
 };
 
-export { FocusTrap };
+export { FocusTrap, FocusTrapContext };
 export type { FocusTrapProps };

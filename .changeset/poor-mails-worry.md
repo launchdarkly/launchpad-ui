@@ -6,4 +6,4 @@
 '@launchpad-ui/core': patch
 ---
 
-[Modal, Notification, Popover]: Add focus-trap package to toggle trap based on CommandBar open status
+[Modal, Notification, Popover]: Add focus-trap package to toggle traps via context

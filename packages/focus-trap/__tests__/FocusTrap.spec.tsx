@@ -1,7 +1,9 @@
-import { it, expect, describe, vi } from 'vitest';
+import type { ReactNode } from 'react';
+
+import { it, expect, describe } from 'vitest';
 
 import { render, screen, userEvent } from '../../../test/utils';
-import { FocusTrap } from '../src';
+import { FocusTrap, FocusTrapContext } from '../src';
 
 const createComponent = () => (
   <>
@@ -21,35 +23,15 @@ describe('FocusTrap', () => {
     expect(screen.getByTestId('in-trap')).toHaveFocus();
   });
 
-  it('does not contain focus when commandbar is open', async () => {
-    const subscribe = async (callback: (event: string) => void) => {
-      callback('opened');
-      return vi.fn();
-    };
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    // @ts-ignore
-    window.CommandBar = { addEventSubscriber: vi.fn().mockImplementation(subscribe) };
-
+  it('does not contain focus when context provided is false', async () => {
     const user = userEvent.setup();
-    render(createComponent());
+    render(createComponent(), {
+      wrapper: ({ children }: { children: ReactNode }) => (
+        <FocusTrapContext.Provider value={false}>{children}</FocusTrapContext.Provider>
+      ),
+    });
 
     await user.tab();
     expect(screen.getByTestId('out-trap')).toHaveFocus();
-  });
-
-  it('contains focus when commandbar is closed', async () => {
-    const subscribe = async (callback: (event: string) => void) => {
-      callback('closed');
-      return vi.fn();
-    };
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    // @ts-ignore
-    window.CommandBar = { addEventSubscriber: vi.fn().mockImplementation(subscribe) };
-
-    const user = userEvent.setup();
-    render(createComponent());
-
-    await user.tab();
-    expect(screen.getByTestId('in-trap')).toHaveFocus();
   });
 });
