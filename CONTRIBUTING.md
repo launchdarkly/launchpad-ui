@@ -27,15 +27,13 @@ The following is a set of guidelines for contributing to Launchpad and its packa
 - [CSS Styleguide](#css-styleguide)
 - [Specs Styleguide](#specs-styleguide)
 
-[Migrating a component from Gonfalon to Launchpad](#migrating-a-component-from-gonfalon-to-launchpad)
+[Creating a new package in Launchpad](#creating-a-new-package-in-launchpad)
 
-- [Creating a new package in Launchpad](#creating-a-new-package-in-launchpad)
-- [Package-specific changes](#package-specific-changes)
-- [Importing new dependencies](#importing-new-dependencies)
-- [Updating CSS tokens from Gonfalon for use in Launchpad](#updating-css-tokens-from-gonfalon-for-use-in-launchpad)
+- [With Plop](#with-plop)
+- [Dependencies](#dependencies)
 - [Adding an icon to Launchpad](#adding-an-icon-to-launchpad)
 - [Test your code](#test-your-code)
-- [Pushing your code](#pushing-your-code)
+- [Okay, I'm ready to deploy my code](#okay-im-ready-to-deploy-my-code)
 
 ---
 
@@ -88,8 +86,7 @@ This section guides you through submitting a bug report for Launchpad. Following
 
 #### Submitting A Bug Report
 
-- Confirm whether or not the issue was present in the equivalent component in Gonfalon. This helps us understand if we introduced the problem or if we inherited it when migrating Gonfalon components to Launchpad.
-- Determine which package the issue should be reported in..
+- Determine which package the issue should be reported in.
 - Perform a cursory search in our [bug issues](https://github.com/launchdarkly/launchpad-ui/issues?q=label%3Abug+) to see if the problem has already been reported. If it has and the issue is still open, add a comment to the existing issue instead of opening a new one.
 - [File a bug issue](https://github.com/launchdarkly/launchpad-ui/issues/new?assignees=&labels=&template=bug_report.md&title=) and describe in detail how to reproduce the issue. Screenshots or video are always a big help!
 
@@ -145,51 +142,25 @@ All CSS code is linted with [Stylelint](https://stylelint.io/).
 
 ---
 
-## Migrating a component from Gonfalon to Launchpad
+## Creating a new package in Launchpad
 
-### Creating a new package in Launchpad
-
-#### With Plop
+### With Plop
 
 With the help of [plop](https://plopjs.com), we can quickly scaffold new component files in a consistent and opinionated way.
 
 Simply run `pnpm generate component` and follow the prompts, and you'll be well on your way to adding a new component package to Launchpad.
 
-### Package-specific changes
-
-As we migrate to Launchpad, we've selectively chosen to update or replace some dependencies:
-
-#### `lodash`
-
-- Replace methods from `lodash` with a [native equivalent](https://youmightnotneed.com/lodash).
-- Where `noop` is used, remove lodash dependency and replace usage of `noop` with `() => undefined` as it is effectively the same.
-
-#### `focus-trap`
-
-`focus-trap` caused flaky tests that were difficult to fix.
-
-- Replace with `@react-aria/focus` as shown here: https://github.com/launchdarkly/launchpad-ui/pull/94
-
-#### `immutable`
-
-We are moving away from immutable in Gonfalon and would like to avoid taking dependency on it whenever possible in Launchpad. It might require some creative problem-solving to remove immutable but is usually pretty simple. Just use JS data structures instead.
-
-### Importing new dependencies
+### Dependencies
 
 - Don't pin dependencies, use caret ranges.
 - Match dependency versions across packages when possible so that we can share dependency versions and reduce bundle sizes.
 
-### Updating CSS tokens from Gonfalon for use in Launchpad
-
-Tokens are configured as a shared package in Launchpad, so any package that takes the `@launchpad-ui/tokens` dependency will be guaranteed access to our CSS token variables. Still, we haven't imported 100% of the tokens available today in Gonfalon since we'd like to change some patterns we've historically used. Due to this, we must manually make a few changes:
-
-- If a token is not found in Launchpad's token package already, and if the token is an alias variable for a base token that IS available in Launchpad, just use the base token.
-- If a token is not found in Launchpad's token package already, and the token is not an alias, just use a hardcoded CSS value.
-
 ### Adding an icon to Launchpad
+
 To add an icon to Launchpad, drop the SVG inside of the `/icons` directory in the `@launchpad/icons` package, and run the below script to generate the component for it. It's intended that consumers will utilize the icon components rather than the raw SVGs.
 
 From the root of launchpad-ui (preferred):
+
 ```js
 pnpm build:transform
 ```
