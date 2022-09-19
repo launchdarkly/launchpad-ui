@@ -1,5 +1,11 @@
 # @launchpad-ui/clipboard
 
+## 0.7.0
+
+### Minor Changes
+
+- [#393](https://github.com/launchdarkly/launchpad-ui/pull/393) [`a7e72b1`](https://github.com/launchdarkly/launchpad-ui/commit/a7e72b1466e26a39b23b0be7518127a4b1be034e) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Clipboard] Isolate styles for CopyToClipboard component and improve handling of default trigger styles versus trigger passed asChild
+
 ## 0.6.6
 
 ### Patch Changes
