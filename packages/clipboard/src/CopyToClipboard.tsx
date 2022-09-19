@@ -1,5 +1,5 @@
 import type { TooltipProps } from '@launchpad-ui/tooltip';
-import type { ButtonHTMLAttributes, HTMLAttributes, KeyboardEventHandler } from 'react';
+import type { HTMLAttributes, KeyboardEventHandler } from 'react';
 
 import { CheckCircle, IconSize } from '@launchpad-ui/icons';
 import { Tooltip } from '@launchpad-ui/tooltip';
@@ -8,7 +8,8 @@ import { announce } from '@react-aria/live-announcer';
 import { cx } from 'classix';
 import { forwardRef, useCallback, useImperativeHandle, useRef, useState } from 'react';
 
-import styles from './styles/Clipboard.module.css';
+import { CopyCodeButton } from './CopyCodeButton';
+import styles from './styles/CopyToClipboard.module.css';
 
 type CopyToClipboardProps = HTMLAttributes<HTMLSpanElement> & {
   triggerAriaLabel?: string;
@@ -31,18 +32,6 @@ const CopyConfirmation = () => (
     <span className={styles['Clipboard-copied']}>Copied!</span>
   </span>
 );
-
-const CopyToClipboardDefaultTrigger = ({
-  className,
-  children,
-  ...rest
-}: ButtonHTMLAttributes<HTMLButtonElement>) => {
-  return (
-    <button className={cx(styles['CopyToClipboard-default-trigger'], className)} {...rest}>
-      {children}
-    </button>
-  );
-};
 
 const CopyToClipboard = forwardRef<CopyToClipboardHandleRef, CopyToClipboardProps>(
   (
@@ -113,7 +102,7 @@ const CopyToClipboard = forwardRef<CopyToClipboardHandleRef, CopyToClipboardProp
       }
     };
 
-    const Component = asChild ? Slot : CopyToClipboardDefaultTrigger;
+    const Component = asChild ? Slot : CopyCodeButton;
 
     return (
       <span className={classes} {...rest}>
@@ -129,7 +118,6 @@ const CopyToClipboard = forwardRef<CopyToClipboardHandleRef, CopyToClipboardProp
             onKeyDown={handleKeyDown}
             ref={triggerRef}
             aria-label={triggerAriaLabelText}
-            className={styles['CopyToClipboard-trigger']}
             role="button"
             tabIndex={0}
           >

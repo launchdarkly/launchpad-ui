@@ -1,6 +1,8 @@
 import type { CopyToClipboardHandleRef } from '../src/CopyToClipboard';
 import type { ComponentStoryObj, StoryFn } from '@storybook/react';
 
+import { IconButton } from '@launchpad-ui/button';
+import { ContentCopy, IconSize } from '@launchpad-ui/icons';
 import { userEvent, within } from '@storybook/testing-library';
 import { useRef } from 'react';
 
@@ -56,11 +58,19 @@ export const Default: Story = {
   },
 };
 
-export const ExampleWithSlottedChild: Story = {
+export const ExampleWithSlottedCodeChild: Story = {
   args: {
     text: 'Code content',
     asChild: true,
     children: <code>Code content</code>,
+  },
+};
+
+export const ExampleWithIconButtonSlottedChild: Story = {
+  args: {
+    text: 'Code content',
+    asChild: true,
+    children: <IconButton aria-label="Copy content" icon={<ContentCopy size={IconSize.SMALL} />} />,
   },
 };
 
