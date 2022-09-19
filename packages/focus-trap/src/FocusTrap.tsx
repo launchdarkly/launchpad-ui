@@ -5,13 +5,21 @@ import { createContext, useContext } from 'react';
 
 type FocusTrapProps = Omit<FocusScopeProps, 'contain'>;
 
-const FocusTrapContext = createContext(true);
-
-const FocusTrap = (props: FocusTrapProps) => {
-  const context = useContext(FocusTrapContext);
-
-  return <FocusScope contain={context} {...props} />;
+type FocusTrapContextType = {
+  contain: boolean;
 };
 
-export { FocusTrap, FocusTrapContext };
-export type { FocusTrapProps };
+const FocusTrapContext = createContext<FocusTrapContextType>({
+  contain: true,
+});
+
+const useFocusTrapContext = () => useContext(FocusTrapContext);
+
+const FocusTrap = (props: FocusTrapProps) => {
+  const { contain } = useFocusTrapContext();
+
+  return <FocusScope contain={contain} {...props} />;
+};
+
+export { FocusTrap, FocusTrapContext, useFocusTrapContext };
+export type { FocusTrapProps, FocusTrapContextType };

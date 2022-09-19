@@ -1,2 +1,2 @@
-export type { FocusTrapProps } from './FocusTrap';
-export { FocusTrap, FocusTrapContext } from './FocusTrap';
+export type { FocusTrapProps, FocusTrapContextType } from './FocusTrap';
+export { FocusTrap, FocusTrapContext, useFocusTrapContext } from './FocusTrap';
