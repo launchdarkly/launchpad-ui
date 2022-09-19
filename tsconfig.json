@@ -13,6 +13,7 @@
       "@launchpad-ui/counter": ["./packages/counter/src"],
       "@launchpad-ui/dropdown": ["./packages/dropdown/src"],
       "@launchpad-ui/filter": ["./packages/filter/src"],
+      "@launchpad-ui/focus-trap": ["./packages/focus-trap/src"],
       "@launchpad-ui/form": ["./packages/form/src"],
       "@launchpad-ui/icons": ["./packages/icons/src"],
       "@launchpad-ui/markdown": ["./packages/markdown/src"],

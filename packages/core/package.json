@@ -1,6 +1,6 @@
 {
   "name": "@launchpad-ui/core",
-  "version": "0.12.1",
+  "version": "0.12.2",
   "status": "beta",
   "publishConfig": {
     "access": "public"
@@ -41,6 +41,7 @@
     "@launchpad-ui/counter": "workspace:~",
     "@launchpad-ui/dropdown": "workspace:~",
     "@launchpad-ui/filter": "workspace:~",
+    "@launchpad-ui/focus-trap": "workspace:~",
     "@launchpad-ui/form": "workspace:~",
     "@launchpad-ui/icons": "workspace:~",
     "@launchpad-ui/markdown": "workspace:~",

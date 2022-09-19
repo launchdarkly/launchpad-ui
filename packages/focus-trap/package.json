@@ -1,44 +1,36 @@
 {
-  "name": "@launchpad-ui/split-button",
-  "version": "0.5.8",
+  "name": "@launchpad-ui/focus-trap",
+  "version": "0.1.0",
   "status": "beta",
   "publishConfig": {
     "access": "public"
   },
-  "description": "An element that presents an immediate action and additional options from a dropdown.",
+  "description": "An internal utility not intended for public usage.",
   "files": [
     "dist"
   ],
   "main": "dist/index.js",
   "module": "dist/index.es.js",
   "types": "dist/index.d.ts",
-  "sideEffects": [
-    "**/*.css"
-  ],
+  "sideEffects": false,
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
       "import": "./dist/index.es.js",
       "require": "./dist/index.js"
     },
-    "./package.json": "./package.json",
-    "./style.css": "./dist/style.css"
+    "./package.json": "./package.json"
   },
   "source": "src/index.ts",
   "scripts": {
     "build": "vite build -c ../../vite.config.ts && tsc --project tsconfig.build.json",
     "clean": "rm -rf dist",
-    "e2e": "playwright test --config=../../playwright.config.ct.ts",
-    "lint": "eslint '**/*.{ts,tsx,js}' && stylelint '**/*.css' --ignore-path ../../.stylelintignore",
+    "e2e": "exit 0",
+    "lint": "eslint '**/*.{ts,tsx,js}'",
     "test": "vitest run --coverage"
   },
   "dependencies": {
-    "@launchpad-ui/button": "workspace:~",
-    "@launchpad-ui/dropdown": "workspace:~",
-    "@launchpad-ui/popover": "workspace:~",
-    "@launchpad-ui/tokens": "workspace:~",
-    "@launchpad-ui/tooltip": "workspace:~",
-    "classix": "^2.1.13"
+    "@react-aria/focus": "^3.8.0"
   },
   "peerDependencies": {
     "react": "^18.0.0",

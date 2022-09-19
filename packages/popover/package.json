@@ -1,6 +1,6 @@
 {
   "name": "@launchpad-ui/popover",
-  "version": "0.7.5",
+  "version": "0.7.6",
   "status": "beta",
   "publishConfig": {
     "access": "public"
@@ -35,9 +35,9 @@
   "dependencies": {
     "@floating-ui/core": "^1.0.0",
     "@floating-ui/dom": "^1.0.0",
+    "@launchpad-ui/focus-trap": "workspace:~",
     "@launchpad-ui/overlay": "workspace:~",
     "@launchpad-ui/tokens": "workspace:~",
-    "@react-aria/focus": "^3.8.0",
     "classix": "^2.1.13",
     "framer-motion": "^7.3.2"
   },

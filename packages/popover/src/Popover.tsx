@@ -14,8 +14,8 @@ import type {
 } from 'react';
 
 import { arrow, computePosition, flip, offset as floatOffset, shift } from '@floating-ui/dom';
+import { FocusTrap } from '@launchpad-ui/focus-trap';
 import { Overlay } from '@launchpad-ui/overlay';
-import { FocusScope } from '@react-aria/focus';
 import { cx } from 'classix';
 import { LazyMotion, m } from 'framer-motion';
 import {
@@ -410,9 +410,7 @@ const Popover = ({
       >
         {enableArrow && <div id="arrow" ref={arrowRef}></div>}
         {interactionKind === 'click' ? (
-          <FocusScope autoFocus contain>
-            {popoverContent}
-          </FocusScope>
+          <FocusTrap autoFocus>{popoverContent}</FocusTrap>
         ) : (
           popoverContent
         )}
