@@ -3,7 +3,7 @@ import type { HTMLAttributes, Ref } from 'react';
 import { cx } from 'classix';
 import { forwardRef } from 'react';
 
-import './styles/Nav.css';
+import styles from './styles/Nav.module.css';
 import { NavKind } from './types';
 
 type NavBaseProps = HTMLAttributes<HTMLElement> & {
@@ -23,7 +23,7 @@ const NavBase = ({
     <nav
       {...rest}
       aria-label={ariaLabel ?? `${kind} navigation`}
-      className={cx('Nav', `Nav--${kind}`, className)}
+      className={cx('Nav', styles.Nav, styles[`Nav--${kind}`], className)}
       ref={innerRef}
     >
       {children}

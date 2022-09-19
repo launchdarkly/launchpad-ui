@@ -178,14 +178,6 @@
   max-height: 2.5rem;
 }
 
-.Chip--navbar {
-  align-self: flex-start;
-  border-radius: 0.4rem;
-  margin-top: 0.4rem;
-  min-width: 3.5rem;
-  padding: 0.1rem 0;
-}
-
 .Chip--federal {
   background-color: var(--Chip-federal-color);
   border-color: var(--Chip-federal-color);

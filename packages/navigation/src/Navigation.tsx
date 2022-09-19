@@ -15,7 +15,7 @@ import { NavLink } from 'react-router-dom';
 import { Nav } from './Nav';
 import { NavItem } from './NavItem';
 import { NavItemWithTooltip } from './NavItemWithTooltip';
-import './styles/Navigation.css';
+import styles from './styles/Navigation.module.css';
 import { NavKind } from './types';
 import { titlecase, useMediaQuery } from './utils';
 
@@ -103,7 +103,7 @@ const NavigationList = <T extends object>(props: NavigationListProps<T>) => {
   const { shouldCollapse, refs } = useNavigationContext();
 
   return (
-    <div className="NavigationList-wrapper" ref={refs.wrapperRef}>
+    <div className={styles['NavigationList-wrapper']} ref={refs.wrapperRef}>
       {shouldCollapse ? (
         <NavigationMenuButton {...props} aria-label={title} />
       ) : (
@@ -197,7 +197,13 @@ const Navigation = <T extends object>(props: NavigationProps<T>) => {
   useResizeObserver({ ref: wrapperRef, onResize: checkShouldCollapse });
 
   return (
-    <div className={cx('Navigation', shouldCollapse && 'Navigation--collapsed')}>
+    <div
+      className={cx(
+        'Navigation',
+        styles.Navigation,
+        shouldCollapse && styles['Navigation--collapsed']
+      )}
+    >
       <NavigationContext.Provider
         value={{
           shouldCollapse,

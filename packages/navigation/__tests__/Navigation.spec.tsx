@@ -89,6 +89,6 @@ describe('Navigation', () => {
       ])
     );
     // eslint-disable-next-line testing-library/no-container, testing-library/no-node-access
-    expect(container.querySelector('.Chip--navbar')).not.toBeNull();
+    expect(container.querySelector('.Chip')).not.toBeNull();
   });
 });

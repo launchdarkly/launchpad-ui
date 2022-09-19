@@ -4,7 +4,7 @@ import type { MouseEvent } from 'react';
 import { Tooltip } from '@launchpad-ui/tooltip';
 
 import { NavItem } from './NavItem';
-import './styles/Nav.css';
+import styles from './styles/Nav.module.css';
 
 type NavItemWithTooltipProps = {
   to: string;
@@ -39,7 +39,7 @@ const NavItemWithTooltip = ({
   id,
   'aria-controls': ariaControls,
 }: NavItemWithTooltipProps) => {
-  const centeredContent = <div className="u-tc">{tooltipContent}</div>;
+  const centeredContent = <div className={styles['NavItem-tooltip']}>{tooltipContent}</div>;
   return (
     <Tooltip
       content={centeredContent}

@@ -1,4 +1,11 @@
-export enum NavKind {
+import type { ChipKind } from '@launchpad-ui/chip';
+
+enum NavKind {
   PRIMARY = 'primary',
   SECONDARY = 'secondary',
 }
+
+type NavItemStatus = ChipKind;
+
+export { NavKind };
+export type { NavItemStatus };
