@@ -1,4 +1,4 @@
-import type { SnackbarRecord } from './types';
+import type { SnackbarBaseProps } from './Snackbar';
 
 import { cx } from 'classix';
 import { AnimatePresence, LazyMotion, m } from 'framer-motion';
@@ -12,6 +12,10 @@ const loadFeatures = () =>
     /* webpackExports: "domAnimation" */
     'framer-motion'
   ).then((res) => res.domAnimation);
+
+type SnackbarRecord = Omit<SnackbarBaseProps, 'onDismiss'> & {
+  _id: string;
+};
 
 type SnackbarCenterProps = {
   className?: string;
@@ -51,4 +55,4 @@ const SnackbarCenter = ({ snackbars, onDismiss, className }: SnackbarCenterProps
 };
 
 export { SnackbarCenter };
-export type { SnackbarCenterProps };
+export type { SnackbarCenterProps, SnackbarRecord };

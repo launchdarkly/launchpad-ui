@@ -1,6 +1,4 @@
 export type { ToastProps } from './Toast';
-export type { ToastCenterProps } from './ToastCenter';
-export type { ToastRecord } from './types';
+export type { ToastCenterProps, ToastRecord } from './ToastCenter';
 export { Toast } from './Toast';
 export { ToastCenter } from './ToastCenter';
-export { ToastKind } from './types';

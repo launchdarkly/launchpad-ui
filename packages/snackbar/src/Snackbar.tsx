@@ -1,14 +1,13 @@
-import type { SnackbarKind } from './types';
 import type { HTMLAttributes, ReactElement } from 'react';
 
-import { ButtonKind, IconButton, IconButtonSize } from '@launchpad-ui/button';
-import { Close, IconSize, KindIcon } from '@launchpad-ui/icons';
+import { IconButton } from '@launchpad-ui/button';
+import { Close, KindIcon } from '@launchpad-ui/icons';
 import { cx } from 'classix';
 
 import styles from './styles/Snackbar.module.css';
 
 type SnackbarBaseProps = {
-  kind: SnackbarKind;
+  kind: 'info' | 'error' | 'warning';
   header?: string;
   description: string;
   cta?: ReactElement<HTMLAnchorElement>;
@@ -38,10 +37,10 @@ const Snackbar = ({
         <span className={styles['Snackbar-description']}>{description}</span> {cta}
       </div>
       <IconButton
-        icon={<Close size={IconSize.SMALL} />}
-        size={IconButtonSize.SMALL}
+        icon={<Close size="small" />}
+        size="small"
         aria-label="Dismiss"
-        kind={ButtonKind.CLOSE}
+        kind="close"
         className={styles['Snackbar-close']}
         data-test-id="snackbar-dismiss"
         onClick={onDismiss}
