@@ -1,11 +1,11 @@
 import { it, expect, describe } from 'vitest';
 
 import { render, screen } from '../../../test/utils';
-import { Toast, ToastKind } from '../src';
+import { Toast } from '../src';
 
 describe('Toast', () => {
   it('renders', () => {
-    render(<Toast kind={ToastKind.INFO} content="An important message" />);
+    render(<Toast kind="info" content="An important message" onDismiss={() => undefined} />);
     expect(screen.getByText('An important message')).toBeInTheDocument();
   });
 });

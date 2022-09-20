@@ -1,10 +1,12 @@
+import type { SnackbarProps } from '../src';
+
 import { it, expect, describe, vi } from 'vitest';
 
 import { render, screen, userEvent, waitFor } from '../../../test/utils';
-import { Snackbar, SnackbarKind } from '../src';
+import { Snackbar } from '../src';
 
-const props = {
-  kind: SnackbarKind.INFO,
+const props: SnackbarProps = {
+  kind: 'info',
   description: 'This is a message',
   header: 'Snackbar header',
   onDismiss: () => undefined,
