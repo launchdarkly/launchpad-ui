@@ -37,6 +37,7 @@
     "@launchpad-ui/tooltip": "0.6.0"
   },
   "changesets": [
+    "eighty-bananas-doubt",
     "empty-needles-teach",
     "fair-oranges-deny",
     "fast-laws-pay",
@@ -51,6 +52,7 @@
     "tender-pumas-cover",
     "two-humans-worry",
     "two-tigers-matter",
+    "witty-dodos-battle",
     "yellow-rivers-train"
   ]
 }

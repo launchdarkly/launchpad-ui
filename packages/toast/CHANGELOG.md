@@ -1,5 +1,11 @@
 # @launchpad-ui/toast
 
+## 0.1.0-alpha.3
+
+### Patch Changes
+
+- [`7732143`](https://github.com/launchdarkly/launchpad-ui/commit/7732143080ff13af60c4ac01342a3432996b6485) Thanks [@Niznikr](https://github.com/Niznikr)! - Replace enums with string union types
+
 ## 0.1.0-alpha.2
 
 ### Patch Changes
