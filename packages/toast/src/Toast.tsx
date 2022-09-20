@@ -5,10 +5,9 @@ import { cx } from 'classix';
 import { useEffect } from 'react';
 
 import styles from './styles/Toast.module.css';
-import { ToastKind } from './types';
 
 type ToastBaseProps = {
-  kind: ToastKind;
+  kind: 'info' | 'success' | 'error' | 'warning';
   onDismiss: () => void;
   content: ReactNode;
 };
@@ -28,7 +27,7 @@ const Toast = ({ className, kind, onDismiss, content, ...rest }: ToastProps) => 
       className={cx('Toast', styles.Toast, styles[`Toast--${kind}`], className)}
       role="status"
     >
-      {kind !== ToastKind.INFO && <KindIcon kind={kind} className={styles['Toast-icon']} />}
+      {kind !== 'info' && <KindIcon kind={kind} className={styles['Toast-icon']} />}
       <p className={styles['Toast-content']}>{content}</p>
     </div>
   );

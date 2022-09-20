@@ -1,4 +1,4 @@
-import type { ToastRecord } from './types';
+import type { ToastBaseProps } from './Toast';
 
 import { cx } from 'classix';
 import { AnimatePresence, LazyMotion, m } from 'framer-motion';
@@ -12,6 +12,10 @@ const loadFeatures = () =>
     /* webpackExports: "domAnimation" */
     'framer-motion'
   ).then((res) => res.domAnimation);
+
+type ToastRecord = Omit<ToastBaseProps, 'onDismiss'> & {
+  _id: string;
+};
 
 type ToastCenterProps = {
   className?: string;
@@ -49,4 +53,4 @@ const ToastCenter = ({ toasts, onDismiss, className }: ToastCenterProps) => {
 };
 
 export { ToastCenter };
-export type { ToastCenterProps };
+export type { ToastCenterProps, ToastRecord };

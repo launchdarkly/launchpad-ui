@@ -4,17 +4,16 @@ import { it, expect, describe } from 'vitest';
 
 import { render, screen } from '../../../test/utils';
 import { ToastCenter } from '../src';
-import { ToastKind } from '../src/types';
 
 const toasts: ToastRecord[] = [
   {
     _id: '1',
-    kind: ToastKind.INFO,
+    kind: 'info',
     content: 'A toast.',
   },
   {
     _id: '2',
-    kind: ToastKind.INFO,
+    kind: 'info',
     content: 'A toast.',
   },
 ];
