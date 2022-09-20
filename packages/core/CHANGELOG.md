@@ -248,6 +248,15 @@
   - @launchpad-ui/tooltip@0.6.1
   - @launchpad-ui/overlay@0.3.8
 
+## 0.14.1-alpha.2
+
+### Patch Changes
+
+- [#407](https://github.com/launchdarkly/launchpad-ui/pull/407) [`5d05a03`](https://github.com/launchdarkly/launchpad-ui/commit/5d05a03c9ec5667234e8df018e866784934ec166) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Alert] Add better specificity to .Alert styles
+
+- Updated dependencies [[`5d05a03`](https://github.com/launchdarkly/launchpad-ui/commit/5d05a03c9ec5667234e8df018e866784934ec166)]:
+  - @launchpad-ui/alert@0.4.1-alpha.2
+
 ## 0.14.1-alpha.1
 
 ### Patch Changes
