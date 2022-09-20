@@ -1,6 +1,6 @@
 import type { ComponentStoryObj } from '@storybook/react';
 
-import { Toast, ToastKind } from '../src';
+import { Toast } from '../src';
 
 export default {
   component: Toast,
@@ -17,26 +17,26 @@ type Story = ComponentStoryObj<typeof Toast>;
 
 export const Error: Story = {
   args: {
-    kind: ToastKind.ERROR,
+    kind: 'error',
     title: 'Toast title',
     content: 'This is a message about an app process.',
   },
 };
 
 export const Info: Story = {
-  args: { kind: ToastKind.INFO, content: 'This is a message about an app process.' },
+  args: { kind: 'info', content: 'This is a message about an app process.' },
 };
 
 export const Warning: Story = {
   args: {
-    kind: ToastKind.WARNING,
+    kind: 'warning',
     content: 'This is a message about an app process.',
   },
 };
 
 export const Success: Story = {
   args: {
-    kind: ToastKind.SUCCESS,
+    kind: 'success',
     content: 'This is a message about an app process.',
   },
 };

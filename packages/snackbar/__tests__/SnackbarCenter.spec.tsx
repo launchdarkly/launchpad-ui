@@ -4,17 +4,16 @@ import { it, expect, describe } from 'vitest';
 
 import { render, screen } from '../../../test/utils';
 import { SnackbarCenter } from '../src';
-import { SnackbarKind } from '../src/types';
 
 const snackbars: SnackbarRecord[] = [
   {
     _id: '1',
-    kind: SnackbarKind.INFO,
+    kind: 'info',
     description: 'A snackbar.',
   },
   {
     _id: '2',
-    kind: SnackbarKind.INFO,
+    kind: 'info',
     description: 'A snackbar.',
   },
 ];

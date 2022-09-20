@@ -1,5 +1,5 @@
 /* eslint-disable react-hooks/rules-of-hooks */
-import type { ToastRecord } from '../src/types';
+import type { ToastRecord, ToastProps } from '../src';
 import type { ComponentStoryObj } from '@storybook/react';
 
 import { Button } from '@launchpad-ui/button';
@@ -7,7 +7,6 @@ import { userEvent, within } from '@storybook/testing-library';
 import { useId, useState } from 'react';
 
 import { ToastCenter } from '../src';
-import { ToastKind } from '../src/types';
 
 export default {
   component: ToastCenter,
@@ -17,12 +16,12 @@ export default {
 
 type Story = ComponentStoryObj<typeof ToastCenter>;
 
-const kinds = Object.values(ToastKind);
+const kinds = ['info', 'success', 'error', 'warning'];
 let kindIndex = 0;
 const loopIndices = (i: number) => (kindIndex === kinds.length - 1 ? 0 : i + 1);
 
 const makeToast = (id: string) => {
-  const kind = kinds[kindIndex];
+  const kind = kinds[kindIndex] as ToastProps['kind'];
   kindIndex = loopIndices(kindIndex);
 
   return {

@@ -1,6 +1,6 @@
 import type { ComponentStoryObj } from '@storybook/react';
 
-import { Snackbar, SnackbarKind } from '../src';
+import { Snackbar } from '../src';
 
 export default {
   component: Snackbar,
@@ -17,7 +17,7 @@ type Story = ComponentStoryObj<typeof Snackbar>;
 
 export const Error: Story = {
   args: {
-    kind: SnackbarKind.ERROR,
+    kind: 'error',
     title: 'Snackbar title',
     description: 'This is a message about an app process.',
     cta: <a href="/">Please try again</a>,
@@ -25,12 +25,12 @@ export const Error: Story = {
 };
 
 export const Info: Story = {
-  args: { kind: SnackbarKind.INFO, description: 'This is a message about an app process.' },
+  args: { kind: 'info', description: 'This is a message about an app process.' },
 };
 
 export const Warning: Story = {
   args: {
-    kind: SnackbarKind.WARNING,
+    kind: 'warning',
     description: 'This is a message about an app process.',
     cta: <a href="/">Please try again</a>,
   },
