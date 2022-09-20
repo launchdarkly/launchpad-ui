@@ -1,5 +1,26 @@
 # @launchpad-ui/core
 
+## 0.13.1
+
+### Patch Changes
+
+- [#398](https://github.com/launchdarkly/launchpad-ui/pull/398) [`53f7908`](https://github.com/launchdarkly/launchpad-ui/commit/53f79088e0c7f0b1fd3d07cb00c1ebf92b10e5af) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Avatar] Move to CSS Modules
+
+- Updated dependencies [[`53f7908`](https://github.com/launchdarkly/launchpad-ui/commit/53f79088e0c7f0b1fd3d07cb00c1ebf92b10e5af)]:
+  - @launchpad-ui/avatar@0.3.2
+
+## 0.13.0
+
+### Minor Changes
+
+- [#393](https://github.com/launchdarkly/launchpad-ui/pull/393) [`a7e72b1`](https://github.com/launchdarkly/launchpad-ui/commit/a7e72b1466e26a39b23b0be7518127a4b1be034e) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Clipboard] Isolate styles for CopyToClipboard component and improve handling of default trigger styles versus trigger passed asChild
+
+### Patch Changes
+
+- Updated dependencies [[`a7e72b1`](https://github.com/launchdarkly/launchpad-ui/commit/a7e72b1466e26a39b23b0be7518127a4b1be034e)]:
+  - @launchpad-ui/clipboard@0.7.0
+  - @launchpad-ui/notification@0.4.7
+
 ## 0.12.2
 
 ### Patch Changes
