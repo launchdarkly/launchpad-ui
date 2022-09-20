@@ -1,5 +1,11 @@
 # @launchpad-ui/notification
 
+## 0.5.1-alpha.0
+
+### Patch Changes
+
+- [`3ca0118`](https://github.com/launchdarkly/launchpad-ui/commit/3ca0118482a36299bc9ff6fd9d4566be28c4dd9b) Thanks [@Niznikr](https://github.com/Niznikr)! - [Notification] Deprecate package
+
 ## 0.5.0
 
 ### Minor Changes
