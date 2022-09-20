@@ -9,9 +9,16 @@ import { createFieldErrorId } from './utils';
 type FieldErrorProps = HTMLAttributes<HTMLSpanElement> & {
   name: FieldPath;
   errorMessage?: string;
+  'data-test-id'?: string;
 };
 
-const FieldError = ({ name, errorMessage, className, ...rest }: FieldErrorProps) => {
+const FieldError = ({
+  name,
+  errorMessage,
+  className,
+  'data-test-id': testId = 'field-error',
+  ...rest
+}: FieldErrorProps) => {
   if (!errorMessage) {
     return null;
   }
@@ -21,6 +28,7 @@ const FieldError = ({ name, errorMessage, className, ...rest }: FieldErrorProps)
       {...rest}
       className={cx('Form-fieldError', className)}
       aria-live="polite"
+      data-test-id={testId}
       id={createFieldErrorId(name)}
     >
       {`Error - ${errorMessage}`}

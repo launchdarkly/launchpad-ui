@@ -45,6 +45,7 @@ type ModalProps = {
   transition: 'pop' | 'slideRight';
   onReady?(): void;
   onCancel?(): void;
+  'data-test-id'?: string;
 };
 
 const Modal = ({
@@ -56,6 +57,7 @@ const Modal = ({
   onCancel,
   modalLabelID = 'Modal-title',
   transition,
+  'data-test-id': testId = 'modal',
 }: ModalProps) => {
   const ref = useRef<HTMLDivElement>(null);
 
@@ -94,7 +96,7 @@ const Modal = ({
 
   return (
     <LazyMotion strict features={loadFeatures}>
-      <div className={modalClasses} ref={ref}>
+      <div className={modalClasses} data-test-id={testId} ref={ref}>
         <m.div
           initial="hidden"
           animate="visible"

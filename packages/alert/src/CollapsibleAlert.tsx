@@ -19,6 +19,7 @@ type CollapsibleAlertProps = HTMLAttributes<HTMLElement> & {
    * The message to pass into the Alert.
    */
   message: string | JSX.Element;
+  'data-test-id'?: string;
 };
 
 const CollapsibleAlert = ({
@@ -26,6 +27,7 @@ const CollapsibleAlert = ({
   className,
   kind,
   message,
+  'data-test-id': testId = 'collapsible-alert',
   ...rest
 }: CollapsibleAlertProps) => {
   const [alertCollapsed, setAlertCollapsed] = useState(true);
@@ -38,7 +40,7 @@ const CollapsibleAlert = ({
   };
 
   return (
-    <div className={classes} {...rest}>
+    <div className={classes} data-test-id={testId} {...rest}>
       <Alert kind={kind} size="medium" className="CollapsibleAlert">
         <div>{message}</div>
         <button

@@ -10,12 +10,21 @@ type SplitButtonProps = HTMLAttributes<HTMLDivElement> & {
   kind?: Extract<ButtonProps['kind'], 'primary' | 'default'>;
   size?: ButtonProps['size'];
   disabled?: boolean;
+  'data-test-id'?: string;
 };
 
-const SplitButton = ({ disabled, kind, size, children, className, ...rest }: SplitButtonProps) => {
+const SplitButton = ({
+  disabled,
+  kind,
+  size,
+  children,
+  className,
+  'data-test-id': testId = 'split-button',
+  ...rest
+}: SplitButtonProps) => {
   return (
     <SplitButtonContext.Provider value={{ disabled: !!disabled, kind, size }}>
-      <div {...rest} className={cx('SplitButton', className)}>
+      <div {...rest} className={cx('SplitButton', className)} data-test-id={testId}>
         {children}
       </div>
     </SplitButtonContext.Provider>

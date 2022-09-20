@@ -16,6 +16,7 @@ type NotificationProps = {
   onDismiss?: () => void;
   ttl?: number;
   json?: string;
+  'data-test-id'?: string;
 };
 
 const Notification = ({
@@ -25,6 +26,7 @@ const Notification = ({
   onDismiss = () => undefined,
   json,
   ttl,
+  'data-test-id': testId = 'notification',
   ...props
 }: NotificationProps) => {
   const timeout = useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
@@ -146,6 +148,7 @@ const Notification = ({
     <div
       role="alert"
       {...props}
+      data-test-id={testId}
       className={classes}
       onMouseOver={handleMouseOver}
       onMouseOut={handleMouseOut}

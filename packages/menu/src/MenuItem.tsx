@@ -32,6 +32,7 @@ type MenuItemOwnProps = {
   tooltipOptions?: typeof Tooltip;
   tooltipPlacement?: PopoverPlacement;
   asChild?: boolean;
+  'data-test-id'?: string;
 };
 
 const defaultElement = 'button';
@@ -66,6 +67,7 @@ const MenuItem = <P, T extends ElementType = typeof defaultElement>({
     onKeyDown,
     tooltipOptions,
     asChild,
+    'data-test-id': testId = 'menu-item',
     ...rest
   } = props;
 
@@ -84,6 +86,7 @@ const MenuItem = <P, T extends ElementType = typeof defaultElement>({
           nested && 'Menu-item--nested',
           groupHeader && 'Menu-item--header'
         )}
+        data-test-id={testId}
         role={role}
         onKeyDown={onKeyDown}
       >

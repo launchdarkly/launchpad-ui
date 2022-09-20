@@ -9,9 +9,15 @@ type KindIconProps = {
   kind?: 'info' | 'success' | 'warning' | 'error' | 'striped';
   size?: IconProps['size'];
   className?: string;
+  'data-test-id'?: string;
 };
 
-const KindIcon = ({ kind, size, className }: KindIconProps) => {
+const KindIcon = ({
+  kind,
+  size,
+  className,
+  'data-test-id': testId = 'kind-icon',
+}: KindIconProps) => {
   const iconSize = size ? size : 'medium';
   let body;
 
@@ -32,7 +38,11 @@ const KindIcon = ({ kind, size, className }: KindIconProps) => {
       break;
   }
 
-  return <span className={className}>{body}</span>;
+  return (
+    <span data-test-id={testId} className={className}>
+      {body}
+    </span>
+  );
 };
 
 export { KindIcon };

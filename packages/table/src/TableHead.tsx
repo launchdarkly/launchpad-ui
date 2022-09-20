@@ -4,13 +4,20 @@ import { cx } from 'classix';
 
 import './styles/Table.css';
 
-type TableHeadProps = HTMLAttributes<HTMLTableSectionElement>;
+type TableHeadProps = HTMLAttributes<HTMLTableSectionElement> & {
+  'data-test-id'?: string;
+};
 
-const TableHead = ({ className, children, ...rest }: TableHeadProps) => {
+const TableHead = ({
+  className,
+  children,
+  'data-test-id': testId = 'table-head',
+  ...rest
+}: TableHeadProps) => {
   const classes = cx('Table-header', className);
 
   return (
-    <thead {...rest} className={classes}>
+    <thead {...rest} data-test-id={testId} className={classes}>
       {children}
     </thead>
   );

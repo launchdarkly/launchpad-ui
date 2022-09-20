@@ -64,7 +64,7 @@ const Alert = ({
   dismissible,
   onDismiss,
   noIcon,
-  'data-test-id': testId,
+  'data-test-id': testId = 'alert',
   ...rest
 }: AlertProps) => {
   const [dismissed, setDismissed] = useState(false);

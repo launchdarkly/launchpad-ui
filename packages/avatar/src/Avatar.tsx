@@ -14,6 +14,7 @@ type AvatarProps = HTMLAttributes<HTMLDivElement> & {
   size?: 'tiny' | 'small' | 'medium' | 'large';
   initials?: string;
   defaultIcon?: ComponentType<IconProps>;
+  'data-test-id'?: string;
 };
 
 const DIMENSIONS = {
@@ -30,12 +31,13 @@ const Avatar = ({
   className,
   initials,
   size = 'medium',
+  'data-test-id': testId = 'avatar',
   ...rest
 }: AvatarProps) => {
   const isMounted = useIsMounted();
   const [useDefaultAvatar, setUseDefaultAvatar] = useState(!url);
   const [imageSource, setImageSource] = useState<string | null>(null);
-  const classes = cx('Avatar', styles.Avatar, styles[`Avatar--${size}`], className);
+  const classes = cx(styles.Avatar, styles[`Avatar--${size}`], className);
 
   const processImageSource = useCallback(async (res: Response) => {
     if (res.status === 404 || res.headers.get('Content-type')?.includes('image/svg')) {
@@ -71,12 +73,12 @@ const Avatar = ({
       );
 
       return (
-        <div className={initialsContainerClasses} {...rest}>
+        <div className={initialsContainerClasses} data-test-id={testId} {...rest}>
           <span className={styles['Avatar-initials-content']}>{initials}</span>
         </div>
       );
     } else {
-      return <DefaultIcon className={classes} size={size} {...rest} />;
+      return <DefaultIcon className={classes} data-test-id={testId} size={size} {...rest} />;
     }
   }
 
@@ -90,6 +92,7 @@ const Avatar = ({
       src={imageSource}
       width={dimension}
       height={dimension}
+      data-test-id={testId}
       onError={() => setUseDefaultAvatar(true)}
     />
   );

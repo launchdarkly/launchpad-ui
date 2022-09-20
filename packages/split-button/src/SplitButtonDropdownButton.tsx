@@ -11,7 +11,13 @@ type SplitButtonDropdownButtonProps = Omit<DropdownButtonProps, 'kind' | 'size' 
 
 const SplitButtonDropdownButton = forwardRef<HTMLButtonElement, SplitButtonDropdownButtonProps>(
   (props, ref) => {
-    const { disabled, className, 'aria-label': ariaLabel, ...rest } = props;
+    const {
+      disabled,
+      className,
+      'aria-label': ariaLabel,
+      'data-test-id': testId = 'split-button-dropdown-button',
+      ...rest
+    } = props;
     const { disabled: parentDisabled, kind, size } = useContext(SplitButtonContext);
 
     const isDisabled = parentDisabled || disabled;
@@ -36,6 +42,7 @@ const SplitButtonDropdownButton = forwardRef<HTMLButtonElement, SplitButtonDropd
         kind={kind}
         disabled={isDisabled}
         size={size}
+        data-test-id={testId}
         aria-label={label}
       />
     );
