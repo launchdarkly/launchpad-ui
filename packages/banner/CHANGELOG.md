@@ -1,5 +1,12 @@
 # @launchpad-ui/banner
 
+## 0.5.1-alpha.1
+
+### Patch Changes
+
+- [#405](https://github.com/launchdarkly/launchpad-ui/pull/405) [`86a21a2`](https://github.com/launchdarkly/launchpad-ui/commit/86a21a2f2d89965a278bade44748a76d1ee30a6f) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Alert] Increase css specificity on .Alert selectors
+  [Banner] Increase css specificity on .Banner selectors
+
 ## 0.5.1-alpha.0
 
 ### Patch Changes
