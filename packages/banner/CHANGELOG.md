@@ -46,6 +46,12 @@
   - @launchpad-ui/button@0.7.1
   - @launchpad-ui/icons@0.5.1
 
+## 0.5.1-alpha.0
+
+### Patch Changes
+
+- [`7732143`](https://github.com/launchdarkly/launchpad-ui/commit/7732143080ff13af60c4ac01342a3432996b6485) Thanks [@Niznikr](https://github.com/Niznikr)! - Replace enums with string union types
+
 ## 0.5.0
 
 ### Minor Changes

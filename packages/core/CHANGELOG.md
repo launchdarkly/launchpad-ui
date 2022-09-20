@@ -138,6 +138,21 @@
   - @launchpad-ui/tooltip@0.6.1
   - @launchpad-ui/overlay@0.3.8
 
+## 0.14.1-alpha.0
+
+### Patch Changes
+
+- [`7732143`](https://github.com/launchdarkly/launchpad-ui/commit/7732143080ff13af60c4ac01342a3432996b6485) Thanks [@Niznikr](https://github.com/Niznikr)! - Replace enums with string union types
+
+* [`3ca0118`](https://github.com/launchdarkly/launchpad-ui/commit/3ca0118482a36299bc9ff6fd9d4566be28c4dd9b) Thanks [@Niznikr](https://github.com/Niznikr)! - [Notification] Deprecate package
+
+* Updated dependencies [[`7732143`](https://github.com/launchdarkly/launchpad-ui/commit/7732143080ff13af60c4ac01342a3432996b6485), [`3ca0118`](https://github.com/launchdarkly/launchpad-ui/commit/3ca0118482a36299bc9ff6fd9d4566be28c4dd9b)]:
+  - @launchpad-ui/alert@0.4.1-alpha.0
+  - @launchpad-ui/banner@0.5.1-alpha.0
+  - @launchpad-ui/snackbar@0.1.0-alpha.3
+  - @launchpad-ui/toast@0.1.0-alpha.3
+  - @launchpad-ui/notification@0.5.1-alpha.0
+
 ## 0.14.0
 
 ### Minor Changes
