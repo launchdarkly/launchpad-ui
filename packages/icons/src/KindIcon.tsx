@@ -1,17 +1,18 @@
+import type { IconProps } from './Icon';
+
 import { CheckCircle } from './CheckCircle';
 import { ErrorCircle } from './ErrorCircle';
 import { Info } from './Info';
 import { Warning } from './Warning';
-import { IconSize } from './types';
 
 type KindIconProps = {
-  kind: 'info' | 'success' | 'warning' | 'error' | 'striped';
-  size?: IconSize;
+  kind?: 'info' | 'success' | 'warning' | 'error' | 'striped';
+  size?: IconProps['size'];
   className?: string;
 };
 
 const KindIcon = ({ kind, size, className }: KindIconProps) => {
-  const iconSize = size ? size : IconSize.MEDIUM;
+  const iconSize = size ? size : 'medium';
   let body;
 
   switch (kind) {

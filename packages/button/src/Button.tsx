@@ -1,4 +1,3 @@
-import type { ButtonSize } from './types';
 import type {
   ButtonHTMLAttributes,
   ElementType,
@@ -13,13 +12,12 @@ import { cx } from 'classix';
 import { isValidElement, cloneElement, forwardRef, memo } from 'react';
 
 import './styles/Button.css';
-import { ButtonKind } from './types';
 
 type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
   isLoading?: boolean;
   loadingText?: string | JSX.Element;
-  size?: ButtonSize;
-  kind?: ButtonKind;
+  size?: 'tiny' | 'small' | 'normal' | 'big';
+  kind?: 'default' | 'primary' | 'destructive' | 'minimal' | 'link' | 'close';
   fit?: boolean;
   disabled?: boolean;
   icon?: ReactElement<{ size?: string; key: string; 'aria-hidden': boolean }>;
@@ -34,7 +32,7 @@ const ButtonComponent = forwardRef<HTMLButtonElement, ButtonProps>((props, ref) 
     className,
     size,
     fit,
-    kind = ButtonKind.DEFAULT,
+    kind = 'default',
     isLoading = false,
     loadingText,
     renderIconFirst = false,

@@ -2,7 +2,7 @@ import type { ComponentStoryObj, DecoratorFn } from '@storybook/react';
 
 import { Fragment } from 'react';
 
-import { Button, ButtonGroupSpacing, ButtonKind } from '../src';
+import { Button } from '../src';
 import { ButtonGroup } from '../src/ButtonGroup';
 
 import './Button.stories.css';
@@ -21,10 +21,10 @@ const buttonTemplateWithStates: DecoratorFn = (storyComponent, context) => {
         {ButtonLabels[ButtonLabels.length - 1 >= index ? index : ButtonLabels.length - 1]}
       </span>
       <ButtonGroup {...storyArgs}>
-        <Button kind={ButtonKind.DEFAULT} className={className}>
+        <Button kind="default" className={className}>
           First
         </Button>
-        <Button kind={ButtonKind.PRIMARY}>Second</Button>
+        <Button kind="primary">Second</Button>
       </ButtonGroup>
     </Fragment>
   ));
@@ -36,10 +36,10 @@ const buttonTemplateWithStates: DecoratorFn = (storyComponent, context) => {
       {PseudoStateButtons}
       <span className="Button-state-label">Disabled</span>
       <ButtonGroup {...storyArgs}>
-        <Button kind={ButtonKind.DEFAULT} disabled>
+        <Button kind="default" disabled>
           First
         </Button>
-        <Button kind={ButtonKind.PRIMARY}>Second</Button>
+        <Button kind="primary">Second</Button>
       </ButtonGroup>
     </div>
   );
@@ -87,12 +87,12 @@ export const Basic: Story = {};
 
 export const Compact: Story = {
   args: {
-    spacing: ButtonGroupSpacing.COMPACT,
+    spacing: 'compact',
   },
 };
 
 export const Large: Story = {
   args: {
-    spacing: ButtonGroupSpacing.LARGE,
+    spacing: 'large',
   },
 };

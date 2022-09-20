@@ -1,6 +1,6 @@
-import type { Offset } from '@launchpad-ui/popover';
+import type { Offset, PopoverProps } from '@launchpad-ui/popover';
 
-import { Popover, PopoverInteractionKind } from '@launchpad-ui/popover';
+import { Popover } from '@launchpad-ui/popover';
 import { cx } from 'classix';
 import { Fragment } from 'react';
 
@@ -26,7 +26,7 @@ type ProgressBubblesProps = {
   vertical?: boolean;
   className?: string;
   items?: ProgressBubbleInfo[];
-  popoverInteraction?: PopoverInteractionKind;
+  popoverInteraction?: PopoverProps['interactionKind'];
 };
 
 const ProgressBubbles = ({
@@ -37,7 +37,7 @@ const ProgressBubbles = ({
   bubbleLabels,
   showCurrentLabelOnly = true,
   items,
-  popoverInteraction = PopoverInteractionKind.HOVER_OR_FOCUS,
+  popoverInteraction = 'hover-or-focus',
 }: ProgressBubblesProps) => {
   const { ref, dimensions } = useDimensions();
   let children = [];

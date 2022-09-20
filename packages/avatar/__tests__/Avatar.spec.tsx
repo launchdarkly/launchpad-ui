@@ -72,4 +72,9 @@ describe('Avatar', () => {
       expect(screen.queryByRole('img')).not.toBeInTheDocument();
     });
   });
+
+  it('can render initials', () => {
+    render(<Avatar url="" defaultIcon={Person} initials="AB" />);
+    expect(screen.getByText('AB')).toBeInTheDocument();
+  });
 });

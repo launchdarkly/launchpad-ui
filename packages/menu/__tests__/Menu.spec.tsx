@@ -4,7 +4,7 @@ import { Popover } from '@launchpad-ui/popover';
 import { it, expect, describe, vi } from 'vitest';
 
 import { render, screen, userEvent, waitFor } from '../../../test/utils';
-import { Menu, MenuDivider, MenuItem, MenuItemLink, MenuSearch, MenuSize } from '../src';
+import { Menu, MenuDivider, MenuItem, MenuItemLink, MenuSearch } from '../src';
 
 type TestMenu = {
   hideSearch?: boolean;
@@ -20,15 +20,19 @@ const createMenu = ({
     <MenuItem item="two" disabled>
       two
     </MenuItem>
-    <MenuItem item="three">three</MenuItem>
+    <MenuItem item="three" isHighlighted>
+      three
+    </MenuItem>
     <MenuDivider />
-    <MenuItem item="four">four</MenuItem>
+    <MenuItem item="four" nested>
+      four
+    </MenuItem>
   </Menu>
 );
 
 describe('Menu', () => {
   it('renders', () => {
-    render(createMenu({ size: MenuSize.SMALL }));
+    render(createMenu({ size: 'sm' }));
     expect(screen.getByRole('menu')).toBeInTheDocument();
   });
 

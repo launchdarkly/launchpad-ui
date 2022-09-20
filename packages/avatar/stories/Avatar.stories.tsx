@@ -1,7 +1,7 @@
 import type { ComponentStoryObj, StoryFn } from '@storybook/react';
 
 import { Person } from '../../icons/src';
-import { Avatar, AvatarSize } from '../src';
+import { Avatar } from '../src';
 
 export default {
   component: Avatar,
@@ -60,7 +60,7 @@ export const Initials: Story = {
 
 export const TinySize: Story = {
   args: {
-    size: AvatarSize.TINY,
+    size: 'tiny',
     'aria-label': 'Lance Darkly',
     initials: 'LD',
   },
@@ -68,7 +68,7 @@ export const TinySize: Story = {
 
 export const SmallSize: Story = {
   args: {
-    size: AvatarSize.SMALL,
+    size: 'small',
     'aria-label': 'Claire Bravo',
     initials: 'CB',
   },
@@ -76,7 +76,7 @@ export const SmallSize: Story = {
 
 export const MediumSize: Story = {
   args: {
-    size: AvatarSize.MEDIUM,
+    size: 'medium',
     'aria-label': 'Julia Darkly',
     initials: 'JD',
   },
@@ -84,7 +84,7 @@ export const MediumSize: Story = {
 
 export const LargeSize: Story = {
   args: {
-    size: AvatarSize.LARGE,
+    size: 'large',
     'aria-label': 'Mike Rongers',
     initials: 'MR',
   },

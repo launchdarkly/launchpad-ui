@@ -1,11 +1,13 @@
+import type { NotificationProps } from '../src';
+
 import { it, expect, describe, vi } from 'vitest';
 
 import { render, screen, userEvent, waitFor } from '../../../test/utils';
-import { Notification, NotificationLevel } from '../src';
+import { Notification } from '../src';
 
-const props = {
-  level: NotificationLevel.INFO,
-  message: <>{NotificationLevel.INFO}</>,
+const props: NotificationProps = {
+  level: 'info',
+  message: <>info</>,
   details: 'This is a detail',
 };
 

@@ -1,11 +1,11 @@
 import { it, expect, describe, vi } from 'vitest';
 
 import { render, screen, userEvent } from '../../../test/utils';
-import { Chip, ChipKind, ChipSize } from '../src';
+import { Chip } from '../src';
 
 describe('Chip', () => {
   it('renders', () => {
-    render(<Chip size={ChipSize.NORMAL}>Default Chip</Chip>);
+    render(<Chip size="normal">Default Chip</Chip>);
     expect(screen.getByText('Default Chip')).toBeInTheDocument();
   });
 
@@ -13,7 +13,7 @@ describe('Chip', () => {
     const spy = vi.fn();
     const user = userEvent.setup();
     render(
-      <Chip kind={ChipKind.NEW} onClick={spy}>
+      <Chip kind="new" onClick={spy}>
         New Chip
       </Chip>
     );

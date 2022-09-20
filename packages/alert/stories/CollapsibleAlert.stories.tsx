@@ -1,6 +1,6 @@
 import type { ComponentStoryObj } from '@storybook/react';
 
-import { AlertKind, CollapsibleAlert } from '../src';
+import { CollapsibleAlert } from '../src';
 
 export default {
   component: CollapsibleAlert,
@@ -34,7 +34,7 @@ type Story = ComponentStoryObj<typeof CollapsibleAlert>;
 
 export const Collapsible: Story = {
   args: {
-    kind: AlertKind.INFO,
+    kind: 'info',
     message: (
       <>
         This flag is a prerequisite of <strong>2</strong> other flags in <strong>Production</strong>

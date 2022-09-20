@@ -1,6 +1,5 @@
 import type { ComponentStoryObj, StoryFn } from '@storybook/react';
 
-import { ButtonKind, ButtonSize } from '@launchpad-ui/button';
 import { Menu, MenuItem } from '@launchpad-ui/menu';
 import { userEvent, within } from '@storybook/testing-library';
 
@@ -43,7 +42,7 @@ export const Example: Story = {
     onStateChange: () => undefined,
     onSelect: () => undefined,
     children: [
-      <DropdownButton size={ButtonSize.SMALL} kind={ButtonKind.PRIMARY} key="1">
+      <DropdownButton size="small" kind="primary" key="1">
         Click this button
       </DropdownButton>,
       <Menu key="2">
@@ -80,7 +79,7 @@ export const NoArrow: Story = {
     onStateChange: () => undefined,
     onSelect: () => undefined,
     children: [
-      <DropdownButton hideCaret kind={ButtonKind.PRIMARY} key="1">
+      <DropdownButton hideCaret kind="primary" key="1">
         DropdownButton
       </DropdownButton>,
       <Menu key="2">

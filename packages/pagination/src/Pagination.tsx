@@ -1,3 +1,4 @@
+import type { PaginationChange } from './PaginationButton';
 import type { HTMLAttributes } from 'react';
 
 import { cx } from 'classix';
@@ -5,7 +6,6 @@ import { cx } from 'classix';
 import { PaginationButton } from './PaginationButton';
 import { PaginationText } from './PaginationText';
 import './styles/Pagination.css';
-import { PaginationChange } from './types';
 
 type PaginationProps = HTMLAttributes<HTMLElement> & {
   resourceName: string;
@@ -43,13 +43,13 @@ const Pagination = ({
     >
       <PaginationButton
         resourceName={resourceName}
-        kind={PaginationChange.FIRST}
+        kind="first"
         disabled={!!isFirstDisabled}
         onClick={onChange}
       />
       <PaginationButton
         resourceName={resourceName}
-        kind={PaginationChange.PREV}
+        kind="prev"
         disabled={!!isPrevDisabled}
         onClick={onChange}
       />
@@ -61,13 +61,13 @@ const Pagination = ({
       />
       <PaginationButton
         resourceName={resourceName}
-        kind={PaginationChange.NEXT}
+        kind="next"
         disabled={!!isNextDisabled}
         onClick={onChange}
       />
       <PaginationButton
         resourceName={resourceName}
-        kind={PaginationChange.LAST}
+        kind="last"
         disabled={!!isLastDisabled}
         onClick={onChange}
       />

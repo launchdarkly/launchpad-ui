@@ -3,7 +3,7 @@ import type { MouseEvent, ReactNode } from 'react';
 
 import { IconButton } from '@launchpad-ui/button';
 import { FocusTrap } from '@launchpad-ui/focus-trap';
-import { Close, IconSize } from '@launchpad-ui/icons';
+import { Close } from '@launchpad-ui/icons';
 import { usePreventScroll } from '@react-aria/overlays';
 import { cx } from 'classix';
 import { LazyMotion, m } from 'framer-motion';
@@ -117,7 +117,7 @@ const Modal = ({
               {withCloseButton && (
                 <IconButton
                   aria-label="close"
-                  icon={<Close size={IconSize.MEDIUM} />}
+                  icon={<Close size="medium" />}
                   className="Modal-close"
                   onClick={onCancel}
                   data-test-id="Modal-close"

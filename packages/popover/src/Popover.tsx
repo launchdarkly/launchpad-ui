@@ -31,7 +31,6 @@ import {
 } from 'react';
 
 import './styles/Popover.css';
-import { PopoverInteractionKind } from './types';
 
 const loadFeatures = () =>
   import(
@@ -51,7 +50,7 @@ type PopoverProps = {
   enforceFocus?: boolean;
   hoverCloseDelay?: number;
   hoverOpenDelay?: number;
-  interactionKind?: PopoverInteractionKind;
+  interactionKind?: 'hover' | 'hover-target-only' | 'hover-or-focus' | 'click';
   isFixed?: boolean;
   isModal?: boolean;
   isOpen?: boolean;
@@ -115,7 +114,7 @@ const Popover = ({
   restrictWidth = true,
   isModal = false,
   isFixed = false,
-  interactionKind = PopoverInteractionKind.CLICK,
+  interactionKind = 'click',
   hoverOpenDelay = 250,
   hoverCloseDelay = 250,
   disablePlacementFlip = false,
