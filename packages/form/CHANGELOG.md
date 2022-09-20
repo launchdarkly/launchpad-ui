@@ -1,5 +1,16 @@
 # @launchpad-ui/form
 
+## 0.6.0
+
+### Minor Changes
+
+- [#386](https://github.com/launchdarkly/launchpad-ui/pull/386) [`86b0120`](https://github.com/launchdarkly/launchpad-ui/commit/86b0120c548063baba69205215f644b4a2d9a7fd) Thanks [@Niznikr](https://github.com/Niznikr)! - Replace enums with string union types
+
+### Patch Changes
+
+- Updated dependencies [[`86b0120`](https://github.com/launchdarkly/launchpad-ui/commit/86b0120c548063baba69205215f644b4a2d9a7fd)]:
+  - @launchpad-ui/icons@0.5.0
+
 ## 0.5.0
 
 ### Minor Changes
