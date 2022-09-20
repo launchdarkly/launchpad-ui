@@ -39,7 +39,7 @@
   --Alert-text-color: var(--color-text-subtle-primary);
 }
 
-.Alert {
+:global(.Alert) {
   position: relative;
   display: flex;
   gap: 1.4rem;
@@ -63,7 +63,7 @@
   line-height: 1.25;
 }
 
-.Alert :global(.ButtonGroup) {
+:global(.Alert).Alert :global(.ButtonGroup) {
   margin-top: 1.2rem;
 }
 
@@ -71,71 +71,71 @@
   line-height: 1.2857;
 }
 
-.Alert--inline {
+.Alert.Alert--inline {
   background-color: unset;
   padding: 0;
 }
 
 /* Alert size variants */
 
-.Alert--small {
+.Alert.Alert--small {
   font-size: 1.3rem;
 }
 
-.Alert--small .Alert-icon {
+.Alert.Alert--small .Alert-icon {
   top: 0.8em;
 }
 
-.Alert--wide {
+.Alert.Alert--wide {
   width: 86%;
   margin-top: 0.8rem;
 }
 
-.Alert--compact {
+.Alert.Alert--compact {
   width: fit-content;
 }
 
 /* for Edge pre-2019 browsers. IE doesn't recognize @supports at all. */
 @supports not (width: fit-content) {
-  .Alert--compact {
+  .Alert.Alert--compact {
     display: table;
   }
 }
 
 /* Alert kind variants */
 
-.Alert--info .Alert-icon :global(svg) {
+.Alert.Alert--info .Alert-icon :global(svg) {
   fill: var(--reskin-info-blue-base);
 }
 
-.Alert--success .Alert-icon :global(svg) {
+.Alert.Alert--success .Alert-icon :global(svg) {
   fill: var(--reskin-success-green-base);
 }
 
-.Alert--warning .Alert-icon :global(svg) {
+.Alert.Alert--warning .Alert-icon :global(svg) {
   fill: var(--reskin-warn-gold-base);
 }
 
-.Alert--error .Alert-icon :global(svg) > :global(path) {
+.Alert.Alert--error .Alert-icon :global(svg) > :global(path) {
   fill: var(--reskin-error-red-base);
 }
 
-.Alert--info.Alert--bordered {
+.Alert.Alert--info.Alert--bordered {
   border: var(--border-width-1) solid var(--Alert-color-border-info);
   background-color: var(--Alert-color-background-info);
 }
 
-.Alert--success.Alert--bordered {
+.Alert.Alert--success.Alert--bordered {
   border: var(--border-width-1) solid var(--Alert-color-border-success);
   background-color: var(--Alert-color-background-success);
 }
 
-.Alert--warning.Alert--bordered {
+.Alert.Alert--warning.Alert--bordered {
   border: var(--border-width-1) solid var(--Alert-color-border-warning);
   background-color: var(--Alert-color-background-warning);
 }
 
-.Alert--error.Alert--bordered {
+.Alert.Alert--error.Alert--bordered {
   border: var(--border-width-1) solid var(--Alert-color-border-error);
   background-color: var(--Alert-color-background-error);
 }

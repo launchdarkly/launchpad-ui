@@ -12,11 +12,11 @@ backround support in CollapsibleAlert */
   --CollapsibleAlert-icon-color: var(--color-gray-800);
 }
 
-.CollapsibleAlert {
+:global(.CollapsibleAlert).CollapsibleAlert {
   margin-top: 0.8rem;
 }
 
-.CollapsibleAlert :global(.Alert-content) {
+:global(.CollapsibleAlert).CollapsibleAlert :global(.Alert-content) {
   width: 100%;
 }
 
