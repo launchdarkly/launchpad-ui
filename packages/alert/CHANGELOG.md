@@ -58,6 +58,15 @@
   - @launchpad-ui/button@0.7.1
   - @launchpad-ui/icons@0.5.1
 
+## 0.4.1-alpha.1
+
+### Patch Changes
+
+- [#405](https://github.com/launchdarkly/launchpad-ui/pull/405) [`86a21a2`](https://github.com/launchdarkly/launchpad-ui/commit/86a21a2f2d89965a278bade44748a76d1ee30a6f) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Alert] Increase css specificity on .Alert selectors
+  [Banner] Increase css specificity on .Banner selectors
+
+* [#404](https://github.com/launchdarkly/launchpad-ui/pull/404) [`c8284d5`](https://github.com/launchdarkly/launchpad-ui/commit/c8284d5990f169f13af68e9b16de5625f932ecc6) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Alert] Explicitly define header color
+
 ## 0.4.1-alpha.0
 
 ### Patch Changes
