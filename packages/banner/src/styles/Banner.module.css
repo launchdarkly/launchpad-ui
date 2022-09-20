@@ -22,7 +22,7 @@
   }
 }
 
-.Banner {
+:global(.Banner).Banner {
   background: var(--Banner-color-background);
   display: flex;
   padding: 1.4rem 1.8rem;
@@ -50,34 +50,34 @@
   flex-grow: 1;
 }
 
-.Banner--error {
+.Banner.Banner--error {
   background-color: var(--Banner-color-background-error);
   border-bottom-color: var(--Banner-color-border-bottom-error);
 }
 
-.Banner--warning {
+.Banner.Banner--warning {
   background-color: var(--Banner-color-background-warning);
   border-bottom-color: var(--Banner-color-border-bottom-warning);
 }
 
-.Banner--info {
+.Banner.Banner--info {
   background-color: var(--Banner-color-background-info);
   border-bottom-color: var(--Banner-color-border-bottom-info);
 }
 
 /* reset Icon--info positioning hack */
-.Banner--info :global(.Icon--info) {
+.Banner.Banner--info :global(.Icon--info) {
   top: 0;
 }
 
-.Banner--info .Banner-icon svg {
+.Banner.Banner--info .Banner-icon svg {
   fill: var(--Banner-icon-color-info);
 }
 
-.Banner--error .Banner-icon svg > path {
+.Banner.Banner--error .Banner-icon svg > path {
   fill: var(--Banner-icon-color-error);
 }
 
-.Banner--warning .Banner-icon svg {
+.Banner.Banner--warning .Banner-icon svg {
   fill: var(--Banner-icon-color-warning);
 }
