@@ -1,5 +1,37 @@
 # @launchpad-ui/core
 
+## 0.14.0
+
+### Minor Changes
+
+- [#386](https://github.com/launchdarkly/launchpad-ui/pull/386) [`86b0120`](https://github.com/launchdarkly/launchpad-ui/commit/86b0120c548063baba69205215f644b4a2d9a7fd) Thanks [@Niznikr](https://github.com/Niznikr)! - Replace enums with string union types
+
+### Patch Changes
+
+- Updated dependencies [[`86b0120`](https://github.com/launchdarkly/launchpad-ui/commit/86b0120c548063baba69205215f644b4a2d9a7fd)]:
+  - @launchpad-ui/alert@0.4.0
+  - @launchpad-ui/avatar@0.4.0
+  - @launchpad-ui/banner@0.5.0
+  - @launchpad-ui/button@0.7.0
+  - @launchpad-ui/chip@0.6.0
+  - @launchpad-ui/clipboard@0.8.0
+  - @launchpad-ui/dropdown@0.5.0
+  - @launchpad-ui/filter@0.4.0
+  - @launchpad-ui/form@0.6.0
+  - @launchpad-ui/icons@0.5.0
+  - @launchpad-ui/menu@0.6.0
+  - @launchpad-ui/modal@0.8.0
+  - @launchpad-ui/navigation@0.6.0
+  - @launchpad-ui/notification@0.5.0
+  - @launchpad-ui/pagination@0.3.0
+  - @launchpad-ui/popover@0.8.0
+  - @launchpad-ui/progress@0.5.0
+  - @launchpad-ui/progress-bubbles@0.5.0
+  - @launchpad-ui/split-button@0.6.0
+  - @launchpad-ui/table@0.4.0
+  - @launchpad-ui/tooltip@0.6.0
+  - @launchpad-ui/overlay@0.3.7
+
 ## 0.13.1
 
 ### Patch Changes
