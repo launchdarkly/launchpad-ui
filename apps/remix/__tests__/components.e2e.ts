@@ -29,7 +29,6 @@ test.describe('Remix SSR', () => {
             .replace(/([A-Z])/g, ([letter]) => `-${letter.toLowerCase()}`);
 
         const element = page.locator(`[data-test-id=${dashify(component.name)}]`);
-        console.log(element);
 
         await expect(element).toBeVisible();
       });

@@ -399,8 +399,6 @@ const Popover = ({
       </LazyMotion>
     );
 
-    console.log(testId);
-
     return (
       <div
         id={popoverId.current}

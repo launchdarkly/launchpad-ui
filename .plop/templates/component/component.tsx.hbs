@@ -10,7 +10,7 @@ type {{pascalCase name}}Props = {
   'data-test-id'?: string;
 };
 
-const {{pascalCase name}} = ({ children, className, 'data-test-id': testId = '{{pascalCase name}}' }: {{pascalCase name}}Props) => {
+const {{pascalCase name}} = ({ children, className, 'data-test-id': testId = '{{kebabCase name}}' }: {{pascalCase name}}Props) => {
   return (
     <div className={cx('{{pascalCase name}}', className)}>
       <span>{children}</span>
