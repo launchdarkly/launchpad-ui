@@ -15,6 +15,7 @@ type SliderProps = {
   disabled?: boolean;
   hideTrack?: boolean;
   id?: string;
+  'data-test-id'?: string;
 };
 
 const Slider = ({
@@ -28,13 +29,17 @@ const Slider = ({
   disabled,
   onChange,
   id,
+  'data-test-id': testId = 'slider',
 }: SliderProps) => {
   const valueHandler =
     (callback: (value: number) => void) => (event: SyntheticEvent<HTMLInputElement>) =>
       callback(parseFloat(event.currentTarget.value));
 
   return (
-    <div className={cx('Slider', (disabled || readOnly) && 'Slider--disabled', className)}>
+    <div
+      className={cx('Slider', (disabled || readOnly) && 'Slider--disabled', className)}
+      data-test-id={testId}
+    >
       {!hideTrack && <div className="Slider-track" />}
       {!hideTrack && <div className="Slider-fill" style={{ width: `${value}%` }} />}
       <input

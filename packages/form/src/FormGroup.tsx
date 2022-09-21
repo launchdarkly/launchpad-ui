@@ -8,15 +8,24 @@ type FormGroupProps = HTMLAttributes<HTMLDivElement> & {
   name?: string | string[];
   ignoreValidation?: boolean;
   isInvalid?: boolean;
+  'data-test-id'?: string;
 };
 
 const FormGroup = (props: FormGroupProps) => {
-  const { className, name, ignoreValidation, isInvalid, children, ...rest } = props;
+  const {
+    className,
+    name,
+    ignoreValidation,
+    isInvalid,
+    children,
+    'data-test-id': testId = 'form-group',
+    ...rest
+  } = props;
 
   const classes = cx('Form-group', className, !ignoreValidation && isInvalid && 'is-invalid');
 
   return (
-    <div className={classes} {...rest}>
+    <div className={classes} data-test-id={testId} {...rest}>
       {children}
     </div>
   );

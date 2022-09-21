@@ -1,7 +1,7 @@
 import type { TooltipProps } from '@launchpad-ui/tooltip';
 import type { HTMLAttributes, KeyboardEventHandler } from 'react';
 
-import { CheckCircle, IconSize } from '@launchpad-ui/icons';
+import { CheckCircle } from '@launchpad-ui/icons';
 import { Tooltip } from '@launchpad-ui/tooltip';
 import { Slot } from '@radix-ui/react-slot';
 import { announce } from '@react-aria/live-announcer';
@@ -20,6 +20,7 @@ type CopyToClipboardProps = HTMLAttributes<HTMLSpanElement> & {
   popoverTargetClassName?: string;
   onCopy?(): void;
   asChild?: boolean;
+  'data-test-id'?: string;
 };
 
 type CopyToClipboardHandleRef = {
@@ -28,7 +29,7 @@ type CopyToClipboardHandleRef = {
 
 const CopyConfirmation = () => (
   <span className={styles['Clipboard-confirmation']}>
-    <CheckCircle className={styles['Clipboard-checkmark']} size={IconSize.MEDIUM} />
+    <CheckCircle className={styles['Clipboard-checkmark']} size="medium" />
     <span className={styles['Clipboard-copied']}>Copied!</span>
   </span>
 );
@@ -48,6 +49,7 @@ const CopyToClipboard = forwardRef<CopyToClipboardHandleRef, CopyToClipboardProp
       triggerAriaLabel,
       onCopy,
       asChild,
+      'data-test-id': testId = 'copy-to-clipboard',
       ...rest
     },
     ref
@@ -105,7 +107,7 @@ const CopyToClipboard = forwardRef<CopyToClipboardHandleRef, CopyToClipboardProp
     const Component = asChild ? Slot : CopyCodeButton;
 
     return (
-      <span className={classes} {...rest}>
+      <span className={classes} data-test-id={testId} {...rest}>
         <Tooltip
           {...tooltipOptions}
           isOpen={isOpen}

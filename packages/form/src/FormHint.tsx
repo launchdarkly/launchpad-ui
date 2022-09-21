@@ -4,13 +4,20 @@ import { cx } from 'classix';
 
 import './styles/FormHint.css';
 
-type FormHintProps = HTMLAttributes<HTMLDivElement>;
+type FormHintProps = HTMLAttributes<HTMLDivElement> & {
+  'data-test-id'?: string;
+};
 
-const FormHint = ({ className, children, ...rest }: FormHintProps) => {
+const FormHint = ({
+  className,
+  children,
+  'data-test-id': testId = 'form-hint',
+  ...rest
+}: FormHintProps) => {
   const classes = cx('Form-hint', className);
 
   return (
-    <div {...rest} className={classes}>
+    <div {...rest} data-test-id={testId} className={classes}>
       {children}
     </div>
   );

@@ -1,20 +1,27 @@
 import type { IconProps } from '@launchpad-ui/icons';
 import type { ComponentType, HTMLAttributes } from 'react';
 
-import { IconSize, Person } from '@launchpad-ui/icons';
+import { Person } from '@launchpad-ui/icons';
 import { cx } from 'classix';
 import { useCallback, useEffect, useState } from 'react';
 
-import './styles/Avatar.css';
-import { AvatarSize, AvatarDimension } from './types';
+import styles from './styles/Avatar.module.css';
 import { useIsMounted } from './utils';
 
 type AvatarProps = HTMLAttributes<HTMLDivElement> & {
   alt?: string;
   url: string;
-  size?: AvatarSize;
+  size?: 'tiny' | 'small' | 'medium' | 'large';
   initials?: string;
   defaultIcon?: ComponentType<IconProps>;
+  'data-test-id'?: string;
+};
+
+const DIMENSIONS = {
+  tiny: '10',
+  small: '16',
+  medium: '24',
+  large: '40',
 };
 
 const Avatar = ({
@@ -23,13 +30,14 @@ const Avatar = ({
   defaultIcon: DefaultIcon = Person,
   className,
   initials,
-  size = AvatarSize.MEDIUM,
+  size = 'medium',
+  'data-test-id': testId = 'avatar',
   ...rest
 }: AvatarProps) => {
   const isMounted = useIsMounted();
   const [useDefaultAvatar, setUseDefaultAvatar] = useState(!url);
   const [imageSource, setImageSource] = useState<string | null>(null);
-  const classes = cx(`Avatar Avatar--${size}`, className);
+  const classes = cx(styles.Avatar, styles[`Avatar--${size}`], className);
 
   const processImageSource = useCallback(async (res: Response) => {
     if (res.status === 404 || res.headers.get('Content-type')?.includes('image/svg')) {
@@ -58,25 +66,23 @@ const Avatar = ({
     if (initials) {
       const color = (initials.charCodeAt(0) + initials.charCodeAt(1)) % 5;
 
-      const initialsContainerClasses = cx(classes, `Avatar--initials Avatar--color${color}`);
+      const initialsContainerClasses = cx(
+        classes,
+        styles['Avatar--initials'],
+        styles[`Avatar--color${color as 0 | 1 | 2 | 3 | 4}`]
+      );
 
       return (
-        <div className={initialsContainerClasses} {...rest}>
-          <span className="Avatar-initials-content">{initials}</span>
+        <div className={initialsContainerClasses} data-test-id={testId} {...rest}>
+          <span className={styles['Avatar-initials-content']}>{initials}</span>
         </div>
       );
     } else {
-      return (
-        <DefaultIcon
-          className={classes}
-          size={IconSize[size.toUpperCase() as keyof typeof AvatarSize]}
-          {...rest}
-        />
-      );
+      return <DefaultIcon className={classes} data-test-id={testId} size={size} {...rest} />;
     }
   }
 
-  const dimension = AvatarDimension[size.toUpperCase() as keyof typeof AvatarDimension];
+  const dimension = DIMENSIONS[size];
 
   return (
     <img
@@ -86,6 +92,7 @@ const Avatar = ({
       src={imageSource}
       width={dimension}
       height={dimension}
+      data-test-id={testId}
       onError={() => setUseDefaultAvatar(true)}
     />
   );

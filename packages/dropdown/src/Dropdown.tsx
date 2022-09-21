@@ -25,6 +25,7 @@ const Dropdown = <T extends string | object | number>(props: DropdownProps<T>) =
     onSelect,
     onStateChange,
     children,
+    'data-test-id': testId = 'dropdown',
     ...rest
   } = props;
 
@@ -108,6 +109,7 @@ const Dropdown = <T extends string | object | number>(props: DropdownProps<T>) =
       disabled={disabled}
       targetClassName={popoverTargetClasses}
       popoverClassName={popoverClasses}
+      data-test-id={testId}
       {...rest}
     >
       {renderTrigger()}

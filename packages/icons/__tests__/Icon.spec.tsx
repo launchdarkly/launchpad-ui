@@ -1,16 +1,16 @@
 import { it, expect, describe } from 'vitest';
 
 import { render, screen } from '../../../test/utils';
-import { Add, IconSize, Info, KindIcon } from '../src';
+import { Add, Info, KindIcon } from '../src';
 
 describe('Icon', () => {
   it('renders', () => {
-    render(<Add size={IconSize.MEDIUM} />);
+    render(<Add size="medium" />);
     expect(screen.getByRole('img', { hidden: true })).toBeInTheDocument();
   });
 
   it('is labelled by a title', () => {
-    render(<Info size={IconSize.MEDIUM} />);
+    render(<Info size="medium" />);
     expect(screen.getByTitle('Info')).toBeInTheDocument();
   });
 

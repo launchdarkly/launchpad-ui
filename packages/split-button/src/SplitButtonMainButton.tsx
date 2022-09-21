@@ -11,7 +11,14 @@ type SplitButtonMainButtonProps = Omit<ButtonProps, 'kind' | 'size'>;
 
 const SplitButtonMainButton = forwardRef<HTMLButtonElement, SplitButtonMainButtonProps>(
   (props, ref) => {
-    const { disabled, children, className, 'aria-label': ariaLabel, ...rest } = props;
+    const {
+      disabled,
+      children,
+      className,
+      'aria-label': ariaLabel,
+      'data-test-id': testId = 'split-button-main-button',
+      ...rest
+    } = props;
     const { disabled: parentDisabled, kind, size } = useContext(SplitButtonContext);
 
     const isDisabled = parentDisabled || disabled;
@@ -40,6 +47,7 @@ const SplitButtonMainButton = forwardRef<HTMLButtonElement, SplitButtonMainButto
         size={size}
         aria-label={label}
         ref={ref}
+        data-test-id={testId}
         {...rest}
       >
         {children}

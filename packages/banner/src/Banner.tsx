@@ -1,15 +1,15 @@
-import type { AlertKind } from '@launchpad-ui/alert';
+import type { AlertProps } from '@launchpad-ui/alert';
 import type { HTMLAttributes } from 'react';
 
-import { ButtonKind, IconButton, IconButtonSize } from '@launchpad-ui/button';
-import { Close, IconSize, KindIcon } from '@launchpad-ui/icons';
+import { IconButton } from '@launchpad-ui/button';
+import { Close, KindIcon } from '@launchpad-ui/icons';
 import { cx } from 'classix';
 
 import './styles/Banner.css';
 
 type BannerProps = HTMLAttributes<HTMLDivElement> & {
   'data-test-id'?: string;
-  kind: AlertKind;
+  kind: AlertProps['kind'];
   onDismiss?(): void;
   dismissible?: boolean;
 };
@@ -20,7 +20,7 @@ const Banner = ({
   children,
   onDismiss,
   dismissible,
-  'data-test-id': testId,
+  'data-test-id': testId = 'banner',
   ...rest
 }: BannerProps) => {
   const classes = cx('Banner', `Banner--${kind}`, className);
@@ -32,11 +32,11 @@ const Banner = ({
       {dismissible && (
         <IconButton
           aria-label="Close this notification."
-          icon={<Close size={IconSize.SMALL} />}
-          size={IconButtonSize.SMALL}
+          icon={<Close size="small" />}
+          size="small"
           className="Banner-close"
           onClick={onDismiss}
-          kind={ButtonKind.CLOSE}
+          kind="close"
           data-test-id={testId ? `${testId}-dismiss-button` : undefined}
         />
       )}

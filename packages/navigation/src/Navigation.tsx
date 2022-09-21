@@ -1,3 +1,4 @@
+import type { NavProps } from './Nav';
 import type { NavItemProps } from './NavItem';
 import type { NavItemWithTooltipProps } from './NavItemWithTooltip';
 import type { CollectionBase } from '@react-types/shared';
@@ -16,7 +17,6 @@ import { Nav } from './Nav';
 import { NavItem } from './NavItem';
 import { NavItemWithTooltip } from './NavItemWithTooltip';
 import './styles/Navigation.css';
-import { NavKind } from './types';
 import { titlecase, useMediaQuery } from './utils';
 
 type NavigationContext = {
@@ -94,12 +94,12 @@ NavigationItem.getCollectionNode = function* (props: NavigationItemProps) {
 
 type NavigationListProps<T extends object> = CollectionBase<T> & {
   title: string;
-  kind?: NavKind;
+  kind?: NavProps['kind'];
 };
 
 const NavigationList = <T extends object>(props: NavigationListProps<T>) => {
   const state = useListState(props);
-  const { kind = NavKind.PRIMARY, title } = props;
+  const { kind = 'primary', title } = props;
   const { shouldCollapse, refs } = useNavigationContext();
 
   return (
@@ -147,12 +147,13 @@ const NavigationList = <T extends object>(props: NavigationListProps<T>) => {
 
 type NavigationProps<T extends object> = CollectionBase<T> & {
   title: string;
-  kind?: NavKind;
+  kind?: NavProps['kind'];
   role?: string; // are these things even tabs? they don't actually behave like real tabs…
+  'data-test-id'?: string;
 };
 
 const Navigation = <T extends object>(props: NavigationProps<T>) => {
-  const { children } = props;
+  const { children, 'data-test-id': testId = 'navigation' } = props;
   const wrapperRef = useRef<HTMLDivElement>(null);
   const itemListRef = useRef<HTMLDivElement>(null);
   const [shouldCollapse, setCollapse] = useValueEffect(false);
@@ -197,7 +198,10 @@ const Navigation = <T extends object>(props: NavigationProps<T>) => {
   useResizeObserver({ ref: wrapperRef, onResize: checkShouldCollapse });
 
   return (
-    <div className={cx('Navigation', shouldCollapse && 'Navigation--collapsed')}>
+    <div
+      data-test-id={testId}
+      className={cx('Navigation', shouldCollapse && 'Navigation--collapsed')}
+    >
       <NavigationContext.Provider
         value={{
           shouldCollapse,

@@ -10,10 +10,11 @@ type MenuSearchProps = {
   value?: string;
   placeholder?: string;
   onChange?(event: ChangeEvent<HTMLInputElement>): void;
+  'data-test-id'?: string;
 };
 
 const MenuSearch = forwardRef<HTMLInputElement, MenuSearchProps>((props, ref) => {
-  const { ariaLabel, placeholder, ...finalProps } = props;
+  const { ariaLabel, placeholder, 'data-test-id': testId = 'menu-search', ...finalProps } = props;
 
   return (
     <div className="Menu-search">
@@ -23,6 +24,7 @@ const MenuSearch = forwardRef<HTMLInputElement, MenuSearchProps>((props, ref) =>
         className="Menu-search-input"
         tiny
         type="search"
+        data-test-id={testId}
         autoComplete="off"
         placeholder={placeholder}
         aria-label={ariaLabel || 'Search'}

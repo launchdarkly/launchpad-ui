@@ -21,7 +21,15 @@ test.describe('Remix SSR', () => {
       // eslint-disable-next-line no-loop-func
       await test.step(`${component.name} renders`, async () => {
         await page.goto(`/${component.to}`);
-        const element = page.locator(`.${component.name}`);
+
+        // convert pascalcase component name to dashcase for test ID
+        const dashify = (str: string) =>
+          str
+            .replace(/(^[A-Z])/, ([first]) => first.toLowerCase())
+            .replace(/([A-Z])/g, ([letter]) => `-${letter.toLowerCase()}`);
+
+        const element = page.locator(`[data-test-id=${dashify(component.name)}]`);
+
         await expect(element).toBeVisible();
       });
     }

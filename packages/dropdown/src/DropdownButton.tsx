@@ -1,7 +1,7 @@
 import type { ButtonProps } from '@launchpad-ui/button';
 
 import { Button } from '@launchpad-ui/button';
-import { ExpandMore, IconSize } from '@launchpad-ui/icons';
+import { ExpandMore } from '@launchpad-ui/icons';
 import { forwardRef } from 'react';
 
 type DropdownButtonProps = ButtonProps & {
@@ -9,11 +9,11 @@ type DropdownButtonProps = ButtonProps & {
 };
 
 const DropdownButton = forwardRef<HTMLButtonElement, DropdownButtonProps>((props, ref) => {
-  const { children, hideCaret, ...rest } = props;
+  const { children, hideCaret, 'data-test-id': testId = 'dropdown-button', ...rest } = props;
 
   return (
-    <Button {...rest} ref={ref}>
-      {children} {!hideCaret && <ExpandMore size={IconSize.SMALL} />}
+    <Button {...rest} data-test-id={testId} ref={ref}>
+      {children} {!hideCaret && <ExpandMore size="small" />}
     </Button>
   );
 });

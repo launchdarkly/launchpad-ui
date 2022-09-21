@@ -1,4 +1,3 @@
-import type { IconSize } from './types';
 import type { HTMLProps, ReactElement } from 'react';
 
 import { cx } from 'classix';
@@ -9,10 +8,19 @@ import './styles/Icon.css';
 type IconProps = Omit<HTMLProps<HTMLSpanElement>, 'size'> & {
   name?: string;
   subtle?: boolean;
-  size?: IconSize;
+  size?: 'micro' | 'tiny' | 'small' | 'medium' | 'mlarge' | 'large' | 'xlarge' | 'huge';
+  'data-test-id'?: string;
 };
 
-const Icon = ({ name, subtle, className, size, children, ...props }: IconProps) => {
+const Icon = ({
+  name,
+  subtle,
+  className,
+  size,
+  children,
+  'data-test-id': testId = 'icon',
+  ...props
+}: IconProps) => {
   const sizeClass = size ? `Icon--${size}` : false;
   const classes = cx('Icon', `Icon--${name}`, sizeClass, className, subtle && 'Icon--subtle');
 
@@ -36,7 +44,7 @@ const Icon = ({ name, subtle, className, size, children, ...props }: IconProps) 
   }, [name, prefix]);
 
   return (
-    <span {...props} className={classes}>
+    <span {...props} data-test-id={testId} className={classes}>
       {Children.map(children, (child) => {
         if (isValidElement(child)) {
           return cloneElement(child as ReactElement, {

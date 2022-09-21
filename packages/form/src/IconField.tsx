@@ -1,7 +1,6 @@
 import type { IconProps } from '@launchpad-ui/icons';
 import type { HTMLAttributes } from 'react';
 
-import { IconSize } from '@launchpad-ui/icons';
 import { cx } from 'classix';
 
 import './styles/IconField.css';
@@ -9,17 +8,24 @@ import './styles/IconField.css';
 type IconFieldProps = HTMLAttributes<HTMLDivElement> & {
   icon(args: IconProps): JSX.Element;
   children: JSX.Element | JSX.Element[];
+  'data-test-id'?: string;
 };
 
-const IconField = ({ icon, children, className, ...rest }: IconFieldProps) => {
+const IconField = ({
+  icon,
+  children,
+  className,
+  'data-test-id': testId = 'icon-field',
+  ...rest
+}: IconFieldProps) => {
   const Icon = icon;
 
   const classes = cx('IconField', className);
 
   return (
-    <div className={classes} {...rest}>
+    <div className={classes} data-test-id={testId} {...rest}>
       {children}
-      <Icon size={IconSize.SMALL} />
+      <Icon size="small" />
     </div>
   );
 };

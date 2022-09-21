@@ -1,7 +1,7 @@
 import type { ReactNode, SyntheticEvent } from 'react';
 
 import { IconButton } from '@launchpad-ui/button';
-import { Close, ExpandMore, IconSize } from '@launchpad-ui/icons';
+import { Close, ExpandMore } from '@launchpad-ui/icons';
 import { Tooltip } from '@launchpad-ui/tooltip';
 import { VisuallyHidden } from '@react-aria/visually-hidden';
 import { cx } from 'classix';
@@ -19,7 +19,7 @@ type FilterButtonProps = {
   clearTooltip?: string | JSX.Element;
   children?: ReactNode;
   onClickFilterButton?(): void;
-  testId?: string;
+  'data-test-id'?: string;
 };
 
 type Ref = HTMLButtonElement;
@@ -35,7 +35,7 @@ const FilterButton = forwardRef<Ref, FilterButtonProps>((props, ref) => {
     isSelected,
     onClickFilterButton,
     className,
-    testId,
+    'data-test-id': testId = 'filter-button',
     ...rest
   } = props;
   const nameId = useId();
@@ -70,14 +70,14 @@ const FilterButton = forwardRef<Ref, FilterButtonProps>((props, ref) => {
             {children}
           </span>
         )}
-        {!isClearable && <ExpandMore size={IconSize.SMALL} />}
+        {!isClearable && <ExpandMore size="small" />}
       </button>
       {isClearable && (
         <Tooltip targetClassName="Filter-clearTooltip" content={clearTooltip}>
           <IconButton
             aria-label="Clear filter"
             className="Filter-clear"
-            icon={<Close size={IconSize.TINY} />}
+            icon={<Close size="tiny" />}
             onClick={onClear}
           />
         </Tooltip>

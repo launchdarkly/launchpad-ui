@@ -2,7 +2,6 @@ import type { SplitButtonProps } from '../src';
 import type { ComponentStoryObj, DecoratorFn } from '@storybook/react';
 import type { ReactElement } from 'react';
 
-import { ButtonKind, ButtonSize } from '@launchpad-ui/button';
 import { Person } from '@launchpad-ui/icons';
 import { Menu, MenuItem } from '@launchpad-ui/menu';
 import { Tooltip } from '@launchpad-ui/tooltip';
@@ -232,38 +231,38 @@ const SplitButtonArgs = {
 export const Example: Story = {
   args: {
     ...SplitButtonArgs,
-    kind: ButtonKind.DEFAULT,
+    kind: 'default',
   },
 };
 
 export const Primary: Story = {
   args: {
     ...SplitButtonArgs,
-    kind: ButtonKind.PRIMARY,
+    kind: 'primary',
   },
 };
 
 export const DefaultSmall: Story = {
   args: {
     ...SplitButtonArgs,
-    kind: ButtonKind.DEFAULT,
-    size: ButtonSize.SMALL,
+    kind: 'default',
+    size: 'small',
   },
 };
 
 export const PrimarySmall: Story = {
   args: {
     ...SplitButtonArgs,
-    kind: ButtonKind.PRIMARY,
-    size: ButtonSize.SMALL,
+    kind: 'primary',
+    size: 'small',
   },
 };
 
 export const Icon: Story = {
   args: {
     ...SplitButtonArgs,
-    kind: ButtonKind.DEFAULT,
-    size: ButtonSize.SMALL,
+    kind: 'default',
+    size: 'small',
     icon: <Person />,
   },
 };

@@ -2,17 +2,12 @@ import type { ReactElement } from 'react';
 
 import { useEffect, useState } from 'react';
 
-import { AnimationDelay } from './types';
-
 type DelayedIndicatorProps = {
   children: ReactElement;
-  delayMs?: number;
+  delayMs?: 0 | 50 | 250 | 1000;
 };
 
-const DelayedIndicator = ({
-  children,
-  delayMs = AnimationDelay.DEFAULT,
-}: DelayedIndicatorProps) => {
+const DelayedIndicator = ({ children, delayMs = 250 }: DelayedIndicatorProps) => {
   const [renderChildren, setRenderChildren] = useState(false);
 
   useEffect(() => {

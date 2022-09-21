@@ -3,7 +3,7 @@ import type { ComponentStoryObj, StoryFn } from '@storybook/react';
 
 import { MemoryRouter } from 'react-router-dom';
 
-import { Navigation, NavigationItem, NavKind } from '../src';
+import { Navigation, NavigationItem } from '../src';
 
 export default {
   component: Navigation,
@@ -68,7 +68,7 @@ export const Primary: Story = {
 
 export const Secondary: Story = {
   args: {
-    kind: NavKind.SECONDARY,
+    kind: 'secondary',
     children: [
       <NavigationItem key={1} name="First" to="/first" />,
       <NavigationItem key={2} name="Second" to="/second" />,

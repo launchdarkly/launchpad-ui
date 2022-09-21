@@ -49,6 +49,7 @@ type ToggleProps = {
    * Text to display when Toggle is on, default text is 'On'.
    */
   toggleOnText?: string;
+  'data-test-id'?: string;
 };
 
 /**
@@ -71,6 +72,7 @@ const Toggle = (props: ToggleProps) => {
     onChange,
     toggleOffText = 'Off',
     toggleOnText = 'On',
+    'data-test-id': testId = 'toggle',
   } = props;
   const state = useToggleState(props);
   const inputRef = useRef<HTMLInputElement>(null);
@@ -95,6 +97,7 @@ const Toggle = (props: ToggleProps) => {
         className="Toggle-input"
         disabled={disabled}
         id={id}
+        data-test-id={testId}
         type="checkbox"
         onChange={handleChange}
         ref={inputRef}

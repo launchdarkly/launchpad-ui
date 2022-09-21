@@ -21,6 +21,7 @@ const UploadButton = ({
   accept,
   maxSize,
   onSelect,
+  'data-test-id': testId = 'upload-button',
   ...rest
 }: UploadButtonProps) => {
   const inputRef = useRef<HTMLInputElement>(null);
@@ -60,7 +61,7 @@ const UploadButton = ({
   };
 
   return (
-    <span className={classes}>
+    <span className={classes} data-test-id={testId}>
       <input
         ref={inputRef}
         className="UploadButton-input"

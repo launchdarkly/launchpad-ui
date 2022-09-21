@@ -8,6 +8,7 @@ import './styles/Form.css';
 type RadioProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'type'> & {
   labelClassName?: string;
   labelStyle?: CSSProperties;
+  'data-test-id'?: string;
 };
 
 const Radio = ({
@@ -20,6 +21,7 @@ const Radio = ({
   id,
   labelClassName,
   labelStyle,
+  'data-test-id': testId = 'radio',
   ...rest
 }: RadioProps) => {
   const hasAriaLabel = ariaLabel !== undefined || ariaLabelledby !== undefined;
@@ -40,6 +42,7 @@ const Radio = ({
         checked={checked}
         disabled={disabled}
         id={id}
+        data-test-id={testId}
         type="radio"
       />
       <Label className={labelClassName} htmlFor={id} style={labelStyle}>

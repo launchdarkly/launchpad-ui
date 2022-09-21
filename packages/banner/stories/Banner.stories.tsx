@@ -1,7 +1,5 @@
 import type { ComponentStoryObj } from '@storybook/react';
 
-import { AlertKind } from '@launchpad-ui/alert';
-
 import { Banner } from '../src';
 
 export default {
@@ -53,21 +51,21 @@ export default {
 type Story = ComponentStoryObj<typeof Banner>;
 
 export const Success: Story = {
-  args: { children: 'Success banner with icon', dismissible: true, kind: AlertKind.SUCCESS },
+  args: { children: 'Success banner with icon', dismissible: true, kind: 'success' },
 };
 
 export const Error: Story = {
-  args: { children: 'Error banner with icon', dismissible: true, kind: AlertKind.ERROR },
+  args: { children: 'Error banner with icon', dismissible: true, kind: 'error' },
 };
 
 export const Warning: Story = {
-  args: { children: 'Warning banner with icon', dismissible: true, kind: AlertKind.WARNING },
+  args: { children: 'Warning banner with icon', dismissible: true, kind: 'warning' },
 };
 
 export const Info: Story = {
-  args: { children: 'Info banner with icon', dismissible: true, kind: AlertKind.INFO },
+  args: { children: 'Info banner with icon', dismissible: true, kind: 'info' },
 };
 
 export const Striped: Story = {
-  args: { children: 'Striped banner with icon', dismissible: true, kind: AlertKind.STRIPED },
+  args: { children: 'Striped banner with icon', dismissible: true, kind: 'striped' },
 };

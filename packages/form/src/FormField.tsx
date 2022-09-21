@@ -18,7 +18,7 @@ type FormFieldProps = {
   children: JSX.Element;
   className?: string;
   onBlur?: (field: string) => void;
-  'data-test-id': string;
+  'data-test-id'?: string;
 };
 
 const FormField = ({
@@ -33,7 +33,7 @@ const FormField = ({
   children,
   className,
   onBlur,
-  'data-test-id': testId,
+  'data-test-id': testId = 'form-field',
 }: FormFieldProps) => {
   const handleBlur = () => {
     onBlur && onBlur(name);

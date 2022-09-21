@@ -1,6 +1,6 @@
 import type { ComponentStoryObj } from '@storybook/react';
 
-import { Alert, AlertKind, AlertSize } from '../src';
+import { Alert } from '../src';
 
 export default {
   component: Alert,
@@ -77,26 +77,26 @@ export default {
 type Story = ComponentStoryObj<typeof Alert>;
 
 export const Success: Story = {
-  args: { kind: AlertKind.SUCCESS, children: 'Success alert', dismissible: false },
+  args: { kind: 'success', children: 'Success alert', dismissible: false },
 };
 
 export const Warning: Story = {
-  args: { kind: AlertKind.WARNING, children: 'Warning alert', dismissible: false },
+  args: { kind: 'warning', children: 'Warning alert', dismissible: false },
 };
 
 export const Info: Story = {
-  args: { kind: AlertKind.INFO, children: 'Info alert', dismissible: false },
+  args: { kind: 'info', children: 'Info alert', dismissible: false },
 };
 
 export const Error: Story = {
-  args: { kind: AlertKind.ERROR, children: 'Error alert', dismissible: false },
+  args: { kind: 'error', children: 'Error alert', dismissible: false },
 };
 
 export const SmallInlineSuccess: Story = {
   args: {
     isInline: true,
-    kind: AlertKind.SUCCESS,
-    size: AlertSize.SMALL,
+    kind: 'success',
+    size: 'small',
     children: 'Small Inline Success alert',
   },
 };
@@ -104,8 +104,8 @@ export const SmallInlineSuccess: Story = {
 export const SmallInlineWarning: Story = {
   args: {
     isInline: true,
-    kind: AlertKind.WARNING,
-    size: AlertSize.SMALL,
+    kind: 'warning',
+    size: 'small',
     children: 'Small Inline Warning alert',
   },
 };
@@ -113,8 +113,8 @@ export const SmallInlineWarning: Story = {
 export const SmallInlineInfo: Story = {
   args: {
     isInline: true,
-    kind: AlertKind.INFO,
-    size: AlertSize.SMALL,
+    kind: 'info',
+    size: 'small',
     children: 'Small Inline Info alert',
   },
 };
@@ -122,12 +122,12 @@ export const SmallInlineInfo: Story = {
 export const SmallInlineError: Story = {
   args: {
     isInline: true,
-    kind: AlertKind.ERROR,
-    size: AlertSize.SMALL,
+    kind: 'error',
+    size: 'small',
     children: 'Small Inline Error alert',
   },
 };
 
 export const Dismissible: Story = {
-  args: { kind: AlertKind.INFO, children: 'Dismissible alert', dismissible: true },
+  args: { kind: 'info', children: 'Dismissible alert', dismissible: true },
 };
