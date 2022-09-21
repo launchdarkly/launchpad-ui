@@ -6,9 +6,16 @@ type PaginationTextProps = {
   pageSize: number;
   isReady: boolean;
   totalCount: number;
+  'data-test-id'?: string;
 };
 
-const PaginationText = ({ currentOffset, pageSize, isReady, totalCount }: PaginationTextProps) => {
+const PaginationText = ({
+  currentOffset,
+  pageSize,
+  isReady,
+  totalCount,
+  'data-test-id': testId = 'pagination-text',
+}: PaginationTextProps) => {
   const offset = Math.max(0, currentOffset || 0);
   const from = offset + 1;
   const to = totalCount && Math.min(offset + pageSize, totalCount);
@@ -28,7 +35,7 @@ const PaginationText = ({ currentOffset, pageSize, isReady, totalCount }: Pagina
   const screenReaderLabel = `Viewing records ${from} through ${to} of ${totalCount} total.`;
 
   return (
-    <div className="PaginationText">
+    <div className="PaginationText" data-test-id={testId}>
       <VisuallyHidden>{screenReaderLabel}</VisuallyHidden>
       <span aria-hidden>
         <strong>

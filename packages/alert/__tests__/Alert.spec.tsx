@@ -3,7 +3,7 @@ import type { AlertProps } from '../src';
 import { it, expect, describe, vi } from 'vitest';
 
 import { render, screen, userEvent } from '../../../test/utils';
-import { Alert, AlertKind, AlertSize } from '../src';
+import { Alert } from '../src';
 
 const createComponent = (props?: AlertProps) => <Alert {...props}>Alert text!</Alert>;
 
@@ -40,12 +40,12 @@ describe('Alert', () => {
 
   describe('a11y', () => {
     it('renders with role status by default', () => {
-      render(createComponent({ size: AlertSize.MEDIUM }));
+      render(createComponent({ size: 'medium' }));
       expect(screen.getByRole('status')).toBeInTheDocument();
     });
 
     it('renders with role alert for the error variant', () => {
-      render(createComponent({ kind: AlertKind.ERROR }));
+      render(createComponent({ kind: 'error' }));
       expect(screen.getByRole('alert')).toBeInTheDocument();
     });
   });

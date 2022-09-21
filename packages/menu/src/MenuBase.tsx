@@ -1,4 +1,4 @@
-import type { MenuSize } from './types';
+import type { MenuProps } from './Menu';
 import type { ComponentPropsWithRef } from 'react';
 
 import { cx } from 'classix';
@@ -8,7 +8,7 @@ import './styles/Menu.css';
 
 type MenuBaseProps = ComponentPropsWithRef<'div'> & {
   isVirtual?: boolean;
-  size?: MenuSize;
+  size?: MenuProps<string>['size'];
 };
 
 const MenuBase = forwardRef<HTMLDivElement, MenuBaseProps>(

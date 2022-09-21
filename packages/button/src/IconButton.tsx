@@ -1,3 +1,4 @@
+import type { ButtonProps } from './Button';
 import type {
   ButtonHTMLAttributes,
   ElementType,
@@ -11,14 +12,14 @@ import { cx } from 'classix';
 import { isValidElement, cloneElement, forwardRef, memo } from 'react';
 
 import './styles/Button.css';
-import { ButtonKind, IconButtonSize } from './types';
 
 type IconButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
-  kind?: ButtonKind;
+  kind?: ButtonProps['kind'];
   icon: ReactElement<{ size?: string; key: string; 'aria-hidden': boolean }>;
-  size?: IconButtonSize;
+  size?: 'small' | 'normal';
   'aria-label': string;
   asChild?: boolean;
+  'data-test-id'?: string;
 };
 
 const IconButtonComponent = forwardRef<HTMLButtonElement, IconButtonProps>((props, ref) => {
@@ -26,13 +27,14 @@ const IconButtonComponent = forwardRef<HTMLButtonElement, IconButtonProps>((prop
     icon,
     children,
     className,
-    size = IconButtonSize.NORMAL,
-    kind = ButtonKind.MINIMAL,
+    size = 'normal',
+    kind = 'minimal',
     disabled = false,
     asChild = false,
     onKeyDown,
     onClick,
     type = 'button',
+    'data-test-id': testId = 'icon-button',
     ...rest
   } = props;
 
@@ -88,6 +90,7 @@ const IconButtonComponent = forwardRef<HTMLButtonElement, IconButtonProps>((prop
       disabled={disabled}
       onKeyDown={onKeyDown || handleKeyDown}
       type={type}
+      data-test-id={testId}
       {...rest}
     >
       {renderChildren()}

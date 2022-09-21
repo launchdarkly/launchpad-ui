@@ -1,20 +1,16 @@
+import type { DelayedIndicatorProps } from './DelayedIndicator';
+
 import { cx } from 'classix';
 
 import { DelayedIndicator } from './DelayedIndicator';
 import './styles/Progress.css';
 
-enum ProgressSize {
-  Small = 'small',
-  Large = 'large',
-  XLarge = 'xLarge',
-}
-
 type ProgressProps = {
   value?: number;
-  size?: ProgressSize;
+  size?: 'small' | 'large' | 'xLarge';
   className?: string;
-  delayMs?: number;
-  testId?: string;
+  delayMs?: DelayedIndicatorProps['delayMs'];
+  'data-test-id'?: string;
 };
 
 const clamp = (number: number, lower: number, upper?: number) =>
@@ -22,8 +18,8 @@ const clamp = (number: number, lower: number, upper?: number) =>
 
 const Progress = ({
   value,
-  size = ProgressSize.Small,
-  testId,
+  size = 'small',
+  'data-test-id': testId = 'progress',
   className,
   delayMs = 0,
 }: ProgressProps) => {
@@ -51,7 +47,7 @@ const Progress = ({
       width={diameter}
       height={diameter}
       viewBox={`0 0 ${diameter} ${diameter}`}
-      data-test-id={testId || 'progress'}
+      data-test-id={testId}
       role="progressbar"
       aria-valuemin={0}
       aria-valuetext="loading"
@@ -81,5 +77,5 @@ const Progress = ({
   return delayMs ? <DelayedIndicator delayMs={delayMs}>{indicator}</DelayedIndicator> : indicator;
 };
 
-export { Progress, ProgressSize };
+export { Progress };
 export type { ProgressProps };

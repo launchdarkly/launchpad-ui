@@ -25,6 +25,7 @@ type AppliedFilterProps = {
   isLoading?: boolean;
   onClickFilterButton?(): void;
   searchAriaLabel?: string;
+  'data-test-id'?: string;
 };
 
 const AppliedFilter = ({
@@ -40,6 +41,7 @@ const AppliedFilter = ({
   onClickFilterButton,
   onClearFilter,
   searchAriaLabel,
+  'data-test-id': testId = 'applied-filter',
   ...props
 }: AppliedFilterProps) => {
   const enableSearch =
@@ -51,6 +53,7 @@ const AppliedFilter = ({
       targetClassName={dropdownClasses}
       placement="bottom-start"
       enableArrow={false}
+      data-test-id={testId}
       {...props}
     >
       <AppliedFilterButton name={name} onClickFilterButton={onClickFilterButton}>

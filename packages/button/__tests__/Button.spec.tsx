@@ -2,12 +2,12 @@ import { Add } from '@launchpad-ui/icons';
 import { it, expect, describe, vi } from 'vitest';
 
 import { render, screen, userEvent } from '../../../test/utils';
-import { Button, ButtonKind, ButtonSize, ButtonType } from '../src';
+import { Button } from '../src';
 
 describe('Button', () => {
   it('renders', () => {
     render(
-      <Button size={ButtonSize.NORMAL} type={ButtonType.BUTTON}>
+      <Button size="normal" type="button">
         Default Button
       </Button>
     );
@@ -50,14 +50,14 @@ describe('Button', () => {
 
   it('is focusable', async () => {
     const user = userEvent.setup();
-    render(<Button kind={ButtonKind.PRIMARY}>Primary Button</Button>);
+    render(<Button kind="primary">Primary Button</Button>);
 
     await user.tab();
     expect(screen.getByRole('button')).toHaveFocus();
   });
 
   it('can render an icon', async () => {
-    const { container } = render(<Button kind={ButtonKind.PRIMARY} icon={<Add />} />);
+    const { container } = render(<Button kind="primary" icon={<Add />} />);
     // eslint-disable-next-line testing-library/no-container, testing-library/no-node-access
     expect(container.querySelector('svg')).not.toBeNull();
   });

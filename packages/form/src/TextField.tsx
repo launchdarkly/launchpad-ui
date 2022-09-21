@@ -10,6 +10,7 @@ type TextFieldProps = InputHTMLAttributes<HTMLInputElement> & {
   suffix?: string;
   tiny?: boolean;
   overrideWidth?: string;
+  'data-test-id'?: string;
 };
 
 const TextField = forwardRef<HTMLInputElement, TextFieldProps>(
@@ -22,6 +23,7 @@ const TextField = forwardRef<HTMLInputElement, TextFieldProps>(
       tabIndex = 0,
       suffix,
       overrideWidth,
+      'data-test-id': testId = 'text-field',
       ...rest
     },
     ref
@@ -36,6 +38,7 @@ const TextField = forwardRef<HTMLInputElement, TextFieldProps>(
           <input
             {...rest}
             type={type}
+            data-test-id={testId}
             className={cx(classes, 'FormInput-suffix')}
             readOnly={readOnly}
             ref={ref}

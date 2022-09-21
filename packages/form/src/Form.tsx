@@ -11,10 +11,18 @@ type FormProps = FormHTMLAttributes<HTMLFormElement> & {
   // This may be desired when the form contains external links that will
   // shift while clicking if the form shifts from validation.
   hasIncreasedErrorMargin?: boolean;
+  'data-test-id'?: string;
 };
 
 const Form = (props: FormProps) => {
-  const { className, inline, children, hasIncreasedErrorMargin, ...rest } = props;
+  const {
+    className,
+    inline,
+    children,
+    hasIncreasedErrorMargin,
+    'data-test-id': testId = 'form',
+    ...rest
+  } = props;
 
   const classes = cx(
     'Form',
@@ -24,7 +32,7 @@ const Form = (props: FormProps) => {
   );
 
   return (
-    <form {...rest} className={classes}>
+    <form {...rest} data-test-id={testId} className={classes}>
       {children}
     </form>
   );

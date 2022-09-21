@@ -9,9 +9,18 @@ type TableProps = TableHTMLAttributes<HTMLTableElement> & {
   compact?: boolean;
   isResourceTable?: boolean;
   summary?: string;
+  'data-test-id'?: string;
 };
 
-const Table = ({ auto, compact, className, children, isResourceTable, ...rest }: TableProps) => {
+const Table = ({
+  auto,
+  compact,
+  className,
+  children,
+  isResourceTable,
+  'data-test-id': testId = 'table',
+  ...rest
+}: TableProps) => {
   const classes = cx(
     'Table',
     auto && 'Table--auto',
@@ -21,7 +30,7 @@ const Table = ({ auto, compact, className, children, isResourceTable, ...rest }:
   );
 
   return (
-    <table {...rest} className={classes}>
+    <table {...rest} data-test-id={testId} className={classes}>
       {children}
     </table>
   );

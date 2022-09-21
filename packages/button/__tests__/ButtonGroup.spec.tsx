@@ -1,7 +1,7 @@
 import { it, expect, describe, vi } from 'vitest';
 
 import { render, screen, userEvent } from '../../../test/utils';
-import { Button, ButtonGroup, ButtonGroupSpacing } from '../src';
+import { Button, ButtonGroup } from '../src';
 
 describe('ButtonGroup', () => {
   it('renders', () => {
@@ -17,7 +17,7 @@ describe('ButtonGroup', () => {
 
   it('renders with compact spacing', () => {
     const { container } = render(
-      <ButtonGroup spacing={ButtonGroupSpacing.COMPACT}>
+      <ButtonGroup spacing="compact">
         <Button>One</Button>
         <Button>Two</Button>
       </ButtonGroup>
@@ -30,7 +30,7 @@ describe('ButtonGroup', () => {
 
   it('renders with large spacing', () => {
     const { container } = render(
-      <ButtonGroup spacing={ButtonGroupSpacing.LARGE}>
+      <ButtonGroup spacing="large">
         <Button>One</Button>
         <Button>Two</Button>
       </ButtonGroup>
@@ -46,7 +46,7 @@ describe('ButtonGroup', () => {
     const spyTwo = vi.fn();
     const user = userEvent.setup();
     render(
-      <ButtonGroup spacing={ButtonGroupSpacing.LARGE}>
+      <ButtonGroup spacing="large">
         <Button aria-label="one" onClick={spyOne}>
           One
         </Button>

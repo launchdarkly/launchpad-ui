@@ -1,5 +1,5 @@
 /* eslint-disable react-hooks/rules-of-hooks */
-import type { NotificationRecord } from '../src/types';
+import type { NotificationRecord } from '../src';
 import type { ComponentStoryObj } from '@storybook/react';
 
 import { Button } from '@launchpad-ui/button';
@@ -7,7 +7,6 @@ import { userEvent, within } from '@storybook/testing-library';
 import { useId, useState } from 'react';
 
 import { NotificationCenter } from '../src';
-import { NotificationLevel } from '../src/types';
 
 export default {
   component: NotificationCenter,
@@ -17,9 +16,9 @@ export default {
 
 type Story = ComponentStoryObj<typeof NotificationCenter>;
 
-const makeNotification = (id: string) => ({
+const makeNotification = (id: string): NotificationRecord => ({
   _id: id,
-  level: NotificationLevel.SUCCESS,
+  level: 'success',
   ttl: 5000,
   message: 'The notification message',
   details: '',

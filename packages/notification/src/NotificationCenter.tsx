@@ -1,4 +1,5 @@
-import type { NotificationRecord } from './types';
+import type { NotificationProps } from './Notification';
+import type { ReactNode } from 'react';
 
 import { cx } from 'classix';
 import { AnimatePresence, LazyMotion, m } from 'framer-motion';
@@ -12,6 +13,14 @@ const loadFeatures = () =>
     /* webpackExports: "domAnimation" */
     'framer-motion'
   ).then((res) => res.domAnimation);
+
+type NotificationRecord = {
+  _id: string;
+  level: NotificationProps['level'];
+  message: ReactNode;
+  details?: string;
+  ttl?: number;
+};
 
 type NotificationCenterProps = {
   className?: string;
@@ -51,4 +60,4 @@ const NotificationCenter = ({ notifications, onDismiss, className }: Notificatio
 };
 
 export { NotificationCenter };
-export type { NotificationCenterProps };
+export type { NotificationCenterProps, NotificationRecord };

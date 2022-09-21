@@ -1,12 +1,11 @@
 import type { HTMLAttributes } from 'react';
 
-import { ButtonKind, IconButton, IconButtonSize } from '@launchpad-ui/button';
-import { Close, IconSize, KindIcon } from '@launchpad-ui/icons';
+import { IconButton } from '@launchpad-ui/button';
+import { Close, KindIcon } from '@launchpad-ui/icons';
 import { cx } from 'classix';
 import { useState } from 'react';
 
 import './styles/Alert.css';
-import { AlertKind, AlertSize } from './types';
 
 type AlertProps = HTMLAttributes<HTMLDivElement> & {
   'data-test-id'?: string;
@@ -22,15 +21,15 @@ type AlertProps = HTMLAttributes<HTMLDivElement> & {
   /**
    * Passing in one of `info`, `success`, `warning`, `error`, `striped`
    * displays the style and icon pair associated with the variant.
-   * The default is AlertKind.INFO.
+   * The default is info.
    */
-  kind?: AlertKind;
+  kind?: 'info' | 'success' | 'warning' | 'error' | 'striped';
   /**
-   * Passing in one of `AlertSize.SMALL`, `AlertSize.MEDIUM`
+   * Passing in one of `small`, `medium`
    * displays either a small or medium Alert.
-   * The default is AlertSize.MEDIUM.
+   * The default is medium.
    */
-  size?: AlertSize;
+  size?: 'small' | 'medium';
   /**
    * When true, shows the wide Alert variant, adds top margin,
    * sets width to 86% (why?).
@@ -59,13 +58,13 @@ const Alert = ({
   className,
   compact,
   isInline,
-  kind = AlertKind.INFO,
-  size = AlertSize.MEDIUM,
+  kind = 'info',
+  size = 'medium',
   wide,
   dismissible,
   onDismiss,
   noIcon,
-  'data-test-id': testId,
+  'data-test-id': testId = 'alert',
   ...rest
 }: AlertProps) => {
   const [dismissed, setDismissed] = useState(false);
@@ -99,22 +98,18 @@ const Alert = ({
       {...rest}
       className={classes}
       data-test-id={testId}
-      role={[AlertKind.INFO, AlertKind.SUCCESS].includes(kind) ? 'status' : 'alert'}
+      role={['info', 'success'].includes(kind) ? 'status' : 'alert'}
     >
       {!noIcon && (
-        <KindIcon
-          kind={kind}
-          className="Alert-icon"
-          size={size === AlertSize.SMALL ? IconSize.SMALL : IconSize.MEDIUM}
-        />
+        <KindIcon kind={kind} className="Alert-icon" size={size === 'small' ? 'small' : 'medium'} />
       )}
       <div className="Alert-content">{children}</div>
       {dismissible && (
         <IconButton
           aria-label="Close this alert."
-          size={IconButtonSize.SMALL}
-          icon={<Close size={IconSize.SMALL} />}
-          kind={ButtonKind.CLOSE}
+          size="small"
+          icon={<Close size="small" />}
+          kind="close"
           className="Alert-close"
           onClick={handleDismissClicked}
           data-test-id={testId ? `${testId}-dismiss-button` : undefined}

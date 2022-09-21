@@ -3,7 +3,7 @@ import type { MouseEvent, ReactNode } from 'react';
 
 import { IconButton } from '@launchpad-ui/button';
 import { FocusTrap } from '@launchpad-ui/focus-trap';
-import { Close, IconSize } from '@launchpad-ui/icons';
+import { Close } from '@launchpad-ui/icons';
 import { usePreventScroll } from '@react-aria/overlays';
 import { cx } from 'classix';
 import { LazyMotion, m } from 'framer-motion';
@@ -45,6 +45,7 @@ type ModalProps = {
   transition: 'pop' | 'slideRight';
   onReady?(): void;
   onCancel?(): void;
+  'data-test-id'?: string;
 };
 
 const Modal = ({
@@ -56,6 +57,7 @@ const Modal = ({
   onCancel,
   modalLabelID = 'Modal-title',
   transition,
+  'data-test-id': testId = 'modal',
 }: ModalProps) => {
   const ref = useRef<HTMLDivElement>(null);
 
@@ -94,7 +96,7 @@ const Modal = ({
 
   return (
     <LazyMotion strict features={loadFeatures}>
-      <div className={modalClasses} ref={ref}>
+      <div className={modalClasses} data-test-id={testId} ref={ref}>
         <m.div
           initial="hidden"
           animate="visible"
@@ -117,7 +119,7 @@ const Modal = ({
               {withCloseButton && (
                 <IconButton
                   aria-label="close"
-                  icon={<Close size={IconSize.MEDIUM} />}
+                  icon={<Close size="medium" />}
                   className="Modal-close"
                   onClick={onCancel}
                   data-test-id="Modal-close"

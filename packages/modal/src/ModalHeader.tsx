@@ -1,6 +1,6 @@
 import type { HTMLAttributes } from 'react';
 
-import { Close, IconSize } from '@launchpad-ui/icons';
+import { Close } from '@launchpad-ui/icons';
 import { cx } from 'classix';
 
 import './styles/Modal.css';
@@ -28,7 +28,7 @@ const ModalHeader = ({
       <h2 id={titleID || 'Modal-title'} className={cx('Modal-title', titleClassName)}>
         {children}
       </h2>
-      {closeable && <Close className="Modal-close" onClick={onClose} size={IconSize.TINY} />}
+      {closeable && <Close className="Modal-close" onClick={onClose} size="tiny" />}
     </div>
   );
 };

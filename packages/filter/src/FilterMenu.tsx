@@ -1,7 +1,7 @@
 import type { MenuProps } from '@launchpad-ui/menu';
 import type { ChangeEvent, ReactNode } from 'react';
 
-import { Button, ButtonKind } from '@launchpad-ui/button';
+import { Button } from '@launchpad-ui/button';
 import { Check } from '@launchpad-ui/icons';
 import { Menu, MenuDivider, MenuItem, MenuSearch } from '@launchpad-ui/menu';
 
@@ -51,7 +51,7 @@ const FilterMenu = ({
   return (
     <>
       {onClearFilter && (
-        <Button tabIndex={0} className="Menu-clear" onClick={onClearFilter} kind={ButtonKind.LINK}>
+        <Button tabIndex={0} className="Menu-clear" onClick={onClearFilter} kind="link">
           CLEAR FILTER
         </Button>
       )}

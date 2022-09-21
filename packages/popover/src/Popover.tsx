@@ -31,7 +31,6 @@ import {
 } from 'react';
 
 import './styles/Popover.css';
-import { PopoverInteractionKind } from './types';
 
 const loadFeatures = () =>
   import(
@@ -51,7 +50,7 @@ type PopoverProps = {
   enforceFocus?: boolean;
   hoverCloseDelay?: number;
   hoverOpenDelay?: number;
-  interactionKind?: PopoverInteractionKind;
+  interactionKind?: 'hover' | 'hover-target-only' | 'hover-or-focus' | 'click';
   isFixed?: boolean;
   isModal?: boolean;
   isOpen?: boolean;
@@ -71,6 +70,7 @@ type PopoverProps = {
   targetClassName?: string;
   targetTestId?: string;
   enableArrow?: boolean;
+  'data-test-id'?: string;
 };
 
 type PopoverTargetProps = {
@@ -115,7 +115,7 @@ const Popover = ({
   restrictWidth = true,
   isModal = false,
   isFixed = false,
-  interactionKind = PopoverInteractionKind.CLICK,
+  interactionKind = 'click',
   hoverOpenDelay = 250,
   hoverCloseDelay = 250,
   disablePlacementFlip = false,
@@ -137,6 +137,7 @@ const Popover = ({
   rootElementStyle,
   offset,
   targetElementRef,
+  'data-test-id': testId = 'popover',
 }: PopoverProps) => {
   const [isOpen, setIsOpen] = useState(isOpenProp ?? undefined);
   const [popoverElement, setPopoverElement] = useState<HTMLElement | null>();
@@ -401,10 +402,10 @@ const Popover = ({
     return (
       <div
         id={popoverId.current}
-        data-test-id="popover-with-spring"
         ref={contentRef}
         className={classes}
         role="tooltip"
+        data-test-id={testId}
         aria-hidden={!isOpen}
         {...handlers}
       >

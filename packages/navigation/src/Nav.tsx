@@ -4,19 +4,20 @@ import { cx } from 'classix';
 import { forwardRef } from 'react';
 
 import './styles/Nav.css';
-import { NavKind } from './types';
 
 type NavBaseProps = HTMLAttributes<HTMLElement> & {
-  kind?: NavKind;
+  kind?: 'primary' | 'secondary';
   innerRef?: Ref<HTMLDivElement>;
+  'data-test-id'?: string;
 };
 
 const NavBase = ({
-  kind = NavKind.PRIMARY,
+  kind = 'primary',
   className,
   children,
   innerRef,
   'aria-label': ariaLabel,
+  'data-test-id': testId = 'nav',
   ...rest
 }: NavBaseProps) => {
   return (
@@ -24,6 +25,7 @@ const NavBase = ({
       {...rest}
       aria-label={ariaLabel ?? `${kind} navigation`}
       className={cx('Nav', `Nav--${kind}`, className)}
+      data-test-id={testId}
       ref={innerRef}
     >
       {children}

@@ -3,14 +3,14 @@ import type { ComponentStoryObj, DecoratorFn } from '@storybook/react';
 import { Fragment } from 'react';
 
 import { Add } from '../../icons/src';
-import { IconSize } from '../../icons/src/types';
-import { IconButton, ButtonKind } from '../src';
+import { IconButton } from '../src';
 
 import './Button.stories.css';
 
 const buttonTemplateWithStates: DecoratorFn = (storyComponent, context) => {
   const { viewMode, args } = context;
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const storyArgs = args as any;
   const buttonLabel = storyArgs?.children || '';
 
@@ -135,7 +135,7 @@ export default {
 
 type Story = ComponentStoryObj<typeof IconButton>;
 
-const icon = <Add size={IconSize.MEDIUM} />;
+const icon = <Add size="medium" />;
 
 export const Minimal: Story = {
   args: { icon, 'aria-label': 'Button' },
@@ -145,7 +145,7 @@ export const Basic: Story = {
   args: {
     icon,
     'aria-label': 'Button',
-    kind: ButtonKind.DEFAULT,
+    kind: 'default',
   },
 };
 
@@ -153,7 +153,7 @@ export const Primary: Story = {
   args: {
     icon,
     'aria-label': 'Button',
-    kind: ButtonKind.PRIMARY,
+    kind: 'primary',
   },
 };
 
@@ -161,7 +161,7 @@ export const Destructive: Story = {
   args: {
     icon,
     'aria-label': 'Button',
-    kind: ButtonKind.DESTRUCTIVE,
+    kind: 'destructive',
   },
 };
 
@@ -169,7 +169,7 @@ export const Close: Story = {
   args: {
     icon,
     'aria-label': 'Button',
-    kind: ButtonKind.CLOSE,
+    kind: 'close',
   },
 };
 
@@ -179,6 +179,6 @@ export const AsAnchorChild: Story = {
     asChild: true,
     'aria-label': 'Anchor child',
     icon,
-    kind: ButtonKind.DESTRUCTIVE,
+    kind: 'destructive',
   },
 };
