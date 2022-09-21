@@ -5,6 +5,7 @@ import { it, expect, describe, vi } from 'vitest';
 
 import { render, screen, userEvent, waitFor } from '../../../test/utils';
 import { Navigation, NavigationItem } from '../src';
+import * as ctx from '../src/NavigationContext';
 
 globalThis.matchMedia = vi.fn().mockReturnValue({
   matches: true,
@@ -90,5 +91,29 @@ describe('Navigation', () => {
     );
     // eslint-disable-next-line testing-library/no-container, testing-library/no-node-access
     expect(container.querySelector('.Chip')).not.toBeNull();
+  });
+
+  it('renders collapsed dropdown', async () => {
+    vi.spyOn(ctx, 'useNavigationContext').mockReturnValue({
+      shouldCollapse: true,
+      refs: { wrapperRef: { current: null }, itemListRef: { current: null } },
+    });
+
+    render(
+      createComponent([
+        {
+          name: 'First',
+          to: '/first',
+          status: 'new',
+        },
+        {
+          name: 'Second',
+          to: '/second',
+          tooltip: <>tooltip</>,
+        },
+      ])
+    );
+    // eslint-disable-next-line testing-library/no-container, testing-library/no-node-access
+    expect(screen.getByTestId('navigation-menu-button')).not.toBeNull();
   });
 });

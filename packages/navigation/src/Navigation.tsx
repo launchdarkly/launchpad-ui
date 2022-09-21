@@ -2,7 +2,7 @@ import type { NavProps } from './Nav';
 import type { NavItemProps } from './NavItem';
 import type { NavItemWithTooltipProps } from './NavItemWithTooltip';
 import type { CollectionBase } from '@react-types/shared';
-import type { ReactElement, RefObject } from 'react';
+import type { ReactElement } from 'react';
 
 import { Chip } from '@launchpad-ui/chip';
 import { Dropdown, DropdownButton } from '@launchpad-ui/dropdown';
@@ -10,34 +10,15 @@ import { Menu, MenuItem } from '@launchpad-ui/menu';
 import { useResizeObserver, useValueEffect } from '@react-aria/utils';
 import { useListState } from '@react-stately/list';
 import { cx } from 'classix';
-import { createContext, useCallback, useContext, useEffect, useRef } from 'react';
+import { useCallback, useEffect, useRef } from 'react';
 import { NavLink } from 'react-router-dom';
 
 import { Nav } from './Nav';
 import { NavItem } from './NavItem';
 import { NavItemWithTooltip } from './NavItemWithTooltip';
+import { NavigationContext, useNavigationContext } from './NavigationContext';
 import styles from './styles/Navigation.module.css';
 import { titlecase, useMediaQuery } from './utils';
-
-type NavigationContext = {
-  shouldCollapse: boolean;
-  refs: {
-    wrapperRef: RefObject<HTMLDivElement>;
-    itemListRef: RefObject<HTMLDivElement>;
-  };
-};
-
-const NavigationContext = createContext<NavigationContext | undefined>(undefined);
-
-const useNavigationContext = () => {
-  const context = useContext(NavigationContext);
-
-  if (context === undefined) {
-    throw new Error('useNavigationContext must be used within a NavigationContext provider');
-  }
-
-  return context;
-};
 
 type NavigationMenuButtonProps<T extends object> = CollectionBase<T> & {
   title: string;
@@ -48,7 +29,7 @@ const NavigationMenuButton = <T extends object>(props: NavigationMenuButtonProps
 
   return (
     <Dropdown>
-      <DropdownButton>{props.title}</DropdownButton>
+      <DropdownButton data-test-id="navigation-menu-button">{props.title}</DropdownButton>
       <Menu>
         {[...state.collection].map((item) => (
           <MenuItem
@@ -217,7 +198,7 @@ const Navigation = <T extends object>(props: NavigationProps<T>) => {
   );
 };
 
-export { Navigation, NavigationItem, NavigationList, NavigationMenuButton };
+export { Navigation, NavigationItem, NavigationList, NavigationMenuButton, useNavigationContext };
 export type {
   NavigationProps,
   NavigationItemProps,
