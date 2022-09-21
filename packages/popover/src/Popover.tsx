@@ -30,7 +30,7 @@ import {
   useState,
 } from 'react';
 
-import './styles/Popover.css';
+import styles from './styles/Popover.module.css';
 
 const loadFeatures = () =>
   import(
@@ -363,7 +363,7 @@ const Popover = ({
   };
 
   const renderPopover = (content: ReactNode) => {
-    const classes = cx('Popover', popoverClassName);
+    const classes = cx('Popover', styles.Popover, popoverClassName);
 
     let handlers: PopoverContentProps = {};
 
@@ -387,14 +387,13 @@ const Popover = ({
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           className={cx(
-            'Popover-content',
-
-            restrictWidth && 'Popover-content--restrict-width',
-
+            styles['Popover-content'],
+            restrictWidth && styles['Popover-content--restrictWidth'],
             popoverContentClassName
           )}
         >
-          {restrictHeight ? <div className="Popover-scroller">{content}</div> : content}
+          {enableArrow && <div id="arrow" ref={arrowRef}></div>}
+          {restrictHeight ? <div className={styles['Popover-scroller']}>{content}</div> : content}
         </m.div>
       </LazyMotion>
     );
@@ -409,7 +408,6 @@ const Popover = ({
         aria-hidden={!isOpen}
         {...handlers}
       >
-        {enableArrow && <div id="arrow" ref={arrowRef}></div>}
         {interactionKind === 'click' ? (
           <FocusTrap autoFocus>{popoverContent}</FocusTrap>
         ) : (
@@ -427,10 +425,9 @@ const Popover = ({
   const targetProps: PopoverTargetProps = {
     ref: targetRef,
     className: cx(
-      'Popover-target',
+      styles['Popover-target'],
       targetClassName,
-      isOpen && 'Popover-target--active',
-      isTargetDisabled && 'Popover-target--disabled'
+      isTargetDisabled && styles['Popover-target--disabled']
     ),
     style: rootElementStyle,
     'data-test-id': targetTestId || 'popover-target',
@@ -459,6 +456,7 @@ const Popover = ({
     cloneElement(target as ReactElement, {
       ref: targetElementRef,
       ...(isOpen && { 'aria-describedby': popoverId.current }),
+      'data-state': isOpen ? 'open' : 'closed',
     }),
     <Overlay
       isOpen={!!isOpen && !hasEmptyContent}
