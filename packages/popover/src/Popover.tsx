@@ -363,7 +363,7 @@ const Popover = ({
   };
 
   const renderPopover = (content: ReactNode) => {
-    const classes = cx('Popover', styles.Popover, popoverClassName);
+    const classes = cx(styles.Popover, popoverClassName);
 
     let handlers: PopoverContentProps = {};
 
