@@ -10,7 +10,7 @@
   }
 }
 
-.Navigation .Nav--primary {
+.Navigation :global([class*='_Nav--primary_']) {
   padding: 0 2.5rem;
 }
 

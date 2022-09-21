@@ -38,9 +38,7 @@ const NavItem = ({
       {...other}
       end={end}
       to={to}
-      className={({ isActive }) =>
-        cx('NavItem', styles.NavItem, isActive ? styles['is-active'] : '')
-      }
+      className={({ isActive }) => cx(styles.NavItem, isActive ? styles['is-active'] : '')}
       data-text={name}
       onClick={onClick}
       role={role}
