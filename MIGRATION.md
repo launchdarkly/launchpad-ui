@@ -1,5 +1,33 @@
 # Migration @launchpad-ui/core
 
+## 0.14.0
+
+### String union types instead of enums for props
+
+Replace all instances of enums being passed to props with the literal value instead:
+
+Before:
+
+```jsx
+<Button kind={ButtonKind.DEFAULT} size={ButtonSize.NORMAL}>
+  button
+</Button>
+```
+
+After:
+
+```jsx
+<Button kind="default" size="normal">
+  button
+</Button>
+```
+
+## 0.13.0
+
+### Isolate styles for CopyToClipboard
+
+For the `clipboard` package, a new `CopyCodeButton` component is used as the default child. Update any selector's targeting `.Button` within `CopyToClipboard` to target `.CopyCodeButton` instead.
+
 ## 0.12.0
 
 ### Support HTML attributes passthrough for component APIs
