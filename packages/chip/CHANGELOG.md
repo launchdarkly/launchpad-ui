@@ -1,5 +1,11 @@
 # @launchpad-ui/chip
 
+## 0.6.2
+
+### Patch Changes
+
+- [#399](https://github.com/launchdarkly/launchpad-ui/pull/399) [`16bc395`](https://github.com/launchdarkly/launchpad-ui/commit/16bc3953f6d418575414e205339f303313c81e92) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Chip] Move to CSS Modules
+
 ## 0.6.1
 
 ### Patch Changes

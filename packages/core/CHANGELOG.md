@@ -1,5 +1,18 @@
 # @launchpad-ui/core
 
+## 0.14.2
+
+### Patch Changes
+
+- [#399](https://github.com/launchdarkly/launchpad-ui/pull/399) [`16bc395`](https://github.com/launchdarkly/launchpad-ui/commit/16bc3953f6d418575414e205339f303313c81e92) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Chip] Move to CSS Modules
+
+* [#401](https://github.com/launchdarkly/launchpad-ui/pull/401) [`719fdea`](https://github.com/launchdarkly/launchpad-ui/commit/719fdea3353f798ea01390ba26b6d879be34c815) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [ProgressBubbles] Move to CSS Modules, fix issue with display box
+
+* Updated dependencies [[`16bc395`](https://github.com/launchdarkly/launchpad-ui/commit/16bc3953f6d418575414e205339f303313c81e92), [`719fdea`](https://github.com/launchdarkly/launchpad-ui/commit/719fdea3353f798ea01390ba26b6d879be34c815)]:
+  - @launchpad-ui/chip@0.6.2
+  - @launchpad-ui/progress-bubbles@0.5.2
+  - @launchpad-ui/navigation@0.6.2
+
 ## 0.14.1
 
 ### Patch Changes

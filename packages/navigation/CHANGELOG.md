@@ -1,5 +1,12 @@
 # @launchpad-ui/navigation
 
+## 0.6.2
+
+### Patch Changes
+
+- Updated dependencies [[`16bc395`](https://github.com/launchdarkly/launchpad-ui/commit/16bc3953f6d418575414e205339f303313c81e92)]:
+  - @launchpad-ui/chip@0.6.2
+
 ## 0.6.1
 
 ### Patch Changes
