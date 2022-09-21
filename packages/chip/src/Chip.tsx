@@ -19,6 +19,7 @@ type ChipProps = HTMLAttributes<HTMLSpanElement> & {
     | 'federal';
   size?: 'normal' | 'large';
   subtle?: boolean;
+  'data-test-id'?: string;
 };
 
 const Chip = ({
@@ -29,6 +30,7 @@ const Chip = ({
   onKeyDown,
   className,
   children,
+  'data-test-id': testId = 'chip',
   ...rest
 }: ChipProps) => {
   const isInteractive = !!(onClick || onKeyDown);
@@ -45,6 +47,7 @@ const Chip = ({
   return (
     <span
       className={classes}
+      data-test-id={testId}
       {...(isInteractive
         ? {
             onClick,

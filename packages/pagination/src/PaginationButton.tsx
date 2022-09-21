@@ -15,6 +15,7 @@ type PaginationButtonProps<T = PaginationChange> = {
   disabled: boolean;
   onClick: (change: T) => void;
   className?: string;
+  'data-test-id'?: string;
 };
 
 const ICON_MAP = {
@@ -37,6 +38,7 @@ const PaginationButton = ({
   disabled,
   onClick,
   className,
+  'data-test-id': testId = 'pagination-button',
 }: PaginationButtonProps) => {
   const classes = cx('PaginationButton', disabled && 'PaginationButton--disabled', className);
 
@@ -48,6 +50,7 @@ const PaginationButton = ({
     <IconButton
       disabled={disabled}
       className={classes}
+      data-test-id={testId}
       onClick={() => onClick(kind)}
       icon={<Icon size="small" />}
       aria-label={label}

@@ -56,6 +56,7 @@ type ControlledMenuProps<T> = {
    *
    */
   itemHeight?: number;
+  'data-test-id'?: string;
 };
 
 type MenuProps<T extends number | string> = ControlledMenuProps<T>;
@@ -69,6 +70,7 @@ const Menu = <T extends number | string>(props: MenuProps<T>) => {
     itemHeight,
     size,
     overscan = 1,
+    'data-test-id': testId = 'menu',
   } = props;
 
   const focusManager = useFocusManager();
@@ -160,7 +162,7 @@ const Menu = <T extends number | string>(props: MenuProps<T>) => {
 
   if (enableVirtualization) {
     return (
-      <MenuBase isVirtual size={size}>
+      <MenuBase data-test-id={testId} isVirtual size={size}>
         <ItemVirtualizer<T>
           items={Children.toArray(reduceItems.items) as ReactElement[]}
           searchElement={reduceItems.searchElement}
@@ -175,7 +177,7 @@ const Menu = <T extends number | string>(props: MenuProps<T>) => {
   }
 
   return (
-    <MenuBase size={size}>
+    <MenuBase data-test-id={testId} size={size}>
       {reduceItems.searchElement}
       <MenuItemList role="presentation">{reduceItems.items}</MenuItemList>
     </MenuBase>

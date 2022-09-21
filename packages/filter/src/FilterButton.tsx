@@ -19,7 +19,7 @@ type FilterButtonProps = {
   clearTooltip?: string | JSX.Element;
   children?: ReactNode;
   onClickFilterButton?(): void;
-  testId?: string;
+  'data-test-id'?: string;
 };
 
 type Ref = HTMLButtonElement;
@@ -35,7 +35,7 @@ const FilterButton = forwardRef<Ref, FilterButtonProps>((props, ref) => {
     isSelected,
     onClickFilterButton,
     className,
-    testId,
+    'data-test-id': testId = 'filter-button',
     ...rest
   } = props;
   const nameId = useId();

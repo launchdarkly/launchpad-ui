@@ -22,6 +22,7 @@ type TabListProps<T extends string | number> =
       disabledTabs?: string[];
       /** Called when the user clicks on a different tab */
       onChange?: (tab: T) => void;
+      'data-test-id'?: string;
     };
 
 /** React-aria' useTabListState hook supports a
@@ -33,7 +34,14 @@ type TabListProps<T extends string | number> =
  * for an improved developer experience.
  */
 const TabList = <T extends number | string>(props: TabListProps<T>) => {
-  const { activeTab, className, disabledTabs, onChange, ...rest } = props;
+  const {
+    activeTab,
+    className,
+    disabledTabs,
+    onChange,
+    'data-test-id': testId = 'tab-list',
+    ...rest
+  } = props;
 
   const ref = useRef<HTMLDivElement>(null);
   const state = useTabListState({
@@ -47,7 +55,7 @@ const TabList = <T extends number | string>(props: TabListProps<T>) => {
   const classes = cx('TabList', className);
 
   return (
-    <div className={classes}>
+    <div className={classes} data-test-id={testId}>
       <div {...tabListProps} ref={ref} className="TabList-list">
         {[...state.collection].map((item) => (
           <TabItem key={item.key} item={item} state={state} />

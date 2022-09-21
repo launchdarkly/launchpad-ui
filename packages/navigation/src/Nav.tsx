@@ -8,6 +8,7 @@ import './styles/Nav.css';
 type NavBaseProps = HTMLAttributes<HTMLElement> & {
   kind?: 'primary' | 'secondary';
   innerRef?: Ref<HTMLDivElement>;
+  'data-test-id'?: string;
 };
 
 const NavBase = ({
@@ -16,6 +17,7 @@ const NavBase = ({
   children,
   innerRef,
   'aria-label': ariaLabel,
+  'data-test-id': testId = 'nav',
   ...rest
 }: NavBaseProps) => {
   return (
@@ -23,6 +25,7 @@ const NavBase = ({
       {...rest}
       aria-label={ariaLabel ?? `${kind} navigation`}
       className={cx('Nav', `Nav--${kind}`, className)}
+      data-test-id={testId}
       ref={innerRef}
     >
       {children}

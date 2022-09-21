@@ -8,13 +8,20 @@ type CounterProps = HTMLAttributes<HTMLSpanElement> & {
   value: number;
   subtle?: boolean;
   children?: never;
+  'data-test-id'?: string;
 };
 
-const Counter = ({ value, className, subtle, ...rest }: CounterProps) => {
+const Counter = ({
+  value,
+  className,
+  subtle,
+  'data-test-id': testId = 'counter',
+  ...rest
+}: CounterProps) => {
   const classes = cx('Counter', className, subtle && 'Counter--subtle');
 
   return (
-    <span className={classes} {...rest}>
+    <span className={classes} data-test-id={testId} {...rest}>
       {value}
     </span>
   );

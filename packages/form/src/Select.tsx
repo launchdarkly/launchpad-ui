@@ -4,13 +4,20 @@ import { cx } from 'classix';
 
 import './styles/FormInput.css';
 
-type SelectProps = SelectHTMLAttributes<HTMLSelectElement>;
+type SelectProps = SelectHTMLAttributes<HTMLSelectElement> & {
+  'data-test-id'?: string;
+};
 
-const Select = ({ className, children, ...rest }: SelectProps) => {
+const Select = ({
+  className,
+  children,
+  'data-test-id': testId = 'select',
+  ...rest
+}: SelectProps) => {
   const classes = cx('FormInput', 'FormInput-select', className);
 
   return (
-    <select {...rest} className={classes}>
+    <select {...rest} data-test-id={testId} className={classes}>
       {children}
     </select>
   );

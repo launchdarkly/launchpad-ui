@@ -27,6 +27,7 @@ type ProgressBubblesProps = {
   className?: string;
   items?: ProgressBubbleInfo[];
   popoverInteraction?: PopoverProps['interactionKind'];
+  'data-test-id'?: string;
 };
 
 const ProgressBubbles = ({
@@ -38,6 +39,7 @@ const ProgressBubbles = ({
   showCurrentLabelOnly = true,
   items,
   popoverInteraction = 'hover-or-focus',
+  'data-test-id': testId = 'progress-bubbles',
 }: ProgressBubblesProps) => {
   const { ref, dimensions } = useDimensions();
   let children = [];
@@ -145,6 +147,7 @@ const ProgressBubbles = ({
     <div
       className={cx('ProgressBubbles', className, vertical && 'ProgressBubbles--vertical')}
       ref={ref}
+      data-test-id={testId}
     >
       {children}
     </div>

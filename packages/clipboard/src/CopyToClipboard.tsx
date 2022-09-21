@@ -20,6 +20,7 @@ type CopyToClipboardProps = HTMLAttributes<HTMLSpanElement> & {
   popoverTargetClassName?: string;
   onCopy?(): void;
   asChild?: boolean;
+  'data-test-id'?: string;
 };
 
 type CopyToClipboardHandleRef = {
@@ -48,6 +49,7 @@ const CopyToClipboard = forwardRef<CopyToClipboardHandleRef, CopyToClipboardProp
       triggerAriaLabel,
       onCopy,
       asChild,
+      'data-test-id': testId = 'copy-to-clipboard',
       ...rest
     },
     ref
@@ -105,7 +107,7 @@ const CopyToClipboard = forwardRef<CopyToClipboardHandleRef, CopyToClipboardProp
     const Component = asChild ? Slot : CopyCodeButton;
 
     return (
-      <span className={classes} {...rest}>
+      <span className={classes} data-test-id={testId} {...rest}>
         <Tooltip
           {...tooltipOptions}
           isOpen={isOpen}

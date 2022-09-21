@@ -7,9 +7,10 @@ import './styles/{{pascalCase name}}.css';
 type {{pascalCase name}}Props = {
   className?: string;
   children: ReactNode;
+  'data-test-id'?: string;
 };
 
-const {{pascalCase name}} = ({ children, className }: {{pascalCase name}}Props) => {
+const {{pascalCase name}} = ({ children, className, 'data-test-id': testId = '{{kebabCase name}}' }: {{pascalCase name}}Props) => {
   return (
     <div className={cx('{{pascalCase name}}', className)}>
       <span>{children}</span>

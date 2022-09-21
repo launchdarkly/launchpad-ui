@@ -18,6 +18,7 @@ type PaginationProps = HTMLAttributes<HTMLElement> & {
   pageSize: number;
   isReady: boolean;
   totalCount: number;
+  'data-test-id'?: string;
 };
 
 const Pagination = ({
@@ -33,6 +34,7 @@ const Pagination = ({
   isReady,
   totalCount,
   'aria-label': ariaLabel,
+  'data-test-id': testId = 'pagination',
   ...rest
 }: PaginationProps) => {
   return (
@@ -40,6 +42,7 @@ const Pagination = ({
       {...rest}
       className={cx('Pagination', className)}
       aria-label={ariaLabel ?? `Pagination for ${resourceName} list.`}
+      data-test-id={testId}
     >
       <PaginationButton
         resourceName={resourceName}

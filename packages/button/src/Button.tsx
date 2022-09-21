@@ -23,6 +23,7 @@ type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
   icon?: ReactElement<{ size?: string; key: string; 'aria-hidden': boolean }>;
   renderIconFirst?: boolean;
   asChild?: boolean;
+  'data-test-id'?: string;
 };
 
 const ButtonComponent = forwardRef<HTMLButtonElement, ButtonProps>((props, ref) => {
@@ -41,6 +42,7 @@ const ButtonComponent = forwardRef<HTMLButtonElement, ButtonProps>((props, ref) 
     onKeyDown,
     onClick,
     type = 'button',
+    'data-test-id': testId = 'button',
     ...rest
   } = props;
 
@@ -107,6 +109,7 @@ const ButtonComponent = forwardRef<HTMLButtonElement, ButtonProps>((props, ref) 
       onKeyDown={onKeyDown || handleKeyDown}
       disabled={isDisabled}
       type={type}
+      data-test-id={testId}
       {...rest}
     >
       {renderChildren()}

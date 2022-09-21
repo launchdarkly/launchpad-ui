@@ -70,6 +70,7 @@ type PopoverProps = {
   targetClassName?: string;
   targetTestId?: string;
   enableArrow?: boolean;
+  'data-test-id'?: string;
 };
 
 type PopoverTargetProps = {
@@ -136,6 +137,7 @@ const Popover = ({
   rootElementStyle,
   offset,
   targetElementRef,
+  'data-test-id': testId = 'popover',
 }: PopoverProps) => {
   const [isOpen, setIsOpen] = useState(isOpenProp ?? undefined);
   const [popoverElement, setPopoverElement] = useState<HTMLElement | null>();
@@ -400,10 +402,10 @@ const Popover = ({
     return (
       <div
         id={popoverId.current}
-        data-test-id="popover-with-spring"
         ref={contentRef}
         className={classes}
         role="tooltip"
+        data-test-id={testId}
         aria-hidden={!isOpen}
         {...handlers}
       >

@@ -149,10 +149,11 @@ type NavigationProps<T extends object> = CollectionBase<T> & {
   title: string;
   kind?: NavProps['kind'];
   role?: string; // are these things even tabs? they don't actually behave like real tabs…
+  'data-test-id'?: string;
 };
 
 const Navigation = <T extends object>(props: NavigationProps<T>) => {
-  const { children } = props;
+  const { children, 'data-test-id': testId = 'navigation' } = props;
   const wrapperRef = useRef<HTMLDivElement>(null);
   const itemListRef = useRef<HTMLDivElement>(null);
   const [shouldCollapse, setCollapse] = useValueEffect(false);
@@ -197,7 +198,10 @@ const Navigation = <T extends object>(props: NavigationProps<T>) => {
   useResizeObserver({ ref: wrapperRef, onResize: checkShouldCollapse });
 
   return (
-    <div className={cx('Navigation', shouldCollapse && 'Navigation--collapsed')}>
+    <div
+      data-test-id={testId}
+      className={cx('Navigation', shouldCollapse && 'Navigation--collapsed')}
+    >
       <NavigationContext.Provider
         value={{
           shouldCollapse,

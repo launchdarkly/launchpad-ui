@@ -15,6 +15,7 @@ const SplitButtonDropdown = ({
   disabled,
   children,
   placement = 'bottom-end',
+  'data-test-id': testId = 'split-button-dropdown',
   ...rest
 }: SplitButtonDropdownProps) => {
   const { disabled: parentDisabled } = useContext(SplitButtonContext);
@@ -28,6 +29,7 @@ const SplitButtonDropdown = ({
       enableArrow={false}
       restrictWidth={false}
       disabled={isDisabled}
+      data-test-id={testId}
     >
       {children}
     </Dropdown>

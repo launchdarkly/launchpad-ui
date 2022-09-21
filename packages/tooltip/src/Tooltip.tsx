@@ -17,6 +17,7 @@ const TooltipBase = ({
   children,
   targetClassName,
   hoverCloseDelay = 0,
+  'data-test-id': testId = 'tooltip',
   ...props
 }: TooltipProps) => {
   return (
@@ -26,6 +27,7 @@ const TooltipBase = ({
       hoverCloseDelay={hoverCloseDelay}
       popoverClassName={cx('Tooltip', className)}
       targetClassName={targetClassName}
+      data-test-id={testId}
       {...props}
     >
       {children}

@@ -15,9 +15,19 @@ type NavItemProps = {
   status?: ChipProps['kind'];
   id?: string;
   role?: string;
+  'data-test-id'?: string;
 };
 
-const NavItem = ({ to, name, onClick, status, role, end, ...other }: NavItemProps) => {
+const NavItem = ({
+  to,
+  name,
+  onClick,
+  status,
+  role,
+  end,
+  'data-test-id': testId = 'nav-item',
+  ...other
+}: NavItemProps) => {
   const { pathname } = useLocation();
   const selected = pathname === to ? 'true' : 'false';
 
@@ -30,6 +40,7 @@ const NavItem = ({ to, name, onClick, status, role, end, ...other }: NavItemProp
       data-text={name}
       onClick={onClick}
       role={role}
+      data-test-id={testId}
       aria-selected={role === 'tab' ? selected : undefined}
     >
       {status ? (

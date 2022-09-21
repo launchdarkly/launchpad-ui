@@ -19,6 +19,7 @@ type IconButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
   size?: 'small' | 'normal';
   'aria-label': string;
   asChild?: boolean;
+  'data-test-id'?: string;
 };
 
 const IconButtonComponent = forwardRef<HTMLButtonElement, IconButtonProps>((props, ref) => {
@@ -33,6 +34,7 @@ const IconButtonComponent = forwardRef<HTMLButtonElement, IconButtonProps>((prop
     onKeyDown,
     onClick,
     type = 'button',
+    'data-test-id': testId = 'icon-button',
     ...rest
   } = props;
 
@@ -88,6 +90,7 @@ const IconButtonComponent = forwardRef<HTMLButtonElement, IconButtonProps>((prop
       disabled={disabled}
       onKeyDown={onKeyDown || handleKeyDown}
       type={type}
+      data-test-id={testId}
       {...rest}
     >
       {renderChildren()}

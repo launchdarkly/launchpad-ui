@@ -20,7 +20,7 @@ const Banner = ({
   children,
   onDismiss,
   dismissible,
-  'data-test-id': testId,
+  'data-test-id': testId = 'banner',
   ...rest
 }: BannerProps) => {
   const classes = cx('Banner', `Banner--${kind}`, className);

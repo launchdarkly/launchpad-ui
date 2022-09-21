@@ -29,7 +29,8 @@ type FilterProps = Pick<MenuProps<string>, 'size' | 'enableVirtualization'> & {
   isLoading?: boolean;
   onClickFilterButton?(): void;
   disabledOptionTooltip?: string;
-  testId?: string;
+  'data-test-id'?: string;
+  triggerTestId?: string;
 };
 
 const Filter = ({
@@ -49,7 +50,7 @@ const Filter = ({
   isLoading,
   onClickFilterButton,
   disabledOptionTooltip,
-  testId,
+  'data-test-id': testId = 'filter',
   size,
   enableVirtualization,
   ...props
@@ -73,7 +74,7 @@ const Filter = ({
         hideName={hideName}
         isSelected={isSelected}
         onClickFilterButton={onClickFilterButton}
-        testId={testId}
+        data-test-id={testId}
       >
         {description}
       </FilterButton>

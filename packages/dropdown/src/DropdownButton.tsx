@@ -9,10 +9,10 @@ type DropdownButtonProps = ButtonProps & {
 };
 
 const DropdownButton = forwardRef<HTMLButtonElement, DropdownButtonProps>((props, ref) => {
-  const { children, hideCaret, ...rest } = props;
+  const { children, hideCaret, 'data-test-id': testId = 'dropdown-button', ...rest } = props;
 
   return (
-    <Button {...rest} ref={ref}>
+    <Button {...rest} data-test-id={testId} ref={ref}>
       {children} {!hideCaret && <ExpandMore size="small" />}
     </Button>
   );
