@@ -30,6 +30,7 @@
 .SplitButton {
   align-items: flex-start;
   display: flex;
+  line-height: var(--SplitButton-popoverTarget-line-height);
 
   & .Button--default.SplitButton-main {
     --SplitButton-color-border-primary: var(--color-gray-300);
@@ -76,15 +77,6 @@
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
   border-left-width: var(--SplitButton-drop-border-left);
-}
-
-.SplitButton .Popover-target {
-  display: block;
-  line-height: var(--SplitButton-popoverTarget-line-height);
-}
-
-.SplitButton .Popover-target--disabled {
-  cursor: not-allowed;
 }
 
 .SplitButton:focus-within {

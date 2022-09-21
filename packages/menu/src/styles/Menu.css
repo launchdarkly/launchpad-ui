@@ -173,7 +173,7 @@
   background-color: var(--color-background-hover);
 }
 
-.Popover-content .Menu-search {
+[class^='_Popover-content_'] .Menu-search {
   width: 100%;
 
   /* Removing anything that could give it some height */

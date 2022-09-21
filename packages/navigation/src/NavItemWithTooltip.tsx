@@ -48,6 +48,7 @@ const NavItemWithTooltip = ({
       placement={tooltipPlacement}
       offset={tooltipOffset}
       allowBoundaryElementOverflow
+      targetClassName="NavPopover-target"
       data-test-id={testId}
     >
       <NavItem
