@@ -1,5 +1,11 @@
 # @launchpad-ui/form
 
+## 0.6.2
+
+### Patch Changes
+
+- [`aa81e52`](https://github.com/launchdarkly/launchpad-ui/commit/aa81e527b911d0ec240e5231292071aa2a4e3ccf) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Form] Pass test ID down to text field
+
 ## 0.6.1
 
 ### Patch Changes
