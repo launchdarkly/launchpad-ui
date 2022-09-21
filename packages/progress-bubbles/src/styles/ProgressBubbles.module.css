@@ -89,34 +89,34 @@
   z-index: 1;
 }
 
-div.ProgressBubbles-icon--current {
+:global(div).ProgressBubbles-icon--current {
   border: var(--border-width-2) solid var(--color-system-green-700);
 }
 
-.ProgressBubbles-icon--pending svg {
+.ProgressBubbles-icon--pending :global(svg) {
   fill: var(--color-white);
 }
 
-div.ProgressBubbles-icon--current svg {
+:global(div).ProgressBubbles-icon--current :global(svg) {
   fill: var(--color-system-green-700);
 }
 
-.ProgressBubbles-icon .Icon svg {
+.ProgressBubbles-icon :global(.Icon svg) {
   fill: var(--color-white);
   height: 1.6rem;
   width: 1.6rem;
 }
 
-div.ProgressBubbles-icon--pending {
+:global(div).ProgressBubbles-icon--pending {
   background-color: var(--color-gray-200);
 }
 
-div.ProgressBubbles-icon--warning {
+:global(div).ProgressBubbles-icon--warning {
   background-color: inherit;
   border: none;
 }
 
-div.ProgressBubbles-icon--warning .Icon svg {
+:global(div).ProgressBubbles-icon--warning :global(.Icon svg) {
   fill: hsl(29.2 100% 58.4%);
   height: 3.6rem;
   width: 3.6rem;
@@ -144,13 +144,12 @@ div.ProgressBubbles-icon--warning .Icon svg {
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
   -webkit-box-orient: vertical;
-  display: box;
   -webkit-line-clamp: 2;
   text-overflow: ellipsis;
   white-space: normal;
 }
 
-:root[data-theme] {
+:global(:root[data-theme]) {
   & .ProgressBubbles-label {
     color: var(--color-gray-700);
   }
