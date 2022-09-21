@@ -146,7 +146,6 @@ const ProgressBubbles = ({
   return (
     <div
       className={cx(
-        'ProgressBubbles',
         styles.ProgressBubbles,
         className,
         vertical && styles['ProgressBubbles--vertical']
