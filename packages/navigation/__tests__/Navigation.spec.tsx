@@ -75,7 +75,7 @@ describe('Navigation', () => {
   });
 
   it('can render items with a chip', async () => {
-    const { container } = render(
+    render(
       createComponent([
         {
           name: 'First',
@@ -90,7 +90,7 @@ describe('Navigation', () => {
       ])
     );
     // eslint-disable-next-line testing-library/no-container, testing-library/no-node-access
-    expect(container.querySelector('.Chip')).not.toBeNull();
+    expect(screen.getByTestId('nav-item-chip')).not.toBeNull();
   });
 
   it('renders collapsed dropdown', async () => {
