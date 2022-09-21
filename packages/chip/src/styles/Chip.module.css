@@ -157,26 +157,6 @@
   width: 4.8rem;
 }
 
-.Chip--flag--small {
-  border-radius: 1rem;
-  font-size: 1rem;
-  width: 3rem;
-  padding: 0.4rem;
-}
-
-.Chip--flagOn {
-  border: var(--color-system-green-900) 1px solid;
-  color: var(--color-system-green-900);
-  max-height: 2.5rem;
-}
-
-.Chip--flagOff {
-  border: var(--color-gray-700) 1px solid;
-  color: var(--color-text-subtle-primary);
-  background-color: var(--color-gray-100);
-  max-height: 2.5rem;
-}
-
 .Chip--navbar {
   align-self: flex-start;
   border-radius: 0.4rem;
@@ -191,6 +171,26 @@
   color: var(--color-text);
 }
 
-.Chip--topbar {
+:global(.Chip--flag--small) {
+  border-radius: 1rem;
+  font-size: 1rem;
+  width: 3rem;
+  padding: 0.4rem;
+}
+
+:global(.Chip--flagOn) {
+  border: var(--color-system-green-900) 1px solid;
+  color: var(--color-system-green-900);
+  max-height: 2.5rem;
+}
+
+:global(.Chip--flagOff) {
+  border: var(--color-gray-700) 1px solid;
+  color: var(--color-text-subtle-primary);
+  background-color: var(--color-gray-100);
+  max-height: 2.5rem;
+}
+
+:global(.Chip--topbar) {
   margin-left: 0.3rem;
 }
