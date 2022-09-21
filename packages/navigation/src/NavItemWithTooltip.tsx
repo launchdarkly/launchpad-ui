@@ -17,6 +17,7 @@ type NavItemWithTooltipProps = {
   id?: string;
   role?: string;
   'aria-controls'?: string;
+  'data-test-id'?: string;
 };
 
 const defaultContent = (
@@ -38,6 +39,7 @@ const NavItemWithTooltip = ({
   end,
   id,
   'aria-controls': ariaControls,
+  'data-test-id': testId = 'nav-item-with-tooltip',
 }: NavItemWithTooltipProps) => {
   const centeredContent = <div className={styles['NavItem-tooltip']}>{tooltipContent}</div>;
   return (
@@ -46,6 +48,7 @@ const NavItemWithTooltip = ({
       placement={tooltipPlacement}
       offset={tooltipOffset}
       allowBoundaryElementOverflow
+      data-test-id={testId}
     >
       <NavItem
         end={end}

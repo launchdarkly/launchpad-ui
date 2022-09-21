@@ -41,10 +41,21 @@ type RadioGroupProps = {
    * The value to compare against the Radio's value to determine if the Radio will be checked.
    */
   value: string;
+
+  'data-test-id'?: string;
 };
 
 const RadioGroup = (props: RadioGroupProps) => {
-  const { name, value, onChange, children, disabled, legend, ...rest } = props;
+  const {
+    name,
+    value,
+    onChange,
+    children,
+    disabled,
+    legend,
+    'data-test-id': testId = 'radio-group',
+    ...rest
+  } = props;
   const fieldsetRef = useRef<HTMLFieldSetElement>(null);
 
   function updateRadioElems(elem: ReactNode): ReactNode {
@@ -93,7 +104,7 @@ const RadioGroup = (props: RadioGroupProps) => {
 
   const radios = Children.map(children, (child) => updateRadioElems(child));
   return (
-    <fieldset ref={fieldsetRef}>
+    <fieldset data-test-id={testId} ref={fieldsetRef}>
       {legend && (
         <legend>
           <VisuallyHidden>{legend}</VisuallyHidden>

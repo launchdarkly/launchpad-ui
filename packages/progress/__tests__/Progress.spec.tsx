@@ -1,11 +1,11 @@
 import { it, expect, describe, vi } from 'vitest';
 
 import { render, screen, waitFor } from '../../../test/utils';
-import { AnimationDelay, Progress, ProgressSize } from '../src';
+import { Progress } from '../src';
 
 describe('Progress', () => {
   it('renders after a delay', async () => {
-    render(<Progress delayMs={500} size={ProgressSize.Small} />);
+    render(<Progress delayMs={500} size="small" />);
     await waitFor(() => {
       expect(screen.getByRole('progressbar')).toBeInTheDocument();
     });
@@ -13,9 +13,9 @@ describe('Progress', () => {
 
   it('does not render immediately if a delay is specified', () => {
     vi.spyOn(global, 'setTimeout');
-    render(<Progress delayMs={AnimationDelay.LONG} />);
+    render(<Progress delayMs={1000} />);
     expect(setTimeout).toHaveBeenCalledTimes(1);
-    expect(setTimeout).toHaveBeenLastCalledWith(expect.any(Function), AnimationDelay.LONG);
+    expect(setTimeout).toHaveBeenLastCalledWith(expect.any(Function), 1000);
     expect(screen.queryByRole('progressbar')).toBeNull();
   });
 

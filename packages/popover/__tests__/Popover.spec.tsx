@@ -1,7 +1,7 @@
 import { it, expect, describe, vi } from 'vitest';
 
 import { render, screen, userEvent, waitFor } from '../../../test/utils';
-import { Popover, PopoverInteractionKind } from '../src';
+import { Popover } from '../src';
 
 describe('Popover', () => {
   it('renders', () => {
@@ -44,7 +44,7 @@ describe('Popover', () => {
   it('opens and closes on mouse hover/unhover of the target', async () => {
     const user = userEvent.setup();
     render(
-      <Popover interactionKind={PopoverInteractionKind.HOVER}>
+      <Popover interactionKind="hover">
         <button>Target</button>
         <span>Content</span>
       </Popover>
@@ -63,7 +63,7 @@ describe('Popover', () => {
   it('opens and closes on mouse focus/blur of the target', async () => {
     const user = userEvent.setup();
     render(
-      <Popover interactionKind={PopoverInteractionKind.HOVER_OR_FOCUS}>
+      <Popover interactionKind="hover-or-focus">
         <button>Target</button>
         <span>Content</span>
       </Popover>
@@ -82,7 +82,7 @@ describe('Popover', () => {
   it('closes when the Escape key is pressed', async () => {
     const user = userEvent.setup();
     render(
-      <Popover interactionKind={PopoverInteractionKind.HOVER}>
+      <Popover interactionKind="hover">
         <button>Target</button>
         <span>Content</span>
       </Popover>
@@ -113,7 +113,7 @@ describe('Popover', () => {
     const user = userEvent.setup();
     const spy = vi.fn();
     render(
-      <Popover interactionKind={PopoverInteractionKind.HOVER} onClose={spy}>
+      <Popover interactionKind="hover" onClose={spy}>
         <button>Target</button>
         <span>Content</span>
       </Popover>

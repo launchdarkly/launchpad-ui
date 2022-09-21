@@ -14,4 +14,3 @@ export { MenuItemList } from './MenuItemList';
 /* c8 ignore stop */
 export { MenuSearch } from './MenuSearch';
 export { Menu } from './Menu';
-export { MenuSize } from './types';

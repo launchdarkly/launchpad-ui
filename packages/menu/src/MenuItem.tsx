@@ -2,7 +2,6 @@ import type { Icon } from '@launchpad-ui/icons';
 import type { PopoverPlacement } from '@launchpad-ui/popover';
 import type { ComponentPropsWithRef, ElementType, PropsWithRef, ReactElement } from 'react';
 
-import { IconSize } from '@launchpad-ui/icons';
 import { Tooltip } from '@launchpad-ui/tooltip';
 import { Slot } from '@radix-ui/react-slot';
 import { FocusRing } from '@react-aria/focus';
@@ -33,6 +32,7 @@ type MenuItemOwnProps = {
   tooltipOptions?: typeof Tooltip;
   tooltipPlacement?: PopoverPlacement;
   asChild?: boolean;
+  'data-test-id'?: string;
 };
 
 const defaultElement = 'button';
@@ -67,6 +67,7 @@ const MenuItem = <P, T extends ElementType = typeof defaultElement>({
     onKeyDown,
     tooltipOptions,
     asChild,
+    'data-test-id': testId = 'menu-item',
     ...rest
   } = props;
 
@@ -85,6 +86,7 @@ const MenuItem = <P, T extends ElementType = typeof defaultElement>({
           nested && 'Menu-item--nested',
           groupHeader && 'Menu-item--header'
         )}
+        data-test-id={testId}
         role={role}
         onKeyDown={onKeyDown}
       >
@@ -94,7 +96,7 @@ const MenuItem = <P, T extends ElementType = typeof defaultElement>({
           <>
             {Icon && (
               <span className="Menu-item-icon">
-                <Icon size={IconSize.SMALL} />
+                <Icon size="small" />
               </span>
             )}
             {children}

@@ -2,13 +2,12 @@ import { it, expect, describe } from 'vitest';
 
 import { render, screen } from '../../../test/utils';
 import { PaginationButton } from '../src/PaginationButton';
-import { PaginationChange } from '../src/types';
 
 describe('PaginationButton', () => {
   it('renders', () => {
     render(
       <PaginationButton
-        kind={PaginationChange.FIRST}
+        kind="first"
         resourceName="resource"
         disabled={false}
         onClick={() => undefined}

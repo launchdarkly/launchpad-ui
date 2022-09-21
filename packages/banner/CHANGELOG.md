@@ -1,5 +1,56 @@
 # @launchpad-ui/banner
 
+## 0.5.1
+
+### Patch Changes
+
+- [#409](https://github.com/launchdarkly/launchpad-ui/pull/409) [`b641978`](https://github.com/launchdarkly/launchpad-ui/commit/b64197803c1ea2a38f8cc755daca4c55760718ab) Thanks [@chasedarkly](https://github.com/chasedarkly)! - Added explicit `data-test-id` properties to components and reworked e2e test to use them instead of classname, in preparation for removal of stable class names
+
+  [Alert] Add `data-test-id` with default value to components
+  [Avatar] Add `data-test-id` with default value to components
+  [Banner] Add `data-test-id` with default value to components
+  [Button] Add `data-test-id` with default value to components
+  [Chip] Add `data-test-id` with default value to components
+  [Clipboard] Add `data-test-id` with default value to components
+  [Counter] Add `data-test-id` with default value to components
+  [Dropdown] Add `data-test-id` with default value to components
+  [Filter] Add `data-test-id` with default value to components
+  [Form] Add `data-test-id` with default value to components
+  [Icons] Add `data-test-id` with default value to components
+  [Markdown] Add `data-test-id` with default value to components
+  [Menu] Add `data-test-id` with default value to components
+  [Modal] Add `data-test-id` with default value to components
+  [Navigation] Add `data-test-id` with default value to components
+  [Notification] Add `data-test-id` with default value to components
+  [Pagination] Add `data-test-id` with default value to components
+  [Popover] Add `data-test-id` with default value to components
+  [Progress] Add `data-test-id` with default value to components
+  [Progress] Add `data-test-id` with default value to components
+  [Slider] Add `data-test-id` with default value to components
+  [Split] Add `data-test-id` with default value to components
+  [Tab] Add `data-test-id` with default value to components
+  [Table] Add `data-test-id` with default value to components
+  [Toggle] Add `data-test-id` with default value to components
+  [Tooltip] Add `data-test-id` with default value to components
+
+- Updated dependencies [[`b641978`](https://github.com/launchdarkly/launchpad-ui/commit/b64197803c1ea2a38f8cc755daca4c55760718ab)]:
+  - @launchpad-ui/alert@0.4.1
+  - @launchpad-ui/button@0.7.1
+  - @launchpad-ui/icons@0.5.1
+
+## 0.5.0
+
+### Minor Changes
+
+- [#386](https://github.com/launchdarkly/launchpad-ui/pull/386) [`86b0120`](https://github.com/launchdarkly/launchpad-ui/commit/86b0120c548063baba69205215f644b4a2d9a7fd) Thanks [@Niznikr](https://github.com/Niznikr)! - Replace enums with string union types
+
+### Patch Changes
+
+- Updated dependencies [[`86b0120`](https://github.com/launchdarkly/launchpad-ui/commit/86b0120c548063baba69205215f644b4a2d9a7fd)]:
+  - @launchpad-ui/alert@0.4.0
+  - @launchpad-ui/button@0.7.0
+  - @launchpad-ui/icons@0.5.0
+
 ## 0.4.3
 
 ### Patch Changes

@@ -10,6 +10,7 @@ type CheckboxProps = InputHTMLAttributes<HTMLInputElement> & {
    * The className to pass into the Checkbox's Label component
    */
   labelClassName?: string;
+  'data-test-id'?: string;
 };
 
 const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
@@ -21,6 +22,7 @@ const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
       disabled,
       checked,
       labelClassName,
+      'data-test-id': testId = 'checkbox',
       ...rest
     },
     ref
@@ -44,6 +46,7 @@ const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
           className="Form-checkbox"
           disabled={disabled}
           type="checkbox"
+          data-test-id={testId}
         />{' '}
         {disabled ? <span className="Form-label--disabled">{children}</span> : children}
       </Label>

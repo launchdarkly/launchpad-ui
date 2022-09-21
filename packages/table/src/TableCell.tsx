@@ -3,7 +3,6 @@ import type { TdHTMLAttributes } from 'react';
 import { cx } from 'classix';
 
 import './styles/Table.css';
-import { TableAlignType } from './types';
 
 // Ensure that the headers are properly associated with table content.
 type TableCellWithHeadersProps = {
@@ -29,12 +28,7 @@ type TableCellProps =
   | TableCellWithScopeProps
   | (TableCellWithHeadersProps & TableCellWithScopeProps);
 
-const TableCell = ({
-  align = TableAlignType.LEFT,
-  className,
-  children,
-  ...rest
-}: TableCellProps) => {
+const TableCell = ({ align = 'left', className, children, ...rest }: TableCellProps) => {
   const classes = cx('Table-cell', `Table-cell--${align}`, className);
 
   // remove hasScope from rest props so we don't pollute the dom element

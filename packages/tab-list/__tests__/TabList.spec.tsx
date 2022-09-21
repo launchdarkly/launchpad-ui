@@ -1,4 +1,4 @@
-import { Button, ButtonKind } from '@launchpad-ui/button';
+import { Button } from '@launchpad-ui/button';
 import { Item } from '@react-stately/collections';
 
 import { render, screen, userEvent } from '../../../test/utils';
@@ -116,13 +116,13 @@ describe('TabList', () => {
         <Item key="3" title="First Tab">
           <div>
             <p style={{ padding: '1rem 0' }}>Active tabpanel</p>
-            <Button kind={ButtonKind.PRIMARY}>Click me once</Button>
+            <Button kind="primary">Click me once</Button>
           </div>
         </Item>
         <Item key="4" title="Another tab">
           <div>
             <p style={{ padding: '1rem 0' }}>Another tabpanel</p>
-            <Button kind={ButtonKind.PRIMARY}>Click me twice</Button>
+            <Button kind="primary">Click me twice</Button>
           </div>
         </Item>
       </TabList>

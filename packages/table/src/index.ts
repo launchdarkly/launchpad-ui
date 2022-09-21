@@ -10,4 +10,3 @@ export { TableCell } from './TableCell';
 export { TableHead } from './TableHead';
 export { TableHeadCell } from './TableHeadCell';
 export { TableRow } from './TableRow';
-export { TableAlignType, TableVerticalAlignType, TableColumnWidths } from './types';

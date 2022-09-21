@@ -22,7 +22,7 @@ type MarkdownProps = {
   allowedTags?: string[];
   container?: ElementType;
   textRef?: RefObject<HTMLElement>;
-  testId?: string;
+  'data-test-id'?: string;
 };
 
 const Markdown = ({
@@ -32,7 +32,7 @@ const Markdown = ({
   allowedTags,
   container = 'div',
   textRef,
-  testId,
+  'data-test-id': testId = 'markdown',
 }: MarkdownProps) => {
   const Container = container;
   const classes = cx('Markdown', className);
@@ -45,7 +45,7 @@ const Markdown = ({
         __html: renderMarkdown(source, { baseUri, allowedTags }),
       }}
       ref={textRef}
-      data-test-id={testId || 'markdown'}
+      data-test-id={testId}
     />
   );
 };

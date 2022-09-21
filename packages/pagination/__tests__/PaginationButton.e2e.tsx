@@ -3,7 +3,6 @@ import type { PaginationButtonProps } from '../src/PaginationButton';
 import { test, expect } from '@playwright/experimental-ct-react';
 
 import { PaginationButton } from '../src/PaginationButton';
-import { PaginationChange } from '../src/types';
 
 test.use({ viewport: { width: 500, height: 500 } });
 
@@ -14,7 +13,7 @@ test.describe('PaginationButton', () => {
     const component = await mount(
       createComponent({
         resourceName: 'resource',
-        kind: PaginationChange.FIRST,
+        kind: 'first',
         disabled: false,
         onClick: () => undefined,
       })

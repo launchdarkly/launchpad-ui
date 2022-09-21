@@ -3,8 +3,7 @@ import type { ComponentStoryObj, DecoratorFn } from '@storybook/react';
 import { Fragment } from 'react';
 
 import { Add } from '../../icons/src';
-import { IconSize } from '../../icons/src/types';
-import { Button, ButtonKind, ButtonSize } from '../src';
+import { Button } from '../src';
 
 import './Button.stories.css';
 
@@ -168,43 +167,43 @@ type Story = ComponentStoryObj<typeof Button>;
 
 export const Basic: Story = { args: { children: 'Basic' } };
 
-export const Minimal: Story = { args: { children: 'Minimal', kind: ButtonKind.MINIMAL } };
+export const Minimal: Story = { args: { children: 'Minimal', kind: 'minimal' } };
 
-export const Primary: Story = { args: { children: 'Primary', kind: ButtonKind.PRIMARY } };
+export const Primary: Story = { args: { children: 'Primary', kind: 'primary' } };
 
 export const Destructive: Story = {
-  args: { children: 'Destructive', kind: ButtonKind.DESTRUCTIVE },
+  args: { children: 'Destructive', kind: 'destructive' },
 };
 
-export const Link: Story = { args: { children: 'Link', kind: ButtonKind.LINK } };
+export const Link: Story = { args: { children: 'Link', kind: 'link' } };
 
 export const AsAnchorChild: Story = {
   args: {
     children: <a href="/">Anchor tag</a>,
     asChild: true,
-    icon: <Add size={IconSize.MEDIUM} />,
-    kind: ButtonKind.DESTRUCTIVE,
+    icon: <Add size="medium" />,
+    kind: 'destructive',
   },
 };
 
 export const WithIcon: Story = {
-  args: { children: 'With icon', icon: <Add size={IconSize.MEDIUM} /> },
+  args: { children: 'With icon', icon: <Add size="medium" /> },
 };
 
 export const WithIconPrimary: Story = {
-  args: { children: 'With icon', icon: <Add size={IconSize.MEDIUM} />, kind: ButtonKind.PRIMARY },
+  args: { children: 'With icon', icon: <Add size="medium" />, kind: 'primary' },
 };
 
 export const WithIconDestructive: Story = {
   args: {
     children: 'With icon',
-    icon: <Add size={IconSize.MEDIUM} />,
-    kind: ButtonKind.DESTRUCTIVE,
+    icon: <Add size="medium" />,
+    kind: 'destructive',
   },
 };
 
-export const BasicTiny: Story = { args: { children: 'Example button', size: ButtonSize.TINY } };
+export const BasicTiny: Story = { args: { children: 'Example button', size: 'tiny' } };
 
-export const BasicSmall: Story = { args: { children: 'Example button', size: ButtonSize.SMALL } };
+export const BasicSmall: Story = { args: { children: 'Example button', size: 'small' } };
 
-export const BasicBig: Story = { args: { children: 'Example button', size: ButtonSize.BIG } };
+export const BasicBig: Story = { args: { children: 'Example button', size: 'big' } };

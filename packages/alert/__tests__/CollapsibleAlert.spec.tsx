@@ -1,16 +1,16 @@
 import { render, screen, userEvent } from '../../../test/utils';
-import { AlertKind, CollapsibleAlert } from '../src';
+import { CollapsibleAlert } from '../src';
 
 describe('CollapsibleAlert', () => {
   it('renders', () => {
-    render(<CollapsibleAlert message="A test message." kind={AlertKind.WARNING} />);
+    render(<CollapsibleAlert message="A test message." kind="warning" />);
     expect(screen.getByText('A test message.')).toBeInTheDocument();
   });
 
   test('shows and hides child component on click', async () => {
     const user = userEvent.setup();
     render(
-      <CollapsibleAlert message="A test message." kind={AlertKind.WARNING}>
+      <CollapsibleAlert message="A test message." kind="warning">
         Hello
       </CollapsibleAlert>
     );

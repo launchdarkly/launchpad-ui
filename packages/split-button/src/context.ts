@@ -1,16 +1,17 @@
-import { ButtonKind, ButtonSize } from '@launchpad-ui/button';
+import type { ButtonProps } from '@launchpad-ui/button';
+
 import { createContext } from 'react';
 
 type SplitButtonContextState = {
   disabled?: boolean;
-  kind?: ButtonKind;
-  size?: ButtonSize;
+  kind?: ButtonProps['kind'];
+  size?: ButtonProps['size'];
 };
 
 const SplitButtonContext = createContext<SplitButtonContextState>({
   disabled: false,
-  kind: ButtonKind.DEFAULT,
-  size: ButtonSize.NORMAL,
+  kind: 'default',
+  size: 'normal',
 });
 
 export { SplitButtonContext };

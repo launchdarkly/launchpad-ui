@@ -1,11 +1,10 @@
 import type { NavigationItemProps } from '../src';
 
-import { ChipKind } from '@launchpad-ui/chip';
 import { MemoryRouter } from 'react-router-dom';
 import { it, expect, describe, vi } from 'vitest';
 
 import { render, screen, userEvent, waitFor } from '../../../test/utils';
-import { Navigation, NavigationItem, NavKind } from '../src';
+import { Navigation, NavigationItem } from '../src';
 
 globalThis.matchMedia = vi.fn().mockReturnValue({
   matches: true,
@@ -19,7 +18,7 @@ globalThis.matchMedia = vi.fn().mockReturnValue({
 
 const createComponent = (items: NavigationItemProps[]) => (
   <MemoryRouter>
-    <Navigation items={items} title="nav" kind={NavKind.PRIMARY}>
+    <Navigation items={items} title="nav" kind="primary">
       {(item) => (
         <NavigationItem
           key={item.to}
@@ -80,11 +79,12 @@ describe('Navigation', () => {
         {
           name: 'First',
           to: '/first',
-          status: ChipKind.NEW,
+          status: 'new',
         },
         {
           name: 'Second',
           to: '/second',
+          tooltip: <>tooltip</>,
         },
       ])
     );

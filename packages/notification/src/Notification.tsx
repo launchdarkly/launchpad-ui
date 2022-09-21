@@ -1,10 +1,9 @@
-import type { NotificationLevel } from './types';
 import type { KeyboardEvent, ReactNode } from 'react';
 
-import { ButtonKind, IconButton, IconButtonSize } from '@launchpad-ui/button';
+import { IconButton } from '@launchpad-ui/button';
 import { CopyToClipboard } from '@launchpad-ui/clipboard';
 import { FocusTrap } from '@launchpad-ui/focus-trap';
-import { KindIcon, Close, ExpandMore, IconSize } from '@launchpad-ui/icons';
+import { KindIcon, Close, ExpandMore } from '@launchpad-ui/icons';
 import { cx } from 'classix';
 import { useCallback, useEffect, useRef, useState } from 'react';
 
@@ -12,11 +11,12 @@ import './styles/Notification.css';
 
 type NotificationProps = {
   details?: string;
-  level: NotificationLevel;
+  level: 'error' | 'info' | 'success' | 'warning';
   message: ReactNode;
   onDismiss?: () => void;
   ttl?: number;
   json?: string;
+  'data-test-id'?: string;
 };
 
 const Notification = ({
@@ -26,6 +26,7 @@ const Notification = ({
   onDismiss = () => undefined,
   json,
   ttl,
+  'data-test-id': testId = 'notification',
   ...props
 }: NotificationProps) => {
   const timeout = useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
@@ -122,7 +123,7 @@ const Notification = ({
               onClick={handleDetailsClick}
               onKeyDown={handleDetailsKeyDown}
             >
-              More details <ExpandMore size={IconSize.SMALL} />
+              More details <ExpandMore size="small" />
             </button>
 
             <div className="Notification-detailsContent">{details}</div>
@@ -131,11 +132,11 @@ const Notification = ({
         )}
       </div>
       <IconButton
-        icon={<Close size={IconSize.SMALL} />}
-        size={IconButtonSize.SMALL}
+        icon={<Close size="small" />}
+        size="small"
         onClick={handleCloseClick}
         aria-label="Close"
-        kind={ButtonKind.CLOSE}
+        kind="close"
         tabIndex={0}
         className="Notification-closeIcon"
         data-test-id="notification-close"
@@ -147,6 +148,7 @@ const Notification = ({
     <div
       role="alert"
       {...props}
+      data-test-id={testId}
       className={classes}
       onMouseOver={handleMouseOver}
       onMouseOut={handleMouseOut}

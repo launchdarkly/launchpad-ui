@@ -1,4 +1,3 @@
-import type { ButtonSize } from './types';
 import type {
   ButtonHTMLAttributes,
   ElementType,
@@ -13,18 +12,18 @@ import { cx } from 'classix';
 import { isValidElement, cloneElement, forwardRef, memo } from 'react';
 
 import './styles/Button.css';
-import { ButtonKind } from './types';
 
 type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
   isLoading?: boolean;
   loadingText?: string | JSX.Element;
-  size?: ButtonSize;
-  kind?: ButtonKind;
+  size?: 'tiny' | 'small' | 'normal' | 'big';
+  kind?: 'default' | 'primary' | 'destructive' | 'minimal' | 'link' | 'close';
   fit?: boolean;
   disabled?: boolean;
   icon?: ReactElement<{ size?: string; key: string; 'aria-hidden': boolean }>;
   renderIconFirst?: boolean;
   asChild?: boolean;
+  'data-test-id'?: string;
 };
 
 const ButtonComponent = forwardRef<HTMLButtonElement, ButtonProps>((props, ref) => {
@@ -34,7 +33,7 @@ const ButtonComponent = forwardRef<HTMLButtonElement, ButtonProps>((props, ref) 
     className,
     size,
     fit,
-    kind = ButtonKind.DEFAULT,
+    kind = 'default',
     isLoading = false,
     loadingText,
     renderIconFirst = false,
@@ -43,6 +42,7 @@ const ButtonComponent = forwardRef<HTMLButtonElement, ButtonProps>((props, ref) 
     onKeyDown,
     onClick,
     type = 'button',
+    'data-test-id': testId = 'button',
     ...rest
   } = props;
 
@@ -109,6 +109,7 @@ const ButtonComponent = forwardRef<HTMLButtonElement, ButtonProps>((props, ref) 
       onKeyDown={onKeyDown || handleKeyDown}
       disabled={isDisabled}
       type={type}
+      data-test-id={testId}
       {...rest}
     >
       {renderChildren()}

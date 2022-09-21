@@ -2,13 +2,12 @@ import { IconButton } from '@launchpad-ui/button';
 import {
   ChevronLeft,
   ChevronRight,
-  IconSize,
   KeyboardDoubleArrowLeft,
   KeyboardDoubleArrowRight,
 } from '@launchpad-ui/icons';
 import { cx } from 'classix';
 
-import { PaginationChange } from './types';
+type PaginationChange = 'first' | 'prev' | 'next' | 'last';
 
 type PaginationButtonProps<T = PaginationChange> = {
   resourceName: string;
@@ -16,20 +15,21 @@ type PaginationButtonProps<T = PaginationChange> = {
   disabled: boolean;
   onClick: (change: T) => void;
   className?: string;
+  'data-test-id'?: string;
 };
 
 const ICON_MAP = {
-  [PaginationChange.FIRST]: KeyboardDoubleArrowLeft,
-  [PaginationChange.PREV]: ChevronLeft,
-  [PaginationChange.NEXT]: ChevronRight,
-  [PaginationChange.LAST]: KeyboardDoubleArrowRight,
+  first: KeyboardDoubleArrowLeft,
+  prev: ChevronLeft,
+  next: ChevronRight,
+  last: KeyboardDoubleArrowRight,
 };
 
 const LABEL_MAP: { [key in PaginationChange]: string } = {
-  [PaginationChange.FIRST]: 'first',
-  [PaginationChange.PREV]: 'previous',
-  [PaginationChange.NEXT]: 'next',
-  [PaginationChange.LAST]: 'last',
+  first: 'first',
+  prev: 'previous',
+  next: 'next',
+  last: 'last',
 };
 
 const PaginationButton = ({
@@ -38,6 +38,7 @@ const PaginationButton = ({
   disabled,
   onClick,
   className,
+  'data-test-id': testId = 'pagination-button',
 }: PaginationButtonProps) => {
   const classes = cx('PaginationButton', disabled && 'PaginationButton--disabled', className);
 
@@ -49,12 +50,13 @@ const PaginationButton = ({
     <IconButton
       disabled={disabled}
       className={classes}
+      data-test-id={testId}
       onClick={() => onClick(kind)}
-      icon={<Icon size={IconSize.SMALL} />}
+      icon={<Icon size="small" />}
       aria-label={label}
     />
   );
 };
 
 export { PaginationButton };
-export type { PaginationButtonProps };
+export type { PaginationButtonProps, PaginationChange };
