@@ -1,5 +1,17 @@
 # @launchpad-ui/core
 
+## 0.14.3
+
+### Patch Changes
+
+- [`aa81e52`](https://github.com/launchdarkly/launchpad-ui/commit/aa81e527b911d0ec240e5231292071aa2a4e3ccf) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Form] Pass test ID down to text field
+
+- Updated dependencies [[`aa81e52`](https://github.com/launchdarkly/launchpad-ui/commit/aa81e527b911d0ec240e5231292071aa2a4e3ccf)]:
+  - @launchpad-ui/form@0.6.2
+  - @launchpad-ui/menu@0.6.2
+  - @launchpad-ui/filter@0.4.2
+  - @launchpad-ui/navigation@0.6.3
+
 ## 0.14.2
 
 ### Patch Changes
