@@ -1,5 +1,11 @@
 # @launchpad-ui/progress-bubbles
 
+## 0.5.2
+
+### Patch Changes
+
+- [#401](https://github.com/launchdarkly/launchpad-ui/pull/401) [`719fdea`](https://github.com/launchdarkly/launchpad-ui/commit/719fdea3353f798ea01390ba26b6d879be34c815) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [ProgressBubbles] Move to CSS Modules, fix issue with display box
+
 ## 0.5.1
 
 ### Patch Changes
