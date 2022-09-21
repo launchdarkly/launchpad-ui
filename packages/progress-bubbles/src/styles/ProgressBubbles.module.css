@@ -144,7 +144,6 @@
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
   -webkit-box-orient: vertical;
-  display: flex;
   -webkit-line-clamp: 2;
   text-overflow: ellipsis;
   white-space: normal;
