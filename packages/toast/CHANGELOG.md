@@ -1,5 +1,11 @@
 # @launchpad-ui/toast
 
+## 0.1.0-alpha.5
+
+### Patch Changes
+
+- [#419](https://github.com/launchdarkly/launchpad-ui/pull/419) [`752ac27`](https://github.com/launchdarkly/launchpad-ui/commit/752ac27dfb5dfe770a894ef6441eefc497417305) Thanks [@Niznikr](https://github.com/Niznikr)! - [Toast] Remove error variant
+
 ## 0.1.0-alpha.4
 
 ### Patch Changes
