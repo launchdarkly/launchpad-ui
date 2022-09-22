@@ -13,27 +13,27 @@
 }
 
 .ButtonGroup--compact > .Button + .Button,
-.ButtonGroup--compact > .Popover-target + .Button,
-.ButtonGroup--compact > .Button + .Popover-target,
-.ButtonGroup--compact > .Popover-target + .Popover-target {
+.ButtonGroup--compact > [class^='_Popover-target_'] + .Button,
+.ButtonGroup--compact > .Button + [class^='_Popover-target_'],
+.ButtonGroup--compact > [class^='_Popover-target_'] + [class^='_Popover-target_'] {
   margin-left: -1px;
 }
 
 .ButtonGroup--compact > .Button:not(:first-child),
 .ButtonGroup--compact > .Button:not(:last-child),
-.ButtonGroup--compact > .Popover-target:not(:first-child),
-.ButtonGroup--compact > .Popover-target:not(:last-child) {
+.ButtonGroup--compact > [class^='_Popover-target_']:not(:first-child),
+.ButtonGroup--compact > [class^='_Popover-target_']:not(:last-child) {
   border-radius: 0;
 }
 
 .ButtonGroup--compact > .Button:first-child,
-.ButtonGroup--compact > .Popover-target:first-child {
+.ButtonGroup--compact > [class^='_Popover-target_']:first-child {
   border-top-left-radius: var(--border-radius);
   border-bottom-left-radius: var(--border-radius);
 }
 
 .ButtonGroup--compact > .Button:last-child,
-.ButtonGroup--compact > .Popover-target:last-child {
+.ButtonGroup--compact > [class^='_Popover-target_']:last-child {
   border-top-right-radius: var(--border-radius);
   border-bottom-right-radius: var(--border-radius);
 }

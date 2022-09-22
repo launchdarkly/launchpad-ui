@@ -2,7 +2,7 @@
   z-index: 30000;
 }
 
-.Tooltip .Popover-content {
+.Popover-content {
   font-size: 1.3rem;
   background: var(--color-text);
   color: var(--color-text-inverse);
@@ -13,7 +13,7 @@
     0 4px 4px hsl(0 0% 15.7% / 0.08);
 }
 
-.Tooltip .Popover-content kbd {
+.Popover-content :global(kbd) {
   color: var(--color-gray-100);
   background-color: var(--color-black-100);
   border: 0.1rem solid var(--color-gray-700);
