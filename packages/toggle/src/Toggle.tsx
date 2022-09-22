@@ -6,7 +6,7 @@ import { useToggleState } from '@react-stately/toggle';
 import { cx } from 'classix';
 import { useRef } from 'react';
 
-import './styles/Toggle.css';
+import styles from './styles/Toggle.module.css';
 
 type ToggleProps = {
   /**
@@ -77,7 +77,12 @@ const Toggle = (props: ToggleProps) => {
   const state = useToggleState(props);
   const inputRef = useRef<HTMLInputElement>(null);
   const { inputProps } = useSwitch(props, state, inputRef);
-  const classes = cx('Toggle', className, checked && 'Toggle--on', disabled && 'Toggle--disabled');
+  const classes = cx(
+    styles.Toggle,
+    className,
+    checked && styles['Toggle--on'],
+    disabled && styles['Toggle--disabled']
+  );
 
   const handleChange = () => {
     if (disabled || !onChange) {
@@ -94,7 +99,7 @@ const Toggle = (props: ToggleProps) => {
         aria-label={ariaLabel}
         aria-labelledby={ariaLabelledby}
         checked={checked}
-        className="Toggle-input"
+        className={styles['Toggle-input']}
         disabled={disabled}
         id={id}
         data-test-id={testId}
@@ -102,15 +107,15 @@ const Toggle = (props: ToggleProps) => {
         onChange={handleChange}
         ref={inputRef}
       />
-      <label className="Toggle-wrapper" htmlFor={id}>
+      <label className={styles['Toggle-wrapper']} htmlFor={id}>
         <VisuallyHidden>
           <div>{children}</div>
         </VisuallyHidden>
-        <div className="Toggle-labels" aria-hidden>
-          <div className="Toggle-label Toggle-on">{toggleOnText}</div>
-          <div className="Toggle-label Toggle-off">{toggleOffText}</div>
+        <div className={styles['Toggle-labels']} aria-hidden>
+          <div className={cx(styles['Toggle-label'], styles['Toggle-on'])}>{toggleOnText}</div>
+          <div className={cx(styles['Toggle-label'], styles['Toggle-off'])}>{toggleOffText}</div>
         </div>
-        <div className="Toggle-pin" />
+        <div className={styles['Toggle-pin']} />
       </label>
     </div>
   );
