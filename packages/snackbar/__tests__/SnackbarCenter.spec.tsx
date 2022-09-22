@@ -1,4 +1,4 @@
-import type { SnackbarRecord } from '../src/types';
+import type { SnackbarRecord } from '../src';
 
 import { it, expect, describe } from 'vitest';
 
