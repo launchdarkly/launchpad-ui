@@ -4,7 +4,9 @@ import { Toast, type ToastProps } from '../src/Toast';
 
 test.use({ viewport: { width: 500, height: 500 } });
 
-const createComponent = (props?: ToastProps) => <Toast {...props}>An important message</Toast>;
+const createComponent = (props?: ToastProps) => (
+  <Toast kind="info" content="An important message" onDismiss={() => undefined} {...props} />
+);
 
 test.describe('Toast', () => {
   test('is accessible', async ({ mount, page }) => {
