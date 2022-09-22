@@ -16,7 +16,7 @@ export default {
 
 type Story = ComponentStoryObj<typeof ToastCenter>;
 
-const kinds = ['info', 'success', 'error', 'warning'];
+const kinds = ['info', 'success', 'warning'];
 let kindIndex = 0;
 const loopIndices = (i: number) => (kindIndex === kinds.length - 1 ? 0 : i + 1);
 
