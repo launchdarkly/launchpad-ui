@@ -10,11 +10,19 @@ type ToastBaseProps = {
   kind: 'info' | 'success' | 'error' | 'warning';
   onDismiss: () => void;
   content: ReactNode;
+  'data-test-id'?: string;
 };
 
 type ToastProps = Omit<HTMLAttributes<HTMLDivElement>, 'children'> & ToastBaseProps;
 
-const Toast = ({ className, kind, onDismiss, content, ...rest }: ToastProps) => {
+const Toast = ({
+  className,
+  kind,
+  onDismiss,
+  content,
+  'data-test-id': testId = 'toast',
+  ...rest
+}: ToastProps) => {
   useEffect(() => {
     setTimeout(() => {
       onDismiss();
@@ -25,6 +33,7 @@ const Toast = ({ className, kind, onDismiss, content, ...rest }: ToastProps) => 
     <div
       {...rest}
       className={cx('Toast', styles.Toast, styles[`Toast--${kind}`], className)}
+      data-test-id={testId}
       role="status"
     >
       {kind !== 'info' && <KindIcon kind={kind} className={styles['Toast-icon']} />}
