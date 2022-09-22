@@ -7,6 +7,12 @@
 - Updated dependencies [[`9bf79e4`](https://github.com/launchdarkly/launchpad-ui/commit/9bf79e4d07192858e723900d8ab4c208872894a5)]:
   - @launchpad-ui/icons@0.5.2
 
+## 0.4.2-alpha.0
+
+### Patch Changes
+
+- [`9a09f9c`](https://github.com/launchdarkly/launchpad-ui/commit/9a09f9ca4bc3701eb9916150f41165bf8f611b3d) Thanks [@Niznikr](https://github.com/Niznikr)! - Republish
+
 ## 0.4.1
 
 ### Patch Changes
