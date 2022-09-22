@@ -12,6 +12,7 @@ type SnackbarBaseProps = {
   description: string;
   cta?: ReactElement<HTMLAnchorElement>;
   onDismiss: () => void;
+  'data-test-id'?: string;
 };
 
 type SnackbarProps = Omit<HTMLAttributes<HTMLDivElement>, 'children'> & SnackbarBaseProps;
@@ -23,12 +24,14 @@ const Snackbar = ({
   description,
   cta,
   onDismiss,
+  'data-test-id': testId = 'snackbar',
   ...rest
 }: SnackbarProps) => {
   return (
     <div
       {...rest}
       className={cx('Snackbar', styles.Snackbar, styles[`Snackbar--${kind}`], className)}
+      data-test-id={testId}
       role="status"
     >
       <KindIcon kind={kind} className={styles['Snackbar-icon']} />
