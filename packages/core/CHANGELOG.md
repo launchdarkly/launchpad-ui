@@ -15,7 +15,6 @@
   - @launchpad-ui/split-button@0.6.3
   - @launchpad-ui/notification@0.5.3
 
-
 ## 0.14.4
 
 ### Patch Changes
@@ -51,6 +50,16 @@
   - @launchpad-ui/progress-bubbles@0.5.3
   - @launchpad-ui/split-button@0.6.2
   - @launchpad-ui/overlay@0.3.9
+
+## 0.14.4-alpha.1
+
+### Patch Changes
+
+- [#419](https://github.com/launchdarkly/launchpad-ui/pull/419) [`752ac27`](https://github.com/launchdarkly/launchpad-ui/commit/752ac27dfb5dfe770a894ef6441eefc497417305) Thanks [@Niznikr](https://github.com/Niznikr)! - [Toast] Remove error variant
+
+- Updated dependencies [[`752ac27`](https://github.com/launchdarkly/launchpad-ui/commit/752ac27dfb5dfe770a894ef6441eefc497417305)]:
+  - @launchpad-ui/toast@0.1.0-alpha.5
+
 ## 0.14.4-alpha.0
 
 ### Patch Changes
