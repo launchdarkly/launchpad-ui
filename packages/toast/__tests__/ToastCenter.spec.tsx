@@ -1,4 +1,4 @@
-import type { ToastRecord } from '../src/types';
+import type { ToastRecord } from '../src';
 
 import { it, expect, describe } from 'vitest';
 
