@@ -7,7 +7,7 @@ import { useEffect } from 'react';
 import styles from './styles/Toast.module.css';
 
 type ToastBaseProps = {
-  kind: 'info' | 'success' | 'error' | 'warning';
+  kind: 'info' | 'success' | 'warning';
   onDismiss: () => void;
   content: ReactNode;
   'data-test-id'?: string;

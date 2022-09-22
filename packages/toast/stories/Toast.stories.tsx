@@ -15,14 +15,6 @@ export default {
 
 type Story = ComponentStoryObj<typeof Toast>;
 
-export const Error: Story = {
-  args: {
-    kind: 'error',
-    title: 'Toast title',
-    content: 'This is a message about an app process.',
-  },
-};
-
 export const Info: Story = {
   args: { kind: 'info', content: 'This is a message about an app process.' },
 };
