@@ -25,7 +25,8 @@
     "test:ui": "vitest --ui",
     "test:watch": "vitest",
     "prepare": "husky install",
-    "release": "nx affected --target=build --base=origin/main~1 --head=origin/main --exclude=@launchpad-ui/remix && changeset publish"
+    "release": "nx affected --target=build --base=origin/main~1 --head=origin/main --exclude=@launchpad-ui/remix && changeset publish",
+    "report": "nyc report"
   },
   "repository": {
     "type": "git",
@@ -110,6 +111,7 @@
     "jsdom": "^20.0.0",
     "lint-staged": "^13.0.0",
     "nx": "^14.7.4",
+    "nyc": "^15.1.0",
     "plop": "^3.1.1",
     "postcss": "^8.4.16",
     "postcss-import": "^15.0.0",
@@ -136,6 +138,8 @@
   "pnpm": {
     "peerDependencyRules": {
       "ignoreMissing": [
+        "@babel/preset-env",
+        "babel-loader",
         "jest-specific-snapshot",
         "require-from-string",
         "webpack"
