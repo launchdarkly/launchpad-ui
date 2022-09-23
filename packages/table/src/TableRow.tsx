@@ -2,7 +2,7 @@ import type { HTMLProps } from 'react';
 
 import { cx } from 'classix';
 
-import './styles/Table.css';
+import styles from './styles/Table.module.css';
 
 type TableRowProps = HTMLProps<HTMLTableRowElement> & {
   verticalAlign?: 'top' | 'middle' | 'bottom';
@@ -16,8 +16,8 @@ const TableRow = ({
   'data-test-id': testId = 'table-row',
   ...rest
 }: TableRowProps) => {
-  const verticalAlignClass = verticalAlign ? `Table-row--${verticalAlign}` : '';
-  const classes = cx('Table-row', verticalAlignClass, className);
+  const verticalAlignClass = verticalAlign ? styles[`Table-row--${verticalAlign}`] : '';
+  const classes = cx(styles['Table-row'], verticalAlignClass, className);
 
   return (
     <tr {...rest} className={classes} data-test-id={testId}>

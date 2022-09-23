@@ -808,13 +808,11 @@ importers:
   packages/table:
     specifiers:
       '@launchpad-ui/tokens': workspace:~
-      camelcase: ^7.0.0
       classix: ^2.1.13
       react: ^18.2.0
       react-dom: ^18.2.0
     dependencies:
       '@launchpad-ui/tokens': link:../tokens
-      camelcase: 7.0.0
       classix: 2.1.13
     devDependencies:
       react: 18.2.0
@@ -7357,11 +7355,6 @@ packages:
     resolution: {integrity: sha512-Gmy6FhYlCY7uOElZUSbxo2UCDH8owEk996gkbrpsgGtrJLM3J7jGxl9Ic7Qwwj4ivOE5AWZWRMecDdF7hqGjFA==}
     engines: {node: '>=10'}
     dev: true
-
-  /camelcase/7.0.0:
-    resolution: {integrity: sha512-JToIvOmz6nhGsUhAYScbo2d6Py5wojjNfoxoc2mEVLUdJ70gJK2gnd+ABY1Tc3sVMyK7QDPtN0T/XdlCQWITyQ==}
-    engines: {node: '>=14.16'}
-    dev: false
 
   /caniuse-lite/1.0.30001385:
     resolution: {integrity: sha512-MpiCqJGhBkHgpyimE9GWmZTnyHyEEM35u115bD3QBrXpjvL/JgcP8cUhKJshfmg4OtEHFenifcK5sZayEw5tvQ==}
