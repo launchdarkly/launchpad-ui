@@ -1,9 +1,8 @@
 import type { ThHTMLAttributes } from 'react';
 
-import camelCase from 'camelcase';
 import { cx } from 'classix';
 
-import './styles/Table.css';
+import styles from './styles/Table.module.css';
 
 type TableHeadCellProps = ThHTMLAttributes<HTMLTableCellElement> & {
   defaultColWidth?:
@@ -24,12 +23,11 @@ const TableHeadCell = ({
   scope = 'col',
   ...rest
 }: TableHeadCellProps) => {
-  const width = camelCase(`width-${defaultColWidth}`);
-  const widthClass = defaultColWidth ? `Table-cell--${width}` : '';
+  const widthClass = defaultColWidth ? styles[`Table-cell--width-${defaultColWidth}`] : '';
   const classes = cx(
-    'Table-cell',
-    'Table-cell--head',
-    `Table-cell--${align}`,
+    styles['Table-cell'],
+    styles['Table-cell--head'],
+    styles[`Table-cell--${align}`],
     widthClass,
     className
   );

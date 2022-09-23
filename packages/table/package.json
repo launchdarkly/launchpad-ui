@@ -34,7 +34,6 @@
   },
   "dependencies": {
     "@launchpad-ui/tokens": "workspace:~",
-    "camelcase": "^7.0.0",
     "classix": "^2.1.13"
   },
   "peerDependencies": {

@@ -42,6 +42,14 @@
   text-align: right;
 }
 
+.Table-cell--justify {
+  text-align: justify;
+}
+
+.Table-cell--char {
+  text-align: '.';
+}
+
 .Table--compact .Table-cell {
   padding: 0.5rem 1rem;
 }
@@ -108,14 +116,32 @@
 }
 
 /* Used for "smallest possible table column". Table cell will expand to fit content. */
-.Table-cell--widthZero {
+/* stylelint-disable selector-class-pattern */
+.Table-cell--width-zero {
   width: 0;
 }
 
-.Table-cell--widthOneOfTwelve {
+.Table-cell--width-one-of-twelve {
   width: var(--one-of-twelve);
 }
 
-.Table-cell--widthTwoOfTwelve {
+.Table-cell--width-two-of-twelve {
   width: var(--two-of-twelve);
 }
+
+.Table-cell--width-three-of-twelve {
+  width: var(--three-of-twelve);
+}
+
+.Table-cell--width-four-of-twelve {
+  width: var(--four-of-twelve);
+}
+
+.Table-cell--width-five-of-twelve {
+  width: var(--five-of-twelve);
+}
+
+.Table-cell--width-six-of-twelve {
+  width: var(--six-of-twelve);
+}
+/* stylelint-enable selector-class-pattern */
