@@ -1,4 +1,3 @@
-/// <reference types="@testing-library/cypress" />
 import type { mount } from 'cypress/react18';
 
 declare global {

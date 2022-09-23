@@ -3,7 +3,7 @@ import { Toggle } from '../src';
 describe('Toggle', () => {
   it('should render', () => {
     cy.mount(<Toggle />);
-    cy.findByRole('switch').should('be.visible');
+    cy.get('[data-test-id="toggle"]').should('be.visible');
   });
 
   it('is accessible', () => {

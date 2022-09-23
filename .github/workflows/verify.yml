@@ -112,3 +112,28 @@ jobs:
 
       - name: SSR
         run: pnpm e2e:ssr
+
+  cypress:
+    name: Cypress
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - uses: pnpm/action-setup@v2.2.1
+
+      - name: Derive appropriate SHAs for base and head for `nx affected` commands
+        uses: nrwl/nx-set-shas@v3
+
+      - name: Setup Node 16.x
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16.x
+          cache: pnpm
+
+      - name: Install Dependencies
+        run: pnpm install
+
+      - name: Cypress
+        run: pnpm cypress

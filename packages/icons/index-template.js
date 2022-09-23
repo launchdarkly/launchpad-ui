@@ -12,6 +12,8 @@ const defaultIndexTemplate = (filePaths) => {
   exportEntries.push(`export { KindIcon } from './KindIcon';`);
   exportEntries.unshift('/* c8 ignore start */');
   exportEntries.push('/* c8 ignore stop */');
+  exportEntries.unshift('/* c8 ignore start */');
+  exportEntries.push('/* c8 ignore stop */');
 
   return exportEntries.join('\n');
 };
