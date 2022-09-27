@@ -775,7 +775,7 @@ importers:
       '@launchpad-ui/icons': link:../icons
       '@launchpad-ui/tokens': link:../tokens
       classix: 2.1.13
-      framer-motion: 7.3.2_biqbaboplfbrettd7655fr4n2y
+      framer-motion: 7.4.0_biqbaboplfbrettd7655fr4n2y
     devDependencies:
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
@@ -849,7 +849,7 @@ importers:
       '@launchpad-ui/icons': link:../icons
       '@launchpad-ui/tokens': link:../tokens
       classix: 2.1.13
-      framer-motion: 7.3.2_biqbaboplfbrettd7655fr4n2y
+      framer-motion: 7.4.0_biqbaboplfbrettd7655fr4n2y
     devDependencies:
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
