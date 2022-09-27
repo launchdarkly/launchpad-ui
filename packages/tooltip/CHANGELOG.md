@@ -1,5 +1,11 @@
 # @launchpad-ui/tooltip
 
+## 0.6.3
+
+### Patch Changes
+
+- [#426](https://github.com/launchdarkly/launchpad-ui/pull/426) [`a7c53bc`](https://github.com/launchdarkly/launchpad-ui/commit/a7c53bcfef64a49c9e87acdd1db1bd9aac83906b) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Tooltip]: Increase specificity for tooltip content styles
+
 ## 0.6.2
 
 ### Patch Changes
