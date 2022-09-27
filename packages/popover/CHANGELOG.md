@@ -1,5 +1,16 @@
 # @launchpad-ui/popover
 
+## 0.8.2
+
+### Patch Changes
+
+- [#414](https://github.com/launchdarkly/launchpad-ui/pull/414) [`f4334d3`](https://github.com/launchdarkly/launchpad-ui/commit/f4334d3601d1f675eab6d0430354bd80d46bea01) Thanks [@Niznikr](https://github.com/Niznikr)! - [Popover, Tooltip] Update to CSS modules:
+
+  - Replace unstyled class `Popover-target--active` with attribute `data-state` to indicate `open` or `closed` popover on target
+
+- Updated dependencies []:
+  - @launchpad-ui/overlay@0.3.9
+
 ## 0.8.1
 
 ### Patch Changes

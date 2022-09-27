@@ -1,5 +1,11 @@
 # @launchpad-ui/toggle
 
+## 0.4.2
+
+### Patch Changes
+
+- [#418](https://github.com/launchdarkly/launchpad-ui/pull/418) [`eda2e2a`](https://github.com/launchdarkly/launchpad-ui/commit/eda2e2afc833896d4afec98ced054e1239f18310) Thanks [@Niznikr](https://github.com/Niznikr)! - [Toggle] Update to css modules
+
 ## 0.4.1
 
 ### Patch Changes

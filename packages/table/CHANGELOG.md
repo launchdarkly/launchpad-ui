@@ -1,5 +1,11 @@
 # @launchpad-ui/table
 
+## 0.4.2
+
+### Patch Changes
+
+- [#421](https://github.com/launchdarkly/launchpad-ui/pull/421) [`358e909`](https://github.com/launchdarkly/launchpad-ui/commit/358e909eda789d12a5b67726ff4db3caee4d02a8) Thanks [@Niznikr](https://github.com/Niznikr)! - [Table] Update to css modules
+
 ## 0.4.1
 
 ### Patch Changes
