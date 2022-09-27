@@ -1,5 +1,20 @@
 # @launchpad-ui/core
 
+## 0.14.5
+
+### Patch Changes
+
+- [#426](https://github.com/launchdarkly/launchpad-ui/pull/426) [`a7c53bc`](https://github.com/launchdarkly/launchpad-ui/commit/a7c53bcfef64a49c9e87acdd1db1bd9aac83906b) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Tooltip]: Increase specificity for tooltip content styles
+
+- Updated dependencies [[`a7c53bc`](https://github.com/launchdarkly/launchpad-ui/commit/a7c53bcfef64a49c9e87acdd1db1bd9aac83906b)]:
+  - @launchpad-ui/tooltip@0.6.3
+  - @launchpad-ui/clipboard@0.8.3
+  - @launchpad-ui/filter@0.4.4
+  - @launchpad-ui/menu@0.6.4
+  - @launchpad-ui/navigation@0.6.5
+  - @launchpad-ui/split-button@0.6.3
+  - @launchpad-ui/notification@0.5.3
+
 ## 0.14.4
 
 ### Patch Changes
