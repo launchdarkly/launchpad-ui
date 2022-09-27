@@ -1,5 +1,33 @@
 # @launchpad-ui/core
 
+## 0.14.4-alpha.2
+
+### Patch Changes
+
+- [`aa173ae`](https://github.com/launchdarkly/launchpad-ui/commit/aa173ae6d5ede85011f7a47a0870de2e7dc527f6) Thanks [@chasedarkly](https://github.com/chasedarkly)! - Republish
+
+- Updated dependencies [[`aa173ae`](https://github.com/launchdarkly/launchpad-ui/commit/aa173ae6d5ede85011f7a47a0870de2e7dc527f6)]:
+  - @launchpad-ui/alert@0.4.2-alpha.1
+  - @launchpad-ui/banner@0.5.2-alpha.1
+  - @launchpad-ui/icons@0.5.3-alpha.0
+  - @launchpad-ui/snackbar@0.1.0-alpha.5
+  - @launchpad-ui/toast@0.1.0-alpha.6
+  - @launchpad-ui/avatar@0.4.3-alpha.0
+  - @launchpad-ui/clipboard@0.8.4-alpha.0
+  - @launchpad-ui/dropdown@0.5.3-alpha.0
+  - @launchpad-ui/filter@0.4.5-alpha.0
+  - @launchpad-ui/form@0.6.4-alpha.0
+  - @launchpad-ui/menu@0.6.5-alpha.0
+  - @launchpad-ui/modal@0.8.3-alpha.0
+  - @launchpad-ui/notification@0.5.4-alpha.0
+  - @launchpad-ui/pagination@0.3.3-alpha.0
+  - @launchpad-ui/navigation@0.6.6-alpha.0
+  - @launchpad-ui/split-button@0.6.4-alpha.0
+  - @launchpad-ui/overlay@0.3.10-alpha.0
+  - @launchpad-ui/popover@0.8.3-alpha.0
+  - @launchpad-ui/progress-bubbles@0.5.4-alpha.0
+  - @launchpad-ui/tooltip@0.6.4-alpha.0
+
 ## 0.14.5
 
 ### Patch Changes
