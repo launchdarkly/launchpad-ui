@@ -1,5 +1,11 @@
 # @launchpad-ui/icons
 
+## 0.5.2
+
+### Patch Changes
+
+- [#424](https://github.com/launchdarkly/launchpad-ui/pull/424) [`9bf79e4`](https://github.com/launchdarkly/launchpad-ui/commit/9bf79e4d07192858e723900d8ab4c208872894a5) Thanks [@stinachen](https://github.com/stinachen)! - [Icons] Add `EventBusy`
+
 ## 0.5.1
 
 ### Patch Changes
