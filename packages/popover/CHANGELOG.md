@@ -79,7 +79,6 @@
 ### Patch Changes
 
 - Updated dependencies []:
-  <<<<<<< HEAD
   - @launchpad-ui/overlay@0.3.7
 
 ## 0.7.6
@@ -92,7 +91,6 @@
   - @launchpad-ui/focus-trap@0.1.0
   - # @launchpad-ui/overlay@0.3.6
   - @launchpad-ui/overlay@0.3.6-alpha.0
-    > > > > > > > 78e812e (chore: version packages (alpha) (#316))
 
 ## 0.7.5
 
