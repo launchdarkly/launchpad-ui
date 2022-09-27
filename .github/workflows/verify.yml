@@ -80,6 +80,20 @@ jobs:
       - name: Install Dependencies
         run: pnpm install
 
+      - name: Get Cypress Version
+        id: get-version
+        run: |
+          echo "::set-output name=version::$(pnpm cypress version --component package)"
+        shell: bash
+
+      - name: Cache Cypress Binary
+        uses: actions/cache@v1
+        with:
+          path: ~/.cache/Cypress
+          key: cypress-${{ runner.os }}-cypress-${{ steps.get-version.outputs.version }}
+          restore-keys: |
+            cypress-${{ runner.os }}-cypress-
+
       - name: SSR
         run: pnpm e2e:ssr
 
@@ -104,6 +118,20 @@ jobs:
 
       - name: Install Dependencies
         run: pnpm install
+
+      - name: Get Cypress Version
+        id: get-version
+        run: |
+          echo "::set-output name=version::$(pnpm cypress version --component package)"
+        shell: bash
+
+      - name: Cache Cypress Binary
+        uses: actions/cache@v1
+        with:
+          path: ~/.cache/Cypress
+          key: cypress-${{ runner.os }}-cypress-${{ steps.get-version.outputs.version }}
+          restore-keys: |
+            cypress-${{ runner.os }}-cypress-
 
       - name: Cypress
         run: pnpm cypress:component
