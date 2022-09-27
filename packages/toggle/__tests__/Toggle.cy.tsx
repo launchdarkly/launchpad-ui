@@ -1,3 +1,4 @@
+import { toggleDarkMode } from '../../../cypress/utils/dark-mode';
 import { Toggle } from '../src';
 
 describe('Toggle', () => {
@@ -22,5 +23,19 @@ describe('Toggle', () => {
 
     cy.get('[data-test-id="toggle"]').click({ force: true });
     cy.get('@onChangeSpy').should('have.been.calledOnce');
+  });
+
+  context('dark mode', () => {
+    toggleDarkMode();
+
+    it('is accessible', () => {
+      cy.mount(
+        <>
+          <label htmlFor="toggle">label</label>
+          <Toggle id="toggle" />
+        </>
+      );
+      cy.checkA11y();
+    });
   });
 });

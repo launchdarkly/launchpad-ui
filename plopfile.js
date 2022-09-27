@@ -46,11 +46,6 @@ module.exports = (plop) => {
       },
       {
         type: 'add',
-        path: 'packages/{{dashCase name}}/__tests__/{{pascalCase name}}.e2e.tsx',
-        templateFile: '.plop/templates/component/e2e.tsx.hbs',
-      },
-      {
-        type: 'add',
         path: 'packages/{{dashCase name}}/src/{{pascalCase name}}.tsx',
         templateFile: '.plop/templates/component/component.tsx.hbs',
       },
