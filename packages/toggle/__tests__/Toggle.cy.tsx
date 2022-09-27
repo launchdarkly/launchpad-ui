@@ -15,4 +15,12 @@ describe('Toggle', () => {
     );
     cy.checkA11y();
   });
+
+  it('calls onChange when toggled', () => {
+    const onChangeSpy = cy.spy().as('onChangeSpy');
+    cy.mount(<Toggle onChange={onChangeSpy} />);
+
+    cy.get('[data-test-id="toggle"]').click({ force: true });
+    cy.get('@onChangeSpy').should('have.been.calledOnce');
+  });
 });
