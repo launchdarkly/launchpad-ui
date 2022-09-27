@@ -87,7 +87,7 @@ jobs:
         shell: bash
 
       - name: Cache Cypress Binary
-        uses: actions/cache@v1
+        uses: actions/cache@v3
         with:
           path: ~/.cache/Cypress
           key: cypress-${{ runner.os }}-cypress-${{ steps.get-version.outputs.version }}
@@ -126,7 +126,7 @@ jobs:
         shell: bash
 
       - name: Cache Cypress Binary
-        uses: actions/cache@v1
+        uses: actions/cache@v3
         with:
           path: ~/.cache/Cypress
           key: cypress-${{ runner.os }}-cypress-${{ steps.get-version.outputs.version }}
