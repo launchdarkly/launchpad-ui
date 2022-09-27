@@ -80,36 +80,6 @@ jobs:
       - name: Install Dependencies
         run: pnpm install
 
-      - name: Get Playwright Version
-        id: get-version
-        run: |
-          echo "::set-output name=version::$(pnpm playwright --version)"
-        shell: bash
-
-      - name: Cache Browsers
-        id: cache-browsers
-        uses: actions/cache@v3
-        with:
-          path: '~/.cache/ms-playwright'
-          key: ${{ runner.os }}-${{ steps.get-version.outputs.version }}
-
-      - name: Install Playwright
-        if: steps.cache-browsers.outputs.cache-hit != 'true'
-        run: pnpm playwright install
-
-      - name: Install Browsers Dependencies
-        run: pnpm playwright install-deps
-
-      - name: Test
-        run: pnpm e2e
-
-      - name: Upload Results
-        uses: actions/upload-artifact@v3
-        if: failure()
-        with:
-          name: a11y-test-results
-          path: test-results/
-
       - name: SSR
         run: pnpm e2e:ssr
 
@@ -136,4 +106,4 @@ jobs:
         run: pnpm install
 
       - name: Cypress
-        run: pnpm cypress
+        run: pnpm cypress:component
