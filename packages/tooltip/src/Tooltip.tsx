@@ -18,6 +18,7 @@ const TooltipBase = ({
   targetClassName,
   hoverCloseDelay = 0,
   'data-test-id': testId = 'tooltip',
+  popoverContentClassName,
   ...props
 }: TooltipProps) => {
   return (
@@ -26,7 +27,7 @@ const TooltipBase = ({
       interactionKind="hover-or-focus"
       hoverCloseDelay={hoverCloseDelay}
       popoverClassName={cx(styles.Tooltip, className)}
-      popoverContentClassName={styles['Popover-content']}
+      popoverContentClassName={cx(popoverContentClassName, styles['Tooltip-popover-content'])}
       targetClassName={targetClassName}
       data-test-id={testId}
       {...props}
