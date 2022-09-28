@@ -180,36 +180,36 @@ importers:
 
   apps/remix:
     specifiers:
-      '@launchpad-ui/alert': workspace:*
-      '@launchpad-ui/avatar': workspace:*
-      '@launchpad-ui/banner': workspace:*
-      '@launchpad-ui/button': workspace:*
-      '@launchpad-ui/chip': workspace:*
-      '@launchpad-ui/clipboard': workspace:*
-      '@launchpad-ui/core': workspace:*
-      '@launchpad-ui/counter': workspace:*
-      '@launchpad-ui/dropdown': workspace:*
-      '@launchpad-ui/filter': workspace:*
-      '@launchpad-ui/form': workspace:*
-      '@launchpad-ui/icons': workspace:*
-      '@launchpad-ui/markdown': workspace:*
-      '@launchpad-ui/menu': workspace:*
-      '@launchpad-ui/modal': workspace:*
-      '@launchpad-ui/navigation': workspace:*
-      '@launchpad-ui/notification': workspace:*
-      '@launchpad-ui/pagination': workspace:*
-      '@launchpad-ui/popover': workspace:*
-      '@launchpad-ui/progress': workspace:*
-      '@launchpad-ui/progress-bubbles': workspace:*
-      '@launchpad-ui/slider': workspace:*
-      '@launchpad-ui/snackbar': workspace:*
-      '@launchpad-ui/split-button': workspace:*
-      '@launchpad-ui/tab-list': workspace:*
-      '@launchpad-ui/table': workspace:*
-      '@launchpad-ui/toast': workspace:*
-      '@launchpad-ui/toggle': workspace:*
-      '@launchpad-ui/tokens': workspace:*
-      '@launchpad-ui/tooltip': workspace:*
+      '@launchpad-ui/alert': workspace:~
+      '@launchpad-ui/avatar': workspace:~
+      '@launchpad-ui/banner': workspace:~
+      '@launchpad-ui/button': workspace:~
+      '@launchpad-ui/chip': workspace:~
+      '@launchpad-ui/clipboard': workspace:~
+      '@launchpad-ui/core': workspace:~
+      '@launchpad-ui/counter': workspace:~
+      '@launchpad-ui/dropdown': workspace:~
+      '@launchpad-ui/filter': workspace:~
+      '@launchpad-ui/form': workspace:~
+      '@launchpad-ui/icons': workspace:~
+      '@launchpad-ui/markdown': workspace:~
+      '@launchpad-ui/menu': workspace:~
+      '@launchpad-ui/modal': workspace:~
+      '@launchpad-ui/navigation': workspace:~
+      '@launchpad-ui/notification': workspace:~
+      '@launchpad-ui/pagination': workspace:~
+      '@launchpad-ui/popover': workspace:~
+      '@launchpad-ui/progress': workspace:~
+      '@launchpad-ui/progress-bubbles': workspace:~
+      '@launchpad-ui/slider': workspace:~
+      '@launchpad-ui/snackbar': workspace:~
+      '@launchpad-ui/split-button': workspace:~
+      '@launchpad-ui/tab-list': workspace:~
+      '@launchpad-ui/table': workspace:~
+      '@launchpad-ui/toast': workspace:~
+      '@launchpad-ui/toggle': workspace:~
+      '@launchpad-ui/tokens': workspace:~
+      '@launchpad-ui/tooltip': workspace:~
       '@react-aria/ssr': ^3.3.0
       '@react-stately/collections': ^3.4.0
       '@remix-run/dev': ^1.7.0
@@ -269,9 +269,9 @@ importers:
 
   packages/alert:
     specifiers:
-      '@launchpad-ui/button': workspace:*
-      '@launchpad-ui/icons': workspace:*
-      '@launchpad-ui/tokens': workspace:*
+      '@launchpad-ui/button': workspace:~
+      '@launchpad-ui/icons': workspace:~
+      '@launchpad-ui/tokens': workspace:~
       classix: ^2.1.13
       react: ^18.2.0
       react-dom: ^18.2.0
@@ -286,8 +286,8 @@ importers:
 
   packages/avatar:
     specifiers:
-      '@launchpad-ui/icons': workspace:*
-      '@launchpad-ui/tokens': workspace:*
+      '@launchpad-ui/icons': workspace:~
+      '@launchpad-ui/tokens': workspace:~
       classix: ^2.1.13
       react: ^18.2.0
       react-dom: ^18.2.0
@@ -301,9 +301,9 @@ importers:
 
   packages/banner:
     specifiers:
-      '@launchpad-ui/button': workspace:*
-      '@launchpad-ui/icons': workspace:*
-      '@launchpad-ui/tokens': workspace:*
+      '@launchpad-ui/button': workspace:~
+      '@launchpad-ui/icons': workspace:~
+      '@launchpad-ui/tokens': workspace:~
       classix: ^2.1.13
       react: ^18.2.0
       react-dom: ^18.2.0
@@ -318,7 +318,7 @@ importers:
 
   packages/button:
     specifiers:
-      '@launchpad-ui/tokens': workspace:*
+      '@launchpad-ui/tokens': workspace:~
       '@radix-ui/react-slot': ^1.0.0
       classix: ^2.1.13
       react: ^18.2.0
@@ -333,7 +333,7 @@ importers:
 
   packages/chip:
     specifiers:
-      '@launchpad-ui/tokens': workspace:*
+      '@launchpad-ui/tokens': workspace:~
       classix: ^2.1.13
       react: ^18.2.0
       react-dom: ^18.2.0
@@ -346,9 +346,9 @@ importers:
 
   packages/clipboard:
     specifiers:
-      '@launchpad-ui/icons': workspace:*
-      '@launchpad-ui/tokens': workspace:*
-      '@launchpad-ui/tooltip': workspace:*
+      '@launchpad-ui/icons': workspace:~
+      '@launchpad-ui/tokens': workspace:~
+      '@launchpad-ui/tooltip': workspace:~
       '@radix-ui/react-slot': ^1.0.0
       '@react-aria/live-announcer': ^3.1.0
       classix: ^2.1.13
@@ -367,37 +367,37 @@ importers:
 
   packages/core:
     specifiers:
-      '@launchpad-ui/alert': workspace:*
-      '@launchpad-ui/avatar': workspace:*
-      '@launchpad-ui/banner': workspace:*
-      '@launchpad-ui/button': workspace:*
-      '@launchpad-ui/chip': workspace:*
-      '@launchpad-ui/clipboard': workspace:*
-      '@launchpad-ui/counter': workspace:*
-      '@launchpad-ui/dropdown': workspace:*
-      '@launchpad-ui/filter': workspace:*
-      '@launchpad-ui/focus-trap': workspace:*
-      '@launchpad-ui/form': workspace:*
-      '@launchpad-ui/icons': workspace:*
-      '@launchpad-ui/markdown': workspace:*
-      '@launchpad-ui/menu': workspace:*
-      '@launchpad-ui/modal': workspace:*
-      '@launchpad-ui/navigation': workspace:*
-      '@launchpad-ui/notification': workspace:*
-      '@launchpad-ui/overlay': workspace:*
-      '@launchpad-ui/pagination': workspace:*
-      '@launchpad-ui/popover': workspace:*
-      '@launchpad-ui/progress': workspace:*
-      '@launchpad-ui/progress-bubbles': workspace:*
-      '@launchpad-ui/slider': workspace:*
-      '@launchpad-ui/snackbar': workspace:*
-      '@launchpad-ui/split-button': workspace:*
-      '@launchpad-ui/tab-list': workspace:*
-      '@launchpad-ui/table': workspace:*
-      '@launchpad-ui/toast': workspace:*
-      '@launchpad-ui/toggle': workspace:*
-      '@launchpad-ui/tokens': workspace:*
-      '@launchpad-ui/tooltip': workspace:*
+      '@launchpad-ui/alert': workspace:~
+      '@launchpad-ui/avatar': workspace:~
+      '@launchpad-ui/banner': workspace:~
+      '@launchpad-ui/button': workspace:~
+      '@launchpad-ui/chip': workspace:~
+      '@launchpad-ui/clipboard': workspace:~
+      '@launchpad-ui/counter': workspace:~
+      '@launchpad-ui/dropdown': workspace:~
+      '@launchpad-ui/filter': workspace:~
+      '@launchpad-ui/focus-trap': workspace:~
+      '@launchpad-ui/form': workspace:~
+      '@launchpad-ui/icons': workspace:~
+      '@launchpad-ui/markdown': workspace:~
+      '@launchpad-ui/menu': workspace:~
+      '@launchpad-ui/modal': workspace:~
+      '@launchpad-ui/navigation': workspace:~
+      '@launchpad-ui/notification': workspace:~
+      '@launchpad-ui/overlay': workspace:~
+      '@launchpad-ui/pagination': workspace:~
+      '@launchpad-ui/popover': workspace:~
+      '@launchpad-ui/progress': workspace:~
+      '@launchpad-ui/progress-bubbles': workspace:~
+      '@launchpad-ui/slider': workspace:~
+      '@launchpad-ui/snackbar': workspace:~
+      '@launchpad-ui/split-button': workspace:~
+      '@launchpad-ui/tab-list': workspace:~
+      '@launchpad-ui/table': workspace:~
+      '@launchpad-ui/toast': workspace:~
+      '@launchpad-ui/toggle': workspace:~
+      '@launchpad-ui/tokens': workspace:~
+      '@launchpad-ui/tooltip': workspace:~
       react: ^18.2.0
       react-dom: ^18.2.0
     dependencies:
@@ -438,7 +438,7 @@ importers:
 
   packages/counter:
     specifiers:
-      '@launchpad-ui/tokens': workspace:*
+      '@launchpad-ui/tokens': workspace:~
       classix: ^2.1.13
       react: ^18.2.0
       react-dom: ^18.2.0
@@ -451,10 +451,10 @@ importers:
 
   packages/dropdown:
     specifiers:
-      '@launchpad-ui/button': workspace:*
-      '@launchpad-ui/icons': workspace:*
-      '@launchpad-ui/popover': workspace:*
-      '@launchpad-ui/tokens': workspace:*
+      '@launchpad-ui/button': workspace:~
+      '@launchpad-ui/icons': workspace:~
+      '@launchpad-ui/popover': workspace:~
+      '@launchpad-ui/tokens': workspace:~
       classix: ^2.1.13
       react: ^18.2.0
       react-dom: ^18.2.0
@@ -470,12 +470,12 @@ importers:
 
   packages/filter:
     specifiers:
-      '@launchpad-ui/button': workspace:*
-      '@launchpad-ui/dropdown': workspace:*
-      '@launchpad-ui/icons': workspace:*
-      '@launchpad-ui/menu': workspace:*
-      '@launchpad-ui/tokens': workspace:*
-      '@launchpad-ui/tooltip': workspace:*
+      '@launchpad-ui/button': workspace:~
+      '@launchpad-ui/dropdown': workspace:~
+      '@launchpad-ui/icons': workspace:~
+      '@launchpad-ui/menu': workspace:~
+      '@launchpad-ui/tokens': workspace:~
+      '@launchpad-ui/tooltip': workspace:~
       '@react-aria/visually-hidden': ^3.4.0
       classix: ^2.1.13
       react: ^18.2.0
@@ -506,8 +506,8 @@ importers:
 
   packages/form:
     specifiers:
-      '@launchpad-ui/icons': workspace:*
-      '@launchpad-ui/tokens': workspace:*
+      '@launchpad-ui/icons': workspace:~
+      '@launchpad-ui/tokens': workspace:~
       '@react-aria/visually-hidden': ^3.4.0
       classix: ^2.1.13
       react: ^18.2.0
@@ -523,7 +523,7 @@ importers:
 
   packages/icons:
     specifiers:
-      '@launchpad-ui/tokens': workspace:*
+      '@launchpad-ui/tokens': workspace:~
       '@svgr/cli': ^6.3.1
       classix: ^2.1.13
       react: ^18.2.0
@@ -538,7 +538,7 @@ importers:
 
   packages/markdown:
     specifiers:
-      '@launchpad-ui/tokens': workspace:*
+      '@launchpad-ui/tokens': workspace:~
       '@types/marked': ^4.0.3
       classix: ^2.1.13
       isomorphic-dompurify: ^0.22.0
@@ -557,11 +557,11 @@ importers:
 
   packages/menu:
     specifiers:
-      '@launchpad-ui/form': workspace:*
-      '@launchpad-ui/icons': workspace:*
-      '@launchpad-ui/popover': workspace:*
-      '@launchpad-ui/tokens': workspace:*
-      '@launchpad-ui/tooltip': workspace:*
+      '@launchpad-ui/form': workspace:~
+      '@launchpad-ui/icons': workspace:~
+      '@launchpad-ui/popover': workspace:~
+      '@launchpad-ui/tokens': workspace:~
+      '@launchpad-ui/tooltip': workspace:~
       '@radix-ui/react-slot': ^1.0.0
       '@react-aria/focus': ^3.8.0
       '@react-aria/separator': ^3.2.0
@@ -588,11 +588,11 @@ importers:
 
   packages/modal:
     specifiers:
-      '@launchpad-ui/button': workspace:*
-      '@launchpad-ui/focus-trap': workspace:*
-      '@launchpad-ui/icons': workspace:*
-      '@launchpad-ui/progress': workspace:*
-      '@launchpad-ui/tokens': workspace:*
+      '@launchpad-ui/button': workspace:~
+      '@launchpad-ui/focus-trap': workspace:~
+      '@launchpad-ui/icons': workspace:~
+      '@launchpad-ui/progress': workspace:~
+      '@launchpad-ui/tokens': workspace:~
       '@react-aria/overlays': ^3.10.0
       classix: ^2.1.13
       framer-motion: ^7.4.0
@@ -613,12 +613,12 @@ importers:
 
   packages/navigation:
     specifiers:
-      '@launchpad-ui/chip': workspace:*
-      '@launchpad-ui/dropdown': workspace:*
-      '@launchpad-ui/menu': workspace:*
-      '@launchpad-ui/popover': workspace:*
-      '@launchpad-ui/tokens': workspace:*
-      '@launchpad-ui/tooltip': workspace:*
+      '@launchpad-ui/chip': workspace:~
+      '@launchpad-ui/dropdown': workspace:~
+      '@launchpad-ui/menu': workspace:~
+      '@launchpad-ui/popover': workspace:~
+      '@launchpad-ui/tokens': workspace:~
+      '@launchpad-ui/tooltip': workspace:~
       '@react-aria/utils': ^3.13.1
       '@react-stately/list': ^3.5.1
       '@react-types/shared': ^3.14.0
@@ -644,11 +644,11 @@ importers:
 
   packages/notification:
     specifiers:
-      '@launchpad-ui/button': workspace:*
-      '@launchpad-ui/clipboard': workspace:*
-      '@launchpad-ui/focus-trap': workspace:*
-      '@launchpad-ui/icons': workspace:*
-      '@launchpad-ui/tokens': workspace:*
+      '@launchpad-ui/button': workspace:~
+      '@launchpad-ui/clipboard': workspace:~
+      '@launchpad-ui/focus-trap': workspace:~
+      '@launchpad-ui/icons': workspace:~
+      '@launchpad-ui/tokens': workspace:~
       classix: ^2.1.13
       framer-motion: ^7.4.0
       react: ^18.2.0
@@ -667,7 +667,7 @@ importers:
 
   packages/overlay:
     specifiers:
-      '@launchpad-ui/modal': workspace:*
+      '@launchpad-ui/modal': workspace:~
       react: ^18.2.0
       react-dom: ^18.2.0
     dependencies:
@@ -678,10 +678,10 @@ importers:
 
   packages/pagination:
     specifiers:
-      '@launchpad-ui/button': workspace:*
-      '@launchpad-ui/icons': workspace:*
-      '@launchpad-ui/progress': workspace:*
-      '@launchpad-ui/tokens': workspace:*
+      '@launchpad-ui/button': workspace:~
+      '@launchpad-ui/icons': workspace:~
+      '@launchpad-ui/progress': workspace:~
+      '@launchpad-ui/tokens': workspace:~
       '@react-aria/visually-hidden': ^3.4.0
       classix: ^2.1.13
       react: ^18.2.0
@@ -701,9 +701,9 @@ importers:
     specifiers:
       '@floating-ui/core': ^1.0.0
       '@floating-ui/dom': ^1.0.0
-      '@launchpad-ui/focus-trap': workspace:*
-      '@launchpad-ui/overlay': workspace:*
-      '@launchpad-ui/tokens': workspace:*
+      '@launchpad-ui/focus-trap': workspace:~
+      '@launchpad-ui/overlay': workspace:~
+      '@launchpad-ui/tokens': workspace:~
       classix: ^2.1.13
       framer-motion: ^7.4.0
       react: ^18.2.0
@@ -722,7 +722,7 @@ importers:
 
   packages/progress:
     specifiers:
-      '@launchpad-ui/tokens': workspace:*
+      '@launchpad-ui/tokens': workspace:~
       classix: ^2.1.13
       react: ^18.2.0
       react-dom: ^18.2.0
@@ -735,8 +735,8 @@ importers:
 
   packages/progress-bubbles:
     specifiers:
-      '@launchpad-ui/popover': workspace:*
-      '@launchpad-ui/tokens': workspace:*
+      '@launchpad-ui/popover': workspace:~
+      '@launchpad-ui/tokens': workspace:~
       classix: ^2.1.13
       react: ^18.2.0
       react-dom: ^18.2.0
@@ -750,7 +750,7 @@ importers:
 
   packages/slider:
     specifiers:
-      '@launchpad-ui/tokens': workspace:*
+      '@launchpad-ui/tokens': workspace:~
       classix: ^2.1.13
       react: ^18.2.0
       react-dom: ^18.2.0
@@ -763,9 +763,9 @@ importers:
 
   packages/snackbar:
     specifiers:
-      '@launchpad-ui/button': workspace:*
-      '@launchpad-ui/icons': workspace:*
-      '@launchpad-ui/tokens': workspace:*
+      '@launchpad-ui/button': workspace:~
+      '@launchpad-ui/icons': workspace:~
+      '@launchpad-ui/tokens': workspace:~
       classix: ^2.1.13
       framer-motion: ^7.4.0
       react: ^18.2.0
@@ -782,11 +782,11 @@ importers:
 
   packages/split-button:
     specifiers:
-      '@launchpad-ui/button': workspace:*
-      '@launchpad-ui/dropdown': workspace:*
-      '@launchpad-ui/popover': workspace:*
-      '@launchpad-ui/tokens': workspace:*
-      '@launchpad-ui/tooltip': workspace:*
+      '@launchpad-ui/button': workspace:~
+      '@launchpad-ui/dropdown': workspace:~
+      '@launchpad-ui/popover': workspace:~
+      '@launchpad-ui/tokens': workspace:~
+      '@launchpad-ui/tooltip': workspace:~
       classix: ^2.1.13
       react: ^18.2.0
       react-dom: ^18.2.0
@@ -803,7 +803,7 @@ importers:
 
   packages/tab-list:
     specifiers:
-      '@launchpad-ui/tokens': workspace:*
+      '@launchpad-ui/tokens': workspace:~
       '@react-aria/tabs': ^3.3.0
       '@react-stately/collections': ^3.4.0
       '@react-stately/tabs': ^3.2.0
@@ -826,7 +826,7 @@ importers:
 
   packages/table:
     specifiers:
-      '@launchpad-ui/tokens': workspace:*
+      '@launchpad-ui/tokens': workspace:~
       classix: ^2.1.13
       react: ^18.2.0
       react-dom: ^18.2.0
@@ -839,8 +839,8 @@ importers:
 
   packages/toast:
     specifiers:
-      '@launchpad-ui/icons': workspace:*
-      '@launchpad-ui/tokens': workspace:*
+      '@launchpad-ui/icons': workspace:~
+      '@launchpad-ui/tokens': workspace:~
       classix: ^2.1.13
       framer-motion: ^7.4.0
       react: ^18.2.0
@@ -856,7 +856,7 @@ importers:
 
   packages/toggle:
     specifiers:
-      '@launchpad-ui/tokens': workspace:*
+      '@launchpad-ui/tokens': workspace:~
       '@react-aria/switch': ^3.2.0
       '@react-aria/visually-hidden': ^3.4.0
       '@react-stately/toggle': ^3.4.0
@@ -883,8 +883,8 @@ importers:
 
   packages/tooltip:
     specifiers:
-      '@launchpad-ui/popover': workspace:*
-      '@launchpad-ui/tokens': workspace:*
+      '@launchpad-ui/popover': workspace:~
+      '@launchpad-ui/tokens': workspace:~
       classix: ^2.1.13
       react: ^18.2.0
       react-dom: ^18.2.0

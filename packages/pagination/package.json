@@ -33,10 +33,10 @@
     "test": "vitest run --coverage"
   },
   "dependencies": {
-    "@launchpad-ui/button": "workspace:*",
-    "@launchpad-ui/icons": "workspace:*",
-    "@launchpad-ui/progress": "workspace:*",
-    "@launchpad-ui/tokens": "workspace:*",
+    "@launchpad-ui/button": "workspace:~",
+    "@launchpad-ui/icons": "workspace:~",
+    "@launchpad-ui/progress": "workspace:~",
+    "@launchpad-ui/tokens": "workspace:~",
     "@react-aria/visually-hidden": "^3.4.0",
     "classix": "^2.1.13"
   },

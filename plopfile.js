@@ -86,7 +86,7 @@ module.exports = (plop) => {
       {
         path: 'packages/core/package.json',
         pattern: /("dependencies": {)/g,
-        template: '$1\n    "@launchpad-ui/{{dashCase name}}": "workspace:*",',
+        template: '$1\n    "@launchpad-ui/{{dashCase name}}": "workspace:~",',
         type: 'modify',
         transform: (file) =>
           sortModification(file, {
@@ -112,7 +112,7 @@ module.exports = (plop) => {
       {
         path: 'apps/remix/package.json',
         pattern: /("dependencies": {)/g,
-        template: '$1\n    "@launchpad-ui/{{dashCase name}}": "workspace:*",',
+        template: '$1\n    "@launchpad-ui/{{dashCase name}}": "workspace:~",',
         type: 'modify',
         transform: (file) =>
           sortModification(file, {

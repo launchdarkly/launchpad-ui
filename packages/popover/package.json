@@ -35,9 +35,9 @@
   "dependencies": {
     "@floating-ui/core": "^1.0.0",
     "@floating-ui/dom": "^1.0.0",
-    "@launchpad-ui/focus-trap": "workspace:*",
-    "@launchpad-ui/overlay": "workspace:*",
-    "@launchpad-ui/tokens": "workspace:*",
+    "@launchpad-ui/focus-trap": "workspace:~",
+    "@launchpad-ui/overlay": "workspace:~",
+    "@launchpad-ui/tokens": "workspace:~",
     "classix": "^2.1.13",
     "framer-motion": "^7.4.0"
   },
