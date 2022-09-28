@@ -1,80 +1,15 @@
 # Contributing to Launchpad UI
 
-:+1::tada: First off, thanks for taking the time to contribute! :tada::+1:
+:+1::tada: First off, thanks for taking the time to read our contribution docs! :tada::+1:
 
 The following is a set of guidelines for contributing to Launchpad and its packages, which are hosted in the [LaunchDarkly Organization](https://github.com/launchdarkly) on GitHub. These are mostly guidelines, not rules. Use your best judgment, and feel free to propose changes to this document in a pull request.
 
 #### Table Of Contents
 
-[I don't want to read this whole thing, I just have a question!!!](#i-dont-want-to-read-this-whole-thing-i-just-have-a-question)
-
-[What should I know before I get started?](#what-should-i-know-before-i-get-started)
-
-- [Monorepo architecture](#monorepo-architecture)
-- [What's in the packages directory?](#whats-in-the-packages-directory)
-- [What's in the apps directory?](#whats-in-the-apps-directory)
-- [How does versioning work in Launchpad?](#how-does-versioning-work-in-launchpad)
-
-[How Can I Contribute?](#how-can-i-contribute)
-
-- [Reporting Bugs](#reporting-bugs)
-- [Suggesting Enhancements](#suggesting-enhancements)
-- [Your First Code Contribution](#your-first-code-contribution)
-
-[Styleguides](#styleguides)
-
-- [Javascript Styleguide](#javascript-styleguide)
-- [CSS Styleguide](#css-styleguide)
-- [Specs Styleguide](#specs-styleguide)
-
-[Creating a new package in Launchpad](#creating-a-new-package-in-launchpad)
-
-- [With Plop](#with-plop)
-- [Dependencies](#dependencies)
-- [Adding an icon to Launchpad](#adding-an-icon-to-launchpad)
-- [Test your code](#test-your-code)
-- [Okay, I'm ready to deploy my code](#okay-im-ready-to-deploy-my-code)
-
----
-
-## I don't want to read this whole thing, I just have a question!!!
-
-- LaunchDarkly employees can reach out with questions or comments in [our Slack channel, #ask-launchpad-design-system](https://launchdarkly.slack.com/channels/CDXEFNMLP)
-- You can also [open an issue](https://github.com/launchdarkly/launchpad-ui/issues/new) in the Launchpad repository to ask a question!
-
----
-
-## What should I know before I get started?
-
-### Monorepo architecture
-
-Launchpad is set up as a monorepo where each component package is bundled and delivered as its own NPM package. While you can technically import each component package separately, we do recommend using the "bundled" version of Launchpad at `@launchpad-ui/core`. The team chose to treat each component as a separate package internally for improved testing, version management, and isolation guarantees.
-
-At the time of writing this, we are using the [pnpm package manager](https://pnpm.io/) for its workspace feature and the [Nx build system](https://nx.dev/) for monorepo support. Each component is defined as a directory under the `packages` directory. It's advised to understand generally how these works when contributing.
-
-### What's in the `packages` directory?
-
-When we talk about "components" in Launchpad, we're talking about a UI component library implemented as a package in our monorepo. It is a standalone library that can be imported and used by other JS applications.
-
-While all Launchpad UI components are packages, not all packages are necessarily "components." A package can be defined to store utilities such as tokens used by other packages, shared helper functions, etc.
-
-Launchpad libraries may depend on one another, as in the case of our modal library depending on the button library. This dependency, just like with shared utility libraries, is simply represented as a package.json import.
-
-### What's in the `apps` directory?
-
-The apps directory is essentially a standalone project that has easy access to our workspace packages. Currently, we have a Remix application that we use for SSR testing, but you could build other apps such as a docs website or another testing playground.
-
-### How does versioning work in Launchpad?
-
-We are using [major version zero (0.y.z) semantic versioning](https://semver.org/spec/v0.1.0.html) to indicate that the project is still in an "initial development" phase and anything may change at any time. When a new package is introduced, the initial version is set to `0.1.0`.
-
-As mentioned above, single components are deployed as versioned NPM packages, and `@launchpad-ui/core` is versioned too.
-
-When a component package version changes, this will create a version bump in `@launchpad-ui/core` as well according to this strategy:
-
-- `core` receives a version bump whenever one of its dependencies (e.g. button, modal) is updated.
-- The `core` version bump is equivalent to the highest semver version bump of an underlying dependency in the release.
-  - For example, if `core` were at `0.1.0`, and then the `button` package gets bumped from `0.2.1` to `0.3.0` (minor) and the `alert` package gets bumped from `0.5.1` to `0.5.2` (patch), `core` package will get bumped to `0.2.0`. (minor)
+- [How Can I Contribute?](#how-can-i-contribute)
+- [Code Contribution Guide](#code-contribution-guide)
+- [Common Tasks](#common-tasks)
+- [Styleguides](#styleguides)
 
 ---
 
@@ -82,9 +17,7 @@ When a component package version changes, this will create a version bump in `@l
 
 ### Reporting Bugs
 
-This section guides you through submitting a bug report for Launchpad. Following these guidelines helps maintainers and the community understand your report :pencil:, reproduce the behavior :computer: :computer:, and find related reports :mag_right:.
-
-#### Submitting A Bug Report
+When reporting a bug, help maintainers and the community understand your report :pencil:, reproduce the behavior :computer: :computer:, and find related reports :mag_right:.
 
 - Determine which package the issue should be reported in.
 - Perform a cursory search in our [bug issues](https://github.com/launchdarkly/launchpad-ui/issues?q=label%3Abug+) to see if the problem has already been reported. If it has and the issue is still open, add a comment to the existing issue instead of opening a new one.
@@ -97,23 +30,79 @@ We're always open to enhancement suggestions! When assessing an enhancement, we 
 - Perform a cursory search in our [enhancement issues](https://github.com/launchdarkly/launchpad-ui/issues?q=label%3Aenhancement+) to see if the feature has already been suggested. If it has and the issue is still open, add a comment to the existing issue instead of opening a new one.
 - [File a feature request](https://github.com/launchdarkly/launchpad-ui/issues/new?assignees=&labels=&template=feature_request.md&title=) and describe in detail what you're suggesting.
 
-### Your First Code Contribution
+### Contributing Code
 
-#### Local development
+If you'd like to help by writing code and filing a pull request for a feature enhancement or bugfix, we welcome all contributions, but here are a few things to note:
 
-Launchpad and all packages can be developed locally. For instructions on how to do this, see the following sections in the README.md.
+- For new features: reach out to someone on the team to discuss the design system contribution process.
+- For feature enhancements: if it's a small tweak, feel free to submit a PR for the team to review.
+- For bugfixes: we welcome all bugfix PR submissions.
 
-### Conventional Commits
-
-We follow the [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/#summary) approach to commit messages, branch naming, and pull request titles. Not only does this make it easier for us developers to grok, search, and organize code changes, it also lets us do some fun automation.
-
-**Note:** When titling a pull request, always use conventional commits. The title is used as the commit description when a PR is squashed and merged.
+To learn how to contribute code in Launchpad, follow the guide below.
 
 ---
 
-## Styleguides
+## Code Contribution Guide
 
-### Git Commit Messages
+If you're contributing code to Launchpad, follow this guide to make sure that once you publish your pull request, the team has everything we need to review your code.
+
+### Step 1: Create a feature branch off `main`
+
+We follow a branch naming convention inspired by [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/#summary), which looks like so:
+
+```
+{your name}/{tag}/{description of change}
+```
+
+So if I'm publishing a fix to some CSS issues, it might look like this:
+
+```
+tealydan/fix/update-alert-max-width
+```
+
+### Step 2: Write and test your code
+
+See our [Guides](#guides) below for advice on how to accomplish common tasks.
+
+For testing, you can visit the [README.md](./README.md) to learn which test commands we have available. We have a minimum coverage score you must fulfill for unit tests, so make sure to write a few tests to cover base cases and any heavily-used interactions.
+
+You should also consider adding `axe` accessibility tests. See other packages for examples.
+
+### Step 3: Generate a changelog for your code
+
+We use a tool called [changesets](https://github.com/changesets/changesets) to manage versioning and changelogs within Launchpad. Every package change should include a changelog with a description of the changes. When new changelog files are detected in Launchpad's `.changeset` folder, a Github action will publish or update a pull request that, when merged, will publish those changes along with the changelog to new NPM module versions for the modified packages.
+
+To generate a changelog:
+
+- Run `npx changeset`
+- You'll see a list of packages `changesets` has determined have changed
+  - Select the packages you've updated. **Note: you should always include `core` as well, even if you haven't directly modified it.** This is because core imports all other packages, so it should always be released alongside individual package releases. [More on this here.](#how-does-versioning-work-in-launchpad).
+- `changesets` will now ask what type of version change should occur:
+  - A brand new package should receive a "minor" bump, which should set it at `0.1.0`.
+  - For other version bumps, refer to [the semantic versioning docs](https://semver.org/spec/v0.1.0.html).
+  - `core` should always receive the highest bump you gave an individual package.
+- `changesets` will create a new `.md` file in the `.changeset` directory. Find it, and update the description to be more human readable.
+
+Here's an example of an acceptable file in the `.changeset` folder:
+
+```md
+---
+'@launchpad-ui/banner': patch
+'@launchpad-ui/alert': patch
+'@launchpad-ui/core': patch
+---
+
+[Banner]: Update banner font size
+[Alert]: Add max width to container
+```
+
+_Note that you don't have to leave a line item for core._
+
+Note: if you aren't updating packages that are released as NPM modules, you don't have to generate a changeset.
+
+### Step 4: Commit your code
+
+We follow the [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/#summary) approach to commit messages, branch naming, and pull request titles. Not only does this make it easier for us developers to grok, search, and organize code changes, it also lets us do some fun automation.
 
 - Use the present tense ("Add feature" not "Added feature")
 - Use the imperative mood ("Move cursor to..." not "Moves cursor to...")
@@ -123,8 +112,53 @@ We follow the [Conventional Commits](https://www.conventionalcommits.org/en/v1.0
   - `feat`
   - `build`
   - `chore`
-- Add a scope where relevant:
-  - `feat(notification): Add notification package`
+- Add a scope where relevant.
+
+Here's an example of an acceptable commit message:
+
+```
+feat(notification): Add notification package
+```
+
+### Step 5: Publish a pull request
+
+When you're ready, you can push your feature branch to our remote repository.
+
+There are just a few things to keep in mind:
+
+- When titling a pull request, always use conventional commits in the same convention as in Step 4. The title is used as the commit description when a PR is squashed and merged.
+- You should use our pull request template and fill it out as much as possible.
+- If there are visual diffs between your branch and main, Chromatic will generate a list of changes that must be approved before the PR should be merged. This can be found in the Github actions list.
+- The team will be automatically assigned to take a look.
+
+---
+
+## Common Tasks
+
+### Generating New Packages With Plop
+
+With the help of [plop](https://plopjs.com), we can quickly scaffold new component files in a consistent and opinionated way.
+
+Simply run `pnpm generate component` and follow the prompts, and you'll be well on your way to adding a new component package to Launchpad.
+
+### Adding Dependencies to Packages
+
+- Don't pin dependencies, use caret ranges.
+- Match dependency versions across packages when possible so that we can share dependency versions and reduce bundle sizes.
+- If a package depends on another Launchpad package, use the workspace syntax to use latest compatible versions:
+  - Ex: `"@launchpad-ui/tokens": "workspace:~"`
+
+### Adding Icons to Launchpad
+
+- Drop the SVG file in the `/icons` directory in the `@launchpad/icons` package
+- Run `pnpm build:transform` from the project root to generate a React component for it
+- Run `pnpm storybook` and visit the "Icons" page to ensure your icon was generated properly.
+
+Note: consumers of the library will utilize generated icon components rather than the raw SVGs.
+
+---
+
+## Styleguides
 
 ### Javascript Styleguide
 
@@ -139,45 +173,3 @@ All CSS code is linted with [Stylelint](https://stylelint.io/).
 - Include thoughtfully-worded, well-structured [Vitest](https://vitest.dev/) specs in the `__test__` folder of each package.
 - Treat `describe` as a noun or situation.
 - Treat `it` as a statement about state or how an operation changes state.
-
----
-
-## Creating a new package in Launchpad
-
-### With Plop
-
-With the help of [plop](https://plopjs.com), we can quickly scaffold new component files in a consistent and opinionated way.
-
-Simply run `pnpm generate component` and follow the prompts, and you'll be well on your way to adding a new component package to Launchpad.
-
-### Dependencies
-
-- Don't pin dependencies, use caret ranges.
-- Match dependency versions across packages when possible so that we can share dependency versions and reduce bundle sizes.
-
-### Adding an icon to Launchpad
-
-To add an icon to Launchpad, drop the SVG inside of the `/icons` directory in the `@launchpad/icons` package, and run the below script to generate the component for it. It's intended that consumers will utilize the icon components rather than the raw SVGs.
-
-From the root of launchpad-ui (preferred):
-
-```js
-pnpm build:transform
-```
-
-### Test your code
-
-We have a minimum coverage score you must fulfill for unit tests, so make sure to write a few tests to cover base cases and any heavily-used interactions.
-You should also consider adding `axe` accessibility tests. See other packages for examples.
-
-### Okay, I'm ready to deploy my code
-
-Perfect! Just a few final steps:
-
-- Run `npx changeset` before making a pull request. You'll see a list of packages Changeset has determined have changed, and they'll want you to tell them if it's a major, minor, or patch version bump.
-  - A brand new package should receive a "minor" bump, which should set it at `0.1.0`.
-  - For other version bumps, refer to [the semantic versioning docs](https://semver.org/spec/v0.1.0.html).
-  - When making any changes to components, make sure to also include `core` in your release [according to the version strategy described here](#how-does-versioning-work-in-launchpad).
-- Changeset will create a new `.md` file in the `.changeset` directory. Find it, and update the description to be more human readable. See the [change descriptions here](https://github.com/launchdarkly/launchpad-ui/releases) for an idea of how to write this.
-
-You're ready to go! Just post a PR and the `UX Next` squad will be automatically assigned to take a look. Happy launching.
