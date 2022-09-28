@@ -1,5 +1,11 @@
 # @launchpad-ui/chip
 
+## 0.6.3-alpha.0
+
+### Patch Changes
+
+- [#429](https://github.com/launchdarkly/launchpad-ui/pull/429) [`97eb67b`](https://github.com/launchdarkly/launchpad-ui/commit/97eb67bf95e40709084949c03248dc5673849873) Thanks [@chasedarkly](https://github.com/chasedarkly)! - Pin monorepo packages
+
 ## 0.6.2
 
 ### Patch Changes

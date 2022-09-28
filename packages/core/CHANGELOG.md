@@ -1,5 +1,42 @@
 # @launchpad-ui/core
 
+## 0.14.4-alpha.3
+
+### Patch Changes
+
+- [#429](https://github.com/launchdarkly/launchpad-ui/pull/429) [`97eb67b`](https://github.com/launchdarkly/launchpad-ui/commit/97eb67bf95e40709084949c03248dc5673849873) Thanks [@chasedarkly](https://github.com/chasedarkly)! - Pin monorepo packages
+
+- Updated dependencies [[`97eb67b`](https://github.com/launchdarkly/launchpad-ui/commit/97eb67bf95e40709084949c03248dc5673849873)]:
+  - @launchpad-ui/alert@0.4.2-alpha.2
+  - @launchpad-ui/avatar@0.4.3-alpha.1
+  - @launchpad-ui/banner@0.5.2-alpha.2
+  - @launchpad-ui/button@0.7.2-alpha.0
+  - @launchpad-ui/chip@0.6.3-alpha.0
+  - @launchpad-ui/clipboard@0.8.4-alpha.1
+  - @launchpad-ui/counter@0.3.4-alpha.0
+  - @launchpad-ui/dropdown@0.5.3-alpha.1
+  - @launchpad-ui/filter@0.4.5-alpha.1
+  - @launchpad-ui/form@0.6.4-alpha.1
+  - @launchpad-ui/icons@0.5.3-alpha.1
+  - @launchpad-ui/markdown@0.3.2-alpha.0
+  - @launchpad-ui/menu@0.6.5-alpha.1
+  - @launchpad-ui/modal@0.8.3-alpha.1
+  - @launchpad-ui/navigation@0.6.6-alpha.1
+  - @launchpad-ui/notification@0.5.4-alpha.1
+  - @launchpad-ui/overlay@0.3.10-alpha.1
+  - @launchpad-ui/pagination@0.3.3-alpha.1
+  - @launchpad-ui/popover@0.8.3-alpha.1
+  - @launchpad-ui/progress@0.5.2-alpha.0
+  - @launchpad-ui/progress-bubbles@0.5.4-alpha.1
+  - @launchpad-ui/slider@0.3.2-alpha.0
+  - @launchpad-ui/snackbar@0.1.0-alpha.6
+  - @launchpad-ui/split-button@0.6.4-alpha.1
+  - @launchpad-ui/tab-list@0.4.2-alpha.0
+  - @launchpad-ui/table@0.4.3-alpha.0
+  - @launchpad-ui/toast@0.1.0-alpha.7
+  - @launchpad-ui/toggle@0.4.3-alpha.0
+  - @launchpad-ui/tooltip@0.6.4-alpha.1
+
 ## 0.14.4-alpha.2
 
 ### Patch Changes
