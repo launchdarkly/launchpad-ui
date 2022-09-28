@@ -33,7 +33,7 @@
     "test": "vitest run --coverage"
   },
   "dependencies": {
-    "@launchpad-ui/tokens": "workspace:~",
+    "@launchpad-ui/tokens": "workspace:*",
     "classix": "^2.1.13",
     "isomorphic-dompurify": "^0.22.0",
     "marked": "^4.1.0"
