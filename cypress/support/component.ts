@@ -18,6 +18,10 @@ before(() => {
         id: 'page-has-heading-one',
         enabled: false,
       },
+      {
+        id: 'region',
+        enabled: false,
+      },
     ],
   });
 });

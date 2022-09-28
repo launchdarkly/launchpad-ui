@@ -2,7 +2,7 @@ import { toggleDarkMode } from '../../../cypress/utils/dark-mode';
 import { Toggle } from '../src';
 
 describe('Toggle', () => {
-  it('should render', () => {
+  it('renders', () => {
     cy.mount(<Toggle />);
     cy.get('[data-test-id="toggle"]').should('be.visible');
   });

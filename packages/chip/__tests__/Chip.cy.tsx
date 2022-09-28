@@ -1,7 +1,7 @@
 import { Chip } from '../src';
 
 describe('Chip', () => {
-  it('should render', () => {
+  it('renders', () => {
     cy.mount(<Chip>Chip</Chip>);
     cy.get('[data-test-id="chip"]').should('be.visible');
   });

@@ -1,7 +1,7 @@
 import { Banner } from '../src';
 
 describe('Banner', () => {
-  it('should render', () => {
+  it('renders', () => {
     cy.mount(<Banner kind="info">Banner</Banner>);
     cy.get('[data-test-id="banner"]').should('be.visible');
   });
