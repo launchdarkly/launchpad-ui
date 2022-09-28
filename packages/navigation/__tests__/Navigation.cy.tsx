@@ -54,30 +54,34 @@ describe('Navigation', () => {
     cy.checkA11y();
   });
 
-  it('renders as a dropdown menu when viewport is small', () => {
-    cy.mount(
-      createComponent([
-        {
-          name: 'First',
-          to: '/first',
-        },
-        {
-          name: 'Second',
-          to: '/second',
-        },
-        {
-          name: 'Third',
-          to: '/third',
-        },
-        {
-          name: 'Fourth',
-          to: '/fourth',
-        },
-      ])
-    );
-    cy.viewport(320, 500);
+  context('mobile viewport', () => {
+    beforeEach(() => {
+      cy.viewport(320, 500);
+    });
 
-    cy.contains('nav').click();
-    cy.get('[role="menu"]').should('be.visible');
+    it('renders as a dropdown menu', () => {
+      cy.mount(
+        createComponent([
+          {
+            name: 'First',
+            to: '/first',
+          },
+          {
+            name: 'Second',
+            to: '/second',
+          },
+          {
+            name: 'Third',
+            to: '/third',
+          },
+          {
+            name: 'Fourth',
+            to: '/fourth',
+          },
+        ])
+      );
+
+      cy.get('[data-test-id="dropdown-button"]').should('be.visible');
+    });
   });
 });
