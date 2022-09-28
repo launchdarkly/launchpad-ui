@@ -121,6 +121,7 @@ const Alert = ({
         <IconButton
           aria-label="Close this alert."
           size="small"
+          className={styles['Alert-close']}
           icon={<Close size="small" />}
           kind="close"
           onClick={handleDismissClicked}

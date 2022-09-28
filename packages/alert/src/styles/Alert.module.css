@@ -48,7 +48,7 @@
   font-size: 1.4rem;
   line-height: 1.45;
   white-space: normal;
-  max-width: 70rem;
+  width: 100%;
   background-color: var(--color-background);
   color: var(--Alert-text-color);
   box-sizing: border-box;
@@ -145,6 +145,11 @@
 
 .Alert-content {
   flex-grow: 1;
+  max-width: 70rem;
+}
+
+.Alert-close {
+  margin-left: auto;
 }
 
 .Alert-content :global(a:not(.Button)) {
