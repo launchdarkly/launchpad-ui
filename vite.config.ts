@@ -60,4 +60,5 @@ export default defineConfig({
     sourcemap: true,
     minify: false,
   },
+  logLevel: process.env.CYPRESS ? 'silent' : undefined,
 });
