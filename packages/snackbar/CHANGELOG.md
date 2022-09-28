@@ -1,5 +1,11 @@
 # @launchpad-ui/snackbar
 
+## 0.1.0-alpha.7
+
+### Patch Changes
+
+- [#433](https://github.com/launchdarkly/launchpad-ui/pull/433) [`6c86f21`](https://github.com/launchdarkly/launchpad-ui/commit/6c86f21be659a87861773054eaaa19f4701a3b38) Thanks [@Niznikr](https://github.com/Niznikr)! - [Snackbar, Toast] Update framer-motion
+
 ## 0.1.0-alpha.6
 
 ### Patch Changes

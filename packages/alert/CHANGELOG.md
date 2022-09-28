@@ -1,5 +1,11 @@
 # @launchpad-ui/alert
 
+## 0.4.2-alpha.3
+
+### Patch Changes
+
+- [#430](https://github.com/launchdarkly/launchpad-ui/pull/430) [`b61a3ee`](https://github.com/launchdarkly/launchpad-ui/commit/b61a3ee58eb2158a7bd80dcd6d3ed8103187dcdf) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Alert] Increase to 100% max width with 700px max width content
+
 ## 0.4.2-alpha.2
 
 ### Patch Changes
