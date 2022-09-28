@@ -1,5 +1,11 @@
 # @launchpad-ui/button
 
+## 0.7.2-alpha.0
+
+### Patch Changes
+
+- [#429](https://github.com/launchdarkly/launchpad-ui/pull/429) [`97eb67b`](https://github.com/launchdarkly/launchpad-ui/commit/97eb67bf95e40709084949c03248dc5673849873) Thanks [@chasedarkly](https://github.com/chasedarkly)! - Pin monorepo packages
+
 ## 0.7.1
 
 ### Patch Changes
