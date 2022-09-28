@@ -1,6 +1,6 @@
 {
   "name": "@launchpad-ui/menu",
-  "version": "0.6.5-alpha.1",
+  "version": "0.6.4",
   "status": "beta",
   "publishConfig": {
     "access": "public"
@@ -33,11 +33,11 @@
     "test": "vitest run --coverage"
   },
   "dependencies": {
-    "@launchpad-ui/form": "workspace:*",
-    "@launchpad-ui/icons": "workspace:*",
-    "@launchpad-ui/popover": "workspace:*",
-    "@launchpad-ui/tokens": "workspace:*",
-    "@launchpad-ui/tooltip": "workspace:*",
+    "@launchpad-ui/form": "workspace:~",
+    "@launchpad-ui/icons": "workspace:~",
+    "@launchpad-ui/popover": "workspace:~",
+    "@launchpad-ui/tokens": "workspace:~",
+    "@launchpad-ui/tooltip": "workspace:~",
     "@radix-ui/react-slot": "^1.0.0",
     "@react-aria/focus": "^3.8.0",
     "@react-aria/separator": "^3.2.0",

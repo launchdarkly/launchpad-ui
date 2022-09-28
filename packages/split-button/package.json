@@ -1,6 +1,6 @@
 {
   "name": "@launchpad-ui/split-button",
-  "version": "0.6.4-alpha.1",
+  "version": "0.6.3",
   "status": "beta",
   "publishConfig": {
     "access": "public"
@@ -33,11 +33,11 @@
     "test": "vitest run --coverage"
   },
   "dependencies": {
-    "@launchpad-ui/button": "workspace:*",
-    "@launchpad-ui/dropdown": "workspace:*",
-    "@launchpad-ui/popover": "workspace:*",
-    "@launchpad-ui/tokens": "workspace:*",
-    "@launchpad-ui/tooltip": "workspace:*",
+    "@launchpad-ui/button": "workspace:~",
+    "@launchpad-ui/dropdown": "workspace:~",
+    "@launchpad-ui/popover": "workspace:~",
+    "@launchpad-ui/tokens": "workspace:~",
+    "@launchpad-ui/tooltip": "workspace:~",
     "classix": "^2.1.13"
   },
   "peerDependencies": {
