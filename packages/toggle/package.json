@@ -1,6 +1,6 @@
 {
   "name": "@launchpad-ui/toggle",
-  "version": "0.4.3-alpha.0",
+  "version": "0.4.2",
   "status": "beta",
   "publishConfig": {
     "access": "public"
@@ -32,7 +32,7 @@
     "test": "vitest run --coverage"
   },
   "dependencies": {
-    "@launchpad-ui/tokens": "workspace:*",
+    "@launchpad-ui/tokens": "workspace:~",
     "@react-aria/switch": "^3.2.0",
     "@react-aria/visually-hidden": "^3.4.0",
     "@react-stately/toggle": "^3.4.0",

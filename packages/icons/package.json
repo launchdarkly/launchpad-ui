@@ -33,7 +33,7 @@
     "test": "pnpm build:icons && vitest run --coverage"
   },
   "dependencies": {
-    "@launchpad-ui/tokens": "workspace:*",
+    "@launchpad-ui/tokens": "workspace:~",
     "classix": "^2.1.13"
   },
   "peerDependencies": {

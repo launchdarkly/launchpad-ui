@@ -1,6 +1,6 @@
 {
   "name": "@launchpad-ui/button",
-  "version": "0.7.2-alpha.0",
+  "version": "0.7.1",
   "status": "beta",
   "publishConfig": {
     "access": "public"
@@ -32,7 +32,7 @@
     "test": "vitest run --coverage"
   },
   "dependencies": {
-    "@launchpad-ui/tokens": "workspace:*",
+    "@launchpad-ui/tokens": "workspace:~",
     "@radix-ui/react-slot": "^1.0.0",
     "classix": "^2.1.13"
   },
