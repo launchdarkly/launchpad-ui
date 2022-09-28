@@ -1,5 +1,18 @@
 # @launchpad-ui/core
 
+## 0.14.4-alpha.4
+
+### Patch Changes
+
+- [#430](https://github.com/launchdarkly/launchpad-ui/pull/430) [`b61a3ee`](https://github.com/launchdarkly/launchpad-ui/commit/b61a3ee58eb2158a7bd80dcd6d3ed8103187dcdf) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Alert] Increase to 100% max width with 700px max width content
+
+* [#433](https://github.com/launchdarkly/launchpad-ui/pull/433) [`6c86f21`](https://github.com/launchdarkly/launchpad-ui/commit/6c86f21be659a87861773054eaaa19f4701a3b38) Thanks [@Niznikr](https://github.com/Niznikr)! - [Snackbar, Toast] Update framer-motion
+
+* Updated dependencies [[`b61a3ee`](https://github.com/launchdarkly/launchpad-ui/commit/b61a3ee58eb2158a7bd80dcd6d3ed8103187dcdf), [`6c86f21`](https://github.com/launchdarkly/launchpad-ui/commit/6c86f21be659a87861773054eaaa19f4701a3b38)]:
+  - @launchpad-ui/alert@0.4.2-alpha.3
+  - @launchpad-ui/snackbar@0.1.0-alpha.7
+  - @launchpad-ui/toast@0.1.0-alpha.8
+
 ## 0.14.4-alpha.3
 
 ### Patch Changes

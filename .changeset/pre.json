@@ -37,6 +37,7 @@
     "@launchpad-ui/tooltip": "0.6.3"
   },
   "changesets": [
+    "bright-dogs-tease",
     "dry-plums-grin",
     "eighty-bananas-doubt",
     "empty-needles-teach",
@@ -56,6 +57,7 @@
     "shiny-bobcats-behave",
     "swift-turkeys-sell",
     "tender-pumas-cover",
+    "two-apes-battle",
     "two-humans-worry",
     "two-tigers-matter",
     "wicked-coats-explode",
