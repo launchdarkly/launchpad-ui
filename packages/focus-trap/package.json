@@ -25,7 +25,6 @@
   "scripts": {
     "build": "vite build -c ../../vite.config.ts && tsc --project tsconfig.build.json",
     "clean": "rm -rf dist",
-    "e2e": "exit 0",
     "lint": "eslint '**/*.{ts,tsx,js}'",
     "test": "vitest run --coverage"
   },
