@@ -32,12 +32,12 @@
     "test": "vitest run --coverage"
   },
   "dependencies": {
-    "@launchpad-ui/chip": "workspace:*",
-    "@launchpad-ui/dropdown": "workspace:*",
-    "@launchpad-ui/menu": "workspace:*",
-    "@launchpad-ui/popover": "workspace:*",
-    "@launchpad-ui/tokens": "workspace:*",
-    "@launchpad-ui/tooltip": "workspace:*",
+    "@launchpad-ui/chip": "workspace:~",
+    "@launchpad-ui/dropdown": "workspace:~",
+    "@launchpad-ui/menu": "workspace:~",
+    "@launchpad-ui/popover": "workspace:~",
+    "@launchpad-ui/tokens": "workspace:~",
+    "@launchpad-ui/tooltip": "workspace:~",
     "@react-aria/utils": "^3.13.1",
     "@react-stately/list": "^3.5.1",
     "@react-types/shared": "^3.14.0",
