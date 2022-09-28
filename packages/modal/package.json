@@ -33,11 +33,11 @@
     "test": "vitest run --coverage"
   },
   "dependencies": {
-    "@launchpad-ui/button": "workspace:~",
-    "@launchpad-ui/focus-trap": "workspace:~",
-    "@launchpad-ui/icons": "workspace:~",
-    "@launchpad-ui/progress": "workspace:~",
-    "@launchpad-ui/tokens": "workspace:~",
+    "@launchpad-ui/button": "workspace:*",
+    "@launchpad-ui/focus-trap": "workspace:*",
+    "@launchpad-ui/icons": "workspace:*",
+    "@launchpad-ui/progress": "workspace:*",
+    "@launchpad-ui/tokens": "workspace:*",
     "@react-aria/overlays": "^3.10.0",
     "classix": "^2.1.13",
     "framer-motion": "^7.4.0"

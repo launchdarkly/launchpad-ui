@@ -33,7 +33,7 @@
     "test": "vitest run --coverage"
   },
   "dependencies": {
-    "@launchpad-ui/tokens": "workspace:~",
+    "@launchpad-ui/tokens": "workspace:*",
     "@radix-ui/react-slot": "^1.0.0",
     "classix": "^2.1.13"
   },
