@@ -32,11 +32,11 @@
     "test": "vitest run --coverage"
   },
   "dependencies": {
-    "@launchpad-ui/button": "workspace:~",
-    "@launchpad-ui/clipboard": "workspace:~",
-    "@launchpad-ui/focus-trap": "workspace:~",
-    "@launchpad-ui/icons": "workspace:~",
-    "@launchpad-ui/tokens": "workspace:~",
+    "@launchpad-ui/button": "workspace:*",
+    "@launchpad-ui/clipboard": "workspace:*",
+    "@launchpad-ui/focus-trap": "workspace:*",
+    "@launchpad-ui/icons": "workspace:*",
+    "@launchpad-ui/tokens": "workspace:*",
     "classix": "^2.1.13",
     "framer-motion": "^7.4.0"
   },

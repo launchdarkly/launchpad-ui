@@ -32,7 +32,7 @@
     "test": "vitest run --coverage"
   },
   "dependencies": {
-    "@launchpad-ui/tokens": "workspace:~",
+    "@launchpad-ui/tokens": "workspace:*",
     "@react-aria/switch": "^3.2.0",
     "@react-aria/visually-hidden": "^3.4.0",
     "@react-stately/toggle": "^3.4.0",
