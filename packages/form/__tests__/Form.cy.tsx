@@ -1,22 +1,23 @@
-import { test, expect } from '@playwright/experimental-ct-react';
+import type { FormProps } from '../src';
 
-import { Info } from '../../icons/src/Info';
-import { Checkbox } from '../src/Checkbox';
-import { CompactTextField } from '../src/CompactTextField';
-import { Form, type FormProps } from '../src/Form';
-import { FormField } from '../src/FormField';
-import { IconField } from '../src/IconField';
-import { Label } from '../src/Label';
-import { Radio } from '../src/Radio';
-import { RadioGroup } from '../src/RadioGroup';
-import { Select } from '../src/Select';
-import { TextArea } from '../src/TextArea';
-import { TextField } from '../src/TextField';
+import { Info } from '@launchpad-ui/icons';
 
-test.use({ viewport: { width: 500, height: 500 } });
+import {
+  Checkbox,
+  CompactTextField,
+  Form,
+  FormField,
+  IconField,
+  Label,
+  RadioGroup,
+  Radio,
+  Select,
+  TextArea,
+  TextField,
+} from '../src';
 
 const createComponent = (props?: FormProps) => (
-  <Form id="testing" name="My Form" ariaLabel="My Form" {...props}>
+  <Form id="testing" name="My Form" aria-label="My Form" {...props}>
     <h4>Form Field</h4>
     <FormField
       isRequired={true}
@@ -66,11 +67,14 @@ const createComponent = (props?: FormProps) => (
   </Form>
 );
 
-test.describe('Form', () => {
-  test('is accessible', async ({ mount, page }) => {
-    const component = await mount(createComponent());
+describe('Form', () => {
+  it('renders', () => {
+    cy.mount(createComponent());
+    cy.get('[data-test-id="form"]').should('be.visible');
+  });
 
-    await expect(component).toBeVisible();
-    await expect(page).toBeAccessible();
+  it('is accessible', () => {
+    cy.mount(createComponent());
+    cy.checkA11y();
   });
 });

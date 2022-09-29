@@ -1,17 +1,13 @@
 import type { SplitButtonProps } from '../src';
 
-import { test, expect } from '@playwright/experimental-ct-react';
+import { Menu, MenuItem } from '@launchpad-ui/menu';
 
-import { Menu } from '../../menu/src/Menu';
-import { MenuItem } from '../../menu/src/MenuItem';
 import {
   SplitButton,
   SplitButtonDropdown,
   SplitButtonDropdownButton,
   SplitButtonMainButton,
 } from '../src';
-
-test.use({ viewport: { width: 500, height: 500 } });
 
 const createComponent = (props?: SplitButtonProps) => (
   <SplitButton {...props}>
@@ -25,11 +21,18 @@ const createComponent = (props?: SplitButtonProps) => (
   </SplitButton>
 );
 
-test.describe('SplitButton', () => {
-  test('is accessible', async ({ mount, page }) => {
-    const component = await mount(createComponent());
+describe('SplitButton', () => {
+  it('renders', () => {
+    cy.mount(createComponent());
+    cy.get('[data-test-id="split-button"]').should('be.visible');
+  });
 
-    await expect(component).toBeVisible();
-    await expect(page).toBeAccessible();
+  it('is accessible', () => {
+    cy.mount(createComponent());
+    cy.get('[data-test-id="split-button-dropdown-button"]').click();
+
+    // wait for animation to finish
+    cy.wait(100);
+    cy.checkA11y();
   });
 });

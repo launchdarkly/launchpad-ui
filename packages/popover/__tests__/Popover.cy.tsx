@@ -1,23 +1,23 @@
-import { Tooltip } from '../src';
+import { Popover } from '../src';
 
-describe('Tooltip', () => {
+describe('Popover', () => {
   it('renders', () => {
     cy.mount(
-      <Tooltip>
+      <Popover>
         <button>Target</button>
         <span>Content</span>
-      </Tooltip>
+      </Popover>
     );
     cy.get('button').click();
-    cy.get('[data-test-id="tooltip"]').should('be.visible');
+    cy.get('[data-test-id="popover"]').should('be.visible');
   });
 
   it('is accessible', () => {
     cy.mount(
-      <Tooltip>
+      <Popover>
         <button>Target</button>
         <span>Content</span>
-      </Tooltip>
+      </Popover>
     );
     cy.get('button').click();
 
