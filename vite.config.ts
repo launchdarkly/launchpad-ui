@@ -19,7 +19,7 @@ Object.keys(paths).forEach((key) => {
 const packageJSON = require(path.resolve('./package.json'));
 
 export default defineConfig({
-  plugins: [react(), cssImport(), istanbul({ cypress: true })],
+  plugins: [react(), cssImport(), ...(process.env.CYPRESS ? [istanbul({ cypress: true })] : [])],
   resolve: {
     alias,
   },
