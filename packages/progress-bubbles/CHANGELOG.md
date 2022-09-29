@@ -1,5 +1,12 @@
 # @launchpad-ui/progress-bubbles
 
+## 0.5.4
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @launchpad-ui/popover@0.8.3
+
 ## 0.5.3
 
 ### Patch Changes

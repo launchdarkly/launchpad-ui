@@ -1,5 +1,31 @@
 # @launchpad-ui/core
 
+## 0.14.6
+
+### Patch Changes
+
+- [#434](https://github.com/launchdarkly/launchpad-ui/pull/434) [`69c763b`](https://github.com/launchdarkly/launchpad-ui/commit/69c763b62431a9a647313f725c2e15a0c597014d) Thanks [@goyanespaula](https://github.com/goyanespaula)! - [Icons] Add `plus-circle-fill` and `plus-circle-outline`
+
+- Updated dependencies [[`69c763b`](https://github.com/launchdarkly/launchpad-ui/commit/69c763b62431a9a647313f725c2e15a0c597014d)]:
+  - @launchpad-ui/icons@0.5.3
+  - @launchpad-ui/alert@0.4.3
+  - @launchpad-ui/avatar@0.4.3
+  - @launchpad-ui/banner@0.5.3
+  - @launchpad-ui/clipboard@0.8.4
+  - @launchpad-ui/dropdown@0.5.3
+  - @launchpad-ui/filter@0.4.5
+  - @launchpad-ui/form@0.6.4
+  - @launchpad-ui/menu@0.6.5
+  - @launchpad-ui/modal@0.8.3
+  - @launchpad-ui/notification@0.5.4
+  - @launchpad-ui/pagination@0.3.3
+  - @launchpad-ui/navigation@0.6.6
+  - @launchpad-ui/split-button@0.6.4
+  - @launchpad-ui/overlay@0.3.10
+  - @launchpad-ui/popover@0.8.3
+  - @launchpad-ui/progress-bubbles@0.5.4
+  - @launchpad-ui/tooltip@0.6.4
+
 ## 0.14.5
 
 ### Patch Changes

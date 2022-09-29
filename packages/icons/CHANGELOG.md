@@ -1,5 +1,11 @@
 # @launchpad-ui/icons
 
+## 0.5.3
+
+### Patch Changes
+
+- [#434](https://github.com/launchdarkly/launchpad-ui/pull/434) [`69c763b`](https://github.com/launchdarkly/launchpad-ui/commit/69c763b62431a9a647313f725c2e15a0c597014d) Thanks [@goyanespaula](https://github.com/goyanespaula)! - [Icons] Add `plus-circle-fill` and `plus-circle-outline`
+
 ## 0.5.2
 
 ### Patch Changes
