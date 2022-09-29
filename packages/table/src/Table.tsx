@@ -2,7 +2,7 @@ import type { TableHTMLAttributes } from 'react';
 
 import { cx } from 'classix';
 
-import './styles/Table.css';
+import styles from './styles/Table.module.css';
 
 type TableProps = TableHTMLAttributes<HTMLTableElement> & {
   auto?: boolean;
@@ -22,10 +22,10 @@ const Table = ({
   ...rest
 }: TableProps) => {
   const classes = cx(
-    'Table',
-    auto && 'Table--auto',
-    compact && 'Table--compact',
-    isResourceTable && 'Table--resourceTable',
+    styles.Table,
+    auto && styles['Table--auto'],
+    compact && styles['Table--compact'],
+    isResourceTable && styles['Table--resourceTable'],
     className
   );
 

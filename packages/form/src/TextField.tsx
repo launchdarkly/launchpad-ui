@@ -59,6 +59,7 @@ const TextField = forwardRef<HTMLInputElement, TextFieldProps>(
         readOnly={readOnly}
         tabIndex={tabIndex}
         ref={ref}
+        data-test-id={testId}
         style={
           overrideWidth
             ? {

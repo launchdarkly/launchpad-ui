@@ -1,5 +1,107 @@
 # @launchpad-ui/core
 
+## 0.14.6
+
+### Patch Changes
+
+- [#434](https://github.com/launchdarkly/launchpad-ui/pull/434) [`69c763b`](https://github.com/launchdarkly/launchpad-ui/commit/69c763b62431a9a647313f725c2e15a0c597014d) Thanks [@goyanespaula](https://github.com/goyanespaula)! - [Icons] Add `plus-circle-fill` and `plus-circle-outline`
+
+- Updated dependencies [[`69c763b`](https://github.com/launchdarkly/launchpad-ui/commit/69c763b62431a9a647313f725c2e15a0c597014d)]:
+  - @launchpad-ui/icons@0.5.3
+  - @launchpad-ui/alert@0.4.3
+  - @launchpad-ui/avatar@0.4.3
+  - @launchpad-ui/banner@0.5.3
+  - @launchpad-ui/clipboard@0.8.4
+  - @launchpad-ui/dropdown@0.5.3
+  - @launchpad-ui/filter@0.4.5
+  - @launchpad-ui/form@0.6.4
+  - @launchpad-ui/menu@0.6.5
+  - @launchpad-ui/modal@0.8.3
+  - @launchpad-ui/notification@0.5.4
+  - @launchpad-ui/pagination@0.3.3
+  - @launchpad-ui/navigation@0.6.6
+  - @launchpad-ui/split-button@0.6.4
+  - @launchpad-ui/overlay@0.3.10
+  - @launchpad-ui/popover@0.8.3
+  - @launchpad-ui/progress-bubbles@0.5.4
+  - @launchpad-ui/tooltip@0.6.4
+
+## 0.14.5
+
+### Patch Changes
+
+- [#426](https://github.com/launchdarkly/launchpad-ui/pull/426) [`a7c53bc`](https://github.com/launchdarkly/launchpad-ui/commit/a7c53bcfef64a49c9e87acdd1db1bd9aac83906b) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Tooltip]: Increase specificity for tooltip content styles
+
+- Updated dependencies [[`a7c53bc`](https://github.com/launchdarkly/launchpad-ui/commit/a7c53bcfef64a49c9e87acdd1db1bd9aac83906b)]:
+  - @launchpad-ui/tooltip@0.6.3
+  - @launchpad-ui/clipboard@0.8.3
+  - @launchpad-ui/filter@0.4.4
+  - @launchpad-ui/menu@0.6.4
+  - @launchpad-ui/navigation@0.6.5
+  - @launchpad-ui/split-button@0.6.3
+  - @launchpad-ui/notification@0.5.3
+
+## 0.14.4
+
+### Patch Changes
+
+- [#424](https://github.com/launchdarkly/launchpad-ui/pull/424) [`9bf79e4`](https://github.com/launchdarkly/launchpad-ui/commit/9bf79e4d07192858e723900d8ab4c208872894a5) Thanks [@stinachen](https://github.com/stinachen)! - [Icons] Add `EventBusy`
+
+* [#421](https://github.com/launchdarkly/launchpad-ui/pull/421) [`358e909`](https://github.com/launchdarkly/launchpad-ui/commit/358e909eda789d12a5b67726ff4db3caee4d02a8) Thanks [@Niznikr](https://github.com/Niznikr)! - [Table] Update to css modules
+
+- [#418](https://github.com/launchdarkly/launchpad-ui/pull/418) [`eda2e2a`](https://github.com/launchdarkly/launchpad-ui/commit/eda2e2afc833896d4afec98ced054e1239f18310) Thanks [@Niznikr](https://github.com/Niznikr)! - [Toggle] Update to css modules
+
+* [#414](https://github.com/launchdarkly/launchpad-ui/pull/414) [`f4334d3`](https://github.com/launchdarkly/launchpad-ui/commit/f4334d3601d1f675eab6d0430354bd80d46bea01) Thanks [@Niznikr](https://github.com/Niznikr)! - [Popover, Tooltip] Update to CSS modules:
+
+  - Replace unstyled class `Popover-target--active` with attribute `data-state` to indicate `open` or `closed` popover on target
+
+* Updated dependencies [[`9bf79e4`](https://github.com/launchdarkly/launchpad-ui/commit/9bf79e4d07192858e723900d8ab4c208872894a5), [`358e909`](https://github.com/launchdarkly/launchpad-ui/commit/358e909eda789d12a5b67726ff4db3caee4d02a8), [`eda2e2a`](https://github.com/launchdarkly/launchpad-ui/commit/eda2e2afc833896d4afec98ced054e1239f18310), [`f4334d3`](https://github.com/launchdarkly/launchpad-ui/commit/f4334d3601d1f675eab6d0430354bd80d46bea01)]:
+  - @launchpad-ui/icons@0.5.2
+  - @launchpad-ui/table@0.4.2
+  - @launchpad-ui/toggle@0.4.2
+  - @launchpad-ui/popover@0.8.2
+  - @launchpad-ui/tooltip@0.6.2
+  - @launchpad-ui/alert@0.4.2
+  - @launchpad-ui/avatar@0.4.2
+  - @launchpad-ui/banner@0.5.2
+  - @launchpad-ui/clipboard@0.8.2
+  - @launchpad-ui/dropdown@0.5.2
+  - @launchpad-ui/filter@0.4.3
+  - @launchpad-ui/form@0.6.3
+  - @launchpad-ui/menu@0.6.3
+  - @launchpad-ui/modal@0.8.2
+  - @launchpad-ui/notification@0.5.2
+  - @launchpad-ui/pagination@0.3.2
+  - @launchpad-ui/navigation@0.6.4
+  - @launchpad-ui/progress-bubbles@0.5.3
+  - @launchpad-ui/split-button@0.6.2
+  - @launchpad-ui/overlay@0.3.9
+
+## 0.14.3
+
+### Patch Changes
+
+- [`aa81e52`](https://github.com/launchdarkly/launchpad-ui/commit/aa81e527b911d0ec240e5231292071aa2a4e3ccf) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Form] Pass test ID down to text field
+
+- Updated dependencies [[`aa81e52`](https://github.com/launchdarkly/launchpad-ui/commit/aa81e527b911d0ec240e5231292071aa2a4e3ccf)]:
+  - @launchpad-ui/form@0.6.2
+  - @launchpad-ui/menu@0.6.2
+  - @launchpad-ui/filter@0.4.2
+  - @launchpad-ui/navigation@0.6.3
+
+## 0.14.2
+
+### Patch Changes
+
+- [#399](https://github.com/launchdarkly/launchpad-ui/pull/399) [`16bc395`](https://github.com/launchdarkly/launchpad-ui/commit/16bc3953f6d418575414e205339f303313c81e92) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Chip] Move to CSS Modules
+
+* [#401](https://github.com/launchdarkly/launchpad-ui/pull/401) [`719fdea`](https://github.com/launchdarkly/launchpad-ui/commit/719fdea3353f798ea01390ba26b6d879be34c815) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [ProgressBubbles] Move to CSS Modules, fix issue with display box
+
+* Updated dependencies [[`16bc395`](https://github.com/launchdarkly/launchpad-ui/commit/16bc3953f6d418575414e205339f303313c81e92), [`719fdea`](https://github.com/launchdarkly/launchpad-ui/commit/719fdea3353f798ea01390ba26b6d879be34c815)]:
+  - @launchpad-ui/chip@0.6.2
+  - @launchpad-ui/progress-bubbles@0.5.2
+  - @launchpad-ui/navigation@0.6.2
+
 ## 0.14.1
 
 ### Patch Changes

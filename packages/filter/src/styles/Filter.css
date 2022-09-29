@@ -119,7 +119,7 @@
 
 .Filter-button:hover:not(.is-clearable),
 .Filter-button:focus:not(.is-clearable),
-.Popover-target--active .Filter-button:not(.is-clearable) {
+[data-state='open'] .Filter-button:not(.is-clearable) {
   background-color: var(--color-background-hover);
   border-color: var(--color-text-subtle-secondary);
 }
