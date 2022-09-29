@@ -73,8 +73,8 @@
   outline: unset;
 }
 
-.Nav--primary a:hover.NavItem,
-.Nav--primary a:active.NavItem {
+.Nav--primary :global(a:hover).NavItem,
+.Nav--primary :global(a:active).NavItem {
   color: var(--color-text);
   text-decoration: none;
 }
@@ -136,5 +136,17 @@
 .Nav--secondary .NavItem.is-active::after {
   border-bottom-color: var(--color-gray-700);
   bottom: -2px;
+}
+
+.NavItem-chip {
+  align-self: flex-start;
+  border-radius: 0.4rem;
+  margin-top: 0.4rem;
+  min-width: 3.5rem;
+  padding: 0.1rem 0;
+}
+
+.NavItem-tooltip {
+  text-align: center;
 }
 /* stylelint-enable no-descending-specificity */

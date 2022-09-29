@@ -37,7 +37,7 @@ test.describe('Navigation', () => {
       height: 500,
     });
 
-    await page.locator('text=Page menu').click();
+    await page.locator('[data-test-id=navigation-menu-button]').click();
 
     const element = page.locator('[role="menu"]');
     await expect(element).toBeVisible();

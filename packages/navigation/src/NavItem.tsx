@@ -1,10 +1,12 @@
 import type { ChipProps } from '@launchpad-ui/chip';
 import type { MouseEvent } from 'react';
 
+import { Chip } from '@launchpad-ui/chip';
+import { cx } from 'classix';
 import { NavLink, useLocation } from 'react-router-dom';
 
-import { NavBarChip } from './NavBarChip';
-import './styles/Nav.css';
+import styles from './styles/Nav.module.css';
+import { titlecase } from './utils';
 
 type NavItemProps = {
   to: string | { pathname: string; search: string };
@@ -36,20 +38,23 @@ const NavItem = ({
       {...other}
       end={end}
       to={to}
-      className={({ isActive }) => `NavItem ${isActive ? 'is-active' : ''}`}
+      className={({ isActive }) => cx(styles.NavItem, isActive ? styles['is-active'] : '')}
       data-text={name}
       onClick={onClick}
       role={role}
+      data-nav-target="true" // used by Navigation to check rendered width
       data-test-id={testId}
       aria-selected={role === 'tab' ? selected : undefined}
     >
       {status ? (
         <div style={{ display: 'flex', alignItems: 'flex-end' }}>
-          <span className="NavItem-name">{name}</span>
-          <NavBarChip kind={status} />
+          <span className={styles['NavItem-name']}>{name}</span>
+          <Chip className={styles['NavItem-chip']} data-test-id="nav-item-chip" kind={status}>
+            {titlecase(status)}
+          </Chip>
         </div>
       ) : (
-        <span className="NavItem-name">{name}</span>
+        <span className={styles['NavItem-name']}>{name}</span>
       )}
     </NavLink>
   );
