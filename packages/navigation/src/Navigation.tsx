@@ -137,7 +137,7 @@ const Navigation = <T extends object>(props: NavigationProps<T>) => {
   const { children, 'data-test-id': testId = 'navigation' } = props;
   const wrapperRef = useRef<HTMLDivElement>(null);
   const itemListRef = useRef<HTMLDivElement>(null);
-  const [shouldCollapse, setCollapse] = useValueEffect(false);
+  const [shouldCollapse, setCollapse] = useValueEffect(true);
 
   const isWideViewport = useMediaQuery('(min-width: 740px)');
 
@@ -149,7 +149,7 @@ const Navigation = <T extends object>(props: NavigationProps<T>) => {
       }
 
       // This is where we're explicitly tied to NavItem
-      const tabs = itemListRef.current.querySelectorAll('.NavItem');
+      const tabs = itemListRef.current.querySelectorAll("[data-nav-target='true']");
       const lastTab = tabs[tabs.length - 1];
 
       const containerEdge = wrapperRef.current.getBoundingClientRect().right;

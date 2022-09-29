@@ -42,6 +42,7 @@ const NavItem = ({
       data-text={name}
       onClick={onClick}
       role={role}
+      data-nav-target="true" // used by Navigation to check rendered width
       data-test-id={testId}
       aria-selected={role === 'tab' ? selected : undefined}
     >
