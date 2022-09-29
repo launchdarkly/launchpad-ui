@@ -22,7 +22,7 @@ describe('Popover', () => {
     cy.get('button').click();
 
     // wait for animation to finish
-    cy.wait(100);
+    cy.wait(150);
     cy.checkA11y();
   });
 });

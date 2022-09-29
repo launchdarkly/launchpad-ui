@@ -32,7 +32,7 @@ describe('SplitButton', () => {
     cy.get('[data-test-id="split-button-dropdown-button"]').click();
 
     // wait for animation to finish
-    cy.wait(100);
+    cy.wait(150);
     cy.checkA11y();
   });
 });

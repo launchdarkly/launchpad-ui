@@ -30,7 +30,7 @@ describe('Dropdown', () => {
     cy.get('[data-test-id="dropdown-button"]').click();
 
     // wait for animation to finish
-    cy.wait(100);
+    cy.wait(150);
     cy.checkA11y();
   });
 });
