@@ -2,7 +2,7 @@ import type { NavProps } from './Nav';
 import type { NavItemProps } from './NavItem';
 import type { NavItemWithTooltipProps } from './NavItemWithTooltip';
 import type { CollectionBase } from '@react-types/shared';
-import type { ReactElement, RefObject } from 'react';
+import type { ReactElement } from 'react';
 
 import { Chip } from '@launchpad-ui/chip';
 import { Dropdown, DropdownButton } from '@launchpad-ui/dropdown';
@@ -10,34 +10,15 @@ import { Menu, MenuItem } from '@launchpad-ui/menu';
 import { useResizeObserver, useValueEffect } from '@react-aria/utils';
 import { useListState } from '@react-stately/list';
 import { cx } from 'classix';
-import { createContext, useCallback, useContext, useEffect, useRef } from 'react';
+import { useCallback, useEffect, useRef } from 'react';
 import { NavLink } from 'react-router-dom';
 
 import { Nav } from './Nav';
 import { NavItem } from './NavItem';
 import { NavItemWithTooltip } from './NavItemWithTooltip';
-import './styles/Navigation.css';
+import { NavigationContext, useNavigationContext } from './NavigationContext';
+import styles from './styles/Navigation.module.css';
 import { titlecase, useMediaQuery } from './utils';
-
-type NavigationContext = {
-  shouldCollapse: boolean;
-  refs: {
-    wrapperRef: RefObject<HTMLDivElement>;
-    itemListRef: RefObject<HTMLDivElement>;
-  };
-};
-
-const NavigationContext = createContext<NavigationContext | undefined>(undefined);
-
-const useNavigationContext = () => {
-  const context = useContext(NavigationContext);
-
-  if (context === undefined) {
-    throw new Error('useNavigationContext must be used within a NavigationContext provider');
-  }
-
-  return context;
-};
 
 type NavigationMenuButtonProps<T extends object> = CollectionBase<T> & {
   title: string;
@@ -48,7 +29,7 @@ const NavigationMenuButton = <T extends object>(props: NavigationMenuButtonProps
 
   return (
     <Dropdown>
-      <DropdownButton>{props.title}</DropdownButton>
+      <DropdownButton data-test-id="navigation-menu-button">{props.title}</DropdownButton>
       <Menu>
         {[...state.collection].map((item) => (
           <MenuItem
@@ -103,7 +84,7 @@ const NavigationList = <T extends object>(props: NavigationListProps<T>) => {
   const { shouldCollapse, refs } = useNavigationContext();
 
   return (
-    <div className="NavigationList-wrapper" ref={refs.wrapperRef}>
+    <div className={styles['NavigationList-wrapper']} ref={refs.wrapperRef}>
       {shouldCollapse ? (
         <NavigationMenuButton {...props} aria-label={title} />
       ) : (
@@ -156,7 +137,7 @@ const Navigation = <T extends object>(props: NavigationProps<T>) => {
   const { children, 'data-test-id': testId = 'navigation' } = props;
   const wrapperRef = useRef<HTMLDivElement>(null);
   const itemListRef = useRef<HTMLDivElement>(null);
-  const [shouldCollapse, setCollapse] = useValueEffect(false);
+  const [shouldCollapse, setCollapse] = useValueEffect(true);
 
   const isWideViewport = useMediaQuery('(min-width: 740px)');
 
@@ -168,7 +149,7 @@ const Navigation = <T extends object>(props: NavigationProps<T>) => {
       }
 
       // This is where we're explicitly tied to NavItem
-      const tabs = itemListRef.current.querySelectorAll('.NavItem');
+      const tabs = itemListRef.current.querySelectorAll("[data-nav-target='true']");
       const lastTab = tabs[tabs.length - 1];
 
       const containerEdge = wrapperRef.current.getBoundingClientRect().right;
@@ -199,8 +180,8 @@ const Navigation = <T extends object>(props: NavigationProps<T>) => {
 
   return (
     <div
+      className={cx(styles.Navigation, shouldCollapse && styles['Navigation--collapsed'])}
       data-test-id={testId}
-      className={cx('Navigation', shouldCollapse && 'Navigation--collapsed')}
     >
       <NavigationContext.Provider
         value={{
@@ -217,7 +198,7 @@ const Navigation = <T extends object>(props: NavigationProps<T>) => {
   );
 };
 
-export { Navigation, NavigationItem, NavigationList, NavigationMenuButton };
+export { Navigation, NavigationItem, NavigationList, NavigationMenuButton, useNavigationContext };
 export type {
   NavigationProps,
   NavigationItemProps,

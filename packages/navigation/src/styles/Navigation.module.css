@@ -1,16 +1,16 @@
 @import '../../../tokens/dist/media-queries.css';
 
-:root {
+:global(:root) {
   --page-gutter-width: 1rem;
 }
 
 @media (--tablet) {
-  :root {
+  :global(:root) {
     --page-gutter-width: 4rem;
   }
 }
 
-.Navigation .Nav--primary {
+.Navigation :global([class*='_Nav--primary_']) {
   padding: 0 2.5rem;
 }
 
