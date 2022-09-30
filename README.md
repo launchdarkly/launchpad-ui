@@ -46,34 +46,27 @@ The following command will run unit tests in every package of the monorepo:
 $ pnpm test
 ```
 
-#### E2E Tests
+#### Component Tests
 
-[Playwright](https://playwright.dev/) is used to run e2e browser tests to validate interactivity and accessibility features of components in real browser contexts.
+[Cypress component testing](https://docs.cypress.io/guides/component-testing/quickstart-react) is used to run browser tests to validate interactivity and accessibility features of components in real browser contexts.
 
-Before running e2e tests for the first time, you will need to run the following command to install all the browsers that Playwright uses:
+The following command will run Cypress tests for every package of the monorepo and report code coverage:
 
 ```sh
-npx playwright install
+$ pnpm cypress:component
 ```
 
-The following command will run e2e tests in every package of the monorepo:
+To run in watch mode or debug a particular test, run the following command:
 
 ```sh
-$ pnpm e2e
-```
-
-To debug a particular test, go to the package and run it in headed mode:
-
-```sh
-$ cd packages/alert
-$ pnpm e2e --headed --debug
+$ pnpm cypress:open
 ```
 
 #### SSR Tests
 
 SSR support is tested using a [Remix](https://remix.run/) app [found in the monorepo](./apps/remix/README.md).
 
-The following command will build the app, start the server, and run Playwright tests to verify the components have rendered:
+The following command will build the app, start the server, and run Cypress tests to verify the components have rendered:
 
 ```sh
 $ pnpm e2e:ssr
