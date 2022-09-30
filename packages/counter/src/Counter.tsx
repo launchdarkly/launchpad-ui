@@ -2,7 +2,7 @@ import type { HTMLAttributes } from 'react';
 
 import { cx } from 'classix';
 
-import './styles/Counter.css';
+import styles from './styles/Counter.module.css';
 
 type CounterProps = HTMLAttributes<HTMLSpanElement> & {
   value: number;
@@ -18,7 +18,7 @@ const Counter = ({
   'data-test-id': testId = 'counter',
   ...rest
 }: CounterProps) => {
-  const classes = cx('Counter', className, subtle && 'Counter--subtle');
+  const classes = cx(styles.Counter, className, subtle && styles['Counter--subtle']);
 
   return (
     <span className={classes} data-test-id={testId} {...rest}>
