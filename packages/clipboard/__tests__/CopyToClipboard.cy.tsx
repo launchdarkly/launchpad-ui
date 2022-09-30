@@ -19,7 +19,7 @@ describe('CopyToClipboard', () => {
     cy.get('[data-test-id="copy-code-button"]').click();
 
     // wait for animation to finish
-    cy.wait(150);
+    cy.wait(200);
     cy.checkA11y();
   });
 });
