@@ -14,15 +14,11 @@ describe('Tooltip', () => {
 
   it('is accessible', () => {
     cy.mount(
-      <Tooltip>
+      <Tooltip isOpen>
         <button>Target</button>
         <span>Content</span>
       </Tooltip>
     );
-    cy.get('button').click();
-
-    // wait for animation to finish
-    cy.wait(200);
     cy.checkA11y();
   });
 });

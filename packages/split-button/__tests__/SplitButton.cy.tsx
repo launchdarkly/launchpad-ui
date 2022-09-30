@@ -29,10 +29,6 @@ describe('SplitButton', () => {
 
   it('is accessible', () => {
     cy.mount(createComponent());
-    cy.get('[data-test-id="split-button-dropdown-button"]').click();
-
-    // wait for animation to finish
-    cy.wait(200);
     cy.checkA11y();
   });
 });
