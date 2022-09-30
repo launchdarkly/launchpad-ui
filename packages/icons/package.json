@@ -9,7 +9,6 @@
   "files": [
     "dist"
   ],
-  "style": "dist/index.css",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
   "types": "dist/index.d.ts",
@@ -30,7 +29,6 @@
     "build": "pnpm build:icons && vite build -c ../../vite.config.ts && tsc --project tsconfig.build.json",
     "build:icons": "svgr --silent -- icons",
     "clean": "rm -rf dist",
-    "e2e": "playwright test --config=../../playwright.config.ct.ts",
     "lint": "eslint '**/*.{ts,tsx,js}' && stylelint '**/*.css' --ignore-path ../../.stylelintignore",
     "test": "pnpm build:icons && vitest run --coverage"
   },
