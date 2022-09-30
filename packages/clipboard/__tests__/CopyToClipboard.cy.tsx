@@ -16,10 +16,6 @@ describe('CopyToClipboard', () => {
         <span>Copy content</span>
       </CopyToClipboard>
     );
-    cy.get('[data-test-id="copy-code-button"]').click();
-
-    // wait for animation to finish
-    cy.wait(200);
     cy.checkA11y();
   });
 });

@@ -14,15 +14,11 @@ describe('Popover', () => {
 
   it('is accessible', () => {
     cy.mount(
-      <Popover>
+      <Popover isOpen>
         <button>Target</button>
         <span>Content</span>
       </Popover>
     );
-    cy.get('button').click();
-
-    // wait for animation to finish
-    cy.wait(200);
     cy.checkA11y();
   });
 });
