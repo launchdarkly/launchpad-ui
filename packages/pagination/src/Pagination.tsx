@@ -5,7 +5,7 @@ import { cx } from 'classix';
 
 import { PaginationButton } from './PaginationButton';
 import { PaginationText } from './PaginationText';
-import './styles/Pagination.css';
+import styles from './styles/Pagination.module.css';
 
 type PaginationProps = HTMLAttributes<HTMLElement> & {
   resourceName: string;
@@ -40,7 +40,7 @@ const Pagination = ({
   return (
     <nav
       {...rest}
-      className={cx('Pagination', className)}
+      className={cx(styles.Pagination, className)}
       aria-label={ariaLabel ?? `Pagination for ${resourceName} list.`}
       data-test-id={testId}
     >

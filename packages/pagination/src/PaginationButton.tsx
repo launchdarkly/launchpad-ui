@@ -7,6 +7,8 @@ import {
 } from '@launchpad-ui/icons';
 import { cx } from 'classix';
 
+import styles from './styles/Pagination.module.css';
+
 type PaginationChange = 'first' | 'prev' | 'next' | 'last';
 
 type PaginationButtonProps<T = PaginationChange> = {
@@ -40,7 +42,11 @@ const PaginationButton = ({
   className,
   'data-test-id': testId = 'pagination-button',
 }: PaginationButtonProps) => {
-  const classes = cx('PaginationButton', disabled && 'PaginationButton--disabled', className);
+  const classes = cx(
+    styles.PaginationButton,
+    disabled && styles['PaginationButton--disabled'],
+    className
+  );
 
   const Icon = ICON_MAP[kind];
 
