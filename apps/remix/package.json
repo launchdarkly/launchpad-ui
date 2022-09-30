@@ -8,7 +8,6 @@
     "dev": "remix dev",
     "build": "remix build",
     "clean": "rm -rf public",
-    "e2e": "playwright test --config=../../playwright.config.ts",
     "lint": "eslint '**/*.{ts,tsx,js}' && stylelint '**/*.css' --ignore-path ../../.stylelintignore",
     "start": "remix-serve build",
     "test": "exit 0"

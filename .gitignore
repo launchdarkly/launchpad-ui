@@ -11,5 +11,6 @@ test-results/
 .env
 .DS_Store
 *.log
+.nyc_output
 
 packages/tokens/stories/tokens.json
