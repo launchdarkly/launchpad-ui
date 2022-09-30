@@ -30,7 +30,6 @@
   "scripts": {
     "build": "style-dictionary build --config ./sd.config.js",
     "clean": "rm -rf dist",
-    "e2e": "exit 0",
     "lint": "eslint '**/*.{ts,tsx,js}'",
     "test": "exit 0"
   },

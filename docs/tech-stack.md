@@ -34,9 +34,9 @@ Our packages are built using [Vite](https://vitejs.dev/) for its speed, rich fea
 
 We use [Vitest](https://vitest.dev/) to run our unit tests as it is Jest compatible, supports ESM and TypeScript by default, generates [c8](https://github.com/bcoe/c8) code coverage, and provides an instant watch mode. [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/) is used to test our React components and write tests that closely resemble how a user would interact with our components.
 
-To test accessibility and behavior within real browser contexts we use [Playwright component testing](https://playwright.dev/docs/test-components). These e2e tests run in Chromium, WebKit, and Firefox.
+To test accessibility and behavior within real browser contexts we use [Cypress component testing](https://docs.cypress.io/guides/component-testing/quickstart-react).
 
-To verify component server-side rendering support we use a [Remix](https://remix.run/) playground app to integrate our components into. Powered by esbuild, Remix builds are speedy, making it a great choice for local and CI environments. [Playwright](https://playwright.dev/) is used to verify SSR support by running tests across headless versions of Chromium, WebKit, and Firefox.
+To verify component server-side rendering support we use a [Remix](https://remix.run/) playground app to integrate our components into. Powered by esbuild, Remix builds are speedy, making it a great choice for local and CI environments. [Cypress](https://www.cypress.io/) is used to verify SSR support by running tests in a headless browser.
 
 ## Code Style
 
