@@ -19,7 +19,7 @@ describe('Dropdown', () => {
 
   it('is accessible', () => {
     cy.mount(
-      <Dropdown>
+      <Dropdown isOpen>
         <DropdownButton>Target</DropdownButton>
         <Menu>
           <MenuItem>Item 1</MenuItem>
@@ -27,10 +27,6 @@ describe('Dropdown', () => {
         </Menu>
       </Dropdown>
     );
-    cy.get('[data-test-id="dropdown-button"]').click();
-
-    // wait for animation to finish
-    cy.wait(200);
     cy.checkA11y();
   });
 });
