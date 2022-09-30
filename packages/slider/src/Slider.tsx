@@ -2,7 +2,7 @@ import type { SyntheticEvent } from 'react';
 
 import { cx } from 'classix';
 
-import './styles/Slider.css';
+import styles from './styles/Slider.module.css';
 
 type SliderProps = {
   value: number;
@@ -37,11 +37,11 @@ const Slider = ({
 
   return (
     <div
-      className={cx('Slider', (disabled || readOnly) && 'Slider--disabled', className)}
+      className={cx(styles.Slider, (disabled || readOnly) && styles['Slider--disabled'], className)}
       data-test-id={testId}
     >
-      {!hideTrack && <div className="Slider-track" />}
-      {!hideTrack && <div className="Slider-fill" style={{ width: `${value}%` }} />}
+      {!hideTrack && <div className={styles['Slider-track']} />}
+      {!hideTrack && <div className={styles['Slider-fill']} style={{ width: `${value}%` }} />}
       <input
         type="range"
         value={value}
