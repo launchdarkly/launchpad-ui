@@ -3,7 +3,7 @@ import type { ElementType, RefObject } from 'react';
 import { cx } from 'classix';
 import DOMPurify from 'isomorphic-dompurify';
 
-import './styles/Markdown.css';
+import styles from './styles/Markdown.module.css';
 import { isAnchorNode, renderMarkdown } from './utils';
 
 DOMPurify.addHook('afterSanitizeAttributes', (node) => {
@@ -35,7 +35,7 @@ const Markdown = ({
   'data-test-id': testId = 'markdown',
 }: MarkdownProps) => {
   const Container = container;
-  const classes = cx('Markdown', className);
+  const classes = cx(styles.Markdown, className);
   return (
     <Container
       className={classes}
