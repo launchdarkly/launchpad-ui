@@ -81,7 +81,7 @@ describe('Navigation', () => {
         ])
       );
 
-      cy.get('[data-test-id="dropdown-button"]').should('be.visible');
+      cy.get('[data-test-id="navigation-menu-button"]').should('be.visible');
     });
   });
 });
