@@ -1,5 +1,18 @@
 # @launchpad-ui/navigation
 
+## 0.6.7
+
+### Patch Changes
+
+- [#402](https://github.com/launchdarkly/launchpad-ui/pull/402) [`e5036e8`](https://github.com/launchdarkly/launchpad-ui/commit/e5036e8668f18fd4f382a911435b7523c807767f) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Navigation]: Update to CSS Modules and improve Nav Chip code
+  [Chip]: Remove Nav chip styles (moved to Navigation)
+- Updated dependencies [[`e5036e8`](https://github.com/launchdarkly/launchpad-ui/commit/e5036e8668f18fd4f382a911435b7523c807767f)]:
+  - @launchpad-ui/chip@0.6.3
+  - @launchpad-ui/dropdown@0.5.4
+  - @launchpad-ui/menu@0.6.6
+  - @launchpad-ui/popover@0.8.4
+  - @launchpad-ui/tooltip@0.6.5
+
 ## 0.6.6
 
 ### Patch Changes

@@ -1,5 +1,38 @@
 # @launchpad-ui/core
 
+## 0.14.7
+
+### Patch Changes
+
+- [#447](https://github.com/launchdarkly/launchpad-ui/pull/447) [`519cac2`](https://github.com/launchdarkly/launchpad-ui/commit/519cac2751d8e33be95850b4671e608c55dd9e4b) Thanks [@Niznikr](https://github.com/Niznikr)! - [Icons] Remove styles entry from package.json
+
+* [#454](https://github.com/launchdarkly/launchpad-ui/pull/454) [`8548b71`](https://github.com/launchdarkly/launchpad-ui/commit/8548b71cbb0dd329e64ded5568f9ee6320fc2a13) Thanks [@pheggeseth](https://github.com/pheggeseth)! - [Icons] add "Verified" icon
+
+- [#451](https://github.com/launchdarkly/launchpad-ui/pull/451) [`6d69002`](https://github.com/launchdarkly/launchpad-ui/commit/6d690029eb1be950832db22e7f8357da704d9d3d) Thanks [@vroske-ld](https://github.com/vroske-ld)! - [Modal] increase z-index
+
+* [#402](https://github.com/launchdarkly/launchpad-ui/pull/402) [`e5036e8`](https://github.com/launchdarkly/launchpad-ui/commit/e5036e8668f18fd4f382a911435b7523c807767f) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Navigation]: Update to CSS Modules and improve Nav Chip code
+  [Chip]: Remove Nav chip styles (moved to Navigation)
+* Updated dependencies [[`519cac2`](https://github.com/launchdarkly/launchpad-ui/commit/519cac2751d8e33be95850b4671e608c55dd9e4b), [`8548b71`](https://github.com/launchdarkly/launchpad-ui/commit/8548b71cbb0dd329e64ded5568f9ee6320fc2a13), [`6d69002`](https://github.com/launchdarkly/launchpad-ui/commit/6d690029eb1be950832db22e7f8357da704d9d3d), [`e5036e8`](https://github.com/launchdarkly/launchpad-ui/commit/e5036e8668f18fd4f382a911435b7523c807767f)]:
+  - @launchpad-ui/icons@0.5.4
+  - @launchpad-ui/modal@0.8.4
+  - @launchpad-ui/chip@0.6.3
+  - @launchpad-ui/navigation@0.6.7
+  - @launchpad-ui/alert@0.4.4
+  - @launchpad-ui/avatar@0.4.4
+  - @launchpad-ui/banner@0.5.4
+  - @launchpad-ui/clipboard@0.8.5
+  - @launchpad-ui/dropdown@0.5.4
+  - @launchpad-ui/filter@0.4.6
+  - @launchpad-ui/form@0.6.5
+  - @launchpad-ui/menu@0.6.6
+  - @launchpad-ui/notification@0.5.5
+  - @launchpad-ui/pagination@0.3.4
+  - @launchpad-ui/overlay@0.3.11
+  - @launchpad-ui/split-button@0.6.5
+  - @launchpad-ui/popover@0.8.4
+  - @launchpad-ui/progress-bubbles@0.5.5
+  - @launchpad-ui/tooltip@0.6.5
+
 ## 0.14.6
 
 ### Patch Changes
