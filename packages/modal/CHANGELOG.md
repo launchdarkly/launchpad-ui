@@ -1,5 +1,14 @@
 # @launchpad-ui/modal
 
+## 0.8.4
+
+### Patch Changes
+
+- [#451](https://github.com/launchdarkly/launchpad-ui/pull/451) [`6d69002`](https://github.com/launchdarkly/launchpad-ui/commit/6d690029eb1be950832db22e7f8357da704d9d3d) Thanks [@vroske-ld](https://github.com/vroske-ld)! - [Modal] increase z-index
+
+- Updated dependencies [[`519cac2`](https://github.com/launchdarkly/launchpad-ui/commit/519cac2751d8e33be95850b4671e608c55dd9e4b), [`8548b71`](https://github.com/launchdarkly/launchpad-ui/commit/8548b71cbb0dd329e64ded5568f9ee6320fc2a13)]:
+  - @launchpad-ui/icons@0.5.4
+
 ## 0.8.3
 
 ### Patch Changes

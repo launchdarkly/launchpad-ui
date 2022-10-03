@@ -1,5 +1,13 @@
 # @launchpad-ui/icons
 
+## 0.5.4
+
+### Patch Changes
+
+- [#447](https://github.com/launchdarkly/launchpad-ui/pull/447) [`519cac2`](https://github.com/launchdarkly/launchpad-ui/commit/519cac2751d8e33be95850b4671e608c55dd9e4b) Thanks [@Niznikr](https://github.com/Niznikr)! - [Icons] Remove styles entry from package.json
+
+* [#454](https://github.com/launchdarkly/launchpad-ui/pull/454) [`8548b71`](https://github.com/launchdarkly/launchpad-ui/commit/8548b71cbb0dd329e64ded5568f9ee6320fc2a13) Thanks [@pheggeseth](https://github.com/pheggeseth)! - [Icons] add "Verified" icon
+
 ## 0.5.3
 
 ### Patch Changes

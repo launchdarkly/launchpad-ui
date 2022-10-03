@@ -1,5 +1,12 @@
 # @launchpad-ui/chip
 
+## 0.6.3
+
+### Patch Changes
+
+- [#402](https://github.com/launchdarkly/launchpad-ui/pull/402) [`e5036e8`](https://github.com/launchdarkly/launchpad-ui/commit/e5036e8668f18fd4f382a911435b7523c807767f) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Navigation]: Update to CSS Modules and improve Nav Chip code
+  [Chip]: Remove Nav chip styles (moved to Navigation)
+
 ## 0.6.2
 
 ### Patch Changes
