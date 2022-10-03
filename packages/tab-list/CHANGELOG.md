@@ -1,5 +1,11 @@
 # @launchpad-ui/tab-list
 
+## 0.4.2
+
+### Patch Changes
+
+- [#442](https://github.com/launchdarkly/launchpad-ui/pull/442) [`b521ef4`](https://github.com/launchdarkly/launchpad-ui/commit/b521ef470734e49f8082c42de7be40c3cd83ce73) Thanks [@Niznikr](https://github.com/Niznikr)! - [TabList] Update to css modules
+
 ## 0.4.1
 
 ### Patch Changes
