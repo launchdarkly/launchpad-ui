@@ -1,5 +1,11 @@
 # @launchpad-ui/counter
 
+## 0.3.4
+
+### Patch Changes
+
+- [#443](https://github.com/launchdarkly/launchpad-ui/pull/443) [`d26d366`](https://github.com/launchdarkly/launchpad-ui/commit/d26d3664b2a5487e1307e6563edb748333a6c6bf) Thanks [@Niznikr](https://github.com/Niznikr)! - [Counter] Update to css modules
+
 ## 0.3.3
 
 ### Patch Changes

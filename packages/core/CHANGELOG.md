@@ -1,5 +1,20 @@
 # @launchpad-ui/core
 
+## 0.14.8
+
+### Patch Changes
+
+- [#446](https://github.com/launchdarkly/launchpad-ui/pull/446) [`5c6aa52`](https://github.com/launchdarkly/launchpad-ui/commit/5c6aa52443cee44b0dbcd8f037ccd8d0098ca2e4) Thanks [@Niznikr](https://github.com/Niznikr)! - [Markdown] Update to css modules
+
+* [#442](https://github.com/launchdarkly/launchpad-ui/pull/442) [`b521ef4`](https://github.com/launchdarkly/launchpad-ui/commit/b521ef470734e49f8082c42de7be40c3cd83ce73) Thanks [@Niznikr](https://github.com/Niznikr)! - [TabList] Update to css modules
+
+- [#443](https://github.com/launchdarkly/launchpad-ui/pull/443) [`d26d366`](https://github.com/launchdarkly/launchpad-ui/commit/d26d3664b2a5487e1307e6563edb748333a6c6bf) Thanks [@Niznikr](https://github.com/Niznikr)! - [Counter] Update to css modules
+
+- Updated dependencies [[`5c6aa52`](https://github.com/launchdarkly/launchpad-ui/commit/5c6aa52443cee44b0dbcd8f037ccd8d0098ca2e4), [`b521ef4`](https://github.com/launchdarkly/launchpad-ui/commit/b521ef470734e49f8082c42de7be40c3cd83ce73), [`d26d366`](https://github.com/launchdarkly/launchpad-ui/commit/d26d3664b2a5487e1307e6563edb748333a6c6bf)]:
+  - @launchpad-ui/markdown@0.3.2
+  - @launchpad-ui/tab-list@0.4.2
+  - @launchpad-ui/counter@0.3.4
+
 ## 0.14.7
 
 ### Patch Changes
