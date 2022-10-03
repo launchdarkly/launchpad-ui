@@ -1,5 +1,12 @@
 # @launchpad-ui/popover
 
+## 0.8.4
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @launchpad-ui/overlay@0.3.11
+
 ## 0.8.3
 
 ### Patch Changes
