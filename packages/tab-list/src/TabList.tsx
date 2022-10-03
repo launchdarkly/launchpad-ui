@@ -8,7 +8,7 @@ import { useTabListState } from '@react-stately/tabs';
 import { cx } from 'classix';
 import { useRef } from 'react';
 
-import './styles/TabList.css';
+import styles from './styles/TabList.module.css';
 
 type TabListProps<T extends string | number> =
   | AriaTabListProps<HTMLDivElement> & {
@@ -52,11 +52,9 @@ const TabList = <T extends number | string>(props: TabListProps<T>) => {
   });
   const { tabListProps } = useTabList(props, state, ref);
 
-  const classes = cx('TabList', className);
-
   return (
-    <div className={classes} data-test-id={testId}>
-      <div {...tabListProps} ref={ref} className="TabList-list">
+    <div className={className} data-test-id={testId}>
+      <div {...tabListProps} ref={ref} className={styles['TabList-list']}>
         {[...state.collection].map((item) => (
           <TabItem key={item.key} item={item} state={state} />
         ))}
@@ -89,7 +87,7 @@ const TabItem = ({ className, item: { key, rendered }, state }: TabItemProps) =>
   const { tabProps } = useTab({ key }, state, ref);
   const isSelected = state.selectedKey === key;
 
-  const classes = cx('TabList-item', isSelected && 'is-active', className);
+  const classes = cx(styles['TabList-item'], isSelected && styles['is-active'], className);
 
   return (
     <div {...tabProps} ref={ref} className={classes}>
@@ -110,7 +108,7 @@ const TabItemPanel = ({ state, ...props }: TabItemPanelProps) => {
   const { tabPanelProps } = useTabPanel(props, state, ref);
 
   return (
-    <div {...tabPanelProps} ref={ref} className="TabList-panel">
+    <div {...tabPanelProps} ref={ref} className={styles['TabList-panel']}>
       {state.selectedItem?.props.children}
     </div>
   );
