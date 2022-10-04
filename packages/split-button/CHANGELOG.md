@@ -1,5 +1,17 @@
 # @launchpad-ui/split-button
 
+## 0.6.7
+
+### Patch Changes
+
+- [#449](https://github.com/launchdarkly/launchpad-ui/pull/449) [`cc31640`](https://github.com/launchdarkly/launchpad-ui/commit/cc31640c9aacd452c91831da5d26f5b7db3e7ada) Thanks [@chasedarkly](https://github.com/chasedarkly)! - Pin monorepo packages
+
+- Updated dependencies [[`cc31640`](https://github.com/launchdarkly/launchpad-ui/commit/cc31640c9aacd452c91831da5d26f5b7db3e7ada)]:
+  - @launchpad-ui/button@0.7.2
+  - @launchpad-ui/dropdown@0.5.6
+  - @launchpad-ui/popover@0.8.6
+  - @launchpad-ui/tooltip@0.6.7
+
 ## 0.6.6-alpha.1
 
 ### Patch Changes

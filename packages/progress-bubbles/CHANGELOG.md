@@ -1,5 +1,14 @@
 # @launchpad-ui/progress-bubbles
 
+## 0.5.7
+
+### Patch Changes
+
+- [#449](https://github.com/launchdarkly/launchpad-ui/pull/449) [`cc31640`](https://github.com/launchdarkly/launchpad-ui/commit/cc31640c9aacd452c91831da5d26f5b7db3e7ada) Thanks [@chasedarkly](https://github.com/chasedarkly)! - Pin monorepo packages
+
+- Updated dependencies [[`cc31640`](https://github.com/launchdarkly/launchpad-ui/commit/cc31640c9aacd452c91831da5d26f5b7db3e7ada)]:
+  - @launchpad-ui/popover@0.8.6
+
 ## 0.5.6-alpha.1
 
 ### Patch Changes

@@ -1,5 +1,16 @@
 # @launchpad-ui/modal
 
+## 0.8.6
+
+### Patch Changes
+
+- [#449](https://github.com/launchdarkly/launchpad-ui/pull/449) [`cc31640`](https://github.com/launchdarkly/launchpad-ui/commit/cc31640c9aacd452c91831da5d26f5b7db3e7ada) Thanks [@chasedarkly](https://github.com/chasedarkly)! - Pin monorepo packages
+
+- Updated dependencies [[`8cf2aeb`](https://github.com/launchdarkly/launchpad-ui/commit/8cf2aebdff6dcb030298a3901ab10fd96f971032), [`cc31640`](https://github.com/launchdarkly/launchpad-ui/commit/cc31640c9aacd452c91831da5d26f5b7db3e7ada)]:
+  - @launchpad-ui/icons@0.5.5
+  - @launchpad-ui/button@0.7.2
+  - @launchpad-ui/progress@0.5.2
+
 ## 0.8.5-alpha.1
 
 ### Patch Changes

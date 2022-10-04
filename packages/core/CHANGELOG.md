@@ -1,5 +1,98 @@
 # @launchpad-ui/core
 
+## 0.16.0
+
+### Minor Changes
+
+- [#449](https://github.com/launchdarkly/launchpad-ui/pull/449) [`8cf2aeb`](https://github.com/launchdarkly/launchpad-ui/commit/8cf2aebdff6dcb030298a3901ab10fd96f971032) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Alert]: Update styles for system message redesign project
+  [Icons]: Add AlertRhombus icon
+
+* [#449](https://github.com/launchdarkly/launchpad-ui/pull/449) [`7e1adcc`](https://github.com/launchdarkly/launchpad-ui/commit/7e1adcc6c991274b0312965cafd5ec3d2e11113f) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Banner]: Use BannerKind and remove success kind:
+
+  - Replace usage of `AlertKind` for banner kinds with `BannerKind`
+
+- [#449](https://github.com/launchdarkly/launchpad-ui/pull/449) [`8a26d5a`](https://github.com/launchdarkly/launchpad-ui/commit/8a26d5a60768009232ec606bb164dc153e7ba962) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Banner]: Update styles for system message redesign project
+
+### Patch Changes
+
+- [#449](https://github.com/launchdarkly/launchpad-ui/pull/449) [`7f87882`](https://github.com/launchdarkly/launchpad-ui/commit/7f87882489be17878ee0bdeac3a72c0585d9f748) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Alert] Increase to 100% max width with 700px max width content
+
+* [#449](https://github.com/launchdarkly/launchpad-ui/pull/449) [`4d4e9b5`](https://github.com/launchdarkly/launchpad-ui/commit/4d4e9b55d1cb637d5c6116c26c605b56e7a2025b) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Toast] Remove error variant
+
+- [#449](https://github.com/launchdarkly/launchpad-ui/pull/449) [`b6b397e`](https://github.com/launchdarkly/launchpad-ui/commit/b6b397e662c2237009933298469c95bb4b4c98de) Thanks [@chasedarkly](https://github.com/chasedarkly)! - Replace enums with string union types
+
+* [#449](https://github.com/launchdarkly/launchpad-ui/pull/449) [`087a90f`](https://github.com/launchdarkly/launchpad-ui/commit/087a90f5e1cbfe048203344e0c23d4e1a9731e6e) Thanks [@chasedarkly](https://github.com/chasedarkly)! - Integrates IconButton component into new system notification designs
+
+  [Alert]: Update styles to accommodate new IconButton
+  [Banner]: Update styles to accommodate new IconButton
+
+- [#449](https://github.com/launchdarkly/launchpad-ui/pull/449) [`fd1b091`](https://github.com/launchdarkly/launchpad-ui/commit/fd1b091c38d15348e8a6e1deac0b547dca7aea4a) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Alert] Add max width to Alert
+
+* [#449](https://github.com/launchdarkly/launchpad-ui/pull/449) [`7b92215`](https://github.com/launchdarkly/launchpad-ui/commit/7b92215f227cb13c9f11805dac4c144d74d09ca1) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Snackbar, Toast]: Export record types
+
+- [#449](https://github.com/launchdarkly/launchpad-ui/pull/449) [`22bc74c`](https://github.com/launchdarkly/launchpad-ui/commit/22bc74c5333e66f49b9c6e310e4c88d1db46ae24) Thanks [@chasedarkly](https://github.com/chasedarkly)! - Modify styles for Alert component contents
+
+* [#449](https://github.com/launchdarkly/launchpad-ui/pull/449) [`a288a96`](https://github.com/launchdarkly/launchpad-ui/commit/a288a96349c9ebd38279f5400585b176c5ba0189) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Alert] Add margin to left of alert close icon
+
+- [#449](https://github.com/launchdarkly/launchpad-ui/pull/449) [`c42c9df`](https://github.com/launchdarkly/launchpad-ui/commit/c42c9dfe56c0e0d9b9428b56ddacf2e67ccd5760) Thanks [@chasedarkly](https://github.com/chasedarkly)! - Add toast package, refactor Snackbar to match
+
+  [Toast]: A toast contains a concise message that indicates the completion of a task that requires no user interactions.
+  [Snackbar]: Improve SnackbarRecord type and randomize status.
+
+* [#449](https://github.com/launchdarkly/launchpad-ui/pull/449) [`cc31640`](https://github.com/launchdarkly/launchpad-ui/commit/cc31640c9aacd452c91831da5d26f5b7db3e7ada) Thanks [@chasedarkly](https://github.com/chasedarkly)! - Pin monorepo packages
+
+- [#449](https://github.com/launchdarkly/launchpad-ui/pull/449) [`eeff60a`](https://github.com/launchdarkly/launchpad-ui/commit/eeff60a9859a80128ec76cccb6b2f08e2c5d34d5) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Alert] Increase css specificity on .Alert selectors
+  [Banner] Increase css specificity on .Banner selectors
+
+* [#449](https://github.com/launchdarkly/launchpad-ui/pull/449) [`b99ae88`](https://github.com/launchdarkly/launchpad-ui/commit/b99ae88e982d4017917bc8e56eda156bea4e6eb0) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Alert] Explicitly define header color
+
+- [#449](https://github.com/launchdarkly/launchpad-ui/pull/449) [`6c9261b`](https://github.com/launchdarkly/launchpad-ui/commit/6c9261b17142429ff5bd414d9778f7c2d246dbd2) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Alert] Update to use CSS modules
+
+* [#449](https://github.com/launchdarkly/launchpad-ui/pull/449) [`ddd9e09`](https://github.com/launchdarkly/launchpad-ui/commit/ddd9e09cbc75a2963013997abea723fa8a3e7e2c) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Snackbar, Toast] Update framer-motion
+
+- [#449](https://github.com/launchdarkly/launchpad-ui/pull/449) [`b306cde`](https://github.com/launchdarkly/launchpad-ui/commit/b306cde16b8d36afb36153581fb9d747a71b9e45) Thanks [@chasedarkly](https://github.com/chasedarkly)! - Add snackbar package:
+
+  Snackbars provide brief messages about app processes with a CTA. They compose of a header, description, and cta. Variants include error, info, and warning. Use these in place of notifications.
+
+* [#449](https://github.com/launchdarkly/launchpad-ui/pull/449) [`c15e259`](https://github.com/launchdarkly/launchpad-ui/commit/c15e259ce2976499ff980b2d771325f9b89fe43a) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Snackbar] update to use css modules
+
+- [#449](https://github.com/launchdarkly/launchpad-ui/pull/449) [`e541384`](https://github.com/launchdarkly/launchpad-ui/commit/e541384cbccef0de055add2ed9fc43e0837a307d) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Alert] Add better specificity to .Alert styles
+
+* [#449](https://github.com/launchdarkly/launchpad-ui/pull/449) [`3f89872`](https://github.com/launchdarkly/launchpad-ui/commit/3f898728bd96173ccd59936f1c06a18e7efd3109) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Notification] Deprecate package
+
+- [#449](https://github.com/launchdarkly/launchpad-ui/pull/449) [`58c0b4f`](https://github.com/launchdarkly/launchpad-ui/commit/58c0b4f684def40973614337097404ac0637c08e) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Banner] Update to use CSS modules
+
+- Updated dependencies [[`7f87882`](https://github.com/launchdarkly/launchpad-ui/commit/7f87882489be17878ee0bdeac3a72c0585d9f748), [`4d4e9b5`](https://github.com/launchdarkly/launchpad-ui/commit/4d4e9b55d1cb637d5c6116c26c605b56e7a2025b), [`b6b397e`](https://github.com/launchdarkly/launchpad-ui/commit/b6b397e662c2237009933298469c95bb4b4c98de), [`087a90f`](https://github.com/launchdarkly/launchpad-ui/commit/087a90f5e1cbfe048203344e0c23d4e1a9731e6e), [`fd1b091`](https://github.com/launchdarkly/launchpad-ui/commit/fd1b091c38d15348e8a6e1deac0b547dca7aea4a), [`7b92215`](https://github.com/launchdarkly/launchpad-ui/commit/7b92215f227cb13c9f11805dac4c144d74d09ca1), [`8cf2aeb`](https://github.com/launchdarkly/launchpad-ui/commit/8cf2aebdff6dcb030298a3901ab10fd96f971032), [`7e1adcc`](https://github.com/launchdarkly/launchpad-ui/commit/7e1adcc6c991274b0312965cafd5ec3d2e11113f), [`22bc74c`](https://github.com/launchdarkly/launchpad-ui/commit/22bc74c5333e66f49b9c6e310e4c88d1db46ae24), [`a288a96`](https://github.com/launchdarkly/launchpad-ui/commit/a288a96349c9ebd38279f5400585b176c5ba0189), [`8a26d5a`](https://github.com/launchdarkly/launchpad-ui/commit/8a26d5a60768009232ec606bb164dc153e7ba962), [`c42c9df`](https://github.com/launchdarkly/launchpad-ui/commit/c42c9dfe56c0e0d9b9428b56ddacf2e67ccd5760), [`cc31640`](https://github.com/launchdarkly/launchpad-ui/commit/cc31640c9aacd452c91831da5d26f5b7db3e7ada), [`eeff60a`](https://github.com/launchdarkly/launchpad-ui/commit/eeff60a9859a80128ec76cccb6b2f08e2c5d34d5), [`b99ae88`](https://github.com/launchdarkly/launchpad-ui/commit/b99ae88e982d4017917bc8e56eda156bea4e6eb0), [`6c9261b`](https://github.com/launchdarkly/launchpad-ui/commit/6c9261b17142429ff5bd414d9778f7c2d246dbd2), [`ddd9e09`](https://github.com/launchdarkly/launchpad-ui/commit/ddd9e09cbc75a2963013997abea723fa8a3e7e2c), [`b306cde`](https://github.com/launchdarkly/launchpad-ui/commit/b306cde16b8d36afb36153581fb9d747a71b9e45), [`c15e259`](https://github.com/launchdarkly/launchpad-ui/commit/c15e259ce2976499ff980b2d771325f9b89fe43a), [`e541384`](https://github.com/launchdarkly/launchpad-ui/commit/e541384cbccef0de055add2ed9fc43e0837a307d), [`3f89872`](https://github.com/launchdarkly/launchpad-ui/commit/3f898728bd96173ccd59936f1c06a18e7efd3109), [`58c0b4f`](https://github.com/launchdarkly/launchpad-ui/commit/58c0b4f684def40973614337097404ac0637c08e)]:
+  - @launchpad-ui/alert@0.6.0
+  - @launchpad-ui/toast@0.2.0
+  - @launchpad-ui/banner@0.7.0
+  - @launchpad-ui/snackbar@0.2.0
+  - @launchpad-ui/icons@0.5.5
+  - @launchpad-ui/avatar@0.4.5
+  - @launchpad-ui/button@0.7.2
+  - @launchpad-ui/chip@0.6.3
+  - @launchpad-ui/clipboard@0.8.7
+  - @launchpad-ui/counter@0.3.4
+  - @launchpad-ui/dropdown@0.5.6
+  - @launchpad-ui/filter@0.4.8
+  - @launchpad-ui/form@0.6.6
+  - @launchpad-ui/markdown@0.3.2
+  - @launchpad-ui/menu@0.6.8
+  - @launchpad-ui/modal@0.8.6
+  - @launchpad-ui/navigation@0.6.10
+  - @launchpad-ui/notification@0.5.7
+  - @launchpad-ui/overlay@0.3.13
+  - @launchpad-ui/pagination@0.3.6
+  - @launchpad-ui/popover@0.8.6
+  - @launchpad-ui/progress@0.5.2
+  - @launchpad-ui/progress-bubbles@0.5.7
+  - @launchpad-ui/slider@0.3.2
+  - @launchpad-ui/split-button@0.6.7
+  - @launchpad-ui/tab-list@0.4.2
+  - @launchpad-ui/table@0.4.3
+  - @launchpad-ui/toggle@0.4.3
+  - @launchpad-ui/tooltip@0.6.7
+
 ## 0.15.0-alpha.7
 
 ### Patch Changes

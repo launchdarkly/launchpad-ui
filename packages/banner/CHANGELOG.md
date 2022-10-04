@@ -1,5 +1,35 @@
 # @launchpad-ui/banner
 
+## 0.7.0
+
+### Minor Changes
+
+- [#449](https://github.com/launchdarkly/launchpad-ui/pull/449) [`7e1adcc`](https://github.com/launchdarkly/launchpad-ui/commit/7e1adcc6c991274b0312965cafd5ec3d2e11113f) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Banner]: Use BannerKind and remove success kind:
+
+  - Replace usage of `AlertKind` for banner kinds with `BannerKind`
+
+* [#449](https://github.com/launchdarkly/launchpad-ui/pull/449) [`8a26d5a`](https://github.com/launchdarkly/launchpad-ui/commit/8a26d5a60768009232ec606bb164dc153e7ba962) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Banner]: Update styles for system message redesign project
+
+### Patch Changes
+
+- [#449](https://github.com/launchdarkly/launchpad-ui/pull/449) [`b6b397e`](https://github.com/launchdarkly/launchpad-ui/commit/b6b397e662c2237009933298469c95bb4b4c98de) Thanks [@chasedarkly](https://github.com/chasedarkly)! - Replace enums with string union types
+
+* [#449](https://github.com/launchdarkly/launchpad-ui/pull/449) [`087a90f`](https://github.com/launchdarkly/launchpad-ui/commit/087a90f5e1cbfe048203344e0c23d4e1a9731e6e) Thanks [@chasedarkly](https://github.com/chasedarkly)! - Integrates IconButton component into new system notification designs
+
+  [Alert]: Update styles to accommodate new IconButton
+  [Banner]: Update styles to accommodate new IconButton
+
+- [#449](https://github.com/launchdarkly/launchpad-ui/pull/449) [`cc31640`](https://github.com/launchdarkly/launchpad-ui/commit/cc31640c9aacd452c91831da5d26f5b7db3e7ada) Thanks [@chasedarkly](https://github.com/chasedarkly)! - Pin monorepo packages
+
+* [#449](https://github.com/launchdarkly/launchpad-ui/pull/449) [`eeff60a`](https://github.com/launchdarkly/launchpad-ui/commit/eeff60a9859a80128ec76cccb6b2f08e2c5d34d5) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Alert] Increase css specificity on .Alert selectors
+  [Banner] Increase css specificity on .Banner selectors
+
+- [#449](https://github.com/launchdarkly/launchpad-ui/pull/449) [`58c0b4f`](https://github.com/launchdarkly/launchpad-ui/commit/58c0b4f684def40973614337097404ac0637c08e) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Banner] Update to use CSS modules
+
+- Updated dependencies [[`8cf2aeb`](https://github.com/launchdarkly/launchpad-ui/commit/8cf2aebdff6dcb030298a3901ab10fd96f971032), [`cc31640`](https://github.com/launchdarkly/launchpad-ui/commit/cc31640c9aacd452c91831da5d26f5b7db3e7ada)]:
+  - @launchpad-ui/icons@0.5.5
+  - @launchpad-ui/button@0.7.2
+
 ## 0.6.0-alpha.5
 
 ### Patch Changes

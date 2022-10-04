@@ -1,5 +1,14 @@
 # @launchpad-ui/overlay
 
+## 0.3.13
+
+### Patch Changes
+
+- [#449](https://github.com/launchdarkly/launchpad-ui/pull/449) [`cc31640`](https://github.com/launchdarkly/launchpad-ui/commit/cc31640c9aacd452c91831da5d26f5b7db3e7ada) Thanks [@chasedarkly](https://github.com/chasedarkly)! - Pin monorepo packages
+
+- Updated dependencies [[`cc31640`](https://github.com/launchdarkly/launchpad-ui/commit/cc31640c9aacd452c91831da5d26f5b7db3e7ada)]:
+  - @launchpad-ui/modal@0.8.6
+
 ## 0.3.12-alpha.1
 
 ### Patch Changes

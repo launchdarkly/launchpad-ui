@@ -1,5 +1,18 @@
 # @launchpad-ui/notification
 
+## 0.5.7
+
+### Patch Changes
+
+- [#449](https://github.com/launchdarkly/launchpad-ui/pull/449) [`cc31640`](https://github.com/launchdarkly/launchpad-ui/commit/cc31640c9aacd452c91831da5d26f5b7db3e7ada) Thanks [@chasedarkly](https://github.com/chasedarkly)! - Pin monorepo packages
+
+* [#449](https://github.com/launchdarkly/launchpad-ui/pull/449) [`3f89872`](https://github.com/launchdarkly/launchpad-ui/commit/3f898728bd96173ccd59936f1c06a18e7efd3109) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Notification] Deprecate package
+
+* Updated dependencies [[`8cf2aeb`](https://github.com/launchdarkly/launchpad-ui/commit/8cf2aebdff6dcb030298a3901ab10fd96f971032), [`cc31640`](https://github.com/launchdarkly/launchpad-ui/commit/cc31640c9aacd452c91831da5d26f5b7db3e7ada)]:
+  - @launchpad-ui/icons@0.5.5
+  - @launchpad-ui/button@0.7.2
+  - @launchpad-ui/clipboard@0.8.7
+
 ## 0.5.6-alpha.1
 
 ### Patch Changes

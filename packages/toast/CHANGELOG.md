@@ -1,5 +1,29 @@
 # @launchpad-ui/toast
 
+## 0.2.0
+
+### Minor Changes
+
+- [#449](https://github.com/launchdarkly/launchpad-ui/pull/449) [`c42c9df`](https://github.com/launchdarkly/launchpad-ui/commit/c42c9dfe56c0e0d9b9428b56ddacf2e67ccd5760) Thanks [@chasedarkly](https://github.com/chasedarkly)! - Add toast package, refactor Snackbar to match
+
+  [Toast]: A toast contains a concise message that indicates the completion of a task that requires no user interactions.
+  [Snackbar]: Improve SnackbarRecord type and randomize status.
+
+### Patch Changes
+
+- [#449](https://github.com/launchdarkly/launchpad-ui/pull/449) [`4d4e9b5`](https://github.com/launchdarkly/launchpad-ui/commit/4d4e9b55d1cb637d5c6116c26c605b56e7a2025b) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Toast] Remove error variant
+
+* [#449](https://github.com/launchdarkly/launchpad-ui/pull/449) [`b6b397e`](https://github.com/launchdarkly/launchpad-ui/commit/b6b397e662c2237009933298469c95bb4b4c98de) Thanks [@chasedarkly](https://github.com/chasedarkly)! - Replace enums with string union types
+
+- [#449](https://github.com/launchdarkly/launchpad-ui/pull/449) [`7b92215`](https://github.com/launchdarkly/launchpad-ui/commit/7b92215f227cb13c9f11805dac4c144d74d09ca1) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Snackbar, Toast]: Export record types
+
+* [#449](https://github.com/launchdarkly/launchpad-ui/pull/449) [`cc31640`](https://github.com/launchdarkly/launchpad-ui/commit/cc31640c9aacd452c91831da5d26f5b7db3e7ada) Thanks [@chasedarkly](https://github.com/chasedarkly)! - Pin monorepo packages
+
+- [#449](https://github.com/launchdarkly/launchpad-ui/pull/449) [`ddd9e09`](https://github.com/launchdarkly/launchpad-ui/commit/ddd9e09cbc75a2963013997abea723fa8a3e7e2c) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Snackbar, Toast] Update framer-motion
+
+- Updated dependencies [[`8cf2aeb`](https://github.com/launchdarkly/launchpad-ui/commit/8cf2aebdff6dcb030298a3901ab10fd96f971032), [`cc31640`](https://github.com/launchdarkly/launchpad-ui/commit/cc31640c9aacd452c91831da5d26f5b7db3e7ada)]:
+  - @launchpad-ui/icons@0.5.5
+
 ## 0.1.0-alpha.11
 
 ### Patch Changes

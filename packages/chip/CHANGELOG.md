@@ -4,6 +4,12 @@
 
 ### Patch Changes
 
+- [#449](https://github.com/launchdarkly/launchpad-ui/pull/449) [`cc31640`](https://github.com/launchdarkly/launchpad-ui/commit/cc31640c9aacd452c91831da5d26f5b7db3e7ada) Thanks [@chasedarkly](https://github.com/chasedarkly)! - Pin monorepo packages
+
+## 0.6.3
+
+### Patch Changes
+
 - [#402](https://github.com/launchdarkly/launchpad-ui/pull/402) [`e5036e8`](https://github.com/launchdarkly/launchpad-ui/commit/e5036e8668f18fd4f382a911435b7523c807767f) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Navigation]: Update to CSS Modules and improve Nav Chip code
   [Chip]: Remove Nav chip styles (moved to Navigation)
 

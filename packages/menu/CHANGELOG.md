@@ -1,5 +1,17 @@
 # @launchpad-ui/menu
 
+## 0.6.8
+
+### Patch Changes
+
+- [#449](https://github.com/launchdarkly/launchpad-ui/pull/449) [`cc31640`](https://github.com/launchdarkly/launchpad-ui/commit/cc31640c9aacd452c91831da5d26f5b7db3e7ada) Thanks [@chasedarkly](https://github.com/chasedarkly)! - Pin monorepo packages
+
+- Updated dependencies [[`8cf2aeb`](https://github.com/launchdarkly/launchpad-ui/commit/8cf2aebdff6dcb030298a3901ab10fd96f971032), [`cc31640`](https://github.com/launchdarkly/launchpad-ui/commit/cc31640c9aacd452c91831da5d26f5b7db3e7ada)]:
+  - @launchpad-ui/icons@0.5.5
+  - @launchpad-ui/form@0.6.6
+  - @launchpad-ui/popover@0.8.6
+  - @launchpad-ui/tooltip@0.6.7
+
 ## 0.6.7-alpha.1
 
 ### Patch Changes

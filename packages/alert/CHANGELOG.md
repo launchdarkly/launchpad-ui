@@ -1,5 +1,44 @@
 # @launchpad-ui/alert
 
+## 0.6.0
+
+### Minor Changes
+
+- [#449](https://github.com/launchdarkly/launchpad-ui/pull/449) [`8cf2aeb`](https://github.com/launchdarkly/launchpad-ui/commit/8cf2aebdff6dcb030298a3901ab10fd96f971032) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Alert]: Update styles for system message redesign project
+  [Icons]: Add AlertRhombus icon
+
+### Patch Changes
+
+- [#449](https://github.com/launchdarkly/launchpad-ui/pull/449) [`7f87882`](https://github.com/launchdarkly/launchpad-ui/commit/7f87882489be17878ee0bdeac3a72c0585d9f748) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Alert] Increase to 100% max width with 700px max width content
+
+* [#449](https://github.com/launchdarkly/launchpad-ui/pull/449) [`b6b397e`](https://github.com/launchdarkly/launchpad-ui/commit/b6b397e662c2237009933298469c95bb4b4c98de) Thanks [@chasedarkly](https://github.com/chasedarkly)! - Replace enums with string union types
+
+- [#449](https://github.com/launchdarkly/launchpad-ui/pull/449) [`087a90f`](https://github.com/launchdarkly/launchpad-ui/commit/087a90f5e1cbfe048203344e0c23d4e1a9731e6e) Thanks [@chasedarkly](https://github.com/chasedarkly)! - Integrates IconButton component into new system notification designs
+
+  [Alert]: Update styles to accommodate new IconButton
+  [Banner]: Update styles to accommodate new IconButton
+
+* [#449](https://github.com/launchdarkly/launchpad-ui/pull/449) [`fd1b091`](https://github.com/launchdarkly/launchpad-ui/commit/fd1b091c38d15348e8a6e1deac0b547dca7aea4a) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Alert] Add max width to Alert
+
+- [#449](https://github.com/launchdarkly/launchpad-ui/pull/449) [`22bc74c`](https://github.com/launchdarkly/launchpad-ui/commit/22bc74c5333e66f49b9c6e310e4c88d1db46ae24) Thanks [@chasedarkly](https://github.com/chasedarkly)! - Modify styles for Alert component contents
+
+* [#449](https://github.com/launchdarkly/launchpad-ui/pull/449) [`a288a96`](https://github.com/launchdarkly/launchpad-ui/commit/a288a96349c9ebd38279f5400585b176c5ba0189) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Alert] Add margin to left of alert close icon
+
+- [#449](https://github.com/launchdarkly/launchpad-ui/pull/449) [`cc31640`](https://github.com/launchdarkly/launchpad-ui/commit/cc31640c9aacd452c91831da5d26f5b7db3e7ada) Thanks [@chasedarkly](https://github.com/chasedarkly)! - Pin monorepo packages
+
+* [#449](https://github.com/launchdarkly/launchpad-ui/pull/449) [`eeff60a`](https://github.com/launchdarkly/launchpad-ui/commit/eeff60a9859a80128ec76cccb6b2f08e2c5d34d5) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Alert] Increase css specificity on .Alert selectors
+  [Banner] Increase css specificity on .Banner selectors
+
+- [#449](https://github.com/launchdarkly/launchpad-ui/pull/449) [`b99ae88`](https://github.com/launchdarkly/launchpad-ui/commit/b99ae88e982d4017917bc8e56eda156bea4e6eb0) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Alert] Explicitly define header color
+
+* [#449](https://github.com/launchdarkly/launchpad-ui/pull/449) [`6c9261b`](https://github.com/launchdarkly/launchpad-ui/commit/6c9261b17142429ff5bd414d9778f7c2d246dbd2) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Alert] Update to use CSS modules
+
+- [#449](https://github.com/launchdarkly/launchpad-ui/pull/449) [`e541384`](https://github.com/launchdarkly/launchpad-ui/commit/e541384cbccef0de055add2ed9fc43e0837a307d) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Alert] Add better specificity to .Alert styles
+
+- Updated dependencies [[`8cf2aeb`](https://github.com/launchdarkly/launchpad-ui/commit/8cf2aebdff6dcb030298a3901ab10fd96f971032), [`cc31640`](https://github.com/launchdarkly/launchpad-ui/commit/cc31640c9aacd452c91831da5d26f5b7db3e7ada)]:
+  - @launchpad-ui/icons@0.5.5
+  - @launchpad-ui/button@0.7.2
+
 ## 0.5.0-alpha.6
 
 ### Patch Changes

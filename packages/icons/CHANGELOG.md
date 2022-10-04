@@ -1,5 +1,14 @@
 # @launchpad-ui/icons
 
+## 0.5.5
+
+### Patch Changes
+
+- [#449](https://github.com/launchdarkly/launchpad-ui/pull/449) [`8cf2aeb`](https://github.com/launchdarkly/launchpad-ui/commit/8cf2aebdff6dcb030298a3901ab10fd96f971032) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Alert]: Update styles for system message redesign project
+  [Icons]: Add AlertRhombus icon
+
+* [#449](https://github.com/launchdarkly/launchpad-ui/pull/449) [`cc31640`](https://github.com/launchdarkly/launchpad-ui/commit/cc31640c9aacd452c91831da5d26f5b7db3e7ada) Thanks [@chasedarkly](https://github.com/chasedarkly)! - Pin monorepo packages
+
 ## 0.5.4-alpha.2
 
 ### Patch Changes
