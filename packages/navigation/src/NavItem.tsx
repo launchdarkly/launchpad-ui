@@ -5,7 +5,7 @@ import { Chip } from '@launchpad-ui/chip';
 import { cx } from 'classix';
 import { NavLink, useLocation } from 'react-router-dom';
 
-import styles from './styles/Nav.module.css';
+import styles from './styles/Navigation.module.css';
 import { titlecase } from './utils';
 
 type NavItemProps = {
@@ -38,7 +38,7 @@ const NavItem = ({
       {...other}
       end={end}
       to={to}
-      className={({ isActive }) => cx(styles.NavItem, isActive ? styles['is-active'] : '')}
+      className={({ isActive }) => cx(styles.NavItem, isActive && styles['is-active'])}
       data-text={name}
       onClick={onClick}
       role={role}

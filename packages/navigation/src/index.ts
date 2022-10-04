@@ -1,9 +1,6 @@
-export type {
-  NavigationProps,
-  NavigationItemProps,
-  NavigationListProps,
-  NavigationMenuButtonProps,
-} from './Navigation';
+export type { NavigationProps } from './Navigation';
+export type { NavigationItemProps } from './NavigationItem';
 /* c8 ignore start */
-export { Navigation, NavigationItem, NavigationList, NavigationMenuButton } from './Navigation';
+export { Navigation } from './Navigation';
+export { NavigationItem } from './NavigationItem';
 /* c8 ignore stop */

@@ -4,7 +4,7 @@ import type { MouseEvent } from 'react';
 import { Tooltip } from '@launchpad-ui/tooltip';
 
 import { NavItem } from './NavItem';
-import styles from './styles/Nav.module.css';
+import styles from './styles/Navigation.module.css';
 
 type NavItemWithTooltipProps = {
   to: string;
