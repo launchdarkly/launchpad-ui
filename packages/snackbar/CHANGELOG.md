@@ -1,5 +1,14 @@
 # @launchpad-ui/snackbar
 
+## 0.1.0-alpha.9
+
+### Patch Changes
+
+- [#449](https://github.com/launchdarkly/launchpad-ui/pull/449) [`982ef8c`](https://github.com/launchdarkly/launchpad-ui/commit/982ef8c3812412f36ea98f67659b7477dc467d46) Thanks [@chasedarkly](https://github.com/chasedarkly)! - Republish
+
+- Updated dependencies [[`982ef8c`](https://github.com/launchdarkly/launchpad-ui/commit/982ef8c3812412f36ea98f67659b7477dc467d46)]:
+  - @launchpad-ui/icons@0.5.4-alpha.1
+
 ## 0.1.0-alpha.8
 
 ### Patch Changes
