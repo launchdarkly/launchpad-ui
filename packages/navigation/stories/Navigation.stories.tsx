@@ -58,6 +58,7 @@ export const Primary: Story = {
       {
         name: 'Fourth',
         to: '/fourth',
+        status: 'new',
       },
     ],
     children: (item) => <NavigationItem key={item.to} {...item} />,
