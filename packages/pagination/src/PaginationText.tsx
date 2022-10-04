@@ -1,6 +1,8 @@
 import { Progress } from '@launchpad-ui/progress';
 import { VisuallyHidden } from '@react-aria/visually-hidden';
 
+import styles from './styles/Pagination.module.css';
+
 type PaginationTextProps = {
   currentOffset: number;
   pageSize: number;
@@ -35,7 +37,7 @@ const PaginationText = ({
   const screenReaderLabel = `Viewing records ${from} through ${to} of ${totalCount} total.`;
 
   return (
-    <div className="PaginationText" data-test-id={testId}>
+    <div className={styles.PaginationText} data-test-id={testId}>
       <VisuallyHidden>{screenReaderLabel}</VisuallyHidden>
       <span aria-hidden>
         <strong>
