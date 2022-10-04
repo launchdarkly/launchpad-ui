@@ -1,5 +1,11 @@
 # @launchpad-ui/icons
 
+## 0.5.4-alpha.2
+
+### Patch Changes
+
+- [#449](https://github.com/launchdarkly/launchpad-ui/pull/449) [`ba1abe9`](https://github.com/launchdarkly/launchpad-ui/commit/ba1abe951c8e88a543654dada0030fdfa66627d9) Thanks [@chasedarkly](https://github.com/chasedarkly)! - Republish
+
 ## 0.5.4-alpha.1
 
 ### Patch Changes

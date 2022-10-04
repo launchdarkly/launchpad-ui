@@ -1,5 +1,14 @@
 # @launchpad-ui/toast
 
+## 0.1.0-alpha.11
+
+### Patch Changes
+
+- [#449](https://github.com/launchdarkly/launchpad-ui/pull/449) [`ba1abe9`](https://github.com/launchdarkly/launchpad-ui/commit/ba1abe951c8e88a543654dada0030fdfa66627d9) Thanks [@chasedarkly](https://github.com/chasedarkly)! - Republish
+
+- Updated dependencies [[`ba1abe9`](https://github.com/launchdarkly/launchpad-ui/commit/ba1abe951c8e88a543654dada0030fdfa66627d9)]:
+  - @launchpad-ui/icons@0.5.4-alpha.2
+
 ## 0.1.0-alpha.10
 
 ### Patch Changes
