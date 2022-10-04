@@ -43,18 +43,7 @@
   background: transparent;
 }
 
-.Slider input[type='range']::-ms-track {
-  background: transparent;
-  border-color: transparent;
-  color: transparent;
-}
-
 .Slider input[type='range']::-moz-range-progress {
-  background: transparent;
-}
-
-.Slider input[type='range']::-ms-fill-lower,
-.Slider input[type='range']::-ms-fill-upper {
   background: transparent;
 }
 
@@ -98,28 +87,6 @@
 }
 
 .Slider input[type='range']:focus::-moz-range-thumb {
-  box-shadow: 0 0 0 1px var(--color-white), 0 0 0 2px var(--color-blue-500),
-    0 0 0 5px rgb(0 126 255 / 0.1);
-}
-
-.Slider input[type='range']::-ms-thumb {
-  width: 1rem;
-  height: 1rem;
-  padding: 0.2rem;
-  cursor: not-allowed;
-  background-color: var(--color-white-100);
-  background-image: linear-gradient(#fafafa, #f5f5f5);
-  border-radius: var(--border-radius);
-  border: solid 1px var(--color-border);
-  box-shadow: 0 0 0 1px var(--color-white);
-  box-sizing: border-box;
-}
-
-.Slider input[type='range']:not([disabled])::-ms-thumb {
-  cursor: ew-resize;
-}
-
-.Slider input[type='range']:focus::-ms-thumb {
   box-shadow: 0 0 0 1px var(--color-white), 0 0 0 2px var(--color-blue-500),
     0 0 0 5px rgb(0 126 255 / 0.1);
 }
