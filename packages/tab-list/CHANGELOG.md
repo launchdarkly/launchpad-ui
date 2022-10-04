@@ -4,6 +4,12 @@
 
 ### Patch Changes
 
+- [#449](https://github.com/launchdarkly/launchpad-ui/pull/449) [`760d6ff`](https://github.com/launchdarkly/launchpad-ui/commit/760d6ff4b95f6f108105295611ae7a7f2af9bfaa) Thanks [@chasedarkly](https://github.com/chasedarkly)! - Pin monorepo packages
+
+## 0.4.2
+
+### Patch Changes
+
 - [#442](https://github.com/launchdarkly/launchpad-ui/pull/442) [`b521ef4`](https://github.com/launchdarkly/launchpad-ui/commit/b521ef470734e49f8082c42de7be40c3cd83ce73) Thanks [@Niznikr](https://github.com/Niznikr)! - [TabList] Update to css modules
 
 ## 0.4.1
