@@ -1,6 +1,6 @@
 {
   "name": "@launchpad-ui/banner",
-  "version": "0.5.4",
+  "version": "0.6.0",
   "status": "beta",
   "publishConfig": {
     "access": "public"
@@ -32,7 +32,6 @@
     "test": "vitest run --coverage"
   },
   "dependencies": {
-    "@launchpad-ui/alert": "workspace:~",
     "@launchpad-ui/button": "workspace:~",
     "@launchpad-ui/icons": "workspace:~",
     "@launchpad-ui/tokens": "workspace:~",

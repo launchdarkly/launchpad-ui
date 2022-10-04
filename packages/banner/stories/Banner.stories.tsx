@@ -50,10 +50,6 @@ export default {
 
 type Story = ComponentStoryObj<typeof Banner>;
 
-export const Success: Story = {
-  args: { children: 'Success banner with icon', dismissible: true, kind: 'success' },
-};
-
 export const Error: Story = {
   args: { children: 'Error banner with icon', dismissible: true, kind: 'error' },
 };
@@ -66,6 +62,22 @@ export const Info: Story = {
   args: { children: 'Info banner with icon', dismissible: true, kind: 'info' },
 };
 
-export const Striped: Story = {
-  args: { children: 'Striped banner with icon', dismissible: true, kind: 'striped' },
+export const WithStackedBanners: Story = {
+  render: () => {
+    return (
+      <>
+        <Banner kind="error">This is an example of Banners that are stacked</Banner>
+        <Banner kind="error">This is an example of Banners that are stacked</Banner>
+      </>
+    );
+  },
+};
+
+export const WithHeader: Story = {
+  args: {
+    header: 'Banner header',
+    children: 'This is an example of a banner with a header',
+    dismissible: true,
+    kind: 'error',
+  },
 };

@@ -1,0 +1,12 @@
+.SnackbarCenter {
+  position: fixed;
+  top: 2rem;
+  right: 2rem;
+  bottom: auto;
+  left: auto;
+  z-index: 10001;
+}
+
+.SnackbarCenter-item:not(:first-child) {
+  margin-top: 2rem;
+}

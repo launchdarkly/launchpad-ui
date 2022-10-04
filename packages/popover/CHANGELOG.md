@@ -1,5 +1,12 @@
 # @launchpad-ui/popover
 
+## 0.8.5-alpha.1
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @launchpad-ui/overlay@0.3.12-alpha.1
+
 ## 0.8.5
 
 ### Patch Changes
@@ -74,6 +81,8 @@
 
 - [#386](https://github.com/launchdarkly/launchpad-ui/pull/386) [`86b0120`](https://github.com/launchdarkly/launchpad-ui/commit/86b0120c548063baba69205215f644b4a2d9a7fd) Thanks [@Niznikr](https://github.com/Niznikr)! - Replace enums with string union types
 
+## 0.7.6-alpha.0
+
 ### Patch Changes
 
 - Updated dependencies []:
@@ -87,7 +96,8 @@
 
 - Updated dependencies [[`91d68ca`](https://github.com/launchdarkly/launchpad-ui/commit/91d68ca61f45c4f7a0f38b4e869f650a5202a74c)]:
   - @launchpad-ui/focus-trap@0.1.0
-  - @launchpad-ui/overlay@0.3.6
+  - # @launchpad-ui/overlay@0.3.6
+  - @launchpad-ui/overlay@0.3.6-alpha.0
 
 ## 0.7.5
 

@@ -1,0 +1,53 @@
+.Snackbar {
+  background-color: var(--color-gray-800);
+  color: var(--color-text-inverse);
+  padding: var(--spacing-4);
+  display: inline-flex;
+  gap: 1.4rem;
+  box-sizing: border-box;
+  width: 37.6rem;
+  border-radius: 2px;
+}
+
+.Snackbar--error {
+  & .Snackbar-icon :global(.Icon) {
+    fill: var(--color-pink-500);
+  }
+}
+
+.Snackbar--info .Snackbar-icon :global(.Icon) {
+  fill: var(--color-cyan-500);
+}
+
+.Snackbar--warning {
+  & .Snackbar-icon :global(.Icon) {
+    fill: var(--color-yellow-500);
+  }
+}
+
+.Snackbar-heading {
+  margin-top: 0;
+  margin-bottom: var(--spacing-1);
+  font-size: 1.6rem;
+  font-weight: var(--font-weight-medium);
+  line-height: 1.5;
+}
+
+.Snackbar-content {
+  flex-grow: 1;
+
+  & :global(a) {
+    color: var(--color-cyan-500);
+  }
+
+  & .Snackbar-description,
+  & :global(a) {
+    font-size: var(--osmo-font-size-small);
+    font-weight: var(--font-weight-regular);
+    line-height: 1.5;
+  }
+}
+
+.Snackbar-close:global(.Button):global(.Button--close) :global(svg) {
+  fill: var(--color-gray-400);
+}

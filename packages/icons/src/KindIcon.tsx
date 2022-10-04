@@ -1,12 +1,12 @@
 import type { IconProps } from './Icon';
 
+import { AlertRhombus } from './AlertRhombus';
 import { CheckCircle } from './CheckCircle';
-import { ErrorCircle } from './ErrorCircle';
 import { Info } from './Info';
 import { Warning } from './Warning';
 
 type KindIconProps = {
-  kind?: 'info' | 'success' | 'warning' | 'error' | 'striped';
+  kind: 'info' | 'success' | 'warning' | 'error';
   size?: IconProps['size'];
   className?: string;
   'data-test-id'?: string;
@@ -26,11 +26,10 @@ const KindIcon = ({
       body = <CheckCircle size={iconSize} />;
       break;
     case 'warning':
-    case 'striped':
       body = <Warning size={iconSize} />;
       break;
     case 'error':
-      body = <ErrorCircle size={iconSize} />;
+      body = <AlertRhombus size={iconSize} />;
       break;
     case 'info':
     default:

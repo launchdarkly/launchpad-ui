@@ -1,0 +1,83 @@
+@import '../../../tokens/dist/media-queries.css';
+
+:root {
+  --Banner-color-border-bottom-info: var(--color-blue-700);
+  /* stylelint-disable-next-line value-keyword-case */
+  --Banner-color-border-bottom-warning: var(--color-system-yellow-700);
+  --Banner-color-border-bottom-error: var(--color-system-red-700);
+  --Banner-color-text: var(--color-black-100);
+  --Banner-color-background: var(--color-white);
+  --Banner-color-background-info: var(--color-blue-100);
+  --Banner-color-background-warning: var(--color-system-yellow-200);
+  --Banner-color-background-error: var(--color-system-red-200);
+  --Banner-icon-color-info: var(--color-blue-700);
+  --Banner-icon-color-warning: var(--color-system-yellow-700);
+  --Banner-icon-color-error: var(--color-system-red-700);
+  --page-gutter-width: 1rem;
+}
+
+@media (--tablet) {
+  :root {
+    --page-gutter-width: 4rem;
+  }
+}
+
+:global(.Banner).Banner {
+  background: var(--Banner-color-background);
+  display: flex;
+  padding: 1.4rem 1.8rem;
+  font-size: 1.4rem;
+  line-height: 1.45;
+  white-space: normal;
+  border-bottom: 1px;
+  border-bottom-style: solid;
+}
+
+.Banner-heading {
+  margin-top: 0;
+  margin-bottom: 0.4rem;
+  font-size: 1.6rem;
+  font-weight: var(--font-weight-medium);
+  line-height: 1.25;
+}
+
+.Banner-content {
+  color: var(--Banner-color-text);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  margin-left: 1.4rem;
+  flex-grow: 1;
+}
+
+.Banner.Banner--error {
+  background-color: var(--Banner-color-background-error);
+  border-bottom-color: var(--Banner-color-border-bottom-error);
+}
+
+.Banner.Banner--warning {
+  background-color: var(--Banner-color-background-warning);
+  border-bottom-color: var(--Banner-color-border-bottom-warning);
+}
+
+.Banner.Banner--info {
+  background-color: var(--Banner-color-background-info);
+  border-bottom-color: var(--Banner-color-border-bottom-info);
+}
+
+/* reset Icon--info positioning hack */
+.Banner.Banner--info :global(.Icon--info) {
+  top: 0;
+}
+
+.Banner.Banner--info .Banner-icon svg {
+  fill: var(--Banner-icon-color-info);
+}
+
+.Banner.Banner--error .Banner-icon svg > path {
+  fill: var(--Banner-icon-color-error);
+}
+
+.Banner.Banner--warning .Banner-icon svg {
+  fill: var(--Banner-icon-color-warning);
+}

@@ -23,163 +23,136 @@
   --box-shadow-0x1y-blur2-sp0-14prc-black: 0 1px 2px 0 hsl(0 0% 12.9% / 0.14);
   --reskin-box-shadow-triple: var(--box-shadow-0x2y-blur8-sp1-4prc-black),
     var(--box-shadow-0x2y-blur4-sp0-8prc-black), var(--box-shadow-0x1y-blur2-sp0-14prc-black);
-
-  /* TODO: figure out if this the better
-  https://www.quackit.com/css/codes/patterns/css_background_stripes.cfm */
-  --reskin-striped-base: repeating-linear-gradient(
-    45deg,
-    var(--color-white),
-    var(--color-white) 20px,
-    var(--color-white-100) 20px,
-    var(--color-white-100) 40px
-  );
   --reskin-border-radius-6px: 6px;
   --Alert-color-background-info: var(--reskin-info-blue-light);
   --Alert-color-background-success: var(--reskin-success-green-light);
   --Alert-color-background-warning: var(--reskin-warn-gold-light);
   --Alert-color-background-error: var(--reskin-error-red-light);
-  --Alert-color-background-striped: var(--reskin-striped-base);
   --Alert-color-border-info: var(--reskin-info-blue-base);
   --Alert-color-border-success: var(--reskin-success-green-base);
   --Alert-color-border-warning: var(--reskin-warn-gold-base);
   --Alert-color-border-error: var(--reskin-error-red-base);
-  --Alert-color-border-striped: var(--color-gray-500);
   --Alert-icon-color-info: var(--reskin-info-blue-base);
   --Alert-icon-color-success: var(--reskin-success-green-base);
   --Alert-icon-color-warning: var(--reskin-warn-gold-base);
   --Alert-icon-color-error: var(--reskin-error-red-base);
-  --Alert-icon-color-striped: var(--color-black-200);
-  --Alert-border-radius: var(--reskin-border-radius-6px);
   --Alert-text-color: var(--color-text-subtle-primary);
 }
 
-.Alert {
+:global(.Alert).Alert {
   position: relative;
   display: flex;
+  gap: 1.4rem;
   border: none;
-
-  /* adjust for vertical rhythm with icon */
-  padding: 1rem 0.8rem;
-  font-size: 1.5rem;
-  font-weight: var(--font-weight-medium);
+  padding: 1.4rem 1.8rem;
+  font-size: 1.4rem;
   line-height: 1.45;
   white-space: normal;
+  width: 100%;
   background-color: var(--color-background);
   color: var(--Alert-text-color);
-  border-radius: var(--Alert-border-radius);
   box-sizing: border-box;
+  border-radius: 2px;
+}
+
+.Alert-heading {
+  margin-top: 0;
+  margin-bottom: 0.4rem;
+  font-size: 1.6rem;
+  color: var(--color-black-100);
+  font-weight: var(--font-weight-medium);
+  line-height: 1.25;
+}
+
+:global(.Alert).Alert :global(.ButtonGroup) {
+  margin-top: 1.2rem;
 }
 
 .Alert-icon {
   line-height: 1.2857;
 }
 
-.Alert--inline {
+.Alert.Alert--inline {
   background-color: unset;
   padding: 0;
 }
 
 /* Alert size variants */
 
-.Alert--small {
+.Alert.Alert--small {
   font-size: 1.3rem;
 }
 
-.Alert--small .Alert-icon {
+.Alert.Alert--small .Alert-icon {
   top: 0.8em;
 }
 
-.Alert--wide {
+.Alert.Alert--wide {
   width: 86%;
   margin-top: 0.8rem;
 }
 
-.Alert--compact {
+.Alert.Alert--compact {
   width: fit-content;
 }
 
 /* for Edge pre-2019 browsers. IE doesn't recognize @supports at all. */
 @supports not (width: fit-content) {
-  .Alert--compact {
+  .Alert.Alert--compact {
     display: table;
   }
 }
 
 /* Alert kind variants */
 
-.Alert--info .Alert-icon svg {
+.Alert.Alert--info .Alert-icon :global(svg) {
   fill: var(--reskin-info-blue-base);
 }
 
-.Alert--success .Alert-icon svg {
+.Alert.Alert--success .Alert-icon :global(svg) {
   fill: var(--reskin-success-green-base);
 }
 
-.Alert--warning .Alert-icon svg {
+.Alert.Alert--warning .Alert-icon :global(svg) {
   fill: var(--reskin-warn-gold-base);
 }
 
-.Alert--error .Alert-icon svg > path {
+.Alert.Alert--error .Alert-icon :global(svg) > :global(path) {
   fill: var(--reskin-error-red-base);
 }
 
-.Alert--striped .Alert-icon svg {
-  fill: var(--color-black-200);
-}
-
-.Alert--info--bordered {
+.Alert.Alert--info.Alert--bordered {
   border: var(--border-width-1) solid var(--Alert-color-border-info);
-  border-left: 0.3rem solid var(--reskin-info-blue-base);
   background-color: var(--Alert-color-background-info);
 }
 
-.Alert--success--bordered {
+.Alert.Alert--success.Alert--bordered {
   border: var(--border-width-1) solid var(--Alert-color-border-success);
-  border-left: 0.3rem solid var(--reskin-success-green-base);
   background-color: var(--Alert-color-background-success);
 }
 
-.Alert--warning--bordered {
+.Alert.Alert--warning.Alert--bordered {
   border: var(--border-width-1) solid var(--Alert-color-border-warning);
-  border-left: 0.3rem solid var(--reskin-warn-gold-base);
   background-color: var(--Alert-color-background-warning);
 }
 
-.Alert--error--bordered {
+.Alert.Alert--error.Alert--bordered {
   border: var(--border-width-1) solid var(--Alert-color-border-error);
-  border-left: 0.3rem solid var(--reskin-error-red-base);
   background-color: var(--Alert-color-background-error);
-}
-
-.Alert--striped--bordered {
-  border: var(--border-width-1) solid var(--Alert-color-border-striped);
-  border-left: 0.3rem solid var(--color-black-200);
-  background-image: repeating-linear-gradient(
-    45deg,
-    var(--color-white),
-    var(--color-white) 20px,
-    var(--color-white-100) 20px,
-    var(--color-white-100) 40px
-  );
-}
-
-.Alert--bordered {
-  box-shadow: var(--reskin-box-shadow-triple);
-  border-top: 1px solid var(--color-border);
-  border-right: 1px solid var(--color-border);
-  border-bottom: 1px solid var(--color-border);
-  background-color: var(--color-background);
-  border-radius: 2px;
 }
 
 /* Alert content styles */
 
 .Alert-content {
-  margin-left: 0.5rem;
-  margin-right: auto;
+  flex-grow: 1;
+  max-width: 70rem;
 }
 
-.Alert-content a:not(.Button) {
+.Alert-close {
+  margin-left: auto;
+}
+
+.Alert-content :global(a:not(.Button)) {
   color: var(--color-link);
 
   &:hover {
@@ -203,8 +176,7 @@
   }
 }
 
-.Alert-content p,
-.Alert-content ul {
+.Alert-content :global(ul) {
   margin: 0 0 0.5em;
 }
 
@@ -212,7 +184,8 @@
   margin-bottom: 0;
 }
 
-.Alert ul {
+.Alert-content :global(p),
+.Alert :global(ul) {
   list-style-position: outside;
-  margin-left: 2rem;
+  margin: 0 0 0.5em;
 }

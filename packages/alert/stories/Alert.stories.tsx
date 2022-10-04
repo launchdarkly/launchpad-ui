@@ -1,5 +1,7 @@
 import type { ComponentStoryObj } from '@storybook/react';
 
+import { Button, ButtonGroup } from '@launchpad-ui/button';
+
 import { Alert } from '../src';
 
 export default {
@@ -77,7 +79,11 @@ export default {
 type Story = ComponentStoryObj<typeof Alert>;
 
 export const Success: Story = {
-  args: { kind: 'success', children: 'Success alert', dismissible: false },
+  args: {
+    kind: 'success',
+    children: 'Success Alert',
+    dismissible: false,
+  },
 };
 
 export const Warning: Story = {
@@ -130,4 +136,43 @@ export const SmallInlineError: Story = {
 
 export const Dismissible: Story = {
   args: { kind: 'info', children: 'Dismissible alert', dismissible: true },
+};
+
+export const WithHeader: Story = {
+  args: { header: 'With Header', children: 'Warning alert', dismissible: true },
+};
+
+export const WithActions: Story = {
+  args: {
+    children: (
+      <div>
+        My description
+        <ButtonGroup>
+          <Button>Label</Button>
+          <Button kind="minimal">Label</Button>
+        </ButtonGroup>
+      </div>
+    ),
+    dismissible: true,
+  },
+};
+
+export const WithContent: Story = {
+  args: {
+    children: (
+      <>
+        <p>My description</p>
+        <ul>
+          <li>This is item one of a list</li>
+          <li>This is item two of a list</li>
+        </ul>
+        <ButtonGroup>
+          <Button kind="default">Label</Button>
+          <Button kind="minimal">Label</Button>
+        </ButtonGroup>
+      </>
+    ),
+    header: 'My title',
+    dismissible: true,
+  },
 };

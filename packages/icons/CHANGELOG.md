@@ -1,5 +1,17 @@
 # @launchpad-ui/icons
 
+## 0.5.4-alpha.2
+
+### Patch Changes
+
+- [#449](https://github.com/launchdarkly/launchpad-ui/pull/449) [`ba1abe9`](https://github.com/launchdarkly/launchpad-ui/commit/ba1abe951c8e88a543654dada0030fdfa66627d9) Thanks [@chasedarkly](https://github.com/chasedarkly)! - Republish
+
+## 0.5.4-alpha.1
+
+### Patch Changes
+
+- [#449](https://github.com/launchdarkly/launchpad-ui/pull/449) [`982ef8c`](https://github.com/launchdarkly/launchpad-ui/commit/982ef8c3812412f36ea98f67659b7477dc467d46) Thanks [@chasedarkly](https://github.com/chasedarkly)! - Republish
+
 ## 0.5.4
 
 ### Patch Changes
@@ -58,6 +70,13 @@
 ### Minor Changes
 
 - [#386](https://github.com/launchdarkly/launchpad-ui/pull/386) [`86b0120`](https://github.com/launchdarkly/launchpad-ui/commit/86b0120c548063baba69205215f644b4a2d9a7fd) Thanks [@Niznikr](https://github.com/Niznikr)! - Replace enums with string union types
+
+## 0.4.1-alpha.0
+
+### Patch Changes
+
+- [#316](https://github.com/launchdarkly/launchpad-ui/pull/316) [`e860080`](https://github.com/launchdarkly/launchpad-ui/commit/e86008076dc61cfcfc4c22317021e793d4fd59a9) Thanks [@github-actions](https://github.com/apps/github-actions)! - [Alert]: Update styles for system message redesign project
+  [Icons]: Add AlertRhombus icon
 
 ## 0.4.0
 

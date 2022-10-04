@@ -1,5 +1,12 @@
 # @launchpad-ui/progress-bubbles
 
+## 0.5.6-alpha.1
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @launchpad-ui/popover@0.8.5-alpha.1
+
 ## 0.5.6
 
 ### Patch Changes
@@ -87,6 +94,13 @@
 
 - Updated dependencies [[`91d68ca`](https://github.com/launchdarkly/launchpad-ui/commit/91d68ca61f45c4f7a0f38b4e869f650a5202a74c)]:
   - @launchpad-ui/popover@0.7.6
+
+## 0.4.6-alpha.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @launchpad-ui/popover@0.7.6-alpha.0
 
 ## 0.4.5
 

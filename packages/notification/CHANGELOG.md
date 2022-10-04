@@ -1,5 +1,13 @@
 # @launchpad-ui/notification
 
+## 0.5.6-alpha.1
+
+### Patch Changes
+
+- Updated dependencies [[`ba1abe9`](https://github.com/launchdarkly/launchpad-ui/commit/ba1abe951c8e88a543654dada0030fdfa66627d9)]:
+  - @launchpad-ui/icons@0.5.4-alpha.2
+  - @launchpad-ui/clipboard@0.8.6-alpha.1
+
 ## 0.5.6
 
 ### Patch Changes
@@ -76,6 +84,12 @@
   - @launchpad-ui/clipboard@0.8.1
   - @launchpad-ui/icons@0.5.1
 
+## 0.5.1-alpha.0
+
+### Patch Changes
+
+- [`3ca0118`](https://github.com/launchdarkly/launchpad-ui/commit/3ca0118482a36299bc9ff6fd9d4566be28c4dd9b) Thanks [@Niznikr](https://github.com/Niznikr)! - [Notification] Deprecate package
+
 ## 0.5.0
 
 ### Minor Changes
@@ -105,6 +119,14 @@
 - Updated dependencies [[`91d68ca`](https://github.com/launchdarkly/launchpad-ui/commit/91d68ca61f45c4f7a0f38b4e869f650a5202a74c)]:
   - @launchpad-ui/focus-trap@0.1.0
   - @launchpad-ui/clipboard@0.6.6
+
+## 0.4.6-alpha.0
+
+### Patch Changes
+
+- Updated dependencies [[`e860080`](https://github.com/launchdarkly/launchpad-ui/commit/e86008076dc61cfcfc4c22317021e793d4fd59a9)]:
+  - @launchpad-ui/icons@0.4.1-alpha.0
+  - @launchpad-ui/clipboard@0.6.6-alpha.0
 
 ## 0.4.5
 

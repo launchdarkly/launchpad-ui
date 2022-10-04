@@ -8,8 +8,24 @@ on:
       - 'release/**'
 
 jobs:
+  branch-info:
+    name: Branch Info
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get base branch
+        id: get-base-branch
+        run: |
+          if [[ "${{github.event.pull_request.base.ref}}" != "" ]]; then
+            echo "::set-output name=branch::${{github.event.pull_request.base.ref}}"
+          else
+            echo "::set-output name=branch::main"
+          fi
+    outputs:
+      base-branch: ${{ steps.get-base-branch.outputs.branch }}
+
   lint:
     name: Lint
+    needs: [branch-info]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -20,6 +36,8 @@ jobs:
 
       - name: Derive appropriate SHAs for base and head for `nx affected` commands
         uses: nrwl/nx-set-shas@v3
+        with:
+          main-branch-name: ${{needs.branch-info.outputs.base-branch}}
 
       - name: Setup Node 16.x
         uses: actions/setup-node@v3
@@ -35,6 +53,7 @@ jobs:
 
   test:
     name: Test
+    needs: [branch-info]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -45,6 +64,8 @@ jobs:
 
       - name: Derive appropriate SHAs for base and head for `nx affected` commands
         uses: nrwl/nx-set-shas@v3
+        with:
+          main-branch-name: ${{needs.branch-info.outputs.base-branch}}
 
       - name: Setup Node 16.x
         uses: actions/setup-node@v3
@@ -60,6 +81,7 @@ jobs:
 
   e2e:
     name: e2e
+    needs: [branch-info]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -70,6 +92,8 @@ jobs:
 
       - name: Derive appropriate SHAs for base and head for `nx affected` commands
         uses: nrwl/nx-set-shas@v3
+        with:
+          main-branch-name: ${{needs.branch-info.outputs.base-branch}}
 
       - name: Setup Node 16.x
         uses: actions/setup-node@v3

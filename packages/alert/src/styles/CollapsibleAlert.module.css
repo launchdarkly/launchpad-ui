@@ -12,11 +12,11 @@ backround support in CollapsibleAlert */
   --CollapsibleAlert-icon-color: var(--color-gray-800);
 }
 
-.CollapsibleAlert {
+:global(.CollapsibleAlert).CollapsibleAlert {
   margin-top: 0.8rem;
 }
 
-.CollapsibleAlert .Alert-content {
+:global(.CollapsibleAlert).CollapsibleAlert :global(.Alert-content) {
   width: 100%;
 }
 
@@ -78,7 +78,7 @@ https://www.scottohara.me/blog/2017/04/14/inclusively-hidden.html
   transition: visibility 0.5s, max-height 0.5s, opacity 0.5s, transform 0.5s;
   transition-timing-function: ease-in-out;
 
-  & > a {
+  & > :global(a) {
     color: var(--CollapsibleAlert-color-link);
 
     &:hover {
@@ -103,21 +103,21 @@ https://www.scottohara.me/blog/2017/04/14/inclusively-hidden.html
   }
 
   /* some specific table overrides in Collapsible Alert */
-  & .Table-header {
+  & :global(.Table-header) {
     border-bottom: 1px solid var(--CollapsibleAlert-Table-color-border);
   }
 
-  & .Table-body .Table-row + .Table-row {
+  & :global(.Table-body .Table-row + .Table-row) {
     border-top: 1px solid var(--CollapsibleAlert-Table-color-border);
   }
 
-  & .Table--compact .Table-cell {
+  & :global(.Table--compact .Table-cell) {
     padding: 0.5rem 1rem 0.5rem 0;
   }
 }
 
 /* animate content container when button toggled */
-[aria-expanded='true'] + .CollapsibleAlert--contentContainer {
+:global([aria-expanded='true']) + .CollapsibleAlert--contentContainer {
   margin-top: 0.4rem;
   visibility: visible;
   max-height: 31.25rem;
