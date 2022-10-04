@@ -1,5 +1,14 @@
 # @launchpad-ui/core
 
+## 0.14.9
+
+### Patch Changes
+
+- [#456](https://github.com/launchdarkly/launchpad-ui/pull/456) [`3bee568`](https://github.com/launchdarkly/launchpad-ui/commit/3bee56842b2a31ab46f74bc3df075dc6f0c3191f) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Navigation] Add classname prop to navigation component
+
+- Updated dependencies [[`3bee568`](https://github.com/launchdarkly/launchpad-ui/commit/3bee56842b2a31ab46f74bc3df075dc6f0c3191f)]:
+  - @launchpad-ui/navigation@0.6.8
+
 ## 0.14.8
 
 ### Patch Changes
