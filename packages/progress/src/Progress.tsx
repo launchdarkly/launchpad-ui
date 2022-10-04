@@ -3,7 +3,7 @@ import type { DelayedIndicatorProps } from './DelayedIndicator';
 import { cx } from 'classix';
 
 import { DelayedIndicator } from './DelayedIndicator';
-import './styles/Progress.css';
+import styles from './styles/Progress.module.css';
 
 type ProgressProps = {
   value?: number;
@@ -43,7 +43,11 @@ const Progress = ({
 
   const indicator = (
     <svg
-      className={cx('Progress', isIndeterminate && 'Progress--indeterminate', className)}
+      className={cx(
+        styles.Progress,
+        isIndeterminate && styles['Progress--indeterminate'],
+        className
+      )}
       width={diameter}
       height={diameter}
       viewBox={`0 0 ${diameter} ${diameter}`}
@@ -54,14 +58,14 @@ const Progress = ({
       aria-valuemax={100}
     >
       <circle
-        className="Progress-track"
+        className={styles['Progress-track']}
         cx={diameter / 2}
         cy={diameter / 2}
         r={radius}
         strokeWidth={strokeWidth}
       />
       <circle
-        className="Progress-head"
+        className={styles['Progress-head']}
         cx={diameter / 2}
         cy={diameter / 2}
         r={radius}
