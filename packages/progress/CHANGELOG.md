@@ -1,5 +1,11 @@
 # @launchpad-ui/progress
 
+## 0.5.2
+
+### Patch Changes
+
+- [#441](https://github.com/launchdarkly/launchpad-ui/pull/441) [`e48eb1a`](https://github.com/launchdarkly/launchpad-ui/commit/e48eb1a8b2f914fe701c345089793c1d43cae1af) Thanks [@Niznikr](https://github.com/Niznikr)! - [Progress] Update to css modules
+
 ## 0.5.1
 
 ### Patch Changes

@@ -1,5 +1,14 @@
 # @launchpad-ui/pagination
 
+## 0.3.5
+
+### Patch Changes
+
+- [#445](https://github.com/launchdarkly/launchpad-ui/pull/445) [`5fbe043`](https://github.com/launchdarkly/launchpad-ui/commit/5fbe0435e31c1e604c6e0c07bbd57fcdbf60807a) Thanks [@Niznikr](https://github.com/Niznikr)! - [Pagination] Update to css modules
+
+- Updated dependencies [[`e48eb1a`](https://github.com/launchdarkly/launchpad-ui/commit/e48eb1a8b2f914fe701c345089793c1d43cae1af)]:
+  - @launchpad-ui/progress@0.5.2
+
 ## 0.3.4
 
 ### Patch Changes
