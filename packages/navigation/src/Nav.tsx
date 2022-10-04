@@ -3,7 +3,7 @@ import type { HTMLAttributes, Ref } from 'react';
 import { cx } from 'classix';
 import { forwardRef } from 'react';
 
-import styles from './styles/Nav.module.css';
+import styles from './styles/Navigation.module.css';
 
 type NavBaseProps = HTMLAttributes<HTMLElement> & {
   kind?: 'primary' | 'secondary';

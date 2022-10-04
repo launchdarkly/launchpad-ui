@@ -53,13 +53,14 @@ export const Primary: Story = {
       {
         name: 'Third',
         to: '/third',
+        tooltip: true,
       },
       {
         name: 'Fourth',
         to: '/fourth',
       },
     ],
-    children: (item) => <NavigationItem key={item.to} name={item.name} to={item.to} />,
+    children: (item) => <NavigationItem key={item.to} {...item} />,
   },
   parameters: {
     chromatic: { viewports: [320, 1200] },

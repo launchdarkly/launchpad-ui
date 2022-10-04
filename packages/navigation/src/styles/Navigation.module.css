@@ -1,17 +1,20 @@
 @import '../../../tokens/dist/media-queries.css';
 
-:global(:root) {
+:root {
   --page-gutter-width: 1rem;
 }
 
 @media (--tablet) {
-  :global(:root) {
+  :root {
     --page-gutter-width: 4rem;
   }
 }
 
-.Navigation :global([class*='_Nav--primary_']) {
+.Navigation .Nav--primary {
   padding: 0 2.5rem;
+  background-color: var(--color-background);
+  box-shadow: 0 1px 2px hsl(0 0% 0% / 0.12);
+  overflow-x: auto;
 }
 
 .Navigation--collapsed {
@@ -22,4 +25,147 @@
 
 .Navigation--collapsed .NavigationList-wrapper {
   padding: 1 1.4rem;
+}
+
+.Nav {
+  max-width: 100%;
+  width: 100%;
+  display: flex;
+  position: relative;
+}
+
+.Nav--secondary {
+  border-bottom: 1px solid var(--color-border);
+}
+
+.Nav--primary > .NavPopover-target {
+  display: flex;
+}
+
+.NavItem {
+  justify-content: flex-end;
+}
+
+.Nav--primary .NavItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 1.5rem;
+  font-weight: var(--font-weight-medium);
+  padding: 1rem 1.4rem;
+  border-bottom: 2px solid transparent;
+  text-decoration: none;
+  color: var(--color-text-subtle-primary);
+  position: relative;
+}
+
+/* This pseudo-element renders the item name in bold to avoid shifting the other items
+ * when the font weight changes (for .is-active).
+ */
+.Nav--primary .NavItem::after {
+  font-weight: var(--font-weight-bold);
+  content: attr(data-text);
+  height: 0;
+  visibility: hidden;
+  overflow: hidden;
+  user-select: none;
+  pointer-events: none;
+  padding: 0.1rem 1rem 0.2rem;
+}
+
+.Nav--primary .NavItem.is-active {
+  color: var(--color-text);
+  border-bottom-color: var(--color-text);
+  font-weight: var(--font-weight-bold);
+}
+
+.NavItem-name {
+  padding: 0.1rem 1rem 0.2rem;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.NavItem:focus {
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.Nav--secondary .NavItem {
+  display: block;
+  font-size: 1.7rem;
+  font-weight: var(--font-weight-medium);
+  padding: 1rem 1.4rem 0;
+  border-bottom: 1px solid transparent;
+  text-decoration: none;
+  color: var(--color-text-subtle-secondary);
+  position: relative;
+}
+
+.Nav--primary .NavItem:focus {
+  outline: none;
+}
+
+.NavItem:focus .NavItem-name {
+  padding: 0.1rem 1rem 0.2rem;
+  box-shadow: 0 0 0 0.2rem var(--color-blue-500);
+  border-radius: 0.6rem;
+}
+
+.Nav--primary .NavItem:hover {
+  color: var(--color-text);
+}
+
+.Nav--primary a.NavItem:hover,
+.Nav--primary a.NavItem:active {
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+.Nav--primary .NavItem:focus:not(:focus-visible) {
+  outline: unset;
+}
+
+.NavItem:focus:not(:focus-visible) .NavItem-name {
+  box-shadow: unset;
+  border-radius: unset;
+}
+
+.Nav--secondary .Nav-items {
+  gap: 1rem;
+}
+
+@media (--tablet) {
+  .Nav--secondary .Nav-items {
+    gap: 0;
+  }
+}
+
+.Nav--secondary .NavItem.is-active {
+  color: var(--color-text);
+  border-bottom: 0.3rem solid var(--color-gray-700);
+  margin-bottom: -0.16rem; /* slightly larger than half to account for browser rounding */
+}
+
+.Nav--secondary .NavItem.is-active::before,
+.Nav--secondary .NavItem.is-active::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+}
+
+.Nav--secondary .NavItem.is-active::after {
+  border-bottom-color: var(--color-gray-700);
+  bottom: -2px;
+}
+
+.NavItem-chip {
+  align-self: flex-start;
+  border-radius: 0.4rem;
+  margin-top: 0.4rem;
+  min-width: 3.5rem;
+  padding: 0.1rem 0;
+}
+
+.NavItem-tooltip {
+  text-align: center;
 }
