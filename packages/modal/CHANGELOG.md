@@ -1,5 +1,12 @@
 # @launchpad-ui/modal
 
+## 0.8.5
+
+### Patch Changes
+
+- Updated dependencies [[`e48eb1a`](https://github.com/launchdarkly/launchpad-ui/commit/e48eb1a8b2f914fe701c345089793c1d43cae1af)]:
+  - @launchpad-ui/progress@0.5.2
+
 ## 0.8.4
 
 ### Patch Changes

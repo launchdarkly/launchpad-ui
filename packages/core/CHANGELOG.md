@@ -1,5 +1,32 @@
 # @launchpad-ui/core
 
+## 0.14.10
+
+### Patch Changes
+
+- [#445](https://github.com/launchdarkly/launchpad-ui/pull/445) [`5fbe043`](https://github.com/launchdarkly/launchpad-ui/commit/5fbe0435e31c1e604c6e0c07bbd57fcdbf60807a) Thanks [@Niznikr](https://github.com/Niznikr)! - [Pagination] Update to css modules
+
+* [#444](https://github.com/launchdarkly/launchpad-ui/pull/444) [`89e1c65`](https://github.com/launchdarkly/launchpad-ui/commit/89e1c658042c0808bb1d1329981363dc3a79a714) Thanks [@Niznikr](https://github.com/Niznikr)! - [Slider] Update to css modules
+
+- [#441](https://github.com/launchdarkly/launchpad-ui/pull/441) [`e48eb1a`](https://github.com/launchdarkly/launchpad-ui/commit/e48eb1a8b2f914fe701c345089793c1d43cae1af) Thanks [@Niznikr](https://github.com/Niznikr)! - [Progress] Update to css modules
+
+- Updated dependencies [[`5fbe043`](https://github.com/launchdarkly/launchpad-ui/commit/5fbe0435e31c1e604c6e0c07bbd57fcdbf60807a), [`89e1c65`](https://github.com/launchdarkly/launchpad-ui/commit/89e1c658042c0808bb1d1329981363dc3a79a714), [`e48eb1a`](https://github.com/launchdarkly/launchpad-ui/commit/e48eb1a8b2f914fe701c345089793c1d43cae1af)]:
+  - @launchpad-ui/pagination@0.3.5
+  - @launchpad-ui/slider@0.3.2
+  - @launchpad-ui/progress@0.5.2
+  - @launchpad-ui/modal@0.8.5
+  - @launchpad-ui/overlay@0.3.12
+  - @launchpad-ui/popover@0.8.5
+  - @launchpad-ui/dropdown@0.5.5
+  - @launchpad-ui/menu@0.6.7
+  - @launchpad-ui/navigation@0.6.9
+  - @launchpad-ui/progress-bubbles@0.5.6
+  - @launchpad-ui/split-button@0.6.6
+  - @launchpad-ui/tooltip@0.6.6
+  - @launchpad-ui/filter@0.4.7
+  - @launchpad-ui/clipboard@0.8.6
+  - @launchpad-ui/notification@0.5.6
+
 ## 0.14.9
 
 ### Patch Changes
