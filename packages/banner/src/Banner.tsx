@@ -1,4 +1,4 @@
-import type { HTMLAttributes } from 'react';
+import type { HTMLAttributes, ReactNode } from 'react';
 
 import { IconButton } from '@launchpad-ui/button';
 import { Close, KindIcon } from '@launchpad-ui/icons';
@@ -11,7 +11,7 @@ type BannerProps = HTMLAttributes<HTMLDivElement> & {
   kind: 'info' | 'warning' | 'error';
   onDismiss?(): void;
   dismissible?: boolean;
-  header?: string;
+  header?: ReactNode;
 };
 
 const Banner = ({

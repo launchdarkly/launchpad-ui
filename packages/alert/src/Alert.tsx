@@ -1,4 +1,4 @@
-import type { HTMLAttributes } from 'react';
+import type { HTMLAttributes, ReactNode } from 'react';
 
 import { IconButton } from '@launchpad-ui/button';
 import { Close, KindIcon } from '@launchpad-ui/icons';
@@ -52,7 +52,7 @@ type AlertProps = HTMLAttributes<HTMLDivElement> & {
    */
   noIcon?: boolean;
 
-  header?: string;
+  header?: ReactNode;
 };
 
 const Alert = ({
