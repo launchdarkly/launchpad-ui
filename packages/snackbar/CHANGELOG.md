@@ -1,5 +1,15 @@
 # @launchpad-ui/snackbar
 
+## 0.2.1
+
+### Patch Changes
+
+- [#464](https://github.com/launchdarkly/launchpad-ui/pull/464) [`6a31161`](https://github.com/launchdarkly/launchpad-ui/commit/6a31161a12e7980c95a31b55632f3f3d8c6bca59) Thanks [@chasedarkly](https://github.com/chasedarkly)! - Convert slot string props to react nodes
+
+  [Alert] Convert header prop to ReactNode
+  [Banner] Convert header prop to ReactNode
+  [Snackbar] Convert header & description props to ReactNodes
+
 ## 0.2.0
 
 ### Minor Changes
