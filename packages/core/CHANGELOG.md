@@ -1,5 +1,25 @@
 # @launchpad-ui/core
 
+## 0.16.3
+
+### Patch Changes
+
+- [#469](https://github.com/launchdarkly/launchpad-ui/pull/469) [`a27ec69`](https://github.com/launchdarkly/launchpad-ui/commit/a27ec69ecf15e8872f69081b88a5e3696ea109bb) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Modal] Change zindex from 30000 to 10000
+
+- Updated dependencies [[`a27ec69`](https://github.com/launchdarkly/launchpad-ui/commit/a27ec69ecf15e8872f69081b88a5e3696ea109bb)]:
+  - @launchpad-ui/modal@0.8.7
+  - @launchpad-ui/overlay@0.3.14
+  - @launchpad-ui/popover@0.8.7
+  - @launchpad-ui/dropdown@0.5.7
+  - @launchpad-ui/menu@0.6.10
+  - @launchpad-ui/navigation@0.6.12
+  - @launchpad-ui/progress-bubbles@0.5.8
+  - @launchpad-ui/split-button@0.6.8
+  - @launchpad-ui/tooltip@0.6.8
+  - @launchpad-ui/filter@0.4.10
+  - @launchpad-ui/clipboard@0.8.8
+  - @launchpad-ui/notification@0.5.8
+
 ## 0.16.2
 
 ### Patch Changes

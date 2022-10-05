@@ -1,5 +1,13 @@
 # @launchpad-ui/menu
 
+## 0.6.10
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @launchpad-ui/popover@0.8.7
+  - @launchpad-ui/tooltip@0.6.8
+
 ## 0.6.9
 
 ### Patch Changes
