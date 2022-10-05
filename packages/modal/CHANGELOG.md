@@ -1,5 +1,11 @@
 # @launchpad-ui/modal
 
+## 0.8.7
+
+### Patch Changes
+
+- [#469](https://github.com/launchdarkly/launchpad-ui/pull/469) [`a27ec69`](https://github.com/launchdarkly/launchpad-ui/commit/a27ec69ecf15e8872f69081b88a5e3696ea109bb) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Modal] Change zindex from 30000 to 10000
+
 ## 0.8.6
 
 ### Patch Changes
