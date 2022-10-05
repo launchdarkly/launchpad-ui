@@ -1,5 +1,16 @@
 # @launchpad-ui/core
 
+## 0.16.2
+
+### Patch Changes
+
+- [#467](https://github.com/launchdarkly/launchpad-ui/pull/467) [`c9ebe17`](https://github.com/launchdarkly/launchpad-ui/commit/c9ebe17c51b4b974036d8ffb598cedbbb0932f44) Thanks [@apucacao](https://github.com/apucacao)! - [Navigation] Upgrade React Router to 6.4
+  [Menu] Upgrade React Router to 6.4
+- Updated dependencies [[`c9ebe17`](https://github.com/launchdarkly/launchpad-ui/commit/c9ebe17c51b4b974036d8ffb598cedbbb0932f44)]:
+  - @launchpad-ui/menu@0.6.9
+  - @launchpad-ui/navigation@0.6.11
+  - @launchpad-ui/filter@0.4.9
+
 ## 0.16.1
 
 ### Patch Changes
