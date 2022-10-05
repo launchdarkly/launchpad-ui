@@ -15,7 +15,7 @@
 }
 
 .Modal {
-  z-index: 30000;
+  z-index: 10000;
   position: fixed;
   top: 0;
   right: 0;
