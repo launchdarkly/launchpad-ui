@@ -570,7 +570,7 @@ importers:
       classix: ^2.1.13
       react: ^18.2.0
       react-dom: ^18.2.0
-      react-router-dom: ^6.3.0
+      react-router-dom: ^6.4.0
       react-virtual: ^2.10.4
     dependencies:
       '@launchpad-ui/form': link:../form
@@ -627,7 +627,7 @@ importers:
       classix: ^2.1.13
       react: ^18.2.0
       react-dom: ^18.2.0
-      react-router-dom: ^6.3.0
+      react-router-dom: ^6.4.0
     dependencies:
       '@launchpad-ui/chip': link:../chip
       '@launchpad-ui/dropdown': link:../dropdown
