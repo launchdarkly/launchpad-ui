@@ -1,4 +1,4 @@
-import type { HTMLAttributes, ReactElement } from 'react';
+import type { HTMLAttributes, ReactElement, ReactNode } from 'react';
 
 import { IconButton } from '@launchpad-ui/button';
 import { Close, KindIcon } from '@launchpad-ui/icons';
@@ -8,8 +8,8 @@ import styles from './styles/Snackbar.module.css';
 
 type SnackbarBaseProps = {
   kind: 'info' | 'error' | 'warning';
-  header?: string;
-  description: string;
+  header?: ReactNode;
+  description: ReactNode;
   cta?: ReactElement<HTMLAnchorElement>;
   onDismiss: () => void;
   'data-test-id'?: string;
