@@ -153,26 +153,6 @@
   border-top-right-radius: var(--border-radius);
 }
 
-.Menu-clear.Button {
-  text-decoration: none;
-  color: var(--color-system-red-600);
-  font-size: 1.3rem;
-  font-weight: var(--font-weight-medium);
-  padding: 1rem;
-  width: 100%;
-  border-bottom: 1px solid var(--color-border);
-}
-
-.Menu-clear.Button:active,
-.Menu-clear.Button:focus,
-.Menu-clear.Button:hover {
-  outline: none;
-  box-shadow: unset;
-  color: var(--color-system-red-600);
-  border-bottom-color: var(--color-border);
-  background-color: var(--color-background-hover);
-}
-
 [class^='_Popover-content_'] .Menu-search {
   width: 100%;
 

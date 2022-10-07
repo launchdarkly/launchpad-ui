@@ -7,7 +7,7 @@ import { VisuallyHidden } from '@react-aria/visually-hidden';
 import { cx } from 'classix';
 import { Children, forwardRef, useId } from 'react';
 
-import './styles/Filter.css';
+import styles from './styles/Filter.module.css';
 
 type FilterButtonProps = {
   name: ReactNode;
@@ -44,19 +44,19 @@ const FilterButton = forwardRef<Ref, FilterButtonProps>((props, ref) => {
   const hasDescription = Children.count(children) !== 0;
 
   const nameElement = (
-    <span className="Filter-name">
+    <span className={styles.name}>
       {name}
       {hasDescription && ':'}
     </span>
   );
 
   return (
-    <div className="Filter-buttonContainer" data-test-id={testId}>
+    <div className={styles.buttonContainer} data-test-id={testId}>
       <button
         {...rest}
         aria-labelledby={`${nameId} ${hasDescription ? descriptionId : ''}`}
         aria-haspopup
-        className={cx('Filter-button', className, (isClearable || isSelected) && 'is-clearable')}
+        className={cx(styles.button, className, (isClearable || isSelected) && styles.isClearable)}
         ref={ref}
         onClick={onClickFilterButton}
       >
@@ -66,17 +66,17 @@ const FilterButton = forwardRef<Ref, FilterButtonProps>((props, ref) => {
           <span id={nameId}>{nameElement}</span>
         )}
         {hasDescription && (
-          <span id={descriptionId} className="Filter-description">
+          <span id={descriptionId} className={styles.description}>
             {children}
           </span>
         )}
         {!isClearable && <ExpandMore size="small" />}
       </button>
       {isClearable && (
-        <Tooltip targetClassName="Filter-clearTooltip" content={clearTooltip}>
+        <Tooltip targetClassName={styles.clearTooltip} content={clearTooltip}>
           <IconButton
             aria-label="Clear filter"
-            className="Filter-clear"
+            className={styles.clear}
             icon={<Close size="tiny" />}
             onClick={onClear}
           />

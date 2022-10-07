@@ -5,6 +5,8 @@ import { Button } from '@launchpad-ui/button';
 import { Check } from '@launchpad-ui/icons';
 import { Menu, MenuDivider, MenuItem, MenuSearch } from '@launchpad-ui/menu';
 
+import styles from './styles/Filter.module.css';
+
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 type FilterOption<T = any> = {
   name?: ReactNode;
@@ -51,7 +53,12 @@ const FilterMenu = ({
   return (
     <>
       {onClearFilter && (
-        <Button tabIndex={0} className="Menu-clear" onClick={onClearFilter} kind="link">
+        <Button
+          tabIndex={0}
+          className={styles.filterClearButton}
+          onClick={onClearFilter}
+          kind="link"
+        >
           CLEAR FILTER
         </Button>
       )}
