@@ -1,5 +1,14 @@
 # @launchpad-ui/popover
 
+## 0.8.8
+
+### Patch Changes
+
+- [#471](https://github.com/launchdarkly/launchpad-ui/pull/471) [`c5c07b0`](https://github.com/launchdarkly/launchpad-ui/commit/c5c07b0a47bcde0fbc7f0e6144ad8349e26b637e) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Modal] Add tabIndex to content to allow text selection
+  [Popover] Add tabIndex to content to allow text selection
+- Updated dependencies []:
+  - @launchpad-ui/overlay@0.3.15
+
 ## 0.8.7
 
 ### Patch Changes
