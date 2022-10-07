@@ -391,15 +391,10 @@ const Popover = ({
             restrictWidth && styles['Popover-content--restrictWidth'],
             popoverContentClassName
           )}
+          tabIndex={-1}
         >
           {enableArrow && <div id="arrow" ref={arrowRef}></div>}
-          {restrictHeight ? (
-            <div tabIndex={-1} className={styles['Popover-scroller']}>
-              {content}
-            </div>
-          ) : (
-            content
-          )}
+          {restrictHeight ? <div className={styles['Popover-scroller']}>{content}</div> : content}
         </m.div>
       </LazyMotion>
     );
