@@ -312,7 +312,7 @@ select.formInput {
 
 /* stylelint-enable no-descending-specificity */
 
-.formInput ~ :global(.Icon) {
+.iconFieldIcon {
   position: absolute;
   fill: var(--color-gray-600);
   top: 50%;
