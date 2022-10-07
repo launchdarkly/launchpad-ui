@@ -391,7 +391,7 @@ const Popover = ({
             restrictWidth && styles['Popover-content--restrictWidth'],
             popoverContentClassName
           )}
-          tabIndex={-1}
+          tabIndex={interactionKind === 'click' ? -1 : undefined}
         >
           {enableArrow && <div id="arrow" ref={arrowRef}></div>}
           {restrictHeight ? <div className={styles['Popover-scroller']}>{content}</div> : content}
