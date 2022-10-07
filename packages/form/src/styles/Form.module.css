@@ -23,7 +23,7 @@
 }
 
 .inlineForm .formGroup + .formGroup,
-.inlineForm .formGroup + .Button {
+.inlineForm .formGroup + :global(.Button) {
   margin-left: 1rem;
 }
 
@@ -105,8 +105,8 @@
   color: var(--color-gray-600);
 }
 
-.form .isInvalid .Select-control,
-.form .isInvalid .CustomSelect > div,
+.form .isInvalid :global(.Select-control),
+.form .isInvalid :global(.CustomSelect) > div,
 .form .isInvalid .formInput {
   border-color: var(--color-system-red-600);
 }
