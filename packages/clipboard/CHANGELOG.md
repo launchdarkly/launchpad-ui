@@ -1,5 +1,12 @@
 # @launchpad-ui/clipboard
 
+## 0.8.9
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @launchpad-ui/tooltip@0.6.9
+
 ## 0.8.8
 
 ### Patch Changes
