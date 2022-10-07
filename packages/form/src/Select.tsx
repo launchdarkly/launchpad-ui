@@ -2,7 +2,7 @@ import type { SelectHTMLAttributes } from 'react';
 
 import { cx } from 'classix';
 
-import './styles/FormInput.css';
+import styles from './styles/Form.module.css';
 
 type SelectProps = SelectHTMLAttributes<HTMLSelectElement> & {
   'data-test-id'?: string;
@@ -14,7 +14,7 @@ const Select = ({
   'data-test-id': testId = 'select',
   ...rest
 }: SelectProps) => {
-  const classes = cx('FormInput', 'FormInput-select', className);
+  const classes = cx(styles.formInput, className);
 
   return (
     <select {...rest} data-test-id={testId} className={classes}>

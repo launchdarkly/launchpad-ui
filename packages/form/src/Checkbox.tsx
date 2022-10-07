@@ -3,7 +3,7 @@ import type { InputHTMLAttributes } from 'react';
 import { forwardRef } from 'react';
 
 import { Label } from './Label';
-import './styles/Form.css';
+import styles from './styles/Form.module.css';
 
 type CheckboxProps = InputHTMLAttributes<HTMLInputElement> & {
   /**
@@ -43,12 +43,12 @@ const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
           aria-checked={checked ? 'true' : 'false'}
           aria-label={ariaLabel}
           aria-labelledby={ariaLabelledby}
-          className="Form-checkbox"
+          className={styles.checkbox}
           disabled={disabled}
           type="checkbox"
           data-test-id={testId}
         />{' '}
-        {disabled ? <span className="Form-label--disabled">{children}</span> : children}
+        {disabled ? <span className={styles.labelDisabled}>{children}</span> : children}
       </Label>
     );
   }

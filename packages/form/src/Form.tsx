@@ -2,7 +2,7 @@ import type { FormHTMLAttributes } from 'react';
 
 import { cx } from 'classix';
 
-import './styles/Form.css';
+import styles from './styles/Form.module.css';
 
 type FormProps = FormHTMLAttributes<HTMLFormElement> & {
   inline?: boolean;
@@ -25,10 +25,10 @@ const Form = (props: FormProps) => {
   } = props;
 
   const classes = cx(
-    'Form',
+    styles.form,
     className,
-    inline && 'Form--inline',
-    !!hasIncreasedErrorMargin && 'Form--increasedErrorMargin'
+    inline && styles.formInline,
+    !!hasIncreasedErrorMargin && styles.formIncreasedErrorMargin
   );
 
   return (

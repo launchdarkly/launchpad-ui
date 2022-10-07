@@ -14,8 +14,7 @@ module.exports = {
   rules: {
     'declaration-no-important': true,
     'custom-property-pattern': null,
-    'selector-class-pattern':
-      /^(([A-Z][a-zA-Z0-9]+)*(-[a-z0-9][a-zA-Z0-9]+)*?(--[a-z0-9][a-zA-Z0-9]+)*?)$|^((u|is|has|js)(-[a-z0-9][a-zA-Z0-9]*)+)$/,
+    'selector-class-pattern': null,
     'hue-degree-notation': 'number',
     'alpha-value-notation': 'number',
     'csstools/value-no-unknown-custom-properties': [
@@ -27,7 +26,7 @@ module.exports = {
     'selector-pseudo-class-no-unknown': [
       true,
       {
-        ignorePseudoClasses: ['global'],
+        ignorePseudoClasses: ['global', 'value'],
       },
     ],
     'selector-not-notation': 'simple',

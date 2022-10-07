@@ -4,7 +4,7 @@ import { FieldError } from './FieldError';
 import { FormGroup } from './FormGroup';
 import { FormHint } from './FormHint';
 import { RequiredAsterisk } from './RequiredAsterisk';
-import './styles/FormField.css';
+import styles from './styles/Form.module.css';
 
 type FormFieldProps = {
   isRequired: boolean;
@@ -41,7 +41,7 @@ const FormField = ({
 
   return (
     <FormGroup
-      className={cx('FormField', className)}
+      className={cx(styles.field, className)}
       name={name}
       ignoreValidation={ignoreValidation}
       isInvalid={isInvalid}
@@ -54,9 +54,9 @@ const FormField = ({
           {isRequired && <RequiredAsterisk />}
         </label>
       )}
-      {hint && <FormHint className="FormField-hint">{hint}</FormHint>}
+      {hint && <FormHint className={styles.hint}>{hint}</FormHint>}
       {children}
-      <FieldError className="FormField-errorMessage" name={name} errorMessage={errorMessage} />
+      <FieldError className={styles.fieldErrorMessage} name={name} errorMessage={errorMessage} />
     </FormGroup>
   );
 };

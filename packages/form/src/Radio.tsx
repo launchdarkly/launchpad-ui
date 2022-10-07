@@ -3,7 +3,7 @@ import type { CSSProperties, InputHTMLAttributes } from 'react';
 import { cx } from 'classix';
 
 import { Label } from './Label';
-import './styles/Form.css';
+import styles from './styles/Form.module.css';
 
 type RadioProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'type'> & {
   labelClassName?: string;
@@ -38,7 +38,7 @@ const Radio = ({
         {...rest}
         aria-label={ariaLabel}
         aria-labelledby={ariaLabelledby}
-        className={cx('Form-radio', className)}
+        className={cx(styles.radio, className)}
         checked={checked}
         disabled={disabled}
         id={id}
@@ -46,7 +46,7 @@ const Radio = ({
         type="radio"
       />
       <Label className={labelClassName} htmlFor={id} style={labelStyle}>
-        {disabled ? <span className="Form-label--disabled">{children}</span> : children}
+        {disabled ? <span className={styles.labelDisabled}>{children}</span> : children}
       </Label>
     </>
   );
