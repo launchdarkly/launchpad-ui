@@ -393,7 +393,13 @@ const Popover = ({
           )}
         >
           {enableArrow && <div id="arrow" ref={arrowRef}></div>}
-          {restrictHeight ? <div className={styles['Popover-scroller']}>{content}</div> : content}
+          {restrictHeight ? (
+            <div tabIndex={-1} className={styles['Popover-scroller']}>
+              {content}
+            </div>
+          ) : (
+            content
+          )}
         </m.div>
       </LazyMotion>
     );
