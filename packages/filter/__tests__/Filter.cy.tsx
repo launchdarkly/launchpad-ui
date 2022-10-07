@@ -7,7 +7,7 @@ const createComponent = (props?: Partial<FilterProps>) => <FilterTestWrapper {..
 describe('Filter', () => {
   it('renders', () => {
     cy.mount(createComponent());
-    cy.get('[data-test-id="filter"]').should('be.visible');
+    cy.get('[data-test-id="filter-button"]').should('be.visible');
   });
 
   it('is accessible', () => {
@@ -22,10 +22,10 @@ describe('Filter', () => {
     ];
     cy.mount(createComponent({ options }));
 
-    cy.get('.Filter-button').click();
-    cy.get('.Menu-item').first().click();
+    cy.get('[data-test-id="filter-button"]').click();
+    cy.get('[data-test-id="menu-item"]').first().click();
 
-    cy.get('[data-test-id="filter"]').should('have.text', 'author:one');
+    cy.get('[data-test-id="filter-button"]').should('have.text', 'author:one');
   });
 
   it('can search for an option', () => {
@@ -38,11 +38,13 @@ describe('Filter', () => {
     ];
     cy.mount(createComponent({ options }));
 
-    cy.get('.Filter-button').click();
-    cy.get('.Menu-search').should('be.visible');
+    cy.get('[data-test-id="filter-button"]').click();
 
-    cy.get('input.Menu-search-input').type('fo');
-    cy.get('.Menu-item').first().should('have.text', 'four');
+    const searchInput = cy.get('[data-test-id="menu-search"]');
+    searchInput.should('be.visible');
+
+    searchInput.type('fo');
+    cy.get('[data-test-id="menu-item"]').first().should('have.text', 'four');
   });
 
   it('can clear an applied filter', () => {
@@ -52,11 +54,11 @@ describe('Filter', () => {
     ];
     cy.mount(createComponent({ options, isClearable: true }));
 
-    cy.get('.Filter-button').click();
-    cy.get('.Menu-item').first().click();
-    cy.get('[data-test-id="filter"]').should('have.text', 'author:one');
+    cy.get('[data-test-id="filter-button"]').click();
+    cy.get('[data-test-id="menu-item"]').first().click();
+    cy.get('[data-test-id="filter-button"]').should('have.text', 'author:one');
 
-    cy.get('.Filter-clear').click();
-    cy.get('[data-test-id="filter"]').should('have.text', 'author:osmo');
+    cy.get('[data-test-id="clear-filter-button"]').click();
+    cy.get('[data-test-id="filter-button"]').should('have.text', 'author:osmo');
   });
 });

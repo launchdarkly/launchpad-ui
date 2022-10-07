@@ -67,7 +67,7 @@ const Filter = ({
   };
 
   return (
-    <Dropdown targetClassName={dropdownClasses} {...props}>
+    <Dropdown data-test-id={testId} targetClassName={dropdownClasses} {...props}>
       <FilterButton
         isClearable={isClearable}
         onClear={handleClear}
@@ -75,7 +75,6 @@ const Filter = ({
         hideName={hideName}
         isSelected={isSelected}
         onClickFilterButton={onClickFilterButton}
-        data-test-id={testId}
       >
         {description}
       </FilterButton>

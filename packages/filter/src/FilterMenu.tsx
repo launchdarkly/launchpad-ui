@@ -19,7 +19,7 @@ type FilterOption<T = any> = {
   groupHeader?: boolean;
 };
 
-type FilterMenuProps = Pick<MenuProps<string>, 'enableVirtualization' | 'size'> & {
+type FilterMenuProps = Pick<MenuProps<string>, 'enableVirtualization' | 'size' | 'data-test-id'> & {
   options: FilterOption[];
   onClearFilter?(): void;
   enableSearch?: boolean;
@@ -45,6 +45,7 @@ const FilterMenu = ({
   disabledOptionTooltip,
   enableVirtualization,
   size,
+  'data-test-id': testId = 'filter-menu',
 }: FilterMenuProps) => {
   const filterOptions = isLoading
     ? [{ name: 'loading...', value: 'loading...', isDisabled: true }]
@@ -58,11 +59,17 @@ const FilterMenu = ({
           className={styles.filterClearButton}
           onClick={onClearFilter}
           kind="link"
+          data-test-id="clear-filter-button"
         >
           CLEAR FILTER
         </Button>
       )}
-      <Menu enableVirtualization={enableVirtualization} size={size} onSelect={onSelect}>
+      <Menu
+        enableVirtualization={enableVirtualization}
+        size={size}
+        data-test-id={testId}
+        onSelect={onSelect}
+      >
         {enableSearch && (
           <MenuSearch
             value={searchValue}
