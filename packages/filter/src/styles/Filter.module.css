@@ -1,16 +1,15 @@
-.Filter {
+.filter {
   font-family: var(--font-family-base);
 }
 
-.Filter-buttonContainer {
+.buttonContainer {
   cursor: pointer;
   display: inline-flex;
   align-items: center;
   position: relative;
 }
 
-.Filter-button {
-  cursor: pointer;
+.button {
   border-radius: var(--border-radius);
   padding-top: 0;
   padding-bottom: 0;
@@ -22,7 +21,7 @@
   background-color: var(--color-white);
 }
 
-.AppliedFilter-button {
+.appliedButton {
   color: var(--color-text);
   height: 2rem;
   background-color: var(--color-gray-100);
@@ -31,8 +30,8 @@
   display: flex;
 }
 
-.Filter-button,
-.AppliedFilter-button {
+.button,
+.appliedButton {
   font-family: inherit;
   font-size: 1.3rem;
   cursor: pointer;
@@ -57,27 +56,22 @@
   }
 }
 
-.is-clearable {
-  background-color: var(--color-blue-200);
-  padding-right: 3.1rem;
-}
-
-.Filter-name {
+.name {
   margin-right: 0.5rem;
   font-weight: var(--font-weight-medium);
 }
 
-.AppliedFilter-name {
+.appliedName {
   margin-right: 0.3rem;
 }
 
-.Filter-description {
+.description {
   color: var(--color-text);
   font-weight: var(--font-weight-medium);
 }
 
-.Filter-button .Filter-description,
-.AppliedFilter-button .AppliedFilter-description {
+.description,
+.appliedDescription {
   margin-right: 0.5rem;
   max-width: 16rem;
   overflow: hidden;
@@ -85,20 +79,16 @@
   white-space: nowrap;
 }
 
-.Filter-description .Gravatar:first-child {
-  margin-right: 0.5rem;
-}
-
-.Filter-clear {
+.clear {
   cursor: pointer;
   padding: 0.3rem;
 }
 
-.Filter-target--usage {
+:global(.Filter-target--usage) {
   border: 1px solid var(--color-text-subtle-secondary);
 }
 
-.Filter-button.is-clearable {
+.button.isClearable {
   background-color: var(--color-blue-200);
   padding-right: 3.1rem;
 
@@ -109,7 +99,7 @@
   }
 }
 
-.Filter-button.is-clearable:focus:not(:focus-visible) {
+.button.isClearable:focus:not(:focus-visible) {
   background-color: unset;
 
   &:hover {
@@ -117,21 +107,41 @@
   }
 }
 
-.Filter-button:hover:not(.is-clearable),
-.Filter-button:focus:not(.is-clearable),
-[data-state='open'] .Filter-button:not(.is-clearable) {
+.button:hover:not(.isClearable),
+.button:focus:not(.isClearable),
+[data-state='open'] .button:not(.isClearable) {
   background-color: var(--color-background-hover);
   border-color: var(--color-text-subtle-secondary);
 }
 
-.Filter-button:focus:not(:focus-visible):not(.is-clearable) {
+.button:focus:not(:focus-visible):not(.isClearable) {
   &:hover {
     background-color: var(--color-background-hover);
   }
 }
 
-.Filter-clearTooltip {
+.clearTooltip {
   line-height: 1;
   position: absolute;
   right: 0.7rem;
+}
+
+.filterClearButton {
+  text-decoration: none;
+  color: var(--color-system-red-600);
+  font-size: 1.3rem;
+  font-weight: var(--font-weight-medium);
+  padding: 1rem;
+  width: 100%;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.filterClearButton:active,
+.filterClearButton:focus,
+.filterClearButton:hover {
+  outline: none;
+  box-shadow: unset;
+  color: var(--color-system-red-600);
+  border-bottom-color: var(--color-border);
+  background-color: var(--color-background-hover);
 }

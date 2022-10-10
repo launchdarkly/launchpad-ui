@@ -5,6 +5,8 @@ import { Button } from '@launchpad-ui/button';
 import { Check } from '@launchpad-ui/icons';
 import { Menu, MenuDivider, MenuItem, MenuSearch } from '@launchpad-ui/menu';
 
+import styles from './styles/Filter.module.css';
+
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 type FilterOption<T = any> = {
   name?: ReactNode;
@@ -17,7 +19,7 @@ type FilterOption<T = any> = {
   groupHeader?: boolean;
 };
 
-type FilterMenuProps = Pick<MenuProps<string>, 'enableVirtualization' | 'size'> & {
+type FilterMenuProps = Pick<MenuProps<string>, 'enableVirtualization' | 'size' | 'data-test-id'> & {
   options: FilterOption[];
   onClearFilter?(): void;
   enableSearch?: boolean;
@@ -43,6 +45,7 @@ const FilterMenu = ({
   disabledOptionTooltip,
   enableVirtualization,
   size,
+  'data-test-id': testId = 'filter-menu',
 }: FilterMenuProps) => {
   const filterOptions = isLoading
     ? [{ name: 'loading...', value: 'loading...', isDisabled: true }]
@@ -51,11 +54,22 @@ const FilterMenu = ({
   return (
     <>
       {onClearFilter && (
-        <Button tabIndex={0} className="Menu-clear" onClick={onClearFilter} kind="link">
+        <Button
+          tabIndex={0}
+          className={styles.filterClearButton}
+          onClick={onClearFilter}
+          kind="link"
+          data-test-id="clear-filter-button"
+        >
           CLEAR FILTER
         </Button>
       )}
-      <Menu enableVirtualization={enableVirtualization} size={size} onSelect={onSelect}>
+      <Menu
+        enableVirtualization={enableVirtualization}
+        size={size}
+        data-test-id={testId}
+        onSelect={onSelect}
+      >
         {enableSearch && (
           <MenuSearch
             value={searchValue}

@@ -41,12 +41,6 @@ export default {
         category: 'Presentation',
       },
     },
-    isSelected: {
-      table: {
-        category: 'Presentation',
-        subcategory: 'Filter Button',
-      },
-    },
     description: {
       table: {
         category: 'Content',

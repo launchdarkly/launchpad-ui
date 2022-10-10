@@ -2,7 +2,6 @@ import type { FilterOption } from './FilterMenu';
 import type { ChangeEvent, ReactNode } from 'react';
 
 import { Dropdown } from '@launchpad-ui/dropdown';
-import { cx } from 'classix';
 
 import { AppliedFilterButton } from './AppliedFilterButton';
 import { FilterMenu } from './FilterMenu';
@@ -19,7 +18,6 @@ type AppliedFilterProps = {
   options: FilterOption[];
   className?: string;
   onStateChange?({ isOpen }: { isOpen?: boolean }): void;
-  isSelected?: boolean;
   onSelect?(item: FilterOption): void;
   isEmpty?: boolean;
   isLoading?: boolean;
@@ -47,16 +45,13 @@ const AppliedFilter = ({
   const enableSearch =
     onSearchChange && (!!searchValue || options.length > SEARCH_INPUT_THRESHOLD || !isEmpty);
 
-  const dropdownClasses = cx('Filter-target', className);
   return (
-    <Dropdown
-      targetClassName={dropdownClasses}
-      placement="bottom-start"
-      enableArrow={false}
-      data-test-id={testId}
-      {...props}
-    >
-      <AppliedFilterButton name={name} onClickFilterButton={onClickFilterButton}>
+    <Dropdown targetClassName={className} placement="bottom-start" enableArrow={false} {...props}>
+      <AppliedFilterButton
+        data-test-id={testId}
+        name={name}
+        onClickFilterButton={onClickFilterButton}
+      >
         {description}
       </AppliedFilterButton>
 
