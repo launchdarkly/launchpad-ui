@@ -34,7 +34,7 @@
   "dependencies": {
     "@react-aria/tabs": "^3.3.0",
     "@react-stately/tabs": "^3.2.0",
-    "@react-types/shared": "^3.14.0",
+    "@react-types/shared": "^3.15.0",
     "@react-types/tabs": "^3.1.0",
     "@launchpad-ui/tokens": "workspace:~",
     "classix": "^2.1.13"
