@@ -1,5 +1,25 @@
 # @launchpad-ui/core
 
+## 0.16.4
+
+### Patch Changes
+
+- [#471](https://github.com/launchdarkly/launchpad-ui/pull/471) [`c5c07b0`](https://github.com/launchdarkly/launchpad-ui/commit/c5c07b0a47bcde0fbc7f0e6144ad8349e26b637e) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Modal] Add tabIndex to content to allow text selection
+  [Popover] Add tabIndex to content to allow text selection
+- Updated dependencies [[`c5c07b0`](https://github.com/launchdarkly/launchpad-ui/commit/c5c07b0a47bcde0fbc7f0e6144ad8349e26b637e)]:
+  - @launchpad-ui/modal@0.8.8
+  - @launchpad-ui/popover@0.8.8
+  - @launchpad-ui/overlay@0.3.15
+  - @launchpad-ui/dropdown@0.5.8
+  - @launchpad-ui/menu@0.6.11
+  - @launchpad-ui/navigation@0.6.13
+  - @launchpad-ui/progress-bubbles@0.5.9
+  - @launchpad-ui/split-button@0.6.9
+  - @launchpad-ui/tooltip@0.6.9
+  - @launchpad-ui/filter@0.4.11
+  - @launchpad-ui/clipboard@0.8.9
+  - @launchpad-ui/notification@0.5.9
+
 ## 0.16.3
 
 ### Patch Changes
