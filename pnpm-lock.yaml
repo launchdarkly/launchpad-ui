@@ -76,7 +76,7 @@ importers:
       plop: ^3.1.1
       postcss: ^8.4.16
       postcss-import: ^15.0.0
-      postcss-nested: ^5.0.6
+      postcss-nested: ^6.0.0
       postcss-preset-env: ^7.8.0
       prettier: ^2.7.0
       react: ^18.2.0
@@ -162,7 +162,7 @@ importers:
       plop: 3.1.1
       postcss: 8.4.17
       postcss-import: 15.0.0_postcss@8.4.17
-      postcss-nested: 5.0.6_postcss@8.4.17
+      postcss-nested: 6.0.0_postcss@8.4.17
       postcss-preset-env: 7.8.2_postcss@8.4.17
       prettier: 2.7.1
       react: 18.2.0
@@ -14783,8 +14783,8 @@ packages:
     resolution: {integrity: sha512-3sOlxmbKcSHMjlUXQZKQ06jOswE7oVkXPxmZdoB1r5l0q6gTFTQSHxNxOrCccElbW7dxNytifNEo8qidX2Vsig==}
     dev: true
 
-  /postcss-nested/5.0.6_postcss@8.4.17:
-    resolution: {integrity: sha512-rKqm2Fk0KbA8Vt3AdGN0FB9OBOMDVajMG6ZCf/GoHgdxUJ4sBFp0A/uMIRm+MJUdo33YXEtjqIz8u7DAp8B7DA==}
+  /postcss-nested/6.0.0_postcss@8.4.17:
+    resolution: {integrity: sha512-0DkamqrPcmkBDsLn+vQDIrtkSbNkv5AD/M322ySo9kqFkCIYklym2xEmWkwo+Y3/qZo34tzEPNUw4y7yMCdv5w==}
     engines: {node: '>=12.0'}
     peerDependencies:
       postcss: ^8.2.14
