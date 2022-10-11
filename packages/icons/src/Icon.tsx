@@ -12,17 +12,10 @@ type IconProps = Omit<HTMLProps<HTMLSpanElement>, 'size'> & {
   'data-test-id'?: string;
 };
 
-const Icon = ({
-  name,
-  subtle,
-  className,
-  size,
-  children,
-  'data-test-id': testId = 'icon',
-  ...props
-}: IconProps) => {
+const Icon = ({ name, subtle, className, size, children, ...props }: IconProps) => {
   const sizeClass = size ? styles[size] : false;
-  const classes = cx(styles.icon, sizeClass, subtle && styles.subtle, `icon--${name}`, className);
+  const testId = props['data-test-id'] || `${name}-icon`;
+  const classes = cx(styles.icon, sizeClass, subtle && styles.subtle, `Icon--${name}`, className);
 
   const svgRef = useRef<SVGElement>(null);
   const prefix = `svg-${useId()}`;
