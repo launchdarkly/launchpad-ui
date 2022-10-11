@@ -1,5 +1,20 @@
 # @launchpad-ui/core
 
+## 0.16.5
+
+### Patch Changes
+
+- [#472](https://github.com/launchdarkly/launchpad-ui/pull/472) [`1469d32`](https://github.com/launchdarkly/launchpad-ui/commit/1469d3230348a3f4fd37d7c8e963002c8dd1432e) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Filter] Convert to CSS Modules
+  [Menu] Removed Filter styles from CSS
+
+- [#479](https://github.com/launchdarkly/launchpad-ui/pull/479) [`3f96b8b`](https://github.com/launchdarkly/launchpad-ui/commit/3f96b8bc6f40434ffb4c0c88cc95c1c42c2d9a20) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Snackbar] style anchor tag hover
+
+- Updated dependencies [[`1469d32`](https://github.com/launchdarkly/launchpad-ui/commit/1469d3230348a3f4fd37d7c8e963002c8dd1432e), [`3f96b8b`](https://github.com/launchdarkly/launchpad-ui/commit/3f96b8bc6f40434ffb4c0c88cc95c1c42c2d9a20)]:
+  - @launchpad-ui/filter@0.4.12
+  - @launchpad-ui/menu@0.6.12
+  - @launchpad-ui/snackbar@0.2.2
+  - @launchpad-ui/navigation@0.6.14
+
 ## 0.16.4
 
 ### Patch Changes
