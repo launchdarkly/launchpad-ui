@@ -1,5 +1,11 @@
 # @launchpad-ui/icons
 
+## 0.5.6
+
+### Patch Changes
+
+- [#480](https://github.com/launchdarkly/launchpad-ui/pull/480) [`f67056a`](https://github.com/launchdarkly/launchpad-ui/commit/f67056ae6df4c2647833d7fe3f742af8e686824f) Thanks [@pheggeseth](https://github.com/pheggeseth)! - add "Inbox" icon
+
 ## 0.5.5
 
 ### Patch Changes

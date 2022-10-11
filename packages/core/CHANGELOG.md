@@ -1,5 +1,33 @@
 # @launchpad-ui/core
 
+## 0.16.6
+
+### Patch Changes
+
+- [#480](https://github.com/launchdarkly/launchpad-ui/pull/480) [`f67056a`](https://github.com/launchdarkly/launchpad-ui/commit/f67056ae6df4c2647833d7fe3f742af8e686824f) Thanks [@pheggeseth](https://github.com/pheggeseth)! - add "Inbox" icon
+
+- Updated dependencies [[`f67056a`](https://github.com/launchdarkly/launchpad-ui/commit/f67056ae6df4c2647833d7fe3f742af8e686824f)]:
+  - @launchpad-ui/icons@0.5.6
+  - @launchpad-ui/alert@0.6.2
+  - @launchpad-ui/avatar@0.4.6
+  - @launchpad-ui/banner@0.7.2
+  - @launchpad-ui/clipboard@0.8.10
+  - @launchpad-ui/dropdown@0.5.9
+  - @launchpad-ui/filter@0.4.13
+  - @launchpad-ui/form@0.6.7
+  - @launchpad-ui/menu@0.6.13
+  - @launchpad-ui/modal@0.8.9
+  - @launchpad-ui/notification@0.5.10
+  - @launchpad-ui/pagination@0.3.7
+  - @launchpad-ui/snackbar@0.2.3
+  - @launchpad-ui/toast@0.2.1
+  - @launchpad-ui/navigation@0.6.15
+  - @launchpad-ui/split-button@0.6.10
+  - @launchpad-ui/overlay@0.3.16
+  - @launchpad-ui/popover@0.8.9
+  - @launchpad-ui/progress-bubbles@0.5.10
+  - @launchpad-ui/tooltip@0.6.10
+
 ## 0.16.5
 
 ### Patch Changes
