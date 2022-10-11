@@ -30,13 +30,17 @@ const AppliedFilterButton = forwardRef<Ref, AppliedFilterButtonProps>((props, re
         onClick={onClickFilterButton}
       >
         {name && (
-          <span className={styles.appliedName}>
+          <span className={styles.appliedName} data-test-id={`${testId}-name`}>
             {name}
             {hasDescription && ':'}
           </span>
         )}
-        {hasDescription && <span className={styles.appliedDescription}>{children}</span>}
-        <ExpandMore size="small" />
+        {hasDescription && (
+          <span className={styles.appliedDescription} data-test-id={`${testId}-description`}>
+            {children}
+          </span>
+        )}
+        <ExpandMore size="small" data-test-id={`${testId}-expand`} />
       </button>
     </div>
   );

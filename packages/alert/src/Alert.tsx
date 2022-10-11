@@ -102,7 +102,14 @@ const Alert = ({
       data-test-id={testId}
       role={['info', 'success'].includes(kind) ? 'status' : 'alert'}
     >
-      {!noIcon && <StatusIcon kind={kind} className={styles['Alert-icon']} size={size} />}
+      {!noIcon && (
+        <StatusIcon
+          kind={kind}
+          className={styles['Alert-icon']}
+          size={size}
+          data-test-id={`${testId}-status-icon`}
+        />
+      )}
       <div className={styles['Alert-content']}>
         {header && (
           <h4 className={styles['Alert-heading']} data-test-id={`${testId}-header`}>

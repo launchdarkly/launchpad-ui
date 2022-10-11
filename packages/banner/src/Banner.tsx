@@ -28,7 +28,11 @@ const Banner = ({
 
   return (
     <div className={classes} data-test-id={testId} {...rest}>
-      <StatusIcon kind={kind} className={styles['Banner-icon']} />
+      <StatusIcon
+        kind={kind}
+        className={styles['Banner-icon']}
+        data-test-id={`${testId}-status-icon`}
+      />
       <div className={styles['Banner-content']}>
         {header && <h4 className={styles['Banner-heading']}>{header}</h4>}
         <div>{children}</div>
