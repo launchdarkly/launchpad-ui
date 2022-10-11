@@ -9,6 +9,11 @@
   border-radius: 2px;
 }
 
+.Snackbar-icon {
+  transform: translateY(2px);
+  top: auto;
+}
+
 .Snackbar--error {
   & .Snackbar-icon {
     fill: var(--color-pink-500);

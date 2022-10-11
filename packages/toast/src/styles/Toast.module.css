@@ -12,7 +12,7 @@
 }
 
 .Toast-icon {
-  transform: translateY(-1px);
+  transform: translateY(2px);
 }
 
 .Toast--error .Toast-icon svg {
