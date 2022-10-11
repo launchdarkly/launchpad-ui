@@ -36,18 +36,19 @@
 .Snackbar-content {
   flex-grow: 1;
 
-  & :global(a) {
-    color: var(--color-cyan-500);
-  }
-
   & .Snackbar-description,
-  & :global(a) {
+  & a {
     font-size: var(--osmo-font-size-small);
     font-weight: var(--font-weight-regular);
     line-height: 1.5;
   }
+
+  & a,
+  & a:hover {
+    color: var(--color-cyan-500);
+  }
 }
 
-.Snackbar-close:global(.Button):global(.Button--close) :global(svg) {
+.Snackbar-close:global(.Button):global(.Button--close) svg {
   fill: var(--color-gray-400);
 }
