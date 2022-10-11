@@ -3,7 +3,7 @@ import type { KeyboardEvent, ReactNode } from 'react';
 import { IconButton } from '@launchpad-ui/button';
 import { CopyToClipboard } from '@launchpad-ui/clipboard';
 import { FocusTrap } from '@launchpad-ui/focus-trap';
-import { KindIcon, Close, ExpandMore } from '@launchpad-ui/icons';
+import { StatusIcon, Close, ExpandMore } from '@launchpad-ui/icons';
 import { cx } from 'classix';
 import { useCallback, useEffect, useRef, useState } from 'react';
 
@@ -113,7 +113,7 @@ const Notification = ({
 
   const content = (
     <>
-      <KindIcon kind={level} className="Notification-icon" />
+      <StatusIcon kind={level} className="Notification-icon" />
       <div className="Notification-body">
         <div className="Notification-message">{message}</div>
         {details && (
@@ -126,7 +126,7 @@ const Notification = ({
               onClick={handleDetailsClick}
               onKeyDown={handleDetailsKeyDown}
             >
-              More details <ExpandMore size="small" />
+              More details <ExpandMore className="Notification-detailsExpandIcon" size="small" />
             </button>
 
             <div className="Notification-detailsContent">{details}</div>

@@ -115,6 +115,7 @@ const Modal = ({
               aria-labelledby={modalLabelID}
               aria-modal
               className="Modal-content"
+              tabIndex={-1}
             >
               {withCloseButton && (
                 <IconButton

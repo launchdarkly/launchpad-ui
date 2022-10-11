@@ -1,5 +1,33 @@
 # @launchpad-ui/filter
 
+## 0.4.13
+
+### Patch Changes
+
+- Updated dependencies [[`f67056a`](https://github.com/launchdarkly/launchpad-ui/commit/f67056ae6df4c2647833d7fe3f742af8e686824f)]:
+  - @launchpad-ui/icons@0.5.6
+  - @launchpad-ui/dropdown@0.5.9
+  - @launchpad-ui/menu@0.6.13
+  - @launchpad-ui/tooltip@0.6.10
+
+## 0.4.12
+
+### Patch Changes
+
+- [#472](https://github.com/launchdarkly/launchpad-ui/pull/472) [`1469d32`](https://github.com/launchdarkly/launchpad-ui/commit/1469d3230348a3f4fd37d7c8e963002c8dd1432e) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Filter] Convert to CSS Modules
+  [Menu] Removed Filter styles from CSS
+- Updated dependencies [[`1469d32`](https://github.com/launchdarkly/launchpad-ui/commit/1469d3230348a3f4fd37d7c8e963002c8dd1432e)]:
+  - @launchpad-ui/menu@0.6.12
+
+## 0.4.11
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @launchpad-ui/dropdown@0.5.8
+  - @launchpad-ui/menu@0.6.11
+  - @launchpad-ui/tooltip@0.6.9
+
 ## 0.4.10
 
 ### Patch Changes

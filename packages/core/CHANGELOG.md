@@ -1,5 +1,68 @@
 # @launchpad-ui/core
 
+## 0.16.6
+
+### Patch Changes
+
+- [#480](https://github.com/launchdarkly/launchpad-ui/pull/480) [`f67056a`](https://github.com/launchdarkly/launchpad-ui/commit/f67056ae6df4c2647833d7fe3f742af8e686824f) Thanks [@pheggeseth](https://github.com/pheggeseth)! - add "Inbox" icon
+
+- Updated dependencies [[`f67056a`](https://github.com/launchdarkly/launchpad-ui/commit/f67056ae6df4c2647833d7fe3f742af8e686824f)]:
+  - @launchpad-ui/icons@0.5.6
+  - @launchpad-ui/alert@0.6.2
+  - @launchpad-ui/avatar@0.4.6
+  - @launchpad-ui/banner@0.7.2
+  - @launchpad-ui/clipboard@0.8.10
+  - @launchpad-ui/dropdown@0.5.9
+  - @launchpad-ui/filter@0.4.13
+  - @launchpad-ui/form@0.6.7
+  - @launchpad-ui/menu@0.6.13
+  - @launchpad-ui/modal@0.8.9
+  - @launchpad-ui/notification@0.5.10
+  - @launchpad-ui/pagination@0.3.7
+  - @launchpad-ui/snackbar@0.2.3
+  - @launchpad-ui/toast@0.2.1
+  - @launchpad-ui/navigation@0.6.15
+  - @launchpad-ui/split-button@0.6.10
+  - @launchpad-ui/overlay@0.3.16
+  - @launchpad-ui/popover@0.8.9
+  - @launchpad-ui/progress-bubbles@0.5.10
+  - @launchpad-ui/tooltip@0.6.10
+
+## 0.16.5
+
+### Patch Changes
+
+- [#472](https://github.com/launchdarkly/launchpad-ui/pull/472) [`1469d32`](https://github.com/launchdarkly/launchpad-ui/commit/1469d3230348a3f4fd37d7c8e963002c8dd1432e) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Filter] Convert to CSS Modules
+  [Menu] Removed Filter styles from CSS
+
+- [#479](https://github.com/launchdarkly/launchpad-ui/pull/479) [`3f96b8b`](https://github.com/launchdarkly/launchpad-ui/commit/3f96b8bc6f40434ffb4c0c88cc95c1c42c2d9a20) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Snackbar] style anchor tag hover
+
+- Updated dependencies [[`1469d32`](https://github.com/launchdarkly/launchpad-ui/commit/1469d3230348a3f4fd37d7c8e963002c8dd1432e), [`3f96b8b`](https://github.com/launchdarkly/launchpad-ui/commit/3f96b8bc6f40434ffb4c0c88cc95c1c42c2d9a20)]:
+  - @launchpad-ui/filter@0.4.12
+  - @launchpad-ui/menu@0.6.12
+  - @launchpad-ui/snackbar@0.2.2
+  - @launchpad-ui/navigation@0.6.14
+
+## 0.16.4
+
+### Patch Changes
+
+- [#471](https://github.com/launchdarkly/launchpad-ui/pull/471) [`c5c07b0`](https://github.com/launchdarkly/launchpad-ui/commit/c5c07b0a47bcde0fbc7f0e6144ad8349e26b637e) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Modal] Add tabIndex to content to allow text selection
+  [Popover] Add tabIndex to content to allow text selection
+- Updated dependencies [[`c5c07b0`](https://github.com/launchdarkly/launchpad-ui/commit/c5c07b0a47bcde0fbc7f0e6144ad8349e26b637e)]:
+  - @launchpad-ui/modal@0.8.8
+  - @launchpad-ui/popover@0.8.8
+  - @launchpad-ui/overlay@0.3.15
+  - @launchpad-ui/dropdown@0.5.8
+  - @launchpad-ui/menu@0.6.11
+  - @launchpad-ui/navigation@0.6.13
+  - @launchpad-ui/progress-bubbles@0.5.9
+  - @launchpad-ui/split-button@0.6.9
+  - @launchpad-ui/tooltip@0.6.9
+  - @launchpad-ui/filter@0.4.11
+  - @launchpad-ui/clipboard@0.8.9
+  - @launchpad-ui/notification@0.5.9
+
 ## 0.16.3
 
 ### Patch Changes

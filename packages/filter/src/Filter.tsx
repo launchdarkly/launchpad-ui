@@ -7,6 +7,7 @@ import { cx } from 'classix';
 
 import { FilterButton } from './FilterButton';
 import { FilterMenu } from './FilterMenu';
+import styles from './styles/Filter.module.css';
 
 const SEARCH_INPUT_THRESHOLD = 4;
 
@@ -58,7 +59,7 @@ const Filter = ({
   const enableSearch =
     onSearchChange && (!!searchValue || options.length > SEARCH_INPUT_THRESHOLD || !isEmpty);
 
-  const dropdownClasses = cx('Filter', 'Filter-target', className);
+  const dropdownClasses = cx(styles.filter, className);
 
   const handleClear = (event: SyntheticEvent) => {
     event.preventDefault();
@@ -66,7 +67,7 @@ const Filter = ({
   };
 
   return (
-    <Dropdown targetClassName={dropdownClasses} {...props}>
+    <Dropdown targetTestId={testId} targetClassName={dropdownClasses} {...props}>
       <FilterButton
         isClearable={isClearable}
         onClear={handleClear}
@@ -74,7 +75,6 @@ const Filter = ({
         hideName={hideName}
         isSelected={isSelected}
         onClickFilterButton={onClickFilterButton}
-        data-test-id={testId}
       >
         {description}
       </FilterButton>

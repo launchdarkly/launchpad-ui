@@ -65,9 +65,8 @@
   border-bottom-color: var(--Banner-color-border-bottom-info);
 }
 
-/* reset Icon--info positioning hack */
-.Banner.Banner--info .Banner-icon {
-  top: 0;
+.Banner .Banner-icon {
+  transform: translateY(2px);
 }
 
 .Banner.Banner--info .Banner-icon svg {

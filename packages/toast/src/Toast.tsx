@@ -1,6 +1,6 @@
 import type { HTMLAttributes, ReactNode } from 'react';
 
-import { KindIcon } from '@launchpad-ui/icons';
+import { StatusIcon } from '@launchpad-ui/icons';
 import { cx } from 'classix';
 import { useEffect } from 'react';
 
@@ -36,7 +36,7 @@ const Toast = ({
       data-test-id={testId}
       role="status"
     >
-      {kind !== 'info' && <KindIcon kind={kind} className={styles['Toast-icon']} />}
+      {kind !== 'info' && <StatusIcon kind={kind} className={styles['Toast-icon']} />}
       <p className={styles['Toast-content']}>{content}</p>
     </div>
   );

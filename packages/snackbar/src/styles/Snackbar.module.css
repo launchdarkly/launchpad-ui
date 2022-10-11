@@ -9,18 +9,23 @@
   border-radius: 2px;
 }
 
+.Snackbar .Snackbar-icon {
+  transform: translateY(2px);
+  top: auto;
+}
+
 .Snackbar--error {
-  & .Snackbar-icon :global(.Icon) {
+  & .Snackbar-icon {
     fill: var(--color-pink-500);
   }
 }
 
-.Snackbar--info .Snackbar-icon :global(.Icon) {
+.Snackbar--info .Snackbar-icon {
   fill: var(--color-cyan-500);
 }
 
 .Snackbar--warning {
-  & .Snackbar-icon :global(.Icon) {
+  & .Snackbar-icon {
     fill: var(--color-yellow-500);
   }
 }
@@ -36,18 +41,19 @@
 .Snackbar-content {
   flex-grow: 1;
 
-  & :global(a) {
-    color: var(--color-cyan-500);
-  }
-
   & .Snackbar-description,
-  & :global(a) {
+  & a {
     font-size: var(--osmo-font-size-small);
     font-weight: var(--font-weight-regular);
     line-height: 1.5;
   }
+
+  & a,
+  & a:hover {
+    color: var(--color-cyan-500);
+  }
 }
 
-.Snackbar-close:global(.Button):global(.Button--close) :global(svg) {
+.Snackbar-close:global(.Button):global(.Button--close) svg {
   fill: var(--color-gray-400);
 }

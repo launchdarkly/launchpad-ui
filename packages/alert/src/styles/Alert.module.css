@@ -68,7 +68,7 @@
   margin-top: 1.2rem;
 }
 
-.Alert-icon {
+.Alert .Alert-icon {
   line-height: 1.2857;
 }
 
@@ -84,7 +84,8 @@
 }
 
 .Alert.Alert--small .Alert-icon {
-  top: 0.8em;
+  top: auto;
+  transform: translateY(1px);
 }
 
 .Alert.Alert--wide {

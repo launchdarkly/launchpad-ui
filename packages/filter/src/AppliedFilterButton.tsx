@@ -4,38 +4,38 @@ import { ExpandMore } from '@launchpad-ui/icons';
 import { cx } from 'classix';
 import { Children, forwardRef } from 'react';
 
-import './styles/Filter.css';
+import styles from './styles/Filter.module.css';
 
 type AppliedFilterButtonProps = {
   name?: ReactNode;
   className?: string;
-  isSelected?: boolean;
   children: ReactNode;
   onClickFilterButton?(): void;
+  'data-test-id': string;
 };
 
 type Ref = HTMLButtonElement;
 
 const AppliedFilterButton = forwardRef<Ref, AppliedFilterButtonProps>((props, ref) => {
-  const { name, className, isSelected, children, onClickFilterButton } = props;
+  const { name, className, children, onClickFilterButton, 'data-test-id': testId } = props;
 
   const hasDescription = Children.count(children) !== 0;
 
   return (
-    <div className="AppliedFilter-buttonContainer">
+    <div data-test-id={testId}>
       <button
         aria-haspopup
-        className={cx('AppliedFilter-button', isSelected && 'isSelected', className)}
+        className={cx(styles.appliedButton, className)}
         ref={ref}
         onClick={onClickFilterButton}
       >
         {name && (
-          <span className="AppliedFilter-name">
+          <span className={styles.appliedName}>
             {name}
             {hasDescription && ':'}
           </span>
         )}
-        {hasDescription && <span className="AppliedFilter-description">{children}</span>}
+        {hasDescription && <span className={styles.appliedDescription}>{children}</span>}
         <ExpandMore size="small" />
       </button>
     </div>
