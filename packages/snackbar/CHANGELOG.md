@@ -1,5 +1,11 @@
 # @launchpad-ui/snackbar
 
+## 0.2.2
+
+### Patch Changes
+
+- [#479](https://github.com/launchdarkly/launchpad-ui/pull/479) [`3f96b8b`](https://github.com/launchdarkly/launchpad-ui/commit/3f96b8bc6f40434ffb4c0c88cc95c1c42c2d9a20) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Snackbar] style anchor tag hover
+
 ## 0.2.1
 
 ### Patch Changes

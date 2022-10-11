@@ -1,5 +1,14 @@
 # @launchpad-ui/filter
 
+## 0.4.12
+
+### Patch Changes
+
+- [#472](https://github.com/launchdarkly/launchpad-ui/pull/472) [`1469d32`](https://github.com/launchdarkly/launchpad-ui/commit/1469d3230348a3f4fd37d7c8e963002c8dd1432e) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Filter] Convert to CSS Modules
+  [Menu] Removed Filter styles from CSS
+- Updated dependencies [[`1469d32`](https://github.com/launchdarkly/launchpad-ui/commit/1469d3230348a3f4fd37d7c8e963002c8dd1432e)]:
+  - @launchpad-ui/menu@0.6.12
+
 ## 0.4.11
 
 ### Patch Changes
