@@ -1,7 +1,7 @@
 import type { HTMLAttributes, ReactNode } from 'react';
 
 import { IconButton } from '@launchpad-ui/button';
-import { Close, KindIcon } from '@launchpad-ui/icons';
+import { Close, StatusIcon } from '@launchpad-ui/icons';
 import { cx } from 'classix';
 import { useState } from 'react';
 
@@ -102,13 +102,7 @@ const Alert = ({
       data-test-id={testId}
       role={['info', 'success'].includes(kind) ? 'status' : 'alert'}
     >
-      {!noIcon && (
-        <KindIcon
-          kind={kind}
-          className={styles['Alert-icon']}
-          size={size === 'small' ? 'small' : 'medium'}
-        />
-      )}
+      {!noIcon && <StatusIcon kind={kind} className={styles['Alert-icon']} size={size} />}
       <div className={styles['Alert-content']}>
         {header && (
           <h4 className={styles['Alert-heading']} data-test-id={`${testId}-header`}>

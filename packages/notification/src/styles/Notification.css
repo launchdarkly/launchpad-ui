@@ -73,11 +73,8 @@
 
 .Notification-icon {
   line-height: 1.25;
-
-  & .Icon {
-    width: 2.4rem;
-    height: 2.4rem;
-  }
+  width: 2.4rem;
+  height: 2.4rem;
 }
 
 .Notification-detailsExpand {
@@ -107,7 +104,7 @@
     text-decoration: underline;
   }
 
-  & .Icon {
+  & .Notification-detailsExpandIcon {
     fill: var(--color-gray-700);
   }
 
@@ -123,7 +120,7 @@ will zero out that positioning adjustment for now */
   border: 0.0625em solid var(--Notification-color-border-info);
   background-color: var(--Notification-color-background-info);
 
-  & .Notification-icon .Icon {
+  & .Notification-icon {
     fill: var(--Notification-icon-color-info);
     top: 0;
   }
@@ -133,7 +130,7 @@ will zero out that positioning adjustment for now */
   border: 0.0625em solid var(--Notification-color-border-warning);
   background-color: var(--Notification-color-background-warning);
 
-  & .Notification-icon .Icon {
+  & .Notification-icon {
     fill: var(--Notification-icon-color-warning);
     line-height: 1;
   }
@@ -173,7 +170,7 @@ will zero out that positioning adjustment for now */
   border: 0.0625em solid var(--Notification-color-border-success);
   background-color: var(--Notification-color-background-success);
 
-  & .Notification-icon .Icon > svg {
+  & .Notification-icon > svg {
     fill: var(--Notification-icon-color-success);
   }
 }
@@ -183,7 +180,7 @@ will zero out that positioning adjustment for now */
   border: 0.0625em solid var(--Notification-color-border-error);
   background-color: var(--Notification-color-background-error);
 
-  & .Notification-icon .Icon > svg > path {
+  & .Notification-icon > svg > path {
     fill: var(--Notification-icon-color-error);
   }
 }

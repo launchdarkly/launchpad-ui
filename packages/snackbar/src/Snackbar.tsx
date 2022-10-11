@@ -1,7 +1,7 @@
 import type { HTMLAttributes, ReactElement, ReactNode } from 'react';
 
 import { IconButton } from '@launchpad-ui/button';
-import { Close, KindIcon } from '@launchpad-ui/icons';
+import { Close, StatusIcon } from '@launchpad-ui/icons';
 import { cx } from 'classix';
 
 import styles from './styles/Snackbar.module.css';
@@ -34,7 +34,7 @@ const Snackbar = ({
       data-test-id={testId}
       role="status"
     >
-      <KindIcon kind={kind} className={styles['Snackbar-icon']} />
+      <StatusIcon kind={kind} className={styles['Snackbar-icon']} />
       <div className={styles['Snackbar-content']}>
         {header && <h4 className={styles['Snackbar-heading']}>{header}</h4>}
         <span className={styles['Snackbar-description']}>{description}</span> {cta}
