@@ -10,17 +10,17 @@
 }
 
 .Snackbar--error {
-  & .Snackbar-icon :global(.Icon) {
+  & .Snackbar-icon {
     fill: var(--color-pink-500);
   }
 }
 
-.Snackbar--info .Snackbar-icon :global(.Icon) {
+.Snackbar--info .Snackbar-icon {
   fill: var(--color-cyan-500);
 }
 
 .Snackbar--warning {
-  & .Snackbar-icon :global(.Icon) {
+  & .Snackbar-icon {
     fill: var(--color-yellow-500);
   }
 }

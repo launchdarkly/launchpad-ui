@@ -1,7 +1,7 @@
 import type { HTMLAttributes, ReactNode } from 'react';
 
 import { IconButton } from '@launchpad-ui/button';
-import { Close, KindIcon } from '@launchpad-ui/icons';
+import { Close, StatusIcon } from '@launchpad-ui/icons';
 import { cx } from 'classix';
 
 import styles from './styles/Banner.module.css';
@@ -28,7 +28,7 @@ const Banner = ({
 
   return (
     <div className={classes} data-test-id={testId} {...rest}>
-      <KindIcon kind={kind} className={styles['Banner-icon']} />
+      <StatusIcon kind={kind} className={styles['Banner-icon']} />
       <div className={styles['Banner-content']}>
         {header && <h4 className={styles['Banner-heading']}>{header}</h4>}
         <div>{children}</div>

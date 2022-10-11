@@ -15,15 +15,15 @@
   transform: translateY(-1px);
 }
 
-.Toast--error .Toast-icon :global(.Icon) svg {
+.Toast--error .Toast-icon svg {
   fill: var(--color-pink-500);
 }
 
-.Toast--warning .Toast-icon :global(.Icon) svg {
+.Toast--warning .Toast-icon svg {
   fill: var(--color-yellow-500);
 }
 
-.Toast--success .Toast-icon :global(.Icon) svg {
+.Toast--success .Toast-icon svg {
   fill: var(--color-system-green-500);
 }
 

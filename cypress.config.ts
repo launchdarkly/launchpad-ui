@@ -21,7 +21,7 @@ export default defineConfig({
   screenshotOnRunFailure: false,
   env: {
     codeCoverage: {
-      exclude: ['cypress/**/*.*', 'packages/icons/src/!(Icon.tsx|KindIcon.tsx)'],
+      exclude: ['cypress/**/*.*', 'packages/icons/src/!(Icon.tsx|StatusIcon.tsx)'],
     },
   },
 });

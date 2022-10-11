@@ -1,7 +1,7 @@
 import { it, expect, describe } from 'vitest';
 
 import { render, screen } from '../../../test/utils';
-import { Add, Info, KindIcon } from '../src';
+import { Add, Info, StatusIcon } from '../src';
 
 describe('Icon', () => {
   it('renders', () => {
@@ -15,13 +15,13 @@ describe('Icon', () => {
   });
 
   it('returns an icon based on the kind passed', () => {
-    render(<KindIcon kind="warning" />);
+    render(<StatusIcon kind="warning" />);
     expect(screen.getByTitle('Warning')).toBeInTheDocument();
 
-    render(<KindIcon kind="error" />);
+    render(<StatusIcon kind="error" />);
     expect(screen.getByTitle('Error')).toBeInTheDocument();
 
-    render(<KindIcon kind="info" />);
+    render(<StatusIcon kind="info" />);
     expect(screen.getByTitle('Info')).toBeInTheDocument();
   });
 });
