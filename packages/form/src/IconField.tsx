@@ -25,7 +25,7 @@ const IconField = ({
   return (
     <div className={classes} data-test-id={testId} {...rest}>
       {children}
-      <Icon size="small" />
+      <Icon className="IconField-icon" size="small" />
     </div>
   );
 };

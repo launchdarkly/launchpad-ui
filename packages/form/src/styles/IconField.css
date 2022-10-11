@@ -6,7 +6,7 @@
   padding-left: 3rem;
 }
 
-.FormInput ~ .Icon {
+.FormInput ~ .IconField-icon {
   position: absolute;
   fill: var(--color-gray-600);
   top: 50%;

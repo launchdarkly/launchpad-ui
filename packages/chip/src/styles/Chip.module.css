@@ -132,7 +132,7 @@
   color: var(--color-text-subtle-primary);
 }
 
-.Chip :global(.Icon) {
+.Chip :global([class*='_icon_']) {
   margin-right: 0.2rem;
   vertical-align: top;
 }
