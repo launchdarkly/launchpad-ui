@@ -5,7 +5,6 @@ import { Children, cloneElement, isValidElement, useRef } from 'react';
 
 import { Label } from './Label';
 import { Radio } from './Radio';
-import './styles/Form.css';
 
 type RadioGroupProps = {
   /**

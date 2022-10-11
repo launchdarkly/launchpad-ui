@@ -3,7 +3,7 @@ import type { HTMLAttributes } from 'react';
 
 import { cx } from 'classix';
 
-import './styles/IconField.css';
+import styles from './styles/Form.module.css';
 
 type IconFieldProps = HTMLAttributes<HTMLDivElement> & {
   icon(args: IconProps): JSX.Element;
@@ -20,12 +20,12 @@ const IconField = ({
 }: IconFieldProps) => {
   const Icon = icon;
 
-  const classes = cx('IconField', className);
+  const classes = cx(styles.iconField, className);
 
   return (
     <div className={classes} data-test-id={testId} {...rest}>
       {children}
-      <Icon size="small" />
+      <Icon size="small" className={styles.iconFieldIcon} />
     </div>
   );
 };

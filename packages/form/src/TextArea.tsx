@@ -3,7 +3,7 @@ import type { KeyboardEvent, TextareaHTMLAttributes } from 'react';
 import { cx } from 'classix';
 import { forwardRef } from 'react';
 
-import './styles/FormInput.css';
+import styles from './styles/Form.module.css';
 import { createFieldErrorId } from './utils';
 
 type TextAreaProps = TextareaHTMLAttributes<HTMLTextAreaElement> & {
@@ -29,7 +29,7 @@ const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
     return (
       <textarea
         {...props}
-        className={cx('FormInput', className)}
+        className={cx(styles.formInput, className)}
         ref={ref}
         data-test-id={testId}
         aria-describedby={props['aria-describedby'] || createFieldErrorId(props.id)}

@@ -3,7 +3,7 @@ import type { HTMLAttributes } from 'react';
 
 import { cx } from 'classix';
 
-import './styles/Form.css';
+import styles from './styles/Form.module.css';
 import { createFieldErrorId } from './utils';
 
 type FieldErrorProps = HTMLAttributes<HTMLSpanElement> & {
@@ -26,7 +26,7 @@ const FieldError = ({
   return (
     <span
       {...rest}
-      className={cx('Form-fieldError', className)}
+      className={cx(styles.fieldError, className)}
       aria-live="polite"
       data-test-id={testId}
       id={createFieldErrorId(name)}

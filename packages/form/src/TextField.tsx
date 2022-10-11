@@ -3,7 +3,7 @@ import type { InputHTMLAttributes } from 'react';
 import { cx } from 'classix';
 import { forwardRef } from 'react';
 
-import './styles/FormInput.css';
+import styles from './styles/Form.module.css';
 import { createFieldErrorId } from './utils';
 
 type TextFieldProps = InputHTMLAttributes<HTMLInputElement> & {
@@ -30,21 +30,21 @@ const TextField = forwardRef<HTMLInputElement, TextFieldProps>(
   ) => {
     const classes = overrideWidth
       ? className
-      : cx('FormInput', `FormInput-${type}`, className, tiny && 'FormInput--tiny');
+      : cx(styles.formInput, tiny && styles.formInputTiny, className);
 
     if (suffix) {
       return (
-        <div className="FormInput-suffixContainer">
+        <div className={styles.suffixContainer}>
           <input
             {...rest}
             type={type}
             data-test-id={testId}
-            className={cx(classes, 'FormInput-suffix')}
+            className={classes}
             readOnly={readOnly}
             ref={ref}
             aria-describedby={rest['aria-describedby'] || createFieldErrorId(rest.id)}
           />
-          <label className="FormInput-suffix" htmlFor={rest.id}>
+          <label className={styles.suffix} htmlFor={rest.id}>
             {suffix}
           </label>
         </div>

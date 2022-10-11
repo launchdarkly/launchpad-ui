@@ -2,7 +2,7 @@ import type { HTMLAttributes } from 'react';
 
 import { cx } from 'classix';
 
-import './styles/FieldSet.css';
+import styles from './styles/Form.module.css';
 
 type FieldSetProps = HTMLAttributes<HTMLFieldSetElement> & {
   'data-test-id'?: string;
@@ -14,7 +14,7 @@ const FieldSet = ({
   'data-test-id': testId = 'field-set',
   ...rest
 }: FieldSetProps) => {
-  const classes = cx('FieldSet', className);
+  const classes = cx(styles.fieldSet, className);
 
   return (
     <fieldset data-test-id={testId} className={classes} {...rest}>

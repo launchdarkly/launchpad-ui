@@ -2,7 +2,7 @@ import type { HTMLAttributes } from 'react';
 
 import { cx } from 'classix';
 
-import './styles/Form.css';
+import styles from './styles/Form.module.css';
 
 type FormGroupProps = HTMLAttributes<HTMLDivElement> & {
   name?: string | string[];
@@ -22,7 +22,11 @@ const FormGroup = (props: FormGroupProps) => {
     ...rest
   } = props;
 
-  const classes = cx('Form-group', className, !ignoreValidation && isInvalid && 'is-invalid');
+  const classes = cx(
+    styles.formGroup,
+    className,
+    !ignoreValidation && isInvalid && styles.isInvalid
+  );
 
   return (
     <div className={classes} data-test-id={testId} {...rest}>

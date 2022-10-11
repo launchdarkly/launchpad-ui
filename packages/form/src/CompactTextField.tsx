@@ -6,8 +6,7 @@ import { forwardRef, useState } from 'react';
 
 import { Label } from './Label';
 import { TextField } from './TextField';
-import './styles/CompactTextField.css';
-import './styles/FormInput.css';
+import styles from './styles/Form.module.css';
 
 type CompactTextFieldProps = TextFieldProps & {
   label: string;
@@ -35,7 +34,7 @@ const CompactTextField = forwardRef<HTMLInputElement, CompactTextFieldProps>(
 
     const isActiveState = isActive || needsErrorFeedback;
 
-    const classes = cx('CompactTextField', className, isActiveState && 'is-active');
+    const classes = cx(styles.compactTextField, className, isActiveState && styles.isActive);
 
     const placeholder = isActiveState ? '' : label;
 
