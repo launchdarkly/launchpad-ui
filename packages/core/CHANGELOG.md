@@ -1,5 +1,41 @@
 # @launchpad-ui/core
 
+## 0.16.7
+
+### Patch Changes
+
+- [#484](https://github.com/launchdarkly/launchpad-ui/pull/484) [`b6f08c4`](https://github.com/launchdarkly/launchpad-ui/commit/b6f08c4c41dba5357e200960c076c182fcd46b7a) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Alert]: Add test ids to internals
+  [Banner]: Add test ids to internals
+  [Filter]: Add test ids to internals
+
+- [#482](https://github.com/launchdarkly/launchpad-ui/pull/482) [`6c602af`](https://github.com/launchdarkly/launchpad-ui/commit/6c602afba6b7073314b0e5592c98a616aff586c1) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Icons]: Rebuild KindIcon and rename to StatusIcon
+  [Alert]: Use new StatusIcon and update CSS targets
+  [Banner]: Use new StatusIcon and update CSS targets
+  [Notification]: Use new StatusIcon and update CSS targets
+  [Snackbar]: Use new StatusIcon and update CSS targets
+  [Toast]: Use new StatusIcon and update CSS targets
+- Updated dependencies [[`b6f08c4`](https://github.com/launchdarkly/launchpad-ui/commit/b6f08c4c41dba5357e200960c076c182fcd46b7a), [`6c602af`](https://github.com/launchdarkly/launchpad-ui/commit/6c602afba6b7073314b0e5592c98a616aff586c1)]:
+  - @launchpad-ui/alert@0.6.3
+  - @launchpad-ui/banner@0.7.3
+  - @launchpad-ui/filter@0.4.14
+  - @launchpad-ui/icons@0.5.7
+  - @launchpad-ui/notification@0.5.11
+  - @launchpad-ui/snackbar@0.2.4
+  - @launchpad-ui/toast@0.2.2
+  - @launchpad-ui/avatar@0.4.7
+  - @launchpad-ui/clipboard@0.8.11
+  - @launchpad-ui/dropdown@0.5.10
+  - @launchpad-ui/form@0.6.8
+  - @launchpad-ui/menu@0.6.14
+  - @launchpad-ui/modal@0.8.10
+  - @launchpad-ui/pagination@0.3.8
+  - @launchpad-ui/navigation@0.6.16
+  - @launchpad-ui/split-button@0.6.11
+  - @launchpad-ui/overlay@0.3.17
+  - @launchpad-ui/popover@0.8.10
+  - @launchpad-ui/progress-bubbles@0.5.11
+  - @launchpad-ui/tooltip@0.6.11
+
 ## 0.16.6
 
 ### Patch Changes
