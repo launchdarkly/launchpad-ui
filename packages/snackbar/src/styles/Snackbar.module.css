@@ -9,7 +9,7 @@
   border-radius: 2px;
 }
 
-.Snackbar-icon {
+.Snackbar .Snackbar-icon {
   transform: translateY(2px);
   top: auto;
 }

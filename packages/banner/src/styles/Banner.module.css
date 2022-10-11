@@ -65,7 +65,7 @@
   border-bottom-color: var(--Banner-color-border-bottom-info);
 }
 
-.Banner-icon {
+.Banner .Banner-icon {
   transform: translateY(2px);
 }
 
