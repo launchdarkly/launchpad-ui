@@ -1,5 +1,11 @@
 # @launchpad-ui/form
 
+## 0.6.9
+
+### Patch Changes
+
+- [#473](https://github.com/launchdarkly/launchpad-ui/pull/473) [`f51d3be`](https://github.com/launchdarkly/launchpad-ui/commit/f51d3be21a948a316880c6e245fc2b7a326619fe) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Form] Move to CSS Modules
+
 ## 0.6.8
 
 ### Patch Changes
