@@ -22,7 +22,7 @@ const Navigation = <T extends object>(props: NavigationProps<T>) => {
   const { children, className, 'data-test-id': testId = 'navigation' } = props;
   const wrapperRef = useRef<HTMLDivElement>(null);
   const itemListRef = useRef<HTMLDivElement>(null);
-  const [shouldCollapse, setCollapse] = useValueEffect(true);
+  const [shouldCollapse, setCollapse] = useValueEffect(false);
 
   const isWideViewport = useMediaQuery('(min-width: 740px)');
 
