@@ -314,6 +314,7 @@
   background-color: transparent;
   color: var(--Button-color-link-default);
   cursor: pointer;
+  min-height: auto;
 }
 
 .Button--link:focus {
@@ -400,6 +401,7 @@
   border-radius: 50%;
   height: 2.5rem;
   width: 2.5rem;
+  min-height: auto;
   flex-shrink: 0;
 }
 
