@@ -1,5 +1,11 @@
 # @launchpad-ui/button
 
+## 0.7.3
+
+### Patch Changes
+
+- [#487](https://github.com/launchdarkly/launchpad-ui/pull/487) [`a91ee06`](https://github.com/launchdarkly/launchpad-ui/commit/a91ee069ebef5260d15e1dea1defd142f1b462de) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Button] Add better support from dropdowns and icons in ButtonGroup
+
 ## 0.7.2
 
 ### Patch Changes
