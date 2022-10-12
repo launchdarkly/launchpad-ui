@@ -22,8 +22,7 @@
   cursor: default;
   user-select: none;
   appearance: none;
-
-  /* min-height: 3.2rem; */
+  min-height: 3.2rem;
 }
 
 .Button--tiny {
