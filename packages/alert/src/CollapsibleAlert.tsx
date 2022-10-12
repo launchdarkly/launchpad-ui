@@ -48,6 +48,7 @@ const CollapsibleAlert = ({
           aria-haspopup
           ref={buttonRef}
           onClick={toggleOpen}
+          data-test-id={`${testId}-button`}
           className={styles['CollapsibleAlert-button']}
         >
           {alertCollapsed ? (

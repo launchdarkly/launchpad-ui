@@ -1,5 +1,22 @@
 # @launchpad-ui/alert
 
+## 0.6.3
+
+### Patch Changes
+
+- [#484](https://github.com/launchdarkly/launchpad-ui/pull/484) [`b6f08c4`](https://github.com/launchdarkly/launchpad-ui/commit/b6f08c4c41dba5357e200960c076c182fcd46b7a) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Alert]: Add test ids to internals
+  [Banner]: Add test ids to internals
+  [Filter]: Add test ids to internals
+
+- [#482](https://github.com/launchdarkly/launchpad-ui/pull/482) [`6c602af`](https://github.com/launchdarkly/launchpad-ui/commit/6c602afba6b7073314b0e5592c98a616aff586c1) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Icons]: Rebuild KindIcon and rename to StatusIcon
+  [Alert]: Use new StatusIcon and update CSS targets
+  [Banner]: Use new StatusIcon and update CSS targets
+  [Notification]: Use new StatusIcon and update CSS targets
+  [Snackbar]: Use new StatusIcon and update CSS targets
+  [Toast]: Use new StatusIcon and update CSS targets
+- Updated dependencies [[`6c602af`](https://github.com/launchdarkly/launchpad-ui/commit/6c602afba6b7073314b0e5592c98a616aff586c1)]:
+  - @launchpad-ui/icons@0.5.7
+
 ## 0.6.2
 
 ### Patch Changes

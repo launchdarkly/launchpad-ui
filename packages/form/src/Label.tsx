@@ -3,7 +3,7 @@ import type { LabelHTMLAttributes } from 'react';
 import { cx } from 'classix';
 
 import { RequiredAsterisk } from './RequiredAsterisk';
-import './styles/Form.css';
+import styles from './styles/Form.module.css';
 
 type LabelProps = LabelHTMLAttributes<HTMLLabelElement> & {
   required?: boolean;
@@ -21,12 +21,12 @@ const Label = ({
   'data-test-id': testId = 'label',
   ...rest
 }: LabelProps) => {
-  const classes = cx('Form-label', className, disabled && 'Form-label--disabled');
+  const classes = cx(styles.label, className, disabled && styles.labelDisabled);
 
   return (
     <label {...rest} data-test-id={testId} className={classes}>
       {children}
-      {optional && !required && <small className="Form-labelOptional">(optional)</small>}
+      {optional && !required && <small className={styles.labelOptional}>(optional)</small>}
       {required && !optional && <RequiredAsterisk />}
     </label>
   );

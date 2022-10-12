@@ -1,5 +1,19 @@
 # @launchpad-ui/notification
 
+## 0.5.11
+
+### Patch Changes
+
+- [#482](https://github.com/launchdarkly/launchpad-ui/pull/482) [`6c602af`](https://github.com/launchdarkly/launchpad-ui/commit/6c602afba6b7073314b0e5592c98a616aff586c1) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Icons]: Rebuild KindIcon and rename to StatusIcon
+  [Alert]: Use new StatusIcon and update CSS targets
+  [Banner]: Use new StatusIcon and update CSS targets
+  [Notification]: Use new StatusIcon and update CSS targets
+  [Snackbar]: Use new StatusIcon and update CSS targets
+  [Toast]: Use new StatusIcon and update CSS targets
+- Updated dependencies [[`6c602af`](https://github.com/launchdarkly/launchpad-ui/commit/6c602afba6b7073314b0e5592c98a616aff586c1)]:
+  - @launchpad-ui/icons@0.5.7
+  - @launchpad-ui/clipboard@0.8.11
+
 ## 0.5.10
 
 ### Patch Changes

@@ -1,7 +1,0 @@
-.InputGroup {
-  display: flex;
-}
-
-.InputGroup > * + * {
-  margin-left: 1rem;
-}
