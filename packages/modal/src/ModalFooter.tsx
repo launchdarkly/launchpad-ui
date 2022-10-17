@@ -2,12 +2,12 @@ import type { HTMLAttributes } from 'react';
 
 import { cx } from 'classix';
 
-import './styles/Modal.css';
+import styles from './styles/Modal.module.css';
 
 type ModalFooterProps = HTMLAttributes<HTMLDivElement>;
 
 const ModalFooter = ({ className, children, ...rest }: ModalFooterProps) => {
-  const classes = cx('Modal-footer', className);
+  const classes = cx(styles['Modal-footer'], className);
 
   return (
     <div {...rest} className={classes}>

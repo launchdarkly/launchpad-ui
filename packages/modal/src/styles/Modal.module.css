@@ -75,18 +75,18 @@ as needed. */
   }
 }
 
-.ModalSheet .Modal-content .Subhead h1 {
+.ModalSheet .Modal-content :global(.Subhead) :global(h1) {
   display: flex;
   align-items: center;
   text-overflow: ellipsis;
   overflow: hidden;
 }
 
-.ModalSheet .Modal-content section {
+.ModalSheet .Modal-content :global(section) {
   padding: 3.2rem var(--page-gutter-width);
 }
 
-.ModalSheet .Modal-content section + section {
+.ModalSheet .Modal-content :global(section) + :global(section) {
   border-top: 1px dotted var(--color-gray-100);
 }
 
@@ -96,7 +96,46 @@ as needed. */
   top: 1rem;
 }
 
-.ModalSheet .Modal-content > .Spinner {
-  margin: 3.5rem auto;
+.Prompt .Modal {
+  z-index: 10002;
+}
+
+.Prompt .Modal-overlay {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Prompt .Modal-content {
+  border: 1px solid var(--color-gray-100);
+  border-radius: var(--border-radius);
+  box-shadow: 0 0 6px var(--color-gray-700);
+}
+
+.Prompt .Modal-header {
+  font-size: var(--osmo-font-size-large);
+  font-weight: var(--font-weight-semibold);
+  padding: 2rem 4.4rem 1rem 2rem;
+}
+
+.Prompt .Modal-title {
   display: block;
+}
+
+.Prompt .Modal-body {
+  font-size: 1.5rem;
+  line-height: 24px;
+  padding: 0 2rem 2rem;
+  color: var(--color-text);
+}
+
+.Prompt .Modal-footer {
+  text-align: right;
+  padding: 1rem 2rem 2rem;
+}
+
+.Prompt .Modal-close {
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
 }

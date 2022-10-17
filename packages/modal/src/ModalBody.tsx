@@ -2,12 +2,12 @@ import type { HTMLAttributes } from 'react';
 
 import { cx } from 'classix';
 
-import './styles/Modal.css';
+import styles from './styles/Modal.module.css';
 
 type ModalBodyProps = HTMLAttributes<HTMLDivElement>;
 
 const ModalBody = ({ className, children, ...rest }: ModalBodyProps) => {
-  const classes = cx('Modal-body', className);
+  const classes = cx(styles['Modal-body'], className);
 
   return (
     <div {...rest} className={classes}>

@@ -3,7 +3,7 @@ import type { HTMLAttributes } from 'react';
 import { Close } from '@launchpad-ui/icons';
 import { cx } from 'classix';
 
-import './styles/Modal.css';
+import styles from './styles/Modal.module.css';
 
 type ModalHeaderProps = HTMLAttributes<HTMLDivElement> & {
   closeable?: boolean;
@@ -21,14 +21,14 @@ const ModalHeader = ({
   titleClassName,
   ...rest
 }: ModalHeaderProps) => {
-  const classes = cx('Modal-header', className);
+  const classes = cx(styles['Modal-header'], className);
 
   return (
     <div {...rest} className={classes}>
-      <h2 id={titleID || 'Modal-title'} className={cx('Modal-title', titleClassName)}>
+      <h2 id={titleID || 'Modal-title'} className={cx(styles['Modal-title'], titleClassName)}>
         {children}
       </h2>
-      {closeable && <Close className="Modal-close" onClick={onClose} size="tiny" />}
+      {closeable && <Close className={styles['Modal-close']} onClick={onClose} size="tiny" />}
     </div>
   );
 };

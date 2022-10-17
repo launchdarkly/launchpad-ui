@@ -6,7 +6,7 @@ import { Suspense } from 'react';
 
 import { Modal } from './Modal';
 import { Portal } from './Portal';
-import './styles/Modal.css';
+import styles from './styles/Modal.module.css';
 
 type ModalSheetProps = {
   className?: string;
@@ -22,7 +22,7 @@ const ModalSheet = ({
   withCloseButton = true,
   ...props
 }: ModalSheetProps) => {
-  const classes = cx('ModalSheet', `ModalSheet--${size}`);
+  const classes = cx(styles.ModalSheet, styles[`ModalSheet--${size}`]);
 
   return (
     <Portal className={classes}>
