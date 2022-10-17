@@ -68,7 +68,7 @@ const Modal = ({
   useEffect(() => {
     const handleEscape = (event: KeyboardEvent) => {
       event.stopImmediatePropagation();
-      const latest = [...document.querySelectorAll('.Modal')].pop();
+      const latest = [...document.querySelectorAll(`[data-test-id="${testId}"]`)].pop();
       if (event.key === 'Escape' && latest === ref.current) {
         close();
       }
@@ -86,7 +86,7 @@ const Modal = ({
       document.body.classList.remove('has-modal');
       document.removeEventListener('keydown', handleEscape);
     };
-  }, [onReady, onCancel]);
+  }, [onReady, onCancel, testId]);
 
   const handleOverlayClick = (event: MouseEvent<HTMLDivElement>) => {
     if (cancelWithOverlayClick && event.target === event.currentTarget) {
