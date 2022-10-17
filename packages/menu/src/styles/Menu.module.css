@@ -110,7 +110,7 @@
   font-weight: var(--font-weight-medium);
 }
 
-.Menu-item .Gravatar {
+.Menu-item :global(.Gravatar) {
   margin-right: 0.5rem;
 }
 
