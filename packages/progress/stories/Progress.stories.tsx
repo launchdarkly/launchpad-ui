@@ -1,4 +1,4 @@
-import type { ComponentStoryObj } from '@storybook/react';
+import type { StoryObj } from '@storybook/react';
 
 import { Progress } from '../src';
 
@@ -35,6 +35,6 @@ export default {
   },
 };
 
-type Story = ComponentStoryObj<typeof Progress>;
+type Story = StoryObj<typeof Progress>;
 
 export const Default: Story = { args: { size: 'small' } };

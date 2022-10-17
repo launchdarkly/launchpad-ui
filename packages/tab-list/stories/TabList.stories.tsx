@@ -1,4 +1,4 @@
-import type { ComponentStoryObj } from '@storybook/react';
+import type { StoryObj } from '@storybook/react';
 
 import { Button } from '@launchpad-ui/button';
 import { Item } from '@react-stately/collections';
@@ -16,7 +16,7 @@ export default {
   },
 };
 
-type Story = ComponentStoryObj<typeof TabList>;
+type Story = StoryObj<typeof TabList>;
 
 export const TabListExample: Story = {
   args: {

@@ -1,4 +1,4 @@
-import type { ComponentStoryObj } from '@storybook/react';
+import type { StoryObj } from '@storybook/react';
 
 import { Toast } from '../src';
 
@@ -13,7 +13,7 @@ export default {
   },
 };
 
-type Story = ComponentStoryObj<typeof Toast>;
+type Story = StoryObj<typeof Toast>;
 
 export const Info: Story = {
   args: { kind: 'info', content: 'This is a message about an app process.' },

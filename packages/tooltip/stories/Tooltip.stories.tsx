@@ -1,4 +1,4 @@
-import type { ComponentStoryObj, StoryFn } from '@storybook/react';
+import type { StoryObj, StoryFn } from '@storybook/react';
 
 import { Button } from '@launchpad-ui/button';
 import { userEvent, within } from '@storybook/testing-library';
@@ -49,10 +49,12 @@ export default {
   ],
 };
 
-type Story = ComponentStoryObj<typeof Tooltip>;
+type Story = StoryObj<typeof Tooltip>;
 
 export const Default: Story = {
   args: {
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
     children: [<Button key="1">Target</Button>, <span key="2">Content to show</span>],
   },
   play: async ({ canvasElement }: { canvasElement: HTMLElement }) => {

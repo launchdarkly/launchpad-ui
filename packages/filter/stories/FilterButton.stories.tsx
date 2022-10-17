@@ -1,4 +1,4 @@
-import type { ComponentStoryObj } from '@storybook/react';
+import type { StoryObj } from '@storybook/react';
 
 import { FilterButton } from '../src';
 
@@ -14,7 +14,7 @@ export default {
   },
 };
 
-type Story = ComponentStoryObj<typeof FilterButton>;
+type Story = StoryObj<typeof FilterButton>;
 
 export const Basic: Story = {
   args: {

@@ -1,4 +1,4 @@
-import type { ComponentStoryObj } from '@storybook/react';
+import type { StoryObj } from '@storybook/react';
 
 import { CheckCircle, Info, Person, Warning } from '@launchpad-ui/icons';
 
@@ -15,7 +15,7 @@ export default {
   },
 };
 
-type Story = ComponentStoryObj<typeof ProgressBubbles>;
+type Story = StoryObj<typeof ProgressBubbles>;
 
 export const Example: Story = {
   args: {

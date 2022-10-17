@@ -1,6 +1,6 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 import type { SnackbarRecord, SnackbarProps } from '../src';
-import type { ComponentStoryObj } from '@storybook/react';
+import type { StoryObj } from '@storybook/react';
 
 import { Button } from '@launchpad-ui/button';
 import { userEvent, within } from '@storybook/testing-library';
@@ -14,7 +14,7 @@ export default {
   description: 'A container for snackbars.',
 };
 
-type Story = ComponentStoryObj<typeof SnackbarCenter>;
+type Story = StoryObj<typeof SnackbarCenter>;
 
 const kinds = ['info', 'error', 'warning'];
 let kindIndex = 0;

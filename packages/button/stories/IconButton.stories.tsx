@@ -1,4 +1,4 @@
-import type { ComponentStoryObj, DecoratorFn } from '@storybook/react';
+import type { StoryObj, DecoratorFn } from '@storybook/react';
 
 import { Fragment } from 'react';
 
@@ -133,7 +133,7 @@ export default {
   },
 };
 
-type Story = ComponentStoryObj<typeof IconButton>;
+type Story = StoryObj<typeof IconButton>;
 
 const icon = <Add size="medium" />;
 

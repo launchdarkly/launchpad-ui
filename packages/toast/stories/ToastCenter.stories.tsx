@@ -1,6 +1,6 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 import type { ToastRecord, ToastProps } from '../src';
-import type { ComponentStoryObj } from '@storybook/react';
+import type { StoryObj } from '@storybook/react';
 
 import { Button } from '@launchpad-ui/button';
 import { userEvent, within } from '@storybook/testing-library';
@@ -14,7 +14,7 @@ export default {
   description: 'A container for toasts.',
 };
 
-type Story = ComponentStoryObj<typeof ToastCenter>;
+type Story = StoryObj<typeof ToastCenter>;
 
 const kinds = ['info', 'success', 'warning'];
 let kindIndex = 0;

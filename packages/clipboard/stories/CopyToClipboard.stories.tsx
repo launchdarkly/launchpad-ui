@@ -1,5 +1,5 @@
 import type { CopyToClipboardHandleRef } from '../src/CopyToClipboard';
-import type { ComponentStoryObj, StoryFn } from '@storybook/react';
+import type { StoryObj, StoryFn } from '@storybook/react';
 
 import { userEvent, within } from '@storybook/testing-library';
 import { useRef } from 'react';
@@ -45,7 +45,7 @@ export default {
   ],
 };
 
-type Story = ComponentStoryObj<typeof CopyToClipboard>;
+type Story = StoryObj<typeof CopyToClipboard>;
 
 export const Default: Story = {
   args: { text: 'Code content', children: 'Copy content' },
