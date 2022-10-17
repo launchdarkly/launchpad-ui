@@ -1,4 +1,4 @@
-import type { ComponentStoryObj } from '@storybook/react';
+import type { StoryObj } from '@storybook/react';
 
 import { Select } from '../src';
 
@@ -51,7 +51,7 @@ export default {
   },
 };
 
-type Story = ComponentStoryObj<typeof Select>;
+type Story = StoryObj<typeof Select>;
 
 export const Default: Story = {
   args: {

@@ -1,4 +1,4 @@
-import type { ComponentStoryObj } from '@storybook/react';
+import type { StoryObj } from '@storybook/react';
 
 import { AppliedFilter } from '../src';
 
@@ -119,7 +119,7 @@ export default {
   },
 };
 
-type Story = ComponentStoryObj<typeof AppliedFilter>;
+type Story = StoryObj<typeof AppliedFilter>;
 
 export const Basic: Story = {
   args: {

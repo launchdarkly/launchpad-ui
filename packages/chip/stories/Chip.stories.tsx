@@ -1,4 +1,4 @@
-import type { ComponentStoryObj } from '@storybook/react';
+import type { StoryObj } from '@storybook/react';
 
 import { Chip } from '../src';
 
@@ -50,7 +50,7 @@ export default {
   },
 };
 
-type Story = ComponentStoryObj<typeof Chip>;
+type Story = StoryObj<typeof Chip>;
 
 export const Default: Story = { args: { children: 'Example Chip', kind: 'default' } };
 

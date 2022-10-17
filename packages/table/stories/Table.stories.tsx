@@ -1,4 +1,4 @@
-import type { ComponentStoryObj } from '@storybook/react';
+import type { StoryObj } from '@storybook/react';
 
 import { Table, TableBody, TableCell, TableHead, TableHeadCell, TableRow } from '../src';
 
@@ -14,7 +14,7 @@ export default {
   },
 };
 
-type Story = ComponentStoryObj<typeof Table>;
+type Story = StoryObj<typeof Table>;
 
 enum TableHeaders {
   TYPE = 'type',

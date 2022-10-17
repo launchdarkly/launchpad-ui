@@ -1,4 +1,4 @@
-import type { ComponentStoryObj } from '@storybook/react';
+import type { StoryObj } from '@storybook/react';
 
 import { Banner } from '../src';
 
@@ -48,7 +48,7 @@ export default {
   },
 };
 
-type Story = ComponentStoryObj<typeof Banner>;
+type Story = StoryObj<typeof Banner>;
 
 export const Error: Story = {
   args: { children: 'Error banner with icon', dismissible: true, kind: 'error' },

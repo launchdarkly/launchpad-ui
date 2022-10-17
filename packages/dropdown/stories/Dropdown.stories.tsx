@@ -1,4 +1,4 @@
-import type { ComponentStoryObj, StoryFn } from '@storybook/react';
+import type { StoryObj, StoryFn } from '@storybook/react';
 
 import { Menu, MenuItem } from '@launchpad-ui/menu';
 import { userEvent, within } from '@storybook/testing-library';
@@ -34,7 +34,7 @@ export default {
   ],
 };
 
-type Story = ComponentStoryObj<typeof Dropdown>;
+type Story = StoryObj<typeof Dropdown>;
 
 export const Example: Story = {
   args: {
