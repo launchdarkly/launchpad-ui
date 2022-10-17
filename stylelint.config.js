@@ -30,5 +30,6 @@ module.exports = {
       },
     ],
     'selector-not-notation': 'simple',
+    'import-notation': 'string',
   },
 };
