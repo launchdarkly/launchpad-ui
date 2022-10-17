@@ -18,7 +18,7 @@ type Story = ComponentStoryObj<typeof Snackbar>;
 export const Error: Story = {
   args: {
     kind: 'error',
-    title: 'Snackbar title',
+    header: 'Snackbar header',
     description: 'This is a message about an app process.',
     cta: <a href="/">Please try again</a>,
   },

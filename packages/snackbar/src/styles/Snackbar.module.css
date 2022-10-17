@@ -36,6 +36,7 @@
   font-size: 1.6rem;
   font-weight: var(--font-weight-medium);
   line-height: 1.5;
+  color: var(--color-text-inverse);
 }
 
 .Snackbar-content {
