@@ -1,4 +1,4 @@
-import type { ComponentStoryObj } from '@storybook/react';
+import type { StoryObj } from '@storybook/react';
 
 import { {{pascalCase name}} } from '../src';
 
@@ -13,7 +13,7 @@ export default {
   },
 };
 
-type Story = ComponentStoryObj<typeof {{pascalCase name}}>;
+type Story = StoryObj<typeof {{pascalCase name}}>;
 
 export const Example: Story = {
   args: {

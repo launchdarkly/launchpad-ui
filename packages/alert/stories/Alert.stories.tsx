@@ -1,4 +1,4 @@
-import type { ComponentStoryObj } from '@storybook/react';
+import type { StoryObj } from '@storybook/react';
 
 import { Button, ButtonGroup } from '@launchpad-ui/button';
 
@@ -76,7 +76,7 @@ export default {
   },
 };
 
-type Story = ComponentStoryObj<typeof Alert>;
+type Story = StoryObj<typeof Alert>;
 
 export const Success: Story = {
   args: {

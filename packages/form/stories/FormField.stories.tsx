@@ -1,4 +1,4 @@
-import type { ComponentStoryObj } from '@storybook/react';
+import type { StoryObj } from '@storybook/react';
 
 import { FormField, TextField } from '../src';
 
@@ -52,7 +52,7 @@ export default {
   },
 };
 
-type Story = ComponentStoryObj<typeof FormField>;
+type Story = StoryObj<typeof FormField>;
 
 export const Default: Story = {
   args: {

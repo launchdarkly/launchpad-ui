@@ -1,5 +1,5 @@
 import type { NavigationItemProps } from '../src';
-import type { ComponentStoryObj, StoryFn } from '@storybook/react';
+import type { StoryObj, StoryFn } from '@storybook/react';
 
 import { MemoryRouter } from 'react-router-dom';
 
@@ -36,7 +36,7 @@ export default {
   ],
 };
 
-type Story = ComponentStoryObj<typeof Navigation<NavigationItemProps>>;
+type Story = StoryObj<typeof Navigation<NavigationItemProps>>;
 
 export const Primary: Story = {
   args: {

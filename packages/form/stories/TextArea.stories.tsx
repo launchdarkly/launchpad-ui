@@ -1,4 +1,4 @@
-import type { ComponentStoryObj, DecoratorFn, StoryFn } from '@storybook/react';
+import type { StoryObj, DecoratorFn, StoryFn } from '@storybook/react';
 
 import { createWithClassesDecorator, PseudoClasses } from '../../../.storybook/utils';
 import { Label, TextArea } from '../src';
@@ -89,7 +89,7 @@ export default {
   },
 };
 
-type Story = ComponentStoryObj<typeof TextArea>;
+type Story = StoryObj<typeof TextArea>;
 
 export const Example: Story = {
   render: ({ id = '', ...args }) => {

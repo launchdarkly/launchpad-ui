@@ -1,4 +1,4 @@
-import type { ComponentStoryObj, StoryFn } from '@storybook/react';
+import type { StoryObj, StoryFn } from '@storybook/react';
 
 import { Slider } from '../src';
 
@@ -25,7 +25,7 @@ export default {
   ],
 };
 
-type Story = ComponentStoryObj<typeof Slider>;
+type Story = StoryObj<typeof Slider>;
 
 export const Example: Story = {
   args: {

@@ -1,4 +1,4 @@
-import type { ComponentStoryObj } from '@storybook/react';
+import type { StoryObj } from '@storybook/react';
 
 import { CollapsibleAlert } from '../src';
 
@@ -30,7 +30,7 @@ export default {
   },
 };
 
-type Story = ComponentStoryObj<typeof CollapsibleAlert>;
+type Story = StoryObj<typeof CollapsibleAlert>;
 
 export const Collapsible: Story = {
   args: {

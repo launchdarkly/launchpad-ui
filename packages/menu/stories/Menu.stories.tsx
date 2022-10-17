@@ -1,4 +1,4 @@
-import type { ComponentStoryObj } from '@storybook/react';
+import type { StoryObj } from '@storybook/react';
 
 import { userEvent } from '@storybook/testing-library';
 
@@ -16,7 +16,7 @@ export default {
   },
 };
 
-type Story = ComponentStoryObj<typeof Menu>;
+type Story = StoryObj<typeof Menu>;
 
 export const Example: Story = {
   args: {

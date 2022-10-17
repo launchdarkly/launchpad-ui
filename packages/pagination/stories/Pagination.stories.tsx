@@ -1,4 +1,4 @@
-import type { ComponentStoryObj } from '@storybook/react';
+import type { StoryObj } from '@storybook/react';
 
 import { Pagination } from '../src';
 
@@ -13,7 +13,7 @@ export default {
   },
 };
 
-type Story = ComponentStoryObj<typeof Pagination>;
+type Story = StoryObj<typeof Pagination>;
 
 export const Example: Story = {
   args: {
