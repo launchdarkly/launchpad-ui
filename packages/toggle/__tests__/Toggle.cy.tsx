@@ -1,10 +1,12 @@
 import { toggleDarkMode } from '../../../cypress/utils/dark-mode';
 import { Toggle } from '../src';
 
+const TOGGLE = '[data-test-id="toggle"]';
+
 describe('Toggle', () => {
   it('renders', () => {
     cy.mount(<Toggle />);
-    cy.get('[data-test-id="toggle"]').should('be.visible');
+    cy.get(TOGGLE).should('be.visible');
   });
 
   it('is accessible', () => {
@@ -20,29 +22,23 @@ describe('Toggle', () => {
   it('can be reached with the keyboard', () => {
     cy.mount(<Toggle />);
 
-    const toggle = cy.get('[data-test-id="toggle"]');
-
-    toggle.focus();
-    toggle.type(' ');
-    toggle.should('be.checked');
+    cy.get(TOGGLE).focus();
+    cy.get(TOGGLE).type(' ');
+    cy.get(TOGGLE).should('be.checked');
   });
 
   it('renders an unchecked Toggle', () => {
     cy.mount(<Toggle />);
 
-    const toggle = cy.get('[data-test-id="toggle"]');
-
-    toggle.should('not.be.checked');
-    toggle.should('have.attr', 'aria-checked', 'false');
+    cy.get(TOGGLE).should('not.be.checked');
+    cy.get(TOGGLE).should('have.attr', 'aria-checked', 'false');
   });
 
   it('renders a checked Toggle', () => {
     cy.mount(<Toggle />);
 
-    const toggle = cy.get('[data-test-id="toggle"]');
-
-    toggle.click({ force: true });
-    toggle.should('be.checked');
+    cy.get(TOGGLE).click({ force: true });
+    cy.get(TOGGLE).should('be.checked');
   });
 
   it('renders a Toggle with an aria-label', () => {
@@ -65,7 +61,7 @@ describe('Toggle', () => {
       </div>
     );
 
-    cy.get('[data-test-id="toggle"]').should('have.attr', 'aria-labelledby', 'CatsId');
+    cy.get(TOGGLE).should('have.attr', 'aria-labelledby', 'CatsId');
   });
 
   it('renders a disabled Toggle', () => {
@@ -74,7 +70,7 @@ describe('Toggle', () => {
     };
     cy.mount(<Toggle {...toggleProps} />);
 
-    cy.get('[data-test-id="toggle"]').should('be.disabled');
+    cy.get(TOGGLE).should('be.disabled');
   });
 
   it('renders a Toggle with custom toggleText', () => {
@@ -93,7 +89,7 @@ describe('Toggle', () => {
     const onChangeSpy = cy.spy().as('onChangeSpy');
     cy.mount(<Toggle onChange={onChangeSpy} />);
 
-    cy.get('[data-test-id="toggle"]').click({ force: true });
+    cy.get(TOGGLE).click({ force: true });
     cy.get('@onChangeSpy').should('have.been.calledOnce');
   });
 

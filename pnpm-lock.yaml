@@ -61,6 +61,7 @@ importers:
       deepmerge: ^4.2.2
       eslint: ^8.25.0
       eslint-config-prettier: ^8.5.0
+      eslint-plugin-cypress: ^2.12.1
       eslint-plugin-functional: ^4.4.0
       eslint-plugin-import: ^2.26.0
       eslint-plugin-jsx-a11y: ^6.6.0
@@ -148,6 +149,7 @@ importers:
       deepmerge: 4.2.2
       eslint: 8.25.0
       eslint-config-prettier: 8.5.0_eslint@8.25.0
+      eslint-plugin-cypress: 2.12.1_eslint@8.25.0
       eslint-plugin-functional: 4.4.0_z4bbprzjrhnsfa24uvmcbu7f5q
       eslint-plugin-import: 2.26.0_zb5prbqp7qzcgafjm73dfpyyvm
       eslint-plugin-jsx-a11y: 6.6.1_eslint@8.25.0
@@ -9698,6 +9700,15 @@ packages:
       eslint-import-resolver-typescript: 3.5.1_fyln4uq2tv75svthy6prqvt6lm
     transitivePeerDependencies:
       - supports-color
+    dev: true
+
+  /eslint-plugin-cypress/2.12.1_eslint@8.25.0:
+    resolution: {integrity: sha512-c2W/uPADl5kospNDihgiLc7n87t5XhUbFDoTl6CfVkmG+kDAb5Ux10V9PoLPu9N+r7znpc+iQlcmAqT1A/89HA==}
+    peerDependencies:
+      eslint: '>= 3.2.1'
+    dependencies:
+      eslint: 8.25.0
+      globals: 11.12.0
     dev: true
 
   /eslint-plugin-es/3.0.1_eslint@8.25.0:

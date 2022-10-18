@@ -5,6 +5,8 @@ import { Item } from '@react-stately/collections';
 
 import { TabList } from '../src';
 
+const TABS = '[role="tab"]';
+
 const createComponent = (props?: Partial<TabListProps<string>>) => (
   <TabList {...props}>
     <Item key="1" title="First Tab">
@@ -30,38 +32,34 @@ describe('TabList', () => {
   it('can be reached with the keyboard', () => {
     cy.mount(createComponent());
 
-    const tabs = cy.get('[role="tab"]');
-    const tabpanels = cy.get('[role="tabpanel"]');
+    cy.get(TABS).first().focus();
+    cy.get(TABS).first().should('have.focus');
 
-    tabs.first().focus();
-    tabs.first().should('have.focus');
     cy.realPress('Tab');
-    tabpanels.first().should('have.focus');
+    cy.get('[role="tabpanel"]').first().should('have.focus');
   });
 
   it('can cycle through tabs with keyboard', () => {
     cy.mount(createComponent());
 
-    cy.get('[role="tab"]').first().focus();
+    cy.get(TABS).first().focus();
 
-    cy.get('[role="tab"]').first().should('have.focus');
+    cy.get(TABS).first().should('have.focus');
     cy.realPress('ArrowRight');
-    cy.get('[role="tab"]').eq(1).should('have.focus');
+    cy.get(TABS).eq(1).should('have.focus');
     cy.realPress('ArrowRight');
-    cy.get('[role="tab"]').first().should('have.focus');
+    cy.get(TABS).first().should('have.focus');
     cy.realPress('ArrowLeft');
-    cy.get('[role="tab"]').eq(1).should('have.focus');
+    cy.get(TABS).eq(1).should('have.focus');
     cy.realPress('ArrowLeft');
-    cy.get('[role="tab"]').first().should('have.focus');
+    cy.get(TABS).first().should('have.focus');
   });
 
   it('renders a default selected Tab', () => {
     cy.mount(createComponent({ activeTab: '2' }));
 
-    const activeTab = cy.contains('Another tab');
-
-    activeTab.should('be.visible');
-    activeTab.should('have.attr', 'aria-selected', 'true');
+    cy.contains('Another tab').should('be.visible');
+    cy.contains('Another tab').should('have.attr', 'aria-selected', 'true');
   });
 
   it('renders a disabled Tab', () => {
@@ -81,8 +79,8 @@ describe('TabList', () => {
         </Item>
       </TabList>
     );
-    cy.get('[role="tab"]').eq(2).should('have.attr', 'aria-disabled', 'true');
-    cy.get('[role="tab"]').eq(3).should('have.attr', 'aria-disabled', 'true');
+    cy.get(TABS).eq(2).should('have.attr', 'aria-disabled', 'true');
+    cy.get(TABS).eq(3).should('have.attr', 'aria-disabled', 'true');
   });
 
   it('renders with focusable content', () => {
@@ -103,9 +101,9 @@ describe('TabList', () => {
       </TabList>
     );
 
-    cy.get('[role="tab"]').first().focus();
+    cy.get(TABS).first().focus();
 
-    cy.get('[role="tab"]').first().should('have.focus');
+    cy.get(TABS).first().should('have.focus');
     cy.realPress('Tab');
     cy.contains('Click me once').should('have.focus');
   });
