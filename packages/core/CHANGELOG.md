@@ -1,5 +1,44 @@
 # @launchpad-ui/core
 
+## 0.16.10
+
+### Patch Changes
+
+- [#499](https://github.com/launchdarkly/launchpad-ui/pull/499) [`a1d141d`](https://github.com/launchdarkly/launchpad-ui/commit/a1d141d98a77c134c6a0b2ef403d1c443e114425) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Form] Update FormGroup component to use `fieldset` tag instead of `div`
+
+- Updated dependencies [[`a1d141d`](https://github.com/launchdarkly/launchpad-ui/commit/a1d141d98a77c134c6a0b2ef403d1c443e114425)]:
+  - @launchpad-ui/form@0.6.10
+  - @launchpad-ui/menu@0.6.17
+  - @launchpad-ui/filter@0.4.17
+  - @launchpad-ui/navigation@0.6.19
+
+## 0.16.9
+
+### Patch Changes
+
+- [#486](https://github.com/launchdarkly/launchpad-ui/pull/486) [`8304805`](https://github.com/launchdarkly/launchpad-ui/commit/83048054c958a55730a5bb29f2ab76216c84b83a) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Navigation] Revert bug causing flash of collapsed state in Navigation
+
+- [#487](https://github.com/launchdarkly/launchpad-ui/pull/487) [`a91ee06`](https://github.com/launchdarkly/launchpad-ui/commit/a91ee069ebef5260d15e1dea1defd142f1b462de) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Button] Add better support from dropdowns and icons in ButtonGroup
+
+- Updated dependencies [[`8304805`](https://github.com/launchdarkly/launchpad-ui/commit/83048054c958a55730a5bb29f2ab76216c84b83a), [`a91ee06`](https://github.com/launchdarkly/launchpad-ui/commit/a91ee069ebef5260d15e1dea1defd142f1b462de)]:
+  - @launchpad-ui/navigation@0.6.18
+  - @launchpad-ui/button@0.7.3
+  - @launchpad-ui/alert@0.6.4
+  - @launchpad-ui/banner@0.7.4
+  - @launchpad-ui/dropdown@0.5.11
+  - @launchpad-ui/filter@0.4.16
+  - @launchpad-ui/modal@0.8.11
+  - @launchpad-ui/notification@0.5.12
+  - @launchpad-ui/pagination@0.3.9
+  - @launchpad-ui/snackbar@0.2.5
+  - @launchpad-ui/split-button@0.6.12
+  - @launchpad-ui/overlay@0.3.18
+  - @launchpad-ui/popover@0.8.11
+  - @launchpad-ui/menu@0.6.16
+  - @launchpad-ui/progress-bubbles@0.5.12
+  - @launchpad-ui/tooltip@0.6.12
+  - @launchpad-ui/clipboard@0.8.12
+
 ## 0.16.8
 
 ### Patch Changes

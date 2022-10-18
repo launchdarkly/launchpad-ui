@@ -1,5 +1,24 @@
 # @launchpad-ui/navigation
 
+## 0.6.19
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @launchpad-ui/menu@0.6.17
+
+## 0.6.18
+
+### Patch Changes
+
+- [#486](https://github.com/launchdarkly/launchpad-ui/pull/486) [`8304805`](https://github.com/launchdarkly/launchpad-ui/commit/83048054c958a55730a5bb29f2ab76216c84b83a) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Navigation] Revert bug causing flash of collapsed state in Navigation
+
+- Updated dependencies []:
+  - @launchpad-ui/dropdown@0.5.11
+  - @launchpad-ui/popover@0.8.11
+  - @launchpad-ui/menu@0.6.16
+  - @launchpad-ui/tooltip@0.6.12
+
 ## 0.6.17
 
 ### Patch Changes

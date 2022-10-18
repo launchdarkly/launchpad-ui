@@ -1,4 +1,4 @@
-import type { ComponentStoryObj } from '@storybook/react';
+import type { StoryObj } from '@storybook/react';
 
 import { Radio } from '../src';
 
@@ -13,7 +13,7 @@ export default {
   },
 };
 
-type Story = ComponentStoryObj<typeof Radio>;
+type Story = StoryObj<typeof Radio>;
 
 export const Default: Story = {
   args: {

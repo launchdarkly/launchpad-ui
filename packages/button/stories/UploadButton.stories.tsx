@@ -1,4 +1,4 @@
-import type { ComponentStoryObj } from '@storybook/react';
+import type { StoryObj } from '@storybook/react';
 
 import { UploadButton } from '../src';
 
@@ -40,7 +40,7 @@ export default {
   },
 };
 
-type Story = ComponentStoryObj<typeof UploadButton>;
+type Story = StoryObj<typeof UploadButton>;
 
 export const Default: Story = {
   args: {

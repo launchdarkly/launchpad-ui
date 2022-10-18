@@ -1,5 +1,5 @@
 import type { SplitButtonProps } from '../src';
-import type { ComponentStoryObj, DecoratorFn } from '@storybook/react';
+import type { StoryObj, DecoratorFn } from '@storybook/react';
 import type { ReactElement } from 'react';
 
 import { Person } from '@launchpad-ui/icons';
@@ -213,7 +213,7 @@ export default {
   decorators: [splitButtonTemplateWithStates],
 };
 
-type Story = ComponentStoryObj<typeof SplitButtonExample>;
+type Story = StoryObj<typeof SplitButtonExample>;
 
 const SplitButtonArgs = {
   onSelect: () => undefined,

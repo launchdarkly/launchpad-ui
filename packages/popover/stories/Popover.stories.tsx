@@ -1,4 +1,4 @@
-import type { ComponentStoryObj, StoryFn } from '@storybook/react';
+import type { StoryObj, StoryFn } from '@storybook/react';
 
 import { Button } from '@launchpad-ui/button';
 import { userEvent, within } from '@storybook/testing-library';
@@ -64,7 +64,7 @@ export default {
   ],
 };
 
-type Story = ComponentStoryObj<typeof Popover>;
+type Story = StoryObj<typeof Popover>;
 
 export const Default: Story = {
   args: {
