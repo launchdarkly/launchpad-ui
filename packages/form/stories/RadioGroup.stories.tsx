@@ -5,7 +5,7 @@ import { RadioGroup, Radio, Label } from '../src';
 export default {
   component: RadioGroup,
   title: 'Components/Form/RadioGroup',
-  description: 'A radio button group allows the user to select one of a set of options."',
+  description: 'A radio button group allows the user to select one of a set of options.',
   parameters: {
     status: {
       type: import.meta.env.PACKAGE_STATUS__FORM,
