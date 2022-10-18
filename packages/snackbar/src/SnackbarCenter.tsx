@@ -13,9 +13,8 @@ const loadFeatures = () =>
     'framer-motion'
   ).then((res) => res.domAnimation);
 
-type SnackbarRecord = Omit<SnackbarBaseProps, 'onDismiss'> & {
+type SnackbarRecord = SnackbarBaseProps & {
   _id: string;
-  onDismiss?: () => void;
 };
 
 type SnackbarCenterProps = {
