@@ -1,5 +1,11 @@
 # @launchpad-ui/form
 
+## 0.6.10
+
+### Patch Changes
+
+- [#499](https://github.com/launchdarkly/launchpad-ui/pull/499) [`a1d141d`](https://github.com/launchdarkly/launchpad-ui/commit/a1d141d98a77c134c6a0b2ef403d1c443e114425) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Form] Update FormGroup component to use `fieldset` tag instead of `div`
+
 ## 0.6.9
 
 ### Patch Changes
