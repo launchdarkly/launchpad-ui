@@ -4,7 +4,7 @@ import { cx } from 'classix';
 
 import styles from './styles/Form.module.css';
 
-type FormGroupProps = HTMLAttributes<HTMLDivElement> & {
+type FormGroupProps = HTMLAttributes<HTMLFieldSetElement> & {
   name?: string | string[];
   ignoreValidation?: boolean;
   isInvalid?: boolean;
@@ -29,9 +29,9 @@ const FormGroup = (props: FormGroupProps) => {
   );
 
   return (
-    <div className={classes} data-test-id={testId} {...rest}>
+    <fieldset className={classes} data-test-id={testId} {...rest}>
       {children}
-    </div>
+    </fieldset>
   );
 };
 
