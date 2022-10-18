@@ -1,3 +1,5 @@
+/// <reference types="cypress-real-events" />
+
 import type { mount } from 'cypress/react18';
 
 declare global {

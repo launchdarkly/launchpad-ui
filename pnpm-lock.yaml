@@ -57,6 +57,7 @@ importers:
       concurrently: ^7.4.0
       cypress: ^10.10.0
       cypress-axe: ^1.0.0
+      cypress-real-events: ^1.7.2
       deepmerge: ^4.2.2
       eslint: ^8.25.0
       eslint-config-prettier: ^8.5.0
@@ -143,6 +144,7 @@ importers:
       concurrently: 7.4.0
       cypress: 10.10.0
       cypress-axe: 1.0.0_btarotj7k2qevumejrb6qne75m
+      cypress-real-events: 1.7.2_cypress@10.10.0
       deepmerge: 4.2.2
       eslint: 8.25.0
       eslint-config-prettier: 8.5.0_eslint@8.25.0
@@ -8238,6 +8240,14 @@ packages:
       cypress: ^10
     dependencies:
       axe-core: 4.4.3
+      cypress: 10.10.0
+    dev: true
+
+  /cypress-real-events/1.7.2_cypress@10.10.0:
+    resolution: {integrity: sha512-tOANHbFRlqVL5Lu8OozvxTsrYgHwCnWmXAULGc1kdBF+k1gxrrvT/42uez3AhGoT+HcytyxieXAVt0jNP4yrvA==}
+    peerDependencies:
+      cypress: ^4.x || ^5.x || ^6.x || ^7.x || ^8.x || ^9.x || ^10.x
+    dependencies:
       cypress: 10.10.0
     dev: true
 

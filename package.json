@@ -88,6 +88,7 @@
     "concurrently": "^7.4.0",
     "cypress": "^10.10.0",
     "cypress-axe": "^1.0.0",
+    "cypress-real-events": "^1.7.2",
     "deepmerge": "^4.2.2",
     "eslint": "^8.25.0",
     "eslint-config-prettier": "^8.5.0",
