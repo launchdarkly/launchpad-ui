@@ -21,11 +21,16 @@ type SnackbarRecord = Omit<SnackbarBaseProps, 'onDismiss'> & {
 type SnackbarCenterProps = {
   className?: string;
   snackbars: SnackbarRecord[];
-  onDismiss(snackbarId: string): void;
+  dismissSnackbar(snackbarId: string): void;
 };
 
-const SnackbarCenter = ({ snackbars, onDismiss, className }: SnackbarCenterProps) => {
+const SnackbarCenter = ({ snackbars, dismissSnackbar, className }: SnackbarCenterProps) => {
   const classes = cx('SnackbarCenter', styles.SnackbarCenter, className);
+
+  const handleDismiss = (item: SnackbarRecord) => {
+    item.onDismiss?.();
+    dismissSnackbar(item._id);
+  };
 
   return (
     <LazyMotion strict features={loadFeatures}>
@@ -45,10 +50,7 @@ const SnackbarCenter = ({ snackbars, onDismiss, className }: SnackbarCenterProps
                 description={item.description}
                 header={item.header}
                 cta={item.cta}
-                onDismiss={() => {
-                  item.onDismiss?.();
-                  onDismiss(item._id);
-                }}
+                onDismiss={() => handleDismiss(item)}
               />
             </m.div>
           ))}
