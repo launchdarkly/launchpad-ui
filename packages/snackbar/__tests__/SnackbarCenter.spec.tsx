@@ -25,7 +25,7 @@ describe('SnackbarCenter', () => {
     expect(items).toHaveLength(2);
   });
 
-  it.only('fires Snackbar onDimiss', async () => {
+  it('fires Snackbar onDimiss', async () => {
     const spy = vi.fn();
     const user = userEvent.setup();
     snackbars[0].onDismiss = spy;
