@@ -11,7 +11,7 @@ describe('ProgressBubbles', () => {
         bubbleLabels={['Step 1', 'Step 2', 'Step 3']}
       />
     );
-    cy.get('[data-test-id="progress-bubbles"]').should('be.visible');
+    cy.getByTestId('progress-bubbles').should('be.visible');
   });
 
   it('is accessible', () => {

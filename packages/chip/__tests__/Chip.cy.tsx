@@ -3,7 +3,7 @@ import { Chip } from '../src';
 describe('Chip', () => {
   it('renders', () => {
     cy.mount(<Chip>Chip</Chip>);
-    cy.get('[data-test-id="chip"]').should('be.visible');
+    cy.getByTestId('chip').should('be.visible');
   });
 
   it('is accessible', () => {
@@ -19,7 +19,7 @@ describe('Chip', () => {
       </Chip>
     );
 
-    cy.get('[data-test-id="chip"]').click();
+    cy.getByTestId('chip').click();
     cy.get('@onClickSpy').should('have.been.calledOnce');
   });
 });

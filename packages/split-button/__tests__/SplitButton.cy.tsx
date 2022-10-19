@@ -24,7 +24,7 @@ const createComponent = (props?: SplitButtonProps) => (
 describe('SplitButton', () => {
   it('renders', () => {
     cy.mount(createComponent());
-    cy.get('[data-test-id="split-button"]').should('be.visible');
+    cy.getByTestId('split-button').should('be.visible');
   });
 
   it('is accessible', () => {

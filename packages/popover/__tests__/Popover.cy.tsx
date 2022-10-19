@@ -1,5 +1,7 @@
 import { Popover } from '../src';
 
+const POPOVER = 'popover';
+
 describe('Popover', () => {
   it('renders', () => {
     cy.mount(
@@ -9,7 +11,7 @@ describe('Popover', () => {
       </Popover>
     );
     cy.get('button').click();
-    cy.get('[data-test-id="popover"]').should('be.visible');
+    cy.getByTestId(POPOVER).should('be.visible');
   });
 
   it('is accessible', () => {
@@ -31,7 +33,7 @@ describe('Popover', () => {
     );
 
     cy.get('button').click();
-    cy.get('[data-test-id="popover"]').should('be.visible');
+    cy.getByTestId(POPOVER).should('be.visible');
   });
 
   it('does not open when content is empty string', () => {
@@ -42,7 +44,7 @@ describe('Popover', () => {
     );
 
     cy.get('button').click();
-    cy.get('[data-test-id="popover"]').should('not.exist');
+    cy.getByTestId(POPOVER).should('not.exist');
   });
 
   it('opens and closes on mouse hover/unhover of the target', () => {
@@ -54,10 +56,10 @@ describe('Popover', () => {
     );
 
     cy.get('button').trigger('mouseover');
-    cy.get('[data-test-id="popover"]').should('be.visible');
+    cy.getByTestId(POPOVER).should('be.visible');
 
     cy.get('button').trigger('mouseout');
-    cy.get('[data-test-id="popover"]').should('not.exist');
+    cy.getByTestId(POPOVER).should('not.exist');
   });
 
   it('opens and closes on mouse focus/blur of the target', () => {
@@ -69,10 +71,10 @@ describe('Popover', () => {
     );
 
     cy.get('button').focus();
-    cy.get('[data-test-id="popover"]').should('be.visible');
+    cy.getByTestId(POPOVER).should('be.visible');
 
     cy.get('button').blur();
-    cy.get('[data-test-id="popover"]').should('not.exist');
+    cy.getByTestId(POPOVER).should('not.exist');
   });
 
   it('closes when the Escape key is pressed', () => {
@@ -85,7 +87,7 @@ describe('Popover', () => {
 
     cy.get('button').trigger('mouseenter');
     cy.get('button').type('{esc}');
-    cy.get('[data-test-id="popover"]').should('not.exist');
+    cy.getByTestId(POPOVER).should('not.exist');
   });
 
   it('updates to fixed position in a modal', () => {
@@ -99,7 +101,7 @@ describe('Popover', () => {
     );
 
     cy.get('button').click();
-    cy.get('[data-test-id="popover"]').should('have.css', 'position', 'fixed');
+    cy.getByTestId(POPOVER).should('have.css', 'position', 'fixed');
   });
 
   it('calls onClose when closed', () => {

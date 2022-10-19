@@ -11,7 +11,7 @@ describe('Modal', () => {
         </Modal>
       </Prompt>
     );
-    cy.get('[data-test-id="modal"]').should('be.visible');
+    cy.getByTestId('modal').should('be.visible');
   });
 
   it('is accessible', () => {
@@ -35,7 +35,7 @@ describe('Modal', () => {
         </section>
       </ModalSheet>
     );
-    cy.get('[role="dialog"]').should('be.visible');
+    cy.get('[role="dialog').should('be.visible');
   });
 
   it('calls onCancel when escape key is pressed', () => {
@@ -50,7 +50,7 @@ describe('Modal', () => {
       </Prompt>
     );
 
-    cy.get('[data-test-id="modal"]').type('{esc}');
+    cy.getByTestId('modal').type('{esc}');
 
     cy.get('@onCancelSpy').should('have.been.calledOnce');
   });

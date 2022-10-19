@@ -3,7 +3,7 @@ import { CollapsibleAlert } from '../src';
 describe('CollapsibleAlert', () => {
   it('renders', () => {
     cy.mount(<CollapsibleAlert message="A test message." kind="warning" />);
-    cy.get('[data-test-id="collapsible-alert"]').should('be.visible');
+    cy.getByTestId('collapsible-alert').should('be.visible');
   });
 
   it('is accessible', () => {

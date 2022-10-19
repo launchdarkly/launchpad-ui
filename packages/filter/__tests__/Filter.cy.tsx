@@ -60,7 +60,7 @@ describe('Filter', () => {
     cy.get(MENU_ITEM).first().click();
     cy.get(FILTER_BUTTON).should('have.text', 'author:one');
 
-    cy.get('[data-test-id="clear-filter-button"]').click();
+    cy.getByTestId('clear-filter-button').click();
     cy.get(FILTER_BUTTON).should('have.text', 'author:osmo');
   });
 });
