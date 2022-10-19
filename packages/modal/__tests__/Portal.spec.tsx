@@ -1,11 +1,11 @@
 import { it, expect, describe } from 'vitest';
 
-import { render } from '../../../test/utils';
+import { render, screen } from '../../../test/utils';
 import { Portal } from '../src';
 
 describe('Portal', () => {
   it('renders', () => {
     render(<Portal />);
-    expect(document.querySelector('.Portal')).not.toBeNull();
+    expect(screen.getByTestId('portal')).toBeVisible();
   });
 });

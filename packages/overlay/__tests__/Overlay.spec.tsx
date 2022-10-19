@@ -6,7 +6,7 @@ import { Overlay } from '../src';
 describe('Overlay', () => {
   it('renders', () => {
     render(<Overlay isOpen onClose={() => undefined} />);
-    expect(document.querySelector('.Portal')).not.toBeNull();
+    expect(screen.getByTestId('portal')).toBeVisible();
   });
 
   it('renders children when open', () => {
