@@ -24,7 +24,7 @@ type SnackbarCenterProps = {
 };
 
 const SnackbarCenter = ({ snackbars, onDismiss, className }: SnackbarCenterProps) => {
-  const classes = cx('SnackbarCenter', styles.SnackbarCenter, className);
+  const classes = cx(styles.SnackbarCenter, className);
 
   return (
     <LazyMotion strict features={loadFeatures}>

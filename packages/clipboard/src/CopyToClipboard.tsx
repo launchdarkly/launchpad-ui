@@ -58,7 +58,7 @@ const CopyToClipboard = forwardRef<CopyToClipboardHandleRef, CopyToClipboardProp
     const [wasCopied, setWasCopied] = useState(false);
     const triggerRef = useRef<HTMLButtonElement>(null);
 
-    const classes = cx('CopyToClipboard', styles.CopyToClipboard, className);
+    const classes = cx(styles.CopyToClipboard, className);
 
     const handleCopy = useCallback(async () => {
       await navigator.clipboard.writeText(text);

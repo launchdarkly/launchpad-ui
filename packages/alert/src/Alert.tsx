@@ -72,7 +72,7 @@ const Alert = ({
 }: AlertProps) => {
   const [dismissed, setDismissed] = useState(false);
 
-  const defaultClasses = `Alert ${styles.Alert} ${styles[`Alert--${kind}`]}`;
+  const defaultClasses = `${styles.Alert} ${styles[`Alert--${kind}`]}`;
   const sizeClass = size === 'small' && styles[`Alert--${size}`];
   const classes = cx(
     defaultClasses,

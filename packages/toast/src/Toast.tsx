@@ -27,12 +27,13 @@ const Toast = ({
     setTimeout(() => {
       onDismiss();
     }, 6000);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
     <div
       {...rest}
-      className={cx('Toast', styles.Toast, styles[`Toast--${kind}`], className)}
+      className={cx(styles.Toast, styles[`Toast--${kind}`], className)}
       data-test-id={testId}
       role="status"
     >

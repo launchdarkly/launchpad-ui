@@ -22,7 +22,7 @@
   }
 }
 
-:global(.Banner).Banner {
+.Banner {
   background: var(--Banner-color-background);
   display: flex;
   padding: 1.4rem 1.8rem;
