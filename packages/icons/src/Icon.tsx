@@ -22,7 +22,7 @@ const Icon = ({
   ...props
 }: IconProps) => {
   const sizeClass = size ? styles[size] : false;
-  const classes = cx(styles.icon, sizeClass, subtle && styles.subtle, `Icon--${name}`, className);
+  const classes = cx(styles.icon, sizeClass, subtle && styles.subtle, `icon-${name}`, className);
 
   const svgRef = useRef<SVGElement>(null);
   const prefix = `svg-${useId()}`;
