@@ -11,7 +11,7 @@ type PromptProps = {
 };
 
 const Prompt = ({ className, children }: PromptProps) => {
-  return <Portal className={cx(styles.Prompt, className)}>{children}</Portal>;
+  return <Portal className={cx(styles.prompt, className)}>{children}</Portal>;
 };
 
 export { Prompt };

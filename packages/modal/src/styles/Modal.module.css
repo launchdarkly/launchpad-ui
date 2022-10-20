@@ -14,7 +14,7 @@
   overflow: hidden;
 }
 
-.Modal {
+.modal {
   z-index: 10000;
   position: fixed;
   top: 0;
@@ -24,7 +24,7 @@
   transform: translateZ(0);
 }
 
-.Modal-overlay {
+.modalOverlay {
   position: fixed;
   top: 0;
   right: 0;
@@ -33,12 +33,12 @@
   background-color: hsl(0 0% 20% / 0.5);
 }
 
-.Modal-content {
+.modalContent {
   background-color: var(--color-background);
   position: relative;
 }
 
-.ModalSheet .Modal-content {
+.modalSheet .modalContent {
   position: absolute;
   top: 0;
   bottom: 0;
@@ -52,89 +52,88 @@
 /* On mobile, all modal sheets will cover the entire viewport. Above that, you may customize
 as needed. */
 @media (--tablet) {
-  .ModalSheet--small .Modal-content {
+  .small .modalContent {
     width: 45rem;
   }
 
-  .ModalSheet--medium .Modal-content {
+  .medium .modalContent {
     width: 65rem;
   }
 
-  .ModalSheet--large .Modal-content {
+  .large .modalContent {
     width: 80rem;
   }
 
-  /* stylelint-disable-next-line selector-class-pattern */
-  .ModalSheet--x-large .Modal-content {
+  .xLarge .modalContent {
     width: 120rem;
   }
 
-  .ModalSheet--full .Modal-content {
+  .full .modalContent {
     width: 100%;
     max-width: unset;
   }
 }
 
-.ModalSheet .Modal-content :global(.Subhead) :global(h1) {
+.modalSheet .modalContent :global(.Subhead) h1 {
   display: flex;
   align-items: center;
   text-overflow: ellipsis;
   overflow: hidden;
 }
 
-.ModalSheet .Modal-content :global(section) {
+.modalSheet .modalContent section {
   padding: 3.2rem var(--page-gutter-width);
 }
 
-.ModalSheet .Modal-content :global(section) + :global(section) {
+.modalSheet .modalContent section + section {
   border-top: 1px dotted var(--color-gray-100);
 }
 
-.ModalSheet .Modal-close {
+.modalSheet .modalClose {
   position: absolute;
   right: 1rem;
   top: 1rem;
 }
 
-.Prompt .Modal {
+.prompt .modal {
   z-index: 10002;
 }
 
-.Prompt .Modal-overlay {
+.prompt .modalOverlay {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.Prompt .Modal-content {
+.prompt .modalContent {
   border: 1px solid var(--color-gray-100);
   border-radius: var(--border-radius);
   box-shadow: 0 0 6px var(--color-gray-700);
 }
 
-.Prompt .Modal-header {
+.prompt .modalHeader {
   font-size: var(--osmo-font-size-large);
   font-weight: var(--font-weight-semibold);
   padding: 2rem 4.4rem 1rem 2rem;
 }
 
-.Prompt .Modal-title {
+.prompt .modalTitle {
   display: block;
 }
 
-.Prompt .Modal-body {
+.prompt .modalBody {
   font-size: 1.5rem;
   line-height: 24px;
   padding: 0 2rem 2rem;
   color: var(--color-text);
 }
 
-.Prompt .Modal-footer {
+.prompt .modalFooter {
   text-align: right;
   padding: 1rem 2rem 2rem;
 }
 
-.Prompt .Modal-close {
+.prompt .modalClose {
   position: absolute;
   right: 1rem;
   top: 1rem;

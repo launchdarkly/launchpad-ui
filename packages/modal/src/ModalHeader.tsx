@@ -21,14 +21,14 @@ const ModalHeader = ({
   titleClassName,
   ...rest
 }: ModalHeaderProps) => {
-  const classes = cx(styles['Modal-header'], className);
+  const classes = cx(styles.modalHeader, className);
 
   return (
     <div {...rest} className={classes}>
-      <h2 id={titleID || 'Modal-title'} className={cx(styles['Modal-title'], titleClassName)}>
+      <h2 id={titleID || 'Modal-title'} className={cx(styles.modalTitle, titleClassName)}>
         {children}
       </h2>
-      {closeable && <Close className={styles['Modal-close']} onClick={onClose} size="tiny" />}
+      {closeable && <Close className={styles.modalClose} onClick={onClose} size="tiny" />}
     </div>
   );
 };

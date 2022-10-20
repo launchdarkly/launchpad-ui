@@ -7,7 +7,7 @@ import styles from './styles/Modal.module.css';
 type ModalBodyProps = HTMLAttributes<HTMLDivElement>;
 
 const ModalBody = ({ className, children, ...rest }: ModalBodyProps) => {
-  const classes = cx(styles['Modal-body'], className);
+  const classes = cx(styles.modalBody, className);
 
   return (
     <div {...rest} className={classes}>

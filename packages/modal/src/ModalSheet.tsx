@@ -11,7 +11,7 @@ import styles from './styles/Modal.module.css';
 type ModalSheetProps = {
   className?: string;
   onCancel?(): void;
-  size?: 'small' | 'medium' | 'large' | 'x-large' | 'full';
+  size?: 'small' | 'medium' | 'large' | 'xLarge' | 'full';
   withCloseButton?: boolean;
   children: ReactNode;
 };
@@ -22,7 +22,7 @@ const ModalSheet = ({
   withCloseButton = true,
   ...props
 }: ModalSheetProps) => {
-  const classes = cx(styles.ModalSheet, styles[`ModalSheet--${size}`]);
+  const classes = cx(styles.modalSheet, styles[`${size}`]);
 
   return (
     <Portal className={classes}>

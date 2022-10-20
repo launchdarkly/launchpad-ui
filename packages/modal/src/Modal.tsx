@@ -94,7 +94,7 @@ const Modal = ({
     }
   };
 
-  const modalClasses = cx(styles.Modal, className);
+  const modalClasses = cx(styles.modal, className);
 
   return (
     <LazyMotion strict features={loadFeatures}>
@@ -105,7 +105,7 @@ const Modal = ({
           variants={overlay}
           transition={{ duration: 0.15 }}
           role="presentation"
-          className={styles['Modal-overlay']}
+          className={styles.modalOverlay}
           onMouseDown={handleOverlayClick}
         >
           <FocusTrap autoFocus restoreFocus>
@@ -116,14 +116,14 @@ const Modal = ({
               role="dialog"
               aria-labelledby={modalLabelID}
               aria-modal
-              className={styles['Modal-content']}
+              className={styles.modalContent}
               tabIndex={-1}
             >
               {withCloseButton && (
                 <IconButton
                   aria-label="close"
                   icon={<Close size="medium" />}
-                  className={styles['Modal-close']}
+                  className={styles.modalClose}
                   onClick={onCancel}
                   data-test-id="Modal-close"
                 />
