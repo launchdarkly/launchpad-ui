@@ -1,4 +1,4 @@
-import type { ComponentStoryObj } from '@storybook/react';
+import type { StoryObj } from '@storybook/react';
 
 import { Snackbar } from '../src';
 
@@ -13,12 +13,12 @@ export default {
   },
 };
 
-type Story = ComponentStoryObj<typeof Snackbar>;
+type Story = StoryObj<typeof Snackbar>;
 
 export const Error: Story = {
   args: {
     kind: 'error',
-    title: 'Snackbar title',
+    header: 'Snackbar header',
     description: 'This is a message about an app process.',
     cta: <a href="/">Please try again</a>,
   },

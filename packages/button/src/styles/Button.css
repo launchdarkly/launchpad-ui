@@ -22,6 +22,7 @@
   cursor: default;
   user-select: none;
   appearance: none;
+  min-height: 3.2rem;
 }
 
 .Button--tiny {
@@ -29,6 +30,7 @@
   font-size: var(--Button-font-size-small);
   line-height: var(--Button-line-height-small);
   padding: 0 0.4rem;
+  min-height: 1.9rem;
 }
 
 .Button--small {
@@ -36,12 +38,14 @@
   font-size: var(--Button-font-size-small);
   line-height: var(--Button-line-height-small);
   padding: 0.3rem 0.7rem;
+  min-height: 2.5rem;
 }
 
 .Button--big {
   font-size: var(--Button-font-size-large);
   line-height: var(--Button-line-height-large);
   padding: 1rem 1.4rem;
+  min-height: 4rem;
 }
 
 .Button--fit {
@@ -310,6 +314,7 @@
   background-color: transparent;
   color: var(--Button-color-link-default);
   cursor: pointer;
+  min-height: auto;
 }
 
 .Button--link:focus {
@@ -396,6 +401,7 @@
   border-radius: 50%;
   height: 2.5rem;
   width: 2.5rem;
+  min-height: auto;
   flex-shrink: 0;
 }
 

@@ -1,5 +1,5 @@
 /* eslint-disable react-hooks/rules-of-hooks */
-import type { ComponentStoryObj } from '@storybook/react';
+import type { StoryObj } from '@storybook/react';
 
 import { Button } from '@launchpad-ui/button';
 import { useState } from '@storybook/client-api';
@@ -21,7 +21,7 @@ export default {
   },
 };
 
-type Story = ComponentStoryObj<typeof Modal>;
+type Story = StoryObj<typeof Modal>;
 
 export const Default: Story = {
   render: () => {

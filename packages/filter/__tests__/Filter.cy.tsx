@@ -2,12 +2,16 @@ import type { FilterProps } from '../src';
 
 import { FilterTestWrapper } from './FilterTestWrapper';
 
+const FILTER_BUTTON = '[data-test-id="filter-button"]';
+const MENU_ITEM = '[data-test-id="menu-item"]';
+const MENU_SEARCH = '[data-test-id="menu-search"]';
+
 const createComponent = (props?: Partial<FilterProps>) => <FilterTestWrapper {...props} />;
 
 describe('Filter', () => {
   it('renders', () => {
     cy.mount(createComponent());
-    cy.get('[data-test-id="filter-button"]').should('be.visible');
+    cy.get(FILTER_BUTTON).should('be.visible');
   });
 
   it('is accessible', () => {
@@ -22,10 +26,10 @@ describe('Filter', () => {
     ];
     cy.mount(createComponent({ options }));
 
-    cy.get('[data-test-id="filter-button"]').click();
-    cy.get('[data-test-id="menu-item"]').first().click();
+    cy.get(FILTER_BUTTON).click();
+    cy.get(MENU_ITEM).first().click();
 
-    cy.get('[data-test-id="filter-button"]').should('have.text', 'author:one');
+    cy.get(FILTER_BUTTON).should('have.text', 'author:one');
   });
 
   it('can search for an option', () => {
@@ -38,13 +42,11 @@ describe('Filter', () => {
     ];
     cy.mount(createComponent({ options }));
 
-    cy.get('[data-test-id="filter-button"]').click();
+    cy.get(FILTER_BUTTON).click();
+    cy.get(MENU_SEARCH).should('be.visible');
 
-    const searchInput = cy.get('[data-test-id="menu-search"]');
-    searchInput.should('be.visible');
-
-    searchInput.type('fo');
-    cy.get('[data-test-id="menu-item"]').first().should('have.text', 'four');
+    cy.get(MENU_SEARCH).type('fo');
+    cy.get(MENU_ITEM).first().should('have.text', 'four');
   });
 
   it('can clear an applied filter', () => {
@@ -54,11 +56,11 @@ describe('Filter', () => {
     ];
     cy.mount(createComponent({ options, isClearable: true }));
 
-    cy.get('[data-test-id="filter-button"]').click();
-    cy.get('[data-test-id="menu-item"]').first().click();
-    cy.get('[data-test-id="filter-button"]').should('have.text', 'author:one');
+    cy.get(FILTER_BUTTON).click();
+    cy.get(MENU_ITEM).first().click();
+    cy.get(FILTER_BUTTON).should('have.text', 'author:one');
 
-    cy.get('[data-test-id="clear-filter-button"]').click();
-    cy.get('[data-test-id="filter-button"]').should('have.text', 'author:osmo');
+    cy.getByTestId('clear-filter-button').click();
+    cy.get(FILTER_BUTTON).should('have.text', 'author:osmo');
   });
 });

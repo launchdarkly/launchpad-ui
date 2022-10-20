@@ -1,5 +1,5 @@
 import type { NotificationProps } from '../src/Notification';
-import type { ComponentStoryObj } from '@storybook/react';
+import type { StoryObj } from '@storybook/react';
 
 import { Notification } from '../src/Notification';
 
@@ -44,7 +44,7 @@ export default {
   },
 };
 
-type Story = ComponentStoryObj<typeof Notification>;
+type Story = StoryObj<typeof Notification>;
 
 const makeMessage = (type: NotificationProps['level']) => (
   <span>

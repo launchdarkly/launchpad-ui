@@ -1,4 +1,4 @@
-import type { ComponentStoryObj } from '@storybook/react';
+import type { StoryObj } from '@storybook/react';
 
 import { Checkbox } from '../src';
 
@@ -46,7 +46,7 @@ export default {
   },
 };
 
-type Story = ComponentStoryObj<typeof Checkbox>;
+type Story = StoryObj<typeof Checkbox>;
 
 export const Default: Story = {
   args: {

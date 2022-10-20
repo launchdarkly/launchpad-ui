@@ -1,4 +1,4 @@
-import type { ComponentStoryObj, DecoratorFn } from '@storybook/react';
+import type { StoryObj, DecoratorFn } from '@storybook/react';
 
 import { Fragment } from 'react';
 
@@ -163,7 +163,7 @@ export default {
   },
 };
 
-type Story = ComponentStoryObj<typeof Button>;
+type Story = StoryObj<typeof Button>;
 
 export const Basic: Story = { args: { children: 'Basic' } };
 

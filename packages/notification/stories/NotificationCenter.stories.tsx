@@ -1,6 +1,6 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 import type { NotificationRecord } from '../src';
-import type { ComponentStoryObj } from '@storybook/react';
+import type { StoryObj } from '@storybook/react';
 
 import { Button } from '@launchpad-ui/button';
 import { userEvent, within } from '@storybook/testing-library';
@@ -14,7 +14,7 @@ export default {
   description: 'A container for notifications.',
 };
 
-type Story = ComponentStoryObj<typeof NotificationCenter>;
+type Story = StoryObj<typeof NotificationCenter>;
 
 const makeNotification = (id: string): NotificationRecord => ({
   _id: id,

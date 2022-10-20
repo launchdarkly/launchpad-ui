@@ -18,7 +18,8 @@ $ npm install @launchpad-ui/core
 First, import the CSS variable tokens into your project:
 
 ```css
-@import '@launchpad-ui/core/dist/styles/tokens.css';
+@import '@launchpad-ui/tokens/dist/index.css';
+@import '@launchpad-ui/tokens/dist/media-queries.css';
 ```
 
 Voilà, you can now begin using any of the components available in Launchpad. For the full list, view [our Storybook](https://main--626696a2018c1f004a1cde86.chromatic.com/?path=/story/components-alert--success).

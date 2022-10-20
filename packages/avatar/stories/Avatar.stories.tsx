@@ -1,4 +1,4 @@
-import type { ComponentStoryObj, StoryFn } from '@storybook/react';
+import type { StoryObj, StoryFn } from '@storybook/react';
 
 import { Person } from '../../icons/src';
 import { Avatar } from '../src';
@@ -33,7 +33,7 @@ export default {
   ],
 };
 
-type Story = ComponentStoryObj<typeof Avatar>;
+type Story = StoryObj<typeof Avatar>;
 
 export const DefaultIcon: Story = {
   args: {

@@ -1,4 +1,4 @@
-import type { ComponentStoryObj } from '@storybook/react';
+import type { StoryObj } from '@storybook/react';
 
 import { SAMPLE_MARKDOWN } from '../__tests__/constants';
 import { Markdown } from '../src';
@@ -46,7 +46,7 @@ export default {
   },
 };
 
-type Story = ComponentStoryObj<typeof Markdown>;
+type Story = StoryObj<typeof Markdown>;
 
 export const Example: Story = {
   args: {

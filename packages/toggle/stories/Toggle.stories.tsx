@@ -1,4 +1,4 @@
-import type { ComponentStoryObj, DecoratorFn, StoryFn } from '@storybook/react';
+import type { StoryObj, DecoratorFn, StoryFn } from '@storybook/react';
 
 import { useEffect } from '@storybook/addons';
 
@@ -68,7 +68,7 @@ export default {
   ],
 };
 
-type Story = ComponentStoryObj<typeof Toggle>;
+type Story = StoryObj<typeof Toggle>;
 
 export const On: Story = { args: { checked: true } };
 

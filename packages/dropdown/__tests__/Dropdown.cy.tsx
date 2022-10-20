@@ -13,8 +13,8 @@ describe('Dropdown', () => {
         </Menu>
       </Dropdown>
     );
-    cy.get('[data-test-id="dropdown-button"]').click();
-    cy.get('[data-test-id="dropdown"]').should('be.visible');
+    cy.getByTestId('dropdown-button').click();
+    cy.getByTestId('dropdown').should('be.visible');
   });
 
   it('is accessible', () => {
