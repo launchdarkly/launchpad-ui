@@ -10,6 +10,7 @@ type ModalHeaderProps = HTMLAttributes<HTMLDivElement> & {
   titleID?: string;
   titleClassName?: string;
   onClose?(): void;
+  'data-test-id'?: string;
 };
 
 const ModalHeader = ({
@@ -19,12 +20,13 @@ const ModalHeader = ({
   children,
   titleID,
   titleClassName,
+  'data-test-id': testId = 'modal-header',
   ...rest
 }: ModalHeaderProps) => {
   const classes = cx(styles.modalHeader, className);
 
   return (
-    <div {...rest} className={classes}>
+    <div data-test-id={testId} className={classes} {...rest}>
       <h2 id={titleID || 'Modal-title'} className={cx(styles.modalTitle, titleClassName)}>
         {children}
       </h2>
