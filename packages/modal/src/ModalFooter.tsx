@@ -10,9 +10,9 @@ const ModalFooter = ({ className, children, ...rest }: ModalFooterProps) => {
   const classes = cx(styles.modalFooter, className);
 
   return (
-    <footer {...rest} className={classes}>
+    <div {...rest} className={classes}>
       {children}
-    </footer>
+    </div>
   );
 };
 

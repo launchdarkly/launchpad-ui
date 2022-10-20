@@ -10,9 +10,9 @@ const ModalBody = ({ className, children, ...rest }: ModalBodyProps) => {
   const classes = cx(styles.modalBody, className);
 
   return (
-    <section {...rest} className={classes}>
+    <div {...rest} className={classes}>
       {children}
-    </section>
+    </div>
   );
 };
 
