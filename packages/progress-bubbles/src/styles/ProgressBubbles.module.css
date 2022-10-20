@@ -89,34 +89,34 @@
   z-index: 1;
 }
 
-:global(div).ProgressBubbles-icon--current {
+div.ProgressBubbles-icon--current {
   border: var(--border-width-2) solid var(--color-system-green-700);
 }
 
-.ProgressBubbles-icon--pending :global(svg) {
+.ProgressBubbles-icon--pending svg {
   fill: var(--color-white);
 }
 
-:global(div).ProgressBubbles-icon--current :global(svg) {
+div.ProgressBubbles-icon--current svg {
   fill: var(--color-system-green-700);
 }
 
-.ProgressBubbles-icon :global(.Icon svg) {
+.ProgressBubbles-icon :global(.Icon) svg {
   fill: var(--color-white);
   height: 1.6rem;
   width: 1.6rem;
 }
 
-:global(div).ProgressBubbles-icon--pending {
+div.ProgressBubbles-icon--pending {
   background-color: var(--color-gray-200);
 }
 
-:global(div).ProgressBubbles-icon--warning {
+div.ProgressBubbles-icon--warning {
   background-color: inherit;
   border: none;
 }
 
-:global(div).ProgressBubbles-icon--warning :global(.Icon svg) {
+div.ProgressBubbles-icon--warning :global(.Icon) svg {
   fill: hsl(29.2 100% 58.4%);
   height: 3.6rem;
   width: 3.6rem;
@@ -149,7 +149,7 @@
   white-space: normal;
 }
 
-:global(:root[data-theme]) {
+:root[data-theme] {
   & .ProgressBubbles-label {
     color: var(--color-gray-700);
   }

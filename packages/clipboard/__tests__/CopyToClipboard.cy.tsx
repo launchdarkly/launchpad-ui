@@ -7,7 +7,7 @@ describe('CopyToClipboard', () => {
         <span>Copy content</span>
       </CopyToClipboard>
     );
-    cy.get('[data-test-id="copy-to-clipboard"]').should('be.visible');
+    cy.getByTestId('copy-to-clipboard').should('be.visible');
   });
 
   it('is accessible', () => {
