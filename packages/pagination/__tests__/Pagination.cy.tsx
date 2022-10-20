@@ -12,7 +12,7 @@ describe('Pagination', () => {
         totalCount={4}
       />
     );
-    cy.get('[data-test-id="pagination"]').should('be.visible');
+    cy.getByTestId('pagination').should('be.visible');
   });
 
   it('is accessible', () => {

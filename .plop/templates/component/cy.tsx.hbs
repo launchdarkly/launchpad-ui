@@ -3,7 +3,7 @@ import { {{pascalCase name}} } from '../src';
 describe('{{pascalCase name}}', () => {
   it('renders', () => {
     cy.mount(<{{pascalCase name}}>An important message</{{pascalCase name}}>);
-    cy.get('[data-test-id="{{dashCase name}}"]').should('be.visible');
+    cy.getByTestId('{{dashCase name}}').should('be.visible');
   });
 
   it('is accessible', () => {
