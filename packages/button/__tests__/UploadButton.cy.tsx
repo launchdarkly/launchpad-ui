@@ -7,7 +7,7 @@ describe('Button', () => {
         UploadButton
       </UploadButton>
     );
-    cy.get('[data-test-id="upload-button"]').should('be.visible');
+    cy.getByTestId('upload-button').should('be.visible');
   });
 
   it('is accessible', () => {

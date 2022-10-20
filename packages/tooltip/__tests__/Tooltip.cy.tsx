@@ -9,7 +9,7 @@ describe('Tooltip', () => {
       </Tooltip>
     );
     cy.get('button').click();
-    cy.get('[data-test-id="tooltip"]').should('be.visible');
+    cy.getByTestId('tooltip').should('be.visible');
   });
 
   it('is accessible', () => {
