@@ -1,5 +1,34 @@
 # @launchpad-ui/core
 
+## 0.17.0
+
+### Minor Changes
+
+- [#498](https://github.com/launchdarkly/launchpad-ui/pull/498) [`5db16d2`](https://github.com/launchdarkly/launchpad-ui/commit/5db16d2850b91acf4541eff06a0fe8316c5624ce) Thanks [@yusinto](https://github.com/yusinto)! - [Snackbar]: Add support for individual snackbar onDismiss, and rename `SnackbarCenter` `onDismiss` prop to `dismissSnackbar`
+
+### Patch Changes
+
+- [#494](https://github.com/launchdarkly/launchpad-ui/pull/494) [`7fe5066`](https://github.com/launchdarkly/launchpad-ui/commit/7fe506619e2bba92ab79ad35718105d004ac41a2) Thanks [@Niznikr](https://github.com/Niznikr)! - [Snackbar] Set color on heading
+
+- [#506](https://github.com/launchdarkly/launchpad-ui/pull/506) [`5e82186`](https://github.com/launchdarkly/launchpad-ui/commit/5e82186a765012cf79501dccf2a3305e66b16fc6) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Alert] Remove unneeded global pseudoclasses
+  [Clipboard] Remove unneeded global pseudoclasses
+  [Popover] Remove unneeded global pseudoclasses
+  [ProgressBubbles] Remove unneeded global pseudoclasses
+  [Tooltip] Remove unneeded global pseudoclasses
+- Updated dependencies [[`5db16d2`](https://github.com/launchdarkly/launchpad-ui/commit/5db16d2850b91acf4541eff06a0fe8316c5624ce), [`7fe5066`](https://github.com/launchdarkly/launchpad-ui/commit/7fe506619e2bba92ab79ad35718105d004ac41a2), [`5e82186`](https://github.com/launchdarkly/launchpad-ui/commit/5e82186a765012cf79501dccf2a3305e66b16fc6)]:
+  - @launchpad-ui/snackbar@0.3.0
+  - @launchpad-ui/alert@0.6.5
+  - @launchpad-ui/clipboard@0.8.13
+  - @launchpad-ui/popover@0.8.12
+  - @launchpad-ui/progress-bubbles@0.5.13
+  - @launchpad-ui/tooltip@0.6.13
+  - @launchpad-ui/notification@0.5.13
+  - @launchpad-ui/dropdown@0.5.12
+  - @launchpad-ui/menu@0.6.18
+  - @launchpad-ui/navigation@0.6.20
+  - @launchpad-ui/split-button@0.6.13
+  - @launchpad-ui/filter@0.4.18
+
 ## 0.16.10
 
 ### Patch Changes
