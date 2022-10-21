@@ -1,5 +1,15 @@
 # @launchpad-ui/snackbar
 
+## 0.3.0
+
+### Minor Changes
+
+- [#498](https://github.com/launchdarkly/launchpad-ui/pull/498) [`5db16d2`](https://github.com/launchdarkly/launchpad-ui/commit/5db16d2850b91acf4541eff06a0fe8316c5624ce) Thanks [@yusinto](https://github.com/yusinto)! - [Snackbar]: Add support for individual snackbar onDismiss, and rename `SnackbarCenter` `onDismiss` prop to `dismissSnackbar`
+
+### Patch Changes
+
+- [#494](https://github.com/launchdarkly/launchpad-ui/pull/494) [`7fe5066`](https://github.com/launchdarkly/launchpad-ui/commit/7fe506619e2bba92ab79ad35718105d004ac41a2) Thanks [@Niznikr](https://github.com/Niznikr)! - [Snackbar] Set color on heading
+
 ## 0.2.5
 
 ### Patch Changes
