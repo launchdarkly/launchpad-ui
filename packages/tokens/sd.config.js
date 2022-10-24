@@ -76,7 +76,7 @@ module.exports = {
       buildPath: 'stories/',
       files: [
         {
-          format: 'json',
+          format: 'json/nested',
           destination: 'tokens.json',
         },
       ],
