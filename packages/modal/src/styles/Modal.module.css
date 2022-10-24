@@ -10,7 +10,7 @@
   }
 }
 
-.has-modal {
+:global(.has-modal) {
   overflow: hidden;
 }
 
