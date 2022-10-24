@@ -55,7 +55,7 @@
   "devDependencies": {
     "@remix-run/dev": "^1.7.0",
     "@remix-run/eslint-config": "^1.7.0",
-    "eslint": "^8.25.0",
+    "eslint": "^8.26.0",
     "typescript": "^4.8.2"
   },
   "engines": {
