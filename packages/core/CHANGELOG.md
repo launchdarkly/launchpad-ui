@@ -1,5 +1,40 @@
 # @launchpad-ui/core
 
+## 0.18.0
+
+### Minor Changes
+
+- [#493](https://github.com/launchdarkly/launchpad-ui/pull/493) [`1a7ccd6`](https://github.com/launchdarkly/launchpad-ui/commit/1a7ccd671ca83f111239363474e54040cf4a112f) Thanks [@Niznikr](https://github.com/Niznikr)! - [Modal] Update to css modules:
+
+  - Rename size `x-large` to `xLarge` for sheet sizes
+
+### Patch Changes
+
+- [#474](https://github.com/launchdarkly/launchpad-ui/pull/474) [`b7302a3`](https://github.com/launchdarkly/launchpad-ui/commit/b7302a3015591df0b24e19a4444029c21d0cf9de) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Icons] Refactor to CSS Modules
+
+- Updated dependencies [[`1a7ccd6`](https://github.com/launchdarkly/launchpad-ui/commit/1a7ccd671ca83f111239363474e54040cf4a112f), [`b7302a3`](https://github.com/launchdarkly/launchpad-ui/commit/b7302a3015591df0b24e19a4444029c21d0cf9de)]:
+  - @launchpad-ui/modal@0.9.0
+  - @launchpad-ui/icons@0.5.8
+  - @launchpad-ui/overlay@0.3.20
+  - @launchpad-ui/alert@0.6.6
+  - @launchpad-ui/avatar@0.4.8
+  - @launchpad-ui/banner@0.7.5
+  - @launchpad-ui/button@0.7.4
+  - @launchpad-ui/clipboard@0.8.15
+  - @launchpad-ui/dropdown@0.5.14
+  - @launchpad-ui/filter@0.4.20
+  - @launchpad-ui/form@0.6.12
+  - @launchpad-ui/menu@0.6.20
+  - @launchpad-ui/notification@0.5.15
+  - @launchpad-ui/pagination@0.3.11
+  - @launchpad-ui/snackbar@0.3.2
+  - @launchpad-ui/toast@0.2.4
+  - @launchpad-ui/popover@0.8.14
+  - @launchpad-ui/split-button@0.6.15
+  - @launchpad-ui/navigation@0.6.22
+  - @launchpad-ui/progress-bubbles@0.5.15
+  - @launchpad-ui/tooltip@0.6.15
+
 ## 0.17.1
 
 ### Patch Changes
