@@ -1,5 +1,71 @@
 # Migration @launchpad-ui/core
 
+## 0.19.0
+
+### Global tokens renamed
+
+Global design tokens now follow a schema `namespace-type-name-scale`:
+
+Before:
+
+```css
+var(--color-blue-500)
+var(--font-size-base)
+var(--spacing-0)
+var(--font-monospace-family)
+```
+
+After:
+
+```css
+var(--lp-color-blue-500)
+var(--lp-font-size-300)
+var(--lp-spacing-100)
+var(--lp-font-family-monospace)
+```
+
+## 0.18.0
+
+### Modal sheet size renamed
+
+Size `x-large` for `ModalSheet` has been renamed to `xLarge`:
+
+Before:
+
+```jsx
+<ModalSheet size="x-large">...</ModalSheet>
+```
+
+After:
+
+```jsx
+<ModalSheet size="xLarge">...</ModalSheet>
+```
+
+## 0.17.0
+
+### SnackbarCenter prop renamed
+
+The `onDismiss` prop for `SnackbarCenter` has been renamed to `dismissSnackbar`:
+
+Before:
+
+```jsx
+<SnackbarCenter items={snackbars} onDismiss={handleDismiss} />
+```
+
+After:
+
+```jsx
+<SnackbarCenter items={snackbars} dismissSnackbar={handleDismiss} />
+```
+
+## 0.16.0
+
+### Alerts and banners restyled
+
+Alerts and banners have refreshed styles and now use CSS modules.
+
 ## 0.14.0
 
 ### String union types instead of enums for props
