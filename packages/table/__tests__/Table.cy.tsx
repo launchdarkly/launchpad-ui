@@ -26,7 +26,7 @@ const createComponent = (props?: TableProps) => (
 describe('Table', () => {
   it('renders', () => {
     cy.mount(createComponent());
-    cy.get('[data-test-id="table"]').should('be.visible');
+    cy.getByTestId('table').should('be.visible');
   });
 
   it('is accessible', () => {

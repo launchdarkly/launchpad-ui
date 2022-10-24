@@ -1,6 +1,6 @@
 {
   "name": "@launchpad-ui/toast",
-  "version": "0.2.2",
+  "version": "0.2.4",
   "status": "alpha",
   "publishConfig": {
     "access": "public"
@@ -36,7 +36,7 @@
     "@launchpad-ui/icons": "workspace:~",
     "@launchpad-ui/tokens": "workspace:~",
     "classix": "^2.1.13",
-    "framer-motion": "^7.5.3"
+    "framer-motion": "^7.6.1"
   },
   "peerDependencies": {
     "react": "^18.0.0",

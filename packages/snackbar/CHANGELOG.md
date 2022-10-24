@@ -1,5 +1,29 @@
 # @launchpad-ui/snackbar
 
+## 0.3.2
+
+### Patch Changes
+
+- Updated dependencies [[`b7302a3`](https://github.com/launchdarkly/launchpad-ui/commit/b7302a3015591df0b24e19a4444029c21d0cf9de)]:
+  - @launchpad-ui/icons@0.5.8
+  - @launchpad-ui/button@0.7.4
+
+## 0.3.1
+
+### Patch Changes
+
+- [#509](https://github.com/launchdarkly/launchpad-ui/pull/509) [`1e5796b`](https://github.com/launchdarkly/launchpad-ui/commit/1e5796b7b99a2704bba22623a518ff7e8776ebf8) Thanks [@Niznikr](https://github.com/Niznikr)! - Update dependencies
+
+## 0.3.0
+
+### Minor Changes
+
+- [#498](https://github.com/launchdarkly/launchpad-ui/pull/498) [`5db16d2`](https://github.com/launchdarkly/launchpad-ui/commit/5db16d2850b91acf4541eff06a0fe8316c5624ce) Thanks [@yusinto](https://github.com/yusinto)! - [Snackbar]: Add support for individual snackbar onDismiss, and rename `SnackbarCenter` `onDismiss` prop to `dismissSnackbar`
+
+### Patch Changes
+
+- [#494](https://github.com/launchdarkly/launchpad-ui/pull/494) [`7fe5066`](https://github.com/launchdarkly/launchpad-ui/commit/7fe506619e2bba92ab79ad35718105d004ac41a2) Thanks [@Niznikr](https://github.com/Niznikr)! - [Snackbar] Set color on heading
+
 ## 0.2.5
 
 ### Patch Changes

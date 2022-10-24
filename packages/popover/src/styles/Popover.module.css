@@ -17,7 +17,7 @@
   display: inline-block;
 }
 
-.Popover-target--disabled > :global([disabled]) {
+.Popover-target--disabled > [disabled] {
   pointer-events: none;
 }
 

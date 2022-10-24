@@ -3,8 +3,6 @@ import type { HTMLAttributes } from 'react';
 import { forwardRef, useEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
 
-import './styles/Modal.css';
-
 type PortalProps = HTMLAttributes<HTMLDivElement> & {
   container?: HTMLElement | null;
   'data-test-id'?: string;

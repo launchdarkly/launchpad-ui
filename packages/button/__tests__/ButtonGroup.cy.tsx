@@ -8,7 +8,7 @@ describe('ButtonGroup', () => {
         <Button>Two</Button>
       </ButtonGroup>
     );
-    cy.get('[data-test-id="button-group"]').should('be.visible');
+    cy.getByTestId('button-group').should('be.visible');
   });
 
   it('is accessible', () => {
