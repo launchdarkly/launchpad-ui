@@ -1,5 +1,33 @@
 # @launchpad-ui/core
 
+## 0.17.1
+
+### Patch Changes
+
+- [#509](https://github.com/launchdarkly/launchpad-ui/pull/509) [`1e5796b`](https://github.com/launchdarkly/launchpad-ui/commit/1e5796b7b99a2704bba22623a518ff7e8776ebf8) Thanks [@Niznikr](https://github.com/Niznikr)! - Update dependencies
+
+- Updated dependencies [[`1e5796b`](https://github.com/launchdarkly/launchpad-ui/commit/1e5796b7b99a2704bba22623a518ff7e8776ebf8)]:
+  - @launchpad-ui/filter@0.4.19
+  - @launchpad-ui/focus-trap@0.1.1
+  - @launchpad-ui/form@0.6.11
+  - @launchpad-ui/markdown@0.3.3
+  - @launchpad-ui/menu@0.6.19
+  - @launchpad-ui/modal@0.8.12
+  - @launchpad-ui/navigation@0.6.21
+  - @launchpad-ui/notification@0.5.14
+  - @launchpad-ui/pagination@0.3.10
+  - @launchpad-ui/popover@0.8.13
+  - @launchpad-ui/snackbar@0.3.1
+  - @launchpad-ui/tab-list@0.4.3
+  - @launchpad-ui/toast@0.2.3
+  - @launchpad-ui/toggle@0.4.4
+  - @launchpad-ui/overlay@0.3.19
+  - @launchpad-ui/dropdown@0.5.13
+  - @launchpad-ui/progress-bubbles@0.5.14
+  - @launchpad-ui/split-button@0.6.14
+  - @launchpad-ui/tooltip@0.6.14
+  - @launchpad-ui/clipboard@0.8.14
+
 ## 0.17.0
 
 ### Minor Changes
