@@ -1,5 +1,19 @@
 # @launchpad-ui/modal
 
+## 0.9.0
+
+### Minor Changes
+
+- [#493](https://github.com/launchdarkly/launchpad-ui/pull/493) [`1a7ccd6`](https://github.com/launchdarkly/launchpad-ui/commit/1a7ccd671ca83f111239363474e54040cf4a112f) Thanks [@Niznikr](https://github.com/Niznikr)! - [Modal] Update to css modules:
+
+  - Rename size `x-large` to `xLarge` for sheet sizes
+
+### Patch Changes
+
+- Updated dependencies [[`b7302a3`](https://github.com/launchdarkly/launchpad-ui/commit/b7302a3015591df0b24e19a4444029c21d0cf9de)]:
+  - @launchpad-ui/icons@0.5.8
+  - @launchpad-ui/button@0.7.4
+
 ## 0.8.12
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @launchpad-ui/icons
 
+## 0.5.8
+
+### Patch Changes
+
+- [#474](https://github.com/launchdarkly/launchpad-ui/pull/474) [`b7302a3`](https://github.com/launchdarkly/launchpad-ui/commit/b7302a3015591df0b24e19a4444029c21d0cf9de) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Icons] Refactor to CSS Modules
+
 ## 0.5.7
 
 ### Patch Changes
