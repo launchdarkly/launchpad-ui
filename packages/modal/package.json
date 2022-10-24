@@ -39,7 +39,7 @@
     "@launchpad-ui/tokens": "workspace:~",
     "@react-aria/overlays": "^3.11.0",
     "classix": "^2.1.13",
-    "framer-motion": "^7.5.3"
+    "framer-motion": "^7.6.1"
   },
   "peerDependencies": {
     "react": "^18.0.0",
