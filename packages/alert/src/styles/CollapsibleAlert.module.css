@@ -78,7 +78,7 @@ https://www.scottohara.me/blog/2017/04/14/inclusively-hidden.html
   transition: visibility 0.5s, max-height 0.5s, opacity 0.5s, transform 0.5s;
   transition-timing-function: ease-in-out;
 
-  & > :global(a) {
+  & > a {
     color: var(--CollapsibleAlert-color-link);
 
     &:hover {
@@ -117,7 +117,7 @@ https://www.scottohara.me/blog/2017/04/14/inclusively-hidden.html
 }
 
 /* animate content container when button toggled */
-:global([aria-expanded='true']) + .CollapsibleAlert--contentContainer {
+[aria-expanded='true'] + .CollapsibleAlert--contentContainer {
   margin-top: 0.4rem;
   visibility: visible;
   max-height: 31.25rem;

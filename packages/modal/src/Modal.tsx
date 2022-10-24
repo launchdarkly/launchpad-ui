@@ -9,6 +9,8 @@ import { cx } from 'classix';
 import { LazyMotion, m } from 'framer-motion';
 import { useEffect, useRef } from 'react';
 
+import styles from './styles/Modal.module.css';
+
 const overlay: Variants = {
   visible: { opacity: 1, transition: { duration: 0.15 } },
   hidden: { opacity: 0 },
@@ -66,7 +68,7 @@ const Modal = ({
   useEffect(() => {
     const handleEscape = (event: KeyboardEvent) => {
       event.stopImmediatePropagation();
-      const latest = [...document.querySelectorAll('.Modal')].pop();
+      const latest = [...document.querySelectorAll(`[data-test-id="${testId}"]`)].pop();
       if (event.key === 'Escape' && latest === ref.current) {
         close();
       }
@@ -84,7 +86,7 @@ const Modal = ({
       document.body.classList.remove('has-modal');
       document.removeEventListener('keydown', handleEscape);
     };
-  }, [onReady, onCancel]);
+  }, [onReady, onCancel, testId]);
 
   const handleOverlayClick = (event: MouseEvent<HTMLDivElement>) => {
     if (cancelWithOverlayClick && event.target === event.currentTarget) {
@@ -92,7 +94,7 @@ const Modal = ({
     }
   };
 
-  const modalClasses = cx('Modal', className);
+  const modalClasses = cx(styles.modal, className);
 
   return (
     <LazyMotion strict features={loadFeatures}>
@@ -103,7 +105,7 @@ const Modal = ({
           variants={overlay}
           transition={{ duration: 0.15 }}
           role="presentation"
-          className="Modal-overlay"
+          className={styles.modalOverlay}
           onMouseDown={handleOverlayClick}
         >
           <FocusTrap autoFocus restoreFocus>
@@ -114,14 +116,14 @@ const Modal = ({
               role="dialog"
               aria-labelledby={modalLabelID}
               aria-modal
-              className="Modal-content"
+              className={styles.modalContent}
               tabIndex={-1}
             >
               {withCloseButton && (
                 <IconButton
                   aria-label="close"
                   icon={<Close size="medium" />}
-                  className="Modal-close"
+                  className={styles.modalClose}
                   onClick={onCancel}
                   data-test-id="Modal-close"
                 />

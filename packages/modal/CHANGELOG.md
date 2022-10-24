@@ -1,5 +1,34 @@
 # @launchpad-ui/modal
 
+## 0.9.1
+
+### Patch Changes
+
+- [#512](https://github.com/launchdarkly/launchpad-ui/pull/512) [`cc222fe`](https://github.com/launchdarkly/launchpad-ui/commit/cc222fe3b03b0516d33c3e8bd76da422641e76d3) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Modal] Make has-modal class globally accessible
+
+## 0.9.0
+
+### Minor Changes
+
+- [#493](https://github.com/launchdarkly/launchpad-ui/pull/493) [`1a7ccd6`](https://github.com/launchdarkly/launchpad-ui/commit/1a7ccd671ca83f111239363474e54040cf4a112f) Thanks [@Niznikr](https://github.com/Niznikr)! - [Modal] Update to css modules:
+
+  - Rename size `x-large` to `xLarge` for sheet sizes
+
+### Patch Changes
+
+- Updated dependencies [[`b7302a3`](https://github.com/launchdarkly/launchpad-ui/commit/b7302a3015591df0b24e19a4444029c21d0cf9de)]:
+  - @launchpad-ui/icons@0.5.8
+  - @launchpad-ui/button@0.7.4
+
+## 0.8.12
+
+### Patch Changes
+
+- [#509](https://github.com/launchdarkly/launchpad-ui/pull/509) [`1e5796b`](https://github.com/launchdarkly/launchpad-ui/commit/1e5796b7b99a2704bba22623a518ff7e8776ebf8) Thanks [@Niznikr](https://github.com/Niznikr)! - Update dependencies
+
+- Updated dependencies [[`1e5796b`](https://github.com/launchdarkly/launchpad-ui/commit/1e5796b7b99a2704bba22623a518ff7e8776ebf8)]:
+  - @launchpad-ui/focus-trap@0.1.1
+
 ## 0.8.11
 
 ### Patch Changes

@@ -12,5 +12,6 @@ test-results/
 .DS_Store
 *.log
 .nyc_output
+.idea
 
 packages/tokens/stories/tokens.json

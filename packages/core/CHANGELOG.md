@@ -1,5 +1,117 @@
 # @launchpad-ui/core
 
+## 0.18.1
+
+### Patch Changes
+
+- [#512](https://github.com/launchdarkly/launchpad-ui/pull/512) [`cc222fe`](https://github.com/launchdarkly/launchpad-ui/commit/cc222fe3b03b0516d33c3e8bd76da422641e76d3) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Modal] Make has-modal class globally accessible
+
+- Updated dependencies [[`cc222fe`](https://github.com/launchdarkly/launchpad-ui/commit/cc222fe3b03b0516d33c3e8bd76da422641e76d3)]:
+  - @launchpad-ui/modal@0.9.1
+  - @launchpad-ui/overlay@0.3.21
+  - @launchpad-ui/popover@0.8.15
+  - @launchpad-ui/dropdown@0.5.15
+  - @launchpad-ui/menu@0.6.21
+  - @launchpad-ui/navigation@0.6.23
+  - @launchpad-ui/progress-bubbles@0.5.16
+  - @launchpad-ui/split-button@0.6.16
+  - @launchpad-ui/tooltip@0.6.16
+  - @launchpad-ui/filter@0.4.21
+  - @launchpad-ui/clipboard@0.8.16
+  - @launchpad-ui/notification@0.5.16
+
+## 0.18.0
+
+### Minor Changes
+
+- [#493](https://github.com/launchdarkly/launchpad-ui/pull/493) [`1a7ccd6`](https://github.com/launchdarkly/launchpad-ui/commit/1a7ccd671ca83f111239363474e54040cf4a112f) Thanks [@Niznikr](https://github.com/Niznikr)! - [Modal] Update to css modules:
+
+  - Rename size `x-large` to `xLarge` for sheet sizes
+
+### Patch Changes
+
+- [#474](https://github.com/launchdarkly/launchpad-ui/pull/474) [`b7302a3`](https://github.com/launchdarkly/launchpad-ui/commit/b7302a3015591df0b24e19a4444029c21d0cf9de) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Icons] Refactor to CSS Modules
+
+- Updated dependencies [[`1a7ccd6`](https://github.com/launchdarkly/launchpad-ui/commit/1a7ccd671ca83f111239363474e54040cf4a112f), [`b7302a3`](https://github.com/launchdarkly/launchpad-ui/commit/b7302a3015591df0b24e19a4444029c21d0cf9de)]:
+  - @launchpad-ui/modal@0.9.0
+  - @launchpad-ui/icons@0.5.8
+  - @launchpad-ui/overlay@0.3.20
+  - @launchpad-ui/alert@0.6.6
+  - @launchpad-ui/avatar@0.4.8
+  - @launchpad-ui/banner@0.7.5
+  - @launchpad-ui/button@0.7.4
+  - @launchpad-ui/clipboard@0.8.15
+  - @launchpad-ui/dropdown@0.5.14
+  - @launchpad-ui/filter@0.4.20
+  - @launchpad-ui/form@0.6.12
+  - @launchpad-ui/menu@0.6.20
+  - @launchpad-ui/notification@0.5.15
+  - @launchpad-ui/pagination@0.3.11
+  - @launchpad-ui/snackbar@0.3.2
+  - @launchpad-ui/toast@0.2.4
+  - @launchpad-ui/popover@0.8.14
+  - @launchpad-ui/split-button@0.6.15
+  - @launchpad-ui/navigation@0.6.22
+  - @launchpad-ui/progress-bubbles@0.5.15
+  - @launchpad-ui/tooltip@0.6.15
+
+## 0.17.1
+
+### Patch Changes
+
+- [#509](https://github.com/launchdarkly/launchpad-ui/pull/509) [`1e5796b`](https://github.com/launchdarkly/launchpad-ui/commit/1e5796b7b99a2704bba22623a518ff7e8776ebf8) Thanks [@Niznikr](https://github.com/Niznikr)! - Update dependencies
+
+- Updated dependencies [[`1e5796b`](https://github.com/launchdarkly/launchpad-ui/commit/1e5796b7b99a2704bba22623a518ff7e8776ebf8)]:
+  - @launchpad-ui/filter@0.4.19
+  - @launchpad-ui/focus-trap@0.1.1
+  - @launchpad-ui/form@0.6.11
+  - @launchpad-ui/markdown@0.3.3
+  - @launchpad-ui/menu@0.6.19
+  - @launchpad-ui/modal@0.8.12
+  - @launchpad-ui/navigation@0.6.21
+  - @launchpad-ui/notification@0.5.14
+  - @launchpad-ui/pagination@0.3.10
+  - @launchpad-ui/popover@0.8.13
+  - @launchpad-ui/snackbar@0.3.1
+  - @launchpad-ui/tab-list@0.4.3
+  - @launchpad-ui/toast@0.2.3
+  - @launchpad-ui/toggle@0.4.4
+  - @launchpad-ui/overlay@0.3.19
+  - @launchpad-ui/dropdown@0.5.13
+  - @launchpad-ui/progress-bubbles@0.5.14
+  - @launchpad-ui/split-button@0.6.14
+  - @launchpad-ui/tooltip@0.6.14
+  - @launchpad-ui/clipboard@0.8.14
+
+## 0.17.0
+
+### Minor Changes
+
+- [#498](https://github.com/launchdarkly/launchpad-ui/pull/498) [`5db16d2`](https://github.com/launchdarkly/launchpad-ui/commit/5db16d2850b91acf4541eff06a0fe8316c5624ce) Thanks [@yusinto](https://github.com/yusinto)! - [Snackbar]: Add support for individual snackbar onDismiss, and rename `SnackbarCenter` `onDismiss` prop to `dismissSnackbar`
+
+### Patch Changes
+
+- [#494](https://github.com/launchdarkly/launchpad-ui/pull/494) [`7fe5066`](https://github.com/launchdarkly/launchpad-ui/commit/7fe506619e2bba92ab79ad35718105d004ac41a2) Thanks [@Niznikr](https://github.com/Niznikr)! - [Snackbar] Set color on heading
+
+- [#506](https://github.com/launchdarkly/launchpad-ui/pull/506) [`5e82186`](https://github.com/launchdarkly/launchpad-ui/commit/5e82186a765012cf79501dccf2a3305e66b16fc6) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Alert] Remove unneeded global pseudoclasses
+  [Clipboard] Remove unneeded global pseudoclasses
+  [Popover] Remove unneeded global pseudoclasses
+  [ProgressBubbles] Remove unneeded global pseudoclasses
+  [Tooltip] Remove unneeded global pseudoclasses
+- Updated dependencies [[`5db16d2`](https://github.com/launchdarkly/launchpad-ui/commit/5db16d2850b91acf4541eff06a0fe8316c5624ce), [`7fe5066`](https://github.com/launchdarkly/launchpad-ui/commit/7fe506619e2bba92ab79ad35718105d004ac41a2), [`5e82186`](https://github.com/launchdarkly/launchpad-ui/commit/5e82186a765012cf79501dccf2a3305e66b16fc6)]:
+  - @launchpad-ui/snackbar@0.3.0
+  - @launchpad-ui/alert@0.6.5
+  - @launchpad-ui/clipboard@0.8.13
+  - @launchpad-ui/popover@0.8.12
+  - @launchpad-ui/progress-bubbles@0.5.13
+  - @launchpad-ui/tooltip@0.6.13
+  - @launchpad-ui/notification@0.5.13
+  - @launchpad-ui/dropdown@0.5.12
+  - @launchpad-ui/menu@0.6.18
+  - @launchpad-ui/navigation@0.6.20
+  - @launchpad-ui/split-button@0.6.13
+  - @launchpad-ui/filter@0.4.18
+
 ## 0.16.10
 
 ### Patch Changes

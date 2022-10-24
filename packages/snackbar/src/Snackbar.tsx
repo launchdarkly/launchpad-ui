@@ -11,7 +11,7 @@ type SnackbarBaseProps = {
   header?: ReactNode;
   description: ReactNode;
   cta?: ReactElement<HTMLAnchorElement>;
-  onDismiss: () => void;
+  onDismiss?: () => void;
   'data-test-id'?: string;
 };
 

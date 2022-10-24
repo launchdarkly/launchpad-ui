@@ -1,5 +1,39 @@
 # @launchpad-ui/popover
 
+## 0.8.15
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @launchpad-ui/overlay@0.3.21
+
+## 0.8.14
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @launchpad-ui/overlay@0.3.20
+
+## 0.8.13
+
+### Patch Changes
+
+- [#509](https://github.com/launchdarkly/launchpad-ui/pull/509) [`1e5796b`](https://github.com/launchdarkly/launchpad-ui/commit/1e5796b7b99a2704bba22623a518ff7e8776ebf8) Thanks [@Niznikr](https://github.com/Niznikr)! - Update dependencies
+
+- Updated dependencies [[`1e5796b`](https://github.com/launchdarkly/launchpad-ui/commit/1e5796b7b99a2704bba22623a518ff7e8776ebf8)]:
+  - @launchpad-ui/focus-trap@0.1.1
+  - @launchpad-ui/overlay@0.3.19
+
+## 0.8.12
+
+### Patch Changes
+
+- [#506](https://github.com/launchdarkly/launchpad-ui/pull/506) [`5e82186`](https://github.com/launchdarkly/launchpad-ui/commit/5e82186a765012cf79501dccf2a3305e66b16fc6) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Alert] Remove unneeded global pseudoclasses
+  [Clipboard] Remove unneeded global pseudoclasses
+  [Popover] Remove unneeded global pseudoclasses
+  [ProgressBubbles] Remove unneeded global pseudoclasses
+  [Tooltip] Remove unneeded global pseudoclasses
+
 ## 0.8.11
 
 ### Patch Changes

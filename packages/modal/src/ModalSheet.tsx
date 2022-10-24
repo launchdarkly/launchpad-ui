@@ -6,12 +6,12 @@ import { Suspense } from 'react';
 
 import { Modal } from './Modal';
 import { Portal } from './Portal';
-import './styles/Modal.css';
+import styles from './styles/Modal.module.css';
 
 type ModalSheetProps = {
   className?: string;
   onCancel?(): void;
-  size?: 'small' | 'medium' | 'large' | 'x-large' | 'full';
+  size?: 'small' | 'medium' | 'large' | 'xLarge' | 'full';
   withCloseButton?: boolean;
   children: ReactNode;
 };
@@ -22,7 +22,7 @@ const ModalSheet = ({
   withCloseButton = true,
   ...props
 }: ModalSheetProps) => {
-  const classes = cx('ModalSheet', `ModalSheet--${size}`);
+  const classes = cx(styles.modalSheet, styles[`${size}`]);
 
   return (
     <Portal className={classes}>

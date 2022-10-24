@@ -85,12 +85,12 @@
     "@vitest/ui": "^0.24.3",
     "axe-core": "^4.4.3",
     "chromatic": "^6.10.1",
-    "concurrently": "^7.4.0",
+    "concurrently": "^7.5.0",
     "cypress": "^10.10.0",
     "cypress-axe": "^1.0.0",
     "cypress-real-events": "^1.7.2",
     "deepmerge": "^4.2.2",
-    "eslint": "^8.25.0",
+    "eslint": "^8.26.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-cypress": "^2.12.1",
     "eslint-plugin-functional": "^4.4.0",
@@ -99,7 +99,7 @@
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-react": "^7.31.1",
     "eslint-plugin-react-hooks": "^4.6.0",
-    "eslint-plugin-testing-library": "^5.7.0",
+    "eslint-plugin-testing-library": "^5.9.1",
     "fast-glob": "^3.2.11",
     "husky": "^8.0.1",
     "jsdom": "^20.0.0",
@@ -127,7 +127,7 @@
     "vitest": "^0.24.3",
     "wait-on": "^6.0.1"
   },
-  "packageManager": "pnpm@7.13.5",
+  "packageManager": "pnpm@7.14.0",
   "pnpm": {
     "peerDependencyRules": {
       "ignoreMissing": [

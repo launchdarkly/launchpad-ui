@@ -106,19 +106,19 @@
 
 /* Alert kind variants */
 
-.Alert.Alert--info .Alert-icon :global(svg) {
+.Alert.Alert--info .Alert-icon svg {
   fill: var(--reskin-info-blue-base);
 }
 
-.Alert.Alert--success .Alert-icon :global(svg) {
+.Alert.Alert--success .Alert-icon svg {
   fill: var(--reskin-success-green-base);
 }
 
-.Alert.Alert--warning .Alert-icon :global(svg) {
+.Alert.Alert--warning .Alert-icon svg {
   fill: var(--reskin-warn-gold-base);
 }
 
-.Alert.Alert--error .Alert-icon :global(svg) > :global(path) {
+.Alert.Alert--error .Alert-icon svg > path {
   fill: var(--reskin-error-red-base);
 }
 
@@ -177,7 +177,7 @@
   }
 }
 
-.Alert-content :global(ul) {
+.Alert-content ul {
   margin: 0 0 0.5em;
 }
 
@@ -185,8 +185,8 @@
   margin-bottom: 0;
 }
 
-.Alert-content :global(p),
-.Alert :global(ul) {
+.Alert-content p,
+.Alert ul {
   list-style-position: outside;
   margin: 0 0 0.5em;
 }

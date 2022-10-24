@@ -21,10 +21,6 @@
   padding: var(--SplitButton-drop-padding);
   margin-left: -0.1rem;
   width: calc(var(--SplitButton-drop-width) + 0.2rem);
-
-  & .Icon--navigateDown {
-    transform: translate(0.1rem, 0);
-  }
 }
 
 .SplitButton {
@@ -39,10 +35,6 @@
   & .Button--primary.SplitButton-drop {
     margin-left: var(--SplitButton-drop-margin);
     width: var(--SplitButton-drop-width);
-
-    & .Icon--navigateDown {
-      transform: none;
-    }
   }
 }
 
