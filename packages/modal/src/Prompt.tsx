@@ -3,7 +3,7 @@ import type { ReactNode } from 'react';
 import { cx } from 'classix';
 
 import { Portal } from './Portal';
-import './styles/Prompt.css';
+import styles from './styles/Modal.module.css';
 
 type PromptProps = {
   className?: string;
@@ -11,7 +11,7 @@ type PromptProps = {
 };
 
 const Prompt = ({ className, children }: PromptProps) => {
-  return <Portal className={cx('Prompt', className)}>{children}</Portal>;
+  return <Portal className={cx(styles.prompt, className)}>{children}</Portal>;
 };
 
 export { Prompt };

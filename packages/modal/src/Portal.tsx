@@ -3,8 +3,6 @@ import type { KeyboardEvent, ReactNode, RefObject } from 'react';
 import { useEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
 
-import './styles/Modal.css';
-
 type PortalProps = {
   containerRef?: RefObject<HTMLDivElement>;
   onKeyDown?: (event: KeyboardEvent<HTMLInputElement>) => void;
