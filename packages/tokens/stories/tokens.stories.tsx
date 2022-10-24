@@ -27,7 +27,7 @@ export const Colors = {
                   backgroundColor: token.value,
                   height: '100px',
                   width: '100px',
-                  border: '1px solid var(--color-border)',
+                  border: '1px solid var(--lp-color-border)',
                 }}
               ></div>
             </li>

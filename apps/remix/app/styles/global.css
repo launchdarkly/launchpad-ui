@@ -6,9 +6,9 @@ html {
 }
 
 body {
-  font-family: var(--font-family-base);
-  color: var(--color-gray-800);
-  font-size: var(--osmo-font-size-base);
+  font-family: var(--lp-font-family-base);
+  color: var(--lp-color-gray-800);
+  font-size: var(--lp-font-size-300);
 }
 
 @font-face {

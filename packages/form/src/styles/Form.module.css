@@ -29,12 +29,12 @@
   width: 100%;
   padding: 0.6rem 1rem;
   font-size: 1.3rem;
-  font-family: var(--font-family-base);
-  line-height: var(--line-height-base);
-  background-color: var(--color-background-field);
-  color: var(--color-text);
-  border: 1px solid var(--color-gray-500);
-  border-radius: var(--border-radius);
+  font-family: var(--lp-font-family-base);
+  line-height: var(--lp-line-height-300);
+  background-color: var(--lp-color-background-field);
+  color: var(--lp-color-text);
+  border: 1px solid var(--lp-color-gray-500);
+  border-radius: var(--lp-border-radius);
   transition: all 100ms linear;
   height: 3.2rem;
 }
@@ -47,7 +47,7 @@
 .formInput.isFocused,
 .formInput:focus {
   outline: 0;
-  border-color: var(--color-focus);
+  border-color: var(--lp-color-focus);
   box-shadow: 0 0 0 3px hsl(231.5 100% 62.5% / 0.1);
 }
 
@@ -67,7 +67,7 @@ select.formInput {
 
 .suffixContainer .formInput {
   border: none;
-  border-radius: var(--border-radius) 0 0 var(--border-radius);
+  border-radius: var(--lp-border-radius) 0 0 var(--lp-border-radius);
 }
 
 .suffixContainer .formInput:focus {
@@ -81,18 +81,18 @@ select.formInput {
 
 .label {
   font-size: 1.3rem;
-  font-family: var(--font-family-base);
+  font-family: var(--lp-font-family-base);
   word-break: break-word;
 }
 
 .labelDisabled {
-  color: var(--color-gray-800);
+  color: var(--lp-color-gray-800);
 }
 
 .labelOptional {
   margin-left: 0.4em;
-  color: var(--color-text-subtle-primary);
-  fill: var(--color-text-subtle-primary);
+  color: var(--lp-color-text-subtle-primary);
+  fill: var(--lp-color-text-subtle-primary);
 }
 
 .compactTextField .label {
@@ -100,10 +100,10 @@ select.formInput {
   top: -2px;
   left: 10px;
   padding: 0 3px;
-  color: var(--color-text);
+  color: var(--lp-color-text);
   opacity: 0;
   pointer-events: none;
-  background-color: var(--color-background);
+  background-color: var(--lp-color-background);
   transform-origin: 0 0; /* preserve left alignment after scaling */
   transition: all 100ms ease-in-out;
   z-index: 1; /* Fixes layout issue in Firefox */
@@ -120,7 +120,7 @@ select.formInput {
 }
 
 .fieldError {
-  color: var(--color-system-red-600);
+  color: var(--lp-color-system-red-600);
   font-size: 1.3rem;
 }
 
@@ -146,17 +146,17 @@ select.formInput {
 }
 
 .form .isInvalid .label {
-  color: var(--color-system-red-600);
+  color: var(--lp-color-system-red-600);
 }
 
 ::placeholder {
-  color: var(--color-gray-600);
+  color: var(--lp-color-gray-600);
 }
 
 .form .isInvalid :global(.Select-control),
 .form .isInvalid :global(.CustomSelect) > div,
 .form .isInvalid .formInput {
-  border-color: var(--color-system-red-600);
+  border-color: var(--lp-color-system-red-600);
 }
 
 .formIncreasedErrorMargin .formGroup.isInvalid {
@@ -171,24 +171,24 @@ select.formInput {
   display: block;
   margin-top: 0.3rem;
   font-size: 1.3rem;
-  font-weight: var(--font-weight-regular);
-  color: var(--color-text-subtle-primary);
+  font-weight: var(--lp-font-weight-regular);
+  color: var(--lp-color-text-subtle-primary);
 }
 
 .field .hint {
   margin: 0;
   font-size: 1.3rem;
-  color: var(--color-text-subtle-primary);
-  fill: var(--color-text-subtle-primary);
+  color: var(--lp-color-text-subtle-primary);
+  fill: var(--lp-color-text-subtle-primary);
 }
 
 .form .field label,
 .form .field .isInvalid label {
-  color: var(--color-text);
+  color: var(--lp-color-text);
 }
 
 .fieldErrorMessage {
-  color: var(--color-system-red-600);
+  color: var(--lp-color-system-red-600);
   font-size: 1.3rem;
 }
 
@@ -204,7 +204,7 @@ select.formInput {
 input.formInput:disabled,
 select.formInput:disabled,
 input.formInput:read-only {
-  background-color: var(--color-white-100);
+  background-color: var(--lp-color-white-100);
 }
 
 .formInput.isDisabled:hover,
@@ -220,11 +220,11 @@ textarea.formInput {
 
 textarea.formInput:disabled,
 textarea.formInput:read-only {
-  background-color: var(--color-white-100);
+  background-color: var(--lp-color-white-100);
 }
 
 input.formInput::-webkit-autofill {
-  box-shadow: 0 0 0 50px var(--color-background-field) inset;
+  box-shadow: 0 0 0 50px var(--lp-color-background-field) inset;
 }
 
 /* Hide the type=search cancel button in Webkit for consistency */
@@ -256,8 +256,8 @@ input[type='checkbox']:disabled {
 
 .formInput[readonly],
 .formInput[readonly]:focus {
-  color: var(--color-text-subtle-primary);
-  border-color: var(--color-gray-500);
+  color: var(--lp-color-text-subtle-primary);
+  border-color: var(--lp-color-gray-500);
   box-shadow: none;
 }
 
@@ -278,21 +278,21 @@ input[type='checkbox']:disabled {
 
 .suffixContainer {
   display: inline-flex;
-  border: 1px solid var(--color-gray-500);
-  border-radius: var(--border-radius);
+  border: 1px solid var(--lp-color-gray-500);
+  border-radius: var(--lp-border-radius);
   overflow: hidden;
   transition: all 0.1s linear;
 }
 
 .suffixContainer:focus-within {
-  border-color: var(--color-focus);
+  border-color: var(--lp-color-focus);
   box-shadow: 0 0 0 3px hsl(231.5 100% 62.5% / 0.1);
 }
 
 .suffixContainer .suffix {
   padding: 0 2px;
-  background-color: var(--color-gray-100);
-  color: var(--color-gray-500);
+  background-color: var(--lp-color-gray-100);
+  color: var(--lp-color-gray-500);
   cursor: text;
   display: inline-flex;
   align-items: center;
@@ -312,7 +312,7 @@ input[type='checkbox']:disabled {
 
 .iconFieldIcon {
   position: absolute;
-  fill: var(--color-gray-600);
+  fill: var(--lp-color-gray-600);
   top: 50%;
   transform: translateY(-50%);
   left: 1rem;
@@ -328,7 +328,7 @@ input[type='checkbox']:disabled {
 }
 
 .requiredAsterisk {
-  color: var(--color-system-red-700);
+  color: var(--lp-color-system-red-700);
 }
 
 .fieldSet {
@@ -343,7 +343,7 @@ input[type='checkbox']:disabled {
 }
 
 .compactTextField.isActive .label {
-  border-radius: var(--border-radius);
+  border-radius: var(--lp-border-radius);
   opacity: 1;
   pointer-events: auto;
   transform: translate(0, -8px) scale(0.9); /* 2d transform to avoid webkit blurry text */

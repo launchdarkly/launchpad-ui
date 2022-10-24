@@ -3,7 +3,7 @@
 }
 
 .Clipboard-checkmark svg {
-  fill: var(--color-system-green-500);
+  fill: var(--lp-color-system-green-500);
 }
 
 .Clipboard-confirmation {

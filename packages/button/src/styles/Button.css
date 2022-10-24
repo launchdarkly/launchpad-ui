@@ -6,7 +6,7 @@
   align-items: center;
   justify-content: center;
   margin: 0;
-  font-family: var(--font-family-base);
+  font-family: var(--lp-font-family-base);
   font-weight: var(--Button-font-weight);
   letter-spacing: 0.05em;
   text-align: center;
@@ -178,30 +178,30 @@
 
 .Button.Button--minimal {
   background-color: transparent;
-  color: var(--color-text);
+  color: var(--lp-color-text);
 }
 
 .Button.Button--minimal:hover,
 .Button--minimal:focus {
-  background-color: var(--color-gray-100);
+  background-color: var(--lp-color-gray-100);
 }
 
 .Button.Button--minimal:active {
-  background-color: var(--color-gray-200);
+  background-color: var(--lp-color-gray-200);
 }
 
 .Button.Button--minimal[disabled],
 .Button.Button--minimal[disabled]:hover {
   background-color: transparent;
   border: none;
-  color: var(--color-gray-500);
+  color: var(--lp-color-gray-500);
 }
 
 /* ------- CLOSE ICON BUTTON ------- */
 
 .Button.Button--close {
   background-color: transparent;
-  fill: var(--color-gray-700);
+  fill: var(--lp-color-gray-700);
 }
 
 .Button.Button--close svg {
@@ -220,15 +220,15 @@
 
 .Button.Button--close:active {
   background-color: hsl(0 0% 12.9% / 0.7);
-  box-shadow: 0 0 0 1px var(--color-black-200), 0 0 0 4px hsl(0 0% 12.9% / 0.1);
-  color: var(--color-text-inverse);
+  box-shadow: 0 0 0 1px var(--lp-color-black-200), 0 0 0 4px hsl(0 0% 12.9% / 0.1);
+  color: var(--lp-color-text-inverse);
 }
 
 .Button.Button--close[disabled],
 .Button.Button--close[disabled]:hover {
   background-color: transparent;
   border: none;
-  color: var(--color-gray-500);
+  color: var(--lp-color-gray-500);
 }
 
 /* ------- DESTRUCTIVE ------- */
@@ -329,7 +329,7 @@
   text-decoration: none;
   background-color: transparent;
   border-color: transparent;
-  color: var(--color-link); /* do we have a different color here by theme? */
+  color: var(--lp-color-link); /* do we have a different color here by theme? */
 }
 
 .Button--link:active {

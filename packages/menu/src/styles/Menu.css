@@ -1,8 +1,8 @@
 .Menu-item {
   display: block;
   position: relative;
-  color: var(--color-text);
-  background: var(--color-background);
+  color: var(--lp-color-text);
+  background: var(--lp-color-background);
   text-decoration: none;
   cursor: pointer;
   outline: none;
@@ -15,17 +15,17 @@
   white-space: nowrap;
   user-select: none;
   line-height: inherit;
-  border-width: 0;
+  border-width: var(--lp-border-width-100);
   width: 100%;
 
   &:first-child {
-    border-top-left-radius: var(--border-radius);
-    border-top-right-radius: var(--border-radius);
+    border-top-left-radius: var(--lp-border-radius);
+    border-top-right-radius: var(--lp-border-radius);
   }
 
   &:last-child {
-    border-bottom-left-radius: var(--border-radius);
-    border-bottom-right-radius: var(--border-radius);
+    border-bottom-left-radius: var(--lp-border-radius);
+    border-bottom-right-radius: var(--lp-border-radius);
   }
 }
 
@@ -36,37 +36,37 @@
 }
 
 .Menu-item-list > .Menu-item:last-child {
-  border-bottom-left-radius: var(--border-radius);
-  border-bottom-right-radius: var(--border-radius);
+  border-bottom-left-radius: var(--lp-border-radius);
+  border-bottom-right-radius: var(--lp-border-radius);
 }
 
 .Menu .Menu-item:not([disabled]):not([aria-disabled]) {
   &:active {
     text-decoration: none;
     box-shadow: none;
-    background-color: var(--color-blue-200);
-    color: var(--color-blue-600);
+    background-color: var(--lp-color-blue-200);
+    color: var(--lp-color-blue-600);
   }
 
   &:hover:not(:active):not(.has-focus) {
-    background-color: var(--color-background-hover);
-    box-shadow: inset 0 0 0 1px var(--color-gray-600);
+    background-color: var(--lp-color-background-hover);
+    box-shadow: inset 0 0 0 1px var(--lp-color-gray-600);
   }
 
   &.has-focus {
-    background-color: var(--color-background-hover);
-    box-shadow: inset 0 0 0 2px var(--color-focus);
+    background-color: var(--lp-color-background-hover);
+    box-shadow: inset 0 0 0 2px var(--lp-color-focus);
   }
 }
 
 /* stylelint-disable-next-line no-descending-specificity */
 .Menu-item-list > .VirtualMenu-item-list .VirtualMenu-item:last-child .Menu-item {
-  border-bottom-left-radius: var(--border-radius);
-  border-bottom-right-radius: var(--border-radius);
+  border-bottom-left-radius: var(--lp-border-radius);
+  border-bottom-right-radius: var(--lp-border-radius);
 }
 
 .Menu {
-  font-family: var(--font-family-base);
+  font-family: var(--lp-font-family-base);
 
   &:focus {
     outline: none;
@@ -83,7 +83,7 @@
     &:active[disabled],
     &:active[aria-disabled] {
       text-decoration: none;
-      color: var(--color-text-subtle-primary);
+      color: var(--lp-color-text-subtle-primary);
     }
   }
 
@@ -91,13 +91,13 @@
   & [hidden]:first-child + & .Menu-item-list {
     /* stylelint-disable-next-line no-descending-specificity */
     & > .Menu-item:first-child {
-      border-top-left-radius: var(--border-radius);
-      border-top-right-radius: var(--border-radius);
+      border-top-left-radius: var(--lp-border-radius);
+      border-top-right-radius: var(--lp-border-radius);
     }
 
     & > .VirtualMenu-item-list .VirtualMenu-item:first-child .Menu-item {
-      border-top-left-radius: var(--border-radius);
-      border-top-right-radius: var(--border-radius);
+      border-top-left-radius: var(--lp-border-radius);
+      border-top-right-radius: var(--lp-border-radius);
     }
   }
 }
@@ -107,7 +107,7 @@
 }
 
 .Menu-item--header {
-  font-weight: var(--font-weight-medium);
+  font-weight: var(--lp-font-weight-medium);
 }
 
 .Menu-item .Gravatar {
@@ -115,19 +115,19 @@
 }
 
 .Menu-item.is-highlighted {
-  background-color: var(--color-background-hover);
-  box-shadow: inset 0 0 0 1px var(--color-gray-600);
+  background-color: var(--lp-color-background-hover);
+  box-shadow: inset 0 0 0 1px var(--lp-color-gray-600);
 
   &:active {
-    background-color: var(--color-blue-200);
-    color: var(--color-blue-600);
+    background-color: var(--lp-color-blue-200);
+    color: var(--lp-color-blue-600);
     box-shadow: none;
   }
 }
 
 .Menu-item[aria-disabled],
 .Menu-item[disabled] {
-  color: var(--color-text-subtle-primary);
+  color: var(--lp-color-text-subtle-primary);
   cursor: default;
 }
 
@@ -139,18 +139,18 @@
 }
 
 .Menu-divider {
-  border-top: 1px solid var(--color-border);
+  border-top: 1px solid var(--lp-color-border);
 }
 
 .Menu-search {
   padding: 1rem;
   font-size: 1.3rem;
-  border-bottom: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--lp-color-border);
 }
 
 .Menu-search:first-child {
-  border-top-left-radius: var(--border-radius);
-  border-top-right-radius: var(--border-radius);
+  border-top-left-radius: var(--lp-border-radius);
+  border-top-right-radius: var(--lp-border-radius);
 }
 
 [class^='_Popover-content_'] .Menu-search {
