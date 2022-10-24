@@ -93,18 +93,18 @@ div.ProgressBubbles-icon--current {
   border: var(--border-width-2) solid var(--color-system-green-700);
 }
 
+.ProgressBubbles-icon svg {
+  fill: var(--color-white);
+  height: 1.6rem;
+  width: 1.6rem;
+}
+
 .ProgressBubbles-icon--pending svg {
   fill: var(--color-white);
 }
 
 div.ProgressBubbles-icon--current svg {
   fill: var(--color-system-green-700);
-}
-
-.ProgressBubbles-icon :global(.Icon) svg {
-  fill: var(--color-white);
-  height: 1.6rem;
-  width: 1.6rem;
 }
 
 div.ProgressBubbles-icon--pending {
@@ -116,7 +116,7 @@ div.ProgressBubbles-icon--warning {
   border: none;
 }
 
-div.ProgressBubbles-icon--warning :global(.Icon) svg {
+div.ProgressBubbles-icon--warning svg {
   fill: hsl(29.2 100% 58.4%);
   height: 3.6rem;
   width: 3.6rem;

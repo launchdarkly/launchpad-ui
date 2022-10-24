@@ -1,4 +1,4 @@
-import type { ButtonProps } from './Button';
+import type { IconProps } from '@launchpad-ui/icons';
 import type {
   ButtonHTMLAttributes,
   ElementType,
@@ -14,8 +14,8 @@ import { isValidElement, cloneElement, forwardRef, memo } from 'react';
 import './styles/Button.css';
 
 type IconButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
-  kind?: ButtonProps['kind'];
-  icon: ReactElement<{ size?: string; key: string; 'aria-hidden': boolean }>;
+  kind?: 'default' | 'primary' | 'destructive' | 'minimal' | 'close';
+  icon: ReactElement<IconProps>;
   size?: 'small' | 'normal';
   'aria-label': string;
   asChild?: boolean;
@@ -54,6 +54,7 @@ const IconButtonComponent = forwardRef<HTMLButtonElement, IconButtonProps>((prop
     key: 'icon',
     size: icon.props.size || 'medium',
     'aria-hidden': true,
+    className: cx(icon.props.className, 'Button-icon'),
   });
 
   const renderChildren = () => {

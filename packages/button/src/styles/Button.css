@@ -53,15 +53,15 @@
   width: 100%;
 }
 
-.Button:not(.Button--icon) > .Icon {
+.Button:not(.Button--icon) > .Button-icon {
   vertical-align: middle;
 }
 
-.Button:not(.Button--icon) > .Icon:first-child {
+.Button:not(.Button--icon) > .Button-icon:first-child {
   margin-right: 0.5rem;
 }
 
-.Button:not(.Button--icon) > .Icon:last-child {
+.Button:not(.Button--icon) > .Button-icon:last-child {
   margin-left: 0.5rem;
 }
 
@@ -92,11 +92,11 @@
   color: var(--Button-color-text-default);
 }
 
-.Button--default .Icon {
+.Button--default .Button-icon {
   fill: var(--Button-icon-color-fill-default);
 }
 
-.Button--icon.Button--default .Icon {
+.Button--icon.Button--default .Button-icon {
   background-color: transparent;
   color: var(--Button-icon-color-text-default);
 }
@@ -156,21 +156,21 @@
   box-shadow: var(--Button-box-shadow-active);
 }
 
-.Button--icon.Button--primary .Icon {
+.Button--icon.Button--primary .Button-icon {
   fill: var(--Button-icon-color-fill-primary);
 }
 
-.Button--primary:hover .Icon,
-.Button--icon.Button--primary:hover .Icon {
+.Button--primary:hover .Button-icon,
+.Button--icon.Button--primary:hover .Button-icon {
   fill: var(--Button-icon-color-fill-primary-hover);
 }
 
-.Button--icon.Button--primary:focus .Icon {
+.Button--icon.Button--primary:focus .Button-icon {
   fill: var(--Button-icon-color-fill-primary-focus);
 }
 
-.Button--primary:active .Icon,
-.Button--icon.Button--primary:active .Icon {
+.Button--primary:active .Button-icon,
+.Button--icon.Button--primary:active .Button-icon {
   fill: var(--Button-icon-color-fill-primary-active);
 }
 
@@ -256,15 +256,15 @@
   color: var(--Button-color-text-destructive-active);
 }
 
-.Button--destructive .Icon {
+.Button--destructive .Button-icon {
   fill: var(--Button-icon-color-fill-destructive);
 }
 
-.Button--destructive:hover .Icon {
+.Button--destructive:hover .Button-icon {
   fill: var(--Button-icon-color-fill-destructive-hover);
 }
 
-.Button--destructive:active .Icon {
+.Button--destructive:active .Button-icon {
   fill: var(--Button-icon-color-fill-destructive-active);
 }
 
@@ -282,19 +282,19 @@
   box-shadow: var(--Button-box-shadow-focus);
 }
 
-.Button--icon.Button--destructive .Icon {
+.Button--icon.Button--destructive .Button-icon {
   fill: var(--Button-icon-color-fill-destructive);
 }
 
-.Button--icon.Button--destructive:hover .Icon {
+.Button--icon.Button--destructive:hover .Button-icon {
   fill: var(--Button-icon-color-fill-destructive-hover);
 }
 
-.Button--icon.Button--destructive:focus .Icon {
+.Button--icon.Button--destructive:focus .Button-icon {
   fill: var(--Button-icon-color-fill-destructive-focus);
 }
 
-.Button--icon.Button--destructive:active .Icon {
+.Button--icon.Button--destructive:active .Button-icon {
   fill: var(--Button-icon-color-fill-destructive-active);
 }
 
@@ -351,7 +351,7 @@
 
 /* Set the color for the clear button in search bars */
 
-.Button--clear .Icon {
+.Button--clear .Button-icon {
   fill: var(--Button-icon-clear-color-fill);
   color: var(--Button-icon-clear-color-text);
 }
@@ -391,7 +391,7 @@
   border-color: var(--Button-color-border-disabled);
 }
 
-.Button[disabled] .Icon {
+.Button[disabled] .Button-icon {
   fill: var(--Button-icon-color-fill-disabled);
 }
 
