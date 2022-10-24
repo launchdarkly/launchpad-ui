@@ -112,7 +112,7 @@ as needed. */
 }
 
 .prompt .modalHeader {
-  font-size: var(--lp-font-size-400);
+  font-size: var(--lp-font-size-500);
   font-weight: var(--lp-font-weight-semibold);
   padding: 2rem 4.4rem 1rem 2rem;
 }
