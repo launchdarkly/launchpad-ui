@@ -14,6 +14,7 @@ module.exports = {
   source: [`src/**/*.yaml`],
   platforms: {
     css: {
+      prefix: 'lp',
       transforms: [
         'attribute/cti',
         'name/cti/kebab',

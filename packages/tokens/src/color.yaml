@@ -1,23 +1,13 @@
 color:
-  yellow:
+  black:
     100:
-      value: hsl(66, 100%, 98%)
+      value: hsl(0, 0%, 15.7%)
     200:
-      value: hsl(66, 100%, 94.1%)
+      value: hsl(0, 0%, 12.9%)
     300:
-      value: hsl(66, 100%, 84.3%)
-    400:
-      value: hsl(66.1, 100%, 76.7%)
-    500:
-      value: hsl(66, 100%, 61%)
-    600:
-      value: hsl(66, 69%, 52%)
-    700:
-      value: hsl(66, 63.9%, 45.7%)
-    800:
-      value: hsl(66, 64.4%, 39.6%)
-    900:
-      value: hsl(66.1, 63.7%, 33.5%)
+      value: hsl(0, 0%, 9.8%)
+    ' ':
+      value: hsl(0, 0%, 0%)
   blue:
     100:
       value: hsl(228, 100%, 98%)
@@ -37,25 +27,6 @@ color:
       value: hsl(231.8, 59.6%, 40.8%)
     900:
       value: hsl(231.4, 60%, 34.3%)
-  pink:
-    100:
-      value: hsl(342, 100%, 98%)
-    200:
-      value: hsl(344, 100%, 94.1%)
-    300:
-      value: hsl(344.3, 100%, 84.3%)
-    400:
-      value: hsl(344.7, 100%, 70.8%)
-    500:
-      value: hsl(344.6, 100%, 61%)
-    600:
-      value: hsl(344.7, 69%, 52%)
-    700:
-      value: hsl(344.7, 63.9%, 45.7%)
-    800:
-      value: hsl(344.3, 64.4%, 39.6%)
-    900:
-      value: hsl(344.6, 63.7%, 33.5%)
   cyan:
     100:
       value: hsl(186.7, 81.8%, 97.8%)
@@ -75,6 +46,42 @@ color:
       value: hsl(190.1, 59.8%, 39%)
     900:
       value: hsl(190.1, 59.8%, 33.1%)
+  gray:
+    100:
+      value: hsl(0, 0%, 90.2%)
+    200:
+      value: hsl(200, 3.4%, 82.5%)
+    300:
+      value: hsl(210, 3.1%, 74.5%)
+    400:
+      value: hsl(216, 2.9%, 66.5%)
+    500:
+      value: hsl(216, 2.4%, 58.6%)
+    600:
+      value: hsl(225, 1.8%, 43.5%)
+    700:
+      value: hsl(220, 1.7%, 35.1%)
+    800:
+      value: hsl(270, 1.5%, 25.5%)
+  pink:
+    100:
+      value: hsl(342, 100%, 98%)
+    200:
+      value: hsl(344, 100%, 94.1%)
+    300:
+      value: hsl(344.3, 100%, 84.3%)
+    400:
+      value: hsl(344.7, 100%, 70.8%)
+    500:
+      value: hsl(344.6, 100%, 61%)
+    600:
+      value: hsl(344.7, 69%, 52%)
+    700:
+      value: hsl(344.7, 63.9%, 45.7%)
+    800:
+      value: hsl(344.3, 64.4%, 39.6%)
+    900:
+      value: hsl(344.6, 63.7%, 33.5%)
   purple:
     100:
       value: hsl(274.3, 63.6%, 97.8%)
@@ -99,32 +106,25 @@ color:
       value: hsl(0, 0%, 97.3%)
     ' ':
       value: hsl(0, 0%, 100%)
-  gray:
+  yellow:
     100:
-      value: hsl(0, 0%, 90.2%)
+      value: hsl(66, 100%, 98%)
     200:
-      value: hsl(200, 3.4%, 82.5%)
+      value: hsl(66, 100%, 94.1%)
     300:
-      value: hsl(210, 3.1%, 74.5%)
+      value: hsl(66, 100%, 84.3%)
     400:
-      value: hsl(216, 2.9%, 66.5%)
+      value: hsl(66.1, 100%, 76.7%)
     500:
-      value: hsl(216, 2.4%, 58.6%)
+      value: hsl(66, 100%, 61%)
     600:
-      value: hsl(225, 1.8%, 43.5%)
+      value: hsl(66, 69%, 52%)
     700:
-      value: hsl(220, 1.7%, 35.1%)
+      value: hsl(66, 63.9%, 45.7%)
     800:
-      value: hsl(270, 1.5%, 25.5%)
-  black:
-    100:
-      value: hsl(0, 0%, 15.7%)
-    200:
-      value: hsl(0, 0%, 12.9%)
-    300:
-      value: hsl(0, 0%, 9.8%)
-    ' ':
-      value: hsl(0, 0%, 0%)
+      value: hsl(66, 64.4%, 39.6%)
+    900:
+      value: hsl(66.1, 63.7%, 33.5%)
   system:
     green:
       100:
@@ -183,6 +183,9 @@ color:
         value: hsl(45.1, 57.4%, 38.6%)
       900:
         value: hsl(45, 57.8%, 32.5%)
+
+  # Alias tokens
+
   background:
     ' ':
       value: '{ color.white. .value }'
