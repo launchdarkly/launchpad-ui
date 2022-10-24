@@ -1,5 +1,25 @@
 # @launchpad-ui/core
 
+## 0.18.1
+
+### Patch Changes
+
+- [#512](https://github.com/launchdarkly/launchpad-ui/pull/512) [`cc222fe`](https://github.com/launchdarkly/launchpad-ui/commit/cc222fe3b03b0516d33c3e8bd76da422641e76d3) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Modal] Make has-modal class globally accessible
+
+- Updated dependencies [[`cc222fe`](https://github.com/launchdarkly/launchpad-ui/commit/cc222fe3b03b0516d33c3e8bd76da422641e76d3)]:
+  - @launchpad-ui/modal@0.9.1
+  - @launchpad-ui/overlay@0.3.21
+  - @launchpad-ui/popover@0.8.15
+  - @launchpad-ui/dropdown@0.5.15
+  - @launchpad-ui/menu@0.6.21
+  - @launchpad-ui/navigation@0.6.23
+  - @launchpad-ui/progress-bubbles@0.5.16
+  - @launchpad-ui/split-button@0.6.16
+  - @launchpad-ui/tooltip@0.6.16
+  - @launchpad-ui/filter@0.4.21
+  - @launchpad-ui/clipboard@0.8.16
+  - @launchpad-ui/notification@0.5.16
+
 ## 0.18.0
 
 ### Minor Changes
