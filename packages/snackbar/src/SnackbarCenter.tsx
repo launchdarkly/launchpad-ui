@@ -24,7 +24,7 @@ type SnackbarCenterProps = {
 };
 
 const SnackbarCenter = ({ snackbars, dismissSnackbar, className }: SnackbarCenterProps) => {
-  const classes = cx('SnackbarCenter', styles.SnackbarCenter, className);
+  const classes = cx(styles.SnackbarCenter, className);
 
   const handleDismiss = (item: SnackbarRecord) => {
     item.onDismiss?.();

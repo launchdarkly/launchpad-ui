@@ -24,7 +24,7 @@ const Banner = ({
   'data-test-id': testId = 'banner',
   ...rest
 }: BannerProps) => {
-  const classes = cx('Banner', styles.Banner, styles[`Banner--${kind}`], className);
+  const classes = cx(styles.Banner, styles[`Banner--${kind}`], className);
 
   return (
     <div className={classes} data-test-id={testId} {...rest}>

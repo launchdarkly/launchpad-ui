@@ -41,7 +41,7 @@ const CollapsibleAlert = ({
 
   return (
     <div className={classes} data-test-id={testId} {...rest}>
-      <Alert kind={kind} size="medium" className={cx('CollapsibleAlert', styles.CollapsibleAlert)}>
+      <Alert kind={kind} size="medium" className={styles.CollapsibleAlert}>
         <div>{message}</div>
         <button
           aria-expanded={!alertCollapsed}

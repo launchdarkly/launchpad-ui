@@ -30,7 +30,7 @@ const Snackbar = ({
   return (
     <div
       {...rest}
-      className={cx('Snackbar', styles.Snackbar, styles[`Snackbar--${kind}`], className)}
+      className={cx(styles.Snackbar, styles[`Snackbar--${kind}`], className)}
       data-test-id={testId}
       role="status"
     >

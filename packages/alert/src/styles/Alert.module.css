@@ -39,7 +39,7 @@
   --Alert-text-color: var(--color-text-subtle-primary);
 }
 
-:global(.Alert).Alert {
+.Alert {
   position: relative;
   display: flex;
   gap: 1.4rem;
@@ -64,7 +64,7 @@
   line-height: 1.25;
 }
 
-:global(.Alert).Alert :global(.ButtonGroup) {
+.Alert :global(.ButtonGroup) {
   margin-top: 1.2rem;
 }
 
