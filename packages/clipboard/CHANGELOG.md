@@ -1,5 +1,14 @@
 # @launchpad-ui/clipboard
 
+## 0.8.17
+
+### Patch Changes
+
+- [#505](https://github.com/launchdarkly/launchpad-ui/pull/505) [`66dd7a6`](https://github.com/launchdarkly/launchpad-ui/commit/66dd7a6174c95a92ed4b49fe3398c1ba5b624731) Thanks [@Niznikr](https://github.com/Niznikr)! - [Alert, Banner, Clipboard, Snackbar, Toast] Remove base classes
+
+- Updated dependencies []:
+  - @launchpad-ui/tooltip@0.6.17
+
 ## 0.8.16
 
 ### Patch Changes
