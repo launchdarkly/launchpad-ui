@@ -1,39 +1,31 @@
-import type { KeyboardEvent, ReactNode, RefObject } from 'react';
+import type { HTMLAttributes } from 'react';
 
-import { useEffect, useState } from 'react';
+import { forwardRef, useEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
 
-type PortalProps = {
-  containerRef?: RefObject<HTMLDivElement>;
-  onKeyDown?: (event: KeyboardEvent<HTMLInputElement>) => void;
-  className?: string;
-  children?: ReactNode;
+type PortalProps = HTMLAttributes<HTMLDivElement> & {
+  container?: HTMLElement | null;
+  'data-test-id'?: string;
 };
 
-const Portal = ({ children, containerRef, ...props }: PortalProps) => {
-  const [portal, setPortal] = useState<HTMLDivElement | null>(null);
+const Portal = forwardRef<HTMLDivElement, PortalProps>(
+  (
+    { container = globalThis?.document?.body, 'data-test-id': testId = 'portal', ...props },
+    ref
+  ) => {
+    const [mounted, setMounted] = useState(false);
 
-  useEffect(() => {
-    const portal = document.createElement('div');
-    portal.classList.add('Portal');
+    useEffect(() => {
+      setMounted(true);
+    }, []);
 
-    setPortal(portal);
-    document.body.appendChild(portal);
+    return mounted && container
+      ? createPortal(<div {...props} ref={ref} data-test-id={testId} />, container)
+      : null;
+  }
+);
 
-    return () => {
-      document.body.removeChild(portal);
-    };
-  }, []);
-
-  return portal
-    ? createPortal(
-        <div {...props} ref={containerRef}>
-          {children}
-        </div>,
-        portal
-      )
-    : null;
-};
+Portal.displayName = 'Portal';
 
 export { Portal };
 export type { PortalProps };

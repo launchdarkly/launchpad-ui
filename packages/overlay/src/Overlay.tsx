@@ -117,7 +117,7 @@ const Overlay = ({
     };
   }, [isOpen, handleOverlayOpen, handleOverlayClose, hasEverOpened]);
 
-  const handleKeyDown = (event: KeyboardEvent<HTMLInputElement>) => {
+  const handleKeyDown = (event: KeyboardEvent) => {
     if (canEscapeKeyClose && event.key === 'Escape') {
       typeof onClose === 'function' && onClose(event);
       event.preventDefault();
@@ -129,7 +129,7 @@ const Overlay = ({
   }
 
   return (
-    <Portal onKeyDown={handleKeyDown} containerRef={containerElement}>
+    <Portal onKeyDown={handleKeyDown} ref={containerElement}>
       {isOpen ? children : null}
     </Portal>
   );
