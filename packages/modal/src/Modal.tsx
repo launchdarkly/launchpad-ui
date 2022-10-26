@@ -79,11 +79,11 @@ const Modal = ({
     };
 
     onReady?.();
-    document.body.classList.add('has-modal');
+    document.body.classList.add('has-overlay');
     document.addEventListener('keydown', handleEscape);
 
     return () => {
-      document.body.classList.remove('has-modal');
+      document.body.classList.remove('has-overlay');
       document.removeEventListener('keydown', handleEscape);
     };
   }, [onReady, onCancel, testId]);
