@@ -1,6 +1,6 @@
 {
   "name": "@launchpad-ui/notification",
-  "version": "0.5.17",
+  "version": "0.5.18",
   "status": "beta",
   "publishConfig": {
     "access": "public"

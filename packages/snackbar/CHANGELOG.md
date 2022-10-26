@@ -1,5 +1,16 @@
 # @launchpad-ui/snackbar
 
+## 0.3.4
+
+### Patch Changes
+
+- [#518](https://github.com/launchdarkly/launchpad-ui/pull/518) [`47d538b`](https://github.com/launchdarkly/launchpad-ui/commit/47d538b0060d253bd8d71bfc64e32d89599d8436) Thanks [@Niznikr](https://github.com/Niznikr)! - [Snackbar] Add word-break styles
+
+- Updated dependencies [[`4090f93`](https://github.com/launchdarkly/launchpad-ui/commit/4090f93ba98ea6f75a7f9f7b902fafcfb9b005b3)]:
+  - @launchpad-ui/tokens@0.2.0
+  - @launchpad-ui/button@0.7.5
+  - @launchpad-ui/icons@0.5.9
+
 ## 0.3.3
 
 ### Patch Changes
