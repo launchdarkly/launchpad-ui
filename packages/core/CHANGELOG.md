@@ -1,5 +1,34 @@
 # @launchpad-ui/core
 
+## 0.20.0
+
+### Minor Changes
+
+- [#520](https://github.com/launchdarkly/launchpad-ui/pull/520) [`d87e683`](https://github.com/launchdarkly/launchpad-ui/commit/d87e68388354cd5318e60344f8d855bd27521d19) Thanks [@chasedarkly](https://github.com/chasedarkly)! - Add drawer package
+
+  [Drawer] Add drawer package
+  [Modal] Remove unused class, rename use of `has-modal` to `has-overlay`
+  [Overlay] Rename use of `has-modal` to `has-overlay`
+  [Popover] Rename use of `has-modal` to `has-overlay`
+  [Dropdown] Rename use of `has-modal` to `has-overlay`
+
+### Patch Changes
+
+- Updated dependencies [[`d87e683`](https://github.com/launchdarkly/launchpad-ui/commit/d87e68388354cd5318e60344f8d855bd27521d19)]:
+  - @launchpad-ui/drawer@0.1.0
+  - @launchpad-ui/dropdown@0.6.0
+  - @launchpad-ui/modal@0.9.4
+  - @launchpad-ui/overlay@0.3.24
+  - @launchpad-ui/popover@0.8.18
+  - @launchpad-ui/filter@0.4.24
+  - @launchpad-ui/navigation@0.6.26
+  - @launchpad-ui/split-button@0.6.19
+  - @launchpad-ui/menu@0.6.24
+  - @launchpad-ui/progress-bubbles@0.5.19
+  - @launchpad-ui/tooltip@0.6.19
+  - @launchpad-ui/clipboard@0.8.19
+  - @launchpad-ui/notification@0.5.19
+
 ## 0.19.0
 
 ### Minor Changes
