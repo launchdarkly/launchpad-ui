@@ -4,10 +4,11 @@ import type { MouseEvent, ReactNode } from 'react';
 import { IconButton } from '@launchpad-ui/button';
 import { FocusTrap } from '@launchpad-ui/focus-trap';
 import { Close } from '@launchpad-ui/icons';
+import { Progress } from '@launchpad-ui/progress';
 import { usePreventScroll } from '@react-aria/overlays';
 import { cx } from 'classix';
 import { LazyMotion, m } from 'framer-motion';
-import { useEffect, useRef } from 'react';
+import { Suspense, useEffect, useRef } from 'react';
 
 import { DrawerPortal } from './DrawerPortal';
 import { DRAWER_LABELLED_BY } from './constants';
@@ -117,7 +118,7 @@ const Drawer = ({
                   onClick={onCancel}
                   data-test-id="drawer-close-button"
                 />
-                {children}
+                <Suspense fallback={<Progress />}>{children}</Suspense>
               </m.div>
             </FocusTrap>
           </m.div>
