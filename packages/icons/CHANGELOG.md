@@ -1,5 +1,11 @@
 # @launchpad-ui/icons
 
+## 0.6.0
+
+### Minor Changes
+
+- [#522](https://github.com/launchdarkly/launchpad-ui/pull/522) [`0deac4f`](https://github.com/launchdarkly/launchpad-ui/commit/0deac4f7cb58781e56d864f50b659f5c885339dc) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Icons] Update typo in Verfied icon to Verified
+
 ## 0.5.9
 
 ### Patch Changes

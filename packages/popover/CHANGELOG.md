@@ -1,5 +1,12 @@
 # @launchpad-ui/popover
 
+## 0.8.19
+
+### Patch Changes
+
+- Updated dependencies [[`5b78533`](https://github.com/launchdarkly/launchpad-ui/commit/5b78533cb4905e6a1e70ee0e232e9253e34d9e3d)]:
+  - @launchpad-ui/overlay@0.3.25
+
 ## 0.8.18
 
 ### Patch Changes

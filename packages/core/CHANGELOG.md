@@ -1,5 +1,58 @@
 # @launchpad-ui/core
 
+## 0.21.0
+
+### Minor Changes
+
+- [#526](https://github.com/launchdarkly/launchpad-ui/pull/526) [`98902b5`](https://github.com/launchdarkly/launchpad-ui/commit/98902b5e3e5c08d8ab5946ec5156114ff55d65d5) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Modal] Make the following changes:
+
+  - Simplify css naming in Modal
+  - Remove `.modalSheet` classnames
+  - Deprecate `titleClassName` - just use h2
+  - Rename “Modal-close” test-id to “modal-close-button”
+  - Remove `Prompt` component in favor of putting the `Portal` in `Modal`
+    - Note: `Prompt` className should be refactored in consuming apps
+  - Change `Modal` props:
+    - Set default `withCloseButton` to true instead of false
+    - Remove `modalLabelID` - this is only used once in the app and we can safely just switch to a default constant that’s kept internally. This API was clunky anyways because you had to give the same value to both Modal and ModalHeader
+    - Remove `transition` prop since we will use the same transition for all modals
+  - Change `ModalHeader` props:
+    - Remove unused `closeable` prop
+    - Remove `titleID` which accompanied `modalLabelID` and was removed for reasons stated above
+    - Remove `titleClassName` - we can safely target the className prop with an `h2` selector.
+    - Remove `onClose` since we no longer have any way to close from `ModalHeader`
+
+- [#522](https://github.com/launchdarkly/launchpad-ui/pull/522) [`0deac4f`](https://github.com/launchdarkly/launchpad-ui/commit/0deac4f7cb58781e56d864f50b659f5c885339dc) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Icons] Update typo in Verfied icon to Verified
+
+### Patch Changes
+
+- [#524](https://github.com/launchdarkly/launchpad-ui/pull/524) [`5b78533`](https://github.com/launchdarkly/launchpad-ui/commit/5b78533cb4905e6a1e70ee0e232e9253e34d9e3d) Thanks [@Niznikr](https://github.com/Niznikr)! - Add portal package
+
+- Updated dependencies [[`5b78533`](https://github.com/launchdarkly/launchpad-ui/commit/5b78533cb4905e6a1e70ee0e232e9253e34d9e3d), [`98902b5`](https://github.com/launchdarkly/launchpad-ui/commit/98902b5e3e5c08d8ab5946ec5156114ff55d65d5), [`0deac4f`](https://github.com/launchdarkly/launchpad-ui/commit/0deac4f7cb58781e56d864f50b659f5c885339dc)]:
+  - @launchpad-ui/portal@0.1.0
+  - @launchpad-ui/drawer@0.1.1
+  - @launchpad-ui/modal@0.10.0
+  - @launchpad-ui/overlay@0.3.25
+  - @launchpad-ui/icons@0.6.0
+  - @launchpad-ui/popover@0.8.19
+  - @launchpad-ui/alert@0.6.9
+  - @launchpad-ui/avatar@0.4.10
+  - @launchpad-ui/banner@0.7.8
+  - @launchpad-ui/button@0.7.6
+  - @launchpad-ui/clipboard@0.8.20
+  - @launchpad-ui/dropdown@0.6.1
+  - @launchpad-ui/filter@0.4.25
+  - @launchpad-ui/form@0.6.14
+  - @launchpad-ui/menu@0.6.25
+  - @launchpad-ui/notification@0.5.20
+  - @launchpad-ui/pagination@0.3.13
+  - @launchpad-ui/snackbar@0.3.5
+  - @launchpad-ui/toast@0.2.7
+  - @launchpad-ui/navigation@0.6.27
+  - @launchpad-ui/progress-bubbles@0.5.20
+  - @launchpad-ui/split-button@0.6.20
+  - @launchpad-ui/tooltip@0.6.20
+
 ## 0.20.0
 
 ### Minor Changes

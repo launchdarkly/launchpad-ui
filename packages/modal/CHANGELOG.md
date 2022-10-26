@@ -1,5 +1,36 @@
 # @launchpad-ui/modal
 
+## 0.10.0
+
+### Minor Changes
+
+- [#526](https://github.com/launchdarkly/launchpad-ui/pull/526) [`98902b5`](https://github.com/launchdarkly/launchpad-ui/commit/98902b5e3e5c08d8ab5946ec5156114ff55d65d5) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Modal] Make the following changes:
+
+  - Simplify css naming in Modal
+  - Remove `.modalSheet` classnames
+  - Deprecate `titleClassName` - just use h2
+  - Rename “Modal-close” test-id to “modal-close-button”
+  - Remove `Prompt` component in favor of putting the `Portal` in `Modal`
+    - Note: `Prompt` className should be refactored in consuming apps
+  - Change `Modal` props:
+    - Set default `withCloseButton` to true instead of false
+    - Remove `modalLabelID` - this is only used once in the app and we can safely just switch to a default constant that’s kept internally. This API was clunky anyways because you had to give the same value to both Modal and ModalHeader
+    - Remove `transition` prop since we will use the same transition for all modals
+  - Change `ModalHeader` props:
+    - Remove unused `closeable` prop
+    - Remove `titleID` which accompanied `modalLabelID` and was removed for reasons stated above
+    - Remove `titleClassName` - we can safely target the className prop with an `h2` selector.
+    - Remove `onClose` since we no longer have any way to close from `ModalHeader`
+
+### Patch Changes
+
+- [#524](https://github.com/launchdarkly/launchpad-ui/pull/524) [`5b78533`](https://github.com/launchdarkly/launchpad-ui/commit/5b78533cb4905e6a1e70ee0e232e9253e34d9e3d) Thanks [@Niznikr](https://github.com/Niznikr)! - Add portal package
+
+- Updated dependencies [[`5b78533`](https://github.com/launchdarkly/launchpad-ui/commit/5b78533cb4905e6a1e70ee0e232e9253e34d9e3d), [`0deac4f`](https://github.com/launchdarkly/launchpad-ui/commit/0deac4f7cb58781e56d864f50b659f5c885339dc)]:
+  - @launchpad-ui/portal@0.1.0
+  - @launchpad-ui/icons@0.6.0
+  - @launchpad-ui/button@0.7.6
+
 ## 0.9.4
 
 ### Patch Changes
