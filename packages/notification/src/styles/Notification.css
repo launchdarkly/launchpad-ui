@@ -6,17 +6,17 @@
   --Notification-icon-color-warning: var(--reskin-warn-gold-base);
   --Notification-icon-color-error: var(--reskin-error-red-base);
   --reskin-success-green-safe: hsl(142.4 71.8% 29.2%);
-  --reskin-success-green-light: var(--color-system-green-200);
-  --reskin-success-green-base: var(--color-system-green-700);
+  --reskin-success-green-light: var(--lp-color-system-green-200);
+  --reskin-success-green-base: var(--lp-color-system-green-700);
   --reskin-info-blue-safe: hsl(207.2 86% 39.2%);
-  --reskin-info-blue-light: var(--color-blue-200);
-  --reskin-info-blue-base: var(--color-blue-700);
+  --reskin-info-blue-light: var(--lp-color-blue-200);
+  --reskin-info-blue-base: var(--lp-color-blue-700);
   --reskin-warn-gold-safe: hsl(42.9 100% 29.6%);
-  --reskin-warn-gold-light: var(--color-system-yellow-200);
-  --reskin-warn-gold-base: var(--color-system-yellow-700);
+  --reskin-warn-gold-light: var(--lp-color-system-yellow-200);
+  --reskin-warn-gold-base: var(--lp-color-system-yellow-700);
   --reskin-error-red-safe: hsl(0 100% 41.6%);
-  --reskin-error-red-light: var(--color-system-red-200);
-  --reskin-error-red-base: var(--color-system-red-700);
+  --reskin-error-red-light: var(--lp-color-system-red-200);
+  --reskin-error-red-base: var(--lp-color-system-red-700);
   --Notification-box-shadow-0x2y-blur8-sp2-4prc-black: 0 2px 8px -2px hsl(0 0% 0% / 0.04);
   --Notification-box-shadow-0x2y-blur4-sp2-8prc-black: 0 2px 4px 2px hsl(0 0% 0% / 0.08);
   --Notification-box-shadow-0x1y-blur2-sp2-8prc-black: 0 1px 2px 2px hsl(0 0% 0% / 0.08);
@@ -39,9 +39,9 @@
   --Notification-color-border-success: var(--reskin-success-green-base);
   --Notification-color-border-warning: var(--reskin-warn-gold-base);
   --Notification-color-border-error: var(--reskin-error-red-base);
-  --Notification-color-text: var(--color-text-subtle-primary);
-  --Notification-detailsExpand-color-text: var(--color-gray-800);
-  --Notification-detailsExpand-color-text-active: var(--color-black-200);
+  --Notification-color-text: var(--lp-color-text-subtle-primary);
+  --Notification-detailsExpand-color-text: var(--lp-color-gray-800);
+  --Notification-detailsExpand-color-text-active: var(--lp-color-black-200);
 }
 
 /* ------- TODO: make component tokens when design done ------- */
@@ -49,13 +49,13 @@
   display: flex;
   position: relative;
   min-height: 4.4rem;
-  font-size: var(--osmo-font-size-base);
-  font-weight: var(--font-weight-medium);
-  line-height: var(--line-height-small);
+  font-size: var(--lp-font-size-300);
+  font-weight: var(--lp-font-weight-medium);
+  line-height: var(--lp-line-height-200);
   white-space: normal;
-  background-color: var(--color-white);
+  background-color: var(--lp-color-white);
   color: var(--Notification-color-text);
-  border: 0.0625em solid var(--color-white);
+  border: 0.0625em solid var(--lp-color-white);
   border-radius: var(--Notification-border-radius);
   box-shadow: var(--reskin-box-shadow-triple);
   box-sizing: border-box;
@@ -88,7 +88,7 @@
   color: var(--Notification-detailsExpand-color-text);
   background-color: transparent;
   border: hsl(0 0% 0% / 0);
-  border-radius: var(--border-radius);
+  border-radius: var(--lp-border-radius);
 
   &:focus {
     outline: none;
@@ -105,7 +105,7 @@
   }
 
   & .Notification-detailsExpandIcon {
-    fill: var(--color-gray-700);
+    fill: var(--lp-color-gray-700);
   }
 
   &:focus:not(:focus-visible) {
@@ -155,7 +155,7 @@ will zero out that positioning adjustment for now */
   }
 
   &:active {
-    color: var(--color-text);
+    color: var(--lp-color-text);
     box-shadow: none;
     text-decoration: underline;
   }
@@ -186,9 +186,9 @@ will zero out that positioning adjustment for now */
 }
 
 .Notification-details {
-  color: var(--color-text-subtle-primary);
-  font-size: var(--osmo-font-size-small);
-  font-weight: var(--font-weight-regular);
+  color: var(--lp-color-text-subtle-primary);
+  font-size: var(--lp-font-size-200);
+  font-weight: var(--lp-font-weight-regular);
   line-height: 18px;
   height: 18px;
   margin-top: 1rem;

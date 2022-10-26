@@ -14,6 +14,7 @@ module.exports = {
   source: [`src/**/*.yaml`],
   platforms: {
     css: {
+      prefix: 'lp',
       transforms: [
         'attribute/cti',
         'name/cti/kebab',
@@ -75,7 +76,7 @@ module.exports = {
       buildPath: 'stories/',
       files: [
         {
-          format: 'json',
+          format: 'json/nested',
           destination: 'tokens.json',
         },
       ],

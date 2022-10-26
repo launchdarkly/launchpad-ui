@@ -1,9 +1,9 @@
 .CopyCodeButton {
   border-radius: 20px;
-  font-family: var(--font-monospace-family);
+  font-family: var(--lp-font-family-monospace);
   font-size: 87.5%;
   margin: 0;
-  background-color: var(--color-gray-100);
+  background-color: var(--lp-color-gray-100);
   padding: 0.4rem 0.8rem;
   border: none;
   cursor: pointer;
@@ -11,9 +11,9 @@
 
 .CopyCodeButton:focus {
   outline: 0;
-  box-shadow: 0 0 0 2px var(--color-white), 0 0 0 4px var(--color-blue-700);
+  box-shadow: 0 0 0 2px var(--lp-color-white), 0 0 0 4px var(--lp-color-blue-700);
 }
 
 .CopyCodeButton:focus-visible {
-  outline-color: var(--color-background-hover);
+  outline-color: var(--lp-color-background-hover);
 }
