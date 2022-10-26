@@ -20,11 +20,11 @@
 
 .Progress-track {
   fill: none;
-  stroke: var(--color-white-100);
+  stroke: var(--lp-color-white-100);
 }
 
 .Progress-head {
   transition: stroke-dashoffset 0.35s;
   fill: none;
-  stroke: var(--color-gray-500);
+  stroke: var(--lp-color-gray-500);
 }

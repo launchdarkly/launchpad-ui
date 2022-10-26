@@ -1,18 +1,18 @@
 .Counter {
   display: inline-block;
   font-size: 1.1rem;
-  font-weight: var(--font-weight-bold);
-  line-height: var(--line-height-small);
+  font-weight: var(--lp-font-weight-bold);
+  line-height: var(--lp-line-height-200);
   padding: 2px 8px;
   border-radius: 1rem;
-  color: var(--color-gray-700);
-  border: 1px solid var(--color-blue-500);
+  color: var(--lp-color-gray-700);
+  border: 1px solid var(--lp-color-blue-500);
   min-width: 2rem;
   vertical-align: middle;
 }
 
 .Counter--subtle {
-  border: 1px solid var(--color-gray-200);
-  color: var(--color-gray-700);
-  background-color: var(--color-gray-100);
+  border: 1px solid var(--lp-color-gray-200);
+  color: var(--lp-color-gray-700);
+  background-color: var(--lp-color-gray-100);
 }

@@ -1,7 +1,7 @@
 .Snackbar {
-  background-color: var(--color-gray-800);
-  color: var(--color-text-inverse);
-  padding: var(--spacing-4);
+  background-color: var(--lp-color-gray-800);
+  color: var(--lp-color-text-inverse);
+  padding: var(--lp-spacing-500);
   display: inline-flex;
   gap: 1.4rem;
   box-sizing: border-box;
@@ -16,27 +16,27 @@
 
 .Snackbar--error {
   & .Snackbar-icon {
-    fill: var(--color-pink-500);
+    fill: var(--lp-color-pink-500);
   }
 }
 
 .Snackbar--info .Snackbar-icon {
-  fill: var(--color-cyan-500);
+  fill: var(--lp-color-cyan-500);
 }
 
 .Snackbar--warning {
   & .Snackbar-icon {
-    fill: var(--color-yellow-500);
+    fill: var(--lp-color-yellow-500);
   }
 }
 
 .Snackbar-heading {
   margin-top: 0;
-  margin-bottom: var(--spacing-1);
+  margin-bottom: var(--lp-spacing-200);
   font-size: 1.6rem;
-  font-weight: var(--font-weight-medium);
+  font-weight: var(--lp-font-weight-medium);
   line-height: 1.5;
-  color: var(--color-text-inverse);
+  color: var(--lp-color-text-inverse);
 }
 
 .Snackbar-content {
@@ -44,14 +44,14 @@
 
   & .Snackbar-description,
   & a {
-    font-size: var(--osmo-font-size-small);
-    font-weight: var(--font-weight-regular);
+    font-size: var(--lp-font-size-200);
+    font-weight: var(--lp-font-weight-regular);
     line-height: 1.5;
   }
 
   & a,
   & a:hover {
-    color: var(--color-cyan-500);
+    color: var(--lp-color-cyan-500);
   }
 
   & .Snackbar-description {
@@ -60,5 +60,5 @@
 }
 
 .Snackbar-close:global(.Button):global(.Button--close) svg {
-  fill: var(--color-gray-400);
+  fill: var(--lp-color-gray-400);
 }

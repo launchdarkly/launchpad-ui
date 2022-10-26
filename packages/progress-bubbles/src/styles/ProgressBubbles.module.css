@@ -5,7 +5,7 @@
 }
 
 .ProgressBubbles-bubble {
-  background-color: var(--color-gray-200);
+  background-color: var(--lp-color-gray-200);
   width: 2rem;
   height: 2rem;
   border-radius: 1rem;
@@ -17,7 +17,7 @@
   display: flex;
   justify-content: center;
   white-space: nowrap;
-  color: var(--color-gray-600);
+  color: var(--lp-color-gray-600);
   font-size: 1.3rem;
 }
 
@@ -32,11 +32,11 @@
 .ProgressBubbles-line {
   flex-grow: 1;
   height: 0.2rem;
-  background-color: var(--color-gray-200);
+  background-color: var(--lp-color-gray-200);
 }
 
 .ProgressBubbles--filled {
-  background-color: var(--color-system-green-600);
+  background-color: var(--lp-color-system-green-600);
 }
 
 .ProgressBubbles--vertical {
@@ -57,12 +57,12 @@
 .ProgressBubblesUsingItems-line {
   flex-grow: 1;
   height: 0.7rem;
-  background-color: var(--color-gray-200);
+  background-color: var(--lp-color-gray-200);
   margin: 0 -0.5rem;
 }
 
 .ProgressBubblesUsingItems-line--completed {
-  background-color: var(--color-system-green-700);
+  background-color: var(--lp-color-system-green-700);
 }
 
 .ProgressBubblesIconContainer {
@@ -77,9 +77,9 @@
 
 .ProgressBubbles-icon {
   align-items: center;
-  background-color: var(--color-system-green-700);
+  background-color: var(--lp-color-system-green-700);
   border-radius: 50%;
-  border: var(--border-width-2) solid transparent;
+  border: var(--lp-border-width-300) solid transparent;
   display: flex;
   justify-content: center;
   gap: 0.2rem;
@@ -90,25 +90,25 @@
 }
 
 div.ProgressBubbles-icon--current {
-  border: var(--border-width-2) solid var(--color-system-green-700);
+  border: var(--lp-border-width-300) solid var(--lp-color-system-green-700);
 }
 
 .ProgressBubbles-icon svg {
-  fill: var(--color-white);
+  fill: var(--lp-color-white);
   height: 1.6rem;
   width: 1.6rem;
 }
 
 .ProgressBubbles-icon--pending svg {
-  fill: var(--color-white);
+  fill: var(--lp-color-white);
 }
 
 div.ProgressBubbles-icon--current svg {
-  fill: var(--color-system-green-700);
+  fill: var(--lp-color-system-green-700);
 }
 
 div.ProgressBubbles-icon--pending {
-  background-color: var(--color-gray-200);
+  background-color: var(--lp-color-gray-200);
 }
 
 div.ProgressBubbles-icon--warning {
@@ -136,7 +136,7 @@ div.ProgressBubbles-icon--warning svg {
 }
 
 .ProgressBubbles-label {
-  color: var(--color-black-200);
+  color: var(--lp-color-black-200);
   padding-top: 1rem;
   position: absolute;
   top: 2rem;
@@ -151,6 +151,6 @@ div.ProgressBubbles-icon--warning svg {
 
 :root[data-theme] {
   & .ProgressBubbles-label {
-    color: var(--color-gray-700);
+    color: var(--lp-color-gray-700);
   }
 }

@@ -1,10 +1,26 @@
 font:
   family:
     base:
-      value: '{ ldds.font.family.base.value }'
-  monospace:
-    family:
+      value: inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, Helvetica, Arial, sans-serif
+    monospace:
       value: SFMono-Regular, Consolas, Liberation Mono, Menlo, Courier, monospace
+  size:
+    100:
+      value: 1.2rem
+    200:
+      value: 1.4rem
+    300:
+      value: 1.6rem
+    400:
+      value: 1.8rem
+    500:
+      value: 2rem
+    600:
+      value: 2.5rem
+    700:
+      value: 3.2rem
+    800:
+      value: 4.6rem
   weight:
     light:
       value: 300
@@ -16,36 +32,3 @@ font:
       value: 600
     bold:
       value: 700
-ldds:
-  font:
-    family:
-      base:
-        value: inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, Helvetica, Arial, sans-serif
-osmo:
-  font:
-    size:
-      smaller:
-        value: 1.2rem
-      small:
-        value: 1.4rem
-      base:
-        value: 1.6rem
-      medium:
-        value: 1.8rem
-      large:
-        value: 2rem
-      larger:
-        value: 2.5rem
-      mega:
-        value: 3.2rem
-      giga:
-        value: 4.6rem
-line-height:
-  smaller:
-    value: 1.12
-  small:
-    value: 1.285714286
-  base:
-    value: 1.5
-  large:
-    value: 2

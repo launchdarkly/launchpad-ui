@@ -1,18 +1,18 @@
 @import '../../../tokens/dist/media-queries.css';
 
 :root {
-  --Banner-color-border-bottom-info: var(--color-blue-700);
+  --Banner-color-border-bottom-info: var(--lp-color-blue-700);
   /* stylelint-disable-next-line value-keyword-case */
-  --Banner-color-border-bottom-warning: var(--color-system-yellow-700);
-  --Banner-color-border-bottom-error: var(--color-system-red-700);
-  --Banner-color-text: var(--color-black-100);
-  --Banner-color-background: var(--color-white);
-  --Banner-color-background-info: var(--color-blue-100);
-  --Banner-color-background-warning: var(--color-system-yellow-200);
-  --Banner-color-background-error: var(--color-system-red-200);
-  --Banner-icon-color-info: var(--color-blue-700);
-  --Banner-icon-color-warning: var(--color-system-yellow-700);
-  --Banner-icon-color-error: var(--color-system-red-700);
+  --Banner-color-border-bottom-warning: var(--lp-color-system-yellow-700);
+  --Banner-color-border-bottom-error: var(--lp-color-system-red-700);
+  --Banner-color-text: var(--lp-color-black-100);
+  --Banner-color-background: var(--lp-color-white);
+  --Banner-color-background-info: var(--lp-color-blue-100);
+  --Banner-color-background-warning: var(--lp-color-system-yellow-200);
+  --Banner-color-background-error: var(--lp-color-system-red-200);
+  --Banner-icon-color-info: var(--lp-color-blue-700);
+  --Banner-icon-color-warning: var(--lp-color-system-yellow-700);
+  --Banner-icon-color-error: var(--lp-color-system-red-700);
   --page-gutter-width: 1rem;
 }
 
@@ -37,7 +37,7 @@
   margin-top: 0;
   margin-bottom: 0.4rem;
   font-size: 1.6rem;
-  font-weight: var(--font-weight-medium);
+  font-weight: var(--lp-font-weight-medium);
   line-height: 1.25;
 }
 
