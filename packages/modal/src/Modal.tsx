@@ -4,11 +4,13 @@ import type { MouseEvent, ReactNode } from 'react';
 import { IconButton } from '@launchpad-ui/button';
 import { FocusTrap } from '@launchpad-ui/focus-trap';
 import { Close } from '@launchpad-ui/icons';
+import { Portal } from '@launchpad-ui/portal';
 import { usePreventScroll } from '@react-aria/overlays';
 import { cx } from 'classix';
 import { LazyMotion, m } from 'framer-motion';
 import { useEffect, useRef } from 'react';
 
+import { MODAL_LABELLED_BY } from './constants';
 import styles from './styles/Modal.module.css';
 
 const overlay: Variants = {
@@ -16,19 +18,9 @@ const overlay: Variants = {
   hidden: { opacity: 0 },
 };
 
-const content: { [name: string]: Variants } = {
-  pop: {
-    hidden: { opacity: 0, scale: 0.9 },
-    visible: { opacity: 1, scale: 1, transition: { type: 'spring', delay: 0.1, duration: 0.15 } },
-  },
-  slideRight: {
-    hidden: { opacity: 0, x: '25%' },
-    visible: {
-      opacity: 1,
-      x: '0%',
-      transition: { type: 'spring', delay: 0.15, duration: 0.2, bounce: 0 },
-    },
-  },
+const pop: Variants = {
+  hidden: { opacity: 0, scale: 0.9 },
+  visible: { opacity: 1, scale: 1, transition: { type: 'spring', delay: 0.1, duration: 0.15 } },
 };
 
 const loadFeatures = () =>
@@ -43,8 +35,6 @@ type ModalProps = {
   className?: string;
   withCloseButton?: boolean;
   cancelWithOverlayClick?: boolean;
-  modalLabelID?: string;
-  transition: 'pop' | 'slideRight';
   onReady?(): void;
   onCancel?(): void;
   'data-test-id'?: string;
@@ -52,13 +42,11 @@ type ModalProps = {
 
 const Modal = ({
   className,
-  withCloseButton = false,
+  withCloseButton = true,
   cancelWithOverlayClick = true,
   children,
   onReady,
   onCancel,
-  modalLabelID = 'Modal-title',
-  transition,
   'data-test-id': testId = 'modal',
 }: ModalProps) => {
   const ref = useRef<HTMLDivElement>(null);
@@ -68,7 +56,7 @@ const Modal = ({
   useEffect(() => {
     const handleEscape = (event: KeyboardEvent) => {
       event.stopImmediatePropagation();
-      const latest = [...document.querySelectorAll(`[data-test-id="${testId}"]`)].pop();
+      const latest = [...document.querySelectorAll('[data-modal]')].pop();
       if (event.key === 'Escape' && latest === ref.current) {
         close();
       }
@@ -94,46 +82,46 @@ const Modal = ({
     }
   };
 
-  const modalClasses = cx(styles.modal, className);
-
   return (
-    <LazyMotion strict features={loadFeatures}>
-      <div className={modalClasses} data-test-id={testId} ref={ref}>
-        <m.div
-          initial="hidden"
-          animate="visible"
-          variants={overlay}
-          transition={{ duration: 0.15 }}
-          role="presentation"
-          className={styles.modalOverlay}
-          onMouseDown={handleOverlayClick}
-        >
-          <FocusTrap autoFocus restoreFocus>
-            <m.div
-              initial="hidden"
-              animate="visible"
-              variants={content[transition]}
-              role="dialog"
-              aria-labelledby={modalLabelID}
-              aria-modal
-              className={styles.modalContent}
-              tabIndex={-1}
-            >
-              {withCloseButton && (
-                <IconButton
-                  aria-label="close"
-                  icon={<Close size="medium" />}
-                  className={styles.modalClose}
-                  onClick={onCancel}
-                  data-test-id="Modal-close"
-                />
-              )}
-              {children}
-            </m.div>
-          </FocusTrap>
-        </m.div>
-      </div>
-    </LazyMotion>
+    <Portal>
+      <LazyMotion strict features={loadFeatures}>
+        <div className={cx(styles.modal, className)} data-modal data-test-id={testId} ref={ref}>
+          <m.div
+            initial="hidden"
+            animate="visible"
+            variants={overlay}
+            transition={{ duration: 0.15 }}
+            role="presentation"
+            className={styles.overlay}
+            onMouseDown={handleOverlayClick}
+          >
+            <FocusTrap autoFocus restoreFocus>
+              <m.div
+                initial="hidden"
+                animate="visible"
+                variants={pop}
+                role="dialog"
+                aria-labelledby={MODAL_LABELLED_BY}
+                aria-modal
+                className={styles.content}
+                tabIndex={-1}
+              >
+                {withCloseButton && (
+                  <IconButton
+                    aria-label="close"
+                    icon={<Close size="medium" />}
+                    className={styles.closeButton}
+                    onClick={onCancel}
+                    data-test-id="modal-close-button"
+                  />
+                )}
+                {children}
+              </m.div>
+            </FocusTrap>
+          </m.div>
+        </div>
+      </LazyMotion>
+    </Portal>
   );
 };
 
