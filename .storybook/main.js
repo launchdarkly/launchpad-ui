@@ -14,7 +14,7 @@ module.exports = {
   features: {
     /*
      * CSS order issues occur when async chunks are used
-     * See: https://github.com/vitejs/vite/pull/9949
+     * See: https://github.com/vitejs/vite/pull/9278
      * TODO: remove once Vite has the fix released
      */
     storyStoreV7: false,
