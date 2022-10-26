@@ -1,20 +1,18 @@
 {
-  "name": "@launchpad-ui/overlay",
-  "version": "0.3.24",
-  "status": "beta",
+  "name": "@launchpad-ui/portal",
+  "version": "0.0.1",
+  "status": "alpha",
   "publishConfig": {
     "access": "public"
   },
-  "description": "An element that manages modals and popovers.",
+  "description": "An element that renders a subtree in a different part of the DOM.",
   "files": [
     "dist"
   ],
   "main": "dist/index.js",
   "module": "dist/index.es.js",
   "types": "dist/index.d.ts",
-  "sideEffects": [
-    "**/*.css"
-  ],
+  "sideEffects": false,
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
@@ -29,9 +27,6 @@
     "clean": "rm -rf dist",
     "lint": "eslint '**/*.{ts,tsx,js}'",
     "test": "vitest run --coverage"
-  },
-  "dependencies": {
-    "@launchpad-ui/portal": "workspace:~"
   },
   "peerDependencies": {
     "react": "^18.0.0",

@@ -4,13 +4,13 @@ import type { MouseEvent, ReactNode } from 'react';
 import { IconButton } from '@launchpad-ui/button';
 import { FocusTrap } from '@launchpad-ui/focus-trap';
 import { Close } from '@launchpad-ui/icons';
+import { Portal } from '@launchpad-ui/portal';
 import { Progress } from '@launchpad-ui/progress';
 import { usePreventScroll } from '@react-aria/overlays';
 import { cx } from 'classix';
 import { LazyMotion, m } from 'framer-motion';
 import { Suspense, useEffect, useRef } from 'react';
 
-import { DrawerPortal } from './DrawerPortal';
 import { DRAWER_LABELLED_BY } from './constants';
 import styles from './styles/Drawer.module.css';
 
@@ -83,7 +83,7 @@ const Drawer = ({
   };
 
   return (
-    <DrawerPortal>
+    <Portal>
       <LazyMotion strict features={loadFeatures}>
         <div
           className={cx(styles.drawer, styles[size], className)}
@@ -124,7 +124,7 @@ const Drawer = ({
           </m.div>
         </div>
       </LazyMotion>
-    </DrawerPortal>
+    </Portal>
   );
 };
 

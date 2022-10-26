@@ -1,6 +1,6 @@
 import type { KeyboardEvent, MouseEvent as ReactMouseEvent, ReactNode } from 'react';
 
-import { Portal } from '@launchpad-ui/modal';
+import { Portal } from '@launchpad-ui/portal';
 import { useCallback, useEffect, useRef, useState } from 'react';
 
 type OverlayProps = {

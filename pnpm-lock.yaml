@@ -398,6 +398,7 @@ importers:
       '@launchpad-ui/overlay': workspace:~
       '@launchpad-ui/pagination': workspace:~
       '@launchpad-ui/popover': workspace:~
+      '@launchpad-ui/portal': workspace:~
       '@launchpad-ui/progress': workspace:~
       '@launchpad-ui/progress-bubbles': workspace:~
       '@launchpad-ui/slider': workspace:~
@@ -433,6 +434,7 @@ importers:
       '@launchpad-ui/overlay': link:../overlay
       '@launchpad-ui/pagination': link:../pagination
       '@launchpad-ui/popover': link:../popover
+      '@launchpad-ui/portal': link:../portal
       '@launchpad-ui/progress': link:../progress
       '@launchpad-ui/progress-bubbles': link:../progress-bubbles
       '@launchpad-ui/slider': link:../slider
@@ -466,6 +468,7 @@ importers:
       '@launchpad-ui/button': workspace:~
       '@launchpad-ui/focus-trap': workspace:~
       '@launchpad-ui/icons': workspace:~
+      '@launchpad-ui/portal': workspace:~
       '@launchpad-ui/progress': workspace:~
       '@launchpad-ui/tokens': workspace:~
       '@react-aria/overlays': ^3.11.0
@@ -477,6 +480,7 @@ importers:
       '@launchpad-ui/button': link:../button
       '@launchpad-ui/focus-trap': link:../focus-trap
       '@launchpad-ui/icons': link:../icons
+      '@launchpad-ui/portal': link:../portal
       '@launchpad-ui/progress': link:../progress
       '@launchpad-ui/tokens': link:../tokens
       '@react-aria/overlays': 3.11.0_biqbaboplfbrettd7655fr4n2y
@@ -628,6 +632,7 @@ importers:
       '@launchpad-ui/button': workspace:~
       '@launchpad-ui/focus-trap': workspace:~
       '@launchpad-ui/icons': workspace:~
+      '@launchpad-ui/portal': workspace:~
       '@launchpad-ui/progress': workspace:~
       '@launchpad-ui/tokens': workspace:~
       '@react-aria/overlays': ^3.11.0
@@ -639,6 +644,7 @@ importers:
       '@launchpad-ui/button': link:../button
       '@launchpad-ui/focus-trap': link:../focus-trap
       '@launchpad-ui/icons': link:../icons
+      '@launchpad-ui/portal': link:../portal
       '@launchpad-ui/progress': link:../progress
       '@launchpad-ui/tokens': link:../tokens
       '@react-aria/overlays': 3.11.0_biqbaboplfbrettd7655fr4n2y
@@ -704,11 +710,11 @@ importers:
 
   packages/overlay:
     specifiers:
-      '@launchpad-ui/modal': workspace:~
+      '@launchpad-ui/portal': workspace:~
       react: ^18.2.0
       react-dom: ^18.2.0
     dependencies:
-      '@launchpad-ui/modal': link:../modal
+      '@launchpad-ui/portal': link:../portal
     devDependencies:
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
@@ -753,6 +759,14 @@ importers:
       '@launchpad-ui/tokens': link:../tokens
       classix: 2.1.16
       framer-motion: 7.6.1_biqbaboplfbrettd7655fr4n2y
+    devDependencies:
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
+
+  packages/portal:
+    specifiers:
+      react: ^18.2.0
+      react-dom: ^18.2.0
     devDependencies:
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
