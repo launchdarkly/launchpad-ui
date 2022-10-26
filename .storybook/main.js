@@ -11,6 +11,14 @@ const getStories = () =>
 
 module.exports = {
   stories: async () => [...getStories()],
+  features: {
+    /*
+     * CSS order issues occur when async chunks are used
+     * See: https://github.com/vitejs/vite/pull/9278
+     * TODO: remove once Vite has the fix released
+     */
+    storyStoreV7: false,
+  },
   addons: [
     '@storybook/addon-a11y',
     '@storybook/addon-essentials',
