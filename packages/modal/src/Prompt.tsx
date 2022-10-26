@@ -1,8 +1,8 @@
 import type { ReactNode } from 'react';
 
+import { Portal } from '@launchpad-ui/portal';
 import { cx } from 'classix';
 
-import { Portal } from './Portal';
 import styles from './styles/Modal.module.css';
 
 type PromptProps = {

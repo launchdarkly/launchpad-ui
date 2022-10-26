@@ -1,11 +1,11 @@
 {
-  "name": "@launchpad-ui/modal",
-  "version": "0.9.4",
-  "status": "beta",
+  "name": "@launchpad-ui/portal",
+  "version": "0.0.1",
+  "status": "alpha",
   "publishConfig": {
     "access": "public"
   },
-  "description": "An element that presents users information and actions over a page.",
+  "description": "An element that renders a subtree in a different part of the DOM.",
   "files": [
     "dist"
   ],
@@ -21,8 +21,7 @@
       "import": "./dist/index.es.js",
       "require": "./dist/index.js"
     },
-    "./package.json": "./package.json",
-    "./style.css": "./dist/style.css"
+    "./package.json": "./package.json"
   },
   "source": "src/index.ts",
   "scripts": {
@@ -30,17 +29,6 @@
     "clean": "rm -rf dist",
     "lint": "eslint '**/*.{ts,tsx,js}' && stylelint '**/*.css' --ignore-path ../../.stylelintignore",
     "test": "vitest run --coverage"
-  },
-  "dependencies": {
-    "@launchpad-ui/button": "workspace:~",
-    "@launchpad-ui/focus-trap": "workspace:~",
-    "@launchpad-ui/icons": "workspace:~",
-    "@launchpad-ui/portal": "workspace:~",
-    "@launchpad-ui/progress": "workspace:~",
-    "@launchpad-ui/tokens": "workspace:~",
-    "@react-aria/overlays": "^3.11.0",
-    "classix": "^2.1.13",
-    "framer-motion": "^7.6.1"
   },
   "peerDependencies": {
     "react": "^18.0.0",

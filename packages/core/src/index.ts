@@ -20,6 +20,7 @@ export * from '@launchpad-ui/notification';
 export * from '@launchpad-ui/overlay';
 export * from '@launchpad-ui/pagination';
 export * from '@launchpad-ui/popover';
+export * from '@launchpad-ui/portal';
 export * from '@launchpad-ui/progress';
 export * from '@launchpad-ui/progress-bubbles';
 export * from '@launchpad-ui/slider';
