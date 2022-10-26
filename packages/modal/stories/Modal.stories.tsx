@@ -4,11 +4,11 @@ import type { StoryObj } from '@storybook/react';
 import { Button } from '@launchpad-ui/button';
 import { useState } from '@storybook/client-api';
 
-import { Modal, ModalBody, ModalFooter, ModalHeader, ModalSheet, Prompt } from '../src';
+import { Modal, ModalBody, ModalFooter, ModalHeader } from '../src';
 
 export default {
   component: Modal,
-  subcomponents: { ModalBody, ModalFooter, ModalHeader, ModalSheet, Prompt },
+  subcomponents: { ModalBody, ModalFooter, ModalHeader },
   title: 'Components/Modal',
   description: 'Modals presents users information and actions over a page.',
   parameters: {
@@ -30,20 +30,13 @@ export const Default: Story = {
     return show ? (
       <div style={{ width: '100vw', height: '100vh' }}>
         {button}
-        <Prompt>
-          <Modal
-            transition="pop"
-            withCloseButton
-            cancelWithOverlayClick
-            onCancel={() => setShow(!show)}
-          >
-            <ModalHeader>Example modal title</ModalHeader>
-            <ModalBody>Hi there I&apos;m a modal</ModalBody>
-            <ModalFooter>
-              <Button onClick={() => setShow(false)}>Cancel</Button>
-            </ModalFooter>
-          </Modal>
-        </Prompt>
+        <Modal onCancel={() => setShow(!show)}>
+          <ModalHeader>Example modal title</ModalHeader>
+          <ModalBody>Hi there I&apos;m a modal</ModalBody>
+          <ModalFooter>
+            <Button onClick={() => setShow(false)}>Cancel</Button>
+          </ModalFooter>
+        </Modal>
       </div>
     ) : (
       button
@@ -51,24 +44,3 @@ export const Default: Story = {
   },
 };
 Default.parameters = { docs: { disable: true } };
-
-export const Sheet: Story = {
-  render: () => {
-    const [show, setShow] = useState(true);
-    const button = <Button onClick={() => setShow(true)}>Open modal</Button>;
-    return show ? (
-      <div style={{ width: '100vw', height: '100vh' }}>
-        {button}
-
-        <ModalSheet withCloseButton onCancel={() => setShow(!show)}>
-          <section>
-            <ModalHeader>Example modal title</ModalHeader>
-          </section>
-        </ModalSheet>
-      </div>
-    ) : (
-      button
-    );
-  },
-};
-Sheet.parameters = { docs: { disable: true } };

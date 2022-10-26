@@ -12,7 +12,7 @@ const ModalFooter = ({
   'data-test-id': testId = 'modal-footer',
   ...rest
 }: ModalFooterProps) => {
-  const classes = cx(styles.modalFooter, className);
+  const classes = cx(styles.footer, className);
 
   return (
     <div data-test-id={testId} className={classes} {...rest}>

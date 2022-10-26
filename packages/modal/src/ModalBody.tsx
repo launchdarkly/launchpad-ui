@@ -12,7 +12,7 @@ const ModalBody = ({
   'data-test-id': testId = 'modal-body',
   ...rest
 }: ModalBodyProps) => {
-  const classes = cx(styles.modalBody, className);
+  const classes = cx(styles.body, className);
 
   return (
     <div data-test-id={testId} className={classes} {...rest}>

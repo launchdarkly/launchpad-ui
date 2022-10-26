@@ -7,20 +7,13 @@ export default function Index() {
   return show ? (
     <>
       {button}
-      <Prompt>
-        <Modal
-          transition="pop"
-          withCloseButton
-          cancelWithOverlayClick
-          onCancel={() => setShow(!show)}
-        >
-          <ModalHeader>Example modal title</ModalHeader>
-          <ModalBody>Hi there I&apos;m a modal</ModalBody>
-          <ModalFooter>
-            <Button onClick={() => setShow(false)}>Cancel</Button>
-          </ModalFooter>
-        </Modal>
-      </Prompt>
+      <Modal onCancel={() => setShow(!show)}>
+        <ModalHeader>Example modal title</ModalHeader>
+        <ModalBody>Hi there I&apos;m a modal</ModalBody>
+        <ModalFooter>
+          <Button onClick={() => setShow(false)}>Cancel</Button>
+        </ModalFooter>
+      </Modal>
     </>
   ) : (
     button
