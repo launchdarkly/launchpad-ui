@@ -3,13 +3,13 @@ import { useState } from 'react';
 
 export default function Index() {
   const [show, setShow] = useState(true);
-  const button = <Button onClick={() => setShow(true)}>Open modal</Button>;
+  const button = <Button onClick={() => setShow(true)}>Open drawer</Button>;
   return show ? (
     <>
       {button}
       <Drawer onCancel={() => setShow(!show)}>
         <section>
-          <DrawerHeader>Example modal title</DrawerHeader>
+          <DrawerHeader>Example drawer title</DrawerHeader>
         </section>
         <section>
           <Button onClick={() => setShow(false)}>Cancel</Button>
