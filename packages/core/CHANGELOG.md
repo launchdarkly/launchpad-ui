@@ -1,5 +1,50 @@
 # @launchpad-ui/core
 
+## 0.19.0
+
+### Minor Changes
+
+- [#514](https://github.com/launchdarkly/launchpad-ui/pull/514) [`4090f93`](https://github.com/launchdarkly/launchpad-ui/commit/4090f93ba98ea6f75a7f9f7b902fafcfb9b005b3) Thanks [@Niznikr](https://github.com/Niznikr)! - [Tokens] Rename global tokens to match schema `namespace-type-name-scale`:
+
+  - Prefix CSS custom properties with `lp` to namespace them
+  - Use `100-900` for scales
+
+### Patch Changes
+
+- [#518](https://github.com/launchdarkly/launchpad-ui/pull/518) [`47d538b`](https://github.com/launchdarkly/launchpad-ui/commit/47d538b0060d253bd8d71bfc64e32d89599d8436) Thanks [@Niznikr](https://github.com/Niznikr)! - [Snackbar] Add word-break styles
+
+- Updated dependencies [[`47d538b`](https://github.com/launchdarkly/launchpad-ui/commit/47d538b0060d253bd8d71bfc64e32d89599d8436), [`4090f93`](https://github.com/launchdarkly/launchpad-ui/commit/4090f93ba98ea6f75a7f9f7b902fafcfb9b005b3)]:
+  - @launchpad-ui/snackbar@0.3.4
+  - @launchpad-ui/tokens@0.2.0
+  - @launchpad-ui/alert@0.6.8
+  - @launchpad-ui/avatar@0.4.9
+  - @launchpad-ui/banner@0.7.7
+  - @launchpad-ui/button@0.7.5
+  - @launchpad-ui/chip@0.6.4
+  - @launchpad-ui/clipboard@0.8.18
+  - @launchpad-ui/counter@0.3.5
+  - @launchpad-ui/dropdown@0.5.17
+  - @launchpad-ui/filter@0.4.23
+  - @launchpad-ui/form@0.6.13
+  - @launchpad-ui/icons@0.5.9
+  - @launchpad-ui/markdown@0.3.4
+  - @launchpad-ui/menu@0.6.23
+  - @launchpad-ui/modal@0.9.3
+  - @launchpad-ui/navigation@0.6.25
+  - @launchpad-ui/notification@0.5.18
+  - @launchpad-ui/pagination@0.3.12
+  - @launchpad-ui/popover@0.8.17
+  - @launchpad-ui/progress@0.5.3
+  - @launchpad-ui/progress-bubbles@0.5.18
+  - @launchpad-ui/slider@0.3.3
+  - @launchpad-ui/split-button@0.6.18
+  - @launchpad-ui/tab-list@0.4.4
+  - @launchpad-ui/table@0.4.4
+  - @launchpad-ui/toast@0.2.6
+  - @launchpad-ui/toggle@0.4.5
+  - @launchpad-ui/tooltip@0.6.18
+  - @launchpad-ui/overlay@0.3.23
+
 ## 0.18.2
 
 ### Patch Changes

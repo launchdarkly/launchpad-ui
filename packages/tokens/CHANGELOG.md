@@ -1,5 +1,14 @@
 # @launchpad-ui/tokens
 
+## 0.2.0
+
+### Minor Changes
+
+- [#514](https://github.com/launchdarkly/launchpad-ui/pull/514) [`4090f93`](https://github.com/launchdarkly/launchpad-ui/commit/4090f93ba98ea6f75a7f9f7b902fafcfb9b005b3) Thanks [@Niznikr](https://github.com/Niznikr)! - [Tokens] Rename global tokens to match schema `namespace-type-name-scale`:
+
+  - Prefix CSS custom properties with `lp` to namespace them
+  - Use `100-900` for scales
+
 ## 0.1.5
 
 ### Patch Changes
