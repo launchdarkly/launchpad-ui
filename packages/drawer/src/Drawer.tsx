@@ -29,7 +29,7 @@ const slideRight: Variants = {
 
 const loadFeatures = () =>
   import(
-    /* webpackChunkName: "lp-modal-framer-features" */
+    /* webpackChunkName: "lp-drawer-framer-features" */
     /* webpackExports: "domAnimation" */
     'framer-motion'
   ).then((res) => res.domAnimation);
