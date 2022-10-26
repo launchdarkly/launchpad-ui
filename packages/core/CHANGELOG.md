@@ -1,5 +1,31 @@
 # @launchpad-ui/core
 
+## 0.18.2
+
+### Patch Changes
+
+- [#505](https://github.com/launchdarkly/launchpad-ui/pull/505) [`66dd7a6`](https://github.com/launchdarkly/launchpad-ui/commit/66dd7a6174c95a92ed4b49fe3398c1ba5b624731) Thanks [@Niznikr](https://github.com/Niznikr)! - [Alert, Banner, Clipboard, Snackbar, Toast] Remove base classes
+
+- [#502](https://github.com/launchdarkly/launchpad-ui/pull/502) [`1b6fb18`](https://github.com/launchdarkly/launchpad-ui/commit/1b6fb18babba26a96c71fe0c297a6c6c1a4ee478) Thanks [@Niznikr](https://github.com/Niznikr)! - [Modal] Add data-test-id and container props to `Portal`
+
+- Updated dependencies [[`66dd7a6`](https://github.com/launchdarkly/launchpad-ui/commit/66dd7a6174c95a92ed4b49fe3398c1ba5b624731), [`1b6fb18`](https://github.com/launchdarkly/launchpad-ui/commit/1b6fb18babba26a96c71fe0c297a6c6c1a4ee478)]:
+  - @launchpad-ui/alert@0.6.7
+  - @launchpad-ui/banner@0.7.6
+  - @launchpad-ui/clipboard@0.8.17
+  - @launchpad-ui/snackbar@0.3.3
+  - @launchpad-ui/toast@0.2.5
+  - @launchpad-ui/modal@0.9.2
+  - @launchpad-ui/overlay@0.3.22
+  - @launchpad-ui/notification@0.5.17
+  - @launchpad-ui/popover@0.8.16
+  - @launchpad-ui/dropdown@0.5.16
+  - @launchpad-ui/menu@0.6.22
+  - @launchpad-ui/navigation@0.6.24
+  - @launchpad-ui/progress-bubbles@0.5.17
+  - @launchpad-ui/split-button@0.6.17
+  - @launchpad-ui/tooltip@0.6.17
+  - @launchpad-ui/filter@0.4.22
+
 ## 0.18.1
 
 ### Patch Changes

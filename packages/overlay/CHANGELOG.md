@@ -1,5 +1,14 @@
 # @launchpad-ui/overlay
 
+## 0.3.22
+
+### Patch Changes
+
+- [#502](https://github.com/launchdarkly/launchpad-ui/pull/502) [`1b6fb18`](https://github.com/launchdarkly/launchpad-ui/commit/1b6fb18babba26a96c71fe0c297a6c6c1a4ee478) Thanks [@Niznikr](https://github.com/Niznikr)! - [Modal] Add data-test-id and container props to `Portal`
+
+- Updated dependencies [[`1b6fb18`](https://github.com/launchdarkly/launchpad-ui/commit/1b6fb18babba26a96c71fe0c297a6c6c1a4ee478)]:
+  - @launchpad-ui/modal@0.9.2
+
 ## 0.3.21
 
 ### Patch Changes

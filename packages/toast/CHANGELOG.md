@@ -1,5 +1,11 @@
 # @launchpad-ui/toast
 
+## 0.2.5
+
+### Patch Changes
+
+- [#505](https://github.com/launchdarkly/launchpad-ui/pull/505) [`66dd7a6`](https://github.com/launchdarkly/launchpad-ui/commit/66dd7a6174c95a92ed4b49fe3398c1ba5b624731) Thanks [@Niznikr](https://github.com/Niznikr)! - [Alert, Banner, Clipboard, Snackbar, Toast] Remove base classes
+
 ## 0.2.4
 
 ### Patch Changes
