@@ -53,6 +53,10 @@
   & a:hover {
     color: var(--color-cyan-500);
   }
+
+  & .Snackbar-description {
+    word-break: break-word;
+  }
 }
 
 .Snackbar-close:global(.Button):global(.Button--close) svg {
