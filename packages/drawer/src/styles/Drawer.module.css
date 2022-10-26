@@ -70,15 +70,15 @@ as needed. */
   }
 }
 
-.drawer .content section {
+.content section {
   padding: 3.2rem var(--page-gutter-width);
 }
 
-.drawer .content section + section {
+.content section + section {
   border-top: 1px dotted var(--color-gray-100);
 }
 
-.drawer .closeButton {
+.closeButton {
   position: absolute;
   right: 1rem;
   top: 1rem;
