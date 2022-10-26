@@ -6,6 +6,7 @@ export * from '@launchpad-ui/button';
 export * from '@launchpad-ui/chip';
 export * from '@launchpad-ui/clipboard';
 export * from '@launchpad-ui/counter';
+export * from '@launchpad-ui/drawer';
 export * from '@launchpad-ui/dropdown';
 export * from '@launchpad-ui/filter';
 export * from '@launchpad-ui/focus-trap';

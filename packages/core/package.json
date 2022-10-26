@@ -38,6 +38,7 @@
     "@launchpad-ui/chip": "workspace:~",
     "@launchpad-ui/clipboard": "workspace:~",
     "@launchpad-ui/counter": "workspace:~",
+    "@launchpad-ui/drawer": "workspace:~",
     "@launchpad-ui/dropdown": "workspace:~",
     "@launchpad-ui/filter": "workspace:~",
     "@launchpad-ui/focus-trap": "workspace:~",

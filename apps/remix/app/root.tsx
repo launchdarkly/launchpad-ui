@@ -23,6 +23,7 @@ import buttonStyles from '@launchpad-ui/button/style.css';
 import chipStyles from '@launchpad-ui/chip/style.css';
 import clipboardStyles from '@launchpad-ui/clipboard/style.css';
 import counterStyles from '@launchpad-ui/counter/style.css';
+import drawerStyles from '@launchpad-ui/drawer/style.css';
 import filterStyles from '@launchpad-ui/filter/style.css';
 import formStyles from '@launchpad-ui/form/style.css';
 import iconStyles from '@launchpad-ui/icons/style.css';
@@ -76,6 +77,7 @@ export const links: LinksFunction = () => {
     { rel: 'stylesheet', href: filterStyles },
     { rel: 'stylesheet', href: snackbarStyles },
     { rel: 'stylesheet', href: toastStyles },
+    { rel: 'stylesheet', href: drawerStyles },
   ];
 };
 

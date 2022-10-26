@@ -194,6 +194,7 @@ importers:
       '@launchpad-ui/clipboard': workspace:~
       '@launchpad-ui/core': workspace:~
       '@launchpad-ui/counter': workspace:~
+      '@launchpad-ui/drawer': workspace:~
       '@launchpad-ui/dropdown': workspace:~
       '@launchpad-ui/filter': workspace:~
       '@launchpad-ui/form': workspace:~
@@ -237,6 +238,7 @@ importers:
       '@launchpad-ui/clipboard': link:../../packages/clipboard
       '@launchpad-ui/core': link:../../packages/core
       '@launchpad-ui/counter': link:../../packages/counter
+      '@launchpad-ui/drawer': link:../../packages/drawer
       '@launchpad-ui/dropdown': link:../../packages/dropdown
       '@launchpad-ui/filter': link:../../packages/filter
       '@launchpad-ui/form': link:../../packages/form
@@ -382,6 +384,7 @@ importers:
       '@launchpad-ui/chip': workspace:~
       '@launchpad-ui/clipboard': workspace:~
       '@launchpad-ui/counter': workspace:~
+      '@launchpad-ui/drawer': workspace:~
       '@launchpad-ui/dropdown': workspace:~
       '@launchpad-ui/filter': workspace:~
       '@launchpad-ui/focus-trap': workspace:~
@@ -416,6 +419,7 @@ importers:
       '@launchpad-ui/chip': link:../chip
       '@launchpad-ui/clipboard': link:../clipboard
       '@launchpad-ui/counter': link:../counter
+      '@launchpad-ui/drawer': link:../drawer
       '@launchpad-ui/dropdown': link:../dropdown
       '@launchpad-ui/filter': link:../filter
       '@launchpad-ui/focus-trap': link:../focus-trap
@@ -453,6 +457,31 @@ importers:
     dependencies:
       '@launchpad-ui/tokens': link:../tokens
       classix: 2.1.16
+    devDependencies:
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
+
+  packages/drawer:
+    specifiers:
+      '@launchpad-ui/button': workspace:~
+      '@launchpad-ui/focus-trap': workspace:~
+      '@launchpad-ui/icons': workspace:~
+      '@launchpad-ui/progress': workspace:~
+      '@launchpad-ui/tokens': workspace:~
+      '@react-aria/overlays': ^3.11.0
+      classix: ^2.1.13
+      framer-motion: ^7.6.1
+      react: ^18.2.0
+      react-dom: ^18.2.0
+    dependencies:
+      '@launchpad-ui/button': link:../button
+      '@launchpad-ui/focus-trap': link:../focus-trap
+      '@launchpad-ui/icons': link:../icons
+      '@launchpad-ui/progress': link:../progress
+      '@launchpad-ui/tokens': link:../tokens
+      '@react-aria/overlays': 3.11.0_biqbaboplfbrettd7655fr4n2y
+      classix: 2.1.16
+      framer-motion: 7.6.1_biqbaboplfbrettd7655fr4n2y
     devDependencies:
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0

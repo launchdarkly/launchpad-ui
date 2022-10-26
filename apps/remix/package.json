@@ -21,6 +21,7 @@
     "@launchpad-ui/clipboard": "workspace:~",
     "@launchpad-ui/core": "workspace:~",
     "@launchpad-ui/counter": "workspace:~",
+    "@launchpad-ui/drawer": "workspace:~",
     "@launchpad-ui/dropdown": "workspace:~",
     "@launchpad-ui/filter": "workspace:~",
     "@launchpad-ui/form": "workspace:~",

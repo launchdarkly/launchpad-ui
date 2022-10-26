@@ -11,6 +11,7 @@
       "@launchpad-ui/clipboard": ["./packages/clipboard/src"],
       "@launchpad-ui/core": ["./packages/core/src"],
       "@launchpad-ui/counter": ["./packages/counter/src"],
+      "@launchpad-ui/drawer": ["./packages/drawer/src"],
       "@launchpad-ui/dropdown": ["./packages/dropdown/src"],
       "@launchpad-ui/filter": ["./packages/filter/src"],
       "@launchpad-ui/focus-trap": ["./packages/focus-trap/src"],

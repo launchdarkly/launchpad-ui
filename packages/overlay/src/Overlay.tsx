@@ -90,7 +90,7 @@ const Overlay = ({
     }
 
     if (isModal) {
-      document.body.classList.add('has-modal');
+      document.body.classList.add('has-overlay');
     }
   }, [handleDocumentClick, handleDocumentFocus, canOutsideClickClose, enforceFocus, isModal]);
 
@@ -99,7 +99,7 @@ const Overlay = ({
     document.removeEventListener('focus', handleDocumentFocus, true);
 
     if (isModal) {
-      document.body.classList.remove('has-modal');
+      document.body.classList.remove('has-overlay');
     }
   }, [handleDocumentClick, handleDocumentFocus, isModal]);
 

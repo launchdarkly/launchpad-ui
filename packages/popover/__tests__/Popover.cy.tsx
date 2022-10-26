@@ -91,7 +91,7 @@ describe('Popover', () => {
   });
 
   it('updates to fixed position in a modal', () => {
-    document.body.classList.add('has-modal');
+    document.body.classList.add('has-overlay');
 
     cy.mount(
       <Popover>

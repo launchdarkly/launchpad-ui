@@ -177,7 +177,7 @@ const Popover = ({
       middleware.push(arrow({ element: arrowRef.current }));
     }
 
-    const hasModal = targetRef.current?.closest('.has-modal');
+    const hasModal = targetRef.current?.closest('.has-overlay');
     const strategy: Strategy = isFixed || hasModal ? 'fixed' : 'absolute';
 
     optionsRef.current = {

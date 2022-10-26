@@ -96,7 +96,7 @@ describe('Popover', () => {
   });
 
   it('updates to fixed position in a modal', async () => {
-    document.body.classList.add('has-modal');
+    document.body.classList.add('has-overlay');
     const user = userEvent.setup();
     render(
       <Popover>
