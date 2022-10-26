@@ -2,7 +2,7 @@ module.exports = (plop) => {
   plop.load('./.plop/actions/install-dependencies.js');
 
   plop.setGenerator('component', {
-    description: 'A Launchpad UI component',
+    description: 'A LaunchPad UI component',
     prompts: [
       {
         type: 'input',

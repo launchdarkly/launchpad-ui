@@ -1,10 +1,10 @@
-# Launchpad
+# LaunchPad
 
 A modern, intuitive, and accessible design system built and used by the LaunchDarkly team.
 
 ## Resources
 
-For a demo of all components available in Launchpad, visit [our Storybook](https://main--626696a2018c1f004a1cde86.chromatic.com/).
+For a demo of all components available in LaunchPad, visit [our Storybook](https://main--626696a2018c1f004a1cde86.chromatic.com/).
 
 ## Installation
 
@@ -12,7 +12,7 @@ Full installation instructions can be found here: https://www.npmjs.com/package/
 
 ---
 
-## Running Launchpad locally
+## Running LaunchPad locally
 
 ### Installation
 
@@ -72,19 +72,19 @@ The following command will build the app, start the server, and run Cypress test
 $ pnpm e2e:ssr
 ```
 
-## Launchpad Architecture
+## LaunchPad Architecture
 
-Launchpad is set up as a monorepo where each component package is bundled and delivered as its own NPM package. While you can technically import each component package separately, we do recommend using the "bundled" version of Launchpad at `@launchpad-ui/core`. The team chose to treat each component as a separate package internally for improved testing, version management, and isolation guarantees.
+LaunchPad is set up as a monorepo where each component package is bundled and delivered as its own NPM package. While you can technically import each component package separately, we do recommend using the "bundled" version of LaunchPad at `@launchpad-ui/core`. The team chose to treat each component as a separate package internally for improved testing, version management, and isolation guarantees.
 
 At the time of writing this, we are using the [pnpm package manager](https://pnpm.io/) for its workspace feature and the [Nx build system](https://nx.dev/) for monorepo support. Each component is defined as a directory under the `packages` directory. It's advised to understand generally how these works when contributing.
 
 ### The `packages` Directory
 
-When we talk about "components" in Launchpad, we're talking about a UI component library implemented as a package in our monorepo. It is a standalone library that can be imported and used by other JS applications.
+When we talk about "components" in LaunchPad, we're talking about a UI component library implemented as a package in our monorepo. It is a standalone library that can be imported and used by other JS applications.
 
-While all Launchpad UI components are packages, not all packages are necessarily "components." A package can be defined to store utilities such as tokens used by other packages, shared helper functions, etc.
+While all LaunchPad UI components are packages, not all packages are necessarily "components." A package can be defined to store utilities such as tokens used by other packages, shared helper functions, etc.
 
-Launchpad libraries may depend on one another, as in the case of our modal library depending on the button library. This dependency, just like with shared utility libraries, is simply represented as a package.json import.
+LaunchPad libraries may depend on one another, as in the case of our modal library depending on the button library. This dependency, just like with shared utility libraries, is simply represented as a package.json import.
 
 ### The `apps` Directory
 
@@ -107,4 +107,4 @@ When a component package version changes, this will create a version bump in `@l
 ## Questions?
 
 - LaunchDarkly employees can reach out with questions or comments in [our Slack channel, #ask-launchpad-design-system](https://launchdarkly.slack.com/channels/CDXEFNMLP)
-- You can also [open an issue](https://github.com/launchdarkly/launchpad-ui/issues/new) in the Launchpad repository to ask a question!
+- You can also [open an issue](https://github.com/launchdarkly/launchpad-ui/issues/new) in the LaunchPad repository to ask a question!

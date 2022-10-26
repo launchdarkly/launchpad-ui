@@ -98,7 +98,7 @@ For the `clipboard` package, a new `CopyCodeButton` component is used as the def
 
 ### Support HTML attributes passthrough for component APIs
 
-Replace instances of `testId` on Launchpad components with the HTML attribute `data-test-id`:
+Replace instances of `testId` on LaunchPad components with the HTML attribute `data-test-id`:
 
 Before:
 
@@ -222,4 +222,4 @@ After:
 
 ### React 18
 
-Due to updating to `framer-motion` v7, the minimum required version of React is v18 for Launchpad components.
+Due to updating to `framer-motion` v7, the minimum required version of React is v18 for LaunchPad components.

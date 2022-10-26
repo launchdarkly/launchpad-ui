@@ -5,7 +5,7 @@
   "publishConfig": {
     "access": "public"
   },
-  "description": "Contains all Launchpad design system packages.",
+  "description": "Contains all LaunchPad design system packages.",
   "files": [
     "dist"
   ],
