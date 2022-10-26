@@ -1,8 +1,8 @@
-# Contributing to Launchpad UI
+# Contributing to LaunchPad UI
 
 :+1::tada: First off, thanks for taking the time to read our contribution docs! :tada::+1:
 
-The following is a set of guidelines for contributing to Launchpad and its packages, which are hosted in the [LaunchDarkly Organization](https://github.com/launchdarkly) on GitHub. These are mostly guidelines, not rules. Use your best judgment, and feel free to propose changes to this document in a pull request.
+The following is a set of guidelines for contributing to LaunchPad and its packages, which are hosted in the [LaunchDarkly Organization](https://github.com/launchdarkly) on GitHub. These are mostly guidelines, not rules. Use your best judgment, and feel free to propose changes to this document in a pull request.
 
 #### Table Of Contents
 
@@ -25,7 +25,7 @@ When reporting a bug, help maintainers and the community understand your report 
 
 ### Suggesting Enhancements
 
-We're always open to enhancement suggestions! When assessing an enhancement, we must consider how it will affect other teams, how it will function with other UI/UX patterns in Launchpad, and more.
+We're always open to enhancement suggestions! When assessing an enhancement, we must consider how it will affect other teams, how it will function with other UI/UX patterns in LaunchPad, and more.
 
 - Perform a cursory search in our [enhancement issues](https://github.com/launchdarkly/launchpad-ui/issues?q=label%3Aenhancement+) to see if the feature has already been suggested. If it has and the issue is still open, add a comment to the existing issue instead of opening a new one.
 - [File a feature request](https://github.com/launchdarkly/launchpad-ui/issues/new?assignees=&labels=&template=feature_request.md&title=) and describe in detail what you're suggesting.
@@ -38,13 +38,13 @@ If you'd like to help by writing code and filing a pull request for a feature en
 - For feature enhancements: if it's a small tweak, feel free to submit a PR for the team to review.
 - For bugfixes: we welcome all bugfix PR submissions.
 
-To learn how to contribute code in Launchpad, follow the guide below.
+To learn how to contribute code in LaunchPad, follow the guide below.
 
 ---
 
 ## Code Contribution Guide
 
-If you're contributing code to Launchpad, follow this guide to make sure that once you publish your pull request, the team has everything we need to review your code.
+If you're contributing code to LaunchPad, follow this guide to make sure that once you publish your pull request, the team has everything we need to review your code.
 
 ### Step 1: Create a feature branch off `main`
 
@@ -70,7 +70,7 @@ You should also consider adding `axe` accessibility tests. See other packages fo
 
 ### Step 3: Generate a changelog for your code
 
-We use a tool called [changesets](https://github.com/changesets/changesets) to manage versioning and changelogs within Launchpad. Every package change should include a changelog with a description of the changes. When new changelog files are detected in Launchpad's `.changeset` folder, a Github action will publish or update a pull request that, when merged, will publish those changes along with the changelog to new NPM module versions for the modified packages.
+We use a tool called [changesets](https://github.com/changesets/changesets) to manage versioning and changelogs within LaunchPad. Every package change should include a changelog with a description of the changes. When new changelog files are detected in LaunchPad's `.changeset` folder, a Github action will publish or update a pull request that, when merged, will publish those changes along with the changelog to new NPM module versions for the modified packages.
 
 To generate a changelog:
 
@@ -139,16 +139,16 @@ There are just a few things to keep in mind:
 
 With the help of [plop](https://plopjs.com), we can quickly scaffold new component files in a consistent and opinionated way.
 
-Simply run `pnpm generate component` and follow the prompts, and you'll be well on your way to adding a new component package to Launchpad.
+Simply run `pnpm generate component` and follow the prompts, and you'll be well on your way to adding a new component package to LaunchPad.
 
 ### Adding Dependencies to Packages
 
 - Don't pin dependencies, use caret ranges.
 - Match dependency versions across packages when possible so that we can share dependency versions and reduce bundle sizes.
-- If a package depends on another Launchpad package, use the workspace syntax to use latest compatible versions:
+- If a package depends on another LaunchPad package, use the workspace syntax to use latest compatible versions:
   - Ex: `"@launchpad-ui/tokens": "workspace:~"`
 
-### Adding Icons to Launchpad
+### Adding Icons to LaunchPad
 
 - Drop the SVG file in the `/icons` directory in the `@launchpad/icons` package
 - Run `pnpm build:transform` from the project root to generate a React component for it
