@@ -1,5 +1,12 @@
 # @launchpad-ui/notification
 
+## 0.5.19
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @launchpad-ui/clipboard@0.8.19
+
 ## 0.5.18
 
 ### Patch Changes
