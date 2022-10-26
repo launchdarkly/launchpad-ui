@@ -49,7 +49,7 @@ export const Default: Story = {
     return (
       <>
         <Button onClick={addItem}>Add snackbar</Button>
-        <SnackbarCenter snackbars={items} onDismiss={removeItem} />
+        <SnackbarCenter snackbars={items} dismissSnackbar={removeItem} />
       </>
     );
   },
