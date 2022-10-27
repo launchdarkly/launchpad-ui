@@ -1,4 +1,4 @@
-import { Button, Modal, ModalBody, ModalFooter, ModalHeader } from '@launchpad-ui/core';
+import { Button, Modal } from '@launchpad-ui/core';
 import { useState } from 'react';
 
 export default function Index() {
@@ -7,12 +7,12 @@ export default function Index() {
   return show ? (
     <>
       {button}
-      <Modal onCancel={() => setShow(!show)}>
-        <ModalHeader>Example modal title</ModalHeader>
-        <ModalBody>Hi there I&apos;m a modal</ModalBody>
-        <ModalFooter>
-          <Button onClick={() => setShow(false)}>Cancel</Button>
-        </ModalFooter>
+      <Modal
+        onCancel={() => setShow(!show)}
+        title="Title"
+        primaryButton={<Button onClick={() => setShow(false)}>Cancel</Button>}
+      >
+        <p>Hi there I&apos;m a modal</p>
       </Modal>
     </>
   ) : (
