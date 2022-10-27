@@ -1,15 +1,13 @@
 import { it, expect, describe, vi } from 'vitest';
 
 import { render, screen, userEvent } from '../../../test/utils';
-import { Modal, ModalBody, ModalFooter, ModalHeader } from '../src';
+import { Modal } from '../src';
 
 describe('Modal', () => {
   it('renders', async () => {
     render(
-      <Modal>
-        <ModalHeader>Modal</ModalHeader>
-        <ModalBody>Body</ModalBody>
-        <ModalFooter>Footer</ModalFooter>
+      <Modal title="Title">
+        <p>Body text</p>
       </Modal>
     );
     expect(await screen.findByRole('dialog')).toBeInTheDocument();
@@ -19,10 +17,8 @@ describe('Modal', () => {
     const spy = vi.fn();
     const user = userEvent.setup();
     render(
-      <Modal onCancel={spy}>
-        <ModalHeader>Modal</ModalHeader>
-        <ModalBody>Body</ModalBody>
-        <ModalFooter>Footer</ModalFooter>
+      <Modal title="Title" onCancel={spy}>
+        <p>Body</p>
       </Modal>
     );
 

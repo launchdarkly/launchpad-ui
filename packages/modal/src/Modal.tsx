@@ -1,9 +1,9 @@
 import type { Variants } from 'framer-motion';
 import type { MouseEvent, ReactNode } from 'react';
 
-import { IconButton } from '@launchpad-ui/button';
+import { ButtonGroup, IconButton } from '@launchpad-ui/button';
 import { FocusTrap } from '@launchpad-ui/focus-trap';
-import { Close } from '@launchpad-ui/icons';
+import { Close, Warning } from '@launchpad-ui/icons';
 import { Portal } from '@launchpad-ui/portal';
 import { usePreventScroll } from '@react-aria/overlays';
 import { cx } from 'classix';
@@ -31,12 +31,19 @@ const loadFeatures = () =>
   ).then((res) => res.domAnimation);
 
 type ModalProps = {
-  children?: ReactNode;
+  children: ReactNode;
   className?: string;
   withCloseButton?: boolean;
   cancelWithOverlayClick?: boolean;
   onReady?(): void;
   onCancel?(): void;
+  size?: 'small' | 'normal' | 'auto';
+  status?: 'warning';
+  hasRequiredField?: boolean;
+  title: ReactNode;
+  description?: ReactNode;
+  primaryButton?: ReactNode;
+  secondaryButton?: ReactNode;
   'data-test-id'?: string;
 };
 
@@ -47,6 +54,13 @@ const Modal = ({
   children,
   onReady,
   onCancel,
+  size = 'normal',
+  status,
+  title,
+  hasRequiredField,
+  primaryButton,
+  secondaryButton,
+  description,
   'data-test-id': testId = 'modal',
 }: ModalProps) => {
   const ref = useRef<HTMLDivElement>(null);
@@ -82,10 +96,17 @@ const Modal = ({
     }
   };
 
+  const hasFooter = !!(primaryButton || secondaryButton);
+
   return (
     <Portal>
       <LazyMotion strict features={loadFeatures}>
-        <div className={cx(styles.modal, className)} data-modal data-test-id={testId} ref={ref}>
+        <div
+          className={cx(styles.modal, styles[size], className)}
+          data-modal
+          data-test-id={testId}
+          ref={ref}
+        >
           <m.div
             initial="hidden"
             animate="visible"
@@ -106,16 +127,48 @@ const Modal = ({
                 className={styles.content}
                 tabIndex={-1}
               >
-                {withCloseButton && (
-                  <IconButton
-                    aria-label="close"
-                    icon={<Close size="medium" />}
-                    className={styles.closeButton}
-                    onClick={onCancel}
-                    data-test-id="modal-close-button"
-                  />
+                <div data-test-id="modal-header" className={styles.header}>
+                  <div className={styles.headerMain}>
+                    {status === 'warning' && (
+                      <Warning
+                        data-test-id="modal-header-icon"
+                        size="medium"
+                        className={styles.headerIcon}
+                      />
+                    )}
+                    <h2 id={MODAL_LABELLED_BY} data-test-id="modal-title" className={styles.title}>
+                      {title}
+                    </h2>
+                    {withCloseButton && (
+                      <IconButton
+                        aria-label="close"
+                        icon={<Close size="medium" />}
+                        className={styles.closeButton}
+                        onClick={onCancel}
+                        data-test-id="modal-close-button"
+                      />
+                    )}
+                  </div>
+                  {description && <p className={styles.headerDescription}>{description}</p>}
+                  {hasRequiredField && (
+                    <div className={styles.headerRequiredFields}>
+                      <span className={styles.requiredAsterisk}>*</span> Required field
+                    </div>
+                  )}
+                </div>
+
+                <div className={styles.body} data-test-id="modal-body">
+                  {children}
+                </div>
+
+                {hasFooter && (
+                  <div className={styles.footer} data-test-id="modal-footer">
+                    <ButtonGroup>
+                      {secondaryButton}
+                      {primaryButton}
+                    </ButtonGroup>
+                  </div>
                 )}
-                {children}
               </m.div>
             </FocusTrap>
           </m.div>
