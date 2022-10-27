@@ -12,7 +12,7 @@ export default function Index() {
         title="Title"
         primaryButton={<Button onClick={() => setShow(false)}>Cancel</Button>}
       >
-        <p>Hi there I&apos;m a modal</p>
+        <p>Body text</p>
       </Modal>
     </>
   ) : (
