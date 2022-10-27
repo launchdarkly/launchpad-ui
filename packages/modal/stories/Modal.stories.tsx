@@ -68,8 +68,7 @@ export default {
       },
     },
     secondaryButton: {
-      description:
-        "A slot for adding the secondary button to the footer. NOTE: While these docs only allow you to pass a string that is rendered into a button's text, you can pass this prop any ReactNode.",
+      description: 'A slot for adding the secondary button to the footer.',
       control: 'text',
       table: {
         type: REACT_NODE_TYPE_DOCS,
