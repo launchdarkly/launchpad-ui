@@ -27,8 +27,7 @@ export default {
     },
     title: {
       type: { required: true },
-      description:
-        'Use the heading to state what the purpose of the modal. Start with a verb and use only 2-4 words.',
+      description: 'A slot used for explaining the concise purpose of the modal.',
       control: 'text',
       table: {
         type: REACT_NODE_TYPE_DOCS,
@@ -41,8 +40,7 @@ export default {
       control: { type: 'radio' },
     },
     description: {
-      description:
-        'Add a description if it brings clarity to why we are presenting this modal to users.',
+      description: 'A slot for adding more context to the purpose of the modal.',
       control: 'text',
       table: {
         type: REACT_NODE_TYPE_DOCS,
