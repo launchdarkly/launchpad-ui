@@ -164,7 +164,6 @@ export const Default: Story = {
   play,
   parameters: { docs: { disable: false } },
 };
-// Default.parameters = { docs: { disable: false } };
 
 export const Destructive: Story = {
   render: () => {
