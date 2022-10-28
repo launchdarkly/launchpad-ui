@@ -58,8 +58,8 @@ export const Example: StoryObj = {
               >
                 <DropdownButton>Dropdown</DropdownButton>
                 <Menu>
-                  <MenuItem tooltip="z-index-800" tooltipPlacement="right">
-                    Item 1
+                  <MenuItem tooltip="z-index-900" tooltipPlacement="right">
+                    z-index-800
                   </MenuItem>
                   <MenuItem>Item 2</MenuItem>
                   <MenuItem>Item 3</MenuItem>
