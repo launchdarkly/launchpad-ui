@@ -274,7 +274,6 @@ export const TallBody: Story = {
         title="Title"
         primaryButton={<Button kind="primary">Okay</Button>}
         secondaryButton={<Button>Cancel</Button>}
-        size="small"
       >
         <p>
           This example is meant to illustrate how the modal overflows when there is a lot of text.
