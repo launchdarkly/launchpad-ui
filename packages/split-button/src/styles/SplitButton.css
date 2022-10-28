@@ -39,10 +39,6 @@
   }
 }
 
-.SplitButton > * {
-  z-index: 0;
-}
-
 .SplitButton-main.Button,
 .SplitButton-drop.Button {
   min-height: 2.5rem;
