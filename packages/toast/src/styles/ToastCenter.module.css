@@ -1,6 +1,6 @@
 .ToastCenter {
   position: fixed;
-  bottom: 7.25rem;
+  bottom: 4.5313rem;
   left: 50%;
   transform: translateX(-50%);
   right: auto;
@@ -13,5 +13,5 @@
 }
 
 .ToastCenter-item:not(:first-child) {
-  margin-top: 2rem;
+  margin-top: 1.25rem;
 }

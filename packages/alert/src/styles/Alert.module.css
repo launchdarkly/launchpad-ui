@@ -42,10 +42,10 @@
 .Alert {
   position: relative;
   display: flex;
-  gap: 1.4rem;
+  gap: 0.875rem;
   border: none;
-  padding: 1.4rem 1.8rem;
-  font-size: 1.4rem;
+  padding: 0.875rem 1.125rem;
+  font-size: 0.875rem;
   line-height: 1.45;
   white-space: normal;
   width: 100%;
@@ -57,15 +57,15 @@
 
 .Alert-heading {
   margin-top: 0;
-  margin-bottom: 0.4rem;
-  font-size: 1.6rem;
+  margin-bottom: 0.25rem;
+  font-size: 1rem;
   color: var(--lp-color-black-100);
   font-weight: var(--lp-font-weight-medium);
   line-height: 1.25;
 }
 
 .Alert :global(.ButtonGroup) {
-  margin-top: 1.2rem;
+  margin-top: 0.75rem;
 }
 
 .Alert .Alert-icon {
@@ -80,7 +80,7 @@
 /* Alert size variants */
 
 .Alert.Alert--small {
-  font-size: 1.3rem;
+  font-size: 0.8125rem;
 }
 
 .Alert.Alert--small .Alert-icon {
@@ -90,7 +90,7 @@
 
 .Alert.Alert--wide {
   width: 86%;
-  margin-top: 0.8rem;
+  margin-top: 0.5rem;
 }
 
 .Alert.Alert--compact {
@@ -146,7 +146,7 @@
 
 .Alert-content {
   flex-grow: 1;
-  max-width: 70rem;
+  max-width: 43.75rem;
 }
 
 .Alert-close {

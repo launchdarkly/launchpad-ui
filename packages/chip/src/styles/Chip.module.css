@@ -14,7 +14,7 @@
 .Chip {
   display: inline-block;
   font-weight: var(--lp-font-weight-semibold);
-  font-size: 1.1rem;
+  font-size: 0.6875rem;
   line-height: 1.2;
   border: 1px solid var(--Chip-border-color);
   border-radius: var(--lp-border-radius);
@@ -27,13 +27,13 @@
 }
 
 .Chip--normal {
-  font-size: 1.1rem;
+  font-size: 0.6875rem;
   line-height: 1.4;
   padding: 0.3em;
 }
 
 .Chip--large {
-  font-size: 1.3rem;
+  font-size: 0.8125rem;
   line-height: 1.6;
   padding: 0.5em;
 }
@@ -133,7 +133,7 @@
 }
 
 .Chip :global([class*='_icon_']) {
-  margin-right: 0.2rem;
+  margin-right: 0.125rem;
   vertical-align: top;
 }
 
@@ -151,10 +151,10 @@
 }
 
 .Chip--flag {
-  border-radius: 1.5rem;
-  font-size: 1.3rem;
-  padding: 0.2rem;
-  width: 4.8rem;
+  border-radius: 0.9375rem;
+  font-size: 0.8125rem;
+  padding: 0.125rem;
+  width: 3rem;
 }
 
 .Chip--federal {
@@ -164,25 +164,25 @@
 }
 
 :global(.Chip--flag--small) {
-  border-radius: 1rem;
-  font-size: 1rem;
-  width: 3rem;
-  padding: 0.4rem;
+  border-radius: 0.625rem;
+  font-size: 0.625rem;
+  width: 1.875rem;
+  padding: 0.25rem;
 }
 
 :global(.Chip--flagOn) {
   border: var(--lp-color-system-green-900) 1px solid;
   color: var(--lp-color-system-green-900);
-  max-height: 2.5rem;
+  max-height: 1.5625rem;
 }
 
 :global(.Chip--flagOff) {
   border: var(--lp-color-gray-700) 1px solid;
   color: var(--lp-color-text-subtle-primary);
   background-color: var(--lp-color-gray-100);
-  max-height: 2.5rem;
+  max-height: 1.5625rem;
 }
 
 :global(.Chip--topbar) {
-  margin-left: 0.3rem;
+  margin-left: 0.1875rem;
 }

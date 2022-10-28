@@ -37,7 +37,7 @@
 .header {
   font-size: var(--lp-font-size-500);
   font-weight: var(--lp-font-weight-semibold);
-  padding: 2rem 4.4rem 1rem 2rem;
+  padding: 1.25rem 2.75rem 0.625rem 1.25rem;
 }
 
 .title {
@@ -45,19 +45,19 @@
 }
 
 .body {
-  font-size: 1.5rem;
+  font-size: 0.9375rem;
   line-height: 24px;
-  padding: 0 2rem 2rem;
+  padding: 0 1.25rem 1.25rem;
   color: var(--lp-color-text);
 }
 
 .footer {
   text-align: right;
-  padding: 1rem 2rem 2rem;
+  padding: 0.625rem 1.25rem 1.25rem;
 }
 
 .closeButton {
   position: absolute;
-  right: 1rem;
-  top: 1rem;
+  right: 0.625rem;
+  top: 0.625rem;
 }

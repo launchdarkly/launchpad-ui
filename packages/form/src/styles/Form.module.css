@@ -1,5 +1,5 @@
 .formGroup {
-  margin: 2rem 0;
+  margin: 1.25rem 0;
   padding: 0;
   border: none;
 }
@@ -7,7 +7,7 @@
 /* The margin for .formGroup and the min-height of .form-fieldError
   should be equal to avoid content shift when errors are shown */
 .formIncreasedErrorMargin .formGroup {
-  margin: 2.8rem 0;
+  margin: 1.75rem 0;
 }
 
 .formInline .formGroup {
@@ -27,8 +27,8 @@
 .formInput {
   display: block;
   width: 100%;
-  padding: 0.6rem 1rem;
-  font-size: 1.3rem;
+  padding: 0.375rem 0.625rem;
+  font-size: 0.8125rem;
   font-family: var(--lp-font-family-base);
   line-height: var(--lp-line-height-300);
   background-color: var(--lp-color-background-field);
@@ -36,7 +36,7 @@
   border: 1px solid var(--lp-color-gray-500);
   border-radius: var(--lp-border-radius);
   transition: all 100ms linear;
-  height: 3.2rem;
+  height: 2rem;
 }
 
 .formInput:placeholder-shown {
@@ -55,14 +55,14 @@ select.formInput {
   appearance: none;
   background: transparent;
   background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7.41 8.84L12 13.42l4.59-4.58L18 10.25l-6 6-6-6 1.41-1.41z" fill="%23646f7a"/></svg>');
-  background-size: 2rem;
+  background-size: 1.25rem;
   background-repeat: no-repeat;
   background-position: right 0.4em top 50%, 0 0;
-  padding-right: 2rem;
+  padding-right: 1.25rem;
 }
 
 .iconField .formInput {
-  padding-left: 3rem;
+  padding-left: 1.875rem;
 }
 
 .suffixContainer .formInput {
@@ -76,11 +76,11 @@ select.formInput {
 
 .inlineForm .formGroup + .formGroup,
 .inlineForm .formGroup + :global(.Button) {
-  margin-left: 1rem;
+  margin-left: 0.625rem;
 }
 
 .label {
-  font-size: 1.3rem;
+  font-size: 0.8125rem;
   font-family: var(--lp-font-family-base);
   word-break: break-word;
 }
@@ -112,22 +112,22 @@ select.formInput {
 .formGroup .label {
   display: flex;
   align-items: center;
-  margin-bottom: 0.2rem;
+  margin-bottom: 0.125rem;
 }
 
 .formGroup .label + .label {
-  margin-top: 0.5rem;
+  margin-top: 0.3125rem;
 }
 
 .fieldError {
   color: var(--lp-color-system-red-600);
-  font-size: 1.3rem;
+  font-size: 0.8125rem;
 }
 
 /* The margin for .formGroup and the min-height of .form-fieldError
   should be equal to avoid content shift when errors are shown */
 .formIncreasedErrorMargin .fieldError {
-  min-height: 2.8rem;
+  min-height: 1.75rem;
 }
 
 .label .fieldError {
@@ -136,13 +136,13 @@ select.formInput {
 
 .form:not(.inlineForm) .fieldError {
   display: block;
-  padding-top: 0.5rem;
+  padding-top: 0.3125rem;
   text-align: left;
 }
 
 .formIncreasedErrorMargin:not(.inlineForm) .fieldError {
-  padding-top: 0.1rem;
-  padding-bottom: 0.5rem;
+  padding-top: 0.0625rem;
+  padding-bottom: 0.3125rem;
 }
 
 .form .isInvalid .label {
@@ -169,15 +169,15 @@ select.formInput {
 
 .hint {
   display: block;
-  margin-top: 0.3rem;
-  font-size: 1.3rem;
+  margin-top: 0.1875rem;
+  font-size: 0.8125rem;
   font-weight: var(--lp-font-weight-regular);
   color: var(--lp-color-text-subtle-primary);
 }
 
 .field .hint {
   margin: 0;
-  font-size: 1.3rem;
+  font-size: 0.8125rem;
   color: var(--lp-color-text-subtle-primary);
   fill: var(--lp-color-text-subtle-primary);
 }
@@ -189,11 +189,11 @@ select.formInput {
 
 .fieldErrorMessage {
   color: var(--lp-color-system-red-600);
-  font-size: 1.3rem;
+  font-size: 0.8125rem;
 }
 
 .field.formGroup {
-  margin: 1rem 0;
+  margin: 0.625rem 0;
 }
 
 .field.formGroup:first-child {
@@ -264,16 +264,16 @@ input[type='checkbox']:disabled {
 .checkbox {
   align-self: flex-start; /* Default for .label is center, but this looks bad on multi-line checkbox labels */
   flex-shrink: 0; /* Make sure the input itself doesn't shrink in flex layouts */
-  margin-right: 0.5rem;
-  margin-top: 0.4rem;
+  margin-right: 0.3125rem;
+  margin-top: 0.25rem;
 }
 
 .radio {
-  margin-right: 0.5rem;
+  margin-right: 0.3125rem;
 }
 
 .number {
-  min-width: 4.5rem;
+  min-width: 2.8125rem;
 }
 
 .suffixContainer {
@@ -315,12 +315,12 @@ input[type='checkbox']:disabled {
   fill: var(--lp-color-gray-600);
   top: 50%;
   transform: translateY(-50%);
-  left: 1rem;
+  left: 0.625rem;
 }
 
 .formInputTiny {
-  padding: 0.1rem 0.6rem;
-  height: 2.4rem;
+  padding: 0.0625rem 0.375rem;
+  height: 1.5rem;
 }
 
 .iconField {
@@ -333,7 +333,7 @@ input[type='checkbox']:disabled {
 
 .fieldSet {
   border: none;
-  margin: 2rem 0;
+  margin: 1.25rem 0;
   padding: 0;
 }
 

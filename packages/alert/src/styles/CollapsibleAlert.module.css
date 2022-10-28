@@ -13,7 +13,7 @@ backround support in CollapsibleAlert */
 }
 
 .CollapsibleAlert {
-  margin-top: 0.8rem;
+  margin-top: 0.5rem;
 }
 
 .CollapsibleAlert :global(.Alert-content) {
@@ -24,9 +24,9 @@ backround support in CollapsibleAlert */
 .CollapsibleAlert-button {
   display: flex;
   align-items: center;
-  min-width: 9rem;
+  min-width: 5.625rem;
   padding: 0;
-  font-size: 1.3rem;
+  font-size: 0.8125rem;
   line-height: 1.5;
   text-align: left;
   color: var(--CollapsibleAlert-button-color-text);
@@ -74,7 +74,7 @@ https://www.scottohara.me/blog/2017/04/14/inclusively-hidden.html
   overflow: auto;
   max-height: 0;
   opacity: 0;
-  transform: translate3d(0, -1rem, 0);
+  transform: translate3d(0, -0.625rem, 0);
   transition: visibility 0.5s, max-height 0.5s, opacity 0.5s, transform 0.5s;
   transition-timing-function: ease-in-out;
 
@@ -112,15 +112,15 @@ https://www.scottohara.me/blog/2017/04/14/inclusively-hidden.html
   }
 
   & :global(.Table--compact .Table-cell) {
-    padding: 0.5rem 1rem 0.5rem 0;
+    padding: 0.3125rem 0.625rem 0.3125rem 0;
   }
 }
 
 /* animate content container when button toggled */
 [aria-expanded='true'] + .CollapsibleAlert--contentContainer {
-  margin-top: 0.4rem;
+  margin-top: 0.25rem;
   visibility: visible;
-  max-height: 31.25rem;
+  max-height: 19.5313rem;
   opacity: 1;
   transform: translate3d(0, 0, 0);
 }

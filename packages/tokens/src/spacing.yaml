@@ -2,18 +2,18 @@ spacing:
   100:
     value: 0rem
   200:
-    value: 0.4rem
+    value: 0.25rem
   300:
-    value: 0.8rem
+    value: 0.5rem
   400:
-    value: 1.2rem
+    value: 0.75rem
   500:
-    value: 1.6rem
+    value: 1rem
   600:
-    value: 2rem
+    value: 1.25rem
   700:
-    value: 2.4rem
+    value: 1.5rem
   800:
-    value: 2.8rem
+    value: 1.75rem
   900:
-    value: 3.2rem
+    value: 2rem
