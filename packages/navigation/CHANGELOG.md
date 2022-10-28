@@ -1,5 +1,12 @@
 # @launchpad-ui/navigation
 
+## 0.6.28
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @launchpad-ui/dropdown@0.6.2
+
 ## 0.6.27
 
 ### Patch Changes
