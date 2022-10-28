@@ -263,7 +263,7 @@ export const KitchenSink: Story = {
       </Modal>
     );
   },
-  parameters: { docs: { disable: true } },
+  parameters: { docs: { disable: true }, chromatic: { viewports: [320, 1200] } },
 };
 
 export const TallBody: Story = {
