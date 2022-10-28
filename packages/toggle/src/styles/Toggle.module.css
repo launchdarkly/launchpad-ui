@@ -13,7 +13,7 @@
   --Toggle-color-text-on: var(--lp-color-white);
   --Toggle-height: 2.4rem; /* 24px */
   --Toggle-transition-timing-function: ease-in-out;
-  --Toggle-transition-duration: 100ms;
+  --Toggle-transition-duration: var(--lp-duration-100);
   --Toggle-width: 5.4rem; /* 54px */
   --Toggle-input-box-shadow-focus: 0 0 0 1px var(--lp-color-gray-300),
     0 0 0 3px var(--lp-color-white), 0 0 0 5px var(--lp-color-focus);

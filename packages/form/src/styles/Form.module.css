@@ -35,7 +35,7 @@
   color: var(--lp-color-text);
   border: 1px solid var(--lp-color-gray-500);
   border-radius: var(--lp-border-radius);
-  transition: all 100ms linear;
+  transition: all var(--lp-duration-100) linear;
   height: 3.2rem;
 }
 
@@ -105,7 +105,7 @@ select.formInput {
   pointer-events: none;
   background-color: var(--lp-color-background);
   transform-origin: 0 0; /* preserve left alignment after scaling */
-  transition: all 100ms ease-in-out;
+  transition: all var(--lp-duration-100) ease-in-out;
   z-index: 1; /* Fixes layout issue in Firefox */
 }
 

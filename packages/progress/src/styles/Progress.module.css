@@ -15,7 +15,7 @@
 }
 
 .Progress--indeterminate {
-  animation: indeterminate 350ms linear infinite;
+  animation: indeterminate var(--lp-duration-350) linear infinite;
 }
 
 .Progress-track {
@@ -24,7 +24,7 @@
 }
 
 .Progress-head {
-  transition: stroke-dashoffset 0.35s;
+  transition: stroke-dashoffset var(--lp-duration-350);
   fill: none;
   stroke: var(--lp-color-gray-500);
 }
