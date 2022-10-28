@@ -12,15 +12,26 @@ import { useEffect, useRef } from 'react';
 
 import { MODAL_LABELLED_BY } from './constants';
 import styles from './styles/Modal.module.css';
+import { useMediaQuery } from './utils';
 
 const overlay: Variants = {
   visible: { opacity: 1, transition: { duration: 0.15 } },
   hidden: { opacity: 0 },
 };
 
-const pop: Variants = {
-  hidden: { opacity: 0, scale: 0.9 },
-  visible: { opacity: 1, scale: 1, transition: { type: 'spring', delay: 0.1, duration: 0.15 } },
+const transitions: { [key: string]: Variants } = {
+  desktopPop: {
+    hidden: { opacity: 0, scale: 0.9 },
+    visible: { opacity: 1, scale: 1, transition: { type: 'spring', delay: 0.1, duration: 0.15 } },
+  },
+  mobileSlideUp: {
+    hidden: { opacity: 0, y: '25%' },
+    visible: {
+      opacity: 1,
+      y: '0%',
+      transition: { type: 'spring', delay: 0.15, duration: 0.2, bounce: 0 },
+    },
+  },
 };
 
 const loadFeatures = () =>
@@ -64,6 +75,7 @@ const Modal = ({
   'data-test-id': testId = 'modal',
 }: ModalProps) => {
   const ref = useRef<HTMLDivElement>(null);
+  const isDesktopViewport = useMediaQuery('(min-width: 430px)');
 
   usePreventScroll();
 
@@ -114,13 +126,14 @@ const Modal = ({
             transition={{ duration: 0.15 }}
             role="presentation"
             className={styles.overlay}
+            data-test-id="modal-overlay"
             onMouseDown={handleOverlayClick}
           >
             <FocusTrap autoFocus restoreFocus>
               <m.div
                 initial="hidden"
                 animate="visible"
-                variants={pop}
+                variants={isDesktopViewport ? transitions.desktopPop : transitions.mobileSlideUp}
                 role="dialog"
                 aria-labelledby={MODAL_LABELLED_BY}
                 aria-modal
@@ -149,9 +162,16 @@ const Modal = ({
                       />
                     )}
                   </div>
-                  {description && <p className={styles.headerDescription}>{description}</p>}
+                  {description && (
+                    <p className={styles.headerDescription} data-test-id="modal-description">
+                      {description}
+                    </p>
+                  )}
                   {hasRequiredField && (
-                    <div className={styles.headerRequiredFields}>
+                    <div
+                      className={styles.headerRequiredFields}
+                      data-test-id="modal-required-field"
+                    >
                       <span className={styles.requiredAsterisk}>*</span> Required field
                     </div>
                   )}
@@ -163,7 +183,7 @@ const Modal = ({
 
                 {hasFooter && (
                   <div className={styles.footer} data-test-id="modal-footer">
-                    <ButtonGroup>
+                    <ButtonGroup className={styles.footerActions}>
                       {secondaryButton}
                       {primaryButton}
                     </ButtonGroup>

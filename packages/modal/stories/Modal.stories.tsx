@@ -137,6 +137,7 @@ const play = async ({
 export const Default: Story = {
   render: ({ primaryButton, secondaryButton, children, ...rest }) => {
     const [show, setShow] = useState(false);
+    const [showSecond, setShowSecond] = useState(false);
     const button = <Button onClick={() => setShow(true)}>Open modal</Button>;
     return show ? (
       <div style={{ width: '100vw', height: '100vh' }}>
@@ -145,14 +146,31 @@ export const Default: Story = {
           {...rest}
           onCancel={() => setShow(!show)}
           primaryButton={
-            <Button kind="primary" onClick={() => setShow(false)}>
+            <Button kind="primary" onClick={() => setShowSecond(true)}>
               {primaryButton}
             </Button>
           }
           secondaryButton={<Button onClick={() => setShow(false)}>{secondaryButton}</Button>}
         >
-          {children}
+          {children}{' '}
+          f;ldsjkfl;dskfdslfjds;lfkdsa;lfdksfldsjflkdsjflkdsjflkdsjff;ldsjkfl;dskfdslfjds;lfkdsa;lfdksfldsjflkdsjflkdsjflkdsjff;ldsjkfl;dskfdslfjds;lfkdsa;lfdksfldsjflkdsjflkdsjflkdsjff;ldsjkfl;dskfdslfjds;lfkdsa;lfdksfldsjflkdsjflkdsjflkdsjff;ldsjkfl;dskfdslfjds;lfkdsa;lfdksfldsjflkdsjflkdsjflkdsjff;ldsjkfl;dskfdslfjds;lfkdsa;lfdksfldsjflkdsjflkdsjflkdsjff;ldsjkfl;dskfdslfjds;lfkdsa;lfdksfldsjflkdsjflkdsjflkdsjff;ldsjkfl;dskfdslfjds;lfkdsa;lfdksfldsjflkdsjflkdsjflkdsjff;ldsjkfl;dskfdslfjds;lfkdsa;lfdksfldsjflkdsjflkdsjflkdsjf
         </Modal>
+        {showSecond && (
+          <Modal
+            {...rest}
+            onCancel={() => setShow(!show)}
+            primaryButton={
+              <Button kind="primary" onClick={() => setShowSecond(false)}>
+                {primaryButton}
+              </Button>
+            }
+            secondaryButton={
+              <Button onClick={() => setShowSecond(false)}>{secondaryButton}</Button>
+            }
+          >
+            {children}
+          </Modal>
+        )}
       </div>
     ) : (
       button
@@ -242,6 +260,72 @@ export const KitchenSink: Story = {
           <li>List item two</li>
           <li>List item three</li>
         </ul>
+      </Modal>
+    );
+  },
+  parameters: { docs: { disable: true } },
+};
+
+export const TallBody: Story = {
+  render: () => {
+    const [showLess, setShowLess] = useState(false);
+    return (
+      <Modal
+        title="Title"
+        primaryButton={<Button kind="primary">Okay</Button>}
+        secondaryButton={<Button>Cancel</Button>}
+        size="small"
+      >
+        <p>
+          This example is meant to illustrate how the modal overflows when there is a lot of text.
+          You can make your viewport smaller to get a better idea. Lorem ipsum dolor sit amet,
+          consectetur adipiscing elit. Ut malesuada ultricies mauris, in gravida nibh vehicula vel.
+        </p>
+
+        {!showLess && (
+          <>
+            <p>
+              Ut vel orci urna. Quisque tempus sem non massa blandit, et maximus dolor blandit.
+              Phasellus vulputate varius orci, ut auctor mi pretium a. Duis vestibulum sagittis
+              nulla sit amet varius. Donec suscipit mi dui, eu ultrices felis gravida non. Proin
+              vitae enim velit. Nunc luctus suscipit quam, a bibendum metus malesuada in. Mauris
+              eleifend turpis vitae posuere rutrum. Mauris sit amet tortor quam. Mauris ac lacinia
+              nibh, in egestas ligula. Donec vel leo a metus egestas venenatis id feugiat augue.
+            </p>
+
+            <p>
+              Proin eu pretium justo. Phasellus ornare sem nec magna placerat ornare. Nam id nisl
+              libero. Quisque felis lorem, tempor accumsan dapibus sagittis, fringilla non tortor.
+              Sed at nisi nunc. Aliquam lectus elit, auctor sit amet tortor et, rutrum facilisis
+              mauris. Ut quis pulvinar ipsum. Cras vitae malesuada massa. Sed ut metus ex. Sed
+              turpis metus, porttitor sed nibh id, egestas finibus diam. Fusce iaculis rhoncus
+              venenatis. Suspendisse potenti. Sed at felis vitae turpis elementum tristique. Ut sed
+              pretium dolor, ut lobortis augue. Vivamus cursus malesuada scelerisque. Nunc non
+              condimentum neque.
+            </p>
+
+            <p>
+              Ut vel orci urna. Quisque tempus sem non massa blandit, et maximus dolor blandit.
+              Phasellus vulputate varius orci, ut auctor mi pretium a. Duis vestibulum sagittis
+              nulla sit amet varius. Donec suscipit mi dui, eu ultrices felis gravida non. Proin
+              vitae enim velit. Nunc luctus suscipit quam, a bibendum metus malesuada in. Mauris
+              eleifend turpis vitae posuere rutrum. Mauris sit amet tortor quam. Mauris ac lacinia
+              nibh, in egestas ligula. Donec vel leo a metus egestas venenatis id feugiat augue.
+            </p>
+
+            <p>
+              Proin eu pretium justo. Phasellus ornare sem nec magna placerat ornare. Nam id nisl
+              libero. Quisque felis lorem, tempor accumsan dapibus sagittis, fringilla non tortor.
+              Sed at nisi nunc. Aliquam lectus elit, auctor sit amet tortor et, rutrum facilisis
+              mauris. Ut quis pulvinar ipsum. Cras vitae malesuada massa. Sed ut metus ex. Sed
+              turpis metus, porttitor sed nibh id, egestas finibus diam. Fusce iaculis rhoncus
+              venenatis. Suspendisse potenti. Sed at felis vitae turpis elementum tristique. Ut sed
+              pretium dolor, ut lobortis augue. Vivamus cursus malesuada scelerisque. Nunc non
+              condimentum neque.
+            </p>
+          </>
+        )}
+        <button onClick={() => setShowLess(!showLess)}>Show less</button>
       </Modal>
     );
   },
