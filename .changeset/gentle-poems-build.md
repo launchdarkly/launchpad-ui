@@ -1,5 +1,6 @@
 ---
 '@launchpad-ui/button': patch
+'@launchpad-ui/split-button': patch
 '@launchpad-ui/core': patch
 ---
 
