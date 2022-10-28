@@ -1,5 +1,11 @@
 # @launchpad-ui/button
 
+## 0.7.7
+
+### Patch Changes
+
+- [#529](https://github.com/launchdarkly/launchpad-ui/pull/529) [`50898e9`](https://github.com/launchdarkly/launchpad-ui/commit/50898e94d7166651118da8b57526f4e1eda917f6) Thanks [@apucacao](https://github.com/apucacao)! - feat(button): Only show focus styles when necessary
+
 ## 0.7.6
 
 ### Patch Changes
