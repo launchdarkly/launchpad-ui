@@ -11,6 +11,7 @@
   --SplitButton-popoverTarget-line-height: 1;
   --SplitButton-border-focus-color: var(--lp-color-focus);
   --SplitButton-box-shadow-focus: 0 0 0 2px var(--lp-color-white), 0 0 0 4px var(--lp-color-focus);
+  --SplitButton-box-shadow-active: none;
   --SplitButton-drop-width: 3.4rem;
 }
 
@@ -84,4 +85,9 @@
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
   border-left-width: var(--SplitButton-drop-border-left);
+}
+
+.SplitButton-main.Button:active,
+.SplitButton-drop.Button:active {
+  box-shadow: var(--SplitButton-box-shadow-active);
 }
