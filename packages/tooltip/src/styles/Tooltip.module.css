@@ -1,5 +1,5 @@
 .Tooltip {
-  z-index: var(--lp-z-index-900);
+  z-index: var(--lp-z-index-800);
 }
 
 [class^='_Popover-content_'].Tooltip-popover-content {
