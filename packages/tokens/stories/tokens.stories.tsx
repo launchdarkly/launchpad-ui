@@ -15,7 +15,7 @@ const global = Object.keys(tokens.color)
 const colors = Object.values(global).map((color) => Object.values(color));
 const system = Object.values(tokens.color.system).map((color) => Object.values(color));
 
-export const Colors = {
+export const Global = {
   render: () => (
     <>
       {[...colors, ...system].map((color, index) => (

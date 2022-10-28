@@ -3,7 +3,7 @@
 }
 
 .Popover {
-  z-index: 20000;
+  z-index: var(--lp-z-index-800);
   position: absolute;
 }
 
