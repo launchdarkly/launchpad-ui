@@ -152,8 +152,7 @@ export const Default: Story = {
           }
           secondaryButton={<Button onClick={() => setShow(false)}>{secondaryButton}</Button>}
         >
-          {children}{' '}
-          f;ldsjkfl;dskfdslfjds;lfkdsa;lfdksfldsjflkdsjflkdsjflkdsjff;ldsjkfl;dskfdslfjds;lfkdsa;lfdksfldsjflkdsjflkdsjflkdsjff;ldsjkfl;dskfdslfjds;lfkdsa;lfdksfldsjflkdsjflkdsjflkdsjff;ldsjkfl;dskfdslfjds;lfkdsa;lfdksfldsjflkdsjflkdsjflkdsjff;ldsjkfl;dskfdslfjds;lfkdsa;lfdksfldsjflkdsjflkdsjflkdsjff;ldsjkfl;dskfdslfjds;lfkdsa;lfdksfldsjflkdsjflkdsjflkdsjff;ldsjkfl;dskfdslfjds;lfkdsa;lfdksfldsjflkdsjflkdsjflkdsjff;ldsjkfl;dskfdslfjds;lfkdsa;lfdksfldsjflkdsjflkdsjflkdsjff;ldsjkfl;dskfdslfjds;lfkdsa;lfdksfldsjflkdsjflkdsjflkdsjf
+          {children}
         </Modal>
         {showSecond && (
           <Modal

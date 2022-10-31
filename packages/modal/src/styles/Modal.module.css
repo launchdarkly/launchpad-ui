@@ -4,29 +4,23 @@
   overflow: hidden;
 }
 
-.modal {
+.overlayContainer {
   z-index: 10002;
   position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
+  inset: 0;
   transform: translateZ(0);
 }
 
 .overlay {
   position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
+  inset: 0;
   background-color: hsl(0 0% 20% / 0.5);
   display: flex;
   align-items: flex-end;
   justify-content: center;
 }
 
-.content {
+.modal {
   background-color: var(--lp-color-background);
   position: relative;
   border: 1px solid var(--lp-color-gray-100);
@@ -118,7 +112,7 @@
 }
 
 @media screen and (min-width: 430px) {
-  .content {
+  .modal {
     max-height: 72%;
     margin: 2.4rem;
     padding: 2.4rem;
@@ -129,16 +123,16 @@
     gap: 0.8rem;
   }
 
-  .small .content {
+  .small.modal {
     width: 45rem;
     max-height: 48%;
   }
 
-  .normal .content {
+  .normal.modal {
     width: 65rem;
   }
 
-  .auto .content {
+  .auto.modal {
     width: auto;
   }
 
