@@ -1,5 +1,11 @@
 # @launchpad-ui/modal
 
+## 0.11.0
+
+### Minor Changes
+
+- [#528](https://github.com/launchdarkly/launchpad-ui/pull/528) [`cd66443`](https://github.com/launchdarkly/launchpad-ui/commit/cd66443aaa4b6b488296318eb6198372547af191) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Modal] Refresh modal design and refactor modal package and components
+
 ## 0.10.1
 
 ### Patch Changes
