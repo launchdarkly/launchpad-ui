@@ -1,5 +1,11 @@
 # @launchpad-ui/modal
 
+## 0.11.1
+
+### Patch Changes
+
+- [#536](https://github.com/launchdarkly/launchpad-ui/pull/536) [`b492e9e`](https://github.com/launchdarkly/launchpad-ui/commit/b492e9e939847ca8c27222be62556bf011e6427d) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Modal] Add legacy modal to ease migration
+
 ## 0.11.0
 
 ### Minor Changes
