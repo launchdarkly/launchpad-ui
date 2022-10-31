@@ -41,14 +41,14 @@ export const Default = {
         display: 'grid',
         justifyContent: 'space-evenly',
         gridTemplateColumns: 'repeat(4, auto)',
-        rowGap: '4rem',
-        marginTop: '4rem',
+        rowGap: '2.5rem',
+        marginTop: '2.5rem',
       }}
     >
       {Object.keys(icons).map((key, index) => {
         if (!['Icon', 'StatusIcon', '__namedExportsOrder'].includes(key))
           return (
-            <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }} key={index}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '0.625rem' }} key={index}>
               {icons[key as IconName]({ size: 'medium' })}
               <span>{key}</span>
             </div>

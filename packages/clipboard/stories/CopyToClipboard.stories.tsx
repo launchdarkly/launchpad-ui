@@ -75,7 +75,7 @@ const WithImperativeHandleWrapper = () => {
     // eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions
     <div
       onClick={handleClick}
-      style={{ border: '3px solid #efefef', padding: '2rem', maxWidth: '500px' }}
+      style={{ border: '3px solid #efefef', padding: '1.25rem', maxWidth: '500px' }}
     >
       <h2>Triggering copy imperatively</h2>
       <p>
