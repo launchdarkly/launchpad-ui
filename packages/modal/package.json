@@ -36,7 +36,6 @@
     "@launchpad-ui/focus-trap": "workspace:~",
     "@launchpad-ui/icons": "workspace:~",
     "@launchpad-ui/portal": "workspace:~",
-    "@launchpad-ui/progress": "workspace:~",
     "@launchpad-ui/tokens": "workspace:~",
     "@react-aria/overlays": "^3.11.0",
     "classix": "^2.1.13",

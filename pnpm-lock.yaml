@@ -633,7 +633,6 @@ importers:
       '@launchpad-ui/focus-trap': workspace:~
       '@launchpad-ui/icons': workspace:~
       '@launchpad-ui/portal': workspace:~
-      '@launchpad-ui/progress': workspace:~
       '@launchpad-ui/tokens': workspace:~
       '@react-aria/overlays': ^3.11.0
       classix: ^2.1.13
@@ -645,7 +644,6 @@ importers:
       '@launchpad-ui/focus-trap': link:../focus-trap
       '@launchpad-ui/icons': link:../icons
       '@launchpad-ui/portal': link:../portal
-      '@launchpad-ui/progress': link:../progress
       '@launchpad-ui/tokens': link:../tokens
       '@react-aria/overlays': 3.11.0_biqbaboplfbrettd7655fr4n2y
       classix: 2.1.16

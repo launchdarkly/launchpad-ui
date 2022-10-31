@@ -1,25 +1,19 @@
-import type { HTMLAttributes } from 'react';
+import type { ModalProps } from './Modal';
 
-import { cx } from 'classix';
+import { ButtonGroup } from '@launchpad-ui/button';
 
 import styles from './styles/Modal.module.css';
 
-type ModalFooterProps = HTMLAttributes<HTMLDivElement> & { 'data-test-id'?: string };
+type ModalFooterProps = Pick<ModalProps, 'secondaryButton' | 'primaryButton'>;
 
-const ModalFooter = ({
-  className,
-  children,
-  'data-test-id': testId = 'modal-footer',
-  ...rest
-}: ModalFooterProps) => {
-  const classes = cx(styles.footer, className);
-
-  return (
-    <div data-test-id={testId} className={classes} {...rest}>
-      {children}
-    </div>
-  );
-};
+const ModalFooter = ({ secondaryButton, primaryButton }: ModalFooterProps) => (
+  <div className={styles.footer} data-test-id="modal-footer">
+    <ButtonGroup className={styles.footerActions}>
+      {secondaryButton}
+      {primaryButton}
+    </ButtonGroup>
+  </div>
+);
 
 export { ModalFooter };
 export type { ModalFooterProps };
