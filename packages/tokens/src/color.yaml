@@ -186,45 +186,65 @@ color:
 
   # Alias tokens
 
-  background:
-    ' ':
-      value: '{ color.white. .value }'
-      dark: '{ color.black. .value }'
-    hover:
-      value: '{ color.gray.100.value }'
-      dark: '{ color.gray.700.value }'
-    active:
-      value: '{ color.gray.200.value }'
-      dark: '{ color.gray.800.value }'
-    field:
-      value: '{ color.white. .value }'
-      dark: '{ color.gray.800.value }'
-  border:
-    value: '{ color.gray.200.value }'
-    dark: '{ color.gray.800.value }'
-  focus:
-    value: '{ color.blue.500.value }'
-  heading:
-    value: '{ color.black.300.value }'
-    dark: '{ color.gray.100.value }'
-  link:
-    ' ':
-      value: '{ color.blue.600.value }'
-      dark: '{ color.white. .value }'
-    active:
-      value: '{ color.purple.600.value }'
-      dark: '{ color.purple.300.value }'
-  text:
-    ' ':
-      value: '{ color.black.300.value }'
-      dark: '{ color.white. .value }'
-    inverse:
-      value: '{ color.white. .value }'
-      dark: '{ color.black.300.value }'
-    subtle:
+  bg:
+    feedback:
+      error:
+        value: '{ color.system.red.200.value }'
+      info:
+        value: '{ color.blue.200.value }'
+      success:
+        value: '{ color.system.green.200.value }'
+      warning:
+        value: '{ color.system.yellow.200.value }'
+    interactive:
       primary:
-        value: '{ color.gray.700.value }'
-        dark: '{ color.gray.300.value }'
+        ' ':
+          value: '{ color.blue.500.value }'
+    ui:
+      primary:
+        value: '{ color.white. .value }'
       secondary:
-        value: '{ color.gray.600.value }'
-        dark: '{ color.gray.200.value }'
+        value: '{ color.white.100.value }'
+      tertiary:
+        value: '{ color.black.300.value }'
+  border:
+    feedback:
+      error:
+        value: '{ color.system.red.700.value }'
+      info:
+        value: '{ color.blue.700.value }'
+      success:
+        value: '{ color.system.green.700.value }'
+      warning:
+        value: '{ color.system.yellow.700.value }'
+    interactive:
+      focus:
+        value: '{ color.blue.500.value }'
+      primary:
+        value: '{ color.gray.300.value }'
+      secondary:
+        value: '{ color.gray.500.value }'
+  fill:
+    feedback:
+      error:
+        value: '{ color.system.red.700.value }'
+      info:
+        value: '{ color.blue.700.value }'
+      success:
+        value: '{ color.system.green.700.value }'
+      warning:
+        value: '{ color.system.yellow.700.value }'
+  shadow:
+    interactive:
+      focus:
+        value: '{ color.blue.500.value }'
+  text:
+    feedback:
+      error:
+        value: '{ color.system.red.600.value }'
+    primary:
+      value: '{ color.black.300.value }'
+    secondary:
+      value: '{ color.gray.700.value }'
+    tertiary:
+      value: '{ color.white. .value }'
