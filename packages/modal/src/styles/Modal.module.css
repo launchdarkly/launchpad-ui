@@ -4,60 +4,139 @@
   overflow: hidden;
 }
 
-.modal {
+.overlayContainer {
   z-index: 10002;
   position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
+  inset: 0;
   transform: translateZ(0);
 }
 
 .overlay {
   position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
+  inset: 0;
   background-color: hsl(0 0% 20% / 0.5);
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: center;
 }
 
-.content {
+.modal {
   background-color: var(--lp-color-background);
   position: relative;
   border: 1px solid var(--lp-color-gray-100);
-  border-radius: var(--lp-border-radius);
+  border-radius: 0.2rem;
   box-shadow: 0 0 6px var(--lp-color-gray-700);
+  padding: 1.6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+  width: 100%;
+  max-height: 95%;
 }
 
 .header {
-  font-size: var(--lp-font-size-500);
-  font-weight: var(--lp-font-weight-semibold);
-  padding: 2rem 4.4rem 1rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
 }
 
 .title {
   display: block;
+  font-size: var(--lp-font-size-500);
+  line-height: 1.2;
+  font-weight: var(--lp-font-weight-semibold);
+  margin: 0;
+}
+
+.headerIcon {
+  transform: translateY(2px);
+
+  svg {
+    fill: var(--lp-color-system-yellow-700);
+  }
+}
+
+.headerMain {
+  display: flex;
+  gap: 0.8rem;
+  align-items: flex-start;
+}
+
+.headerDescription {
+  font-size: 1.4rem;
+  color: var(--lp-color-gray-800);
+  margin: 0;
+}
+
+.headerRequiredFields {
+  font-size: 1.4rem;
+  color: var(--lp-color-gray-800);
+  font-weight: var(--lp-font-weight-regular);
+}
+
+.requiredAsterisk {
+  color: var(--lp-color-system-red-600);
+}
+
+.closeButton {
+  margin-left: auto;
+  transform: translateY(-1px);
 }
 
 .body {
   font-size: 1.5rem;
   line-height: 24px;
-  padding: 0 2rem 2rem;
   color: var(--lp-color-text);
+  overflow-y: auto;
+
+  *:first-child {
+    margin-top: 0;
+  }
+
+  *:last-child {
+    margin-bottom: 0;
+  }
 }
 
 .footer {
-  text-align: right;
-  padding: 1rem 2rem 2rem;
+  display: flex;
+  justify-content: flex-end;
 }
 
-.closeButton {
-  position: absolute;
-  right: 1rem;
-  top: 1rem;
+@media screen and (max-width: 429px) {
+  .footerActions {
+    width: 100%;
+    align-items: stretch;
+    flex-direction: column-reverse;
+  }
+}
+
+@media screen and (min-width: 430px) {
+  .modal {
+    max-height: 72%;
+    margin: 2.4rem;
+    padding: 2.4rem;
+    gap: 2.4rem;
+  }
+
+  .header {
+    gap: 0.8rem;
+  }
+
+  .small.modal {
+    width: 45rem;
+    max-height: 48%;
+  }
+
+  .normal.modal {
+    width: 65rem;
+  }
+
+  .auto.modal {
+    width: auto;
+  }
+
+  .overlay {
+    align-items: center;
+  }
 }

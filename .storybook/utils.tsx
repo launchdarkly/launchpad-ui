@@ -70,3 +70,9 @@ export enum PseudoClasses {
 export const sleep = (ms: number) => {
   return new Promise((resolve) => setTimeout(resolve, ms));
 };
+
+export const REACT_NODE_TYPE_DOCS = {
+  summary: 'ReactNode',
+  detail:
+    "While these docs only allow you to pass a string that is rendered into a button's text, you can pass the prop any ReactNode.",
+};
