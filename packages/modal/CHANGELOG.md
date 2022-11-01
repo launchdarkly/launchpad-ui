@@ -1,5 +1,11 @@
 # @launchpad-ui/modal
 
+## 0.11.2
+
+### Patch Changes
+
+- [#538](https://github.com/launchdarkly/launchpad-ui/pull/538) [`ac9aeb0`](https://github.com/launchdarkly/launchpad-ui/commit/ac9aeb0cf712ea836da34a3f4472d3dde6716d65) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Modal] Specify only direct children of body to receive margin styles
+
 ## 0.11.1
 
 ### Patch Changes
