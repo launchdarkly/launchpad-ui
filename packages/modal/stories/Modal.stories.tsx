@@ -7,7 +7,7 @@ import { useState } from '@storybook/client-api';
 import { userEvent, within } from '@storybook/testing-library';
 
 import { sleep, REACT_NODE_TYPE_DOCS } from '../../../.storybook/utils';
-import { Modal } from '../src';
+import { Modal, ModalBody, ModalFooter } from '../src';
 
 export default {
   component: Modal,
@@ -137,39 +137,21 @@ const play = async ({
 export const Default: Story = {
   render: ({ primaryButton, secondaryButton, children, ...rest }) => {
     const [show, setShow] = useState(false);
-    const [showSecond, setShowSecond] = useState(false);
     const button = <Button onClick={() => setShow(true)}>Open modal</Button>;
     return show ? (
       <div style={{ width: '100vw', height: '100vh' }}>
         {button}
-        <Modal
-          {...rest}
-          onCancel={() => setShow(!show)}
-          primaryButton={
-            <Button kind="primary" onClick={() => setShowSecond(true)}>
-              {primaryButton}
-            </Button>
-          }
-          secondaryButton={<Button onClick={() => setShow(false)}>{secondaryButton}</Button>}
-        >
-          {children}
-        </Modal>
-        {showSecond && (
-          <Modal
-            {...rest}
-            onCancel={() => setShow(!show)}
+        <Modal {...rest} onCancel={() => setShow(!show)}>
+          <ModalBody>{children}</ModalBody>
+          <ModalFooter
             primaryButton={
-              <Button kind="primary" onClick={() => setShowSecond(false)}>
+              <Button kind="primary" onClick={() => setShow(false)}>
                 {primaryButton}
               </Button>
             }
-            secondaryButton={
-              <Button onClick={() => setShowSecond(false)}>{secondaryButton}</Button>
-            }
-          >
-            {children}
-          </Modal>
-        )}
+            secondaryButton={<Button onClick={() => setShow(false)}>{secondaryButton}</Button>}
+          />
+        </Modal>
       </div>
     ) : (
       button
@@ -189,7 +171,13 @@ export const Destructive: Story = {
         primaryButton={<Button kind="destructive">Leave page</Button>}
         secondaryButton={<Button>Cancel</Button>}
       >
-        <p>If you leave this page, any unsaved changes will be lost.</p>
+        <ModalBody>
+          <p>If you leave this page, any unsaved changes will be lost.</p>
+        </ModalBody>
+        <ModalFooter
+          primaryButton={<Button kind="destructive">Leave page</Button>}
+          secondaryButton={<Button>Cancel</Button>}
+        />
       </Modal>
     );
   },
@@ -199,13 +187,14 @@ export const Destructive: Story = {
 export const Small: Story = {
   render: () => {
     return (
-      <Modal
-        title="Heading"
-        size="small"
-        primaryButton={<Button kind="primary">Okay</Button>}
-        secondaryButton={<Button>Cancel</Button>}
-      >
-        <p>Body text</p>
+      <Modal title="Heading" size="small">
+        <ModalBody>
+          <p>Body text</p>
+        </ModalBody>
+        <ModalFooter
+          primaryButton={<Button kind="primary">Okay</Button>}
+          secondaryButton={<Button>Cancel</Button>}
+        />
       </Modal>
     );
   },
@@ -215,13 +204,14 @@ export const Small: Story = {
 export const SizeAuto: Story = {
   render: () => {
     return (
-      <Modal
-        title="Heading"
-        size="auto"
-        primaryButton={<Button kind="primary">Okay</Button>}
-        secondaryButton={<Button>Cancel</Button>}
-      >
-        <p>Body text</p>
+      <Modal title="Heading" size="auto">
+        <ModalBody>
+          <p>Body text</p>
+        </ModalBody>
+        <ModalFooter
+          primaryButton={<Button kind="primary">Okay</Button>}
+          secondaryButton={<Button>Cancel</Button>}
+        />
       </Modal>
     );
   },
@@ -245,20 +235,24 @@ export const KitchenSink: Story = {
           </>
         }
         size="normal"
-        primaryButton={
-          <Button icon={<Check />} kind="primary">
-            Okay
-          </Button>
-        }
-        secondaryButton={<Button>Cancel</Button>}
       >
-        <h3>More information</h3>
-        <p>Lorem ipsum</p>
-        <ul>
-          <li>List item one</li>
-          <li>List item two</li>
-          <li>List item three</li>
-        </ul>
+        <ModalBody>
+          <h3>More information</h3>
+          <p>Lorem ipsum</p>
+          <ul>
+            <li>List item one</li>
+            <li>List item two</li>
+            <li>List item three</li>
+          </ul>
+        </ModalBody>
+        <ModalFooter
+          primaryButton={
+            <Button icon={<Check />} kind="primary">
+              Okay
+            </Button>
+          }
+          secondaryButton={<Button>Cancel</Button>}
+        />
       </Modal>
     );
   },
@@ -274,56 +268,65 @@ export const TallBody: Story = {
         primaryButton={<Button kind="primary">Okay</Button>}
         secondaryButton={<Button>Cancel</Button>}
       >
-        <p>
-          This example is meant to illustrate how the modal overflows when there is a lot of text.
-          You can make your viewport smaller to get a better idea. Lorem ipsum dolor sit amet,
-          consectetur adipiscing elit. Ut malesuada ultricies mauris, in gravida nibh vehicula vel.
-        </p>
+        <ModalBody>
+          <p>
+            This example is meant to illustrate how the modal overflows when there is a lot of text.
+            You can make your viewport smaller to get a better idea. Lorem ipsum dolor sit amet,
+            consectetur adipiscing elit. Ut malesuada ultricies mauris, in gravida nibh vehicula
+            vel.
+          </p>
 
-        {!showLess && (
-          <>
-            <p>
-              Ut vel orci urna. Quisque tempus sem non massa blandit, et maximus dolor blandit.
-              Phasellus vulputate varius orci, ut auctor mi pretium a. Duis vestibulum sagittis
-              nulla sit amet varius. Donec suscipit mi dui, eu ultrices felis gravida non. Proin
-              vitae enim velit. Nunc luctus suscipit quam, a bibendum metus malesuada in. Mauris
-              eleifend turpis vitae posuere rutrum. Mauris sit amet tortor quam. Mauris ac lacinia
-              nibh, in egestas ligula. Donec vel leo a metus egestas venenatis id feugiat augue.
-            </p>
+          {!showLess && (
+            <>
+              <p>
+                Ut vel orci urna. Quisque tempus sem non massa blandit, et maximus dolor blandit.
+                Phasellus vulputate varius orci, ut auctor mi pretium a. Duis vestibulum sagittis
+                nulla sit amet varius. Donec suscipit mi dui, eu ultrices felis gravida non. Proin
+                vitae enim velit. Nunc luctus suscipit quam, a bibendum metus malesuada in. Mauris
+                eleifend turpis vitae posuere rutrum. Mauris sit amet tortor quam. Mauris ac lacinia
+                nibh, in egestas ligula. Donec vel leo a metus egestas venenatis id feugiat augue.
+              </p>
 
-            <p>
-              Proin eu pretium justo. Phasellus ornare sem nec magna placerat ornare. Nam id nisl
-              libero. Quisque felis lorem, tempor accumsan dapibus sagittis, fringilla non tortor.
-              Sed at nisi nunc. Aliquam lectus elit, auctor sit amet tortor et, rutrum facilisis
-              mauris. Ut quis pulvinar ipsum. Cras vitae malesuada massa. Sed ut metus ex. Sed
-              turpis metus, porttitor sed nibh id, egestas finibus diam. Fusce iaculis rhoncus
-              venenatis. Suspendisse potenti. Sed at felis vitae turpis elementum tristique. Ut sed
-              pretium dolor, ut lobortis augue. Vivamus cursus malesuada scelerisque. Nunc non
-              condimentum neque.
-            </p>
+              <p>
+                Proin eu pretium justo. Phasellus ornare sem nec magna placerat ornare. Nam id nisl
+                libero. Quisque felis lorem, tempor accumsan dapibus sagittis, fringilla non tortor.
+                Sed at nisi nunc. Aliquam lectus elit, auctor sit amet tortor et, rutrum facilisis
+                mauris. Ut quis pulvinar ipsum. Cras vitae malesuada massa. Sed ut metus ex. Sed
+                turpis metus, porttitor sed nibh id, egestas finibus diam. Fusce iaculis rhoncus
+                venenatis. Suspendisse potenti. Sed at felis vitae turpis elementum tristique. Ut
+                sed pretium dolor, ut lobortis augue. Vivamus cursus malesuada scelerisque. Nunc non
+                condimentum neque.
+              </p>
 
-            <p>
-              Ut vel orci urna. Quisque tempus sem non massa blandit, et maximus dolor blandit.
-              Phasellus vulputate varius orci, ut auctor mi pretium a. Duis vestibulum sagittis
-              nulla sit amet varius. Donec suscipit mi dui, eu ultrices felis gravida non. Proin
-              vitae enim velit. Nunc luctus suscipit quam, a bibendum metus malesuada in. Mauris
-              eleifend turpis vitae posuere rutrum. Mauris sit amet tortor quam. Mauris ac lacinia
-              nibh, in egestas ligula. Donec vel leo a metus egestas venenatis id feugiat augue.
-            </p>
+              <p>
+                Ut vel orci urna. Quisque tempus sem non massa blandit, et maximus dolor blandit.
+                Phasellus vulputate varius orci, ut auctor mi pretium a. Duis vestibulum sagittis
+                nulla sit amet varius. Donec suscipit mi dui, eu ultrices felis gravida non. Proin
+                vitae enim velit. Nunc luctus suscipit quam, a bibendum metus malesuada in. Mauris
+                eleifend turpis vitae posuere rutrum. Mauris sit amet tortor quam. Mauris ac lacinia
+                nibh, in egestas ligula. Donec vel leo a metus egestas venenatis id feugiat augue.
+              </p>
 
-            <p>
-              Proin eu pretium justo. Phasellus ornare sem nec magna placerat ornare. Nam id nisl
-              libero. Quisque felis lorem, tempor accumsan dapibus sagittis, fringilla non tortor.
-              Sed at nisi nunc. Aliquam lectus elit, auctor sit amet tortor et, rutrum facilisis
-              mauris. Ut quis pulvinar ipsum. Cras vitae malesuada massa. Sed ut metus ex. Sed
-              turpis metus, porttitor sed nibh id, egestas finibus diam. Fusce iaculis rhoncus
-              venenatis. Suspendisse potenti. Sed at felis vitae turpis elementum tristique. Ut sed
-              pretium dolor, ut lobortis augue. Vivamus cursus malesuada scelerisque. Nunc non
-              condimentum neque.
-            </p>
-          </>
-        )}
-        <button onClick={() => setShowLess(!showLess)}>Show less</button>
+              <p>
+                Proin eu pretium justo. Phasellus ornare sem nec magna placerat ornare. Nam id nisl
+                libero. Quisque felis lorem, tempor accumsan dapibus sagittis, fringilla non tortor.
+                Sed at nisi nunc. Aliquam lectus elit, auctor sit amet tortor et, rutrum facilisis
+                mauris. Ut quis pulvinar ipsum. Cras vitae malesuada massa. Sed ut metus ex. Sed
+                turpis metus, porttitor sed nibh id, egestas finibus diam. Fusce iaculis rhoncus
+                venenatis. Suspendisse potenti. Sed at felis vitae turpis elementum tristique. Ut
+                sed pretium dolor, ut lobortis augue. Vivamus cursus malesuada scelerisque. Nunc non
+                condimentum neque.
+              </p>
+            </>
+          )}
+        </ModalBody>
+        <ModalFooter
+          primaryButton={
+            <Button onClick={() => setShowLess(!showLess)}>
+              Show {showLess ? 'more' : 'less'}
+            </Button>
+          }
+        />
       </Modal>
     );
   },

@@ -1,5 +1,9 @@
 export type { ModalProps } from './Modal';
 export { Modal } from './Modal';
+export type { ModalBodyProps } from './ModalBody';
+export { ModalBody } from './ModalBody';
+export type { ModalFooterProps } from './ModalFooter';
+export { ModalFooter } from './ModalFooter';
 
 export type { ModalProps as LegacyModalProps } from './legacy/Modal';
 export { Modal as LegacyModal } from './legacy/Modal';
