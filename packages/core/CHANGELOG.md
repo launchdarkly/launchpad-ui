@@ -1,5 +1,14 @@
 # @launchpad-ui/core
 
+## 0.22.3
+
+### Patch Changes
+
+- [#540](https://github.com/launchdarkly/launchpad-ui/pull/540) [`9214ce3`](https://github.com/launchdarkly/launchpad-ui/commit/9214ce379b192d49c29f165562f8cff067dbbfa7) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Modal] Export ModalBody and ModalFooter
+
+- Updated dependencies [[`9214ce3`](https://github.com/launchdarkly/launchpad-ui/commit/9214ce379b192d49c29f165562f8cff067dbbfa7)]:
+  - @launchpad-ui/modal@0.11.3
+
 ## 0.22.2
 
 ### Patch Changes
