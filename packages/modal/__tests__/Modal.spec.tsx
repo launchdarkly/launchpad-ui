@@ -1,7 +1,7 @@
 import { it, expect, describe, vi } from 'vitest';
 
 import { render, screen, userEvent } from '../../../test/utils';
-import { Modal } from '../src';
+import { Modal, ModalBody, ModalFooter } from '../src';
 
 globalThis.matchMedia = vi.fn().mockReturnValue({
   matches: true,
@@ -17,7 +17,8 @@ describe('Modal', () => {
   it('renders', async () => {
     render(
       <Modal title="a">
-        <p>Body text</p>
+        <ModalBody>Body</ModalBody>
+        <ModalFooter primaryButton={<button>Click me</button>} />
       </Modal>
     );
     expect(await screen.findByRole('dialog')).toBeInTheDocument();
@@ -115,25 +116,5 @@ describe('Modal', () => {
     const component = screen.getByTestId('modal-description');
 
     expect(component).toHaveTextContent(content);
-  });
-
-  it('does not render footer when no buttons are passed', async () => {
-    render(<Modal title="a">Body</Modal>);
-
-    const component = screen.queryByTestId('modal-footer');
-
-    expect(component).not.toBeInTheDocument();
-  });
-
-  it('renders footer when button is passed', async () => {
-    render(
-      <Modal title="a" primaryButton={<button>click me</button>}>
-        Body
-      </Modal>
-    );
-
-    const component = screen.queryByTestId('modal-footer');
-
-    expect(component).toBeInTheDocument();
   });
 });

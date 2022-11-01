@@ -1,8 +1,6 @@
 import type { ReactNode } from 'react';
 
-import { ModalBody } from './ModalBody';
 import { ModalContainer } from './ModalContainer';
-import { ModalFooter } from './ModalFooter';
 import { ModalHeader } from './ModalHeader';
 
 type ModalProps = {
@@ -33,13 +31,9 @@ const Modal = ({
   status,
   title,
   hasRequiredField,
-  primaryButton,
-  secondaryButton,
   description,
   'data-test-id': testId = 'modal',
 }: ModalProps) => {
-  const hasFooter = !!(primaryButton || secondaryButton);
-
   return (
     <ModalContainer
       onCancel={onCancel}
@@ -53,9 +47,7 @@ const Modal = ({
         {...{ withCloseButton, title, status, onCancel, description, hasRequiredField }}
       />
 
-      <ModalBody>{children}</ModalBody>
-
-      {hasFooter && <ModalFooter secondaryButton={secondaryButton} primaryButton={primaryButton} />}
+      {children}
     </ModalContainer>
   );
 };
