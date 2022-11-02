@@ -31,7 +31,7 @@
   flex-direction: column;
   gap: 1.6rem;
   width: 100%;
-  max-height: 95%;
+  max-height: 100%;
 }
 
 .header {
@@ -87,7 +87,6 @@
   font-size: 1.5rem;
   line-height: 24px;
   color: var(--lp-color-text);
-  overflow-y: auto;
 
   > *:first-child {
     margin-top: 0;
@@ -112,9 +111,12 @@
 }
 
 @media screen and (min-width: 430px) {
+  .overlay {
+    padding: 1.6rem;
+    align-items: center;
+  }
+
   .modal {
-    max-height: 72%;
-    margin: 2.4rem;
     padding: 2.4rem;
     gap: 2.4rem;
   }
@@ -125,7 +127,6 @@
 
   .small.modal {
     width: 45rem;
-    max-height: 48%;
   }
 
   .normal.modal {
@@ -134,9 +135,5 @@
 
   .auto.modal {
     width: auto;
-  }
-
-  .overlay {
-    align-items: center;
   }
 }
