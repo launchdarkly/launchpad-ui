@@ -1,5 +1,14 @@
 # @launchpad-ui/core
 
+## 0.22.4
+
+### Patch Changes
+
+- [#542](https://github.com/launchdarkly/launchpad-ui/pull/542) [`149223d`](https://github.com/launchdarkly/launchpad-ui/commit/149223d409d897ab5d37b1a410bc3d25103ce0de) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Modal] Overflow contents only when needed.
+
+- Updated dependencies [[`149223d`](https://github.com/launchdarkly/launchpad-ui/commit/149223d409d897ab5d37b1a410bc3d25103ce0de)]:
+  - @launchpad-ui/modal@0.11.4
+
 ## 0.22.3
 
 ### Patch Changes
