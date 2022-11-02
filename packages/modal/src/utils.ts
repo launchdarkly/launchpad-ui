@@ -1,4 +1,6 @@
-import { useEffect, useState } from 'react';
+import type { MutableRefObject } from 'react';
+
+import { useEffect, useRef, useState } from 'react';
 
 const useMediaQuery = (query: string) => {
   const [matches, setMatches] = useState(false);
@@ -18,4 +20,32 @@ const useMediaQuery = (query: string) => {
   return matches;
 };
 
-export { useMediaQuery };
+const useOverflowY = (ref: MutableRefObject<HTMLDivElement | null>) => {
+  const observer = useRef(
+    new ResizeObserver((entries) => {
+      const target = entries[0].target as HTMLDivElement;
+      target.style.overflowY = 'auto';
+
+      const overflow = target.scrollHeight > target.clientHeight ? 'auto' : 'initial';
+
+      target.style.overflowY = overflow;
+    })
+  );
+
+  useEffect(() => {
+    const currentObserver = observer.current;
+    const { current } = ref;
+
+    if (current) {
+      currentObserver.observe(current);
+    }
+
+    return () => {
+      if (current) {
+        currentObserver.unobserve(current);
+      }
+    };
+  }, [ref, observer]);
+};
+
+export { useOverflowY, useMediaQuery };
