@@ -1,7 +1,7 @@
 version: 2.1
 
 orbs:
-  dependency-scan: launchdarkly/dependency-scan-orb@dev:4c70fe2
+  dependency-scan: launchdarkly/dependency-scan-orb@dev:60aa345
 
 workflows:
   dependency_license_check:
