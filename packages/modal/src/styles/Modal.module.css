@@ -98,8 +98,13 @@
 }
 
 .footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
   display: flex;
   justify-content: flex-end;
+  padding: 1.6rem;
 }
 
 @media screen and (max-width: 429px) {
@@ -119,6 +124,10 @@
   .modal {
     padding: 2.4rem;
     gap: 2.4rem;
+  }
+
+  .footer {
+    padding: 2.4rem;
   }
 
   .header {

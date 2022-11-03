@@ -319,6 +319,13 @@ export const TallBody: Story = {
               </p>
             </>
           )}
+          <ModalFooter
+            primaryButton={
+              <Button onClick={() => setShowLess(!showLess)}>
+                Show {showLess ? 'more' : 'less'}
+              </Button>
+            }
+          />
         </ModalBody>
         <ModalFooter
           primaryButton={
