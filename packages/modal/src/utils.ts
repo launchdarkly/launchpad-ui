@@ -48,7 +48,7 @@ const useOverflowY = (ref: MutableRefObject<HTMLDivElement | null>) => {
   }, [ref, observer]);
 };
 
-const useFooterHeight = (ref: MutableRefObject<HTMLDivElement | null>) => {
+const useAbsoluteFooter = (ref: MutableRefObject<HTMLDivElement | null>) => {
   const observer = useRef(
     new ResizeObserver((entries) => {
       const target = entries[0].target as HTMLDivElement;
@@ -75,4 +75,4 @@ const useFooterHeight = (ref: MutableRefObject<HTMLDivElement | null>) => {
   }, [ref, observer]);
 };
 
-export { useOverflowY, useMediaQuery, useFooterHeight };
+export { useOverflowY, useMediaQuery, useAbsoluteFooter };

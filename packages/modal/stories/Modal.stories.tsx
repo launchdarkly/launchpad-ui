@@ -7,7 +7,7 @@ import { useState } from '@storybook/client-api';
 import { userEvent, within } from '@storybook/testing-library';
 
 import { sleep, REACT_NODE_TYPE_DOCS } from '../../../.storybook/utils';
-import { Modal, ModalBody, ModalFooter } from '../src';
+import { AbsoluteModalFooter, Modal, ModalBody, ModalFooter } from '../src';
 
 export default {
   component: Modal,
@@ -319,13 +319,6 @@ export const TallBody: Story = {
               </p>
             </>
           )}
-          <ModalFooter
-            primaryButton={
-              <Button onClick={() => setShowLess(!showLess)}>
-                Show {showLess ? 'more' : 'less'}
-              </Button>
-            }
-          />
         </ModalBody>
         <ModalFooter
           primaryButton={
@@ -334,6 +327,80 @@ export const TallBody: Story = {
             </Button>
           }
         />
+      </Modal>
+    );
+  },
+  parameters: { docs: { disable: true } },
+};
+
+export const AbsolutelyPositionedFooter: Story = {
+  render: () => {
+    const [showLess, setShowLess] = useState(false);
+    return (
+      <Modal
+        title="Title"
+        primaryButton={<Button kind="primary">Okay</Button>}
+        secondaryButton={<Button>Cancel</Button>}
+      >
+        <ModalBody>
+          <p>
+            In the case of forms, it&apos;s possible you need the modal body and footer contents to
+            be wrapped in a form. In this case, you lose the default positioning with the normal
+            implementation. In these cases, you can absolutely position the footer so it can be
+            nested within the modal body.
+          </p>
+
+          {!showLess && (
+            <>
+              <p>
+                Ut vel orci urna. Quisque tempus sem non massa blandit, et maximus dolor blandit.
+                Phasellus vulputate varius orci, ut auctor mi pretium a. Duis vestibulum sagittis
+                nulla sit amet varius. Donec suscipit mi dui, eu ultrices felis gravida non. Proin
+                vitae enim velit. Nunc luctus suscipit quam, a bibendum metus malesuada in. Mauris
+                eleifend turpis vitae posuere rutrum. Mauris sit amet tortor quam. Mauris ac lacinia
+                nibh, in egestas ligula. Donec vel leo a metus egestas venenatis id feugiat augue.
+              </p>
+
+              <p>
+                Proin eu pretium justo. Phasellus ornare sem nec magna placerat ornare. Nam id nisl
+                libero. Quisque felis lorem, tempor accumsan dapibus sagittis, fringilla non tortor.
+                Sed at nisi nunc. Aliquam lectus elit, auctor sit amet tortor et, rutrum facilisis
+                mauris. Ut quis pulvinar ipsum. Cras vitae malesuada massa. Sed ut metus ex. Sed
+                turpis metus, porttitor sed nibh id, egestas finibus diam. Fusce iaculis rhoncus
+                venenatis. Suspendisse potenti. Sed at felis vitae turpis elementum tristique. Ut
+                sed pretium dolor, ut lobortis augue. Vivamus cursus malesuada scelerisque. Nunc non
+                condimentum neque.
+              </p>
+
+              <p>
+                Ut vel orci urna. Quisque tempus sem non massa blandit, et maximus dolor blandit.
+                Phasellus vulputate varius orci, ut auctor mi pretium a. Duis vestibulum sagittis
+                nulla sit amet varius. Donec suscipit mi dui, eu ultrices felis gravida non. Proin
+                vitae enim velit. Nunc luctus suscipit quam, a bibendum metus malesuada in. Mauris
+                eleifend turpis vitae posuere rutrum. Mauris sit amet tortor quam. Mauris ac lacinia
+                nibh, in egestas ligula. Donec vel leo a metus egestas venenatis id feugiat augue.
+              </p>
+
+              <p>
+                Proin eu pretium justo. Phasellus ornare sem nec magna placerat ornare. Nam id nisl
+                libero. Quisque felis lorem, tempor accumsan dapibus sagittis, fringilla non tortor.
+                Sed at nisi nunc. Aliquam lectus elit, auctor sit amet tortor et, rutrum facilisis
+                mauris. Ut quis pulvinar ipsum. Cras vitae malesuada massa. Sed ut metus ex. Sed
+                turpis metus, porttitor sed nibh id, egestas finibus diam. Fusce iaculis rhoncus
+                venenatis. Suspendisse potenti. Sed at felis vitae turpis elementum tristique. Ut
+                sed pretium dolor, ut lobortis augue. Vivamus cursus malesuada scelerisque. Nunc non
+                condimentum neque.
+              </p>
+            </>
+          )}
+          <AbsoluteModalFooter
+            primaryButton={
+              <Button onClick={() => setShowLess(!showLess)}>
+                Show {showLess ? 'more' : 'less'}
+              </Button>
+            }
+          />
+        </ModalBody>
       </Modal>
     );
   },
