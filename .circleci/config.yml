@@ -9,6 +9,7 @@ workflows:
       - dependency-scan/generate-node-sbom
       - dependency-scan/get-license-policy
       - dependency-scan/evaluate-policy:
+          bom_file: "node-bom.json"
           requires:
             - dependency-scan/generate-node-sbom
             - dependency-scan/get-license-policy
