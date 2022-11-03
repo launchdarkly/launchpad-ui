@@ -1,0 +1,14 @@
+version: 2.1
+
+orbs:
+  dependency-scan: launchdarkly/dependency-scan-org@1.0.0
+
+workflows:
+  dependency_license_check:
+    jobs:
+      - dependency-scan/generate-node-sbom
+      - dependency-scan/get-license-policy
+      - dependency-scan/evaluate-policy:
+          requires:
+            - dependency-scan/generate-node-sbom
+            - dependency-scan/get-license-policy
