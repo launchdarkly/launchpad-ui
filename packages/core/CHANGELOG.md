@@ -1,5 +1,14 @@
 # @launchpad-ui/core
 
+## 0.22.5
+
+### Patch Changes
+
+- [#546](https://github.com/launchdarkly/launchpad-ui/pull/546) [`1e6fd8f`](https://github.com/launchdarkly/launchpad-ui/commit/1e6fd8f5e0bab976b0bd0f19ed4dbfe5586b8cdf) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Modal] Position footer absolutely
+
+- Updated dependencies [[`1e6fd8f`](https://github.com/launchdarkly/launchpad-ui/commit/1e6fd8f5e0bab976b0bd0f19ed4dbfe5586b8cdf)]:
+  - @launchpad-ui/modal@0.11.5
+
 ## 0.22.4
 
 ### Patch Changes
