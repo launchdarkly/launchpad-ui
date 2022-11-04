@@ -1,5 +1,11 @@
 # @launchpad-ui/modal
 
+## 0.11.7
+
+### Patch Changes
+
+- [#551](https://github.com/launchdarkly/launchpad-ui/pull/551) [`3642ccc`](https://github.com/launchdarkly/launchpad-ui/commit/3642cccf7c76db9cce69e51357eb003bbcb41b85) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Modal] Expose AbsoluteModalFooter
+
 ## 0.11.6
 
 ### Patch Changes
