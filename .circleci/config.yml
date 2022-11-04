@@ -1,16 +1,15 @@
 version: 2.1
 
 orbs:
-  dependency-scan: launchdarkly/dependency-scan-orb@dev:41e73ed
+  dependency-scan: launchdarkly/dependency-scan-orb@dev:2ddb0ad
 
 workflows:
   dependency_license_check:
     jobs:
-      - dependency-scan/generate-node-sbom:
-          package_manager: "pnpm"
+      - dependency-scan/generate-node-sbom-cdxgen
       - dependency-scan/get-license-policy
       - dependency-scan/evaluate-policy:
           bom_file: "node-bom.json"
           requires:
-            - dependency-scan/generate-node-sbom
+            - dependency-scan/generate-node-sbom-cdxgen
             - dependency-scan/get-license-policy
