@@ -10,13 +10,11 @@ type ModalProps = {
   cancelWithOverlayClick?: boolean;
   onReady?(): void;
   onCancel?(): void;
-  size?: 'small' | 'normal' | 'auto';
+  size?: 'small' | 'normal';
   status?: 'warning';
   hasRequiredField?: boolean;
   title: ReactNode;
   description?: ReactNode;
-  primaryButton?: ReactNode;
-  secondaryButton?: ReactNode;
   'data-test-id'?: string;
 };
 
