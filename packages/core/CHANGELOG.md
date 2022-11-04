@@ -1,5 +1,16 @@
 # @launchpad-ui/core
 
+## 0.22.6
+
+### Patch Changes
+
+- [#550](https://github.com/launchdarkly/launchpad-ui/pull/550) [`a9dab55`](https://github.com/launchdarkly/launchpad-ui/commit/a9dab556642ddee999437a9a467321324eec6e85) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Modal] Update modal layout logic
+
+- [#548](https://github.com/launchdarkly/launchpad-ui/pull/548) [`22b810c`](https://github.com/launchdarkly/launchpad-ui/commit/22b810c8400d988f3985a5d3b945adde81b8bcd9) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Modal] Improve modal contracts, allow htmldivelement props to pass to body and footer"
+
+- Updated dependencies [[`a9dab55`](https://github.com/launchdarkly/launchpad-ui/commit/a9dab556642ddee999437a9a467321324eec6e85), [`22b810c`](https://github.com/launchdarkly/launchpad-ui/commit/22b810c8400d988f3985a5d3b945adde81b8bcd9)]:
+  - @launchpad-ui/modal@0.11.6
+
 ## 0.22.5
 
 ### Patch Changes
