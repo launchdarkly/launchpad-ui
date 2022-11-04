@@ -5,9 +5,11 @@ import { Button } from '@launchpad-ui/button';
 import { Check, ClickMetric } from '@launchpad-ui/icons';
 import { useState } from '@storybook/client-api';
 import { userEvent, within } from '@storybook/testing-library';
+import { useRef } from 'react';
 
 import { sleep, REACT_NODE_TYPE_DOCS } from '../../../.storybook/utils';
 import { Modal, ModalBody, ModalFooter } from '../src';
+import { AbsoluteModalFooter } from '../src/AbsoluteModalFooter';
 
 export default {
   component: Modal,
@@ -208,7 +210,8 @@ export const KitchenSink: Story = {
         status="warning"
         description={
           <>
-            <i>This is a</i> <code>ReactNode</code> <strong>description</strong>
+            This example shows how the modal responds to passing custom components that use HTML.
+            This is useful for <i>doing</i> <strong>things like this</strong>.
           </>
         }
         size="normal"
@@ -240,13 +243,24 @@ export const TallBody: Story = {
   render: () => {
     const [showLess, setShowLess] = useState(false);
     return (
-      <Modal title="Title">
-        <ModalBody>
-          <p>
+      <Modal
+        title="Title"
+        description={
+          <>
             This example is meant to illustrate how the modal overflows when there is a lot of text.
             You can make your viewport smaller to get a better idea. Lorem ipsum dolor sit amet,
             consectetur adipiscing elit. Ut malesuada ultricies mauris, in gravida nibh vehicula
             vel.
+          </>
+        }
+      >
+        <ModalBody>
+          <p>
+            Phasellus vulputate varius orci, ut auctor mi pretium a. Duis vestibulum sagittis nulla
+            sit amet varius. Donec suscipit mi dui, eu ultrices felis gravida non. Proin vitae enim
+            velit. Nunc luctus suscipit quam, a bibendum metus malesuada in. Mauris eleifend turpis
+            vitae posuere rutrum. Mauris sit amet tortor quam. Mauris ac lacinia nibh, in egestas
+            ligula. Donec vel leo a metus egestas venenatis id feugiat augue. vel.
           </p>
 
           {!showLess && (
@@ -308,17 +322,78 @@ export const TallBody: Story = {
 
 export const WithForm: Story = {
   render: () => {
+    const inputRef = useRef<HTMLInputElement>(null);
+
     return (
       <Modal
         title="Title"
         description="This example shows how the modal works when a form wraps the body and footer."
       >
-        <form>
-          <ModalBody>
-            <input type="text" />
-          </ModalBody>
-          <ModalFooter primaryButton={<Button kind="primary">Submit</Button>} />
-        </form>
+        <ModalBody>
+          <p>Try out this form:</p>
+          <form
+            id="my-form"
+            onSubmit={(event) => {
+              if (inputRef.current) {
+                alert('A name was submitted: ' + inputRef.current.value);
+              }
+
+              event.preventDefault();
+            }}
+          >
+            <label htmlFor="name">
+              Your Name
+              <input type="text" name="name" id="name" ref={inputRef} />
+            </label>
+          </form>
+        </ModalBody>
+        <ModalFooter
+          primaryButton={
+            <Button type="submit" form="my-form">
+              Submit
+            </Button>
+          }
+        />
+      </Modal>
+    );
+  },
+  parameters: { docs: { disable: true } },
+};
+
+export const WithAbsolutelyPositionedFooter: Story = {
+  render: () => {
+    const inputRef = useRef<HTMLInputElement>(null);
+
+    return (
+      <Modal
+        title="Title"
+        description={
+          <>
+            In the case of forms, it&apos;s possible you need the modal body and footer contents to
+            be wrapped in a form. In this case, you lose the default positioning with the normal
+            implementation. In these cases, you can absolutely position the footer so it can be
+            nested within the modal body.
+          </>
+        }
+      >
+        <ModalBody>
+          <p>Try out this form:</p>
+          <form
+            onSubmit={(event) => {
+              if (inputRef.current) {
+                alert('A name was submitted: ' + inputRef.current.value);
+              }
+
+              event.preventDefault();
+            }}
+          >
+            <label htmlFor="name">
+              Your Name
+              <input type="text" name="name" id="name" ref={inputRef} />
+            </label>
+            <AbsoluteModalFooter primaryButton={<Button type="submit">Submit</Button>} />
+          </form>
+        </ModalBody>
       </Modal>
     );
   },

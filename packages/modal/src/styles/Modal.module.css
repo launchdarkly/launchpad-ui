@@ -104,6 +104,14 @@
   justify-content: flex-end;
 }
 
+.footer.absoluteFooter {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 1.6rem;
+}
+
 @media screen and (max-width: 429px) {
   .footerActions {
     width: 100%;
@@ -129,6 +137,10 @@
 
   .footer {
     padding: 2.4rem 2.4rem 0;
+  }
+
+  .footer.absoluteFooter {
+    padding: 2.4rem;
   }
 
   .body {

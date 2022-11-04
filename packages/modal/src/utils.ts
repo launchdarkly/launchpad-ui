@@ -48,4 +48,31 @@ const useOverflowY = (ref: MutableRefObject<HTMLDivElement | null>) => {
   }, [ref, observer]);
 };
 
-export { useOverflowY, useMediaQuery };
+const useAbsoluteFooter = (ref: MutableRefObject<HTMLDivElement | null>) => {
+  const observer = useRef(
+    new ResizeObserver((entries) => {
+      const target = entries[0].target as HTMLDivElement;
+      const modal = target.closest<HTMLDivElement>('[role=dialog]');
+      if (modal) {
+        modal.style.paddingBottom = `${target.clientHeight}px`;
+      }
+    })
+  );
+
+  useEffect(() => {
+    const currentObserver = observer.current;
+    const { current } = ref;
+
+    if (current) {
+      currentObserver.observe(current);
+    }
+
+    return () => {
+      if (current) {
+        currentObserver.unobserve(current);
+      }
+    };
+  }, [ref, observer]);
+};
+
+export { useOverflowY, useMediaQuery, useAbsoluteFooter };
