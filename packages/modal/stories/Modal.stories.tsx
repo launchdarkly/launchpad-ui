@@ -164,13 +164,7 @@ export const Default: Story = {
 export const Destructive: Story = {
   render: () => {
     return (
-      <Modal
-        status="warning"
-        title="Unsaved changes"
-        size="small"
-        primaryButton={<Button kind="destructive">Leave page</Button>}
-        secondaryButton={<Button>Cancel</Button>}
-      >
+      <Modal status="warning" title="Unsaved changes" size="small">
         <ModalBody>
           <p>If you leave this page, any unsaved changes will be lost.</p>
         </ModalBody>
@@ -188,23 +182,6 @@ export const Small: Story = {
   render: () => {
     return (
       <Modal title="Heading" size="small">
-        <ModalBody>
-          <p>Body text</p>
-        </ModalBody>
-        <ModalFooter
-          primaryButton={<Button kind="primary">Okay</Button>}
-          secondaryButton={<Button>Cancel</Button>}
-        />
-      </Modal>
-    );
-  },
-  parameters: { docs: { disable: true } },
-};
-
-export const SizeAuto: Story = {
-  render: () => {
-    return (
-      <Modal title="Heading" size="auto">
         <ModalBody>
           <p>Body text</p>
         </ModalBody>
@@ -263,11 +240,7 @@ export const TallBody: Story = {
   render: () => {
     const [showLess, setShowLess] = useState(false);
     return (
-      <Modal
-        title="Title"
-        primaryButton={<Button kind="primary">Okay</Button>}
-        secondaryButton={<Button>Cancel</Button>}
-      >
+      <Modal title="Title">
         <ModalBody>
           <p>
             This example is meant to illustrate how the modal overflows when there is a lot of text.
@@ -337,11 +310,7 @@ export const AbsolutelyPositionedFooter: Story = {
   render: () => {
     const [showLess, setShowLess] = useState(false);
     return (
-      <Modal
-        title="Title"
-        primaryButton={<Button kind="primary">Okay</Button>}
-        secondaryButton={<Button>Cancel</Button>}
-      >
+      <Modal title="Title">
         <ModalBody>
           <p>
             In the case of forms, it&apos;s possible you need the modal body and footer contents to
