@@ -177,24 +177,24 @@
 /* ------- MINIMAL ------- */
 
 .Button.Button--minimal {
-  background-color: transparent;
-  color: var(--lp-color-text);
+  background-color: var(--lp-color-bg-interactive-tertiary);
+  color: var(--lp-color-text-ui-primary);
 }
 
 .Button.Button--minimal:hover,
 .Button--minimal:focus-visible {
-  background-color: var(--lp-color-gray-100);
+  background-color: var(--lp-color-bg-interactive-tertiary-hover);
 }
 
 .Button.Button--minimal:active {
-  background-color: var(--lp-color-gray-200);
+  background-color: var(--lp-color-bg-interactive-tertiary-active);
 }
 
 .Button.Button--minimal[disabled],
 .Button.Button--minimal[disabled]:hover {
-  background-color: transparent;
+  background-color: var(--lp-color-bg-interactive-tertiary);
   border: none;
-  color: var(--lp-color-gray-500);
+  color: var(--lp-color-text-interactive-disabled);
 }
 
 /* ------- CLOSE ICON BUTTON ------- */
@@ -221,7 +221,7 @@
 .Button.Button--close:active {
   background-color: hsl(0 0% 12.9% / 0.7);
   box-shadow: 0 0 0 1px var(--lp-color-black-200), 0 0 0 4px hsl(0 0% 12.9% / 0.1);
-  color: var(--lp-color-text-inverse);
+  color: var(--lp-color-white);
 }
 
 .Button.Button--close[disabled],
@@ -329,7 +329,7 @@
   text-decoration: none;
   background-color: transparent;
   border-color: transparent;
-  color: var(--lp-color-link); /* do we have a different color here by theme? */
+  color: var(--lp-color-text-interactive-primary); /* do we have a different color here by theme? */
 }
 
 .Button--link:active {

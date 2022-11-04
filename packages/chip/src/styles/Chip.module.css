@@ -1,12 +1,25 @@
 :root {
-  --Chip-info-color: var(--lp-color-link);
+  --Chip-info-color: var(--lp-color-blue-600);
   --Chip-warning-color: var(--lp-color-system-yellow-900);
   --Chip-error-color: var(--lp-color-system-red-600);
   --Chip-success-color: var(--lp-color-system-green-900);
   --Chip-inactive-color: var(--lp-color-gray-200);
   --Chip-label-color: var(--lp-color-white-100);
-  --Chip-border-color: var(--lp-color-border);
+  --Chip-border-color: var(--lp-color-border-ui-primary);
   --Chip-beta-color: var(--lp-color-purple-600);
+  --Chip-invited-color: var(--lp-color-system-yellow-200);
+  --Chip-federal-color: var(--lp-color-yellow-500);
+}
+
+:root[data-theme='dark'] {
+  --Chip-info-color: var(--lp-color-cyan-500);
+  --Chip-warning-color: var(--lp-color-system-yellow-500);
+  --Chip-error-color: var(--lp-color-pink-500);
+  --Chip-success-color: var(--lp-color-system-green-500);
+  --Chip-inactive-color: var(--lp-color-gray-200);
+  --Chip-label-color: var(--lp-color-white-100);
+  --Chip-border-color: var(--lp-color-border-ui-primary);
+  --Chip-beta-color: var(--lp-color-purple-400);
   --Chip-invited-color: var(--lp-color-system-yellow-200);
   --Chip-federal-color: var(--lp-color-yellow-500);
 }
@@ -39,12 +52,12 @@
 }
 
 .Chip--subtle {
-  background: var(--lp-color-background);
+  background: var(--lp-color-bg-ui-primary);
 }
 
 .Chip--default {
   border-color: var(--lp-color-gray-500);
-  color: var(--lp-color-gray-600);
+  color: var(--lp-color-text-interactive-secondary);
 }
 
 .Chip--info {
@@ -54,7 +67,7 @@
 
 .Chip--info:not(.Chip--subtle) {
   background-color: var(--Chip-info-color);
-  color: var(--lp-color-text-inverse);
+  color: var(--lp-color-text-ui-tertiary);
 }
 
 .Chip--new {
@@ -64,7 +77,7 @@
 
 .Chip--new:not(.Chip--subtle) {
   background-color: var(--Chip-success-color);
-  color: var(--lp-color-text-inverse);
+  color: var(--lp-color-text-ui-tertiary);
 }
 
 .Chip--beta {
@@ -74,7 +87,7 @@
 
 .Chip--beta:not(.Chip--subtle) {
   background-color: var(--Chip-beta-color);
-  color: var(--lp-color-text-inverse);
+  color: var(--lp-color-text-ui-tertiary);
 }
 
 .Chip--invited {
@@ -93,7 +106,7 @@
 
 .Chip--success:not(.Chip--subtle) {
   background-color: var(--Chip-success-color);
-  color: var(--lp-color-text-inverse);
+  color: var(--lp-color-text-ui-tertiary);
 }
 
 .Chip--warning {
@@ -103,7 +116,7 @@
 
 .Chip--warning:not(.Chip--subtle) {
   background-color: var(--Chip-warning-color);
-  color: var(--lp-color-text-inverse);
+  color: var(--lp-color-text-ui-tertiary);
 }
 
 .Chip--error {
@@ -113,7 +126,7 @@
 
 .Chip--error:not(.Chip--subtle) {
   background-color: var(--Chip-error-color);
-  color: var(--lp-color-text-inverse);
+  color: var(--lp-color-text-ui-tertiary);
 }
 
 .Chip--inactive {
@@ -129,7 +142,7 @@
 
 .Chip--label {
   background-color: var(--Chip-label-color);
-  color: var(--lp-color-text-subtle-primary);
+  color: var(--lp-color-text-feedback-primary);
 }
 
 .Chip :global([class*='_icon_']) {
@@ -139,14 +152,14 @@
 
 .Chip--clickable:hover {
   cursor: pointer;
-  background: var(--lp-color-background-hover);
-  border: 1px solid var(--lp-color-border);
+  background: var(--lp-color-bg-interactive-secondary-hover);
+  border: 1px solid var(--lp-color-border-ui-primary);
 }
 
 .Chip--clickable:focus {
   outline: 0;
   border-radius: var(--lp-border-radius);
-  box-shadow: 0 0 4px var(--lp-color-focus);
+  box-shadow: 0 0 4px var(--lp-color-shadow-interactive-focus);
   z-index: 2;
 }
 
@@ -160,7 +173,7 @@
 .Chip--federal {
   background-color: var(--Chip-federal-color);
   border-color: var(--Chip-federal-color);
-  color: var(--lp-color-text);
+  color: var(--lp-color-black-300);
 }
 
 :global(.Chip--flag--small) {
@@ -171,15 +184,15 @@
 }
 
 :global(.Chip--flagOn) {
-  border: var(--lp-color-system-green-900) 1px solid;
-  color: var(--lp-color-system-green-900);
+  border: var(--Chip-success-color) 1px solid;
+  color: var(--Chip-success-color);
   max-height: 2.5rem;
 }
 
 :global(.Chip--flagOff) {
   border: var(--lp-color-gray-700) 1px solid;
-  color: var(--lp-color-text-subtle-primary);
-  background-color: var(--lp-color-gray-100);
+  color: var(--lp-color-text-ui-primary);
+  background-color: var(--lp-color-bg-interactive-secondary-hover);
   max-height: 2.5rem;
 }
 

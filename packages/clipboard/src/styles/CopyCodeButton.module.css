@@ -11,9 +11,10 @@
 
 .CopyCodeButton:focus {
   outline: 0;
-  box-shadow: 0 0 0 2px var(--lp-color-white), 0 0 0 4px var(--lp-color-blue-700);
+  box-shadow: 0 0 0 2px var(--lp-color-shadow-interactive-primary),
+    0 0 0 4px var(--lp-color-shadow-interactive-focus);
 }
 
 .CopyCodeButton:focus-visible {
-  outline-color: var(--lp-color-background-hover);
+  outline-color: var(--lp-color-bg-interactive-secondary-hover);
 }
