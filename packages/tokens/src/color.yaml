@@ -376,3 +376,7 @@ color:
       tertiary:
         value: '{ color.white. .value }'
         dark: '{ color.black.300.value }'
+    overlay:
+      primary:
+        value: '{ color.gray.800.value }'
+        dark: '{ color.gray.100.value }'

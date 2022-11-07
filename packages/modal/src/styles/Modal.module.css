@@ -21,7 +21,7 @@
 }
 
 .modal {
-  background-color: var(--lp-color-background);
+  background-color: var(--lp-color-bg-ui-primary);
   position: relative;
   border: 1px solid var(--lp-color-gray-100);
   border-radius: 0.2rem;
@@ -52,7 +52,7 @@
   transform: translateY(2px);
 
   svg {
-    fill: var(--lp-color-system-yellow-700);
+    fill: var(--lp-color-fill-feedback-warning);
   }
 }
 
@@ -64,18 +64,18 @@
 
 .headerDescription {
   font-size: 1.4rem;
-  color: var(--lp-color-gray-800);
+  color: var(--lp-color-text-overlay-primary);
   margin: 0;
 }
 
 .headerRequiredFields {
   font-size: 1.4rem;
-  color: var(--lp-color-gray-800);
+  color: var(--lp-color-text-overlay-primary);
   font-weight: var(--lp-font-weight-regular);
 }
 
 .requiredAsterisk {
-  color: var(--lp-color-system-red-600);
+  color: var(--lp-color-text-feedback-error);
 }
 
 .closeButton {
@@ -87,7 +87,7 @@
   padding: 0 1.6rem;
   font-size: 1.5rem;
   line-height: 1.5;
-  color: var(--lp-color-text);
+  color: var(--lp-color-text-ui-primary);
 
   > *:first-child {
     margin-top: 0;
