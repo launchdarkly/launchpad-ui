@@ -43,6 +43,10 @@ module.exports = {
 
     return config;
   },
+  docs: {
+    docsPage: 'automatic',
+    defaultName: 'Docs',
+  },
 };
 
 const getPackageStatusEnvVars = () => {
