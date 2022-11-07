@@ -37,7 +37,7 @@
   cursor: pointer;
   border-width: var(--lp-border-width-200);
   border-style: solid;
-  border-color: var(--lp-color-border-interactive-secondary);
+  border-color: var(--lp-color-white);
 
   &:hover {
     background-color: var(--lp-color-bg-interactive-secondary-hover);

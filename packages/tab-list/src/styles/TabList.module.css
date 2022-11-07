@@ -46,7 +46,7 @@
 .TabList-item[aria-disabled]:active {
   cursor: not-allowed;
   background-color: var(--lp-color-bg-ui-primary);
-  color: var(--lp-color-text-interactive-disabled);
+  color: var(--lp-color-gray-500);
 }
 
 .TabList-panel {

@@ -329,7 +329,7 @@
   text-decoration: none;
   background-color: transparent;
   border-color: transparent;
-  color: var(--lp-color-text-interactive-primary); /* do we have a different color here by theme? */
+  color: var(--lp-color-text-interactive);
 }
 
 .Button--link:active {
