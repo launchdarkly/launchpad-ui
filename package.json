@@ -70,6 +70,7 @@
     "@storybook/react-vite": "^7.0.0-alpha.48",
     "@storybook/testing-library": "^0.0.13",
     "@storybook/theming": "^7.0.0-alpha.48",
+    "@storybook/types": "^7.0.0-alpha.48",
     "@testing-library/dom": "^8.19.0",
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.4.0",

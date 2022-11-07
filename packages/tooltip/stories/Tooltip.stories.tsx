@@ -1,4 +1,5 @@
-import type { StoryObj, StoryFn } from '@storybook/react';
+import type { StoryObj } from '@storybook/react';
+import type { ReactNode } from 'react';
 
 import { Button } from '@launchpad-ui/button';
 import { userEvent, within } from '@storybook/testing-library';
@@ -33,7 +34,7 @@ export default {
     },
   },
   decorators: [
-    (StoryFn: StoryFn) => (
+    (storyFn: () => ReactNode) => (
       <div
         style={{
           width: '100vw',
@@ -43,7 +44,7 @@ export default {
           justifyContent: 'center',
         }}
       >
-        <StoryFn />
+        {storyFn()}
       </div>
     ),
   ],
