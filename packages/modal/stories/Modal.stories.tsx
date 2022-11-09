@@ -8,7 +8,7 @@ import { userEvent, within } from '@storybook/testing-library';
 import { useRef } from 'react';
 
 import { sleep, REACT_NODE_TYPE_DOCS } from '../../../.storybook/utils';
-import { Modal, ModalBody, ModalFooter } from '../src';
+import { Modal, ModalBody, ModalFooter, ModalHeader } from '../src';
 import { AbsoluteModalFooter } from '../src/AbsoluteModalFooter';
 
 export default {
@@ -119,6 +119,9 @@ type Story = StoryObj<
     primaryButton: string;
     secondaryButton: string;
     children: string;
+    description: string;
+    hasRequiredField: boolean;
+    withCloseButton: boolean;
   }
 >;
 
@@ -137,13 +140,28 @@ const play = async ({
 };
 
 export const Default: Story = {
-  render: ({ primaryButton, secondaryButton, children, ...rest }) => {
+  render: ({
+    primaryButton,
+    secondaryButton,
+    title,
+    description,
+    hasRequiredField,
+    withCloseButton,
+    children,
+    ...rest
+  }) => {
     const [show, setShow] = useState(false);
     const button = <Button onClick={() => setShow(true)}>Open modal</Button>;
     return show ? (
       <div style={{ width: '100vw', height: '100vh' }}>
         {button}
         <Modal {...rest} onCancel={() => setShow(!show)}>
+          <ModalHeader
+            title={title}
+            description={description}
+            hasRequiredField={hasRequiredField}
+            withCloseButton={withCloseButton}
+          />
           <ModalBody>{children}</ModalBody>
           <ModalFooter
             primaryButton={
@@ -166,7 +184,8 @@ export const Default: Story = {
 export const Destructive: Story = {
   render: () => {
     return (
-      <Modal status="warning" title="Unsaved changes" size="small">
+      <Modal status="warning" size="small">
+        <ModalHeader title="Unsaved changes" />
         <ModalBody>
           <p>If you leave this page, any unsaved changes will be lost.</p>
         </ModalBody>
@@ -183,7 +202,8 @@ export const Destructive: Story = {
 export const Small: Story = {
   render: () => {
     return (
-      <Modal title="Heading" size="small">
+      <Modal size="small">
+        <ModalHeader title="Heading" />
         <ModalBody>
           <p>Body text</p>
         </ModalBody>
@@ -200,22 +220,21 @@ export const Small: Story = {
 export const KitchenSink: Story = {
   render: () => {
     return (
-      <Modal
-        title={
-          <>
-            Heading <ClickMetric size="small" />
-          </>
-        }
-        hasRequiredField
-        status="warning"
-        description={
-          <>
-            This example shows how the modal responds to passing custom components that use HTML.
-            This is useful for <i>doing</i> <strong>things like this</strong>.
-          </>
-        }
-        size="normal"
-      >
+      <Modal status="warning" size="normal">
+        <ModalHeader
+          title={
+            <>
+              Heading <ClickMetric size="small" />
+            </>
+          }
+          description={
+            <>
+              This example shows how the modal responds to passing custom components that use HTML.
+              This is useful for <i>doing</i> <strong>things like this</strong>.
+            </>
+          }
+          hasRequiredField
+        />
         <ModalBody>
           <h3>More information</h3>
           <p>Lorem ipsum</p>
@@ -243,17 +262,18 @@ export const TallBody: Story = {
   render: () => {
     const [showLess, setShowLess] = useState(false);
     return (
-      <Modal
-        title="Title"
-        description={
-          <>
-            This example is meant to illustrate how the modal overflows when there is a lot of text.
-            You can make your viewport smaller to get a better idea. Lorem ipsum dolor sit amet,
-            consectetur adipiscing elit. Ut malesuada ultricies mauris, in gravida nibh vehicula
-            vel.
-          </>
-        }
-      >
+      <Modal>
+        <ModalHeader
+          title="Title"
+          description={
+            <>
+              This example is meant to illustrate how the modal overflows when there is a lot of
+              text. You can make your viewport smaller to get a better idea. Lorem ipsum dolor sit
+              amet, consectetur adipiscing elit. Ut malesuada ultricies mauris, in gravida nibh
+              vehicula vel.
+            </>
+          }
+        />
         <ModalBody>
           <p>
             Phasellus vulputate varius orci, ut auctor mi pretium a. Duis vestibulum sagittis nulla
@@ -325,10 +345,11 @@ export const WithForm: Story = {
     const inputRef = useRef<HTMLInputElement>(null);
 
     return (
-      <Modal
-        title="Title"
-        description="This example shows how the modal works when a form wraps the body and footer."
-      >
+      <Modal>
+        <ModalHeader
+          title="Title"
+          description="This example shows how the modal works when a form wraps the body and footer."
+        />
         <ModalBody>
           <p>Try out this form:</p>
           <form
@@ -365,17 +386,18 @@ export const WithAbsolutelyPositionedFooter: Story = {
     const inputRef = useRef<HTMLInputElement>(null);
 
     return (
-      <Modal
-        title="Title"
-        description={
-          <>
-            In the case of forms, it&apos;s possible you need the modal body and footer contents to
-            be wrapped in a form. In this case, you lose the default positioning with the normal
-            implementation. In these cases, you can absolutely position the footer so it can be
-            nested within the modal body.
-          </>
-        }
-      >
+      <Modal>
+        <ModalHeader
+          title="Title"
+          description={
+            <>
+              In the case of forms, it&apos;s possible you need the modal body and footer contents
+              to be wrapped in a form. In this case, you lose the default positioning with the
+              normal implementation. In these cases, you can absolutely position the footer so it
+              can be nested within the modal body.
+            </>
+          }
+        />
         <ModalBody>
           <p>Try out this form:</p>
           <form

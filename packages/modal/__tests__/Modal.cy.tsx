@@ -1,9 +1,10 @@
-import { Modal, ModalBody, ModalFooter } from '../src';
+import { Modal, ModalBody, ModalFooter, ModalHeader } from '../src';
 
 describe('Modal', () => {
   it('renders', () => {
     cy.mount(
-      <Modal title="Title">
+      <Modal>
+        <ModalHeader title="Title" />
         <ModalBody>Body</ModalBody>
         <ModalFooter primaryButton={<button>Click me</button>} />
       </Modal>
@@ -13,7 +14,8 @@ describe('Modal', () => {
 
   it('is accessible', () => {
     cy.mount(
-      <Modal title="Title" withCloseButton>
+      <Modal>
+        <ModalHeader title="Title" withCloseButton />
         <ModalBody>Body</ModalBody>
         <ModalFooter primaryButton={<button>Click me</button>} />
       </Modal>
@@ -24,7 +26,8 @@ describe('Modal', () => {
   it('calls onCancel when escape key is pressed', () => {
     const onCancelSpy = cy.spy().as('onCancelSpy');
     cy.mount(
-      <Modal title="Title" onCancel={onCancelSpy}>
+      <Modal onCancel={onCancelSpy}>
+        <ModalHeader title="Title" />
         <ModalBody>Body</ModalBody>
         <ModalFooter primaryButton={<button>Click me</button>} />
       </Modal>
