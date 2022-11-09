@@ -2,8 +2,8 @@ import type { MutableRefObject } from 'react';
 
 import { useEffect, useRef, useState } from 'react';
 
-const useMediaQuery = (query: string) => {
-  const [matches, setMatches] = useState(false);
+const useMediaQuery = (query: string, defaultValue = false) => {
+  const [matches, setMatches] = useState(window ? window.matchMedia(query).matches : defaultValue);
 
   useEffect(() => {
     const media = window.matchMedia(query);

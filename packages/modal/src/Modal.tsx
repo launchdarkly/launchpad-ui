@@ -1,5 +1,7 @@
 import type { ReactNode } from 'react';
 
+import { Portal } from '@launchpad-ui/portal';
+
 import { ModalContainer } from './ModalContainer';
 import { ModalHeader } from './ModalHeader';
 
@@ -33,20 +35,22 @@ const Modal = ({
   'data-test-id': testId = 'modal',
 }: ModalProps) => {
   return (
-    <ModalContainer
-      onCancel={onCancel}
-      onReady={onReady}
-      cancelWithOverlayClick={cancelWithOverlayClick}
-      size={size}
-      className={className}
-      data-test-id={testId}
-    >
-      <ModalHeader
-        {...{ withCloseButton, title, status, onCancel, description, hasRequiredField }}
-      />
+    <Portal>
+      <ModalContainer
+        onCancel={onCancel}
+        onReady={onReady}
+        cancelWithOverlayClick={cancelWithOverlayClick}
+        size={size}
+        className={className}
+        data-test-id={testId}
+      >
+        <ModalHeader
+          {...{ withCloseButton, title, status, onCancel, description, hasRequiredField }}
+        />
 
-      {children}
-    </ModalContainer>
+        {children}
+      </ModalContainer>
+    </Portal>
   );
 };
 
