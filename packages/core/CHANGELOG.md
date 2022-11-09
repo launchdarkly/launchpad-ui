@@ -1,5 +1,14 @@
 # @launchpad-ui/core
 
+## 0.22.8
+
+### Patch Changes
+
+- [#559](https://github.com/launchdarkly/launchpad-ui/pull/559) [`488fcc1`](https://github.com/launchdarkly/launchpad-ui/commit/488fcc1243cec9da0313d098115ab5d685354307) Thanks [@Niznikr](https://github.com/Niznikr)! - [Modal] Move portal to main component to fix focus trap
+
+- Updated dependencies [[`488fcc1`](https://github.com/launchdarkly/launchpad-ui/commit/488fcc1243cec9da0313d098115ab5d685354307)]:
+  - @launchpad-ui/modal@0.11.8
+
 ## 0.22.7
 
 ### Patch Changes
