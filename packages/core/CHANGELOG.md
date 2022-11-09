@@ -1,5 +1,16 @@
 # @launchpad-ui/core
 
+## 0.23.0
+
+### Minor Changes
+
+- [#562](https://github.com/launchdarkly/launchpad-ui/pull/562) [`57c737f`](https://github.com/launchdarkly/launchpad-ui/commit/57c737f51555d1f7a0078fba1bab2575bb5d96f0) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Modal] Move header props to standalone component
+
+### Patch Changes
+
+- Updated dependencies [[`57c737f`](https://github.com/launchdarkly/launchpad-ui/commit/57c737f51555d1f7a0078fba1bab2575bb5d96f0)]:
+  - @launchpad-ui/modal@0.12.0
+
 ## 0.22.8
 
 ### Patch Changes
