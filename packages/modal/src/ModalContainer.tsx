@@ -63,7 +63,7 @@ const ModalContainer = ({
 
   usePreventScroll();
 
-  const isDesktopViewport = useMediaQuery('(min-width: 430px)');
+  const isDesktopViewport = useMediaQuery('(min-width: 430px)', true);
 
   const handleOverlayClick = (event: MouseEvent<HTMLDivElement>) => {
     if (cancelWithOverlayClick && event.target === event.currentTarget) {
