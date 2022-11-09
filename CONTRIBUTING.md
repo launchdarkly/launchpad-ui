@@ -15,6 +15,8 @@ The following is a set of guidelines for contributing to LaunchPad and its packa
 
 ## How Can I Contribute?
 
+The LaunchPad maintainers monitor the [issue tracker](https://github.com/launchdarkly/launchpad-ui/issues) in the repository. Bug reports and feature requests should be filed in this issue tracker. The maintainers will respond to all newly filed issues within two business days.
+
 ### Reporting Bugs
 
 When reporting a bug, help maintainers and the community understand your report :pencil:, reproduce the behavior :computer: :computer:, and find related reports :mag_right:.
