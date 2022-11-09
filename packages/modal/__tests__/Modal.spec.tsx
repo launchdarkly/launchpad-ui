@@ -1,7 +1,7 @@
 import { it, expect, describe, vi } from 'vitest';
 
 import { render, screen, userEvent } from '../../../test/utils';
-import { Modal, ModalBody, ModalFooter } from '../src';
+import { Modal, ModalBody, ModalFooter, ModalHeader } from '../src';
 
 globalThis.matchMedia = vi.fn().mockReturnValue({
   matches: true,
@@ -16,7 +16,8 @@ globalThis.matchMedia = vi.fn().mockReturnValue({
 describe('Modal', () => {
   it('renders', async () => {
     render(
-      <Modal title="a">
+      <Modal>
+        <ModalHeader title="Title" />
         <ModalBody>Body</ModalBody>
         <ModalFooter primaryButton={<button>Click me</button>} />
       </Modal>
@@ -27,11 +28,7 @@ describe('Modal', () => {
   it('calls onCancel when escape key is pressed', async () => {
     const spy = vi.fn();
     const user = userEvent.setup();
-    render(
-      <Modal title="a" onCancel={spy}>
-        Body
-      </Modal>
-    );
+    render(<Modal onCancel={spy}>Body</Modal>);
 
     await user.keyboard('{Escape}');
 
@@ -41,11 +38,7 @@ describe('Modal', () => {
   it('calls onReady when modal is rendered', async () => {
     const spy = vi.fn();
 
-    render(
-      <Modal title="a" onReady={spy}>
-        Body
-      </Modal>
-    );
+    render(<Modal onReady={spy}>Body</Modal>);
 
     expect(spy).toHaveBeenCalledTimes(1);
   });
@@ -53,11 +46,7 @@ describe('Modal', () => {
   it('calls onCancel when overlay is clicked', async () => {
     const spy = vi.fn();
     const user = userEvent.setup();
-    render(
-      <Modal title="a" onCancel={spy}>
-        Body
-      </Modal>
-    );
+    render(<Modal onCancel={spy}>Body</Modal>);
 
     const overlay = screen.getByTestId('modal-overlay');
     await user.click(overlay);
@@ -69,7 +58,8 @@ describe('Modal', () => {
     const spy = vi.fn();
     const user = userEvent.setup();
     render(
-      <Modal title="a" onCancel={spy}>
+      <Modal onCancel={spy}>
+        <ModalHeader title="Title" />
         Body
       </Modal>
     );
@@ -82,7 +72,8 @@ describe('Modal', () => {
 
   it('renders header icon when warning status is passed', async () => {
     render(
-      <Modal title="a" status="warning">
+      <Modal status="warning">
+        <ModalHeader title="Title" />
         Body
       </Modal>
     );
@@ -94,7 +85,8 @@ describe('Modal', () => {
 
   it('renders required field when prop is passed', async () => {
     render(
-      <Modal title="a" hasRequiredField>
+      <Modal>
+        <ModalHeader title="Title" hasRequiredField />
         Body
       </Modal>
     );
@@ -108,7 +100,8 @@ describe('Modal', () => {
     const content = 'test';
 
     render(
-      <Modal title="a" description={content}>
+      <Modal>
+        <ModalHeader title="Title" description={content} />
         Body
       </Modal>
     );

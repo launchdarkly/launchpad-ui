@@ -3,53 +3,43 @@ import type { ReactNode } from 'react';
 import { Portal } from '@launchpad-ui/portal';
 
 import { ModalContainer } from './ModalContainer';
-import { ModalHeader } from './ModalHeader';
+import { ModalContext } from './context';
 
 type ModalProps = {
   children: ReactNode;
   className?: string;
-  withCloseButton?: boolean;
   cancelWithOverlayClick?: boolean;
   onReady?(): void;
   onCancel?(): void;
-  size?: 'small' | 'normal';
   status?: 'warning';
-  hasRequiredField?: boolean;
-  title: ReactNode;
-  description?: ReactNode;
+  size?: 'small' | 'normal';
   'data-test-id'?: string;
 };
 
 const Modal = ({
   className,
-  withCloseButton = true,
+  onCancel,
   cancelWithOverlayClick = true,
   children,
   onReady,
-  onCancel,
-  size,
   status,
-  title,
-  hasRequiredField,
-  description,
+  size,
   'data-test-id': testId = 'modal',
 }: ModalProps) => {
   return (
     <Portal>
-      <ModalContainer
-        onCancel={onCancel}
-        onReady={onReady}
-        cancelWithOverlayClick={cancelWithOverlayClick}
-        size={size}
-        className={className}
-        data-test-id={testId}
-      >
-        <ModalHeader
-          {...{ withCloseButton, title, status, onCancel, description, hasRequiredField }}
-        />
-
-        {children}
-      </ModalContainer>
+      <ModalContext.Provider value={{ onCancel, status }}>
+        <ModalContainer
+          onCancel={onCancel}
+          onReady={onReady}
+          cancelWithOverlayClick={cancelWithOverlayClick}
+          size={size}
+          className={className}
+          data-test-id={testId}
+        >
+          {children}
+        </ModalContainer>
+      </ModalContext.Provider>
     </Portal>
   );
 };
