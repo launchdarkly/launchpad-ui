@@ -55,7 +55,7 @@ importers:
       axe-core: ^4.5.0
       chromatic: ^6.11.2
       concurrently: ^7.5.0
-      cypress: ^10.11.0
+      cypress: ^11.0.0
       cypress-axe: ^1.0.0
       cypress-real-events: ^1.7.2
       deepmerge: ^4.2.2
@@ -101,7 +101,7 @@ importers:
       '@changesets/cli': 2.25.0
       '@commitlint/cli': 17.2.0
       '@commitlint/config-conventional': 17.2.0
-      '@cypress/code-coverage': 3.10.0_dthwjws2rn5z6cpvo2icidwn4u
+      '@cypress/code-coverage': 3.10.0_hwirph75rzz6xtpl7jykhehjfu
       '@etchteam/storybook-addon-status': 4.2.1_biqbaboplfbrettd7655fr4n2y
       '@storybook/addon-a11y': 7.0.0-alpha.38_biqbaboplfbrettd7655fr4n2y
       '@storybook/addon-actions': 7.0.0-alpha.38_biqbaboplfbrettd7655fr4n2y
@@ -143,9 +143,9 @@ importers:
       axe-core: 4.5.0
       chromatic: 6.11.2
       concurrently: 7.5.0
-      cypress: 10.11.0
-      cypress-axe: 1.0.0_rihc5vl7byrwdanqs4inojnjou
-      cypress-real-events: 1.7.2_cypress@10.11.0
+      cypress: 11.0.0
+      cypress-axe: 1.0.0_5xkuz2q2zaz6ur5aff7tv64nby
+      cypress-real-events: 1.7.2_cypress@11.0.0
       deepmerge: 4.2.2
       eslint: 8.27.0
       eslint-config-prettier: 8.5.0_eslint@8.27.0
@@ -3918,14 +3918,14 @@ packages:
       postcss-selector-parser: 6.0.10
     dev: true
 
-  /@cypress/code-coverage/3.10.0_dthwjws2rn5z6cpvo2icidwn4u:
+  /@cypress/code-coverage/3.10.0_hwirph75rzz6xtpl7jykhehjfu:
     resolution: {integrity: sha512-K5pW2KPpK4vKMXqxd6vuzo6m9BNgpAv1LcrrtmqAtOJ1RGoEILXYZVost0L6Q+V01NyY7n7jXIIfS7LR3nP6YA==}
     peerDependencies:
       cypress: '*'
     dependencies:
       '@cypress/webpack-preprocessor': 5.13.0_@babel+core@7.20.2
       chalk: 4.1.2
-      cypress: 10.11.0
+      cypress: 11.0.0
       dayjs: 1.10.7
       debug: 4.3.4
       execa: 4.1.0
@@ -9362,7 +9362,7 @@ packages:
       stream-transform: 2.1.3
     dev: true
 
-  /cypress-axe/1.0.0_rihc5vl7byrwdanqs4inojnjou:
+  /cypress-axe/1.0.0_5xkuz2q2zaz6ur5aff7tv64nby:
     resolution: {integrity: sha512-QBlNMAd5eZoyhG8RGGR/pLtpHGkvgWXm2tkP68scJ+AjYiNNOlJihxoEwH93RT+rWOLrefw4iWwEx8kpEcrvJA==}
     engines: {node: '>=10'}
     peerDependencies:
@@ -9370,19 +9370,19 @@ packages:
       cypress: ^10
     dependencies:
       axe-core: 4.5.0
-      cypress: 10.11.0
+      cypress: 11.0.0
     dev: true
 
-  /cypress-real-events/1.7.2_cypress@10.11.0:
+  /cypress-real-events/1.7.2_cypress@11.0.0:
     resolution: {integrity: sha512-tOANHbFRlqVL5Lu8OozvxTsrYgHwCnWmXAULGc1kdBF+k1gxrrvT/42uez3AhGoT+HcytyxieXAVt0jNP4yrvA==}
     peerDependencies:
       cypress: ^4.x || ^5.x || ^6.x || ^7.x || ^8.x || ^9.x || ^10.x
     dependencies:
-      cypress: 10.11.0
+      cypress: 11.0.0
     dev: true
 
-  /cypress/10.11.0:
-    resolution: {integrity: sha512-lsaE7dprw5DoXM00skni6W5ElVVLGAdRUUdZjX2dYsGjbY/QnpzWZ95Zom1mkGg0hAaO/QVTZoFVS7Jgr/GUPA==}
+  /cypress/11.0.0:
+    resolution: {integrity: sha512-mYXGi2Wjmy9shRjAUDugSMOr4uuzE2nl7hXQi3oQkIQsnwwBx2HNB8Vbfsix3A0zyPXlL5jTcbb6rCVWKRaXbg==}
     engines: {node: '>=12.0.0'}
     hasBin: true
     requiresBuild: true
@@ -13607,7 +13607,7 @@ packages:
       '@babel/plugin-proposal-nullish-coalescing-operator': 7.18.6_@babel+core@7.20.2
       '@babel/plugin-proposal-optional-chaining': 7.18.9_@babel+core@7.20.2
       '@babel/plugin-transform-modules-commonjs': 7.18.6_@babel+core@7.20.2
-      '@babel/preset-env': 7.19.3_@babel+core@7.19.6
+      '@babel/preset-env': 7.19.3_@babel+core@7.20.2
       '@babel/preset-flow': 7.18.6_@babel+core@7.20.2
       '@babel/preset-typescript': 7.18.6_@babel+core@7.20.2
       '@babel/register': 7.18.9_@babel+core@7.20.2
