@@ -3,7 +3,6 @@ import type { Variants } from 'framer-motion';
 import type { MouseEvent } from 'react';
 
 import { FocusTrap } from '@launchpad-ui/focus-trap';
-import { Portal } from '@launchpad-ui/portal';
 import { usePreventScroll } from '@react-aria/overlays';
 import { cx } from 'classix';
 import { LazyMotion, m } from 'framer-motion';
@@ -96,43 +95,41 @@ const ModalContainer = ({
   }, [onReady, onCancel]);
 
   return (
-    <Portal>
-      <LazyMotion strict features={loadFeatures}>
-        <div
-          className={styles.overlayContainer}
-          data-modal
-          data-test-id="modal-overlay-container"
-          ref={ref}
+    <LazyMotion strict features={loadFeatures}>
+      <div
+        className={styles.overlayContainer}
+        data-modal
+        data-test-id="modal-overlay-container"
+        ref={ref}
+      >
+        <m.div
+          initial="hidden"
+          animate="visible"
+          variants={overlay}
+          transition={{ duration: 0.15 }}
+          role="presentation"
+          className={styles.overlay}
+          data-test-id="modal-overlay"
+          onMouseDown={handleOverlayClick}
         >
-          <m.div
-            initial="hidden"
-            animate="visible"
-            variants={overlay}
-            transition={{ duration: 0.15 }}
-            role="presentation"
-            className={styles.overlay}
-            data-test-id="modal-overlay"
-            onMouseDown={handleOverlayClick}
-          >
-            <FocusTrap autoFocus restoreFocus>
-              <m.div
-                initial="hidden"
-                animate="visible"
-                variants={isDesktopViewport ? transitions.desktopPop : transitions.mobileSlideUp}
-                role="dialog"
-                aria-labelledby={MODAL_LABELLED_BY}
-                aria-modal
-                data-test-id={testId}
-                className={cx(styles.modal, styles[size], className)}
-                tabIndex={-1}
-              >
-                {children}
-              </m.div>
-            </FocusTrap>
-          </m.div>
-        </div>
-      </LazyMotion>
-    </Portal>
+          <FocusTrap autoFocus restoreFocus>
+            <m.div
+              initial="hidden"
+              animate="visible"
+              variants={isDesktopViewport ? transitions.desktopPop : transitions.mobileSlideUp}
+              role="dialog"
+              aria-labelledby={MODAL_LABELLED_BY}
+              aria-modal
+              data-test-id={testId}
+              className={cx(styles.modal, styles[size], className)}
+              tabIndex={-1}
+            >
+              {children}
+            </m.div>
+          </FocusTrap>
+        </m.div>
+      </div>
+    </LazyMotion>
   );
 };
 
