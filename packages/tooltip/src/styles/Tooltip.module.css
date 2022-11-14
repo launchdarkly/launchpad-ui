@@ -4,8 +4,8 @@
 
 [class^='_Popover-content_'].Tooltip-popover-content {
   font-size: 1.3rem;
-  background: var(--lp-color-text);
-  color: var(--lp-color-text-inverse);
+  background: var(--lp-color-bg-ui-tertiary);
+  color: var(--lp-color-text-ui-tertiary);
   padding: 0.5rem 1rem;
 
   /* --color-black-100 */

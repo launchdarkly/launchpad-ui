@@ -1,8 +1,8 @@
 .Menu-item {
   display: block;
   position: relative;
-  color: var(--lp-color-text);
-  background: var(--lp-color-background);
+  color: var(--lp-color-text-ui-primary);
+  background: var(--lp-color-bg-overlay-primary);
   text-decoration: none;
   cursor: pointer;
   outline: none;
@@ -49,13 +49,13 @@
   }
 
   &:hover:not(:active):not(.has-focus) {
-    background-color: var(--lp-color-background-hover);
+    background-color: var(--lp-color-bg-interactive-secondary-hover);
     box-shadow: inset 0 0 0 1px var(--lp-color-gray-600);
   }
 
   &.has-focus {
-    background-color: var(--lp-color-background-hover);
-    box-shadow: inset 0 0 0 2px var(--lp-color-focus);
+    background-color: var(--lp-color-bg-interactive-secondary-hover);
+    box-shadow: inset 0 0 0 2px var(--lp-color-shadow-interactive-focus);
   }
 }
 
@@ -83,7 +83,7 @@
     &:active[disabled],
     &:active[aria-disabled] {
       text-decoration: none;
-      color: var(--lp-color-text-subtle-primary);
+      color: var(--lp-color-text-ui-secondary);
     }
   }
 
@@ -115,7 +115,7 @@
 }
 
 .Menu-item.is-highlighted {
-  background-color: var(--lp-color-background-hover);
+  background-color: var(--lp-color-bg-interactive-secondary-hover);
   box-shadow: inset 0 0 0 1px var(--lp-color-gray-600);
 
   &:active {
@@ -127,7 +127,7 @@
 
 .Menu-item[aria-disabled],
 .Menu-item[disabled] {
-  color: var(--lp-color-text-subtle-primary);
+  color: var(--lp-color-text-ui-secondary);
   cursor: default;
 }
 
@@ -139,13 +139,13 @@
 }
 
 .Menu-divider {
-  border-top: 1px solid var(--lp-color-border);
+  border-top: 1px solid var(--lp-color-border-ui-primary);
 }
 
 .Menu-search {
   padding: 1rem;
   font-size: 1.3rem;
-  border-bottom: 1px solid var(--lp-color-border);
+  border-bottom: 1px solid var(--lp-color-border-ui-primary);
 }
 
 .Menu-search:first-child {

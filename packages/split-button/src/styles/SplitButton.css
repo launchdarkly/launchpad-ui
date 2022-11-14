@@ -1,5 +1,5 @@
 :root {
-  --SplitButton-color-border-primary: var(--lp-color-blue-500);
+  --SplitButton-color-border-primary: var(--lp-color-border-interactive-primary);
   --SplitButton-focus-margin: -0.5rem;
   --SplitButton-focus-radius: 1rem;
   --SplitButton-focus-radius-small: 0.6rem;
@@ -9,8 +9,9 @@
   --SplitButton-drop-padding: 0.4rem 0 0.6rem;
   --SplitButton-drop-padding-small: 0.2rem 0 0.3rem;
   --SplitButton-popoverTarget-line-height: 1;
-  --SplitButton-border-focus-color: var(--lp-color-focus);
-  --SplitButton-box-shadow-focus: 0 0 0 2px var(--lp-color-white), 0 0 0 4px var(--lp-color-focus);
+  --SplitButton-border-focus-color: var(--lp-color-shadow-interactive-focus);
+  --SplitButton-box-shadow-focus: 0 0 0 2px var(--lp-color-shadow-interactive-primary),
+    0 0 0 4px var(--lp-color-shadow-interactive-focus);
   --SplitButton-box-shadow-active: none;
   --SplitButton-drop-width: 3.4rem;
 }

@@ -56,7 +56,7 @@
 
 .Table-cell--head {
   white-space: nowrap;
-  color: var(--lp-color-text-subtle-secondary);
+  color: var(--lp-color-text-ui-secondary);
   font-weight: var(--lp-font-weight-semibold);
 }
 
@@ -68,7 +68,7 @@
 
 .Table--resourceTable .Table-cell--head {
   background: var(--lp-color-white-100);
-  color: var(--lp-color-text-subtle-primary);
+  color: var(--lp-color-text-ui-secondary);
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
 }

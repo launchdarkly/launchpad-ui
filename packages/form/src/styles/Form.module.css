@@ -31,9 +31,9 @@
   font-size: 1.3rem;
   font-family: var(--lp-font-family-base);
   line-height: var(--lp-line-height-300);
-  background-color: var(--lp-color-background-field);
-  color: var(--lp-color-text);
-  border: 1px solid var(--lp-color-gray-500);
+  background-color: var(--lp-color-bg-interactive-secondary);
+  color: var(--lp-color-text-ui-primary);
+  border: 1px solid var(--lp-color-border-interactive-secondary);
   border-radius: var(--lp-border-radius);
   transition: all 100ms linear;
   height: 3.2rem;
@@ -47,7 +47,7 @@
 .formInput.isFocused,
 .formInput:focus {
   outline: 0;
-  border-color: var(--lp-color-focus);
+  border-color: var(--lp-color-border-interactive-focus);
   box-shadow: 0 0 0 3px hsl(231.5 100% 62.5% / 0.1);
 }
 
@@ -91,8 +91,8 @@ select.formInput {
 
 .labelOptional {
   margin-left: 0.4em;
-  color: var(--lp-color-text-subtle-primary);
-  fill: var(--lp-color-text-subtle-primary);
+  color: var(--lp-color-text-ui-secondary);
+  fill: var(--lp-color-text-ui-secondary);
 }
 
 .compactTextField .label {
@@ -100,10 +100,10 @@ select.formInput {
   top: -2px;
   left: 10px;
   padding: 0 3px;
-  color: var(--lp-color-text);
+  color: var(--lp-color-text-ui-primary);
   opacity: 0;
   pointer-events: none;
-  background-color: var(--lp-color-background);
+  background-color: var(--lp-color-bg-ui-primary);
   transform-origin: 0 0; /* preserve left alignment after scaling */
   transition: all 100ms ease-in-out;
   z-index: 1; /* Fixes layout issue in Firefox */
@@ -120,7 +120,7 @@ select.formInput {
 }
 
 .fieldError {
-  color: var(--lp-color-system-red-600);
+  color: var(--lp-color-text-feedback-error);
   font-size: 1.3rem;
 }
 
@@ -146,7 +146,7 @@ select.formInput {
 }
 
 .form .isInvalid .label {
-  color: var(--lp-color-system-red-600);
+  color: var(--lp-color-text-feedback-error);
 }
 
 ::placeholder {
@@ -172,23 +172,23 @@ select.formInput {
   margin-top: 0.3rem;
   font-size: 1.3rem;
   font-weight: var(--lp-font-weight-regular);
-  color: var(--lp-color-text-subtle-primary);
+  color: var(--lp-color-text-ui-secondary);
 }
 
 .field .hint {
   margin: 0;
   font-size: 1.3rem;
-  color: var(--lp-color-text-subtle-primary);
-  fill: var(--lp-color-text-subtle-primary);
+  color: var(--lp-color-text-ui-secondary);
+  fill: var(--lp-color-text-ui-secondary);
 }
 
 .form .field label,
 .form .field .isInvalid label {
-  color: var(--lp-color-text);
+  color: var(--lp-color-text-ui-primary);
 }
 
 .fieldErrorMessage {
-  color: var(--lp-color-system-red-600);
+  color: var(--lp-color-text-feedback-error);
   font-size: 1.3rem;
 }
 
@@ -204,7 +204,8 @@ select.formInput {
 input.formInput:disabled,
 select.formInput:disabled,
 input.formInput:read-only {
-  background-color: var(--lp-color-white-100);
+  background-color: var(--lp-color-bg-interactive-disabled);
+  color: var(--lp-color-text-interactive-disabled);
 }
 
 .formInput.isDisabled:hover,
@@ -220,11 +221,11 @@ textarea.formInput {
 
 textarea.formInput:disabled,
 textarea.formInput:read-only {
-  background-color: var(--lp-color-white-100);
+  background-color: var(--lp-color-bg-interactive-disabled);
 }
 
 input.formInput::-webkit-autofill {
-  box-shadow: 0 0 0 50px var(--lp-color-background-field) inset;
+  box-shadow: 0 0 0 50px var(--lp-color-bg-interactive-secondary) inset;
 }
 
 /* Hide the type=search cancel button in Webkit for consistency */
@@ -256,7 +257,7 @@ input[type='checkbox']:disabled {
 
 .formInput[readonly],
 .formInput[readonly]:focus {
-  color: var(--lp-color-text-subtle-primary);
+  color: var(--lp-color-text-ui-secondary);
   border-color: var(--lp-color-gray-500);
   box-shadow: none;
 }
@@ -285,7 +286,7 @@ input[type='checkbox']:disabled {
 }
 
 .suffixContainer:focus-within {
-  border-color: var(--lp-color-focus);
+  border-color: var(--lp-color-border-interactive-focus);
   box-shadow: 0 0 0 3px hsl(231.5 100% 62.5% / 0.1);
 }
 
@@ -328,7 +329,7 @@ input[type='checkbox']:disabled {
 }
 
 .requiredAsterisk {
-  color: var(--lp-color-system-red-700);
+  color: var(--lp-color-text-feedback-error);
 }
 
 .fieldSet {
