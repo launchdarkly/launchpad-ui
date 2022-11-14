@@ -1,5 +1,52 @@
 # @launchpad-ui/core
 
+## 0.24.0
+
+### Minor Changes
+
+- [#555](https://github.com/launchdarkly/launchpad-ui/pull/555) [`baeacd7`](https://github.com/launchdarkly/launchpad-ui/commit/baeacd7b80d60f36f4962f090d87a0009f28b44e) Thanks [@Niznikr](https://github.com/Niznikr)! - [Tokens] Update alias tokens to match schema `namespace-type-category-role-variant-state`:
+
+  - Update components to use new tokens and ensure consistency
+  - Set dark mode values to support both themes
+  - Categories are bg, border, fill, shadow, text
+  - Roles are feedback, interactive, overlay, ui
+  - Variants are primary, secondary, tertiary, destructive, error, info, success, warning
+  - States are active, disabled, focus, hover
+
+### Patch Changes
+
+- Updated dependencies [[`baeacd7`](https://github.com/launchdarkly/launchpad-ui/commit/baeacd7b80d60f36f4962f090d87a0009f28b44e)]:
+  - @launchpad-ui/tokens@0.3.0
+  - @launchpad-ui/alert@0.6.11
+  - @launchpad-ui/avatar@0.4.11
+  - @launchpad-ui/banner@0.7.10
+  - @launchpad-ui/button@0.7.8
+  - @launchpad-ui/chip@0.6.5
+  - @launchpad-ui/clipboard@0.8.21
+  - @launchpad-ui/counter@0.3.6
+  - @launchpad-ui/drawer@0.1.3
+  - @launchpad-ui/dropdown@0.6.3
+  - @launchpad-ui/filter@0.4.27
+  - @launchpad-ui/form@0.6.15
+  - @launchpad-ui/icons@0.6.1
+  - @launchpad-ui/markdown@0.3.5
+  - @launchpad-ui/menu@0.6.26
+  - @launchpad-ui/modal@0.12.1
+  - @launchpad-ui/navigation@0.6.29
+  - @launchpad-ui/notification@0.5.22
+  - @launchpad-ui/pagination@0.3.15
+  - @launchpad-ui/popover@0.8.20
+  - @launchpad-ui/progress@0.5.4
+  - @launchpad-ui/progress-bubbles@0.5.21
+  - @launchpad-ui/slider@0.3.4
+  - @launchpad-ui/snackbar@0.3.7
+  - @launchpad-ui/split-button@0.6.22
+  - @launchpad-ui/tab-list@0.4.5
+  - @launchpad-ui/table@0.4.5
+  - @launchpad-ui/toast@0.2.8
+  - @launchpad-ui/toggle@0.4.6
+  - @launchpad-ui/tooltip@0.6.21
+
 ## 0.23.0
 
 ### Minor Changes
