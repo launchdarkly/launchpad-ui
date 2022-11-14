@@ -1,5 +1,14 @@
 # @launchpad-ui/banner
 
+## 0.7.10
+
+### Patch Changes
+
+- Updated dependencies [[`baeacd7`](https://github.com/launchdarkly/launchpad-ui/commit/baeacd7b80d60f36f4962f090d87a0009f28b44e)]:
+  - @launchpad-ui/tokens@0.3.0
+  - @launchpad-ui/button@0.7.8
+  - @launchpad-ui/icons@0.6.1
+
 ## 0.7.9
 
 ### Patch Changes
