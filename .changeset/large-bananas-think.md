@@ -1,5 +1,6 @@
 ---
 '@launchpad-ui/tokens': minor
+'@launchpad-ui/core': minor
 ---
 
 [Tokens] Update alias tokens to match schema `namespace-type-category-role-variant-state`:
