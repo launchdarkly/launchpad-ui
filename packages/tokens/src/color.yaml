@@ -123,6 +123,8 @@ color:
       value: hsl(0, 0%, 12.9%)
     300:
       value: hsl(0, 0%, 9.8%)
+    400:
+      value: hsl(0, 0%, 7%)
     ' ':
       value: hsl(0, 0%, 0%)
   system:

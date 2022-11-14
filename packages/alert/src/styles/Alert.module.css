@@ -39,6 +39,12 @@
   --Alert-text-color: var(--lp-color-text-feedback-primary);
 }
 
+:root[data-theme='dark'] {
+  .Alert.Alert--inline {
+    color: var(--lp-color-gray-100);
+  }
+}
+
 .Alert {
   position: relative;
   display: flex;
@@ -72,6 +78,7 @@
   line-height: 1.2857;
 }
 
+/* stylelint-disable-next-line no-descending-specificity */
 .Alert.Alert--inline {
   background-color: unset;
   padding: 0;
