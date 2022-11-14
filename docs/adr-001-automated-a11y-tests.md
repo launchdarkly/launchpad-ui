@@ -1,6 +1,6 @@
 # Use Playwright component testing to test accessibility
 
-- Status: accepted
+- Status: superseded by [ADR-0004](adr-001-automated-a11y-tests.md)
 - PR: [#180](https://github.com/launchdarkly/launchpad-ui/pull/180)
 
 ## Context and Problem Statement
