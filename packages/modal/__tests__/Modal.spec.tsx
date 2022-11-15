@@ -1,7 +1,7 @@
 import { it, expect, describe, vi } from 'vitest';
 
 import { render, screen, userEvent } from '../../../test/utils';
-import { Modal, ModalBody, ModalFooter, ModalHeader } from '../src';
+import { AbsoluteModalFooter, Modal, ModalBody, ModalFooter, ModalHeader } from '../src';
 
 globalThis.matchMedia = vi.fn().mockReturnValue({
   matches: true,
@@ -20,6 +20,17 @@ describe('Modal', () => {
         <ModalHeader title="Title" />
         <ModalBody>Body</ModalBody>
         <ModalFooter primaryButton={<button>Click me</button>} />
+      </Modal>
+    );
+    expect(await screen.findByRole('dialog')).toBeInTheDocument();
+  });
+
+  it('renders with absolute footer', async () => {
+    render(
+      <Modal>
+        <ModalHeader title="Title" />
+        <ModalBody>Body</ModalBody>
+        <AbsoluteModalFooter primaryButton={<button>Click me</button>} />
       </Modal>
     );
     expect(await screen.findByRole('dialog')).toBeInTheDocument();
