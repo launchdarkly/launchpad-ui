@@ -19,19 +19,47 @@ export const Error: Story = {
   args: {
     kind: 'error',
     header: 'Snackbar header',
-    description: 'This is a message about an app process.',
-    cta: <a href="/">Please try again</a>,
+    description: 'This is a message.',
+    cta: (
+      <a href="/" target="_blank">
+        Link
+      </a>
+    ),
   },
 };
 
 export const Info: Story = {
-  args: { kind: 'info', description: 'This is a message about an app process.' },
+  args: {
+    kind: 'info',
+    description: 'This is a message.',
+    cta: (
+      <a href="/" target="_blank">
+        Link
+      </a>
+    ),
+  },
 };
 
 export const Warning: Story = {
   args: {
     kind: 'warning',
-    description: 'This is a message about an app process.',
-    cta: <a href="/">Please try again</a>,
+    description: 'This is a message.',
+    cta: (
+      <a href="/" target="_blank">
+        Link
+      </a>
+    ),
+  },
+};
+
+export const Success: Story = {
+  args: {
+    kind: 'success',
+    description: 'This is a message.',
+    cta: (
+      <a href="/" target="_blank">
+        Link
+      </a>
+    ),
   },
 };

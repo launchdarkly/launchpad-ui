@@ -14,20 +14,20 @@
   top: auto;
 }
 
-.Snackbar--error {
-  & .Snackbar-icon {
-    fill: var(--lp-color-pink-500);
-  }
+.Snackbar--error .Snackbar-icon {
+  fill: var(--lp-color-pink-500);
 }
 
 .Snackbar--info .Snackbar-icon {
   fill: var(--lp-color-cyan-500);
 }
 
-.Snackbar--warning {
-  & .Snackbar-icon {
-    fill: var(--lp-color-yellow-500);
-  }
+.Snackbar--warning .Snackbar-icon {
+  fill: var(--lp-color-yellow-500);
+}
+
+.Snackbar--success .Snackbar-icon {
+  fill: var(--lp-color-system-green-500);
 }
 
 .Snackbar-heading {
