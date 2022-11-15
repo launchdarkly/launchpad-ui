@@ -1,5 +1,11 @@
 # @launchpad-ui/modal
 
+## 0.12.3
+
+### Patch Changes
+
+- [#569](https://github.com/launchdarkly/launchpad-ui/pull/569) [`5564268`](https://github.com/launchdarkly/launchpad-ui/commit/5564268196e493386ee09f568d0f714c171462d8) Thanks [@chasedarkly](https://github.com/chasedarkly)! - Improve storybook docs, deprecate legacy modal, and improve resizeobserver for ModalBody
+
 ## 0.12.2
 
 ### Patch Changes

@@ -1,5 +1,19 @@
 # @launchpad-ui/core
 
+## 0.24.2
+
+### Patch Changes
+
+- [#571](https://github.com/launchdarkly/launchpad-ui/pull/571) [`896ee74`](https://github.com/launchdarkly/launchpad-ui/commit/896ee748dbf0f9a78110650761d89204eaf57c32) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Snackbar]: Add `success` variant and trigger onDismiss when `cta` is clicked.
+  [Toast]: Style anchor elements properly when used in content.
+
+- [#569](https://github.com/launchdarkly/launchpad-ui/pull/569) [`5564268`](https://github.com/launchdarkly/launchpad-ui/commit/5564268196e493386ee09f568d0f714c171462d8) Thanks [@chasedarkly](https://github.com/chasedarkly)! - Improve storybook docs, deprecate legacy modal, and improve resizeobserver for ModalBody
+
+- Updated dependencies [[`896ee74`](https://github.com/launchdarkly/launchpad-ui/commit/896ee748dbf0f9a78110650761d89204eaf57c32), [`5564268`](https://github.com/launchdarkly/launchpad-ui/commit/5564268196e493386ee09f568d0f714c171462d8)]:
+  - @launchpad-ui/snackbar@0.3.9
+  - @launchpad-ui/toast@0.2.10
+  - @launchpad-ui/modal@0.12.3
+
 ## 0.24.1
 
 ### Patch Changes
