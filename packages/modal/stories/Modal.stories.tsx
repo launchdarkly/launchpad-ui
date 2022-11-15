@@ -8,8 +8,7 @@ import { userEvent, within } from '@storybook/testing-library';
 import { useRef } from 'react';
 
 import { sleep, REACT_NODE_TYPE_DOCS } from '../../../.storybook/utils';
-import { Modal, ModalBody, ModalFooter, ModalHeader } from '../src';
-import { AbsoluteModalFooter } from '../src/AbsoluteModalFooter';
+import { AbsoluteModalFooter, Modal, ModalBody, ModalFooter, ModalHeader } from '../src';
 
 export default {
   component: Modal,
@@ -21,15 +20,21 @@ export default {
     },
     controls: { sort: 'requiredFirst' },
   },
+  subcomponents: {
+    ModalHeader,
+    ModalBody,
+    AbsoluteModalFooter,
+    ModalFooter,
+  },
   argTypes: {
     size: {
       description: 'A configurable width variant.',
       options: ['small', 'normal', 'auto'],
       control: { type: 'radio', description: 'lkfjdslkfds' },
     },
-    title: {
+    children: {
       type: { required: true },
-      description: 'A slot used for explaining the concise purpose of the modal.',
+      description: 'A slot for adding child components.',
       control: 'text',
       table: {
         type: REACT_NODE_TYPE_DOCS,
@@ -37,46 +42,9 @@ export default {
     },
     status: {
       description:
-        'Currently, we only have a "warning" status, which should only be used when the modal is destructive.',
+        'Currently, only a "warning" status is exposed, which should only be used when the modal is destructive.',
       options: ['warning', undefined],
       control: { type: 'radio' },
-    },
-    description: {
-      description: 'A slot for adding more context to the purpose of the modal.',
-      control: 'text',
-      table: {
-        type: REACT_NODE_TYPE_DOCS,
-      },
-    },
-    hasRequiredField: {
-      description: 'Used when the modal contains a form with required field(s).',
-      control: 'boolean',
-    },
-    children: {
-      type: { required: true },
-      description: 'A slot for adding body components.',
-      control: 'text',
-      table: {
-        type: REACT_NODE_TYPE_DOCS,
-      },
-    },
-    primaryButton: {
-      description: 'A slot for adding the main button to the footer.',
-      control: 'text',
-      table: {
-        type: REACT_NODE_TYPE_DOCS,
-      },
-    },
-    secondaryButton: {
-      description: 'A slot for adding the secondary button to the footer.',
-      control: 'text',
-      table: {
-        type: REACT_NODE_TYPE_DOCS,
-      },
-    },
-    withCloseButton: {
-      description: 'When false, hides the close button in the upper right corner.',
-      control: 'boolean',
     },
     cancelWithOverlayClick: {
       description: 'When false, disables ability to cancel when clicking overlay.',
@@ -92,38 +60,13 @@ export default {
         disable: true,
       },
     },
-    className: {
-      table: {
-        disable: true,
-      },
-    },
-    'data-test-id': {
-      table: {
-        disable: true,
-      },
-    },
   },
   args: {
     size: 'normal',
-    title: 'Heading',
-    description: 'Description',
-    children: 'Body text',
-    primaryButton: 'Okay',
-    secondaryButton: 'Cancel',
   },
 };
 
-type Story = StoryObj<
-  typeof Modal & {
-    title: string;
-    primaryButton: string;
-    secondaryButton: string;
-    children: string;
-    description: string;
-    hasRequiredField: boolean;
-    withCloseButton: boolean;
-  }
->;
+type Story = StoryObj<typeof Modal>;
 
 const play = async ({
   canvasElement,
@@ -140,36 +83,23 @@ const play = async ({
 };
 
 export const Default: Story = {
-  render: ({
-    primaryButton,
-    secondaryButton,
-    title,
-    description,
-    hasRequiredField,
-    withCloseButton,
-    children,
-    ...rest
-  }) => {
+  render: (props) => {
     const [show, setShow] = useState(false);
     const button = <Button onClick={() => setShow(true)}>Open modal</Button>;
+
     return show ? (
       <div style={{ width: '100vw', height: '100vh' }}>
         {button}
-        <Modal {...rest} onCancel={() => setShow(!show)}>
-          <ModalHeader
-            title={title}
-            description={description}
-            hasRequiredField={hasRequiredField}
-            withCloseButton={withCloseButton}
-          />
-          <ModalBody>{children}</ModalBody>
+        <Modal {...props} onCancel={() => setShow(!show)}>
+          <ModalHeader title="Heading" description="A description" />
+          <ModalBody>Body text</ModalBody>
           <ModalFooter
             primaryButton={
               <Button kind="primary" onClick={() => setShow(false)}>
-                {primaryButton}
+                Okay
               </Button>
             }
-            secondaryButton={<Button onClick={() => setShow(false)}>{secondaryButton}</Button>}
+            secondaryButton={<Button onClick={() => setShow(false)}>Cancel</Button>}
           />
         </Modal>
       </div>

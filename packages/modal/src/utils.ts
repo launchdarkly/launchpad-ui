@@ -21,31 +21,34 @@ const useMediaQuery = (query: string, defaultValue = false) => {
 };
 
 const useOverflowY = (ref: MutableRefObject<HTMLDivElement | null>) => {
-  const observer = useRef(
-    new ResizeObserver((entries) => {
-      const target = entries[0].target as HTMLDivElement;
-      target.style.overflowY = 'auto';
+  const observerRef = useRef(
+    (target: HTMLElement | null) =>
+      new ResizeObserver(() => {
+        if (target) {
+          target.style.overflowY = 'auto';
 
-      const overflow = target.scrollHeight > target.clientHeight ? 'auto' : 'initial';
+          const overflow = target.scrollHeight > target.clientHeight ? 'auto' : 'initial';
 
-      target.style.overflowY = overflow;
-    })
+          target.style.overflowY = overflow;
+        }
+      })
   );
 
   useEffect(() => {
-    const currentObserver = observer.current;
-    const { current } = ref;
+    const { current: element } = ref;
+    const observer = observerRef.current(element);
+    const modal = element ? element.closest('[role=dialog]') : null;
 
-    if (current) {
-      currentObserver.observe(current);
+    if (element && modal) {
+      observer.observe(modal);
     }
 
     return () => {
-      if (current) {
-        currentObserver.unobserve(current);
+      if (element && modal) {
+        observer.unobserve(modal);
       }
     };
-  }, [ref, observer]);
+  }, [ref, observerRef]);
 };
 
 const useAbsoluteFooter = (ref: MutableRefObject<HTMLDivElement | null>) => {
