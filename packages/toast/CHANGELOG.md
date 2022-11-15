@@ -1,5 +1,12 @@
 # @launchpad-ui/toast
 
+## 0.2.10
+
+### Patch Changes
+
+- [#571](https://github.com/launchdarkly/launchpad-ui/pull/571) [`896ee74`](https://github.com/launchdarkly/launchpad-ui/commit/896ee748dbf0f9a78110650761d89204eaf57c32) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Snackbar]: Add `success` variant and trigger onDismiss when `cta` is clicked.
+  [Toast]: Style anchor elements properly when used in content.
+
 ## 0.2.9
 
 ### Patch Changes
