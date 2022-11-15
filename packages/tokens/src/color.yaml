@@ -259,12 +259,15 @@ color:
         value: '{ color.white.100.value }'
         dark: '{ color.black.100.value }'
       tertiary:
-        value: '{ color.black.300.value }'
-        dark: '{ color.white. .value }'
+        value: '{ color.gray.100.value }'
+        dark: '{ color.black.400.value }'
     overlay:
       primary:
         value: '{ color.white. .value }'
         dark: '{ color.gray.800.value }'
+      secondary:
+        value: '{ color.black.300.value }'
+        dark: '{ color.white. .value }'
 
   border:
     feedback:
@@ -346,6 +349,9 @@ color:
     feedback:
       primary:
         value: '{ color.black.100.value }'
+      secondary:
+        value: '{ color.white. .value }'
+        dark: '{ color.black.300.value }'
       error:
         value: '{ color.system.red.600.value }'
     interactive:
@@ -376,9 +382,12 @@ color:
         value: '{ color.gray.700.value }'
         dark: '{ color.gray.300.value }'
       tertiary:
-        value: '{ color.white. .value }'
-        dark: '{ color.black.300.value }'
+        value: '{ color.gray.600.value }'
+        dark: '{ color.gray.100.value }'
     overlay:
       primary:
         value: '{ color.gray.800.value }'
         dark: '{ color.gray.100.value }'
+      secondary:
+        value: '{ color.white. .value }'
+        dark: '{ color.black.300.value }'

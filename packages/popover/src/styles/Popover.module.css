@@ -65,7 +65,7 @@
   width: 10px;
   height: 10px;
   background: inherit;
-  background-color: var(--lp-color-bg-ui-tertiary);
+  background-color: var(--lp-color-bg-overlay-secondary);
   color: var(--lp-color-text-ui-primary);
 }
 
