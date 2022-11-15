@@ -67,7 +67,7 @@
 
 .Chip--info:not(.Chip--subtle) {
   background-color: var(--Chip-info-color);
-  color: var(--lp-color-text-ui-tertiary);
+  color: var(--lp-color-text-feedback-secondary);
 }
 
 .Chip--new {
@@ -77,7 +77,7 @@
 
 .Chip--new:not(.Chip--subtle) {
   background-color: var(--Chip-success-color);
-  color: var(--lp-color-text-ui-tertiary);
+  color: var(--lp-color-text-feedback-secondary);
 }
 
 .Chip--beta {
@@ -87,7 +87,7 @@
 
 .Chip--beta:not(.Chip--subtle) {
   background-color: var(--Chip-beta-color);
-  color: var(--lp-color-text-ui-tertiary);
+  color: var(--lp-color-text-feedback-secondary);
 }
 
 .Chip--invited {
@@ -106,7 +106,7 @@
 
 .Chip--success:not(.Chip--subtle) {
   background-color: var(--Chip-success-color);
-  color: var(--lp-color-text-ui-tertiary);
+  color: var(--lp-color-text-feedback-secondary);
 }
 
 .Chip--warning {
@@ -116,7 +116,7 @@
 
 .Chip--warning:not(.Chip--subtle) {
   background-color: var(--Chip-warning-color);
-  color: var(--lp-color-text-ui-tertiary);
+  color: var(--lp-color-text-feedback-secondary);
 }
 
 .Chip--error {
@@ -126,7 +126,7 @@
 
 .Chip--error:not(.Chip--subtle) {
   background-color: var(--Chip-error-color);
-  color: var(--lp-color-text-ui-tertiary);
+  color: var(--lp-color-text-feedback-secondary);
 }
 
 .Chip--inactive {
