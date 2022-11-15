@@ -27,7 +27,12 @@ const makeSnackbar = (id: string) => {
   return {
     _id: id,
     kind,
-    description: 'The snackbar description.',
+    description: 'This is a message.',
+    cta: (
+      <a href="/" target="_blank">
+        Link
+      </a>
+    ),
   };
 };
 

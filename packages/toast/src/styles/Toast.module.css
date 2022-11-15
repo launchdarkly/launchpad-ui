@@ -36,4 +36,9 @@
   margin: 0;
   line-height: 1.5;
   font-size: 1.6rem;
+
+  & a,
+  & a:hover {
+    color: var(--lp-color-cyan-500);
+  }
 }
