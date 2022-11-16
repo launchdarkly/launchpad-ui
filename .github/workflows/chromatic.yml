@@ -28,4 +28,4 @@ jobs:
           buildScriptName: 'storybook:build'
           exitOnceUploaded: true
           onlyChanged: true
-          externals: 'packages/icons/icons/**, packages/tokens/src/**'
+          externals: ${{ fromJSON('["packages/icons/icons/**", "packages/tokens/src/**"]') }}
