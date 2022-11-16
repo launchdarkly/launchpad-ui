@@ -1,5 +1,46 @@
 # @launchpad-ui/core
 
+## 0.24.3-beta.0
+
+### Patch Changes
+
+- [#532](https://github.com/launchdarkly/launchpad-ui/pull/532) [`b5c08d2`](https://github.com/launchdarkly/launchpad-ui/commit/b5c08d2da950e8e8ad21042b5b723c6e31d53385) Thanks [@chasedarkly](https://github.com/chasedarkly)! - Update REM base value from 10px to 16px
+
+- Updated dependencies [[`b5c08d2`](https://github.com/launchdarkly/launchpad-ui/commit/b5c08d2da950e8e8ad21042b5b723c6e31d53385)]:
+  - @launchpad-ui/alert@0.6.13-beta.0
+  - @launchpad-ui/avatar@0.4.13-beta.0
+  - @launchpad-ui/banner@0.7.12-beta.0
+  - @launchpad-ui/button@0.7.10-beta.0
+  - @launchpad-ui/chip@0.6.7-beta.0
+  - @launchpad-ui/clipboard@0.8.23-beta.0
+  - @launchpad-ui/counter@0.3.8-beta.0
+  - @launchpad-ui/drawer@0.1.5-beta.0
+  - @launchpad-ui/filter@0.4.29-beta.0
+  - @launchpad-ui/form@0.6.17-beta.0
+  - @launchpad-ui/icons@0.6.3-beta.0
+  - @launchpad-ui/markdown@0.3.7-beta.0
+  - @launchpad-ui/menu@0.6.28-beta.0
+  - @launchpad-ui/modal@0.12.4-beta.0
+  - @launchpad-ui/navigation@0.6.31-beta.0
+  - @launchpad-ui/notification@0.5.24-beta.0
+  - @launchpad-ui/pagination@0.3.17-beta.0
+  - @launchpad-ui/popover@0.8.22-beta.0
+  - @launchpad-ui/progress-bubbles@0.5.23-beta.0
+  - @launchpad-ui/slider@0.3.6-beta.0
+  - @launchpad-ui/snackbar@0.3.10-beta.0
+  - @launchpad-ui/split-button@0.6.24-beta.0
+  - @launchpad-ui/tab-list@0.4.7-beta.0
+  - @launchpad-ui/table@0.4.7-beta.0
+  - @launchpad-ui/toast@0.2.11-beta.0
+  - @launchpad-ui/toggle@0.4.8-beta.0
+  - @launchpad-ui/tokens@0.3.2-beta.0
+  - @launchpad-ui/tooltip@0.6.23-beta.0
+  - @launchpad-ui/dropdown@0.6.5-beta.0
+  - @launchpad-ui/focus-trap@0.1.2-beta.0
+  - @launchpad-ui/overlay@0.3.26-beta.0
+  - @launchpad-ui/portal@0.1.1-beta.0
+  - @launchpad-ui/progress@0.5.6-beta.0
+
 ## 0.24.2
 
 ### Patch Changes
