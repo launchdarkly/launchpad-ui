@@ -1,5 +1,16 @@
 # @launchpad-ui/core
 
+## 0.24.3
+
+### Patch Changes
+
+- [#574](https://github.com/launchdarkly/launchpad-ui/pull/574) [`3b0f5bb`](https://github.com/launchdarkly/launchpad-ui/commit/3b0f5bb1d4747bd83a2bdb1119df0b75d5ac7020) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Menu] Pin react-router-dom dependency to 6.4.2
+  [Navigation] Pin react-router-dom dependency to 6.4.2
+- Updated dependencies [[`3b0f5bb`](https://github.com/launchdarkly/launchpad-ui/commit/3b0f5bb1d4747bd83a2bdb1119df0b75d5ac7020)]:
+  - @launchpad-ui/menu@0.6.28
+  - @launchpad-ui/navigation@0.6.31
+  - @launchpad-ui/filter@0.4.29
+
 ## 0.24.2
 
 ### Patch Changes
