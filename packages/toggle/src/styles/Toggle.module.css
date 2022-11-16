@@ -11,30 +11,30 @@
   --Toggle-color-text-disabled: var(--lp-color-gray-500);
   --Toggle-color-text-disabled-on: var(--lp-color-white);
   --Toggle-color-text-on: var(--lp-color-white);
-  --Toggle-height: 2.4rem; /* 24px */
+  --Toggle-height: 1.5rem; /* 24px */
   --Toggle-transition-timing-function: ease-in-out;
   --Toggle-transition-duration: 100ms;
-  --Toggle-width: 5.4rem; /* 54px */
+  --Toggle-width: 3.375rem; /* 54px */
   --Toggle-input-box-shadow-focus: 0 0 0 1px var(--lp-color-gray-300),
     0 0 0 3px var(--lp-color-shadow-interactive-primary),
     0 0 0 5px var(--lp-color-shadow-interactive-focus);
   --Toggle-input-box-shadow-focus-on: 0 0 0 1px var(--lp-color-system-green-800),
     0 0 0 3px var(--lp-color-shadow-interactive-primary),
     0 0 0 5px var(--lp-color-shadow-interactive-focus);
-  --Toggle-label-font-size: 1.4rem; /* 14px */
+  --Toggle-label-font-size: 0.875rem; /* 14px */
   --Toggle-label-text-transform: none;
-  --Toggle-labels-transform: translateX(-2.8rem); /* -28px */
+  --Toggle-labels-transform: translateX(-1.75rem); /* -28px */
   --Toggle-labels-transform-on: translateX(0);
-  --Toggle-labels-width: 8.2rem; /* 82px */
+  --Toggle-labels-width: 5.125rem; /* 82px */
   --Toggle-pin-box-shadow: 0 0 1px 0 hsl(0 0% 12.9% / 0.35), 0 0 2px 0 hsl(0 0% 12.9% / 0.75),
     0 0 1px 0 hsl(0 0% 12.9% / 0.75);
   --Toggle-pin-box-shadow-disabled: 0 0 1px hsl(0 0% 12.9% / 0.5), 0 1px 2px hsl(0 0% 12.9% / 0.04),
     0 1px 1px hsl(0 0% 12.9% / 0.14);
   --Toggle-pin-box-shadow-on: 0 0 1px 0 hsl(154 100% 23.5% / 0.35),
     0 0 2px 0 hsl(154 100% 23.5% / 0.06), 0 0 1px 0 hsl(154 100% 23.5% / 0.75);
-  --Toggle-pin-size: 1.6rem; /* 16px */
-  --Toggle-pin-transform: translateX(0.4rem) translateY(-50%); /* 4px */
-  --Toggle-pin-transform-on: translateX(3.4rem) translateY(-50%); /* 34px */
+  --Toggle-pin-size: 1rem; /* 16px */
+  --Toggle-pin-transform: translateX(0.25rem) translateY(-50%); /* 4px */
+  --Toggle-pin-transform-on: translateX(2.125rem) translateY(-50%); /* 34px */
 }
 
 .Toggle {

@@ -17,7 +17,7 @@ export default {
       <div
         style={{
           height: '100px',
-          padding: '1rem 0',
+          padding: '0.625rem 0',
         }}
       >
         {storyFn()}

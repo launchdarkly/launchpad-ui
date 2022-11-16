@@ -48,7 +48,7 @@
 .Notification {
   display: flex;
   position: relative;
-  min-height: 4.4rem;
+  min-height: 2.75rem;
   font-size: var(--lp-font-size-300);
   font-weight: var(--lp-font-weight-medium);
   line-height: var(--lp-line-height-200);
@@ -59,30 +59,30 @@
   border-radius: var(--Notification-border-radius);
   box-shadow: var(--reskin-box-shadow-triple);
   box-sizing: border-box;
-  padding: 1rem 1.2rem;
+  padding: 0.625rem 0.75rem;
 
   & .Notification-body {
-    margin: 0 1.2rem 0 0.8rem;
+    margin: 0 0.75rem 0 0.5rem;
     flex-grow: 1;
   }
 }
 
 .Notification-closeIcon {
-  margin-top: 0.1rem;
+  margin-top: 0.0625rem;
 }
 
 .Notification-icon {
   line-height: 1.25;
-  width: 2.4rem;
-  height: 2.4rem;
+  width: 1.5rem;
+  height: 1.5rem;
 }
 
 .Notification-detailsExpand {
   display: flex;
   align-items: center;
-  min-width: 9rem;
+  min-width: 5.625rem;
   padding: 0;
-  font-size: 1.3rem;
+  font-size: 0.8125rem;
   line-height: 1.5;
   text-align: left;
   color: var(--Notification-detailsExpand-color-text);
@@ -139,7 +139,7 @@ will zero out that positioning adjustment for now */
 /* Adjust typographical rhythm to offset --line-height-small */
 .Notification-message {
   position: relative;
-  top: 0.15rem;
+  top: 0.0938rem;
 }
 
 .Notification-message a {
@@ -191,7 +191,7 @@ will zero out that positioning adjustment for now */
   font-weight: var(--lp-font-weight-regular);
   line-height: 18px;
   height: 18px;
-  margin-top: 1rem;
+  margin-top: 0.625rem;
   overflow: hidden;
 
   &:focus {
@@ -210,10 +210,10 @@ will zero out that positioning adjustment for now */
 }
 
 .Notification-detailsContent {
-  margin-bottom: 1rem;
+  margin-bottom: 0.625rem;
   white-space: nowrap;
   overflow: auto;
-  padding: 0 0 1rem;
+  padding: 0 0 0.625rem;
 
   /* detail content has little structure, but generally, it'll consist
   of short paragraphs or lists */

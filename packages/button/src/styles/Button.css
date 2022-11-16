@@ -18,34 +18,34 @@
   border-radius: var(--Button-border-radius-default);
   font-size: var(--Button-font-size-default);
   line-height: var(--Button-line-height-default);
-  padding: 0.5rem 0.8rem;
+  padding: 0.3125rem 0.5rem;
   cursor: default;
   user-select: none;
   appearance: none;
-  min-height: 3.2rem;
+  min-height: 2rem;
 }
 
 .Button--tiny {
   border-radius: var(--Button-border-radius-small);
   font-size: var(--Button-font-size-small);
   line-height: var(--Button-line-height-small);
-  padding: 0 0.4rem;
-  min-height: 1.9rem;
+  padding: 0 0.25rem;
+  min-height: 1.1875rem;
 }
 
 .Button--small {
   border-radius: var(--Button-border-radius-small);
   font-size: var(--Button-font-size-small);
   line-height: var(--Button-line-height-small);
-  padding: 0.3rem 0.7rem;
-  min-height: 2.5rem;
+  padding: 0.1875rem 0.4375rem;
+  min-height: 1.5625rem;
 }
 
 .Button--big {
   font-size: var(--Button-font-size-large);
   line-height: var(--Button-line-height-large);
-  padding: 1rem 1.4rem;
-  min-height: 4rem;
+  padding: 0.625rem 0.875rem;
+  min-height: 2.5rem;
 }
 
 .Button--fit {
@@ -58,11 +58,11 @@
 }
 
 .Button:not(.Button--icon) > .Button-icon:first-child {
-  margin-right: 0.5rem;
+  margin-right: 0.3125rem;
 }
 
 .Button:not(.Button--icon) > .Button-icon:last-child {
-  margin-left: 0.5rem;
+  margin-left: 0.3125rem;
 }
 
 .Button:hover {
@@ -399,14 +399,14 @@
   padding: 0;
   line-height: 1;
   border-radius: 50%;
-  height: 2.5rem;
-  width: 2.5rem;
+  height: 1.5625rem;
+  width: 1.5625rem;
   min-height: auto;
   flex-shrink: 0;
 }
 
 .Button.Button--icon.Button--small {
-  height: 2.2rem;
-  width: 2.2rem;
+  height: 1.375rem;
+  width: 1.375rem;
 }
 /* stylelint-enable no-descending-specificity */

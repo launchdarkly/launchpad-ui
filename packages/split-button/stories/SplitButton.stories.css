@@ -5,8 +5,8 @@
 .Storygroup-wrapper {
   display: grid;
   grid-template-rows: 1fr;
-  grid-template-columns: 12rem auto;
-  grid-gap: 1.2rem;
+  grid-template-columns: 7.5rem auto;
+  grid-gap: 0.75rem;
   justify-items: flex-start;
 }
 

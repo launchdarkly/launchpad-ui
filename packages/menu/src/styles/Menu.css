@@ -6,10 +6,10 @@
   text-decoration: none;
   cursor: pointer;
   outline: none;
-  padding: 0.6rem 2.5rem;
+  padding: 0.375rem 1.5625rem;
   text-align: left;
   font-family: inherit;
-  font-size: 1.3rem;
+  font-size: 0.8125rem;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -30,7 +30,7 @@
 }
 
 .Menu-item-list {
-  min-width: 12rem;
+  min-width: 7.5rem;
   overflow: auto;
   max-height: 55vh;
 }
@@ -103,7 +103,7 @@
 }
 
 .Menu-item--nested {
-  padding-left: 4rem;
+  padding-left: 2.5rem;
 }
 
 .Menu-item--header {
@@ -111,7 +111,7 @@
 }
 
 .Menu-item .Gravatar {
-  margin-right: 0.5rem;
+  margin-right: 0.3125rem;
 }
 
 .Menu-item.is-highlighted {
@@ -133,7 +133,7 @@
 
 .Menu-item-icon {
   position: absolute;
-  left: 0.5rem;
+  left: 0.3125rem;
   top: 50%;
   transform: translateY(-50%);
 }
@@ -143,8 +143,8 @@
 }
 
 .Menu-search {
-  padding: 1rem;
-  font-size: 1.3rem;
+  padding: 0.625rem;
+  font-size: 0.8125rem;
   border-bottom: 1px solid var(--lp-color-border-ui-primary);
 }
 
@@ -173,19 +173,19 @@
 }
 
 .MenuSize--xl {
-  width: 32rem;
+  width: 20rem;
 }
 
 .MenuSize--lg {
-  width: 24rem;
+  width: 15rem;
 }
 
 .MenuSize--md {
-  width: 16rem;
+  width: 10rem;
 }
 
 .MenuSize--sm {
-  width: 12rem;
+  width: 7.5rem;
 }
 
 .VirtualMenu-item-list {

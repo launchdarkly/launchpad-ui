@@ -19,7 +19,7 @@
 }
 
 .Table--compact {
-  font-size: 1.3rem;
+  font-size: 0.8125rem;
 }
 
 .Table-header {
@@ -27,7 +27,7 @@
 }
 
 .Table-cell {
-  padding: 1rem 2rem;
+  padding: 0.625rem 1.25rem;
 }
 
 .Table-cell--left {
@@ -51,7 +51,7 @@
 }
 
 .Table--compact .Table-cell {
-  padding: 0.5rem 1rem;
+  padding: 0.3125rem 0.625rem;
 }
 
 .Table-cell--head {
@@ -69,8 +69,8 @@
 .Table--resourceTable .Table-cell--head {
   background: var(--lp-color-white-100);
   color: var(--lp-color-text-ui-secondary);
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
+  padding-top: 0.3125rem;
+  padding-bottom: 0.3125rem;
 }
 
 .TableHeader-title {
@@ -82,7 +82,7 @@
 }
 
 .TableHeader-description {
-  font-size: 1.3rem;
+  font-size: 0.8125rem;
 }
 
 .TableHeader-counter {
@@ -90,7 +90,7 @@
 }
 
 .TableHeaderToolbar-secondRow {
-  padding-bottom: 0.75rem;
+  padding-bottom: 0.4688rem;
   display: flex;
   flex-wrap: wrap;
 }

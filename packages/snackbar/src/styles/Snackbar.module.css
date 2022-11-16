@@ -3,9 +3,9 @@
   color: var(--lp-color-white);
   padding: var(--lp-spacing-500);
   display: inline-flex;
-  gap: 1.4rem;
+  gap: 0.875rem;
   box-sizing: border-box;
-  width: 37.6rem;
+  width: 23.5rem;
   border-radius: 2px;
 }
 
@@ -33,7 +33,7 @@
 .Snackbar-heading {
   margin-top: 0;
   margin-bottom: var(--lp-spacing-200);
-  font-size: 1.6rem;
+  font-size: 1rem;
   font-weight: var(--lp-font-weight-medium);
   line-height: 1.5;
   color: var(--lp-color-white);

@@ -5,11 +5,11 @@
 }
 
 .ButtonGroup--normal {
-  gap: 1rem;
+  gap: 0.625rem;
 }
 
 .ButtonGroup--large {
-  gap: 2rem;
+  gap: 1.25rem;
 }
 
 .ButtonGroup--compact > .Button + .Button,

@@ -8,8 +8,8 @@
   max-width: var(--NotificationCenter-max-width);
   min-width: var(--NotificationCenter-min-width);
   position: fixed;
-  top: 1rem;
-  right: 2rem;
+  top: 0.625rem;
+  right: 1.25rem;
   bottom: auto;
   left: auto;
   z-index: var(--NotificationCenter-z-index);

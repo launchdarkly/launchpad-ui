@@ -6,21 +6,21 @@ font:
       value: SFMono-Regular, Consolas, Liberation Mono, Menlo, Courier, monospace
   size:
     100:
-      value: 1.2rem
+      value: 0.75rem
     200:
-      value: 1.4rem
+      value: 0.875rem
     300:
-      value: 1.6rem
+      value: 1rem
     400:
-      value: 1.8rem
+      value: 1.125rem
     500:
-      value: 2rem
+      value: 1.25rem
     600:
-      value: 2.5rem
+      value: 1.5625rem
     700:
-      value: 3.2rem
+      value: 2rem
     800:
-      value: 4.6rem
+      value: 2.875rem
   weight:
     light:
       value: 300
