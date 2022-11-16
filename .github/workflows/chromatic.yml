@@ -29,3 +29,4 @@ jobs:
           exitOnceUploaded: true
           onlyChanged: true
           externals: 'packages/icons/icons/**'
+          externals: 'packages/tokens/src/**'
