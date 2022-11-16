@@ -1,5 +1,189 @@
 # @launchpad-ui/core
 
+## 0.24.2
+
+### Patch Changes
+
+- [#571](https://github.com/launchdarkly/launchpad-ui/pull/571) [`896ee74`](https://github.com/launchdarkly/launchpad-ui/commit/896ee748dbf0f9a78110650761d89204eaf57c32) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Snackbar]: Add `success` variant and trigger onDismiss when `cta` is clicked.
+  [Toast]: Style anchor elements properly when used in content.
+
+- [#569](https://github.com/launchdarkly/launchpad-ui/pull/569) [`5564268`](https://github.com/launchdarkly/launchpad-ui/commit/5564268196e493386ee09f568d0f714c171462d8) Thanks [@chasedarkly](https://github.com/chasedarkly)! - Improve storybook docs, deprecate legacy modal, and improve resizeobserver for ModalBody
+
+- Updated dependencies [[`896ee74`](https://github.com/launchdarkly/launchpad-ui/commit/896ee748dbf0f9a78110650761d89204eaf57c32), [`5564268`](https://github.com/launchdarkly/launchpad-ui/commit/5564268196e493386ee09f568d0f714c171462d8)]:
+  - @launchpad-ui/snackbar@0.3.9
+  - @launchpad-ui/toast@0.2.10
+  - @launchpad-ui/modal@0.12.3
+
+## 0.24.1
+
+### Patch Changes
+
+- [#567](https://github.com/launchdarkly/launchpad-ui/pull/567) [`d80297f`](https://github.com/launchdarkly/launchpad-ui/commit/d80297fad893c9db566ed029e302702d5f245a98) Thanks [@Niznikr](https://github.com/Niznikr)! - [Tokens] Update bg and text tokens
+
+- Updated dependencies [[`d80297f`](https://github.com/launchdarkly/launchpad-ui/commit/d80297fad893c9db566ed029e302702d5f245a98)]:
+  - @launchpad-ui/chip@0.6.6
+  - @launchpad-ui/popover@0.8.21
+  - @launchpad-ui/tokens@0.3.1
+  - @launchpad-ui/tooltip@0.6.22
+  - @launchpad-ui/navigation@0.6.30
+  - @launchpad-ui/dropdown@0.6.4
+  - @launchpad-ui/menu@0.6.27
+  - @launchpad-ui/progress-bubbles@0.5.22
+  - @launchpad-ui/split-button@0.6.23
+  - @launchpad-ui/alert@0.6.12
+  - @launchpad-ui/avatar@0.4.12
+  - @launchpad-ui/banner@0.7.11
+  - @launchpad-ui/button@0.7.9
+  - @launchpad-ui/clipboard@0.8.22
+  - @launchpad-ui/counter@0.3.7
+  - @launchpad-ui/drawer@0.1.4
+  - @launchpad-ui/filter@0.4.28
+  - @launchpad-ui/form@0.6.16
+  - @launchpad-ui/icons@0.6.2
+  - @launchpad-ui/markdown@0.3.6
+  - @launchpad-ui/modal@0.12.2
+  - @launchpad-ui/notification@0.5.23
+  - @launchpad-ui/pagination@0.3.16
+  - @launchpad-ui/progress@0.5.5
+  - @launchpad-ui/slider@0.3.5
+  - @launchpad-ui/snackbar@0.3.8
+  - @launchpad-ui/tab-list@0.4.6
+  - @launchpad-ui/table@0.4.6
+  - @launchpad-ui/toast@0.2.9
+  - @launchpad-ui/toggle@0.4.7
+
+## 0.24.0
+
+### Minor Changes
+
+- [#555](https://github.com/launchdarkly/launchpad-ui/pull/555) [`baeacd7`](https://github.com/launchdarkly/launchpad-ui/commit/baeacd7b80d60f36f4962f090d87a0009f28b44e) Thanks [@Niznikr](https://github.com/Niznikr)! - [Tokens] Update alias tokens to match schema `namespace-type-category-role-variant-state`:
+
+  - Update components to use new tokens and ensure consistency
+  - Set dark mode values to support both themes
+  - Categories are bg, border, fill, shadow, text
+  - Roles are feedback, interactive, overlay, ui
+  - Variants are primary, secondary, tertiary, destructive, error, info, success, warning
+  - States are active, disabled, focus, hover
+
+### Patch Changes
+
+- Updated dependencies [[`baeacd7`](https://github.com/launchdarkly/launchpad-ui/commit/baeacd7b80d60f36f4962f090d87a0009f28b44e)]:
+  - @launchpad-ui/tokens@0.3.0
+  - @launchpad-ui/alert@0.6.11
+  - @launchpad-ui/avatar@0.4.11
+  - @launchpad-ui/banner@0.7.10
+  - @launchpad-ui/button@0.7.8
+  - @launchpad-ui/chip@0.6.5
+  - @launchpad-ui/clipboard@0.8.21
+  - @launchpad-ui/counter@0.3.6
+  - @launchpad-ui/drawer@0.1.3
+  - @launchpad-ui/dropdown@0.6.3
+  - @launchpad-ui/filter@0.4.27
+  - @launchpad-ui/form@0.6.15
+  - @launchpad-ui/icons@0.6.1
+  - @launchpad-ui/markdown@0.3.5
+  - @launchpad-ui/menu@0.6.26
+  - @launchpad-ui/modal@0.12.1
+  - @launchpad-ui/navigation@0.6.29
+  - @launchpad-ui/notification@0.5.22
+  - @launchpad-ui/pagination@0.3.15
+  - @launchpad-ui/popover@0.8.20
+  - @launchpad-ui/progress@0.5.4
+  - @launchpad-ui/progress-bubbles@0.5.21
+  - @launchpad-ui/slider@0.3.4
+  - @launchpad-ui/snackbar@0.3.7
+  - @launchpad-ui/split-button@0.6.22
+  - @launchpad-ui/tab-list@0.4.5
+  - @launchpad-ui/table@0.4.5
+  - @launchpad-ui/toast@0.2.8
+  - @launchpad-ui/toggle@0.4.6
+  - @launchpad-ui/tooltip@0.6.21
+
+## 0.23.0
+
+### Minor Changes
+
+- [#562](https://github.com/launchdarkly/launchpad-ui/pull/562) [`57c737f`](https://github.com/launchdarkly/launchpad-ui/commit/57c737f51555d1f7a0078fba1bab2575bb5d96f0) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Modal] Move header props to standalone component
+
+### Patch Changes
+
+- Updated dependencies [[`57c737f`](https://github.com/launchdarkly/launchpad-ui/commit/57c737f51555d1f7a0078fba1bab2575bb5d96f0)]:
+  - @launchpad-ui/modal@0.12.0
+
+## 0.22.8
+
+### Patch Changes
+
+- [#559](https://github.com/launchdarkly/launchpad-ui/pull/559) [`488fcc1`](https://github.com/launchdarkly/launchpad-ui/commit/488fcc1243cec9da0313d098115ab5d685354307) Thanks [@Niznikr](https://github.com/Niznikr)! - [Modal] Move portal to main component to fix focus trap
+
+- Updated dependencies [[`488fcc1`](https://github.com/launchdarkly/launchpad-ui/commit/488fcc1243cec9da0313d098115ab5d685354307)]:
+  - @launchpad-ui/modal@0.11.8
+
+## 0.22.7
+
+### Patch Changes
+
+- [#551](https://github.com/launchdarkly/launchpad-ui/pull/551) [`3642ccc`](https://github.com/launchdarkly/launchpad-ui/commit/3642cccf7c76db9cce69e51357eb003bbcb41b85) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Modal] Expose AbsoluteModalFooter
+
+- Updated dependencies [[`3642ccc`](https://github.com/launchdarkly/launchpad-ui/commit/3642cccf7c76db9cce69e51357eb003bbcb41b85)]:
+  - @launchpad-ui/modal@0.11.7
+
+## 0.22.6
+
+### Patch Changes
+
+- [#550](https://github.com/launchdarkly/launchpad-ui/pull/550) [`a9dab55`](https://github.com/launchdarkly/launchpad-ui/commit/a9dab556642ddee999437a9a467321324eec6e85) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Modal] Update modal layout logic
+
+- [#548](https://github.com/launchdarkly/launchpad-ui/pull/548) [`22b810c`](https://github.com/launchdarkly/launchpad-ui/commit/22b810c8400d988f3985a5d3b945adde81b8bcd9) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Modal] Improve modal contracts, allow htmldivelement props to pass to body and footer"
+
+- Updated dependencies [[`a9dab55`](https://github.com/launchdarkly/launchpad-ui/commit/a9dab556642ddee999437a9a467321324eec6e85), [`22b810c`](https://github.com/launchdarkly/launchpad-ui/commit/22b810c8400d988f3985a5d3b945adde81b8bcd9)]:
+  - @launchpad-ui/modal@0.11.6
+
+## 0.22.5
+
+### Patch Changes
+
+- [#546](https://github.com/launchdarkly/launchpad-ui/pull/546) [`1e6fd8f`](https://github.com/launchdarkly/launchpad-ui/commit/1e6fd8f5e0bab976b0bd0f19ed4dbfe5586b8cdf) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Modal] Position footer absolutely
+
+- Updated dependencies [[`1e6fd8f`](https://github.com/launchdarkly/launchpad-ui/commit/1e6fd8f5e0bab976b0bd0f19ed4dbfe5586b8cdf)]:
+  - @launchpad-ui/modal@0.11.5
+
+## 0.22.4
+
+### Patch Changes
+
+- [#542](https://github.com/launchdarkly/launchpad-ui/pull/542) [`149223d`](https://github.com/launchdarkly/launchpad-ui/commit/149223d409d897ab5d37b1a410bc3d25103ce0de) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Modal] Overflow contents only when needed.
+
+- Updated dependencies [[`149223d`](https://github.com/launchdarkly/launchpad-ui/commit/149223d409d897ab5d37b1a410bc3d25103ce0de)]:
+  - @launchpad-ui/modal@0.11.4
+
+## 0.22.3
+
+### Patch Changes
+
+- [#540](https://github.com/launchdarkly/launchpad-ui/pull/540) [`9214ce3`](https://github.com/launchdarkly/launchpad-ui/commit/9214ce379b192d49c29f165562f8cff067dbbfa7) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Modal] Export ModalBody and ModalFooter
+
+- Updated dependencies [[`9214ce3`](https://github.com/launchdarkly/launchpad-ui/commit/9214ce379b192d49c29f165562f8cff067dbbfa7)]:
+  - @launchpad-ui/modal@0.11.3
+
+## 0.22.2
+
+### Patch Changes
+
+- [#538](https://github.com/launchdarkly/launchpad-ui/pull/538) [`ac9aeb0`](https://github.com/launchdarkly/launchpad-ui/commit/ac9aeb0cf712ea836da34a3f4472d3dde6716d65) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Modal] Specify only direct children of body to receive margin styles
+
+- Updated dependencies [[`ac9aeb0`](https://github.com/launchdarkly/launchpad-ui/commit/ac9aeb0cf712ea836da34a3f4472d3dde6716d65)]:
+  - @launchpad-ui/modal@0.11.2
+
+## 0.22.1
+
+### Patch Changes
+
+- [#536](https://github.com/launchdarkly/launchpad-ui/pull/536) [`b492e9e`](https://github.com/launchdarkly/launchpad-ui/commit/b492e9e939847ca8c27222be62556bf011e6427d) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Modal] Add legacy modal to ease migration
+
+- Updated dependencies [[`b492e9e`](https://github.com/launchdarkly/launchpad-ui/commit/b492e9e939847ca8c27222be62556bf011e6427d)]:
+  - @launchpad-ui/modal@0.11.1
+
 ## 0.22.0
 
 ### Minor Changes

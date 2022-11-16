@@ -91,7 +91,7 @@ https://www.scottohara.me/blog/2017/04/14/inclusively-hidden.html
     }
 
     &:active {
-      color: var(--lp-color-text);
+      color: var(--lp-color-text-ui-primary);
       box-shadow: none;
       text-decoration: underline;
     }

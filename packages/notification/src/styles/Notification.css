@@ -39,7 +39,7 @@
   --Notification-color-border-success: var(--reskin-success-green-base);
   --Notification-color-border-warning: var(--reskin-warn-gold-base);
   --Notification-color-border-error: var(--reskin-error-red-base);
-  --Notification-color-text: var(--lp-color-text-subtle-primary);
+  --Notification-color-text: var(--lp-color-text-feedback-primary);
   --Notification-detailsExpand-color-text: var(--lp-color-gray-800);
   --Notification-detailsExpand-color-text-active: var(--lp-color-black-200);
 }
@@ -155,7 +155,7 @@ will zero out that positioning adjustment for now */
   }
 
   &:active {
-    color: var(--lp-color-text);
+    color: var(--lp-color-text-ui-primary);
     box-shadow: none;
     text-decoration: underline;
   }
@@ -186,7 +186,7 @@ will zero out that positioning adjustment for now */
 }
 
 .Notification-details {
-  color: var(--lp-color-text-subtle-primary);
+  color: var(--lp-color-text-feedback-primary);
   font-size: var(--lp-font-size-200);
   font-weight: var(--lp-font-weight-regular);
   line-height: 18px;

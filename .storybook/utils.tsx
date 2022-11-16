@@ -1,7 +1,5 @@
-import type { StoryContext } from '@storybook/addons';
-import type { Args } from '@storybook/api';
-// @ts-ignore
-import type { DecoratorFn, ReactFramework, StoryFn } from '@storybook/react';
+import type { AnnotatedStoryFn, Args, StoryContext } from '@storybook/types';
+import type { DecoratorFn, ReactFramework } from '@storybook/react';
 import { Fragment } from 'react';
 import merge from 'deepmerge';
 
@@ -14,7 +12,7 @@ export const createWithClassesDecorator = (
   classes: string[] = [],
   renderFunc?: (
     props: Args & { className?: string },
-    originalStoryFn: StoryFn<ReactFramework>,
+    originalStoryFn: AnnotatedStoryFn<ReactFramework>,
     context: StoryContext<ReactFramework>
   ) => JSX.Element
 ): DecoratorFn => {
@@ -23,7 +21,7 @@ export const createWithClassesDecorator = (
     const pseudoStates = classes || [];
     const { viewMode, args, name, component } = Context;
     // This decorator is explicitly made for react
-    const originalStoryFn = Context.originalStoryFn;
+    const originalStoryFn = Context.originalStoryFn as AnnotatedStoryFn<ReactFramework>;
     // Just render the component without decoration if viewing the docs
     if (viewMode === 'docs') {
       return storyFn();

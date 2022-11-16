@@ -1,6 +1,6 @@
 .Snackbar {
-  background-color: var(--lp-color-gray-800);
-  color: var(--lp-color-text-inverse);
+  background-color: var(--lp-color-bg-feedback-primary);
+  color: var(--lp-color-white);
   padding: var(--lp-spacing-500);
   display: inline-flex;
   gap: 0.875rem;
@@ -14,20 +14,20 @@
   top: auto;
 }
 
-.Snackbar--error {
-  & .Snackbar-icon {
-    fill: var(--lp-color-pink-500);
-  }
+.Snackbar--error .Snackbar-icon {
+  fill: var(--lp-color-pink-500);
 }
 
 .Snackbar--info .Snackbar-icon {
   fill: var(--lp-color-cyan-500);
 }
 
-.Snackbar--warning {
-  & .Snackbar-icon {
-    fill: var(--lp-color-yellow-500);
-  }
+.Snackbar--warning .Snackbar-icon {
+  fill: var(--lp-color-yellow-500);
+}
+
+.Snackbar--success .Snackbar-icon {
+  fill: var(--lp-color-system-green-500);
 }
 
 .Snackbar-heading {
@@ -36,7 +36,7 @@
   font-size: 1rem;
   font-weight: var(--lp-font-weight-medium);
   line-height: 1.5;
-  color: var(--lp-color-text-inverse);
+  color: var(--lp-color-white);
 }
 
 .Snackbar-content {

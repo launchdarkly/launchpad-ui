@@ -5,14 +5,14 @@
   line-height: var(--lp-line-height-200);
   padding: 2px 8px;
   border-radius: 0.625rem;
-  color: var(--lp-color-gray-700);
+  color: var(--lp-color-text-ui-secondary);
   border: 1px solid var(--lp-color-blue-500);
   min-width: 1.25rem;
   vertical-align: middle;
 }
 
 .Counter--subtle {
-  border: 1px solid var(--lp-color-gray-200);
-  color: var(--lp-color-gray-700);
-  background-color: var(--lp-color-gray-100);
+  border: 1px solid var(--lp-color-border-ui-primary);
+  color: var(--lp-color-text-ui-secondary);
+  background-color: var(--lp-color-bg-ui-secondary);
 }

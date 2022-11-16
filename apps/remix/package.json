@@ -7,7 +7,7 @@
   "scripts": {
     "dev": "remix dev",
     "build": "remix build",
-    "clean": "rm -rf public",
+    "clean": "rm -rf public build",
     "lint": "eslint '**/*.{ts,tsx,js}' && stylelint '**/*.css' --ignore-path ../../.stylelintignore",
     "start": "remix-serve build",
     "test": "exit 0"
@@ -56,7 +56,7 @@
   "devDependencies": {
     "@remix-run/dev": "^1.7.0",
     "@remix-run/eslint-config": "^1.7.0",
-    "eslint": "^8.26.0",
+    "eslint": "^8.27.0",
     "typescript": "^4.8.2"
   },
   "engines": {

@@ -12,7 +12,7 @@
 
 .Navigation .Nav--primary {
   padding: 0 1.5625rem;
-  background-color: var(--lp-color-background);
+  background-color: var(--lp-color-bg-ui-primary);
   box-shadow: 0 1px 2px hsl(0 0% 0% / 0.12);
   overflow-x: auto;
 }
@@ -35,7 +35,7 @@
 }
 
 .Nav--secondary {
-  border-bottom: 1px solid var(--lp-color-border);
+  border-bottom: 1px solid var(--lp-color-border-ui-primary);
 }
 
 .Nav--primary > .NavPopover-target {
@@ -55,7 +55,7 @@
   padding: 0.625rem 0.875rem;
   border-bottom: 2px solid transparent;
   text-decoration: none;
-  color: var(--lp-color-text-subtle-primary);
+  color: var(--lp-color-text-interactive-secondary);
   position: relative;
 }
 
@@ -74,8 +74,8 @@
 }
 
 .Nav--primary .NavItem.is-active {
-  color: var(--lp-color-text);
-  border-bottom-color: var(--lp-color-text);
+  color: var(--lp-color-text-ui-primary);
+  border-bottom-color: var(--lp-color-text-ui-primary);
   font-weight: var(--lp-font-weight-bold);
 }
 
@@ -97,7 +97,7 @@
   padding: 0.625rem 0.875rem 0;
   border-bottom: 1px solid transparent;
   text-decoration: none;
-  color: var(--lp-color-text-subtle-secondary);
+  color: var(--lp-color-text-ui-secondary);
   position: relative;
 }
 
@@ -112,12 +112,12 @@
 }
 
 .Nav--primary .NavItem:hover {
-  color: var(--lp-color-text);
+  color: var(--lp-color-text-ui-primary);
 }
 
 .Nav--primary a.NavItem:hover,
 .Nav--primary a.NavItem:active {
-  color: var(--lp-color-text);
+  color: var(--lp-color-text-ui-primary);
   text-decoration: none;
 }
 
@@ -141,7 +141,7 @@
 }
 
 .Nav--secondary .NavItem.is-active {
-  color: var(--lp-color-text);
+  color: var(--lp-color-text-ui-primary);
   border-bottom: 0.1875rem solid var(--lp-color-gray-700);
   margin-bottom: -0.1rem; /* slightly larger than half to account for browser rounding */
 }
@@ -154,7 +154,7 @@
 }
 
 .Nav--secondary .NavItem.is-active::after {
-  border-bottom-color: var(--lp-color-gray-700);
+  border-bottom-color: var(--lp-color-border-interactive-secondary-active);
   bottom: -2px;
 }
 

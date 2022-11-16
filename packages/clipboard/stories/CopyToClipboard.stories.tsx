@@ -1,5 +1,6 @@
 import type { CopyToClipboardHandleRef } from '../src/CopyToClipboard';
-import type { StoryObj, StoryFn } from '@storybook/react';
+import type { StoryObj } from '@storybook/react';
+import type { ReactNode } from 'react';
 
 import { userEvent, within } from '@storybook/testing-library';
 import { useRef } from 'react';
@@ -29,7 +30,7 @@ export default {
     },
   },
   decorators: [
-    (StoryFn: StoryFn) => (
+    (storyFn: () => ReactNode) => (
       <div
         style={{
           width: '100vw',
@@ -39,7 +40,7 @@ export default {
           justifyContent: 'center',
         }}
       >
-        <StoryFn />
+        {storyFn()}
       </div>
     ),
   ],

@@ -1,10 +1,12 @@
-import { Modal } from '../src';
+import { Modal, ModalBody, ModalFooter, ModalHeader } from '../src';
 
 describe('Modal', () => {
   it('renders', () => {
     cy.mount(
-      <Modal title="Title">
-        <p>Body</p>
+      <Modal>
+        <ModalHeader title="Title" />
+        <ModalBody>Body</ModalBody>
+        <ModalFooter primaryButton={<button>Click me</button>} />
       </Modal>
     );
     cy.getByTestId('modal').should('be.visible');
@@ -12,8 +14,10 @@ describe('Modal', () => {
 
   it('is accessible', () => {
     cy.mount(
-      <Modal title="Title" withCloseButton>
-        <p>Body</p>
+      <Modal>
+        <ModalHeader title="Title" withCloseButton />
+        <ModalBody>Body</ModalBody>
+        <ModalFooter primaryButton={<button>Click me</button>} />
       </Modal>
     );
     cy.checkA11y();
@@ -22,8 +26,10 @@ describe('Modal', () => {
   it('calls onCancel when escape key is pressed', () => {
     const onCancelSpy = cy.spy().as('onCancelSpy');
     cy.mount(
-      <Modal title="Title" onCancel={onCancelSpy}>
-        <p>Body</p>
+      <Modal onCancel={onCancelSpy}>
+        <ModalHeader title="Title" />
+        <ModalBody>Body</ModalBody>
+        <ModalFooter primaryButton={<button>Click me</button>} />
       </Modal>
     );
 

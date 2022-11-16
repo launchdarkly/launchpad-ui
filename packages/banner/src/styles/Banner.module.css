@@ -1,18 +1,18 @@
 @import '../../../tokens/dist/media-queries.css';
 
 :root {
-  --Banner-color-border-bottom-info: var(--lp-color-blue-700);
+  --Banner-color-border-bottom-info: var(--lp-color-border-feedback-info);
   /* stylelint-disable-next-line value-keyword-case */
-  --Banner-color-border-bottom-warning: var(--lp-color-system-yellow-700);
-  --Banner-color-border-bottom-error: var(--lp-color-system-red-700);
-  --Banner-color-text: var(--lp-color-black-100);
-  --Banner-color-background: var(--lp-color-white);
+  --Banner-color-border-bottom-warning: var(--lp-color-border-feedback-warning);
+  --Banner-color-border-bottom-error: var(--lp-color-border-feedback-error);
+  --Banner-color-text: var(--lp-color-text-feedback-primary);
+  --Banner-color-background: var(--lp-color-bg-ui-primary);
   --Banner-color-background-info: var(--lp-color-blue-100);
-  --Banner-color-background-warning: var(--lp-color-system-yellow-200);
-  --Banner-color-background-error: var(--lp-color-system-red-200);
-  --Banner-icon-color-info: var(--lp-color-blue-700);
-  --Banner-icon-color-warning: var(--lp-color-system-yellow-700);
-  --Banner-icon-color-error: var(--lp-color-system-red-700);
+  --Banner-color-background-warning: var(--lp-color-bg-feedback-warning);
+  --Banner-color-background-error: var(--lp-color-bg-feedback-error);
+  --Banner-icon-color-info: var(--lp-color-fill-feedback-info);
+  --Banner-icon-color-warning: var(--lp-color-fill-feedback-warning);
+  --Banner-icon-color-error: var(--lp-color-fill-feedback-error);
   --page-gutter-width: 0.625rem;
 }
 

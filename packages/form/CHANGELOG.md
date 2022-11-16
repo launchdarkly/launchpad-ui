@@ -1,5 +1,21 @@
 # @launchpad-ui/form
 
+## 0.6.16
+
+### Patch Changes
+
+- Updated dependencies [[`d80297f`](https://github.com/launchdarkly/launchpad-ui/commit/d80297fad893c9db566ed029e302702d5f245a98)]:
+  - @launchpad-ui/tokens@0.3.1
+  - @launchpad-ui/icons@0.6.2
+
+## 0.6.15
+
+### Patch Changes
+
+- Updated dependencies [[`baeacd7`](https://github.com/launchdarkly/launchpad-ui/commit/baeacd7b80d60f36f4962f090d87a0009f28b44e)]:
+  - @launchpad-ui/tokens@0.3.0
+  - @launchpad-ui/icons@0.6.1
+
 ## 0.6.14
 
 ### Patch Changes
