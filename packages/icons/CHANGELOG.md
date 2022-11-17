@@ -1,5 +1,13 @@
 # @launchpad-ui/icons
 
+## 0.6.3
+
+### Patch Changes
+
+- [#576](https://github.com/launchdarkly/launchpad-ui/pull/576) [`3a11bcf`](https://github.com/launchdarkly/launchpad-ui/commit/3a11bcf9085da9058c716841bf5d6b03ef5459a9) Thanks [@jagarnica](https://github.com/jagarnica)! - [Icons] Add "Release Path" icon
+
+- [#578](https://github.com/launchdarkly/launchpad-ui/pull/578) [`d1526c2`](https://github.com/launchdarkly/launchpad-ui/commit/d1526c21a4d637ce67d13c65dd8d34c4797d44ec) Thanks [@hisuida](https://github.com/hisuida)! - [Icon]: Add `bullseye` icon
+
 ## 0.6.2
 
 ### Patch Changes

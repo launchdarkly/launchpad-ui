@@ -1,5 +1,33 @@
 # @launchpad-ui/core
 
+## 0.24.4
+
+### Patch Changes
+
+- [#576](https://github.com/launchdarkly/launchpad-ui/pull/576) [`3a11bcf`](https://github.com/launchdarkly/launchpad-ui/commit/3a11bcf9085da9058c716841bf5d6b03ef5459a9) Thanks [@jagarnica](https://github.com/jagarnica)! - [Icons] Add "Release Path" icon
+
+- [#578](https://github.com/launchdarkly/launchpad-ui/pull/578) [`d1526c2`](https://github.com/launchdarkly/launchpad-ui/commit/d1526c21a4d637ce67d13c65dd8d34c4797d44ec) Thanks [@hisuida](https://github.com/hisuida)! - [Icon]: Add `bullseye` icon
+
+- Updated dependencies [[`3a11bcf`](https://github.com/launchdarkly/launchpad-ui/commit/3a11bcf9085da9058c716841bf5d6b03ef5459a9), [`d1526c2`](https://github.com/launchdarkly/launchpad-ui/commit/d1526c21a4d637ce67d13c65dd8d34c4797d44ec)]:
+  - @launchpad-ui/icons@0.6.3
+  - @launchpad-ui/alert@0.6.13
+  - @launchpad-ui/avatar@0.4.13
+  - @launchpad-ui/banner@0.7.12
+  - @launchpad-ui/button@0.7.10
+  - @launchpad-ui/clipboard@0.8.23
+  - @launchpad-ui/drawer@0.1.5
+  - @launchpad-ui/dropdown@0.6.5
+  - @launchpad-ui/filter@0.4.30
+  - @launchpad-ui/form@0.6.17
+  - @launchpad-ui/menu@0.6.29
+  - @launchpad-ui/modal@0.12.4
+  - @launchpad-ui/notification@0.5.24
+  - @launchpad-ui/pagination@0.3.17
+  - @launchpad-ui/snackbar@0.3.10
+  - @launchpad-ui/toast@0.2.11
+  - @launchpad-ui/split-button@0.6.24
+  - @launchpad-ui/navigation@0.6.32
+
 ## 0.24.3
 
 ### Patch Changes
