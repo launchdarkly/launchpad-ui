@@ -28,4 +28,6 @@ jobs:
           buildScriptName: 'storybook:build'
           exitOnceUploaded: true
           onlyChanged: true
-          externals: 'packages/icons/icons/**'
+          externals: |
+            - 'packages/icons/icons/**'
+            - 'packages/tokens/src/**'
