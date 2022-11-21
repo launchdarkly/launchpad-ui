@@ -7,7 +7,7 @@
   "scripts": {
     "dev": "remix dev",
     "build": "remix build",
-    "clean": "rm -rf public",
+    "clean": "rm -rf public build",
     "lint": "eslint '**/*.{ts,tsx,js}' && stylelint '**/*.css' --ignore-path ../../.stylelintignore",
     "start": "remix-serve build",
     "test": "exit 0"
@@ -44,8 +44,8 @@
     "@launchpad-ui/toggle": "workspace:~",
     "@launchpad-ui/tokens": "workspace:~",
     "@launchpad-ui/tooltip": "workspace:~",
-    "@react-aria/ssr": "^3.3.0",
-    "@react-stately/collections": "^3.4.0",
+    "@react-aria/ssr": "^3.4.0",
+    "@react-stately/collections": "^3.5.0",
     "@remix-run/node": "^1.7.0",
     "@remix-run/react": "^1.7.0",
     "@remix-run/serve": "^1.7.0",
@@ -56,10 +56,10 @@
   "devDependencies": {
     "@remix-run/dev": "^1.7.0",
     "@remix-run/eslint-config": "^1.7.0",
-    "eslint": "^8.26.0",
-    "typescript": "^4.8.2"
+    "eslint": "^8.28.0",
+    "typescript": "^4.9.3"
   },
   "engines": {
-    "node": ">=v18.11.0"
+    "node": ">=v18.12.0"
   }
 }

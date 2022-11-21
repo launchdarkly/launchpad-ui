@@ -27,7 +27,7 @@ export const Global = {
                   backgroundColor: token,
                   height: '100px',
                   width: '100px',
-                  border: '1px solid var(--lp-color-border)',
+                  border: '1px solid var(--lp-color-border-ui-primary)',
                 }}
               ></div>
             </li>

@@ -4,9 +4,9 @@ describe('Modal', () => {
   it('renders', () => {
     cy.mount(
       <Modal>
-        <ModalHeader>Modal</ModalHeader>
+        <ModalHeader title="Title" />
         <ModalBody>Body</ModalBody>
-        <ModalFooter>Footer</ModalFooter>
+        <ModalFooter primaryButton={<button>Click me</button>} />
       </Modal>
     );
     cy.getByTestId('modal').should('be.visible');
@@ -14,10 +14,10 @@ describe('Modal', () => {
 
   it('is accessible', () => {
     cy.mount(
-      <Modal withCloseButton>
-        <ModalHeader>Modal</ModalHeader>
+      <Modal>
+        <ModalHeader title="Title" withCloseButton />
         <ModalBody>Body</ModalBody>
-        <ModalFooter>Footer</ModalFooter>
+        <ModalFooter primaryButton={<button>Click me</button>} />
       </Modal>
     );
     cy.checkA11y();
@@ -27,9 +27,9 @@ describe('Modal', () => {
     const onCancelSpy = cy.spy().as('onCancelSpy');
     cy.mount(
       <Modal onCancel={onCancelSpy}>
-        <ModalHeader>Modal</ModalHeader>
+        <ModalHeader title="Title" />
         <ModalBody>Body</ModalBody>
-        <ModalFooter>Footer</ModalFooter>
+        <ModalFooter primaryButton={<button>Click me</button>} />
       </Modal>
     );
 

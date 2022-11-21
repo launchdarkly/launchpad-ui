@@ -1,5 +1,54 @@
 # @launchpad-ui/split-button
 
+## 0.6.25
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @launchpad-ui/popover@0.8.22
+  - @launchpad-ui/dropdown@0.6.6
+  - @launchpad-ui/tooltip@0.6.23
+
+## 0.6.24
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @launchpad-ui/button@0.7.10
+  - @launchpad-ui/dropdown@0.6.5
+
+## 0.6.23
+
+### Patch Changes
+
+- Updated dependencies [[`d80297f`](https://github.com/launchdarkly/launchpad-ui/commit/d80297fad893c9db566ed029e302702d5f245a98)]:
+  - @launchpad-ui/popover@0.8.21
+  - @launchpad-ui/tokens@0.3.1
+  - @launchpad-ui/tooltip@0.6.22
+  - @launchpad-ui/dropdown@0.6.4
+  - @launchpad-ui/button@0.7.9
+
+## 0.6.22
+
+### Patch Changes
+
+- Updated dependencies [[`baeacd7`](https://github.com/launchdarkly/launchpad-ui/commit/baeacd7b80d60f36f4962f090d87a0009f28b44e)]:
+  - @launchpad-ui/tokens@0.3.0
+  - @launchpad-ui/button@0.7.8
+  - @launchpad-ui/dropdown@0.6.3
+  - @launchpad-ui/popover@0.8.20
+  - @launchpad-ui/tooltip@0.6.21
+
+## 0.6.21
+
+### Patch Changes
+
+- [#529](https://github.com/launchdarkly/launchpad-ui/pull/529) [`50898e9`](https://github.com/launchdarkly/launchpad-ui/commit/50898e94d7166651118da8b57526f4e1eda917f6) Thanks [@apucacao](https://github.com/apucacao)! - feat(button): Only show focus styles when necessary
+
+- Updated dependencies [[`50898e9`](https://github.com/launchdarkly/launchpad-ui/commit/50898e94d7166651118da8b57526f4e1eda917f6)]:
+  - @launchpad-ui/button@0.7.7
+  - @launchpad-ui/dropdown@0.6.2
+
 ## 0.6.20
 
 ### Patch Changes

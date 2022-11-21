@@ -1,4 +1,5 @@
-import type { StoryObj, StoryFn } from '@storybook/react';
+import type { StoryObj } from '@storybook/react';
+import type { ReactNode } from 'react';
 
 import { Slider } from '../src';
 
@@ -12,14 +13,14 @@ export default {
     },
   },
   decorators: [
-    (StoryFn: StoryFn) => (
+    (storyFn: () => ReactNode) => (
       <div
         style={{
           height: '100px',
           padding: '1rem 0',
         }}
       >
-        <StoryFn />
+        {storyFn()}
       </div>
     ),
   ],

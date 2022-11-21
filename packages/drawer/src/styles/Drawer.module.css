@@ -34,7 +34,7 @@
 }
 
 .content {
-  background-color: var(--lp-color-background);
+  background-color: var(--lp-color-bg-ui-primary);
   position: absolute;
   top: 0;
   bottom: 0;

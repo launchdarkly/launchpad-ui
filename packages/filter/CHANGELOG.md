@@ -1,5 +1,65 @@
 # @launchpad-ui/filter
 
+## 0.4.31
+
+### Patch Changes
+
+- [`6f95e6f`](https://github.com/launchdarkly/launchpad-ui/commit/6f95e6f608459ec4e812ae36e79cad0e128db377) Thanks [@renovate[bot]](https://github.com/renovate%5Bbot%5D)! - Update dependencies
+
+- Updated dependencies [[`6f95e6f`](https://github.com/launchdarkly/launchpad-ui/commit/6f95e6f608459ec4e812ae36e79cad0e128db377)]:
+  - @launchpad-ui/menu@0.6.30
+  - @launchpad-ui/dropdown@0.6.6
+  - @launchpad-ui/tooltip@0.6.23
+
+## 0.4.30
+
+### Patch Changes
+
+- Updated dependencies [[`3a11bcf`](https://github.com/launchdarkly/launchpad-ui/commit/3a11bcf9085da9058c716841bf5d6b03ef5459a9), [`d1526c2`](https://github.com/launchdarkly/launchpad-ui/commit/d1526c21a4d637ce67d13c65dd8d34c4797d44ec)]:
+  - @launchpad-ui/icons@0.6.3
+  - @launchpad-ui/button@0.7.10
+  - @launchpad-ui/dropdown@0.6.5
+  - @launchpad-ui/menu@0.6.29
+
+## 0.4.29
+
+### Patch Changes
+
+- Updated dependencies [[`3b0f5bb`](https://github.com/launchdarkly/launchpad-ui/commit/3b0f5bb1d4747bd83a2bdb1119df0b75d5ac7020)]:
+  - @launchpad-ui/menu@0.6.28
+
+## 0.4.28
+
+### Patch Changes
+
+- Updated dependencies [[`d80297f`](https://github.com/launchdarkly/launchpad-ui/commit/d80297fad893c9db566ed029e302702d5f245a98)]:
+  - @launchpad-ui/tokens@0.3.1
+  - @launchpad-ui/tooltip@0.6.22
+  - @launchpad-ui/dropdown@0.6.4
+  - @launchpad-ui/menu@0.6.27
+  - @launchpad-ui/button@0.7.9
+  - @launchpad-ui/icons@0.6.2
+
+## 0.4.27
+
+### Patch Changes
+
+- Updated dependencies [[`baeacd7`](https://github.com/launchdarkly/launchpad-ui/commit/baeacd7b80d60f36f4962f090d87a0009f28b44e)]:
+  - @launchpad-ui/tokens@0.3.0
+  - @launchpad-ui/button@0.7.8
+  - @launchpad-ui/dropdown@0.6.3
+  - @launchpad-ui/icons@0.6.1
+  - @launchpad-ui/menu@0.6.26
+  - @launchpad-ui/tooltip@0.6.21
+
+## 0.4.26
+
+### Patch Changes
+
+- Updated dependencies [[`50898e9`](https://github.com/launchdarkly/launchpad-ui/commit/50898e94d7166651118da8b57526f4e1eda917f6)]:
+  - @launchpad-ui/button@0.7.7
+  - @launchpad-ui/dropdown@0.6.2
+
 ## 0.4.25
 
 ### Patch Changes

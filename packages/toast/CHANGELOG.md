@@ -1,5 +1,35 @@
 # @launchpad-ui/toast
 
+## 0.2.11
+
+### Patch Changes
+
+- Updated dependencies [[`3a11bcf`](https://github.com/launchdarkly/launchpad-ui/commit/3a11bcf9085da9058c716841bf5d6b03ef5459a9), [`d1526c2`](https://github.com/launchdarkly/launchpad-ui/commit/d1526c21a4d637ce67d13c65dd8d34c4797d44ec)]:
+  - @launchpad-ui/icons@0.6.3
+
+## 0.2.10
+
+### Patch Changes
+
+- [#571](https://github.com/launchdarkly/launchpad-ui/pull/571) [`896ee74`](https://github.com/launchdarkly/launchpad-ui/commit/896ee748dbf0f9a78110650761d89204eaf57c32) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Snackbar]: Add `success` variant and trigger onDismiss when `cta` is clicked.
+  [Toast]: Style anchor elements properly when used in content.
+
+## 0.2.9
+
+### Patch Changes
+
+- Updated dependencies [[`d80297f`](https://github.com/launchdarkly/launchpad-ui/commit/d80297fad893c9db566ed029e302702d5f245a98)]:
+  - @launchpad-ui/tokens@0.3.1
+  - @launchpad-ui/icons@0.6.2
+
+## 0.2.8
+
+### Patch Changes
+
+- Updated dependencies [[`baeacd7`](https://github.com/launchdarkly/launchpad-ui/commit/baeacd7b80d60f36f4962f090d87a0009f28b44e)]:
+  - @launchpad-ui/tokens@0.3.0
+  - @launchpad-ui/icons@0.6.1
+
 ## 0.2.7
 
 ### Patch Changes

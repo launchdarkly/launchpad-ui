@@ -1,7 +1,5 @@
-import type { StoryContext } from '@storybook/addons';
-import type { Args } from '@storybook/api';
-// @ts-ignore
-import type { DecoratorFn, ReactFramework, StoryFn } from '@storybook/react';
+import type { AnnotatedStoryFn, StoryContext } from '@storybook/types';
+import type { Args, Decorator, ReactRenderer } from '@storybook/react';
 import { Fragment } from 'react';
 import merge from 'deepmerge';
 
@@ -14,16 +12,16 @@ export const createWithClassesDecorator = (
   classes: string[] = [],
   renderFunc?: (
     props: Args & { className?: string },
-    originalStoryFn: StoryFn<ReactFramework>,
-    context: StoryContext<ReactFramework>
+    originalStoryFn: AnnotatedStoryFn<ReactRenderer>,
+    context: StoryContext<ReactRenderer>
   ) => JSX.Element
-): DecoratorFn => {
-  // Create a function of type DecoratorFn
-  const withStateDecorator: DecoratorFn = (storyFn, Context) => {
+): Decorator => {
+  // Create a function of type Decorator
+  const withStateDecorator: Decorator = (storyFn, Context) => {
     const pseudoStates = classes || [];
     const { viewMode, args, name, component } = Context;
     // This decorator is explicitly made for react
-    const originalStoryFn = Context.originalStoryFn;
+    const originalStoryFn = Context.originalStoryFn as AnnotatedStoryFn<ReactRenderer>;
     // Just render the component without decoration if viewing the docs
     if (viewMode === 'docs') {
       return storyFn();
@@ -69,4 +67,10 @@ export enum PseudoClasses {
 
 export const sleep = (ms: number) => {
   return new Promise((resolve) => setTimeout(resolve, ms));
+};
+
+export const REACT_NODE_TYPE_DOCS = {
+  summary: 'ReactNode',
+  detail:
+    "While these docs only allow you to pass a string that is rendered into a button's text, you can pass the prop any ReactNode.",
 };

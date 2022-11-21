@@ -1,5 +1,24 @@
 # @launchpad-ui/tokens
 
+## 0.3.1
+
+### Patch Changes
+
+- [#567](https://github.com/launchdarkly/launchpad-ui/pull/567) [`d80297f`](https://github.com/launchdarkly/launchpad-ui/commit/d80297fad893c9db566ed029e302702d5f245a98) Thanks [@Niznikr](https://github.com/Niznikr)! - [Tokens] Update bg and text tokens
+
+## 0.3.0
+
+### Minor Changes
+
+- [#555](https://github.com/launchdarkly/launchpad-ui/pull/555) [`baeacd7`](https://github.com/launchdarkly/launchpad-ui/commit/baeacd7b80d60f36f4962f090d87a0009f28b44e) Thanks [@Niznikr](https://github.com/Niznikr)! - [Tokens] Update alias tokens to match schema `namespace-type-category-role-variant-state`:
+
+  - Update components to use new tokens and ensure consistency
+  - Set dark mode values to support both themes
+  - Categories are bg, border, fill, shadow, text
+  - Roles are feedback, interactive, overlay, ui
+  - Variants are primary, secondary, tertiary, destructive, error, info, success, warning
+  - States are active, disabled, focus, hover
+
 ## 0.2.0
 
 ### Minor Changes

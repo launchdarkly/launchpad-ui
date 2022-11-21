@@ -1,4 +1,5 @@
-import type { StoryObj, StoryFn } from '@storybook/react';
+import type { StoryObj } from '@storybook/react';
+import type { ReactNode } from 'react';
 
 import { Menu, MenuItem } from '@launchpad-ui/menu';
 import { userEvent, within } from '@storybook/testing-library';
@@ -17,7 +18,7 @@ export default {
     },
   },
   decorators: [
-    (StoryFn: StoryFn) => (
+    (storyFn: () => ReactNode) => (
       <div
         style={{
           position: 'relative',
@@ -28,7 +29,7 @@ export default {
           justifyContent: 'center',
         }}
       >
-        <StoryFn />
+        {storyFn()}
       </div>
     ),
   ],
