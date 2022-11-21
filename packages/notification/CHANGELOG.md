@@ -1,5 +1,13 @@
 # @launchpad-ui/notification
 
+## 0.5.25
+
+### Patch Changes
+
+- Updated dependencies [[`6f95e6f`](https://github.com/launchdarkly/launchpad-ui/commit/6f95e6f608459ec4e812ae36e79cad0e128db377)]:
+  - @launchpad-ui/focus-trap@0.1.2
+  - @launchpad-ui/clipboard@0.8.24
+
 ## 0.5.24
 
 ### Patch Changes
