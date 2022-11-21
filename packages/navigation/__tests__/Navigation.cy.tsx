@@ -35,7 +35,7 @@ describe('Navigation', () => {
         },
       ])
     );
-    cy.get('[data-test-id="navigation"]').should('be.visible');
+    cy.getByTestId('navigation').should('be.visible');
   });
 
   it('is accessible', () => {
@@ -81,7 +81,7 @@ describe('Navigation', () => {
         ])
       );
 
-      cy.get('[data-test-id="navigation-menu-button"]').should('be.visible');
+      cy.getByTestId('navigation-menu-button').should('be.visible');
     });
   });
 });

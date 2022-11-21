@@ -1,5 +1,90 @@
 # @launchpad-ui/progress-bubbles
 
+## 0.5.23
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @launchpad-ui/popover@0.8.22
+
+## 0.5.22
+
+### Patch Changes
+
+- Updated dependencies [[`d80297f`](https://github.com/launchdarkly/launchpad-ui/commit/d80297fad893c9db566ed029e302702d5f245a98)]:
+  - @launchpad-ui/popover@0.8.21
+  - @launchpad-ui/tokens@0.3.1
+
+## 0.5.21
+
+### Patch Changes
+
+- Updated dependencies [[`baeacd7`](https://github.com/launchdarkly/launchpad-ui/commit/baeacd7b80d60f36f4962f090d87a0009f28b44e)]:
+  - @launchpad-ui/tokens@0.3.0
+  - @launchpad-ui/popover@0.8.20
+
+## 0.5.20
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @launchpad-ui/popover@0.8.19
+
+## 0.5.19
+
+### Patch Changes
+
+- Updated dependencies [[`d87e683`](https://github.com/launchdarkly/launchpad-ui/commit/d87e68388354cd5318e60344f8d855bd27521d19)]:
+  - @launchpad-ui/popover@0.8.18
+
+## 0.5.18
+
+### Patch Changes
+
+- Updated dependencies [[`4090f93`](https://github.com/launchdarkly/launchpad-ui/commit/4090f93ba98ea6f75a7f9f7b902fafcfb9b005b3)]:
+  - @launchpad-ui/tokens@0.2.0
+  - @launchpad-ui/popover@0.8.17
+
+## 0.5.17
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @launchpad-ui/popover@0.8.16
+
+## 0.5.16
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @launchpad-ui/popover@0.8.15
+
+## 0.5.15
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @launchpad-ui/popover@0.8.14
+
+## 0.5.14
+
+### Patch Changes
+
+- Updated dependencies [[`1e5796b`](https://github.com/launchdarkly/launchpad-ui/commit/1e5796b7b99a2704bba22623a518ff7e8776ebf8)]:
+  - @launchpad-ui/popover@0.8.13
+
+## 0.5.13
+
+### Patch Changes
+
+- [#506](https://github.com/launchdarkly/launchpad-ui/pull/506) [`5e82186`](https://github.com/launchdarkly/launchpad-ui/commit/5e82186a765012cf79501dccf2a3305e66b16fc6) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Alert] Remove unneeded global pseudoclasses
+  [Clipboard] Remove unneeded global pseudoclasses
+  [Popover] Remove unneeded global pseudoclasses
+  [ProgressBubbles] Remove unneeded global pseudoclasses
+  [Tooltip] Remove unneeded global pseudoclasses
+- Updated dependencies [[`5e82186`](https://github.com/launchdarkly/launchpad-ui/commit/5e82186a765012cf79501dccf2a3305e66b16fc6)]:
+  - @launchpad-ui/popover@0.8.12
+
 ## 0.5.12
 
 ### Patch Changes
@@ -341,7 +426,7 @@
 
 ### Minor Changes
 
-- [#192](https://github.com/launchdarkly/launchpad-ui/pull/192) [`eb6e44c`](https://github.com/launchdarkly/launchpad-ui/commit/eb6e44c7853a7263511cdf7aeaeb0d83a83d78b9) Thanks [@chasedarkly](https://github.com/chasedarkly)! - Change from string literal union type to `PopoverInteractionKind` enum type used across Launchpad:
+- [#192](https://github.com/launchdarkly/launchpad-ui/pull/192) [`eb6e44c`](https://github.com/launchdarkly/launchpad-ui/commit/eb6e44c7853a7263511cdf7aeaeb0d83a83d78b9) Thanks [@chasedarkly](https://github.com/chasedarkly)! - Change from string literal union type to `PopoverInteractionKind` enum type used across LaunchPad:
 
   - [Popover] Add and export `PopoverInteractionKind` type
   - [ProgressBubbles] Consume `PopoverInteractionKind`

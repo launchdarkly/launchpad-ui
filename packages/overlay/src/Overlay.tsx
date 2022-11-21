@@ -1,6 +1,6 @@
 import type { KeyboardEvent, MouseEvent as ReactMouseEvent, ReactNode } from 'react';
 
-import { Portal } from '@launchpad-ui/modal';
+import { Portal } from '@launchpad-ui/portal';
 import { useCallback, useEffect, useRef, useState } from 'react';
 
 type OverlayProps = {
@@ -90,7 +90,7 @@ const Overlay = ({
     }
 
     if (isModal) {
-      document.body.classList.add('has-modal');
+      document.body.classList.add('has-overlay');
     }
   }, [handleDocumentClick, handleDocumentFocus, canOutsideClickClose, enforceFocus, isModal]);
 
@@ -99,7 +99,7 @@ const Overlay = ({
     document.removeEventListener('focus', handleDocumentFocus, true);
 
     if (isModal) {
-      document.body.classList.remove('has-modal');
+      document.body.classList.remove('has-overlay');
     }
   }, [handleDocumentClick, handleDocumentFocus, isModal]);
 
@@ -117,7 +117,7 @@ const Overlay = ({
     };
   }, [isOpen, handleOverlayOpen, handleOverlayClose, hasEverOpened]);
 
-  const handleKeyDown = (event: KeyboardEvent<HTMLInputElement>) => {
+  const handleKeyDown = (event: KeyboardEvent) => {
     if (canEscapeKeyClose && event.key === 'Escape') {
       typeof onClose === 'function' && onClose(event);
       event.preventDefault();
@@ -129,7 +129,7 @@ const Overlay = ({
   }
 
   return (
-    <Portal onKeyDown={handleKeyDown} containerRef={containerElement}>
+    <Portal onKeyDown={handleKeyDown} ref={containerElement}>
       {isOpen ? children : null}
     </Portal>
   );

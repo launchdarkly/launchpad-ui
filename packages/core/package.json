@@ -1,11 +1,11 @@
 {
   "name": "@launchpad-ui/core",
-  "version": "0.16.9",
+  "version": "0.24.5",
   "status": "beta",
   "publishConfig": {
     "access": "public"
   },
-  "description": "Contains all Launchpad design system packages.",
+  "description": "Contains all LaunchPad design system packages.",
   "files": [
     "dist"
   ],
@@ -38,6 +38,7 @@
     "@launchpad-ui/chip": "workspace:~",
     "@launchpad-ui/clipboard": "workspace:~",
     "@launchpad-ui/counter": "workspace:~",
+    "@launchpad-ui/drawer": "workspace:~",
     "@launchpad-ui/dropdown": "workspace:~",
     "@launchpad-ui/filter": "workspace:~",
     "@launchpad-ui/focus-trap": "workspace:~",
@@ -51,6 +52,7 @@
     "@launchpad-ui/overlay": "workspace:~",
     "@launchpad-ui/pagination": "workspace:~",
     "@launchpad-ui/popover": "workspace:~",
+    "@launchpad-ui/portal": "workspace:~",
     "@launchpad-ui/progress": "workspace:~",
     "@launchpad-ui/progress-bubbles": "workspace:~",
     "@launchpad-ui/slider": "workspace:~",

@@ -5,18 +5,18 @@ backround support in CollapsibleAlert */
   --reskin-border-color-subtle: hsl(210 16.7% 45.3% / 0.1);
   --reskin-text-color: hsl(240 2.2% 35.3%);
   --CollapsibleAlert-Table-color-border: var(--reskin-border-color-subtle);
-  --CollapsibleAlert-color-link: var(--color-gray-700);
-  --CollapsibleAlert-button-color-outline-focus: var(--color-black-200);
-  --CollapsibleAlert-button-color-text: var(--color-gray-800);
-  --CollapsibleAlert-button-color-text-active: var(--color-black-200);
-  --CollapsibleAlert-icon-color: var(--color-gray-800);
+  --CollapsibleAlert-color-link: var(--lp-color-gray-700);
+  --CollapsibleAlert-button-color-outline-focus: var(--lp-color-black-200);
+  --CollapsibleAlert-button-color-text: var(--lp-color-gray-800);
+  --CollapsibleAlert-button-color-text-active: var(--lp-color-black-200);
+  --CollapsibleAlert-icon-color: var(--lp-color-gray-800);
 }
 
-:global(.CollapsibleAlert).CollapsibleAlert {
+.CollapsibleAlert {
   margin-top: 0.8rem;
 }
 
-:global(.CollapsibleAlert).CollapsibleAlert :global(.Alert-content) {
+.CollapsibleAlert :global(.Alert-content) {
   width: 100%;
 }
 
@@ -32,7 +32,7 @@ backround support in CollapsibleAlert */
   color: var(--CollapsibleAlert-button-color-text);
   background-color: transparent;
   border: hsl(0 0% 0% / 0);
-  border-radius: var(--border-radius);
+  border-radius: var(--lp-border-radius);
   cursor: pointer;
 
   &:focus {
@@ -78,7 +78,7 @@ https://www.scottohara.me/blog/2017/04/14/inclusively-hidden.html
   transition: visibility 0.5s, max-height 0.5s, opacity 0.5s, transform 0.5s;
   transition-timing-function: ease-in-out;
 
-  & > :global(a) {
+  & > a {
     color: var(--CollapsibleAlert-color-link);
 
     &:hover {
@@ -91,7 +91,7 @@ https://www.scottohara.me/blog/2017/04/14/inclusively-hidden.html
     }
 
     &:active {
-      color: var(--color-text);
+      color: var(--lp-color-text-ui-primary);
       box-shadow: none;
       text-decoration: underline;
     }
@@ -117,7 +117,7 @@ https://www.scottohara.me/blog/2017/04/14/inclusively-hidden.html
 }
 
 /* animate content container when button toggled */
-:global([aria-expanded='true']) + .CollapsibleAlert--contentContainer {
+[aria-expanded='true'] + .CollapsibleAlert--contentContainer {
   margin-top: 0.4rem;
   visibility: visible;
   max-height: 31.25rem;

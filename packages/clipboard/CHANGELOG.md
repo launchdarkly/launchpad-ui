@@ -1,5 +1,104 @@
 # @launchpad-ui/clipboard
 
+## 0.8.24
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @launchpad-ui/tooltip@0.6.23
+
+## 0.8.23
+
+### Patch Changes
+
+- Updated dependencies [[`3a11bcf`](https://github.com/launchdarkly/launchpad-ui/commit/3a11bcf9085da9058c716841bf5d6b03ef5459a9), [`d1526c2`](https://github.com/launchdarkly/launchpad-ui/commit/d1526c21a4d637ce67d13c65dd8d34c4797d44ec)]:
+  - @launchpad-ui/icons@0.6.3
+
+## 0.8.22
+
+### Patch Changes
+
+- Updated dependencies [[`d80297f`](https://github.com/launchdarkly/launchpad-ui/commit/d80297fad893c9db566ed029e302702d5f245a98)]:
+  - @launchpad-ui/tokens@0.3.1
+  - @launchpad-ui/tooltip@0.6.22
+  - @launchpad-ui/icons@0.6.2
+
+## 0.8.21
+
+### Patch Changes
+
+- Updated dependencies [[`baeacd7`](https://github.com/launchdarkly/launchpad-ui/commit/baeacd7b80d60f36f4962f090d87a0009f28b44e)]:
+  - @launchpad-ui/tokens@0.3.0
+  - @launchpad-ui/icons@0.6.1
+  - @launchpad-ui/tooltip@0.6.21
+
+## 0.8.20
+
+### Patch Changes
+
+- Updated dependencies [[`0deac4f`](https://github.com/launchdarkly/launchpad-ui/commit/0deac4f7cb58781e56d864f50b659f5c885339dc)]:
+  - @launchpad-ui/icons@0.6.0
+  - @launchpad-ui/tooltip@0.6.20
+
+## 0.8.19
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @launchpad-ui/tooltip@0.6.19
+
+## 0.8.18
+
+### Patch Changes
+
+- Updated dependencies [[`4090f93`](https://github.com/launchdarkly/launchpad-ui/commit/4090f93ba98ea6f75a7f9f7b902fafcfb9b005b3)]:
+  - @launchpad-ui/tokens@0.2.0
+  - @launchpad-ui/icons@0.5.9
+  - @launchpad-ui/tooltip@0.6.18
+
+## 0.8.17
+
+### Patch Changes
+
+- [#505](https://github.com/launchdarkly/launchpad-ui/pull/505) [`66dd7a6`](https://github.com/launchdarkly/launchpad-ui/commit/66dd7a6174c95a92ed4b49fe3398c1ba5b624731) Thanks [@Niznikr](https://github.com/Niznikr)! - [Alert, Banner, Clipboard, Snackbar, Toast] Remove base classes
+
+- Updated dependencies []:
+  - @launchpad-ui/tooltip@0.6.17
+
+## 0.8.16
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @launchpad-ui/tooltip@0.6.16
+
+## 0.8.15
+
+### Patch Changes
+
+- Updated dependencies [[`b7302a3`](https://github.com/launchdarkly/launchpad-ui/commit/b7302a3015591df0b24e19a4444029c21d0cf9de)]:
+  - @launchpad-ui/icons@0.5.8
+  - @launchpad-ui/tooltip@0.6.15
+
+## 0.8.14
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @launchpad-ui/tooltip@0.6.14
+
+## 0.8.13
+
+### Patch Changes
+
+- [#506](https://github.com/launchdarkly/launchpad-ui/pull/506) [`5e82186`](https://github.com/launchdarkly/launchpad-ui/commit/5e82186a765012cf79501dccf2a3305e66b16fc6) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Alert] Remove unneeded global pseudoclasses
+  [Clipboard] Remove unneeded global pseudoclasses
+  [Popover] Remove unneeded global pseudoclasses
+  [ProgressBubbles] Remove unneeded global pseudoclasses
+  [Tooltip] Remove unneeded global pseudoclasses
+- Updated dependencies [[`5e82186`](https://github.com/launchdarkly/launchpad-ui/commit/5e82186a765012cf79501dccf2a3305e66b16fc6)]:
+  - @launchpad-ui/tooltip@0.6.13
+
 ## 0.8.12
 
 ### Patch Changes

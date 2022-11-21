@@ -8,14 +8,14 @@
   --hsl-success-bg-color-alpha10: hsl(142.1 70.9% 39% / 0.1);
   --hsl-warning-bg-color-alpha10: hsl(43.1 100% 37.6% / 0.1);
   --hsl-error-bg-color-alpha10: hsl(0 75.5% 61.6% / 0.1);
-  --reskin-success-green-light: var(--color-system-green-200);
-  --reskin-success-green-base: var(--color-system-green-700);
-  --reskin-info-blue-light: var(--color-blue-200);
-  --reskin-info-blue-base: var(--color-blue-700);
-  --reskin-warn-gold-light: var(--color-system-yellow-200);
-  --reskin-warn-gold-base: var(--color-system-yellow-700);
-  --reskin-error-red-light: var(--color-system-red-200);
-  --reskin-error-red-base: var(--color-system-red-700);
+  --reskin-success-green-light: var(--lp-color-bg-feedback-success);
+  --reskin-success-green-base: var(--lp-color-border-feedback-success);
+  --reskin-info-blue-light: var(--lp-color-bg-feedback-info);
+  --reskin-info-blue-base: var(--lp-color-border-feedback-info);
+  --reskin-warn-gold-light: var(--lp-color-bg-feedback-warning);
+  --reskin-warn-gold-base: var(--lp-color-border-feedback-warning);
+  --reskin-error-red-light: var(--lp-color-bg-feedback-error);
+  --reskin-error-red-base: var(--lp-color-border-feedback-error);
 
   /* TODO: name better, improve a11y support — convert to rem once we migrate */
   --box-shadow-0x2y-blur8-sp1-4prc-black: 0 8px 2px -1px hsl(0 0% 12.9% / 0.04);
@@ -36,10 +36,16 @@
   --Alert-icon-color-success: var(--reskin-success-green-base);
   --Alert-icon-color-warning: var(--reskin-warn-gold-base);
   --Alert-icon-color-error: var(--reskin-error-red-base);
-  --Alert-text-color: var(--color-text-subtle-primary);
+  --Alert-text-color: var(--lp-color-text-feedback-primary);
 }
 
-:global(.Alert).Alert {
+:root[data-theme='dark'] {
+  .Alert.Alert--inline {
+    color: var(--lp-color-gray-100);
+  }
+}
+
+.Alert {
   position: relative;
   display: flex;
   gap: 1.4rem;
@@ -49,7 +55,7 @@
   line-height: 1.45;
   white-space: normal;
   width: 100%;
-  background-color: var(--color-background);
+  background-color: var(--lp-color-bg-ui-primary);
   color: var(--Alert-text-color);
   box-sizing: border-box;
   border-radius: 2px;
@@ -59,12 +65,12 @@
   margin-top: 0;
   margin-bottom: 0.4rem;
   font-size: 1.6rem;
-  color: var(--color-black-100);
-  font-weight: var(--font-weight-medium);
+  color: var(--lp-color-black-100);
+  font-weight: var(--lp-font-weight-medium);
   line-height: 1.25;
 }
 
-:global(.Alert).Alert :global(.ButtonGroup) {
+.Alert :global(.ButtonGroup) {
   margin-top: 1.2rem;
 }
 
@@ -72,6 +78,7 @@
   line-height: 1.2857;
 }
 
+/* stylelint-disable-next-line no-descending-specificity */
 .Alert.Alert--inline {
   background-color: unset;
   padding: 0;
@@ -106,39 +113,39 @@
 
 /* Alert kind variants */
 
-.Alert.Alert--info .Alert-icon :global(svg) {
+.Alert.Alert--info .Alert-icon svg {
   fill: var(--reskin-info-blue-base);
 }
 
-.Alert.Alert--success .Alert-icon :global(svg) {
+.Alert.Alert--success .Alert-icon svg {
   fill: var(--reskin-success-green-base);
 }
 
-.Alert.Alert--warning .Alert-icon :global(svg) {
+.Alert.Alert--warning .Alert-icon svg {
   fill: var(--reskin-warn-gold-base);
 }
 
-.Alert.Alert--error .Alert-icon :global(svg) > :global(path) {
+.Alert.Alert--error .Alert-icon svg > path {
   fill: var(--reskin-error-red-base);
 }
 
 .Alert.Alert--info.Alert--bordered {
-  border: var(--border-width-1) solid var(--Alert-color-border-info);
+  border: var(--lp-border-width-200) solid var(--Alert-color-border-info);
   background-color: var(--Alert-color-background-info);
 }
 
 .Alert.Alert--success.Alert--bordered {
-  border: var(--border-width-1) solid var(--Alert-color-border-success);
+  border: var(--lp-border-width-200) solid var(--Alert-color-border-success);
   background-color: var(--Alert-color-background-success);
 }
 
 .Alert.Alert--warning.Alert--bordered {
-  border: var(--border-width-1) solid var(--Alert-color-border-warning);
+  border: var(--lp-border-width-200) solid var(--Alert-color-border-warning);
   background-color: var(--Alert-color-background-warning);
 }
 
 .Alert.Alert--error.Alert--bordered {
-  border: var(--border-width-1) solid var(--Alert-color-border-error);
+  border: var(--lp-border-width-200) solid var(--Alert-color-border-error);
   background-color: var(--Alert-color-background-error);
 }
 
@@ -154,7 +161,7 @@
 }
 
 .Alert-content :global(a:not(.Button)) {
-  color: var(--color-link);
+  color: var(--lp-color-blue-600);
 
   &:hover {
     text-decoration: none;
@@ -166,7 +173,7 @@
   }
 
   &:active {
-    color: var(--color-link);
+    color: var(--lp-color-blue-600);
     box-shadow: none;
     text-decoration: underline;
   }
@@ -177,7 +184,7 @@
   }
 }
 
-.Alert-content :global(ul) {
+.Alert-content ul {
   margin: 0 0 0.5em;
 }
 
@@ -185,8 +192,8 @@
   margin-bottom: 0;
 }
 
-.Alert-content :global(p),
-.Alert :global(ul) {
+.Alert-content p,
+.Alert ul {
   list-style-position: outside;
   margin: 0 0 0.5em;
 }

@@ -1,6 +1,6 @@
 {
   "name": "@launchpad-ui/form",
-  "version": "0.6.9",
+  "version": "0.6.18",
   "status": "beta",
   "publishConfig": {
     "access": "public"
@@ -34,7 +34,7 @@
   "dependencies": {
     "@launchpad-ui/icons": "workspace:~",
     "@launchpad-ui/tokens": "workspace:~",
-    "@react-aria/visually-hidden": "^3.5.0",
+    "@react-aria/visually-hidden": "^3.6.0",
     "classix": "^2.1.13"
   },
   "peerDependencies": {

@@ -1,23 +1,4 @@
 color:
-  yellow:
-    100:
-      value: hsl(66, 100%, 98%)
-    200:
-      value: hsl(66, 100%, 94.1%)
-    300:
-      value: hsl(66, 100%, 84.3%)
-    400:
-      value: hsl(66.1, 100%, 76.7%)
-    500:
-      value: hsl(66, 100%, 61%)
-    600:
-      value: hsl(66, 69%, 52%)
-    700:
-      value: hsl(66, 63.9%, 45.7%)
-    800:
-      value: hsl(66, 64.4%, 39.6%)
-    900:
-      value: hsl(66.1, 63.7%, 33.5%)
   blue:
     100:
       value: hsl(228, 100%, 98%)
@@ -37,25 +18,6 @@ color:
       value: hsl(231.8, 59.6%, 40.8%)
     900:
       value: hsl(231.4, 60%, 34.3%)
-  pink:
-    100:
-      value: hsl(342, 100%, 98%)
-    200:
-      value: hsl(344, 100%, 94.1%)
-    300:
-      value: hsl(344.3, 100%, 84.3%)
-    400:
-      value: hsl(344.7, 100%, 70.8%)
-    500:
-      value: hsl(344.6, 100%, 61%)
-    600:
-      value: hsl(344.7, 69%, 52%)
-    700:
-      value: hsl(344.7, 63.9%, 45.7%)
-    800:
-      value: hsl(344.3, 64.4%, 39.6%)
-    900:
-      value: hsl(344.6, 63.7%, 33.5%)
   cyan:
     100:
       value: hsl(186.7, 81.8%, 97.8%)
@@ -75,6 +37,25 @@ color:
       value: hsl(190.1, 59.8%, 39%)
     900:
       value: hsl(190.1, 59.8%, 33.1%)
+  pink:
+    100:
+      value: hsl(342, 100%, 98%)
+    200:
+      value: hsl(344, 100%, 94.1%)
+    300:
+      value: hsl(344.3, 100%, 84.3%)
+    400:
+      value: hsl(344.7, 100%, 70.8%)
+    500:
+      value: hsl(344.6, 100%, 61%)
+    600:
+      value: hsl(344.7, 69%, 52%)
+    700:
+      value: hsl(344.7, 63.9%, 45.7%)
+    800:
+      value: hsl(344.3, 64.4%, 39.6%)
+    900:
+      value: hsl(344.6, 63.7%, 33.5%)
   purple:
     100:
       value: hsl(274.3, 63.6%, 97.8%)
@@ -94,6 +75,25 @@ color:
       value: hsl(275.5, 47.7%, 38.2%)
     900:
       value: hsl(275.7, 47.9%, 32.4%)
+  yellow:
+    100:
+      value: hsl(66, 100%, 98%)
+    200:
+      value: hsl(66, 100%, 94.1%)
+    300:
+      value: hsl(66, 100%, 84.3%)
+    400:
+      value: hsl(66.1, 100%, 76.7%)
+    500:
+      value: hsl(66, 100%, 61%)
+    600:
+      value: hsl(66, 69%, 52%)
+    700:
+      value: hsl(66, 63.9%, 45.7%)
+    800:
+      value: hsl(66, 64.4%, 39.6%)
+    900:
+      value: hsl(66.1, 63.7%, 33.5%)
   white:
     100:
       value: hsl(0, 0%, 97.3%)
@@ -123,6 +123,8 @@ color:
       value: hsl(0, 0%, 12.9%)
     300:
       value: hsl(0, 0%, 9.8%)
+    400:
+      value: hsl(0, 0%, 7%)
     ' ':
       value: hsl(0, 0%, 0%)
   system:
@@ -183,45 +185,209 @@ color:
         value: hsl(45.1, 57.4%, 38.6%)
       900:
         value: hsl(45, 57.8%, 32.5%)
-  background:
-    ' ':
-      value: '{ color.white. .value }'
-      dark: '{ color.black. .value }'
-    hover:
-      value: '{ color.gray.100.value }'
-      dark: '{ color.gray.700.value }'
-    active:
-      value: '{ color.gray.200.value }'
-      dark: '{ color.gray.800.value }'
-    field:
-      value: '{ color.white. .value }'
-      dark: '{ color.gray.800.value }'
-  border:
-    value: '{ color.gray.200.value }'
-    dark: '{ color.gray.800.value }'
-  focus:
-    value: '{ color.blue.500.value }'
-  heading:
-    value: '{ color.black.300.value }'
-    dark: '{ color.gray.100.value }'
-  link:
-    ' ':
-      value: '{ color.blue.600.value }'
-      dark: '{ color.white. .value }'
-    active:
-      value: '{ color.purple.600.value }'
-      dark: '{ color.purple.300.value }'
-  text:
-    ' ':
-      value: '{ color.black.300.value }'
-      dark: '{ color.white. .value }'
-    inverse:
-      value: '{ color.white. .value }'
-      dark: '{ color.black.300.value }'
-    subtle:
+
+  # Alias tokens
+
+  bg:
+    feedback:
       primary:
+        value: '{ color.gray.800.value }'
+      error:
+        value: '{ color.system.red.200.value }'
+      info:
+        value: '{ color.blue.200.value }'
+      success:
+        value: '{ color.system.green.200.value }'
+      warning:
+        value: '{ color.system.yellow.200.value }'
+    interactive:
+      primary:
+        ' ':
+          value: '{ color.blue.500.value }'
+        active:
+          value: '{ color.blue.700.value }'
+        focus:
+          value: '{ color.blue.700.value }'
+        hover:
+          value: '{ color.blue.600.value }'
+      secondary:
+        ' ':
+          value: '{ color.white. .value }'
+          dark: '{ color.black.300.value }'
+        active:
+          value: '{ color.gray.200.value }'
+          dark: '{ color.gray.800.value }'
+        focus:
+          value: '{ color.gray.200.value }'
+          dark: '{ color.gray.800.value }'
+        hover:
+          value: '{ color.gray.100.value }'
+          dark: '{ color.gray.700.value }'
+      tertiary:
+        ' ':
+          value: transparent
+        active:
+          value: '{ color.gray.200.value }'
+          dark: '{ color.gray.800.value }'
+        focus:
+          value: '{ color.gray.200.value }'
+          dark: '{ color.gray.800.value }'
+        hover:
+          value: '{ color.gray.100.value }'
+          dark: '{ color.gray.700.value }'
+      destructive:
+        ' ':
+          value: '{ color.white. .value }'
+          dark: '{ color.black.300.value }'
+        active:
+          value: '{ color.system.red.200.value }'
+          dark: '{ color.gray.800.value }'
+        focus:
+          value: '{ color.system.red.200.value }'
+          dark: '{ color.gray.800.value }'
+        hover:
+          value: '{ color.system.red.100.value }'
+          dark: '{ color.gray.700.value }'
+      disabled:
+        value: '{ color.gray.100.value }'
+        dark: '{ color.white.100.value }'
+    ui:
+      primary:
+        value: '{ color.white. .value }'
+        dark: '{ color.black.300.value }'
+      secondary:
+        value: '{ color.white.100.value }'
+        dark: '{ color.black.100.value }'
+      tertiary:
+        value: '{ color.gray.100.value }'
+        dark: '{ color.black.400.value }'
+    overlay:
+      primary:
+        value: '{ color.white. .value }'
+        dark: '{ color.gray.800.value }'
+      secondary:
+        value: '{ color.black.300.value }'
+        dark: '{ color.white. .value }'
+
+  border:
+    feedback:
+      error:
+        value: '{ color.system.red.700.value }'
+      info:
+        value: '{ color.blue.700.value }'
+      success:
+        value: '{ color.system.green.700.value }'
+      warning:
+        value: '{ color.system.yellow.700.value }'
+    interactive:
+      focus:
+        value: '{ color.blue.500.value }'
+        dark: '{ color.cyan.500.value }'
+      primary:
+        ' ':
+          value: '{ color.blue.500.value }'
+        active:
+          value: '{ color.blue.700.value }'
+        focus:
+          value: '{ color.blue.700.value }'
+        hover:
+          value: '{ color.blue.600.value }'
+      secondary:
+        ' ':
+          value: '{ color.gray.300.value }'
+        active:
+          value: '{ color.gray.700.value }'
+          dark: '{ color.gray.100.value }'
+        focus:
+          value: '{ color.gray.700.value }'
+        hover:
+          value: '{ color.gray.600.value }'
+      destructive:
+        value: '{ color.system.red.700.value }'
+        dark: '{ color.system.red.500.value }'
+      disabled:
+        value: '{ color.gray.100.value }'
+        dark: '{ color.white.100.value }'
+    ui:
+      primary:
+        value: '{ color.gray.200.value }'
+
+  fill:
+    feedback:
+      error:
+        value: '{ color.system.red.700.value }'
+      info:
+        value: '{ color.blue.700.value }'
+      success:
+        value: '{ color.system.green.700.value }'
+      warning:
+        value: '{ color.system.yellow.700.value }'
+    interactive:
+      primary:
+        value: '{ color.white. .value }'
+      destructive:
+        value: '{ color.system.red.700.value }'
+        dark: '{ color.white. .value }'
+      disabled:
         value: '{ color.gray.700.value }'
-        dark: '{ color.gray.300.value }'
+        dark: '{ color.gray.500.value }'
+    ui:
+      primary:
+        value: currentvalue
+        dark: '{ color.white. .value }'
+
+  shadow:
+    interactive:
+      focus:
+        value: '{ color.blue.500.value }'
+        dark: '{ color.cyan.500.value }'
+      primary:
+        value: '{ color.white. .value }'
+        dark: '{ color.black.300.value }'
+
+  text:
+    feedback:
+      primary:
+        value: '{ color.black.100.value }'
+      secondary:
+        value: '{ color.white. .value }'
+        dark: '{ color.black.300.value }'
+      error:
+        value: '{ color.system.red.600.value }'
+    interactive:
+      # links
+      ' ':
+        value: '{ color.blue.600.value }'
+        dark: '{ color.cyan.600.value }'
+      active:
+        value: '{ color.purple.600.value }'
+        dark: '{ color.purple.400.value }'
+
+      primary:
+        value: '{ color.white. .value }'
       secondary:
         value: '{ color.gray.600.value }'
-        dark: '{ color.gray.200.value }'
+        dark: '{ color.gray.400.value }'
+      destructive:
+        value: '{ color.system.red.700.value }'
+        dark: '{ color.white. .value }'
+      disabled:
+        value: '{ color.gray.700.value }'
+        dark: '{ color.gray.500.value }'
+    ui:
+      primary:
+        value: '{ color.black.300.value }'
+        dark: '{ color.white. .value }'
+      secondary:
+        value: '{ color.gray.700.value }'
+        dark: '{ color.gray.300.value }'
+      tertiary:
+        value: '{ color.gray.600.value }'
+        dark: '{ color.gray.100.value }'
+    overlay:
+      primary:
+        value: '{ color.gray.800.value }'
+        dark: '{ color.gray.100.value }'
+      secondary:
+        value: '{ color.white. .value }'
+        dark: '{ color.black.300.value }'

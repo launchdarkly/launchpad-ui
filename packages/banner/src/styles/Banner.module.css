@@ -1,18 +1,18 @@
 @import '../../../tokens/dist/media-queries.css';
 
 :root {
-  --Banner-color-border-bottom-info: var(--color-blue-700);
+  --Banner-color-border-bottom-info: var(--lp-color-border-feedback-info);
   /* stylelint-disable-next-line value-keyword-case */
-  --Banner-color-border-bottom-warning: var(--color-system-yellow-700);
-  --Banner-color-border-bottom-error: var(--color-system-red-700);
-  --Banner-color-text: var(--color-black-100);
-  --Banner-color-background: var(--color-white);
-  --Banner-color-background-info: var(--color-blue-100);
-  --Banner-color-background-warning: var(--color-system-yellow-200);
-  --Banner-color-background-error: var(--color-system-red-200);
-  --Banner-icon-color-info: var(--color-blue-700);
-  --Banner-icon-color-warning: var(--color-system-yellow-700);
-  --Banner-icon-color-error: var(--color-system-red-700);
+  --Banner-color-border-bottom-warning: var(--lp-color-border-feedback-warning);
+  --Banner-color-border-bottom-error: var(--lp-color-border-feedback-error);
+  --Banner-color-text: var(--lp-color-text-feedback-primary);
+  --Banner-color-background: var(--lp-color-bg-ui-primary);
+  --Banner-color-background-info: var(--lp-color-blue-100);
+  --Banner-color-background-warning: var(--lp-color-bg-feedback-warning);
+  --Banner-color-background-error: var(--lp-color-bg-feedback-error);
+  --Banner-icon-color-info: var(--lp-color-fill-feedback-info);
+  --Banner-icon-color-warning: var(--lp-color-fill-feedback-warning);
+  --Banner-icon-color-error: var(--lp-color-fill-feedback-error);
   --page-gutter-width: 1rem;
 }
 
@@ -22,7 +22,7 @@
   }
 }
 
-:global(.Banner).Banner {
+.Banner {
   background: var(--Banner-color-background);
   display: flex;
   padding: 1.4rem 1.8rem;
@@ -37,7 +37,7 @@
   margin-top: 0;
   margin-bottom: 0.4rem;
   font-size: 1.6rem;
-  font-weight: var(--font-weight-medium);
+  font-weight: var(--lp-font-weight-medium);
   line-height: 1.25;
 }
 

@@ -27,7 +27,7 @@ const NavigationMenuDropdown = <T extends object>(props: NavigationMenuDropdownP
             to={item.props.to}
             onClick={item.props.onClick}
           >
-            <div style={{ display: 'flex', gap: 'var(--spacing-2)', alignItems: 'center' }}>
+            <div style={{ display: 'flex', gap: 'var(--lp-spacing-300)', alignItems: 'center' }}>
               <div>{item.props.name}</div>
               {item.props.status ? (
                 <div>

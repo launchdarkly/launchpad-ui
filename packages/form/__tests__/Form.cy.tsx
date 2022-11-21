@@ -70,7 +70,7 @@ const createComponent = (props?: FormProps) => (
 describe('Form', () => {
   it('renders', () => {
     cy.mount(createComponent());
-    cy.get('[data-test-id="form"]').should('be.visible');
+    cy.getByTestId('form').should('be.visible');
   });
 
   it('is accessible', () => {

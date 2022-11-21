@@ -52,7 +52,7 @@ const Dropdown = <T extends string | object | number>(props: DropdownProps<T>) =
         // we let the modal components control their own focus.
         // Note that this is not ideal since closing the modal will not cause the dropdown trigger
         // to regain focus.
-        const hasModal = current.closest?.('.has-modal');
+        const hasModal = current.closest?.('.has-overlay');
 
         !hasModal && current.focus?.();
       });

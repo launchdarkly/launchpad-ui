@@ -1,19 +1,19 @@
 spacing:
-  0:
-    value: 0px
-  1:
-    value: 4px
-  2:
-    value: 8px
-  3:
-    value: 12px
-  4:
-    value: 16px
-  5:
-    value: 20px
-  6:
-    value: 24px
-  7:
-    value: 28px
-  8:
-    value: 32px
+  100:
+    value: 0rem
+  200:
+    value: 0.4rem
+  300:
+    value: 0.8rem
+  400:
+    value: 1.2rem
+  500:
+    value: 1.6rem
+  600:
+    value: 2rem
+  700:
+    value: 2.4rem
+  800:
+    value: 2.8rem
+  900:
+    value: 3.2rem

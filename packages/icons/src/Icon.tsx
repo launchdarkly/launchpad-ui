@@ -3,7 +3,7 @@ import type { HTMLProps, ReactElement } from 'react';
 import { cx } from 'classix';
 import { Children, cloneElement, isValidElement, useEffect, useId, useRef } from 'react';
 
-import './styles/Icon.css';
+import styles from './styles/Icon.module.css';
 
 type IconProps = Omit<HTMLProps<HTMLSpanElement>, 'size'> & {
   name?: string;
@@ -21,8 +21,8 @@ const Icon = ({
   'data-test-id': testId = 'icon',
   ...props
 }: IconProps) => {
-  const sizeClass = size ? `Icon--${size}` : false;
-  const classes = cx('Icon', `Icon--${name}`, sizeClass, className, subtle && 'Icon--subtle');
+  const sizeClass = size ? styles[size] : false;
+  const classes = cx(styles.icon, sizeClass, subtle && styles.subtle, `icon-${name}`, className);
 
   const svgRef = useRef<SVGElement>(null);
   const prefix = `svg-${useId()}`;

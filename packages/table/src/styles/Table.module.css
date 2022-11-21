@@ -23,7 +23,7 @@
 }
 
 .Table-header {
-  border-bottom: 1px solid var(--color-gray-100);
+  border-bottom: 1px solid var(--lp-color-gray-100);
 }
 
 .Table-cell {
@@ -56,8 +56,8 @@
 
 .Table-cell--head {
   white-space: nowrap;
-  color: var(--color-text-subtle-secondary);
-  font-weight: var(--font-weight-semibold);
+  color: var(--lp-color-text-ui-secondary);
+  font-weight: var(--lp-font-weight-semibold);
 }
 
 @media (--tablet) {
@@ -67,15 +67,15 @@
 }
 
 .Table--resourceTable .Table-cell--head {
-  background: var(--color-white-100);
-  color: var(--color-text-subtle-primary);
+  background: var(--lp-color-white-100);
+  color: var(--lp-color-text-ui-secondary);
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
 }
 
 .TableHeader-title {
-  font-size: var(--osmo-font-size-large);
-  font-weight: var(--font-weight-regular);
+  font-size: var(--lp-font-size-500);
+  font-weight: var(--lp-font-weight-regular);
   line-height: 1.5;
   display: flex;
   align-items: center;
@@ -112,7 +112,7 @@
 }
 
 .Table-body .Table-row + .Table-row {
-  border-top: 1px solid var(--color-gray-100);
+  border-top: 1px solid var(--lp-color-gray-100);
 }
 
 /* Used for "smallest possible table column". Table cell will expand to fit content. */

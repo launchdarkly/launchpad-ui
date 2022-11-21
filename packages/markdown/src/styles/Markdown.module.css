@@ -24,3 +24,11 @@
 .Markdown blockquote {
   line-height: 2;
 }
+
+.Markdown a {
+  color: var(--lp-color-text-interactive);
+}
+
+.Markdown a:visited {
+  color: var(--lp-color-text-interactive-active);
+}

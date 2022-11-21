@@ -1,5 +1,115 @@
 # @launchpad-ui/notification
 
+## 0.5.25
+
+### Patch Changes
+
+- Updated dependencies [[`6f95e6f`](https://github.com/launchdarkly/launchpad-ui/commit/6f95e6f608459ec4e812ae36e79cad0e128db377)]:
+  - @launchpad-ui/focus-trap@0.1.2
+  - @launchpad-ui/clipboard@0.8.24
+
+## 0.5.24
+
+### Patch Changes
+
+- Updated dependencies [[`3a11bcf`](https://github.com/launchdarkly/launchpad-ui/commit/3a11bcf9085da9058c716841bf5d6b03ef5459a9), [`d1526c2`](https://github.com/launchdarkly/launchpad-ui/commit/d1526c21a4d637ce67d13c65dd8d34c4797d44ec)]:
+  - @launchpad-ui/icons@0.6.3
+  - @launchpad-ui/button@0.7.10
+  - @launchpad-ui/clipboard@0.8.23
+
+## 0.5.23
+
+### Patch Changes
+
+- Updated dependencies [[`d80297f`](https://github.com/launchdarkly/launchpad-ui/commit/d80297fad893c9db566ed029e302702d5f245a98)]:
+  - @launchpad-ui/tokens@0.3.1
+  - @launchpad-ui/button@0.7.9
+  - @launchpad-ui/clipboard@0.8.22
+  - @launchpad-ui/icons@0.6.2
+
+## 0.5.22
+
+### Patch Changes
+
+- Updated dependencies [[`baeacd7`](https://github.com/launchdarkly/launchpad-ui/commit/baeacd7b80d60f36f4962f090d87a0009f28b44e)]:
+  - @launchpad-ui/tokens@0.3.0
+  - @launchpad-ui/button@0.7.8
+  - @launchpad-ui/clipboard@0.8.21
+  - @launchpad-ui/icons@0.6.1
+
+## 0.5.21
+
+### Patch Changes
+
+- Updated dependencies [[`50898e9`](https://github.com/launchdarkly/launchpad-ui/commit/50898e94d7166651118da8b57526f4e1eda917f6)]:
+  - @launchpad-ui/button@0.7.7
+
+## 0.5.20
+
+### Patch Changes
+
+- Updated dependencies [[`0deac4f`](https://github.com/launchdarkly/launchpad-ui/commit/0deac4f7cb58781e56d864f50b659f5c885339dc)]:
+  - @launchpad-ui/icons@0.6.0
+  - @launchpad-ui/button@0.7.6
+  - @launchpad-ui/clipboard@0.8.20
+
+## 0.5.19
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @launchpad-ui/clipboard@0.8.19
+
+## 0.5.18
+
+### Patch Changes
+
+- Updated dependencies [[`4090f93`](https://github.com/launchdarkly/launchpad-ui/commit/4090f93ba98ea6f75a7f9f7b902fafcfb9b005b3)]:
+  - @launchpad-ui/tokens@0.2.0
+  - @launchpad-ui/button@0.7.5
+  - @launchpad-ui/clipboard@0.8.18
+  - @launchpad-ui/icons@0.5.9
+
+## 0.5.17
+
+### Patch Changes
+
+- Updated dependencies [[`66dd7a6`](https://github.com/launchdarkly/launchpad-ui/commit/66dd7a6174c95a92ed4b49fe3398c1ba5b624731)]:
+  - @launchpad-ui/clipboard@0.8.17
+
+## 0.5.16
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @launchpad-ui/clipboard@0.8.16
+
+## 0.5.15
+
+### Patch Changes
+
+- Updated dependencies [[`b7302a3`](https://github.com/launchdarkly/launchpad-ui/commit/b7302a3015591df0b24e19a4444029c21d0cf9de)]:
+  - @launchpad-ui/icons@0.5.8
+  - @launchpad-ui/button@0.7.4
+  - @launchpad-ui/clipboard@0.8.15
+
+## 0.5.14
+
+### Patch Changes
+
+- [#509](https://github.com/launchdarkly/launchpad-ui/pull/509) [`1e5796b`](https://github.com/launchdarkly/launchpad-ui/commit/1e5796b7b99a2704bba22623a518ff7e8776ebf8) Thanks [@Niznikr](https://github.com/Niznikr)! - Update dependencies
+
+- Updated dependencies [[`1e5796b`](https://github.com/launchdarkly/launchpad-ui/commit/1e5796b7b99a2704bba22623a518ff7e8776ebf8)]:
+  - @launchpad-ui/focus-trap@0.1.1
+  - @launchpad-ui/clipboard@0.8.14
+
+## 0.5.13
+
+### Patch Changes
+
+- Updated dependencies [[`5e82186`](https://github.com/launchdarkly/launchpad-ui/commit/5e82186a765012cf79501dccf2a3305e66b16fc6)]:
+  - @launchpad-ui/clipboard@0.8.13
+
 ## 0.5.12
 
 ### Patch Changes

@@ -27,7 +27,12 @@ const makeSnackbar = (id: string) => {
   return {
     _id: id,
     kind,
-    description: 'The snackbar description.',
+    description: 'This is a message.',
+    cta: (
+      <a href="/" target="_blank">
+        Link
+      </a>
+    ),
   };
 };
 
@@ -49,7 +54,7 @@ export const Default: Story = {
     return (
       <>
         <Button onClick={addItem}>Add snackbar</Button>
-        <SnackbarCenter snackbars={items} onDismiss={removeItem} />
+        <SnackbarCenter snackbars={items} dismissSnackbar={removeItem} />
       </>
     );
   },

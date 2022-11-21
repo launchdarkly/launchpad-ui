@@ -1,5 +1,120 @@
 # @launchpad-ui/dropdown
 
+## 0.6.6
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @launchpad-ui/popover@0.8.22
+
+## 0.6.5
+
+### Patch Changes
+
+- Updated dependencies [[`3a11bcf`](https://github.com/launchdarkly/launchpad-ui/commit/3a11bcf9085da9058c716841bf5d6b03ef5459a9), [`d1526c2`](https://github.com/launchdarkly/launchpad-ui/commit/d1526c21a4d637ce67d13c65dd8d34c4797d44ec)]:
+  - @launchpad-ui/icons@0.6.3
+  - @launchpad-ui/button@0.7.10
+
+## 0.6.4
+
+### Patch Changes
+
+- Updated dependencies [[`d80297f`](https://github.com/launchdarkly/launchpad-ui/commit/d80297fad893c9db566ed029e302702d5f245a98)]:
+  - @launchpad-ui/popover@0.8.21
+  - @launchpad-ui/tokens@0.3.1
+  - @launchpad-ui/button@0.7.9
+  - @launchpad-ui/icons@0.6.2
+
+## 0.6.3
+
+### Patch Changes
+
+- Updated dependencies [[`baeacd7`](https://github.com/launchdarkly/launchpad-ui/commit/baeacd7b80d60f36f4962f090d87a0009f28b44e)]:
+  - @launchpad-ui/tokens@0.3.0
+  - @launchpad-ui/button@0.7.8
+  - @launchpad-ui/icons@0.6.1
+  - @launchpad-ui/popover@0.8.20
+
+## 0.6.2
+
+### Patch Changes
+
+- Updated dependencies [[`50898e9`](https://github.com/launchdarkly/launchpad-ui/commit/50898e94d7166651118da8b57526f4e1eda917f6)]:
+  - @launchpad-ui/button@0.7.7
+
+## 0.6.1
+
+### Patch Changes
+
+- Updated dependencies [[`0deac4f`](https://github.com/launchdarkly/launchpad-ui/commit/0deac4f7cb58781e56d864f50b659f5c885339dc)]:
+  - @launchpad-ui/icons@0.6.0
+  - @launchpad-ui/popover@0.8.19
+  - @launchpad-ui/button@0.7.6
+
+## 0.6.0
+
+### Minor Changes
+
+- [#520](https://github.com/launchdarkly/launchpad-ui/pull/520) [`d87e683`](https://github.com/launchdarkly/launchpad-ui/commit/d87e68388354cd5318e60344f8d855bd27521d19) Thanks [@chasedarkly](https://github.com/chasedarkly)! - Add drawer package
+
+  [Drawer] Add drawer package
+  [Modal] Remove unused class, rename use of `has-modal` to `has-overlay`
+  [Overlay] Rename use of `has-modal` to `has-overlay`
+  [Popover] Rename use of `has-modal` to `has-overlay`
+  [Dropdown] Rename use of `has-modal` to `has-overlay`
+
+### Patch Changes
+
+- Updated dependencies [[`d87e683`](https://github.com/launchdarkly/launchpad-ui/commit/d87e68388354cd5318e60344f8d855bd27521d19)]:
+  - @launchpad-ui/popover@0.8.18
+
+## 0.5.17
+
+### Patch Changes
+
+- Updated dependencies [[`4090f93`](https://github.com/launchdarkly/launchpad-ui/commit/4090f93ba98ea6f75a7f9f7b902fafcfb9b005b3)]:
+  - @launchpad-ui/tokens@0.2.0
+  - @launchpad-ui/button@0.7.5
+  - @launchpad-ui/icons@0.5.9
+  - @launchpad-ui/popover@0.8.17
+
+## 0.5.16
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @launchpad-ui/popover@0.8.16
+
+## 0.5.15
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @launchpad-ui/popover@0.8.15
+
+## 0.5.14
+
+### Patch Changes
+
+- Updated dependencies [[`b7302a3`](https://github.com/launchdarkly/launchpad-ui/commit/b7302a3015591df0b24e19a4444029c21d0cf9de)]:
+  - @launchpad-ui/icons@0.5.8
+  - @launchpad-ui/button@0.7.4
+  - @launchpad-ui/popover@0.8.14
+
+## 0.5.13
+
+### Patch Changes
+
+- Updated dependencies [[`1e5796b`](https://github.com/launchdarkly/launchpad-ui/commit/1e5796b7b99a2704bba22623a518ff7e8776ebf8)]:
+  - @launchpad-ui/popover@0.8.13
+
+## 0.5.12
+
+### Patch Changes
+
+- Updated dependencies [[`5e82186`](https://github.com/launchdarkly/launchpad-ui/commit/5e82186a765012cf79501dccf2a3305e66b16fc6)]:
+  - @launchpad-ui/popover@0.8.12
+
 ## 0.5.11
 
 ### Patch Changes

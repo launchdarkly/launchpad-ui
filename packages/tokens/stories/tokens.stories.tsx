@@ -21,13 +21,13 @@ export const Colors = {
       {[...colors, ...system].map((color, index) => (
         <ul style={{ display: 'flex', flexWrap: 'wrap' }} key={index}>
           {color.map((token) => (
-            <li style={{ listStyleType: 'none', margin: '4px' }} key={token.value}>
+            <li style={{ listStyleType: 'none', margin: '4px' }} key={token}>
               <div
                 style={{
-                  backgroundColor: token.value,
+                  backgroundColor: token,
                   height: '100px',
                   width: '100px',
-                  border: '1px solid var(--color-border)',
+                  border: '1px solid var(--lp-color-border-ui-primary)',
                 }}
               ></div>
             </li>

@@ -3,7 +3,7 @@ import { Slider } from '../src';
 describe('Slider', () => {
   it('renders', () => {
     cy.mount(<Slider min={0} max={50} value={25} onChange={() => undefined} />);
-    cy.get('[data-test-id="slider"]').should('be.visible');
+    cy.getByTestId('slider').should('be.visible');
   });
 
   it('is accessible', () => {

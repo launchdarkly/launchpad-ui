@@ -1,6 +1,6 @@
 {
   "name": "@launchpad-ui/snackbar",
-  "version": "0.2.5",
+  "version": "0.3.10",
   "status": "alpha",
   "publishConfig": {
     "access": "public"
@@ -28,7 +28,6 @@
   "scripts": {
     "build": "vite build -c ../../vite.config.ts && tsc --project tsconfig.build.json",
     "clean": "rm -rf dist",
-    "e2e": "playwright test --config=../../playwright.config.ct.ts",
     "lint": "eslint '**/*.{ts,tsx,js}' && stylelint '**/*.css' --ignore-path ../../.stylelintignore",
     "test": "vitest run --coverage"
   },
@@ -37,7 +36,7 @@
     "@launchpad-ui/icons": "workspace:~",
     "@launchpad-ui/tokens": "workspace:~",
     "classix": "^2.1.13",
-    "framer-motion": "^7.5.3"
+    "framer-motion": "^7.6.1"
   },
   "peerDependencies": {
     "react": "^18.0.0",

@@ -55,8 +55,8 @@ const splitButtonTemplateWithStates: DecoratorFn = (storyComponent, context) => 
 
   const storyArgs = args as SplitButtonProps;
 
-  const SplitButtonLabels = ['Hover', 'Focus', 'Active'];
-  const SplitButtonStates = ['pseudo-hover', 'pseudo-focus', 'pseudo-active'];
+  const SplitButtonLabels = ['Hover', 'Focus visible', 'Active'];
+  const SplitButtonStates = ['pseudo-hover', 'pseudo-focus-visible', 'pseudo-active'];
 
   const PseudoStateButtons = SplitButtonStates.map((className, index) => (
     <Fragment key={`${className}_Button`}>

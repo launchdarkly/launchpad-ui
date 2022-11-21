@@ -1,0 +1,39 @@
+{
+  "name": "@launchpad-ui/portal",
+  "version": "0.1.0",
+  "status": "alpha",
+  "publishConfig": {
+    "access": "public"
+  },
+  "description": "An element that renders a subtree in a different part of the DOM.",
+  "files": [
+    "dist"
+  ],
+  "main": "dist/index.js",
+  "module": "dist/index.es.js",
+  "types": "dist/index.d.ts",
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.es.js",
+      "require": "./dist/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "source": "src/index.ts",
+  "scripts": {
+    "build": "vite build -c ../../vite.config.ts && tsc --project tsconfig.build.json",
+    "clean": "rm -rf dist",
+    "lint": "eslint '**/*.{ts,tsx,js}'",
+    "test": "vitest run --coverage"
+  },
+  "peerDependencies": {
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
+  },
+  "devDependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}

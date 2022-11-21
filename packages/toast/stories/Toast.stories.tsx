@@ -32,3 +32,14 @@ export const Success: Story = {
     content: 'This is a message about an app process.',
   },
 };
+
+export const WithLink: Story = {
+  args: {
+    kind: 'success',
+    content: (
+      <>
+        This has a link. <a href="/">Link</a>
+      </>
+    ),
+  },
+};

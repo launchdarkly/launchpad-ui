@@ -2,7 +2,7 @@ module.exports = (plop) => {
   plop.load('./.plop/actions/install-dependencies.js');
 
   plop.setGenerator('component', {
-    description: 'A Launchpad UI component',
+    description: 'A LaunchPad UI component',
     prompts: [
       {
         type: 'input',
@@ -61,7 +61,7 @@ module.exports = (plop) => {
       },
       {
         type: 'add',
-        path: 'packages/{{dashCase name}}/src/styles/{{pascalCase name}}.css',
+        path: 'packages/{{dashCase name}}/src/styles/{{pascalCase name}}.module.css',
         templateFile: '.plop/templates/component/styles.css.hbs',
       },
       /*

@@ -1,41 +1,41 @@
 .Avatar {
-  background-color: var(--color-background);
-  border: 1px solid var(--color-gray-100);
+  background-color: var(--lp-color-bg-ui-primary);
+  border: 1px solid var(--lp-color-gray-100);
   border-radius: 100%;
   flex-shrink: 0;
   max-width: unset;
   overflow: hidden;
-  color: var(--color-black);
+  color: var(--lp-color-black);
   display: inline-flex;
   vertical-align: top;
   justify-content: center;
   align-items: center;
-  font-weight: var(--font-weight-bold);
+  font-weight: var(--lp-font-weight-bold);
 }
 
 .Avatar--initials {
   border: none;
-  color: var(--color-white);
+  color: var(--lp-color-white);
 }
 
 .Avatar--color0 {
-  background-color: var(--color-yellow-800);
+  background-color: var(--lp-color-yellow-800);
 }
 
 .Avatar--color1 {
-  background-color: var(--color-blue-500);
+  background-color: var(--lp-color-blue-500);
 }
 
 .Avatar--color2 {
-  background-color: var(--color-pink-500);
+  background-color: var(--lp-color-pink-500);
 }
 
 .Avatar--color3 {
-  background-color: var(--color-cyan-600);
+  background-color: var(--lp-color-cyan-600);
 }
 
 .Avatar--color4 {
-  background-color: var(--color-purple-500);
+  background-color: var(--lp-color-purple-500);
 }
 
 .Avatar-initials-content {

@@ -44,7 +44,7 @@ describe('Toggle', () => {
     expect(toggleLabel).toBeInTheDocument();
     expect((toggle as HTMLInputElement).value).toBe('cats');
     expect(toggle).not.toBeChecked();
-    expect(toggle).toHaveAttribute('aria-checked', 'false');
+    expect(toggle).not.toHaveAttribute('checked', '');
   });
 
   it('renders a checked Toggle', async () => {

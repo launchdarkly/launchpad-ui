@@ -12,7 +12,7 @@
 
 .Navigation .Nav--primary {
   padding: 0 2.5rem;
-  background-color: var(--color-background);
+  background-color: var(--lp-color-bg-ui-primary);
   box-shadow: 0 1px 2px hsl(0 0% 0% / 0.12);
   overflow-x: auto;
 }
@@ -35,7 +35,7 @@
 }
 
 .Nav--secondary {
-  border-bottom: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--lp-color-border-ui-primary);
 }
 
 .Nav--primary > .NavPopover-target {
@@ -51,11 +51,11 @@
   flex-direction: column;
   align-items: center;
   font-size: 1.5rem;
-  font-weight: var(--font-weight-medium);
+  font-weight: var(--lp-font-weight-medium);
   padding: 1rem 1.4rem;
   border-bottom: 2px solid transparent;
   text-decoration: none;
-  color: var(--color-text-subtle-primary);
+  color: var(--lp-color-text-interactive-secondary);
   position: relative;
 }
 
@@ -63,7 +63,7 @@
  * when the font weight changes (for .is-active).
  */
 .Nav--primary .NavItem::after {
-  font-weight: var(--font-weight-bold);
+  font-weight: var(--lp-font-weight-bold);
   content: attr(data-text);
   height: 0;
   visibility: hidden;
@@ -74,9 +74,9 @@
 }
 
 .Nav--primary .NavItem.is-active {
-  color: var(--color-text);
-  border-bottom-color: var(--color-text);
-  font-weight: var(--font-weight-bold);
+  color: var(--lp-color-text-ui-primary);
+  border-bottom-color: var(--lp-color-text-ui-primary);
+  font-weight: var(--lp-font-weight-bold);
 }
 
 .NavItem-name {
@@ -93,11 +93,11 @@
 .Nav--secondary .NavItem {
   display: block;
   font-size: 1.7rem;
-  font-weight: var(--font-weight-medium);
+  font-weight: var(--lp-font-weight-medium);
   padding: 1rem 1.4rem 0;
   border-bottom: 1px solid transparent;
   text-decoration: none;
-  color: var(--color-text-subtle-secondary);
+  color: var(--lp-color-text-ui-secondary);
   position: relative;
 }
 
@@ -107,17 +107,17 @@
 
 .NavItem:focus .NavItem-name {
   padding: 0.1rem 1rem 0.2rem;
-  box-shadow: 0 0 0 0.2rem var(--color-blue-500);
+  box-shadow: 0 0 0 0.2rem var(--lp-color-blue-500);
   border-radius: 0.6rem;
 }
 
 .Nav--primary .NavItem:hover {
-  color: var(--color-text);
+  color: var(--lp-color-text-ui-primary);
 }
 
 .Nav--primary a.NavItem:hover,
 .Nav--primary a.NavItem:active {
-  color: var(--color-text);
+  color: var(--lp-color-text-ui-primary);
   text-decoration: none;
 }
 
@@ -141,8 +141,8 @@
 }
 
 .Nav--secondary .NavItem.is-active {
-  color: var(--color-text);
-  border-bottom: 0.3rem solid var(--color-gray-700);
+  color: var(--lp-color-text-ui-primary);
+  border-bottom: 0.3rem solid var(--lp-color-border-interactive-secondary-active);
   margin-bottom: -0.16rem; /* slightly larger than half to account for browser rounding */
 }
 
@@ -154,7 +154,7 @@
 }
 
 .Nav--secondary .NavItem.is-active::after {
-  border-bottom-color: var(--color-gray-700);
+  border-bottom-color: var(--lp-color-border-interactive-secondary-active);
   bottom: -2px;
 }
 

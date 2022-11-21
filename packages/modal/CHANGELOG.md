@@ -1,5 +1,203 @@
 # @launchpad-ui/modal
 
+## 0.12.5
+
+### Patch Changes
+
+- [`6f95e6f`](https://github.com/launchdarkly/launchpad-ui/commit/6f95e6f608459ec4e812ae36e79cad0e128db377) Thanks [@renovate[bot]](https://github.com/renovate%5Bbot%5D)! - Update dependencies
+
+- Updated dependencies [[`6f95e6f`](https://github.com/launchdarkly/launchpad-ui/commit/6f95e6f608459ec4e812ae36e79cad0e128db377)]:
+  - @launchpad-ui/focus-trap@0.1.2
+
+## 0.12.4
+
+### Patch Changes
+
+- Updated dependencies [[`3a11bcf`](https://github.com/launchdarkly/launchpad-ui/commit/3a11bcf9085da9058c716841bf5d6b03ef5459a9), [`d1526c2`](https://github.com/launchdarkly/launchpad-ui/commit/d1526c21a4d637ce67d13c65dd8d34c4797d44ec)]:
+  - @launchpad-ui/icons@0.6.3
+  - @launchpad-ui/button@0.7.10
+
+## 0.12.3
+
+### Patch Changes
+
+- [#569](https://github.com/launchdarkly/launchpad-ui/pull/569) [`5564268`](https://github.com/launchdarkly/launchpad-ui/commit/5564268196e493386ee09f568d0f714c171462d8) Thanks [@chasedarkly](https://github.com/chasedarkly)! - Improve storybook docs, deprecate legacy modal, and improve resizeobserver for ModalBody
+
+## 0.12.2
+
+### Patch Changes
+
+- Updated dependencies [[`d80297f`](https://github.com/launchdarkly/launchpad-ui/commit/d80297fad893c9db566ed029e302702d5f245a98)]:
+  - @launchpad-ui/tokens@0.3.1
+  - @launchpad-ui/button@0.7.9
+  - @launchpad-ui/icons@0.6.2
+
+## 0.12.1
+
+### Patch Changes
+
+- Updated dependencies [[`baeacd7`](https://github.com/launchdarkly/launchpad-ui/commit/baeacd7b80d60f36f4962f090d87a0009f28b44e)]:
+  - @launchpad-ui/tokens@0.3.0
+  - @launchpad-ui/button@0.7.8
+  - @launchpad-ui/icons@0.6.1
+
+## 0.12.0
+
+### Minor Changes
+
+- [#562](https://github.com/launchdarkly/launchpad-ui/pull/562) [`57c737f`](https://github.com/launchdarkly/launchpad-ui/commit/57c737f51555d1f7a0078fba1bab2575bb5d96f0) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Modal] Move header props to standalone component
+
+## 0.11.8
+
+### Patch Changes
+
+- [#559](https://github.com/launchdarkly/launchpad-ui/pull/559) [`488fcc1`](https://github.com/launchdarkly/launchpad-ui/commit/488fcc1243cec9da0313d098115ab5d685354307) Thanks [@Niznikr](https://github.com/Niznikr)! - [Modal] Move portal to main component to fix focus trap
+
+## 0.11.7
+
+### Patch Changes
+
+- [#551](https://github.com/launchdarkly/launchpad-ui/pull/551) [`3642ccc`](https://github.com/launchdarkly/launchpad-ui/commit/3642cccf7c76db9cce69e51357eb003bbcb41b85) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Modal] Expose AbsoluteModalFooter
+
+## 0.11.6
+
+### Patch Changes
+
+- [#550](https://github.com/launchdarkly/launchpad-ui/pull/550) [`a9dab55`](https://github.com/launchdarkly/launchpad-ui/commit/a9dab556642ddee999437a9a467321324eec6e85) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Modal] Update modal layout logic
+
+- [#548](https://github.com/launchdarkly/launchpad-ui/pull/548) [`22b810c`](https://github.com/launchdarkly/launchpad-ui/commit/22b810c8400d988f3985a5d3b945adde81b8bcd9) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Modal] Improve modal contracts, allow htmldivelement props to pass to body and footer"
+
+## 0.11.5
+
+### Patch Changes
+
+- [#546](https://github.com/launchdarkly/launchpad-ui/pull/546) [`1e6fd8f`](https://github.com/launchdarkly/launchpad-ui/commit/1e6fd8f5e0bab976b0bd0f19ed4dbfe5586b8cdf) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Modal] Position footer absolutely
+
+## 0.11.4
+
+### Patch Changes
+
+- [#542](https://github.com/launchdarkly/launchpad-ui/pull/542) [`149223d`](https://github.com/launchdarkly/launchpad-ui/commit/149223d409d897ab5d37b1a410bc3d25103ce0de) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Modal] Overflow contents only when needed.
+
+## 0.11.3
+
+### Patch Changes
+
+- [#540](https://github.com/launchdarkly/launchpad-ui/pull/540) [`9214ce3`](https://github.com/launchdarkly/launchpad-ui/commit/9214ce379b192d49c29f165562f8cff067dbbfa7) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Modal] Export ModalBody and ModalFooter
+
+## 0.11.2
+
+### Patch Changes
+
+- [#538](https://github.com/launchdarkly/launchpad-ui/pull/538) [`ac9aeb0`](https://github.com/launchdarkly/launchpad-ui/commit/ac9aeb0cf712ea836da34a3f4472d3dde6716d65) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Modal] Specify only direct children of body to receive margin styles
+
+## 0.11.1
+
+### Patch Changes
+
+- [#536](https://github.com/launchdarkly/launchpad-ui/pull/536) [`b492e9e`](https://github.com/launchdarkly/launchpad-ui/commit/b492e9e939847ca8c27222be62556bf011e6427d) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Modal] Add legacy modal to ease migration
+
+## 0.11.0
+
+### Minor Changes
+
+- [#528](https://github.com/launchdarkly/launchpad-ui/pull/528) [`cd66443`](https://github.com/launchdarkly/launchpad-ui/commit/cd66443aaa4b6b488296318eb6198372547af191) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Modal] Refresh modal design and refactor modal package and components
+
+## 0.10.1
+
+### Patch Changes
+
+- Updated dependencies [[`50898e9`](https://github.com/launchdarkly/launchpad-ui/commit/50898e94d7166651118da8b57526f4e1eda917f6)]:
+  - @launchpad-ui/button@0.7.7
+
+## 0.10.0
+
+### Minor Changes
+
+- [#526](https://github.com/launchdarkly/launchpad-ui/pull/526) [`98902b5`](https://github.com/launchdarkly/launchpad-ui/commit/98902b5e3e5c08d8ab5946ec5156114ff55d65d5) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Modal] Make the following changes:
+
+  - Simplify css naming in Modal
+  - Remove `.modalSheet` classnames
+  - Deprecate `titleClassName` - just use h2
+  - Rename “Modal-close” test-id to “modal-close-button”
+  - Remove `Prompt` component in favor of putting the `Portal` in `Modal`
+    - Note: `Prompt` className should be refactored in consuming apps
+  - Change `Modal` props:
+    - Set default `withCloseButton` to true instead of false
+    - Remove `modalLabelID` - this is only used once in the app and we can safely just switch to a default constant that’s kept internally. This API was clunky anyways because you had to give the same value to both Modal and ModalHeader
+    - Remove `transition` prop since we will use the same transition for all modals
+  - Change `ModalHeader` props:
+    - Remove unused `closeable` prop
+    - Remove `titleID` which accompanied `modalLabelID` and was removed for reasons stated above
+    - Remove `titleClassName` - we can safely target the className prop with an `h2` selector.
+    - Remove `onClose` since we no longer have any way to close from `ModalHeader`
+
+### Patch Changes
+
+- [#524](https://github.com/launchdarkly/launchpad-ui/pull/524) [`5b78533`](https://github.com/launchdarkly/launchpad-ui/commit/5b78533cb4905e6a1e70ee0e232e9253e34d9e3d) Thanks [@Niznikr](https://github.com/Niznikr)! - Add portal package
+
+- Updated dependencies [[`5b78533`](https://github.com/launchdarkly/launchpad-ui/commit/5b78533cb4905e6a1e70ee0e232e9253e34d9e3d), [`0deac4f`](https://github.com/launchdarkly/launchpad-ui/commit/0deac4f7cb58781e56d864f50b659f5c885339dc)]:
+  - @launchpad-ui/portal@0.1.0
+  - @launchpad-ui/icons@0.6.0
+  - @launchpad-ui/button@0.7.6
+
+## 0.9.4
+
+### Patch Changes
+
+- [#520](https://github.com/launchdarkly/launchpad-ui/pull/520) [`d87e683`](https://github.com/launchdarkly/launchpad-ui/commit/d87e68388354cd5318e60344f8d855bd27521d19) Thanks [@chasedarkly](https://github.com/chasedarkly)! - Add drawer package
+
+  [Drawer] Add drawer package
+  [Modal] Remove unused class, rename use of `has-modal` to `has-overlay`
+  [Overlay] Rename use of `has-modal` to `has-overlay`
+  [Popover] Rename use of `has-modal` to `has-overlay`
+  [Dropdown] Rename use of `has-modal` to `has-overlay`
+
+## 0.9.3
+
+### Patch Changes
+
+- Updated dependencies [[`4090f93`](https://github.com/launchdarkly/launchpad-ui/commit/4090f93ba98ea6f75a7f9f7b902fafcfb9b005b3)]:
+  - @launchpad-ui/tokens@0.2.0
+  - @launchpad-ui/button@0.7.5
+  - @launchpad-ui/icons@0.5.9
+  - @launchpad-ui/progress@0.5.3
+
+## 0.9.2
+
+### Patch Changes
+
+- [#502](https://github.com/launchdarkly/launchpad-ui/pull/502) [`1b6fb18`](https://github.com/launchdarkly/launchpad-ui/commit/1b6fb18babba26a96c71fe0c297a6c6c1a4ee478) Thanks [@Niznikr](https://github.com/Niznikr)! - [Modal] Add data-test-id and container props to `Portal`
+
+## 0.9.1
+
+### Patch Changes
+
+- [#512](https://github.com/launchdarkly/launchpad-ui/pull/512) [`cc222fe`](https://github.com/launchdarkly/launchpad-ui/commit/cc222fe3b03b0516d33c3e8bd76da422641e76d3) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Modal] Make has-modal class globally accessible
+
+## 0.9.0
+
+### Minor Changes
+
+- [#493](https://github.com/launchdarkly/launchpad-ui/pull/493) [`1a7ccd6`](https://github.com/launchdarkly/launchpad-ui/commit/1a7ccd671ca83f111239363474e54040cf4a112f) Thanks [@Niznikr](https://github.com/Niznikr)! - [Modal] Update to css modules:
+
+  - Rename size `x-large` to `xLarge` for sheet sizes
+
+### Patch Changes
+
+- Updated dependencies [[`b7302a3`](https://github.com/launchdarkly/launchpad-ui/commit/b7302a3015591df0b24e19a4444029c21d0cf9de)]:
+  - @launchpad-ui/icons@0.5.8
+  - @launchpad-ui/button@0.7.4
+
+## 0.8.12
+
+### Patch Changes
+
+- [#509](https://github.com/launchdarkly/launchpad-ui/pull/509) [`1e5796b`](https://github.com/launchdarkly/launchpad-ui/commit/1e5796b7b99a2704bba22623a518ff7e8776ebf8) Thanks [@Niznikr](https://github.com/Niznikr)! - Update dependencies
+
+- Updated dependencies [[`1e5796b`](https://github.com/launchdarkly/launchpad-ui/commit/1e5796b7b99a2704bba22623a518ff7e8776ebf8)]:
+  - @launchpad-ui/focus-trap@0.1.1
+
 ## 0.8.11
 
 ### Patch Changes

@@ -2,8 +2,8 @@
   position: relative;
 }
 
-.Clipboard-checkmark :global(svg) {
-  fill: var(--color-system-green-500);
+.Clipboard-checkmark svg {
+  fill: var(--lp-color-system-green-500);
 }
 
 .Clipboard-confirmation {

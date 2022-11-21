@@ -1,11 +1,11 @@
 {
   "name": "@launchpad-ui/tokens",
-  "version": "0.1.5",
+  "version": "0.3.1",
   "status": "beta",
   "publishConfig": {
     "access": "public"
   },
-  "description": "Launchpad design tokens delivered as CSS custom properties, CommonJS modules, and ES modules.",
+  "description": "LaunchPad design tokens delivered as CSS custom properties, CommonJS modules, and ES modules.",
   "files": [
     "dist"
   ],

@@ -1,5 +1,5 @@
 .filter {
-  font-family: var(--font-family-base);
+  font-family: var(--lp-font-family-base);
 }
 
 .buttonContainer {
@@ -10,21 +10,21 @@
 }
 
 .button {
-  border-radius: var(--border-radius);
+  border-radius: var(--lp-border-radius);
   padding-top: 0;
   padding-bottom: 0;
   line-height: 3.2rem;
   display: flex;
   align-items: center;
   margin: 0;
-  color: var(--color-text);
-  background-color: var(--color-white);
+  color: var(--lp-color-text-ui-primary);
+  background-color: var(--lp-color-bg-interactive-secondary);
 }
 
 .appliedButton {
-  color: var(--color-text);
+  color: var(--lp-color-text-ui-primary);
   height: 2rem;
-  background-color: var(--color-gray-100);
+  background-color: var(--lp-color-bg-interactive-secondary-hover);
   padding: 0.2rem 0.6rem;
   border-radius: 0.2rem;
   display: flex;
@@ -35,30 +35,26 @@
   font-family: inherit;
   font-size: 1.3rem;
   cursor: pointer;
-  border-width: 1px;
+  border-width: var(--lp-border-width-200);
   border-style: solid;
-  border-color: var(--color-white);
+  border-color: var(--lp-color-white);
 
   &:hover {
-    background-color: var(--color-background-hover);
-    border-color: var(--color-border);
+    background-color: var(--lp-color-bg-interactive-secondary-hover);
+    border-color: var(--lp-color-border-ui-primary);
   }
 
-  &:focus {
-    box-shadow: 0 0 0 2px var(--color-white), 0 0 0 4px var(--color-focus);
-    border-color: var(--color-border);
+  &:focus-visible {
+    box-shadow: 0 0 0 2px var(--lp-color-shadow-interactive-primary),
+      0 0 0 4px var(--lp-color-shadow-interactive-focus);
+    border-color: var(--lp-color-border-ui-primary);
     outline: none;
-  }
-
-  &:focus:not(:focus-visible) {
-    box-shadow: unset;
-    border-color: var(--color-white);
   }
 }
 
 .name {
   margin-right: 0.5rem;
-  font-weight: var(--font-weight-medium);
+  font-weight: var(--lp-font-weight-medium);
 }
 
 .appliedName {
@@ -66,8 +62,8 @@
 }
 
 .description {
-  color: var(--color-text);
-  font-weight: var(--font-weight-medium);
+  color: var(--lp-color-text-ui-primary);
+  font-weight: var(--lp-font-weight-medium);
 }
 
 .description,
@@ -85,17 +81,17 @@
 }
 
 :global(.Filter-target--usage) {
-  border: 1px solid var(--color-text-subtle-secondary);
+  border: 1px solid var(--lp-color-gray-600);
 }
 
 .button.isClearable {
-  background-color: var(--color-blue-200);
+  background-color: var(--lp-color-blue-200);
   padding-right: 3.1rem;
 
   &:focus,
   &:hover,
   &:active {
-    background-color: var(--color-blue-300);
+    background-color: var(--lp-color-blue-300);
   }
 }
 
@@ -103,20 +99,20 @@
   background-color: unset;
 
   &:hover {
-    background-color: var(--color-blue-300);
+    background-color: var(--lp-color-blue-300);
   }
 }
 
 .button:hover:not(.isClearable),
 .button:focus:not(.isClearable),
 [data-state='open'] .button:not(.isClearable) {
-  background-color: var(--color-background-hover);
-  border-color: var(--color-text-subtle-secondary);
+  background-color: var(--lp-color-bg-interactive-secondary-hover);
+  border-color: var(--lp-color-border-interactive-secondary-hover);
 }
 
 .button:focus:not(:focus-visible):not(.isClearable) {
   &:hover {
-    background-color: var(--color-background-hover);
+    background-color: var(--lp-color-bg-interactive-secondary-hover);
   }
 }
 
@@ -128,12 +124,12 @@
 
 .filterClearButton {
   text-decoration: none;
-  color: var(--color-system-red-600);
+  color: var(--lp-color-text-interactive-destructive);
   font-size: 1.3rem;
-  font-weight: var(--font-weight-medium);
+  font-weight: var(--lp-font-weight-medium);
   padding: 1rem;
   width: 100%;
-  border-bottom: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--lp-color-border-ui-primary);
 }
 
 .filterClearButton:active,
@@ -141,7 +137,29 @@
 .filterClearButton:hover {
   outline: none;
   box-shadow: unset;
-  color: var(--color-system-red-600);
-  border-bottom-color: var(--color-border);
-  background-color: var(--color-background-hover);
+  color: var(--lp-color-text-interactive-destructive);
+  border-bottom-color: var(--lp-color-border-ui-primary);
+  background-color: var(--lp-color-bg-interactive-secondary-hover);
+}
+
+:root[data-theme='dark'] {
+  /* stylelint-disable-next-line no-descending-specificity */
+  .button.isClearable {
+    background-color: var(--lp-color-cyan-900);
+    padding-right: 3.1rem;
+
+    &:focus,
+    &:hover,
+    &:active {
+      background-color: var(--lp-color-cyan-800);
+    }
+  }
+
+  .button.isClearable:focus:not(:focus-visible) {
+    background-color: unset;
+
+    &:hover {
+      background-color: var(--lp-color-cyan-900);
+    }
+  }
 }

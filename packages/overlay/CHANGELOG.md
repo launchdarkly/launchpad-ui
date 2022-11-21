@@ -1,5 +1,66 @@
 # @launchpad-ui/overlay
 
+## 0.3.25
+
+### Patch Changes
+
+- [#524](https://github.com/launchdarkly/launchpad-ui/pull/524) [`5b78533`](https://github.com/launchdarkly/launchpad-ui/commit/5b78533cb4905e6a1e70ee0e232e9253e34d9e3d) Thanks [@Niznikr](https://github.com/Niznikr)! - Add portal package
+
+- Updated dependencies [[`5b78533`](https://github.com/launchdarkly/launchpad-ui/commit/5b78533cb4905e6a1e70ee0e232e9253e34d9e3d)]:
+  - @launchpad-ui/portal@0.1.0
+
+## 0.3.24
+
+### Patch Changes
+
+- [#520](https://github.com/launchdarkly/launchpad-ui/pull/520) [`d87e683`](https://github.com/launchdarkly/launchpad-ui/commit/d87e68388354cd5318e60344f8d855bd27521d19) Thanks [@chasedarkly](https://github.com/chasedarkly)! - Add drawer package
+
+  [Drawer] Add drawer package
+  [Modal] Remove unused class, rename use of `has-modal` to `has-overlay`
+  [Overlay] Rename use of `has-modal` to `has-overlay`
+  [Popover] Rename use of `has-modal` to `has-overlay`
+  [Dropdown] Rename use of `has-modal` to `has-overlay`
+
+- Updated dependencies [[`d87e683`](https://github.com/launchdarkly/launchpad-ui/commit/d87e68388354cd5318e60344f8d855bd27521d19)]:
+  - @launchpad-ui/modal@0.9.4
+
+## 0.3.23
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @launchpad-ui/modal@0.9.3
+
+## 0.3.22
+
+### Patch Changes
+
+- [#502](https://github.com/launchdarkly/launchpad-ui/pull/502) [`1b6fb18`](https://github.com/launchdarkly/launchpad-ui/commit/1b6fb18babba26a96c71fe0c297a6c6c1a4ee478) Thanks [@Niznikr](https://github.com/Niznikr)! - [Modal] Add data-test-id and container props to `Portal`
+
+- Updated dependencies [[`1b6fb18`](https://github.com/launchdarkly/launchpad-ui/commit/1b6fb18babba26a96c71fe0c297a6c6c1a4ee478)]:
+  - @launchpad-ui/modal@0.9.2
+
+## 0.3.21
+
+### Patch Changes
+
+- Updated dependencies [[`cc222fe`](https://github.com/launchdarkly/launchpad-ui/commit/cc222fe3b03b0516d33c3e8bd76da422641e76d3)]:
+  - @launchpad-ui/modal@0.9.1
+
+## 0.3.20
+
+### Patch Changes
+
+- Updated dependencies [[`1a7ccd6`](https://github.com/launchdarkly/launchpad-ui/commit/1a7ccd671ca83f111239363474e54040cf4a112f)]:
+  - @launchpad-ui/modal@0.9.0
+
+## 0.3.19
+
+### Patch Changes
+
+- Updated dependencies [[`1e5796b`](https://github.com/launchdarkly/launchpad-ui/commit/1e5796b7b99a2704bba22623a518ff7e8776ebf8)]:
+  - @launchpad-ui/modal@0.8.12
+
 ## 0.3.18
 
 ### Patch Changes

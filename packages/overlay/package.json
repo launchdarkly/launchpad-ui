@@ -1,6 +1,6 @@
 {
   "name": "@launchpad-ui/overlay",
-  "version": "0.3.18",
+  "version": "0.3.25",
   "status": "beta",
   "publishConfig": {
     "access": "public"
@@ -31,7 +31,7 @@
     "test": "vitest run --coverage"
   },
   "dependencies": {
-    "@launchpad-ui/modal": "workspace:~"
+    "@launchpad-ui/portal": "workspace:~"
   },
   "peerDependencies": {
     "react": "^18.0.0",

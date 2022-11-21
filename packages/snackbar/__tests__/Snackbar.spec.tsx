@@ -29,4 +29,16 @@ describe('Snackbar', () => {
       expect(spy).toHaveBeenCalledTimes(1);
     });
   });
+
+  it('dismisses when cta is clicked', async () => {
+    const spy = vi.fn();
+    const user = userEvent.setup();
+    render(<Snackbar {...props} cta={<a href="/">Click me</a>} onDismiss={spy} />);
+
+    await user.click(screen.getByRole('link'));
+
+    await waitFor(() => {
+      expect(spy).toHaveBeenCalledTimes(1);
+    });
+  });
 });

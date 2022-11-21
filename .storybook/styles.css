@@ -13,21 +13,21 @@ html {
 }
 
 body {
-  font-family: var(--font-family-base);
-  color: var(--color-gray-800);
-  font-size: var(--osmo-font-size-base);
-  background-color: var(--color-background);
-  line-height: var(--line-height-base);
+  font-family: var(--lp-font-family-base);
+  color: var(--lp-color-gray-800);
+  font-size: var(--lp-font-size-300);
+  background-color: var(--lp-color-bg-ui-primary);
+  line-height: var(--lp-line-height-300);
 }
 
 [data-theme='dark'] body {
-  color: var(--color-gray-200);
+  color: var(--lp-color-gray-100);
 }
 
 h1,
 h2,
 h3 {
-  color: var(--color-heading);
+  color: var(--lp-color-text-ui-primary);
 }
 
 @font-face {

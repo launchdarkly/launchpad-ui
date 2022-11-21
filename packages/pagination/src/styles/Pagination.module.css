@@ -10,7 +10,7 @@
 }
 
 .PaginationButton {
-  color: var(--color-black-300);
+  color: var(--lp-color-black-300);
   text-decoration: none;
   font-size: 1.7rem;
   cursor: pointer;
@@ -41,7 +41,7 @@
 }
 
 .PaginationButton--disabled {
-  color: var(--color-gray-600);
+  color: var(--lp-color-gray-600);
   background-color: unset;
   cursor: default;
 }
