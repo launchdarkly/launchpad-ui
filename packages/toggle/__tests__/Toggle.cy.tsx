@@ -31,7 +31,7 @@ describe('Toggle', () => {
     cy.mount(<Toggle />);
 
     cy.getByTestId(TOGGLE).should('not.be.checked');
-    cy.getByTestId(TOGGLE).should('have.attr', 'aria-checked', 'false');
+    cy.getByTestId(TOGGLE).should('not.have.attr', 'checked', '');
   });
 
   it('renders a checked Toggle', () => {
