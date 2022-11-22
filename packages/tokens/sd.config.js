@@ -74,6 +74,14 @@ module.exports = {
     },
     json: {
       buildPath: 'stories/',
+      transforms: [
+        'attribute/cti',
+        'name/cti/kebab',
+        'time/seconds',
+        'content/icon',
+        'size/rem',
+        'color/rgb',
+      ],
       files: [
         {
           format: 'json/nested',
