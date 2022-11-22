@@ -29,7 +29,6 @@ jobs:
 
       - name: Verify
         if: steps.added-changeset.outputs.added_files == ''
-        id: added-changeset
         run: |
           echo "::error::Please add a changeset for these changes"
           exit 1
