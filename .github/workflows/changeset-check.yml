@@ -28,7 +28,7 @@ jobs:
             .changeset/*.md
 
       - name: Verify
-        if: steps.added-changeset.outputs.added_files == ''
+        if: steps.added-changeset.outcome == 'success' && steps.added-changeset.outputs.added_files == ''
         run: |
           echo "::error::Please add a changeset for these changes"
           exit 1
