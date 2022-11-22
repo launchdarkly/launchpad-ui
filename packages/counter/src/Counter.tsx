@@ -21,7 +21,7 @@ const Counter = ({
   const classes = cx(styles.Counter, className, subtle && styles['Counter--subtle']);
 
   return (
-    <span className={classes} data-test-id={testId} {...rest}>
+    <span className={classes} data-test-id={testId} data-fake="fake" {...rest}>
       {value}
     </span>
   );
