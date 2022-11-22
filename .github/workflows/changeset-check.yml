@@ -1,0 +1,34 @@
+name: Changeset Check
+
+on: [pull_request]
+
+jobs:
+  changeset-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Get changed files
+        id: changed-files
+        uses: tj-actions/changed-files@v34
+        with:
+          files: |
+            packages/**/src/**
+            packages/**/package.json
+            packages/icons/icons/**
+
+      - name: Check for changeset
+        if: steps.changed-files.outputs.any_changed == 'true'
+        id: added-changeset
+        uses: tj-actions/changed-files@v34
+        with:
+          files: |
+            .changeset/*.md
+
+      - name: Verify
+        if: steps.added-changeset.outcome == 'success' && steps.added-changeset.outputs.added_files == ''
+        run: |
+          echo "::error::Please add a changeset for these changes"
+          exit 1
