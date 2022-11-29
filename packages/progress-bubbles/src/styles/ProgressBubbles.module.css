@@ -91,6 +91,7 @@
 
 div.ProgressBubbles-icon--current {
   border: var(--lp-border-width-300) solid var(--lp-color-system-green-700);
+  background-color: var(--lp-color-white);
 }
 
 .ProgressBubbles-icon svg {
