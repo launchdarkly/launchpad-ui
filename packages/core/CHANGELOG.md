@@ -1,5 +1,34 @@
 # @launchpad-ui/core
 
+## 0.24.6
+
+### Patch Changes
+
+- [#588](https://github.com/launchdarkly/launchpad-ui/pull/588) [`da177e9`](https://github.com/launchdarkly/launchpad-ui/commit/da177e9c71e37f0ca4de21f5ab938f29f911ddf1) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Icons] Add `CircleDashed` icon
+
+- [#586](https://github.com/launchdarkly/launchpad-ui/pull/586) [`2d72cc9`](https://github.com/launchdarkly/launchpad-ui/commit/2d72cc93be4ec3029ac37acbaed7f00cefed1cac) Thanks [@hisuida](https://github.com/hisuida)! - [ProgressBubbles]: Set current bubble background to white
+
+- Updated dependencies [[`da177e9`](https://github.com/launchdarkly/launchpad-ui/commit/da177e9c71e37f0ca4de21f5ab938f29f911ddf1), [`2d72cc9`](https://github.com/launchdarkly/launchpad-ui/commit/2d72cc93be4ec3029ac37acbaed7f00cefed1cac)]:
+  - @launchpad-ui/icons@0.6.4
+  - @launchpad-ui/progress-bubbles@0.5.24
+  - @launchpad-ui/alert@0.6.14
+  - @launchpad-ui/avatar@0.4.14
+  - @launchpad-ui/banner@0.7.13
+  - @launchpad-ui/button@0.7.11
+  - @launchpad-ui/clipboard@0.8.25
+  - @launchpad-ui/drawer@0.1.7
+  - @launchpad-ui/dropdown@0.6.7
+  - @launchpad-ui/filter@0.4.32
+  - @launchpad-ui/form@0.6.19
+  - @launchpad-ui/menu@0.6.31
+  - @launchpad-ui/modal@0.12.6
+  - @launchpad-ui/notification@0.5.26
+  - @launchpad-ui/pagination@0.3.19
+  - @launchpad-ui/snackbar@0.3.11
+  - @launchpad-ui/toast@0.2.12
+  - @launchpad-ui/split-button@0.6.26
+  - @launchpad-ui/navigation@0.6.34
+
 ## 0.24.5
 
 ### Patch Changes

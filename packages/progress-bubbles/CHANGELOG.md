@@ -1,5 +1,11 @@
 # @launchpad-ui/progress-bubbles
 
+## 0.5.24
+
+### Patch Changes
+
+- [#586](https://github.com/launchdarkly/launchpad-ui/pull/586) [`2d72cc9`](https://github.com/launchdarkly/launchpad-ui/commit/2d72cc93be4ec3029ac37acbaed7f00cefed1cac) Thanks [@hisuida](https://github.com/hisuida)! - [ProgressBubbles]: Set current bubble background to white
+
 ## 0.5.23
 
 ### Patch Changes
