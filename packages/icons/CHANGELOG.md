@@ -1,5 +1,11 @@
 # @launchpad-ui/icons
 
+## 0.6.4
+
+### Patch Changes
+
+- [#588](https://github.com/launchdarkly/launchpad-ui/pull/588) [`da177e9`](https://github.com/launchdarkly/launchpad-ui/commit/da177e9c71e37f0ca4de21f5ab938f29f911ddf1) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Icons] Add `CircleDashed` icon
+
 ## 0.6.3
 
 ### Patch Changes
