@@ -1,5 +1,14 @@
 # @launchpad-ui/snackbar
 
+## 0.3.12
+
+### Patch Changes
+
+- Updated dependencies [[`6dc1470`](https://github.com/launchdarkly/launchpad-ui/commit/6dc1470e52b9f2f1b4dae8800fa8fd6d2bc74a46)]:
+  - @launchpad-ui/tokens@0.3.2
+  - @launchpad-ui/button@0.7.12
+  - @launchpad-ui/icons@0.6.5
+
 ## 0.3.11
 
 ### Patch Changes

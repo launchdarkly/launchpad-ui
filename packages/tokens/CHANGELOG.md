@@ -1,5 +1,11 @@
 # @launchpad-ui/tokens
 
+## 0.3.2
+
+### Patch Changes
+
+- [#531](https://github.com/launchdarkly/launchpad-ui/pull/531) [`6dc1470`](https://github.com/launchdarkly/launchpad-ui/commit/6dc1470e52b9f2f1b4dae8800fa8fd6d2bc74a46) Thanks [@Niznikr](https://github.com/Niznikr)! - [Tokens] Add global z-index and duration tokens
+
 ## 0.3.1
 
 ### Patch Changes
