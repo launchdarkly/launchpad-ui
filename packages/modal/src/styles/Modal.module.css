@@ -5,7 +5,7 @@
 }
 
 .overlayContainer {
-  z-index: 10002;
+  z-index: var(--lp-z-index-500);
   position: fixed;
   inset: 0;
   transform: translateZ(0);

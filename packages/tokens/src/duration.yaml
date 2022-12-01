@@ -1,0 +1,19 @@
+duration:
+  0:
+    value: 0ms
+  100:
+    value: 100ms
+  150:
+    value: 150ms
+  200:
+    value: 200ms
+  250:
+    value: 250ms
+  300:
+    value: 300ms
+  350:
+    value: 350ms
+  400:
+    value: 400ms
+  500:
+    value: 500ms

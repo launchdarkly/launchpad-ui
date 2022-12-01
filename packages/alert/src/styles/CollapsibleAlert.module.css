@@ -75,7 +75,8 @@ https://www.scottohara.me/blog/2017/04/14/inclusively-hidden.html
   max-height: 0;
   opacity: 0;
   transform: translate3d(0, -1rem, 0);
-  transition: visibility 0.5s, max-height 0.5s, opacity 0.5s, transform 0.5s;
+  transition: visibility var(--lp-duration-500), max-height var(--lp-duration-500),
+    opacity var(--lp-duration-500), transform var(--lp-duration-500);
   transition-timing-function: ease-in-out;
 
   & > a {
