@@ -10,7 +10,7 @@
 }
 
 .button {
-  border-radius: var(--lp-border-radius);
+  border-radius: var(--lp-border-radius-medium);
   padding-top: 0;
   padding-bottom: 0;
   line-height: 3.2rem;
@@ -37,17 +37,17 @@
   cursor: pointer;
   border-width: var(--lp-border-width-200);
   border-style: solid;
-  border-color: var(--lp-color-white);
+  border-color: transparent;
 
   &:hover {
     background-color: var(--lp-color-bg-interactive-secondary-hover);
-    border-color: var(--lp-color-border-ui-primary);
+    border-color: var(--lp-color-border-interactive-secondary-hover);
   }
 
   &:focus-visible {
     box-shadow: 0 0 0 2px var(--lp-color-shadow-interactive-primary),
       0 0 0 4px var(--lp-color-shadow-interactive-focus);
-    border-color: var(--lp-color-border-ui-primary);
+    border-color: var(--lp-color-border-interactive-secondary-focus);
     outline: none;
   }
 }
@@ -129,7 +129,7 @@
   font-weight: var(--lp-font-weight-medium);
   padding: 1rem;
   width: 100%;
-  border-bottom: 1px solid var(--lp-color-border-ui-primary);
+  border-bottom: 1px solid var(--lp-color-border-interactive-secondary);
 }
 
 .filterClearButton:active,
@@ -138,7 +138,20 @@
   outline: none;
   box-shadow: unset;
   color: var(--lp-color-text-interactive-destructive);
-  border-bottom-color: var(--lp-color-border-ui-primary);
+}
+
+.filterClearButton:active {
+  border-bottom-color: var(--lp-color-border-interactive-secondary-active);
+  background-color: var(--lp-color-bg-interactive-secondary-active);
+}
+
+.filterClearButton:focus {
+  border-bottom-color: var(--lp-color-border-interactive-secondary-focus);
+  background-color: var(--lp-color-bg-interactive-secondary-focus);
+}
+
+.filterClearButton:hover {
+  border-bottom-color: var(--lp-color-border-interactive-secondary-hover);
   background-color: var(--lp-color-bg-interactive-secondary-hover);
 }
 
@@ -146,12 +159,14 @@
   /* stylelint-disable-next-line no-descending-specificity */
   .button.isClearable {
     background-color: var(--lp-color-cyan-900);
+    border-color: var(--lp-color-cyan-900);
     padding-right: 3.1rem;
 
     &:focus,
     &:hover,
     &:active {
       background-color: var(--lp-color-cyan-800);
+      border-color: var(--lp-color-cyan-800);
     }
   }
 

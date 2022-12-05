@@ -311,6 +311,7 @@ color:
     ui:
       primary:
         value: '{ color.gray.200.value }'
+        dark: '{ color.gray.700.value }'
 
   fill:
     feedback:
@@ -344,6 +345,10 @@ color:
       primary:
         value: '{ color.white. .value }'
         dark: '{ color.black.300.value }'
+    ui:
+      primary:
+        value: '{ color.gray.700.value }'
+        dark: '{ color.black. .value }'
 
   text:
     feedback:

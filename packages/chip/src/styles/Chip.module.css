@@ -30,7 +30,7 @@
   font-size: 1.1rem;
   line-height: 1.2;
   border: 1px solid var(--Chip-border-color);
-  border-radius: var(--lp-border-radius);
+  border-radius: var(--lp-border-radius-regular);
   vertical-align: bottom;
   text-align: center;
   white-space: nowrap;
@@ -158,7 +158,7 @@
 
 .Chip--clickable:focus {
   outline: 0;
-  border-radius: var(--lp-border-radius);
+  border-radius: var(--lp-border-radius-regular);
   box-shadow: 0 0 4px var(--lp-color-shadow-interactive-focus);
   z-index: 2;
 }

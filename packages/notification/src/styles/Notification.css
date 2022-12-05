@@ -88,7 +88,7 @@
   color: var(--Notification-detailsExpand-color-text);
   background-color: transparent;
   border: hsl(0 0% 0% / 0);
-  border-radius: var(--lp-border-radius);
+  border-radius: var(--lp-border-radius-regular);
 
   &:focus {
     outline: none;
@@ -143,7 +143,7 @@ will zero out that positioning adjustment for now */
 }
 
 .Notification-message a {
-  color: var(--Notification-color-text);
+  color: var(--lp-color-text-interactive);
 
   &:hover {
     text-decoration: none;
