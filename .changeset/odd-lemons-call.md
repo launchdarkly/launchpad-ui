@@ -28,3 +28,5 @@ Update theme tokens and usage in LaunchPad
 [Button]: Explicitly specify a color for `close` kind buttons
 
 [Avatar]: Improve theming support for avatar component
+
+[Chip]: Improve theming support for label chip

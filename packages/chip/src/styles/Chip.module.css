@@ -17,7 +17,7 @@
   --Chip-error-color: var(--lp-color-pink-500);
   --Chip-success-color: var(--lp-color-system-green-500);
   --Chip-inactive-color: var(--lp-color-gray-200);
-  --Chip-label-color: var(--lp-color-white-100);
+  --Chip-label-color: var(--lp-color-gray-800);
   --Chip-beta-color: var(--lp-color-purple-400);
   --Chip-invited-color: var(--lp-color-system-yellow-200);
   --Chip-federal-color: var(--lp-color-yellow-500);
@@ -141,7 +141,7 @@
 
 .Chip--label {
   background-color: var(--Chip-label-color);
-  color: var(--lp-color-text-feedback-primary);
+  color: var(--lp-color-text-ui-primary);
 }
 
 .Chip :global([class*='_icon_']) {
