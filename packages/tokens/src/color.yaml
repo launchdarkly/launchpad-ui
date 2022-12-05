@@ -312,9 +312,6 @@ color:
       primary:
         value: '{ color.gray.200.value }'
         dark: '{ color.gray.700.value }'
-      secondary:
-        value: '{ color.gray.100.value }'
-        dark: '{ color.gray.800.value }'
 
   fill:
     feedback:
@@ -350,8 +347,8 @@ color:
         dark: '{ color.black.300.value }'
     ui:
       primary:
-        value: '{ color.white. .value }'
-        dark: '{ color.black.300.value }'
+        value: '{ color.gray.700.value }'
+        dark: '{ color.black. .value }'
 
   text:
     feedback:
