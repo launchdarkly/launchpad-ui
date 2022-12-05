@@ -23,7 +23,7 @@
   --Button-line-height-small: 1.5455; /* 17px */
   --Button-line-height-large: 1.111; /* 20px */
   --Button-border-radius-default: 0.6rem;
-  --Button-border-radius-small: var(--lp-border-radius);
+  --Button-border-radius-small: var(--lp-border-radius-regular);
   --Button-border-radius-link: 1px;
   --Button-border-radius-withIcon: 50%;
   --Button-text-transform: none;

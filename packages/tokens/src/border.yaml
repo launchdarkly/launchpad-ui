@@ -1,6 +1,9 @@
 border:
   radius:
-    value: 0.3rem
+    regular:
+      value: 0.3rem
+    medium:
+      value: 0.6rem
   width:
     100:
       value: 0rem

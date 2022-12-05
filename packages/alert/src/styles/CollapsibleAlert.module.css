@@ -32,7 +32,7 @@ backround support in CollapsibleAlert */
   color: var(--CollapsibleAlert-button-color-text);
   background-color: transparent;
   border: hsl(0 0% 0% / 0);
-  border-radius: var(--lp-border-radius);
+  border-radius: var(--lp-border-radius-regular);
   cursor: pointer;
 
   &:focus {

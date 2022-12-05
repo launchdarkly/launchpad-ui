@@ -34,7 +34,7 @@
   background-color: var(--lp-color-bg-interactive-secondary);
   color: var(--lp-color-text-ui-primary);
   border: 1px solid var(--lp-color-border-interactive-secondary);
-  border-radius: var(--lp-border-radius);
+  border-radius: var(--lp-border-radius-regular);
   transition: all var(--lp-duration-100) linear;
   height: 3.2rem;
 }
@@ -67,7 +67,7 @@ select.formInput {
 
 .suffixContainer .formInput {
   border: none;
-  border-radius: var(--lp-border-radius) 0 0 var(--lp-border-radius);
+  border-radius: var(--lp-border-radius-regular) 0 0 var(--lp-border-radius-regular);
 }
 
 .suffixContainer .formInput:focus {
@@ -280,7 +280,7 @@ input[type='checkbox']:disabled {
 .suffixContainer {
   display: inline-flex;
   border: 1px solid var(--lp-color-gray-500);
-  border-radius: var(--lp-border-radius);
+  border-radius: var(--lp-border-radius-regular);
   overflow: hidden;
   transition: all 0.1s linear;
 }
@@ -344,7 +344,7 @@ input[type='checkbox']:disabled {
 }
 
 .compactTextField.isActive .label {
-  border-radius: var(--lp-border-radius);
+  border-radius: var(--lp-border-radius-regular);
   opacity: 1;
   pointer-events: auto;
   transform: translate(0, -8px) scale(0.9); /* 2d transform to avoid webkit blurry text */
