@@ -1,5 +1,70 @@
 # @launchpad-ui/button
 
+## 0.7.13
+
+### Patch Changes
+
+- [#597](https://github.com/launchdarkly/launchpad-ui/pull/597) [`71549774`](https://github.com/launchdarkly/launchpad-ui/commit/71549774aad5dcd0887379beba474e2371d320e6) Thanks [@chasedarkly](https://github.com/chasedarkly)! - Update theme tokens and usage in LaunchPad
+
+  [Tokens]:
+
+  - Add `lp-color-border-ui-secondary` token
+  - Update `lp-color-shadow-ui-primary` token value to improve design
+
+  [Table]: Improve theming support for table header and row borders
+
+  [TabList]: Improve theming support for TabList items
+
+  [Counter]: Switch to `lp-color-border-ui-secondary` border style
+
+  [Modal]: Switch to `lp-color-border-ui-secondary` border style
+
+  [Button]: Explicitly specify a color for `close` kind buttons
+
+  [Avatar]: Improve theming support for avatar component
+
+  [Chip]: Improve theming support for label chip
+
+- [#595](https://github.com/launchdarkly/launchpad-ui/pull/595) [`9c9429e3`](https://github.com/launchdarkly/launchpad-ui/commit/9c9429e3707c9f229357875f9278755b3f3d7eda) Thanks [@chasedarkly](https://github.com/chasedarkly)! - Update theme tokens
+
+  [Tokens]:
+
+  - Add `lp-color-shadow-ui-primary`
+  - Add a dark theme value to `lp-color-border-ui-primary`
+  - Rename `lp-border-radius` to `lp-border-radius-regular` and add `lp-border-radius-medium`
+
+  [Alert]: Rename `lp-border-radius` to `lp-border-radius-regular`
+
+  [Button]: Rename `lp-border-radius` to `lp-border-radius-regular`
+
+  [Chip]: Rename `lp-border-radius` to `lp-border-radius-regular`
+
+  [Alert]: Rename `lp-border-radius` to `lp-border-radius-regular`
+
+  [Form]: Rename `lp-border-radius` to `lp-border-radius-regular`
+
+  [Menu]: Rename `lp-border-radius` to `lp-border-radius-regular`
+
+  [Popover]: Rename `lp-border-radius` to `lp-border-radius-regular`
+
+  [Clipboard]: Support theming in `CopyCodeButton`
+
+  [Filter]:
+
+  - Rename `lp-border-radius` to `lp-border-radius-regular`
+  - Support theming in filter button and applied filter button components
+
+  [Modal]: Support theming for border and box shadow on modal
+
+  [Notification]:
+
+  - Rename `lp-border-radius` to `lp-border-radius-regular`
+  - Improve theming for links in notifications
+
+- Updated dependencies [[`71549774`](https://github.com/launchdarkly/launchpad-ui/commit/71549774aad5dcd0887379beba474e2371d320e6), [`9c9429e3`](https://github.com/launchdarkly/launchpad-ui/commit/9c9429e3707c9f229357875f9278755b3f3d7eda)]:
+  - @launchpad-ui/tokens@0.4.0
+  - @launchpad-ui/icons@0.6.6
+
 ## 0.7.12
 
 ### Patch Changes
