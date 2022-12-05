@@ -12,7 +12,7 @@
 }
 
 .Counter--subtle {
-  border: 1px solid var(--lp-color-border-ui-primary);
+  border: 1px solid var(--lp-color-border-ui-secondary);
   color: var(--lp-color-text-ui-secondary);
   background-color: var(--lp-color-bg-ui-secondary);
 }

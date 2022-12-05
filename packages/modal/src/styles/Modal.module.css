@@ -23,7 +23,7 @@
 .modal {
   background-color: var(--lp-color-bg-ui-primary);
   position: relative;
-  border: 1px solid var(--lp-color-border-ui-primary);
+  border: 1px solid var(--lp-color-border-ui-secondary);
   border-radius: 0.2rem;
   box-shadow: 0 0 6px var(--lp-color-shadow-ui-primary);
   display: flex;

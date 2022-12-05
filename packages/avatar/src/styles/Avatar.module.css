@@ -1,11 +1,11 @@
 .Avatar {
   background-color: var(--lp-color-bg-ui-primary);
-  border: 1px solid var(--lp-color-gray-100);
+  border: 1px solid var(--lp-color-border-ui-primary);
   border-radius: 100%;
   flex-shrink: 0;
   max-width: unset;
   overflow: hidden;
-  color: var(--lp-color-black);
+  color: var(--lp-color-text-ui-primary);
   display: inline-flex;
   vertical-align: top;
   justify-content: center;

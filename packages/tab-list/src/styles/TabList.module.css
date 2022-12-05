@@ -20,11 +20,13 @@
 .TabList-item:focus {
   outline: none;
   background-color: var(--lp-color-bg-interactive-secondary-hover);
+  color: var(--lp-color-text-ui-primary);
 }
 
 .TabList-item:hover {
   outline: none;
   background-color: var(--lp-color-bg-interactive-secondary-hover);
+  color: var(--lp-color-text-ui-primary);
 }
 
 .TabList-item.is-active {
@@ -46,7 +48,7 @@
 .TabList-item[aria-disabled]:active {
   cursor: not-allowed;
   background-color: var(--lp-color-bg-ui-primary);
-  color: var(--lp-color-gray-500);
+  color: var(--lp-color-text-interactive-disabled);
 }
 
 .TabList-panel {
