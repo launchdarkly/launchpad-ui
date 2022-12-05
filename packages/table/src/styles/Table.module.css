@@ -23,7 +23,7 @@
 }
 
 .Table-header {
-  border-bottom: 1px solid var(--lp-color-gray-100);
+  border-bottom: 1px solid var(--lp-color-border-ui-primary);
 }
 
 .Table-cell {
@@ -112,7 +112,7 @@
 }
 
 .Table-body .Table-row + .Table-row {
-  border-top: 1px solid var(--lp-color-gray-100);
+  border-top: 1px solid var(--lp-color-border-ui-secondary);
 }
 
 /* Used for "smallest possible table column". Table cell will expand to fit content. */

@@ -202,6 +202,7 @@
 .Button.Button--close {
   background-color: transparent;
   fill: var(--lp-color-gray-700);
+  color: var(--lp-color-text-ui-primary);
 }
 
 .Button.Button--close svg {
