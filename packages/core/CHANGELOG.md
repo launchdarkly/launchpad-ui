@@ -1,5 +1,100 @@
 # @launchpad-ui/core
 
+## 0.25.0
+
+### Minor Changes
+
+- [#595](https://github.com/launchdarkly/launchpad-ui/pull/595) [`9c9429e3`](https://github.com/launchdarkly/launchpad-ui/commit/9c9429e3707c9f229357875f9278755b3f3d7eda) Thanks [@chasedarkly](https://github.com/chasedarkly)! - Update theme tokens
+
+  [Tokens]:
+
+  - Add `lp-color-shadow-ui-primary`
+  - Add a dark theme value to `lp-color-border-ui-primary`
+  - Rename `lp-border-radius` to `lp-border-radius-regular` and add `lp-border-radius-medium`
+
+  [Alert]: Rename `lp-border-radius` to `lp-border-radius-regular`
+
+  [Button]: Rename `lp-border-radius` to `lp-border-radius-regular`
+
+  [Chip]: Rename `lp-border-radius` to `lp-border-radius-regular`
+
+  [Alert]: Rename `lp-border-radius` to `lp-border-radius-regular`
+
+  [Form]: Rename `lp-border-radius` to `lp-border-radius-regular`
+
+  [Menu]: Rename `lp-border-radius` to `lp-border-radius-regular`
+
+  [Popover]: Rename `lp-border-radius` to `lp-border-radius-regular`
+
+  [Clipboard]: Support theming in `CopyCodeButton`
+
+  [Filter]:
+
+  - Rename `lp-border-radius` to `lp-border-radius-regular`
+  - Support theming in filter button and applied filter button components
+
+  [Modal]: Support theming for border and box shadow on modal
+
+  [Notification]:
+
+  - Rename `lp-border-radius` to `lp-border-radius-regular`
+  - Improve theming for links in notifications
+
+### Patch Changes
+
+- [#597](https://github.com/launchdarkly/launchpad-ui/pull/597) [`71549774`](https://github.com/launchdarkly/launchpad-ui/commit/71549774aad5dcd0887379beba474e2371d320e6) Thanks [@chasedarkly](https://github.com/chasedarkly)! - Update theme tokens and usage in LaunchPad
+
+  [Tokens]:
+
+  - Add `lp-color-border-ui-secondary` token
+  - Update `lp-color-shadow-ui-primary` token value to improve design
+
+  [Table]: Improve theming support for table header and row borders
+
+  [TabList]: Improve theming support for TabList items
+
+  [Counter]: Switch to `lp-color-border-ui-secondary` border style
+
+  [Modal]: Switch to `lp-color-border-ui-secondary` border style
+
+  [Button]: Explicitly specify a color for `close` kind buttons
+
+  [Avatar]: Improve theming support for avatar component
+
+  [Chip]: Improve theming support for label chip
+
+- Updated dependencies [[`71549774`](https://github.com/launchdarkly/launchpad-ui/commit/71549774aad5dcd0887379beba474e2371d320e6), [`9c9429e3`](https://github.com/launchdarkly/launchpad-ui/commit/9c9429e3707c9f229357875f9278755b3f3d7eda)]:
+  - @launchpad-ui/avatar@0.4.16
+  - @launchpad-ui/button@0.7.13
+  - @launchpad-ui/chip@0.6.8
+  - @launchpad-ui/counter@0.3.9
+  - @launchpad-ui/modal@0.12.8
+  - @launchpad-ui/tab-list@0.4.9
+  - @launchpad-ui/table@0.4.8
+  - @launchpad-ui/tokens@0.4.0
+  - @launchpad-ui/alert@0.6.16
+  - @launchpad-ui/clipboard@0.8.27
+  - @launchpad-ui/filter@0.4.34
+  - @launchpad-ui/form@0.6.21
+  - @launchpad-ui/menu@0.6.33
+  - @launchpad-ui/notification@0.5.28
+  - @launchpad-ui/popover@0.8.24
+  - @launchpad-ui/slider@0.3.7
+  - @launchpad-ui/banner@0.7.15
+  - @launchpad-ui/drawer@0.1.9
+  - @launchpad-ui/dropdown@0.6.9
+  - @launchpad-ui/pagination@0.3.21
+  - @launchpad-ui/snackbar@0.3.13
+  - @launchpad-ui/split-button@0.6.28
+  - @launchpad-ui/navigation@0.6.36
+  - @launchpad-ui/icons@0.6.6
+  - @launchpad-ui/markdown@0.3.8
+  - @launchpad-ui/progress@0.5.7
+  - @launchpad-ui/progress-bubbles@0.5.26
+  - @launchpad-ui/toast@0.2.14
+  - @launchpad-ui/toggle@0.4.10
+  - @launchpad-ui/tooltip@0.6.25
+
 ## 0.24.7
 
 ### Patch Changes

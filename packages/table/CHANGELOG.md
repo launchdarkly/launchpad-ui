@@ -1,5 +1,33 @@
 # @launchpad-ui/table
 
+## 0.4.8
+
+### Patch Changes
+
+- [#597](https://github.com/launchdarkly/launchpad-ui/pull/597) [`71549774`](https://github.com/launchdarkly/launchpad-ui/commit/71549774aad5dcd0887379beba474e2371d320e6) Thanks [@chasedarkly](https://github.com/chasedarkly)! - Update theme tokens and usage in LaunchPad
+
+  [Tokens]:
+
+  - Add `lp-color-border-ui-secondary` token
+  - Update `lp-color-shadow-ui-primary` token value to improve design
+
+  [Table]: Improve theming support for table header and row borders
+
+  [TabList]: Improve theming support for TabList items
+
+  [Counter]: Switch to `lp-color-border-ui-secondary` border style
+
+  [Modal]: Switch to `lp-color-border-ui-secondary` border style
+
+  [Button]: Explicitly specify a color for `close` kind buttons
+
+  [Avatar]: Improve theming support for avatar component
+
+  [Chip]: Improve theming support for label chip
+
+- Updated dependencies [[`71549774`](https://github.com/launchdarkly/launchpad-ui/commit/71549774aad5dcd0887379beba474e2371d320e6), [`9c9429e3`](https://github.com/launchdarkly/launchpad-ui/commit/9c9429e3707c9f229357875f9278755b3f3d7eda)]:
+  - @launchpad-ui/tokens@0.4.0
+
 ## 0.4.7
 
 ### Patch Changes
