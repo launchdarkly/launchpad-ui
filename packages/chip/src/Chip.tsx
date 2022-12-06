@@ -10,12 +10,10 @@ type ChipProps = HTMLAttributes<HTMLSpanElement> & {
     | 'success'
     | 'warning'
     | 'inactive'
-    | 'flag'
     | 'info'
     | 'label'
     | 'new'
     | 'beta'
-    | 'invited'
     | 'federal';
   size?: 'normal' | 'large';
   subtle?: boolean;

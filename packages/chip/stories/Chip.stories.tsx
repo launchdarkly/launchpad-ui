@@ -70,16 +70,31 @@ export const Large: Story = { args: { children: 'Large Chip', size: 'large' } };
 
 export const New: Story = { args: { children: 'New Chip', kind: 'new' } };
 
-export const Flag: Story = { args: { children: 'Flag', kind: 'flag' } };
-
-export const FlagOn: Story = {
-  args: { children: 'ON', kind: 'flag', className: 'Chip--flagOn' },
-};
-
-export const FlagOff: Story = {
-  args: { children: 'OFF', kind: 'flag', className: 'Chip--flagOff' },
-};
-
 export const Federal: Story = { args: { children: 'Federal Chip', kind: 'federal' } };
 
 export const Beta: Story = { args: { children: 'Beta Chip', kind: 'beta' } };
+
+export const DefaultSubtle: Story = {
+  args: { children: 'Example Chip', kind: 'default', subtle: true },
+};
+
+export const SuccessSubtle: Story = {
+  args: { children: 'Success Chip', kind: 'success', subtle: true },
+};
+
+export const WarningSubtle: Story = {
+  args: { children: 'Warning Chip', kind: 'warning', subtle: true },
+};
+export const InfoSubtle: Story = { args: { children: 'Info Chip', kind: 'info', subtle: true } };
+
+export const LabelSubtle: Story = { args: { children: 'Label Chip', kind: 'label', subtle: true } };
+
+export const LargeSubtle: Story = { args: { children: 'Large Chip', size: 'large', subtle: true } };
+
+export const NewSubtle: Story = { args: { children: 'New Chip', kind: 'new', subtle: true } };
+
+export const FederalSubtle: Story = {
+  args: { children: 'Federal Chip', kind: 'federal', subtle: true },
+};
+
+export const BetaSubtle: Story = { args: { children: 'Beta Chip', kind: 'beta', subtle: true } };
