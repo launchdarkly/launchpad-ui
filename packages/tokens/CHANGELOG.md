@@ -1,5 +1,11 @@
 # @launchpad-ui/tokens
 
+## 0.4.2
+
+### Patch Changes
+
+- [`c0840e07`](https://github.com/launchdarkly/launchpad-ui/commit/c0840e07ba5a4f3da47b792d27680bc2549169f5) Thanks [@chasedarkly](https://github.com/chasedarkly)! - Add text feedback tokens for status states
+
 ## 0.4.1
 
 ### Patch Changes
