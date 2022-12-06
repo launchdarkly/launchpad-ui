@@ -12,7 +12,7 @@
 
 :root[data-theme='dark'] {
   --Chip-info-color: var(--lp-color-blue-500);
-  --Chip-warning-color: var(--lp-color-system-yellow-700);
+  --Chip-warning-color: var(--lp-color-system-yellow-800);
   --Chip-error-color: var(--lp-color-pink-500);
   --Chip-success-color: var(--lp-color-system-green-700);
   --Chip-inactive-color: var(--lp-color-gray-200);
