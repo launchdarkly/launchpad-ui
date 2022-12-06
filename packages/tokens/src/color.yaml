@@ -363,6 +363,16 @@ color:
         dark: '{ color.black.300.value }'
       error:
         value: '{ color.system.red.600.value }'
+        dark: '{ color.system.red.400.value }'
+      success:
+        value: '{ color.system.green.900.value }'
+        dark: '{ color.system.green.500.value }'
+      warning:
+        value: '{ color.system.yellow.700.value }'
+        dark: '{ color.system.yellow.500.value }'
+      info:
+        value: '{ color.blue.700.value }'
+        dark: '{ color.blue.400.value }'
     interactive:
       # links
       ' ':
