@@ -1,3 +1,11 @@
+:root {
+  --progress-bubbles-default-bg-color: var(--lp-color-gray-200);
+}
+
+:root[data-theme='dark'] {
+  --progress-bubbles-default-bg-color: var(--lp-color-gray-800);
+}
+
 .ProgressBubbles {
   display: flex;
   align-items: center;
@@ -5,7 +13,7 @@
 }
 
 .ProgressBubbles-bubble {
-  background-color: var(--lp-color-gray-200);
+  background-color: var(--progress-bubbles-default-bg-color);
   width: 2rem;
   height: 2rem;
   border-radius: 1rem;
@@ -17,7 +25,7 @@
   display: flex;
   justify-content: center;
   white-space: nowrap;
-  color: var(--lp-color-gray-600);
+  color: var(--lp-color-text-ui-secondary);
   font-size: 1.3rem;
 }
 
@@ -32,7 +40,7 @@
 .ProgressBubbles-line {
   flex-grow: 1;
   height: 0.2rem;
-  background-color: var(--lp-color-gray-200);
+  background-color: var(--progress-bubbles-default-bg-color);
 }
 
 .ProgressBubbles--filled {
@@ -57,7 +65,7 @@
 .ProgressBubblesUsingItems-line {
   flex-grow: 1;
   height: 0.7rem;
-  background-color: var(--lp-color-gray-200);
+  background-color: var(--progress-bubbles-default-bg-color);
   margin: 0 -0.5rem;
 }
 
@@ -109,7 +117,7 @@ div.ProgressBubbles-icon--current svg {
 }
 
 div.ProgressBubbles-icon--pending {
-  background-color: var(--lp-color-gray-200);
+  background-color: var(--progress-bubbles-default-bg-color);
 }
 
 div.ProgressBubbles-icon--warning {
@@ -137,7 +145,7 @@ div.ProgressBubbles-icon--warning svg {
 }
 
 .ProgressBubbles-label {
-  color: var(--lp-color-black-200);
+  color: var(--lp-color-text-ui-secondary);
   padding-top: 1rem;
   position: absolute;
   top: 2rem;
@@ -148,10 +156,4 @@ div.ProgressBubbles-icon--warning svg {
   -webkit-line-clamp: 2;
   text-overflow: ellipsis;
   white-space: normal;
-}
-
-:root[data-theme] {
-  & .ProgressBubbles-label {
-    color: var(--lp-color-gray-700);
-  }
 }

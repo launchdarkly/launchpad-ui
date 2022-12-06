@@ -4,6 +4,7 @@
 '@launchpad-ui/navigation': patch
 '@launchpad-ui/notification': patch
 '@launchpad-ui/popover': patch
+'@launchpad-ui/progress-bubbles': patch
 '@launchpad-ui/snackbar': patch
 '@launchpad-ui/split-button': patch
 '@launchpad-ui/table': patch
@@ -39,3 +40,5 @@
 - Update `lp-color-bg-overlay-primary` dark value
 - Update `lp-color-border-interactive-secondary` dark value
 - Update `lp-color-border-interactive-disabled` dark value
+
+[ProgressBubbles]: Update dark mode styling
