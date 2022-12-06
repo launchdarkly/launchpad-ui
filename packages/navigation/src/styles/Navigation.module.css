@@ -14,13 +14,23 @@
   padding: 0 2.5rem;
   background-color: var(--lp-color-bg-ui-secondary);
   box-shadow: 0 1px 2px hsl(0 0% 0% / 0.12);
-  overflow-x: auto;
+
+  /**
+   * The Navigation collapses at the point where horizontal scroll begins, so
+   * we hide the scroll-bar to avoid it flickering in and then disappearing
+   */
+  overflow-x: hidden;
 }
 
 .Navigation--collapsed {
   background-color: #fff;
   box-shadow: 0 1px 2px hsl(0 0% 0% / 0.12);
-  padding: 1rem var(--page-gutter-width);
+
+  /**
+   * In a collapsed state, we need to take up the same vertical space to avoid
+   * shifting the page layout.
+   */
+  padding: 1rem var(--page-gutter-width) calc(1rem - 1.5px);
 }
 
 .Navigation--collapsed .NavigationList-wrapper {
