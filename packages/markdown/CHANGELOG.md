@@ -1,5 +1,12 @@
 # @launchpad-ui/markdown
 
+## 0.3.9
+
+### Patch Changes
+
+- Updated dependencies [[`353eccef`](https://github.com/launchdarkly/launchpad-ui/commit/353eccefd155dd95c0221c7e8960ca14afb4baad)]:
+  - @launchpad-ui/tokens@0.4.1
+
 ## 0.3.8
 
 ### Patch Changes
