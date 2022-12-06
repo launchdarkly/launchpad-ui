@@ -1,5 +1,6 @@
 import type { StoryObj } from '@storybook/react';
 
+import { Check, Info } from '@launchpad-ui/icons';
 import { userEvent } from '@storybook/testing-library';
 
 import { Menu, MenuDivider, MenuItem, MenuSearch } from '../src';
@@ -18,7 +19,7 @@ export default {
 
 type Story = StoryObj<typeof Menu>;
 
-export const Example: Story = {
+export const Basic: Story = {
   args: {
     children: [<MenuItem key="1">item 1</MenuItem>, <MenuItem key="2">item 2</MenuItem>],
   },
@@ -27,7 +28,7 @@ export const Example: Story = {
   },
 };
 
-export const ExampleWithDisabledItems: Story = {
+export const WithDisabledItems: Story = {
   args: {
     children: [
       <MenuItem key="1" disabled>
@@ -38,7 +39,7 @@ export const ExampleWithDisabledItems: Story = {
   },
 };
 
-export const ExampleWithSearch: Story = {
+export const WithSearch: Story = {
   args: {
     children: [
       <MenuSearch key="search" />,
@@ -50,7 +51,7 @@ export const ExampleWithSearch: Story = {
   },
 };
 
-export const ExampleWithTooltips: Story = {
+export const WithTooltips: Story = {
   args: {
     children: [
       <MenuItem key="1" tooltip="Hello">
@@ -61,7 +62,33 @@ export const ExampleWithTooltips: Story = {
   },
 };
 
-export const ExampleWithSlottedChild: Story = {
+export const WithHighlightedMenuItem: Story = {
+  args: {
+    children: [
+      <MenuItem key="1" tooltip="Hello">
+        item 1
+      </MenuItem>,
+      <MenuItem key="2" isHighlighted>
+        item 2
+      </MenuItem>,
+    ],
+  },
+};
+
+export const WithMenuItemIcons: Story = {
+  args: {
+    children: [
+      <MenuItem key="1" icon={Check}>
+        item 1
+      </MenuItem>,
+      <MenuItem key="2" icon={Info}>
+        item 2
+      </MenuItem>,
+    ],
+  },
+};
+
+export const WithSlottedChild: Story = {
   args: {
     children: [
       <MenuItem key="1" asChild>
