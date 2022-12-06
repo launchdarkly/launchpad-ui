@@ -1,5 +1,28 @@
 # @launchpad-ui/navigation
 
+## 0.6.39
+
+### Patch Changes
+
+- [#601](https://github.com/launchdarkly/launchpad-ui/pull/601) [`98d47324`](https://github.com/launchdarkly/launchpad-ui/commit/98d4732434a2fa223736d929ca0701f4c8d59f1e) Thanks [@chasedarkly](https://github.com/chasedarkly)! - Improve theming for chip, drawer, and navigation components
+
+  [Chip]:
+
+  - Deprecate `flag` and `invited` variants. `invited` is now unused, and `flag` is moved out of design system.
+  - Improve darkmode theming for all variants.
+  - Move `Chip--topbar` out of design system.
+  - Add storybook stories for subtle variant
+
+  [Drawer]: Improve theming for drawer shadow.
+
+  [Navigation]:
+
+  - Add `border-radius: 0` to items to prevent override from consumer apps.
+  - Update primary navigation background color.
+
+- Updated dependencies [[`98d47324`](https://github.com/launchdarkly/launchpad-ui/commit/98d4732434a2fa223736d929ca0701f4c8d59f1e)]:
+  - @launchpad-ui/chip@0.6.11
+
 ## 0.6.38
 
 ### Patch Changes
