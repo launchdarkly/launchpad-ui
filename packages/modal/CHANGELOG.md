@@ -1,5 +1,14 @@
 # @launchpad-ui/modal
 
+## 0.12.10
+
+### Patch Changes
+
+- Updated dependencies [[`c0840e07`](https://github.com/launchdarkly/launchpad-ui/commit/c0840e07ba5a4f3da47b792d27680bc2549169f5)]:
+  - @launchpad-ui/tokens@0.4.2
+  - @launchpad-ui/button@0.7.15
+  - @launchpad-ui/icons@0.6.8
+
 ## 0.12.9
 
 ### Patch Changes
