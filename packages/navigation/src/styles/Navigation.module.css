@@ -35,7 +35,7 @@
 }
 
 .Nav--secondary {
-  border-bottom: 1px solid var(--lp-color-border-ui-primary);
+  border-bottom: 1px solid var(--lp-color-border-ui-secondary);
 }
 
 .Nav--primary > .NavPopover-target {
