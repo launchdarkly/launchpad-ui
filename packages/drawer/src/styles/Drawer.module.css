@@ -42,7 +42,7 @@
   overflow: auto;
   width: 100vw;
   max-width: 100vw;
-  box-shadow: -1px 0 4px var(--lp-color-gray-700);
+  box-shadow: -1px 0 4px var(--lp-color-shadow-ui-primary);
 }
 
 @media (--tablet) {
