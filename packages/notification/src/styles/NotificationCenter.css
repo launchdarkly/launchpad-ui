@@ -1,5 +1,5 @@
 :root {
-  --NotificationCenter-z-index: var(--lp-z-index-700);
+  --NotificationCenter-z-index: var(--lp-z-index-500);
   --NotificationCenter-max-width: 70ch;
   --NotificationCenter-min-width: 45ch;
 }

@@ -32,7 +32,7 @@
   isolation: isolate;
 
   & .Button--default.SplitButton-main {
-    --SplitButton-color-border-primary: var(--lp-color-gray-300);
+    --SplitButton-color-border-primary: var(--lp-color-border-ui-primary);
   }
 
   & .Button--primary.SplitButton-drop {
