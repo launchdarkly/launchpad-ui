@@ -1,5 +1,14 @@
 # @launchpad-ui/core
 
+## 0.25.4
+
+### Patch Changes
+
+- [#605](https://github.com/launchdarkly/launchpad-ui/pull/605) [`67d86063`](https://github.com/launchdarkly/launchpad-ui/commit/67d86063279d40fde0517359fd1665b936f48f56) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Filter] Remove unused style
+
+- Updated dependencies [[`67d86063`](https://github.com/launchdarkly/launchpad-ui/commit/67d86063279d40fde0517359fd1665b936f48f56)]:
+  - @launchpad-ui/filter@0.4.37
+
 ## 0.25.3
 
 ### Patch Changes
