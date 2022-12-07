@@ -80,10 +80,6 @@
   padding: 0.3rem;
 }
 
-:global(.Filter-target--usage) {
-  border: 1px solid var(--lp-color-gray-600);
-}
-
 .button.isClearable {
   background-color: var(--lp-color-blue-200);
   padding-right: 3.1rem;
