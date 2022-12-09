@@ -192,14 +192,19 @@ color:
     feedback:
       primary:
         value: '{ color.gray.800.value }'
+        dark: '{ color.gray.800.value }'
       error:
         value: '{ color.system.red.200.value }'
+        dark: '{ color.system.red.900.value }'
       info:
         value: '{ color.blue.200.value }'
+        dark: '{ color.blue.900.value }'
       success:
         value: '{ color.system.green.200.value }'
+        dark: '{ color.system.green.900.value }'
       warning:
         value: '{ color.system.yellow.200.value }'
+        dark: '{ color.system.yellow.900.value }'
     interactive:
       primary:
         ' ':
@@ -273,12 +278,16 @@ color:
     feedback:
       error:
         value: '{ color.system.red.700.value }'
+        dark: '{ color.system.red.400.value }'
       info:
         value: '{ color.blue.700.value }'
+        dark: '{ color.blue.400.value }'
       success:
         value: '{ color.system.green.700.value }'
+        dark: '{ color.system.green.400.value }'
       warning:
         value: '{ color.system.yellow.700.value }'
+        dark: '{ color.system.yellow.400.value }'
     interactive:
       focus:
         value: '{ color.blue.500.value }'
@@ -321,12 +330,16 @@ color:
     feedback:
       error:
         value: '{ color.system.red.700.value }'
+        dark: '{ color.system.red.400.value }'
       info:
         value: '{ color.blue.700.value }'
+        dark: '{ color.blue.400.value }'
       success:
         value: '{ color.system.green.700.value }'
+        dark: '{ color.system.green.400.value }'
       warning:
         value: '{ color.system.yellow.700.value }'
+        dark: '{ color.system.yellow.400.value }'
     interactive:
       primary:
         value: '{ color.white. .value }'
@@ -395,8 +408,12 @@ color:
         dark: '{ color.gray.500.value }'
     ui:
       primary:
-        value: '{ color.black.300.value }'
-        dark: '{ color.white. .value }'
+        ' ':
+          value: '{ color.black.300.value }'
+          dark: '{ color.white. .value }'
+        inverted:
+          value: '{ color.white. .value }'
+          dark: '{ color.black.300.value }'
       secondary:
         value: '{ color.gray.700.value }'
         dark: '{ color.gray.300.value }'
