@@ -32,11 +32,11 @@
   --Alert-color-border-success: var(--reskin-success-green-base);
   --Alert-color-border-warning: var(--reskin-warn-gold-base);
   --Alert-color-border-error: var(--reskin-error-red-base);
-  --Alert-icon-color-info: var(--reskin-info-blue-base);
-  --Alert-icon-color-success: var(--reskin-success-green-base);
-  --Alert-icon-color-warning: var(--reskin-warn-gold-base);
-  --Alert-icon-color-error: var(--reskin-error-red-base);
-  --Alert-text-color: var(--lp-color-text-feedback-primary);
+  --Alert-icon-color-info: var(--lp-color-fill-feedback-info);
+  --Alert-icon-color-success: var(--lp-color-fill-feedback-success);
+  --Alert-icon-color-warning: var(--lp-color-fill-feedback-warning);
+  --Alert-icon-color-error: var(--lp-color-fill-feedback-error);
+  --Alert-text-color: var(--lp-color-text-feedback);
 }
 
 :root[data-theme='dark'] {
@@ -65,7 +65,7 @@
   margin-top: 0;
   margin-bottom: 0.4rem;
   font-size: 1.6rem;
-  color: var(--lp-color-black-100);
+  color: var(--lp-color-text-feedback);
   font-weight: var(--lp-font-weight-medium);
   line-height: 1.25;
 }
@@ -161,7 +161,7 @@
 }
 
 .Alert-content :global(a:not(.Button)) {
-  color: var(--lp-color-blue-600);
+  color: var(--lp-color-text-interactive);
 
   &:hover {
     text-decoration: none;
@@ -173,7 +173,7 @@
   }
 
   &:active {
-    color: var(--lp-color-blue-600);
+    color: var(--lp-color-text-interactive-active);
     box-shadow: none;
     text-decoration: underline;
   }

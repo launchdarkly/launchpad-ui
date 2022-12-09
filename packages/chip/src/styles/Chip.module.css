@@ -114,7 +114,7 @@
 
 .Chip--error:not(.Chip--subtle) {
   background-color: var(--Chip-error-color);
-  color: var(--lp-color-text-feedback-secondary);
+  color: var(--lp-color-text-feedback);
 }
 
 .Chip--inactive {
