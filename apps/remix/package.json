@@ -30,7 +30,6 @@
     "@launchpad-ui/menu": "workspace:~",
     "@launchpad-ui/modal": "workspace:~",
     "@launchpad-ui/navigation": "workspace:~",
-    "@launchpad-ui/notification": "workspace:~",
     "@launchpad-ui/pagination": "workspace:~",
     "@launchpad-ui/popover": "workspace:~",
     "@launchpad-ui/progress": "workspace:~",

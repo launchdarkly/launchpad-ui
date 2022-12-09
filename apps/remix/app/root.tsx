@@ -31,7 +31,6 @@ import markdownStyles from '@launchpad-ui/markdown/style.css';
 import menuStyles from '@launchpad-ui/menu/style.css';
 import modalStyles from '@launchpad-ui/modal/style.css';
 import navigationStyles from '@launchpad-ui/navigation/style.css';
-import notificationStyles from '@launchpad-ui/notification/style.css';
 import paginationStyles from '@launchpad-ui/pagination/style.css';
 import popoverStyles from '@launchpad-ui/popover/style.css';
 import progressBubblesStyles from '@launchpad-ui/progress-bubbles/style.css';
@@ -60,7 +59,6 @@ export const links: LinksFunction = () => {
     { rel: 'stylesheet', href: modalStyles },
     { rel: 'stylesheet', href: popoverStyles },
     { rel: 'stylesheet', href: tooltipStyles },
-    { rel: 'stylesheet', href: notificationStyles },
     { rel: 'stylesheet', href: bannerStyles },
     { rel: 'stylesheet', href: clipboardStyles },
     { rel: 'stylesheet', href: menuStyles },
