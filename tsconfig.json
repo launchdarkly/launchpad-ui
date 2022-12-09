@@ -21,7 +21,6 @@
       "@launchpad-ui/menu": ["./packages/menu/src"],
       "@launchpad-ui/modal": ["./packages/modal/src"],
       "@launchpad-ui/navigation": ["./packages/navigation/src"],
-      "@launchpad-ui/notification": ["./packages/notification/src"],
       "@launchpad-ui/overlay": ["./packages/overlay/src"],
       "@launchpad-ui/pagination": ["./packages/pagination/src"],
       "@launchpad-ui/popover": ["./packages/popover/src"],
