@@ -1,5 +1,21 @@
 # @launchpad-ui/alert
 
+## 0.6.19
+
+### Patch Changes
+
+- [#609](https://github.com/launchdarkly/launchpad-ui/pull/609) [`9b37d196`](https://github.com/launchdarkly/launchpad-ui/commit/9b37d196a691fd6a4ca0f989c4121b8683d8f7cb) Thanks [@chasedarkly](https://github.com/chasedarkly)! - Improve themability support in alert and banner
+
+  [Alert]: Improve themability of component
+  [Banner]: Improve themability of component
+  [Chip]: Move to newly named feedback token
+  [Tokens]: Add feedback tokens
+
+- Updated dependencies [[`9b37d196`](https://github.com/launchdarkly/launchpad-ui/commit/9b37d196a691fd6a4ca0f989c4121b8683d8f7cb)]:
+  - @launchpad-ui/tokens@0.4.3
+  - @launchpad-ui/button@0.7.16
+  - @launchpad-ui/icons@0.6.9
+
 ## 0.6.18
 
 ### Patch Changes
