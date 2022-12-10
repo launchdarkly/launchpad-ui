@@ -5,9 +5,9 @@
   /* stylelint-disable-next-line value-keyword-case */
   --Banner-color-border-bottom-warning: var(--lp-color-border-feedback-warning);
   --Banner-color-border-bottom-error: var(--lp-color-border-feedback-error);
-  --Banner-color-text: var(--lp-color-text-feedback-primary);
+  --Banner-color-text: var(--lp-color-text-feedback);
   --Banner-color-background: var(--lp-color-bg-ui-primary);
-  --Banner-color-background-info: var(--lp-color-blue-100);
+  --Banner-color-background-info: var(--lp-color-bg-feedback-info);
   --Banner-color-background-warning: var(--lp-color-bg-feedback-warning);
   --Banner-color-background-error: var(--lp-color-bg-feedback-error);
   --Banner-icon-color-info: var(--lp-color-fill-feedback-info);
