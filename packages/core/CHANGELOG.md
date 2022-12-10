@@ -1,5 +1,49 @@
 # @launchpad-ui/core
 
+## 0.25.5
+
+### Patch Changes
+
+- [#609](https://github.com/launchdarkly/launchpad-ui/pull/609) [`9b37d196`](https://github.com/launchdarkly/launchpad-ui/commit/9b37d196a691fd6a4ca0f989c4121b8683d8f7cb) Thanks [@chasedarkly](https://github.com/chasedarkly)! - Improve themability support in alert and banner
+
+  [Alert]: Improve themability of component
+  [Banner]: Improve themability of component
+  [Chip]: Move to newly named feedback token
+  [Tokens]: Add feedback tokens
+
+- [#607](https://github.com/launchdarkly/launchpad-ui/pull/607) [`cd5bd010`](https://github.com/launchdarkly/launchpad-ui/commit/cd5bd0103ee42381539c85217395b94ef1bb5746) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Notification] Deprecate package
+
+- Updated dependencies [[`9b37d196`](https://github.com/launchdarkly/launchpad-ui/commit/9b37d196a691fd6a4ca0f989c4121b8683d8f7cb)]:
+  - @launchpad-ui/alert@0.6.19
+  - @launchpad-ui/banner@0.7.18
+  - @launchpad-ui/chip@0.6.12
+  - @launchpad-ui/tokens@0.4.3
+  - @launchpad-ui/navigation@0.6.40
+  - @launchpad-ui/avatar@0.4.19
+  - @launchpad-ui/button@0.7.16
+  - @launchpad-ui/clipboard@0.8.30
+  - @launchpad-ui/counter@0.3.12
+  - @launchpad-ui/drawer@0.1.13
+  - @launchpad-ui/dropdown@0.6.12
+  - @launchpad-ui/filter@0.4.38
+  - @launchpad-ui/form@0.6.24
+  - @launchpad-ui/icons@0.6.9
+  - @launchpad-ui/markdown@0.3.11
+  - @launchpad-ui/menu@0.6.36
+  - @launchpad-ui/modal@0.12.11
+  - @launchpad-ui/pagination@0.3.24
+  - @launchpad-ui/popover@0.8.27
+  - @launchpad-ui/progress@0.5.10
+  - @launchpad-ui/progress-bubbles@0.5.29
+  - @launchpad-ui/slider@0.3.10
+  - @launchpad-ui/snackbar@0.3.16
+  - @launchpad-ui/split-button@0.6.31
+  - @launchpad-ui/tab-list@0.4.12
+  - @launchpad-ui/table@0.4.11
+  - @launchpad-ui/toast@0.2.17
+  - @launchpad-ui/toggle@0.4.13
+  - @launchpad-ui/tooltip@0.6.28
+
 ## 0.25.4
 
 ### Patch Changes
