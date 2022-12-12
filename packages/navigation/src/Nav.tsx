@@ -11,10 +11,6 @@ type NavBaseProps = HTMLAttributes<HTMLElement> & {
   'data-test-id'?: string;
 };
 
-type NavigationClickState = {
-  isCollapsed: boolean;
-};
-
 const NavBase = ({
   kind = 'primary',
   className,
@@ -46,4 +42,4 @@ const Nav = forwardRef<HTMLDivElement, NavBaseProps>((props, ref) => (
 Nav.displayName = 'Nav';
 
 export { Nav };
-export type { NavProps, NavigationClickState };
+export type { NavProps };

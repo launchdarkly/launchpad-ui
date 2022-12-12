@@ -1,4 +1,3 @@
-import type { NavigationClickState } from './Nav';
 import type { NavItemProps } from './NavItem';
 import type { NavItemWithTooltipProps } from './NavItemWithTooltip';
 import type { ReactElement } from 'react';
@@ -6,7 +5,6 @@ import type { ReactElement } from 'react';
 type NavigationItemProps = NavItemProps &
   NavItemWithTooltipProps & {
     tooltip?: boolean | ReactElement;
-    onItemSelected?: (e: MouseEvent | null, state: NavigationClickState) => void;
   };
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars

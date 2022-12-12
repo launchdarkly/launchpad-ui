@@ -636,7 +636,6 @@ importers:
     specifiers:
       '@launchpad-ui/chip': workspace:~
       '@launchpad-ui/dropdown': workspace:~
-      '@launchpad-ui/form': workspace:~
       '@launchpad-ui/menu': workspace:~
       '@launchpad-ui/popover': workspace:~
       '@launchpad-ui/tokens': workspace:~
@@ -651,7 +650,6 @@ importers:
     dependencies:
       '@launchpad-ui/chip': link:../chip
       '@launchpad-ui/dropdown': link:../dropdown
-      '@launchpad-ui/form': link:../form
       '@launchpad-ui/menu': link:../menu
       '@launchpad-ui/popover': link:../popover
       '@launchpad-ui/tokens': link:../tokens
