@@ -30,6 +30,11 @@
   /* --color-black-100 */
   box-shadow: 0 0 4px hsl(0 0% 15.7% / 0.12), 0 1px 2px hsl(0 0% 15.7% / 0.1),
     0 4px 4px hsl(0 0% 15.7% / 0.08);
+
+  :root[data-theme='dark'] & {
+    box-shadow: 0 0 4px var(--lp-color-shadow-ui-primary),
+      0 1px 2px var(--lp-color-shadow-ui-primary), 0 4px 4px var(--lp-color-shadow-ui-primary);
+  }
 }
 
 .Popover-content--restrictWidth {

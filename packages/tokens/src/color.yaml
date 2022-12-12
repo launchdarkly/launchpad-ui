@@ -365,7 +365,7 @@ color:
     ui:
       primary:
         value: '{ color.gray.500.value }'
-        dark: '{ color.black.300.value }'
+        dark: '{ color.black. .value }'
 
   text:
     feedback:
