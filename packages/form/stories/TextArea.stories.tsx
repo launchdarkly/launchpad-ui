@@ -16,11 +16,7 @@ const withRestingAndDisabledStates: DecoratorFn = (story, context) => {
   if (viewMode === 'docs') {
     return story();
   }
-  const finalArgs = {
-    ...args,
-    id: 'Disabled',
-    disabled: true,
-  };
+
   return (
     <div className="Textarea-storygroup-wrapper">
       <span className="Textarea-state-label">Resting</span>
@@ -28,7 +24,12 @@ const withRestingAndDisabledStates: DecoratorFn = (story, context) => {
       {originalTemplate && (
         <>
           <span className="Textarea-state-label">Disabled</span>
-          {originalTemplate(finalArgs, context)}
+          {originalTemplate({ ...args, disabled: true, id: 'Disabled' }, context)}
+          <span className="Textarea-state-label">Empty</span>
+          {originalTemplate(
+            { ...args, value: '', placeholder: 'Enter text here', id: 'Placeholder' },
+            context
+          )}
         </>
       )}
     </div>
