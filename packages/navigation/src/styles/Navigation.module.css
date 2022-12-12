@@ -33,6 +33,11 @@
   padding: 1rem var(--page-gutter-width) calc(1rem - 1.5px);
 }
 
+.Navigation--collapsed select {
+  width: auto;
+  padding-right: 2.5rem;
+}
+
 .Navigation--collapsed .NavigationList-wrapper {
   padding: 1 1.4rem;
 }
