@@ -31,9 +31,9 @@
   font-size: 1.3rem;
   font-family: var(--lp-font-family-base);
   line-height: var(--lp-line-height-300);
-  background-color: var(--lp-color-bg-interactive-secondary);
+  background-color: var(--lp-color-bg-field);
   color: var(--lp-color-text-ui-primary);
-  border: 1px solid var(--lp-color-border-interactive-secondary);
+  border: 1px solid var(--lp-color-border-field);
   border-radius: var(--lp-border-radius-regular);
   transition: all var(--lp-duration-100) linear;
   height: 3.2rem;
@@ -47,7 +47,7 @@
 .formInput.isFocused,
 .formInput:focus {
   outline: 0;
-  border-color: var(--lp-color-border-interactive-focus);
+  border-color: var(--lp-color-border-field-focus);
   box-shadow: 0 0 0 3px hsl(231.5 100% 62.5% / 0.1);
 }
 
@@ -150,7 +150,7 @@ select.formInput {
 }
 
 ::placeholder {
-  color: var(--lp-color-gray-600);
+  color: var(--lp-color-text-field-placeholder);
 }
 
 .form .isInvalid :global(.Select-control),
@@ -204,8 +204,8 @@ select.formInput {
 input.formInput:disabled,
 select.formInput:disabled,
 input.formInput:read-only {
-  background-color: var(--lp-color-bg-interactive-disabled);
-  color: var(--lp-color-text-interactive-disabled);
+  background-color: var(--lp-color-bg-field-disabled);
+  color: var(--lp-color-text-field-disabled);
 }
 
 .formInput.isDisabled:hover,
@@ -221,11 +221,11 @@ textarea.formInput {
 
 textarea.formInput:disabled,
 textarea.formInput:read-only {
-  background-color: var(--lp-color-bg-interactive-disabled);
+  background-color: var(--lp-color-bg-field-disabled);
 }
 
 input.formInput::-webkit-autofill {
-  box-shadow: 0 0 0 50px var(--lp-color-bg-interactive-secondary) inset;
+  box-shadow: 0 0 0 50px var(--lp-color-bg-field) inset;
 }
 
 /* Hide the type=search cancel button in Webkit for consistency */
@@ -279,21 +279,21 @@ input[type='checkbox']:disabled {
 
 .suffixContainer {
   display: inline-flex;
-  border: 1px solid var(--lp-color-gray-500);
+  border: 1px solid var(--lp-color-border-field);
   border-radius: var(--lp-border-radius-regular);
   overflow: hidden;
   transition: all 0.1s linear;
 }
 
 .suffixContainer:focus-within {
-  border-color: var(--lp-color-border-interactive-focus);
+  border-color: var(--lp-color-border-field-focus);
   box-shadow: 0 0 0 3px hsl(231.5 100% 62.5% / 0.1);
 }
 
 .suffixContainer .suffix {
   padding: 0 2px;
-  background-color: var(--lp-color-gray-100);
-  color: var(--lp-color-gray-500);
+  background-color: var(--lp-color-bg-field-aside);
+  color: var(--lp-color-text-ui-secondary);
   cursor: text;
   display: inline-flex;
   align-items: center;
@@ -313,7 +313,7 @@ input[type='checkbox']:disabled {
 
 .iconFieldIcon {
   position: absolute;
-  fill: var(--lp-color-gray-600);
+  fill: var(--lp-color-fill-field);
   top: 50%;
   transform: translateY(-50%);
   left: 1rem;
