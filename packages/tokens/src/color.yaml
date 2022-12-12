@@ -269,7 +269,7 @@ color:
     overlay:
       primary:
         value: '{ color.white. .value }'
-        dark: '{ color.black.200.value }'
+        dark: '{ color.black.100.value }'
       secondary:
         value: '{ color.black.300.value }'
         dark: '{ color.white. .value }'
