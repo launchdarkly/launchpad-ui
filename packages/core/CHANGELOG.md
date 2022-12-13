@@ -1,5 +1,45 @@
 # @launchpad-ui/core
 
+## 0.25.6
+
+### Patch Changes
+
+- [#613](https://github.com/launchdarkly/launchpad-ui/pull/613) [`57484ab9`](https://github.com/launchdarkly/launchpad-ui/commit/57484ab9998ef50a32ab51bb9c0286b7be84fdb2) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Popover]: Update background color and shadow color
+  [Tokens]: Update `lp-color-bg-overlay-primary` token value and darkmode shadow ui value
+
+- [#612](https://github.com/launchdarkly/launchpad-ui/pull/612) [`4c2dc031`](https://github.com/launchdarkly/launchpad-ui/commit/4c2dc0315fe0742ad78b706552d7c7e8e87f8e0e) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Tokens]: Add `-field-` variant tokens
+  [Form]: Improve theming with new field tokens
+- Updated dependencies [[`57484ab9`](https://github.com/launchdarkly/launchpad-ui/commit/57484ab9998ef50a32ab51bb9c0286b7be84fdb2), [`4c2dc031`](https://github.com/launchdarkly/launchpad-ui/commit/4c2dc0315fe0742ad78b706552d7c7e8e87f8e0e)]:
+  - @launchpad-ui/tokens@0.4.4
+  - @launchpad-ui/form@0.6.25
+  - @launchpad-ui/alert@0.6.20
+  - @launchpad-ui/avatar@0.4.20
+  - @launchpad-ui/banner@0.7.19
+  - @launchpad-ui/button@0.7.17
+  - @launchpad-ui/chip@0.6.13
+  - @launchpad-ui/clipboard@0.8.31
+  - @launchpad-ui/counter@0.3.13
+  - @launchpad-ui/drawer@0.1.14
+  - @launchpad-ui/dropdown@0.6.13
+  - @launchpad-ui/filter@0.4.39
+  - @launchpad-ui/icons@0.6.10
+  - @launchpad-ui/markdown@0.3.12
+  - @launchpad-ui/menu@0.6.37
+  - @launchpad-ui/modal@0.12.12
+  - @launchpad-ui/navigation@0.6.41
+  - @launchpad-ui/pagination@0.3.25
+  - @launchpad-ui/popover@0.8.28
+  - @launchpad-ui/progress@0.5.11
+  - @launchpad-ui/progress-bubbles@0.5.30
+  - @launchpad-ui/slider@0.3.11
+  - @launchpad-ui/snackbar@0.3.17
+  - @launchpad-ui/split-button@0.6.32
+  - @launchpad-ui/tab-list@0.4.13
+  - @launchpad-ui/table@0.4.12
+  - @launchpad-ui/toast@0.2.18
+  - @launchpad-ui/toggle@0.4.14
+  - @launchpad-ui/tooltip@0.6.29
+
 ## 0.25.5
 
 ### Patch Changes
