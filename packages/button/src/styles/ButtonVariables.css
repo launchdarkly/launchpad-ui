@@ -84,6 +84,7 @@
   --Button-color-background-destructive-focus: var(--lp-color-bg-interactive-destructive-focus);
   --Button-color-background-destructive-active: var(--lp-color-bg-interactive-destructive-active);
   --Button-color-border-destructive: var(--lp-color-border-interactive-destructive);
+  --Button-color-border-destructive-hover: var(--lp-color-border-interactive-destructive);
   --Button-color-text-destructive: var(--lp-color-text-interactive-destructive);
   --Button-color-text-destructive-hover: var(--lp-color-text-interactive-destructive);
   --Button-color-text-destructive-active: var(--lp-color-text-interactive-destructive);
@@ -147,4 +148,12 @@
   /* SEARCH BAR CLEAR BUTTON ICON */
   --Button-icon-clear-color-fill: var(--lp-color-blue-600);
   --Button-icon-clear-color-text: var(--lp-color-blue-600);
+}
+
+:root[data-theme='dark'] {
+  --Button-color-border-destructive: var(--lp-color-system-red-600);
+  --Button-color-background-destructive: var(--lp-color-system-red-600);
+  --Button-color-background-destructive-hover: var(--lp-color-system-red-700);
+  --Button-color-background-destructive-focus: var(--lp-color-system-red-700);
+  --Button-color-background-destructive-active: var(--lp-color-system-red-700);
 }
