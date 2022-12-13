@@ -1,5 +1,14 @@
 # @launchpad-ui/alert
 
+## 0.6.20
+
+### Patch Changes
+
+- Updated dependencies [[`57484ab9`](https://github.com/launchdarkly/launchpad-ui/commit/57484ab9998ef50a32ab51bb9c0286b7be84fdb2), [`4c2dc031`](https://github.com/launchdarkly/launchpad-ui/commit/4c2dc0315fe0742ad78b706552d7c7e8e87f8e0e)]:
+  - @launchpad-ui/tokens@0.4.4
+  - @launchpad-ui/button@0.7.17
+  - @launchpad-ui/icons@0.6.10
+
 ## 0.6.19
 
 ### Patch Changes

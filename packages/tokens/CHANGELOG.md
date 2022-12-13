@@ -1,5 +1,15 @@
 # @launchpad-ui/tokens
 
+## 0.4.4
+
+### Patch Changes
+
+- [#613](https://github.com/launchdarkly/launchpad-ui/pull/613) [`57484ab9`](https://github.com/launchdarkly/launchpad-ui/commit/57484ab9998ef50a32ab51bb9c0286b7be84fdb2) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Popover]: Update background color and shadow color
+  [Tokens]: Update `lp-color-bg-overlay-primary` token value and darkmode shadow ui value
+
+- [#612](https://github.com/launchdarkly/launchpad-ui/pull/612) [`4c2dc031`](https://github.com/launchdarkly/launchpad-ui/commit/4c2dc0315fe0742ad78b706552d7c7e8e87f8e0e) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Tokens]: Add `-field-` variant tokens
+  [Form]: Improve theming with new field tokens
+
 ## 0.4.3
 
 ### Patch Changes
