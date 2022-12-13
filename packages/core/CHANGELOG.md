@@ -1,5 +1,24 @@
 # @launchpad-ui/core
 
+## 0.25.8
+
+### Patch Changes
+
+- [#617](https://github.com/launchdarkly/launchpad-ui/pull/617) [`fd838a5f`](https://github.com/launchdarkly/launchpad-ui/commit/fd838a5f22015fca3d9f1b535e98b82c79405ea8) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Button] Update style for destructive dark mode button
+
+- Updated dependencies [[`fd838a5f`](https://github.com/launchdarkly/launchpad-ui/commit/fd838a5f22015fca3d9f1b535e98b82c79405ea8)]:
+  - @launchpad-ui/button@0.7.19
+  - @launchpad-ui/alert@0.6.22
+  - @launchpad-ui/banner@0.7.21
+  - @launchpad-ui/drawer@0.1.16
+  - @launchpad-ui/dropdown@0.6.15
+  - @launchpad-ui/filter@0.4.41
+  - @launchpad-ui/modal@0.12.14
+  - @launchpad-ui/pagination@0.3.27
+  - @launchpad-ui/snackbar@0.3.19
+  - @launchpad-ui/split-button@0.6.34
+  - @launchpad-ui/navigation@0.6.43
+
 ## 0.25.7
 
 ### Patch Changes
