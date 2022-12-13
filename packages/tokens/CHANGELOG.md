@@ -1,5 +1,12 @@
 # @launchpad-ui/tokens
 
+## 0.4.5
+
+### Patch Changes
+
+- [#615](https://github.com/launchdarkly/launchpad-ui/pull/615) [`c48e0b4f`](https://github.com/launchdarkly/launchpad-ui/commit/c48e0b4fff3e0792b453f9173459fd197871f3d0) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Form] Update label text color and field error border
+  [Tokens] Add form error tokens
+
 ## 0.4.4
 
 ### Patch Changes

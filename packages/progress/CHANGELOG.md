@@ -1,5 +1,12 @@
 # @launchpad-ui/progress
 
+## 0.5.12
+
+### Patch Changes
+
+- Updated dependencies [[`c48e0b4f`](https://github.com/launchdarkly/launchpad-ui/commit/c48e0b4fff3e0792b453f9173459fd197871f3d0)]:
+  - @launchpad-ui/tokens@0.4.5
+
 ## 0.5.11
 
 ### Patch Changes
