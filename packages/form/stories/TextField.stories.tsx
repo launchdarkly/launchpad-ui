@@ -24,6 +24,11 @@ const withRestingAndDisabledStates: DecoratorFn = (story, context) => {
         <>
           <span className="Textarea-state-label">Disabled</span>
           {originalTemplate({ ...args, disabled: true, id: 'Disabled' }, context)}
+          <span className="Textarea-state-label">Empty</span>
+          {originalTemplate(
+            { ...args, value: '', placeholder: 'Enter text here', id: 'Placeholder' },
+            context
+          )}
         </>
       )}
     </div>

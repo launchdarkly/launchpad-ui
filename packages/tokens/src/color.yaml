@@ -273,6 +273,16 @@ color:
       secondary:
         value: '{ color.black.300.value }'
         dark: '{ color.white. .value }'
+    field:
+      ' ':
+        value: '{ color.white. .value }'
+        dark: '{ color.black.300.value }'
+      disabled:
+        value: '{ color.gray.100.value }'
+        dark: '{ color.gray.800.value }'
+      aside:
+        value: '{ color.gray.100.value }'
+        dark: '{ color.gray.800.value }'
 
   border:
     feedback:
@@ -288,6 +298,16 @@ color:
       warning:
         value: '{ color.system.yellow.700.value }'
         dark: '{ color.system.yellow.400.value }'
+    field:
+      ' ':
+        value: '{ color.gray.300.value }'
+        dark: '{ color.gray.500.value }'
+      active:
+        value: '{ color.blue.500.value }'
+        dark: '{ color.cyan.500.value }'
+      focus:
+        value: '{ color.blue.500.value }'
+        dark: '{ color.cyan.500.value }'
     interactive:
       focus:
         value: '{ color.blue.500.value }'
@@ -353,6 +373,10 @@ color:
       primary:
         value: currentvalue
         dark: '{ color.white. .value }'
+    field:
+      ' ':
+        value: '{ color.gray.600.value }'
+        dark: '{ color.gray.400.value }'
 
   shadow:
     interactive:
@@ -425,3 +449,13 @@ color:
       secondary:
         value: '{ color.white. .value }'
         dark: '{ color.black.300.value }'
+    field:
+      ' ':
+        value: '{ color.gray.600.value }'
+        dark: '{ color.gray.400.value }'
+      disabled:
+        value: '{ color.gray.700.value }'
+        dark: '{ color.gray.500.value }'
+      placeholder:
+        value: '{ color.gray.500.value }'
+        dark: '{ color.gray.500.value }'
