@@ -462,6 +462,3 @@ color:
       placeholder:
         value: '{ color.gray.500.value }'
         dark: '{ color.gray.500.value }'
-      error:
-        value: '{ color.system.red.600.value }'
-        dark: '{ color.system.red.400.value }'
