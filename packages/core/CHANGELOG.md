@@ -1,5 +1,42 @@
 # @launchpad-ui/core
 
+## 0.25.7
+
+### Patch Changes
+
+- [#615](https://github.com/launchdarkly/launchpad-ui/pull/615) [`c48e0b4f`](https://github.com/launchdarkly/launchpad-ui/commit/c48e0b4fff3e0792b453f9173459fd197871f3d0) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Form] Update label text color and field error border
+  [Tokens] Add form error tokens
+- Updated dependencies [[`c48e0b4f`](https://github.com/launchdarkly/launchpad-ui/commit/c48e0b4fff3e0792b453f9173459fd197871f3d0)]:
+  - @launchpad-ui/form@0.6.26
+  - @launchpad-ui/tokens@0.4.5
+  - @launchpad-ui/menu@0.6.38
+  - @launchpad-ui/alert@0.6.21
+  - @launchpad-ui/avatar@0.4.21
+  - @launchpad-ui/banner@0.7.20
+  - @launchpad-ui/button@0.7.18
+  - @launchpad-ui/chip@0.6.14
+  - @launchpad-ui/clipboard@0.8.32
+  - @launchpad-ui/counter@0.3.14
+  - @launchpad-ui/drawer@0.1.15
+  - @launchpad-ui/dropdown@0.6.14
+  - @launchpad-ui/filter@0.4.40
+  - @launchpad-ui/icons@0.6.11
+  - @launchpad-ui/markdown@0.3.13
+  - @launchpad-ui/modal@0.12.13
+  - @launchpad-ui/navigation@0.6.42
+  - @launchpad-ui/pagination@0.3.26
+  - @launchpad-ui/popover@0.8.29
+  - @launchpad-ui/progress@0.5.12
+  - @launchpad-ui/progress-bubbles@0.5.31
+  - @launchpad-ui/slider@0.3.12
+  - @launchpad-ui/snackbar@0.3.18
+  - @launchpad-ui/split-button@0.6.33
+  - @launchpad-ui/tab-list@0.4.14
+  - @launchpad-ui/table@0.4.13
+  - @launchpad-ui/toast@0.2.19
+  - @launchpad-ui/toggle@0.4.15
+  - @launchpad-ui/tooltip@0.6.30
+
 ## 0.25.6
 
 ### Patch Changes
