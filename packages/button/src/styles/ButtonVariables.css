@@ -152,8 +152,7 @@
 
 :root[data-theme='dark'] {
   --Button-color-border-destructive: var(--lp-color-system-red-600);
-  --Button-color-background-destructive: var(--lp-color-system-red-600);
-  --Button-color-background-destructive-hover: var(--lp-color-system-red-700);
-  --Button-color-background-destructive-focus: var(--lp-color-system-red-700);
-  --Button-color-background-destructive-active: var(--lp-color-system-red-700);
+  --Button-color-background-destructive-hover: var(--lp-color-system-red-900);
+  --Button-color-background-destructive-focus: var(--lp-color-system-red-900);
+  --Button-color-background-destructive-active: var(--lp-color-system-red-900);
 }
