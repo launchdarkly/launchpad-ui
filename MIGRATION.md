@@ -1,5 +1,45 @@
 # Migration @launchpad-ui/core
 
+## 0.24.0
+
+### Tokens
+
+If you were using alias tokens in your application, you should refactor to use primitives instead, which are listed in the [Storybook color docs](https://main--626696a2018c1f004a1cde86.chromatic.com/?path=/docs/tokens-colors--docs).
+
+Global z-index and duration tokens are also reworked, so before upgrading to `0.24.7`, you should verify in your application that z-indexing still works as expected.
+
+## 0.23.0
+
+### Modal
+
+`ModalHeader` is now a standalone component, and relevant props have been moved from `Modal` to `ModalHeader`. [See Storybook](https://main--626696a2018c1f004a1cde86.chromatic.com/?path=/docs/components-modal--docs) for props list.
+
+## 0.22.0
+
+### Modal
+
+`ModalBody` and `ModalFooter` are now standalone components, and relevant props have been moved from `Modal` to their respective component. [See Storybook](- `ModalHeader` is now a standalone component, and relevant props have been moved from `Modal` to `ModalHeader`. [See Storybook](https://main--626696a2018c1f004a1cde86.chromatic.com/?path=/docs/components-modal--docs) for props list.
+
+## 0.21.0
+
+### Icons
+
+`Verfied` icon renamed to `Verified` to fix typo.
+
+### Modal
+
+- `titleClassName` prop is no longer supported. Use an h2 selector instead if you absolutely need to restyle the title.
+- rename `Modal-close` data-test-id to `modal-close-button`
+- `withCloseButton` prop now defaults to true instead of false
+- `modalLabelID` is deprecated, now set automatically
+- `titleID` prop has been deprecated from `ModalHeader`, now set automatically
+
+## 0.20.0
+
+### Modal
+
+`has-modal` class applied to body has been renamed to `has-overlay`.
+
 ## 0.19.0
 
 ### Global tokens renamed

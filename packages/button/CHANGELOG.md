@@ -1,5 +1,19 @@
 # @launchpad-ui/button
 
+## 0.7.19
+
+### Patch Changes
+
+- [#617](https://github.com/launchdarkly/launchpad-ui/pull/617) [`fd838a5f`](https://github.com/launchdarkly/launchpad-ui/commit/fd838a5f22015fca3d9f1b535e98b82c79405ea8) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Button] Update style for destructive dark mode button
+
+## 0.7.18
+
+### Patch Changes
+
+- Updated dependencies [[`c48e0b4f`](https://github.com/launchdarkly/launchpad-ui/commit/c48e0b4fff3e0792b453f9173459fd197871f3d0)]:
+  - @launchpad-ui/tokens@0.4.5
+  - @launchpad-ui/icons@0.6.11
+
 ## 0.7.17
 
 ### Patch Changes

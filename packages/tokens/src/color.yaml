@@ -308,6 +308,9 @@ color:
       focus:
         value: '{ color.blue.500.value }'
         dark: '{ color.cyan.500.value }'
+      error:
+        value: '{ color.system.red.600.value }'
+        dark: '{ color.system.red.400.value }'
     interactive:
       focus:
         value: '{ color.blue.500.value }'
