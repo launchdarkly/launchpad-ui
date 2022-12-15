@@ -301,7 +301,7 @@ color:
     field:
       ' ':
         value: '{ color.gray.300.value }'
-        dark: '{ color.gray.500.value }'
+        dark: '{ color.gray.700.value }'
       active:
         value: '{ color.blue.500.value }'
         dark: '{ color.cyan.500.value }'
@@ -461,4 +461,4 @@ color:
         dark: '{ color.gray.500.value }'
       placeholder:
         value: '{ color.gray.500.value }'
-        dark: '{ color.gray.500.value }'
+        dark: '{ color.gray.700.value }'

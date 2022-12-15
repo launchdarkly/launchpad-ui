@@ -160,7 +160,7 @@ select.formInput {
   color: var(--lp-color-text-feedback-error);
 }
 
-::placeholder {
+.formInput::placeholder {
   color: var(--lp-color-text-field-placeholder);
 }
 
