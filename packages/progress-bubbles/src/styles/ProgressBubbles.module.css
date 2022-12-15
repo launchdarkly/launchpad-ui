@@ -130,7 +130,7 @@ div.ProgressBubbles-icon--warning svg {
   height: 3.6rem;
   width: 3.6rem;
 
-  :root[data-theme='dark'] {
+  :root[data-theme='dark'] & {
     fill: hsl(29 83% 40%);
   }
 }
