@@ -1,5 +1,20 @@
 # @launchpad-ui/form
 
+## 0.6.27
+
+### Patch Changes
+
+- [#619](https://github.com/launchdarkly/launchpad-ui/pull/619) [`9064d45c`](https://github.com/launchdarkly/launchpad-ui/commit/9064d45cf157f7ded1a11a100940bd144f410fd6) Thanks [@chasedarkly](https://github.com/chasedarkly)! - Update theme tokens for dark mode button, form, and progress-bubbles
+
+  [Button]: Update destructive theme tokens
+  [Form]: Update placeholder and border colors
+  [ProgressBubbles]: Update backgrounds for dark mode
+  [Tokens]: Update tokens for related component changes
+
+- Updated dependencies [[`9064d45c`](https://github.com/launchdarkly/launchpad-ui/commit/9064d45cf157f7ded1a11a100940bd144f410fd6)]:
+  - @launchpad-ui/tokens@0.4.6
+  - @launchpad-ui/icons@0.6.12
+
 ## 0.6.26
 
 ### Patch Changes
