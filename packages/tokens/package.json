@@ -29,6 +29,7 @@
   },
   "scripts": {
     "build": "style-dictionary build --config ./sd.config.js",
+    "build:watch": "vite build --watch -c ./sd.config.js & tsc --project tsconfig.build.json --watch",
     "clean": "rm -rf dist",
     "lint": "eslint '**/*.{ts,tsx,js}'",
     "test": "exit 0"

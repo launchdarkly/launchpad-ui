@@ -59,6 +59,12 @@ export default defineConfig({
     },
     sourcemap: true,
     minify: false,
+    // If we're in watch mode, don't empty the `dist` folder because it will
+    // only be repopulated with changed files (unchanged files will be missing)
+    emptyOutDir: !process.env.WATCH,
+    watch: {
+      clearScreen: !process.env.WATCH,
+    },
   },
   logLevel: process.env.CYPRESS ? 'silent' : undefined,
 });

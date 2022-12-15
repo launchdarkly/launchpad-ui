@@ -7,6 +7,7 @@
     "build": "nx run-many --target=build --all --exclude=@launchpad-ui/remix",
     "build:packages": "nx affected --target=build",
     "build:transform": "nx run-many --target=build --projects=@launchpad-ui/tokens,@launchpad-ui/icons",
+    "build:watch": "WATCH=1 nx run-many --target=build:watch --all --exclude=@launchpad-ui/remix",
     "chromatic": "chromatic",
     "clean": "nx run-many --target=clean --all",
     "cypress:component": "pnpm build:transform && rm -rf coverage .nyc_output && cypress run --component && nyc report",

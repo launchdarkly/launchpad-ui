@@ -28,6 +28,7 @@
   "scripts": {
     "build": "pnpm build:icons && vite build -c ../../vite.config.ts && tsc --project tsconfig.build.json",
     "build:icons": "svgr --silent -- icons",
+    "build:watch": "concurrently -n vite,tsc -c blue,green 'vite build --watch -c ../../vite.config.ts' 'tsc --preserveWatchOutput --project tsconfig.build.json --watch'",
     "clean": "rm -rf dist",
     "lint": "eslint '**/*.{ts,tsx,js}' && stylelint '**/*.css' --ignore-path ../../.stylelintignore",
     "test": "pnpm build:icons && vitest run --coverage"
