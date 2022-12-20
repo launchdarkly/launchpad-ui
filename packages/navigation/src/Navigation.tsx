@@ -17,6 +17,10 @@ type NavigationProps<T extends object> = CollectionBase<T> & {
   className?: string;
 };
 
+type NavigationState = {
+  collapsed: boolean;
+};
+
 const Navigation = <T extends object>(props: NavigationProps<T>) => {
   const { children, className, 'data-test-id': testId = 'navigation' } = props;
   const wrapperRef = useRef<HTMLDivElement>(null);
@@ -73,4 +77,4 @@ const Navigation = <T extends object>(props: NavigationProps<T>) => {
 };
 
 export { Navigation };
-export type { NavigationProps };
+export type { NavigationProps, NavigationState };

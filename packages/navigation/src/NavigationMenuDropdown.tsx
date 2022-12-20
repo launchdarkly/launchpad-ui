@@ -1,4 +1,5 @@
 import type { CollectionBase } from '@react-types/shared';
+import type { MouseEvent } from 'react';
 
 import { Chip } from '@launchpad-ui/chip';
 import { Dropdown, DropdownButton } from '@launchpad-ui/dropdown';
@@ -43,7 +44,11 @@ const NavigationMenuDropdown = <T extends object>(props: NavigationMenuDropdownP
               item={item.key}
               component={NavLink}
               to={item.props.to}
-              onClick={item.props.onClick}
+              onClick={(e: MouseEvent) => {
+                item.props.onClick?.(e, {
+                  collapsed: true,
+                });
+              }}
               style={{
                 minWidth: `${dropdownButtonWidth}px`,
               }}
