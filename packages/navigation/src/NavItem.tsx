@@ -12,7 +12,7 @@ type NavItemProps = {
   to: string | { pathname: string; search: string };
   name: string;
   end?: boolean;
-  onClick?(event: MouseEvent, state?: { collapsed: boolean }): void;
+  onClick?(event: MouseEvent): void;
   activeClassName?: string;
   status?: ChipProps['kind'];
   id?: string;

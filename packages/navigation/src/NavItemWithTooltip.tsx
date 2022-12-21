@@ -13,7 +13,7 @@ type NavItemWithTooltipProps = {
   tooltipContent?: string | JSX.Element;
   tooltipPlacement?: PopoverPlacement;
   tooltipOffset?: Offset;
-  onClick?(event: MouseEvent, state?: { collapsed: boolean }): void;
+  onClick?(event: MouseEvent): void;
   id?: string;
   role?: string;
   'aria-controls'?: string;
