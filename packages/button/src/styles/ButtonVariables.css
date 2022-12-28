@@ -79,7 +79,7 @@
   --Button-color-text-primary-withIcon: var(--lp-color-text-interactive-primary);
 
   /* ------- DESTRUCTIVE ------- */
-  --Button-color-background-destructive: var(--lp-color-bg-interactive-destructive);
+  --Button-color-background-destructive: transparent;
   --Button-color-background-destructive-hover: var(--lp-color-bg-interactive-destructive-hover);
   --Button-color-background-destructive-focus: var(--lp-color-bg-interactive-destructive-focus);
   --Button-color-background-destructive-active: var(--lp-color-bg-interactive-destructive-active);
