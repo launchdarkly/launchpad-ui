@@ -1,5 +1,18 @@
 # @launchpad-ui/filter
 
+## 0.4.44
+
+### Patch Changes
+
+- [#633](https://github.com/launchdarkly/launchpad-ui/pull/633) [`4d40aa2e`](https://github.com/launchdarkly/launchpad-ui/commit/4d40aa2ee768f182ed28d13d42c93c438d446e15) Thanks [@chasedarkly](https://github.com/chasedarkly)! - Update third party dependencies to pin versions to match consumer app
+
+- Updated dependencies [[`4d40aa2e`](https://github.com/launchdarkly/launchpad-ui/commit/4d40aa2ee768f182ed28d13d42c93c438d446e15)]:
+  - @launchpad-ui/button@0.7.22
+  - @launchpad-ui/dropdown@0.6.18
+  - @launchpad-ui/icons@0.6.14
+  - @launchpad-ui/menu@0.6.41
+  - @launchpad-ui/tooltip@0.6.33
+
 ## 0.4.43
 
 ### Patch Changes
