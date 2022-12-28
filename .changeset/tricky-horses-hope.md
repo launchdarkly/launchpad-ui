@@ -1,6 +1,7 @@
 ---
 '@launchpad-ui/button': patch
 '@launchpad-ui/tokens': patch
+'@launchpad-ui/core': patch
 ---
 
 Update tokens based on design team feedback
