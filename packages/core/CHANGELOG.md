@@ -1,5 +1,65 @@
 # @launchpad-ui/core
 
+## 0.25.10
+
+### Patch Changes
+
+- [#629](https://github.com/launchdarkly/launchpad-ui/pull/629) [`183e328e`](https://github.com/launchdarkly/launchpad-ui/commit/183e328e9f315a26c0af4de9ebba51108868bdde) Thanks [@chasedarkly](https://github.com/chasedarkly)! - Update Vite build tool to 4.0
+
+- [#627](https://github.com/launchdarkly/launchpad-ui/pull/627) [`b744011d`](https://github.com/launchdarkly/launchpad-ui/commit/b744011dccd525faa534f8def5ee8af2e346268a) Thanks [@chasedarkly](https://github.com/chasedarkly)! - Improve dark mode theme support for alerts
+
+  [Tokens]: Update `--lp-color-bg-feedback` token values to use alpha 0.15 for backgrounds
+
+  [Alert]: Update CSS variables to remove old `reskin` values and simplify naming
+
+  [Banner]: Update CSS variables to remove old values and simplify naming
+
+  [Button]: Update dark mode default button background style
+
+- [#626](https://github.com/launchdarkly/launchpad-ui/pull/626) [`94fe4b9a`](https://github.com/launchdarkly/launchpad-ui/commit/94fe4b9ada726c190701555c0f5bdca3e8ec610d) Thanks [@chasedarkly](https://github.com/chasedarkly)! - Update tokens based on design team feedback
+
+  [Button]: Destructive buttons in dark mode should have no background color in their default state
+
+  [Tokens]: Update the following:
+
+  - Tweak Gray 600 and Red 600 to comply with contrast ratio criteria
+  - Update interactive secondary border color to increase contrast
+  - Update link color in darkmode from Cyan 600 to 500.
+
+- Updated dependencies [[`183e328e`](https://github.com/launchdarkly/launchpad-ui/commit/183e328e9f315a26c0af4de9ebba51108868bdde), [`b744011d`](https://github.com/launchdarkly/launchpad-ui/commit/b744011dccd525faa534f8def5ee8af2e346268a), [`94fe4b9a`](https://github.com/launchdarkly/launchpad-ui/commit/94fe4b9ada726c190701555c0f5bdca3e8ec610d)]:
+  - @launchpad-ui/alert@0.6.24
+  - @launchpad-ui/avatar@0.4.23
+  - @launchpad-ui/banner@0.7.23
+  - @launchpad-ui/button@0.7.21
+  - @launchpad-ui/chip@0.6.16
+  - @launchpad-ui/clipboard@0.8.34
+  - @launchpad-ui/counter@0.3.16
+  - @launchpad-ui/drawer@0.1.18
+  - @launchpad-ui/dropdown@0.6.17
+  - @launchpad-ui/filter@0.4.43
+  - @launchpad-ui/focus-trap@0.1.3
+  - @launchpad-ui/form@0.6.28
+  - @launchpad-ui/icons@0.6.13
+  - @launchpad-ui/markdown@0.3.15
+  - @launchpad-ui/menu@0.6.40
+  - @launchpad-ui/modal@0.12.16
+  - @launchpad-ui/navigation@0.6.45
+  - @launchpad-ui/overlay@0.3.26
+  - @launchpad-ui/pagination@0.3.29
+  - @launchpad-ui/popover@0.8.31
+  - @launchpad-ui/portal@0.1.1
+  - @launchpad-ui/progress@0.5.14
+  - @launchpad-ui/progress-bubbles@0.5.33
+  - @launchpad-ui/slider@0.3.14
+  - @launchpad-ui/snackbar@0.3.21
+  - @launchpad-ui/split-button@0.6.36
+  - @launchpad-ui/tab-list@0.4.16
+  - @launchpad-ui/table@0.4.15
+  - @launchpad-ui/toast@0.2.21
+  - @launchpad-ui/toggle@0.4.17
+  - @launchpad-ui/tokens@0.4.7
+  - @launchpad-ui/tooltip@0.6.32
+
 ## 0.25.9
 
 ### Patch Changes
