@@ -111,7 +111,7 @@ color:
     500:
       value: hsl(216, 2.4%, 58.6%)
     600:
-      value: hsl(225, 1.8%, 43.5%)
+      value: hsl(225, 1.8%, 45%)
     700:
       value: hsl(220, 1.7%, 35.1%)
     800:
@@ -159,7 +159,7 @@ color:
       500:
         value: hsl(0, 79%, 57.1%)
       600:
-        value: hsl(0, 59.5%, 48.4%)
+        value: hsl(0, 59.5%, 49%)
       700:
         value: hsl(0, 59.6%, 42.7%)
       800:
@@ -322,7 +322,7 @@ color:
       secondary:
         ' ':
           value: '{ color.gray.300.value }'
-          dark: '{ color.gray.600.value }'
+          dark: '{ color.gray.300.value }'
         active:
           value: '{ color.gray.700.value }'
           dark: '{ color.gray.100.value }'
@@ -410,7 +410,7 @@ color:
       # links
       ' ':
         value: '{ color.blue.600.value }'
-        dark: '{ color.cyan.600.value }'
+        dark: '{ color.cyan.500.value }'
       active:
         value: '{ color.purple.600.value }'
         dark: '{ color.purple.400.value }'
