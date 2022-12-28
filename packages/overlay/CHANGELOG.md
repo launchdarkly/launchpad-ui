@@ -1,5 +1,14 @@
 # @launchpad-ui/overlay
 
+## 0.3.26
+
+### Patch Changes
+
+- [#629](https://github.com/launchdarkly/launchpad-ui/pull/629) [`183e328e`](https://github.com/launchdarkly/launchpad-ui/commit/183e328e9f315a26c0af4de9ebba51108868bdde) Thanks [@chasedarkly](https://github.com/chasedarkly)! - Update Vite build tool to 4.0
+
+- Updated dependencies [[`183e328e`](https://github.com/launchdarkly/launchpad-ui/commit/183e328e9f315a26c0af4de9ebba51108868bdde)]:
+  - @launchpad-ui/portal@0.1.1
+
 ## 0.3.25
 
 ### Patch Changes

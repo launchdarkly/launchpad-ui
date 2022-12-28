@@ -1,5 +1,31 @@
 # @launchpad-ui/tokens
 
+## 0.4.7
+
+### Patch Changes
+
+- [#629](https://github.com/launchdarkly/launchpad-ui/pull/629) [`183e328e`](https://github.com/launchdarkly/launchpad-ui/commit/183e328e9f315a26c0af4de9ebba51108868bdde) Thanks [@chasedarkly](https://github.com/chasedarkly)! - Update Vite build tool to 4.0
+
+- [#627](https://github.com/launchdarkly/launchpad-ui/pull/627) [`b744011d`](https://github.com/launchdarkly/launchpad-ui/commit/b744011dccd525faa534f8def5ee8af2e346268a) Thanks [@chasedarkly](https://github.com/chasedarkly)! - Improve dark mode theme support for alerts
+
+  [Tokens]: Update `--lp-color-bg-feedback` token values to use alpha 0.15 for backgrounds
+
+  [Alert]: Update CSS variables to remove old `reskin` values and simplify naming
+
+  [Banner]: Update CSS variables to remove old values and simplify naming
+
+  [Button]: Update dark mode default button background style
+
+- [#626](https://github.com/launchdarkly/launchpad-ui/pull/626) [`94fe4b9a`](https://github.com/launchdarkly/launchpad-ui/commit/94fe4b9ada726c190701555c0f5bdca3e8ec610d) Thanks [@chasedarkly](https://github.com/chasedarkly)! - Update tokens based on design team feedback
+
+  [Button]: Destructive buttons in dark mode should have no background color in their default state
+
+  [Tokens]: Update the following:
+
+  - Tweak Gray 600 and Red 600 to comply with contrast ratio criteria
+  - Update interactive secondary border color to increase contrast
+  - Update link color in darkmode from Cyan 600 to 500.
+
 ## 0.4.6
 
 ### Patch Changes
