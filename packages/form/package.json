@@ -35,7 +35,7 @@
     "@launchpad-ui/icons": "workspace:~",
     "@launchpad-ui/tokens": "workspace:~",
     "@react-aria/visually-hidden": "^3.6.0",
-    "classix": "^2.1.13"
+    "classix": "^2.1.17"
   },
   "peerDependencies": {
     "react": "^18.0.0",
