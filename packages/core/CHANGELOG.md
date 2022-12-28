@@ -1,5 +1,47 @@
 # @launchpad-ui/core
 
+## 0.25.9
+
+### Patch Changes
+
+- [#619](https://github.com/launchdarkly/launchpad-ui/pull/619) [`9064d45c`](https://github.com/launchdarkly/launchpad-ui/commit/9064d45cf157f7ded1a11a100940bd144f410fd6) Thanks [@chasedarkly](https://github.com/chasedarkly)! - Update theme tokens for dark mode button, form, and progress-bubbles
+
+  [Button]: Update destructive theme tokens
+  [Form]: Update placeholder and border colors
+  [ProgressBubbles]: Update backgrounds for dark mode
+  [Tokens]: Update tokens for related component changes
+
+- Updated dependencies [[`9064d45c`](https://github.com/launchdarkly/launchpad-ui/commit/9064d45cf157f7ded1a11a100940bd144f410fd6)]:
+  - @launchpad-ui/button@0.7.20
+  - @launchpad-ui/form@0.6.27
+  - @launchpad-ui/progress-bubbles@0.5.32
+  - @launchpad-ui/tokens@0.4.6
+  - @launchpad-ui/alert@0.6.23
+  - @launchpad-ui/banner@0.7.22
+  - @launchpad-ui/drawer@0.1.17
+  - @launchpad-ui/dropdown@0.6.16
+  - @launchpad-ui/filter@0.4.42
+  - @launchpad-ui/modal@0.12.15
+  - @launchpad-ui/pagination@0.3.28
+  - @launchpad-ui/snackbar@0.3.20
+  - @launchpad-ui/split-button@0.6.35
+  - @launchpad-ui/menu@0.6.39
+  - @launchpad-ui/avatar@0.4.22
+  - @launchpad-ui/chip@0.6.15
+  - @launchpad-ui/clipboard@0.8.33
+  - @launchpad-ui/counter@0.3.15
+  - @launchpad-ui/icons@0.6.12
+  - @launchpad-ui/markdown@0.3.14
+  - @launchpad-ui/navigation@0.6.44
+  - @launchpad-ui/popover@0.8.30
+  - @launchpad-ui/progress@0.5.13
+  - @launchpad-ui/slider@0.3.13
+  - @launchpad-ui/tab-list@0.4.15
+  - @launchpad-ui/table@0.4.14
+  - @launchpad-ui/toast@0.2.20
+  - @launchpad-ui/toggle@0.4.16
+  - @launchpad-ui/tooltip@0.6.31
+
 ## 0.25.8
 
 ### Patch Changes

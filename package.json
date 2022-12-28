@@ -78,7 +78,7 @@
     "axe-core": "^4.5.0",
     "chromatic": "^6.11.2",
     "concurrently": "^7.6.0",
-    "cypress": "^11.2.0",
+    "cypress": "^12.2.0",
     "cypress-axe": "^1.1.0",
     "cypress-real-events": "^1.7.2",
     "deepmerge": "^4.2.2",
