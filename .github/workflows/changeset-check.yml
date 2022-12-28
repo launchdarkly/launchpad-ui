@@ -12,7 +12,7 @@ jobs:
 
       - name: Get changed files
         id: changed-files
-        uses: tj-actions/changed-files@v34
+        uses: tj-actions/changed-files@v35
         with:
           files: |
             packages/**/src/**
@@ -22,7 +22,7 @@ jobs:
       - name: Check for changeset
         if: steps.changed-files.outputs.any_changed == 'true'
         id: added-changeset
-        uses: tj-actions/changed-files@v34
+        uses: tj-actions/changed-files@v35
         with:
           files: |
             .changeset/*.md
