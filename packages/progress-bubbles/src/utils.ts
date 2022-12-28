@@ -9,6 +9,7 @@ type UseDimensionsProps = {
   defaults?: Partial<Dimensions>;
 };
 
+/* c8 ignore start */
 export function useDimensions<T extends HTMLElement>({ defaults }: UseDimensionsProps = {}) {
   const [node, setNode] = useState<T | null>(null);
   const [dimensions, setDimensions] = useState<Dimensions>({
@@ -47,5 +48,6 @@ export function useDimensions<T extends HTMLElement>({ defaults }: UseDimensions
     dimensions,
   };
 }
+/* c8 ignore stop */
 
 export type { Dimensions, UseDimensionsProps };
