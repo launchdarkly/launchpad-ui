@@ -33,14 +33,14 @@
   },
   "dependencies": {
     "@launchpad-ui/tokens": "workspace:~",
-    "classix": "^2.1.17"
+    "classix": "2.1.17"
   },
   "peerDependencies": {
-    "react": "^18.0.0",
-    "react-dom": "^18.0.0"
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
   },
   "devDependencies": {
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
   }
 }

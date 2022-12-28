@@ -32,20 +32,20 @@
     "test": "vitest run --coverage"
   },
   "dependencies": {
-    "@floating-ui/core": "^1.0.0",
-    "@floating-ui/dom": "^1.0.0",
+    "@floating-ui/core": "1.0.0",
+    "@floating-ui/dom": "1.0.0",
     "@launchpad-ui/focus-trap": "workspace:~",
     "@launchpad-ui/overlay": "workspace:~",
     "@launchpad-ui/tokens": "workspace:~",
-    "classix": "^2.1.17",
-    "framer-motion": "^7.6.1"
+    "classix": "2.1.17",
+    "framer-motion": "7.6.1"
   },
   "peerDependencies": {
-    "react": "^18.0.0",
-    "react-dom": "^18.0.0"
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
   },
   "devDependencies": {
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
   }
 }
