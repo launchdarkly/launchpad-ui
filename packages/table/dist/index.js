@@ -1,8 +1,8 @@
 require('./style.css');
 "use strict";
-Object.defineProperties(exports, { __esModule: { value: true }, [Symbol.toStringTag]: { value: "Module" } });
-const classix = require("classix");
+Object.defineProperty(exports, Symbol.toStringTag, { value: "Module" });
 const jsxRuntime = require("react/jsx-runtime");
+const classix = require("classix");
 const Table$1 = "_Table_olnh7_12";
 const styles = {
   Table: Table$1,
@@ -43,13 +43,14 @@ const Table = ({
   "data-test-id": testId = "table",
   ...rest
 }) => {
-  const classes = classix.cx(styles.Table, auto && styles["Table--auto"], compact && styles["Table--compact"], isResourceTable && styles["Table--resourceTable"], className);
-  return /* @__PURE__ */ jsxRuntime.jsx("table", {
-    ...rest,
-    "data-test-id": testId,
-    className: classes,
-    children
-  });
+  const classes = classix.cx(
+    styles.Table,
+    auto && styles["Table--auto"],
+    compact && styles["Table--compact"],
+    isResourceTable && styles["Table--resourceTable"],
+    className
+  );
+  return /* @__PURE__ */ jsxRuntime.jsx("table", { ...rest, "data-test-id": testId, className: classes, children });
 };
 const TableBody = ({
   className,
@@ -58,29 +59,15 @@ const TableBody = ({
   ...rest
 }) => {
   const classes = classix.cx(styles["Table-body"], className);
-  return /* @__PURE__ */ jsxRuntime.jsx("tbody", {
-    ...rest,
-    "data-test-id": testId,
-    className: classes,
-    children
-  });
+  return /* @__PURE__ */ jsxRuntime.jsx("tbody", { ...rest, "data-test-id": testId, className: classes, children });
 };
-const TableCell = ({
-  align = "left",
-  className,
-  children,
-  ...rest
-}) => {
+const TableCell = ({ align = "left", className, children, ...rest }) => {
   const classes = classix.cx(styles["Table-cell"], styles[`Table-cell--${align}`], className);
   const restProps = rest;
   if ("hasScope" in restProps) {
     delete restProps.hasScope;
   }
-  return /* @__PURE__ */ jsxRuntime.jsx("td", {
-    ...restProps,
-    className: classes,
-    children
-  });
+  return /* @__PURE__ */ jsxRuntime.jsx("td", { ...restProps, className: classes, children });
 };
 const TableHead = ({
   className,
@@ -89,12 +76,7 @@ const TableHead = ({
   ...rest
 }) => {
   const classes = classix.cx(styles["Table-header"], className);
-  return /* @__PURE__ */ jsxRuntime.jsx("thead", {
-    ...rest,
-    "data-test-id": testId,
-    className: classes,
-    children
-  });
+  return /* @__PURE__ */ jsxRuntime.jsx("thead", { ...rest, "data-test-id": testId, className: classes, children });
 };
 const TableHeadCell = ({
   align = "left",
@@ -105,13 +87,14 @@ const TableHeadCell = ({
   ...rest
 }) => {
   const widthClass = defaultColWidth ? styles[`Table-cell--width-${defaultColWidth}`] : "";
-  const classes = classix.cx(styles["Table-cell"], styles["Table-cell--head"], styles[`Table-cell--${align}`], widthClass, className);
-  return /* @__PURE__ */ jsxRuntime.jsx("th", {
-    ...rest,
-    className: classes,
-    scope,
-    children
-  });
+  const classes = classix.cx(
+    styles["Table-cell"],
+    styles["Table-cell--head"],
+    styles[`Table-cell--${align}`],
+    widthClass,
+    className
+  );
+  return /* @__PURE__ */ jsxRuntime.jsx("th", { ...rest, className: classes, scope, children });
 };
 const TableRow = ({
   className,
@@ -122,12 +105,7 @@ const TableRow = ({
 }) => {
   const verticalAlignClass = verticalAlign ? styles[`Table-row--${verticalAlign}`] : "";
   const classes = classix.cx(styles["Table-row"], verticalAlignClass, className);
-  return /* @__PURE__ */ jsxRuntime.jsx("tr", {
-    ...rest,
-    className: classes,
-    "data-test-id": testId,
-    children
-  });
+  return /* @__PURE__ */ jsxRuntime.jsx("tr", { ...rest, className: classes, "data-test-id": testId, children });
 };
 exports.Table = Table;
 exports.TableBody = TableBody;

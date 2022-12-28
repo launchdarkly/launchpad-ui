@@ -1,10 +1,10 @@
 require('./style.css');
 "use strict";
-Object.defineProperties(exports, { __esModule: { value: true }, [Symbol.toStringTag]: { value: "Module" } });
+Object.defineProperty(exports, Symbol.toStringTag, { value: "Module" });
+const jsxRuntime = require("react/jsx-runtime");
 const icons = require("@launchpad-ui/icons");
 const classix = require("classix");
 const react = require("react");
-const jsxRuntime = require("react/jsx-runtime");
 const Avatar$1 = "_Avatar_iqh64_1";
 const styles = {
   Avatar: Avatar$1,
@@ -73,36 +73,30 @@ const Avatar = ({
   if (useDefaultAvatar || !imageSource) {
     if (initials) {
       const color = (initials.charCodeAt(0) + initials.charCodeAt(1)) % 5;
-      const initialsContainerClasses = classix.cx(classes, styles["Avatar--initials"], styles[`Avatar--color${color}`]);
-      return /* @__PURE__ */ jsxRuntime.jsx("div", {
-        className: initialsContainerClasses,
-        "data-test-id": testId,
-        ...rest,
-        children: /* @__PURE__ */ jsxRuntime.jsx("span", {
-          className: styles["Avatar-initials-content"],
-          children: initials
-        })
-      });
+      const initialsContainerClasses = classix.cx(
+        classes,
+        styles["Avatar--initials"],
+        styles[`Avatar--color${color}`]
+      );
+      return /* @__PURE__ */ jsxRuntime.jsx("div", { className: initialsContainerClasses, "data-test-id": testId, ...rest, children: /* @__PURE__ */ jsxRuntime.jsx("span", { className: styles["Avatar-initials-content"], children: initials }) });
     } else {
-      return /* @__PURE__ */ jsxRuntime.jsx(DefaultIcon, {
-        className: classes,
-        "data-test-id": testId,
-        size,
-        ...rest
-      });
+      return /* @__PURE__ */ jsxRuntime.jsx(DefaultIcon, { className: classes, "data-test-id": testId, size, ...rest });
     }
   }
   const dimension = DIMENSIONS[size];
-  return /* @__PURE__ */ jsxRuntime.jsx("img", {
-    ...rest,
-    alt,
-    className: classes,
-    src: imageSource,
-    width: dimension,
-    height: dimension,
-    "data-test-id": testId,
-    onError: () => setUseDefaultAvatar(true)
-  });
+  return /* @__PURE__ */ jsxRuntime.jsx(
+    "img",
+    {
+      ...rest,
+      alt,
+      className: classes,
+      src: imageSource,
+      width: dimension,
+      height: dimension,
+      "data-test-id": testId,
+      onError: () => setUseDefaultAvatar(true)
+    }
+  );
 };
 exports.Avatar = Avatar;
 //# sourceMappingURL=index.js.map

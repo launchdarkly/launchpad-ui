@@ -1,5 +1,5 @@
 "use strict";
-Object.defineProperties(exports, { __esModule: { value: true }, [Symbol.toStringTag]: { value: "Module" } });
+Object.defineProperty(exports, Symbol.toStringTag, { value: "Module" });
 const alert = require("@launchpad-ui/alert");
 const avatar = require("@launchpad-ui/avatar");
 const banner = require("@launchpad-ui/banner");

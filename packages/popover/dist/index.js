@@ -1,31 +1,31 @@
 require('./style.css');
 "use strict";
-Object.defineProperties(exports, { __esModule: { value: true }, [Symbol.toStringTag]: { value: "Module" } });
+var __create = Object.create;
+var __defProp = Object.defineProperty;
+var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
+var __getOwnPropNames = Object.getOwnPropertyNames;
+var __getProtoOf = Object.getPrototypeOf;
+var __hasOwnProp = Object.prototype.hasOwnProperty;
+var __copyProps = (to, from, except, desc) => {
+  if (from && typeof from === "object" || typeof from === "function") {
+    for (let key of __getOwnPropNames(from))
+      if (!__hasOwnProp.call(to, key) && key !== except)
+        __defProp(to, key, { get: () => from[key], enumerable: !(desc = __getOwnPropDesc(from, key)) || desc.enumerable });
+  }
+  return to;
+};
+var __toESM = (mod, isNodeMode, target) => (target = mod != null ? __create(__getProtoOf(mod)) : {}, __copyProps(
+  isNodeMode || !mod || !mod.__esModule ? __defProp(target, "default", { value: mod, enumerable: true }) : target,
+  mod
+));
+Object.defineProperty(exports, Symbol.toStringTag, { value: "Module" });
+const jsxRuntime = require("react/jsx-runtime");
 const dom = require("@floating-ui/dom");
 const focusTrap = require("@launchpad-ui/focus-trap");
 const overlay = require("@launchpad-ui/overlay");
 const classix = require("classix");
 const framerMotion = require("framer-motion");
 const react = require("react");
-const jsxRuntime = require("react/jsx-runtime");
-function _interopNamespace(e) {
-  if (e && e.__esModule)
-    return e;
-  const n = Object.create(null, { [Symbol.toStringTag]: { value: "Module" } });
-  if (e) {
-    for (const k in e) {
-      if (k !== "default") {
-        const d = Object.getOwnPropertyDescriptor(e, k);
-        Object.defineProperty(n, k, d.get ? d : {
-          enumerable: true,
-          get: () => e[k]
-        });
-      }
-    }
-  }
-  n.default = e;
-  return Object.freeze(n);
-}
 const Popover$1 = "_Popover_1g4x0_5";
 const styles = {
   Popover: Popover$1,
@@ -35,9 +35,11 @@ const styles = {
   "Popover-content--restrictWidth": "_Popover-content--restrictWidth_1g4x0_40",
   "Popover-scroller": "_Popover-scroller_1g4x0_44"
 };
-const loadFeatures = () => Promise.resolve().then(() => /* @__PURE__ */ _interopNamespace(require(
+const loadFeatures = () => import(
+  /* webpackChunkName: "lp-popover-framer-features" */
+  /* webpackExports: "domAnimation" */
   "framer-motion"
-))).then((res) => res.domAnimation);
+).then((res) => res.domAnimation);
 const isOrContainsElement = (referenceElement, element) => {
   return referenceElement === element || referenceElement && referenceElement.contains(element);
 };
@@ -73,7 +75,7 @@ const Popover = ({
   "data-test-id": testId = "popover"
 }) => {
   var _a;
-  const [isOpen, setIsOpen] = react.useState(isOpenProp != null ? isOpenProp : void 0);
+  const [isOpen, setIsOpen] = react.useState(isOpenProp ?? void 0);
   const [popoverElement, setPopoverElement] = react.useState();
   const targetRef = react.useRef(null);
   const contentRef = react.useCallback((node) => {
@@ -93,22 +95,16 @@ const Popover = ({
       return;
     }
     if (!allowBoundaryElementOverflow) {
-      middleware.push(dom.shift({
-        padding: 5
-      }));
+      middleware.push(dom.shift({ padding: 5 }));
     }
     if (!disablePlacementFlip && !offset) {
-      middleware.push(dom.flip({
-        padding: 5
-      }));
+      middleware.push(dom.flip({ padding: 5 }));
     }
     if (offset) {
       middleware.push(dom.offset(offset));
     }
     if (enableArrow && arrowRef.current) {
-      middleware.push(dom.arrow({
-        element: arrowRef.current
-      }));
+      middleware.push(dom.arrow({ element: arrowRef.current }));
     }
     const hasModal = (_a2 = targetRef.current) == null ? void 0 : _a2.closest(".has-overlay");
     const strategy = isFixed || hasModal ? "fixed" : "absolute";
@@ -138,10 +134,7 @@ const Popover = ({
       popoverElement.dataset.popoverPlacement = floatPlacement;
     }
     if (enableArrow && arrowRef.current && middlewareData.arrow) {
-      const {
-        x: arrowX,
-        y: arrowY
-      } = middlewareData.arrow;
+      const { x: arrowX, y: arrowY } = middlewareData.arrow;
       const staticSide = {
         top: "bottom",
         right: "left",
@@ -158,7 +151,15 @@ const Popover = ({
         });
       }
     }
-  }, [allowBoundaryElementOverflow, disablePlacementFlip, enableArrow, isFixed, offset, placement, popoverElement]);
+  }, [
+    allowBoundaryElementOverflow,
+    disablePlacementFlip,
+    enableArrow,
+    isFixed,
+    offset,
+    placement,
+    popoverElement
+  ]);
   react.useEffect(() => {
     return () => {
       if (timeoutRef.current) {
@@ -169,12 +170,8 @@ const Popover = ({
   react.useEffect(() => {
     const updatePopover = async () => {
       if (isOpen && !(popoverElement === null || popoverElement === void 0)) {
-        window.addEventListener("scroll", updatePosition, {
-          passive: true
-        });
-        window.addEventListener("resize", updatePosition, {
-          passive: true
-        });
+        window.addEventListener("scroll", updatePosition, { passive: true });
+        window.addEventListener("resize", updatePosition, { passive: true });
         await updatePosition();
       } else {
         window.removeEventListener("scroll", updatePosition);
@@ -244,8 +241,8 @@ const Popover = ({
   const parseChildren = () => {
     const [targetChild, contentChild] = react.Children.toArray(children);
     return {
-      target: targetChild != null ? targetChild : targetProp,
-      content: contentChild != null ? contentChild : contentProp
+      target: targetChild ?? targetProp,
+      content: contentChild ?? contentProp
     };
   };
   const attachGlobalListener = () => {
@@ -274,53 +271,48 @@ const Popover = ({
     if (interactionKind !== "hover-target-only") {
       handlers.onClick = handlePopoverClick;
     }
-    const popoverContent = /* @__PURE__ */ jsxRuntime.jsx(framerMotion.LazyMotion, {
-      strict: true,
-      features: loadFeatures,
-      children: /* @__PURE__ */ jsxRuntime.jsxs(framerMotion.m.div, {
-        transition: {
-          duration: 0.15
-        },
-        initial: {
-          opacity: 0
-        },
-        animate: {
-          opacity: 1
-        },
-        className: classix.cx(styles["Popover-content"], restrictWidth && styles["Popover-content--restrictWidth"], popoverContentClassName),
+    const popoverContent = /* @__PURE__ */ jsxRuntime.jsx(framerMotion.LazyMotion, { strict: true, features: loadFeatures, children: /* @__PURE__ */ jsxRuntime.jsxs(
+      framerMotion.m.div,
+      {
+        transition: { duration: 0.15 },
+        initial: { opacity: 0 },
+        animate: { opacity: 1 },
+        className: classix.cx(
+          styles["Popover-content"],
+          restrictWidth && styles["Popover-content--restrictWidth"],
+          popoverContentClassName
+        ),
         tabIndex: interactionKind === "click" ? -1 : void 0,
-        children: [enableArrow && /* @__PURE__ */ jsxRuntime.jsx("div", {
-          id: "arrow",
-          ref: arrowRef
-        }), restrictHeight ? /* @__PURE__ */ jsxRuntime.jsx("div", {
-          className: styles["Popover-scroller"],
-          children: content2
-        }) : content2]
-      })
-    });
-    return /* @__PURE__ */ jsxRuntime.jsx("div", {
-      id: popoverId.current,
-      ref: contentRef,
-      className: classes,
-      role: "tooltip",
-      "data-test-id": testId,
-      "aria-hidden": !isOpen,
-      ...handlers,
-      children: interactionKind === "click" ? /* @__PURE__ */ jsxRuntime.jsx(focusTrap.FocusTrap, {
-        autoFocus: true,
-        children: popoverContent
-      }) : popoverContent
-    });
+        children: [
+          enableArrow && /* @__PURE__ */ jsxRuntime.jsx("div", { id: "arrow", ref: arrowRef }),
+          restrictHeight ? /* @__PURE__ */ jsxRuntime.jsx("div", { className: styles["Popover-scroller"], children: content2 }) : content2
+        ]
+      }
+    ) });
+    return /* @__PURE__ */ jsxRuntime.jsx(
+      "div",
+      {
+        id: popoverId.current,
+        ref: contentRef,
+        className: classes,
+        role: "tooltip",
+        "data-test-id": testId,
+        "aria-hidden": !isOpen,
+        ...handlers,
+        children: interactionKind === "click" ? /* @__PURE__ */ jsxRuntime.jsx(focusTrap.FocusTrap, { autoFocus: true, children: popoverContent }) : popoverContent
+      }
+    );
   };
-  const {
-    target,
-    content
-  } = parseChildren();
+  const { target, content } = parseChildren();
   const hasEmptyContent = content === null || content === void 0 || typeof content === "string" && !content;
   const isTargetDisabled = react.isValidElement(target) ? !!((_a = target == null ? void 0 : target.props) == null ? void 0 : _a.disabled) : false;
   const targetProps = {
     ref: targetRef,
-    className: classix.cx(styles["Popover-target"], targetClassName, isTargetDisabled && styles["Popover-target--disabled"]),
+    className: classix.cx(
+      styles["Popover-target"],
+      targetClassName,
+      isTargetDisabled && styles["Popover-target--disabled"]
+    ),
     style: rootElementStyle,
     "data-test-id": targetTestId || "popover-target"
   };
@@ -336,22 +328,26 @@ const Popover = ({
   } else {
     targetProps.onClick = handleTargetClick;
   }
-  return react.createElement(rootElementTag, targetProps, react.cloneElement(target, {
-    ref: targetElementRef,
-    ...isOpen && {
-      "aria-describedby": popoverId.current
-    },
-    "data-state": isOpen ? "open" : "closed"
-  }), /* @__PURE__ */ jsxRuntime.jsx(overlay.Overlay, {
-    isOpen: !!isOpen && !hasEmptyContent,
-    canOutsideClickClose: interactionKind === "click",
-    isModal,
-    enforceFocus,
-    onClose: handleOverlayClose,
-    children: /* @__PURE__ */ jsxRuntime.jsx("div", {
-      children: renderPopover(content)
-    })
-  }));
+  return react.createElement(
+    rootElementTag,
+    targetProps,
+    react.cloneElement(target, {
+      ref: targetElementRef,
+      ...isOpen && { "aria-describedby": popoverId.current },
+      "data-state": isOpen ? "open" : "closed"
+    }),
+    /* @__PURE__ */ jsxRuntime.jsx(
+      overlay.Overlay,
+      {
+        isOpen: !!isOpen && !hasEmptyContent,
+        canOutsideClickClose: interactionKind === "click",
+        isModal,
+        enforceFocus,
+        onClose: handleOverlayClose,
+        children: /* @__PURE__ */ jsxRuntime.jsx("div", { children: renderPopover(content) })
+      }
+    )
+  );
 };
 exports.Popover = Popover;
 //# sourceMappingURL=index.js.map

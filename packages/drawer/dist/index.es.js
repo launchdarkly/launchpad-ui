@@ -1,4 +1,5 @@
 import './style.css';
+import { jsx, jsxs } from "react/jsx-runtime";
 import { IconButton } from "@launchpad-ui/button";
 import { FocusTrap } from "@launchpad-ui/focus-trap";
 import { Close } from "@launchpad-ui/icons";
@@ -8,7 +9,6 @@ import { usePreventScroll } from "@react-aria/overlays";
 import { cx } from "classix";
 import { LazyMotion, m } from "framer-motion";
 import { useRef, useEffect, Suspense } from "react";
-import { jsx, jsxs } from "react/jsx-runtime";
 const DRAWER_LABELLED_BY = "drawer-title";
 const drawer = "_drawer_1amby_17";
 const overlay$1 = "_overlay_1amby_27";
@@ -31,30 +31,15 @@ const styles = {
   closeButton
 };
 const overlay = {
-  visible: {
-    opacity: 1,
-    transition: {
-      duration: 0.15
-    }
-  },
-  hidden: {
-    opacity: 0
-  }
+  visible: { opacity: 1, transition: { duration: 0.15 } },
+  hidden: { opacity: 0 }
 };
 const slideRight = {
-  hidden: {
-    opacity: 0,
-    x: "25%"
-  },
+  hidden: { opacity: 0, x: "25%" },
   visible: {
     opacity: 1,
     x: "0%",
-    transition: {
-      type: "spring",
-      delay: 0.15,
-      duration: 0.2,
-      bounce: 0
-    }
+    transition: { type: "spring", delay: 0.15, duration: 0.2, bounce: 0 }
   }
 };
 const loadFeatures = () => import(
@@ -94,29 +79,26 @@ const Drawer = ({
       onCancel && onCancel();
     }
   };
-  return /* @__PURE__ */ jsx(Portal, {
-    children: /* @__PURE__ */ jsx(LazyMotion, {
-      strict: true,
-      features: loadFeatures,
-      children: /* @__PURE__ */ jsx("div", {
-        className: cx(styles.drawer, styles[size], className),
-        "data-drawer": true,
-        "data-test-id": testId,
-        ref,
-        children: /* @__PURE__ */ jsx(m.div, {
+  return /* @__PURE__ */ jsx(Portal, { children: /* @__PURE__ */ jsx(LazyMotion, { strict: true, features: loadFeatures, children: /* @__PURE__ */ jsx(
+    "div",
+    {
+      className: cx(styles.drawer, styles[size], className),
+      "data-drawer": true,
+      "data-test-id": testId,
+      ref,
+      children: /* @__PURE__ */ jsx(
+        m.div,
+        {
           initial: "hidden",
           animate: "visible",
           variants: overlay,
-          transition: {
-            duration: 0.15
-          },
+          transition: { duration: 0.15 },
           role: "presentation",
           className: styles.overlay,
           onMouseDown: handleOverlayClick,
-          children: /* @__PURE__ */ jsx(FocusTrap, {
-            autoFocus: true,
-            restoreFocus: true,
-            children: /* @__PURE__ */ jsxs(m.div, {
+          children: /* @__PURE__ */ jsx(FocusTrap, { autoFocus: true, restoreFocus: true, children: /* @__PURE__ */ jsxs(
+            m.div,
+            {
               initial: "hidden",
               animate: "visible",
               variants: slideRight,
@@ -125,24 +107,25 @@ const Drawer = ({
               "aria-modal": true,
               className: styles.content,
               tabIndex: -1,
-              children: [/* @__PURE__ */ jsx(IconButton, {
-                "aria-label": "close",
-                icon: /* @__PURE__ */ jsx(Close, {
-                  size: "medium"
-                }),
-                className: styles.closeButton,
-                onClick: onCancel,
-                "data-test-id": "drawer-close-button"
-              }), /* @__PURE__ */ jsx(Suspense, {
-                fallback: /* @__PURE__ */ jsx(Progress, {}),
-                children
-              })]
-            })
-          })
-        })
-      })
-    })
-  });
+              children: [
+                /* @__PURE__ */ jsx(
+                  IconButton,
+                  {
+                    "aria-label": "close",
+                    icon: /* @__PURE__ */ jsx(Close, { size: "medium" }),
+                    className: styles.closeButton,
+                    onClick: onCancel,
+                    "data-test-id": "drawer-close-button"
+                  }
+                ),
+                /* @__PURE__ */ jsx(Suspense, { fallback: /* @__PURE__ */ jsx(Progress, {}), children })
+              ]
+            }
+          ) })
+        }
+      )
+    }
+  ) }) });
 };
 const DrawerHeader = ({
   className,
@@ -152,16 +135,7 @@ const DrawerHeader = ({
   "data-test-id": testId = "drawer-header",
   ...rest
 }) => {
-  return /* @__PURE__ */ jsx("div", {
-    "data-test-id": testId,
-    className,
-    ...rest,
-    children: /* @__PURE__ */ jsx("h2", {
-      id: DRAWER_LABELLED_BY,
-      className: titleClassName,
-      children
-    })
-  });
+  return /* @__PURE__ */ jsx("div", { "data-test-id": testId, className, ...rest, children: /* @__PURE__ */ jsx("h2", { id: DRAWER_LABELLED_BY, className: titleClassName, children }) });
 };
 export {
   Drawer,

@@ -1,9 +1,9 @@
 import './style.css';
+import { jsx, jsxs, Fragment } from "react/jsx-runtime";
 import { useValueEffect, useResizeObserver } from "@react-aria/utils";
 import { cx } from "classix";
 import { createContext, useContext, forwardRef, useState, useEffect, useRef, useCallback } from "react";
 import { useListState } from "@react-stately/list";
-import { jsx, jsxs, Fragment } from "react/jsx-runtime";
 import { Chip } from "@launchpad-ui/chip";
 import { useLocation, NavLink } from "react-router-dom";
 import { Tooltip } from "@launchpad-ui/tooltip";
@@ -45,19 +45,19 @@ const NavBase = ({
   "data-test-id": testId = "nav",
   ...rest
 }) => {
-  return /* @__PURE__ */ jsx("nav", {
-    ...rest,
-    "aria-label": ariaLabel != null ? ariaLabel : `${kind} navigation`,
-    className: cx(styles.Nav, styles[`Nav--${kind}`], className),
-    "data-test-id": testId,
-    ref: innerRef,
-    children
-  });
+  return /* @__PURE__ */ jsx(
+    "nav",
+    {
+      ...rest,
+      "aria-label": ariaLabel ?? `${kind} navigation`,
+      className: cx(styles.Nav, styles[`Nav--${kind}`], className),
+      "data-test-id": testId,
+      ref: innerRef,
+      children
+    }
+  );
 };
-const Nav = forwardRef((props, ref) => /* @__PURE__ */ jsx(NavBase, {
-  ...props,
-  innerRef: ref
-}));
+const Nav = forwardRef((props, ref) => /* @__PURE__ */ jsx(NavBase, { ...props, innerRef: ref }));
 Nav.displayName = "Nav";
 const titlecase = (str) => {
   return str.toString().toLowerCase().replace(/\b([a-z])/g, (ch) => ch.toUpperCase());
@@ -87,46 +87,33 @@ const NavItem = ({
   "data-test-id": testId = "nav-item",
   ...other
 }) => {
-  const {
-    pathname
-  } = useLocation();
+  const { pathname } = useLocation();
   const selected = pathname === to ? "true" : "false";
-  return /* @__PURE__ */ jsx(NavLink, {
-    ...other,
-    end,
-    to,
-    className: ({
-      isActive
-    }) => cx(styles.NavItem, isActive && styles["is-active"]),
-    "data-text": name,
-    onClick,
-    role,
-    "data-nav-target": "true",
-    "data-test-id": testId,
-    "aria-selected": role === "tab" ? selected : void 0,
-    children: status ? /* @__PURE__ */ jsxs("div", {
-      style: {
-        display: "flex",
-        alignItems: "flex-end"
-      },
-      children: [/* @__PURE__ */ jsx("span", {
-        className: styles["NavItem-name"],
-        children: name
-      }), /* @__PURE__ */ jsx(Chip, {
-        className: styles["NavItem-chip"],
-        "data-test-id": "nav-item-chip",
-        kind: status,
-        children: titlecase(status)
-      })]
-    }) : /* @__PURE__ */ jsx("span", {
-      className: styles["NavItem-name"],
-      children: name
-    })
-  });
+  return /* @__PURE__ */ jsx(
+    NavLink,
+    {
+      ...other,
+      end,
+      to,
+      className: ({ isActive }) => cx(styles.NavItem, isActive && styles["is-active"]),
+      "data-text": name,
+      onClick,
+      role,
+      "data-nav-target": "true",
+      "data-test-id": testId,
+      "aria-selected": role === "tab" ? selected : void 0,
+      children: status ? /* @__PURE__ */ jsxs("div", { style: { display: "flex", alignItems: "flex-end" }, children: [
+        /* @__PURE__ */ jsx("span", { className: styles["NavItem-name"], children: name }),
+        /* @__PURE__ */ jsx(Chip, { className: styles["NavItem-chip"], "data-test-id": "nav-item-chip", kind: status, children: titlecase(status) })
+      ] }) : /* @__PURE__ */ jsx("span", { className: styles["NavItem-name"], children: name })
+    }
+  );
 };
-const defaultContent = /* @__PURE__ */ jsxs(Fragment, {
-  children: ["Upgrade your plan to use this feature.", /* @__PURE__ */ jsx("br", {}), "Click to learn more."]
-});
+const defaultContent = /* @__PURE__ */ jsxs(Fragment, { children: [
+  "Upgrade your plan to use this feature.",
+  /* @__PURE__ */ jsx("br", {}),
+  "Click to learn more."
+] });
 const NavItemWithTooltip = ({
   to,
   name,
@@ -140,58 +127,50 @@ const NavItemWithTooltip = ({
   "aria-controls": ariaControls,
   "data-test-id": testId = "nav-item-with-tooltip"
 }) => {
-  const centeredContent = /* @__PURE__ */ jsx("div", {
-    className: styles["NavItem-tooltip"],
-    children: tooltipContent
-  });
-  return /* @__PURE__ */ jsx(Tooltip, {
-    content: centeredContent,
-    placement: tooltipPlacement,
-    offset: tooltipOffset,
-    allowBoundaryElementOverflow: true,
-    targetClassName: styles["NavPopover-target"],
-    "data-test-id": testId,
-    children: /* @__PURE__ */ jsx(NavItem, {
-      end,
-      to,
-      name,
-      onClick,
-      role,
-      id,
-      "aria-controls": ariaControls
-    })
-  });
+  const centeredContent = /* @__PURE__ */ jsx("div", { className: styles["NavItem-tooltip"], children: tooltipContent });
+  return /* @__PURE__ */ jsx(
+    Tooltip,
+    {
+      content: centeredContent,
+      placement: tooltipPlacement,
+      offset: tooltipOffset,
+      allowBoundaryElementOverflow: true,
+      targetClassName: styles["NavPopover-target"],
+      "data-test-id": testId,
+      children: /* @__PURE__ */ jsx(
+        NavItem,
+        {
+          end,
+          to,
+          name,
+          onClick,
+          role,
+          id,
+          "aria-controls": ariaControls
+        }
+      )
+    }
+  );
 };
 const NavigationMenuDropdown = (props) => {
   const state = useListState(props);
-  return /* @__PURE__ */ jsxs(Dropdown, {
-    children: [/* @__PURE__ */ jsx(DropdownButton, {
-      "data-test-id": "navigation-menu-button",
-      children: props.title
-    }), /* @__PURE__ */ jsx(Menu, {
-      children: [...state.collection].map((item) => /* @__PURE__ */ jsx(MenuItem, {
+  return /* @__PURE__ */ jsxs(Dropdown, { children: [
+    /* @__PURE__ */ jsx(DropdownButton, { "data-test-id": "navigation-menu-button", children: props.title }),
+    /* @__PURE__ */ jsx(Menu, { children: [...state.collection].map((item) => /* @__PURE__ */ jsx(
+      MenuItem,
+      {
         item: item.key,
         component: NavLink,
         to: item.props.to,
         onClick: item.props.onClick,
-        children: /* @__PURE__ */ jsxs("div", {
-          style: {
-            display: "flex",
-            gap: "var(--lp-spacing-300)",
-            alignItems: "center"
-          },
-          children: [/* @__PURE__ */ jsx("div", {
-            children: item.props.name
-          }), item.props.status ? /* @__PURE__ */ jsx("div", {
-            children: /* @__PURE__ */ jsx(Chip, {
-              kind: item.props.status,
-              children: titlecase(item.props.status)
-            })
-          }) : void 0]
-        })
-      }, item.key))
-    })]
-  });
+        children: /* @__PURE__ */ jsxs("div", { style: { display: "flex", gap: "var(--lp-spacing-300)", alignItems: "center" }, children: [
+          /* @__PURE__ */ jsx("div", { children: item.props.name }),
+          item.props.status ? /* @__PURE__ */ jsx("div", { children: /* @__PURE__ */ jsx(Chip, { kind: item.props.status, children: titlecase(item.props.status) }) }) : void 0
+        ] })
+      },
+      item.key
+    )) })
+  ] });
 };
 const NavigationList = ({
   kind = "primary",
@@ -199,21 +178,11 @@ const NavigationList = ({
   ...rest
 }) => {
   const state = useListState(rest);
-  const {
-    shouldCollapse,
-    refs
-  } = useNavigationContext();
-  return /* @__PURE__ */ jsx("div", {
-    className: styles["NavigationList-wrapper"],
-    ref: refs.wrapperRef,
-    children: shouldCollapse ? /* @__PURE__ */ jsx(NavigationMenuDropdown, {
-      title,
-      "aria-label": title,
-      ...rest
-    }) : /* @__PURE__ */ jsx(Nav, {
-      kind,
-      ref: refs.itemListRef,
-      children: [...state.collection].map((item) => item.props.tooltip ? /* @__PURE__ */ jsx(NavItemWithTooltip, {
+  const { shouldCollapse, refs } = useNavigationContext();
+  return /* @__PURE__ */ jsx("div", { className: styles["NavigationList-wrapper"], ref: refs.wrapperRef, children: shouldCollapse ? /* @__PURE__ */ jsx(NavigationMenuDropdown, { title, "aria-label": title, ...rest }) : /* @__PURE__ */ jsx(Nav, { kind, ref: refs.itemListRef, children: [...state.collection].map(
+    (item) => item.props.tooltip ? /* @__PURE__ */ jsx(
+      NavItemWithTooltip,
+      {
         to: item.props.to,
         id: item.props.id,
         name: item.props.name,
@@ -224,7 +193,11 @@ const NavigationList = ({
         tooltipPlacement: item.props.tooltipPlacement,
         onClick: item.props.onClick,
         end: item.props.end
-      }, item.key) : /* @__PURE__ */ jsx(NavItem, {
+      },
+      item.key
+    ) : /* @__PURE__ */ jsx(
+      NavItem,
+      {
         to: item.props.to,
         id: item.props.id,
         name: item.props.name,
@@ -233,16 +206,13 @@ const NavigationList = ({
         "aria-controls": item.props["aria-controls"],
         onClick: item.props.onClick,
         end: item.props.end
-      }, item.key))
-    })
-  });
+      },
+      item.key
+    )
+  ) }) });
 };
 const Navigation = (props) => {
-  const {
-    children,
-    className,
-    "data-test-id": testId = "navigation"
-  } = props;
+  const { children, className, "data-test-id": testId = "navigation" } = props;
   const wrapperRef = useRef(null);
   const itemListRef = useRef(null);
   const [shouldCollapse, setCollapse] = useValueEffect(false);
@@ -270,26 +240,31 @@ const Navigation = (props) => {
   useEffect(() => {
     checkShouldCollapse();
   }, [children, checkShouldCollapse, isWideViewport]);
-  useResizeObserver({
-    ref: wrapperRef,
-    onResize: checkShouldCollapse
-  });
-  return /* @__PURE__ */ jsx("div", {
-    className: cx(styles.Navigation, shouldCollapse && styles["Navigation--collapsed"], className),
-    "data-test-id": testId,
-    children: /* @__PURE__ */ jsx(NavigationContext.Provider, {
-      value: {
-        shouldCollapse,
-        refs: {
-          wrapperRef,
-          itemListRef
+  useResizeObserver({ ref: wrapperRef, onResize: checkShouldCollapse });
+  return /* @__PURE__ */ jsx(
+    "div",
+    {
+      className: cx(
+        styles.Navigation,
+        shouldCollapse && styles["Navigation--collapsed"],
+        className
+      ),
+      "data-test-id": testId,
+      children: /* @__PURE__ */ jsx(
+        NavigationContext.Provider,
+        {
+          value: {
+            shouldCollapse,
+            refs: {
+              wrapperRef,
+              itemListRef
+            }
+          },
+          children: /* @__PURE__ */ jsx(NavigationList, { ...props })
         }
-      },
-      children: /* @__PURE__ */ jsx(NavigationList, {
-        ...props
-      })
-    })
-  });
+      )
+    }
+  );
 };
 const NavigationItem = (_props) => {
   return null;

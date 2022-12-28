@@ -1,8 +1,8 @@
 import './style.css';
+import { jsxs, jsx } from "react/jsx-runtime";
 import { IconButton } from "@launchpad-ui/button";
 import { StatusIcon, Close } from "@launchpad-ui/icons";
 import { cx } from "classix";
-import { jsxs, jsx } from "react/jsx-runtime";
 const Banner$1 = "_Banner_1hy8w_25";
 const styles = {
   Banner: Banner$1,
@@ -24,33 +24,31 @@ const Banner = ({
   ...rest
 }) => {
   const classes = cx(styles.Banner, styles[`Banner--${kind}`], className);
-  return /* @__PURE__ */ jsxs("div", {
-    className: classes,
-    "data-test-id": testId,
-    ...rest,
-    children: [/* @__PURE__ */ jsx(StatusIcon, {
-      kind,
-      className: styles["Banner-icon"],
-      "data-test-id": `${testId}-status-icon`
-    }), /* @__PURE__ */ jsxs("div", {
-      className: styles["Banner-content"],
-      children: [header && /* @__PURE__ */ jsx("h4", {
-        className: styles["Banner-heading"],
-        children: header
-      }), /* @__PURE__ */ jsx("div", {
-        children
-      })]
-    }), dismissible && /* @__PURE__ */ jsx(IconButton, {
-      "aria-label": "Close banner",
-      icon: /* @__PURE__ */ jsx(Close, {
-        size: "small"
-      }),
-      size: "small",
-      onClick: onDismiss,
-      kind: "close",
-      "data-test-id": testId ? `${testId}-dismiss-button` : void 0
-    })]
-  });
+  return /* @__PURE__ */ jsxs("div", { className: classes, "data-test-id": testId, ...rest, children: [
+    /* @__PURE__ */ jsx(
+      StatusIcon,
+      {
+        kind,
+        className: styles["Banner-icon"],
+        "data-test-id": `${testId}-status-icon`
+      }
+    ),
+    /* @__PURE__ */ jsxs("div", { className: styles["Banner-content"], children: [
+      header && /* @__PURE__ */ jsx("h4", { className: styles["Banner-heading"], children: header }),
+      /* @__PURE__ */ jsx("div", { children })
+    ] }),
+    dismissible && /* @__PURE__ */ jsx(
+      IconButton,
+      {
+        "aria-label": "Close banner",
+        icon: /* @__PURE__ */ jsx(Close, { size: "small" }),
+        size: "small",
+        onClick: onDismiss,
+        kind: "close",
+        "data-test-id": testId ? `${testId}-dismiss-button` : void 0
+      }
+    )
+  ] });
 };
 export {
   Banner

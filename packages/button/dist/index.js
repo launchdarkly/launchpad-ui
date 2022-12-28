@@ -1,10 +1,10 @@
 require('./style.css');
 "use strict";
-Object.defineProperties(exports, { __esModule: { value: true }, [Symbol.toStringTag]: { value: "Module" } });
+Object.defineProperty(exports, Symbol.toStringTag, { value: "Module" });
+const jsxRuntime = require("react/jsx-runtime");
 const reactSlot = require("@radix-ui/react-slot");
 const classix = require("classix");
 const react = require("react");
-const jsxRuntime = require("react/jsx-runtime");
 const Button$1 = "";
 const ButtonComponent = react.forwardRef((props, ref) => {
   const {
@@ -26,20 +26,27 @@ const ButtonComponent = react.forwardRef((props, ref) => {
     ...rest
   } = props;
   const Component = asChild ? reactSlot.Slot : "button";
-  const classes = classix.cx("Button", `Button--${kind}`, disabled && "Button--disabled", size && `Button--${size}`, fit && "Button--fit", className);
+  const classes = classix.cx(
+    "Button",
+    `Button--${kind}`,
+    disabled && "Button--disabled",
+    size && `Button--${size}`,
+    fit && "Button--fit",
+    className
+  );
   const renderIcon = icon && react.cloneElement(icon, {
     key: "icon",
     size: icon.props.size || "small",
     "aria-hidden": true,
     className: classix.cx(icon.props.className, "Button-icon")
   });
-  const getFinalChildren = (c) => [renderIconFirst && renderIcon, isLoading && /* @__PURE__ */ jsxRuntime.jsx("span", {
-    children: loadingText || c
-  }, "text"), !isLoading && c && /* @__PURE__ */ jsxRuntime.jsx("span", {
-    children: c
-  }, "text"), !renderIconFirst && renderIcon, isLoading && /* @__PURE__ */ jsxRuntime.jsx("span", {
-    children: "\u2026"
-  }, "spinner")];
+  const getFinalChildren = (c) => [
+    renderIconFirst && renderIcon,
+    isLoading && /* @__PURE__ */ jsxRuntime.jsx("span", { children: loadingText || c }, "text"),
+    !isLoading && c && /* @__PURE__ */ jsxRuntime.jsx("span", { children: c }, "text"),
+    !renderIconFirst && renderIcon,
+    isLoading && /* @__PURE__ */ jsxRuntime.jsx("span", { children: "…" }, "spinner")
+  ];
   const renderChildren = () => {
     if (asChild && react.isValidElement(children)) {
       return react.cloneElement(children, void 0, getFinalChildren(children.props.children));
@@ -62,17 +69,20 @@ const ButtonComponent = react.forwardRef((props, ref) => {
       }
     }
   };
-  return /* @__PURE__ */ jsxRuntime.jsx(Component, {
-    className: classes,
-    ref,
-    onClick: handleClick,
-    onKeyDown: onKeyDown || handleKeyDown,
-    disabled: isDisabled,
-    type,
-    "data-test-id": testId,
-    ...rest,
-    children: renderChildren()
-  });
+  return /* @__PURE__ */ jsxRuntime.jsx(
+    Component,
+    {
+      className: classes,
+      ref,
+      onClick: handleClick,
+      onKeyDown: onKeyDown || handleKeyDown,
+      disabled: isDisabled,
+      type,
+      "data-test-id": testId,
+      ...rest,
+      children: renderChildren()
+    }
+  );
 });
 ButtonComponent.displayName = "Button";
 const Button = react.memo(ButtonComponent);
@@ -85,12 +95,7 @@ const ButtonGroup = ({
   ...rest
 }) => {
   const classes = classix.cx("ButtonGroup", `ButtonGroup--${spacing}`, className);
-  return /* @__PURE__ */ jsxRuntime.jsx("div", {
-    className: classes,
-    "data-test-id": testId,
-    ...rest,
-    children
-  });
+  return /* @__PURE__ */ jsxRuntime.jsx("div", { className: classes, "data-test-id": testId, ...rest, children });
 };
 const UploadButton = ({
   id,
@@ -133,25 +138,24 @@ const UploadButton = ({
       inputRef.current.value = "";
     }
   };
-  return /* @__PURE__ */ jsxRuntime.jsxs("span", {
-    className: classes,
-    "data-test-id": testId,
-    children: [/* @__PURE__ */ jsxRuntime.jsx("input", {
-      ref: inputRef,
-      className: "UploadButton-input",
-      id,
-      style: {
-        display: "none"
-      },
-      type: "file",
-      onChange: handleChange,
-      disabled,
-      accept,
-      "data-test-id": "upload-button-input"
-    }), /* @__PURE__ */ jsxRuntime.jsx("label", {
-      htmlFor: id,
-      className: "UploadButton-label",
-      children: /* @__PURE__ */ jsxRuntime.jsx(Button, {
+  return /* @__PURE__ */ jsxRuntime.jsxs("span", { className: classes, "data-test-id": testId, children: [
+    /* @__PURE__ */ jsxRuntime.jsx(
+      "input",
+      {
+        ref: inputRef,
+        className: "UploadButton-input",
+        id,
+        style: { display: "none" },
+        type: "file",
+        onChange: handleChange,
+        disabled,
+        accept,
+        "data-test-id": "upload-button-input"
+      }
+    ),
+    /* @__PURE__ */ jsxRuntime.jsx("label", { htmlFor: id, className: "UploadButton-label", children: /* @__PURE__ */ jsxRuntime.jsx(
+      Button,
+      {
         ...rest,
         disabled,
         tabIndex: disabled ? -1 : 0,
@@ -159,9 +163,9 @@ const UploadButton = ({
         onKeyDown: handleKeyDown,
         onClick: handleClick,
         children
-      })
-    })]
-  });
+      }
+    ) })
+  ] });
 };
 const IconButtonComponent = react.forwardRef((props, ref) => {
   const {
@@ -179,7 +183,15 @@ const IconButtonComponent = react.forwardRef((props, ref) => {
     ...rest
   } = props;
   const Component = asChild ? reactSlot.Slot : "button";
-  const classes = classix.cx("IconButton", "Button", "Button--icon", `Button--${kind}`, disabled && "Button--disabled", size && `Button--${size}`, className);
+  const classes = classix.cx(
+    "IconButton",
+    "Button",
+    "Button--icon",
+    `Button--${kind}`,
+    disabled && "Button--disabled",
+    size && `Button--${size}`,
+    className
+  );
   const clonedIcon = react.cloneElement(icon, {
     key: "icon",
     size: icon.props.size || "medium",
@@ -207,17 +219,20 @@ const IconButtonComponent = react.forwardRef((props, ref) => {
       }
     }
   };
-  return /* @__PURE__ */ jsxRuntime.jsx(Component, {
-    className: classes,
-    ref,
-    onClick: handleClick,
-    disabled,
-    onKeyDown: onKeyDown || handleKeyDown,
-    type,
-    "data-test-id": testId,
-    ...rest,
-    children: renderChildren()
-  });
+  return /* @__PURE__ */ jsxRuntime.jsx(
+    Component,
+    {
+      className: classes,
+      ref,
+      onClick: handleClick,
+      disabled,
+      onKeyDown: onKeyDown || handleKeyDown,
+      type,
+      "data-test-id": testId,
+      ...rest,
+      children: renderChildren()
+    }
+  );
 });
 IconButtonComponent.displayName = "IconButton";
 const IconButton = react.memo(IconButtonComponent);

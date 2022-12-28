@@ -1,8 +1,8 @@
 import './style.css';
+import { jsx, jsxs } from "react/jsx-runtime";
 import { cx } from "classix";
 import { IconButton } from "@launchpad-ui/button";
 import { KeyboardDoubleArrowLeft, ChevronLeft, ChevronRight, KeyboardDoubleArrowRight } from "@launchpad-ui/icons";
-import { jsx, jsxs } from "react/jsx-runtime";
 import { Progress } from "@launchpad-ui/progress";
 import { VisuallyHidden } from "@react-aria/visually-hidden";
 const Pagination$1 = "_Pagination_10ojz_3";
@@ -34,19 +34,24 @@ const PaginationButton = ({
   className,
   "data-test-id": testId = "pagination-button"
 }) => {
-  const classes = cx(styles.PaginationButton, disabled && styles["PaginationButton--disabled"], className);
+  const classes = cx(
+    styles.PaginationButton,
+    disabled && styles["PaginationButton--disabled"],
+    className
+  );
   const Icon = ICON_MAP[kind];
   const label = `${LABEL_MAP[kind]} ${resourceName} page`;
-  return /* @__PURE__ */ jsx(IconButton, {
-    disabled,
-    className: classes,
-    "data-test-id": testId,
-    onClick: () => onClick(kind),
-    icon: /* @__PURE__ */ jsx(Icon, {
-      size: "small"
-    }),
-    "aria-label": label
-  });
+  return /* @__PURE__ */ jsx(
+    IconButton,
+    {
+      disabled,
+      className: classes,
+      "data-test-id": testId,
+      onClick: () => onClick(kind),
+      icon: /* @__PURE__ */ jsx(Icon, { size: "small" }),
+      "aria-label": label
+    }
+  );
 };
 const PaginationText = ({
   currentOffset,
@@ -59,30 +64,25 @@ const PaginationText = ({
   const from = offset + 1;
   const to = totalCount && Math.min(offset + pageSize, totalCount);
   if (!isReady) {
-    return /* @__PURE__ */ jsx("div", {
-      children: /* @__PURE__ */ jsx(Progress, {})
-    });
+    return /* @__PURE__ */ jsx("div", { children: /* @__PURE__ */ jsx(Progress, {}) });
   }
   if (!totalCount) {
-    return /* @__PURE__ */ jsx("strong", {
-      children: "No results"
-    });
+    return /* @__PURE__ */ jsx("strong", { children: "No results" });
   }
   const screenReaderLabel = `Viewing records ${from} through ${to} of ${totalCount} total.`;
-  return /* @__PURE__ */ jsxs("div", {
-    className: styles.PaginationText,
-    "data-test-id": testId,
-    children: [/* @__PURE__ */ jsx(VisuallyHidden, {
-      children: screenReaderLabel
-    }), /* @__PURE__ */ jsxs("span", {
-      "aria-hidden": true,
-      children: [/* @__PURE__ */ jsxs("strong", {
-        children: [from, "-", to]
-      }), " ", "of ", /* @__PURE__ */ jsx("strong", {
-        children: totalCount
-      })]
-    })]
-  });
+  return /* @__PURE__ */ jsxs("div", { className: styles.PaginationText, "data-test-id": testId, children: [
+    /* @__PURE__ */ jsx(VisuallyHidden, { children: screenReaderLabel }),
+    /* @__PURE__ */ jsxs("span", { "aria-hidden": true, children: [
+      /* @__PURE__ */ jsxs("strong", { children: [
+        from,
+        "-",
+        to
+      ] }),
+      " ",
+      "of ",
+      /* @__PURE__ */ jsx("strong", { children: totalCount })
+    ] })
+  ] });
 };
 const Pagination = ({
   className,
@@ -100,38 +100,62 @@ const Pagination = ({
   "data-test-id": testId = "pagination",
   ...rest
 }) => {
-  return /* @__PURE__ */ jsxs("nav", {
-    ...rest,
-    className: cx(styles.Pagination, className),
-    "aria-label": ariaLabel != null ? ariaLabel : `Pagination for ${resourceName} list.`,
-    "data-test-id": testId,
-    children: [/* @__PURE__ */ jsx(PaginationButton, {
-      resourceName,
-      kind: "first",
-      disabled: !!isFirstDisabled,
-      onClick: onChange
-    }), /* @__PURE__ */ jsx(PaginationButton, {
-      resourceName,
-      kind: "prev",
-      disabled: !!isPrevDisabled,
-      onClick: onChange
-    }), /* @__PURE__ */ jsx(PaginationText, {
-      currentOffset,
-      pageSize,
-      isReady,
-      totalCount
-    }), /* @__PURE__ */ jsx(PaginationButton, {
-      resourceName,
-      kind: "next",
-      disabled: !!isNextDisabled,
-      onClick: onChange
-    }), /* @__PURE__ */ jsx(PaginationButton, {
-      resourceName,
-      kind: "last",
-      disabled: !!isLastDisabled,
-      onClick: onChange
-    })]
-  });
+  return /* @__PURE__ */ jsxs(
+    "nav",
+    {
+      ...rest,
+      className: cx(styles.Pagination, className),
+      "aria-label": ariaLabel ?? `Pagination for ${resourceName} list.`,
+      "data-test-id": testId,
+      children: [
+        /* @__PURE__ */ jsx(
+          PaginationButton,
+          {
+            resourceName,
+            kind: "first",
+            disabled: !!isFirstDisabled,
+            onClick: onChange
+          }
+        ),
+        /* @__PURE__ */ jsx(
+          PaginationButton,
+          {
+            resourceName,
+            kind: "prev",
+            disabled: !!isPrevDisabled,
+            onClick: onChange
+          }
+        ),
+        /* @__PURE__ */ jsx(
+          PaginationText,
+          {
+            currentOffset,
+            pageSize,
+            isReady,
+            totalCount
+          }
+        ),
+        /* @__PURE__ */ jsx(
+          PaginationButton,
+          {
+            resourceName,
+            kind: "next",
+            disabled: !!isNextDisabled,
+            onClick: onChange
+          }
+        ),
+        /* @__PURE__ */ jsx(
+          PaginationButton,
+          {
+            resourceName,
+            kind: "last",
+            disabled: !!isLastDisabled,
+            onClick: onChange
+          }
+        )
+      ]
+    }
+  );
 };
 export {
   Pagination

@@ -1,8 +1,8 @@
 require('./style.css');
 "use strict";
-Object.defineProperties(exports, { __esModule: { value: true }, [Symbol.toStringTag]: { value: "Module" } });
-const classix = require("classix");
+Object.defineProperty(exports, Symbol.toStringTag, { value: "Module" });
 const jsxRuntime = require("react/jsx-runtime");
+const classix = require("classix");
 const Slider$1 = "_Slider_zl0j4_6";
 const styles = {
   Slider: Slider$1,
@@ -24,28 +24,31 @@ const Slider = ({
   "data-test-id": testId = "slider"
 }) => {
   const valueHandler = (callback) => (event) => callback(parseFloat(event.currentTarget.value));
-  return /* @__PURE__ */ jsxRuntime.jsxs("div", {
-    className: classix.cx(styles.Slider, (disabled || readOnly) && styles["Slider--disabled"], className),
-    "data-test-id": testId,
-    children: [!hideTrack && /* @__PURE__ */ jsxRuntime.jsx("div", {
-      className: styles["Slider-track"]
-    }), !hideTrack && /* @__PURE__ */ jsxRuntime.jsx("div", {
-      className: styles["Slider-fill"],
-      style: {
-        width: `${value}%`
-      }
-    }), /* @__PURE__ */ jsxRuntime.jsx("input", {
-      type: "range",
-      value,
-      min,
-      max,
-      step,
-      readOnly,
-      disabled: disabled || readOnly,
-      id,
-      onChange: valueHandler(onChange)
-    })]
-  });
+  return /* @__PURE__ */ jsxRuntime.jsxs(
+    "div",
+    {
+      className: classix.cx(styles.Slider, (disabled || readOnly) && styles["Slider--disabled"], className),
+      "data-test-id": testId,
+      children: [
+        !hideTrack && /* @__PURE__ */ jsxRuntime.jsx("div", { className: styles["Slider-track"] }),
+        !hideTrack && /* @__PURE__ */ jsxRuntime.jsx("div", { className: styles["Slider-fill"], style: { width: `${value}%` } }),
+        /* @__PURE__ */ jsxRuntime.jsx(
+          "input",
+          {
+            type: "range",
+            value,
+            min,
+            max,
+            step,
+            readOnly,
+            disabled: disabled || readOnly,
+            id,
+            onChange: valueHandler(onChange)
+          }
+        )
+      ]
+    }
+  );
 };
 exports.Slider = Slider;
 //# sourceMappingURL=index.js.map

@@ -1,11 +1,11 @@
 import './style.css';
+import { jsx, jsxs } from "react/jsx-runtime";
 import { Portal } from "@launchpad-ui/portal";
 import { FocusTrap } from "@launchpad-ui/focus-trap";
 import { usePreventScroll } from "@react-aria/overlays";
 import cx$1, { cx } from "classix";
 import { LazyMotion, m } from "framer-motion";
 import { useRef, useEffect, useState, createContext, useContext, forwardRef } from "react";
-import { jsx, jsxs } from "react/jsx-runtime";
 import { IconButton, ButtonGroup } from "@launchpad-ui/button";
 import { Warning, Close } from "@launchpad-ui/icons";
 const MODAL_LABELLED_BY = "modal-title";
@@ -108,46 +108,20 @@ const useAbsoluteFooter = (ref) => {
   }, [ref, observer]);
 };
 const overlay = {
-  visible: {
-    opacity: 1,
-    transition: {
-      duration: 0.15
-    }
-  },
-  hidden: {
-    opacity: 0
-  }
+  visible: { opacity: 1, transition: { duration: 0.15 } },
+  hidden: { opacity: 0 }
 };
 const transitions = {
   desktopPop: {
-    hidden: {
-      opacity: 0,
-      scale: 0.9
-    },
-    visible: {
-      opacity: 1,
-      scale: 1,
-      transition: {
-        type: "spring",
-        delay: 0.1,
-        duration: 0.15
-      }
-    }
+    hidden: { opacity: 0, scale: 0.9 },
+    visible: { opacity: 1, scale: 1, transition: { type: "spring", delay: 0.1, duration: 0.15 } }
   },
   mobileSlideUp: {
-    hidden: {
-      opacity: 0,
-      y: "25%"
-    },
+    hidden: { opacity: 0, y: "25%" },
     visible: {
       opacity: 1,
       y: "0%",
-      transition: {
-        type: "spring",
-        delay: 0.15,
-        duration: 0.2,
-        bounce: 0
-      }
+      transition: { type: "spring", delay: 0.15, duration: 0.2, bounce: 0 }
     }
   }
 };
@@ -192,44 +166,43 @@ const ModalContainer = ({
       document.removeEventListener("keydown", handleEscape);
     };
   }, [onReady, onCancel]);
-  return /* @__PURE__ */ jsx(LazyMotion, {
-    strict: true,
-    features: loadFeatures,
-    children: /* @__PURE__ */ jsx("div", {
+  return /* @__PURE__ */ jsx(LazyMotion, { strict: true, features: loadFeatures, children: /* @__PURE__ */ jsx(
+    "div",
+    {
       className: styles.overlayContainer,
       "data-modal": true,
       "data-test-id": "modal-overlay-container",
       ref,
-      children: /* @__PURE__ */ jsx(m.div, {
-        initial: "hidden",
-        animate: "visible",
-        variants: overlay,
-        transition: {
-          duration: 0.15
-        },
-        role: "presentation",
-        className: styles.overlay,
-        "data-test-id": "modal-overlay",
-        onMouseDown: handleOverlayClick,
-        children: /* @__PURE__ */ jsx(FocusTrap, {
-          autoFocus: true,
-          restoreFocus: true,
-          children: /* @__PURE__ */ jsx(m.div, {
-            initial: "hidden",
-            animate: "visible",
-            variants: isDesktopViewport ? transitions.desktopPop : transitions.mobileSlideUp,
-            role: "dialog",
-            "aria-labelledby": MODAL_LABELLED_BY,
-            "aria-modal": true,
-            "data-test-id": testId,
-            className: cx(styles.modal, styles[size], className),
-            tabIndex: -1,
-            children
-          })
-        })
-      })
-    })
-  });
+      children: /* @__PURE__ */ jsx(
+        m.div,
+        {
+          initial: "hidden",
+          animate: "visible",
+          variants: overlay,
+          transition: { duration: 0.15 },
+          role: "presentation",
+          className: styles.overlay,
+          "data-test-id": "modal-overlay",
+          onMouseDown: handleOverlayClick,
+          children: /* @__PURE__ */ jsx(FocusTrap, { autoFocus: true, restoreFocus: true, children: /* @__PURE__ */ jsx(
+            m.div,
+            {
+              initial: "hidden",
+              animate: "visible",
+              variants: isDesktopViewport ? transitions.desktopPop : transitions.mobileSlideUp,
+              role: "dialog",
+              "aria-labelledby": MODAL_LABELLED_BY,
+              "aria-modal": true,
+              "data-test-id": testId,
+              className: cx(styles.modal, styles[size], className),
+              tabIndex: -1,
+              children
+            }
+          ) })
+        }
+      )
+    }
+  ) });
 };
 const ModalContext = createContext({
   onCancel: void 0,
@@ -252,23 +225,18 @@ const Modal = ({
   size,
   "data-test-id": testId = "modal"
 }) => {
-  return /* @__PURE__ */ jsx(Portal, {
-    children: /* @__PURE__ */ jsx(ModalContext.Provider, {
-      value: {
-        onCancel,
-        status
-      },
-      children: /* @__PURE__ */ jsx(ModalContainer, {
-        onCancel,
-        onReady,
-        cancelWithOverlayClick,
-        size,
-        className,
-        "data-test-id": testId,
-        children
-      })
-    })
-  });
+  return /* @__PURE__ */ jsx(Portal, { children: /* @__PURE__ */ jsx(ModalContext.Provider, { value: { onCancel, status }, children: /* @__PURE__ */ jsx(
+    ModalContainer,
+    {
+      onCancel,
+      onReady,
+      cancelWithOverlayClick,
+      size,
+      className,
+      "data-test-id": testId,
+      children
+    }
+  ) }) });
 };
 const ModalBody = ({
   children,
@@ -278,13 +246,7 @@ const ModalBody = ({
 }) => {
   const ref = useRef(null);
   useOverflowY(ref);
-  return /* @__PURE__ */ jsx("div", {
-    ...rest,
-    ref,
-    className: cx$1(styles.body, className),
-    "data-test-id": testId,
-    children
-  });
+  return /* @__PURE__ */ jsx("div", { ...rest, ref, className: cx$1(styles.body, className), "data-test-id": testId, children });
 };
 const ModalHeader = ({
   withCloseButton = true,
@@ -294,75 +256,40 @@ const ModalHeader = ({
   className,
   "data-test-id": testId = "modal-header"
 }) => {
-  const {
-    onCancel,
-    status
-  } = useModalContext();
-  return /* @__PURE__ */ jsxs("div", {
-    className: cx$1(styles.header, className),
-    "data-test-id": testId,
-    children: [/* @__PURE__ */ jsxs("div", {
-      className: styles.headerMain,
-      children: [status === "warning" && /* @__PURE__ */ jsx(Warning, {
-        "data-test-id": "modal-header-icon",
-        size: "medium",
-        className: styles.headerIcon
-      }), /* @__PURE__ */ jsx("h2", {
-        id: MODAL_LABELLED_BY,
-        "data-test-id": "modal-title",
-        className: styles.title,
-        children: title2
-      }), withCloseButton && /* @__PURE__ */ jsx(IconButton, {
-        "aria-label": "close",
-        icon: /* @__PURE__ */ jsx(Close, {
-          size: "medium"
-        }),
-        className: styles.closeButton,
-        onClick: onCancel,
-        "data-test-id": "modal-close-button"
-      })]
-    }), description && /* @__PURE__ */ jsx("p", {
-      className: styles.headerDescription,
-      "data-test-id": "modal-description",
-      children: description
-    }), hasRequiredField && /* @__PURE__ */ jsxs("div", {
-      className: styles.headerRequiredFields,
-      "data-test-id": "modal-required-field",
-      children: [/* @__PURE__ */ jsx("span", {
-        className: styles.requiredAsterisk,
-        children: "*"
-      }), " Required field"]
-    })]
-  });
+  const { onCancel, status } = useModalContext();
+  return /* @__PURE__ */ jsxs("div", { className: cx$1(styles.header, className), "data-test-id": testId, children: [
+    /* @__PURE__ */ jsxs("div", { className: styles.headerMain, children: [
+      status === "warning" && /* @__PURE__ */ jsx(Warning, { "data-test-id": "modal-header-icon", size: "medium", className: styles.headerIcon }),
+      /* @__PURE__ */ jsx("h2", { id: MODAL_LABELLED_BY, "data-test-id": "modal-title", className: styles.title, children: title2 }),
+      withCloseButton && /* @__PURE__ */ jsx(
+        IconButton,
+        {
+          "aria-label": "close",
+          icon: /* @__PURE__ */ jsx(Close, { size: "medium" }),
+          className: styles.closeButton,
+          onClick: onCancel,
+          "data-test-id": "modal-close-button"
+        }
+      )
+    ] }),
+    description && /* @__PURE__ */ jsx("p", { className: styles.headerDescription, "data-test-id": "modal-description", children: description }),
+    hasRequiredField && /* @__PURE__ */ jsxs("div", { className: styles.headerRequiredFields, "data-test-id": "modal-required-field", children: [
+      /* @__PURE__ */ jsx("span", { className: styles.requiredAsterisk, children: "*" }),
+      " Required field"
+    ] })
+  ] });
 };
-const ModalFooter = forwardRef(({
-  secondaryButton,
-  primaryButton,
-  className,
-  "data-test-id": testId = "modal-footer",
-  ...rest
-}, ref) => /* @__PURE__ */ jsx("div", {
-  ...rest,
-  className: cx$1(className, styles.footer),
-  "data-test-id": testId,
-  ref,
-  children: /* @__PURE__ */ jsxs(ButtonGroup, {
-    className: styles.footerActions,
-    children: [secondaryButton, primaryButton]
-  })
-}));
+const ModalFooter = forwardRef(
+  ({ secondaryButton, primaryButton, className, "data-test-id": testId = "modal-footer", ...rest }, ref) => /* @__PURE__ */ jsx("div", { ...rest, className: cx$1(className, styles.footer), "data-test-id": testId, ref, children: /* @__PURE__ */ jsxs(ButtonGroup, { className: styles.footerActions, children: [
+    secondaryButton,
+    primaryButton
+  ] }) })
+);
 ModalFooter.displayName = "ModalFooter";
-const AbsoluteModalFooter = ({
-  className,
-  ...rest
-}) => {
+const AbsoluteModalFooter = ({ className, ...rest }) => {
   const ref = useRef(null);
   useAbsoluteFooter(ref);
-  return /* @__PURE__ */ jsx(ModalFooter, {
-    ref,
-    className: cx(className, styles.absoluteFooter),
-    ...rest
-  });
+  return /* @__PURE__ */ jsx(ModalFooter, { ref, className: cx(className, styles.absoluteFooter), ...rest });
 };
 export {
   AbsoluteModalFooter,

@@ -1,10 +1,10 @@
 require('./style.css');
 "use strict";
-Object.defineProperties(exports, { __esModule: { value: true }, [Symbol.toStringTag]: { value: "Module" } });
+Object.defineProperty(exports, Symbol.toStringTag, { value: "Module" });
+const jsxRuntime = require("react/jsx-runtime");
 const popover = require("@launchpad-ui/popover");
 const classix = require("classix");
 const react = require("react");
-const jsxRuntime = require("react/jsx-runtime");
 const ProgressBubbles$1 = "_ProgressBubbles_1r557_9";
 const ProgressBubblesIconContainer = "_ProgressBubblesIconContainer_1r557_76";
 const ProgressBubblesPopoverTarget = "_ProgressBubblesPopoverTarget_1r557_147";
@@ -70,10 +70,7 @@ const ProgressBubbles = ({
   popoverInteraction = "hover-or-focus",
   "data-test-id": testId = "progress-bubbles"
 }) => {
-  const {
-    ref,
-    dimensions
-  } = useDimensions();
+  const { ref, dimensions } = useDimensions();
   let children = [];
   if (items && items.length) {
     children = items.map((item, idx) => {
@@ -86,62 +83,100 @@ const ProgressBubbles = ({
       const iconWidth = hasMultipleIcons ? numIcons * ICON_WIDTH : ICON_WIDTH;
       const labelWidth = dimensions.width / items.length;
       const hideLabel = showCurrentLabelOnly && idx !== currentBubble;
-      const bubble = /* @__PURE__ */ jsxRuntime.jsxs("div", {
-        className: classix.cx(styles["ProgressBubbles-icon"], hasMultipleIcons && styles["ProgressBubbles-icon--multiple"], idx === currentBubble && styles["ProgressBubbles-icon--current"], idx > currentBubble && styles["ProgressBubbles-icon--pending"], item.isWarning && styles["ProgressBubbles-icon--warning"]),
-        style: {
-          width: `${iconWidth}rem`
-        },
-        children: [item.icons, /* @__PURE__ */ jsxRuntime.jsx("label", {
-          id: (_a = item.popover) == null ? void 0 : _a.props.stageId,
-          "aria-hidden": hideLabel,
-          className: styles["ProgressBubbles-label"],
-          style: {
-            width: `${labelWidth}px`
-          },
-          children: showCurrentLabelOnly ? idx === currentBubble && item.label : item.label
-        })]
-      });
-      return /* @__PURE__ */ jsxRuntime.jsxs(react.Fragment, {
-        children: [!!idx && /* @__PURE__ */ jsxRuntime.jsx("div", {
-          className: classix.cx(styles["ProgressBubblesUsingItems-line"], idx <= currentBubble && styles["ProgressBubblesUsingItems-line--completed"])
-        }), /* @__PURE__ */ jsxRuntime.jsx("div", {
-          className: styles["ProgressBubblesIconContainer"],
-          children: item.popover ? /* @__PURE__ */ jsxRuntime.jsxs(popover.Popover, {
+      const bubble = /* @__PURE__ */ jsxRuntime.jsxs(
+        "div",
+        {
+          className: classix.cx(
+            styles["ProgressBubbles-icon"],
+            hasMultipleIcons && styles["ProgressBubbles-icon--multiple"],
+            idx === currentBubble && styles["ProgressBubbles-icon--current"],
+            idx > currentBubble && styles["ProgressBubbles-icon--pending"],
+            item.isWarning && styles["ProgressBubbles-icon--warning"]
+          ),
+          style: { width: `${iconWidth}rem` },
+          children: [
+            item.icons,
+            /* @__PURE__ */ jsxRuntime.jsx(
+              "label",
+              {
+                id: (_a = item.popover) == null ? void 0 : _a.props.stageId,
+                "aria-hidden": hideLabel,
+                className: styles["ProgressBubbles-label"],
+                style: { width: `${labelWidth}px` },
+                children: showCurrentLabelOnly ? idx === currentBubble && item.label : item.label
+              }
+            )
+          ]
+        }
+      );
+      return /* @__PURE__ */ jsxRuntime.jsxs(react.Fragment, { children: [
+        !!idx && /* @__PURE__ */ jsxRuntime.jsx(
+          "div",
+          {
+            className: classix.cx(
+              styles["ProgressBubblesUsingItems-line"],
+              idx <= currentBubble && styles["ProgressBubblesUsingItems-line--completed"]
+            )
+          }
+        ),
+        /* @__PURE__ */ jsxRuntime.jsx("div", { className: styles["ProgressBubblesIconContainer"], children: item.popover ? /* @__PURE__ */ jsxRuntime.jsxs(
+          popover.Popover,
+          {
             targetClassName: styles["ProgressBubblesPopoverTarget"],
             restrictWidth: false,
             interactionKind: popoverInteraction,
             offset: item.popoverOffset,
             target: item.icons,
-            children: [/* @__PURE__ */ jsxRuntime.jsx("div", {
-              role: "button",
-              tabIndex: 0,
-              children: bubble
-            }), item.popover]
-          }) : bubble
-        })]
-      }, idx);
+            children: [
+              /* @__PURE__ */ jsxRuntime.jsx("div", { role: "button", tabIndex: 0, children: bubble }),
+              item.popover
+            ]
+          }
+        ) : bubble })
+      ] }, idx);
     });
   } else if (numBubbles) {
     for (let i = 0; i < numBubbles; i++) {
-      children.push(/* @__PURE__ */ jsxRuntime.jsxs(react.Fragment, {
-        children: [!!i && /* @__PURE__ */ jsxRuntime.jsx("div", {
-          className: classix.cx(styles["ProgressBubbles-line"], i <= currentBubble && styles["ProgressBubbles--filled"])
-        }), /* @__PURE__ */ jsxRuntime.jsx("div", {
-          className: classix.cx(styles["ProgressBubbles-bubble"], i <= currentBubble && styles["ProgressBubbles--filled"], i === 0 && styles["ProgressBubbles-bubble--first"], i === numBubbles - 1 && styles["ProgressBubbles-bubble--last"]),
-          children: /* @__PURE__ */ jsxRuntime.jsx("span", {
-            className: styles["ProgressBubbles-text"],
-            children: !!bubbleLabels && (showCurrentLabelOnly ? i === currentBubble && bubbleLabels[currentBubble] : bubbleLabels[i])
-          })
-        })]
-      }, i));
+      children.push(
+        /* @__PURE__ */ jsxRuntime.jsxs(react.Fragment, { children: [
+          !!i && /* @__PURE__ */ jsxRuntime.jsx(
+            "div",
+            {
+              className: classix.cx(
+                styles["ProgressBubbles-line"],
+                i <= currentBubble && styles["ProgressBubbles--filled"]
+              )
+            }
+          ),
+          /* @__PURE__ */ jsxRuntime.jsx(
+            "div",
+            {
+              className: classix.cx(
+                styles["ProgressBubbles-bubble"],
+                i <= currentBubble && styles["ProgressBubbles--filled"],
+                i === 0 && styles["ProgressBubbles-bubble--first"],
+                i === numBubbles - 1 && styles["ProgressBubbles-bubble--last"]
+              ),
+              children: /* @__PURE__ */ jsxRuntime.jsx("span", { className: styles["ProgressBubbles-text"], children: !!bubbleLabels && (showCurrentLabelOnly ? i === currentBubble && bubbleLabels[currentBubble] : bubbleLabels[i]) })
+            }
+          )
+        ] }, i)
+      );
     }
   }
-  return /* @__PURE__ */ jsxRuntime.jsx("div", {
-    className: classix.cx(styles.ProgressBubbles, className, vertical && styles["ProgressBubbles--vertical"]),
-    ref,
-    "data-test-id": testId,
-    children
-  });
+  return /* @__PURE__ */ jsxRuntime.jsx(
+    "div",
+    {
+      className: classix.cx(
+        styles.ProgressBubbles,
+        className,
+        vertical && styles["ProgressBubbles--vertical"]
+      ),
+      ref,
+      "data-test-id": testId,
+      children
+    }
+  );
 };
 exports.ProgressBubbles = ProgressBubbles;
 //# sourceMappingURL=index.js.map

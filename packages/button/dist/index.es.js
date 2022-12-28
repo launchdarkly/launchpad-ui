@@ -1,8 +1,8 @@
 import './style.css';
+import { jsx, jsxs } from "react/jsx-runtime";
 import { Slot } from "@radix-ui/react-slot";
 import { cx } from "classix";
 import { forwardRef, cloneElement, memo, isValidElement, useRef } from "react";
-import { jsx, jsxs } from "react/jsx-runtime";
 const Button$1 = "";
 const ButtonComponent = forwardRef((props, ref) => {
   const {
@@ -24,20 +24,27 @@ const ButtonComponent = forwardRef((props, ref) => {
     ...rest
   } = props;
   const Component = asChild ? Slot : "button";
-  const classes = cx("Button", `Button--${kind}`, disabled && "Button--disabled", size && `Button--${size}`, fit && "Button--fit", className);
+  const classes = cx(
+    "Button",
+    `Button--${kind}`,
+    disabled && "Button--disabled",
+    size && `Button--${size}`,
+    fit && "Button--fit",
+    className
+  );
   const renderIcon = icon && cloneElement(icon, {
     key: "icon",
     size: icon.props.size || "small",
     "aria-hidden": true,
     className: cx(icon.props.className, "Button-icon")
   });
-  const getFinalChildren = (c) => [renderIconFirst && renderIcon, isLoading && /* @__PURE__ */ jsx("span", {
-    children: loadingText || c
-  }, "text"), !isLoading && c && /* @__PURE__ */ jsx("span", {
-    children: c
-  }, "text"), !renderIconFirst && renderIcon, isLoading && /* @__PURE__ */ jsx("span", {
-    children: "\u2026"
-  }, "spinner")];
+  const getFinalChildren = (c) => [
+    renderIconFirst && renderIcon,
+    isLoading && /* @__PURE__ */ jsx("span", { children: loadingText || c }, "text"),
+    !isLoading && c && /* @__PURE__ */ jsx("span", { children: c }, "text"),
+    !renderIconFirst && renderIcon,
+    isLoading && /* @__PURE__ */ jsx("span", { children: "…" }, "spinner")
+  ];
   const renderChildren = () => {
     if (asChild && isValidElement(children)) {
       return cloneElement(children, void 0, getFinalChildren(children.props.children));
@@ -60,17 +67,20 @@ const ButtonComponent = forwardRef((props, ref) => {
       }
     }
   };
-  return /* @__PURE__ */ jsx(Component, {
-    className: classes,
-    ref,
-    onClick: handleClick,
-    onKeyDown: onKeyDown || handleKeyDown,
-    disabled: isDisabled,
-    type,
-    "data-test-id": testId,
-    ...rest,
-    children: renderChildren()
-  });
+  return /* @__PURE__ */ jsx(
+    Component,
+    {
+      className: classes,
+      ref,
+      onClick: handleClick,
+      onKeyDown: onKeyDown || handleKeyDown,
+      disabled: isDisabled,
+      type,
+      "data-test-id": testId,
+      ...rest,
+      children: renderChildren()
+    }
+  );
 });
 ButtonComponent.displayName = "Button";
 const Button = memo(ButtonComponent);
@@ -83,12 +93,7 @@ const ButtonGroup = ({
   ...rest
 }) => {
   const classes = cx("ButtonGroup", `ButtonGroup--${spacing}`, className);
-  return /* @__PURE__ */ jsx("div", {
-    className: classes,
-    "data-test-id": testId,
-    ...rest,
-    children
-  });
+  return /* @__PURE__ */ jsx("div", { className: classes, "data-test-id": testId, ...rest, children });
 };
 const UploadButton = ({
   id,
@@ -131,25 +136,24 @@ const UploadButton = ({
       inputRef.current.value = "";
     }
   };
-  return /* @__PURE__ */ jsxs("span", {
-    className: classes,
-    "data-test-id": testId,
-    children: [/* @__PURE__ */ jsx("input", {
-      ref: inputRef,
-      className: "UploadButton-input",
-      id,
-      style: {
-        display: "none"
-      },
-      type: "file",
-      onChange: handleChange,
-      disabled,
-      accept,
-      "data-test-id": "upload-button-input"
-    }), /* @__PURE__ */ jsx("label", {
-      htmlFor: id,
-      className: "UploadButton-label",
-      children: /* @__PURE__ */ jsx(Button, {
+  return /* @__PURE__ */ jsxs("span", { className: classes, "data-test-id": testId, children: [
+    /* @__PURE__ */ jsx(
+      "input",
+      {
+        ref: inputRef,
+        className: "UploadButton-input",
+        id,
+        style: { display: "none" },
+        type: "file",
+        onChange: handleChange,
+        disabled,
+        accept,
+        "data-test-id": "upload-button-input"
+      }
+    ),
+    /* @__PURE__ */ jsx("label", { htmlFor: id, className: "UploadButton-label", children: /* @__PURE__ */ jsx(
+      Button,
+      {
         ...rest,
         disabled,
         tabIndex: disabled ? -1 : 0,
@@ -157,9 +161,9 @@ const UploadButton = ({
         onKeyDown: handleKeyDown,
         onClick: handleClick,
         children
-      })
-    })]
-  });
+      }
+    ) })
+  ] });
 };
 const IconButtonComponent = forwardRef((props, ref) => {
   const {
@@ -177,7 +181,15 @@ const IconButtonComponent = forwardRef((props, ref) => {
     ...rest
   } = props;
   const Component = asChild ? Slot : "button";
-  const classes = cx("IconButton", "Button", "Button--icon", `Button--${kind}`, disabled && "Button--disabled", size && `Button--${size}`, className);
+  const classes = cx(
+    "IconButton",
+    "Button",
+    "Button--icon",
+    `Button--${kind}`,
+    disabled && "Button--disabled",
+    size && `Button--${size}`,
+    className
+  );
   const clonedIcon = cloneElement(icon, {
     key: "icon",
     size: icon.props.size || "medium",
@@ -205,17 +217,20 @@ const IconButtonComponent = forwardRef((props, ref) => {
       }
     }
   };
-  return /* @__PURE__ */ jsx(Component, {
-    className: classes,
-    ref,
-    onClick: handleClick,
-    disabled,
-    onKeyDown: onKeyDown || handleKeyDown,
-    type,
-    "data-test-id": testId,
-    ...rest,
-    children: renderChildren()
-  });
+  return /* @__PURE__ */ jsx(
+    Component,
+    {
+      className: classes,
+      ref,
+      onClick: handleClick,
+      disabled,
+      onKeyDown: onKeyDown || handleKeyDown,
+      type,
+      "data-test-id": testId,
+      ...rest,
+      children: renderChildren()
+    }
+  );
 });
 IconButtonComponent.displayName = "IconButton";
 const IconButton = memo(IconButtonComponent);

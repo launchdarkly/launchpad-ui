@@ -1,9 +1,9 @@
 import './style.css';
+import { jsx, jsxs, Fragment } from "react/jsx-runtime";
 import { Dropdown } from "@launchpad-ui/dropdown";
 import { ExpandMore, Check, Close } from "@launchpad-ui/icons";
 import { cx } from "classix";
 import { forwardRef, Children, useId } from "react";
-import { jsx, jsxs, Fragment } from "react/jsx-runtime";
 import { Button, IconButton } from "@launchpad-ui/button";
 import { Menu, MenuSearch, MenuDivider, MenuItem } from "@launchpad-ui/menu";
 import { Tooltip } from "@launchpad-ui/tooltip";
@@ -36,35 +36,25 @@ const styles = {
   filterClearButton
 };
 const AppliedFilterButton = forwardRef((props, ref) => {
-  const {
-    name: name2,
-    className,
-    children,
-    onClickFilterButton,
-    "data-test-id": testId
-  } = props;
+  const { name: name2, className, children, onClickFilterButton, "data-test-id": testId } = props;
   const hasDescription = Children.count(children) !== 0;
-  return /* @__PURE__ */ jsx("div", {
-    "data-test-id": testId,
-    children: /* @__PURE__ */ jsxs("button", {
+  return /* @__PURE__ */ jsx("div", { "data-test-id": testId, children: /* @__PURE__ */ jsxs(
+    "button",
+    {
       "aria-haspopup": true,
       className: cx(styles.appliedButton, className),
       ref,
       onClick: onClickFilterButton,
-      children: [name2 && /* @__PURE__ */ jsxs("span", {
-        className: styles.appliedName,
-        "data-test-id": `${testId}-name`,
-        children: [name2, hasDescription && ":"]
-      }), hasDescription && /* @__PURE__ */ jsx("span", {
-        className: styles.appliedDescription,
-        "data-test-id": `${testId}-description`,
-        children
-      }), /* @__PURE__ */ jsx(ExpandMore, {
-        size: "small",
-        "data-test-id": `${testId}-expand`
-      })]
-    })
-  });
+      children: [
+        name2 && /* @__PURE__ */ jsxs("span", { className: styles.appliedName, "data-test-id": `${testId}-name`, children: [
+          name2,
+          hasDescription && ":"
+        ] }),
+        hasDescription && /* @__PURE__ */ jsx("span", { className: styles.appliedDescription, "data-test-id": `${testId}-description`, children }),
+        /* @__PURE__ */ jsx(ExpandMore, { size: "small", "data-test-id": `${testId}-expand` })
+      ]
+    }
+  ) });
 });
 AppliedFilterButton.displayName = "AppliedFilterButton";
 const FilterMenu = ({
@@ -82,48 +72,61 @@ const FilterMenu = ({
   size,
   "data-test-id": testId = "filter-menu"
 }) => {
-  const filterOptions = isLoading ? [{
-    name: "loading...",
-    value: "loading...",
-    isDisabled: true
-  }] : options;
-  return /* @__PURE__ */ jsxs(Fragment, {
-    children: [onClearFilter && /* @__PURE__ */ jsx(Button, {
-      tabIndex: 0,
-      className: styles.filterClearButton,
-      onClick: onClearFilter,
-      kind: "link",
-      "data-test-id": "clear-filter-button",
-      children: "CLEAR FILTER"
-    }), /* @__PURE__ */ jsxs(Menu, {
-      enableVirtualization,
-      size,
-      "data-test-id": testId,
-      onSelect,
-      children: [enableSearch && /* @__PURE__ */ jsx(MenuSearch, {
-        value: searchValue,
-        placeholder: searchPlaceholder,
-        onChange: onSearchChange,
-        ariaLabel: searchAriaLabel
-      }), filterOptions.map((option, index) => {
-        if (option.isDivider) {
-          return /* @__PURE__ */ jsx(MenuDivider, {}, `divider-${index}`);
-        }
-        return /* @__PURE__ */ jsx(MenuItem, {
-          item: option,
-          disabled: option.isDisabled,
-          icon: option.isChecked ? Check : null,
-          role: "menuitemradio",
-          "aria-checked": option.isChecked ? "true" : void 0,
-          nested: option.nested,
-          groupHeader: option.groupHeader,
-          tooltip: option.isDisabled && disabledOptionTooltip ? disabledOptionTooltip : void 0,
-          tooltipPlacement: "right",
-          children: option.name
-        }, option.value);
-      })]
-    })]
-  });
+  const filterOptions = isLoading ? [{ name: "loading...", value: "loading...", isDisabled: true }] : options;
+  return /* @__PURE__ */ jsxs(Fragment, { children: [
+    onClearFilter && /* @__PURE__ */ jsx(
+      Button,
+      {
+        tabIndex: 0,
+        className: styles.filterClearButton,
+        onClick: onClearFilter,
+        kind: "link",
+        "data-test-id": "clear-filter-button",
+        children: "CLEAR FILTER"
+      }
+    ),
+    /* @__PURE__ */ jsxs(
+      Menu,
+      {
+        enableVirtualization,
+        size,
+        "data-test-id": testId,
+        onSelect,
+        children: [
+          enableSearch && /* @__PURE__ */ jsx(
+            MenuSearch,
+            {
+              value: searchValue,
+              placeholder: searchPlaceholder,
+              onChange: onSearchChange,
+              ariaLabel: searchAriaLabel
+            }
+          ),
+          filterOptions.map((option, index) => {
+            if (option.isDivider) {
+              return /* @__PURE__ */ jsx(MenuDivider, {}, `divider-${index}`);
+            }
+            return /* @__PURE__ */ jsx(
+              MenuItem,
+              {
+                item: option,
+                disabled: option.isDisabled,
+                icon: option.isChecked ? Check : null,
+                role: "menuitemradio",
+                "aria-checked": option.isChecked ? "true" : void 0,
+                nested: option.nested,
+                groupHeader: option.groupHeader,
+                tooltip: option.isDisabled && disabledOptionTooltip ? disabledOptionTooltip : void 0,
+                tooltipPlacement: "right",
+                children: option.name
+              },
+              option.value
+            );
+          })
+        ]
+      }
+    )
+  ] });
 };
 const SEARCH_INPUT_THRESHOLD$1 = 4;
 const AppliedFilter = ({
@@ -143,27 +146,30 @@ const AppliedFilter = ({
   ...props
 }) => {
   const enableSearch = onSearchChange && (!!searchValue || options.length > SEARCH_INPUT_THRESHOLD$1 || !isEmpty);
-  return /* @__PURE__ */ jsxs(Dropdown, {
-    targetClassName: className,
-    placement: "bottom-start",
-    enableArrow: false,
-    ...props,
-    children: [/* @__PURE__ */ jsx(AppliedFilterButton, {
-      "data-test-id": testId,
-      name: name2,
-      onClickFilterButton,
-      children: description2
-    }), /* @__PURE__ */ jsx(FilterMenu, {
-      options,
-      searchValue,
-      searchPlaceholder,
-      enableSearch,
-      searchAriaLabel,
-      onSearchChange,
-      onClearFilter,
-      isLoading
-    })]
-  });
+  return /* @__PURE__ */ jsxs(Dropdown, { targetClassName: className, placement: "bottom-start", enableArrow: false, ...props, children: [
+    /* @__PURE__ */ jsx(
+      AppliedFilterButton,
+      {
+        "data-test-id": testId,
+        name: name2,
+        onClickFilterButton,
+        children: description2
+      }
+    ),
+    /* @__PURE__ */ jsx(
+      FilterMenu,
+      {
+        options,
+        searchValue,
+        searchPlaceholder,
+        enableSearch,
+        searchAriaLabel,
+        onSearchChange,
+        onClearFilter,
+        isLoading
+      }
+    )
+  ] });
 };
 const FilterButton = forwardRef((props, ref) => {
   const {
@@ -182,47 +188,38 @@ const FilterButton = forwardRef((props, ref) => {
   const nameId = useId();
   const descriptionId = useId();
   const hasDescription = Children.count(children) !== 0;
-  const nameElement = /* @__PURE__ */ jsxs("span", {
-    className: styles.name,
-    children: [name2, hasDescription && ":"]
-  });
-  return /* @__PURE__ */ jsxs("div", {
-    className: styles.buttonContainer,
-    "data-test-id": testId,
-    children: [/* @__PURE__ */ jsxs("button", {
-      ...rest,
-      "aria-labelledby": `${nameId} ${hasDescription ? descriptionId : ""}`,
-      "aria-haspopup": true,
-      className: cx(styles.button, className, (isClearable2 || isSelected) && styles.isClearable),
-      ref,
-      onClick: onClickFilterButton,
-      children: [hideName ? /* @__PURE__ */ jsx(VisuallyHidden, {
-        id: nameId,
-        children: nameElement
-      }) : /* @__PURE__ */ jsx("span", {
-        id: nameId,
-        children: nameElement
-      }), hasDescription && /* @__PURE__ */ jsx("span", {
-        id: descriptionId,
-        className: styles.description,
-        children
-      }), !isClearable2 && /* @__PURE__ */ jsx(ExpandMore, {
-        size: "small"
-      })]
-    }), isClearable2 && /* @__PURE__ */ jsx(Tooltip, {
-      targetClassName: styles.clearTooltip,
-      content: clearTooltip2,
-      children: /* @__PURE__ */ jsx(IconButton, {
+  const nameElement = /* @__PURE__ */ jsxs("span", { className: styles.name, children: [
+    name2,
+    hasDescription && ":"
+  ] });
+  return /* @__PURE__ */ jsxs("div", { className: styles.buttonContainer, "data-test-id": testId, children: [
+    /* @__PURE__ */ jsxs(
+      "button",
+      {
+        ...rest,
+        "aria-labelledby": `${nameId} ${hasDescription ? descriptionId : ""}`,
+        "aria-haspopup": true,
+        className: cx(styles.button, className, (isClearable2 || isSelected) && styles.isClearable),
+        ref,
+        onClick: onClickFilterButton,
+        children: [
+          hideName ? /* @__PURE__ */ jsx(VisuallyHidden, { id: nameId, children: nameElement }) : /* @__PURE__ */ jsx("span", { id: nameId, children: nameElement }),
+          hasDescription && /* @__PURE__ */ jsx("span", { id: descriptionId, className: styles.description, children }),
+          !isClearable2 && /* @__PURE__ */ jsx(ExpandMore, { size: "small" })
+        ]
+      }
+    ),
+    isClearable2 && /* @__PURE__ */ jsx(Tooltip, { targetClassName: styles.clearTooltip, content: clearTooltip2, children: /* @__PURE__ */ jsx(
+      IconButton,
+      {
         "aria-label": "Clear filter",
         className: styles.clear,
         "data-test-id": "clear-filter-button",
-        icon: /* @__PURE__ */ jsx(Close, {
-          size: "tiny"
-        }),
+        icon: /* @__PURE__ */ jsx(Close, { size: "tiny" }),
         onClick: onClear
-      })
-    })]
-  });
+      }
+    ) })
+  ] });
 });
 FilterButton.defaultProps = {
   clearTooltip: "Clear filter"
@@ -257,31 +254,35 @@ const Filter = ({
     event.preventDefault();
     onClear == null ? void 0 : onClear();
   };
-  return /* @__PURE__ */ jsxs(Dropdown, {
-    targetTestId: testId,
-    targetClassName: dropdownClasses,
-    ...props,
-    children: [/* @__PURE__ */ jsx(FilterButton, {
-      isClearable: isClearable2,
-      onClear: handleClear,
-      name: name2,
-      hideName,
-      isSelected,
-      onClickFilterButton,
-      children: description2
-    }), /* @__PURE__ */ jsx(FilterMenu, {
-      options,
-      searchValue,
-      searchPlaceholder,
-      searchAriaLabel,
-      enableSearch,
-      onSearchChange,
-      isLoading,
-      disabledOptionTooltip,
-      size,
-      enableVirtualization
-    })]
-  });
+  return /* @__PURE__ */ jsxs(Dropdown, { targetTestId: testId, targetClassName: dropdownClasses, ...props, children: [
+    /* @__PURE__ */ jsx(
+      FilterButton,
+      {
+        isClearable: isClearable2,
+        onClear: handleClear,
+        name: name2,
+        hideName,
+        isSelected,
+        onClickFilterButton,
+        children: description2
+      }
+    ),
+    /* @__PURE__ */ jsx(
+      FilterMenu,
+      {
+        options,
+        searchValue,
+        searchPlaceholder,
+        searchAriaLabel,
+        enableSearch,
+        onSearchChange,
+        isLoading,
+        disabledOptionTooltip,
+        size,
+        enableVirtualization
+      }
+    )
+  ] });
 };
 export {
   AppliedFilter,

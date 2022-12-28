@@ -1,6 +1,6 @@
+import { jsx } from "react/jsx-runtime";
 import { Portal } from "@launchpad-ui/portal";
 import { useState, useRef, useCallback, useEffect } from "react";
-import { jsx } from "react/jsx-runtime";
 const Overlay = ({
   isOpen,
   lazy = true,
@@ -13,22 +13,29 @@ const Overlay = ({
 }) => {
   const [hasEverOpened, setHasEverOpened] = useState(isOpen);
   const containerElement = useRef(null);
-  const handleDocumentClick = useCallback((event) => {
-    const eventTarget = event.target;
-    const wasClickInOverlay = containerElement.current && containerElement.current.contains(eventTarget);
-    const wasClickInBody = !!eventTarget.closest("body");
-    if (isOpen && canOutsideClickClose && !wasClickInOverlay && wasClickInBody) {
-      typeof onClose === "function" && onClose(event);
-    }
-  }, [canOutsideClickClose, isOpen, onClose]);
+  const handleDocumentClick = useCallback(
+    (event) => {
+      const eventTarget = event.target;
+      const wasClickInOverlay = containerElement.current && containerElement.current.contains(eventTarget);
+      const wasClickInBody = !!eventTarget.closest("body");
+      if (isOpen && canOutsideClickClose && !wasClickInOverlay && wasClickInBody) {
+        typeof onClose === "function" && onClose(event);
+      }
+    },
+    [canOutsideClickClose, isOpen, onClose]
+  );
   const focusContainer = useCallback(() => {
     requestAnimationFrame(() => {
       if (!isOpen || containerElement.current === null || document.activeElement === null) {
         return;
       }
       if (!containerElement.current.contains(document.activeElement)) {
-        const autofocusElement = containerElement.current.querySelector("[autofocus]");
-        const tabbableElement = containerElement.current.querySelector("[tabindex]");
+        const autofocusElement = containerElement.current.querySelector(
+          "[autofocus]"
+        );
+        const tabbableElement = containerElement.current.querySelector(
+          "[tabindex]"
+        );
         if (autofocusElement) {
           autofocusElement.focus();
         } else if (tabbableElement) {
@@ -37,13 +44,16 @@ const Overlay = ({
       }
     });
   }, [isOpen]);
-  const handleDocumentFocus = useCallback((event) => {
-    const eventTarget = event.target;
-    if (enforceFocus && containerElement.current && !containerElement.current.contains(eventTarget)) {
-      event.stopImmediatePropagation();
-      focusContainer();
-    }
-  }, [enforceFocus, focusContainer]);
+  const handleDocumentFocus = useCallback(
+    (event) => {
+      const eventTarget = event.target;
+      if (enforceFocus && containerElement.current && !containerElement.current.contains(eventTarget)) {
+        event.stopImmediatePropagation();
+        focusContainer();
+      }
+    },
+    [enforceFocus, focusContainer]
+  );
   const handleOverlayOpen = useCallback(() => {
     if (canOutsideClickClose) {
       document.addEventListener("mousedown", handleDocumentClick);
@@ -82,11 +92,7 @@ const Overlay = ({
   if (lazy && !hasEverOpened) {
     return null;
   }
-  return /* @__PURE__ */ jsx(Portal, {
-    onKeyDown: handleKeyDown,
-    ref: containerElement,
-    children: isOpen ? children : null
-  });
+  return /* @__PURE__ */ jsx(Portal, { onKeyDown: handleKeyDown, ref: containerElement, children: isOpen ? children : null });
 };
 export {
   Overlay

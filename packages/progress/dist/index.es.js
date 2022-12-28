@@ -1,11 +1,8 @@
 import './style.css';
 import { useState, useEffect } from "react";
-import { cx } from "classix";
 import { jsxs, jsx } from "react/jsx-runtime";
-const DelayedIndicator = ({
-  children,
-  delayMs = 250
-}) => {
+import { cx } from "classix";
+const DelayedIndicator = ({ children, delayMs = 250 }) => {
   const [renderChildren, setRenderChildren] = useState(false);
   useEffect(() => {
     let delay = void 0;
@@ -59,36 +56,49 @@ const Progress = ({
   const strokeWidth = diameter * (isIndeterminate ? 0.1 : 0.5);
   const radius = diameter * 0.5 - strokeWidth * 0.5;
   const circumference = 2 * Math.PI * radius;
-  const indicator = /* @__PURE__ */ jsxs("svg", {
-    className: cx(styles.Progress, isIndeterminate && styles["Progress--indeterminate"], className),
-    width: diameter,
-    height: diameter,
-    viewBox: `0 0 ${diameter} ${diameter}`,
-    "data-test-id": testId,
-    role: "progressbar",
-    "aria-valuemin": 0,
-    "aria-valuetext": "loading",
-    "aria-valuemax": 100,
-    children: [/* @__PURE__ */ jsx("circle", {
-      className: styles["Progress-track"],
-      cx: diameter / 2,
-      cy: diameter / 2,
-      r: radius,
-      strokeWidth
-    }), /* @__PURE__ */ jsx("circle", {
-      className: styles["Progress-head"],
-      cx: diameter / 2,
-      cy: diameter / 2,
-      r: radius,
-      strokeWidth,
-      strokeDasharray: circumference,
-      strokeDashoffset: circumference * (1 - (value === void 0 || value === null ? 0.25 : clamp(value, 0, 1)))
-    })]
-  });
-  return delayMs ? /* @__PURE__ */ jsx(DelayedIndicator, {
-    delayMs,
-    children: indicator
-  }) : indicator;
+  const indicator = /* @__PURE__ */ jsxs(
+    "svg",
+    {
+      className: cx(
+        styles.Progress,
+        isIndeterminate && styles["Progress--indeterminate"],
+        className
+      ),
+      width: diameter,
+      height: diameter,
+      viewBox: `0 0 ${diameter} ${diameter}`,
+      "data-test-id": testId,
+      role: "progressbar",
+      "aria-valuemin": 0,
+      "aria-valuetext": "loading",
+      "aria-valuemax": 100,
+      children: [
+        /* @__PURE__ */ jsx(
+          "circle",
+          {
+            className: styles["Progress-track"],
+            cx: diameter / 2,
+            cy: diameter / 2,
+            r: radius,
+            strokeWidth
+          }
+        ),
+        /* @__PURE__ */ jsx(
+          "circle",
+          {
+            className: styles["Progress-head"],
+            cx: diameter / 2,
+            cy: diameter / 2,
+            r: radius,
+            strokeWidth,
+            strokeDasharray: circumference,
+            strokeDashoffset: circumference * (1 - (value === void 0 || value === null ? 0.25 : clamp(value, 0, 1)))
+          }
+        )
+      ]
+    }
+  );
+  return delayMs ? /* @__PURE__ */ jsx(DelayedIndicator, { delayMs, children: indicator }) : indicator;
 };
 export {
   DelayedIndicator,

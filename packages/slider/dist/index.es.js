@@ -1,6 +1,6 @@
 import './style.css';
-import { cx } from "classix";
 import { jsxs, jsx } from "react/jsx-runtime";
+import { cx } from "classix";
 const Slider$1 = "_Slider_zl0j4_6";
 const styles = {
   Slider: Slider$1,
@@ -22,28 +22,31 @@ const Slider = ({
   "data-test-id": testId = "slider"
 }) => {
   const valueHandler = (callback) => (event) => callback(parseFloat(event.currentTarget.value));
-  return /* @__PURE__ */ jsxs("div", {
-    className: cx(styles.Slider, (disabled || readOnly) && styles["Slider--disabled"], className),
-    "data-test-id": testId,
-    children: [!hideTrack && /* @__PURE__ */ jsx("div", {
-      className: styles["Slider-track"]
-    }), !hideTrack && /* @__PURE__ */ jsx("div", {
-      className: styles["Slider-fill"],
-      style: {
-        width: `${value}%`
-      }
-    }), /* @__PURE__ */ jsx("input", {
-      type: "range",
-      value,
-      min,
-      max,
-      step,
-      readOnly,
-      disabled: disabled || readOnly,
-      id,
-      onChange: valueHandler(onChange)
-    })]
-  });
+  return /* @__PURE__ */ jsxs(
+    "div",
+    {
+      className: cx(styles.Slider, (disabled || readOnly) && styles["Slider--disabled"], className),
+      "data-test-id": testId,
+      children: [
+        !hideTrack && /* @__PURE__ */ jsx("div", { className: styles["Slider-track"] }),
+        !hideTrack && /* @__PURE__ */ jsx("div", { className: styles["Slider-fill"], style: { width: `${value}%` } }),
+        /* @__PURE__ */ jsx(
+          "input",
+          {
+            type: "range",
+            value,
+            min,
+            max,
+            step,
+            readOnly,
+            disabled: disabled || readOnly,
+            id,
+            onChange: valueHandler(onChange)
+          }
+        )
+      ]
+    }
+  );
 };
 export {
   Slider

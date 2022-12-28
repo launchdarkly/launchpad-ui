@@ -1,6 +1,6 @@
 import './style.css';
-import { cx } from "classix";
 import { jsx } from "react/jsx-runtime";
+import { cx } from "classix";
 const Chip$1 = "_Chip_1jc23_24";
 const styles = {
   Chip: Chip$1,
@@ -31,19 +31,29 @@ const Chip = ({
   ...rest
 }) => {
   const isInteractive = !!(onClick || onKeyDown);
-  const classes = cx(styles.Chip, styles[`Chip--${kind}`], styles[`Chip--${size}`], className, subtle && styles["Chip--subtle"], isInteractive && styles["Chip--clickable"]);
-  return /* @__PURE__ */ jsx("span", {
-    className: classes,
-    "data-test-id": testId,
-    ...isInteractive ? {
-      onClick,
-      onKeyDown,
-      tabIndex: 0,
-      role: "button"
-    } : {},
-    ...rest,
-    children
-  });
+  const classes = cx(
+    styles.Chip,
+    styles[`Chip--${kind}`],
+    styles[`Chip--${size}`],
+    className,
+    subtle && styles["Chip--subtle"],
+    isInteractive && styles["Chip--clickable"]
+  );
+  return /* @__PURE__ */ jsx(
+    "span",
+    {
+      className: classes,
+      "data-test-id": testId,
+      ...isInteractive ? {
+        onClick,
+        onKeyDown,
+        tabIndex: 0,
+        role: "button"
+      } : {},
+      ...rest,
+      children
+    }
+  );
 };
 export {
   Chip

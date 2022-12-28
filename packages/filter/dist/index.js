@@ -1,11 +1,11 @@
 require('./style.css');
 "use strict";
-Object.defineProperties(exports, { __esModule: { value: true }, [Symbol.toStringTag]: { value: "Module" } });
+Object.defineProperty(exports, Symbol.toStringTag, { value: "Module" });
+const jsxRuntime = require("react/jsx-runtime");
 const dropdown = require("@launchpad-ui/dropdown");
 const icons = require("@launchpad-ui/icons");
 const classix = require("classix");
 const react = require("react");
-const jsxRuntime = require("react/jsx-runtime");
 const button$1 = require("@launchpad-ui/button");
 const menu = require("@launchpad-ui/menu");
 const tooltip = require("@launchpad-ui/tooltip");
@@ -38,35 +38,25 @@ const styles = {
   filterClearButton
 };
 const AppliedFilterButton = react.forwardRef((props, ref) => {
-  const {
-    name: name2,
-    className,
-    children,
-    onClickFilterButton,
-    "data-test-id": testId
-  } = props;
+  const { name: name2, className, children, onClickFilterButton, "data-test-id": testId } = props;
   const hasDescription = react.Children.count(children) !== 0;
-  return /* @__PURE__ */ jsxRuntime.jsx("div", {
-    "data-test-id": testId,
-    children: /* @__PURE__ */ jsxRuntime.jsxs("button", {
+  return /* @__PURE__ */ jsxRuntime.jsx("div", { "data-test-id": testId, children: /* @__PURE__ */ jsxRuntime.jsxs(
+    "button",
+    {
       "aria-haspopup": true,
       className: classix.cx(styles.appliedButton, className),
       ref,
       onClick: onClickFilterButton,
-      children: [name2 && /* @__PURE__ */ jsxRuntime.jsxs("span", {
-        className: styles.appliedName,
-        "data-test-id": `${testId}-name`,
-        children: [name2, hasDescription && ":"]
-      }), hasDescription && /* @__PURE__ */ jsxRuntime.jsx("span", {
-        className: styles.appliedDescription,
-        "data-test-id": `${testId}-description`,
-        children
-      }), /* @__PURE__ */ jsxRuntime.jsx(icons.ExpandMore, {
-        size: "small",
-        "data-test-id": `${testId}-expand`
-      })]
-    })
-  });
+      children: [
+        name2 && /* @__PURE__ */ jsxRuntime.jsxs("span", { className: styles.appliedName, "data-test-id": `${testId}-name`, children: [
+          name2,
+          hasDescription && ":"
+        ] }),
+        hasDescription && /* @__PURE__ */ jsxRuntime.jsx("span", { className: styles.appliedDescription, "data-test-id": `${testId}-description`, children }),
+        /* @__PURE__ */ jsxRuntime.jsx(icons.ExpandMore, { size: "small", "data-test-id": `${testId}-expand` })
+      ]
+    }
+  ) });
 });
 AppliedFilterButton.displayName = "AppliedFilterButton";
 const FilterMenu = ({
@@ -84,48 +74,61 @@ const FilterMenu = ({
   size,
   "data-test-id": testId = "filter-menu"
 }) => {
-  const filterOptions = isLoading ? [{
-    name: "loading...",
-    value: "loading...",
-    isDisabled: true
-  }] : options;
-  return /* @__PURE__ */ jsxRuntime.jsxs(jsxRuntime.Fragment, {
-    children: [onClearFilter && /* @__PURE__ */ jsxRuntime.jsx(button$1.Button, {
-      tabIndex: 0,
-      className: styles.filterClearButton,
-      onClick: onClearFilter,
-      kind: "link",
-      "data-test-id": "clear-filter-button",
-      children: "CLEAR FILTER"
-    }), /* @__PURE__ */ jsxRuntime.jsxs(menu.Menu, {
-      enableVirtualization,
-      size,
-      "data-test-id": testId,
-      onSelect,
-      children: [enableSearch && /* @__PURE__ */ jsxRuntime.jsx(menu.MenuSearch, {
-        value: searchValue,
-        placeholder: searchPlaceholder,
-        onChange: onSearchChange,
-        ariaLabel: searchAriaLabel
-      }), filterOptions.map((option, index) => {
-        if (option.isDivider) {
-          return /* @__PURE__ */ jsxRuntime.jsx(menu.MenuDivider, {}, `divider-${index}`);
-        }
-        return /* @__PURE__ */ jsxRuntime.jsx(menu.MenuItem, {
-          item: option,
-          disabled: option.isDisabled,
-          icon: option.isChecked ? icons.Check : null,
-          role: "menuitemradio",
-          "aria-checked": option.isChecked ? "true" : void 0,
-          nested: option.nested,
-          groupHeader: option.groupHeader,
-          tooltip: option.isDisabled && disabledOptionTooltip ? disabledOptionTooltip : void 0,
-          tooltipPlacement: "right",
-          children: option.name
-        }, option.value);
-      })]
-    })]
-  });
+  const filterOptions = isLoading ? [{ name: "loading...", value: "loading...", isDisabled: true }] : options;
+  return /* @__PURE__ */ jsxRuntime.jsxs(jsxRuntime.Fragment, { children: [
+    onClearFilter && /* @__PURE__ */ jsxRuntime.jsx(
+      button$1.Button,
+      {
+        tabIndex: 0,
+        className: styles.filterClearButton,
+        onClick: onClearFilter,
+        kind: "link",
+        "data-test-id": "clear-filter-button",
+        children: "CLEAR FILTER"
+      }
+    ),
+    /* @__PURE__ */ jsxRuntime.jsxs(
+      menu.Menu,
+      {
+        enableVirtualization,
+        size,
+        "data-test-id": testId,
+        onSelect,
+        children: [
+          enableSearch && /* @__PURE__ */ jsxRuntime.jsx(
+            menu.MenuSearch,
+            {
+              value: searchValue,
+              placeholder: searchPlaceholder,
+              onChange: onSearchChange,
+              ariaLabel: searchAriaLabel
+            }
+          ),
+          filterOptions.map((option, index) => {
+            if (option.isDivider) {
+              return /* @__PURE__ */ jsxRuntime.jsx(menu.MenuDivider, {}, `divider-${index}`);
+            }
+            return /* @__PURE__ */ jsxRuntime.jsx(
+              menu.MenuItem,
+              {
+                item: option,
+                disabled: option.isDisabled,
+                icon: option.isChecked ? icons.Check : null,
+                role: "menuitemradio",
+                "aria-checked": option.isChecked ? "true" : void 0,
+                nested: option.nested,
+                groupHeader: option.groupHeader,
+                tooltip: option.isDisabled && disabledOptionTooltip ? disabledOptionTooltip : void 0,
+                tooltipPlacement: "right",
+                children: option.name
+              },
+              option.value
+            );
+          })
+        ]
+      }
+    )
+  ] });
 };
 const SEARCH_INPUT_THRESHOLD$1 = 4;
 const AppliedFilter = ({
@@ -145,27 +148,30 @@ const AppliedFilter = ({
   ...props
 }) => {
   const enableSearch = onSearchChange && (!!searchValue || options.length > SEARCH_INPUT_THRESHOLD$1 || !isEmpty);
-  return /* @__PURE__ */ jsxRuntime.jsxs(dropdown.Dropdown, {
-    targetClassName: className,
-    placement: "bottom-start",
-    enableArrow: false,
-    ...props,
-    children: [/* @__PURE__ */ jsxRuntime.jsx(AppliedFilterButton, {
-      "data-test-id": testId,
-      name: name2,
-      onClickFilterButton,
-      children: description2
-    }), /* @__PURE__ */ jsxRuntime.jsx(FilterMenu, {
-      options,
-      searchValue,
-      searchPlaceholder,
-      enableSearch,
-      searchAriaLabel,
-      onSearchChange,
-      onClearFilter,
-      isLoading
-    })]
-  });
+  return /* @__PURE__ */ jsxRuntime.jsxs(dropdown.Dropdown, { targetClassName: className, placement: "bottom-start", enableArrow: false, ...props, children: [
+    /* @__PURE__ */ jsxRuntime.jsx(
+      AppliedFilterButton,
+      {
+        "data-test-id": testId,
+        name: name2,
+        onClickFilterButton,
+        children: description2
+      }
+    ),
+    /* @__PURE__ */ jsxRuntime.jsx(
+      FilterMenu,
+      {
+        options,
+        searchValue,
+        searchPlaceholder,
+        enableSearch,
+        searchAriaLabel,
+        onSearchChange,
+        onClearFilter,
+        isLoading
+      }
+    )
+  ] });
 };
 const FilterButton = react.forwardRef((props, ref) => {
   const {
@@ -184,47 +190,38 @@ const FilterButton = react.forwardRef((props, ref) => {
   const nameId = react.useId();
   const descriptionId = react.useId();
   const hasDescription = react.Children.count(children) !== 0;
-  const nameElement = /* @__PURE__ */ jsxRuntime.jsxs("span", {
-    className: styles.name,
-    children: [name2, hasDescription && ":"]
-  });
-  return /* @__PURE__ */ jsxRuntime.jsxs("div", {
-    className: styles.buttonContainer,
-    "data-test-id": testId,
-    children: [/* @__PURE__ */ jsxRuntime.jsxs("button", {
-      ...rest,
-      "aria-labelledby": `${nameId} ${hasDescription ? descriptionId : ""}`,
-      "aria-haspopup": true,
-      className: classix.cx(styles.button, className, (isClearable2 || isSelected) && styles.isClearable),
-      ref,
-      onClick: onClickFilterButton,
-      children: [hideName ? /* @__PURE__ */ jsxRuntime.jsx(visuallyHidden.VisuallyHidden, {
-        id: nameId,
-        children: nameElement
-      }) : /* @__PURE__ */ jsxRuntime.jsx("span", {
-        id: nameId,
-        children: nameElement
-      }), hasDescription && /* @__PURE__ */ jsxRuntime.jsx("span", {
-        id: descriptionId,
-        className: styles.description,
-        children
-      }), !isClearable2 && /* @__PURE__ */ jsxRuntime.jsx(icons.ExpandMore, {
-        size: "small"
-      })]
-    }), isClearable2 && /* @__PURE__ */ jsxRuntime.jsx(tooltip.Tooltip, {
-      targetClassName: styles.clearTooltip,
-      content: clearTooltip2,
-      children: /* @__PURE__ */ jsxRuntime.jsx(button$1.IconButton, {
+  const nameElement = /* @__PURE__ */ jsxRuntime.jsxs("span", { className: styles.name, children: [
+    name2,
+    hasDescription && ":"
+  ] });
+  return /* @__PURE__ */ jsxRuntime.jsxs("div", { className: styles.buttonContainer, "data-test-id": testId, children: [
+    /* @__PURE__ */ jsxRuntime.jsxs(
+      "button",
+      {
+        ...rest,
+        "aria-labelledby": `${nameId} ${hasDescription ? descriptionId : ""}`,
+        "aria-haspopup": true,
+        className: classix.cx(styles.button, className, (isClearable2 || isSelected) && styles.isClearable),
+        ref,
+        onClick: onClickFilterButton,
+        children: [
+          hideName ? /* @__PURE__ */ jsxRuntime.jsx(visuallyHidden.VisuallyHidden, { id: nameId, children: nameElement }) : /* @__PURE__ */ jsxRuntime.jsx("span", { id: nameId, children: nameElement }),
+          hasDescription && /* @__PURE__ */ jsxRuntime.jsx("span", { id: descriptionId, className: styles.description, children }),
+          !isClearable2 && /* @__PURE__ */ jsxRuntime.jsx(icons.ExpandMore, { size: "small" })
+        ]
+      }
+    ),
+    isClearable2 && /* @__PURE__ */ jsxRuntime.jsx(tooltip.Tooltip, { targetClassName: styles.clearTooltip, content: clearTooltip2, children: /* @__PURE__ */ jsxRuntime.jsx(
+      button$1.IconButton,
+      {
         "aria-label": "Clear filter",
         className: styles.clear,
         "data-test-id": "clear-filter-button",
-        icon: /* @__PURE__ */ jsxRuntime.jsx(icons.Close, {
-          size: "tiny"
-        }),
+        icon: /* @__PURE__ */ jsxRuntime.jsx(icons.Close, { size: "tiny" }),
         onClick: onClear
-      })
-    })]
-  });
+      }
+    ) })
+  ] });
 });
 FilterButton.defaultProps = {
   clearTooltip: "Clear filter"
@@ -259,31 +256,35 @@ const Filter = ({
     event.preventDefault();
     onClear == null ? void 0 : onClear();
   };
-  return /* @__PURE__ */ jsxRuntime.jsxs(dropdown.Dropdown, {
-    targetTestId: testId,
-    targetClassName: dropdownClasses,
-    ...props,
-    children: [/* @__PURE__ */ jsxRuntime.jsx(FilterButton, {
-      isClearable: isClearable2,
-      onClear: handleClear,
-      name: name2,
-      hideName,
-      isSelected,
-      onClickFilterButton,
-      children: description2
-    }), /* @__PURE__ */ jsxRuntime.jsx(FilterMenu, {
-      options,
-      searchValue,
-      searchPlaceholder,
-      searchAriaLabel,
-      enableSearch,
-      onSearchChange,
-      isLoading,
-      disabledOptionTooltip,
-      size,
-      enableVirtualization
-    })]
-  });
+  return /* @__PURE__ */ jsxRuntime.jsxs(dropdown.Dropdown, { targetTestId: testId, targetClassName: dropdownClasses, ...props, children: [
+    /* @__PURE__ */ jsxRuntime.jsx(
+      FilterButton,
+      {
+        isClearable: isClearable2,
+        onClear: handleClear,
+        name: name2,
+        hideName,
+        isSelected,
+        onClickFilterButton,
+        children: description2
+      }
+    ),
+    /* @__PURE__ */ jsxRuntime.jsx(
+      FilterMenu,
+      {
+        options,
+        searchValue,
+        searchPlaceholder,
+        searchAriaLabel,
+        enableSearch,
+        onSearchChange,
+        isLoading,
+        disabledOptionTooltip,
+        size,
+        enableVirtualization
+      }
+    )
+  ] });
 };
 exports.AppliedFilter = AppliedFilter;
 exports.Filter = Filter;

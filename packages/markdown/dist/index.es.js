@@ -1,8 +1,8 @@
 import './style.css';
+import { jsx } from "react/jsx-runtime";
 import { cx } from "classix";
 import DOMPurify from "isomorphic-dompurify";
 import { marked } from "marked";
-import { jsx } from "react/jsx-runtime";
 const Markdown$1 = "_Markdown_1lphk_1";
 const styles = {
   Markdown: Markdown$1
@@ -58,17 +58,17 @@ const Markdown = ({
 }) => {
   const Container = container;
   const classes = cx(styles.Markdown, className);
-  return /* @__PURE__ */ jsx(Container, {
-    className: classes,
-    dangerouslySetInnerHTML: {
-      __html: renderMarkdown(source, {
-        baseUri,
-        allowedTags
-      })
-    },
-    ref: textRef,
-    "data-test-id": testId
-  });
+  return /* @__PURE__ */ jsx(
+    Container,
+    {
+      className: classes,
+      dangerouslySetInnerHTML: {
+        __html: renderMarkdown(source, { baseUri, allowedTags })
+      },
+      ref: textRef,
+      "data-test-id": testId
+    }
+  );
 };
 export {
   Markdown

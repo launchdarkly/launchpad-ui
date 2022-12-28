@@ -1,8 +1,8 @@
 require('./style.css');
 "use strict";
-Object.defineProperties(exports, { __esModule: { value: true }, [Symbol.toStringTag]: { value: "Module" } });
-const classix = require("classix");
+Object.defineProperty(exports, Symbol.toStringTag, { value: "Module" });
 const jsxRuntime = require("react/jsx-runtime");
+const classix = require("classix");
 const Chip$1 = "_Chip_1jc23_24";
 const styles = {
   Chip: Chip$1,
@@ -33,19 +33,29 @@ const Chip = ({
   ...rest
 }) => {
   const isInteractive = !!(onClick || onKeyDown);
-  const classes = classix.cx(styles.Chip, styles[`Chip--${kind}`], styles[`Chip--${size}`], className, subtle && styles["Chip--subtle"], isInteractive && styles["Chip--clickable"]);
-  return /* @__PURE__ */ jsxRuntime.jsx("span", {
-    className: classes,
-    "data-test-id": testId,
-    ...isInteractive ? {
-      onClick,
-      onKeyDown,
-      tabIndex: 0,
-      role: "button"
-    } : {},
-    ...rest,
-    children
-  });
+  const classes = classix.cx(
+    styles.Chip,
+    styles[`Chip--${kind}`],
+    styles[`Chip--${size}`],
+    className,
+    subtle && styles["Chip--subtle"],
+    isInteractive && styles["Chip--clickable"]
+  );
+  return /* @__PURE__ */ jsxRuntime.jsx(
+    "span",
+    {
+      className: classes,
+      "data-test-id": testId,
+      ...isInteractive ? {
+        onClick,
+        onKeyDown,
+        tabIndex: 0,
+        role: "button"
+      } : {},
+      ...rest,
+      children
+    }
+  );
 };
 exports.Chip = Chip;
 //# sourceMappingURL=index.js.map

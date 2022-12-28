@@ -1,7 +1,7 @@
 import './style.css';
+import { jsx, jsxs, Fragment } from "react/jsx-runtime";
 import { forwardRef, useState, useRef, Children, isValidElement, cloneElement } from "react";
 import { cx } from "classix";
-import { jsx, jsxs, Fragment } from "react/jsx-runtime";
 import { VisuallyHidden } from "@react-aria/visually-hidden";
 const formGroup = "_formGroup_1qrlg_1";
 const formIncreasedErrorMargin = "_formIncreasedErrorMargin_1qrlg_9";
@@ -67,12 +67,7 @@ const RequiredAsterisk = ({
   ...rest
 }) => {
   const classes = cx(styles.requiredAsterisk, className);
-  return /* @__PURE__ */ jsx("span", {
-    ...rest,
-    "data-test-id": testId,
-    className: classes,
-    children: "*"
-  });
+  return /* @__PURE__ */ jsx("span", { ...rest, "data-test-id": testId, className: classes, children: "*" });
 };
 const Label = ({
   disabled,
@@ -84,141 +79,149 @@ const Label = ({
   ...rest
 }) => {
   const classes = cx(styles.label, className, disabled && styles.labelDisabled);
-  return /* @__PURE__ */ jsxs("label", {
-    ...rest,
-    "data-test-id": testId,
-    className: classes,
-    children: [children, optional && !required && /* @__PURE__ */ jsx("small", {
-      className: styles.labelOptional,
-      children: "(optional)"
-    }), required && !optional && /* @__PURE__ */ jsx(RequiredAsterisk, {})]
-  });
+  return /* @__PURE__ */ jsxs("label", { ...rest, "data-test-id": testId, className: classes, children: [
+    children,
+    optional && !required && /* @__PURE__ */ jsx("small", { className: styles.labelOptional, children: "(optional)" }),
+    required && !optional && /* @__PURE__ */ jsx(RequiredAsterisk, {})
+  ] });
 };
-const Checkbox = forwardRef(({
-  "aria-label": ariaLabel,
-  "aria-labelledby": ariaLabelledby,
-  children,
-  disabled,
-  checked,
-  labelClassName,
-  "data-test-id": testId = "checkbox",
-  ...rest
-}, ref) => {
-  const hasAriaLabel = ariaLabel !== void 0 || ariaLabelledby !== void 0;
-  if (!children && !hasAriaLabel) {
-    console.warn("If you do not provide children, you must specify an aria-label for accessibility");
+const Checkbox = forwardRef(
+  ({
+    "aria-label": ariaLabel,
+    "aria-labelledby": ariaLabelledby,
+    children,
+    disabled,
+    checked,
+    labelClassName,
+    "data-test-id": testId = "checkbox",
+    ...rest
+  }, ref) => {
+    const hasAriaLabel = ariaLabel !== void 0 || ariaLabelledby !== void 0;
+    if (!children && !hasAriaLabel) {
+      console.warn(
+        "If you do not provide children, you must specify an aria-label for accessibility"
+      );
+    }
+    return /* @__PURE__ */ jsxs(Label, { className: labelClassName, children: [
+      /* @__PURE__ */ jsx(
+        "input",
+        {
+          ...rest,
+          ref,
+          checked,
+          "aria-checked": checked ? "true" : "false",
+          "aria-label": ariaLabel,
+          "aria-labelledby": ariaLabelledby,
+          className: styles.checkbox,
+          disabled,
+          type: "checkbox",
+          "data-test-id": testId
+        }
+      ),
+      " ",
+      disabled ? /* @__PURE__ */ jsx("span", { className: styles.labelDisabled, children }) : children
+    ] });
   }
-  return /* @__PURE__ */ jsxs(Label, {
-    className: labelClassName,
-    children: [/* @__PURE__ */ jsx("input", {
-      ...rest,
-      ref,
-      checked,
-      "aria-checked": checked ? "true" : "false",
-      "aria-label": ariaLabel,
-      "aria-labelledby": ariaLabelledby,
-      className: styles.checkbox,
-      disabled,
-      type: "checkbox",
-      "data-test-id": testId
-    }), " ", disabled ? /* @__PURE__ */ jsx("span", {
-      className: styles.labelDisabled,
-      children
-    }) : children]
-  });
-});
+);
 Checkbox.displayName = "Checkbox";
 const createFieldErrorId = (fieldIdentifier) => fieldIdentifier ? `${[...fieldIdentifier].join("")}-err` : void 0;
-const TextField = forwardRef(({
-  className,
-  type = "text",
-  tiny = false,
-  readOnly,
-  tabIndex = 0,
-  suffix: suffix2,
-  overrideWidth,
-  "data-test-id": testId = "text-field",
-  ...rest
-}, ref) => {
-  const classes = overrideWidth ? className : cx(styles.formInput, tiny && styles.formInputTiny, className);
-  if (suffix2) {
-    return /* @__PURE__ */ jsxs("div", {
-      className: styles.suffixContainer,
-      children: [/* @__PURE__ */ jsx("input", {
+const TextField = forwardRef(
+  ({
+    className,
+    type = "text",
+    tiny = false,
+    readOnly,
+    tabIndex = 0,
+    suffix: suffix2,
+    overrideWidth,
+    "data-test-id": testId = "text-field",
+    ...rest
+  }, ref) => {
+    const classes = overrideWidth ? className : cx(styles.formInput, tiny && styles.formInputTiny, className);
+    if (suffix2) {
+      return /* @__PURE__ */ jsxs("div", { className: styles.suffixContainer, children: [
+        /* @__PURE__ */ jsx(
+          "input",
+          {
+            ...rest,
+            type,
+            "data-test-id": testId,
+            className: classes,
+            readOnly,
+            ref,
+            "aria-describedby": rest["aria-describedby"] || createFieldErrorId(rest.id)
+          }
+        ),
+        /* @__PURE__ */ jsx("label", { className: styles.suffix, htmlFor: rest.id, children: suffix2 })
+      ] });
+    }
+    return /* @__PURE__ */ jsx(
+      "input",
+      {
         ...rest,
         type,
-        "data-test-id": testId,
         className: classes,
         readOnly,
+        tabIndex,
         ref,
+        "data-test-id": testId,
+        style: overrideWidth ? {
+          width: overrideWidth
+        } : void 0,
         "aria-describedby": rest["aria-describedby"] || createFieldErrorId(rest.id)
-      }), /* @__PURE__ */ jsx("label", {
-        className: styles.suffix,
-        htmlFor: rest.id,
-        children: suffix2
-      })]
-    });
+      }
+    );
   }
-  return /* @__PURE__ */ jsx("input", {
-    ...rest,
-    type,
-    className: classes,
-    readOnly,
-    tabIndex,
-    ref,
-    "data-test-id": testId,
-    style: overrideWidth ? {
-      width: overrideWidth
-    } : void 0,
-    "aria-describedby": rest["aria-describedby"] || createFieldErrorId(rest.id)
-  });
-});
+);
 TextField.displayName = "TextField";
-const CompactTextField = forwardRef(({
-  className,
-  id,
-  label: label2,
-  needsErrorFeedback,
-  value,
-  onFocus,
-  onBlur,
-  "data-test-id": testId = "compact-text-field",
-  ...rest
-}, ref) => {
-  const [isActive2, setIsActive] = useState((typeof value === "boolean" || value ? value.toString() : "").trim().length !== 0);
-  const isActiveState = isActive2 || needsErrorFeedback;
-  const classes = cx(styles.compactTextField, className, isActiveState && styles.isActive);
-  const placeholder = isActiveState ? "" : label2;
-  const handleFocus = (event) => {
-    setIsActive(true);
-    if (onFocus) {
-      onFocus(event);
-    }
-  };
-  const handleBlur = (event) => {
-    const value2 = event.target.value || "";
-    setIsActive(value2.trim().length !== 0);
-    if (onBlur) {
-      onBlur(event);
-    }
-  };
-  return /* @__PURE__ */ jsxs("div", {
-    className: classes,
-    "data-test-id": testId,
-    children: [/* @__PURE__ */ jsx(Label, {
-      htmlFor: id,
-      children: label2
-    }), /* @__PURE__ */ jsx(TextField, {
-      ...rest,
-      id,
-      placeholder,
-      value,
-      ref,
-      onFocus: handleFocus,
-      onBlur: handleBlur
-    })]
-  });
-});
+const CompactTextField = forwardRef(
+  ({
+    className,
+    id,
+    label: label2,
+    needsErrorFeedback,
+    value,
+    onFocus,
+    onBlur,
+    "data-test-id": testId = "compact-text-field",
+    ...rest
+  }, ref) => {
+    const [isActive2, setIsActive] = useState(
+      (typeof value === "boolean" || value ? value.toString() : "").trim().length !== 0
+    );
+    const isActiveState = isActive2 || needsErrorFeedback;
+    const classes = cx(styles.compactTextField, className, isActiveState && styles.isActive);
+    const placeholder = isActiveState ? "" : label2;
+    const handleFocus = (event) => {
+      setIsActive(true);
+      if (onFocus) {
+        onFocus(event);
+      }
+    };
+    const handleBlur = (event) => {
+      const value2 = event.target.value || "";
+      setIsActive(value2.trim().length !== 0);
+      if (onBlur) {
+        onBlur(event);
+      }
+    };
+    return /* @__PURE__ */ jsxs("div", { className: classes, "data-test-id": testId, children: [
+      /* @__PURE__ */ jsx(Label, { htmlFor: id, children: label2 }),
+      /* @__PURE__ */ jsx(
+        TextField,
+        {
+          ...rest,
+          id,
+          placeholder,
+          value,
+          ref,
+          onFocus: handleFocus,
+          onBlur: handleBlur
+        }
+      )
+    ] });
+  }
+);
 CompactTextField.displayName = "CompactTextField";
 const FieldError = ({
   name,
@@ -230,14 +233,17 @@ const FieldError = ({
   if (!errorMessage) {
     return null;
   }
-  return /* @__PURE__ */ jsx("span", {
-    ...rest,
-    className: cx(styles.fieldError, className),
-    "aria-live": "polite",
-    "data-test-id": testId,
-    id: createFieldErrorId(name),
-    children: `Error - ${errorMessage}`
-  });
+  return /* @__PURE__ */ jsx(
+    "span",
+    {
+      ...rest,
+      className: cx(styles.fieldError, className),
+      "aria-live": "polite",
+      "data-test-id": testId,
+      id: createFieldErrorId(name),
+      children: `Error - ${errorMessage}`
+    }
+  );
 };
 const FieldSet = ({
   children,
@@ -246,12 +252,7 @@ const FieldSet = ({
   ...rest
 }) => {
   const classes = cx(styles.fieldSet, className);
-  return /* @__PURE__ */ jsx("fieldset", {
-    "data-test-id": testId,
-    className: classes,
-    ...rest,
-    children
-  });
+  return /* @__PURE__ */ jsx("fieldset", { "data-test-id": testId, className: classes, ...rest, children });
 };
 const Form = (props) => {
   const {
@@ -262,13 +263,13 @@ const Form = (props) => {
     "data-test-id": testId = "form",
     ...rest
   } = props;
-  const classes = cx(styles.form, className, inline && styles.formInline, !!hasIncreasedErrorMargin && styles.formIncreasedErrorMargin);
-  return /* @__PURE__ */ jsx("form", {
-    ...rest,
-    "data-test-id": testId,
-    className: classes,
-    children
-  });
+  const classes = cx(
+    styles.form,
+    className,
+    inline && styles.formInline,
+    !!hasIncreasedErrorMargin && styles.formIncreasedErrorMargin
+  );
+  return /* @__PURE__ */ jsx("form", { ...rest, "data-test-id": testId, className: classes, children });
 };
 const FormGroup = (props) => {
   const {
@@ -280,13 +281,12 @@ const FormGroup = (props) => {
     "data-test-id": testId = "form-group",
     ...rest
   } = props;
-  const classes = cx(styles.formGroup, className, !ignoreValidation && isInvalid2 && styles.isInvalid);
-  return /* @__PURE__ */ jsx("fieldset", {
-    className: classes,
-    "data-test-id": testId,
-    ...rest,
-    children
-  });
+  const classes = cx(
+    styles.formGroup,
+    className,
+    !ignoreValidation && isInvalid2 && styles.isInvalid
+  );
+  return /* @__PURE__ */ jsx("fieldset", { className: classes, "data-test-id": testId, ...rest, children });
 };
 const FormHint = ({
   className,
@@ -295,12 +295,7 @@ const FormHint = ({
   ...rest
 }) => {
   const classes = cx(styles.hint, className);
-  return /* @__PURE__ */ jsx("div", {
-    ...rest,
-    "data-test-id": testId,
-    className: classes,
-    children
-  });
+  return /* @__PURE__ */ jsx("div", { ...rest, "data-test-id": testId, className: classes, children });
 };
 const FormField = ({
   isRequired,
@@ -319,25 +314,26 @@ const FormField = ({
   const handleBlur = () => {
     onBlur && onBlur(name);
   };
-  return /* @__PURE__ */ jsxs(FormGroup, {
-    className: cx(styles.field, className),
-    name,
-    ignoreValidation,
-    isInvalid: isInvalid2,
-    onBlur: handleBlur,
-    "data-test-id": testId,
-    children: [label2 && /* @__PURE__ */ jsxs("label", {
-      htmlFor,
-      children: [label2, isRequired && /* @__PURE__ */ jsx(RequiredAsterisk, {})]
-    }), hint2 && /* @__PURE__ */ jsx(FormHint, {
-      className: styles.hint,
-      children: hint2
-    }), children, /* @__PURE__ */ jsx(FieldError, {
-      className: styles.fieldErrorMessage,
+  return /* @__PURE__ */ jsxs(
+    FormGroup,
+    {
+      className: cx(styles.field, className),
       name,
-      errorMessage
-    })]
-  });
+      ignoreValidation,
+      isInvalid: isInvalid2,
+      onBlur: handleBlur,
+      "data-test-id": testId,
+      children: [
+        label2 && /* @__PURE__ */ jsxs("label", { htmlFor, children: [
+          label2,
+          isRequired && /* @__PURE__ */ jsx(RequiredAsterisk, {})
+        ] }),
+        hint2 && /* @__PURE__ */ jsx(FormHint, { className: styles.hint, children: hint2 }),
+        children,
+        /* @__PURE__ */ jsx(FieldError, { className: styles.fieldErrorMessage, name, errorMessage })
+      ]
+    }
+  );
 };
 const IconField = ({
   icon,
@@ -348,15 +344,10 @@ const IconField = ({
 }) => {
   const Icon = icon;
   const classes = cx(styles.iconField, className);
-  return /* @__PURE__ */ jsxs("div", {
-    className: classes,
-    "data-test-id": testId,
-    ...rest,
-    children: [children, /* @__PURE__ */ jsx(Icon, {
-      size: "small",
-      className: styles.iconFieldIcon
-    })]
-  });
+  return /* @__PURE__ */ jsxs("div", { className: classes, "data-test-id": testId, ...rest, children: [
+    children,
+    /* @__PURE__ */ jsx(Icon, { size: "small", className: styles.iconFieldIcon })
+  ] });
 };
 const Radio = ({
   "aria-label": ariaLabel,
@@ -373,29 +364,27 @@ const Radio = ({
 }) => {
   const hasAriaLabel = ariaLabel !== void 0 || ariaLabelledby !== void 0;
   if (!children && !hasAriaLabel) {
-    console.warn("If you do not provide children, you must specify an aria-label for accessibility");
+    console.warn(
+      "If you do not provide children, you must specify an aria-label for accessibility"
+    );
   }
-  return /* @__PURE__ */ jsxs(Fragment, {
-    children: [/* @__PURE__ */ jsx("input", {
-      ...rest,
-      "aria-label": ariaLabel,
-      "aria-labelledby": ariaLabelledby,
-      className: cx(styles.radio, className),
-      checked,
-      disabled,
-      id,
-      "data-test-id": testId,
-      type: "radio"
-    }), /* @__PURE__ */ jsx(Label, {
-      className: labelClassName,
-      htmlFor: id,
-      style: labelStyle,
-      children: disabled ? /* @__PURE__ */ jsx("span", {
-        className: styles.labelDisabled,
-        children
-      }) : children
-    })]
-  });
+  return /* @__PURE__ */ jsxs(Fragment, { children: [
+    /* @__PURE__ */ jsx(
+      "input",
+      {
+        ...rest,
+        "aria-label": ariaLabel,
+        "aria-labelledby": ariaLabelledby,
+        className: cx(styles.radio, className),
+        checked,
+        disabled,
+        id,
+        "data-test-id": testId,
+        type: "radio"
+      }
+    ),
+    /* @__PURE__ */ jsx(Label, { className: labelClassName, htmlFor: id, style: labelStyle, children: disabled ? /* @__PURE__ */ jsx("span", { className: styles.labelDisabled, children }) : children })
+  ] });
 };
 const RadioGroup = (props) => {
   const {
@@ -448,18 +437,10 @@ const RadioGroup = (props) => {
     return null;
   }
   const radios = Children.map(children, (child) => updateRadioElems(child));
-  return /* @__PURE__ */ jsxs("fieldset", {
-    "data-test-id": testId,
-    ref: fieldsetRef,
-    children: [legend && /* @__PURE__ */ jsx("legend", {
-      children: /* @__PURE__ */ jsx(VisuallyHidden, {
-        children: legend
-      })
-    }), /* @__PURE__ */ jsx("div", {
-      ...rest,
-      children: radios
-    })]
-  });
+  return /* @__PURE__ */ jsxs("fieldset", { "data-test-id": testId, ref: fieldsetRef, children: [
+    legend && /* @__PURE__ */ jsx("legend", { children: /* @__PURE__ */ jsx(VisuallyHidden, { children: legend }) }),
+    /* @__PURE__ */ jsx("div", { ...rest, children: radios })
+  ] });
 };
 const Select = ({
   className,
@@ -468,35 +449,31 @@ const Select = ({
   ...rest
 }) => {
   const classes = cx(styles.formInput, className);
-  return /* @__PURE__ */ jsx("select", {
-    ...rest,
-    "data-test-id": testId,
-    className: classes,
-    children
-  });
+  return /* @__PURE__ */ jsx("select", { ...rest, "data-test-id": testId, className: classes, children });
 };
-const TextArea = forwardRef(({
-  className,
-  "data-test-id": testId = "text-area",
-  ...props
-}, ref) => {
-  const onKeyDown = (e) => {
-    if (e.key === "ArrowRight" || e.key === "ArrowDown" || e.key === "ArrowUp" || e.key === "ArrowLeft") {
-      e.stopPropagation();
-    }
-    if (e.key === "Escape") {
-      e.nativeEvent.stopImmediatePropagation();
-    }
-  };
-  return /* @__PURE__ */ jsx("textarea", {
-    ...props,
-    className: cx(styles.formInput, className),
-    ref,
-    "data-test-id": testId,
-    "aria-describedby": props["aria-describedby"] || createFieldErrorId(props.id),
-    onKeyDown
-  });
-});
+const TextArea = forwardRef(
+  ({ className, "data-test-id": testId = "text-area", ...props }, ref) => {
+    const onKeyDown = (e) => {
+      if (e.key === "ArrowRight" || e.key === "ArrowDown" || e.key === "ArrowUp" || e.key === "ArrowLeft") {
+        e.stopPropagation();
+      }
+      if (e.key === "Escape") {
+        e.nativeEvent.stopImmediatePropagation();
+      }
+    };
+    return /* @__PURE__ */ jsx(
+      "textarea",
+      {
+        ...props,
+        className: cx(styles.formInput, className),
+        ref,
+        "data-test-id": testId,
+        "aria-describedby": props["aria-describedby"] || createFieldErrorId(props.id),
+        onKeyDown
+      }
+    );
+  }
+);
 TextArea.displayName = "TextArea";
 export {
   Checkbox,

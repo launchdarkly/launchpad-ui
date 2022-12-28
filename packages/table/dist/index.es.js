@@ -1,6 +1,6 @@
 import './style.css';
-import { cx } from "classix";
 import { jsx } from "react/jsx-runtime";
+import { cx } from "classix";
 const Table$1 = "_Table_olnh7_12";
 const styles = {
   Table: Table$1,
@@ -41,13 +41,14 @@ const Table = ({
   "data-test-id": testId = "table",
   ...rest
 }) => {
-  const classes = cx(styles.Table, auto && styles["Table--auto"], compact && styles["Table--compact"], isResourceTable && styles["Table--resourceTable"], className);
-  return /* @__PURE__ */ jsx("table", {
-    ...rest,
-    "data-test-id": testId,
-    className: classes,
-    children
-  });
+  const classes = cx(
+    styles.Table,
+    auto && styles["Table--auto"],
+    compact && styles["Table--compact"],
+    isResourceTable && styles["Table--resourceTable"],
+    className
+  );
+  return /* @__PURE__ */ jsx("table", { ...rest, "data-test-id": testId, className: classes, children });
 };
 const TableBody = ({
   className,
@@ -56,29 +57,15 @@ const TableBody = ({
   ...rest
 }) => {
   const classes = cx(styles["Table-body"], className);
-  return /* @__PURE__ */ jsx("tbody", {
-    ...rest,
-    "data-test-id": testId,
-    className: classes,
-    children
-  });
+  return /* @__PURE__ */ jsx("tbody", { ...rest, "data-test-id": testId, className: classes, children });
 };
-const TableCell = ({
-  align = "left",
-  className,
-  children,
-  ...rest
-}) => {
+const TableCell = ({ align = "left", className, children, ...rest }) => {
   const classes = cx(styles["Table-cell"], styles[`Table-cell--${align}`], className);
   const restProps = rest;
   if ("hasScope" in restProps) {
     delete restProps.hasScope;
   }
-  return /* @__PURE__ */ jsx("td", {
-    ...restProps,
-    className: classes,
-    children
-  });
+  return /* @__PURE__ */ jsx("td", { ...restProps, className: classes, children });
 };
 const TableHead = ({
   className,
@@ -87,12 +74,7 @@ const TableHead = ({
   ...rest
 }) => {
   const classes = cx(styles["Table-header"], className);
-  return /* @__PURE__ */ jsx("thead", {
-    ...rest,
-    "data-test-id": testId,
-    className: classes,
-    children
-  });
+  return /* @__PURE__ */ jsx("thead", { ...rest, "data-test-id": testId, className: classes, children });
 };
 const TableHeadCell = ({
   align = "left",
@@ -103,13 +85,14 @@ const TableHeadCell = ({
   ...rest
 }) => {
   const widthClass = defaultColWidth ? styles[`Table-cell--width-${defaultColWidth}`] : "";
-  const classes = cx(styles["Table-cell"], styles["Table-cell--head"], styles[`Table-cell--${align}`], widthClass, className);
-  return /* @__PURE__ */ jsx("th", {
-    ...rest,
-    className: classes,
-    scope,
-    children
-  });
+  const classes = cx(
+    styles["Table-cell"],
+    styles["Table-cell--head"],
+    styles[`Table-cell--${align}`],
+    widthClass,
+    className
+  );
+  return /* @__PURE__ */ jsx("th", { ...rest, className: classes, scope, children });
 };
 const TableRow = ({
   className,
@@ -120,12 +103,7 @@ const TableRow = ({
 }) => {
   const verticalAlignClass = verticalAlign ? styles[`Table-row--${verticalAlign}`] : "";
   const classes = cx(styles["Table-row"], verticalAlignClass, className);
-  return /* @__PURE__ */ jsx("tr", {
-    ...rest,
-    className: classes,
-    "data-test-id": testId,
-    children
-  });
+  return /* @__PURE__ */ jsx("tr", { ...rest, className: classes, "data-test-id": testId, children });
 };
 export {
   Table,

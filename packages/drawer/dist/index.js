@@ -1,6 +1,25 @@
 require('./style.css');
 "use strict";
-Object.defineProperties(exports, { __esModule: { value: true }, [Symbol.toStringTag]: { value: "Module" } });
+var __create = Object.create;
+var __defProp = Object.defineProperty;
+var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
+var __getOwnPropNames = Object.getOwnPropertyNames;
+var __getProtoOf = Object.getPrototypeOf;
+var __hasOwnProp = Object.prototype.hasOwnProperty;
+var __copyProps = (to, from, except, desc) => {
+  if (from && typeof from === "object" || typeof from === "function") {
+    for (let key of __getOwnPropNames(from))
+      if (!__hasOwnProp.call(to, key) && key !== except)
+        __defProp(to, key, { get: () => from[key], enumerable: !(desc = __getOwnPropDesc(from, key)) || desc.enumerable });
+  }
+  return to;
+};
+var __toESM = (mod, isNodeMode, target) => (target = mod != null ? __create(__getProtoOf(mod)) : {}, __copyProps(
+  isNodeMode || !mod || !mod.__esModule ? __defProp(target, "default", { value: mod, enumerable: true }) : target,
+  mod
+));
+Object.defineProperty(exports, Symbol.toStringTag, { value: "Module" });
+const jsxRuntime = require("react/jsx-runtime");
 const button = require("@launchpad-ui/button");
 const focusTrap = require("@launchpad-ui/focus-trap");
 const icons = require("@launchpad-ui/icons");
@@ -10,25 +29,6 @@ const overlays = require("@react-aria/overlays");
 const classix = require("classix");
 const framerMotion = require("framer-motion");
 const react = require("react");
-const jsxRuntime = require("react/jsx-runtime");
-function _interopNamespace(e) {
-  if (e && e.__esModule)
-    return e;
-  const n = Object.create(null, { [Symbol.toStringTag]: { value: "Module" } });
-  if (e) {
-    for (const k in e) {
-      if (k !== "default") {
-        const d = Object.getOwnPropertyDescriptor(e, k);
-        Object.defineProperty(n, k, d.get ? d : {
-          enumerable: true,
-          get: () => e[k]
-        });
-      }
-    }
-  }
-  n.default = e;
-  return Object.freeze(n);
-}
 const DRAWER_LABELLED_BY = "drawer-title";
 const drawer = "_drawer_1amby_17";
 const overlay$1 = "_overlay_1amby_27";
@@ -51,35 +51,22 @@ const styles = {
   closeButton
 };
 const overlay = {
-  visible: {
-    opacity: 1,
-    transition: {
-      duration: 0.15
-    }
-  },
-  hidden: {
-    opacity: 0
-  }
+  visible: { opacity: 1, transition: { duration: 0.15 } },
+  hidden: { opacity: 0 }
 };
 const slideRight = {
-  hidden: {
-    opacity: 0,
-    x: "25%"
-  },
+  hidden: { opacity: 0, x: "25%" },
   visible: {
     opacity: 1,
     x: "0%",
-    transition: {
-      type: "spring",
-      delay: 0.15,
-      duration: 0.2,
-      bounce: 0
-    }
+    transition: { type: "spring", delay: 0.15, duration: 0.2, bounce: 0 }
   }
 };
-const loadFeatures = () => Promise.resolve().then(() => /* @__PURE__ */ _interopNamespace(require(
+const loadFeatures = () => import(
+  /* webpackChunkName: "lp-drawer-framer-features" */
+  /* webpackExports: "domAnimation" */
   "framer-motion"
-))).then((res) => res.domAnimation);
+).then((res) => res.domAnimation);
 const Drawer = ({
   className,
   children,
@@ -112,29 +99,26 @@ const Drawer = ({
       onCancel && onCancel();
     }
   };
-  return /* @__PURE__ */ jsxRuntime.jsx(portal.Portal, {
-    children: /* @__PURE__ */ jsxRuntime.jsx(framerMotion.LazyMotion, {
-      strict: true,
-      features: loadFeatures,
-      children: /* @__PURE__ */ jsxRuntime.jsx("div", {
-        className: classix.cx(styles.drawer, styles[size], className),
-        "data-drawer": true,
-        "data-test-id": testId,
-        ref,
-        children: /* @__PURE__ */ jsxRuntime.jsx(framerMotion.m.div, {
+  return /* @__PURE__ */ jsxRuntime.jsx(portal.Portal, { children: /* @__PURE__ */ jsxRuntime.jsx(framerMotion.LazyMotion, { strict: true, features: loadFeatures, children: /* @__PURE__ */ jsxRuntime.jsx(
+    "div",
+    {
+      className: classix.cx(styles.drawer, styles[size], className),
+      "data-drawer": true,
+      "data-test-id": testId,
+      ref,
+      children: /* @__PURE__ */ jsxRuntime.jsx(
+        framerMotion.m.div,
+        {
           initial: "hidden",
           animate: "visible",
           variants: overlay,
-          transition: {
-            duration: 0.15
-          },
+          transition: { duration: 0.15 },
           role: "presentation",
           className: styles.overlay,
           onMouseDown: handleOverlayClick,
-          children: /* @__PURE__ */ jsxRuntime.jsx(focusTrap.FocusTrap, {
-            autoFocus: true,
-            restoreFocus: true,
-            children: /* @__PURE__ */ jsxRuntime.jsxs(framerMotion.m.div, {
+          children: /* @__PURE__ */ jsxRuntime.jsx(focusTrap.FocusTrap, { autoFocus: true, restoreFocus: true, children: /* @__PURE__ */ jsxRuntime.jsxs(
+            framerMotion.m.div,
+            {
               initial: "hidden",
               animate: "visible",
               variants: slideRight,
@@ -143,24 +127,25 @@ const Drawer = ({
               "aria-modal": true,
               className: styles.content,
               tabIndex: -1,
-              children: [/* @__PURE__ */ jsxRuntime.jsx(button.IconButton, {
-                "aria-label": "close",
-                icon: /* @__PURE__ */ jsxRuntime.jsx(icons.Close, {
-                  size: "medium"
-                }),
-                className: styles.closeButton,
-                onClick: onCancel,
-                "data-test-id": "drawer-close-button"
-              }), /* @__PURE__ */ jsxRuntime.jsx(react.Suspense, {
-                fallback: /* @__PURE__ */ jsxRuntime.jsx(progress.Progress, {}),
-                children
-              })]
-            })
-          })
-        })
-      })
-    })
-  });
+              children: [
+                /* @__PURE__ */ jsxRuntime.jsx(
+                  button.IconButton,
+                  {
+                    "aria-label": "close",
+                    icon: /* @__PURE__ */ jsxRuntime.jsx(icons.Close, { size: "medium" }),
+                    className: styles.closeButton,
+                    onClick: onCancel,
+                    "data-test-id": "drawer-close-button"
+                  }
+                ),
+                /* @__PURE__ */ jsxRuntime.jsx(react.Suspense, { fallback: /* @__PURE__ */ jsxRuntime.jsx(progress.Progress, {}), children })
+              ]
+            }
+          ) })
+        }
+      )
+    }
+  ) }) });
 };
 const DrawerHeader = ({
   className,
@@ -170,16 +155,7 @@ const DrawerHeader = ({
   "data-test-id": testId = "drawer-header",
   ...rest
 }) => {
-  return /* @__PURE__ */ jsxRuntime.jsx("div", {
-    "data-test-id": testId,
-    className,
-    ...rest,
-    children: /* @__PURE__ */ jsxRuntime.jsx("h2", {
-      id: DRAWER_LABELLED_BY,
-      className: titleClassName,
-      children
-    })
-  });
+  return /* @__PURE__ */ jsxRuntime.jsx("div", { "data-test-id": testId, className, ...rest, children: /* @__PURE__ */ jsxRuntime.jsx("h2", { id: DRAWER_LABELLED_BY, className: titleClassName, children }) });
 };
 exports.Drawer = Drawer;
 exports.DrawerHeader = DrawerHeader;

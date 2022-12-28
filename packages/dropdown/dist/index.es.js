@@ -1,7 +1,7 @@
+import { jsxs, jsx } from "react/jsx-runtime";
 import { Popover } from "@launchpad-ui/popover";
 import { cx } from "classix";
 import { useRef, useState, useEffect, cloneElement, Children, forwardRef } from "react";
-import { jsxs, jsx } from "react/jsx-runtime";
 import { Button } from "@launchpad-ui/button";
 import { ExpandMore } from "@launchpad-ui/icons";
 const Dropdown = (props) => {
@@ -19,7 +19,7 @@ const Dropdown = (props) => {
     ...rest
   } = props;
   const triggerRef = useRef(null);
-  const [isOpen, setIsOpen] = useState(isOpenProp != null ? isOpenProp : false);
+  const [isOpen, setIsOpen] = useState(isOpenProp ?? false);
   const [hasOpened, setHasOpened] = useState(isOpen);
   useEffect(() => {
     if (isOpenProp !== void 0) {
@@ -41,9 +41,7 @@ const Dropdown = (props) => {
   }, [isOpen, hasOpened]);
   useEffect(() => {
     setHasOpened(isOpen);
-    onStateChange == null ? void 0 : onStateChange({
-      isOpen
-    });
+    onStateChange == null ? void 0 : onStateChange({ isOpen });
   }, [isOpen]);
   const renderTrigger = () => {
     return cloneElement(parseChildren().target, {
@@ -60,9 +58,7 @@ const Dropdown = (props) => {
   };
   const handleSelect = (item) => {
     setIsOpen(false);
-    onSelect == null ? void 0 : onSelect(item, {
-      isOpen: false
-    });
+    onSelect == null ? void 0 : onSelect(item, { isOpen: false });
   };
   const handlePopoverInteraction = (nextIsOpen) => {
     setIsOpen(nextIsOpen);
@@ -76,34 +72,32 @@ const Dropdown = (props) => {
   };
   const popoverTargetClasses = cx("Dropdown-target", targetClassName);
   const popoverClasses = cx("Dropdown", popoverClassName);
-  return /* @__PURE__ */ jsxs(Popover, {
-    isOpen,
-    placement,
-    onInteraction: onInteraction || handlePopoverInteraction,
-    restrictHeight: false,
-    disabled,
-    targetClassName: popoverTargetClasses,
-    popoverClassName: popoverClasses,
-    "data-test-id": testId,
-    ...rest,
-    children: [renderTrigger(), renderContent()]
-  });
+  return /* @__PURE__ */ jsxs(
+    Popover,
+    {
+      isOpen,
+      placement,
+      onInteraction: onInteraction || handlePopoverInteraction,
+      restrictHeight: false,
+      disabled,
+      targetClassName: popoverTargetClasses,
+      popoverClassName: popoverClasses,
+      "data-test-id": testId,
+      ...rest,
+      children: [
+        renderTrigger(),
+        renderContent()
+      ]
+    }
+  );
 };
 const DropdownButton = forwardRef((props, ref) => {
-  const {
+  const { children, hideCaret, "data-test-id": testId = "dropdown-button", ...rest } = props;
+  return /* @__PURE__ */ jsxs(Button, { ...rest, "data-test-id": testId, ref, children: [
     children,
-    hideCaret,
-    "data-test-id": testId = "dropdown-button",
-    ...rest
-  } = props;
-  return /* @__PURE__ */ jsxs(Button, {
-    ...rest,
-    "data-test-id": testId,
-    ref,
-    children: [children, " ", !hideCaret && /* @__PURE__ */ jsx(ExpandMore, {
-      size: "small"
-    })]
-  });
+    " ",
+    !hideCaret && /* @__PURE__ */ jsx(ExpandMore, { size: "small" })
+  ] });
 });
 DropdownButton.displayName = "DropdownButton";
 export {

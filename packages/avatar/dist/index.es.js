@@ -1,8 +1,8 @@
 import './style.css';
+import { jsx } from "react/jsx-runtime";
 import { Person } from "@launchpad-ui/icons";
 import { cx } from "classix";
 import { useRef, useEffect, useCallback, useState } from "react";
-import { jsx } from "react/jsx-runtime";
 const Avatar$1 = "_Avatar_iqh64_1";
 const styles = {
   Avatar: Avatar$1,
@@ -71,36 +71,30 @@ const Avatar = ({
   if (useDefaultAvatar || !imageSource) {
     if (initials) {
       const color = (initials.charCodeAt(0) + initials.charCodeAt(1)) % 5;
-      const initialsContainerClasses = cx(classes, styles["Avatar--initials"], styles[`Avatar--color${color}`]);
-      return /* @__PURE__ */ jsx("div", {
-        className: initialsContainerClasses,
-        "data-test-id": testId,
-        ...rest,
-        children: /* @__PURE__ */ jsx("span", {
-          className: styles["Avatar-initials-content"],
-          children: initials
-        })
-      });
+      const initialsContainerClasses = cx(
+        classes,
+        styles["Avatar--initials"],
+        styles[`Avatar--color${color}`]
+      );
+      return /* @__PURE__ */ jsx("div", { className: initialsContainerClasses, "data-test-id": testId, ...rest, children: /* @__PURE__ */ jsx("span", { className: styles["Avatar-initials-content"], children: initials }) });
     } else {
-      return /* @__PURE__ */ jsx(DefaultIcon, {
-        className: classes,
-        "data-test-id": testId,
-        size,
-        ...rest
-      });
+      return /* @__PURE__ */ jsx(DefaultIcon, { className: classes, "data-test-id": testId, size, ...rest });
     }
   }
   const dimension = DIMENSIONS[size];
-  return /* @__PURE__ */ jsx("img", {
-    ...rest,
-    alt,
-    className: classes,
-    src: imageSource,
-    width: dimension,
-    height: dimension,
-    "data-test-id": testId,
-    onError: () => setUseDefaultAvatar(true)
-  });
+  return /* @__PURE__ */ jsx(
+    "img",
+    {
+      ...rest,
+      alt,
+      className: classes,
+      src: imageSource,
+      width: dimension,
+      height: dimension,
+      "data-test-id": testId,
+      onError: () => setUseDefaultAvatar(true)
+    }
+  );
 };
 export {
   Avatar
