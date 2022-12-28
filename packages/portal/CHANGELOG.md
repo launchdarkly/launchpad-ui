@@ -1,5 +1,11 @@
 # @launchpad-ui/portal
 
+## 0.1.2
+
+### Patch Changes
+
+- [#633](https://github.com/launchdarkly/launchpad-ui/pull/633) [`4d40aa2e`](https://github.com/launchdarkly/launchpad-ui/commit/4d40aa2ee768f182ed28d13d42c93c438d446e15) Thanks [@chasedarkly](https://github.com/chasedarkly)! - Update third party dependencies to pin versions to match consumer app
+
 ## 0.1.1
 
 ### Patch Changes
