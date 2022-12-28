@@ -1,0 +1,80 @@
+:root {
+  --Banner-color-border-bottom-info: var(--lp-color-border-feedback-info);
+  /* stylelint-disable-next-line value-keyword-case */
+  --Banner-color-border-bottom-warning: var(--lp-color-border-feedback-warning);
+  --Banner-color-border-bottom-error: var(--lp-color-border-feedback-error);
+  --Banner-color-text: var(--lp-color-text-feedback);
+  --Banner-color-background: var(--lp-color-bg-ui-primary);
+  --Banner-color-background-info: var(--lp-color-bg-feedback-info);
+  --Banner-color-background-warning: var(--lp-color-bg-feedback-warning);
+  --Banner-color-background-error: var(--lp-color-bg-feedback-error);
+  --Banner-icon-color-info: var(--lp-color-fill-feedback-info);
+  --Banner-icon-color-warning: var(--lp-color-fill-feedback-warning);
+  --Banner-icon-color-error: var(--lp-color-fill-feedback-error);
+  --page-gutter-width: 1rem;
+}
+@media screen and (min-width: 740px) {
+  :root {
+    --page-gutter-width: 4rem;
+  }
+}
+._Banner_1hy8w_25 {
+  background: var(--lp-color-bg-ui-primary);
+  background: var(--Banner-color-background);
+  display: flex;
+  padding: 1.4rem 1.8rem;
+  font-size: 1.4rem;
+  line-height: 1.45;
+  white-space: normal;
+  border-bottom: 1px;
+  border-bottom-style: solid;
+}
+._Banner-heading_1hy8w_36 {
+  margin-top: 0;
+  margin-bottom: 0.4rem;
+  font-size: 1.6rem;
+  font-weight: var(--lp-font-weight-medium);
+  line-height: 1.25;
+}
+._Banner-content_1hy8w_44 {
+  color: var(--lp-color-text-feedback);
+  color: var(--Banner-color-text);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  margin-left: 1.4rem;
+  flex-grow: 1;
+}
+._Banner_1hy8w_25._Banner--error_1hy8w_53 {
+  background-color: var(--lp-color-bg-feedback-error);
+  background-color: var(--Banner-color-background-error);
+  border-bottom-color: var(--lp-color-border-feedback-error);
+  border-bottom-color: var(--Banner-color-border-bottom-error);
+}
+._Banner_1hy8w_25._Banner--warning_1hy8w_58 {
+  background-color: var(--lp-color-bg-feedback-warning);
+  background-color: var(--Banner-color-background-warning);
+  border-bottom-color: var(--lp-color-border-feedback-warning);
+  border-bottom-color: var(--Banner-color-border-bottom-warning);
+}
+._Banner_1hy8w_25._Banner--info_1hy8w_63 {
+  background-color: var(--lp-color-bg-feedback-info);
+  background-color: var(--Banner-color-background-info);
+  border-bottom-color: var(--lp-color-border-feedback-info);
+  border-bottom-color: var(--Banner-color-border-bottom-info);
+}
+._Banner_1hy8w_25 ._Banner-icon_1hy8w_68 {
+  transform: translateY(2px);
+}
+._Banner_1hy8w_25._Banner--info_1hy8w_63 ._Banner-icon_1hy8w_68 svg {
+  fill: var(--lp-color-fill-feedback-info);
+  fill: var(--Banner-icon-color-info);
+}
+._Banner_1hy8w_25._Banner--error_1hy8w_53 ._Banner-icon_1hy8w_68 svg > path {
+  fill: var(--lp-color-fill-feedback-error);
+  fill: var(--Banner-icon-color-error);
+}
+._Banner_1hy8w_25._Banner--warning_1hy8w_58 ._Banner-icon_1hy8w_68 svg {
+  fill: var(--lp-color-fill-feedback-warning);
+  fill: var(--Banner-icon-color-warning);
+}

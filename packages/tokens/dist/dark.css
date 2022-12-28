@@ -1,0 +1,77 @@
+/**
+ * Do not edit directly
+ * Generated on Wed, 28 Dec 2022 19:31:54 GMT
+ */
+
+:root[data-theme='dark'] {
+  --lp-color-bg-feedback-primary: var(--lp-color-gray-800);
+  --lp-color-bg-feedback-error: var(--lp-color-system-red-900);
+  --lp-color-bg-feedback-info: var(--lp-color-blue-900);
+  --lp-color-bg-feedback-success: var(--lp-color-system-green-900);
+  --lp-color-bg-feedback-warning: var(--lp-color-system-yellow-900);
+  --lp-color-bg-interactive-secondary: var(--lp-color-black-300);
+  --lp-color-bg-interactive-secondary-active: var(--lp-color-gray-800);
+  --lp-color-bg-interactive-secondary-focus: var(--lp-color-gray-800);
+  --lp-color-bg-interactive-secondary-hover: var(--lp-color-gray-700);
+  --lp-color-bg-interactive-tertiary-active: var(--lp-color-gray-800);
+  --lp-color-bg-interactive-tertiary-focus: var(--lp-color-gray-800);
+  --lp-color-bg-interactive-tertiary-hover: var(--lp-color-gray-700);
+  --lp-color-bg-interactive-destructive: var(--lp-color-black-300);
+  --lp-color-bg-interactive-destructive-active: var(--lp-color-gray-800);
+  --lp-color-bg-interactive-destructive-focus: var(--lp-color-gray-800);
+  --lp-color-bg-interactive-destructive-hover: var(--lp-color-gray-700);
+  --lp-color-bg-interactive-disabled: var(--lp-color-gray-800);
+  --lp-color-bg-ui-primary: var(--lp-color-black-300);
+  --lp-color-bg-ui-secondary: var(--lp-color-black-100);
+  --lp-color-bg-ui-tertiary: var(--lp-color-black-400);
+  --lp-color-bg-overlay-primary: var(--lp-color-black-100);
+  --lp-color-bg-overlay-secondary: var(--lp-color-white);
+  --lp-color-bg-field: var(--lp-color-black-300);
+  --lp-color-bg-field-disabled: var(--lp-color-gray-800);
+  --lp-color-bg-field-aside: var(--lp-color-gray-800);
+  --lp-color-border-feedback-error: var(--lp-color-system-red-400);
+  --lp-color-border-feedback-info: var(--lp-color-blue-400);
+  --lp-color-border-feedback-success: var(--lp-color-system-green-400);
+  --lp-color-border-feedback-warning: var(--lp-color-system-yellow-400);
+  --lp-color-border-field: var(--lp-color-gray-700);
+  --lp-color-border-field-active: var(--lp-color-cyan-500);
+  --lp-color-border-field-focus: var(--lp-color-cyan-500);
+  --lp-color-border-field-error: var(--lp-color-system-red-400);
+  --lp-color-border-interactive-focus: var(--lp-color-cyan-500);
+  --lp-color-border-interactive-secondary: var(--lp-color-gray-600);
+  --lp-color-border-interactive-secondary-active: var(--lp-color-gray-100);
+  --lp-color-border-interactive-destructive: var(--lp-color-system-red-500);
+  --lp-color-border-interactive-disabled: var(--lp-color-gray-800);
+  --lp-color-border-ui-primary: var(--lp-color-gray-700);
+  --lp-color-border-ui-secondary: var(--lp-color-gray-800);
+  --lp-color-fill-feedback-error: var(--lp-color-system-red-400);
+  --lp-color-fill-feedback-info: var(--lp-color-blue-400);
+  --lp-color-fill-feedback-success: var(--lp-color-system-green-400);
+  --lp-color-fill-feedback-warning: var(--lp-color-system-yellow-400);
+  --lp-color-fill-interactive-destructive: var(--lp-color-white);
+  --lp-color-fill-interactive-disabled: var(--lp-color-gray-500);
+  --lp-color-fill-ui-primary: var(--lp-color-white);
+  --lp-color-fill-field: var(--lp-color-gray-400);
+  --lp-color-shadow-interactive-focus: var(--lp-color-cyan-500);
+  --lp-color-shadow-interactive-primary: var(--lp-color-black-300);
+  --lp-color-shadow-ui-primary: var(--lp-color-black);
+  --lp-color-text-feedback: var(--lp-color-white);
+  --lp-color-text-feedback-error: var(--lp-color-system-red-400);
+  --lp-color-text-feedback-success: var(--lp-color-system-green-500);
+  --lp-color-text-feedback-warning: var(--lp-color-system-yellow-500);
+  --lp-color-text-feedback-info: var(--lp-color-blue-400);
+  --lp-color-text-interactive: var(--lp-color-cyan-600);
+  --lp-color-text-interactive-active: var(--lp-color-purple-400);
+  --lp-color-text-interactive-secondary: var(--lp-color-gray-400);
+  --lp-color-text-interactive-destructive: var(--lp-color-white);
+  --lp-color-text-interactive-disabled: var(--lp-color-gray-500);
+  --lp-color-text-ui-primary: var(--lp-color-white);
+  --lp-color-text-ui-primary-inverted: var(--lp-color-black-300);
+  --lp-color-text-ui-secondary: var(--lp-color-gray-300);
+  --lp-color-text-ui-tertiary: var(--lp-color-gray-100);
+  --lp-color-text-overlay-primary: var(--lp-color-gray-100);
+  --lp-color-text-overlay-secondary: var(--lp-color-black-300);
+  --lp-color-text-field: var(--lp-color-gray-400);
+  --lp-color-text-field-disabled: var(--lp-color-gray-500);
+  --lp-color-text-field-placeholder: var(--lp-color-gray-700);
+}

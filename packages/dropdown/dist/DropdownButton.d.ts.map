@@ -1,0 +1,1 @@
+{"version":3,"file":"DropdownButton.d.ts","sourceRoot":"","sources":["../src/DropdownButton.tsx"],"names":[],"mappings":";AAAA,OAAO,KAAK,EAAE,WAAW,EAAE,MAAM,sBAAsB,CAAC;AAMxD,KAAK,mBAAmB,GAAG,WAAW,GAAG;IACvC,SAAS,CAAC,EAAE,OAAO,CAAC;CACrB,CAAC;AAEF,QAAA,MAAM,cAAc;;;;;;;;;;;;;qDAQlB,CAAC;AAIH,OAAO,EAAE,cAAc,EAAE,CAAC;AAC1B,YAAY,EAAE,mBAAmB,EAAE,CAAC"}

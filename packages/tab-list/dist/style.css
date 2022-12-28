@@ -1,0 +1,56 @@
+._TabList-list_jvqfk_1 {
+  display: flex;
+  flex-direction: row;
+  background-color: var(--lp-color-bg-ui-primary);
+  border-bottom: 1px solid var(--lp-color-border-ui-primary);
+}
+
+._TabList-item_jvqfk_8 {
+  display: block;
+  padding: 0.6rem 1rem;
+  font-size: 1.3rem;
+  font-weight: var(--lp-font-weight-medium);
+  text-decoration: none;
+  color: var(--lp-color-text-interactive-secondary);
+  position: relative;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+._TabList-item_jvqfk_8:focus {
+  outline: none;
+  background-color: var(--lp-color-bg-interactive-secondary-hover);
+  color: var(--lp-color-text-ui-primary);
+}
+
+._TabList-item_jvqfk_8:hover {
+  outline: none;
+  background-color: var(--lp-color-bg-interactive-secondary-hover);
+  color: var(--lp-color-text-ui-primary);
+}
+
+._TabList-item_jvqfk_8._is-active_jvqfk_32 {
+  color: var(--lp-color-text-ui-primary);
+}
+
+._TabList-item_jvqfk_8._is-active_jvqfk_32::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  background-color: var(--lp-color-border-interactive-focus);
+  height: 2px;
+}
+
+._TabList-item_jvqfk_8[aria-disabled],
+._TabList-item_jvqfk_8[aria-disabled]:hover,
+._TabList-item_jvqfk_8[aria-disabled]:active {
+  cursor: not-allowed;
+  background-color: var(--lp-color-bg-ui-primary);
+  color: var(--lp-color-text-interactive-disabled);
+}
+
+._TabList-panel_jvqfk_54 {
+  display: block;
+}

@@ -1,0 +1,225 @@
+._filter_1rh9a_1 {
+  font-family: var(--lp-font-family-base);
+}
+
+._buttonContainer_1rh9a_5 {
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+}
+
+._button_1rh9a_5 {
+  border-radius: var(--lp-border-radius-medium);
+  padding-top: 0;
+  padding-bottom: 0;
+  line-height: 3.2rem;
+  display: flex;
+  align-items: center;
+  margin: 0;
+  color: var(--lp-color-text-ui-primary);
+  background-color: var(--lp-color-bg-interactive-secondary);
+}
+
+._appliedButton_1rh9a_24 {
+  color: var(--lp-color-text-ui-primary);
+  height: 2rem;
+  background-color: var(--lp-color-bg-interactive-secondary-hover);
+  padding: 0.2rem 0.6rem;
+  border-radius: 0.2rem;
+  display: flex;
+}
+
+._button_1rh9a_5,
+._appliedButton_1rh9a_24 {
+  font-family: inherit;
+  font-size: 1.3rem;
+  cursor: pointer;
+  border-width: var(--lp-border-width-200);
+  border-style: solid;
+  border-color: transparent;
+}
+
+._button_1rh9a_5:hover, ._appliedButton_1rh9a_24:hover {
+    background-color: var(--lp-color-bg-interactive-secondary-hover);
+    border-color: var(--lp-color-border-interactive-secondary-hover);
+  }
+
+._button_1rh9a_5._focus-visible_1rh9a_1, ._appliedButton_1rh9a_24._focus-visible_1rh9a_1 {
+    box-shadow: 0 0 0 2px var(--lp-color-shadow-interactive-primary),
+      0 0 0 4px var(--lp-color-shadow-interactive-focus);
+    border-color: var(--lp-color-border-interactive-secondary-focus);
+    outline: none;
+  }
+
+._button_1rh9a_5:focus-visible, ._appliedButton_1rh9a_24:focus-visible {
+    box-shadow: 0 0 0 2px var(--lp-color-shadow-interactive-primary),
+      0 0 0 4px var(--lp-color-shadow-interactive-focus);
+    border-color: var(--lp-color-border-interactive-secondary-focus);
+    outline: none;
+  }
+
+._name_1rh9a_55 {
+  margin-right: 0.5rem;
+  font-weight: var(--lp-font-weight-medium);
+}
+
+._appliedName_1rh9a_60 {
+  margin-right: 0.3rem;
+}
+
+._description_1rh9a_64 {
+  color: var(--lp-color-text-ui-primary);
+  font-weight: var(--lp-font-weight-medium);
+}
+
+._description_1rh9a_64,
+._appliedDescription_1rh9a_70 {
+  margin-right: 0.5rem;
+  max-width: 16rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+._clear_1rh9a_78 {
+  cursor: pointer;
+  padding: 0.3rem;
+}
+
+._button_1rh9a_5._isClearable_1rh9a_83 {
+  background-color: var(--lp-color-blue-200);
+  padding-right: 3.1rem;
+}
+
+._button_1rh9a_5._isClearable_1rh9a_83:focus,
+  ._button_1rh9a_5._isClearable_1rh9a_83:hover,
+  ._button_1rh9a_5._isClearable_1rh9a_83:active {
+    background-color: var(--lp-color-blue-300);
+  }
+
+._button_1rh9a_5._isClearable_1rh9a_83:focus:not(._focus-visible_1rh9a_1) {
+  background-color: transparent;
+  background-color: initial;
+}
+
+._button_1rh9a_5._isClearable_1rh9a_83:focus:not(._focus-visible_1rh9a_1) {
+  background-color: transparent;
+  background-color: initial;
+}
+
+._button_1rh9a_5._isClearable_1rh9a_83:focus:not(._focus-visible_1rh9a_1) {
+  background-color: transparent;
+  background-color: initial;
+}
+
+._button_1rh9a_5._isClearable_1rh9a_83:focus:not(:focus-visible) {
+  background-color: transparent;
+  background-color: initial;
+}
+
+._button_1rh9a_5._isClearable_1rh9a_83:focus:not(._focus-visible_1rh9a_1):hover {
+    background-color: var(--lp-color-blue-300);
+  }
+
+._button_1rh9a_5._isClearable_1rh9a_83:focus:not(:focus-visible):hover {
+    background-color: var(--lp-color-blue-300);
+  }
+
+._button_1rh9a_5:hover:not(._isClearable_1rh9a_83),
+._button_1rh9a_5:focus:not(._isClearable_1rh9a_83),
+[data-state='open'] ._button_1rh9a_5:not(._isClearable_1rh9a_83) {
+  background-color: var(--lp-color-bg-interactive-secondary-hover);
+  border-color: var(--lp-color-border-interactive-secondary-hover);
+}
+
+._button_1rh9a_5:focus:not(._focus-visible_1rh9a_1):not(._isClearable_1rh9a_83):hover {
+    background-color: var(--lp-color-bg-interactive-secondary-hover);
+  }
+
+._button_1rh9a_5:focus:not(:focus-visible):not(._isClearable_1rh9a_83):hover {
+    background-color: var(--lp-color-bg-interactive-secondary-hover);
+  }
+
+._clearTooltip_1rh9a_115 {
+  line-height: 1;
+  position: absolute;
+  right: 0.7rem;
+}
+
+._filterClearButton_1rh9a_121 {
+  text-decoration: none;
+  color: var(--lp-color-text-interactive-destructive);
+  font-size: 1.3rem;
+  font-weight: var(--lp-font-weight-medium);
+  padding: 1rem;
+  width: 100%;
+  border-bottom: 1px solid var(--lp-color-border-interactive-secondary);
+}
+
+._filterClearButton_1rh9a_121:active,
+._filterClearButton_1rh9a_121:focus,
+._filterClearButton_1rh9a_121:hover {
+  outline: none;
+  box-shadow: none;
+  box-shadow: initial;
+  color: var(--lp-color-text-interactive-destructive);
+}
+
+._filterClearButton_1rh9a_121:active {
+  border-bottom-color: var(--lp-color-border-interactive-secondary-active);
+  background-color: var(--lp-color-bg-interactive-secondary-active);
+}
+
+._filterClearButton_1rh9a_121:focus {
+  border-bottom-color: var(--lp-color-border-interactive-secondary-focus);
+  background-color: var(--lp-color-bg-interactive-secondary-focus);
+}
+
+._filterClearButton_1rh9a_121:hover {
+  border-bottom-color: var(--lp-color-border-interactive-secondary-hover);
+  background-color: var(--lp-color-bg-interactive-secondary-hover);
+}
+
+/* stylelint-disable-next-line no-descending-specificity */
+
+:root[data-theme='dark'] ._button_1rh9a_5._isClearable_1rh9a_83 {
+    background-color: var(--lp-color-cyan-900);
+    border-color: var(--lp-color-cyan-900);
+    padding-right: 3.1rem;
+  }
+
+:root[data-theme='dark'] ._button_1rh9a_5._isClearable_1rh9a_83:focus,
+    :root[data-theme='dark'] ._button_1rh9a_5._isClearable_1rh9a_83:hover,
+    :root[data-theme='dark'] ._button_1rh9a_5._isClearable_1rh9a_83:active {
+      background-color: var(--lp-color-cyan-800);
+      border-color: var(--lp-color-cyan-800);
+    }
+
+:root[data-theme='dark'] ._button_1rh9a_5._isClearable_1rh9a_83:focus:not(._focus-visible_1rh9a_1) {
+    background-color: transparent;
+    background-color: initial;
+  }
+
+:root[data-theme='dark'] ._button_1rh9a_5._isClearable_1rh9a_83:focus:not(._focus-visible_1rh9a_1) {
+    background-color: transparent;
+    background-color: initial;
+  }
+
+:root[data-theme='dark'] ._button_1rh9a_5._isClearable_1rh9a_83:focus:not(._focus-visible_1rh9a_1) {
+    background-color: transparent;
+    background-color: initial;
+  }
+
+:root[data-theme='dark'] ._button_1rh9a_5._isClearable_1rh9a_83:focus:not(:focus-visible) {
+    background-color: transparent;
+    background-color: initial;
+  }
+
+:root[data-theme='dark'] ._button_1rh9a_5._isClearable_1rh9a_83:focus:not(._focus-visible_1rh9a_1):hover {
+      background-color: var(--lp-color-cyan-900);
+    }
+
+:root[data-theme='dark'] ._button_1rh9a_5._isClearable_1rh9a_83:focus:not(:focus-visible):hover {
+      background-color: var(--lp-color-cyan-900);
+    }

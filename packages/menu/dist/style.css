@@ -1,0 +1,201 @@
+.Menu-item {
+  display: block;
+  position: relative;
+  color: var(--lp-color-text-ui-primary);
+  background: var(--lp-color-bg-overlay-primary);
+  text-decoration: none;
+  cursor: pointer;
+  outline: none;
+  padding: 0.6rem 2.5rem;
+  text-align: left;
+  font-family: inherit;
+  font-size: 1.3rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  line-height: inherit;
+  border-width: var(--lp-border-width-100);
+  width: 100%;
+}
+
+  .Menu-item:first-child {
+    border-top-left-radius: var(--lp-border-radius-regular);
+    border-top-right-radius: var(--lp-border-radius-regular);
+  }
+
+  .Menu-item:last-child {
+    border-bottom-left-radius: var(--lp-border-radius-regular);
+    border-bottom-right-radius: var(--lp-border-radius-regular);
+  }
+
+.Menu-item-list {
+  min-width: 12rem;
+  overflow: auto;
+  max-height: 55vh;
+}
+
+.Menu-item-list > .Menu-item:last-child {
+  border-bottom-left-radius: var(--lp-border-radius-regular);
+  border-bottom-right-radius: var(--lp-border-radius-regular);
+}
+
+.Menu .Menu-item:not([disabled]):not([aria-disabled]):active {
+    text-decoration: none;
+    box-shadow: none;
+    background-color: var(--lp-color-blue-200);
+    color: var(--lp-color-blue-600);
+  }
+
+.Menu .Menu-item:not([disabled]):not([aria-disabled]):hover:not(:active):not(.has-focus) {
+    background-color: var(--lp-color-bg-interactive-secondary-hover);
+    box-shadow: inset 0 0 0 1px var(--lp-color-gray-600);
+  }
+
+.Menu .Menu-item:not([disabled]):not([aria-disabled]).has-focus {
+    background-color: var(--lp-color-bg-interactive-secondary-hover);
+    box-shadow: inset 0 0 0 2px var(--lp-color-shadow-interactive-focus);
+  }
+
+/* stylelint-disable-next-line no-descending-specificity */
+
+.Menu-item-list > .VirtualMenu-item-list .VirtualMenu-item:last-child .Menu-item {
+  border-bottom-left-radius: var(--lp-border-radius-regular);
+  border-bottom-right-radius: var(--lp-border-radius-regular);
+}
+
+.Menu {
+  font-family: var(--lp-font-family-base);
+}
+
+.Menu:focus {
+    outline: none;
+  }
+
+/* Override our link styles for MenuItemLink component */
+
+.Menu a.Menu-item:focus:not(:hover):not(.has-focus) {
+      text-decoration: none;
+      box-shadow: none;
+    }
+
+/* Ensures that links that are disabled don't show active styles */
+
+.Menu a.Menu-item:active[disabled],
+    .Menu a.Menu-item:active[aria-disabled] {
+      text-decoration: none;
+      color: var(--lp-color-text-ui-secondary);
+    }
+
+/* stylelint-disable-next-line no-descending-specificity */
+
+.Menu .Menu-item-list:first-child > .Menu-item:first-child, .Menu [hidden]:first-child + .Menu .Menu-item-list > .Menu-item:first-child {
+      border-top-left-radius: var(--lp-border-radius-regular);
+      border-top-right-radius: var(--lp-border-radius-regular);
+    }
+
+.Menu .Menu-item-list:first-child > .VirtualMenu-item-list .VirtualMenu-item:first-child .Menu-item, .Menu [hidden]:first-child + .Menu .Menu-item-list > .VirtualMenu-item-list .VirtualMenu-item:first-child .Menu-item {
+      border-top-left-radius: var(--lp-border-radius-regular);
+      border-top-right-radius: var(--lp-border-radius-regular);
+    }
+
+.Menu-item--nested {
+  padding-left: 4rem;
+}
+
+.Menu-item--header {
+  font-weight: var(--lp-font-weight-medium);
+}
+
+.Menu-item .Gravatar {
+  margin-right: 0.5rem;
+}
+
+.Menu-item.is-highlighted {
+  background-color: var(--lp-color-bg-interactive-secondary-hover);
+  box-shadow: inset 0 0 0 1px var(--lp-color-gray-600);
+}
+
+.Menu-item.is-highlighted:active {
+    background-color: var(--lp-color-blue-200);
+    color: var(--lp-color-blue-600);
+    box-shadow: none;
+  }
+
+.Menu-item[aria-disabled],
+.Menu-item[disabled] {
+  color: var(--lp-color-text-ui-secondary);
+  cursor: default;
+}
+
+.Menu-item-icon {
+  position: absolute;
+  left: 0.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.Menu-divider {
+  border-top: 1px solid var(--lp-color-border-ui-primary);
+}
+
+.Menu-search {
+  padding: 1rem;
+  font-size: 1.3rem;
+  border-bottom: 1px solid var(--lp-color-border-ui-primary);
+}
+
+.Menu-search:first-child {
+  border-top-left-radius: var(--lp-border-radius-regular);
+  border-top-right-radius: var(--lp-border-radius-regular);
+}
+
+[class^='_Popover-content_'] .Menu-search {
+  width: 100%;
+}
+
+/* Removing anything that could give it some height */
+
+[class^='_Popover-content_'] .Menu-search .Menu-search-hidden-placeholder {
+    padding-top: 0;
+    padding-bottom: 0;
+    height: 0;
+    border: none;
+    visibility: hidden;
+  }
+
+.Menu--isVirtual {
+  display: flex;
+  align-items: stretch;
+  flex-direction: column;
+}
+
+.MenuSize--xl {
+  width: 32rem;
+}
+
+.MenuSize--lg {
+  width: 24rem;
+}
+
+.MenuSize--md {
+  width: 16rem;
+}
+
+.MenuSize--sm {
+  width: 12rem;
+}
+
+.VirtualMenu-item-list {
+  width: 100%;
+  position: relative;
+}
+
+.VirtualMenu-item {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}

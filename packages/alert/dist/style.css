@@ -1,0 +1,341 @@
+:root {
+  --reskin-text-color: hsl(240, 2.2%, 35.3%);
+  --reskin-success-green-safe: hsl(142.4, 71.8%, 29.2%);
+  --reskin-info-blue-safe: hsl(207.2, 86%, 39.2%);
+  --reskin-warn-gold-safe: hsl(42.9, 100%, 29.6%);
+  --reskin-error-red-safe: hsl(0, 100%, 41.6%);
+  --hsl-info-bg-color-alpha10: hsla(207.2, 86.4%, 49%, 0.1);
+  --hsl-success-bg-color-alpha10: hsla(142.1, 70.9%, 39%, 0.1);
+  --hsl-warning-bg-color-alpha10: hsla(43.1, 100%, 37.6%, 0.1);
+  --hsl-error-bg-color-alpha10: hsla(0, 75.5%, 61.6%, 0.1);
+  --reskin-success-green-light: var(--lp-color-bg-feedback-success);
+  --reskin-success-green-base: var(--lp-color-border-feedback-success);
+  --reskin-info-blue-light: var(--lp-color-bg-feedback-info);
+  --reskin-info-blue-base: var(--lp-color-border-feedback-info);
+  --reskin-warn-gold-light: var(--lp-color-bg-feedback-warning);
+  --reskin-warn-gold-base: var(--lp-color-border-feedback-warning);
+  --reskin-error-red-light: var(--lp-color-bg-feedback-error);
+  --reskin-error-red-base: var(--lp-color-border-feedback-error);
+
+  /* TODO: name better, improve a11y support — convert to rem once we migrate */
+  --box-shadow-0x2y-blur8-sp1-4prc-black: 0 8px 2px -1px hsla(0, 0%, 12.9%, 0.04);
+  --box-shadow-0x2y-blur4-sp0-8prc-black: 0 2px 4px 0 hsla(0, 0%, 12.9%, 0.08);
+  --box-shadow-0x1y-blur2-sp0-14prc-black: 0 1px 2px 0 hsla(0, 0%, 12.9%, 0.14);
+  --reskin-box-shadow-triple: var(--box-shadow-0x2y-blur8-sp1-4prc-black),
+    var(--box-shadow-0x2y-blur4-sp0-8prc-black), var(--box-shadow-0x1y-blur2-sp0-14prc-black);
+  --reskin-border-radius-6px: 6px;
+  --Alert-color-background-info: var(--reskin-info-blue-light);
+  --Alert-color-background-success: var(--reskin-success-green-light);
+  --Alert-color-background-warning: var(--reskin-warn-gold-light);
+  --Alert-color-background-error: var(--reskin-error-red-light);
+  --Alert-color-border-info: var(--reskin-info-blue-base);
+  --Alert-color-border-success: var(--reskin-success-green-base);
+  --Alert-color-border-warning: var(--reskin-warn-gold-base);
+  --Alert-color-border-error: var(--reskin-error-red-base);
+  --Alert-icon-color-info: var(--lp-color-fill-feedback-info);
+  --Alert-icon-color-success: var(--lp-color-fill-feedback-success);
+  --Alert-icon-color-warning: var(--lp-color-fill-feedback-warning);
+  --Alert-icon-color-error: var(--lp-color-fill-feedback-error);
+  --Alert-text-color: var(--lp-color-text-feedback);
+}
+
+:root[data-theme='dark'] ._Alert_1kymb_43._Alert--inline_1kymb_43 {
+    color: var(--lp-color-gray-100);
+  }
+
+._Alert_1kymb_43 {
+  position: relative;
+  display: flex;
+  gap: 1.4rem;
+  border: none;
+  padding: 1.4rem 1.8rem;
+  font-size: 1.4rem;
+  line-height: 1.45;
+  white-space: normal;
+  width: 100%;
+  background-color: var(--lp-color-bg-ui-primary);
+  color: var(--lp-color-text-feedback);
+  color: var(--Alert-text-color);
+  box-sizing: border-box;
+  border-radius: 2px;
+}
+
+._Alert-heading_1kymb_64 {
+  margin-top: 0;
+  margin-bottom: 0.4rem;
+  font-size: 1.6rem;
+  color: var(--lp-color-text-feedback);
+  font-weight: var(--lp-font-weight-medium);
+  line-height: 1.25;
+}
+
+._Alert_1kymb_43 .ButtonGroup {
+  margin-top: 1.2rem;
+}
+
+._Alert_1kymb_43 ._Alert-icon_1kymb_77 {
+  line-height: 1.2857;
+}
+
+/* stylelint-disable-next-line no-descending-specificity */
+
+._Alert_1kymb_43._Alert--inline_1kymb_43 {
+  background-color: transparent;
+  background-color: initial;
+  padding: 0;
+}
+
+/* Alert size variants */
+
+._Alert_1kymb_43._Alert--small_1kymb_89 {
+  font-size: 1.3rem;
+}
+
+._Alert_1kymb_43._Alert--small_1kymb_89 ._Alert-icon_1kymb_77 {
+  top: auto;
+  transform: translateY(1px);
+}
+
+._Alert_1kymb_43._Alert--wide_1kymb_98 {
+  width: 86%;
+  margin-top: 0.8rem;
+}
+
+._Alert_1kymb_43._Alert--compact_1kymb_103 {
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+/* for Edge pre-2019 browsers. IE doesn't recognize @supports at all. */
+
+@supports not ((width: -moz-fit-content) or (width: fit-content)) {
+  ._Alert_1kymb_43._Alert--compact_1kymb_103 {
+    display: table;
+  }
+}
+
+/* Alert kind variants */
+
+._Alert_1kymb_43._Alert--info_1kymb_116 ._Alert-icon_1kymb_77 svg {
+  fill: var(--lp-color-border-feedback-info);
+  fill: var(--reskin-info-blue-base);
+}
+
+._Alert_1kymb_43._Alert--success_1kymb_120 ._Alert-icon_1kymb_77 svg {
+  fill: var(--lp-color-border-feedback-success);
+  fill: var(--reskin-success-green-base);
+}
+
+._Alert_1kymb_43._Alert--warning_1kymb_124 ._Alert-icon_1kymb_77 svg {
+  fill: var(--lp-color-border-feedback-warning);
+  fill: var(--reskin-warn-gold-base);
+}
+
+._Alert_1kymb_43._Alert--error_1kymb_128 ._Alert-icon_1kymb_77 svg > path {
+  fill: var(--lp-color-border-feedback-error);
+  fill: var(--reskin-error-red-base);
+}
+
+._Alert_1kymb_43._Alert--info_1kymb_116._Alert--bordered_1kymb_132 {
+  border: var(--lp-border-width-200) solid var(--lp-color-border-feedback-info);
+  border: var(--lp-border-width-200) solid var(--Alert-color-border-info);
+  background-color: var(--lp-color-bg-feedback-info);
+  background-color: var(--Alert-color-background-info);
+}
+
+._Alert_1kymb_43._Alert--success_1kymb_120._Alert--bordered_1kymb_132 {
+  border: var(--lp-border-width-200) solid var(--lp-color-border-feedback-success);
+  border: var(--lp-border-width-200) solid var(--Alert-color-border-success);
+  background-color: var(--lp-color-bg-feedback-success);
+  background-color: var(--Alert-color-background-success);
+}
+
+._Alert_1kymb_43._Alert--warning_1kymb_124._Alert--bordered_1kymb_132 {
+  border: var(--lp-border-width-200) solid var(--lp-color-border-feedback-warning);
+  border: var(--lp-border-width-200) solid var(--Alert-color-border-warning);
+  background-color: var(--lp-color-bg-feedback-warning);
+  background-color: var(--Alert-color-background-warning);
+}
+
+._Alert_1kymb_43._Alert--error_1kymb_128._Alert--bordered_1kymb_132 {
+  border: var(--lp-border-width-200) solid var(--lp-color-border-feedback-error);
+  border: var(--lp-border-width-200) solid var(--Alert-color-border-error);
+  background-color: var(--lp-color-bg-feedback-error);
+  background-color: var(--Alert-color-background-error);
+}
+
+/* Alert content styles */
+
+._Alert-content_1kymb_154 {
+  flex-grow: 1;
+  max-width: 70rem;
+}
+
+._Alert-close_1kymb_159 {
+  margin-left: auto;
+}
+
+._Alert-content_1kymb_154 a:not(.Button) {
+  color: var(--lp-color-text-interactive);
+}
+
+._Alert-content_1kymb_154 a:not(.Button):hover {
+    text-decoration: none;
+    box-shadow: none;
+  }
+
+._Alert-content_1kymb_154 a:not(.Button):focus {
+    box-shadow: 0 0 0 1px hsla(0, 0, 100%, 0.7), 0 0 0 4px hsla(0, 0%, 9.8%, 0.1);
+  }
+
+._Alert-content_1kymb_154 a:not(.Button):active {
+    color: var(--lp-color-text-interactive-active);
+    box-shadow: none;
+    text-decoration: underline;
+  }
+
+._Alert-content_1kymb_154 a:not(.Button):focus:not(._focus-visible_1kymb_1) {
+    outline: none;
+    box-shadow: none;
+  }
+
+._Alert-content_1kymb_154 a:not(.Button):focus:not(:focus-visible) {
+    outline: none;
+    box-shadow: none;
+  }
+
+._Alert-content_1kymb_154 ul {
+  margin: 0 0 0.5em;
+}
+
+._Alert-content_1kymb_154 :only-child {
+  margin-bottom: 0;
+}
+
+._Alert-content_1kymb_154 p,
+._Alert_1kymb_43 ul {
+  list-style-position: outside;
+  margin: 0 0 0.5em;
+}
+/* TODO: name box-shadow specific variables better
+try out semitransparent borders for light/dark
+backround support in CollapsibleAlert */
+:root {
+  --reskin-border-color-subtle: hsla(210, 16.7%, 45.3%, 0.1);
+  --reskin-text-color: hsl(240, 2.2%, 35.3%);
+  --CollapsibleAlert-Table-color-border: var(--reskin-border-color-subtle);
+  --CollapsibleAlert-button-color-outline-focus: var(--lp-color-bg-ui-secondary);
+  --CollapsibleAlert-button-color-text: var(--lp-color-text-ui-secondary);
+  --CollapsibleAlert-button-color-text-active: var(--lp-color-text-ui-secondary);
+  --CollapsibleAlert-icon-color: var(--lp-color-text-ui-secondary);
+}
+._CollapsibleAlert_1ew79_14 {
+  margin-top: 0.8rem;
+}
+._CollapsibleAlert_1ew79_14 .Alert-content {
+  width: 100%;
+}
+/* setting border at 0% alpha for Windows High Contrast Mode support */
+._CollapsibleAlert-button_1ew79_23 {
+  display: flex;
+  align-items: center;
+  min-width: 9rem;
+  padding: 0;
+  font-size: 1.3rem;
+  line-height: 1.5;
+  text-align: left;
+  color: var(--lp-color-text-ui-secondary);
+  color: var(--CollapsibleAlert-button-color-text);
+  background-color: transparent;
+  border: hsla(0, 0%, 0%, 0);
+  border-radius: var(--lp-border-radius-regular);
+  cursor: pointer;
+}
+._CollapsibleAlert-button_1ew79_23:focus {
+    outline: 1px solid var(--lp-color-bg-ui-secondary);
+    outline: 1px solid var(--CollapsibleAlert-button-color-outline-focus);
+  }
+._CollapsibleAlert-button_1ew79_23:active {
+    color: var(--lp-color-text-ui-secondary);
+    color: var(--CollapsibleAlert-button-color-text-active);
+    box-shadow: none;
+  }
+._CollapsibleAlert-button_1ew79_23:focus:not(._focus-visible_1ew79_1) {
+    outline: none;
+    box-shadow: none;
+  }
+._CollapsibleAlert-button_1ew79_23:focus:not(:focus-visible) {
+    outline: none;
+    box-shadow: none;
+  }
+._CollapsibleAlert--icon_1ew79_52 {
+  color: var(--lp-color-text-ui-secondary);
+  color: var(--CollapsibleAlert-icon-color);
+  top: 0;
+  margin-left: auto;
+}
+._CollapsibleAlert--container_1ew79_58 {
+  width: 100%;
+}
+/* completely hide content from all users
+while respecting CSS transitions
+https://www.scottohara.me/blog/2017/04/14/inclusively-hidden.html
+ */
+._CollapsibleAlert--contentContainer_1ew79_66 {
+  width: 100%;
+  padding-top: 0;
+  border-top: none;
+  border-radius: 0;
+  margin-top: 0;
+  visibility: hidden;
+  overflow: auto;
+  max-height: 0;
+  opacity: 0;
+  transform: translate3d(0, -1rem, 0);
+  transition: visibility var(--lp-duration-500), max-height var(--lp-duration-500),
+    opacity var(--lp-duration-500), transform var(--lp-duration-500);
+  transition-timing-function: ease-in-out;
+}
+._CollapsibleAlert--contentContainer_1ew79_66 > a {
+    color: var(--lp-color-text-interactive);
+  }
+._CollapsibleAlert--contentContainer_1ew79_66 > a:hover {
+      text-decoration: none;
+      box-shadow: none;
+    }
+._CollapsibleAlert--contentContainer_1ew79_66 > a:focus {
+      box-shadow: 0 0 0 1px hsla(0, 0%, 9.8%, 0.7), 0 0 0 4px hsla(0, 0%, 9.8%, 0.1);
+    }
+._CollapsibleAlert--contentContainer_1ew79_66 > a:active {
+      color: var(--lp-color-text-interactive-active);
+      box-shadow: none;
+      text-decoration: underline;
+    }
+._CollapsibleAlert--contentContainer_1ew79_66 > a:focus:not(._focus-visible_1ew79_1) {
+      outline: none;
+      box-shadow: none;
+    }
+._CollapsibleAlert--contentContainer_1ew79_66 > a:focus:not(:focus-visible) {
+      outline: none;
+      box-shadow: none;
+    }
+/* some specific table overrides in Collapsible Alert */
+._CollapsibleAlert--contentContainer_1ew79_66 .Table-header {
+    border-bottom: 1px solid hsla(210, 16.7%, 45.3%, 0.1);
+    border-bottom: 1px solid var(--CollapsibleAlert-Table-color-border);
+  }
+._CollapsibleAlert--contentContainer_1ew79_66 .Table-body .Table-row + .Table-row {
+    border-top: 1px solid hsla(210, 16.7%, 45.3%, 0.1);
+    border-top: 1px solid var(--CollapsibleAlert-Table-color-border);
+  }
+._CollapsibleAlert--contentContainer_1ew79_66 .Table--compact .Table-cell {
+    padding: 0.5rem 1rem 0.5rem 0;
+  }
+/* animate content container when button toggled */
+[aria-expanded='true'] + ._CollapsibleAlert--contentContainer_1ew79_66 {
+  margin-top: 0.4rem;
+  visibility: visible;
+  max-height: 31.25rem;
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}

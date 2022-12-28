@@ -1,0 +1,41 @@
+._Pagination_10ojz_3 {
+  display: inline-flex;
+  align-items: center;
+}
+._PaginationText_10ojz_8 {
+  padding: 0 0.5rem;
+}
+._PaginationButton_10ojz_12 {
+  color: var(--lp-color-black-300);
+  text-decoration: none;
+  font-size: 1.7rem;
+  cursor: pointer;
+  padding: 0.4rem;
+  vertical-align: top;
+}
+@media screen and (min-width: 0) {
+  ._Pagination_10ojz_3 {
+    font-size: 1.7rem;
+    align-items: center;
+  }
+
+  ._PaginationButton_10ojz_12 {
+    transform: scale(1.25);
+  }
+}
+@media screen and (min-width: 740px) {
+  ._Pagination_10ojz_3 {
+    font-size: 1.5rem;
+    align-items: flex-end;
+  }
+
+  ._PaginationButton_10ojz_12 {
+    transform: scale(1);
+  }
+}
+._PaginationButton--disabled_10ojz_43 {
+  color: var(--lp-color-gray-600);
+  background-color: transparent;
+  background-color: initial;
+  cursor: default;
+}

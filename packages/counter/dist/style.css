@@ -1,0 +1,18 @@
+._Counter_3smiw_1 {
+  display: inline-block;
+  font-size: 1.1rem;
+  font-weight: var(--lp-font-weight-bold);
+  line-height: var(--lp-line-height-200);
+  padding: 2px 8px;
+  border-radius: 1rem;
+  color: var(--lp-color-text-ui-secondary);
+  border: 1px solid var(--lp-color-blue-500);
+  min-width: 2rem;
+  vertical-align: middle;
+}
+
+._Counter--subtle_3smiw_14 {
+  border: 1px solid var(--lp-color-border-ui-secondary);
+  color: var(--lp-color-text-ui-secondary);
+  background-color: var(--lp-color-bg-ui-secondary);
+}

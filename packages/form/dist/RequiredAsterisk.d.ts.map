@@ -1,0 +1,1 @@
+{"version":3,"file":"RequiredAsterisk.d.ts","sourceRoot":"","sources":["../src/RequiredAsterisk.tsx"],"names":[],"mappings":"AAAA,OAAO,KAAK,EAAE,cAAc,EAAE,MAAM,OAAO,CAAC;AAM5C,KAAK,qBAAqB,GAAG,cAAc,CAAC,eAAe,CAAC,GAAG;IAC7D,cAAc,CAAC,EAAE,MAAM,CAAC;CACzB,CAAC;AAEF,QAAA,MAAM,gBAAgB,mDAInB,qBAAqB,gBAQvB,CAAC;AAEF,OAAO,EAAE,gBAAgB,EAAE,CAAC;AAC5B,YAAY,EAAE,qBAAqB,EAAE,CAAC"}

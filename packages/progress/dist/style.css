@@ -1,0 +1,30 @@
+@keyframes _indeterminate_sueab_1 {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(359deg);
+  }
+}
+
+._Progress_sueab_11 {
+  display: inline-block;
+  vertical-align: middle;
+  transform: rotate(-90deg);
+}
+
+._Progress--indeterminate_sueab_17 {
+  animation: _indeterminate_sueab_1 var(--lp-duration-350) linear infinite;
+}
+
+._Progress-track_sueab_21 {
+  fill: none;
+  stroke: var(--lp-color-white-100);
+}
+
+._Progress-head_sueab_26 {
+  transition: stroke-dashoffset var(--lp-duration-350);
+  fill: none;
+  stroke: var(--lp-color-gray-500);
+}

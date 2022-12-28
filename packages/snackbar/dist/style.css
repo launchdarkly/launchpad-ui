@@ -1,0 +1,76 @@
+._Snackbar_oxwa6_1 {
+  background-color: var(--lp-color-bg-feedback-primary);
+  color: var(--lp-color-white);
+  padding: var(--lp-spacing-500);
+  display: inline-flex;
+  gap: 1.4rem;
+  box-sizing: border-box;
+  width: 37.6rem;
+  border-radius: 2px;
+}
+
+._Snackbar_oxwa6_1 ._Snackbar-icon_oxwa6_12 {
+  transform: translateY(2px);
+  top: auto;
+}
+
+._Snackbar--error_oxwa6_17 ._Snackbar-icon_oxwa6_12 {
+  fill: var(--lp-color-pink-500);
+}
+
+._Snackbar--info_oxwa6_21 ._Snackbar-icon_oxwa6_12 {
+  fill: var(--lp-color-cyan-500);
+}
+
+._Snackbar--warning_oxwa6_25 ._Snackbar-icon_oxwa6_12 {
+  fill: var(--lp-color-yellow-500);
+}
+
+._Snackbar--success_oxwa6_29 ._Snackbar-icon_oxwa6_12 {
+  fill: var(--lp-color-system-green-500);
+}
+
+._Snackbar-heading_oxwa6_33 {
+  margin-top: 0;
+  margin-bottom: var(--lp-spacing-200);
+  font-size: 1.6rem;
+  font-weight: var(--lp-font-weight-medium);
+  line-height: 1.5;
+  color: var(--lp-color-white);
+}
+
+._Snackbar-content_oxwa6_42 {
+  flex-grow: 1;
+}
+
+._Snackbar-content_oxwa6_42 ._Snackbar-description_oxwa6_45,
+  ._Snackbar-content_oxwa6_42 a {
+    font-size: var(--lp-font-size-200);
+    font-weight: var(--lp-font-weight-regular);
+    line-height: 1.5;
+  }
+
+._Snackbar-content_oxwa6_42 a,
+  ._Snackbar-content_oxwa6_42 a:hover {
+    color: var(--lp-color-cyan-500);
+  }
+
+._Snackbar-content_oxwa6_42 ._Snackbar-description_oxwa6_45 {
+    word-break: break-word;
+  }
+
+._Snackbar-close_oxwa6_62.Button.Button--close svg {
+  fill: var(--lp-color-gray-400);
+}
+._SnackbarCenter_18hhn_1 {
+  position: fixed;
+  top: 2rem;
+  right: 2rem;
+  bottom: auto;
+  left: auto;
+  z-index: var(--lp-z-index-700);
+}
+
+._SnackbarCenter-item_18hhn_10:not(:first-child) {
+  margin-top: 2rem;
+}

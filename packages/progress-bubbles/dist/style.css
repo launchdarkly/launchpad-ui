@@ -1,0 +1,167 @@
+:root {
+  --progress-bubbles-default-bg-color: var(--lp-color-gray-200);
+}
+
+:root[data-theme='dark'] {
+  --progress-bubbles-default-bg-color: var(--lp-color-gray-800);
+}
+
+._ProgressBubbles_1r557_9 {
+  display: flex;
+  align-items: center;
+  margin: 0 2rem;
+}
+
+._ProgressBubbles-bubble_1r557_15 {
+  background-color: var(--lp-color-gray-200);
+  background-color: var(--progress-bubbles-default-bg-color);
+  width: 2rem;
+  height: 2rem;
+  border-radius: 1rem;
+  padding-top: 2rem;
+  box-sizing: border-box;
+
+  /* text label */
+  overflow: visible;
+  display: flex;
+  justify-content: center;
+  white-space: nowrap;
+  color: var(--lp-color-text-ui-secondary);
+  font-size: 1.3rem;
+}
+
+._ProgressBubbles-bubble--first_1r557_32 {
+  justify-content: flex-start;
+}
+
+._ProgressBubbles-bubble--last_1r557_36 {
+  justify-content: flex-end;
+}
+
+._ProgressBubbles-line_1r557_40 {
+  flex-grow: 1;
+  height: 0.2rem;
+  background-color: var(--lp-color-gray-200);
+  background-color: var(--progress-bubbles-default-bg-color);
+}
+
+._ProgressBubbles--filled_1r557_46 {
+  background-color: var(--lp-color-system-green-600);
+}
+
+._ProgressBubbles--vertical_1r557_50 {
+  flex-direction: column;
+  height: 400px;
+}
+
+._ProgressBubbles--vertical_1r557_50 ._ProgressBubbles-line_1r557_40 {
+  width: 0.2rem;
+  height: auto;
+}
+
+._ProgressBubbles--vertical_1r557_50 ._ProgressBubbles-bubble_1r557_15 {
+  padding: 0 0 0 2rem;
+  justify-content: flex-start;
+}
+
+._ProgressBubblesUsingItems-line_1r557_65 {
+  flex-grow: 1;
+  height: 0.7rem;
+  background-color: var(--lp-color-gray-200);
+  background-color: var(--progress-bubbles-default-bg-color);
+  margin: 0 -0.5rem;
+}
+
+._ProgressBubblesUsingItems-line--completed_1r557_72 {
+  background-color: var(--lp-color-system-green-700);
+}
+
+._ProgressBubblesIconContainer_1r557_76 {
+  overflow: visible;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  white-space: nowrap;
+  font-size: 1.3rem;
+  align-items: center;
+}
+
+._ProgressBubbles-icon_1r557_86 {
+  align-items: center;
+  background-color: var(--lp-color-system-green-700);
+  border-radius: 50%;
+  border: var(--lp-border-width-300) solid transparent;
+  display: flex;
+  justify-content: center;
+  gap: 0.2rem;
+  height: 2.8rem;
+  position: relative;
+  text-align: center;
+  z-index: 1;
+}
+
+div._ProgressBubbles-icon--current_1r557_100 {
+  border: var(--lp-border-width-300) solid var(--lp-color-system-green-700);
+  background-color: var(--lp-color-bg-ui-primary);
+}
+
+._ProgressBubbles-icon_1r557_86 svg {
+  fill: var(--lp-color-white);
+  height: 1.6rem;
+  width: 1.6rem;
+}
+
+._ProgressBubbles-icon--pending_1r557_111 svg {
+  fill: var(--lp-color-white);
+}
+
+div._ProgressBubbles-icon--current_1r557_100 svg {
+  fill: var(--lp-color-system-green-700);
+}
+
+div._ProgressBubbles-icon--pending_1r557_111 {
+  background-color: var(--lp-color-gray-200);
+  background-color: var(--progress-bubbles-default-bg-color);
+}
+
+div._ProgressBubbles-icon--warning_1r557_123 {
+  background-color: var(--lp-color-white);
+  border: none;
+}
+
+div._ProgressBubbles-icon--warning_1r557_123 svg {
+  fill: hsl(29.2, 100%, 58.4%);
+  height: 3.6rem;
+  width: 3.6rem;
+}
+
+:root[data-theme='dark'] div._ProgressBubbles-icon--warning_1r557_123 svg {
+    fill: hsl(29, 83%, 40%);
+  }
+
+._ProgressBubbles-icon--multiple_1r557_138 {
+  border-radius: 2.4rem;
+}
+
+._ProgressBubbles-text_1r557_142 {
+  margin-bottom: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+._ProgressBubblesPopoverTarget_1r557_147 {
+  cursor: pointer;
+}
+
+._ProgressBubbles-label_1r557_151 {
+  color: var(--lp-color-text-ui-secondary);
+  padding-top: 1rem;
+  position: absolute;
+  top: 2rem;
+  overflow: hidden;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  text-overflow: ellipsis;
+  white-space: normal;
+}

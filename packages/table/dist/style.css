@@ -1,0 +1,122 @@
+:root {
+  --one-of-twelve: 8.333%;
+  --two-of-twelve: 16.667%;
+  --three-of-twelve: 25%;
+  --four-of-twelve: 33.333%;
+  --five-of-twelve: 41.667%;
+  --six-of-twelve: 50%;
+}
+._Table_olnh7_12 {
+  table-layout: fixed;
+  border-collapse: collapse;
+}
+._Table_olnh7_12:not(._Table--auto_olnh7_17) {
+  width: 100%;
+}
+._Table--compact_olnh7_21 {
+  font-size: 1.3rem;
+}
+._Table-header_olnh7_25 {
+  border-bottom: 1px solid var(--lp-color-border-ui-primary);
+}
+._Table-cell_olnh7_29 {
+  padding: 1rem 2rem;
+}
+._Table-cell--left_olnh7_33 {
+  text-align: left;
+}
+._Table-cell--center_olnh7_37 {
+  text-align: center;
+}
+._Table-cell--right_olnh7_41 {
+  text-align: right;
+}
+._Table-cell--justify_olnh7_45 {
+  text-align: justify;
+}
+._Table-cell--char_olnh7_49 {
+  text-align: '.';
+}
+._Table--compact_olnh7_21 ._Table-cell_olnh7_29 {
+  padding: 0.5rem 1rem;
+}
+._Table-cell--head_olnh7_57 {
+  white-space: nowrap;
+  color: var(--lp-color-text-ui-secondary);
+  font-weight: var(--lp-font-weight-semibold);
+}
+@media screen and (min-width: 740px) {
+  ._Table-cell--head_olnh7_57 {
+    white-space: normal;
+  }
+}
+._Table--resourceTable_olnh7_69 ._Table-cell--head_olnh7_57 {
+  background: var(--lp-color-bg-ui-secondary);
+  color: var(--lp-color-text-ui-secondary);
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+._TableHeader-title_olnh7_76 {
+  font-size: var(--lp-font-size-500);
+  font-weight: var(--lp-font-weight-regular);
+  line-height: 1.5;
+  display: flex;
+  align-items: center;
+}
+._TableHeader-description_olnh7_84 {
+  font-size: 1.3rem;
+}
+._TableHeader-counter_olnh7_88 {
+  margin-top: -3px;
+}
+._TableHeaderToolbar-secondRow_olnh7_92 {
+  padding-bottom: 0.75rem;
+  display: flex;
+  flex-wrap: wrap;
+}
+._Table--resourceTable_olnh7_69 ._Table-row_olnh7_98,
+._Table-row--top_olnh7_99 {
+  vertical-align: top;
+}
+._Table-row--middle_olnh7_103,
+._Table--resourceTable_olnh7_69 ._Table-row--middle_olnh7_103,
+._Table--resourceTable_olnh7_69 ._Table-row_olnh7_98 ._Table-cell--head_olnh7_57 {
+  vertical-align: middle;
+}
+._Table-row--bottom_olnh7_109,
+._Table--resourceTable_olnh7_69 ._Table-row--bottom_olnh7_109 {
+  vertical-align: bottom;
+}
+._Table-body_olnh7_114 ._Table-row_olnh7_98 + ._Table-row_olnh7_98 {
+  border-top: 1px solid var(--lp-color-border-ui-secondary);
+}
+/* Used for "smallest possible table column". Table cell will expand to fit content. */
+/* stylelint-disable selector-class-pattern */
+._Table-cell--width-zero_olnh7_120 {
+  width: 0;
+}
+._Table-cell--width-one-of-twelve_olnh7_124 {
+  width: 8.333%;
+  width: var(--one-of-twelve);
+}
+._Table-cell--width-two-of-twelve_olnh7_128 {
+  width: 16.667%;
+  width: var(--two-of-twelve);
+}
+._Table-cell--width-three-of-twelve_olnh7_132 {
+  width: 25%;
+  width: var(--three-of-twelve);
+}
+._Table-cell--width-four-of-twelve_olnh7_136 {
+  width: 33.333%;
+  width: var(--four-of-twelve);
+}
+._Table-cell--width-five-of-twelve_olnh7_140 {
+  width: 41.667%;
+  width: var(--five-of-twelve);
+}
+._Table-cell--width-six-of-twelve_olnh7_144 {
+  width: 50%;
+  width: var(--six-of-twelve);
+}
+/* stylelint-enable selector-class-pattern */

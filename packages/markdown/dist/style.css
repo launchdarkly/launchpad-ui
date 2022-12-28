@@ -1,0 +1,34 @@
+._Markdown_1lphk_1 {
+  margin-top: 0.5rem;
+}
+
+._Markdown_1lphk_1 ol,
+._Markdown_1lphk_1 ul {
+  padding-left: 2rem;
+}
+
+._Markdown_1lphk_1 ul li + li,
+._Markdown_1lphk_1 ol li + li,
+._Markdown_1lphk_1 > * :not(:first-child) {
+  margin-top: 0.2rem;
+}
+
+._Markdown_1lphk_1 > p {
+  word-break: normal;
+}
+
+._Markdown_1lphk_1 p + p {
+  padding-top: 1.5rem;
+}
+
+._Markdown_1lphk_1 blockquote {
+  line-height: 2;
+}
+
+._Markdown_1lphk_1 a {
+  color: var(--lp-color-text-interactive);
+}
+
+._Markdown_1lphk_1 a:visited {
+  color: var(--lp-color-text-interactive-active);
+}

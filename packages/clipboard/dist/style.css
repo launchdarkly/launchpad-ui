@@ -1,0 +1,44 @@
+._CopyCodeButton_36aaa_1 {
+  border-radius: 20px;
+  font-family: var(--lp-font-family-monospace);
+  font-size: 87.5%;
+  margin: 0;
+  background-color: var(--lp-color-gray-100);
+  padding: 0.4rem 0.8rem;
+  border: none;
+  cursor: pointer;
+  color: var(--lp-color-text-ui-primary);
+}
+
+._CopyCodeButton_36aaa_1:focus {
+  outline: 0;
+  box-shadow: 0 0 0 2px var(--lp-color-shadow-interactive-primary),
+    0 0 0 4px var(--lp-color-shadow-interactive-focus);
+}
+
+._CopyCodeButton_36aaa_1._focus-visible_36aaa_1 {
+  outline-color: var(--lp-color-bg-interactive-secondary-hover);
+}
+
+._CopyCodeButton_36aaa_1:focus-visible {
+  outline-color: var(--lp-color-bg-interactive-secondary-hover);
+}
+
+:root[data-theme='dark'] ._CopyCodeButton_36aaa_1 {
+  background-color: var(--lp-color-gray-800);
+}
+._CopyToClipboard_1ikfa_1 {
+  position: relative;
+}
+
+._Clipboard-checkmark_1ikfa_5 svg {
+  fill: var(--lp-color-system-green-500);
+}
+
+._Clipboard-confirmation_1ikfa_9 {
+  align-items: center;
+}
+
+._Clipboard-copied_1ikfa_13 {
+  margin-left: 0.5rem;
+}
