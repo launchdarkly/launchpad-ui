@@ -1,37 +1,12 @@
 :root {
-  --reskin-text-color: hsl(240 2.2% 35.3%);
-  --reskin-success-green-safe: hsl(142.4 71.8% 29.2%);
-  --reskin-info-blue-safe: hsl(207.2 86% 39.2%);
-  --reskin-warn-gold-safe: hsl(42.9 100% 29.6%);
-  --reskin-error-red-safe: hsl(0 100% 41.6%);
-  --hsl-info-bg-color-alpha10: hsl(207.2 86.4% 49% / 0.1);
-  --hsl-success-bg-color-alpha10: hsl(142.1 70.9% 39% / 0.1);
-  --hsl-warning-bg-color-alpha10: hsl(43.1 100% 37.6% / 0.1);
-  --hsl-error-bg-color-alpha10: hsl(0 75.5% 61.6% / 0.1);
-  --reskin-success-green-light: var(--lp-color-bg-feedback-success);
-  --reskin-success-green-base: var(--lp-color-border-feedback-success);
-  --reskin-info-blue-light: var(--lp-color-bg-feedback-info);
-  --reskin-info-blue-base: var(--lp-color-border-feedback-info);
-  --reskin-warn-gold-light: var(--lp-color-bg-feedback-warning);
-  --reskin-warn-gold-base: var(--lp-color-border-feedback-warning);
-  --reskin-error-red-light: var(--lp-color-bg-feedback-error);
-  --reskin-error-red-base: var(--lp-color-border-feedback-error);
-
-  /* TODO: name better, improve a11y support — convert to rem once we migrate */
-  --box-shadow-0x2y-blur8-sp1-4prc-black: 0 8px 2px -1px hsl(0 0% 12.9% / 0.04);
-  --box-shadow-0x2y-blur4-sp0-8prc-black: 0 2px 4px 0 hsl(0 0% 12.9% / 0.08);
-  --box-shadow-0x1y-blur2-sp0-14prc-black: 0 1px 2px 0 hsl(0 0% 12.9% / 0.14);
-  --reskin-box-shadow-triple: var(--box-shadow-0x2y-blur8-sp1-4prc-black),
-    var(--box-shadow-0x2y-blur4-sp0-8prc-black), var(--box-shadow-0x1y-blur2-sp0-14prc-black);
-  --reskin-border-radius-6px: 6px;
-  --Alert-color-background-info: var(--reskin-info-blue-light);
-  --Alert-color-background-success: var(--reskin-success-green-light);
-  --Alert-color-background-warning: var(--reskin-warn-gold-light);
-  --Alert-color-background-error: var(--reskin-error-red-light);
-  --Alert-color-border-info: var(--reskin-info-blue-base);
-  --Alert-color-border-success: var(--reskin-success-green-base);
-  --Alert-color-border-warning: var(--reskin-warn-gold-base);
-  --Alert-color-border-error: var(--reskin-error-red-base);
+  --Alert-color-background-info: var(--lp-color-bg-feedback-info);
+  --Alert-color-background-success: var(--lp-color-bg-feedback-success);
+  --Alert-color-background-warning: var(--lp-color-bg-feedback-warning);
+  --Alert-color-background-error: var(--lp-color-bg-feedback-error);
+  --Alert-color-border-info: var(--lp-color-border-feedback-info);
+  --Alert-color-border-success: var(--lp-color-border-feedback-success);
+  --Alert-color-border-warning: var(--lp-color-border-feedback-warning);
+  --Alert-color-border-error: var(--lp-color-border-feedback-error);
   --Alert-icon-color-info: var(--lp-color-fill-feedback-info);
   --Alert-icon-color-success: var(--lp-color-fill-feedback-success);
   --Alert-icon-color-warning: var(--lp-color-fill-feedback-warning);
@@ -114,19 +89,19 @@
 /* Alert kind variants */
 
 .Alert.Alert--info .Alert-icon svg {
-  fill: var(--reskin-info-blue-base);
+  fill: var(--lp-color-fill-feedback-info);
 }
 
 .Alert.Alert--success .Alert-icon svg {
-  fill: var(--reskin-success-green-base);
+  fill: var(--lp-color-fill-feedback-success);
 }
 
 .Alert.Alert--warning .Alert-icon svg {
-  fill: var(--reskin-warn-gold-base);
+  fill: var(--lp-color-fill-feedback-warning);
 }
 
 .Alert.Alert--error .Alert-icon svg > path {
-  fill: var(--reskin-error-red-base);
+  fill: var(--lp-color-fill-feedback-error);
 }
 
 .Alert.Alert--info.Alert--bordered {
