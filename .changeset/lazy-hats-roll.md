@@ -12,3 +12,5 @@ Improve dark mode theme support for alerts
 [Alert]: Update CSS variables to remove old `reskin` values and simplify naming
 
 [Banner]: Update CSS variables to remove old values and simplify naming
+
+[Button]: Update dark mode default button background style
