@@ -192,19 +192,14 @@ color:
     feedback:
       primary:
         value: '{ color.gray.800.value }'
-        dark: '{ color.gray.800.value }'
       error:
-        value: '{ color.system.red.200.value }'
-        dark: '{ color.system.red.900.value }'
+        value: hsla(0, 79%, 57.1%, 0.15)
       info:
-        value: '{ color.blue.200.value }'
-        dark: '{ color.blue.900.value }'
+        value: hsla(231.5, 100%, 62.5%, 0.15)
       success:
-        value: '{ color.system.green.200.value }'
-        dark: '{ color.system.green.900.value }'
+        value: hsla(153.9, 100%, 42.7%, 0.15)
       warning:
-        value: '{ color.system.yellow.200.value }'
-        dark: '{ color.system.yellow.900.value }'
+        value: hsla(45.2, 83.7%, 59.2%, 0.15)
     interactive:
       primary:
         ' ':
@@ -288,16 +283,16 @@ color:
     feedback:
       error:
         value: '{ color.system.red.700.value }'
-        dark: '{ color.system.red.400.value }'
+        dark: '{ color.system.red.500.value }'
       info:
         value: '{ color.blue.700.value }'
-        dark: '{ color.blue.400.value }'
+        dark: '{ color.blue.500.value }'
       success:
         value: '{ color.system.green.700.value }'
-        dark: '{ color.system.green.400.value }'
+        dark: '{ color.system.green.500.value }'
       warning:
         value: '{ color.system.yellow.700.value }'
-        dark: '{ color.system.yellow.400.value }'
+        dark: '{ color.system.yellow.500.value }'
     field:
       ' ':
         value: '{ color.gray.300.value }'
@@ -353,16 +348,16 @@ color:
     feedback:
       error:
         value: '{ color.system.red.700.value }'
-        dark: '{ color.system.red.400.value }'
+        dark: '{ color.system.red.500.value }'
       info:
         value: '{ color.blue.700.value }'
-        dark: '{ color.blue.400.value }'
+        dark: '{ color.blue.500.value }'
       success:
         value: '{ color.system.green.700.value }'
-        dark: '{ color.system.green.400.value }'
+        dark: '{ color.system.green.500.value }'
       warning:
         value: '{ color.system.yellow.700.value }'
-        dark: '{ color.system.yellow.400.value }'
+        dark: '{ color.system.yellow.500.value }'
     interactive:
       primary:
         value: '{ color.white. .value }'

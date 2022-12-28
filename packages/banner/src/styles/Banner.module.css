@@ -1,29 +1,6 @@
 @import '../../../tokens/dist/media-queries.css';
 
-:root {
-  --Banner-color-border-bottom-info: var(--lp-color-border-feedback-info);
-  /* stylelint-disable-next-line value-keyword-case */
-  --Banner-color-border-bottom-warning: var(--lp-color-border-feedback-warning);
-  --Banner-color-border-bottom-error: var(--lp-color-border-feedback-error);
-  --Banner-color-text: var(--lp-color-text-feedback);
-  --Banner-color-background: var(--lp-color-bg-ui-primary);
-  --Banner-color-background-info: var(--lp-color-bg-feedback-info);
-  --Banner-color-background-warning: var(--lp-color-bg-feedback-warning);
-  --Banner-color-background-error: var(--lp-color-bg-feedback-error);
-  --Banner-icon-color-info: var(--lp-color-fill-feedback-info);
-  --Banner-icon-color-warning: var(--lp-color-fill-feedback-warning);
-  --Banner-icon-color-error: var(--lp-color-fill-feedback-error);
-  --page-gutter-width: 1rem;
-}
-
-@media (--tablet) {
-  :root {
-    --page-gutter-width: 4rem;
-  }
-}
-
 .Banner {
-  background: var(--Banner-color-background);
   display: flex;
   padding: 1.4rem 1.8rem;
   font-size: 1.4rem;
@@ -42,7 +19,7 @@
 }
 
 .Banner-content {
-  color: var(--Banner-color-text);
+  color: var(--lp-color-text-feedback);
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
@@ -51,18 +28,18 @@
 }
 
 .Banner.Banner--error {
-  background-color: var(--Banner-color-background-error);
-  border-bottom-color: var(--Banner-color-border-bottom-error);
+  background-color: var(--lp-color-bg-feedback-error);
+  border-bottom-color: var(--lp-color-border-feedback-error);
 }
 
 .Banner.Banner--warning {
-  background-color: var(--Banner-color-background-warning);
-  border-bottom-color: var(--Banner-color-border-bottom-warning);
+  background-color: var(--lp-color-bg-feedback-warning);
+  border-bottom-color: var(--lp-color-border-feedback-warning);
 }
 
 .Banner.Banner--info {
-  background-color: var(--Banner-color-background-info);
-  border-bottom-color: var(--Banner-color-border-bottom-info);
+  background-color: var(--lp-color-bg-feedback-info);
+  border-bottom-color: var(--lp-color-border-feedback-info);
 }
 
 .Banner .Banner-icon {
@@ -70,13 +47,13 @@
 }
 
 .Banner.Banner--info .Banner-icon svg {
-  fill: var(--Banner-icon-color-info);
+  fill: var(--lp-color-fill-feedback-info);
 }
 
 .Banner.Banner--error .Banner-icon svg > path {
-  fill: var(--Banner-icon-color-error);
+  fill: var(--lp-color-fill-feedback-error);
 }
 
 .Banner.Banner--warning .Banner-icon svg {
-  fill: var(--Banner-icon-color-warning);
+  fill: var(--lp-color-fill-feedback-warning);
 }
