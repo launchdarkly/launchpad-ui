@@ -1,6 +1,6 @@
 {
   "name": "@launchpad-ui/progress-bubbles",
-  "version": "0.5.32",
+  "version": "0.5.34",
   "status": "beta",
   "publishConfig": {
     "access": "public"
@@ -34,14 +34,14 @@
   "dependencies": {
     "@launchpad-ui/popover": "workspace:~",
     "@launchpad-ui/tokens": "workspace:~",
-    "classix": "^2.1.13"
+    "classix": "2.1.17"
   },
   "peerDependencies": {
-    "react": "^18.0.0",
-    "react-dom": "^18.0.0"
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
   },
   "devDependencies": {
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
   }
 }

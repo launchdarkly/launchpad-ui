@@ -1,6 +1,6 @@
 {
   "name": "@launchpad-ui/icons",
-  "version": "0.6.12",
+  "version": "0.6.14",
   "status": "beta",
   "publishConfig": {
     "access": "public"
@@ -34,15 +34,15 @@
   },
   "dependencies": {
     "@launchpad-ui/tokens": "workspace:~",
-    "classix": "^2.1.13"
+    "classix": "2.1.17"
   },
   "peerDependencies": {
-    "react": "^18.0.0",
-    "react-dom": "^18.0.0"
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
   },
   "devDependencies": {
     "@svgr/cli": "^6.5.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
   }
 }

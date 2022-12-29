@@ -1,5 +1,28 @@
 # @launchpad-ui/dropdown
 
+## 0.6.18
+
+### Patch Changes
+
+- [#633](https://github.com/launchdarkly/launchpad-ui/pull/633) [`4d40aa2e`](https://github.com/launchdarkly/launchpad-ui/commit/4d40aa2ee768f182ed28d13d42c93c438d446e15) Thanks [@chasedarkly](https://github.com/chasedarkly)! - Update third party dependencies to pin versions to match consumer app
+
+- Updated dependencies [[`4d40aa2e`](https://github.com/launchdarkly/launchpad-ui/commit/4d40aa2ee768f182ed28d13d42c93c438d446e15)]:
+  - @launchpad-ui/button@0.7.22
+  - @launchpad-ui/icons@0.6.14
+  - @launchpad-ui/popover@0.8.32
+
+## 0.6.17
+
+### Patch Changes
+
+- [#629](https://github.com/launchdarkly/launchpad-ui/pull/629) [`183e328e`](https://github.com/launchdarkly/launchpad-ui/commit/183e328e9f315a26c0af4de9ebba51108868bdde) Thanks [@chasedarkly](https://github.com/chasedarkly)! - Update Vite build tool to 4.0
+
+- Updated dependencies [[`183e328e`](https://github.com/launchdarkly/launchpad-ui/commit/183e328e9f315a26c0af4de9ebba51108868bdde), [`b744011d`](https://github.com/launchdarkly/launchpad-ui/commit/b744011dccd525faa534f8def5ee8af2e346268a), [`94fe4b9a`](https://github.com/launchdarkly/launchpad-ui/commit/94fe4b9ada726c190701555c0f5bdca3e8ec610d)]:
+  - @launchpad-ui/button@0.7.21
+  - @launchpad-ui/icons@0.6.13
+  - @launchpad-ui/popover@0.8.31
+  - @launchpad-ui/tokens@0.4.7
+
 ## 0.6.16
 
 ### Patch Changes

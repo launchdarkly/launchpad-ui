@@ -1,6 +1,6 @@
 {
   "name": "@launchpad-ui/snackbar",
-  "version": "0.3.20",
+  "version": "0.3.22",
   "status": "alpha",
   "publishConfig": {
     "access": "public"
@@ -35,15 +35,15 @@
     "@launchpad-ui/button": "workspace:~",
     "@launchpad-ui/icons": "workspace:~",
     "@launchpad-ui/tokens": "workspace:~",
-    "classix": "^2.1.13",
-    "framer-motion": "^7.6.1"
+    "classix": "2.1.17",
+    "framer-motion": "7.6.1"
   },
   "peerDependencies": {
-    "react": "^18.0.0",
-    "react-dom": "^18.0.0"
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
   },
   "devDependencies": {
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
   }
 }

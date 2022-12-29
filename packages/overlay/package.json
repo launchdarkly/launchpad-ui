@@ -1,6 +1,6 @@
 {
   "name": "@launchpad-ui/overlay",
-  "version": "0.3.25",
+  "version": "0.3.27",
   "status": "beta",
   "publishConfig": {
     "access": "public"
@@ -34,11 +34,11 @@
     "@launchpad-ui/portal": "workspace:~"
   },
   "peerDependencies": {
-    "react": "^18.0.0",
-    "react-dom": "^18.0.0"
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
   },
   "devDependencies": {
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
   }
 }
