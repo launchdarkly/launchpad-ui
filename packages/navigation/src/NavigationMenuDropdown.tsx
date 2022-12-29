@@ -31,7 +31,7 @@ const NavigationMenuDropdown = <T extends object>(props: NavigationMenuDropdownP
     }
 
     setDropdownButtonWidth(button.getBoundingClientRect().width);
-  }, [setDropdownButtonWidth]);
+  }, [props.title]);
 
   return (
     <div ref={ref}>
@@ -52,6 +52,7 @@ const NavigationMenuDropdown = <T extends object>(props: NavigationMenuDropdownP
               style={{
                 minWidth: `${dropdownButtonWidth}px`,
               }}
+              id={item.props.id}
             >
               <div style={{ display: 'flex', gap: 'var(--lp-spacing-300)', alignItems: 'center' }}>
                 <div>{item.props.name}</div>
