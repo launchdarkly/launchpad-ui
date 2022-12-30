@@ -1,4 +1,4 @@
-export type { NavigationProps } from './Navigation';
+export type { NavigationProps, NavigationState } from './Navigation';
 export type { NavigationItemProps } from './NavigationItem';
 /* c8 ignore start */
 export { Navigation } from './Navigation';

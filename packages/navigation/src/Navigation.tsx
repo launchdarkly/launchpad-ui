@@ -8,7 +8,6 @@ import { useCallback, useEffect, useRef } from 'react';
 import { NavigationContext } from './NavigationContext';
 import { NavigationList } from './NavigationList';
 import styles from './styles/Navigation.module.css';
-import { useMediaQuery } from './utils';
 
 type NavigationProps<T extends object> = CollectionBase<T> & {
   title: string;
@@ -18,51 +17,41 @@ type NavigationProps<T extends object> = CollectionBase<T> & {
   className?: string;
 };
 
+type NavigationState = {
+  collapsed: boolean;
+};
+
 const Navigation = <T extends object>(props: NavigationProps<T>) => {
   const { children, className, 'data-test-id': testId = 'navigation' } = props;
   const wrapperRef = useRef<HTMLDivElement>(null);
   const itemListRef = useRef<HTMLDivElement>(null);
   const [shouldCollapse, setCollapse] = useValueEffect(false);
 
-  const isWideViewport = useMediaQuery('(min-width: 740px)');
-
-  // From react-spectrum: https://github.com/adobe/react-spectrum/blob/main/packages/%40react-spectrum/tabs/src/Tabs.tsx#L82
   const checkShouldCollapse = useCallback(() => {
     function computeShouldCollapse() {
       if (!wrapperRef.current || !itemListRef.current) {
         return false;
       }
 
-      // This is where we're explicitly tied to NavItem
-      const tabs = itemListRef.current.querySelectorAll("[data-nav-target='true']");
-      const lastTab = tabs[tabs.length - 1];
+      const nav = wrapperRef.current.querySelector('nav');
 
-      const containerEdge = wrapperRef.current.getBoundingClientRect().right;
-      const lastTabEdge = lastTab?.getBoundingClientRect().right;
-
-      return containerEdge < lastTabEdge;
+      return nav && nav.scrollWidth > nav.offsetWidth;
     }
 
     setCollapse(function* () {
-      if (isWideViewport) {
-        yield false;
-        return;
-      }
-
       // Make Tabs render in non-collapsed state
       yield false;
 
       // Compute if Tabs should collapse and update
       yield computeShouldCollapse();
     });
-  }, [wrapperRef, itemListRef, isWideViewport, setCollapse]);
+  }, [wrapperRef, itemListRef, setCollapse]);
 
   useEffect(() => {
     checkShouldCollapse();
-  }, [children, checkShouldCollapse, isWideViewport]);
+  }, [children, checkShouldCollapse]);
 
   useResizeObserver({ ref: wrapperRef, onResize: checkShouldCollapse });
-
   return (
     <div
       className={cx(
@@ -88,4 +77,4 @@ const Navigation = <T extends object>(props: NavigationProps<T>) => {
 };
 
 export { Navigation };
-export type { NavigationProps };
+export type { NavigationProps, NavigationState };
