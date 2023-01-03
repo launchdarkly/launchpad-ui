@@ -1,5 +1,11 @@
 # @launchpad-ui/navigation
 
+## 0.7.0
+
+### Minor Changes
+
+- [#603](https://github.com/launchdarkly/launchpad-ui/pull/603) [`39fc745c`](https://github.com/launchdarkly/launchpad-ui/commit/39fc745c2faecb8ade2820c56fce247139d9f035) Thanks [@kwatkins-ld](https://github.com/kwatkins-ld)! - Update Navigation tabs to auto-collapse when the container scrolls horizontally
+
 ## 0.6.46
 
 ### Patch Changes
