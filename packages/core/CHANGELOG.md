@@ -1,5 +1,17 @@
 # @launchpad-ui/core
 
+## 0.26.1
+
+### Patch Changes
+
+- [#639](https://github.com/launchdarkly/launchpad-ui/pull/639) [`318703ed`](https://github.com/launchdarkly/launchpad-ui/commit/318703ed44c974e65e0ad5fc2204f86d6846fce5) Thanks [@kwatkins-ld](https://github.com/kwatkins-ld)! - Add legacy Navigation components
+
+- [#638](https://github.com/launchdarkly/launchpad-ui/pull/638) [`7d15991d`](https://github.com/launchdarkly/launchpad-ui/commit/7d15991d8dd21c1006518f88ef31ee1dd9976f9b) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Banner] Update background colors to remove opacity
+
+- Updated dependencies [[`318703ed`](https://github.com/launchdarkly/launchpad-ui/commit/318703ed44c974e65e0ad5fc2204f86d6846fce5), [`7d15991d`](https://github.com/launchdarkly/launchpad-ui/commit/7d15991d8dd21c1006518f88ef31ee1dd9976f9b)]:
+  - @launchpad-ui/navigation@0.7.1
+  - @launchpad-ui/banner@0.7.25
+
 ## 0.26.0
 
 ### Minor Changes

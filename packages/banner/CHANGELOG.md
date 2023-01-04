@@ -1,5 +1,11 @@
 # @launchpad-ui/banner
 
+## 0.7.25
+
+### Patch Changes
+
+- [#638](https://github.com/launchdarkly/launchpad-ui/pull/638) [`7d15991d`](https://github.com/launchdarkly/launchpad-ui/commit/7d15991d8dd21c1006518f88ef31ee1dd9976f9b) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Banner] Update background colors to remove opacity
+
 ## 0.7.24
 
 ### Patch Changes
