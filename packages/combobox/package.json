@@ -1,11 +1,11 @@
 {
-  "name": "@launchpad-ui/{{kebabCase name}}",
+  "name": "@launchpad-ui/combobox",
   "version": "0.0.1",
   "status": "alpha",
   "publishConfig": {
     "access": "public"
   },
-  "description": "{{description}}",
+  "description": "A combo box combines a text input with a listbox, allowing users to filter a list of options to items matching a query.",
   "files": [
     "dist"
   ],
@@ -32,7 +32,20 @@
     "test": "vitest run --coverage"
   },
   "dependencies": {
+    "@launchpad-ui/icons": "workspace:~",
+    "@launchpad-ui/popover": "workspace:~",
     "@launchpad-ui/tokens": "workspace:~",
+    "@launchpad-ui/tooltip": "workspace:~",
+    "@react-aria/button": "3.6.4",
+    "@react-aria/combobox": "3.4.4",
+    "@react-aria/i18n": "3.6.3",
+    "@react-aria/listbox": "3.7.2",
+    "@react-aria/utils": "3.14.1",
+    "@react-aria/focus": "3.10.0",
+    "@react-aria/gridlist": "3.1.2",
+    "@react-stately/combobox": "3.3.1",
+    "@react-stately/collections": "3.5.1",
+    "@react-stately/list": "3.6.1",
     "classix": "2.1.17"
   },
   "peerDependencies": {
@@ -40,6 +53,8 @@
     "react-dom": "18.2.0"
   },
   "devDependencies": {
+    "@react-types/combobox": "3.5.5",
+    "@react-types/shared": "3.16.0",
     "react": "18.2.0",
     "react-dom": "18.2.0"
   }
