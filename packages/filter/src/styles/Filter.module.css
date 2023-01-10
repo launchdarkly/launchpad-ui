@@ -45,10 +45,10 @@
   }
 
   &:focus-visible {
-    box-shadow: 0 0 0 2px var(--lp-color-shadow-interactive-primary),
-      0 0 0 4px var(--lp-color-shadow-interactive-focus);
-    border-color: var(--lp-color-border-interactive-secondary-focus);
     outline: none;
+    border-color: var(--lp-color-border-interactive-secondary-focus);
+    box-shadow: 0 0 0 2px var(--lp-color-bg-ui-primary),
+      0 0 0 4px var(--lp-color-shadow-interactive-focus);
   }
 }
 
@@ -81,21 +81,25 @@
 }
 
 .button.isClearable {
-  background-color: var(--lp-color-blue-200);
+  background-color: rgb(0 0 0 / 0.15);
   padding-right: 3.1rem;
 
   &:focus,
   &:hover,
   &:active {
-    background-color: var(--lp-color-blue-300);
+    background-color: rgb(0 0 0 / 0.2);
+    border-color: var(--lp-color-gray-800);
   }
-}
 
-.button.isClearable:focus:not(:focus-visible) {
-  background-color: unset;
+  :root[data-theme='dark'] & {
+    background-color: rgb(248 248 248 / 0.15);
 
-  &:hover {
-    background-color: var(--lp-color-blue-300);
+    &:focus,
+    &:hover,
+    &:active {
+      background-color: rgb(248 248 248 / 0.2);
+      border-color: var(--lp-color-gray-500);
+    }
   }
 }
 
@@ -149,28 +153,4 @@
 .filterClearButton:hover {
   border-bottom-color: var(--lp-color-border-interactive-secondary-hover);
   background-color: var(--lp-color-bg-interactive-secondary-hover);
-}
-
-:root[data-theme='dark'] {
-  /* stylelint-disable-next-line no-descending-specificity */
-  .button.isClearable {
-    background-color: var(--lp-color-cyan-900);
-    border-color: var(--lp-color-cyan-900);
-    padding-right: 3.1rem;
-
-    &:focus,
-    &:hover,
-    &:active {
-      background-color: var(--lp-color-cyan-800);
-      border-color: var(--lp-color-cyan-800);
-    }
-  }
-
-  .button.isClearable:focus:not(:focus-visible) {
-    background-color: unset;
-
-    &:hover {
-      background-color: var(--lp-color-cyan-900);
-    }
-  }
 }
