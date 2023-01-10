@@ -119,7 +119,7 @@
     "vitest": "^0.27.0",
     "wait-on": "^6.0.1"
   },
-  "packageManager": "pnpm@7.23.0",
+  "packageManager": "pnpm@7.24.2",
   "pnpm": {
     "peerDependencyRules": {
       "ignoreMissing": [
