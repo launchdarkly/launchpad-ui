@@ -371,10 +371,15 @@ importers:
       '@react-aria/gridlist': 3.1.2
       '@react-aria/i18n': 3.6.3
       '@react-aria/listbox': 3.7.2
+      '@react-aria/overlays': 3.12.1
+      '@react-aria/select': 3.8.4
       '@react-aria/utils': 3.14.1
+      '@react-aria/visually-hidden': 3.6.1
       '@react-stately/collections': 3.5.1
       '@react-stately/combobox': 3.3.1
       '@react-stately/list': 3.6.1
+      '@react-stately/overlays': 3.4.4
+      '@react-stately/select': 3.3.4
       '@react-types/combobox': 3.5.5
       '@react-types/shared': 3.16.0
       classix: 2.1.17
@@ -391,10 +396,15 @@ importers:
       '@react-aria/gridlist': 3.1.2_biqbaboplfbrettd7655fr4n2y
       '@react-aria/i18n': 3.6.3_react@18.2.0
       '@react-aria/listbox': 3.7.2_react@18.2.0
+      '@react-aria/overlays': 3.12.1_biqbaboplfbrettd7655fr4n2y
+      '@react-aria/select': 3.8.4_biqbaboplfbrettd7655fr4n2y
       '@react-aria/utils': 3.14.1_react@18.2.0
+      '@react-aria/visually-hidden': 3.6.1_react@18.2.0
       '@react-stately/collections': 3.5.1_react@18.2.0
       '@react-stately/combobox': 3.3.1_react@18.2.0
       '@react-stately/list': 3.6.1_react@18.2.0
+      '@react-stately/overlays': 3.4.4_react@18.2.0
+      '@react-stately/select': 3.3.4_react@18.2.0
       classix: 2.1.17
     devDependencies:
       '@react-types/combobox': 3.5.5_react@18.2.0
@@ -749,8 +759,6 @@ importers:
       '@launchpad-ui/focus-trap': workspace:~
       '@launchpad-ui/overlay': workspace:~
       '@launchpad-ui/tokens': workspace:~
-      '@react-aria/overlays': 3.12.1
-      '@react-stately/overlays': 3.4.4
       classix: 2.1.17
       framer-motion: 7.6.1
       react: 18.2.0
@@ -761,8 +769,6 @@ importers:
       '@launchpad-ui/focus-trap': link:../focus-trap
       '@launchpad-ui/overlay': link:../overlay
       '@launchpad-ui/tokens': link:../tokens
-      '@react-aria/overlays': 3.12.1_biqbaboplfbrettd7655fr4n2y
-      '@react-stately/overlays': 3.4.4_react@18.2.0
       classix: 2.1.17
       framer-motion: 7.6.1_biqbaboplfbrettd7655fr4n2y
     devDependencies:
@@ -5023,6 +5029,29 @@ packages:
       '@react-stately/overlays': 3.4.4_react@18.2.0
       '@react-types/button': 3.7.0_react@18.2.0
       '@react-types/overlays': 3.6.5_react@18.2.0
+      '@react-types/shared': 3.16.0_react@18.2.0
+      '@swc/helpers': 0.4.14
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
+    dev: false
+
+  /@react-aria/select/3.8.4_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-d2JOe11lUoGLvsE32bZRMq32SzXuyLNczyTOLrWM0e9fsOr49A8p6L6bFm3symU/KpwjjnO+pf5IkvgEq+GoJg==}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0 || 18
+      react-dom: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0 || 18
+    dependencies:
+      '@react-aria/i18n': 3.6.3_react@18.2.0
+      '@react-aria/interactions': 3.13.1_react@18.2.0
+      '@react-aria/label': 3.4.4_react@18.2.0
+      '@react-aria/listbox': 3.7.2_react@18.2.0
+      '@react-aria/menu': 3.7.1_biqbaboplfbrettd7655fr4n2y
+      '@react-aria/selection': 3.12.1_react@18.2.0
+      '@react-aria/utils': 3.14.2_react@18.2.0
+      '@react-aria/visually-hidden': 3.6.1_react@18.2.0
+      '@react-stately/select': 3.3.4_react@18.2.0
+      '@react-types/button': 3.7.0_react@18.2.0
+      '@react-types/select': 3.6.5_react@18.2.0
       '@react-types/shared': 3.16.0_react@18.2.0
       '@swc/helpers': 0.4.14
       react: 18.2.0

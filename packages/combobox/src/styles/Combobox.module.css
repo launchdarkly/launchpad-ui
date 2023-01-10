@@ -2,3 +2,47 @@
   /* styles here */
   color: red;
 }
+
+.popover {
+  border: 1px solid var(--lp-color-border-ui-primary);
+  background: var(--lp-color-bg-overlay-primary);
+  border-radius: var(--lp-border-radius-regular);
+
+  /* --color-black-100 */
+  box-shadow: 0 0 4px hsl(0 0% 15.7% / 0.12), 0 1px 2px hsl(0 0% 15.7% / 0.1),
+    0 4px 4px hsl(0 0% 15.7% / 0.08);
+
+  :root[data-theme='dark'] & {
+    box-shadow: 0 0 4px var(--lp-color-shadow-ui-primary),
+      0 1px 2px var(--lp-color-shadow-ui-primary), 0 4px 4px var(--lp-color-shadow-ui-primary);
+  }
+}
+
+.container {
+  background-color: var(--lp-color-bg-field);
+  border-color: var(--lp-color-border-field);
+  border-style: solid;
+  position: relative;
+  display: inline-flex;
+  flex-direction: row;
+  border-radius: var(--lp-border-radius-regular);
+  overflow: hidden;
+}
+
+.expandMoreButton {
+  border: none;
+  background: none;
+}
+
+.expandMore {
+  width: 20px;
+  height: 20px;
+}
+
+.input {
+  border: none;
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+  padding: 1rem;
+  font-size: 1.6rem;
+}

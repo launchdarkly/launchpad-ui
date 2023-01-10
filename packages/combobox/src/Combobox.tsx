@@ -1,15 +1,17 @@
 import type { ComboBoxProps as ComboboxProps } from '@react-types/combobox';
 
-import { PlusCircleFill } from '@launchpad-ui/icons';
-import { AriaPopover } from '@launchpad-ui/popover';
+import { ExpandMore } from '@launchpad-ui/icons';
 import { useButton } from '@react-aria/button';
 import { useComboBox } from '@react-aria/combobox';
 import { useFilter } from '@react-aria/i18n';
+import { VisuallyHidden } from '@react-aria/visually-hidden';
 import { Item as CollectionItem, Section as CollectionSection } from '@react-stately/collections';
 import { useComboBoxState } from '@react-stately/combobox';
+import cx from 'classix';
 import { useRef } from 'react';
 
 import { ListBox } from './ListBox';
+import { Popover } from './Popover';
 import styles from './styles/Combobox.module.css';
 
 const Combobox = <T extends object>(props: ComboboxProps<T>) => {
@@ -32,6 +34,7 @@ const Combobox = <T extends object>(props: ComboboxProps<T>) => {
   } = useComboBox(
     {
       ...props,
+      placeholder: 'hello',
       inputRef,
       buttonRef,
       listBoxRef,
@@ -44,29 +47,48 @@ const Combobox = <T extends object>(props: ComboboxProps<T>) => {
 
   const { buttonProps } = useButton(triggerProps, buttonRef);
 
+  console.log(inputProps);
+
   return (
     <div className="inline-flex flex-col relative w-52">
-      <label {...labelProps} className="block text-sm font-medium text-gray-700 text-left">
-        {props.label}
-      </label>
+      <VisuallyHidden>
+        <label {...labelProps} className="block text-sm font-medium text-gray-700 text-left">
+          {props.label}
+        </label>
+      </VisuallyHidden>
+
       <div
-        className={`relative flex inline-flex flex-row rounded-md overflow-hidden shadow-sm border-2 ${
-          state.isFocused ? 'border-pink-500' : 'border-gray-300'
-        }`}
+        className={cx(styles.container, state.isFocused ? 'border-pink-500' : 'border-gray-300')}
+        role="button"
+        tabIndex={0}
+        onClick={() => state.setOpen(true)}
+        onKeyUp={() => state.setOpen(true)}
       >
-        <input {...inputProps} ref={inputRef} className="outline-none px-3 py-1 w-full" />
+        <input
+          {...inputProps}
+          // onFocus={(e) => {
+          //   if (inputProps.onFocus) {
+          //     inputProps.onFocus(e);
+          //   }
+
+          //   state.setOpen(true);
+          // }}
+          ref={inputRef}
+          className={styles.input}
+        />
         <button
           {...buttonProps}
           ref={buttonRef}
-          className={`px-1 bg-gray-100 cursor-default border-l-2 ${
+          className={cx(
+            styles.expandMoreButton,
             state.isFocused ? 'border-pink-500 text-pink-600' : 'border-gray-300 text-gray-500'
-          }`}
+          )}
         >
-          <PlusCircleFill aria-hidden="true" />
+          <ExpandMore className={styles.expandMore} aria-hidden="true" />
         </button>
       </div>
       {state.isOpen && (
-        <AriaPopover
+        <Popover
           popoverRef={popoverRef}
           triggerRef={inputRef}
           state={state}
@@ -74,7 +96,7 @@ const Combobox = <T extends object>(props: ComboboxProps<T>) => {
           placement="bottom start"
         >
           <ListBox {...listBoxProps} listBoxRef={listBoxRef} state={state} />
-        </AriaPopover>
+        </Popover>
       )}
     </div>
   );

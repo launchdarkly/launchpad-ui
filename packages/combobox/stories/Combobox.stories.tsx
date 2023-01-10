@@ -1,6 +1,8 @@
 import type { StoryObj } from '@storybook/react';
 
-import { CollectionItem, Combobox } from '../src';
+import { Chip } from '@launchpad-ui/chip';
+
+import { CollectionItem, Combobox, Picker } from '../src';
 
 export default {
   component: Combobox,
@@ -20,13 +22,31 @@ export const Default: Story = {
   render: () => {
     return (
       <Combobox label="Favorite Animal">
-        <CollectionItem key="red panda">Red Panda</CollectionItem>
+        <CollectionItem key="red panda">
+          Red Panda <Chip>hello</Chip>
+        </CollectionItem>
         <CollectionItem key="cat">Cat</CollectionItem>
         <CollectionItem key="dog">Dog</CollectionItem>
         <CollectionItem key="aardvark">Aardvark</CollectionItem>
         <CollectionItem key="kangaroo">Kangaroo</CollectionItem>
         <CollectionItem key="snake">Snake</CollectionItem>
       </Combobox>
+    );
+  },
+  parameters: { docs: { disable: false } },
+};
+
+export const PickerExample: Story = {
+  render: () => {
+    return (
+      <Picker label="Favorite Animal">
+        <CollectionItem key="red panda">Red Panda</CollectionItem>
+        <CollectionItem key="cat">Cat</CollectionItem>
+        <CollectionItem key="dog">Dog</CollectionItem>
+        <CollectionItem key="aardvark">Aardvark</CollectionItem>
+        <CollectionItem key="kangaroo">Kangaroo</CollectionItem>
+        <CollectionItem key="snake">Snake</CollectionItem>
+      </Picker>
     );
   },
   parameters: { docs: { disable: false } },
