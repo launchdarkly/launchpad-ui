@@ -1,5 +1,22 @@
 # @launchpad-ui/tooltip
 
+## 0.6.34
+
+### Patch Changes
+
+- [#642](https://github.com/launchdarkly/launchpad-ui/pull/642) [`f2ae1a80`](https://github.com/launchdarkly/launchpad-ui/commit/f2ae1a80d678a1a61dee407b8574e4c52f55299f) Thanks [@chasedarkly](https://github.com/chasedarkly)! - Dark mode updates based on design feedback
+
+  [Filter]: Update clearable button styles
+  [Form]: Update disabled state dark mode colors and placeholder colors
+  [Modal]: Update dark mode overlay and card background
+  [Popover]: Update box shadow
+  [Tokens]: Apply various token alias updates
+  [Tooltip]: Update dark mode theming
+
+- Updated dependencies [[`f2ae1a80`](https://github.com/launchdarkly/launchpad-ui/commit/f2ae1a80d678a1a61dee407b8574e4c52f55299f)]:
+  - @launchpad-ui/popover@0.8.33
+  - @launchpad-ui/tokens@0.4.8
+
 ## 0.6.33
 
 ### Patch Changes
