@@ -6,6 +6,11 @@
   font-size: 1.3rem;
   padding: 0.5rem 1rem;
   border: 1px solid var(--lp-color-border-ui-secondary);
+  background-color: var(--lp-color-bg-overlay-secondary);
+
+  :root[data-theme='dark'] & {
+    background-color: var(--lp-color-bg-overlay-primary);
+  }
 }
 
 [class^='_Popover-content_'].Tooltip-popover-content kbd {
