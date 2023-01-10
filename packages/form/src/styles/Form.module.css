@@ -209,8 +209,10 @@ select.formInput {
 input.formInput:disabled,
 select.formInput:disabled,
 input.formInput:read-only {
+  opacity: 1;
   background-color: var(--lp-color-bg-field-disabled);
   color: var(--lp-color-text-field-disabled);
+  border-color: var(--lp-color-border-field-disabled);
 }
 
 .formInput.isDisabled:hover,
@@ -226,7 +228,10 @@ textarea.formInput {
 
 textarea.formInput:disabled,
 textarea.formInput:read-only {
+  opacity: 1;
+  color: var(--lp-color-text-field-disabled);
   background-color: var(--lp-color-bg-field-disabled);
+  border-color: var(--lp-color-border-field-disabled);
 }
 
 input.formInput::-webkit-autofill {
