@@ -114,6 +114,6 @@ describe('Navigation', () => {
       ])
     );
     // eslint-disable-next-line testing-library/no-container, testing-library/no-node-access
-    expect(screen.getByTestId('navigation-menu-button')).not.toBeNull();
+    expect(screen.getByTestId('navigation-menu-select')).not.toBeNull();
   });
 });
