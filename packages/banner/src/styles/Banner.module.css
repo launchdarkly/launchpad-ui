@@ -28,18 +28,30 @@
 }
 
 .Banner.Banner--error {
-  background-color: var(--lp-color-bg-feedback-error);
+  background-color: var(--lp-color-system-red-200);
   border-bottom-color: var(--lp-color-border-feedback-error);
+
+  :root[data-theme='dark'] & {
+    background-color: hsl(0 30% 17%);
+  }
 }
 
 .Banner.Banner--warning {
-  background-color: var(--lp-color-bg-feedback-warning);
+  background-color: var(--lp-color-system-yellow-200);
   border-bottom-color: var(--lp-color-border-feedback-warning);
+
+  :root[data-theme='dark'] & {
+    background-color: hsl(46 29% 17%);
+  }
 }
 
 .Banner.Banner--info {
-  background-color: var(--lp-color-bg-feedback-info);
+  background-color: var(--lp-color-blue-200);
   border-bottom-color: var(--lp-color-border-feedback-info);
+
+  :root[data-theme='dark'] & {
+    background-color: hsl(232 32% 18%);
+  }
 }
 
 .Banner .Banner-icon {

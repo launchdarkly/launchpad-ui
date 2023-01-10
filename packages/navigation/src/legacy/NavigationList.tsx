@@ -1,6 +1,5 @@
 import type { NavProps } from './Nav';
 import type { CollectionBase } from '@react-types/shared';
-import type { MouseEvent } from 'react';
 
 import { useListState } from '@react-stately/list';
 
@@ -31,14 +30,8 @@ const NavigationList = <T extends object>({
         <NavigationMenuDropdown title={title} aria-label={title} {...rest} />
       ) : (
         <Nav kind={kind} ref={refs.itemListRef}>
-          {[...state.collection].map((item) => {
-            const onClick = (e: MouseEvent) => {
-              item.props.onClick?.(e, {
-                collapsed: false,
-              });
-            };
-
-            return item.props.tooltip ? (
+          {[...state.collection].map((item) =>
+            item.props.tooltip ? (
               <NavItemWithTooltip
                 key={item.key}
                 to={item.props.to}
@@ -51,7 +44,7 @@ const NavigationList = <T extends object>({
                 }
                 tooltipOffset={item.props.tooltipOffset}
                 tooltipPlacement={item.props.tooltipPlacement}
-                onClick={onClick}
+                onClick={item.props.onClick}
                 end={item.props.end}
               />
             ) : (
@@ -63,11 +56,11 @@ const NavigationList = <T extends object>({
                 status={item.props.status}
                 role={item.props.role}
                 aria-controls={item.props['aria-controls']}
-                onClick={onClick}
+                onClick={item.props.onClick}
                 end={item.props.end}
               />
-            );
-          })}
+            )
+          )}
         </Nav>
       )}
     </div>

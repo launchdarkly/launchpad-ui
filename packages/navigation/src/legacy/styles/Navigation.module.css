@@ -1,4 +1,4 @@
-@import '../../../tokens/dist/media-queries.css';
+@import '../../../../tokens/dist/media-queries.css';
 
 :root {
   --page-gutter-width: 1rem;
@@ -12,20 +12,15 @@
 
 .Navigation .Nav--primary {
   padding: 0 2.5rem;
-
-  /**
-   * The Navigation collapses at the point where horizontal scroll begins, so
-   * we hide the scroll-bar to avoid it flickering in and then disappearing
-   */
-  overflow-x: hidden;
+  background-color: var(--lp-color-bg-ui-secondary);
+  box-shadow: 0 1px 2px hsl(0 0% 0% / 0.12);
+  overflow-x: auto;
 }
 
 .Navigation--collapsed {
-  /**
-   * In a collapsed state, we need to take up the same vertical space to avoid
-   * shifting the page layout.
-   */
-  padding: 1rem var(--page-gutter-width) 0.85rem;
+  background-color: #fff;
+  box-shadow: 0 1px 2px hsl(0 0% 0% / 0.12);
+  padding: 1rem var(--page-gutter-width);
 }
 
 .Navigation--collapsed .NavigationList-wrapper {
