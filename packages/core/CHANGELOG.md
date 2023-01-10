@@ -1,5 +1,22 @@
 # @launchpad-ui/core
 
+## 0.26.3
+
+### Patch Changes
+
+- [#644](https://github.com/launchdarkly/launchpad-ui/pull/644) [`ab07d28a`](https://github.com/launchdarkly/launchpad-ui/commit/ab07d28ac113d528566fd990fd8ac9a6de86bd33) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Popover] fix invalid property value
+
+- Updated dependencies [[`ab07d28a`](https://github.com/launchdarkly/launchpad-ui/commit/ab07d28ac113d528566fd990fd8ac9a6de86bd33)]:
+  - @launchpad-ui/popover@0.8.34
+  - @launchpad-ui/dropdown@0.6.20
+  - @launchpad-ui/menu@0.6.43
+  - @launchpad-ui/navigation@0.7.3
+  - @launchpad-ui/progress-bubbles@0.5.36
+  - @launchpad-ui/split-button@0.6.39
+  - @launchpad-ui/tooltip@0.6.35
+  - @launchpad-ui/filter@0.4.46
+  - @launchpad-ui/clipboard@0.8.37
+
 ## 0.26.2
 
 ### Patch Changes
