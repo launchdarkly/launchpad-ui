@@ -1,5 +1,11 @@
 # @launchpad-ui/popover
 
+## 0.8.34
+
+### Patch Changes
+
+- [#644](https://github.com/launchdarkly/launchpad-ui/pull/644) [`ab07d28a`](https://github.com/launchdarkly/launchpad-ui/commit/ab07d28ac113d528566fd990fd8ac9a6de86bd33) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Popover] fix invalid property value
+
 ## 0.8.33
 
 ### Patch Changes
