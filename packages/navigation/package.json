@@ -34,6 +34,7 @@
   "dependencies": {
     "@launchpad-ui/chip": "workspace:~",
     "@launchpad-ui/dropdown": "workspace:~",
+    "@launchpad-ui/form": "workspace:~",
     "@launchpad-ui/menu": "workspace:~",
     "@launchpad-ui/popover": "workspace:~",
     "@launchpad-ui/tokens": "workspace:~",

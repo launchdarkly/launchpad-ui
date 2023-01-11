@@ -81,7 +81,7 @@ describe('Navigation', () => {
         ])
       );
 
-      cy.getByTestId('navigation-menu-button').should('be.visible');
+      cy.getByTestId('navigation-menu-select').should('be.visible');
     });
   });
 });
