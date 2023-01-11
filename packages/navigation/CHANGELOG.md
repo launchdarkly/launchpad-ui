@@ -1,5 +1,11 @@
 # @launchpad-ui/navigation
 
+## 0.7.4
+
+### Patch Changes
+
+- [#646](https://github.com/launchdarkly/launchpad-ui/pull/646) [`ae24fb8a`](https://github.com/launchdarkly/launchpad-ui/commit/ae24fb8a13b7d1424ea87d79fe96dbf0871df0e3) Thanks [@kwatkins-ld](https://github.com/kwatkins-ld)! - [Navigation]: Update to collapse rendering Select instead of Dropdown
+
 ## 0.7.3
 
 ### Patch Changes
