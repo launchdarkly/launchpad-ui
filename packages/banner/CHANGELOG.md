@@ -1,5 +1,11 @@
 # @launchpad-ui/banner
 
+## 0.8.0
+
+### Minor Changes
+
+- [#648](https://github.com/launchdarkly/launchpad-ui/pull/648) [`577e520b`](https://github.com/launchdarkly/launchpad-ui/commit/577e520b74d7353b5a9404cac3efd4df01d05116) Thanks [@traciklopez](https://github.com/traciklopez)! - [Banner]: Remove dismissible banner prop
+
 ## 0.7.26
 
 ### Patch Changes
