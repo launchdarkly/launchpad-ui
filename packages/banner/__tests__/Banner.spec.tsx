@@ -18,8 +18,9 @@ describe('Banner', () => {
   });
 
   it('can be dismissible', async () => {
+    const onDismiss = vi.fn();
     render(
-      <Banner kind="info" dismissible>
+      <Banner kind="info" onDismiss={onDismiss}>
         An important message
       </Banner>
     );
@@ -42,7 +43,7 @@ describe('Banner', () => {
     const user = userEvent.setup();
     const content = 'An important message';
     render(
-      <Banner kind="info" onDismiss={onDismiss} dismissible>
+      <Banner kind="info" onDismiss={onDismiss}>
         {content}
       </Banner>
     );
