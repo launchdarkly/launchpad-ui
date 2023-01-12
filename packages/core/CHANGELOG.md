@@ -1,5 +1,17 @@
 # @launchpad-ui/core
 
+## 0.26.5
+
+### Patch Changes
+
+- [#649](https://github.com/launchdarkly/launchpad-ui/pull/649) [`020d99e2`](https://github.com/launchdarkly/launchpad-ui/commit/020d99e2fc88a9ee18d4b127c24312b27d836c57) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Menu] update divider color
+
+- Updated dependencies [[`577e520b`](https://github.com/launchdarkly/launchpad-ui/commit/577e520b74d7353b5a9404cac3efd4df01d05116), [`020d99e2`](https://github.com/launchdarkly/launchpad-ui/commit/020d99e2fc88a9ee18d4b127c24312b27d836c57)]:
+  - @launchpad-ui/banner@0.8.0
+  - @launchpad-ui/menu@0.6.44
+  - @launchpad-ui/filter@0.4.47
+  - @launchpad-ui/navigation@0.7.5
+
 ## 0.26.4
 
 ### Patch Changes

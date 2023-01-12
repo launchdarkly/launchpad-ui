@@ -1,5 +1,11 @@
 # @launchpad-ui/menu
 
+## 0.6.44
+
+### Patch Changes
+
+- [#649](https://github.com/launchdarkly/launchpad-ui/pull/649) [`020d99e2`](https://github.com/launchdarkly/launchpad-ui/commit/020d99e2fc88a9ee18d4b127c24312b27d836c57) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Menu] update divider color
+
 ## 0.6.43
 
 ### Patch Changes
