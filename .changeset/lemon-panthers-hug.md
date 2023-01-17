@@ -3,4 +3,4 @@
 '@launchpad-ui/core': patch
 ---
 
-Add filter-tune icon
+[Icons]: Add `filter-tune` icon
