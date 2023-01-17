@@ -1,5 +1,15 @@
 # @launchpad-ui/alert
 
+## 0.6.27
+
+### Patch Changes
+
+- [#653](https://github.com/launchdarkly/launchpad-ui/pull/653) [`bc2edb45`](https://github.com/launchdarkly/launchpad-ui/commit/bc2edb4507783aa8f85433f12d3a03430b0977e6) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Alert] Add `word-break: break-word` to alert content container
+
+- Updated dependencies [[`cd1b58c5`](https://github.com/launchdarkly/launchpad-ui/commit/cd1b58c5c117d37b2939fe879606011c49b18ced)]:
+  - @launchpad-ui/icons@0.6.16
+  - @launchpad-ui/button@0.7.24
+
 ## 0.6.26
 
 ### Patch Changes

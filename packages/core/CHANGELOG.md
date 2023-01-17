@@ -1,5 +1,32 @@
 # @launchpad-ui/core
 
+## 0.26.6
+
+### Patch Changes
+
+- [#652](https://github.com/launchdarkly/launchpad-ui/pull/652) [`cd1b58c5`](https://github.com/launchdarkly/launchpad-ui/commit/cd1b58c5c117d37b2939fe879606011c49b18ced) Thanks [@erangeles](https://github.com/erangeles)! - [Icons]: Add `filter-tune` icon
+
+- [#653](https://github.com/launchdarkly/launchpad-ui/pull/653) [`bc2edb45`](https://github.com/launchdarkly/launchpad-ui/commit/bc2edb4507783aa8f85433f12d3a03430b0977e6) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Alert] Add `word-break: break-word` to alert content container
+
+- Updated dependencies [[`cd1b58c5`](https://github.com/launchdarkly/launchpad-ui/commit/cd1b58c5c117d37b2939fe879606011c49b18ced), [`bc2edb45`](https://github.com/launchdarkly/launchpad-ui/commit/bc2edb4507783aa8f85433f12d3a03430b0977e6)]:
+  - @launchpad-ui/icons@0.6.16
+  - @launchpad-ui/alert@0.6.27
+  - @launchpad-ui/avatar@0.4.26
+  - @launchpad-ui/banner@0.8.1
+  - @launchpad-ui/button@0.7.24
+  - @launchpad-ui/clipboard@0.8.38
+  - @launchpad-ui/drawer@0.1.21
+  - @launchpad-ui/dropdown@0.6.21
+  - @launchpad-ui/filter@0.4.48
+  - @launchpad-ui/form@0.6.31
+  - @launchpad-ui/menu@0.6.45
+  - @launchpad-ui/modal@0.12.19
+  - @launchpad-ui/pagination@0.3.32
+  - @launchpad-ui/snackbar@0.3.24
+  - @launchpad-ui/toast@0.2.24
+  - @launchpad-ui/split-button@0.6.40
+  - @launchpad-ui/navigation@0.7.6
+
 ## 0.26.5
 
 ### Patch Changes
