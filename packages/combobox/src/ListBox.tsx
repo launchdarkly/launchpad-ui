@@ -4,9 +4,10 @@ import type { ListState } from '@react-stately/list';
 import type { Node } from '@react-types/shared';
 import type { RefObject } from 'react';
 
-import { Check } from '@launchpad-ui/icons';
 import { useListBox, useListBoxSection, useOption } from '@react-aria/listbox';
+import cx from 'classix';
 import { useRef } from 'react';
+import styles from './styles/Combobox.module.css';
 
 type ListBoxProps = AriaListBoxOptions<unknown> & {
   listBoxRef?: RefObject<HTMLUListElement>;
@@ -29,7 +30,7 @@ const ListBox = (props: ListBoxProps) => {
   const { listBoxProps } = useListBox(props, state, listBoxRef);
 
   return (
-    <ul {...listBoxProps} ref={listBoxRef} className="w-full max-h-72 overflow-auto outline-none">
+    <ul {...listBoxProps} ref={listBoxRef} className={styles.options}>
       {[...state.collection].map((item) =>
         item.type === 'section' ? (
           <ListBoxSection key={item.key} section={item} state={state} />
@@ -75,23 +76,13 @@ const Option = ({ item, state }: OptionProps) => {
     ref
   );
 
-  let text = 'text-gray-700';
-  if (isFocused || isSelected) {
-    text = 'text-pink-600';
-  } else if (isDisabled) {
-    text = 'text-gray-200';
-  }
-
   return (
     <li
       {...optionProps}
       ref={ref}
-      className={`m-1 rounded-md py-2 px-2 text-sm outline-none cursor-default flex items-center justify-between ${text} ${
-        isFocused ? 'bg-pink-100' : ''
-      } ${isSelected ? 'font-bold' : ''}`}
+      className={cx(styles.option, isFocused && styles.isFocused, isSelected && styles.isSelected)}
     >
       {item.rendered}
-      {isSelected && <Check aria-hidden="true" className="w-5 h-5 text-pink-600" />}
     </li>
   );
 };

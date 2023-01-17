@@ -43,11 +43,7 @@ const Combobox = <T extends object>(props: ComboboxProps<T>) => {
     state
   );
 
-  console.log(styles.combobox);
-
   const { buttonProps } = useButton(triggerProps, buttonRef);
-
-  console.log(inputProps);
 
   return (
     <div className="inline-flex flex-col relative w-52">
@@ -58,24 +54,14 @@ const Combobox = <T extends object>(props: ComboboxProps<T>) => {
       </VisuallyHidden>
 
       <div
-        className={cx(styles.container, state.isFocused ? 'border-pink-500' : 'border-gray-300')}
+        className={cx(styles.container, state.isOpen && styles.isOpen)}
         role="button"
         tabIndex={0}
         onClick={() => state.setOpen(true)}
         onKeyUp={() => state.setOpen(true)}
+        ref={inputRef}
       >
-        <input
-          {...inputProps}
-          // onFocus={(e) => {
-          //   if (inputProps.onFocus) {
-          //     inputProps.onFocus(e);
-          //   }
-
-          //   state.setOpen(true);
-          // }}
-          ref={inputRef}
-          className={styles.input}
-        />
+        <input {...inputProps} className={styles.input} />
         <button
           {...buttonProps}
           ref={buttonRef}
