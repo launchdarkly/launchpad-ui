@@ -37,5 +37,7 @@
     "@launchpad-ui/tokens": "0.4.8",
     "@launchpad-ui/tooltip": "0.6.35"
   },
-  "changesets": []
+  "changesets": [
+    "empty-trainers-float"
+  ]
 }
