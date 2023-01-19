@@ -7,6 +7,7 @@ import type { RefObject } from 'react';
 import { useListBox, useListBoxSection, useOption } from '@react-aria/listbox';
 import cx from 'classix';
 import { useRef } from 'react';
+
 import styles from './styles/Combobox.module.css';
 
 type ListBoxProps = AriaListBoxOptions<unknown> & {

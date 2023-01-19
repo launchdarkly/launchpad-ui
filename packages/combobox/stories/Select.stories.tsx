@@ -2,13 +2,13 @@ import type { StoryObj } from '@storybook/react';
 
 import { Chip } from '@launchpad-ui/chip';
 
-import { CollectionItem, Combobox, Picker } from '../src';
+import { CollectionItem, Select } from '../src';
 
 export default {
-  component: Combobox,
-  title: 'Components/Combobox',
+  component: Select,
+  title: 'Components/Select',
   description:
-    'A combo box combines a text input with a listbox, allowing users to filter a list of options to items matching a query.',
+    'A Select combines a text input with a listbox, allowing users to filter a list of options to items matching a query.',
   parameters: {
     status: {
       type: import.meta.env.PACKAGE_STATUS__COMBOBOX,
@@ -16,12 +16,12 @@ export default {
   },
 };
 
-type Story = StoryObj<typeof Combobox>;
+type Story = StoryObj<typeof Select>;
 
 export const Default: Story = {
   render: () => {
     return (
-      <Combobox label="Favorite Animal">
+      <Select label="Favorite Animal">
         <CollectionItem textValue="Red Panda" key="red panda">
           Red Panda <Chip>hello</Chip>
         </CollectionItem>
@@ -32,7 +32,7 @@ export const Default: Story = {
           Kangaroo <Chip>hello</Chip>
         </CollectionItem>
         <CollectionItem key="snake">Snake</CollectionItem>
-      </Combobox>
+      </Select>
     );
   },
   parameters: { docs: { disable: false } },

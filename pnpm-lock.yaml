@@ -361,6 +361,7 @@ importers:
 
   packages/combobox:
     specifiers:
+      '@launchpad-ui/button': workspace:~
       '@launchpad-ui/icons': workspace:~
       '@launchpad-ui/popover': workspace:~
       '@launchpad-ui/tokens': workspace:~
@@ -381,11 +382,13 @@ importers:
       '@react-stately/overlays': 3.4.4
       '@react-stately/select': 3.3.4
       '@react-types/combobox': 3.5.5
+      '@react-types/select': 3.6.5
       '@react-types/shared': 3.16.0
       classix: 2.1.17
       react: 18.2.0
       react-dom: 18.2.0
     dependencies:
+      '@launchpad-ui/button': link:../button
       '@launchpad-ui/icons': link:../icons
       '@launchpad-ui/popover': link:../popover
       '@launchpad-ui/tokens': link:../tokens
@@ -408,6 +411,7 @@ importers:
       classix: 2.1.17
     devDependencies:
       '@react-types/combobox': 3.5.5_react@18.2.0
+      '@react-types/select': 3.6.5_react@18.2.0
       '@react-types/shared': 3.16.0_react@18.2.0
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
@@ -5565,7 +5569,6 @@ packages:
     dependencies:
       '@react-types/shared': 3.16.0_react@18.2.0
       react: 18.2.0
-    dev: false
 
   /@react-types/shared/3.16.0_react@18.2.0:
     resolution: {integrity: sha512-IQgU4oAEvMwylEvaTsr2XB1G/mAoMe1JFYLD6G78v++oAR9l8o9MQxZ0YSeANDkqTamb2gKezGoT1RxvSKjVxw==}

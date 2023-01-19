@@ -32,6 +32,7 @@
     "test": "vitest run --coverage"
   },
   "dependencies": {
+    "@launchpad-ui/button": "workspace:~",
     "@launchpad-ui/icons": "workspace:~",
     "@launchpad-ui/popover": "workspace:~",
     "@launchpad-ui/tokens": "workspace:~",
@@ -59,6 +60,7 @@
   },
   "devDependencies": {
     "@react-types/combobox": "3.5.5",
+    "@react-types/select": "3.6.5",
     "@react-types/shared": "3.16.0",
     "react": "18.2.0",
     "react-dom": "18.2.0"
