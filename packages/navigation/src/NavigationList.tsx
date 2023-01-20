@@ -8,7 +8,7 @@ import { Nav } from './Nav';
 import { NavItem } from './NavItem';
 import { NavItemWithTooltip } from './NavItemWithTooltip';
 import { useNavigationContext } from './NavigationContext';
-import { NavigationMenuSelect } from './NavigationMenuSelect';
+import { NavigationMenuDropdown } from './NavigationMenuDropdown';
 import styles from './styles/Navigation.module.css';
 
 type NavigationListProps<T extends object> = CollectionBase<T> & {
@@ -28,7 +28,7 @@ const NavigationList = <T extends object>({
   return (
     <div className={styles['NavigationList-wrapper']} ref={refs.wrapperRef}>
       {shouldCollapse ? (
-        <NavigationMenuSelect aria-label={title} {...rest} />
+        <NavigationMenuDropdown kind={kind} {...rest} />
       ) : (
         <Nav kind={kind} ref={refs.itemListRef}>
           {[...state.collection].map((item) => {

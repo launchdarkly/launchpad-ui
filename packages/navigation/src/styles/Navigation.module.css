@@ -57,7 +57,7 @@
   align-items: center;
   font-size: 1.5rem;
   font-weight: var(--lp-font-weight-medium);
-  padding: 1rem 1.4rem;
+  padding: 1rem 1.5rem;
   border-bottom: 2px solid transparent;
   text-decoration: none;
   color: var(--lp-color-text-interactive-secondary);
@@ -76,7 +76,7 @@
   overflow: hidden;
   user-select: none;
   pointer-events: none;
-  padding: 0.1rem 1rem 0.2rem;
+  padding: 0.1rem 0 0.2rem;
 }
 
 .Nav--primary .NavItem.is-active {
@@ -86,7 +86,7 @@
 }
 
 .NavItem-name {
-  padding: 0.1rem 1rem 0.2rem;
+  padding: 0.1rem 0 0.2rem;
   text-align: center;
   white-space: nowrap;
 }
@@ -113,7 +113,7 @@
 }
 
 .NavItem:focus .NavItem-name {
-  padding: 0.1rem 1rem 0.2rem;
+  padding: 0.1rem 0 0.2rem;
   box-shadow: 0 0 0 0.2rem var(--lp-color-blue-500);
   border-radius: 0.6rem;
 }
@@ -175,4 +175,8 @@
 
 .NavItem-tooltip {
   text-align: center;
+}
+
+.NavigationMenuItem > span:first-child {
+  line-height: 1;
 }

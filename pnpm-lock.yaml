@@ -636,7 +636,7 @@ importers:
     specifiers:
       '@launchpad-ui/chip': workspace:~
       '@launchpad-ui/dropdown': workspace:~
-      '@launchpad-ui/form': workspace:~
+      '@launchpad-ui/icons': workspace:~
       '@launchpad-ui/menu': workspace:~
       '@launchpad-ui/popover': workspace:~
       '@launchpad-ui/tokens': workspace:~
@@ -651,7 +651,7 @@ importers:
     dependencies:
       '@launchpad-ui/chip': link:../chip
       '@launchpad-ui/dropdown': link:../dropdown
-      '@launchpad-ui/form': link:../form
+      '@launchpad-ui/icons': link:../icons
       '@launchpad-ui/menu': link:../menu
       '@launchpad-ui/popover': link:../popover
       '@launchpad-ui/tokens': link:../tokens
@@ -5472,7 +5472,7 @@ packages:
       '@storybook/csf-plugin': 7.0.0-beta.16
       '@storybook/csf-tools': 7.0.0-beta.16
       '@storybook/global': 5.0.0
-      '@storybook/mdx2-csf': 1.0.0-next.4
+      '@storybook/mdx2-csf': 1.0.0-next.5
       '@storybook/node-logger': 7.0.0-beta.16
       '@storybook/postinstall': 7.0.0-beta.16
       '@storybook/preview-api': 7.0.0-beta.16
@@ -5800,7 +5800,7 @@ packages:
       '@storybook/client-logger': 7.0.0-beta.16
       '@storybook/core-common': 7.0.0-beta.16
       '@storybook/csf-plugin': 7.0.0-beta.16
-      '@storybook/mdx2-csf': 1.0.0-next.4
+      '@storybook/mdx2-csf': 1.0.0-next.5
       '@storybook/node-logger': 7.0.0-beta.16
       '@storybook/preview': 7.0.0-beta.16
       '@storybook/preview-api': 7.0.0-beta.16
@@ -6054,7 +6054,7 @@ packages:
       '@storybook/core-events': 7.0.0-beta.16
       '@storybook/csf': 0.0.2-next.8
       '@storybook/csf-tools': 7.0.0-beta.16
-      '@storybook/docs-mdx': 0.0.1-next.5
+      '@storybook/docs-mdx': 0.0.1-next.6
       '@storybook/global': 5.0.0
       '@storybook/node-logger': 7.0.0-beta.16
       '@storybook/preview-api': 7.0.0-beta.16
@@ -6130,8 +6130,8 @@ packages:
       type-fest: 2.19.0
     dev: true
 
-  /@storybook/docs-mdx/0.0.1-next.5:
-    resolution: {integrity: sha512-EowXFPq4TBZQguKCdU8y7EzpuSv2vSu5gy7pgF/1P5mq7LG9h8YIrerOW9DL4zfp9E0GHIWlSXR5KuFIqqKc/Q==}
+  /@storybook/docs-mdx/0.0.1-next.6:
+    resolution: {integrity: sha512-DjoSIXADmLJtdroXAjUotFiZlcZ2usWhqrS7aeOtZs0DVR0Ws5WQjnwtpDUXt8gryTSd+OZJ0cNsDcqg4JDEvQ==}
     dev: true
 
   /@storybook/docs-tools/7.0.0-beta.16:
@@ -6208,8 +6208,8 @@ packages:
     resolution: {integrity: sha512-iyqewtzPGdJQUin+t2V+5AayjN9bivj1jgLIV5C1+5CGGgqrjY9oreiskFNyy1Ay5L7Y8aXcLCGAb/ku8NVvmg==}
     dev: true
 
-  /@storybook/mdx2-csf/1.0.0-next.4:
-    resolution: {integrity: sha512-nvRgYdpYvXsvSgCzKc4LQA1JxtJzmv47IsFAsh1rTz5FoHyK8watLU2WqX9T4w52fpFXBHx7RwGEsCRt0XgZlQ==}
+  /@storybook/mdx2-csf/1.0.0-next.5:
+    resolution: {integrity: sha512-02w0sgGZaK1agT050yCVhJ+o4rLHANWvLKWjQjeAsYbjneLC5ITt+3GDB4jRiWwJboZ8dHW1fGSK1Vg5fA34aQ==}
     dev: true
 
   /@storybook/node-logger/7.0.0-beta.16:
