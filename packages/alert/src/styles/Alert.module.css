@@ -107,6 +107,7 @@
 .Alert-content {
   flex-grow: 1;
   max-width: 70rem;
+  min-width: 1px;
   word-break: break-word;
 }
 
