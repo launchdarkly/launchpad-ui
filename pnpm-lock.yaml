@@ -203,6 +203,7 @@ importers:
       '@launchpad-ui/tooltip': workspace:~
       '@react-aria/ssr': 3.4.0
       '@react-stately/collections': 3.5.0
+      '@react-stately/data': 3.8.1
       '@remix-run/dev': ^1.8.0
       '@remix-run/eslint-config': ^1.8.0
       '@remix-run/node': ^1.8.0
@@ -247,6 +248,7 @@ importers:
       '@launchpad-ui/tooltip': link:../../packages/tooltip
       '@react-aria/ssr': 3.4.0_react@18.2.0
       '@react-stately/collections': 3.5.0_react@18.2.0
+      '@react-stately/data': 3.8.1_react@18.2.0
       '@remix-run/node': 1.8.0_biqbaboplfbrettd7655fr4n2y
       '@remix-run/react': 1.8.0_biqbaboplfbrettd7655fr4n2y
       '@remix-run/serve': 1.8.0_biqbaboplfbrettd7655fr4n2y
@@ -378,6 +380,7 @@ importers:
       '@react-aria/visually-hidden': 3.6.1
       '@react-stately/collections': 3.5.1
       '@react-stately/combobox': 3.3.1
+      '@react-stately/data': 3.8.1
       '@react-stately/list': 3.6.1
       '@react-stately/overlays': 3.4.4
       '@react-stately/select': 3.3.4
@@ -405,6 +408,7 @@ importers:
       '@react-aria/visually-hidden': 3.6.1_react@18.2.0
       '@react-stately/collections': 3.5.1_react@18.2.0
       '@react-stately/combobox': 3.3.1_react@18.2.0
+      '@react-stately/data': 3.8.1_react@18.2.0
       '@react-stately/list': 3.6.1_react@18.2.0
       '@react-stately/overlays': 3.4.4_react@18.2.0
       '@react-stately/select': 3.3.4_react@18.2.0
@@ -5264,6 +5268,16 @@ packages:
       '@react-stately/select': 3.3.4_react@18.2.0
       '@react-stately/utils': 3.5.2_react@18.2.0
       '@react-types/combobox': 3.5.5_react@18.2.0
+      '@react-types/shared': 3.16.0_react@18.2.0
+      '@swc/helpers': 0.4.14
+      react: 18.2.0
+    dev: false
+
+  /@react-stately/data/3.8.1_react@18.2.0:
+    resolution: {integrity: sha512-YSc45qfmt8uhg9KTGGDQ/xbAPPP6ty5itzWoWORYLEsorBNUj7mLF+q126nYcYX4B5Xf84w8EexqP8Y8nh2Gdg==}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0 || 18
+    dependencies:
       '@react-types/shared': 3.16.0_react@18.2.0
       '@swc/helpers': 0.4.14
       react: 18.2.0

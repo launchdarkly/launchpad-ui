@@ -1,6 +1,7 @@
 import type { StoryObj } from '@storybook/react';
 
 import { Chip } from '@launchpad-ui/chip';
+import { useListData } from '@react-stately/data';
 
 import { CollectionItem, Combobox, Picker } from '../src';
 
@@ -20,6 +21,12 @@ type Story = StoryObj<typeof Combobox>;
 
 export const Default: Story = {
   render: () => {
+    const list = useListData({
+      initialItems: [{ name: 'Aardvark' }, { name: 'Kangaroo' }, { name: 'Snake' }],
+      initialSelectedKeys: ['Kangaroo'],
+      getKey: (item) => item.name,
+    });
+
     return (
       <Combobox label="Favorite Animal">
         <CollectionItem textValue="Red Panda" key="red panda">

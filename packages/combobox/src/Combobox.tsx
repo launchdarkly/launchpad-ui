@@ -46,11 +46,9 @@ const Combobox = <T extends object>(props: ComboboxProps<T>) => {
   const { buttonProps } = useButton(triggerProps, buttonRef);
 
   return (
-    <div className="inline-flex flex-col relative w-52">
+    <div>
       <VisuallyHidden>
-        <label {...labelProps} className="block text-sm font-medium text-gray-700 text-left">
-          {props.label}
-        </label>
+        <label {...labelProps}>{props.label}</label>
       </VisuallyHidden>
 
       <div
