@@ -1,5 +1,11 @@
 # @launchpad-ui/icons
 
+## 0.6.17
+
+### Patch Changes
+
+- [#658](https://github.com/launchdarkly/launchpad-ui/pull/658) [`f873c6f3`](https://github.com/launchdarkly/launchpad-ui/commit/f873c6f3af18b55e72883464e9698ea172021c8e) Thanks [@goyanespaula](https://github.com/goyanespaula)! - [Icons] Add `arrow-left-thin`, `arrow-right-thin`, `arrow-up-thin`, and `arrow-down-thin`
+
 ## 0.6.16
 
 ### Patch Changes

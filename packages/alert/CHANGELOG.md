@@ -1,5 +1,15 @@
 # @launchpad-ui/alert
 
+## 0.6.28
+
+### Patch Changes
+
+- [#660](https://github.com/launchdarkly/launchpad-ui/pull/660) [`42c00505`](https://github.com/launchdarkly/launchpad-ui/commit/42c00505f606b0c4af43c3ca6f5962b1f59a1093) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Alert] add min-width to fix white-space: nowrap bug
+
+- Updated dependencies [[`f873c6f3`](https://github.com/launchdarkly/launchpad-ui/commit/f873c6f3af18b55e72883464e9698ea172021c8e)]:
+  - @launchpad-ui/icons@0.6.17
+  - @launchpad-ui/button@0.7.25
+
 ## 0.6.27
 
 ### Patch Changes

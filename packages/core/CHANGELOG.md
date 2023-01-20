@@ -1,5 +1,32 @@
 # @launchpad-ui/core
 
+## 0.26.7
+
+### Patch Changes
+
+- [#658](https://github.com/launchdarkly/launchpad-ui/pull/658) [`f873c6f3`](https://github.com/launchdarkly/launchpad-ui/commit/f873c6f3af18b55e72883464e9698ea172021c8e) Thanks [@goyanespaula](https://github.com/goyanespaula)! - [Icons] Add `arrow-left-thin`, `arrow-right-thin`, `arrow-up-thin`, and `arrow-down-thin`
+
+- [#660](https://github.com/launchdarkly/launchpad-ui/pull/660) [`42c00505`](https://github.com/launchdarkly/launchpad-ui/commit/42c00505f606b0c4af43c3ca6f5962b1f59a1093) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Alert] add min-width to fix white-space: nowrap bug
+
+- Updated dependencies [[`f873c6f3`](https://github.com/launchdarkly/launchpad-ui/commit/f873c6f3af18b55e72883464e9698ea172021c8e), [`42c00505`](https://github.com/launchdarkly/launchpad-ui/commit/42c00505f606b0c4af43c3ca6f5962b1f59a1093)]:
+  - @launchpad-ui/icons@0.6.17
+  - @launchpad-ui/alert@0.6.28
+  - @launchpad-ui/avatar@0.4.27
+  - @launchpad-ui/banner@0.8.2
+  - @launchpad-ui/button@0.7.25
+  - @launchpad-ui/clipboard@0.8.39
+  - @launchpad-ui/drawer@0.1.22
+  - @launchpad-ui/dropdown@0.6.22
+  - @launchpad-ui/filter@0.4.49
+  - @launchpad-ui/form@0.6.32
+  - @launchpad-ui/menu@0.6.46
+  - @launchpad-ui/modal@0.12.20
+  - @launchpad-ui/pagination@0.3.33
+  - @launchpad-ui/snackbar@0.3.25
+  - @launchpad-ui/toast@0.2.25
+  - @launchpad-ui/split-button@0.6.41
+  - @launchpad-ui/navigation@0.7.7
+
 ## 0.26.6
 
 ### Patch Changes

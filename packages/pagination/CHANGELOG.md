@@ -1,5 +1,13 @@
 # @launchpad-ui/pagination
 
+## 0.3.33
+
+### Patch Changes
+
+- Updated dependencies [[`f873c6f3`](https://github.com/launchdarkly/launchpad-ui/commit/f873c6f3af18b55e72883464e9698ea172021c8e)]:
+  - @launchpad-ui/icons@0.6.17
+  - @launchpad-ui/button@0.7.25
+
 ## 0.3.32
 
 ### Patch Changes
