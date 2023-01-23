@@ -14,6 +14,7 @@ import { titlecase } from './utils';
 
 type NavigationMenuDropdownProps<T extends object> = CollectionBase<T> & {
   kind: NavProps['kind'];
+  title: string;
 };
 
 const NavigationMenuDropdown = <T extends object>(props: NavigationMenuDropdownProps<T>) => {
@@ -25,12 +26,14 @@ const NavigationMenuDropdown = <T extends object>(props: NavigationMenuDropdownP
   // Adapted from https://github.com/remix-run/react-router/blob/main/packages/react-router-dom/index.tsx#L506-L510
   // ...recreate the `isActive` behavior of a NavLink to map the current route to the selected option
   const [selectedItem] = useState<string>(() => {
-    return [...state.collection].find(({ props }) => {
-      return (
-        pathname === props.to ||
-        (pathname.startsWith(props.to) && pathname.charAt(props.to.length) === '/')
-      );
-    })?.props.name;
+    return (
+      [...state.collection].find(({ props }) => {
+        return (
+          pathname === props.to ||
+          (pathname.startsWith(props.to) && pathname.charAt(props.to.length) === '/')
+        );
+      })?.props.name || props.title
+    );
   });
 
   useEffect(() => {

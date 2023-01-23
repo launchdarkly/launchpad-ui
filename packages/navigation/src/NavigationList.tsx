@@ -28,7 +28,7 @@ const NavigationList = <T extends object>({
   return (
     <div className={styles['NavigationList-wrapper']} ref={refs.wrapperRef}>
       {shouldCollapse ? (
-        <NavigationMenuDropdown kind={kind} {...rest} />
+        <NavigationMenuDropdown kind={kind} title={title} {...rest} />
       ) : (
         <Nav kind={kind} ref={refs.itemListRef}>
           {[...state.collection].map((item) => {

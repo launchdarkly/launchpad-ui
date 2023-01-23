@@ -39,8 +39,14 @@
   position: relative;
 }
 
-.Nav--secondary {
-  border-bottom: 1px solid var(--lp-color-border-ui-secondary);
+.Nav--secondary::after {
+  content: '';
+  position: absolute;
+  height: 0.1rem;
+  width: 100%;
+  left: 0;
+  bottom: 0.2rem;
+  background-color: var(--lp-color-border-ui-secondary);
 }
 
 .Nav--primary > .NavPopover-target {
@@ -57,8 +63,7 @@
   align-items: center;
   font-size: 1.5rem;
   font-weight: var(--lp-font-weight-medium);
-  padding: 1rem 1.5rem;
-  border-bottom: 2px solid transparent;
+  padding: 0 1.2rem;
   text-decoration: none;
   color: var(--lp-color-text-interactive-secondary);
   position: relative;
@@ -76,19 +81,32 @@
   overflow: hidden;
   user-select: none;
   pointer-events: none;
-  padding: 0.1rem 0 0.2rem;
+  padding: 0 0.4rem;
 }
 
 .Nav--primary .NavItem.is-active {
   color: var(--lp-color-text-ui-primary);
-  border-bottom-color: var(--lp-color-text-ui-primary);
   font-weight: var(--lp-font-weight-bold);
 }
 
 .NavItem-name {
-  padding: 0.1rem 0 0.2rem;
+  display: flex;
   text-align: center;
   white-space: nowrap;
+  border-bottom: 2px solid transparent;
+}
+
+.Nav--primary .NavItem-name {
+  padding: 1.3rem 0.4rem;
+}
+
+.Nav--secondary .NavItem-name {
+  padding: 0 0.4rem;
+  border-bottom-width: 0.3rem;
+}
+
+.NavItem.is-active .NavItem-name {
+  border-bottom-color: var(--lp-color-text-ui-primary);
 }
 
 .NavItem:focus {
@@ -100,11 +118,11 @@
   display: block;
   font-size: 1.7rem;
   font-weight: var(--lp-font-weight-medium);
-  padding: 1rem 1.4rem 0;
-  border-bottom: 1px solid transparent;
+  padding: 1rem 1.2rem 0.1rem;
   text-decoration: none;
   color: var(--lp-color-text-ui-secondary);
   position: relative;
+  z-index: 1;
   border-radius: 0;
 }
 
@@ -113,9 +131,12 @@
 }
 
 .NavItem:focus .NavItem-name {
-  padding: 0.1rem 0 0.2rem;
   box-shadow: 0 0 0 0.2rem var(--lp-color-blue-500);
   border-radius: 0.6rem;
+}
+
+.Nav--primary .NavItem:focus .NavItem-name {
+  padding: 1.3rem 0.4rem;
 }
 
 .Nav--primary .NavItem:hover {
@@ -149,26 +170,16 @@
 
 .Nav--secondary .NavItem.is-active {
   color: var(--lp-color-text-ui-primary);
-  border-bottom: 0.3rem solid var(--lp-color-border-interactive-secondary-active);
-  margin-bottom: -0.16rem; /* slightly larger than half to account for browser rounding */
 }
 
-.Nav--secondary .NavItem.is-active::before,
-.Nav--secondary .NavItem.is-active::after {
-  content: '';
-  position: absolute;
-  left: 50%;
-}
-
-.Nav--secondary .NavItem.is-active::after {
-  border-bottom-color: var(--lp-color-border-interactive-secondary-active);
-  bottom: -2px;
+.Nav--secondary .NavItem.is-active .NavItem-name {
+  border-color: var(--lp-color-border-interactive-secondary-active);
 }
 
 .NavItem-chip {
-  align-self: flex-start;
+  align-self: center;
   border-radius: 0.4rem;
-  margin-top: 0.4rem;
+  margin: 0 0 0 0.8rem;
   min-width: 3.5rem;
   padding: 0.1rem 0;
 }
