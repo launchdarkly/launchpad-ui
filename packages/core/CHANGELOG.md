@@ -1,5 +1,14 @@
 # @launchpad-ui/core
 
+## 0.26.8
+
+### Patch Changes
+
+- [#661](https://github.com/launchdarkly/launchpad-ui/pull/661) [`68a7ad38`](https://github.com/launchdarkly/launchpad-ui/commit/68a7ad38fcf47358417991a0ae3ec1439404b15c) Thanks [@kwatkins-ld](https://github.com/kwatkins-ld)! - [Navigation] improve collapsed Navigation: better a11y support, remove render jank
+
+- Updated dependencies [[`68a7ad38`](https://github.com/launchdarkly/launchpad-ui/commit/68a7ad38fcf47358417991a0ae3ec1439404b15c)]:
+  - @launchpad-ui/navigation@0.7.8
+
 ## 0.26.7
 
 ### Patch Changes
