@@ -3,7 +3,7 @@ import type { CollectionBase } from '@react-types/shared';
 
 import { useResizeObserver, useValueEffect } from '@react-aria/utils';
 import { cx } from 'classix';
-import { useCallback, useEffect, useRef } from 'react';
+import { useCallback, useLayoutEffect, useRef } from 'react';
 
 import { NavigationContext } from './NavigationContext';
 import { NavigationList } from './NavigationList';
@@ -47,7 +47,7 @@ const Navigation = <T extends object>(props: NavigationProps<T>) => {
     });
   }, [wrapperRef, itemListRef, setCollapse]);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     checkShouldCollapse();
   }, [children, checkShouldCollapse]);
 
