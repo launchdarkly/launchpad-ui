@@ -15,7 +15,7 @@
 }
 
 .drawer {
-  z-index: var(--lp-z-index-300);
+  z-index: var(--lp-z-index-400);
   position: fixed;
   top: 0;
   right: 0;
