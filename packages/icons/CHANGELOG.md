@@ -1,5 +1,11 @@
 # @launchpad-ui/icons
 
+## 0.6.19
+
+### Patch Changes
+
+- [#664](https://github.com/launchdarkly/launchpad-ui/pull/664) [`990af4a5`](https://github.com/launchdarkly/launchpad-ui/commit/990af4a5c7490a322604272cf9edc16ce9427cf1) Thanks [@lwonsower](https://github.com/lwonsower)! - [Icons] Add `ArrowDropDown` and `ArrowRight` icons
+
 ## 0.6.18
 
 ### Patch Changes
