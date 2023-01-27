@@ -1,5 +1,30 @@
 # @launchpad-ui/core
 
+## 0.26.10
+
+### Patch Changes
+
+- [#664](https://github.com/launchdarkly/launchpad-ui/pull/664) [`990af4a5`](https://github.com/launchdarkly/launchpad-ui/commit/990af4a5c7490a322604272cf9edc16ce9427cf1) Thanks [@lwonsower](https://github.com/lwonsower)! - [Icons] Add `ArrowDropDown` and `ArrowRight` icons
+
+- Updated dependencies [[`990af4a5`](https://github.com/launchdarkly/launchpad-ui/commit/990af4a5c7490a322604272cf9edc16ce9427cf1)]:
+  - @launchpad-ui/icons@0.6.19
+  - @launchpad-ui/alert@0.6.30
+  - @launchpad-ui/avatar@0.4.29
+  - @launchpad-ui/banner@0.8.4
+  - @launchpad-ui/button@0.7.27
+  - @launchpad-ui/clipboard@0.8.41
+  - @launchpad-ui/drawer@0.1.24
+  - @launchpad-ui/dropdown@0.6.24
+  - @launchpad-ui/filter@0.4.51
+  - @launchpad-ui/form@0.6.34
+  - @launchpad-ui/menu@0.6.48
+  - @launchpad-ui/modal@0.12.22
+  - @launchpad-ui/navigation@0.7.10
+  - @launchpad-ui/pagination@0.3.35
+  - @launchpad-ui/snackbar@0.3.27
+  - @launchpad-ui/toast@0.2.27
+  - @launchpad-ui/split-button@0.6.43
+
 ## 0.26.9
 
 ### Patch Changes
