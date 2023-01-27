@@ -116,6 +116,8 @@ color:
       value: hsl(220, 1.7%, 35.1%)
     800:
       value: hsl(270, 1.5%, 25.5%)
+    900:
+      value: hsl(0, 0%, 19%)
   black:
     100:
       value: hsl(0, 0%, 15.7%)
@@ -213,7 +215,7 @@ color:
       secondary:
         ' ':
           value: '{ color.white. .value }'
-          dark: '{ color.black.300.value }'
+          dark: '{ color.black.200.value }'
         active:
           value: '{ color.gray.200.value }'
           dark: '{ color.gray.800.value }'

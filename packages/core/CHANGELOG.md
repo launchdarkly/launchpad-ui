@@ -1,5 +1,51 @@
 # @launchpad-ui/core
 
+## 0.26.9
+
+### Patch Changes
+
+- [#666](https://github.com/launchdarkly/launchpad-ui/pull/666) [`20439f2d`](https://github.com/launchdarkly/launchpad-ui/commit/20439f2d0533bf574b613d16d5d31eb688cb629f) Thanks [@chasedarkly](https://github.com/chasedarkly)! - Bump z-index values
+
+  [Drawer] Increase z-index from 300 to 400
+  [Modal] Increase z-index from 400 to 500
+  [Popover] Increase z-index from 500 to 600
+  [Snackbar] Increase z-index from 700 to 800
+  [Toast] Increase z-index from 700 to 800
+  [Tooltip] Increase z-index from 600 to 700
+
+- [#665](https://github.com/launchdarkly/launchpad-ui/pull/665) [`808902f7`](https://github.com/launchdarkly/launchpad-ui/commit/808902f71c0b410adf86b0ee1683a2d36c4cdb22) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Tokens] Add `--lp-color-gray-900` and modify `--lp-color-bg-interactive-secondary` darkmode color
+
+- Updated dependencies [[`20439f2d`](https://github.com/launchdarkly/launchpad-ui/commit/20439f2d0533bf574b613d16d5d31eb688cb629f), [`808902f7`](https://github.com/launchdarkly/launchpad-ui/commit/808902f71c0b410adf86b0ee1683a2d36c4cdb22)]:
+  - @launchpad-ui/drawer@0.1.23
+  - @launchpad-ui/modal@0.12.21
+  - @launchpad-ui/popover@0.8.35
+  - @launchpad-ui/snackbar@0.3.26
+  - @launchpad-ui/toast@0.2.26
+  - @launchpad-ui/tooltip@0.6.36
+  - @launchpad-ui/tokens@0.4.9
+  - @launchpad-ui/dropdown@0.6.23
+  - @launchpad-ui/menu@0.6.47
+  - @launchpad-ui/navigation@0.7.9
+  - @launchpad-ui/progress-bubbles@0.5.37
+  - @launchpad-ui/split-button@0.6.42
+  - @launchpad-ui/clipboard@0.8.40
+  - @launchpad-ui/filter@0.4.50
+  - @launchpad-ui/alert@0.6.29
+  - @launchpad-ui/avatar@0.4.28
+  - @launchpad-ui/banner@0.8.3
+  - @launchpad-ui/button@0.7.26
+  - @launchpad-ui/chip@0.6.19
+  - @launchpad-ui/counter@0.3.19
+  - @launchpad-ui/form@0.6.33
+  - @launchpad-ui/icons@0.6.18
+  - @launchpad-ui/markdown@0.3.18
+  - @launchpad-ui/pagination@0.3.34
+  - @launchpad-ui/progress@0.5.17
+  - @launchpad-ui/slider@0.3.17
+  - @launchpad-ui/tab-list@0.4.19
+  - @launchpad-ui/table@0.4.18
+  - @launchpad-ui/toggle@0.4.20
+
 ## 0.26.8
 
 ### Patch Changes
