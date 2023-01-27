@@ -1,4 +1,6 @@
+import type { SelectState } from '@react-stately/select';
 import type { AriaSelectProps } from '@react-types/select';
+import type { ReactNode } from 'react';
 
 import { ExpandMore } from '@launchpad-ui/icons';
 import { useButton } from '@react-aria/button';
@@ -14,7 +16,11 @@ import { ListBox } from './ListBox';
 import { Popover } from './Popover';
 import styles from './styles/Combobox.module.css';
 
-const Select = <T extends object>(props: AriaSelectProps<T>) => {
+type SelectProps<T extends object> = AriaSelectProps<T> & {
+  renderSelectedItem?: (state: SelectState<T>) => ReactNode;
+};
+
+const Select = <T extends object>({ renderSelectedItem, ...props }: SelectProps<T>) => {
   // Create state based on the incoming props
   const state = useSelectState(props);
 
@@ -27,6 +33,17 @@ const Select = <T extends object>(props: AriaSelectProps<T>) => {
 
   const { focusProps, isFocusVisible } = useFocusRing();
 
+  const renderSelected = () => {
+    if (state.selectedItem) {
+      if (renderSelectedItem) {
+        return renderSelectedItem(state);
+      }
+      return state.selectedItem.rendered;
+    }
+
+    return 'Select an option';
+  };
+
   return (
     <div>
       <VisuallyHidden>
@@ -38,17 +55,19 @@ const Select = <T extends object>(props: AriaSelectProps<T>) => {
         ref={ref}
         className={cx(styles.container, state.isOpen && styles.isOpen)}
       >
-        <span
-          {...valueProps}
-          className={`text-md ${state.selectedItem ? 'text-gray-800' : 'text-gray-500'}`}
-        >
-          {console.log(state.selectedItem)}
-          {state.selectedItem ? state.selectedItem.rendered : 'Select an option'}
+        <span className={styles.valueContainer}>
+          <span className={styles.singleValue} {...valueProps}>
+            {renderSelected()}
+          </span>
         </span>
-        <ExpandMore className={styles.expandMore} />
+        <span className={styles.indicatorsContainer}>
+          <span className={styles.expandIndicatorContainer} aria-hidden="true">
+            <ExpandMore />
+          </span>
+        </span>
       </button>
       {state.isOpen && (
-        <Popover state={state} triggerRef={ref} placement="bottom start" className="w-52">
+        <Popover state={state} triggerRef={ref} placement="bottom start">
           <ListBox {...menuProps} state={state} />
         </Popover>
       )}

@@ -1,9 +1,9 @@
 import type { StoryObj } from '@storybook/react';
 
 import { Chip } from '@launchpad-ui/chip';
-import { useListData } from '@react-stately/data';
+import { Item } from '@react-stately/collections';
 
-import { CollectionItem, Combobox, Picker } from '../src';
+import { Combobox } from '../src';
 
 export default {
   component: Combobox,
@@ -21,24 +21,23 @@ type Story = StoryObj<typeof Combobox>;
 
 export const Default: Story = {
   render: () => {
-    const list = useListData({
-      initialItems: [{ name: 'Aardvark' }, { name: 'Kangaroo' }, { name: 'Snake' }],
-      initialSelectedKeys: ['Kangaroo'],
-      getKey: (item) => item.name,
-    });
-
     return (
-      <Combobox label="Favorite Animal">
-        <CollectionItem textValue="Red Panda" key="red panda">
+      <Combobox
+        label="Favorite Animal"
+        onSelectionChange={(key) => {
+          console.log(key);
+        }}
+      >
+        <Item textValue="Red Panda" key="red panda">
           Red Panda <Chip>hello</Chip>
-        </CollectionItem>
-        <CollectionItem key="cat">Cat</CollectionItem>
-        <CollectionItem key="dog">Dog</CollectionItem>
-        <CollectionItem key="aardvark">Aardvark</CollectionItem>
-        <CollectionItem key="kangaroo">
+        </Item>
+        <Item key="cat">Cat</Item>
+        <Item key="dog">Dog</Item>
+        <Item key="aardvark">Aardvark</Item>
+        <Item textValue="Kangaroo" key="kangaroo">
           Kangaroo <Chip>hello</Chip>
-        </CollectionItem>
-        <CollectionItem key="snake">Snake</CollectionItem>
+        </Item>
+        <Item key="snake">Snake</Item>
       </Combobox>
     );
   },

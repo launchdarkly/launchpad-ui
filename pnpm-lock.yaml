@@ -365,6 +365,7 @@ importers:
     specifiers:
       '@launchpad-ui/button': workspace:~
       '@launchpad-ui/icons': workspace:~
+      '@launchpad-ui/modal': workspace:~
       '@launchpad-ui/popover': workspace:~
       '@launchpad-ui/tokens': workspace:~
       '@launchpad-ui/tooltip': workspace:~
@@ -376,6 +377,7 @@ importers:
       '@react-aria/listbox': 3.7.2
       '@react-aria/overlays': 3.12.1
       '@react-aria/select': 3.8.4
+      '@react-aria/separator': 3.2.6
       '@react-aria/utils': 3.14.1
       '@react-aria/visually-hidden': 3.6.1
       '@react-stately/collections': 3.5.1
@@ -393,6 +395,7 @@ importers:
     dependencies:
       '@launchpad-ui/button': link:../button
       '@launchpad-ui/icons': link:../icons
+      '@launchpad-ui/modal': link:../modal
       '@launchpad-ui/popover': link:../popover
       '@launchpad-ui/tokens': link:../tokens
       '@launchpad-ui/tooltip': link:../tooltip
@@ -404,6 +407,7 @@ importers:
       '@react-aria/listbox': 3.7.2_react@18.2.0
       '@react-aria/overlays': 3.12.1_biqbaboplfbrettd7655fr4n2y
       '@react-aria/select': 3.8.4_biqbaboplfbrettd7655fr4n2y
+      '@react-aria/separator': 3.2.6_react@18.2.0
       '@react-aria/utils': 3.14.1_react@18.2.0
       '@react-aria/visually-hidden': 3.6.1_react@18.2.0
       '@react-stately/collections': 3.5.1_react@18.2.0
@@ -5109,6 +5113,17 @@ packages:
       react: 18.2.0
     dev: false
 
+  /@react-aria/separator/3.2.6_react@18.2.0:
+    resolution: {integrity: sha512-QhYqoLfu+4T3ASCs5Q8ZWfBbRKBUmqquVdREWvHyvVyOBk9kRN9nxsoIxlkss1RJlJJx59AYF9T9CwgL80/bvw==}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0 || 18
+    dependencies:
+      '@react-aria/utils': 3.14.2_react@18.2.0
+      '@react-types/shared': 3.16.0_react@18.2.0
+      '@swc/helpers': 0.4.14
+      react: 18.2.0
+    dev: false
+
   /@react-aria/ssr/3.4.0_react@18.2.0:
     resolution: {integrity: sha512-qzuGk14/fUyUAoW/EBwgFcuMkVNXJVGlezTgZ1HovpCZ+p9844E7MUFHE7CuzFzPEIkVeqhBNIoIu+VJJ8YCOA==}
     peerDependencies:
@@ -6036,7 +6051,7 @@ packages:
       '@storybook/csf-plugin': 7.0.0-beta.16
       '@storybook/csf-tools': 7.0.0-beta.16
       '@storybook/global': 5.0.0
-      '@storybook/mdx2-csf': 1.0.0-next.4
+      '@storybook/mdx2-csf': 1.0.0-next.5
       '@storybook/node-logger': 7.0.0-beta.16
       '@storybook/postinstall': 7.0.0-beta.16
       '@storybook/preview-api': 7.0.0-beta.16
@@ -6364,7 +6379,7 @@ packages:
       '@storybook/client-logger': 7.0.0-beta.16
       '@storybook/core-common': 7.0.0-beta.16
       '@storybook/csf-plugin': 7.0.0-beta.16
-      '@storybook/mdx2-csf': 1.0.0-next.4
+      '@storybook/mdx2-csf': 1.0.0-next.5
       '@storybook/node-logger': 7.0.0-beta.16
       '@storybook/preview': 7.0.0-beta.16
       '@storybook/preview-api': 7.0.0-beta.16
@@ -6618,7 +6633,7 @@ packages:
       '@storybook/core-events': 7.0.0-beta.16
       '@storybook/csf': 0.0.2-next.8
       '@storybook/csf-tools': 7.0.0-beta.16
-      '@storybook/docs-mdx': 0.0.1-next.5
+      '@storybook/docs-mdx': 0.0.1-next.6
       '@storybook/global': 5.0.0
       '@storybook/node-logger': 7.0.0-beta.16
       '@storybook/preview-api': 7.0.0-beta.16
@@ -6694,8 +6709,8 @@ packages:
       type-fest: 2.19.0
     dev: true
 
-  /@storybook/docs-mdx/0.0.1-next.5:
-    resolution: {integrity: sha512-EowXFPq4TBZQguKCdU8y7EzpuSv2vSu5gy7pgF/1P5mq7LG9h8YIrerOW9DL4zfp9E0GHIWlSXR5KuFIqqKc/Q==}
+  /@storybook/docs-mdx/0.0.1-next.6:
+    resolution: {integrity: sha512-DjoSIXADmLJtdroXAjUotFiZlcZ2usWhqrS7aeOtZs0DVR0Ws5WQjnwtpDUXt8gryTSd+OZJ0cNsDcqg4JDEvQ==}
     dev: true
 
   /@storybook/docs-tools/7.0.0-beta.16:
@@ -6772,8 +6787,8 @@ packages:
     resolution: {integrity: sha512-iyqewtzPGdJQUin+t2V+5AayjN9bivj1jgLIV5C1+5CGGgqrjY9oreiskFNyy1Ay5L7Y8aXcLCGAb/ku8NVvmg==}
     dev: true
 
-  /@storybook/mdx2-csf/1.0.0-next.4:
-    resolution: {integrity: sha512-nvRgYdpYvXsvSgCzKc4LQA1JxtJzmv47IsFAsh1rTz5FoHyK8watLU2WqX9T4w52fpFXBHx7RwGEsCRt0XgZlQ==}
+  /@storybook/mdx2-csf/1.0.0-next.5:
+    resolution: {integrity: sha512-02w0sgGZaK1agT050yCVhJ+o4rLHANWvLKWjQjeAsYbjneLC5ITt+3GDB4jRiWwJboZ8dHW1fGSK1Vg5fA34aQ==}
     dev: true
 
   /@storybook/node-logger/7.0.0-beta.16:

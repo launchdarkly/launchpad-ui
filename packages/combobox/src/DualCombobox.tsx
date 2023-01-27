@@ -1,12 +1,15 @@
+import type { ComboBoxState } from '@react-stately/combobox';
 import type { ComboBoxProps } from '@react-types/combobox';
 
 import { Close, ExpandMore } from '@launchpad-ui/icons';
 import { useButton } from '@react-aria/button';
 import { useComboBox } from '@react-aria/combobox';
 import { useFilter } from '@react-aria/i18n';
+import { mergeProps } from '@react-aria/utils';
 import { VisuallyHidden } from '@react-aria/visually-hidden';
 import { Item as CollectionItem, Section as CollectionSection } from '@react-stately/collections';
-import { ComboBoxState, useComboBoxState } from '@react-stately/combobox';
+
+import { useComboBoxState } from '@react-stately/combobox';
 import cx from 'classix';
 import { ReactNode, useRef } from 'react';
 
@@ -22,7 +25,6 @@ const Combobox = <T extends object>({ renderSelectedItem, ...props }: ComboboxPr
   const { contains } = useFilter({ sensitivity: 'base' });
   const state = useComboBoxState({
     ...props,
-    allowsCustomValue: true,
     defaultFilter: contains,
   });
 
@@ -68,27 +70,14 @@ const Combobox = <T extends object>({ renderSelectedItem, ...props }: ComboboxPr
       </VisuallyHidden>
 
       <button
-        className={cx(styles.container, state.isOpen && styles.isOpen)}
-        tabIndex={0}
+        {...mergeProps(buttonProps, focusProps)}
         ref={buttonRef}
-        {...buttonProps}
+        className={cx(styles.container, state.isOpen && styles.isOpen)}
       >
-        {/* <input {...inputProps} className={styles.input} />
-        <button
-          {...buttonProps}
-          ref={buttonRef}
-          className={cx(
-            styles.expandMoreButton,
-            state.isFocused ? 'border-pink-500 text-pink-600' : 'border-gray-300 text-gray-500'
-          )}
-        >
-          <ExpandMore className={styles.expandMore} aria-hidden="true" />
-        </button> */}
-
-        <span className={styles.valueContainer}>
+        <span {...valueProps} className={styles.valueContainer}>
           <span className={styles.singleValue}>{renderSelected()}</span>
           <span className={styles.inputContainer}>
-            <input {...inputProps} className={styles.input} ref={inputRef} />
+            <input {...inputProps} ref={inputRef} className={styles.input} />
           </span>
         </span>
         <span className={styles.indicatorsContainer}>
@@ -100,10 +89,11 @@ const Combobox = <T extends object>({ renderSelectedItem, ...props }: ComboboxPr
           </span>
         </span>
       </button>
+
       {state.isOpen && (
         <Popover
           popoverRef={popoverRef}
-          triggerRef={buttonRef}
+          triggerRef={inputRef}
           state={state}
           isNonModal
           placement="bottom start"
@@ -117,3 +107,24 @@ const Combobox = <T extends object>({ renderSelectedItem, ...props }: ComboboxPr
 
 export { Combobox, CollectionItem, CollectionSection };
 export type { ComboboxProps };
+
+// <div
+// className={cx(styles.container, state.isOpen && styles.isOpen)}
+// role="button"
+// tabIndex={0}
+// onClick={() => state.setOpen(true)}
+// onKeyUp={() => state.setOpen(true)}
+// ref={inputRef}
+// >
+// <input {...inputProps} className={styles.input} />
+// <button
+//   {...buttonProps}
+//   ref={buttonRef}
+//   className={cx(
+//     styles.expandMoreButton,
+//     state.isFocused ? 'border-pink-500 text-pink-600' : 'border-gray-300 text-gray-500'
+//   )}
+// >
+//   <ExpandMore className={styles.expandMore} aria-hidden="true" />
+// </button>
+// </div>
