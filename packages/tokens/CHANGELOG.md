@@ -1,5 +1,11 @@
 # @launchpad-ui/tokens
 
+## 0.4.9
+
+### Patch Changes
+
+- [#665](https://github.com/launchdarkly/launchpad-ui/pull/665) [`808902f7`](https://github.com/launchdarkly/launchpad-ui/commit/808902f71c0b410adf86b0ee1683a2d36c4cdb22) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Tokens] Add `--lp-color-gray-900` and modify `--lp-color-bg-interactive-secondary` darkmode color
+
 ## 0.4.8
 
 ### Patch Changes
