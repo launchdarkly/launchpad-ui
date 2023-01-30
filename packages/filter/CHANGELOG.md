@@ -1,5 +1,11 @@
 # @launchpad-ui/filter
 
+## 0.5.0-alpha.1
+
+### Minor Changes
+
+- [#675](https://github.com/launchdarkly/launchpad-ui/pull/675) [`f7647a6f`](https://github.com/launchdarkly/launchpad-ui/commit/f7647a6f71c5a9fb6890770528e665594ca58e93) Thanks [@kwatkins-ld](https://github.com/kwatkins-ld)! - update to react-router-dom@6.7.0
+
 ## 0.4.52-alpha.0
 
 ### Patch Changes
