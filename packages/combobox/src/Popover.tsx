@@ -39,7 +39,9 @@ const Popover = (props: PopoverProps) => {
   );
 
   const width = useMemo(() => {
-    return triggerRef.current?.clientWidth || undefined;
+    const clientWidth = triggerRef.current?.clientWidth || 0;
+    const minWidth = 400;
+    return clientWidth < minWidth ? minWidth : clientWidth;
   }, [triggerRef]);
 
   return (

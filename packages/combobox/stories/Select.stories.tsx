@@ -5,8 +5,6 @@ import { Tooltip } from '@launchpad-ui/tooltip';
 import { Item } from '@react-stately/collections';
 
 import { Select } from '../src';
-import { MouseEventHandler, useState } from 'react';
-import { Modal, ModalBody, ModalHeader } from '@launchpad-ui/modal';
 
 export default {
   component: Select,
@@ -22,7 +20,7 @@ export default {
 
 type Story = StoryObj<typeof Select>;
 
-export const Default: Story = {
+export const WithCustomTrigger: Story = {
   render: () => {
     return (
       <Select
@@ -31,11 +29,16 @@ export const Default: Story = {
           { id: '1', value: 'Variation 1' },
           { id: '2', value: 'Variation 2' },
         ]}
-        renderSelectedItem={(state) => (
-          <Tooltip content="hey">
-            <span>{state.selectedItem.value.value}</span>
-          </Tooltip>
-        )}
+        renderTrigger={(triggerProps) => {
+          const { state, buttonProps, valueProps, ref } = triggerProps;
+          return (
+            <button {...buttonProps} ref={ref}>
+              <span {...valueProps}>
+                {state.selectedKey ? state.selectedItem.value.value : 'Select...'}
+              </span>
+            </button>
+          );
+        }}
       >
         {(item) => (
           <Item textValue={item.value}>
@@ -51,99 +54,61 @@ export const Default: Story = {
   parameters: { docs: { disable: false } },
 };
 
-const UserRow = ({
-  title,
-  id,
-  onSchedule,
-}: {
-  title: string;
-  id: string;
-  onSchedule: () => void;
-}) => {
-  return (
-    <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center' }}>
-      <div style={{ flex: 1 }}>
-        <h3 style={{ margin: 0 }}>{title}</h3>
-        <p style={{ margin: 0 }}>{id}</p>
-      </div>
-      <button onClick={onSchedule}>Add and schedule removal</button>
-    </div>
-  );
-};
-
-const AddUsersExample = () => {
-  const [open, setOpen] = useState(false);
-  const [name, setName] = useState('');
-  return (
-    <>
-      <Select
-        label="Users"
-        id="maintainerId"
-        onSelectionChange={(key) => {
-          setName(`${key}`);
-        }}
-        items={[
-          { id: '091328509132-0198590215-91208509125', value: 'Frank Sinatra' },
-          { id: '325328509132-9025390250-912o23u5525', value: 'Paula Abdul' },
-        ]}
-        placeholder="Search to find or add users"
-        renderSelectedItem={(state) => (
-          <Tooltip content="hey">
-            <span>{state.selectedItem.value.value}</span>
-          </Tooltip>
-        )}
-      >
-        {(item) => (
-          <Item textValue={item.value}>
-            <UserRow
-              title={item.value}
-              id={item.id}
-              onSchedule={() => {
-                console.log('hello?');
-                setOpen(true);
-              }}
-            />
-          </Item>
-        )}
-      </Select>
-      {open && (
-        <Modal onCancel={() => setOpen(false)}>
-          <ModalHeader title="Title" />
-          <ModalBody>
-            <p>Body text: {name}</p>
-          </ModalBody>
-        </Modal>
-      )}
-    </>
-  );
-};
-
-export const AddUsers: Story = {
-  render: () => {
-    return <AddUsersExample />;
-  },
-  parameters: { docs: { disable: false } },
-};
-
-export const FlagMaintainer: Story = {
+export const WithDefaultTrigger: Story = {
   render: () => {
     return (
       <Select
         label="Flag maintainer"
         id="maintainerId"
-        onSelectionChange={(key) => {
-          console.log('changing maintainer to ', key);
-        }}
+        placeholder="Select the maintainer for this flag"
+      >
+        <Item>One</Item>
+        <Item>Two</Item>
+      </Select>
+    );
+  },
+  parameters: { docs: { disable: false } },
+};
+
+export const WithTagListTrigger: Story = {
+  render: () => {
+    return (
+      <Select
+        label="Favorite Animal"
         items={[
           { id: '1', value: 'Variation 1' },
           { id: '2', value: 'Variation 2' },
         ]}
-        placeholder="Select the maintainer for this flag"
-        renderSelectedItem={(state) => (
-          <Tooltip content="hey">
-            <span>{state.selectedItem.value.value}</span>
-          </Tooltip>
-        )}
+        renderTrigger={(triggerProps) => {
+          const { state, buttonProps, valueProps, ref } = triggerProps;
+
+          return (
+            <div
+              style={{
+                width: '100%',
+                backgroundColor: '#efefef',
+                display: 'flex',
+                alignItems: 'center',
+                padding: '1rem',
+              }}
+            >
+              {state.selectedKey && (
+                <Chip
+                  kind="info"
+                  {...valueProps}
+                  onClick={() => {
+                    console.log(state.selectionManager.isEmpty);
+                  }}
+                >
+                  {state.selectedItem.value.value}
+                </Chip>
+              )}
+              <button {...buttonProps} ref={ref}>
+                +
+              </button>
+            </div>
+          );
+        }}
       >
         {(item) => (
           <Item textValue={item.value}>

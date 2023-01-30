@@ -77,6 +77,8 @@ const Option = ({ item, state }: OptionProps) => {
     ref
   );
 
+  console.log(state);
+
   return (
     <li
       {...optionProps}
