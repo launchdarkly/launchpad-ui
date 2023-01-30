@@ -43,7 +43,7 @@
     "@react-stately/list": "3.6.0",
     "@react-types/shared": "3.16.0",
     "classix": "2.1.17",
-    "react-router-dom": "6.4.2"
+    "react-router-dom": "6.7.0"
   },
   "peerDependencies": {
     "react": "18.2.0",
