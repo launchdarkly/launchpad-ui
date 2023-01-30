@@ -38,6 +38,7 @@
     "@launchpad-ui/tooltip": "0.6.36"
   },
   "changesets": [
+    "pretty-schools-study",
     "soft-fishes-repair"
   ]
 }
