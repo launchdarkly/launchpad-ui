@@ -1,5 +1,14 @@
 # @launchpad-ui/core
 
+## 0.26.11-alpha.0
+
+### Patch Changes
+
+- Updated dependencies [[`093a0942`](https://github.com/launchdarkly/launchpad-ui/commit/093a0942a07647cfd6d6919886f4a41c5f2d829b)]:
+  - @launchpad-ui/menu@0.7.0-alpha.0
+  - @launchpad-ui/navigation@0.8.0-alpha.0
+  - @launchpad-ui/filter@0.4.52-alpha.0
+
 ## 0.26.10
 
 ### Patch Changes
