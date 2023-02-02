@@ -1,21 +1,21 @@
 import type { AriaPopoverProps } from '@react-aria/overlays';
 import type { OverlayTriggerState } from '@react-stately/overlays';
-import { ReactNode, RefObject, useLayoutEffect, useMemo } from 'react';
+import type { ReactNode, RefObject } from 'react';
 
 import { usePopover, DismissButton, Overlay } from '@react-aria/overlays';
 import cx from 'classix';
-import { useRef } from 'react';
+import { useMemo, useRef } from 'react';
 
-import styles from './styles/Combobox.module.css';
+import styles from './styles/Select.module.css';
 
-type PopoverProps = Omit<AriaPopoverProps, 'popoverRef'> & {
+type SelectPopoverProps = Omit<AriaPopoverProps, 'popoverRef'> & {
   children: ReactNode;
   state: OverlayTriggerState;
   className?: string;
   popoverRef?: RefObject<HTMLDivElement>;
 };
 
-const Popover = (props: PopoverProps) => {
+const SelectPopover = (props: SelectPopoverProps) => {
   const ref = useRef<HTMLDivElement>(null);
   const {
     popoverRef = ref,
@@ -60,5 +60,5 @@ const Popover = (props: PopoverProps) => {
   );
 };
 
-export { Popover };
-export type { PopoverProps };
+export { SelectPopover };
+export type { SelectPopoverProps };

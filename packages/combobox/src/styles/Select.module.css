@@ -2,12 +2,25 @@
   list-style-type: none;
   padding: 0;
   margin: 0;
+  outline: none;
+}
+
+.section {
+  margin: 0;
+  padding: 0;
+}
+
+.sectionOptions {
+  margin: 0;
+  padding: 0;
 }
 
 .option {
   padding: 0.8rem 1.6rem;
   color: var(--lp-color-text-ui-primary);
   cursor: pointer;
+  list-style-type: none;
+  margin: 0;
 
   &.isSelected {
     background-color: rgb(64 91 255 / 0.05);
@@ -18,9 +31,21 @@
     outline: none;
   }
 
+  &.isDisabled {
+    opacity: 0.5;
+  }
+
   &:hover {
     background-color: rgb(64 91 255 / 0.15);
   }
+}
+
+.sectionHeader {
+  background-color: var(--lp-color-bg-ui-secondary);
+  color: var(--lp-color-text-ui-secondary);
+  font-weight: bold;
+  font-size: var(--lp-font-size-100);
+  padding: 0.4rem 1.6rem;
 }
 
 .combobox {
@@ -34,8 +59,6 @@
   border-radius: var(--lp-border-radius-regular);
   max-height: 55vh;
   overflow: auto;
-
-  /* --color-black-100 */
   box-shadow: 0 0 4px hsl(0 0% 15.7% / 0.12), 0 1px 2px hsl(0 0% 15.7% / 0.1),
     0 4px 4px hsl(0 0% 15.7% / 0.08);
 
@@ -45,7 +68,7 @@
   }
 }
 
-.container {
+.trigger {
   background-color: var(--lp-color-bg-field);
   border: 1px solid var(--lp-color-border-field);
   position: relative;
@@ -61,7 +84,8 @@
   margin: 0;
   align-items: center;
 
-  &.isOpen {
+  &.isOpen,
+  &.isFocused {
     box-shadow: inset 0 1px 1px rgb(0 0 0 / 0.075), 0 0 0 3px rgb(0 126 255 / 0.1);
     border-color: var(--lp-color-border-field-focus);
   }

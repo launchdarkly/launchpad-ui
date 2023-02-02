@@ -1,7 +1,4 @@
-import type {
-  MultiSelectProps as MultiSelectStateProps,
-  MultiSelectState,
-} from './useMultiSelectState';
+import type { UseSelectStateProps, SelectState } from './useSelectState';
 import type { AriaListBoxOptions } from '@react-aria/listbox';
 import type { AriaButtonProps } from '@react-types/button';
 import type { AriaSelectProps } from '@react-types/select';
@@ -15,13 +12,13 @@ import { ListKeyboardDelegate, useTypeSelect } from '@react-aria/selection';
 import { chain, filterDOMProps, mergeProps, useId } from '@react-aria/utils';
 import { useMemo } from 'react';
 
-type MultiSelectProps<T extends object> = Omit<AriaSelectProps<T>, 'onSelectionChange'> & {
+type UseSelectProps<T extends object> = Omit<AriaSelectProps<T>, 'onSelectionChange'> & {
   disallowEmptySelection?: boolean;
 
-  onSelectionChange?: MultiSelectStateProps<T>['onSelectionChange'];
+  onSelectionChange?: UseSelectStateProps<T>['onSelectionChange'];
 };
 
-type MultiSelectAria<T extends object> = {
+type SelectAria<T extends object> = {
   /** Props for the label element. */
   labelProps: HTMLAttributes<HTMLElement>;
 
@@ -35,11 +32,11 @@ type MultiSelectAria<T extends object> = {
   menuProps: AriaListBoxOptions<T>;
 };
 
-const useMultiSelect = <T extends object>(
-  props: MultiSelectProps<T>,
-  state: MultiSelectState<T>,
+const useSelect = <T extends object>(
+  props: UseSelectProps<T>,
+  state: SelectState<T>,
   ref: RefObject<HTMLElement>
-): MultiSelectAria<T> => {
+): SelectAria<T> => {
   const { disallowEmptySelection, isDisabled } = props;
 
   const collator = useCollator({ usage: 'search', sensitivity: 'base' });
@@ -59,7 +56,7 @@ const useMultiSelect = <T extends object>(
 
   const triggerOnKeyDown = (e: KeyboardEvent) => {
     // Select items when trigger has focus - imitating default `<select>` behaviour.
-    // In multi selection mode it does not make sense.
+    // In multi selection mode this does not make sense.
     if (state.selectionMode === 'single') {
       switch (e.key) {
         case 'ArrowLeft': {
@@ -90,8 +87,6 @@ const useMultiSelect = <T extends object>(
           }
           break;
         }
-
-        // no default
       }
     }
   };
@@ -183,7 +178,6 @@ const useMultiSelect = <T extends object>(
         }
         state.setFocused(false);
       },
-      // onFocus: menuProps.onFocus as unknown,
       'aria-labelledby': [
         fieldProps['aria-labelledby'],
         triggerProps['aria-label'] && !fieldProps['aria-labelledby'] ? triggerProps.id : null,
@@ -194,5 +188,5 @@ const useMultiSelect = <T extends object>(
   };
 };
 
-export { useMultiSelect };
-export type { MultiSelectProps, MultiSelectAria };
+export { useSelect };
+export type { UseSelectProps, SelectAria };

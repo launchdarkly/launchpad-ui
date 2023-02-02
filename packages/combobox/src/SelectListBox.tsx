@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-use-before-define */
+import type { SelectState } from './useSelectState';
 import type { AriaListBoxOptions } from '@react-aria/listbox';
-import type { ListState } from '@react-stately/list';
 import type { Node } from '@react-types/shared';
 import type { RefObject } from 'react';
 
@@ -8,24 +8,24 @@ import { useListBox, useListBoxSection, useOption } from '@react-aria/listbox';
 import cx from 'classix';
 import { useRef } from 'react';
 
-import styles from './styles/Combobox.module.css';
+import styles from './styles/Select.module.css';
 
-type ListBoxProps = AriaListBoxOptions<unknown> & {
+type SelectListBoxProps<T extends object> = AriaListBoxOptions<T> & {
   listBoxRef?: RefObject<HTMLUListElement>;
-  state: ListState<unknown>;
+  state: SelectState<T>;
 };
 
-type SectionProps = {
-  section: Node<unknown>;
-  state: ListState<unknown>;
+type SelectListBoxSectionProps<T extends object> = {
+  section: Node<T>;
+  state: SelectState<T>;
 };
 
-type OptionProps = {
-  item: Node<unknown>;
-  state: ListState<unknown>;
+type SelectListBoxOptionProps<T extends object> = {
+  item: Node<T>;
+  state: SelectState<T>;
 };
 
-const ListBox = (props: ListBoxProps) => {
+const SelectListBox = <T extends object>(props: SelectListBoxProps<T>) => {
   const ref = useRef<HTMLUListElement>(null);
   const { listBoxRef = ref, state } = props;
   const { listBoxProps } = useListBox(props, state, listBoxRef);
@@ -34,7 +34,7 @@ const ListBox = (props: ListBoxProps) => {
     <ul {...listBoxProps} ref={listBoxRef} className={styles.options}>
       {[...state.collection].map((item) =>
         item.type === 'section' ? (
-          <ListBoxSection key={item.key} section={item} state={state} />
+          <Section key={item.key} section={item} state={state} />
         ) : (
           <Option key={item.key} item={item} state={state} />
         )
@@ -43,7 +43,7 @@ const ListBox = (props: ListBoxProps) => {
   );
 };
 
-const ListBoxSection = ({ section, state }: SectionProps) => {
+const Section = <T extends object>({ section, state }: SelectListBoxSectionProps<T>) => {
   const { itemProps, headingProps, groupProps } = useListBoxSection({
     heading: section.rendered,
     'aria-label': section['aria-label'],
@@ -51,13 +51,13 @@ const ListBoxSection = ({ section, state }: SectionProps) => {
 
   return (
     <>
-      <li {...itemProps} className="pt-2">
+      <li {...itemProps} className={styles.section}>
         {section.rendered && (
-          <span {...headingProps} className="text-xs font-bold uppercase text-gray-500 mx-3">
+          <div {...headingProps} className={styles.sectionHeader}>
             {section.rendered}
-          </span>
+          </div>
         )}
-        <ul {...groupProps}>
+        <ul {...groupProps} className={styles.sectionOptions}>
           {[...section.childNodes].map((node) => (
             <Option key={node.key} item={node} state={state} />
           ))}
@@ -67,7 +67,7 @@ const ListBoxSection = ({ section, state }: SectionProps) => {
   );
 };
 
-const Option = ({ item, state }: OptionProps) => {
+const Option = <T extends object>({ item, state }: SelectListBoxOptionProps<T>) => {
   const ref = useRef<HTMLLIElement>(null);
   const { optionProps, isDisabled, isSelected, isFocused } = useOption(
     {
@@ -77,17 +77,27 @@ const Option = ({ item, state }: OptionProps) => {
     ref
   );
 
-  console.log(state);
-
   return (
     <li
       {...optionProps}
       ref={ref}
-      className={cx(styles.option, isFocused && styles.isFocused, isSelected && styles.isSelected)}
+      className={cx(
+        styles.option,
+        isDisabled && styles.isDisabled,
+        isFocused && styles.isFocused,
+        isSelected && styles.isSelected
+      )}
     >
-      {item.rendered}
+      {state.selectionMode === 'multiple' && (
+        <input type="checkbox" disabled={isDisabled} checked={isSelected} readOnly />
+      )}
+      {typeof item.rendered === 'string' ? (
+        <span className="truncate block">{item.rendered}</span>
+      ) : (
+        item.rendered
+      )}
     </li>
   );
 };
 
-export { ListBox, ListBoxSection, Option };
+export { SelectListBox };

@@ -1,92 +1,171 @@
-import type { SelectState } from '@react-stately/select';
-import type { AriaSelectProps } from '@react-types/select';
-import type { FocusableElement } from '@react-types/shared';
+import type { SelectState, UseSelectStateProps } from './useSelectState';
+import type { CollectionBase, FocusableElement, Node } from '@react-types/shared';
 import type { ButtonHTMLAttributes, DOMAttributes, ReactNode, RefObject } from 'react';
 
-import { ExpandMore } from '@launchpad-ui/icons';
+import { Button, ButtonGroup } from '@launchpad-ui/button';
 import { useButton } from '@react-aria/button';
 import { useFocusRing } from '@react-aria/focus';
-import { useSelect, HiddenSelect } from '@react-aria/select';
-import { mergeProps } from '@react-aria/utils';
-import { VisuallyHidden } from '@react-aria/visually-hidden';
-import { useSelectState } from '@react-stately/select';
+import { mergeProps, useObjectRef } from '@react-aria/utils';
 import cx from 'classix';
-import { useMemo, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 
-import { ListBox } from './ListBox';
-import { Popover } from './Popover';
-import styles from './styles/Combobox.module.css';
+import { DefaultSelectTrigger } from './DefaultSelectTrigger';
+import { SelectListBox } from './SelectListBox';
+import { SelectPopover } from './SelectPopover';
+import { useSelect } from './useSelect';
+import { useSelectState } from './useSelectState';
 
-const defaultTrigger: SelectProps<object>['renderTrigger'] = (props) => {
-  const { state, buttonProps, valueProps, ref } = props;
+type SelectTriggerChildrenState<T extends object> = SelectState<T> & { selectedItems: Node<T>[] };
 
-  return (
-    <button
-      {...buttonProps}
-      ref={ref}
-      className={cx(styles.container, state.isOpen && styles.isOpen)}
-    >
-      <span className={styles.valueContainer}>
-        <span className={styles.singleValue} {...valueProps}>
-          {state.selectedKey ? state.selectedItem.textValue : 'Select an option'}
-        </span>
-      </span>
-      <span className={styles.indicatorsContainer}>
-        <span className={styles.expandIndicatorContainer} aria-hidden="true">
-          <ExpandMore />
-        </span>
-      </span>
-    </button>
-  );
+type SelectTriggerProps<T extends object> = {
+  state: SelectState<T>;
+  buttonProps: ButtonHTMLAttributes<HTMLButtonElement> & DOMAttributes<FocusableElement>;
+  valueProps: DOMAttributes<FocusableElement>;
+  innerRef: RefObject<HTMLButtonElement>;
+  children?: (state: SelectTriggerChildrenState<T>) => ReactNode;
 };
 
-type SelectProps<T extends object> = AriaSelectProps<T> & {
-  renderTrigger?: (props: {
-    state: SelectState<T>;
-    buttonProps: ButtonHTMLAttributes<HTMLButtonElement> & DOMAttributes<FocusableElement>;
-    valueProps: DOMAttributes<FocusableElement>;
-    ref: RefObject<HTMLButtonElement>;
-  }) => ReactNode;
+type SelectProps<T extends object> = CollectionBase<T> & {
+  autoFocus?: boolean;
+
+  className?: string;
+
+  /** Sets the default open state of the field (uncontrolled). */
+  defaultOpen?: boolean;
+
+  disallowEmptySelection?: boolean;
+
+  formatLabel?: (items: Iterator<T>[]) => ReactNode;
+
+  excludeFromTabOrder?: boolean;
+
+  /** Whether the field can be emptied. */
+  isClearable?: boolean;
+
+  /** Whether the field is disabled. */
+  isDisabled?: boolean;
+
+  /** Whether to show a button to select all items. */
+  isSelectableAll?: boolean;
+
+  /** Sets the open state of the field (controlled). */
+  isOpen?: boolean;
+
+  /** The content to display as the label. */
+  label: string;
+
+  onOpenChange?: UseSelectStateProps<T>['onOpenChange'];
+
+  onSelectionChange?: UseSelectStateProps<T>['onSelectionChange'];
+
+  selectedKeys?: UseSelectStateProps<T>['selectedKeys'];
+
+  /** The type of selection that is allowed in the collection. */
+  selectionMode: 'single' | 'multiple';
+
+  innerRef?: RefObject<HTMLButtonElement | null>;
+
+  trigger?: (props: SelectTriggerProps<T>) => JSX.Element;
 };
 
-const Select = <T extends object>({ renderTrigger = defaultTrigger, ...props }: SelectProps<T>) => {
-  // Create state based on the incoming props
+const Select = <T extends object>(props: SelectProps<T>) => {
+  const {
+    autoFocus,
+    className,
+    excludeFromTabOrder,
+    isClearable,
+    isDisabled,
+    isSelectableAll,
+    label,
+    innerRef,
+    trigger = DefaultSelectTrigger,
+  } = props;
+
+  const refAllButton = useRef<HTMLInputElement>(null);
+  const ref = useObjectRef(innerRef);
+
   const state = useSelectState(props);
+  const { labelProps, triggerProps, valueProps, menuProps } = useSelect(
+    {
+      ...props,
+    },
+    state,
+    ref
+  );
+  const { buttonProps } = useButton(
+    { ...triggerProps, autoFocus, excludeFromTabOrder, isDisabled },
+    ref
+  );
 
-  // Get props for child elements from useSelect
-  const ref = useRef<HTMLButtonElement>(null);
-  const { labelProps, triggerProps, valueProps, menuProps } = useSelect(props, state, ref);
+  const { focusProps } = useFocusRing({ autoFocus });
 
-  // Get props for the button based on the trigger props from useSelect
-  const { buttonProps } = useButton(triggerProps, ref);
+  const renderedTrigger = trigger({
+    state,
+    buttonProps: mergeProps(buttonProps, focusProps),
+    valueProps,
+    innerRef: ref,
+  });
 
-  const { focusProps } = useFocusRing();
+  const isMulti = state.selectionMode === 'multiple';
+  const isActive = state.isOpen || state.selectedItems;
+  const isAllSelection = state.selectionManager.isSelectAll;
+  const isIndeterminateSelection = !isAllSelection && !state.selectionManager.isEmpty;
+  const hasClearButton = isClearable && state.selectedItems;
+  const hasSelectAllButton = isSelectableAll && isMulti;
+  const hasHeader = hasClearButton || hasSelectAllButton;
 
-  const trigger = useMemo(() => {
-    return renderTrigger({
-      state,
-      buttonProps: mergeProps(buttonProps, focusProps),
-      valueProps,
-      ref,
-    });
-  }, [state, buttonProps, valueProps, focusProps, renderTrigger, ref]);
+  const handleClear = () => state.selectionManager.clearSelection();
+  const handleSelectAll = () => state.selectionManager.toggleSelectAll();
 
-  console.log(trigger);
+  useEffect(() => {
+    if (refAllButton.current) {
+      refAllButton.current.indeterminate = isIndeterminateSelection;
+    }
+  }, [isIndeterminateSelection]);
 
   return (
-    <div>
-      <VisuallyHidden>
-        <div {...labelProps}>{props.label}</div>
-      </VisuallyHidden>
-      <HiddenSelect state={state} triggerRef={ref} label={props.label} name={props.name} />
-      {trigger}
-      {state.isOpen && (
-        <Popover state={state} triggerRef={ref} placement="bottom start">
-          <ListBox {...menuProps} state={state} />
-        </Popover>
-      )}
+    <div className={cx('select-wrapper', state.isOpen && 'select-wrapper--open', className)}>
+      <div className="select-wrapper__input">
+        {label && (
+          <label
+            {...labelProps}
+            className={cx('select__label', isActive && 'select__label--active')}
+          >
+            {label}
+          </label>
+        )}
+
+        {renderedTrigger}
+        {state.isOpen && (
+          <SelectPopover state={state} triggerRef={ref}>
+            {hasHeader && (
+              <ButtonGroup style={{ margin: '0.8rem 1.6rem' }}>
+                {hasSelectAllButton && (
+                  <Button onClick={handleSelectAll}>
+                    <div style={{ display: 'flex', alignItems: 'center' }}>
+                      <input
+                        type="checkbox"
+                        checked={isAllSelection}
+                        ref={refAllButton}
+                        readOnly
+                        tabIndex={-1}
+                      />
+                      Select all
+                    </div>
+                  </Button>
+                )}
+                {hasClearButton && <Button onClick={handleClear}>Clear</Button>}
+              </ButtonGroup>
+            )}
+
+            <div className="select__divider" />
+            <SelectListBox {...menuProps} state={state} />
+          </SelectPopover>
+        )}
+      </div>
     </div>
   );
 };
 
 export { Select };
+export type { SelectProps, SelectTriggerProps, SelectTriggerChildrenState };

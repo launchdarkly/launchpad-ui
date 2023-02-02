@@ -1,40 +1,70 @@
-import { MenuTriggerState, useMenuTriggerState } from '@react-stately/menu';
-import { SelectProps } from '@react-types/select';
-import { SingleSelectListState, useSingleSelectListState } from '@react-stately/list';
+import type { SelectListState } from './useSelectListState';
+import type { MenuTriggerState } from '@react-stately/menu';
+import type { OverlayTriggerProps } from '@react-types/overlays';
+import type {
+  AsyncLoadable,
+  CollectionBase,
+  FocusableProps,
+  InputBase,
+  LabelableProps,
+  MultipleSelection,
+  TextInputBase,
+  Validation,
+} from '@react-types/shared';
+
+import { useMenuTriggerState } from '@react-stately/menu';
 import { useState } from 'react';
 
-type SelectState<T extends object> = SingleSelectListState<T> &
-  MenuTriggerState & {
-    /** Whether the select is currently focused. */
-    readonly isFocused: boolean;
+import { useSelectListState } from './useSelectListState';
 
-    /** Sets whether the select is focused. */
+type UseSelectStateProps<T extends object> = CollectionBase<T> &
+  AsyncLoadable &
+  Omit<InputBase, 'isReadOnly'> &
+  Validation &
+  LabelableProps &
+  TextInputBase &
+  MultipleSelection &
+  FocusableProps &
+  OverlayTriggerProps & {
+    shouldFlip?: boolean;
+  };
+
+type SelectState<T extends object> = SelectListState<T> &
+  MenuTriggerState & {
+    isFocused: boolean;
     setFocused(isFocused: boolean): void;
   };
 
-/**
- * Provides state management for a select component. Handles building a collection
- * of items from props, handles the open state for the popup menu, and manages
- * multiple selection state.
- */
-const useSelectState = <T extends object>(props: SelectProps<T>): SelectState<T> => {
+const useSelectState = <T extends object>(props: UseSelectStateProps<T>): SelectState<T> => {
+  const [isFocused, setFocused] = useState(false);
+
   const triggerState = useMenuTriggerState(props);
-  const listState = useSingleSelectListState({
+  const listState = useSelectListState({
     ...props,
-    onSelectionChange: (key) => {
+    onSelectionChange: (keys) => {
       if (props.onSelectionChange != null) {
-        props.onSelectionChange(key);
+        if (keys === 'all') {
+          // This may change back to "all" once we will implement async loading of additional
+          // items and differentiation between "select all" vs. "select visible".
+          props.onSelectionChange(new Set(listState.collection.getKeys()));
+        } else {
+          props.onSelectionChange(keys);
+        }
       }
 
-      triggerState.close();
+      // Multi select stays open after item selection
+      if (props.selectionMode === 'single') {
+        triggerState.close();
+      }
     },
   });
-
-  const [isFocused, setFocused] = useState(false);
 
   return {
     ...listState,
     ...triggerState,
+    close() {
+      triggerState.close();
+    },
     open() {
       // Don't open if the collection is empty.
       if (listState.collection.size !== 0) {
@@ -52,3 +82,4 @@ const useSelectState = <T extends object>(props: SelectProps<T>): SelectState<T>
 };
 
 export { useSelectState };
+export type { UseSelectStateProps, SelectState };
