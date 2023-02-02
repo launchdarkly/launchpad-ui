@@ -91,11 +91,7 @@ const Option = <T extends object>({ item, state }: SelectListBoxOptionProps<T>) 
       {state.selectionMode === 'multiple' && (
         <input type="checkbox" disabled={isDisabled} checked={isSelected} readOnly />
       )}
-      {typeof item.rendered === 'string' ? (
-        <span className="truncate block">{item.rendered}</span>
-      ) : (
-        item.rendered
-      )}
+      {typeof item.rendered === 'string' ? <span>{item.rendered}</span> : item.rendered}
     </li>
   );
 };

@@ -1,3 +1,4 @@
+import type { SelectTriggerProps } from '../src';
 import type { StoryObj } from '@storybook/react';
 
 import { Chip } from '@launchpad-ui/chip';
@@ -5,7 +6,13 @@ import { Item, Section } from '@react-stately/collections';
 
 import { MultiSelectTrigger, Select, SingleSelectTrigger } from '../src';
 
-const FRUIT = [
+type Item = {
+  id: string;
+  name: string;
+  description: string;
+};
+
+const FRUIT: Item[] = [
   {
     id: '1',
     name: 'Apple',
@@ -33,7 +40,7 @@ const FRUIT = [
   },
 ];
 
-const VEGETABLES = [
+const VEGETABLES: Item[] = [
   {
     id: '6',
     name: 'Onion',
@@ -64,31 +71,28 @@ const SECTIONED_ITEMS = [
 
 export default {
   component: Select,
-  title: 'Components/NewSelect',
+  title: 'Components/Select',
   description:
     'A Select combines a text input with a listbox, allowing users to filter a list of options to items matching a query.',
   parameters: {
     status: {
-      type: import.meta.env.PACKAGE_STATUS__COMBOBOX,
+      type: import.meta.env.PACKAGE_STATUS__SELECT,
     },
   },
 };
 
 type Story = StoryObj<typeof Select>;
 
-export const MultiSelect: Story = {
+export const SingleSelect: Story = {
   render: () => {
     return (
       <Select
         label="Fruit"
-        selectionMode="multiple"
+        selectionMode="single"
         items={FRUIT}
-        disabledKeys={['2']}
         onSelectionChange={(keys) => console.log(Array.from(keys))}
-        isSelectableAll
-        isClearable
       >
-        {(item) => <Item>{item.name}</Item>}
+        {(item) => <Item textValue={item.name}>{item.name}</Item>}
       </Select>
     );
   },
@@ -119,6 +123,40 @@ export const SingleSelectWithCustomSelectedRender: Story = {
             {item.name} <Chip>ID: {item.id}</Chip>
           </Item>
         )}
+      </Select>
+    );
+  },
+  parameters: { docs: { disable: false } },
+};
+
+const CustomTrigger = (props: SelectTriggerProps<Item>) => {
+  const { state, buttonProps, innerRef } = props;
+
+  const getRenderedSelected = () => {
+    const items = state.selectedItems;
+
+    if (!items) return 'Select option';
+
+    return <span>{items[0].textValue}</span>;
+  };
+  return (
+    <button {...buttonProps} ref={innerRef}>
+      {getRenderedSelected()}
+    </button>
+  );
+};
+
+export const SingleSelectWithCustomTrigger: Story = {
+  render: () => {
+    return (
+      <Select
+        label="Fruit"
+        selectionMode="single"
+        items={FRUIT}
+        onSelectionChange={(keys) => console.log(Array.from(keys))}
+        trigger={CustomTrigger}
+      >
+        {(item) => <Item textValue={item.name}>{item.name}</Item>}
       </Select>
     );
   },
@@ -176,6 +214,60 @@ export const MultiSelectWithCustomSelectedRender: Story = {
             {item.name} <Chip>ID: {item.id}</Chip>
           </Item>
         )}
+      </Select>
+    );
+  },
+  parameters: { docs: { disable: false } },
+};
+
+export const MultiSelectWithSelectAll: Story = {
+  render: () => {
+    return (
+      <Select
+        label="Fruit"
+        selectionMode="multiple"
+        items={FRUIT}
+        onSelectionChange={(keys) => console.log(Array.from(keys))}
+        isSelectableAll
+        isClearable
+        trigger={(props) => (
+          <MultiSelectTrigger {...props}>
+            {({ selectedItems }) => (
+              <span style={{ display: 'flex', alignItems: 'center' }}>
+                {selectedItems.map((item) => (
+                  <Chip style={{ marginRight: '5px' }} key={item.key}>
+                    {item.value.name}
+                  </Chip>
+                ))}
+              </span>
+            )}
+          </MultiSelectTrigger>
+        )}
+      >
+        {(item) => (
+          <Item textValue={item.name}>
+            {item.name} <Chip>ID: {item.id}</Chip>
+          </Item>
+        )}
+      </Select>
+    );
+  },
+  parameters: { docs: { disable: false } },
+};
+
+export const MultiSelect: Story = {
+  render: () => {
+    return (
+      <Select
+        label="Fruit"
+        selectionMode="multiple"
+        items={FRUIT}
+        disabledKeys={['2']}
+        onSelectionChange={(keys) => console.log(Array.from(keys))}
+        isSelectableAll
+        isClearable
+      >
+        {(item) => <Item>{item.name}</Item>}
       </Select>
     );
   },

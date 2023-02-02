@@ -6,7 +6,7 @@ import { Button, ButtonGroup } from '@launchpad-ui/button';
 import { useButton } from '@react-aria/button';
 import { useFocusRing } from '@react-aria/focus';
 import { mergeProps, useObjectRef } from '@react-aria/utils';
-import cx from 'classix';
+import { VisuallyHidden } from '@react-aria/visually-hidden';
 import { useEffect, useRef } from 'react';
 
 import { DefaultSelectTrigger } from './DefaultSelectTrigger';
@@ -71,7 +71,7 @@ type SelectProps<T extends object> = CollectionBase<T> & {
 const Select = <T extends object>(props: SelectProps<T>) => {
   const {
     autoFocus,
-    className,
+    // className,
     excludeFromTabOrder,
     isClearable,
     isDisabled,
@@ -107,7 +107,7 @@ const Select = <T extends object>(props: SelectProps<T>) => {
   });
 
   const isMulti = state.selectionMode === 'multiple';
-  const isActive = state.isOpen || state.selectedItems;
+  // const isActive = state.isOpen || state.selectedItems;
   const isAllSelection = state.selectionManager.isSelectAll;
   const isIndeterminateSelection = !isAllSelection && !state.selectionManager.isEmpty;
   const hasClearButton = isClearable && state.selectedItems;
@@ -124,15 +124,12 @@ const Select = <T extends object>(props: SelectProps<T>) => {
   }, [isIndeterminateSelection]);
 
   return (
-    <div className={cx('select-wrapper', state.isOpen && 'select-wrapper--open', className)}>
-      <div className="select-wrapper__input">
+    <div>
+      <div>
         {label && (
-          <label
-            {...labelProps}
-            className={cx('select__label', isActive && 'select__label--active')}
-          >
-            {label}
-          </label>
+          <VisuallyHidden>
+            <label {...labelProps}>{label}</label>
+          </VisuallyHidden>
         )}
 
         {renderedTrigger}
@@ -158,7 +155,6 @@ const Select = <T extends object>(props: SelectProps<T>) => {
               </ButtonGroup>
             )}
 
-            <div className="select__divider" />
             <SelectListBox {...menuProps} state={state} />
           </SelectPopover>
         )}

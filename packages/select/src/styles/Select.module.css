@@ -48,11 +48,6 @@
   padding: 0.4rem 1.6rem;
 }
 
-.combobox {
-  /* styles here */
-  color: red;
-}
-
 .popover {
   border: 1px solid var(--lp-color-border-ui-primary);
   background: var(--lp-color-bg-overlay-primary);
