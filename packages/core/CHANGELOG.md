@@ -1,5 +1,221 @@
 # @launchpad-ui/core
 
+## 0.26.10
+
+### Patch Changes
+
+- [#664](https://github.com/launchdarkly/launchpad-ui/pull/664) [`990af4a5`](https://github.com/launchdarkly/launchpad-ui/commit/990af4a5c7490a322604272cf9edc16ce9427cf1) Thanks [@lwonsower](https://github.com/lwonsower)! - [Icons] Add `ArrowDropDown` and `ArrowRight` icons
+
+- Updated dependencies [[`990af4a5`](https://github.com/launchdarkly/launchpad-ui/commit/990af4a5c7490a322604272cf9edc16ce9427cf1)]:
+  - @launchpad-ui/icons@0.6.19
+  - @launchpad-ui/alert@0.6.30
+  - @launchpad-ui/avatar@0.4.29
+  - @launchpad-ui/banner@0.8.4
+  - @launchpad-ui/button@0.7.27
+  - @launchpad-ui/clipboard@0.8.41
+  - @launchpad-ui/drawer@0.1.24
+  - @launchpad-ui/dropdown@0.6.24
+  - @launchpad-ui/filter@0.4.51
+  - @launchpad-ui/form@0.6.34
+  - @launchpad-ui/menu@0.6.48
+  - @launchpad-ui/modal@0.12.22
+  - @launchpad-ui/navigation@0.7.10
+  - @launchpad-ui/pagination@0.3.35
+  - @launchpad-ui/snackbar@0.3.27
+  - @launchpad-ui/toast@0.2.27
+  - @launchpad-ui/split-button@0.6.43
+
+## 0.26.9
+
+### Patch Changes
+
+- [#666](https://github.com/launchdarkly/launchpad-ui/pull/666) [`20439f2d`](https://github.com/launchdarkly/launchpad-ui/commit/20439f2d0533bf574b613d16d5d31eb688cb629f) Thanks [@chasedarkly](https://github.com/chasedarkly)! - Bump z-index values
+
+  [Drawer] Increase z-index from 300 to 400
+  [Modal] Increase z-index from 400 to 500
+  [Popover] Increase z-index from 500 to 600
+  [Snackbar] Increase z-index from 700 to 800
+  [Toast] Increase z-index from 700 to 800
+  [Tooltip] Increase z-index from 600 to 700
+
+- [#665](https://github.com/launchdarkly/launchpad-ui/pull/665) [`808902f7`](https://github.com/launchdarkly/launchpad-ui/commit/808902f71c0b410adf86b0ee1683a2d36c4cdb22) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Tokens] Add `--lp-color-gray-900` and modify `--lp-color-bg-interactive-secondary` darkmode color
+
+- Updated dependencies [[`20439f2d`](https://github.com/launchdarkly/launchpad-ui/commit/20439f2d0533bf574b613d16d5d31eb688cb629f), [`808902f7`](https://github.com/launchdarkly/launchpad-ui/commit/808902f71c0b410adf86b0ee1683a2d36c4cdb22)]:
+  - @launchpad-ui/drawer@0.1.23
+  - @launchpad-ui/modal@0.12.21
+  - @launchpad-ui/popover@0.8.35
+  - @launchpad-ui/snackbar@0.3.26
+  - @launchpad-ui/toast@0.2.26
+  - @launchpad-ui/tooltip@0.6.36
+  - @launchpad-ui/tokens@0.4.9
+  - @launchpad-ui/dropdown@0.6.23
+  - @launchpad-ui/menu@0.6.47
+  - @launchpad-ui/navigation@0.7.9
+  - @launchpad-ui/progress-bubbles@0.5.37
+  - @launchpad-ui/split-button@0.6.42
+  - @launchpad-ui/clipboard@0.8.40
+  - @launchpad-ui/filter@0.4.50
+  - @launchpad-ui/alert@0.6.29
+  - @launchpad-ui/avatar@0.4.28
+  - @launchpad-ui/banner@0.8.3
+  - @launchpad-ui/button@0.7.26
+  - @launchpad-ui/chip@0.6.19
+  - @launchpad-ui/counter@0.3.19
+  - @launchpad-ui/form@0.6.33
+  - @launchpad-ui/icons@0.6.18
+  - @launchpad-ui/markdown@0.3.18
+  - @launchpad-ui/pagination@0.3.34
+  - @launchpad-ui/progress@0.5.17
+  - @launchpad-ui/slider@0.3.17
+  - @launchpad-ui/tab-list@0.4.19
+  - @launchpad-ui/table@0.4.18
+  - @launchpad-ui/toggle@0.4.20
+
+## 0.26.8
+
+### Patch Changes
+
+- [#661](https://github.com/launchdarkly/launchpad-ui/pull/661) [`68a7ad38`](https://github.com/launchdarkly/launchpad-ui/commit/68a7ad38fcf47358417991a0ae3ec1439404b15c) Thanks [@kwatkins-ld](https://github.com/kwatkins-ld)! - [Navigation] improve collapsed Navigation: better a11y support, remove render jank
+
+- Updated dependencies [[`68a7ad38`](https://github.com/launchdarkly/launchpad-ui/commit/68a7ad38fcf47358417991a0ae3ec1439404b15c)]:
+  - @launchpad-ui/navigation@0.7.8
+
+## 0.26.7
+
+### Patch Changes
+
+- [#658](https://github.com/launchdarkly/launchpad-ui/pull/658) [`f873c6f3`](https://github.com/launchdarkly/launchpad-ui/commit/f873c6f3af18b55e72883464e9698ea172021c8e) Thanks [@goyanespaula](https://github.com/goyanespaula)! - [Icons] Add `arrow-left-thin`, `arrow-right-thin`, `arrow-up-thin`, and `arrow-down-thin`
+
+- [#660](https://github.com/launchdarkly/launchpad-ui/pull/660) [`42c00505`](https://github.com/launchdarkly/launchpad-ui/commit/42c00505f606b0c4af43c3ca6f5962b1f59a1093) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Alert] add min-width to fix white-space: nowrap bug
+
+- Updated dependencies [[`f873c6f3`](https://github.com/launchdarkly/launchpad-ui/commit/f873c6f3af18b55e72883464e9698ea172021c8e), [`42c00505`](https://github.com/launchdarkly/launchpad-ui/commit/42c00505f606b0c4af43c3ca6f5962b1f59a1093)]:
+  - @launchpad-ui/icons@0.6.17
+  - @launchpad-ui/alert@0.6.28
+  - @launchpad-ui/avatar@0.4.27
+  - @launchpad-ui/banner@0.8.2
+  - @launchpad-ui/button@0.7.25
+  - @launchpad-ui/clipboard@0.8.39
+  - @launchpad-ui/drawer@0.1.22
+  - @launchpad-ui/dropdown@0.6.22
+  - @launchpad-ui/filter@0.4.49
+  - @launchpad-ui/form@0.6.32
+  - @launchpad-ui/menu@0.6.46
+  - @launchpad-ui/modal@0.12.20
+  - @launchpad-ui/pagination@0.3.33
+  - @launchpad-ui/snackbar@0.3.25
+  - @launchpad-ui/toast@0.2.25
+  - @launchpad-ui/split-button@0.6.41
+  - @launchpad-ui/navigation@0.7.7
+
+## 0.26.6
+
+### Patch Changes
+
+- [#652](https://github.com/launchdarkly/launchpad-ui/pull/652) [`cd1b58c5`](https://github.com/launchdarkly/launchpad-ui/commit/cd1b58c5c117d37b2939fe879606011c49b18ced) Thanks [@erangeles](https://github.com/erangeles)! - [Icons]: Add `filter-tune` icon
+
+- [#653](https://github.com/launchdarkly/launchpad-ui/pull/653) [`bc2edb45`](https://github.com/launchdarkly/launchpad-ui/commit/bc2edb4507783aa8f85433f12d3a03430b0977e6) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Alert] Add `word-break: break-word` to alert content container
+
+- Updated dependencies [[`cd1b58c5`](https://github.com/launchdarkly/launchpad-ui/commit/cd1b58c5c117d37b2939fe879606011c49b18ced), [`bc2edb45`](https://github.com/launchdarkly/launchpad-ui/commit/bc2edb4507783aa8f85433f12d3a03430b0977e6)]:
+  - @launchpad-ui/icons@0.6.16
+  - @launchpad-ui/alert@0.6.27
+  - @launchpad-ui/avatar@0.4.26
+  - @launchpad-ui/banner@0.8.1
+  - @launchpad-ui/button@0.7.24
+  - @launchpad-ui/clipboard@0.8.38
+  - @launchpad-ui/drawer@0.1.21
+  - @launchpad-ui/dropdown@0.6.21
+  - @launchpad-ui/filter@0.4.48
+  - @launchpad-ui/form@0.6.31
+  - @launchpad-ui/menu@0.6.45
+  - @launchpad-ui/modal@0.12.19
+  - @launchpad-ui/pagination@0.3.32
+  - @launchpad-ui/snackbar@0.3.24
+  - @launchpad-ui/toast@0.2.24
+  - @launchpad-ui/split-button@0.6.40
+  - @launchpad-ui/navigation@0.7.6
+
+## 0.26.5
+
+### Patch Changes
+
+- [#649](https://github.com/launchdarkly/launchpad-ui/pull/649) [`020d99e2`](https://github.com/launchdarkly/launchpad-ui/commit/020d99e2fc88a9ee18d4b127c24312b27d836c57) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Menu] update divider color
+
+- Updated dependencies [[`577e520b`](https://github.com/launchdarkly/launchpad-ui/commit/577e520b74d7353b5a9404cac3efd4df01d05116), [`020d99e2`](https://github.com/launchdarkly/launchpad-ui/commit/020d99e2fc88a9ee18d4b127c24312b27d836c57)]:
+  - @launchpad-ui/banner@0.8.0
+  - @launchpad-ui/menu@0.6.44
+  - @launchpad-ui/filter@0.4.47
+  - @launchpad-ui/navigation@0.7.5
+
+## 0.26.4
+
+### Patch Changes
+
+- [#646](https://github.com/launchdarkly/launchpad-ui/pull/646) [`ae24fb8a`](https://github.com/launchdarkly/launchpad-ui/commit/ae24fb8a13b7d1424ea87d79fe96dbf0871df0e3) Thanks [@kwatkins-ld](https://github.com/kwatkins-ld)! - [Navigation]: Update to collapse rendering Select instead of Dropdown
+
+- Updated dependencies [[`ae24fb8a`](https://github.com/launchdarkly/launchpad-ui/commit/ae24fb8a13b7d1424ea87d79fe96dbf0871df0e3)]:
+  - @launchpad-ui/navigation@0.7.4
+
+## 0.26.3
+
+### Patch Changes
+
+- [#644](https://github.com/launchdarkly/launchpad-ui/pull/644) [`ab07d28a`](https://github.com/launchdarkly/launchpad-ui/commit/ab07d28ac113d528566fd990fd8ac9a6de86bd33) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Popover] fix invalid property value
+
+- Updated dependencies [[`ab07d28a`](https://github.com/launchdarkly/launchpad-ui/commit/ab07d28ac113d528566fd990fd8ac9a6de86bd33)]:
+  - @launchpad-ui/popover@0.8.34
+  - @launchpad-ui/dropdown@0.6.20
+  - @launchpad-ui/menu@0.6.43
+  - @launchpad-ui/navigation@0.7.3
+  - @launchpad-ui/progress-bubbles@0.5.36
+  - @launchpad-ui/split-button@0.6.39
+  - @launchpad-ui/tooltip@0.6.35
+  - @launchpad-ui/filter@0.4.46
+  - @launchpad-ui/clipboard@0.8.37
+
+## 0.26.2
+
+### Patch Changes
+
+- [#642](https://github.com/launchdarkly/launchpad-ui/pull/642) [`f2ae1a80`](https://github.com/launchdarkly/launchpad-ui/commit/f2ae1a80d678a1a61dee407b8574e4c52f55299f) Thanks [@chasedarkly](https://github.com/chasedarkly)! - Dark mode updates based on design feedback
+
+  [Filter]: Update clearable button styles
+  [Form]: Update disabled state dark mode colors and placeholder colors
+  [Modal]: Update dark mode overlay and card background
+  [Popover]: Update box shadow
+  [Tokens]: Apply various token alias updates
+  [Tooltip]: Update dark mode theming
+
+- Updated dependencies [[`f2ae1a80`](https://github.com/launchdarkly/launchpad-ui/commit/f2ae1a80d678a1a61dee407b8574e4c52f55299f)]:
+  - @launchpad-ui/filter@0.4.45
+  - @launchpad-ui/form@0.6.30
+  - @launchpad-ui/modal@0.12.18
+  - @launchpad-ui/popover@0.8.33
+  - @launchpad-ui/tokens@0.4.8
+  - @launchpad-ui/tooltip@0.6.34
+  - @launchpad-ui/menu@0.6.42
+  - @launchpad-ui/dropdown@0.6.19
+  - @launchpad-ui/navigation@0.7.2
+  - @launchpad-ui/progress-bubbles@0.5.35
+  - @launchpad-ui/split-button@0.6.38
+  - @launchpad-ui/alert@0.6.26
+  - @launchpad-ui/avatar@0.4.25
+  - @launchpad-ui/banner@0.7.26
+  - @launchpad-ui/button@0.7.23
+  - @launchpad-ui/chip@0.6.18
+  - @launchpad-ui/clipboard@0.8.36
+  - @launchpad-ui/counter@0.3.18
+  - @launchpad-ui/drawer@0.1.20
+  - @launchpad-ui/icons@0.6.15
+  - @launchpad-ui/markdown@0.3.17
+  - @launchpad-ui/pagination@0.3.31
+  - @launchpad-ui/progress@0.5.16
+  - @launchpad-ui/slider@0.3.16
+  - @launchpad-ui/snackbar@0.3.23
+  - @launchpad-ui/tab-list@0.4.18
+  - @launchpad-ui/table@0.4.17
+  - @launchpad-ui/toast@0.2.23
+  - @launchpad-ui/toggle@0.4.19
+
 ## 0.26.1
 
 ### Patch Changes

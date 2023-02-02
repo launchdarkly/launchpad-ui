@@ -1,5 +1,51 @@
 # @launchpad-ui/form
 
+## 0.6.34
+
+### Patch Changes
+
+- Updated dependencies [[`990af4a5`](https://github.com/launchdarkly/launchpad-ui/commit/990af4a5c7490a322604272cf9edc16ce9427cf1)]:
+  - @launchpad-ui/icons@0.6.19
+
+## 0.6.33
+
+### Patch Changes
+
+- Updated dependencies [[`808902f7`](https://github.com/launchdarkly/launchpad-ui/commit/808902f71c0b410adf86b0ee1683a2d36c4cdb22)]:
+  - @launchpad-ui/tokens@0.4.9
+  - @launchpad-ui/icons@0.6.18
+
+## 0.6.32
+
+### Patch Changes
+
+- Updated dependencies [[`f873c6f3`](https://github.com/launchdarkly/launchpad-ui/commit/f873c6f3af18b55e72883464e9698ea172021c8e)]:
+  - @launchpad-ui/icons@0.6.17
+
+## 0.6.31
+
+### Patch Changes
+
+- Updated dependencies [[`cd1b58c5`](https://github.com/launchdarkly/launchpad-ui/commit/cd1b58c5c117d37b2939fe879606011c49b18ced)]:
+  - @launchpad-ui/icons@0.6.16
+
+## 0.6.30
+
+### Patch Changes
+
+- [#642](https://github.com/launchdarkly/launchpad-ui/pull/642) [`f2ae1a80`](https://github.com/launchdarkly/launchpad-ui/commit/f2ae1a80d678a1a61dee407b8574e4c52f55299f) Thanks [@chasedarkly](https://github.com/chasedarkly)! - Dark mode updates based on design feedback
+
+  [Filter]: Update clearable button styles
+  [Form]: Update disabled state dark mode colors and placeholder colors
+  [Modal]: Update dark mode overlay and card background
+  [Popover]: Update box shadow
+  [Tokens]: Apply various token alias updates
+  [Tooltip]: Update dark mode theming
+
+- Updated dependencies [[`f2ae1a80`](https://github.com/launchdarkly/launchpad-ui/commit/f2ae1a80d678a1a61dee407b8574e4c52f55299f)]:
+  - @launchpad-ui/tokens@0.4.8
+  - @launchpad-ui/icons@0.6.15
+
 ## 0.6.29
 
 ### Patch Changes

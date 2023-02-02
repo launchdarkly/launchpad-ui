@@ -139,7 +139,7 @@
 }
 
 .Menu-divider {
-  border-top: 1px solid var(--lp-color-border-ui-primary);
+  border-top: 1px solid var(--lp-color-border-ui-secondary);
 }
 
 .Menu-search {

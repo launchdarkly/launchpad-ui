@@ -1,5 +1,19 @@
 # @launchpad-ui/toggle
 
+## 0.4.20
+
+### Patch Changes
+
+- Updated dependencies [[`808902f7`](https://github.com/launchdarkly/launchpad-ui/commit/808902f71c0b410adf86b0ee1683a2d36c4cdb22)]:
+  - @launchpad-ui/tokens@0.4.9
+
+## 0.4.19
+
+### Patch Changes
+
+- Updated dependencies [[`f2ae1a80`](https://github.com/launchdarkly/launchpad-ui/commit/f2ae1a80d678a1a61dee407b8574e4c52f55299f)]:
+  - @launchpad-ui/tokens@0.4.8
+
 ## 0.4.18
 
 ### Patch Changes

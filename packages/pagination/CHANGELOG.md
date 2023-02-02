@@ -1,5 +1,49 @@
 # @launchpad-ui/pagination
 
+## 0.3.35
+
+### Patch Changes
+
+- Updated dependencies [[`990af4a5`](https://github.com/launchdarkly/launchpad-ui/commit/990af4a5c7490a322604272cf9edc16ce9427cf1)]:
+  - @launchpad-ui/icons@0.6.19
+  - @launchpad-ui/button@0.7.27
+
+## 0.3.34
+
+### Patch Changes
+
+- Updated dependencies [[`808902f7`](https://github.com/launchdarkly/launchpad-ui/commit/808902f71c0b410adf86b0ee1683a2d36c4cdb22)]:
+  - @launchpad-ui/tokens@0.4.9
+  - @launchpad-ui/button@0.7.26
+  - @launchpad-ui/icons@0.6.18
+  - @launchpad-ui/progress@0.5.17
+
+## 0.3.33
+
+### Patch Changes
+
+- Updated dependencies [[`f873c6f3`](https://github.com/launchdarkly/launchpad-ui/commit/f873c6f3af18b55e72883464e9698ea172021c8e)]:
+  - @launchpad-ui/icons@0.6.17
+  - @launchpad-ui/button@0.7.25
+
+## 0.3.32
+
+### Patch Changes
+
+- Updated dependencies [[`cd1b58c5`](https://github.com/launchdarkly/launchpad-ui/commit/cd1b58c5c117d37b2939fe879606011c49b18ced)]:
+  - @launchpad-ui/icons@0.6.16
+  - @launchpad-ui/button@0.7.24
+
+## 0.3.31
+
+### Patch Changes
+
+- Updated dependencies [[`f2ae1a80`](https://github.com/launchdarkly/launchpad-ui/commit/f2ae1a80d678a1a61dee407b8574e4c52f55299f)]:
+  - @launchpad-ui/tokens@0.4.8
+  - @launchpad-ui/button@0.7.23
+  - @launchpad-ui/icons@0.6.15
+  - @launchpad-ui/progress@0.5.16
+
 ## 0.3.30
 
 ### Patch Changes

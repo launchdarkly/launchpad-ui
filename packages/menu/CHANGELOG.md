@@ -1,5 +1,65 @@
 # @launchpad-ui/menu
 
+## 0.6.48
+
+### Patch Changes
+
+- Updated dependencies [[`990af4a5`](https://github.com/launchdarkly/launchpad-ui/commit/990af4a5c7490a322604272cf9edc16ce9427cf1)]:
+  - @launchpad-ui/icons@0.6.19
+  - @launchpad-ui/form@0.6.34
+
+## 0.6.47
+
+### Patch Changes
+
+- Updated dependencies [[`20439f2d`](https://github.com/launchdarkly/launchpad-ui/commit/20439f2d0533bf574b613d16d5d31eb688cb629f), [`808902f7`](https://github.com/launchdarkly/launchpad-ui/commit/808902f71c0b410adf86b0ee1683a2d36c4cdb22)]:
+  - @launchpad-ui/popover@0.8.35
+  - @launchpad-ui/tooltip@0.6.36
+  - @launchpad-ui/tokens@0.4.9
+  - @launchpad-ui/form@0.6.33
+  - @launchpad-ui/icons@0.6.18
+
+## 0.6.46
+
+### Patch Changes
+
+- Updated dependencies [[`f873c6f3`](https://github.com/launchdarkly/launchpad-ui/commit/f873c6f3af18b55e72883464e9698ea172021c8e)]:
+  - @launchpad-ui/icons@0.6.17
+  - @launchpad-ui/form@0.6.32
+
+## 0.6.45
+
+### Patch Changes
+
+- Updated dependencies [[`cd1b58c5`](https://github.com/launchdarkly/launchpad-ui/commit/cd1b58c5c117d37b2939fe879606011c49b18ced)]:
+  - @launchpad-ui/icons@0.6.16
+  - @launchpad-ui/form@0.6.31
+
+## 0.6.44
+
+### Patch Changes
+
+- [#649](https://github.com/launchdarkly/launchpad-ui/pull/649) [`020d99e2`](https://github.com/launchdarkly/launchpad-ui/commit/020d99e2fc88a9ee18d4b127c24312b27d836c57) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Menu] update divider color
+
+## 0.6.43
+
+### Patch Changes
+
+- Updated dependencies [[`ab07d28a`](https://github.com/launchdarkly/launchpad-ui/commit/ab07d28ac113d528566fd990fd8ac9a6de86bd33)]:
+  - @launchpad-ui/popover@0.8.34
+  - @launchpad-ui/tooltip@0.6.35
+
+## 0.6.42
+
+### Patch Changes
+
+- Updated dependencies [[`f2ae1a80`](https://github.com/launchdarkly/launchpad-ui/commit/f2ae1a80d678a1a61dee407b8574e4c52f55299f)]:
+  - @launchpad-ui/form@0.6.30
+  - @launchpad-ui/popover@0.8.33
+  - @launchpad-ui/tokens@0.4.8
+  - @launchpad-ui/tooltip@0.6.34
+  - @launchpad-ui/icons@0.6.15
+
 ## 0.6.41
 
 ### Patch Changes

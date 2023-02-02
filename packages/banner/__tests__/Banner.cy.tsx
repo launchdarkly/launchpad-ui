@@ -12,8 +12,9 @@ describe('Banner', () => {
   });
 
   it('can be dismissible', () => {
+    const onDismissSpy = cy.spy().as('onDismissSpy');
     cy.mount(
-      <Banner kind="info" dismissible>
+      <Banner kind="info" onDismiss={onDismissSpy}>
         An important message
       </Banner>
     );
@@ -35,7 +36,7 @@ describe('Banner', () => {
     const onDismissSpy = cy.spy().as('onDismissSpy');
     const content = 'An important message';
     cy.mount(
-      <Banner kind="info" onDismiss={onDismissSpy} dismissible>
+      <Banner kind="info" onDismiss={onDismissSpy}>
         {content}
       </Banner>
     );

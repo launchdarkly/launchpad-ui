@@ -1,5 +1,24 @@
 # @launchpad-ui/tokens
 
+## 0.4.9
+
+### Patch Changes
+
+- [#665](https://github.com/launchdarkly/launchpad-ui/pull/665) [`808902f7`](https://github.com/launchdarkly/launchpad-ui/commit/808902f71c0b410adf86b0ee1683a2d36c4cdb22) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Tokens] Add `--lp-color-gray-900` and modify `--lp-color-bg-interactive-secondary` darkmode color
+
+## 0.4.8
+
+### Patch Changes
+
+- [#642](https://github.com/launchdarkly/launchpad-ui/pull/642) [`f2ae1a80`](https://github.com/launchdarkly/launchpad-ui/commit/f2ae1a80d678a1a61dee407b8574e4c52f55299f) Thanks [@chasedarkly](https://github.com/chasedarkly)! - Dark mode updates based on design feedback
+
+  [Filter]: Update clearable button styles
+  [Form]: Update disabled state dark mode colors and placeholder colors
+  [Modal]: Update dark mode overlay and card background
+  [Popover]: Update box shadow
+  [Tokens]: Apply various token alias updates
+  [Tooltip]: Update dark mode theming
+
 ## 0.4.7
 
 ### Patch Changes
