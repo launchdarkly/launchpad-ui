@@ -10,9 +10,11 @@ function renderMarkdown(
   {
     baseUri,
     allowedTags,
+    debug,
   }: {
     baseUri?: string;
     allowedTags?: string[];
+    debug?: boolean;
   } = {}
 ) {
   const renderer = new marked.Renderer();
@@ -21,6 +23,9 @@ function renderMarkdown(
     breaks: true,
   });
   renderer.link = function (href: string, title: string, text: string) {
+    if (debug) {
+      console.log('DEBUG', href, title, text);
+    }
     const link = marked.Renderer.prototype.link.call(this, href, title, text);
     if (!(href.startsWith('https://') || href.startsWith('http://'))) {
       return link;
