@@ -1,4 +1,3 @@
-import type { Element, Text } from 'html-react-parser';
 import type { RefObject, ElementType } from 'react';
 
 import { cx } from 'classix';
@@ -6,7 +5,7 @@ import parse from 'html-react-parser';
 import DOMPurify from 'isomorphic-dompurify';
 
 import styles from './styles/Markdown.module.css';
-import { isAnchorNode, renderMarkdown } from './utils';
+import { isAnchorNode, parseLinkFromDOMNode, renderMarkdown } from './utils';
 
 DOMPurify.addHook('afterSanitizeAttributes', (node) => {
   // Ensure we add the required rel attribute.
@@ -17,6 +16,11 @@ DOMPurify.addHook('afterSanitizeAttributes', (node) => {
   }
 });
 
+type SmartLink = {
+  domain: string;
+  renderer: (props: { href: string; text?: string }) => JSX.Element;
+};
+
 type MarkdownProps = {
   source: string;
   className?: string;
@@ -25,11 +29,7 @@ type MarkdownProps = {
   container?: ElementType;
   textRef?: RefObject<HTMLElement>;
   'data-test-id'?: string;
-  debug?: boolean;
-  smartLinks?: {
-    domain: string;
-    renderer: (props: { href: string; text?: string }) => JSX.Element;
-  }[];
+  smartLinks?: [SmartLink];
 };
 
 const Markdown = ({
@@ -39,54 +39,40 @@ const Markdown = ({
   allowedTags,
   container = 'div',
   textRef,
-  debug,
   smartLinks,
   'data-test-id': testId = 'markdown',
 }: MarkdownProps) => {
   const Container = container;
   const classes = cx(styles.Markdown, className);
 
-  const renderedMarkdown = renderMarkdown(source, { baseUri, allowedTags, debug });
-  const parsed = parse(renderedMarkdown as string, {
+  const renderedMarkdown = renderMarkdown(source, { baseUri, allowedTags });
+
+  // We sanitize "source" (via DOMPurify) before inserting it into the DOM, to protect against XSS attacks.
+  const parsedJSX = parse(renderedMarkdown as string, {
+    // The replace option will replace all DOM nodes when the replace function returns a valid React element.
     replace: (domNode) => {
-      if ((domNode as Element)?.attribs?.href) {
-        const domElement = domNode as Element;
-        const { href } = domElement.attribs;
-        const firstChild = domElement.firstChild;
-        if (firstChild?.type !== 'text') {
-          return;
-        }
-        const textNode = firstChild as Text;
-        const url = new URL(href);
-        const smartLink = smartLinks?.find((s) => {
-          return url.hostname.endsWith(s.domain);
-        });
-        if (!smartLink) {
-          return;
-        }
-        return smartLink.renderer({
-          href,
-          text: textNode.data !== href ? textNode.data : undefined,
-        });
+      const parsedLink = parseLinkFromDOMNode(domNode);
+      if (!parsedLink) {
+        return;
       }
-      return;
+      const smartLink = smartLinks?.find((s) => {
+        return parsedLink.url.hostname.endsWith(s.domain);
+      });
+      if (!smartLink) {
+        return;
+      }
+      return smartLink.renderer({
+        href: parsedLink.url.toString(),
+        text: parsedLink.text,
+      });
     },
   });
   return (
-    <Container
-      className={classes}
-      // We sanitize "source" (via DOMPurify) before inserting it into the DOM, to protect against XSS attacks.
-      // Using dangerouslySetInnerHTML is safe.
-      // dangerouslySetInnerHTML={{
-      //   __html: renderedMarkdown,
-      // }}
-      ref={textRef}
-      data-test-id={testId}
-    >
-      {parsed}
+    <Container className={classes} ref={textRef} data-test-id={testId}>
+      {parsedJSX}
     </Container>
   );
 };
 
 export { Markdown };
-export type { MarkdownProps };
+export type { MarkdownProps, SmartLink };
