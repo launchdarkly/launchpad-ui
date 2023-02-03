@@ -1,4 +1,4 @@
-import type { RefObject, ElementType } from 'react';
+import type { ElementType, RefObject } from 'react';
 
 import { cx } from 'classix';
 import parse from 'html-react-parser';
@@ -16,6 +16,9 @@ DOMPurify.addHook('afterSanitizeAttributes', (node) => {
   }
 });
 
+/**
+ * Smart links transform markdown links that match a given domain (e.g. atlassian.net).
+ */
 type SmartLink = {
   domain: string;
   renderer: (props: { href: string; text?: string }) => JSX.Element;
