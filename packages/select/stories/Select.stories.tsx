@@ -211,54 +211,54 @@ const CustomMultiSelectTrigger = (props: SelectTriggerProps<Item>) => {
   const { state, buttonProps, innerRef } = props;
 
   return (
-    <>
-      <p style={{ maxWidth: '600px' }}>
-        LaunchPad&apos;s Select component accepts a custom trigger that can access/manage selected
-        item state, and toggle the Select dropdown. In this example, we render each selected item
-        with it&apos;s value and a button that allows you to remove the selected option. To add more
-        items, we render a plus button that opens the dropdown.
-      </p>
-      <div style={{ display: 'flex', alignItems: 'center' }}>
-        {(state.selectedItems || []).map(({ key, textValue }) => (
-          <div
-            style={{
-              backgroundColor: '#efefef',
-              marginRight: '5px',
-              fontSize: '12px',
-            }}
-            key={key}
-          >
-            {textValue}
-            <Tooltip content="Unselect">
-              <button
-                style={{ marginLeft: '5px' }}
-                onClick={() => state.selectionManager.select(key)}
-              >
-                x
-              </button>
-            </Tooltip>
-          </div>
-        ))}
-        <button {...buttonProps} ref={innerRef}>
-          +
-        </button>
-      </div>
-    </>
+    <div style={{ display: 'flex', alignItems: 'center' }}>
+      {(state.selectedItems || []).map(({ key, textValue }) => (
+        <div
+          style={{
+            backgroundColor: '#efefef',
+            marginRight: '5px',
+            fontSize: '12px',
+          }}
+          key={key}
+        >
+          {textValue}
+          <Tooltip content="Unselect">
+            <button
+              style={{ marginLeft: '5px' }}
+              onClick={() => state.selectionManager.select(key)}
+            >
+              x
+            </button>
+          </Tooltip>
+        </div>
+      ))}
+      <button {...buttonProps} ref={innerRef}>
+        +
+      </button>
+    </div>
   );
 };
 
 export const MultiSelectWithCustomTrigger: Story = {
   render: () => {
     return (
-      <Select
-        label="Fruit"
-        selectionMode="multiple"
-        items={FRUIT}
-        onSelectionChange={(keys) => console.log(Array.from(keys))}
-        trigger={CustomMultiSelectTrigger}
-      >
-        {(item) => <Item textValue={item.name}>{item.name}</Item>}
-      </Select>
+      <>
+        <p style={{ maxWidth: '600px' }}>
+          LaunchPad&apos;s Select component accepts a custom trigger that can access/manage selected
+          item state, and toggle the Select dropdown. In this example, we render each selected item
+          with it&apos;s value and a button that allows you to remove the selected option. To add
+          more items, we render a plus button that opens the dropdown.
+        </p>
+        <Select
+          label="Fruit"
+          selectionMode="multiple"
+          items={FRUIT}
+          onSelectionChange={(keys) => console.log(Array.from(keys))}
+          trigger={CustomMultiSelectTrigger}
+        >
+          {(item) => <Item textValue={item.name}>{item.name}</Item>}
+        </Select>
+      </>
     );
   },
   parameters: { docs: { disable: false } },
