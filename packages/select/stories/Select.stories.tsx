@@ -129,7 +129,7 @@ export const SingleSelectWithCustomSelectedRender: Story = {
   parameters: { docs: { disable: false } },
 };
 
-const CustomTrigger = (props: SelectTriggerProps<Item>) => {
+const CustomSingleSelectTrigger = (props: SelectTriggerProps<Item>) => {
   const { state, buttonProps, innerRef } = props;
 
   const getRenderedSelected = () => {
@@ -154,7 +154,7 @@ export const SingleSelectWithCustomTrigger: Story = {
         selectionMode="single"
         items={FRUIT}
         onSelectionChange={(keys) => console.log(Array.from(keys))}
-        trigger={CustomTrigger}
+        trigger={CustomSingleSelectTrigger}
       >
         {(item) => <Item textValue={item.name}>{item.name}</Item>}
       </Select>
@@ -181,6 +181,69 @@ export const SingleSelectWithSections: Story = {
             )}
           </Section>
         )}
+      </Select>
+    );
+  },
+  parameters: { docs: { disable: false } },
+};
+
+export const MultiSelect: Story = {
+  render: () => {
+    return (
+      <Select
+        label="Fruit"
+        selectionMode="multiple"
+        items={FRUIT}
+        disabledKeys={['2']}
+        onSelectionChange={(keys) => console.log(Array.from(keys))}
+        isSelectableAll
+        isClearable
+      >
+        {(item) => <Item>{item.name}</Item>}
+      </Select>
+    );
+  },
+  parameters: { docs: { disable: false } },
+};
+
+const CustomMultiSelectTrigger = (props: SelectTriggerProps<Item>) => {
+  const { state, buttonProps, innerRef } = props;
+
+  return (
+    <div style={{ display: 'flex', alignItems: 'center' }}>
+      {(state.selectedItems || []).map(({ key, textValue }) => (
+        <div
+          style={{
+            backgroundColor: '#efefef',
+            marginRight: '5px',
+            fontSize: '12px',
+          }}
+          key={key}
+        >
+          {textValue}
+          <button style={{ marginLeft: '5px' }} onClick={() => state.selectionManager.select(key)}>
+            x
+          </button>
+        </div>
+      ))}
+      <button {...buttonProps} ref={innerRef}>
+        +
+      </button>
+    </div>
+  );
+};
+
+export const MultiSelectWithCustomTrigger: Story = {
+  render: () => {
+    return (
+      <Select
+        label="Fruit"
+        selectionMode="multiple"
+        items={FRUIT}
+        onSelectionChange={(keys) => console.log(Array.from(keys))}
+        trigger={CustomMultiSelectTrigger}
+      >
+        {(item) => <Item textValue={item.name}>{item.name}</Item>}
       </Select>
     );
   },
@@ -249,25 +312,6 @@ export const MultiSelectWithSelectAll: Story = {
             {item.name} <Chip>ID: {item.id}</Chip>
           </Item>
         )}
-      </Select>
-    );
-  },
-  parameters: { docs: { disable: false } },
-};
-
-export const MultiSelect: Story = {
-  render: () => {
-    return (
-      <Select
-        label="Fruit"
-        selectionMode="multiple"
-        items={FRUIT}
-        disabledKeys={['2']}
-        onSelectionChange={(keys) => console.log(Array.from(keys))}
-        isSelectableAll
-        isClearable
-      >
-        {(item) => <Item>{item.name}</Item>}
       </Select>
     );
   },
