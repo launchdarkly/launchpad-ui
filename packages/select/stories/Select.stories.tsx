@@ -2,6 +2,7 @@ import type { SelectTriggerProps } from '../src';
 import type { StoryObj } from '@storybook/react';
 
 import { Chip } from '@launchpad-ui/chip';
+import { Tooltip } from '@launchpad-ui/tooltip';
 import { Item, Section } from '@react-stately/collections';
 
 import { MultiSelectTrigger, Select, SingleSelectTrigger } from '../src';
@@ -210,26 +211,39 @@ const CustomMultiSelectTrigger = (props: SelectTriggerProps<Item>) => {
   const { state, buttonProps, innerRef } = props;
 
   return (
-    <div style={{ display: 'flex', alignItems: 'center' }}>
-      {(state.selectedItems || []).map(({ key, textValue }) => (
-        <div
-          style={{
-            backgroundColor: '#efefef',
-            marginRight: '5px',
-            fontSize: '12px',
-          }}
-          key={key}
-        >
-          {textValue}
-          <button style={{ marginLeft: '5px' }} onClick={() => state.selectionManager.select(key)}>
-            x
-          </button>
-        </div>
-      ))}
-      <button {...buttonProps} ref={innerRef}>
-        +
-      </button>
-    </div>
+    <>
+      <p style={{ maxWidth: '600px' }}>
+        LaunchPad&apos;s Select component accepts a custom trigger that can access/manage selected
+        item state, and toggle the Select dropdown. In this example, we render each selected item
+        with it&apos;s value and a button that allows you to remove the selected option. To add more
+        items, we render a plus button that opens the dropdown.
+      </p>
+      <div style={{ display: 'flex', alignItems: 'center' }}>
+        {(state.selectedItems || []).map(({ key, textValue }) => (
+          <div
+            style={{
+              backgroundColor: '#efefef',
+              marginRight: '5px',
+              fontSize: '12px',
+            }}
+            key={key}
+          >
+            {textValue}
+            <Tooltip content="Unselect">
+              <button
+                style={{ marginLeft: '5px' }}
+                onClick={() => state.selectionManager.select(key)}
+              >
+                x
+              </button>
+            </Tooltip>
+          </div>
+        ))}
+        <button {...buttonProps} ref={innerRef}>
+          +
+        </button>
+      </div>
+    </>
   );
 };
 
