@@ -1,7 +1,7 @@
 import type { StoryObj, DecoratorFn, StoryFn } from '@storybook/react';
 
 import { createWithClassesDecorator, PseudoClasses } from '../../../.storybook/utils';
-import { Label, TextField } from '../src';
+import { TextField } from '../src';
 
 import './TextArea.stories.css';
 
@@ -101,7 +101,6 @@ export const Example: Story = {
     const textFieldId = `${id} Text Field`;
     return (
       <div>
-        <Label htmlFor={textFieldId}>{textFieldId}</Label>
         <TextField id={textFieldId} {...args} />
       </div>
     );
@@ -120,7 +119,6 @@ export const NumberWithSuffix: Story = {
     const numberFieldId = `${id} Number Field`;
     return (
       <div className="Textarea-number-wrapper">
-        <Label htmlFor={numberFieldId}>{numberFieldId}</Label>
         <TextField {...args} id={numberFieldId} />
       </div>
     );
