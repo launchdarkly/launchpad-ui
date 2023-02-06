@@ -1,10 +1,11 @@
-import type { ElementType, ReactNode, RefObject } from 'react';
+import type { ElementType, RefObject } from 'react';
 
 import { cx } from 'classix';
+import parse from 'html-react-parser';
 import DOMPurify from 'isomorphic-dompurify';
 
 import styles from './styles/Markdown.module.css';
-import { isAnchorNode, renderMarkdown } from './utils';
+import { isAnchorNode, parseLinkFromDOMNode, renderMarkdown } from './utils';
 
 DOMPurify.addHook('afterSanitizeAttributes', (node) => {
   // Ensure we add the required rel attribute.
@@ -31,17 +32,17 @@ type MarkdownProps = {
   container?: ElementType;
   textRef?: RefObject<HTMLElement>;
   'data-test-id'?: string;
-  children?: (rendered: string) => ReactNode;
+  smartLinks?: [SmartLink];
 };
 
-const Markdown = ({
+const MarkdownWithParser = ({
   source,
   className,
   baseUri,
   allowedTags,
   container = 'div',
   textRef,
-  children,
+  smartLinks,
   'data-test-id': testId = 'markdown',
 }: MarkdownProps) => {
   const Container = container;
@@ -49,20 +50,33 @@ const Markdown = ({
 
   const renderedMarkdown = renderMarkdown(source, { baseUri, allowedTags }) as string;
 
+  // We sanitize "source" (via DOMPurify) before inserting it into the DOM, to protect against XSS attacks.
+  const parsedJSX = parse(renderedMarkdown as string, {
+    // The replace option will replace all DOM nodes when the replace function returns a valid React element.
+    replace: (domNode) => {
+      const parsedLink = parseLinkFromDOMNode(domNode);
+      if (!parsedLink) {
+        return;
+      }
+      const smartLink = smartLinks?.find((s) => {
+        return parsedLink.url.hostname.endsWith(s.domain);
+      });
+      if (!smartLink) {
+        return;
+      }
+      return smartLink.renderer({
+        href: parsedLink.url.toString(),
+        text: parsedLink.text,
+      });
+    },
+  });
+
   return (
     <Container className={classes} ref={textRef} data-test-id={testId}>
-      {children ? (
-        children(renderedMarkdown)
-      ) : (
-        <div
-          dangerouslySetInnerHTML={{
-            __html: renderedMarkdown,
-          }}
-        />
-      )}
+      {parsedJSX}
     </Container>
   );
 };
 
-export { Markdown };
+export { MarkdownWithParser };
 export type { MarkdownProps, SmartLink };
