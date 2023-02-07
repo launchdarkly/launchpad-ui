@@ -28,4 +28,14 @@ describe('Drawer', () => {
 
     expect(spy).toHaveBeenCalledTimes(1);
   });
+
+  it('hides cancel button when hideCancel is passed in', async () => {
+    render(
+      <Drawer hideCancel>
+        <DrawerHeader>Drawer</DrawerHeader>
+      </Drawer>
+    );
+
+    expect(screen.queryByTestId('drawer-close-button')).not.toBeInTheDocument();
+  });
 });
