@@ -13,6 +13,7 @@ describe('Drawer', () => {
       </Drawer>
     );
     expect(await screen.findByRole('dialog')).toBeInTheDocument();
+    expect(await screen.findByTestId('drawer-close-button')).toBeInTheDocument();
   });
 
   it('calls onCancel when escape key is pressed', async () => {
