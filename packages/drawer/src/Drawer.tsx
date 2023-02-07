@@ -50,7 +50,7 @@ const Drawer = ({
   onCancel,
   size = 'small',
   'data-test-id': testId = 'drawer',
-  hideCancel = true,
+  hideCancel = false,
 }: DrawerProps) => {
   const ref = useRef<HTMLDivElement>(null);
 
