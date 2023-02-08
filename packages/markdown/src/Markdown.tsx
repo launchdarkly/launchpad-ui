@@ -15,14 +15,6 @@ DOMPurify.addHook('afterSanitizeAttributes', (node) => {
   }
 });
 
-/**
- * Smart links transform markdown links that match a given domain (e.g. atlassian.net).
- */
-type SmartLink = {
-  domain: string;
-  renderer: (props: { href: string; text?: string }) => JSX.Element;
-};
-
 type MarkdownProps = {
   source: string;
   className?: string;
@@ -31,7 +23,11 @@ type MarkdownProps = {
   container?: ElementType;
   textRef?: RefObject<HTMLElement>;
   'data-test-id'?: string;
-  children?: (rendered: string) => ReactNode;
+
+  /**
+   * The children prop can be used to provide custom rendering of the HTML string generated from the markdown source.
+   * */
+  children?: (renderedHTML: string) => ReactNode;
 };
 
 const Markdown = ({
@@ -65,4 +61,4 @@ const Markdown = ({
 };
 
 export { Markdown };
-export type { MarkdownProps, SmartLink };
+export type { MarkdownProps };

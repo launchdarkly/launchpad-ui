@@ -1,11 +1,10 @@
 import type { StoryObj } from '@storybook/react';
+import type { DOMNode, Element, Text } from 'html-react-parser';
 
 import parse from 'html-react-parser';
 
 import { SAMPLE_MARKDOWN } from '../__tests__/constants';
 import { Markdown } from '../src';
-import { MarkdownWithParser } from '../src/MarkdownWithParser';
-import { parseLinkFromDOMNode } from '../src/utils';
 
 export default {
   component: Markdown,
@@ -67,27 +66,39 @@ const Link = (props: { href: string }) => {
   );
 };
 
-export const WithSmartLink: Story = {
-  render: () => {
-    return (
-      <MarkdownWithParser
-        source={SAMPLE_MARKDOWN}
-        allowedTags={['a', '#text', 'p', 'li', 'ol', 'ul', 'b', 'strong', 'i', 'em', 'br', 'code']}
-        smartLinks={[
-          {
-            domain: 'launchdarkly.com',
-            renderer: ({ href }) => <Link href={href} />,
-          },
-        ]}
-      />
-    );
-  },
-};
-
 type SmartLink = {
   domain: string;
   renderer: (props: { href: string; text?: string }) => JSX.Element;
 };
+
+function isAnchorDOMNode(node: DOMNode): node is Element {
+  const element = node as Element;
+  return element?.name === 'a';
+}
+
+function isDOMText(node: DOMNode): node is Text {
+  return (node as Text)?.type === 'text';
+}
+
+function parseLinkFromDOMNode(node: DOMNode) {
+  if (!isAnchorDOMNode(node)) {
+    return;
+  }
+  if (!('href' in node.attribs)) {
+    return;
+  }
+  const { href } = node.attribs;
+  const textNode = node.firstChild;
+  if (!textNode || !isDOMText(textNode)) {
+    return;
+  }
+  try {
+    const url = new URL(href);
+    return { url, text: textNode.data !== href ? textNode.data : undefined };
+  } catch {
+    return;
+  }
+}
 
 export const WithChildrenRender: Story = {
   render: () => {

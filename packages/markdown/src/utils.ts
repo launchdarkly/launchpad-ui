@@ -1,5 +1,3 @@
-import type { DOMNode, Element as DOMElement, Text as DOMText } from 'html-react-parser';
-
 import DOMPurify from 'isomorphic-dompurify';
 import { marked } from 'marked';
 
@@ -7,38 +5,10 @@ function isAnchorNode(node: Element): node is HTMLAnchorElement {
   return node.tagName.toLowerCase() === 'a';
 }
 
-function isAnchorDOMNode(node: DOMNode): node is DOMElement {
-  const element = node as DOMElement;
-  return element?.name === 'a';
-}
-
-function isDOMText(node: DOMNode): node is DOMText {
-  return (node as DOMText)?.type === 'text';
-}
-
 /**
  *
  * parLinkFromDOMNode returns undefined if the node is not anchor node with an href attribute.
  */
-function parseLinkFromDOMNode(node: DOMNode) {
-  if (!isAnchorDOMNode(node)) {
-    return;
-  }
-  if (!('href' in node.attribs)) {
-    return;
-  }
-  const { href } = node.attribs;
-  const textNode = node.firstChild;
-  if (!textNode || !isDOMText(textNode)) {
-    return;
-  }
-  try {
-    const url = new URL(href);
-    return { url, text: textNode.data !== href ? textNode.data : undefined };
-  } catch {
-    return;
-  }
-}
 
 function renderMarkdown(
   source: string,
@@ -81,4 +51,4 @@ function renderMarkdown(
   return DOMPurify.sanitize(html, sanitizationConfig);
 }
 
-export { isAnchorNode, parseLinkFromDOMNode, renderMarkdown };
+export { isAnchorNode, renderMarkdown };
