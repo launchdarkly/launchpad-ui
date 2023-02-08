@@ -1,4 +1,4 @@
-import type { ElementType, RefObject } from 'react';
+import type { ElementType, ReactNode, RefObject } from 'react';
 
 import { cx } from 'classix';
 import DOMPurify from 'isomorphic-dompurify';
@@ -23,6 +23,11 @@ type MarkdownProps = {
   container?: ElementType;
   textRef?: RefObject<HTMLElement>;
   'data-test-id'?: string;
+
+  /**
+   * The children prop can be used to provide custom rendering of the HTML string generated from the markdown source.
+   * */
+  children?: (renderedMarkdown: string) => ReactNode;
 };
 
 const Markdown = ({
@@ -32,21 +37,28 @@ const Markdown = ({
   allowedTags,
   container = 'div',
   textRef,
+  children,
   'data-test-id': testId = 'markdown',
 }: MarkdownProps) => {
   const Container = container;
   const classes = cx(styles.Markdown, className);
+
+  const renderedMarkdown = renderMarkdown(source, { baseUri, allowedTags }) as string;
+
   return (
-    <Container
-      className={classes}
-      // We sanitize "source" (via DOMPurify) before inserting it into the DOM, to protect against XSS attacks.
-      // Using dangerouslySetInnerHTML is safe.
-      dangerouslySetInnerHTML={{
-        __html: renderMarkdown(source, { baseUri, allowedTags }),
-      }}
-      ref={textRef}
-      data-test-id={testId}
-    />
+    <Container className={classes} ref={textRef} data-test-id={testId}>
+      {children ? (
+        children(renderedMarkdown)
+      ) : (
+        <div
+          // We sanitize "source" (via DOMPurify) before inserting it into the DOM, to protect against XSS attacks.
+          // Using dangerouslySetInnerHTML is safe.
+          dangerouslySetInnerHTML={{
+            __html: renderedMarkdown,
+          }}
+        />
+      )}
+    </Container>
   );
 };
 
