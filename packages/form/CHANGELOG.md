@@ -1,5 +1,11 @@
 # @launchpad-ui/form
 
+## 0.6.35
+
+### Patch Changes
+
+- [#682](https://github.com/launchdarkly/launchpad-ui/pull/682) [`4bde854c`](https://github.com/launchdarkly/launchpad-ui/commit/4bde854c1bd1f41397b0a6347b35f84e8275a9da) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Form] Update TextField to use LaunchPad Label component
+
 ## 0.6.34
 
 ### Patch Changes

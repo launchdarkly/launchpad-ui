@@ -1,5 +1,11 @@
 # @launchpad-ui/drawer
 
+## 0.2.0
+
+### Minor Changes
+
+- [#683](https://github.com/launchdarkly/launchpad-ui/pull/683) [`fa952bc1`](https://github.com/launchdarkly/launchpad-ui/commit/fa952bc1a7f3d84afe42e3b2b0e19153b3d833ae) Thanks [@tvarney13](https://github.com/tvarney13)! - Add cancel icon toggle prop to Drawer
+
 ## 0.1.24
 
 ### Patch Changes
