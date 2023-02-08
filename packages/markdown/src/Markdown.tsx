@@ -27,7 +27,7 @@ type MarkdownProps = {
   /**
    * The children prop can be used to provide custom rendering of the HTML string generated from the markdown source.
    * */
-  children?: (renderedHTML: string) => ReactNode;
+  children?: (renderedMarkdown: string) => ReactNode;
 };
 
 const Markdown = ({
@@ -51,6 +51,8 @@ const Markdown = ({
         children(renderedMarkdown)
       ) : (
         <div
+          // We sanitize "source" (via DOMPurify) before inserting it into the DOM, to protect against XSS attacks.
+          // Using dangerouslySetInnerHTML is safe.
           dangerouslySetInnerHTML={{
             __html: renderedMarkdown,
           }}
