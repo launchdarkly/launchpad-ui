@@ -1,5 +1,28 @@
 # @launchpad-ui/core
 
+## 0.27.0
+
+### Minor Changes
+
+- [#683](https://github.com/launchdarkly/launchpad-ui/pull/683) [`fa952bc1`](https://github.com/launchdarkly/launchpad-ui/commit/fa952bc1a7f3d84afe42e3b2b0e19153b3d833ae) Thanks [@tvarney13](https://github.com/tvarney13)! - Add cancel icon toggle prop to Drawer
+
+### Patch Changes
+
+- [#680](https://github.com/launchdarkly/launchpad-ui/pull/680) [`148d3494`](https://github.com/launchdarkly/launchpad-ui/commit/148d34940febc0036e5046bf2bc3618d6379ba68) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [CopyToClipboard] Add type='button' to default copy code button
+
+- [#682](https://github.com/launchdarkly/launchpad-ui/pull/682) [`4bde854c`](https://github.com/launchdarkly/launchpad-ui/commit/4bde854c1bd1f41397b0a6347b35f84e8275a9da) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Form] Update TextField to use LaunchPad Label component
+
+- [#651](https://github.com/launchdarkly/launchpad-ui/pull/651) [`91b5405c`](https://github.com/launchdarkly/launchpad-ui/commit/91b5405c9b3c0eab6d203384b0f29e18e463467f) Thanks [@kwatkins-ld](https://github.com/kwatkins-ld)! - [Navigation] remove legacy Navigation components
+
+- Updated dependencies [[`148d3494`](https://github.com/launchdarkly/launchpad-ui/commit/148d34940febc0036e5046bf2bc3618d6379ba68), [`4bde854c`](https://github.com/launchdarkly/launchpad-ui/commit/4bde854c1bd1f41397b0a6347b35f84e8275a9da), [`00e38af2`](https://github.com/launchdarkly/launchpad-ui/commit/00e38af271238dd30456a095a71cb8f9e2db1f9b), [`fa952bc1`](https://github.com/launchdarkly/launchpad-ui/commit/fa952bc1a7f3d84afe42e3b2b0e19153b3d833ae), [`91b5405c`](https://github.com/launchdarkly/launchpad-ui/commit/91b5405c9b3c0eab6d203384b0f29e18e463467f)]:
+  - @launchpad-ui/clipboard@0.8.42
+  - @launchpad-ui/form@0.6.35
+  - @launchpad-ui/markdown@0.4.0
+  - @launchpad-ui/drawer@0.2.0
+  - @launchpad-ui/navigation@0.7.11
+  - @launchpad-ui/menu@0.6.49
+  - @launchpad-ui/filter@0.4.52
+
 ## 0.26.10
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @launchpad-ui/markdown
 
+## 0.4.0
+
+### Minor Changes
+
+- [#678](https://github.com/launchdarkly/launchpad-ui/pull/678) [`00e38af2`](https://github.com/launchdarkly/launchpad-ui/commit/00e38af271238dd30456a095a71cb8f9e2db1f9b) Thanks [@ldhenry](https://github.com/ldhenry)! - Add optional "children" prop to permit custom rendering logic in component consumer
+
 ## 0.3.18
 
 ### Patch Changes
