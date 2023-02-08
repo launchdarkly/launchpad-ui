@@ -1,74 +1,11 @@
-import type { SelectTriggerProps } from '../src';
 import type { StoryObj } from '@storybook/react';
 
 import { Chip } from '@launchpad-ui/chip';
-import { Tooltip } from '@launchpad-ui/tooltip';
 import { Item, Section } from '@react-stately/collections';
 
 import { MultiSelectTrigger, Select, SingleSelectTrigger } from '../src';
-
-type Item = {
-  id: string;
-  name: string;
-  description: string;
-};
-
-const FRUIT: Item[] = [
-  {
-    id: '1',
-    name: 'Apple',
-    description: 'This is a description',
-  },
-  {
-    id: '2',
-    name: 'Banana',
-    description: 'This is a description',
-  },
-  {
-    id: '3',
-    name: 'Orange',
-    description: 'This is a description',
-  },
-  {
-    id: '4',
-    name: 'Blueberry',
-    description: 'This is a description',
-  },
-  {
-    id: '5',
-    name: 'Kiwi',
-    description: 'This is a description',
-  },
-];
-
-const VEGETABLES: Item[] = [
-  {
-    id: '6',
-    name: 'Onion',
-    description: 'This is a description',
-  },
-  {
-    id: '7',
-    name: 'Potato',
-    description: 'This is a description',
-  },
-  {
-    id: '8',
-    name: 'Iceberg Lettuce',
-    description: 'This is a description',
-  },
-];
-
-const SECTIONED_ITEMS = [
-  {
-    name: 'Fruit',
-    items: FRUIT,
-  },
-  {
-    name: 'Vegetables',
-    items: VEGETABLES,
-  },
-];
+import { FRUIT, SECTIONED_ITEMS } from '../src/__tests__/constants';
+import { CustomMultiSelectTrigger, CustomSingleSelectTrigger } from '../src/__tests__/examples';
 
 export default {
   component: Select,
@@ -130,23 +67,6 @@ export const SingleSelectWithCustomSelectedRender: Story = {
   parameters: { docs: { disable: false } },
 };
 
-const CustomSingleSelectTrigger = (props: SelectTriggerProps<Item>) => {
-  const { state, buttonProps, innerRef } = props;
-
-  const getRenderedSelected = () => {
-    const items = state.selectedItems;
-
-    if (!items) return 'Select option';
-
-    return <span>{items[0].textValue}</span>;
-  };
-  return (
-    <button {...buttonProps} ref={innerRef}>
-      {getRenderedSelected()}
-    </button>
-  );
-};
-
 export const SingleSelectWithCustomTrigger: Story = {
   render: () => {
     return (
@@ -205,38 +125,6 @@ export const MultiSelect: Story = {
     );
   },
   parameters: { docs: { disable: false } },
-};
-
-const CustomMultiSelectTrigger = (props: SelectTriggerProps<Item>) => {
-  const { state, buttonProps, innerRef } = props;
-
-  return (
-    <div style={{ display: 'flex', alignItems: 'center' }}>
-      {(state.selectedItems || []).map(({ key, textValue }) => (
-        <div
-          style={{
-            backgroundColor: '#efefef',
-            marginRight: '5px',
-            fontSize: '12px',
-          }}
-          key={key}
-        >
-          {textValue}
-          <Tooltip content="Unselect">
-            <button
-              style={{ marginLeft: '5px' }}
-              onClick={() => state.selectionManager.select(key)}
-            >
-              x
-            </button>
-          </Tooltip>
-        </div>
-      ))}
-      <button {...buttonProps} ref={innerRef}>
-        +
-      </button>
-    </div>
-  );
 };
 
 export const MultiSelectWithCustomTrigger: Story = {
@@ -321,11 +209,7 @@ export const MultiSelectWithSelectAll: Story = {
           </MultiSelectTrigger>
         )}
       >
-        {(item) => (
-          <Item textValue={item.name}>
-            {item.name} <Chip>ID: {item.id}</Chip>
-          </Item>
-        )}
+        {(item) => <Item textValue={item.name}>{item.name}</Item>}
       </Select>
     );
   },

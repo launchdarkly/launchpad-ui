@@ -31,7 +31,7 @@ const SelectListBox = <T extends object>(props: SelectListBoxProps<T>) => {
   const { listBoxProps } = useListBox(props, state, listBoxRef);
 
   return (
-    <ul {...listBoxProps} ref={listBoxRef} className={styles.options}>
+    <ul {...listBoxProps} ref={listBoxRef} className={styles.options} data-test-id="select-menu">
       {[...state.collection].map((item) =>
         item.type === 'section' ? (
           <Section key={item.key} section={item} state={state} />

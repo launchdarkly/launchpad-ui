@@ -2,15 +2,14 @@ import type { SelectState, UseSelectStateProps } from './useSelectState';
 import type { CollectionBase, FocusableElement, Node } from '@react-types/shared';
 import type { ButtonHTMLAttributes, DOMAttributes, ReactNode, RefObject } from 'react';
 
-import { Button, ButtonGroup } from '@launchpad-ui/button';
 import { useButton } from '@react-aria/button';
 import { useFocusRing } from '@react-aria/focus';
 import { mergeProps, useObjectRef } from '@react-aria/utils';
 import { VisuallyHidden } from '@react-aria/visually-hidden';
-import { useEffect, useRef } from 'react';
 
 import { DefaultSelectTrigger } from './DefaultSelectTrigger';
 import { SelectListBox } from './SelectListBox';
+import { SelectMenuHeader } from './SelectMenuHeader';
 import { SelectPopover } from './SelectPopover';
 import { useSelect } from './useSelect';
 import { useSelectState } from './useSelectState';
@@ -66,6 +65,8 @@ type SelectProps<T extends object> = CollectionBase<T> & {
   innerRef?: RefObject<HTMLButtonElement | null>;
 
   trigger?: (props: SelectTriggerProps<T>) => JSX.Element;
+
+  'data-test-id'?: string;
 };
 
 const Select = <T extends object>(props: SelectProps<T>) => {
@@ -79,9 +80,8 @@ const Select = <T extends object>(props: SelectProps<T>) => {
     label,
     innerRef,
     trigger = DefaultSelectTrigger,
+    'data-test-id': testId = 'select',
   } = props;
-
-  const refAllButton = useRef<HTMLInputElement>(null);
   const ref = useObjectRef(innerRef);
 
   const state = useSelectState(props);
@@ -101,64 +101,32 @@ const Select = <T extends object>(props: SelectProps<T>) => {
 
   const renderedTrigger = trigger({
     state,
-    buttonProps: mergeProps(buttonProps, focusProps),
+    buttonProps: mergeProps(buttonProps, focusProps, { 'data-test-id': 'select-trigger' }),
     valueProps,
     innerRef: ref,
   });
 
-  const isMulti = state.selectionMode === 'multiple';
-  // const isActive = state.isOpen || state.selectedItems;
-  const isAllSelection = state.selectionManager.isSelectAll;
-  const isIndeterminateSelection = !isAllSelection && !state.selectionManager.isEmpty;
-  const hasClearButton = isClearable && state.selectedItems;
-  const hasSelectAllButton = isSelectableAll && isMulti;
-  const hasHeader = hasClearButton || hasSelectAllButton;
-
-  const handleClear = () => state.selectionManager.clearSelection();
-  const handleSelectAll = () => state.selectionManager.toggleSelectAll();
-
-  useEffect(() => {
-    if (refAllButton.current) {
-      refAllButton.current.indeterminate = isIndeterminateSelection;
-    }
-  }, [isIndeterminateSelection]);
+  console.log(state.isFocused);
 
   return (
-    <div>
-      <div>
-        {label && (
-          <VisuallyHidden>
-            <label {...labelProps}>{label}</label>
-          </VisuallyHidden>
-        )}
+    <div data-test-id={testId}>
+      <VisuallyHidden>
+        <label {...labelProps}>{label}</label>
+      </VisuallyHidden>
 
-        {renderedTrigger}
-        {state.isOpen && (
-          <SelectPopover state={state} triggerRef={ref}>
-            {hasHeader && (
-              <ButtonGroup style={{ margin: '0.8rem 1.6rem' }}>
-                {hasSelectAllButton && (
-                  <Button onClick={handleSelectAll}>
-                    <div style={{ display: 'flex', alignItems: 'center' }}>
-                      <input
-                        type="checkbox"
-                        checked={isAllSelection}
-                        ref={refAllButton}
-                        readOnly
-                        tabIndex={-1}
-                      />
-                      Select all
-                    </div>
-                  </Button>
-                )}
-                {hasClearButton && <Button onClick={handleClear}>Clear</Button>}
-              </ButtonGroup>
-            )}
+      {renderedTrigger}
 
-            <SelectListBox {...menuProps} state={state} />
-          </SelectPopover>
-        )}
-      </div>
+      {state.isOpen && (
+        <SelectPopover state={state} triggerRef={ref}>
+          <SelectMenuHeader
+            isSelectableAll={isSelectableAll}
+            isClearable={isClearable}
+            state={state}
+          />
+
+          <SelectListBox {...menuProps} state={state} />
+        </SelectPopover>
+      )}
     </div>
   );
 };
