@@ -1,6 +1,6 @@
 import type { StoryObj } from '@storybook/react';
 
-import { Label, TextField } from '../src';
+import { Label } from '../src';
 
 export default {
   component: Label,
@@ -55,11 +55,22 @@ type Story = StoryObj<typeof Label>;
 export const Default: Story = {
   args: {
     htmlFor: 'name',
-    children: (
-      <>
-        Name
-        <TextField id="name" />
-      </>
-    ),
+    children: 'Name',
+  },
+};
+
+export const WithOptional: Story = {
+  args: {
+    htmlFor: 'name',
+    children: 'Name',
+    optional: true,
+  },
+};
+
+export const WithRequired: Story = {
+  args: {
+    htmlFor: 'name',
+    children: 'Name',
+    required: true,
   },
 };
