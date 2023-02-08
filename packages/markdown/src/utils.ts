@@ -5,11 +5,6 @@ function isAnchorNode(node: Element): node is HTMLAnchorElement {
   return node.tagName.toLowerCase() === 'a';
 }
 
-/**
- *
- * parLinkFromDOMNode returns undefined if the node is not anchor node with an href attribute.
- */
-
 function renderMarkdown(
   source: string,
   {
