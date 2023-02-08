@@ -1,5 +1,14 @@
 # @launchpad-ui/navigation
 
+## 0.7.11
+
+### Patch Changes
+
+- [#651](https://github.com/launchdarkly/launchpad-ui/pull/651) [`91b5405c`](https://github.com/launchdarkly/launchpad-ui/commit/91b5405c9b3c0eab6d203384b0f29e18e463467f) Thanks [@kwatkins-ld](https://github.com/kwatkins-ld)! - [Navigation] remove legacy Navigation components
+
+- Updated dependencies []:
+  - @launchpad-ui/menu@0.6.49
+
 ## 0.7.10
 
 ### Patch Changes

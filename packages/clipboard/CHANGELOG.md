@@ -1,5 +1,11 @@
 # @launchpad-ui/clipboard
 
+## 0.8.42
+
+### Patch Changes
+
+- [#680](https://github.com/launchdarkly/launchpad-ui/pull/680) [`148d3494`](https://github.com/launchdarkly/launchpad-ui/commit/148d34940febc0036e5046bf2bc3618d6379ba68) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [CopyToClipboard] Add type='button' to default copy code button
+
 ## 0.8.41
 
 ### Patch Changes
