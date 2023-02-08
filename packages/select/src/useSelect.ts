@@ -4,7 +4,6 @@ import type { AriaButtonProps } from '@react-types/button';
 import type { AriaSelectProps } from '@react-types/select';
 import type { FocusEvent, HTMLAttributes, RefObject } from 'react';
 
-import { useCollator } from '@react-aria/i18n';
 import { setInteractionModality } from '@react-aria/interactions';
 import { useField } from '@react-aria/label';
 import { useMenuTrigger } from '@react-aria/menu';
@@ -39,10 +38,9 @@ const useSelect = <T extends object>(
 ): SelectAria<T> => {
   const { disallowEmptySelection, isDisabled } = props;
 
-  const collator = useCollator({ usage: 'search', sensitivity: 'base' });
   const delegate = useMemo(
-    () => new ListKeyboardDelegate(state.collection, state.disabledKeys, null as never, collator),
-    [state.collection, state.disabledKeys, collator]
+    () => new ListKeyboardDelegate(state.collection, state.disabledKeys, null as never),
+    [state.collection, state.disabledKeys]
   );
 
   const { menuTriggerProps, menuProps } = useMenuTrigger<T>(
