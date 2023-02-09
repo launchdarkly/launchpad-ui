@@ -1,10 +1,10 @@
 import type { StoryObj } from '@storybook/react';
 
-import { Select } from '../src';
+import { SelectField } from '../src';
 
 export default {
-  component: Select,
-  title: 'Components/Form/Select',
+  component: SelectField,
+  title: 'Components/Form/SelectField',
   description: 'A select field allows the user to select a value from a set of options."',
   parameters: {
     status: {
@@ -51,7 +51,7 @@ export default {
   },
 };
 
-type Story = StoryObj<typeof Select>;
+type Story = StoryObj<typeof SelectField>;
 
 export const Default: Story = {
   args: {

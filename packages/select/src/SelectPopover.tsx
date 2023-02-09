@@ -22,7 +22,7 @@ const SelectPopover = (props: SelectPopoverProps) => {
     state,
     children,
     className,
-    isNonModal,
+    isNonModal = true,
     triggerRef,
     offset = 8,
   } = props;

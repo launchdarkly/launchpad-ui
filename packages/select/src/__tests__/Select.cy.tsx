@@ -25,9 +25,15 @@ describe('Select', () => {
       cy.checkA11y();
     });
 
+    it('is accessible with menu open', () => {
+      cy.getByTestId('select-trigger').click();
+
+      cy.checkA11y('[data-test-id=select-trigger]');
+    });
+
     it('opens menu, selects item, and updates selected value', () => {
       cy.getByTestId('select-trigger').click();
-      cy.getByRole('option').first().click();
+      cy.get('li').first().click();
       cy.getByTestId('select-trigger').should('have.text', FRUIT[0].name);
     });
   });
@@ -51,8 +57,8 @@ describe('Select', () => {
 
     it('opens menu, selects item, and updates selected value', () => {
       cy.getByTestId('select-trigger').click();
-      cy.getByRole('option').first().click();
-      cy.getByRole('option').eq(1).click();
+      cy.get('li').first().click();
+      cy.get('li').eq(1).click();
       cy.getByTestId('select-trigger').should('have.text', `${FRUIT[0].name}, ${FRUIT[1].name}`);
     });
   });
@@ -74,8 +80,8 @@ describe('Select', () => {
       );
       cy.getByTestId('select').should('be.visible');
       cy.getByTestId('select-trigger').click();
-      cy.getByRole('option').first().click();
-      cy.getByRole('option').eq(1).click();
+      cy.get('li').first().click();
+      cy.get('li').eq(1).click();
       cy.getByTestId('select-trigger').should('have.text', DUMMY_TEXT);
     });
   });
@@ -97,7 +103,7 @@ describe('Select', () => {
       );
       cy.getByTestId('select').should('be.visible');
       cy.getByTestId('select-trigger').click();
-      cy.getByRole('option').first().click();
+      cy.get('li').first().click();
       cy.getByTestId('select-trigger').should('have.text', DUMMY_TEXT);
     });
   });
@@ -126,7 +132,7 @@ describe('Select', () => {
 
     it('selects options', () => {
       cy.getByTestId('custom-trigger').click();
-      cy.getByRole('option').first().click();
+      cy.get('li').first().click();
       cy.getByTestId('custom-trigger').should('have.text', FRUIT[0].name);
     });
   });
@@ -155,8 +161,8 @@ describe('Select', () => {
 
     it('selects options', () => {
       cy.getByTestId('custom-trigger').click();
-      cy.getByRole('option').first().click();
-      cy.getByRole('option').eq(2).click();
+      cy.get('li').first().click();
+      cy.get('li').eq(2).click();
 
       cy.getByTestId('selected-option').first().should('have.text', FRUIT[0].name);
       cy.getByTestId('selected-option').eq(1).should('have.text', FRUIT[2].name);
@@ -164,8 +170,8 @@ describe('Select', () => {
 
     it('unselects options', () => {
       cy.getByTestId('custom-trigger').click();
-      cy.getByRole('option').first().click();
-      cy.getByRole('option').eq(2).click();
+      cy.get('li').first().click();
+      cy.get('li').eq(2).click();
 
       cy.getByTestId('unselect-option-btn').first().click();
       cy.getByTestId('selected-option').should('have.length', 1);
