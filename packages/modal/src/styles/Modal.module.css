@@ -14,7 +14,7 @@
 .overlay {
   position: fixed;
   inset: 0;
-  background-color: hsl(0 0% 20% / 0.5);
+  background-color: rgb(40 40 40 / 0.5);
   display: flex;
   align-items: flex-end;
   justify-content: center;
