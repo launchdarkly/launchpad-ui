@@ -33,7 +33,7 @@
   background-color: rgb(40 40 40 / 0.5);
 
   :root[data-theme='dark'] & {
-    background-color: rgb(18 18 18 / 0.7);
+    background-color: rgb(25 25 25 / 0.7);
   }
 }
 

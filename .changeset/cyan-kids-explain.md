@@ -4,5 +4,5 @@
 '@launchpad-ui/core': patch
 ---
 
-[Modal] Update overlay bg default theme color
-[Drawer] Update overlay bg default theme color
+[Modal] Update overlay bg theme colors
+[Drawer] Update overlay bg theme colors

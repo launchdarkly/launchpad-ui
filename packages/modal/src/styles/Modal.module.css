@@ -20,7 +20,7 @@
   justify-content: center;
 
   :root[data-theme='dark'] & {
-    background-color: rgb(18 18 18 / 0.75);
+    background-color: rgb(25 25 25 / 0.75);
   }
 }
 
