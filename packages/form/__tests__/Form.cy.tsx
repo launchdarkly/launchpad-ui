@@ -11,7 +11,7 @@ import {
   Label,
   RadioGroup,
   Radio,
-  Select,
+  SelectField,
   TextArea,
   TextField,
 } from '../src';
@@ -37,15 +37,15 @@ const createComponent = (props?: FormProps) => (
         <TextField id="Date" value="12/01/2022" />
       </FormField>
     </IconField>
-    <h4>Select</h4>
-    <Select name="select" aria-label="My select" value="one" onChange={() => undefined}>
+    <h4>SelectField</h4>
+    <SelectField name="select" aria-label="My select" value="one" onChange={() => undefined}>
       <option value="one" aria-label="option one">
         One
       </option>
       <option value="two" aria-label="option two">
         Two
       </option>
-    </Select>
+    </SelectField>
     <h4>Text Area</h4>
     <TextArea
       value="my text"

@@ -1,19 +1,19 @@
 import { it, expect, describe } from 'vitest';
 
 import { render, screen } from '../../../test/utils';
-import { Select } from '../src';
+import { SelectField } from '../src';
 
-describe('Select', () => {
+describe('SelectField', () => {
   it('renders', () => {
     render(
-      <Select name="select" aria-label="My select" value="one" onChange={() => undefined}>
+      <SelectField name="select" aria-label="My select" value="one" onChange={() => undefined}>
         <option value="one" aria-label="option one">
           One
         </option>
         <option value="two" aria-label="option two">
           Two
         </option>
-      </Select>
+      </SelectField>
     );
     expect(screen.getByLabelText('My select')).toBeInTheDocument();
   });

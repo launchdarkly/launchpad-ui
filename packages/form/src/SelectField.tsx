@@ -4,16 +4,16 @@ import { cx } from 'classix';
 
 import styles from './styles/Form.module.css';
 
-type SelectProps = SelectHTMLAttributes<HTMLSelectElement> & {
+type SelectFieldProps = SelectHTMLAttributes<HTMLSelectElement> & {
   'data-test-id'?: string;
 };
 
-const Select = ({
+const SelectField = ({
   className,
   children,
   'data-test-id': testId = 'select',
   ...rest
-}: SelectProps) => {
+}: SelectFieldProps) => {
   const classes = cx(styles.formInput, className);
 
   return (
@@ -23,5 +23,5 @@ const Select = ({
   );
 };
 
-export { Select };
-export type { SelectProps };
+export { SelectField };
+export type { SelectFieldProps };
