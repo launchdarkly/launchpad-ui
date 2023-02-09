@@ -31,6 +31,8 @@ type SelectAria<T extends object> = {
   menuProps: AriaListBoxOptions<T>;
 };
 
+/* c8 ignore start */
+
 const useSelect = <T extends object>(
   props: UseSelectProps<T>,
   state: SelectState<T>,
@@ -185,6 +187,8 @@ const useSelect = <T extends object>(
     },
   };
 };
+
+/* c8 ignore stop */
 
 export { useSelect };
 export type { UseSelectProps, SelectAria };

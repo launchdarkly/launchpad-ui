@@ -77,13 +77,10 @@ const Option = <T extends object>({ item, state }: SelectListBoxOptionProps<T>) 
     ref
   );
 
-  const { ...otherProps } = optionProps;
-
   return (
     <li
-      {...otherProps}
+      {...optionProps}
       ref={ref}
-      role="article"
       className={cx(
         styles.option,
         isDisabled && styles.isDisabled,

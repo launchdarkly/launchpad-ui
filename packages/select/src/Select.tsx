@@ -106,8 +106,6 @@ const Select = <T extends object>(props: SelectProps<T>) => {
     innerRef: ref,
   });
 
-  console.log(state.isFocused);
-
   return (
     <div data-test-id={testId}>
       <VisuallyHidden>

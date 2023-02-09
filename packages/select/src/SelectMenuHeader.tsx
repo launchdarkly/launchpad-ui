@@ -19,8 +19,7 @@ const SelectMenuHeader = <T extends object>(props: SelectMenuHeaderProps<T>) => 
   const isIndeterminateSelection = !isAllSelection && !state.selectionManager.isEmpty;
   const isMulti = state.selectionMode === 'multiple';
   const hasClearButton = isClearable && state.selectedItems;
-  const hasSelectAllButton = isSelectableAll && isMulti;
-  const hasHeader = hasClearButton || hasSelectAllButton;
+  const hasHeader = isMulti && (hasClearButton || isSelectableAll);
 
   useEffect(() => {
     if (refAllButton.current) {
@@ -34,23 +33,29 @@ const SelectMenuHeader = <T extends object>(props: SelectMenuHeaderProps<T>) => 
   if (!hasHeader) return null;
 
   return (
-    <ButtonGroup style={{ margin: '0.8rem 1.6rem' }}>
-      {hasSelectAllButton && (
-        <Button onClick={handleSelectAll}>
-          <div style={{ display: 'flex', alignItems: 'center' }}>
-            <input
-              type="checkbox"
-              checked={isAllSelection}
-              ref={refAllButton}
-              readOnly
-              tabIndex={-1}
-            />
-            Select all
-          </div>
-        </Button>
-      )}
-      {hasClearButton && <Button onClick={handleClear}>Clear</Button>}
-    </ButtonGroup>
+    <div data-test-id="menu-header">
+      <ButtonGroup style={{ margin: '0.8rem 1.6rem' }}>
+        {isSelectableAll && (
+          <Button onClick={handleSelectAll} data-test-id="select-all-btn">
+            <div style={{ display: 'flex', alignItems: 'center' }}>
+              <input
+                type="checkbox"
+                checked={isAllSelection}
+                ref={refAllButton}
+                readOnly
+                tabIndex={-1}
+              />
+              Select all
+            </div>
+          </Button>
+        )}
+        {hasClearButton && (
+          <Button onClick={handleClear} data-test-id="clear-btn">
+            Clear
+          </Button>
+        )}
+      </ButtonGroup>
+    </div>
   );
 };
 
