@@ -1,5 +1,25 @@
 # @launchpad-ui/core
 
+## 0.27.1
+
+### Patch Changes
+
+- [#686](https://github.com/launchdarkly/launchpad-ui/pull/686) [`a521fecf`](https://github.com/launchdarkly/launchpad-ui/commit/a521fecff8db852b21b13fd2f05982051e71b9cd) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Modal] Update overlay bg theme colors
+  [Drawer] Update overlay bg theme colors
+
+- [#671](https://github.com/launchdarkly/launchpad-ui/pull/671) [`6ac80f0e`](https://github.com/launchdarkly/launchpad-ui/commit/6ac80f0e18a65afea1e6a764b216d03f6d6081b5) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Select]: Add Select package supporting single and multi select
+  [Modal]: Bump `@react-aria/overlays` module version
+  [Drawer]: Bump `@react-aria/overlays` module version
+  [Form]: Rename Select to SelectField
+- Updated dependencies [[`a521fecf`](https://github.com/launchdarkly/launchpad-ui/commit/a521fecff8db852b21b13fd2f05982051e71b9cd), [`6ac80f0e`](https://github.com/launchdarkly/launchpad-ui/commit/6ac80f0e18a65afea1e6a764b216d03f6d6081b5)]:
+  - @launchpad-ui/drawer@0.2.1
+  - @launchpad-ui/modal@0.12.23
+  - @launchpad-ui/select@0.1.0
+  - @launchpad-ui/form@0.7.0
+  - @launchpad-ui/menu@0.6.50
+  - @launchpad-ui/filter@0.4.53
+  - @launchpad-ui/navigation@0.7.12
+
 ## 0.27.0
 
 ### Minor Changes
