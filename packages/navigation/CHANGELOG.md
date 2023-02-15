@@ -1,5 +1,16 @@
 # @launchpad-ui/navigation
 
+## 0.8.0
+
+### Minor Changes
+
+- [#690](https://github.com/launchdarkly/launchpad-ui/pull/690) [`26f64fe3`](https://github.com/launchdarkly/launchpad-ui/commit/26f64fe31a399dfcbf147102ef82d97bde636703) Thanks [@kwatkins-ld](https://github.com/kwatkins-ld)! - update to react-router-dom@6.7.0
+
+### Patch Changes
+
+- Updated dependencies [[`26f64fe3`](https://github.com/launchdarkly/launchpad-ui/commit/26f64fe31a399dfcbf147102ef82d97bde636703)]:
+  - @launchpad-ui/menu@0.7.0
+
 ## 0.7.12
 
 ### Patch Changes
