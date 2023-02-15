@@ -7,10 +7,6 @@ import { it, expect, describe, vi } from 'vitest';
 import { render, screen, userEvent, waitFor } from '../../../test/utils';
 import { CopyToClipboard } from '../src';
 
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-ignore
-window.navigator = { clipboard: { writeText: vi.fn() } };
-
 const createComponent = ({ children, ...rest }: Partial<CopyToClipboardProps>) => (
   <CopyToClipboard
     text="Copy content"
@@ -26,10 +22,12 @@ describe('CopyToClipboard', () => {
   it('copies text when clicked on', async () => {
     const user = userEvent.setup();
 
+    const spy = vi.spyOn(window.navigator.clipboard, 'writeText');
+
     render(createComponent({}));
 
-    await user.click(screen.getByRole('button'));
-    expect(navigator.clipboard.writeText).toHaveBeenCalledWith('Copy content');
+    await user.click(screen.getByTestId('copy-code-button'));
+    expect(spy).toHaveBeenCalledWith('Copy content');
   });
 
   it('handles MouseEnter and MouseLeave', async () => {
@@ -98,10 +96,13 @@ describe('CopyToClipboard', () => {
     };
 
     const user = userEvent.setup();
+
+    const spy = vi.spyOn(window.navigator.clipboard, 'writeText');
+
     render(<WrappedComponent />);
 
     await user.click(screen.getByTestId('wrapper'));
-    expect(navigator.clipboard.writeText).toHaveBeenCalledWith('Copy content');
+    expect(spy).toHaveBeenCalledWith('Copy content');
   });
 
   it('renders a button when asChild is false', async () => {
