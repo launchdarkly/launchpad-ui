@@ -1,5 +1,5 @@
-import type { SelectTriggerProps } from '../Select';
 import type { DummyItem } from './constants';
+import type { SelectTriggerProps } from '../Select';
 
 import { Tooltip } from '@launchpad-ui/tooltip';
 
