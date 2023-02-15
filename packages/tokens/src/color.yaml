@@ -116,6 +116,8 @@ color:
       value: hsl(220, 1.7%, 35.1%)
     800:
       value: hsl(270, 1.5%, 25.5%)
+    900:
+      value: hsl(0, 0%, 19%)
   black:
     100:
       value: hsl(0, 0%, 15.7%)
@@ -213,7 +215,7 @@ color:
       secondary:
         ' ':
           value: '{ color.white. .value }'
-          dark: '{ color.black.300.value }'
+          dark: '{ color.black.200.value }'
         active:
           value: '{ color.gray.200.value }'
           dark: '{ color.gray.800.value }'
@@ -267,14 +269,14 @@ color:
         dark: '{ color.black.100.value }'
       secondary:
         value: '{ color.black.300.value }'
-        dark: '{ color.white. .value }'
+        dark: '{ color.black.100.value }'
     field:
       ' ':
         value: '{ color.white. .value }'
-        dark: '{ color.black.300.value }'
+        dark: 'rgb(0 0 0 / .15)'
       disabled:
         value: '{ color.gray.100.value }'
-        dark: '{ color.gray.800.value }'
+        dark: '{ color.black.100.value }'
       aside:
         value: '{ color.gray.100.value }'
         dark: '{ color.gray.800.value }'
@@ -296,7 +298,7 @@ color:
     field:
       ' ':
         value: '{ color.gray.300.value }'
-        dark: '{ color.gray.700.value }'
+        dark: '{ color.gray.500.value }'
       active:
         value: '{ color.blue.500.value }'
         dark: '{ color.cyan.500.value }'
@@ -306,6 +308,9 @@ color:
       error:
         value: '{ color.system.red.600.value }'
         dark: '{ color.system.red.400.value }'
+      disabled:
+        value: '{ color.gray.700.value }'
+        dark: '{ color.gray.800.value }'
     interactive:
       focus:
         value: '{ color.blue.500.value }'
@@ -322,7 +327,7 @@ color:
       secondary:
         ' ':
           value: '{ color.gray.300.value }'
-          dark: '{ color.gray.300.value }'
+          dark: '{ color.gray.500.value }'
         active:
           value: '{ color.gray.700.value }'
           dark: '{ color.gray.100.value }'
@@ -456,4 +461,4 @@ color:
         dark: '{ color.gray.500.value }'
       placeholder:
         value: '{ color.gray.500.value }'
-        dark: '{ color.gray.700.value }'
+        dark: '{ color.gray.400.value }'

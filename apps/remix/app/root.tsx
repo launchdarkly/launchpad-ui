@@ -35,6 +35,7 @@ import paginationStyles from '@launchpad-ui/pagination/style.css';
 import popoverStyles from '@launchpad-ui/popover/style.css';
 import progressBubblesStyles from '@launchpad-ui/progress-bubbles/style.css';
 import progressStyles from '@launchpad-ui/progress/style.css';
+import selectStyles from '@launchpad-ui/select/style.css';
 import sliderStyles from '@launchpad-ui/slider/style.css';
 import snackbarStyles from '@launchpad-ui/snackbar/style.css';
 import splitButtonStyles from '@launchpad-ui/split-button/style.css';
@@ -76,6 +77,7 @@ export const links: LinksFunction = () => {
     { rel: 'stylesheet', href: snackbarStyles },
     { rel: 'stylesheet', href: toastStyles },
     { rel: 'stylesheet', href: drawerStyles },
+    { rel: 'stylesheet', href: selectStyles },
   ];
 };
 

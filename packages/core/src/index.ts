@@ -22,6 +22,7 @@ export * from '@launchpad-ui/popover';
 export * from '@launchpad-ui/portal';
 export * from '@launchpad-ui/progress';
 export * from '@launchpad-ui/progress-bubbles';
+export * from '@launchpad-ui/select';
 export * from '@launchpad-ui/slider';
 export * from '@launchpad-ui/snackbar';
 export * from '@launchpad-ui/split-button';

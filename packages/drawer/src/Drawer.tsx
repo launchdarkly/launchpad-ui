@@ -41,6 +41,7 @@ type DrawerProps = {
   onCancel?(): void;
   'data-test-id'?: string;
   size?: 'small' | 'medium' | 'large' | 'xLarge' | 'full';
+  hideCancel?: boolean;
 };
 
 const Drawer = ({
@@ -49,6 +50,7 @@ const Drawer = ({
   onCancel,
   size = 'small',
   'data-test-id': testId = 'drawer',
+  hideCancel = false,
 }: DrawerProps) => {
   const ref = useRef<HTMLDivElement>(null);
 
@@ -111,13 +113,15 @@ const Drawer = ({
                 className={styles.content}
                 tabIndex={-1}
               >
-                <IconButton
-                  aria-label="close"
-                  icon={<Close size="medium" />}
-                  className={styles.closeButton}
-                  onClick={onCancel}
-                  data-test-id="drawer-close-button"
-                />
+                {!hideCancel && (
+                  <IconButton
+                    aria-label="close"
+                    icon={<Close size="medium" />}
+                    className={styles.closeButton}
+                    onClick={onCancel}
+                    data-test-id="drawer-close-button"
+                  />
+                )}
                 <Suspense fallback={<Progress />}>{children}</Suspense>
               </m.div>
             </FocusTrap>

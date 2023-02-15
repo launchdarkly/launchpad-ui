@@ -1,5 +1,95 @@
 # @launchpad-ui/navigation
 
+## 0.7.11
+
+### Patch Changes
+
+- [#651](https://github.com/launchdarkly/launchpad-ui/pull/651) [`91b5405c`](https://github.com/launchdarkly/launchpad-ui/commit/91b5405c9b3c0eab6d203384b0f29e18e463467f) Thanks [@kwatkins-ld](https://github.com/kwatkins-ld)! - [Navigation] remove legacy Navigation components
+
+- Updated dependencies []:
+  - @launchpad-ui/menu@0.6.49
+
+## 0.7.10
+
+### Patch Changes
+
+- Updated dependencies [[`990af4a5`](https://github.com/launchdarkly/launchpad-ui/commit/990af4a5c7490a322604272cf9edc16ce9427cf1)]:
+  - @launchpad-ui/icons@0.6.19
+  - @launchpad-ui/dropdown@0.6.24
+  - @launchpad-ui/menu@0.6.48
+
+## 0.7.9
+
+### Patch Changes
+
+- Updated dependencies [[`20439f2d`](https://github.com/launchdarkly/launchpad-ui/commit/20439f2d0533bf574b613d16d5d31eb688cb629f), [`808902f7`](https://github.com/launchdarkly/launchpad-ui/commit/808902f71c0b410adf86b0ee1683a2d36c4cdb22)]:
+  - @launchpad-ui/popover@0.8.35
+  - @launchpad-ui/tooltip@0.6.36
+  - @launchpad-ui/tokens@0.4.9
+  - @launchpad-ui/dropdown@0.6.23
+  - @launchpad-ui/menu@0.6.47
+  - @launchpad-ui/chip@0.6.19
+  - @launchpad-ui/icons@0.6.18
+
+## 0.7.8
+
+### Patch Changes
+
+- [#661](https://github.com/launchdarkly/launchpad-ui/pull/661) [`68a7ad38`](https://github.com/launchdarkly/launchpad-ui/commit/68a7ad38fcf47358417991a0ae3ec1439404b15c) Thanks [@kwatkins-ld](https://github.com/kwatkins-ld)! - [Navigation] improve collapsed Navigation: better a11y support, remove render jank
+
+## 0.7.7
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @launchpad-ui/dropdown@0.6.22
+  - @launchpad-ui/form@0.6.32
+  - @launchpad-ui/menu@0.6.46
+
+## 0.7.6
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @launchpad-ui/dropdown@0.6.21
+  - @launchpad-ui/form@0.6.31
+  - @launchpad-ui/menu@0.6.45
+
+## 0.7.5
+
+### Patch Changes
+
+- Updated dependencies [[`020d99e2`](https://github.com/launchdarkly/launchpad-ui/commit/020d99e2fc88a9ee18d4b127c24312b27d836c57)]:
+  - @launchpad-ui/menu@0.6.44
+
+## 0.7.4
+
+### Patch Changes
+
+- [#646](https://github.com/launchdarkly/launchpad-ui/pull/646) [`ae24fb8a`](https://github.com/launchdarkly/launchpad-ui/commit/ae24fb8a13b7d1424ea87d79fe96dbf0871df0e3) Thanks [@kwatkins-ld](https://github.com/kwatkins-ld)! - [Navigation]: Update to collapse rendering Select instead of Dropdown
+
+## 0.7.3
+
+### Patch Changes
+
+- Updated dependencies [[`ab07d28a`](https://github.com/launchdarkly/launchpad-ui/commit/ab07d28ac113d528566fd990fd8ac9a6de86bd33)]:
+  - @launchpad-ui/popover@0.8.34
+  - @launchpad-ui/dropdown@0.6.20
+  - @launchpad-ui/menu@0.6.43
+  - @launchpad-ui/tooltip@0.6.35
+
+## 0.7.2
+
+### Patch Changes
+
+- Updated dependencies [[`f2ae1a80`](https://github.com/launchdarkly/launchpad-ui/commit/f2ae1a80d678a1a61dee407b8574e4c52f55299f)]:
+  - @launchpad-ui/popover@0.8.33
+  - @launchpad-ui/tokens@0.4.8
+  - @launchpad-ui/tooltip@0.6.34
+  - @launchpad-ui/menu@0.6.42
+  - @launchpad-ui/dropdown@0.6.19
+  - @launchpad-ui/chip@0.6.18
+
 ## 0.7.1
 
 ### Patch Changes

@@ -48,10 +48,12 @@ const NavItem = ({
     >
       {status ? (
         <div style={{ display: 'flex', alignItems: 'flex-end' }}>
-          <span className={styles['NavItem-name']}>{name}</span>
-          <Chip className={styles['NavItem-chip']} data-test-id="nav-item-chip" kind={status}>
-            {titlecase(status)}
-          </Chip>
+          <span className={styles['NavItem-name']}>
+            {name}
+            <Chip className={styles['NavItem-chip']} data-test-id="nav-item-chip" kind={status}>
+              {titlecase(status)}
+            </Chip>
+          </span>
         </div>
       ) : (
         <span className={styles['NavItem-name']}>{name}</span>

@@ -1,5 +1,43 @@
 # @launchpad-ui/popover
 
+## 0.8.35
+
+### Patch Changes
+
+- [#666](https://github.com/launchdarkly/launchpad-ui/pull/666) [`20439f2d`](https://github.com/launchdarkly/launchpad-ui/commit/20439f2d0533bf574b613d16d5d31eb688cb629f) Thanks [@chasedarkly](https://github.com/chasedarkly)! - Bump z-index values
+
+  [Drawer] Increase z-index from 300 to 400
+  [Modal] Increase z-index from 400 to 500
+  [Popover] Increase z-index from 500 to 600
+  [Snackbar] Increase z-index from 700 to 800
+  [Toast] Increase z-index from 700 to 800
+  [Tooltip] Increase z-index from 600 to 700
+
+- Updated dependencies [[`808902f7`](https://github.com/launchdarkly/launchpad-ui/commit/808902f71c0b410adf86b0ee1683a2d36c4cdb22)]:
+  - @launchpad-ui/tokens@0.4.9
+
+## 0.8.34
+
+### Patch Changes
+
+- [#644](https://github.com/launchdarkly/launchpad-ui/pull/644) [`ab07d28a`](https://github.com/launchdarkly/launchpad-ui/commit/ab07d28ac113d528566fd990fd8ac9a6de86bd33) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Popover] fix invalid property value
+
+## 0.8.33
+
+### Patch Changes
+
+- [#642](https://github.com/launchdarkly/launchpad-ui/pull/642) [`f2ae1a80`](https://github.com/launchdarkly/launchpad-ui/commit/f2ae1a80d678a1a61dee407b8574e4c52f55299f) Thanks [@chasedarkly](https://github.com/chasedarkly)! - Dark mode updates based on design feedback
+
+  [Filter]: Update clearable button styles
+  [Form]: Update disabled state dark mode colors and placeholder colors
+  [Modal]: Update dark mode overlay and card background
+  [Popover]: Update box shadow
+  [Tokens]: Apply various token alias updates
+  [Tooltip]: Update dark mode theming
+
+- Updated dependencies [[`f2ae1a80`](https://github.com/launchdarkly/launchpad-ui/commit/f2ae1a80d678a1a61dee407b8574e4c52f55299f)]:
+  - @launchpad-ui/tokens@0.4.8
+
 ## 0.8.32
 
 ### Patch Changes

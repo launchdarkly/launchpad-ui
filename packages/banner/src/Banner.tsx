@@ -10,7 +10,6 @@ type BannerProps = HTMLAttributes<HTMLDivElement> & {
   'data-test-id'?: string;
   kind: 'info' | 'warning' | 'error';
   onDismiss?(): void;
-  dismissible?: boolean;
   header?: ReactNode;
 };
 
@@ -19,7 +18,6 @@ const Banner = ({
   className,
   children,
   onDismiss,
-  dismissible,
   header,
   'data-test-id': testId = 'banner',
   ...rest
@@ -37,7 +35,7 @@ const Banner = ({
         {header && <h4 className={styles['Banner-heading']}>{header}</h4>}
         <div>{children}</div>
       </div>
-      {dismissible && (
+      {!!onDismiss && (
         <IconButton
           aria-label="Close banner"
           icon={<Close size="small" />}
