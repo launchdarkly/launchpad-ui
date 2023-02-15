@@ -1,5 +1,34 @@
 # @launchpad-ui/core
 
+## 0.28.1
+
+### Patch Changes
+
+- [#692](https://github.com/launchdarkly/launchpad-ui/pull/692) [`f0505293`](https://github.com/launchdarkly/launchpad-ui/commit/f050529389a66fec35bcd8392839e80f875f2562) Thanks [@chasedarkly](https://github.com/chasedarkly)! - Update `framer-motion` to latest version.
+
+  [Snackbar]: Update `framer-motion` dependency from `7.6.1` to `9.0.3`
+  [Popover]: Update `framer-motion` dependency from `7.6.1` to `9.0.3`
+  [Drawer]: Update `framer-motion` dependency from `7.6.1` to `9.0.3`
+  [Modal]: Update `framer-motion` dependency from `7.6.1` to `9.0.3`
+  [Toast]: Update `framer-motion` dependency from `7.6.1` to `9.0.3`
+
+- Updated dependencies [[`f0505293`](https://github.com/launchdarkly/launchpad-ui/commit/f050529389a66fec35bcd8392839e80f875f2562)]:
+  - @launchpad-ui/clipboard@0.8.43
+  - @launchpad-ui/markdown@0.4.1
+  - @launchpad-ui/snackbar@0.3.28
+  - @launchpad-ui/popover@0.8.36
+  - @launchpad-ui/drawer@0.2.2
+  - @launchpad-ui/modal@0.12.24
+  - @launchpad-ui/toast@0.2.28
+  - @launchpad-ui/dropdown@0.6.25
+  - @launchpad-ui/menu@0.7.1
+  - @launchpad-ui/navigation@0.8.1
+  - @launchpad-ui/progress-bubbles@0.5.38
+  - @launchpad-ui/select@0.1.1
+  - @launchpad-ui/split-button@0.6.44
+  - @launchpad-ui/tooltip@0.6.37
+  - @launchpad-ui/filter@0.4.55
+
 ## 0.28.0
 
 ### Minor Changes
