@@ -55,4 +55,29 @@ export const Default: Story = {
       </>
     ),
   },
+  render: () => {
+    return (
+      <>
+        <p>
+          A FormGroup is a wrapper to a form section that provides vertical spacing via top and
+          bottom margin.
+        </p>
+        <p>Below are two fields each wrapped in a FormGroup.</p>
+        <FormGroup>
+          <Label htmlFor="key">
+            Key <RequiredAsterisk />
+          </Label>
+          <TextField id="key" name="key" />
+          <FormHint>Use this key in your code.</FormHint>
+        </FormGroup>
+        <FormGroup>
+          <Label htmlFor="key">
+            Key <RequiredAsterisk />
+          </Label>
+          <TextField id="key" name="key" />
+          <FormHint>Use this key in your code.</FormHint>
+        </FormGroup>
+      </>
+    );
+  },
 };

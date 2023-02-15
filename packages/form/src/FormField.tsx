@@ -3,7 +3,7 @@ import { cx } from 'classix';
 import { FieldError } from './FieldError';
 import { FormGroup } from './FormGroup';
 import { FormHint } from './FormHint';
-import { RequiredAsterisk } from './RequiredAsterisk';
+import { Label } from './Label';
 import styles from './styles/Form.module.css';
 
 type FormFieldProps = {
@@ -49,10 +49,9 @@ const FormField = ({
       data-test-id={testId}
     >
       {label && (
-        <label htmlFor={htmlFor}>
+        <Label htmlFor={htmlFor} required={isRequired}>
           {label}
-          {isRequired && <RequiredAsterisk />}
-        </label>
+        </Label>
       )}
       {hint && <FormHint className={styles.hint}>{hint}</FormHint>}
       {children}

@@ -1,6 +1,6 @@
 import '@cypress/code-coverage/support';
-import 'cypress-real-events/support';
 import { mount } from 'cypress/react18';
+import 'cypress-real-events/support';
 
 import '../../.storybook/styles.css';
 import '../../packages/tokens/dist/dark.css';

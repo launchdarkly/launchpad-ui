@@ -1,5 +1,30 @@
 # @launchpad-ui/icons
 
+## 0.6.19
+
+### Patch Changes
+
+- [#664](https://github.com/launchdarkly/launchpad-ui/pull/664) [`990af4a5`](https://github.com/launchdarkly/launchpad-ui/commit/990af4a5c7490a322604272cf9edc16ce9427cf1) Thanks [@lwonsower](https://github.com/lwonsower)! - [Icons] Add `ArrowDropDown` and `ArrowRight` icons
+
+## 0.6.18
+
+### Patch Changes
+
+- Updated dependencies [[`808902f7`](https://github.com/launchdarkly/launchpad-ui/commit/808902f71c0b410adf86b0ee1683a2d36c4cdb22)]:
+  - @launchpad-ui/tokens@0.4.9
+
+## 0.6.17
+
+### Patch Changes
+
+- [#658](https://github.com/launchdarkly/launchpad-ui/pull/658) [`f873c6f3`](https://github.com/launchdarkly/launchpad-ui/commit/f873c6f3af18b55e72883464e9698ea172021c8e) Thanks [@goyanespaula](https://github.com/goyanespaula)! - [Icons] Add `arrow-left-thin`, `arrow-right-thin`, `arrow-up-thin`, and `arrow-down-thin`
+
+## 0.6.16
+
+### Patch Changes
+
+- [#652](https://github.com/launchdarkly/launchpad-ui/pull/652) [`cd1b58c5`](https://github.com/launchdarkly/launchpad-ui/commit/cd1b58c5c117d37b2939fe879606011c49b18ced) Thanks [@erangeles](https://github.com/erangeles)! - [Icons]: Add `filter-tune` icon
+
 ## 0.6.15
 
 ### Patch Changes

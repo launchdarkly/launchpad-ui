@@ -1,5 +1,68 @@
 # @launchpad-ui/filter
 
+## 0.4.53
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @launchpad-ui/menu@0.6.50
+
+## 0.4.52
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @launchpad-ui/menu@0.6.49
+
+## 0.4.51
+
+### Patch Changes
+
+- Updated dependencies [[`990af4a5`](https://github.com/launchdarkly/launchpad-ui/commit/990af4a5c7490a322604272cf9edc16ce9427cf1)]:
+  - @launchpad-ui/icons@0.6.19
+  - @launchpad-ui/button@0.7.27
+  - @launchpad-ui/dropdown@0.6.24
+  - @launchpad-ui/menu@0.6.48
+
+## 0.4.50
+
+### Patch Changes
+
+- Updated dependencies [[`20439f2d`](https://github.com/launchdarkly/launchpad-ui/commit/20439f2d0533bf574b613d16d5d31eb688cb629f), [`808902f7`](https://github.com/launchdarkly/launchpad-ui/commit/808902f71c0b410adf86b0ee1683a2d36c4cdb22)]:
+  - @launchpad-ui/tooltip@0.6.36
+  - @launchpad-ui/tokens@0.4.9
+  - @launchpad-ui/dropdown@0.6.23
+  - @launchpad-ui/menu@0.6.47
+  - @launchpad-ui/button@0.7.26
+  - @launchpad-ui/icons@0.6.18
+
+## 0.4.49
+
+### Patch Changes
+
+- Updated dependencies [[`f873c6f3`](https://github.com/launchdarkly/launchpad-ui/commit/f873c6f3af18b55e72883464e9698ea172021c8e)]:
+  - @launchpad-ui/icons@0.6.17
+  - @launchpad-ui/button@0.7.25
+  - @launchpad-ui/dropdown@0.6.22
+  - @launchpad-ui/menu@0.6.46
+
+## 0.4.48
+
+### Patch Changes
+
+- Updated dependencies [[`cd1b58c5`](https://github.com/launchdarkly/launchpad-ui/commit/cd1b58c5c117d37b2939fe879606011c49b18ced)]:
+  - @launchpad-ui/icons@0.6.16
+  - @launchpad-ui/button@0.7.24
+  - @launchpad-ui/dropdown@0.6.21
+  - @launchpad-ui/menu@0.6.45
+
+## 0.4.47
+
+### Patch Changes
+
+- Updated dependencies [[`020d99e2`](https://github.com/launchdarkly/launchpad-ui/commit/020d99e2fc88a9ee18d4b127c24312b27d836c57)]:
+  - @launchpad-ui/menu@0.6.44
+
 ## 0.4.46
 
 ### Patch Changes

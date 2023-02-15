@@ -11,7 +11,7 @@ export type { LabelProps } from './Label';
 export type { RadioProps } from './Radio';
 export type { RadioGroupProps } from './RadioGroup';
 export type { RequiredAsteriskProps } from './RequiredAsterisk';
-export type { SelectProps } from './Select';
+export type { SelectFieldProps } from './SelectField';
 export type { TextAreaProps } from './TextArea';
 export type { TextFieldProps } from './TextField';
 
@@ -28,6 +28,6 @@ export { Label } from './Label';
 export { Radio } from './Radio';
 export { RadioGroup } from './RadioGroup';
 export { RequiredAsterisk } from './RequiredAsterisk';
-export { Select } from './Select';
+export { SelectField } from './SelectField';
 export { TextArea } from './TextArea';
 export { TextField } from './TextField';

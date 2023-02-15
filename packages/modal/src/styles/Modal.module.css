@@ -5,7 +5,7 @@
 }
 
 .overlayContainer {
-  z-index: var(--lp-z-index-400);
+  z-index: var(--lp-z-index-500);
   position: fixed;
   inset: 0;
   transform: translateZ(0);
@@ -14,13 +14,13 @@
 .overlay {
   position: fixed;
   inset: 0;
-  background-color: hsl(0 0% 20% / 0.5);
+  background-color: rgb(40 40 40 / 0.5);
   display: flex;
   align-items: flex-end;
   justify-content: center;
 
   :root[data-theme='dark'] & {
-    background-color: rgb(18 18 18 / 0.75);
+    background-color: rgb(25 25 25 / 0.75);
   }
 }
 

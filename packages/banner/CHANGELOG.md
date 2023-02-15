@@ -1,5 +1,44 @@
 # @launchpad-ui/banner
 
+## 0.8.4
+
+### Patch Changes
+
+- Updated dependencies [[`990af4a5`](https://github.com/launchdarkly/launchpad-ui/commit/990af4a5c7490a322604272cf9edc16ce9427cf1)]:
+  - @launchpad-ui/icons@0.6.19
+  - @launchpad-ui/button@0.7.27
+
+## 0.8.3
+
+### Patch Changes
+
+- Updated dependencies [[`808902f7`](https://github.com/launchdarkly/launchpad-ui/commit/808902f71c0b410adf86b0ee1683a2d36c4cdb22)]:
+  - @launchpad-ui/tokens@0.4.9
+  - @launchpad-ui/button@0.7.26
+  - @launchpad-ui/icons@0.6.18
+
+## 0.8.2
+
+### Patch Changes
+
+- Updated dependencies [[`f873c6f3`](https://github.com/launchdarkly/launchpad-ui/commit/f873c6f3af18b55e72883464e9698ea172021c8e)]:
+  - @launchpad-ui/icons@0.6.17
+  - @launchpad-ui/button@0.7.25
+
+## 0.8.1
+
+### Patch Changes
+
+- Updated dependencies [[`cd1b58c5`](https://github.com/launchdarkly/launchpad-ui/commit/cd1b58c5c117d37b2939fe879606011c49b18ced)]:
+  - @launchpad-ui/icons@0.6.16
+  - @launchpad-ui/button@0.7.24
+
+## 0.8.0
+
+### Minor Changes
+
+- [#648](https://github.com/launchdarkly/launchpad-ui/pull/648) [`577e520b`](https://github.com/launchdarkly/launchpad-ui/commit/577e520b74d7353b5a9404cac3efd4df01d05116) Thanks [@traciklopez](https://github.com/traciklopez)! - [Banner]: Remove dismissible banner prop
+
 ## 0.7.26
 
 ### Patch Changes
