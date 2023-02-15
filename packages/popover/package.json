@@ -38,7 +38,7 @@
     "@launchpad-ui/overlay": "workspace:~",
     "@launchpad-ui/tokens": "workspace:~",
     "classix": "2.1.17",
-    "framer-motion": "7.6.1"
+    "framer-motion": "9.0.3"
   },
   "peerDependencies": {
     "react": "18.2.0",
