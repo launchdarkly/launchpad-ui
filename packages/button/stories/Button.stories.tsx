@@ -2,7 +2,7 @@ import type { StoryObj, DecoratorFn } from '@storybook/react';
 
 import { Fragment } from 'react';
 
-import { Add } from '../../icons/src';
+import { Add, ExpandMore } from '../../icons/src';
 import { Button } from '../src';
 
 import './Button.stories.css';
@@ -191,7 +191,7 @@ export const WithIcon: Story = {
 };
 
 export const WithIconPrimary: Story = {
-  args: { children: 'With icon', icon: <Add />, kind: 'primary' },
+  args: { children: 'With icon', icon: <ExpandMore />, kind: 'primary' },
 };
 
 export const BigButtonWithIcon: Story = {
