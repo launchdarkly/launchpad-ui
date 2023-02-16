@@ -25,6 +25,10 @@
   width: calc(var(--SplitButton-drop-width) + 0.2rem);
 }
 
+.SplitButton-drop.Button > span {
+  line-height: 1;
+}
+
 .SplitButton {
   align-items: flex-start;
   display: flex;
