@@ -1,5 +1,11 @@
 # @launchpad-ui/button
 
+## 0.7.28
+
+### Patch Changes
+
+- [#694](https://github.com/launchdarkly/launchpad-ui/pull/694) [`940f10d6`](https://github.com/launchdarkly/launchpad-ui/commit/940f10d62c81a7e10fb1bd2f9e2a5e757bcbeeaf) Thanks [@jlzych](https://github.com/jlzych)! - [Button] Adjust sizing to match design system guidelines
+
 ## 0.7.27
 
 ### Patch Changes
