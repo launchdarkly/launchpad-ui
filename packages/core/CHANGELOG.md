@@ -1,5 +1,25 @@
 # @launchpad-ui/core
 
+## 0.28.2
+
+### Patch Changes
+
+- [#694](https://github.com/launchdarkly/launchpad-ui/pull/694) [`940f10d6`](https://github.com/launchdarkly/launchpad-ui/commit/940f10d62c81a7e10fb1bd2f9e2a5e757bcbeeaf) Thanks [@jlzych](https://github.com/jlzych)! - [Button] Adjust sizing to match design system guidelines
+
+- Updated dependencies [[`940f10d6`](https://github.com/launchdarkly/launchpad-ui/commit/940f10d62c81a7e10fb1bd2f9e2a5e757bcbeeaf)]:
+  - @launchpad-ui/split-button@0.6.45
+  - @launchpad-ui/button@0.7.28
+  - @launchpad-ui/alert@0.6.31
+  - @launchpad-ui/banner@0.8.5
+  - @launchpad-ui/drawer@0.2.3
+  - @launchpad-ui/dropdown@0.6.26
+  - @launchpad-ui/filter@0.4.56
+  - @launchpad-ui/modal@0.12.25
+  - @launchpad-ui/pagination@0.3.36
+  - @launchpad-ui/select@0.1.2
+  - @launchpad-ui/snackbar@0.3.29
+  - @launchpad-ui/navigation@0.8.2
+
 ## 0.28.1
 
 ### Patch Changes
