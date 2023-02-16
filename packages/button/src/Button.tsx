@@ -21,7 +21,7 @@ type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
   kind?: 'default' | 'primary' | 'destructive' | 'minimal' | 'link' | 'close';
   fit?: boolean;
   disabled?: boolean;
-  icon?: ReactElement<IconProps>;
+  icon?: ReactElement<Omit<IconProps, 'size'>>;
   renderIconFirst?: boolean;
   asChild?: boolean;
   'data-test-id'?: string;
@@ -58,11 +58,21 @@ const ButtonComponent = forwardRef<HTMLButtonElement, ButtonProps>((props, ref) 
     className
   );
 
+  const getIconSize = () => {
+    let iconSize: IconProps['size'] = 'small';
+
+    if (size === 'big') {
+      iconSize = 'medium';
+    }
+
+    return iconSize;
+  };
+
   const renderIcon =
     icon &&
-    cloneElement(icon, {
+    cloneElement(icon as ReactElement<IconProps>, {
       key: 'icon',
-      size: icon.props.size || 'small',
+      size: getIconSize(),
       'aria-hidden': true,
       className: cx(icon.props.className, 'Button-icon'),
     });
