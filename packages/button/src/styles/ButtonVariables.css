@@ -20,7 +20,7 @@
   --Button-font-size-large: 1.6rem;
   --Button-font-weight: var(--lp-font-weight-medium);
   --Button-line-height-default: 114%;
-  --Button-line-height-small: 144%;
+  --Button-line-height-small: 114%;
   --Button-line-height-large: 150%;
   --Button-border-radius-default: 0.6rem;
   --Button-border-radius-small: var(--lp-border-radius-regular);
