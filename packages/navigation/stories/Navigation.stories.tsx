@@ -1,10 +1,12 @@
 import type { NavigationItemProps } from '../src';
 import type { StoryObj } from '@storybook/react';
-import type { ReactNode } from 'react';
+import type { HTMLAttributes, ReactNode } from 'react';
 
+import { forwardRef } from 'react';
 import { MemoryRouter } from 'react-router-dom';
 
 import { Navigation, NavigationItem } from '../src';
+import { NavigationTab, NavigationTabs } from '../src/NavigationTabs';
 
 export default {
   component: Navigation,
@@ -72,5 +74,41 @@ export const Secondary: Story = {
       <NavigationItem key={3} name="Third" to="/third" />,
       <NavigationItem key={4} name="Fourth" to="/fourth" />,
     ],
+  },
+};
+
+const Link = forwardRef<
+  HTMLAnchorElement,
+  HTMLAttributes<HTMLAnchorElement> & {
+    to: string;
+  }
+>(({ to, children, ...rest }, ref) => {
+  return (
+    <a ref={ref} href={to} {...rest}>
+      {children}
+    </a>
+  );
+});
+
+Link.displayName = 'Link';
+
+export const AsNavigationTabs: Story = {
+  render: () => {
+    return (
+      <NavigationTabs kind="primary" selectedKey="fourth">
+        <NavigationTab key="first" as={Link} to="/first">
+          First
+        </NavigationTab>
+        <NavigationTab key="second" href="/second">
+          Second
+        </NavigationTab>
+        <NavigationTab key="third" href="/third">
+          Third
+        </NavigationTab>
+        <NavigationTab key="fourth" href="/fourth">
+          Fourth
+        </NavigationTab>
+      </NavigationTabs>
+    );
   },
 };

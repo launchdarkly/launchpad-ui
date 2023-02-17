@@ -1,10 +1,10 @@
-import type { NavProps } from './Nav';
+import type { NavigationProps } from './Navigation';
 import type { CollectionBase } from '@react-types/shared';
 import type { MouseEvent } from 'react';
 
 import { useListState } from '@react-stately/list';
+import { cx } from 'classix';
 
-import { Nav } from './Nav';
 import { NavItem } from './NavItem';
 import { NavItemWithTooltip } from './NavItemWithTooltip';
 import { useNavigationContext } from './NavigationContext';
@@ -13,7 +13,7 @@ import styles from './styles/Navigation.module.css';
 
 type NavigationListProps<T extends object> = CollectionBase<T> & {
   title: string;
-  kind?: NavProps['kind'];
+  kind?: NavigationProps<T>['kind'];
 };
 
 const NavigationList = <T extends object>({
@@ -24,13 +24,17 @@ const NavigationList = <T extends object>({
   const state = useListState(rest);
 
   const { shouldCollapse, refs } = useNavigationContext();
-
   return (
     <div className={styles['NavigationList-wrapper']} ref={refs.wrapperRef}>
       {shouldCollapse ? (
         <NavigationMenuDropdown kind={kind} title={title} {...rest} />
       ) : (
-        <Nav kind={kind} ref={refs.itemListRef}>
+        <nav
+          aria-label={`${kind} navigation`}
+          className={cx(styles.Nav, styles[`Nav--${kind}`])}
+          data-test-id="nav"
+          ref={refs.itemListRef}
+        >
           {[...state.collection].map((item) => {
             const onClick = (e: MouseEvent) => {
               item.props.onClick?.(e, {
@@ -68,7 +72,7 @@ const NavigationList = <T extends object>({
               />
             );
           })}
-        </Nav>
+        </nav>
       )}
     </div>
   );

@@ -1,4 +1,3 @@
-import type { NavProps } from './Nav';
 import type { CollectionBase } from '@react-types/shared';
 
 import { useResizeObserver, useValueEffect } from '@react-aria/utils';
@@ -11,7 +10,7 @@ import styles from './styles/Navigation.module.css';
 
 type NavigationProps<T extends object> = CollectionBase<T> & {
   title: string;
-  kind?: NavProps['kind'];
+  kind?: 'primary' | 'secondary';
   role?: string;
   'data-test-id'?: string;
   className?: string;

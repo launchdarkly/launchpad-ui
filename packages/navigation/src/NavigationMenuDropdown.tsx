@@ -1,4 +1,4 @@
-import type { NavProps } from './Nav';
+import type { NavigationProps } from './Navigation';
 import type { CollectionBase } from '@react-types/shared';
 
 import { Chip } from '@launchpad-ui/chip';
@@ -13,7 +13,7 @@ import styles from './styles/Navigation.module.css';
 import { titlecase } from './utils';
 
 type NavigationMenuDropdownProps<T extends object> = CollectionBase<T> & {
-  kind: NavProps['kind'];
+  kind: NavigationProps<T>['kind'];
   title: string;
 };
 

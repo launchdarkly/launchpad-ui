@@ -202,7 +202,7 @@ importers:
       '@launchpad-ui/tokens': workspace:~
       '@launchpad-ui/tooltip': workspace:~
       '@react-aria/ssr': 3.4.0
-      '@react-stately/collections': 3.5.0
+      '@react-stately/collections': 3.5.1
       '@react-stately/data': 3.8.1
       '@remix-run/dev': ^1.8.0
       '@remix-run/eslint-config': ^1.8.0
@@ -247,7 +247,7 @@ importers:
       '@launchpad-ui/tokens': link:../../packages/tokens
       '@launchpad-ui/tooltip': link:../../packages/tooltip
       '@react-aria/ssr': 3.4.0_react@18.2.0
-      '@react-stately/collections': 3.5.0_react@18.2.0
+      '@react-stately/collections': 3.5.1_react@18.2.0
       '@react-stately/data': 3.8.1_react@18.2.0
       '@remix-run/node': 1.12.0
       '@remix-run/react': 1.12.0_biqbaboplfbrettd7655fr4n2y
@@ -649,9 +649,13 @@ importers:
       '@launchpad-ui/popover': workspace:~
       '@launchpad-ui/tokens': workspace:~
       '@launchpad-ui/tooltip': workspace:~
+      '@react-aria/tabs': 3.3.4
       '@react-aria/utils': 3.14.1
+      '@react-stately/collections': 3.5.1
       '@react-stately/list': 3.6.0
+      '@react-stately/tabs': 3.2.4
       '@react-types/shared': 3.16.0
+      '@react-types/tabs': 3.1.5
       classix: 2.1.17
       react: 18.2.0
       react-dom: 18.2.0
@@ -664,9 +668,13 @@ importers:
       '@launchpad-ui/popover': link:../popover
       '@launchpad-ui/tokens': link:../tokens
       '@launchpad-ui/tooltip': link:../tooltip
+      '@react-aria/tabs': 3.3.4_react@18.2.0
       '@react-aria/utils': 3.14.1_react@18.2.0
+      '@react-stately/collections': 3.5.1_react@18.2.0
       '@react-stately/list': 3.6.0_react@18.2.0
+      '@react-stately/tabs': 3.2.4_react@18.2.0
       '@react-types/shared': 3.16.0_react@18.2.0
+      '@react-types/tabs': 3.1.5_react@18.2.0
       classix: 2.1.17
       react-router-dom: 6.7.0_biqbaboplfbrettd7655fr4n2y
     devDependencies:
@@ -895,23 +903,23 @@ importers:
   packages/tab-list:
     specifiers:
       '@launchpad-ui/tokens': workspace:~
-      '@react-aria/tabs': 3.3.0
-      '@react-stately/collections': 3.5.0
-      '@react-stately/tabs': 3.2.0
+      '@react-aria/tabs': 3.3.4
+      '@react-stately/collections': 3.5.1
+      '@react-stately/tabs': 3.2.4
       '@react-types/shared': 3.16.0
-      '@react-types/tabs': 3.1.0
+      '@react-types/tabs': 3.1.5
       classix: 2.1.17
       react: 18.2.0
       react-dom: 18.2.0
     dependencies:
       '@launchpad-ui/tokens': link:../tokens
-      '@react-aria/tabs': 3.3.0_react@18.2.0
-      '@react-stately/tabs': 3.2.0_react@18.2.0
+      '@react-aria/tabs': 3.3.4_react@18.2.0
+      '@react-stately/tabs': 3.2.4_react@18.2.0
       '@react-types/shared': 3.16.0_react@18.2.0
-      '@react-types/tabs': 3.1.0_react@18.2.0
+      '@react-types/tabs': 3.1.5_react@18.2.0
       classix: 2.1.17
     devDependencies:
-      '@react-stately/collections': 3.5.0_react@18.2.0
+      '@react-stately/collections': 3.5.1_react@18.2.0
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
 
@@ -4327,21 +4335,21 @@ packages:
       react: 18.2.0
     dev: false
 
-  /@react-aria/tabs/3.3.0_react@18.2.0:
-    resolution: {integrity: sha512-X6kVqKv/r25gIDvmN+UQTzLz2ScdDeqPI6yzutTJG39YkUFzD2u0GY45tvD8vi5fe8uHVQQEUjUpF9oejHOD7Q==}
+  /@react-aria/tabs/3.3.4_react@18.2.0:
+    resolution: {integrity: sha512-SqlgfPvpRHlWelFk/lF9Ziu/8881NVErhKcpyyi+A9jASv5tvILWiwK8na82oI22UXXzyp0Y1EojLB25HnCB+w==}
     peerDependencies:
       react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0 || 18
     dependencies:
-      '@babel/runtime': 7.20.13
       '@react-aria/focus': 3.10.1_react@18.2.0
       '@react-aria/i18n': 3.6.3_react@18.2.0
       '@react-aria/interactions': 3.13.1_react@18.2.0
       '@react-aria/selection': 3.12.1_react@18.2.0
       '@react-aria/utils': 3.14.2_react@18.2.0
       '@react-stately/list': 3.6.1_react@18.2.0
-      '@react-stately/tabs': 3.2.0_react@18.2.0
+      '@react-stately/tabs': 3.2.4_react@18.2.0
       '@react-types/shared': 3.16.0_react@18.2.0
       '@react-types/tabs': 3.1.5_react@18.2.0
+      '@swc/helpers': 0.4.14
       react: 18.2.0
     dev: false
 
@@ -4427,15 +4435,6 @@ packages:
       react: 18.2.0
     dev: false
 
-  /@react-stately/collections/3.5.0_react@18.2.0:
-    resolution: {integrity: sha512-3BAMRjJqrka0IGvyK4m3WslqCeiEfQGx7YsXEIgIgMJoLpk6Fi1Eh4CI8coBnl/wcVLiIRMCIvxubwFRWTgzdg==}
-    peerDependencies:
-      react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0 || 18
-    dependencies:
-      '@babel/runtime': 7.20.13
-      '@react-types/shared': 3.16.0_react@18.2.0
-      react: 18.2.0
-
   /@react-stately/collections/3.5.1_react@18.2.0:
     resolution: {integrity: sha512-egzVrZC5eFc5RJBpqUkzxd2aJOHZ2T1o7horEi8tAWZkg4YI+AmKrqela4ijVrrB9l1GO9z06qPT1UoPkFrC1w==}
     peerDependencies:
@@ -4444,7 +4443,6 @@ packages:
       '@react-types/shared': 3.16.0_react@18.2.0
       '@swc/helpers': 0.4.14
       react: 18.2.0
-    dev: false
 
   /@react-stately/combobox/3.3.1_react@18.2.0:
     resolution: {integrity: sha512-DgYn0MyfbDySf54o7ofXRd29TWznqtRRRbMG8TWgi/RaB0piDckT/TYWWSYOH3iMgnOEhReJhUUdMiQG4QLpIg==}
@@ -4590,15 +4588,15 @@ packages:
       react: 18.2.0
     dev: false
 
-  /@react-stately/tabs/3.2.0_react@18.2.0:
-    resolution: {integrity: sha512-HeICk4D0mxnqmSoxJ6FI2CRHaTANIxDrJ2UTzoK9y+mMIC+ZUzXxtANda6TQ5wTOY7xUqITCHDSzxTiaI/090g==}
+  /@react-stately/tabs/3.2.4_react@18.2.0:
+    resolution: {integrity: sha512-qSnkoxzbC21KXZYGtg6TEDaex34WSNmPN4sJzXc9Xe39L6+wXNCA2tqZxWCfpIcWQklFm+BmnnNNCO8/PDDrMA==}
     peerDependencies:
       react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0 || 18
     dependencies:
-      '@babel/runtime': 7.20.13
       '@react-stately/list': 3.6.1_react@18.2.0
       '@react-stately/utils': 3.5.2_react@18.2.0
       '@react-types/tabs': 3.1.5_react@18.2.0
+      '@swc/helpers': 0.4.14
       react: 18.2.0
     dev: false
 
@@ -4760,15 +4758,6 @@ packages:
       react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0 || 18
     dependencies:
       '@react-types/grid': 3.1.5_react@18.2.0
-      '@react-types/shared': 3.16.0_react@18.2.0
-      react: 18.2.0
-    dev: false
-
-  /@react-types/tabs/3.1.0_react@18.2.0:
-    resolution: {integrity: sha512-TsOadHMrEV5+3B06F3gMaGTxnAuDXBgyZHgDShSAZ8rGO53DMrfnok6UP9SMrZmKrNrOjGYYzEqS8jk71tOhoQ==}
-    peerDependencies:
-      react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0 || 18
-    dependencies:
       '@react-types/shared': 3.16.0_react@18.2.0
       react: 18.2.0
     dev: false
@@ -5481,7 +5470,7 @@ packages:
       '@storybook/client-logger': 7.0.0-beta.45
       '@storybook/components': 7.0.0-beta.45_biqbaboplfbrettd7655fr4n2y
       '@storybook/core-events': 7.0.0-beta.45
-      '@storybook/csf': 0.0.2-next.8
+      '@storybook/csf': 0.0.2-next.10
       '@storybook/docs-tools': 7.0.0-beta.45
       '@storybook/global': 5.0.0
       '@storybook/manager-api': 7.0.0-beta.45_biqbaboplfbrettd7655fr4n2y
@@ -5674,7 +5663,7 @@ packages:
       '@babel/core': 7.20.12
       '@babel/preset-env': 7.20.2_@babel+core@7.20.12
       '@babel/types': 7.20.7
-      '@storybook/csf': 0.0.2-next.8
+      '@storybook/csf': 0.0.2-next.10
       '@storybook/csf-tools': 7.0.0-beta.45
       '@storybook/node-logger': 7.0.0-beta.45
       '@storybook/types': 7.0.0-beta.45
@@ -5714,7 +5703,7 @@ packages:
       react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0 || 18
     dependencies:
       '@storybook/client-logger': 7.0.0-beta.45
-      '@storybook/csf': 0.0.2-next.8
+      '@storybook/csf': 0.0.2-next.10
       '@storybook/global': 5.0.0
       '@storybook/theming': 7.0.0-beta.45_biqbaboplfbrettd7655fr4n2y
       '@storybook/types': 7.0.0-beta.45
@@ -5785,7 +5774,7 @@ packages:
       '@storybook/builder-manager': 7.0.0-beta.45
       '@storybook/core-common': 7.0.0-beta.45
       '@storybook/core-events': 7.0.0-beta.45
-      '@storybook/csf': 0.0.2-next.8
+      '@storybook/csf': 0.0.2-next.10
       '@storybook/csf-tools': 7.0.0-beta.45
       '@storybook/docs-mdx': 0.0.1-next.6
       '@storybook/global': 5.0.0
@@ -5843,7 +5832,7 @@ packages:
     resolution: {integrity: sha512-pQznSfpPht8IZQvmRjAjieQ1Y3B9wGryvNJ7asDMGVPbfZCIR8/9m+9QrvOKqBmlRJ1NzwoxHORG/RShBCPTcQ==}
     dependencies:
       '@babel/types': 7.20.7
-      '@storybook/csf': 0.0.2-next.8
+      '@storybook/csf': 0.0.2-next.10
       '@storybook/types': 7.0.0-beta.45
       fs-extra: 11.1.0
       recast: 0.23.1
@@ -5858,11 +5847,9 @@ packages:
       lodash: 4.17.21
     dev: true
 
-  /@storybook/csf/0.0.2-next.8:
-    resolution: {integrity: sha512-3T6rflW7D9q1iXOR+bidwoNbd9rVUTyjYH/sqsnYjbXhb/aOXsQzGKwNeq9QqZIFVpKfg5BoOF5i7DCMtoGknQ==}
+  /@storybook/csf/0.0.2-next.10:
+    resolution: {integrity: sha512-m2PFgBP/xRIF85VrDhvesn9ktaD2pN3VUjvMqkAL/cINp/3qXsCyI81uw7N5VEOkQAbWrY2FcydnvEPDEdE8fA==}
     dependencies:
-      expect-type: 0.14.2
-      lodash: 4.17.21
       type-fest: 2.19.0
     dev: true
 
@@ -5922,7 +5909,7 @@ packages:
       '@storybook/channels': 7.0.0-beta.45
       '@storybook/client-logger': 7.0.0-beta.45
       '@storybook/core-events': 7.0.0-beta.45
-      '@storybook/csf': 0.0.2-next.8
+      '@storybook/csf': 0.0.2-next.10
       '@storybook/global': 5.0.0
       '@storybook/router': 7.0.0-beta.45_biqbaboplfbrettd7655fr4n2y
       '@storybook/theming': 7.0.0-beta.45_biqbaboplfbrettd7655fr4n2y
@@ -5968,7 +5955,7 @@ packages:
       '@storybook/channels': 7.0.0-beta.45
       '@storybook/client-logger': 7.0.0-beta.45
       '@storybook/core-events': 7.0.0-beta.45
-      '@storybook/csf': 0.0.2-next.8
+      '@storybook/csf': 0.0.2-next.10
       '@storybook/global': 5.0.0
       '@storybook/types': 7.0.0-beta.45
       '@types/qs': 6.9.7
@@ -6330,7 +6317,6 @@ packages:
     resolution: {integrity: sha512-4C7nX/dvpzB7za4Ql9K81xK3HPxCpHMgwTZVyf+9JQ6VUbn9jjZVN7/Nkdz/Ugzs2CSjqnL/UPXroiVBVHUWUw==}
     dependencies:
       tslib: 2.5.0
-    dev: false
 
   /@szmarczak/http-timer/4.0.6:
     resolution: {integrity: sha512-4BAffykYOgO+5nzBWYwE3W90sBgLJoUPRWWcL8wlyiM8IB8ipJz3UMJ9KXQd1RKQXpKp8Tutn80HZtWsu2u76w==}
@@ -10464,10 +10450,6 @@ packages:
     engines: {node: '>=0.10.0'}
     dependencies:
       homedir-polyfill: 1.0.3
-    dev: true
-
-  /expect-type/0.14.2:
-    resolution: {integrity: sha512-ed3+tr5ujbIYXZ8Pl/VgIphwJQ0q5tBLGGdn7Zvwt1WyPBRX83xjT5pT77P/GkuQbctx0K2ZNSSan7eruJqTCQ==}
     dev: true
 
   /expect/29.4.2:
