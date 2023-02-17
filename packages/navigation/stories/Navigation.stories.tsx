@@ -95,25 +95,79 @@ Link.displayName = 'Link';
 export const AsNavigationTabs: Story = {
   render: () => {
     return (
-      <NavigationTabs
-        kind="primary"
-        onSelectionChange={(key) => {
-          console.log(key);
-        }}
-      >
+      <NavigationTabs title="My custom menu" kind="primary">
+        <NavigationTab key="/first" href="/first" onClick={(e, state) => console.log(state)}>
+          First
+        </NavigationTab>
+        <NavigationTab key="/second" href="/second">
+          Second
+        </NavigationTab>
+        <NavigationTab key="/third" href="/third">
+          Third
+        </NavigationTab>
+        <NavigationTab key="/fourth" href="/fourth">
+          Fourth
+        </NavigationTab>
+        <NavigationTab key="/fifth" href="/fifth">
+          Fifth
+        </NavigationTab>
+        <NavigationTab key="/sixth" href="/sixth">
+          Sixth
+        </NavigationTab>
+        <NavigationTab key="/Seventh" href="/Seventh">
+          Seventh
+        </NavigationTab>
+      </NavigationTabs>
+    );
+  },
+};
+
+export const WithCustomAs: Story = {
+  render: () => {
+    return (
+      <NavigationTabs title="My custom menu" kind="primary">
         <NavigationTab as={Link} to="/first">
           First
         </NavigationTab>
-        <NavigationTab target="_blank" href="/second">
+        <NavigationTab as={Link} to="/second">
           Second
         </NavigationTab>
-        <NavigationTab isNew href="/third">
+        <NavigationTab as={Link} isActive to="/third">
           Third
         </NavigationTab>
-        <NavigationTab href="/fourth">Fourth</NavigationTab>
-        <NavigationTab href="/fifth">Fifth</NavigationTab>
-        <NavigationTab href="/sixth">Sixth</NavigationTab>
-        <NavigationTab href="/Seventh">Seventh</NavigationTab>
+        <NavigationTab as={Link} to="/fourth">
+          Fourth
+        </NavigationTab>
+        <NavigationTab as={Link} to="/fifth">
+          Fifth
+        </NavigationTab>
+        <NavigationTab as={Link} to="/sixth">
+          Sixth
+        </NavigationTab>
+        <NavigationTab as={Link} to="/Seventh">
+          Seventh
+        </NavigationTab>
+      </NavigationTabs>
+    );
+  },
+};
+
+export const NavigationTabsWithData: Story = {
+  render: () => {
+    return (
+      <NavigationTabs
+        title="My custom menu"
+        kind="primary"
+        items={[
+          { to: '/first', title: 'First', isActive: true },
+          { to: 'second', title: 'Second' },
+        ]}
+      >
+        {(item) => (
+          <NavigationTab as={Link} key={item.to} isActive={item.to === 'second'} to={item.to}>
+            {item.title}
+          </NavigationTab>
+        )}
       </NavigationTabs>
     );
   },

@@ -1,9 +1,10 @@
 import type { StoryObj } from '@storybook/react';
 
 import { Chip } from '@launchpad-ui/chip';
-import { Item, Section } from '@react-stately/collections';
+import { Section } from '@react-stately/collections';
 
 import { MultiSelectTrigger, Select, SingleSelectTrigger } from '../src';
+import { SelectItem } from '../src/SelectItem';
 import { FRUIT, SECTIONED_ITEMS } from '../src/__tests__/constants';
 import { CustomMultiSelectTrigger, CustomSingleSelectTrigger } from '../src/__tests__/examples';
 
@@ -30,7 +31,7 @@ export const SingleSelect: Story = {
         items={FRUIT}
         onSelectionChange={(keys) => console.log(Array.from(keys))}
       >
-        {(item) => <Item textValue={item.name}>{item.name}</Item>}
+        {(item) => <SelectItem textValue={item.name}>{item.name}</SelectItem>}
       </Select>
     );
   },
@@ -57,9 +58,9 @@ export const SingleSelectWithCustomSelectedRender: Story = {
         )}
       >
         {(item) => (
-          <Item textValue={item.name}>
+          <SelectItem textValue={item.name}>
             {item.name} <Chip>ID: {item.id}</Chip>
-          </Item>
+          </SelectItem>
         )}
       </Select>
     );
@@ -77,7 +78,7 @@ export const SingleSelectWithCustomTrigger: Story = {
         onSelectionChange={(keys) => console.log(Array.from(keys))}
         trigger={CustomSingleSelectTrigger}
       >
-        {(item) => <Item textValue={item.name}>{item.name}</Item>}
+        {(item) => <SelectItem textValue={item.name}>{item.name}</SelectItem>}
       </Select>
     );
   },
@@ -96,9 +97,9 @@ export const SingleSelectWithSections: Story = {
         {(section) => (
           <Section key={section.name} title={section.name} items={section.items}>
             {(item) => (
-              <Item textValue={item.name}>
+              <SelectItem textValue={item.name}>
                 {item.name} <Chip>ID: {item.id}</Chip>
-              </Item>
+              </SelectItem>
             )}
           </Section>
         )}
@@ -120,7 +121,7 @@ export const MultiSelect: Story = {
         isSelectableAll
         isClearable
       >
-        {(item) => <Item>{item.name}</Item>}
+        {(item) => <SelectItem>{item.name}</SelectItem>}
       </Select>
     );
   },
@@ -144,7 +145,7 @@ export const MultiSelectWithCustomTrigger: Story = {
           onSelectionChange={(keys) => console.log(Array.from(keys))}
           trigger={CustomMultiSelectTrigger}
         >
-          {(item) => <Item textValue={item.name}>{item.name}</Item>}
+          {(item) => <SelectItem textValue={item.name}>{item.name}</SelectItem>}
         </Select>
       </>
     );
@@ -175,9 +176,9 @@ export const MultiSelectWithCustomSelectedRender: Story = {
         )}
       >
         {(item) => (
-          <Item textValue={item.name}>
+          <SelectItem textValue={item.name}>
             {item.name} <Chip>ID: {item.id}</Chip>
-          </Item>
+          </SelectItem>
         )}
       </Select>
     );
@@ -209,7 +210,18 @@ export const MultiSelectWithSelectAll: Story = {
           </MultiSelectTrigger>
         )}
       >
-        {(item) => <Item textValue={item.name}>{item.name}</Item>}
+        {(item) => <SelectItem textValue={item.name}>{item.name}</SelectItem>}
+      </Select>
+    );
+  },
+  parameters: { docs: { disable: false } },
+};
+
+export const WithSelectItemRenderedAs: Story = {
+  render: () => {
+    return (
+      <Select label="Fruit" selectionMode="single" items={FRUIT}>
+        {(item) => <SelectItem textValue={item.name}>{item.name}</SelectItem>}
       </Select>
     );
   },

@@ -64,6 +64,7 @@
   font-size: 1.5rem;
   font-weight: var(--lp-font-weight-medium);
   padding: 0 1.2rem;
+  margin: 0.6rem 0;
   text-decoration: none;
   color: var(--lp-color-text-interactive-secondary);
   position: relative;
@@ -97,7 +98,7 @@
 }
 
 .Nav--primary .NavItem-name {
-  padding: 1.3rem 0.4rem;
+  padding: 0.7rem 0.4rem;
 }
 
 .Nav--secondary .NavItem-name {
@@ -136,7 +137,7 @@
 }
 
 .Nav--primary .NavItem:focus .NavItem-name {
-  padding: 1.3rem 0.4rem;
+  padding: 0.7rem 0.4rem;
 }
 
 .Nav--primary .NavItem:hover {

@@ -1,8 +1,9 @@
 /* eslint-disable @typescript-eslint/no-use-before-define */
+import type { SelectItemProps } from './SelectItem';
 import type { SelectState } from './useSelectState';
 import type { AriaListBoxOptions } from '@react-aria/listbox';
 import type { Node } from '@react-types/shared';
-import type { RefObject } from 'react';
+import type { ElementType, RefObject } from 'react';
 
 import { useListBox, useListBoxSection, useOption } from '@react-aria/listbox';
 import cx from 'classix';
@@ -17,11 +18,6 @@ type SelectListBoxProps<T extends object> = AriaListBoxOptions<T> & {
 
 type SelectListBoxSectionProps<T extends object> = {
   section: Node<T>;
-  state: SelectState<T>;
-};
-
-type SelectListBoxOptionProps<T extends object> = {
-  item: Node<T>;
   state: SelectState<T>;
 };
 
@@ -67,8 +63,16 @@ const Section = <T extends object>({ section, state }: SelectListBoxSectionProps
   );
 };
 
-const Option = <T extends object>({ item, state }: SelectListBoxOptionProps<T>) => {
-  const ref = useRef<HTMLLIElement>(null);
+type OptionProps<T extends object> = {
+  item: Omit<Node<T>, 'props'> & {
+    props?: SelectItemProps<T, ElementType>;
+  };
+  state: SelectState<T>;
+};
+
+const Option = <T extends object>(props: OptionProps<T>) => {
+  const ref = useRef<HTMLElement>(null);
+  const { item, state } = props;
   const { optionProps, isDisabled, isSelected, isFocused } = useOption(
     {
       key: item.key,
@@ -77,9 +81,14 @@ const Option = <T extends object>({ item, state }: SelectListBoxOptionProps<T>) 
     ref
   );
 
+  const { as: Component = 'li', ...itemProps } = item.props || {};
+
+  console.log(Component);
+
   return (
-    <li
+    <Component
       {...optionProps}
+      {...itemProps}
       ref={ref}
       className={cx(
         styles.option,
@@ -92,7 +101,7 @@ const Option = <T extends object>({ item, state }: SelectListBoxOptionProps<T>) 
         <input type="checkbox" disabled={isDisabled} checked={isSelected} readOnly />
       )}
       {typeof item.rendered === 'string' ? <span>{item.rendered}</span> : item.rendered}
-    </li>
+    </Component>
   );
 };
 

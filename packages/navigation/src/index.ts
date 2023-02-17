@@ -4,3 +4,5 @@ export type { NavigationItemProps } from './NavigationItem';
 export { Navigation } from './Navigation';
 export { NavigationItem } from './NavigationItem';
 /* c8 ignore stop */
+
+export { NavigationTabs, NavigationTab } from './NavigationTabs';

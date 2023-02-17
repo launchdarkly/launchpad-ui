@@ -12,25 +12,33 @@ import { useTabListState } from '@react-stately/tabs';
 import { cx } from 'classix';
 import { useCallback, useLayoutEffect, useRef } from 'react';
 
-import { NavigationContext } from '../NavigationContext';
 import styles from '../styles/Navigation.module.css';
 
-type NavigationTabsProps<T extends object> = AriaTabListProps<T> & {
+import { NavigationTabsDropdown } from './NavigationTabsDropdown';
+
+type NavigationTabsProps<T extends object> = Omit<AriaTabListProps<T>, 'selectedKey'> & {
   className?: string;
-  kind: 'primary' | 'secondary';
+  kind?: 'primary' | 'secondary';
   'data-test-id'?: string;
+  title: string;
 };
 
 const NavigationTabs = <T extends object>(props: NavigationTabsProps<T>) => {
-  const { className, 'data-test-id': testId = 'navigation-tabs', kind, children } = props;
+  const {
+    className,
+    'data-test-id': testId = 'navigation-tabs',
+    kind = 'primary',
+    children,
+  } = props;
 
   const ref = useRef<HTMLDivElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
 
   const state = useTabListState(props);
+
   const { tabListProps } = useTabList(props, state, ref);
 
-  const [shouldCollapse, setCollapse] = useValueEffect(false);
+  const [isCollapsed, setIsCollapsed] = useValueEffect(false);
 
   const checkShouldCollapse = useCallback(() => {
     function computeShouldCollapse() {
@@ -43,14 +51,14 @@ const NavigationTabs = <T extends object>(props: NavigationTabsProps<T>) => {
       return nav && nav.scrollWidth > nav.offsetWidth;
     }
 
-    setCollapse(function* () {
+    setIsCollapsed(function* () {
       // Make Tabs render in non-collapsed state
       yield false;
 
       // Compute if Tabs should collapse and update
       yield computeShouldCollapse();
     });
-  }, [containerRef, setCollapse]);
+  }, [containerRef, setIsCollapsed]);
 
   useLayoutEffect(() => {
     checkShouldCollapse();
@@ -59,16 +67,11 @@ const NavigationTabs = <T extends object>(props: NavigationTabsProps<T>) => {
   useResizeObserver({ ref: containerRef, onResize: checkShouldCollapse });
 
   return (
-    <NavigationContext.Provider
-      value={{
-        shouldCollapse,
-        refs: {
-          containerRef,
-        },
-      }}
-    >
-      <div className={cx(styles.Navigation, className)} data-test-id={testId}>
-        <div className={styles['NavigationList-wrapper']} ref={containerRef}>
+    <div className={cx(styles.Navigation, className)} data-test-id={testId}>
+      <div className={styles['NavigationList-wrapper']} ref={containerRef}>
+        {isCollapsed ? (
+          <NavigationTabsDropdown state={state} />
+        ) : (
           <nav
             {...tabListProps}
             aria-label={`${kind} navigation`}
@@ -80,9 +83,9 @@ const NavigationTabs = <T extends object>(props: NavigationTabsProps<T>) => {
               <TabItem key={item.key} item={item} state={state} />
             ))}
           </nav>
-        </div>
+        )}
       </div>
-    </NavigationContext.Provider>
+    </div>
   );
 };
 
@@ -94,19 +97,26 @@ type TabItemProps<T extends object> = {
 };
 
 const TabItem = <T extends object>({ item, state }: TabItemProps<T>) => {
-  const ref = useRef<HTMLDivElement>(null);
+  const ref = useRef<HTMLElement>(null);
+
+  const { as: Component = 'a', isNew, tooltip, onClick, isActive, ...itemProps } = item.props || {};
+
   const {
-    isSelected,
     // remove `aria-controls` since we don't render a tab panel for navigation tabs
-    tabProps: { 'aria-controls': ariaControls, ...tabProps },
+    tabProps: { 'aria-controls': _ariaControls, 'aria-selected': _ariaSelected, ...tabProps },
   } = useTab(item, state, ref);
 
-  const classes = cx(styles.NavItem, isSelected && styles['is-active']);
-
-  const { as: Component = 'a', isNew, tooltip, ...itemProps } = item.props || {};
+  const classes = cx(styles.NavItem, isActive && styles['is-active']);
 
   const tabItem = (
-    <Component {...tabProps} {...itemProps} ref={ref} className={classes}>
+    <Component
+      {...tabProps}
+      {...itemProps}
+      aria-selected={!!isActive}
+      onClick={(e: MouseEvent) => (onClick ? onClick(e, { collapsed: false }) : null)}
+      ref={ref}
+      className={classes}
+    >
       {isNew ? (
         <div style={{ display: 'flex', alignItems: 'flex-end' }}>
           <span className={styles['NavItem-name']}>
@@ -140,4 +150,4 @@ const TabItem = <T extends object>({ item, state }: TabItemProps<T>) => {
 };
 
 export { NavigationTabs };
-export type { NavigationTabsProps };
+export type { NavigationTabsProps, TabItemProps };

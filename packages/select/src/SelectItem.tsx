@@ -1,23 +1,21 @@
+import type { SelectState } from './useSelectState';
 import type { ItemProps } from '@react-types/shared';
 import type { ComponentPropsWithoutRef, ElementType } from 'react';
 
-type NavigationTabProps<T extends object, P extends ElementType> = ItemProps<T> & {
+type SelectItemProps<T extends object, P extends ElementType> = ItemProps<T> & {
   as?: P;
-  tooltip?: string;
-  isNew?: boolean;
-  isActive?: boolean;
-  onClick?: (_e: MouseEvent, state: { collapsed: boolean }) => void;
+  onClick?: (_e: MouseEvent, state: SelectState<T>) => void;
+  [key: string]: any;
 };
 
-const NavigationTab = <T extends object, P extends ElementType = 'a'>(
+const SelectItem = <T extends object, P extends ElementType = 'li'>(
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  _props: NavigationTabProps<T, P> &
-    Omit<ComponentPropsWithoutRef<P>, keyof NavigationTabProps<T, P>>
+  _props: SelectItemProps<T, P> & Omit<ComponentPropsWithoutRef<P>, keyof SelectItemProps<T, P>>
 ) => {
   return null;
 };
 
-NavigationTab.getCollectionNode = function* getCollectionNode<T extends object>(
+SelectItem.getCollectionNode = function* getCollectionNode<T extends object>(
   props: ItemProps<T>,
   context: any
 ) {
@@ -42,5 +40,5 @@ NavigationTab.getCollectionNode = function* getCollectionNode<T extends object>(
   };
 };
 
-export { NavigationTab };
-export type { NavigationTabProps };
+export { SelectItem };
+export type { SelectItemProps };
