@@ -5,8 +5,7 @@ import { createContext, useContext } from 'react';
 type NavigationContextModel = {
   shouldCollapse: boolean;
   refs: {
-    wrapperRef: RefObject<HTMLDivElement>;
-    itemListRef: RefObject<HTMLDivElement>;
+    containerRef: RefObject<HTMLDivElement>;
   };
 };
 

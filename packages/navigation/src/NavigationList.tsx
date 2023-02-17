@@ -25,7 +25,7 @@ const NavigationList = <T extends object>({
 
   const { shouldCollapse, refs } = useNavigationContext();
   return (
-    <div className={styles['NavigationList-wrapper']} ref={refs.wrapperRef}>
+    <div className={styles['NavigationList-wrapper']} ref={refs.containerRef}>
       {shouldCollapse ? (
         <NavigationMenuDropdown kind={kind} title={title} {...rest} />
       ) : (
@@ -33,7 +33,6 @@ const NavigationList = <T extends object>({
           aria-label={`${kind} navigation`}
           className={cx(styles.Nav, styles[`Nav--${kind}`])}
           data-test-id="nav"
-          ref={refs.itemListRef}
         >
           {[...state.collection].map((item) => {
             const onClick = (e: MouseEvent) => {

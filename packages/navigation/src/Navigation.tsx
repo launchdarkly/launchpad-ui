@@ -22,17 +22,16 @@ type NavigationState = {
 
 const Navigation = <T extends object>(props: NavigationProps<T>) => {
   const { children, className, 'data-test-id': testId = 'navigation' } = props;
-  const wrapperRef = useRef<HTMLDivElement>(null);
-  const itemListRef = useRef<HTMLDivElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
   const [shouldCollapse, setCollapse] = useValueEffect(false);
 
   const checkShouldCollapse = useCallback(() => {
     function computeShouldCollapse() {
-      if (!wrapperRef.current || !itemListRef.current) {
+      if (!containerRef.current) {
         return false;
       }
 
-      const nav = wrapperRef.current.querySelector('nav');
+      const nav = containerRef.current.querySelector('nav');
 
       return nav && nav.scrollWidth > nav.offsetWidth;
     }
@@ -44,13 +43,13 @@ const Navigation = <T extends object>(props: NavigationProps<T>) => {
       // Compute if Tabs should collapse and update
       yield computeShouldCollapse();
     });
-  }, [wrapperRef, itemListRef, setCollapse]);
+  }, [containerRef, setCollapse]);
 
   useLayoutEffect(() => {
     checkShouldCollapse();
   }, [children, checkShouldCollapse]);
 
-  useResizeObserver({ ref: wrapperRef, onResize: checkShouldCollapse });
+  useResizeObserver({ ref: containerRef, onResize: checkShouldCollapse });
   return (
     <div
       className={cx(
@@ -64,8 +63,7 @@ const Navigation = <T extends object>(props: NavigationProps<T>) => {
         value={{
           shouldCollapse,
           refs: {
-            wrapperRef,
-            itemListRef,
+            containerRef,
           },
         }}
       >

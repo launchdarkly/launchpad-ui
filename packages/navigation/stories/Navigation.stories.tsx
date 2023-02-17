@@ -95,19 +95,25 @@ Link.displayName = 'Link';
 export const AsNavigationTabs: Story = {
   render: () => {
     return (
-      <NavigationTabs kind="primary" selectedKey="fourth">
-        <NavigationTab key="first" as={Link} to="/first">
+      <NavigationTabs
+        kind="primary"
+        onSelectionChange={(key) => {
+          console.log(key);
+        }}
+      >
+        <NavigationTab as={Link} to="/first">
           First
         </NavigationTab>
-        <NavigationTab key="second" href="/second">
+        <NavigationTab target="_blank" href="/second">
           Second
         </NavigationTab>
-        <NavigationTab key="third" href="/third">
+        <NavigationTab isNew href="/third">
           Third
         </NavigationTab>
-        <NavigationTab key="fourth" href="/fourth">
-          Fourth
-        </NavigationTab>
+        <NavigationTab href="/fourth">Fourth</NavigationTab>
+        <NavigationTab href="/fifth">Fifth</NavigationTab>
+        <NavigationTab href="/sixth">Sixth</NavigationTab>
+        <NavigationTab href="/Seventh">Seventh</NavigationTab>
       </NavigationTabs>
     );
   },
