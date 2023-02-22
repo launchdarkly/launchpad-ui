@@ -27,6 +27,7 @@ type UseSelectStateProps<T extends object> = CollectionBase<T> &
   FocusableProps &
   OverlayTriggerProps & {
     shouldFlip?: boolean;
+    defaultItems?: Iterable<T>;
   };
 
 type SelectState<T extends object> = SelectListState<T> &
@@ -41,6 +42,7 @@ const useSelectState = <T extends object>(props: UseSelectStateProps<T>): Select
   const triggerState = useMenuTriggerState(props);
   const listState = useSelectListState({
     ...props,
+    items: props.items ?? props.defaultItems,
     onSelectionChange: (keys) => {
       if (props.onSelectionChange != null) {
         if (keys === 'all') {
