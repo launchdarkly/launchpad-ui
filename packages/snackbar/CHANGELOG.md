@@ -1,5 +1,24 @@
 # @launchpad-ui/snackbar
 
+## 0.3.29
+
+### Patch Changes
+
+- Updated dependencies [[`940f10d6`](https://github.com/launchdarkly/launchpad-ui/commit/940f10d62c81a7e10fb1bd2f9e2a5e757bcbeeaf)]:
+  - @launchpad-ui/button@0.7.28
+
+## 0.3.28
+
+### Patch Changes
+
+- [#692](https://github.com/launchdarkly/launchpad-ui/pull/692) [`f0505293`](https://github.com/launchdarkly/launchpad-ui/commit/f050529389a66fec35bcd8392839e80f875f2562) Thanks [@chasedarkly](https://github.com/chasedarkly)! - Update `framer-motion` to latest version.
+
+  [Snackbar]: Update `framer-motion` dependency from `7.6.1` to `9.0.3`
+  [Popover]: Update `framer-motion` dependency from `7.6.1` to `9.0.3`
+  [Drawer]: Update `framer-motion` dependency from `7.6.1` to `9.0.3`
+  [Modal]: Update `framer-motion` dependency from `7.6.1` to `9.0.3`
+  [Toast]: Update `framer-motion` dependency from `7.6.1` to `9.0.3`
+
 ## 0.3.27
 
 ### Patch Changes

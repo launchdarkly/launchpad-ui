@@ -1,5 +1,36 @@
 # @launchpad-ui/drawer
 
+## 0.2.3
+
+### Patch Changes
+
+- Updated dependencies [[`940f10d6`](https://github.com/launchdarkly/launchpad-ui/commit/940f10d62c81a7e10fb1bd2f9e2a5e757bcbeeaf)]:
+  - @launchpad-ui/button@0.7.28
+
+## 0.2.2
+
+### Patch Changes
+
+- [#692](https://github.com/launchdarkly/launchpad-ui/pull/692) [`f0505293`](https://github.com/launchdarkly/launchpad-ui/commit/f050529389a66fec35bcd8392839e80f875f2562) Thanks [@chasedarkly](https://github.com/chasedarkly)! - Update `framer-motion` to latest version.
+
+  [Snackbar]: Update `framer-motion` dependency from `7.6.1` to `9.0.3`
+  [Popover]: Update `framer-motion` dependency from `7.6.1` to `9.0.3`
+  [Drawer]: Update `framer-motion` dependency from `7.6.1` to `9.0.3`
+  [Modal]: Update `framer-motion` dependency from `7.6.1` to `9.0.3`
+  [Toast]: Update `framer-motion` dependency from `7.6.1` to `9.0.3`
+
+## 0.2.1
+
+### Patch Changes
+
+- [#686](https://github.com/launchdarkly/launchpad-ui/pull/686) [`a521fecf`](https://github.com/launchdarkly/launchpad-ui/commit/a521fecff8db852b21b13fd2f05982051e71b9cd) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Modal] Update overlay bg theme colors
+  [Drawer] Update overlay bg theme colors
+
+- [#671](https://github.com/launchdarkly/launchpad-ui/pull/671) [`6ac80f0e`](https://github.com/launchdarkly/launchpad-ui/commit/6ac80f0e18a65afea1e6a764b216d03f6d6081b5) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Select]: Add Select package supporting single and multi select
+  [Modal]: Bump `@react-aria/overlays` module version
+  [Drawer]: Bump `@react-aria/overlays` module version
+  [Form]: Rename Select to SelectField
+
 ## 0.2.0
 
 ### Minor Changes

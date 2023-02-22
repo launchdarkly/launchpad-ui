@@ -1,5 +1,40 @@
 # @launchpad-ui/navigation
 
+## 0.8.2
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @launchpad-ui/dropdown@0.6.26
+
+## 0.8.1
+
+### Patch Changes
+
+- Updated dependencies [[`f0505293`](https://github.com/launchdarkly/launchpad-ui/commit/f050529389a66fec35bcd8392839e80f875f2562)]:
+  - @launchpad-ui/popover@0.8.36
+  - @launchpad-ui/dropdown@0.6.25
+  - @launchpad-ui/menu@0.7.1
+  - @launchpad-ui/tooltip@0.6.37
+
+## 0.8.0
+
+### Minor Changes
+
+- [#690](https://github.com/launchdarkly/launchpad-ui/pull/690) [`9408be46`](https://github.com/launchdarkly/launchpad-ui/commit/9408be4695f3fb43023c127edef98e081b5706a0) Thanks [@kwatkins-ld](https://github.com/kwatkins-ld)! - update to react-router-dom@6.7.0
+
+### Patch Changes
+
+- Updated dependencies [[`9408be46`](https://github.com/launchdarkly/launchpad-ui/commit/9408be4695f3fb43023c127edef98e081b5706a0)]:
+  - @launchpad-ui/menu@0.7.0
+
+## 0.7.12
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @launchpad-ui/menu@0.6.50
+
 ## 0.7.11
 
 ### Patch Changes

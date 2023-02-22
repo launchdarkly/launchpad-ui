@@ -1,6 +1,6 @@
 {
   "name": "@launchpad-ui/drawer",
-  "version": "0.2.0",
+  "version": "0.2.3",
   "status": "alpha",
   "publishConfig": {
     "access": "public"
@@ -40,7 +40,7 @@
     "@launchpad-ui/tokens": "workspace:~",
     "@react-aria/overlays": "3.12.1",
     "classix": "2.1.17",
-    "framer-motion": "7.6.1"
+    "framer-motion": "9.0.3"
   },
   "peerDependencies": {
     "react": "18.2.0",

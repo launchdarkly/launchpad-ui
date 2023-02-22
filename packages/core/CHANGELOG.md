@@ -1,5 +1,87 @@
 # @launchpad-ui/core
 
+## 0.28.2
+
+### Patch Changes
+
+- [#694](https://github.com/launchdarkly/launchpad-ui/pull/694) [`940f10d6`](https://github.com/launchdarkly/launchpad-ui/commit/940f10d62c81a7e10fb1bd2f9e2a5e757bcbeeaf) Thanks [@jlzych](https://github.com/jlzych)! - [Button] Adjust sizing to match design system guidelines
+
+- Updated dependencies [[`940f10d6`](https://github.com/launchdarkly/launchpad-ui/commit/940f10d62c81a7e10fb1bd2f9e2a5e757bcbeeaf)]:
+  - @launchpad-ui/split-button@0.6.45
+  - @launchpad-ui/button@0.7.28
+  - @launchpad-ui/alert@0.6.31
+  - @launchpad-ui/banner@0.8.5
+  - @launchpad-ui/drawer@0.2.3
+  - @launchpad-ui/dropdown@0.6.26
+  - @launchpad-ui/filter@0.4.56
+  - @launchpad-ui/modal@0.12.25
+  - @launchpad-ui/pagination@0.3.36
+  - @launchpad-ui/select@0.1.2
+  - @launchpad-ui/snackbar@0.3.29
+  - @launchpad-ui/navigation@0.8.2
+
+## 0.28.1
+
+### Patch Changes
+
+- [#692](https://github.com/launchdarkly/launchpad-ui/pull/692) [`f0505293`](https://github.com/launchdarkly/launchpad-ui/commit/f050529389a66fec35bcd8392839e80f875f2562) Thanks [@chasedarkly](https://github.com/chasedarkly)! - Update `framer-motion` to latest version.
+
+  [Snackbar]: Update `framer-motion` dependency from `7.6.1` to `9.0.3`
+  [Popover]: Update `framer-motion` dependency from `7.6.1` to `9.0.3`
+  [Drawer]: Update `framer-motion` dependency from `7.6.1` to `9.0.3`
+  [Modal]: Update `framer-motion` dependency from `7.6.1` to `9.0.3`
+  [Toast]: Update `framer-motion` dependency from `7.6.1` to `9.0.3`
+
+- Updated dependencies [[`f0505293`](https://github.com/launchdarkly/launchpad-ui/commit/f050529389a66fec35bcd8392839e80f875f2562)]:
+  - @launchpad-ui/clipboard@0.8.43
+  - @launchpad-ui/markdown@0.4.1
+  - @launchpad-ui/snackbar@0.3.28
+  - @launchpad-ui/popover@0.8.36
+  - @launchpad-ui/drawer@0.2.2
+  - @launchpad-ui/modal@0.12.24
+  - @launchpad-ui/toast@0.2.28
+  - @launchpad-ui/dropdown@0.6.25
+  - @launchpad-ui/menu@0.7.1
+  - @launchpad-ui/navigation@0.8.1
+  - @launchpad-ui/progress-bubbles@0.5.38
+  - @launchpad-ui/select@0.1.1
+  - @launchpad-ui/split-button@0.6.44
+  - @launchpad-ui/tooltip@0.6.37
+  - @launchpad-ui/filter@0.4.55
+
+## 0.28.0
+
+### Minor Changes
+
+- [#690](https://github.com/launchdarkly/launchpad-ui/pull/690) [`9408be46`](https://github.com/launchdarkly/launchpad-ui/commit/9408be4695f3fb43023c127edef98e081b5706a0) Thanks [@kwatkins-ld](https://github.com/kwatkins-ld)! - update to react-router-dom@6.7.0
+
+### Patch Changes
+
+- Updated dependencies [[`9408be46`](https://github.com/launchdarkly/launchpad-ui/commit/9408be4695f3fb43023c127edef98e081b5706a0)]:
+  - @launchpad-ui/menu@0.7.0
+  - @launchpad-ui/navigation@0.8.0
+  - @launchpad-ui/filter@0.4.54
+
+## 0.27.1
+
+### Patch Changes
+
+- [#686](https://github.com/launchdarkly/launchpad-ui/pull/686) [`a521fecf`](https://github.com/launchdarkly/launchpad-ui/commit/a521fecff8db852b21b13fd2f05982051e71b9cd) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Modal] Update overlay bg theme colors
+  [Drawer] Update overlay bg theme colors
+
+- [#671](https://github.com/launchdarkly/launchpad-ui/pull/671) [`6ac80f0e`](https://github.com/launchdarkly/launchpad-ui/commit/6ac80f0e18a65afea1e6a764b216d03f6d6081b5) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Select]: Add Select package supporting single and multi select
+  [Modal]: Bump `@react-aria/overlays` module version
+  [Drawer]: Bump `@react-aria/overlays` module version
+  [Form]: Rename Select to SelectField
+- Updated dependencies [[`a521fecf`](https://github.com/launchdarkly/launchpad-ui/commit/a521fecff8db852b21b13fd2f05982051e71b9cd), [`6ac80f0e`](https://github.com/launchdarkly/launchpad-ui/commit/6ac80f0e18a65afea1e6a764b216d03f6d6081b5)]:
+  - @launchpad-ui/drawer@0.2.1
+  - @launchpad-ui/modal@0.12.23
+  - @launchpad-ui/select@0.1.0
+  - @launchpad-ui/form@0.7.0
+  - @launchpad-ui/menu@0.6.50
+  - @launchpad-ui/filter@0.4.53
+  - @launchpad-ui/navigation@0.7.12
+
 ## 0.27.0
 
 ### Minor Changes

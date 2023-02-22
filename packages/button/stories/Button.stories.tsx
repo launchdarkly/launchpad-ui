@@ -2,7 +2,7 @@ import type { StoryObj, DecoratorFn } from '@storybook/react';
 
 import { Fragment } from 'react';
 
-import { Add } from '../../icons/src';
+import { Add, ExpandMore } from '../../icons/src';
 import { Button } from '../src';
 
 import './Button.stories.css';
@@ -181,23 +181,35 @@ export const AsAnchorChild: Story = {
   args: {
     children: <a href="/">Anchor tag</a>,
     asChild: true,
-    icon: <Add size="medium" />,
+    icon: <Add />,
     kind: 'destructive',
   },
 };
 
 export const WithIcon: Story = {
-  args: { children: 'With icon', icon: <Add size="medium" /> },
+  args: { children: 'With icon', icon: <Add /> },
 };
 
 export const WithIconPrimary: Story = {
-  args: { children: 'With icon', icon: <Add size="medium" />, kind: 'primary' },
+  args: { children: 'With icon', icon: <ExpandMore />, kind: 'primary' },
+};
+
+export const BigButtonWithIcon: Story = {
+  args: { children: 'Click me', icon: <Add />, kind: 'primary', size: 'big' },
+};
+
+export const SmallButtonWithIcon: Story = {
+  args: { children: 'Click me', icon: <Add />, kind: 'primary', size: 'small' },
+};
+
+export const TinyButtonWithIcon: Story = {
+  args: { children: 'Click me', icon: <Add />, kind: 'primary', size: 'tiny' },
 };
 
 export const WithIconDestructive: Story = {
   args: {
     children: 'With icon',
-    icon: <Add size="medium" />,
+    icon: <Add />,
     kind: 'destructive',
   },
 };
