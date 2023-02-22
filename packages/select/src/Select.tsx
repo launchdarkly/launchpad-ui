@@ -59,6 +59,11 @@ type SelectProps<T extends object> = CollectionBase<T> & {
 
   selectedKeys?: UseSelectStateProps<T>['selectedKeys'];
 
+  defaultSelectedKeys?: UseSelectStateProps<T>['selectedKeys'];
+
+  /** The list of ComboBox items (uncontrolled). */
+  defaultItems?: UseSelectStateProps<T>['defaultItems'];
+
   /** The type of selection that is allowed in the collection. */
   selectionMode: 'single' | 'multiple';
 
