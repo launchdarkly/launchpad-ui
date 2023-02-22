@@ -793,7 +793,6 @@ importers:
       '@react-stately/menu': 3.4.4
       '@react-stately/overlays': 3.4.4
       '@react-stately/select': 3.3.4
-      '@react-stately/selection': 3.11.2
       '@react-types/button': 3.7.0
       '@react-types/combobox': 3.5.5
       '@react-types/overlays': 3.6.5
@@ -830,7 +829,6 @@ importers:
       '@react-stately/menu': 3.4.4_react@18.2.0
       '@react-stately/overlays': 3.4.4_react@18.2.0
       '@react-stately/select': 3.3.4_react@18.2.0
-      '@react-stately/selection': 3.11.2_react@18.2.0
       classix: 2.1.17
     devDependencies:
       '@react-types/button': 3.7.0_react@18.2.0
