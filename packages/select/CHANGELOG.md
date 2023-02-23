@@ -1,5 +1,16 @@
 # @launchpad-ui/select
 
+## 0.1.3
+
+### Patch Changes
+
+- [#699](https://github.com/launchdarkly/launchpad-ui/pull/699) [`48e7fc80`](https://github.com/launchdarkly/launchpad-ui/commit/48e7fc809c83ce36decd936e8ba3c9a6e2ea915d) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Select] Add controlled and uncontrolled options to Select component
+
+- Updated dependencies [[`3790e0d2`](https://github.com/launchdarkly/launchpad-ui/commit/3790e0d294726e6722d45a7aa66e5ce51194c464)]:
+  - @launchpad-ui/icons@0.6.20
+  - @launchpad-ui/button@0.7.29
+  - @launchpad-ui/modal@0.12.26
+
 ## 0.1.2
 
 ### Patch Changes
