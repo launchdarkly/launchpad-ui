@@ -1,5 +1,35 @@
 # @launchpad-ui/core
 
+## 0.28.3
+
+### Patch Changes
+
+- [#701](https://github.com/launchdarkly/launchpad-ui/pull/701) [`da1a3beb`](https://github.com/launchdarkly/launchpad-ui/commit/da1a3bebbf53bae249cfe7bf7b5d2923e148cd4b) Thanks [@kwatkins-ld](https://github.com/kwatkins-ld)! - update secondary navigation :active styles
+
+- [#702](https://github.com/launchdarkly/launchpad-ui/pull/702) [`3790e0d2`](https://github.com/launchdarkly/launchpad-ui/commit/3790e0d294726e6722d45a7aa66e5ce51194c464) Thanks [@matthewferry](https://github.com/matthewferry)! - Adds `language` icon
+
+- [#699](https://github.com/launchdarkly/launchpad-ui/pull/699) [`48e7fc80`](https://github.com/launchdarkly/launchpad-ui/commit/48e7fc809c83ce36decd936e8ba3c9a6e2ea915d) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Select] Add controlled and uncontrolled options to Select component
+
+- Updated dependencies [[`da1a3beb`](https://github.com/launchdarkly/launchpad-ui/commit/da1a3bebbf53bae249cfe7bf7b5d2923e148cd4b), [`3790e0d2`](https://github.com/launchdarkly/launchpad-ui/commit/3790e0d294726e6722d45a7aa66e5ce51194c464), [`48e7fc80`](https://github.com/launchdarkly/launchpad-ui/commit/48e7fc809c83ce36decd936e8ba3c9a6e2ea915d)]:
+  - @launchpad-ui/navigation@0.8.3
+  - @launchpad-ui/icons@0.6.20
+  - @launchpad-ui/select@0.1.3
+  - @launchpad-ui/alert@0.6.32
+  - @launchpad-ui/avatar@0.4.30
+  - @launchpad-ui/banner@0.8.6
+  - @launchpad-ui/button@0.7.29
+  - @launchpad-ui/clipboard@0.8.44
+  - @launchpad-ui/drawer@0.2.4
+  - @launchpad-ui/dropdown@0.6.27
+  - @launchpad-ui/filter@0.4.57
+  - @launchpad-ui/form@0.7.1
+  - @launchpad-ui/menu@0.7.2
+  - @launchpad-ui/modal@0.12.26
+  - @launchpad-ui/pagination@0.3.37
+  - @launchpad-ui/snackbar@0.3.30
+  - @launchpad-ui/toast@0.2.29
+  - @launchpad-ui/split-button@0.6.46
+
 ## 0.28.2
 
 ### Patch Changes

@@ -1,5 +1,16 @@
 # @launchpad-ui/navigation
 
+## 0.8.3
+
+### Patch Changes
+
+- [#701](https://github.com/launchdarkly/launchpad-ui/pull/701) [`da1a3beb`](https://github.com/launchdarkly/launchpad-ui/commit/da1a3bebbf53bae249cfe7bf7b5d2923e148cd4b) Thanks [@kwatkins-ld](https://github.com/kwatkins-ld)! - update secondary navigation :active styles
+
+- Updated dependencies [[`3790e0d2`](https://github.com/launchdarkly/launchpad-ui/commit/3790e0d294726e6722d45a7aa66e5ce51194c464)]:
+  - @launchpad-ui/icons@0.6.20
+  - @launchpad-ui/dropdown@0.6.27
+  - @launchpad-ui/menu@0.7.2
+
 ## 0.8.2
 
 ### Patch Changes
