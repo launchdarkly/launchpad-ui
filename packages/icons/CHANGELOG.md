@@ -1,5 +1,11 @@
 # @launchpad-ui/icons
 
+## 0.6.21
+
+### Patch Changes
+
+- [#703](https://github.com/launchdarkly/launchpad-ui/pull/703) [`d06d6a42`](https://github.com/launchdarkly/launchpad-ui/commit/d06d6a42824309be167d754c4642ab6b97375e1f) Thanks [@pheggeseth](https://github.com/pheggeseth)! - add "Language" icon component
+
 ## 0.6.20
 
 ### Patch Changes

@@ -1,5 +1,31 @@
 # @launchpad-ui/core
 
+## 0.28.4
+
+### Patch Changes
+
+- [#703](https://github.com/launchdarkly/launchpad-ui/pull/703) [`d06d6a42`](https://github.com/launchdarkly/launchpad-ui/commit/d06d6a42824309be167d754c4642ab6b97375e1f) Thanks [@pheggeseth](https://github.com/pheggeseth)! - add "Language" icon component
+
+- Updated dependencies [[`d06d6a42`](https://github.com/launchdarkly/launchpad-ui/commit/d06d6a42824309be167d754c4642ab6b97375e1f)]:
+  - @launchpad-ui/icons@0.6.21
+  - @launchpad-ui/alert@0.6.33
+  - @launchpad-ui/avatar@0.4.31
+  - @launchpad-ui/banner@0.8.7
+  - @launchpad-ui/button@0.7.30
+  - @launchpad-ui/clipboard@0.8.45
+  - @launchpad-ui/drawer@0.2.5
+  - @launchpad-ui/dropdown@0.6.28
+  - @launchpad-ui/filter@0.4.58
+  - @launchpad-ui/form@0.7.2
+  - @launchpad-ui/menu@0.7.3
+  - @launchpad-ui/modal@0.12.27
+  - @launchpad-ui/navigation@0.8.4
+  - @launchpad-ui/pagination@0.3.38
+  - @launchpad-ui/select@0.1.4
+  - @launchpad-ui/snackbar@0.3.31
+  - @launchpad-ui/toast@0.2.30
+  - @launchpad-ui/split-button@0.6.47
+
 ## 0.28.3
 
 ### Patch Changes
