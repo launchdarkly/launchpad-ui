@@ -1,5 +1,33 @@
 # @launchpad-ui/core
 
+## 0.29.0
+
+### Minor Changes
+
+- [#704](https://github.com/launchdarkly/launchpad-ui/pull/704) [`2b29f91e`](https://github.com/launchdarkly/launchpad-ui/commit/2b29f91e21002d352f18c2dbfd0ed807f0598da0) Thanks [@tvarney13](https://github.com/tvarney13)! - add clipboard copy icon
+
+### Patch Changes
+
+- Updated dependencies [[`2b29f91e`](https://github.com/launchdarkly/launchpad-ui/commit/2b29f91e21002d352f18c2dbfd0ed807f0598da0)]:
+  - @launchpad-ui/icons@0.7.0
+  - @launchpad-ui/alert@0.6.34
+  - @launchpad-ui/avatar@0.4.32
+  - @launchpad-ui/banner@0.8.8
+  - @launchpad-ui/button@0.7.31
+  - @launchpad-ui/clipboard@0.8.46
+  - @launchpad-ui/drawer@0.2.6
+  - @launchpad-ui/dropdown@0.6.29
+  - @launchpad-ui/filter@0.4.59
+  - @launchpad-ui/form@0.7.3
+  - @launchpad-ui/menu@0.7.4
+  - @launchpad-ui/modal@0.12.28
+  - @launchpad-ui/navigation@0.8.5
+  - @launchpad-ui/pagination@0.3.39
+  - @launchpad-ui/select@0.1.5
+  - @launchpad-ui/snackbar@0.3.32
+  - @launchpad-ui/toast@0.2.31
+  - @launchpad-ui/split-button@0.6.48
+
 ## 0.28.4
 
 ### Patch Changes
