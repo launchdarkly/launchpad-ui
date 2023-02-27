@@ -1,5 +1,11 @@
 # @launchpad-ui/icons
 
+## 0.7.0
+
+### Minor Changes
+
+- [#704](https://github.com/launchdarkly/launchpad-ui/pull/704) [`2b29f91e`](https://github.com/launchdarkly/launchpad-ui/commit/2b29f91e21002d352f18c2dbfd0ed807f0598da0) Thanks [@tvarney13](https://github.com/tvarney13)! - add clipboard copy icon
+
 ## 0.6.21
 
 ### Patch Changes
