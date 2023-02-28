@@ -4,8 +4,9 @@ import type { SharedSelectProps } from '../types';
 
 import { useButton } from '@react-aria/button';
 import { useFocusRing } from '@react-aria/focus';
-import { mergeProps, useObjectRef } from '@react-aria/utils';
+import { mergeProps } from '@react-aria/utils';
 import { VisuallyHidden } from '@react-aria/visually-hidden';
+import { useRef } from 'react';
 
 import { SelectListBox } from '../SelectListBox';
 import { SelectPopover } from '../SelectPopover';
@@ -26,34 +27,33 @@ const SingleSelect = <T extends object>(props: SingleSelectProps<T>) => {
     excludeFromTabOrder,
     isDisabled,
     label,
-    innerRef,
     trigger = SingleSelectTrigger,
     'data-test-id': testId = 'select',
   } = props;
-  const ref = useObjectRef(innerRef);
+  const filterInputRef = useRef<HTMLInputElement>(null);
+  const triggerRef = useRef<HTMLButtonElement>(null);
+  const popoverRef = useRef<HTMLDivElement>(null);
+  const listBoxRef = useRef<HTMLUListElement>(null);
 
   const state = useSingleSelectState(props);
 
-  const { labelProps, triggerProps, valueProps, menuProps } = useSingleSelect(
-    {
-      ...props,
-    },
-    state,
-    ref
-  );
+  const { labelProps, triggerProps, valueProps, menuProps } = useSingleSelect(props, state, {
+    triggerRef,
+    listBoxRef,
+  });
 
   const { buttonProps } = useButton(
     { ...triggerProps, autoFocus, excludeFromTabOrder, isDisabled },
-    ref
+    triggerRef
   );
 
   const { focusProps } = useFocusRing({ autoFocus });
 
   const renderedTrigger = trigger({
     state,
-    buttonProps: mergeProps(buttonProps, focusProps, { 'data-test-id': 'select-trigger' }),
+    triggerProps: mergeProps(buttonProps, focusProps, { 'data-test-id': 'select-trigger' }),
     valueProps,
-    innerRef: ref,
+    triggerRef,
   });
 
   return (
@@ -65,8 +65,13 @@ const SingleSelect = <T extends object>(props: SingleSelectProps<T>) => {
       {renderedTrigger}
 
       {state.isOpen && (
-        <SelectPopover state={state} triggerRef={ref}>
-          <SelectListBox {...menuProps} state={state} />
+        <SelectPopover state={state} popoverRef={popoverRef} triggerRef={triggerRef}>
+          <SelectListBox
+            {...menuProps}
+            listBoxRef={listBoxRef}
+            filterInputRef={filterInputRef}
+            state={state}
+          />
         </SelectPopover>
       )}
     </div>

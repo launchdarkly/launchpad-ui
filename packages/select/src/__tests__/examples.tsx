@@ -5,7 +5,7 @@ import type { SingleSelectTriggerProps } from '../SingleSelect';
 import { Tooltip } from '@launchpad-ui/tooltip';
 
 const CustomMultiSelectTrigger = (props: MultiSelectTriggerProps<DummyItem>) => {
-  const { state, buttonProps, innerRef } = props;
+  const { state, triggerProps, triggerRef } = props;
 
   return (
     <div style={{ display: 'flex', alignItems: 'center' }}>
@@ -32,7 +32,7 @@ const CustomMultiSelectTrigger = (props: MultiSelectTriggerProps<DummyItem>) => 
           </div>
         ))}
       </div>
-      <button {...buttonProps} data-test-id="custom-trigger" ref={innerRef}>
+      <button {...triggerProps} data-test-id="custom-trigger" ref={triggerRef}>
         +
       </button>
     </div>
@@ -40,7 +40,7 @@ const CustomMultiSelectTrigger = (props: MultiSelectTriggerProps<DummyItem>) => 
 };
 
 const CustomSingleSelectTrigger = (props: SingleSelectTriggerProps<DummyItem>) => {
-  const { state, buttonProps, innerRef } = props;
+  const { state, triggerProps, triggerRef } = props;
 
   const getRenderedSelected = () => {
     const item = state.selectedItem;
@@ -50,7 +50,7 @@ const CustomSingleSelectTrigger = (props: SingleSelectTriggerProps<DummyItem>) =
     return <span>{item.textValue}</span>;
   };
   return (
-    <button {...buttonProps} data-test-id="custom-trigger" ref={innerRef}>
+    <button {...triggerProps} data-test-id="custom-trigger" ref={triggerRef}>
       {getRenderedSelected()}
     </button>
   );

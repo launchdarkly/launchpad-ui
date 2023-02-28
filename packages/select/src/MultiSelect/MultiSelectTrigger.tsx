@@ -1,6 +1,7 @@
 import type { MultiSelectState } from './useMultiSelectState';
-import type { FocusableElement, Node } from '@react-types/shared';
-import type { ButtonHTMLAttributes, DOMAttributes, ReactNode, RefObject } from 'react';
+import type { SharedSelectTriggerProps } from '../types';
+import type { Node } from '@react-types/shared';
+import type { ReactNode } from 'react';
 
 import { ExpandMore } from '@launchpad-ui/icons';
 import cx from 'classix';
@@ -11,16 +12,13 @@ type MultiSelectTriggerChildrenState<T extends object> = MultiSelectState<T> & {
   selectedItems: Node<T>[];
 };
 
-type MultiSelectTriggerProps<T extends object> = {
+type MultiSelectTriggerProps<T extends object> = SharedSelectTriggerProps & {
   state: MultiSelectState<T>;
-  buttonProps: ButtonHTMLAttributes<HTMLButtonElement> & DOMAttributes<FocusableElement>;
-  valueProps: DOMAttributes<FocusableElement>;
-  innerRef: RefObject<HTMLButtonElement>;
   children?: (state: MultiSelectTriggerChildrenState<T>) => ReactNode;
 };
 
 const MultiSelectTrigger = <T extends object>(props: MultiSelectTriggerProps<T>) => {
-  const { state, buttonProps, valueProps, innerRef, children } = props;
+  const { state, triggerProps, valueProps, triggerRef, children } = props;
 
   const formatItems = (items: Node<T>[] | null) => {
     if (!items || items.length === 0) {
@@ -38,8 +36,8 @@ const MultiSelectTrigger = <T extends object>(props: MultiSelectTriggerProps<T>)
 
   return (
     <button
-      {...buttonProps}
-      ref={innerRef}
+      {...triggerProps}
+      ref={triggerRef}
       className={cx(
         styles.trigger,
         state.isOpen && styles.isOpen,

@@ -1,4 +1,5 @@
-import type { MultiSelectState, UseMultiSelectStateProps } from './useMultiSelectState';
+import type { MultiSelectProps } from './MultiSelect';
+import type { MultiSelectState } from './useMultiSelectState';
 import type { SelectAria, SharedUseSelectProps } from '../types';
 import type { FocusEvent, RefObject } from 'react';
 
@@ -10,7 +11,7 @@ import { chain, filterDOMProps, mergeProps, useId } from '@react-aria/utils';
 import { useMemo } from 'react';
 
 type UseMultiSelectProps<T extends object> = SharedUseSelectProps<T> & {
-  onSelectionChange?: UseMultiSelectStateProps<T>['onSelectionChange'];
+  onSelectionChange?: MultiSelectProps<T>['onSelectionChange'];
 };
 
 /* c8 ignore start */
@@ -35,43 +36,6 @@ const useMultiSelect = <T extends object>(
     state,
     ref
   );
-
-  const triggerOnKeyDown = (e: KeyboardEvent) => {
-    // Select items when trigger has focus - imitating default `<select>` behaviour.
-    // In multi selection mode this does not make sense.
-    if (state.selectionMode === 'single') {
-      switch (e.key) {
-        case 'ArrowLeft': {
-          // prevent scrolling containers
-          e.preventDefault();
-
-          const key =
-            state.selectedKeys.size > 0
-              ? delegate.getKeyAbove(state.selectedKeys.values().next().value)
-              : delegate.getFirstKey();
-
-          if (key) {
-            state.setSelectedKeys([key]);
-          }
-          break;
-        }
-        case 'ArrowRight': {
-          // prevent scrolling containers
-          e.preventDefault();
-
-          const key =
-            state.selectedKeys.size > 0
-              ? delegate.getKeyBelow(state.selectedKeys.values().next().value)
-              : delegate.getFirstKey();
-
-          if (key) {
-            state.setSelectedKeys([key]);
-          }
-          break;
-        }
-      }
-    }
-  };
 
   // Typeahead functionality - imitating default `<select>` behaviour.
   const { typeSelectProps } = useTypeSelect({
@@ -109,7 +73,7 @@ const useMultiSelect = <T extends object>(
     },
     triggerProps: mergeProps(domProps, {
       ...triggerProps,
-      onKeyDown: chain(triggerProps.onKeyDown, triggerOnKeyDown, props.onKeyDown),
+      onKeyDown: chain(triggerProps.onKeyDown, props.onKeyDown),
       onKeyUp: props.onKeyUp,
       'aria-labelledby': [
         triggerProps['aria-labelledby'],

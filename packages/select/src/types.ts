@@ -4,47 +4,64 @@ import type { AriaButtonProps } from '@react-types/button';
 import type { OverlayTriggerProps } from '@react-types/overlays';
 import type { AriaSelectProps } from '@react-types/select';
 import type {
+  AriaLabelingProps,
   CollectionBase,
-  FocusableProps,
-  InputBase,
-  LabelableProps,
-  TextInputBase,
-  Validation,
+  DOMProps,
+  FocusableElement,
 } from '@react-types/shared';
-import type { HTMLAttributes, ReactNode, RefObject } from 'react';
+import type {
+  ButtonHTMLAttributes,
+  DOMAttributes,
+  HTMLAttributes,
+  ReactNode,
+  RefObject,
+} from 'react';
 
-type SharedSelectProps<T extends object> = CollectionBase<T> & {
-  autoFocus?: boolean;
+type SharedSelectProps<T extends object> = CollectionBase<T> &
+  DOMProps &
+  AriaLabelingProps & {
+    autoFocus?: boolean;
 
-  className?: string;
+    className?: string;
 
-  /** Sets the default open state of the field (uncontrolled). */
-  defaultOpen?: boolean;
+    /** Sets the default open state of the field (uncontrolled). */
+    defaultOpen?: boolean;
 
-  disallowEmptySelection?: boolean;
+    disallowEmptySelection?: boolean;
 
-  formatLabel?: (items: Iterator<T>[]) => ReactNode;
+    formatLabel?: (items: Iterator<T>[]) => ReactNode;
 
-  excludeFromTabOrder?: boolean;
+    excludeFromTabOrder?: boolean;
 
-  /** Whether the field is disabled. */
-  isDisabled?: boolean;
+    /** Whether the field is disabled. */
+    isDisabled?: boolean;
 
-  /** Sets the open state of the field (controlled). */
-  isOpen?: boolean;
+    /** Sets the open state of the field (controlled). */
+    isOpen?: boolean;
 
-  /** The content to display as the label. */
-  label: string;
+    /** The content to display as the label. */
+    label: string;
 
-  onOpenChange?: SharedUseSelectStateProps<T>['onOpenChange'];
+    onOpenChange?: OverlayTriggerProps['onOpenChange'];
 
-  /** The list of ComboBox items (uncontrolled). */
-  defaultItems?: SharedUseSelectStateProps<T>['defaultItems'];
+    'data-test-id'?: string;
 
-  innerRef?: RefObject<HTMLButtonElement | null>;
+    defaultItems?: Iterable<T>;
 
-  'data-test-id'?: string;
-};
+    isLoading?: boolean;
+
+    defaultFilter?: FilterFn;
+
+    filterValue?: string;
+    /** The default value of the filter input (uncontrolled). */
+    defaultFilterValue?: string;
+    /** Handler that is called when the filter input value changes. */
+    onFilterChange?: (value: string) => void;
+    /** Whether the select allows a non-item matching input value to be set. */
+    allowsCustomValue?: boolean;
+
+    hasFilter?: boolean;
+  };
 
 type SelectAria<T extends object> = {
   /** Props for the label element. */
@@ -60,21 +77,19 @@ type SelectAria<T extends object> = {
   menuProps: AriaListBoxOptions<T>;
 };
 
-type SharedUseSelectStateProps<T extends object> = CollectionBase<T> &
-  Omit<InputBase, 'isReadOnly'> &
-  Validation &
-  LabelableProps &
-  TextInputBase &
-  FocusableProps &
-  OverlayTriggerProps & {
-    shouldFlip?: boolean;
-    defaultItems?: Iterable<T>;
-    isLoading?: boolean;
-  };
+type FilterFn = (textValue: string, inputValue: string) => boolean;
 
 type SharedSelectState = MenuTriggerState & {
   isFocused: boolean;
   setFocused(isFocused: boolean): void;
+  filterValue?: string;
+  setFilterValue?: (val: string) => void;
+};
+
+type SharedSelectTriggerProps = {
+  triggerProps: ButtonHTMLAttributes<HTMLButtonElement> & DOMAttributes<FocusableElement>;
+  valueProps: DOMAttributes<FocusableElement>;
+  triggerRef: RefObject<HTMLButtonElement>;
 };
 
 type SharedUseSelectProps<T extends object> = Omit<AriaSelectProps<T>, 'onSelectionChange'> & {
@@ -84,7 +99,8 @@ type SharedUseSelectProps<T extends object> = Omit<AriaSelectProps<T>, 'onSelect
 export type {
   SharedSelectProps,
   SelectAria,
-  SharedUseSelectStateProps,
   SharedSelectState,
   SharedUseSelectProps,
+  FilterFn,
+  SharedSelectTriggerProps,
 };

@@ -4,8 +4,9 @@ import type { MultipleSelection } from '@react-types/shared';
 
 import { useButton } from '@react-aria/button';
 import { useFocusRing } from '@react-aria/focus';
-import { mergeProps, useObjectRef } from '@react-aria/utils';
+import { mergeProps } from '@react-aria/utils';
 import { VisuallyHidden } from '@react-aria/visually-hidden';
+import { useRef } from 'react';
 
 import { SelectListBox } from '../SelectListBox';
 import { SelectPopover } from '../SelectPopover';
@@ -33,11 +34,10 @@ const MultiSelect = <T extends object>(props: MultiSelectProps<T>) => {
     isDisabled,
     isSelectableAll,
     label,
-    innerRef,
     trigger = MultiSelectTrigger,
     'data-test-id': testId = 'select',
   } = props;
-  const ref = useObjectRef(innerRef);
+  const triggerRef = useRef<HTMLButtonElement>(null);
 
   const state = useMultiSelectState(props);
 
@@ -46,21 +46,21 @@ const MultiSelect = <T extends object>(props: MultiSelectProps<T>) => {
       ...props,
     },
     state,
-    ref
+    triggerRef
   );
 
   const { buttonProps } = useButton(
     { ...triggerProps, autoFocus, excludeFromTabOrder, isDisabled },
-    ref
+    triggerRef
   );
 
   const { focusProps } = useFocusRing({ autoFocus });
 
   const renderedTrigger = trigger({
     state,
-    buttonProps: mergeProps(buttonProps, focusProps, { 'data-test-id': 'select-trigger' }),
+    triggerProps: mergeProps(buttonProps, focusProps, { 'data-test-id': 'select-trigger' }),
     valueProps,
-    innerRef: ref,
+    triggerRef,
   });
 
   return (
@@ -72,7 +72,7 @@ const MultiSelect = <T extends object>(props: MultiSelectProps<T>) => {
       {renderedTrigger}
 
       {state.isOpen && (
-        <SelectPopover state={state} triggerRef={ref}>
+        <SelectPopover state={state} triggerRef={triggerRef}>
           <MultiSelectMenuHeader
             isSelectableAll={isSelectableAll}
             isClearable={isClearable}

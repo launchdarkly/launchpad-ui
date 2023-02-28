@@ -1,21 +1,28 @@
-import type { SharedSelectState, SharedUseSelectStateProps } from '../types';
+import type { SingleSelectProps } from './SingleSelect';
+import type { SharedSelectState } from '../types';
 import type { SingleSelectListState } from '@react-stately/list';
-import type { SingleSelection } from '@react-types/shared';
 
 import { useSingleSelectListState } from '@react-stately/list';
 import { useMenuTriggerState } from '@react-stately/menu';
+import { useControlledState } from '@react-stately/utils';
 import { useState } from 'react';
 
-type UseSingleSelectStateProps<T extends object> = SharedUseSelectStateProps<T> & SingleSelection;
+import { useFilteredCollection } from '../useFilter';
 
 type SingleSelectState<T extends object> = SingleSelectListState<T> & SharedSelectState;
 
 const useSingleSelectState = <T extends object>(
-  props: UseSingleSelectStateProps<T>
+  props: SingleSelectProps<T>
 ): SingleSelectState<T> => {
   const [isFocused, setFocused] = useState(false);
 
-  const triggerState = useMenuTriggerState(props);
+  const [filterValue, setFilterValue] = useControlledState(
+    props.filterValue as string,
+    props.defaultFilterValue ?? '',
+    props.onFilterChange as (value: string, ...args: any[]) => void
+  );
+
+  const triggerState = useMenuTriggerState({ ...props, trigger: 'press' });
   const listState = useSingleSelectListState({
     ...props,
     items: props.items ?? props.defaultItems,
@@ -27,6 +34,11 @@ const useSingleSelectState = <T extends object>(
       triggerState.close();
     },
   });
+
+  const filteredCollection = useFilteredCollection(
+    { ...props, filterValue, onFilterChange: setFilterValue },
+    listState
+  );
 
   return {
     ...listState,
@@ -47,8 +59,11 @@ const useSingleSelectState = <T extends object>(
     },
     isFocused,
     setFocused,
+    collection: filteredCollection,
+    filterValue,
+    setFilterValue,
   };
 };
 
 export { useSingleSelectState };
-export type { UseSingleSelectStateProps, SingleSelectState };
+export type { SingleSelectState };

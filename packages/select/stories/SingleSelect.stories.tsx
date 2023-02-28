@@ -23,11 +23,39 @@ type Story = StoryObj<typeof SingleSelect>;
 
 export const Basic: Story = {
   render: () => {
-    return (
-      <SingleSelect label="Fruit" items={FRUIT} onSelectionChange={(key) => console.log(key)}>
-        {(item) => <Item textValue={item.name}>{item.name}</Item>}
-      </SingleSelect>
-    );
+    const BasicComponent = () => {
+      return (
+        <SingleSelect
+          label="Fruit"
+          defaultItems={FRUIT}
+          onSelectionChange={(key) => console.log(key)}
+        >
+          {(item) => <Item textValue={item.name}>{item.name}</Item>}
+        </SingleSelect>
+      );
+    };
+
+    return <BasicComponent />;
+  },
+  parameters: { docs: { disable: false } },
+};
+
+export const Filterable: Story = {
+  render: () => {
+    const BasicComponent = () => {
+      return (
+        <SingleSelect
+          label="Fruit"
+          hasFilter
+          defaultItems={FRUIT}
+          onSelectionChange={(key) => console.log(key)}
+        >
+          {(item) => <Item textValue={item.name}>{item.name}</Item>}
+        </SingleSelect>
+      );
+    };
+
+    return <BasicComponent />;
   },
   parameters: { docs: { disable: false } },
 };
@@ -66,7 +94,7 @@ export const WithCustomTrigger: Story = {
     return (
       <SingleSelect
         label="Fruit"
-        items={FRUIT}
+        defaultItems={FRUIT}
         onSelectionChange={(key) => console.log(key)}
         trigger={CustomSingleSelectTrigger}
       >
@@ -82,7 +110,7 @@ export const SingleSelectWithSections: Story = {
     return (
       <SingleSelect
         label="Produce"
-        items={SECTIONED_ITEMS}
+        defaultItems={SECTIONED_ITEMS}
         onSelectionChange={(key) => console.log(key)}
       >
         {(section) => (

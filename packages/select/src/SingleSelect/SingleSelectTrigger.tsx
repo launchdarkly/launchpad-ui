@@ -1,6 +1,7 @@
 import type { SingleSelectState } from './useSingleSelectState';
-import type { FocusableElement, Node } from '@react-types/shared';
-import type { ButtonHTMLAttributes, DOMAttributes, ReactNode, RefObject } from 'react';
+import type { SharedSelectTriggerProps } from '../types';
+import type { Node } from '@react-types/shared';
+import type { ReactNode } from 'react';
 
 import { ExpandMore } from '@launchpad-ui/icons';
 import cx from 'classix';
@@ -11,16 +12,13 @@ type SingleSelectTriggerChildrenState<T extends object> = SingleSelectState<T> &
   selectedItem: Node<T>;
 };
 
-type SingleSelectTriggerProps<T extends object> = {
+type SingleSelectTriggerProps<T extends object> = SharedSelectTriggerProps & {
   state: SingleSelectState<T>;
-  buttonProps: ButtonHTMLAttributes<HTMLButtonElement> & DOMAttributes<FocusableElement>;
-  valueProps: DOMAttributes<FocusableElement>;
-  innerRef: RefObject<HTMLButtonElement>;
   children?: (state: SingleSelectTriggerChildrenState<T>) => ReactNode;
 };
 
 const SingleSelectTrigger = <T extends object>(props: SingleSelectTriggerProps<T>) => {
-  const { state, buttonProps, valueProps, innerRef, children } = props;
+  const { state, triggerProps, valueProps, triggerRef, children } = props;
 
   const getRenderedSelected = () => {
     const item = state.selectedItem;
@@ -34,8 +32,8 @@ const SingleSelectTrigger = <T extends object>(props: SingleSelectTriggerProps<T
 
   return (
     <button
-      {...buttonProps}
-      ref={innerRef}
+      {...triggerProps}
+      ref={triggerRef}
       className={cx(
         styles.trigger,
         state.isOpen && styles.isOpen,

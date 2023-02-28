@@ -1,6 +1,7 @@
-import type { SingleSelectState, UseSingleSelectStateProps } from './useSingleSelectState';
+import type { SingleSelectProps } from './SingleSelect';
+import type { SingleSelectState } from './useSingleSelectState';
 import type { SelectAria, SharedUseSelectProps } from '../types';
-import type { FocusEvent, RefObject } from 'react';
+import type { FocusEvent, KeyboardEvent, RefObject } from 'react';
 
 import { setInteractionModality } from '@react-aria/interactions';
 import { useField } from '@react-aria/label';
@@ -9,22 +10,25 @@ import { ListKeyboardDelegate, useTypeSelect } from '@react-aria/selection';
 import { chain, filterDOMProps, mergeProps, useId } from '@react-aria/utils';
 import { useMemo } from 'react';
 
-type UseSingleSelectProps<T extends object> = SharedUseSelectProps<T> & {
-  onSelectionChange?: UseSingleSelectStateProps<T>['onSelectionChange'];
+type UseSingleSelectRefs = {
+  triggerRef: RefObject<HTMLElement>;
+
+  listBoxRef: RefObject<HTMLElement>;
 };
 
 /* c8 ignore start */
 
 const useSingleSelect = <T extends object>(
-  props: UseSingleSelectProps<T>,
+  props: SingleSelectProps<T> & SharedUseSelectProps<T>,
   state: SingleSelectState<T>,
-  ref: RefObject<HTMLElement>
+  refs: UseSingleSelectRefs
 ): SelectAria<T> => {
-  const { disallowEmptySelection, isDisabled } = props;
+  const { disallowEmptySelection, isDisabled, hasFilter } = props;
+  const { triggerRef, listBoxRef } = refs;
 
   const delegate = useMemo(
-    () => new ListKeyboardDelegate(state.collection, state.disabledKeys, null as never),
-    [state.collection, state.disabledKeys]
+    () => new ListKeyboardDelegate(state.collection, state.disabledKeys, listBoxRef),
+    [state.collection, state.disabledKeys, listBoxRef]
   );
 
   const { menuTriggerProps, menuProps } = useMenuTrigger<T>(
@@ -33,7 +37,7 @@ const useSingleSelect = <T extends object>(
       type: 'listbox',
     },
     state,
-    ref
+    triggerRef
   );
 
   const triggerOnKeyDown = (e: KeyboardEvent) => {
@@ -95,7 +99,7 @@ const useSingleSelect = <T extends object>(
       ...labelProps,
       onClick: () => {
         if (!props.isDisabled) {
-          ref.current?.focus();
+          triggerRef.current?.focus();
 
           // Show the focus ring so the user knows where focus went
           setInteractionModality('keyboard');
@@ -142,7 +146,7 @@ const useSingleSelect = <T extends object>(
     menuProps: {
       ...menuProps,
       disallowEmptySelection,
-      autoFocus: state.focusStrategy || true,
+      autoFocus: !hasFilter,
       shouldSelectOnPressUp: true,
       shouldFocusOnHover: true,
       onBlur: (e) => {
@@ -168,4 +172,4 @@ const useSingleSelect = <T extends object>(
 /* c8 ignore stop */
 
 export { useSingleSelect };
-export type { UseSingleSelectProps, SelectAria };
+export type { SelectAria };
