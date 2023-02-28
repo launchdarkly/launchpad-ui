@@ -793,6 +793,7 @@ importers:
       '@react-stately/menu': 3.4.4
       '@react-stately/overlays': 3.4.4
       '@react-stately/select': 3.3.4
+      '@react-stately/selection': 3.12.0
       '@react-types/button': 3.7.0
       '@react-types/combobox': 3.5.5
       '@react-types/overlays': 3.6.5
@@ -829,6 +830,7 @@ importers:
       '@react-stately/menu': 3.4.4_react@18.2.0
       '@react-stately/overlays': 3.4.4_react@18.2.0
       '@react-stately/select': 3.3.4_react@18.2.0
+      '@react-stately/selection': 3.12.0_react@18.2.0
       classix: 2.1.17
     devDependencies:
       '@react-types/button': 3.7.0_react@18.2.0
@@ -4094,7 +4096,7 @@ packages:
       '@react-aria/selection': 3.12.1_react@18.2.0
       '@react-aria/utils': 3.14.2_react@18.2.0
       '@react-stately/grid': 3.4.2_react@18.2.0
-      '@react-stately/selection': 3.11.2_react@18.2.0
+      '@react-stately/selection': 3.12.0_react@18.2.0
       '@react-stately/virtualizer': 3.4.1_react@18.2.0
       '@react-types/checkbox': 3.4.1_react@18.2.0
       '@react-types/grid': 3.1.5_react@18.2.0
@@ -4269,7 +4271,7 @@ packages:
       '@react-aria/interactions': 3.13.1_react@18.2.0
       '@react-aria/utils': 3.14.2_react@18.2.0
       '@react-stately/collections': 3.5.1_react@18.2.0
-      '@react-stately/selection': 3.11.2_react@18.2.0
+      '@react-stately/selection': 3.12.0_react@18.2.0
       '@react-types/shared': 3.16.0_react@18.2.0
       '@swc/helpers': 0.4.14
       react: 18.2.0
@@ -4446,6 +4448,16 @@ packages:
       react: 18.2.0
     dev: false
 
+  /@react-stately/collections/3.6.0_react@18.2.0:
+    resolution: {integrity: sha512-znkaqCPo7F1yyzEKDAB5MpX1Vw5UHcUQhDNrys5YOqAkX6/G/AChnBz0B63UxS3fjyqgnuJylRRmUp9nTqO21w==}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0 || 18
+    dependencies:
+      '@react-types/shared': 3.17.0_react@18.2.0
+      '@swc/helpers': 0.4.14
+      react: 18.2.0
+    dev: false
+
   /@react-stately/combobox/3.3.1_react@18.2.0:
     resolution: {integrity: sha512-DgYn0MyfbDySf54o7ofXRd29TWznqtRRRbMG8TWgi/RaB0piDckT/TYWWSYOH3iMgnOEhReJhUUdMiQG4QLpIg==}
     peerDependencies:
@@ -4476,7 +4488,7 @@ packages:
     peerDependencies:
       react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0 || 18
     dependencies:
-      '@react-stately/selection': 3.11.2_react@18.2.0
+      '@react-stately/selection': 3.12.0_react@18.2.0
       '@react-types/grid': 3.1.5_react@18.2.0
       '@react-types/shared': 3.16.0_react@18.2.0
       '@swc/helpers': 0.4.14
@@ -4516,7 +4528,7 @@ packages:
       react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0 || 18
     dependencies:
       '@react-stately/collections': 3.5.1_react@18.2.0
-      '@react-stately/selection': 3.11.2_react@18.2.0
+      '@react-stately/selection': 3.12.0_react@18.2.0
       '@react-stately/utils': 3.5.2_react@18.2.0
       '@react-types/shared': 3.16.0_react@18.2.0
       '@swc/helpers': 0.4.14
@@ -4555,7 +4567,7 @@ packages:
       '@react-stately/collections': 3.5.1_react@18.2.0
       '@react-stately/list': 3.6.1_react@18.2.0
       '@react-stately/menu': 3.4.4_react@18.2.0
-      '@react-stately/selection': 3.11.2_react@18.2.0
+      '@react-stately/selection': 3.12.0_react@18.2.0
       '@react-stately/utils': 3.5.2_react@18.2.0
       '@react-types/select': 3.6.5_react@18.2.0
       '@react-types/shared': 3.16.0_react@18.2.0
@@ -4575,6 +4587,18 @@ packages:
       react: 18.2.0
     dev: false
 
+  /@react-stately/selection/3.12.0_react@18.2.0:
+    resolution: {integrity: sha512-qgUaPwqtAl7YaZxxGdb55ZaVuMB1rG+Vr+9fgG8dPtDYCNaPeIlg7ndC4ylzDhCWIx8D5qZotcrqCA4+93TwdA==}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0 || 18
+    dependencies:
+      '@react-stately/collections': 3.6.0_react@18.2.0
+      '@react-stately/utils': 3.6.0_react@18.2.0
+      '@react-types/shared': 3.17.0_react@18.2.0
+      '@swc/helpers': 0.4.14
+      react: 18.2.0
+    dev: false
+
   /@react-stately/table/3.7.0_react@18.2.0:
     resolution: {integrity: sha512-oPvMEabRUD4LSJ/NZsal3TT2YjoRmpEK8t2pqG20+Vapxy5tC6QKEZQvrDxJwF4Z8fqQnX/GvnqmfypvqWDUSA==}
     peerDependencies:
@@ -4582,7 +4606,7 @@ packages:
     dependencies:
       '@react-stately/collections': 3.5.1_react@18.2.0
       '@react-stately/grid': 3.4.2_react@18.2.0
-      '@react-stately/selection': 3.11.2_react@18.2.0
+      '@react-stately/selection': 3.12.0_react@18.2.0
       '@react-types/grid': 3.1.5_react@18.2.0
       '@react-types/shared': 3.16.0_react@18.2.0
       '@react-types/table': 3.4.0_react@18.2.0
@@ -4632,7 +4656,7 @@ packages:
       react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0 || 18
     dependencies:
       '@react-stately/collections': 3.5.1_react@18.2.0
-      '@react-stately/selection': 3.11.2_react@18.2.0
+      '@react-stately/selection': 3.12.0_react@18.2.0
       '@react-stately/utils': 3.5.2_react@18.2.0
       '@react-types/shared': 3.16.0_react@18.2.0
       '@swc/helpers': 0.4.14
@@ -4641,6 +4665,15 @@ packages:
 
   /@react-stately/utils/3.5.2_react@18.2.0:
     resolution: {integrity: sha512-639gSKqamPHIEPaApb9ahVJS0HgAqNdVF3tQRoh+Ky6759Mbk6i3HqG4zk4IGQ1tVlYSYZvCckwehF7b2zndMg==}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0 || 18
+    dependencies:
+      '@swc/helpers': 0.4.14
+      react: 18.2.0
+    dev: false
+
+  /@react-stately/utils/3.6.0_react@18.2.0:
+    resolution: {integrity: sha512-rptF7iUWDrquaYvBAS4QQhOBQyLBncDeHF03WnHXAxnuPJXNcr9cXJtjJPGCs036ZB8Q2hc9BGG5wNyMkF5v+Q==}
     peerDependencies:
       react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0 || 18
     dependencies:
@@ -4743,6 +4776,14 @@ packages:
       react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0 || 18
     dependencies:
       react: 18.2.0
+
+  /@react-types/shared/3.17.0_react@18.2.0:
+    resolution: {integrity: sha512-1SNZ/RhVrrQ1e6yE0bPV7d5Sfp+Uv0dfUEhwF9MAu2v5msu7AMewnsiojKNA0QA6Ing1gpDLjHCxtayQfuxqcg==}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0 || 18
+    dependencies:
+      react: 18.2.0
+    dev: false
 
   /@react-types/switch/3.2.5_react@18.2.0:
     resolution: {integrity: sha512-DlUL0Bz79SUTRje/i8m6qn4Ipn+q8QnyIkyJhkoHeH1R0YNude8xZrBPWbj3zfdddAGDFSF1NzP69q0xmNAcTQ==}

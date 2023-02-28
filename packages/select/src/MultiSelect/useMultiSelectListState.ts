@@ -4,22 +4,24 @@ import type { Key } from 'react';
 
 import { useListState } from '@react-stately/list';
 
-type UseSelectListProps<T> = CollectionBase<T> & MultipleSelection;
+type UseMultiSelectListProps<T> = CollectionBase<T> & MultipleSelection;
 
-type SelectListState<T> = ListState<T> & {
+type MultiSelectListState<T> = ListState<T> & {
   selectedKeys: Set<Key>;
   setSelectedKeys(keys: Iterable<Key>): void;
   selectedItems: Node<T>[] | null;
-  selectionMode?: SelectionMode;
+  selectionMode: SelectionMode;
 };
 
-const useSelectListState = <T extends object>(props: UseSelectListProps<T>): SelectListState<T> => {
+const useMultiSelectListState = <T extends object>(
+  props: UseMultiSelectListProps<T>
+): MultiSelectListState<T> => {
   const {
     collection,
     disabledKeys,
     selectionManager,
     selectionManager: { setSelectedKeys, selectedKeys, selectionMode },
-  } = useListState(props);
+  } = useListState({ ...props, selectionMode: 'multiple' });
 
   const missingKeys: Key[] = [];
 
@@ -59,5 +61,5 @@ const useSelectListState = <T extends object>(props: UseSelectListProps<T>): Sel
   };
 };
 
-export { useSelectListState };
-export type { SelectListState, UseSelectListProps };
+export { useMultiSelectListState };
+export type { MultiSelectListState, UseMultiSelectListProps };

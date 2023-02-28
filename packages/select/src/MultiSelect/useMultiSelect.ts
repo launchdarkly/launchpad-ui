@@ -1,8 +1,6 @@
-import type { UseSelectStateProps, SelectState } from './useSelectState';
-import type { AriaListBoxOptions } from '@react-aria/listbox';
-import type { AriaButtonProps } from '@react-types/button';
-import type { AriaSelectProps } from '@react-types/select';
-import type { FocusEvent, HTMLAttributes, RefObject } from 'react';
+import type { MultiSelectState, UseMultiSelectStateProps } from './useMultiSelectState';
+import type { SelectAria, SharedUseSelectProps } from '../types';
+import type { FocusEvent, RefObject } from 'react';
 
 import { setInteractionModality } from '@react-aria/interactions';
 import { useField } from '@react-aria/label';
@@ -11,31 +9,15 @@ import { ListKeyboardDelegate, useTypeSelect } from '@react-aria/selection';
 import { chain, filterDOMProps, mergeProps, useId } from '@react-aria/utils';
 import { useMemo } from 'react';
 
-type UseSelectProps<T extends object> = Omit<AriaSelectProps<T>, 'onSelectionChange'> & {
-  disallowEmptySelection?: boolean;
-
-  onSelectionChange?: UseSelectStateProps<T>['onSelectionChange'];
-};
-
-type SelectAria<T extends object> = {
-  /** Props for the label element. */
-  labelProps: HTMLAttributes<HTMLElement>;
-
-  /** Props for the popup trigger element. */
-  triggerProps: AriaButtonProps;
-
-  /** Props for the element representing the selected value. */
-  valueProps: HTMLAttributes<HTMLElement>;
-
-  /** Props for the popup. */
-  menuProps: AriaListBoxOptions<T>;
+type UseMultiSelectProps<T extends object> = SharedUseSelectProps<T> & {
+  onSelectionChange?: UseMultiSelectStateProps<T>['onSelectionChange'];
 };
 
 /* c8 ignore start */
 
-const useSelect = <T extends object>(
-  props: UseSelectProps<T>,
-  state: SelectState<T>,
+const useMultiSelect = <T extends object>(
+  props: UseMultiSelectProps<T>,
+  state: MultiSelectState<T>,
   ref: RefObject<HTMLElement>
 ): SelectAria<T> => {
   const { disallowEmptySelection, isDisabled } = props;
@@ -190,5 +172,5 @@ const useSelect = <T extends object>(
 
 /* c8 ignore stop */
 
-export { useSelect };
-export type { UseSelectProps, SelectAria };
+export { useMultiSelect };
+export type { UseMultiSelectProps, SelectAria };

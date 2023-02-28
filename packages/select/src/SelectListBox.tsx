@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-use-before-define */
-import type { SelectState } from './useSelectState';
 import type { AriaListBoxOptions } from '@react-aria/listbox';
+import type { ListState } from '@react-stately/list';
 import type { Node } from '@react-types/shared';
 import type { RefObject } from 'react';
 
@@ -12,17 +12,17 @@ import styles from './styles/Select.module.css';
 
 type SelectListBoxProps<T extends object> = AriaListBoxOptions<T> & {
   listBoxRef?: RefObject<HTMLUListElement>;
-  state: SelectState<T>;
+  state: ListState<T>;
 };
 
 type SelectListBoxSectionProps<T extends object> = {
   section: Node<T>;
-  state: SelectState<T>;
+  state: ListState<T>;
 };
 
 type SelectListBoxOptionProps<T extends object> = {
   item: Node<T>;
-  state: SelectState<T>;
+  state: ListState<T>;
 };
 
 const SelectListBox = <T extends object>(props: SelectListBoxProps<T>) => {
@@ -88,7 +88,7 @@ const Option = <T extends object>({ item, state }: SelectListBoxOptionProps<T>) 
         isSelected && styles.isSelected
       )}
     >
-      {state.selectionMode === 'multiple' && (
+      {state.selectionManager.selectionMode === 'multiple' && (
         <input type="checkbox" disabled={isDisabled} checked={isSelected} readOnly />
       )}
       {typeof item.rendered === 'string' ? <span>{item.rendered}</span> : item.rendered}
