@@ -3,6 +3,7 @@
   padding: 0;
   margin: 0;
   outline: none;
+  font-size: 1.6rem;
 }
 
 .section {
@@ -166,4 +167,26 @@
   grid-area: 1/1/2/3;
   grid-template-columns: 0 min-content;
   box-sizing: border-box;
+}
+
+.search {
+  position: relative;
+  border-bottom: 1px solid var(--lp-color-border-ui-secondary);
+
+  .searchIcon {
+    position: absolute;
+    top: 1.6rem;
+    left: 1.4rem;
+  }
+
+  input {
+    width: 100%;
+    border: none;
+    font-size: 1.6rem;
+    padding: 1.6rem 1.6rem 1.6rem 4rem;
+
+    &:focus-visible {
+      outline: none;
+    }
+  }
 }

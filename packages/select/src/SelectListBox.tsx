@@ -6,6 +6,7 @@ import type { ListState } from '@react-stately/list';
 import type { BaseEvent, Node } from '@react-types/shared';
 import type { KeyboardEvent, RefObject } from 'react';
 
+import { Search } from '@launchpad-ui/icons';
 import { useListBox, useListBoxSection, useOption } from '@react-aria/listbox';
 import { useTextField } from '@react-aria/textfield';
 import { useObjectRef } from '@react-aria/utils';
@@ -19,6 +20,7 @@ type SelectListBoxProps<T extends object> = AriaListBoxOptions<T> & {
   listBoxRef?: RefObject<HTMLUListElement>;
   filterInputRef?: RefObject<HTMLInputElement>;
   state: SingleSelectState<T> | MultiSelectState<T>;
+  hasFilter?: boolean;
 };
 
 type SelectListBoxSectionProps<T extends object> = {
@@ -32,7 +34,7 @@ type SelectListBoxOptionProps<T extends object> = {
 };
 
 const SelectListBox = <T extends object>(props: SelectListBoxProps<T>) => {
-  const { state } = props;
+  const { state, hasFilter } = props;
 
   const listBoxRef = useObjectRef<HTMLUListElement>(props.listBoxRef);
   const filterInputRef = useObjectRef<HTMLInputElement>(props.filterInputRef);
@@ -67,12 +69,16 @@ const SelectListBox = <T extends object>(props: SelectListBoxProps<T>) => {
 
   return (
     <div>
-      <div data-test-id="search-filter">
-        <VisuallyHidden>
-          <label {...filterLabelProps}>{filterLabelProps.children}</label>
-        </VisuallyHidden>
-        <input {...filterInputProps} ref={filterInputRef} />
-      </div>
+      {hasFilter && (
+        <div data-test-id="search-filter" className={styles.search}>
+          <Search size="medium" className={styles.searchIcon} />
+          <VisuallyHidden>
+            <label {...filterLabelProps}>{filterLabelProps.children}</label>
+          </VisuallyHidden>
+          <input {...filterInputProps} ref={filterInputRef} />
+        </div>
+      )}
+
       <ul {...listBoxProps} ref={listBoxRef} className={styles.options} data-test-id="select-menu">
         {[...state.collection].map((item) =>
           item.type === 'section' ? (

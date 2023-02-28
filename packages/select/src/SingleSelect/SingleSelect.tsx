@@ -70,6 +70,7 @@ const SingleSelect = <T extends object>(props: SingleSelectProps<T>) => {
             {...menuProps}
             listBoxRef={listBoxRef}
             filterInputRef={filterInputRef}
+            hasFilter={props.hasFilter}
             state={state}
           />
         </SelectPopover>
