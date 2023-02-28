@@ -1,9 +1,8 @@
 .Snackbar {
   background-color: var(--lp-color-bg-feedback-primary);
   color: var(--lp-color-white);
-  padding: var(--lp-spacing-500);
-  display: inline-flex;
-  gap: 1.4rem;
+  display: flex;
+  flex-direction: column;
   box-sizing: border-box;
   width: 37.6rem;
   border-radius: 2px;
@@ -39,6 +38,13 @@
   color: var(--lp-color-white);
 }
 
+.Snackbar-main {
+  display: inline-flex;
+  box-sizing: border-box;
+  gap: 1.4rem;
+  padding: var(--lp-spacing-500);
+}
+
 .Snackbar-content {
   flex-grow: 1;
 
@@ -61,4 +67,10 @@
 
 .Snackbar-close:global(.Button):global(.Button--close) svg {
   fill: var(--lp-color-gray-400);
+}
+
+.Snackbar-footer {
+  background-color: var(--lp-color-black-100);
+  padding: var(--lp-spacing-500);
+  word-break: break-word;
 }

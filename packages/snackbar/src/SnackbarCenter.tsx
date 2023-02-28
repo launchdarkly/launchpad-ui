@@ -49,6 +49,7 @@ const SnackbarCenter = ({ snackbars, dismissSnackbar, className }: SnackbarCente
                 description={item.description}
                 header={item.header}
                 cta={item.cta}
+                footer={item.footer}
                 onDismiss={() => handleDismiss(item)}
               />
             </m.div>

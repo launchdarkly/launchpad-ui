@@ -10,6 +10,7 @@ import styles from './styles/Snackbar.module.css';
 type SnackbarBaseProps = {
   kind: 'info' | 'error' | 'warning' | 'success';
   header?: ReactNode;
+  footer?: ReactNode;
   description: ReactNode;
   cta?: ReactElement<AnchorHTMLAttributes<HTMLAnchorElement>>;
   onDismiss?: () => void;
@@ -22,6 +23,7 @@ const Snackbar = ({
   className,
   kind,
   header,
+  footer,
   description,
   cta,
   onDismiss,
@@ -41,20 +43,25 @@ const Snackbar = ({
       data-test-id={testId}
       role="status"
     >
-      <StatusIcon kind={kind} className={styles['Snackbar-icon']} />
-      <div className={styles['Snackbar-content']}>
-        {header && <h4 className={styles['Snackbar-heading']}>{header}</h4>}
-        <span className={styles['Snackbar-description']}>{description}</span> {CTA}
+      <div className={styles['Snackbar-main']}>
+        <StatusIcon kind={kind} className={styles['Snackbar-icon']} />
+        <div className={styles['Snackbar-content']}>
+          {header && <h4 className={styles['Snackbar-heading']}>{header}</h4>}
+          <span className={styles['Snackbar-description']}>{description}</span> {CTA}
+        </div>
+        <IconButton
+          icon={<Close size="small" />}
+          size="small"
+          aria-label="Dismiss"
+          kind="close"
+          className={styles['Snackbar-close']}
+          data-test-id="snackbar-dismiss"
+          onClick={onDismiss}
+        />
       </div>
-      <IconButton
-        icon={<Close size="small" />}
-        size="small"
-        aria-label="Dismiss"
-        kind="close"
-        className={styles['Snackbar-close']}
-        data-test-id="snackbar-dismiss"
-        onClick={onDismiss}
-      />
+      {footer && (
+        <div className={cx(styles['Snackbar-content'], styles['Snackbar-footer'])}>{footer}</div>
+      )}
     </div>
   );
 };
