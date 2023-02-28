@@ -73,4 +73,5 @@
   background-color: var(--lp-color-black-100);
   padding: var(--lp-spacing-500);
   word-break: break-word;
+  border-radius: 0 0 2px 2px;
 }
