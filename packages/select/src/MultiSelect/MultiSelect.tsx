@@ -37,17 +37,17 @@ const MultiSelect = <T extends object>(props: MultiSelectProps<T>) => {
     trigger = MultiSelectTrigger,
     'data-test-id': testId = 'select',
   } = props;
+  const filterInputRef = useRef<HTMLInputElement>(null);
   const triggerRef = useRef<HTMLButtonElement>(null);
+  const popoverRef = useRef<HTMLDivElement>(null);
+  const listBoxRef = useRef<HTMLUListElement>(null);
 
   const state = useMultiSelectState(props);
 
-  const { labelProps, triggerProps, valueProps, menuProps } = useMultiSelect(
-    {
-      ...props,
-    },
-    state,
-    triggerRef
-  );
+  const { labelProps, triggerProps, valueProps, menuProps } = useMultiSelect(props, state, {
+    triggerRef,
+    listBoxRef,
+  });
 
   const { buttonProps } = useButton(
     { ...triggerProps, autoFocus, excludeFromTabOrder, isDisabled },
@@ -72,14 +72,20 @@ const MultiSelect = <T extends object>(props: MultiSelectProps<T>) => {
       {renderedTrigger}
 
       {state.isOpen && (
-        <SelectPopover state={state} triggerRef={triggerRef}>
+        <SelectPopover state={state} popoverRef={popoverRef} triggerRef={triggerRef}>
           <MultiSelectMenuHeader
             isSelectableAll={isSelectableAll}
             isClearable={isClearable}
             state={state}
           />
 
-          <SelectListBox {...menuProps} state={state} />
+          <SelectListBox
+            {...menuProps}
+            filterInputRef={filterInputRef}
+            listBoxRef={listBoxRef}
+            hasFilter={props.hasFilter}
+            state={state}
+          />
         </SelectPopover>
       )}
     </div>

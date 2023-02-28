@@ -3,7 +3,10 @@ import type { MultiSelectListState } from './useMultiSelectListState';
 import type { SharedSelectState } from '../types';
 
 import { useMenuTriggerState } from '@react-stately/menu';
+import { useControlledState } from '@react-stately/utils';
 import { useState } from 'react';
+
+import { useFilteredCollection } from '../useFilter';
 
 import { useMultiSelectListState } from './useMultiSelectListState';
 
@@ -11,6 +14,11 @@ type MultiSelectState<T extends object> = MultiSelectListState<T> & SharedSelect
 
 const useMultiSelectState = <T extends object>(props: MultiSelectProps<T>): MultiSelectState<T> => {
   const [isFocused, setFocused] = useState(false);
+  const [filterValue, setFilterValue] = useControlledState(
+    props.filterValue as string,
+    props.defaultFilterValue ?? '',
+    props.onFilterChange as (value: string, ...args: any[]) => void
+  );
 
   const triggerState = useMenuTriggerState({ ...props, trigger: 'press' });
   const listState = useMultiSelectListState({
@@ -26,6 +34,11 @@ const useMultiSelectState = <T extends object>(props: MultiSelectProps<T>): Mult
       }
     },
   });
+
+  const filteredCollection = useFilteredCollection(
+    { ...props, filterValue, onFilterChange: setFilterValue },
+    listState
+  );
 
   return {
     ...listState,
@@ -46,6 +59,9 @@ const useMultiSelectState = <T extends object>(props: MultiSelectProps<T>): Mult
     },
     isFocused,
     setFocused,
+    collection: filteredCollection,
+    filterValue,
+    setFilterValue,
   };
 };
 

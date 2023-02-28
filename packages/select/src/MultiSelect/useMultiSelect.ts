@@ -10,22 +10,25 @@ import { ListKeyboardDelegate, useTypeSelect } from '@react-aria/selection';
 import { chain, filterDOMProps, mergeProps, useId } from '@react-aria/utils';
 import { useMemo } from 'react';
 
-type UseMultiSelectProps<T extends object> = SharedUseSelectProps<T> & {
-  onSelectionChange?: MultiSelectProps<T>['onSelectionChange'];
+type UseMultiSelectRefs = {
+  triggerRef: RefObject<HTMLElement>;
+
+  listBoxRef: RefObject<HTMLElement>;
 };
 
 /* c8 ignore start */
 
 const useMultiSelect = <T extends object>(
-  props: UseMultiSelectProps<T>,
+  props: MultiSelectProps<T> & SharedUseSelectProps<T>,
   state: MultiSelectState<T>,
-  ref: RefObject<HTMLElement>
+  refs: UseMultiSelectRefs
 ): SelectAria<T> => {
-  const { disallowEmptySelection, isDisabled } = props;
+  const { disallowEmptySelection, isDisabled, hasFilter } = props;
+  const { triggerRef, listBoxRef } = refs;
 
   const delegate = useMemo(
-    () => new ListKeyboardDelegate(state.collection, state.disabledKeys, null as never),
-    [state.collection, state.disabledKeys]
+    () => new ListKeyboardDelegate(state.collection, state.disabledKeys, listBoxRef),
+    [state.collection, state.disabledKeys, listBoxRef]
   );
 
   const { menuTriggerProps, menuProps } = useMenuTrigger<T>(
@@ -34,7 +37,7 @@ const useMultiSelect = <T extends object>(
       type: 'listbox',
     },
     state,
-    ref
+    triggerRef
   );
 
   // Typeahead functionality - imitating default `<select>` behaviour.
@@ -64,7 +67,7 @@ const useMultiSelect = <T extends object>(
       ...labelProps,
       onClick: () => {
         if (!props.isDisabled) {
-          ref.current?.focus();
+          triggerRef.current?.focus();
 
           // Show the focus ring so the user knows where focus went
           setInteractionModality('keyboard');
@@ -111,7 +114,7 @@ const useMultiSelect = <T extends object>(
     menuProps: {
       ...menuProps,
       disallowEmptySelection,
-      autoFocus: state.focusStrategy || true,
+      autoFocus: !hasFilter,
       shouldSelectOnPressUp: true,
       shouldFocusOnHover: true,
       onBlur: (e) => {
@@ -137,4 +140,3 @@ const useMultiSelect = <T extends object>(
 /* c8 ignore stop */
 
 export { useMultiSelect };
-export type { UseMultiSelectProps, SelectAria };

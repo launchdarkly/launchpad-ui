@@ -41,6 +41,24 @@ export const Basic: Story = {
   parameters: { docs: { disable: false } },
 };
 
+export const Filterable: Story = {
+  render: () => {
+    return (
+      <MultiSelect
+        label="Fruit"
+        defaultItems={FRUIT}
+        hasFilter
+        onSelectionChange={(keys) => console.log(Array.from(keys))}
+        isSelectableAll
+        isClearable
+      >
+        {(item) => <Item>{item.name}</Item>}
+      </MultiSelect>
+    );
+  },
+  parameters: { docs: { disable: false } },
+};
+
 export const WithCustomTrigger: Story = {
   render: () => {
     return (
