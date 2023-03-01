@@ -1,7 +1,9 @@
 import type { StoryObj } from '@storybook/react';
+import type { Key } from 'react';
 
 import { Chip } from '@launchpad-ui/chip';
 import { Item, Section } from '@react-stately/collections';
+import { useState } from 'react';
 
 import { MultiSelectTrigger, Select, SingleSelectTrigger } from '../src';
 import { FRUIT, SECTIONED_ITEMS } from '../src/__tests__/constants';
@@ -209,6 +211,40 @@ export const MultiSelectWithSelectAll: Story = {
           </MultiSelectTrigger>
         )}
       >
+        {(item) => <Item textValue={item.name}>{item.name}</Item>}
+      </Select>
+    );
+  },
+  parameters: { docs: { disable: false } },
+};
+
+export const WithControlledSelectedKeys: Story = {
+  render: () => {
+    const ControlledSelectComponent = () => {
+      const [selectedKeys, setSelectedKeys] = useState<Iterable<Key>>(['3']);
+
+      return (
+        <Select
+          label="Fruit"
+          selectionMode="multiple"
+          items={FRUIT}
+          selectedKeys={selectedKeys}
+          onSelectionChange={(keys) => setSelectedKeys(keys)}
+        >
+          {(item) => <Item textValue={item.name}>{item.name}</Item>}
+        </Select>
+      );
+    };
+
+    return <ControlledSelectComponent />;
+  },
+  parameters: { docs: { disable: false } },
+};
+
+export const WithUncontrolledItems: Story = {
+  render: () => {
+    return (
+      <Select label="Fruit" selectionMode="multiple" defaultItems={FRUIT}>
         {(item) => <Item textValue={item.name}>{item.name}</Item>}
       </Select>
     );

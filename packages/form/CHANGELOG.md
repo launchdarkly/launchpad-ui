@@ -1,5 +1,35 @@
 # @launchpad-ui/form
 
+## 0.7.3
+
+### Patch Changes
+
+- Updated dependencies [[`2b29f91e`](https://github.com/launchdarkly/launchpad-ui/commit/2b29f91e21002d352f18c2dbfd0ed807f0598da0)]:
+  - @launchpad-ui/icons@0.7.0
+
+## 0.7.2
+
+### Patch Changes
+
+- Updated dependencies [[`d06d6a42`](https://github.com/launchdarkly/launchpad-ui/commit/d06d6a42824309be167d754c4642ab6b97375e1f)]:
+  - @launchpad-ui/icons@0.6.21
+
+## 0.7.1
+
+### Patch Changes
+
+- Updated dependencies [[`3790e0d2`](https://github.com/launchdarkly/launchpad-ui/commit/3790e0d294726e6722d45a7aa66e5ce51194c464)]:
+  - @launchpad-ui/icons@0.6.20
+
+## 0.7.0
+
+### Minor Changes
+
+- [#671](https://github.com/launchdarkly/launchpad-ui/pull/671) [`6ac80f0e`](https://github.com/launchdarkly/launchpad-ui/commit/6ac80f0e18a65afea1e6a764b216d03f6d6081b5) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Select]: Add Select package supporting single and multi select
+  [Modal]: Bump `@react-aria/overlays` module version
+  [Drawer]: Bump `@react-aria/overlays` module version
+  [Form]: Rename Select to SelectField
+
 ## 0.6.35
 
 ### Patch Changes
