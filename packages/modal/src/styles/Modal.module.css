@@ -162,4 +162,8 @@
   .normal.modal {
     width: 65rem;
   }
+
+  .large.modal {
+    width: 80rem;
+  }
 }
