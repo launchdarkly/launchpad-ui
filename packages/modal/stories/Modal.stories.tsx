@@ -29,7 +29,7 @@ export default {
   argTypes: {
     size: {
       description: 'A configurable width variant.',
-      options: ['small', 'normal', 'auto'],
+      options: ['small', 'normal', 'large'],
       control: { type: 'radio', description: 'lkfjdslkfds' },
     },
     children: {
