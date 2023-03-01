@@ -1,7 +1,9 @@
 import type { StoryObj } from '@storybook/react';
+import type { Key } from 'react';
 
 import { Chip } from '@launchpad-ui/chip';
 import { Item, Section } from '@react-stately/collections';
+import { useState } from 'react';
 
 import { SingleSelect, SingleSelectTrigger } from '../src';
 import { FRUIT, SECTIONED_ITEMS } from '../src/__tests__/constants';
@@ -23,7 +25,7 @@ type Story = StoryObj<typeof SingleSelect>;
 
 export const Basic: Story = {
   render: () => {
-    const BasicComponent = () => {
+    const Component = () => {
       return (
         <SingleSelect
           label="Fruit"
@@ -35,14 +37,50 @@ export const Basic: Story = {
       );
     };
 
-    return <BasicComponent />;
+    return <Component />;
   },
   parameters: { docs: { disable: false } },
 };
 
-export const Filterable: Story = {
+export const WithUncontrolledSelectedKey: Story = {
   render: () => {
-    const BasicComponent = () => {
+    const Component = () => {
+      const [selectedKey, setSelectedKey] = useState<Key>(FRUIT[0].id);
+      return (
+        <SingleSelect
+          label="Fruit"
+          selectedKey={selectedKey}
+          items={FRUIT}
+          onSelectionChange={(key) => setSelectedKey(key)}
+        >
+          {(item) => <Item textValue={item.name}>{item.name}</Item>}
+        </SingleSelect>
+      );
+    };
+
+    return <Component />;
+  },
+  parameters: { docs: { disable: false } },
+};
+
+export const WithControlledSelectedKey: Story = {
+  render: () => {
+    const Component = () => {
+      return (
+        <SingleSelect label="Fruit" defaultSelectedKey={FRUIT[2].id} items={FRUIT}>
+          {(item) => <Item textValue={item.name}>{item.name}</Item>}
+        </SingleSelect>
+      );
+    };
+
+    return <Component />;
+  },
+  parameters: { docs: { disable: false } },
+};
+
+export const WithControlledFilterable: Story = {
+  render: () => {
+    const Component = () => {
       return (
         <SingleSelect
           label="Fruit"
@@ -55,7 +93,32 @@ export const Filterable: Story = {
       );
     };
 
-    return <BasicComponent />;
+    return <Component />;
+  },
+  parameters: { docs: { disable: false } },
+};
+
+export const WithUncontrolledFilterable: Story = {
+  render: () => {
+    const Component = () => {
+      const [filteredFruits, setFilteredFruits] = useState(FRUIT);
+      const doTheFilter = (searchTerm: string) => {
+        setFilteredFruits(() => FRUIT.filter((value) => value.name.includes(searchTerm)));
+      };
+      return (
+        <SingleSelect
+          label="Fruit"
+          hasFilter
+          items={filteredFruits}
+          onFilterChange={doTheFilter}
+          onSelectionChange={(key) => console.log(key)}
+        >
+          {(item) => <Item textValue={item.name}>{item.name}</Item>}
+        </SingleSelect>
+      );
+    };
+
+    return <Component />;
   },
   parameters: { docs: { disable: false } },
 };
