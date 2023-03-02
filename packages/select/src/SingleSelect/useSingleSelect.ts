@@ -28,7 +28,7 @@ const useSingleSelect = <T extends object>(
   state: SingleSelectState<T>,
   refs: UseSingleSelectRefs
 ): SelectAria<T> => {
-  const { isDisabled, hasFilter } = props;
+  const { disabled: isDisabled, hasFilter } = props;
   const { triggerRef, listBoxRef, filterInputRef } = refs;
 
   const delegate = useMemo(
@@ -167,7 +167,7 @@ const useSingleSelect = <T extends object>(
     labelProps: {
       ...labelProps,
       onClick: () => {
-        if (!props.isDisabled) {
+        if (!props.disabled) {
           triggerRef.current?.focus();
 
           // Show the focus ring so the user knows where focus went

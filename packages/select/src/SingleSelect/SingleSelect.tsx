@@ -24,7 +24,7 @@ const SingleSelect = <T extends object>(props: SingleSelectProps<T>) => {
   const {
     autoFocus,
     excludeFromTabOrder,
-    isDisabled,
+    disabled: isDisabled,
     label,
     trigger = SingleSelectTrigger,
     'data-test-id': testId = 'select',

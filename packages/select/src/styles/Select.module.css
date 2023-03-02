@@ -85,6 +85,16 @@
     box-shadow: inset 0 1px 1px rgb(0 0 0 / 0.075), 0 0 0 3px rgb(0 126 255 / 0.1);
     border-color: var(--lp-color-border-field-focus);
   }
+
+  &:disabled {
+    opacity: 1;
+    background-color: var(--lp-color-bg-field-disabled);
+    border-color: var(--lp-color-border-field-disabled);
+  }
+
+  &:disabled:hover {
+    cursor: not-allowed;
+  }
 }
 
 .valueContainer {
@@ -108,6 +118,10 @@
   text-align: left;
   display: flex;
   align-items: center;
+
+  .trigger:disabled & {
+    color: var(--lp-color-text-field-disabled);
+  }
 }
 
 .indicatorsContainer {
@@ -117,6 +131,10 @@
   flex-shrink: 0;
   box-sizing: border-box;
   color: var(--lp-color-text-ui-tertiary);
+
+  .trigger:disabled & {
+    color: var(--lp-color-text-field-disabled);
+  }
 }
 
 .closeIndicatorContainer {
