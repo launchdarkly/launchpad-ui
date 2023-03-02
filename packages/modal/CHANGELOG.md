@@ -1,5 +1,11 @@
 # @launchpad-ui/modal
 
+## 0.13.0
+
+### Minor Changes
+
+- [#710](https://github.com/launchdarkly/launchpad-ui/pull/710) [`0c3dcaa2`](https://github.com/launchdarkly/launchpad-ui/commit/0c3dcaa205b18bae2e2c64519ac29cb510a8316a) Thanks [@ldhenry](https://github.com/ldhenry)! - [Modal] Add `large` variant
+
 ## 0.12.28
 
 ### Patch Changes
