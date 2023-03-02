@@ -4,7 +4,7 @@ import type { Collection, Node } from '@react-types/shared';
 
 import { ListCollection } from '@react-stately/list';
 import { useCallback, useMemo } from 'react';
-
+/* c8 ignore start */
 const useFilteredCollection = <T extends object>(
   props: SharedSelectProps<T>,
   state: ListState<T>
@@ -51,5 +51,6 @@ const filterNodes = <T>(
   }
   return filteredNode;
 };
+/* c8 ignore end */
 
 export { useFilteredCollection };

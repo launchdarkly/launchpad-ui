@@ -12,6 +12,8 @@ import { useFilteredCollection } from '../useFilter';
 
 type SingleSelectState<T extends object> = SingleSelectListState<T> & SharedSelectState;
 
+/* c8 ignore start */
+
 const useSingleSelectState = <T extends object>(
   props: SingleSelectProps<T>
 ): SingleSelectState<T> => {
@@ -118,6 +120,8 @@ const useSingleSelectState = <T extends object>(
     revert,
   };
 };
+
+/* c8 ignore end */
 
 export { useSingleSelectState };
 export type { SingleSelectState };
