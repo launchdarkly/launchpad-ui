@@ -75,7 +75,7 @@ describe('Select', () => {
       expect(screen.getByTestId('select-all-btn')).toBeVisible();
 
       await user.click(screen.getByTestId('select-all-btn'));
-      expect(screen.getByTestId('select-trigger')).toHaveTextContent('5 selected');
+      expect(screen.getByTestId('select-trigger')).toHaveTextContent(`${FRUIT.length} selected`);
     });
   });
 
