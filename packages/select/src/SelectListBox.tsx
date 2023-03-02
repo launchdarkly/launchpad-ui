@@ -3,11 +3,11 @@ import type { MultiSelectState } from './MultiSelect';
 import type { SingleSelectState } from './SingleSelect';
 import type { AriaListBoxOptions } from '@react-aria/listbox';
 import type { ListState } from '@react-stately/list';
-import type { BaseEvent, Node } from '@react-types/shared';
-import type { KeyboardEvent, RefObject } from 'react';
+import type { Node } from '@react-types/shared';
+import type { InputHTMLAttributes, RefObject } from 'react';
 
 import { Search } from '@launchpad-ui/icons';
-import { useListBox, useListBoxSection, useOption } from '@react-aria/listbox';
+import { getItemId, useListBox, useListBoxSection, useOption } from '@react-aria/listbox';
 import { useTextField } from '@react-aria/textfield';
 import { useObjectRef } from '@react-aria/utils';
 import { VisuallyHidden } from '@react-aria/visually-hidden';
@@ -20,6 +20,7 @@ type SelectListBoxProps<T extends object> = AriaListBoxOptions<T> & {
   listBoxRef?: RefObject<HTMLUListElement>;
   filterInputRef?: RefObject<HTMLInputElement>;
   state: SingleSelectState<T> | MultiSelectState<T>;
+  filterInputProps: InputHTMLAttributes<HTMLInputElement>;
   hasFilter?: boolean;
 };
 
@@ -37,35 +38,27 @@ const SelectListBox = <T extends object>(props: SelectListBoxProps<T>) => {
   const { state, hasFilter } = props;
 
   const listBoxRef = useObjectRef<HTMLUListElement>(props.listBoxRef);
+
   const filterInputRef = useObjectRef<HTMLInputElement>(props.filterInputRef);
 
   const { listBoxProps } = useListBox(props, state, listBoxRef);
-
-  // For textfield specific keydown operations
-  const onFilterInputKeyDown = (e: BaseEvent<KeyboardEvent<any>>) => {
-    switch (e.key) {
-      case 'Enter':
-      case 'Tab':
-        // Prevent form submission if menu is open since we may be selecting a option
-        if (e.key === 'Enter') {
-          e.preventDefault();
-        }
-
-        // state.commit();
-        break;
-    }
-  };
 
   const { inputProps: filterInputProps, labelProps: filterLabelProps } = useTextField(
     {
       autoFocus: true,
       onChange: state.setFilterValue,
-      onKeyDown: onFilterInputKeyDown,
+      onKeyDown: props.filterInputProps.onKeyDown,
+      'aria-label': 'Search options',
+      label: 'Search options',
       value: state.filterValue,
-      autoComplete: 'off',
     },
     filterInputRef
   );
+
+  const focusedItem =
+    state.selectionManager.focusedKey != null
+      ? state.collection.getItem(state.selectionManager.focusedKey)
+      : undefined;
 
   return (
     <div>
@@ -73,13 +66,30 @@ const SelectListBox = <T extends object>(props: SelectListBoxProps<T>) => {
         <div data-test-id="search-filter" className={styles.search}>
           <Search size="medium" className={styles.searchIcon} />
           <VisuallyHidden>
-            <label {...filterLabelProps}>{filterLabelProps.children}</label>
+            <label id={filterLabelProps.id} htmlFor={filterInputProps.id}>
+              Search options
+            </label>
           </VisuallyHidden>
-          <input {...filterInputProps} ref={filterInputRef} />
+          <input
+            // {...props.filterInputProps}
+            {...filterInputProps}
+            aria-controls={listBoxProps.id}
+            role="combobox"
+            placeholder="Search"
+            aria-expanded
+            aria-activedescendant={focusedItem ? getItemId(state, focusedItem.key) : undefined}
+            ref={filterInputRef}
+          />
         </div>
       )}
 
-      <ul {...listBoxProps} ref={listBoxRef} className={styles.options} data-test-id="select-menu">
+      <ul
+        {...listBoxProps}
+        ref={listBoxRef}
+        role="listbox"
+        className={styles.options}
+        data-test-id="select-menu"
+      >
         {[...state.collection].map((item) =>
           item.type === 'section' ? (
             <Section key={item.key} section={item} state={state} />

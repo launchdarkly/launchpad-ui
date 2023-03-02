@@ -1,19 +1,24 @@
 import type { MultiSelectProps } from './MultiSelect';
 import type { MultiSelectState } from './useMultiSelectState';
 import type { SelectAria, SharedUseSelectProps } from '../types';
-import type { FocusEvent, RefObject } from 'react';
+import type { BaseEvent } from '@react-types/shared';
+import type { FocusEvent, KeyboardEvent, RefObject } from 'react';
 
 import { setInteractionModality } from '@react-aria/interactions';
 import { useField } from '@react-aria/label';
+import { listData } from '@react-aria/listbox';
 import { useMenuTrigger } from '@react-aria/menu';
 import { ListKeyboardDelegate, useTypeSelect } from '@react-aria/selection';
-import { chain, filterDOMProps, mergeProps, useId } from '@react-aria/utils';
+import { useTextField } from '@react-aria/textfield';
+import { chain, filterDOMProps, mergeProps, useId, useLabels } from '@react-aria/utils';
 import { useMemo } from 'react';
 
 type UseMultiSelectRefs = {
   triggerRef: RefObject<HTMLElement>;
 
   listBoxRef: RefObject<HTMLElement>;
+
+  filterInputRef: RefObject<HTMLInputElement>;
 };
 
 /* c8 ignore start */
@@ -23,8 +28,8 @@ const useMultiSelect = <T extends object>(
   state: MultiSelectState<T>,
   refs: UseMultiSelectRefs
 ): SelectAria<T> => {
-  const { disallowEmptySelection, isDisabled, hasFilter } = props;
-  const { triggerRef, listBoxRef } = refs;
+  const { isDisabled, hasFilter } = props;
+  const { triggerRef, listBoxRef, filterInputRef } = refs;
 
   const delegate = useMemo(
     () => new ListKeyboardDelegate(state.collection, state.disabledKeys, listBoxRef),
@@ -39,6 +44,67 @@ const useMultiSelect = <T extends object>(
     state,
     triggerRef
   );
+
+  // Set listbox id so it can be used when calling getItemId later
+  listData.set(state, { id: menuProps.id as string });
+
+  // For textfield specific keydown operations
+  const onFilterInputKeyDown = (e: BaseEvent<KeyboardEvent>) => {
+    switch (e.key) {
+      case 'Enter':
+      case 'Tab':
+        // Prevent form submission if menu is open since we may be selecting a option
+        e.preventDefault();
+
+        state.commit();
+        break;
+      case 'Escape':
+        if (state.selectedKeys.size !== 0 || state.filterValue === '' || props.allowsCustomValue) {
+          e.continuePropagation();
+        }
+        state.revert();
+        break;
+      case 'ArrowDown': {
+        e.preventDefault();
+
+        const key =
+          delegate.getKeyBelow(state.selectionManager.focusedKey) || delegate.getFirstKey();
+
+        if (key) {
+          state.selectionManager.setFocusedKey(key);
+        }
+        break;
+      }
+      case 'ArrowUp': {
+        e.preventDefault();
+
+        const key =
+          delegate.getKeyAbove(state.selectionManager.focusedKey) || delegate.getLastKey();
+
+        if (key) {
+          state.selectionManager.setFocusedKey(key);
+        }
+        break;
+      }
+    }
+  };
+
+  const { labelProps: filterLabelProps, inputProps: filterInputProps } = useTextField(
+    {
+      ...props,
+      onChange: state.setFilterValue,
+      onKeyDown: onFilterInputKeyDown,
+      value: state.filterValue,
+      autoComplete: 'off',
+    },
+    filterInputRef
+  );
+
+  const listBoxProps = useLabels({
+    id: menuProps.id,
+    'aria-label': 'Show suggestions',
+    'aria-labelledby': props['aria-labelledby'] || filterLabelProps.id,
+  });
 
   // Typeahead functionality - imitating default `<select>` behaviour.
   const { typeSelectProps } = useTypeSelect({
@@ -58,7 +124,7 @@ const useMultiSelect = <T extends object>(
   delete typeSelectProps.onKeyDownCapture;
 
   const domProps = filterDOMProps(props, { labelable: true });
-  const triggerProps = mergeProps(typeSelectProps, menuTriggerProps, fieldProps);
+  const triggerProps = mergeProps(!hasFilter ? typeSelectProps : {}, menuTriggerProps, fieldProps);
 
   const valueId = useId();
 
@@ -111,29 +177,13 @@ const useMultiSelect = <T extends object>(
     valueProps: {
       id: valueId,
     },
-    menuProps: {
-      ...menuProps,
-      disallowEmptySelection,
+    menuProps: mergeProps(menuProps, listBoxProps, {
       autoFocus: !hasFilter,
+      shouldUseVirtualFocus: hasFilter,
       shouldSelectOnPressUp: true,
       shouldFocusOnHover: true,
-      onBlur: (e) => {
-        if (e.currentTarget.contains(e.relatedTarget as Node)) {
-          return;
-        }
-
-        if (props.onBlur) {
-          props.onBlur(e);
-        }
-        state.setFocused(false);
-      },
-      'aria-labelledby': [
-        fieldProps['aria-labelledby'],
-        triggerProps['aria-label'] && !fieldProps['aria-labelledby'] ? triggerProps.id : null,
-      ]
-        .filter(Boolean)
-        .join(' '),
-    },
+    }),
+    filterInputProps,
   };
 };
 

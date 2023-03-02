@@ -23,7 +23,6 @@ type SingleSelectProps<T extends object> = SharedSelectProps<T> &
 const SingleSelect = <T extends object>(props: SingleSelectProps<T>) => {
   const {
     autoFocus,
-    // className,
     excludeFromTabOrder,
     isDisabled,
     label,
@@ -37,10 +36,15 @@ const SingleSelect = <T extends object>(props: SingleSelectProps<T>) => {
 
   const state = useSingleSelectState(props);
 
-  const { labelProps, triggerProps, valueProps, menuProps } = useSingleSelect(props, state, {
-    triggerRef,
-    listBoxRef,
-  });
+  const { labelProps, triggerProps, valueProps, menuProps, filterInputProps } = useSingleSelect(
+    props,
+    state,
+    {
+      triggerRef,
+      listBoxRef,
+      filterInputRef,
+    }
+  );
 
   const { buttonProps } = useButton(
     { ...triggerProps, autoFocus, excludeFromTabOrder, isDisabled },
@@ -70,6 +74,7 @@ const SingleSelect = <T extends object>(props: SingleSelectProps<T>) => {
             {...menuProps}
             listBoxRef={listBoxRef}
             filterInputRef={filterInputRef}
+            filterInputProps={filterInputProps}
             hasFilter={props.hasFilter}
             state={state}
           />

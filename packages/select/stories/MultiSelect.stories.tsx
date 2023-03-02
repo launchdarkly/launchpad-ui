@@ -49,8 +49,6 @@ export const Filterable: Story = {
         defaultItems={FRUIT}
         hasFilter
         onSelectionChange={(keys) => console.log(Array.from(keys))}
-        isSelectableAll
-        isClearable
       >
         {(item) => <Item>{item.name}</Item>}
       </MultiSelect>
@@ -71,7 +69,8 @@ export const WithCustomTrigger: Story = {
         </p>
         <MultiSelect
           label="Fruit"
-          items={FRUIT}
+          defaultItems={FRUIT}
+          hasFilter
           onSelectionChange={(keys) => console.log(Array.from(keys))}
           trigger={CustomMultiSelectTrigger}
         >

@@ -44,10 +44,15 @@ const MultiSelect = <T extends object>(props: MultiSelectProps<T>) => {
 
   const state = useMultiSelectState(props);
 
-  const { labelProps, triggerProps, valueProps, menuProps } = useMultiSelect(props, state, {
-    triggerRef,
-    listBoxRef,
-  });
+  const { labelProps, triggerProps, valueProps, menuProps, filterInputProps } = useMultiSelect(
+    props,
+    state,
+    {
+      triggerRef,
+      listBoxRef,
+      filterInputRef,
+    }
+  );
 
   const { buttonProps } = useButton(
     { ...triggerProps, autoFocus, excludeFromTabOrder, isDisabled },
@@ -82,6 +87,7 @@ const MultiSelect = <T extends object>(props: MultiSelectProps<T>) => {
           <SelectListBox
             {...menuProps}
             filterInputRef={filterInputRef}
+            filterInputProps={filterInputProps}
             listBoxRef={listBoxRef}
             hasFilter={props.hasFilter}
             state={state}

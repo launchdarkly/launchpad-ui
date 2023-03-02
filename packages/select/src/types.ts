@@ -13,6 +13,7 @@ import type {
   ButtonHTMLAttributes,
   DOMAttributes,
   HTMLAttributes,
+  InputHTMLAttributes,
   ReactNode,
   RefObject,
 } from 'react';
@@ -75,6 +76,8 @@ type SelectAria<T extends object> = {
 
   /** Props for the popup. */
   menuProps: AriaListBoxOptions<T>;
+
+  filterInputProps: InputHTMLAttributes<HTMLInputElement>;
 };
 
 type FilterFn = (textValue: string, inputValue: string) => boolean;
@@ -84,6 +87,8 @@ type SharedSelectState = MenuTriggerState & {
   setFocused(isFocused: boolean): void;
   filterValue?: string;
   setFilterValue?: (val: string) => void;
+  commit: () => void;
+  revert: () => void;
 };
 
 type SharedSelectTriggerProps = {

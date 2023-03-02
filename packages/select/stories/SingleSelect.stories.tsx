@@ -3,7 +3,7 @@ import type { Key } from 'react';
 
 import { Chip } from '@launchpad-ui/chip';
 import { Item, Section } from '@react-stately/collections';
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
 
 import { SingleSelect, SingleSelectTrigger } from '../src';
 import { FRUIT, SECTIONED_ITEMS } from '../src/__tests__/constants';
@@ -85,6 +85,7 @@ export const WithControlledFilterable: Story = {
         <SingleSelect
           label="Fruit"
           hasFilter
+          isOpen
           defaultItems={FRUIT}
           onSelectionChange={(key) => console.log(key)}
         >
@@ -101,16 +102,20 @@ export const WithControlledFilterable: Story = {
 export const WithUncontrolledFilterable: Story = {
   render: () => {
     const Component = () => {
-      const [filteredFruits, setFilteredFruits] = useState(FRUIT);
-      const doTheFilter = (searchTerm: string) => {
-        setFilteredFruits(() => FRUIT.filter((value) => value.name.includes(searchTerm)));
-      };
+      const [filterValue, setFilterValue] = useState('');
+
+      const filteredFruit = useMemo(
+        () => FRUIT.filter((fruit) => fruit.name.toLowerCase().includes(filterValue.toLowerCase())),
+        [filterValue]
+      );
+
       return (
         <SingleSelect
           label="Fruit"
           hasFilter
-          items={filteredFruits}
-          onFilterChange={doTheFilter}
+          items={filteredFruit}
+          onFilterChange={setFilterValue}
+          filterValue={filterValue}
           onSelectionChange={(key) => console.log(key)}
         >
           {(item) => <Item textValue={item.name}>{item.name}</Item>}
@@ -174,6 +179,8 @@ export const SingleSelectWithSections: Story = {
       <SingleSelect
         label="Produce"
         defaultItems={SECTIONED_ITEMS}
+        hasFilter
+        // isOpen
         onSelectionChange={(key) => console.log(key)}
       >
         {(section) => (

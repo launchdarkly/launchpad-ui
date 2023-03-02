@@ -54,7 +54,7 @@
   background: var(--lp-color-bg-overlay-primary);
   border-radius: var(--lp-border-radius-regular);
   max-height: 55vh;
-  overflow: auto;
+  overflow: none;
   box-shadow: 0 0 4px hsl(0 0% 15.7% / 0.12), 0 1px 2px hsl(0 0% 15.7% / 0.1),
     0 4px 4px hsl(0 0% 15.7% / 0.08);
 
@@ -175,7 +175,7 @@
 
   .searchIcon {
     position: absolute;
-    top: 1.6rem;
+    top: 1.5rem;
     left: 1.4rem;
   }
 

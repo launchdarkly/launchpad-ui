@@ -2,9 +2,8 @@ import type { FilterFn, SharedSelectProps } from './types';
 import type { ListState } from '@react-stately/list';
 import type { Collection, Node } from '@react-types/shared';
 
-import { useFilter } from '@react-aria/i18n';
 import { ListCollection } from '@react-stately/list';
-import { useMemo } from 'react';
+import { useCallback, useMemo } from 'react';
 
 const useFilteredCollection = <T extends object>(
   props: SharedSelectProps<T>,
@@ -12,14 +11,18 @@ const useFilteredCollection = <T extends object>(
 ) => {
   const { hasFilter, defaultFilter, filterValue, items } = props;
   const { collection } = state;
-  const { contains } = useFilter({ sensitivity: 'base' });
+
+  const filter = useCallback(
+    (string: string, substring: string) => string.toLowerCase().includes(substring.toLowerCase()),
+    []
+  );
 
   return useMemo(() => {
     // No default filter if items are controlled.
     return !hasFilter || items != null
       ? collection
-      : filterCollection(collection, filterValue, defaultFilter || contains);
-  }, [collection, hasFilter, filterValue, defaultFilter, items, contains]);
+      : filterCollection(collection, filterValue, defaultFilter || filter);
+  }, [collection, hasFilter, filterValue, defaultFilter, items, filter]);
 };
 
 const filterCollection = <T extends object>(

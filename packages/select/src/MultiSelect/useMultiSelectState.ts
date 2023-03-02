@@ -17,7 +17,7 @@ const useMultiSelectState = <T extends object>(props: MultiSelectProps<T>): Mult
   const [filterValue, setFilterValue] = useControlledState(
     props.filterValue as string,
     props.defaultFilterValue ?? '',
-    props.onFilterChange as (value: string, ...args: any[]) => void
+    props.onFilterChange as (value: string, ...args: unknown[]) => void
   );
 
   const triggerState = useMenuTriggerState({ ...props, trigger: 'press' });
@@ -35,10 +35,53 @@ const useMultiSelectState = <T extends object>(props: MultiSelectProps<T>): Mult
     },
   });
 
+  const { selectionManager, selectedKeys } = listState;
+
   const filteredCollection = useFilteredCollection(
     { ...props, filterValue, onFilterChange: setFilterValue },
     listState
   );
+
+  const commitCustomValue = () => {
+    // TODO
+    // lastSelectedKey.current = null;
+    // setSelectedKey(null as unknown as Key);
+    triggerState.close();
+  };
+
+  // Revert input value and close menu
+  const revert = () => {
+    if (props.allowsCustomValue && selectedKeys.size === 0) {
+      commitCustomValue();
+    } else {
+      commitSelection();
+    }
+  };
+
+  const commitSelection = () => {
+    // If multiple things are controlled, call onSelectionChange
+    if (props.selectedKeys !== undefined && props.filterValue !== undefined) {
+      if (props.onSelectionChange) props.onSelectionChange(selectedKeys);
+
+      // Stop menu from reopening from useEffect
+      // const itemText = collection.getItem(selectedKey)?.textValue ?? '';
+      // lastValue.current = itemText;
+      triggerState.close();
+    } else {
+      // If only a single aspect of combobox is controlled, reset input value and close menu for the user
+      setFilterValue('');
+      triggerState.close();
+    }
+  };
+
+  const commit = () => {
+    // if (triggerState.isOpen && selectionManager.focusedKey != null) {
+    selectionManager.toggleSelection(selectionManager.focusedKey);
+
+    // TODO
+    // else if (allowsCustomValue) {
+    // commitCustomValue();
+  };
 
   return {
     ...listState,
@@ -62,6 +105,8 @@ const useMultiSelectState = <T extends object>(props: MultiSelectProps<T>): Mult
     collection: filteredCollection,
     filterValue,
     setFilterValue,
+    commit,
+    revert,
   };
 };
 
