@@ -85,7 +85,6 @@ export const WithControlledFilterable: Story = {
         <SingleSelect
           label="Fruit"
           hasFilter
-          isOpen
           defaultItems={FRUIT}
           onSelectionChange={(key) => console.log(key)}
         >
