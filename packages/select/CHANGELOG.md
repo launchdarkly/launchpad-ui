@@ -1,5 +1,12 @@
 # @launchpad-ui/select
 
+## 0.1.6
+
+### Patch Changes
+
+- Updated dependencies [[`0c3dcaa2`](https://github.com/launchdarkly/launchpad-ui/commit/0c3dcaa205b18bae2e2c64519ac29cb510a8316a)]:
+  - @launchpad-ui/modal@0.13.0
+
 ## 0.1.5
 
 ### Patch Changes
