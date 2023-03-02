@@ -1,5 +1,9 @@
-export type { SelectProps, SelectTriggerProps, SelectTriggerChildrenState } from './Select';
+export type { MultiSelectProps, MultiSelectTriggerProps, MultiSelectState } from './MultiSelect';
+export type {
+  SingleSelectProps,
+  SingleSelectTriggerProps,
+  SingleSelectState,
+} from './SingleSelect';
 
-export { Select } from './Select';
-export { SingleSelectTrigger } from './SingleSelectTrigger';
-export { MultiSelectTrigger } from './MultiSelectTrigger';
+export { MultiSelect, MultiSelectTrigger } from './MultiSelect';
+export { SingleSelect, SingleSelectTrigger } from './SingleSelect';

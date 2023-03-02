@@ -1,10 +1,16 @@
 /* eslint-disable @typescript-eslint/no-use-before-define */
-import type { SelectState } from './useSelectState';
+import type { MultiSelectState } from './MultiSelect';
+import type { SingleSelectState } from './SingleSelect';
 import type { AriaListBoxOptions } from '@react-aria/listbox';
+import type { ListState } from '@react-stately/list';
 import type { Node } from '@react-types/shared';
-import type { RefObject } from 'react';
+import type { InputHTMLAttributes, RefObject } from 'react';
 
-import { useListBox, useListBoxSection, useOption } from '@react-aria/listbox';
+import { Search } from '@launchpad-ui/icons';
+import { getItemId, useListBox, useListBoxSection, useOption } from '@react-aria/listbox';
+import { useTextField } from '@react-aria/textfield';
+import { useObjectRef } from '@react-aria/utils';
+import { VisuallyHidden } from '@react-aria/visually-hidden';
 import cx from 'classix';
 import { useRef } from 'react';
 
@@ -12,34 +18,87 @@ import styles from './styles/Select.module.css';
 
 type SelectListBoxProps<T extends object> = AriaListBoxOptions<T> & {
   listBoxRef?: RefObject<HTMLUListElement>;
-  state: SelectState<T>;
+  filterInputRef?: RefObject<HTMLInputElement>;
+  state: SingleSelectState<T> | MultiSelectState<T>;
+  filterInputProps: InputHTMLAttributes<HTMLInputElement>;
+  hasFilter?: boolean;
 };
 
 type SelectListBoxSectionProps<T extends object> = {
   section: Node<T>;
-  state: SelectState<T>;
+  state: ListState<T>;
 };
 
 type SelectListBoxOptionProps<T extends object> = {
   item: Node<T>;
-  state: SelectState<T>;
+  state: ListState<T>;
 };
 
 const SelectListBox = <T extends object>(props: SelectListBoxProps<T>) => {
-  const ref = useRef<HTMLUListElement>(null);
-  const { listBoxRef = ref, state } = props;
+  const { state, hasFilter } = props;
+
+  const listBoxRef = useObjectRef<HTMLUListElement>(props.listBoxRef);
+
+  const filterInputRef = useObjectRef<HTMLInputElement>(props.filterInputRef);
+
   const { listBoxProps } = useListBox(props, state, listBoxRef);
 
+  const { inputProps: filterInputProps, labelProps: filterLabelProps } = useTextField(
+    {
+      autoFocus: true,
+      onChange: state.setFilterValue,
+      onKeyDown: props.filterInputProps.onKeyDown,
+      'aria-label': 'Search options',
+      label: 'Search options',
+      value: state.filterValue,
+    },
+    filterInputRef
+  );
+
+  const focusedItem =
+    state.selectionManager.focusedKey != null
+      ? state.collection.getItem(state.selectionManager.focusedKey)
+      : undefined;
+
   return (
-    <ul {...listBoxProps} ref={listBoxRef} className={styles.options} data-test-id="select-menu">
-      {[...state.collection].map((item) =>
-        item.type === 'section' ? (
-          <Section key={item.key} section={item} state={state} />
-        ) : (
-          <Option key={item.key} item={item} state={state} />
-        )
+    <div>
+      {hasFilter && (
+        <div data-test-id="search-filter" className={styles.search}>
+          <Search size="medium" className={styles.searchIcon} />
+          <VisuallyHidden>
+            <label id={filterLabelProps.id} htmlFor={filterInputProps.id}>
+              Search options
+            </label>
+          </VisuallyHidden>
+          <input
+            // {...props.filterInputProps}
+            {...filterInputProps}
+            aria-controls={listBoxProps.id}
+            role="combobox"
+            placeholder="Search"
+            aria-expanded
+            aria-activedescendant={focusedItem ? getItemId(state, focusedItem.key) : undefined}
+            ref={filterInputRef}
+          />
+        </div>
       )}
-    </ul>
+
+      <ul
+        {...listBoxProps}
+        ref={listBoxRef}
+        role="listbox"
+        className={styles.options}
+        data-test-id="select-menu"
+      >
+        {[...state.collection].map((item) =>
+          item.type === 'section' ? (
+            <Section key={item.key} section={item} state={state} />
+          ) : (
+            <Option key={item.key} item={item} state={state} />
+          )
+        )}
+      </ul>
+    </div>
   );
 };
 
@@ -88,7 +147,7 @@ const Option = <T extends object>({ item, state }: SelectListBoxOptionProps<T>) 
         isSelected && styles.isSelected
       )}
     >
-      {state.selectionMode === 'multiple' && (
+      {state.selectionManager.selectionMode === 'multiple' && (
         <input type="checkbox" disabled={isDisabled} checked={isSelected} readOnly />
       )}
       {typeof item.rendered === 'string' ? <span>{item.rendered}</span> : item.rendered}
