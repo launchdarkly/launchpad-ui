@@ -35,6 +35,6 @@
   },
   "devDependencies": {
     "style-dictionary": "^3.7.0",
-    "yaml": "^2.1.0"
+    "yaml": "^2.2.1"
   }
 }
