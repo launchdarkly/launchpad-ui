@@ -1,5 +1,47 @@
 # @launchpad-ui/core
 
+## 0.30.1
+
+### Patch Changes
+
+- [#707](https://github.com/launchdarkly/launchpad-ui/pull/707) [`44c1bd5e`](https://github.com/launchdarkly/launchpad-ui/commit/44c1bd5e1a06a8dfa1206a9952449a299d94c26b) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Select] Move to Single and Multi Select components
+
+- [#610](https://github.com/launchdarkly/launchpad-ui/pull/610) [`c76ec2ad`](https://github.com/launchdarkly/launchpad-ui/commit/c76ec2adf7e135faa32d6ee39b66886cbb2a1f10) Thanks [@renovate](https://github.com/apps/renovate)! - Update nonmajor versions across framework
+
+- [#713](https://github.com/launchdarkly/launchpad-ui/pull/713) [`68fa3ec5`](https://github.com/launchdarkly/launchpad-ui/commit/68fa3ec521159e7883c858f80a034830d4c9809f) Thanks [@vroske-ld](https://github.com/vroske-ld)! - [Select] rename disabled prop and add styles
+
+- Updated dependencies [[`44c1bd5e`](https://github.com/launchdarkly/launchpad-ui/commit/44c1bd5e1a06a8dfa1206a9952449a299d94c26b), [`c76ec2ad`](https://github.com/launchdarkly/launchpad-ui/commit/c76ec2adf7e135faa32d6ee39b66886cbb2a1f10), [`68fa3ec5`](https://github.com/launchdarkly/launchpad-ui/commit/68fa3ec521159e7883c858f80a034830d4c9809f)]:
+  - @launchpad-ui/select@0.1.7
+  - @launchpad-ui/progress-bubbles@0.5.39
+  - @launchpad-ui/split-button@0.6.49
+  - @launchpad-ui/navigation@0.8.6
+  - @launchpad-ui/pagination@0.3.40
+  - @launchpad-ui/clipboard@0.8.47
+  - @launchpad-ui/dropdown@0.6.30
+  - @launchpad-ui/markdown@0.4.2
+  - @launchpad-ui/progress@0.5.18
+  - @launchpad-ui/snackbar@0.3.33
+  - @launchpad-ui/tab-list@0.4.20
+  - @launchpad-ui/counter@0.3.20
+  - @launchpad-ui/popover@0.8.37
+  - @launchpad-ui/tooltip@0.6.38
+  - @launchpad-ui/avatar@0.4.33
+  - @launchpad-ui/banner@0.8.9
+  - @launchpad-ui/button@0.7.32
+  - @launchpad-ui/drawer@0.2.7
+  - @launchpad-ui/filter@0.4.60
+  - @launchpad-ui/slider@0.3.18
+  - @launchpad-ui/toggle@0.4.21
+  - @launchpad-ui/tokens@0.4.10
+  - @launchpad-ui/alert@0.6.35
+  - @launchpad-ui/icons@0.7.1
+  - @launchpad-ui/modal@0.13.1
+  - @launchpad-ui/table@0.4.19
+  - @launchpad-ui/toast@0.2.32
+  - @launchpad-ui/chip@0.6.20
+  - @launchpad-ui/menu@0.7.5
+  - @launchpad-ui/form@0.7.4
+
 ## 0.30.0
 
 ### Minor Changes
