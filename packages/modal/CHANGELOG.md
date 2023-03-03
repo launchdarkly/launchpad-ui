@@ -1,5 +1,54 @@
 # @launchpad-ui/modal
 
+## 0.13.0
+
+### Minor Changes
+
+- [#710](https://github.com/launchdarkly/launchpad-ui/pull/710) [`0c3dcaa2`](https://github.com/launchdarkly/launchpad-ui/commit/0c3dcaa205b18bae2e2c64519ac29cb510a8316a) Thanks [@ldhenry](https://github.com/ldhenry)! - [Modal] Add `large` variant
+
+## 0.12.28
+
+### Patch Changes
+
+- Updated dependencies [[`2b29f91e`](https://github.com/launchdarkly/launchpad-ui/commit/2b29f91e21002d352f18c2dbfd0ed807f0598da0)]:
+  - @launchpad-ui/icons@0.7.0
+  - @launchpad-ui/button@0.7.31
+
+## 0.12.27
+
+### Patch Changes
+
+- Updated dependencies [[`d06d6a42`](https://github.com/launchdarkly/launchpad-ui/commit/d06d6a42824309be167d754c4642ab6b97375e1f)]:
+  - @launchpad-ui/icons@0.6.21
+  - @launchpad-ui/button@0.7.30
+
+## 0.12.26
+
+### Patch Changes
+
+- Updated dependencies [[`3790e0d2`](https://github.com/launchdarkly/launchpad-ui/commit/3790e0d294726e6722d45a7aa66e5ce51194c464)]:
+  - @launchpad-ui/icons@0.6.20
+  - @launchpad-ui/button@0.7.29
+
+## 0.12.25
+
+### Patch Changes
+
+- Updated dependencies [[`940f10d6`](https://github.com/launchdarkly/launchpad-ui/commit/940f10d62c81a7e10fb1bd2f9e2a5e757bcbeeaf)]:
+  - @launchpad-ui/button@0.7.28
+
+## 0.12.24
+
+### Patch Changes
+
+- [#692](https://github.com/launchdarkly/launchpad-ui/pull/692) [`f0505293`](https://github.com/launchdarkly/launchpad-ui/commit/f050529389a66fec35bcd8392839e80f875f2562) Thanks [@chasedarkly](https://github.com/chasedarkly)! - Update `framer-motion` to latest version.
+
+  [Snackbar]: Update `framer-motion` dependency from `7.6.1` to `9.0.3`
+  [Popover]: Update `framer-motion` dependency from `7.6.1` to `9.0.3`
+  [Drawer]: Update `framer-motion` dependency from `7.6.1` to `9.0.3`
+  [Modal]: Update `framer-motion` dependency from `7.6.1` to `9.0.3`
+  [Toast]: Update `framer-motion` dependency from `7.6.1` to `9.0.3`
+
 ## 0.12.23
 
 ### Patch Changes

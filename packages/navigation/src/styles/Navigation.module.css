@@ -126,6 +126,12 @@
   border-radius: 0;
 }
 
+.Nav--secondary .NavItem:hover,
+.Nav--secondary .NavItem:active {
+  color: var(--lp-color-text-ui-secondary);
+  text-decoration: none;
+}
+
 .Nav--primary .NavItem:focus {
   outline: none;
 }

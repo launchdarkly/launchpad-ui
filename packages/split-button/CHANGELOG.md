@@ -1,5 +1,48 @@
 # @launchpad-ui/split-button
 
+## 0.6.48
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @launchpad-ui/button@0.7.31
+  - @launchpad-ui/dropdown@0.6.29
+
+## 0.6.47
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @launchpad-ui/button@0.7.30
+  - @launchpad-ui/dropdown@0.6.28
+
+## 0.6.46
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @launchpad-ui/button@0.7.29
+  - @launchpad-ui/dropdown@0.6.27
+
+## 0.6.45
+
+### Patch Changes
+
+- [#694](https://github.com/launchdarkly/launchpad-ui/pull/694) [`940f10d6`](https://github.com/launchdarkly/launchpad-ui/commit/940f10d62c81a7e10fb1bd2f9e2a5e757bcbeeaf) Thanks [@jlzych](https://github.com/jlzych)! - [Button] Adjust sizing to match design system guidelines
+
+- Updated dependencies [[`940f10d6`](https://github.com/launchdarkly/launchpad-ui/commit/940f10d62c81a7e10fb1bd2f9e2a5e757bcbeeaf)]:
+  - @launchpad-ui/button@0.7.28
+  - @launchpad-ui/dropdown@0.6.26
+
+## 0.6.44
+
+### Patch Changes
+
+- Updated dependencies [[`f0505293`](https://github.com/launchdarkly/launchpad-ui/commit/f050529389a66fec35bcd8392839e80f875f2562)]:
+  - @launchpad-ui/popover@0.8.36
+  - @launchpad-ui/dropdown@0.6.25
+  - @launchpad-ui/tooltip@0.6.37
+
 ## 0.6.43
 
 ### Patch Changes

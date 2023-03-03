@@ -1,5 +1,32 @@
 # @launchpad-ui/button
 
+## 0.7.31
+
+### Patch Changes
+
+- Updated dependencies [[`2b29f91e`](https://github.com/launchdarkly/launchpad-ui/commit/2b29f91e21002d352f18c2dbfd0ed807f0598da0)]:
+  - @launchpad-ui/icons@0.7.0
+
+## 0.7.30
+
+### Patch Changes
+
+- Updated dependencies [[`d06d6a42`](https://github.com/launchdarkly/launchpad-ui/commit/d06d6a42824309be167d754c4642ab6b97375e1f)]:
+  - @launchpad-ui/icons@0.6.21
+
+## 0.7.29
+
+### Patch Changes
+
+- Updated dependencies [[`3790e0d2`](https://github.com/launchdarkly/launchpad-ui/commit/3790e0d294726e6722d45a7aa66e5ce51194c464)]:
+  - @launchpad-ui/icons@0.6.20
+
+## 0.7.28
+
+### Patch Changes
+
+- [#694](https://github.com/launchdarkly/launchpad-ui/pull/694) [`940f10d6`](https://github.com/launchdarkly/launchpad-ui/commit/940f10d62c81a7e10fb1bd2f9e2a5e757bcbeeaf) Thanks [@jlzych](https://github.com/jlzych)! - [Button] Adjust sizing to match design system guidelines
+
 ## 0.7.27
 
 ### Patch Changes

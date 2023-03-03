@@ -1,5 +1,51 @@
 # @launchpad-ui/navigation
 
+## 0.8.5
+
+### Patch Changes
+
+- Updated dependencies [[`2b29f91e`](https://github.com/launchdarkly/launchpad-ui/commit/2b29f91e21002d352f18c2dbfd0ed807f0598da0)]:
+  - @launchpad-ui/icons@0.7.0
+  - @launchpad-ui/dropdown@0.6.29
+  - @launchpad-ui/menu@0.7.4
+
+## 0.8.4
+
+### Patch Changes
+
+- Updated dependencies [[`d06d6a42`](https://github.com/launchdarkly/launchpad-ui/commit/d06d6a42824309be167d754c4642ab6b97375e1f)]:
+  - @launchpad-ui/icons@0.6.21
+  - @launchpad-ui/dropdown@0.6.28
+  - @launchpad-ui/menu@0.7.3
+
+## 0.8.3
+
+### Patch Changes
+
+- [#701](https://github.com/launchdarkly/launchpad-ui/pull/701) [`da1a3beb`](https://github.com/launchdarkly/launchpad-ui/commit/da1a3bebbf53bae249cfe7bf7b5d2923e148cd4b) Thanks [@kwatkins-ld](https://github.com/kwatkins-ld)! - update secondary navigation :active styles
+
+- Updated dependencies [[`3790e0d2`](https://github.com/launchdarkly/launchpad-ui/commit/3790e0d294726e6722d45a7aa66e5ce51194c464)]:
+  - @launchpad-ui/icons@0.6.20
+  - @launchpad-ui/dropdown@0.6.27
+  - @launchpad-ui/menu@0.7.2
+
+## 0.8.2
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @launchpad-ui/dropdown@0.6.26
+
+## 0.8.1
+
+### Patch Changes
+
+- Updated dependencies [[`f0505293`](https://github.com/launchdarkly/launchpad-ui/commit/f050529389a66fec35bcd8392839e80f875f2562)]:
+  - @launchpad-ui/popover@0.8.36
+  - @launchpad-ui/dropdown@0.6.25
+  - @launchpad-ui/menu@0.7.1
+  - @launchpad-ui/tooltip@0.6.37
+
 ## 0.8.0
 
 ### Minor Changes

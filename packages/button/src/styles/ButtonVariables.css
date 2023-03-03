@@ -15,13 +15,13 @@
 
   /* End Remaining Legacy Tokens */
 
-  --Button-font-size-default: 1.2rem;
-  --Button-font-size-small: 1.1rem;
-  --Button-font-size-large: 1.7rem;
-  --Button-font-weight: var(--lp-font-weight-bold);
-  --Button-line-height-default: 1.6667; /* 20px */
-  --Button-line-height-small: 1.5455; /* 17px */
-  --Button-line-height-large: 1.111; /* 20px */
+  --Button-font-size-default: 1.4rem;
+  --Button-font-size-small: 1.4rem;
+  --Button-font-size-large: 1.6rem;
+  --Button-font-weight: var(--lp-font-weight-medium);
+  --Button-line-height-default: 114%;
+  --Button-line-height-small: 114%;
+  --Button-line-height-large: 150%;
   --Button-border-radius-default: 0.6rem;
   --Button-border-radius-small: var(--lp-border-radius-regular);
   --Button-border-radius-link: 1px;

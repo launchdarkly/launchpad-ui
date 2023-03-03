@@ -1,5 +1,17 @@
 # @launchpad-ui/markdown
 
+## 0.4.1
+
+### Patch Changes
+
+- [#692](https://github.com/launchdarkly/launchpad-ui/pull/692) [`f0505293`](https://github.com/launchdarkly/launchpad-ui/commit/f050529389a66fec35bcd8392839e80f875f2562) Thanks [@chasedarkly](https://github.com/chasedarkly)! - Update `framer-motion` to latest version.
+
+  [Snackbar]: Update `framer-motion` dependency from `7.6.1` to `9.0.3`
+  [Popover]: Update `framer-motion` dependency from `7.6.1` to `9.0.3`
+  [Drawer]: Update `framer-motion` dependency from `7.6.1` to `9.0.3`
+  [Modal]: Update `framer-motion` dependency from `7.6.1` to `9.0.3`
+  [Toast]: Update `framer-motion` dependency from `7.6.1` to `9.0.3`
+
 ## 0.4.0
 
 ### Minor Changes
