@@ -31,7 +31,7 @@ const MultiSelect = <T extends object>(props: MultiSelectProps<T>) => {
     // className,
     excludeFromTabOrder,
     isClearable,
-    isDisabled,
+    disabled: isDisabled,
     isSelectableAll,
     label,
     trigger = MultiSelectTrigger,

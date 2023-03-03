@@ -28,7 +28,7 @@ const useMultiSelect = <T extends object>(
   state: MultiSelectState<T>,
   refs: UseMultiSelectRefs
 ): SelectAria<T> => {
-  const { isDisabled, hasFilter } = props;
+  const { disabled: isDisabled, hasFilter } = props;
   const { triggerRef, listBoxRef, filterInputRef } = refs;
 
   const delegate = useMemo(
@@ -132,7 +132,7 @@ const useMultiSelect = <T extends object>(
     labelProps: {
       ...labelProps,
       onClick: () => {
-        if (!props.isDisabled) {
+        if (!props.disabled) {
           triggerRef.current?.focus();
 
           // Show the focus ring so the user knows where focus went
