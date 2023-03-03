@@ -395,6 +395,8 @@
   fill: var(--Button-icon-color-fill-disabled);
 }
 
+/* ------- ICON ------- */
+
 .Button.Button--icon {
   padding: 0;
   line-height: 1;
@@ -408,5 +410,14 @@
 .Button.Button--icon.Button--small {
   height: 2.2rem;
   width: 2.2rem;
+}
+
+.Button.Button--icon.Button--square {
+  border-radius: var(--Button-border-radius-default);
+}
+
+.Button.Button--icon.Button--square.Button--normal {
+  height: 3.2rem;
+  width: 3.2rem;
 }
 /* stylelint-enable no-descending-specificity */

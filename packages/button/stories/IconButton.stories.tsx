@@ -182,3 +182,12 @@ export const AsAnchorChild: Story = {
     kind: 'destructive',
   },
 };
+
+export const Square: Story = {
+  args: {
+    icon,
+    'aria-label': 'Button',
+    kind: 'default',
+    shape: 'square',
+  },
+};

@@ -15,6 +15,7 @@ import './styles/Button.css';
 
 type IconButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
   kind?: 'default' | 'primary' | 'destructive' | 'minimal' | 'close';
+  shape?: 'circle' | 'square';
   icon: ReactElement<IconProps>;
   size?: 'small' | 'normal';
   'aria-label': string;
@@ -29,6 +30,7 @@ const IconButtonComponent = forwardRef<HTMLButtonElement, IconButtonProps>((prop
     className,
     size = 'normal',
     kind = 'minimal',
+    shape = 'circle',
     disabled = false,
     asChild = false,
     onKeyDown,
@@ -47,6 +49,7 @@ const IconButtonComponent = forwardRef<HTMLButtonElement, IconButtonProps>((prop
     `Button--${kind}`,
     disabled && 'Button--disabled',
     size && `Button--${size}`,
+    shape && `Button--${shape}`,
     className
   );
 
