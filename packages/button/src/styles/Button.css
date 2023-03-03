@@ -196,6 +196,31 @@
   color: var(--lp-color-text-interactive-disabled);
 }
 
+/* ------- MINIMAL PRIMARY ------- */
+.Button.Button--minimal-primary {
+  background-color: var(--lp-color-bg-interactive-tertiary);
+  color: var(--lp-color-text-interactive);
+  font-weight: var(--lp-font-weight-medium);
+  border: none;
+  font-size: var(--lp-font-size-200);
+}
+
+.Button.Button--minimal-primary:hover,
+.Button--minimal-primary:focus-visible {
+  background-color: var(--lp-color-bg-interactive-tertiary-hover);
+}
+
+.Button.Button--minimal-primary:active {
+  background-color: var(--lp-color-bg-interactive-tertiary-active);
+}
+
+.Button.Button--minimal-primary[disabled],
+.Button.Button--minimal-primary[disabled]:hover {
+  background-color: var(--lp-color-bg-interactive-tertiary);
+  border: none;
+  color: var(--lp-color-text-interactive-disabled);
+}
+
 /* ------- CLOSE ICON BUTTON ------- */
 
 .Button.Button--close {

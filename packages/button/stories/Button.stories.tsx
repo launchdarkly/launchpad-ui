@@ -171,6 +171,10 @@ export const Minimal: Story = { args: { children: 'Minimal', kind: 'minimal' } }
 
 export const Primary: Story = { args: { children: 'Primary', kind: 'primary' } };
 
+export const MinimalPrimary: Story = {
+  args: { children: 'Minimal Primary', kind: 'minimal-primary' },
+};
+
 export const Destructive: Story = {
   args: { children: 'Destructive', kind: 'destructive' },
 };
