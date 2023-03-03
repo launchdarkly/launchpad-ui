@@ -30,7 +30,11 @@
   right: 0;
   bottom: 0;
   left: 0;
-  background-color: hsl(0 0% 20% / 0.5);
+  background-color: rgb(40 40 40 / 0.5);
+
+  :root[data-theme='dark'] & {
+    background-color: rgb(25 25 25 / 0.75);
+  }
 }
 
 .content {

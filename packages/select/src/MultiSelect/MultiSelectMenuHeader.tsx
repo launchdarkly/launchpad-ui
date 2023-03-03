@@ -1,17 +1,17 @@
-import type { SelectProps } from './Select';
-import type { SelectState } from './useSelectState';
+import type { MultiSelectProps } from './MultiSelect';
+import type { MultiSelectState } from './useMultiSelectState';
 
 import { Button, ButtonGroup } from '@launchpad-ui/button';
 import { useEffect, useRef } from 'react';
 
-type SelectMenuHeaderProps<T extends object> = Pick<
-  SelectProps<T>,
+type MultiSelectMenuHeaderProps<T extends object> = Pick<
+  MultiSelectProps<T>,
   'isClearable' | 'isSelectableAll'
 > & {
-  state: SelectState<T>;
+  state: MultiSelectState<T>;
 };
 
-const SelectMenuHeader = <T extends object>(props: SelectMenuHeaderProps<T>) => {
+const MultiSelectMenuHeader = <T extends object>(props: MultiSelectMenuHeaderProps<T>) => {
   const { state, isClearable, isSelectableAll } = props;
   const refAllButton = useRef<HTMLInputElement>(null);
 
@@ -59,5 +59,5 @@ const SelectMenuHeader = <T extends object>(props: SelectMenuHeaderProps<T>) => 
   );
 };
 
-export { SelectMenuHeader };
-export type { SelectMenuHeaderProps };
+export { MultiSelectMenuHeader };
+export type { MultiSelectMenuHeaderProps };

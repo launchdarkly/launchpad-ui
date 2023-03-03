@@ -12,7 +12,7 @@ type ModalProps = {
   onReady?(): void;
   onCancel?(): void;
   status?: 'warning';
-  size?: 'small' | 'normal';
+  size?: 'small' | 'normal' | 'large';
   'data-test-id'?: string;
 };
 

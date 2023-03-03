@@ -29,7 +29,7 @@ export default {
   argTypes: {
     size: {
       description: 'A configurable width variant.',
-      options: ['small', 'normal', 'auto'],
+      options: ['small', 'normal', 'large'],
       control: { type: 'radio', description: 'lkfjdslkfds' },
     },
     children: {
@@ -136,6 +136,30 @@ export const Small: Story = {
         <ModalHeader title="Heading" />
         <ModalBody>
           <p>Body text</p>
+        </ModalBody>
+        <ModalFooter
+          primaryButton={<Button kind="primary">Okay</Button>}
+          secondaryButton={<Button>Cancel</Button>}
+        />
+      </Modal>
+    );
+  },
+  parameters: { docs: { disable: true } },
+};
+
+export const Large: Story = {
+  render: () => {
+    return (
+      <Modal size="large">
+        <ModalHeader title="Heading" />
+        <ModalBody>
+          <p>
+            The <code>large</code> modal is only appropriate when the contents of the modal
+            necessitate the extra width.
+          </p>
+          <p>
+            <strong>This size should be used sparingly.</strong>
+          </p>
         </ModalBody>
         <ModalFooter
           primaryButton={<Button kind="primary">Okay</Button>}

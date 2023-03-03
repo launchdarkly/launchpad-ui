@@ -1,6 +1,6 @@
 import { Item } from '@react-stately/collections';
 
-import { Select } from '../Select';
+import { SingleSelect } from '../';
 
 import { FRUIT } from './constants';
 
@@ -8,9 +8,9 @@ describe('Select', () => {
   describe('with default single select trigger', () => {
     beforeEach(() => {
       cy.mount(
-        <Select label="Fruit" selectionMode="single" items={FRUIT}>
+        <SingleSelect label="Fruit" items={FRUIT}>
           {(item) => <Item>{item.name}</Item>}
-        </Select>
+        </SingleSelect>
       );
     });
 

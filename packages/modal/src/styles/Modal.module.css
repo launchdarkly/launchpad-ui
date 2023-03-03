@@ -14,13 +14,13 @@
 .overlay {
   position: fixed;
   inset: 0;
-  background-color: hsl(0 0% 20% / 0.5);
+  background-color: rgb(40 40 40 / 0.5);
   display: flex;
   align-items: flex-end;
   justify-content: center;
 
   :root[data-theme='dark'] & {
-    background-color: rgb(18 18 18 / 0.75);
+    background-color: rgb(25 25 25 / 0.75);
   }
 }
 
@@ -161,5 +161,9 @@
 
   .normal.modal {
     width: 65rem;
+  }
+
+  .large.modal {
+    width: 80rem;
   }
 }
