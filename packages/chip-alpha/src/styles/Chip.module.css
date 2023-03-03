@@ -1,0 +1,158 @@
+:root {
+  --Chip-info-color: var(--lp-color-blue-600);
+  --Chip-warning-color: var(--lp-color-system-yellow-900);
+  --Chip-error-color: var(--lp-color-system-red-600);
+  --Chip-success-color: var(--lp-color-system-green-900);
+  --Chip-inactive-color: var(--lp-color-gray-200);
+  --Chip-label-color: var(--lp-color-white-100);
+  --Chip-border-color: var(--lp-color-border-ui-primary);
+  --Chip-beta-color: var(--lp-color-purple-600);
+  --Chip-federal-color: var(--lp-color-yellow-500);
+}
+
+:root[data-theme='dark'] {
+  --Chip-info-color: var(--lp-color-blue-500);
+  --Chip-warning-color: var(--lp-color-system-yellow-800);
+  --Chip-error-color: var(--lp-color-pink-500);
+  --Chip-success-color: var(--lp-color-system-green-700);
+  --Chip-inactive-color: var(--lp-color-gray-200);
+  --Chip-label-color: var(--lp-color-gray-800);
+  --Chip-beta-color: var(--lp-color-purple-800);
+  --Chip-federal-color: var(--lp-color-yellow-500);
+}
+
+.Chip {
+  display: inline-block;
+  font-weight: var(--lp-font-weight-semibold);
+  font-size: 1.1rem;
+  line-height: 1.2;
+  border: 1px solid var(--Chip-border-color);
+  border-radius: var(--lp-border-radius-regular);
+  vertical-align: bottom;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+
+.Chip--normal {
+  font-size: 1.1rem;
+  line-height: 1.4;
+  padding: 0.3em;
+}
+
+.Chip--large {
+  font-size: 1.3rem;
+  line-height: 1.6;
+  padding: 0.5em;
+}
+
+.Chip--subtle {
+  background: var(--lp-color-bg-ui-primary);
+}
+
+.Chip--default {
+  border-color: var(--lp-color-border-ui-primary);
+  color: var(--lp-color-text-ui-secondary);
+}
+
+.Chip--info {
+  border-color: var(--Chip-info-color);
+  color: var(--Chip-info-color);
+}
+
+.Chip--info:not(.Chip--subtle) {
+  background-color: var(--Chip-info-color);
+  color: var(--lp-color-white);
+}
+
+.Chip--new {
+  border-color: var(--Chip-success-color);
+  color: var(--Chip-success-color);
+}
+
+.Chip--new:not(.Chip--subtle) {
+  background-color: var(--Chip-success-color);
+  color: var(--lp-color-white);
+}
+
+.Chip--beta {
+  border-color: var(--Chip-beta-color);
+  color: var(--Chip-beta-color);
+}
+
+.Chip--beta:not(.Chip--subtle) {
+  background-color: var(--Chip-beta-color);
+  color: var(--lp-color-white);
+}
+
+.Chip--success {
+  border-color: var(--Chip-success-color);
+  color: var(--Chip-success-color);
+}
+
+.Chip--success:not(.Chip--subtle) {
+  background-color: var(--Chip-success-color);
+  color: var(--lp-color-white);
+}
+
+.Chip--warning {
+  border-color: var(--Chip-warning-color);
+  color: var(--Chip-warning-color);
+}
+
+.Chip--warning:not(.Chip--subtle) {
+  background-color: var(--Chip-warning-color);
+  color: var(--lp-color-white);
+}
+
+.Chip--error {
+  border-color: var(--Chip-error-color);
+  color: var(--Chip-error-color);
+}
+
+.Chip--error:not(.Chip--subtle) {
+  background-color: var(--Chip-error-color);
+  color: var(--lp-color-text-feedback);
+}
+
+.Chip--inactive {
+  border-color: var(--Chip-inactive-color);
+  color: var(--Chip-inactive-color);
+}
+
+.Chip--inactive:not(.Chip--subtle) {
+  background-color: var(--Chip-inactive-color);
+  color: var(--lp-color-black-200);
+  border: 1px var(--Chip-inactive-color) solid;
+}
+
+.Chip--label {
+  background-color: var(--Chip-label-color);
+  color: var(--lp-color-text-ui-primary);
+}
+
+.Chip :global([class*='_icon_']) {
+  margin-right: 0.2rem;
+  vertical-align: top;
+}
+
+.Chip--clickable:hover {
+  cursor: pointer;
+  background: var(--lp-color-bg-interactive-secondary-hover);
+  border: 1px solid var(--lp-color-border-ui-primary);
+}
+
+.Chip--clickable:focus {
+  outline: 0;
+  border-radius: var(--lp-border-radius-regular);
+  box-shadow: 0 0 4px var(--lp-color-shadow-interactive-focus);
+  z-index: 2;
+}
+
+.Chip--federal {
+  background-color: var(--Chip-federal-color);
+  border-color: var(--Chip-federal-color);
+  color: var(--lp-color-black-300);
+}

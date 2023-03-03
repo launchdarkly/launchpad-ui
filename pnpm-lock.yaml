@@ -340,6 +340,19 @@ importers:
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
 
+  packages/chip-alpha:
+    specifiers:
+      '@launchpad-ui/tokens': workspace:~
+      classix: 2.1.17
+      react: 18.2.0
+      react-dom: 18.2.0
+    dependencies:
+      '@launchpad-ui/tokens': link:../tokens
+      classix: 2.1.17
+    devDependencies:
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
+
   packages/clipboard:
     specifiers:
       '@launchpad-ui/icons': workspace:~
