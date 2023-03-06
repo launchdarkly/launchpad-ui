@@ -249,8 +249,8 @@ color:
           value: '{ color.white. .value }'
           dark: '{ color.black.300.value }'
       secondary:
-        value: '{ color.gray.700.value }'
-        dark: '{ color.gray.300.value }'
+        value: '{ color.gray.800.value }'
+        dark: '{ color.gray.200.value }'
       tertiary:
         value: '{ color.gray.600.value }'
         dark: '{ color.gray.100.value }'
