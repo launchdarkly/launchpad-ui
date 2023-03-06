@@ -1,12 +1,14 @@
+:root,
+[data-theme='default'] {
+  --lp-component-copy-color-bg: var(--lp-color-gray-100);
+}
+
+[data-theme='dark'] {
+  --lp-component-copy-color-bg: var(--lp-color-gray-800);
+}
+
 .CopyCodeButton {
-  [data-theme='default'] & {
-    background-color: var(--lp-color-gray-100);
-  }
-
-  [data-theme='dark'] & {
-    background-color: var(--lp-color-gray-800);
-  }
-
+  background-color: var(--lp-component-copy-color-bg);
   border-radius: 20px;
   font-family: var(--lp-font-family-monospace);
   font-size: 87.5%;

@@ -294,14 +294,14 @@ export const TallBody: Story = {
   parameters: { docs: { disable: true } },
 };
 
-export const InvertedTheme: Story = {
+export const ForcedDarkTheme: Story = {
   render: () => {
     return (
-      <Modal size="small" invertTheme>
+      <Modal size="small" theme="dark">
         <ModalHeader title="Inverted theme" />
         <ModalBody>
           <p>
-            You can invert the theme using the <code>invertTheme</code> prop.
+            You can force set the theme using the <code>theme</code> prop.
           </p>
         </ModalBody>
         <ModalFooter

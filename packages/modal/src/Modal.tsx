@@ -13,7 +13,7 @@ type ModalProps = {
   onCancel?(): void;
   status?: 'warning';
   size?: 'small' | 'normal' | 'large';
-  invertTheme?: boolean;
+  theme?: 'dark' | 'default';
   'data-test-id'?: string;
 };
 
@@ -25,7 +25,7 @@ const Modal = ({
   onReady,
   status,
   size,
-  invertTheme,
+  theme,
   'data-test-id': testId = 'modal',
 }: ModalProps) => {
   return (
@@ -37,7 +37,7 @@ const Modal = ({
           cancelWithOverlayClick={cancelWithOverlayClick}
           size={size}
           className={className}
-          invertTheme={invertTheme}
+          theme={theme}
           data-test-id={testId}
         >
           {children}

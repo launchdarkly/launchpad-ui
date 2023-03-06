@@ -47,7 +47,7 @@ type ModalContainerProps = Pick<
   | 'size'
   | 'className'
   | 'onReady'
-  | 'invertTheme'
+  | 'theme'
   | 'data-test-id'
 >;
 
@@ -58,7 +58,7 @@ const ModalContainer = ({
   size = 'normal',
   className,
   onReady,
-  invertTheme,
+  theme,
   'data-test-id': testId,
 }: ModalContainerProps) => {
   const ref = useRef<HTMLDivElement>(null);
@@ -103,7 +103,7 @@ const ModalContainer = ({
         data-modal
         data-test-id="modal-overlay-container"
         ref={ref}
-        {...(invertTheme ? { 'data-theme-inverted': true } : {})}
+        {...(theme ? { 'data-theme': theme } : {})}
       >
         <m.div
           initial="hidden"

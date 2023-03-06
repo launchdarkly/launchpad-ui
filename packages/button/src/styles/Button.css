@@ -86,7 +86,7 @@
 /* ------- DEFAULT ------- */
 
 .Button--default {
-  background-color: var(--Button-color-background-default);
+  background-color: var(--lp-component-button-color-bg-default);
   border-color: var(--Button-color-border-default);
   color: var(--Button-color-text-default);
 }
@@ -235,23 +235,23 @@
 
 .Button--destructive {
   background-color: var(--Button-color-background-destructive);
-  border-color: var(--Button-color-border-destructive);
+  border-color: var(--lp-component-button-color-border-destructive);
   color: var(--Button-color-text-destructive);
 }
 
 .Button--destructive:hover {
-  background-color: var(--Button-color-background-destructive-hover);
+  background-color: var(--lp-component-button-color-bg-destructive-hover);
   color: var(--Button-color-text-destructive-hover);
   box-shadow: var(--Button-box-shadow-hover);
 }
 
 .Button--destructive:focus-visible {
-  background-color: var(--Button-color-background-destructive-focus);
+  background-color: var(--lp-component-button-color-bg-destructive-focus);
   box-shadow: var(--Button-box-shadow-focus);
 }
 
 .Button--destructive:active {
-  background-color: var(--Button-color-background-destructive-active);
+  background-color: var(--lp-component-button-color-bg-destructive-active);
   box-shadow: var(--Button-box-shadow-active);
   color: var(--Button-color-text-destructive-active);
 }
@@ -269,7 +269,7 @@
 }
 
 .Button--icon.Button--destructive {
-  border-color: var(--Button-color-border-destructive-withIcon);
+  border-color: var(--lp-component-button-color-border-destructive-withIcon);
 }
 
 .Button--icon.Button--destructive:hover {

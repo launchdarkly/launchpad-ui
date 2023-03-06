@@ -1,21 +1,28 @@
+:root,
+[data-theme='default'] {
+  --lp-component-button-color-bg-default: var(--lp-color-bg-interactive-secondary);
+  --lp-component-button-color-border-destructive: var(--lp-color-border-interactive-destructive);
+  --lp-component-button-color-bg-destructive-hover: var(
+    --lp-color-bg-interactive-destructive-hover
+  );
+  --lp-component-button-color-bg-destructive-focus: var(
+    --lp-color-bg-interactive-destructive-focus
+  );
+  --lp-component-button-color-bg-destructive-active: var(
+    --lp-color-bg-interactive-destructive-active
+  );
+}
+
+[data-theme='dark'] {
+  --lp-component-button-color-bg-default: transparent;
+  --lp-component-button-color-border-destructive: var(--lp-color-system-red-600);
+  --lp-component-button-color-bg-destructive-hover: var(--lp-color-system-red-900);
+  --lp-component-button-color-bg-destructive-focus: var(--lp-color-system-red-900);
+  --lp-component-button-color-bg-destructive-active: var(--lp-color-system-red-900);
+}
+
 .Button,
 .ButtonGroup {
-  [data-theme='default'] & {
-    --Button-color-background-default: var(--lp-color-bg-interactive-secondary);
-    --Button-color-border-destructive: var(--lp-color-border-interactive-destructive);
-    --Button-color-background-destructive-hover: var(--lp-color-bg-interactive-destructive-hover);
-    --Button-color-background-destructive-focus: var(--lp-color-bg-interactive-destructive-focus);
-    --Button-color-background-destructive-active: var(--lp-color-bg-interactive-destructive-active);
-  }
-
-  [data-theme='dark'] & {
-    --Button-color-background-default: transparent;
-    --Button-color-border-destructive: var(--lp-color-system-red-600);
-    --Button-color-background-destructive-hover: var(--lp-color-system-red-900);
-    --Button-color-background-destructive-focus: var(--lp-color-system-red-900);
-    --Button-color-background-destructive-active: var(--lp-color-system-red-900);
-  }
-
   /* Remaining Legacy Tokens */
   --Button-border-default: 1px solid transparent;
   --Button-box-shadow-default-active: none;
@@ -96,7 +103,9 @@
 
   /* ------- DESTRUCTIVE ------- */
   --Button-color-background-destructive: transparent;
-  --Button-color-border-destructive-hover: var(--lp-color-border-interactive-destructive);
+  --lp-component-button-color-border-destructive-hover: var(
+    --lp-color-border-interactive-destructive
+  );
   --Button-color-text-destructive: var(--lp-color-text-interactive-destructive);
   --Button-color-text-destructive-hover: var(--lp-color-text-interactive-destructive);
   --Button-color-text-destructive-active: var(--lp-color-text-interactive-destructive);
@@ -111,10 +120,18 @@
   --Button-color-background-destructive-withIcon-active: var(
     --lp-color-bg-interactive-destructive-active
   );
-  --Button-color-border-destructive-withIcon: var(--lp-color-border-interactive-destructive);
-  --Button-color-border-destructive-withIcon-hover: var(--lp-color-border-interactive-destructive);
-  --Button-color-border-destructive-withIcon-focus: var(--lp-color-border-interactive-destructive);
-  --Button-color-border-destructive-withIcon-active: var(--lp-color-border-interactive-destructive);
+  --lp-component-button-color-border-destructive-withIcon: var(
+    --lp-color-border-interactive-destructive
+  );
+  --lp-component-button-color-border-destructive-withIcon-hover: var(
+    --lp-color-border-interactive-destructive
+  );
+  --lp-component-button-color-border-destructive-withIcon-focus: var(
+    --lp-color-border-interactive-destructive
+  );
+  --lp-component-button-color-border-destructive-withIcon-active: var(
+    --lp-color-border-interactive-destructive
+  );
 
   /* ------- DISABLED ------- */
   --Button-color-background-disabled: var(--lp-color-bg-interactive-disabled);

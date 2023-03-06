@@ -12,7 +12,6 @@
 .drawer {
   --page-gutter-width: 1rem;
 
-  color: var(--lp-color-text-ui-secondary);
   z-index: var(--lp-z-index-400);
   position: fixed;
   top: 0;
@@ -50,6 +49,7 @@
   overflow: auto;
   width: 100vw;
   max-width: 100vw;
+  color: var(--lp-color-text-ui-secondary);
   box-shadow: -1px 0 4px var(--lp-color-shadow-ui-primary);
 }
 

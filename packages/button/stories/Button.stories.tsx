@@ -165,7 +165,7 @@ export default {
 
 type Story = StoryObj<typeof Button>;
 
-export const Default: Story = { args: { children: 'Default' } };
+export const DefaultButton: Story = { args: { children: 'Default' } };
 
 export const Minimal: Story = { args: { children: 'Minimal', kind: 'minimal' } };
 
