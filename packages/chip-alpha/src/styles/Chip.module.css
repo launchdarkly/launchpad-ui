@@ -9,6 +9,7 @@
   --Chip-alpha-inactive-color: var(--lp-color-gray-100);
   --Chip-alpha-inactive-text-color: var(--lp-color-gray-800);
   --Chip-alpha-label-color: var(--lp-color-white-100);
+  --Chip-alpha-label-text-color: var(--lp-color-gray-800);
   --Chip-alpha-border-color: var(--lp-color-gray-600);
   --Chip-alpha-beta-color: var(--lp-color-purple-200);
   --Chip-alpha-beta-text-color: var(--lp-color-purple-600);
@@ -29,8 +30,9 @@
   --Chip-alpha-success-color: #143929;
   --Chip-alpha-success-text-color: var(--lp-color-system-green-500);
   --Chip-alpha-inactive-color: var(--lp-color-black-100);
-  --Chip-alpha-inactive-text-color: var(--lp-color-gray-100);
+  --Chip-alpha-inactive-text-color: var(--lp-color-gray-300);
   --Chip-alpha-label-color: var(--lp-color-gray-800);
+  --Chip-alpha-label-text-color: var(--lp-color-gray-100);
   --Chip-alpha-beta-color: #30213a;
   --Chip-alpha-beta-text-color: var(--lp-color-purple-400);
   --Chip-alpha-federal-color: #43471e;
@@ -91,12 +93,12 @@
 
 .Chip--new {
   border-color: var(--Chip-alpha-success-color);
-  color: var(--Chip-alpha-success-color);
+  color: var(--Chip-alpha-success-text-color);
 }
 
 .Chip--new:not(.Chip--subtle) {
   background-color: var(--Chip-alpha-success-color);
-  color: var(--lp-color-white);
+  color: var(--Chip-alpha-success-text-color);
 }
 
 .Chip--beta {
@@ -150,12 +152,13 @@
 .Chip--inactive:not(.Chip--subtle) {
   background-color: var(--Chip-alpha-inactive-color);
   color: var(--Chip-alpha-inactive-text-color);
-  border: 1px var(--Chip-alpha-inactive-color) solid;
+  border: 1px solid var(--Chip-alpha-inactive-color);
 }
 
 .Chip--label {
   background-color: var(--Chip-alpha-label-color);
-  color: var(--lp-color-text-ui-primary);
+  border-color: var(--Chip-alpha-label-color);
+  color: var(--Chip-alpha-label-text-color);
 }
 
 .Chip :global([class*='_icon_']) {
