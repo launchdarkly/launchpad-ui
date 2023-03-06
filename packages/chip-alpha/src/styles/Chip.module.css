@@ -10,7 +10,8 @@
   --Chip-alpha-inactive-text-color: var(--lp-color-gray-800);
   --Chip-alpha-label-color: var(--lp-color-white-100);
   --Chip-alpha-border-color: var(--lp-color-gray-600);
-  --Chip-alpha-beta-color: var(--lp-color-purple-600);
+  --Chip-alpha-beta-color: var(--lp-color-purple-200);
+  --Chip-alpha-beta-text-color: var(--lp-color-purple-600);
   --Chip-alpha-federal-color: var(--lp-color-yellow-500);
   --Chip-alpha-federal-text-color: var(--lp-color-black);
   --Chip-alpha-default-color: var(--lp-color-gray-800);
@@ -30,7 +31,8 @@
   --Chip-alpha-inactive-color: var(--lp-color-black-100);
   --Chip-alpha-inactive-text-color: var(--lp-color-gray-100);
   --Chip-alpha-label-color: var(--lp-color-gray-800);
-  --Chip-alpha-beta-color: var(--lp-color-purple-800);
+  --Chip-alpha-beta-color: #30213a;
+  --Chip-alpha-beta-text-color: var(--lp-color-purple-400);
   --Chip-alpha-federal-color: #43471e;
   --Chip-alpha-federal-text-color: var(--lp-color-yellow-500);
   --Chip-alpha-border-color: var(--lp-color-gray-500);
@@ -98,13 +100,14 @@
 }
 
 .Chip--beta {
-  border-color: var(--Chip-alpha-beta-color);
-  color: var(--Chip-alpha-beta-color);
+  border-color: var(--Chip-alpha-beta-text-color);
+  color: var(--Chip-alpha-beta-text-color);
 }
 
 .Chip--beta:not(.Chip--subtle) {
   background-color: var(--Chip-alpha-beta-color);
-  color: var(--lp-color-white);
+  border-color: var(--Chip-alpha-beta-color);
+  color: var(--Chip-alpha-beta-text-color);
 }
 
 .Chip--success {
