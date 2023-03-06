@@ -98,6 +98,7 @@
 
 .Chip--new:not(.Chip--subtle) {
   background-color: var(--Chip-alpha-success-color);
+  border-color: var(--Chip-alpha-success-color);
   color: var(--Chip-alpha-success-text-color);
 }
 
