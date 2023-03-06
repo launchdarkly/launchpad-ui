@@ -1,5 +1,14 @@
 # @launchpad-ui/core
 
+## 0.30.2
+
+### Patch Changes
+
+- [#717](https://github.com/launchdarkly/launchpad-ui/pull/717) [`02f5f542`](https://github.com/launchdarkly/launchpad-ui/commit/02f5f542dbfd4c4376bae718e4b38fd9f769b287) Thanks [@kwatkins-ld](https://github.com/kwatkins-ld)! - left-align CopyToClipboard text
+
+- Updated dependencies [[`02f5f542`](https://github.com/launchdarkly/launchpad-ui/commit/02f5f542dbfd4c4376bae718e4b38fd9f769b287)]:
+  - @launchpad-ui/clipboard@0.8.48
+
 ## 0.30.1
 
 ### Patch Changes
