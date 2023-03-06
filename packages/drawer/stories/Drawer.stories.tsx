@@ -45,3 +45,27 @@ export const Default: Story = {
   },
 };
 Default.parameters = { docs: { disable: true } };
+
+export const ForcedDarkTheme: Story = {
+  render: () => {
+    const [show, setShow] = useState(true);
+    const button = <Button onClick={() => setShow(true)}>Open drawer</Button>;
+
+    return show ? (
+      <div style={{ width: '100vw', height: '100vh' }}>
+        {button}
+        <Drawer theme="dark" onCancel={() => setShow(!show)}>
+          <section>
+            <DrawerHeader>Example drawer title</DrawerHeader>
+          </section>
+          <section>
+            <p>This is example drawer content.</p>
+          </section>
+        </Drawer>
+      </div>
+    ) : (
+      button
+    );
+  },
+  parameters: { docs: { disable: true } },
+};

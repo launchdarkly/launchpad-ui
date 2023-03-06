@@ -41,6 +41,7 @@ type DrawerProps = {
   onCancel?(): void;
   'data-test-id'?: string;
   size?: 'small' | 'medium' | 'large' | 'xLarge' | 'full';
+  theme?: 'dark' | 'default';
   hideCancel?: boolean;
 };
 
@@ -50,6 +51,7 @@ const Drawer = ({
   onCancel,
   size = 'small',
   'data-test-id': testId = 'drawer',
+  theme,
   hideCancel = false,
 }: DrawerProps) => {
   const ref = useRef<HTMLDivElement>(null);
@@ -112,6 +114,7 @@ const Drawer = ({
                 aria-modal
                 className={styles.content}
                 tabIndex={-1}
+                {...(theme ? { 'data-theme': theme } : {})}
               >
                 {!hideCancel && (
                   <IconButton

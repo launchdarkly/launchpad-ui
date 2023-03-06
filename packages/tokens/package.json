@@ -23,7 +23,7 @@
       "require": "./dist/index.js"
     },
     "./package.json": "./package.json",
-    "./dark.css": "./dist/dark.css",
+    "./themes.css": "./dist/themes.css",
     "./index.css": "./dist/index.css",
     "./media-queries.css": "./dist/media-queries.css"
   },

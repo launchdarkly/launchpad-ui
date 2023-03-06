@@ -1,5 +1,5 @@
 import '../packages/tokens/dist/index.css';
-import '../packages/tokens/dist/dark.css';
+import '../packages/tokens/dist/themes.css';
 
 export const parameters = {
   actions: { argTypesRegex: '^on.*' },
@@ -44,7 +44,7 @@ export const globalTypes = {
       icon: 'circlehollow',
       title: 'Theme',
       items: [
-        { value: 'light', icon: 'circlehollow', title: 'light' },
+        { value: 'default', icon: 'circlehollow', title: 'default' },
         { value: 'dark', icon: 'circle', title: 'dark' },
       ],
     },
@@ -53,7 +53,7 @@ export const globalTypes = {
 
 export const decorators = [
   (story, { globals, parameters }) => {
-    const theme = globals.theme || parameters.theme || 'light';
+    const theme = globals.theme || parameters.theme || 'default';
     document.documentElement.setAttribute('data-theme', theme);
 
     return story();

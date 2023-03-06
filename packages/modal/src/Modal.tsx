@@ -13,6 +13,7 @@ type ModalProps = {
   onCancel?(): void;
   status?: 'warning';
   size?: 'small' | 'normal' | 'large';
+  theme?: 'dark' | 'default';
   'data-test-id'?: string;
 };
 
@@ -24,6 +25,7 @@ const Modal = ({
   onReady,
   status,
   size,
+  theme,
   'data-test-id': testId = 'modal',
 }: ModalProps) => {
   return (
@@ -35,6 +37,7 @@ const Modal = ({
           cancelWithOverlayClick={cancelWithOverlayClick}
           size={size}
           className={className}
+          theme={theme}
           data-test-id={testId}
         >
           {children}

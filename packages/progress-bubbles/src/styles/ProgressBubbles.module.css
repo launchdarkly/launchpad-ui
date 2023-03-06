@@ -1,9 +1,12 @@
-:root {
-  --progress-bubbles-default-bg-color: var(--lp-color-gray-200);
+:root,
+[data-theme='default'] {
+  --lp-component-progressbubbles-color-bg: var(--lp-color-gray-200);
+  --lp-component-progressbubbles-color-fill-warning: hsl(29.2 100% 58.4%);
 }
 
-:root[data-theme='dark'] {
-  --progress-bubbles-default-bg-color: var(--lp-color-gray-800);
+[data-theme='dark'] {
+  --lp-component-progressbubbles-color-bg: var(--lp-color-gray-800);
+  --lp-component-progressbubbles-color-fill-warning: hsl(29 83% 40%);
 }
 
 .ProgressBubbles {
@@ -13,7 +16,7 @@
 }
 
 .ProgressBubbles-bubble {
-  background-color: var(--progress-bubbles-default-bg-color);
+  background-color: var(--lp-component-progressbubbles-color-bg);
   width: 2rem;
   height: 2rem;
   border-radius: 1rem;
@@ -40,7 +43,7 @@
 .ProgressBubbles-line {
   flex-grow: 1;
   height: 0.2rem;
-  background-color: var(--progress-bubbles-default-bg-color);
+  background-color: var(--lp-component-progressbubbles-color-bg);
 }
 
 .ProgressBubbles--filled {
@@ -65,7 +68,7 @@
 .ProgressBubblesUsingItems-line {
   flex-grow: 1;
   height: 0.7rem;
-  background-color: var(--progress-bubbles-default-bg-color);
+  background-color: var(--lp-component-progressbubbles-color-bg);
   margin: 0 -0.5rem;
 }
 
@@ -117,7 +120,7 @@ div.ProgressBubbles-icon--current svg {
 }
 
 div.ProgressBubbles-icon--pending {
-  background-color: var(--progress-bubbles-default-bg-color);
+  background-color: var(--lp-component-progressbubbles-color-bg);
 }
 
 div.ProgressBubbles-icon--warning {
@@ -126,13 +129,9 @@ div.ProgressBubbles-icon--warning {
 }
 
 div.ProgressBubbles-icon--warning svg {
-  fill: hsl(29.2 100% 58.4%);
   height: 3.6rem;
   width: 3.6rem;
-
-  :root[data-theme='dark'] & {
-    fill: hsl(29 83% 40%);
-  }
+  fill: var(--lp-component-progressbubbles-color-fill-warning);
 }
 
 .ProgressBubbles-icon--multiple {

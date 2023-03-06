@@ -3,9 +3,9 @@ const applyTheme = (theme: string) => {
 };
 
 const onChange = ({ matches: isDark }: { matches: boolean }) => {
-  applyTheme(isDark ? 'dark' : 'light');
+  applyTheme(isDark ? 'dark' : 'default');
 };
 
 const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
 mediaQuery.addEventListener('change', onChange);
-applyTheme(mediaQuery.matches ? 'dark' : 'light');
+applyTheme(mediaQuery.matches ? 'dark' : 'default');

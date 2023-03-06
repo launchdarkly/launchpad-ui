@@ -20,7 +20,11 @@ module.exports = {
     'csstools/value-no-unknown-custom-properties': [
       true,
       {
-        importFrom: [path.resolve(__dirname, 'packages/tokens/dist/index.css'), ...cssPaths],
+        importFrom: [
+          path.resolve(__dirname, 'packages/tokens/dist/index.css'),
+          path.resolve(__dirname, 'packages/tokens/dist/themes.css'),
+          ...cssPaths,
+        ],
       },
     ],
     'selector-pseudo-class-no-unknown': [

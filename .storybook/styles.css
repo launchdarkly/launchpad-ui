@@ -14,14 +14,10 @@ html {
 
 body {
   font-family: var(--lp-font-family-base);
-  color: var(--lp-color-gray-800);
   font-size: var(--lp-font-size-300);
   background-color: var(--lp-color-bg-ui-primary);
   line-height: var(--lp-line-height-300);
-}
-
-[data-theme='dark'] body {
-  color: var(--lp-color-gray-100);
+  color: var(--lp-color-text-ui-secondary);
 }
 
 h1,
