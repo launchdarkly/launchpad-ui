@@ -28,8 +28,7 @@ Add `@import '@launchpad-ui/tokens/dist/themes.css';`. If you were previously im
 
 If you are modifying CSS variables based on the theme, prefer to explicitly declare the value depending on the theme. Nothing will break if you don't do this, but the code will not support nested theming if you don't explicitly set values depending on theme.
 
-Here's an example:
-**DON'T:**
+**Instead of this:**
 
 ```css
 .selector {
@@ -41,7 +40,7 @@ Here's an example:
 }
 ```
 
-**DO:**
+**Prefer this:**
 
 ```css
 :root,
