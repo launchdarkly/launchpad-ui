@@ -1,5 +1,28 @@
 # @launchpad-ui/select
 
+## 0.1.7
+
+### Patch Changes
+
+- [#707](https://github.com/launchdarkly/launchpad-ui/pull/707) [`44c1bd5e`](https://github.com/launchdarkly/launchpad-ui/commit/44c1bd5e1a06a8dfa1206a9952449a299d94c26b) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Select] Move to Single and Multi Select components
+
+- [#713](https://github.com/launchdarkly/launchpad-ui/pull/713) [`68fa3ec5`](https://github.com/launchdarkly/launchpad-ui/commit/68fa3ec521159e7883c858f80a034830d4c9809f) Thanks [@vroske-ld](https://github.com/vroske-ld)! - [Select] rename disabled prop and add styles
+
+- Updated dependencies [[`c76ec2ad`](https://github.com/launchdarkly/launchpad-ui/commit/c76ec2adf7e135faa32d6ee39b66886cbb2a1f10)]:
+  - @launchpad-ui/popover@0.8.37
+  - @launchpad-ui/tooltip@0.6.38
+  - @launchpad-ui/button@0.7.32
+  - @launchpad-ui/tokens@0.4.10
+  - @launchpad-ui/icons@0.7.1
+  - @launchpad-ui/modal@0.13.1
+
+## 0.1.6
+
+### Patch Changes
+
+- Updated dependencies [[`0c3dcaa2`](https://github.com/launchdarkly/launchpad-ui/commit/0c3dcaa205b18bae2e2c64519ac29cb510a8316a)]:
+  - @launchpad-ui/modal@0.13.0
+
 ## 0.1.5
 
 ### Patch Changes

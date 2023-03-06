@@ -1,10 +1,11 @@
 import type { DummyItem } from './constants';
-import type { SelectTriggerProps } from '../Select';
+import type { MultiSelectTriggerProps } from '../MultiSelect';
+import type { SingleSelectTriggerProps } from '../SingleSelect';
 
 import { Tooltip } from '@launchpad-ui/tooltip';
 
-const CustomMultiSelectTrigger = (props: SelectTriggerProps<DummyItem>) => {
-  const { state, buttonProps, innerRef } = props;
+const CustomMultiSelectTrigger = (props: MultiSelectTriggerProps<DummyItem>) => {
+  const { state, triggerProps, triggerRef } = props;
 
   return (
     <div style={{ display: 'flex', alignItems: 'center' }}>
@@ -31,25 +32,25 @@ const CustomMultiSelectTrigger = (props: SelectTriggerProps<DummyItem>) => {
           </div>
         ))}
       </div>
-      <button {...buttonProps} data-test-id="custom-trigger" ref={innerRef}>
+      <button {...triggerProps} data-test-id="custom-trigger" ref={triggerRef}>
         +
       </button>
     </div>
   );
 };
 
-const CustomSingleSelectTrigger = (props: SelectTriggerProps<DummyItem>) => {
-  const { state, buttonProps, innerRef } = props;
+const CustomSingleSelectTrigger = (props: SingleSelectTriggerProps<DummyItem>) => {
+  const { state, triggerProps, triggerRef } = props;
 
   const getRenderedSelected = () => {
-    const items = state.selectedItems;
+    const item = state.selectedItem;
 
-    if (!items) return 'Select option';
+    if (!item) return 'Select option';
 
-    return <span>{items[0].textValue}</span>;
+    return <span>{item.textValue}</span>;
   };
   return (
-    <button {...buttonProps} data-test-id="custom-trigger" ref={innerRef}>
+    <button {...triggerProps} data-test-id="custom-trigger" ref={triggerRef}>
       {getRenderedSelected()}
     </button>
   );

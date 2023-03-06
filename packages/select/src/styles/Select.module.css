@@ -3,6 +3,7 @@
   padding: 0;
   margin: 0;
   outline: none;
+  font-size: 1.6rem;
 }
 
 .section {
@@ -53,7 +54,7 @@
   background: var(--lp-color-bg-overlay-primary);
   border-radius: var(--lp-border-radius-regular);
   max-height: 55vh;
-  overflow: auto;
+  overflow: none;
   box-shadow: 0 0 4px hsl(0 0% 15.7% / 0.12), 0 1px 2px hsl(0 0% 15.7% / 0.1),
     0 4px 4px hsl(0 0% 15.7% / 0.08);
 
@@ -84,6 +85,16 @@
     box-shadow: inset 0 1px 1px rgb(0 0 0 / 0.075), 0 0 0 3px rgb(0 126 255 / 0.1);
     border-color: var(--lp-color-border-field-focus);
   }
+
+  &:disabled {
+    opacity: 1;
+    background-color: var(--lp-color-bg-field-disabled);
+    border-color: var(--lp-color-border-field-disabled);
+  }
+
+  &:disabled:hover {
+    cursor: not-allowed;
+  }
 }
 
 .valueContainer {
@@ -107,6 +118,10 @@
   text-align: left;
   display: flex;
   align-items: center;
+
+  .trigger:disabled & {
+    color: var(--lp-color-text-field-disabled);
+  }
 }
 
 .indicatorsContainer {
@@ -116,6 +131,10 @@
   flex-shrink: 0;
   box-sizing: border-box;
   color: var(--lp-color-text-ui-tertiary);
+
+  .trigger:disabled & {
+    color: var(--lp-color-text-field-disabled);
+  }
 }
 
 .closeIndicatorContainer {
@@ -166,4 +185,26 @@
   grid-area: 1/1/2/3;
   grid-template-columns: 0 min-content;
   box-sizing: border-box;
+}
+
+.search {
+  position: relative;
+  border-bottom: 1px solid var(--lp-color-border-ui-secondary);
+
+  .searchIcon {
+    position: absolute;
+    top: 1.5rem;
+    left: 1.4rem;
+  }
+
+  input {
+    width: 100%;
+    border: none;
+    font-size: 1.6rem;
+    padding: 1.6rem 1.6rem 1.6rem 4rem;
+
+    &:focus-visible {
+      outline: none;
+    }
+  }
 }

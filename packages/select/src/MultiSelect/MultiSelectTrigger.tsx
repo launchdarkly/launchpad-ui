@@ -1,20 +1,31 @@
-import type { SelectTriggerChildrenState, SelectTriggerProps } from './Select';
+import type { MultiSelectState } from './useMultiSelectState';
+import type { SharedSelectTriggerProps } from '../types';
 import type { Node } from '@react-types/shared';
+import type { ReactNode } from 'react';
 
 import { ExpandMore } from '@launchpad-ui/icons';
 import cx from 'classix';
 
-import styles from './styles/Select.module.css';
+import styles from '../styles/Select.module.css';
 
-const MultiSelectTrigger = <T extends object>(props: SelectTriggerProps<T>) => {
-  const { state, buttonProps, valueProps, innerRef, children } = props;
+type MultiSelectTriggerChildrenState<T extends object> = MultiSelectState<T> & {
+  selectedItems: Node<T>[];
+};
+
+type MultiSelectTriggerProps<T extends object> = SharedSelectTriggerProps & {
+  state: MultiSelectState<T>;
+  children?: (state: MultiSelectTriggerChildrenState<T>) => ReactNode;
+};
+
+const MultiSelectTrigger = <T extends object>(props: MultiSelectTriggerProps<T>) => {
+  const { state, triggerProps, valueProps, triggerRef, children } = props;
 
   const formatItems = (items: Node<T>[] | null) => {
     if (!items || items.length === 0) {
       return 'Select options';
     }
 
-    if (children) return children(state as SelectTriggerChildrenState<T>);
+    if (children) return children(state as MultiSelectTriggerChildrenState<T>);
 
     if (items.length > 3) {
       return `${items.length} selected`;
@@ -25,8 +36,8 @@ const MultiSelectTrigger = <T extends object>(props: SelectTriggerProps<T>) => {
 
   return (
     <button
-      {...buttonProps}
-      ref={innerRef}
+      {...triggerProps}
+      ref={triggerRef}
       className={cx(
         styles.trigger,
         state.isOpen && styles.isOpen,
@@ -48,3 +59,4 @@ const MultiSelectTrigger = <T extends object>(props: SelectTriggerProps<T>) => {
 };
 
 export { MultiSelectTrigger };
+export type { MultiSelectTriggerProps, MultiSelectTriggerChildrenState };
