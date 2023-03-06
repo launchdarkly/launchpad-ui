@@ -1,9 +1,16 @@
 .CopyCodeButton {
+  [data-theme='default'] & {
+    background-color: var(--lp-color-gray-100);
+  }
+
+  [data-theme='dark'] & {
+    background-color: var(--lp-color-gray-800);
+  }
+
   border-radius: 20px;
   font-family: var(--lp-font-family-monospace);
   font-size: 87.5%;
   margin: 0;
-  background-color: var(--lp-color-gray-100);
   padding: 0.4rem 0.8rem;
   border: none;
   cursor: pointer;
@@ -18,8 +25,4 @@
 
 .CopyCodeButton:focus-visible {
   outline-color: var(--lp-color-bg-interactive-secondary-hover);
-}
-
-:root[data-theme='dark'] .CopyCodeButton {
-  background-color: var(--lp-color-gray-800);
 }

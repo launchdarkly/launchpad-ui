@@ -31,15 +31,16 @@ module.exports = {
           options: {
             outputReferences: true,
           },
+          filter: (token) => token.filePath !== 'src/color-aliases.yaml',
         },
         {
-          destination: 'dark.css',
-          format: 'css/variables-themed',
+          destination: 'themes.css',
+          format: 'css/theme-variables',
           options: {
             outputReferences: true,
-            theme: 'dark',
           },
-          filter: (token) => token.dark && token.attributes.category === `color`,
+          filter: (token) =>
+            token.filePath === 'src/color-aliases.yaml' && token.attributes.category === `color`,
         },
       ],
     },
@@ -106,14 +107,15 @@ StyleDictionary.registerFormat({
 });
 
 StyleDictionary.registerFormat({
-  name: 'css/variables-themed',
+  name: 'css/theme-variables',
   formatter: function ({ dictionary, file, options }) {
-    const { theme, outputReferences } = options;
-    const tokens = dictionary.allTokens
+    const { outputReferences } = options;
+
+    const darkTokens = dictionary.allTokens
       .map((token) => {
-        let value = token[theme];
-        if (outputReferences && dictionary.usesReference(token.original[theme])) {
-          const refs = dictionary.getReferences(token.original[theme]);
+        let value = token.original.dark || token.original.value;
+        if (outputReferences && dictionary.usesReference(value)) {
+          const refs = dictionary.getReferences(value);
           refs.forEach((ref) => {
             value = `var(--${ref.name})`;
           });
@@ -122,6 +124,25 @@ StyleDictionary.registerFormat({
       })
       .join(`\n`);
 
-    return fileHeader({ file }) + `:root[data-theme='${theme}'] {\n` + tokens + '\n}\n';
+    const defaultTokens = dictionary.allTokens
+      .map((token) => {
+        let value = token.original.value;
+        if (outputReferences && dictionary.usesReference(value)) {
+          const refs = dictionary.getReferences(value);
+          refs.forEach((ref) => {
+            value = `var(--${ref.name})`;
+          });
+        }
+        return `  --${token.name}: ${value};`;
+      })
+      .join(`\n`);
+
+    const darkColorCSSVariables = `[data-theme='dark'] {\n${darkTokens}\n}\n`;
+
+    const defaultColorCSSVariables = `[data-theme='default'] {\n${defaultTokens}\n}\n`;
+
+    return `${fileHeader({
+      file,
+    })}${defaultColorCSSVariables}\n${darkColorCSSVariables}`;
   },
 });

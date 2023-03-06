@@ -1,4 +1,21 @@
-:root {
+.Button,
+.ButtonGroup {
+  [data-theme='default'] & {
+    --Button-color-background-default: var(--lp-color-bg-interactive-secondary);
+    --Button-color-border-destructive: var(--lp-color-border-interactive-destructive);
+    --Button-color-background-destructive-hover: var(--lp-color-bg-interactive-destructive-hover);
+    --Button-color-background-destructive-focus: var(--lp-color-bg-interactive-destructive-focus);
+    --Button-color-background-destructive-active: var(--lp-color-bg-interactive-destructive-active);
+  }
+
+  [data-theme='dark'] & {
+    --Button-color-background-default: transparent;
+    --Button-color-border-destructive: var(--lp-color-system-red-600);
+    --Button-color-background-destructive-hover: var(--lp-color-system-red-900);
+    --Button-color-background-destructive-focus: var(--lp-color-system-red-900);
+    --Button-color-background-destructive-active: var(--lp-color-system-red-900);
+  }
+
   /* Remaining Legacy Tokens */
   --Button-border-default: 1px solid transparent;
   --Button-box-shadow-default-active: none;
@@ -29,7 +46,6 @@
   --Button-text-transform: none;
 
   /* ------- DEFAULT ------- */
-  --Button-color-background-default: var(--lp-color-bg-interactive-secondary);
   --Button-color-background-default-hover: var(--lp-color-bg-interactive-secondary-hover);
   --Button-color-background-default-focus: var(--lp-color-bg-interactive-secondary-focus);
   --Button-color-background-default-active: var(--lp-color-bg-interactive-secondary-active);
@@ -80,10 +96,6 @@
 
   /* ------- DESTRUCTIVE ------- */
   --Button-color-background-destructive: transparent;
-  --Button-color-background-destructive-hover: var(--lp-color-bg-interactive-destructive-hover);
-  --Button-color-background-destructive-focus: var(--lp-color-bg-interactive-destructive-focus);
-  --Button-color-background-destructive-active: var(--lp-color-bg-interactive-destructive-active);
-  --Button-color-border-destructive: var(--lp-color-border-interactive-destructive);
   --Button-color-border-destructive-hover: var(--lp-color-border-interactive-destructive);
   --Button-color-text-destructive: var(--lp-color-text-interactive-destructive);
   --Button-color-text-destructive-hover: var(--lp-color-text-interactive-destructive);
@@ -148,12 +160,4 @@
   /* SEARCH BAR CLEAR BUTTON ICON */
   --Button-icon-clear-color-fill: var(--lp-color-blue-600);
   --Button-icon-clear-color-text: var(--lp-color-blue-600);
-}
-
-:root[data-theme='dark'] {
-  --Button-color-background-default: transparent;
-  --Button-color-border-destructive: var(--lp-color-system-red-600);
-  --Button-color-background-destructive-hover: var(--lp-color-system-red-900);
-  --Button-color-background-destructive-focus: var(--lp-color-system-red-900);
-  --Button-color-background-destructive-active: var(--lp-color-system-red-900);
 }

@@ -25,7 +25,7 @@ const toggleDarkMode = () => {
           features: [
             {
               name: 'prefers-color-scheme',
-              value: 'light',
+              value: 'default',
             },
           ],
         },

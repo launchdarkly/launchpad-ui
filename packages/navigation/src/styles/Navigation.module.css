@@ -1,11 +1,11 @@
 @import '../../../tokens/dist/media-queries.css';
 
-:root {
+.Navigation {
   --page-gutter-width: 1rem;
 }
 
 @media (--tablet) {
-  :root {
+  .Navigation {
     --page-gutter-width: 4rem;
   }
 }

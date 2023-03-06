@@ -294,6 +294,26 @@ export const TallBody: Story = {
   parameters: { docs: { disable: true } },
 };
 
+export const InvertedTheme: Story = {
+  render: () => {
+    return (
+      <Modal size="small" invertTheme>
+        <ModalHeader title="Inverted theme" />
+        <ModalBody>
+          <p>
+            You can invert the theme using the <code>invertTheme</code> prop.
+          </p>
+        </ModalBody>
+        <ModalFooter
+          primaryButton={<Button kind="destructive">Leave page</Button>}
+          secondaryButton={<Button>Cancel</Button>}
+        />
+      </Modal>
+    );
+  },
+  parameters: { docs: { disable: true } },
+};
+
 export const WithForm: Story = {
   render: () => {
     const inputRef = useRef<HTMLInputElement>(null);

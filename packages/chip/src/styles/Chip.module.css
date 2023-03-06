@@ -1,27 +1,28 @@
-:root {
-  --Chip-info-color: var(--lp-color-blue-600);
-  --Chip-warning-color: var(--lp-color-system-yellow-900);
-  --Chip-error-color: var(--lp-color-system-red-600);
-  --Chip-success-color: var(--lp-color-system-green-900);
-  --Chip-inactive-color: var(--lp-color-gray-200);
-  --Chip-label-color: var(--lp-color-white-100);
-  --Chip-border-color: var(--lp-color-border-ui-primary);
-  --Chip-beta-color: var(--lp-color-purple-600);
-  --Chip-federal-color: var(--lp-color-yellow-500);
-}
-
-:root[data-theme='dark'] {
-  --Chip-info-color: var(--lp-color-blue-500);
-  --Chip-warning-color: var(--lp-color-system-yellow-800);
-  --Chip-error-color: var(--lp-color-pink-500);
-  --Chip-success-color: var(--lp-color-system-green-700);
-  --Chip-inactive-color: var(--lp-color-gray-200);
-  --Chip-label-color: var(--lp-color-gray-800);
-  --Chip-beta-color: var(--lp-color-purple-800);
-  --Chip-federal-color: var(--lp-color-yellow-500);
-}
-
 .Chip {
+  --Chip-border-color: var(--lp-color-border-ui-primary);
+
+  [data-theme='default'] & {
+    --Chip-info-color: var(--lp-color-blue-600);
+    --Chip-warning-color: var(--lp-color-system-yellow-900);
+    --Chip-error-color: var(--lp-color-system-red-600);
+    --Chip-success-color: var(--lp-color-system-green-900);
+    --Chip-inactive-color: var(--lp-color-gray-200);
+    --Chip-label-color: var(--lp-color-white-100);
+    --Chip-beta-color: var(--lp-color-purple-600);
+    --Chip-federal-color: var(--lp-color-yellow-500);
+  }
+
+  [data-theme='dark'] & {
+    --Chip-info-color: var(--lp-color-blue-500);
+    --Chip-warning-color: var(--lp-color-system-yellow-800);
+    --Chip-error-color: var(--lp-color-pink-500);
+    --Chip-success-color: var(--lp-color-system-green-700);
+    --Chip-inactive-color: var(--lp-color-gray-200);
+    --Chip-label-color: var(--lp-color-gray-800);
+    --Chip-beta-color: var(--lp-color-purple-800);
+    --Chip-federal-color: var(--lp-color-yellow-500);
+  }
+
   display: inline-block;
   font-weight: var(--lp-font-weight-semibold);
   font-size: 1.1rem;

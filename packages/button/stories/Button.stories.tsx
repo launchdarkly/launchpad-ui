@@ -165,7 +165,7 @@ export default {
 
 type Story = StoryObj<typeof Button>;
 
-export const Basic: Story = { args: { children: 'Basic' } };
+export const Default: Story = { args: { children: 'Default' } };
 
 export const Minimal: Story = { args: { children: 'Minimal', kind: 'minimal' } };
 
@@ -214,8 +214,8 @@ export const WithIconDestructive: Story = {
   },
 };
 
-export const BasicTiny: Story = { args: { children: 'Example button', size: 'tiny' } };
+export const DefaultTiny: Story = { args: { children: 'Tiny Button', size: 'tiny' } };
 
-export const BasicSmall: Story = { args: { children: 'Example button', size: 'small' } };
+export const DefaultSmall: Story = { args: { children: 'Small Button', size: 'small' } };
 
-export const BasicBig: Story = { args: { children: 'Example button', size: 'big' } };
+export const DefaultBig: Story = { args: { children: 'Big Button', size: 'big' } };
