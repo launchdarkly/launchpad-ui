@@ -92,7 +92,7 @@
 }
 
 .Chip--new {
-  border-color: var(--Chip-alpha-success-color);
+  border-color: var(--Chip-alpha-success-text-color);
   color: var(--Chip-alpha-success-text-color);
 }
 
