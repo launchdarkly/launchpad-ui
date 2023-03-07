@@ -1,5 +1,12 @@
 # @launchpad-ui/select
 
+## 0.2.1
+
+### Patch Changes
+
+- Updated dependencies [[`74ddde60`](https://github.com/launchdarkly/launchpad-ui/commit/74ddde60d233fd489860f89aacb908e20f525674)]:
+  - @launchpad-ui/tooltip@0.7.1
+
 ## 0.2.0
 
 ### Minor Changes

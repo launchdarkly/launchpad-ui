@@ -1,5 +1,13 @@
 # @launchpad-ui/tooltip
 
+## 0.7.1
+
+### Patch Changes
+
+- [#726](https://github.com/launchdarkly/launchpad-ui/pull/726) [`74ddde60`](https://github.com/launchdarkly/launchpad-ui/commit/74ddde60d233fd489860f89aacb908e20f525674) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Snackbar] Change z-index to `700`
+  [Toast] Change z-index to `700`
+  [Tooltip] Change z-index to `800`
+
 ## 0.7.0
 
 ### Minor Changes
