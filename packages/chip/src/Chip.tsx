@@ -15,14 +15,12 @@ type ChipProps = HTMLAttributes<HTMLSpanElement> & {
     | 'new'
     | 'beta'
     | 'federal';
-  size?: 'normal' | 'large';
   subtle?: boolean;
   'data-test-id'?: string;
 };
 
 const Chip = ({
   kind = 'default',
-  size = 'normal',
   subtle = false,
   onClick,
   onKeyDown,
@@ -36,7 +34,6 @@ const Chip = ({
   const classes = cx(
     styles.Chip,
     styles[`Chip--${kind}`],
-    styles[`Chip--${size}`],
     className,
     subtle && styles['Chip--subtle'],
     isInteractive && styles['Chip--clickable']

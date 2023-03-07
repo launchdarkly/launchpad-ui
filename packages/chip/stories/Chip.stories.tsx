@@ -22,11 +22,6 @@ export default {
         category: 'Presentation',
       },
     },
-    size: {
-      table: {
-        category: 'Presentation',
-      },
-    },
     subtle: {
       table: {
         category: 'Presentation',
@@ -66,8 +61,6 @@ export const Info: Story = { args: { children: 'Info Chip', kind: 'info' } };
 
 export const Label: Story = { args: { children: 'Label Chip', kind: 'label' } };
 
-export const Large: Story = { args: { children: 'Large Chip', size: 'large' } };
-
 export const New: Story = { args: { children: 'New Chip', kind: 'new' } };
 
 export const Federal: Story = { args: { children: 'Federal Chip', kind: 'federal' } };
@@ -88,8 +81,6 @@ export const WarningSubtle: Story = {
 export const InfoSubtle: Story = { args: { children: 'Info Chip', kind: 'info', subtle: true } };
 
 export const LabelSubtle: Story = { args: { children: 'Label Chip', kind: 'label', subtle: true } };
-
-export const LargeSubtle: Story = { args: { children: 'Large Chip', size: 'large', subtle: true } };
 
 export const NewSubtle: Story = { args: { children: 'New Chip', kind: 'new', subtle: true } };
 

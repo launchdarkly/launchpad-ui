@@ -50,8 +50,6 @@
 .Chip {
   display: inline-block;
   font-weight: var(--lp-font-weight-semibold);
-  font-size: 1.1rem;
-  line-height: 1.2;
   border: 1px solid var(--lp-component-chip-color-border);
   border-radius: var(--lp-component-chip-border-radius);
   vertical-align: bottom;
@@ -60,18 +58,9 @@
   overflow: hidden;
   text-overflow: ellipsis;
   max-width: 100%;
-}
-
-.Chip--normal {
   font-size: 1.1rem;
   line-height: 1.4;
   padding: 0.3em;
-}
-
-.Chip--large {
-  font-size: 1.3rem;
-  line-height: 1.6;
-  padding: 0.5em;
 }
 
 .Chip--subtle {
