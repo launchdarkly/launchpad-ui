@@ -33,6 +33,9 @@
   cursor: pointer;
   list-style-type: none;
   margin: 0;
+  width: 100%;
+  display: block;
+  text-decoration: none;
 
   &.isSelected {
     background-color: rgb(64 91 255 / 0.05);

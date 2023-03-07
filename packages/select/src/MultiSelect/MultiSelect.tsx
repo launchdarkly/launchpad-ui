@@ -40,7 +40,7 @@ const MultiSelect = <T extends object>(props: MultiSelectProps<T>) => {
   const filterInputRef = useRef<HTMLInputElement>(null);
   const triggerRef = useRef<HTMLButtonElement>(null);
   const popoverRef = useRef<HTMLDivElement>(null);
-  const listBoxRef = useRef<HTMLUListElement>(null);
+  const listBoxRef = useRef<HTMLDivElement>(null);
 
   const state = useMultiSelectState(props);
 
