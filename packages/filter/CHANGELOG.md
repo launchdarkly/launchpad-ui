@@ -1,5 +1,55 @@
 # @launchpad-ui/filter
 
+## 0.5.0
+
+### Minor Changes
+
+- [#719](https://github.com/launchdarkly/launchpad-ui/pull/719) [`3cf45ed4`](https://github.com/launchdarkly/launchpad-ui/commit/3cf45ed4df4c4472cb8dcf48ef1cd5e7916a35ad) Thanks [@chasedarkly](https://github.com/chasedarkly)! - Refactor theme targeting to support nested themes
+
+  To migrate:
+  Add `@import '@launchpad-ui/tokens/dist/themes.css';`. If you were previously importing `@import '@launchpad-ui/tokens/dist/dark.css';`, replace with the above, or remove.
+
+  If you are modifying CSS variables based on the theme, prefer to explicitly declare the value depending on the theme. Nothing will break if you don't do this, but the code will not support nested theming if you don't explicitly set values depending on theme.
+
+  **Instead of this:**
+
+  ```css
+  .selector {
+    color: #000;
+
+    [data-theme='dark'] & {
+      color: #fff;
+    }
+  }
+  ```
+
+  **Prefer this:**
+
+  ```css
+  :root,
+  [data-theme='default'] {
+    --my-component-color-text: #000;
+  }
+
+  [data-theme='dark'] {
+    --my-component-color-text: #fff;
+  }
+
+  .my-component {
+    color: var(--my-component-color-text);
+  }
+  ```
+
+### Patch Changes
+
+- Updated dependencies [[`3cf45ed4`](https://github.com/launchdarkly/launchpad-ui/commit/3cf45ed4df4c4472cb8dcf48ef1cd5e7916a35ad)]:
+  - @launchpad-ui/tooltip@0.7.0
+  - @launchpad-ui/button@0.8.0
+  - @launchpad-ui/tokens@0.5.0
+  - @launchpad-ui/dropdown@0.6.31
+  - @launchpad-ui/menu@0.7.6
+  - @launchpad-ui/icons@0.7.2
+
 ## 0.4.60
 
 ### Patch Changes
