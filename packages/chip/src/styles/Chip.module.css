@@ -4,23 +4,14 @@
   --lp-component-chip-color-text-info: var(--lp-color-blue-600);
   --lp-component-chip-color-bg-warning: var(--lp-color-system-yellow-200);
   --lp-component-chip-color-text-warning: var(--lp-color-system-yellow-900);
-  --lp-component-chip-color-bg-error: var(--lp-color-system-red-200);
-  --lp-component-chip-color-text-error: var(--lp-color-system-red-900);
   --lp-component-chip-color-bg-success: var(--lp-color-system-green-200);
   --lp-component-chip-color-text-success: var(--lp-color-system-green-900);
-  --lp-component-chip-color-bg-inactive: var(--lp-color-gray-200);
-  --lp-component-chip-color-text-inactive: var(--lp-color-gray-600);
-  --lp-component-chip-color-bg-label: var(--lp-color-gray-100);
-  --lp-component-chip-color-text-label: var(--lp-color-gray-800);
   --lp-component-chip-color-bg-beta: var(--lp-color-purple-200);
   --lp-component-chip-color-text-beta: var(--lp-color-purple-600);
   --lp-component-chip-color-bg-federal: var(--lp-color-yellow-500);
   --lp-component-chip-color-text-federal: var(--lp-color-black);
-  --lp-component-chip-color-bg-default: var(--lp-color-white-100);
+  --lp-component-chip-color-bg-default: var(--lp-color-gray-100);
   --lp-component-chip-color-text-default: var(--lp-color-gray-800);
-  --lp-component-chip-color-shadow-hover: 0 2px 8px -1px hsl(0 0% 0% / 0.04),
-    0 2px 4px 0 hsl(0 0% 0% / 0.08), 0 1px 2px 0 hsl(0 0% 0% / 0.14);
-  --lp-component-chip-color-border: var(--lp-color-gray-600);
 }
 
 [data-theme='dark'] {
@@ -28,12 +19,8 @@
   --lp-component-chip-color-text-info: var(--lp-color-blue-300);
   --lp-component-chip-color-bg-warning: #3c351f;
   --lp-component-chip-color-text-warning: var(--lp-color-system-yellow-500);
-  --lp-component-chip-color-bg-error: #360914;
-  --lp-component-chip-color-text-error: var(--lp-color-pink-500);
   --lp-component-chip-color-bg-success: #143929;
   --lp-component-chip-color-text-success: var(--lp-color-system-green-500);
-  --lp-component-chip-color-bg-inactive: #313232;
-  --lp-component-chip-color-text-inactive: var(--lp-color-gray-300);
   --lp-component-chip-color-bg-label: var(--lp-color-black-100);
   --lp-component-chip-color-text-label: var(--lp-color-gray-100);
   --lp-component-chip-color-bg-beta: #30213a;
@@ -42,14 +29,11 @@
   --lp-component-chip-color-text-federal: var(--lp-color-yellow-500);
   --lp-component-chip-color-bg-default: var(--lp-color-black-100);
   --lp-component-chip-color-text-default: var(--lp-color-gray-100);
-  --lp-component-chip-color-border: var(--lp-color-gray-500);
-  --lp-component-chip-color-bg-hover: var(--lp-color-gray-800);
 }
 
 .Chip {
   display: inline-flex;
-  font-weight: var(--lp-font-weight-medium);
-  border: 1px solid var(--lp-component-chip-color-border);
+  font-weight: var(--lp-font-weight-semibold);
   border-radius: 0.2rem;
   vertical-align: bottom;
   text-align: center;
@@ -65,92 +49,44 @@
 .Chip--normal {
   font-size: 1.4rem;
   line-height: 1.4;
-  padding: 0.3125rem 0.6rem;
-  min-height: 2.8rem;
-}
-
-.Chip--legacy {
-  font-size: 1.1rem;
-  line-height: 1.4;
-  padding: 0.325rem;
+  padding: 0.215rem 0.6rem;
   min-height: 2.4rem;
 }
 
 .Chip.Chip--small {
   font-size: 1.2rem;
   line-height: 1.33;
-  padding: 0.1rem 0.4rem;
+  padding: 0.2rem 0.4rem;
   min-height: 2rem;
 }
 
-.Chip--subtle {
-  background: var(--lp-color-bg-ui-primary);
-}
-
 .Chip--info {
-  border-color: var(--lp-component-chip-color-text-info);
-  color: var(--lp-component-chip-color-text-info);
-}
-
-.Chip--info:not(.Chip--subtle) {
   background-color: var(--lp-component-chip-color-bg-info);
-  border-color: var(--lp-component-chip-color-bg-info);
   color: var(--lp-component-chip-color-text-info);
 }
 
 .Chip--new {
-  border-color: var(--lp-component-chip-color-text-success);
-  color: var(--lp-component-chip-color-text-success);
-}
-
-.Chip--new:not(.Chip--subtle) {
   background-color: var(--lp-component-chip-color-bg-success);
-  border-color: var(--lp-component-chip-color-bg-success);
   color: var(--lp-component-chip-color-text-success);
 }
 
 .Chip--beta {
-  border-color: var(--lp-component-chip-color-text-beta);
-  color: var(--lp-component-chip-color-text-beta);
-}
-
-.Chip--beta:not(.Chip--subtle) {
   background-color: var(--lp-component-chip-color-bg-beta);
-  border-color: var(--lp-component-chip-color-bg-beta);
   color: var(--lp-component-chip-color-text-beta);
 }
 
 .Chip--success {
-  border-color: var(--lp-component-chip-color-text-success);
-  color: var(--lp-component-chip-color-text-success);
-}
-
-.Chip--success:not(.Chip--subtle) {
   background-color: var(--lp-component-chip-color-bg-success);
-  border-color: transparent;
   color: var(--lp-component-chip-color-text-success);
 }
 
 .Chip--warning {
-  border-color: var(--lp-component-chip-color-text-warning);
-  color: var(--lp-component-chip-color-text-warning);
-}
-
-.Chip--warning:not(.Chip--subtle) {
   background-color: var(--lp-component-chip-color-bg-warning);
-  border-color: var(--lp-component-chip-color-bg-warning);
   color: var(--lp-component-chip-color-text-warning);
-}
-
-.Chip--label {
-  background-color: var(--lp-component-chip-color-bg-label);
-  border-color: var(--lp-component-chip-color-bg-label);
-  color: var(--lp-component-chip-color-text-label);
 }
 
 .Chip--federal {
   background-color: var(--lp-component-chip-color-bg-federal);
-  border-color: var(--lp-component-chip-color-bg-federal);
   color: var(--lp-component-chip-color-text-federal);
 }
 
