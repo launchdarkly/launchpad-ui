@@ -1,4 +1,4 @@
-:root {
+.Toggle {
   --Toggle-box-shadow: 0 0 0 1px var(--lp-color-gray-500);
   --Toggle-box-shadow-disabled: 0 0 0 1px hsl(216 2.4% 58.6% / 0.7);
   --Toggle-box-shadow-disabled-on: 0 0 0 1px hsl(154 100% 28% / 0.55);
@@ -35,9 +35,7 @@
   --Toggle-pin-size: 1.6rem; /* 16px */
   --Toggle-pin-transform: translateX(0.4rem) translateY(-50%); /* 4px */
   --Toggle-pin-transform-on: translateX(3.4rem) translateY(-50%); /* 34px */
-}
 
-.Toggle {
   display: inline-block;
   vertical-align: middle;
   width: var(--Toggle-width);

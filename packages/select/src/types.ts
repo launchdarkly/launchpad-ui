@@ -35,7 +35,7 @@ type SharedSelectProps<T extends object> = CollectionBase<T> &
     excludeFromTabOrder?: boolean;
 
     /** Whether the field is disabled. */
-    isDisabled?: boolean;
+    disabled?: boolean;
 
     /** Sets the open state of the field (controlled). */
     isOpen?: boolean;

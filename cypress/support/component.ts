@@ -3,8 +3,8 @@ import { mount } from 'cypress/react18';
 import 'cypress-real-events/support';
 
 import '../../.storybook/styles.css';
-import '../../packages/tokens/dist/dark.css';
 import '../../packages/tokens/dist/index.css';
+import '../../packages/tokens/dist/themes.css';
 import '../utils/theme';
 
 import './commands';

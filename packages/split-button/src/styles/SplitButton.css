@@ -1,4 +1,4 @@
-:root {
+.SplitButton {
   --SplitButton-color-border-primary: var(--lp-color-border-interactive-primary);
   --SplitButton-focus-margin: -0.5rem;
   --SplitButton-focus-radius: 1rem;
@@ -14,22 +14,7 @@
     0 0 0 4px var(--lp-color-shadow-interactive-focus);
   --SplitButton-box-shadow-active: none;
   --SplitButton-drop-width: 3.4rem;
-}
 
-.SplitButton-drop.Button {
-  border-left-width: var(--SplitButton-drop-border-left);
-  border-top-left-radius: 0;
-  border-bottom-left-radius: 0;
-  padding: var(--SplitButton-drop-padding);
-  margin-left: -0.1rem;
-  width: calc(var(--SplitButton-drop-width) + 0.2rem);
-}
-
-.SplitButton-drop.Button > span {
-  line-height: 1;
-}
-
-.SplitButton {
   align-items: flex-start;
   display: flex;
   line-height: var(--SplitButton-popoverTarget-line-height);
@@ -43,6 +28,19 @@
     margin-left: var(--SplitButton-drop-margin);
     width: var(--SplitButton-drop-width);
   }
+}
+
+.SplitButton-drop.Button {
+  border-left-width: var(--SplitButton-drop-border-left);
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  padding: var(--SplitButton-drop-padding);
+  margin-left: -0.1rem;
+  width: calc(var(--SplitButton-drop-width) + 0.2rem);
+}
+
+.SplitButton-drop.Button > span {
+  line-height: 1;
 }
 
 .SplitButton-main.Button,

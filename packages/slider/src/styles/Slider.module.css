@@ -1,9 +1,7 @@
-:root {
+.Slider {
   --slider-height: 1rem;
   --slider-knob-size: 1.6rem;
-}
 
-.Slider {
   position: relative;
   height: var(--slider-height);
 }

@@ -1,5 +1,22 @@
 # @launchpad-ui/clipboard
 
+## 0.8.48
+
+### Patch Changes
+
+- [#717](https://github.com/launchdarkly/launchpad-ui/pull/717) [`02f5f542`](https://github.com/launchdarkly/launchpad-ui/commit/02f5f542dbfd4c4376bae718e4b38fd9f769b287) Thanks [@kwatkins-ld](https://github.com/kwatkins-ld)! - left-align CopyToClipboard text
+
+## 0.8.47
+
+### Patch Changes
+
+- [#610](https://github.com/launchdarkly/launchpad-ui/pull/610) [`c76ec2ad`](https://github.com/launchdarkly/launchpad-ui/commit/c76ec2adf7e135faa32d6ee39b66886cbb2a1f10) Thanks [@renovate](https://github.com/apps/renovate)! - Update nonmajor versions across framework
+
+- Updated dependencies [[`c76ec2ad`](https://github.com/launchdarkly/launchpad-ui/commit/c76ec2adf7e135faa32d6ee39b66886cbb2a1f10)]:
+  - @launchpad-ui/tooltip@0.6.38
+  - @launchpad-ui/tokens@0.4.10
+  - @launchpad-ui/icons@0.7.1
+
 ## 0.8.46
 
 ### Patch Changes

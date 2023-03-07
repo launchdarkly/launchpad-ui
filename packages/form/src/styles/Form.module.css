@@ -1,3 +1,12 @@
+:root,
+[data-theme='default'] {
+  --lp-component-form-color-text-label-disabled: var(--lp-color-gray-800);
+}
+
+[data-theme='dark'] {
+  --lp-component-form-color-text-label-disabled: var(--lp-color-gray-400);
+}
+
 .formGroup {
   margin: 2rem 0;
   padding: 0;
@@ -93,11 +102,7 @@ select.formInput {
 }
 
 .labelDisabled {
-  color: var(--lp-color-gray-800);
-
-  :root[data-theme='dark'] & {
-    color: var(--lp-color-gray-400);
-  }
+  color: var(--lp-component-form-color-text-label-disabled);
 }
 
 .labelOptional {

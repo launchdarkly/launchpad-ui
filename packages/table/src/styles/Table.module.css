@@ -1,15 +1,13 @@
 @import '../../../tokens/dist/media-queries.css';
 
-:root {
+.Table {
   --one-of-twelve: 8.333%;
   --two-of-twelve: 16.667%;
   --three-of-twelve: 25%;
   --four-of-twelve: 33.333%;
   --five-of-twelve: 41.667%;
   --six-of-twelve: 50%;
-}
 
-.Table {
   table-layout: fixed;
   border-collapse: collapse;
 }

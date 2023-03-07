@@ -1,3 +1,16 @@
+:root,
+[data-theme='default'] {
+  --lp-component-popover-color-bg: var(--lp-color-bg-overlay-secondary);
+  --lp-component-popover-color-text: var(--lp-color-text-overlay-secondary);
+  --lp-component-popover-color-border: inherit;
+}
+
+[data-theme='dark'] {
+  --lp-component-popover-color-bg: var(--lp-color-bg-overlay-primary);
+  --lp-component-popover-color-text: var(--lp-color-text-ui-primary);
+  --lp-component-popover-color-border: var(--lp-color-border-ui-secondary);
+}
+
 .Tooltip {
   z-index: var(--lp-z-index-700);
 }
@@ -5,14 +18,9 @@
 [class^='_Popover-content_'].Tooltip-popover-content {
   font-size: 1.3rem;
   padding: 0.5rem 1rem;
-  background-color: var(--lp-color-bg-overlay-secondary);
-  color: var(--lp-color-text-overlay-secondary);
-
-  :root[data-theme='dark'] & {
-    border: 1px solid var(--lp-color-border-ui-secondary);
-    background-color: var(--lp-color-bg-overlay-primary);
-    color: var(--lp-color-text-ui-primary);
-  }
+  border: 1px solid var(--lp-component-popover-color-border);
+  background-color: var(--lp-component-popover-color-bg);
+  color: var(--lp-component-popover-color-text);
 }
 
 [class^='_Popover-content_'].Tooltip-popover-content kbd {

@@ -294,6 +294,26 @@ export const TallBody: Story = {
   parameters: { docs: { disable: true } },
 };
 
+export const ForcedDarkTheme: Story = {
+  render: () => {
+    return (
+      <Modal size="small" theme="dark">
+        <ModalHeader title="Inverted theme" />
+        <ModalBody>
+          <p>
+            You can force set the theme using the <code>theme</code> prop.
+          </p>
+        </ModalBody>
+        <ModalFooter
+          primaryButton={<Button kind="destructive">Leave page</Button>}
+          secondaryButton={<Button>Cancel</Button>}
+        />
+      </Modal>
+    );
+  },
+  parameters: { docs: { disable: true } },
+};
+
 export const WithForm: Story = {
   render: () => {
     const inputRef = useRef<HTMLInputElement>(null);

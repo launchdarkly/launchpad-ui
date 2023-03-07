@@ -1,6 +1,6 @@
 {
   "name": "@launchpad-ui/tokens",
-  "version": "0.4.9",
+  "version": "0.4.10",
   "status": "beta",
   "publishConfig": {
     "access": "public"
@@ -23,7 +23,7 @@
       "require": "./dist/index.js"
     },
     "./package.json": "./package.json",
-    "./dark.css": "./dist/dark.css",
+    "./themes.css": "./dist/themes.css",
     "./index.css": "./dist/index.css",
     "./media-queries.css": "./dist/media-queries.css"
   },
@@ -35,6 +35,6 @@
   },
   "devDependencies": {
     "style-dictionary": "^3.7.0",
-    "yaml": "^2.1.0"
+    "yaml": "^2.2.1"
   }
 }
