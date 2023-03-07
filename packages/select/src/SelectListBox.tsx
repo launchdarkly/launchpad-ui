@@ -1,10 +1,12 @@
 /* eslint-disable @typescript-eslint/no-use-before-define */
 import type { MultiSelectState } from './MultiSelect';
+import type { MultiSelectListState } from './MultiSelect/useMultiSelectListState';
+import type { SelectItemProps } from './SelectItem';
 import type { SingleSelectState } from './SingleSelect';
 import type { AriaListBoxOptions } from '@react-aria/listbox';
-import type { ListState } from '@react-stately/list';
+import type { SingleSelectListState } from '@react-stately/list';
 import type { Node } from '@react-types/shared';
-import type { InputHTMLAttributes, RefObject } from 'react';
+import type { ElementType, InputHTMLAttributes, RefObject } from 'react';
 
 import { Search } from '@launchpad-ui/icons';
 import { getItemId, useListBox, useListBoxSection, useOption } from '@react-aria/listbox';
@@ -22,16 +24,6 @@ type SelectListBoxProps<T extends object> = AriaListBoxOptions<T> & {
   state: SingleSelectState<T> | MultiSelectState<T>;
   filterInputProps: InputHTMLAttributes<HTMLInputElement>;
   hasFilter?: boolean;
-};
-
-type SelectListBoxSectionProps<T extends object> = {
-  section: Node<T>;
-  state: ListState<T>;
-};
-
-type SelectListBoxOptionProps<T extends object> = {
-  item: Node<T>;
-  state: ListState<T>;
 };
 
 const SelectListBox = <T extends object>(props: SelectListBoxProps<T>) => {
@@ -102,7 +94,14 @@ const SelectListBox = <T extends object>(props: SelectListBoxProps<T>) => {
   );
 };
 
-const Section = <T extends object>({ section, state }: SelectListBoxSectionProps<T>) => {
+type SectionProps<T extends object> = {
+  section: Omit<Node<T>, 'props'> & {
+    props?: SelectItemProps<T, ElementType>;
+  };
+  state: SingleSelectListState<T> | MultiSelectListState<T>;
+};
+
+const Section = <T extends object>({ section, state }: SectionProps<T>) => {
   const { itemProps, headingProps, groupProps } = useListBoxSection({
     heading: section.rendered,
     'aria-label': section['aria-label'],
@@ -126,7 +125,14 @@ const Section = <T extends object>({ section, state }: SelectListBoxSectionProps
   );
 };
 
-const Option = <T extends object>({ item, state }: SelectListBoxOptionProps<T>) => {
+type OptionProps<T extends object> = {
+  item: Omit<Node<T>, 'props'> & {
+    props?: SelectItemProps<T, ElementType>;
+  };
+  state: SingleSelectListState<T> | MultiSelectListState<T>;
+};
+
+const Option = <T extends object>({ item, state }: OptionProps<T>) => {
   const ref = useRef<HTMLLIElement>(null);
   const { optionProps, isDisabled, isSelected, isFocused } = useOption(
     {
@@ -136,9 +142,12 @@ const Option = <T extends object>({ item, state }: SelectListBoxOptionProps<T>) 
     ref
   );
 
+  const { as: Component = 'li', ...itemProps } = item.props || {};
+
   return (
-    <li
+    <Component
       {...optionProps}
+      {...itemProps}
       ref={ref}
       className={cx(
         styles.option,
@@ -151,7 +160,7 @@ const Option = <T extends object>({ item, state }: SelectListBoxOptionProps<T>) 
         <input type="checkbox" disabled={isDisabled} checked={isSelected} readOnly />
       )}
       {typeof item.rendered === 'string' ? <span>{item.rendered}</span> : item.rendered}
-    </li>
+    </Component>
   );
 };
 

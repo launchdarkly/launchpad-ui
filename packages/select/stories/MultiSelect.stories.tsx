@@ -2,10 +2,9 @@ import type { StoryObj } from '@storybook/react';
 import type { Key } from 'react';
 
 import { Chip } from '@launchpad-ui/chip';
-import { Item } from '@react-stately/collections';
 import { useState } from 'react';
 
-import { MultiSelectTrigger, MultiSelect } from '../src';
+import { MultiSelectTrigger, MultiSelect, SelectItem } from '../src';
 import { FRUIT } from '../src/__tests__/constants';
 import { CustomMultiSelectTrigger } from '../src/__tests__/examples';
 
@@ -34,7 +33,7 @@ export const Basic: Story = {
         isSelectableAll
         isClearable
       >
-        {(item) => <Item>{item.name}</Item>}
+        {(item) => <SelectItem>{item.name}</SelectItem>}
       </MultiSelect>
     );
   },
@@ -50,7 +49,7 @@ export const Filterable: Story = {
         hasFilter
         onSelectionChange={(keys) => console.log(Array.from(keys))}
       >
-        {(item) => <Item>{item.name}</Item>}
+        {(item) => <SelectItem>{item.name}</SelectItem>}
       </MultiSelect>
     );
   },
@@ -74,7 +73,7 @@ export const WithCustomTrigger: Story = {
           onSelectionChange={(keys) => console.log(Array.from(keys))}
           trigger={CustomMultiSelectTrigger}
         >
-          {(item) => <Item textValue={item.name}>{item.name}</Item>}
+          {(item) => <SelectItem textValue={item.name}>{item.name}</SelectItem>}
         </MultiSelect>
       </>
     );
@@ -104,9 +103,9 @@ export const MultiSelectWithCustomSelectedRender: Story = {
         )}
       >
         {(item) => (
-          <Item textValue={item.name}>
+          <SelectItem textValue={item.name}>
             {item.name} <Chip>ID: {item.id}</Chip>
-          </Item>
+          </SelectItem>
         )}
       </MultiSelect>
     );
@@ -137,7 +136,7 @@ export const MultiSelectWithSelectAll: Story = {
           </MultiSelectTrigger>
         )}
       >
-        {(item) => <Item textValue={item.name}>{item.name}</Item>}
+        {(item) => <SelectItem textValue={item.name}>{item.name}</SelectItem>}
       </MultiSelect>
     );
   },
@@ -156,7 +155,7 @@ export const WithControlledSelectedKeys: Story = {
           selectedKeys={selectedKeys}
           onSelectionChange={(keys) => setSelectedKeys(keys)}
         >
-          {(item) => <Item textValue={item.name}>{item.name}</Item>}
+          {(item) => <SelectItem textValue={item.name}>{item.name}</SelectItem>}
         </MultiSelect>
       );
     };
@@ -170,7 +169,7 @@ export const WithUncontrolledItems: Story = {
   render: () => {
     return (
       <MultiSelect label="Fruit" defaultItems={FRUIT}>
-        {(item) => <Item textValue={item.name}>{item.name}</Item>}
+        {(item) => <SelectItem textValue={item.name}>{item.name}</SelectItem>}
       </MultiSelect>
     );
   },
