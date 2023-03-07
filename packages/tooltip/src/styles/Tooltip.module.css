@@ -12,7 +12,7 @@
 }
 
 .Tooltip {
-  z-index: var(--lp-z-index-700);
+  z-index: var(--lp-z-index-800);
 }
 
 [class^='_Popover-content_'].Tooltip-popover-content {
