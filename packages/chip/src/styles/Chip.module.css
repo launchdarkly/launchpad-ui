@@ -1,7 +1,7 @@
 :root,
 [data-theme='default'] {
   --lp-component-chip-color-bg-info: var(--lp-color-blue-200);
-  --lp-component-chip-color-text-info: var(--lp-color-blue-500);
+  --lp-component-chip-color-text-info: var(--lp-color-blue-600);
   --lp-component-chip-color-bg-warning: var(--lp-color-system-yellow-200);
   --lp-component-chip-color-text-warning: var(--lp-color-system-yellow-900);
   --lp-component-chip-color-bg-error: var(--lp-color-system-red-600);
