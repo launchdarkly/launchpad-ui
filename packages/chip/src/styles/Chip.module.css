@@ -18,8 +18,8 @@
   --lp-component-chip-color-text-federal: var(--lp-color-black);
   --lp-component-chip-color-bg-default: var(--lp-color-white-100);
   --lp-component-chip-color-text-default: var(--lp-color-gray-800);
-  --lp-component-chip-color-bg-hover: var(--lp-color-gray-100);
-  --lp-component-chip-border-radius: 0.2rem;
+  --lp-component-chip-color-shadow-hover: 0 2px 8px -1px hsl(0 0% 0% / 0.04),
+    0 2px 4px 0 hsl(0 0% 0% / 0.08), 0 1px 2px 0 hsl(0 0% 0% / 0.14);
   --lp-component-chip-color-border: var(--lp-color-gray-600);
 }
 
@@ -42,34 +42,49 @@
   --lp-component-chip-color-text-federal: var(--lp-color-yellow-500);
   --lp-component-chip-color-bg-default: var(--lp-color-black-100);
   --lp-component-chip-color-text-default: var(--lp-color-gray-100);
-  --lp-component-chip-border-radius: 0.2rem;
   --lp-component-chip-color-border: var(--lp-color-gray-500);
   --lp-component-chip-color-bg-hover: var(--lp-color-gray-800);
 }
 
 .Chip {
-  display: inline-block;
-  font-weight: var(--lp-font-weight-semibold);
+  display: inline-flex;
+  font-weight: var(--lp-font-weight-medium);
   border: 1px solid var(--lp-component-chip-color-border);
-  border-radius: var(--lp-component-chip-border-radius);
+  border-radius: 0.2rem;
   vertical-align: bottom;
   text-align: center;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
   max-width: 100%;
+  color: var(--lp-component-chip-color-text-default);
+  background-color: var(--lp-component-chip-color-bg-default);
+  transition: all 0.1s ease-in-out;
+}
+
+.Chip--normal {
+  font-size: 1.4rem;
+  line-height: 1.4;
+  padding: 0.3125rem 1rem;
+  min-height: 2.8rem;
+}
+
+.Chip--medium {
   font-size: 1.1rem;
   line-height: 1.4;
-  padding: 0.3em;
+  padding: 0.325rem;
+  min-height: 2.4rem;
+}
+
+.Chip.Chip--small {
+  font-size: 1.2rem;
+  line-height: 1.33;
+  padding: 0.1rem 0.7rem;
+  min-height: 2rem;
 }
 
 .Chip--subtle {
   background: var(--lp-color-bg-ui-primary);
-}
-
-.Chip--default {
-  color: var(--lp-component-chip-color-text-default);
-  background-color: var(--lp-component-chip-color-bg-default);
 }
 
 .Chip--info {
@@ -127,42 +142,21 @@
   color: var(--lp-component-chip-color-text-warning);
 }
 
-.Chip--error {
-  border-color: var(--lp-component-chip-color-text-error);
-  color: var(--lp-component-chip-color-text-error);
-}
-
-.Chip--error:not(.Chip--subtle) {
-  background-color: var(--lp-component-chip-color-bg-error);
-  border-color: var(--lp-component-chip-color-bg-error);
-  color: var(--lp-component-chip-color-text-error);
-}
-
-.Chip--inactive {
-  border-color: var(--lp-component-chip-color-bg-inactive);
-  color: var(--lp-component-chip-color-text-inactive);
-}
-
-.Chip--inactive:not(.Chip--subtle) {
-  background-color: var(--lp-component-chip-color-bg-inactive);
-  color: var(--lp-component-chip-color-text-inactive);
-  border: 1px solid var(--lp-component-chip-color-bg-inactive);
-}
-
 .Chip--label {
   background-color: var(--lp-component-chip-color-bg-label);
   border-color: var(--lp-component-chip-color-bg-label);
   color: var(--lp-component-chip-color-text-label);
 }
 
-.Chip :global([class*='_icon_']) {
-  margin-right: 0.2rem;
-  vertical-align: top;
+.Chip--federal {
+  background-color: var(--lp-component-chip-color-bg-federal);
+  border-color: var(--lp-component-chip-color-bg-federal);
+  color: var(--lp-component-chip-color-text-federal);
 }
 
 .Chip--clickable:hover {
   cursor: pointer;
-  background: var(--lp-component-chip-color-bg-hover);
+  box-shadow: var(--lp-component-chip-color-shadow-hover);
 }
 
 .Chip--clickable:focus {
@@ -170,10 +164,4 @@
   box-shadow: 0 0 0 1px var(--lp-color-bg-ui-primary),
     0 0 0 2px var(--lp-color-shadow-interactive-focus);
   z-index: 2;
-}
-
-.Chip--federal {
-  background-color: var(--lp-component-chip-color-bg-federal);
-  border-color: var(--lp-component-chip-color-bg-federal);
-  color: var(--lp-component-chip-color-text-federal);
 }

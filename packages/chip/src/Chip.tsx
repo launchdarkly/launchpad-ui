@@ -5,27 +5,20 @@ import { cx } from 'classix';
 import styles from './styles/Chip.module.css';
 
 type ChipProps = HTMLAttributes<HTMLSpanElement> & {
-  kind?:
-    | 'default'
-    | 'success'
-    | 'warning'
-    | 'inactive'
-    | 'info'
-    | 'label'
-    | 'new'
-    | 'beta'
-    | 'federal';
+  kind?: 'success' | 'warning' | 'info' | 'label' | 'new' | 'beta' | 'federal';
   subtle?: boolean;
+  size?: 'normal' | 'small' | 'medium';
   'data-test-id'?: string;
 };
 
 const Chip = ({
-  kind = 'default',
+  kind,
   subtle = false,
   onClick,
   onKeyDown,
   className,
   children,
+  size = 'normal',
   'data-test-id': testId = 'chip',
   ...rest
 }: ChipProps) => {
@@ -33,7 +26,8 @@ const Chip = ({
 
   const classes = cx(
     styles.Chip,
-    styles[`Chip--${kind}`],
+    kind && styles[`Chip--${kind}`],
+    styles[`Chip--${size}`],
     className,
     subtle && styles['Chip--subtle'],
     isInteractive && styles['Chip--clickable']
