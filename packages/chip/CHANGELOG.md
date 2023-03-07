@@ -1,5 +1,11 @@
 # @launchpad-ui/chip
 
+## 0.7.1
+
+### Patch Changes
+
+- [#724](https://github.com/launchdarkly/launchpad-ui/pull/724) [`0ed1d8ea`](https://github.com/launchdarkly/launchpad-ui/commit/0ed1d8ea0746e6721fc66ebc8bfe8109df8339ce) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Chip] Add size variants and deprecate unused variants
+
 ## 0.7.0
 
 ### Minor Changes
