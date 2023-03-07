@@ -1,5 +1,23 @@
 # @launchpad-ui/core
 
+## 0.31.2
+
+### Patch Changes
+
+- [#726](https://github.com/launchdarkly/launchpad-ui/pull/726) [`74ddde60`](https://github.com/launchdarkly/launchpad-ui/commit/74ddde60d233fd489860f89aacb908e20f525674) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Snackbar] Change z-index to `700`
+  [Toast] Change z-index to `700`
+  [Tooltip] Change z-index to `800`
+- Updated dependencies [[`74ddde60`](https://github.com/launchdarkly/launchpad-ui/commit/74ddde60d233fd489860f89aacb908e20f525674)]:
+  - @launchpad-ui/snackbar@0.3.35
+  - @launchpad-ui/tooltip@0.7.1
+  - @launchpad-ui/toast@0.2.34
+  - @launchpad-ui/clipboard@0.9.1
+  - @launchpad-ui/filter@0.5.1
+  - @launchpad-ui/menu@0.7.7
+  - @launchpad-ui/navigation@0.9.2
+  - @launchpad-ui/select@0.2.1
+  - @launchpad-ui/split-button@0.7.1
+
 ## 0.31.1
 
 ### Patch Changes
