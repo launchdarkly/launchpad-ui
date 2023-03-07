@@ -5,7 +5,6 @@ import type { ComponentPropsWithoutRef, ElementType } from 'react';
 type SelectItemProps<T extends object, P extends ElementType> = ItemProps<T> & {
   as?: P;
   onClick?: (_e: MouseEvent, state: SharedSelectState) => void;
-  [key: string]: any;
 };
 
 const SelectItem = <T extends object, P extends ElementType = 'div'>(

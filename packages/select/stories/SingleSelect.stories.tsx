@@ -206,7 +206,7 @@ export const WithSelectItemRenderedAs: Story = {
         onSelectionChange={(key) => console.log(key)}
       >
         {(item) => (
-          <SelectItem as="a" href="/" textValue={item.name}>
+          <SelectItem as="a" href="#" textValue={item.name}>
             {item.name} <Chip>ID: {item.id}</Chip>
           </SelectItem>
         )}
