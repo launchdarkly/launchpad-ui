@@ -19,7 +19,7 @@ import { useRef } from 'react';
 import styles from './styles/Select.module.css';
 
 type SelectListBoxProps<T extends object> = AriaListBoxOptions<T> & {
-  listBoxRef?: RefObject<HTMLUListElement>;
+  listBoxRef?: RefObject<HTMLDivElement>;
   filterInputRef?: RefObject<HTMLInputElement>;
   state: SingleSelectState<T> | MultiSelectState<T>;
   filterInputProps: InputHTMLAttributes<HTMLInputElement>;
@@ -29,7 +29,7 @@ type SelectListBoxProps<T extends object> = AriaListBoxOptions<T> & {
 const SelectListBox = <T extends object>(props: SelectListBoxProps<T>) => {
   const { state, hasFilter } = props;
 
-  const listBoxRef = useObjectRef<HTMLUListElement>(props.listBoxRef);
+  const listBoxRef = useObjectRef<HTMLDivElement>(props.listBoxRef);
 
   const filterInputRef = useObjectRef<HTMLInputElement>(props.filterInputRef);
 
@@ -75,7 +75,7 @@ const SelectListBox = <T extends object>(props: SelectListBoxProps<T>) => {
         </div>
       )}
 
-      <ul
+      <div
         {...listBoxProps}
         ref={listBoxRef}
         role="listbox"
@@ -89,7 +89,7 @@ const SelectListBox = <T extends object>(props: SelectListBoxProps<T>) => {
             <Option key={item.key} item={item} state={state} />
           )
         )}
-      </ul>
+      </div>
     </div>
   );
 };
@@ -142,7 +142,7 @@ const Option = <T extends object>({ item, state }: OptionProps<T>) => {
     ref
   );
 
-  const { as: Component = 'li', ...itemProps } = item.props || {};
+  const { as: Component = 'div', ...itemProps } = item.props || {};
 
   return (
     <Component
