@@ -1,24 +1,50 @@
 :root,
 [data-theme='default'] {
-  --lp-component-chip-color-bg-info: var(--lp-color-blue-600);
-  --lp-component-chip-color-bg-warning: var(--lp-color-system-yellow-900);
-  --lp-component-chip-color-bg-error: var(--lp-color-system-red-600);
-  --lp-component-chip-color-bg-success: var(--lp-color-system-green-900);
+  --lp-component-chip-color-bg-info: var(--lp-color-blue-200);
+  --lp-component-chip-color-text-info: var(--lp-color-blue-600);
+  --lp-component-chip-color-bg-warning: var(--lp-color-system-yellow-200);
+  --lp-component-chip-color-text-warning: var(--lp-color-system-yellow-900);
+  --lp-component-chip-color-bg-error: var(--lp-color-system-red-200);
+  --lp-component-chip-color-text-error: var(--lp-color-system-red-900);
+  --lp-component-chip-color-bg-success: var(--lp-color-system-green-200);
+  --lp-component-chip-color-text-success: var(--lp-color-system-green-900);
   --lp-component-chip-color-bg-inactive: var(--lp-color-gray-200);
-  --lp-component-chip-color-bg-label: var(--lp-color-white-100);
-  --lp-component-chip-color-bg-beta: var(--lp-color-purple-600);
+  --lp-component-chip-color-text-inactive: var(--lp-color-gray-600);
+  --lp-component-chip-color-bg-label: var(--lp-color-gray-100);
+  --lp-component-chip-color-text-label: var(--lp-color-gray-800);
+  --lp-component-chip-color-bg-beta: var(--lp-color-purple-200);
+  --lp-component-chip-color-text-beta: var(--lp-color-purple-600);
   --lp-component-chip-color-bg-federal: var(--lp-color-yellow-500);
+  --lp-component-chip-color-text-federal: var(--lp-color-black);
+  --lp-component-chip-color-bg-default: var(--lp-color-white-100);
+  --lp-component-chip-color-text-default: var(--lp-color-gray-800);
+  --lp-component-chip-color-bg-hover: var(--lp-color-gray-100);
+  --lp-component-chip-border-radius: 0.2rem;
+  --lp-component-chip-color-border: var(--lp-color-gray-600);
 }
 
 [data-theme='dark'] {
-  --lp-component-chip-color-bg-info: var(--lp-color-blue-500);
-  --lp-component-chip-color-bg-warning: var(--lp-color-system-yellow-800);
-  --lp-component-chip-color-bg-error: var(--lp-color-pink-500);
-  --lp-component-chip-color-bg-success: var(--lp-color-system-green-700);
-  --lp-component-chip-color-bg-inactive: var(--lp-color-gray-200);
-  --lp-component-chip-color-bg-label: var(--lp-color-gray-800);
-  --lp-component-chip-color-bg-beta: var(--lp-color-purple-800);
-  --lp-component-chip-color-bg-federal: var(--lp-color-yellow-500);
+  --lp-component-chip-color-bg-info: #212647;
+  --lp-component-chip-color-text-info: var(--lp-color-blue-300);
+  --lp-component-chip-color-bg-warning: #3c351f;
+  --lp-component-chip-color-text-warning: var(--lp-color-system-yellow-500);
+  --lp-component-chip-color-bg-error: #360914;
+  --lp-component-chip-color-text-error: var(--lp-color-pink-500);
+  --lp-component-chip-color-bg-success: #143929;
+  --lp-component-chip-color-text-success: var(--lp-color-system-green-500);
+  --lp-component-chip-color-bg-inactive: #313232;
+  --lp-component-chip-color-text-inactive: var(--lp-color-gray-300);
+  --lp-component-chip-color-bg-label: var(--lp-color-black-100);
+  --lp-component-chip-color-text-label: var(--lp-color-gray-100);
+  --lp-component-chip-color-bg-beta: #30213a;
+  --lp-component-chip-color-text-beta: var(--lp-color-purple-400);
+  --lp-component-chip-color-bg-federal: #43471e;
+  --lp-component-chip-color-text-federal: var(--lp-color-yellow-500);
+  --lp-component-chip-color-bg-default: var(--lp-color-black-100);
+  --lp-component-chip-color-text-default: var(--lp-color-gray-100);
+  --lp-component-chip-border-radius: 0.2rem;
+  --lp-component-chip-color-border: var(--lp-color-gray-500);
+  --lp-component-chip-color-bg-hover: var(--lp-color-gray-800);
 }
 
 .Chip {
@@ -26,8 +52,8 @@
   font-weight: var(--lp-font-weight-semibold);
   font-size: 1.1rem;
   line-height: 1.2;
-  border: 1px solid var(--lp-color-border-ui-primary);
-  border-radius: var(--lp-border-radius-regular);
+  border: 1px solid var(--lp-component-chip-color-border);
+  border-radius: var(--lp-component-chip-border-radius);
   vertical-align: bottom;
   text-align: center;
   white-space: nowrap;
@@ -53,84 +79,91 @@
 }
 
 .Chip--default {
-  border-color: var(--lp-color-border-ui-primary);
-  color: var(--lp-color-text-ui-secondary);
+  color: var(--lp-component-chip-color-text-default);
+  background-color: var(--lp-component-chip-color-bg-default);
 }
 
 .Chip--info {
-  border-color: var(--lp-component-chip-color-bg-info);
-  color: var(--lp-component-chip-color-bg-info);
+  border-color: var(--lp-component-chip-color-text-info);
+  color: var(--lp-component-chip-color-text-info);
 }
 
 .Chip--info:not(.Chip--subtle) {
   background-color: var(--lp-component-chip-color-bg-info);
-  color: var(--lp-color-white);
+  border-color: var(--lp-component-chip-color-bg-info);
+  color: var(--lp-component-chip-color-text-info);
 }
 
 .Chip--new {
-  border-color: var(--lp-component-chip-color-bg-success);
-  color: var(--lp-component-chip-color-bg-success);
+  border-color: var(--lp-component-chip-color-text-success);
+  color: var(--lp-component-chip-color-text-success);
 }
 
 .Chip--new:not(.Chip--subtle) {
   background-color: var(--lp-component-chip-color-bg-success);
-  color: var(--lp-color-white);
+  border-color: var(--lp-component-chip-color-bg-success);
+  color: var(--lp-component-chip-color-text-success);
 }
 
 .Chip--beta {
-  border-color: var(--lp-component-chip-color-bg-beta);
-  color: var(--lp-component-chip-color-bg-beta);
+  border-color: var(--lp-component-chip-color-text-beta);
+  color: var(--lp-component-chip-color-text-beta);
 }
 
 .Chip--beta:not(.Chip--subtle) {
   background-color: var(--lp-component-chip-color-bg-beta);
-  color: var(--lp-color-white);
+  border-color: var(--lp-component-chip-color-bg-beta);
+  color: var(--lp-component-chip-color-text-beta);
 }
 
 .Chip--success {
-  border-color: var(--lp-component-chip-color-bg-success);
-  color: var(--lp-component-chip-color-bg-success);
+  border-color: var(--lp-component-chip-color-text-success);
+  color: var(--lp-component-chip-color-text-success);
 }
 
 .Chip--success:not(.Chip--subtle) {
   background-color: var(--lp-component-chip-color-bg-success);
-  color: var(--lp-color-white);
+  border-color: transparent;
+  color: var(--lp-component-chip-color-text-success);
 }
 
 .Chip--warning {
-  border-color: var(--lp-component-chip-color-bg-warning);
-  color: var(--lp-component-chip-color-bg-warning);
+  border-color: var(--lp-component-chip-color-text-warning);
+  color: var(--lp-component-chip-color-text-warning);
 }
 
 .Chip--warning:not(.Chip--subtle) {
   background-color: var(--lp-component-chip-color-bg-warning);
-  color: var(--lp-color-white);
+  border-color: var(--lp-component-chip-color-bg-warning);
+  color: var(--lp-component-chip-color-text-warning);
 }
 
 .Chip--error {
-  border-color: var(--lp-component-chip-color-bg-error);
-  color: var(--lp-component-chip-color-bg-error);
+  border-color: var(--lp-component-chip-color-text-error);
+  color: var(--lp-component-chip-color-text-error);
 }
 
 .Chip--error:not(.Chip--subtle) {
   background-color: var(--lp-component-chip-color-bg-error);
-  color: var(--lp-color-text-feedback);
+  border-color: var(--lp-component-chip-color-bg-error);
+  color: var(--lp-component-chip-color-text-error);
 }
 
 .Chip--inactive {
   border-color: var(--lp-component-chip-color-bg-inactive);
-  color: var(--lp-component-chip-color-bg-inactive);
+  color: var(--lp-component-chip-color-text-inactive);
 }
 
 .Chip--inactive:not(.Chip--subtle) {
   background-color: var(--lp-component-chip-color-bg-inactive);
-  color: var(--lp-color-black-200);
-  border: 1px var(--lp-component-chip-color-bg-inactive) solid;
+  color: var(--lp-component-chip-color-text-inactive);
+  border: 1px solid var(--lp-component-chip-color-bg-inactive);
 }
 
 .Chip--label {
   background-color: var(--lp-component-chip-color-bg-label);
-  color: var(--lp-color-text-ui-primary);
+  border-color: var(--lp-component-chip-color-bg-label);
+  color: var(--lp-component-chip-color-text-label);
 }
 
 .Chip :global([class*='_icon_']) {
@@ -140,19 +173,18 @@
 
 .Chip--clickable:hover {
   cursor: pointer;
-  background: var(--lp-color-bg-interactive-secondary-hover);
-  border: 1px solid var(--lp-color-border-ui-primary);
+  background: var(--lp-component-chip-color-bg-hover);
 }
 
 .Chip--clickable:focus {
   outline: 0;
-  border-radius: var(--lp-border-radius-regular);
-  box-shadow: 0 0 4px var(--lp-color-shadow-interactive-focus);
+  box-shadow: 0 0 0 1px var(--lp-color-bg-ui-primary),
+    0 0 0 2px var(--lp-color-shadow-interactive-focus);
   z-index: 2;
 }
 
 .Chip--federal {
   background-color: var(--lp-component-chip-color-bg-federal);
   border-color: var(--lp-component-chip-color-bg-federal);
-  color: var(--lp-color-black-300);
+  color: var(--lp-component-chip-color-text-federal);
 }
