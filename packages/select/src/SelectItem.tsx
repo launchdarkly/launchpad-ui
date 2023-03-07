@@ -8,7 +8,7 @@ type SelectItemProps<T extends object, P extends ElementType> = ItemProps<T> & {
   [key: string]: any;
 };
 
-const SelectItem = <T extends object, P extends ElementType = 'li'>(
+const SelectItem = <T extends object, P extends ElementType = 'div'>(
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   _props: SelectItemProps<T, P> & Omit<ComponentPropsWithoutRef<P>, keyof SelectItemProps<T, P>>
 ) => {
