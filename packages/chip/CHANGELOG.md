@@ -1,5 +1,54 @@
 # @launchpad-ui/chip
 
+## 0.7.0
+
+### Minor Changes
+
+- [#723](https://github.com/launchdarkly/launchpad-ui/pull/723) [`a6879755`](https://github.com/launchdarkly/launchpad-ui/commit/a687975555b50b83487451ba1e1552fda41ddbb9) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Chip]: Remove `large` variant and `size` prop from component
+
+- [#722](https://github.com/launchdarkly/launchpad-ui/pull/722) [`e267c45a`](https://github.com/launchdarkly/launchpad-ui/commit/e267c45a6b3592e6193637f5b8ddc12a09c0eb75) Thanks [@jagarnica](https://github.com/jagarnica)! - [Chip] Update all Chip styles
+
+- [#719](https://github.com/launchdarkly/launchpad-ui/pull/719) [`3cf45ed4`](https://github.com/launchdarkly/launchpad-ui/commit/3cf45ed4df4c4472cb8dcf48ef1cd5e7916a35ad) Thanks [@chasedarkly](https://github.com/chasedarkly)! - Refactor theme targeting to support nested themes
+
+  To migrate:
+  Add `@import '@launchpad-ui/tokens/dist/themes.css';`. If you were previously importing `@import '@launchpad-ui/tokens/dist/dark.css';`, replace with the above, or remove.
+
+  If you are modifying CSS variables based on the theme, prefer to explicitly declare the value depending on the theme. Nothing will break if you don't do this, but the code will not support nested theming if you don't explicitly set values depending on theme.
+
+  **Instead of this:**
+
+  ```css
+  .selector {
+    color: #000;
+
+    [data-theme='dark'] & {
+      color: #fff;
+    }
+  }
+  ```
+
+  **Prefer this:**
+
+  ```css
+  :root,
+  [data-theme='default'] {
+    --my-component-color-text: #000;
+  }
+
+  [data-theme='dark'] {
+    --my-component-color-text: #fff;
+  }
+
+  .my-component {
+    color: var(--my-component-color-text);
+  }
+  ```
+
+### Patch Changes
+
+- Updated dependencies [[`3cf45ed4`](https://github.com/launchdarkly/launchpad-ui/commit/3cf45ed4df4c4472cb8dcf48ef1cd5e7916a35ad)]:
+  - @launchpad-ui/tokens@0.5.0
+
 ## 0.6.20
 
 ### Patch Changes
