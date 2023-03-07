@@ -65,7 +65,7 @@
 .Chip--normal {
   font-size: 1.4rem;
   line-height: 1.4;
-  padding: 0.3125rem 1rem;
+  padding: 0.3125rem 0.6rem;
   min-height: 2.8rem;
 }
 
@@ -79,7 +79,7 @@
 .Chip.Chip--small {
   font-size: 1.2rem;
   line-height: 1.33;
-  padding: 0.1rem 0.7rem;
+  padding: 0.1rem 0.4rem;
   min-height: 2rem;
 }
 
