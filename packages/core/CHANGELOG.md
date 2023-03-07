@@ -1,5 +1,20 @@
 # @launchpad-ui/core
 
+## 0.31.3
+
+### Patch Changes
+
+- [#728](https://github.com/launchdarkly/launchpad-ui/pull/728) [`7205f0ee`](https://github.com/launchdarkly/launchpad-ui/commit/7205f0ee17bed5fc7ad2920a9acd16b41e71f48b) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Chip]
+
+  - Deprecate `label` variant
+  - Remove `legacy` variant, design decided to reduce padding back to 24px total height, making legacy unnecessary.
+  - Deprecate `subtle` variants
+  - Update normal and small sizing
+
+- Updated dependencies [[`7205f0ee`](https://github.com/launchdarkly/launchpad-ui/commit/7205f0ee17bed5fc7ad2920a9acd16b41e71f48b)]:
+  - @launchpad-ui/chip@0.7.2
+  - @launchpad-ui/navigation@0.9.3
+
 ## 0.31.2
 
 ### Patch Changes
