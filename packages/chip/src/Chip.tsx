@@ -7,7 +7,7 @@ import styles from './styles/Chip.module.css';
 type ChipProps = HTMLAttributes<HTMLSpanElement> & {
   kind?: 'success' | 'warning' | 'info' | 'label' | 'new' | 'beta' | 'federal';
   subtle?: boolean;
-  size?: 'normal' | 'small' | 'medium';
+  size?: 'normal' | 'small' | 'legacy';
   'data-test-id'?: string;
 };
 
