@@ -1,5 +1,46 @@
 # @launchpad-ui/core
 
+## 0.31.4
+
+### Patch Changes
+
+- [#730](https://github.com/launchdarkly/launchpad-ui/pull/730) [`909a0fde`](https://github.com/launchdarkly/launchpad-ui/commit/909a0fdebf57634d5c100626cb432c35eac1c661) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Tokens] Add `lp-white-200` color
+  [Chip] Modify default bg colors
+
+- [`9214152b`](https://github.com/launchdarkly/launchpad-ui/commit/9214152b2e445c6503b6133c3686a1afb3ff5256) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Clipboard] Update style of copy button
+
+- Updated dependencies [[`909a0fde`](https://github.com/launchdarkly/launchpad-ui/commit/909a0fdebf57634d5c100626cb432c35eac1c661), [`9214152b`](https://github.com/launchdarkly/launchpad-ui/commit/9214152b2e445c6503b6133c3686a1afb3ff5256)]:
+  - @launchpad-ui/tokens@0.5.1
+  - @launchpad-ui/chip@0.7.3
+  - @launchpad-ui/clipboard@0.9.2
+  - @launchpad-ui/alert@0.7.1
+  - @launchpad-ui/avatar@0.4.35
+  - @launchpad-ui/banner@0.9.1
+  - @launchpad-ui/button@0.8.1
+  - @launchpad-ui/counter@0.3.22
+  - @launchpad-ui/drawer@0.3.1
+  - @launchpad-ui/dropdown@0.6.32
+  - @launchpad-ui/filter@0.5.2
+  - @launchpad-ui/form@0.8.1
+  - @launchpad-ui/icons@0.7.3
+  - @launchpad-ui/markdown@0.4.4
+  - @launchpad-ui/menu@0.7.8
+  - @launchpad-ui/modal@0.14.1
+  - @launchpad-ui/navigation@0.9.4
+  - @launchpad-ui/pagination@0.3.42
+  - @launchpad-ui/popover@0.9.1
+  - @launchpad-ui/progress@0.5.20
+  - @launchpad-ui/progress-bubbles@0.6.1
+  - @launchpad-ui/select@0.2.2
+  - @launchpad-ui/slider@0.4.1
+  - @launchpad-ui/snackbar@0.3.36
+  - @launchpad-ui/split-button@0.7.2
+  - @launchpad-ui/tab-list@0.4.22
+  - @launchpad-ui/table@0.5.1
+  - @launchpad-ui/toast@0.2.35
+  - @launchpad-ui/toggle@0.5.1
+  - @launchpad-ui/tooltip@0.7.2
+
 ## 0.31.3
 
 ### Patch Changes

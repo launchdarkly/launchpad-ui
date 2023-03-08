@@ -1,5 +1,16 @@
 # @launchpad-ui/clipboard
 
+## 0.9.2
+
+### Patch Changes
+
+- [`9214152b`](https://github.com/launchdarkly/launchpad-ui/commit/9214152b2e445c6503b6133c3686a1afb3ff5256) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Clipboard] Update style of copy button
+
+- Updated dependencies [[`909a0fde`](https://github.com/launchdarkly/launchpad-ui/commit/909a0fdebf57634d5c100626cb432c35eac1c661)]:
+  - @launchpad-ui/tokens@0.5.1
+  - @launchpad-ui/icons@0.7.3
+  - @launchpad-ui/tooltip@0.7.2
+
 ## 0.9.1
 
 ### Patch Changes
