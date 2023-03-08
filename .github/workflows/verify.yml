@@ -2,6 +2,7 @@ name: Verify changes
 
 on:
   pull_request:
+    - '!changeset-release/main'
   push:
     branches:
       - main
