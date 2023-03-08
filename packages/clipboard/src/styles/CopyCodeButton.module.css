@@ -21,9 +21,10 @@
 }
 
 .CopyCodeButton:hover {
-  border-color: var(--lp-color-border-interactive-secondary-hover);
   box-shadow: 0 2px 8px -1px hsl(0 0% 0% / 0.04), 0 2px 4px 0 hsl(0 0% 0% / 0.08),
     0 1px 2px 0 hsl(0 0% 0% / 0.14);
+  background-color: var(--lp-color-bg-interactive-secondary-hover);
+  color: var(--lp-color-text-ui-primary);
 }
 
 .CopyCodeButton:focus {
@@ -31,16 +32,14 @@
   box-shadow: 0 0 0 2px var(--lp-color-bg-ui-primary),
     0 0 0 4px var(--lp-color-shadow-interactive-focus);
   background-color: var(--lp-color-bg-interactive-secondary-focus);
-  border-color: var(--lp-color-border-interactive-secondary-focus);
 }
 
 .CopyCodeButton:focus-visible {
   outline-color: var(--lp-color-bg-interactive-secondary-hover);
   background-color: var(--lp-color-bg-interactive-secondary-focus);
-  border-color: var(--lp-color-border-interactive-secondary-focus);
 }
 
 .CopyCodeButton:active {
   background-color: var(--lp-color-bg-interactive-secondary-active);
-  border-color: var(--lp-color-border-interactive-secondary-active);
+  color: var(--lp-color-text-ui-primary);
 }

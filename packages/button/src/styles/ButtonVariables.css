@@ -57,9 +57,6 @@
   --Button-color-background-default-focus: var(--lp-color-bg-interactive-secondary-focus);
   --Button-color-background-default-active: var(--lp-color-bg-interactive-secondary-active);
   --Button-color-border-default: var(--lp-color-border-interactive-secondary);
-  --Button-color-border-default-hover: var(--lp-color-border-interactive-secondary-hover);
-  --Button-color-border-default-focus: var(--lp-color-border-interactive-secondary-focus);
-  --Button-color-border-default-active: var(--lp-color-border-interactive-secondary-active);
 
   /* named for hover state for default, primary, destructive */
   --Button-box-shadow-hover: 0 2px 8px -1px hsl(0 0% 0% / 0.04), 0 2px 4px 0 hsl(0 0% 0% / 0.08),
