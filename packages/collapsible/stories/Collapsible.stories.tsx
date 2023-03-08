@@ -36,10 +36,10 @@ export const Example: Story = {
 
 export const WithCustomTrigger: Story = {
   args: {
-    label: 'More details',
-    trigger: ({ toggleOpen, label, isOpen, triggerProps }) => (
+    label: (isOpen) => `${isOpen ? 'Less' : 'More'} details`,
+    trigger: ({ toggleOpen, label, triggerProps }) => (
       <button onClick={toggleOpen} {...triggerProps}>
-        {label} (Click to {isOpen ? 'close' : 'open'})
+        {label}
       </button>
     ),
     children: ExampleChildren,

@@ -1,9 +1,9 @@
-import type { CollapsibleProps } from './Collapsible';
 import type { ButtonProps } from '@launchpad-ui/button';
 
 import { Button } from '@launchpad-ui/button';
 
-type CollapsibleTriggerProps = Pick<CollapsibleProps, 'label'> & {
+type CollapsibleTriggerProps = {
+  label: string;
   isOpen: boolean;
   toggleOpen: () => void;
   icon: ButtonProps['icon'];
@@ -24,7 +24,6 @@ const CollapsibleTrigger = (props: CollapsibleTriggerProps) => {
       renderIconFirst
       kind="default"
       onClick={toggleOpen}
-      size="small"
       data-test-id="collapsible-trigger"
       {...triggerProps}
     >

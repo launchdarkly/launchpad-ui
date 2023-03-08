@@ -6,5 +6,5 @@
 ---
 
 [Collapsible] Added package
-[Alert]: Use new `Collapsible` component for `AlertCollapsible`
+[Alert]: Deprecate `CollapsibleAlert` in favor of composition
 [Button]: Cleaned up unused styles

@@ -9,7 +9,7 @@ import { CollapsibleTrigger } from './CollapsibleTrigger';
 import styles from './styles/Collapsible.module.css';
 
 type CollapsibleProps = Omit<HTMLAttributes<HTMLDivElement>, 'className'> & {
-  label: string;
+  label: string | ((isOpen: boolean) => string);
   trigger?: (props: CollapsibleTriggerProps) => ReactNode;
   onToggle?: (isOpen: boolean) => void;
   defaultOpen?: boolean;
@@ -18,16 +18,16 @@ type CollapsibleProps = Omit<HTMLAttributes<HTMLDivElement>, 'className'> & {
   'data-test-id'?: string;
 };
 
-const Collapsible = ({
-  label,
-  children,
-  defaultOpen = false,
-  onToggle,
-  trigger = CollapsibleTrigger,
-  keepContentInDomWhenClosed = false,
-  'data-test-id': testId = 'collapsible',
-  ...rest
-}: CollapsibleProps) => {
+const Collapsible = (props: CollapsibleProps) => {
+  const {
+    children,
+    defaultOpen = false,
+    onToggle,
+    trigger = CollapsibleTrigger,
+    keepContentInDomWhenClosed = false,
+    'data-test-id': testId = 'collapsible',
+    ...rest
+  } = props;
   const [isOpen, setIsOpen] = useState(defaultOpen);
   const { current: triggerId } = useRef(`collapsible-trigger-${useId()}`);
   const { current: panelId } = useRef(`collapsible-panel-${useId()}`);
@@ -39,6 +39,8 @@ const Collapsible = ({
 
     setIsOpen(value);
   };
+
+  const label = typeof props.label === 'string' ? props.label : props.label(isOpen);
 
   const icon = isOpen ? <ExpandLess /> : <ExpandMore />;
 

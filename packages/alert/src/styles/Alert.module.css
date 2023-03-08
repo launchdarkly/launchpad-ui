@@ -1,10 +1,3 @@
-:root {
-  --CollapsibleAlert-button-color-outline-focus: var(--lp-color-bg-ui-secondary);
-  --CollapsibleAlert-button-color-text: var(--lp-color-text-ui-secondary);
-  --CollapsibleAlert-button-color-text-active: var(--lp-color-text-ui-secondary);
-  --CollapsibleAlert-icon-color: var(--lp-color-text-ui-secondary);
-}
-
 .Alert {
   position: relative;
   display: flex;
@@ -158,16 +151,4 @@
 .Alert ul {
   list-style-position: outside;
   margin: 0 0 0.5em;
-}
-
-.CollapsibleAlert {
-  margin-top: 0.8rem;
-}
-
-.CollapsibleAlert .Alert-content {
-  width: 100%;
-}
-
-.CollapsibleAlert-triggerContainer {
-  transform: translateX(-0.4rem);
 }

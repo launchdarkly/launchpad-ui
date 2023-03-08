@@ -266,7 +266,6 @@ importers:
   packages/alert:
     specifiers:
       '@launchpad-ui/button': workspace:~
-      '@launchpad-ui/collapsible': workspace:~
       '@launchpad-ui/icons': workspace:~
       '@launchpad-ui/tokens': workspace:~
       classix: 2.1.17
@@ -274,7 +273,6 @@ importers:
       react-dom: 18.2.0
     dependencies:
       '@launchpad-ui/button': link:../button
-      '@launchpad-ui/collapsible': link:../collapsible
       '@launchpad-ui/icons': link:../icons
       '@launchpad-ui/tokens': link:../tokens
       classix: 2.1.17

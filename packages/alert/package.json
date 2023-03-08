@@ -33,7 +33,6 @@
   },
   "dependencies": {
     "@launchpad-ui/button": "workspace:~",
-    "@launchpad-ui/collapsible": "workspace:~",
     "@launchpad-ui/icons": "workspace:~",
     "@launchpad-ui/tokens": "workspace:~",
     "classix": "2.1.17"
