@@ -80,7 +80,13 @@ export default {
     icon: {
       table: {
         category: 'Presentation',
-        subcategory: 'Icon Button',
+        subcategory: 'Icon Right Button',
+      },
+    },
+    iconLeft: {
+      table: {
+        category: 'Presentation',
+        subcategory: 'Icon Left Button',
       },
     },
     isLoading: {
@@ -92,12 +98,6 @@ export default {
     kind: {
       table: {
         category: 'Presentation',
-      },
-    },
-    renderIconFirst: {
-      table: {
-        category: 'Presentation',
-        subcategory: 'Icon Button',
       },
     },
     size: {
@@ -211,6 +211,14 @@ export const WithIconDestructive: Story = {
     children: 'With icon',
     icon: <Add />,
     kind: 'destructive',
+  },
+};
+
+export const WithIconFirst: Story = {
+  args: {
+    children: 'With icon left',
+    icon: <Add />,
+    renderIconFirst: true,
   },
 };
 

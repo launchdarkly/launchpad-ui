@@ -347,23 +347,6 @@
   color: var(--Button-color-link-disabled-hover);
 }
 
-/* ------- CLEAR ------- */
-
-/* Set the color for the clear button in search bars */
-
-.Button--clear .Button-icon {
-  fill: var(--Button-icon-clear-color-fill);
-  color: var(--Button-icon-clear-color-text);
-}
-
-.Button--clear:focus-visible {
-  outline: 0;
-}
-
-.Button--iconFirst {
-  vertical-align: top;
-}
-
 /* ------- DISABLED ------- */
 
 .Button[disabled] {

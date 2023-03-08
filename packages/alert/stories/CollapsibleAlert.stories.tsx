@@ -44,31 +44,13 @@ export const Collapsible: Story = {
     children: (
       <>
         <div>
-          <table className="Table Table--compact">
-            <thead className="Table-header">
-              <tr className="Table-row">
-                <td className="Table-cell Table-cell--left">
-                  <i>Changes to targeting may impact the variations served by these flags</i>
-                </td>
-              </tr>
-            </thead>
-            <tbody className="Table-body">
-              <tr className="Table-row">
-                <td className="Table-cell Table-cell--left">
-                  <a href="/default/production/features/enable-ui-datadog-application-logs-collection">
-                    Enable UI Datadog Application Logs Collection
-                  </a>
-                </td>
-              </tr>
-              <tr className="Table-row">
-                <td className="Table-cell Table-cell--left">
-                  <a href="/default/production/features/enable-web-app-data-dog-rum-application-metrics">
-                    Enable Web App Data Dog Rum Application Metrics
-                  </a>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+          <p>
+            <strong>Changes to targeting may impact the variations served by these flags:</strong>
+          </p>
+          <ul>
+            <li>Enable UI Datadog Application Logs Collection</li>
+            <li>Enable Web App Data Dog Rum Application Metrics</li>
+          </ul>
         </div>
       </>
     ),

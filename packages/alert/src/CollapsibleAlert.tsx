@@ -1,12 +1,12 @@
 import type { AlertProps } from './Alert';
 import type { HTMLAttributes } from 'react';
 
-import { ExpandMore } from '@launchpad-ui/icons';
+import { Button } from '@launchpad-ui/button';
+import { Collapsible } from '@launchpad-ui/collapsible';
 import { cx } from 'classix';
-import { useRef, useState } from 'react';
 
 import { Alert } from './Alert';
-import styles from './styles/CollapsibleAlert.module.css';
+import styles from './styles/Alert.module.css';
 
 type CollapsibleAlertProps = HTMLAttributes<HTMLElement> & {
   /**
@@ -30,42 +30,25 @@ const CollapsibleAlert = ({
   'data-test-id': testId = 'collapsible-alert',
   ...rest
 }: CollapsibleAlertProps) => {
-  const [alertCollapsed, setAlertCollapsed] = useState(true);
-  const buttonRef = useRef(null);
-
   const classes = cx(styles['CollapsibleAlert--container'], className);
-
-  const toggleOpen = () => {
-    setAlertCollapsed(!alertCollapsed);
-  };
 
   return (
     <div className={classes} data-test-id={testId} {...rest}>
       <Alert kind={kind} size="medium" className={styles.CollapsibleAlert}>
         <div>{message}</div>
-        <button
-          aria-expanded={!alertCollapsed}
-          aria-haspopup
-          ref={buttonRef}
-          onClick={toggleOpen}
-          data-test-id={`${testId}-button`}
-          className={styles['CollapsibleAlert-button']}
-        >
-          {alertCollapsed ? (
-            <>
-              <span>Show more</span>
-              <ExpandMore className={styles['CollapsibleAlert--icon']} size="medium" />
-            </>
-          ) : (
-            <>
-              <span>Show less</span>
-              <ExpandMore className={styles['CollapsibleAlert--icon']} size="medium" />
-            </>
+
+        <Collapsible
+          trigger={(props) => (
+            <div className={styles['CollapsibleAlert-triggerContainer']}>
+              <Button kind="minimal" size="tiny" onClick={props.toggleOpen} icon={props.icon}>
+                {props.isOpen ? 'Show less' : 'Show more'}
+              </Button>
+            </div>
           )}
-        </button>
-        <div className={styles['CollapsibleAlert--contentContainer']}>
-          {!alertCollapsed && <>{children}</>}
-        </div>
+          label=""
+        >
+          {children}
+        </Collapsible>
       </Alert>
     </div>
   );
