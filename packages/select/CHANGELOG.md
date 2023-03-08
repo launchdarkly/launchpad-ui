@@ -1,5 +1,17 @@
 # @launchpad-ui/select
 
+## 0.2.3
+
+### Patch Changes
+
+- Updated dependencies [[`152aef91`](https://github.com/launchdarkly/launchpad-ui/commit/152aef9126c5291586b09b703795030f52a01bb1)]:
+  - @launchpad-ui/button@0.8.2
+  - @launchpad-ui/tokens@0.5.2
+  - @launchpad-ui/modal@0.14.2
+  - @launchpad-ui/icons@0.7.4
+  - @launchpad-ui/popover@0.9.2
+  - @launchpad-ui/tooltip@0.7.3
+
 ## 0.2.2
 
 ### Patch Changes

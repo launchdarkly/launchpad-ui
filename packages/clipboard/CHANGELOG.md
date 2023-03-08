@@ -1,5 +1,18 @@
 # @launchpad-ui/clipboard
 
+## 0.9.3
+
+### Patch Changes
+
+- [`152aef91`](https://github.com/launchdarkly/launchpad-ui/commit/152aef9126c5291586b09b703795030f52a01bb1) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Clipboard]: Update default button styles to match Button styling
+  [Button]: Remove unused CSS variables
+  [Tokens]: Add `:root` to default theme variables
+  [Chip]: Update darkmode default chip color
+- Updated dependencies [[`152aef91`](https://github.com/launchdarkly/launchpad-ui/commit/152aef9126c5291586b09b703795030f52a01bb1)]:
+  - @launchpad-ui/tokens@0.5.2
+  - @launchpad-ui/icons@0.7.4
+  - @launchpad-ui/tooltip@0.7.3
+
 ## 0.9.2
 
 ### Patch Changes

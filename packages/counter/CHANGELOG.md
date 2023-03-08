@@ -1,5 +1,12 @@
 # @launchpad-ui/counter
 
+## 0.3.23
+
+### Patch Changes
+
+- Updated dependencies [[`152aef91`](https://github.com/launchdarkly/launchpad-ui/commit/152aef9126c5291586b09b703795030f52a01bb1)]:
+  - @launchpad-ui/tokens@0.5.2
+
 ## 0.3.22
 
 ### Patch Changes
