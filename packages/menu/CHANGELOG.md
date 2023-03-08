@@ -1,5 +1,16 @@
 # @launchpad-ui/menu
 
+## 0.7.9
+
+### Patch Changes
+
+- Updated dependencies [[`152aef91`](https://github.com/launchdarkly/launchpad-ui/commit/152aef9126c5291586b09b703795030f52a01bb1)]:
+  - @launchpad-ui/tokens@0.5.2
+  - @launchpad-ui/form@0.8.2
+  - @launchpad-ui/icons@0.7.4
+  - @launchpad-ui/popover@0.9.2
+  - @launchpad-ui/tooltip@0.7.3
+
 ## 0.7.8
 
 ### Patch Changes
