@@ -1,0 +1,48 @@
+{
+  "name": "@launchpad-ui/collapsible",
+  "version": "0.0.1",
+  "status": "alpha",
+  "publishConfig": {
+    "access": "public"
+  },
+  "description": "A progressive disclosure component that allows the user to to click a trigger to show more content",
+  "files": [
+    "dist"
+  ],
+  "main": "dist/index.js",
+  "module": "dist/index.es.js",
+  "types": "dist/index.d.ts",
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.es.js",
+      "require": "./dist/index.js"
+    },
+    "./package.json": "./package.json",
+    "./style.css": "./dist/style.css"
+  },
+  "source": "src/index.ts",
+  "scripts": {
+    "build": "vite build -c ../../vite.config.ts && tsc --project tsconfig.build.json",
+    "clean": "rm -rf dist",
+    "lint": "eslint '**/*.{ts,tsx,js}' && stylelint '**/*.css' --ignore-path ../../.stylelintignore",
+    "test": "vitest run --coverage"
+  },
+  "dependencies": {
+    "@launchpad-ui/button": "workspace:~",
+    "@launchpad-ui/icons": "workspace:~",
+    "@launchpad-ui/tokens": "workspace:~",
+    "classix": "2.1.17"
+  },
+  "peerDependencies": {
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
+  },
+  "devDependencies": {
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
+  }
+}
