@@ -80,13 +80,13 @@ export default {
     icon: {
       table: {
         category: 'Presentation',
-        subcategory: 'Icon Right Button',
+        subcategory: 'Icon Button',
       },
     },
-    iconLeft: {
+    renderIconFirst: {
+      control: 'boolean',
       table: {
         category: 'Presentation',
-        subcategory: 'Icon Left Button',
       },
     },
     isLoading: {
