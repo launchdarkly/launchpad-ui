@@ -15,7 +15,7 @@ import './styles/Button.css';
 
 type IconButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
   kind?: 'default' | 'primary' | 'destructive' | 'minimal' | 'close';
-  icon: ReactElement<IconProps>;
+  icon: Omit<ReactElement<IconProps>, 'size'>;
   size?: 'small' | 'normal';
   'aria-label': string;
   asChild?: boolean;
@@ -50,9 +50,15 @@ const IconButtonComponent = forwardRef<HTMLButtonElement, IconButtonProps>((prop
     className
   );
 
+  const iconSize = () => {
+    if (props.size === 'small') return 'small';
+
+    return 'medium';
+  };
+
   const clonedIcon = cloneElement(icon, {
     key: 'icon',
-    size: icon.props.size || 'medium',
+    size: iconSize(),
     'aria-hidden': true,
     className: cx(icon.props.className, 'Button-icon'),
   });
