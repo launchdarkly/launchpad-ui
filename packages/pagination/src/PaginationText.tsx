@@ -1,5 +1,5 @@
 import { Progress } from '@launchpad-ui/progress';
-import { VisuallyHidden } from '@react-aria/visually-hidden';
+import { VisuallyHidden } from 'react-aria';
 
 import styles from './styles/Pagination.module.css';
 

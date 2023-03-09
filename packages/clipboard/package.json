@@ -35,9 +35,9 @@
     "@launchpad-ui/icons": "workspace:~",
     "@launchpad-ui/tokens": "workspace:~",
     "@launchpad-ui/tooltip": "workspace:~",
-    "@react-aria/live-announcer": "3.1.1",
     "@radix-ui/react-slot": "^1.0.0",
-    "classix": "2.1.17"
+    "classix": "2.1.17",
+    "react-aria": "3.23.1"
   },
   "peerDependencies": {
     "react": "18.2.0",

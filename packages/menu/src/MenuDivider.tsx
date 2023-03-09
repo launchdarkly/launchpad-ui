@@ -1,7 +1,7 @@
-import type { SeparatorProps } from '@react-aria/separator';
+import type { SeparatorProps } from 'react-aria';
 import type { RefObject } from 'react';
 
-import { useSeparator } from '@react-aria/separator';
+import { useSeparator } from 'react-aria';
 
 import './styles/Menu.css';
 

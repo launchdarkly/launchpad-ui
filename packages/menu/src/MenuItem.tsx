@@ -4,7 +4,7 @@ import type { ComponentPropsWithRef, ElementType, PropsWithRef, ReactElement } f
 
 import { Tooltip } from '@launchpad-ui/tooltip';
 import { Slot } from '@radix-ui/react-slot';
-import { FocusRing } from '@react-aria/focus';
+import { FocusRing } from 'react-aria';
 import { cx } from 'classix';
 import { Link } from 'react-router-dom';
 

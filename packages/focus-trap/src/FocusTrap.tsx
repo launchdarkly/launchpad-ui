@@ -1,6 +1,6 @@
-import type { FocusScopeProps } from '@react-aria/focus';
+import type { FocusScopeProps } from 'react-aria';
 
-import { FocusScope } from '@react-aria/focus';
+import { FocusScope } from 'react-aria';
 import { createContext, useContext } from 'react';
 
 type FocusTrapProps = Omit<FocusScopeProps, 'contain'>;
