@@ -3,4 +3,4 @@
 '@launchpad-ui/core': patch
 ---
 
-Remove fill=none on approval icons svg
+[Icons]: Remove `fill="none"` on `approval-applied` and `approval-denied` SVGs
