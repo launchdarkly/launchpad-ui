@@ -346,6 +346,7 @@ importers:
       '@launchpad-ui/tokens': workspace:~
       '@launchpad-ui/tooltip': workspace:~
       '@radix-ui/react-slot': ^1.0.0
+      '@react-aria/live-announcer': 3.2.0
       classix: 2.1.17
       react: 18.2.0
       react-aria: 3.23.1
@@ -355,6 +356,7 @@ importers:
       '@launchpad-ui/tokens': link:../tokens
       '@launchpad-ui/tooltip': link:../tooltip
       '@radix-ui/react-slot': 1.0.1_react@18.2.0
+      '@react-aria/live-announcer': 3.2.0
       classix: 2.1.17
       react-aria: 3.23.1_biqbaboplfbrettd7655fr4n2y
     devDependencies:
@@ -666,6 +668,7 @@ importers:
       '@launchpad-ui/popover': workspace:~
       '@launchpad-ui/tokens': workspace:~
       '@launchpad-ui/tooltip': workspace:~
+      '@react-aria/utils': 3.15.0
       '@react-types/shared': 3.16.0
       classix: 2.1.17
       react: 18.2.0
@@ -681,6 +684,7 @@ importers:
       '@launchpad-ui/popover': link:../popover
       '@launchpad-ui/tokens': link:../tokens
       '@launchpad-ui/tooltip': link:../tooltip
+      '@react-aria/utils': 3.15.0_react@18.2.0
       classix: 2.1.17
       react-aria: 3.23.1_biqbaboplfbrettd7655fr4n2y
       react-router-dom: 6.7.0_biqbaboplfbrettd7655fr4n2y
@@ -789,6 +793,7 @@ importers:
       '@launchpad-ui/popover': workspace:~
       '@launchpad-ui/tokens': workspace:~
       '@launchpad-ui/tooltip': workspace:~
+      '@react-stately/list': 3.7.0
       '@react-types/button': 3.7.0
       '@react-types/combobox': 3.5.5
       '@react-types/overlays': 3.6.5
@@ -806,6 +811,7 @@ importers:
       '@launchpad-ui/popover': link:../popover
       '@launchpad-ui/tokens': link:../tokens
       '@launchpad-ui/tooltip': link:../tooltip
+      '@react-stately/list': 3.7.0_react@18.2.0
       classix: 2.1.17
       react-aria: 3.23.1_biqbaboplfbrettd7655fr4n2y
       react-stately: 3.21.0_react@18.2.0
