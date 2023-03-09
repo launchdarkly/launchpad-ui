@@ -1,5 +1,11 @@
 # @launchpad-ui/tokens
 
+## 0.5.3
+
+### Patch Changes
+
+- [#735](https://github.com/launchdarkly/launchpad-ui/pull/735) [`d5bd5d0d`](https://github.com/launchdarkly/launchpad-ui/commit/d5bd5d0de1cedc2d341beced3ac8239167a85108) Thanks [@chasedarkly](https://github.com/chasedarkly)! - Remove :root from token variables
+
 ## 0.5.2
 
 ### Patch Changes
