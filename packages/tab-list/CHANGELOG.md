@@ -1,5 +1,12 @@
 # @launchpad-ui/tab-list
 
+## 0.4.24
+
+### Patch Changes
+
+- Updated dependencies [[`d5bd5d0d`](https://github.com/launchdarkly/launchpad-ui/commit/d5bd5d0de1cedc2d341beced3ac8239167a85108)]:
+  - @launchpad-ui/tokens@0.5.3
+
 ## 0.4.23
 
 ### Patch Changes
