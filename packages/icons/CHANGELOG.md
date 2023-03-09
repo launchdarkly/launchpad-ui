@@ -1,5 +1,14 @@
 # @launchpad-ui/icons
 
+## 0.7.5
+
+### Patch Changes
+
+- [#737](https://github.com/launchdarkly/launchpad-ui/pull/737) [`304c87bc`](https://github.com/launchdarkly/launchpad-ui/commit/304c87bcd9050fd64c1ce997bb96c6b6e3aa9701) Thanks [@matthewferry](https://github.com/matthewferry)! - Adds approval icons for `approval-applied` and `approval-declined`
+
+- Updated dependencies [[`d5bd5d0d`](https://github.com/launchdarkly/launchpad-ui/commit/d5bd5d0de1cedc2d341beced3ac8239167a85108)]:
+  - @launchpad-ui/tokens@0.5.3
+
 ## 0.7.4
 
 ### Patch Changes
