@@ -4,14 +4,20 @@ import type { SelectAria, SharedUseSelectProps } from '../types';
 import type { BaseEvent } from '@react-types/shared';
 import type { FocusEvent, KeyboardEvent, RefObject } from 'react';
 
-import { setInteractionModality } from 'react-aria';
-import { useField } from 'react-aria';
-import { listData } from 'react-aria';
-import { useMenuTrigger } from 'react-aria';
-import { ListKeyboardDelegate, useTypeSelect } from 'react-aria';
-import { useTextField } from 'react-aria';
-import { chain, filterDOMProps, mergeProps, useId, useLabels } from 'react-aria';
+import { setInteractionModality } from '@react-aria/interactions';
+import { listData } from '@react-aria/listbox';
+import { useTypeSelect } from '@react-aria/selection';
+import { filterDOMProps, useLabels } from '@react-aria/utils';
 import { useMemo } from 'react';
+import {
+  useField,
+  useMenuTrigger,
+  ListKeyboardDelegate,
+  useTextField,
+  chain,
+  mergeProps,
+  useId,
+} from 'react-aria';
 
 type UseSingleSelectRefs = {
   triggerRef: RefObject<HTMLElement>;

@@ -3,18 +3,17 @@ import type { MultiSelectState } from './MultiSelect';
 import type { MultiSelectListState } from './MultiSelect/useMultiSelectListState';
 import type { SelectItemProps } from './SelectItem';
 import type { SingleSelectState } from './SingleSelect';
-import type { AriaListBoxOptions } from 'react-aria';
-import type { SingleSelectListState } from 'react-stately';
 import type { Node } from '@react-types/shared';
 import type { ElementType, InputHTMLAttributes, RefObject } from 'react';
+import type { AriaListBoxOptions } from 'react-aria';
+import type { SingleSelectListState } from 'react-stately';
 
 import { Search } from '@launchpad-ui/icons';
-import { getItemId, useListBox, useListBoxSection, useOption } from 'react-aria';
-import { useTextField } from 'react-aria';
-import { useObjectRef } from 'react-aria';
-import { VisuallyHidden } from 'react-aria';
+import { getItemId } from '@react-aria/listbox';
+import { useObjectRef } from '@react-aria/utils';
 import cx from 'classix';
 import { useRef } from 'react';
+import { useListBox, useListBoxSection, useTextField, VisuallyHidden, useOption } from 'react-aria';
 
 import styles from './styles/Select.module.css';
 
