@@ -793,7 +793,13 @@ importers:
       '@launchpad-ui/popover': workspace:~
       '@launchpad-ui/tokens': workspace:~
       '@launchpad-ui/tooltip': workspace:~
+      '@react-aria/interactions': 3.14.0
+      '@react-aria/listbox': 3.8.1
+      '@react-aria/selection': 3.13.1
+      '@react-aria/utils': 3.15.0
+      '@react-stately/collections': 3.6.0
       '@react-stately/list': 3.7.0
+      '@react-stately/utils': 3.6.0
       '@react-types/button': 3.7.0
       '@react-types/combobox': 3.5.5
       '@react-types/overlays': 3.6.5
@@ -811,7 +817,13 @@ importers:
       '@launchpad-ui/popover': link:../popover
       '@launchpad-ui/tokens': link:../tokens
       '@launchpad-ui/tooltip': link:../tooltip
+      '@react-aria/interactions': 3.14.0_react@18.2.0
+      '@react-aria/listbox': 3.8.1_react@18.2.0
+      '@react-aria/selection': 3.13.1_react@18.2.0
+      '@react-aria/utils': 3.15.0_react@18.2.0
+      '@react-stately/collections': 3.6.0_react@18.2.0
       '@react-stately/list': 3.7.0_react@18.2.0
+      '@react-stately/utils': 3.6.0_react@18.2.0
       classix: 2.1.17
       react-aria: 3.23.1_biqbaboplfbrettd7655fr4n2y
       react-stately: 3.21.0_react@18.2.0
