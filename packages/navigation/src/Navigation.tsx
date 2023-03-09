@@ -1,7 +1,7 @@
 import type { NavProps } from './Nav';
 import type { CollectionBase } from '@react-types/shared';
 
-import { useResizeObserver, useValueEffect } from '@react-aria/utils';
+import { useResizeObserver, useValueEffect } from 'react-aria';
 import { cx } from 'classix';
 import { useCallback, useLayoutEffect, useRef } from 'react';
 

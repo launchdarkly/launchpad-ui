@@ -1,7 +1,7 @@
 import type { StoryObj } from '@storybook/react';
 
 import { Button } from '@launchpad-ui/button';
-import { Item } from '@react-stately/collections';
+import { Item } from 'react-stately';
 
 import { TabList } from '../src';
 

@@ -1,8 +1,8 @@
 import type { MenuItemProps } from './MenuItem';
-import type { FocusManager } from '@react-aria/focus';
+import type { FocusManager } from 'react-aria';
 import type { KeyboardEvent, ReactElement, ReactNode } from 'react';
 
-import { useFocusManager } from '@react-aria/focus';
+import { useFocusManager } from 'react-aria';
 import { cx } from 'classix';
 import {
   Children,

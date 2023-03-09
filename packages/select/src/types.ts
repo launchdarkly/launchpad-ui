@@ -1,5 +1,5 @@
-import type { AriaListBoxOptions } from '@react-aria/listbox';
-import type { MenuTriggerState } from '@react-stately/menu';
+import type { AriaListBoxOptions } from 'react-aria';
+import type { MenuTriggerState } from 'react-stately';
 import type { AriaButtonProps } from '@react-types/button';
 import type { OverlayTriggerProps } from '@react-types/overlays';
 import type { AriaSelectProps } from '@react-types/select';

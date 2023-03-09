@@ -32,20 +32,18 @@
     "test": "vitest run --coverage"
   },
   "dependencies": {
-    "@react-aria/tabs": "3.3.0",
-    "@react-stately/tabs": "3.2.0",
-    "@react-types/shared": "3.16.0",
-    "@react-types/tabs": "3.1.0",
     "@launchpad-ui/tokens": "workspace:~",
-    "classix": "2.1.17"
+    "classix": "2.1.17",
+    "react-aria": "3.23.1",
+    "react-stately": "3.21.0"
   },
   "peerDependencies": {
-    "@react-stately/collections": "3.5.0",
     "react": "18.2.0",
     "react-dom": "18.2.0"
   },
   "devDependencies": {
-    "@react-stately/collections": "3.5.0",
+    "@react-types/shared": "3.16.0",
+    "@react-types/tabs": "3.1.0",
     "react": "18.2.0",
     "react-dom": "18.2.0"
   }

@@ -3,7 +3,7 @@ import type { Variants } from 'framer-motion';
 import type { MouseEvent } from 'react';
 
 import { FocusTrap } from '@launchpad-ui/focus-trap';
-import { usePreventScroll } from '@react-aria/overlays';
+import { usePreventScroll } from 'react-aria';
 import { cx } from 'classix';
 import { LazyMotion, m } from 'framer-motion';
 import { useEffect, useRef } from 'react';

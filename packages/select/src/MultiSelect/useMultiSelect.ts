@@ -4,13 +4,13 @@ import type { SelectAria, SharedUseSelectProps } from '../types';
 import type { BaseEvent } from '@react-types/shared';
 import type { FocusEvent, KeyboardEvent, RefObject } from 'react';
 
-import { setInteractionModality } from '@react-aria/interactions';
-import { useField } from '@react-aria/label';
-import { listData } from '@react-aria/listbox';
-import { useMenuTrigger } from '@react-aria/menu';
-import { ListKeyboardDelegate, useTypeSelect } from '@react-aria/selection';
-import { useTextField } from '@react-aria/textfield';
-import { chain, filterDOMProps, mergeProps, useId, useLabels } from '@react-aria/utils';
+import { setInteractionModality } from 'react-aria';
+import { useField } from 'react-aria';
+import { listData } from 'react-aria';
+import { useMenuTrigger } from 'react-aria';
+import { ListKeyboardDelegate, useTypeSelect } from 'react-aria';
+import { useTextField } from 'react-aria';
+import { chain, filterDOMProps, mergeProps, useId, useLabels } from 'react-aria';
 import { useMemo } from 'react';
 
 type UseMultiSelectRefs = {

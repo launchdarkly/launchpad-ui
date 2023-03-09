@@ -1,4 +1,4 @@
-import type { PartialNode } from '@react-stately/collections';
+import type { PartialNode } from 'react-stately';
 import type { SectionProps } from '@react-types/shared';
 
 import { Children } from 'react';

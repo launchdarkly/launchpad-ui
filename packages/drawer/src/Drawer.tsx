@@ -6,7 +6,7 @@ import { FocusTrap } from '@launchpad-ui/focus-trap';
 import { Close } from '@launchpad-ui/icons';
 import { Portal } from '@launchpad-ui/portal';
 import { Progress } from '@launchpad-ui/progress';
-import { usePreventScroll } from '@react-aria/overlays';
+import { usePreventScroll } from 'react-aria';
 import { cx } from 'classix';
 import { LazyMotion, m } from 'framer-motion';
 import { Suspense, useEffect, useRef } from 'react';

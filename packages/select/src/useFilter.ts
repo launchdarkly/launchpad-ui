@@ -1,8 +1,8 @@
 import type { FilterFn, SharedSelectProps } from './types';
-import type { ListState } from '@react-stately/list';
+import type { ListState } from 'react-stately';
 import type { Collection, Node } from '@react-types/shared';
 
-import { ListCollection } from '@react-stately/list';
+import { ListCollection } from 'react-stately';
 import { useCallback, useMemo } from 'react';
 /* c8 ignore start */
 const useFilteredCollection = <T extends object>(

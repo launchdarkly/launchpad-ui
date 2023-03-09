@@ -1,11 +1,11 @@
 import type { SingleSelectProps } from './SingleSelect';
 import type { SharedSelectState } from '../types';
-import type { SingleSelectListState } from '@react-stately/list';
+import type { SingleSelectListState } from 'react-stately';
 import type { Key } from 'react';
 
-import { useSingleSelectListState } from '@react-stately/list';
-import { useMenuTriggerState } from '@react-stately/menu';
-import { useControlledState } from '@react-stately/utils';
+import { useSingleSelectListState } from 'react-stately';
+import { useMenuTriggerState } from 'react-stately';
+import { useControlledState } from 'react-stately';
 import { useState } from 'react';
 
 import { useFilteredCollection } from '../useFilter';

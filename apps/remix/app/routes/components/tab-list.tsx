@@ -1,5 +1,5 @@
 import { TabList } from '@launchpad-ui/core';
-import { Item } from '@react-stately/collections';
+import { Item } from 'react-stately';
 
 export default function Index() {
   return (

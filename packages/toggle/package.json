@@ -33,10 +33,9 @@
   },
   "dependencies": {
     "@launchpad-ui/tokens": "workspace:~",
-    "@react-aria/switch": "3.3.0",
-    "@react-aria/visually-hidden": "3.6.0",
-    "@react-stately/toggle": "3.4.3",
-    "classix": "2.1.17"
+    "classix": "2.1.17",
+    "react-aria": "3.23.1",
+    "react-stately": "3.21.0"
   },
   "peerDependencies": {
     "react": "18.2.0",

@@ -1,10 +1,10 @@
-import type { TabListState } from '@react-stately/tabs';
+import type { TabListState } from 'react-stately';
 import type { ItemElement, Node } from '@react-types/shared';
 import type { AriaTabListProps, AriaTabPanelProps } from '@react-types/tabs';
 import type { ReactNode } from 'react';
 
-import { useTab, useTabList, useTabPanel } from '@react-aria/tabs';
-import { useTabListState } from '@react-stately/tabs';
+import { useTab, useTabList, useTabPanel } from 'react-aria';
+import { useTabListState } from 'react-stately';
 import { cx } from 'classix';
 import { useRef } from 'react';
 
