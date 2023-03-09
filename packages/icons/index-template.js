@@ -9,6 +9,8 @@ const defaultIndexTemplate = (filePaths) => {
   });
   exportEntries.push(`export type { IconProps } from './Icon';`);
   exportEntries.push(`export { Icon } from './Icon';`);
+  exportEntries.push(`export type { FlairIconProps } from './FlairIcon';`);
+  exportEntries.push(`export { FlairIcon } from './FlairIcon';`);
   exportEntries.push(`export { StatusIcon } from './StatusIcon';`);
   exportEntries.unshift('/* c8 ignore start */');
   exportEntries.push('/* c8 ignore stop */');
