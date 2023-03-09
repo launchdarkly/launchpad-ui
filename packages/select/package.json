@@ -38,6 +38,7 @@
     "@launchpad-ui/popover": "workspace:~",
     "@launchpad-ui/tokens": "workspace:~",
     "@launchpad-ui/tooltip": "workspace:~",
+    "@react-stately/list": "3.7.0",
     "classix": "2.1.17",
     "react-aria": "3.23.1",
     "react-stately": "3.21.0"

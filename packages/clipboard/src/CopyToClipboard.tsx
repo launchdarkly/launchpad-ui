@@ -4,7 +4,7 @@ import type { HTMLAttributes, KeyboardEventHandler } from 'react';
 import { CheckCircle } from '@launchpad-ui/icons';
 import { Tooltip } from '@launchpad-ui/tooltip';
 import { Slot } from '@radix-ui/react-slot';
-import { announce } from 'react-aria';
+import { announce } from '@react-aria/live-announcer';
 import { cx } from 'classix';
 import { forwardRef, useCallback, useImperativeHandle, useRef, useState } from 'react';
 

@@ -36,6 +36,7 @@
     "@launchpad-ui/tokens": "workspace:~",
     "@launchpad-ui/tooltip": "workspace:~",
     "@radix-ui/react-slot": "^1.0.0",
+    "@react-aria/live-announcer": "3.2.0",
     "classix": "2.1.17",
     "react-aria": "3.23.1"
   },
