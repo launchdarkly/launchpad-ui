@@ -56,6 +56,11 @@
   display: block;
 }
 
+.flairIcon {
+  width: 2.4rem;
+  height: 2.4rem;
+}
+
 .flairIcon svg {
   fill: white;
 }
