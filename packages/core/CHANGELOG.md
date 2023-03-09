@@ -1,5 +1,51 @@
 # @launchpad-ui/core
 
+## 0.31.6
+
+### Patch Changes
+
+- [#738](https://github.com/launchdarkly/launchpad-ui/pull/738) [`64bcbee5`](https://github.com/launchdarkly/launchpad-ui/commit/64bcbee53469fd013b458b2f924d470bb3439b90) Thanks [@chasedarkly](https://github.com/chasedarkly)! - Trigger release
+
+- [#735](https://github.com/launchdarkly/launchpad-ui/pull/735) [`d5bd5d0d`](https://github.com/launchdarkly/launchpad-ui/commit/d5bd5d0de1cedc2d341beced3ac8239167a85108) Thanks [@chasedarkly](https://github.com/chasedarkly)! - Remove :root from token variables
+
+- [#737](https://github.com/launchdarkly/launchpad-ui/pull/737) [`304c87bc`](https://github.com/launchdarkly/launchpad-ui/commit/304c87bcd9050fd64c1ce997bb96c6b6e3aa9701) Thanks [@matthewferry](https://github.com/matthewferry)! - Adds approval icons for `approval-applied` and `approval-declined`
+
+- [#733](https://github.com/launchdarkly/launchpad-ui/pull/733) [`817b4c9c`](https://github.com/launchdarkly/launchpad-ui/commit/817b4c9c8a998f257369b6a726b2fbdf8242e1c9) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Collapsible]: Added package
+  [Alert]: Deprecate `CollapsibleAlert` in favor of composition
+  [Button]: Cleaned up unused styles
+- Updated dependencies [[`d5bd5d0d`](https://github.com/launchdarkly/launchpad-ui/commit/d5bd5d0de1cedc2d341beced3ac8239167a85108), [`304c87bc`](https://github.com/launchdarkly/launchpad-ui/commit/304c87bcd9050fd64c1ce997bb96c6b6e3aa9701), [`817b4c9c`](https://github.com/launchdarkly/launchpad-ui/commit/817b4c9c8a998f257369b6a726b2fbdf8242e1c9)]:
+  - @launchpad-ui/tokens@0.5.3
+  - @launchpad-ui/icons@0.7.5
+  - @launchpad-ui/collapsible@0.1.0
+  - @launchpad-ui/button@0.8.3
+  - @launchpad-ui/alert@0.7.3
+  - @launchpad-ui/avatar@0.4.37
+  - @launchpad-ui/banner@0.9.3
+  - @launchpad-ui/chip@0.7.5
+  - @launchpad-ui/clipboard@0.9.4
+  - @launchpad-ui/counter@0.3.24
+  - @launchpad-ui/drawer@0.3.3
+  - @launchpad-ui/dropdown@0.6.34
+  - @launchpad-ui/filter@0.5.4
+  - @launchpad-ui/form@0.8.3
+  - @launchpad-ui/markdown@0.4.6
+  - @launchpad-ui/menu@0.7.10
+  - @launchpad-ui/modal@0.14.3
+  - @launchpad-ui/navigation@0.9.6
+  - @launchpad-ui/pagination@0.3.44
+  - @launchpad-ui/popover@0.9.3
+  - @launchpad-ui/progress@0.5.22
+  - @launchpad-ui/progress-bubbles@0.6.3
+  - @launchpad-ui/select@0.2.4
+  - @launchpad-ui/slider@0.4.3
+  - @launchpad-ui/snackbar@0.3.38
+  - @launchpad-ui/split-button@0.7.4
+  - @launchpad-ui/tab-list@0.4.24
+  - @launchpad-ui/table@0.5.3
+  - @launchpad-ui/toast@0.2.37
+  - @launchpad-ui/toggle@0.5.3
+  - @launchpad-ui/tooltip@0.7.4
+
 ## 0.31.5
 
 ### Patch Changes
