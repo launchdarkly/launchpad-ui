@@ -1,5 +1,11 @@
 # @launchpad-ui/tab-list
 
+## 0.4.26-alpha.0
+
+### Patch Changes
+
+- [#751](https://github.com/launchdarkly/launchpad-ui/pull/751) [`9f0946e3`](https://github.com/launchdarkly/launchpad-ui/commit/9f0946e37f6c0244a54eefcd01e82ec22dfbf08e) Thanks [@chasedarkly](https://github.com/chasedarkly)! - Update react-aria individual package imports to monorepo imports
+
 ## 0.4.25
 
 ### Patch Changes

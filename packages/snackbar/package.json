@@ -1,6 +1,6 @@
 {
   "name": "@launchpad-ui/snackbar",
-  "version": "0.3.39",
+  "version": "0.3.40-alpha.0",
   "status": "alpha",
   "publishConfig": {
     "access": "public"

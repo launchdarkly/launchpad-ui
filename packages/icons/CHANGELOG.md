@@ -1,5 +1,11 @@
 # @launchpad-ui/icons
 
+## 0.9.0-alpha.0
+
+### Minor Changes
+
+- [#755](https://github.com/launchdarkly/launchpad-ui/pull/755) [`4f92de01`](https://github.com/launchdarkly/launchpad-ui/commit/4f92de01bd4187a292f3af34db00838b1f1e1192) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Icons]: Add new flair icon and 2 svgs
+
 ## 0.8.0
 
 ### Minor Changes
