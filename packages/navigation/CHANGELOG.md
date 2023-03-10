@@ -1,5 +1,18 @@
 # @launchpad-ui/navigation
 
+## 0.10.0
+
+### Minor Changes
+
+- [#742](https://github.com/launchdarkly/launchpad-ui/pull/742) [`ca881bbd`](https://github.com/launchdarkly/launchpad-ui/commit/ca881bbdeb2530036274a31638d2c8ef58b9e081) Thanks [@jagarnica](https://github.com/jagarnica)! - [NavItem] Fix clipping when using status Chip
+
+### Patch Changes
+
+- Updated dependencies [[`f07d8c7d`](https://github.com/launchdarkly/launchpad-ui/commit/f07d8c7df396ada9d30780d56e97470382a6b350), [`5d7c3eed`](https://github.com/launchdarkly/launchpad-ui/commit/5d7c3eed060658abcaa2dc13c6471e424405f54b)]:
+  - @launchpad-ui/icons@0.8.0
+  - @launchpad-ui/dropdown@0.6.35
+  - @launchpad-ui/menu@0.7.11
+
 ## 0.9.6
 
 ### Patch Changes

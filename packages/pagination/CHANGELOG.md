@@ -1,5 +1,15 @@
 # @launchpad-ui/pagination
 
+## 0.3.45
+
+### Patch Changes
+
+- [#746](https://github.com/launchdarkly/launchpad-ui/pull/746) [`2279ea93`](https://github.com/launchdarkly/launchpad-ui/commit/2279ea938bb23ac2b1505dde055daf3352797398) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Pagination] Expose PaginationChange string union type
+
+- Updated dependencies [[`f07d8c7d`](https://github.com/launchdarkly/launchpad-ui/commit/f07d8c7df396ada9d30780d56e97470382a6b350), [`cd812ed3`](https://github.com/launchdarkly/launchpad-ui/commit/cd812ed305b8ecb660986830ed4842d59a150882), [`5d7c3eed`](https://github.com/launchdarkly/launchpad-ui/commit/5d7c3eed060658abcaa2dc13c6471e424405f54b)]:
+  - @launchpad-ui/icons@0.8.0
+  - @launchpad-ui/button@0.8.4
+
 ## 0.3.44
 
 ### Patch Changes
