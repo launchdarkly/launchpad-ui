@@ -6,7 +6,7 @@ type SingleSelection = {
   /** The initial selected keys in the collection (uncontrolled). */
   defaultSelectedKey?: Key;
   /** Handler that is called when the selection changes. */
-  onSelectionChange?: (key: Key) => any;
+  onSelectionChange?: (key: Key) => void;
 };
 
 export type { SingleSelection };

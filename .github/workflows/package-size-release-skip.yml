@@ -1,0 +1,12 @@
+name: Compressed Size
+
+on:
+  push:
+    branches:
+      - 'changeset-release/**'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - run: 'echo "No build required"'

@@ -3,9 +3,9 @@ import type { ReactNode, SyntheticEvent } from 'react';
 import { IconButton } from '@launchpad-ui/button';
 import { Close, ExpandMore } from '@launchpad-ui/icons';
 import { Tooltip } from '@launchpad-ui/tooltip';
-import { VisuallyHidden } from '@react-aria/visually-hidden';
 import { cx } from 'classix';
 import { Children, forwardRef, useId } from 'react';
+import { VisuallyHidden } from 'react-aria';
 
 import styles from './styles/Filter.module.css';
 

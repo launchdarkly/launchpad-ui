@@ -5,13 +5,19 @@ import type { BaseEvent } from '@react-types/shared';
 import type { FocusEvent, KeyboardEvent, RefObject } from 'react';
 
 import { setInteractionModality } from '@react-aria/interactions';
-import { useField } from '@react-aria/label';
 import { listData } from '@react-aria/listbox';
-import { useMenuTrigger } from '@react-aria/menu';
-import { ListKeyboardDelegate, useTypeSelect } from '@react-aria/selection';
-import { useTextField } from '@react-aria/textfield';
-import { chain, filterDOMProps, mergeProps, useId, useLabels } from '@react-aria/utils';
+import { useTypeSelect } from '@react-aria/selection';
+import { filterDOMProps, useLabels } from '@react-aria/utils';
 import { useMemo } from 'react';
+import {
+  useField,
+  useMenuTrigger,
+  ListKeyboardDelegate,
+  useTextField,
+  chain,
+  mergeProps,
+  useId,
+} from 'react-aria';
 
 type UseSingleSelectRefs = {
   triggerRef: RefObject<HTMLElement>;
@@ -49,7 +55,7 @@ const useSingleSelect = <T extends object>(
   listData.set(state, { id: menuProps.id as string });
 
   // For textfield specific keydown operations
-  const onFilterInputKeyDown = (e: BaseEvent<KeyboardEvent<any>>) => {
+  const onFilterInputKeyDown = (e: BaseEvent<KeyboardEvent>) => {
     switch (e.key) {
       case 'Enter':
       case 'Tab':

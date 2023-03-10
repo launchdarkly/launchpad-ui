@@ -2,11 +2,8 @@ import type { MultiSelectTriggerProps } from './MultiSelectTrigger';
 import type { SharedSelectProps } from '../types';
 import type { MultipleSelection } from '@react-types/shared';
 
-import { useButton } from '@react-aria/button';
-import { useFocusRing } from '@react-aria/focus';
-import { mergeProps } from '@react-aria/utils';
-import { VisuallyHidden } from '@react-aria/visually-hidden';
 import { useRef } from 'react';
+import { useButton, useFocusRing, mergeProps, VisuallyHidden } from 'react-aria';
 
 import { SelectListBox } from '../SelectListBox';
 import { SelectPopover } from '../SelectPopover';

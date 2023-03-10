@@ -1,5 +1,5 @@
 import { Button } from '@launchpad-ui/button';
-import { Item } from '@react-stately/collections';
+import { Item } from 'react-stately';
 
 import { render, screen, userEvent } from '../../../test/utils';
 import { TabList } from '../src';

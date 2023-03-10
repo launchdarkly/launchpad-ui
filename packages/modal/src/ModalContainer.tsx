@@ -3,10 +3,10 @@ import type { Variants } from 'framer-motion';
 import type { MouseEvent } from 'react';
 
 import { FocusTrap } from '@launchpad-ui/focus-trap';
-import { usePreventScroll } from '@react-aria/overlays';
 import { cx } from 'classix';
 import { LazyMotion, m } from 'framer-motion';
 import { useEffect, useRef } from 'react';
+import { usePreventScroll } from 'react-aria';
 
 import { MODAL_LABELLED_BY } from './constants';
 import styles from './styles/Modal.module.css';

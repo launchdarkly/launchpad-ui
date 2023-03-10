@@ -1,10 +1,9 @@
 import type { ReactNode } from 'react';
 
-import { useSwitch } from '@react-aria/switch';
-import { VisuallyHidden } from '@react-aria/visually-hidden';
-import { useToggleState } from '@react-stately/toggle';
 import { cx } from 'classix';
 import { useRef } from 'react';
+import { useSwitch, VisuallyHidden } from 'react-aria';
+import { useToggleState } from 'react-stately';
 
 import styles from './styles/Toggle.module.css';
 
