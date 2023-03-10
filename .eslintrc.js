@@ -36,6 +36,7 @@ module.exports = {
     '/packages/icons/src/*.tsx',
     '!/packages/icons/src/Icon.tsx',
     '!/packages/icons/src/StatusIcon.tsx',
+    '!/packages/icons/src/FlairIcon.tsx',
   ],
   rules: {
     'no-unused-vars': 'off',

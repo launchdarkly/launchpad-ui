@@ -2,8 +2,8 @@ name: Verify changes
 
 on:
   pull_request:
-    branches:
-      - '!changeset-release/main'
+    branches-ignore:
+      - 'changeset-release/**'
   push:
     branches:
       - main
