@@ -1,5 +1,18 @@
 # @launchpad-ui/filter
 
+## 0.5.6-alpha.0
+
+### Patch Changes
+
+- [#751](https://github.com/launchdarkly/launchpad-ui/pull/751) [`9f0946e3`](https://github.com/launchdarkly/launchpad-ui/commit/9f0946e37f6c0244a54eefcd01e82ec22dfbf08e) Thanks [@chasedarkly](https://github.com/chasedarkly)! - Update react-aria individual package imports to monorepo imports
+
+- Updated dependencies [[`9f0946e3`](https://github.com/launchdarkly/launchpad-ui/commit/9f0946e37f6c0244a54eefcd01e82ec22dfbf08e), [`4f92de01`](https://github.com/launchdarkly/launchpad-ui/commit/4f92de01bd4187a292f3af34db00838b1f1e1192)]:
+  - @launchpad-ui/menu@0.7.12-alpha.0
+  - @launchpad-ui/icons@0.9.0-alpha.0
+  - @launchpad-ui/button@0.8.5-alpha.0
+  - @launchpad-ui/dropdown@0.6.36-alpha.0
+  - @launchpad-ui/tooltip@0.7.5-alpha.0
+
 ## 0.5.5
 
 ### Patch Changes
