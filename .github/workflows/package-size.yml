@@ -2,8 +2,8 @@ name: Compressed Size
 
 on:
   pull_request:
-    branches:
-      - '!changeset-release/main'
+    branches-ignore:
+      - 'changeset-release/**'
 
 jobs:
   build:

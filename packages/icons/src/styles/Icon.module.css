@@ -55,3 +55,49 @@
   height: 100%;
   display: block;
 }
+
+.flairIcon {
+  width: 2.4rem;
+  height: 2.4rem;
+}
+
+.flairIcon svg {
+  fill: white;
+}
+
+.yellowToCyan {
+  background: linear-gradient(126.73deg, #ebff38 -38.66%, #3dd6f5 83.73%);
+}
+
+.cyanToBlue {
+  background: linear-gradient(136.11deg, #3dd6f5 22.68%, #405bff 127.6%);
+}
+
+.cyanToPurple {
+  background: linear-gradient(41.76deg, #a34fde -17.05%, #3dd6f5 147.06%);
+}
+
+.purpleToBlue {
+  background: linear-gradient(131.04deg, #a34fde -15.82%, #405bff 118.85%);
+}
+
+.pinkToPurple {
+  background: linear-gradient(39.47deg, #a34fde -17.19%, #ff386b 148.9%);
+}
+
+.isRounded {
+  border-radius: 10rem;
+}
+
+.flairIconContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  position: absolute;
+  width: 4.5rem;
+  height: 4.5rem;
+  left: 2.4rem;
+  top: 2.4rem;
+}
