@@ -1,6 +1,9 @@
 name: Changeset Check
 
-on: pull_request
+on:
+  pull_request:
+    branches-ignore:
+      - 'changeset-release/**'
 
 jobs:
   changeset-check:
