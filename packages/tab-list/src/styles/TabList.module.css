@@ -1,7 +1,6 @@
 .TabList-list {
   display: flex;
   flex-direction: row;
-  background-color: var(--lp-color-bg-ui-primary);
   border-bottom: 1px solid var(--lp-color-border-ui-primary);
 }
 
