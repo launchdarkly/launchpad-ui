@@ -1,5 +1,14 @@
 # @launchpad-ui/button
 
+## 0.8.4
+
+### Patch Changes
+
+- [#747](https://github.com/launchdarkly/launchpad-ui/pull/747) [`cd812ed3`](https://github.com/launchdarkly/launchpad-ui/commit/cd812ed305b8ecb660986830ed4842d59a150882) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Button] Update `IconButton` to control icon size internally
+
+- Updated dependencies [[`f07d8c7d`](https://github.com/launchdarkly/launchpad-ui/commit/f07d8c7df396ada9d30780d56e97470382a6b350)]:
+  - @launchpad-ui/icons@0.7.6
+
 ## 0.8.3
 
 ### Patch Changes

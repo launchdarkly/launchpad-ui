@@ -1,5 +1,22 @@
 # @launchpad-ui/navigation
 
+## 0.10.0
+
+### Minor Changes
+
+- [#742](https://github.com/launchdarkly/launchpad-ui/pull/742) [`ca881bbd`](https://github.com/launchdarkly/launchpad-ui/commit/ca881bbdeb2530036274a31638d2c8ef58b9e081) Thanks [@jagarnica](https://github.com/jagarnica)! - [NavItem] Fix clipping when using status Chip
+
+### Patch Changes
+
+- [`6a74df08`](https://github.com/launchdarkly/launchpad-ui/commit/6a74df08c97872808603ede39197a877949b98e4) Thanks [@chasedarkly](https://github.com/chasedarkly)! - Update react-aria individual package imports to monorepo imports
+
+- Updated dependencies [[`f07d8c7d`](https://github.com/launchdarkly/launchpad-ui/commit/f07d8c7df396ada9d30780d56e97470382a6b350), [`6a74df08`](https://github.com/launchdarkly/launchpad-ui/commit/6a74df08c97872808603ede39197a877949b98e4)]:
+  - @launchpad-ui/icons@0.7.6
+  - @launchpad-ui/menu@0.7.11
+  - @launchpad-ui/dropdown@0.6.35
+  - @launchpad-ui/popover@0.9.4
+  - @launchpad-ui/tooltip@0.7.5
+
 ## 0.9.6
 
 ### Patch Changes

@@ -1,5 +1,15 @@
 # @launchpad-ui/clipboard
 
+## 0.9.5
+
+### Patch Changes
+
+- [`6a74df08`](https://github.com/launchdarkly/launchpad-ui/commit/6a74df08c97872808603ede39197a877949b98e4) Thanks [@chasedarkly](https://github.com/chasedarkly)! - Update react-aria individual package imports to monorepo imports
+
+- Updated dependencies [[`f07d8c7d`](https://github.com/launchdarkly/launchpad-ui/commit/f07d8c7df396ada9d30780d56e97470382a6b350)]:
+  - @launchpad-ui/icons@0.7.6
+  - @launchpad-ui/tooltip@0.7.5
+
 ## 0.9.4
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @launchpad-ui/toggle
 
+## 0.5.4
+
+### Patch Changes
+
+- [`6a74df08`](https://github.com/launchdarkly/launchpad-ui/commit/6a74df08c97872808603ede39197a877949b98e4) Thanks [@chasedarkly](https://github.com/chasedarkly)! - Update react-aria individual package imports to monorepo imports
+
 ## 0.5.3
 
 ### Patch Changes

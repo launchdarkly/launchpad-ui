@@ -1,5 +1,11 @@
 # @launchpad-ui/icons
 
+## 0.7.6
+
+### Patch Changes
+
+- [#744](https://github.com/launchdarkly/launchpad-ui/pull/744) [`f07d8c7d`](https://github.com/launchdarkly/launchpad-ui/commit/f07d8c7df396ada9d30780d56e97470382a6b350) Thanks [@matthewferry](https://github.com/matthewferry)! - [Icons]: Remove `fill="none"` on `approval-applied` and `approval-denied` SVGs
+
 ## 0.7.5
 
 ### Patch Changes

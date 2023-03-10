@@ -1,5 +1,16 @@
 # @launchpad-ui/modal
 
+## 0.14.4
+
+### Patch Changes
+
+- [`6a74df08`](https://github.com/launchdarkly/launchpad-ui/commit/6a74df08c97872808603ede39197a877949b98e4) Thanks [@chasedarkly](https://github.com/chasedarkly)! - Update react-aria individual package imports to monorepo imports
+
+- Updated dependencies [[`f07d8c7d`](https://github.com/launchdarkly/launchpad-ui/commit/f07d8c7df396ada9d30780d56e97470382a6b350), [`6a74df08`](https://github.com/launchdarkly/launchpad-ui/commit/6a74df08c97872808603ede39197a877949b98e4), [`cd812ed3`](https://github.com/launchdarkly/launchpad-ui/commit/cd812ed305b8ecb660986830ed4842d59a150882)]:
+  - @launchpad-ui/icons@0.7.6
+  - @launchpad-ui/focus-trap@0.1.5
+  - @launchpad-ui/button@0.8.4
+
 ## 0.14.3
 
 ### Patch Changes
