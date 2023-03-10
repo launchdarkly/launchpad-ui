@@ -1,5 +1,14 @@
 # @launchpad-ui/collapsible
 
+## 0.1.2
+
+### Patch Changes
+
+- Updated dependencies [[`c120d56c`](https://github.com/launchdarkly/launchpad-ui/commit/c120d56c7b4045cefa5520954dc7683159768625)]:
+  - @launchpad-ui/tokens@0.5.4
+  - @launchpad-ui/button@0.8.5
+  - @launchpad-ui/icons@0.8.1
+
 ## 0.1.1
 
 ### Patch Changes
