@@ -1,5 +1,5 @@
-import type { SeparatorProps } from 'react-aria';
 import type { RefObject } from 'react';
+import type { SeparatorProps } from 'react-aria';
 
 import { useSeparator } from 'react-aria';
 

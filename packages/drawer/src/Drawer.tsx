@@ -6,10 +6,10 @@ import { FocusTrap } from '@launchpad-ui/focus-trap';
 import { Close } from '@launchpad-ui/icons';
 import { Portal } from '@launchpad-ui/portal';
 import { Progress } from '@launchpad-ui/progress';
-import { usePreventScroll } from 'react-aria';
 import { cx } from 'classix';
 import { LazyMotion, m } from 'framer-motion';
 import { Suspense, useEffect, useRef } from 'react';
+import { usePreventScroll } from 'react-aria';
 
 import { DRAWER_LABELLED_BY } from './constants';
 import styles from './styles/Drawer.module.css';

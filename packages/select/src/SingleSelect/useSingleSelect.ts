@@ -55,7 +55,7 @@ const useSingleSelect = <T extends object>(
   listData.set(state, { id: menuProps.id as string });
 
   // For textfield specific keydown operations
-  const onFilterInputKeyDown = (e: BaseEvent<KeyboardEvent<any>>) => {
+  const onFilterInputKeyDown = (e: BaseEvent<KeyboardEvent>) => {
     switch (e.key) {
       case 'Enter':
       case 'Tab':

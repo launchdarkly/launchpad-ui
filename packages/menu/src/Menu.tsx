@@ -1,8 +1,7 @@
 import type { MenuItemProps } from './MenuItem';
-import type { FocusManager } from 'react-aria';
 import type { KeyboardEvent, ReactElement, ReactNode } from 'react';
+import type { FocusManager } from 'react-aria';
 
-import { useFocusManager } from 'react-aria';
 import { cx } from 'classix';
 import {
   Children,
@@ -14,6 +13,7 @@ import {
   useRef,
   useState,
 } from 'react';
+import { useFocusManager } from 'react-aria';
 import { useVirtual } from 'react-virtual';
 
 import { MenuBase } from './MenuBase';
