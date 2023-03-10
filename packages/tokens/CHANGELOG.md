@@ -1,5 +1,11 @@
 # @launchpad-ui/tokens
 
+## 0.5.4
+
+### Patch Changes
+
+- [#759](https://github.com/launchdarkly/launchpad-ui/pull/759) [`c120d56c`](https://github.com/launchdarkly/launchpad-ui/commit/c120d56c7b4045cefa5520954dc7683159768625) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Tokens] Add back :root to token list
+
 ## 0.5.3
 
 ### Patch Changes
