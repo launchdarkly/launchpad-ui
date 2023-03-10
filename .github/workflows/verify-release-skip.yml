@@ -1,7 +1,7 @@
 name: Verify changes
 
 on:
-  push:
+  pull_request:
     branches:
       - 'changeset-release/**'
 
