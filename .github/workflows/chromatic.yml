@@ -1,9 +1,6 @@
 name: Chromatic
 
-on:
-  push:
-    branches:
-      - '!changeset-release/main'
+on: push
 
 jobs:
   chromatic-deployment:
