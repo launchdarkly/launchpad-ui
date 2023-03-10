@@ -1,5 +1,11 @@
 # @launchpad-ui/tab-list
 
+## 0.4.25
+
+### Patch Changes
+
+- [#748](https://github.com/launchdarkly/launchpad-ui/pull/748) [`b7366fa2`](https://github.com/launchdarkly/launchpad-ui/commit/b7366fa2c405def483e7563b1bda674c33629997) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [TabList]: Remove background color
+
 ## 0.4.24
 
 ### Patch Changes
