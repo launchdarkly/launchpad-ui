@@ -1,7 +1,7 @@
 import type { LinksFunction, MetaFunction } from '@remix-run/node';
 import type { PropsWithChildren, ReactNode } from 'react';
 
-import { SSRProvider } from '@react-aria/ssr';
+import { SSRProvider } from 'react-aria';
 import {
   Links,
   LiveReload,

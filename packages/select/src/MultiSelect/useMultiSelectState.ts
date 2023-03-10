@@ -2,9 +2,9 @@ import type { MultiSelectProps } from './MultiSelect';
 import type { MultiSelectListState } from './useMultiSelectListState';
 import type { SharedSelectState } from '../types';
 
-import { useMenuTriggerState } from '@react-stately/menu';
 import { useControlledState } from '@react-stately/utils';
 import { useState } from 'react';
+import { useMenuTriggerState } from 'react-stately';
 
 import { useFilteredCollection } from '../useFilter';
 

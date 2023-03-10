@@ -1,11 +1,11 @@
-import type { AriaPopoverProps } from '@react-aria/overlays';
-import type { OverlayTriggerState } from '@react-stately/overlays';
 import type { ReactNode, RefObject } from 'react';
+import type { AriaPopoverProps } from 'react-aria';
+import type { OverlayTriggerState } from 'react-stately';
 
-import { usePopover, DismissButton, Overlay } from '@react-aria/overlays';
 import { useObjectRef } from '@react-aria/utils';
 import cx from 'classix';
 import { useMemo } from 'react';
+import { usePopover, DismissButton, Overlay } from 'react-aria';
 
 import styles from './styles/Select.module.css';
 

@@ -1,6 +1,6 @@
 {
   "name": "@launchpad-ui/navigation",
-  "version": "0.9.6",
+  "version": "0.10.0",
   "status": "beta",
   "publishConfig": {
     "access": "public"
@@ -39,17 +39,18 @@
     "@launchpad-ui/popover": "workspace:~",
     "@launchpad-ui/tokens": "workspace:~",
     "@launchpad-ui/tooltip": "workspace:~",
-    "@react-aria/utils": "3.14.1",
-    "@react-stately/list": "3.6.0",
-    "@react-types/shared": "3.16.0",
+    "@react-aria/utils": "3.15.0",
     "classix": "2.1.17",
-    "react-router-dom": "6.7.0"
+    "react-aria": "3.23.1",
+    "react-router-dom": "6.7.0",
+    "react-stately": "3.21.0"
   },
   "peerDependencies": {
     "react": "18.2.0",
     "react-dom": "18.2.0"
   },
   "devDependencies": {
+    "@react-types/shared": "3.16.0",
     "react": "18.2.0",
     "react-dom": "18.2.0"
   }

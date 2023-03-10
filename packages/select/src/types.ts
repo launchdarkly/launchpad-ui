@@ -1,6 +1,3 @@
-import type { AriaListBoxOptions } from '@react-aria/listbox';
-import type { MenuTriggerState } from '@react-stately/menu';
-import type { AriaButtonProps } from '@react-types/button';
 import type { OverlayTriggerProps } from '@react-types/overlays';
 import type { AriaSelectProps } from '@react-types/select';
 import type {
@@ -17,6 +14,8 @@ import type {
   ReactNode,
   RefObject,
 } from 'react';
+import type { AriaListBoxOptions, AriaButtonProps } from 'react-aria';
+import type { MenuTriggerState } from 'react-stately';
 
 type SharedSelectProps<T extends object> = CollectionBase<T> &
   DOMProps &

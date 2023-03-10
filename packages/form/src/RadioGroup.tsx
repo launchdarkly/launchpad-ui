@@ -1,7 +1,7 @@
 import type { ChangeEvent, FormEvent, ReactElement, ReactNode } from 'react';
 
-import { VisuallyHidden } from '@react-aria/visually-hidden';
 import { Children, cloneElement, isValidElement, useRef } from 'react';
+import { VisuallyHidden } from 'react-aria';
 
 import { Label } from './Label';
 import { Radio } from './Radio';

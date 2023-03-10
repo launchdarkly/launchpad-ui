@@ -1,5 +1,15 @@
 # @launchpad-ui/icons
 
+## 0.8.0
+
+### Minor Changes
+
+- [#745](https://github.com/launchdarkly/launchpad-ui/pull/745) [`5d7c3eed`](https://github.com/launchdarkly/launchpad-ui/commit/5d7c3eed060658abcaa2dc13c6471e424405f54b) Thanks [@traciklopez](https://github.com/traciklopez)! - [Icons]: Add new flair icon and 2 svgs
+
+### Patch Changes
+
+- [#744](https://github.com/launchdarkly/launchpad-ui/pull/744) [`f07d8c7d`](https://github.com/launchdarkly/launchpad-ui/commit/f07d8c7df396ada9d30780d56e97470382a6b350) Thanks [@matthewferry](https://github.com/matthewferry)! - [Icons]: Remove `fill="none"` on `approval-applied` and `approval-denied` SVGs
+
 ## 0.7.5
 
 ### Patch Changes
