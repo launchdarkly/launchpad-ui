@@ -1,5 +1,64 @@
 # @launchpad-ui/split-button
 
+## 0.7.6
+
+### Patch Changes
+
+- Updated dependencies [[`c120d56c`](https://github.com/launchdarkly/launchpad-ui/commit/c120d56c7b4045cefa5520954dc7683159768625)]:
+  - @launchpad-ui/tokens@0.5.4
+  - @launchpad-ui/button@0.8.5
+  - @launchpad-ui/dropdown@0.6.36
+  - @launchpad-ui/popover@0.9.4
+  - @launchpad-ui/tooltip@0.7.5
+
+## 0.7.5
+
+### Patch Changes
+
+- Updated dependencies [[`cd812ed3`](https://github.com/launchdarkly/launchpad-ui/commit/cd812ed305b8ecb660986830ed4842d59a150882)]:
+  - @launchpad-ui/button@0.8.4
+  - @launchpad-ui/dropdown@0.6.35
+
+## 0.7.4
+
+### Patch Changes
+
+- Updated dependencies [[`d5bd5d0d`](https://github.com/launchdarkly/launchpad-ui/commit/d5bd5d0de1cedc2d341beced3ac8239167a85108), [`817b4c9c`](https://github.com/launchdarkly/launchpad-ui/commit/817b4c9c8a998f257369b6a726b2fbdf8242e1c9)]:
+  - @launchpad-ui/tokens@0.5.3
+  - @launchpad-ui/button@0.8.3
+  - @launchpad-ui/dropdown@0.6.34
+  - @launchpad-ui/popover@0.9.3
+  - @launchpad-ui/tooltip@0.7.4
+
+## 0.7.3
+
+### Patch Changes
+
+- Updated dependencies [[`152aef91`](https://github.com/launchdarkly/launchpad-ui/commit/152aef9126c5291586b09b703795030f52a01bb1)]:
+  - @launchpad-ui/button@0.8.2
+  - @launchpad-ui/tokens@0.5.2
+  - @launchpad-ui/dropdown@0.6.33
+  - @launchpad-ui/popover@0.9.2
+  - @launchpad-ui/tooltip@0.7.3
+
+## 0.7.2
+
+### Patch Changes
+
+- Updated dependencies [[`909a0fde`](https://github.com/launchdarkly/launchpad-ui/commit/909a0fdebf57634d5c100626cb432c35eac1c661)]:
+  - @launchpad-ui/tokens@0.5.1
+  - @launchpad-ui/button@0.8.1
+  - @launchpad-ui/dropdown@0.6.32
+  - @launchpad-ui/popover@0.9.1
+  - @launchpad-ui/tooltip@0.7.2
+
+## 0.7.1
+
+### Patch Changes
+
+- Updated dependencies [[`74ddde60`](https://github.com/launchdarkly/launchpad-ui/commit/74ddde60d233fd489860f89aacb908e20f525674)]:
+  - @launchpad-ui/tooltip@0.7.1
+
 ## 0.7.0
 
 ### Minor Changes

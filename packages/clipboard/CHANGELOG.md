@@ -1,5 +1,61 @@
 # @launchpad-ui/clipboard
 
+## 0.9.6
+
+### Patch Changes
+
+- Updated dependencies [[`c120d56c`](https://github.com/launchdarkly/launchpad-ui/commit/c120d56c7b4045cefa5520954dc7683159768625)]:
+  - @launchpad-ui/tokens@0.5.4
+  - @launchpad-ui/icons@0.8.1
+  - @launchpad-ui/tooltip@0.7.5
+
+## 0.9.5
+
+### Patch Changes
+
+- Updated dependencies [[`f07d8c7d`](https://github.com/launchdarkly/launchpad-ui/commit/f07d8c7df396ada9d30780d56e97470382a6b350), [`5d7c3eed`](https://github.com/launchdarkly/launchpad-ui/commit/5d7c3eed060658abcaa2dc13c6471e424405f54b)]:
+  - @launchpad-ui/icons@0.8.0
+
+## 0.9.4
+
+### Patch Changes
+
+- Updated dependencies [[`d5bd5d0d`](https://github.com/launchdarkly/launchpad-ui/commit/d5bd5d0de1cedc2d341beced3ac8239167a85108), [`304c87bc`](https://github.com/launchdarkly/launchpad-ui/commit/304c87bcd9050fd64c1ce997bb96c6b6e3aa9701)]:
+  - @launchpad-ui/tokens@0.5.3
+  - @launchpad-ui/icons@0.7.5
+  - @launchpad-ui/tooltip@0.7.4
+
+## 0.9.3
+
+### Patch Changes
+
+- [`152aef91`](https://github.com/launchdarkly/launchpad-ui/commit/152aef9126c5291586b09b703795030f52a01bb1) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Clipboard]: Update default button styles to match Button styling
+  [Button]: Remove unused CSS variables
+  [Tokens]: Add `:root` to default theme variables
+  [Chip]: Update darkmode default chip color
+- Updated dependencies [[`152aef91`](https://github.com/launchdarkly/launchpad-ui/commit/152aef9126c5291586b09b703795030f52a01bb1)]:
+  - @launchpad-ui/tokens@0.5.2
+  - @launchpad-ui/icons@0.7.4
+  - @launchpad-ui/tooltip@0.7.3
+
+## 0.9.2
+
+### Patch Changes
+
+- [`9214152b`](https://github.com/launchdarkly/launchpad-ui/commit/9214152b2e445c6503b6133c3686a1afb3ff5256) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Clipboard] Update style of copy button
+
+- Updated dependencies [[`909a0fde`](https://github.com/launchdarkly/launchpad-ui/commit/909a0fdebf57634d5c100626cb432c35eac1c661)]:
+  - @launchpad-ui/tokens@0.5.1
+  - @launchpad-ui/icons@0.7.3
+  - @launchpad-ui/tooltip@0.7.2
+
+## 0.9.1
+
+### Patch Changes
+
+- Updated dependencies [[`74ddde60`](https://github.com/launchdarkly/launchpad-ui/commit/74ddde60d233fd489860f89aacb908e20f525674)]:
+  - @launchpad-ui/tooltip@0.7.1
+
 ## 0.9.0
 
 ### Minor Changes

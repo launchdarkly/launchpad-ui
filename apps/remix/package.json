@@ -19,6 +19,7 @@
     "@launchpad-ui/button": "workspace:~",
     "@launchpad-ui/chip": "workspace:~",
     "@launchpad-ui/clipboard": "workspace:~",
+    "@launchpad-ui/collapsible": "workspace:~",
     "@launchpad-ui/core": "workspace:~",
     "@launchpad-ui/counter": "workspace:~",
     "@launchpad-ui/drawer": "workspace:~",

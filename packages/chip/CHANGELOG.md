@@ -1,5 +1,56 @@
 # @launchpad-ui/chip
 
+## 0.7.6
+
+### Patch Changes
+
+- Updated dependencies [[`c120d56c`](https://github.com/launchdarkly/launchpad-ui/commit/c120d56c7b4045cefa5520954dc7683159768625)]:
+  - @launchpad-ui/tokens@0.5.4
+
+## 0.7.5
+
+### Patch Changes
+
+- Updated dependencies [[`d5bd5d0d`](https://github.com/launchdarkly/launchpad-ui/commit/d5bd5d0de1cedc2d341beced3ac8239167a85108)]:
+  - @launchpad-ui/tokens@0.5.3
+
+## 0.7.4
+
+### Patch Changes
+
+- [`152aef91`](https://github.com/launchdarkly/launchpad-ui/commit/152aef9126c5291586b09b703795030f52a01bb1) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Clipboard]: Update default button styles to match Button styling
+  [Button]: Remove unused CSS variables
+  [Tokens]: Add `:root` to default theme variables
+  [Chip]: Update darkmode default chip color
+- Updated dependencies [[`152aef91`](https://github.com/launchdarkly/launchpad-ui/commit/152aef9126c5291586b09b703795030f52a01bb1)]:
+  - @launchpad-ui/tokens@0.5.2
+
+## 0.7.3
+
+### Patch Changes
+
+- [#730](https://github.com/launchdarkly/launchpad-ui/pull/730) [`909a0fde`](https://github.com/launchdarkly/launchpad-ui/commit/909a0fdebf57634d5c100626cb432c35eac1c661) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Tokens] Add `lp-white-200` color
+  [Chip] Modify default bg colors
+- Updated dependencies [[`909a0fde`](https://github.com/launchdarkly/launchpad-ui/commit/909a0fdebf57634d5c100626cb432c35eac1c661)]:
+  - @launchpad-ui/tokens@0.5.1
+
+## 0.7.2
+
+### Patch Changes
+
+- [#728](https://github.com/launchdarkly/launchpad-ui/pull/728) [`7205f0ee`](https://github.com/launchdarkly/launchpad-ui/commit/7205f0ee17bed5fc7ad2920a9acd16b41e71f48b) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Chip]
+
+  - Deprecate `label` variant
+  - Remove `legacy` variant, design decided to reduce padding back to 24px total height, making legacy unnecessary.
+  - Deprecate `subtle` variants
+  - Update normal and small sizing
+
+## 0.7.1
+
+### Patch Changes
+
+- [#724](https://github.com/launchdarkly/launchpad-ui/pull/724) [`0ed1d8ea`](https://github.com/launchdarkly/launchpad-ui/commit/0ed1d8ea0746e6721fc66ebc8bfe8109df8339ce) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Chip] Add size variants and deprecate unused variants
+
 ## 0.7.0
 
 ### Minor Changes

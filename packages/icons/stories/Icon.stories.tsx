@@ -4,7 +4,7 @@ import type { Meta } from '@storybook/react';
 import { Icon } from '../src';
 import * as icons from '../src';
 
-type IconName = Exclude<keyof typeof icons, 'Icon' | 'StatusIcon'>;
+type IconName = Exclude<keyof typeof icons, 'Icon' | 'StatusIcon' | 'FlairIcon'>;
 
 export default {
   component: Icon,
@@ -46,7 +46,7 @@ export const Default = {
       }}
     >
       {Object.keys(icons).map((key, index) => {
-        if (!['Icon', 'StatusIcon', '__namedExportsOrder'].includes(key))
+        if (!['Icon', 'StatusIcon', 'FlairIcon', '__namedExportsOrder'].includes(key))
           return (
             <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }} key={index}>
               {icons[key as IconName]({ size: 'medium' })}

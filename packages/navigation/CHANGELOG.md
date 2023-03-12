@@ -1,5 +1,92 @@
 # @launchpad-ui/navigation
 
+## 0.10.1
+
+### Patch Changes
+
+- Updated dependencies [[`c120d56c`](https://github.com/launchdarkly/launchpad-ui/commit/c120d56c7b4045cefa5520954dc7683159768625)]:
+  - @launchpad-ui/tokens@0.5.4
+  - @launchpad-ui/chip@0.7.6
+  - @launchpad-ui/dropdown@0.6.36
+  - @launchpad-ui/icons@0.8.1
+  - @launchpad-ui/menu@0.7.12
+  - @launchpad-ui/popover@0.9.4
+  - @launchpad-ui/tooltip@0.7.5
+
+## 0.10.0
+
+### Minor Changes
+
+- [#742](https://github.com/launchdarkly/launchpad-ui/pull/742) [`ca881bbd`](https://github.com/launchdarkly/launchpad-ui/commit/ca881bbdeb2530036274a31638d2c8ef58b9e081) Thanks [@jagarnica](https://github.com/jagarnica)! - [NavItem] Fix clipping when using status Chip
+
+### Patch Changes
+
+- Updated dependencies [[`f07d8c7d`](https://github.com/launchdarkly/launchpad-ui/commit/f07d8c7df396ada9d30780d56e97470382a6b350), [`5d7c3eed`](https://github.com/launchdarkly/launchpad-ui/commit/5d7c3eed060658abcaa2dc13c6471e424405f54b)]:
+  - @launchpad-ui/icons@0.8.0
+  - @launchpad-ui/dropdown@0.6.35
+  - @launchpad-ui/menu@0.7.11
+
+## 0.9.6
+
+### Patch Changes
+
+- Updated dependencies [[`d5bd5d0d`](https://github.com/launchdarkly/launchpad-ui/commit/d5bd5d0de1cedc2d341beced3ac8239167a85108), [`304c87bc`](https://github.com/launchdarkly/launchpad-ui/commit/304c87bcd9050fd64c1ce997bb96c6b6e3aa9701)]:
+  - @launchpad-ui/tokens@0.5.3
+  - @launchpad-ui/icons@0.7.5
+  - @launchpad-ui/chip@0.7.5
+  - @launchpad-ui/dropdown@0.6.34
+  - @launchpad-ui/menu@0.7.10
+  - @launchpad-ui/popover@0.9.3
+  - @launchpad-ui/tooltip@0.7.4
+
+## 0.9.5
+
+### Patch Changes
+
+- Updated dependencies [[`152aef91`](https://github.com/launchdarkly/launchpad-ui/commit/152aef9126c5291586b09b703795030f52a01bb1)]:
+  - @launchpad-ui/tokens@0.5.2
+  - @launchpad-ui/chip@0.7.4
+  - @launchpad-ui/dropdown@0.6.33
+  - @launchpad-ui/icons@0.7.4
+  - @launchpad-ui/menu@0.7.9
+  - @launchpad-ui/popover@0.9.2
+  - @launchpad-ui/tooltip@0.7.3
+
+## 0.9.4
+
+### Patch Changes
+
+- Updated dependencies [[`909a0fde`](https://github.com/launchdarkly/launchpad-ui/commit/909a0fdebf57634d5c100626cb432c35eac1c661)]:
+  - @launchpad-ui/tokens@0.5.1
+  - @launchpad-ui/chip@0.7.3
+  - @launchpad-ui/dropdown@0.6.32
+  - @launchpad-ui/icons@0.7.3
+  - @launchpad-ui/menu@0.7.8
+  - @launchpad-ui/popover@0.9.1
+  - @launchpad-ui/tooltip@0.7.2
+
+## 0.9.3
+
+### Patch Changes
+
+- Updated dependencies [[`7205f0ee`](https://github.com/launchdarkly/launchpad-ui/commit/7205f0ee17bed5fc7ad2920a9acd16b41e71f48b)]:
+  - @launchpad-ui/chip@0.7.2
+
+## 0.9.2
+
+### Patch Changes
+
+- Updated dependencies [[`74ddde60`](https://github.com/launchdarkly/launchpad-ui/commit/74ddde60d233fd489860f89aacb908e20f525674)]:
+  - @launchpad-ui/tooltip@0.7.1
+  - @launchpad-ui/menu@0.7.7
+
+## 0.9.1
+
+### Patch Changes
+
+- Updated dependencies [[`0ed1d8ea`](https://github.com/launchdarkly/launchpad-ui/commit/0ed1d8ea0746e6721fc66ebc8bfe8109df8339ce)]:
+  - @launchpad-ui/chip@0.7.1
+
 ## 0.9.0
 
 ### Minor Changes

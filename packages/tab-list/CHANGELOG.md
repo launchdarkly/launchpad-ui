@@ -1,5 +1,39 @@
 # @launchpad-ui/tab-list
 
+## 0.4.26
+
+### Patch Changes
+
+- Updated dependencies [[`c120d56c`](https://github.com/launchdarkly/launchpad-ui/commit/c120d56c7b4045cefa5520954dc7683159768625)]:
+  - @launchpad-ui/tokens@0.5.4
+
+## 0.4.25
+
+### Patch Changes
+
+- [#748](https://github.com/launchdarkly/launchpad-ui/pull/748) [`b7366fa2`](https://github.com/launchdarkly/launchpad-ui/commit/b7366fa2c405def483e7563b1bda674c33629997) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [TabList]: Remove background color
+
+## 0.4.24
+
+### Patch Changes
+
+- Updated dependencies [[`d5bd5d0d`](https://github.com/launchdarkly/launchpad-ui/commit/d5bd5d0de1cedc2d341beced3ac8239167a85108)]:
+  - @launchpad-ui/tokens@0.5.3
+
+## 0.4.23
+
+### Patch Changes
+
+- Updated dependencies [[`152aef91`](https://github.com/launchdarkly/launchpad-ui/commit/152aef9126c5291586b09b703795030f52a01bb1)]:
+  - @launchpad-ui/tokens@0.5.2
+
+## 0.4.22
+
+### Patch Changes
+
+- Updated dependencies [[`909a0fde`](https://github.com/launchdarkly/launchpad-ui/commit/909a0fdebf57634d5c100626cb432c35eac1c661)]:
+  - @launchpad-ui/tokens@0.5.1
+
 ## 0.4.21
 
 ### Patch Changes

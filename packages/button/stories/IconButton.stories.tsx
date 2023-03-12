@@ -135,7 +135,7 @@ export default {
 
 type Story = StoryObj<typeof IconButton>;
 
-const icon = <Add size="medium" />;
+const icon = <Add />;
 
 export const Minimal: Story = {
   args: { icon, 'aria-label': 'Button' },
@@ -170,6 +170,15 @@ export const Close: Story = {
     icon,
     'aria-label': 'Button',
     kind: 'close',
+  },
+};
+
+export const Small: Story = {
+  args: {
+    icon,
+    size: 'small',
+    'aria-label': 'Button',
+    kind: 'default',
   },
 };
 

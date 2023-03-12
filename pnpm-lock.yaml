@@ -176,6 +176,7 @@ importers:
       '@launchpad-ui/button': workspace:~
       '@launchpad-ui/chip': workspace:~
       '@launchpad-ui/clipboard': workspace:~
+      '@launchpad-ui/collapsible': workspace:~
       '@launchpad-ui/core': workspace:~
       '@launchpad-ui/counter': workspace:~
       '@launchpad-ui/drawer': workspace:~
@@ -222,6 +223,7 @@ importers:
       '@launchpad-ui/button': link:../../packages/button
       '@launchpad-ui/chip': link:../../packages/chip
       '@launchpad-ui/clipboard': link:../../packages/clipboard
+      '@launchpad-ui/collapsible': link:../../packages/collapsible
       '@launchpad-ui/core': link:../../packages/core
       '@launchpad-ui/counter': link:../../packages/counter
       '@launchpad-ui/drawer': link:../../packages/drawer
@@ -363,6 +365,23 @@ importers:
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
 
+  packages/collapsible:
+    specifiers:
+      '@launchpad-ui/button': workspace:~
+      '@launchpad-ui/icons': workspace:~
+      '@launchpad-ui/tokens': workspace:~
+      classix: 2.1.17
+      react: 18.2.0
+      react-dom: 18.2.0
+    dependencies:
+      '@launchpad-ui/button': link:../button
+      '@launchpad-ui/icons': link:../icons
+      '@launchpad-ui/tokens': link:../tokens
+      classix: 2.1.17
+    devDependencies:
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
+
   packages/core:
     specifiers:
       '@launchpad-ui/alert': workspace:~
@@ -371,6 +390,7 @@ importers:
       '@launchpad-ui/button': workspace:~
       '@launchpad-ui/chip': workspace:~
       '@launchpad-ui/clipboard': workspace:~
+      '@launchpad-ui/collapsible': workspace:~
       '@launchpad-ui/counter': workspace:~
       '@launchpad-ui/drawer': workspace:~
       '@launchpad-ui/dropdown': workspace:~
@@ -408,6 +428,7 @@ importers:
       '@launchpad-ui/button': link:../button
       '@launchpad-ui/chip': link:../chip
       '@launchpad-ui/clipboard': link:../clipboard
+      '@launchpad-ui/collapsible': link:../collapsible
       '@launchpad-ui/counter': link:../counter
       '@launchpad-ui/drawer': link:../drawer
       '@launchpad-ui/dropdown': link:../dropdown

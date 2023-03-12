@@ -139,7 +139,7 @@ StyleDictionary.registerFormat({
 
     const darkColorCSSVariables = `[data-theme='dark'] {\n${darkTokens}\n}\n`;
 
-    const defaultColorCSSVariables = `[data-theme='default'] {\n${defaultTokens}\n}\n`;
+    const defaultColorCSSVariables = `:root, [data-theme='default'] {\n${defaultTokens}\n}\n`;
 
     return `${fileHeader({
       file,

@@ -97,6 +97,8 @@ color:
   white:
     100:
       value: hsl(0, 0%, 97.3%)
+    200:
+      value: hsl(0, 0%, 93.7%)
     ' ':
       value: hsl(0, 0%, 100%)
   gray:

@@ -1,5 +1,254 @@
 # @launchpad-ui/core
 
+## 0.32.1
+
+### Patch Changes
+
+- [#759](https://github.com/launchdarkly/launchpad-ui/pull/759) [`c120d56c`](https://github.com/launchdarkly/launchpad-ui/commit/c120d56c7b4045cefa5520954dc7683159768625) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Tokens] Add back :root to token list
+
+- Updated dependencies [[`c120d56c`](https://github.com/launchdarkly/launchpad-ui/commit/c120d56c7b4045cefa5520954dc7683159768625)]:
+  - @launchpad-ui/tokens@0.5.4
+  - @launchpad-ui/alert@0.7.5
+  - @launchpad-ui/avatar@0.4.39
+  - @launchpad-ui/banner@0.9.5
+  - @launchpad-ui/button@0.8.5
+  - @launchpad-ui/chip@0.7.6
+  - @launchpad-ui/clipboard@0.9.6
+  - @launchpad-ui/collapsible@0.1.2
+  - @launchpad-ui/counter@0.3.25
+  - @launchpad-ui/drawer@0.3.5
+  - @launchpad-ui/dropdown@0.6.36
+  - @launchpad-ui/filter@0.5.6
+  - @launchpad-ui/form@0.8.5
+  - @launchpad-ui/icons@0.8.1
+  - @launchpad-ui/markdown@0.4.7
+  - @launchpad-ui/menu@0.7.12
+  - @launchpad-ui/modal@0.14.5
+  - @launchpad-ui/navigation@0.10.1
+  - @launchpad-ui/pagination@0.3.46
+  - @launchpad-ui/popover@0.9.4
+  - @launchpad-ui/progress@0.5.23
+  - @launchpad-ui/progress-bubbles@0.6.4
+  - @launchpad-ui/select@0.2.6
+  - @launchpad-ui/slider@0.4.4
+  - @launchpad-ui/snackbar@0.3.40
+  - @launchpad-ui/split-button@0.7.6
+  - @launchpad-ui/tab-list@0.4.26
+  - @launchpad-ui/table@0.5.4
+  - @launchpad-ui/toast@0.2.39
+  - @launchpad-ui/toggle@0.5.4
+  - @launchpad-ui/tooltip@0.7.5
+
+## 0.32.0
+
+### Minor Changes
+
+- [#742](https://github.com/launchdarkly/launchpad-ui/pull/742) [`ca881bbd`](https://github.com/launchdarkly/launchpad-ui/commit/ca881bbdeb2530036274a31638d2c8ef58b9e081) Thanks [@jagarnica](https://github.com/jagarnica)! - [NavItem] Fix clipping when using status Chip
+
+### Patch Changes
+
+- [#744](https://github.com/launchdarkly/launchpad-ui/pull/744) [`f07d8c7d`](https://github.com/launchdarkly/launchpad-ui/commit/f07d8c7df396ada9d30780d56e97470382a6b350) Thanks [@matthewferry](https://github.com/matthewferry)! - [Icons]: Remove `fill="none"` on `approval-applied` and `approval-denied` SVGs
+
+- [#747](https://github.com/launchdarkly/launchpad-ui/pull/747) [`cd812ed3`](https://github.com/launchdarkly/launchpad-ui/commit/cd812ed305b8ecb660986830ed4842d59a150882) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Button] Update `IconButton` to control icon size internally
+
+- [#746](https://github.com/launchdarkly/launchpad-ui/pull/746) [`2279ea93`](https://github.com/launchdarkly/launchpad-ui/commit/2279ea938bb23ac2b1505dde055daf3352797398) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Pagination] Expose PaginationChange string union type
+
+- [#748](https://github.com/launchdarkly/launchpad-ui/pull/748) [`b7366fa2`](https://github.com/launchdarkly/launchpad-ui/commit/b7366fa2c405def483e7563b1bda674c33629997) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [TabList]: Remove background color
+
+- Updated dependencies [[`ca881bbd`](https://github.com/launchdarkly/launchpad-ui/commit/ca881bbdeb2530036274a31638d2c8ef58b9e081), [`f07d8c7d`](https://github.com/launchdarkly/launchpad-ui/commit/f07d8c7df396ada9d30780d56e97470382a6b350), [`cd812ed3`](https://github.com/launchdarkly/launchpad-ui/commit/cd812ed305b8ecb660986830ed4842d59a150882), [`2279ea93`](https://github.com/launchdarkly/launchpad-ui/commit/2279ea938bb23ac2b1505dde055daf3352797398), [`5d7c3eed`](https://github.com/launchdarkly/launchpad-ui/commit/5d7c3eed060658abcaa2dc13c6471e424405f54b), [`b7366fa2`](https://github.com/launchdarkly/launchpad-ui/commit/b7366fa2c405def483e7563b1bda674c33629997)]:
+  - @launchpad-ui/navigation@0.10.0
+  - @launchpad-ui/icons@0.8.0
+  - @launchpad-ui/button@0.8.4
+  - @launchpad-ui/pagination@0.3.45
+  - @launchpad-ui/tab-list@0.4.25
+  - @launchpad-ui/alert@0.7.4
+  - @launchpad-ui/avatar@0.4.38
+  - @launchpad-ui/banner@0.9.4
+  - @launchpad-ui/clipboard@0.9.5
+  - @launchpad-ui/collapsible@0.1.1
+  - @launchpad-ui/drawer@0.3.4
+  - @launchpad-ui/dropdown@0.6.35
+  - @launchpad-ui/filter@0.5.5
+  - @launchpad-ui/form@0.8.4
+  - @launchpad-ui/menu@0.7.11
+  - @launchpad-ui/modal@0.14.4
+  - @launchpad-ui/select@0.2.5
+  - @launchpad-ui/snackbar@0.3.39
+  - @launchpad-ui/toast@0.2.38
+  - @launchpad-ui/split-button@0.7.5
+
+## 0.31.6
+
+### Patch Changes
+
+- [#738](https://github.com/launchdarkly/launchpad-ui/pull/738) [`64bcbee5`](https://github.com/launchdarkly/launchpad-ui/commit/64bcbee53469fd013b458b2f924d470bb3439b90) Thanks [@chasedarkly](https://github.com/chasedarkly)! - Trigger release
+
+- [#735](https://github.com/launchdarkly/launchpad-ui/pull/735) [`d5bd5d0d`](https://github.com/launchdarkly/launchpad-ui/commit/d5bd5d0de1cedc2d341beced3ac8239167a85108) Thanks [@chasedarkly](https://github.com/chasedarkly)! - Remove :root from token variables
+
+- [#737](https://github.com/launchdarkly/launchpad-ui/pull/737) [`304c87bc`](https://github.com/launchdarkly/launchpad-ui/commit/304c87bcd9050fd64c1ce997bb96c6b6e3aa9701) Thanks [@matthewferry](https://github.com/matthewferry)! - Adds approval icons for `approval-applied` and `approval-declined`
+
+- [#740](https://github.com/launchdarkly/launchpad-ui/pull/740) [`74e10602`](https://github.com/launchdarkly/launchpad-ui/commit/74e10602922bbc0ac71aea9e3915f5a1d719a23a) Thanks [@chasedarkly](https://github.com/chasedarkly)! - Trigger release
+
+- [#733](https://github.com/launchdarkly/launchpad-ui/pull/733) [`817b4c9c`](https://github.com/launchdarkly/launchpad-ui/commit/817b4c9c8a998f257369b6a726b2fbdf8242e1c9) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Collapsible]: Added package
+  [Alert]: Deprecate `CollapsibleAlert` in favor of composition
+  [Button]: Cleaned up unused styles
+- Updated dependencies [[`d5bd5d0d`](https://github.com/launchdarkly/launchpad-ui/commit/d5bd5d0de1cedc2d341beced3ac8239167a85108), [`304c87bc`](https://github.com/launchdarkly/launchpad-ui/commit/304c87bcd9050fd64c1ce997bb96c6b6e3aa9701), [`817b4c9c`](https://github.com/launchdarkly/launchpad-ui/commit/817b4c9c8a998f257369b6a726b2fbdf8242e1c9)]:
+  - @launchpad-ui/tokens@0.5.3
+  - @launchpad-ui/icons@0.7.5
+  - @launchpad-ui/collapsible@0.1.0
+  - @launchpad-ui/button@0.8.3
+  - @launchpad-ui/alert@0.7.3
+  - @launchpad-ui/avatar@0.4.37
+  - @launchpad-ui/banner@0.9.3
+  - @launchpad-ui/chip@0.7.5
+  - @launchpad-ui/clipboard@0.9.4
+  - @launchpad-ui/counter@0.3.24
+  - @launchpad-ui/drawer@0.3.3
+  - @launchpad-ui/dropdown@0.6.34
+  - @launchpad-ui/filter@0.5.4
+  - @launchpad-ui/form@0.8.3
+  - @launchpad-ui/markdown@0.4.6
+  - @launchpad-ui/menu@0.7.10
+  - @launchpad-ui/modal@0.14.3
+  - @launchpad-ui/navigation@0.9.6
+  - @launchpad-ui/pagination@0.3.44
+  - @launchpad-ui/popover@0.9.3
+  - @launchpad-ui/progress@0.5.22
+  - @launchpad-ui/progress-bubbles@0.6.3
+  - @launchpad-ui/select@0.2.4
+  - @launchpad-ui/slider@0.4.3
+  - @launchpad-ui/snackbar@0.3.38
+  - @launchpad-ui/split-button@0.7.4
+  - @launchpad-ui/tab-list@0.4.24
+  - @launchpad-ui/table@0.5.3
+  - @launchpad-ui/toast@0.2.37
+  - @launchpad-ui/toggle@0.5.3
+  - @launchpad-ui/tooltip@0.7.4
+
+## 0.31.5
+
+### Patch Changes
+
+- [`152aef91`](https://github.com/launchdarkly/launchpad-ui/commit/152aef9126c5291586b09b703795030f52a01bb1) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Clipboard]: Update default button styles to match Button styling
+  [Button]: Remove unused CSS variables
+  [Tokens]: Add `:root` to default theme variables
+  [Chip]: Update darkmode default chip color
+- Updated dependencies [[`152aef91`](https://github.com/launchdarkly/launchpad-ui/commit/152aef9126c5291586b09b703795030f52a01bb1)]:
+  - @launchpad-ui/clipboard@0.9.3
+  - @launchpad-ui/button@0.8.2
+  - @launchpad-ui/tokens@0.5.2
+  - @launchpad-ui/chip@0.7.4
+  - @launchpad-ui/alert@0.7.2
+  - @launchpad-ui/banner@0.9.2
+  - @launchpad-ui/drawer@0.3.2
+  - @launchpad-ui/dropdown@0.6.33
+  - @launchpad-ui/filter@0.5.3
+  - @launchpad-ui/modal@0.14.2
+  - @launchpad-ui/pagination@0.3.43
+  - @launchpad-ui/select@0.2.3
+  - @launchpad-ui/snackbar@0.3.37
+  - @launchpad-ui/split-button@0.7.3
+  - @launchpad-ui/avatar@0.4.36
+  - @launchpad-ui/counter@0.3.23
+  - @launchpad-ui/form@0.8.2
+  - @launchpad-ui/icons@0.7.4
+  - @launchpad-ui/markdown@0.4.5
+  - @launchpad-ui/menu@0.7.9
+  - @launchpad-ui/navigation@0.9.5
+  - @launchpad-ui/popover@0.9.2
+  - @launchpad-ui/progress@0.5.21
+  - @launchpad-ui/progress-bubbles@0.6.2
+  - @launchpad-ui/slider@0.4.2
+  - @launchpad-ui/tab-list@0.4.23
+  - @launchpad-ui/table@0.5.2
+  - @launchpad-ui/toast@0.2.36
+  - @launchpad-ui/toggle@0.5.2
+  - @launchpad-ui/tooltip@0.7.3
+
+## 0.31.4
+
+### Patch Changes
+
+- [#730](https://github.com/launchdarkly/launchpad-ui/pull/730) [`909a0fde`](https://github.com/launchdarkly/launchpad-ui/commit/909a0fdebf57634d5c100626cb432c35eac1c661) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Tokens] Add `lp-white-200` color
+  [Chip] Modify default bg colors
+
+- [`9214152b`](https://github.com/launchdarkly/launchpad-ui/commit/9214152b2e445c6503b6133c3686a1afb3ff5256) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Clipboard] Update style of copy button
+
+- Updated dependencies [[`909a0fde`](https://github.com/launchdarkly/launchpad-ui/commit/909a0fdebf57634d5c100626cb432c35eac1c661), [`9214152b`](https://github.com/launchdarkly/launchpad-ui/commit/9214152b2e445c6503b6133c3686a1afb3ff5256)]:
+  - @launchpad-ui/tokens@0.5.1
+  - @launchpad-ui/chip@0.7.3
+  - @launchpad-ui/clipboard@0.9.2
+  - @launchpad-ui/alert@0.7.1
+  - @launchpad-ui/avatar@0.4.35
+  - @launchpad-ui/banner@0.9.1
+  - @launchpad-ui/button@0.8.1
+  - @launchpad-ui/counter@0.3.22
+  - @launchpad-ui/drawer@0.3.1
+  - @launchpad-ui/dropdown@0.6.32
+  - @launchpad-ui/filter@0.5.2
+  - @launchpad-ui/form@0.8.1
+  - @launchpad-ui/icons@0.7.3
+  - @launchpad-ui/markdown@0.4.4
+  - @launchpad-ui/menu@0.7.8
+  - @launchpad-ui/modal@0.14.1
+  - @launchpad-ui/navigation@0.9.4
+  - @launchpad-ui/pagination@0.3.42
+  - @launchpad-ui/popover@0.9.1
+  - @launchpad-ui/progress@0.5.20
+  - @launchpad-ui/progress-bubbles@0.6.1
+  - @launchpad-ui/select@0.2.2
+  - @launchpad-ui/slider@0.4.1
+  - @launchpad-ui/snackbar@0.3.36
+  - @launchpad-ui/split-button@0.7.2
+  - @launchpad-ui/tab-list@0.4.22
+  - @launchpad-ui/table@0.5.1
+  - @launchpad-ui/toast@0.2.35
+  - @launchpad-ui/toggle@0.5.1
+  - @launchpad-ui/tooltip@0.7.2
+
+## 0.31.3
+
+### Patch Changes
+
+- [#728](https://github.com/launchdarkly/launchpad-ui/pull/728) [`7205f0ee`](https://github.com/launchdarkly/launchpad-ui/commit/7205f0ee17bed5fc7ad2920a9acd16b41e71f48b) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Chip]
+
+  - Deprecate `label` variant
+  - Remove `legacy` variant, design decided to reduce padding back to 24px total height, making legacy unnecessary.
+  - Deprecate `subtle` variants
+  - Update normal and small sizing
+
+- Updated dependencies [[`7205f0ee`](https://github.com/launchdarkly/launchpad-ui/commit/7205f0ee17bed5fc7ad2920a9acd16b41e71f48b)]:
+  - @launchpad-ui/chip@0.7.2
+  - @launchpad-ui/navigation@0.9.3
+
+## 0.31.2
+
+### Patch Changes
+
+- [#726](https://github.com/launchdarkly/launchpad-ui/pull/726) [`74ddde60`](https://github.com/launchdarkly/launchpad-ui/commit/74ddde60d233fd489860f89aacb908e20f525674) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Snackbar] Change z-index to `700`
+  [Toast] Change z-index to `700`
+  [Tooltip] Change z-index to `800`
+- Updated dependencies [[`74ddde60`](https://github.com/launchdarkly/launchpad-ui/commit/74ddde60d233fd489860f89aacb908e20f525674)]:
+  - @launchpad-ui/snackbar@0.3.35
+  - @launchpad-ui/tooltip@0.7.1
+  - @launchpad-ui/toast@0.2.34
+  - @launchpad-ui/clipboard@0.9.1
+  - @launchpad-ui/filter@0.5.1
+  - @launchpad-ui/menu@0.7.7
+  - @launchpad-ui/navigation@0.9.2
+  - @launchpad-ui/select@0.2.1
+  - @launchpad-ui/split-button@0.7.1
+
+## 0.31.1
+
+### Patch Changes
+
+- [#724](https://github.com/launchdarkly/launchpad-ui/pull/724) [`0ed1d8ea`](https://github.com/launchdarkly/launchpad-ui/commit/0ed1d8ea0746e6721fc66ebc8bfe8109df8339ce) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Chip] Add size variants and deprecate unused variants
+
+- Updated dependencies [[`0ed1d8ea`](https://github.com/launchdarkly/launchpad-ui/commit/0ed1d8ea0746e6721fc66ebc8bfe8109df8339ce)]:
+  - @launchpad-ui/chip@0.7.1
+  - @launchpad-ui/navigation@0.9.1
+
 ## 0.31.0
 
 ### Minor Changes

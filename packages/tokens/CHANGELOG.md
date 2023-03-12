@@ -1,5 +1,33 @@
 # @launchpad-ui/tokens
 
+## 0.5.4
+
+### Patch Changes
+
+- [#759](https://github.com/launchdarkly/launchpad-ui/pull/759) [`c120d56c`](https://github.com/launchdarkly/launchpad-ui/commit/c120d56c7b4045cefa5520954dc7683159768625) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Tokens] Add back :root to token list
+
+## 0.5.3
+
+### Patch Changes
+
+- [#735](https://github.com/launchdarkly/launchpad-ui/pull/735) [`d5bd5d0d`](https://github.com/launchdarkly/launchpad-ui/commit/d5bd5d0de1cedc2d341beced3ac8239167a85108) Thanks [@chasedarkly](https://github.com/chasedarkly)! - Remove :root from token variables
+
+## 0.5.2
+
+### Patch Changes
+
+- [`152aef91`](https://github.com/launchdarkly/launchpad-ui/commit/152aef9126c5291586b09b703795030f52a01bb1) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Clipboard]: Update default button styles to match Button styling
+  [Button]: Remove unused CSS variables
+  [Tokens]: Add `:root` to default theme variables
+  [Chip]: Update darkmode default chip color
+
+## 0.5.1
+
+### Patch Changes
+
+- [#730](https://github.com/launchdarkly/launchpad-ui/pull/730) [`909a0fde`](https://github.com/launchdarkly/launchpad-ui/commit/909a0fdebf57634d5c100626cb432c35eac1c661) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Tokens] Add `lp-white-200` color
+  [Chip] Modify default bg colors
+
 ## 0.5.0
 
 ### Minor Changes
