@@ -8,7 +8,7 @@ import { useCallback, useMemo } from 'react';
 const useFilteredCollection = <T extends object>(
   props: SharedSelectProps<T>,
   state: ListState<T>
-) => {
+): Collection<Node<T>> => {
   const { hasFilter, defaultFilter, filterValue, items } = props;
   const { collection } = state;
 
