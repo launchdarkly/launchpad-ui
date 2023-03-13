@@ -409,7 +409,7 @@ const Popover = ({
         aria-hidden={!isOpen}
         {...handlers}
       >
-        {interactionKind === 'click' ? (
+        {enforceFocus || interactionKind === 'click' ? (
           <FocusTrap autoFocus>{popoverContent}</FocusTrap>
         ) : (
           popoverContent
