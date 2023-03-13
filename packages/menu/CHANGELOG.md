@@ -1,5 +1,30 @@
 # @launchpad-ui/menu
 
+## 0.8.2
+
+### Patch Changes
+
+- [#767](https://github.com/launchdarkly/launchpad-ui/pull/767) [`b6a6b17f`](https://github.com/launchdarkly/launchpad-ui/commit/b6a6b17f4635dc1c32365a81cecaf22a9c088b3b) Thanks [@chasedarkly](https://github.com/chasedarkly)! - Bump react-aria and react-stately versions
+
+- Updated dependencies [[`b6a6b17f`](https://github.com/launchdarkly/launchpad-ui/commit/b6a6b17f4635dc1c32365a81cecaf22a9c088b3b)]:
+  - @launchpad-ui/form@0.8.6
+  - @launchpad-ui/popover@0.9.6
+  - @launchpad-ui/tooltip@0.7.7
+
+## 0.8.1
+
+### Patch Changes
+
+- Updated dependencies [[`ac2cab06`](https://github.com/launchdarkly/launchpad-ui/commit/ac2cab06ac8794a84948a59417a62e13fc08dac7)]:
+  - @launchpad-ui/popover@0.9.5
+  - @launchpad-ui/tooltip@0.7.6
+
+## 0.8.0
+
+### Minor Changes
+
+- [#763](https://github.com/launchdarkly/launchpad-ui/pull/763) [`09f3490c`](https://github.com/launchdarkly/launchpad-ui/commit/09f3490cb0c015ec34c96ad218b7173562752f4c) Thanks [@apucacao](https://github.com/apucacao)! - update to react-router-dom@6.9.0
+
 ## 0.7.12
 
 ### Patch Changes

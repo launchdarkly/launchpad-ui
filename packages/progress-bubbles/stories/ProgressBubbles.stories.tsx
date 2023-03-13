@@ -1,5 +1,6 @@
 import type { StoryObj } from '@storybook/react';
 
+import { Button } from '@launchpad-ui/button';
 import { CheckCircle, Info, Person, Warning } from '@launchpad-ui/icons';
 
 import { ProgressBubbles } from '../src';
@@ -46,6 +47,12 @@ const items = [
   {
     label: 'Complete',
     icons: <Person />,
+    popover: (
+      <div style={{ padding: '1rem' }}>
+        <p>You can trigger a popover from a progress bubble item</p>
+        <Button onClick={() => alert('Clicked button from popover.')}>Fire alert</Button>
+      </div>
+    ),
   },
 ];
 

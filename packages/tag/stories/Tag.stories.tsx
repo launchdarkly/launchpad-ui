@@ -1,4 +1,5 @@
 import type { StoryObj } from '@storybook/react';
+import { useState } from 'react';
 
 import { TagGroup, TagItem } from '../src';
 
@@ -16,16 +17,62 @@ export default {
 
 type Story = StoryObj<typeof TagGroup>;
 
+const MOCK_ITEMS = [
+  { id: 1, name: 'News' },
+  { id: 2, name: 'Travel' },
+  { id: 3, name: 'Gaming' },
+  { id: 4, name: 'Shopping' },
+  { id: 5, name: 'Sports' },
+  { id: 6, name: 'Music' },
+  { id: 7, name: 'Documentaries' },
+  { id: 8, name: 'History' },
+];
+
 export const Basic: Story = {
   render: () => {
-    return (
-      <TagGroup allowsRemoving onRemove={(key) => console.log(key)}>
-        <TagItem>News</TagItem>
-        <TagItem>Travel</TagItem>
-        <TagItem>Gaming</TagItem>
-        <TagItem>Shopping</TagItem>
-      </TagGroup>
-    );
+    const Component = () => {
+      const [items, setItems] = useState(MOCK_ITEMS);
+
+      return (
+        <TagGroup
+          allowsRemoving
+          onRemove={(key) => {
+            setItems((prevItems) => prevItems.filter((item) => key !== item.id));
+          }}
+          items={items}
+          actionLabel="Clear"
+          onAction={() => alert('Clear action pressed.')}
+        >
+          {(item) => <TagItem>{item.name}</TagItem>}
+        </TagGroup>
+      );
+    };
+
+    return <Component />;
   },
-  parameters: { docs: { disable: false } },
+};
+
+export const WithMaxRows: Story = {
+  render: () => {
+    const Component = () => {
+      const [items, setItems] = useState(MOCK_ITEMS);
+
+      return (
+        <div style={{ maxWidth: 350 }}>
+          <TagGroup
+            allowsRemoving
+            maxRows={2}
+            onRemove={(key) => {
+              setItems((prevItems) => prevItems.filter((item) => key !== item.id));
+            }}
+            items={items}
+          >
+            {(item) => <TagItem>{item.name}</TagItem>}
+          </TagGroup>
+        </div>
+      );
+    };
+
+    return <Component />;
+  },
 };

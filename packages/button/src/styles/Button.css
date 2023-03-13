@@ -37,7 +37,7 @@
   font-size: var(--Button-font-size-small);
   line-height: var(--Button-line-height-small);
   padding: 0.3rem 0.8rem;
-  min-height: 2.5rem;
+  min-height: 2.4rem;
 }
 
 .Button--big {

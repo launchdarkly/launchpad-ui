@@ -1,5 +1,19 @@
 # @launchpad-ui/tooltip
 
+## 0.7.7
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @launchpad-ui/popover@0.9.6
+
+## 0.7.6
+
+### Patch Changes
+
+- Updated dependencies [[`ac2cab06`](https://github.com/launchdarkly/launchpad-ui/commit/ac2cab06ac8794a84948a59417a62e13fc08dac7)]:
+  - @launchpad-ui/popover@0.9.5
+
 ## 0.7.5
 
 ### Patch Changes

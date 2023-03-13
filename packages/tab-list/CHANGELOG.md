@@ -1,5 +1,11 @@
 # @launchpad-ui/tab-list
 
+## 0.4.27
+
+### Patch Changes
+
+- [#767](https://github.com/launchdarkly/launchpad-ui/pull/767) [`b6a6b17f`](https://github.com/launchdarkly/launchpad-ui/commit/b6a6b17f4635dc1c32365a81cecaf22a9c088b3b) Thanks [@chasedarkly](https://github.com/chasedarkly)! - Bump react-aria and react-stately versions
+
 ## 0.4.26
 
 ### Patch Changes

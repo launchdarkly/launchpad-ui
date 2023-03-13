@@ -1,5 +1,24 @@
 # @launchpad-ui/select
 
+## 0.2.8
+
+### Patch Changes
+
+- [#767](https://github.com/launchdarkly/launchpad-ui/pull/767) [`b6a6b17f`](https://github.com/launchdarkly/launchpad-ui/commit/b6a6b17f4635dc1c32365a81cecaf22a9c088b3b) Thanks [@chasedarkly](https://github.com/chasedarkly)! - Bump react-aria and react-stately versions
+
+- Updated dependencies []:
+  - @launchpad-ui/modal@0.14.6
+  - @launchpad-ui/popover@0.9.6
+  - @launchpad-ui/tooltip@0.7.7
+
+## 0.2.7
+
+### Patch Changes
+
+- Updated dependencies [[`ac2cab06`](https://github.com/launchdarkly/launchpad-ui/commit/ac2cab06ac8794a84948a59417a62e13fc08dac7)]:
+  - @launchpad-ui/popover@0.9.5
+  - @launchpad-ui/tooltip@0.7.6
+
 ## 0.2.6
 
 ### Patch Changes

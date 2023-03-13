@@ -1,22 +1,26 @@
 :root,
 [data-theme='default'] {
-  --lp-component-tag-color-bg: var(--lp-color-gray-100);
-  --lp-component-tag-color-text: var(--lp-color-gray-800);
+  --lp-component-tag-color-bg-readonly: var(--lp-color-gray-100);
+  --lp-component-tag-color-border: var(--lp-color-gray-600);
 }
 
 [data-theme='dark'] {
-  --lp-component-tag-color-bg: var(--lp-color-gray-900);
-  --lp-component-tag-color-text: var(--lp-color-gray-100);
+  --lp-component-tag-color-bg-readonly: var(--lp-color-gray-900);
+  --lp-component-tag-color-border: var(--lp-color-gray-500);
 }
 
 .tag {
-  background-color: var(--lp-component-tag-color-bg);
-  color: var(--lp-component-tag-color-text);
-  border: 1px solid var(--lp-color-border-field);
-  padding: 0.2rem 0.6rem;
+  background-color: var(--lp-color-bg-ui-secondary);
+  color: var(--lp-color-text-ui-secondary);
+  border: 1px solid var(--lp-component-tag-color-border);
+  border-radius: var(--lp-border-radius-regular);
+  font-size: var(--lp-font-size-200);
+  line-height: 1;
+  padding: 0 0.4rem 0 0.6rem;
   max-width: 100%;
-  margin: 0.4rem;
+  margin: 0 0.4rem 0.4rem 0;
   box-sizing: border-box;
+  cursor: default;
 }
 
 .isFocusVisible {
@@ -35,11 +39,18 @@
   /* fill */
 }
 
+.isReadOnly {
+  background-color: var(--lp-component-tag-color-bg-readonly);
+}
+
 .tagCell {
-  /* fill */
+  display: flex;
+  align-items: center;
 }
 
 .tagContent {
+  padding-right: 0.2rem;
+
   /* fill */
 }
 
@@ -49,16 +60,21 @@
 
 .tagGroupContainer {
   width: 100%;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .tagGroup {
-  display: inline;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .tagGroupActions {
-  /* fill */
+  line-height: 1;
 }
 
-.tagGroupActionButton {
+.tagGroupAction {
+  margin-bottom: 0.4rem;
+
   /* fill */
 }
