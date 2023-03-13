@@ -33,6 +33,11 @@
   },
   "dependencies": {
     "@launchpad-ui/tokens": "workspace:~",
+    "@react-aria/focus": "3.11.0",
+    "@react-aria/interactions": "3.14.0",
+    "@react-aria/tag": "3.0.0-beta.3",
+    "@react-aria/utils": "3.15.0",
+    "@react-stately/tag": "3.0.0-beta.0",
     "classix": "2.1.17"
   },
   "peerDependencies": {
@@ -40,6 +45,7 @@
     "react-dom": "18.2.0"
   },
   "devDependencies": {
+    "@react-types/tag": "3.0.0-beta.2",
     "react": "18.2.0",
     "react-dom": "18.2.0"
   }
