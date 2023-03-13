@@ -1,5 +1,11 @@
 # @launchpad-ui/menu
 
+## 0.8.0
+
+### Minor Changes
+
+- [#763](https://github.com/launchdarkly/launchpad-ui/pull/763) [`09f3490c`](https://github.com/launchdarkly/launchpad-ui/commit/09f3490cb0c015ec34c96ad218b7173562752f4c) Thanks [@apucacao](https://github.com/apucacao)! - update to react-router-dom@6.9.0
+
 ## 0.7.12
 
 ### Patch Changes
