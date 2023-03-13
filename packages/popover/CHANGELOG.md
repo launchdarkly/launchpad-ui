@@ -1,5 +1,12 @@
 # @launchpad-ui/popover
 
+## 0.9.5
+
+### Patch Changes
+
+- [#765](https://github.com/launchdarkly/launchpad-ui/pull/765) [`ac2cab06`](https://github.com/launchdarkly/launchpad-ui/commit/ac2cab06ac8794a84948a59417a62e13fc08dac7) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Popover]: Wrap contents in `FocusTrap` if `enforceFocus` is true.
+  [ProgressBubbles]: Enforce focus when progress bubble popover is open.
+
 ## 0.9.4
 
 ### Patch Changes
