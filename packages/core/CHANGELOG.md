@@ -1,5 +1,23 @@
 # @launchpad-ui/core
 
+## 0.33.1
+
+### Patch Changes
+
+- [#765](https://github.com/launchdarkly/launchpad-ui/pull/765) [`ac2cab06`](https://github.com/launchdarkly/launchpad-ui/commit/ac2cab06ac8794a84948a59417a62e13fc08dac7) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Popover]: Wrap contents in `FocusTrap` if `enforceFocus` is true.
+  [ProgressBubbles]: Enforce focus when progress bubble popover is open.
+- Updated dependencies [[`ac2cab06`](https://github.com/launchdarkly/launchpad-ui/commit/ac2cab06ac8794a84948a59417a62e13fc08dac7)]:
+  - @launchpad-ui/progress-bubbles@0.6.5
+  - @launchpad-ui/popover@0.9.5
+  - @launchpad-ui/dropdown@0.6.37
+  - @launchpad-ui/menu@0.8.1
+  - @launchpad-ui/navigation@0.11.1
+  - @launchpad-ui/select@0.2.7
+  - @launchpad-ui/split-button@0.7.7
+  - @launchpad-ui/tooltip@0.7.6
+  - @launchpad-ui/filter@0.5.8
+  - @launchpad-ui/clipboard@0.9.7
+
 ## 0.33.0
 
 ### Minor Changes
