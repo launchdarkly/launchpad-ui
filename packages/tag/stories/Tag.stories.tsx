@@ -19,7 +19,7 @@ type Story = StoryObj<typeof TagGroup>;
 export const Basic: Story = {
   render: () => {
     return (
-      <TagGroup>
+      <TagGroup allowsRemoving onRemove={(key) => console.log(key)}>
         <TagItem>News</TagItem>
         <TagItem>Travel</TagItem>
         <TagItem>Gaming</TagItem>
