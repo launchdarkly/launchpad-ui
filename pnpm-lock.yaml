@@ -203,7 +203,7 @@ importers:
       '@launchpad-ui/tokens': workspace:~
       '@launchpad-ui/tooltip': workspace:~
       '@react-aria/ssr': 3.4.0
-      '@react-stately/collections': 3.5.0
+      '@react-stately/collections': 3.5.1
       '@react-stately/data': 3.8.1
       '@remix-run/dev': ^1.10.0
       '@remix-run/eslint-config': ^1.10.0
@@ -249,7 +249,7 @@ importers:
       '@launchpad-ui/tokens': link:../../packages/tokens
       '@launchpad-ui/tooltip': link:../../packages/tooltip
       '@react-aria/ssr': 3.4.0_react@18.2.0
-      '@react-stately/collections': 3.5.0_react@18.2.0
+      '@react-stately/collections': 3.5.1_react@18.2.0
       '@react-stately/data': 3.8.1_react@18.2.0
       '@remix-run/node': 1.14.0
       '@remix-run/react': 1.14.0_biqbaboplfbrettd7655fr4n2y
@@ -923,7 +923,7 @@ importers:
     specifiers:
       '@launchpad-ui/tokens': workspace:~
       '@react-aria/tabs': 3.3.0
-      '@react-stately/collections': 3.5.0
+      '@react-stately/collections': 3.5.1
       '@react-stately/tabs': 3.2.0
       '@react-types/shared': 3.16.0
       '@react-types/tabs': 3.1.0
@@ -938,7 +938,7 @@ importers:
       '@react-types/tabs': 3.1.0_react@18.2.0
       classix: 2.1.17
     devDependencies:
-      '@react-stately/collections': 3.5.0_react@18.2.0
+      '@react-stately/collections': 3.5.1_react@18.2.0
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
 
@@ -4171,7 +4171,7 @@ packages:
       '@react-aria/selection': 3.12.1_react@18.2.0
       '@react-aria/textfield': 3.9.0_react@18.2.0
       '@react-aria/utils': 3.15.0_react@18.2.0
-      '@react-stately/collections': 3.5.1_react@18.2.0
+      '@react-stately/collections': 3.6.0_react@18.2.0
       '@react-stately/combobox': 3.3.1_react@18.2.0
       '@react-stately/layout': 3.11.0_react@18.2.0
       '@react-types/button': 3.7.0_react@18.2.0
@@ -4299,7 +4299,7 @@ packages:
       '@react-aria/label': 3.4.4_react@18.2.0
       '@react-aria/selection': 3.12.1_react@18.2.0
       '@react-aria/utils': 3.15.0_react@18.2.0
-      '@react-stately/collections': 3.5.1_react@18.2.0
+      '@react-stately/collections': 3.6.0_react@18.2.0
       '@react-stately/list': 3.7.0_react@18.2.0
       '@react-types/listbox': 3.4.0_react@18.2.0
       '@react-types/shared': 3.16.0_react@18.2.0
@@ -4330,7 +4330,7 @@ packages:
       '@react-aria/overlays': 3.12.1_biqbaboplfbrettd7655fr4n2y
       '@react-aria/selection': 3.12.1_react@18.2.0
       '@react-aria/utils': 3.15.0_react@18.2.0
-      '@react-stately/collections': 3.5.1_react@18.2.0
+      '@react-stately/collections': 3.6.0_react@18.2.0
       '@react-stately/menu': 3.4.4_react@18.2.0
       '@react-stately/tree': 3.5.0_react@18.2.0
       '@react-types/button': 3.7.0_react@18.2.0
@@ -4394,7 +4394,7 @@ packages:
       '@react-aria/i18n': 3.7.0_react@18.2.0
       '@react-aria/interactions': 3.14.0_react@18.2.0
       '@react-aria/utils': 3.15.0_react@18.2.0
-      '@react-stately/collections': 3.5.1_react@18.2.0
+      '@react-stately/collections': 3.6.0_react@18.2.0
       '@react-stately/selection': 3.12.0_react@18.2.0
       '@react-types/shared': 3.16.0_react@18.2.0
       '@swc/helpers': 0.4.14
@@ -4545,24 +4545,14 @@ packages:
       react: 18.2.0
     dev: false
 
-  /@react-stately/collections/3.5.0_react@18.2.0:
-    resolution: {integrity: sha512-3BAMRjJqrka0IGvyK4m3WslqCeiEfQGx7YsXEIgIgMJoLpk6Fi1Eh4CI8coBnl/wcVLiIRMCIvxubwFRWTgzdg==}
-    peerDependencies:
-      react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0 || 18
-    dependencies:
-      '@babel/runtime': 7.21.0
-      '@react-types/shared': 3.17.0_react@18.2.0
-      react: 18.2.0
-
   /@react-stately/collections/3.5.1_react@18.2.0:
     resolution: {integrity: sha512-egzVrZC5eFc5RJBpqUkzxd2aJOHZ2T1o7horEi8tAWZkg4YI+AmKrqela4ijVrrB9l1GO9z06qPT1UoPkFrC1w==}
     peerDependencies:
       react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0 || 18
     dependencies:
-      '@react-types/shared': 3.16.0_react@18.2.0
+      '@react-types/shared': 3.17.0_react@18.2.0
       '@swc/helpers': 0.4.14
       react: 18.2.0
-    dev: false
 
   /@react-stately/collections/3.6.0_react@18.2.0:
     resolution: {integrity: sha512-znkaqCPo7F1yyzEKDAB5MpX1Vw5UHcUQhDNrys5YOqAkX6/G/AChnBz0B63UxS3fjyqgnuJylRRmUp9nTqO21w==}
@@ -4678,7 +4668,7 @@ packages:
     peerDependencies:
       react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0 || 18
     dependencies:
-      '@react-stately/collections': 3.5.1_react@18.2.0
+      '@react-stately/collections': 3.6.0_react@18.2.0
       '@react-stately/list': 3.7.0_react@18.2.0
       '@react-stately/menu': 3.4.4_react@18.2.0
       '@react-stately/selection': 3.12.0_react@18.2.0
@@ -6472,7 +6462,6 @@ packages:
     resolution: {integrity: sha512-4C7nX/dvpzB7za4Ql9K81xK3HPxCpHMgwTZVyf+9JQ6VUbn9jjZVN7/Nkdz/Ugzs2CSjqnL/UPXroiVBVHUWUw==}
     dependencies:
       tslib: 2.5.0
-    dev: false
 
   /@szmarczak/http-timer/4.0.6:
     resolution: {integrity: sha512-4BAffykYOgO+5nzBWYwE3W90sBgLJoUPRWWcL8wlyiM8IB8ipJz3UMJ9KXQd1RKQXpKp8Tutn80HZtWsu2u76w==}
