@@ -1,3 +1,64 @@
+:root,
+[data-theme='default'] {
+  --lp-component-tag-color-bg: var(--lp-color-gray-100);
+  --lp-component-tag-color-text: var(--lp-color-gray-800);
+}
+
+[data-theme='dark'] {
+  --lp-component-tag-color-bg: var(--lp-color-gray-900);
+  --lp-component-tag-color-text: var(--lp-color-gray-100);
+}
+
 .tag {
-  /* styles here */
+  background-color: var(--lp-component-tag-color-bg);
+  color: var(--lp-component-tag-color-text);
+  border: 1px solid var(--lp-color-border-field);
+  padding: 0.2rem 0.6rem;
+  max-width: 100%;
+  margin: 0.4rem;
+  box-sizing: border-box;
+}
+
+.isFocusVisible {
+  /* fill */
+}
+
+.isFocused {
+  /* fill */
+}
+
+.isHovered {
+  /* fill */
+}
+
+.isRemovable {
+  /* fill */
+}
+
+.tagCell {
+  /* fill */
+}
+
+.tagContent {
+  /* fill */
+}
+
+.removeButton {
+  /* fill */
+}
+
+.tagGroupContainer {
+  width: 100%;
+}
+
+.tagGroup {
+  display: inline;
+}
+
+.tagGroupActions {
+  /* fill */
+}
+
+.tagGroupActionButton {
+  /* fill */
 }

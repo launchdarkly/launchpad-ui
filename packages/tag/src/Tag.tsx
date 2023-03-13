@@ -1,27 +1,28 @@
-import cx from 'classix';
-import { mergeProps } from '@react-aria/utils';
-import React, { useRef } from 'react';
 import type { TagGroupState } from '@react-stately/tag';
-import { TagProps } from '@react-types/tag';
+import type { TagProps as ReactAriaTagProps } from '@react-types/tag';
+
+import { IconButton } from '@launchpad-ui/button';
+import { Close } from '@launchpad-ui/icons';
 import { useFocusRing } from '@react-aria/focus';
 import { useHover } from '@react-aria/interactions';
 import { useTag } from '@react-aria/tag';
+import { mergeProps } from '@react-aria/utils';
+import cx from 'classix';
+import { useRef } from 'react';
 
 import styles from './styles/Tag.module.css';
-import { IconButton } from '@launchpad-ui/button';
-import { Close } from '@launchpad-ui/icons';
 
-export interface SpectrumTagProps<T> extends TagProps<T> {
+type TagProps<T extends object> = ReactAriaTagProps<T> & {
   state: TagGroupState<T>;
-}
+};
 
-const Tag = <T extends object>(props: SpectrumTagProps<T>) => {
-  const { children, allowsRemoving, item, state, onRemove, ...otherProps } = props;
+const Tag = <T extends object>(props: TagProps<T>) => {
+  const { children, allowsRemoving, item, state, onRemove } = props;
 
   const { hoverProps, isHovered } = useHover({});
   const { isFocused, isFocusVisible, focusProps } = useFocusRing({ within: true });
-  const ref = useRef();
-  const { clearButtonProps, labelProps, gridCellProps, rowProps } = useTag(
+  const ref = useRef<HTMLDivElement>(null);
+  const { clearButtonProps, labelProps, tagProps, tagRowProps } = useTag(
     {
       ...props,
       isFocused,
@@ -35,27 +36,34 @@ const Tag = <T extends object>(props: SpectrumTagProps<T>) => {
 
   return (
     <div
-      {...mergeProps(rowProps, hoverProps, focusProps)}
-      className={cx(styles.tag, {
-        'focus-ring': isFocusVisible,
-        'is-focused': isFocused,
-        'is-hovered': isHovered,
-        'is-removable': allowsRemoving,
-      })}
+      {...mergeProps(tagRowProps, hoverProps, focusProps)}
+      className={cx(
+        styles.tag,
+        isFocusVisible && styles.isFocusVisible,
+        isFocused && styles.isFocused,
+        isHovered && styles.isHovered,
+        allowsRemoving && styles.isRemovable
+      )}
       ref={ref}
     >
-      <div className={cx(styles.tagCell)} {...gridCellProps}>
-        {typeof children === 'string' ? <span>{children}</span> : children}
+      <div className={cx(styles.tagCell)} {...tagProps}>
+        <span className={styles.tagContent} {...labelProps}>
+          {children}
+        </span>
         {allowsRemoving && (
           <IconButton
             icon={<Close />}
             kind="minimal"
             size="small"
+            aria-label="Clear"
             className={styles.removeButton}
-            {...props}
+            {...clearButtonProps}
           />
         )}
       </div>
     </div>
   );
 };
+
+export { Tag };
+export type { TagProps };

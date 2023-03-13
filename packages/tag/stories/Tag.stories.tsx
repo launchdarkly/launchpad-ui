@@ -1,10 +1,10 @@
 import type { StoryObj } from '@storybook/react';
 
-import { Tag } from '../src';
+import { TagGroup, TagItem } from '../src';
 
 export default {
-  component: Tag,
-  title: 'Components/Tag',
+  component: TagGroup,
+  title: 'Components/TagGroup',
   description:
     'Tags allow users to categorize content. They can represent keywords or people, and are grouped to describe an item or a search request.',
   parameters: {
@@ -14,11 +14,18 @@ export default {
   },
 };
 
-type Story = StoryObj<typeof Tag>;
+type Story = StoryObj<typeof TagGroup>;
 
-export const Example: Story = {
-  args: {
-    children: 'A lovely Tag component.',
-    // arguments for your story
+export const Basic: Story = {
+  render: () => {
+    return (
+      <TagGroup>
+        <TagItem>News</TagItem>
+        <TagItem>Travel</TagItem>
+        <TagItem>Gaming</TagItem>
+        <TagItem>Shopping</TagItem>
+      </TagGroup>
+    );
   },
+  parameters: { docs: { disable: false } },
 };
