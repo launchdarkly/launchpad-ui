@@ -95,8 +95,9 @@ const ProgressBubbles = ({
               <Popover
                 targetClassName={styles['ProgressBubblesPopoverTarget']}
                 restrictWidth={false}
-                interactionKind={popoverInteraction}
+                enforceFocus
                 offset={item.popoverOffset}
+                interactionKind={popoverInteraction}
                 target={item.icons}
               >
                 <div role="button" tabIndex={0}>
