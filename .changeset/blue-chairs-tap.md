@@ -7,6 +7,7 @@
 '@launchpad-ui/toggle': patch
 '@launchpad-ui/form': patch
 '@launchpad-ui/menu': patch
+'@launchpad-ui/tab-list': patch
 '@launchpad-ui/core': patch
 ---
 
