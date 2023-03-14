@@ -4,7 +4,6 @@ import type { ReactElement } from 'react';
 
 import { Person } from '@launchpad-ui/icons';
 import { Menu, MenuItem } from '@launchpad-ui/menu';
-import { Tooltip } from '@launchpad-ui/tooltip';
 import { Fragment, useState } from 'react';
 
 import {
@@ -30,17 +29,13 @@ const SplitButtonExample = ({ icon, ...props }: SplitButtonStoryProps) => {
 
   return (
     <SplitButton {...props}>
-      <Tooltip content={!props.disabled ? 'Main tooltip' : ''}>
-        <SplitButtonMainButton icon={icon}>{!icon && 'Save changes'}</SplitButtonMainButton>
-      </Tooltip>
+      <SplitButtonMainButton icon={icon}>{!icon && 'Save changes'}</SplitButtonMainButton>
       <SplitButtonDropdown
         isOpen={open}
         onInteraction={() => setOpen(!open)}
         onSelect={handleSelect}
       >
-        <Tooltip content={!props.disabled ? 'Dropdown tooltip' : ''}>
-          <SplitButtonDropdownButton />
-        </Tooltip>
+        <SplitButtonDropdownButton />
         <Menu>
           <MenuItem item={{ key: 'Saved changes' }}>Save changes</MenuItem>
           <MenuItem item={{ key: 'Saved with comment' }}>Save with comment</MenuItem>
@@ -228,7 +223,7 @@ const SplitButtonArgs = {
   ),
 };
 
-export const Example: Story = {
+export const Basic: Story = {
   args: {
     ...SplitButtonArgs,
     kind: 'default',
@@ -242,7 +237,7 @@ export const Primary: Story = {
   },
 };
 
-export const DefaultSmall: Story = {
+export const BasicSmall: Story = {
   args: {
     ...SplitButtonArgs,
     kind: 'default',
