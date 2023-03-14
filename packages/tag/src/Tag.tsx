@@ -60,7 +60,10 @@ const Tag = <T extends object>(props: TagProps<T>) => {
             aria-label="Clear"
             className={styles.removeButton}
             tabIndex={-1}
-            onClick={() => clearButtonProps.onPress?.(undefined as any)}
+            onClick={(e) => {
+              e.stopPropagation();
+              clearButtonProps.onPress?.(undefined as any);
+            }}
             {...clearButtonProps}
           />
         )}
