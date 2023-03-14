@@ -37,7 +37,7 @@
   font-size: var(--Button-font-size-small);
   line-height: var(--Button-line-height-small);
   padding: 0.3rem 0.8rem;
-  min-height: 2.5rem;
+  min-height: 2.4rem;
 }
 
 .Button--big {
@@ -382,14 +382,14 @@
   padding: 0;
   line-height: 1;
   border-radius: 50%;
-  height: 2.5rem;
-  width: 2.5rem;
+  height: 3.2rem;
+  width: 3.2rem;
   min-height: auto;
   flex-shrink: 0;
 }
 
 .Button.Button--icon.Button--small {
-  height: 2.2rem;
-  width: 2.2rem;
+  height: 2.4rem;
+  width: 2.4rem;
 }
 /* stylelint-enable no-descending-specificity */

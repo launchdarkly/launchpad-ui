@@ -11,7 +11,7 @@ type SplitButtonContextState = {
 const SplitButtonContext = createContext<SplitButtonContextState>({
   disabled: false,
   kind: 'default',
-  size: 'normal',
+  size: 'medium',
 });
 
 export { SplitButtonContext };

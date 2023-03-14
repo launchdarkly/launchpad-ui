@@ -17,7 +17,7 @@ import './styles/Button.css';
 type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
   isLoading?: boolean;
   loadingText?: string | JSX.Element;
-  size?: 'tiny' | 'small' | 'normal' | 'big';
+  size?: 'tiny' | 'small' | 'medium' | 'big';
   kind?: 'default' | 'primary' | 'destructive' | 'minimal' | 'link' | 'close';
   fit?: boolean;
   disabled?: boolean;
