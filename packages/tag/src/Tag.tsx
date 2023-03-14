@@ -1,7 +1,6 @@
 import type { TagGroupState } from '@react-stately/tag';
 import type { TagProps as ReactAriaTagProps } from '@react-types/tag';
 
-import { IconButton } from '@launchpad-ui/button';
 import { Close } from '@launchpad-ui/icons';
 import { useFocusRing } from '@react-aria/focus';
 import { useHover } from '@react-aria/interactions';
@@ -13,12 +12,11 @@ import { useRef } from 'react';
 import styles from './styles/Tag.module.css';
 
 type TagProps<T extends object> = ReactAriaTagProps<T> & {
-  isReadOnly?: boolean;
   state: TagGroupState<T>;
 };
 
 const Tag = <T extends object>(props: TagProps<T>) => {
-  const { children, allowsRemoving, item, state, onRemove, isReadOnly } = props;
+  const { children, allowsRemoving, item, state, onRemove } = props;
 
   const { hoverProps, isHovered } = useHover({});
   const { isFocused, isFocusVisible, focusProps } = useFocusRing({ within: true });
@@ -41,31 +39,29 @@ const Tag = <T extends object>(props: TagProps<T>) => {
       className={cx(
         styles.tag,
         isFocusVisible && styles.isFocusVisible,
-        isFocused && styles.isFocused,
         isHovered && styles.isHovered,
-        allowsRemoving && styles.isRemovable,
-        isReadOnly && styles.isReadOnly
+        !allowsRemoving && styles.isReadOnly
       )}
       ref={ref}
+      data-test-id="tag"
     >
       <div className={cx(styles.tagCell)} {...tagProps}>
         <span className={styles.tagContent} {...labelProps}>
           {children}
         </span>
-        {!isReadOnly && allowsRemoving && (
-          <IconButton
-            icon={<Close />}
-            kind="minimal"
-            size="small"
-            aria-label="Clear"
+        {allowsRemoving && (
+          <button
             className={styles.removeButton}
             tabIndex={-1}
+            data-test-id="remove-tag-btn"
             onClick={(e) => {
               e.stopPropagation();
               clearButtonProps.onPress?.(undefined as any);
             }}
             {...clearButtonProps}
-          />
+          >
+            <Close size="small" />
+          </button>
         )}
       </div>
     </div>

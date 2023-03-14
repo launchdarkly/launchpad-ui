@@ -18,10 +18,21 @@ type TagGroupProps<T extends object> = AriaTagGroupProps<T> & {
   onAction?: () => void;
 
   isReadOnly?: boolean;
+
+  'data-test-id'?: string;
 };
 
 const TagGroup = <T extends object>(props: TagGroupProps<T>) => {
-  const { allowsRemoving, onRemove, maxRows, children, actionLabel, onAction, isReadOnly } = props;
+  const {
+    allowsRemoving,
+    onRemove,
+    maxRows,
+    children,
+    actionLabel,
+    onAction,
+    isReadOnly,
+    'data-test-id': testId = 'tag-group',
+  } = props;
   const containerRef = useRef<HTMLDivElement>(null);
   const tagsRef = useRef<HTMLDivElement>(null);
   const [isCollapsed, setIsCollapsed] = useState(maxRows != null);
@@ -43,13 +54,10 @@ const TagGroup = <T extends object>(props: TagGroupProps<T>) => {
 
   // Remove onAction from props so it doesn't make it into useGridList.
   const { onAction: _onAction, ...useTagGroupProps } = props;
-  const { tagGroupProps, labelProps, descriptionProps, errorMessageProps } = useTagGroup(
-    { ...useTagGroupProps, keyboardDelegate },
-    state,
-    tagsRef
-  );
+  const { tagGroupProps } = useTagGroup({ ...useTagGroupProps, keyboardDelegate }, state, tagsRef);
   const actionsId = useId();
 
+  /* c8 ignore start */
   const updateVisibleTagCount = useCallback(() => {
     if (maxRows && maxRows > 0) {
       const computeVisibleTagCount = () => {
@@ -110,6 +118,7 @@ const TagGroup = <T extends object>(props: TagGroupProps<T>) => {
       });
     }
   }, [maxRows, setTagState, containerRef, state.collection.size]);
+  /* c8 ignore stop */
 
   useResizeObserver({ ref: containerRef, onResize: updateVisibleTagCount });
   // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -134,10 +143,12 @@ const TagGroup = <T extends object>(props: TagGroupProps<T>) => {
 
   const showActions = tagState.showCollapseButton || (actionLabel && onAction);
 
+  const collapseLabel = isCollapsed ? `Show all (${state.collection.size})` : 'Show less';
+
   return (
     <FocusScope>
-      <div ref={containerRef} className={styles.tagGroupContainer}>
-        <div ref={tagsRef} {...tagGroupProps} className={styles.tagGroup}>
+      <div ref={containerRef} className={styles.tagGroupContainer} data-test-id={testId}>
+        <div ref={tagsRef} {...tagGroupProps} className={styles.tagGroup} data-test-id="tag-list">
           {visibleTags.map((item) => (
             <Tag
               {...item.props}
@@ -159,14 +170,29 @@ const TagGroup = <T extends object>(props: TagGroupProps<T>) => {
             aria-label="Actions"
             aria-labelledby={`${tagGroupProps.id} ${actionsId}`}
             className={styles.tagGroupActions}
+            data-test-id="tag-actions"
           >
             {tagState.showCollapseButton && (
-              <Button size="small" onClick={handlePressCollapse} className={styles.tagGroupAction}>
-                {isCollapsed ? `Show all (${state.collection.size})` : 'Show less'}
+              <Button
+                size="small"
+                kind="minimal"
+                data-test-id="tag-group-collapse-action-btn"
+                onClick={handlePressCollapse}
+                className={styles.tagGroupAction}
+                aria-label={collapseLabel}
+              >
+                {collapseLabel}
               </Button>
             )}
             {actionLabel && onAction && (
-              <Button size="small" onClick={() => onAction?.()} className={styles.tagGroupAction}>
+              <Button
+                size="small"
+                kind="minimal"
+                data-test-id="tag-group-action-btn"
+                onClick={() => onAction?.()}
+                className={styles.tagGroupAction}
+                aria-label={actionLabel}
+              >
                 {actionLabel}
               </Button>
             )}

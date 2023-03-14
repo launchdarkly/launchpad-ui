@@ -2,6 +2,8 @@ import type { ItemProps } from '@react-types/shared';
 
 type TagItemProps<T extends object> = ItemProps<T>;
 
+/* c8 ignore start */
+
 const TagItem = <T extends object>(
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   _props: TagItemProps<T>
@@ -33,6 +35,8 @@ TagItem.getCollectionNode = function* getCollectionNode<T extends object>(
     hasChildNodes: false,
   };
 };
+
+/* c8 ignore end */
 
 export { TagItem };
 export type { TagItemProps };

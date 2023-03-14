@@ -18,29 +18,25 @@
   line-height: 1;
   padding: 0 0.4rem 0 0.6rem;
   max-width: 100%;
-  margin: 0 0.4rem 0.4rem 0;
+  margin: 0 0.6rem 0.4rem 0;
   box-sizing: border-box;
   cursor: default;
+  display: inline-grid;
 }
 
 .isFocusVisible {
-  /* fill */
-}
-
-.isFocused {
-  /* fill */
+  outline: none;
+  box-shadow: 0 0 0 2px var(--lp-color-bg-ui-primary),
+    0 0 0 4px var(--lp-color-shadow-interactive-focus);
 }
 
 .isHovered {
-  /* fill */
-}
-
-.isRemovable {
-  /* fill */
+  background-color: var(--lp-color-bg-ui-tertiary);
 }
 
 .isReadOnly {
   background-color: var(--lp-component-tag-color-bg-readonly);
+  border-color: var(--lp-component-tag-color-bg-readonly);
 }
 
 .tagCell {
@@ -49,32 +45,44 @@
 }
 
 .tagContent {
-  padding-right: 0.2rem;
-
-  /* fill */
+  padding: 0.4rem 0.2rem 0.4rem 0;
 }
 
 .removeButton {
-  /* fill */
+  border-radius: 100px;
+  width: 2.2rem;
+  height: 2.2rem;
+  margin: 0;
+  display: flex;
+  padding: 0;
+  border: none;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  cursor: pointer;
+
+  &:hover {
+    background-color: var(--lp-color-bg-interactive-tertiary-hover);
+  }
+
+  &:focus-within {
+    outline: none;
+  }
 }
 
 .tagGroupContainer {
   width: 100%;
-  display: flex;
-  flex-wrap: wrap;
+  display: inline;
 }
 
 .tagGroup {
-  display: flex;
-  flex-wrap: wrap;
+  display: inline;
 }
 
 .tagGroupActions {
-  line-height: 1;
+  display: inline;
 }
 
 .tagGroupAction {
   margin-bottom: 0.4rem;
-
-  /* fill */
 }
