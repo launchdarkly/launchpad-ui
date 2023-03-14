@@ -1,5 +1,26 @@
 # @launchpad-ui/core
 
+## 0.33.3
+
+### Patch Changes
+
+- [#770](https://github.com/launchdarkly/launchpad-ui/pull/770) [`7887aaaa`](https://github.com/launchdarkly/launchpad-ui/commit/7887aaaaddeb58186fe5ac3c1a31b74953f6f837) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Button]: Update IconButton sizing to match button size
+  [SplitButton]: Improve height definitions, and use underlying button styles where possible
+- Updated dependencies [[`7887aaaa`](https://github.com/launchdarkly/launchpad-ui/commit/7887aaaaddeb58186fe5ac3c1a31b74953f6f837)]:
+  - @launchpad-ui/split-button@0.7.9
+  - @launchpad-ui/button@0.8.6
+  - @launchpad-ui/alert@0.7.6
+  - @launchpad-ui/banner@0.9.6
+  - @launchpad-ui/collapsible@0.1.3
+  - @launchpad-ui/drawer@0.3.7
+  - @launchpad-ui/dropdown@0.6.39
+  - @launchpad-ui/filter@0.5.10
+  - @launchpad-ui/modal@0.14.7
+  - @launchpad-ui/pagination@0.3.48
+  - @launchpad-ui/select@0.2.9
+  - @launchpad-ui/snackbar@0.3.41
+  - @launchpad-ui/navigation@0.11.3
+
 ## 0.33.2
 
 ### Patch Changes
