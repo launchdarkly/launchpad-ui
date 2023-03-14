@@ -16,7 +16,7 @@ import './styles/Button.css';
 type IconButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
   kind?: 'default' | 'primary' | 'destructive' | 'minimal' | 'close';
   icon: Omit<ReactElement<IconProps>, 'size'>;
-  size?: 'small' | 'normal';
+  size?: 'small' | 'medium';
   'aria-label': string;
   asChild?: boolean;
   'data-test-id'?: string;
@@ -27,7 +27,7 @@ const IconButtonComponent = forwardRef<HTMLButtonElement, IconButtonProps>((prop
     icon,
     children,
     className,
-    size = 'normal',
+    size = 'medium',
     kind = 'minimal',
     disabled = false,
     asChild = false,
