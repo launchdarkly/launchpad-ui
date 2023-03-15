@@ -1,5 +1,6 @@
 import type { StoryObj } from '@storybook/react';
 
+import { Star } from '@launchpad-ui/icons';
 import { useState } from 'react';
 
 import { MOCK_TAGS } from '../__tests__/constants';
@@ -73,25 +74,50 @@ export const WithClearAction: Story = {
 
 export const WithMaxRows: Story = {
   render: () => {
-    const Component = () => {
-      const [items, setItems] = useState(MOCK_TAGS);
+    return (
+      <div style={{ maxWidth: 290, border: '1px solid #efefef', padding: '1rem' }}>
+        <TagGroup maxRows={2} items={MOCK_TAGS}>
+          {(item) => <TagItem>{item.name}</TagItem>}
+        </TagGroup>
+      </div>
+    );
+  },
+};
 
-      return (
-        <div style={{ maxWidth: 290, border: '1px solid #efefef', padding: '1rem' }}>
-          <TagGroup
-            allowsRemoving
-            maxRows={2}
-            onRemove={(key) => {
-              setItems((prevItems) => prevItems.filter((item) => key !== item.id));
-            }}
-            items={items}
-          >
-            {(item) => <TagItem>{item.name}</TagItem>}
-          </TagGroup>
-        </div>
-      );
-    };
+export const WithTooltips: Story = {
+  render: () => {
+    return (
+      <TagGroup items={MOCK_TAGS}>
+        {(item) => <TagItem tooltip={`Tag: ${item.name}`}>{item.name}</TagItem>}
+      </TagGroup>
+    );
+  },
+};
 
-    return <Component />;
+export const WithCustomTagContent: Story = {
+  render: () => {
+    return (
+      <TagGroup items={MOCK_TAGS}>
+        {(item) => (
+          <TagItem>
+            <Star size="tiny" style={{ transform: 'translateY(-1px)' }} /> {item.name}
+          </TagItem>
+        )}
+      </TagGroup>
+    );
+  },
+};
+
+export const WithTagItemRenderedAs: Story = {
+  render: () => {
+    return (
+      <TagGroup items={MOCK_TAGS}>
+        {(item) => (
+          <TagItem as="a" href="/">
+            {item.name}
+          </TagItem>
+        )}
+      </TagGroup>
+    );
   },
 };

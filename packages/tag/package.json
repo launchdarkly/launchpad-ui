@@ -35,6 +35,7 @@
     "@launchpad-ui/button": "workspace:~",
     "@launchpad-ui/icons": "workspace:~",
     "@launchpad-ui/tokens": "workspace:~",
+    "@launchpad-ui/tooltip": "workspace:~",
     "@react-aria/focus": "3.11.0",
     "@react-aria/interactions": "3.14.0",
     "@react-aria/tag": "3.0.0-beta.3",

@@ -1,12 +1,16 @@
 import type { ItemProps } from '@react-types/shared';
-
-type TagItemProps<T extends object> = ItemProps<T>;
+import type { ComponentPropsWithoutRef, ElementType } from 'react';
 
 /* c8 ignore start */
 
-const TagItem = <T extends object>(
+type TagItemProps<T extends object, P extends ElementType> = ItemProps<T> & {
+  as?: P;
+  tooltip?: string;
+};
+
+const TagItem = <T extends object, P extends ElementType = 'div'>(
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  _props: TagItemProps<T>
+  _props: TagItemProps<T, P> & Omit<ComponentPropsWithoutRef<P>, keyof TagItemProps<T, P>>
 ) => {
   return null;
 };

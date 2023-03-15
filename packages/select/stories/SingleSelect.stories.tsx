@@ -202,7 +202,6 @@ export const WithSelectItemRenderedAs: Story = {
         label="Produce"
         defaultItems={FRUIT}
         hasFilter
-        isOpen
         onSelectionChange={(key) => console.log(key)}
       >
         {(item) => (

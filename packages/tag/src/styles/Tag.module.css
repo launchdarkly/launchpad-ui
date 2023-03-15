@@ -1,11 +1,15 @@
 :root,
 [data-theme='default'] {
   --lp-component-tag-color-bg-readonly: var(--lp-color-gray-100);
+  --lp-component-tag-color-bg-readonly-link: var(--lp-color-blue-200);
+  --lp-component-tag-color-text-readonly-link: var(--lp-color-blue-600);
   --lp-component-tag-color-border: var(--lp-color-gray-600);
 }
 
 [data-theme='dark'] {
   --lp-component-tag-color-bg-readonly: var(--lp-color-gray-900);
+  --lp-component-tag-color-bg-readonly-link: var(--lp-color-blue-300);
+  --lp-component-tag-color-text-readonly-link: var(--lp-color-blue-600);
   --lp-component-tag-color-border: var(--lp-color-gray-500);
 }
 
@@ -17,11 +21,24 @@
   font-size: var(--lp-font-size-200);
   line-height: 1;
   padding: 0 0.4rem 0 0.6rem;
+  height: 2.4rem;
   max-width: 100%;
   margin: 0 0.6rem 0.4rem 0;
   box-sizing: border-box;
   cursor: default;
   display: inline-grid;
+}
+
+a.tag {
+  background-color: var(--lp-component-tag-color-bg-readonly-link);
+  color: var(--lp-component-tag-color-text-readonly-link);
+  text-decoration: none;
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    text-decoration: underline;
+  }
 }
 
 .isFocusVisible {
@@ -31,7 +48,7 @@
 }
 
 .isHovered {
-  background-color: var(--lp-color-bg-ui-tertiary);
+  /* background-color: var(--lp-color-bg-ui-tertiary); */
 }
 
 .isReadOnly {
