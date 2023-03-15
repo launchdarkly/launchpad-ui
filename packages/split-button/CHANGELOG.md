@@ -1,5 +1,15 @@
 # @launchpad-ui/split-button
 
+## 0.7.9
+
+### Patch Changes
+
+- [#770](https://github.com/launchdarkly/launchpad-ui/pull/770) [`7887aaaa`](https://github.com/launchdarkly/launchpad-ui/commit/7887aaaaddeb58186fe5ac3c1a31b74953f6f837) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Button]: Update IconButton sizing to match button size
+  [SplitButton]: Improve height definitions, and use underlying button styles where possible
+- Updated dependencies [[`7887aaaa`](https://github.com/launchdarkly/launchpad-ui/commit/7887aaaaddeb58186fe5ac3c1a31b74953f6f837)]:
+  - @launchpad-ui/button@0.8.6
+  - @launchpad-ui/dropdown@0.6.39
+
 ## 0.7.8
 
 ### Patch Changes
