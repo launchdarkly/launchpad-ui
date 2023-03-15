@@ -381,7 +381,6 @@
 .Button.Button--icon {
   padding: 0;
   line-height: 1;
-  border-radius: 50%;
   height: 3.2rem;
   width: 3.2rem;
   min-height: auto;
