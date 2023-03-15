@@ -28,6 +28,7 @@ const SingleSelect = <T extends object>(props: SingleSelectProps<T>) => {
     label,
     trigger = SingleSelectTrigger,
     'data-test-id': testId = 'select',
+    placeholder,
   } = props;
   const filterInputRef = useRef<HTMLInputElement>(null);
   const triggerRef = useRef<HTMLButtonElement>(null);
@@ -58,6 +59,7 @@ const SingleSelect = <T extends object>(props: SingleSelectProps<T>) => {
     triggerProps: mergeProps(buttonProps, focusProps, { 'data-test-id': 'select-trigger' }),
     valueProps,
     triggerRef,
+    placeholder,
   });
 
   return (

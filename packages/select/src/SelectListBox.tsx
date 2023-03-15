@@ -53,7 +53,7 @@ const SelectListBox = <T extends object>(props: SelectListBoxProps<T>) => {
       : undefined;
 
   return (
-    <div>
+    <>
       {hasFilter && (
         <div data-test-id="search-filter" className={styles.search}>
           <Search size="medium" className={styles.searchIcon} />
@@ -63,7 +63,6 @@ const SelectListBox = <T extends object>(props: SelectListBoxProps<T>) => {
             </label>
           </VisuallyHidden>
           <input
-            // {...props.filterInputProps}
             {...filterInputProps}
             aria-controls={listBoxProps.id}
             role="combobox"
@@ -75,22 +74,24 @@ const SelectListBox = <T extends object>(props: SelectListBoxProps<T>) => {
         </div>
       )}
 
-      <div
-        {...listBoxProps}
-        ref={listBoxRef}
-        role="listbox"
-        className={styles.options}
-        data-test-id="select-menu"
-      >
-        {[...state.collection].map((item) =>
-          item.type === 'section' ? (
-            <Section key={item.key} section={item} state={state} />
-          ) : (
-            <Option key={item.key} item={item} state={state} />
-          )
-        )}
+      <div className={styles.listBox}>
+        <div
+          {...listBoxProps}
+          ref={listBoxRef}
+          role="listbox"
+          className={styles.options}
+          data-test-id="select-menu"
+        >
+          {[...state.collection].map((item) =>
+            item.type === 'section' ? (
+              <Section key={item.key} section={item} state={state} />
+            ) : (
+              <Option key={item.key} item={item} state={state} />
+            )
+          )}
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 

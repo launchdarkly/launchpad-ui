@@ -1,7 +1,6 @@
 import type { AriaListBoxOptions } from '@react-aria/listbox';
 import type { MenuTriggerState } from '@react-stately/menu';
 import type { AriaButtonProps } from '@react-types/button';
-import type { OverlayTriggerProps } from '@react-types/overlays';
 import type { AriaSelectProps } from '@react-types/select';
 import type {
   AriaLabelingProps,
@@ -43,7 +42,8 @@ type SharedSelectProps<T extends object> = CollectionBase<T> &
     /** The content to display as the label. */
     label: string;
 
-    onOpenChange?: OverlayTriggerProps['onOpenChange'];
+    /** Method that is called when the open state of the menu changes. Returns the new open state and the action that caused the opening of the menu. */
+    onOpenChange?: (isOpen: boolean, triggerAction?: MenuTriggerAction) => void;
 
     'data-test-id'?: string;
 
@@ -62,6 +62,17 @@ type SharedSelectProps<T extends object> = CollectionBase<T> &
     allowsCustomValue?: boolean;
 
     hasFilter?: boolean;
+
+    placeholder?: string;
+
+    /* The interaction required to display the menu. */
+    menuTrigger?: MenuTriggerAction;
+
+    /** Whether we allow the menu to be open when the collection is empty. */
+    allowsEmptyCollection?: boolean;
+
+    /** Whether the menu should close on blur. */
+    shouldCloseOnBlur?: boolean;
   };
 
 type SelectAria<T extends object> = {
@@ -95,11 +106,14 @@ type SharedSelectTriggerProps = {
   triggerProps: ButtonHTMLAttributes<HTMLButtonElement> & DOMAttributes<FocusableElement>;
   valueProps: DOMAttributes<FocusableElement>;
   triggerRef: RefObject<HTMLButtonElement>;
+  placeholder?: string;
 };
 
 type SharedUseSelectProps<T extends object> = Omit<AriaSelectProps<T>, 'onSelectionChange'> & {
   disallowEmptySelection?: boolean;
 };
+
+type MenuTriggerAction = 'focus' | 'input' | 'manual';
 
 export type {
   SharedSelectProps,
@@ -108,4 +122,5 @@ export type {
   SharedUseSelectProps,
   FilterFn,
   SharedSelectTriggerProps,
+  MenuTriggerAction,
 };

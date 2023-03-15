@@ -28,13 +28,13 @@ type MultiSelectProps<T extends object> = SharedSelectProps<T> &
 const MultiSelect = <T extends object>(props: MultiSelectProps<T>) => {
   const {
     autoFocus,
-    // className,
     excludeFromTabOrder,
     isClearable,
     disabled: isDisabled,
     isSelectableAll,
     label,
     trigger = MultiSelectTrigger,
+    placeholder,
     'data-test-id': testId = 'select',
   } = props;
   const filterInputRef = useRef<HTMLInputElement>(null);
@@ -63,9 +63,12 @@ const MultiSelect = <T extends object>(props: MultiSelectProps<T>) => {
 
   const renderedTrigger = trigger({
     state,
-    triggerProps: mergeProps(buttonProps, focusProps, { 'data-test-id': 'select-trigger' }),
+    triggerProps: mergeProps(buttonProps, focusProps, {
+      'data-test-id': 'select-trigger',
+    }),
     valueProps,
     triggerRef,
+    placeholder,
   });
 
   return (
