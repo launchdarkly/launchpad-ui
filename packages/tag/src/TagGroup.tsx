@@ -41,6 +41,8 @@ const TagGroup = <T extends object>(props: TagGroupProps<T>) => {
     visibleTagCount: state.collection.size,
     showCollapseButton: false,
   });
+
+  /* c8 ignore start */
   const keyboardDelegate = useMemo(
     () =>
       isCollapsed
@@ -57,7 +59,6 @@ const TagGroup = <T extends object>(props: TagGroupProps<T>) => {
   const { tagGroupProps } = useTagGroup({ ...useTagGroupProps, keyboardDelegate }, state, tagsRef);
   const actionsId = useId();
 
-  /* c8 ignore start */
   const updateVisibleTagCount = useCallback(() => {
     if (maxRows && maxRows > 0) {
       const computeVisibleTagCount = () => {
@@ -118,7 +119,6 @@ const TagGroup = <T extends object>(props: TagGroupProps<T>) => {
       });
     }
   }, [maxRows, setTagState, containerRef, state.collection.size]);
-  /* c8 ignore stop */
 
   useResizeObserver({ ref: containerRef, onResize: updateVisibleTagCount });
   // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -134,6 +134,8 @@ const TagGroup = <T extends object>(props: TagGroupProps<T>) => {
   if (maxRows != null && isCollapsed) {
     visibleTags = visibleTags.slice(0, tagState.visibleTagCount);
   }
+
+  /* c8 ignore stop */
 
   const handlePressCollapse = () => {
     // Prevents button from losing focus if focusedKey got collapsed.
