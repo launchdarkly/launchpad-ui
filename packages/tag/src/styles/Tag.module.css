@@ -23,6 +23,7 @@
   padding: 0 0.4rem 0 0.6rem;
   height: 2.4rem;
   max-width: 100%;
+  font-weight: var(--lp-font-weight-medium);
   margin: 0 0.6rem 0.4rem 0;
   box-sizing: border-box;
   cursor: default;
