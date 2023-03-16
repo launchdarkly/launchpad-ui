@@ -26,10 +26,10 @@
 
 .Button--tiny {
   border-radius: var(--Button-border-radius-small);
-  font-size: var(--Button-font-size-small);
+  font-size: var(--lp-font-size-100);
   line-height: var(--Button-line-height-small);
-  padding: 0 0.4rem;
-  min-height: 1.9rem;
+  padding: 0.1rem 0.4rem;
+  min-height: 2rem;
 }
 
 .Button--small {

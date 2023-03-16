@@ -1,3 +1,4 @@
+import type { TagGroupProps } from './TagGroup';
 import type { TagItemProps } from './TagItem';
 import type { TagGroupState } from '@react-stately/tag';
 import type { Node } from '@react-types/shared';
@@ -20,10 +21,11 @@ type TagProps<T extends object> = ReactAriaTagProps<T> & {
     props?: TagItemProps<T, ElementType>;
   };
   state: TagGroupState<T>;
+  size: TagGroupProps<T>['size'];
 };
 
 const Tag = <T extends object>(props: TagProps<T>) => {
-  const { children, allowsRemoving, item, state, onRemove } = props;
+  const { children, allowsRemoving, item, state, onRemove, size } = props;
 
   const { hoverProps, isHovered } = useHover({});
   const { isFocused, isFocusVisible, focusProps } = useFocusRing({ within: true });
@@ -51,7 +53,8 @@ const Tag = <T extends object>(props: TagProps<T>) => {
         styles.tag,
         isFocusVisible && styles.isFocusVisible,
         isHovered && styles.isHovered,
-        !allowsRemoving && styles.isReadOnly
+        !allowsRemoving && styles.isReadOnly,
+        size === 'tiny' && styles.tiny
       )}
       ref={ref}
       data-test-id="tag"

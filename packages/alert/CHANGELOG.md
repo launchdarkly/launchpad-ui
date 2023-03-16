@@ -1,5 +1,13 @@
 # @launchpad-ui/alert
 
+## 0.7.8
+
+### Patch Changes
+
+- [#778](https://github.com/launchdarkly/launchpad-ui/pull/778) [`d683b386`](https://github.com/launchdarkly/launchpad-ui/commit/d683b3868d410b27297292d1ce417797ba1de9ed) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Alert] Fix bug in controlled alert example
+
+- [#776](https://github.com/launchdarkly/launchpad-ui/pull/776) [`2fa03bf1`](https://github.com/launchdarkly/launchpad-ui/commit/2fa03bf1a35fa81627ee329ab2993a5aae5ac408) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Alert] Support uncontrolled handling of the `dismissed` prop
+
 ## 0.7.7
 
 ### Patch Changes

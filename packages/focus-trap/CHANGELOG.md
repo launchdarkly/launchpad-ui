@@ -1,5 +1,11 @@
 # @launchpad-ui/focus-trap
 
+## 0.1.6
+
+### Patch Changes
+
+- [#780](https://github.com/launchdarkly/launchpad-ui/pull/780) [`b2c0418c`](https://github.com/launchdarkly/launchpad-ui/commit/b2c0418c94e0daefdfd9a42c93bb8fdfd24cbaa7) Thanks [@chasedarkly](https://github.com/chasedarkly)! - Revert back to focus trap version 3.10.0
+
 ## 0.1.5
 
 ### Patch Changes

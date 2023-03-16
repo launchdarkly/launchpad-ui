@@ -22,7 +22,6 @@ const CollapsibleTrigger = (props: CollapsibleTriggerProps) => {
     <Button
       icon={icon}
       renderIconFirst
-      kind="default"
       onClick={toggleOpen}
       data-test-id="collapsible-trigger"
       {...triggerProps}

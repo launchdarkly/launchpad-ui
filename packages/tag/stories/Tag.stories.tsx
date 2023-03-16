@@ -1,6 +1,7 @@
 import type { StoryObj } from '@storybook/react';
 
-import { Star } from '@launchpad-ui/icons';
+import { Button, IconButton } from '@launchpad-ui/button';
+import { Edit, Star } from '@launchpad-ui/icons';
 import { useState } from 'react';
 
 import { MOCK_TAGS } from '../__tests__/constants';
@@ -26,13 +27,46 @@ export const ReadOnly: Story = {
   },
 };
 
-export const RemovableTags: Story = {
+export const ReadOnlyTiny: Story = {
+  render: () => {
+    return (
+      <TagGroup size="tiny" items={MOCK_TAGS}>
+        {(item) => <TagItem>{item.name}</TagItem>}
+      </TagGroup>
+    );
+  },
+};
+
+export const Removable: Story = {
   render: () => {
     const Component = () => {
       const [items, setItems] = useState(MOCK_TAGS);
 
       return (
         <TagGroup
+          allowsRemoving
+          onRemove={(key) => {
+            setItems((prevItems) => prevItems.filter((item) => key !== item.id));
+          }}
+          items={items}
+        >
+          {(item) => <TagItem>{item.name}</TagItem>}
+        </TagGroup>
+      );
+    };
+
+    return <Component />;
+  },
+};
+
+export const RemovableTiny: Story = {
+  render: () => {
+    const Component = () => {
+      const [items, setItems] = useState(MOCK_TAGS);
+
+      return (
+        <TagGroup
+          size="tiny"
           allowsRemoving
           onRemove={(key) => {
             setItems((prevItems) => prevItems.filter((item) => key !== item.id));
@@ -59,9 +93,73 @@ export const WithClearAction: Story = {
           onRemove={(key) => {
             setItems((prevItems) => prevItems.filter((item) => key !== item.id));
           }}
+          hideActionWhenEmpty
           items={items}
-          actionLabel="Clear"
-          onAction={() => alert('Clear action pressed.')}
+          action={({ size }) => (
+            <Button size={size} onClick={() => setItems([])} aria-label="Clear">
+              Clear
+            </Button>
+          )}
+        >
+          {(item) => <TagItem>{item.name}</TagItem>}
+        </TagGroup>
+      );
+    };
+
+    return <Component />;
+  },
+};
+
+export const WithClearActionTiny: Story = {
+  render: () => {
+    const Component = () => {
+      const [items, setItems] = useState(MOCK_TAGS);
+
+      return (
+        <TagGroup
+          allowsRemoving
+          onRemove={(key) => {
+            setItems((prevItems) => prevItems.filter((item) => key !== item.id));
+          }}
+          size="tiny"
+          hideActionWhenEmpty
+          items={items}
+          action={({ size }) => (
+            <Button size={size} onClick={() => setItems([])} aria-label="Clear">
+              Clear
+            </Button>
+          )}
+        >
+          {(item) => <TagItem>{item.name}</TagItem>}
+        </TagGroup>
+      );
+    };
+
+    return <Component />;
+  },
+};
+
+export const WithCustomAction: Story = {
+  render: () => {
+    const Component = () => {
+      const [items, setItems] = useState(MOCK_TAGS);
+
+      return (
+        <TagGroup
+          allowsRemoving
+          onRemove={(key) => {
+            setItems((prevItems) => prevItems.filter((item) => key !== item.id));
+          }}
+          hideActionWhenEmpty
+          items={items}
+          action={() => (
+            <IconButton
+              aria-label="Custom"
+              icon={<Edit />}
+              size="small"
+              onClick={() => alert('Pressed custom action')}
+            />
+          )}
         >
           {(item) => <TagItem>{item.name}</TagItem>}
         </TagGroup>
@@ -77,6 +175,18 @@ export const WithMaxRows: Story = {
     return (
       <div style={{ maxWidth: 290, border: '1px solid #efefef', padding: '1rem' }}>
         <TagGroup maxRows={2} items={MOCK_TAGS}>
+          {(item) => <TagItem>{item.name}</TagItem>}
+        </TagGroup>
+      </div>
+    );
+  },
+};
+
+export const WithMaxRowsTiny: Story = {
+  render: () => {
+    return (
+      <div style={{ maxWidth: 290, border: '1px solid #efefef', padding: '1rem' }}>
+        <TagGroup maxRows={2} items={MOCK_TAGS} size="tiny">
           {(item) => <TagItem>{item.name}</TagItem>}
         </TagGroup>
       </div>

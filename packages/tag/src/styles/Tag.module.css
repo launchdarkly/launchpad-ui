@@ -19,7 +19,7 @@
   border: 1px solid var(--lp-component-tag-color-border);
   border-radius: var(--lp-border-radius-regular);
   font-size: var(--lp-font-size-200);
-  line-height: 1;
+  line-height: var(--lp-font-size-200);
   padding: 0 0.4rem 0 0.6rem;
   height: 2.4rem;
   max-width: 100%;
@@ -28,6 +28,13 @@
   box-sizing: border-box;
   cursor: default;
   display: inline-grid;
+}
+
+.tag.tiny {
+  font-size: var(--lp-font-size-100);
+  line-height: 1.25;
+  height: 20px;
+  margin-bottom: 0.2rem;
 }
 
 a.tag {
@@ -64,6 +71,10 @@ a.tag {
 
 .tagContent {
   padding: 0.4rem 0.2rem 0.4rem 0;
+
+  .tiny & {
+    padding: 0.15rem 0.2rem 0.15rem 0;
+  }
 }
 
 .removeButton {
@@ -86,6 +97,11 @@ a.tag {
   &:focus-within {
     outline: none;
   }
+
+  .tiny & {
+    width: 1.8rem;
+    height: 1.8rem;
+  }
 }
 
 .tagGroupContainer {
@@ -95,12 +111,17 @@ a.tag {
 
 .tagGroup {
   display: inline;
+  line-height: 1;
+  vertical-align: top;
 }
 
 .tagGroupActions {
   display: inline;
-}
-
-.tagGroupAction {
+  vertical-align: top;
   margin-bottom: 0.4rem;
+  line-height: 1;
+
+  .tiny & {
+    margin-bottom: 0.2rem;
+  }
 }
