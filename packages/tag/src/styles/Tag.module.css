@@ -99,8 +99,8 @@ a.tag {
 
 .tagGroupActions {
   display: inline;
-}
 
-.tagGroupAction {
-  margin-bottom: 0.4rem;
+  & button {
+    margin-bottom: 0.4rem;
+  }
 }

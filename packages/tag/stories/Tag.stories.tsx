@@ -1,10 +1,11 @@
 import type { StoryObj } from '@storybook/react';
 
-import { Star } from '@launchpad-ui/icons';
+import { Close, Edit, Star } from '@launchpad-ui/icons';
 import { useState } from 'react';
 
 import { MOCK_TAGS } from '../__tests__/constants';
-import { TagGroup, TagItem } from '../src';
+import { TagGroup, TagGroupClearAction, TagItem } from '../src';
+import { IconButton } from '@launchpad-ui/button';
 
 export default {
   component: TagGroup,
@@ -59,9 +60,40 @@ export const WithClearAction: Story = {
           onRemove={(key) => {
             setItems((prevItems) => prevItems.filter((item) => key !== item.id));
           }}
+          hideActionWhenEmpty
           items={items}
-          actionLabel="Clear"
-          onAction={() => alert('Clear action pressed.')}
+          action={() => <TagGroupClearAction onClick={() => setItems([])} />}
+        >
+          {(item) => <TagItem>{item.name}</TagItem>}
+        </TagGroup>
+      );
+    };
+
+    return <Component />;
+  },
+};
+
+export const WithCustomAction: Story = {
+  render: () => {
+    const Component = () => {
+      const [items, setItems] = useState(MOCK_TAGS);
+
+      return (
+        <TagGroup
+          allowsRemoving
+          onRemove={(key) => {
+            setItems((prevItems) => prevItems.filter((item) => key !== item.id));
+          }}
+          hideActionWhenEmpty
+          items={items}
+          action={() => (
+            <IconButton
+              aria-label="Clear"
+              size="small"
+              icon={<Edit />}
+              onClick={() => setItems([])}
+            />
+          )}
         >
           {(item) => <TagItem>{item.name}</TagItem>}
         </TagGroup>
