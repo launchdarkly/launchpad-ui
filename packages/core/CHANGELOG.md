@@ -1,5 +1,27 @@
 # @launchpad-ui/core
 
+## 0.33.7
+
+### Patch Changes
+
+- [#782](https://github.com/launchdarkly/launchpad-ui/pull/782) [`8704746c`](https://github.com/launchdarkly/launchpad-ui/commit/8704746c5982a6d62ed741d74d99fa69165358d2) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Button]: Change `tiny` button size to 20px height
+  [Tag]: Remove `onAction` and `actionLabel` props in favor of a new `action` prop which accepts a render element
+- Updated dependencies [[`8704746c`](https://github.com/launchdarkly/launchpad-ui/commit/8704746c5982a6d62ed741d74d99fa69165358d2)]:
+  - @launchpad-ui/collapsible@0.1.5
+  - @launchpad-ui/button@0.8.8
+  - @launchpad-ui/alert@0.7.9
+  - @launchpad-ui/tag@0.1.2
+  - @launchpad-ui/banner@0.9.8
+  - @launchpad-ui/drawer@0.3.10
+  - @launchpad-ui/dropdown@0.6.42
+  - @launchpad-ui/filter@0.5.14
+  - @launchpad-ui/modal@0.14.10
+  - @launchpad-ui/pagination@0.3.50
+  - @launchpad-ui/select@0.2.12
+  - @launchpad-ui/snackbar@0.3.43
+  - @launchpad-ui/split-button@0.7.12
+  - @launchpad-ui/navigation@0.11.7
+
 ## 0.33.6
 
 ### Patch Changes
