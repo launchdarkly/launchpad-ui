@@ -1,3 +1,4 @@
+import type { TagGroupActionProps } from './types';
 import type { AriaTagGroupProps } from '@react-aria/tag';
 
 import { Button } from '@launchpad-ui/button';
@@ -12,14 +13,15 @@ import { Tag } from './Tag';
 import styles from './styles/Tag.module.css';
 
 type TagGroupProps<T extends object> = AriaTagGroupProps<T> & {
-  /** The label to display on the action button.  */
-  actionLabel?: string;
-  /** Handler that is called when the action button is pressed. */
-  onAction?: () => void;
+  /** render prop for passing a custom action to the tag group */
+  action?: (props: TagGroupActionProps<T>) => JSX.Element;
 
-  isReadOnly?: boolean;
+  /** Control if action is hidden when list is empty */
+  hideActionWhenEmpty?: boolean;
 
   'data-test-id'?: string;
+
+  size?: 'tiny' | 'small';
 };
 
 const TagGroup = <T extends object>(props: TagGroupProps<T>) => {
@@ -28,10 +30,10 @@ const TagGroup = <T extends object>(props: TagGroupProps<T>) => {
     onRemove,
     maxRows,
     children,
-    actionLabel,
-    onAction,
-    isReadOnly,
+    action,
+    hideActionWhenEmpty,
     'data-test-id': testId = 'tag-group',
+    size = 'small',
   } = props;
   const containerRef = useRef<HTMLDivElement>(null);
   const tagsRef = useRef<HTMLDivElement>(null);
@@ -55,7 +57,7 @@ const TagGroup = <T extends object>(props: TagGroupProps<T>) => {
   ) as TagKeyboardDelegate<T>;
 
   // Remove onAction from props so it doesn't make it into useGridList.
-  const { onAction: _onAction, ...useTagGroupProps } = props;
+  const { action: _action, ...useTagGroupProps } = props;
   const { tagGroupProps } = useTagGroup({ ...useTagGroupProps, keyboardDelegate }, state, tagsRef);
   const actionsId = useId();
 
@@ -143,7 +145,10 @@ const TagGroup = <T extends object>(props: TagGroupProps<T>) => {
     setIsCollapsed((prevCollapsed) => !prevCollapsed);
   };
 
-  const showActions = tagState.showCollapseButton || (actionLabel && onAction);
+  const isEmpty = state.collection.size === 0;
+  const showCustomAction = !(hideActionWhenEmpty && isEmpty) && !!action;
+  const showActions = tagState.showCollapseButton || showCustomAction;
+  const customAction = showCustomAction && action({ state, size });
 
   const collapseLabel = isCollapsed ? `Show all (${state.collection.size})` : 'Show less';
 
@@ -158,8 +163,8 @@ const TagGroup = <T extends object>(props: TagGroupProps<T>) => {
               item={item}
               state={state}
               allowsRemoving={allowsRemoving}
-              isReadOnly={isReadOnly}
               onRemove={onRemove}
+              size={size}
             >
               {item.rendered}
             </Tag>
@@ -174,30 +179,20 @@ const TagGroup = <T extends object>(props: TagGroupProps<T>) => {
             className={styles.tagGroupActions}
             data-test-id="tag-actions"
           >
-            {tagState.showCollapseButton && (
-              <Button
-                size="small"
-                kind="minimal"
-                data-test-id="tag-group-collapse-action-btn"
-                onClick={handlePressCollapse}
-                className={styles.tagGroupAction}
-                aria-label={collapseLabel}
-              >
-                {collapseLabel}
-              </Button>
-            )}
-            {actionLabel && onAction && (
-              <Button
-                size="small"
-                kind="minimal"
-                data-test-id="tag-group-action-btn"
-                onClick={() => onAction?.()}
-                className={styles.tagGroupAction}
-                aria-label={actionLabel}
-              >
-                {actionLabel}
-              </Button>
-            )}
+            <>
+              {tagState.showCollapseButton && (
+                <Button
+                  size={size}
+                  kind="minimal"
+                  data-test-id="tag-group-collapse-action-btn"
+                  onClick={handlePressCollapse}
+                  aria-label={collapseLabel}
+                >
+                  {collapseLabel}
+                </Button>
+              )}
+              {customAction}
+            </>
           </div>
         )}
       </div>
