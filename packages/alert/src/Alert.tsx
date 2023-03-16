@@ -80,8 +80,6 @@ const Alert = ({
     val && onDismiss ? onDismiss() : null
   );
 
-  console.log(dismissedState);
-
   const defaultClasses = `${styles.Alert} ${styles[`Alert--${kind}`]}`;
   const sizeClass = size === 'small' && styles[`Alert--${size}`];
   const classes = cx(
