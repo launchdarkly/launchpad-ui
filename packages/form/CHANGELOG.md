@@ -1,5 +1,11 @@
 # @launchpad-ui/form
 
+## 0.8.8
+
+### Patch Changes
+
+- [#779](https://github.com/launchdarkly/launchpad-ui/pull/779) [`e3f04b71`](https://github.com/launchdarkly/launchpad-ui/commit/e3f04b71608540f8bee79a01f577ee0eb3609833) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Form] Replace field "Error" text with an error icon
+
 ## 0.8.7
 
 ### Patch Changes

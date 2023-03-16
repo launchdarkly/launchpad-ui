@@ -1,5 +1,25 @@
 # @launchpad-ui/core
 
+## 0.33.5
+
+### Patch Changes
+
+- [#778](https://github.com/launchdarkly/launchpad-ui/pull/778) [`d683b386`](https://github.com/launchdarkly/launchpad-ui/commit/d683b3868d410b27297292d1ce417797ba1de9ed) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Alert] Fix bug in controlled alert example
+
+- [#772](https://github.com/launchdarkly/launchpad-ui/pull/772) [`82700c3a`](https://github.com/launchdarkly/launchpad-ui/commit/82700c3ab2a8fa9f39b116024ca7a5ff935d002f) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Tag] Add TagGroup and TagItem components
+
+- [#776](https://github.com/launchdarkly/launchpad-ui/pull/776) [`2fa03bf1`](https://github.com/launchdarkly/launchpad-ui/commit/2fa03bf1a35fa81627ee329ab2993a5aae5ac408) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Alert] Support uncontrolled handling of the `dismissed` prop
+
+- [#779](https://github.com/launchdarkly/launchpad-ui/pull/779) [`e3f04b71`](https://github.com/launchdarkly/launchpad-ui/commit/e3f04b71608540f8bee79a01f577ee0eb3609833) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Form] Replace field "Error" text with an error icon
+
+- Updated dependencies [[`d683b386`](https://github.com/launchdarkly/launchpad-ui/commit/d683b3868d410b27297292d1ce417797ba1de9ed), [`82700c3a`](https://github.com/launchdarkly/launchpad-ui/commit/82700c3ab2a8fa9f39b116024ca7a5ff935d002f), [`2fa03bf1`](https://github.com/launchdarkly/launchpad-ui/commit/2fa03bf1a35fa81627ee329ab2993a5aae5ac408), [`e3f04b71`](https://github.com/launchdarkly/launchpad-ui/commit/e3f04b71608540f8bee79a01f577ee0eb3609833)]:
+  - @launchpad-ui/alert@0.7.8
+  - @launchpad-ui/tag@0.1.0
+  - @launchpad-ui/form@0.8.8
+  - @launchpad-ui/menu@0.8.4
+  - @launchpad-ui/filter@0.5.12
+  - @launchpad-ui/navigation@0.11.5
+
 ## 0.33.4
 
 ### Patch Changes
