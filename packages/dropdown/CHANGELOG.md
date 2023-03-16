@@ -1,5 +1,12 @@
 # @launchpad-ui/dropdown
 
+## 0.6.41
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @launchpad-ui/popover@0.9.7
+
 ## 0.6.40
 
 ### Patch Changes

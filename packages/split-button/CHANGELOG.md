@@ -1,5 +1,14 @@
 # @launchpad-ui/split-button
 
+## 0.7.11
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @launchpad-ui/popover@0.9.7
+  - @launchpad-ui/dropdown@0.6.41
+  - @launchpad-ui/tooltip@0.7.8
+
 ## 0.7.10
 
 ### Patch Changes

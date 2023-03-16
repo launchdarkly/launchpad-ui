@@ -1,5 +1,16 @@
 # @launchpad-ui/select
 
+## 0.2.11
+
+### Patch Changes
+
+- [#780](https://github.com/launchdarkly/launchpad-ui/pull/780) [`b2c0418c`](https://github.com/launchdarkly/launchpad-ui/commit/b2c0418c94e0daefdfd9a42c93bb8fdfd24cbaa7) Thanks [@chasedarkly](https://github.com/chasedarkly)! - Revert back to focus trap version 3.10.0
+
+- Updated dependencies []:
+  - @launchpad-ui/modal@0.14.9
+  - @launchpad-ui/popover@0.9.7
+  - @launchpad-ui/tooltip@0.7.8
+
 ## 0.2.10
 
 ### Patch Changes
