@@ -1,5 +1,27 @@
 # @launchpad-ui/core
 
+## 0.33.6
+
+### Patch Changes
+
+- [#780](https://github.com/launchdarkly/launchpad-ui/pull/780) [`b2c0418c`](https://github.com/launchdarkly/launchpad-ui/commit/b2c0418c94e0daefdfd9a42c93bb8fdfd24cbaa7) Thanks [@chasedarkly](https://github.com/chasedarkly)! - Revert back to focus trap version 3.10.0
+
+- Updated dependencies [[`b2c0418c`](https://github.com/launchdarkly/launchpad-ui/commit/b2c0418c94e0daefdfd9a42c93bb8fdfd24cbaa7)]:
+  - @launchpad-ui/focus-trap@0.1.6
+  - @launchpad-ui/menu@0.8.5
+  - @launchpad-ui/select@0.2.11
+  - @launchpad-ui/tag@0.1.1
+  - @launchpad-ui/drawer@0.3.9
+  - @launchpad-ui/modal@0.14.9
+  - @launchpad-ui/popover@0.9.7
+  - @launchpad-ui/filter@0.5.13
+  - @launchpad-ui/navigation@0.11.6
+  - @launchpad-ui/dropdown@0.6.41
+  - @launchpad-ui/progress-bubbles@0.6.7
+  - @launchpad-ui/split-button@0.7.11
+  - @launchpad-ui/tooltip@0.7.8
+  - @launchpad-ui/clipboard@0.9.10
+
 ## 0.33.5
 
 ### Patch Changes
