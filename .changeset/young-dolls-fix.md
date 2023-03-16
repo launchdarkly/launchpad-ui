@@ -6,5 +6,5 @@
 '@launchpad-ui/core': patch
 ---
 
-[Button]: Rename `default` kind to `basic` and rename size variants for `ButtonGroup`
+[Button]: Change `tiny` button size to 20px height
 [Tag]: Remove `onAction` and `actionLabel` props in favor of a new `action` prop which accepts a render element

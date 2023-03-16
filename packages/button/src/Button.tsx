@@ -18,7 +18,7 @@ type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
   isLoading?: boolean;
   loadingText?: string | JSX.Element;
   size?: 'tiny' | 'small' | 'medium' | 'big';
-  kind?: 'basic' | 'primary' | 'destructive' | 'minimal' | 'link' | 'close';
+  kind?: 'default' | 'primary' | 'destructive' | 'minimal' | 'link' | 'close';
   fit?: boolean;
   disabled?: boolean;
   icon?: ReactElement<Omit<IconProps, 'size'>>;
@@ -34,7 +34,7 @@ const ButtonComponent = forwardRef<HTMLButtonElement, ButtonProps>((props, ref) 
     className,
     size,
     fit,
-    kind = 'basic',
+    kind = 'default',
     isLoading = false,
     loadingText,
     renderIconFirst = false,

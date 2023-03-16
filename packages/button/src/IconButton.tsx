@@ -14,7 +14,7 @@ import { isValidElement, cloneElement, forwardRef, memo } from 'react';
 import './styles/Button.css';
 
 type IconButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
-  kind?: 'basic' | 'primary' | 'destructive' | 'minimal' | 'close';
+  kind?: 'default' | 'primary' | 'destructive' | 'minimal' | 'close';
   icon: Omit<ReactElement<IconProps>, 'size'>;
   size?: 'small' | 'medium';
   'aria-label': string;
