@@ -84,9 +84,17 @@ describe('Tag', () => {
     const user = userEvent.setup();
     const spy = vi.fn();
 
-    render(<TagGroupComponent actionLabel="Clear" onAction={spy} />);
+    render(
+      <TagGroupComponent
+        action={() => (
+          <button onClick={spy} data-test-id="action-btn">
+            Click me
+          </button>
+        )}
+      />
+    );
 
-    await user.click(screen.getByTestId('tag-group-action-btn'));
+    await user.click(screen.getByTestId('action-btn'));
 
     expect(spy).toHaveBeenCalledTimes(1);
   });

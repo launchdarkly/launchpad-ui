@@ -30,7 +30,7 @@
   display: inline-grid;
 }
 
-.tag.small {
+.tag.tiny {
   font-size: var(--lp-font-size-100);
   line-height: 1.25;
   height: 20px;
@@ -72,7 +72,7 @@ a.tag {
 .tagContent {
   padding: 0.4rem 0.2rem 0.4rem 0;
 
-  .small & {
+  .tiny & {
     padding: 0.15rem 0.2rem 0.15rem 0;
   }
 }
@@ -98,7 +98,7 @@ a.tag {
     outline: none;
   }
 
-  .small & {
+  .tiny & {
     width: 1.8rem;
     height: 1.8rem;
   }
@@ -121,7 +121,7 @@ a.tag {
   margin-bottom: 0.4rem;
   line-height: 1;
 
-  .small & {
+  .tiny & {
     margin-bottom: 0.2rem;
   }
 }

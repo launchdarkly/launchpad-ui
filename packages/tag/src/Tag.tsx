@@ -54,7 +54,7 @@ const Tag = <T extends object>(props: TagProps<T>) => {
         isFocusVisible && styles.isFocusVisible,
         isHovered && styles.isHovered,
         !allowsRemoving && styles.isReadOnly,
-        size === 'small' && styles.small
+        size === 'tiny' && styles.tiny
       )}
       ref={ref}
       data-test-id="tag"

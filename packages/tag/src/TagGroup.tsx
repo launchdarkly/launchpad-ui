@@ -21,7 +21,7 @@ type TagGroupProps<T extends object> = AriaTagGroupProps<T> & {
 
   'data-test-id'?: string;
 
-  size?: 'small' | 'medium';
+  size?: 'tiny' | 'small';
 };
 
 const TagGroup = <T extends object>(props: TagGroupProps<T>) => {
@@ -33,7 +33,7 @@ const TagGroup = <T extends object>(props: TagGroupProps<T>) => {
     action,
     hideActionWhenEmpty,
     'data-test-id': testId = 'tag-group',
-    size = 'medium',
+    size = 'small',
   } = props;
   const containerRef = useRef<HTMLDivElement>(null);
   const tagsRef = useRef<HTMLDivElement>(null);
@@ -182,7 +182,7 @@ const TagGroup = <T extends object>(props: TagGroupProps<T>) => {
             <>
               {tagState.showCollapseButton && (
                 <Button
-                  size={size === 'small' ? 'tiny' : 'small'}
+                  size={size}
                   kind="minimal"
                   data-test-id="tag-group-collapse-action-btn"
                   onClick={handlePressCollapse}

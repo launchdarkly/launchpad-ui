@@ -27,10 +27,10 @@ export const ReadOnly: Story = {
   },
 };
 
-export const ReadOnlySmall: Story = {
+export const ReadOnlyTiny: Story = {
   render: () => {
     return (
-      <TagGroup size="small" items={MOCK_TAGS}>
+      <TagGroup size="tiny" items={MOCK_TAGS}>
         {(item) => <TagItem>{item.name}</TagItem>}
       </TagGroup>
     );
@@ -59,14 +59,14 @@ export const Removable: Story = {
   },
 };
 
-export const RemovableSmall: Story = {
+export const RemovableTiny: Story = {
   render: () => {
     const Component = () => {
       const [items, setItems] = useState(MOCK_TAGS);
 
       return (
         <TagGroup
-          size="small"
+          size="tiny"
           allowsRemoving
           onRemove={(key) => {
             setItems((prevItems) => prevItems.filter((item) => key !== item.id));
@@ -110,7 +110,7 @@ export const WithClearAction: Story = {
   },
 };
 
-export const WithClearActionSmall: Story = {
+export const WithClearActionTiny: Story = {
   render: () => {
     const Component = () => {
       const [items, setItems] = useState(MOCK_TAGS);
@@ -121,7 +121,7 @@ export const WithClearActionSmall: Story = {
           onRemove={(key) => {
             setItems((prevItems) => prevItems.filter((item) => key !== item.id));
           }}
-          size="small"
+          size="tiny"
           hideActionWhenEmpty
           items={items}
           action={({ size }) => (
@@ -152,12 +152,11 @@ export const WithCustomAction: Story = {
           }}
           hideActionWhenEmpty
           items={items}
-          action={(props) => (
+          action={() => (
             <IconButton
-              {...props}
               aria-label="Custom"
-              size="small"
               icon={<Edit />}
+              size="small"
               onClick={() => alert('Pressed custom action')}
             />
           )}
@@ -183,11 +182,11 @@ export const WithMaxRows: Story = {
   },
 };
 
-export const WithMaxRowsSmall: Story = {
+export const WithMaxRowsTiny: Story = {
   render: () => {
     return (
       <div style={{ maxWidth: 290, border: '1px solid #efefef', padding: '1rem' }}>
-        <TagGroup maxRows={2} items={MOCK_TAGS} size="small">
+        <TagGroup maxRows={2} items={MOCK_TAGS} size="tiny">
           {(item) => <TagItem>{item.name}</TagItem>}
         </TagGroup>
       </div>
