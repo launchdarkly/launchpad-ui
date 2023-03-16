@@ -1,6 +1,7 @@
 import type { StoryObj } from '@storybook/react';
 
 import { Button, ButtonGroup } from '@launchpad-ui/button';
+import { useState } from 'react';
 
 import { Alert } from '../src';
 
@@ -174,5 +175,32 @@ export const WithContent: Story = {
     ),
     header: 'My title',
     dismissible: true,
+  },
+};
+
+export const WithControlledDismissed: Story = {
+  render: () => {
+    const Component = () => {
+      const [dismissed, setDismissed] = useState(false);
+
+      return (
+        <Alert
+          dismissible={true}
+          dismissed={dismissed}
+          onDismiss={() => {
+            setDismissed(true);
+
+            setTimeout(() => {
+              setDismissed(false);
+            }, 1500);
+          }}
+        >
+          With the parent handling dismiss behavior. In this example, the parent resets the{' '}
+          <code>dismissed</code> value after 3 seconds.
+        </Alert>
+      );
+    };
+
+    return <Component />;
   },
 };
