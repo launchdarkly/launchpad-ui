@@ -56,9 +56,10 @@ const PaginationButton = ({
     <IconButton
       disabled={disabled}
       className={classes}
+      size="small"
       data-test-id={testId}
       onClick={() => onClick(kind)}
-      icon={<Icon size="small" />}
+      icon={<Icon />}
       aria-label={label}
     />
   );
