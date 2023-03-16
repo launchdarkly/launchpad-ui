@@ -20,6 +20,8 @@ type TagGroupProps<T extends object> = AriaTagGroupProps<T> & {
   hideActionWhenEmpty?: boolean;
 
   'data-test-id'?: string;
+
+  size?: 'small' | 'medium';
 };
 
 const TagGroup = <T extends object>(props: TagGroupProps<T>) => {
@@ -31,6 +33,7 @@ const TagGroup = <T extends object>(props: TagGroupProps<T>) => {
     action,
     hideActionWhenEmpty,
     'data-test-id': testId = 'tag-group',
+    size = 'medium',
   } = props;
   const containerRef = useRef<HTMLDivElement>(null);
   const tagsRef = useRef<HTMLDivElement>(null);
@@ -145,7 +148,7 @@ const TagGroup = <T extends object>(props: TagGroupProps<T>) => {
   const isEmpty = state.collection.size === 0;
   const showCustomAction = !(hideActionWhenEmpty && isEmpty) && !!action;
   const showActions = tagState.showCollapseButton || showCustomAction;
-  const customAction = showCustomAction && action({ state });
+  const customAction = showCustomAction && action({ state, size });
 
   const collapseLabel = isCollapsed ? `Show all (${state.collection.size})` : 'Show less';
 
@@ -161,6 +164,7 @@ const TagGroup = <T extends object>(props: TagGroupProps<T>) => {
               state={state}
               allowsRemoving={allowsRemoving}
               onRemove={onRemove}
+              size={size}
             >
               {item.rendered}
             </Tag>
@@ -178,7 +182,7 @@ const TagGroup = <T extends object>(props: TagGroupProps<T>) => {
             <>
               {tagState.showCollapseButton && (
                 <Button
-                  size="small"
+                  size={size === 'small' ? 'tiny' : 'small'}
                   kind="minimal"
                   data-test-id="tag-group-collapse-action-btn"
                   onClick={handlePressCollapse}

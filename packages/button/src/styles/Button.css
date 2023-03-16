@@ -13,10 +13,10 @@
   text-transform: var(--Button-text-transform);
   vertical-align: initial;
   white-space: nowrap;
-  border: var(--Button-border-default);
-  border-radius: var(--Button-border-radius-default);
-  font-size: var(--Button-font-size-default);
-  line-height: var(--Button-line-height-default);
+  border: var(--Button-border-basic);
+  border-radius: var(--Button-border-radius-basic);
+  font-size: var(--Button-font-size-basic);
+  line-height: var(--Button-line-height-basic);
   padding: 0.7rem 0.8rem;
   cursor: default;
   user-select: none;
@@ -26,10 +26,10 @@
 
 .Button--tiny {
   border-radius: var(--Button-border-radius-small);
-  font-size: var(--Button-font-size-small);
+  font-size: var(--lp-font-size-100);
   line-height: var(--Button-line-height-small);
-  padding: 0 0.4rem;
-  min-height: 1.9rem;
+  padding: 0.1rem 0.4rem;
+  min-height: 2rem;
 }
 
 .Button--small {
@@ -70,7 +70,7 @@
 
 .Button:focus-visible,
 .Dropdown-trigger:focus-visible .Button--menu {
-  border-radius: var(--Button-border-radius-default);
+  border-radius: var(--Button-border-radius-basic);
   box-shadow: var(--Button-box-shadow-focus);
   outline: 0;
   z-index: 2;
@@ -83,39 +83,39 @@
 
 /* ------- BUTTON VARIANTS -------  */
 
-/* ------- DEFAULT ------- */
+/* ------- BASIC ------- */
 
-.Button--default {
-  background-color: var(--lp-component-button-color-bg-default);
-  border-color: var(--Button-color-border-default);
-  color: var(--Button-color-text-default);
+.Button--basic {
+  background-color: var(--lp-component-button-color-bg-basic);
+  border-color: var(--Button-color-border-basic);
+  color: var(--Button-color-text-basic);
 }
 
-.Button--default .Button-icon {
-  fill: var(--Button-icon-color-fill-default);
+.Button--basic .Button-icon {
+  fill: var(--Button-icon-color-fill-basic);
 }
 
-.Button--icon.Button--default .Button-icon {
+.Button--icon.Button--basic .Button-icon {
   background-color: transparent;
-  color: var(--Button-icon-color-text-default);
+  color: var(--Button-icon-color-text-basic);
 }
 
-.Button--default:hover,
-.Button--icon.Button--default:hover {
-  background-color: var(--Button-color-background-default-hover);
-  color: var(--Button-color-text-default-hover);
+.Button--basic:hover,
+.Button--icon.Button--basic:hover {
+  background-color: var(--Button-color-background-basic-hover);
+  color: var(--Button-color-text-basic-hover);
   box-shadow: var(--Button-box-shadow-hover);
 }
 
-.Button--default:focus-visible {
-  background-color: var(--Button-color-background-default-focus);
+.Button--basic:focus-visible {
+  background-color: var(--Button-color-background-basic-focus);
 }
 
-.Button--icon.Button--default:active,
-.Button--default:active {
-  background-color: var(--Button-color-background-default-active);
+.Button--icon.Button--basic:active,
+.Button--basic:active {
+  background-color: var(--Button-color-background-basic-active);
   box-shadow: var(--Button-box-shadow-active);
-  color: var(--Button-color-text-default-active);
+  color: var(--Button-color-text-basic-active);
 }
 
 /* ------- PRIMARY, ICON, SUBMIT, MINIMAL ------- */
@@ -312,7 +312,7 @@
   line-height: 1; /* 1 */
   border-color: transparent;
   background-color: transparent;
-  color: var(--Button-color-link-default);
+  color: var(--Button-color-link-basic);
   cursor: pointer;
   min-height: auto;
 }

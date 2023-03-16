@@ -168,7 +168,7 @@ export const WithContent: Story = {
           <li>This is item two of a list</li>
         </ul>
         <ButtonGroup>
-          <Button kind="default">Label</Button>
+          <Button>Label</Button>
           <Button kind="minimal">Label</Button>
         </ButtonGroup>
       </>

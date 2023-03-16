@@ -21,7 +21,7 @@ const buttonTemplateWithStates: DecoratorFn = (storyComponent, context) => {
         {ButtonLabels[ButtonLabels.length - 1 >= index ? index : ButtonLabels.length - 1]}
       </span>
       <ButtonGroup {...storyArgs}>
-        <Button kind="default" className={className}>
+        <Button kind="basic" className={className}>
           First
         </Button>
         <Button kind="primary">Second</Button>
@@ -36,7 +36,7 @@ const buttonTemplateWithStates: DecoratorFn = (storyComponent, context) => {
       {PseudoStateButtons}
       <span className="Button-state-label">Disabled</span>
       <ButtonGroup {...storyArgs}>
-        <Button kind="default" disabled>
+        <Button kind="basic" disabled>
           First
         </Button>
         <Button kind="primary">Second</Button>

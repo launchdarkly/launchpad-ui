@@ -5,12 +5,12 @@ import { cx } from 'classix';
 import './styles/ButtonGroup.css';
 
 type ButtonGroupProps = HTMLAttributes<HTMLDivElement> & {
-  spacing?: 'compact' | 'normal' | 'large';
+  spacing?: 'small' | 'medium' | 'large';
   'data-test-id'?: string;
 };
 
 const ButtonGroup = ({
-  spacing = 'normal',
+  spacing = 'medium',
   className,
   children,
   'data-test-id': testId = 'button-group',

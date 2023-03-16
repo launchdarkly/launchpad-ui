@@ -1,11 +1,11 @@
 import type { StoryObj } from '@storybook/react';
 
-import { Close, Edit, Star } from '@launchpad-ui/icons';
+import { IconButton } from '@launchpad-ui/button';
+import { Edit, Star } from '@launchpad-ui/icons';
 import { useState } from 'react';
 
 import { MOCK_TAGS } from '../__tests__/constants';
 import { TagGroup, TagGroupClearAction, TagItem } from '../src';
-import { IconButton } from '@launchpad-ui/button';
 
 export default {
   component: TagGroup,
@@ -27,13 +27,46 @@ export const ReadOnly: Story = {
   },
 };
 
-export const RemovableTags: Story = {
+export const ReadOnlySmall: Story = {
+  render: () => {
+    return (
+      <TagGroup size="small" items={MOCK_TAGS}>
+        {(item) => <TagItem>{item.name}</TagItem>}
+      </TagGroup>
+    );
+  },
+};
+
+export const Removable: Story = {
   render: () => {
     const Component = () => {
       const [items, setItems] = useState(MOCK_TAGS);
 
       return (
         <TagGroup
+          allowsRemoving
+          onRemove={(key) => {
+            setItems((prevItems) => prevItems.filter((item) => key !== item.id));
+          }}
+          items={items}
+        >
+          {(item) => <TagItem>{item.name}</TagItem>}
+        </TagGroup>
+      );
+    };
+
+    return <Component />;
+  },
+};
+
+export const RemovableSmall: Story = {
+  render: () => {
+    const Component = () => {
+      const [items, setItems] = useState(MOCK_TAGS);
+
+      return (
+        <TagGroup
+          size="small"
           allowsRemoving
           onRemove={(key) => {
             setItems((prevItems) => prevItems.filter((item) => key !== item.id));
@@ -62,7 +95,32 @@ export const WithClearAction: Story = {
           }}
           hideActionWhenEmpty
           items={items}
-          action={() => <TagGroupClearAction onClick={() => setItems([])} />}
+          action={(props) => <TagGroupClearAction {...props} onClick={() => setItems([])} />}
+        >
+          {(item) => <TagItem>{item.name}</TagItem>}
+        </TagGroup>
+      );
+    };
+
+    return <Component />;
+  },
+};
+
+export const WithClearActionSmall: Story = {
+  render: () => {
+    const Component = () => {
+      const [items, setItems] = useState(MOCK_TAGS);
+
+      return (
+        <TagGroup
+          allowsRemoving
+          onRemove={(key) => {
+            setItems((prevItems) => prevItems.filter((item) => key !== item.id));
+          }}
+          size="small"
+          hideActionWhenEmpty
+          items={items}
+          action={(props) => <TagGroupClearAction {...props} onClick={() => setItems([])} />}
         >
           {(item) => <TagItem>{item.name}</TagItem>}
         </TagGroup>
@@ -86,8 +144,9 @@ export const WithCustomAction: Story = {
           }}
           hideActionWhenEmpty
           items={items}
-          action={() => (
+          action={(props) => (
             <IconButton
+              {...props}
               aria-label="Clear"
               size="small"
               icon={<Edit />}
@@ -109,6 +168,18 @@ export const WithMaxRows: Story = {
     return (
       <div style={{ maxWidth: 290, border: '1px solid #efefef', padding: '1rem' }}>
         <TagGroup maxRows={2} items={MOCK_TAGS}>
+          {(item) => <TagItem>{item.name}</TagItem>}
+        </TagGroup>
+      </div>
+    );
+  },
+};
+
+export const WithMaxRowsSmall: Story = {
+  render: () => {
+    return (
+      <div style={{ maxWidth: 290, border: '1px solid #efefef', padding: '1rem' }}>
+        <TagGroup maxRows={2} items={MOCK_TAGS} size="small">
           {(item) => <TagItem>{item.name}</TagItem>}
         </TagGroup>
       </div>
