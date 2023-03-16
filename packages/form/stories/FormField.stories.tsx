@@ -70,7 +70,7 @@ export const WithError: Story = {
     label: 'Email',
     name: 'Email',
     htmlFor: 'Email',
-    errorMessage: 'Oops, you entered an incorrect email.',
+    errorMessage: 'Oops, you entered an incorrect email',
     isInvalid: true,
     children: <TextField id="Email" value="testing@launchdarkly.com" />,
   },
@@ -82,7 +82,7 @@ export const WithHint: Story = {
     label: 'Email',
     name: 'Email',
     htmlFor: 'Email',
-    hint: 'Must be a valid email.',
+    hint: 'Must be a valid email',
     children: <TextField id="Email" value="testing@launchdarkly.com" />,
   },
 };

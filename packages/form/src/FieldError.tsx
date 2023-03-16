@@ -1,6 +1,7 @@
 import type { FieldPath } from './utils';
 import type { HTMLAttributes } from 'react';
 
+import { AlertRhombus } from '@launchpad-ui/icons';
 import { cx } from 'classix';
 
 import styles from './styles/Form.module.css';
@@ -29,9 +30,10 @@ const FieldError = ({
       className={cx(styles.fieldError, className)}
       aria-live="polite"
       data-test-id={testId}
+      aria-label="Error"
       id={createFieldErrorId(name)}
     >
-      {`Error - ${errorMessage}`}
+      <AlertRhombus size="small" /> {errorMessage}
     </span>
   );
 };
