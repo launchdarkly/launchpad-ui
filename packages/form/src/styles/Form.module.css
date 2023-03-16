@@ -138,6 +138,10 @@ select.formInput {
 .fieldError {
   color: var(--lp-color-text-feedback-error);
   font-size: 1.3rem;
+
+  & svg {
+    transform: translateY(-1px);
+  }
 }
 
 /* The margin for .formGroup and the min-height of .form-fieldError
