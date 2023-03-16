@@ -1,5 +1,23 @@
 # @launchpad-ui/pagination
 
+## 0.3.49
+
+### Patch Changes
+
+- [#773](https://github.com/launchdarkly/launchpad-ui/pull/773) [`a3477a6f`](https://github.com/launchdarkly/launchpad-ui/commit/a3477a6f8e93f8d83501c01e5dae1a9e07480c81) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Button]: Switch from circular IconButton to rounded
+  [Modal]: Update close button size to small
+  [Pagination]: Update PaginationButton IconButton size to small
+- Updated dependencies [[`a3477a6f`](https://github.com/launchdarkly/launchpad-ui/commit/a3477a6f8e93f8d83501c01e5dae1a9e07480c81), [`42c857c3`](https://github.com/launchdarkly/launchpad-ui/commit/42c857c3100b6fcab4bb7609482d34cce0ccfe79)]:
+  - @launchpad-ui/button@0.8.7
+  - @launchpad-ui/icons@0.8.2
+
+## 0.3.48
+
+### Patch Changes
+
+- Updated dependencies [[`7887aaaa`](https://github.com/launchdarkly/launchpad-ui/commit/7887aaaaddeb58186fe5ac3c1a31b74953f6f837)]:
+  - @launchpad-ui/button@0.8.6
+
 ## 0.3.47
 
 ### Patch Changes

@@ -2,8 +2,8 @@ import type { HTMLAttributes, ReactNode } from 'react';
 
 import { IconButton } from '@launchpad-ui/button';
 import { Close, StatusIcon } from '@launchpad-ui/icons';
+import { useControlledState } from '@react-stately/utils';
 import { cx } from 'classix';
-import { useState } from 'react';
 
 import styles from './styles/Alert.module.css';
 
@@ -48,6 +48,11 @@ type AlertProps = HTMLAttributes<HTMLDivElement> & {
   onDismiss?(): void;
 
   /**
+   * Controlled dismissed handler
+   */
+  dismissed?: boolean;
+
+  /**
    * When true no icon is rendered
    */
   noIcon?: boolean;
@@ -67,10 +72,13 @@ const Alert = ({
   onDismiss,
   noIcon,
   header,
+  dismissed,
   'data-test-id': testId = 'alert',
   ...rest
 }: AlertProps) => {
-  const [dismissed, setDismissed] = useState(false);
+  const [dismissedState, setDismissedState] = useControlledState(dismissed, false, (val) =>
+    val && onDismiss ? onDismiss() : null
+  );
 
   const defaultClasses = `${styles.Alert} ${styles[`Alert--${kind}`]}`;
   const sizeClass = size === 'small' && styles[`Alert--${size}`];
@@ -83,15 +91,7 @@ const Alert = ({
     wide && styles['Alert--wide']
   );
 
-  const handleDismissClicked = () => {
-    if (onDismiss) {
-      onDismiss();
-    }
-
-    setDismissed(true);
-  };
-
-  if (dismissed) {
+  if (dismissedState) {
     return null;
   }
 
@@ -125,7 +125,7 @@ const Alert = ({
           className={styles['Alert-close']}
           icon={<Close size="small" />}
           kind="close"
-          onClick={handleDismissClicked}
+          onClick={() => setDismissedState(true)}
           data-test-id={testId ? `${testId}-dismiss-button` : undefined}
         />
       )}

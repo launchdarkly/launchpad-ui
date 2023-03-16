@@ -1,5 +1,22 @@
 # @launchpad-ui/button
 
+## 0.8.7
+
+### Patch Changes
+
+- [#773](https://github.com/launchdarkly/launchpad-ui/pull/773) [`a3477a6f`](https://github.com/launchdarkly/launchpad-ui/commit/a3477a6f8e93f8d83501c01e5dae1a9e07480c81) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Button]: Switch from circular IconButton to rounded
+  [Modal]: Update close button size to small
+  [Pagination]: Update PaginationButton IconButton size to small
+- Updated dependencies [[`42c857c3`](https://github.com/launchdarkly/launchpad-ui/commit/42c857c3100b6fcab4bb7609482d34cce0ccfe79)]:
+  - @launchpad-ui/icons@0.8.2
+
+## 0.8.6
+
+### Patch Changes
+
+- [#770](https://github.com/launchdarkly/launchpad-ui/pull/770) [`7887aaaa`](https://github.com/launchdarkly/launchpad-ui/commit/7887aaaaddeb58186fe5ac3c1a31b74953f6f837) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Button]: Update IconButton sizing to match button size
+  [SplitButton]: Improve height definitions, and use underlying button styles where possible
+
 ## 0.8.5
 
 ### Patch Changes

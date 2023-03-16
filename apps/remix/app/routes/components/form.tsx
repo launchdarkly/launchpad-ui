@@ -22,7 +22,7 @@ export default function Index() {
         label="Email"
         name="Email"
         htmlFor="Email"
-        errorMessage="Oops, you entered an incorrect email."
+        errorMessage="Oops, you entered an incorrect email"
         isInvalid={true}
       >
         <TextField id="Email" value="testing@launchdarkly.com" />

@@ -1,5 +1,57 @@
 # @launchpad-ui/core
 
+## 0.33.4
+
+### Patch Changes
+
+- [#773](https://github.com/launchdarkly/launchpad-ui/pull/773) [`a3477a6f`](https://github.com/launchdarkly/launchpad-ui/commit/a3477a6f8e93f8d83501c01e5dae1a9e07480c81) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Button]: Switch from circular IconButton to rounded
+  [Modal]: Update close button size to small
+  [Pagination]: Update PaginationButton IconButton size to small
+
+- [#774](https://github.com/launchdarkly/launchpad-ui/pull/774) [`42c857c3`](https://github.com/launchdarkly/launchpad-ui/commit/42c857c3100b6fcab4bb7609482d34cce0ccfe79) Thanks [@matthewferry](https://github.com/matthewferry)! - Add `approval-pending` and `merge` icons
+
+- Updated dependencies [[`a3477a6f`](https://github.com/launchdarkly/launchpad-ui/commit/a3477a6f8e93f8d83501c01e5dae1a9e07480c81), [`42c857c3`](https://github.com/launchdarkly/launchpad-ui/commit/42c857c3100b6fcab4bb7609482d34cce0ccfe79)]:
+  - @launchpad-ui/button@0.8.7
+  - @launchpad-ui/pagination@0.3.49
+  - @launchpad-ui/modal@0.14.8
+  - @launchpad-ui/icons@0.8.2
+  - @launchpad-ui/alert@0.7.7
+  - @launchpad-ui/banner@0.9.7
+  - @launchpad-ui/collapsible@0.1.4
+  - @launchpad-ui/drawer@0.3.8
+  - @launchpad-ui/dropdown@0.6.40
+  - @launchpad-ui/filter@0.5.11
+  - @launchpad-ui/select@0.2.10
+  - @launchpad-ui/snackbar@0.3.42
+  - @launchpad-ui/split-button@0.7.10
+  - @launchpad-ui/avatar@0.4.40
+  - @launchpad-ui/clipboard@0.9.9
+  - @launchpad-ui/form@0.8.7
+  - @launchpad-ui/menu@0.8.3
+  - @launchpad-ui/navigation@0.11.4
+  - @launchpad-ui/toast@0.2.40
+
+## 0.33.3
+
+### Patch Changes
+
+- [#770](https://github.com/launchdarkly/launchpad-ui/pull/770) [`7887aaaa`](https://github.com/launchdarkly/launchpad-ui/commit/7887aaaaddeb58186fe5ac3c1a31b74953f6f837) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Button]: Update IconButton sizing to match button size
+  [SplitButton]: Improve height definitions, and use underlying button styles where possible
+- Updated dependencies [[`7887aaaa`](https://github.com/launchdarkly/launchpad-ui/commit/7887aaaaddeb58186fe5ac3c1a31b74953f6f837)]:
+  - @launchpad-ui/split-button@0.7.9
+  - @launchpad-ui/button@0.8.6
+  - @launchpad-ui/alert@0.7.6
+  - @launchpad-ui/banner@0.9.6
+  - @launchpad-ui/collapsible@0.1.3
+  - @launchpad-ui/drawer@0.3.7
+  - @launchpad-ui/dropdown@0.6.39
+  - @launchpad-ui/filter@0.5.10
+  - @launchpad-ui/modal@0.14.7
+  - @launchpad-ui/pagination@0.3.48
+  - @launchpad-ui/select@0.2.9
+  - @launchpad-ui/snackbar@0.3.41
+  - @launchpad-ui/navigation@0.11.3
+
 ## 0.33.2
 
 ### Patch Changes

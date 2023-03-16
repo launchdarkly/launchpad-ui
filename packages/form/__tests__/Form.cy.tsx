@@ -24,7 +24,7 @@ const createComponent = (props?: FormProps) => (
       label="Email"
       name="Email"
       htmlFor="Email"
-      errorMessage="Oops, you entered an incorrect email."
+      errorMessage="Oops, you entered an incorrect email"
       isInvalid={true}
     >
       <TextField id="Email" value="testing@launchdarkly.com" />

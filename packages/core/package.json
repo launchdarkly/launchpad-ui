@@ -1,6 +1,6 @@
 {
   "name": "@launchpad-ui/core",
-  "version": "0.33.2",
+  "version": "0.33.4",
   "status": "beta",
   "publishConfig": {
     "access": "public"
@@ -61,6 +61,7 @@
     "@launchpad-ui/split-button": "workspace:~",
     "@launchpad-ui/tab-list": "workspace:~",
     "@launchpad-ui/table": "workspace:~",
+    "@launchpad-ui/tag": "workspace:~",
     "@launchpad-ui/toast": "workspace:~",
     "@launchpad-ui/toggle": "workspace:~",
     "@launchpad-ui/tokens": "workspace:~",

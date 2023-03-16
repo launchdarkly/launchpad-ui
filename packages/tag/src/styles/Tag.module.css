@@ -1,0 +1,106 @@
+:root,
+[data-theme='default'] {
+  --lp-component-tag-color-bg-readonly: var(--lp-color-gray-100);
+  --lp-component-tag-color-bg-readonly-link: var(--lp-color-blue-200);
+  --lp-component-tag-color-text-readonly-link: var(--lp-color-blue-600);
+  --lp-component-tag-color-border: var(--lp-color-gray-600);
+}
+
+[data-theme='dark'] {
+  --lp-component-tag-color-bg-readonly: var(--lp-color-gray-900);
+  --lp-component-tag-color-bg-readonly-link: var(--lp-color-blue-300);
+  --lp-component-tag-color-text-readonly-link: var(--lp-color-blue-600);
+  --lp-component-tag-color-border: var(--lp-color-gray-500);
+}
+
+.tag {
+  background-color: var(--lp-color-bg-ui-secondary);
+  color: var(--lp-color-text-ui-secondary);
+  border: 1px solid var(--lp-component-tag-color-border);
+  border-radius: var(--lp-border-radius-regular);
+  font-size: var(--lp-font-size-200);
+  line-height: 1;
+  padding: 0 0.4rem 0 0.6rem;
+  height: 2.4rem;
+  max-width: 100%;
+  font-weight: var(--lp-font-weight-medium);
+  margin: 0 0.6rem 0.4rem 0;
+  box-sizing: border-box;
+  cursor: default;
+  display: inline-grid;
+}
+
+a.tag {
+  background-color: var(--lp-component-tag-color-bg-readonly-link);
+  color: var(--lp-component-tag-color-text-readonly-link);
+  text-decoration: none;
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    text-decoration: underline;
+  }
+}
+
+.isFocusVisible {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--lp-color-bg-ui-primary),
+    0 0 0 4px var(--lp-color-shadow-interactive-focus);
+}
+
+.isHovered {
+  /* background-color: var(--lp-color-bg-ui-tertiary); */
+}
+
+.isReadOnly {
+  background-color: var(--lp-component-tag-color-bg-readonly);
+  border-color: var(--lp-component-tag-color-bg-readonly);
+}
+
+.tagCell {
+  display: flex;
+  align-items: center;
+}
+
+.tagContent {
+  padding: 0.4rem 0.2rem 0.4rem 0;
+}
+
+.removeButton {
+  border-radius: 100px;
+  width: 2.2rem;
+  height: 2.2rem;
+  margin: 0;
+  display: flex;
+  padding: 0;
+  border: none;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  cursor: pointer;
+
+  &:hover {
+    background-color: var(--lp-color-bg-interactive-tertiary-hover);
+  }
+
+  &:focus-within {
+    outline: none;
+  }
+}
+
+.tagGroupContainer {
+  width: 100%;
+  display: inline;
+}
+
+.tagGroup {
+  display: inline;
+}
+
+.tagGroupActions {
+  display: inline;
+}
+
+.tagGroupAction {
+  margin-bottom: 0.4rem;
+}
