@@ -1,11 +1,11 @@
 import type { StoryObj } from '@storybook/react';
 
-import { IconButton } from '@launchpad-ui/button';
+import { Button, IconButton } from '@launchpad-ui/button';
 import { Edit, Star } from '@launchpad-ui/icons';
 import { useState } from 'react';
 
 import { MOCK_TAGS } from '../__tests__/constants';
-import { TagGroup, TagGroupClearAction, TagItem } from '../src';
+import { TagGroup, TagItem } from '../src';
 
 export default {
   component: TagGroup,
@@ -95,7 +95,11 @@ export const WithClearAction: Story = {
           }}
           hideActionWhenEmpty
           items={items}
-          action={(props) => <TagGroupClearAction {...props} onClick={() => setItems([])} />}
+          action={({ size }) => (
+            <Button size={size} onClick={() => setItems([])} aria-label="Clear">
+              Clear
+            </Button>
+          )}
         >
           {(item) => <TagItem>{item.name}</TagItem>}
         </TagGroup>
@@ -120,7 +124,11 @@ export const WithClearActionSmall: Story = {
           size="small"
           hideActionWhenEmpty
           items={items}
-          action={(props) => <TagGroupClearAction {...props} onClick={() => setItems([])} />}
+          action={({ size }) => (
+            <Button size={size} onClick={() => setItems([])} aria-label="Clear">
+              Clear
+            </Button>
+          )}
         >
           {(item) => <TagItem>{item.name}</TagItem>}
         </TagGroup>
@@ -147,10 +155,10 @@ export const WithCustomAction: Story = {
           action={(props) => (
             <IconButton
               {...props}
-              aria-label="Clear"
+              aria-label="Custom"
               size="small"
               icon={<Edit />}
-              onClick={() => setItems([])}
+              onClick={() => alert('Pressed custom action')}
             />
           )}
         >
