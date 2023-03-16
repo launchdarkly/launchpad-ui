@@ -549,11 +549,11 @@ importers:
 
   packages/focus-trap:
     specifiers:
-      '@react-aria/focus': 3.11.0
+      '@react-aria/focus': 3.10.0
       react: 18.2.0
       react-dom: 18.2.0
     dependencies:
-      '@react-aria/focus': 3.11.0_react@18.2.0
+      '@react-aria/focus': 3.10.0_react@18.2.0
     devDependencies:
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
@@ -619,7 +619,7 @@ importers:
       '@launchpad-ui/tokens': workspace:~
       '@launchpad-ui/tooltip': workspace:~
       '@radix-ui/react-slot': ^1.0.0
-      '@react-aria/focus': 3.11.0
+      '@react-aria/focus': 3.10.0
       '@react-aria/separator': 3.2.6
       classix: 2.1.17
       react: 18.2.0
@@ -633,7 +633,7 @@ importers:
       '@launchpad-ui/tokens': link:../tokens
       '@launchpad-ui/tooltip': link:../tooltip
       '@radix-ui/react-slot': 1.0.1_react@18.2.0
-      '@react-aria/focus': 3.11.0_react@18.2.0
+      '@react-aria/focus': 3.10.0_react@18.2.0
       '@react-aria/separator': 3.2.6_react@18.2.0
       classix: 2.1.17
       react-router-dom: 6.9.0_biqbaboplfbrettd7655fr4n2y
@@ -801,7 +801,7 @@ importers:
       '@launchpad-ui/tooltip': workspace:~
       '@react-aria/button': 3.6.4
       '@react-aria/combobox': 3.4.4
-      '@react-aria/focus': 3.11.0
+      '@react-aria/focus': 3.10.0
       '@react-aria/gridlist': 3.1.2
       '@react-aria/interactions': 3.14.0
       '@react-aria/label': 3.4.4
@@ -840,7 +840,7 @@ importers:
       '@launchpad-ui/tooltip': link:../tooltip
       '@react-aria/button': 3.6.4_react@18.2.0
       '@react-aria/combobox': 3.4.4_biqbaboplfbrettd7655fr4n2y
-      '@react-aria/focus': 3.11.0_react@18.2.0
+      '@react-aria/focus': 3.10.0_react@18.2.0
       '@react-aria/gridlist': 3.1.2_biqbaboplfbrettd7655fr4n2y
       '@react-aria/interactions': 3.14.0_react@18.2.0
       '@react-aria/label': 3.4.4_react@18.2.0
@@ -967,7 +967,7 @@ importers:
       '@launchpad-ui/icons': workspace:~
       '@launchpad-ui/tokens': workspace:~
       '@launchpad-ui/tooltip': workspace:~
-      '@react-aria/focus': 3.11.0
+      '@react-aria/focus': 3.10.0
       '@react-aria/interactions': 3.14.0
       '@react-aria/tag': 3.0.0-beta.3
       '@react-aria/utils': 3.15.0
@@ -983,7 +983,7 @@ importers:
       '@launchpad-ui/icons': link:../icons
       '@launchpad-ui/tokens': link:../tokens
       '@launchpad-ui/tooltip': link:../tooltip
-      '@react-aria/focus': 3.11.0_react@18.2.0
+      '@react-aria/focus': 3.10.0_react@18.2.0
       '@react-aria/interactions': 3.14.0_react@18.2.0
       '@react-aria/tag': 3.0.0-beta.3_biqbaboplfbrettd7655fr4n2y
       '@react-aria/utils': 3.15.0_react@18.2.0
@@ -4221,6 +4221,19 @@ packages:
       '@swc/helpers': 0.4.14
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
+    dev: false
+
+  /@react-aria/focus/3.10.0_react@18.2.0:
+    resolution: {integrity: sha512-idI7Etgh6y2BYi3X4d+EuUpzR7gPZ94Lf/0UNnVyMkDM9fzcdz/8DCBt0qKOff24HlaLE1rmREt0+iTR/qRgbA==}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0 || 18
+    dependencies:
+      '@babel/runtime': 7.21.0
+      '@react-aria/interactions': 3.14.0_react@18.2.0
+      '@react-aria/utils': 3.15.0_react@18.2.0
+      '@react-types/shared': 3.17.0_react@18.2.0
+      clsx: 1.2.1
+      react: 18.2.0
     dev: false
 
   /@react-aria/focus/3.11.0_react@18.2.0:
