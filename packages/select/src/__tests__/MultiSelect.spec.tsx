@@ -128,8 +128,8 @@ describe('Select', () => {
       user.click(screen.getAllByRole('option')[0]);
       await user.click(screen.getAllByRole('option')[2]);
 
-      expect(screen.getAllByTestId('tag')[0]).toHaveTextContent(FRUIT[0].name);
-      expect(screen.getAllByTestId('tag')[1]).toHaveTextContent(FRUIT[2].name);
+      expect(screen.getAllByTestId('selected-option')[0]).toHaveTextContent(FRUIT[0].name);
+      expect(screen.getAllByTestId('selected-option')[1]).toHaveTextContent(FRUIT[2].name);
     });
 
     it('unselects options', async () => {
@@ -143,10 +143,10 @@ describe('Select', () => {
 
       await user.click(screen.getByTestId('custom-trigger'));
       user.click(screen.getAllByRole('option')[0]);
-      await user.click(screen.getAllByRole('option')[2]);
+      await user.click(screen.getAllByTestId('unselect-option-btn')[0]);
       await user.click(screen.getAllByTestId('remove-tag-btn')[0]);
 
-      expect(screen.getAllByTestId('tag')).toHaveLength(1);
+      expect(screen.getAllByTestId('selected-option')).toHaveLength(1);
     });
   });
 });
