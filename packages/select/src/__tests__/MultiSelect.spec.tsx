@@ -143,8 +143,8 @@ describe('Select', () => {
 
       await user.click(screen.getByTestId('custom-trigger'));
       user.click(screen.getAllByRole('option')[0]);
+      await user.click(screen.getAllByRole('option')[2]);
       await user.click(screen.getAllByTestId('unselect-option-btn')[0]);
-      await user.click(screen.getAllByTestId('remove-tag-btn')[0]);
 
       expect(screen.getAllByTestId('selected-option')).toHaveLength(1);
     });
