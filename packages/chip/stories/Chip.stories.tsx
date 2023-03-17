@@ -1,5 +1,7 @@
 import type { StoryObj } from '@storybook/react';
 
+import { Star } from '@launchpad-ui/icons';
+
 import { Chip } from '../src';
 
 export default {
@@ -48,4 +50,12 @@ export const Federal: Story = { args: { children: 'Federal Chip', kind: 'federal
 
 export const Beta: Story = { args: { children: 'Beta Chip', kind: 'beta' } };
 
-export const Small: Story = { args: { children: 'Small Chip', size: 'small', kind: 'success' } };
+export const Tiny: Story = { args: { children: 'Tiny Chip', size: 'tiny', kind: 'success' } };
+
+export const WithIcon: Story = {
+  args: { children: 'Chip', icon: <Star />, kind: 'success' },
+};
+
+export const TinyWithIcon: Story = {
+  args: { children: 'Tiny Chip', icon: <Star />, size: 'tiny', kind: 'success' },
+};
