@@ -53,8 +53,13 @@ const useMultiSelect = <T extends object>(
     switch (e.key) {
       case 'Enter':
       case 'Tab':
-        // Prevent form submission if menu is open since we may be selecting a option
-        e.preventDefault();
+      case ' ':
+        // If there is not a focusedKey, it means that the user intentionally arrowed right or left
+        // to focus only on the input. If this is the case, don't prevent default.
+        if (state.selectionManager.focusedKey) {
+          // Prevent form submission if menu is open since we may be selecting a option
+          e.preventDefault();
+        }
 
         state.commit();
         break;
@@ -84,6 +89,13 @@ const useMultiSelect = <T extends object>(
         if (key) {
           state.selectionManager.setFocusedKey(key);
         }
+        break;
+      }
+      case 'ArrowRight':
+      case 'ArrowLeft': {
+        e.preventDefault();
+
+        state.selectionManager.setFocusedKey(null);
         break;
       }
     }

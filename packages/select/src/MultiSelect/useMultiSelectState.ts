@@ -4,7 +4,7 @@ import type { SharedSelectState } from '../types';
 
 import { useMenuTriggerState } from '@react-stately/menu';
 import { useControlledState } from '@react-stately/utils';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import { useFilteredCollection } from '../useFilter';
 
@@ -35,11 +35,11 @@ const useMultiSelectState = <T extends object>(props: MultiSelectProps<T>): Mult
     },
   });
 
-  const { selectionManager, selectedKeys } = listState;
+  const { selectionManager, selectedKeys, collection } = listState;
 
   const filteredCollection = useFilteredCollection(
     { ...props, filterValue, onFilterChange: setFilterValue },
-    listState
+    collection
   );
 
   const commitCustomValue = () => {
@@ -83,6 +83,21 @@ const useMultiSelectState = <T extends object>(props: MultiSelectProps<T>): Mult
     // commitCustomValue();
   };
 
+  useEffect(() => {
+    // Reset focused key when the menu closes
+    if (triggerState.isOpen && collection.size !== 0) {
+      selectionManager.setFocusedKey(collection.getFirstKey());
+    } else {
+      selectionManager.setFocusedKey(null);
+    }
+  }, [triggerState.isOpen, collection]);
+
+  useEffect(() => {
+    if (filteredCollection.size !== 0) {
+      selectionManager.setFocusedKey(filteredCollection.getFirstKey());
+    }
+  }, [filterValue, filteredCollection]);
+
   return {
     ...listState,
     ...triggerState,
@@ -91,12 +106,12 @@ const useMultiSelectState = <T extends object>(props: MultiSelectProps<T>): Mult
     },
     open() {
       // Don't open if the collection is empty.
-      if (listState.collection.size !== 0) {
+      if (collection.size !== 0) {
         triggerState.open();
       }
     },
     toggle(focusStrategy) {
-      if (listState.collection.size !== 0) {
+      if (collection.size !== 0) {
         triggerState.toggle(focusStrategy);
       }
     },
