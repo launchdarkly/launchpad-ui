@@ -34,10 +34,29 @@ const ToastCenter = ({ toasts, onDismiss, className }: ToastCenterProps) => {
             <m.div
               className={styles['ToastCenter-item']}
               key={item._id}
-              transition={{ ease: 'easeInOut' }}
-              initial={{ y: '100%' }}
-              animate={{ y: '0%' }}
-              exit={{ y: '0%' }}
+              initial={{
+                y: '100%',
+                opacity: 0,
+              }}
+              animate={{
+                y: 0,
+                x: 0,
+                opacity: 1,
+                scale: 1,
+                transition: {
+                  duration: 0.4,
+                  ease: [0.4, 0, 0.2, 1],
+                },
+              }}
+              exit={{
+                y: 0,
+                opacity: 0,
+                scale: 0.85,
+                transition: {
+                  duration: 0.2,
+                  ease: [0.4, 0, 1, 1],
+                },
+              }}
             >
               <Toast
                 kind={item.kind}
