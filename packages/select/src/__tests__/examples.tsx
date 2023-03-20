@@ -9,8 +9,6 @@ import { TagGroup, TagItem } from '@launchpad-ui/tag';
 const CustomMultiSelectTrigger = (props: MultiSelectTriggerProps<DummyItem>) => {
   const { state, triggerProps, triggerRef } = props;
 
-  console.log(state.selectedItems);
-
   return (
     <TagGroup
       items={state.selectedItems || []}
