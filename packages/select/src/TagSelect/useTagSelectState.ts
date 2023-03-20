@@ -1,26 +1,18 @@
-import type { SingleSelectProps } from './SingleSelect';
+import type { TagSelectProps } from './TagSelect';
+import type { MultiSelectListState } from '../MultiSelect/useMultiSelectListState';
 import type { SharedSelectState } from '../types';
-import type { SingleSelectListState } from '@react-stately/list';
-import type { SelectionMode } from '@react-types/shared';
-import type { Key } from 'react';
 
-import { useSingleSelectListState } from '@react-stately/list';
 import { useMenuTriggerState } from '@react-stately/menu';
 import { useControlledState } from '@react-stately/utils';
 import { useEffect, useState } from 'react';
 
+import { useMultiSelectListState } from '../MultiSelect/useMultiSelectListState';
 import { useFilteredCollection } from '../useFilter';
 
-type SingleSelectState<T extends object> = SingleSelectListState<T> &
-  SharedSelectState & { selectionMode: SelectionMode };
+type TagSelectState<T extends object> = MultiSelectListState<T> & SharedSelectState;
 
-/* c8 ignore start */
-
-const useSingleSelectState = <T extends object>(
-  props: SingleSelectProps<T>
-): SingleSelectState<T> => {
+const useTagSelectState = <T extends object>(props: TagSelectProps<T>): TagSelectState<T> => {
   const [isFocused, setFocused] = useState(false);
-
   const [filterValue, setFilterValue] = useControlledState(
     props.filterValue as string,
     props.defaultFilterValue ?? '',
@@ -28,18 +20,21 @@ const useSingleSelectState = <T extends object>(
   );
 
   const triggerState = useMenuTriggerState({ ...props, trigger: 'press' });
-  const listState = useSingleSelectListState({
+  const listState = useMultiSelectListState({
     ...props,
     items: props.items ?? props.defaultItems,
-    onSelectionChange: (key) => {
-      if (props.onSelectionChange) {
-        props.onSelectionChange(key);
+    onSelectionChange: (keys) => {
+      if (props.onSelectionChange != null) {
+        if (keys === 'all') {
+          props.onSelectionChange(new Set(listState.collection.getKeys()));
+        } else {
+          props.onSelectionChange(keys);
+        }
       }
-
-      triggerState.close();
     },
   });
-  const { selectionManager, selectedKey, setSelectedKey, collection } = listState;
+
+  const { selectionManager, selectedKeys, collection } = listState;
 
   const filteredCollection = useFilteredCollection(
     { ...props, filterValue, onFilterChange: setFilterValue },
@@ -47,14 +42,15 @@ const useSingleSelectState = <T extends object>(
   );
 
   const commitCustomValue = () => {
+    // TODO
     // lastSelectedKey.current = null;
-    setSelectedKey(null as unknown as Key);
+    // setSelectedKey(null as unknown as Key);
     triggerState.close();
   };
 
   // Revert input value and close menu
   const revert = () => {
-    if (props.allowsCustomValue && selectedKey == null) {
+    if (props.allowsCustomValue && selectedKeys.size === 0) {
       commitCustomValue();
     } else {
       commitSelection();
@@ -63,12 +59,13 @@ const useSingleSelectState = <T extends object>(
 
   const commitSelection = () => {
     // If multiple things are controlled, call onSelectionChange
-    if (props.selectedKey !== undefined && props.filterValue !== undefined) {
-      if (props.onSelectionChange) props.onSelectionChange(selectedKey);
+    if (props.selectedKeys !== undefined && props.filterValue !== undefined) {
+      if (props.onSelectionChange) props.onSelectionChange(selectedKeys);
 
       // Stop menu from reopening from useEffect
       // const itemText = collection.getItem(selectedKey)?.textValue ?? '';
       // lastValue.current = itemText;
+      setFilterValue('');
       triggerState.close();
     } else {
       // If only a single aspect of combobox is controlled, reset input value and close menu for the user
@@ -78,19 +75,10 @@ const useSingleSelectState = <T extends object>(
   };
 
   const commit = () => {
-    if (triggerState.isOpen && selectionManager.focusedKey != null) {
-      // Reset filterValue and close menu here if the selected key is already the focused key. Otherwise
-      // fire onSelectionChange to allow the application to control the closing.
-      if (selectedKey === selectionManager.focusedKey) {
-        commitSelection();
-      } else {
-        setSelectedKey(selectionManager.focusedKey);
-      }
-    } else {
-      // Reset filterValue and close menu if no item is focused but user triggers a commit
-      commitSelection();
-    }
+    // if (triggerState.isOpen && selectionManager.focusedKey != null) {
+    selectionManager.toggleSelection(selectionManager.focusedKey);
 
+    // TODO
     // else if (allowsCustomValue) {
     // commitCustomValue();
   };
@@ -107,27 +95,23 @@ const useSingleSelectState = <T extends object>(
   useEffect(() => {
     if (filteredCollection.size !== 0) {
       selectionManager.setFocusedKey(filteredCollection.getFirstKey());
-    } else {
-      selectionManager.setFocusedKey(null);
     }
   }, [filteredCollection]);
 
   return {
     ...listState,
     ...triggerState,
-    selectionMode: 'single',
     close() {
-      setFilterValue('');
       triggerState.close();
     },
     open() {
       // Don't open if the collection is empty.
-      if (listState.collection.size !== 0) {
+      if (collection.size !== 0) {
         triggerState.open();
       }
     },
     toggle(focusStrategy) {
-      if (listState.collection.size !== 0) {
+      if (collection.size !== 0) {
         triggerState.toggle(focusStrategy);
       }
     },
@@ -141,7 +125,5 @@ const useSingleSelectState = <T extends object>(
   };
 };
 
-/* c8 ignore end */
-
-export { useSingleSelectState };
-export type { SingleSelectState };
+export { useTagSelectState };
+export type { TagSelectState };

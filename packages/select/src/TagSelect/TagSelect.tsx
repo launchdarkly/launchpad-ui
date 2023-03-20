@@ -1,4 +1,4 @@
-import type { MultiSelectTriggerProps } from './MultiSelectTrigger';
+import type { TagSelectTriggerProps } from './TagSelectTrigger';
 import type { SharedSelectProps } from '../types';
 import type { MultipleSelection } from '@react-types/shared';
 
@@ -10,30 +10,26 @@ import { useRef } from 'react';
 
 import { SelectListBox } from '../SelectListBox';
 import { SelectPopover } from '../SelectPopover';
-import { useSelect } from '../useSelect';
 
-import { MultiSelectMenuHeader } from './MultiSelectMenuHeader';
-import { MultiSelectTrigger } from './MultiSelectTrigger';
-import { useMultiSelectState } from './useMultiSelectState';
+import { TagSelectTrigger } from './TagSelectTrigger';
+import { useTagSelect } from './useTagSelect';
+import { useTagSelectState } from './useTagSelectState';
 
-type MultiSelectProps<T extends object> = SharedSelectProps<T> &
-  Omit<MultipleSelection, 'selectionMode'> & {
-    trigger?: (props: MultiSelectTriggerProps<T>) => JSX.Element;
+type TagSelectProps<T extends object> = SharedSelectProps<T> &
+  MultipleSelection & {
+    trigger?: (props: TagSelectTriggerProps<T>) => JSX.Element;
     /** Whether the field can be emptied. */
     isClearable?: boolean;
-    /** Whether to show a button to select all items. */
-    isSelectableAll?: boolean;
   };
 
-const MultiSelect = <T extends object>(props: MultiSelectProps<T>) => {
+const TagSelect = <T extends object>(props: TagSelectProps<T>) => {
   const {
     autoFocus,
     excludeFromTabOrder,
     isClearable,
     disabled: isDisabled,
-    isSelectableAll,
     label,
-    trigger = MultiSelectTrigger,
+    trigger = TagSelectTrigger,
     placeholder,
     'data-test-id': testId = 'select',
   } = props;
@@ -42,9 +38,9 @@ const MultiSelect = <T extends object>(props: MultiSelectProps<T>) => {
   const popoverRef = useRef<HTMLDivElement>(null);
   const listBoxRef = useRef<HTMLDivElement>(null);
 
-  const state = useMultiSelectState(props);
+  const state = useTagSelectState(props);
 
-  const { labelProps, triggerProps, valueProps, menuProps, filterInputProps } = useSelect(
+  const { labelProps, triggerProps, valueProps, menuProps, filterInputProps } = useTagSelect(
     props,
     state,
     {
@@ -69,6 +65,8 @@ const MultiSelect = <T extends object>(props: MultiSelectProps<T>) => {
     valueProps,
     triggerRef,
     placeholder,
+    filterInputRef,
+    filterInputProps,
   });
 
   return (
@@ -81,18 +79,12 @@ const MultiSelect = <T extends object>(props: MultiSelectProps<T>) => {
 
       {state.isOpen && (
         <SelectPopover state={state} popoverRef={popoverRef} triggerRef={triggerRef}>
-          <MultiSelectMenuHeader
-            isSelectableAll={isSelectableAll}
-            isClearable={isClearable}
-            state={state}
-          />
-
           <SelectListBox
             {...menuProps}
             filterInputRef={filterInputRef}
             filterInputProps={filterInputProps}
             listBoxRef={listBoxRef}
-            hasFilter={props.hasFilter}
+            hasFilter={false}
             state={state}
           />
         </SelectPopover>
@@ -101,5 +93,5 @@ const MultiSelect = <T extends object>(props: MultiSelectProps<T>) => {
   );
 };
 
-export { MultiSelect };
-export type { MultiSelectProps };
+export { TagSelect };
+export type { TagSelectProps };

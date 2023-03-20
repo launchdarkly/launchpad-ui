@@ -1,4 +1,5 @@
 import type { AriaListBoxOptions } from '@react-aria/listbox';
+import type { ListKeyboardDelegate } from '@react-aria/selection';
 import type { MenuTriggerState } from '@react-stately/menu';
 import type { AriaButtonProps } from '@react-types/button';
 import type { AriaSelectProps } from '@react-types/select';
@@ -89,6 +90,8 @@ type SelectAria<T extends object> = {
   menuProps: AriaListBoxOptions<T>;
 
   filterInputProps: InputHTMLAttributes<HTMLInputElement>;
+
+  delegate: ListKeyboardDelegate<T>;
 };
 
 type FilterFn = (textValue: string, inputValue: string) => boolean;

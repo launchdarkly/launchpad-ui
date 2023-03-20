@@ -66,6 +66,7 @@ const useMultiSelectState = <T extends object>(props: MultiSelectProps<T>): Mult
       // Stop menu from reopening from useEffect
       // const itemText = collection.getItem(selectedKey)?.textValue ?? '';
       // lastValue.current = itemText;
+      setFilterValue('');
       triggerState.close();
     } else {
       // If only a single aspect of combobox is controlled, reset input value and close menu for the user
@@ -96,7 +97,7 @@ const useMultiSelectState = <T extends object>(props: MultiSelectProps<T>): Mult
     if (filteredCollection.size !== 0) {
       selectionManager.setFocusedKey(filteredCollection.getFirstKey());
     }
-  }, [filterValue, filteredCollection]);
+  }, [filteredCollection]);
 
   return {
     ...listState,
