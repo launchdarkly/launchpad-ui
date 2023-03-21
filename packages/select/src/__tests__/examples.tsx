@@ -2,40 +2,31 @@ import type { DummyItem } from './constants';
 import type { MultiSelectTriggerProps } from '../MultiSelect';
 import type { SingleSelectTriggerProps } from '../SingleSelect';
 
-import { Tooltip } from '@launchpad-ui/tooltip';
+import { IconButton } from '@launchpad-ui/button';
+import { Edit } from '@launchpad-ui/icons';
+import { TagGroup, TagItem } from '@launchpad-ui/tag';
 
 const CustomMultiSelectTrigger = (props: MultiSelectTriggerProps<DummyItem>) => {
   const { state, triggerProps, triggerRef } = props;
 
   return (
-    <div style={{ display: 'flex', alignItems: 'center' }}>
-      <div style={{ display: 'flex', alignItems: 'center' }} data-test-id="selected-options">
-        {(state.selectedItems || []).map(({ key, textValue }) => (
-          <div
-            style={{
-              backgroundColor: '#efefef',
-              marginRight: '5px',
-              fontSize: '12px',
-            }}
-            key={key}
-          >
-            <span data-test-id="selected-option">{textValue}</span>
-            <Tooltip content="Unselect">
-              <button
-                style={{ marginLeft: '5px' }}
-                onClick={() => state.selectionManager.select(key)}
-                data-test-id="unselect-option-btn"
-              >
-                x
-              </button>
-            </Tooltip>
-          </div>
-        ))}
-      </div>
-      <button {...triggerProps} data-test-id="custom-trigger" ref={triggerRef}>
-        +
-      </button>
-    </div>
+    <TagGroup
+      items={state.selectedItems || []}
+      allowsRemoving
+      onRemove={(key) => state.selectionManager.select(key)}
+      action={() => (
+        <IconButton
+          {...triggerProps}
+          size="small"
+          aria-label="Edit"
+          ref={triggerRef}
+          icon={<Edit />}
+          data-test-id="custom-trigger"
+        />
+      )}
+    >
+      {(item) => <TagItem key={item.key}>{item.textValue}</TagItem>}
+    </TagGroup>
   );
 };
 
