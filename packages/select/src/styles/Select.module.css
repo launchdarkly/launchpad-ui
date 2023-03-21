@@ -225,33 +225,3 @@
     }
   }
 }
-
-.tagSelectContainer {
-  border: 1px solid var(--lp-color-border-field);
-  padding: 0.6rem 0.6rem 0.2rem;
-  align-items: center;
-  justify-content: flex-start;
-  border-radius: 0.3rem;
-  max-width: 500px;
-}
-
-.tagGroupContainer {
-  display: inline;
-}
-
-.tagFilterInput {
-  display: inline;
-  border-width: 0;
-  height: 2.4rem;
-  width: auto;
-  margin-bottom: 0.4rem;
-  flex-grow: 1;
-
-  &:focus-within {
-    outline: none;
-  }
-}
-
-.tagFilterButton {
-  transform: translateY(-0.2rem);
-}
