@@ -1,5 +1,6 @@
 import type { TagGroupActionProps } from './types';
 import type { AriaTagGroupProps } from '@react-aria/tag';
+import type { Key } from 'react';
 
 import { Button } from '@launchpad-ui/button';
 import { FocusScope } from '@react-aria/focus';
@@ -21,6 +22,9 @@ type TagGroupProps<T extends object> = AriaTagGroupProps<T> & {
 
   'data-test-id'?: string;
 
+  /** Handle when the tag is clicked and styles the tag as interactive.  */
+  onTagClick?: (key: Key) => void;
+
   size?: 'tiny' | 'small';
 };
 
@@ -32,6 +36,7 @@ const TagGroup = <T extends object>(props: TagGroupProps<T>) => {
     children,
     action,
     hideActionWhenEmpty,
+    onTagClick,
     'data-test-id': testId = 'tag-group',
     size = 'small',
   } = props;
@@ -165,6 +170,7 @@ const TagGroup = <T extends object>(props: TagGroupProps<T>) => {
               allowsRemoving={allowsRemoving}
               onRemove={onRemove}
               size={size}
+              onClick={onTagClick}
             >
               {item.rendered}
             </Tag>

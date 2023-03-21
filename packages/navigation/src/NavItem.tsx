@@ -52,7 +52,7 @@ const NavItem = ({
             {name}
             <Chip
               className={styles['NavItem-chip']}
-              size="small"
+              size="tiny"
               data-test-id="nav-item-chip"
               kind={status}
             >

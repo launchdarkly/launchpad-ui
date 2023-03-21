@@ -22,10 +22,11 @@ type TagProps<T extends object> = ReactAriaTagProps<T> & {
   };
   state: TagGroupState<T>;
   size: TagGroupProps<T>['size'];
+  onClick: TagGroupProps<T>['onTagClick'];
 };
 
 const Tag = <T extends object>(props: TagProps<T>) => {
-  const { children, allowsRemoving, item, state, onRemove, size } = props;
+  const { children, allowsRemoving, item, state, onRemove, onClick, size = 'small' } = props;
 
   const { hoverProps, isHovered } = useHover({});
   const { isFocused, isFocusVisible, focusProps } = useFocusRing({ within: true });
@@ -45,18 +46,21 @@ const Tag = <T extends object>(props: TagProps<T>) => {
     ref
   );
 
+  const classes = cx(
+    styles.tag,
+    styles[size],
+    isFocusVisible && styles.isFocusVisible,
+    isHovered && styles.isHovered,
+    !allowsRemoving && styles.isReadOnly,
+    onClick && styles.isInteractive
+  );
+
   const tag = (
     <Component
-      {...mergeProps(tagRowProps, hoverProps, focusProps)}
-      {...itemProps}
-      className={cx(
-        styles.tag,
-        isFocusVisible && styles.isFocusVisible,
-        isHovered && styles.isHovered,
-        !allowsRemoving && styles.isReadOnly,
-        size === 'tiny' && styles.tiny
-      )}
+      {...mergeProps(tagRowProps, hoverProps, focusProps, itemProps)}
+      className={classes}
       ref={ref}
+      onClick={onClick && (() => onClick(item.key))}
       data-test-id="tag"
     >
       <div className={cx(styles.tagCell)} {...tagProps}>

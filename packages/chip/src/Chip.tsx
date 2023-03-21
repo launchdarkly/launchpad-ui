@@ -1,12 +1,15 @@
-import type { HTMLAttributes } from 'react';
+import type { IconProps } from '@launchpad-ui/icons';
+import type { HTMLAttributes, ReactElement } from 'react';
 
 import { cx } from 'classix';
+import { cloneElement } from 'react';
 
 import styles from './styles/Chip.module.css';
 
 type ChipProps = HTMLAttributes<HTMLSpanElement> & {
   kind?: 'success' | 'warning' | 'info' | 'new' | 'beta' | 'federal';
-  size?: 'normal' | 'small';
+  size?: 'tiny' | 'small';
+  icon?: Omit<ReactElement<IconProps>, 'size'>;
   'data-test-id'?: string;
 };
 
@@ -16,18 +19,28 @@ const Chip = ({
   onKeyDown,
   className,
   children,
-  size = 'normal',
+  icon,
+  size = 'small',
   'data-test-id': testId = 'chip',
   ...rest
 }: ChipProps) => {
   const isInteractive = !!(onClick || onKeyDown);
 
+  const clonedIcon =
+    icon &&
+    cloneElement(icon, {
+      key: 'icon',
+      size,
+      'aria-hidden': true,
+      className: cx(icon.props.className, styles.icon),
+    });
+
   const classes = cx(
-    styles.Chip,
-    kind && styles[`Chip--${kind}`],
-    styles[`Chip--${size}`],
+    styles.chip,
+    kind && styles[kind],
+    styles[size],
     className,
-    isInteractive && styles['Chip--clickable']
+    isInteractive && styles.clickable
   );
 
   return (
@@ -44,6 +57,7 @@ const Chip = ({
         : {})}
       {...rest}
     >
+      {clonedIcon}
       {children}
     </span>
   );

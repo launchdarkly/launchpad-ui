@@ -18,16 +18,20 @@
   color: var(--lp-color-text-ui-secondary);
   border: 1px solid var(--lp-component-tag-color-border);
   border-radius: var(--lp-border-radius-regular);
+  max-width: 100%;
+  font-weight: var(--lp-font-weight-medium);
+  margin-right: 0.6rem;
+  box-sizing: border-box;
+  cursor: default;
+  display: inline-grid;
+}
+
+.tag.small {
   font-size: var(--lp-font-size-200);
   line-height: var(--lp-font-size-200);
   padding: 0 0.4rem 0 0.6rem;
   height: 2.4rem;
-  max-width: 100%;
-  font-weight: var(--lp-font-weight-medium);
-  margin: 0 0.6rem 0.4rem 0;
-  box-sizing: border-box;
-  cursor: default;
-  display: inline-grid;
+  margin-bottom: 0.4rem;
 }
 
 .tag.tiny {
@@ -35,9 +39,11 @@
   line-height: 1.25;
   height: 20px;
   margin-bottom: 0.2rem;
+  padding: 0 0.2rem 0 0.4rem;
 }
 
-a.tag {
+a.tag,
+.tag.isInteractive {
   background-color: var(--lp-component-tag-color-bg-readonly-link);
   color: var(--lp-component-tag-color-text-readonly-link);
   text-decoration: none;

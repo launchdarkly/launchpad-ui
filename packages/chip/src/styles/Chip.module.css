@@ -31,7 +31,7 @@
   --lp-component-chip-color-text-default: var(--lp-color-gray-100);
 }
 
-.Chip {
+.chip {
   display: inline-flex;
   font-weight: var(--lp-font-weight-semibold);
   border-radius: 0.2rem;
@@ -46,62 +46,66 @@
   transition: all 0.1s ease-in-out;
 }
 
-.Chip--normal {
+.small {
   font-size: 1.4rem;
   line-height: 1.4;
   padding: 0.215rem 0.6rem;
-  min-height: 2.4rem;
+  height: 2.4rem;
 }
 
-.Chip.Chip--small {
+.chip.tiny {
   font-size: 1.2rem;
   line-height: 1.33;
   padding: 0.2rem 0.4rem;
-  min-height: 2rem;
+  height: 2rem;
 }
 
-.Chip--info {
+.info {
   background-color: var(--lp-component-chip-color-bg-info);
   color: var(--lp-component-chip-color-text-info);
 }
 
-.Chip--new {
+.new {
   background-color: var(--lp-component-chip-color-bg-success);
   color: var(--lp-component-chip-color-text-success);
 }
 
-.Chip--beta {
+.beta {
   background-color: var(--lp-component-chip-color-bg-beta);
   color: var(--lp-component-chip-color-text-beta);
 }
 
-.Chip--success {
+.success {
   background-color: var(--lp-component-chip-color-bg-success);
   color: var(--lp-component-chip-color-text-success);
 }
 
-.Chip--warning {
+.warning {
   background-color: var(--lp-component-chip-color-bg-warning);
   color: var(--lp-component-chip-color-text-warning);
 }
 
-.Chip--federal {
+.federal {
   background-color: var(--lp-component-chip-color-bg-federal);
   color: var(--lp-component-chip-color-text-federal);
 }
 
-.Chip--clickable:hover {
+.clickable:hover {
   cursor: pointer;
 }
 
-.Chip--clickable:focus {
+.clickable:focus {
   outline: 0;
   box-shadow: 0 0 0 1px var(--lp-color-bg-ui-primary),
     0 0 0 2px var(--lp-color-shadow-interactive-focus);
   z-index: 2;
 }
 
-.Chip :global([class*='_icon_']) {
+.icon {
   margin-right: 0.2rem;
-  vertical-align: top;
+  transform: translateY(1px);
+
+  .tiny & {
+    transform: translateY(2px);
+  }
 }

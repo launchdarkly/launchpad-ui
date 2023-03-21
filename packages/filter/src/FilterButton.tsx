@@ -79,6 +79,7 @@ const FilterButton = forwardRef<Ref, FilterButtonProps>((props, ref) => {
             className={styles.clear}
             data-test-id="clear-filter-button"
             icon={<Close size="tiny" />}
+            size="small"
             onClick={onClear}
           />
         </Tooltip>
