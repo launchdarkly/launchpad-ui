@@ -6,7 +6,7 @@ describe('Select', () => {
   describe('with default single select trigger', () => {
     beforeEach(() => {
       cy.mount(
-        <MultiSelect label="Fruit" items={FRUIT}>
+        <MultiSelect label="Fruit" selectedKeys={[FRUIT[0].id]} items={FRUIT}>
           {(item) => <SelectItem>{item.name}</SelectItem>}
         </MultiSelect>
       );
