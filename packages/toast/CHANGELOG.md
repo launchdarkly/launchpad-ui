@@ -1,5 +1,11 @@
 # @launchpad-ui/toast
 
+## 0.2.41
+
+### Patch Changes
+
+- [#790](https://github.com/launchdarkly/launchpad-ui/pull/790) [`b4218800`](https://github.com/launchdarkly/launchpad-ui/commit/b421880067feacb906cca374196bd507a51b9146) Thanks [@jagarnica](https://github.com/jagarnica)! - [Toast]: Add fade in for Toast entrance and fade out for exit
+
 ## 0.2.40
 
 ### Patch Changes
