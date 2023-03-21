@@ -231,3 +231,23 @@ export const WithTagItemRenderedAs: Story = {
     );
   },
 };
+
+export const WithOnTagClick: Story = {
+  render: () => {
+    return (
+      <TagGroup onTagClick={(key) => alert(`Clicked ${key}`)} items={MOCK_TAGS}>
+        {(item) => <TagItem>{item.name}</TagItem>}
+      </TagGroup>
+    );
+  },
+};
+
+export const WithOnTagClickTiny: Story = {
+  render: () => {
+    return (
+      <TagGroup size="tiny" onTagClick={(key) => alert(`Clicked ${key}`)} items={MOCK_TAGS}>
+        {(item) => <TagItem>{item.name}</TagItem>}
+      </TagGroup>
+    );
+  },
+};

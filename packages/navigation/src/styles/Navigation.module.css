@@ -184,10 +184,7 @@
 
 .NavItem-chip {
   align-self: center;
-  border-radius: 0.4rem;
-  margin: 0 0 0 0.8rem;
-  min-width: 3.5rem;
-  padding: 0.1rem 0;
+  margin-left: 0.8rem;
 }
 
 .NavItem-tooltip {
