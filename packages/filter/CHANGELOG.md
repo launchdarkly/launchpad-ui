@@ -1,5 +1,11 @@
 # @launchpad-ui/filter
 
+## 0.5.15
+
+### Patch Changes
+
+- [#789](https://github.com/launchdarkly/launchpad-ui/pull/789) [`6f095555`](https://github.com/launchdarkly/launchpad-ui/commit/6f09555539951589603fff89328cc9db0cd82b05) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Filter] Improve clear button filter UI
+
 ## 0.5.14
 
 ### Patch Changes

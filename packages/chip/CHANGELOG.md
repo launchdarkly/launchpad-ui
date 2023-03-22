@@ -1,5 +1,13 @@
 # @launchpad-ui/chip
 
+## 0.7.7
+
+### Patch Changes
+
+- [#785](https://github.com/launchdarkly/launchpad-ui/pull/785) [`e598c7c4`](https://github.com/launchdarkly/launchpad-ui/commit/e598c7c4a7e00416bf279aa2cb5e02c152c13ec7) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Chip]: Update sizing to match height-based schema, introduce icon prop
+  [Tag]: Add onTagClick prop and interactive styles
+  [Navigation]: Fix NavItem chip styles that were overriding defaults
+
 ## 0.7.6
 
 ### Patch Changes
