@@ -10,10 +10,10 @@ import { useRef } from 'react';
 
 import { SelectListBox } from '../SelectListBox';
 import { SelectPopover } from '../SelectPopover';
+import { useSelect } from '../useSelect';
 
 import { MultiSelectMenuHeader } from './MultiSelectMenuHeader';
 import { MultiSelectTrigger } from './MultiSelectTrigger';
-import { useMultiSelect } from './useMultiSelect';
 import { useMultiSelectState } from './useMultiSelectState';
 
 type MultiSelectProps<T extends object> = SharedSelectProps<T> &
@@ -28,13 +28,13 @@ type MultiSelectProps<T extends object> = SharedSelectProps<T> &
 const MultiSelect = <T extends object>(props: MultiSelectProps<T>) => {
   const {
     autoFocus,
-    // className,
     excludeFromTabOrder,
     isClearable,
     disabled: isDisabled,
     isSelectableAll,
     label,
     trigger = MultiSelectTrigger,
+    placeholder,
     'data-test-id': testId = 'select',
   } = props;
   const filterInputRef = useRef<HTMLInputElement>(null);
@@ -44,7 +44,7 @@ const MultiSelect = <T extends object>(props: MultiSelectProps<T>) => {
 
   const state = useMultiSelectState(props);
 
-  const { labelProps, triggerProps, valueProps, menuProps, filterInputProps } = useMultiSelect(
+  const { labelProps, triggerProps, valueProps, menuProps, filterInputProps } = useSelect(
     props,
     state,
     {
@@ -63,9 +63,12 @@ const MultiSelect = <T extends object>(props: MultiSelectProps<T>) => {
 
   const renderedTrigger = trigger({
     state,
-    triggerProps: mergeProps(buttonProps, focusProps, { 'data-test-id': 'select-trigger' }),
+    triggerProps: mergeProps(buttonProps, focusProps, {
+      'data-test-id': 'select-trigger',
+    }),
     valueProps,
     triggerRef,
+    placeholder,
   });
 
   return (
