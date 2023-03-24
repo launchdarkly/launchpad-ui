@@ -58,6 +58,7 @@
   line-height: 1.2;
   font-weight: var(--lp-font-weight-semibold);
   margin: 0;
+  overflow-wrap: anywhere;
 }
 
 .headerIcon {
