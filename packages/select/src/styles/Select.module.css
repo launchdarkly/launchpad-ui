@@ -15,6 +15,7 @@
   margin: 0;
   outline: none;
   font-size: 1.6rem;
+  overflow: auto;
 }
 
 .section {
@@ -68,8 +69,13 @@
   background: var(--lp-color-bg-overlay-primary);
   border-radius: var(--lp-border-radius-regular);
   max-height: 55vh;
-  overflow: none;
   box-shadow: var(--lp-component-select-shadow-popover);
+  display: flex;
+  flex-direction: column;
+}
+
+.listBox {
+  overflow-y: scroll;
 }
 
 .trigger {
@@ -182,6 +188,10 @@
   padding: 0;
 }
 
+.placeholder {
+  color: var(--lp-color-text-field-placeholder);
+}
+
 .inputContainer {
   margin: 2px;
   padding-bottom: 2px;
@@ -196,7 +206,6 @@
 }
 
 .search {
-  position: relative;
   border-bottom: 1px solid var(--lp-color-border-ui-secondary);
 
   .searchIcon {
@@ -209,7 +218,7 @@
     width: 100%;
     border: none;
     font-size: 1.6rem;
-    padding: 1.6rem 1.6rem 1.6rem 4rem;
+    padding: 1.575rem 1.6rem 1.575rem 4rem;
 
     &:focus-visible {
       outline: none;

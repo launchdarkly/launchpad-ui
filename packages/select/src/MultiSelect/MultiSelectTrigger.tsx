@@ -18,11 +18,18 @@ type MultiSelectTriggerProps<T extends object> = SharedSelectTriggerProps & {
 };
 
 const MultiSelectTrigger = <T extends object>(props: MultiSelectTriggerProps<T>) => {
-  const { state, triggerProps, valueProps, triggerRef, children } = props;
+  const {
+    state,
+    triggerProps,
+    valueProps,
+    triggerRef,
+    children,
+    placeholder = 'Select options',
+  } = props;
 
   const formatItems = (items: Node<T>[] | null) => {
     if (!items || items.length === 0) {
-      return 'Select options';
+      return <span className={styles.placeholder}>{placeholder}</span>;
     }
 
     if (children) return children(state as MultiSelectTriggerChildrenState<T>);

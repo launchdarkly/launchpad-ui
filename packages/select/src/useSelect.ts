@@ -1,6 +1,6 @@
-import type { MultiSelectProps } from './MultiSelect';
-import type { MultiSelectState } from './useMultiSelectState';
-import type { SelectAria, SharedUseSelectProps } from '../types';
+import type { MultiSelectProps, MultiSelectState } from './MultiSelect';
+import type { SingleSelectProps, SingleSelectState } from './SingleSelect';
+import type { SelectAria, SharedUseSelectProps } from './types';
 import type { BaseEvent } from '@react-types/shared';
 import type { FocusEvent, KeyboardEvent, RefObject } from 'react';
 
@@ -13,7 +13,7 @@ import { useTextField } from '@react-aria/textfield';
 import { chain, filterDOMProps, mergeProps, useId, useLabels } from '@react-aria/utils';
 import { useMemo } from 'react';
 
-type UseMultiSelectRefs = {
+type UseSelectRefs = {
   triggerRef: RefObject<HTMLElement>;
 
   listBoxRef: RefObject<HTMLElement>;
@@ -21,12 +21,15 @@ type UseMultiSelectRefs = {
   filterInputRef: RefObject<HTMLInputElement>;
 };
 
+type UseSelectProps<T extends object> = (MultiSelectProps<T> | SingleSelectProps<T>) &
+  SharedUseSelectProps<T>;
+
 /* c8 ignore start */
 
-const useMultiSelect = <T extends object>(
-  props: MultiSelectProps<T> & SharedUseSelectProps<T>,
-  state: MultiSelectState<T>,
-  refs: UseMultiSelectRefs
+const useSelect = <T extends object>(
+  props: Omit<UseSelectProps<T>, 'trigger'>,
+  state: MultiSelectState<T> | SingleSelectState<T>,
+  refs: UseSelectRefs
 ): SelectAria<T> => {
   const { disabled: isDisabled, hasFilter } = props;
   const { triggerRef, listBoxRef, filterInputRef } = refs;
@@ -53,13 +56,22 @@ const useMultiSelect = <T extends object>(
     switch (e.key) {
       case 'Enter':
       case 'Tab':
-        // Prevent form submission if menu is open since we may be selecting a option
-        e.preventDefault();
+      case ' ':
+        // If there is not a focusedKey, it means that the user intentionally arrowed right or left
+        // to focus only on the input. If this is the case, don't prevent default.
+        if (state.selectionManager.focusedKey || e.key === 'Enter') {
+          // Prevent form submission if menu is open since we may be selecting a option
+          e.preventDefault();
+        }
 
         state.commit();
         break;
       case 'Escape':
-        if (state.selectedKeys.size !== 0 || state.filterValue === '' || props.allowsCustomValue) {
+        if (
+          state.selectionManager.selectedKeys.size !== 0 ||
+          state.filterValue === '' ||
+          props.allowsCustomValue
+        ) {
           e.continuePropagation();
         }
         state.revert();
@@ -84,6 +96,13 @@ const useMultiSelect = <T extends object>(
         if (key) {
           state.selectionManager.setFocusedKey(key);
         }
+        break;
+      }
+      case 'ArrowRight':
+      case 'ArrowLeft': {
+        e.preventDefault();
+
+        state.selectionManager.setFocusedKey(null);
         break;
       }
     }
@@ -111,7 +130,8 @@ const useMultiSelect = <T extends object>(
     keyboardDelegate: delegate,
     selectionManager: state.selectionManager,
     onTypeSelect(key) {
-      state.setSelectedKeys([key]);
+      state.selectionManager.setSelectedKeys([key]);
+      // state.setSelectedKeys([key]); // NOTE MIGHT NOT WORK FOR BOTH
     },
   });
 
@@ -184,9 +204,10 @@ const useMultiSelect = <T extends object>(
       shouldFocusOnHover: true,
     }),
     filterInputProps,
+    delegate,
   };
 };
 
 /* c8 ignore stop */
 
-export { useMultiSelect };
+export { useSelect };

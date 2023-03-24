@@ -1,5 +1,4 @@
 import type { FilterFn, SharedSelectProps } from './types';
-import type { ListState } from '@react-stately/list';
 import type { Collection, Node } from '@react-types/shared';
 
 import { ListCollection } from '@react-stately/list';
@@ -7,10 +6,9 @@ import { useCallback, useMemo } from 'react';
 /* c8 ignore start */
 const useFilteredCollection = <T extends object>(
   props: SharedSelectProps<T>,
-  state: ListState<T>
+  collection: Collection<Node<T>>
 ): Collection<Node<T>> => {
   const { hasFilter, defaultFilter, filterValue, items } = props;
-  const { collection } = state;
 
   const filter = useCallback(
     (string: string, substring: string) => string.toLowerCase().includes(substring.toLowerCase()),

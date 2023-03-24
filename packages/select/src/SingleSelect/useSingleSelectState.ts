@@ -1,16 +1,18 @@
 import type { SingleSelectProps } from './SingleSelect';
 import type { SharedSelectState } from '../types';
 import type { SingleSelectListState } from '@react-stately/list';
+import type { SelectionMode } from '@react-types/shared';
 import type { Key } from 'react';
 
 import { useSingleSelectListState } from '@react-stately/list';
 import { useMenuTriggerState } from '@react-stately/menu';
 import { useControlledState } from '@react-stately/utils';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import { useFilteredCollection } from '../useFilter';
 
-type SingleSelectState<T extends object> = SingleSelectListState<T> & SharedSelectState;
+type SingleSelectState<T extends object> = SingleSelectListState<T> &
+  SharedSelectState & { selectionMode: SelectionMode };
 
 /* c8 ignore start */
 
@@ -37,11 +39,11 @@ const useSingleSelectState = <T extends object>(
       triggerState.close();
     },
   });
-  const { selectionManager, selectedKey, setSelectedKey } = listState;
+  const { selectionManager, selectedKey, setSelectedKey, collection } = listState;
 
   const filteredCollection = useFilteredCollection(
     { ...props, filterValue, onFilterChange: setFilterValue },
-    listState
+    collection
   );
 
   const commitCustomValue = () => {
@@ -93,9 +95,27 @@ const useSingleSelectState = <T extends object>(
     // commitCustomValue();
   };
 
+  useEffect(() => {
+    // Reset focused key when the menu closes
+    if (triggerState.isOpen && collection.size !== 0) {
+      selectionManager.setFocusedKey(collection.getFirstKey());
+    } else {
+      selectionManager.setFocusedKey(null);
+    }
+  }, [triggerState.isOpen, collection]);
+
+  useEffect(() => {
+    if (filteredCollection.size !== 0) {
+      selectionManager.setFocusedKey(filteredCollection.getFirstKey());
+    } else {
+      selectionManager.setFocusedKey(null);
+    }
+  }, [filteredCollection]);
+
   return {
     ...listState,
     ...triggerState,
+    selectionMode: 'single',
     close() {
       setFilterValue('');
       triggerState.close();

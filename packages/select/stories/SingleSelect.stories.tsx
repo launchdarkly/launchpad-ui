@@ -214,3 +214,24 @@ export const WithSelectItemRenderedAs: Story = {
   },
   parameters: { docs: { disable: false } },
 };
+
+export const WithAllowsCustomValue: Story = {
+  render: () => {
+    const Component = () => {
+      return (
+        <SingleSelect
+          label="Fruit"
+          defaultItems={FRUIT}
+          hasFilter
+          allowsCustomValue
+          onSelectionChange={(key) => console.log(key)}
+        >
+          {(item) => <SelectItem textValue={item.name}>{item.name}</SelectItem>}
+        </SingleSelect>
+      );
+    };
+
+    return <Component />;
+  },
+  parameters: { docs: { disable: false } },
+};

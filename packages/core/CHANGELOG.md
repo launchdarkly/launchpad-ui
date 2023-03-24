@@ -1,5 +1,24 @@
 # @launchpad-ui/core
 
+## 0.33.8
+
+### Patch Changes
+
+- [#790](https://github.com/launchdarkly/launchpad-ui/pull/790) [`b4218800`](https://github.com/launchdarkly/launchpad-ui/commit/b421880067feacb906cca374196bd507a51b9146) Thanks [@jagarnica](https://github.com/jagarnica)! - [Toast]: Add fade in for Toast entrance and fade out for exit
+
+- [#785](https://github.com/launchdarkly/launchpad-ui/pull/785) [`e598c7c4`](https://github.com/launchdarkly/launchpad-ui/commit/e598c7c4a7e00416bf279aa2cb5e02c152c13ec7) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Chip]: Update sizing to match height-based schema, introduce icon prop
+  [Tag]: Add onTagClick prop and interactive styles
+  [Navigation]: Fix NavItem chip styles that were overriding defaults
+
+- [#789](https://github.com/launchdarkly/launchpad-ui/pull/789) [`6f095555`](https://github.com/launchdarkly/launchpad-ui/commit/6f09555539951589603fff89328cc9db0cd82b05) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Filter] Improve clear button filter UI
+
+- Updated dependencies [[`b4218800`](https://github.com/launchdarkly/launchpad-ui/commit/b421880067feacb906cca374196bd507a51b9146), [`e598c7c4`](https://github.com/launchdarkly/launchpad-ui/commit/e598c7c4a7e00416bf279aa2cb5e02c152c13ec7), [`6f095555`](https://github.com/launchdarkly/launchpad-ui/commit/6f09555539951589603fff89328cc9db0cd82b05)]:
+  - @launchpad-ui/toast@0.2.41
+  - @launchpad-ui/chip@0.7.7
+  - @launchpad-ui/tag@0.1.3
+  - @launchpad-ui/filter@0.5.15
+  - @launchpad-ui/navigation@0.11.8
+
 ## 0.33.7
 
 ### Patch Changes

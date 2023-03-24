@@ -25,6 +25,7 @@ const SelectPopover = (props: SelectPopoverProps) => {
   } = usePopover(
     {
       ...props,
+      isNonModal: true,
       offset,
       popoverRef,
     },

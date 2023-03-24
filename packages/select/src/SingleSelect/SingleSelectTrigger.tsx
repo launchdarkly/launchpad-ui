@@ -18,12 +18,19 @@ type SingleSelectTriggerProps<T extends object> = SharedSelectTriggerProps & {
 };
 
 const SingleSelectTrigger = <T extends object>(props: SingleSelectTriggerProps<T>) => {
-  const { state, triggerProps, valueProps, triggerRef, children } = props;
+  const {
+    state,
+    triggerProps,
+    valueProps,
+    triggerRef,
+    children,
+    placeholder = 'Select option',
+  } = props;
 
   const getRenderedSelected = () => {
     const item = state.selectedItem;
 
-    if (!item) return 'Select option';
+    if (!item) return <span className={styles.placeholder}>{placeholder}</span>;
 
     if (children) return children(state as SingleSelectTriggerChildrenState<T>);
 
