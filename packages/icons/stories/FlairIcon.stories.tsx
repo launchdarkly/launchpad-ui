@@ -4,12 +4,12 @@ import { ContactPage, Edit, Flag, FlairIcon, SupportAgent, ThumbUp, Warning } fr
 
 export default {
   component: FlairIcon,
-  title: 'Components/FlairIcon',
+  title: 'Components/Icon/FlairIcon',
   description:
     'Flair icons can be used as either square or circular icons with gradient backgrounds.',
   parameters: {
     status: {
-      type: import.meta.env.PACKAGE_FLAIR__ICONS,
+      type: import.meta.env.PACKAGE_STATUS__ICONS,
     },
   },
 };

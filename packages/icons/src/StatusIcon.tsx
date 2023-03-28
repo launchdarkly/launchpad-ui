@@ -27,7 +27,7 @@ const StatusIcon = ({ kind, size = 'medium', ...rest }: StatusIconProps) => {
       break;
   }
 
-  return <Component size={size} {...rest} />;
+  return <Component aria-hidden={false} size={size} {...rest} />;
 };
 
 export { StatusIcon };
