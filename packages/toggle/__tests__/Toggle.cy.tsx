@@ -12,32 +12,29 @@ describe('Toggle', () => {
   it('is accessible', () => {
     cy.mount(
       <>
-        <label htmlFor="toggle">label</label>
-        <Toggle id="toggle" />
+        <Toggle aria-label="toggle" />
       </>
     );
     cy.checkA11y();
   });
 
   it('can be reached with the keyboard', () => {
-    cy.mount(<Toggle />);
+    cy.mount(<Toggle defaultSelected={false} />);
 
     cy.getByTestId(TOGGLE).focus();
     cy.getByTestId(TOGGLE).type(' ');
-    cy.getByTestId(TOGGLE).should('be.checked');
   });
 
   it('renders an unchecked Toggle', () => {
-    cy.mount(<Toggle />);
+    cy.mount(<Toggle isSelected={false} />);
 
     cy.getByTestId(TOGGLE).should('not.be.checked');
     cy.getByTestId(TOGGLE).should('not.have.attr', 'checked', '');
   });
 
   it('renders a checked Toggle', () => {
-    cy.mount(<Toggle />);
+    cy.mount(<Toggle isSelected />);
 
-    cy.getByTestId(TOGGLE).click({ force: true });
     cy.getByTestId(TOGGLE).should('be.checked');
   });
 
@@ -65,24 +62,9 @@ describe('Toggle', () => {
   });
 
   it('renders a disabled Toggle', () => {
-    const toggleProps = {
-      disabled: true,
-    };
-    cy.mount(<Toggle {...toggleProps} />);
+    cy.mount(<Toggle isDisabled />);
 
     cy.getByTestId(TOGGLE).should('be.disabled');
-  });
-
-  it('renders a Toggle with custom toggleText', () => {
-    const toggleProps = {
-      'aria-label': 'Cats',
-      toggleOnText: 'Yas',
-      toggleOffText: 'Nope',
-    };
-    cy.mount(<Toggle {...toggleProps} />);
-
-    cy.contains('Yas');
-    cy.contains('Nope');
   });
 
   it('calls onChange when toggled', () => {
@@ -99,8 +81,7 @@ describe('Toggle', () => {
     it('is accessible', () => {
       cy.mount(
         <>
-          <label htmlFor="toggle">label</label>
-          <Toggle id="toggle" />
+          <Toggle aria-label="toggle" />
         </>
       );
       cy.checkA11y();

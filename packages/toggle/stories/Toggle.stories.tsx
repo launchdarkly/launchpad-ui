@@ -75,7 +75,12 @@ export const On: Story = { args: { isSelected: true } };
 
 export const Off: Story = { args: { isSelected: false } };
 
-export const Uncontrolled: Story = { args: { defaultSelected: true, 'aria-label': 'Targeting' } };
+export const Uncontrolled: Story = {
+  args: {
+    defaultSelected: true,
+    'aria-label': 'Targeting',
+  },
+};
 
 export const AriaLabelledByExample: Story = {
   render: () => {

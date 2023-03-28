@@ -66,6 +66,8 @@ const Toggle = (props: ToggleProps) => {
     isDisabled && styles['Toggle--disabled']
   );
 
+  console.log(inputProps);
+
   return (
     <label className={classes}>
       <FocusRing autoFocus={autoFocus}>
@@ -74,6 +76,7 @@ const Toggle = (props: ToggleProps) => {
           data-test-id={testId}
           className={styles['Toggle-input']}
           ref={inputRef}
+          checked={state.isSelected || false}
         />
       </FocusRing>
       <div className={styles['Toggle-wrapper']}>
