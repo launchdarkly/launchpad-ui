@@ -1018,19 +1018,23 @@ importers:
   packages/toggle:
     specifiers:
       '@launchpad-ui/tokens': workspace:~
+      '@react-aria/focus': 3.10.0
       '@react-aria/switch': 3.3.0
       '@react-aria/visually-hidden': 3.6.1
       '@react-stately/toggle': 3.4.3
+      '@react-types/shared': 3.16.0
       classix: 2.1.17
       react: 18.2.0
       react-dom: 18.2.0
     dependencies:
       '@launchpad-ui/tokens': link:../tokens
+      '@react-aria/focus': 3.10.0_react@18.2.0
       '@react-aria/switch': 3.3.0_react@18.2.0
       '@react-aria/visually-hidden': 3.6.1_react@18.2.0
       '@react-stately/toggle': 3.4.3_react@18.2.0
       classix: 2.1.17
     devDependencies:
+      '@react-types/shared': 3.16.0_react@18.2.0
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
 
