@@ -1,7 +1,8 @@
 import type { PopoverProps } from '@launchpad-ui/popover';
-import type { ReactElement } from 'react';
+import type { AriaAttributes, ForwardedRef, FunctionComponentElement, ReactElement } from 'react';
 
 import { Popover } from '@launchpad-ui/popover';
+import { mergeRefs } from '@react-aria/utils';
 import { cx } from 'classix';
 import { Children, cloneElement, useEffect, useRef, useState } from 'react';
 
@@ -29,7 +30,7 @@ const Dropdown = <T extends string | object | number>(props: DropdownProps<T>) =
     ...rest
   } = props;
 
-  const triggerRef = useRef<HTMLElement>(null);
+  const triggerRef = useRef<HTMLElement>();
   const [isOpen, setIsOpen] = useState(isOpenProp ?? false);
   const [hasOpened, setHasOpened] = useState(isOpen);
 
@@ -66,10 +67,11 @@ const Dropdown = <T extends string | object | number>(props: DropdownProps<T>) =
   }, [isOpen]);
 
   const renderTrigger = () => {
-    return cloneElement(parseChildren().target, {
+    const { target } = parseChildren();
+    return cloneElement(target, {
       'aria-haspopup': true,
       'aria-expanded': isOpen ? true : false,
-      ref: triggerRef,
+      ref: target.ref ? mergeRefs(target.ref, triggerRef) : triggerRef,
       isopen: isOpen?.toString(),
     });
   };
@@ -92,7 +94,9 @@ const Dropdown = <T extends string | object | number>(props: DropdownProps<T>) =
   const parseChildren = () => {
     const [targetChild, contentChild] = Children.toArray(children);
     return {
-      target: targetChild as ReactElement,
+      target: targetChild as FunctionComponentElement<
+        AriaAttributes & { ref: ForwardedRef<HTMLElement | undefined>; isopen: string }
+      >,
       content: contentChild as ReactElement,
     };
   };

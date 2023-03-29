@@ -1,4 +1,7 @@
+import type { RefObject } from 'react';
+
 import { Menu, MenuItem } from '@launchpad-ui/menu';
+import { useRef } from 'react';
 import { it, expect, describe, vi } from 'vitest';
 
 import { render, screen, userEvent } from '../../../test/utils';
@@ -67,5 +70,25 @@ describe('Dropdown', () => {
     await user.keyboard('{Enter}');
 
     expect(spy).toHaveBeenCalledTimes(1);
+  });
+
+  it('preserves ref passed to menu target', async () => {
+    let ref: RefObject<HTMLButtonElement> | undefined;
+    const Component = () => {
+      ref = useRef<HTMLButtonElement>(null);
+      return (
+        <Dropdown>
+          <DropdownButton ref={ref}>Target</DropdownButton>
+          <Menu>
+            <MenuItem>Item 1</MenuItem>
+            <MenuItem>Item 2</MenuItem>
+          </Menu>
+          ,
+        </Dropdown>
+      );
+    };
+
+    render(<Component />);
+    expect(ref?.current).toBeInstanceOf(HTMLButtonElement);
   });
 });
