@@ -18,11 +18,20 @@ describe('Toggle', () => {
     cy.checkA11y();
   });
 
-  it('can be reached with the keyboard', () => {
+  it('can be checked', () => {
     cy.mount(<Toggle defaultSelected={false} />);
 
-    cy.getByTestId(TOGGLE).focus();
-    cy.getByTestId(TOGGLE).type(' ');
+    cy.getByTestId(TOGGLE).check({ force: true });
+
+    cy.getByTestId(TOGGLE).should('have.attr', 'checked');
+  });
+
+  it('can be reached with mouse', () => {
+    cy.mount(<Toggle defaultSelected={false} />);
+
+    cy.getByTestId('toggle-label').click();
+
+    cy.getByTestId(TOGGLE).should('have.attr', 'checked');
   });
 
   it('renders an unchecked Toggle', () => {

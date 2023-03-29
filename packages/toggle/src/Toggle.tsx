@@ -57,7 +57,12 @@ const Toggle = (props: ToggleProps) => {
   const id = useId();
   const state = useToggleState(props);
   const inputRef = useRef<HTMLInputElement>(null);
-  const { inputProps } = useSwitch({ ...props, id }, state, inputRef);
+
+  // don't use `checked` prop, instead use `defaultChecked`
+  // https://stackoverflow.com/questions/26615779/react-checkbox-not-sending-onchange
+  const {
+    inputProps: { checked: _checked, ...inputProps },
+  } = useSwitch({ ...props, id }, state, inputRef);
 
   const classes = cx(
     styles.Toggle,
@@ -66,17 +71,15 @@ const Toggle = (props: ToggleProps) => {
     isDisabled && styles['Toggle--disabled']
   );
 
-  console.log(inputProps);
-
   return (
-    <label className={classes}>
+    <label className={classes} data-test-id="toggle-label">
       <FocusRing autoFocus={autoFocus}>
         <input
           {...inputProps}
           data-test-id={testId}
           className={styles['Toggle-input']}
           ref={inputRef}
-          checked={state.isSelected || false}
+          defaultChecked={_checked}
         />
       </FocusRing>
       <div className={styles['Toggle-wrapper']}>

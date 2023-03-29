@@ -7,9 +7,8 @@ describe('Toggle', () => {
   it('renders a Toggle', async () => {
     const toggleProps = {
       value: 'cats',
-      children: 'Cats',
     };
-    render(<Toggle {...toggleProps} checked />);
+    render(<Toggle {...toggleProps} />);
 
     expect(screen.getByRole('switch')).toBeInTheDocument();
   });
@@ -17,7 +16,6 @@ describe('Toggle', () => {
   it('can be reached with the keyboard', async () => {
     const toggleProps = {
       value: 'cats',
-      children: 'Cats',
     };
     const user = userEvent.setup();
     render(<Toggle {...toggleProps} />);
@@ -34,14 +32,11 @@ describe('Toggle', () => {
   it('renders an unchecked Toggle', async () => {
     const toggleProps = {
       value: 'cats',
-      children: 'Cats',
     };
     render(<Toggle {...toggleProps} />);
 
     const toggle = screen.getByRole('switch');
-    const toggleLabel = screen.getByText('Cats');
 
-    expect(toggleLabel).toBeInTheDocument();
     expect((toggle as HTMLInputElement).value).toBe('cats');
     expect(toggle).not.toBeChecked();
     expect(toggle).not.toHaveAttribute('checked', '');
@@ -50,7 +45,6 @@ describe('Toggle', () => {
   it('renders a checked Toggle', async () => {
     const toggleProps = {
       value: 'cats',
-      children: 'Cats',
     };
     const user = userEvent.setup();
     render(<Toggle {...toggleProps} />);
@@ -96,8 +90,7 @@ describe('Toggle', () => {
   it('renders a disabled Toggle', async () => {
     const toggleProps = {
       value: 'cats',
-      children: 'Cats',
-      disabled: true,
+      isDisabled: true,
     };
     render(<Toggle {...toggleProps} />);
 
@@ -106,27 +99,10 @@ describe('Toggle', () => {
     expect(toggle).toBeDisabled();
   });
 
-  it('renders a Toggle with custom toggleText', async () => {
-    const toggleProps = {
-      'aria-label': 'Cats',
-      value: 'cats',
-      toggleOnText: 'Yas',
-      toggleOffText: 'Nope',
-    };
-    render(<Toggle {...toggleProps} />);
-
-    const toggleOn = screen.getByText('Yas');
-    const toggleOff = screen.getByText('Nope');
-
-    expect(toggleOn).toBeInTheDocument();
-    expect(toggleOff).toBeInTheDocument();
-  });
-
   it('calls onChange when toggled', async () => {
     const spy = vi.fn();
     const toggleProps = {
       value: 'cats',
-      children: 'Cats',
     };
     const user = userEvent.setup();
     render(<Toggle {...toggleProps} onChange={spy} />);
