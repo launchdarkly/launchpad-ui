@@ -1406,12 +1406,12 @@ importers:
       '@launchpad-ui/tokens':
         specifier: workspace:~
         version: link:../tokens
+      '@react-aria/focus':
+        specifier: 3.10.0
+        version: 3.10.0(react@18.2.0)
       '@react-aria/switch':
         specifier: 3.3.0
         version: 3.3.0(react@18.2.0)
-      '@react-aria/visually-hidden':
-        specifier: 3.6.1
-        version: 3.6.1(react@18.2.0)
       '@react-stately/toggle':
         specifier: 3.4.3
         version: 3.4.3(react@18.2.0)
@@ -1419,6 +1419,9 @@ importers:
         specifier: 2.1.17
         version: 2.1.17
     devDependencies:
+      '@react-types/shared':
+        specifier: 3.16.0
+        version: 3.16.0(react@18.2.0)
       react:
         specifier: 18.2.0
         version: 18.2.0
@@ -5443,6 +5446,7 @@ packages:
   /@remix-run/dev@1.14.0(@remix-run/serve@1.14.0)(ts-node@10.9.1):
     resolution: {integrity: sha512-EG9kG/rGSRucer+g5PJQ8lSMLtJNVVCpxVMzHOciGPRXjPK3pg5acOuOksJGvdiqgFX9UO5itielQZ81ZBy6jA==}
     engines: {node: '>=14'}
+    hasBin: true
     peerDependencies:
       '@remix-run/serve': ^1.14.0
     peerDependenciesMeta:
@@ -8251,6 +8255,7 @@ packages:
   /autoprefixer@10.4.13(postcss@8.4.21):
     resolution: {integrity: sha512-49vKpMqcZYsJjwotvt4+h/BCjJVnhGwcLpDt5xkcaOG3eLrG/HUYLagrihYsQ+qrIBgIzX1Rw7a6L8I/ZA1Atg==}
     engines: {node: ^10 || ^12 || >=14}
+    hasBin: true
     peerDependencies:
       postcss: ^8.1.0
     dependencies:
@@ -10421,6 +10426,7 @@ packages:
 
   /eslint-config-prettier@8.6.0(eslint@8.35.0):
     resolution: {integrity: sha512-bAF0eLpLVqP5oEVUFKpMA+NnRFICwn9X8B5jrR9FcqnYBuPbqWEjTEspPWMj5ye6czoSLDweCzSo3Ko7gGrZaA==}
+    hasBin: true
     peerDependencies:
       eslint: '>=7.0.0'
     dependencies:
@@ -13000,6 +13006,7 @@ packages:
 
   /jscodeshift@0.14.0(@babel/preset-env@7.20.2):
     resolution: {integrity: sha512-7eCC1knD7bLUPuSCwXsMZUH51O8jIcoVyKtI6P0XM0IVzlGjckPy3FIwQlorzbN0Sg79oK+RlohN32Mqf/lrYA==}
+    hasBin: true
     peerDependencies:
       '@babel/preset-env': ^7.1.6
     peerDependenciesMeta:
@@ -14605,6 +14612,7 @@ packages:
 
   /nx@15.8.3:
     resolution: {integrity: sha512-xMoylVodaA64gIrQG10F7MWmlXbkzYKyTzbNeALD0bx1RqS/5FTQn3G6WQ2aRpJelUcQJpnTcJV60bXlWuFKvw==}
+    hasBin: true
     requiresBuild: true
     peerDependencies:
       '@swc-node/register': ^1.4.2
@@ -17371,6 +17379,7 @@ packages:
   /stylelint-config-prettier@9.0.5(stylelint@15.2.0):
     resolution: {integrity: sha512-U44lELgLZhbAD/xy/vncZ2Pq8sh2TnpiPvo38Ifg9+zeioR+LAkHu0i6YORIOxFafZoVg0xqQwex6e6F25S5XA==}
     engines: {node: '>= 12'}
+    hasBin: true
     peerDependencies:
       stylelint: '>= 11.x < 15'
     dependencies:
@@ -17796,6 +17805,7 @@ packages:
 
   /ts-node@10.9.1(@types/node@18.14.5)(typescript@4.9.5):
     resolution: {integrity: sha512-NtVysVPkxxrwFGUUxGYhfux8k78pQB3JqYBXlLRZgdGUqTO5wU/UyHop5p70iEbGhB7q5KmiZiU0Y3KlJrScEw==}
+    hasBin: true
     peerDependencies:
       '@swc/core': '>=1.2.50'
       '@swc/wasm': '>=1.2.50'
@@ -18193,6 +18203,7 @@ packages:
 
   /update-browserslist-db@1.0.10(browserslist@4.21.5):
     resolution: {integrity: sha512-OztqDenkfFkbSG+tRxBeAnCVPckDBcvibKd35yDONx6OU8N7sqgwc7rCbkJ/WcYtVRZ4ba68d6byhC21GFh7sQ==}
+    hasBin: true
     peerDependencies:
       browserslist: '>= 4.21.0'
     dependencies:
@@ -18387,6 +18398,7 @@ packages:
   /vite@3.2.5(@types/node@18.14.5):
     resolution: {integrity: sha512-4mVEpXpSOgrssFZAOmGIr85wPHKvaDAcXqxVxVRZhljkJOMZi1ibLibzjLHzJvcok8BMguLc7g1W6W/GqZbLdQ==}
     engines: {node: ^14.18.0 || >=16.0.0}
+    hasBin: true
     peerDependencies:
       '@types/node': '>= 14'
       less: '*'
@@ -18420,6 +18432,7 @@ packages:
   /vitest@0.27.3(@vitest/ui@0.27.3)(jsdom@21.1.0):
     resolution: {integrity: sha512-Ld3UVgRVhJUtqvQ3dW89GxiApFAgBsWJZBCWzK+gA3w2yG68csXlGZZ4WDJURf+8ecNfgrScga6xY+8YSOpiMg==}
     engines: {node: '>=v14.16.0'}
+    hasBin: true
     peerDependencies:
       '@edge-runtime/vm': '*'
       '@vitest/browser': '*'

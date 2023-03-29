@@ -1,6 +1,7 @@
 import type { StoryObj, DecoratorFn, StoryFn } from '@storybook/react';
 
 import { useEffect } from '@storybook/addons';
+import { useId } from 'react';
 
 import { createWithClassesDecorator, PseudoClasses } from '../../../.storybook/utils';
 import { Toggle } from '../src';
@@ -70,17 +71,29 @@ export default {
 
 type Story = StoryObj<typeof Toggle>;
 
-export const On: Story = { args: { checked: true } };
+export const On: Story = { args: { isSelected: true } };
 
-export const Off: Story = { args: { checked: false } };
+export const Off: Story = { args: { isSelected: false } };
 
-export const WithoutOnText: Story = { args: { checked: true, toggleOnText: '' } };
+export const Uncontrolled: Story = {
+  args: {
+    defaultSelected: true,
+    'aria-label': 'Targeting',
+  },
+};
 
-export const WithoutOffText: Story = { args: { checked: false, toggleOffText: '' } };
+export const AriaLabelledByExample: Story = {
+  render: () => {
+    const Component = () => {
+      const id = useId();
+      return (
+        <div className="Toggle-iggy-grid">
+          <h3 id={id}>Activate Iggy</h3>
+          <Toggle aria-labelledby={id} defaultSelected />
+        </div>
+      );
+    };
 
-export const AriaLabelledByExample = () => (
-  <div className="Toggle-iggy-grid">
-    <h3 id="Iggy">Activate Iggy</h3>
-    <Toggle aria-labelledby="Iggy" checked />
-  </div>
-);
+    return <Component />;
+  },
+};
