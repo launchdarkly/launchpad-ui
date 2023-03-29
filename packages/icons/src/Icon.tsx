@@ -48,6 +48,7 @@ const Icon = ({
       {Children.map(children, (child) => {
         if (isValidElement(child)) {
           return cloneElement(child as ReactElement, {
+            'aria-hidden': true,
             ref: svgRef,
           });
         }

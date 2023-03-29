@@ -10,24 +10,29 @@ type StatusIconProps = IconProps & {
 };
 
 const StatusIcon = ({ kind, size = 'medium', ...rest }: StatusIconProps) => {
-  let Component = Info;
+  let Component;
+  let ariaLabel;
 
   switch (kind) {
     case 'success':
       Component = CheckCircle;
+      ariaLabel = 'Success';
       break;
     case 'warning':
       Component = Warning;
+      ariaLabel = 'Warning';
       break;
     case 'error':
       Component = AlertRhombus;
+      ariaLabel = 'Error';
       break;
     case 'info':
       Component = Info;
+      ariaLabel = 'Info';
       break;
   }
 
-  return <Component size={size} {...rest} />;
+  return <Component aria-label={`${ariaLabel} icon`} role="img" size={size} {...rest} />;
 };
 
 export { StatusIcon };
