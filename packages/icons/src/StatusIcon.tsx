@@ -32,7 +32,7 @@ const StatusIcon = ({ kind, size = 'medium', ...rest }: StatusIconProps) => {
       break;
   }
 
-  return <Component aria-label={`${ariaLabel} icon`} size={size} {...rest} />;
+  return <Component aria-label={`${ariaLabel} icon`} role="status" size={size} {...rest} />;
 };
 
 export { StatusIcon };
