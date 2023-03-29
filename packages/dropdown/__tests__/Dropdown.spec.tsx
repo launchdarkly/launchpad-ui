@@ -72,7 +72,7 @@ describe('Dropdown', () => {
     expect(spy).toHaveBeenCalledTimes(1);
   });
 
-  it('preserves ref passed to menu target', async () => {
+  it('preserves ref passed to menu target', () => {
     let ref: RefObject<HTMLButtonElement> | undefined;
     const Component = () => {
       ref = useRef<HTMLButtonElement>(null);
