@@ -16,15 +16,15 @@ const StatusIcon = ({ kind, size = 'medium', ...rest }: StatusIconProps) => {
   switch (kind) {
     case 'success':
       Component = CheckCircle;
-      ariaLabel = 'success';
+      ariaLabel = 'Success';
       break;
     case 'warning':
       Component = Warning;
-      ariaLabel = 'warning';
+      ariaLabel = 'Warning';
       break;
     case 'error':
       Component = AlertRhombus;
-      ariaLabel = 'error';
+      ariaLabel = 'Error';
       break;
     case 'info':
       Component = Info;
