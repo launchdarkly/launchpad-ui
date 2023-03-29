@@ -50,13 +50,13 @@ describe('Alert', () => {
   describe('respects noIcon prop', () => {
     it('renders icon by default', () => {
       render(createComponent());
-      const infoIcon = screen.getByRole('img', { name: 'Info' });
+      const infoIcon = screen.queryByLabelText('Info icon');
       expect(infoIcon).toBeInTheDocument();
     });
 
     it('renders noIcon when prop is passed', () => {
       render(createComponent({ noIcon: true }));
-      const infoIcon = screen.queryByRole('img', { name: 'Info' });
+      const infoIcon = screen.queryByLabelText('Info icon');
       expect(infoIcon).not.toBeInTheDocument();
     });
   });
