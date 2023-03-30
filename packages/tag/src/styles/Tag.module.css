@@ -53,6 +53,11 @@ a.tag,
   &:focus {
     text-decoration: underline;
   }
+
+  [data-theme='dark'] & {
+    color: var(--lp-color-cyan-500);
+    background-color: hsla(190.1 90.2% 60% / 0.2);
+  }
 }
 
 .isFocusVisible {
@@ -84,9 +89,9 @@ a.tag,
 }
 
 .removeButton {
-  border-radius: 100px;
-  width: 2.2rem;
-  height: 2.2rem;
+  border-radius: 0.6rem;
+  width: 2rem;
+  height: 2rem;
   margin: 0;
   display: flex;
   padding: 0;
@@ -95,6 +100,7 @@ a.tag,
   justify-content: center;
   background-color: transparent;
   cursor: pointer;
+  color: var(--lp-color-text-ui-secondary);
 
   &:hover {
     background-color: var(--lp-color-bg-interactive-tertiary-hover);
@@ -105,8 +111,9 @@ a.tag,
   }
 
   .tiny & {
-    width: 1.8rem;
-    height: 1.8rem;
+    border-radius: 0.3rem;
+    width: 1.6rem;
+    height: 1.6rem;
   }
 }
 
