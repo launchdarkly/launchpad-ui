@@ -1,5 +1,11 @@
 # @launchpad-ui/tokens
 
+## 0.5.5
+
+### Patch Changes
+
+- [#801](https://github.com/launchdarkly/launchpad-ui/pull/801) [`7760fefe`](https://github.com/launchdarkly/launchpad-ui/commit/7760fefea91fddf17f15163ce05f555215dc4b90) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Tokens] Update pink-600 color
+
 ## 0.5.4
 
 ### Patch Changes

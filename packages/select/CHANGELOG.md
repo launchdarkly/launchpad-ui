@@ -1,5 +1,19 @@
 # @launchpad-ui/select
 
+## 0.2.13
+
+### Patch Changes
+
+- [#792](https://github.com/launchdarkly/launchpad-ui/pull/792) [`15b764b7`](https://github.com/launchdarkly/launchpad-ui/commit/15b764b75b36edded23751dee837ee632466d48e) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Select] Style updates to allow scroll
+
+- Updated dependencies [[`13c9deae`](https://github.com/launchdarkly/launchpad-ui/commit/13c9deae3ee1d3b6324099fb45d23b3e8e593ed3), [`7760fefe`](https://github.com/launchdarkly/launchpad-ui/commit/7760fefea91fddf17f15163ce05f555215dc4b90), [`6bd95d9f`](https://github.com/launchdarkly/launchpad-ui/commit/6bd95d9f8c3911c8d53d61f59b304881043c6fd9)]:
+  - @launchpad-ui/modal@0.14.11
+  - @launchpad-ui/tokens@0.5.5
+  - @launchpad-ui/icons@0.8.3
+  - @launchpad-ui/button@0.8.9
+  - @launchpad-ui/popover@0.9.8
+  - @launchpad-ui/tooltip@0.7.9
+
 ## 0.2.12
 
 ### Patch Changes

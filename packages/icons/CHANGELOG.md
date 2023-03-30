@@ -1,5 +1,14 @@
 # @launchpad-ui/icons
 
+## 0.8.3
+
+### Patch Changes
+
+- [#797](https://github.com/launchdarkly/launchpad-ui/pull/797) [`6bd95d9f`](https://github.com/launchdarkly/launchpad-ui/commit/6bd95d9f8c3911c8d53d61f59b304881043c6fd9) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Icons] Remove hardcoded aria-hidden from icons, set aria-hidden prop default to true on Icon, and pass aria-hidden=false to StatusIcon
+
+- Updated dependencies [[`7760fefe`](https://github.com/launchdarkly/launchpad-ui/commit/7760fefea91fddf17f15163ce05f555215dc4b90)]:
+  - @launchpad-ui/tokens@0.5.5
+
 ## 0.8.2
 
 ### Patch Changes
