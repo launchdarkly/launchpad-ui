@@ -1,5 +1,61 @@
 # @launchpad-ui/core
 
+## 0.34.0
+
+### Minor Changes
+
+- [#798](https://github.com/launchdarkly/launchpad-ui/pull/798) [`9a8b5d6e`](https://github.com/launchdarkly/launchpad-ui/commit/9a8b5d6e6cc197da8e07b435fad664276dc9040c) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Toggle]: Rework component to use label around input checkbox toggle
+
+### Patch Changes
+
+- [#792](https://github.com/launchdarkly/launchpad-ui/pull/792) [`15b764b7`](https://github.com/launchdarkly/launchpad-ui/commit/15b764b75b36edded23751dee837ee632466d48e) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Select] Style updates to allow scroll
+
+- [#794](https://github.com/launchdarkly/launchpad-ui/pull/794) [`13c9deae`](https://github.com/launchdarkly/launchpad-ui/commit/13c9deae3ee1d3b6324099fb45d23b3e8e593ed3) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Modal] Add word-wrapping to title
+
+- [#801](https://github.com/launchdarkly/launchpad-ui/pull/801) [`7760fefe`](https://github.com/launchdarkly/launchpad-ui/commit/7760fefea91fddf17f15163ce05f555215dc4b90) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Tokens] Update pink-600 color
+
+- [#799](https://github.com/launchdarkly/launchpad-ui/pull/799) [`1671cd1c`](https://github.com/launchdarkly/launchpad-ui/commit/1671cd1c29a2dea6f77c3d2cd1d1e9e387cdcb4c) Thanks [@chasedarkly](https://github.com/chasedarkly)! - Update lockfile
+
+- [#797](https://github.com/launchdarkly/launchpad-ui/pull/797) [`6bd95d9f`](https://github.com/launchdarkly/launchpad-ui/commit/6bd95d9f8c3911c8d53d61f59b304881043c6fd9) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Icons] Remove hardcoded aria-hidden from icons, set aria-hidden prop default to true on Icon, and pass aria-hidden=false to StatusIcon
+
+- [#800](https://github.com/launchdarkly/launchpad-ui/pull/800) [`4572bd83`](https://github.com/launchdarkly/launchpad-ui/commit/4572bd83bdaead1af73fddd0e26c0d69ff807cf8) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [TagGroup] Update darkmode styles
+
+- [#802](https://github.com/launchdarkly/launchpad-ui/pull/802) [`90fb809d`](https://github.com/launchdarkly/launchpad-ui/commit/90fb809d2bd34de9918c9badef9260974372b8eb) Thanks [@pheggeseth](https://github.com/pheggeseth)! - [Dropdown]: preserve user-supplied ref from component used as menu target
+
+- Updated dependencies [[`15b764b7`](https://github.com/launchdarkly/launchpad-ui/commit/15b764b75b36edded23751dee837ee632466d48e), [`13c9deae`](https://github.com/launchdarkly/launchpad-ui/commit/13c9deae3ee1d3b6324099fb45d23b3e8e593ed3), [`7760fefe`](https://github.com/launchdarkly/launchpad-ui/commit/7760fefea91fddf17f15163ce05f555215dc4b90), [`9a8b5d6e`](https://github.com/launchdarkly/launchpad-ui/commit/9a8b5d6e6cc197da8e07b435fad664276dc9040c), [`6bd95d9f`](https://github.com/launchdarkly/launchpad-ui/commit/6bd95d9f8c3911c8d53d61f59b304881043c6fd9), [`4572bd83`](https://github.com/launchdarkly/launchpad-ui/commit/4572bd83bdaead1af73fddd0e26c0d69ff807cf8), [`90fb809d`](https://github.com/launchdarkly/launchpad-ui/commit/90fb809d2bd34de9918c9badef9260974372b8eb)]:
+  - @launchpad-ui/select@0.2.13
+  - @launchpad-ui/modal@0.14.11
+  - @launchpad-ui/tokens@0.5.5
+  - @launchpad-ui/toggle@0.6.0
+  - @launchpad-ui/icons@0.8.3
+  - @launchpad-ui/tag@0.1.4
+  - @launchpad-ui/dropdown@0.6.43
+  - @launchpad-ui/alert@0.7.10
+  - @launchpad-ui/avatar@0.4.41
+  - @launchpad-ui/banner@0.9.9
+  - @launchpad-ui/button@0.8.9
+  - @launchpad-ui/chip@0.7.8
+  - @launchpad-ui/clipboard@0.9.11
+  - @launchpad-ui/collapsible@0.1.6
+  - @launchpad-ui/counter@0.3.26
+  - @launchpad-ui/drawer@0.3.11
+  - @launchpad-ui/filter@0.5.16
+  - @launchpad-ui/form@0.8.9
+  - @launchpad-ui/markdown@0.4.8
+  - @launchpad-ui/menu@0.8.6
+  - @launchpad-ui/navigation@0.11.9
+  - @launchpad-ui/pagination@0.3.51
+  - @launchpad-ui/popover@0.9.8
+  - @launchpad-ui/progress@0.5.24
+  - @launchpad-ui/progress-bubbles@0.6.8
+  - @launchpad-ui/slider@0.4.5
+  - @launchpad-ui/snackbar@0.3.44
+  - @launchpad-ui/split-button@0.7.13
+  - @launchpad-ui/tab-list@0.4.28
+  - @launchpad-ui/table@0.5.5
+  - @launchpad-ui/toast@0.2.42
+  - @launchpad-ui/tooltip@0.7.9
+
 ## 0.33.8
 
 ### Patch Changes

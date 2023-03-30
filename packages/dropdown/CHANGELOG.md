@@ -1,5 +1,17 @@
 # @launchpad-ui/dropdown
 
+## 0.6.43
+
+### Patch Changes
+
+- [#802](https://github.com/launchdarkly/launchpad-ui/pull/802) [`90fb809d`](https://github.com/launchdarkly/launchpad-ui/commit/90fb809d2bd34de9918c9badef9260974372b8eb) Thanks [@pheggeseth](https://github.com/pheggeseth)! - [Dropdown]: preserve user-supplied ref from component used as menu target
+
+- Updated dependencies [[`7760fefe`](https://github.com/launchdarkly/launchpad-ui/commit/7760fefea91fddf17f15163ce05f555215dc4b90), [`6bd95d9f`](https://github.com/launchdarkly/launchpad-ui/commit/6bd95d9f8c3911c8d53d61f59b304881043c6fd9)]:
+  - @launchpad-ui/tokens@0.5.5
+  - @launchpad-ui/icons@0.8.3
+  - @launchpad-ui/button@0.8.9
+  - @launchpad-ui/popover@0.9.8
+
 ## 0.6.42
 
 ### Patch Changes

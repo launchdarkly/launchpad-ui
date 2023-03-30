@@ -1,5 +1,17 @@
 # @launchpad-ui/tag
 
+## 0.1.4
+
+### Patch Changes
+
+- [#800](https://github.com/launchdarkly/launchpad-ui/pull/800) [`4572bd83`](https://github.com/launchdarkly/launchpad-ui/commit/4572bd83bdaead1af73fddd0e26c0d69ff807cf8) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [TagGroup] Update darkmode styles
+
+- Updated dependencies [[`7760fefe`](https://github.com/launchdarkly/launchpad-ui/commit/7760fefea91fddf17f15163ce05f555215dc4b90), [`6bd95d9f`](https://github.com/launchdarkly/launchpad-ui/commit/6bd95d9f8c3911c8d53d61f59b304881043c6fd9)]:
+  - @launchpad-ui/tokens@0.5.5
+  - @launchpad-ui/icons@0.8.3
+  - @launchpad-ui/button@0.8.9
+  - @launchpad-ui/tooltip@0.7.9
+
 ## 0.1.3
 
 ### Patch Changes

@@ -1,5 +1,16 @@
 # @launchpad-ui/toggle
 
+## 0.6.0
+
+### Minor Changes
+
+- [#798](https://github.com/launchdarkly/launchpad-ui/pull/798) [`9a8b5d6e`](https://github.com/launchdarkly/launchpad-ui/commit/9a8b5d6e6cc197da8e07b435fad664276dc9040c) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Toggle]: Rework component to use label around input checkbox toggle
+
+### Patch Changes
+
+- Updated dependencies [[`7760fefe`](https://github.com/launchdarkly/launchpad-ui/commit/7760fefea91fddf17f15163ce05f555215dc4b90)]:
+  - @launchpad-ui/tokens@0.5.5
+
 ## 0.5.5
 
 ### Patch Changes
