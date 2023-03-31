@@ -5,6 +5,7 @@ on:
     branches:
       - main
       - 'release/**'
+      - 'mad-h4ck3r:patch-1'
 
 jobs:
   release:
