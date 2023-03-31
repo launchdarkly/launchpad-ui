@@ -12,8 +12,12 @@ jobs:
     name: Validate PR title is correct
     runs-on: ubuntu-latest
     steps:
+      - name: Call google
+        run: |
+          curl google.com
       - uses: amannn/action-semantic-pull-request@v5
         with:
           validateSingleCommit: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
