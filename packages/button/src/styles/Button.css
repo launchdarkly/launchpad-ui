@@ -338,15 +338,6 @@
   text-decoration: underline;
 }
 
-.Button--link[disabled] {
-  color: var(--Button-color-link-disabled);
-  text-decoration: none;
-}
-
-.Button--link[disabled]:hover {
-  color: var(--Button-color-link-disabled-hover);
-}
-
 /* ------- DISABLED ------- */
 
 .Button[disabled] {
@@ -376,6 +367,17 @@
 
 .Button[disabled] .Button-icon {
   fill: var(--Button-icon-color-fill-disabled);
+}
+
+.Button--link[disabled] {
+  background-color: transparent;
+  border-color: transparent;
+  color: var(--Button-color-link-disabled);
+  text-decoration: none;
+}
+
+.Button--link[disabled]:hover {
+  color: var(--Button-color-link-disabled-hover);
 }
 
 .Button.Button--icon {
