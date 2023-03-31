@@ -238,8 +238,8 @@ color:
         value: '{ color.system.red.700.value }'
         dark: '{ color.white. .value }'
       disabled:
-        value: '{ color.gray.700.value }'
-        dark: '{ color.gray.500.value }'
+        value: '{ color.gray.500.value }'
+        dark: '{ color.gray.700.value }'
     ui:
       primary:
         ' ':
