@@ -19,6 +19,9 @@ const Icon = ({
   size,
   children,
   'data-test-id': testId = 'icon',
+  'aria-label': ariaLabel,
+  'aria-labelledby': ariaLabelledBy,
+  'aria-hidden': ariaHidden,
   ...props
 }: IconProps) => {
   const sizeClass = size ? styles[size] : false;
@@ -43,13 +46,18 @@ const Icon = ({
     }
   }, [name, prefix]);
 
+  const isAriaHidden = ariaHidden ?? (!ariaLabelledBy && !ariaLabel);
+
   return (
-    <span {...props} data-test-id={testId} className={classes}>
+    <span data-test-id={testId} className={classes}>
       {Children.map(children, (child) => {
         if (isValidElement(child)) {
           return cloneElement(child as ReactElement, {
-            'aria-hidden': true,
+            'aria-hidden': isAriaHidden,
+            'aria-label': ariaLabel,
+            'aria-labelledby': ariaLabelledBy,
             ref: svgRef,
+            ...props,
           });
         }
         return null;

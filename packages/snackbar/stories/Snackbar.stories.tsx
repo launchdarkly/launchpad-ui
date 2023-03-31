@@ -18,7 +18,6 @@ type Story = StoryObj<typeof Snackbar>;
 export const Error: Story = {
   args: {
     kind: 'error',
-    header: 'Snackbar header',
     description: 'This is a message.',
     cta: (
       <a href="/" target="_blank">
@@ -55,6 +54,19 @@ export const Warning: Story = {
 export const Success: Story = {
   args: {
     kind: 'success',
+    description: 'This is a message.',
+    cta: (
+      <a href="/" target="_blank">
+        Link
+      </a>
+    ),
+  },
+};
+
+export const WithHeader: Story = {
+  args: {
+    kind: 'info',
+    header: 'Snackbar header',
     description: 'This is a message.',
     cta: (
       <a href="/" target="_blank">
