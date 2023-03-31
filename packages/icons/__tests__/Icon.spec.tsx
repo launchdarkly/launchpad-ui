@@ -24,4 +24,17 @@ describe('Icon', () => {
     render(<StatusIcon kind="info" />);
     expect(screen.getByTitle('Info')).toBeInTheDocument();
   });
+
+  it('passes aria labeling to svg', () => {
+    render(<Info kind="warning" aria-label="test" />);
+
+    expect(screen.getByRole('img')).toHaveAttribute('aria-label', 'test');
+    expect(screen.getByRole('img')).toHaveAttribute('aria-hidden', 'false');
+  });
+
+  it('hides svg by default when aria label is not passed', () => {
+    render(<Info kind="warning" />);
+
+    expect(screen.getByRole('img', { hidden: true })).toHaveAttribute('aria-hidden', 'true');
+  });
 });

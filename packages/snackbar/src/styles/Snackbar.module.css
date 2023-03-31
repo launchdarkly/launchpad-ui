@@ -7,6 +7,7 @@
   box-sizing: border-box;
   width: 37.6rem;
   border-radius: 2px;
+  word-break: break-word;
 }
 
 .Snackbar .Snackbar-icon {
