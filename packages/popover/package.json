@@ -37,6 +37,7 @@
     "@launchpad-ui/focus-trap": "workspace:~",
     "@launchpad-ui/overlay": "workspace:~",
     "@launchpad-ui/tokens": "workspace:~",
+    "@react-aria/utils": "3.15.0",
     "classix": "2.1.17",
     "framer-motion": "9.0.3"
   },
