@@ -91,4 +91,18 @@ describe('Dropdown', () => {
     render(<Component />);
     expect(ref?.current).toBeInstanceOf(HTMLButtonElement);
   });
+
+  it('should not restore focus to menu target on close if "restoreFocus" prop is false', async () => {
+    const user = userEvent.setup();
+    render(
+      <Dropdown restoreFocus={false}>
+        <DropdownButton>Target</DropdownButton>
+        <div>content</div>
+      </Dropdown>
+    );
+
+    await user.click(screen.getByRole('button'));
+    await user.keyboard('{Escape}');
+    expect(document.activeElement).not.toBeInstanceOf(HTMLButtonElement);
+  });
 });

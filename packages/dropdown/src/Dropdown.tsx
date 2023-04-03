@@ -13,6 +13,7 @@ type DropdownState = {
 type DropdownProps<T extends string | object | number> = PopoverProps & {
   onSelect?: (item: T, stateChanges: DropdownState) => void;
   onStateChange?: (state: DropdownState) => void;
+  restoreFocus?: boolean;
 };
 
 const Dropdown = <T extends string | object | number>(props: DropdownProps<T>) => {
@@ -27,6 +28,7 @@ const Dropdown = <T extends string | object | number>(props: DropdownProps<T>) =
     onStateChange,
     children,
     'data-test-id': testId = 'dropdown',
+    restoreFocus = true,
     ...rest
   } = props;
 
@@ -42,7 +44,7 @@ const Dropdown = <T extends string | object | number>(props: DropdownProps<T>) =
 
   useEffect(() => {
     // Focus the button upon closing for convenient tabbing
-    if (hasOpened && isOpen === false) {
+    if (restoreFocus && hasOpened && isOpen === false) {
       setTimeout(() => {
         const current = triggerRef.current;
         if (!current) {
@@ -58,7 +60,7 @@ const Dropdown = <T extends string | object | number>(props: DropdownProps<T>) =
         !hasModal && current.focus?.();
       });
     }
-  }, [isOpen, hasOpened]);
+  }, [isOpen, hasOpened, restoreFocus]);
 
   useEffect(() => {
     setHasOpened(isOpen);
