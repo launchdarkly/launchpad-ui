@@ -1,3 +1,6 @@
+import type { RefObject } from 'react';
+
+import { useRef } from 'react';
 import { it, expect, describe, vi } from 'vitest';
 
 import { render, screen, userEvent, waitFor } from '../../../test/utils';
@@ -124,5 +127,21 @@ describe('Popover', () => {
     await waitFor(() => {
       expect(spy).toHaveBeenCalledTimes(1);
     });
+  });
+
+  it('preserves ref passed to popover target', () => {
+    let ref: RefObject<HTMLButtonElement> | undefined;
+    const Component = () => {
+      ref = useRef<HTMLButtonElement>(null);
+      return (
+        <Popover>
+          <button ref={ref}>Target</button>
+          <span>Content</span>
+        </Popover>
+      );
+    };
+
+    render(<Component />);
+    expect(ref?.current).toBeInstanceOf(HTMLButtonElement);
   });
 });

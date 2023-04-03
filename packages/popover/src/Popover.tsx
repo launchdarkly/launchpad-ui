@@ -3,19 +3,20 @@ import type { ComputePositionConfig, Placement, Strategy } from '@floating-ui/do
 import type {
   CSSProperties,
   FocusEvent,
+  ForwardedRef,
+  FunctionComponentElement,
   KeyboardEvent as ReactKeyboardEvent,
   MouseEvent,
   PointerEvent,
-  ReactElement,
   ReactHTML,
   ReactNode,
-  Ref,
   RefObject,
 } from 'react';
 
 import { arrow, computePosition, flip, offset as floatOffset, shift } from '@floating-ui/dom';
 import { FocusTrap } from '@launchpad-ui/focus-trap';
 import { Overlay } from '@launchpad-ui/overlay';
+import { mergeRefs } from '@react-aria/utils';
 import { cx } from 'classix';
 import { LazyMotion, m } from 'framer-motion';
 import {
@@ -66,7 +67,7 @@ type PopoverProps = {
   rootElementStyle?: CSSProperties;
   rootElementTag?: keyof ReactHTML;
   target?: string | JSX.Element;
-  targetElementRef?: Ref<Element>;
+  targetElementRef?: ForwardedRef<Element>;
   targetClassName?: string;
   targetTestId?: string;
   enableArrow?: boolean;
@@ -451,11 +452,20 @@ const Popover = ({
     targetProps.onClick = handleTargetClick;
   }
 
+  const targetElement = target as FunctionComponentElement<{
+    ref: ForwardedRef<HTMLElement | undefined>;
+    'data-state': 'open' | 'closed';
+  }>;
+
   return createElement(
     rootElementTag,
     targetProps,
-    cloneElement(target as ReactElement, {
-      ref: targetElementRef,
+    cloneElement(targetElement, {
+      ref: mergeRefs(
+        ...([targetElement.ref, targetElementRef].filter(Boolean) as Array<
+          ForwardedRef<HTMLElement | undefined>
+        >)
+      ),
       ...(isOpen && { 'aria-describedby': popoverId.current }),
       'data-state': isOpen ? 'open' : 'closed',
     }),
