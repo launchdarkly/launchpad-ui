@@ -358,6 +358,7 @@ const Popover = ({
 
   const handleKeyDown = (event: KeyboardEvent) => {
     if (event.key === 'Escape') {
+      event.stopPropagation();
       setIsOpen(false);
       removeGlobalListener();
     }

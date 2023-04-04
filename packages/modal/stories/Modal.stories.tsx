@@ -3,6 +3,7 @@ import type { StoryObj } from '@storybook/react';
 
 import { Button } from '@launchpad-ui/button';
 import { Check, ClickMetric } from '@launchpad-ui/icons';
+import { Tooltip } from '@launchpad-ui/tooltip';
 import { useState } from '@storybook/client-api';
 import { userEvent, within } from '@storybook/testing-library';
 import { useRef } from 'react';
@@ -394,4 +395,37 @@ export const WithAbsolutelyPositionedFooter: Story = {
     );
   },
   parameters: { docs: { disable: true } },
+};
+
+export const WithTooltip: Story = {
+  render: (props) => {
+    const [show, setShow] = useState(false);
+    const button = <Button onClick={() => setShow(true)}>Open modal</Button>;
+
+    return show ? (
+      <div style={{ width: '100vw', height: '100vh' }}>
+        {button}
+        <Modal {...props} onCancel={() => setShow(!show)}>
+          <ModalHeader title="Heading" description="A description" />
+          <ModalBody>
+            <Tooltip content="If you hit the escape key hovering over this tooltip, it should dismiss the tooltip but not the drawer.">
+              <button>Hover over me or focus on me!</button>
+            </Tooltip>
+          </ModalBody>
+          <ModalFooter
+            primaryButton={
+              <Button kind="primary" onClick={() => setShow(false)}>
+                Okay
+              </Button>
+            }
+            secondaryButton={<Button onClick={() => setShow(false)}>Cancel</Button>}
+          />
+        </Modal>
+      </div>
+    ) : (
+      button
+    );
+  },
+  play,
+  parameters: { docs: { disable: false } },
 };

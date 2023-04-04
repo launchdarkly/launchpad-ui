@@ -72,11 +72,11 @@ const Drawer = ({
     };
 
     document.body.classList.add('has-overlay');
-    document.addEventListener('keydown', handleEscape);
+    window.addEventListener('keydown', handleEscape);
 
     return () => {
       document.body.classList.remove('has-overlay');
-      document.removeEventListener('keydown', handleEscape);
+      window.removeEventListener('keydown', handleEscape);
     };
   }, [onCancel, testId]);
 
