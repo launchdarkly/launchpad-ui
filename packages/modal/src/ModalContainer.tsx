@@ -88,11 +88,11 @@ const ModalContainer = ({
 
     onReady?.();
     document.body.classList.add('has-overlay');
-    window.addEventListener('keydown', handleEscape);
+    document.addEventListener('keydown', handleEscape);
 
     return () => {
       document.body.classList.remove('has-overlay');
-      window.removeEventListener('keydown', handleEscape);
+      document.removeEventListener('keydown', handleEscape);
     };
   }, [onReady, onCancel]);
 
