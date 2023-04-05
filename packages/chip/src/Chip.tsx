@@ -7,7 +7,7 @@ import { cloneElement } from 'react';
 import styles from './styles/Chip.module.css';
 
 type ChipProps = HTMLAttributes<HTMLSpanElement> & {
-  kind?: 'success' | 'warning' | 'info' | 'new' | 'beta' | 'federal';
+  kind?: 'success' | 'warning' | 'error' | 'info' | 'new' | 'beta' | 'federal';
   size?: 'tiny' | 'small';
   icon?: Omit<ReactElement<IconProps>, 'size'>;
   'data-test-id'?: string;

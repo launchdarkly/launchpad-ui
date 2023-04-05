@@ -42,6 +42,8 @@ export const Success: Story = { args: { children: 'Success Chip', kind: 'success
 
 export const Warning: Story = { args: { children: 'Warning Chip', kind: 'warning' } };
 
+export const Error: Story = { args: { children: 'Error Chip', kind: 'error' } };
+
 export const Info: Story = { args: { children: 'Info Chip', kind: 'info' } };
 
 export const New: Story = { args: { children: 'New Chip', kind: 'new' } };
