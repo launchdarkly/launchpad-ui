@@ -4,6 +4,8 @@
   --lp-component-chip-color-text-info: var(--lp-color-blue-600);
   --lp-component-chip-color-bg-warning: var(--lp-color-system-yellow-200);
   --lp-component-chip-color-text-warning: var(--lp-color-system-yellow-900);
+  --lp-component-chip-color-bg-error: var(--lp-color-system-red-200);
+  --lp-component-chip-color-text-error: var(--lp-color-system-red-700);
   --lp-component-chip-color-bg-success: var(--lp-color-system-green-200);
   --lp-component-chip-color-text-success: var(--lp-color-system-green-900);
   --lp-component-chip-color-bg-beta: var(--lp-color-purple-200);
@@ -19,6 +21,8 @@
   --lp-component-chip-color-text-info: var(--lp-color-blue-300);
   --lp-component-chip-color-bg-warning: #3c351f;
   --lp-component-chip-color-text-warning: var(--lp-color-system-yellow-500);
+  --lp-component-chip-color-bg-error: hsl(0 59% 49% / 0.2);
+  --lp-component-chip-color-text-error: var(--lp-color-system-red-400);
   --lp-component-chip-color-bg-success: #143929;
   --lp-component-chip-color-text-success: var(--lp-color-system-green-500);
   --lp-component-chip-color-bg-label: var(--lp-color-black-100);
@@ -83,6 +87,11 @@
 .warning {
   background-color: var(--lp-component-chip-color-bg-warning);
   color: var(--lp-component-chip-color-text-warning);
+}
+
+.error {
+  background-color: var(--lp-component-chip-color-bg-error);
+  color: var(--lp-component-chip-color-text-error);
 }
 
 .federal {
