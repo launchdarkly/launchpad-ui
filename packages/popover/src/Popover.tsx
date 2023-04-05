@@ -349,15 +349,16 @@ const Popover = ({
   };
 
   const attachGlobalListener = () => {
-    document.addEventListener('keydown', handleKeyDown);
+    window.addEventListener('keydown', handleKeyDown, true);
   };
 
   const removeGlobalListener = () => {
-    document.removeEventListener('keydown', handleKeyDown);
+    window.removeEventListener('keydown', handleKeyDown, true);
   };
 
   const handleKeyDown = (event: KeyboardEvent) => {
     if (event.key === 'Escape') {
+      event.stopPropagation();
       setIsOpen(false);
       removeGlobalListener();
     }
