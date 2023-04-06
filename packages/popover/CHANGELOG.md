@@ -1,5 +1,27 @@
 # @launchpad-ui/popover
 
+## 0.10.0
+
+### Minor Changes
+
+- [#811](https://github.com/launchdarkly/launchpad-ui/pull/811) [`1314c9f0`](https://github.com/launchdarkly/launchpad-ui/commit/1314c9f0515e47d4d5cfde99e33be537b4df78c9) Thanks [@tvarney13](https://github.com/tvarney13)! - Resolve accessibility issue where popover isn't dismissible in modal or drawer.
+  [Modal]: Move `keydown` event one level up to `window`, add Tooltip test
+  [Popover]: Add `event.stopPropagation` on `keydown` events to prevent closing modals or drawers.
+  [Drawer]: Move `keydown` event one level up to `window`, add Tooltip test
+
+### Patch Changes
+
+- [#811](https://github.com/launchdarkly/launchpad-ui/pull/811) [`1314c9f0`](https://github.com/launchdarkly/launchpad-ui/commit/1314c9f0515e47d4d5cfde99e33be537b4df78c9) Thanks [@tvarney13](https://github.com/tvarney13)! - Set window event only on popover
+
+  [Popover]: Set `keydown` event listener on `window` instead of `document`.
+  [Modal]: Revert last change's component changes - restored `document` event listener
+  [Drawer]: Revert last change's component changes - restored `document` event listener
+
+- [#809](https://github.com/launchdarkly/launchpad-ui/pull/809) [`35dafc44`](https://github.com/launchdarkly/launchpad-ui/commit/35dafc4417a11926f6b43815ee5856ce0e8b3fe9) Thanks [@pheggeseth](https://github.com/pheggeseth)! - [Popover] merge popover target ref with internal ref
+
+- Updated dependencies [[`72d37d74`](https://github.com/launchdarkly/launchpad-ui/commit/72d37d74c553e2a3c5cfe0f8bc77ee3a47222d80)]:
+  - @launchpad-ui/tokens@0.5.6
+
 ## 0.9.8
 
 ### Patch Changes

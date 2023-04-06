@@ -1,5 +1,11 @@
 # @launchpad-ui/tokens
 
+## 0.5.6
+
+### Patch Changes
+
+- [#803](https://github.com/launchdarkly/launchpad-ui/pull/803) [`72d37d74`](https://github.com/launchdarkly/launchpad-ui/commit/72d37d74c553e2a3c5cfe0f8bc77ee3a47222d80) Thanks [@jlzych](https://github.com/jlzych)! - Update disabled text button color to be lighter
+
 ## 0.5.5
 
 ### Patch Changes

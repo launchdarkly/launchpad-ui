@@ -1,5 +1,64 @@
 # @launchpad-ui/core
 
+## 0.35.0
+
+### Minor Changes
+
+- [#811](https://github.com/launchdarkly/launchpad-ui/pull/811) [`1314c9f0`](https://github.com/launchdarkly/launchpad-ui/commit/1314c9f0515e47d4d5cfde99e33be537b4df78c9) Thanks [@tvarney13](https://github.com/tvarney13)! - Resolve accessibility issue where popover isn't dismissible in modal or drawer.
+  [Modal]: Move `keydown` event one level up to `window`, add Tooltip test
+  [Popover]: Add `event.stopPropagation` on `keydown` events to prevent closing modals or drawers.
+  [Drawer]: Move `keydown` event one level up to `window`, add Tooltip test
+
+### Patch Changes
+
+- [#812](https://github.com/launchdarkly/launchpad-ui/pull/812) [`487c4051`](https://github.com/launchdarkly/launchpad-ui/commit/487c4051d05f9d82f40dbe1b983ad1c114650de6) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Chip] Add error variant
+
+- [#803](https://github.com/launchdarkly/launchpad-ui/pull/803) [`72d37d74`](https://github.com/launchdarkly/launchpad-ui/commit/72d37d74c553e2a3c5cfe0f8bc77ee3a47222d80) Thanks [@jlzych](https://github.com/jlzych)! - Update disabled text button color to be lighter
+
+- [#811](https://github.com/launchdarkly/launchpad-ui/pull/811) [`1314c9f0`](https://github.com/launchdarkly/launchpad-ui/commit/1314c9f0515e47d4d5cfde99e33be537b4df78c9) Thanks [@tvarney13](https://github.com/tvarney13)! - Set window event only on popover
+
+  [Popover]: Set `keydown` event listener on `window` instead of `document`.
+  [Modal]: Revert last change's component changes - restored `document` event listener
+  [Drawer]: Revert last change's component changes - restored `document` event listener
+
+- [#809](https://github.com/launchdarkly/launchpad-ui/pull/809) [`35dafc44`](https://github.com/launchdarkly/launchpad-ui/commit/35dafc4417a11926f6b43815ee5856ce0e8b3fe9) Thanks [@pheggeseth](https://github.com/pheggeseth)! - [Popover] merge popover target ref with internal ref
+
+- [#806](https://github.com/launchdarkly/launchpad-ui/pull/806) [`3269e0b5`](https://github.com/launchdarkly/launchpad-ui/commit/3269e0b5cc32b19241e7f0fa8de72d0127c76859) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Icons]: Pass all attribute props directly to svg
+  [Snackbar]: Fix word-break issue in header
+- Updated dependencies [[`487c4051`](https://github.com/launchdarkly/launchpad-ui/commit/487c4051d05f9d82f40dbe1b983ad1c114650de6), [`72d37d74`](https://github.com/launchdarkly/launchpad-ui/commit/72d37d74c553e2a3c5cfe0f8bc77ee3a47222d80), [`1314c9f0`](https://github.com/launchdarkly/launchpad-ui/commit/1314c9f0515e47d4d5cfde99e33be537b4df78c9), [`35dafc44`](https://github.com/launchdarkly/launchpad-ui/commit/35dafc4417a11926f6b43815ee5856ce0e8b3fe9), [`1314c9f0`](https://github.com/launchdarkly/launchpad-ui/commit/1314c9f0515e47d4d5cfde99e33be537b4df78c9), [`3269e0b5`](https://github.com/launchdarkly/launchpad-ui/commit/3269e0b5cc32b19241e7f0fa8de72d0127c76859)]:
+  - @launchpad-ui/chip@0.7.9
+  - @launchpad-ui/button@0.8.10
+  - @launchpad-ui/tokens@0.5.6
+  - @launchpad-ui/popover@0.10.0
+  - @launchpad-ui/drawer@0.4.0
+  - @launchpad-ui/modal@0.15.0
+  - @launchpad-ui/snackbar@0.3.45
+  - @launchpad-ui/icons@0.8.4
+  - @launchpad-ui/navigation@0.11.10
+  - @launchpad-ui/alert@0.7.11
+  - @launchpad-ui/banner@0.9.10
+  - @launchpad-ui/collapsible@0.1.7
+  - @launchpad-ui/dropdown@0.6.44
+  - @launchpad-ui/filter@0.5.17
+  - @launchpad-ui/pagination@0.3.52
+  - @launchpad-ui/select@0.2.14
+  - @launchpad-ui/split-button@0.7.14
+  - @launchpad-ui/tag@0.1.5
+  - @launchpad-ui/avatar@0.4.42
+  - @launchpad-ui/clipboard@0.9.12
+  - @launchpad-ui/counter@0.3.27
+  - @launchpad-ui/form@0.8.10
+  - @launchpad-ui/markdown@0.4.9
+  - @launchpad-ui/menu@0.8.7
+  - @launchpad-ui/progress@0.5.25
+  - @launchpad-ui/progress-bubbles@0.6.9
+  - @launchpad-ui/slider@0.4.6
+  - @launchpad-ui/tab-list@0.4.29
+  - @launchpad-ui/table@0.5.6
+  - @launchpad-ui/toast@0.2.43
+  - @launchpad-ui/toggle@0.6.1
+  - @launchpad-ui/tooltip@0.7.10
+
 ## 0.34.0
 
 ### Minor Changes

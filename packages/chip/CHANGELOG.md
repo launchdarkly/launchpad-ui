@@ -1,5 +1,15 @@
 # @launchpad-ui/chip
 
+## 0.7.9
+
+### Patch Changes
+
+- [#812](https://github.com/launchdarkly/launchpad-ui/pull/812) [`487c4051`](https://github.com/launchdarkly/launchpad-ui/commit/487c4051d05f9d82f40dbe1b983ad1c114650de6) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Chip] Add error variant
+
+- Updated dependencies [[`72d37d74`](https://github.com/launchdarkly/launchpad-ui/commit/72d37d74c553e2a3c5cfe0f8bc77ee3a47222d80), [`3269e0b5`](https://github.com/launchdarkly/launchpad-ui/commit/3269e0b5cc32b19241e7f0fa8de72d0127c76859)]:
+  - @launchpad-ui/tokens@0.5.6
+  - @launchpad-ui/icons@0.8.4
+
 ## 0.7.8
 
 ### Patch Changes

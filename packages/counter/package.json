@@ -1,6 +1,6 @@
 {
   "name": "@launchpad-ui/counter",
-  "version": "0.3.26",
+  "version": "0.3.27",
   "status": "beta",
   "publishConfig": {
     "access": "public"

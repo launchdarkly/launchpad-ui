@@ -1,5 +1,14 @@
 # @launchpad-ui/icons
 
+## 0.8.4
+
+### Patch Changes
+
+- [#806](https://github.com/launchdarkly/launchpad-ui/pull/806) [`3269e0b5`](https://github.com/launchdarkly/launchpad-ui/commit/3269e0b5cc32b19241e7f0fa8de72d0127c76859) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Icons]: Pass all attribute props directly to svg
+  [Snackbar]: Fix word-break issue in header
+- Updated dependencies [[`72d37d74`](https://github.com/launchdarkly/launchpad-ui/commit/72d37d74c553e2a3c5cfe0f8bc77ee3a47222d80)]:
+  - @launchpad-ui/tokens@0.5.6
+
 ## 0.8.3
 
 ### Patch Changes
