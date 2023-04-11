@@ -1,5 +1,11 @@
 # @launchpad-ui/core
 
+## 0.35.2
+
+### Patch Changes
+
+- [#818](https://github.com/launchdarkly/launchpad-ui/pull/818) [`edb24e26`](https://github.com/launchdarkly/launchpad-ui/commit/edb24e2662b3c0215a01252b4b21e3cf05878f56) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Chore] Revert lockfile changes
+
 ## 0.35.1
 
 ### Patch Changes
