@@ -1,5 +1,11 @@
 # @launchpad-ui/popover
 
+## 0.10.1
+
+### Patch Changes
+
+- [#815](https://github.com/launchdarkly/launchpad-ui/pull/815) [`dff6096f`](https://github.com/launchdarkly/launchpad-ui/commit/dff6096f806ad84b5238fb4f2320e70c907af4dc) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Popover] Remove ref merging logic
+
 ## 0.10.0
 
 ### Minor Changes
