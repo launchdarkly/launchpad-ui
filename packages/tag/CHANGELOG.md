@@ -1,5 +1,12 @@
 # @launchpad-ui/tag
 
+## 0.1.6
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @launchpad-ui/tooltip@0.7.11
+
 ## 0.1.5
 
 ### Patch Changes

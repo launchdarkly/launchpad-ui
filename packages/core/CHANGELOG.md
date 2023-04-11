@@ -1,5 +1,24 @@
 # @launchpad-ui/core
 
+## 0.35.1
+
+### Patch Changes
+
+- [#815](https://github.com/launchdarkly/launchpad-ui/pull/815) [`dff6096f`](https://github.com/launchdarkly/launchpad-ui/commit/dff6096f806ad84b5238fb4f2320e70c907af4dc) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Popover] Remove ref merging logic
+
+- Updated dependencies [[`dff6096f`](https://github.com/launchdarkly/launchpad-ui/commit/dff6096f806ad84b5238fb4f2320e70c907af4dc)]:
+  - @launchpad-ui/popover@0.10.1
+  - @launchpad-ui/dropdown@0.6.45
+  - @launchpad-ui/menu@0.8.8
+  - @launchpad-ui/navigation@0.11.11
+  - @launchpad-ui/progress-bubbles@0.6.10
+  - @launchpad-ui/select@0.2.15
+  - @launchpad-ui/split-button@0.7.15
+  - @launchpad-ui/tooltip@0.7.11
+  - @launchpad-ui/filter@0.5.18
+  - @launchpad-ui/clipboard@0.9.13
+  - @launchpad-ui/tag@0.1.6
+
 ## 0.35.0
 
 ### Minor Changes
