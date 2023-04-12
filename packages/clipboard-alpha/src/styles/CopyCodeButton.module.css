@@ -74,5 +74,5 @@
   min-height: auto;
   margin-left: 0.65rem;
   flex-shrink: 0;
-  vertical-align: middle;
+  top: -1px;
 }
