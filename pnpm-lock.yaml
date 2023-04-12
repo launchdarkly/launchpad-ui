@@ -265,7 +265,7 @@ importers:
         version: link:../../packages/chip
       '@launchpad-ui/clipboard':
         specifier: workspace:~
-        version: link:../../packages/clipboard-alpha
+        version: link:../../packages/clipboard
       '@launchpad-ui/collapsible':
         specifier: workspace:~
         version: link:../../packages/collapsible
@@ -523,34 +523,6 @@ importers:
         specifier: 18.2.0
         version: 18.2.0(react@18.2.0)
 
-  packages/clipboard-alpha:
-    dependencies:
-      '@launchpad-ui/icons':
-        specifier: workspace:~
-        version: link:../icons
-      '@launchpad-ui/tokens':
-        specifier: workspace:~
-        version: link:../tokens
-      '@launchpad-ui/tooltip':
-        specifier: workspace:~
-        version: link:../tooltip
-      '@radix-ui/react-slot':
-        specifier: ^1.0.0
-        version: 1.0.1(react@18.2.0)
-      '@react-aria/live-announcer':
-        specifier: 3.1.1
-        version: 3.1.1
-      classix:
-        specifier: 2.1.17
-        version: 2.1.17
-    devDependencies:
-      react:
-        specifier: 18.2.0
-        version: 18.2.0
-      react-dom:
-        specifier: 18.2.0
-        version: 18.2.0(react@18.2.0)
-
   packages/collapsible:
     dependencies:
       '@launchpad-ui/button':
@@ -592,7 +564,7 @@ importers:
         version: link:../chip
       '@launchpad-ui/clipboard':
         specifier: workspace:~
-        version: link:../clipboard-alpha
+        version: link:../clipboard
       '@launchpad-ui/collapsible':
         specifier: workspace:~
         version: link:../collapsible
