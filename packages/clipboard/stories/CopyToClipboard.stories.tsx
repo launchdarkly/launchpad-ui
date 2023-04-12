@@ -57,6 +57,24 @@ export const Default: Story = {
   },
 };
 
+export const Basic: Story = {
+  args: { text: 'Code content', children: 'Copy content', variant: 'basic' },
+  play: async ({ canvasElement }: { canvasElement: HTMLElement }) => {
+    const canvas = within(canvasElement);
+    await sleep(500);
+    await userEvent.click(canvas.getByRole('button'));
+  },
+};
+
+export const Minimal: Story = {
+  args: { text: 'Code content', children: 'Copy content', variant: 'minimal' },
+  play: async ({ canvasElement }: { canvasElement: HTMLElement }) => {
+    const canvas = within(canvasElement);
+    await sleep(500);
+    await userEvent.click(canvas.getByRole('button'));
+  },
+};
+
 export const ExampleWithSlottedCodeChild: Story = {
   args: {
     text: 'Code content',

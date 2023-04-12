@@ -18,6 +18,41 @@
   cursor: pointer;
   color: var(--lp-color-text-ui-primary);
   border: 1px solid var(--lp-color-border-interactive-secondary);
+
+  &.minimal {
+    border: 1px solid transparent;
+  }
+
+  &.basic,
+  &.minimal {
+    padding: 0.4rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 3px;
+    color: var(--lp-color-text-interactive-secondary);
+
+    svg {
+      fill: var(--lp-color-border-interactive-secondary);
+    }
+
+    &:hover,
+    &:focus {
+      &:not(.basic) {
+        border: 1px solid var(--lp-color-border-interactive-secondary);
+      }
+
+      color: var(--lp-color-text-ui-primary);
+
+      svg {
+        fill: var(--lp-color-text-ui-primary);
+      }
+    }
+
+    &:hover:not(:focus) {
+      box-shadow: none;
+    }
+  }
 }
 
 .CopyCodeButton:hover {
@@ -42,4 +77,15 @@
 .CopyCodeButton:active {
   background-color: var(--lp-color-bg-interactive-secondary-active);
   color: var(--lp-color-text-ui-primary);
+}
+
+.CopyCodeButton--icon {
+  padding: 0;
+  line-height: 1;
+  height: 1.5rem;
+  width: 1.7rem;
+  min-height: auto;
+  margin-left: 0.65rem;
+  flex-shrink: 0;
+  top: -1px;
 }

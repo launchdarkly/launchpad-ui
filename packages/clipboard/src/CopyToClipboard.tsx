@@ -19,6 +19,7 @@ type CopyToClipboardProps = HTMLAttributes<HTMLSpanElement> & {
   tooltipOptions?: Partial<TooltipProps>;
   popoverTargetClassName?: string;
   onCopy?(): void;
+  variant?: 'minimal' | 'basic';
   asChild?: boolean;
   'data-test-id'?: string;
 };
@@ -40,6 +41,7 @@ const CopyToClipboard = forwardRef<CopyToClipboardHandleRef, CopyToClipboardProp
       customCopiedText,
       text,
       tooltip,
+      variant,
       tooltipOptions = {
         placement: 'bottom',
       },
@@ -121,6 +123,7 @@ const CopyToClipboard = forwardRef<CopyToClipboardHandleRef, CopyToClipboardProp
             ref={triggerRef}
             aria-label={triggerAriaLabelText}
             role="button"
+            variant={variant}
             tabIndex={0}
           >
             {children}
