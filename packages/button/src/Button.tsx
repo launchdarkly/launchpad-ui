@@ -120,7 +120,7 @@ const ButtonComponent = forwardRef<HTMLButtonElement, ButtonProps>((props, ref) 
       onClick={handleClick}
       onKeyDown={onKeyDown || handleKeyDown}
       disabled={isDisabled}
-      type={type}
+      type={asChild ? undefined : type}
       data-test-id={testId}
       {...rest}
     >
