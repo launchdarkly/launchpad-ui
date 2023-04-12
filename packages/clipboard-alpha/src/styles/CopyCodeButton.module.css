@@ -25,10 +25,10 @@
   svg {
     fill: var(--lp-color-border-interactive-secondary);
   }
-}
 
-.minimal:not(:hover):not(:focus) {
-  border-color: transparent;
+  &.minimal:not(:hover):not(:focus) {
+    border: 1px solid transparent;
+  }
 }
 
 .CopyCodeButton:hover {
