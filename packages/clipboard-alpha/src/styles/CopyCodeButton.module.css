@@ -1,0 +1,78 @@
+:root,
+[data-theme='default'] {
+  --lp-component-copy-color-bg-default: var(--lp-color-bg-interactive-secondary);
+}
+
+[data-theme='dark'] {
+  --lp-component-copy-color-bg-default: transparent;
+}
+
+.CopyCodeButton {
+  background-color: var(--lp-component-copy-color-bg-default);
+  border-radius: 3px;
+  font-family: var(--lp-font-family-monospace);
+  font-size: 87.5%;
+  text-align: left;
+  margin: 0;
+  padding: 0.4rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--lp-color-text-interactive-secondary);
+  border: 1px solid var(--lp-color-border-interactive-secondary);
+
+  svg {
+    fill: var(--lp-color-border-interactive-secondary);
+  }
+}
+
+.minimal:not(:hover):not(:focus) {
+  border-color: transparent;
+}
+
+.CopyCodeButton:hover {
+  background-color: var(--lp-color-bg-interactive-secondary-hover);
+  color: var(--lp-color-text-ui-primary);
+
+  svg {
+    fill: var(--lp-color-text-ui-primary);
+  }
+}
+
+.CopyCodeButton:focus {
+  outline: 0;
+  color: var(--lp-color-text-ui-primary);
+  box-shadow: 0 0 0 2px var(--lp-color-bg-ui-primary),
+    0 0 0 4px var(--lp-color-shadow-interactive-focus);
+  background-color: var(--lp-color-bg-interactive-secondary-focus);
+
+  svg {
+    fill: var(--lp-color-text-ui-primary);
+  }
+}
+
+.CopyCodeButton:focus-visible {
+  outline-color: var(--lp-color-bg-interactive-secondary-hover);
+  background-color: var(--lp-color-bg-interactive-secondary-focus);
+
+  svg {
+    fill: var(--lp-color-text-ui-primary);
+  }
+}
+
+.CopyCodeButton:active {
+  background-color: var(--lp-color-bg-interactive-secondary-active);
+  color: var(--lp-color-text-ui-primary);
+}
+
+.CopyCodeButton--icon {
+  padding: 0;
+  line-height: 1;
+  height: 1.5rem;
+  width: 1.7rem;
+  min-height: auto;
+  margin-left: 0.65rem;
+  flex-shrink: 0;
+  vertical-align: middle;
+}

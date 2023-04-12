@@ -1,0 +1,107 @@
+import type { CopyToClipboardHandleRef } from '../src/CopyToClipboard';
+import type { StoryObj } from '@storybook/react';
+import type { ReactNode } from 'react';
+
+import { userEvent, within } from '@storybook/testing-library';
+import { useRef } from 'react';
+
+import { sleep } from '../../../.storybook/utils';
+import { CopyToClipboard } from '../src';
+
+export default {
+  component: CopyToClipboard,
+  title: 'Components/CopyToClipboard-Alpha',
+  description: 'Clipboards copy text to the clipboard.',
+  parameters: {
+    status: {
+      type: import.meta.env.PACKAGE_STATUS__CLIPBOARD,
+    },
+  },
+  argTypes: {
+    children: {
+      table: {
+        category: 'Content',
+      },
+    },
+    onClick: {
+      table: {
+        category: 'Functions',
+      },
+    },
+  },
+  decorators: [
+    (storyFn: () => ReactNode) => (
+      <div
+        style={{
+          width: '100vw',
+          height: '100vh',
+          display: 'grid',
+          alignItems: 'center',
+          justifyContent: 'center',
+        }}
+      >
+        {storyFn()}
+      </div>
+    ),
+  ],
+};
+
+type Story = StoryObj<typeof CopyToClipboard>;
+
+export const Basic: Story = {
+  args: { text: 'Label', children: 'Label' },
+  play: async ({ canvasElement }: { canvasElement: HTMLElement }) => {
+    const canvas = within(canvasElement);
+    await sleep(500);
+    await userEvent.click(canvas.getByRole('button'));
+  },
+};
+
+export const Minimal: Story = {
+  args: { text: 'Label', children: 'Label', variant: 'minimal' },
+  play: async ({ canvasElement }: { canvasElement: HTMLElement }) => {
+    const canvas = within(canvasElement);
+    await sleep(500);
+    await userEvent.click(canvas.getByRole('button'));
+  },
+};
+
+export const ExampleWithSlottedCodeChild: Story = {
+  args: {
+    text: 'Code content',
+    asChild: true,
+    children: <code>Code content</code>,
+  },
+};
+
+const WithImperativeHandleWrapper = () => {
+  const ref = useRef<CopyToClipboardHandleRef>(null);
+
+  const handleClick = () => {
+    ref.current?.handleCopy();
+  };
+
+  return (
+    // eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions
+    <div
+      onClick={handleClick}
+      style={{ border: '3px solid #efefef', padding: '2rem', maxWidth: '500px' }}
+    >
+      <h2>Triggering copy imperatively</h2>
+      <p>
+        This whole container is clickable, even though only the button is wrapped in the{' '}
+        <code>CopyToClipboard</code> component. This is useful when you need to handle the copy
+        event in a customized way from the parent.
+      </p>
+      <CopyToClipboard text="Content" ref={ref}>
+        Copy content
+      </CopyToClipboard>
+    </div>
+  );
+};
+
+export const ImperativeHandleWrapper: Story = {
+  render: () => {
+    return <WithImperativeHandleWrapper />;
+  },
+};
