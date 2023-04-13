@@ -21,6 +21,14 @@
 
   &.minimal {
     border: 1px solid transparent;
+
+    svg {
+      fill: var(--lp-color-border-interactive-secondary);
+    }
+  }
+
+  &.basic svg {
+    fill: var(--lp-color-text-ui-secondary);
   }
 
   &.basic,
@@ -30,11 +38,7 @@
     align-items: center;
     justify-content: center;
     border-radius: 3px;
-    color: var(--lp-color-text-interactive-secondary);
-
-    svg {
-      fill: var(--lp-color-border-interactive-secondary);
-    }
+    color: var(--lp-color-text-ui-secondary);
 
     &:hover,
     &:focus {
