@@ -58,7 +58,7 @@ export const Default: Story = {
 };
 
 export const Basic: Story = {
-  args: { text: 'Code content', children: 'Copy content', variant: 'basic' },
+  args: { text: 'Code content', children: 'Copy content', kind: 'basic' },
   play: async ({ canvasElement }: { canvasElement: HTMLElement }) => {
     const canvas = within(canvasElement);
     await sleep(500);
@@ -67,7 +67,7 @@ export const Basic: Story = {
 };
 
 export const Minimal: Story = {
-  args: { text: 'Code content', children: 'Copy content', variant: 'minimal' },
+  args: { text: 'Code content', children: 'Copy content', kind: 'minimal' },
   play: async ({ canvasElement }: { canvasElement: HTMLElement }) => {
     const canvas = within(canvasElement);
     await sleep(500);

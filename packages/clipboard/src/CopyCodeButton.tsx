@@ -10,21 +10,21 @@ import styles from './styles/CopyCodeButton.module.css';
 type CopyCodeButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
   children: ReactNode;
   'data-test-id'?: string;
-  variant?: CopyToClipboardProps['variant'];
+  kind?: CopyToClipboardProps['kind'];
 };
 
 const CopyCodeButton = forwardRef<HTMLButtonElement, CopyCodeButtonProps>(
-  ({ className, children, 'data-test-id': testId = 'copy-code-button', variant, ...rest }, ref) => {
+  ({ className, children, 'data-test-id': testId = 'copy-code-button', kind, ...rest }, ref) => {
     return (
       <button
         ref={ref}
         data-test-id={testId}
         type="button"
-        className={cx(styles['CopyCodeButton'], className, variant && styles[variant])}
+        className={cx(styles['CopyCodeButton'], className, kind && styles[kind])}
         {...rest}
       >
         {children}
-        {variant && (
+        {(kind === 'basic' || kind === 'minimal') && (
           <ClipboardCopy
             className={cx(styles['CopyCodeButton--icon'])}
             aria-hidden="true"
