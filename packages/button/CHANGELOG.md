@@ -1,5 +1,14 @@
 # @launchpad-ui/button
 
+## 0.8.11
+
+### Patch Changes
+
+- [#822](https://github.com/launchdarkly/launchpad-ui/pull/822) [`3b05f52e`](https://github.com/launchdarkly/launchpad-ui/commit/3b05f52eb689a71209e205dd01517ab41c285d40) Thanks [@charliepark](https://github.com/charliepark)! - [Button] Don't include the type prop when asChild is true
+
+- Updated dependencies [[`ebf41fff`](https://github.com/launchdarkly/launchpad-ui/commit/ebf41fff2abc752874849572eaa6b62e7f876223)]:
+  - @launchpad-ui/icons@0.8.5
+
 ## 0.8.10
 
 ### Patch Changes

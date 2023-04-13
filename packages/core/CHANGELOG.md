@@ -1,5 +1,34 @@
 # @launchpad-ui/core
 
+## 0.35.3
+
+### Patch Changes
+
+- [#824](https://github.com/launchdarkly/launchpad-ui/pull/824) [`ebf41fff`](https://github.com/launchdarkly/launchpad-ui/commit/ebf41fff2abc752874849572eaa6b62e7f876223) Thanks [@apucacao](https://github.com/apucacao)! - Add `beaker` and `home` icons
+
+- Updated dependencies [[`3b05f52e`](https://github.com/launchdarkly/launchpad-ui/commit/3b05f52eb689a71209e205dd01517ab41c285d40), [`ebf41fff`](https://github.com/launchdarkly/launchpad-ui/commit/ebf41fff2abc752874849572eaa6b62e7f876223)]:
+  - @launchpad-ui/button@0.8.11
+  - @launchpad-ui/icons@0.8.5
+  - @launchpad-ui/alert@0.7.12
+  - @launchpad-ui/banner@0.9.11
+  - @launchpad-ui/collapsible@0.1.8
+  - @launchpad-ui/drawer@0.4.1
+  - @launchpad-ui/dropdown@0.6.46
+  - @launchpad-ui/filter@0.5.19
+  - @launchpad-ui/modal@0.15.1
+  - @launchpad-ui/pagination@0.3.53
+  - @launchpad-ui/select@0.2.16
+  - @launchpad-ui/snackbar@0.3.46
+  - @launchpad-ui/split-button@0.7.16
+  - @launchpad-ui/tag@0.1.7
+  - @launchpad-ui/avatar@0.4.43
+  - @launchpad-ui/chip@0.7.10
+  - @launchpad-ui/clipboard@0.9.14
+  - @launchpad-ui/form@0.8.11
+  - @launchpad-ui/menu@0.8.9
+  - @launchpad-ui/navigation@0.11.12
+  - @launchpad-ui/toast@0.2.44
+
 ## 0.35.2
 
 ### Patch Changes
