@@ -1,5 +1,11 @@
 # @launchpad-ui/clipboard
 
+## 0.10.0
+
+### Minor Changes
+
+- [#820](https://github.com/launchdarkly/launchpad-ui/pull/820) [`adfee658`](https://github.com/launchdarkly/launchpad-ui/commit/adfee658cb064167759ba8f88307e091041fc76f) Thanks [@jagarnica](https://github.com/jagarnica)! - [clipboard] Add "basic" and "minimal" variants to CopyToClipboard component
+
 ## 0.9.14
 
 ### Patch Changes
