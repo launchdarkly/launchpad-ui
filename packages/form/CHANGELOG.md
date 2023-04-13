@@ -1,5 +1,12 @@
 # @launchpad-ui/form
 
+## 0.8.11
+
+### Patch Changes
+
+- Updated dependencies [[`ebf41fff`](https://github.com/launchdarkly/launchpad-ui/commit/ebf41fff2abc752874849572eaa6b62e7f876223)]:
+  - @launchpad-ui/icons@0.8.5
+
 ## 0.8.10
 
 ### Patch Changes

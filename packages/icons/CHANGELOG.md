@@ -1,5 +1,11 @@
 # @launchpad-ui/icons
 
+## 0.8.5
+
+### Patch Changes
+
+- [#824](https://github.com/launchdarkly/launchpad-ui/pull/824) [`ebf41fff`](https://github.com/launchdarkly/launchpad-ui/commit/ebf41fff2abc752874849572eaa6b62e7f876223) Thanks [@apucacao](https://github.com/apucacao)! - Add `beaker` and `home` icons
+
 ## 0.8.4
 
 ### Patch Changes
