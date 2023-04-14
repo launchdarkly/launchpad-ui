@@ -28,6 +28,7 @@ type FilterProps = Pick<MenuProps<string>, 'size' | 'enableVirtualization'> & {
   onSelect?(item: FilterOption): void;
   isEmpty?: boolean;
   isLoading?: boolean;
+  disabled?: boolean;
   onClickFilterButton?(): void;
   disabledOptionTooltip?: string;
   'data-test-id'?: string;
@@ -53,6 +54,7 @@ const Filter = ({
   disabledOptionTooltip,
   'data-test-id': testId = 'filter',
   size,
+  disabled,
   enableVirtualization,
   ...props
 }: FilterProps) => {
@@ -67,12 +69,18 @@ const Filter = ({
   };
 
   return (
-    <Dropdown targetTestId={testId} targetClassName={dropdownClasses} {...props}>
+    <Dropdown
+      targetTestId={testId}
+      disabled={disabled}
+      targetClassName={dropdownClasses}
+      {...props}
+    >
       <FilterButton
         isClearable={isClearable}
         onClear={handleClear}
         name={name}
         hideName={hideName}
+        disabled={disabled}
         isSelected={isSelected}
         onClickFilterButton={onClickFilterButton}
       >
