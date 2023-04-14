@@ -1,5 +1,34 @@
 # @launchpad-ui/core
 
+## 0.36.1
+
+### Patch Changes
+
+- [#826](https://github.com/launchdarkly/launchpad-ui/pull/826) [`2c8bf545`](https://github.com/launchdarkly/launchpad-ui/commit/2c8bf54535a7e7cdb7f1da23d00e7ede36bdffc8) Thanks [@apucacao](https://github.com/apucacao)! - feat(icons): Add left panel open/close icons
+
+- Updated dependencies [[`2c8bf545`](https://github.com/launchdarkly/launchpad-ui/commit/2c8bf54535a7e7cdb7f1da23d00e7ede36bdffc8)]:
+  - @launchpad-ui/icons@0.8.6
+  - @launchpad-ui/alert@0.7.13
+  - @launchpad-ui/avatar@0.4.44
+  - @launchpad-ui/banner@0.9.12
+  - @launchpad-ui/button@0.8.12
+  - @launchpad-ui/chip@0.7.11
+  - @launchpad-ui/clipboard@0.10.1
+  - @launchpad-ui/collapsible@0.1.9
+  - @launchpad-ui/drawer@0.4.2
+  - @launchpad-ui/dropdown@0.6.47
+  - @launchpad-ui/filter@0.5.20
+  - @launchpad-ui/form@0.8.12
+  - @launchpad-ui/menu@0.8.10
+  - @launchpad-ui/modal@0.15.2
+  - @launchpad-ui/navigation@0.11.13
+  - @launchpad-ui/pagination@0.3.54
+  - @launchpad-ui/select@0.2.17
+  - @launchpad-ui/snackbar@0.3.47
+  - @launchpad-ui/tag@0.1.8
+  - @launchpad-ui/toast@0.2.45
+  - @launchpad-ui/split-button@0.7.17
+
 ## 0.36.0
 
 ### Minor Changes
