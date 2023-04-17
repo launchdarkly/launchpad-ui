@@ -1,4 +1,4 @@
-import type { ReactNode, SyntheticEvent } from 'react';
+import type { ReactNode, SyntheticEvent, MouseEvent } from 'react';
 
 import { IconButton } from '@launchpad-ui/button';
 import { Close, ExpandMore } from '@launchpad-ui/icons';
@@ -18,6 +18,7 @@ type FilterButtonProps = {
   isSelected?: boolean;
   clearTooltip?: string | JSX.Element;
   children?: ReactNode;
+  disabled?: boolean;
   onClickFilterButton?(): void;
   'data-test-id'?: string;
 };
@@ -32,6 +33,7 @@ const FilterButton = forwardRef<Ref, FilterButtonProps>((props, ref) => {
     isClearable,
     clearTooltip,
     onClear,
+    disabled,
     isSelected,
     onClickFilterButton,
     className,
@@ -50,15 +52,24 @@ const FilterButton = forwardRef<Ref, FilterButtonProps>((props, ref) => {
     </span>
   );
 
+  const isDisabled = disabled;
+
+  const handleClick = (event: MouseEvent<HTMLButtonElement>) => {
+    if (isDisabled) return event.preventDefault();
+    onClickFilterButton?.();
+  };
+
   return (
     <div className={styles.buttonContainer} data-test-id={testId}>
       <button
         {...rest}
         aria-labelledby={`${nameId} ${hasDescription ? descriptionId : ''}`}
         aria-haspopup
+        disabled={isDisabled}
+        aria-disabled={isDisabled}
         className={cx(styles.button, className, (isClearable || isSelected) && styles.isClearable)}
         ref={ref}
-        onClick={onClickFilterButton}
+        onClick={handleClick}
       >
         {hideName ? (
           <VisuallyHidden id={nameId}>{nameElement}</VisuallyHidden>
