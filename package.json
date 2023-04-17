@@ -106,7 +106,7 @@
     "prettier": "^2.8.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "storybook-addon-pseudo-states": "^1.15.2",
+    "storybook-addon-pseudo-states": "^2.0.0",
     "stylelint": "^15.2.0",
     "stylelint-config-prettier": "^9.0.3",
     "stylelint-config-standard": "^29.0.0",
