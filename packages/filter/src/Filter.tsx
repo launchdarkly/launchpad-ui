@@ -33,6 +33,7 @@ type FilterProps = Pick<MenuProps<string>, 'size' | 'enableVirtualization'> & {
   disabledOptionTooltip?: string;
   'data-test-id'?: string;
   triggerTestId?: string;
+  clearAriaLabel?: string;
 };
 
 const Filter = ({
@@ -56,6 +57,7 @@ const Filter = ({
   size,
   disabled,
   enableVirtualization,
+  clearAriaLabel,
   ...props
 }: FilterProps) => {
   const enableSearch =
@@ -83,6 +85,7 @@ const Filter = ({
         disabled={disabled}
         isSelected={isSelected}
         onClickFilterButton={onClickFilterButton}
+        ariaLabel={clearAriaLabel}
       >
         {description}
       </FilterButton>
