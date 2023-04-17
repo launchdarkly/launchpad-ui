@@ -1,5 +1,14 @@
 # @launchpad-ui/core
 
+## 0.36.2
+
+### Patch Changes
+
+- [#828](https://github.com/launchdarkly/launchpad-ui/pull/828) [`20d51b22`](https://github.com/launchdarkly/launchpad-ui/commit/20d51b22291cd80fa484e6c16c60b7005d8d12cf) Thanks [@jagarnica](https://github.com/jagarnica)! - [Filter] Add disabled prop to disable dropdown and note button inactivity to screen readers
+
+- Updated dependencies [[`20d51b22`](https://github.com/launchdarkly/launchpad-ui/commit/20d51b22291cd80fa484e6c16c60b7005d8d12cf)]:
+  - @launchpad-ui/filter@0.5.21
+
 ## 0.36.1
 
 ### Patch Changes
