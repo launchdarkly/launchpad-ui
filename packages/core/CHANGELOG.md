@@ -1,5 +1,14 @@
 # @launchpad-ui/core
 
+## 0.36.3
+
+### Patch Changes
+
+- [#832](https://github.com/launchdarkly/launchpad-ui/pull/832) [`5606087d`](https://github.com/launchdarkly/launchpad-ui/commit/5606087da0bbb850fde17821665650cc11efbe79) Thanks [@cjhensen](https://github.com/cjhensen)! - [Filter] Allow aria-label to be customizable
+
+- Updated dependencies [[`5606087d`](https://github.com/launchdarkly/launchpad-ui/commit/5606087da0bbb850fde17821665650cc11efbe79)]:
+  - @launchpad-ui/filter@0.5.22
+
 ## 0.36.2
 
 ### Patch Changes
