@@ -21,6 +21,7 @@ type FilterButtonProps = {
   disabled?: boolean;
   onClickFilterButton?(): void;
   'data-test-id'?: string;
+  ariaLabel?: string;
 };
 
 type Ref = HTMLButtonElement;
@@ -38,6 +39,7 @@ const FilterButton = forwardRef<Ref, FilterButtonProps>((props, ref) => {
     onClickFilterButton,
     className,
     'data-test-id': testId = 'filter-button',
+    ariaLabel = 'Clear filter',
     ...rest
   } = props;
   const nameId = useId();
@@ -86,7 +88,7 @@ const FilterButton = forwardRef<Ref, FilterButtonProps>((props, ref) => {
       {isClearable && (
         <Tooltip targetClassName={styles.clearTooltip} content={clearTooltip}>
           <IconButton
-            aria-label="Clear filter"
+            aria-label={ariaLabel}
             className={styles.clear}
             data-test-id="clear-filter-button"
             icon={<Close size="tiny" />}
