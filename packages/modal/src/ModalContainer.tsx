@@ -3,10 +3,11 @@ import type { Variants } from 'framer-motion';
 import type { MouseEvent } from 'react';
 
 import { FocusTrap } from '@launchpad-ui/focus-trap';
+import { useFocusWithin } from '@react-aria/interactions';
 import { usePreventScroll } from '@react-aria/overlays';
 import { cx } from 'classix';
 import { LazyMotion, m } from 'framer-motion';
-import { useEffect, useRef } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 import { MODAL_LABELLED_BY } from './constants';
 import styles from './styles/Modal.module.css';
@@ -62,6 +63,11 @@ const ModalContainer = ({
   'data-test-id': testId,
 }: ModalContainerProps) => {
   const ref = useRef<HTMLDivElement>(null);
+  const initialized = useRef(false);
+  const [isFocusWithin, setIsFocusWithin] = useState(false);
+  const { focusWithinProps } = useFocusWithin({
+    onFocusWithinChange: (isFocusWithin) => setIsFocusWithin(isFocusWithin),
+  });
 
   usePreventScroll();
 
@@ -77,7 +83,7 @@ const ModalContainer = ({
     const handleEscape = (event: KeyboardEvent) => {
       event.stopImmediatePropagation();
       const latest = [...document.querySelectorAll('[data-modal]')].pop();
-      if (event.key === 'Escape' && latest === ref.current) {
+      if (event.key === 'Escape' && latest === ref.current && isFocusWithin) {
         close();
       }
     };
@@ -86,19 +92,38 @@ const ModalContainer = ({
       onCancel?.();
     };
 
-    onReady?.();
-    document.body.classList.add('has-overlay');
-    document.addEventListener('keydown', handleEscape);
+    const addOverlayAndEventHandler = () => {
+      document.body.classList.add('has-overlay');
+      document.addEventListener('keydown', handleEscape);
+    };
 
-    return () => {
+    const removeOverlayAndEventHandler = () => {
       document.body.classList.remove('has-overlay');
       document.removeEventListener('keydown', handleEscape);
     };
-  }, [onReady, onCancel]);
+
+    if (!initialized.current) {
+      initialized.current = true;
+      onReady?.();
+    }
+
+    if (isFocusWithin) {
+      addOverlayAndEventHandler();
+    }
+
+    if (!isFocusWithin) {
+      removeOverlayAndEventHandler();
+    }
+
+    return () => {
+      removeOverlayAndEventHandler();
+    };
+  }, [onReady, onCancel, isFocusWithin]);
 
   return (
     <LazyMotion strict features={loadFeatures}>
       <div
+        {...focusWithinProps}
         className={styles.overlayContainer}
         data-modal
         data-test-id="modal-overlay-container"

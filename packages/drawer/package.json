@@ -38,6 +38,7 @@
     "@launchpad-ui/portal": "workspace:~",
     "@launchpad-ui/progress": "workspace:~",
     "@launchpad-ui/tokens": "workspace:~",
+    "@react-aria/interactions": "3.14.0",
     "@react-aria/overlays": "3.12.1",
     "classix": "2.1.17",
     "framer-motion": "9.0.3"

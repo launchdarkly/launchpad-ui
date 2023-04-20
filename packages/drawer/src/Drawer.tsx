@@ -6,10 +6,11 @@ import { FocusTrap } from '@launchpad-ui/focus-trap';
 import { Close } from '@launchpad-ui/icons';
 import { Portal } from '@launchpad-ui/portal';
 import { Progress } from '@launchpad-ui/progress';
+import { useFocusWithin } from '@react-aria/interactions';
 import { usePreventScroll } from '@react-aria/overlays';
 import { cx } from 'classix';
 import { LazyMotion, m } from 'framer-motion';
-import { Suspense, useEffect, useRef } from 'react';
+import { useState, Suspense, useEffect, useRef } from 'react';
 
 import { DRAWER_LABELLED_BY } from './constants';
 import styles from './styles/Drawer.module.css';
@@ -45,7 +46,13 @@ type DrawerProps = {
   hideCancel?: boolean;
 };
 
-const Drawer = ({
+const Drawer = (props: DrawerProps) => (
+  <Portal>
+    <DrawerContainer {...props} />
+  </Portal>
+);
+
+const DrawerContainer = ({
   className,
   children,
   onCancel,
@@ -55,6 +62,10 @@ const Drawer = ({
   hideCancel = false,
 }: DrawerProps) => {
   const ref = useRef<HTMLDivElement>(null);
+  const [isFocusWithin, setIsFocusWithin] = useState(false);
+  const { focusWithinProps } = useFocusWithin({
+    onFocusWithinChange: (isFocusWithin) => setIsFocusWithin(isFocusWithin),
+  });
 
   usePreventScroll();
 
@@ -62,23 +73,37 @@ const Drawer = ({
     const handleEscape = (event: KeyboardEvent) => {
       event.stopImmediatePropagation();
       const latest = [...document.querySelectorAll('[data-drawer]')].pop();
-      if (event.key === 'Escape' && latest === ref.current) {
+      if (event.key === 'Escape' && latest === ref.current && isFocusWithin) {
         close();
       }
+    };
+
+    const addOverlayAndEventHandler = () => {
+      document.body.classList.add('has-overlay');
+      document.addEventListener('keydown', handleEscape);
+    };
+
+    const removeOverlayAndEventHandler = () => {
+      document.body.classList.remove('has-overlay');
+      document.removeEventListener('keydown', handleEscape);
     };
 
     const close = () => {
       onCancel?.();
     };
 
-    document.body.classList.add('has-overlay');
-    document.addEventListener('keydown', handleEscape);
+    if (isFocusWithin) {
+      addOverlayAndEventHandler();
+    }
+
+    if (!isFocusWithin) {
+      removeOverlayAndEventHandler();
+    }
 
     return () => {
-      document.body.classList.remove('has-overlay');
-      document.removeEventListener('keydown', handleEscape);
+      removeOverlayAndEventHandler();
     };
-  }, [onCancel, testId]);
+  }, [onCancel, testId, isFocusWithin]);
 
   const handleOverlayClick = (event: MouseEvent<HTMLDivElement>) => {
     if (event.target === event.currentTarget) {
@@ -87,51 +112,50 @@ const Drawer = ({
   };
 
   return (
-    <Portal>
-      <LazyMotion strict features={loadFeatures}>
-        <div
-          className={cx(styles.drawer, styles[size], className)}
-          data-drawer
-          data-test-id={testId}
-          ref={ref}
+    <LazyMotion strict features={loadFeatures}>
+      <div
+        {...focusWithinProps}
+        className={cx(styles.drawer, styles[size], className)}
+        data-drawer
+        data-test-id={testId}
+        ref={ref}
+      >
+        <m.div
+          initial="hidden"
+          animate="visible"
+          variants={overlay}
+          transition={{ duration: 0.15 }}
+          role="presentation"
+          className={styles.overlay}
+          onMouseDown={handleOverlayClick}
         >
-          <m.div
-            initial="hidden"
-            animate="visible"
-            variants={overlay}
-            transition={{ duration: 0.15 }}
-            role="presentation"
-            className={styles.overlay}
-            onMouseDown={handleOverlayClick}
-          >
-            <FocusTrap autoFocus restoreFocus>
-              <m.div
-                initial="hidden"
-                animate="visible"
-                variants={slideRight}
-                role="dialog"
-                aria-labelledby={DRAWER_LABELLED_BY}
-                aria-modal
-                className={styles.content}
-                tabIndex={-1}
-                {...(theme ? { 'data-theme': theme } : {})}
-              >
-                {!hideCancel && (
-                  <IconButton
-                    aria-label="close"
-                    icon={<Close size="medium" />}
-                    className={styles.closeButton}
-                    onClick={onCancel}
-                    data-test-id="drawer-close-button"
-                  />
-                )}
-                <Suspense fallback={<Progress />}>{children}</Suspense>
-              </m.div>
-            </FocusTrap>
-          </m.div>
-        </div>
-      </LazyMotion>
-    </Portal>
+          <FocusTrap autoFocus restoreFocus>
+            <m.div
+              initial="hidden"
+              animate="visible"
+              variants={slideRight}
+              role="dialog"
+              aria-labelledby={DRAWER_LABELLED_BY}
+              aria-modal
+              className={styles.content}
+              tabIndex={-1}
+              {...(theme ? { 'data-theme': theme } : {})}
+            >
+              {!hideCancel && (
+                <IconButton
+                  aria-label="close"
+                  icon={<Close size="medium" />}
+                  className={styles.closeButton}
+                  onClick={onCancel}
+                  data-test-id="drawer-close-button"
+                />
+              )}
+              <Suspense fallback={<Progress />}>{children}</Suspense>
+            </m.div>
+          </FocusTrap>
+        </m.div>
+      </div>
+    </LazyMotion>
   );
 };
 
