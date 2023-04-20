@@ -24,6 +24,7 @@ type FilterMenuProps = Pick<MenuProps<string>, 'enableVirtualization' | 'size' |
   onClearFilter?(): void;
   enableSearch?: boolean;
   searchValue?: string;
+  searchId?: string;
   searchPlaceholder?: string;
   searchAriaLabel?: string;
   onSearchChange?(event: ChangeEvent<HTMLInputElement>): void;
@@ -39,6 +40,7 @@ const FilterMenu = ({
   searchValue,
   searchPlaceholder,
   searchAriaLabel,
+  searchId,
   onSelect,
   onSearchChange,
   isLoading = false,
@@ -73,6 +75,7 @@ const FilterMenu = ({
         {enableSearch && (
           <MenuSearch
             value={searchValue}
+            id={searchId}
             placeholder={searchPlaceholder}
             onChange={onSearchChange}
             ariaLabel={searchAriaLabel}

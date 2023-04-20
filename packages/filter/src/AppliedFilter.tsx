@@ -23,6 +23,7 @@ type AppliedFilterProps = {
   isLoading?: boolean;
   onClickFilterButton?(): void;
   searchAriaLabel?: string;
+  searchId?: string;
   'data-test-id'?: string;
 };
 
@@ -39,6 +40,7 @@ const AppliedFilter = ({
   onClickFilterButton,
   onClearFilter,
   searchAriaLabel,
+  searchId,
   'data-test-id': testId = 'applied-filter',
   ...props
 }: AppliedFilterProps) => {
@@ -54,13 +56,13 @@ const AppliedFilter = ({
       >
         {description}
       </AppliedFilterButton>
-
       <FilterMenu
         options={options}
         searchValue={searchValue}
         searchPlaceholder={searchPlaceholder}
         enableSearch={enableSearch}
         searchAriaLabel={searchAriaLabel}
+        searchId={searchId}
         onSearchChange={onSearchChange}
         onClearFilter={onClearFilter}
         isLoading={isLoading}
