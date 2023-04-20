@@ -25,6 +25,7 @@ type FilterProps = Pick<MenuProps<string>, 'size' | 'enableVirtualization'> & {
   className?: string;
   onStateChange?({ isOpen }: { isOpen?: boolean }): void;
   isSelected?: boolean;
+  searchId?: string;
   onSelect?(item: FilterOption): void;
   isEmpty?: boolean;
   isLoading?: boolean;
@@ -50,6 +51,7 @@ const Filter = ({
   isSelected,
   className,
   isEmpty,
+  searchId,
   isLoading,
   onClickFilterButton,
   disabledOptionTooltip,
@@ -91,6 +93,7 @@ const Filter = ({
       </FilterButton>
       <FilterMenu
         options={options}
+        searchId={searchId}
         searchValue={searchValue}
         searchPlaceholder={searchPlaceholder}
         searchAriaLabel={searchAriaLabel}
