@@ -1,6 +1,6 @@
 export type { MenuBaseProps } from './MenuBase';
 export type { MenuDividerProps } from './MenuDivider';
-export type { MenuItemProps, MenuItemLinkProps } from './MenuItem';
+export type { MenuItemProps } from './MenuItem';
 export type { MenuItemListProps } from './MenuItemList';
 export type { MenuSearchProps } from './MenuSearch';
 export type { MenuProps } from './Menu';
@@ -8,7 +8,7 @@ export type { MenuProps } from './Menu';
 export { MenuBase } from './MenuBase';
 /* c8 ignore stop */
 export { MenuDivider } from './MenuDivider';
-export { MenuItem, MenuItemLink } from './MenuItem';
+export { MenuItem } from './MenuItem';
 /* c8 ignore start */
 export { MenuItemList } from './MenuItemList';
 /* c8 ignore stop */
