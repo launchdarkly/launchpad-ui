@@ -1,5 +1,18 @@
 # @launchpad-ui/core
 
+## 0.37.0
+
+### Minor Changes
+
+- [#835](https://github.com/launchdarkly/launchpad-ui/pull/835) [`25296f82`](https://github.com/launchdarkly/launchpad-ui/commit/25296f82d0fb7c361055efbf46da296db81f757f) Thanks [@chasedarkly](https://github.com/chasedarkly)! - [Menu] Deprecate MenuItemLink in favor of using `asChild`
+
+### Patch Changes
+
+- Updated dependencies [[`25296f82`](https://github.com/launchdarkly/launchpad-ui/commit/25296f82d0fb7c361055efbf46da296db81f757f)]:
+  - @launchpad-ui/menu@0.9.0
+  - @launchpad-ui/filter@0.5.24
+  - @launchpad-ui/navigation@0.11.15
+
 ## 0.36.5
 
 ### Patch Changes
