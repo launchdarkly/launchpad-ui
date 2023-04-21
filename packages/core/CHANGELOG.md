@@ -1,5 +1,14 @@
 # @launchpad-ui/core
 
+## 0.36.5
+
+### Patch Changes
+
+- Updated dependencies [[`b481df42`](https://github.com/launchdarkly/launchpad-ui/commit/b481df428ce928957f09f1f6126618aa8a7bea37)]:
+  - @launchpad-ui/drawer@0.4.3
+  - @launchpad-ui/modal@0.15.3
+  - @launchpad-ui/select@0.2.18
+
 ## 0.36.4
 
 ### Patch Changes

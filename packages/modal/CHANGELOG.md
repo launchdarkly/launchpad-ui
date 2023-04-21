@@ -1,5 +1,11 @@
 # @launchpad-ui/modal
 
+## 0.15.3
+
+### Patch Changes
+
+- [#837](https://github.com/launchdarkly/launchpad-ui/pull/837) [`b481df42`](https://github.com/launchdarkly/launchpad-ui/commit/b481df428ce928957f09f1f6126618aa8a7bea37) Thanks [@cjhensen](https://github.com/cjhensen)! - fix: support modal + drawer combo; fix drawer focus trap; accessibility improvement for modals and drawers
+
 ## 0.15.2
 
 ### Patch Changes
