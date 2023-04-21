@@ -136,6 +136,7 @@ const DrawerContainer = ({
               variants={slideRight}
               role="dialog"
               aria-labelledby={DRAWER_LABELLED_BY}
+              aria-describedby={DRAWER_LABELLED_BY}
               aria-modal
               className={styles.content}
               tabIndex={-1}

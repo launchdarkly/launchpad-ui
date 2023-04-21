@@ -147,6 +147,7 @@ const ModalContainer = ({
               variants={isDesktopViewport ? transitions.desktopPop : transitions.mobileSlideUp}
               role="dialog"
               aria-labelledby={MODAL_LABELLED_BY}
+              aria-describedby={MODAL_LABELLED_BY}
               aria-modal
               data-test-id={testId}
               className={cx(styles.modal, styles[size], className)}
