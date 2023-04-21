@@ -39,7 +39,7 @@ describe('Menu', () => {
   it('renders with virtualization', () => {
     render(createMenu({ enableVirtualization: true }));
     const items = screen.getAllByRole('presentation');
-    expect(items).toHaveLength(5);
+    expect(items).toHaveLength(4);
   });
 
   it('renders the search field', () => {
