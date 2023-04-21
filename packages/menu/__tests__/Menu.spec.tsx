@@ -4,7 +4,7 @@ import { Popover } from '@launchpad-ui/popover';
 import { it, expect, describe, vi } from 'vitest';
 
 import { render, screen, userEvent, waitFor } from '../../../test/utils';
-import { Menu, MenuDivider, MenuItem, MenuItemLink, MenuSearch } from '../src';
+import { Menu, MenuDivider, MenuItem, MenuSearch } from '../src';
 
 type TestMenu = {
   hideSearch?: boolean;
@@ -39,7 +39,7 @@ describe('Menu', () => {
   it('renders with virtualization', () => {
     render(createMenu({ enableVirtualization: true }));
     const items = screen.getAllByRole('presentation');
-    expect(items).toHaveLength(5);
+    expect(items).toHaveLength(4);
   });
 
   it('renders the search field', () => {
@@ -127,18 +127,6 @@ describe('Menu', () => {
     expect(items[1]).toHaveFocus();
     await user.keyboard('{arrowup}');
     expect(items[0]).toHaveFocus();
-  });
-
-  it('can render items as links', async () => {
-    const { container } = render(
-      <Menu>
-        <MenuItemLink to="#" useHistory={false}>
-          link
-        </MenuItemLink>
-      </Menu>
-    );
-    // eslint-disable-next-line testing-library/no-container, testing-library/no-node-access
-    expect(container.querySelector('a')).not.toBeNull();
   });
 
   it('can render items into child slot', async () => {

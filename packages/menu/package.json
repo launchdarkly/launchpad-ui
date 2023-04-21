@@ -1,6 +1,6 @@
 {
   "name": "@launchpad-ui/menu",
-  "version": "0.8.11",
+  "version": "0.9.0",
   "status": "beta",
   "publishConfig": {
     "access": "public"
@@ -41,7 +41,6 @@
     "@react-aria/focus": "3.10.0",
     "@react-aria/separator": "3.2.6",
     "classix": "2.1.17",
-    "react-router-dom": "6.9.0",
     "react-virtual": "2.10.4"
   },
   "peerDependencies": {
