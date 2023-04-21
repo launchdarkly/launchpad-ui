@@ -1,5 +1,11 @@
 # @launchpad-ui/menu
 
+## 0.8.11
+
+### Patch Changes
+
+- [#836](https://github.com/launchdarkly/launchpad-ui/pull/836) [`5eaa7d1a`](https://github.com/launchdarkly/launchpad-ui/commit/5eaa7d1a663467f1d60f02ec8321a822196a54f0) Thanks [@jagarnica](https://github.com/jagarnica)! - [Filter] add searchId prop to associate label with search field
+
 ## 0.8.10
 
 ### Patch Changes
