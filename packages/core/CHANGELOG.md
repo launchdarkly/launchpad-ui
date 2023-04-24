@@ -1,5 +1,21 @@
 # @launchpad-ui/core
 
+## 0.38.0
+
+### Minor Changes
+
+- [#846](https://github.com/launchdarkly/launchpad-ui/pull/846) [`92f717d8`](https://github.com/launchdarkly/launchpad-ui/commit/92f717d89956143995afa1a5e4b46b59ce89f1a5) Thanks [@jagarnica](https://github.com/jagarnica)! - [Menu] Fix clipping for menu items when virtualized
+
+### Patch Changes
+
+- [#840](https://github.com/launchdarkly/launchpad-ui/pull/840) [`c351f47a`](https://github.com/launchdarkly/launchpad-ui/commit/c351f47a4b2228f56bfb9a279571f4fcb6301826) Thanks [@bjlagman12](https://github.com/bjlagman12)! - Change z-index to '400'
+
+- Updated dependencies [[`c351f47a`](https://github.com/launchdarkly/launchpad-ui/commit/c351f47a4b2228f56bfb9a279571f4fcb6301826), [`92f717d8`](https://github.com/launchdarkly/launchpad-ui/commit/92f717d89956143995afa1a5e4b46b59ce89f1a5)]:
+  - @launchpad-ui/snackbar@0.3.48
+  - @launchpad-ui/menu@0.10.0
+  - @launchpad-ui/filter@0.5.25
+  - @launchpad-ui/navigation@0.11.16
+
 ## 0.37.0
 
 ### Minor Changes

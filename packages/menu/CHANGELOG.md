@@ -1,5 +1,11 @@
 # @launchpad-ui/menu
 
+## 0.10.0
+
+### Minor Changes
+
+- [#846](https://github.com/launchdarkly/launchpad-ui/pull/846) [`92f717d8`](https://github.com/launchdarkly/launchpad-ui/commit/92f717d89956143995afa1a5e4b46b59ce89f1a5) Thanks [@jagarnica](https://github.com/jagarnica)! - [Menu] Fix clipping for menu items when virtualized
+
 ## 0.9.0
 
 ### Minor Changes

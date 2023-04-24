@@ -1,5 +1,11 @@
 # @launchpad-ui/snackbar
 
+## 0.3.48
+
+### Patch Changes
+
+- [#840](https://github.com/launchdarkly/launchpad-ui/pull/840) [`c351f47a`](https://github.com/launchdarkly/launchpad-ui/commit/c351f47a4b2228f56bfb9a279571f4fcb6301826) Thanks [@bjlagman12](https://github.com/bjlagman12)! - Change z-index to '400'
+
 ## 0.3.47
 
 ### Patch Changes
