@@ -192,7 +192,7 @@ const ItemVirtualizer = <T extends number | string>(props: ItemVirtualizerProps<
   const {
     overscan,
     searchElement,
-    itemHeight = 33,
+    itemHeight = 31.5,
     menuItemClassName,
     items: items,
     focusManager,
@@ -365,7 +365,7 @@ const ItemVirtualizer = <T extends number | string>(props: ItemVirtualizerProps<
         return (
           <div
             key={virtualRow.index}
-            ref={elem.type !== MenuItem ? virtualRow.measureRef : undefined}
+            ref={virtualRow.measureRef}
             role="presentation"
             className={cx('VirtualMenu-item')}
             style={{
