@@ -18,7 +18,7 @@ import { useVirtual } from 'react-virtual';
 
 import { MenuBase } from './MenuBase';
 import { MenuDivider } from './MenuDivider';
-import { MenuItem } from './MenuItem';
+import { MenuItem, MenuItemLink } from './MenuItem';
 import { MenuItemList } from './MenuItemList';
 import { MenuSearch } from './MenuSearch';
 import {
@@ -37,7 +37,7 @@ type ControlledMenuProps<T> = {
    */
   enableVirtualization?: boolean;
   /**
-   * Class name to be applied to all MenuItem components
+   * Class name to be applied to all MenuItem and MenuItemLink components
    * in the menu.
    */
   menuItemClassName?: string;
@@ -95,6 +95,7 @@ const Menu = <T extends number | string>(props: MenuProps<T>) => {
             searchElem = child;
             break;
           case MenuItem:
+          case MenuItemLink:
           case MenuDivider:
             elements = elements.concat(child);
             break;
@@ -123,6 +124,7 @@ const Menu = <T extends number | string>(props: MenuProps<T>) => {
               }),
             };
           case MenuItem:
+          case MenuItemLink:
             return {
               items: items.concat(
                 child.props.disabled
@@ -277,6 +279,7 @@ const ItemVirtualizer = <T extends number | string>(props: ItemVirtualizerProps<
       const childProps = itemElem.props as MenuItemProps<T>;
       switch (itemElem.type) {
         case MenuItem:
+        case MenuItemLink:
           return {
             className: cx(childProps.className, menuItemClassName),
             // set focus on the first menu item if there is no search input, and set in the tab order
@@ -365,7 +368,11 @@ const ItemVirtualizer = <T extends number | string>(props: ItemVirtualizerProps<
         return (
           <div
             key={virtualRow.index}
-            ref={elem.type !== MenuItem ? virtualRow.measureRef : undefined}
+            ref={
+              elem.type !== MenuItem || elem.type !== MenuItemLink
+                ? virtualRow.measureRef
+                : undefined
+            }
             role="presentation"
             className={cx('VirtualMenu-item')}
             style={{

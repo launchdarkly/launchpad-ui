@@ -72,7 +72,7 @@
     outline: none;
   }
 
-  /* Override our link styles for link component */
+  /* Override our link styles for MenuItemLink component */
   & a.Menu-item {
     &:focus:not(:hover):not(.has-focus) {
       text-decoration: none;

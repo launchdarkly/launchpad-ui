@@ -6,6 +6,7 @@ import { Tooltip } from '@launchpad-ui/tooltip';
 import { Slot } from '@radix-ui/react-slot';
 import { FocusRing } from '@react-aria/focus';
 import { cx } from 'classix';
+import { Link } from 'react-router-dom';
 
 import './styles/Menu.css';
 
@@ -122,5 +123,48 @@ const MenuItem = <P, T extends ElementType = typeof defaultElement>({
   return renderedItem;
 };
 
-export { MenuItem };
-export type { MenuItemProps };
+type MenuItemLinkOwnProps = {
+  disabled?: boolean;
+  useHistory?: boolean;
+  newTab?: boolean;
+};
+
+type MenuItemLinkProps<P, T extends ElementType = typeof Link> =
+  | Merge<Omit<MenuItemProps<P, T>, 'component' | 'item'>, MenuItemLinkOwnProps> &
+      (
+        | {
+            item?: undefined;
+          }
+        | {
+            item: P;
+          }
+      );
+
+// By default, this is a Link component whenever useHistory is
+// explicitly not false
+// TODO: deprecate this component
+const MenuItemLink = <P, T extends ElementType = typeof Link>({
+  to,
+  disabled = false,
+  useHistory = true,
+  newTab = false,
+  children,
+  ...props
+}: MenuItemLinkProps<P, T>) => {
+  const finalProps = {
+    ...props,
+    disabled,
+    component: useHistory ? Link : ('a' as const),
+    [useHistory ? 'to' : 'href']: disabled ? '' : to,
+    rel: newTab ? 'noopener noreferrer' : undefined,
+    target: newTab ? '_blank' : undefined,
+  };
+
+  // Ideally if this item is disabled, it should be a button rather
+  // than a link https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/anchor-is-valid.md
+
+  return <MenuItem {...finalProps}>{children}</MenuItem>;
+};
+
+export { MenuItem, MenuItemLink };
+export type { MenuItemProps, MenuItemLinkProps };
