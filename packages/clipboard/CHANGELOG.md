@@ -1,5 +1,11 @@
 # @launchpad-ui/clipboard
 
+## 0.10.2
+
+### Patch Changes
+
+- [#847](https://github.com/launchdarkly/launchpad-ui/pull/847) [`768fc015`](https://github.com/launchdarkly/launchpad-ui/commit/768fc015e13fa866fbc1a92601dead51ef058e19) Thanks [@jagarnica](https://github.com/jagarnica)! - [clipboard] Component height adjusted to match other button heights
+
 ## 0.10.1
 
 ### Patch Changes
