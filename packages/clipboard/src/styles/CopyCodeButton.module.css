@@ -11,7 +11,7 @@
   background-color: var(--lp-component-copy-color-bg-default);
   border-radius: 20px;
   font-family: var(--lp-font-family-monospace);
-  font-size: 87.5%;
+  font-size: var(--lp-font-size-200);
   text-align: left;
   margin: 0;
   padding: 0.4rem 0.8rem;
@@ -33,7 +33,7 @@
 
   &.basic,
   &.minimal {
-    padding: 0.4rem;
+    padding: 0.275rem 0.4rem;
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -85,10 +85,10 @@
 
 .CopyCodeButton--icon {
   padding: 0;
-  line-height: 1;
   height: 1.5rem;
   width: 1.7rem;
   min-height: auto;
   margin-left: 0.65rem;
   flex-shrink: 0;
+  top: -0.5px;
 }
