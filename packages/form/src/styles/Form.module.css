@@ -368,3 +368,72 @@ input[type='checkbox']:disabled {
   pointer-events: auto;
   transform: translate(0, -8px) scale(0.9); /* 2d transform to avoid webkit blurry text */
 }
+
+.numberField {
+  display: inline-block;
+
+  & .group {
+    display: flex;
+    position: relative;
+
+    & .numberInput {
+      padding-right: 2.4rem;
+    }
+
+    & .stepperContainer {
+      display: flex;
+      opacity: 0;
+      flex-direction: column;
+      position: absolute;
+      width: 2.4rem;
+      top: 1px;
+      bottom: 1px;
+      right: 1px;
+      transition: all var(--lp-duration-100) linear;
+
+      & .stepper {
+        background-color: var(--lp-color-bg-field);
+        flex: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        padding: 0 0.3rem;
+        border: none;
+        border-radius: 0;
+        min-height: 1px;
+        overflow: hidden;
+
+        &:first-child {
+          border-top-right-radius: 2px;
+          padding-top: 0.3rem;
+        }
+
+        &:last-child {
+          border-bottom-right-radius: 2px;
+          padding-bottom: 0.3rem;
+        }
+
+        &:hover {
+          background-color: var(--lp-color-bg-interactive-secondary-hover);
+        }
+
+        &:active {
+          background-color: var(--lp-color-bg-interactive-secondary-active);
+        }
+
+        & span:has(svg) {
+          width: 100%;
+          color: var(--lp-color-text-ui-primary);
+        }
+      }
+    }
+
+    &:hover,
+    &:has(input:focus) {
+      & .stepperContainer {
+        opacity: 1;
+      }
+    }
+  }
+}

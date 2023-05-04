@@ -700,6 +700,18 @@ importers:
       '@launchpad-ui/tokens':
         specifier: workspace:~
         version: link:../tokens
+      '@react-aria/button':
+        specifier: 3.7.1
+        version: 3.7.1(react@18.2.0)
+      '@react-aria/i18n':
+        specifier: 3.7.1
+        version: 3.7.1(react@18.2.0)
+      '@react-aria/numberfield':
+        specifier: 3.5.0
+        version: 3.5.0(react-dom@18.2.0)(react@18.2.0)
+      '@react-aria/utils':
+        specifier: 3.16.0
+        version: 3.16.0(react@18.2.0)
       '@react-aria/visually-hidden':
         specifier: 3.8.1
         version: 3.8.1(react@18.2.0)
@@ -4996,6 +5008,12 @@ packages:
   /@humanwhocodes/object-schema@1.2.1:
     resolution: {integrity: sha512-ZnQMnLV4e7hDlUvw8H+U8ASL02SS2Gn6+9Ac3wGGLIe7+je2AeAOxPY+izIPJDfFDb7eDjev0Us8MO1iFRN8hA==}
     dev: true
+
+  /@internationalized/date@3.2.0:
+    resolution: {integrity: sha512-VDMHN1m33L4eqPs5BaihzgQJXyaORbMoHOtrapFxx179J8ucY5CRIHYsq5RRLKPHZWgjNfa5v6amWWDkkMFywA==}
+    dependencies:
+      '@swc/helpers': 0.4.14
+    dev: false
 
   /@internationalized/date@3.2.0:
     resolution: {integrity: sha512-VDMHN1m33L4eqPs5BaihzgQJXyaORbMoHOtrapFxx179J8ucY5CRIHYsq5RRLKPHZWgjNfa5v6amWWDkkMFywA==}
