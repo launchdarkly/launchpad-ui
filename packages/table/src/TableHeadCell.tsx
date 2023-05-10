@@ -1,10 +1,10 @@
-import type { ThHTMLAttributes } from 'react';
+import type { ComponentProps } from 'react';
 
 import { cx } from 'classix';
 
 import styles from './styles/Table.module.css';
 
-type TableHeadCellProps = ThHTMLAttributes<HTMLTableCellElement> & {
+type TableHeadCellProps = ComponentProps<'th'> & {
   defaultColWidth?:
     | 'zero'
     | 'one-of-twelve'

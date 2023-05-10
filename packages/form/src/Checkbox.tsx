@@ -1,11 +1,11 @@
-import type { InputHTMLAttributes } from 'react';
+import type { ComponentProps } from 'react';
 
 import { forwardRef } from 'react';
 
 import { Label } from './Label';
 import styles from './styles/Form.module.css';
 
-type CheckboxProps = InputHTMLAttributes<HTMLInputElement> & {
+type CheckboxProps = ComponentProps<'input'> & {
   /**
    * The className to pass into the Checkbox's Label component
    */

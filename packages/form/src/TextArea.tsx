@@ -1,4 +1,4 @@
-import type { KeyboardEvent, TextareaHTMLAttributes } from 'react';
+import type { KeyboardEvent, ComponentProps } from 'react';
 
 import { cx } from 'classix';
 import { forwardRef } from 'react';
@@ -6,7 +6,7 @@ import { forwardRef } from 'react';
 import styles from './styles/Form.module.css';
 import { createFieldErrorId } from './utils';
 
-type TextAreaProps = TextareaHTMLAttributes<HTMLTextAreaElement> & {
+type TextAreaProps = ComponentProps<'textarea'> & {
   'data-test-id'?: string;
 };
 

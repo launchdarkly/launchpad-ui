@@ -1,4 +1,4 @@
-import type { HTMLAttributes, ReactNode } from 'react';
+import type { ComponentProps, ReactNode } from 'react';
 
 import { IconButton } from '@launchpad-ui/button';
 import { Close, StatusIcon } from '@launchpad-ui/icons';
@@ -7,7 +7,7 @@ import { cx } from 'classix';
 
 import styles from './styles/Alert.module.css';
 
-type AlertProps = HTMLAttributes<HTMLDivElement> & {
+type AlertProps = ComponentProps<'div'> & {
   'data-test-id'?: string;
   /**
    * When true, shows the compact Alert variant,

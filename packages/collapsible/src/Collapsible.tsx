@@ -1,5 +1,5 @@
 import type { CollapsibleTriggerProps } from './CollapsibleTrigger';
-import type { HTMLAttributes, ReactNode } from 'react';
+import type { ComponentProps, ReactNode } from 'react';
 
 import { ExpandLess, ExpandMore } from '@launchpad-ui/icons';
 import { cx } from 'classix';
@@ -8,7 +8,7 @@ import { useId, useRef, useState } from 'react';
 import { CollapsibleTrigger } from './CollapsibleTrigger';
 import styles from './styles/Collapsible.module.css';
 
-type CollapsibleProps = Omit<HTMLAttributes<HTMLDivElement>, 'className'> & {
+type CollapsibleProps = Omit<ComponentProps<'div'>, 'className'> & {
   label: string | ((isOpen: boolean) => string);
   trigger?: (props: CollapsibleTriggerProps) => ReactNode;
   onToggle?: (isOpen: boolean) => void;

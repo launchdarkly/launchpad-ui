@@ -1,5 +1,5 @@
 import type { IconProps } from '@launchpad-ui/icons';
-import type { ComponentType, HTMLAttributes } from 'react';
+import type { ComponentType, ComponentProps } from 'react';
 
 import { Person } from '@launchpad-ui/icons';
 import { cx } from 'classix';
@@ -8,7 +8,7 @@ import { useCallback, useEffect, useState } from 'react';
 import styles from './styles/Avatar.module.css';
 import { useIsMounted } from './utils';
 
-type AvatarProps = HTMLAttributes<HTMLDivElement> & {
+type AvatarProps = ComponentProps<'img'> & {
   alt?: string;
   url: string;
   size?: 'tiny' | 'small' | 'medium' | 'large';

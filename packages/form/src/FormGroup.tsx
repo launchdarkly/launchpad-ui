@@ -1,10 +1,10 @@
-import type { HTMLAttributes } from 'react';
+import type { ComponentProps } from 'react';
 
 import { cx } from 'classix';
 
 import styles from './styles/Form.module.css';
 
-type FormGroupProps = HTMLAttributes<HTMLFieldSetElement> & {
+type FormGroupProps = ComponentProps<'fieldset'> & {
   name?: string | string[];
   ignoreValidation?: boolean;
   isInvalid?: boolean;

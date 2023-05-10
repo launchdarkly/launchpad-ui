@@ -1,4 +1,4 @@
-import type { InputHTMLAttributes } from 'react';
+import type { ComponentProps } from 'react';
 
 import { cx } from 'classix';
 import { forwardRef } from 'react';
@@ -6,7 +6,7 @@ import { forwardRef } from 'react';
 import styles from './styles/Form.module.css';
 import { createFieldErrorId } from './utils';
 
-type TextFieldProps = InputHTMLAttributes<HTMLInputElement> & {
+type TextFieldProps = ComponentProps<'input'> & {
   suffix?: string;
   tiny?: boolean;
   overrideWidth?: string;

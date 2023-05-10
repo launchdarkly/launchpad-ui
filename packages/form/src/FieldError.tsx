@@ -1,5 +1,5 @@
 import type { FieldPath } from './utils';
-import type { HTMLAttributes } from 'react';
+import type { ComponentProps } from 'react';
 
 import { AlertRhombus } from '@launchpad-ui/icons';
 import { cx } from 'classix';
@@ -7,7 +7,7 @@ import { cx } from 'classix';
 import styles from './styles/Form.module.css';
 import { createFieldErrorId } from './utils';
 
-type FieldErrorProps = HTMLAttributes<HTMLSpanElement> & {
+type FieldErrorProps = ComponentProps<'span'> & {
   name: FieldPath;
   errorMessage?: string;
   'data-test-id'?: string;

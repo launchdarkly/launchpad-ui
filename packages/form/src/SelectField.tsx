@@ -1,10 +1,10 @@
-import type { SelectHTMLAttributes } from 'react';
+import type { ComponentProps } from 'react';
 
 import { cx } from 'classix';
 
 import styles from './styles/Form.module.css';
 
-type SelectFieldProps = SelectHTMLAttributes<HTMLSelectElement> & {
+type SelectFieldProps = ComponentProps<'select'> & {
   'data-test-id'?: string;
 };
 

@@ -1,10 +1,10 @@
-import type { HTMLAttributes } from 'react';
+import type { ComponentProps } from 'react';
 
 import { cx } from 'classix';
 
 import styles from './styles/Form.module.css';
 
-type FormHintProps = HTMLAttributes<HTMLDivElement> & {
+type FormHintProps = ComponentProps<'div'> & {
   'data-test-id'?: string;
 };
 

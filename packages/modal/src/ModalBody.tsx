@@ -1,4 +1,4 @@
-import type { HTMLAttributes } from 'react';
+import type { ComponentProps } from 'react';
 
 import cx from 'classix';
 import { useRef } from 'react';
@@ -6,7 +6,7 @@ import { useRef } from 'react';
 import styles from './styles/Modal.module.css';
 import { useOverflowY } from './utils';
 
-type ModalBodyProps = HTMLAttributes<HTMLDivElement> & {
+type ModalBodyProps = ComponentProps<'div'> & {
   'data-test-id'?: string;
 };
 

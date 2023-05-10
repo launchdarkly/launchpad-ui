@@ -6,7 +6,7 @@ import type { SingleSelectState } from './SingleSelect';
 import type { AriaListBoxOptions } from '@react-aria/listbox';
 import type { SingleSelectListState } from '@react-stately/list';
 import type { Node } from '@react-types/shared';
-import type { ElementType, InputHTMLAttributes, RefObject } from 'react';
+import type { ElementType, ComponentProps, RefObject } from 'react';
 
 import { Search } from '@launchpad-ui/icons';
 import { getItemId, useListBox, useListBoxSection, useOption } from '@react-aria/listbox';
@@ -22,7 +22,7 @@ type SelectListBoxProps<T extends object> = AriaListBoxOptions<T> & {
   listBoxRef?: RefObject<HTMLDivElement>;
   filterInputRef?: RefObject<HTMLInputElement>;
   state: SingleSelectState<T> | MultiSelectState<T>;
-  filterInputProps: InputHTMLAttributes<HTMLInputElement>;
+  filterInputProps: ComponentProps<'input'>;
   hasFilter?: boolean;
 };
 

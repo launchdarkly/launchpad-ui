@@ -1,10 +1,10 @@
-import type { HTMLAttributes } from 'react';
+import type { ComponentProps } from 'react';
 
 import { cx } from 'classix';
 
 import './styles/ButtonGroup.css';
 
-type ButtonGroupProps = HTMLAttributes<HTMLDivElement> & {
+type ButtonGroupProps = ComponentProps<'div'> & {
   spacing?: 'compact' | 'normal' | 'large';
   'data-test-id'?: string;
 };

@@ -1,4 +1,4 @@
-import type { AnchorHTMLAttributes, HTMLAttributes, ReactElement, ReactNode } from 'react';
+import type { ComponentProps, ReactElement, ReactNode } from 'react';
 
 import { IconButton } from '@launchpad-ui/button';
 import { Close, StatusIcon } from '@launchpad-ui/icons';
@@ -11,12 +11,12 @@ type SnackbarBaseProps = {
   kind: 'info' | 'error' | 'warning' | 'success';
   header?: ReactNode;
   description: ReactNode;
-  cta?: ReactElement<AnchorHTMLAttributes<HTMLAnchorElement>>;
+  cta?: ReactElement<ComponentProps<'a'>>;
   onDismiss?: () => void;
   'data-test-id'?: string;
 };
 
-type SnackbarProps = Omit<HTMLAttributes<HTMLDivElement>, 'children'> & SnackbarBaseProps;
+type SnackbarProps = Omit<ComponentProps<'div'>, 'children'> & SnackbarBaseProps;
 
 const Snackbar = ({
   className,

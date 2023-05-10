@@ -1,10 +1,10 @@
-import type { TableHTMLAttributes } from 'react';
+import type { ComponentProps } from 'react';
 
 import { cx } from 'classix';
 
 import styles from './styles/Table.module.css';
 
-type TableProps = TableHTMLAttributes<HTMLTableElement> & {
+type TableProps = ComponentProps<'table'> & {
   auto?: boolean;
   compact?: boolean;
   isResourceTable?: boolean;

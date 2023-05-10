@@ -1,10 +1,10 @@
-import type { HTMLAttributes } from 'react';
+import type { ComponentProps } from 'react';
 
 import { cx } from 'classix';
 
 import styles from './styles/Form.module.css';
 
-type FieldSetProps = HTMLAttributes<HTMLFieldSetElement> & {
+type FieldSetProps = ComponentProps<'fieldset'> & {
   'data-test-id'?: string;
 };
 

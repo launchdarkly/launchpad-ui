@@ -1,5 +1,5 @@
 import type { TooltipProps } from '@launchpad-ui/tooltip';
-import type { HTMLAttributes, KeyboardEventHandler } from 'react';
+import type { ComponentProps, KeyboardEventHandler } from 'react';
 
 import { CheckCircle } from '@launchpad-ui/icons';
 import { Tooltip } from '@launchpad-ui/tooltip';
@@ -11,7 +11,7 @@ import { forwardRef, useCallback, useImperativeHandle, useRef, useState } from '
 import { CopyCodeButton } from './CopyCodeButton';
 import styles from './styles/CopyToClipboard.module.css';
 
-type CopyToClipboardProps = HTMLAttributes<HTMLSpanElement> & {
+type CopyToClipboardProps = ComponentProps<'span'> & {
   triggerAriaLabel?: string;
   customCopiedText?: string;
   text: string;

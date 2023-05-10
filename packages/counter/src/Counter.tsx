@@ -1,10 +1,10 @@
-import type { HTMLAttributes } from 'react';
+import type { ComponentProps } from 'react';
 
 import { cx } from 'classix';
 
 import styles from './styles/Counter.module.css';
 
-type CounterProps = HTMLAttributes<HTMLSpanElement> & {
+type CounterProps = ComponentProps<'span'> & {
   value: number;
   subtle?: boolean;
   children?: never;
