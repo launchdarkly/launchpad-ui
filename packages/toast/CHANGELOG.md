@@ -1,5 +1,11 @@
 # @launchpad-ui/toast
 
+## 0.2.46
+
+### Patch Changes
+
+- [#851](https://github.com/launchdarkly/launchpad-ui/pull/851) [`be9448b1`](https://github.com/launchdarkly/launchpad-ui/commit/be9448b154e7ea5ff56a65448e83da2808bd1782) Thanks [@kwatkins-ld](https://github.com/kwatkins-ld)! - use ComponentProps type to simplify intrinsic element props
+
 ## 0.2.45
 
 ### Patch Changes
