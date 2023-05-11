@@ -9,14 +9,7 @@ import type {
   DOMProps,
   FocusableElement,
 } from '@react-types/shared';
-import type {
-  ButtonHTMLAttributes,
-  DOMAttributes,
-  HTMLAttributes,
-  InputHTMLAttributes,
-  ReactNode,
-  RefObject,
-} from 'react';
+import type { DOMAttributes, HTMLAttributes, ComponentProps, ReactNode, RefObject } from 'react';
 
 type SharedSelectProps<T extends object> = CollectionBase<T> &
   DOMProps &
@@ -78,7 +71,7 @@ type SharedSelectProps<T extends object> = CollectionBase<T> &
 
 type SelectAria<T extends object> = {
   /** Props for the label element. */
-  labelProps: HTMLAttributes<HTMLElement>;
+  labelProps: ComponentProps<'label'>;
 
   /** Props for the popup trigger element. */
   triggerProps: AriaButtonProps;
@@ -89,7 +82,7 @@ type SelectAria<T extends object> = {
   /** Props for the popup. */
   menuProps: AriaListBoxOptions<T>;
 
-  filterInputProps: InputHTMLAttributes<HTMLInputElement>;
+  filterInputProps: ComponentProps<'input'>;
 
   delegate: ListKeyboardDelegate<T>;
 };
@@ -106,7 +99,7 @@ type SharedSelectState = MenuTriggerState & {
 };
 
 type SharedSelectTriggerProps = {
-  triggerProps: ButtonHTMLAttributes<HTMLButtonElement> & DOMAttributes<FocusableElement>;
+  triggerProps: ComponentProps<'button'> & DOMAttributes<FocusableElement>;
   valueProps: DOMAttributes<FocusableElement>;
   triggerRef: RefObject<HTMLButtonElement>;
   placeholder?: string;

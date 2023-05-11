@@ -1,12 +1,12 @@
 import type { ButtonProps } from '@launchpad-ui/button';
-import type { HTMLAttributes } from 'react';
+import type { ComponentProps } from 'react';
 
 import { cx } from 'classix';
 
 import { SplitButtonContext } from './context';
 import './styles/SplitButton.css';
 
-type SplitButtonProps = HTMLAttributes<HTMLDivElement> & {
+type SplitButtonProps = ComponentProps<'div'> & {
   kind?: Extract<ButtonProps['kind'], 'primary' | 'default'>;
   size?: ButtonProps['size'];
   disabled?: boolean;

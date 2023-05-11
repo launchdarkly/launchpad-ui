@@ -1,12 +1,12 @@
 import type { IconProps } from '@launchpad-ui/icons';
-import type { HTMLAttributes, ReactElement } from 'react';
+import type { ComponentProps, ReactElement } from 'react';
 
 import { cx } from 'classix';
 import { cloneElement } from 'react';
 
 import styles from './styles/Chip.module.css';
 
-type ChipProps = HTMLAttributes<HTMLSpanElement> & {
+type ChipProps = ComponentProps<'span'> & {
   kind?: 'success' | 'warning' | 'error' | 'info' | 'new' | 'beta' | 'federal';
   size?: 'tiny' | 'small';
   icon?: Omit<ReactElement<IconProps>, 'size'>;

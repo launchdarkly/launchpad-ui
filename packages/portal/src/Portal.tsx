@@ -1,9 +1,9 @@
-import type { HTMLAttributes } from 'react';
+import type { ComponentProps } from 'react';
 
 import { forwardRef, useEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
 
-type PortalProps = HTMLAttributes<HTMLDivElement> & {
+type PortalProps = ComponentProps<'div'> & {
   container?: HTMLElement | null;
   'data-test-id'?: string;
 };

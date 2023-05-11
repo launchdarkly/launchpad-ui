@@ -1,11 +1,11 @@
-import type { CSSProperties, InputHTMLAttributes } from 'react';
+import type { CSSProperties, ComponentProps } from 'react';
 
 import { cx } from 'classix';
 
 import { Label } from './Label';
 import styles from './styles/Form.module.css';
 
-type RadioProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'type'> & {
+type RadioProps = Omit<ComponentProps<'input'>, 'type'> & {
   labelClassName?: string;
   labelStyle?: CSSProperties;
   'data-test-id'?: string;

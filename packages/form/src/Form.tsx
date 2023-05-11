@@ -1,10 +1,10 @@
-import type { FormHTMLAttributes } from 'react';
+import type { ComponentProps } from 'react';
 
 import { cx } from 'classix';
 
 import styles from './styles/Form.module.css';
 
-type FormProps = FormHTMLAttributes<HTMLFormElement> & {
+type FormProps = ComponentProps<'form'> & {
   inline?: boolean;
   // Increases margin between form fields to make room for error messages.
   // This prevents the form from shifting when rendering a field error.

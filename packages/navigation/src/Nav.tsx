@@ -1,11 +1,11 @@
-import type { HTMLAttributes, Ref } from 'react';
+import type { ComponentProps, Ref } from 'react';
 
 import { cx } from 'classix';
 import { forwardRef } from 'react';
 
 import styles from './styles/Navigation.module.css';
 
-type NavBaseProps = HTMLAttributes<HTMLElement> & {
+type NavBaseProps = ComponentProps<'nav'> & {
   kind?: 'primary' | 'secondary';
   innerRef?: Ref<HTMLDivElement>;
   'data-test-id'?: string;

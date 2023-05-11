@@ -1,8 +1,8 @@
-import type { HTMLAttributes } from 'react';
+import type { ComponentProps } from 'react';
 
 import { DRAWER_LABELLED_BY } from './constants';
 
-type DrawerHeaderProps = HTMLAttributes<HTMLDivElement> & {
+type DrawerHeaderProps = ComponentProps<'div'> & {
   closeable?: boolean;
   titleID?: string;
   titleClassName?: string;

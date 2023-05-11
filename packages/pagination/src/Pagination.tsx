@@ -1,5 +1,5 @@
 import type { PaginationChange } from './PaginationButton';
-import type { HTMLAttributes } from 'react';
+import type { ComponentProps } from 'react';
 
 import { cx } from 'classix';
 
@@ -7,7 +7,7 @@ import { PaginationButton } from './PaginationButton';
 import { PaginationText } from './PaginationText';
 import styles from './styles/Pagination.module.css';
 
-type PaginationProps = HTMLAttributes<HTMLElement> & {
+type PaginationProps = ComponentProps<'nav'> & {
   resourceName: string;
   isFirstDisabled?: boolean;
   isPrevDisabled?: boolean;

@@ -1,4 +1,4 @@
-import type { HTMLAttributes, ReactNode } from 'react';
+import type { ComponentProps, ReactNode } from 'react';
 
 import { StatusIcon } from '@launchpad-ui/icons';
 import { cx } from 'classix';
@@ -13,7 +13,7 @@ type ToastBaseProps = {
   'data-test-id'?: string;
 };
 
-type ToastProps = Omit<HTMLAttributes<HTMLDivElement>, 'children'> & ToastBaseProps;
+type ToastProps = Omit<ComponentProps<'div'>, 'children'> & ToastBaseProps;
 
 const Toast = ({
   className,

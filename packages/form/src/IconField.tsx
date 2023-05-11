@@ -1,11 +1,11 @@
 import type { IconProps } from '@launchpad-ui/icons';
-import type { HTMLAttributes } from 'react';
+import type { ComponentProps } from 'react';
 
 import { cx } from 'classix';
 
 import styles from './styles/Form.module.css';
 
-type IconFieldProps = HTMLAttributes<HTMLDivElement> & {
+type IconFieldProps = ComponentProps<'div'> & {
   icon(args: IconProps): JSX.Element;
   children: JSX.Element | JSX.Element[];
   'data-test-id'?: string;

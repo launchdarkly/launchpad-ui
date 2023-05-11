@@ -1,10 +1,10 @@
-import type { HTMLAttributes } from 'react';
+import type { ComponentProps } from 'react';
 
 import { cx } from 'classix';
 
 import styles from './styles/Table.module.css';
 
-type TableHeadProps = HTMLAttributes<HTMLTableSectionElement> & {
+type TableHeadProps = ComponentProps<'thead'> & {
   'data-test-id'?: string;
 };
 

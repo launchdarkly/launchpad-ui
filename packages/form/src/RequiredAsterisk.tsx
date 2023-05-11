@@ -1,10 +1,10 @@
-import type { HTMLAttributes } from 'react';
+import type { ComponentProps } from 'react';
 
 import { cx } from 'classix';
 
 import styles from './styles/Form.module.css';
 
-type RequiredAsteriskProps = HTMLAttributes<HTMLSpanElement> & {
+type RequiredAsteriskProps = ComponentProps<'span'> & {
   'data-test-id'?: string;
 };
 

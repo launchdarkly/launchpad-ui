@@ -1,4 +1,4 @@
-import type { HTMLAttributes, ReactNode } from 'react';
+import type { ComponentProps, ReactNode } from 'react';
 
 import { IconButton } from '@launchpad-ui/button';
 import { Close, StatusIcon } from '@launchpad-ui/icons';
@@ -6,7 +6,7 @@ import { cx } from 'classix';
 
 import styles from './styles/Banner.module.css';
 
-type BannerProps = HTMLAttributes<HTMLDivElement> & {
+type BannerProps = ComponentProps<'div'> & {
   'data-test-id'?: string;
   kind: 'info' | 'warning' | 'error';
   onDismiss?(): void;

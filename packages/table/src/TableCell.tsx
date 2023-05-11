@@ -1,4 +1,4 @@
-import type { TdHTMLAttributes } from 'react';
+import type { ComponentProps } from 'react';
 
 import { cx } from 'classix';
 
@@ -7,18 +7,18 @@ import styles from './styles/Table.module.css';
 // Ensure that the headers are properly associated with table content.
 type TableCellWithHeadersProps = {
   headers: string;
-} & TdHTMLAttributes<HTMLTableCellElement>;
+} & ComponentProps<'td'>;
 
 // When a cell acts as a header for all cells below it -- a scope of col needs to be used unless a colgroup is present.
 type TableCellWithDirectScopeProps = {
   scope: 'row' | 'col';
-} & TdHTMLAttributes<HTMLTableCellElement>;
+} & ComponentProps<'td'>;
 
 // hasScope indicates that no identifying header info will be added to the dom element.
 // instead, it is assumed that the head element in the table has its scope property defined
 type TableCellWithScopedProps = {
   hasScope: boolean;
-} & TdHTMLAttributes<HTMLTableCellElement>;
+} & ComponentProps<'td'>;
 
 type TableCellWithScopeProps = TableCellWithDirectScopeProps | TableCellWithScopedProps;
 
