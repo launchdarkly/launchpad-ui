@@ -1,5 +1,17 @@
 # @launchpad-ui/split-button
 
+## 0.7.18
+
+### Patch Changes
+
+- [#851](https://github.com/launchdarkly/launchpad-ui/pull/851) [`be9448b1`](https://github.com/launchdarkly/launchpad-ui/commit/be9448b154e7ea5ff56a65448e83da2808bd1782) Thanks [@kwatkins-ld](https://github.com/kwatkins-ld)! - use ComponentProps type to simplify intrinsic element props
+
+- Updated dependencies [[`be9448b1`](https://github.com/launchdarkly/launchpad-ui/commit/be9448b154e7ea5ff56a65448e83da2808bd1782)]:
+  - @launchpad-ui/button@0.8.13
+  - @launchpad-ui/dropdown@0.6.48
+  - @launchpad-ui/popover@0.10.2
+  - @launchpad-ui/tooltip@0.7.12
+
 ## 0.7.17
 
 ### Patch Changes

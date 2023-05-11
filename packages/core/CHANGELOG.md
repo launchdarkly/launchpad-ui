@@ -1,5 +1,40 @@
 # @launchpad-ui/core
 
+## 0.38.2
+
+### Patch Changes
+
+- [#851](https://github.com/launchdarkly/launchpad-ui/pull/851) [`be9448b1`](https://github.com/launchdarkly/launchpad-ui/commit/be9448b154e7ea5ff56a65448e83da2808bd1782) Thanks [@kwatkins-ld](https://github.com/kwatkins-ld)! - use ComponentProps type to simplify intrinsic element props
+
+- Updated dependencies [[`be9448b1`](https://github.com/launchdarkly/launchpad-ui/commit/be9448b154e7ea5ff56a65448e83da2808bd1782)]:
+  - @launchpad-ui/split-button@0.7.18
+  - @launchpad-ui/collapsible@0.1.10
+  - @launchpad-ui/navigation@0.11.17
+  - @launchpad-ui/pagination@0.3.55
+  - @launchpad-ui/clipboard@0.10.3
+  - @launchpad-ui/snackbar@0.3.49
+  - @launchpad-ui/counter@0.3.28
+  - @launchpad-ui/avatar@0.4.45
+  - @launchpad-ui/banner@0.9.13
+  - @launchpad-ui/button@0.8.13
+  - @launchpad-ui/drawer@0.4.4
+  - @launchpad-ui/portal@0.1.3
+  - @launchpad-ui/select@0.2.19
+  - @launchpad-ui/alert@0.7.14
+  - @launchpad-ui/modal@0.15.4
+  - @launchpad-ui/table@0.5.7
+  - @launchpad-ui/toast@0.2.46
+  - @launchpad-ui/chip@0.7.12
+  - @launchpad-ui/form@0.8.13
+  - @launchpad-ui/dropdown@0.6.48
+  - @launchpad-ui/filter@0.5.26
+  - @launchpad-ui/tag@0.1.9
+  - @launchpad-ui/overlay@0.3.28
+  - @launchpad-ui/menu@0.10.1
+  - @launchpad-ui/popover@0.10.2
+  - @launchpad-ui/progress-bubbles@0.6.11
+  - @launchpad-ui/tooltip@0.7.12
+
 ## 0.38.1
 
 ### Patch Changes
