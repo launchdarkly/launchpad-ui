@@ -1,3 +1,7 @@
+import type { FieldErrorProps } from './FieldError';
+import type { FormHintProps } from './FormHint';
+import type { LabelProps } from './Label';
+
 import { cx } from 'classix';
 
 import { FieldError } from './FieldError';
@@ -19,6 +23,9 @@ type FormFieldProps = {
   className?: string;
   onBlur?: (field: string) => void;
   'data-test-id'?: string;
+  LabelProps?: Partial<LabelProps>;
+  FormHintProps?: Partial<FormHintProps>;
+  FieldErrorProps?: Partial<FieldErrorProps>;
 };
 
 const FormField = ({
@@ -34,6 +41,9 @@ const FormField = ({
   className,
   onBlur,
   'data-test-id': testId = 'form-field',
+  LabelProps = {},
+  FormHintProps = {},
+  FieldErrorProps = {},
 }: FormFieldProps) => {
   const handleBlur = () => {
     onBlur && onBlur(name);
@@ -49,13 +59,22 @@ const FormField = ({
       data-test-id={testId}
     >
       {label && (
-        <Label htmlFor={htmlFor} required={isRequired}>
+        <Label htmlFor={htmlFor} required={isRequired} {...LabelProps}>
           {label}
         </Label>
       )}
-      {hint && <FormHint className={styles.hint}>{hint}</FormHint>}
+      {hint && (
+        <FormHint className={styles.hint} {...FormHintProps}>
+          {hint}
+        </FormHint>
+      )}
       {children}
-      <FieldError className={styles.fieldErrorMessage} name={name} errorMessage={errorMessage} />
+      <FieldError
+        className={styles.fieldErrorMessage}
+        name={name}
+        errorMessage={errorMessage}
+        {...FieldErrorProps}
+      />
     </FormGroup>
   );
 };

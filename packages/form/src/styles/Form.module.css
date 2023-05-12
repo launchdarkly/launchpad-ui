@@ -370,70 +370,66 @@ input[type='checkbox']:disabled {
 }
 
 .numberField {
-  display: inline-block;
+  display: flex;
+  position: relative;
 
-  & .group {
+  & .numberField-input {
+    padding-right: 2.4rem;
+  }
+
+  & .numberField-stepperContainer {
     display: flex;
-    position: relative;
+    opacity: 0;
+    flex-direction: column;
+    position: absolute;
+    width: 2.4rem;
+    top: 1px;
+    bottom: 1px;
+    right: 1px;
+    transition: all var(--lp-duration-100) linear;
 
-    & .numberInput {
-      padding-right: 2.4rem;
-    }
-
-    & .stepperContainer {
+    & .numberField-stepper {
+      background-color: var(--lp-color-bg-field);
+      flex: auto;
       display: flex;
-      opacity: 0;
-      flex-direction: column;
-      position: absolute;
-      width: 2.4rem;
-      top: 1px;
-      bottom: 1px;
-      right: 1px;
-      transition: all var(--lp-duration-100) linear;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      padding: 0 0.3rem;
+      border: none;
+      border-radius: 0;
+      min-height: 1px;
+      overflow: hidden;
 
-      & .stepper {
-        background-color: var(--lp-color-bg-field);
-        flex: auto;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        cursor: pointer;
-        padding: 0 0.3rem;
-        border: none;
-        border-radius: 0;
-        min-height: 1px;
-        overflow: hidden;
+      &:first-child {
+        border-top-right-radius: 2px;
+        padding-top: 0.3rem;
+      }
 
-        &:first-child {
-          border-top-right-radius: 2px;
-          padding-top: 0.3rem;
-        }
+      &:last-child {
+        border-bottom-right-radius: 2px;
+        padding-bottom: 0.3rem;
+      }
 
-        &:last-child {
-          border-bottom-right-radius: 2px;
-          padding-bottom: 0.3rem;
-        }
+      &:hover {
+        background-color: var(--lp-color-bg-interactive-secondary-hover);
+      }
 
-        &:hover {
-          background-color: var(--lp-color-bg-interactive-secondary-hover);
-        }
+      &:active {
+        background-color: var(--lp-color-bg-interactive-secondary-active);
+      }
 
-        &:active {
-          background-color: var(--lp-color-bg-interactive-secondary-active);
-        }
-
-        & span:has(svg) {
-          width: 100%;
-          color: var(--lp-color-text-ui-primary);
-        }
+      & span:has(svg) {
+        width: 100%;
+        color: var(--lp-color-text-ui-primary);
       }
     }
+  }
 
-    &:hover,
-    &:has(input:focus) {
-      & .stepperContainer {
-        opacity: 1;
-      }
+  &:hover,
+  &:has(input:focus) {
+    & .numberField-stepperContainer {
+      opacity: 1;
     }
   }
 }
