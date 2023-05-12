@@ -6,7 +6,7 @@ import { useNumberField } from '../src/useNumberField';
 
 const Demo = (props: Partial<FormFieldProps> = {}) => {
   const id = 'number-field';
-  const { labelProps, descriptionProps, errorMessageProps, renderNumberField } = useNumberField({
+  const { labelProps, formHintProps, fieldErrorProps, renderNumberField } = useNumberField({
     id,
   });
 
@@ -16,8 +16,8 @@ const Demo = (props: Partial<FormFieldProps> = {}) => {
       name={id}
       htmlFor={id}
       LabelProps={labelProps}
-      FormHintProps={descriptionProps}
-      FieldErrorProps={errorMessageProps}
+      FormHintProps={formHintProps}
+      FieldErrorProps={fieldErrorProps}
       label={id}
       {...props}
     >

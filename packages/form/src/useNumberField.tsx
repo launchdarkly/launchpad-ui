@@ -30,8 +30,8 @@ const useNumberField = ({
   name,
   ...otherProps
 }: UseNumberFieldProps = {}): {
-  descriptionProps: ReturnType<typeof useReactAriaNumberField>['descriptionProps'];
-  errorMessageProps: ReturnType<typeof useReactAriaNumberField>['errorMessageProps'];
+  fieldErrorProps: ReturnType<typeof useReactAriaNumberField>['errorMessageProps'];
+  formHintProps: ReturnType<typeof useReactAriaNumberField>['descriptionProps'];
   labelProps: ReturnType<typeof useReactAriaNumberField>['labelProps'];
   renderNumberField: () => JSX.Element;
 } => {
@@ -45,8 +45,8 @@ const useNumberField = ({
   const numberFieldState = useNumberFieldState({ ...otherProps, locale, formatOptions });
   const inputRef = useRef<HTMLInputElement>(null);
   const {
-    descriptionProps,
-    errorMessageProps,
+    descriptionProps: formHintProps,
+    errorMessageProps: fieldErrorProps,
     labelProps,
     groupProps,
     inputProps,
@@ -55,8 +55,8 @@ const useNumberField = ({
   } = useReactAriaNumberField({ ...otherProps, formatOptions, id }, numberFieldState, inputRef);
 
   return {
-    descriptionProps,
-    errorMessageProps,
+    fieldErrorProps,
+    formHintProps,
     labelProps,
     renderNumberField: () => (
       <div {...groupProps} className={styles.numberField}>
@@ -92,4 +92,4 @@ const Stepper = (props: AriaButtonProps) => {
 };
 
 export { useNumberField };
-export type { UseNumberFieldProps as NumberFieldProps };
+export type { UseNumberFieldProps };
