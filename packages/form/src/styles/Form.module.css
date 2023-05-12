@@ -389,26 +389,29 @@ input[type='checkbox']:disabled {
     transition: all var(--lp-duration-100) linear;
 
     & .numberField-stepper {
+      --numberField-stepper-padding: 0.4rem;
+      --numberField-stepper-border-radius: calc(var(--lp-border-radius-regular) - 0.1rem);
+
       background-color: var(--lp-color-bg-field);
       flex: auto;
       display: flex;
       justify-content: center;
       align-items: center;
       cursor: pointer;
-      padding: 0 0.3rem;
+      padding: 0 var(--numberField-stepper-padding);
       border: none;
       border-radius: 0;
       min-height: 1px;
       overflow: hidden;
 
       &:first-child {
-        border-top-right-radius: 2px;
-        padding-top: 0.3rem;
+        border-top-right-radius: var(--numberField-stepper-border-radius);
+        padding-top: var(--numberField-stepper-padding);
       }
 
       &:last-child {
-        border-bottom-right-radius: 2px;
-        padding-bottom: 0.3rem;
+        border-bottom-right-radius: var(--numberField-stepper-border-radius);
+        padding-bottom: var(--numberField-stepper-padding);
       }
 
       &:hover {
