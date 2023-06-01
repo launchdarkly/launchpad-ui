@@ -1,10 +1,7 @@
 .ToastCenter {
   position: fixed;
-  bottom: 7.25rem;
-  left: 50%;
+  inset: auto auto 7.25rem 50%;
   transform: translateX(-50%);
-  right: auto;
-  top: auto;
   z-index: var(--lp-z-index-700);
 }
 

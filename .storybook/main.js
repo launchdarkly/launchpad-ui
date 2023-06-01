@@ -24,11 +24,11 @@ module.exports = {
     '@storybook/addon-essentials',
     '@storybook/addon-interactions',
     'storybook-addon-pseudo-states',
-    //'@etchteam/storybook-addon-status',
+    '@etchteam/storybook-addon-status',
   ],
-  framework: {
-    name: '@storybook/react-vite',
-    options: { fastRefresh: true },
+  framework: '@storybook/react-vite',
+  core: {
+    disableTelemetry: true,
   },
   staticDirs: ['.'],
   env: (config) => {
@@ -44,7 +44,7 @@ module.exports = {
     return config;
   },
   docs: {
-    docsPage: 'automatic',
+    autodocs: true,
     defaultName: 'Docs',
   },
 };

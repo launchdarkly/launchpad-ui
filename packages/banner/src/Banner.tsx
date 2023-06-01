@@ -42,7 +42,7 @@ const Banner = ({
           size="small"
           onClick={onDismiss}
           kind="close"
-          data-test-id={testId ? `${testId}-dismiss-button` : undefined}
+          data-test-id={`${testId}-dismiss-button`}
         />
       )}
     </div>

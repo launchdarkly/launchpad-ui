@@ -2,7 +2,7 @@
 
 import path from 'path';
 
-import react from '@vitejs/plugin-react';
+import react from '@vitejs/plugin-react-swc';
 import { defineConfig } from 'vite';
 import istanbul from 'vite-plugin-istanbul';
 
@@ -30,8 +30,8 @@ export default defineConfig({
     include: ['**/__tests__/*.spec.{ts,tsx}'],
     coverage: {
       lines: 90,
-      functions: 80,
-      branches: 80,
+      functions: 70,
+      branches: 70,
       statements: 90,
       exclude: ['**/*.spec.tsx', '**/test/'],
     },

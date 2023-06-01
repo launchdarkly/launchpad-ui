@@ -13,6 +13,7 @@ import {
 } from '@remix-run/react';
 
 import launchpadStyles from '@launchpad-ui/tokens/index.css';
+import themeStyles from '@launchpad-ui/tokens/themes.css';
 import globalStyles from './styles/global.css';
 
 // plop start imports
@@ -50,6 +51,7 @@ import tooltipStyles from '@launchpad-ui/tooltip/style.css';
 export const links: LinksFunction = () => {
   return [
     { rel: 'stylesheet', href: launchpadStyles },
+    { rel: 'stylesheet', href: themeStyles },
     { rel: 'stylesheet', href: globalStyles },
     { rel: 'stylesheet', href: buttonStyles },
     { rel: 'stylesheet', href: iconStyles },
