@@ -1,9 +1,6 @@
 .SnackbarCenter {
   position: fixed;
-  top: 2rem;
-  right: 2rem;
-  bottom: auto;
-  left: auto;
+  inset: 2rem 2rem auto auto;
   z-index: var(--lp-z-index-400);
 }
 

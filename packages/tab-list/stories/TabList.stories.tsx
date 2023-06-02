@@ -11,7 +11,7 @@ export default {
   description: 'TabList navigates between related sections of content on the same page.',
   parameters: {
     status: {
-      type: import.meta.env.PACKAGE_STATUS__TAB_LIST,
+      type: import.meta.env.STORYBOOK_PACKAGE_STATUS__TAB_LIST,
     },
   },
 };

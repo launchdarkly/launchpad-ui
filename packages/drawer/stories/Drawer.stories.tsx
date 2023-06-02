@@ -17,7 +17,7 @@ export default {
       page: null,
     },
     status: {
-      type: import.meta.env.PACKAGE_STATUS__DRAWER,
+      type: import.meta.env.STORYBOOK_PACKAGE_STATUS__DRAWER,
     },
   },
 };

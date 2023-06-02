@@ -53,7 +53,7 @@ export default {
   description: 'Toggles represent on/off values as opposed to selection.',
   parameters: {
     status: {
-      type: import.meta.env.PACKAGE_STATUS__TOGGLE,
+      type: import.meta.env.STORYBOOK_PACKAGE_STATUS__TOGGLE,
     },
   },
   decorators: [

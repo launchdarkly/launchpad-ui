@@ -1,7 +1,7 @@
 import { it, expect, describe } from 'vitest';
 
 import { render, screen } from '../../../test/utils';
-import { Add, Info, StatusIcon } from '../src';
+import { Add, Info, StatusIcon, FlairIcon } from '../src';
 
 describe('Icon', () => {
   it('renders', () => {
@@ -10,7 +10,7 @@ describe('Icon', () => {
   });
 
   it('is labelled by a title', () => {
-    render(<Info size="medium" />);
+    render(<Info size="medium" subtle />);
     expect(screen.getByTitle('Info')).toBeInTheDocument();
   });
 
@@ -36,5 +36,14 @@ describe('Icon', () => {
     render(<Info kind="warning" />);
 
     expect(screen.getByRole('img', { hidden: true })).toHaveAttribute('aria-hidden', 'true');
+  });
+
+  it('renders a flair icon', () => {
+    render(
+      <FlairIcon isRounded>
+        <Add size="medium" />
+      </FlairIcon>
+    );
+    expect(screen.getByRole('img', { hidden: true })).toBeInTheDocument();
   });
 });

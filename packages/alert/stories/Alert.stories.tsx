@@ -11,7 +11,7 @@ export default {
   description: 'Actions trigger alerts based on user interaction.',
   parameters: {
     status: {
-      type: import.meta.env.PACKAGE_STATUS__ALERT,
+      type: import.meta.env.STORYBOOK_PACKAGE_STATUS__ALERT,
     },
   },
   argTypes: {

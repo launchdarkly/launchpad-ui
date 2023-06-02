@@ -9,7 +9,7 @@ export default {
   description: 'An element used to set a value within a range.',
   parameters: {
     status: {
-      type: import.meta.env.PACKAGE_STATUS__SLIDER,
+      type: import.meta.env.STORYBOOK_PACKAGE_STATUS__SLIDER,
     },
   },
   decorators: [

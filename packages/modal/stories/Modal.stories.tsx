@@ -17,7 +17,7 @@ export default {
   description: 'Modals presents users information and actions over a page.',
   parameters: {
     status: {
-      type: import.meta.env.PACKAGE_STATUS__MODAL,
+      type: import.meta.env.STORYBOOK_PACKAGE_STATUS__MODAL,
     },
     controls: { sort: 'requiredFirst' },
   },

@@ -8,7 +8,7 @@ export default {
   description: 'UploadButtons trigger a native file upload experience.',
   parameters: {
     status: {
-      type: import.meta.env.PACKAGE_STATUS__BUTTON,
+      type: import.meta.env.STORYBOOK_PACKAGE_STATUS__BUTTON,
     },
   },
   argTypes: {

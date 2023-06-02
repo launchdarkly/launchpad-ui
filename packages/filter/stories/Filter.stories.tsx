@@ -8,7 +8,7 @@ export default {
   description: 'We use filters to filter our lists based on search critera.',
   parameters: {
     status: {
-      type: import.meta.env.PACKAGE_STATUS__FILTER,
+      type: import.meta.env.STORYBOOK_PACKAGE_STATUS__FILTER,
     },
   },
   argTypes: {

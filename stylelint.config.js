@@ -9,7 +9,7 @@ let cssPaths = [];
 })();
 
 module.exports = {
-  extends: ['stylelint-config-standard', 'stylelint-config-prettier'],
+  extends: ['stylelint-config-standard'],
   plugins: ['stylelint-value-no-unknown-custom-properties'],
   rules: {
     'declaration-no-important': true,
@@ -35,5 +35,6 @@ module.exports = {
     ],
     'selector-not-notation': 'simple',
     'import-notation': 'string',
+    'media-feature-range-notation': 'prefix',
   },
 };

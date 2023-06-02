@@ -14,7 +14,7 @@ export default {
   description: 'Clipboards copy text to the clipboard.',
   parameters: {
     status: {
-      type: import.meta.env.PACKAGE_STATUS__CLIPBOARD,
+      type: import.meta.env.STORYBOOK_PACKAGE_STATUS__CLIPBOARD,
     },
   },
   argTypes: {

@@ -14,7 +14,7 @@ export default {
   description: 'Dropdowns display a list of actions or options to a user.',
   parameters: {
     status: {
-      type: import.meta.env.PACKAGE_STATUS__DROPDOWN,
+      type: import.meta.env.STORYBOOK_PACKAGE_STATUS__DROPDOWN,
     },
   },
   decorators: [

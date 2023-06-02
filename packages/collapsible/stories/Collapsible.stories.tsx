@@ -9,7 +9,7 @@ export default {
     'A progressive disclosure component that allows the user to to click a trigger to show more content',
   parameters: {
     status: {
-      type: import.meta.env.PACKAGE_STATUS__COLLAPSIBLE,
+      type: import.meta.env.STORYBOOK_PACKAGE_STATUS__COLLAPSIBLE,
     },
   },
 };

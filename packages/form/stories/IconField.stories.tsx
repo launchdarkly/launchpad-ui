@@ -9,7 +9,7 @@ export default {
   description: 'An IconField renders an icon placed next to a passed field."',
   parameters: {
     status: {
-      type: import.meta.env.PACKAGE_STATUS__FORM,
+      type: import.meta.env.STORYBOOK_PACKAGE_STATUS__FORM,
     },
   },
 };

@@ -13,7 +13,7 @@ export default {
   description: 'Tooltips provide additional information on hover or focus.',
   parameters: {
     status: {
-      type: import.meta.env.PACKAGE_STATUS__TOOLTIP,
+      type: import.meta.env.STORYBOOK_PACKAGE_STATUS__TOOLTIP,
     },
   },
   argTypes: {

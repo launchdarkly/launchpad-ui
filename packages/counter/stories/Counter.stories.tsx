@@ -8,7 +8,7 @@ export default {
   description: 'Indicates the count value of a resource.',
   parameters: {
     status: {
-      type: import.meta.env.PACKAGE_STATUS__COUNTER,
+      type: import.meta.env.STORYBOOK_PACKAGE_STATUS__COUNTER,
     },
   },
   argTypes: {

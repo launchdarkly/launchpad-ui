@@ -126,7 +126,7 @@ const Alert = ({
           icon={<Close size="small" />}
           kind="close"
           onClick={() => setDismissedState(true)}
-          data-test-id={testId ? `${testId}-dismiss-button` : undefined}
+          data-test-id={`${testId}-dismiss-button`}
         />
       )}
     </div>

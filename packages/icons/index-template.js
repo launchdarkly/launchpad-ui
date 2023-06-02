@@ -2,7 +2,7 @@
 const path = require('path');
 
 const defaultIndexTemplate = (filePaths) => {
-  const exportEntries = filePaths.map((filePath) => {
+  const exportEntries = filePaths.map(({ path: filePath }) => {
     const basename = path.basename(filePath, path.extname(filePath));
     const exportName = /^\d/.test(basename) ? `Svg${basename}` : basename;
     return `export { ${exportName} } from './${basename}'`;

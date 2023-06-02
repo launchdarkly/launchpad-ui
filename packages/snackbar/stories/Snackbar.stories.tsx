@@ -8,7 +8,7 @@ export default {
   description: 'An element that provides brief messages about app processes with a CTA.',
   parameters: {
     status: {
-      type: import.meta.env.PACKAGE_STATUS__SNACKBAR,
+      type: import.meta.env.STORYBOOK_PACKAGE_STATUS__SNACKBAR,
     },
   },
 };

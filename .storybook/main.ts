@@ -1,16 +1,17 @@
-const path = require('path');
-const fs = require('fs');
+import type { StorybookConfig } from '@storybook/react-vite';
 
-const fg = require('fast-glob');
-const turbosnap = require('vite-plugin-turbosnap');
+import path from 'path';
+import fs from 'fs';
+import fg from 'fast-glob';
+import turbosnap from 'vite-plugin-turbosnap';
 
-const tsconfig = require('../tsconfig.json');
+import tsconfig from '../tsconfig.json';
 
 const getStories = () =>
   fg.sync([path.resolve(__dirname, `../packages/**/stories/*.stories.tsx`), '!**/node_modules']);
 
-module.exports = {
-  stories: async () => [...getStories()],
+const config: StorybookConfig = {
+  stories: [...getStories()],
   features: {
     /*
      * CSS order issues occur when async chunks are used
@@ -24,11 +25,11 @@ module.exports = {
     '@storybook/addon-essentials',
     '@storybook/addon-interactions',
     'storybook-addon-pseudo-states',
-    //'@etchteam/storybook-addon-status',
+    '@etchteam/storybook-addon-status',
   ],
-  framework: {
-    name: '@storybook/react-vite',
-    options: { fastRefresh: true },
+  framework: '@storybook/react-vite',
+  core: {
+    disableTelemetry: true,
   },
   staticDirs: ['.'],
   env: (config) => {
@@ -38,13 +39,13 @@ module.exports = {
   },
   async viteFinal(config, { configType }) {
     if (configType === 'PRODUCTION') {
-      config.plugins.push(turbosnap({ rootDir: config.root }));
+      config.plugins?.push(turbosnap({ rootDir: config.root || process.cwd() }));
     }
 
     return config;
   },
   docs: {
-    docsPage: 'automatic',
+    autodocs: true,
     defaultName: 'Docs',
   },
 };
@@ -56,10 +57,12 @@ const getPackageStatusEnvVars = () => {
   Object.keys(paths).forEach((key) => {
     const filepath = path.resolve(__dirname, `.${paths[key][0]}/../package.json`);
     const contents = fs.readFileSync(filepath);
-    const { status } = JSON.parse(contents);
+    const { status } = JSON.parse(contents.toString());
     const statusKey = key.replace('@launchpad-ui/', '').replace(/-/g, '_').toUpperCase();
-    statuses[`PACKAGE_STATUS__${statusKey}`] = status;
+    statuses[`STORYBOOK_PACKAGE_STATUS__${statusKey}`] = status;
   });
 
   return statuses;
 };
+
+export default config;
