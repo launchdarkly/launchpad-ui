@@ -1,5 +1,11 @@
 # @launchpad-ui/form
 
+## 0.8.14
+
+### Patch Changes
+
+- [#856](https://github.com/launchdarkly/launchpad-ui/pull/856) [`ac2dea48`](https://github.com/launchdarkly/launchpad-ui/commit/ac2dea48df7325bf6d47b3587be310ea35c33143) Thanks [@XieX](https://github.com/XieX)! - Ref forwarding for SelectField
+
 ## 0.8.13
 
 ### Patch Changes

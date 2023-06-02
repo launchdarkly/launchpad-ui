@@ -1,5 +1,13 @@
 # @launchpad-ui/toast
 
+## 0.2.47
+
+### Patch Changes
+
+- [#860](https://github.com/launchdarkly/launchpad-ui/pull/860) [`dad62d15`](https://github.com/launchdarkly/launchpad-ui/commit/dad62d152d04d4f82708774dce51a598608dcb94) Thanks [@Niznikr](https://github.com/Niznikr)! - Update dev dependencies
+
+- [#843](https://github.com/launchdarkly/launchpad-ui/pull/843) [`f462ab6a`](https://github.com/launchdarkly/launchpad-ui/commit/f462ab6a2ee69c830af63713728f42766989864b) Thanks [@renovate](https://github.com/apps/renovate)! - [Toast] Omit HTML `content` attribute for ToastProps
+
 ## 0.2.46
 
 ### Patch Changes

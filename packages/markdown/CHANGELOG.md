@@ -1,5 +1,13 @@
 # @launchpad-ui/markdown
 
+## 0.4.10
+
+### Patch Changes
+
+- [#858](https://github.com/launchdarkly/launchpad-ui/pull/858) [`06815f9d`](https://github.com/launchdarkly/launchpad-ui/commit/06815f9dff12b374ee872a12f457dba08426b052) Thanks [@renovate](https://github.com/apps/renovate)! - [Markdown] Update isomorphic-dompurify
+
+- [#862](https://github.com/launchdarkly/launchpad-ui/pull/862) [`3df7180e`](https://github.com/launchdarkly/launchpad-ui/commit/3df7180eddb0f016e0b1dab358144cdad95c338d) Thanks [@renovate](https://github.com/apps/renovate)! - [Markdown] Update marked
+
 ## 0.4.9
 
 ### Patch Changes
