@@ -22,7 +22,7 @@ importers:
         version: 17.4.4
       '@cypress/code-coverage':
         specifier: ^3.10.0
-        version: 3.10.0(@babel/core@7.21.0)(@babel/preset-env@7.21.5)(babel-loader@9.1.2)(cypress@12.13.0)(webpack@5.85.0)
+        version: 3.10.0(@babel/core@7.22.1)(@babel/preset-env@7.21.5)(babel-loader@9.1.2)(cypress@12.13.0)(webpack@5.85.0)
       '@etchteam/storybook-addon-status':
         specifier: ^4.2.4
         version: 4.2.4
@@ -114,8 +114,8 @@ importers:
         specifier: ^0.31.4
         version: 0.31.4(vitest@0.31.4)
       axe-core:
-        specifier: ^4.6.2
-        version: 4.6.3
+        specifier: ^4.7.2
+        version: 4.7.2
       chromatic:
         specifier: ^6.14.0
         version: 6.17.1
@@ -127,7 +127,7 @@ importers:
         version: 12.13.0
       cypress-axe:
         specifier: ^1.4.0
-        version: 1.4.0(axe-core@4.6.3)(cypress@12.13.0)
+        version: 1.4.0(axe-core@4.7.2)(cypress@12.13.0)
       cypress-real-events:
         specifier: ^1.8.1
         version: 1.8.1(cypress@12.13.0)
@@ -4768,12 +4768,12 @@ packages:
       postcss-selector-parser: 6.0.13
     dev: true
 
-  /@cypress/code-coverage@3.10.0(@babel/core@7.21.0)(@babel/preset-env@7.21.5)(babel-loader@9.1.2)(cypress@12.13.0)(webpack@5.85.0):
+  /@cypress/code-coverage@3.10.0(@babel/core@7.22.1)(@babel/preset-env@7.21.5)(babel-loader@9.1.2)(cypress@12.13.0)(webpack@5.85.0):
     resolution: {integrity: sha512-K5pW2KPpK4vKMXqxd6vuzo6m9BNgpAv1LcrrtmqAtOJ1RGoEILXYZVost0L6Q+V01NyY7n7jXIIfS7LR3nP6YA==}
     peerDependencies:
       cypress: '*'
     dependencies:
-      '@cypress/webpack-preprocessor': 5.17.0(@babel/core@7.21.0)(@babel/preset-env@7.21.5)(babel-loader@9.1.2)(webpack@5.85.0)
+      '@cypress/webpack-preprocessor': 5.17.0(@babel/core@7.22.1)(@babel/preset-env@7.21.5)(babel-loader@9.1.2)(webpack@5.85.0)
       chalk: 4.1.2
       cypress: 12.13.0
       dayjs: 1.10.7
@@ -4815,7 +4815,7 @@ packages:
       uuid: 8.3.2
     dev: true
 
-  /@cypress/webpack-preprocessor@5.17.0(@babel/core@7.21.0)(@babel/preset-env@7.21.5)(babel-loader@9.1.2)(webpack@5.85.0):
+  /@cypress/webpack-preprocessor@5.17.0(@babel/core@7.22.1)(@babel/preset-env@7.21.5)(babel-loader@9.1.2)(webpack@5.85.0):
     resolution: {integrity: sha512-HyFqHkrOrIIYOt4G+r3VK0kVYTcev1tEcqBI/0DJ4AzEuEgW/TB+cX56txy4Cgn60XXdJoul2utclZwUqOsPZA==}
     peerDependencies:
       '@babel/core': ^7.0.1
@@ -4823,9 +4823,9 @@ packages:
       babel-loader: ^8.0.2 || ^9
       webpack: ^4 || ^5
     dependencies:
-      '@babel/core': 7.21.0
-      '@babel/preset-env': 7.21.5(@babel/core@7.21.0)
-      babel-loader: 9.1.2(@babel/core@7.21.0)(webpack@5.85.0)
+      '@babel/core': 7.22.1
+      '@babel/preset-env': 7.21.5(@babel/core@7.22.1)
+      babel-loader: 9.1.2(@babel/core@7.22.1)(webpack@5.85.0)
       bluebird: 3.7.1
       debug: 4.3.4(supports-color@8.1.1)
       lodash: 4.17.21
@@ -7045,7 +7045,7 @@ packages:
       '@storybook/preview-api': 7.0.18
       '@storybook/theming': 7.0.18(react-dom@18.2.0)(react@18.2.0)
       '@storybook/types': 7.0.18
-      axe-core: 4.6.3
+      axe-core: 4.7.2
       lodash: 4.17.21
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
@@ -9843,8 +9843,8 @@ packages:
     resolution: {integrity: sha512-NmWvPnx0F1SfrQbYwOi7OeaNGokp9XhzNioJ/CSBs8Qa4vxug81mhJEAVZwxXuBmYB5KDRfMq/F3RR0BIU7sWg==}
     dev: true
 
-  /axe-core@4.6.3:
-    resolution: {integrity: sha512-/BQzOX780JhsxDnPpH4ZiyrJAzcd8AfzFPkv+89veFSr1rcMjuq2JDCwypKaPeB6ljHp9KjXhPpjgCvQlWYuqg==}
+  /axe-core@4.7.2:
+    resolution: {integrity: sha512-zIURGIS1E1Q4pcrMjp+nnEh+16G56eG/MUllJH8yEvw7asDo7Ac9uhC9KIH5jzpITueEZolfYglnCGIuSBz39g==}
     engines: {node: '>=4'}
     dev: true
 
@@ -9881,14 +9881,14 @@ packages:
       '@babel/core': 7.22.1
     dev: true
 
-  /babel-loader@9.1.2(@babel/core@7.21.0)(webpack@5.85.0):
+  /babel-loader@9.1.2(@babel/core@7.22.1)(webpack@5.85.0):
     resolution: {integrity: sha512-mN14niXW43tddohGl8HPu5yfQq70iUThvFL/4QzESA7GcZoC0eVOhvWdQ8+3UlSjaDE9MVtsW9mxDY07W7VpVA==}
     engines: {node: '>= 14.15.0'}
     peerDependencies:
       '@babel/core': ^7.12.0
       webpack: '>=5'
     dependencies:
-      '@babel/core': 7.21.0
+      '@babel/core': 7.22.1
       find-cache-dir: 3.3.2
       schema-utils: 4.0.1
       webpack: 5.85.0(esbuild@0.17.19)
@@ -11033,14 +11033,14 @@ packages:
       stream-transform: 2.1.3
     dev: true
 
-  /cypress-axe@1.4.0(axe-core@4.6.3)(cypress@12.13.0):
+  /cypress-axe@1.4.0(axe-core@4.7.2)(cypress@12.13.0):
     resolution: {integrity: sha512-Ut7NKfzjyKm0BEbt2WxuKtLkIXmx6FD2j0RwdvO/Ykl7GmB/qRQkwbKLk3VP35+83hiIr8GKD04PDdrTK5BnyA==}
     engines: {node: '>=10'}
     peerDependencies:
       axe-core: ^3 || ^4
       cypress: ^10 || ^11 || ^12
     dependencies:
-      axe-core: 4.6.3
+      axe-core: 4.7.2
       cypress: 12.13.0
     dev: true
 
@@ -12050,7 +12050,7 @@ packages:
       array-includes: 3.1.6
       array.prototype.flatmap: 1.3.1
       ast-types-flow: 0.0.7
-      axe-core: 4.6.3
+      axe-core: 4.7.2
       axobject-query: 3.1.1
       damerau-levenshtein: 1.0.8
       emoji-regex: 9.2.2
