@@ -13,7 +13,7 @@ type ToastBaseProps = {
   'data-test-id'?: string;
 };
 
-type ToastProps = Omit<ComponentProps<'div'>, 'children'> & ToastBaseProps;
+type ToastProps = Omit<ComponentProps<'div'>, 'children' | 'content'> & ToastBaseProps;
 
 const Toast = ({
   className,

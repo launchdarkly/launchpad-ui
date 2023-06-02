@@ -34,7 +34,7 @@
     "test": "exit 0"
   },
   "devDependencies": {
-    "style-dictionary": "^3.7.0",
-    "yaml": "^2.2.1"
+    "style-dictionary": "^3.8.0",
+    "yaml": "^2.3.1"
   }
 }
