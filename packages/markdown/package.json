@@ -35,14 +35,14 @@
     "@launchpad-ui/tokens": "workspace:~",
     "classix": "2.1.17",
     "isomorphic-dompurify": "^1.6.0",
-    "marked": "^4.2.2"
+    "marked": "^5.0.4"
   },
   "peerDependencies": {
     "react": "18.2.0",
     "react-dom": "18.2.0"
   },
   "devDependencies": {
-    "@types/marked": "^4.0.3",
+    "@types/marked": "^5.0.0",
     "html-react-parser": "3.0.8",
     "react": "18.2.0",
     "react-dom": "18.2.0"
