@@ -59,10 +59,10 @@
   "devDependencies": {
     "@remix-run/dev": "^1.16.1",
     "@remix-run/eslint-config": "^1.16.1",
-    "eslint": "^8.31.0",
+    "eslint": "^8.41.0",
     "typescript": "^5.0.4"
   },
   "engines": {
-    "node": ">=v18.13.0"
+    "node": ">=v18.16.0"
   }
 }
