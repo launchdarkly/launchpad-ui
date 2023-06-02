@@ -52,7 +52,7 @@ export default {
   decorators: [buttonTemplateWithStates],
   parameters: {
     status: {
-      type: import.meta.env.PACKAGE_STATUS__BUTTON,
+      type: import.meta.env.STORYBOOK_PACKAGE_STATUS__BUTTON,
     },
   },
   argTypes: {

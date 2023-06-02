@@ -10,7 +10,7 @@ export default {
   description: 'Chips can be used as visual indicators for tags.',
   parameters: {
     status: {
-      type: import.meta.env.PACKAGE_STATUS__CHIP,
+      type: import.meta.env.STORYBOOK_PACKAGE_STATUS__CHIP,
     },
   },
   argTypes: {

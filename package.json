@@ -39,7 +39,6 @@
   },
   "homepage": "https://github.com/launchdarkly/launchpad-ui#readme",
   "devDependencies": {
-    "@babel/core": "^7.20.2",
     "@changesets/changelog-github": "^0.4.4",
     "@changesets/cli": "^2.26.0",
     "@commitlint/cli": "^17.4.1",

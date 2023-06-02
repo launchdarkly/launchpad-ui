@@ -8,7 +8,7 @@ export default {
   description: 'Progress indicates a page or content is loading.',
   parameters: {
     status: {
-      type: import.meta.env.PACKAGE_STATUS__PROGRESS,
+      type: import.meta.env.STORYBOOK_PACKAGE_STATUS__PROGRESS,
     },
   },
   argTypes: {

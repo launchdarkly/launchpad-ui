@@ -13,7 +13,7 @@ export default {
   description: 'An element used to provide navigation links to help users move through an app.',
   parameters: {
     status: {
-      type: import.meta.env.PACKAGE_STATUS__NAVIGATION,
+      type: import.meta.env.STORYBOOK_PACKAGE_STATUS__NAVIGATION,
     },
   },
   argTypes: {

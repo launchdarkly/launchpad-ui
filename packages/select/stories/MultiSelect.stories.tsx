@@ -15,7 +15,7 @@ export default {
     'A Select combines a text input with a listbox, allowing users to filter a list of options to items matching a query.',
   parameters: {
     status: {
-      type: import.meta.env.PACKAGE_STATUS__SELECT,
+      type: import.meta.env.STORYBOOK_PACKAGE_STATUS__SELECT,
     },
   },
 };

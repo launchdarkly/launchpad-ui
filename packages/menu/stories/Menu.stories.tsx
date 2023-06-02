@@ -12,7 +12,7 @@ export default {
   description: 'Menus present a list of items a user can choose from.',
   parameters: {
     status: {
-      type: import.meta.env.PACKAGE_STATUS__MENU,
+      type: import.meta.env.STORYBOOK_PACKAGE_STATUS__MENU,
     },
   },
 };

@@ -58,7 +58,7 @@ const getPackageStatusEnvVars = () => {
     const contents = fs.readFileSync(filepath);
     const { status } = JSON.parse(contents);
     const statusKey = key.replace('@launchpad-ui/', '').replace(/-/g, '_').toUpperCase();
-    statuses[`PACKAGE_STATUS__${statusKey}`] = status;
+    statuses[`STORYBOOK_PACKAGE_STATUS__${statusKey}`] = status;
   });
 
   return statuses;

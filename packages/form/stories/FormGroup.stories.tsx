@@ -8,7 +8,7 @@ export default {
   description: 'A group of form fields.',
   parameters: {
     status: {
-      type: import.meta.env.PACKAGE_STATUS__FORM,
+      type: import.meta.env.STORYBOOK_PACKAGE_STATUS__FORM,
     },
   },
   argTypes: {

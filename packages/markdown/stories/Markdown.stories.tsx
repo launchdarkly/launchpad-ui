@@ -12,7 +12,7 @@ export default {
   description: 'Render formatted plaintext.',
   parameters: {
     status: {
-      type: import.meta.env.PACKAGE_STATUS__MARKDOWN,
+      type: import.meta.env.STORYBOOK_PACKAGE_STATUS__MARKDOWN,
     },
   },
   argTypes: {
