@@ -1,5 +1,31 @@
 # @launchpad-ui/core
 
+## 0.38.3
+
+### Patch Changes
+
+- [#856](https://github.com/launchdarkly/launchpad-ui/pull/856) [`ac2dea48`](https://github.com/launchdarkly/launchpad-ui/commit/ac2dea48df7325bf6d47b3587be310ea35c33143) Thanks [@XieX](https://github.com/XieX)! - Ref forwarding for SelectField
+
+- [#860](https://github.com/launchdarkly/launchpad-ui/pull/860) [`dad62d15`](https://github.com/launchdarkly/launchpad-ui/commit/dad62d152d04d4f82708774dce51a598608dcb94) Thanks [@Niznikr](https://github.com/Niznikr)! - Update dev dependencies
+
+- [#858](https://github.com/launchdarkly/launchpad-ui/pull/858) [`06815f9d`](https://github.com/launchdarkly/launchpad-ui/commit/06815f9dff12b374ee872a12f457dba08426b052) Thanks [@renovate](https://github.com/apps/renovate)! - [Markdown] Update isomorphic-dompurify
+
+- [#862](https://github.com/launchdarkly/launchpad-ui/pull/862) [`3df7180e`](https://github.com/launchdarkly/launchpad-ui/commit/3df7180eddb0f016e0b1dab358144cdad95c338d) Thanks [@renovate](https://github.com/apps/renovate)! - [Markdown] Update marked
+
+- [#843](https://github.com/launchdarkly/launchpad-ui/pull/843) [`f462ab6a`](https://github.com/launchdarkly/launchpad-ui/commit/f462ab6a2ee69c830af63713728f42766989864b) Thanks [@renovate](https://github.com/apps/renovate)! - [Toast] Omit HTML `content` attribute for ToastProps
+
+- Updated dependencies [[`ac2dea48`](https://github.com/launchdarkly/launchpad-ui/commit/ac2dea48df7325bf6d47b3587be310ea35c33143), [`dad62d15`](https://github.com/launchdarkly/launchpad-ui/commit/dad62d152d04d4f82708774dce51a598608dcb94), [`06815f9d`](https://github.com/launchdarkly/launchpad-ui/commit/06815f9dff12b374ee872a12f457dba08426b052), [`3df7180e`](https://github.com/launchdarkly/launchpad-ui/commit/3df7180eddb0f016e0b1dab358144cdad95c338d), [`f462ab6a`](https://github.com/launchdarkly/launchpad-ui/commit/f462ab6a2ee69c830af63713728f42766989864b)]:
+  - @launchpad-ui/form@0.8.14
+  - @launchpad-ui/snackbar@0.3.50
+  - @launchpad-ui/banner@0.9.14
+  - @launchpad-ui/drawer@0.4.5
+  - @launchpad-ui/alert@0.7.15
+  - @launchpad-ui/toast@0.2.47
+  - @launchpad-ui/markdown@0.4.10
+  - @launchpad-ui/menu@0.10.2
+  - @launchpad-ui/filter@0.5.27
+  - @launchpad-ui/navigation@0.11.18
+
 ## 0.38.2
 
 ### Patch Changes

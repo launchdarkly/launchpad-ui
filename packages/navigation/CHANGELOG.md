@@ -1,5 +1,12 @@
 # @launchpad-ui/navigation
 
+## 0.11.18
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @launchpad-ui/menu@0.10.2
+
 ## 0.11.17
 
 ### Patch Changes
