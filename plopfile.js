@@ -110,40 +110,9 @@ module.exports = (plop) => {
        * Local Remix integration
        */
       {
-        path: 'apps/remix/package.json',
-        pattern: /("dependencies": {)/g,
-        template: '$1\n    "@launchpad-ui/{{dashCase name}}": "workspace:~",',
-        type: 'modify',
-        transform: (file) =>
-          sortModification(file, {
-            openPatternStr: '"dependencies": {',
-            closePatternStr: '  },',
-            handleNonTrailingCommas: true,
-          }),
-      },
-      {
         type: 'add',
         path: 'apps/remix/app/routes/components/{{dashCase name}}.tsx',
         templateFile: '.plop/templates/component/remix-example.tsx.hbs',
-      },
-      {
-        path: 'apps/remix/app/root.tsx',
-        pattern: /(plop start imports)/g,
-        template:
-          "$1\nimport {{camelCase name}}Styles from '@launchpad-ui/{{dashCase name}}/style.css';",
-        type: 'modify',
-        transform: (file) =>
-          sortModification(file, {
-            openPatternStr: 'plop start imports',
-            closePatternStr: 'plop end imports',
-          }),
-      },
-      {
-        path: 'apps/remix/app/root.tsx',
-        pattern:
-          /({ rel: 'stylesheet', href: [^\s]+ },\n)(?!.*({ rel: 'stylesheet', href: [^\s]+ },\n))/g,
-        template: "$1    { rel: 'stylesheet', href: {{camelCase name}}Styles },\n",
-        type: 'modify',
       },
       {
         path: 'apps/remix/app/data.server.ts',

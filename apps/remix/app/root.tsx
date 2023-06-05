@@ -2,6 +2,7 @@ import type { LinksFunction, MetaFunction } from '@remix-run/node';
 import type { PropsWithChildren, ReactNode } from 'react';
 
 import { SSRProvider } from '@react-aria/ssr';
+import { cssBundleHref } from '@remix-run/css-bundle';
 import {
   Links,
   LiveReload,
@@ -15,73 +16,15 @@ import {
 import launchpadStyles from '@launchpad-ui/tokens/index.css';
 import themeStyles from '@launchpad-ui/tokens/themes.css';
 import globalStyles from './styles/global.css';
-
-// plop start imports
-import alertStyles from '@launchpad-ui/alert/style.css';
-import avatarStyles from '@launchpad-ui/avatar/style.css';
-import bannerStyles from '@launchpad-ui/banner/style.css';
-import buttonStyles from '@launchpad-ui/button/style.css';
-import chipStyles from '@launchpad-ui/chip/style.css';
-import clipboardStyles from '@launchpad-ui/clipboard/style.css';
-import counterStyles from '@launchpad-ui/counter/style.css';
-import drawerStyles from '@launchpad-ui/drawer/style.css';
-import filterStyles from '@launchpad-ui/filter/style.css';
-import formStyles from '@launchpad-ui/form/style.css';
 import iconStyles from '@launchpad-ui/icons/style.css';
-import markdownStyles from '@launchpad-ui/markdown/style.css';
-import menuStyles from '@launchpad-ui/menu/style.css';
-import modalStyles from '@launchpad-ui/modal/style.css';
-import navigationStyles from '@launchpad-ui/navigation/style.css';
-import paginationStyles from '@launchpad-ui/pagination/style.css';
-import popoverStyles from '@launchpad-ui/popover/style.css';
-import progressBubblesStyles from '@launchpad-ui/progress-bubbles/style.css';
-import progressStyles from '@launchpad-ui/progress/style.css';
-import selectStyles from '@launchpad-ui/select/style.css';
-import sliderStyles from '@launchpad-ui/slider/style.css';
-import snackbarStyles from '@launchpad-ui/snackbar/style.css';
-import splitButtonStyles from '@launchpad-ui/split-button/style.css';
-import tabListStyles from '@launchpad-ui/tab-list/style.css';
-import tableStyles from '@launchpad-ui/table/style.css';
-import tagStyles from '@launchpad-ui/tag/style.css';
-import toastStyles from '@launchpad-ui/toast/style.css';
-import toggleStyles from '@launchpad-ui/toggle/style.css';
-import tooltipStyles from '@launchpad-ui/tooltip/style.css';
-// plop end imports
 
 export const links: LinksFunction = () => {
   return [
     { rel: 'stylesheet', href: launchpadStyles },
     { rel: 'stylesheet', href: themeStyles },
     { rel: 'stylesheet', href: globalStyles },
-    { rel: 'stylesheet', href: buttonStyles },
     { rel: 'stylesheet', href: iconStyles },
-    { rel: 'stylesheet', href: chipStyles },
-    { rel: 'stylesheet', href: alertStyles },
-    { rel: 'stylesheet', href: toggleStyles },
-    { rel: 'stylesheet', href: progressStyles },
-    { rel: 'stylesheet', href: tabListStyles },
-    { rel: 'stylesheet', href: modalStyles },
-    { rel: 'stylesheet', href: popoverStyles },
-    { rel: 'stylesheet', href: tooltipStyles },
-    { rel: 'stylesheet', href: bannerStyles },
-    { rel: 'stylesheet', href: clipboardStyles },
-    { rel: 'stylesheet', href: menuStyles },
-    { rel: 'stylesheet', href: formStyles },
-    { rel: 'stylesheet', href: avatarStyles },
-    { rel: 'stylesheet', href: navigationStyles },
-    { rel: 'stylesheet', href: progressBubblesStyles },
-    { rel: 'stylesheet', href: counterStyles },
-    { rel: 'stylesheet', href: sliderStyles },
-    { rel: 'stylesheet', href: tableStyles },
-    { rel: 'stylesheet', href: paginationStyles },
-    { rel: 'stylesheet', href: splitButtonStyles },
-    { rel: 'stylesheet', href: markdownStyles },
-    { rel: 'stylesheet', href: filterStyles },
-    { rel: 'stylesheet', href: snackbarStyles },
-    { rel: 'stylesheet', href: toastStyles },
-    { rel: 'stylesheet', href: drawerStyles },
-    { rel: 'stylesheet', href: selectStyles },
-    { rel: 'stylesheet', href: tagStyles },
+    ...(cssBundleHref ? [{ rel: 'stylesheet', href: cssBundleHref }] : []),
   ];
 };
 

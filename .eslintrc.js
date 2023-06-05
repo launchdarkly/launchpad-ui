@@ -78,6 +78,10 @@ module.exports = {
         selector: 'TSQualifiedName[left.name=React]',
         message: "Don't use the React namespace. Import the type instead.",
       },
+      {
+        selector: ':matches(ExportAllDeclaration)',
+        message: 'Use named exports.',
+      },
     ],
   },
   overrides: [

@@ -44,7 +44,6 @@
     "@launchpad-ui/filter": "workspace:~",
     "@launchpad-ui/focus-trap": "workspace:~",
     "@launchpad-ui/form": "workspace:~",
-    "@launchpad-ui/icons": "workspace:~",
     "@launchpad-ui/markdown": "workspace:~",
     "@launchpad-ui/menu": "workspace:~",
     "@launchpad-ui/modal": "workspace:~",
@@ -64,7 +63,6 @@
     "@launchpad-ui/tag": "workspace:~",
     "@launchpad-ui/toast": "workspace:~",
     "@launchpad-ui/toggle": "workspace:~",
-    "@launchpad-ui/tokens": "workspace:~",
     "@launchpad-ui/tooltip": "workspace:~"
   },
   "peerDependencies": {
