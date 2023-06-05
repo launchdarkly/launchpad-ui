@@ -97,13 +97,25 @@ module.exports = (plop) => {
       },
       {
         path: 'packages/core/src/index.ts',
-        pattern: /(plop start imports)/g,
-        template: "$1\nexport * from '@launchpad-ui/{{dashCase name}}';",
+        pattern: /(plop start type exports)/g,
+        template:
+          "$1\nexport type { {{pascalCase name}}Props } from '@launchpad-ui/{{dashCase name}}';",
         type: 'modify',
         transform: (file) =>
           sortModification(file, {
-            openPatternStr: 'plop start imports',
-            closePatternStr: 'plop end imports',
+            openPatternStr: 'plop start type exports',
+            closePatternStr: 'plop end type exports',
+          }),
+      },
+      {
+        path: 'packages/core/src/index.ts',
+        pattern: /(plop start module exports)/g,
+        template: "$1\nexport { {{pascalCase name}} } from '@launchpad-ui/{{dashCase name}}';",
+        type: 'modify',
+        transform: (file) =>
+          sortModification(file, {
+            openPatternStr: 'plop start module exports',
+            closePatternStr: 'plop end module exports',
           }),
       },
       /*

@@ -1,4 +1,4 @@
-// plop start imports
+// plop start type exports
 export type { AlertProps } from '@launchpad-ui/alert';
 export type { AvatarProps } from '@launchpad-ui/avatar';
 export type { BannerProps } from '@launchpad-ui/banner';
@@ -100,7 +100,9 @@ export type { TagGroupProps, TagGroupActionProps } from '@launchpad-ui/tag';
 export type { ToastProps, ToastCenterProps, ToastRecord } from '@launchpad-ui/toast';
 export type { ToggleProps } from '@launchpad-ui/toggle';
 export type { TooltipProps } from '@launchpad-ui/tooltip';
+// plop end type exports
 
+// plop start module exports
 export { Alert } from '@launchpad-ui/alert';
 export { Avatar } from '@launchpad-ui/avatar';
 export { Banner } from '@launchpad-ui/banner';
@@ -183,4 +185,4 @@ export { TagGroup, TagItem } from '@launchpad-ui/tag';
 export { Toast, ToastCenter } from '@launchpad-ui/toast';
 export { Toggle } from '@launchpad-ui/toggle';
 export { Tooltip, TooltipBase } from '@launchpad-ui/tooltip';
-// plop end imports
+// plop end module exports

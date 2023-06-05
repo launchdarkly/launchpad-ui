@@ -15,6 +15,7 @@ const customRender = (ui: ReactElement, options = {}): ReturnType<typeof render>
     ...options,
   });
 
+// eslint-disable-next-line no-restricted-syntax
 export * from '@testing-library/react';
 export { default as userEvent } from '@testing-library/user-event';
 // override render export

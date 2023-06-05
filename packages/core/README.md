@@ -20,6 +20,7 @@ First, import the CSS variable tokens into your project:
 ```css
 @import '@launchpad-ui/tokens/dist/index.css';
 @import '@launchpad-ui/tokens/dist/media-queries.css';
+@import '@launchpad-ui/tokens/dist/themes.css';
 ```
 
 Voilà, you can now begin using any of the components available in LaunchPad. For the full list, view [our Storybook](https://main--626696a2018c1f004a1cde86.chromatic.com/?path=/story/components-alert--success).
@@ -38,7 +39,7 @@ return (
 
 ### Importing stylesheets
 
-In some frameworks, such as Remix, adding styles via `<link rel="stylesheet">` tags is the preferred approach. In LaunchPad, we expose each component's stylesheets so you can import them directly. For a Remix example, [click here](https://github.com/launchdarkly/launchpad-ui/blob/main/apps/remix/app/root.tsx#L41).
+Side-effect imports of CSS files are used for component styles. In LaunchPad, we also expose each component's stylesheets so you can import them directly. For a Remix example, [click here](https://github.com/launchdarkly/launchpad-ui/blob/main/apps/remix/app/root.tsx#L16-L29).
 
 ---
 
