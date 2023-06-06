@@ -10,12 +10,12 @@ import {
   SelectField,
   TextArea,
   Checkbox,
-  Info,
 } from '@launchpad-ui/core';
+import { Info } from '@launchpad-ui/icons';
 
 export default function Index() {
   return (
-    <Form id="testing" name="My Form" ariaLabel="My Form">
+    <Form id="testing" name="My Form" aria-label="My Form">
       <h4>Form Field</h4>
       <FormField
         isRequired={true}
