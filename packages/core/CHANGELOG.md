@@ -1,5 +1,27 @@
 # @launchpad-ui/core
 
+## 0.39.0
+
+### Minor Changes
+
+- [#864](https://github.com/launchdarkly/launchpad-ui/pull/864) [`000c618d`](https://github.com/launchdarkly/launchpad-ui/commit/000c618d617aea5e6a1e8286ee858e6409b651ca) Thanks [@Niznikr](https://github.com/Niznikr)! - [Core] Replace barrel exports with named exports and remove icons+tokens packages to improve tree-shaking and support [Remix's CSS bundling](https://remix.run/docs/en/main/guides/styling#css-bundling).
+
+  As a result, the icons and tokens packages have been removed from `core` as their exports are auto-generated and would incur too high of maintenance cost to `core`'s index file.
+
+  Install and import from `@launchpad-ui/icons` and `@launchpad-ui/tokens` instead:
+
+  Before:
+
+  ```js
+  import { Add } from '@launchpad-ui/core';
+  ```
+
+  After:
+
+  ```js
+  import { Add } from '@launchpad-ui/icons';
+  ```
+
 ## 0.38.3
 
 ### Patch Changes
