@@ -12,14 +12,6 @@ const getStories = () =>
 
 const config: StorybookConfig = {
   stories: [...getStories()],
-  features: {
-    /*
-     * CSS order issues occur when async chunks are used
-     * See: https://github.com/vitejs/vite/pull/9278
-     * TODO: remove once Vite has the fix released
-     */
-    storyStoreV7: false,
-  },
   addons: [
     '@storybook/addon-a11y',
     '@storybook/addon-essentials',
@@ -40,6 +32,10 @@ const config: StorybookConfig = {
   async viteFinal(config, { configType }) {
     if (configType === 'PRODUCTION') {
       config.plugins?.push(turbosnap({ rootDir: config.root || process.cwd() }));
+    }
+    // https://github.com/vitejs/vite/issues/3924
+    if (config.build) {
+      config.build.cssCodeSplit = false;
     }
 
     return config;
