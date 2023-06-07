@@ -1,6 +1,6 @@
 ---
-'@launchpad-ui/core': minor
-'@launchpad-ui/form': minor
+'@launchpad-ui/core': patch
+'@launchpad-ui/form': patch
 ---
 
-This adds a new "useNumberField" hook to the "form" package. This also adds the ability to supply props objects to "FormField" to override underlying props its rendered "Label", "FormHint", and "FieldError" component instances.
+[Form] Add `useNumberField` hook. Add the ability to supply props objects to `FormField` to override underlying props its rendered `Label`, `FormHint`, and `FieldError` component instances.

@@ -701,17 +701,20 @@ importers:
         specifier: workspace:~
         version: link:../tokens
       '@react-aria/button':
-        specifier: 3.7.1
-        version: 3.7.1(react@18.2.0)
+        specifier: 3.7.2
+        version: 3.7.2(react@18.2.0)
       '@react-aria/i18n':
-        specifier: 3.7.1
-        version: 3.7.1(react@18.2.0)
+        specifier: 3.7.2
+        version: 3.7.2(react@18.2.0)
       '@react-aria/numberfield':
-        specifier: 3.5.0
-        version: 3.5.0(react-dom@18.2.0)(react@18.2.0)
+        specifier: 3.5.1
+        version: 3.5.1(react-dom@18.2.0)(react@18.2.0)
       '@react-aria/visually-hidden':
         specifier: 3.8.1
         version: 3.8.1(react@18.2.0)
+      '@react-stately/numberfield':
+        specifier: 3.4.2
+        version: 3.4.2(react@18.2.0)
       classix:
         specifier: 2.1.17
         version: 2.1.17
@@ -5012,12 +5015,6 @@ packages:
       '@swc/helpers': 0.4.14
     dev: false
 
-  /@internationalized/date@3.2.0:
-    resolution: {integrity: sha512-VDMHN1m33L4eqPs5BaihzgQJXyaORbMoHOtrapFxx179J8ucY5CRIHYsq5RRLKPHZWgjNfa5v6amWWDkkMFywA==}
-    dependencies:
-      '@swc/helpers': 0.4.14
-    dev: false
-
   /@internationalized/message@3.1.0:
     resolution: {integrity: sha512-Oo5m70FcBdADf7G8NkUffVSfuCdeAYVfsvNjZDi9ELpjvkc4YNJVTHt/NyTI9K7FgAVoELxiP9YmN0sJ+HNHYQ==}
     dependencies:
@@ -5597,6 +5594,28 @@ packages:
       react-dom: 18.2.0(react@18.2.0)
     dev: false
 
+  /@react-aria/numberfield@3.5.1(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-O0hDANrlwsKSKjiV64Ryx1FfNxkuByU9qXKz7vpMf8ZeR3OLAYzvib1RNeFvijM9/TUGp1zA40cwGknEp6D72w==}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0 || 18
+      react-dom: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0
+    dependencies:
+      '@react-aria/i18n': 3.7.2(react@18.2.0)
+      '@react-aria/interactions': 3.15.1(react@18.2.0)
+      '@react-aria/live-announcer': 3.3.0
+      '@react-aria/spinbutton': 3.4.1(react-dom@18.2.0)(react@18.2.0)
+      '@react-aria/textfield': 3.9.2(react@18.2.0)
+      '@react-aria/utils': 3.17.0(react@18.2.0)
+      '@react-stately/numberfield': 3.4.2(react@18.2.0)
+      '@react-types/button': 3.7.3(react@18.2.0)
+      '@react-types/numberfield': 3.4.2(react@18.2.0)
+      '@react-types/shared': 3.18.1(react@18.2.0)
+      '@react-types/textfield': 3.7.2(react@18.2.0)
+      '@swc/helpers': 0.4.14
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
+    dev: false
+
   /@react-aria/overlays@3.14.1(react-dom@18.2.0)(react@18.2.0):
     resolution: {integrity: sha512-xJCw0oSDtwBCCqf0EMMeeLYOEFSCdd1cWFS0O3980SObFQPHwP5KOX5SAs7lVvIlZUvEdpo6sOytcQTjv5U9QA==}
     peerDependencies:
@@ -5666,6 +5685,22 @@ packages:
       '@react-types/shared': 3.18.1(react@18.2.0)
       '@swc/helpers': 0.4.14
       react: 18.2.0
+    dev: false
+
+  /@react-aria/spinbutton@3.4.1(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-YL3Gp431Jd8FcZ3aU/ymQJlV1yPOShbDJUvHZ8cwasjFH3QLSvx88pcv1PTKxyE3RdRFkP+Xii61jFfF7B5jmg==}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0 || 18
+      react-dom: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0
+    dependencies:
+      '@react-aria/i18n': 3.7.2(react@18.2.0)
+      '@react-aria/live-announcer': 3.3.0
+      '@react-aria/utils': 3.17.0(react@18.2.0)
+      '@react-types/button': 3.7.3(react@18.2.0)
+      '@react-types/shared': 3.18.1(react@18.2.0)
+      '@swc/helpers': 0.4.14
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
     dev: false
 
   /@react-aria/ssr@3.6.0(react@18.2.0):
@@ -5886,6 +5921,19 @@ packages:
       react: 18.2.0
     dev: false
 
+  /@react-stately/numberfield@3.4.2(react@18.2.0):
+    resolution: {integrity: sha512-FFe8J38//+Ck3aSTCtWteQY6tkDi2curLPxFwkWOxq71Vv+1Zvga5pTRoa6O1k1f0OXnDkVhmU1Njcl4JRMveA==}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0 || 18
+    dependencies:
+      '@internationalized/number': 3.2.0
+      '@react-stately/utils': 3.6.0(react@18.2.0)
+      '@react-types/numberfield': 3.4.2(react@18.2.0)
+      '@react-types/shared': 3.18.1(react@18.2.0)
+      '@swc/helpers': 0.4.14
+      react: 18.2.0
+    dev: false
+
   /@react-stately/overlays@3.5.2(react@18.2.0):
     resolution: {integrity: sha512-NEwkF/ukXzI/Ku+6j6MhhqdMc5xMgDnuR6RwFPsoPq6UoHw9/ojifxg/sDj5e1gPoegNZ2nM8G6VmnPUGabg/g==}
     peerDependencies:
@@ -6067,6 +6115,15 @@ packages:
       react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0 || 18
     dependencies:
       '@react-types/overlays': 3.7.2(react@18.2.0)
+      '@react-types/shared': 3.18.1(react@18.2.0)
+      react: 18.2.0
+    dev: false
+
+  /@react-types/numberfield@3.4.2(react@18.2.0):
+    resolution: {integrity: sha512-SGzuuFf5wCSRPvpV+bnykiXSIt8pkpBBVp8tlygB66pQSBV7VLdUvWGohaayPSM+3Z+WkU+osgzYtGq5wh+C3Q==}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0 || 18
+    dependencies:
       '@react-types/shared': 3.18.1(react@18.2.0)
       react: 18.2.0
     dev: false
