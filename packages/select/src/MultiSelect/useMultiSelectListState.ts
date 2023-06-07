@@ -9,7 +9,7 @@ type UseMultiSelectListProps<T> = CollectionBase<T> & MultipleSelection;
 type MultiSelectListState<T> = ListState<T> & {
   selectedKeys: Set<Key>;
   setSelectedKeys(keys: Iterable<Key>): void;
-  selectedItems: Node<T>[] | null;
+  selectedItems: (Node<T> | null)[] | null;
   selectionMode: SelectionMode;
 };
 

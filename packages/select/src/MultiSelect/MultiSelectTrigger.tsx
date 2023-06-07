@@ -27,7 +27,7 @@ const MultiSelectTrigger = <T extends object>(props: MultiSelectTriggerProps<T>)
     placeholder = 'Select options',
   } = props;
 
-  const formatItems = (items: Node<T>[] | null) => {
+  const formatItems = (items: (Node<T> | null)[] | null) => {
     if (!items || items.length === 0) {
       return <span className={styles.placeholder}>{placeholder}</span>;
     }
@@ -38,7 +38,7 @@ const MultiSelectTrigger = <T extends object>(props: MultiSelectTriggerProps<T>)
       return `${items.length} selected`;
     }
 
-    return items.map((item) => item.textValue).join(', ');
+    return items.map((item) => item?.textValue).join(', ');
   };
 
   return (
