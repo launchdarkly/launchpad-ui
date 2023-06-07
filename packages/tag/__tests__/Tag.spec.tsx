@@ -18,9 +18,9 @@ const TagGroupComponent = ({
   return (
     <TagGroup
       items={items}
-      onRemove={(key) => {
-        if (onRemove) onRemove(key);
-        setItems((prevItems) => prevItems.filter((item) => key !== item.id));
+      onRemove={(keys) => {
+        if (onRemove) onRemove(keys);
+        setItems((prevItems) => prevItems.filter((item) => !keys.has(item.id)));
       }}
       {...props}
     >
@@ -41,14 +41,14 @@ describe('Tag', () => {
   });
 
   it('does not allow removal by default', () => {
-    render(<TagGroupComponent />);
+    render(<TagGroup items={[...MOCK_TAGS]}>{(item) => <TagItem>{item.name}</TagItem>}</TagGroup>);
     expect(screen.queryByTestId('remove-tag-btn')).not.toBeInTheDocument();
   });
 
   it('removes items when tag remove button is pressed', async () => {
     const user = userEvent.setup();
 
-    render(<TagGroupComponent allowsRemoving />);
+    render(<TagGroupComponent />);
 
     expect(screen.getAllByTestId('tag').length).toBe(MOCK_TAGS.length);
 
@@ -61,17 +61,17 @@ describe('Tag', () => {
     const user = userEvent.setup();
     const spy = vi.fn();
 
-    render(<TagGroupComponent allowsRemoving onRemove={spy} />);
+    render(<TagGroupComponent onRemove={spy} />);
 
     await user.click(screen.getAllByTestId('remove-tag-btn')[0]);
 
-    expect(spy).toHaveBeenCalledWith(MOCK_TAGS[0].id);
+    expect(spy).toHaveBeenCalledWith(new Set([MOCK_TAGS[0].id]));
   });
 
   it('removes items when tag remove button is pressed', async () => {
     const user = userEvent.setup();
 
-    render(<TagGroupComponent allowsRemoving />);
+    render(<TagGroupComponent />);
 
     expect(screen.getAllByTestId('tag').length).toBe(MOCK_TAGS.length);
 

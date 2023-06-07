@@ -44,9 +44,8 @@ export const Removable: Story = {
 
       return (
         <TagGroup
-          allowsRemoving
-          onRemove={(key) => {
-            setItems((prevItems) => prevItems.filter((item) => key !== item.id));
+          onRemove={(keys) => {
+            setItems((prevItems) => prevItems.filter((item) => !keys.has(item.id)));
           }}
           items={items}
         >
@@ -67,9 +66,8 @@ export const RemovableTiny: Story = {
       return (
         <TagGroup
           size="tiny"
-          allowsRemoving
-          onRemove={(key) => {
-            setItems((prevItems) => prevItems.filter((item) => key !== item.id));
+          onRemove={(keys) => {
+            setItems((prevItems) => prevItems.filter((item) => !keys.has(item.id)));
           }}
           items={items}
         >
@@ -89,9 +87,8 @@ export const WithClearAction: Story = {
 
       return (
         <TagGroup
-          allowsRemoving
-          onRemove={(key) => {
-            setItems((prevItems) => prevItems.filter((item) => key !== item.id));
+          onRemove={(keys) => {
+            setItems((prevItems) => prevItems.filter((item) => !keys.has(item.id)));
           }}
           hideActionWhenEmpty
           items={items}
@@ -117,9 +114,8 @@ export const WithClearActionTiny: Story = {
 
       return (
         <TagGroup
-          allowsRemoving
-          onRemove={(key) => {
-            setItems((prevItems) => prevItems.filter((item) => key !== item.id));
+          onRemove={(keys) => {
+            setItems((prevItems) => prevItems.filter((item) => !keys.has(item.id)));
           }}
           size="tiny"
           hideActionWhenEmpty
@@ -146,9 +142,8 @@ export const WithCustomAction: Story = {
 
       return (
         <TagGroup
-          allowsRemoving
-          onRemove={(key) => {
-            setItems((prevItems) => prevItems.filter((item) => key !== item.id));
+          onRemove={(keys) => {
+            setItems((prevItems) => prevItems.filter((item) => !keys.has(item.id)));
           }}
           hideActionWhenEmpty
           items={items}

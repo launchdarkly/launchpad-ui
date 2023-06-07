@@ -11,9 +11,8 @@ const CustomMultiSelectTrigger = (props: MultiSelectTriggerProps<DummyItem>) => 
 
   return (
     <TagGroup
-      items={state.selectedItems || []}
-      allowsRemoving
-      onRemove={(key) => state.selectionManager.select(key)}
+      items={(state.selectedItems as Iterable<object>) || []}
+      onRemove={(keys) => state.selectionManager.setSelectedKeys(keys)}
       action={() => (
         <IconButton
           {...triggerProps}
