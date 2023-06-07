@@ -1092,10 +1092,6 @@ importers:
       '@react-stately/utils':
         specifier: 3.6.0
         version: 3.6.0(react@18.2.0)
-      classix:
-        specifier: 2.1.17
-        version: 2.1.17
-    devDependencies:
       '@react-types/button':
         specifier: 3.7.0
         version: 3.7.0(react@18.2.0)
@@ -1111,6 +1107,10 @@ importers:
       '@react-types/shared':
         specifier: 3.18.1
         version: 3.18.1(react@18.2.0)
+      classix:
+        specifier: 2.1.17
+        version: 2.1.17
+    devDependencies:
       react:
         specifier: 18.2.0
         version: 18.2.0
@@ -1254,28 +1254,25 @@ importers:
       '@react-aria/interactions':
         specifier: 3.15.1
         version: 3.15.1(react@18.2.0)
+      '@react-aria/selection':
+        specifier: 3.15.0
+        version: 3.15.0(react@18.2.0)
       '@react-aria/tag':
-        specifier: 3.0.0-beta.3
-        version: 3.0.0-beta.3(react-dom@18.2.0)(react@18.2.0)
+        specifier: 3.0.0
+        version: 3.0.0(react-dom@18.2.0)(react@18.2.0)
       '@react-aria/utils':
         specifier: 3.17.0
         version: 3.17.0(react@18.2.0)
       '@react-stately/list':
         specifier: 3.8.1
         version: 3.8.1(react@18.2.0)
-      '@react-stately/tag':
-        specifier: 3.0.0-beta.0
-        version: 3.0.0-beta.0(react@18.2.0)
+      '@react-types/shared':
+        specifier: 3.18.1
+        version: 3.18.1(react@18.2.0)
       classix:
         specifier: 2.1.17
         version: 2.1.17
     devDependencies:
-      '@react-types/shared':
-        specifier: 3.18.1
-        version: 3.18.1(react@18.2.0)
-      '@react-types/tag':
-        specifier: 3.0.0-beta.2
-        version: 3.0.0-beta.2(react@18.2.0)
       react:
         specifier: 18.2.0
         version: 18.2.0
@@ -4985,12 +4982,6 @@ packages:
     resolution: {integrity: sha512-ZnQMnLV4e7hDlUvw8H+U8ASL02SS2Gn6+9Ac3wGGLIe7+je2AeAOxPY+izIPJDfFDb7eDjev0Us8MO1iFRN8hA==}
     dev: true
 
-  /@internationalized/date@3.1.0:
-    resolution: {integrity: sha512-wjeur7K4AecT+YwoBmBXQ/+n5lP69tuZc34hw09s44EozZK7FZHSyfPvRp5/xEb2D6abLboskDY4jG+Nt0TNUQ==}
-    dependencies:
-      '@swc/helpers': 0.4.14
-    dev: false
-
   /@internationalized/date@3.2.0:
     resolution: {integrity: sha512-VDMHN1m33L4eqPs5BaihzgQJXyaORbMoHOtrapFxx179J8ucY5CRIHYsq5RRLKPHZWgjNfa5v6amWWDkkMFywA==}
     dependencies:
@@ -5483,22 +5474,6 @@ packages:
       - react-dom
     dev: false
 
-  /@react-aria/i18n@3.7.0(react@18.2.0):
-    resolution: {integrity: sha512-PZCWmhO9mJvelwiYlsXLY6W4L2o+oza3xnDx0cZDVqp/Hf+OwMAPHWtZsFRTKdjk4TaOPB/ISc9HknWn6UpY4w==}
-    peerDependencies:
-      react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0 || 18
-    dependencies:
-      '@internationalized/date': 3.1.0
-      '@internationalized/message': 3.1.0
-      '@internationalized/number': 3.2.0
-      '@internationalized/string': 3.1.0
-      '@react-aria/ssr': 3.6.0(react@18.2.0)
-      '@react-aria/utils': 3.17.0(react@18.2.0)
-      '@react-types/shared': 3.18.1(react@18.2.0)
-      '@swc/helpers': 0.4.14
-      react: 18.2.0
-    dev: false
-
   /@react-aria/i18n@3.7.2(react@18.2.0):
     resolution: {integrity: sha512-GsVioW8RGOmwebTruEBAmGYJunY0WS7Ljfn5n7Mec3eoMKdQjH2M70fHwCOWqJo8Ufq7A7p0ypBVCv4d4sbSdw==}
     peerDependencies:
@@ -5695,21 +5670,20 @@ packages:
       react: 18.2.0
     dev: false
 
-  /@react-aria/tag@3.0.0-beta.3(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-HaDPrdyfBUrM1OMSRjVrkw18hI40F9tptbyWevJkcJkGHD+G2beJ1WHIPftzS2WvHc8Wwbn7rKGC1ouKIRQlGQ==}
+  /@react-aria/tag@3.0.0(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-UuYqlysitwv1e1SV9YJqUMV7P7Gg5triEljyJ90b4rtETRhGa+Qh6cVa1P8F4h5nPTwzqey47jAp45i1FSsH4w==}
     peerDependencies:
       react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0 || 18
     dependencies:
       '@react-aria/gridlist': 3.4.0(react-dom@18.2.0)(react@18.2.0)
-      '@react-aria/i18n': 3.7.0(react@18.2.0)
+      '@react-aria/i18n': 3.7.2(react@18.2.0)
       '@react-aria/interactions': 3.15.1(react@18.2.0)
       '@react-aria/label': 3.5.2(react@18.2.0)
+      '@react-aria/selection': 3.15.0(react@18.2.0)
       '@react-aria/utils': 3.17.0(react@18.2.0)
       '@react-stately/list': 3.8.1(react@18.2.0)
-      '@react-stately/tag': 3.0.0-beta.0(react@18.2.0)
-      '@react-types/button': 3.7.1(react@18.2.0)
+      '@react-types/button': 3.7.3(react@18.2.0)
       '@react-types/shared': 3.18.1(react@18.2.0)
-      '@react-types/tag': 3.0.0-beta.2(react@18.2.0)
       '@swc/helpers': 0.4.14
       react: 18.2.0
     transitivePeerDependencies:
@@ -5942,18 +5916,6 @@ packages:
       react: 18.2.0
     dev: false
 
-  /@react-stately/tag@3.0.0-beta.0(react@18.2.0):
-    resolution: {integrity: sha512-/MvTRKBZgisgCQBcpkaSV/crCquZOjMqabfQGiR3kU+YsV8C8IBzyxKqepfIGqJrwFVxM9O5UAuN+cR1edvu2w==}
-    peerDependencies:
-      react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0 || 18
-    dependencies:
-      '@babel/runtime': 7.21.0
-      '@react-stately/list': 3.8.1(react@18.2.0)
-      '@react-types/tag': 3.0.0-beta.2(react@18.2.0)
-      '@swc/helpers': 0.4.14
-      react: 18.2.0
-    dev: false
-
   /@react-stately/toggle@3.5.2(react@18.2.0):
     resolution: {integrity: sha512-2fDecu06job9NKdSIryU4AE+BoTGZqfinUsAvYTaaQN95Apq8IShEDFkY+gSnU09wRX26Ux+JJi5pYwg+HX1tw==}
     peerDependencies:
@@ -6006,15 +5968,6 @@ packages:
     dependencies:
       '@react-types/shared': 3.18.1(react@18.2.0)
       react: 18.2.0
-    dev: true
-
-  /@react-types/button@3.7.1(react@18.2.0):
-    resolution: {integrity: sha512-c+8xjmqWSjI5/mEHVLbVSp0eh/z2UU8Ga+wqjbEUZUjm8uopYj1PaCAwZ7YgcAebyQrL/21GyjK6tFHKzuUdJQ==}
-    peerDependencies:
-      react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0 || 18
-    dependencies:
-      '@react-types/shared': 3.18.1(react@18.2.0)
-      react: 18.2.0
     dev: false
 
   /@react-types/button@3.7.3(react@18.2.0):
@@ -6042,6 +5995,7 @@ packages:
     dependencies:
       '@react-types/shared': 3.18.1(react@18.2.0)
       react: 18.2.0
+    dev: false
 
   /@react-types/grid@3.1.8(react@18.2.0):
     resolution: {integrity: sha512-NKk4pDbW2QXJOYnDSAYhta81CGwXOc/9tVw2WFs+1wacvxeKmh1Q+n36uAFcIdQOvVRqeGTJaYiqLFmF3fC3tA==}
@@ -6087,6 +6041,7 @@ packages:
     dependencies:
       '@react-types/shared': 3.18.1(react@18.2.0)
       react: 18.2.0
+    dev: false
 
   /@react-types/select@3.8.1(react@18.2.0):
     resolution: {integrity: sha512-ByVKKwgpE3d08jI+Ibuom/qphlBiDKpVMwXgFgVZRAN2YvVrsix8arSo7kmXtzekz91qqDBqtt7DBCfT0E1WKw==}
@@ -6095,6 +6050,7 @@ packages:
     dependencies:
       '@react-types/shared': 3.18.1(react@18.2.0)
       react: 18.2.0
+    dev: false
 
   /@react-types/shared@3.18.1(react@18.2.0):
     resolution: {integrity: sha512-OpTYRFS607Ctfd6Tmhyk6t6cbFyDhO5K+etU35X50pMzpypo1b7vF0mkngEeTc0Xwl0e749ONZNPZskMyu5k8w==}
@@ -6131,14 +6087,6 @@ packages:
       '@react-types/shared': 3.18.1(react@18.2.0)
       react: 18.2.0
     dev: false
-
-  /@react-types/tag@3.0.0-beta.2(react@18.2.0):
-    resolution: {integrity: sha512-CWJ15WVWPylpwbvJsfaeT6xMk6tT8e2xI/byMrZ6KIPxdN/dsBv2o4qy6/xExC0rtXTS4kvZ9w/t+RnwWpUpSA==}
-    peerDependencies:
-      react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0 || 18
-    dependencies:
-      '@react-types/shared': 3.18.1(react@18.2.0)
-      react: 18.2.0
 
   /@react-types/textfield@3.7.0(react@18.2.0):
     resolution: {integrity: sha512-4Rqld8VZG324hecw6bqGY2gta1gm5sDhO48nyChfdmjVlFHXLDKazAcrgP76uSmUI6tffUPj3eYxQyTp5uLhyQ==}

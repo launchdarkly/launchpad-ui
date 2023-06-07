@@ -4,10 +4,10 @@ import type { Key } from 'react';
 
 import { Button } from '@launchpad-ui/button';
 import { FocusScope } from '@react-aria/focus';
-import { TagKeyboardDelegate, useTagGroup } from '@react-aria/tag';
+import { ListKeyboardDelegate } from '@react-aria/selection';
+import { useTagGroup } from '@react-aria/tag';
 import { useId, useLayoutEffect, useResizeObserver, useValueEffect } from '@react-aria/utils';
-import { ListCollection } from '@react-stately/list';
-import { useTagGroupState } from '@react-stately/tag';
+import { ListCollection, useListState } from '@react-stately/list';
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 
 import { Tag } from './Tag';
@@ -26,11 +26,13 @@ type TagGroupProps<T extends object> = AriaTagGroupProps<T> & {
   onTagClick?: (key: Key) => void;
 
   size?: 'tiny' | 'small';
+
+  /** Limit the number of rows initially shown. This will render a button that allows the user to expand to show all tags. */
+  maxRows?: number;
 };
 
 const TagGroup = <T extends object>(props: TagGroupProps<T>) => {
   const {
-    allowsRemoving,
     onRemove,
     maxRows,
     children,
@@ -43,27 +45,26 @@ const TagGroup = <T extends object>(props: TagGroupProps<T>) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const tagsRef = useRef<HTMLDivElement>(null);
   const [isCollapsed, setIsCollapsed] = useState(maxRows != null);
-  const state = useTagGroupState(props);
+  const state = useListState(props);
   const [tagState, setTagState] = useValueEffect({
     visibleTagCount: state.collection.size,
     showCollapseButton: false,
   });
 
   /* c8 ignore start */
-  const keyboardDelegate = useMemo(
-    () =>
-      isCollapsed
-        ? new TagKeyboardDelegate(
-            new ListCollection([...state.collection].slice(0, tagState.visibleTagCount)),
-            'ltr'
-          )
-        : new TagKeyboardDelegate(new ListCollection([...state.collection]), 'ltr'),
-    [isCollapsed, state.collection, tagState.visibleTagCount]
-  ) as TagKeyboardDelegate<T>;
+  const keyboardDelegate = useMemo(() => {
+    const collection = isCollapsed
+      ? new ListCollection([...state.collection].slice(0, tagState.visibleTagCount))
+      : new ListCollection([...state.collection]);
+    return new ListKeyboardDelegate({
+      collection,
+      ref: tagsRef,
+    });
+  }, [isCollapsed, state.collection, tagState.visibleTagCount, tagsRef]) as ListKeyboardDelegate<T>;
 
   // Remove onAction from props so it doesn't make it into useGridList.
   const { action: _action, ...useTagGroupProps } = props;
-  const { tagGroupProps } = useTagGroup({ ...useTagGroupProps, keyboardDelegate }, state, tagsRef);
+  const { gridProps } = useTagGroup({ ...useTagGroupProps, keyboardDelegate }, state, tagsRef);
   const actionsId = useId();
 
   const updateVisibleTagCount = useCallback(() => {
@@ -160,14 +161,13 @@ const TagGroup = <T extends object>(props: TagGroupProps<T>) => {
   return (
     <FocusScope>
       <div ref={containerRef} className={styles.tagGroupContainer} data-test-id={testId}>
-        <div ref={tagsRef} {...tagGroupProps} className={styles.tagGroup} data-test-id="tag-list">
+        <div ref={tagsRef} {...gridProps} className={styles.tagGroup} data-test-id="tag-list">
           {visibleTags.map((item) => (
             <Tag
               {...item.props}
               key={item.key}
               item={item}
               state={state}
-              allowsRemoving={allowsRemoving}
               onRemove={onRemove}
               size={size}
               onClick={onTagClick}
@@ -181,7 +181,7 @@ const TagGroup = <T extends object>(props: TagGroupProps<T>) => {
             role="group"
             id={actionsId}
             aria-label="Actions"
-            aria-labelledby={`${tagGroupProps.id} ${actionsId}`}
+            aria-labelledby={`${gridProps.id} ${actionsId}`}
             className={styles.tagGroupActions}
             data-test-id="tag-actions"
           >

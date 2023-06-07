@@ -1,5 +1,11 @@
 # Migration @launchpad-ui/core
 
+## 0.40.0
+
+### TagGroup API changes
+
+React Aria released a stable version of `TagGroup` which includes some API changes. [Follow migration guidelines here](https://react-spectrum.adobe.com/releases/2023-05-24.html#taggroup-api-update).
+
 ## 0.39.0
 
 ### Removed Tokens and Icons packages

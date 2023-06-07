@@ -62,6 +62,11 @@
     "@react-stately/select": "3.5.1",
     "@react-stately/selection": "3.13.1",
     "@react-stately/utils": "3.6.0",
+    "@react-types/button": "3.7.0",
+    "@react-types/combobox": "3.6.2",
+    "@react-types/overlays": "3.7.2",
+    "@react-types/select": "3.8.1",
+    "@react-types/shared": "3.18.1",
     "classix": "2.1.17"
   },
   "peerDependencies": {
@@ -69,11 +74,6 @@
     "react-dom": "18.2.0"
   },
   "devDependencies": {
-    "@react-types/button": "3.7.0",
-    "@react-types/combobox": "3.6.2",
-    "@react-types/overlays": "3.7.2",
-    "@react-types/select": "3.8.1",
-    "@react-types/shared": "3.18.1",
     "react": "18.2.0",
     "react-dom": "18.2.0"
   }
