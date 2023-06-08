@@ -34,7 +34,11 @@
   "dependencies": {
     "@launchpad-ui/icons": "workspace:~",
     "@launchpad-ui/tokens": "workspace:~",
+    "@react-aria/button": "3.7.2",
+    "@react-aria/i18n": "3.7.2",
+    "@react-aria/numberfield": "3.5.1",
     "@react-aria/visually-hidden": "3.8.1",
+    "@react-stately/numberfield": "3.4.2",
     "classix": "2.1.17"
   },
   "peerDependencies": {

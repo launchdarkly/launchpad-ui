@@ -1,4 +1,4 @@
-import type { ComponentStoryObj } from '@storybook/react';
+import type { StoryObj } from '@storybook/react';
 
 import { Label, RequiredAsterisk, TextField, FormHint, FormGroup } from '../src';
 
@@ -40,7 +40,7 @@ export default {
   },
 };
 
-type Story = ComponentStoryObj<typeof FormGroup>;
+type Story = StoryObj<typeof FormGroup>;
 
 export const Default: Story = {
   args: {

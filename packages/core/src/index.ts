@@ -42,6 +42,7 @@ export type {
   SelectFieldProps,
   TextAreaProps,
   TextFieldProps,
+  UseNumberFieldProps,
 } from '@launchpad-ui/form';
 export type { MarkdownProps } from '@launchpad-ui/markdown';
 export type {
@@ -132,6 +133,7 @@ export {
   SelectField,
   TextArea,
   TextField,
+  useNumberField,
 } from '@launchpad-ui/form';
 export { Markdown } from '@launchpad-ui/markdown';
 export {

@@ -14,7 +14,28 @@ import {
   SelectField,
   TextArea,
   TextField,
+  useNumberField,
 } from '../src';
+
+const NumberField = () => {
+  const { labelProps, formHintProps, fieldErrorProps, renderNumberField } = useNumberField({
+    id: 'Number',
+  });
+
+  return (
+    <FormField
+      isRequired={true}
+      label="Number"
+      name="Number"
+      htmlFor="Number"
+      LabelProps={labelProps}
+      FormHintProps={formHintProps}
+      FieldErrorProps={fieldErrorProps}
+    >
+      {renderNumberField()}
+    </FormField>
+  );
+};
 
 const createComponent = (props?: FormProps) => (
   <Form id="testing" name="My Form" aria-label="My Form" {...props}>
@@ -64,6 +85,8 @@ const createComponent = (props?: FormProps) => (
     <Checkbox checked={false} aria-label="Test checkbox" onChange={() => undefined} disabled={true}>
       Label
     </Checkbox>
+    <h4>Number Field</h4>
+    <NumberField />
   </Form>
 );
 

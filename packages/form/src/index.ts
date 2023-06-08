@@ -14,6 +14,7 @@ export type { RequiredAsteriskProps } from './RequiredAsterisk';
 export type { SelectFieldProps } from './SelectField';
 export type { TextAreaProps } from './TextArea';
 export type { TextFieldProps } from './TextField';
+export type { UseNumberFieldProps } from './useNumberField';
 
 export { Checkbox } from './Checkbox';
 export { CompactTextField } from './CompactTextField';
@@ -31,3 +32,4 @@ export { RequiredAsterisk } from './RequiredAsterisk';
 export { SelectField } from './SelectField';
 export { TextArea } from './TextArea';
 export { TextField } from './TextField';
+export { useNumberField } from './useNumberField';

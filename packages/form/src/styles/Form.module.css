@@ -368,3 +368,71 @@ input[type='checkbox']:disabled {
   pointer-events: auto;
   transform: translate(0, -8px) scale(0.9); /* 2d transform to avoid webkit blurry text */
 }
+
+.numberField {
+  display: flex;
+  position: relative;
+
+  & .numberField-input {
+    padding-right: 2.4rem;
+  }
+
+  & .numberField-stepperContainer {
+    display: flex;
+    opacity: 0;
+    flex-direction: column;
+    position: absolute;
+    width: 2.4rem;
+    top: 1px;
+    bottom: 1px;
+    right: 1px;
+    transition: all var(--lp-duration-100) linear;
+
+    & .numberField-stepper {
+      --numberField-stepper-padding: 0.4rem;
+      --numberField-stepper-border-radius: calc(var(--lp-border-radius-regular) - 0.1rem);
+
+      background-color: var(--lp-color-bg-field);
+      flex: auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      padding: 0 var(--numberField-stepper-padding);
+      border: none;
+      border-radius: 0;
+      min-height: 1px;
+      overflow: hidden;
+
+      &:first-child {
+        border-top-right-radius: var(--numberField-stepper-border-radius);
+        padding-top: var(--numberField-stepper-padding);
+      }
+
+      &:last-child {
+        border-bottom-right-radius: var(--numberField-stepper-border-radius);
+        padding-bottom: var(--numberField-stepper-padding);
+      }
+
+      &:hover {
+        background-color: var(--lp-color-bg-interactive-secondary-hover);
+      }
+
+      &:active {
+        background-color: var(--lp-color-bg-interactive-secondary-active);
+      }
+
+      & span:has(svg) {
+        width: 100%;
+        color: var(--lp-color-text-ui-primary);
+      }
+    }
+  }
+
+  &:hover,
+  &:has(input:focus) {
+    & .numberField-stepperContainer {
+      opacity: 1;
+    }
+  }
+}
