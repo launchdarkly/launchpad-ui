@@ -32,7 +32,7 @@ export default {
   description: 'A text field allows the user to provide numeric values.',
   parameters: {
     status: {
-      type: import.meta.env.PACKAGE_STATUS__FORM,
+      type: import.meta.env.STORYBOOK_PACKAGE_STATUS__FORM,
     },
   },
   argTypes: {
