@@ -1,5 +1,11 @@
 # @launchpad-ui/snackbar
 
+## 0.3.51
+
+### Patch Changes
+
+- [#868](https://github.com/launchdarkly/launchpad-ui/pull/868) [`8168b7a0`](https://github.com/launchdarkly/launchpad-ui/commit/8168b7a01eb59ec1a417604ba2414b1e7420733f) Thanks [@renovate](https://github.com/apps/renovate)! - [Drawer, Modal, Popover, Snackbar, Toast] Update `framer-motion` to v10
+
 ## 0.3.50
 
 ### Patch Changes

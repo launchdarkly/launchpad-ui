@@ -1,5 +1,13 @@
 # @launchpad-ui/form
 
+## 0.8.15
+
+### Patch Changes
+
+- [#853](https://github.com/launchdarkly/launchpad-ui/pull/853) [`16578d54`](https://github.com/launchdarkly/launchpad-ui/commit/16578d54e9c7d51c9c3f29b8891f93d6caaafca9) Thanks [@pheggeseth](https://github.com/pheggeseth)! - [Form] Add `useNumberField` hook. Add the ability to supply props objects to `FormField` to override underlying props its rendered `Label`, `FormHint`, and `FieldError` component instances.
+
+- [#863](https://github.com/launchdarkly/launchpad-ui/pull/863) [`9b488612`](https://github.com/launchdarkly/launchpad-ui/commit/9b488612b0b685c6f0c1c08086c7696eb7dc3a61) Thanks [@renovate](https://github.com/apps/renovate)! - Update React Aria to v3.25.0
+
 ## 0.8.14
 
 ### Patch Changes

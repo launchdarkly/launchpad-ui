@@ -1,5 +1,41 @@
 # @launchpad-ui/core
 
+## 0.40.0
+
+### Minor Changes
+
+- [#871](https://github.com/launchdarkly/launchpad-ui/pull/871) [`aab924e3`](https://github.com/launchdarkly/launchpad-ui/commit/aab924e3fcdd0b2bd1d2429cffe284ac4b49a97c) Thanks [@Niznikr](https://github.com/Niznikr)! - [Tag] Update React Aria tag
+
+### Patch Changes
+
+- [#853](https://github.com/launchdarkly/launchpad-ui/pull/853) [`16578d54`](https://github.com/launchdarkly/launchpad-ui/commit/16578d54e9c7d51c9c3f29b8891f93d6caaafca9) Thanks [@pheggeseth](https://github.com/pheggeseth)! - [Form] Add `useNumberField` hook. Add the ability to supply props objects to `FormField` to override underlying props its rendered `Label`, `FormHint`, and `FieldError` component instances.
+
+- [#863](https://github.com/launchdarkly/launchpad-ui/pull/863) [`9b488612`](https://github.com/launchdarkly/launchpad-ui/commit/9b488612b0b685c6f0c1c08086c7696eb7dc3a61) Thanks [@renovate](https://github.com/apps/renovate)! - Update React Aria to v3.25.0
+
+- [#868](https://github.com/launchdarkly/launchpad-ui/pull/868) [`8168b7a0`](https://github.com/launchdarkly/launchpad-ui/commit/8168b7a01eb59ec1a417604ba2414b1e7420733f) Thanks [@renovate](https://github.com/apps/renovate)! - [Drawer, Modal, Popover, Snackbar, Toast] Update `framer-motion` to v10
+
+- Updated dependencies [[`16578d54`](https://github.com/launchdarkly/launchpad-ui/commit/16578d54e9c7d51c9c3f29b8891f93d6caaafca9), [`9b488612`](https://github.com/launchdarkly/launchpad-ui/commit/9b488612b0b685c6f0c1c08086c7696eb7dc3a61), [`aab924e3`](https://github.com/launchdarkly/launchpad-ui/commit/aab924e3fcdd0b2bd1d2429cffe284ac4b49a97c), [`8168b7a0`](https://github.com/launchdarkly/launchpad-ui/commit/8168b7a01eb59ec1a417604ba2414b1e7420733f)]:
+  - @launchpad-ui/form@0.8.15
+  - @launchpad-ui/focus-trap@0.1.7
+  - @launchpad-ui/navigation@0.11.19
+  - @launchpad-ui/pagination@0.3.56
+  - @launchpad-ui/clipboard@0.10.4
+  - @launchpad-ui/dropdown@0.6.49
+  - @launchpad-ui/tab-list@0.4.30
+  - @launchpad-ui/drawer@0.4.6
+  - @launchpad-ui/filter@0.5.28
+  - @launchpad-ui/select@0.3.0
+  - @launchpad-ui/toggle@0.6.2
+  - @launchpad-ui/modal@0.15.5
+  - @launchpad-ui/menu@0.10.3
+  - @launchpad-ui/tag@0.2.0
+  - @launchpad-ui/snackbar@0.3.51
+  - @launchpad-ui/popover@0.10.3
+  - @launchpad-ui/toast@0.2.48
+  - @launchpad-ui/split-button@0.7.19
+  - @launchpad-ui/progress-bubbles@0.6.12
+  - @launchpad-ui/tooltip@0.7.13
+
 ## 0.39.0
 
 ### Minor Changes
