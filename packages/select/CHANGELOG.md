@@ -1,5 +1,20 @@
 # @launchpad-ui/select
 
+## 0.3.0
+
+### Minor Changes
+
+- [#871](https://github.com/launchdarkly/launchpad-ui/pull/871) [`aab924e3`](https://github.com/launchdarkly/launchpad-ui/commit/aab924e3fcdd0b2bd1d2429cffe284ac4b49a97c) Thanks [@Niznikr](https://github.com/Niznikr)! - [Tag] Update React Aria tag
+
+### Patch Changes
+
+- [#863](https://github.com/launchdarkly/launchpad-ui/pull/863) [`9b488612`](https://github.com/launchdarkly/launchpad-ui/commit/9b488612b0b685c6f0c1c08086c7696eb7dc3a61) Thanks [@renovate](https://github.com/apps/renovate)! - Update React Aria to v3.25.0
+
+- Updated dependencies [[`9b488612`](https://github.com/launchdarkly/launchpad-ui/commit/9b488612b0b685c6f0c1c08086c7696eb7dc3a61), [`8168b7a0`](https://github.com/launchdarkly/launchpad-ui/commit/8168b7a01eb59ec1a417604ba2414b1e7420733f)]:
+  - @launchpad-ui/modal@0.15.5
+  - @launchpad-ui/popover@0.10.3
+  - @launchpad-ui/tooltip@0.7.13
+
 ## 0.2.19
 
 ### Patch Changes

@@ -1,5 +1,16 @@
 # @launchpad-ui/drawer
 
+## 0.4.6
+
+### Patch Changes
+
+- [#863](https://github.com/launchdarkly/launchpad-ui/pull/863) [`9b488612`](https://github.com/launchdarkly/launchpad-ui/commit/9b488612b0b685c6f0c1c08086c7696eb7dc3a61) Thanks [@renovate](https://github.com/apps/renovate)! - Update React Aria to v3.25.0
+
+- [#868](https://github.com/launchdarkly/launchpad-ui/pull/868) [`8168b7a0`](https://github.com/launchdarkly/launchpad-ui/commit/8168b7a01eb59ec1a417604ba2414b1e7420733f) Thanks [@renovate](https://github.com/apps/renovate)! - [Drawer, Modal, Popover, Snackbar, Toast] Update `framer-motion` to v10
+
+- Updated dependencies [[`9b488612`](https://github.com/launchdarkly/launchpad-ui/commit/9b488612b0b685c6f0c1c08086c7696eb7dc3a61)]:
+  - @launchpad-ui/focus-trap@0.1.7
+
 ## 0.4.5
 
 ### Patch Changes
