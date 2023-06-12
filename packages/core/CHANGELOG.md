@@ -1,5 +1,19 @@
 # @launchpad-ui/core
 
+## 0.40.1
+
+### Patch Changes
+
+- [#875](https://github.com/launchdarkly/launchpad-ui/pull/875) [`157f224b`](https://github.com/launchdarkly/launchpad-ui/commit/157f224bf267d3958800087700ddb859316922a6) Thanks [@kwatkins-ld](https://github.com/kwatkins-ld)! - Suppress errors in Avatar when fetching image
+
+- [#876](https://github.com/launchdarkly/launchpad-ui/pull/876) [`1edba184`](https://github.com/launchdarkly/launchpad-ui/commit/1edba184e7a6af129b12769b04966b78078fd4d1) Thanks [@Niznikr](https://github.com/Niznikr)! - Import named export from `classix`
+
+- Updated dependencies [[`157f224b`](https://github.com/launchdarkly/launchpad-ui/commit/157f224bf267d3958800087700ddb859316922a6), [`1edba184`](https://github.com/launchdarkly/launchpad-ui/commit/1edba184e7a6af129b12769b04966b78078fd4d1)]:
+  - @launchpad-ui/avatar@0.4.46
+  - @launchpad-ui/select@0.3.1
+  - @launchpad-ui/modal@0.15.6
+  - @launchpad-ui/tag@0.2.1
+
 ## 0.40.0
 
 ### Minor Changes
