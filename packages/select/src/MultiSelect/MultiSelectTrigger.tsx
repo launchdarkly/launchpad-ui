@@ -4,7 +4,7 @@ import type { Node } from '@react-types/shared';
 import type { ReactNode } from 'react';
 
 import { ExpandMore } from '@launchpad-ui/icons';
-import cx from 'classix';
+import { cx } from 'classix';
 
 import styles from '../styles/Select.module.css';
 

@@ -1,6 +1,6 @@
 import type { ComponentProps } from 'react';
 
-import cx from 'classix';
+import { cx } from 'classix';
 import { useRef } from 'react';
 
 import styles from './styles/Modal.module.css';

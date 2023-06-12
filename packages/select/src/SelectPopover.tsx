@@ -4,7 +4,7 @@ import type { ReactNode, RefObject } from 'react';
 
 import { usePopover, DismissButton, Overlay } from '@react-aria/overlays';
 import { useObjectRef } from '@react-aria/utils';
-import cx from 'classix';
+import { cx } from 'classix';
 import { useMemo } from 'react';
 
 import styles from './styles/Select.module.css';

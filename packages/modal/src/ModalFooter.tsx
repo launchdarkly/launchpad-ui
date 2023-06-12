@@ -1,7 +1,7 @@
 import type { HTMLAttributes, ReactNode } from 'react';
 
 import { ButtonGroup } from '@launchpad-ui/button';
-import cx from 'classix';
+import { cx } from 'classix';
 import { forwardRef } from 'react';
 
 import styles from './styles/Modal.module.css';

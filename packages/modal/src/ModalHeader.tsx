@@ -2,7 +2,7 @@ import type { ReactNode } from 'react';
 
 import { IconButton } from '@launchpad-ui/button';
 import { Close, Warning } from '@launchpad-ui/icons';
-import cx from 'classix';
+import { cx } from 'classix';
 
 import { MODAL_LABELLED_BY } from './constants';
 import { useModalContext } from './context';
