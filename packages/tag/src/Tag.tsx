@@ -11,7 +11,7 @@ import { useFocusRing } from '@react-aria/focus';
 import { useHover } from '@react-aria/interactions';
 import { useTag } from '@react-aria/tag';
 import { mergeProps } from '@react-aria/utils';
-import cx from 'classix';
+import { cx } from 'classix';
 import { useRef } from 'react';
 
 import styles from './styles/Tag.module.css';

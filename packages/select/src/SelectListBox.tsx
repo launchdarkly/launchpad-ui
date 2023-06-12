@@ -13,7 +13,7 @@ import { getItemId, useListBox, useListBoxSection, useOption } from '@react-aria
 import { useTextField } from '@react-aria/textfield';
 import { useObjectRef } from '@react-aria/utils';
 import { VisuallyHidden } from '@react-aria/visually-hidden';
-import cx from 'classix';
+import { cx } from 'classix';
 import { useRef } from 'react';
 
 import styles from './styles/Select.module.css';

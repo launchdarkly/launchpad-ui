@@ -83,6 +83,18 @@ module.exports = {
         message: 'Use named exports.',
       },
     ],
+    'no-restricted-imports': [
+      'error',
+      {
+        paths: [
+          {
+            name: 'classix',
+            importNames: ['default'],
+            message: 'Import the named export `cx` instead.',
+          },
+        ],
+      },
+    ],
   },
   overrides: [
     {
