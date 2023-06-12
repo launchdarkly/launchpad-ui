@@ -1,5 +1,11 @@
 # @launchpad-ui/avatar
 
+## 0.4.46
+
+### Patch Changes
+
+- [#875](https://github.com/launchdarkly/launchpad-ui/pull/875) [`157f224b`](https://github.com/launchdarkly/launchpad-ui/commit/157f224bf267d3958800087700ddb859316922a6) Thanks [@kwatkins-ld](https://github.com/kwatkins-ld)! - Suppress errors in Avatar when fetching image
+
 ## 0.4.45
 
 ### Patch Changes

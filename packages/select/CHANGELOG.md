@@ -1,5 +1,14 @@
 # @launchpad-ui/select
 
+## 0.3.1
+
+### Patch Changes
+
+- [#876](https://github.com/launchdarkly/launchpad-ui/pull/876) [`1edba184`](https://github.com/launchdarkly/launchpad-ui/commit/1edba184e7a6af129b12769b04966b78078fd4d1) Thanks [@Niznikr](https://github.com/Niznikr)! - Import named export from `classix`
+
+- Updated dependencies [[`1edba184`](https://github.com/launchdarkly/launchpad-ui/commit/1edba184e7a6af129b12769b04966b78078fd4d1)]:
+  - @launchpad-ui/modal@0.15.6
+
 ## 0.3.0
 
 ### Minor Changes
