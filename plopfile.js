@@ -97,26 +97,16 @@ module.exports = (plop) => {
       },
       {
         path: 'packages/core/src/index.ts',
-        pattern: /(plop start type exports)/g,
+        pattern: /(\/\/ plop end type exports)/g,
         template:
-          "$1\nexport type { {{pascalCase name}}Props } from '@launchpad-ui/{{dashCase name}}';",
+          "export type { {{pascalCase name}}Props } from '@launchpad-ui/{{dashCase name}}';\n$1",
         type: 'modify',
-        transform: (file) =>
-          sortModification(file, {
-            openPatternStr: 'plop start type exports',
-            closePatternStr: 'plop end type exports',
-          }),
       },
       {
         path: 'packages/core/src/index.ts',
-        pattern: /(plop start module exports)/g,
-        template: "$1\nexport { {{pascalCase name}} } from '@launchpad-ui/{{dashCase name}}';",
+        pattern: /(\/\/ plop end module exports)/g,
+        template: "export { {{pascalCase name}} } from '@launchpad-ui/{{dashCase name}}';\n$1",
         type: 'modify',
-        transform: (file) =>
-          sortModification(file, {
-            openPatternStr: 'plop start module exports',
-            closePatternStr: 'plop end module exports',
-          }),
       },
       /*
        * Local Remix integration

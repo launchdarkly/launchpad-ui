@@ -535,6 +535,9 @@ importers:
       '@launchpad-ui/split-button':
         specifier: workspace:~
         version: link:../split-button
+      '@launchpad-ui/stack':
+        specifier: workspace:~
+        version: link:../stack
       '@launchpad-ui/tab-list':
         specifier: workspace:~
         version: link:../tab-list
@@ -553,6 +556,9 @@ importers:
       '@launchpad-ui/tooltip':
         specifier: workspace:~
         version: link:../tooltip
+      '@launchpad-ui/types':
+        specifier: workspace:~
+        version: link:../types
     devDependencies:
       react:
         specifier: 18.2.0
@@ -1199,6 +1205,25 @@ importers:
         specifier: 18.2.0
         version: 18.2.0(react@18.2.0)
 
+  packages/stack:
+    dependencies:
+      '@launchpad-ui/tokens':
+        specifier: workspace:~
+        version: link:../tokens
+      '@launchpad-ui/types':
+        specifier: workspace:~
+        version: link:../types
+      classix:
+        specifier: 2.1.17
+        version: 2.1.17
+    devDependencies:
+      react:
+        specifier: 18.2.0
+        version: 18.2.0
+      react-dom:
+        specifier: 18.2.0
+        version: 18.2.0(react@18.2.0)
+
   packages/tab-list:
     dependencies:
       '@launchpad-ui/tokens':
@@ -1369,6 +1394,8 @@ importers:
       react-dom:
         specifier: 18.2.0
         version: 18.2.0(react@18.2.0)
+
+  packages/types: {}
 
 packages:
 

@@ -63,12 +63,14 @@
     "@launchpad-ui/slider": "workspace:~",
     "@launchpad-ui/snackbar": "workspace:~",
     "@launchpad-ui/split-button": "workspace:~",
+    "@launchpad-ui/stack": "workspace:~",
     "@launchpad-ui/tab-list": "workspace:~",
     "@launchpad-ui/table": "workspace:~",
     "@launchpad-ui/tag": "workspace:~",
     "@launchpad-ui/toast": "workspace:~",
     "@launchpad-ui/toggle": "workspace:~",
-    "@launchpad-ui/tooltip": "workspace:~"
+    "@launchpad-ui/tooltip": "workspace:~",
+    "@launchpad-ui/types": "workspace:~"
   },
   "peerDependencies": {
     "react": "18.2.0",

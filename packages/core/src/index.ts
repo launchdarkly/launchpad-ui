@@ -101,6 +101,8 @@ export type { TagGroupProps, TagGroupActionProps } from '@launchpad-ui/tag';
 export type { ToastProps, ToastCenterProps, ToastRecord } from '@launchpad-ui/toast';
 export type { ToggleProps } from '@launchpad-ui/toggle';
 export type { TooltipProps } from '@launchpad-ui/tooltip';
+export type { StackProps } from '@launchpad-ui/stack';
+export type { Space } from '@launchpad-ui/types';
 // plop end type exports
 
 // plop start module exports
@@ -187,4 +189,5 @@ export { TagGroup, TagItem } from '@launchpad-ui/tag';
 export { Toast, ToastCenter } from '@launchpad-ui/toast';
 export { Toggle } from '@launchpad-ui/toggle';
 export { Tooltip, TooltipBase } from '@launchpad-ui/tooltip';
+export { Stack } from '@launchpad-ui/stack';
 // plop end module exports

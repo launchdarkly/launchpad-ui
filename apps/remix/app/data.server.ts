@@ -26,6 +26,7 @@ export async function getComponents() {
     { to: 'components/slider', name: 'Slider' },
     { to: 'components/snackbar', name: 'Snackbar' },
     { to: 'components/split-button', name: 'SplitButton' },
+    { to: 'components/stack', name: 'Stack' },
     { to: 'components/tab-list', name: 'TabList' },
     { to: 'components/table', name: 'Table' },
     { to: 'components/tag', name: 'Tag' },
