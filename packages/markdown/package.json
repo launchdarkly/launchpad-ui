@@ -35,7 +35,7 @@
     "@launchpad-ui/tokens": "workspace:~",
     "classix": "2.1.17",
     "isomorphic-dompurify": "^1.6.0",
-    "marked": "^5.0.4"
+    "marked": "^5.1.0"
   },
   "peerDependencies": {
     "react": "18.2.0",
