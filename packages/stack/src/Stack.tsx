@@ -22,24 +22,12 @@ const Stack = ({
   ...props
 }: StackProps) => {
   return (
-    <div {...props} className={styles.stack} data-test-id={testId}>
-      {Children.map(
-        children,
-        (child, index) =>
-          child && (
-            <div
-              key={index}
-              className={cx(
-                styles.item,
-                styles[`gap-${gap}`],
-                !!align && styles.flex,
-                !!align && styles[align]
-              )}
-            >
-              {child}
-            </div>
-          )
-      )}
+    <div
+      {...props}
+      className={cx(styles.flex, styles[`gap-${gap}`], !!align && styles[align])}
+      data-test-id={testId}
+    >
+      {Children.map(children, (child, index) => child && <div key={index}>{child}</div>)}
     </div>
   );
 };
