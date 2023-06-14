@@ -1,6 +1,6 @@
 ---
-'@launchpad-ui/stack': patch
-'@launchpad-ui/types': patch
+'@launchpad-ui/stack': minor
+'@launchpad-ui/types': minor
 '@launchpad-ui/core': patch
 ---
 
