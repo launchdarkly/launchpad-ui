@@ -1,5 +1,25 @@
 # @launchpad-ui/core
 
+## 0.40.2
+
+### Patch Changes
+
+- [#878](https://github.com/launchdarkly/launchpad-ui/pull/878) [`f0d6fffb`](https://github.com/launchdarkly/launchpad-ui/commit/f0d6fffb04a96184caedc5d5c95c231240c6e28f) Thanks [@renovate](https://github.com/apps/renovate)! - [Markdown, Popover] Update dependencies
+
+- Updated dependencies [[`f0d6fffb`](https://github.com/launchdarkly/launchpad-ui/commit/f0d6fffb04a96184caedc5d5c95c231240c6e28f)]:
+  - @launchpad-ui/markdown@0.4.11
+  - @launchpad-ui/popover@0.10.4
+  - @launchpad-ui/dropdown@0.6.50
+  - @launchpad-ui/menu@0.10.4
+  - @launchpad-ui/navigation@0.11.20
+  - @launchpad-ui/progress-bubbles@0.6.13
+  - @launchpad-ui/select@0.3.2
+  - @launchpad-ui/split-button@0.7.20
+  - @launchpad-ui/tooltip@0.7.14
+  - @launchpad-ui/filter@0.5.29
+  - @launchpad-ui/clipboard@0.10.5
+  - @launchpad-ui/tag@0.2.2
+
 ## 0.40.1
 
 ### Patch Changes
