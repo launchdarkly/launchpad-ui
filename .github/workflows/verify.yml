@@ -1,6 +1,11 @@
 name: Verify changes
 
-on: pull_request
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+      - 'release/**'
 
 jobs:
   branch-info:
