@@ -160,15 +160,23 @@
     padding: 0 2.4rem;
   }
 
+  .xsmall.modal {
+    width: 100%;
+  }
+
   .small.modal {
     width: 45rem;
   }
 
-  .normal.modal {
+  .medium.modal {
     width: 65rem;
   }
 
   .large.modal {
-    width: 80rem;
+    width: 85rem;
+  }
+
+  .xlarge.modal {
+    width: 105rem;
   }
 }

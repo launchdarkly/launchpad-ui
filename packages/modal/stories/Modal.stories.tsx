@@ -30,7 +30,7 @@ export default {
   argTypes: {
     size: {
       description: 'A configurable width variant.',
-      options: ['small', 'normal', 'large'],
+      options: ['xsmall', 'small', 'medium', 'large', 'xlarge'],
       control: { type: 'radio', description: 'lkfjdslkfds' },
     },
     children: {
@@ -63,7 +63,7 @@ export default {
     },
   },
   args: {
-    size: 'normal',
+    size: 'medium',
   },
 };
 
@@ -175,7 +175,7 @@ export const Large: Story = {
 export const KitchenSink: Story = {
   render: () => {
     return (
-      <Modal status="warning" size="normal">
+      <Modal status="warning" size="medium">
         <ModalHeader
           title={
             <>
