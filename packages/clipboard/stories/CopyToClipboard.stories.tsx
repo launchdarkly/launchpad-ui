@@ -1,11 +1,10 @@
 import type { CopyToClipboardHandleRef } from '../src/CopyToClipboard';
-import type { StoryObj } from '@storybook/react';
-import type { ReactNode } from 'react';
+import type { ReactRenderer, StoryObj, StoryFn } from '@storybook/react';
+import type { StoryContext } from '@storybook/types';
 
 import { userEvent, within } from '@storybook/testing-library';
 import { useRef } from 'react';
 
-import { sleep } from '../../../.storybook/utils';
 import { CopyToClipboard } from '../src';
 
 export default {
@@ -30,17 +29,17 @@ export default {
     },
   },
   decorators: [
-    (storyFn: () => ReactNode) => (
+    (Story: StoryFn, context: StoryContext<ReactRenderer>) => (
       <div
         style={{
-          width: '100vw',
-          height: '100vh',
+          width: context.globals.theme === 'side-by-side' ? '50w' : '100vw',
+          height: context.globals.theme === 'side-by-side' ? '50vh' : '100vh',
           display: 'grid',
           alignItems: 'center',
           justifyContent: 'center',
         }}
       >
-        {storyFn()}
+        <Story />
       </div>
     ),
   ],
@@ -52,8 +51,10 @@ export const Default: Story = {
   args: { text: 'Code content', children: 'Copy content' },
   play: async ({ canvasElement }: { canvasElement: HTMLElement }) => {
     const canvas = within(canvasElement);
-    await sleep(500);
-    await userEvent.click(canvas.getByRole('button'));
+
+    const buttons = canvas.getAllByRole('button');
+    userEvent.hover(buttons[0]);
+    userEvent.click(buttons[1]);
   },
 };
 
@@ -61,8 +62,10 @@ export const Basic: Story = {
   args: { text: 'Code content', children: 'Copy content', kind: 'basic' },
   play: async ({ canvasElement }: { canvasElement: HTMLElement }) => {
     const canvas = within(canvasElement);
-    await sleep(500);
-    await userEvent.click(canvas.getByRole('button'));
+
+    const buttons = canvas.getAllByRole('button');
+    userEvent.hover(buttons[0]);
+    userEvent.click(buttons[1]);
   },
 };
 
@@ -70,8 +73,10 @@ export const Minimal: Story = {
   args: { text: 'Code content', children: 'Copy content', kind: 'minimal' },
   play: async ({ canvasElement }: { canvasElement: HTMLElement }) => {
     const canvas = within(canvasElement);
-    await sleep(500);
-    await userEvent.click(canvas.getByRole('button'));
+
+    const buttons = canvas.getAllByRole('button');
+    userEvent.hover(buttons[0]);
+    userEvent.click(buttons[1]);
   },
 };
 
