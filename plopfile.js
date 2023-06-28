@@ -113,7 +113,7 @@ module.exports = (plop) => {
        */
       {
         type: 'add',
-        path: 'apps/remix/app/routes/components/{{dashCase name}}.tsx',
+        path: 'apps/remix/app/routes/components.{{dashCase name}}.tsx',
         templateFile: '.plop/templates/component/remix-example.tsx.hbs',
       },
       {
