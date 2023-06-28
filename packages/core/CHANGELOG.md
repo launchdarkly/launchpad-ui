@@ -1,5 +1,38 @@
 # @launchpad-ui/core
 
+## 0.41.0
+
+### Minor Changes
+
+- [#890](https://github.com/launchdarkly/launchpad-ui/pull/890) [`008c5f78`](https://github.com/launchdarkly/launchpad-ui/commit/008c5f784bb6b2c907ec036c12fe88a7b568c5c1) Thanks [@stinachen](https://github.com/stinachen)! - [Modal]: Add xsmall and xlarge sizes. Rename normal to medium.
+
+### Patch Changes
+
+- [#880](https://github.com/launchdarkly/launchpad-ui/pull/880) [`c0647dcf`](https://github.com/launchdarkly/launchpad-ui/commit/c0647dcf836858787648bd9e941c26bc140df6a1) Thanks [@Niznikr](https://github.com/Niznikr)! - Add `stack` and `types` packages:
+
+  - Use `Stack` to add space between components.
+
+- [#881](https://github.com/launchdarkly/launchpad-ui/pull/881) [`3d3c0b5d`](https://github.com/launchdarkly/launchpad-ui/commit/3d3c0b5de4c95d4d75e97f2e3b166e36d3c32726) Thanks [@renovate](https://github.com/apps/renovate)! - [Popover] Update dependencies
+
+- [#878](https://github.com/launchdarkly/launchpad-ui/pull/878) [`f0d6fffb`](https://github.com/launchdarkly/launchpad-ui/commit/f0d6fffb04a96184caedc5d5c95c231240c6e28f) Thanks [@renovate](https://github.com/apps/renovate)! - [Markdown, Popover] Update dependencies
+
+- Updated dependencies [[`c0647dcf`](https://github.com/launchdarkly/launchpad-ui/commit/c0647dcf836858787648bd9e941c26bc140df6a1), [`008c5f78`](https://github.com/launchdarkly/launchpad-ui/commit/008c5f784bb6b2c907ec036c12fe88a7b568c5c1), [`3d3c0b5d`](https://github.com/launchdarkly/launchpad-ui/commit/3d3c0b5de4c95d4d75e97f2e3b166e36d3c32726), [`f0d6fffb`](https://github.com/launchdarkly/launchpad-ui/commit/f0d6fffb04a96184caedc5d5c95c231240c6e28f)]:
+  - @launchpad-ui/stack@0.1.0
+  - @launchpad-ui/types@0.1.0
+  - @launchpad-ui/modal@0.16.0
+  - @launchpad-ui/popover@0.10.4
+  - @launchpad-ui/markdown@0.4.11
+  - @launchpad-ui/select@0.3.2
+  - @launchpad-ui/dropdown@0.6.50
+  - @launchpad-ui/menu@0.10.4
+  - @launchpad-ui/navigation@0.11.20
+  - @launchpad-ui/progress-bubbles@0.6.13
+  - @launchpad-ui/split-button@0.7.20
+  - @launchpad-ui/tooltip@0.7.14
+  - @launchpad-ui/filter@0.5.29
+  - @launchpad-ui/clipboard@0.10.5
+  - @launchpad-ui/tag@0.2.2
+
 ## 0.40.1
 
 ### Patch Changes

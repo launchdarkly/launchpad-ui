@@ -1,5 +1,11 @@
 # @launchpad-ui/modal
 
+## 0.16.0
+
+### Minor Changes
+
+- [#890](https://github.com/launchdarkly/launchpad-ui/pull/890) [`008c5f78`](https://github.com/launchdarkly/launchpad-ui/commit/008c5f784bb6b2c907ec036c12fe88a7b568c5c1) Thanks [@stinachen](https://github.com/stinachen)! - [Modal]: Add xsmall and xlarge sizes. Rename normal to medium.
+
 ## 0.15.6
 
 ### Patch Changes
