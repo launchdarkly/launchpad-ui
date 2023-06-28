@@ -56,7 +56,7 @@ const ModalContainer = ({
   cancelWithOverlayClick = true,
   children,
   onCancel,
-  size = 'normal',
+  size = 'medium',
   className,
   onReady,
   theme,
