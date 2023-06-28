@@ -1,10 +1,8 @@
-import type { StoryObj } from '@storybook/react';
-import type { ReactNode } from 'react';
+import type { ReactRenderer, StoryObj, StoryFn } from '@storybook/react';
+import type { StoryContext } from '@storybook/types';
 
 import { Menu, MenuItem } from '@launchpad-ui/menu';
-import { userEvent, within } from '@storybook/testing-library';
 
-import { sleep } from '../../../.storybook/utils';
 import { Dropdown, DropdownButton } from '../src';
 
 export default {
@@ -18,18 +16,17 @@ export default {
     },
   },
   decorators: [
-    (storyFn: () => ReactNode) => (
+    (Story: StoryFn, context: StoryContext<ReactRenderer>) => (
       <div
         style={{
-          position: 'relative',
-          width: '100vw',
-          height: '100vh',
+          width: context.globals.theme === 'side-by-side' ? '50w' : '100vw',
+          height: context.globals.theme === 'side-by-side' ? '50vh' : '100vh',
           display: 'grid',
           alignItems: 'center',
           justifyContent: 'center',
         }}
       >
-        {storyFn()}
+        <Story />
       </div>
     ),
   ],
@@ -52,11 +49,7 @@ export const Example: Story = {
         <MenuItem>Item 3</MenuItem>
       </Menu>,
     ],
-  },
-  play: async ({ canvasElement }: { canvasElement: HTMLElement }) => {
-    const canvas = within(canvasElement);
-    await sleep(500);
-    await userEvent.click(canvas.getByRole('button'));
+    isOpen: true,
   },
 };
 

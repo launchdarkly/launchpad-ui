@@ -15,8 +15,11 @@ html {
 body {
   font-family: var(--lp-font-family-base);
   font-size: var(--lp-font-size-300);
-  background-color: var(--lp-color-bg-ui-primary);
   line-height: var(--lp-line-height-300);
+}
+
+[data-theme] {
+  background-color: var(--lp-color-bg-ui-primary);
   color: var(--lp-color-text-ui-secondary);
 }
 

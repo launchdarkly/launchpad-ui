@@ -8,7 +8,7 @@ import { useState } from '@storybook/client-api';
 import { userEvent, within } from '@storybook/testing-library';
 import { useRef } from 'react';
 
-import { sleep, REACT_NODE_TYPE_DOCS } from '../../../.storybook/utils';
+import { REACT_NODE_TYPE_DOCS } from '../../../.storybook/utils';
 import { AbsoluteModalFooter, Modal, ModalBody, ModalFooter, ModalHeader } from '../src';
 
 export default {
@@ -78,8 +78,7 @@ const play = async ({
 }) => {
   if (viewMode !== 'docs') {
     const canvas = within(canvasElement);
-    await sleep(500);
-    await userEvent.click(canvas.getByRole('button'));
+    await userEvent.click(canvas.getAllByRole('button')[0]);
   }
 };
 
