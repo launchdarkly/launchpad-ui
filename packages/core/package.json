@@ -49,6 +49,7 @@
     "@launchpad-ui/filter": "workspace:~",
     "@launchpad-ui/focus-trap": "workspace:~",
     "@launchpad-ui/form": "workspace:~",
+    "@launchpad-ui/inline": "workspace:~",
     "@launchpad-ui/markdown": "workspace:~",
     "@launchpad-ui/menu": "workspace:~",
     "@launchpad-ui/modal": "workspace:~",

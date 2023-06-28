@@ -1,4 +1,4 @@
-import type { StoryObj, DecoratorFn, StoryFn } from '@storybook/react';
+import type { StoryObj, Decorator, StoryFn } from '@storybook/react';
 
 import { useEffect } from '@storybook/addons';
 import { useId } from 'react';
@@ -9,7 +9,7 @@ import { Toggle } from '../src';
 import './Toggle.stories.css';
 
 const testingChromaticClassNames = [PseudoClasses.HOVER, PseudoClasses.FOCUS, PseudoClasses.ACTIVE];
-const useModifiedClassLists: DecoratorFn = (story, context) => {
+const useModifiedClassLists: Decorator = (story, context) => {
   // This a second decorator to add to work already done
   // with the above decorator
   useEffect(() => {

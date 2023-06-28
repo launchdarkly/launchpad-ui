@@ -1,4 +1,4 @@
-import type { StoryObj, DecoratorFn, StoryFn } from '@storybook/react';
+import type { StoryObj, Decorator, StoryFn } from '@storybook/react';
 
 import { createWithClassesDecorator, PseudoClasses } from '../../../.storybook/utils';
 import { TextField } from '../src';
@@ -6,7 +6,7 @@ import { TextField } from '../src';
 import './TextArea.stories.css';
 
 const chromaticTestStyles = [PseudoClasses.HOVER, PseudoClasses.FOCUS, PseudoClasses.ACTIVE];
-const withRestingAndDisabledStates: DecoratorFn = (story, context) => {
+const withRestingAndDisabledStates: Decorator = (story, context) => {
   const { originalStoryFn, args, viewMode } = context;
   // Original typing is not entirely accurate.
   // It passes everything in the first arg as a prop

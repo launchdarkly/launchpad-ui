@@ -493,6 +493,9 @@ importers:
       '@launchpad-ui/form':
         specifier: workspace:~
         version: link:../form
+      '@launchpad-ui/inline':
+        specifier: workspace:~
+        version: link:../inline
       '@launchpad-ui/markdown':
         specifier: workspace:~
         version: link:../markdown
@@ -744,6 +747,22 @@ importers:
       '@svgr/cli':
         specifier: ^8.0.1
         version: 8.0.1
+      react:
+        specifier: 18.2.0
+        version: 18.2.0
+      react-dom:
+        specifier: 18.2.0
+        version: 18.2.0(react@18.2.0)
+
+  packages/inline:
+    dependencies:
+      '@launchpad-ui/tokens':
+        specifier: workspace:~
+        version: link:../tokens
+      classix:
+        specifier: 2.1.17
+        version: 2.1.17
+    devDependencies:
       react:
         specifier: 18.2.0
         version: 18.2.0

@@ -1,4 +1,4 @@
-import type { StoryObj, DecoratorFn, StoryFn } from '@storybook/react';
+import type { StoryObj, Decorator, StoryFn } from '@storybook/react';
 
 import { createWithClassesDecorator, PseudoClasses } from '../../../.storybook/utils';
 import { Label, TextArea } from '../src';
@@ -6,7 +6,7 @@ import { Label, TextArea } from '../src';
 import './TextArea.stories.css';
 
 const testingChromaticClassNames = [PseudoClasses.HOVER, PseudoClasses.FOCUS, PseudoClasses.ACTIVE];
-const withRestingAndDisabledStates: DecoratorFn = (story, context) => {
+const withRestingAndDisabledStates: Decorator = (story, context) => {
   const { args, viewMode, originalStoryFn } = context;
   // The type provided don't seem to be correct,
   // componentId for example is required but it is
