@@ -5,7 +5,13 @@ import { Inline } from '../src';
 
 describe('Inline', () => {
   it('renders', () => {
-    render(<Inline>An important message</Inline>);
-    expect(screen.getByText('An important message')).toBeInTheDocument();
+    render(
+      <Inline>
+        <div>a</div>
+        <div>b</div>
+        <div>c</div>
+      </Inline>
+    );
+    expect(screen.getByTestId('inline')).toBeInTheDocument();
   });
 });
