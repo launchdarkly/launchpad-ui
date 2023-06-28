@@ -23,18 +23,25 @@ const Inline = ({
   ...props
 }: InlineProps) => {
   return (
-    <div {...props} className={cx(styles.inline, styles[`gap-${gap}`])} data-test-id={testId}>
-      <div className={cx(styles.container, styles[`alignX-${alignX}`], styles[`alignY-${alignY}`])}>
-        {Children.map(
-          children,
-          (child, index) =>
-            child && (
-              <div key={index} className={styles.item}>
-                {child}
-              </div>
-            )
-        )}
-      </div>
+    <div
+      {...props}
+      className={cx(
+        styles.inline,
+        styles[`gap-${gap}`],
+        styles[`alignX-${alignX}`],
+        styles[`alignY-${alignY}`]
+      )}
+      data-test-id={testId}
+    >
+      {Children.map(
+        children,
+        (child, index) =>
+          child && (
+            <div key={index} className={styles.item}>
+              {child}
+            </div>
+          )
+      )}
     </div>
   );
 };
