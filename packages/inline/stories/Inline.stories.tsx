@@ -1,5 +1,6 @@
 import type { StoryObj } from '@storybook/react';
 
+import { Block } from '../../../.storybook/Block';
 import { Inline } from '../src';
 
 export default {
@@ -16,48 +17,14 @@ export default {
 type Story = StoryObj<typeof Inline>;
 
 const ELEMENTS = [
-  <div
-    style={{
-      display: 'block',
-      height: 32,
-      width: 32,
-      background: 'var(--lp-color-bg-ui-tertiary)',
-    }}
-    key="1"
-  />,
-  <div
-    style={{
-      display: 'block',
-      height: 48,
-      width: 48,
-      background: 'var(--lp-color-bg-ui-tertiary)',
-    }}
-    key="2"
-  />,
-  <div
-    style={{
-      display: 'block',
-      height: 72,
-      width: 72,
-      background: 'var(--lp-color-bg-ui-tertiary)',
-    }}
-    key="3"
-  />,
+  <Block width="32" height="32" key={1} />,
+  <Block width="48" height="48" key={2} />,
+  <Block width="72" height="72" key={3} />,
 ];
 
 export const Example: Story = {
   args: {
-    children: [...Array(10)].map((_, i) => (
-      <div
-        style={{
-          display: 'block',
-          height: 64,
-          width: 64,
-          background: 'var(--lp-color-bg-ui-tertiary)',
-        }}
-        key={i}
-      />
-    )),
+    children: [...Array(10)].map((_, i) => <Block width="64" key={i} />),
     gap: '2',
   },
 };

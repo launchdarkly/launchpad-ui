@@ -1,5 +1,6 @@
 import type { StoryObj } from '@storybook/react';
 
+import { Block } from '../../../.storybook/Block';
 import { Stack } from '../src';
 
 export default {
@@ -16,42 +17,10 @@ export default {
 type Story = StoryObj<typeof Stack>;
 
 const ELEMENTS = [
-  <div
-    style={{
-      display: 'block',
-      height: 48,
-      width: 32,
-      background: 'var(--lp-color-bg-ui-tertiary)',
-    }}
-    key="1"
-  />,
-  <div
-    style={{
-      display: 'block',
-      height: 48,
-      width: 48,
-      background: 'var(--lp-color-bg-ui-tertiary)',
-    }}
-    key="2"
-  />,
-  <div
-    style={{
-      display: 'block',
-      height: 48,
-      width: 64,
-      background: 'var(--lp-color-bg-ui-tertiary)',
-    }}
-    key="3"
-  />,
-  <div
-    style={{
-      display: 'block',
-      height: 48,
-      width: 80,
-      background: 'var(--lp-color-bg-ui-tertiary)',
-    }}
-    key="4"
-  />,
+  <Block width="32" key={1} />,
+  <Block width="48" key={2} />,
+  <Block width="64" key={3} />,
+  <Block width="80" key={4} />,
 ];
 
 export const Example: Story = {

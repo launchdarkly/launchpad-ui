@@ -104,6 +104,7 @@ export type { TooltipProps } from '@launchpad-ui/tooltip';
 export type { StackProps } from '@launchpad-ui/stack';
 export type { Space } from '@launchpad-ui/types';
 export type { InlineProps } from '@launchpad-ui/inline';
+export type { ColumnProps, ColumnsProps } from '@launchpad-ui/columns';
 // plop end type exports
 
 // plop start module exports
@@ -192,4 +193,5 @@ export { Toggle } from '@launchpad-ui/toggle';
 export { Tooltip, TooltipBase } from '@launchpad-ui/tooltip';
 export { Stack } from '@launchpad-ui/stack';
 export { Inline } from '@launchpad-ui/inline';
+export { Column, Columns } from '@launchpad-ui/columns';
 // plop end module exports

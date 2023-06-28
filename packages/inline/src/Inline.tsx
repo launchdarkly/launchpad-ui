@@ -20,6 +20,7 @@ const Inline = ({
   gap = '0',
   alignX = 'left',
   alignY = 'center',
+  className,
   ...props
 }: InlineProps) => {
   return (
@@ -29,7 +30,8 @@ const Inline = ({
         styles.inline,
         styles[`gap-${gap}`],
         styles[`alignX-${alignX}`],
-        styles[`alignY-${alignY}`]
+        styles[`alignY-${alignY}`],
+        className
       )}
       data-test-id={testId}
     >
