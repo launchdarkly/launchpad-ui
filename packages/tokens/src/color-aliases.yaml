@@ -252,7 +252,7 @@ color:
         value: '{ color.gray.800.value }'
         dark: '{ color.gray.200.value }'
       tertiary:
-        value: '{ color.gray.600.value }'
+        value: '{ color.gray.500.value }'
         dark: '{ color.gray.100.value }'
     overlay:
       primary:
