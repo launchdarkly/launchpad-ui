@@ -1,11 +1,11 @@
 {
-  "name": "@launchpad-ui/{{kebabCase name}}",
+  "name": "@launchpad-ui/inline",
   "version": "0.0.1",
   "status": "alpha",
   "publishConfig": {
     "access": "public"
   },
-  "description": "{{description}}",
+  "description": "An element used to add horizontal space between components.",
   "files": [
     "dist"
   ],
@@ -33,6 +33,7 @@
   },
   "dependencies": {
     "@launchpad-ui/tokens": "workspace:~",
+    "@launchpad-ui/types": "workspace:~",
     "classix": "2.1.17"
   },
   "peerDependencies": {
