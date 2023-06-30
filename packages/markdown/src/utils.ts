@@ -38,7 +38,7 @@ function renderMarkdown(
     ADD_ATTR: ['target'],
     FORBID_ATTR: ['style', 'class'],
     FORBID_TAGS: ['style'],
-    ALLOWED_TAGS: ['a', '#text', 'p', 'li', 'ol', 'ul', 'b', 'strong', 'i', 'em'],
+    ALLOWED_TAGS: ['a', '#text', 'p', 'li', 'ol', 'ul', 'b', 'strong', 'i', 'em', 'del', 'code'],
   };
 
   if (allowedTags) {
