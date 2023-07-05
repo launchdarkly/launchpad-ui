@@ -1,5 +1,51 @@
 # @launchpad-ui/core
 
+## 0.41.2
+
+### Patch Changes
+
+- [#895](https://github.com/launchdarkly/launchpad-ui/pull/895) [`864b63c5`](https://github.com/launchdarkly/launchpad-ui/commit/864b63c5bdcdf0d52b322be6469b6edfedad4f31) Thanks [@Niznikr](https://github.com/Niznikr)! - [Tokens] Update `lp-color-text-ui-tertiary` (dark) to `gray-500`
+
+- [#900](https://github.com/launchdarkly/launchpad-ui/pull/900) [`4c9695e7`](https://github.com/launchdarkly/launchpad-ui/commit/4c9695e777b80c7a64d5ec6ef707acb0cce9dec0) Thanks [@renovate](https://github.com/apps/renovate)! - Update dependencies
+
+- [#897](https://github.com/launchdarkly/launchpad-ui/pull/897) [`e55705cd`](https://github.com/launchdarkly/launchpad-ui/commit/e55705cdc212ebe237cdee19d0538078af5ad9fe) Thanks [@rsoberano-ld](https://github.com/rsoberano-ld)! - [Markdown] Prevent css injection by forbidding style tags and adding base allowed tags
+
+- Updated dependencies [[`4c9695e7`](https://github.com/launchdarkly/launchpad-ui/commit/4c9695e777b80c7a64d5ec6ef707acb0cce9dec0), [`e55705cd`](https://github.com/launchdarkly/launchpad-ui/commit/e55705cdc212ebe237cdee19d0538078af5ad9fe)]:
+  - @launchpad-ui/focus-trap@0.1.8
+  - @launchpad-ui/navigation@0.11.21
+  - @launchpad-ui/dropdown@0.6.51
+  - @launchpad-ui/markdown@0.4.12
+  - @launchpad-ui/tab-list@0.4.31
+  - @launchpad-ui/drawer@0.4.7
+  - @launchpad-ui/select@0.3.3
+  - @launchpad-ui/toggle@0.6.3
+  - @launchpad-ui/alert@0.7.16
+  - @launchpad-ui/modal@0.16.1
+  - @launchpad-ui/form@0.8.16
+  - @launchpad-ui/menu@0.10.5
+  - @launchpad-ui/tag@0.2.3
+  - @launchpad-ui/avatar@0.4.47
+  - @launchpad-ui/banner@0.9.15
+  - @launchpad-ui/button@0.8.14
+  - @launchpad-ui/chip@0.7.13
+  - @launchpad-ui/clipboard@0.10.6
+  - @launchpad-ui/collapsible@0.1.11
+  - @launchpad-ui/columns@0.1.1
+  - @launchpad-ui/counter@0.3.29
+  - @launchpad-ui/filter@0.5.30
+  - @launchpad-ui/inline@0.1.1
+  - @launchpad-ui/pagination@0.3.57
+  - @launchpad-ui/popover@0.10.5
+  - @launchpad-ui/progress@0.5.26
+  - @launchpad-ui/progress-bubbles@0.6.14
+  - @launchpad-ui/slider@0.4.7
+  - @launchpad-ui/snackbar@0.3.52
+  - @launchpad-ui/split-button@0.7.21
+  - @launchpad-ui/stack@0.1.1
+  - @launchpad-ui/table@0.5.8
+  - @launchpad-ui/toast@0.2.49
+  - @launchpad-ui/tooltip@0.7.15
+
 ## 0.41.1
 
 ### Patch Changes

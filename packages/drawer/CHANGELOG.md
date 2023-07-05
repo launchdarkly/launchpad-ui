@@ -1,5 +1,18 @@
 # @launchpad-ui/drawer
 
+## 0.4.7
+
+### Patch Changes
+
+- [#900](https://github.com/launchdarkly/launchpad-ui/pull/900) [`4c9695e7`](https://github.com/launchdarkly/launchpad-ui/commit/4c9695e777b80c7a64d5ec6ef707acb0cce9dec0) Thanks [@renovate](https://github.com/apps/renovate)! - Update dependencies
+
+- Updated dependencies [[`864b63c5`](https://github.com/launchdarkly/launchpad-ui/commit/864b63c5bdcdf0d52b322be6469b6edfedad4f31), [`4c9695e7`](https://github.com/launchdarkly/launchpad-ui/commit/4c9695e777b80c7a64d5ec6ef707acb0cce9dec0)]:
+  - @launchpad-ui/tokens@0.5.7
+  - @launchpad-ui/focus-trap@0.1.8
+  - @launchpad-ui/button@0.8.14
+  - @launchpad-ui/icons@0.8.7
+  - @launchpad-ui/progress@0.5.26
+
 ## 0.4.6
 
 ### Patch Changes

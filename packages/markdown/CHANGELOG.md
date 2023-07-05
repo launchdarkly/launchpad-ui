@@ -1,5 +1,16 @@
 # @launchpad-ui/markdown
 
+## 0.4.12
+
+### Patch Changes
+
+- [#900](https://github.com/launchdarkly/launchpad-ui/pull/900) [`4c9695e7`](https://github.com/launchdarkly/launchpad-ui/commit/4c9695e777b80c7a64d5ec6ef707acb0cce9dec0) Thanks [@renovate](https://github.com/apps/renovate)! - Update dependencies
+
+- [#897](https://github.com/launchdarkly/launchpad-ui/pull/897) [`e55705cd`](https://github.com/launchdarkly/launchpad-ui/commit/e55705cdc212ebe237cdee19d0538078af5ad9fe) Thanks [@rsoberano-ld](https://github.com/rsoberano-ld)! - [Markdown] Prevent css injection by forbidding style tags and adding base allowed tags
+
+- Updated dependencies [[`864b63c5`](https://github.com/launchdarkly/launchpad-ui/commit/864b63c5bdcdf0d52b322be6469b6edfedad4f31)]:
+  - @launchpad-ui/tokens@0.5.7
+
 ## 0.4.11
 
 ### Patch Changes

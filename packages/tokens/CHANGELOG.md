@@ -1,5 +1,11 @@
 # @launchpad-ui/tokens
 
+## 0.5.7
+
+### Patch Changes
+
+- [#895](https://github.com/launchdarkly/launchpad-ui/pull/895) [`864b63c5`](https://github.com/launchdarkly/launchpad-ui/commit/864b63c5bdcdf0d52b322be6469b6edfedad4f31) Thanks [@Niznikr](https://github.com/Niznikr)! - [Tokens] Update `lp-color-text-ui-tertiary` (dark) to `gray-500`
+
 ## 0.5.6
 
 ### Patch Changes
