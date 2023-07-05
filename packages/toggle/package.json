@@ -33,9 +33,9 @@
   },
   "dependencies": {
     "@launchpad-ui/tokens": "workspace:~",
-    "@react-aria/focus": "3.12.1",
+    "@react-aria/focus": "3.13.0",
     "@react-aria/switch": "3.5.1",
-    "@react-stately/toggle": "3.5.2",
+    "@react-stately/toggle": "3.6.0",
     "classix": "2.1.17"
   },
   "peerDependencies": {
