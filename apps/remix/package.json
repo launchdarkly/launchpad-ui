@@ -16,7 +16,6 @@
     "@launchpad-ui/core": "workspace:~",
     "@launchpad-ui/icons": "workspace:~",
     "@launchpad-ui/tokens": "workspace:~",
-    "@react-aria/ssr": "3.7.0",
     "@react-stately/collections": "3.9.0",
     "@react-stately/data": "3.10.0",
     "@remix-run/css-bundle": "^1.18.1",

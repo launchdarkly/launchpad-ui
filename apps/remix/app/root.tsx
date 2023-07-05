@@ -1,7 +1,6 @@
 import type { LinksFunction, V2_MetaFunction } from '@remix-run/node';
 import type { PropsWithChildren, ReactNode } from 'react';
 
-import { SSRProvider } from '@react-aria/ssr';
 import { cssBundleHref } from '@remix-run/css-bundle';
 import {
   Links,
@@ -44,13 +43,11 @@ export const meta: V2_MetaFunction = () => {
 
 export default function App() {
   return (
-    <SSRProvider>
-      <Document>
-        <Layout>
-          <Outlet />
-        </Layout>
-      </Document>
-    </SSRProvider>
+    <Document>
+      <Layout>
+        <Outlet />
+      </Layout>
+    </Document>
   );
 }
 
