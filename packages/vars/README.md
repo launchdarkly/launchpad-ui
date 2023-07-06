@@ -32,4 +32,4 @@ export const container = style({
 
 **Note**
 
-The `@launchpad-ui/tokens` package must be installed and its tokens imported to ensure styles are applied.
+The [@launchpad-ui/tokens](../tokens/README.md) package must be installed and its tokens imported to ensure styles are applied.
