@@ -18,7 +18,9 @@ $ npm install @launchpad-ui/tokens
 ### CSS Custom Properties
 
 ```css
-@import '@launchpad-ui/tokens/index.css';
+@import '@launchpad-ui/tokens/dist/index.css';
+@import '@launchpad-ui/tokens/dist/media-queries.css';
+@import '@launchpad-ui/tokens/dist/themes.css';
 ```
 
 ### ES Modules
