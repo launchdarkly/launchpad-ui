@@ -2,6 +2,7 @@
 
 import path from 'path';
 
+import { vanillaExtractPlugin } from '@vanilla-extract/vite-plugin';
 import react from '@vitejs/plugin-react-swc';
 import { defineConfig } from 'vite';
 import istanbul from 'vite-plugin-istanbul';
@@ -19,7 +20,12 @@ Object.keys(paths).forEach((key) => {
 const packageJSON = require(path.resolve('./package.json'));
 
 export default defineConfig({
-  plugins: [react(), cssImport(), ...(process.env.CYPRESS ? [istanbul({ cypress: true })] : [])],
+  plugins: [
+    react(),
+    vanillaExtractPlugin(),
+    cssImport(),
+    ...(process.env.CYPRESS ? [istanbul({ cypress: true })] : []),
+  ],
   resolve: {
     alias,
   },

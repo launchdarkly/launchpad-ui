@@ -1,6 +1,6 @@
 import { CopyToClipboard } from '@launchpad-ui/clipboard';
 
-import tokens from './tokens.json';
+import tokens from '../dist/default.json';
 
 export default {
   title: 'Tokens/Colors',

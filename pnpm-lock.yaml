@@ -104,6 +104,12 @@ importers:
       '@typescript-eslint/parser':
         specifier: ^5.61.0
         version: 5.61.0(eslint@8.44.0)(typescript@5.1.3)
+      '@vanilla-extract/css':
+        specifier: ^1.12.0
+        version: 1.12.0
+      '@vanilla-extract/vite-plugin':
+        specifier: ^3.8.2
+        version: 3.8.2(@types/node@18.16.16)(ts-node@10.9.1)(vite@4.3.9)
       '@vitejs/plugin-react-swc':
         specifier: ^3.3.1
         version: 3.3.1(vite@4.3.9)
@@ -300,6 +306,9 @@ importers:
       '@launchpad-ui/icons':
         specifier: workspace:~
         version: link:../icons
+      '@launchpad-ui/styles':
+        specifier: workspace:~
+        version: link:../styles
       '@launchpad-ui/tokens':
         specifier: workspace:~
         version: link:../tokens
@@ -1264,6 +1273,16 @@ importers:
       react-dom:
         specifier: 18.2.0
         version: 18.2.0(react@18.2.0)
+
+  packages/styles:
+    dependencies:
+      '@launchpad-ui/tokens':
+        specifier: workspace:~
+        version: link:../tokens
+    devDependencies:
+      '@vanilla-extract/css':
+        specifier: ^1.12.0
+        version: 1.12.0
 
   packages/tab-list:
     dependencies:
@@ -8752,8 +8771,8 @@ packages:
       - supports-color
     dev: true
 
-  /@vanilla-extract/css@1.11.1:
-    resolution: {integrity: sha512-iLalh4K4sXgkfzsiFUsiek4IY1/N4jtJKdr1ubpyszPE7W7G2v+DAl8KcmKkRA6vS7k5mFNW34e4fNki6T2cbQ==}
+  /@vanilla-extract/css@1.12.0:
+    resolution: {integrity: sha512-TEttZfnqTRtwgVYiBWQSGGUiVaYWReHp59DsavITEvh4TpJNifZFGhBznHx4wQFEsyio6xA513jps4tmqR6zmw==}
     dependencies:
       '@emotion/hash': 0.9.1
       '@vanilla-extract/private': 1.0.3
@@ -8774,7 +8793,7 @@ packages:
       '@babel/core': 7.22.1
       '@babel/plugin-syntax-typescript': 7.21.4(@babel/core@7.22.1)
       '@vanilla-extract/babel-plugin-debug-ids': 1.0.3
-      '@vanilla-extract/css': 1.11.1
+      '@vanilla-extract/css': 1.12.0
       esbuild: 0.17.6
       eval: 0.1.6
       find-up: 5.0.0
@@ -8796,6 +8815,27 @@ packages:
 
   /@vanilla-extract/private@1.0.3:
     resolution: {integrity: sha512-17kVyLq3ePTKOkveHxXuIJZtGYs+cSoev7BlP+Lf4916qfDhk/HBjvlYDe8egrea7LNPHKwSZJK/bzZC+Q6AwQ==}
+    dev: true
+
+  /@vanilla-extract/vite-plugin@3.8.2(@types/node@18.16.16)(ts-node@10.9.1)(vite@4.3.9):
+    resolution: {integrity: sha512-i0vpuBUoh10Obl0hJr0dWQa6M3Udu/irm4tnsg1lUze8DXTbv3ctHmVu/wrRZHKw1EzzW/v+nLoJJRvisApspQ==}
+    peerDependencies:
+      vite: ^2.2.3 || ^3.0.0 || ^4.0.3
+    dependencies:
+      '@vanilla-extract/integration': 6.2.1(@types/node@18.16.16)
+      outdent: 0.8.0
+      postcss: 8.4.24
+      postcss-load-config: 3.1.4(postcss@8.4.24)(ts-node@10.9.1)
+      vite: 4.3.9(@types/node@18.16.16)
+    transitivePeerDependencies:
+      - '@types/node'
+      - less
+      - sass
+      - stylus
+      - sugarss
+      - supports-color
+      - terser
+      - ts-node
     dev: true
 
   /@vitejs/plugin-react-swc@3.3.1(vite@4.3.9):

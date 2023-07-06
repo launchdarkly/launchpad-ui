@@ -1,0 +1,45 @@
+{
+  "name": "@launchpad-ui/vars",
+  "version": "0.0.1",
+  "status": "alpha",
+  "publishConfig": {
+    "access": "public"
+  },
+  "description": "Vanilla Extract design token references for LaunchPad styles.",
+  "files": [
+    "dist"
+  ],
+  "main": "dist/index.js",
+  "module": "dist/index.es.js",
+  "types": "dist/index.d.ts",
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.es.js",
+      "require": "./dist/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "source": "src/index.ts",
+  "scripts": {
+    "build": "vite build -c ../../vite.config.ts && tsc --project tsconfig.build.json",
+    "clean": "rm -rf dist",
+    "lint": "eslint '**/*.{ts,tsx,js}'",
+    "test": "exit 0"
+  },
+  "dependencies": {
+    "@launchpad-ui/tokens": "workspace:~"
+  },
+  "peerDependencies": {
+    "@vanilla-extract/css": "^1.12.0"
+  },
+  "peerDependenciesMeta": {
+    "@vanilla-extract/css": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@vanilla-extract/css": "^1.12.0"
+  }
+}

@@ -74,7 +74,7 @@ module.exports = {
       ],
     },
     json: {
-      buildPath: 'stories/',
+      buildPath: 'dist/',
       transforms: [
         'attribute/cti',
         'name/cti/kebab',
@@ -85,8 +85,12 @@ module.exports = {
       ],
       files: [
         {
+          format: 'json/nested/contract',
+          destination: 'contract.json',
+        },
+        {
           format: 'json/nested',
-          destination: 'tokens.json',
+          destination: 'default.json',
         },
       ],
     },
@@ -146,3 +150,36 @@ StyleDictionary.registerFormat({
     })}${defaultColorCSSVariables}\n${darkColorCSSVariables}`;
   },
 });
+
+StyleDictionary.registerFormat({
+  name: 'json/nested/contract',
+  formatter({ dictionary }) {
+    return JSON.stringify(minifyDictionary(dictionary.tokens), null, 2) + '\n';
+  },
+});
+
+const minifyDictionary = (obj) => {
+  if (typeof obj !== 'object' || Array.isArray(obj)) {
+    return obj;
+  }
+
+  const dict = {};
+
+  if (Object.prototype.hasOwnProperty.call(obj, 'value')) {
+    let variable = '';
+    const path = obj.path.filter((item) => item !== ' ');
+    path.forEach((item, index) => {
+      variable += item;
+      variable += index !== path.length - 1 ? '-' : '';
+    });
+
+    return variable;
+  } else {
+    for (const name in obj) {
+      if (Object.prototype.hasOwnProperty.call(obj, name)) {
+        dict[name] = minifyDictionary(obj[name]);
+      }
+    }
+  }
+  return dict;
+};
