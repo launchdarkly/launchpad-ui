@@ -9,7 +9,7 @@
   ],
   "packageRules": [
     {
-      "updateTypes": ["patch"],
+      "matchUpdateTypes": ["patch"],
       "enabled": false
     }
   ],
