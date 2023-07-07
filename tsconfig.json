@@ -41,7 +41,8 @@
       "@launchpad-ui/toast": ["./packages/toast/src"],
       "@launchpad-ui/toggle": ["./packages/toggle/src"],
       "@launchpad-ui/tooltip": ["./packages/tooltip/src"],
-      "@launchpad-ui/types": ["./packages/types/src"]
+      "@launchpad-ui/types": ["./packages/types/src"],
+      "@launchpad-ui/vars": ["./packages/vars/src"]
     }
   }
 }

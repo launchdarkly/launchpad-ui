@@ -13,5 +13,3 @@ test-results/
 *.log
 .nyc_output
 .idea
-
-packages/tokens/stories/tokens.json
