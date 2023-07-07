@@ -26,8 +26,9 @@
   },
   "source": "src/index.ts",
   "scripts": {
-    "build": "pnpm build:icons && vite build -c ../../vite.config.ts && tsc --project tsconfig.build.json",
-    "build:icons": "svgr --silent -- icons",
+    "build": "pnpm build:types && vite build -c ../../vite.config.ts && tsc --project tsconfig.build.json && pnpm build:sprite",
+    "build:sprite": "rm -rf dist/sprite.svg && node sprite.js && prettier -w --parser html dist/sprite.svg",
+    "build:types": "node types.js && prettier -w src/types.ts",
     "clean": "rm -rf dist",
     "lint": "eslint '**/*.{ts,tsx,js}' && stylelint '**/*.css' --ignore-path ../../.stylelintignore",
     "test": "pnpm build:icons && vitest run --coverage"
@@ -41,7 +42,6 @@
     "react-dom": "18.2.0"
   },
   "devDependencies": {
-    "@svgr/cli": "^8.0.1",
     "react": "18.2.0",
     "react-dom": "18.2.0"
   }

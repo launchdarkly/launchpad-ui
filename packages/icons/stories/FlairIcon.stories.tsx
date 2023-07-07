@@ -1,6 +1,6 @@
 import type { StoryObj } from '@storybook/react';
 
-import { ContactPage, Edit, Flag, FlairIcon, SupportAgent, ThumbUp, Warning } from '../src';
+import { Icon, FlairIcon } from '../src';
 
 export default {
   component: FlairIcon,
@@ -17,25 +17,25 @@ export default {
 type Story = StoryObj<typeof FlairIcon>;
 
 export const Circular: Story = {
-  args: { children: <ContactPage />, isRounded: true },
+  args: { children: <Icon name="contact-page" />, isRounded: true },
 };
 
 export const BlueToPurple: Story = {
-  args: { children: <SupportAgent />, gradient: 'purpleToBlue' },
+  args: { children: <Icon name="support-agent" />, gradient: 'purpleToBlue' },
 };
 
 export const YellowToCyan: Story = {
-  args: { children: <Flag />, gradient: 'yellowToCyan' },
+  args: { children: <Icon name="flag" />, gradient: 'yellowToCyan' },
 };
 
 export const PinkToPurple: Story = {
-  args: { children: <Edit />, gradient: 'pinkToPurple' },
+  args: { children: <Icon name="edit" />, gradient: 'pinkToPurple' },
 };
 
 export const CyanToBlue: Story = {
-  args: { children: <ThumbUp />, gradient: 'cyanToBlue' },
+  args: { children: <Icon name="thumb-up" />, gradient: 'cyanToBlue' },
 };
 
 export const CyanToPurple: Story = {
-  args: { children: <Warning />, gradient: 'cyanToPurple' },
+  args: { children: <Icon name="warning" />, gradient: 'cyanToPurple' },
 };

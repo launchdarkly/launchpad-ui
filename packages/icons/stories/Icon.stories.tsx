@@ -3,9 +3,7 @@ import type { Meta, ReactRenderer } from '@storybook/react';
 import type { ArgsStoryFn } from '@storybook/types';
 
 import { Icon } from '../src';
-import * as icons from '../src';
-
-type IconName = Exclude<keyof typeof icons, 'Icon' | 'StatusIcon' | 'FlairIcon'>;
+import { icons } from '../src/types';
 
 export default {
   component: Icon,
@@ -46,16 +44,9 @@ const render: ArgsStoryFn<ReactRenderer> = (args, { globals }) => (
       marginTop: '4rem',
     }}
   >
-    {Object.keys(icons).map((key, index) => {
-      if (!['Icon', 'StatusIcon', 'FlairIcon', '__namedExportsOrder'].includes(key))
-        return (
-          <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }} key={index}>
-            {icons[key as IconName]({ size: 'medium' })}
-            <span>{key}</span>
-          </div>
-        );
-      return null;
-    })}
+    {icons.map((item, index) => (
+      <Icon name={item} key={index} />
+    ))}
   </div>
 );
 
