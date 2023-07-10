@@ -1,7 +1,7 @@
 import type { AriaButtonProps } from '@react-aria/button';
 import type { AriaNumberFieldProps } from '@react-aria/numberfield';
 
-import { ExpandLess, ExpandMore } from '@launchpad-ui/icons';
+import { Icon } from '@launchpad-ui/icons';
 import { useButton } from '@react-aria/button';
 import { useLocale } from '@react-aria/i18n';
 import { useNumberField as useReactAriaNumberField } from '@react-aria/numberfield';
@@ -69,10 +69,10 @@ const useNumberField = ({
         />
         <div className={styles['numberField-stepperContainer']}>
           <Stepper {...incrementButtonProps}>
-            <ExpandLess />
+            <Icon name="expand-less" />
           </Stepper>
           <Stepper {...decrementButtonProps}>
-            <ExpandMore />
+            <Icon name="expand-more" />
           </Stepper>
         </div>
       </div>

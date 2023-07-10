@@ -1,13 +1,13 @@
-import type { StoryObj, DecoratorFn } from '@storybook/react';
+import type { StoryObj, Decorator } from '@storybook/react';
 
 import { Fragment } from 'react';
 
-import { Add } from '../../icons/src';
+import { Icon } from '../../icons/src';
 import { IconButton } from '../src';
 
 import './Button.stories.css';
 
-const buttonTemplateWithStates: DecoratorFn = (storyComponent, context) => {
+const buttonTemplateWithStates: Decorator = (storyComponent, context) => {
   const { viewMode, args } = context;
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -135,7 +135,7 @@ export default {
 
 type Story = StoryObj<typeof IconButton>;
 
-const icon = <Add />;
+const icon = <Icon name="add" />;
 
 export const Minimal: Story = {
   args: { icon, 'aria-label': 'Button' },

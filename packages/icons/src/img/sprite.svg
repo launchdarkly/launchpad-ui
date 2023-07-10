@@ -17,7 +17,6 @@
       <path xmlns="http://www.w3.org/2000/svg" d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" />
     </symbol>
     <symbol viewBox="0 0 24 24" id="alert-rhombus">
-      <title xmlns="http://www.w3.org/2000/svg">Error</title>
       <path
         xmlns="http://www.w3.org/2000/svg"
         d="M12 2C11.5 2 11 2.19 10.59 2.59L2.59 10.59C1.8 11.37 1.8 12.63 2.59 13.41L10.59 21.41C11.37 22.2 12.63 22.2 13.41 21.41L21.41 13.41C22.2 12.63 22.2 11.37 21.41 10.59L13.41 2.59C13 2.19 12.5 2 12 2M11 7H13V13H11V7M11 15H13V17H11V15Z"
@@ -62,34 +61,30 @@
       <path
         xmlns="http://www.w3.org/2000/svg"
         d="M7.02979 13.92H11.0298V4.99997L13.0398 4.96997V13.92H17.0298L12.0298 18.92L7.02979 13.92Z"
-        fill="currentcolor"
       />
     </symbol>
     <symbol viewBox="0 0 24 24" id="arrow-drop-down">
-      <path xmlns="http://www.w3.org/2000/svg" d="M7 10L12 15L17 10H7Z" fill="black" />
+      <path xmlns="http://www.w3.org/2000/svg" d="M7 10L12 15L17 10H7Z" />
     </symbol>
     <symbol viewBox="0 0 24 24" id="arrow-left-thin">
       <path
         xmlns="http://www.w3.org/2000/svg"
         d="M10.0179 17V13H18.9699L19 10.99H10.0179V7L5 12L10.0179 17Z"
-        fill="currentcolor"
       />
     </symbol>
     <symbol viewBox="0 0 24 24" id="arrow-right-thin">
       <path
         xmlns="http://www.w3.org/2000/svg"
         d="M13.9821 7V11H5.03011L5 13.01H13.9821V17L19 12L13.9821 7Z"
-        fill="currentcolor"
       />
     </symbol>
     <symbol viewBox="0 0 24 24" id="arrow-right">
-      <path xmlns="http://www.w3.org/2000/svg" d="M10 17L15 12L10 7V17Z" fill="black" />
+      <path xmlns="http://www.w3.org/2000/svg" d="M10 17L15 12L10 7V17Z" />
     </symbol>
     <symbol viewBox="0 0 24 24" id="arrow-up-thin">
       <path
         xmlns="http://www.w3.org/2000/svg"
         d="M7.02979 9.96997H11.0298V18.89L13.0398 18.92V9.96997H17.0298L12.0298 4.96997L7.02979 9.96997Z"
-        fill="currentcolor"
       />
     </symbol>
     <symbol viewBox="0 0 24 24" id="article">
@@ -314,7 +309,6 @@
       />
     </symbol>
     <symbol viewBox="0 0 24 24" id="error-circle">
-      <title xmlns="http://www.w3.org/2000/svg">Error</title>
       <path
         xmlns="http://www.w3.org/2000/svg"
         d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM17 13.5H7V10.5H17V13.5Z"
@@ -361,7 +355,6 @@
       <path
         xmlns="http://www.w3.org/2000/svg"
         d="M0 14V16H6V14H0ZM0 2V4H10V2H0ZM10 18V16H18V14H10V12H8V18H10ZM4 6V8H0V10H4V12H6V6H4ZM18 10V8H8V10H18ZM12 6H14V4H18V2H14V0H12V6Z"
-        fill="currentcolor"
       />
     </symbol>
     <symbol viewBox="0 0 24 24" id="flag-circle">
@@ -410,7 +403,7 @@
         d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H8c0-2.21 1.79-4 4-4s4 1.79 4 4c0 .88-.36 1.68-.93 2.25z"
       />
     </symbol>
-    <symbol viewBox="0 0 24 24" id="home">
+    <symbol viewBox="0 96 960 960" id="home">
       <path
         xmlns="http://www.w3.org/2000/svg"
         d="M240 856h120V616h240v240h120V496L480 316 240 496v360Zm0 80q-33 0-56.5-23.5T160 856V496q0-19 8.5-36t23.5-28l240-180q11-8 23-12t25-4q13 0 25 4t23 12l240 180q15 11 23.5 28t8.5 36v360q0 33-23.5 56.5T720 936H520V696h-80v240H240Zm240-350Z"
@@ -426,7 +419,6 @@
       />
     </symbol>
     <symbol viewBox="0 0 24 24" id="info">
-      <title xmlns="http://www.w3.org/2000/svg">Info</title>
       <path
         xmlns="http://www.w3.org/2000/svg"
         d="M13.5 9h-3V6h3v3Zm0 8.5h-3v-6h3v6ZM12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Z"
@@ -452,13 +444,13 @@
         d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zm6.93 6h-2.95c-.32-1.25-.78-2.45-1.38-3.56 1.84.63 3.37 1.91 4.33 3.56zM12 4.04c.83 1.2 1.48 2.53 1.91 3.96h-3.82c.43-1.43 1.08-2.76 1.91-3.96zM4.26 14C4.1 13.36 4 12.69 4 12s.1-1.36.26-2h3.38c-.08.66-.14 1.32-.14 2 0 .68.06 1.34.14 2H4.26zm.82 2h2.95c.32 1.25.78 2.45 1.38 3.56-1.84-.63-3.37-1.9-4.33-3.56zm2.95-8H5.08c.96-1.66 2.49-2.93 4.33-3.56C8.81 5.55 8.35 6.75 8.03 8zM12 19.96c-.83-1.2-1.48-2.53-1.91-3.96h3.82c-.43 1.43-1.08 2.76-1.91 3.96zM14.34 14H9.66c-.09-.66-.16-1.32-.16-2 0-.68.07-1.35.16-2h4.68c.09.65.16 1.32.16 2 0 .68-.07 1.34-.16 2zm.25 5.56c.6-1.11 1.06-2.31 1.38-3.56h2.95c-.96 1.65-2.49 2.93-4.33 3.56zM16.36 14c.08-.66.14-1.32.14-2 0-.68-.06-1.34-.14-2h3.38c.16.64.26 1.31.26 2s-.1 1.36-.26 2h-3.38z"
       />
     </symbol>
-    <symbol viewBox="0 0 24 24" id="left-panel-close">
+    <symbol viewBox="0 96 960 960" id="left-panel-close">
       <path
         xmlns="http://www.w3.org/2000/svg"
         d="M660 688V464q0-14-12-19t-22 5l-98 98q-12 12-12 28t12 28l98 98q10 10 22 5t12-19ZM200 936q-33 0-56.5-23.5T120 856V296q0-33 23.5-56.5T200 216h560q33 0 56.5 23.5T840 296v560q0 33-23.5 56.5T760 936H200Zm120-80V296H200v560h120Zm80 0h360V296H400v560Zm-80 0H200h120Z"
       />
     </symbol>
-    <symbol viewBox="0 0 24 24" id="left-panel-open">
+    <symbol viewBox="0 96 960 960" id="left-panel-open">
       <path
         xmlns="http://www.w3.org/2000/svg"
         d="M500 464v224q0 14 12 19t22-5l98-98q12-12 12-28t-12-28l-98-98q-10-10-22-5t-12 19ZM200 936q-33 0-56.5-23.5T120 856V296q0-33 23.5-56.5T200 216h560q33 0 56.5 23.5T840 296v560q0 33-23.5 56.5T760 936H200Zm120-80V296H200v560h120Zm80 0h360V296H400v560Zm-80 0H200h120Z"
@@ -518,7 +510,6 @@
       />
     </symbol>
     <symbol viewBox="0 0 24 24" id="open-in-new">
-      <title xmlns="http://www.w3.org/2000/svg">Open in new</title>
       <path xmlns="http://www.w3.org/2000/svg" d="M0 0h24v24H0z" fill="none" />
       <path
         xmlns="http://www.w3.org/2000/svg"
@@ -656,7 +647,7 @@
       />
       <path xmlns="http://www.w3.org/2000/svg" d="M12.5 7H11v6l5.25 3.15.75-1.23-4.5-2.67z" />
     </symbol>
-    <symbol viewBox="0 0 24 24" id="science">
+    <symbol viewBox="0 96 960 960" id="science">
       <path
         xmlns="http://www.w3.org/2000/svg"
         d="M200 936q-51 0-72.5-45.5T138 806l222-270V296h-40q-17 0-28.5-11.5T280 256q0-17 11.5-28.5T320 216h320q17 0 28.5 11.5T680 256q0 17-11.5 28.5T640 296h-40v240l222 270q32 39 10.5 84.5T760 936H200Zm0-80h560L520 564V296h-80v268L200 856Zm280-280Z"
@@ -734,7 +725,6 @@
       <path
         xmlns="http://www.w3.org/2000/svg"
         d="M12 24c6.627 0 12-5.373 12-12S18.627 0 12 0 0 5.373 0 12s5.373 12 12 12Z"
-        fill="#000"
       />
       <path
         xmlns="http://www.w3.org/2000/svg"
@@ -776,8 +766,8 @@
         d="M16 17.01V10h-2v7.01h-3L15 21l4-3.99h-3ZM9 3 5 6.99h3V14h2V6.99h3L9 3Zm7 14.01V10h-2v7.01h-3L15 21l4-3.99h-3ZM9 3 5 6.99h3V14h2V6.99h3L9 3Z"
       />
     </symbol>
-    <symbol viewBox="0 0 24 24" id="templates-circle">
-      <circle xmlns="http://www.w3.org/2000/svg" cx="31.5" cy="31.5" r="31.5" fill="#282728" />
+    <symbol viewBox="0 0 64 64" id="templates-circle">
+      <circle xmlns="http://www.w3.org/2000/svg" cx="31.5" cy="31.5" r="31.5" />
       <path
         xmlns="http://www.w3.org/2000/svg"
         d="M31.5 10.5833L21.6458 26.7083H41.3542L31.5 10.5833Z"
@@ -814,8 +804,8 @@
       />
       <path xmlns="http://www.w3.org/2000/svg" d="M10 7a2 2 0 11-4 0 2 2 0 014 0z" />
     </symbol>
-    <symbol viewBox="0 0 24 24" id="trending-up-circle">
-      <circle xmlns="http://www.w3.org/2000/svg" cx="32" cy="32" r="31" fill="#282828" />
+    <symbol viewBox="0 0 64 64" id="trending-up-circle">
+      <circle xmlns="http://www.w3.org/2000/svg" cx="32" cy="32" r="31" />
       <path
         xmlns="http://www.w3.org/2000/svg"
         d="m40 20 4.58 4.58-9.76 9.76-8-8L12 41.18 14.82 44l12-12 8 8 12.6-12.58L52 32V20H40z"
@@ -866,7 +856,6 @@
       />
     </symbol>
     <symbol viewBox="0 0 24 24" id="warning">
-      <title xmlns="http://www.w3.org/2000/svg">Warning</title>
       <path
         xmlns="http://www.w3.org/2000/svg"
         fill-rule="evenodd"
@@ -874,11 +863,10 @@
         d="M10.29 3.599l-8.47 14.14a2 2 0 001.71 3h16.94a2 2 0 001.71-3l-8.47-14.14a2 2 0 00-3.42 0zm3.362 13.537a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zm-1.51-11a1.19 1.19 0 00-1.186 1.287l.49 6.07a.7.7 0 001.394 0l.49-6.07a1.19 1.19 0 00-1.187-1.287z"
       />
     </symbol>
-    <symbol viewBox="0 0 24 24" id="workflow-builder">
+    <symbol viewBox="0 0 121 121" id="workflow-builder">
       <path
         xmlns="http://www.w3.org/2000/svg"
         d="m60.5 0 52.395 30.25v60.5L60.5 121 8.105 90.75v-60.5L60.5 0z"
-        fill="#282828"
       />
       <g xmlns="http://www.w3.org/2000/svg" clip-path="url(#a)" fill="#EBFF38">
         <path

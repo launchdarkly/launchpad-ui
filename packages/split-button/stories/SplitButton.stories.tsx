@@ -1,5 +1,6 @@
 import type { SplitButtonProps } from '../src';
-import type { StoryObj, DecoratorFn } from '@storybook/react';
+import type { IconProps } from '@launchpad-ui/icons';
+import type { StoryObj, Decorator } from '@storybook/react';
 import type { ReactElement } from 'react';
 
 import { Icon as LPIcon } from '@launchpad-ui/icons';
@@ -16,7 +17,7 @@ import {
 import './SplitButton.stories.css';
 
 type SplitButtonStoryProps = SplitButtonProps & {
-  icon?: ReactElement<{ size?: string; key: string; 'aria-hidden': boolean }>;
+  icon?: ReactElement<IconProps>;
 };
 
 const SplitButtonExample = ({ icon, ...props }: SplitButtonStoryProps) => {
@@ -45,7 +46,7 @@ const SplitButtonExample = ({ icon, ...props }: SplitButtonStoryProps) => {
   );
 };
 
-const splitButtonTemplateWithStates: DecoratorFn = (storyComponent, context) => {
+const splitButtonTemplateWithStates: Decorator = (storyComponent, context) => {
   const { viewMode, args } = context;
 
   const storyArgs = args as SplitButtonProps;

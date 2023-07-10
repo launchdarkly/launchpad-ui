@@ -27,6 +27,8 @@ const Icon = ({
   'aria-hidden': ariaHidden,
   title,
   description,
+  focusable = false,
+  role = 'img',
   ...props
 }: IconProps) => {
   const sizeClass = size ? styles[size] : false;
@@ -43,6 +45,8 @@ const Icon = ({
         aria-label={ariaLabel}
         aria-labelledby={titleId || ariaLabelledBy}
         aria-describedby={descriptionId}
+        focusable={focusable}
+        role={role}
         {...props}
       >
         {title && <title id={titleId}>{title}</title>}

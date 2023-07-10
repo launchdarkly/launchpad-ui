@@ -45,7 +45,10 @@ const render: ArgsStoryFn<ReactRenderer> = (args, { globals }) => (
     }}
   >
     {icons.map((item, index) => (
-      <Icon name={item} key={index} />
+      <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }} key={index}>
+        <Icon name={item} size="medium" />
+        <span>{item}</span>
+      </div>
     ))}
   </div>
 );

@@ -1,17 +1,18 @@
-import type { StoryObj, DecoratorFn } from '@storybook/react';
+import type { StoryObj, Decorator } from '@storybook/react';
+import type { ReactNode } from 'react';
 
 import { Fragment } from 'react';
 
-import { Add, ExpandMore } from '../../icons/src';
+import { Icon } from '../../icons/src';
 import { Button } from '../src';
 
 import './Button.stories.css';
 
-const buttonTemplateWithStates: DecoratorFn = (storyComponent, context) => {
+const buttonTemplateWithStates: Decorator = (storyComponent, context) => {
   const { viewMode, args } = context;
 
   const storyArgs = args;
-  const buttonLabel = storyArgs?.children || '';
+  const buttonLabel = (storyArgs?.children || '') as ReactNode;
 
   const ButtonLabels = ['Hover', 'Focus visible', 'Active'];
   const ButtonStates = ['pseudo-hover', 'pseudo-focus-visible', 'pseudo-active'];
@@ -181,35 +182,35 @@ export const AsAnchorChild: Story = {
   args: {
     children: <a href="/">Anchor tag</a>,
     asChild: true,
-    icon: <Add />,
+    icon: <Icon name="add" />,
     kind: 'destructive',
   },
 };
 
 export const WithIcon: Story = {
-  args: { children: 'With icon', icon: <Add /> },
+  args: { children: 'With icon', icon: <Icon name="add" /> },
 };
 
 export const WithIconPrimary: Story = {
-  args: { children: 'With icon', icon: <ExpandMore />, kind: 'primary' },
+  args: { children: 'With icon', icon: <Icon name="expand-more" />, kind: 'primary' },
 };
 
 export const BigButtonWithIcon: Story = {
-  args: { children: 'Click me', icon: <Add />, kind: 'primary', size: 'big' },
+  args: { children: 'Click me', icon: <Icon name="add" />, kind: 'primary', size: 'big' },
 };
 
 export const SmallButtonWithIcon: Story = {
-  args: { children: 'Click me', icon: <Add />, kind: 'primary', size: 'small' },
+  args: { children: 'Click me', icon: <Icon name="add" />, kind: 'primary', size: 'small' },
 };
 
 export const TinyButtonWithIcon: Story = {
-  args: { children: 'Click me', icon: <Add />, kind: 'primary', size: 'tiny' },
+  args: { children: 'Click me', icon: <Icon name="add" />, kind: 'primary', size: 'tiny' },
 };
 
 export const WithIconDestructive: Story = {
   args: {
     children: 'With icon',
-    icon: <Add />,
+    icon: <Icon name="add" />,
     kind: 'destructive',
   },
 };
@@ -217,7 +218,7 @@ export const WithIconDestructive: Story = {
 export const WithIconFirst: Story = {
   args: {
     children: 'With icon left',
-    icon: <Add />,
+    icon: <Icon name="add" />,
     renderIconFirst: true,
   },
 };

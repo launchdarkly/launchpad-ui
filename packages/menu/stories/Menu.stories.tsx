@@ -1,6 +1,6 @@
 import type { StoryObj } from '@storybook/react';
 
-import { Check, Info } from '@launchpad-ui/icons';
+import { Icon } from '@launchpad-ui/icons';
 import { userEvent } from '@storybook/testing-library';
 
 import { Menu, MenuDivider, MenuItem, MenuSearch } from '../src';
@@ -78,10 +78,10 @@ export const WithHighlightedMenuItem: Story = {
 export const WithMenuItemIcons: Story = {
   args: {
     children: [
-      <MenuItem key="1" icon={Check}>
+      <MenuItem key="1" icon={<Icon name="check" />}>
         item 1
       </MenuItem>,
-      <MenuItem key="2" icon={Info}>
+      <MenuItem key="2" icon={<Icon name="info" />}>
         item 2
       </MenuItem>,
     ],

@@ -2,7 +2,7 @@ import type { MenuProps } from '@launchpad-ui/menu';
 import type { ChangeEvent, ReactNode } from 'react';
 
 import { Button } from '@launchpad-ui/button';
-import { Check } from '@launchpad-ui/icons';
+import { Icon } from '@launchpad-ui/icons';
 import { Menu, MenuDivider, MenuItem, MenuSearch } from '@launchpad-ui/menu';
 
 import styles from './styles/Filter.module.css';
@@ -89,7 +89,7 @@ const FilterMenu = ({
             <MenuItem
               item={option}
               disabled={option.isDisabled}
-              icon={option.isChecked ? Check : null}
+              icon={option.isChecked ? <Icon name="check" /> : undefined}
               key={option.value}
               role="menuitemradio"
               aria-checked={option.isChecked ? 'true' : undefined}

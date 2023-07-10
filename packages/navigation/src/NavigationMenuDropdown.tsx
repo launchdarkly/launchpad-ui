@@ -3,7 +3,7 @@ import type { CollectionBase } from '@react-types/shared';
 
 import { Chip } from '@launchpad-ui/chip';
 import { Dropdown, DropdownButton } from '@launchpad-ui/dropdown';
-import { Check } from '@launchpad-ui/icons';
+import { Icon } from '@launchpad-ui/icons';
 import { Menu, MenuItem } from '@launchpad-ui/menu';
 import { useListState } from '@react-stately/list';
 import { useEffect, useRef, useState } from 'react';
@@ -63,7 +63,7 @@ const NavigationMenuDropdown = <T extends object>(props: NavigationMenuDropdownP
                   collapsed: true,
                 });
               }}
-              icon={item.props.name === selectedItem ? Check : undefined}
+              icon={item.props.name === selectedItem ? <Icon name="check" /> : undefined}
             >
               <div
                 style={{

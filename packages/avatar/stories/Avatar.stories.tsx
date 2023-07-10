@@ -1,7 +1,6 @@
 import type { StoryObj } from '@storybook/react';
 import type { ReactNode } from 'react';
 
-import { Person } from '../../icons/src';
 import { Avatar } from '../src';
 
 export default {
@@ -39,7 +38,7 @@ type Story = StoryObj<typeof Avatar>;
 export const DefaultIcon: Story = {
   args: {
     url: '',
-    defaultIcon: Person,
+    defaultIcon: 'person',
   },
 };
 
@@ -47,7 +46,7 @@ export const Image: Story = {
   args: {
     url: 'https://picsum.photos/id/1025/200/200',
     alt: 'Pugsy Darkly',
-    defaultIcon: Person,
+    defaultIcon: 'person',
   },
 };
 

@@ -1,4 +1,4 @@
-import type { Icon } from '@launchpad-ui/icons';
+import type { IconProps } from '@launchpad-ui/icons';
 import type { PopoverPlacement } from '@launchpad-ui/popover';
 import type { ComponentPropsWithRef, ElementType, PropsWithRef, ReactElement } from 'react';
 
@@ -6,6 +6,7 @@ import { Tooltip } from '@launchpad-ui/tooltip';
 import { Slot } from '@radix-ui/react-slot';
 import { FocusRing } from '@react-aria/focus';
 import { cx } from 'classix';
+import { cloneElement } from 'react';
 
 import './styles/Menu.css';
 
@@ -23,7 +24,7 @@ type PolymorphicPropsWithRef<P, T extends ElementType> = Merge<
 
 type MenuItemOwnProps = {
   isHighlighted?: boolean;
-  icon?: typeof Icon | null;
+  icon?: ReactElement<IconProps>;
   disabled?: boolean;
   nested?: boolean;
   groupHeader?: boolean;
@@ -54,7 +55,7 @@ const MenuItem = <P, T extends ElementType = typeof defaultElement>({
     component,
     children,
     isHighlighted,
-    icon: Icon,
+    icon,
     nested,
     groupHeader,
     item,
@@ -71,6 +72,8 @@ const MenuItem = <P, T extends ElementType = typeof defaultElement>({
   } = props;
 
   const Component: ElementType = component || (asChild ? Slot : defaultElement);
+
+  const renderIcon = icon && cloneElement(icon, { size: 'small' });
 
   const renderedItem = (
     <FocusRing focusRingClass="has-focus">
@@ -93,11 +96,7 @@ const MenuItem = <P, T extends ElementType = typeof defaultElement>({
           children
         ) : (
           <>
-            {Icon && (
-              <span className="Menu-item-icon">
-                <Icon size="small" />
-              </span>
-            )}
+            {icon && <span className="Menu-item-icon">{renderIcon}</span>}
             {children}
           </>
         )}

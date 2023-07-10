@@ -11,7 +11,7 @@ import {
   TextArea,
   Checkbox,
 } from '@launchpad-ui/core';
-import { Info } from '@launchpad-ui/icons';
+import { Icon } from '@launchpad-ui/icons';
 
 export default function Index() {
   return (
@@ -30,7 +30,7 @@ export default function Index() {
       <h4>Compact Text Field</h4>
       <CompactTextField label="Email" aria-label="Email" onChange={() => undefined} />
       <h4>Icon Field</h4>
-      <IconField icon={Info}>
+      <IconField icon={<Icon name="info" />}>
         <TextField id="Date" value="12/01/2022" />
       </IconField>
       <h4>SelectField</h4>
