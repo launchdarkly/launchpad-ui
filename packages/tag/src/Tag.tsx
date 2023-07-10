@@ -5,7 +5,7 @@ import type { ListState } from '@react-stately/list';
 import type { Node } from '@react-types/shared';
 import type { ElementType, ReactNode } from 'react';
 
-import { Close } from '@launchpad-ui/icons';
+import { Icon } from '@launchpad-ui/icons';
 import { Tooltip } from '@launchpad-ui/tooltip';
 import { useFocusRing } from '@react-aria/focus';
 import { useHover } from '@react-aria/interactions';
@@ -75,7 +75,7 @@ const Tag = <T extends object>(props: TagProps<T>) => {
               }}
               {...removeButtonProps}
             >
-              <Close size="small" />
+              <Icon name="close" size="small" />
             </button>
           </Tooltip>
         )}

@@ -1,7 +1,7 @@
 import type { ComponentProps, ReactElement, ReactNode } from 'react';
 
 import { IconButton } from '@launchpad-ui/button';
-import { Close, StatusIcon } from '@launchpad-ui/icons';
+import { Icon, StatusIcon } from '@launchpad-ui/icons';
 import { cx } from 'classix';
 import { cloneElement } from 'react';
 
@@ -47,7 +47,7 @@ const Snackbar = ({
         <span className={styles['Snackbar-description']}>{description}</span> {CTA}
       </div>
       <IconButton
-        icon={<Close size="small" />}
+        icon={<Icon name="close" size="small" />}
         size="small"
         aria-label="Dismiss"
         kind="close"

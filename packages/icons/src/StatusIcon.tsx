@@ -2,7 +2,7 @@ import type { IconProps } from './Icon';
 
 import { Icon } from './Icon';
 
-type StatusIconProps = IconProps & {
+type StatusIconProps = Omit<IconProps, 'name'> & {
   kind: 'info' | 'success' | 'warning' | 'error';
 };
 

@@ -1,7 +1,7 @@
 import type { ReactNode } from 'react';
 
 import { IconButton } from '@launchpad-ui/button';
-import { Close, Warning } from '@launchpad-ui/icons';
+import { Icon } from '@launchpad-ui/icons';
 import { cx } from 'classix';
 
 import { MODAL_LABELLED_BY } from './constants';
@@ -31,7 +31,12 @@ const ModalHeader = ({
     <div className={cx(styles.header, className)} data-test-id={testId}>
       <div className={styles.headerMain}>
         {status === 'warning' && (
-          <Warning data-test-id="modal-header-icon" size="medium" className={styles.headerIcon} />
+          <Icon
+            name="warning"
+            data-test-id="modal-header-icon"
+            size="medium"
+            className={styles.headerIcon}
+          />
         )}
         <h2 id={MODAL_LABELLED_BY} data-test-id="modal-title" className={styles.title}>
           {title}
@@ -40,7 +45,7 @@ const ModalHeader = ({
           <IconButton
             aria-label="close"
             size="small"
-            icon={<Close size="medium" />}
+            icon={<Icon name="close" size="medium" />}
             className={styles.closeButton}
             onClick={onCancel}
             data-test-id="modal-close-button"

@@ -1,7 +1,7 @@
 import type { TooltipProps } from '@launchpad-ui/tooltip';
 import type { ComponentProps, KeyboardEventHandler } from 'react';
 
-import { CheckCircle } from '@launchpad-ui/icons';
+import { Icon } from '@launchpad-ui/icons';
 import { Tooltip } from '@launchpad-ui/tooltip';
 import { Slot } from '@radix-ui/react-slot';
 import { announce } from '@react-aria/live-announcer';
@@ -30,7 +30,7 @@ type CopyToClipboardHandleRef = {
 
 const CopyConfirmation = () => (
   <span className={styles['Clipboard-confirmation']}>
-    <CheckCircle className={styles['Clipboard-checkmark']} size="medium" />
+    <Icon name="check-circle" className={styles['Clipboard-checkmark']} size="medium" />
     <span className={styles['Clipboard-copied']}>Copied!</span>
   </span>
 );

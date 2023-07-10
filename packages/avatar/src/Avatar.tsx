@@ -1,7 +1,7 @@
 import type { IconProps } from '@launchpad-ui/icons';
-import type { ComponentType, ComponentProps } from 'react';
+import type { ComponentProps } from 'react';
 
-import { Person } from '@launchpad-ui/icons';
+import { Icon } from '@launchpad-ui/icons';
 import { cx } from 'classix';
 import { useCallback, useEffect, useState } from 'react';
 
@@ -13,7 +13,7 @@ type AvatarProps = ComponentProps<'img'> & {
   url: string;
   size?: 'tiny' | 'small' | 'medium' | 'large';
   initials?: string;
-  defaultIcon?: ComponentType<IconProps>;
+  defaultIcon?: IconProps['name'];
   'data-test-id'?: string;
 };
 
@@ -27,7 +27,7 @@ const DIMENSIONS = {
 const Avatar = ({
   alt = '',
   url,
-  defaultIcon: DefaultIcon = Person,
+  defaultIcon = 'person',
   className,
   initials,
   size = 'medium',
@@ -79,7 +79,15 @@ const Avatar = ({
         </div>
       );
     } else {
-      return <DefaultIcon className={classes} data-test-id={testId} size={size} {...rest} />;
+      return (
+        <Icon
+          className={classes}
+          data-test-id={testId}
+          size={size}
+          {...(rest as IconProps)}
+          name={defaultIcon}
+        />
+      );
     }
   }
 

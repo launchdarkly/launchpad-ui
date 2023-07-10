@@ -1,4 +1,4 @@
-import { Close } from '@launchpad-ui/icons';
+import { Icon } from '@launchpad-ui/icons';
 import { it, expect, describe, vi } from 'vitest';
 
 import { render, screen, userEvent } from '../../../test/utils';
@@ -6,13 +6,13 @@ import { IconButton } from '../src';
 
 describe('Button', () => {
   it('renders', () => {
-    render(<IconButton aria-label="Close" icon={<Close />} />);
+    render(<IconButton aria-label="Close" icon={<Icon name="close" />} />);
     expect(screen.getByRole('button', { name: 'Close' })).toBeInTheDocument();
   });
 
   it('can render as a slotted link', () => {
     const { container } = render(
-      <IconButton aria-label="Close" icon={<Close />} asChild>
+      <IconButton aria-label="Close" icon={<Icon name="close" />} asChild>
         <a href="/">Test</a>
       </IconButton>
     );
@@ -23,7 +23,7 @@ describe('Button', () => {
   it('handles clicks', async () => {
     const spy = vi.fn();
     const user = userEvent.setup();
-    render(<IconButton aria-label="Close" icon={<Close />} onClick={spy} />);
+    render(<IconButton aria-label="Close" icon={<Icon name="close" />} onClick={spy} />);
 
     await user.click(screen.getByRole('button', { name: 'Close' }));
 
@@ -34,7 +34,7 @@ describe('Button', () => {
     const spy = vi.fn();
     const user = userEvent.setup();
     render(
-      <IconButton aria-label="Close" icon={<Close />} onClick={spy} asChild>
+      <IconButton aria-label="Close" icon={<Icon name="close" />} onClick={spy} asChild>
         <a href="/">Test</a>
       </IconButton>
     );
@@ -46,14 +46,14 @@ describe('Button', () => {
 
   it('is focusable', async () => {
     const user = userEvent.setup();
-    render(<IconButton aria-label="Close" icon={<Close />} />);
+    render(<IconButton aria-label="Close" icon={<Icon name="close" />} />);
 
     await user.tab();
     expect(screen.getByRole('button', { name: 'Close' })).toHaveFocus();
   });
 
   it('can render an icon', async () => {
-    const { container } = render(<IconButton aria-label="Close" icon={<Close />} />);
+    const { container } = render(<IconButton aria-label="Close" icon={<Icon name="close" />} />);
     // eslint-disable-next-line testing-library/no-container, testing-library/no-node-access
     expect(container.querySelector('svg')).not.toBeNull();
   });

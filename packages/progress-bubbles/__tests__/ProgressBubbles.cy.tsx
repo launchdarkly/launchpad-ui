@@ -1,4 +1,4 @@
-import { Add, Info } from '@launchpad-ui/icons';
+import { Icon } from '@launchpad-ui/icons';
 
 import { ProgressBubbles } from '../src';
 
@@ -27,22 +27,22 @@ describe('ProgressBubbles', () => {
 
   it('renders with items', () => {
     const items = [
-      { label: 'Stage 1', icons: <Info /> },
+      { label: 'Stage 1', icons: <Icon name="info" /> },
       {
         label: 'Stage 2',
-        icons: <Add />,
+        icons: <Icon name="add" />,
       },
       {
         label: 'Stage 3',
         isWarning: true,
-        icons: <Info />,
+        icons: <Icon name="info" />,
       },
       {
         label: 'Stage 4',
         icons: (
           <>
-            <Info />
-            <Add />
+            <Icon name="info" />
+            <Icon name="add" />
           </>
         ),
       },

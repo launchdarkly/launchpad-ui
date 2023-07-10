@@ -1,6 +1,6 @@
 import type { ReactNode } from 'react';
 
-import { ExpandMore } from '@launchpad-ui/icons';
+import { Icon } from '@launchpad-ui/icons';
 import { cx } from 'classix';
 import { Children, forwardRef } from 'react';
 
@@ -40,7 +40,7 @@ const AppliedFilterButton = forwardRef<Ref, AppliedFilterButtonProps>((props, re
             {children}
           </span>
         )}
-        <ExpandMore size="small" data-test-id={`${testId}-expand`} />
+        <Icon name="expand-more" size="small" data-test-id={`${testId}-expand`} />
       </button>
     </div>
   );

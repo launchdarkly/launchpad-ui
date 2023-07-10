@@ -1,7 +1,7 @@
 import type { StoryObj } from '@storybook/react';
 
 import { Button, IconButton } from '@launchpad-ui/button';
-import { Edit, Star } from '@launchpad-ui/icons';
+import { Icon } from '@launchpad-ui/icons';
 import { useState } from 'react';
 
 import { MOCK_TAGS } from '../__tests__/constants';
@@ -150,7 +150,7 @@ export const WithCustomAction: Story = {
           action={() => (
             <IconButton
               aria-label="Custom"
-              icon={<Edit />}
+              icon={<Icon name="edit" />}
               size="small"
               onClick={() => alert('Pressed custom action')}
             />
@@ -205,7 +205,7 @@ export const WithCustomTagContent: Story = {
       <TagGroup items={MOCK_TAGS}>
         {(item) => (
           <TagItem>
-            <Star size="tiny" style={{ transform: 'translateY(-1px)' }} /> {item.name}
+            <Icon name="star" size="tiny" style={{ transform: 'translateY(-1px)' }} /> {item.name}
           </TagItem>
         )}
       </TagGroup>

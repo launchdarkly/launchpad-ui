@@ -1,7 +1,7 @@
 import type { ComponentProps, ReactNode } from 'react';
 
 import { IconButton } from '@launchpad-ui/button';
-import { Close, StatusIcon } from '@launchpad-ui/icons';
+import { Icon, StatusIcon } from '@launchpad-ui/icons';
 import { cx } from 'classix';
 
 import styles from './styles/Banner.module.css';
@@ -38,7 +38,7 @@ const Banner = ({
       {!!onDismiss && (
         <IconButton
           aria-label="Close banner"
-          icon={<Close size="small" />}
+          icon={<Icon name="close" size="small" />}
           size="small"
           onClick={onDismiss}
           kind="close"

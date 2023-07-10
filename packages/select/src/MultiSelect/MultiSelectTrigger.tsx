@@ -3,7 +3,7 @@ import type { SharedSelectTriggerProps } from '../types';
 import type { Node } from '@react-types/shared';
 import type { ReactNode } from 'react';
 
-import { ExpandMore } from '@launchpad-ui/icons';
+import { Icon } from '@launchpad-ui/icons';
 import { cx } from 'classix';
 
 import styles from '../styles/Select.module.css';
@@ -58,7 +58,7 @@ const MultiSelectTrigger = <T extends object>(props: MultiSelectTriggerProps<T>)
       </span>
       <span className={styles.indicatorsContainer}>
         <span className={styles.expandIndicatorContainer} aria-hidden="true">
-          <ExpandMore />
+          <Icon name="expand-more" />
         </span>
       </span>
     </button>

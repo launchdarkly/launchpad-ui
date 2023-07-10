@@ -2,7 +2,7 @@ import type { SplitButtonProps } from '../src';
 import type { StoryObj, DecoratorFn } from '@storybook/react';
 import type { ReactElement } from 'react';
 
-import { Person } from '@launchpad-ui/icons';
+import { Icon as LPIcon } from '@launchpad-ui/icons';
 import { Menu, MenuItem } from '@launchpad-ui/menu';
 import { Fragment, useState } from 'react';
 
@@ -258,6 +258,6 @@ export const Icon: Story = {
     ...SplitButtonArgs,
     kind: 'default',
     size: 'small',
-    icon: <Person />,
+    icon: <LPIcon name="person" />,
   },
 };

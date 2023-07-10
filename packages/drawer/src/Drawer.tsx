@@ -3,7 +3,7 @@ import type { MouseEvent, ReactNode } from 'react';
 
 import { IconButton } from '@launchpad-ui/button';
 import { FocusTrap } from '@launchpad-ui/focus-trap';
-import { Close } from '@launchpad-ui/icons';
+import { Icon } from '@launchpad-ui/icons';
 import { Portal } from '@launchpad-ui/portal';
 import { Progress } from '@launchpad-ui/progress';
 import { useFocusWithin } from '@react-aria/interactions';
@@ -145,7 +145,7 @@ const DrawerContainer = ({
               {!hideCancel && (
                 <IconButton
                   aria-label="close"
-                  icon={<Close size="medium" />}
+                  icon={<Icon name="close" size="medium" />}
                   className={styles.closeButton}
                   onClick={onCancel}
                   data-test-id="drawer-close-button"

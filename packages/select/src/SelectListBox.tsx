@@ -8,7 +8,7 @@ import type { SingleSelectListState } from '@react-stately/list';
 import type { Node } from '@react-types/shared';
 import type { ElementType, ComponentProps, RefObject } from 'react';
 
-import { Search } from '@launchpad-ui/icons';
+import { Icon } from '@launchpad-ui/icons';
 import { getItemId, useListBox, useListBoxSection, useOption } from '@react-aria/listbox';
 import { useTextField } from '@react-aria/textfield';
 import { useObjectRef } from '@react-aria/utils';
@@ -56,7 +56,7 @@ const SelectListBox = <T extends object>(props: SelectListBoxProps<T>) => {
     <>
       {hasFilter && (
         <div data-test-id="search-filter" className={styles.search}>
-          <Search size="medium" className={styles.searchIcon} />
+          <Icon name="search" size="medium" className={styles.searchIcon} />
           <VisuallyHidden>
             <label id={filterLabelProps.id} htmlFor={filterInputProps.id}>
               Search options

@@ -1,7 +1,7 @@
 import type { CollapsibleTriggerProps } from './CollapsibleTrigger';
 import type { ComponentProps, ReactNode } from 'react';
 
-import { ExpandLess, ExpandMore } from '@launchpad-ui/icons';
+import { Icon } from '@launchpad-ui/icons';
 import { cx } from 'classix';
 import { useId, useRef, useState } from 'react';
 
@@ -42,7 +42,7 @@ const Collapsible = (props: CollapsibleProps) => {
 
   const label = typeof props.label === 'string' ? props.label : props.label(isOpen);
 
-  const icon = isOpen ? <ExpandLess /> : <ExpandMore />;
+  const icon = isOpen ? <Icon name="expand-less" /> : <Icon name="expand-more" />;
 
   const renderedTrigger = trigger({
     label,
