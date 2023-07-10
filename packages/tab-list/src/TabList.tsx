@@ -10,20 +10,19 @@ import { useRef } from 'react';
 
 import styles from './styles/TabList.module.css';
 
-type TabListProps<T extends string | number> =
-  | AriaTabListProps<HTMLDivElement> & {
-      /** The active Tab to show on render. The value passed in here should match the value of the active Tab's Item key. */
-      activeTab?: T;
-      /** CSS classes to pass into the TabList wrapper div. */
-      className?: string;
-      /** The children passed into the TabList. This is a react-stately Item with JSX children. */
-      children: ItemElement<ReactNode> | Array<ItemElement<ReactNode>>;
-      /** Array of any disabled Tabs in the grouping. */
-      disabledTabs?: string[];
-      /** Called when the user clicks on a different tab */
-      onChange?: (tab: T) => void;
-      'data-test-id'?: string;
-    };
+type TabListProps<T extends string | number> = AriaTabListProps<HTMLDivElement> & {
+  /** The active Tab to show on render. The value passed in here should match the value of the active Tab's Item key. */
+  activeTab?: T;
+  /** CSS classes to pass into the TabList wrapper div. */
+  className?: string;
+  /** The children passed into the TabList. This is a react-stately Item with JSX children. */
+  children: ItemElement<ReactNode> | Array<ItemElement<ReactNode>>;
+  /** Array of any disabled Tabs in the grouping. */
+  disabledTabs?: string[];
+  /** Called when the user clicks on a different tab */
+  onChange?: (tab: T) => void;
+  'data-test-id'?: string;
+};
 
 /** React-aria' useTabListState hook supports a
  * selectedKey under the hood for showing
