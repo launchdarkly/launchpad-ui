@@ -1,5 +1,11 @@
 # @launchpad-ui/tokens
 
+## 0.5.8
+
+### Patch Changes
+
+- [#905](https://github.com/launchdarkly/launchpad-ui/pull/905) [`068bf1cc`](https://github.com/launchdarkly/launchpad-ui/commit/068bf1cc5418a264c5be167cd5030b4f56bef03f) Thanks [@Niznikr](https://github.com/Niznikr)! - Add vars package for Vanilla Extract usage
+
 ## 0.5.7
 
 ### Patch Changes
