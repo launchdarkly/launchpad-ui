@@ -26,12 +26,10 @@
   },
   "source": "src/index.ts",
   "scripts": {
-    "build": "pnpm build:types && vite build -c ../../vite.config.ts && tsc --project tsconfig.build.json && pnpm build:sprite",
-    "build:sprite": "rm -rf dist/sprite.svg && node sprite.js && prettier -w --parser html dist/sprite.svg",
-    "build:types": "node types.js && prettier -w src/types.ts",
+    "build": "vite build -c ../../vite.config.ts && tsc --project tsconfig.build.json && cp src/img/sprite.svg dist",
     "clean": "rm -rf dist",
     "lint": "eslint '**/*.{ts,tsx,js}' && stylelint '**/*.css' --ignore-path ../../.stylelintignore",
-    "test": "pnpm build:icons && vitest run --coverage"
+    "test": "vitest run --coverage"
   },
   "dependencies": {
     "@launchpad-ui/tokens": "workspace:~",
