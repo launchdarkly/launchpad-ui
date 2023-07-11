@@ -17,5 +17,5 @@ const MyIcon = () => <Add size="medium" />;
 ```js
 import { Icon } from '@launchpad-ui/icons';
 
-const MyIcon = () => <Icon name="add" size="medium />;
+const MyIcon = () => <Icon name="add" size="medium" />;
 ```

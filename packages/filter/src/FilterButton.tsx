@@ -91,7 +91,7 @@ const FilterButton = forwardRef<Ref, FilterButtonProps>((props, ref) => {
             aria-label={ariaLabel}
             className={styles.clear}
             data-test-id="clear-filter-button"
-            icon={<Icon name="check" size="tiny" />}
+            icon={<Icon name="close" size="tiny" />}
             size="small"
             onClick={onClear}
           />

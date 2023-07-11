@@ -93,8 +93,8 @@ export const MultiSelectWithCustomSelectedRender: Story = {
             {({ selectedItems }) => (
               <span style={{ display: 'flex', alignItems: 'center' }}>
                 {selectedItems.map((item) => (
-                  <Chip style={{ marginRight: '5px' }} key={item.key}>
-                    {item.value.name}
+                  <Chip style={{ marginRight: '5px' }} key={item?.key}>
+                    {item?.value?.name}
                   </Chip>
                 ))}
               </span>
@@ -127,8 +127,8 @@ export const MultiSelectWithSelectAll: Story = {
             {({ selectedItems }) => (
               <span style={{ display: 'flex', alignItems: 'center' }}>
                 {selectedItems.map((item) => (
-                  <Chip style={{ marginRight: '5px' }} key={item.key}>
-                    {item.value.name}
+                  <Chip style={{ marginRight: '5px' }} key={item?.key}>
+                    {item?.value?.name}
                   </Chip>
                 ))}
               </span>
