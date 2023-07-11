@@ -10,7 +10,7 @@ We use [Style Dictionary](https://amzn.github.io/style-dictionary/#/) to transfo
 
 ## Icons
 
-Our icons are commited as SVGs and then transformed during builds into React components using [SVGR](https://react-svgr.com/).
+Our icons are delivered as a SVG sprite that is then referenced in a React wrapper component.
 
 ## Components
 

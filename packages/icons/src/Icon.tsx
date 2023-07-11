@@ -2,8 +2,9 @@ import type { IconName } from './types';
 import type { ComponentProps } from 'react';
 
 import { cx } from 'classix';
-import { useId } from 'react';
+import { useContext, useId } from 'react';
 
+import { IconContext } from './context';
 import styles from './styles/Icon.module.css';
 
 type IconProps = ComponentProps<'svg'> & {
@@ -37,6 +38,7 @@ const Icon = ({
   const isAriaHidden = ariaHidden ?? (!ariaLabelledBy && !ariaLabel);
   const titleId = title && `${prefix}-${name}-title`;
   const descriptionId = description && `${prefix}-${name}-description`;
+  const { path: spritePath } = useContext(IconContext);
 
   return (
     <span data-test-id={testId} className={classes}>
@@ -51,7 +53,7 @@ const Icon = ({
       >
         {title && <title id={titleId}>{title}</title>}
         {description && <desc id={descriptionId}>{description}</desc>}
-        <use href={`/sprite.svg#${name}`} />
+        <use href={`${spritePath || '/static/sprite.svg'}#${name}`} />
       </svg>
     </span>
   );

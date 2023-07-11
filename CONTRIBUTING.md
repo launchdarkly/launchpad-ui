@@ -152,11 +152,9 @@ Simply run `pnpm generate component` and follow the prompts, and you'll be well 
 
 ### Adding Icons to LaunchPad
 
-- Drop the SVG file in the `/icons` directory in the `@launchpad/icons` package
-- Run `pnpm build:transform` from the project root to generate a React component for it
+- Add the SVG body content into a new symbol entry in the `/src/image/sprite.svg` file in the `@launchpad/icons` package.
+- Add its `id` to the icons array in `/src/types.ts`.
 - Run `pnpm storybook` and visit the "Icons" page to ensure your icon was generated properly.
-
-Note: consumers of the library will utilize generated icon components rather than the raw SVGs.
 
 ---
 

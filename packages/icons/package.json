@@ -22,7 +22,8 @@
       "require": "./dist/index.js"
     },
     "./package.json": "./package.json",
-    "./style.css": "./dist/style.css"
+    "./style.css": "./dist/style.css",
+    "./sprite.svg": "./dist/sprite.svg"
   },
   "source": "src/index.ts",
   "scripts": {
