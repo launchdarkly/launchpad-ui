@@ -1,5 +1,6 @@
 ---
 '@launchpad-ui/chip': patch
+'@launchpad-ui/core': patch
 ---
 
-center icon in chip component
+[Chip] Center icons
