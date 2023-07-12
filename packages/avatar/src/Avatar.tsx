@@ -1,9 +1,9 @@
 import type { IconProps } from '@launchpad-ui/icons';
-import type { ComponentProps } from 'react';
+import type { ComponentProps, ReactElement } from 'react';
 
 import { Icon } from '@launchpad-ui/icons';
 import { cx } from 'classix';
-import { useCallback, useEffect, useState } from 'react';
+import { cloneElement, useCallback, useEffect, useState } from 'react';
 
 import styles from './styles/Avatar.module.css';
 import { useIsMounted } from './utils';
@@ -13,7 +13,7 @@ type AvatarProps = ComponentProps<'img'> & {
   url: string;
   size?: 'tiny' | 'small' | 'medium' | 'large';
   initials?: string;
-  defaultIcon?: IconProps['name'];
+  defaultIcon?: ReactElement<IconProps>;
   'data-test-id'?: string;
 };
 
@@ -27,7 +27,7 @@ const DIMENSIONS = {
 const Avatar = ({
   alt = '',
   url,
-  defaultIcon = 'person',
+  defaultIcon = <Icon name="person" />,
   className,
   initials,
   size = 'medium',
@@ -79,15 +79,12 @@ const Avatar = ({
         </div>
       );
     } else {
-      return (
-        <Icon
-          className={classes}
-          data-test-id={testId}
-          size={size}
-          {...(rest as IconProps)}
-          name={defaultIcon}
-        />
-      );
+      return cloneElement(defaultIcon, {
+        className: classes,
+        'data-test-id': testId,
+        size,
+        ...(rest as IconProps),
+      });
     }
   }
 

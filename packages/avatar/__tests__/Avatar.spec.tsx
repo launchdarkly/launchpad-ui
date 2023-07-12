@@ -1,3 +1,4 @@
+import { Icon } from '@launchpad-ui/icons';
 import { it, expect, describe, vi } from 'vitest';
 
 import { render, screen, fireEvent, waitFor } from '../../../test/utils';
@@ -15,12 +16,12 @@ describe('Avatar', () => {
       })
     );
     globalThis.URL.createObjectURL = vi.fn();
-    render(<Avatar url="test" defaultIcon="person" />);
+    render(<Avatar url="test" defaultIcon={<Icon name="person" />} />);
     expect(screen.getByRole('img', { hidden: true })).toBeInTheDocument();
   });
 
   it('renders a default', () => {
-    render(<Avatar url="" defaultIcon="person" />);
+    render(<Avatar url="" defaultIcon={<Icon name="person" />} />);
     expect(screen.getByRole('img', { hidden: true })).toBeInTheDocument();
   });
 
@@ -30,7 +31,7 @@ describe('Avatar', () => {
         status: 404,
       })
     );
-    render(<Avatar url="test" defaultIcon="person" />);
+    render(<Avatar url="test" defaultIcon={<Icon name="person" />} />);
     expect(screen.getByRole('img', { hidden: true })).toBeInTheDocument();
   });
 
@@ -43,7 +44,7 @@ describe('Avatar', () => {
       })
     );
     globalThis.URL.createObjectURL = vi.fn().mockReturnValue(circle);
-    render(<Avatar url="test" defaultIcon="person" />);
+    render(<Avatar url="test" defaultIcon={<Icon name="person" />} />);
 
     await waitFor(() => {
       expect(screen.getByRole('img')).toBeInTheDocument();
@@ -59,7 +60,7 @@ describe('Avatar', () => {
       })
     );
     globalThis.URL.createObjectURL = vi.fn().mockReturnValue('fake');
-    render(<Avatar url="test" defaultIcon="person" />);
+    render(<Avatar url="test" defaultIcon={<Icon name="person" />} />);
 
     await waitFor(() => {
       expect(screen.getByRole('img')).toBeInTheDocument();
@@ -73,7 +74,7 @@ describe('Avatar', () => {
   });
 
   it('can render initials', () => {
-    render(<Avatar url="" defaultIcon="person" initials="AB" />);
+    render(<Avatar url="" defaultIcon={<Icon name="person" />} initials="AB" />);
     expect(screen.getByText('AB')).toBeInTheDocument();
   });
 });
