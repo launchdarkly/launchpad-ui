@@ -24,6 +24,7 @@ const TextField = forwardRef<HTMLInputElement, TextFieldProps>(
       suffix,
       overrideWidth,
       'data-test-id': testId = 'text-field',
+      autoComplete,
       ...rest
     },
     ref
@@ -39,6 +40,7 @@ const TextField = forwardRef<HTMLInputElement, TextFieldProps>(
             {...rest}
             type={type}
             data-test-id={testId}
+            autoComplete={autoComplete}
             className={classes}
             readOnly={readOnly}
             ref={ref}
@@ -51,6 +53,31 @@ const TextField = forwardRef<HTMLInputElement, TextFieldProps>(
       );
     }
 
+    if (autoComplete === 'off') {
+      return (
+        <input
+          {...rest}
+          data-lpignore="true" // "data-lpignore" is added to prevent LastPass from injecting a password autofill icon
+          data-1p-ignore // "data-1p-ignore" is added to prevent 1Password from injecting a password autofill icon
+          autoComplete={autoComplete}
+          type={type}
+          className={classes}
+          readOnly={readOnly}
+          tabIndex={tabIndex}
+          ref={ref}
+          data-test-id={testId}
+          style={
+            overrideWidth
+              ? {
+                  width: overrideWidth,
+                }
+              : undefined
+          }
+          aria-describedby={rest['aria-describedby'] || createFieldErrorId(rest.id)}
+        />
+      );
+    }
+
     return (
       <input
         {...rest}
@@ -58,6 +85,7 @@ const TextField = forwardRef<HTMLInputElement, TextFieldProps>(
         className={classes}
         readOnly={readOnly}
         tabIndex={tabIndex}
+        autoComplete={autoComplete}
         ref={ref}
         data-test-id={testId}
         style={
