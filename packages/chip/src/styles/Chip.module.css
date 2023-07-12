@@ -37,10 +37,9 @@
 
 .chip {
   display: inline-flex;
+  align-items: center;
   font-weight: var(--lp-font-weight-semibold);
   border-radius: 0.2rem;
-  vertical-align: bottom;
-  text-align: center;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -105,16 +104,12 @@
 
 .clickable:focus {
   outline: 0;
-  box-shadow: 0 0 0 1px var(--lp-color-bg-ui-primary),
+  box-shadow:
+    0 0 0 1px var(--lp-color-bg-ui-primary),
     0 0 0 2px var(--lp-color-shadow-interactive-focus);
   z-index: 2;
 }
 
 .icon {
   margin-right: 0.2rem;
-  transform: translateY(1px);
-
-  .tiny & {
-    transform: translateY(2px);
-  }
 }
