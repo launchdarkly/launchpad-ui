@@ -32,7 +32,7 @@
 }
 
 .Banner-content {
-  color: var(--lp-color-text-feedback);
+  color: var(--lp-color-text-feedback-base);
   font-style: normal;
   font-weight: 400;
   font-size: 16px;

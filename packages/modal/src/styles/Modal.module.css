@@ -3,7 +3,7 @@
 :root,
 [data-theme='default'] {
   --lp-component-modal-color-bg-overlay: rgb(40 40 40 / 0.5);
-  --lp-component-modal-color-bg-content: var(--lp-color-white);
+  --lp-component-modal-color-bg-content: var(--lp-color-white-0);
 }
 
 [data-theme='dark'] {
@@ -100,7 +100,7 @@
   padding: 0 1.6rem;
   font-size: 1.5rem;
   line-height: 1.5;
-  color: var(--lp-color-text-ui-primary);
+  color: var(--lp-color-text-ui-primary-base);
 
   > *:first-child {
     margin-top: 0;

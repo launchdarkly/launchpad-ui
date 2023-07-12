@@ -176,8 +176,8 @@
 /* ------- MINIMAL ------- */
 
 .Button.Button--minimal {
-  background-color: var(--lp-color-bg-interactive-tertiary);
-  color: var(--lp-color-text-ui-primary);
+  background-color: var(--lp-color-bg-interactive-tertiary-base);
+  color: var(--lp-color-text-ui-primary-base);
 }
 
 .Button.Button--minimal:hover,
@@ -191,7 +191,7 @@
 
 .Button.Button--minimal[disabled],
 .Button.Button--minimal[disabled]:hover {
-  background-color: var(--lp-color-bg-interactive-tertiary);
+  background-color: var(--lp-color-bg-interactive-tertiary-base);
   border: none;
   color: var(--lp-color-text-interactive-disabled);
 }
@@ -201,7 +201,7 @@
 .Button.Button--close {
   background-color: transparent;
   fill: var(--lp-color-gray-700);
-  color: var(--lp-color-text-ui-primary);
+  color: var(--lp-color-text-ui-primary-base);
 }
 
 .Button.Button--close svg {
@@ -210,18 +210,24 @@
 
 .Button.Button--close:hover {
   background-color: rgb(33 33 33 / 0.1);
-  box-shadow: 0 0 0 1px hsl(216 2.4% 58.6% / 0.7), 0 0 0 4px hsl(0 0% 12.9% / 0.1);
+  box-shadow:
+    0 0 0 1px hsl(216 2.4% 58.6% / 0.7),
+    0 0 0 4px hsl(0 0% 12.9% / 0.1);
 }
 
 .Button.Button--close:focus-visible {
   background-color: hsl(0 0 100% / 0.1);
-  box-shadow: 0 0 0 1px hsl(225 1.8% 43.5% / 0.7), 0 0 0 4px hsl(0 0% 12.9% / 0.1);
+  box-shadow:
+    0 0 0 1px hsl(225 1.8% 43.5% / 0.7),
+    0 0 0 4px hsl(0 0% 12.9% / 0.1);
 }
 
 .Button.Button--close:active {
   background-color: hsl(0 0% 12.9% / 0.7);
-  box-shadow: 0 0 0 1px var(--lp-color-black-200), 0 0 0 4px hsl(0 0% 12.9% / 0.1);
-  color: var(--lp-color-white);
+  box-shadow:
+    0 0 0 1px var(--lp-color-black-200),
+    0 0 0 4px hsl(0 0% 12.9% / 0.1);
+  color: var(--lp-color-white-0);
 }
 
 .Button.Button--close[disabled],
@@ -329,7 +335,7 @@
   text-decoration: none;
   background-color: transparent;
   border-color: transparent;
-  color: var(--lp-color-text-interactive);
+  color: var(--lp-color-text-interactive-base);
 }
 
 .Button--link:active {

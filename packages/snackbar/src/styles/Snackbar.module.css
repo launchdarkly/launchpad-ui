@@ -1,6 +1,6 @@
 .Snackbar {
   background-color: var(--lp-color-bg-feedback-primary);
-  color: var(--lp-color-white);
+  color: var(--lp-color-white-0);
   padding: var(--lp-spacing-500);
   display: inline-flex;
   gap: 1.4rem;
@@ -37,7 +37,7 @@
   font-size: 1.6rem;
   font-weight: var(--lp-font-weight-medium);
   line-height: 1.5;
-  color: var(--lp-color-white);
+  color: var(--lp-color-white-0);
 }
 
 .Snackbar-content {

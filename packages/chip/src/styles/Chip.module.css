@@ -11,7 +11,7 @@
   --lp-component-chip-color-bg-beta: var(--lp-color-purple-200);
   --lp-component-chip-color-text-beta: var(--lp-color-purple-600);
   --lp-component-chip-color-bg-federal: var(--lp-color-yellow-500);
-  --lp-component-chip-color-text-federal: var(--lp-color-black);
+  --lp-component-chip-color-text-federal: var(--lp-color-black-0);
   --lp-component-chip-color-bg-default: var(--lp-color-gray-100);
   --lp-component-chip-color-text-default: var(--lp-color-gray-800);
 }

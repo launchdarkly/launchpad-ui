@@ -5,7 +5,7 @@
   flex-shrink: 0;
   max-width: unset;
   overflow: hidden;
-  color: var(--lp-color-text-ui-primary);
+  color: var(--lp-color-text-ui-primary-base);
   display: inline-flex;
   vertical-align: top;
   justify-content: center;
@@ -15,7 +15,7 @@
 
 .Avatar--initials {
   border: none;
-  color: var(--lp-color-white);
+  color: var(--lp-color-white-0);
 }
 
 .Avatar--color0 {

@@ -30,12 +30,12 @@
   display: flex;
   align-items: center;
   margin: 0;
-  color: var(--lp-color-text-ui-primary);
-  background-color: var(--lp-color-bg-interactive-secondary);
+  color: var(--lp-color-text-ui-primary-base);
+  background-color: var(--lp-color-bg-interactive-secondary-base);
 }
 
 .appliedButton {
-  color: var(--lp-color-text-ui-primary);
+  color: var(--lp-color-text-ui-primary-base);
   height: 2rem;
   background-color: var(--lp-color-bg-interactive-secondary-hover);
   padding: 0.2rem 0.6rem;
@@ -60,7 +60,8 @@
   &:focus-visible {
     outline: none;
     border-color: var(--lp-color-border-interactive-secondary-focus);
-    box-shadow: 0 0 0 2px var(--lp-color-bg-ui-primary),
+    box-shadow:
+      0 0 0 2px var(--lp-color-bg-ui-primary),
       0 0 0 4px var(--lp-color-shadow-interactive-focus);
   }
 }
@@ -75,7 +76,7 @@
 }
 
 .description {
-  color: var(--lp-color-text-ui-primary);
+  color: var(--lp-color-text-ui-primary-base);
   font-weight: var(--lp-font-weight-medium);
 }
 
@@ -131,7 +132,7 @@
   font-weight: var(--lp-font-weight-medium);
   padding: 1rem;
   width: 100%;
-  border-bottom: 1px solid var(--lp-color-border-interactive-secondary);
+  border-bottom: 1px solid var(--lp-color-border-interactive-secondary-base);
 }
 
 .filterClearButton:active,

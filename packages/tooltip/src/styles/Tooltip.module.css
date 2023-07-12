@@ -7,7 +7,7 @@
 
 [data-theme='dark'] {
   --lp-component-popover-color-bg: var(--lp-color-bg-overlay-primary);
-  --lp-component-popover-color-text: var(--lp-color-text-ui-primary);
+  --lp-component-popover-color-text: var(--lp-color-text-ui-primary-base);
   --lp-component-popover-color-border: var(--lp-color-border-ui-secondary);
 }
 
