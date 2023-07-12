@@ -33,6 +33,8 @@ const TextField = forwardRef<HTMLInputElement, TextFieldProps>(
       ? className
       : cx(styles.formInput, tiny && styles.formInputTiny, className);
 
+    const disablePasswordManagers = autoComplete === 'off';
+
     if (suffix) {
       return (
         <div className={styles.suffixContainer}>
@@ -53,34 +55,10 @@ const TextField = forwardRef<HTMLInputElement, TextFieldProps>(
       );
     }
 
-    if (autoComplete === 'off') {
-      return (
-        <input
-          {...rest}
-          data-lpignore="true" // "data-lpignore" is added to prevent LastPass from injecting a password autofill icon
-          data-1p-ignore // "data-1p-ignore" is added to prevent 1Password from injecting a password autofill icon
-          autoComplete={autoComplete}
-          type={type}
-          className={classes}
-          readOnly={readOnly}
-          tabIndex={tabIndex}
-          ref={ref}
-          data-test-id={testId}
-          style={
-            overrideWidth
-              ? {
-                  width: overrideWidth,
-                }
-              : undefined
-          }
-          aria-describedby={rest['aria-describedby'] || createFieldErrorId(rest.id)}
-        />
-      );
-    }
-
     return (
       <input
         {...rest}
+        data-1p-ignore={disablePasswordManagers} // "data-1p-ignore" is added to prevent 1Password from injecting a password autofill icon
         type={type}
         className={classes}
         readOnly={readOnly}
