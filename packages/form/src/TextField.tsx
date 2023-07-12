@@ -24,6 +24,7 @@ const TextField = forwardRef<HTMLInputElement, TextFieldProps>(
       suffix,
       overrideWidth,
       'data-test-id': testId = 'text-field',
+      autoComplete,
       ...rest
     },
     ref
@@ -32,6 +33,8 @@ const TextField = forwardRef<HTMLInputElement, TextFieldProps>(
       ? className
       : cx(styles.formInput, tiny && styles.formInputTiny, className);
 
+    const disablePasswordManagers = autoComplete === 'off';
+
     if (suffix) {
       return (
         <div className={styles.suffixContainer}>
@@ -39,6 +42,7 @@ const TextField = forwardRef<HTMLInputElement, TextFieldProps>(
             {...rest}
             type={type}
             data-test-id={testId}
+            autoComplete={autoComplete}
             className={classes}
             readOnly={readOnly}
             ref={ref}
@@ -54,10 +58,12 @@ const TextField = forwardRef<HTMLInputElement, TextFieldProps>(
     return (
       <input
         {...rest}
+        data-1p-ignore={disablePasswordManagers} // "data-1p-ignore" is added to prevent 1Password from injecting a password autofill icon
         type={type}
         className={classes}
         readOnly={readOnly}
         tabIndex={tabIndex}
+        autoComplete={autoComplete}
         ref={ref}
         data-test-id={testId}
         style={

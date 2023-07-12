@@ -83,6 +83,17 @@ export const WithHint: Story = {
     name: 'Email',
     htmlFor: 'Email',
     hint: 'Must be a valid email',
-    children: <TextField id="Email" value="testing@launchdarkly.com" />,
+    children: <TextField id="Email" autoComplete="email" value="testing@launchdarkly.com" />,
+  },
+};
+
+export const WithPasswordManagerDisabled: Story = {
+  args: {
+    isRequired: true,
+    label: 'Name',
+    name: 'Name',
+    htmlFor: 'Name',
+    hint: 'Must not be blank',
+    children: <TextField id="Name" autoComplete="off" value="First Name" />,
   },
 };
