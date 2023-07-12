@@ -16,7 +16,7 @@ type TabListProps<T extends string | number> = AriaTabListProps<HTMLDivElement> 
   /** CSS classes to pass into the TabList wrapper div. */
   className?: string;
   /** The children passed into the TabList. This is a react-stately Item with JSX children. */
-  children: ItemElement<ReactNode> | Array<ItemElement<ReactNode>>;
+  children: ItemElement<ReactNode> | ItemElement<ReactNode>[];
   /** Array of any disabled Tabs in the grouping. */
   disabledTabs?: string[];
   /** Called when the user clicks on a different tab */

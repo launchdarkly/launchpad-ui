@@ -17,6 +17,7 @@ const TagItem = <T extends object, P extends ElementType = 'div'>(
 
 TagItem.getCollectionNode = function* getCollectionNode<T extends object>(
   props: ItemProps<T>,
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   context: any
 ) {
   const rendered = props.title || props.children;

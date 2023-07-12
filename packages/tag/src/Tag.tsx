@@ -71,6 +71,7 @@ const Tag = <T extends object>(props: TagProps<T>) => {
               data-test-id="remove-tag-btn"
               onClick={(e) => {
                 e.stopPropagation();
+                // eslint-disable-next-line @typescript-eslint/no-explicit-any
                 removeButtonProps.onPress?.(undefined as any);
               }}
               {...removeButtonProps}
