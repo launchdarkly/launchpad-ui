@@ -6,6 +6,7 @@ module.exports = {
     'plugin:react/jsx-runtime',
     'plugin:react-hooks/recommended',
     'plugin:@typescript-eslint/recommended',
+    'plugin:@typescript-eslint/stylistic',
     'plugin:import/recommended',
     'plugin:import/typescript',
     'plugin:jsx-a11y/recommended',
