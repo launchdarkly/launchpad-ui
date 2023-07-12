@@ -1,5 +1,11 @@
 # @launchpad-ui/form
 
+## 0.8.18
+
+### Patch Changes
+
+- [#921](https://github.com/launchdarkly/launchpad-ui/pull/921) [`2c189dc2`](https://github.com/launchdarkly/launchpad-ui/commit/2c189dc22de54ff76497a5f0326fcbfae6afca15) Thanks [@hisuida](https://github.com/hisuida)! - [TextField]: Disable 1Password and LastPass from displaying autofill icons
+
 ## 0.8.17
 
 ### Patch Changes
