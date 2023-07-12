@@ -1,5 +1,12 @@
 ---
+'@launchpad-ui/avatar': minor
+'@launchpad-ui/button': minor
+'@launchpad-ui/chip': minor
+'@launchpad-ui/form': minor
 '@launchpad-ui/icons': minor
+'@launchpad-ui/menu': minor
+'@launchpad-ui/split-button': minor
+'@launchpad-ui/core': minor
 ---
 
 [Icons] Use sprites for icons instead of individual components
