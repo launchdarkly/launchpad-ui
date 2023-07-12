@@ -99,7 +99,7 @@ color:
       value: hsl(0, 0%, 97.3%)
     200:
       value: hsl(0, 0%, 93.7%)
-    ' ':
+    0:
       value: hsl(0, 0%, 100%)
   gray:
     100:
@@ -129,7 +129,7 @@ color:
       value: hsl(0, 0%, 9.8%)
     400:
       value: hsl(0, 0%, 7%)
-    ' ':
+    0:
       value: hsl(0, 0%, 0%)
   system:
     green:
