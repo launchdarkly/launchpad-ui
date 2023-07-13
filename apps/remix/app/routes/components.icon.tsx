@@ -1,5 +1,5 @@
-import { Add } from '@launchpad-ui/icons';
+import { Icon } from '@launchpad-ui/icons';
 
 export default function Index() {
-  return <Add size="medium" />;
+  return <Icon name="add" size="medium" />;
 }

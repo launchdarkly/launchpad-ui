@@ -3,7 +3,7 @@ import type { MultiSelectTriggerProps } from '../MultiSelect';
 import type { SingleSelectTriggerProps } from '../SingleSelect';
 
 import { IconButton } from '@launchpad-ui/button';
-import { Edit } from '@launchpad-ui/icons';
+import { Icon } from '@launchpad-ui/icons';
 import { TagGroup, TagItem } from '@launchpad-ui/tag';
 
 const CustomMultiSelectTrigger = (props: MultiSelectTriggerProps<DummyItem>) => {
@@ -19,7 +19,7 @@ const CustomMultiSelectTrigger = (props: MultiSelectTriggerProps<DummyItem>) => 
           size="small"
           aria-label="Edit"
           ref={triggerRef}
-          icon={<Edit />}
+          icon={<Icon name="edit" />}
           data-test-id="custom-trigger"
         />
       )}

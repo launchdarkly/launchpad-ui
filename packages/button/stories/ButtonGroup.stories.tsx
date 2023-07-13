@@ -1,4 +1,4 @@
-import type { StoryObj, DecoratorFn } from '@storybook/react';
+import type { StoryObj, Decorator } from '@storybook/react';
 
 import { Fragment } from 'react';
 
@@ -7,7 +7,7 @@ import { ButtonGroup } from '../src/ButtonGroup';
 
 import './Button.stories.css';
 
-const buttonTemplateWithStates: DecoratorFn = (storyComponent, context) => {
+const buttonTemplateWithStates: Decorator = (storyComponent, context) => {
   const { viewMode, args } = context;
 
   const storyArgs = args;

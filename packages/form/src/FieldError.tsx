@@ -1,7 +1,7 @@
 import type { FieldPath } from './utils';
 import type { ComponentProps } from 'react';
 
-import { AlertRhombus } from '@launchpad-ui/icons';
+import { Icon } from '@launchpad-ui/icons';
 import { cx } from 'classix';
 
 import styles from './styles/Form.module.css';
@@ -33,7 +33,7 @@ const FieldError = ({
       aria-label="Error"
       id={createFieldErrorId(name)}
     >
-      <AlertRhombus size="small" /> {errorMessage}
+      <Icon name="alert-rhombus" size="small" /> {errorMessage}
     </span>
   );
 };

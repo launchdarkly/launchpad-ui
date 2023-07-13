@@ -1,6 +1,6 @@
 import type { StoryObj } from '@storybook/react';
 
-import { Info } from '../../icons/src';
+import { Icon } from '../../icons/src';
 import { IconField, TextField } from '../src';
 
 export default {
@@ -18,7 +18,7 @@ type Story = StoryObj<typeof IconField>;
 
 export const Default: Story = {
   args: {
-    icon: Info,
+    icon: <Icon name="info" />,
     children: <TextField id="Date" value="12/01/2022" />,
   },
 };

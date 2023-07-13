@@ -22,15 +22,15 @@
       "require": "./dist/index.js"
     },
     "./package.json": "./package.json",
-    "./style.css": "./dist/style.css"
+    "./style.css": "./dist/style.css",
+    "./sprite.svg": "./dist/sprite.svg"
   },
   "source": "src/index.ts",
   "scripts": {
-    "build": "pnpm build:icons && vite build -c ../../vite.config.ts && tsc --project tsconfig.build.json",
-    "build:icons": "svgr --silent -- icons",
+    "build": "vite build -c ../../vite.config.ts && tsc --project tsconfig.build.json && cp src/img/sprite.svg dist",
     "clean": "rm -rf dist",
     "lint": "eslint '**/*.{ts,tsx,js}' && stylelint '**/*.css' --ignore-path ../../.stylelintignore",
-    "test": "pnpm build:icons && vitest run --coverage"
+    "test": "vitest run --coverage"
   },
   "dependencies": {
     "@launchpad-ui/tokens": "workspace:~",
@@ -41,7 +41,6 @@
     "react-dom": "18.2.0"
   },
   "devDependencies": {
-    "@svgr/cli": "^8.0.1",
     "react": "18.2.0",
     "react-dom": "18.2.0"
   }

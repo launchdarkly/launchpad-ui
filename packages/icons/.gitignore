@@ -1,5 +1,0 @@
-src/*.tsx
-!src/Icon.tsx
-!src/StatusIcon.tsx
-!src/FlairIcon.tsx
-src/index.ts

@@ -1,4 +1,4 @@
-import { Add } from '@launchpad-ui/icons';
+import { Icon } from '@launchpad-ui/icons';
 import { it, expect, describe, vi } from 'vitest';
 
 import { render, screen, userEvent } from '../../../test/utils';
@@ -6,11 +6,7 @@ import { Button } from '../src';
 
 describe('Button', () => {
   it('renders', () => {
-    render(
-      <Button size="normal" type="button">
-        Default Button
-      </Button>
-    );
+    render(<Button type="button">Default Button</Button>);
     expect(screen.getByText('Default Button')).toBeInTheDocument();
   });
 
@@ -57,7 +53,7 @@ describe('Button', () => {
   });
 
   it('can render an icon', async () => {
-    const { container } = render(<Button kind="primary" icon={<Add />} />);
+    const { container } = render(<Button kind="primary" icon={<Icon name="add" />} />);
     // eslint-disable-next-line testing-library/no-container, testing-library/no-node-access
     expect(container.querySelector('svg')).not.toBeNull();
   });

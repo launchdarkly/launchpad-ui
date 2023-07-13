@@ -78,7 +78,7 @@
   fill: var(--lp-color-fill-feedback-warning);
 }
 
-.Alert.Alert--error .Alert-icon svg > path {
+.Alert.Alert--error .Alert-icon svg {
   fill: var(--lp-color-fill-feedback-error);
 }
 

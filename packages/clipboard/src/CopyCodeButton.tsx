@@ -1,7 +1,7 @@
 import type { CopyToClipboardProps } from './CopyToClipboard';
 import type { ButtonHTMLAttributes, ReactNode } from 'react';
 
-import { ClipboardCopy } from '@launchpad-ui/icons';
+import { Icon } from '@launchpad-ui/icons';
 import { cx } from 'classix';
 import { forwardRef } from 'react';
 
@@ -25,7 +25,8 @@ const CopyCodeButton = forwardRef<HTMLButtonElement, CopyCodeButtonProps>(
       >
         {children}
         {(kind === 'basic' || kind === 'minimal') && (
-          <ClipboardCopy
+          <Icon
+            name="clipboard-copy"
             className={cx(styles['CopyCodeButton--icon'])}
             aria-hidden="true"
             size="small"

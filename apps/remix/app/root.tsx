@@ -1,6 +1,7 @@
 import type { LinksFunction, V2_MetaFunction } from '@remix-run/node';
 import type { PropsWithChildren, ReactNode } from 'react';
 
+import { IconContext } from '@launchpad-ui/icons';
 import { cssBundleHref } from '@remix-run/css-bundle';
 import {
   Links,
@@ -17,9 +18,16 @@ import launchpadStyles from '@launchpad-ui/tokens/index.css';
 import themeStyles from '@launchpad-ui/tokens/themes.css';
 import globalStyles from './styles/global.css';
 import iconStyles from '@launchpad-ui/icons/style.css';
+import icons from '@launchpad-ui/icons/sprite.svg';
 
 export const links: LinksFunction = () => {
   return [
+    {
+      rel: 'preload',
+      href: icons,
+      as: 'image',
+      type: 'image/svg+xml',
+    },
     { rel: 'stylesheet', href: launchpadStyles },
     { rel: 'stylesheet', href: themeStyles },
     { rel: 'stylesheet', href: globalStyles },
@@ -44,9 +52,11 @@ export const meta: V2_MetaFunction = () => {
 export default function App() {
   return (
     <Document>
-      <Layout>
-        <Outlet />
-      </Layout>
+      <IconContext.Provider value={{ path: icons }}>
+        <Layout>
+          <Outlet />
+        </Layout>
+      </IconContext.Provider>
     </Document>
   );
 }

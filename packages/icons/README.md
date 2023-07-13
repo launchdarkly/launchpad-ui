@@ -15,19 +15,31 @@ $ npm install @launchpad-ui/icons
 
 ## Usage
 
+### Basic
+
+By default, the `Icon` component expects the package's provided `sprite.svg` file to be located in `/static/sprite.svg` of your app. The `name` prop specifies which icon to render.
+
 ```js
-import { Add } from '@launchpad-ui/icons';
+import { Icon } from '@launchpad-ui/icons';
+
+const MyIcon = () => <Icon name="info" />;
 ```
 
-## Contributing
-To add an icon to our library, drop the SVG inside of `/icons` and run one of the below scripts to generate the component for it. It's intended that consumers will utilize the icon components rather than the raw SVGs.
+### Custom static location
 
-From the root of launchpad-ui (preferred):
-```js
-pnpm build:transform
-```
+A custom path to the sprite can be set via the `IconContext` provider. For example, if importing a static asset returns a resolved URL ([like in Vite](https://vitejs.dev/guide/assets.html#importing-asset-as-url) or [Remix](https://remix.run/docs/en/1.18.1/other-api/asset-imports#asset-url-imports)) you can do the following in your app to load the icons:
 
-OR, from within the root of the icons package:
 ```js
-pnpm build
+import { IconContext } from '@launchpad-ui/icons';
+import icons from '@launchpad-ui/icons/sprite.svg';
+import { createRoot } from 'react-dom/client';
+
+const domNode = document.getElementById('root');
+const root = createRoot(domNode);
+
+root.render(
+  <IconContext.Provider value={{ path: icons }}>
+    <App />
+  </IconContext.Provider>
+);
 ```

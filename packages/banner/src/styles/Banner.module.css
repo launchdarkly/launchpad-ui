@@ -63,7 +63,7 @@
   fill: var(--lp-color-fill-feedback-info);
 }
 
-.Banner.Banner--error .Banner-icon svg > path {
+.Banner.Banner--error .Banner-icon svg {
   fill: var(--lp-color-fill-feedback-error);
 }
 

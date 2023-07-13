@@ -1,7 +1,7 @@
 import type { ReactNode, SyntheticEvent, MouseEvent } from 'react';
 
 import { IconButton } from '@launchpad-ui/button';
-import { Close, ExpandMore } from '@launchpad-ui/icons';
+import { Icon } from '@launchpad-ui/icons';
 import { Tooltip } from '@launchpad-ui/tooltip';
 import { VisuallyHidden } from '@react-aria/visually-hidden';
 import { cx } from 'classix';
@@ -83,7 +83,7 @@ const FilterButton = forwardRef<Ref, FilterButtonProps>((props, ref) => {
             {children}
           </span>
         )}
-        {!isClearable && <ExpandMore size="small" />}
+        {!isClearable && <Icon name="expand-more" size="small" />}
       </button>
       {isClearable && (
         <Tooltip targetClassName={styles.clearTooltip} content={clearTooltip}>
@@ -91,7 +91,7 @@ const FilterButton = forwardRef<Ref, FilterButtonProps>((props, ref) => {
             aria-label={ariaLabel}
             className={styles.clear}
             data-test-id="clear-filter-button"
-            icon={<Close size="tiny" />}
+            icon={<Icon name="close" size="tiny" />}
             size="small"
             onClick={onClear}
           />

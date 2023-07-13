@@ -2,7 +2,7 @@
 import type { StoryObj } from '@storybook/react';
 
 import { Button } from '@launchpad-ui/button';
-import { Check, ClickMetric } from '@launchpad-ui/icons';
+import { Icon } from '@launchpad-ui/icons';
 import { Tooltip } from '@launchpad-ui/tooltip';
 import { useState } from '@storybook/client-api';
 import { userEvent, within } from '@storybook/testing-library';
@@ -178,7 +178,7 @@ export const KitchenSink: Story = {
         <ModalHeader
           title={
             <>
-              Heading <ClickMetric size="small" />
+              Heading <Icon name="click-metric" size="small" />
             </>
           }
           description={
@@ -200,7 +200,7 @@ export const KitchenSink: Story = {
         </ModalBody>
         <ModalFooter
           primaryButton={
-            <Button icon={<Check />} kind="primary">
+            <Button icon={<Icon name="check" />} kind="primary">
               Okay
             </Button>
           }

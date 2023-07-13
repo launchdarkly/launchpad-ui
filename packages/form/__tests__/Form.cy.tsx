@@ -1,6 +1,6 @@
 import type { FormProps } from '../src';
 
-import { Info } from '@launchpad-ui/icons';
+import { Icon } from '@launchpad-ui/icons';
 
 import {
   Checkbox,
@@ -53,7 +53,7 @@ const createComponent = (props?: FormProps) => (
     <h4>Compact Text Field</h4>
     <CompactTextField label="Email" aria-label="Email" onChange={() => undefined} />
     <h4>Icon Field</h4>
-    <IconField icon={Info}>
+    <IconField icon={<Icon name="info" />}>
       <FormField isRequired={true} label="Date" name="Date" htmlFor="Date">
         <TextField id="Date" value="12/01/2022" />
       </FormField>

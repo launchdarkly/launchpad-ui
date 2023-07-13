@@ -1,7 +1,7 @@
 import type { ComponentProps, ReactNode } from 'react';
 
 import { IconButton } from '@launchpad-ui/button';
-import { Close, StatusIcon } from '@launchpad-ui/icons';
+import { Icon, StatusIcon } from '@launchpad-ui/icons';
 import { useControlledState } from '@react-stately/utils';
 import { cx } from 'classix';
 
@@ -123,7 +123,7 @@ const Alert = ({
           aria-label="Close this alert."
           size="small"
           className={styles['Alert-close']}
-          icon={<Close size="small" />}
+          icon={<Icon name="close" size="small" />}
           kind="close"
           onClick={() => setDismissedState(true)}
           data-test-id={`${testId}-dismiss-button`}

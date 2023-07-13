@@ -1,7 +1,7 @@
 import type { StoryObj } from '@storybook/react';
 
 import { Button } from '@launchpad-ui/button';
-import { CheckCircle, Info, Person, Warning } from '@launchpad-ui/icons';
+import { Icon } from '@launchpad-ui/icons';
 
 import { ProgressBubbles } from '../src';
 
@@ -26,19 +26,19 @@ export const Example: Story = {
   },
 };
 const items = [
-  { label: 'Stage 1', icons: <CheckCircle /> },
+  { label: 'Stage 1', icons: <Icon name="check-circle" /> },
   {
     label: 'Stage 2',
     icons: (
       <>
-        <Info />
-        <Warning />
+        <Icon name="info" />
+        <Icon name="warning" />
       </>
     ),
   },
   {
     label: 'Stage 3',
-    icons: <Info />,
+    icons: <Icon name="info" />,
     isWarning: true,
   },
   {
@@ -46,7 +46,7 @@ const items = [
   },
   {
     label: 'Complete',
-    icons: <Person />,
+    icons: <Icon name="person" />,
     popover: (
       <div style={{ padding: '1rem' }}>
         <p>You can trigger a popover from a progress bubble item</p>

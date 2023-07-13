@@ -1,10 +1,5 @@
 import { IconButton } from '@launchpad-ui/button';
-import {
-  ChevronLeft,
-  ChevronRight,
-  KeyboardDoubleArrowLeft,
-  KeyboardDoubleArrowRight,
-} from '@launchpad-ui/icons';
+import { Icon } from '@launchpad-ui/icons';
 import { cx } from 'classix';
 
 import styles from './styles/Pagination.module.css';
@@ -21,10 +16,10 @@ type PaginationButtonProps<T = PaginationChange> = {
 };
 
 const ICON_MAP = {
-  first: KeyboardDoubleArrowLeft,
-  prev: ChevronLeft,
-  next: ChevronRight,
-  last: KeyboardDoubleArrowRight,
+  first: <Icon name="keyboard-double-arrow-left" />,
+  prev: <Icon name="chevron-left" />,
+  next: <Icon name="chevron-right" />,
+  last: <Icon name="keyboard-double-arrow-right" />,
 };
 
 const LABEL_MAP: { [key in PaginationChange]: string } = {
@@ -48,7 +43,7 @@ const PaginationButton = ({
     className
   );
 
-  const Icon = ICON_MAP[kind];
+  const IconComponent = ICON_MAP[kind];
 
   const label = `${LABEL_MAP[kind]} ${resourceName} page`;
 
@@ -59,7 +54,7 @@ const PaginationButton = ({
       size="small"
       data-test-id={testId}
       onClick={() => onClick(kind)}
-      icon={<Icon />}
+      icon={IconComponent}
       aria-label={label}
     />
   );

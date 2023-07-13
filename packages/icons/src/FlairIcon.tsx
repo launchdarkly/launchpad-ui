@@ -1,12 +1,12 @@
 import type { IconProps } from './Icon';
-import type { HTMLProps, ReactElement } from 'react';
+import type { ComponentProps, ReactElement } from 'react';
 
 import { cx } from 'classix';
 import { cloneElement } from 'react';
 
 import styles from './styles/Icon.module.css';
 
-type FlairIconProps = Omit<HTMLProps<HTMLDivElement>, 'className'> & {
+type FlairIconProps = Omit<ComponentProps<'div'>, 'className'> & {
   'data-test-id'?: string;
   gradient?: 'purpleToBlue' | 'yellowToCyan' | 'pinkToPurple' | 'cyanToBlue' | 'cyanToPurple';
   isRounded?: boolean;
