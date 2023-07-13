@@ -1,5 +1,5 @@
 /* eslint-disable react-hooks/rules-of-hooks */
-import type { StoryObj } from '@storybook/react';
+import type { StoryObj, StoryFn } from '@storybook/react';
 
 import { Button } from '@launchpad-ui/button';
 import { Icon } from '@launchpad-ui/icons';
@@ -65,6 +65,18 @@ export default {
   args: {
     size: 'medium',
   },
+  decorators: [
+    (Story: StoryFn) => (
+      <div
+        style={{
+          width: '100vw',
+          height: '100vh',
+        }}
+      >
+        <Story />
+      </div>
+    ),
+  ],
 };
 
 type Story = StoryObj<typeof Modal>;
@@ -88,7 +100,7 @@ export const Default: Story = {
     const button = <Button onClick={() => setShow(true)}>Open modal</Button>;
 
     return show ? (
-      <div style={{ width: '100vw', height: '100vh' }}>
+      <>
         {button}
         <Modal {...props} onCancel={() => setShow(!show)}>
           <ModalHeader title="Heading" description="A description" />
@@ -102,7 +114,7 @@ export const Default: Story = {
             secondaryButton={<Button onClick={() => setShow(false)}>Cancel</Button>}
           />
         </Modal>
-      </div>
+      </>
     ) : (
       button
     );
@@ -402,7 +414,7 @@ export const WithTooltip: Story = {
     const button = <Button onClick={() => setShow(true)}>Open modal</Button>;
 
     return show ? (
-      <div style={{ width: '100vw', height: '100vh' }}>
+      <>
         {button}
         <Modal {...props} onCancel={() => setShow(!show)}>
           <ModalHeader title="Heading" description="A description" />
@@ -420,7 +432,7 @@ export const WithTooltip: Story = {
             secondaryButton={<Button onClick={() => setShow(false)}>Cancel</Button>}
           />
         </Modal>
-      </div>
+      </>
     ) : (
       button
     );

@@ -1,5 +1,5 @@
 import type { ToastRecord } from '@launchpad-ui/toast';
-import type { StoryObj } from '@storybook/react';
+import type { StoryObj, StoryFn } from '@storybook/react';
 
 import { Button } from '@launchpad-ui/button';
 import { Drawer, DrawerHeader } from '@launchpad-ui/drawer';
@@ -11,6 +11,18 @@ import { useState } from '@storybook/client-api';
 
 export default {
   title: 'Tokens/Z Index',
+  decorators: [
+    (Story: StoryFn) => (
+      <div
+        style={{
+          width: '100vw',
+          height: '100vh',
+        }}
+      >
+        <Story />
+      </div>
+    ),
+  ],
 };
 
 export const Example: StoryObj = {
@@ -28,7 +40,7 @@ export const Example: StoryObj = {
     const modalButton = <Button onClick={() => setShowModal(true)}>Open modal</Button>;
 
     return (
-      <div style={{ width: '100vw', height: '100vh' }}>
+      <>
         {showDrawer ? (
           <>
             {button}
@@ -47,7 +59,7 @@ export const Example: StoryObj = {
         )}
         {showModal ? (
           <Modal onCancel={() => setShowModal(!showModal)}>
-            <ModalHeader>Example modal title</ModalHeader>
+            <ModalHeader title="Example modal title" />
             <ModalBody>
               <div>
                 <p>z-index-500</p>
@@ -72,7 +84,7 @@ export const Example: StoryObj = {
           </Modal>
         ) : null}
         <ToastCenter toasts={toasts} onDismiss={() => setToasts([])} />
-      </div>
+      </>
     );
   },
 };

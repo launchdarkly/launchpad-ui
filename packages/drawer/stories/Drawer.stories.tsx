@@ -1,5 +1,5 @@
 /* eslint-disable react-hooks/rules-of-hooks */
-import type { StoryObj } from '@storybook/react';
+import type { StoryObj, StoryFn } from '@storybook/react';
 
 import { Button } from '@launchpad-ui/button';
 import { Tooltip } from '@launchpad-ui/tooltip';
@@ -20,6 +20,18 @@ export default {
       type: import.meta.env.STORYBOOK_PACKAGE_STATUS__DRAWER,
     },
   },
+  decorators: [
+    (Story: StoryFn) => (
+      <div
+        style={{
+          width: '100vw',
+          height: '100vh',
+        }}
+      >
+        <Story />
+      </div>
+    ),
+  ],
 };
 
 type Story = StoryObj<typeof Drawer>;
@@ -29,7 +41,7 @@ export const Default: Story = {
     const [show, setShow] = useState(true);
     const button = <Button onClick={() => setShow(true)}>Open drawer</Button>;
     return show ? (
-      <div style={{ width: '100vw', height: '100vh' }}>
+      <>
         {button}
         <Drawer onCancel={() => setShow(!show)}>
           <section>
@@ -39,7 +51,7 @@ export const Default: Story = {
             <p>This is example drawer content.</p>
           </section>
         </Drawer>
-      </div>
+      </>
     ) : (
       button
     );
@@ -53,7 +65,7 @@ export const ForcedDarkTheme: Story = {
     const button = <Button onClick={() => setShow(true)}>Open drawer</Button>;
 
     return show ? (
-      <div style={{ width: '100vw', height: '100vh' }}>
+      <>
         {button}
         <Drawer theme="dark" onCancel={() => setShow(!show)}>
           <section>
@@ -63,7 +75,7 @@ export const ForcedDarkTheme: Story = {
             <p>This is example drawer content.</p>
           </section>
         </Drawer>
-      </div>
+      </>
     ) : (
       button
     );
@@ -76,7 +88,7 @@ export const WithTooltip: Story = {
     const [show, setShow] = useState(true);
     const button = <Button onClick={() => setShow(true)}>Open drawer</Button>;
     return show ? (
-      <div style={{ width: '100vw', height: '100vh' }}>
+      <>
         {button}
         <Drawer onCancel={() => setShow(!show)}>
           <section>
@@ -88,7 +100,7 @@ export const WithTooltip: Story = {
             </Tooltip>
           </section>
         </Drawer>
-      </div>
+      </>
     ) : (
       button
     );

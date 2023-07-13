@@ -1,5 +1,4 @@
-import type { ReactRenderer, StoryObj, StoryFn } from '@storybook/react';
-import type { StoryContext } from '@storybook/types';
+import type { StoryObj, StoryFn } from '@storybook/react';
 
 import { Button } from '@launchpad-ui/button';
 import { userEvent, within } from '@storybook/testing-library';
@@ -33,11 +32,10 @@ export default {
     },
   },
   decorators: [
-    (Story: StoryFn, context: StoryContext<ReactRenderer>) => (
+    (Story: StoryFn) => (
       <div
         style={{
-          width: context.globals.theme === 'side-by-side' ? '50w' : '100vw',
-          height: context.globals.theme === 'side-by-side' ? '50vh' : '100vh',
+          height: '100vh',
           display: 'grid',
           alignItems: 'center',
           justifyContent: 'center',

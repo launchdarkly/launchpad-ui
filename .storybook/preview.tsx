@@ -56,35 +56,6 @@ export const globalTypes = {
   },
 };
 
-const ThemeBlock = ({
-  children,
-  left,
-  'data-theme': dataTheme,
-}: {
-  children;
-  left?: boolean;
-  'data-theme'?: string;
-}) => {
-  return (
-    <div
-      style={{
-        position: 'absolute',
-        top: 0,
-        left: left ? 0 : '50vw',
-        right: left ? '50vw' : 0,
-        width: '50vw',
-        height: '100vh',
-        bottom: 0,
-        overflow: 'auto',
-        padding: '1rem',
-      }}
-      data-theme={dataTheme}
-    >
-      {children}
-    </div>
-  );
-};
-
 export const decorators = [
   (StoryFn, context) => {
     const theme = context.parameters.theme || context.globals.theme;
@@ -93,19 +64,23 @@ export const decorators = [
       case 'side-by-side': {
         document.documentElement.setAttribute('data-theme', 'default');
         return (
-          <>
-            <ThemeBlock left>
+          <div style={{ display: 'flex', flexDirection: 'row' }}>
+            <div style={{ width: '50vw', padding: '1rem' }}>
               <StoryFn />
-            </ThemeBlock>
-            <ThemeBlock data-theme="dark">
+            </div>
+            <div data-theme="dark" style={{ width: '50vw', padding: '1rem' }}>
               <StoryFn />
-            </ThemeBlock>
-          </>
+            </div>
+          </div>
         );
       }
       default: {
         document.documentElement.setAttribute('data-theme', theme);
-        return <StoryFn />;
+        return (
+          <div style={{ padding: '1rem' }}>
+            <StoryFn />
+          </div>
+        );
       }
     }
   },
