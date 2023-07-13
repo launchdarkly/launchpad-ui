@@ -1,5 +1,75 @@
 # @launchpad-ui/form
 
+## 0.9.0
+
+### Minor Changes
+
+- [#917](https://github.com/launchdarkly/launchpad-ui/pull/917) [`f95ac68d`](https://github.com/launchdarkly/launchpad-ui/commit/f95ac68d2ddae67ae99520dca76721f6e07525cc) Thanks [@Niznikr](https://github.com/Niznikr)! - [Icons] Use sprites for icons instead of individual components
+
+  **Before**
+
+  ```js
+  import { Add } from '@launchpad-ui/icons';
+
+  const MyIcon = () => <Add size="medium" />;
+  ```
+
+  **After**
+
+  ```js
+  import { Icon } from '@launchpad-ui/icons';
+
+  const MyIcon = () => <Icon name="add" size="medium" />;
+  ```
+
+  By default, the component expects `@launchpad-ui/icons/dist/sprite.svg` to be available from `APP_ROOT/static/sprite.svg` in your app. A custom path to the sprite can be set via the `IconContext` provider.
+
+  For example, if importing a static asset returns a resolved URL you can do the following in your app to load the icons:
+
+  ```js
+  import { IconContext } from '@launchpad-ui/icons';
+  import icons from '@launchpad-ui/icons/sprite.svg';
+  import { createRoot } from 'react-dom/client';
+
+  const domNode = document.getElementById('root');
+  const root = createRoot(domNode);
+
+  root.render(
+    <IconContext.Provider value={{ path: icons }}>
+      <App />
+    </IconContext.Provider>
+  );
+  ```
+
+### Patch Changes
+
+- [#922](https://github.com/launchdarkly/launchpad-ui/pull/922) [`8f489f12`](https://github.com/launchdarkly/launchpad-ui/commit/8f489f1263f8641ed6b16f21765b41e23c0e7409) Thanks [@Niznikr](https://github.com/Niznikr)! - [Tokens] Add `0` and `base` suffix to default tokens:
+
+  Primitives:
+
+  - `lp-color-black-0`
+  - `lp-color-white-0`
+
+  Aliases:
+
+  - `lp-color-bg-interactive-primary-base`
+  - `lp-color-bg-interactive-secondary-base`
+  - `lp-color-bg-interactive-tertiary-base`
+  - `lp-color-bg-interactive-destructive-base`
+  - `lp-color-bg-field-base`
+  - `lp-color-border-field-base`
+  - `lp-color-border-interactive-primary-base`
+  - `lp-color-border-interactive-secondary-base`
+  - `lp-color-fill-field-base`
+  - `lp-color-text-feedback-base`
+  - `lp-color-text-interactive-base`
+  - `lp-color-text-ui-primary-base`
+  - `lp-color-text-field-base`
+
+- Updated dependencies [[`f95ac68d`](https://github.com/launchdarkly/launchpad-ui/commit/f95ac68d2ddae67ae99520dca76721f6e07525cc), [`8f489f12`](https://github.com/launchdarkly/launchpad-ui/commit/8f489f1263f8641ed6b16f21765b41e23c0e7409)]:
+  - @launchpad-ui/icons@0.9.0
+  - @launchpad-ui/tokens@0.6.0
+
 ## 0.8.18
 
 ### Patch Changes
