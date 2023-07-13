@@ -1,5 +1,20 @@
 # @launchpad-ui/core
 
+## 0.41.4
+
+### Patch Changes
+
+- [#919](https://github.com/launchdarkly/launchpad-ui/pull/919) [`9fdcb235`](https://github.com/launchdarkly/launchpad-ui/commit/9fdcb235583a5172033afcf151f6e8c291fb8c2d) Thanks [@tiffanylphan](https://github.com/tiffanylphan)! - [Chip] Center icons
+
+- [#921](https://github.com/launchdarkly/launchpad-ui/pull/921) [`2c189dc2`](https://github.com/launchdarkly/launchpad-ui/commit/2c189dc22de54ff76497a5f0326fcbfae6afca15) Thanks [@hisuida](https://github.com/hisuida)! - [TextField]: Disable 1Password and LastPass from displaying autofill icons
+
+- Updated dependencies [[`9fdcb235`](https://github.com/launchdarkly/launchpad-ui/commit/9fdcb235583a5172033afcf151f6e8c291fb8c2d), [`2c189dc2`](https://github.com/launchdarkly/launchpad-ui/commit/2c189dc22de54ff76497a5f0326fcbfae6afca15)]:
+  - @launchpad-ui/chip@0.7.15
+  - @launchpad-ui/form@0.8.18
+  - @launchpad-ui/navigation@0.11.23
+  - @launchpad-ui/menu@0.10.7
+  - @launchpad-ui/filter@0.5.32
+
 ## 0.41.3
 
 ### Patch Changes

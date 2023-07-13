@@ -1,5 +1,11 @@
 # @launchpad-ui/chip
 
+## 0.7.15
+
+### Patch Changes
+
+- [#919](https://github.com/launchdarkly/launchpad-ui/pull/919) [`9fdcb235`](https://github.com/launchdarkly/launchpad-ui/commit/9fdcb235583a5172033afcf151f6e8c291fb8c2d) Thanks [@tiffanylphan](https://github.com/tiffanylphan)! - [Chip] Center icons
+
 ## 0.7.14
 
 ### Patch Changes
