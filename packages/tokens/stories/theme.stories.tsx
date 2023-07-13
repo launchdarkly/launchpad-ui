@@ -23,7 +23,7 @@ export const NestedThemes = {
           <div
             style={{
               backgroundColor: 'var(--lp-color-bg-ui-primary)',
-              color: 'var(--lp-color-text-ui-primary)',
+              color: 'var(--lp-color-text-ui-primary-base)',
               border: '1px solid var(--lp-color-border-ui-primary)',
               padding: 'var(--lp-spacing-300)',
             }}
@@ -35,8 +35,8 @@ export const NestedThemes = {
             <div data-theme={theme === 'default' ? 'dark' : 'default'}>
               <div
                 style={{
-                  backgroundColor: 'var(--lp-color-bg-ui-primary',
-                  color: 'var(--lp-color-text-ui-primary',
+                  backgroundColor: 'var(--lp-color-bg-ui-primary)',
+                  color: 'var(--lp-color-text-ui-primary-base)',
                   border: '1px solid var(--lp-color-border-ui-primary)',
                   marginTop: 'var(--lp-spacing-500)',
                   padding: 'var(--lp-spacing-300)',
