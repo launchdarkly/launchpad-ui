@@ -9,7 +9,7 @@
   white-space: normal;
   width: 100%;
   background-color: var(--lp-color-bg-ui-primary);
-  color: var(--lp-color-text-feedback);
+  color: var(--lp-color-text-feedback-base);
   box-sizing: border-box;
   border-radius: 2px;
 }
@@ -18,7 +18,7 @@
   margin-top: 0;
   margin-bottom: 0.4rem;
   font-size: 1.6rem;
-  color: var(--lp-color-text-feedback);
+  color: var(--lp-color-text-feedback-base);
   font-weight: var(--lp-font-weight-medium);
   line-height: 1.25;
 }
@@ -116,7 +116,7 @@
 }
 
 .Alert-content :global(a:not(.Button)) {
-  color: var(--lp-color-text-interactive);
+  color: var(--lp-color-text-interactive-base);
 
   &:hover {
     text-decoration: none;
@@ -124,7 +124,9 @@
   }
 
   &:focus {
-    box-shadow: 0 0 0 1px hsl(0 0 100% / 0.7), 0 0 0 4px hsl(0 0% 9.8% / 0.1);
+    box-shadow:
+      0 0 0 1px hsl(0 0 100% / 0.7),
+      0 0 0 4px hsl(0 0% 9.8% / 0.1);
   }
 
   &:active {

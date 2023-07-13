@@ -1,6 +1,6 @@
 :root,
 [data-theme='default'] {
-  --lp-component-button-color-bg-default: var(--lp-color-bg-interactive-secondary);
+  --lp-component-button-color-bg-default: var(--lp-color-bg-interactive-secondary-base);
   --lp-component-button-color-border-destructive: var(--lp-color-border-interactive-destructive);
   --lp-component-button-color-bg-destructive-hover: var(
     --lp-color-bg-interactive-destructive-hover
@@ -26,15 +26,15 @@
   /* Remaining Legacy Tokens */
   --Button-border-default: 1px solid transparent;
   --Button-box-shadow-default-active: none;
-  --Button-color-boxShadow-1-default-active: var(--lp-color-white);
+  --Button-color-boxShadow-1-default-active: var(--lp-color-white-0);
   --Button-color-boxShadow-2-default-active: hsl(231.5 100% 62.5% / 0.1);
   --Button-color-boxShadow-1-default-withIcon-focus: var(--lp-color-shadow-interactive-focus);
   --Button-color-boxShadow-2-default-withIcon-focus: hsl(231.5 100% 62.5% / 0.1);
   --Button-box-shadow-withIcon-focus: 0 0 0 1px
       var(--Button-color-boxShadow-1-default-withIcon-focus),
     0 0 0 4px var(--Button-color-boxShadow-2-default-withIcon-focus);
-  --Button-color-text-destructive-focus: var(--lp-color-white);
-  --Button-color-background-disabled-withIcon: var(--lp-color-white);
+  --Button-color-text-destructive-focus: var(--lp-color-white-0);
+  --Button-color-background-disabled-withIcon: var(--lp-color-white-0);
   --Button-color-border-disabled-withIcon: transparent;
 
   /* End Remaining Legacy Tokens */
@@ -56,7 +56,7 @@
   --Button-color-background-default-hover: var(--lp-color-bg-interactive-secondary-hover);
   --Button-color-background-default-focus: var(--lp-color-bg-interactive-secondary-focus);
   --Button-color-background-default-active: var(--lp-color-bg-interactive-secondary-active);
-  --Button-color-border-default: var(--lp-color-border-interactive-secondary);
+  --Button-color-border-default: var(--lp-color-border-interactive-secondary-base);
 
   /* named for hover state for default, primary, destructive */
   --Button-box-shadow-hover: 0 2px 8px -1px hsl(0 0% 0% / 0.04), 0 2px 4px 0 hsl(0 0% 0% / 0.08),
@@ -74,19 +74,19 @@
   --Button-box-shadow-link-focus: 0 0 0 2px var(--Button-color-boxShadow-1-default-focus),
     0 0 0 4px var(--Button-color-boxShadow-2-default-focus);
   --Button-box-shadow-link-active: none;
-  --Button-color-link-default: var(--lp-color-text-interactive);
+  --Button-color-link-default: var(--lp-color-text-interactive-base);
   --Button-color-link-active: var(--lp-color-text-interactive-active);
-  --Button-color-text-default: var(--lp-color-text-ui-primary);
-  --Button-color-text-default-hover: var(--lp-color-text-ui-primary);
-  --Button-color-text-default-focus: var(--lp-color-text-ui-primary);
-  --Button-color-text-default-active: var(--lp-color-text-ui-primary);
+  --Button-color-text-default: var(--lp-color-text-ui-primary-base);
+  --Button-color-text-default-hover: var(--lp-color-text-ui-primary-base);
+  --Button-color-text-default-focus: var(--lp-color-text-ui-primary-base);
+  --Button-color-text-default-active: var(--lp-color-text-ui-primary-base);
 
   /* ------- PRIMARY ------- */
-  --Button-color-background-primary: var(--lp-color-bg-interactive-primary);
+  --Button-color-background-primary: var(--lp-color-bg-interactive-primary-base);
   --Button-color-background-primary-hover: var(--lp-color-bg-interactive-primary-hover);
   --Button-color-background-primary-focus: var(--lp-color-bg-interactive-primary-focus);
   --Button-color-background-primary-active: var(--lp-color-bg-interactive-primary-active);
-  --Button-color-border-primary: var(--lp-color-border-interactive-primary);
+  --Button-color-border-primary: var(--lp-color-border-interactive-primary-base);
   --Button-color-border-primary-hover: var(--lp-color-border-interactive-primary-hover);
   --Button-color-border-primary-focus: var(--lp-color-border-interactive-primary-focus);
   --Button-color-border-primary-active: var(--lp-color-border-interactive-primary-active);
@@ -94,8 +94,8 @@
   --Button-color-text-primary-hover: var(--lp-color-text-interactive-primary);
 
   /* PRIMARY WITH ICON */
-  --Button-color-background-primary-withIcon: var(--lp-color-bg-interactive-primary);
-  --Button-color-border-primary-withIcon: var(--lp-color-border-interactive-primary);
+  --Button-color-background-primary-withIcon: var(--lp-color-bg-interactive-primary-base);
+  --Button-color-border-primary-withIcon: var(--lp-color-border-interactive-primary-base);
   --Button-color-text-primary-withIcon: var(--lp-color-text-interactive-primary);
 
   /* ------- DESTRUCTIVE ------- */
@@ -150,9 +150,9 @@
   /* ------- BUTTON ICONS ------- */
 
   /* BUTTON ICON DEFAULT */
-  --Button-icon-color-default: var(--lp-color-text-ui-primary);
-  --Button-icon-color-fill-default: var(--lp-color-text-ui-primary);
-  --Button-icon-color-text-default: var(--lp-color-text-ui-primary);
+  --Button-icon-color-default: var(--lp-color-text-ui-primary-base);
+  --Button-icon-color-fill-default: var(--lp-color-text-ui-primary-base);
+  --Button-icon-color-text-default: var(--lp-color-text-ui-primary-base);
 
   /* BUTTON ICON PRIMARY */
   --Button-icon-color-fill-primary: var(--lp-color-fill-interactive-primary);

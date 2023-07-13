@@ -19,17 +19,17 @@
 .TabList-item:focus {
   outline: none;
   background-color: var(--lp-color-bg-interactive-secondary-hover);
-  color: var(--lp-color-text-ui-primary);
+  color: var(--lp-color-text-ui-primary-base);
 }
 
 .TabList-item:hover {
   outline: none;
   background-color: var(--lp-color-bg-interactive-secondary-hover);
-  color: var(--lp-color-text-ui-primary);
+  color: var(--lp-color-text-ui-primary-base);
 }
 
 .TabList-item.is-active {
-  color: var(--lp-color-text-ui-primary);
+  color: var(--lp-color-text-ui-primary-base);
 }
 
 .TabList-item.is-active::after {

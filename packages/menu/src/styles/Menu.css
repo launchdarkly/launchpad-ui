@@ -1,7 +1,7 @@
 .Menu-item {
   display: block;
   position: relative;
-  color: var(--lp-color-text-ui-primary);
+  color: var(--lp-color-text-ui-primary-base);
   background: var(--lp-color-bg-overlay-primary);
   text-decoration: none;
   cursor: pointer;

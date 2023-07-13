@@ -40,9 +40,9 @@
   font-size: 1.3rem;
   font-family: var(--lp-font-family-base);
   line-height: var(--lp-line-height-300);
-  background-color: var(--lp-color-bg-field);
-  color: var(--lp-color-text-ui-primary);
-  border: 1px solid var(--lp-color-border-field);
+  background-color: var(--lp-color-bg-field-base);
+  color: var(--lp-color-text-ui-primary-base);
+  border: 1px solid var(--lp-color-border-field-base);
   border-radius: var(--lp-border-radius-regular);
   transition: all var(--lp-duration-100) linear;
   height: 3.2rem;
@@ -66,7 +66,9 @@ select.formInput {
   background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7.41 8.84L12 13.42l4.59-4.58L18 10.25l-6 6-6-6 1.41-1.41z" fill="%23646f7a"/></svg>');
   background-size: 2rem;
   background-repeat: no-repeat;
-  background-position: right 0.4em top 50%, 0 0;
+  background-position:
+    right 0.4em top 50%,
+    0 0;
   padding-right: 2rem;
 }
 
@@ -116,7 +118,7 @@ select.formInput {
   top: -2px;
   left: 10px;
   padding: 0 3px;
-  color: var(--lp-color-text-ui-primary);
+  color: var(--lp-color-text-ui-primary-base);
   opacity: 0;
   pointer-events: none;
   background-color: var(--lp-color-bg-ui-primary);
@@ -198,7 +200,7 @@ select.formInput {
 
 .form .field label,
 .form .field .isInvalid label {
-  color: var(--lp-color-text-ui-primary);
+  color: var(--lp-color-text-ui-primary-base);
 }
 
 .fieldErrorMessage {
@@ -244,7 +246,7 @@ textarea.formInput:read-only {
 }
 
 input.formInput::-webkit-autofill {
-  box-shadow: 0 0 0 50px var(--lp-color-bg-field) inset;
+  box-shadow: 0 0 0 50px var(--lp-color-bg-field-base) inset;
 }
 
 /* Hide the type=search cancel button in Webkit for consistency */
@@ -298,7 +300,7 @@ input[type='checkbox']:disabled {
 
 .suffixContainer {
   display: inline-flex;
-  border: 1px solid var(--lp-color-border-field);
+  border: 1px solid var(--lp-color-border-field-base);
   border-radius: var(--lp-border-radius-regular);
   overflow: hidden;
   transition: all 0.1s linear;
@@ -332,7 +334,7 @@ input[type='checkbox']:disabled {
 
 .iconFieldIcon {
   position: absolute;
-  fill: var(--lp-color-fill-field);
+  fill: var(--lp-color-fill-field-base);
   top: 50%;
   transform: translateY(-50%);
   left: 1rem;
@@ -392,7 +394,7 @@ input[type='checkbox']:disabled {
       --numberField-stepper-padding: 0.4rem;
       --numberField-stepper-border-radius: calc(var(--lp-border-radius-regular) - 0.1rem);
 
-      background-color: var(--lp-color-bg-field);
+      background-color: var(--lp-color-bg-field-base);
       flex: auto;
       display: flex;
       justify-content: center;
@@ -424,7 +426,7 @@ input[type='checkbox']:disabled {
 
       & span:has(svg) {
         width: 100%;
-        color: var(--lp-color-text-ui-primary);
+        color: var(--lp-color-text-ui-primary-base);
       }
     }
   }

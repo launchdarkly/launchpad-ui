@@ -85,7 +85,7 @@
 }
 
 .Nav--primary .NavItem.is-active {
-  color: var(--lp-color-text-ui-primary);
+  color: var(--lp-color-text-ui-primary-base);
   font-weight: var(--lp-font-weight-bold);
 }
 
@@ -106,7 +106,7 @@
 }
 
 .NavItem.is-active .NavItem-name {
-  border-bottom-color: var(--lp-color-text-ui-primary);
+  border-bottom-color: var(--lp-color-text-ui-primary-base);
 }
 
 .NavItem:focus {
@@ -146,12 +146,12 @@
 }
 
 .Nav--primary .NavItem:hover {
-  color: var(--lp-color-text-ui-primary);
+  color: var(--lp-color-text-ui-primary-base);
 }
 
 .Nav--primary a.NavItem:hover,
 .Nav--primary a.NavItem:active {
-  color: var(--lp-color-text-ui-primary);
+  color: var(--lp-color-text-ui-primary-base);
   text-decoration: none;
 }
 
@@ -175,7 +175,7 @@
 }
 
 .Nav--secondary .NavItem.is-active {
-  color: var(--lp-color-text-ui-primary);
+  color: var(--lp-color-text-ui-primary-base);
 }
 
 .Nav--secondary .NavItem.is-active .NavItem-name {

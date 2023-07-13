@@ -1,5 +1,5 @@
 :root {
-  --lp-component-splitbutton--color-border-primary: var(--lp-color-border-interactive-primary);
+  --lp-component-splitbutton--color-border-primary: var(--lp-color-border-interactive-primary-base);
   --lp-component-splitbutton-color-shadow-focus: 0 0 0 2px
       var(--lp-color-shadow-interactive-primary),
     0 0 0 4px var(--lp-color-shadow-interactive-focus);

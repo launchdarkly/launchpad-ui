@@ -72,7 +72,7 @@
   height: 10px;
   background: inherit;
   background-color: var(--lp-color-bg-overlay-primary);
-  color: var(--lp-color-text-ui-primary);
+  color: var(--lp-color-text-ui-primary-base);
 }
 
 :global(#arrow) {

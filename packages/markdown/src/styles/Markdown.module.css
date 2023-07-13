@@ -26,7 +26,7 @@
 }
 
 .Markdown a {
-  color: var(--lp-color-text-interactive);
+  color: var(--lp-color-text-interactive-base);
 }
 
 .Markdown a:visited {
