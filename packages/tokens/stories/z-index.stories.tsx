@@ -1,5 +1,5 @@
 import type { ToastRecord } from '@launchpad-ui/toast';
-import type { StoryObj, StoryFn } from '@storybook/react';
+import type { StoryObj } from '@storybook/react';
 
 import { Button } from '@launchpad-ui/button';
 import { Drawer, DrawerHeader } from '@launchpad-ui/drawer';
@@ -11,18 +11,6 @@ import { useState } from '@storybook/client-api';
 
 export default {
   title: 'Tokens/Z Index',
-  decorators: [
-    (Story: StoryFn) => (
-      <div
-        style={{
-          width: '100vw',
-          height: '100vh',
-        }}
-      >
-        <Story />
-      </div>
-    ),
-  ],
 };
 
 export const Example: StoryObj = {

@@ -64,7 +64,7 @@ export const decorators = [
       case 'side-by-side': {
         document.documentElement.setAttribute('data-theme', 'default');
         return (
-          <div style={{ display: 'flex', flexDirection: 'row' }}>
+          <div style={{ display: 'flex', flexDirection: 'row', minHeight: '100vh' }}>
             <div style={{ width: '50vw', padding: '1rem' }}>
               <StoryFn />
             </div>

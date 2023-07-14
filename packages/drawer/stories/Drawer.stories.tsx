@@ -1,5 +1,5 @@
 /* eslint-disable react-hooks/rules-of-hooks */
-import type { StoryObj, StoryFn } from '@storybook/react';
+import type { StoryObj } from '@storybook/react';
 
 import { Button } from '@launchpad-ui/button';
 import { Tooltip } from '@launchpad-ui/tooltip';
@@ -20,18 +20,6 @@ export default {
       type: import.meta.env.STORYBOOK_PACKAGE_STATUS__DRAWER,
     },
   },
-  decorators: [
-    (Story: StoryFn) => (
-      <div
-        style={{
-          width: '100vw',
-          height: '100vh',
-        }}
-      >
-        <Story />
-      </div>
-    ),
-  ],
 };
 
 type Story = StoryObj<typeof Drawer>;
