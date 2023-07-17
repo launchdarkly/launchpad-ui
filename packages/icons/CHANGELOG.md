@@ -1,5 +1,11 @@
 # @launchpad-ui/icons
 
+## 0.9.1
+
+### Patch Changes
+
+- [#926](https://github.com/launchdarkly/launchpad-ui/pull/926) [`420b7c9b`](https://github.com/launchdarkly/launchpad-ui/commit/420b7c9b51fc18910b163aed562983a2a7d2db51) Thanks [@Niznikr](https://github.com/Niznikr)! - Update grid-3x3 viewbox
+
 ## 0.9.0
 
 ### Minor Changes
