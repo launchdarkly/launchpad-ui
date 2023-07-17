@@ -1,5 +1,4 @@
 import type { StoryObj } from '@storybook/react';
-import type { ReactNode } from 'react';
 
 import { Icon } from '@launchpad-ui/icons';
 
@@ -21,18 +20,6 @@ export default {
       },
     },
   },
-  decorators: [
-    (storyFn: () => ReactNode) => (
-      <div
-        style={{
-          height: '100px',
-          padding: '1rem 0',
-        }}
-      >
-        {storyFn()}
-      </div>
-    ),
-  ],
 };
 
 type Story = StoryObj<typeof Avatar>;

@@ -28,7 +28,7 @@ export const Example: StoryObj = {
     const modalButton = <Button onClick={() => setShowModal(true)}>Open modal</Button>;
 
     return (
-      <div style={{ width: '100vw', height: '100vh' }}>
+      <>
         {showDrawer ? (
           <>
             {button}
@@ -47,7 +47,7 @@ export const Example: StoryObj = {
         )}
         {showModal ? (
           <Modal onCancel={() => setShowModal(!showModal)}>
-            <ModalHeader>Example modal title</ModalHeader>
+            <ModalHeader title="Example modal title" />
             <ModalBody>
               <div>
                 <p>z-index-500</p>
@@ -72,7 +72,7 @@ export const Example: StoryObj = {
           </Modal>
         ) : null}
         <ToastCenter toasts={toasts} onDismiss={() => setToasts([])} />
-      </div>
+      </>
     );
   },
 };

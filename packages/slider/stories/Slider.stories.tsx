@@ -1,5 +1,4 @@
 import type { StoryObj } from '@storybook/react';
-import type { ReactNode } from 'react';
 
 import { Slider } from '../src';
 
@@ -12,18 +11,6 @@ export default {
       type: import.meta.env.STORYBOOK_PACKAGE_STATUS__SLIDER,
     },
   },
-  decorators: [
-    (storyFn: () => ReactNode) => (
-      <div
-        style={{
-          height: '100px',
-          padding: '1rem 0',
-        }}
-      >
-        {storyFn()}
-      </div>
-    ),
-  ],
 };
 
 type Story = StoryObj<typeof Slider>;

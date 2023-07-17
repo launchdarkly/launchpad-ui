@@ -88,7 +88,7 @@ export const Default: Story = {
     const button = <Button onClick={() => setShow(true)}>Open modal</Button>;
 
     return show ? (
-      <div style={{ width: '100vw', height: '100vh' }}>
+      <>
         {button}
         <Modal {...props} onCancel={() => setShow(!show)}>
           <ModalHeader title="Heading" description="A description" />
@@ -102,7 +102,7 @@ export const Default: Story = {
             secondaryButton={<Button onClick={() => setShow(false)}>Cancel</Button>}
           />
         </Modal>
-      </div>
+      </>
     ) : (
       button
     );
@@ -402,7 +402,7 @@ export const WithTooltip: Story = {
     const button = <Button onClick={() => setShow(true)}>Open modal</Button>;
 
     return show ? (
-      <div style={{ width: '100vw', height: '100vh' }}>
+      <>
         {button}
         <Modal {...props} onCancel={() => setShow(!show)}>
           <ModalHeader title="Heading" description="A description" />
@@ -420,7 +420,7 @@ export const WithTooltip: Story = {
             secondaryButton={<Button onClick={() => setShow(false)}>Cancel</Button>}
           />
         </Modal>
-      </div>
+      </>
     ) : (
       button
     );
