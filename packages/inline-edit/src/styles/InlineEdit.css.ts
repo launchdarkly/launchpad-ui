@@ -16,6 +16,7 @@ const inline = recipe({
 const container = style({
   display: 'flex',
   gap: vars.spacing[300],
+  alignItems: 'center',
 });
 
 const cancelButton = style({

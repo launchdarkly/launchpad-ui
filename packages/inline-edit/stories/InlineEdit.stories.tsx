@@ -1,4 +1,7 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 import type { StoryObj } from '@storybook/react';
+
+import { useState } from '@storybook/client-api';
 
 import { InlineEdit } from '../src';
 
@@ -16,5 +19,25 @@ export default {
 type Story = StoryObj<typeof InlineEdit>;
 
 export const Example: Story = {
-  args: {},
+  render: (args) => {
+    const [editValue, setEditValue] = useState('edit me');
+
+    return (
+      <InlineEdit defaultValue={editValue} {...args} onSave={setEditValue}>
+        <span>{editValue}</span>
+      </InlineEdit>
+    );
+  },
+};
+
+export const Title: Story = {
+  render: (args) => {
+    const [editValue, setEditValue] = useState('This is a title');
+
+    return (
+      <InlineEdit defaultValue={editValue} {...args} onSave={setEditValue}>
+        <h2>{editValue}</h2>
+      </InlineEdit>
+    );
+  },
 };

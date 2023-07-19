@@ -34,6 +34,7 @@
   "dependencies": {
     "@launchpad-ui/tokens": "workspace:~",
     "@launchpad-ui/vars": "workspace:~",
+    "@radix-ui/react-slot": "^1.0.0",
     "classix": "2.1.17"
   },
   "peerDependencies": {
