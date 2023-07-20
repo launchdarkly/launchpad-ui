@@ -38,7 +38,10 @@ const Icon = ({
   const isAriaHidden = ariaHidden ?? (!ariaLabelledBy && !ariaLabel);
   const titleId = title && `${prefix}-${name}-title`;
   const descriptionId = description && `${prefix}-${name}-description`;
-  const { path: spritePath } = useContext(IconContext);
+
+  const { path: contextPath } = useContext(IconContext);
+  const iconId = `lp-icon-${name}`;
+  const spritePath = contextPath === undefined ? '/static/sprite.svg' : contextPath;
 
   return (
     <span data-test-id={testId} className={classes}>
@@ -53,9 +56,7 @@ const Icon = ({
       >
         {title && <title id={titleId}>{title}</title>}
         {description && <desc id={descriptionId}>{description}</desc>}
-        <use
-          href={`${spritePath === undefined ? '/static/sprite.svg' : spritePath}#lp-icon-${name}`}
-        />
+        <use href={`${spritePath}#${iconId}`} />
       </svg>
     </span>
   );
