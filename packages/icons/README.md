@@ -67,7 +67,7 @@ root.render(
 Then fetch and inject the sprite for `Icon` to render icons correctly:
 
 ```js
-fetch('https://cdn.example.com/sprite.hash123.svg')
+fetch('https://cdn.example.com/sprite.svg')
   .then(async (response) => response.text())
   .then((data) => {
     const div = document.createElement('div');
@@ -79,4 +79,16 @@ fetch('https://cdn.example.com/sprite.hash123.svg')
   .catch((err) => {
     console.log('Failed to fetch sprite', err);
   });
+```
+
+To minimize latency, you can preload the sprite file accordingly:
+
+```html
+<link
+  rel="preload"
+  href="https://cdn.example.com/sprite.svg"
+  as="fetch"
+  type="image/svg+xml"
+  crossorigin
+/>
 ```
