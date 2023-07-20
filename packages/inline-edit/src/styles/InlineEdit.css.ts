@@ -28,7 +28,13 @@ const cancelButton = style({
   },
 });
 
+const buttonText = style({
+  fontSize: 'inherit',
+  fontWeight: 'inherit',
+  lineHeight: 'inherit',
+});
+
 type InlineVariants = RecipeVariants<typeof inline>;
 
-export { container, cancelButton, inline };
+export { container, cancelButton, inline, buttonText };
 export type { InlineVariants };

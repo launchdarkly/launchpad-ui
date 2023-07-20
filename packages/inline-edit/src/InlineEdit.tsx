@@ -11,7 +11,7 @@ import { useUpdateEffect } from '@react-aria/utils';
 import { cx } from 'classix';
 import { useRef, useState } from 'react';
 
-import { container, cancelButton, inline } from './styles/InlineEdit.css';
+import { container, cancelButton, inline, buttonText } from './styles/InlineEdit.css';
 
 type InlineEditProps = ComponentProps<'div'> &
   InlineVariants &
@@ -57,7 +57,7 @@ const InlineEdit = ({
     ? {
         kind: 'minimal',
         'aria-label': 'edit',
-        style: { fontSize: 'inherit', fontWeight: 'inherit', lineHeight: 'inherit' },
+        className: buttonText,
       }
     : {};
 
