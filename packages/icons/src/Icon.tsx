@@ -34,13 +34,13 @@ const Icon = ({
 }: IconProps) => {
   const sizeClass = size ? styles[size] : false;
   const classes = cx(styles.icon, sizeClass, subtle && styles.subtle, `icon-${name}`, className);
-  const prefix = `svg-${useId()}`;
+  const uniqueId = `svg-${useId()}`;
   const isAriaHidden = ariaHidden ?? (!ariaLabelledBy && !ariaLabel);
-  const titleId = title && `${prefix}-${name}-title`;
-  const descriptionId = description && `${prefix}-${name}-description`;
+  const titleId = title && `${uniqueId}-${name}-title`;
+  const descriptionId = description && `${uniqueId}-${name}-description`;
 
-  const { path: contextPath } = useContext(IconContext);
-  const iconId = `lp-icon-${name}`;
+  const { path: contextPath, prefix } = useContext(IconContext);
+  const iconPrefix = prefix === undefined ? 'lp-icon-' : prefix;
   const spritePath = contextPath === undefined ? '/static/sprite.svg' : contextPath;
 
   return (
@@ -56,7 +56,7 @@ const Icon = ({
       >
         {title && <title id={titleId}>{title}</title>}
         {description && <desc id={descriptionId}>{description}</desc>}
-        <use href={`${spritePath}#${iconId}`} />
+        <use href={`${spritePath}#${iconPrefix}${name}`} />
       </svg>
     </span>
   );
