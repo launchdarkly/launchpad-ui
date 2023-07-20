@@ -1,10 +1,13 @@
 import type { InlineVariants } from './styles/InlineEdit.css';
+import type { ButtonProps } from '@launchpad-ui/button';
 import type { ComponentProps, Dispatch, SetStateAction } from 'react';
 
-import { ButtonGroup, IconButton } from '@launchpad-ui/button';
+import { Button, ButtonGroup, IconButton } from '@launchpad-ui/button';
 import { TextField } from '@launchpad-ui/form';
 import { Icon } from '@launchpad-ui/icons';
 import { Slot } from '@radix-ui/react-slot';
+import { focusSafely } from '@react-aria/focus';
+import { useUpdateEffect } from '@react-aria/utils';
 import { cx } from 'classix';
 import { useRef, useState } from 'react';
 
@@ -15,18 +18,26 @@ type InlineEditProps = ComponentProps<'div'> &
   Pick<ComponentProps<'input'>, 'defaultValue'> & {
     'data-test-id'?: string;
     onSave: Dispatch<SetStateAction<string>>;
+    hideEdit?: boolean;
   };
 
 const InlineEdit = ({
-  className,
   'data-test-id': testId = 'inline-edit',
   layout = 'horizontal',
   children,
   defaultValue,
   onSave,
+  hideEdit = false,
 }: InlineEditProps) => {
   const [isEditing, setEditing] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
+  const editRef = useRef<HTMLButtonElement>(null);
+
+  useUpdateEffect(() => {
+    isEditing
+      ? inputRef.current && focusSafely(inputRef.current)
+      : editRef.current && focusSafely(editRef.current);
+  }, [isEditing]);
 
   const handleEdit = () => {
     setEditing(true);
@@ -41,9 +52,18 @@ const InlineEdit = ({
     setEditing(false);
   };
 
+  const ReadComponent = hideEdit ? Button : Slot;
+  const buttonProps: Partial<ButtonProps> = hideEdit
+    ? {
+        kind: 'minimal',
+        'aria-label': 'edit',
+        style: { fontSize: 'inherit', fontWeight: 'inherit', lineHeight: 'inherit' },
+      }
+    : {};
+
   return isEditing ? (
-    <div className={cx(container, inline({ layout }), className)} data-test-id={testId}>
-      <TextField defaultValue={defaultValue} autoFocus ref={inputRef} />
+    <div className={cx(container, inline({ layout }))} data-test-id={testId}>
+      <TextField defaultValue={defaultValue} ref={inputRef} />
       <ButtonGroup spacing="compact">
         <IconButton
           kind="primary"
@@ -61,9 +81,23 @@ const InlineEdit = ({
       </ButtonGroup>
     </div>
   ) : (
-    <div className={container}>
-      <Slot onClick={handleEdit}>{children}</Slot>
-      <IconButton icon={<Icon name="edit" />} aria-label="edit" size="small" onClick={handleEdit} />
+    <div className={cx(container)} data-test-id={testId}>
+      <ReadComponent
+        ref={editRef}
+        onClick={hideEdit ? handleEdit : () => undefined}
+        {...buttonProps}
+      >
+        {children}
+      </ReadComponent>
+      {!hideEdit && (
+        <IconButton
+          ref={editRef}
+          icon={<Icon name="edit" />}
+          aria-label="edit"
+          size="small"
+          onClick={handleEdit}
+        />
+      )}
     </div>
   );
 };

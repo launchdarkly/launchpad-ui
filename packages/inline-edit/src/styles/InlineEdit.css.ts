@@ -4,19 +4,19 @@ import { vars } from '@launchpad-ui/vars';
 import { style } from '@vanilla-extract/css';
 import { recipe } from '@vanilla-extract/recipes';
 
-const inline = recipe({
-  variants: {
-    layout: {
-      vertical: { flexDirection: 'column' },
-      horizontal: { flexDirection: 'row' },
-    },
-  },
-});
-
 const container = style({
   display: 'flex',
   gap: vars.spacing[300],
   alignItems: 'center',
+});
+
+const inline = recipe({
+  variants: {
+    layout: {
+      vertical: { flexDirection: 'column', alignItems: 'flex-start' },
+      horizontal: { flexDirection: 'row' },
+    },
+  },
 });
 
 const cancelButton = style({

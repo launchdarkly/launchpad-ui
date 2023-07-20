@@ -1,6 +1,7 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 import type { StoryObj } from '@storybook/react';
 
+import { CopyToClipboard } from '@launchpad-ui/clipboard';
 import { useState } from '@storybook/client-api';
 
 import { InlineEdit } from '../src';
@@ -35,9 +36,27 @@ export const Title: Story = {
     const [editValue, setEditValue] = useState('This is a title');
 
     return (
-      <InlineEdit defaultValue={editValue} {...args} onSave={setEditValue}>
-        <h2>{editValue}</h2>
-      </InlineEdit>
+      <div style={{ width: 'max-content' }}>
+        <InlineEdit defaultValue={editValue} {...args} onSave={setEditValue} hideEdit>
+          <h3>{editValue}</h3>
+        </InlineEdit>
+      </div>
+    );
+  },
+};
+
+export const Copy: Story = {
+  render: (args) => {
+    const [editValue, setEditValue] = useState('auto-generated-key');
+
+    return (
+      <div style={{ width: 'max-content' }}>
+        <InlineEdit defaultValue={editValue} {...args} onSave={setEditValue}>
+          <CopyToClipboard text={editValue} kind="basic">
+            {editValue}
+          </CopyToClipboard>
+        </InlineEdit>
+      </div>
     );
   },
 };

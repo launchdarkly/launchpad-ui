@@ -27,6 +27,7 @@ h1,
 h2,
 h3 {
   color: var(--lp-color-text-ui-primary-base);
+  margin: 0;
 }
 
 @font-face {

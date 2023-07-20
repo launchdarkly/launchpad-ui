@@ -812,6 +812,12 @@ importers:
       '@radix-ui/react-slot':
         specifier: ^1.0.0
         version: 1.0.0(react@18.2.0)
+      '@react-aria/focus':
+        specifier: 3.13.0
+        version: 3.13.0(react@18.2.0)
+      '@react-aria/utils':
+        specifier: 3.18.0
+        version: 3.18.0(react@18.2.0)
       classix:
         specifier: 2.1.17
         version: 2.1.17

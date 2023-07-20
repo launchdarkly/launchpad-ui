@@ -32,6 +32,8 @@
     "test": "vitest run --coverage"
   },
   "dependencies": {
+    "@react-aria/focus": "3.13.0",
+    "@react-aria/utils": "3.18.0",
     "@launchpad-ui/tokens": "workspace:~",
     "@launchpad-ui/vars": "workspace:~",
     "@radix-ui/react-slot": "^1.0.0",
