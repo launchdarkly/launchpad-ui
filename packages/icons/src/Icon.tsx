@@ -53,7 +53,9 @@ const Icon = ({
       >
         {title && <title id={titleId}>{title}</title>}
         {description && <desc id={descriptionId}>{description}</desc>}
-        <use href={`${spritePath || '/static/sprite.svg'}#${name}`} />
+        <use
+          href={`${spritePath === undefined ? '/static/sprite.svg' : spritePath}#lp-icon-${name}`}
+        />
       </svg>
     </span>
   );

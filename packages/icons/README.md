@@ -43,3 +43,40 @@ root.render(
   </IconContext.Provider>
 );
 ```
+
+### CORS limitation
+
+Unfortunately SVG sprites [cannot be accessed cross-domain](https://oreillymedia.github.io/Using_SVG/extras/ch10-cors.html). If you are hosting the sprite file in a CDN or different domain you will have to fetch the file and inject it into the document to access the icons directly.
+
+First set the `Icon` context path to an empty string to indicate the symbols are available in the DOM:
+
+```js
+import { IconContext } from '@launchpad-ui/icons';
+import { createRoot } from 'react-dom/client';
+
+const domNode = document.getElementById('root');
+const root = createRoot(domNode);
+
+root.render(
+  <IconContext.Provider value={{ path: '' }}>
+    <App />
+  </IconContext.Provider>
+);
+```
+
+Then fetch and inject the sprite for `Icon` to render icons correctly:
+
+```js
+fetch('https://cdn.example.com/sprite.hash123.svg')
+  .then(async (response) => response.text())
+  .then((data) => {
+    const div = document.createElement('div');
+    div.id = 'lp-icons-sprite';
+    div.style.display = 'none';
+    div.innerHTML = data;
+    document.body.appendChild(div);
+  })
+  .catch((err) => {
+    console.log('Failed to fetch sprite', err);
+  });
+```
