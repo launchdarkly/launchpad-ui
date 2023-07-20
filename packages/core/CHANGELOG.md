@@ -1,5 +1,34 @@
 # @launchpad-ui/core
 
+## 0.42.2
+
+### Patch Changes
+
+- [#924](https://github.com/launchdarkly/launchpad-ui/pull/924) [`e8b8bc68`](https://github.com/launchdarkly/launchpad-ui/commit/e8b8bc6829834aed52bddb9c4083a713f664bc93) Thanks [@renovate](https://github.com/apps/renovate)! - Update dependencies
+
+- Updated dependencies [[`e8b8bc68`](https://github.com/launchdarkly/launchpad-ui/commit/e8b8bc6829834aed52bddb9c4083a713f664bc93)]:
+  - @launchpad-ui/markdown@0.4.15
+  - @launchpad-ui/alert@0.7.20
+  - @launchpad-ui/avatar@0.5.2
+  - @launchpad-ui/banner@0.9.19
+  - @launchpad-ui/button@0.9.2
+  - @launchpad-ui/chip@0.8.2
+  - @launchpad-ui/clipboard@0.10.10
+  - @launchpad-ui/collapsible@0.1.15
+  - @launchpad-ui/drawer@0.4.11
+  - @launchpad-ui/dropdown@0.6.55
+  - @launchpad-ui/filter@0.5.35
+  - @launchpad-ui/form@0.9.2
+  - @launchpad-ui/menu@0.11.2
+  - @launchpad-ui/modal@0.16.5
+  - @launchpad-ui/navigation@0.11.26
+  - @launchpad-ui/pagination@0.3.61
+  - @launchpad-ui/select@0.3.7
+  - @launchpad-ui/snackbar@0.3.56
+  - @launchpad-ui/tag@0.2.7
+  - @launchpad-ui/toast@0.2.53
+  - @launchpad-ui/split-button@0.8.2
+
 ## 0.42.1
 
 ### Patch Changes

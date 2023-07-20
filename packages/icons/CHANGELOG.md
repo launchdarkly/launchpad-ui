@@ -1,5 +1,11 @@
 # @launchpad-ui/icons
 
+## 0.9.2
+
+### Patch Changes
+
+- [#930](https://github.com/launchdarkly/launchpad-ui/pull/930) [`c025b013`](https://github.com/launchdarkly/launchpad-ui/commit/c025b013c5c7ccdfb520103d82bd8395e7b1bbe6) Thanks [@Niznikr](https://github.com/Niznikr)! - Add unique id prefix and allow empty path
+
 ## 0.9.1
 
 ### Patch Changes
