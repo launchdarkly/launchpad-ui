@@ -1,12 +1,12 @@
 import type { ElementType, ReactNode, RefObject } from 'react';
 
 import { cx } from 'classix';
-import DOMPurify from 'isomorphic-dompurify';
+import { addHook } from 'isomorphic-dompurify';
 
 import styles from './styles/Markdown.module.css';
 import { isAnchorNode, renderMarkdown } from './utils';
 
-DOMPurify.addHook('afterSanitizeAttributes', (node) => {
+addHook('afterSanitizeAttributes', (node) => {
   // Ensure we add the required rel attribute.
   if (isAnchorNode(node) && node.target.toLowerCase() === '_blank') {
     node.setAttribute('rel', 'noopener noreferrer');

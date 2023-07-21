@@ -1,4 +1,6 @@
-import DOMPurify from 'isomorphic-dompurify';
+import type { Config } from 'isomorphic-dompurify';
+
+import { sanitize } from 'isomorphic-dompurify';
 import { marked } from 'marked';
 
 function isAnchorNode(node: Element): node is HTMLAnchorElement {
@@ -33,7 +35,7 @@ function renderMarkdown(
 
   const html = marked(source, { renderer });
 
-  const sanitizationConfig: DOMPurify.Config = {
+  const sanitizationConfig: Config = {
     KEEP_CONTENT: false,
     ADD_ATTR: ['target'],
     FORBID_ATTR: ['style', 'class'],
@@ -45,7 +47,7 @@ function renderMarkdown(
     sanitizationConfig.ALLOWED_TAGS = allowedTags;
   }
 
-  return DOMPurify.sanitize(html, sanitizationConfig);
+  return sanitize(html, sanitizationConfig);
 }
 
 export { isAnchorNode, renderMarkdown };
