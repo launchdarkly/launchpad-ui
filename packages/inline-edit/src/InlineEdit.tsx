@@ -1,6 +1,6 @@
 import type { InlineVariants } from './styles/InlineEdit.css';
 import type { ButtonProps } from '@launchpad-ui/button';
-import type { ComponentProps, Dispatch, SetStateAction } from 'react';
+import type { ComponentProps, Dispatch, KeyboardEventHandler, SetStateAction } from 'react';
 
 import { Button, ButtonGroup, IconButton } from '@launchpad-ui/button';
 import { TextField } from '@launchpad-ui/form';
@@ -52,6 +52,16 @@ const InlineEdit = ({
     setEditing(false);
   };
 
+  const handleKeyDown: KeyboardEventHandler<HTMLInputElement> = (event) => {
+    if (event.key === 'Enter') {
+      event.preventDefault();
+      handleSave();
+    } else if (event.key === 'Escape') {
+      event.preventDefault();
+      handleCancel();
+    }
+  };
+
   const ReadComponent = hideEdit ? Button : Slot;
   const buttonProps: Partial<ButtonProps> = hideEdit
     ? {
@@ -63,7 +73,7 @@ const InlineEdit = ({
 
   return isEditing ? (
     <div className={cx(container, inline({ layout }))} data-test-id={testId}>
-      <TextField defaultValue={defaultValue} ref={inputRef} />
+      <TextField defaultValue={defaultValue} ref={inputRef} onKeyDown={handleKeyDown} />
       <ButtonGroup spacing="compact">
         <IconButton
           kind="primary"
