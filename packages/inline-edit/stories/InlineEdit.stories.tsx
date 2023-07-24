@@ -24,11 +24,9 @@ export const Example: Story = {
     const [editValue, setEditValue] = useState('edit me');
 
     return (
-      <div style={{ width: '500px' }}>
-        <InlineEdit defaultValue={editValue} {...args} onSave={setEditValue}>
-          <span>{editValue}</span>
-        </InlineEdit>
-      </div>
+      <InlineEdit defaultValue={editValue} {...args} onSave={setEditValue}>
+        <span>{editValue}</span>
+      </InlineEdit>
     );
   },
 };

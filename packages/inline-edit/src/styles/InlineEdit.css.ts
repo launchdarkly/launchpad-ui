@@ -29,7 +29,7 @@ const cancelButton = style({
 });
 
 const readButton = style({
-  display: 'block',
+  display: 'inline-block',
   padding: `${vars.spacing[200]} ${vars.spacing[300]}`,
   borderRadius: vars.border.radius.regular,
   ':hover': {
