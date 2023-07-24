@@ -2,7 +2,7 @@
 import type { StoryObj } from '@storybook/react';
 
 import { CopyToClipboard } from '@launchpad-ui/clipboard';
-import { TextArea } from '@launchpad-ui/form';
+import { Form, FormField, TextArea, TextField } from '@launchpad-ui/form';
 import { useState } from '@storybook/client-api';
 import { userEvent, within } from '@storybook/testing-library';
 
@@ -39,9 +39,9 @@ export const Example: Story = {
   },
 };
 
-export const Title: Story = {
+export const EditTitle: Story = {
   render: (args) => {
-    const [editValue, setEditValue] = useState('This is a title');
+    const [editValue, setEditValue] = useState('Unnamed title');
 
     return (
       <div style={{ width: '500px' }}>
@@ -53,7 +53,7 @@ export const Title: Story = {
   },
 };
 
-export const Copy: Story = {
+export const EditCopy: Story = {
   render: (args) => {
     const [editValue, setEditValue] = useState('auto-generated-key');
 
@@ -69,14 +69,41 @@ export const Copy: Story = {
   },
 };
 
-export const Textarea: Story = {
+export const WithTextarea: Story = {
   render: (args) => {
-    const [editValue, setEditValue] = useState('edit me');
+    const [editValue, setEditValue] = useState('edit description');
 
     return (
       <InlineEdit defaultValue={editValue} {...args} onSave={setEditValue} input={<TextArea />}>
         <span>{editValue}</span>
       </InlineEdit>
+    );
+  },
+};
+
+export const InForm: Story = {
+  render: (args) => {
+    const [editValue, setEditValue] = useState('');
+
+    return (
+      <Form>
+        <FormField
+          name="Name"
+          label="Name"
+          htmlFor="inline-edit"
+          isRequired
+          errorMessage={editValue ? undefined : 'No value entered'}
+        >
+          <InlineEdit
+            defaultValue={editValue}
+            {...args}
+            onSave={setEditValue}
+            input={<TextField id="inline-edit" />}
+          >
+            <span>{editValue || 'Enter a value'}</span>
+          </InlineEdit>
+        </FormField>
+      </Form>
     );
   },
 };

@@ -13,7 +13,7 @@ import { TextField } from '@launchpad-ui/form';
 import { Icon } from '@launchpad-ui/icons';
 import { useButton } from '@react-aria/button';
 import { focusSafely } from '@react-aria/focus';
-import { useUpdateEffect } from '@react-aria/utils';
+import { mergeProps, useUpdateEffect } from '@react-aria/utils';
 import { cx } from 'classix';
 import { cloneElement, useRef, useState } from 'react';
 
@@ -36,6 +36,7 @@ const InlineEdit = ({
   onSave,
   hideEdit = false,
   input = <TextField />,
+  'aria-label': ariaLabel,
 }: InlineEditProps) => {
   const [isEditing, setEditing] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
@@ -96,11 +97,15 @@ const InlineEdit = ({
     </>
   );
 
-  const renderInput = cloneElement(input, {
-    ref: inputRef,
-    defaultValue,
-    onKeyDown: handleKeyDown,
-  });
+  const renderInput = cloneElement(
+    input,
+    mergeProps(input.props, {
+      ref: inputRef,
+      defaultValue,
+      onKeyDown: handleKeyDown,
+      'aria-label': ariaLabel,
+    })
+  );
 
   return isEditing ? (
     <div className={cx(container, inline({ layout }))} data-test-id={testId}>
