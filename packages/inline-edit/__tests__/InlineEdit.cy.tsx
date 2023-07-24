@@ -2,12 +2,24 @@ import { InlineEdit } from '../src';
 
 describe('InlineEdit', () => {
   it('renders', () => {
-    cy.mount(<InlineEdit>An important message</InlineEdit>);
+    const editValue = 'test';
+    cy.mount(
+      <InlineEdit defaultValue={editValue} onSave={() => undefined}>
+        <span>{editValue}</span>
+      </InlineEdit>
+    );
     cy.getByTestId('inline-edit').should('be.visible');
   });
 
   it('is accessible', () => {
-    cy.mount(<InlineEdit>An important message</InlineEdit>);
+    const editValue = 'test';
+    cy.mount(
+      <InlineEdit defaultValue={editValue} onSave={() => undefined}>
+        <span>{editValue}</span>
+      </InlineEdit>
+    );
+    cy.checkA11y();
+    cy.getByRole('button').click();
     cy.checkA11y();
   });
 });
