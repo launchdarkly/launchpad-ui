@@ -1,5 +1,12 @@
 import type { InlineVariants } from './styles/InlineEdit.css';
-import type { ComponentProps, Dispatch, KeyboardEventHandler, SetStateAction } from 'react';
+import type { TextAreaProps, TextFieldProps } from '@launchpad-ui/form';
+import type {
+  ComponentProps,
+  Dispatch,
+  KeyboardEventHandler,
+  ReactElement,
+  SetStateAction,
+} from 'react';
 
 import { ButtonGroup, IconButton } from '@launchpad-ui/button';
 import { TextField } from '@launchpad-ui/form';
@@ -8,7 +15,7 @@ import { useButton } from '@react-aria/button';
 import { focusSafely } from '@react-aria/focus';
 import { useUpdateEffect } from '@react-aria/utils';
 import { cx } from 'classix';
-import { useRef, useState } from 'react';
+import { cloneElement, useRef, useState } from 'react';
 
 import { container, cancelButton, inline, readButton } from './styles/InlineEdit.css';
 
@@ -18,6 +25,7 @@ type InlineEditProps = ComponentProps<'div'> &
     'data-test-id'?: string;
     onSave: Dispatch<SetStateAction<string>>;
     hideEdit?: boolean;
+    input?: ReactElement<TextFieldProps | TextAreaProps>;
   };
 
 const InlineEdit = ({
@@ -27,6 +35,7 @@ const InlineEdit = ({
   defaultValue,
   onSave,
   hideEdit = false,
+  input = <TextField />,
 }: InlineEditProps) => {
   const [isEditing, setEditing] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
@@ -70,27 +79,32 @@ const InlineEdit = ({
     editRef
   );
 
-  const renderReadContent = () =>
-    hideEdit ? (
-      <span ref={editRef} {...buttonProps} className={readButton}>
-        {children}
-      </span>
-    ) : (
-      <>
-        {children}
-        <IconButton
-          ref={editRef}
-          icon={<Icon name="edit" />}
-          aria-label="edit"
-          size="small"
-          onClick={handleEdit}
-        />
-      </>
-    );
+  const renderReadContent = hideEdit ? (
+    <span ref={editRef} {...buttonProps} className={readButton}>
+      {children}
+    </span>
+  ) : (
+    <>
+      {children}
+      <IconButton
+        ref={editRef}
+        icon={<Icon name="edit" />}
+        aria-label="edit"
+        size="small"
+        onClick={handleEdit}
+      />
+    </>
+  );
+
+  const renderInput = cloneElement(input, {
+    ref: inputRef,
+    defaultValue,
+    onKeyDown: handleKeyDown,
+  });
 
   return isEditing ? (
     <div className={cx(container, inline({ layout }))} data-test-id={testId}>
-      <TextField defaultValue={defaultValue} ref={inputRef} onKeyDown={handleKeyDown} />
+      {renderInput}
       <ButtonGroup spacing="compact">
         <IconButton
           kind="primary"
@@ -109,7 +123,7 @@ const InlineEdit = ({
     </div>
   ) : (
     <div className={cx(!hideEdit && container)} data-test-id={testId}>
-      {renderReadContent()}
+      {renderReadContent}
     </div>
   );
 };

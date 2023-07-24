@@ -36,6 +36,12 @@ const readButton = style({
     background: vars.color.bg.interactive.tertiary.hover,
     cursor: 'pointer',
   },
+  ':focus-visible': {
+    borderRadius: vars.border.radius.medium,
+    boxShadow: `0 0 0 2px ${vars.color.bg.ui.primary}, 0 0 0 4px ${vars.color.shadow.interactive.focus}`,
+    outline: 0,
+    zIndex: 2,
+  },
 });
 
 type InlineVariants = RecipeVariants<typeof inline>;

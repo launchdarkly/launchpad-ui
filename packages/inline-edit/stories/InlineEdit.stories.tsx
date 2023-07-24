@@ -2,6 +2,7 @@
 import type { StoryObj } from '@storybook/react';
 
 import { CopyToClipboard } from '@launchpad-ui/clipboard';
+import { TextArea } from '@launchpad-ui/form';
 import { useState } from '@storybook/client-api';
 
 import { InlineEdit } from '../src';
@@ -57,6 +58,18 @@ export const Copy: Story = {
           </CopyToClipboard>
         </InlineEdit>
       </div>
+    );
+  },
+};
+
+export const Textarea: Story = {
+  render: (args) => {
+    const [editValue, setEditValue] = useState('edit me');
+
+    return (
+      <InlineEdit defaultValue={editValue} {...args} onSave={setEditValue} input={<TextArea />}>
+        <span>{editValue}</span>
+      </InlineEdit>
     );
   },
 };
