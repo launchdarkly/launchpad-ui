@@ -28,13 +28,16 @@
   "scripts": {
     "build": "vite build -c ../../vite.config.ts && tsc --project tsconfig.build.json",
     "clean": "rm -rf dist",
-    "lint": "eslint '**/*.{ts,tsx,js}' && stylelint '**/*.css' --ignore-path ../../.stylelintignore",
+    "lint": "eslint '**/*.{ts,tsx,js}'",
     "test": "vitest run --coverage"
   },
   "dependencies": {
     "@react-aria/button": "3.8.0",
     "@react-aria/focus": "3.13.0",
     "@react-aria/utils": "3.18.0",
+    "@launchpad-ui/button": "workspace:~",
+    "@launchpad-ui/form": "workspace:~",
+    "@launchpad-ui/icons": "workspace:~",
     "@launchpad-ui/tokens": "workspace:~",
     "@launchpad-ui/vars": "workspace:~",
     "classix": "2.1.17"
