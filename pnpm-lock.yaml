@@ -803,6 +803,15 @@ importers:
 
   packages/inline-edit:
     dependencies:
+      '@launchpad-ui/button':
+        specifier: workspace:~
+        version: link:../button
+      '@launchpad-ui/form':
+        specifier: workspace:~
+        version: link:../form
+      '@launchpad-ui/icons':
+        specifier: workspace:~
+        version: link:../icons
       '@launchpad-ui/tokens':
         specifier: workspace:~
         version: link:../tokens
