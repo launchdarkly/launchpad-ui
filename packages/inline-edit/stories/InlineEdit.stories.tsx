@@ -4,6 +4,7 @@ import type { StoryObj } from '@storybook/react';
 import { CopyToClipboard } from '@launchpad-ui/clipboard';
 import { TextArea } from '@launchpad-ui/form';
 import { useState } from '@storybook/client-api';
+import { userEvent, within } from '@storybook/testing-library';
 
 import { InlineEdit } from '../src';
 
@@ -29,6 +30,12 @@ export const Example: Story = {
         <span>{editValue}</span>
       </InlineEdit>
     );
+  },
+  play: async ({ canvasElement }: { canvasElement: HTMLElement }) => {
+    const canvas = within(canvasElement);
+
+    const edit = canvas.getAllByRole('button');
+    userEvent.click(edit[0]);
   },
 };
 
