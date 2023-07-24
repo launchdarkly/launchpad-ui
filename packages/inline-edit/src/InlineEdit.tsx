@@ -1,17 +1,16 @@
 import type { InlineVariants } from './styles/InlineEdit.css';
-import type { ButtonProps } from '@launchpad-ui/button';
 import type { ComponentProps, Dispatch, KeyboardEventHandler, SetStateAction } from 'react';
 
-import { Button, ButtonGroup, IconButton } from '@launchpad-ui/button';
+import { ButtonGroup, IconButton } from '@launchpad-ui/button';
 import { TextField } from '@launchpad-ui/form';
 import { Icon } from '@launchpad-ui/icons';
-import { Slot } from '@radix-ui/react-slot';
+import { useButton } from '@react-aria/button';
 import { focusSafely } from '@react-aria/focus';
 import { useUpdateEffect } from '@react-aria/utils';
 import { cx } from 'classix';
 import { useRef, useState } from 'react';
 
-import { container, cancelButton, inline, buttonText } from './styles/InlineEdit.css';
+import { container, cancelButton, inline, readButton } from './styles/InlineEdit.css';
 
 type InlineEditProps = ComponentProps<'div'> &
   InlineVariants &
@@ -62,14 +61,32 @@ const InlineEdit = ({
     }
   };
 
-  const ReadComponent = hideEdit ? Button : Slot;
-  const buttonProps: Partial<ButtonProps> = hideEdit
-    ? {
-        kind: 'minimal',
-        'aria-label': 'edit',
-        className: buttonText,
-      }
-    : {};
+  const { buttonProps } = useButton(
+    {
+      'aria-label': 'edit',
+      elementType: 'div',
+      onPress: handleEdit,
+    },
+    editRef
+  );
+
+  const renderReadContent = () =>
+    hideEdit ? (
+      <span ref={editRef} {...buttonProps} className={readButton}>
+        {children}
+      </span>
+    ) : (
+      <>
+        {children}
+        <IconButton
+          ref={editRef}
+          icon={<Icon name="edit" />}
+          aria-label="edit"
+          size="small"
+          onClick={handleEdit}
+        />
+      </>
+    );
 
   return isEditing ? (
     <div className={cx(container, inline({ layout }))} data-test-id={testId}>
@@ -91,23 +108,8 @@ const InlineEdit = ({
       </ButtonGroup>
     </div>
   ) : (
-    <div className={cx(container)} data-test-id={testId}>
-      <ReadComponent
-        ref={editRef}
-        onClick={hideEdit ? handleEdit : () => undefined}
-        {...buttonProps}
-      >
-        {children}
-      </ReadComponent>
-      {!hideEdit && (
-        <IconButton
-          ref={editRef}
-          icon={<Icon name="edit" />}
-          aria-label="edit"
-          size="small"
-          onClick={handleEdit}
-        />
-      )}
+    <div className={cx(!hideEdit && container)} data-test-id={testId}>
+      {renderReadContent()}
     </div>
   );
 };

@@ -28,13 +28,17 @@ const cancelButton = style({
   },
 });
 
-const buttonText = style({
-  fontSize: 'inherit',
-  fontWeight: 'inherit',
-  lineHeight: 'inherit',
+const readButton = style({
+  display: 'block',
+  padding: `${vars.spacing[200]} ${vars.spacing[300]}`,
+  borderRadius: vars.border.radius.regular,
+  ':hover': {
+    background: vars.color.bg.interactive.tertiary.hover,
+    cursor: 'pointer',
+  },
 });
 
 type InlineVariants = RecipeVariants<typeof inline>;
 
-export { container, cancelButton, inline, buttonText };
+export { container, cancelButton, inline, readButton };
 export type { InlineVariants };

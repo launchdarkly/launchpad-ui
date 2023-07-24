@@ -24,9 +24,11 @@ export const Example: Story = {
     const [editValue, setEditValue] = useState('edit me');
 
     return (
-      <InlineEdit defaultValue={editValue} {...args} onSave={setEditValue}>
-        <span>{editValue}</span>
-      </InlineEdit>
+      <div style={{ width: '500px' }}>
+        <InlineEdit defaultValue={editValue} {...args} onSave={setEditValue}>
+          <span>{editValue}</span>
+        </InlineEdit>
+      </div>
     );
   },
 };
@@ -36,7 +38,7 @@ export const Title: Story = {
     const [editValue, setEditValue] = useState('This is a title');
 
     return (
-      <div style={{ width: 'max-content' }}>
+      <div style={{ width: '500px' }}>
         <InlineEdit defaultValue={editValue} {...args} onSave={setEditValue} hideEdit>
           <h3>{editValue}</h3>
         </InlineEdit>
