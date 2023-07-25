@@ -38,7 +38,7 @@ describe('InlineEdit', () => {
   });
 
   it('renders a custom input', async () => {
-    render(<InlineEditComponent input={<TextArea />} />);
+    render(<InlineEditComponent renderInput={<TextArea />} />);
     screen.getByLabelText('edit').click();
 
     await waitFor(() => {

@@ -25,7 +25,7 @@ type InlineEditProps = ComponentProps<'div'> &
     'data-test-id'?: string;
     onSave: Dispatch<SetStateAction<string>>;
     hideEdit?: boolean;
-    input?: ReactElement<TextFieldProps | TextAreaProps>;
+    renderInput?: ReactElement<TextFieldProps | TextAreaProps>;
   };
 
 const InlineEdit = ({
@@ -35,7 +35,7 @@ const InlineEdit = ({
   defaultValue,
   onSave,
   hideEdit = false,
-  input = <TextField />,
+  renderInput = <TextField />,
   'aria-label': ariaLabel,
 }: InlineEditProps) => {
   const [isEditing, setEditing] = useState(false);
@@ -97,9 +97,9 @@ const InlineEdit = ({
     </>
   );
 
-  const renderInput = cloneElement(
-    input,
-    mergeProps(input.props, {
+  const input = cloneElement(
+    renderInput,
+    mergeProps(renderInput.props, {
       ref: inputRef,
       defaultValue,
       onKeyDown: handleKeyDown,
@@ -109,7 +109,7 @@ const InlineEdit = ({
 
   return isEditing ? (
     <div className={cx(container, inline({ layout }))} data-test-id={testId}>
-      {renderInput}
+      {input}
       <ButtonGroup spacing="compact">
         <IconButton
           kind="primary"

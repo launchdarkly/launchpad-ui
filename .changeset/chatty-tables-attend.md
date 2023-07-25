@@ -9,4 +9,4 @@ Add `inline-edit` package to display and allow inline editing of a form elements
 - Have children act as the "read" view of the component
 - Hide edit icon button and wrap children with a React Aria button when `hideEdit` is true
 - Implement focus management to ensure focus is directed correctly when toggling between read and edit mode
-- Use `input` prop to allow passing a custom `TextField` or `TextArea` component
+- Use `renderInput` prop to allow passing a custom `TextField` or `TextArea` component

@@ -74,7 +74,12 @@ export const WithTextarea: Story = {
     const [editValue, setEditValue] = useState('edit description');
 
     return (
-      <InlineEdit defaultValue={editValue} {...args} onSave={setEditValue} input={<TextArea />}>
+      <InlineEdit
+        defaultValue={editValue}
+        {...args}
+        onSave={setEditValue}
+        renderInput={<TextArea />}
+      >
         <span>{editValue}</span>
       </InlineEdit>
     );
@@ -98,7 +103,7 @@ export const InForm: Story = {
             defaultValue={editValue}
             {...args}
             onSave={setEditValue}
-            input={<TextField id="inline-edit" />}
+            renderInput={<TextField id="inline-edit" />}
           >
             <span>{editValue || 'Enter a value'}</span>
           </InlineEdit>
