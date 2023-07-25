@@ -1,0 +1,12 @@
+---
+'@launchpad-ui/inline-edit': minor
+'@launchpad-ui/core': patch
+---
+
+Add `inline-edit` package to display and allow inline editing of a form elements:
+
+- Use props `defaultValue` and `onSave` to handle state management of the value to edit
+- Have children act as the "read" view of the component
+- Hide edit icon button and wrap children with a React Aria button when `hideEdit` is true
+- Implement focus management to ensure focus is directed correctly when toggling between read and edit mode
+- Use `input` prop to allow passing a custom `TextField` or `TextArea` component
