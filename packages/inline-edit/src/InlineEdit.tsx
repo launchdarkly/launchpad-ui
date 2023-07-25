@@ -74,7 +74,7 @@ const InlineEdit = ({
   const { buttonProps } = useButton(
     {
       'aria-label': 'edit',
-      elementType: 'div',
+      elementType: 'span',
       onPress: handleEdit,
     },
     editRef

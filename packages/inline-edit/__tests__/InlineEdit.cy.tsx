@@ -14,12 +14,12 @@ describe('InlineEdit', () => {
   it('is accessible', () => {
     const editValue = 'test';
     cy.mount(
-      <InlineEdit defaultValue={editValue} onSave={() => undefined}>
+      <InlineEdit defaultValue={editValue} onSave={() => undefined} aria-label="edit value">
         <span>{editValue}</span>
       </InlineEdit>
     );
     cy.checkA11y();
-    cy.getByRole('button').click();
+    cy.getByTestId('icon-button').click();
     cy.checkA11y();
   });
 });
