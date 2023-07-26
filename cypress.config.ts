@@ -19,9 +19,5 @@ export default defineConfig({
   },
   video: false,
   screenshotOnRunFailure: false,
-  env: {
-    codeCoverage: {
-      exclude: ['cypress/**/*.*', 'packages/icons/src/!(Icon.tsx|StatusIcon.tsx|FlairIcon.tsx)'],
-    },
-  },
+  retries: 1,
 });
