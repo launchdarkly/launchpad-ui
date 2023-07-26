@@ -2,7 +2,7 @@ import type { InlineEditProps } from '../src';
 
 import { TextArea } from '@launchpad-ui/form';
 import { useState } from 'react';
-import { it, expect, describe } from 'vitest';
+import { it, expect, describe, vi } from 'vitest';
 
 import { render, screen, waitFor, userEvent } from '../../../test/utils';
 import { InlineEdit } from '../src';
@@ -11,7 +11,7 @@ const InlineEditComponent = ({ ...props }: Partial<InlineEditProps>) => {
   const [editValue, setEditValue] = useState('');
 
   return (
-    <InlineEdit defaultValue={editValue} {...props} onSave={setEditValue}>
+    <InlineEdit defaultValue={editValue} onSave={setEditValue} {...props}>
       <span>{editValue}</span>
     </InlineEdit>
   );
@@ -137,6 +137,47 @@ describe('InlineEdit', () => {
 
     await waitFor(async () => {
       expect(screen.getByLabelText('edit')).toHaveFocus();
+    });
+  });
+
+  it('calls handlers for edit, cancel, and save', async () => {
+    const editSpy = vi.fn();
+    const cancelSpy = vi.fn();
+    const saveSpy = vi.fn();
+
+    render(<InlineEditComponent onCancel={cancelSpy} onEdit={editSpy} onSave={saveSpy} />);
+
+    screen.getByLabelText('edit').click();
+    expect(editSpy).toHaveBeenCalledTimes(1);
+
+    await waitFor(async () => {
+      screen.getByLabelText('cancel').click();
+    });
+
+    expect(cancelSpy).toHaveBeenCalledTimes(1);
+
+    await waitFor(() => {
+      screen.getByLabelText('edit').click();
+    });
+
+    await waitFor(() => {
+      screen.getByLabelText('save').click();
+    });
+
+    expect(saveSpy).toHaveBeenCalledTimes(1);
+  });
+
+  it('allows control over the read and edit modes', async () => {
+    const { rerender } = render(<InlineEditComponent isEditing />);
+
+    await waitFor(() => {
+      expect(screen.getByTestId('text-field')).toBeVisible();
+    });
+
+    rerender(<InlineEditComponent isEditing={false} />);
+
+    await waitFor(() => {
+      expect(screen.getByLabelText('edit')).toBeVisible();
     });
   });
 });

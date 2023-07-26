@@ -26,6 +26,9 @@ type InlineEditProps = ComponentProps<'div'> &
     onSave: Dispatch<SetStateAction<string>>;
     hideEdit?: boolean;
     renderInput?: ReactElement<TextFieldProps | TextAreaProps>;
+    isEditing?: boolean;
+    onCancel?: () => void;
+    onEdit?: () => void;
   };
 
 const InlineEdit = ({
@@ -37,10 +40,20 @@ const InlineEdit = ({
   hideEdit = false,
   renderInput = <TextField />,
   'aria-label': ariaLabel,
+  isEditing: isEditingProp,
+  onCancel,
+  onEdit,
 }: InlineEditProps) => {
-  const [isEditing, setEditing] = useState(false);
+  const [isEditing, setEditing] = useState(isEditingProp ?? false);
   const inputRef = useRef<HTMLInputElement>(null);
   const editRef = useRef<HTMLButtonElement>(null);
+  const controlled = isEditingProp !== undefined;
+
+  useUpdateEffect(() => {
+    if (controlled) {
+      setEditing(isEditingProp);
+    }
+  }, [isEditingProp]);
 
   useUpdateEffect(() => {
     isEditing
@@ -49,16 +62,18 @@ const InlineEdit = ({
   }, [isEditing]);
 
   const handleEdit = () => {
-    setEditing(true);
+    !controlled && setEditing(true);
+    onEdit?.();
   };
 
   const handleCancel = () => {
-    setEditing(false);
+    !controlled && setEditing(false);
+    onCancel?.();
   };
 
   const handleSave = () => {
     onSave(inputRef.current?.value || '');
-    setEditing(false);
+    !controlled && setEditing(false);
   };
 
   const handleKeyDown: KeyboardEventHandler<HTMLInputElement> = (event) => {

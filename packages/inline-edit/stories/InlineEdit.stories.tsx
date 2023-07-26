@@ -112,3 +112,26 @@ export const InForm: Story = {
     );
   },
 };
+
+export const Controlled: Story = {
+  render: (args) => {
+    const [editValue, setEditValue] = useState('edit me');
+    const [isEditing, setEditing] = useState(true);
+
+    return (
+      <InlineEdit
+        defaultValue={editValue}
+        isEditing={isEditing}
+        onCancel={() => setEditing(false)}
+        onEdit={() => setEditing(true)}
+        {...args}
+        onSave={(value) => {
+          setEditValue(value);
+          setEditing(false);
+        }}
+      >
+        <span>{editValue}</span>
+      </InlineEdit>
+    );
+  },
+};
