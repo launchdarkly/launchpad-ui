@@ -1,5 +1,11 @@
 # @launchpad-ui/markdown
 
+## 0.4.16
+
+### Patch Changes
+
+- [#932](https://github.com/launchdarkly/launchpad-ui/pull/932) [`b69c28b0`](https://github.com/launchdarkly/launchpad-ui/commit/b69c28b08ef61b2a1208331d13ea0753173dfc03) Thanks [@Niznikr](https://github.com/Niznikr)! - [Markdown] Use es6 imports for `isomorphic-dompurify`
+
 ## 0.4.15
 
 ### Patch Changes

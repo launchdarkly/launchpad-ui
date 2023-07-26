@@ -1,6 +1,6 @@
 {
   "name": "@launchpad-ui/tag",
-  "version": "0.2.7",
+  "version": "0.2.8",
   "status": "alpha",
   "publishConfig": {
     "access": "public"
