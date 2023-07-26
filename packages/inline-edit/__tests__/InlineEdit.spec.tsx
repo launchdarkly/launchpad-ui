@@ -11,7 +11,7 @@ const InlineEditComponent = ({ ...props }: Partial<InlineEditProps>) => {
   const [editValue, setEditValue] = useState('');
 
   return (
-    <InlineEdit defaultValue={editValue} onSave={setEditValue} {...props}>
+    <InlineEdit defaultValue={editValue} onConfirm={setEditValue} {...props}>
       <span>{editValue}</span>
     </InlineEdit>
   );
@@ -98,7 +98,7 @@ describe('InlineEdit', () => {
     });
   });
 
-  it('saves the value and returns to read mode when the enter key is pressed', async () => {
+  it('confirms the value and returns to read mode when the enter key is pressed', async () => {
     const user = userEvent.setup();
     render(<InlineEditComponent />);
 
@@ -121,7 +121,7 @@ describe('InlineEdit', () => {
     });
   });
 
-  it('saves the value and returns to read mode when save is clicked', async () => {
+  it('confirms the value and returns to read mode when confirm is clicked', async () => {
     const user = userEvent.setup();
     render(<InlineEditComponent />);
 
@@ -132,7 +132,7 @@ describe('InlineEdit', () => {
     await waitFor(async () => {
       expect(screen.getByTestId('text-field')).toHaveFocus();
       await user.keyboard('test');
-      screen.getByLabelText('save').click();
+      screen.getByLabelText('confirm').click();
     });
 
     await waitFor(() => {
@@ -161,12 +161,12 @@ describe('InlineEdit', () => {
     });
   });
 
-  it('calls handlers for edit, cancel, and save', async () => {
+  it('calls handlers for edit, cancel, and confirm', async () => {
     const editSpy = vi.fn();
     const cancelSpy = vi.fn();
-    const saveSpy = vi.fn();
+    const confirmSpy = vi.fn();
 
-    render(<InlineEditComponent onCancel={cancelSpy} onEdit={editSpy} onSave={saveSpy} />);
+    render(<InlineEditComponent onCancel={cancelSpy} onEdit={editSpy} onConfirm={confirmSpy} />);
 
     await waitFor(async () => {
       screen.getByLabelText('edit').click();
@@ -185,10 +185,10 @@ describe('InlineEdit', () => {
     });
 
     await waitFor(() => {
-      screen.getByLabelText('save').click();
+      screen.getByLabelText('confirm').click();
     });
 
-    expect(saveSpy).toHaveBeenCalledTimes(1);
+    expect(confirmSpy).toHaveBeenCalledTimes(1);
   });
 
   it('allows control over the read and edit modes', async () => {

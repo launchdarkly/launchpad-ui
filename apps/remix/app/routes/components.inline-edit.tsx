@@ -4,7 +4,7 @@ import { useState } from 'react';
 export default function Index() {
   const [editValue, setEditValue] = useState('edit me');
   return (
-    <InlineEdit defaultValue={editValue} onSave={setEditValue}>
+    <InlineEdit defaultValue={editValue} onConfirm={setEditValue}>
       <span>{editValue}</span>
     </InlineEdit>
   );

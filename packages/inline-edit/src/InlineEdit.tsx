@@ -23,12 +23,15 @@ type InlineEditProps = ComponentProps<'div'> &
   InlineVariants &
   Pick<ComponentProps<'input'>, 'defaultValue'> & {
     'data-test-id'?: string;
-    onSave: Dispatch<SetStateAction<string>>;
+    onConfirm: Dispatch<SetStateAction<string>>;
     hideEdit?: boolean;
     renderInput?: ReactElement<TextFieldProps | TextAreaProps>;
     isEditing?: boolean;
     onCancel?: () => void;
     onEdit?: () => void;
+    cancelButtonLabel?: string;
+    editButtonLabel?: string;
+    confirmButtonLabel?: string;
   };
 
 const InlineEdit = ({
@@ -36,13 +39,16 @@ const InlineEdit = ({
   layout = 'horizontal',
   children,
   defaultValue,
-  onSave,
+  onConfirm,
   hideEdit = false,
   renderInput = <TextField />,
   'aria-label': ariaLabel,
   isEditing: isEditingProp,
   onCancel,
   onEdit,
+  cancelButtonLabel = 'cancel',
+  editButtonLabel = 'edit',
+  confirmButtonLabel = 'confirm',
 }: InlineEditProps) => {
   const [isEditing, setEditing] = useState(isEditingProp ?? false);
   const inputRef = useRef<HTMLInputElement>(null);
@@ -71,15 +77,15 @@ const InlineEdit = ({
     onCancel?.();
   };
 
-  const handleSave = () => {
-    onSave(inputRef.current?.value || '');
+  const handleConfirm = () => {
+    onConfirm(inputRef.current?.value || '');
     !controlled && setEditing(false);
   };
 
   const handleKeyDown: KeyboardEventHandler<HTMLInputElement> = (event) => {
     if (event.key === 'Enter') {
       event.preventDefault();
-      handleSave();
+      handleConfirm();
     } else if (event.key === 'Escape') {
       event.preventDefault();
       handleCancel();
@@ -88,7 +94,7 @@ const InlineEdit = ({
 
   const { buttonProps } = useButton(
     {
-      'aria-label': 'edit',
+      'aria-label': editButtonLabel,
       elementType: 'span',
       onPress: handleEdit,
     },
@@ -105,7 +111,7 @@ const InlineEdit = ({
       <IconButton
         ref={editRef}
         icon={<Icon name="edit" />}
-        aria-label="edit"
+        aria-label={editButtonLabel}
         size="small"
         onClick={handleEdit}
       />
@@ -129,13 +135,13 @@ const InlineEdit = ({
         <IconButton
           kind="primary"
           icon={<Icon name="check" />}
-          aria-label="save"
-          onClick={handleSave}
+          aria-label={confirmButtonLabel}
+          onClick={handleConfirm}
         />
         <IconButton
           kind="default"
           icon={<Icon name="close" />}
-          aria-label="cancel"
+          aria-label={cancelButtonLabel}
           className={cancelButton}
           onClick={handleCancel}
         />

@@ -26,7 +26,7 @@ export const Example: Story = {
     const [editValue, setEditValue] = useState('edit me');
 
     return (
-      <InlineEdit defaultValue={editValue} {...args} onSave={setEditValue}>
+      <InlineEdit defaultValue={editValue} {...args} onConfirm={setEditValue}>
         <span>{editValue}</span>
       </InlineEdit>
     );
@@ -45,7 +45,7 @@ export const EditTitle: Story = {
 
     return (
       <div style={{ width: '500px' }}>
-        <InlineEdit defaultValue={editValue} {...args} onSave={setEditValue} hideEdit>
+        <InlineEdit defaultValue={editValue} {...args} onConfirm={setEditValue} hideEdit>
           <h3>{editValue}</h3>
         </InlineEdit>
       </div>
@@ -59,7 +59,7 @@ export const EditCopy: Story = {
 
     return (
       <div style={{ width: 'max-content' }}>
-        <InlineEdit defaultValue={editValue} {...args} onSave={setEditValue}>
+        <InlineEdit defaultValue={editValue} {...args} onConfirm={setEditValue}>
           <CopyToClipboard text={editValue} kind="basic">
             {editValue}
           </CopyToClipboard>
@@ -77,7 +77,7 @@ export const WithTextarea: Story = {
       <InlineEdit
         defaultValue={editValue}
         {...args}
-        onSave={setEditValue}
+        onConfirm={setEditValue}
         renderInput={<TextArea />}
       >
         <span>{editValue}</span>
@@ -102,7 +102,7 @@ export const InForm: Story = {
           <InlineEdit
             defaultValue={editValue}
             {...args}
-            onSave={setEditValue}
+            onConfirm={setEditValue}
             renderInput={<TextField id="inline-edit" />}
           >
             <span>{editValue || 'Enter a value'}</span>
@@ -125,7 +125,7 @@ export const Controlled: Story = {
         onCancel={() => setEditing(false)}
         onEdit={() => setEditing(true)}
         {...args}
-        onSave={(value) => {
+        onConfirm={(value) => {
           setEditValue(value);
           setEditing(false);
         }}
