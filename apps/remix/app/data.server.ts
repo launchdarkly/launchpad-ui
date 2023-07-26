@@ -18,6 +18,7 @@ export async function getComponents() {
     { to: 'components/icon', name: 'Icon' },
     { to: 'components/icon-button', name: 'IconButton' },
     { to: 'components/inline', name: 'Inline' },
+    { to: 'components/inline-edit', name: 'InlineEdit' },
     { to: 'components/markdown', name: 'Markdown' },
     { to: 'components/menu', name: 'Menu' },
     { to: 'components/modal', name: 'Modal' },

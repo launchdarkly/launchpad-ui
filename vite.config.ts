@@ -56,6 +56,7 @@ export default defineConfig({
         ...Object.keys(packageJSON.dependencies || {}),
         ...Object.keys(packageJSON.peerDependencies || {}),
         'react/jsx-runtime',
+        '@vanilla-extract/recipes/createRuntimeFn',
       ],
     },
     sourcemap: true,
