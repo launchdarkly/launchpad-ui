@@ -25,7 +25,10 @@ describe('InlineEdit', () => {
 
   it('renders an input in edit mode', async () => {
     render(<InlineEditComponent />);
-    screen.getByLabelText('edit').click();
+
+    await waitFor(() => {
+      screen.getByLabelText('edit').click();
+    });
 
     await waitFor(() => {
       expect(screen.getByTestId('text-field')).toBeVisible();
@@ -39,7 +42,10 @@ describe('InlineEdit', () => {
 
   it('renders a custom input', async () => {
     render(<InlineEditComponent renderInput={<TextArea />} />);
-    screen.getByLabelText('edit').click();
+
+    await waitFor(() => {
+      screen.getByLabelText('edit').click();
+    });
 
     await waitFor(() => {
       expect(screen.getByTestId('text-area')).toBeVisible();
@@ -48,7 +54,10 @@ describe('InlineEdit', () => {
 
   it('enters edit mode when button wrapper is clicked', async () => {
     render(<InlineEditComponent hideEdit />);
-    screen.getByRole('button').click();
+
+    await waitFor(() => {
+      screen.getByRole('button').click();
+    });
 
     await waitFor(() => {
       expect(screen.getByTestId('text-field')).toBeVisible();
@@ -57,7 +66,10 @@ describe('InlineEdit', () => {
 
   it('returns to read mode when cancel is clicked', async () => {
     render(<InlineEditComponent />);
-    screen.getByLabelText('edit').click();
+
+    await waitFor(() => {
+      screen.getByLabelText('edit').click();
+    });
 
     await waitFor(() => {
       screen.getByLabelText('cancel').click();
@@ -71,7 +83,10 @@ describe('InlineEdit', () => {
   it('returns to read mode when the escape key is pressed', async () => {
     const user = userEvent.setup();
     render(<InlineEditComponent />);
-    screen.getByLabelText('edit').click();
+
+    await waitFor(() => {
+      screen.getByLabelText('edit').click();
+    });
 
     await waitFor(async () => {
       expect(screen.getByTestId('text-field')).toHaveFocus();
@@ -86,7 +101,10 @@ describe('InlineEdit', () => {
   it('saves the value and returns to read mode when the enter key is pressed', async () => {
     const user = userEvent.setup();
     render(<InlineEditComponent />);
-    screen.getByLabelText('edit').click();
+
+    await waitFor(() => {
+      screen.getByLabelText('edit').click();
+    });
 
     await waitFor(async () => {
       expect(screen.getByTestId('text-field')).toHaveFocus();
@@ -106,7 +124,10 @@ describe('InlineEdit', () => {
   it('saves the value and returns to read mode when save is clicked', async () => {
     const user = userEvent.setup();
     render(<InlineEditComponent />);
-    screen.getByLabelText('edit').click();
+
+    await waitFor(() => {
+      screen.getByLabelText('edit').click();
+    });
 
     await waitFor(async () => {
       expect(screen.getByTestId('text-field')).toHaveFocus();
@@ -147,7 +168,10 @@ describe('InlineEdit', () => {
 
     render(<InlineEditComponent onCancel={cancelSpy} onEdit={editSpy} onSave={saveSpy} />);
 
-    screen.getByLabelText('edit').click();
+    await waitFor(async () => {
+      screen.getByLabelText('edit').click();
+    });
+
     expect(editSpy).toHaveBeenCalledTimes(1);
 
     await waitFor(async () => {
