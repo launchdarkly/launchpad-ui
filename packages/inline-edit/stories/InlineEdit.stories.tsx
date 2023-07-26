@@ -30,7 +30,6 @@ export const Example: Story = {
         <InlineEdit defaultValue={editValue} {...args} onConfirm={setEditValue}>
           <span>{editValue}</span>
         </InlineEdit>
-        <button>wow</button>
       </>
     );
   },
