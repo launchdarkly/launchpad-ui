@@ -1,5 +1,42 @@
 # @launchpad-ui/core
 
+## 0.42.3
+
+### Patch Changes
+
+- [#938](https://github.com/launchdarkly/launchpad-ui/pull/938) [`db9e620b`](https://github.com/launchdarkly/launchpad-ui/commit/db9e620b578ebee1adfb14054753ffcfe76a313f) Thanks [@Niznikr](https://github.com/Niznikr)! - Add `inline-edit` package to display and allow inline editing of a form elements:
+
+  - Use props `defaultValue` and `onConfirm` to handle state management of the value to edit
+  - Have children act as the "read" view of the component
+  - Hide edit icon button and wrap children with a React Aria button when `hideEdit` is true
+  - Implement focus management to ensure focus is directed correctly when toggling between read and edit mode
+  - Use `renderInput` prop to allow passing a custom `TextField` or `TextArea` component
+  - Add handlers for edit, cancel, and confirm actions
+  - Use prop `isEditing` to allow full control over the read and edit modes
+  - Add `@vanilla-extract/css` as a peer dependency for prop `layout` variant types
+  - Use `useFocusWithin` to cancel edit on blur
+
+- [#932](https://github.com/launchdarkly/launchpad-ui/pull/932) [`b69c28b0`](https://github.com/launchdarkly/launchpad-ui/commit/b69c28b08ef61b2a1208331d13ea0753173dfc03) Thanks [@Niznikr](https://github.com/Niznikr)! - [Markdown] Use es6 imports for `isomorphic-dompurify`
+
+- Updated dependencies [[`db9e620b`](https://github.com/launchdarkly/launchpad-ui/commit/db9e620b578ebee1adfb14054753ffcfe76a313f), [`b69c28b0`](https://github.com/launchdarkly/launchpad-ui/commit/b69c28b08ef61b2a1208331d13ea0753173dfc03), [`bc04510d`](https://github.com/launchdarkly/launchpad-ui/commit/bc04510d8adfeb899e25638979b5b6a6526e9986)]:
+  - @launchpad-ui/inline-edit@0.1.0
+  - @launchpad-ui/markdown@0.4.16
+  - @launchpad-ui/snackbar@0.3.57
+  - @launchpad-ui/popover@0.10.8
+  - @launchpad-ui/drawer@0.4.12
+  - @launchpad-ui/modal@0.16.6
+  - @launchpad-ui/toast@0.2.54
+  - @launchpad-ui/dropdown@0.6.56
+  - @launchpad-ui/menu@0.11.3
+  - @launchpad-ui/navigation@0.11.27
+  - @launchpad-ui/progress-bubbles@0.6.17
+  - @launchpad-ui/select@0.3.8
+  - @launchpad-ui/split-button@0.8.3
+  - @launchpad-ui/tooltip@0.7.18
+  - @launchpad-ui/filter@0.5.36
+  - @launchpad-ui/clipboard@0.10.11
+  - @launchpad-ui/tag@0.2.8
+
 ## 0.42.2
 
 ### Patch Changes
