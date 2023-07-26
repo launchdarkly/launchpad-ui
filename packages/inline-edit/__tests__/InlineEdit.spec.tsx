@@ -84,9 +84,8 @@ describe('InlineEdit', () => {
     const user = userEvent.setup();
     render(<InlineEditComponent />);
 
-    await waitFor(() => {
-      screen.getByLabelText('edit').click();
-    });
+    await user.tab();
+    await user.keyboard('{Enter}');
 
     await waitFor(async () => {
       expect(screen.getByTestId('text-field')).toHaveFocus();
@@ -102,9 +101,8 @@ describe('InlineEdit', () => {
     const user = userEvent.setup();
     render(<InlineEditComponent />);
 
-    await waitFor(() => {
-      screen.getByLabelText('edit').click();
-    });
+    await user.tab();
+    await user.keyboard('{Enter}');
 
     await waitFor(async () => {
       expect(screen.getByTestId('text-field')).toHaveFocus();
@@ -125,9 +123,8 @@ describe('InlineEdit', () => {
     const user = userEvent.setup();
     render(<InlineEditComponent />);
 
-    await waitFor(() => {
-      screen.getByLabelText('edit').click();
-    });
+    await user.tab();
+    await user.keyboard('{Enter}');
 
     await waitFor(async () => {
       expect(screen.getByTestId('text-field')).toHaveFocus();
@@ -199,6 +196,42 @@ describe('InlineEdit', () => {
     });
 
     rerender(<InlineEditComponent isEditing={false} />);
+
+    await waitFor(() => {
+      expect(screen.getByLabelText('edit')).toBeVisible();
+    });
+  });
+
+  it('cancels when input is blurred', async () => {
+    const user = userEvent.setup();
+    render(<InlineEditComponent />);
+
+    await user.tab();
+    await user.keyboard('{Enter}');
+
+    await waitFor(async () => {
+      expect(screen.getByTestId('text-field')).toHaveFocus();
+      await user.tab({ shift: true });
+    });
+
+    await waitFor(() => {
+      expect(screen.getByLabelText('edit')).toBeVisible();
+    });
+  });
+
+  it('cancels when cancel button is blurred', async () => {
+    const user = userEvent.setup();
+    render(<InlineEditComponent />);
+
+    await user.tab();
+    await user.keyboard('{Enter}');
+
+    await waitFor(async () => {
+      expect(screen.getByTestId('text-field')).toHaveFocus();
+      await user.tab();
+      await user.tab();
+      await user.tab();
+    });
 
     await waitFor(() => {
       expect(screen.getByLabelText('edit')).toBeVisible();

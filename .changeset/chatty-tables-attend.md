@@ -13,3 +13,4 @@ Add `inline-edit` package to display and allow inline editing of a form elements
 - Add handlers for edit, cancel, and confirm actions
 - Use prop `isEditing` to allow full control over the read and edit modes
 - Add `@vanilla-extract/css` as a peer dependency for prop `layout` variant types
+- Use `useFocusWithin` to cancel edit on blur

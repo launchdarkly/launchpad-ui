@@ -26,9 +26,12 @@ export const Example: Story = {
     const [editValue, setEditValue] = useState('edit me');
 
     return (
-      <InlineEdit defaultValue={editValue} {...args} onConfirm={setEditValue}>
-        <span>{editValue}</span>
-      </InlineEdit>
+      <>
+        <InlineEdit defaultValue={editValue} {...args} onConfirm={setEditValue}>
+          <span>{editValue}</span>
+        </InlineEdit>
+        <button>wow</button>
+      </>
     );
   },
   play: async ({ canvasElement }: { canvasElement: HTMLElement }) => {

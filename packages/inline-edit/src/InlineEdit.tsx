@@ -13,6 +13,7 @@ import { TextField } from '@launchpad-ui/form';
 import { Icon } from '@launchpad-ui/icons';
 import { useButton } from '@react-aria/button';
 import { focusSafely } from '@react-aria/focus';
+import { useFocusWithin } from '@react-aria/interactions';
 import { mergeProps, useUpdateEffect } from '@react-aria/utils';
 import { cx } from 'classix';
 import { cloneElement, useRef, useState } from 'react';
@@ -51,6 +52,7 @@ const InlineEdit = ({
   confirmButtonLabel = 'confirm',
 }: InlineEditProps) => {
   const [isEditing, setEditing] = useState(isEditingProp ?? false);
+  const [isFocusWithin, setFocusWithin] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
   const editRef = useRef<HTMLButtonElement>(null);
   const controlled = isEditingProp !== undefined;
@@ -62,9 +64,11 @@ const InlineEdit = ({
   }, [isEditingProp]);
 
   useUpdateEffect(() => {
-    isEditing
-      ? inputRef.current && focusSafely(inputRef.current)
-      : editRef.current && focusSafely(editRef.current);
+    if (isFocusWithin) {
+      isEditing
+        ? inputRef.current && focusSafely(inputRef.current)
+        : editRef.current && focusSafely(editRef.current);
+    }
   }, [isEditing]);
 
   const handleEdit = () => {
@@ -91,6 +95,11 @@ const InlineEdit = ({
       handleCancel();
     }
   };
+
+  const { focusWithinProps } = useFocusWithin({
+    onBlurWithin: () => isEditing && handleCancel(),
+    onFocusWithinChange: (isFocusWithin) => setFocusWithin(isFocusWithin),
+  });
 
   const { buttonProps } = useButton(
     {
@@ -129,7 +138,7 @@ const InlineEdit = ({
   );
 
   return isEditing ? (
-    <div className={cx(container, inline({ layout }))} data-test-id={testId}>
+    <div className={cx(container, inline({ layout }))} data-test-id={testId} {...focusWithinProps}>
       {input}
       <ButtonGroup spacing="compact">
         <IconButton
@@ -148,7 +157,7 @@ const InlineEdit = ({
       </ButtonGroup>
     </div>
   ) : (
-    <div className={cx(!hideEdit && container)} data-test-id={testId}>
+    <div className={cx(!hideEdit && container)} data-test-id={testId} {...focusWithinProps}>
       {renderReadContent}
     </div>
   );
