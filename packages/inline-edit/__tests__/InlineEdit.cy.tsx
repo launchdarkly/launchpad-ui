@@ -4,7 +4,7 @@ describe('InlineEdit', () => {
   it('renders', () => {
     const editValue = 'test';
     cy.mount(
-      <InlineEdit defaultValue={editValue} onSave={() => undefined}>
+      <InlineEdit defaultValue={editValue} onConfirm={() => undefined}>
         <span>{editValue}</span>
       </InlineEdit>
     );
@@ -14,7 +14,7 @@ describe('InlineEdit', () => {
   it('is accessible', () => {
     const editValue = 'test';
     cy.mount(
-      <InlineEdit defaultValue={editValue} onSave={() => undefined} aria-label="edit value">
+      <InlineEdit defaultValue={editValue} onConfirm={() => undefined} aria-label="edit value">
         <span>{editValue}</span>
       </InlineEdit>
     );
