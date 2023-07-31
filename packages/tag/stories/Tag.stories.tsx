@@ -227,20 +227,29 @@ export const WithTagItemRenderedAs: Story = {
   },
 };
 
-export const WithOnTagClick: Story = {
+export const SingleSelect: Story = {
   render: () => {
     return (
-      <TagGroup onTagClick={(key) => alert(`Clicked ${key}`)} items={MOCK_TAGS}>
+      <TagGroup
+        selectionMode="single"
+        items={MOCK_TAGS}
+        onSelectionChange={(keys) => console.log(`Clicked ${Array.from(keys)}`)}
+      >
         {(item) => <TagItem>{item.name}</TagItem>}
       </TagGroup>
     );
   },
 };
 
-export const WithOnTagClickTiny: Story = {
+export const MultiSelect: Story = {
   render: () => {
     return (
-      <TagGroup size="tiny" onTagClick={(key) => alert(`Clicked ${key}`)} items={MOCK_TAGS}>
+      <TagGroup
+        size="tiny"
+        selectionMode="multiple"
+        items={MOCK_TAGS}
+        onSelectionChange={(keys) => console.log(`Clicked ${Array.from(keys)}`)}
+      >
         {(item) => <TagItem>{item.name}</TagItem>}
       </TagGroup>
     );

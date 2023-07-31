@@ -1,47 +1,15 @@
-import type { ItemProps } from '@react-types/shared';
 import type { ComponentPropsWithoutRef, ElementType } from 'react';
 
-/* c8 ignore start */
+import { Item } from '@react-stately/collections';
 
-type TagItemProps<T extends object, P extends ElementType> = ItemProps<T> & {
+type TagItemProps<P extends ElementType> = {
   as?: P;
   tooltip?: string;
 };
 
-const TagItem = <T extends object, P extends ElementType = 'div'>(
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  _props: TagItemProps<T, P> & Omit<ComponentPropsWithoutRef<P>, keyof TagItemProps<T, P>>
-) => {
-  return null;
-};
-
-TagItem.getCollectionNode = function* getCollectionNode<T extends object>(
-  props: ItemProps<T>,
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  context: any
-) {
-  const rendered = props.title || props.children;
-  const textValue =
-    props.textValue || (typeof rendered === 'string' ? rendered : '') || props['aria-label'] || '';
-
-  // suppressTextValueWarning is used in components like Tabs, which don't have type to select support.
-  if (!textValue && !context?.suppressTextValueWarning) {
-    console.warn(
-      '<TagItem> with non-plain text contents is unsupported by type to select for accessibility. Please add a `textValue` prop.'
-    );
-  }
-
-  yield {
-    type: 'item',
-    props: props,
-    rendered,
-    textValue,
-    'aria-label': props['aria-label'],
-    hasChildNodes: false,
-  };
-};
-
-/* c8 ignore end */
+const TagItem = Item as <P extends ElementType = 'div'>(
+  props: TagItemProps<P> & ComponentPropsWithoutRef<P>
+) => JSX.Element;
 
 export { TagItem };
 export type { TagItemProps };

@@ -1,8 +1,7 @@
 import type { TagGroupProps } from './TagGroup';
 import type { TagItemProps } from './TagItem';
-import type { AriaTagProps } from '@react-aria/tag';
 import type { ListState } from '@react-stately/list';
-import type { Node } from '@react-types/shared';
+import type { Node, PressEvent } from '@react-types/shared';
 import type { ElementType, ReactNode } from 'react';
 
 import { Icon } from '@launchpad-ui/icons';
@@ -16,18 +15,17 @@ import { useRef } from 'react';
 
 import styles from './styles/Tag.module.css';
 
-type TagProps<T extends object> = AriaTagProps<T> & {
+type TagProps<T extends object> = {
   item: Omit<Node<T>, 'props'> & {
-    props?: TagItemProps<T, ElementType>;
+    props?: TagItemProps<ElementType>;
   };
   state: ListState<T>;
   size: TagGroupProps<T>['size'];
-  onClick: TagGroupProps<T>['onTagClick'];
   children: ReactNode;
 };
 
 const Tag = <T extends object>(props: TagProps<T>) => {
-  const { children, item, state, onClick, size = 'small' } = props;
+  const { children, item, state, size = 'small' } = props;
 
   const { hoverProps, isHovered } = useHover({});
   const { isFocusVisible, focusProps } = useFocusRing({ within: true });
@@ -35,7 +33,7 @@ const Tag = <T extends object>(props: TagProps<T>) => {
 
   const { as: Component = 'div', tooltip, ...itemProps } = item.props || {};
 
-  const { rowProps, gridCellProps, removeButtonProps, allowsRemoving } = useTag(
+  const { rowProps, gridCellProps, removeButtonProps, allowsRemoving, allowsSelection } = useTag(
     {
       ...props,
       item,
@@ -50,7 +48,7 @@ const Tag = <T extends object>(props: TagProps<T>) => {
     isFocusVisible && styles.isFocusVisible,
     isHovered && styles.isHovered,
     !allowsRemoving && styles.isReadOnly,
-    onClick && styles.isInteractive
+    allowsSelection && styles.isInteractive
   );
 
   const tag = (
@@ -58,7 +56,6 @@ const Tag = <T extends object>(props: TagProps<T>) => {
       {...mergeProps(rowProps, hoverProps, focusProps, itemProps)}
       className={classes}
       ref={ref}
-      onClick={onClick && (() => onClick(item.key))}
       data-test-id="tag"
     >
       <div className={cx(styles.tagCell)} {...gridCellProps}>
@@ -71,8 +68,7 @@ const Tag = <T extends object>(props: TagProps<T>) => {
               data-test-id="remove-tag-btn"
               onClick={(e) => {
                 e.stopPropagation();
-                // eslint-disable-next-line @typescript-eslint/no-explicit-any
-                removeButtonProps.onPress?.(undefined as any);
+                removeButtonProps.onPress?.(e as unknown as PressEvent);
               }}
               {...removeButtonProps}
             >

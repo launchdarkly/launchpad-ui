@@ -22,6 +22,7 @@ const TagGroupComponent = ({
         if (onRemove) onRemove(keys);
         setItems((prevItems) => prevItems.filter((item) => !keys.has(item.id)));
       }}
+      label="tag group"
       {...props}
     >
       {(item) => <TagItem>{item.name}</TagItem>}
@@ -41,7 +42,11 @@ describe('Tag', () => {
   });
 
   it('does not allow removal by default', () => {
-    render(<TagGroup items={[...MOCK_TAGS]}>{(item) => <TagItem>{item.name}</TagItem>}</TagGroup>);
+    render(
+      <TagGroup items={[...MOCK_TAGS]} label="tag group">
+        {(item) => <TagItem>{item.name}</TagItem>}
+      </TagGroup>
+    );
     expect(screen.queryByTestId('remove-tag-btn')).not.toBeInTheDocument();
   });
 
