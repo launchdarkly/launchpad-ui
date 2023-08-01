@@ -29,6 +29,7 @@
       "@launchpad-ui/pagination": ["./packages/pagination/src"],
       "@launchpad-ui/popover": ["./packages/popover/src"],
       "@launchpad-ui/portal": ["./packages/portal/src"],
+      "@launchpad-ui/primitives": ["./packages/primitives/src"],
       "@launchpad-ui/progress": ["./packages/progress/src"],
       "@launchpad-ui/progress-bubbles": ["./packages/progress-bubbles/src"],
       "@launchpad-ui/select": ["./packages/select/src"],

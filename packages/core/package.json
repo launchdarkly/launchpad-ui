@@ -60,6 +60,7 @@
     "@launchpad-ui/pagination": "workspace:~",
     "@launchpad-ui/popover": "workspace:~",
     "@launchpad-ui/portal": "workspace:~",
+    "@launchpad-ui/primitives": "workspace:~",
     "@launchpad-ui/progress": "workspace:~",
     "@launchpad-ui/progress-bubbles": "workspace:~",
     "@launchpad-ui/select": "workspace:~",

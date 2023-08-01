@@ -106,6 +106,7 @@ export type { Space } from '@launchpad-ui/types';
 export type { InlineProps } from '@launchpad-ui/inline';
 export type { ColumnProps, ColumnsProps } from '@launchpad-ui/columns';
 export type { InlineEditProps } from '@launchpad-ui/inline-edit';
+export type { PrimitivesProps } from '@launchpad-ui/primitives';
 // plop end type exports
 
 // plop start module exports
@@ -196,4 +197,5 @@ export { Stack } from '@launchpad-ui/stack';
 export { Inline } from '@launchpad-ui/inline';
 export { Column, Columns } from '@launchpad-ui/columns';
 export { InlineEdit } from '@launchpad-ui/inline-edit';
+export { Primitives } from '@launchpad-ui/primitives';
 // plop end module exports

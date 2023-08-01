@@ -554,6 +554,9 @@ importers:
       '@launchpad-ui/portal':
         specifier: workspace:~
         version: link:../portal
+      '@launchpad-ui/primitives':
+        specifier: workspace:~
+        version: link:../primitives
       '@launchpad-ui/progress':
         specifier: workspace:~
         version: link:../progress
@@ -1071,6 +1074,34 @@ importers:
         version: 18.2.0(react@18.2.0)
 
   packages/portal:
+    devDependencies:
+      react:
+        specifier: 18.2.0
+        version: 18.2.0
+      react-dom:
+        specifier: 18.2.0
+        version: 18.2.0(react@18.2.0)
+
+  packages/primitives:
+    dependencies:
+      '@launchpad-ui/tokens':
+        specifier: workspace:~
+        version: link:../tokens
+      '@launchpad-ui/vars':
+        specifier: workspace:~
+        version: link:../vars
+      '@react-aria/overlays':
+        specifier: 3.15.0
+        version: 3.15.0(react-dom@18.2.0)(react@18.2.0)
+      '@react-aria/utils':
+        specifier: 3.18.0
+        version: 3.18.0(react@18.2.0)
+      '@react-stately/overlays':
+        specifier: 3.6.0
+        version: 3.6.0(react@18.2.0)
+      classix:
+        specifier: 2.1.17
+        version: 2.1.17
     devDependencies:
       react:
         specifier: 18.2.0
@@ -5400,7 +5431,6 @@ packages:
 
   /@formatjs/ecma402-abstract@1.16.0:
     resolution: {integrity: sha512-qIH2cmG/oHGrVdApbqDf6/YR+B2A4NdkBjKLeq369OMVkqMFsC5oPSP1xpiyL1cAn+PbNEZHxwOVMYD/C76c6g==}
-    deprecated: 'Broken ESM package exports. See issue #4126, #4127, #4128'
     dependencies:
       '@formatjs/intl-localematcher': 0.3.0
       tslib: 2.5.3
@@ -5408,14 +5438,12 @@ packages:
 
   /@formatjs/fast-memoize@2.1.0:
     resolution: {integrity: sha512-w7IzF6Okx2tQXRVlT/cXI4dfS0bvKHhWE5Kn7ajqDVYH4nksUFOMU21Yd4zDENxZ8mFb7IBu7bOopnB2VxZQeA==}
-    deprecated: 'Broken ESM package exports. See issue #4126, #4127, #4128'
     dependencies:
       tslib: 2.5.3
     dev: false
 
   /@formatjs/icu-messageformat-parser@2.5.0:
     resolution: {integrity: sha512-8AwKRkVIZzVlvZwio1TcLVvUbJw0up1joa8//JIxKVeflqKiZwfzCGAelZt/4hHCEQf9NECose//nODnmBEkNQ==}
-    deprecated: 'Broken ESM package exports. See issue #4126, #4127, #4128'
     dependencies:
       '@formatjs/ecma402-abstract': 1.16.0
       '@formatjs/icu-skeleton-parser': 1.5.0
@@ -5424,7 +5452,6 @@ packages:
 
   /@formatjs/icu-skeleton-parser@1.5.0:
     resolution: {integrity: sha512-R/wOg/hxh3JWNB4LHYfNtIe8PC39mkzplh6gtrqCY33EqYeUFEGOYTWJrkXNcoRXlZWQtfrH6REch5r57tAyMQ==}
-    deprecated: 'Broken ESM package exports. See issue #4126, #4127, #4128'
     dependencies:
       '@formatjs/ecma402-abstract': 1.16.0
       tslib: 2.5.3
