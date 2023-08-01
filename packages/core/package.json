@@ -40,6 +40,7 @@
     "@launchpad-ui/avatar": "workspace:~",
     "@launchpad-ui/banner": "workspace:~",
     "@launchpad-ui/button": "workspace:~",
+    "@launchpad-ui/card": "workspace:~",
     "@launchpad-ui/chip": "workspace:~",
     "@launchpad-ui/clipboard": "workspace:~",
     "@launchpad-ui/collapsible": "workspace:~",
