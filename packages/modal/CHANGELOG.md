@@ -1,5 +1,11 @@
 # @launchpad-ui/modal
 
+## 0.16.7
+
+### Patch Changes
+
+- [#942](https://github.com/launchdarkly/launchpad-ui/pull/942) [`057e9eea`](https://github.com/launchdarkly/launchpad-ui/commit/057e9eeae2d6878363f493820e6b015828dda12d) Thanks [@stinachen](https://github.com/stinachen)! - Update aria-describedby to use modal description
+
 ## 0.16.6
 
 ### Patch Changes
