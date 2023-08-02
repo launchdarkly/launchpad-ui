@@ -46,6 +46,8 @@ const InlineEdit = forwardRef<HTMLInputElement, InlineEditProps>(
       cancelButtonLabel = 'cancel',
       editButtonLabel = 'edit',
       confirmButtonLabel = 'confirm',
+      className,
+      ...rest
     },
     ref
   ) => {
@@ -137,7 +139,8 @@ const InlineEdit = forwardRef<HTMLInputElement, InlineEditProps>(
 
     return isEditing ? (
       <div
-        className={cx(container, inline({ layout }))}
+        {...rest}
+        className={cx(container, inline({ layout }), className)}
         data-test-id={testId}
         {...focusWithinProps}
       >
@@ -159,7 +162,12 @@ const InlineEdit = forwardRef<HTMLInputElement, InlineEditProps>(
         </ButtonGroup>
       </div>
     ) : (
-      <div className={cx(!hideEdit && container)} data-test-id={testId} {...focusWithinProps}>
+      <div
+        {...rest}
+        className={cx(!hideEdit && container, className)}
+        data-test-id={testId}
+        {...focusWithinProps}
+      >
         {renderReadContent}
       </div>
     );
