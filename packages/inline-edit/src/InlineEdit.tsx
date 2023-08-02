@@ -1,12 +1,6 @@
 import type { InlineVariants } from './styles/InlineEdit.css';
 import type { TextAreaProps, TextFieldProps } from '@launchpad-ui/form';
-import type {
-  ComponentProps,
-  Dispatch,
-  KeyboardEventHandler,
-  ReactElement,
-  SetStateAction,
-} from 'react';
+import type { ComponentProps, KeyboardEventHandler, ReactElement } from 'react';
 
 import { ButtonGroup, IconButton } from '@launchpad-ui/button';
 import { TextField } from '@launchpad-ui/form';
@@ -24,7 +18,7 @@ type InlineEditProps = ComponentProps<'div'> &
   InlineVariants &
   Pick<ComponentProps<'input'>, 'defaultValue'> & {
     'data-test-id'?: string;
-    onConfirm: Dispatch<SetStateAction<string>>;
+    onConfirm: (value: string) => void;
     hideEdit?: boolean;
     renderInput?: ReactElement<TextFieldProps | TextAreaProps>;
     isEditing?: boolean;
