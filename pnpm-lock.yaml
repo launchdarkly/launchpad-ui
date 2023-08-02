@@ -1159,6 +1159,9 @@ importers:
       '@launchpad-ui/popover':
         specifier: workspace:~
         version: link:../popover
+      '@launchpad-ui/primitives':
+        specifier: workspace:~
+        version: link:../primitives
       '@launchpad-ui/tokens':
         specifier: workspace:~
         version: link:../tokens
@@ -1189,9 +1192,6 @@ importers:
       '@react-aria/menu':
         specifier: 3.10.0
         version: 3.10.0(react-dom@18.2.0)(react@18.2.0)
-      '@react-aria/overlays':
-        specifier: 3.15.0
-        version: 3.15.0(react-dom@18.2.0)(react@18.2.0)
       '@react-aria/select':
         specifier: 3.11.0
         version: 3.11.0(react-dom@18.2.0)(react@18.2.0)
@@ -1225,9 +1225,6 @@ importers:
       '@react-stately/menu':
         specifier: 3.5.2
         version: 3.5.2(react@18.2.0)
-      '@react-stately/overlays':
-        specifier: 3.6.0
-        version: 3.6.0(react@18.2.0)
       '@react-stately/select':
         specifier: 3.5.1
         version: 3.5.1(react@18.2.0)
@@ -1243,9 +1240,6 @@ importers:
       '@react-types/combobox':
         specifier: 3.6.2
         version: 3.6.2(react@18.2.0)
-      '@react-types/overlays':
-        specifier: 3.8.0
-        version: 3.8.0(react@18.2.0)
       '@react-types/select':
         specifier: 3.8.1
         version: 3.8.1(react@18.2.0)

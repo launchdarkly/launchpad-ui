@@ -2,6 +2,7 @@ import type { MultiSelectTriggerProps } from './MultiSelectTrigger';
 import type { SharedSelectProps } from '../types';
 import type { MultipleSelection } from '@react-types/shared';
 
+import { Popover } from '@launchpad-ui/primitives';
 import { useButton } from '@react-aria/button';
 import { useFocusRing } from '@react-aria/focus';
 import { mergeProps } from '@react-aria/utils';
@@ -9,7 +10,6 @@ import { VisuallyHidden } from '@react-aria/visually-hidden';
 import { useRef } from 'react';
 
 import { SelectListBox } from '../SelectListBox';
-import { SelectPopover } from '../SelectPopover';
 import { useSelect } from '../useSelect';
 
 import { MultiSelectMenuHeader } from './MultiSelectMenuHeader';
@@ -80,7 +80,7 @@ const MultiSelect = <T extends object>(props: MultiSelectProps<T>) => {
       {renderedTrigger}
 
       {state.isOpen && (
-        <SelectPopover state={state} popoverRef={popoverRef} triggerRef={triggerRef}>
+        <Popover state={state} popoverRef={popoverRef} triggerRef={triggerRef}>
           <MultiSelectMenuHeader
             isSelectableAll={isSelectableAll}
             isClearable={isClearable}
@@ -95,7 +95,7 @@ const MultiSelect = <T extends object>(props: MultiSelectProps<T>) => {
             hasFilter={props.hasFilter}
             state={state}
           />
-        </SelectPopover>
+        </Popover>
       )}
     </div>
   );
