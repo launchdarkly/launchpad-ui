@@ -1,9 +1,12 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 import type { StoryObj } from '@storybook/react';
 
-import { Primitives } from '../src';
+import { useOverlayTriggerState } from '@react-stately/overlays';
+import { useRef } from 'react';
+
+import { Popover as PopoverPrimitive } from '../src';
 
 export default {
-  component: Primitives,
   title: 'Components/Primitives',
   description: 'Elements used as the foundation of other components.',
   parameters: {
@@ -13,11 +16,19 @@ export default {
   },
 };
 
-type Story = StoryObj<typeof Primitives>;
+type Story = StoryObj;
 
-export const Example: Story = {
-  args: {
-    children: 'A lovely Primitives component.',
-    // arguments for your story
+export const Popover: Story = {
+  render: (args) => {
+    const triggerRef = useRef<HTMLButtonElement>(null);
+    const state = useOverlayTriggerState({});
+    return (
+      <>
+        <button ref={triggerRef}>trigger</button>
+        <PopoverPrimitive state={state} triggerRef={triggerRef} {...args}>
+          <span>Hi there!</span>
+        </PopoverPrimitive>
+      </>
+    );
   },
 };
