@@ -4,6 +4,7 @@ import path from 'path';
 
 import { vanillaExtractPlugin } from '@vanilla-extract/vite-plugin';
 import react from '@vitejs/plugin-react-swc';
+import { PluginPure } from 'rollup-plugin-pure';
 import { defineConfig } from 'vite';
 import istanbul from 'vite-plugin-istanbul';
 
@@ -19,11 +20,28 @@ Object.keys(paths).forEach((key) => {
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const packageJSON = require(path.resolve('./package.json'));
 
+// https://github.com/babel/babel/blob/main/packages/babel-plugin-transform-react-pure-annotations/src/index.ts
+const PURE_CALLS = [
+  'cloneElement',
+  'createContext',
+  'createElement',
+  'createFactory',
+  'createRef',
+  'forwardRef',
+  'isValidElement',
+  'memo',
+  'lazy',
+];
+
 export default defineConfig({
   plugins: [
     react(),
     vanillaExtractPlugin(),
     cssImport(),
+    PluginPure({
+      functions: PURE_CALLS,
+      sourcemap: true,
+    }),
     ...(process.env.CYPRESS ? [istanbul({ cypress: true })] : []),
   ],
   resolve: {
