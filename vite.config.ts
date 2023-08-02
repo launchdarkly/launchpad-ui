@@ -41,6 +41,7 @@ export default defineConfig({
     PluginPure({
       functions: PURE_CALLS,
       sourcemap: true,
+      exclude: [/node_modules/],
     }),
     ...(process.env.CYPRESS ? [istanbul({ cypress: true })] : []),
   ],
