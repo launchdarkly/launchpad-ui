@@ -1,5 +1,11 @@
 # @launchpad-ui/inline-edit
 
+## 0.1.1
+
+### Patch Changes
+
+- [#946](https://github.com/launchdarkly/launchpad-ui/pull/946) [`f6ea1287`](https://github.com/launchdarkly/launchpad-ui/commit/f6ea12877132ec0a3a0d466326df77cf7d367cda) Thanks [@Niznikr](https://github.com/Niznikr)! - [InlineEdit] Forward ref and spread additional props
+
 ## 0.1.0
 
 ### Minor Changes

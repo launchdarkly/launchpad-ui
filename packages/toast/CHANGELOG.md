@@ -1,5 +1,11 @@
 # @launchpad-ui/toast
 
+## 0.2.55
+
+### Patch Changes
+
+- [#939](https://github.com/launchdarkly/launchpad-ui/pull/939) [`9bbdd9e2`](https://github.com/launchdarkly/launchpad-ui/commit/9bbdd9e20bcbd5af8ab60ab3c03869c8665a8962) Thanks [@renovate](https://github.com/apps/renovate)! - Update dependencies
+
 ## 0.2.54
 
 ### Patch Changes
