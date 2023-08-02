@@ -7,7 +7,7 @@ import { it, expect, describe, vi } from 'vitest';
 import { render, screen, waitFor, userEvent } from '../../../test/utils';
 import { InlineEdit } from '../src';
 
-const InlineEditComponent = ({ ...props }: Partial<InlineEditProps>) => {
+const InlineEditComponent = ({ ...props }: Omit<Partial<InlineEditProps>, 'ref'>) => {
   const [editValue, setEditValue] = useState('');
 
   return (
