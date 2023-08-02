@@ -116,7 +116,7 @@ export const InForm: Story = {
 };
 
 export const Controlled: Story = {
-  render: (args) => {
+  render: () => {
     const [editValue, setEditValue] = useState('edit me');
     const [isEditing, setEditing] = useState(true);
 
@@ -126,7 +126,6 @@ export const Controlled: Story = {
         isEditing={isEditing}
         onCancel={() => setEditing(false)}
         onEdit={() => setEditing(true)}
-        {...args}
         onConfirm={(value) => {
           setEditValue(value);
           setEditing(false);
