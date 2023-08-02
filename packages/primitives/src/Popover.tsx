@@ -3,31 +3,25 @@ import type { OverlayTriggerState } from '@react-stately/overlays';
 import type { ReactNode, RefObject } from 'react';
 
 import { usePopover, DismissButton, Overlay } from '@react-aria/overlays';
-import { useObjectRef } from '@react-aria/utils';
 import { cx } from 'classix';
 import { useMemo } from 'react';
 
 import { popover } from './styles/Primitives.css';
 
-type PopoverProps = Omit<AriaPopoverProps, 'popoverRef'> & {
+type PopoverProps = AriaPopoverProps & {
   children: ReactNode;
   state: OverlayTriggerState;
   className?: string;
-  popoverRef?: RefObject<HTMLDivElement>;
 };
 
 const Popover = (props: PopoverProps) => {
-  const popoverRef = useObjectRef(props.popoverRef);
   const { state, children, className, isNonModal = true, triggerRef, offset = 8 } = props;
 
-  const {
-    popoverProps: { style: popoverStyle, ...popoverPropsRest },
-  } = usePopover(
+  const { popoverProps } = usePopover(
     {
       ...props,
       isNonModal: true,
       offset,
-      popoverRef,
     },
     state
   );
@@ -41,9 +35,9 @@ const Popover = (props: PopoverProps) => {
   return (
     <Overlay>
       <div
-        {...popoverPropsRest}
-        style={{ ...popoverStyle, width }}
-        ref={popoverRef}
+        {...popoverProps}
+        style={{ ...popoverProps.style, width }}
+        ref={props.popoverRef as RefObject<HTMLDivElement>}
         className={cx(popover, className)}
       >
         {!isNonModal && <DismissButton onDismiss={state.close} />}
