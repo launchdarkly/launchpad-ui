@@ -1,6 +1,6 @@
 {
   "name": "@launchpad-ui/overlay",
-  "version": "0.3.28",
+  "version": "0.3.29",
   "status": "beta",
   "publishConfig": {
     "access": "public"
