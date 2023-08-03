@@ -25,36 +25,35 @@ export const Simple: Story = {
   },
 };
 
-// export const Simple = Template.bind({});
-// Simple.args = {
-//   ...commonProps,
-// };
+export const WithImage: Story = {
+  args: {
+    ...commonProps,
+    imgSrc: 'img/swap-me.svg',
+  },
+};
 
-// export const WithImage = Template.bind({});
-// WithImage.args = {
-//   ...commonProps,
-//   imgSrc: 'img/swap-me.svg',
-// };
+export const WithSubtext: Story = {
+  args: {
+    ...commonProps,
+    subText:
+      'Provide a description for this feature that does not exceed the height of the adjacent graphic to maintain equal button heights.',
+  },
+};
 
-// export const WithSubtext = Template.bind({});
-// WithSubtext.args = {
-//   ...commonProps,
-//   subText:
-//     'Provide a description for this feature that does not exceed the height of the adjacent graphic to maintain equal button heights.',
-// };
+export const Selected: Story = {
+  args: {
+    ...commonProps,
+    subText:
+      'Provide a description for this feature that does not exceed the height of the adjacent graphic to maintain equal button heights.',
+    checked: true,
+  },
+};
 
-// export const Selected = Template.bind({});
-// Selected.args = {
-//   ...commonProps,
-//   subText:
-//     'Provide a description for this feature that does not exceed the height of the adjacent graphic to maintain equal button heights.',
-//   checked: true,
-// };
-
-// export const Disabled = Template.bind({});
-// Disabled.args = {
-//   ...commonProps,
-//   subText:
-//     'Provide a description for this feature that does not exceed the height of the adjacent graphic to maintain equal button heights.',
-//   disabled: true,
-// };
+export const Disabled: Story = {
+  args: {
+    ...commonProps,
+    subText:
+      'Provide a description for this feature that does not exceed the height of the adjacent graphic to maintain equal button heights.',
+    disabled: true,
+  },
+};
