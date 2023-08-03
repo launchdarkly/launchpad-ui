@@ -865,9 +865,6 @@ importers:
         specifier: ^6.0.0
         version: 6.0.0
     devDependencies:
-      '@types/marked':
-        specifier: ^5.0.0
-        version: 5.0.0
       html-react-parser:
         specifier: 4.2.0
         version: 4.2.0(react@18.2.0)
@@ -8955,10 +8952,6 @@ packages:
 
   /@types/lodash@4.14.195:
     resolution: {integrity: sha512-Hwx9EUgdwf2GLarOjQp5ZH8ZmblzcbTBC2wtQWNKARBSxM9ezRIAUpeDTgoQRAFB0+8CNWXVA9+MaSOzOF3nPg==}
-    dev: true
-
-  /@types/marked@5.0.0:
-    resolution: {integrity: sha512-YcZe50jhltsCq7rc9MNZC/4QB/OnA2Pd6hrOSTOFajtabN+38slqgDDCeE/0F83SjkKBQcsZUj7VLWR0H5cKRA==}
     dev: true
 
   /@types/mdast@3.0.11:
