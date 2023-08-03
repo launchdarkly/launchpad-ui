@@ -862,8 +862,8 @@ importers:
         specifier: ^1.8.0
         version: 1.8.0
       marked:
-        specifier: ^5.1.0
-        version: 5.1.0
+        specifier: ^6.0.0
+        version: 6.0.0
     devDependencies:
       '@types/marked':
         specifier: ^5.0.0
@@ -15475,9 +15475,9 @@ packages:
       react: 18.2.0
     dev: true
 
-  /marked@5.1.0:
-    resolution: {integrity: sha512-z3/nBe7aTI8JDszlYLk7dDVNpngjw0o1ZJtrA9kIfkkHcIF+xH7mO23aISl4WxP83elU+MFROgahqdpd05lMEQ==}
-    engines: {node: '>= 18'}
+  /marked@6.0.0:
+    resolution: {integrity: sha512-7E3m/xIlymrFL5gWswIT4CheIE3fDeh51NV09M4x8iOc7NDYlyERcQMLAIHcSlrvwliwbPQ4OGD+MpPSYiQcqw==}
+    engines: {node: '>= 16'}
     hasBin: true
     dev: false
 
