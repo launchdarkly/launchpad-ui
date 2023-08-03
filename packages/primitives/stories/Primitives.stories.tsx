@@ -4,7 +4,7 @@ import type { StoryObj } from '@storybook/react';
 import { useOverlayTriggerState } from '@react-stately/overlays';
 import { useRef } from 'react';
 
-import { Popover as PopoverPrimitive } from '../src';
+import { Popover as PopoverPrimitive, ListBox as ListBoxPrimitive, Section, Item } from '../src';
 
 export default {
   title: 'Components/Primitives',
@@ -20,15 +20,40 @@ type Story = StoryObj;
 
 export const Popover: Story = {
   render: (args) => {
+    const popoverRef = useRef<HTMLDivElement>(null);
     const triggerRef = useRef<HTMLButtonElement>(null);
     const state = useOverlayTriggerState({});
     return (
       <>
         <button ref={triggerRef}>trigger</button>
-        <PopoverPrimitive state={state} triggerRef={triggerRef} {...args}>
+        <PopoverPrimitive state={state} popoverRef={popoverRef} triggerRef={triggerRef} {...args}>
           <span>Hi there!</span>
         </PopoverPrimitive>
       </>
+    );
+  },
+};
+
+export const ListBox: Story = {
+  render: (args) => {
+    return (
+      <ListBoxPrimitive {...args} aria-label="listbox">
+        <Section title="Veggies">
+          <Item key="lettuce">Lettuce</Item>
+          <Item key="tomato">Tomato</Item>
+          <Item key="onion">Onion</Item>
+        </Section>
+        <Section title="Protein">
+          <Item key="ham">Ham</Item>
+          <Item key="tuna">Tuna</Item>
+          <Item key="tofu">Tofu</Item>
+        </Section>
+        <Section title="Condiments">
+          <Item key="mayo">Mayonaise</Item>
+          <Item key="mustard">Mustard</Item>
+          <Item key="ranch">Ranch</Item>
+        </Section>
+      </ListBoxPrimitive>
     );
   },
 };

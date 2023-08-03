@@ -6,7 +6,7 @@ import { usePopover, DismissButton, Overlay } from '@react-aria/overlays';
 import { cx } from 'classix';
 import { useMemo } from 'react';
 
-import { popover } from './styles/Primitives.css';
+import { popover, underlay } from './styles/Primitives.css';
 
 type PopoverProps = AriaPopoverProps & {
   children: ReactNode;
@@ -15,13 +15,12 @@ type PopoverProps = AriaPopoverProps & {
 };
 
 const Popover = (props: PopoverProps) => {
-  const { state, children, className, isNonModal = true, triggerRef, offset = 8 } = props;
+  const { state, children, className, triggerRef } = props;
 
-  const { popoverProps } = usePopover(
+  const { popoverProps, underlayProps } = usePopover(
     {
       ...props,
-      isNonModal: true,
-      offset,
+      offset: props.offset ?? 8,
     },
     state
   );
@@ -34,13 +33,14 @@ const Popover = (props: PopoverProps) => {
 
   return (
     <Overlay>
+      {!props.isNonModal && <div {...underlayProps} className={underlay} />}
       <div
         {...popoverProps}
         style={{ ...popoverProps.style, width }}
         ref={props.popoverRef as RefObject<HTMLDivElement>}
         className={cx(popover, className)}
       >
-        {!isNonModal && <DismissButton onDismiss={state.close} />}
+        {!props.isNonModal && <DismissButton onDismiss={state.close} />}
         {children}
         <DismissButton onDismiss={state.close} />
       </div>
