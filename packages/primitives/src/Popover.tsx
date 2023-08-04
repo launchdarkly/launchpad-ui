@@ -1,10 +1,9 @@
 import type { AriaPopoverProps } from '@react-aria/overlays';
 import type { OverlayTriggerState } from '@react-stately/overlays';
-import type { ReactNode, RefObject } from 'react';
+import type { CSSProperties, ReactNode, RefObject } from 'react';
 
 import { usePopover, DismissButton, Overlay } from '@react-aria/overlays';
 import { cx } from 'classix';
-import { useMemo } from 'react';
 
 import { popover, underlay } from './styles/Primitives.css';
 
@@ -12,10 +11,11 @@ type PopoverProps = AriaPopoverProps & {
   children: ReactNode;
   state: OverlayTriggerState;
   className?: string;
+  style?: CSSProperties;
 };
 
 const Popover = (props: PopoverProps) => {
-  const { state, children, className, triggerRef } = props;
+  const { state, children, className, style } = props;
 
   const { popoverProps, underlayProps } = usePopover(
     {
@@ -25,18 +25,12 @@ const Popover = (props: PopoverProps) => {
     state
   );
 
-  const width = useMemo(() => {
-    const clientWidth = triggerRef.current?.clientWidth || 0;
-    const minWidth = 400;
-    return clientWidth < minWidth ? minWidth : clientWidth;
-  }, [triggerRef]);
-
   return (
     <Overlay>
       {!props.isNonModal && <div {...underlayProps} className={underlay} />}
       <div
         {...popoverProps}
-        style={{ ...popoverProps.style, width }}
+        style={{ ...popoverProps.style, ...style }}
         ref={props.popoverRef as RefObject<HTMLDivElement>}
         className={cx(popover, className)}
       >

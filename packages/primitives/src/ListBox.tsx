@@ -11,11 +11,16 @@ import { forwardRef } from 'react';
 
 import { list, listSection, sectionHeader, sectionOptions, option } from './styles/Primitives.css';
 
-type ListBoxProps<T extends object> = AriaListBoxProps<T>;
+type ListBoxProps<T extends object> = Partial<AriaListBoxProps<T>> & {
+  state?: ListState<T>;
+  className?: string;
+};
 
 const ListBox = forwardRef(
   <T extends object>(props: ListBoxProps<T>, ref: ForwardedRef<HTMLUListElement>) => {
-    const state = useListState(props);
+    const { state: stateProp, className } = props;
+    const innerState = useListState(props);
+    const state = stateProp || innerState;
     const listBoxRef = useObjectRef(ref);
 
     const { listBoxProps, labelProps } = useListBox(props, state, listBoxRef);
@@ -23,7 +28,7 @@ const ListBox = forwardRef(
     return (
       <>
         {props.label && <div {...labelProps}>{props.label}</div>}
-        <ul {...listBoxProps} ref={listBoxRef} className={list}>
+        <ul {...listBoxProps} ref={listBoxRef} className={cx(list, className)}>
           {[...state.collection].map((item) =>
             item.type === 'section' ? (
               <ListBoxSection key={item.key} section={item} state={state} />
@@ -95,6 +100,9 @@ const Option = <T extends object>({ item, state }: OptionProps<T>) => {
         })
       )}
     >
+      {state.selectionManager.selectionMode === 'multiple' && (
+        <input type="checkbox" disabled={isDisabled} checked={isSelected} readOnly />
+      )}
       {item.rendered}
     </li>
   );

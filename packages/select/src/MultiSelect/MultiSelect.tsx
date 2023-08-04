@@ -5,9 +5,9 @@ import type { MultipleSelection } from '@react-types/shared';
 import { Popover } from '@launchpad-ui/primitives';
 import { useButton } from '@react-aria/button';
 import { useFocusRing } from '@react-aria/focus';
-import { mergeProps } from '@react-aria/utils';
+import { mergeProps, useResizeObserver } from '@react-aria/utils';
 import { VisuallyHidden } from '@react-aria/visually-hidden';
-import { useRef } from 'react';
+import { useCallback, useRef, useState } from 'react';
 
 import { SelectListBox } from '../SelectListBox';
 import { useSelect } from '../useSelect';
@@ -40,7 +40,7 @@ const MultiSelect = <T extends object>(props: MultiSelectProps<T>) => {
   const filterInputRef = useRef<HTMLInputElement>(null);
   const triggerRef = useRef<HTMLButtonElement>(null);
   const popoverRef = useRef<HTMLDivElement>(null);
-  const listBoxRef = useRef<HTMLDivElement>(null);
+  const listBoxRef = useRef<HTMLUListElement>(null);
 
   const state = useMultiSelectState(props);
 
@@ -71,6 +71,18 @@ const MultiSelect = <T extends object>(props: MultiSelectProps<T>) => {
     placeholder,
   });
 
+  const [triggerWidth, setTriggerWidth] = useState<number>();
+  const onResize = useCallback(() => {
+    const offsetWidth = triggerRef.current?.offsetWidth || 0;
+    const minWidth = 400;
+    setTriggerWidth(offsetWidth < minWidth ? minWidth : offsetWidth);
+  }, [triggerRef]);
+
+  useResizeObserver({
+    ref: triggerRef,
+    onResize: onResize,
+  });
+
   return (
     <div data-test-id={testId}>
       <VisuallyHidden>
@@ -80,7 +92,12 @@ const MultiSelect = <T extends object>(props: MultiSelectProps<T>) => {
       {renderedTrigger}
 
       {state.isOpen && (
-        <Popover state={state} popoverRef={popoverRef} triggerRef={triggerRef}>
+        <Popover
+          state={state}
+          popoverRef={popoverRef}
+          triggerRef={triggerRef}
+          style={{ width: triggerWidth }}
+        >
           <MultiSelectMenuHeader
             isSelectableAll={isSelectableAll}
             isClearable={isClearable}

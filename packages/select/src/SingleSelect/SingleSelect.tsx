@@ -5,9 +5,9 @@ import type { SharedSelectProps } from '../types';
 import { Popover } from '@launchpad-ui/primitives';
 import { useButton } from '@react-aria/button';
 import { useFocusRing } from '@react-aria/focus';
-import { mergeProps } from '@react-aria/utils';
+import { mergeProps, useResizeObserver } from '@react-aria/utils';
 import { VisuallyHidden } from '@react-aria/visually-hidden';
-import { useRef } from 'react';
+import { useCallback, useRef, useState } from 'react';
 
 import { SelectListBox } from '../SelectListBox';
 
@@ -33,7 +33,7 @@ const SingleSelect = <T extends object>(props: SingleSelectProps<T>) => {
   const filterInputRef = useRef<HTMLInputElement>(null);
   const triggerRef = useRef<HTMLButtonElement>(null);
   const popoverRef = useRef<HTMLDivElement>(null);
-  const listBoxRef = useRef<HTMLDivElement>(null);
+  const listBoxRef = useRef<HTMLUListElement>(null);
 
   const state = useSingleSelectState(props);
 
@@ -62,6 +62,18 @@ const SingleSelect = <T extends object>(props: SingleSelectProps<T>) => {
     placeholder,
   });
 
+  const [triggerWidth, setTriggerWidth] = useState<number>();
+  const onResize = useCallback(() => {
+    const offsetWidth = triggerRef.current?.offsetWidth || 0;
+    const minWidth = 400;
+    setTriggerWidth(offsetWidth < minWidth ? minWidth : offsetWidth);
+  }, [triggerRef]);
+
+  useResizeObserver({
+    ref: triggerRef,
+    onResize: onResize,
+  });
+
   return (
     <div data-test-id={testId}>
       <VisuallyHidden>
@@ -71,7 +83,12 @@ const SingleSelect = <T extends object>(props: SingleSelectProps<T>) => {
       {renderedTrigger}
 
       {state.isOpen && (
-        <Popover state={state} popoverRef={popoverRef} triggerRef={triggerRef}>
+        <Popover
+          state={state}
+          popoverRef={popoverRef}
+          triggerRef={triggerRef}
+          style={{ width: triggerWidth }}
+        >
           <SelectListBox
             {...menuProps}
             listBoxRef={listBoxRef}
