@@ -1,4 +1,4 @@
-import type { StoryObj } from '@storybook/react';
+import type { StoryFn, StoryObj } from '@storybook/react';
 
 import { RadioCard } from '../src/RadioCard';
 
@@ -6,6 +6,13 @@ export default {
   component: RadioCard,
   title: 'Components/Card/RadioCard',
   description: 'A radio button with a label and optional image and subtext.',
+  decorators: [
+    (Story: StoryFn) => (
+      <div style={{ display: 'flex' }}>
+        <Story />
+      </div>
+    ),
+  ],
   parameters: {
     status: {
       type: import.meta.env.STORYBOOK_PACKAGE_STATUS__RADIOCARD,

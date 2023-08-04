@@ -7,6 +7,7 @@ import styles from './styles/Card.module.css';
 
 export type RadioCardProps = RadioProps & {
   label: string | JSX.Element;
+  id: string;
   subText?: ReactNode;
   imgSrc?: string;
   altText?: string;
@@ -29,15 +30,16 @@ export const RadioCard = ({
   <Radio
     id={id}
     className={styles.hideRadio}
-    labelClassName={cx(styles.featureCard, disabled ? styles.disabled : '')}
+    labelClassName={cx(styles.featureCard, disabled ? styles.disabledCard : '')}
     checked={checked}
+    disabled={disabled}
     {...rest}
     value={value}
   >
-    <div className={styles.labelContainer}>
+    <label htmlFor={id} className={styles.labelContainer}>
       {imgSrc && <img src={imgSrc} alt={altText} />}
       {label}
-    </div>
-    <div className={cx(styles.subtext, disabled ? styles.disabled : '')}>{subText}</div>
+    </label>
+    <div className={cx(styles.subtext, disabled ? styles.hide : '')}>{subText}</div>
   </Radio>
 );
