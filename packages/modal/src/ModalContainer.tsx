@@ -9,7 +9,7 @@ import { cx } from 'classix';
 import { LazyMotion, m } from 'framer-motion';
 import { useState, useEffect, useRef } from 'react';
 
-import { MODAL_LABELLED_BY } from './constants';
+import { MODAL_DESCRIBED_BY, MODAL_LABELLED_BY } from './constants';
 import styles from './styles/Modal.module.css';
 import { useMediaQuery } from './utils';
 
@@ -147,7 +147,7 @@ const ModalContainer = ({
               variants={isDesktopViewport ? transitions.desktopPop : transitions.mobileSlideUp}
               role="dialog"
               aria-labelledby={MODAL_LABELLED_BY}
-              aria-describedby={MODAL_LABELLED_BY}
+              aria-describedby={MODAL_DESCRIBED_BY}
               aria-modal
               data-test-id={testId}
               className={cx(styles.modal, styles[size], className)}

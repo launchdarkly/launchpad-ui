@@ -1,6 +1,6 @@
 {
   "name": "@launchpad-ui/snackbar",
-  "version": "0.3.57",
+  "version": "0.3.59",
   "status": "alpha",
   "publishConfig": {
     "access": "public"
@@ -36,7 +36,7 @@
     "@launchpad-ui/icons": "workspace:~",
     "@launchpad-ui/tokens": "workspace:~",
     "classix": "2.1.17",
-    "framer-motion": "10.13.1"
+    "framer-motion": "10.15.0"
   },
   "peerDependencies": {
     "react": "18.2.0",
