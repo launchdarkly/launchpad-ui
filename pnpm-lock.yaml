@@ -1099,9 +1099,6 @@ importers:
       '@react-aria/utils':
         specifier: 3.18.0
         version: 3.18.0(react@18.2.0)
-      '@react-stately/collections':
-        specifier: 3.9.0
-        version: 3.9.0(react@18.2.0)
       '@react-stately/list':
         specifier: 3.9.0
         version: 3.9.0(react@18.2.0)
@@ -1121,6 +1118,9 @@ importers:
         specifier: 2.1.17
         version: 2.1.17
     devDependencies:
+      '@react-stately/collections':
+        specifier: 3.9.0
+        version: 3.9.0(react@18.2.0)
       react:
         specifier: 18.2.0
         version: 18.2.0
@@ -1210,12 +1210,6 @@ importers:
       '@react-aria/visually-hidden':
         specifier: 3.8.1
         version: 3.8.1(react@18.2.0)
-      '@react-stately/collections':
-        specifier: 3.9.0
-        version: 3.9.0(react@18.2.0)
-      '@react-stately/data':
-        specifier: 3.10.0
-        version: 3.10.0(react@18.2.0)
       '@react-stately/list':
         specifier: 3.9.0
         version: 3.9.0(react@18.2.0)
@@ -1244,6 +1238,9 @@ importers:
         specifier: 2.1.17
         version: 2.1.17
     devDependencies:
+      '@react-stately/collections':
+        specifier: 3.9.0
+        version: 3.9.0(react@18.2.0)
       react:
         specifier: 18.2.0
         version: 18.2.0

@@ -1,6 +1,7 @@
+import { Item } from '@react-stately/collections';
 import { it, expect, describe } from 'vitest';
 
-import { SelectItem, SingleSelect, SingleSelectTrigger } from '..';
+import { SingleSelect, SingleSelectTrigger } from '..';
 import { render, screen, userEvent } from '../../../../test/utils';
 
 import { FRUIT } from './constants';
@@ -11,7 +12,7 @@ describe('Select', () => {
     it('renders', () => {
       render(
         <SingleSelect label="Fruit" items={FRUIT}>
-          {(item) => <SelectItem>{item.name}</SelectItem>}
+          {(item) => <Item>{item.name}</Item>}
         </SingleSelect>
       );
       expect(screen.getByTestId('select')).toBeVisible();
@@ -21,7 +22,7 @@ describe('Select', () => {
       const user = userEvent.setup();
       render(
         <SingleSelect label="Fruit" items={FRUIT}>
-          {(item) => <SelectItem>{item.name}</SelectItem>}
+          {(item) => <Item>{item.name}</Item>}
         </SingleSelect>
       );
       await user.click(screen.getByTestId('select-trigger'));
@@ -34,7 +35,7 @@ describe('Select', () => {
 
       render(
         <SingleSelect label="Fruit" items={FRUIT}>
-          {(item) => <SelectItem>{item.name}</SelectItem>}
+          {(item) => <Item>{item.name}</Item>}
         </SingleSelect>
       );
 
@@ -57,7 +58,7 @@ describe('Select', () => {
           )}
           items={FRUIT}
         >
-          {(item) => <SelectItem>{item.name}</SelectItem>}
+          {(item) => <Item>{item.name}</Item>}
         </SingleSelect>
       );
 
@@ -73,7 +74,7 @@ describe('Select', () => {
     it('renders', () => {
       render(
         <SingleSelect label="Fruit" trigger={CustomSingleSelectTrigger} items={FRUIT}>
-          {(item) => <SelectItem>{item.name}</SelectItem>}
+          {(item) => <Item>{item.name}</Item>}
         </SingleSelect>
       );
 
@@ -85,35 +86,13 @@ describe('Select', () => {
 
       render(
         <SingleSelect label="Fruit" trigger={CustomSingleSelectTrigger} items={FRUIT}>
-          {(item) => <SelectItem>{item.name}</SelectItem>}
+          {(item) => <Item>{item.name}</Item>}
         </SingleSelect>
       );
 
       await user.click(screen.getByTestId('custom-trigger'));
       await user.click(screen.getAllByRole('option')[0]);
       expect(screen.getByTestId('custom-trigger')).toHaveTextContent(FRUIT[0].name);
-    });
-  });
-
-  describe('with select item rendered as something other than li', () => {
-    it('renders', async () => {
-      const user = userEvent.setup();
-
-      render(
-        <SingleSelect label="Fruit" items={FRUIT}>
-          {(item) => (
-            <SelectItem as="a" href="/">
-              {item.name}
-            </SelectItem>
-          )}
-        </SingleSelect>
-      );
-
-      await user.click(screen.getByTestId('select-trigger'));
-
-      screen.getAllByRole('option').forEach((option) => {
-        expect(option).toHaveAttribute('href');
-      });
     });
   });
 });

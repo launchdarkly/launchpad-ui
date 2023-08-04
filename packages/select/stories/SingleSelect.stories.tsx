@@ -2,9 +2,10 @@ import type { StoryObj } from '@storybook/react';
 import type { Key } from 'react';
 
 import { Chip } from '@launchpad-ui/chip';
+import { Item, Section } from '@react-stately/collections';
 import { useMemo, useState } from 'react';
 
-import { SingleSelect, SingleSelectTrigger, SelectItem, SelectSection } from '../src';
+import { SingleSelect, SingleSelectTrigger } from '../src';
 import { FRUIT, SECTIONED_ITEMS } from '../src/__tests__/constants';
 import { CustomSingleSelectTrigger } from '../src/__tests__/examples';
 
@@ -31,7 +32,7 @@ export const Basic: Story = {
           defaultItems={FRUIT}
           onSelectionChange={(key) => console.log(key)}
         >
-          {(item) => <SelectItem textValue={item.name}>{item.name}</SelectItem>}
+          {(item) => <Item textValue={item.name}>{item.name}</Item>}
         </SingleSelect>
       );
     };
@@ -52,7 +53,7 @@ export const WithUncontrolledSelectedKey: Story = {
           items={FRUIT}
           onSelectionChange={(key) => setSelectedKey(key)}
         >
-          {(item) => <SelectItem textValue={item.name}>{item.name}</SelectItem>}
+          {(item) => <Item textValue={item.name}>{item.name}</Item>}
         </SingleSelect>
       );
     };
@@ -67,7 +68,7 @@ export const WithControlledSelectedKey: Story = {
     const Component = () => {
       return (
         <SingleSelect label="Fruit" defaultSelectedKey={FRUIT[2].id} items={FRUIT}>
-          {(item) => <SelectItem textValue={item.name}>{item.name}</SelectItem>}
+          {(item) => <Item textValue={item.name}>{item.name}</Item>}
         </SingleSelect>
       );
     };
@@ -87,7 +88,7 @@ export const WithControlledFilterable: Story = {
           defaultItems={FRUIT}
           onSelectionChange={(key) => console.log(key)}
         >
-          {(item) => <SelectItem textValue={item.name}>{item.name}</SelectItem>}
+          {(item) => <Item textValue={item.name}>{item.name}</Item>}
         </SingleSelect>
       );
     };
@@ -116,7 +117,7 @@ export const WithUncontrolledFilterable: Story = {
           filterValue={filterValue}
           onSelectionChange={(key) => console.log(key)}
         >
-          {(item) => <SelectItem textValue={item.name}>{item.name}</SelectItem>}
+          {(item) => <Item textValue={item.name}>{item.name}</Item>}
         </SingleSelect>
       );
     };
@@ -145,9 +146,9 @@ export const WithCustomSelectedRender: Story = {
         )}
       >
         {(item) => (
-          <SelectItem textValue={item.name}>
+          <Item textValue={item.name}>
             {item.name} <Chip>ID: {item.id}</Chip>
-          </SelectItem>
+          </Item>
         )}
       </SingleSelect>
     );
@@ -164,7 +165,7 @@ export const WithCustomTrigger: Story = {
         onSelectionChange={(key) => console.log(key)}
         trigger={CustomSingleSelectTrigger}
       >
-        {(item) => <SelectItem textValue={item.name}>{item.name}</SelectItem>}
+        {(item) => <Item textValue={item.name}>{item.name}</Item>}
       </SingleSelect>
     );
   },
@@ -181,33 +182,13 @@ export const SingleSelectWithSections: Story = {
         onSelectionChange={(key) => console.log(key)}
       >
         {(section) => (
-          <SelectSection key={section.name} title={section.name} items={section.items}>
+          <Section key={section.name} title={section.name} items={section.items}>
             {(item) => (
-              <SelectItem textValue={item.name}>
+              <Item textValue={item.name}>
                 {item.name} <Chip>ID: {item.id}</Chip>
-              </SelectItem>
+              </Item>
             )}
-          </SelectSection>
-        )}
-      </SingleSelect>
-    );
-  },
-  parameters: { docs: { disable: false } },
-};
-
-export const WithSelectItemRenderedAs: Story = {
-  render: () => {
-    return (
-      <SingleSelect
-        label="Produce"
-        defaultItems={FRUIT}
-        hasFilter
-        onSelectionChange={(key) => console.log(key)}
-      >
-        {(item) => (
-          <SelectItem as="a" href="#" textValue={item.name}>
-            {item.name} <Chip>ID: {item.id}</Chip>
-          </SelectItem>
+          </Section>
         )}
       </SingleSelect>
     );
@@ -226,7 +207,7 @@ export const WithAllowsCustomValue: Story = {
           allowsCustomValue
           onSelectionChange={(key) => console.log(key)}
         >
-          {(item) => <SelectItem textValue={item.name}>{item.name}</SelectItem>}
+          {(item) => <Item textValue={item.name}>{item.name}</Item>}
         </SingleSelect>
       );
     };

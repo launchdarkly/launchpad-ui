@@ -1,4 +1,6 @@
-import { SelectItem, SingleSelect } from '../';
+import { Item } from '@react-stately/collections';
+
+import { SingleSelect } from '../';
 
 import { FRUIT } from './constants';
 
@@ -7,7 +9,7 @@ describe('Select', () => {
     beforeEach(() => {
       cy.mount(
         <SingleSelect label="Fruit" selectedKey={FRUIT[0].id} items={FRUIT}>
-          {(item) => <SelectItem>{item.name}</SelectItem>}
+          {(item) => <Item>{item.name}</Item>}
         </SingleSelect>
       );
     });

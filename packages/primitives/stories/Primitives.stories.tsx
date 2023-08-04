@@ -1,10 +1,11 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 import type { StoryObj } from '@storybook/react';
 
+import { Item, Section } from '@react-stately/collections';
 import { useOverlayTriggerState } from '@react-stately/overlays';
 import { useRef } from 'react';
 
-import { Popover as PopoverPrimitive, ListBox as ListBoxPrimitive, Section, Item } from '../src';
+import { Popover as PopoverPrimitive, ListBox as ListBoxPrimitive } from '../src';
 
 export default {
   title: 'Components/Primitives',

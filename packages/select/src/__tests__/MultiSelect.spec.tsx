@@ -1,6 +1,7 @@
+import { Item } from '@react-stately/collections';
 import { it, expect, describe } from 'vitest';
 
-import { MultiSelectTrigger, MultiSelect, SelectItem } from '../';
+import { MultiSelectTrigger, MultiSelect } from '../';
 import { render, screen, userEvent } from '../../../../test/utils';
 
 import { FRUIT } from './constants';
@@ -11,7 +12,7 @@ describe('Select', () => {
     it('renders', () => {
       render(
         <MultiSelect label="Fruit" items={FRUIT}>
-          {(item) => <SelectItem>{item.name}</SelectItem>}
+          {(item) => <Item>{item.name}</Item>}
         </MultiSelect>
       );
       expect(screen.getByTestId('select')).toBeVisible();
@@ -22,7 +23,7 @@ describe('Select', () => {
 
       render(
         <MultiSelect label="Fruit" items={FRUIT}>
-          {(item) => <SelectItem>{item.name}</SelectItem>}
+          {(item) => <Item>{item.name}</Item>}
         </MultiSelect>
       );
 
@@ -41,7 +42,7 @@ describe('Select', () => {
 
       render(
         <MultiSelect label="Fruit" isClearable items={FRUIT}>
-          {(item) => <SelectItem>{item.name}</SelectItem>}
+          {(item) => <Item>{item.name}</Item>}
         </MultiSelect>
       );
 
@@ -64,7 +65,7 @@ describe('Select', () => {
 
       render(
         <MultiSelect label="Fruit" isSelectableAll items={FRUIT}>
-          {(item) => <SelectItem>{item.name}</SelectItem>}
+          {(item) => <Item>{item.name}</Item>}
         </MultiSelect>
       );
 
@@ -91,7 +92,7 @@ describe('Select', () => {
           )}
           items={FRUIT}
         >
-          {(item) => <SelectItem>{item.name}</SelectItem>}
+          {(item) => <Item>{item.name}</Item>}
         </MultiSelect>
       );
 
@@ -108,7 +109,7 @@ describe('Select', () => {
     it('renders', () => {
       render(
         <MultiSelect label="Fruit" trigger={CustomMultiSelectTrigger} items={FRUIT}>
-          {(item) => <SelectItem>{item.name}</SelectItem>}
+          {(item) => <Item>{item.name}</Item>}
         </MultiSelect>
       );
 
@@ -120,7 +121,7 @@ describe('Select', () => {
 
       render(
         <MultiSelect label="Fruit" trigger={CustomMultiSelectTrigger} items={FRUIT}>
-          {(item) => <SelectItem>{item.name}</SelectItem>}
+          {(item) => <Item>{item.name}</Item>}
         </MultiSelect>
       );
 
@@ -137,7 +138,7 @@ describe('Select', () => {
 
       render(
         <MultiSelect label="Fruit" trigger={CustomMultiSelectTrigger} items={FRUIT}>
-          {(item) => <SelectItem>{item.name}</SelectItem>}
+          {(item) => <Item>{item.name}</Item>}
         </MultiSelect>
       );
 
