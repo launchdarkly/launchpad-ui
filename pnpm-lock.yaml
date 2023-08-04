@@ -551,9 +551,6 @@ importers:
       '@launchpad-ui/portal':
         specifier: workspace:~
         version: link:../portal
-      '@launchpad-ui/primitives':
-        specifier: workspace:~
-        version: link:../primitives
       '@launchpad-ui/progress':
         specifier: workspace:~
         version: link:../progress

@@ -24,7 +24,6 @@ export async function getComponents() {
     { to: 'components/modal', name: 'Modal' },
     { to: 'components/pagination', name: 'Pagination' },
     { to: 'components/popover', name: 'Popover' },
-    { to: 'components/primitives', name: 'Primitives' },
     { to: 'components/progress', name: 'Progress' },
     { to: 'components/progress-bubbles', name: 'ProgressBubbles' },
     { to: 'components/slider', name: 'Slider' },

@@ -61,7 +61,7 @@ describe('Primitives', () => {
   describe('Button', () => {
     it('renders', () => {
       cy.mount(<Button>Hi</Button>);
-      cy.getByRole('button').should('be.visible');
+      cy.contains('Hi').should('be.visible');
     });
 
     it('is accessible', () => {
