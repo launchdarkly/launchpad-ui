@@ -197,5 +197,5 @@ export { Stack } from '@launchpad-ui/stack';
 export { Inline } from '@launchpad-ui/inline';
 export { Column, Columns } from '@launchpad-ui/columns';
 export { InlineEdit } from '@launchpad-ui/inline-edit';
-export { Card } from '@launchpad-ui/card';
+export { RadioCard } from '@launchpad-ui/card';
 // plop end module exports
