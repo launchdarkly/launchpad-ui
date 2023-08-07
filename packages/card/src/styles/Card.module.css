@@ -75,7 +75,3 @@ input[type='radio']:focus + .featureCard {
   background: var(--color-bg-ui-secondary, #f8f8f8);
   height: 6rem;
 }
-
-.hide {
-  visibility: hidden;
-}

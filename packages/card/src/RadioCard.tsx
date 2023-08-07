@@ -40,6 +40,6 @@ export const RadioCard = ({
       {imgSrc && <img src={imgSrc} alt={altText} />}
       {label}
     </label>
-    <div className={cx(styles.subtext, disabled ? styles.hide : '')}>{subText}</div>
+    {!disabled && <div className={styles.subtext}>{subText}</div>}
   </Radio>
 );

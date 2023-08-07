@@ -10,7 +10,7 @@ describe('RadioCard', () => {
   });
 });
 
-it('removes subtext when disabled', async () => {
+it('hides subtext when disabled', async () => {
   render(<RadioCard label="label" id="label" value="label" subText="subtext" disabled />);
   expect(screen.queryByText('subtext')).not.toBeVisible();
 });
