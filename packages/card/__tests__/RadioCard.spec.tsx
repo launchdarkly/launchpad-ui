@@ -9,3 +9,8 @@ describe('RadioCard', () => {
     expect(screen.getByText('label')).toBeInTheDocument();
   });
 });
+
+it('removes subtext when disabled', async () => {
+  render(<RadioCard label="label" id="label" value="label" subText="subtext" disabled />);
+  expect(screen.queryByText('subtext')).not.toBeInTheDocument();
+});

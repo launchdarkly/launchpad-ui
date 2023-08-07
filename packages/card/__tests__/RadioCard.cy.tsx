@@ -3,7 +3,7 @@ import { RadioCard } from '../src';
 describe('RadioCard', () => {
   it('renders', () => {
     cy.mount(<RadioCard label="label" id="label" />);
-    cy.getByTestId('card').should('be.visible');
+    cy.getByTestId('label').should('be.visible');
   });
 
   it('is accessible', () => {
