@@ -1,6 +1,6 @@
 import type { ReactNode } from 'react';
 
-import { Radio, type RadioProps } from '@launchpad-ui/core';
+import { Radio, type RadioProps } from '@launchpad-ui/form';
 import { cx } from 'classix';
 
 import styles from './styles/Card.module.css';

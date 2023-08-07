@@ -1,5 +1,5 @@
-import { Card } from '@launchpad-ui/core';
+import { RadioCard } from '@launchpad-ui/core';
 
 export default function Index() {
-  return <Card>A lovely Card component.</Card>;
+  return <RadioCard>A lovely Card component.</RadioCard>;
 }
