@@ -394,6 +394,9 @@ importers:
 
   packages/card:
     dependencies:
+      '@launchpad-ui/form':
+        specifier: workspace:~
+        version: link:../form
       '@launchpad-ui/tokens':
         specifier: workspace:~
         version: link:../tokens
