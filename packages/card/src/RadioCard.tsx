@@ -1,5 +1,8 @@
 import type { ReactNode } from 'react';
 
+// eslint-disable-next-line import/order
+
+// import { Radio, type RadioProps } from '@launchpad-ui/form';
 import { Radio, type RadioProps } from '@launchpad-ui/form';
 import { cx } from 'classix';
 
@@ -33,6 +36,7 @@ export const RadioCard = ({
     labelClassName={cx(styles.featureCard, disabled ? styles.disabledCard : '')}
     checked={checked}
     disabled={disabled}
+    data-test-id="card"
     {...rest}
     value={value}
   >
@@ -40,6 +44,6 @@ export const RadioCard = ({
       {imgSrc && <img src={imgSrc} alt={altText} />}
       {label}
     </label>
-    {!disabled && <div className={styles.subtext}>{subText}</div>}
+    {!disabled && <div className={cx(styles.subtext, disabled ? styles.hide : '')}>{subText}</div>}
   </Radio>
 );
