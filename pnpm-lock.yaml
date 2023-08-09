@@ -107,9 +107,6 @@ importers:
       '@vanilla-extract/css':
         specifier: ^1.12.0
         version: 1.12.0
-      '@vanilla-extract/recipes':
-        specifier: ^0.5.0
-        version: 0.5.0(@vanilla-extract/css@1.12.0)
       '@vanilla-extract/vite-plugin':
         specifier: ^3.8.2
         version: 3.8.2(@types/node@18.17.0)(ts-node@10.9.1)(vite@4.4.9)
@@ -509,6 +506,9 @@ importers:
       '@launchpad-ui/counter':
         specifier: workspace:~
         version: link:../counter
+      '@launchpad-ui/data-table':
+        specifier: workspace:~
+        version: link:../data-table
       '@launchpad-ui/drawer':
         specifier: workspace:~
         version: link:../drawer
@@ -609,6 +609,49 @@ importers:
       '@launchpad-ui/tokens':
         specifier: workspace:~
         version: link:../tokens
+      classix:
+        specifier: 2.1.17
+        version: 2.1.17
+    devDependencies:
+      react:
+        specifier: 18.2.0
+        version: 18.2.0
+      react-dom:
+        specifier: 18.2.0
+        version: 18.2.0(react@18.2.0)
+
+  packages/data-table:
+    dependencies:
+      '@launchpad-ui/tokens':
+        specifier: workspace:~
+        version: link:../tokens
+      '@launchpad-ui/vars':
+        specifier: workspace:~
+        version: link:../vars
+      '@react-aria/checkbox':
+        specifier: 3.9.2
+        version: 3.9.2(react@18.2.0)
+      '@react-aria/focus':
+        specifier: 3.13.0
+        version: 3.13.0(react@18.2.0)
+      '@react-aria/table':
+        specifier: 3.10.0
+        version: 3.10.0(react-dom@18.2.0)(react@18.2.0)
+      '@react-aria/utils':
+        specifier: 3.18.0
+        version: 3.18.0(react@18.2.0)
+      '@react-aria/visually-hidden':
+        specifier: 3.8.2
+        version: 3.8.2(react@18.2.0)
+      '@react-stately/table':
+        specifier: 3.10.0
+        version: 3.10.0(react@18.2.0)
+      '@react-stately/toggle':
+        specifier: 3.6.0
+        version: 3.6.0(react@18.2.0)
+      '@react-types/grid':
+        specifier: 3.1.8
+        version: 3.1.8(react@18.2.0)
       classix:
         specifier: 2.1.17
         version: 2.1.17
@@ -6356,6 +6399,22 @@ packages:
       react: 18.2.0
     dev: false
 
+  /@react-aria/checkbox@3.9.2(react@18.2.0):
+    resolution: {integrity: sha512-gpvC+EnrxcQ9wupnoXsIDUmhSeBpxWtfRIYYypn6Ta6NY9Ubkh4H/8xE9/27nhJltHf5rzEcLfKg4QlEftab/w==}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0 || 18
+    dependencies:
+      '@react-aria/label': 3.6.0(react@18.2.0)
+      '@react-aria/toggle': 3.6.2(react@18.2.0)
+      '@react-aria/utils': 3.18.0(react@18.2.0)
+      '@react-stately/checkbox': 3.4.3(react@18.2.0)
+      '@react-stately/toggle': 3.6.0(react@18.2.0)
+      '@react-types/checkbox': 3.4.4(react@18.2.0)
+      '@react-types/shared': 3.18.1(react@18.2.0)
+      '@swc/helpers': 0.5.1
+      react: 18.2.0
+    dev: false
+
   /@react-aria/combobox@3.6.1(react-dom@18.2.0)(react@18.2.0):
     resolution: {integrity: sha512-FdIFAV9appfN5DfoZoJ1D+ZJS3Xp5Kro1oPUPnz9XgthwYV98JinQ5aMBKI4+df0mLmU5z1T3DWbqUuDheUCwg==}
     peerDependencies:
@@ -6755,6 +6814,32 @@ packages:
       '@react-types/switch': 3.3.2(react@18.2.0)
       '@swc/helpers': 0.4.14
       react: 18.2.0
+    dev: false
+
+  /@react-aria/table@3.10.0(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-N42Ill9fdjeWKC/516fPMpPa79B0c+teFJ/fhcROLFrlwotgLKwndIG/InkE1L6FKeiJ8JL33FgUnxfRGafa8Q==}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0 || 18
+      react-dom: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0
+    dependencies:
+      '@react-aria/focus': 3.13.0(react@18.2.0)
+      '@react-aria/grid': 3.8.0(react-dom@18.2.0)(react@18.2.0)
+      '@react-aria/i18n': 3.8.0(react@18.2.0)
+      '@react-aria/interactions': 3.16.0(react@18.2.0)
+      '@react-aria/live-announcer': 3.3.1
+      '@react-aria/selection': 3.16.0(react@18.2.0)
+      '@react-aria/utils': 3.18.0(react@18.2.0)
+      '@react-aria/visually-hidden': 3.8.2(react@18.2.0)
+      '@react-stately/collections': 3.9.0(react@18.2.0)
+      '@react-stately/table': 3.10.0(react@18.2.0)
+      '@react-stately/virtualizer': 3.6.0(react@18.2.0)
+      '@react-types/checkbox': 3.4.4(react@18.2.0)
+      '@react-types/grid': 3.1.8(react@18.2.0)
+      '@react-types/shared': 3.18.1(react@18.2.0)
+      '@react-types/table': 3.7.0(react@18.2.0)
+      '@swc/helpers': 0.5.1
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
     dev: false
 
   /@react-aria/tabs@3.6.0(react@18.2.0):
@@ -9751,6 +9836,7 @@ packages:
       '@vanilla-extract/css': ^1.0.0
     dependencies:
       '@vanilla-extract/css': 1.12.0
+    dev: false
 
   /@vanilla-extract/vite-plugin@3.8.2(@types/node@18.17.0)(ts-node@10.9.1)(vite@4.4.9):
     resolution: {integrity: sha512-i0vpuBUoh10Obl0hJr0dWQa6M3Udu/irm4tnsg1lUze8DXTbv3ctHmVu/wrRZHKw1EzzW/v+nLoJJRvisApspQ==}
