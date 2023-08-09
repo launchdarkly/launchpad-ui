@@ -23,7 +23,7 @@ import { useToggleState } from '@react-stately/toggle';
 import { cx } from 'classix';
 import { forwardRef, useRef } from 'react';
 
-import { table } from './styles/DataTable.css';
+import { table, cell as tableCell } from './styles/DataTable.css';
 
 type DataTableProps<T extends object> = TableStateProps<T> &
   AriaTableProps<T> &
@@ -33,7 +33,7 @@ type DataTableProps<T extends object> = TableStateProps<T> &
 
 const DataTable = forwardRef(
   <T extends object>(
-    { children, className, 'data-test-id': testId = 'data-table', ...props }: DataTableProps<T>,
+    { className, 'data-test-id': testId = 'data-table', ...props }: DataTableProps<T>,
     ref: ForwardedRef<HTMLTableElement>
   ) => {
     const { selectionMode, selectionBehavior } = props;
@@ -61,7 +61,7 @@ const DataTable = forwardRef(
           ))}
         </TableRowGroup>
         <TableRowGroup type="tbody">
-          {[...collection.getChildren!(collection.body.key)].map((row) => (
+          {[...collection].map((row) => (
             <TableRow key={row.key} item={row} state={state}>
               {[...collection.getChildren!(row.key)].map((cell) =>
                 cell.props.isSelectionCell ? (
@@ -211,11 +211,9 @@ const TableCell = <T extends object>({ cell, state }: TableCellProps<T>) => {
   return (
     <td
       {...mergeProps(gridCellProps, focusProps)}
+      className={tableCell}
       style={{
-        padding: '5px 10px',
-        outline: 'none',
         boxShadow: isFocusVisible ? 'inset 0 0 0 2px orange' : 'none',
-        cursor: 'default',
       }}
       ref={ref}
     >

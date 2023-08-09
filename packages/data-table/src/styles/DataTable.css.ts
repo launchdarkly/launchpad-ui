@@ -2,9 +2,14 @@ import { vars } from '@launchpad-ui/vars';
 import { style } from '@vanilla-extract/css';
 
 const table = style({
-  display: 'flex',
-  flexDirection: 'column',
-  gap: vars.spacing[200],
+  borderCollapse: 'collapse',
+  tableLayout: 'fixed',
 });
 
-export { table };
+const cell = style({
+  padding: `${vars.spacing[300]} ${vars.spacing[400]}`,
+  outline: 'none',
+  cursor: 'default',
+});
+
+export { table, cell };
