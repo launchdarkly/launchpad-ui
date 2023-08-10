@@ -23,7 +23,7 @@ import { useToggleState } from '@react-stately/toggle';
 import { cx } from 'classix';
 import { forwardRef, useRef } from 'react';
 
-import { table, cell as tableCell } from './styles/DataTable.css';
+import { table, cell as tableCell, focusVisible } from './styles/DataTable.css';
 
 type DataTableProps<T extends object> = TableStateProps<T> &
   AriaTableProps<T> &
@@ -92,7 +92,7 @@ const TableRowGroup = ({ type: Element, children }: TableRowGroupProps) => {
       {...rowGroupProps}
       style={
         Element === 'thead'
-          ? { borderBottom: '2px solid var(--spectrum-global-color-gray-800)' }
+          ? { borderBottom: '1px solid var(--lp-color-border-ui-primary)' }
           : undefined
       }
     >
@@ -126,19 +126,16 @@ type TableColumnHeaderProps<T extends object> = {
 const TableColumnHeader = <T extends object>({ column, state }: TableColumnHeaderProps<T>) => {
   const ref = useRef<HTMLTableCellElement>(null);
   const { columnHeaderProps } = useTableColumnHeader({ node: column }, state, ref);
-  const { isFocusVisible, focusProps } = useFocusRing();
+  const { focusProps } = useFocusRing();
   const arrowIcon = state.sortDescriptor?.direction === 'ascending' ? '▲' : '▼';
 
   return (
     <th
       {...mergeProps(columnHeaderProps, focusProps)}
       colSpan={column.colspan}
+      className={cx(tableCell, focusVisible)}
       style={{
         textAlign: column.colspan || 0 > 1 ? 'center' : 'left',
-        padding: '5px 10px',
-        outline: 'none',
-        boxShadow: isFocusVisible ? 'inset 0 0 0 2px orange' : 'none',
-        cursor: 'default',
       }}
       ref={ref}
     >
@@ -174,21 +171,17 @@ const TableRow = <T extends object>({ item, children, state }: TableRowProps<T>)
     state,
     ref
   );
-  const { isFocusVisible, focusProps } = useFocusRing();
+  const { focusProps } = useFocusRing();
 
   return (
     <tr
+      className={focusVisible}
       style={{
         background: isSelected
           ? 'blueviolet'
           : isPressed
           ? 'var(--spectrum-global-color-gray-400)'
-          : item.index || 0 % 2
-          ? 'var(--spectrum-alias-highlight-hover)'
           : 'none',
-        color: isSelected ? 'white' : undefined,
-        outline: 'none',
-        boxShadow: isFocusVisible ? 'inset 0 0 0 2px orange' : 'none',
       }}
       {...mergeProps(rowProps, focusProps)}
       ref={ref}
@@ -206,15 +199,12 @@ type TableCellProps<T extends object> = {
 const TableCell = <T extends object>({ cell, state }: TableCellProps<T>) => {
   const ref = useRef<HTMLTableCellElement>(null);
   const { gridCellProps } = useTableCell({ node: cell }, state, ref);
-  const { isFocusVisible, focusProps } = useFocusRing();
+  const { focusProps } = useFocusRing();
 
   return (
     <td
       {...mergeProps(gridCellProps, focusProps)}
-      className={tableCell}
-      style={{
-        boxShadow: isFocusVisible ? 'inset 0 0 0 2px orange' : 'none',
-      }}
+      className={cx(tableCell, focusVisible)}
       ref={ref}
     >
       {cell.rendered}

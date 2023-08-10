@@ -4,12 +4,20 @@ import { style } from '@vanilla-extract/css';
 const table = style({
   borderCollapse: 'collapse',
   tableLayout: 'fixed',
+  border: `1px solid ${vars.color.border.ui.primary}`,
+  background: vars.color.bg.ui.primary,
 });
 
 const cell = style({
   padding: `${vars.spacing[300]} ${vars.spacing[400]}`,
-  outline: 'none',
   cursor: 'default',
 });
 
-export { table, cell };
+const focusVisible = style({
+  outline: 'none',
+  ':focus-visible': {
+    boxShadow: `0 0 0 2px ${vars.color.shadow.interactive.primary}, 0 0 0 4px ${vars.color.shadow.interactive.focus}`,
+  },
+});
+
+export { table, cell, focusVisible };
