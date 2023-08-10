@@ -23,7 +23,14 @@ import { useToggleState } from '@react-stately/toggle';
 import { cx } from 'classix';
 import { forwardRef, useRef } from 'react';
 
-import { table, cell as tableCell, focusVisible } from './styles/DataTable.css';
+import {
+  table,
+  cell as tableCell,
+  focusVisible,
+  active,
+  header,
+  border,
+} from './styles/DataTable.css';
 
 type DataTableProps<T extends object> = TableStateProps<T> &
   AriaTableProps<T> &
@@ -46,7 +53,12 @@ const DataTable = forwardRef(
     const { collection } = state;
 
     return (
-      <table {...gridProps} ref={tableRef} className={cx(table, className)} data-test-id={testId}>
+      <table
+        {...gridProps}
+        ref={tableRef}
+        className={cx(table, border, className)}
+        data-test-id={testId}
+      >
         <TableRowGroup type="thead">
           {collection.headerRows.map((headerRow) => (
             <TableHeaderRow key={headerRow.key} item={headerRow} state={state}>
@@ -88,14 +100,7 @@ type TableRowGroupProps = {
 const TableRowGroup = ({ type: Element, children }: TableRowGroupProps) => {
   const { rowGroupProps } = useTableRowGroup();
   return (
-    <Element
-      {...rowGroupProps}
-      style={
-        Element === 'thead'
-          ? { borderBottom: '1px solid var(--lp-color-border-ui-primary)' }
-          : undefined
-      }
-    >
+    <Element {...rowGroupProps} className={Element === 'thead' ? header : undefined}>
       {children}
     </Element>
   );
@@ -135,7 +140,7 @@ const TableColumnHeader = <T extends object>({ column, state }: TableColumnHeade
       colSpan={column.colspan}
       className={cx(tableCell, focusVisible)}
       style={{
-        textAlign: column.colspan || 0 > 1 ? 'center' : 'left',
+        textAlign: (column.colspan || 0) > 1 ? 'center' : 'left',
       }}
       ref={ref}
     >
@@ -172,17 +177,11 @@ const TableRow = <T extends object>({ item, children, state }: TableRowProps<T>)
     ref
   );
   const { focusProps } = useFocusRing();
+  const isActive = isSelected || isPressed;
 
   return (
     <tr
-      className={focusVisible}
-      style={{
-        background: isSelected
-          ? 'blueviolet'
-          : isPressed
-          ? 'var(--spectrum-global-color-gray-400)'
-          : 'none',
-      }}
+      className={cx(focusVisible, border, isActive && active)}
       {...mergeProps(rowProps, focusProps)}
       ref={ref}
     >
