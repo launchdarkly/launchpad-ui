@@ -7,7 +7,7 @@
     "build": "nx run-many --target=build --all --exclude=@launchpad-ui/remix",
     "build:packages": "nx affected --target=build",
     "build:transform": "nx run-many --target=build --projects=@launchpad-ui/tokens",
-    "chromatic": "--build-script-name storybook:build",
+    "chromatic": "chromatic",
     "clean": "nx run-many --target=clean --all",
     "cypress:component": "pnpm build:transform && rm -rf coverage .nyc_output && cypress run --component && nyc report",
     "cypress:open": "cypress open",
