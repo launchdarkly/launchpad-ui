@@ -60,9 +60,6 @@ export default defineConfig({
       statements: 90,
       exclude: ['**/*.spec.tsx', '**/test/'],
     },
-    deps: {
-      registerNodeLoader: true,
-    },
   },
   build: {
     lib: {

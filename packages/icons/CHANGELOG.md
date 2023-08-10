@@ -1,5 +1,11 @@
 # @launchpad-ui/icons
 
+## 0.9.4
+
+### Patch Changes
+
+- [#955](https://github.com/launchdarkly/launchpad-ui/pull/955) [`5aad4986`](https://github.com/launchdarkly/launchpad-ui/commit/5aad4986acc0cf5f593247fbe041cf8938a684a3) Thanks [@traciklopez](https://github.com/traciklopez)! - [Icons]: Add mobile, desktop, and server icons
+
 ## 0.9.3
 
 ### Patch Changes
