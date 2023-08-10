@@ -35,7 +35,7 @@ export const Simple: Story = {
 export const WithImage: Story = {
   args: {
     ...commonProps,
-    imgSrc: 'img/swap-me.svg',
+    imgSrc: '/packages/card/src/img/swap-me.svg',
   },
 };
 
