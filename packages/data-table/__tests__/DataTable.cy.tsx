@@ -19,7 +19,9 @@ describe('DataTable', () => {
       <DataTable>
         <TableHeader columns={COLUMNS}>{(column) => <Column>{column.name}</Column>}</TableHeader>
         <TableBody items={ROWS}>
-          {(item) => <Row>{(columnKey) => <Cell>{item[columnKey]}</Cell>}</Row>}
+          {(item) => (
+            <Row>{(columnKey) => <Cell>{item[columnKey as keyof typeof item]}</Cell>}</Row>
+          )}
         </TableBody>
       </DataTable>
     );
@@ -31,7 +33,9 @@ describe('DataTable', () => {
       <DataTable>
         <TableHeader columns={COLUMNS}>{(column) => <Column>{column.name}</Column>}</TableHeader>
         <TableBody items={ROWS}>
-          {(item) => <Row>{(columnKey) => <Cell>{item[columnKey]}</Cell>}</Row>}
+          {(item) => (
+            <Row>{(columnKey) => <Cell>{item[columnKey as keyof typeof item]}</Cell>}</Row>
+          )}
         </TableBody>
       </DataTable>
     );

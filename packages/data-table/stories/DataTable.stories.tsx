@@ -1,5 +1,8 @@
 import type { StoryObj } from '@storybook/react';
 
+import { Chip } from '@launchpad-ui/chip';
+import { CopyToClipboard } from '@launchpad-ui/clipboard';
+import { Stack } from '@launchpad-ui/stack';
 import { Cell, Column, Row, TableBody, TableHeader } from '@react-stately/table';
 
 import { DataTable } from '../src';
@@ -24,9 +27,32 @@ const COLUMNS = [
 ];
 
 const ROWS = [
-  { name: 'Alert', type: 'Component', status: 'Beta', key: 1 },
-  { name: 'InlineEdit', type: 'Component', status: 'Alpha', key: 2 },
-  { name: '--lp-color-blue-100', type: 'Token', status: 'Beta', key: 3 },
+  {
+    name: 'Alert',
+    type: 'Component',
+    status: 'beta',
+    key: 1,
+    package: 'alert',
+    description:
+      'An element that informs users of a state or function of the product at a more granular level than banners.',
+  },
+  {
+    name: 'InlineEdit',
+    type: 'Component',
+    status: 'alpha',
+    key: 2,
+    package: 'inline-edit',
+    description: 'An element used to display and allow inline editing of a form element value.',
+  },
+  {
+    name: '--lp-color-blue-100',
+    type: 'Token',
+    status: 'beta',
+    key: 3,
+    package: 'tokens',
+    description:
+      'LaunchPad design tokens delivered as CSS custom properties, CommonJS modules, and ES modules.',
+  },
 ];
 
 export const Example: Story = {
@@ -66,7 +92,44 @@ export const Selection: Story = {
       <DataTable aria-label="Selection table" selectionMode="multiple" {...args}>
         <TableHeader columns={COLUMNS}>{(column) => <Column>{column.name}</Column>}</TableHeader>
         <TableBody items={ROWS}>
-          {(item) => <Row>{(columnKey) => <Cell>{item[columnKey]}</Cell>}</Row>}
+          {(item) => (
+            <Row>{(columnKey) => <Cell>{item[columnKey as keyof typeof item]}</Cell>}</Row>
+          )}
+        </TableBody>
+      </DataTable>
+    );
+  },
+};
+
+export const Layout: Story = {
+  render: (args) => {
+    return (
+      <DataTable aria-label="Selection table" {...args}>
+        <TableHeader columns={COLUMNS}>{(column) => <Column>{column.name}</Column>}</TableHeader>
+        <TableBody items={ROWS}>
+          {(item) => (
+            <Row>
+              {(columnKey) => (
+                <Cell>
+                  {columnKey === 'name' && (
+                    <Stack gap="3">
+                      <span>{item[columnKey]}</span>
+                      <span>{item.description}</span>
+                      <CopyToClipboard text={item.package} kind="basic">
+                        {item.package}
+                      </CopyToClipboard>
+                    </Stack>
+                  )}
+                  {columnKey === 'type' && <>{item[columnKey]}</>}
+                  {columnKey === 'status' && (
+                    <Chip kind={item[columnKey] === 'alpha' ? 'new' : 'beta'}>
+                      {item[columnKey]}
+                    </Chip>
+                  )}
+                </Cell>
+              )}
+            </Row>
+          )}
         </TableBody>
       </DataTable>
     );

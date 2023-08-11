@@ -22,7 +22,7 @@ const DataTableComponent = <T extends object>(props: Omit<Partial<DataTableProps
     <DataTable {...props}>
       <TableHeader columns={COLUMNS}>{(column) => <Column>{column.name}</Column>}</TableHeader>
       <TableBody items={ROWS}>
-        {(item) => <Row>{(columnKey) => <Cell>{item[columnKey]}</Cell>}</Row>}
+        {(item) => <Row>{(columnKey) => <Cell>{item[columnKey as keyof typeof item]}</Cell>}</Row>}
       </TableBody>
     </DataTable>
   );
