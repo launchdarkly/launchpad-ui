@@ -127,6 +127,9 @@
         "react": "18",
         "stylelint": "15"
       }
+    },
+    "overrides": {
+      "@cypress/request": "^3.0.0"
     }
   },
   "browserslist": [
