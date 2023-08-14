@@ -23,14 +23,7 @@ import { useToggleState } from '@react-stately/toggle';
 import { cx } from 'classix';
 import { forwardRef, useRef } from 'react';
 
-import {
-  table,
-  cell as tableCell,
-  focusVisible,
-  active,
-  header,
-  border,
-} from './styles/DataTable.css';
+import { table, cell as tableCell, header, row } from './styles/DataTable.css';
 
 type DataTableProps<T extends object> = TableStateProps<T> &
   AriaTableProps<T> &
@@ -53,12 +46,7 @@ const DataTable = forwardRef(
     const { collection } = state;
 
     return (
-      <table
-        {...gridProps}
-        ref={tableRef}
-        className={cx(table, border, className)}
-        data-test-id={testId}
-      >
+      <table {...gridProps} ref={tableRef} className={cx(table, className)} data-test-id={testId}>
         <TableRowGroup type="thead">
           {collection.headerRows.map((headerRow) => (
             <TableHeaderRow key={headerRow.key} item={headerRow} state={state}>
@@ -138,7 +126,7 @@ const TableColumnHeader = <T extends object>({ column, state }: TableColumnHeade
     <th
       {...mergeProps(columnHeaderProps, focusProps)}
       colSpan={column.colspan}
-      className={cx(tableCell, focusVisible)}
+      className={tableCell}
       style={{
         textAlign: (column.colspan || 0) > 1 ? 'center' : 'left',
       }}
@@ -180,11 +168,7 @@ const TableRow = <T extends object>({ item, children, state }: TableRowProps<T>)
   const isActive = isSelected || isPressed;
 
   return (
-    <tr
-      className={cx(focusVisible, border, isActive && active)}
-      {...mergeProps(rowProps, focusProps)}
-      ref={ref}
-    >
+    <tr className={row({ active: isActive })} {...mergeProps(rowProps, focusProps)} ref={ref}>
       {children}
     </tr>
   );
@@ -201,11 +185,7 @@ const TableCell = <T extends object>({ cell, state }: TableCellProps<T>) => {
   const { focusProps } = useFocusRing();
 
   return (
-    <td
-      {...mergeProps(gridCellProps, focusProps)}
-      className={cx(tableCell, focusVisible)}
-      ref={ref}
-    >
+    <td {...mergeProps(gridCellProps, focusProps)} className={tableCell} ref={ref}>
       {cell.rendered}
     </td>
   );

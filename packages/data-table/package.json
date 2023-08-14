@@ -42,6 +42,7 @@
     "@react-stately/table": "3.11.0",
     "@react-stately/toggle": "3.6.1",
     "@react-types/grid": "3.2.0",
+    "@vanilla-extract/recipes": "^0.5.0",
     "classix": "2.1.17"
   },
   "peerDependencies": {

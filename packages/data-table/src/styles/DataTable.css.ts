@@ -1,15 +1,6 @@
 import { vars } from '@launchpad-ui/vars';
 import { style } from '@vanilla-extract/css';
-
-const table = style({
-  borderCollapse: 'collapse',
-  background: vars.color.bg.ui.primary,
-});
-
-const cell = style({
-  padding: vars.spacing[500],
-  cursor: 'default',
-});
+import { recipe } from '@vanilla-extract/recipes';
 
 const focusVisible = style({
   outline: 'none',
@@ -18,16 +9,41 @@ const focusVisible = style({
   },
 });
 
+const border = style({
+  border: `1px solid ${vars.color.border.ui.primary}`,
+});
+
 const active = style({
   background: vars.color.bg.interactive.secondary.active,
+});
+
+const table = style([
+  border,
+  {
+    borderCollapse: 'collapse',
+    background: vars.color.bg.ui.primary,
+  },
+]);
+
+const cell = style([
+  focusVisible,
+  {
+    padding: vars.spacing[500],
+    cursor: 'default',
+  },
+]);
+
+const row = recipe({
+  base: [focusVisible, border],
+  variants: {
+    active: {
+      true: active,
+    },
+  },
 });
 
 const header = style({
   borderBottom: `1px solid ${vars.color.border.ui.primary}`,
 });
 
-const border = style({
-  border: `1px solid ${vars.color.border.ui.primary}`,
-});
-
-export { table, cell, focusVisible, active, header, border };
+export { table, cell, header, row };
