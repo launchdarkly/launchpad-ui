@@ -23,7 +23,7 @@ import { useToggleState } from '@react-stately/toggle';
 import { cx } from 'classix';
 import { forwardRef, useRef } from 'react';
 
-import { table, cell as tableCell, header, row } from './styles/DataTable.css';
+import { table, cell as tableCell, headerCell, header, row } from './styles/DataTable.css';
 
 type DataTableProps<T extends object> = TableStateProps<T> &
   AriaTableProps<T> &
@@ -126,7 +126,7 @@ const TableColumnHeader = <T extends object>({ column, state }: TableColumnHeade
     <th
       {...mergeProps(columnHeaderProps, focusProps)}
       colSpan={column.colspan}
-      className={tableCell}
+      className={headerCell}
       style={{
         textAlign: (column.colspan || 0) > 1 ? 'center' : 'left',
       }}

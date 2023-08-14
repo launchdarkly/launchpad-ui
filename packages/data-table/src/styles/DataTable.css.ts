@@ -28,8 +28,15 @@ const table = style([
 const cell = style([
   focusVisible,
   {
-    padding: vars.spacing[500],
+    padding: `${vars.spacing[500]} ${vars.spacing[600]}`,
     cursor: 'default',
+  },
+]);
+
+const headerCell = style([
+  cell,
+  {
+    padding: `1rem ${vars.spacing[600]}`,
   },
 ]);
 
@@ -46,4 +53,4 @@ const header = style({
   borderBottom: `1px solid ${vars.color.border.ui.primary}`,
 });
 
-export { table, cell, header, row };
+export { table, cell, headerCell, row, header };

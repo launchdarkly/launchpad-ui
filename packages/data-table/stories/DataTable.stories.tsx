@@ -101,7 +101,7 @@ export const Selection: Story = {
   },
 };
 
-export const Layout: Story = {
+export const Composition: Story = {
   render: (args) => {
     return (
       <DataTable aria-label="Selection table" {...args}>
