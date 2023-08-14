@@ -23,7 +23,14 @@ import { useToggleState } from '@react-stately/toggle';
 import { cx } from 'classix';
 import { forwardRef, useRef } from 'react';
 
-import { table, cell as tableCell, headerCell, header, row } from './styles/DataTable.css';
+import {
+  table,
+  cell as tableCell,
+  headerCell,
+  selectCell,
+  header,
+  row,
+} from './styles/DataTable.css';
 
 type DataTableProps<T extends object> = TableStateProps<T> &
   AriaTableProps<T> &
@@ -202,7 +209,7 @@ const TableCheckboxCell = <T extends object>({ cell, state }: TableCheckboxCellP
   const { checkboxProps } = useTableSelectionCheckbox({ key: cell.parentKey! }, state);
 
   return (
-    <td {...gridCellProps} ref={ref}>
+    <td {...gridCellProps} className={selectCell} ref={ref}>
       <Checkbox {...checkboxProps} />
     </td>
   );
@@ -219,7 +226,7 @@ const TableSelectAllCell = <T extends object>({ column, state }: TableSelectAllC
   const { checkboxProps } = useTableSelectAllCheckbox(state);
 
   return (
-    <th {...columnHeaderProps} ref={ref}>
+    <th {...columnHeaderProps} className={selectCell} ref={ref}>
       {state.selectionManager.selectionMode === 'single' ? (
         <VisuallyHidden>{checkboxProps['aria-label']}</VisuallyHidden>
       ) : (

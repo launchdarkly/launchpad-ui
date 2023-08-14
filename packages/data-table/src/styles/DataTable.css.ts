@@ -40,8 +40,12 @@ const headerCell = style([
   },
 ]);
 
+const selectCell = style({
+  padding: vars.spacing[500],
+});
+
 const row = recipe({
-  base: [focusVisible, border],
+  base: [focusVisible, border, { verticalAlign: 'top' }],
   variants: {
     active: {
       true: active,
@@ -53,4 +57,4 @@ const header = style({
   borderBottom: `1px solid ${vars.color.border.ui.primary}`,
 });
 
-export { table, cell, headerCell, row, header };
+export { table, cell, headerCell, selectCell, row, header };
