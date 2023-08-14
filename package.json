@@ -72,7 +72,6 @@
     "@typescript-eslint/eslint-plugin": "^6.3.0",
     "@typescript-eslint/parser": "^6.3.0",
     "@vanilla-extract/css": "^1.12.0",
-    "@vanilla-extract/recipes": "^0.5.0",
     "@vanilla-extract/vite-plugin": "^3.8.2",
     "@vitejs/plugin-react-swc": "^3.3.2",
     "@vitest/coverage-v8": "^0.34.1",
@@ -90,7 +89,7 @@
     "eslint-plugin-functional": "^6.0.0",
     "eslint-plugin-import": "^2.28.0",
     "eslint-plugin-jsx-a11y": "^6.7.0",
-    "eslint-plugin-prettier": "^5.0.0-alpha.2",
+    "eslint-plugin-prettier": "^5.0.0",
     "eslint-plugin-react": "^7.33.0",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-testing-library": "^6.0.0",
@@ -121,13 +120,16 @@
     "vitest": "^0.34.1",
     "wait-on": "^7.0.1"
   },
-  "packageManager": "pnpm@8.6.0",
+  "packageManager": "pnpm@8.6.12",
   "pnpm": {
     "peerDependencyRules": {
       "allowedVersions": {
         "react": "18",
         "stylelint": "15"
       }
+    },
+    "overrides": {
+      "@cypress/request": "^3.0.0"
     }
   },
   "browserslist": [

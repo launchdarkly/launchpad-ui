@@ -45,6 +45,7 @@
     "@launchpad-ui/collapsible": "workspace:~",
     "@launchpad-ui/columns": "workspace:~",
     "@launchpad-ui/counter": "workspace:~",
+    "@launchpad-ui/data-table": "workspace:~",
     "@launchpad-ui/drawer": "workspace:~",
     "@launchpad-ui/dropdown": "workspace:~",
     "@launchpad-ui/filter": "workspace:~",
