@@ -1,5 +1,5 @@
 ---
-'@launchpad-ui/icons': minor
+'@launchpad-ui/icons': patch
 ---
 
 added rerun icon
