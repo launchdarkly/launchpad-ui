@@ -41,6 +41,8 @@ input[type='radio']:focus + .featureCard {
 .labelContainer {
   display: flex;
   align-items: center;
+  font-size: var(--lp-font-size-400);
+  font-weight: var(--lp-font-weight-semibold);
 
   img {
     margin-right: var(--lp-spacing-600);
@@ -72,6 +74,7 @@ input[type='radio']:focus + .featureCard {
   cursor: not-allowed;
   border-radius: var(--radius-medium, 6px);
   border: var(--lp-border-width-200) solid var(--color-border-interactive-disabled, #e6e6e6);
+  color: var(--lp-color-text-interactive-disabled);
   background-color: var(--lp-color-bg-ui-primary);
   height: 6rem;
 }
