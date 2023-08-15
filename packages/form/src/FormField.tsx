@@ -12,7 +12,7 @@ import styles from './styles/Form.module.css';
 
 type FormFieldProps = {
   isRequired: boolean;
-  label?: string;
+  label?: React.ReactNode;
   name: string;
   htmlFor: string;
   hint?: string;
