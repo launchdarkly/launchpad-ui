@@ -24,6 +24,7 @@ type Story = StoryObj<typeof RadioCard>;
 
 const commonProps = {
   label: 'Label',
+  id: 'card',
 };
 
 export const Simple: Story = {
