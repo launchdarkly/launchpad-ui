@@ -20,7 +20,7 @@ export const Example: StoryObj = {
     const [showDrawer, setShowDrawer] = useState(true);
     const [isDropdownOpen, setIsDropdownOpen] = useState(true);
     const [toasts, setToasts] = useState<ToastRecord[]>([
-      { _id: '1', kind: 'success', content: 'z-index-900' },
+      { _id: '1', kind: 'success', content: 'z-index-700' },
     ]);
     /* eslint-enable react-hooks/rules-of-hooks */
 
@@ -37,7 +37,7 @@ export const Example: StoryObj = {
                 <DrawerHeader>Example drawer title</DrawerHeader>
               </section>
               <section>
-                <p>z-index-500</p>
+                <p>z-index-400</p>
                 {modalButton}
               </section>
             </Drawer>
@@ -59,7 +59,7 @@ export const Example: StoryObj = {
                 <DropdownButton>Dropdown</DropdownButton>
                 <Menu>
                   <MenuItem tooltip="z-index-800" tooltipPlacement="right">
-                    z-index-700
+                    z-index-600
                   </MenuItem>
                   <MenuItem>Item 2</MenuItem>
                   <MenuItem>Item 3</MenuItem>

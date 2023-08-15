@@ -1,11 +1,11 @@
 {
-  "name": "@launchpad-ui/dropdown",
-  "version": "0.6.60",
-  "status": "beta",
+  "name": "@launchpad-ui/data-table",
+  "version": "0.1.0",
+  "status": "alpha",
   "publishConfig": {
     "access": "public"
   },
-  "description": "An element that displays a list of actions or options to a user.",
+  "description": "An element used to display data in rows and columns.",
   "files": [
     "dist"
   ],
@@ -21,7 +21,8 @@
       "import": "./dist/index.es.js",
       "require": "./dist/index.js"
     },
-    "./package.json": "./package.json"
+    "./package.json": "./package.json",
+    "./style.css": "./dist/style.css"
   },
   "source": "src/index.ts",
   "scripts": {
@@ -31,14 +32,22 @@
     "test": "vitest run --coverage"
   },
   "dependencies": {
-    "@launchpad-ui/button": "workspace:~",
-    "@launchpad-ui/icons": "workspace:~",
-    "@launchpad-ui/popover": "workspace:~",
     "@launchpad-ui/tokens": "workspace:~",
+    "@launchpad-ui/vars": "workspace:~",
+    "@react-aria/checkbox": "3.10.0",
+    "@react-aria/focus": "3.14.0",
+    "@react-aria/table": "3.11.0",
     "@react-aria/utils": "3.19.0",
+    "@react-aria/visually-hidden": "3.8.3",
+    "@react-stately/table": "3.11.0",
+    "@react-stately/toggle": "3.6.1",
+    "@react-types/grid": "3.2.0",
+    "@vanilla-extract/recipes": "^0.5.0",
     "classix": "2.1.17"
   },
   "peerDependencies": {
+    "@react-stately/table": "3.11.0",
+    "@vanilla-extract/css": "^1.12.0",
     "react": "18.2.0",
     "react-dom": "18.2.0"
   },

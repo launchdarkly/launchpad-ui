@@ -11,6 +11,7 @@ export async function getComponents() {
     { to: 'components/clipboard', name: 'CopyToClipboard' },
     { to: 'components/columns', name: 'Columns' },
     { to: 'components/counter', name: 'Counter' },
+    { to: 'components/data-table', name: 'DataTable' },
     { to: 'components/drawer', name: 'Drawer' },
     { to: 'components/dropdown', name: 'Dropdown' },
     { to: 'components/filter', name: 'Filter' },
