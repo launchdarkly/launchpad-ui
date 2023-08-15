@@ -8,7 +8,7 @@ export default {
   description: 'A radio button with a label and optional image and subtext.',
   decorators: [
     (Story: StoryFn) => (
-      <div style={{ display: 'flex' }}>
+      <div style={{ display: 'flex', width: '24rem' }}>
         <Story />
       </div>
     ),

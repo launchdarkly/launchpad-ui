@@ -11,7 +11,6 @@ describe('RadioCard', () => {
 
   it('hides subtext when disabled', async () => {
     render(<RadioCard label="label" id="label" value="label" subText="subtext" disabled />);
-    // expect(screen.queryByText('subtext')).not.toBeVisible();
     await waitFor(() => {
       expect(screen.queryByText('subtext')).not.toBeVisible;
     });

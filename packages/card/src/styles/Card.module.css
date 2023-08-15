@@ -6,7 +6,7 @@
 .featureCard {
   cursor: pointer;
   align-items: center;
-  width: 24rem;
+  flex: 1;
   height: 16rem;
   border: var(--lp-border-width-200) solid var(--lp-color-border-ui-primary);
   border-radius: var(--lp-border-radius-medium);
