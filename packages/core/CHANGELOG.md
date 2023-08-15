@@ -1,5 +1,37 @@
 # @launchpad-ui/core
 
+## 0.42.9
+
+### Patch Changes
+
+- [#965](https://github.com/launchdarkly/launchpad-ui/pull/965) [`fec67a1c`](https://github.com/launchdarkly/launchpad-ui/commit/fec67a1c3713ae80295a437076f8d5ea59edcd58) Thanks [@renovate](https://github.com/apps/renovate)! - Update dependencies
+
+- [#957](https://github.com/launchdarkly/launchpad-ui/pull/957) [`8595e29c`](https://github.com/launchdarkly/launchpad-ui/commit/8595e29caa3014143cde77800fbbeceb925ee1f2) Thanks [@renovate](https://github.com/apps/renovate)! - Update dependencies
+
+- [#962](https://github.com/launchdarkly/launchpad-ui/pull/962) [`4574cfff`](https://github.com/launchdarkly/launchpad-ui/commit/4574cfff0ff9a45e01280c4fac25086018d204dc) Thanks [@Niznikr](https://github.com/Niznikr)! - Add `data-table` package to build data grids using React Aria. Supply children using `@react-stately/table`.
+
+- Updated dependencies [[`fec67a1c`](https://github.com/launchdarkly/launchpad-ui/commit/fec67a1c3713ae80295a437076f8d5ea59edcd58), [`8595e29c`](https://github.com/launchdarkly/launchpad-ui/commit/8595e29caa3014143cde77800fbbeceb925ee1f2), [`4574cfff`](https://github.com/launchdarkly/launchpad-ui/commit/4574cfff0ff9a45e01280c4fac25086018d204dc)]:
+  - @launchpad-ui/inline-edit@0.1.4
+  - @launchpad-ui/navigation@0.11.31
+  - @launchpad-ui/pagination@0.3.64
+  - @launchpad-ui/clipboard@0.10.15
+  - @launchpad-ui/tab-list@0.4.34
+  - @launchpad-ui/filter@0.5.40
+  - @launchpad-ui/select@0.3.13
+  - @launchpad-ui/toggle@0.6.6
+  - @launchpad-ui/form@0.9.5
+  - @launchpad-ui/menu@0.11.7
+  - @launchpad-ui/tag@0.2.12
+  - @launchpad-ui/focus-trap@0.1.10
+  - @launchpad-ui/dropdown@0.6.60
+  - @launchpad-ui/drawer@0.4.16
+  - @launchpad-ui/modal@0.16.11
+  - @launchpad-ui/data-table@0.1.0
+  - @launchpad-ui/popover@0.10.11
+  - @launchpad-ui/split-button@0.8.7
+  - @launchpad-ui/progress-bubbles@0.6.20
+  - @launchpad-ui/tooltip@0.7.21
+
 ## 0.42.8
 
 ### Patch Changes
