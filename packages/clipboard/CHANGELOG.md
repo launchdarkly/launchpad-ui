@@ -1,5 +1,14 @@
 # @launchpad-ui/clipboard
 
+## 0.10.15
+
+### Patch Changes
+
+- [#965](https://github.com/launchdarkly/launchpad-ui/pull/965) [`fec67a1c`](https://github.com/launchdarkly/launchpad-ui/commit/fec67a1c3713ae80295a437076f8d5ea59edcd58) Thanks [@renovate](https://github.com/apps/renovate)! - Update dependencies
+
+- Updated dependencies []:
+  - @launchpad-ui/tooltip@0.7.21
+
 ## 0.10.14
 
 ### Patch Changes
