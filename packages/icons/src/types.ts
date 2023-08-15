@@ -99,6 +99,7 @@ const icons = [
   'radio-button-checked',
   'release-path',
   'remove',
+  'rerun',
   'robot',
   'schedule',
   'science',
