@@ -7,13 +7,16 @@
   cursor: pointer;
   align-items: center;
   flex: 1;
-  height: 16rem;
   border: var(--lp-border-width-200) solid var(--lp-color-border-ui-primary);
   border-radius: var(--lp-border-radius-medium);
   padding: var(--lp-spacing-500);
   background-color: var(--lp-color-bg-ui-primary);
   box-shadow: 0 4px 4px 0 rgb(0 0 0 / 0.06);
   color: inherit;
+}
+
+.sub {
+  height: 16rem;
 }
 
 .featureCard:hover {

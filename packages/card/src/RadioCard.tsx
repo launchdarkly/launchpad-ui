@@ -30,7 +30,11 @@ export const RadioCard = ({
   <Radio
     id={id}
     className={styles.hideRadio}
-    labelClassName={cx(styles.featureCard, disabled ? styles.disabledCard : '')}
+    labelClassName={cx(
+      styles.featureCard,
+      subText ? styles.sub : '',
+      disabled ? styles.disabledCard : ''
+    )}
     checked={checked}
     disabled={disabled}
     data-test-id="card"
