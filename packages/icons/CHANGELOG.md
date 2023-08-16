@@ -1,5 +1,11 @@
 # @launchpad-ui/icons
 
+## 0.9.5
+
+### Patch Changes
+
+- [#963](https://github.com/launchdarkly/launchpad-ui/pull/963) [`6a034ffe`](https://github.com/launchdarkly/launchpad-ui/commit/6a034ffef935f54dd077b6cdcc5cf14c02629d6b) Thanks [@Sensationull](https://github.com/Sensationull)! - added rerun icon
+
 ## 0.9.4
 
 ### Patch Changes

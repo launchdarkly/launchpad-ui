@@ -1,5 +1,35 @@
 # @launchpad-ui/core
 
+## 0.42.10
+
+### Patch Changes
+
+- [#945](https://github.com/launchdarkly/launchpad-ui/pull/945) [`d2e607ec`](https://github.com/launchdarkly/launchpad-ui/commit/d2e607ecad295757ade51447ccface6bd8270cc0) Thanks [@idavoong](https://github.com/idavoong)! - Add radiocard component which functions like a radio but replaces radio buttons with cards
+
+- Updated dependencies [[`d2e607ec`](https://github.com/launchdarkly/launchpad-ui/commit/d2e607ecad295757ade51447ccface6bd8270cc0)]:
+  - @launchpad-ui/card@0.1.0
+  - @launchpad-ui/alert@0.7.23
+  - @launchpad-ui/avatar@0.5.5
+  - @launchpad-ui/banner@0.9.22
+  - @launchpad-ui/button@0.9.5
+  - @launchpad-ui/chip@0.8.5
+  - @launchpad-ui/clipboard@0.10.16
+  - @launchpad-ui/collapsible@0.1.18
+  - @launchpad-ui/drawer@0.4.17
+  - @launchpad-ui/dropdown@0.6.61
+  - @launchpad-ui/filter@0.5.41
+  - @launchpad-ui/form@0.9.6
+  - @launchpad-ui/inline-edit@0.1.5
+  - @launchpad-ui/menu@0.11.8
+  - @launchpad-ui/modal@0.16.12
+  - @launchpad-ui/navigation@0.11.32
+  - @launchpad-ui/pagination@0.3.65
+  - @launchpad-ui/select@0.3.14
+  - @launchpad-ui/snackbar@0.3.61
+  - @launchpad-ui/tag@0.2.13
+  - @launchpad-ui/toast@0.2.58
+  - @launchpad-ui/split-button@0.8.8
+
 ## 0.42.9
 
 ### Patch Changes
