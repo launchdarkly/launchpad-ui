@@ -107,6 +107,7 @@ export type { InlineProps } from '@launchpad-ui/inline';
 export type { ColumnProps, ColumnsProps } from '@launchpad-ui/columns';
 export type { InlineEditProps } from '@launchpad-ui/inline-edit';
 export type { DataTableProps } from '@launchpad-ui/data-table';
+export type { RadioCardProps } from '@launchpad-ui/card';
 // plop end type exports
 
 // plop start module exports
@@ -198,4 +199,5 @@ export { Inline } from '@launchpad-ui/inline';
 export { Column, Columns } from '@launchpad-ui/columns';
 export { InlineEdit } from '@launchpad-ui/inline-edit';
 export { DataTable } from '@launchpad-ui/data-table';
+export { RadioCard } from '@launchpad-ui/card';
 // plop end module exports

@@ -7,6 +7,7 @@
       "@launchpad-ui/avatar": ["./packages/avatar/src"],
       "@launchpad-ui/banner": ["./packages/banner/src"],
       "@launchpad-ui/button": ["./packages/button/src"],
+      "@launchpad-ui/card": ["./packages/card/src"],
       "@launchpad-ui/chip": ["./packages/chip/src"],
       "@launchpad-ui/clipboard": ["./packages/clipboard/src"],
       "@launchpad-ui/collapsible": ["./packages/collapsible/src"],
