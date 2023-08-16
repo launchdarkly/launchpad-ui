@@ -55,6 +55,28 @@ const ROWS = [
   },
 ];
 
+const tableBody = (item: (typeof ROWS)[number]) => (
+  <Row>
+    {(columnKey) => (
+      <Cell>
+        {columnKey === 'name' && (
+          <Stack gap="3">
+            <span>{item[columnKey]}</span>
+            <span>{item.description}</span>
+            <CopyToClipboard text={item.package} kind="basic">
+              {item.package}
+            </CopyToClipboard>
+          </Stack>
+        )}
+        {columnKey === 'type' && <>{item[columnKey]}</>}
+        {columnKey === 'status' && (
+          <Chip kind={item[columnKey] === 'alpha' ? 'new' : 'beta'}>{item[columnKey]}</Chip>
+        )}
+      </Cell>
+    )}
+  </Row>
+);
+
 export const Example: Story = {
   render: (args) => {
     return (
@@ -104,33 +126,28 @@ export const Selection: Story = {
 export const Composition: Story = {
   render: (args) => {
     return (
-      <DataTable aria-label="Selection table" {...args}>
+      <DataTable aria-label="Composition table" {...args}>
         <TableHeader columns={COLUMNS}>{(column) => <Column>{column.name}</Column>}</TableHeader>
-        <TableBody items={ROWS}>
-          {(item) => (
-            <Row>
-              {(columnKey) => (
-                <Cell>
-                  {columnKey === 'name' && (
-                    <Stack gap="3">
-                      <span>{item[columnKey]}</span>
-                      <span>{item.description}</span>
-                      <CopyToClipboard text={item.package} kind="basic">
-                        {item.package}
-                      </CopyToClipboard>
-                    </Stack>
-                  )}
-                  {columnKey === 'type' && <>{item[columnKey]}</>}
-                  {columnKey === 'status' && (
-                    <Chip kind={item[columnKey] === 'alpha' ? 'new' : 'beta'}>
-                      {item[columnKey]}
-                    </Chip>
-                  )}
-                </Cell>
-              )}
-            </Row>
-          )}
-        </TableBody>
+        <TableBody items={ROWS}>{tableBody}</TableBody>
+      </DataTable>
+    );
+  },
+};
+
+export const ResizableColumns: Story = {
+  render: (args) => {
+    return (
+      <DataTable
+        aria-label="Resizable columns table"
+        tableWidth={1000}
+        getDefaultMinWidth={() => 200}
+        getDefaultWidth={(column) => (column.colIndex === 0 ? 500 : undefined)}
+        {...args}
+      >
+        <TableHeader columns={COLUMNS}>
+          {(column) => <Column allowsResizing>{column.name}</Column>}
+        </TableHeader>
+        <TableBody items={ROWS}>{tableBody}</TableBody>
       </DataTable>
     );
   },

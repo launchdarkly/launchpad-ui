@@ -17,10 +17,16 @@ const ROWS = [
   { first: 'four', second: 'five', third: 'six', key: 2 },
 ];
 
-const DataTableComponent = <T extends object>(props: Omit<Partial<DataTableProps<T>>, 'ref'>) => {
+type DataTableComponentProps = Omit<Partial<DataTableProps<object>>, 'ref'> & {
+  resizable?: boolean;
+};
+
+const DataTableComponent = ({ resizable, ...props }: DataTableComponentProps) => {
   return (
     <DataTable {...props}>
-      <TableHeader columns={COLUMNS}>{(column) => <Column>{column.name}</Column>}</TableHeader>
+      <TableHeader columns={COLUMNS}>
+        {(column) => <Column allowsResizing={resizable}>{column.name}</Column>}
+      </TableHeader>
       <TableBody items={ROWS}>
         {(item) => <Row>{(columnKey) => <Cell>{item[columnKey as keyof typeof item]}</Cell>}</Row>}
       </TableBody>
@@ -37,5 +43,15 @@ describe('DataTable', () => {
   it('renders checkboxes when selectable', () => {
     render(<DataTableComponent selectionMode="multiple" />);
     expect(screen.getByLabelText('Select All')).toBeVisible();
+  });
+
+  it('renders column resizers when allowsResizing is passed to columns', () => {
+    render(<DataTableComponent resizable />);
+
+    const resizers = screen.getAllByRole('presentation');
+    resizers.forEach((resizer) => expect(resizer).toBeVisible());
+
+    const inputs = screen.getAllByLabelText('Resizer');
+    inputs.forEach((input) => expect(input).toBeInTheDocument());
   });
 });
