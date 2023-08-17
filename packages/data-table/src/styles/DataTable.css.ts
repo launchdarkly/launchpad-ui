@@ -64,13 +64,16 @@ const resizer = recipe({
     {
       cursor: 'col-resize',
       alignSelf: 'stretch',
-      width: '10px',
-      border: `2px solid ${vars.color.border.interactive.secondary.base}`,
+      width: '4px',
+      background: vars.color.border.ui.primary,
       touchAction: 'none',
       flex: '0 0 auto',
       position: 'absolute',
       insetInlineEnd: 0,
       height: '100%',
+      ':hover': {
+        background: vars.color.shadow.interactive.focus,
+      },
     },
   ],
   variants: {
@@ -78,7 +81,9 @@ const resizer = recipe({
       true: focusShadow,
     },
     active: {
-      true: active,
+      true: {
+        background: vars.color.shadow.interactive.focus,
+      },
     },
   },
 });
