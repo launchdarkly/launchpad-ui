@@ -134,6 +134,9 @@ jobs:
           node-version: 18
           cache: pnpm
 
+      - name: Install Dependencies
+        run: pnpm install
+
       - name: Download blob reports from GitHub Actions Artifacts
         uses: actions/download-artifact@v3
         with:
