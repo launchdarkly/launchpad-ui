@@ -10,7 +10,7 @@ test.describe('Storybook a11y', async () => {
   for (const story of stories) {
     test(`${story}`, async ({ page }) => {
       await page.goto(
-        `${process.env.STORYBOOK_URL}/iframe.html?args=&globals=theme:side-by-side&id=${story}&viewMode=story`
+        `${process.env.STORYBOOK_URL}iframe.html?args=&globals=theme:side-by-side&id=${story}&viewMode=story`
       );
 
       const accessibilityScanResults = await new AxeBuilder({ page })
