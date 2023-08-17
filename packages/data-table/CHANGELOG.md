@@ -1,5 +1,11 @@
 # @launchpad-ui/data-table
 
+## 0.1.1
+
+### Patch Changes
+
+- [#968](https://github.com/launchdarkly/launchpad-ui/pull/968) [`03a47e52`](https://github.com/launchdarkly/launchpad-ui/commit/03a47e52db708cb9bad551013912d752c695f4de) Thanks [@Niznikr](https://github.com/Niznikr)! - [DataTable] Enable column resizing via `allowsResizing` prop for `Column`
+
 ## 0.1.0
 
 ### Minor Changes
