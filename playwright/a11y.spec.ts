@@ -13,6 +13,9 @@ test.describe('Storybook a11y', async () => {
         `${process.env.STORYBOOK_URL}iframe.html?args=&globals=theme:side-by-side&id=${story}&viewMode=story`
       );
 
+      const root = page.locator('#storybook-root');
+      await root.waitFor();
+
       const accessibilityScanResults = await new AxeBuilder({ page })
         .withTags(['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa'])
         .disableRules('region')
