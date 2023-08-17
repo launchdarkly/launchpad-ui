@@ -1,5 +1,11 @@
 # @launchpad-ui/icons
 
+## 0.9.6
+
+### Patch Changes
+
+- [#969](https://github.com/launchdarkly/launchpad-ui/pull/969) [`2be20b76`](https://github.com/launchdarkly/launchpad-ui/commit/2be20b76362713b2f4fe25e0e045271f2358e59e) Thanks [@hsadhvani](https://github.com/hsadhvani)! - [Icons]: Add application, individual target, prerequisite, segment and gear icons
+
 ## 0.9.5
 
 ### Patch Changes
