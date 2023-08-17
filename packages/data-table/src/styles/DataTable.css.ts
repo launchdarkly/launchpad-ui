@@ -2,11 +2,13 @@ import { vars } from '@launchpad-ui/vars';
 import { style } from '@vanilla-extract/css';
 import { recipe } from '@vanilla-extract/recipes';
 
+const focusShadow = {
+  boxShadow: `0 0 0 2px ${vars.color.shadow.interactive.primary}, 0 0 0 4px ${vars.color.shadow.interactive.focus}`,
+};
+
 const focusVisible = style({
   outline: 'none',
-  ':focus-visible': {
-    boxShadow: `0 0 0 2px ${vars.color.shadow.interactive.primary}, 0 0 0 4px ${vars.color.shadow.interactive.focus}`,
-  },
+  ':focus-visible': focusShadow,
 });
 
 const border = style({
@@ -57,4 +59,33 @@ const header = style({
   borderBottom: `1px solid ${vars.color.border.ui.primary}`,
 });
 
-export { table, cell, headerCell, selectCell, row, header };
+const resizer = recipe({
+  base: [
+    {
+      cursor: 'col-resize',
+      alignSelf: 'stretch',
+      width: '4px',
+      background: vars.color.border.ui.primary,
+      touchAction: 'none',
+      flex: '0 0 auto',
+      position: 'absolute',
+      insetInlineEnd: 0,
+      height: '100%',
+      ':hover': {
+        background: vars.color.shadow.interactive.focus,
+      },
+    },
+  ],
+  variants: {
+    focus: {
+      true: focusShadow,
+    },
+    active: {
+      true: {
+        background: vars.color.shadow.interactive.focus,
+      },
+    },
+  },
+});
+
+export { table, cell, headerCell, selectCell, row, header, resizer };
