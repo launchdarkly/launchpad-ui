@@ -1,5 +1,11 @@
 # @launchpad-ui/tokens
 
+## 0.7.0
+
+### Minor Changes
+
+- [#977](https://github.com/launchdarkly/launchpad-ui/pull/977) [`45d511ea`](https://github.com/launchdarkly/launchpad-ui/commit/45d511ea87c176e0cb12f2cdac885ef8cec91058) Thanks [@bjlagman12](https://github.com/bjlagman12)! - [Button]: Implement new button variant flair [Token] Add new tokens for new button variant
+
 ## 0.6.0
 
 ### Minor Changes

@@ -1,5 +1,53 @@
 # @launchpad-ui/core
 
+## 0.43.0
+
+### Minor Changes
+
+- [#975](https://github.com/launchdarkly/launchpad-ui/pull/975) [`6b94906e`](https://github.com/launchdarkly/launchpad-ui/commit/6b94906e69d9f7516388d465689f7ff2e37faf9a) Thanks [@jennifro](https://github.com/jennifro)! - [Icons]: Adds icons for arrow-right-thin-circle, bar-chart, and release
+
+- [#977](https://github.com/launchdarkly/launchpad-ui/pull/977) [`45d511ea`](https://github.com/launchdarkly/launchpad-ui/commit/45d511ea87c176e0cb12f2cdac885ef8cec91058) Thanks [@bjlagman12](https://github.com/bjlagman12)! - [Button]: Implement new button variant flair [Token] Add new tokens for new button variant
+
+### Patch Changes
+
+- Updated dependencies [[`45d511ea`](https://github.com/launchdarkly/launchpad-ui/commit/45d511ea87c176e0cb12f2cdac885ef8cec91058)]:
+  - @launchpad-ui/button@0.10.0
+  - @launchpad-ui/alert@0.7.25
+  - @launchpad-ui/avatar@0.5.7
+  - @launchpad-ui/banner@0.9.24
+  - @launchpad-ui/chip@0.8.7
+  - @launchpad-ui/clipboard@0.10.18
+  - @launchpad-ui/collapsible@0.1.20
+  - @launchpad-ui/drawer@0.4.19
+  - @launchpad-ui/dropdown@0.6.63
+  - @launchpad-ui/filter@0.5.43
+  - @launchpad-ui/form@0.9.8
+  - @launchpad-ui/inline-edit@0.1.7
+  - @launchpad-ui/menu@0.11.10
+  - @launchpad-ui/modal@0.16.14
+  - @launchpad-ui/navigation@0.11.34
+  - @launchpad-ui/pagination@0.3.67
+  - @launchpad-ui/select@0.3.16
+  - @launchpad-ui/snackbar@0.3.63
+  - @launchpad-ui/tag@0.2.15
+  - @launchpad-ui/toast@0.2.60
+  - @launchpad-ui/split-button@0.8.10
+  - @launchpad-ui/card@0.1.2
+  - @launchpad-ui/columns@0.1.4
+  - @launchpad-ui/counter@0.3.32
+  - @launchpad-ui/data-table@0.1.2
+  - @launchpad-ui/inline@0.1.4
+  - @launchpad-ui/markdown@0.4.18
+  - @launchpad-ui/popover@0.10.12
+  - @launchpad-ui/progress@0.5.29
+  - @launchpad-ui/progress-bubbles@0.6.21
+  - @launchpad-ui/slider@0.4.10
+  - @launchpad-ui/stack@0.1.4
+  - @launchpad-ui/tab-list@0.4.35
+  - @launchpad-ui/table@0.5.11
+  - @launchpad-ui/toggle@0.6.7
+  - @launchpad-ui/tooltip@0.7.22
+
 ## 0.42.12
 
 ### Patch Changes
