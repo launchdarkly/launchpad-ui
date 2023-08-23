@@ -18,7 +18,16 @@ type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
   isLoading?: boolean;
   loadingText?: string | JSX.Element;
   size?: 'tiny' | 'small' | 'medium' | 'big';
-  kind?: 'default' | 'primary' | 'destructive' | 'minimal' | 'link' | 'close';
+  kind?:
+    | 'default'
+    | 'primary'
+    | 'destructive'
+    | 'minimal'
+    | 'link'
+    | 'close'
+    | 'primaryFlair'
+    | 'defaultFlair'
+    | 'minimalFlair';
   fit?: boolean;
   disabled?: boolean;
   icon?: ReactElement<Omit<IconProps, 'size'>>;

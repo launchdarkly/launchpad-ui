@@ -174,4 +174,55 @@
   /* SEARCH BAR CLEAR BUTTON ICON */
   --Button-icon-clear-color-fill: var(--lp-color-blue-600);
   --Button-icon-clear-color-text: var(--lp-color-blue-600);
+
+  /* ------- PRIMARY FLAIR ------- */
+  --Button-color-border-primary-flair: var(--lp-color-border-interactive-primary-flair-base);
+  --Button-color-border-primary-flair-hover: var(--lp-color-border-interactive-primary-flair-hover);
+  --Button-color-border-primary-flair-focus: var(--lp-color-border-interactive-primary-flair-focus);
+  --Button-color-border-primary-flair-active: var(
+    --lp-color-border-interactive-primary-flair-active
+  );
+
+  /* ------- DEFAULT FLAIR ------- */
+  --Button-color-background-default-flair: var(--lp-color-bg-interactive-secondary-flair-base);
+  --Button-color-background-default-flair-hover: var(
+    --lp-color-bg-interactive-secondary-flair-hover
+  );
+  --Button-color-background-default-flair-focus: var(
+    --lp-color-bg-interactive-secondary-flair-focus
+  );
+  --Button-color-background-default-flair-active: var(
+    --lp-color-bg-interactive-secondary-flair-active
+  );
+  --Button-color-border-default-flair: var(--lp-color-border-interactive-secondary-flair-base);
+  --Button-color-border-default-flair-hover: var(
+    --lp-color-border-interactive-secondary-flair-hover
+  );
+  --Button-color-border-default-flair-focus: var(
+    --lp-color-border-interactive-secondary-flair-focus
+  );
+  --Button-color-border-default-flair-active: var(
+    --lp-color-border-interactive-secondary-flair-active
+  );
+  --Button-color-text-default-flair: var(--lp-color-text-interactive-flair-base);
+  --Button-color-text-default-flair-hover: var(--lp-color-text-interactive-flair-hover);
+  --Button-color-text-default-flair-focus: var(--lp-color-text-interactive-flair-focus);
+  --Button-color-text-default-flair-active: var(--lp-color-text-interactive-flair-active);
+
+  /* ------- MINIMUAL FLAIR ------- */
+
+  --Button-color-background-minimal-flair: var(--lp-color-bg-interactive-tertiary-flair-base);
+  --Button-color-background-minimal-flair-hover: var(
+    --lp-color-bg-interactive-tertiary-flair-hover
+  );
+  --Button-color-background-minimal-flair-focus: var(
+    --lp-color-bg-interactive-tertiary-flair-focus
+  );
+  --Button-color-background-minimal-flair-active: var(
+    --lp-color-bg-interactive-tertiary-flair-active
+  );
+  --Button-color-text-minimal-flair: var(--lp-color-text-interactive-flair-base);
+  --Button-color-text-minimal-flair-hover: var(--lp-color-text-interactive-flair-hover);
+  --Button-color-text-minimal-flair-focus: var(--lp-color-text-interactive-flair-focus);
+  --Button-color-text-minimal-flair-active: var(--lp-color-text-interactive-flair-active);
 }
