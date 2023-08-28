@@ -1,5 +1,42 @@
 # @launchpad-ui/core
 
+## 0.44.0
+
+### Minor Changes
+
+- [#980](https://github.com/launchdarkly/launchpad-ui/pull/980) [`e834a1f1`](https://github.com/launchdarkly/launchpad-ui/commit/e834a1f19a52678b79edb91db9fdd356a71dbb8d) Thanks [@jennifro](https://github.com/jennifro)! - [Icons]: Minor changes to new icons for release and arrow-thin-circle, replaces bar-chart with experiment, adds warning-circle
+
+### Patch Changes
+
+- [#973](https://github.com/launchdarkly/launchpad-ui/pull/973) [`17606815`](https://github.com/launchdarkly/launchpad-ui/commit/17606815f4d00b51e5abb491cb03e755a542c8eb) Thanks [@renovate](https://github.com/apps/renovate)! - Update dependencies
+
+- Updated dependencies [[`17606815`](https://github.com/launchdarkly/launchpad-ui/commit/17606815f4d00b51e5abb491cb03e755a542c8eb)]:
+  - @launchpad-ui/snackbar@0.3.64
+  - @launchpad-ui/popover@0.10.13
+  - @launchpad-ui/drawer@0.4.20
+  - @launchpad-ui/modal@0.16.15
+  - @launchpad-ui/toast@0.2.61
+  - @launchpad-ui/dropdown@0.6.64
+  - @launchpad-ui/menu@0.11.11
+  - @launchpad-ui/navigation@0.11.35
+  - @launchpad-ui/progress-bubbles@0.6.22
+  - @launchpad-ui/select@0.3.17
+  - @launchpad-ui/split-button@0.8.11
+  - @launchpad-ui/tooltip@0.7.23
+  - @launchpad-ui/alert@0.7.26
+  - @launchpad-ui/avatar@0.5.8
+  - @launchpad-ui/banner@0.9.25
+  - @launchpad-ui/button@0.10.1
+  - @launchpad-ui/chip@0.8.8
+  - @launchpad-ui/clipboard@0.10.19
+  - @launchpad-ui/collapsible@0.1.21
+  - @launchpad-ui/filter@0.5.44
+  - @launchpad-ui/form@0.9.9
+  - @launchpad-ui/inline-edit@0.1.8
+  - @launchpad-ui/pagination@0.3.68
+  - @launchpad-ui/tag@0.2.16
+  - @launchpad-ui/card@0.1.3
+
 ## 0.43.0
 
 ### Minor Changes

@@ -1,5 +1,11 @@
 # @launchpad-ui/icons
 
+## 0.11.0
+
+### Minor Changes
+
+- [#980](https://github.com/launchdarkly/launchpad-ui/pull/980) [`e834a1f1`](https://github.com/launchdarkly/launchpad-ui/commit/e834a1f19a52678b79edb91db9fdd356a71dbb8d) Thanks [@jennifro](https://github.com/jennifro)! - [Icons]: Minor changes to new icons for release and arrow-thin-circle, replaces bar-chart with experiment, adds warning-circle
+
 ## 0.10.0
 
 ### Minor Changes
