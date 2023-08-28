@@ -1,6 +1,11 @@
 import type { AriaCheckboxProps } from '@react-aria/checkbox';
-import type { AriaTableProps } from '@react-aria/table';
-import type { TableState, TableStateProps } from '@react-stately/table';
+import type { AriaTableProps, AriaTableColumnResizeProps } from '@react-aria/table';
+import type {
+  TableState,
+  TableStateProps,
+  TableColumnResizeState,
+  TableColumnResizeStateProps,
+} from '@react-stately/table';
 import type { GridNode } from '@react-types/grid';
 import type { ComponentProps, ForwardedRef, ReactNode } from 'react';
 
@@ -10,18 +15,25 @@ import {
   useTable,
   useTableCell,
   useTableColumnHeader,
+  useTableColumnResize,
   useTableHeaderRow,
   useTableRow,
   useTableRowGroup,
   useTableSelectAllCheckbox,
   useTableSelectionCheckbox,
 } from '@react-aria/table';
-import { mergeProps, useObjectRef } from '@react-aria/utils';
+import {
+  filterDOMProps,
+  mergeProps,
+  useLayoutEffect,
+  useObjectRef,
+  useResizeObserver,
+} from '@react-aria/utils';
 import { VisuallyHidden } from '@react-aria/visually-hidden';
-import { useTableState } from '@react-stately/table';
+import { useTableColumnResizeState, useTableState } from '@react-stately/table';
 import { useToggleState } from '@react-stately/toggle';
 import { cx } from 'classix';
-import { forwardRef, useRef } from 'react';
+import { forwardRef, useCallback, useMemo, useRef, useState } from 'react';
 
 import {
   table,
@@ -30,10 +42,13 @@ import {
   selectCell,
   header,
   row,
+  resizer,
 } from './styles/DataTable.css';
 
 type DataTableProps<T extends object> = TableStateProps<T> &
   AriaTableProps<T> &
+  Pick<AriaTableColumnResizeProps<T>, 'onResizeStart' | 'onResize' | 'onResizeEnd'> &
+  Partial<TableColumnResizeStateProps<T>> &
   ComponentProps<'div'> & {
     'data-test-id'?: string;
   };
@@ -43,38 +58,88 @@ const DataTable = forwardRef(
     { className, 'data-test-id': testId = 'data-table', ...props }: DataTableProps<T>,
     ref: ForwardedRef<HTMLTableElement>
   ) => {
-    const { selectionMode, selectionBehavior } = props;
+    const {
+      selectionMode,
+      selectionBehavior,
+      getDefaultWidth: getDefaultWidthProp,
+      getDefaultMinWidth: getDefaultMinWidthProp,
+      tableWidth: tableWidthProp,
+    } = props;
     const tableRef = useObjectRef(ref);
+    const scrollRef = useRef<HTMLTableSectionElement>(null);
     const state = useTableState({
       ...props,
       showSelectionCheckboxes: selectionMode === 'multiple' && selectionBehavior !== 'replace',
     });
-    const { gridProps } = useTable(props, state, tableRef);
+    const { gridProps } = useTable({ ...props, scrollRef }, state, tableRef);
     const { collection } = state;
 
+    const [tableWidth, setTableWidth] = useState(0);
+    const getDefaultWidth = useCallback(() => undefined, []);
+    const getDefaultMinWidth = useCallback(() => 75, []);
+    const layoutState = useTableColumnResizeState(
+      {
+        getDefaultWidth: getDefaultWidthProp ?? getDefaultMinWidth,
+        getDefaultMinWidth: getDefaultMinWidthProp ?? getDefaultWidth,
+        tableWidth: tableWidthProp ?? tableWidth,
+      },
+      state
+    );
+    const layout = useMemo(() => ({ ...layoutState, tableState: state }), [layoutState, state]);
+
+    useLayoutEffect(() => {
+      if (scrollRef && scrollRef.current) {
+        setTableWidth(scrollRef.current.clientWidth);
+      }
+    }, []);
+
+    useResizeObserver({
+      ref: tableRef,
+      onResize: () => scrollRef.current && setTableWidth(scrollRef.current.clientWidth),
+    });
+
     return (
-      <table {...gridProps} ref={tableRef} className={cx(table, className)} data-test-id={testId}>
+      <table
+        {...filterDOMProps(props)}
+        {...gridProps}
+        ref={tableRef}
+        className={cx(table, className)}
+        data-test-id={testId}
+      >
         <TableRowGroup type="thead">
           {collection.headerRows.map((headerRow) => (
             <TableHeaderRow key={headerRow.key} item={headerRow} state={state}>
               {[...collection.getChildren!(headerRow.key)].map((column) =>
                 column.props.isSelectionCell ? (
-                  <TableSelectAllCell key={column.key} column={column} state={state} />
+                  <TableSelectAllCell
+                    key={column.key}
+                    column={column}
+                    state={state}
+                    layout={layout}
+                  />
                 ) : (
-                  <TableColumnHeader key={column.key} column={column} state={state} />
+                  <TableColumnHeader
+                    key={column.key}
+                    column={column}
+                    state={state}
+                    layout={layout}
+                    onResizeStart={props.onResizeStart}
+                    onResize={props.onResize}
+                    onResizeEnd={props.onResizeEnd}
+                  />
                 )
               )}
             </TableHeaderRow>
           ))}
         </TableRowGroup>
-        <TableRowGroup type="tbody">
+        <TableRowGroup type="tbody" ref={scrollRef}>
           {[...collection].map((row) => (
             <TableRow key={row.key} item={row} state={state}>
               {[...collection.getChildren!(row.key)].map((cell) =>
                 cell.props.isSelectionCell ? (
-                  <TableCheckboxCell key={cell.key} cell={cell} state={state} />
+                  <TableCheckboxCell key={cell.key} cell={cell} state={state} layout={layout} />
                 ) : (
-                  <TableCell key={cell.key} cell={cell} state={state} />
+                  <TableCell key={cell.key} cell={cell} state={state} layout={layout} />
                 )
               )}
             </TableRow>
@@ -92,14 +157,18 @@ type TableRowGroupProps = {
   children?: ReactNode;
 };
 
-const TableRowGroup = ({ type: Element, children }: TableRowGroupProps) => {
-  const { rowGroupProps } = useTableRowGroup();
-  return (
-    <Element {...rowGroupProps} className={Element === 'thead' ? header : undefined}>
-      {children}
-    </Element>
-  );
-};
+const TableRowGroup = forwardRef<HTMLTableSectionElement, TableRowGroupProps>(
+  ({ type: Element, children }, ref) => {
+    const { rowGroupProps } = useTableRowGroup();
+    return (
+      <Element {...rowGroupProps} ref={ref} className={Element === 'thead' ? header : undefined}>
+        {children}
+      </Element>
+    );
+  }
+);
+
+TableRowGroup.displayName = 'TableRowGroup';
 
 type TableHeaderRowProps<T extends object> = {
   item: GridNode<T>;
@@ -118,16 +187,28 @@ const TableHeaderRow = <T extends object>({ item, state, children }: TableHeader
   );
 };
 
-type TableColumnHeaderProps<T extends object> = {
+type TableColumnHeaderProps<T extends object> = Pick<
+  AriaTableColumnResizeProps<T>,
+  'onResizeStart' | 'onResize' | 'onResizeEnd'
+> & {
   column: GridNode<T>;
   state: TableState<T>;
+  layout: TableColumnResizeState<T>;
 };
 
-const TableColumnHeader = <T extends object>({ column, state }: TableColumnHeaderProps<T>) => {
+const TableColumnHeader = <T extends object>({
+  column,
+  state,
+  layout,
+  onResizeStart,
+  onResize,
+  onResizeEnd,
+}: TableColumnHeaderProps<T>) => {
   const ref = useRef<HTMLTableCellElement>(null);
   const { columnHeaderProps } = useTableColumnHeader({ node: column }, state, ref);
   const { focusProps } = useFocusRing();
   const arrowIcon = state.sortDescriptor?.direction === 'ascending' ? '▲' : '▼';
+  const { allowsSorting, allowsResizing } = column.props;
 
   return (
     <th
@@ -135,22 +216,37 @@ const TableColumnHeader = <T extends object>({ column, state }: TableColumnHeade
       colSpan={column.colspan}
       className={headerCell}
       style={{
-        textAlign: (column.colspan || 0) > 1 ? 'center' : 'left',
+        width: allowsResizing && layout.getColumnWidth(column.key),
+        textAlign: (column.colspan ?? 0) > 1 ? 'center' : 'left',
       }}
       ref={ref}
     >
-      {column.rendered}
-      {column.props.allowsSorting && (
-        <span
-          aria-hidden="true"
-          style={{
-            padding: '0 2px',
-            visibility: state.sortDescriptor?.column === column.key ? 'visible' : 'hidden',
-          }}
-        >
-          {arrowIcon}
-        </span>
-      )}
+      <div style={{ display: 'flex', position: 'relative' }}>
+        <div style={{ flex: '1 1 auto' }}>
+          {column.rendered}
+          {allowsSorting && (
+            <span
+              aria-hidden="true"
+              style={{
+                padding: '0 2px',
+                visibility: state.sortDescriptor?.column === column.key ? 'visible' : 'hidden',
+              }}
+            >
+              {arrowIcon}
+            </span>
+          )}
+        </div>
+        {allowsResizing && (
+          <Resizer
+            column={column}
+            layout={layout}
+            onResizeStart={onResizeStart}
+            onResize={onResize}
+            onResizeEnd={onResizeEnd}
+            aria-label="Resizer"
+          />
+        )}
+      </div>
     </th>
   );
 };
@@ -184,15 +280,24 @@ const TableRow = <T extends object>({ item, children, state }: TableRowProps<T>)
 type TableCellProps<T extends object> = {
   cell: GridNode<T>;
   state: TableState<T>;
+  layout: TableColumnResizeState<T>;
 };
 
-const TableCell = <T extends object>({ cell, state }: TableCellProps<T>) => {
+const TableCell = <T extends object>({ cell, state, layout }: TableCellProps<T>) => {
   const ref = useRef<HTMLTableCellElement>(null);
   const { gridCellProps } = useTableCell({ node: cell }, state, ref);
   const { focusProps } = useFocusRing();
+  const { allowsResizing } = cell.column?.props ?? {};
 
   return (
-    <td {...mergeProps(gridCellProps, focusProps)} className={tableCell} ref={ref}>
+    <td
+      {...mergeProps(gridCellProps, focusProps)}
+      className={tableCell}
+      style={{
+        width: allowsResizing && cell.column && layout.getColumnWidth(cell.column.key),
+      }}
+      ref={ref}
+    >
       {cell.rendered}
     </td>
   );
@@ -201,15 +306,28 @@ const TableCell = <T extends object>({ cell, state }: TableCellProps<T>) => {
 type TableCheckboxCellProps<T extends object> = {
   cell: GridNode<T>;
   state: TableState<T>;
+  layout: TableColumnResizeState<T>;
 };
 
-const TableCheckboxCell = <T extends object>({ cell, state }: TableCheckboxCellProps<T>) => {
+const TableCheckboxCell = <T extends object>({
+  cell,
+  state,
+  layout,
+}: TableCheckboxCellProps<T>) => {
   const ref = useRef<HTMLTableCellElement>(null);
   const { gridCellProps } = useTableCell({ node: cell }, state, ref);
   const { checkboxProps } = useTableSelectionCheckbox({ key: cell.parentKey! }, state);
+  const { allowsResizing } = cell.column?.props ?? {};
 
   return (
-    <td {...gridCellProps} className={selectCell} ref={ref}>
+    <td
+      {...gridCellProps}
+      style={{
+        width: allowsResizing && cell.column && layout.getColumnWidth(cell.column.key),
+      }}
+      className={selectCell}
+      ref={ref}
+    >
       <Checkbox {...checkboxProps} />
     </td>
   );
@@ -218,15 +336,28 @@ const TableCheckboxCell = <T extends object>({ cell, state }: TableCheckboxCellP
 type TableSelectAllCellProps<T extends object> = {
   column: GridNode<T>;
   state: TableState<T>;
+  layout: TableColumnResizeState<T>;
 };
 
-const TableSelectAllCell = <T extends object>({ column, state }: TableSelectAllCellProps<T>) => {
+const TableSelectAllCell = <T extends object>({
+  column,
+  state,
+  layout,
+}: TableSelectAllCellProps<T>) => {
   const ref = useRef<HTMLTableCellElement>(null);
   const { columnHeaderProps } = useTableColumnHeader({ node: column }, state, ref);
   const { checkboxProps } = useTableSelectAllCheckbox(state);
+  const { allowsResizing } = column.props;
 
   return (
-    <th {...columnHeaderProps} className={selectCell} ref={ref}>
+    <th
+      {...columnHeaderProps}
+      style={{
+        width: allowsResizing && layout.getColumnWidth(column.key),
+      }}
+      className={selectCell}
+      ref={ref}
+    >
       {state.selectionManager.selectionMode === 'single' ? (
         <VisuallyHidden>{checkboxProps['aria-label']}</VisuallyHidden>
       ) : (
@@ -242,6 +373,45 @@ const Checkbox = (props: AriaCheckboxProps) => {
   const { inputProps } = useCheckbox(props, state, ref);
 
   return <input {...inputProps} ref={ref} />;
+};
+
+type ResizerProps<T extends object> = AriaTableColumnResizeProps<T> & {
+  layout: TableColumnResizeState<T>;
+};
+
+const Resizer = <T extends object>({
+  column,
+  layout,
+  onResizeStart,
+  onResize,
+  onResizeEnd,
+  'aria-label': ariaLabel,
+}: ResizerProps<T>) => {
+  const ref = useRef(null);
+  const { resizerProps, inputProps } = useTableColumnResize(
+    {
+      column,
+      'aria-label': ariaLabel,
+      onResizeStart,
+      onResize,
+      onResizeEnd,
+    },
+    layout,
+    ref
+  );
+  const { isFocusVisible, focusProps } = useFocusRing();
+
+  return (
+    <div
+      role="presentation"
+      className={resizer({ focus: isFocusVisible, active: layout.resizingColumn === column.key })}
+      {...resizerProps}
+    >
+      <VisuallyHidden>
+        <input ref={ref} {...mergeProps(inputProps, focusProps)} />
+      </VisuallyHidden>
+    </div>
+  );
 };
 
 export { DataTable };

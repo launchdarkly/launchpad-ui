@@ -1,5 +1,33 @@
 # @launchpad-ui/drawer
 
+## 0.4.20
+
+### Patch Changes
+
+- [#973](https://github.com/launchdarkly/launchpad-ui/pull/973) [`17606815`](https://github.com/launchdarkly/launchpad-ui/commit/17606815f4d00b51e5abb491cb03e755a542c8eb) Thanks [@renovate](https://github.com/apps/renovate)! - Update dependencies
+
+- Updated dependencies [[`e834a1f1`](https://github.com/launchdarkly/launchpad-ui/commit/e834a1f19a52678b79edb91db9fdd356a71dbb8d)]:
+  - @launchpad-ui/icons@0.11.0
+  - @launchpad-ui/button@0.10.1
+
+## 0.4.19
+
+### Patch Changes
+
+- Updated dependencies [[`6b94906e`](https://github.com/launchdarkly/launchpad-ui/commit/6b94906e69d9f7516388d465689f7ff2e37faf9a), [`45d511ea`](https://github.com/launchdarkly/launchpad-ui/commit/45d511ea87c176e0cb12f2cdac885ef8cec91058)]:
+  - @launchpad-ui/icons@0.10.0
+  - @launchpad-ui/button@0.10.0
+  - @launchpad-ui/tokens@0.7.0
+  - @launchpad-ui/progress@0.5.29
+
+## 0.4.18
+
+### Patch Changes
+
+- Updated dependencies [[`2be20b76`](https://github.com/launchdarkly/launchpad-ui/commit/2be20b76362713b2f4fe25e0e045271f2358e59e)]:
+  - @launchpad-ui/icons@0.9.6
+  - @launchpad-ui/button@0.9.6
+
 ## 0.4.17
 
 ### Patch Changes

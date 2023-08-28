@@ -1,5 +1,28 @@
 # @launchpad-ui/icons
 
+## 0.11.0
+
+### Minor Changes
+
+- [#980](https://github.com/launchdarkly/launchpad-ui/pull/980) [`e834a1f1`](https://github.com/launchdarkly/launchpad-ui/commit/e834a1f19a52678b79edb91db9fdd356a71dbb8d) Thanks [@jennifro](https://github.com/jennifro)! - [Icons]: Minor changes to new icons for release and arrow-thin-circle, replaces bar-chart with experiment, adds warning-circle
+
+## 0.10.0
+
+### Minor Changes
+
+- [#975](https://github.com/launchdarkly/launchpad-ui/pull/975) [`6b94906e`](https://github.com/launchdarkly/launchpad-ui/commit/6b94906e69d9f7516388d465689f7ff2e37faf9a) Thanks [@jennifro](https://github.com/jennifro)! - [Icons]: Adds icons for arrow-right-thin-circle, bar-chart, and release
+
+### Patch Changes
+
+- Updated dependencies [[`45d511ea`](https://github.com/launchdarkly/launchpad-ui/commit/45d511ea87c176e0cb12f2cdac885ef8cec91058)]:
+  - @launchpad-ui/tokens@0.7.0
+
+## 0.9.6
+
+### Patch Changes
+
+- [#969](https://github.com/launchdarkly/launchpad-ui/pull/969) [`2be20b76`](https://github.com/launchdarkly/launchpad-ui/commit/2be20b76362713b2f4fe25e0e045271f2358e59e) Thanks [@hsadhvani](https://github.com/hsadhvani)! - [Icons]: Add application, individual target, prerequisite, segment and gear icons
+
 ## 0.9.5
 
 ### Patch Changes

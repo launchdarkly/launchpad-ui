@@ -1,5 +1,20 @@
 # @launchpad-ui/tooltip
 
+## 0.7.23
+
+### Patch Changes
+
+- Updated dependencies [[`17606815`](https://github.com/launchdarkly/launchpad-ui/commit/17606815f4d00b51e5abb491cb03e755a542c8eb)]:
+  - @launchpad-ui/popover@0.10.13
+
+## 0.7.22
+
+### Patch Changes
+
+- Updated dependencies [[`45d511ea`](https://github.com/launchdarkly/launchpad-ui/commit/45d511ea87c176e0cb12f2cdac885ef8cec91058)]:
+  - @launchpad-ui/tokens@0.7.0
+  - @launchpad-ui/popover@0.10.12
+
 ## 0.7.21
 
 ### Patch Changes
