@@ -16,7 +16,6 @@ const icons = [
   'arrow-right',
   'arrow-up-thin',
   'article',
-  'bar-chart',
   'border-all',
   'bullhorn',
   'bullseye-arrow',
@@ -53,6 +52,7 @@ const icons = [
   'event-busy',
   'expand-less',
   'expand-more',
+  'experiment',
   'extension',
   'file-document-edit-circle',
   'filter-alt',
@@ -140,6 +140,7 @@ const icons = [
   'visibility-off',
   'visibility',
   'warning',
+  'warning-circle',
   'workflow-builder',
 ] as const;
 type IconName = (typeof icons)[number];
