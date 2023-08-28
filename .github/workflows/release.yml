@@ -17,7 +17,7 @@ jobs:
       contents: read
     steps:
       - name: Configure AWS Credentials
-        uses: aws-actions/configure-aws-credentials@v2
+        uses: aws-actions/configure-aws-credentials@v3
         with:
           audience: https://github.com/launchdarkly
           role-to-assume: ${{ vars.AWS_ROLE_ARN }}
