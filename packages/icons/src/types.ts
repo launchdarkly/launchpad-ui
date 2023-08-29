@@ -12,7 +12,6 @@ const icons = [
   'arrow-drop-down',
   'arrow-left-thin',
   'arrow-right-thin',
-  'arrow-right-thin-circle',
   'arrow-right',
   'arrow-up-thin',
   'article',
@@ -140,7 +139,6 @@ const icons = [
   'visibility-off',
   'visibility',
   'warning',
-  'warning-circle',
   'workflow-builder',
 ] as const;
 type IconName = (typeof icons)[number];
