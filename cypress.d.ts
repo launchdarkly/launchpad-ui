@@ -1,5 +1,4 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-/// <reference types="cypress-real-events" />
 
 import type { mount } from 'cypress/react18';
 

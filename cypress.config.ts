@@ -6,17 +6,6 @@ export default defineConfig({
     baseUrl: 'http://localhost:3000',
     supportFile: false,
   },
-  component: {
-    devServer: {
-      framework: 'react',
-      bundler: 'vite',
-    },
-    setupNodeEvents(on, config) {
-      require('@cypress/code-coverage/task')(on, config);
-
-      return config;
-    },
-  },
   video: false,
   screenshotOnRunFailure: false,
   retries: 1,
