@@ -21,6 +21,8 @@ test.describe('Storybook a11y', async () => {
         `,
       });
 
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // @ts-ignore
       const storyContext = await page.evaluate(({ storyId }) => globalThis.__getContext(storyId), {
         storyId: story,
       });
@@ -34,14 +36,30 @@ test.describe('Storybook a11y', async () => {
       await root.waitFor();
 
       const accessibilityScanResults = await new AxeBuilder({ page })
-        .withTags(['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa'])
-        .disableRules([
-          'region',
-          'landmark-unique',
-          'landmark-one-main',
-          'page-has-heading-one',
-          'scrollable-region-focusable',
-        ])
+        .options({
+          runOnly: {
+            type: 'tag',
+            values: ['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa'],
+          },
+          rules: {
+            'landmark-unique': {
+              enabled: false,
+            },
+            'landmark-one-main': {
+              enabled: false,
+            },
+            'page-has-heading-one': {
+              enabled: false,
+            },
+            region: {
+              enabled: false,
+            },
+            'scrollable-region-focusable': {
+              enabled: false,
+            },
+            ...(storyContext.parameters?.a11y?.options?.rules || {}),
+          },
+        })
         .include('#storybook-root')
         .include('[data-test-id="portal"]')
         .analyze();

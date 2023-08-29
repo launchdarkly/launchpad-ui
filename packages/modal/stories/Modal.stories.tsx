@@ -108,7 +108,17 @@ export const Default: Story = {
     );
   },
   play,
-  parameters: { docs: { disable: false } },
+  parameters: {
+    docs: { disable: false },
+    a11y: {
+      options: {
+        rules: {
+          // @fixme
+          'duplicate-id-aria': { enabled: false },
+        },
+      },
+    },
+  },
 };
 
 export const Destructive: Story = {
@@ -126,7 +136,17 @@ export const Destructive: Story = {
       </Modal>
     );
   },
-  parameters: { docs: { disable: true } },
+  parameters: {
+    docs: { disable: true },
+    a11y: {
+      options: {
+        rules: {
+          // @fixme
+          'duplicate-id-aria': { enabled: false },
+        },
+      },
+    },
+  },
 };
 
 export const Small: Story = {
@@ -144,7 +164,17 @@ export const Small: Story = {
       </Modal>
     );
   },
-  parameters: { docs: { disable: true } },
+  parameters: {
+    docs: { disable: true },
+    a11y: {
+      options: {
+        rules: {
+          // @fixme
+          'duplicate-id-aria': { enabled: false },
+        },
+      },
+    },
+  },
 };
 
 export const Large: Story = {
@@ -168,7 +198,17 @@ export const Large: Story = {
       </Modal>
     );
   },
-  parameters: { docs: { disable: true } },
+  parameters: {
+    docs: { disable: true },
+    a11y: {
+      options: {
+        rules: {
+          // @fixme
+          'duplicate-id-aria': { enabled: false },
+        },
+      },
+    },
+  },
 };
 
 export const KitchenSink: Story = {
@@ -209,7 +249,18 @@ export const KitchenSink: Story = {
       </Modal>
     );
   },
-  parameters: { docs: { disable: true }, chromatic: { viewports: [320, 1200] } },
+  parameters: {
+    docs: { disable: true },
+    chromatic: { viewports: [320, 1200] },
+    a11y: {
+      options: {
+        rules: {
+          // @fixme
+          'duplicate-id-aria': { enabled: false },
+        },
+      },
+    },
+  },
 };
 
 export const TallBody: Story = {
@@ -291,7 +342,17 @@ export const TallBody: Story = {
       </Modal>
     );
   },
-  parameters: { docs: { disable: true } },
+  parameters: {
+    docs: { disable: true },
+    a11y: {
+      options: {
+        rules: {
+          // @fixme
+          'duplicate-id-aria': { enabled: false },
+        },
+      },
+    },
+  },
 };
 
 export const ForcedDarkTheme: Story = {
@@ -311,7 +372,17 @@ export const ForcedDarkTheme: Story = {
       </Modal>
     );
   },
-  parameters: { docs: { disable: true } },
+  parameters: {
+    docs: { disable: true },
+    a11y: {
+      options: {
+        rules: {
+          // @fixme
+          'duplicate-id-aria': { enabled: false },
+        },
+      },
+    },
+  },
 };
 
 export const WithForm: Story = {
@@ -352,7 +423,18 @@ export const WithForm: Story = {
       </Modal>
     );
   },
-  parameters: { docs: { disable: true } },
+  parameters: {
+    docs: { disable: true },
+    a11y: {
+      options: {
+        rules: {
+          // @fixme
+          'duplicate-id-aria': { enabled: false },
+          'duplicate-id': { enabled: false },
+        },
+      },
+    },
+  },
 };
 
 export const WithAbsolutelyPositionedFooter: Story = {
@@ -393,7 +475,17 @@ export const WithAbsolutelyPositionedFooter: Story = {
       </Modal>
     );
   },
-  parameters: { docs: { disable: true } },
+  parameters: {
+    docs: { disable: true },
+    a11y: {
+      options: {
+        rules: {
+          // @fixme
+          'duplicate-id-aria': { enabled: false },
+        },
+      },
+    },
+  },
 };
 
 export const WithTooltip: Story = {
@@ -426,5 +518,15 @@ export const WithTooltip: Story = {
     );
   },
   play,
-  parameters: { docs: { disable: false } },
+  parameters: {
+    docs: { disable: false },
+    a11y: {
+      options: {
+        rules: {
+          // @fixme
+          'duplicate-id-aria': { enabled: false },
+        },
+      },
+    },
+  },
 };

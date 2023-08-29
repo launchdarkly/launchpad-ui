@@ -19,6 +19,7 @@ const config: StorybookConfig = {
      * TODO: remove once Vite has the fix released
      */
     storyStoreV7: false,
+    buildStoriesJson: true,
   },
   addons: [
     '@storybook/addon-a11y',

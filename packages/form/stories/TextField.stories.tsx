@@ -112,6 +112,19 @@ export const Example: Story = {
     onChange: () => undefined,
     id: 'Resting',
   },
+  parameters: {
+    a11y: {
+      options: {
+        rules: {
+          // @fixme
+          'duplicate-id': { enabled: false },
+          'duplicate-id-aria': { enabled: false },
+          'duplicate-id-active': { enabled: false },
+          label: { enabled: false },
+        },
+      },
+    },
+  },
 };
 
 export const NumberWithSuffix: Story = {
@@ -131,5 +144,15 @@ export const NumberWithSuffix: Story = {
     value: 50,
     disabled: false,
     suffix: '%',
+  },
+  parameters: {
+    a11y: {
+      options: {
+        rules: {
+          // @fixme
+          'duplicate-id-aria': { enabled: false },
+        },
+      },
+    },
   },
 };

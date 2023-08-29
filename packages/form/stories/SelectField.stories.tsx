@@ -56,6 +56,8 @@ type Story = StoryObj<typeof SelectField>;
 export const Default: Story = {
   args: {
     value: 'a',
+    name: 'select',
+    'aria-label': 'select',
     children: (
       <>
         <option value="a">a</option>

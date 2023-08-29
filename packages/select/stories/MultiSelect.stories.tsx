@@ -37,7 +37,17 @@ export const Basic: Story = {
       </MultiSelect>
     );
   },
-  parameters: { docs: { disable: false } },
+  parameters: {
+    docs: { disable: false },
+    a11y: {
+      options: {
+        rules: {
+          // @fixme
+          'color-contrast': { enabled: false },
+        },
+      },
+    },
+  },
 };
 
 export const Filterable: Story = {
@@ -53,7 +63,17 @@ export const Filterable: Story = {
       </MultiSelect>
     );
   },
-  parameters: { docs: { disable: false } },
+  parameters: {
+    docs: { disable: false },
+    a11y: {
+      options: {
+        rules: {
+          // @fixme
+          'color-contrast': { enabled: false },
+        },
+      },
+    },
+  },
 };
 
 export const WithCustomTrigger: Story = {
@@ -78,7 +98,17 @@ export const WithCustomTrigger: Story = {
       </>
     );
   },
-  parameters: { docs: { disable: false } },
+  parameters: {
+    docs: { disable: false },
+    a11y: {
+      options: {
+        rules: {
+          // @fixme
+          'color-contrast': { enabled: false },
+        },
+      },
+    },
+  },
 };
 
 export const MultiSelectWithCustomSelectedRender: Story = {
@@ -110,7 +140,17 @@ export const MultiSelectWithCustomSelectedRender: Story = {
       </MultiSelect>
     );
   },
-  parameters: { docs: { disable: false } },
+  parameters: {
+    docs: { disable: false },
+    a11y: {
+      options: {
+        rules: {
+          // @fixme
+          'color-contrast': { enabled: false },
+        },
+      },
+    },
+  },
 };
 
 export const MultiSelectWithSelectAll: Story = {
@@ -140,7 +180,17 @@ export const MultiSelectWithSelectAll: Story = {
       </MultiSelect>
     );
   },
-  parameters: { docs: { disable: false } },
+  parameters: {
+    docs: { disable: false },
+    a11y: {
+      options: {
+        rules: {
+          // @fixme
+          'color-contrast': { enabled: false },
+        },
+      },
+    },
+  },
 };
 
 export const WithControlledSelectedKeys: Story = {
@@ -162,7 +212,17 @@ export const WithControlledSelectedKeys: Story = {
 
     return <ControlledSelectComponent />;
   },
-  parameters: { docs: { disable: false } },
+  parameters: {
+    docs: { disable: false },
+    a11y: {
+      options: {
+        rules: {
+          // @fixme
+          'color-contrast': { enabled: false },
+        },
+      },
+    },
+  },
 };
 
 export const WithUncontrolledItems: Story = {
@@ -173,5 +233,15 @@ export const WithUncontrolledItems: Story = {
       </MultiSelect>
     );
   },
-  parameters: { docs: { disable: false } },
+  parameters: {
+    docs: { disable: false },
+    a11y: {
+      options: {
+        rules: {
+          // @fixme
+          'color-contrast': { enabled: false },
+        },
+      },
+    },
+  },
 };

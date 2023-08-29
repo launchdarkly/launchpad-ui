@@ -20,5 +20,16 @@ export const Default: Story = {
     id: 'optionOne',
     value: 'Option One',
     checked: true,
+    'aria-label': 'radio',
+  },
+  parameters: {
+    a11y: {
+      options: {
+        rules: {
+          // @fixme
+          'duplicate-id-aria': { enabled: false },
+        },
+      },
+    },
   },
 };

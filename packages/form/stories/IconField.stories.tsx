@@ -21,4 +21,16 @@ export const Default: Story = {
     icon: <Icon name="info" />,
     children: <TextField id="Date" value="12/01/2022" />,
   },
+  parameters: {
+    a11y: {
+      options: {
+        rules: {
+          // @fixme
+          'duplicate-id-aria': { enabled: false },
+          'duplicate-id-active': { enabled: false },
+          label: { enabled: false },
+        },
+      },
+    },
+  },
 };

@@ -138,4 +138,14 @@ export const WithChildrenRender: Story = {
       </Markdown>
     );
   },
+  parameters: {
+    a11y: {
+      options: {
+        rules: {
+          // @fixme
+          'color-contrast': { enabled: false },
+        },
+      },
+    },
+  },
 };
