@@ -9,8 +9,7 @@
     "build:transform": "nx run-many --target=build --projects=@launchpad-ui/tokens",
     "chromatic": "chromatic",
     "clean": "nx run-many --target=clean --all",
-    "cypress:open": "cypress open",
-    "e2e:ssr": "concurrently -k -s first -n \"Remix,e2e\" -c \"magenta,blue\" \"pnpm remix\" \"wait-on tcp:3000 && pnpm cypress run\"",
+    "e2e:ssr": "concurrently -k --kill-signal SIGKILL -s first -n \"Remix,e2e\" -c \"magenta,blue\" \"pnpm remix\" \"wait-on tcp:3000 && pnpm playwright test ssr\"",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "generate": "plop",
     "graph": "nx affected:graph",
@@ -79,7 +78,6 @@
     "axe-core": "^4.7.2",
     "chromatic": "^6.24.1",
     "concurrently": "^8.2.0",
-    "cypress": "^12.17.0",
     "deepmerge": "^4.3.1",
     "eslint": "^8.48.0",
     "eslint-config-prettier": "^9.0.0",
@@ -111,7 +109,6 @@
     "typescript": "^5.2.2",
     "typescript-plugin-css-modules": "^5.0.1",
     "vite": "^4.4.9",
-    "vite-plugin-istanbul": "^5.0.0",
     "vite-plugin-turbosnap": "^1.0.2",
     "vitest": "^0.34.1",
     "wait-on": "^7.0.1"
@@ -123,9 +120,6 @@
         "react": "18",
         "stylelint": "15"
       }
-    },
-    "overrides": {
-      "@cypress/request": "^3.0.0"
     }
   },
   "browserslist": [

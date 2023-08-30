@@ -33,7 +33,7 @@ export async function getComponents() {
     { to: 'components/stack', name: 'Stack' },
     { to: 'components/tab-list', name: 'TabList' },
     { to: 'components/table', name: 'Table' },
-    { to: 'components/tag', name: 'Tag' },
+    { to: 'components/tag', name: 'TagList' },
     { to: 'components/toast', name: 'Toast' },
     { to: 'components/toggle', name: 'Toggle' },
     { to: 'components/tooltip', name: 'Tooltip' },

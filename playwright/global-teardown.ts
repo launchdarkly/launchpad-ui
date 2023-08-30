@@ -1,5 +1,8 @@
 import fs from 'fs';
 
 export default async () => {
-  fs.unlinkSync('./playwright/stories.json');
+  const file = './playwright/stories.json';
+  if (fs.existsSync(file)) {
+    fs.unlinkSync(file);
+  }
 };

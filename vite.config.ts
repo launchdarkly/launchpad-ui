@@ -6,7 +6,6 @@ import { vanillaExtractPlugin } from '@vanilla-extract/vite-plugin';
 import react from '@vitejs/plugin-react-swc';
 import { PluginPure } from 'rollup-plugin-pure';
 import { defineConfig } from 'vite';
-import istanbul from 'vite-plugin-istanbul';
 
 import tsconfig from './tsconfig.json';
 import { cssImport } from './vite-plugin-css';
@@ -43,7 +42,6 @@ export default defineConfig({
       sourcemap: true,
       exclude: [/node_modules/],
     }),
-    ...(process.env.CYPRESS ? [istanbul({ cypress: true })] : []),
   ],
   resolve: {
     alias,
@@ -78,5 +76,4 @@ export default defineConfig({
     sourcemap: true,
     minify: false,
   },
-  logLevel: process.env.CYPRESS ? 'silent' : undefined,
 });
