@@ -1,5 +1,13 @@
 # @launchpad-ui/split-button
 
+## 0.8.12
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @launchpad-ui/button@0.10.2
+  - @launchpad-ui/dropdown@0.6.65
+
 ## 0.8.11
 
 ### Patch Changes
