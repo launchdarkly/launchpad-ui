@@ -1,5 +1,11 @@
 # @launchpad-ui/icons
 
+## 0.12.0
+
+### Minor Changes
+
+- [#981](https://github.com/launchdarkly/launchpad-ui/pull/981) [`5d398d07`](https://github.com/launchdarkly/launchpad-ui/commit/5d398d071ee124e430bf127b86cfeb2af3af3989) Thanks [@jennifro](https://github.com/jennifro)! - [Icons]: Corrects experiment and release icons to the vectors only, removes warning-circle icon as its redundant to warning icon, removes arrow-thin-right-circle as its redundant to arrow-thin-right
+
 ## 0.11.0
 
 ### Minor Changes

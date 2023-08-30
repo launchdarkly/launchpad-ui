@@ -1,5 +1,37 @@
 # @launchpad-ui/core
 
+## 0.45.0
+
+### Minor Changes
+
+- [#981](https://github.com/launchdarkly/launchpad-ui/pull/981) [`5d398d07`](https://github.com/launchdarkly/launchpad-ui/commit/5d398d071ee124e430bf127b86cfeb2af3af3989) Thanks [@jennifro](https://github.com/jennifro)! - [Icons]: Corrects experiment and release icons to the vectors only, removes warning-circle icon as its redundant to warning icon, removes arrow-thin-right-circle as its redundant to arrow-thin-right
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @launchpad-ui/alert@0.7.27
+  - @launchpad-ui/avatar@0.5.9
+  - @launchpad-ui/banner@0.9.26
+  - @launchpad-ui/button@0.10.2
+  - @launchpad-ui/chip@0.8.9
+  - @launchpad-ui/clipboard@0.10.20
+  - @launchpad-ui/collapsible@0.1.22
+  - @launchpad-ui/drawer@0.4.21
+  - @launchpad-ui/dropdown@0.6.65
+  - @launchpad-ui/filter@0.5.45
+  - @launchpad-ui/form@0.9.10
+  - @launchpad-ui/inline-edit@0.1.9
+  - @launchpad-ui/menu@0.11.12
+  - @launchpad-ui/modal@0.16.16
+  - @launchpad-ui/navigation@0.11.36
+  - @launchpad-ui/pagination@0.3.69
+  - @launchpad-ui/select@0.3.18
+  - @launchpad-ui/snackbar@0.3.65
+  - @launchpad-ui/tag@0.2.17
+  - @launchpad-ui/toast@0.2.62
+  - @launchpad-ui/split-button@0.8.12
+  - @launchpad-ui/card@0.1.4
+
 ## 0.44.0
 
 ### Minor Changes
