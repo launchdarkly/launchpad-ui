@@ -1,5 +1,11 @@
 # @launchpad-ui/icons
 
+## 0.12.1
+
+### Patch Changes
+
+- [#983](https://github.com/launchdarkly/launchpad-ui/pull/983) [`21ef85cf`](https://github.com/launchdarkly/launchpad-ui/commit/21ef85cf2d32936d7907712bf35d5f3fba29ef40) Thanks [@XieX](https://github.com/XieX)! - Add brain, filter list, hub and money icons
+
 ## 0.12.0
 
 ### Minor Changes

@@ -1,5 +1,35 @@
 # @launchpad-ui/core
 
+## 0.45.1
+
+### Patch Changes
+
+- [#983](https://github.com/launchdarkly/launchpad-ui/pull/983) [`21ef85cf`](https://github.com/launchdarkly/launchpad-ui/commit/21ef85cf2d32936d7907712bf35d5f3fba29ef40) Thanks [@XieX](https://github.com/XieX)! - Add brain, filter list, hub and money icons
+
+- Updated dependencies []:
+  - @launchpad-ui/alert@0.7.28
+  - @launchpad-ui/avatar@0.5.10
+  - @launchpad-ui/banner@0.9.27
+  - @launchpad-ui/button@0.10.3
+  - @launchpad-ui/chip@0.8.10
+  - @launchpad-ui/clipboard@0.10.21
+  - @launchpad-ui/collapsible@0.1.23
+  - @launchpad-ui/drawer@0.4.22
+  - @launchpad-ui/dropdown@0.6.66
+  - @launchpad-ui/filter@0.5.46
+  - @launchpad-ui/form@0.9.11
+  - @launchpad-ui/inline-edit@0.1.10
+  - @launchpad-ui/menu@0.11.13
+  - @launchpad-ui/modal@0.16.17
+  - @launchpad-ui/navigation@0.11.37
+  - @launchpad-ui/pagination@0.3.70
+  - @launchpad-ui/select@0.3.19
+  - @launchpad-ui/snackbar@0.3.66
+  - @launchpad-ui/tag@0.2.18
+  - @launchpad-ui/toast@0.2.63
+  - @launchpad-ui/split-button@0.8.13
+  - @launchpad-ui/card@0.1.5
+
 ## 0.45.0
 
 ### Minor Changes
