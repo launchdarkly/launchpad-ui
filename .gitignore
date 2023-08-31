@@ -5,6 +5,8 @@ build/
 public/build/
 coverage
 test-results/
+blob-report/
+playwright-report/
 
 .eslintcache
 .cache

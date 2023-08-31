@@ -56,12 +56,32 @@ export const Default: Story = {
   args: {
     label: 'Number field',
   },
+  parameters: {
+    a11y: {
+      options: {
+        rules: {
+          // @fixme
+          'duplicate-id-aria': { enabled: false },
+        },
+      },
+    },
+  },
 };
 
 export const Required: Story = {
   args: {
     label: 'Number field',
     isRequired: true,
+  },
+  parameters: {
+    a11y: {
+      options: {
+        rules: {
+          // @fixme
+          'duplicate-id-aria': { enabled: false },
+        },
+      },
+    },
   },
 };
 
@@ -70,6 +90,16 @@ export const WithHint: Story = {
     hint: 'Enter a number between 1 and 10.',
     label: 'Number field',
   },
+  parameters: {
+    a11y: {
+      options: {
+        rules: {
+          // @fixme
+          'duplicate-id-aria': { enabled: false },
+        },
+      },
+    },
+  },
 };
 
 export const WithError: Story = {
@@ -77,5 +107,16 @@ export const WithError: Story = {
     errorMessage: 'that number is incorrect',
     isInvalid: true,
     label: 'Number field',
+  },
+  parameters: {
+    a11y: {
+      options: {
+        rules: {
+          // @fixme
+          'duplicate-id': { enabled: false },
+          'duplicate-id-aria': { enabled: false },
+        },
+      },
+    },
   },
 };

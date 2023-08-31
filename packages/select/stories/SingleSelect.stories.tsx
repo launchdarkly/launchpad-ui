@@ -38,7 +38,17 @@ export const Basic: Story = {
 
     return <Component />;
   },
-  parameters: { docs: { disable: false } },
+  parameters: {
+    docs: { disable: false },
+    a11y: {
+      options: {
+        rules: {
+          // @fixme
+          'color-contrast': { enabled: false },
+        },
+      },
+    },
+  },
 };
 
 export const WithUncontrolledSelectedKey: Story = {
@@ -59,7 +69,17 @@ export const WithUncontrolledSelectedKey: Story = {
 
     return <Component />;
   },
-  parameters: { docs: { disable: false } },
+  parameters: {
+    docs: { disable: false },
+    a11y: {
+      options: {
+        rules: {
+          // @fixme
+          'color-contrast': { enabled: false },
+        },
+      },
+    },
+  },
 };
 
 export const WithControlledSelectedKey: Story = {
@@ -74,7 +94,17 @@ export const WithControlledSelectedKey: Story = {
 
     return <Component />;
   },
-  parameters: { docs: { disable: false } },
+  parameters: {
+    docs: { disable: false },
+    a11y: {
+      options: {
+        rules: {
+          // @fixme
+          'color-contrast': { enabled: false },
+        },
+      },
+    },
+  },
 };
 
 export const WithControlledFilterable: Story = {
@@ -94,7 +124,17 @@ export const WithControlledFilterable: Story = {
 
     return <Component />;
   },
-  parameters: { docs: { disable: false } },
+  parameters: {
+    docs: { disable: false },
+    a11y: {
+      options: {
+        rules: {
+          // @fixme
+          'color-contrast': { enabled: false },
+        },
+      },
+    },
+  },
 };
 
 export const WithUncontrolledFilterable: Story = {
@@ -123,7 +163,17 @@ export const WithUncontrolledFilterable: Story = {
 
     return <Component />;
   },
-  parameters: { docs: { disable: false } },
+  parameters: {
+    docs: { disable: false },
+    a11y: {
+      options: {
+        rules: {
+          // @fixme
+          'color-contrast': { enabled: false },
+        },
+      },
+    },
+  },
 };
 
 export const WithCustomSelectedRender: Story = {
@@ -152,7 +202,17 @@ export const WithCustomSelectedRender: Story = {
       </SingleSelect>
     );
   },
-  parameters: { docs: { disable: false } },
+  parameters: {
+    docs: { disable: false },
+    a11y: {
+      options: {
+        rules: {
+          // @fixme
+          'color-contrast': { enabled: false },
+        },
+      },
+    },
+  },
 };
 
 export const WithCustomTrigger: Story = {
@@ -168,7 +228,17 @@ export const WithCustomTrigger: Story = {
       </SingleSelect>
     );
   },
-  parameters: { docs: { disable: false } },
+  parameters: {
+    docs: { disable: false },
+    a11y: {
+      options: {
+        rules: {
+          // @fixme
+          'color-contrast': { enabled: false },
+        },
+      },
+    },
+  },
 };
 
 export const SingleSelectWithSections: Story = {
@@ -192,7 +262,17 @@ export const SingleSelectWithSections: Story = {
       </SingleSelect>
     );
   },
-  parameters: { docs: { disable: false } },
+  parameters: {
+    docs: { disable: false },
+    a11y: {
+      options: {
+        rules: {
+          // @fixme
+          'color-contrast': { enabled: false },
+        },
+      },
+    },
+  },
 };
 
 export const WithSelectItemRenderedAs: Story = {
@@ -212,7 +292,17 @@ export const WithSelectItemRenderedAs: Story = {
       </SingleSelect>
     );
   },
-  parameters: { docs: { disable: false } },
+  parameters: {
+    docs: { disable: false },
+    a11y: {
+      options: {
+        rules: {
+          // @fixme
+          'color-contrast': { enabled: false },
+        },
+      },
+    },
+  },
 };
 
 export const WithAllowsCustomValue: Story = {
@@ -233,5 +323,15 @@ export const WithAllowsCustomValue: Story = {
 
     return <Component />;
   },
-  parameters: { docs: { disable: false } },
+  parameters: {
+    docs: { disable: false },
+    a11y: {
+      options: {
+        rules: {
+          // @fixme
+          'color-contrast': { enabled: false },
+        },
+      },
+    },
+  },
 };

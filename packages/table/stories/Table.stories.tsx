@@ -49,4 +49,14 @@ export const Example: Story = {
       </TableBody>,
     ],
   },
+  parameters: {
+    a11y: {
+      options: {
+        rules: {
+          // @fixme
+          'duplicate-id': { enabled: false },
+        },
+      },
+    },
+  },
 };

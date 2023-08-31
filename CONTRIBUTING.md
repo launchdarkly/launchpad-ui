@@ -133,6 +133,12 @@ There are just a few things to keep in mind:
 - If there are visual diffs between your branch and main, Chromatic will generate a list of changes that must be approved before the PR should be merged. This can be found in the Github actions list.
 - The team will be automatically assigned to take a look.
 
+Note: if you are creating a pull request from a fork, CI checks will only run when it is `ready for review`. To run Chromatic, you will need to make a build locally in the terminal using the project token found in Chromatic:
+
+```sh
+$ pnpm chromatic --project-token PROJECT_TOKEN --branch-name FORKED_BRANCH --build-script-name storybook:build --exit-once-uploaded --only-changed --externals "packages/icons/src/img/**" --externals "packages/tokens/src/**"
+```
+
 ---
 
 ## Common Tasks

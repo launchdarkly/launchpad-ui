@@ -400,3 +400,144 @@
   width: 2.4rem;
 }
 /* stylelint-enable no-descending-specificity */
+
+/* ------- PRIMARY FLAIR ------- */
+
+.Button--primaryFlair {
+  background: var(
+    --lp-color-bg-interactive-primary-flair-base-dark,
+    linear-gradient(124deg, #a34fde 0%, #405bff 98.05%)
+  );
+  border-radius: var(--lp-radius-medium, 6px);
+  border: 1px solid var(--Button-color-border-primary-flair);
+  color: var(--Button-color-text-primary);
+}
+
+.Button-icon.Button--primaryFlair {
+  fill: var(--Button-color-text-primary);
+}
+
+.Button-icon.Button--icon.Button--primaryFlair {
+  background-color: transparent;
+  color: var(--Button-icon-color-text-default);
+}
+
+.Button--primaryFlair:hover,
+.Button--icon.Button--primaryFlair:hover {
+  background: var(
+    --lp-color-bg-interactive-primary-flair-hover-dark,
+    linear-gradient(124deg, #9655c3 0%, #4b5fdd 98.05%)
+  );
+  border: 1px solid var(--Button-color-border-primary-flair-hover);
+  box-shadow: var(--Button-box-shadow-hover);
+}
+
+.Button--primaryFlair:focus-visible {
+  background: var(
+    --lp-color-bg-interactive-primary-flair-focus-dark,
+    linear-gradient(124deg, #8741b9 0%, #3b50ce 98.05%)
+  );
+  border: 1px solid var(--lp-color-border-interactive-primary-flair-focus);
+}
+
+.Button--icon.Button--primaryFlair:active,
+.Button--primaryFlair:active {
+  background: var(
+    --lp-color-bg-interactive-primary-flair-active-dark,
+    linear-gradient(124deg, #8741b9 0%, #3b50ce 98.05%)
+  );
+  border: 1px solid var(--lp-color-border-interactive-primary-flair-active);
+  box-shadow: var(--Button-box-shadow-active);
+}
+
+.Button.Button--primaryFlair[disabled],
+.Button.Button--primaryFlair[disabled]:hover {
+  background: var(--Button-color-background-disabled);
+  border: none;
+  color: var(--lp-color-text-interactive-disabled);
+}
+
+/* ------- DEFAULT FLAIR ------- */
+
+.Button--defaultFlair {
+  background-color: var(--Button-color-background-default-flair);
+  border-color: var(--Button-color-border-default-flair);
+  color: var(--Button-color-text-default-flair);
+}
+
+.Button-icon.Button--defaultFlair {
+  fill: var(--Button-color-text-default-flair);
+}
+
+.Button-icon.Button--icon.Button--defaultFlair {
+  background-color: transparent;
+  color: var(--Button-icon-color-text-default);
+}
+
+.Button--defaultFlair:hover,
+.Button--icon.Button--defaultFlair:hover {
+  background-color: var(--Button-color-background-default-flair-hover);
+  color: var(--Button-color-text-default-flair-hover);
+  box-shadow: var(--Button-box-shadow-hover);
+}
+
+.Button--defaultFlair:focus-visible {
+  background-color: var(--Button-color-background-default-flair-focus);
+  color: var(--Button-color-text-default-flair-focus);
+}
+
+.Button--icon.Button--defaultFlair:active,
+.Button--defaultFlair:active {
+  background-color: var(--Button-color-background-default-flair-active);
+  box-shadow: var(--Button-box-shadow-active);
+  color: var(--Button-color-text-default-flair-active);
+}
+
+.Button.Button--defaultFlair[disabled],
+.Button.Button--defaultFlair[disabled]:hover {
+  background: var(--Button-color-background-disabled);
+  border: none;
+  color: var(--lp-color-text-interactive-disabled);
+}
+
+/* ------- MINIMAL FLAIR ------- */
+
+.Button.Button--minimalFlair {
+  background-color: var(--Button-color-background-minimal-flair);
+  color: var(--Button-color-text-minimal-flair);
+}
+
+.Button-icon.Button--minimalFlair {
+  fill: var(--Button-color-text-default-flair);
+}
+
+.Button-icon.Button--icon.Button--minimalFlair {
+  background-color: transparent;
+  color: var(--Button-color-text-minimal-flair);
+}
+
+.Button--minimalFlair:hover,
+.Button--icon.Button--minimalFlair:hover {
+  background-color: var(--Button-color-background-minimal-flair-hover);
+  color: var(--Button-color-text-minimal-flair-hover);
+  box-shadow: var(--Button-box-shadow-hover);
+}
+
+.Button--minimalFlair:focus-visible {
+  background-color: var(--Button-color-background-minimal-flair-focus);
+  color: var(--Button-color-text-minimal-flair-focus);
+}
+
+.Button--icon.Button--minimalFlair:active,
+.Button--minimalFlair:active {
+  background-color: var(--Button-color-background-minimal-flair-active);
+  color: var(--Button-color-text-minimal-flair-active);
+  box-shadow: var(--Button-box-shadow-active);
+}
+
+.Button.Button--minimalFlair[disabled],
+.Button.Button--minimalFlair[disabled]:hover {
+  background: var(--Button-color-background-disabled);
+  border: none;
+  color: var(--lp-color-text-interactive-disabled);
+}

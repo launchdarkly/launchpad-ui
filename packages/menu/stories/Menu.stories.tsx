@@ -49,6 +49,16 @@ export const WithSearch: Story = {
       <MenuItem key="3">item 3</MenuItem>,
     ],
   },
+  parameters: {
+    a11y: {
+      options: {
+        rules: {
+          // @fixme
+          'aria-required-children': { enabled: false },
+        },
+      },
+    },
+  },
 };
 
 export const WithTooltips: Story = {

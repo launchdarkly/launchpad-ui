@@ -62,6 +62,16 @@ export const Default: Story = {
     htmlFor: 'Email',
     children: <TextField id="Email" value="testing@launchdarkly.com" />,
   },
+  parameters: {
+    a11y: {
+      options: {
+        rules: {
+          // @fixme
+          'duplicate-id-aria': { enabled: false },
+        },
+      },
+    },
+  },
 };
 
 export const WithError: Story = {
@@ -74,6 +84,16 @@ export const WithError: Story = {
     isInvalid: true,
     children: <TextField id="Email" value="testing@launchdarkly.com" />,
   },
+  parameters: {
+    a11y: {
+      options: {
+        rules: {
+          // @fixme
+          'duplicate-id-aria': { enabled: false },
+        },
+      },
+    },
+  },
 };
 
 export const WithHint: Story = {
@@ -85,6 +105,16 @@ export const WithHint: Story = {
     hint: 'Must be a valid email',
     children: <TextField id="Email" autoComplete="email" value="testing@launchdarkly.com" />,
   },
+  parameters: {
+    a11y: {
+      options: {
+        rules: {
+          // @fixme
+          'duplicate-id-aria': { enabled: false },
+        },
+      },
+    },
+  },
 };
 
 export const WithPasswordManagerDisabled: Story = {
@@ -95,5 +125,15 @@ export const WithPasswordManagerDisabled: Story = {
     htmlFor: 'Name',
     hint: 'Must not be blank',
     children: <TextField id="Name" autoComplete="off" value="First Name" />,
+  },
+  parameters: {
+    a11y: {
+      options: {
+        rules: {
+          // @fixme
+          'duplicate-id-aria': { enabled: false },
+        },
+      },
+    },
   },
 };

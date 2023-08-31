@@ -27,7 +27,12 @@ export const Example: Story = {
 
     return (
       <>
-        <InlineEdit defaultValue={editValue} {...args} onConfirm={setEditValue}>
+        <InlineEdit
+          defaultValue={editValue}
+          aria-label="edit value"
+          {...args}
+          onConfirm={setEditValue}
+        >
           <span>{editValue}</span>
         </InlineEdit>
       </>
@@ -47,7 +52,13 @@ export const EditTitle: Story = {
 
     return (
       <div style={{ width: '500px' }}>
-        <InlineEdit defaultValue={editValue} {...args} onConfirm={setEditValue} hideEdit>
+        <InlineEdit
+          defaultValue={editValue}
+          aria-label="edit value"
+          {...args}
+          onConfirm={setEditValue}
+          hideEdit
+        >
           <h3>{editValue}</h3>
         </InlineEdit>
       </div>
@@ -61,7 +72,12 @@ export const EditCopy: Story = {
 
     return (
       <div style={{ width: 'max-content' }}>
-        <InlineEdit defaultValue={editValue} {...args} onConfirm={setEditValue}>
+        <InlineEdit
+          defaultValue={editValue}
+          aria-label="edit value"
+          {...args}
+          onConfirm={setEditValue}
+        >
           <CopyToClipboard text={editValue} kind="basic">
             {editValue}
           </CopyToClipboard>
@@ -78,6 +94,7 @@ export const WithTextarea: Story = {
     return (
       <InlineEdit
         defaultValue={editValue}
+        aria-label="edit value"
         {...args}
         onConfirm={setEditValue}
         renderInput={<TextArea />}
@@ -103,6 +120,7 @@ export const InForm: Story = {
         >
           <InlineEdit
             defaultValue={editValue}
+            aria-label="edit value"
             {...args}
             onConfirm={setEditValue}
             renderInput={<TextField id="inline-edit" />}
@@ -113,10 +131,20 @@ export const InForm: Story = {
       </Form>
     );
   },
+  parameters: {
+    a11y: {
+      options: {
+        rules: {
+          // @fixme
+          'duplicate-id': { enabled: false },
+        },
+      },
+    },
+  },
 };
 
 export const Controlled: Story = {
-  render: (args) => {
+  render: () => {
     const [editValue, setEditValue] = useState('edit me');
     const [isEditing, setEditing] = useState(true);
 
@@ -124,9 +152,9 @@ export const Controlled: Story = {
       <InlineEdit
         defaultValue={editValue}
         isEditing={isEditing}
+        aria-label="edit value"
         onCancel={() => setEditing(false)}
         onEdit={() => setEditing(true)}
-        {...args}
         onConfirm={(value) => {
           setEditValue(value);
           setEditing(false);

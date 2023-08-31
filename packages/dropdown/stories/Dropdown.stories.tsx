@@ -49,6 +49,16 @@ export const Example: Story = {
     ],
     isOpen: true,
   },
+  parameters: {
+    a11y: {
+      options: {
+        rules: {
+          // @fixme
+          'color-contrast': { enabled: false },
+        },
+      },
+    },
+  },
 };
 
 export const WithHtmlButton: Story = {

@@ -34,6 +34,19 @@ color:
         hover:
           value: '{ color.gray.100.value }'
           dark: '{ color.gray.700.value }'
+      secondary-flair:
+        base:
+          value: '{ color.purple.100.value }'
+          dark: transparent
+        active:
+          value: '{ color.purple.300.value }'
+          dark: '{ color.purple.900.value }'
+        focus:
+          value: '{ color.purple.300.value }'
+          dark: '{ color.purple.900.value }'
+        hover:
+          value: '{ color.purple.200.value }'
+          dark: '{ color.purple.800.value }'
       tertiary:
         base:
           value: transparent
@@ -46,6 +59,18 @@ color:
         hover:
           value: '{ color.gray.100.value }'
           dark: '{ color.gray.700.value }'
+      tertiary-flair:
+        base:
+          value: transparent
+        active:
+          value: '{ color.purple.200.value }'
+          dark: '{ color.purple.900.value }'
+        focus:
+          value: '{ color.purple.200.value }'
+          dark: '{ color.purple.900.value }'
+        hover:
+          value: '{ color.purple.100.value }'
+          dark: '{ color.purple.800.value }'
       destructive:
         base:
           value: '{ color.white.0.value }'
@@ -133,6 +158,19 @@ color:
           value: '{ color.blue.700.value }'
         hover:
           value: '{ color.blue.600.value }'
+      primary-flair:
+        base:
+          value: '{ color.purple.500.value }'
+          dark: '{ color.purple.500.value }'
+        active:
+          value: '{ color.purple.700.value }'
+          dark: '{ color.purple.500.value }'
+        focus:
+          value: '{ color.purple.700.value }'
+          dark: '{ color.purple.500.value }'
+        hover:
+          value: '{ color.purple.600.value }'
+          dark: '{ color.purple.500.value }'
       secondary:
         base:
           value: '{ color.gray.300.value }'
@@ -144,6 +182,19 @@ color:
           value: '{ color.gray.700.value }'
         hover:
           value: '{ color.gray.600.value }'
+      secondary-flair:
+        base:
+          value: '{ color.purple.500.value }'
+          dark: '{ color.purple.400.value }'
+        active:
+          value: '{ color.purple.700.value }'
+          dark: '{ color.purple.300.value }'
+        focus:
+          value: '{ color.purple.700.value }'
+          dark: '{ color.purple.300.value }'
+        hover:
+          value: '{ color.purple.600.value }'
+          dark: '{ color.purple.300.value }'
       destructive:
         value: '{ color.system.red.700.value }'
         dark: '{ color.system.red.500.value }'
@@ -240,6 +291,19 @@ color:
       disabled:
         value: '{ color.gray.500.value }'
         dark: '{ color.gray.700.value }'
+      flair:
+        focus:
+          value: '{ color.purple.700.value }'
+          dark: '{ color.purple.300.value }'
+        hover:
+          value: '{ color.purple.700.value }'
+          dark: '{ color.purple.300.value }'
+        base:
+          value: '{ color.purple.600.value }'
+          dark: '{ color.purple.400.value }'
+        active:
+          value: '{ color.purple.700.value }'
+          dark: '{ color.purple.300.value }'
     ui:
       primary:
         base:

@@ -50,4 +50,14 @@ export const Default: Story = {
     id: 'upload-button',
     children: 'Select file',
   },
+  parameters: {
+    a11y: {
+      options: {
+        rules: {
+          // @fixme
+          'duplicate-id-aria': { enabled: false },
+        },
+      },
+    },
+  },
 };

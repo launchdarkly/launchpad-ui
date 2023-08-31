@@ -19,6 +19,7 @@ const config: StorybookConfig = {
      * TODO: remove once Vite has the fix released
      */
     storyStoreV7: false,
+    buildStoriesJson: true,
   },
   addons: [
     '@storybook/addon-a11y',
@@ -31,7 +32,11 @@ const config: StorybookConfig = {
   core: {
     disableTelemetry: true,
   },
-  staticDirs: ['.', { from: '../packages/icons/src/img', to: '/static' }],
+  staticDirs: [
+    '.',
+    { from: '../packages/icons/src/img', to: '/static' },
+    { from: '../packages/card/src/img', to: '/static' },
+  ],
   env: (config) => {
     const packageStatuses = getPackageStatusEnvVars();
 

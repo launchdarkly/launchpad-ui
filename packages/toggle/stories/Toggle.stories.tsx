@@ -71,9 +71,9 @@ export default {
 
 type Story = StoryObj<typeof Toggle>;
 
-export const On: Story = { args: { isSelected: true } };
+export const On: Story = { args: { isSelected: true, 'aria-label': 'on' } };
 
-export const Off: Story = { args: { isSelected: false } };
+export const Off: Story = { args: { isSelected: false, 'aria-label': 'off' } };
 
 export const Uncontrolled: Story = {
   args: {

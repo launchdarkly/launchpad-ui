@@ -1,5 +1,58 @@
 # @launchpad-ui/icons
 
+## 0.12.1
+
+### Patch Changes
+
+- [#983](https://github.com/launchdarkly/launchpad-ui/pull/983) [`21ef85cf`](https://github.com/launchdarkly/launchpad-ui/commit/21ef85cf2d32936d7907712bf35d5f3fba29ef40) Thanks [@XieX](https://github.com/XieX)! - Add brain, filter list, hub and money icons
+
+## 0.12.0
+
+### Minor Changes
+
+- [#981](https://github.com/launchdarkly/launchpad-ui/pull/981) [`5d398d07`](https://github.com/launchdarkly/launchpad-ui/commit/5d398d071ee124e430bf127b86cfeb2af3af3989) Thanks [@jennifro](https://github.com/jennifro)! - [Icons]: Corrects experiment and release icons to the vectors only, removes warning-circle icon as its redundant to warning icon, removes arrow-thin-right-circle as its redundant to arrow-thin-right
+
+## 0.11.0
+
+### Minor Changes
+
+- [#980](https://github.com/launchdarkly/launchpad-ui/pull/980) [`e834a1f1`](https://github.com/launchdarkly/launchpad-ui/commit/e834a1f19a52678b79edb91db9fdd356a71dbb8d) Thanks [@jennifro](https://github.com/jennifro)! - [Icons]: Minor changes to new icons for release and arrow-thin-circle, replaces bar-chart with experiment, adds warning-circle
+
+## 0.10.0
+
+### Minor Changes
+
+- [#975](https://github.com/launchdarkly/launchpad-ui/pull/975) [`6b94906e`](https://github.com/launchdarkly/launchpad-ui/commit/6b94906e69d9f7516388d465689f7ff2e37faf9a) Thanks [@jennifro](https://github.com/jennifro)! - [Icons]: Adds icons for arrow-right-thin-circle, bar-chart, and release
+
+### Patch Changes
+
+- Updated dependencies [[`45d511ea`](https://github.com/launchdarkly/launchpad-ui/commit/45d511ea87c176e0cb12f2cdac885ef8cec91058)]:
+  - @launchpad-ui/tokens@0.7.0
+
+## 0.9.6
+
+### Patch Changes
+
+- [#969](https://github.com/launchdarkly/launchpad-ui/pull/969) [`2be20b76`](https://github.com/launchdarkly/launchpad-ui/commit/2be20b76362713b2f4fe25e0e045271f2358e59e) Thanks [@hsadhvani](https://github.com/hsadhvani)! - [Icons]: Add application, individual target, prerequisite, segment and gear icons
+
+## 0.9.5
+
+### Patch Changes
+
+- [#963](https://github.com/launchdarkly/launchpad-ui/pull/963) [`6a034ffe`](https://github.com/launchdarkly/launchpad-ui/commit/6a034ffef935f54dd077b6cdcc5cf14c02629d6b) Thanks [@Sensationull](https://github.com/Sensationull)! - added rerun icon
+
+## 0.9.4
+
+### Patch Changes
+
+- [#955](https://github.com/launchdarkly/launchpad-ui/pull/955) [`5aad4986`](https://github.com/launchdarkly/launchpad-ui/commit/5aad4986acc0cf5f593247fbe041cf8938a684a3) Thanks [@traciklopez](https://github.com/traciklopez)! - [Icons]: Add mobile, desktop, and server icons
+
+## 0.9.3
+
+### Patch Changes
+
+- [#947](https://github.com/launchdarkly/launchpad-ui/pull/947) [`29e2b26c`](https://github.com/launchdarkly/launchpad-ui/commit/29e2b26c7f2a5496adb11a72fd79fcadd33717ff) Thanks [@Niznikr](https://github.com/Niznikr)! - Annotate pure functions
+
 ## 0.9.2
 
 ### Patch Changes

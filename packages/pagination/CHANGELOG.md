@@ -1,5 +1,77 @@
 # @launchpad-ui/pagination
 
+## 0.3.70
+
+### Patch Changes
+
+- Updated dependencies [[`21ef85cf`](https://github.com/launchdarkly/launchpad-ui/commit/21ef85cf2d32936d7907712bf35d5f3fba29ef40)]:
+  - @launchpad-ui/icons@0.12.1
+  - @launchpad-ui/button@0.10.3
+
+## 0.3.69
+
+### Patch Changes
+
+- Updated dependencies [[`5d398d07`](https://github.com/launchdarkly/launchpad-ui/commit/5d398d071ee124e430bf127b86cfeb2af3af3989)]:
+  - @launchpad-ui/icons@0.12.0
+  - @launchpad-ui/button@0.10.2
+
+## 0.3.68
+
+### Patch Changes
+
+- Updated dependencies [[`e834a1f1`](https://github.com/launchdarkly/launchpad-ui/commit/e834a1f19a52678b79edb91db9fdd356a71dbb8d)]:
+  - @launchpad-ui/icons@0.11.0
+  - @launchpad-ui/button@0.10.1
+
+## 0.3.67
+
+### Patch Changes
+
+- Updated dependencies [[`6b94906e`](https://github.com/launchdarkly/launchpad-ui/commit/6b94906e69d9f7516388d465689f7ff2e37faf9a), [`45d511ea`](https://github.com/launchdarkly/launchpad-ui/commit/45d511ea87c176e0cb12f2cdac885ef8cec91058)]:
+  - @launchpad-ui/icons@0.10.0
+  - @launchpad-ui/button@0.10.0
+  - @launchpad-ui/tokens@0.7.0
+  - @launchpad-ui/progress@0.5.29
+
+## 0.3.66
+
+### Patch Changes
+
+- Updated dependencies [[`2be20b76`](https://github.com/launchdarkly/launchpad-ui/commit/2be20b76362713b2f4fe25e0e045271f2358e59e)]:
+  - @launchpad-ui/icons@0.9.6
+  - @launchpad-ui/button@0.9.6
+
+## 0.3.65
+
+### Patch Changes
+
+- Updated dependencies [[`6a034ffe`](https://github.com/launchdarkly/launchpad-ui/commit/6a034ffef935f54dd077b6cdcc5cf14c02629d6b)]:
+  - @launchpad-ui/icons@0.9.5
+  - @launchpad-ui/button@0.9.5
+
+## 0.3.64
+
+### Patch Changes
+
+- [#965](https://github.com/launchdarkly/launchpad-ui/pull/965) [`fec67a1c`](https://github.com/launchdarkly/launchpad-ui/commit/fec67a1c3713ae80295a437076f8d5ea59edcd58) Thanks [@renovate](https://github.com/apps/renovate)! - Update dependencies
+
+## 0.3.63
+
+### Patch Changes
+
+- Updated dependencies [[`5aad4986`](https://github.com/launchdarkly/launchpad-ui/commit/5aad4986acc0cf5f593247fbe041cf8938a684a3)]:
+  - @launchpad-ui/icons@0.9.4
+  - @launchpad-ui/button@0.9.4
+
+## 0.3.62
+
+### Patch Changes
+
+- Updated dependencies [[`29e2b26c`](https://github.com/launchdarkly/launchpad-ui/commit/29e2b26c7f2a5496adb11a72fd79fcadd33717ff)]:
+  - @launchpad-ui/button@0.9.3
+  - @launchpad-ui/icons@0.9.3
+
 ## 0.3.61
 
 ### Patch Changes

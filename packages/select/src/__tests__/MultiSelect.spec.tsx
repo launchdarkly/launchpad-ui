@@ -27,7 +27,7 @@ describe('Select', () => {
       );
 
       await user.click(screen.getByTestId('select-trigger'));
-      user.click(screen.getAllByRole('option')[0]);
+      await user.click(screen.getAllByRole('option')[0]);
       await user.click(screen.getAllByRole('option')[1]);
       expect(screen.getByTestId('select-trigger')).toHaveTextContent(
         `${FRUIT[0].name}, ${FRUIT[1].name}`
@@ -48,7 +48,7 @@ describe('Select', () => {
       await user.click(screen.getByTestId('select-trigger'));
 
       await user.click(screen.getAllByRole('option')[0]);
-      user.click(screen.getAllByRole('option')[1]);
+      await user.click(screen.getAllByRole('option')[1]);
 
       expect(screen.getByTestId('menu-header')).toBeVisible();
       expect(screen.getByTestId('clear-btn')).toBeVisible();
@@ -98,7 +98,7 @@ describe('Select', () => {
       expect(screen.getByTestId('select')).toBeVisible();
 
       await user.click(screen.getByTestId('select-trigger'));
-      user.click(screen.getAllByRole('option')[0]);
+      await user.click(screen.getAllByRole('option')[0]);
       await user.click(screen.getAllByRole('option')[1]);
       expect(screen.getByTestId('select-trigger')).toHaveTextContent(DUMMY_TEXT);
     });
@@ -125,7 +125,7 @@ describe('Select', () => {
       );
 
       await user.click(screen.getByTestId('custom-trigger'));
-      user.click(screen.getAllByRole('option')[0]);
+      await user.click(screen.getAllByRole('option')[0]);
       await user.click(screen.getAllByRole('option')[2]);
 
       expect(screen.getAllByTestId('tag')[0]).toHaveTextContent(FRUIT[0].name);
@@ -142,7 +142,7 @@ describe('Select', () => {
       );
 
       await user.click(screen.getByTestId('custom-trigger'));
-      user.click(screen.getAllByRole('option')[0]);
+      await user.click(screen.getAllByRole('option')[0]);
       await user.click(screen.getAllByRole('option')[2]);
       await user.click(screen.getAllByTestId('remove-tag-btn')[0]);
 

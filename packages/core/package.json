@@ -1,6 +1,6 @@
 {
   "name": "@launchpad-ui/core",
-  "version": "0.42.3",
+  "version": "0.45.1",
   "status": "beta",
   "publishConfig": {
     "access": "public"
@@ -40,11 +40,13 @@
     "@launchpad-ui/avatar": "workspace:~",
     "@launchpad-ui/banner": "workspace:~",
     "@launchpad-ui/button": "workspace:~",
+    "@launchpad-ui/card": "workspace:~",
     "@launchpad-ui/chip": "workspace:~",
     "@launchpad-ui/clipboard": "workspace:~",
     "@launchpad-ui/collapsible": "workspace:~",
     "@launchpad-ui/columns": "workspace:~",
     "@launchpad-ui/counter": "workspace:~",
+    "@launchpad-ui/data-table": "workspace:~",
     "@launchpad-ui/drawer": "workspace:~",
     "@launchpad-ui/dropdown": "workspace:~",
     "@launchpad-ui/filter": "workspace:~",

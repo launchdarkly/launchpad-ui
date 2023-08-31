@@ -10,7 +10,8 @@
   "packageRules": [
     {
       "matchUpdateTypes": ["patch"],
-      "enabled": false
+      "enabled": false,
+      "excludePackagePatterns": ["^@react-aria", "^@react-stately", "^@react-types"]
     }
   ],
   "rangeStrategy": "bump",

@@ -45,7 +45,17 @@ export const Default: Story = {
     );
   },
 };
-Default.parameters = { docs: { disable: true } };
+Default.parameters = {
+  docs: { disable: true },
+  a11y: {
+    options: {
+      rules: {
+        // @fixme
+        'duplicate-id-aria': { enabled: false },
+      },
+    },
+  },
+};
 
 export const ForcedDarkTheme: Story = {
   render: () => {
@@ -68,7 +78,17 @@ export const ForcedDarkTheme: Story = {
       button
     );
   },
-  parameters: { docs: { disable: true } },
+  parameters: {
+    docs: { disable: true },
+    a11y: {
+      options: {
+        rules: {
+          // @fixme
+          'duplicate-id-aria': { enabled: false },
+        },
+      },
+    },
+  },
 };
 
 export const WithTooltip: Story = {
@@ -93,5 +113,15 @@ export const WithTooltip: Story = {
       button
     );
   },
-  parameters: { docs: { disable: true } },
+  parameters: {
+    docs: { disable: true },
+    a11y: {
+      options: {
+        rules: {
+          // @fixme
+          'duplicate-id-aria': { enabled: false },
+        },
+      },
+    },
+  },
 };

@@ -4,8 +4,8 @@ import path from 'path';
 
 import { vanillaExtractPlugin } from '@vanilla-extract/vite-plugin';
 import react from '@vitejs/plugin-react-swc';
+import { PluginPure } from 'rollup-plugin-pure';
 import { defineConfig } from 'vite';
-import istanbul from 'vite-plugin-istanbul';
 
 import tsconfig from './tsconfig.json';
 import { cssImport } from './vite-plugin-css';
@@ -19,12 +19,29 @@ Object.keys(paths).forEach((key) => {
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const packageJSON = require(path.resolve('./package.json'));
 
+// https://github.com/babel/babel/blob/main/packages/babel-plugin-transform-react-pure-annotations/src/index.ts
+const PURE_CALLS = [
+  'cloneElement',
+  'createContext',
+  'createElement',
+  'createFactory',
+  'createRef',
+  'forwardRef',
+  'isValidElement',
+  'memo',
+  'lazy',
+];
+
 export default defineConfig({
   plugins: [
     react(),
     vanillaExtractPlugin(),
     cssImport(),
-    ...(process.env.CYPRESS ? [istanbul({ cypress: true })] : []),
+    PluginPure({
+      functions: PURE_CALLS,
+      sourcemap: true,
+      exclude: [/node_modules/],
+    }),
   ],
   resolve: {
     alias,
@@ -40,9 +57,6 @@ export default defineConfig({
       branches: 70,
       statements: 90,
       exclude: ['**/*.spec.tsx', '**/test/'],
-    },
-    deps: {
-      registerNodeLoader: true,
     },
   },
   build: {
@@ -62,5 +76,4 @@ export default defineConfig({
     sourcemap: true,
     minify: false,
   },
-  logLevel: process.env.CYPRESS ? 'silent' : undefined,
 });

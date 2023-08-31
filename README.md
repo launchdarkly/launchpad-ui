@@ -46,27 +46,21 @@ The following command will run unit tests in every package of the monorepo:
 $ pnpm test
 ```
 
-#### Component Tests
+#### a11y Tests
 
-[Cypress component testing](https://docs.cypress.io/guides/component-testing/quickstart-react) is used to run browser tests to validate interactivity and accessibility features of components in real browser contexts.
+[Playwight](https://playwright.dev/) with [@axe-core/playwright](https://github.com/dequelabs/axe-core-npm/blob/develop/packages/playwright/README.md) is used to run accessibility checks on our stories in light and dark mode.
 
-The following command will run Cypress tests for every package of the monorepo and report code coverage:
-
-```sh
-$ pnpm cypress:component
-```
-
-To run in watch mode or debug a particular test, run the following command:
+The following command will build Storybook, start the server, and run a11y tests locally on them:
 
 ```sh
-$ pnpm cypress:open
+$ pnpm e2e:a11y
 ```
 
 #### SSR Tests
 
 SSR support is tested using a [Remix](https://remix.run/) app [found in the monorepo](./apps/remix/README.md).
 
-The following command will build the app, start the server, and run Cypress tests to verify the components have rendered:
+The following command will build the app, start the server, and run Playwright tests to verify the components have rendered:
 
 ```sh
 $ pnpm e2e:ssr

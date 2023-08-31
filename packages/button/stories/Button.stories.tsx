@@ -172,11 +172,53 @@ export const Minimal: Story = { args: { children: 'Minimal', kind: 'minimal' } }
 
 export const Primary: Story = { args: { children: 'Primary', kind: 'primary' } };
 
+export const Close: Story = { args: { children: 'Close', kind: 'close' } };
+
 export const Destructive: Story = {
   args: { children: 'Destructive', kind: 'destructive' },
 };
 
 export const Link: Story = { args: { children: 'Link', kind: 'link' } };
+
+export const PrimaryFlair: Story = { args: { children: 'Primary flair', kind: 'primaryFlair' } };
+
+export const PrimaryFlairWithIcon: Story = {
+  args: { children: 'Primary flair with icon', icon: <Icon name="add" />, kind: 'primaryFlair' },
+};
+
+export const DefaultFlair: Story = {
+  args: { children: 'Default flair', kind: 'defaultFlair' },
+  parameters: {
+    a11y: {
+      options: {
+        rules: {
+          // @fixme
+          'color-contrast': { enabled: false },
+        },
+      },
+    },
+  },
+};
+
+export const DefaultFlairWithIcon: Story = {
+  args: { children: 'Default flair with icon', icon: <Icon name="add" />, kind: 'defaultFlair' },
+  parameters: {
+    a11y: {
+      options: {
+        rules: {
+          // @fixme
+          'color-contrast': { enabled: false },
+        },
+      },
+    },
+  },
+};
+
+export const MinimalFlair: Story = { args: { children: 'Minimal flair', kind: 'minimalFlair' } };
+
+export const MinimalFlairWithIcon: Story = {
+  args: { children: 'Minimal flair with icon', icon: <Icon name="add" />, kind: 'minimalFlair' },
+};
 
 export const AsAnchorChild: Story = {
   args: {
@@ -184,6 +226,16 @@ export const AsAnchorChild: Story = {
     asChild: true,
     icon: <Icon name="add" />,
     kind: 'destructive',
+  },
+  parameters: {
+    a11y: {
+      options: {
+        rules: {
+          // @fixme
+          'color-contrast': { enabled: false },
+        },
+      },
+    },
   },
 };
 

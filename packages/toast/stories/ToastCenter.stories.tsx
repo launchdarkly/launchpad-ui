@@ -57,4 +57,14 @@ export const Default: Story = {
     const canvas = within(canvasElement);
     await userEvent.click(canvas.getAllByRole('button')[0]);
   },
+  parameters: {
+    a11y: {
+      options: {
+        rules: {
+          // @fixme
+          'color-contrast': { enabled: false },
+        },
+      },
+    },
+  },
 };

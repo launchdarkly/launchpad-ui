@@ -1,6 +1,6 @@
 {
   "name": "@launchpad-ui/toggle",
-  "version": "0.6.5",
+  "version": "0.6.7",
   "status": "beta",
   "publishConfig": {
     "access": "public"
@@ -33,9 +33,9 @@
   },
   "dependencies": {
     "@launchpad-ui/tokens": "workspace:~",
-    "@react-aria/focus": "3.13.0",
-    "@react-aria/switch": "3.5.1",
-    "@react-stately/toggle": "3.6.0",
+    "@react-aria/focus": "3.14.0",
+    "@react-aria/switch": "3.5.3",
+    "@react-stately/toggle": "3.6.1",
     "classix": "2.1.17"
   },
   "peerDependencies": {
@@ -43,7 +43,7 @@
     "react-dom": "18.2.0"
   },
   "devDependencies": {
-    "@react-types/shared": "3.18.1",
+    "@react-types/shared": "3.19.0",
     "react": "18.2.0",
     "react-dom": "18.2.0"
   }
