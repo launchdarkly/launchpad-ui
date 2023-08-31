@@ -9,9 +9,8 @@
     "build:transform": "nx run-many --target=build --projects=@launchpad-ui/tokens",
     "chromatic": "chromatic",
     "clean": "nx run-many --target=clean --all",
-    "cypress:component": "pnpm build:transform && rm -rf coverage .nyc_output && cypress run --component && nyc report",
-    "cypress:open": "cypress open",
-    "e2e:ssr": "concurrently -k -s first -n \"Remix,e2e\" -c \"magenta,blue\" \"pnpm remix\" \"wait-on tcp:3000 && pnpm cypress run\"",
+    "e2e:a11y": "concurrently -k --kill-signal SIGKILL -s first -n \"Storybook,e2e\" -c \"magenta,blue\" \"pnpm storybook:build && pnpm dlx http-server storybook-static -s\" \"wait-on http://127.0.0.1:8080 && STORYBOOK_URL=http://127.0.0.1:8080/ pnpm playwright test a11y\"",
+    "e2e:ssr": "concurrently -k --kill-signal SIGKILL -s first -n \"Remix,e2e\" -c \"magenta,blue\" \"pnpm remix\" \"wait-on tcp:3000 && pnpm playwright test ssr\"",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "generate": "plop",
     "graph": "nx affected:graph",
@@ -39,12 +38,13 @@
   },
   "homepage": "https://github.com/launchdarkly/launchpad-ui#readme",
   "devDependencies": {
+    "@axe-core/playwright": "^4.7.3",
     "@changesets/changelog-github": "^0.4.4",
     "@changesets/cli": "^2.26.0",
     "@commitlint/cli": "^17.7.1",
     "@commitlint/config-conventional": "^17.7.0",
-    "@cypress/code-coverage": "^3.11.0",
     "@etchteam/storybook-addon-status": "^4.2.4",
+    "@playwright/test": "^1.37.0",
     "@storybook/addon-a11y": "^7.3.0",
     "@storybook/addon-essentials": "^7.3.0",
     "@storybook/addon-interactions": "^7.3.0",
@@ -76,16 +76,11 @@
     "@vitejs/plugin-react-swc": "^3.3.2",
     "@vitest/coverage-v8": "^0.34.1",
     "@vitest/ui": "^0.34.1",
-    "axe-core": "^4.7.2",
     "chromatic": "^6.24.1",
     "concurrently": "^8.2.0",
-    "cypress": "^12.17.0",
-    "cypress-axe": "^1.4.0",
-    "cypress-real-events": "^1.10.0",
     "deepmerge": "^4.3.1",
     "eslint": "^8.48.0",
     "eslint-config-prettier": "^9.0.0",
-    "eslint-plugin-cypress": "^2.14.0",
     "eslint-plugin-functional": "^6.0.0",
     "eslint-plugin-import": "^2.28.0",
     "eslint-plugin-jsx-a11y": "^6.7.0",
@@ -98,7 +93,6 @@
     "jsdom": "^22.1.0",
     "lint-staged": "^14.0.0",
     "nx": "^16.7.4",
-    "nyc": "^15.1.0",
     "plop": "^3.1.1",
     "postcss": "^8.4.16",
     "postcss-import": "^15.1.0",
@@ -115,7 +109,6 @@
     "typescript": "^5.2.2",
     "typescript-plugin-css-modules": "^5.0.1",
     "vite": "^4.4.9",
-    "vite-plugin-istanbul": "^5.0.0",
     "vite-plugin-turbosnap": "^1.0.2",
     "vitest": "^0.34.1",
     "wait-on": "^7.0.1"
@@ -127,9 +120,6 @@
         "react": "18",
         "stylelint": "15"
       }
-    },
-    "overrides": {
-      "@cypress/request": "^3.0.0"
     }
   },
   "browserslist": [

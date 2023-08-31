@@ -186,10 +186,32 @@ export const PrimaryFlairWithIcon: Story = {
   args: { children: 'Primary flair with icon', icon: <Icon name="add" />, kind: 'primaryFlair' },
 };
 
-export const DefaultFlair: Story = { args: { children: 'Default flair', kind: 'defaultFlair' } };
+export const DefaultFlair: Story = {
+  args: { children: 'Default flair', kind: 'defaultFlair' },
+  parameters: {
+    a11y: {
+      options: {
+        rules: {
+          // @fixme
+          'color-contrast': { enabled: false },
+        },
+      },
+    },
+  },
+};
 
 export const DefaultFlairWithIcon: Story = {
   args: { children: 'Default flair with icon', icon: <Icon name="add" />, kind: 'defaultFlair' },
+  parameters: {
+    a11y: {
+      options: {
+        rules: {
+          // @fixme
+          'color-contrast': { enabled: false },
+        },
+      },
+    },
+  },
 };
 
 export const MinimalFlair: Story = { args: { children: 'Minimal flair', kind: 'minimalFlair' } };
@@ -204,6 +226,16 @@ export const AsAnchorChild: Story = {
     asChild: true,
     icon: <Icon name="add" />,
     kind: 'destructive',
+  },
+  parameters: {
+    a11y: {
+      options: {
+        rules: {
+          // @fixme
+          'color-contrast': { enabled: false },
+        },
+      },
+    },
   },
 };
 

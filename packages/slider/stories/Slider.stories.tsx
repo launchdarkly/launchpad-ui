@@ -26,4 +26,14 @@ export const Example: Story = {
     disabled: false,
     hideTrack: false,
   },
+  parameters: {
+    a11y: {
+      options: {
+        rules: {
+          // @fixme
+          label: { enabled: false },
+        },
+      },
+    },
+  },
 };

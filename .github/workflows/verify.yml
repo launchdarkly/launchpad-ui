@@ -104,25 +104,41 @@ jobs:
       - name: Install Dependencies
         run: pnpm install
 
-      - name: Get Cypress Version
+      - name: Get Playwright Version
         id: get-version
         run: |
-          echo "VERSION=$(pnpm cypress version --component package)" >> $GITHUB_OUTPUT
+          echo "VERSION=$(pnpm playwright --version)" >> $GITHUB_OUTPUT
         shell: bash
 
-      - name: Cache Cypress Binary
+      - name: Cache Browsers
+        id: cache-browsers
         uses: actions/cache@v3
         with:
-          path: ~/.cache/Cypress
-          key: cypress-${{ runner.os }}-cypress-${{ steps.get-version.outputs.VERSION }}
+          path: ~/.cache/ms-playwright
+          key: ${{ runner.os }}-playwright-${{ steps.get-version.outputs.VERSION }}
           restore-keys: |
-            cypress-${{ runner.os }}-cypress-
+            ${{ runner.os }}-playwright-
+
+      - name: Install Playwright
+        if: steps.cache-browsers.outputs.cache-hit != 'true'
+        run: pnpm playwright install
 
       - name: SSR
         run: pnpm e2e:ssr
 
-  cypress:
-    name: Cypress
+      - name: Upload blob report to GitHub Actions Artifacts
+        if: always()
+        uses: actions/upload-artifact@v3
+        with:
+          name: all-blob-reports
+          path: blob-report
+          retention-days: 1
+
+  merge-reports:
+    # Merge reports after playwright-tests, even if some shards have failed
+    if: always()
+    needs: [e2e]
+
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -143,21 +159,18 @@ jobs:
       - name: Install Dependencies
         run: pnpm install
 
-      - name: Get Cypress Version
-        id: get-version
-        run: |
-          echo "VERSION=$(pnpm cypress version --component package)" >> $GITHUB_OUTPUT
-        shell: bash
-
-      - name: Cache Cypress Binary
-        uses: actions/cache@v3
+      - name: Download blob reports from GitHub Actions Artifacts
+        uses: actions/download-artifact@v3
         with:
-          path: ~/.cache/Cypress
-          key: cypress-${{ runner.os }}-cypress-${{ steps.get-version.outputs.VERSION }}
-          restore-keys: |
-            cypress-${{ runner.os }}-cypress-
+          name: all-blob-reports
+          path: all-blob-reports
 
-      - name: Cypress
-        run: pnpm cypress:component
-        env:
-          FORCE_COLOR: 1
+      - name: Merge into HTML Report
+        run: pnpm playwright merge-reports --reporter html ./all-blob-reports
+
+      - name: Upload HTML report
+        uses: actions/upload-artifact@v3
+        with:
+          name: html-report--attempt-${{ github.run_attempt }}
+          path: playwright-report
+          retention-days: 14

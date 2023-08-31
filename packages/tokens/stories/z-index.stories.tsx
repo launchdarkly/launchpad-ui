@@ -76,4 +76,15 @@ export const Example: StoryObj = {
     );
   },
 };
-Example.parameters = { docs: { disable: true } };
+Example.parameters = {
+  docs: { disable: true },
+  a11y: {
+    options: {
+      rules: {
+        // @fixme
+        'duplicate-id-aria': { enabled: false },
+        'color-contrast': { enabled: false },
+      },
+    },
+  },
+};

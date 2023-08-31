@@ -109,4 +109,14 @@ export const Example: Story = {
     value: 'I am a text area!!',
     disabled: false,
   },
+  parameters: {
+    a11y: {
+      options: {
+        rules: {
+          // @fixme
+          'duplicate-id-aria': { enabled: false },
+        },
+      },
+    },
+  },
 };

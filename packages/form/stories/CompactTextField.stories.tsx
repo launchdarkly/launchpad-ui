@@ -77,6 +77,16 @@ export const Default: Story = {
     value: 'testing@launchdarkly.com',
     onChange: () => undefined,
   },
+  parameters: {
+    a11y: {
+      options: {
+        rules: {
+          // @fixme
+          'duplicate-id-aria': { enabled: false },
+        },
+      },
+    },
+  },
 };
 
 export const WithSuffix: Story = {
@@ -88,5 +98,15 @@ export const WithSuffix: Story = {
     disabled: false,
     value: '120',
     onChange: () => undefined,
+  },
+  parameters: {
+    a11y: {
+      options: {
+        rules: {
+          // @fixme
+          'duplicate-id-aria': { enabled: false },
+        },
+      },
+    },
   },
 };

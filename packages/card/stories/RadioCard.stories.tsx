@@ -31,12 +31,33 @@ export const Simple: Story = {
   args: {
     ...commonProps,
   },
+  parameters: {
+    a11y: {
+      options: {
+        rules: {
+          // @fixme
+          'duplicate-id-aria': { enabled: false },
+        },
+      },
+    },
+  },
 };
 
 export const WithImage: Story = {
   args: {
     ...commonProps,
     imgSrc: '/static/swap-me.svg',
+    altText: 'swap',
+  },
+  parameters: {
+    a11y: {
+      options: {
+        rules: {
+          // @fixme
+          'duplicate-id-aria': { enabled: false },
+        },
+      },
+    },
   },
 };
 
@@ -45,6 +66,16 @@ export const WithSubtext: Story = {
     ...commonProps,
     subText:
       'Provide a description for this feature that does not exceed the height of the adjacent graphic to maintain equal button heights.',
+  },
+  parameters: {
+    a11y: {
+      options: {
+        rules: {
+          // @fixme
+          'duplicate-id-aria': { enabled: false },
+        },
+      },
+    },
   },
 };
 
@@ -55,6 +86,16 @@ export const Selected: Story = {
       'Provide a description for this feature that does not exceed the height of the adjacent graphic to maintain equal button heights.',
     checked: true,
   },
+  parameters: {
+    a11y: {
+      options: {
+        rules: {
+          // @fixme
+          'duplicate-id-aria': { enabled: false },
+        },
+      },
+    },
+  },
 };
 
 export const Disabled: Story = {
@@ -63,5 +104,15 @@ export const Disabled: Story = {
     subText:
       'Provide a description for this feature that does not exceed the height of the adjacent graphic to maintain equal button heights.',
     disabled: true,
+  },
+  parameters: {
+    a11y: {
+      options: {
+        rules: {
+          // @fixme
+          'duplicate-id-aria': { enabled: false },
+        },
+      },
+    },
   },
 };

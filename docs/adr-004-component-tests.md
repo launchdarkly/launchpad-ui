@@ -44,4 +44,4 @@ Chosen option: Cypress component testing, because of the familiar DX, watch mode
 
 ## Links
 
-- Update to [ADR-0001](adr-001-automated-a11y-tests.md)
+- Update to [ADR-001](adr-001-automated-a11y-tests.md)
