@@ -1,14 +1,4 @@
 {
-  "npmScope": "@launchpad-ui",
-  "implicitDependencies": {
-    "package.json": {
-      "dependencies": "*",
-      "devDependencies": "*"
-    },
-    ".github/workflows/verify.yml": "*",
-    "tsconfig.base.json": "*",
-    "nx.json": "*"
-  },
   "affected": {
     "defaultBase": "main"
   },
@@ -31,5 +21,15 @@
     "build": {
       "dependsOn": ["^build"]
     }
+  },
+  "$schema": "./node_modules/nx/schemas/nx-schema.json",
+  "namedInputs": {
+    "default": ["{projectRoot}/**/*", "sharedGlobals"],
+    "sharedGlobals": [
+      "{workspaceRoot}/.github/workflows/verify.yml",
+      "{workspaceRoot}/tsconfig.base.json",
+      "{workspaceRoot}/nx.json"
+    ],
+    "production": ["default"]
   }
 }
