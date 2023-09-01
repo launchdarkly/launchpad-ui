@@ -8,7 +8,11 @@ import { Toggle } from '../src';
 
 import './Toggle.stories.css';
 
-const testingChromaticClassNames = [PseudoClasses.HOVER, PseudoClasses.FOCUS, PseudoClasses.ACTIVE];
+const testingChromaticClassNames = [
+  `${PseudoClasses.HOVER}-all`,
+  `${PseudoClasses.FOCUS}-all`,
+  `${PseudoClasses.ACTIVE}-all`,
+];
 const useModifiedClassLists: Decorator = (story, context) => {
   // This a second decorator to add to work already done
   // with the above decorator

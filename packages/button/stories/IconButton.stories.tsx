@@ -15,16 +15,16 @@ const buttonTemplateWithStates: Decorator = (storyComponent, context) => {
   const buttonLabel = storyArgs?.children || '';
 
   const ButtonLabels = ['Hover', 'Focus visible', 'Active'];
-  const ButtonStates = ['pseudo-hover-all', 'pseudo-focus-visible-all', 'pseudo-active-all'];
+  const ButtonStates = ['pseudo-hover', 'pseudo-focus-visible', 'pseudo-active'];
 
   const PseudoStateButtons = ButtonStates.map((className, index) => (
     <Fragment key={`${className}_Button`}>
       <span className="Button-state-label">
         {ButtonLabels[ButtonLabels.length - 1 >= index ? index : ButtonLabels.length - 1]}
       </span>
-      <div className={className}>
-        <IconButton {...storyArgs}>{buttonLabel}</IconButton>
-      </div>
+      <IconButton {...storyArgs} className={className}>
+        {buttonLabel}
+      </IconButton>
     </Fragment>
   ));
 

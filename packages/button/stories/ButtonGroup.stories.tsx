@@ -13,16 +13,20 @@ const buttonTemplateWithStates: Decorator = (storyComponent, context) => {
   const storyArgs = args;
 
   const ButtonLabels = ['Resting', 'Hover', 'Focus', 'Active'];
-  const ButtonStates = ['', 'pseudo-hover-all', 'pseudo-focus-all', 'pseudo-active-all'];
+  const ButtonStates = ['', 'pseudo-hover', 'pseudo-focus', 'pseudo-active'];
 
   const PseudoStateButtons = ButtonStates.map((className, index) => (
     <Fragment key={`${className}_Button`}>
       <span className="Button-state-label">
         {ButtonLabels[ButtonLabels.length - 1 >= index ? index : ButtonLabels.length - 1]}
       </span>
-      <ButtonGroup {...storyArgs} className={className}>
-        <Button kind="default">First</Button>
-        <Button kind="primary">Second</Button>
+      <ButtonGroup {...storyArgs}>
+        <Button kind="default" className={className}>
+          First
+        </Button>
+        <Button kind="primary" className={className}>
+          Second
+        </Button>
       </ButtonGroup>
     </Fragment>
   ));

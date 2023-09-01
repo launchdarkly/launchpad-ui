@@ -59,10 +59,10 @@ export const createWithClassesDecorator = (
 };
 
 export enum PseudoClasses {
-  FOCUS = 'pseudo-focus-all',
-  HOVER = 'pseudo-hover-all',
-  FOCUS_VISIBLE = 'pseudo-focus-visible-all',
-  ACTIVE = 'pseudo-active-all',
+  FOCUS = 'pseudo-focus',
+  HOVER = 'pseudo-hover',
+  FOCUS_VISIBLE = 'pseudo-focus-visible',
+  ACTIVE = 'pseudo-active',
 }
 
 export const sleep = (ms: number) => {
