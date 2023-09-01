@@ -666,32 +666,28 @@
         d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zm4.24 16L12 15.45 7.77 18l1.12-4.81-3.73-3.23 4.92-.42L12 5l1.92 4.53 4.92.42-3.73 3.23L16.23 18z"
       />
     </symbol>
-    <symbol viewBox="0 0 24 24" id="lp-icon-status-active">
+    <symbol viewBox="0 0 17 16" id="lp-icon-status-active">
       <path
         fill-rule="evenodd"
         clip-rule="evenodd"
         d="M5.9515 0.927734L10.0532 10.1566L11.382 7.49907H15.5V9.49907H12.618L9.94679 14.8416L6.0485 6.07041L4.67703 9.49907H0.5V7.49907H3.32297L5.9515 0.927734Z"
-        fill="#00A45C"
       />
     </symbol>
-    <symbol viewBox="0 0 24 24" id="lp-icon-status-inactive">
+    <symbol viewBox="0 0 17 16" id="lp-icon-status-inactive">
       <path
         fill-rule="evenodd"
         clip-rule="evenodd"
         d="M2.66699 7.83398H13.3337V9.16732H2.66699V7.83398Z"
-        fill="#414042"
       />
     </symbol>
-    <symbol viewBox="0 0 24 24" id="lp-icon-status-launched">
+    <symbol viewBox="0 0 17 16" id="lp-icon-status-launched">
       <path
         d="M12 8.5C12 10.7091 10.2091 12.5 8 12.5C5.79086 12.5 4 10.7091 4 8.5C4 6.29086 5.79086 4.5 8 4.5C10.2091 4.5 12 6.29086 12 8.5Z"
-        fill="#00A45C"
       />
     </symbol>
-    <symbol viewBox="0 0 24 24" id="lp-icon-status-new">
+    <symbol viewBox="0 0 17 16" id="lp-icon-status-new">
       <path
         d="M12.6663 9.16732H8.66634V13.1673H7.33301V9.16732H3.33301V7.83398H7.33301V3.83398H8.66634V7.83398H12.6663V9.16732Z"
-        fill="#00A45C"
       />
     </symbol>
     <symbol viewBox="0 0 24 24" id="lp-icon-step-in-progress-outline">

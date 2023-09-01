@@ -24,7 +24,9 @@ const buttonTemplateWithStates: Decorator = (storyComponent, context) => {
         <Button kind="default" className={className}>
           First
         </Button>
-        <Button kind="primary">Second</Button>
+        <Button kind="primary" className={className}>
+          Second
+        </Button>
       </ButtonGroup>
     </Fragment>
   ));

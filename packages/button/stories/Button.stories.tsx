@@ -22,9 +22,9 @@ const buttonTemplateWithStates: Decorator = (storyComponent, context) => {
       <span className="Button-state-label">
         {ButtonLabels[ButtonLabels.length - 1 >= index ? index : ButtonLabels.length - 1]}
       </span>
-      <div className={className}>
-        <Button {...storyArgs}>{buttonLabel}</Button>
-      </div>
+      <Button {...storyArgs} className={className}>
+        {buttonLabel}
+      </Button>
     </Fragment>
   ));
   if (viewMode === 'docs') {
