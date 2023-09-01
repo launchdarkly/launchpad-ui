@@ -15,7 +15,7 @@ const buttonTemplateWithStates: Decorator = (storyComponent, context) => {
   const buttonLabel = (storyArgs?.children || '') as ReactNode;
 
   const ButtonLabels = ['Hover', 'Focus visible', 'Active'];
-  const ButtonStates = ['pseudo-hover', 'pseudo-focus-visible', 'pseudo-active'];
+  const ButtonStates = ['pseudo-hover-all', 'pseudo-focus-visible-all', 'pseudo-active-all'];
 
   const PseudoStateButtons = ButtonStates.map((className, index) => (
     <Fragment key={`${className}_Button`}>

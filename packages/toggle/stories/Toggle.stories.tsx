@@ -60,7 +60,7 @@ export default {
     createWithClassesDecorator(testingChromaticClassNames, (args, originalStory, context) => (
       <>
         <span className="Toggle-state-label">{`${
-          args.className?.replace('pseudo-', '') || ''
+          args.className?.replace('pseudo-', '').replace('-all', '') || ''
         }`}</span>
         {originalStory({ ...args, id: args.className }, context)}
       </>
