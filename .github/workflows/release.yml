@@ -28,7 +28,7 @@ jobs:
           parameterPairs: '/production/common/launchpad-ui/gh-pat-token = CUSTOM_GITHUB_TOKEN'
           withDecryption: 'true'
 
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         with:
           # This makes Actions fetch all Git history so that Changesets can generate changelogs with the correct commits
           fetch-depth: 0
