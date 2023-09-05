@@ -1,0 +1,5 @@
+.MenuItem {
+  padding: 0.5rem;
+  font-weight: bold;
+  border-bottom: 1px solid #ccc;
+}
