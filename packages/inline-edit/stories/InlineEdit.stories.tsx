@@ -189,6 +189,7 @@ export const Validation: Story = {
               <Icon name="alert-rhombus" style={{ fill: 'var(--lp-color-text-feedback-error)' }} />
             }
             tooltip="Value is required"
+            ariaLabel="Error"
             renderIconLast
           >
             <TextField id="inline-edit" />
