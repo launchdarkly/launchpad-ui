@@ -84,12 +84,26 @@ select.formInput {
   border-color: var(--lp-color-border-field-error);
 }
 
-.iconField:not:global(.IconAfter) .formInput {
+.iconField:global(.IconBefore) .formInput {
   padding-left: 3rem;
 }
 
 .iconField:global(.IconAfter) .formInput {
   padding-right: 3rem;
+}
+
+.iconFieldIcon {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.iconField:global(.IconBefore) .iconFieldIcon {
+  left: 1rem;
+}
+
+.iconField:global(.IconAfter) .iconFieldIcon {
+  right: 1rem;
 }
 
 .suffixContainer .formInput:focus {
@@ -334,12 +348,6 @@ input[type='checkbox']:disabled {
 /* Firefox */
 .suffix[type='number'] {
   appearance: textfield;
-}
-
-.iconFieldIcon {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
 }
 
 .iconFieldIconFill {

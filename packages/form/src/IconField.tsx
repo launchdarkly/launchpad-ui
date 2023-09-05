@@ -30,10 +30,9 @@ const IconField = ({
   const iconElement = cloneElement(icon, {
     size: 'small',
     className: cx(styles.iconFieldIcon, styles.iconFieldIconFill),
-    style: renderIconLast ? { right: '1rem' } : { left: '1rem' },
   });
 
-  const classes = cx(styles.iconField, renderIconLast && 'IconAfter', className);
+  const classes = cx(styles.iconField, renderIconLast ? 'IconAfter' : 'IconBefore', className);
 
   const renderIcon = tooltip ? (
     <Tooltip content={tooltip} targetClassName={styles.iconFieldButton}>
