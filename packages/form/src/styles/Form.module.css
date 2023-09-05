@@ -72,10 +72,6 @@ select.formInput {
   padding-right: 2rem;
 }
 
-.iconField .formInput {
-  padding-left: 3rem;
-}
-
 .suffixContainer .formInput {
   border: none;
   border-radius: var(--lp-border-radius-regular) 0 0 var(--lp-border-radius-regular);
@@ -86,6 +82,14 @@ select.formInput {
 .form .isInvalid :global(.CustomSelect) > div,
 .form .isInvalid .formInput {
   border-color: var(--lp-color-border-field-error);
+}
+
+.iconField:not:global(.IconAfter) .formInput {
+  padding-left: 3rem;
+}
+
+.iconField:global(.IconAfter) .formInput {
+  padding-right: 3rem;
 }
 
 .suffixContainer .formInput:focus {
@@ -334,10 +338,16 @@ input[type='checkbox']:disabled {
 
 .iconFieldIcon {
   position: absolute;
-  fill: var(--lp-color-fill-field-base);
   top: 50%;
   transform: translateY(-50%);
-  left: 1rem;
+}
+
+.iconFieldIconFill {
+  fill: var(--lp-color-fill-field-base);
+}
+
+[class*='_Popover-target_'].iconFieldButton {
+  display: block;
 }
 
 .formInputTiny {

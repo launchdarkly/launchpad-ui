@@ -1,6 +1,8 @@
 import type { IconProps } from '@launchpad-ui/icons';
 import type { ComponentProps, ReactElement } from 'react';
 
+import { IconButton } from '@launchpad-ui/button';
+import { Tooltip } from '@launchpad-ui/tooltip';
 import { cx } from 'classix';
 import { cloneElement } from 'react';
 
@@ -10,6 +12,9 @@ type IconFieldProps = ComponentProps<'div'> & {
   icon: ReactElement<IconProps>;
   children: JSX.Element | JSX.Element[];
   'data-test-id'?: string;
+  tooltip?: string | JSX.Element;
+  renderIconLast?: boolean;
+  ariaLabel?: string;
 };
 
 const IconField = ({
@@ -17,16 +22,40 @@ const IconField = ({
   children,
   className,
   'data-test-id': testId = 'icon-field',
+  tooltip,
+  renderIconLast = false,
+  ariaLabel = 'More info',
   ...rest
 }: IconFieldProps) => {
-  const renderIcon = cloneElement(icon, { size: 'small', className: styles.iconFieldIcon });
+  const iconElement = cloneElement(icon, {
+    size: 'small',
+    className: cx(styles.iconFieldIcon, styles.iconFieldIconFill),
+    style: renderIconLast ? { right: '1rem' } : { left: '1rem' },
+  });
 
-  const classes = cx(styles.iconField, className);
+  const classes = cx(styles.iconField, renderIconLast && 'IconAfter', className);
+
+  const renderIcon = tooltip ? (
+    <Tooltip content={tooltip} targetClassName={styles.iconFieldButton}>
+      <IconButton
+        icon={cloneElement(icon, {
+          className: styles.iconFieldIconFill,
+        })}
+        size="small"
+        className={styles.iconFieldIcon}
+        style={renderIconLast ? { right: '0.5rem' } : { left: '0.5rem' }}
+        aria-label={ariaLabel}
+      />
+    </Tooltip>
+  ) : (
+    iconElement
+  );
 
   return (
     <div className={classes} data-test-id={testId} {...rest}>
+      {!renderIconLast && renderIcon}
       {children}
-      {renderIcon}
+      {renderIconLast && renderIcon}
     </div>
   );
 };
