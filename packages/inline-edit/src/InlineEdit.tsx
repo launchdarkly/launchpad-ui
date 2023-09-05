@@ -1,5 +1,5 @@
 import type { InlineVariants } from './styles/InlineEdit.css';
-import type { TextAreaProps, TextFieldProps } from '@launchpad-ui/form';
+import type { IconFieldProps, TextAreaProps, TextFieldProps } from '@launchpad-ui/form';
 import type { ComponentProps, KeyboardEventHandler, ReactElement } from 'react';
 
 import { ButtonGroup, IconButton } from '@launchpad-ui/button';
@@ -10,7 +10,7 @@ import { focusSafely } from '@react-aria/focus';
 import { useFocusWithin } from '@react-aria/interactions';
 import { mergeProps, mergeRefs, useUpdateEffect } from '@react-aria/utils';
 import { cx } from 'classix';
-import { cloneElement, forwardRef, useRef, useState } from 'react';
+import { Children, cloneElement, forwardRef, useRef, useState } from 'react';
 
 import { container, cancelButton, inline, readButton } from './styles/InlineEdit.css';
 
@@ -20,7 +20,7 @@ type InlineEditProps = ComponentProps<'div'> &
     'data-test-id'?: string;
     onConfirm: (value: string) => void;
     hideEdit?: boolean;
-    renderInput?: ReactElement<TextFieldProps | TextAreaProps>;
+    renderInput?: ReactElement<IconFieldProps | TextFieldProps | TextAreaProps>;
     isEditing?: boolean;
     onCancel?: () => void;
     onEdit?: () => void;
@@ -127,14 +127,24 @@ const InlineEdit = forwardRef<HTMLInputElement, InlineEditProps>(
       </>
     );
 
+    const inputProps = {
+      ref: mergeRefs(inputRef, ref),
+      defaultValue,
+      onKeyDown: handleKeyDown,
+      'aria-label': ariaLabel,
+    };
+
+    const inputChildren = renderInput.props.children;
+
     const input = cloneElement(
       renderInput,
-      mergeProps(renderInput.props, {
-        ref: mergeRefs(inputRef, ref),
-        defaultValue,
-        onKeyDown: handleKeyDown,
-        'aria-label': ariaLabel,
-      })
+      mergeProps(renderInput.props, inputChildren ? {} : inputProps),
+      inputChildren &&
+        Children.map(inputChildren, (child) =>
+          ['TextField', 'TextArea'].includes(child.type.displayName)
+            ? cloneElement(child, mergeProps(child.props, inputProps))
+            : child
+        )
     );
 
     return isEditing ? (
