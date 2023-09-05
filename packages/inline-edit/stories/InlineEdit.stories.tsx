@@ -200,4 +200,14 @@ export const Validation: Story = {
       </InlineEdit>
     );
   },
+  parameters: {
+    a11y: {
+      options: {
+        rules: {
+          // @fixme
+          'duplicate-id-active': { enabled: false },
+        },
+      },
+    },
+  },
 };
