@@ -127,6 +127,7 @@ const Menu = <T extends number | string>(props: MenuProps<T>) => {
               items: items.concat(
                 child.props.disabled
                   ? cloneElement(child, {
+                      className: cx(child.props.className, menuItemClassName),
                       onClick: () => undefined,
                       onKeyDown: () => undefined,
                       tabIndex: -1,

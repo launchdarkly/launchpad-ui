@@ -5,6 +5,8 @@ import { userEvent } from '@storybook/testing-library';
 
 import { Menu, MenuDivider, MenuItem, MenuSearch } from '../src';
 
+import './Menu.stories.css';
+
 export default {
   component: Menu,
   subcomponents: { MenuDivider, MenuItem, MenuSearch },
@@ -28,8 +30,9 @@ export const Basic: Story = {
   },
 };
 
-export const WithDisabledItems: Story = {
+export const WithDisabledItemsAndCustomMenuItemClasses: Story = {
   args: {
+    menuItemClassName: 'MenuItem',
     children: [
       <MenuItem key="1" disabled>
         item 1
