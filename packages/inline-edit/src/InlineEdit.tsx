@@ -3,7 +3,7 @@ import type { IconFieldProps, TextAreaProps, TextFieldProps } from '@launchpad-u
 import type { ComponentProps, KeyboardEventHandler, ReactElement } from 'react';
 
 import { ButtonGroup, IconButton } from '@launchpad-ui/button';
-import { TextField } from '@launchpad-ui/form';
+import { TextField, TextArea } from '@launchpad-ui/form';
 import { Icon } from '@launchpad-ui/icons';
 import { useButton } from '@react-aria/button';
 import { focusSafely } from '@react-aria/focus';
@@ -141,7 +141,7 @@ const InlineEdit = forwardRef<HTMLInputElement, InlineEditProps>(
       mergeProps(renderInput.props, inputChildren ? {} : inputProps),
       inputChildren &&
         Children.map(inputChildren, (child) =>
-          ['TextField', 'TextArea'].includes(child.type.displayName)
+          child.type === TextField || child.type === TextArea
             ? cloneElement(child, mergeProps(child.props, inputProps))
             : child
         )
