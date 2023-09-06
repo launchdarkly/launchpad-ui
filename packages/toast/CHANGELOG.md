@@ -1,5 +1,12 @@
 # @launchpad-ui/toast
 
+## 0.2.64
+
+### Patch Changes
+
+- Updated dependencies [[`21ef37b7`](https://github.com/launchdarkly/launchpad-ui/commit/21ef37b7c8a3943c9670337cabfe401372ad0ada)]:
+  - @launchpad-ui/icons@0.12.2
+
 ## 0.2.63
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @launchpad-ui/icons
 
+## 0.12.2
+
+### Patch Changes
+
+- [#986](https://github.com/launchdarkly/launchpad-ui/pull/986) [`21ef37b7`](https://github.com/launchdarkly/launchpad-ui/commit/21ef37b7c8a3943c9670337cabfe401372ad0ada) Thanks [@jagarnica](https://github.com/jagarnica)! - [Icons]: Visual updates for "status", "active", "inactive", and "new" icons.
+
 ## 0.12.1
 
 ### Patch Changes

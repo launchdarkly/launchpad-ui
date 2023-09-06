@@ -1,5 +1,18 @@
 # @launchpad-ui/inline-edit
 
+## 0.1.11
+
+### Patch Changes
+
+- [#993](https://github.com/launchdarkly/launchpad-ui/pull/993) [`a49131f1`](https://github.com/launchdarkly/launchpad-ui/commit/a49131f16d74a9fe642e5e1795b6eb69ef211243) Thanks [@Niznikr](https://github.com/Niznikr)! - [InlineEdit] Allow to render `IconField`:
+
+  - Add `tooltip` and `renderIconLast` props to `IconField`
+
+- Updated dependencies [[`a49131f1`](https://github.com/launchdarkly/launchpad-ui/commit/a49131f16d74a9fe642e5e1795b6eb69ef211243), [`21ef37b7`](https://github.com/launchdarkly/launchpad-ui/commit/21ef37b7c8a3943c9670337cabfe401372ad0ada)]:
+  - @launchpad-ui/form@0.9.12
+  - @launchpad-ui/icons@0.12.2
+  - @launchpad-ui/button@0.10.4
+
 ## 0.1.10
 
 ### Patch Changes

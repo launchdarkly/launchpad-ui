@@ -1,5 +1,42 @@
 # @launchpad-ui/core
 
+## 0.45.2
+
+### Patch Changes
+
+- [#993](https://github.com/launchdarkly/launchpad-ui/pull/993) [`a49131f1`](https://github.com/launchdarkly/launchpad-ui/commit/a49131f16d74a9fe642e5e1795b6eb69ef211243) Thanks [@Niznikr](https://github.com/Niznikr)! - [InlineEdit] Allow to render `IconField`:
+
+  - Add `tooltip` and `renderIconLast` props to `IconField`
+
+- [#988](https://github.com/launchdarkly/launchpad-ui/pull/988) [`ccf7efcf`](https://github.com/launchdarkly/launchpad-ui/commit/ccf7efcfbb3d10dc48874b6e3b39183f8f3ed305) Thanks [@renovate](https://github.com/apps/renovate)! - Update dependencies
+
+- [#994](https://github.com/launchdarkly/launchpad-ui/pull/994) [`8a6e2816`](https://github.com/launchdarkly/launchpad-ui/commit/8a6e2816ef8be9c12dfdbeb864f0cc0d2c1d599d) Thanks [@hisuida](https://github.com/hisuida)! - [Menu]: Fix issue of custom class names not getting applied for disabled menu items
+
+- Updated dependencies [[`a49131f1`](https://github.com/launchdarkly/launchpad-ui/commit/a49131f16d74a9fe642e5e1795b6eb69ef211243), [`ccf7efcf`](https://github.com/launchdarkly/launchpad-ui/commit/ccf7efcfbb3d10dc48874b6e3b39183f8f3ed305), [`8a6e2816`](https://github.com/launchdarkly/launchpad-ui/commit/8a6e2816ef8be9c12dfdbeb864f0cc0d2c1d599d)]:
+  - @launchpad-ui/inline-edit@0.1.11
+  - @launchpad-ui/form@0.9.12
+  - @launchpad-ui/markdown@0.4.19
+  - @launchpad-ui/menu@0.11.14
+  - @launchpad-ui/card@0.1.6
+  - @launchpad-ui/alert@0.7.29
+  - @launchpad-ui/avatar@0.5.11
+  - @launchpad-ui/banner@0.9.28
+  - @launchpad-ui/button@0.10.4
+  - @launchpad-ui/chip@0.8.11
+  - @launchpad-ui/clipboard@0.10.22
+  - @launchpad-ui/collapsible@0.1.24
+  - @launchpad-ui/drawer@0.4.23
+  - @launchpad-ui/dropdown@0.6.67
+  - @launchpad-ui/filter@0.5.47
+  - @launchpad-ui/modal@0.16.18
+  - @launchpad-ui/navigation@0.11.38
+  - @launchpad-ui/pagination@0.3.71
+  - @launchpad-ui/select@0.3.20
+  - @launchpad-ui/snackbar@0.3.67
+  - @launchpad-ui/tag@0.2.19
+  - @launchpad-ui/toast@0.2.64
+  - @launchpad-ui/split-button@0.8.14
+
 ## 0.45.1
 
 ### Patch Changes
