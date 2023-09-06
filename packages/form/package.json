@@ -32,8 +32,10 @@
     "test": "vitest run --coverage"
   },
   "dependencies": {
+    "@launchpad-ui/button": "workspace:~",
     "@launchpad-ui/icons": "workspace:~",
     "@launchpad-ui/tokens": "workspace:~",
+    "@launchpad-ui/tooltip": "workspace:~",
     "@react-aria/button": "3.8.1",
     "@react-aria/i18n": "3.8.1",
     "@react-aria/numberfield": "3.7.0",

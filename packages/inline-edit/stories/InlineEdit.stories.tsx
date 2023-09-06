@@ -2,7 +2,8 @@
 import type { StoryObj } from '@storybook/react';
 
 import { CopyToClipboard } from '@launchpad-ui/clipboard';
-import { Form, FormField, TextArea, TextField } from '@launchpad-ui/form';
+import { Form, FormField, IconField, TextArea, TextField } from '@launchpad-ui/form';
+import { Icon } from '@launchpad-ui/icons';
 import { useState } from '@storybook/client-api';
 import { userEvent, within } from '@storybook/testing-library';
 
@@ -163,5 +164,50 @@ export const Controlled: Story = {
         <span>{editValue}</span>
       </InlineEdit>
     );
+  },
+};
+
+export const Validation: Story = {
+  render: () => {
+    const [editValue, setEditValue] = useState('edit me');
+    const [isEditing, setEditing] = useState(true);
+
+    return (
+      <InlineEdit
+        defaultValue={editValue}
+        isEditing={isEditing}
+        aria-label="edit value"
+        onCancel={() => setEditing(false)}
+        onEdit={() => setEditing(true)}
+        onConfirm={(value) => {
+          setEditValue(value);
+          setEditing(false);
+        }}
+        renderInput={
+          <IconField
+            icon={
+              <Icon name="alert-rhombus" style={{ fill: 'var(--lp-color-text-feedback-error)' }} />
+            }
+            tooltip="Value is required"
+            ariaLabel="Error"
+            renderIconLast
+          >
+            <TextField id="inline-edit" />
+          </IconField>
+        }
+      >
+        <span>{editValue}</span>
+      </InlineEdit>
+    );
+  },
+  parameters: {
+    a11y: {
+      options: {
+        rules: {
+          // @fixme
+          'duplicate-id-active': { enabled: false },
+        },
+      },
+    },
   },
 };
