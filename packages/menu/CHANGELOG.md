@@ -1,5 +1,15 @@
 # @launchpad-ui/menu
 
+## 0.11.14
+
+### Patch Changes
+
+- [#994](https://github.com/launchdarkly/launchpad-ui/pull/994) [`8a6e2816`](https://github.com/launchdarkly/launchpad-ui/commit/8a6e2816ef8be9c12dfdbeb864f0cc0d2c1d599d) Thanks [@hisuida](https://github.com/hisuida)! - [Menu]: Fix issue of custom class names not getting applied for disabled menu items
+
+- Updated dependencies [[`a49131f1`](https://github.com/launchdarkly/launchpad-ui/commit/a49131f16d74a9fe642e5e1795b6eb69ef211243), [`21ef37b7`](https://github.com/launchdarkly/launchpad-ui/commit/21ef37b7c8a3943c9670337cabfe401372ad0ada)]:
+  - @launchpad-ui/form@0.9.12
+  - @launchpad-ui/icons@0.12.2
+
 ## 0.11.13
 
 ### Patch Changes
