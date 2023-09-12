@@ -15,7 +15,7 @@ jobs:
       storybookUrl: ${{ steps.chromatic.outputs.storybookUrl }}
     steps:
       - name: Configure AWS Credentials
-        uses: aws-actions/configure-aws-credentials@v3
+        uses: aws-actions/configure-aws-credentials@v4
         with:
           audience: https://github.com/launchdarkly
           role-to-assume: ${{ vars.AWS_ROLE_ARN }}
