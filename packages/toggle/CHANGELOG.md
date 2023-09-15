@@ -1,5 +1,11 @@
 # @launchpad-ui/toggle
 
+## 0.6.8
+
+### Patch Changes
+
+- [#996](https://github.com/launchdarkly/launchpad-ui/pull/996) [`e3395304`](https://github.com/launchdarkly/launchpad-ui/commit/e33953044d43482a6ef564d5cc2cf43117b23022) Thanks [@renovate](https://github.com/apps/renovate)! - Update dependencies
+
 ## 0.6.7
 
 ### Patch Changes
