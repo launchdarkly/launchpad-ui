@@ -23,7 +23,7 @@ const FlairIcon = ({
   const getIconSize = () => {
     let iconSize: IconProps['size'] = children.props.size;
 
-    if (iconSize === 'xlarge' || iconSize === 'huge' || !iconSize) {
+    if (!iconSize) {
       iconSize = 'medium';
     }
 
