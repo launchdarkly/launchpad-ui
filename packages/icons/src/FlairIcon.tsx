@@ -10,7 +10,7 @@ type FlairIconProps = Omit<ComponentProps<'div'>, 'className'> & {
   'data-test-id'?: string;
   gradient?: 'purpleToBlue' | 'yellowToCyan' | 'pinkToPurple' | 'cyanToBlue' | 'cyanToPurple';
   isRounded?: boolean;
-  children: ReactElement<Omit<IconProps, 'size'>>;
+  children: ReactElement<IconProps>;
 };
 
 const FlairIcon = ({
@@ -20,9 +20,19 @@ const FlairIcon = ({
   gradient = 'purpleToBlue',
   ...props
 }: FlairIconProps) => {
+  const getIconSize = () => {
+    let iconSize: IconProps['size'] = children.props.size;
+
+    if (!iconSize) {
+      iconSize = 'medium';
+    }
+
+    return iconSize;
+  };
+
   const icon = cloneElement(children as ReactElement<IconProps>, {
-    size: 'medium',
     className: styles.flairIcon,
+    size: getIconSize(),
   });
 
   const classes = cx(styles.flairIconContainer, styles[gradient], isRounded && styles.isRounded);
