@@ -140,6 +140,7 @@ const icons = [
   'undo',
   'unfold-less',
   'unfold-more',
+  'vector',
   'verified',
   'view-list',
   'visibility-off',
