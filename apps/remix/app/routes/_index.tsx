@@ -1,5 +1,5 @@
 import { Menu, MenuItem } from '@launchpad-ui/core';
-import type { LoaderFunction, V2_MetaFunction } from '@remix-run/node';
+import type { LoaderFunction, MetaFunction } from '@remix-run/node';
 import { json } from '@remix-run/node';
 import { Link, useLoaderData } from '@remix-run/react';
 
@@ -14,7 +14,7 @@ export const loader: LoaderFunction = async () => {
   });
 };
 
-export const meta: V2_MetaFunction = () => {
+export const meta: MetaFunction = () => {
   return [{ title: 'Remix SSR' }, { name: 'description', content: 'SSR component testing' }];
 };
 

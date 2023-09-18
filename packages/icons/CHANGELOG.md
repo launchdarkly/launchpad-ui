@@ -1,5 +1,11 @@
 # @launchpad-ui/icons
 
+## 0.12.3
+
+### Patch Changes
+
+- [#1000](https://github.com/launchdarkly/launchpad-ui/pull/1000) [`72862e6d`](https://github.com/launchdarkly/launchpad-ui/commit/72862e6d111834b7b459d48e2e0de26e714966ad) Thanks [@portpaw](https://github.com/portpaw)! - Add icons for Release Impact
+
 ## 0.12.2
 
 ### Patch Changes
