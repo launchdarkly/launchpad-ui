@@ -109,7 +109,7 @@ const icons = [
   'regression-mitigated',
   'release',
   'release-impact',
-  'release-path',
+  'release-pipeline',
   'remove',
   'rerun',
   'robot',
