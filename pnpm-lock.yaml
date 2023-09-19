@@ -10,7 +10,7 @@ importers:
     devDependencies:
       '@axe-core/playwright':
         specifier: ^4.7.3
-        version: 4.7.3(playwright-core@1.37.1)
+        version: 4.7.3(playwright-core@1.38.0)
       '@changesets/changelog-github':
         specifier: ^0.4.4
         version: 0.4.8
@@ -161,6 +161,9 @@ importers:
       fast-glob:
         specifier: ^3.3.0
         version: 3.3.1
+      framer-motion:
+        specifier: 10.16.1
+        version: 10.16.1(react-dom@18.2.0)(react@18.2.0)
       husky:
         specifier: ^8.0.1
         version: 8.0.3
@@ -1591,13 +1594,13 @@ packages:
       default-browser-id: 3.0.0
     dev: true
 
-  /@axe-core/playwright@4.7.3(playwright-core@1.37.1):
+  /@axe-core/playwright@4.7.3(playwright-core@1.38.0):
     resolution: {integrity: sha512-v2PRgAyGvop7bamrTpNJtc5b1R7giAPnMzZXrS/VDZBCY5+uwVYtCNgDvBsqp5P1QMZxUMoBN+CERJUTMjFN0A==}
     peerDependencies:
       playwright-core: '>= 1.0.0'
     dependencies:
       axe-core: 4.7.2
-      playwright-core: 1.37.1
+      playwright-core: 1.38.0
     dev: true
 
   /@babel/code-frame@7.22.13:
@@ -3735,13 +3738,11 @@ packages:
     requiresBuild: true
     dependencies:
       '@emotion/memoize': 0.7.4
-    dev: false
     optional: true
 
   /@emotion/memoize@0.7.4:
     resolution: {integrity: sha512-Ja/Vfqe3HpuzRsG1oBtWTHk2PGZ7GR+2Vz5iYGelAw8dx32K0y7PjVuxK6z1nMpZOqAFsRUPCkK1YjJ56qJlgw==}
     requiresBuild: true
-    dev: false
     optional: true
 
   /@emotion/use-insertion-effect-with-fallbacks@1.0.1(react@18.2.0):
@@ -11668,7 +11669,6 @@ packages:
       tslib: 2.6.2
     optionalDependencies:
       '@emotion/is-prop-valid': 0.8.8
-    dev: false
 
   /fresh@0.5.2:
     resolution: {integrity: sha512-zJ2mQYM18rEFOudeV4GShTGIQ7RbzA7ozbU9I/XBpm7kqgMywgmylMwXHxZJmkVoYkna9d2pVXVXPdYTP9ej8Q==}
@@ -15088,12 +15088,6 @@ packages:
       jsonc-parser: 3.2.0
       mlly: 1.4.1
       pathe: 1.1.1
-    dev: true
-
-  /playwright-core@1.37.1:
-    resolution: {integrity: sha512-17EuQxlSIYCmEMwzMqusJ2ztDgJePjrbttaefgdsiqeLWidjYz9BxXaTaZWxH1J95SHGk6tjE+dwgWILJoUZfA==}
-    engines: {node: '>=16'}
-    hasBin: true
     dev: true
 
   /playwright-core@1.38.0:
