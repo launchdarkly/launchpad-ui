@@ -1,5 +1,13 @@
 # @launchpad-ui/icons
 
+## 0.12.4
+
+### Patch Changes
+
+- [#1005](https://github.com/launchdarkly/launchpad-ui/pull/1005) [`37821630`](https://github.com/launchdarkly/launchpad-ui/commit/378216306ecf8e796b690985bbda31f6c42b841d) Thanks [@pheggeseth](https://github.com/pheggeseth)! - add vector icon
+
+- [#1001](https://github.com/launchdarkly/launchpad-ui/pull/1001) [`a570a53f`](https://github.com/launchdarkly/launchpad-ui/commit/a570a53f0439cec9cbdb0e1778595e547fe38c51) Thanks [@jennifro](https://github.com/jennifro)! - [Icons] Removes absolute positioning and fixed sizing for inner icon of FlairIcon
+
 ## 0.12.3
 
 ### Patch Changes
