@@ -5,7 +5,7 @@ test.describe.configure({ mode: 'parallel' });
 
 test.describe('Storybook a11y', async () => {
   // eslint-disable-next-line @typescript-eslint/no-var-requires
-  const stories = ['components-drawer--default'];
+  const stories = require('./stories.json');
 
   for (const story of stories) {
     test(`${story}`, async ({ page }) => {
