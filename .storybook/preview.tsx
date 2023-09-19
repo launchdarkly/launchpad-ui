@@ -1,4 +1,5 @@
 import isChromatic from 'chromatic';
+import { MotionConfig } from 'framer-motion';
 import React from 'react';
 
 import '../packages/tokens/dist/index.css';
@@ -64,22 +65,26 @@ export const decorators = [
       case 'side-by-side': {
         document.documentElement.setAttribute('data-theme', 'default');
         return (
-          <div style={{ display: 'flex', flexDirection: 'row', minHeight: '100vh' }}>
-            <div style={{ width: '50vw', padding: '1rem' }}>
-              <StoryFn />
+          <MotionConfig reducedMotion="user">
+            <div style={{ display: 'flex', flexDirection: 'row', minHeight: '100vh' }}>
+              <div style={{ width: '50vw', padding: '1rem' }}>
+                <StoryFn />
+              </div>
+              <div data-theme="dark" style={{ width: '50vw', padding: '1rem' }}>
+                <StoryFn />
+              </div>
             </div>
-            <div data-theme="dark" style={{ width: '50vw', padding: '1rem' }}>
-              <StoryFn />
-            </div>
-          </div>
+          </MotionConfig>
         );
       }
       default: {
         document.documentElement.setAttribute('data-theme', theme);
         return (
-          <div style={{ padding: '1rem' }}>
-            <StoryFn />
-          </div>
+          <MotionConfig reducedMotion="user">
+            <div style={{ padding: '1rem' }}>
+              <StoryFn />
+            </div>
+          </MotionConfig>
         );
       }
     }
