@@ -1,5 +1,42 @@
 # @launchpad-ui/core
 
+## 0.45.4
+
+### Patch Changes
+
+- [#1005](https://github.com/launchdarkly/launchpad-ui/pull/1005) [`37821630`](https://github.com/launchdarkly/launchpad-ui/commit/378216306ecf8e796b690985bbda31f6c42b841d) Thanks [@pheggeseth](https://github.com/pheggeseth)! - add vector icon
+
+- [#1001](https://github.com/launchdarkly/launchpad-ui/pull/1001) [`a570a53f`](https://github.com/launchdarkly/launchpad-ui/commit/a570a53f0439cec9cbdb0e1778595e547fe38c51) Thanks [@jennifro](https://github.com/jennifro)! - [Icons] Removes absolute positioning and fixed sizing for inner icon of FlairIcon
+
+- [#1003](https://github.com/launchdarkly/launchpad-ui/pull/1003) [`635308b9`](https://github.com/launchdarkly/launchpad-ui/commit/635308b982d67f4b43d23e2c54544264f6ff3114) Thanks [@renovate](https://github.com/apps/renovate)! - Update dependencies
+
+- Updated dependencies [[`635308b9`](https://github.com/launchdarkly/launchpad-ui/commit/635308b982d67f4b43d23e2c54544264f6ff3114)]:
+  - @launchpad-ui/popover@0.10.15
+  - @launchpad-ui/alert@0.7.31
+  - @launchpad-ui/avatar@0.5.13
+  - @launchpad-ui/banner@0.9.30
+  - @launchpad-ui/button@0.10.6
+  - @launchpad-ui/chip@0.8.13
+  - @launchpad-ui/clipboard@0.10.24
+  - @launchpad-ui/collapsible@0.1.26
+  - @launchpad-ui/drawer@0.4.25
+  - @launchpad-ui/dropdown@0.6.69
+  - @launchpad-ui/filter@0.5.49
+  - @launchpad-ui/form@0.9.14
+  - @launchpad-ui/inline-edit@0.1.13
+  - @launchpad-ui/menu@0.11.16
+  - @launchpad-ui/modal@0.16.20
+  - @launchpad-ui/navigation@0.11.40
+  - @launchpad-ui/pagination@0.3.73
+  - @launchpad-ui/select@0.3.22
+  - @launchpad-ui/snackbar@0.3.69
+  - @launchpad-ui/tag@0.2.21
+  - @launchpad-ui/toast@0.2.66
+  - @launchpad-ui/progress-bubbles@0.6.24
+  - @launchpad-ui/split-button@0.8.16
+  - @launchpad-ui/tooltip@0.7.25
+  - @launchpad-ui/card@0.1.8
+
 ## 0.45.3
 
 ### Patch Changes
