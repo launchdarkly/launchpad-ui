@@ -1,5 +1,12 @@
 # @launchpad-ui/slider
 
+## 0.4.11
+
+### Patch Changes
+
+- Updated dependencies [[`757c82d5`](https://github.com/launchdarkly/launchpad-ui/commit/757c82d5574c519691521c413c10cd5932cebc9c)]:
+  - @launchpad-ui/tokens@0.7.1
+
 ## 0.4.10
 
 ### Patch Changes
