@@ -1,5 +1,11 @@
 # @launchpad-ui/tokens
 
+## 0.7.1
+
+### Patch Changes
+
+- [#1009](https://github.com/launchdarkly/launchpad-ui/pull/1009) [`757c82d5`](https://github.com/launchdarkly/launchpad-ui/commit/757c82d5574c519691521c413c10cd5932cebc9c) Thanks [@pheggeseth](https://github.com/pheggeseth)! - added new "primary-flair" color tokens
+
 ## 0.7.0
 
 ### Minor Changes
