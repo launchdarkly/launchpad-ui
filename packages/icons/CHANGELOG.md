@@ -1,5 +1,11 @@
 # @launchpad-ui/icons
 
+## 0.12.5
+
+### Patch Changes
+
+- [#1007](https://github.com/launchdarkly/launchpad-ui/pull/1007) [`b434c311`](https://github.com/launchdarkly/launchpad-ui/commit/b434c311362dfdd155eac52bb23778fb7e6a37b2) Thanks [@stinachen](https://github.com/stinachen)! - [Icons]: Update experiment and release icons to use the correct path values
+
 ## 0.12.4
 
 ### Patch Changes
