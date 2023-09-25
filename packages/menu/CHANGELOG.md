@@ -1,5 +1,11 @@
 # @launchpad-ui/menu
 
+## 0.11.19
+
+### Patch Changes
+
+- [#1011](https://github.com/launchdarkly/launchpad-ui/pull/1011) [`bd33a9de`](https://github.com/launchdarkly/launchpad-ui/commit/bd33a9de47952f26a807ee60a04e29dee6ca2998) Thanks [@hisuida](https://github.com/hisuida)! - [Menu Item]: Update disabled item styling
+
 ## 0.11.18
 
 ### Patch Changes
