@@ -36,5 +36,11 @@ module.exports = {
     'selector-not-notation': 'simple',
     'import-notation': 'string',
     'media-feature-range-notation': 'prefix',
+    'property-no-unknown': [
+      true,
+      {
+        ignoreProperties: ['line-clamp'],
+      },
+    ],
   },
 };

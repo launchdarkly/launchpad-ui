@@ -1,5 +1,19 @@
 # @launchpad-ui/data-table
 
+## 0.1.4
+
+### Patch Changes
+
+- Updated dependencies [[`757c82d5`](https://github.com/launchdarkly/launchpad-ui/commit/757c82d5574c519691521c413c10cd5932cebc9c)]:
+  - @launchpad-ui/tokens@0.7.1
+  - @launchpad-ui/vars@0.2.2
+
+## 0.1.3
+
+### Patch Changes
+
+- [#996](https://github.com/launchdarkly/launchpad-ui/pull/996) [`e3395304`](https://github.com/launchdarkly/launchpad-ui/commit/e33953044d43482a6ef564d5cc2cf43117b23022) Thanks [@renovate](https://github.com/apps/renovate)! - Update dependencies
+
 ## 0.1.2
 
 ### Patch Changes

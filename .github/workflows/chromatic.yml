@@ -15,7 +15,7 @@ jobs:
       storybookUrl: ${{ steps.chromatic.outputs.storybookUrl }}
     steps:
       - name: Configure AWS Credentials
-        uses: aws-actions/configure-aws-credentials@v3
+        uses: aws-actions/configure-aws-credentials@v4
         with:
           audience: https://github.com/launchdarkly
           role-to-assume: ${{ vars.AWS_ROLE_ARN }}
@@ -26,7 +26,7 @@ jobs:
           parameterPairs: '/production/common/launchpad-ui/chromatic-token = CHROMATIC_TOKEN'
           withDecryption: 'true'
 
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
@@ -64,7 +64,7 @@ jobs:
       matrix:
         shard: [1/4, 2/4, 3/4, 4/4]
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
@@ -119,7 +119,7 @@ jobs:
 
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         with:
           fetch-depth: 0
 

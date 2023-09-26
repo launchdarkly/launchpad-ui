@@ -1,6 +1,6 @@
 {
   "name": "@launchpad-ui/popover",
-  "version": "0.10.13",
+  "version": "0.10.16",
   "status": "beta",
   "publishConfig": {
     "access": "public"
@@ -32,7 +32,7 @@
     "test": "vitest run --coverage"
   },
   "dependencies": {
-    "@floating-ui/core": "1.4.1",
+    "@floating-ui/core": "1.5.0",
     "@floating-ui/dom": "1.5.1",
     "@launchpad-ui/focus-trap": "workspace:~",
     "@launchpad-ui/overlay": "workspace:~",

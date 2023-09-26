@@ -1,5 +1,24 @@
 # @launchpad-ui/markdown
 
+## 0.4.21
+
+### Patch Changes
+
+- Updated dependencies [[`757c82d5`](https://github.com/launchdarkly/launchpad-ui/commit/757c82d5574c519691521c413c10cd5932cebc9c)]:
+  - @launchpad-ui/tokens@0.7.1
+
+## 0.4.20
+
+### Patch Changes
+
+- [#997](https://github.com/launchdarkly/launchpad-ui/pull/997) [`95fbb252`](https://github.com/launchdarkly/launchpad-ui/commit/95fbb25203cfef616746ad9f5f566bfdeb0cf9be) Thanks [@renovate](https://github.com/apps/renovate)! - Update `marked`
+
+## 0.4.19
+
+### Patch Changes
+
+- [#988](https://github.com/launchdarkly/launchpad-ui/pull/988) [`ccf7efcf`](https://github.com/launchdarkly/launchpad-ui/commit/ccf7efcfbb3d10dc48874b6e3b39183f8f3ed305) Thanks [@renovate](https://github.com/apps/renovate)! - Update dependencies
+
 ## 0.4.18
 
 ### Patch Changes

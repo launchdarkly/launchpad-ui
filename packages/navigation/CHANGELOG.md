@@ -1,5 +1,73 @@
 # @launchpad-ui/navigation
 
+## 0.11.43
+
+### Patch Changes
+
+- [#1014](https://github.com/launchdarkly/launchpad-ui/pull/1014) [`05437004`](https://github.com/launchdarkly/launchpad-ui/commit/054370047ceac809fad66dc3a05c80a6ff77c791) Thanks [@apucacao](https://github.com/apucacao)! - [Banner]: Update to react-router-dom@6.16.0
+  [Alert]: Update to react-router-dom@6.16.0
+- Updated dependencies [[`bd33a9de`](https://github.com/launchdarkly/launchpad-ui/commit/bd33a9de47952f26a807ee60a04e29dee6ca2998)]:
+  - @launchpad-ui/menu@0.11.19
+
+## 0.11.42
+
+### Patch Changes
+
+- Updated dependencies [[`757c82d5`](https://github.com/launchdarkly/launchpad-ui/commit/757c82d5574c519691521c413c10cd5932cebc9c)]:
+  - @launchpad-ui/tokens@0.7.1
+  - @launchpad-ui/chip@0.8.15
+  - @launchpad-ui/dropdown@0.6.71
+  - @launchpad-ui/icons@0.12.6
+  - @launchpad-ui/menu@0.11.18
+  - @launchpad-ui/popover@0.10.16
+  - @launchpad-ui/tooltip@0.7.26
+
+## 0.11.41
+
+### Patch Changes
+
+- Updated dependencies [[`b434c311`](https://github.com/launchdarkly/launchpad-ui/commit/b434c311362dfdd155eac52bb23778fb7e6a37b2)]:
+  - @launchpad-ui/icons@0.12.5
+  - @launchpad-ui/chip@0.8.14
+  - @launchpad-ui/dropdown@0.6.70
+  - @launchpad-ui/menu@0.11.17
+
+## 0.11.40
+
+### Patch Changes
+
+- Updated dependencies [[`37821630`](https://github.com/launchdarkly/launchpad-ui/commit/378216306ecf8e796b690985bbda31f6c42b841d), [`a570a53f`](https://github.com/launchdarkly/launchpad-ui/commit/a570a53f0439cec9cbdb0e1778595e547fe38c51), [`635308b9`](https://github.com/launchdarkly/launchpad-ui/commit/635308b982d67f4b43d23e2c54544264f6ff3114)]:
+  - @launchpad-ui/icons@0.12.4
+  - @launchpad-ui/popover@0.10.15
+  - @launchpad-ui/chip@0.8.13
+  - @launchpad-ui/dropdown@0.6.69
+  - @launchpad-ui/menu@0.11.16
+  - @launchpad-ui/tooltip@0.7.25
+
+## 0.11.39
+
+### Patch Changes
+
+- [#996](https://github.com/launchdarkly/launchpad-ui/pull/996) [`e3395304`](https://github.com/launchdarkly/launchpad-ui/commit/e33953044d43482a6ef564d5cc2cf43117b23022) Thanks [@renovate](https://github.com/apps/renovate)! - Update dependencies
+
+- Updated dependencies [[`e3395304`](https://github.com/launchdarkly/launchpad-ui/commit/e33953044d43482a6ef564d5cc2cf43117b23022), [`72862e6d`](https://github.com/launchdarkly/launchpad-ui/commit/72862e6d111834b7b459d48e2e0de26e714966ad)]:
+  - @launchpad-ui/dropdown@0.6.68
+  - @launchpad-ui/menu@0.11.15
+  - @launchpad-ui/icons@0.12.3
+  - @launchpad-ui/popover@0.10.14
+  - @launchpad-ui/chip@0.8.12
+  - @launchpad-ui/tooltip@0.7.24
+
+## 0.11.38
+
+### Patch Changes
+
+- Updated dependencies [[`21ef37b7`](https://github.com/launchdarkly/launchpad-ui/commit/21ef37b7c8a3943c9670337cabfe401372ad0ada), [`8a6e2816`](https://github.com/launchdarkly/launchpad-ui/commit/8a6e2816ef8be9c12dfdbeb864f0cc0d2c1d599d)]:
+  - @launchpad-ui/icons@0.12.2
+  - @launchpad-ui/menu@0.11.14
+  - @launchpad-ui/chip@0.8.11
+  - @launchpad-ui/dropdown@0.6.67
+
 ## 0.11.37
 
 ### Patch Changes

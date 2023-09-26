@@ -83,7 +83,7 @@
     &:active[disabled],
     &:active[aria-disabled] {
       text-decoration: none;
-      color: var(--lp-color-text-ui-secondary);
+      color: var(--lp-color-text-interactive-disabled);
     }
   }
 
@@ -127,8 +127,8 @@
 
 .Menu-item[aria-disabled],
 .Menu-item[disabled] {
-  color: var(--lp-color-text-ui-secondary);
-  cursor: default;
+  color: var(--lp-color-text-interactive-disabled);
+  cursor: not-allowed;
 }
 
 .Menu-item-icon {

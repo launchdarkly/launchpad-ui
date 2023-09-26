@@ -14,4 +14,8 @@ export default defineConfig({
       use: devices['Desktop Chrome'],
     },
   ],
+  use: {
+    screenshot: 'only-on-failure',
+    testIdAttribute: 'data-test-id',
+  },
 });

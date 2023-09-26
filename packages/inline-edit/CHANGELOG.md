@@ -1,5 +1,58 @@
 # @launchpad-ui/inline-edit
 
+## 0.1.15
+
+### Patch Changes
+
+- Updated dependencies [[`757c82d5`](https://github.com/launchdarkly/launchpad-ui/commit/757c82d5574c519691521c413c10cd5932cebc9c)]:
+  - @launchpad-ui/tokens@0.7.1
+  - @launchpad-ui/button@0.10.8
+  - @launchpad-ui/form@0.9.16
+  - @launchpad-ui/icons@0.12.6
+  - @launchpad-ui/vars@0.2.2
+
+## 0.1.14
+
+### Patch Changes
+
+- Updated dependencies [[`b434c311`](https://github.com/launchdarkly/launchpad-ui/commit/b434c311362dfdd155eac52bb23778fb7e6a37b2)]:
+  - @launchpad-ui/icons@0.12.5
+  - @launchpad-ui/button@0.10.7
+  - @launchpad-ui/form@0.9.15
+
+## 0.1.13
+
+### Patch Changes
+
+- Updated dependencies [[`37821630`](https://github.com/launchdarkly/launchpad-ui/commit/378216306ecf8e796b690985bbda31f6c42b841d), [`a570a53f`](https://github.com/launchdarkly/launchpad-ui/commit/a570a53f0439cec9cbdb0e1778595e547fe38c51)]:
+  - @launchpad-ui/icons@0.12.4
+  - @launchpad-ui/button@0.10.6
+  - @launchpad-ui/form@0.9.14
+
+## 0.1.12
+
+### Patch Changes
+
+- [#996](https://github.com/launchdarkly/launchpad-ui/pull/996) [`e3395304`](https://github.com/launchdarkly/launchpad-ui/commit/e33953044d43482a6ef564d5cc2cf43117b23022) Thanks [@renovate](https://github.com/apps/renovate)! - Update dependencies
+
+- Updated dependencies [[`e3395304`](https://github.com/launchdarkly/launchpad-ui/commit/e33953044d43482a6ef564d5cc2cf43117b23022), [`72862e6d`](https://github.com/launchdarkly/launchpad-ui/commit/72862e6d111834b7b459d48e2e0de26e714966ad)]:
+  - @launchpad-ui/form@0.9.13
+  - @launchpad-ui/icons@0.12.3
+  - @launchpad-ui/button@0.10.5
+
+## 0.1.11
+
+### Patch Changes
+
+- [#993](https://github.com/launchdarkly/launchpad-ui/pull/993) [`a49131f1`](https://github.com/launchdarkly/launchpad-ui/commit/a49131f16d74a9fe642e5e1795b6eb69ef211243) Thanks [@Niznikr](https://github.com/Niznikr)! - [InlineEdit] Allow to render `IconField`:
+
+  - Add `tooltip` and `renderIconLast` props to `IconField`
+
+- Updated dependencies [[`a49131f1`](https://github.com/launchdarkly/launchpad-ui/commit/a49131f16d74a9fe642e5e1795b6eb69ef211243), [`21ef37b7`](https://github.com/launchdarkly/launchpad-ui/commit/21ef37b7c8a3943c9670337cabfe401372ad0ada)]:
+  - @launchpad-ui/form@0.9.12
+  - @launchpad-ui/icons@0.12.2
+  - @launchpad-ui/button@0.10.4
+
 ## 0.1.10
 
 ### Patch Changes

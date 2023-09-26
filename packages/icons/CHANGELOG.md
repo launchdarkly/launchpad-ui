@@ -1,5 +1,38 @@
 # @launchpad-ui/icons
 
+## 0.12.6
+
+### Patch Changes
+
+- Updated dependencies [[`757c82d5`](https://github.com/launchdarkly/launchpad-ui/commit/757c82d5574c519691521c413c10cd5932cebc9c)]:
+  - @launchpad-ui/tokens@0.7.1
+
+## 0.12.5
+
+### Patch Changes
+
+- [#1007](https://github.com/launchdarkly/launchpad-ui/pull/1007) [`b434c311`](https://github.com/launchdarkly/launchpad-ui/commit/b434c311362dfdd155eac52bb23778fb7e6a37b2) Thanks [@stinachen](https://github.com/stinachen)! - [Icons]: Update experiment and release icons to use the correct path values
+
+## 0.12.4
+
+### Patch Changes
+
+- [#1005](https://github.com/launchdarkly/launchpad-ui/pull/1005) [`37821630`](https://github.com/launchdarkly/launchpad-ui/commit/378216306ecf8e796b690985bbda31f6c42b841d) Thanks [@pheggeseth](https://github.com/pheggeseth)! - add vector icon
+
+- [#1001](https://github.com/launchdarkly/launchpad-ui/pull/1001) [`a570a53f`](https://github.com/launchdarkly/launchpad-ui/commit/a570a53f0439cec9cbdb0e1778595e547fe38c51) Thanks [@jennifro](https://github.com/jennifro)! - [Icons] Removes absolute positioning and fixed sizing for inner icon of FlairIcon
+
+## 0.12.3
+
+### Patch Changes
+
+- [#1000](https://github.com/launchdarkly/launchpad-ui/pull/1000) [`72862e6d`](https://github.com/launchdarkly/launchpad-ui/commit/72862e6d111834b7b459d48e2e0de26e714966ad) Thanks [@portpaw](https://github.com/portpaw)! - Add icons for Release Impact
+
+## 0.12.2
+
+### Patch Changes
+
+- [#986](https://github.com/launchdarkly/launchpad-ui/pull/986) [`21ef37b7`](https://github.com/launchdarkly/launchpad-ui/commit/21ef37b7c8a3943c9670337cabfe401372ad0ada) Thanks [@jagarnica](https://github.com/jagarnica)! - [Icons]: Visual updates for "status", "active", "inactive", and "new" icons.
+
 ## 0.12.1
 
 ### Patch Changes

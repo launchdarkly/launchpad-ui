@@ -91,6 +91,9 @@ color:
       primary:
         value: '{ color.white.0.value }'
         dark: '{ color.black.300.value }'
+      primary-flair:
+        value: '{ color.purple.200.value }'
+        dark: '{ color.purple.900.value }'
       secondary:
         value: '{ color.white.100.value }'
         dark: '{ color.black.100.value }'
@@ -205,6 +208,9 @@ color:
       primary:
         value: '{ color.gray.200.value }'
         dark: '{ color.gray.700.value }'
+      primary-flair:
+        value: '{ color.purple.300.value }'
+        dark: '{ color.purple.600.value }'
       secondary:
         value: '{ color.gray.100.value }'
         dark: '{ color.gray.800.value }'
@@ -236,6 +242,9 @@ color:
       primary:
         value: currentvalue
         dark: '{ color.white.0.value }'
+      primary-flair:
+        value: '{ color.purple.500.value }'
+        dark: '{ color.purple.300.value }'
     field:
       base:
         value: '{ color.gray.600.value }'

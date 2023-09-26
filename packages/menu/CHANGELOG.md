@@ -1,5 +1,62 @@
 # @launchpad-ui/menu
 
+## 0.11.19
+
+### Patch Changes
+
+- [#1011](https://github.com/launchdarkly/launchpad-ui/pull/1011) [`bd33a9de`](https://github.com/launchdarkly/launchpad-ui/commit/bd33a9de47952f26a807ee60a04e29dee6ca2998) Thanks [@hisuida](https://github.com/hisuida)! - [Menu Item]: Update disabled item styling
+
+## 0.11.18
+
+### Patch Changes
+
+- Updated dependencies [[`757c82d5`](https://github.com/launchdarkly/launchpad-ui/commit/757c82d5574c519691521c413c10cd5932cebc9c)]:
+  - @launchpad-ui/tokens@0.7.1
+  - @launchpad-ui/form@0.9.16
+  - @launchpad-ui/icons@0.12.6
+  - @launchpad-ui/popover@0.10.16
+  - @launchpad-ui/tooltip@0.7.26
+
+## 0.11.17
+
+### Patch Changes
+
+- Updated dependencies [[`b434c311`](https://github.com/launchdarkly/launchpad-ui/commit/b434c311362dfdd155eac52bb23778fb7e6a37b2)]:
+  - @launchpad-ui/icons@0.12.5
+  - @launchpad-ui/form@0.9.15
+
+## 0.11.16
+
+### Patch Changes
+
+- Updated dependencies [[`37821630`](https://github.com/launchdarkly/launchpad-ui/commit/378216306ecf8e796b690985bbda31f6c42b841d), [`a570a53f`](https://github.com/launchdarkly/launchpad-ui/commit/a570a53f0439cec9cbdb0e1778595e547fe38c51), [`635308b9`](https://github.com/launchdarkly/launchpad-ui/commit/635308b982d67f4b43d23e2c54544264f6ff3114)]:
+  - @launchpad-ui/icons@0.12.4
+  - @launchpad-ui/popover@0.10.15
+  - @launchpad-ui/form@0.9.14
+  - @launchpad-ui/tooltip@0.7.25
+
+## 0.11.15
+
+### Patch Changes
+
+- [#996](https://github.com/launchdarkly/launchpad-ui/pull/996) [`e3395304`](https://github.com/launchdarkly/launchpad-ui/commit/e33953044d43482a6ef564d5cc2cf43117b23022) Thanks [@renovate](https://github.com/apps/renovate)! - Update dependencies
+
+- Updated dependencies [[`e3395304`](https://github.com/launchdarkly/launchpad-ui/commit/e33953044d43482a6ef564d5cc2cf43117b23022), [`72862e6d`](https://github.com/launchdarkly/launchpad-ui/commit/72862e6d111834b7b459d48e2e0de26e714966ad)]:
+  - @launchpad-ui/form@0.9.13
+  - @launchpad-ui/icons@0.12.3
+  - @launchpad-ui/popover@0.10.14
+  - @launchpad-ui/tooltip@0.7.24
+
+## 0.11.14
+
+### Patch Changes
+
+- [#994](https://github.com/launchdarkly/launchpad-ui/pull/994) [`8a6e2816`](https://github.com/launchdarkly/launchpad-ui/commit/8a6e2816ef8be9c12dfdbeb864f0cc0d2c1d599d) Thanks [@hisuida](https://github.com/hisuida)! - [Menu]: Fix issue of custom class names not getting applied for disabled menu items
+
+- Updated dependencies [[`a49131f1`](https://github.com/launchdarkly/launchpad-ui/commit/a49131f16d74a9fe642e5e1795b6eb69ef211243), [`21ef37b7`](https://github.com/launchdarkly/launchpad-ui/commit/21ef37b7c8a3943c9670337cabfe401372ad0ada)]:
+  - @launchpad-ui/form@0.9.12
+  - @launchpad-ui/icons@0.12.2
+
 ## 0.11.13
 
 ### Patch Changes
