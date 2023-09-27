@@ -1,8 +1,11 @@
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
   <defs>
     <symbol viewBox="0 0 24 24" id="lp-icon-add">
-      <path d="M0 0h24v24H0z" fill="none" />
-      <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" />
+      <path
+        fill-rule="evenodd"
+        d="M12 4.1a.9.9 0 0 1 .9.9v6.1H19a.9.9 0 1 1 0 1.8h-6.1V19a.9.9 0 1 1-1.8 0v-6.1H5a.9.9 0 1 1 0-1.8h6.1V5a.9.9 0 0 1 .9-.9Z"
+        clip-rule="evenodd"
+      />
     </symbol>
     <symbol viewBox="0 0 24 24" id="lp-icon-alert-rhombus">
       <path
