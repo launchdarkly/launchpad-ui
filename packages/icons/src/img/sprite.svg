@@ -627,9 +627,6 @@
         d="M240 856h120V616h240v240h120V496L480 316 240 496v360Zm0 80q-33 0-56.5-23.5T160 856V496q0-19 8.5-36t23.5-28l240-180q11-8 23-12t25-4q13 0 25 4t23 12l240 180q15 11 23.5 28t8.5 36v360q0 33-23.5 56.5T720 936H520V696h-80v240H240Zm240-350Z"
       />
     </symbol>
-    <symbol viewBox="0 0 24 24" id="lp-icon-horizontal-rule">
-      <path fill-rule="evenodd" d="M4 11h16v2H4z" />
-    </symbol>
     <symbol viewBox="0 0 16 16" id="lp-icon-hub">
       <g clip-path="url(#clip0_1410_2828)">
         <path
