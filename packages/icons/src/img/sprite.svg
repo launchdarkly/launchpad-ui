@@ -291,8 +291,11 @@
       <path d="M10 6 8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z" />
     </symbol>
     <symbol viewBox="0 0 24 24" id="lp-icon-chevron-up">
-      <path d="M0 0h24v24H0z" fill="none" />
-      <path d="m12 8-6 6 1.41 1.41L12 10.83l4.59 4.58L18 14z" />
+      <path
+        fill-rule="evenodd"
+        d="M11.364 8.363a.9.9 0 0 1 1.273 0l6 6a.9.9 0 1 1-1.273 1.273l-5.363-5.363-5.364 5.363a.9.9 0 1 1-1.273-1.272l6-6Z"
+        clip-rule="evenodd"
+      />
     </symbol>
     <symbol viewBox="0 0 24 24" id="lp-icon-circle-dashed">
       <path
