@@ -154,7 +154,11 @@
       />
     </symbol>
     <symbol viewBox="0 0 24 24" id="lp-icon-caret-down">
-      <path d="M7 10L12 15L17 10H7Z" />
+      <path
+        fill-rule="evenodd"
+        d="M5.168 9.656A.9.9 0 0 1 6 9.1h12a.9.9 0 0 1 .636 1.537l-6 6a.9.9 0 0 1-1.273 0l-6-6a.9.9 0 0 1-.195-.981Z"
+        clip-rule="evenodd"
+      />
     </symbol>
     <symbol viewBox="0 0 24 24" id="lp-icon-change-history">
       <path d="M12 7.77 18.39 18H5.61L12 7.77ZM12 4 2 20h20L12 4Z" />
