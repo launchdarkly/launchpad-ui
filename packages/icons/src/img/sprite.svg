@@ -447,22 +447,22 @@
         clip-rule="evenodd"
       />
     </symbol>
+    <symbol viewBox="0 0 24 24" id="lp-icon-double-arrow-left">
+      <path
+        fill-rule="evenodd"
+        d="M11.637 6.364a.9.9 0 0 1 0 1.272L7.273 12l4.364 4.364a.9.9 0 1 1-1.273 1.273l-5-5a.9.9 0 0 1 0-1.273l5-5a.9.9 0 0 1 1.273 0Zm6 0a.9.9 0 0 1 0 1.272L13.273 12l4.364 4.364a.9.9 0 1 1-1.273 1.273l-5-5a.9.9 0 0 1 0-1.273l5-5a.9.9 0 0 1 1.273 0Z"
+        clip-rule="evenodd"
+      />
+    </symbol>
+    <symbol viewBox="0 0 24 24" id="lp-icon-double-arrow-right">
+      <path
+        fill-rule="evenodd"
+        d="M6.363 6.364a.9.9 0 0 1 1.273 0l5 5a.9.9 0 0 1 0 1.272l-5 5a.9.9 0 1 1-1.273-1.272L10.727 12 6.363 7.636a.9.9 0 0 1 0-1.272Zm6 0a.9.9 0 0 1 1.273 0l5 5a.9.9 0 0 1 0 1.272l-5 5a.9.9 0 1 1-1.273-1.272L16.727 12l-4.364-4.364a.9.9 0 0 1 0-1.272Z"
+        clip-rule="evenodd"
+      />
+    </symbol>
     <symbol viewBox="0 0 24 24" id="lp-icon-download">
       <path d="M5 20h14v-2H5v2zM19 9h-4V3H9v6H5l7 7 7-7z" />
-      <symbol viewBox="0 0 24 24" id="lp-icon-double-arrow-left">
-        <path
-          fill-rule="evenodd"
-          d="M11.637 6.364a.9.9 0 0 1 0 1.272L7.273 12l4.364 4.364a.9.9 0 1 1-1.273 1.273l-5-5a.9.9 0 0 1 0-1.273l5-5a.9.9 0 0 1 1.273 0Zm6 0a.9.9 0 0 1 0 1.272L13.273 12l4.364 4.364a.9.9 0 1 1-1.273 1.273l-5-5a.9.9 0 0 1 0-1.273l5-5a.9.9 0 0 1 1.273 0Z"
-          clip-rule="evenodd"
-        />
-      </symbol>
-      <symbol viewBox="0 0 24 24" id="lp-icon-double-arrow-right">
-        <path
-          fill-rule="evenodd"
-          d="M6.363 6.364a.9.9 0 0 1 1.273 0l5 5a.9.9 0 0 1 0 1.272l-5 5a.9.9 0 1 1-1.273-1.272L10.727 12 6.363 7.636a.9.9 0 0 1 0-1.272Zm6 0a.9.9 0 0 1 1.273 0l5 5a.9.9 0 0 1 0 1.272l-5 5a.9.9 0 1 1-1.273-1.272L16.727 12l-4.364-4.364a.9.9 0 0 1 0-1.272Z"
-          clip-rule="evenodd"
-        />
-      </symbol>
     </symbol>
     <symbol viewBox="0 0 24 24" id="lp-icon-edit">
       <path
