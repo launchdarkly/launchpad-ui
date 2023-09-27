@@ -84,9 +84,6 @@
         clip-rule="evenodd"
       />
     </symbol>
-    <symbol viewBox="0 0 24 24" id="lp-icon-arrow-drop-down">
-      <path d="M7 10L12 15L17 10H7Z" />
-    </symbol>
     <symbol viewBox="0 0 24 24" id="lp-icon-arrow-left-thin">
       <path d="M10.0179 17V13H18.9699L19 10.99H10.0179V7L5 12L10.0179 17Z" />
     </symbol>
@@ -155,6 +152,9 @@
       <path
         d="M12 2C6.47 2 2 6.47 2 12s4.47 10 10 10 10-4.47 10-10S17.53 2 12 2zm5 13.59L15.59 17 12 13.41 8.41 17 7 15.59 10.59 12 7 8.41 8.41 7 12 10.59 15.59 7 17 8.41 13.41 12 17 15.59z"
       />
+    </symbol>
+    <symbol viewBox="0 0 24 24" id="lp-icon-caret-down">
+      <path d="M7 10L12 15L17 10H7Z" />
     </symbol>
     <symbol viewBox="0 0 24 24" id="lp-icon-change-history">
       <path d="M12 7.77 18.39 18H5.61L12 7.77ZM12 4 2 20h20L12 4Z" />
