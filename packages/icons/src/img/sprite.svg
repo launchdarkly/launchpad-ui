@@ -542,16 +542,19 @@
         clip-rule="evenodd"
       />
     </symbol>
+    <symbol viewBox="0 0 24 24" id="lp-icon-flag">
+      <path
+        fill-rule="evenodd"
+        d="M5.9 14.4a4.1 4.1 0 0 1 5.47.243 5.9 5.9 0 0 0 8.26 0A.9.9 0 0 0 19.9 14V5a.9.9 0 0 0-1.53-.643 4.1 4.1 0 0 1-5.74 0 5.9 5.9 0 0 0-8.26 0A.9.9 0 0 0 4.1 5v16a.9.9 0 1 0 1.8 0v-6.6Z"
+        clip-rule="evenodd"
+      />
+    </symbol>
     <symbol viewBox="0 0 24 24" id="lp-icon-flag-circle">
       <path
         fill-rule="evenodd"
         clip-rule="evenodd"
         d="M2 12C2 6.47 6.47 2 12 2s10 4.47 10 10-4.47 10-10 10S2 17.53 2 12Zm11.4-5 .24 1.294H17v6.47h-4.2l-.24-1.293H9.2V18H8V7h5.4Z"
       />
-    </symbol>
-    <symbol viewBox="0 0 24 24" id="lp-icon-flag">
-      <path d="M0 0h24v24H0z" fill="none" />
-      <path d="M14.4 6 14 4H5v17h2v-7h5.6l.4 2h7V6z" />
     </symbol>
     <symbol viewBox="0 0 24 24" id="lp-icon-forward">
       <path d="M0 0h24v24H0z" fill="none" />
