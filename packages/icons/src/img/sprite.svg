@@ -1058,15 +1058,6 @@
         clip-rule="evenodd"
       />
     </symbol>
-    <symbol viewBox="0 0 64 64" id="lp-icon-templates-circle">
-      <circle cx="31.5" cy="31.5" r="31.5" />
-      <path d="M31.5 10.5833L21.6458 26.7083H41.3542L31.5 10.5833Z" fill="#EFFF63" />
-      <path
-        d="M41.3542 46.4166C45.807 46.4166 49.4167 42.8069 49.4167 38.3541C49.4167 33.9013 45.807 30.2916 41.3542 30.2916C36.9014 30.2916 33.2917 33.9013 33.2917 38.3541C33.2917 42.8069 36.9014 46.4166 41.3542 46.4166Z"
-        fill="#EFFF63"
-      />
-      <path d="M15.375 31.1874H29.7083V45.5208H15.375V31.1874Z" fill="#EFFF63" />
-    </symbol>
     <symbol viewBox="0 0 24 24" id="lp-icon-theme-dark">
       <path
         fill-rule="evenodd"
