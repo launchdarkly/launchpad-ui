@@ -1087,13 +1087,6 @@
       />
       <path d="M10 7a2 2 0 11-4 0 2 2 0 014 0z" />
     </symbol>
-    <symbol viewBox="0 0 64 64" id="lp-icon-trending-up-circle">
-      <circle cx="32" cy="32" r="31" />
-      <path
-        d="m40 20 4.58 4.58-9.76 9.76-8-8L12 41.18 14.82 44l12-12 8 8 12.6-12.58L52 32V20H40z"
-        fill="#EBFF38"
-      />
-    </symbol>
     <symbol viewBox="0 0 24 24" id="lp-icon-undo">
       <path d="M0 0h24v24H0V0z" fill="none" />
       <path
@@ -1131,19 +1124,6 @@
         clip-rule="evenodd"
         d="M10.29 3.599l-8.47 14.14a2 2 0 001.71 3h16.94a2 2 0 001.71-3l-8.47-14.14a2 2 0 00-3.42 0zm3.362 13.537a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zm-1.51-11a1.19 1.19 0 00-1.186 1.287l.49 6.07a.7.7 0 001.394 0l.49-6.07a1.19 1.19 0 00-1.187-1.287z"
       />
-    </symbol>
-    <symbol viewBox="0 0 121 121" id="lp-icon-workflow-builder">
-      <path d="m60.5 0 52.395 30.25v60.5L60.5 121 8.105 90.75v-60.5L60.5 0z" />
-      <g clip-path="url(#a)" fill="#EBFF38">
-        <path
-          d="M70.09 51.178H50v15.61h20.09v-15.61zM71 38.22H50L60.72 22 71 38.22zM60.5 99c-5.297 0-9.596-4.33-9.596-9.678 0-5.343 4.293-9.678 9.596-9.678 5.298 0 9.596 4.329 9.596 9.678C70.09 94.665 65.798 99 60.5 99zM61.904 41.176H59.09v6.566h2.813v-6.566zM61.904 69.935H59.09v6.566h2.813v-6.566z"
-        />
-      </g>
-      <defs>
-        <clipPath id="a">
-          <path fill="#fff" transform="translate(50 22)" d="M0 0h21v77H0z" />
-        </clipPath>
-      </defs>
     </symbol>
   </defs>
 </svg>
