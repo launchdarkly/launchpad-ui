@@ -876,18 +876,6 @@
         clip-rule="evenodd"
       />
     </symbol>
-    <symbol viewBox="0 0 24 24" id="lp-icon-radio-button-checked">
-      <path
-        fill-rule="evenodd"
-        d="M5 5a9.9 9.9 0 1 1 14.001 14 9.9 9.9 0 0 1-14-14Zm7-1.1a8.1 8.1 0 1 0 0 16.2 8.1 8.1 0 0 0 0-16.2Z"
-        clip-rule="evenodd"
-      />
-      <path
-        fill-rule="evenodd"
-        d="M8.182 8.181a5.4 5.4 0 1 1 7.637 7.637 5.4 5.4 0 0 1-7.637-7.637Z"
-        clip-rule="evenodd"
-      />
-    </symbol>
     <symbol viewBox="0 0 24 24" id="lp-icon-release">
       <path
         fill-rule="evenodd"
