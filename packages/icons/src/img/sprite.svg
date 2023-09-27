@@ -8,7 +8,11 @@
       />
     </symbol>
     <symbol viewBox="0 0 24 24" id="lp-icon-add-circle">
-      <path d="M17 13h-4v4h-2v-4H7v-2h4V7h2v4h4m-5-9a10 10 0 1 0 0 20 10 10 0 0 0 0-20Z" />
+      <path
+        fill-rule="evenodd"
+        d="M5 5a9.9 9.9 0 1 1 14.001 14 9.9 9.9 0 0 1-14-14Zm7 3.1a.9.9 0 0 1 .9.9v2.1H15a.9.9 0 0 1 0 1.8h-2.1V15a.9.9 0 0 1-1.8 0v-2.1H9a.9.9 0 0 1 0-1.8h2.1V9a.9.9 0 0 1 .9-.9Z"
+        clip-rule="evenodd"
+      />
     </symbol>
     <symbol viewBox="0 0 24 24" id="lp-icon-alert-rhombus">
       <path
