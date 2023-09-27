@@ -796,8 +796,12 @@
         clip-rule="evenodd"
       />
     </symbol>
-    <symbol viewBox="0 0 24 24" id="lp-icon-play-arrow">
-      <path d="M8 5v14l11-7L8 5Z" />
+    <symbol viewBox="0 0 24 24" id="lp-icon-play">
+      <path
+        fill-rule="evenodd"
+        d="M6.56 3.214a.9.9 0 0 1 .911.02l13 8a.9.9 0 0 1 0 1.533l-13 8A.9.9 0 0 1 6.1 20V4a.9.9 0 0 1 .46-.786Z"
+        clip-rule="evenodd"
+      />
     </symbol>
     <symbol viewBox="0 0 24 24" id="lp-icon-play-circle">
       <path fill="none" d="M0 0h24v24H0z" />
