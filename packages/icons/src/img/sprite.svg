@@ -205,10 +205,24 @@
         clip-rule="evenodd"
       />
     </symbol>
+    <symbol viewBox="0 0 24 24" id="lp-icon-caret-left">
+      <path
+        fill-rule="evenodd"
+        d="M14.344 5.168A.9.9 0 0 1 14.9 6v12a.9.9 0 0 1-1.537.636l-6-6a.9.9 0 0 1 0-1.272l6-6a.9.9 0 0 1 .981-.196Z"
+        clip-rule="evenodd"
+      />
+    </symbol>
     <symbol viewBox="0 0 24 24" id="lp-icon-caret-right">
       <path
         fill-rule="evenodd"
         d="M9.655 5.168a.9.9 0 0 1 .981.195l6 6a.9.9 0 0 1 0 1.273l-6 6A.9.9 0 0 1 9.1 18V6a.9.9 0 0 1 .555-.832Z"
+        clip-rule="evenodd"
+      />
+    </symbol>
+    <symbol viewBox="0 0 24 24" id="lp-icon-caret-up">
+      <path
+        fill-rule="evenodd"
+        d="M11.363 7.364a.9.9 0 0 1 1.273 0l6 6A.9.9 0 0 1 18 14.9H6a.9.9 0 0 1-.637-1.536l6-6Z"
         clip-rule="evenodd"
       />
     </symbol>
