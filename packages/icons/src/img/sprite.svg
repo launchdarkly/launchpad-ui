@@ -16,7 +16,9 @@
     </symbol>
     <symbol viewBox="0 0 24 24" id="lp-icon-add-circle-outline">
       <path
-        d="M12 20c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8Zm0-18a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm1 5h-2v4H7v2h4v4h2v-4h4v-2h-4V7Z"
+        fill-rule="evenodd"
+        d="M5 5a9.9 9.9 0 1 1 14.001 14 9.9 9.9 0 0 1-14-14Zm7-1.1a8.1 8.1 0 1 0 0 16.2 8.1 8.1 0 0 0 0-16.2Zm0 4.2a.9.9 0 0 1 .9.9v2.1H15a.9.9 0 0 1 0 1.8h-2.1V15a.9.9 0 0 1-1.8 0v-2.1H9a.9.9 0 0 1 0-1.8h2.1V9a.9.9 0 0 1 .9-.9Z"
+        clip-rule="evenodd"
       />
     </symbol>
     <symbol viewBox="0 0 24 24" id="lp-icon-alert-rhombus">
