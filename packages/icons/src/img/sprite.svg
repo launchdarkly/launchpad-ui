@@ -1005,7 +1005,11 @@
       />
     </symbol>
     <symbol viewBox="0 0 24 24" id="lp-icon-stop">
-      <path d="M6 6h12v12H6V6Z" />
+      <path
+        fill-rule="evenodd"
+        d="M4.949 4.95a2.9 2.9 0 0 1 2.05-.85h10A2.9 2.9 0 0 1 19.9 7v10a2.9 2.9 0 0 1-2.9 2.9H7A2.9 2.9 0 0 1 4.1 17V7a2.9 2.9 0 0 1 .85-2.05Z"
+        clip-rule="evenodd"
+      />
     </symbol>
     <symbol viewBox="0 0 24 24" id="lp-icon-support-agent">
       <path
