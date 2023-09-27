@@ -510,7 +510,12 @@
     </symbol>
     <symbol viewBox="0 0 16 16" id="lp-icon-filter-list">
       <path
-        d="M6.57499 12.1515V10.6348H9.42499V12.1515H6.57499ZM3.90833 8.75835V7.24169H12.0917V8.75835H3.90833ZM1.90833 5.36524V3.84857H14.0917V5.36524H1.90833Z"
+        fill-rule="evenodd"
+        d="M3 8a.9.9 0 0 1 .9-.9h16.2a.9.9 0 1 1 0 1.8H3.9A.9.9 0 0 1 3 8Z"
+        clip-rule="evenodd"
+      />
+      <path
+        d="M9 16a.9.9 0 0 1 .9-.9h4.2a.9.9 0 1 1 0 1.8H9.9A.9.9 0 0 1 9 16Zm-3-4a.9.9 0 0 1 .9-.9h10.35a.9.9 0 0 1 0 1.8H6.9A.9.9 0 0 1 6 12Z"
       />
     </symbol>
     <symbol viewBox="0 0 24 24" id="lp-icon-filter-tune">
