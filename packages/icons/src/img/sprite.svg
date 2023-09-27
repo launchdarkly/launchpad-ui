@@ -100,7 +100,9 @@
     </symbol>
     <symbol viewBox="0 0 24 24" id="lp-icon-arrow-up-thin">
       <path
-        d="M7.02979 9.96997H11.0298V18.89L13.0398 18.92V9.96997H17.0298L12.0298 4.96997L7.02979 9.96997Z"
+        fill-rule="evenodd"
+        d="M11.363 4.364a.9.9 0 0 1 1.273 0l4 4a.9.9 0 1 1-1.273 1.272L12.9 7.173V19a.9.9 0 1 1-1.8 0V7.173L8.636 9.636a.9.9 0 1 1-1.273-1.272l4-4Z"
+        clip-rule="evenodd"
       />
     </symbol>
     <symbol viewBox="0 0 24 24" id="lp-icon-article">
