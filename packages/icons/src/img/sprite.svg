@@ -520,7 +520,9 @@
     </symbol>
     <symbol viewBox="0 0 24 24" id="lp-icon-filter-tune">
       <path
-        d="M0 14V16H6V14H0ZM0 2V4H10V2H0ZM10 18V16H18V14H10V12H8V18H10ZM4 6V8H0V10H4V12H6V6H4ZM18 10V8H8V10H18ZM12 6H14V4H18V2H14V0H12V6Z"
+        fill-rule="evenodd"
+        d="M20.9 6a.9.9 0 0 1-.9.9h-3.1V8a.9.9 0 0 1-.9.9h-4a.9.9 0 0 1-.9-.9V6.9H4a.9.9 0 0 1 0-1.8h7.1V4a.9.9 0 0 1 .9-.9h4a.9.9 0 0 1 .9.9v1.1H20a.9.9 0 0 1 .9.9Zm-5.8-1.1h-2.2v2.2h2.2V4.9Zm5.8 7.1a.9.9 0 0 1-.9.9h-9.1V14a.9.9 0 0 1-.9.9H6a.9.9 0 0 1-.9-.9v-1.1H4a.9.9 0 1 1 0-1.8h1.1V10a.9.9 0 0 1 .9-.9h4a.9.9 0 0 1 .9.9v1.1H20a.9.9 0 0 1 .9.9Zm0 6a.9.9 0 0 1-.9.9h-.1V20a.9.9 0 0 1-.9.9h-4a.9.9 0 0 1-.9-.9v-1.1H4a.9.9 0 1 1 0-1.8h10.1V16a.9.9 0 0 1 .9-.9h4a.9.9 0 0 1 .9.9v1.1h.1a.9.9 0 0 1 .9.9Zm-2.8-1.1h-2.2v2.2h2.2v-2.2Z"
+        clip-rule="evenodd"
       />
     </symbol>
     <symbol viewBox="0 0 24 24" id="lp-icon-flag-circle">
