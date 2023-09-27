@@ -92,7 +92,11 @@
       />
     </symbol>
     <symbol viewBox="0 0 24 24" id="lp-icon-arrow-right-thin">
-      <path d="M13.9821 7V11H5.03011L5 13.01H13.9821V17L19 12L13.9821 7Z" />
+      <path
+        fill-rule="evenodd"
+        d="M14.363 7.364a.9.9 0 0 1 1.273 0l4 4a.9.9 0 0 1 0 1.272l-4 4a.9.9 0 1 1-1.273-1.272l2.464-2.464H5a.9.9 0 1 1 0-1.8h11.827l-2.464-2.464a.9.9 0 0 1 0-1.272Z"
+        clip-rule="evenodd"
+      />
     </symbol>
     <symbol viewBox="0 0 24 24" id="lp-icon-arrow-right">
       <path d="M10 17L15 12L10 7V17Z" />
