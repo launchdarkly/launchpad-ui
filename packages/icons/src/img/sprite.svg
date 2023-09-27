@@ -319,7 +319,9 @@
     </symbol>
     <symbol viewBox="0 0 24 24" id="lp-icon-circle-outline">
       <path
-        d="M12 2C6.47 2 2 6.47 2 12s4.47 10 10 10 10-4.47 10-10S17.53 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"
+        fill-rule="evenodd"
+        d="M8.212 2.853a9.9 9.9 0 1 1 7.577 18.293A9.9 9.9 0 0 1 8.212 2.853ZM12.001 3.9a8.1 8.1 0 1 0 0 16.2 8.1 8.1 0 0 0 0-16.2Z"
+        clip-rule="evenodd"
       />
     </symbol>
     <symbol viewBox="0 0 24 24" id="lp-icon-click-metric">
