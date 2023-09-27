@@ -603,6 +603,13 @@
         clip-rule="evenodd"
       />
     </symbol>
+    <symbol viewBox="0 0 24 24" id="lp-icon-help-circle">
+      <path
+        fill-rule="evenodd"
+        d="M12 2.1a9.9 9.9 0 1 0 0 19.8 9.9 9.9 0 0 0 0-19.8Zm.082 3.971a3.5 3.5 0 0 0-2.798 1.385.9.9 0 0 0 1.434 1.088 1.7 1.7 0 1 1 1.97 2.612 2.4 2.4 0 0 0-1.586 2.395.9.9 0 1 0 1.797-.102.6.6 0 0 1 .4-.6l.009-.003.014-.006a3.501 3.501 0 0 0-1.24-6.769ZM12 15.95c.58 0 1.05.47 1.05 1.05v.01a1.05 1.05 0 1 1-2.1 0V17c0-.58.47-1.05 1.05-1.05Z"
+        clip-rule="evenodd"
+      />
+    </symbol>
     <symbol viewBox="0 0 24 24" id="lp-icon-help-circle-outline">
       <path
         fill-rule="evenodd"
