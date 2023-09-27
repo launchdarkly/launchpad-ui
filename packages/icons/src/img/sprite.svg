@@ -240,6 +240,13 @@
         clip-rule="evenodd"
       />
     </symbol>
+    <symbol viewBox="0 0 24 24" id="lp-icon-chart-pie">
+      <path
+        fill-rule="evenodd"
+        d="M9.895 2.306A1.8 1.8 0 0 1 11.9 4v7a1.1 1.1 0 0 0 1.1 1.1h6.8a1.9 1.9 0 0 1 1.9 1.9.902.902 0 0 1-.023.203 9.902 9.902 0 0 1-16.645 4.765A9.9 9.9 0 0 1 9.797 2.323a.9.9 0 0 1 .098-.017Zm.205 1.795a8.1 8.1 0 1 0 9.787 9.849.1.1 0 0 0-.087-.05H13a2.9 2.9 0 0 1-2.9-2.9V4.101Zm4.38-1.335a.9.9 0 0 1 .82-.115 9.9 9.9 0 0 1 6.05 6.05.9.9 0 0 1-.85 1.2H16A1.9 1.9 0 0 1 14.1 8V3.5a.9.9 0 0 1 .38-.735Z"
+        clip-rule="evenodd"
+      />
+    </symbol>
     <symbol viewBox="0 0 24 24" id="lp-icon-chat-bubble">
       <path
         fill-rule="evenodd"
@@ -782,16 +789,11 @@
         clip-rule="evenodd"
       />
     </symbol>
-    <symbol viewBox="0 0 24 24" id="lp-icon-person-remove-alt">
+    <symbol viewBox="0 0 24 24" id="lp-icon-person-remove">
       <path
         fill-rule="evenodd"
         d="M2.364 2.363a.9.9 0 0 1 1.273 0l18 18a.9.9 0 1 1-1.273 1.273l-7.692-7.692A5.101 5.101 0 0 0 6.901 19a.9.9 0 0 1-1.8 0 6.9 6.9 0 0 1 3.83-6.18 4.89 4.89 0 0 1-1.795-4.412L2.364 3.636a.9.9 0 0 1 0-1.273ZM12.001 5.9c-.513 0-.993.123-1.417.341a.9.9 0 0 1-.824-1.6 4.9 4.9 0 0 1 6.6 6.6.9.9 0 0 1-1.601-.825A3.1 3.1 0 0 0 12.001 5.9Z"
         clip-rule="evenodd"
-      />
-    </symbol>
-    <symbol viewBox="0 0 24 24" id="lp-icon-pie-chart">
-      <path
-        d="M11 2v20c-5.07-.5-9-4.79-9-10s3.93-9.5 9-10zm2.03 0v8.99H22c-.47-4.74-4.24-8.52-8.97-8.99zm0 11.01V22c4.74-.47 8.5-4.25 8.97-8.99h-8.97z"
       />
     </symbol>
     <symbol viewBox="0 0 24 24" id="lp-icon-play-arrow">
