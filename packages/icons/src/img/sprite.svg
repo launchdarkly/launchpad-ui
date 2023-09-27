@@ -449,6 +449,20 @@
     </symbol>
     <symbol viewBox="0 0 24 24" id="lp-icon-download">
       <path d="M5 20h14v-2H5v2zM19 9h-4V3H9v6H5l7 7 7-7z" />
+      <symbol viewBox="0 0 24 24" id="lp-icon-double-arrow-left">
+        <path
+          fill-rule="evenodd"
+          d="M11.637 6.364a.9.9 0 0 1 0 1.272L7.273 12l4.364 4.364a.9.9 0 1 1-1.273 1.273l-5-5a.9.9 0 0 1 0-1.273l5-5a.9.9 0 0 1 1.273 0Zm6 0a.9.9 0 0 1 0 1.272L13.273 12l4.364 4.364a.9.9 0 1 1-1.273 1.273l-5-5a.9.9 0 0 1 0-1.273l5-5a.9.9 0 0 1 1.273 0Z"
+          clip-rule="evenodd"
+        />
+      </symbol>
+      <symbol viewBox="0 0 24 24" id="lp-icon-double-arrow-right">
+        <path
+          fill-rule="evenodd"
+          d="M6.363 6.364a.9.9 0 0 1 1.273 0l5 5a.9.9 0 0 1 0 1.272l-5 5a.9.9 0 1 1-1.273-1.272L10.727 12 6.363 7.636a.9.9 0 0 1 0-1.272Zm6 0a.9.9 0 0 1 1.273 0l5 5a.9.9 0 0 1 0 1.272l-5 5a.9.9 0 1 1-1.273-1.272L16.727 12l-4.364-4.364a.9.9 0 0 1 0-1.272Z"
+          clip-rule="evenodd"
+        />
+      </symbol>
     </symbol>
     <symbol viewBox="0 0 24 24" id="lp-icon-edit">
       <path
@@ -580,16 +594,6 @@
     </symbol>
     <symbol viewBox="0 0 24 24" id="lp-icon-info">
       <path d="M13.5 9h-3V6h3v3Zm0 8.5h-3v-6h3v6ZM12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Z" />
-    </symbol>
-    <symbol viewBox="0 0 24 24" id="lp-icon-keyboard-double-arrow-left">
-      <path fill="none" d="M0 0h24v24H0z" />
-      <path d="M17.59 18 19 16.59 14.42 12 19 7.41 17.59 6l-6 6z" />
-      <path d="m11 18 1.41-1.41L7.83 12l4.58-4.59L11 6l-6 6z" />
-    </symbol>
-    <symbol viewBox="0 0 24 24" id="lp-icon-keyboard-double-arrow-right">
-      <path fill="none" d="M0 0h24v24H0z" />
-      <path d="M6.41 6 5 7.41 9.58 12 5 16.59 6.41 18l6-6z" />
-      <path d="m13 6-1.41 1.41L16.17 12l-4.58 4.59L13 18l6-6z" />
     </symbol>
     <symbol viewBox="0 0 24 24" id="lp-icon-language">
       <path d="M0 0h24v24H0z" fill="none" />
