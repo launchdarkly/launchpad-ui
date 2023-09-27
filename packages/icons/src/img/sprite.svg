@@ -107,7 +107,9 @@
     </symbol>
     <symbol viewBox="0 0 24 24" id="lp-icon-article">
       <path
-        d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"
+        fill-rule="evenodd"
+        d="M2.95 3.95A2.9 2.9 0 0 1 5 3.1h14A2.9 2.9 0 0 1 21.9 6v12a2.9 2.9 0 0 1-2.9 2.9H5A2.9 2.9 0 0 1 2.1 18V6a2.9 2.9 0 0 1 .85-2.05ZM6.1 8a.9.9 0 0 1 .9-.9h10a.9.9 0 0 1 0 1.8H7a.9.9 0 0 1-.9-.9Zm0 4a.9.9 0 0 1 .9-.9h10a.9.9 0 0 1 0 1.8H7a.9.9 0 0 1-.9-.9Zm0 4a.9.9 0 0 1 .9-.9h5.5a.9.9 0 0 1 0 1.8H7a.9.9 0 0 1-.9-.9Z"
+        clip-rule="evenodd"
       />
     </symbol>
     <symbol viewBox="0 0 24 24" id="lp-icon-border-all">
