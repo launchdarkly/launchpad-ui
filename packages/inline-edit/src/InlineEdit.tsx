@@ -164,7 +164,7 @@ const InlineEdit = forwardRef<HTMLInputElement, InlineEditProps>(
           />
           <IconButton
             kind="default"
-            icon={<Icon name="close" />}
+            icon={<Icon name="cancel" />}
             aria-label={cancelButtonLabel}
             className={cancelButton}
             onClick={handleCancel}
