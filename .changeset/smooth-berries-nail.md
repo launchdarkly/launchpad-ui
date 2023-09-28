@@ -3,4 +3,4 @@
 '@launchpad-ui/core': minor
 ---
 
-Update icon library with all new svgs. Add new icons, remove unfavorable icons, rename icons for consistency.
+[Icons] Complete redraw of all icons, removal of deprecated icons, addition of new icons, and rename keys for consistency
