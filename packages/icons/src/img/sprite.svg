@@ -1052,28 +1052,28 @@
         clip-rule="evenodd"
       />
     </symbol>
-    <symbol viewBox="0 0 17 16" id="lp-icon-status-active">
+    <symbol viewBox="0 0 24 24" id="lp-icon-status-active">
       <path
         fill-rule="evenodd"
+        d="M8.966 5.1a.9.9 0 0 1 .888.615l2.973 8.918 1.295-5.828a.9.9 0 0 1 1.684-.208l1.25 2.503h3.945a.9.9 0 0 1 0 1.8h-4.5a.9.9 0 0 1-.805-.498l-.367-.732-1.45 6.525a.9.9 0 0 1-1.732.09L9.124 9.217l-.75 3.001a.9.9 0 0 1-.873.682H3a.9.9 0 0 1 0-1.8h3.797l1.33-5.318a.9.9 0 0 1 .838-.681Z"
         clip-rule="evenodd"
-        d="M5.9515 0.927734L10.0532 10.1566L11.382 7.49907H15.5V9.49907H12.618L9.94679 14.8416L6.0485 6.07041L4.67703 9.49907H0.5V7.49907H3.32297L5.9515 0.927734Z"
       />
     </symbol>
-    <symbol viewBox="0 0 17 16" id="lp-icon-status-inactive">
+    <symbol viewBox="0 0 24 24" id="lp-icon-status-inactive">
       <path
         fill-rule="evenodd"
+        d="M4.1 12a.9.9 0 0 1 .9-.9h14a.9.9 0 1 1 0 1.8H5a.9.9 0 0 1-.9-.9Z"
         clip-rule="evenodd"
-        d="M2.66699 7.83398H13.3337V9.16732H2.66699V7.83398Z"
       />
     </symbol>
-    <symbol viewBox="0 0 17 16" id="lp-icon-status-launched">
-      <path
-        d="M12 8.5C12 10.7091 10.2091 12.5 8 12.5C5.79086 12.5 4 10.7091 4 8.5C4 6.29086 5.79086 4.5 8 4.5C10.2091 4.5 12 6.29086 12 8.5Z"
-      />
+    <symbol viewBox="0 0 24 24" id="lp-icon-status-launched">
+      <path d="M17.833 12a6 6 0 1 1-12 0 6 6 0 0 1 12 0Z" />
     </symbol>
-    <symbol viewBox="0 0 17 16" id="lp-icon-status-new">
+    <symbol viewBox="0 0 24 24" id="lp-icon-status-new">
       <path
-        d="M12.6663 9.16732H8.66634V13.1673H7.33301V9.16732H3.33301V7.83398H7.33301V3.83398H8.66634V7.83398H12.6663V9.16732Z"
+        fill-rule="evenodd"
+        d="M12 4.1a.9.9 0 0 1 .9.9v6.1H19a.9.9 0 1 1 0 1.8h-6.1V19a.9.9 0 1 1-1.8 0v-6.1H5a.9.9 0 1 1 0-1.8h6.1V5a.9.9 0 0 1 .9-.9Z"
+        clip-rule="evenodd"
       />
     </symbol>
     <symbol viewBox="0 0 24 24" id="lp-icon-stop">
