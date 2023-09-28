@@ -47,7 +47,7 @@ const Snackbar = ({
         <span className={styles['Snackbar-description']}>{description}</span> {CTA}
       </div>
       <IconButton
-        icon={<Icon name="close" size="small" />}
+        icon={<Icon name="cancel" size="small" />}
         size="small"
         aria-label="Dismiss"
         kind="close"

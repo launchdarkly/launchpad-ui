@@ -145,7 +145,7 @@ const DrawerContainer = ({
               {!hideCancel && (
                 <IconButton
                   aria-label="close"
-                  icon={<Icon name="close" size="medium" />}
+                  icon={<Icon name="cancel" size="medium" />}
                   className={styles.closeButton}
                   onClick={onCancel}
                   data-test-id="drawer-close-button"

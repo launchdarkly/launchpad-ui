@@ -45,7 +45,7 @@ const ModalHeader = ({
           <IconButton
             aria-label="close"
             size="small"
-            icon={<Icon name="close" size="medium" />}
+            icon={<Icon name="cancel" size="medium" />}
             className={styles.closeButton}
             onClick={onCancel}
             data-test-id="modal-close-button"
