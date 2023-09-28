@@ -26,7 +26,7 @@ export const Example: Story = {
   },
 };
 const items = [
-  { label: 'Stage 1', icons: <Icon name="check-circle" /> },
+  { label: 'Stage 1', icons: <Icon name="check" /> },
   {
     label: 'Stage 2',
     icons: (
