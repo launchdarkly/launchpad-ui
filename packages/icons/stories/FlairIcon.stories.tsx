@@ -17,11 +17,11 @@ export default {
 type Story = StoryObj<typeof FlairIcon>;
 
 export const Circular: Story = {
-  args: { children: <Icon name="contact-page" />, isRounded: true },
+  args: { children: <Icon name="chat-bubble" />, isRounded: true },
 };
 
 export const BlueToPurple: Story = {
-  args: { children: <Icon name="support-agent" />, gradient: 'purpleToBlue' },
+  args: { children: <Icon name="star" />, gradient: 'purpleToBlue' },
 };
 
 export const YellowToCyan: Story = {
