@@ -1,5 +1,11 @@
 # @launchpad-ui/icons
 
+## 0.13.0-alpha.0
+
+### Minor Changes
+
+- [#1016](https://github.com/launchdarkly/launchpad-ui/pull/1016) [`ba2a5138`](https://github.com/launchdarkly/launchpad-ui/commit/ba2a5138c9ff43b17654812437025ba9671d4923) Thanks [@matthewferry](https://github.com/matthewferry)! - [Icons] Complete redraw of all icons, removal of deprecated icons, addition of new icons, and rename keys for consistency
+
 ## 0.12.6
 
 ### Patch Changes

@@ -48,5 +48,7 @@
     "@launchpad-ui/types": "0.1.0",
     "@launchpad-ui/vars": "0.2.2"
   },
-  "changesets": []
+  "changesets": [
+    "smooth-berries-nail"
+  ]
 }
