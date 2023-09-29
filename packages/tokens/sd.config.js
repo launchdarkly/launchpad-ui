@@ -31,7 +31,7 @@ module.exports = {
           options: {
             outputReferences: true,
           },
-          filter: (token) => token.filePath !== 'src/color-aliases.yaml',
+          filter: (token) => token.attributes.category !== `color`,
         },
         {
           destination: 'themes.css',
@@ -39,8 +39,7 @@ module.exports = {
           options: {
             outputReferences: true,
           },
-          filter: (token) =>
-            token.filePath === 'src/color-aliases.yaml' && token.attributes.category === `color`,
+          filter: (token) => token.attributes.category === `color`,
         },
       ],
     },
@@ -112,37 +111,11 @@ StyleDictionary.registerFormat({
 
 StyleDictionary.registerFormat({
   name: 'css/theme-variables',
-  formatter: function ({ dictionary, file, options }) {
-    const { outputReferences } = options;
-
-    const darkTokens = dictionary.allTokens
-      .map((token) => {
-        let value = token.original.dark || token.original.value;
-        if (outputReferences && dictionary.usesReference(value)) {
-          const refs = dictionary.getReferences(value);
-          refs.forEach((ref) => {
-            value = `var(--${ref.name})`;
-          });
-        }
-        return `  --${token.name}: ${value};`;
-      })
-      .join(`\n`);
-
-    const defaultTokens = dictionary.allTokens
-      .map((token) => {
-        let value = token.original.value;
-        if (outputReferences && dictionary.usesReference(value)) {
-          const refs = dictionary.getReferences(value);
-          refs.forEach((ref) => {
-            value = `var(--${ref.name})`;
-          });
-        }
-        return `  --${token.name}: ${value};`;
-      })
-      .join(`\n`);
+  formatter: function ({ dictionary, file }) {
+    const darkTokens = themeTokens(dictionary, 'dark');
+    const defaultTokens = themeTokens(dictionary);
 
     const darkColorCSSVariables = `[data-theme='dark'] {\n${darkTokens}\n}\n`;
-
     const defaultColorCSSVariables = `:root, [data-theme='default'] {\n${defaultTokens}\n}\n`;
 
     return `${fileHeader({
@@ -183,3 +156,18 @@ const minifyDictionary = (obj) => {
   }
   return dict;
 };
+
+const themeTokens = (dictionary, theme) =>
+  dictionary.allTokens
+    .map((token) => {
+      let value = token[theme] || token.value;
+      const original = token.original[theme] || token.original.value;
+      if (dictionary.usesReference(original)) {
+        const refs = dictionary.getReferences(original);
+        refs.forEach((ref) => {
+          value = `var(--${ref.name})`;
+        });
+      }
+      return `  --${token.name}: ${value};`;
+    })
+    .join(`\n`);
