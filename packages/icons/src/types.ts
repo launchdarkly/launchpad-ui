@@ -1,4 +1,5 @@
 const icons = [
+  'a-to-b',
   'add',
   'add-circle',
   'add-circle-outline',
@@ -16,6 +17,8 @@ const icons = [
   'arrow-right-thin',
   'arrow-up-thin',
   'arrow-undo',
+  'arrow-up-right-circle',
+  'arrow-up-right-circle-outline',
   'article',
   'border-all',
   'brain',

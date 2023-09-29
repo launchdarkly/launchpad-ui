@@ -1,5 +1,12 @@
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
   <defs>
+    <symbol viewBox="0 0 24 24" id="lp-icon-a-to-b">
+      <path
+        fill-rule="evenodd"
+        d="M4.6 8.9A1.6 1.6 0 0 0 3 10.5v.6h3.2v-.6a1.6 1.6 0 0 0-1.6-1.6ZM8 10.5a3.4 3.4 0 1 0-6.8 0V16A.9.9 0 1 0 3 16v-3.1h3.2V16A.9.9 0 1 0 8 16v-5.5ZM15.6 8a.9.9 0 0 1 .9-.9h3a2.9 2.9 0 0 1 2.1 4.9 2.9 2.9 0 0 1-2.1 4.9h-3a.9.9 0 0 1-.9-.9V8Zm1.8 4.9v2.2h2.1a1.1 1.1 0 0 0 0-2.2h-2.1Zm2.1-1.8a1.1 1.1 0 0 0 0-2.2h-2.1v2.2h2.1Zm-9.136-1.736a.9.9 0 0 1 1.273 0l2 2a.9.9 0 0 1 0 1.272l-2 2a.9.9 0 1 1-1.273-1.272L11.727 12l-1.363-1.364a.9.9 0 0 1 0-1.272Z"
+        clip-rule="evenodd"
+      />
+    </symbol>
     <symbol viewBox="0 0 24 24" id="lp-icon-add">
       <path
         fill-rule="evenodd"
@@ -116,6 +123,20 @@
       <path
         fill-rule="evenodd"
         d="M4.8 6.3a.9.9 0 0 1 .9.9v2.779l.898-.81a8.1 8.1 0 0 1 5.4-2.07c2.149 0 4.21.854 5.729 2.373 1.574 1.574 2.372 3.58 2.372 7.328a.9.9 0 1 1-1.8 0c0-3.452-.718-4.928-1.845-6.055A6.3 6.3 0 0 0 12 8.9a6.3 6.3 0 0 0-4.2 1.61s.001 0 0 0l-.655.59h2.454a.9.9 0 1 1 0 1.8H4.8a.9.9 0 0 1-.9-.9V7.2a.9.9 0 0 1 .9-.9Z"
+        clip-rule="evenodd"
+      />
+    </symbol>
+    <symbol viewBox="0 0 24 24" id="lp-icon-arrow-up-right-circle">
+      <path
+        fill-rule="evenodd"
+        d="M5 5a9.9 9.9 0 1 1 14 14A9.9 9.9 0 0 1 5 5Zm4 4.9a.9.9 0 0 1 0-1.8h6a.9.9 0 0 1 .9.9v6a.9.9 0 1 1-1.8 0v-3.827l-4.464 4.463a.9.9 0 1 1-1.273-1.272L12.827 9.9H9Z"
+        clip-rule="evenodd"
+      />
+    </symbol>
+    <symbol viewBox="0 0 24 24" id="lp-icon-arrow-up-right-circle-outline">
+      <path
+        fill-rule="evenodd"
+        d="M5 5a9.9 9.9 0 1 1 14 14A9.9 9.9 0 0 1 5 5Zm7-1.1a8.1 8.1 0 1 0 0 16.2 8.1 8.1 0 0 0 0-16.2Zm-3 6a.9.9 0 0 1 0-1.8h6a.9.9 0 0 1 .9.9v6a.9.9 0 1 1-1.8 0v-3.827l-4.464 4.463a.9.9 0 1 1-1.273-1.272L12.827 9.9H9Z"
         clip-rule="evenodd"
       />
     </symbol>

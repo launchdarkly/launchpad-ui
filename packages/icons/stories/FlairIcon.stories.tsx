@@ -17,23 +17,23 @@ export default {
 type Story = StoryObj<typeof FlairIcon>;
 
 export const Circular: Story = {
-  args: { children: <Icon name="chat-bubble" />, isRounded: true },
+  args: { children: <Icon name="flag" />, isRounded: true },
 };
 
 export const BlueToPurple: Story = {
-  args: { children: <Icon name="star" />, gradient: 'purpleToBlue' },
+  args: { children: <Icon name="shield-key" />, gradient: 'purpleToBlue' },
 };
 
 export const YellowToCyan: Story = {
-  args: { children: <Icon name="flag" />, gradient: 'yellowToCyan' },
+  args: { children: <Icon name="arrow-up-right-circle" />, gradient: 'yellowToCyan' },
 };
 
 export const PinkToPurple: Story = {
-  args: { children: <Icon name="edit" />, gradient: 'pinkToPurple' },
+  args: { children: <Icon name="flask" />, gradient: 'pinkToPurple' },
 };
 
 export const CyanToBlue: Story = {
-  args: { children: <Icon name="thumb-up" />, gradient: 'cyanToBlue' },
+  args: { children: <Icon name="a-to-b" />, gradient: 'cyanToBlue' },
 };
 
 export const CyanToPurple: Story = {
