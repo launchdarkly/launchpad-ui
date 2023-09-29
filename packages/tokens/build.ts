@@ -1,10 +1,48 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
-const StyleDictionary = require('style-dictionary');
-const yaml = require('yaml');
+import StyleDictionary from 'style-dictionary-utils';
+import yaml from 'yaml';
 
 const { fileHeader } = StyleDictionary.formatHelpers;
 
-module.exports = {
+type NullableTokens = {
+  [key: string]: string | NullableTokens | null;
+};
+
+StyleDictionary.registerFormat({
+  name: 'custom/format/custom-media',
+  formatter({ dictionary }) {
+    return dictionary.allProperties
+      .map((prop) => {
+        const { attributes, value } = prop;
+        const size = attributes?.type;
+        return `@custom-media --${size} screen and (min-width: ${value});`;
+      })
+      .join('\n');
+  },
+});
+
+StyleDictionary.registerFormat({
+  name: 'css/theme-variables',
+  formatter: function ({ dictionary, file }) {
+    const darkTokens = themeTokens(dictionary, 'dark');
+    const defaultTokens = themeTokens(dictionary);
+
+    const darkColorCSSVariables = `[data-theme='dark'] {\n${darkTokens}\n}\n`;
+    const defaultColorCSSVariables = `:root, [data-theme='default'] {\n${defaultTokens}\n}\n`;
+
+    return `${fileHeader({
+      file,
+    })}${defaultColorCSSVariables}\n${darkColorCSSVariables}`;
+  },
+});
+
+StyleDictionary.registerFormat({
+  name: 'json/nested/contract',
+  formatter({ dictionary }) {
+    return JSON.stringify(minifyDictionary(dictionary.tokens), null, 2) + '\n';
+  },
+});
+
+const myStyleDictionary = StyleDictionary.extend({
   parsers: [
     {
       pattern: /\.yaml$/,
@@ -31,7 +69,7 @@ module.exports = {
           options: {
             outputReferences: true,
           },
-          filter: (token) => token.attributes.category !== `color`,
+          filter: (token) => token.attributes?.category !== `color`,
         },
         {
           destination: 'themes.css',
@@ -39,7 +77,7 @@ module.exports = {
           options: {
             outputReferences: true,
           },
-          filter: (token) => token.attributes.category === `color`,
+          filter: (token) => token.attributes?.category === `color`,
         },
       ],
     },
@@ -94,53 +132,20 @@ module.exports = {
       ],
     },
   },
-};
-
-StyleDictionary.registerFormat({
-  name: 'custom/format/custom-media',
-  formatter(dictionary) {
-    return dictionary.allProperties
-      .map((prop) => {
-        const { attributes, value } = prop;
-        const size = attributes.type;
-        return `@custom-media --${size} screen and (min-width: ${value});`;
-      })
-      .join('\n');
-  },
 });
 
-StyleDictionary.registerFormat({
-  name: 'css/theme-variables',
-  formatter: function ({ dictionary, file }) {
-    const darkTokens = themeTokens(dictionary, 'dark');
-    const defaultTokens = themeTokens(dictionary);
-
-    const darkColorCSSVariables = `[data-theme='dark'] {\n${darkTokens}\n}\n`;
-    const defaultColorCSSVariables = `:root, [data-theme='default'] {\n${defaultTokens}\n}\n`;
-
-    return `${fileHeader({
-      file,
-    })}${defaultColorCSSVariables}\n${darkColorCSSVariables}`;
-  },
-});
-
-StyleDictionary.registerFormat({
-  name: 'json/nested/contract',
-  formatter({ dictionary }) {
-    return JSON.stringify(minifyDictionary(dictionary.tokens), null, 2) + '\n';
-  },
-});
-
-const minifyDictionary = (obj) => {
-  if (typeof obj !== 'object' || Array.isArray(obj)) {
-    return obj;
+const minifyDictionary = (tokens: StyleDictionary.TransformedTokens) => {
+  if (typeof tokens !== 'object' || Array.isArray(tokens)) {
+    return tokens;
   }
 
-  const dict = {};
+  const dict: NullableTokens = {};
 
-  if (Object.prototype.hasOwnProperty.call(obj, 'value')) {
+  if (Object.prototype.hasOwnProperty.call(tokens, 'value')) {
     let variable = '';
-    const path = obj.path.filter((item) => item !== ' ');
+    const path: StyleDictionary.TransformedToken['path'] = tokens.path.filter(
+      (item: string) => item !== ' '
+    );
     path.forEach((item, index) => {
       variable += item;
       variable += index !== path.length - 1 ? '-' : '';
@@ -148,16 +153,16 @@ const minifyDictionary = (obj) => {
 
     return variable;
   } else {
-    for (const name in obj) {
-      if (Object.prototype.hasOwnProperty.call(obj, name)) {
-        dict[name] = minifyDictionary(obj[name]);
+    for (const name in tokens) {
+      if (Object.prototype.hasOwnProperty.call(tokens, name)) {
+        dict[name] = minifyDictionary(tokens[name]);
       }
     }
   }
   return dict;
 };
 
-const themeTokens = (dictionary, theme) =>
+const themeTokens = (dictionary: StyleDictionary.Dictionary, theme = '') =>
   dictionary.allTokens
     .map((token) => {
       let value = token[theme] || token.value;
@@ -171,3 +176,5 @@ const themeTokens = (dictionary, theme) =>
       return `  --${token.name}: ${value};`;
     })
     .join(`\n`);
+
+myStyleDictionary.buildAllPlatforms();

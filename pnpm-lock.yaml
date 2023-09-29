@@ -1533,6 +1533,12 @@ importers:
       style-dictionary:
         specifier: ^3.8.0
         version: 3.8.0
+      style-dictionary-utils:
+        specifier: ^2.0.1
+        version: 2.0.1(color2k@2.0.2)(json5@2.2.3)(prettier@2.8.8)(style-dictionary@3.8.0)
+      ts-node:
+        specifier: ^10.9.1
+        version: 10.9.1(@types/node@18.17.12)(typescript@5.2.2)
       yaml:
         specifier: ^2.3.1
         version: 2.3.2
@@ -9688,6 +9694,10 @@ packages:
   /color-name@1.1.4:
     resolution: {integrity: sha512-dOy+3AuW3a2wNbZHIuMZpTcgjGuLU/uBL/ubcZF9OXbDo8ff4O8yVp5Bf0efS8uEoYo5q4Fx7dY9OgQGXgAsQA==}
 
+  /color2k@2.0.2:
+    resolution: {integrity: sha512-kJhwH5nAwb34tmyuqq/lgjEKzlFXn1U99NlnB6Ws4qVaERcRUYeYP1cBw6BJ4vxaWStAUEef4WMr7WjOCnBt8w==}
+    dev: true
+
   /colord@2.9.3:
     resolution: {integrity: sha512-jeC1axXpnb0/2nn/Y1LPuLdgXBLH7aDcHu4KEKfqw3CUhX7ZpfBSlPKyqXE6btIgEzfWtrX3/tyBCaCvXvMkOw==}
     dev: true
@@ -17268,6 +17278,20 @@ packages:
       duplexer: 0.1.2
       minimist: 1.2.8
       through: 2.3.8
+    dev: true
+
+  /style-dictionary-utils@2.0.1(color2k@2.0.2)(json5@2.2.3)(prettier@2.8.8)(style-dictionary@3.8.0):
+    resolution: {integrity: sha512-+xHcpNojLU83DWQOLINmZ094VT+Xj8Fr/SqpxVHLNHCKO85v0IX244svVh9RClWEwZGNzh5wP4zXgILo743Fzw==}
+    peerDependencies:
+      color2k: ^2.0.0
+      json5: ^2.2.1
+      prettier: ^2.7.1
+      style-dictionary: '>= 3'
+    dependencies:
+      color2k: 2.0.2
+      json5: 2.2.3
+      prettier: 2.8.8
+      style-dictionary: 3.8.0
     dev: true
 
   /style-dictionary@3.8.0:
