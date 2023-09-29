@@ -16,10 +16,10 @@ type PaginationButtonProps<T = PaginationChange> = {
 };
 
 const ICON_MAP = {
-  first: <Icon name="keyboard-double-arrow-left" />,
+  first: <Icon name="chevrons-left" />,
   prev: <Icon name="chevron-left" />,
   next: <Icon name="chevron-right" />,
-  last: <Icon name="keyboard-double-arrow-right" />,
+  last: <Icon name="chevrons-right" />,
 };
 
 const LABEL_MAP: { [key in PaginationChange]: string } = {

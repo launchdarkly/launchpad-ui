@@ -58,7 +58,7 @@ const MultiSelectTrigger = <T extends object>(props: MultiSelectTriggerProps<T>)
       </span>
       <span className={styles.indicatorsContainer}>
         <span className={styles.expandIndicatorContainer} aria-hidden="true">
-          <Icon name="expand-more" />
+          <Icon name="chevron-down" />
         </span>
       </span>
     </button>

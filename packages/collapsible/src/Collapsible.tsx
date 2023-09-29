@@ -42,7 +42,7 @@ const Collapsible = (props: CollapsibleProps) => {
 
   const label = typeof props.label === 'string' ? props.label : props.label(isOpen);
 
-  const icon = isOpen ? <Icon name="expand-less" /> : <Icon name="expand-more" />;
+  const icon = isOpen ? <Icon name="chevron-up" /> : <Icon name="chevron-down" />;
 
   const renderedTrigger = trigger({
     label,

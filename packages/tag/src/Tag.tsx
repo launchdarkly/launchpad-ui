@@ -76,7 +76,7 @@ const Tag = <T extends object>(props: TagProps<T>) => {
               }}
               {...removeButtonProps}
             >
-              <Icon name="close" size="small" />
+              <Icon name="cancel" size="small" />
             </button>
           </Tooltip>
         )}
