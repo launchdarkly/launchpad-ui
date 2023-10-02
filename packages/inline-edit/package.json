@@ -32,10 +32,10 @@
     "test": "vitest run --coverage"
   },
   "dependencies": {
-    "@react-aria/button": "3.8.2",
-    "@react-aria/focus": "3.14.1",
-    "@react-aria/interactions": "3.18.0",
-    "@react-aria/utils": "3.20.0",
+    "@react-aria/button": "3.8.3",
+    "@react-aria/focus": "3.14.2",
+    "@react-aria/interactions": "3.19.0",
+    "@react-aria/utils": "3.21.0",
     "@launchpad-ui/button": "workspace:~",
     "@launchpad-ui/form": "workspace:~",
     "@launchpad-ui/icons": "workspace:~",
