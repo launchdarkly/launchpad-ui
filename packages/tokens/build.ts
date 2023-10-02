@@ -1,7 +1,6 @@
+import JsonToTS from 'json-to-ts';
 import StyleDictionary from 'style-dictionary-utils';
 import yaml from 'yaml';
-
-const { fileHeader } = StyleDictionary.formatHelpers;
 
 type NullableTokens = {
   [key: string]: string | NullableTokens | null;
@@ -29,7 +28,7 @@ StyleDictionary.registerFormat({
     const darkColorCSSVariables = `[data-theme='dark'] {\n${darkTokens}\n}\n`;
     const defaultColorCSSVariables = `:root, [data-theme='default'] {\n${defaultTokens}\n}\n`;
 
-    return `${fileHeader({
+    return `${StyleDictionary.formatHelpers.fileHeader({
       file,
     })}${defaultColorCSSVariables}\n${darkColorCSSVariables}`;
   },
@@ -39,6 +38,17 @@ StyleDictionary.registerFormat({
   name: 'json/nested/contract',
   formatter({ dictionary }) {
     return JSON.stringify(minifyDictionary(dictionary.tokens), null, 2) + '\n';
+  },
+});
+
+StyleDictionary.registerFormat({
+  name: 'typescript/accurate-module-declarations',
+  formatter({ dictionary }) {
+    return (
+      'declare const root: RootObject\n' +
+      'export default root\n' +
+      JsonToTS(StyleDictionary.formatHelpers.minifyDictionary(dictionary.tokens)).join('\n')
+    );
   },
 });
 
@@ -86,15 +96,15 @@ const myStyleDictionary = StyleDictionary.extend({
       buildPath: 'dist/',
       files: [
         {
-          format: 'javascript/es6',
+          format: 'javascript/esm',
           destination: 'index.es.js',
         },
         {
-          format: 'typescript/es6-declarations',
+          format: 'typescript/accurate-module-declarations',
           destination: 'index.d.ts',
         },
         {
-          format: 'javascript/module',
+          format: 'javascript/commonJs',
           destination: 'index.js',
         },
       ],
