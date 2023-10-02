@@ -1,5 +1,37 @@
 # @launchpad-ui/core
 
+## 0.46.0-alpha.0
+
+### Minor Changes
+
+- [#1016](https://github.com/launchdarkly/launchpad-ui/pull/1016) [`ba2a5138`](https://github.com/launchdarkly/launchpad-ui/commit/ba2a5138c9ff43b17654812437025ba9671d4923) Thanks [@matthewferry](https://github.com/matthewferry)! - [Icons] Complete redraw of all icons, removal of deprecated icons, addition of new icons, and rename keys for consistency
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @launchpad-ui/alert@0.7.34-alpha.0
+  - @launchpad-ui/avatar@0.5.16-alpha.0
+  - @launchpad-ui/banner@0.9.33-alpha.0
+  - @launchpad-ui/button@0.10.9-alpha.0
+  - @launchpad-ui/chip@0.8.16-alpha.0
+  - @launchpad-ui/clipboard@0.10.27-alpha.0
+  - @launchpad-ui/collapsible@0.1.29-alpha.0
+  - @launchpad-ui/drawer@0.4.28-alpha.0
+  - @launchpad-ui/dropdown@0.6.72-alpha.0
+  - @launchpad-ui/filter@0.5.53-alpha.0
+  - @launchpad-ui/form@0.9.17-alpha.0
+  - @launchpad-ui/inline-edit@0.1.16-alpha.0
+  - @launchpad-ui/menu@0.11.20-alpha.0
+  - @launchpad-ui/modal@0.16.23-alpha.0
+  - @launchpad-ui/navigation@0.11.44-alpha.0
+  - @launchpad-ui/pagination@0.3.76-alpha.0
+  - @launchpad-ui/select@0.3.25-alpha.0
+  - @launchpad-ui/snackbar@0.3.72-alpha.0
+  - @launchpad-ui/tag@0.2.24-alpha.0
+  - @launchpad-ui/toast@0.2.69-alpha.0
+  - @launchpad-ui/split-button@0.8.19-alpha.0
+  - @launchpad-ui/card@0.1.11-alpha.0
+
 ## 0.45.7
 
 ### Patch Changes

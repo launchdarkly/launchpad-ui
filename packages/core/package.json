@@ -1,6 +1,6 @@
 {
   "name": "@launchpad-ui/core",
-  "version": "0.45.7",
+  "version": "0.46.0-alpha.0",
   "status": "beta",
   "publishConfig": {
     "access": "public"
