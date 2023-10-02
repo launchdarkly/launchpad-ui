@@ -1530,6 +1530,9 @@ importers:
 
   packages/tokens:
     devDependencies:
+      '@types/tinycolor2':
+        specifier: ^1.4.4
+        version: 1.4.4
       json-to-ts:
         specifier: ^1.7.0
         version: 1.7.0
@@ -1539,6 +1542,9 @@ importers:
       style-dictionary-utils:
         specifier: ^2.0.1
         version: 2.0.1(color2k@2.0.2)(json5@2.2.3)(prettier@2.8.8)(style-dictionary@3.8.0)
+      tinycolor2:
+        specifier: ^1.6.0
+        version: 1.6.0
       ts-node:
         specifier: ^10.9.1
         version: 10.9.1(@types/node@18.17.12)(typescript@5.2.2)
@@ -8078,6 +8084,10 @@ packages:
     resolution: {integrity: sha512-FvnCJljyxhPM3gkRgWmxmDZyAQSiBQQWLI0A0VFL0K7W1oRUrPJSqNO0NvTnLkBcotdlp3lKvaT0JrnyRDkzOg==}
     dependencies:
       '@types/node': 18.18.3
+    dev: true
+
+  /@types/tinycolor2@1.4.4:
+    resolution: {integrity: sha512-FYK4mlLxUUajo/mblv7EUDHku20qT6ThYNsGZsTHilcHRvIkF8WXqtZO+DVTYkpHWCaAT97LueV59H/5Ve3bGA==}
     dev: true
 
   /@types/trusted-types@2.0.3:

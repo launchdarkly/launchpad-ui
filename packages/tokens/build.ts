@@ -1,5 +1,6 @@
 import JsonToTS from 'json-to-ts';
 import StyleDictionary from 'style-dictionary-utils';
+import Color from 'tinycolor2';
 import yaml from 'yaml';
 
 type NullableTokens = {
@@ -52,6 +53,16 @@ StyleDictionary.registerFormat({
   },
 });
 
+StyleDictionary.registerTransform({
+  type: 'attribute',
+  name: 'dark/rgb',
+  matcher: (token) => token.dark,
+  transformer: (token) => {
+    token.dark = Color(token.dark).toRgbString();
+    return token;
+  },
+});
+
 const myStyleDictionary = StyleDictionary.extend({
   parsers: [
     {
@@ -70,6 +81,7 @@ const myStyleDictionary = StyleDictionary.extend({
         'content/icon',
         'size/rem',
         'color/rgb',
+        'dark/rgb',
       ],
       buildPath: 'dist/',
       files: [
