@@ -1,191 +1,261 @@
 color:
   blue:
     100:
-      value: hsl(228, 100%, 98%)
+      value: '#E5EBFF'
+      dark: '#F5F7FF'
     200:
-      value: hsl(231.7, 100%, 94.3%)
+      value: '#B3BDFF'
+      dark: '#E2E6FF'
     300:
-      value: hsl(232.1, 100%, 85.1%)
+      value: '#7587FF'
+      dark: '#B3BDFF'
     400:
-      value: hsl(231.6, 100%, 72%)
+      value: '#4D65FF'
+      dark: '#7084FF'
     500:
-      value: hsl(231.5, 100%, 62.5%)
+      value: '#2443FF'
+      dark: '#4761FF'
     600:
-      value: hsl(231.5, 68.2%, 53.1%)
+      value: '#2840D2'
+      dark: '#364DD9'
     700:
-      value: hsl(231.6, 59.8%, 46.9%)
+      value: '#27379B'
+      dark: '#3044BF'
     800:
-      value: hsl(231.8, 59.6%, 40.8%)
+      value: '#1C276E'
+      dark: '#2A3BA6'
     900:
-      value: hsl(231.4, 60%, 34.3%)
+      value: '#101741'
+      dark: '#23328C'
   cyan:
     100:
-      value: hsl(186.7, 81.8%, 97.8%)
+      value: '#E7FAFE'
+      dark: '#F5FDFE'
     200:
-      value: hsl(188.9, 87.1%, 93.9%)
+      value: '#B6F0FB'
+      dark: '#E2F9FD'
     300:
-      value: hsl(189.7, 90.2%, 83.9%)
+      value: '#81E4F8'
+      dark: '#B1EFFB'
     400:
-      value: hsl(190, 89.6%, 69.8%)
+      value: '#47D8F5'
+      dark: '#6DE0F7'
     500:
-      value: hsl(190.1, 90.2%, 60%)
+      value: '#1FD0F4'
+      dark: '#3DD6F5'
     600:
-      value: hsl(190, 62.4%, 51%)
+      value: '#0BBBE0'
+      dark: '#34B6D0'
     700:
-      value: hsl(190.4, 60%, 45.1%)
+      value: '#0993AE'
+      dark: '#2EA0B8'
     800:
-      value: hsl(190.1, 59.8%, 39%)
+      value: '#076B7E'
+      dark: '#288B9F'
     900:
-      value: hsl(190.1, 59.8%, 33.1%)
+      value: '#04424E'
+      dark: '#227687'
   pink:
     100:
-      value: hsl(342, 100%, 98%)
+      value: '#FFE5EC'
+      dark: '#FFF5F8'
     200:
-      value: hsl(344, 100%, 94.1%)
+      value: '#FFADC2'
+      dark: '#FFE1E9'
     300:
-      value: hsl(344.3, 100%, 84.3%)
+      value: '#FF7599'
+      dark: '#FFAFC4'
     400:
-      value: hsl(344.7, 100%, 70.8%)
+      value: '#FF3D6F'
+      dark: '#FF6A90'
     500:
-      value: hsl(344.6, 100%, 61%)
+      value: '#FF1451'
+      dark: '#FF386B'
     600:
-      value: hsl(345, 69%, 50%)
+      value: '#EB003C'
+      dark: '#D9305B'
     700:
-      value: hsl(344.7, 63.9%, 45.7%)
+      value: '#B8002F'
+      dark: '#BF2A50'
     800:
-      value: hsl(344.3, 64.4%, 39.6%)
+      value: '#850022'
+      dark: '#A62446'
     900:
-      value: hsl(344.6, 63.7%, 33.5%)
+      value: '#520015'
+      dark: '#8C1F3B'
   purple:
     100:
-      value: hsl(274.3, 63.6%, 97.8%)
+      value: '#EFE1FA'
+      dark: '#FAF6FD'
     200:
-      value: hsl(274.3, 67.7%, 93.9%)
+      value: '#D4ADF0'
+      dark: '#F1E5FA'
     300:
-      value: hsl(274.7, 68.7%, 83.7%)
+      value: '#B97AE6'
+      dark: '#DAB9F2'
     400:
-      value: hsl(275.3, 68.2%, 69.2%)
+      value: '#A14BDD'
+      dark: '#BA7BE6'
     500:
-      value: hsl(275.2, 68.4%, 59%)
+      value: '#9331D8'
+      dark: '#A34FDE'
     600:
-      value: hsl(275.4, 48%, 50.2%)
+      value: '#8325C6'
+      dark: '#8B43BD'
     700:
-      value: hsl(275, 47.8%, 44.3%)
+      value: '#671D9B'
+      dark: '#7A3BA7'
     800:
-      value: hsl(275.5, 47.7%, 38.2%)
+      value: '#4B1570'
+      dark: '#6A3390'
     900:
-      value: hsl(275.7, 47.9%, 32.4%)
+      value: '#2E0C45'
+      dark: '#5A2B7A'
   yellow:
     100:
-      value: hsl(66, 100%, 98%)
+      value: '#FCFFE5'
+      dark: '#FEFFF5'
     200:
-      value: hsl(66, 100%, 94.1%)
+      value: '#F7FFB2'
+      dark: '#FCFFE1'
     300:
-      value: hsl(66, 100%, 84.3%)
+      value: '#F2FF80'
+      dark: '#F7FFAF'
     400:
-      value: hsl(66.1, 100%, 76.7%)
+      value: '#EEFF4D'
+      dark: '#F3FF88'
     500:
-      value: hsl(66, 100%, 61%)
+      value: '#E8FF1F'
+      dark: '#EBFF38'
     600:
-      value: hsl(66, 69%, 52%)
+      value: '#D3EB00'
+      dark: '#C8D930'
     700:
-      value: hsl(66, 63.9%, 45.7%)
+      value: '#8B9721'
+      dark: '#B0BF2A'
     800:
-      value: hsl(66, 64.4%, 39.6%)
+      value: '#646D18'
+      dark: '#99A624'
     900:
-      value: hsl(66.1, 63.7%, 33.5%)
+      value: '#3D430F'
+      dark: '#818C1F'
   white:
     100:
-      value: hsl(0, 0%, 97.3%)
-    200:
-      value: hsl(0, 0%, 93.7%)
+      value: '#F1F2F4'
     0:
-      value: hsl(0, 0%, 100%)
+      value: '#FFFFFF'
   gray:
     100:
-      value: hsl(0, 0%, 90.2%)
+      value: '#E3E4E8'
     200:
-      value: hsl(200, 3.4%, 82.5%)
+      value: '#D5D6DD'
     300:
-      value: hsl(210, 3.1%, 74.5%)
+      value: '#B7B9C5'
     400:
-      value: hsl(216, 2.9%, 66.5%)
+      value: '#9D9FAF'
     500:
-      value: hsl(216, 2.4%, 58.6%)
+      value: '#8C8FA1'
     600:
-      value: hsl(225, 1.8%, 45%)
+      value: '#686B7F'
     700:
-      value: hsl(220, 1.7%, 35.1%)
+      value: '#515362'
     800:
-      value: hsl(270, 1.5%, 25.5%)
+      value: '#3B3C48'
     900:
-      value: hsl(0, 0%, 19%)
+      value: '#2E2F38'
   black:
     100:
-      value: hsl(0, 0%, 15.7%)
+      value: '#282828'
     200:
-      value: hsl(0, 0%, 12.9%)
+      value: '#212121'
     300:
-      value: hsl(0, 0%, 9.8%)
+      value: '#191919'
     400:
-      value: hsl(0, 0%, 7%)
+      value: '#121212'
     0:
-      value: hsl(0, 0%, 0%)
+      value: '#000000'
   system:
     green:
       100:
-        value: hsl(152.7, 73.3%, 97.1%)
+        value: '#E5FFF4'
+        dark: '#F2FDF8'
       200:
-        value: hsl(153.8, 72.7%, 91.4%)
+        value: '#94FFD0'
+        dark: '#D9F9EB'
       300:
-        value: hsl(153.8, 74.4%, 77.1%)
+        value: '#42FFAD'
+        dark: '#99F0CA'
       400:
-        value: hsl(153.9, 74.4%, 57.1%)
+        value: '#00F087'
+        dark: '#40E39C'
       500:
-        value: hsl(153.9, 100%, 42.7%)
+        value: '#00CC73'
+        dark: '#00DA7B'
       600:
-        value: hsl(154.1, 100%, 36.3%)
+        value: '#00A85F'
+        dark: '#00B969'
       700:
-        value: hsl(153.7, 100%, 32.2%)
+        value: '#00854B'
+        dark: '#00A45C'
       800:
-        value: hsl(153.8, 100%, 27.8%)
+        value: '#006B3C'
+        dark: '#008E50'
       900:
-        value: hsl(154, 100%, 23.5%)
+        value: '#00522E'
+        dark: '#007844'
     red:
       100:
-        value: hsl(0, 81.8%, 97.8%)
+        value: '#FCE8E8'
+        dark: '#FEF5F5'
       200:
-        value: hsl(0, 81.3%, 93.7%)
+        value: '#F7BBBB'
+        dark: '#FCE2E2'
       300:
-        value: hsl(0, 79.3%, 82.9%)
+        value: '#F18888'
+        dark: '#F6B1B1'
       400:
-        value: hsl(0, 79.3%, 67.8%)
+        value: '#EB5656'
+        dark: '#EE6C6C'
       500:
-        value: hsl(0, 79%, 57.1%)
+        value: '#E52424'
+        dark: '#E83B3B'
       600:
-        value: hsl(0, 59.5%, 49%)
+        value: '#C41717'
+        dark: '#C73333'
       700:
-        value: hsl(0, 59.6%, 42.7%)
+        value: '#9B1212'
+        dark: '#AE2C2C'
       800:
-        value: hsl(0, 59.8%, 37.1%)
+        value: '#720D0D'
+        dark: '#972626'
       900:
-        value: hsl(0, 60%, 31.4%)
+        value: '#490808'
+        dark: '#802020'
     yellow:
       100:
-        value: hsl(46.7, 81.8%, 97.8%)
+        value: '#FCF6E3'
+        dark: '#FEFCF5'
       200:
-        value: hsl(46.2, 81.3%, 93.7%)
+        value: '#F8E6AF'
+        dark: '#FCF6E2'
       300:
-        value: hsl(45.2, 83.1%, 83.7%)
+        value: '#F3D67C'
+        dark: '#F8E7B3'
       400:
-        value: hsl(45.2, 83.3%, 69.4%)
+        value: '#EEC649'
+        dark: '#F2D270'
       500:
-        value: hsl(45.2, 83.7%, 59.2%)
+        value: '#EBBA23'
+        dark: '#EEC340'
       600:
-        value: hsl(45.4, 58.3%, 50.2%)
+        value: '#D7A613'
+        dark: '#CAA636'
       700:
-        value: hsl(45, 57.9%, 42%)
+        value: '#A88210'
+        dark: '#A98A2D'
       800:
-        value: hsl(45.1, 57.4%, 38.6%)
+        value: '#795D0B'
+        dark: '#9B7F2A'
       900:
-        value: hsl(45, 57.8%, 32.5%)
+        value: '#4B3B07'
+        dark: '#836B23'
