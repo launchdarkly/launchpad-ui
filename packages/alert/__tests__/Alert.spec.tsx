@@ -85,6 +85,40 @@ describe('Alert', () => {
       const component = screen.getByTestId('alert');
       expect(component).toHaveClass(styles['Alert--wide']);
     });
+
+    it('applies flair class when kind is notification', () => {
+      render(createComponent({ kind: 'notification', 'data-test-id': 'alert' }));
+      const component = screen.getByTestId('alert');
+      expect(component).toHaveClass(styles['Alert--flair-default']);
+    });
+
+    it('applies strong flair class when kind is notification and flairLevel is strong', () => {
+      render(
+        createComponent({ kind: 'notification', flairLevel: 'strong', 'data-test-id': 'alert' })
+      );
+      const component = screen.getByTestId('alert');
+      expect(component).toHaveClass(styles['Alert--flair-strong']);
+    });
+  });
+
+  describe('action elements', () => {
+    it('renders a button when primaryButton prop is passed', () => {
+      render(
+        createComponent({
+          primaryButton: { children: 'Primary Button', onClick: vi.fn() },
+        })
+      );
+      expect(screen.getByRole('button', { name: 'Primary Button' })).toBeInTheDocument();
+    });
+
+    it('renders a link when passed', () => {
+      render(
+        createComponent({
+          link: { href: '/', text: 'Link Text', onClick: vi.fn() },
+        })
+      );
+      expect(screen.getByRole('link', { name: 'Link Text' })).toBeInTheDocument();
+    });
   });
 
   describe('a11y', () => {

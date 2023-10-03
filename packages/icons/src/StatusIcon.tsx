@@ -3,7 +3,7 @@ import type { IconProps } from './Icon';
 import { Icon } from './Icon';
 
 type StatusIconProps = Omit<IconProps, 'name'> & {
-  kind: 'info' | 'success' | 'warning' | 'error';
+  kind: 'info' | 'success' | 'warning' | 'error' | 'notification';
 };
 
 const StatusIcon = ({ kind, size = 'medium', ...rest }: StatusIconProps) => {
@@ -26,6 +26,10 @@ const StatusIcon = ({ kind, size = 'medium', ...rest }: StatusIconProps) => {
     case 'info':
       name = 'info';
       ariaLabel = 'Info';
+      break;
+    case 'notification':
+      name = 'notifications';
+      ariaLabel = 'Notification';
       break;
   }
 

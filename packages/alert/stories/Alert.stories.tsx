@@ -45,6 +45,11 @@ export default {
         category: 'Presentation',
       },
     },
+    flairLevel: {
+      table: {
+        category: 'Presentation',
+      },
+    },
     size: {
       table: {
         category: 'Presentation',
@@ -202,5 +207,22 @@ export const WithControlledDismissed: Story = {
     };
 
     return <Component />;
+  },
+};
+
+export const Notification = {
+  args: {
+    kind: 'notification',
+    flairLevel: 'default',
+    header: 'Heading about a cool thing',
+    primaryButton: {
+      children: 'Primary action',
+    },
+    link: {
+      href: 'https://launchdarkly.com',
+      text: 'Link to learn more',
+    },
+    children: <div>Description about the cool thing you want people to know about</div>,
+    dismissible: true,
   },
 };
