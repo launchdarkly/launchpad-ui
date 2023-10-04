@@ -110,7 +110,7 @@ color:
     field:
       base:
         value: '{ color.white.0.value }'
-        dark: 'rgb(0 0 0 / .15)'
+        dark: hsla(0, 0%, 0%, 0.15)
       disabled:
         value: '{ color.gray.100.value }'
         dark: '{ color.black.100.value }'
