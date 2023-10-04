@@ -244,7 +244,7 @@ export const WithIcon: Story = {
 };
 
 export const WithIconPrimary: Story = {
-  args: { children: 'With icon', icon: <Icon name="expand-more" />, kind: 'primary' },
+  args: { children: 'With icon', icon: <Icon name="chevron-down" />, kind: 'primary' },
 };
 
 export const BigButtonWithIcon: Story = {

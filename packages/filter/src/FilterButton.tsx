@@ -83,7 +83,7 @@ const FilterButton = forwardRef<Ref, FilterButtonProps>((props, ref) => {
             {children}
           </span>
         )}
-        {!isClearable && <Icon name="expand-more" size="small" />}
+        {!isClearable && <Icon name="chevron-down" size="small" />}
       </button>
       {isClearable && (
         <Tooltip targetClassName={styles.clearTooltip} content={clearTooltip}>
@@ -91,7 +91,7 @@ const FilterButton = forwardRef<Ref, FilterButtonProps>((props, ref) => {
             aria-label={ariaLabel}
             className={styles.clear}
             data-test-id="clear-filter-button"
-            icon={<Icon name="close" size="tiny" />}
+            icon={<Icon name="cancel" size="tiny" />}
             size="small"
             onClick={onClear}
           />

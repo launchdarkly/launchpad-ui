@@ -123,7 +123,7 @@ const Alert = ({
           aria-label="Close this alert."
           size="small"
           className={styles['Alert-close']}
-          icon={<Icon name="close" size="small" />}
+          icon={<Icon name="cancel" size="small" />}
           kind="close"
           onClick={() => setDismissedState(true)}
           data-test-id={`${testId}-dismiss-button`}

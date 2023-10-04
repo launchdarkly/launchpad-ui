@@ -26,7 +26,7 @@ const CopyCodeButton = forwardRef<HTMLButtonElement, CopyCodeButtonProps>(
         {children}
         {(kind === 'basic' || kind === 'minimal') && (
           <Icon
-            name="clipboard-copy"
+            name="copy-clipboard"
             className={cx(styles['CopyCodeButton--icon'])}
             aria-hidden="true"
             size="small"

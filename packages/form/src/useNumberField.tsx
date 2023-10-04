@@ -69,10 +69,10 @@ const useNumberField = ({
         />
         <div className={styles['numberField-stepperContainer']}>
           <Stepper {...incrementButtonProps}>
-            <Icon name="expand-less" />
+            <Icon name="chevron-up" />
           </Stepper>
           <Stepper {...decrementButtonProps}>
-            <Icon name="expand-more" />
+            <Icon name="chevron-down" />
           </Stepper>
         </div>
       </div>

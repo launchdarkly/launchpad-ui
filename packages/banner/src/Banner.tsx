@@ -38,7 +38,7 @@ const Banner = ({
       {!!onDismiss && (
         <IconButton
           aria-label="Close banner"
-          icon={<Icon name="close" size="small" />}
+          icon={<Icon name="cancel" size="small" />}
           size="small"
           onClick={onDismiss}
           kind="close"

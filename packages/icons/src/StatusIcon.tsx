@@ -24,7 +24,7 @@ const StatusIcon = ({ kind, size = 'medium', ...rest }: StatusIconProps) => {
       ariaLabel = 'Error';
       break;
     case 'info':
-      name = 'info';
+      name = 'info-circle';
       ariaLabel = 'Info';
       break;
   }
