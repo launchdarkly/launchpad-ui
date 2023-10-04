@@ -1,6 +1,6 @@
 import type { ComponentProps, ReactNode } from 'react';
 
-import { IconButton } from '@launchpad-ui/button';
+import { IconButton, type ButtonProps, Button, ButtonGroup } from '@launchpad-ui/button';
 import { Icon, StatusIcon } from '@launchpad-ui/icons';
 import { useControlledState } from '@react-stately/utils';
 import { cx } from 'classix';
@@ -23,7 +23,13 @@ type AlertProps = ComponentProps<'div'> & {
    * displays the style and icon pair associated with the variant.
    * The default is info.
    */
-  kind?: 'info' | 'success' | 'warning' | 'error';
+  kind?: 'info' | 'success' | 'warning' | 'error' | 'notification';
+  /**
+   * Passing in one of `default`, `strong`
+   * displays the style associated with the variant.
+   * The default is default.
+   */
+  flairLevel?: 'default' | 'strong';
   /**
    * Passing in one of `small`, `medium`
    * displays either a small or medium Alert.
@@ -58,6 +64,17 @@ type AlertProps = ComponentProps<'div'> & {
   noIcon?: boolean;
 
   header?: ReactNode;
+
+  /**
+   * Primary action button properties
+   */
+  primaryButton?: ButtonProps;
+
+  link?: {
+    href: string;
+    text: string;
+    onClick?(): void;
+  };
 };
 
 const Alert = ({
@@ -66,6 +83,7 @@ const Alert = ({
   compact,
   isInline,
   kind = 'info',
+  flairLevel = 'default',
   size = 'medium',
   wide,
   dismissible,
@@ -74,6 +92,8 @@ const Alert = ({
   header,
   dismissed,
   'data-test-id': testId = 'alert',
+  primaryButton,
+  link,
   ...rest
 }: AlertProps) => {
   const [dismissedState, setDismissedState] = useControlledState(dismissed, false, (val) =>
@@ -82,13 +102,15 @@ const Alert = ({
 
   const defaultClasses = `${styles.Alert} ${styles[`Alert--${kind}`]}`;
   const sizeClass = size === 'small' && styles[`Alert--${size}`];
+  const flairLevelClass = kind === 'notification' && styles[`Alert--flair-${flairLevel}`];
   const classes = cx(
     defaultClasses,
     className,
     isInline ? styles['Alert--inline'] : styles['Alert--bordered'],
     sizeClass,
     compact && styles['Alert--compact'],
-    wide && styles['Alert--wide']
+    wide && styles['Alert--wide'],
+    flairLevelClass
   );
 
   if (dismissedState) {
@@ -100,7 +122,7 @@ const Alert = ({
       {...rest}
       className={classes}
       data-test-id={testId}
-      role={['info', 'success'].includes(kind) ? 'status' : 'alert'}
+      role={['info', 'success', 'notification'].includes(kind) ? 'status' : 'alert'}
     >
       {!noIcon && (
         <StatusIcon
@@ -116,7 +138,37 @@ const Alert = ({
             {header}
           </h4>
         )}
-        <div>{children}</div>
+        <div>
+          <div>{children}</div>
+          {(primaryButton || link) && (
+            <ButtonGroup>
+              {primaryButton && (
+                <Button
+                  {...primaryButton}
+                  kind={
+                    primaryButton.kind ||
+                    (flairLevel === 'strong' || kind !== 'notification'
+                      ? 'default'
+                      : 'defaultFlair')
+                  }
+                  className={cx(primaryButton.className, styles['PrimaryButton'])}
+                />
+              )}
+
+              {link && (
+                <Button
+                  kind="link"
+                  asChild
+                  onClick={link?.onClick}
+                  className={styles['LinkButton']}
+                  icon={<Icon name="open-in-new" size="small" />}
+                >
+                  <a href={link.href}>{link.text}</a>
+                </Button>
+              )}
+            </ButtonGroup>
+          )}
+        </div>
       </div>
       {dismissible && (
         <IconButton
