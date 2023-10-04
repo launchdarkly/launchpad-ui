@@ -161,7 +161,7 @@ const Alert = ({
                   asChild
                   onClick={link?.onClick}
                   className={styles['LinkButton']}
-                  icon={<Icon name="open-in-new" size="small" />}
+                  icon={<Icon name="link-external" size="small" />}
                 >
                   <a href={link.href}>{link.text}</a>
                 </Button>
