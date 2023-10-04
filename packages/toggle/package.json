@@ -33,9 +33,9 @@
   },
   "dependencies": {
     "@launchpad-ui/tokens": "workspace:~",
-    "@react-aria/focus": "3.14.1",
-    "@react-aria/switch": "3.5.4",
-    "@react-stately/toggle": "3.6.2",
+    "@react-aria/focus": "3.14.2",
+    "@react-aria/switch": "3.5.5",
+    "@react-stately/toggle": "3.6.3",
     "classix": "2.1.17"
   },
   "peerDependencies": {
@@ -43,7 +43,7 @@
     "react-dom": "18.2.0"
   },
   "devDependencies": {
-    "@react-types/shared": "3.20.0",
+    "@react-types/shared": "3.21.0",
     "react": "18.2.0",
     "react-dom": "18.2.0"
   }
