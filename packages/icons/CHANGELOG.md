@@ -1,5 +1,11 @@
 # @launchpad-ui/icons
 
+## 0.13.1
+
+### Patch Changes
+
+- [#1021](https://github.com/launchdarkly/launchpad-ui/pull/1021) [`87eff51a`](https://github.com/launchdarkly/launchpad-ui/commit/87eff51a00a813c0ebfebadb03b6c6c2ac221b43) Thanks [@cjhensen](https://github.com/cjhensen)! - feat: support 'notification' alert + action elements
+
 ## 0.13.0
 
 ### Minor Changes

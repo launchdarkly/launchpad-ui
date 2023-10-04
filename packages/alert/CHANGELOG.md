@@ -1,5 +1,17 @@
 # @launchpad-ui/alert
 
+## 0.7.35
+
+### Patch Changes
+
+- [#1021](https://github.com/launchdarkly/launchpad-ui/pull/1021) [`87eff51a`](https://github.com/launchdarkly/launchpad-ui/commit/87eff51a00a813c0ebfebadb03b6c6c2ac221b43) Thanks [@cjhensen](https://github.com/cjhensen)! - feat: support 'notification' alert + action elements
+
+- [#1027](https://github.com/launchdarkly/launchpad-ui/pull/1027) [`ebc922fa`](https://github.com/launchdarkly/launchpad-ui/commit/ebc922fa20c0fc5b9648e251dbbef37bf6f665e4) Thanks [@Niznikr](https://github.com/Niznikr)! - [Alert] Update link icon
+
+- Updated dependencies [[`87eff51a`](https://github.com/launchdarkly/launchpad-ui/commit/87eff51a00a813c0ebfebadb03b6c6c2ac221b43)]:
+  - @launchpad-ui/icons@0.13.1
+  - @launchpad-ui/button@0.10.10
+
 ## 0.7.34
 
 ### Patch Changes
