@@ -4,27 +4,30 @@ color:
       primary:
         value: '{ color.gray.800.value }'
       error:
-        value: hsla(0, 79%, 57.1%, 0.15)
+        value: '{ color.system.red.100.value }'
+        dark: '#E83B3B'
       info:
-        value: hsla(231.5, 100%, 62.5%, 0.15)
+        value: '{ color.blue.100.value }'
+        dark: '#405BFF'
       success:
-        value: hsla(153.9, 100%, 42.7%, 0.15)
+        value: '{ color.system.green.100.value }'
+        dark: '#00DA7B'
       warning:
-        value: hsla(45.2, 83.7%, 59.2%, 0.15)
+        value: '{ color.system.yellow.100.value }'
+        dark: '#EEC340'
     interactive:
       primary:
         base:
           value: '{ color.blue.500.value }'
         active:
-          value: '{ color.blue.700.value }'
-        focus:
-          value: '{ color.blue.700.value }'
-        hover:
           value: '{ color.blue.600.value }'
+        focus:
+          value: '{ color.blue.600.value }'
+        hover:
+          value: '{ color.blue.400.value }'
       secondary:
         base:
-          value: '{ color.white.0.value }'
-          dark: '{ color.black.200.value }'
+          value: transparent
         active:
           value: '{ color.gray.200.value }'
           dark: '{ color.gray.800.value }'
@@ -77,13 +80,13 @@ color:
           dark: '{ color.black.300.value }'
         active:
           value: '{ color.system.red.200.value }'
-          dark: '{ color.gray.800.value }'
+          dark: '#E52424'
         focus:
           value: '{ color.system.red.200.value }'
-          dark: '{ color.gray.800.value }'
+          dark: '#E52424'
         hover:
           value: '{ color.system.red.100.value }'
-          dark: '{ color.gray.700.value }'
+          dark: '#E52424'
       disabled:
         value: '{ color.gray.100.value }'
         dark: '{ color.gray.800.value }'
@@ -110,7 +113,7 @@ color:
     field:
       base:
         value: '{ color.white.0.value }'
-        dark: hsla(0, 0%, 0%, 0.15)
+        dark: transparent
       disabled:
         value: '{ color.gray.100.value }'
         dark: '{ color.black.100.value }'
@@ -121,13 +124,13 @@ color:
   border:
     feedback:
       error:
-        value: '{ color.system.red.700.value }'
+        value: '{ color.system.red.500.value }'
         dark: '{ color.system.red.500.value }'
       info:
-        value: '{ color.blue.700.value }'
+        value: '{ color.blue.500.value }'
         dark: '{ color.blue.500.value }'
       success:
-        value: '{ color.system.green.700.value }'
+        value: '{ color.system.green.600.value }'
         dark: '{ color.system.green.500.value }'
       warning:
         value: '{ color.system.yellow.700.value }'
@@ -144,10 +147,10 @@ color:
         dark: '{ color.cyan.500.value }'
       error:
         value: '{ color.system.red.600.value }'
-        dark: '{ color.system.red.400.value }'
+        dark: '{ color.system.red.600.value }'
       disabled:
-        value: '{ color.gray.700.value }'
-        dark: '{ color.gray.800.value }'
+        value: '{ color.gray.500.value }'
+        dark: '{ color.gray.700.value }'
     interactive:
       focus:
         value: '{ color.blue.500.value }'
@@ -156,21 +159,21 @@ color:
         base:
           value: '{ color.blue.500.value }'
         active:
-          value: '{ color.blue.700.value }'
-        focus:
-          value: '{ color.blue.700.value }'
-        hover:
           value: '{ color.blue.600.value }'
+        focus:
+          value: '{ color.blue.600.value }'
+        hover:
+          value: '{ color.blue.400.value }'
       primary-flair:
         base:
           value: '{ color.purple.500.value }'
-          dark: '{ color.purple.500.value }'
+          dark: '{ color.purple.400.value }'
         active:
           value: '{ color.purple.700.value }'
-          dark: '{ color.purple.500.value }'
+          dark: '{ color.purple.700.value }'
         focus:
           value: '{ color.purple.700.value }'
-          dark: '{ color.purple.500.value }'
+          dark: '{ color.purple.700.value }'
         hover:
           value: '{ color.purple.600.value }'
           dark: '{ color.purple.500.value }'
@@ -188,16 +191,16 @@ color:
       secondary-flair:
         base:
           value: '{ color.purple.500.value }'
-          dark: '{ color.purple.400.value }'
+          dark: '{ color.purple.500.value }'
         active:
           value: '{ color.purple.700.value }'
-          dark: '{ color.purple.300.value }'
+          dark: '{ color.purple.600.value }'
         focus:
           value: '{ color.purple.700.value }'
-          dark: '{ color.purple.300.value }'
+          dark: '{ color.purple.600.value }'
         hover:
           value: '{ color.purple.600.value }'
-          dark: '{ color.purple.300.value }'
+          dark: '{ color.purple.400.value }'
       destructive:
         value: '{ color.system.red.700.value }'
         dark: '{ color.system.red.500.value }'
@@ -218,11 +221,11 @@ color:
   fill:
     feedback:
       error:
-        value: '{ color.system.red.700.value }'
+        value: '{ color.system.red.500.value }'
         dark: '{ color.system.red.500.value }'
       info:
-        value: '{ color.blue.700.value }'
-        dark: '{ color.blue.500.value }'
+        value: '{ color.blue.500.value }'
+        dark: '{ color.blue.400.value }'
       success:
         value: '{ color.system.green.700.value }'
         dark: '{ color.system.green.500.value }'
@@ -272,10 +275,10 @@ color:
         value: '{ color.system.red.600.value }'
         dark: '{ color.system.red.400.value }'
       success:
-        value: '{ color.system.green.900.value }'
+        value: '{ color.system.green.700.value }'
         dark: '{ color.system.green.500.value }'
       warning:
-        value: '{ color.system.yellow.700.value }'
+        value: '{ color.system.yellow.800.value }'
         dark: '{ color.system.yellow.500.value }'
       info:
         value: '{ color.blue.700.value }'
@@ -284,7 +287,7 @@ color:
       # links
       base:
         value: '{ color.blue.600.value }'
-        dark: '{ color.cyan.500.value }'
+        dark: '{ color.blue.400.value }'
       active:
         value: '{ color.purple.600.value }'
         dark: '{ color.purple.400.value }'
@@ -299,7 +302,7 @@ color:
         dark: '{ color.white.0.value }'
       disabled:
         value: '{ color.gray.500.value }'
-        dark: '{ color.gray.700.value }'
+        dark: '{ color.gray.600.value }'
       flair:
         focus:
           value: '{ color.purple.700.value }'
