@@ -50,7 +50,8 @@ const Tag = <T extends object>(props: TagProps<T>) => {
     isFocusVisible && styles.isFocusVisible,
     isHovered && styles.isHovered,
     !allowsRemoving && styles.isReadOnly,
-    onClick && styles.isInteractive
+    onClick && styles.isInteractive,
+    allowsRemoving && styles.removable
   );
 
   const tag = (
