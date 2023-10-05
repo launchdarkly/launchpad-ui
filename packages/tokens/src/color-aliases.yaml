@@ -5,16 +5,16 @@ color:
         value: '{ color.gray.800.value }'
       error:
         value: '{ color.system.red.100.value }'
-        dark: '#E83B3B'
+        dark: '#E83B3B26'
       info:
         value: '{ color.blue.100.value }'
-        dark: '#405BFF'
+        dark: '#405BFF26'
       success:
         value: '{ color.system.green.100.value }'
-        dark: '#00DA7B'
+        dark: '#00DA7B26'
       warning:
         value: '{ color.system.yellow.100.value }'
-        dark: '#EEC340'
+        dark: '#EEC34026'
     interactive:
       primary:
         base:
@@ -80,13 +80,13 @@ color:
           dark: '{ color.black.300.value }'
         active:
           value: '{ color.system.red.200.value }'
-          dark: '#E52424'
+          dark: '#E5242426'
         focus:
           value: '{ color.system.red.200.value }'
-          dark: '#E52424'
+          dark: '#E5242426'
         hover:
           value: '{ color.system.red.100.value }'
-          dark: '#E52424'
+          dark: '#E5242433'
       disabled:
         value: '{ color.gray.100.value }'
         dark: '{ color.gray.800.value }'
