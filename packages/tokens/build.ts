@@ -147,10 +147,6 @@ const myStyleDictionary = StyleDictionary.extend({
           format: 'json/nested/contract',
           destination: 'contract.json',
         },
-        {
-          format: 'json/nested',
-          destination: 'default.json',
-        },
       ],
     },
   },
