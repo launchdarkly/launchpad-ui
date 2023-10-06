@@ -111,7 +111,7 @@ select.formInput {
 }
 
 .inlineForm .formGroup + .formGroup,
-.inlineForm .formGroup + :global(.Button) {
+.inlineForm .formGroup + :global([class*='_Button_']) {
   margin-left: 1rem;
 }
 

@@ -68,8 +68,7 @@
   cursor: pointer;
 }
 
-.Button:focus-visible,
-.Dropdown-trigger:focus-visible .Button--menu {
+.Button:focus-visible {
   border-radius: var(--Button-border-radius-default);
   box-shadow: var(--Button-box-shadow-focus);
   outline: 0;
@@ -540,4 +539,47 @@
   background: var(--Button-color-background-disabled);
   border: none;
   color: var(--lp-color-text-interactive-disabled);
+}
+
+.ButtonGroup {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.ButtonGroup--normal {
+  gap: 1rem;
+}
+
+.ButtonGroup--large {
+  gap: 2rem;
+}
+
+.ButtonGroup--compact > .Button + .Button,
+.ButtonGroup--compact > [class*='_Popover-target_'] + .Button,
+.ButtonGroup--compact > .Button + [class*='_Popover-target_'],
+.ButtonGroup--compact > [class*='_Popover-target_'] + [class*='_Popover-target_'] {
+  margin-left: -1px;
+}
+
+.ButtonGroup--compact > .Button + [class*='_Popover-target_'],
+.ButtonGroup--compact > [class*='_Popover-target_'] + [class*='_Popover-target_'] {
+  line-height: 1;
+}
+
+.ButtonGroup--compact > .Button:not(:first-child),
+.ButtonGroup--compact > .Button:not(:last-child),
+.ButtonGroup--compact > [class*='_Popover-target_']:not(:first-child),
+.ButtonGroup--compact > [class*='_Popover-target_']:not(:last-child) {
+  border-radius: 0;
+}
+
+.ButtonGroup--compact > .Button:first-child,
+.ButtonGroup--compact > [class*='_Popover-target_']:first-child button {
+  border-radius: var(--lp-border-radius-regular) 0 0 var(--lp-border-radius-regular);
+}
+
+.ButtonGroup--compact > .Button:last-child,
+.ButtonGroup--compact > [class*='_Popover-target_']:last-child button {
+  border-radius: 0 var(--lp-border-radius-regular) var(--lp-border-radius-regular) 0;
 }

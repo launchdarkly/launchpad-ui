@@ -41,7 +41,7 @@
   line-height: 1.25;
 }
 
-.Alert :global(.ButtonGroup) {
+.Alert :global([class*='_ButtonGroup_']) {
   margin-top: 1.2rem;
 }
 
@@ -197,7 +197,7 @@
   margin-left: auto;
 }
 
-.Alert-content :global(a:not(.Button)) {
+.Alert-content :global(a:not([class*='_Button_'])) {
   color: var(--lp-color-text-interactive-base);
 
   &:hover {

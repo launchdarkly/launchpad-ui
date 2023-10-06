@@ -1,7 +1,6 @@
 import type { ButtonProps } from './Button';
 import type { ChangeEventHandler, KeyboardEvent } from 'react';
 
-import { cx } from 'classix';
 import { useRef } from 'react';
 
 import { Button } from './Button';
@@ -25,7 +24,6 @@ const UploadButton = ({
   ...rest
 }: UploadButtonProps) => {
   const inputRef = useRef<HTMLInputElement>(null);
-  const classes = cx('UploadButton', className);
 
   const handleClick = () => {
     inputRef.current?.click();
@@ -61,10 +59,9 @@ const UploadButton = ({
   };
 
   return (
-    <span className={classes} data-test-id={testId}>
+    <span className={className} data-test-id={testId}>
       <input
         ref={inputRef}
-        className="UploadButton-input"
         id={id}
         style={{ display: 'none' }}
         type="file"
@@ -73,7 +70,7 @@ const UploadButton = ({
         accept={accept}
         data-test-id="upload-button-input"
       />
-      <label htmlFor={id} className="UploadButton-label">
+      <label htmlFor={id}>
         <Button
           {...rest}
           disabled={disabled}
