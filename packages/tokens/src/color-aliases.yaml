@@ -309,7 +309,15 @@ color:
         dark: '{ color.purple.400.value }'
 
       primary:
-        value: '{ color.white.0.value }'
+        base:
+          value: '{ color.white.0.value }'
+        active:
+          value: '{ color.white.0.value }'
+        focus:
+          value: '{ color.white.0.value }'
+        hover:
+          value: '{ color.white.0.value }'
+          dark: '{ color.black.300.value }'
       secondary:
         value: '{ color.gray.600.value }'
         dark: '{ color.gray.400.value }'
