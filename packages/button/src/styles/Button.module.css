@@ -370,7 +370,7 @@
   border-color: var(--Button-color-border-disabled);
 }
 
-.Button[disabled] .Button-icon {
+.Button[disabled] [class*='_icon_'] {
   fill: var(--Button-icon-color-fill-disabled);
 }
 
