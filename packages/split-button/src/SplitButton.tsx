@@ -4,7 +4,7 @@ import type { ComponentProps } from 'react';
 import { cx } from 'classix';
 
 import { SplitButtonContext } from './context';
-import './styles/SplitButton.css';
+import styles from './styles/SplitButton.module.css';
 
 type SplitButtonProps = ComponentProps<'div'> & {
   kind?: Extract<ButtonProps['kind'], 'primary' | 'default'>;
@@ -24,7 +24,7 @@ const SplitButton = ({
 }: SplitButtonProps) => {
   return (
     <SplitButtonContext.Provider value={{ disabled: !!disabled, kind, size }}>
-      <div {...rest} className={cx('SplitButton', className)} data-test-id={testId}>
+      <div {...rest} className={cx(styles.SplitButton, className)} data-test-id={testId}>
         {children}
       </div>
     </SplitButtonContext.Provider>

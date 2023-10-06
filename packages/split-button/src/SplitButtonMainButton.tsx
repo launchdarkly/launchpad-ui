@@ -5,7 +5,7 @@ import { cx } from 'classix';
 import { forwardRef, useContext, useMemo } from 'react';
 
 import { SplitButtonContext } from './context';
-import './styles/SplitButton.css';
+import styles from './styles/SplitButton.module.css';
 
 type SplitButtonMainButtonProps = Omit<ButtonProps, 'kind' | 'size'>;
 
@@ -23,7 +23,7 @@ const SplitButtonMainButton = forwardRef<HTMLButtonElement, SplitButtonMainButto
 
     const isDisabled = parentDisabled || disabled;
 
-    const classes = cx('SplitButton-main', className);
+    const classes = cx(styles.SplitButtonMain, className);
 
     const label = useMemo(() => {
       let value;

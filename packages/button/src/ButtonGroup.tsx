@@ -2,7 +2,7 @@ import type { ComponentProps } from 'react';
 
 import { cx } from 'classix';
 
-import './styles/ButtonGroup.css';
+import styles from './styles/Button.module.css';
 
 type ButtonGroupProps = ComponentProps<'div'> & {
   spacing?: 'compact' | 'normal' | 'large';
@@ -16,7 +16,7 @@ const ButtonGroup = ({
   'data-test-id': testId = 'button-group',
   ...rest
 }: ButtonGroupProps) => {
-  const classes = cx('ButtonGroup', `ButtonGroup--${spacing}`, className);
+  const classes = cx(styles.ButtonGroup, styles[`ButtonGroup--${spacing}`], className);
 
   return (
     <div className={classes} data-test-id={testId} {...rest}>

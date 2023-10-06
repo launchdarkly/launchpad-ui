@@ -4,7 +4,6 @@ import { Dropdown } from '@launchpad-ui/dropdown';
 import { useContext } from 'react';
 
 import { SplitButtonContext } from './context';
-import './styles/SplitButton.css';
 
 type SplitButtonDropdownProps = Omit<
   DropdownProps<string | number | object>,

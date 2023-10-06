@@ -60,6 +60,6 @@
   }
 }
 
-.Snackbar-close:global(.Button):global(.Button--close) svg {
+.Snackbar-close:global([class*='_Button_']):global([class*='_Button--close_']) svg {
   fill: var(--lp-color-gray-400);
 }
