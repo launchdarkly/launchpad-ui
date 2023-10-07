@@ -15,7 +15,7 @@ export const Size = {
         display: 'grid',
         gridTemplateColumns: 'auto auto 1fr',
         alignItems: 'center',
-        gap: '2.4rem',
+        gap: 'var(--lp-size-24)',
       }}
     >
       {Object.entries(sizes).map(([key, value]) => (
@@ -28,7 +28,7 @@ export const Size = {
             style={{
               backgroundColor: 'var(--lp-color-system-green-500)',
               width: value,
-              height: '1.6rem',
+              height: 'var(--lp-size-16)',
             }}
           />
         </>
