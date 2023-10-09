@@ -1,16 +1,16 @@
 .Markdown {
-  margin-top: 0.5rem;
+  margin-top: 0.3125rem;
 }
 
 .Markdown ol,
 .Markdown ul {
-  padding-left: 2rem;
+  padding-left: 1.25rem;
 }
 
 .Markdown ul li + li,
 .Markdown ol li + li,
 .Markdown > * :not(:first-child) {
-  margin-top: 0.2rem;
+  margin-top: 0.125rem;
 }
 
 .Markdown > p {
@@ -18,7 +18,7 @@
 }
 
 .Markdown p + p {
-  padding-top: 1.5rem;
+  padding-top: 0.9375rem;
 }
 
 .Markdown blockquote {

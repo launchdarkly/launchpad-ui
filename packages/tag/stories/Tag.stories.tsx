@@ -168,7 +168,7 @@ export const WithCustomAction: Story = {
 export const WithMaxRows: Story = {
   render: () => {
     return (
-      <div style={{ maxWidth: 290, border: '1px solid #efefef', padding: '1rem' }}>
+      <div style={{ maxWidth: 290, border: '1px solid #efefef', padding: '0.625rem' }}>
         <TagGroup maxRows={2} items={MOCK_TAGS}>
           {(item) => <TagItem>{item.name}</TagItem>}
         </TagGroup>
@@ -180,7 +180,7 @@ export const WithMaxRows: Story = {
 export const WithMaxRowsTiny: Story = {
   render: () => {
     return (
-      <div style={{ maxWidth: 290, border: '1px solid #efefef', padding: '1rem' }}>
+      <div style={{ maxWidth: 290, border: '1px solid #efefef', padding: '0.625rem' }}>
         <TagGroup maxRows={2} items={MOCK_TAGS} size="tiny">
           {(item) => <TagItem>{item.name}</TagItem>}
         </TagGroup>

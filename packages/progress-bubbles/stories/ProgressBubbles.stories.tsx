@@ -48,7 +48,7 @@ const items = [
     label: 'Complete',
     icons: <Icon name="star" />,
     popover: (
-      <div style={{ padding: '1rem' }}>
+      <div style={{ padding: '0.625rem' }}>
         <p>You can trigger a popover from a progress bubble item</p>
         <Button onClick={() => alert('Clicked button from popover.')}>Fire alert</Button>
       </div>
