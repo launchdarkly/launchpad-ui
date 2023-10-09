@@ -42,7 +42,7 @@ const IconField = ({
         })}
         size="small"
         className={styles.iconFieldIcon}
-        style={renderIconLast ? { right: '0.5rem' } : { left: '0.5rem' }}
+        style={renderIconLast ? { right: '0.313rem' } : { left: '0.313rem' }}
         aria-label={ariaLabel}
       />
     </Tooltip>
