@@ -14,7 +14,7 @@
   padding: 0;
   margin: 0;
   outline: none;
-  font-size: 1.6rem;
+  font-size: 1rem;
   overflow: auto;
 }
 
@@ -29,7 +29,7 @@
 }
 
 .option {
-  padding: 0.8rem 1.6rem;
+  padding: 0.5rem 1rem;
   color: var(--lp-color-text-ui-primary-base);
   cursor: pointer;
   list-style-type: none;
@@ -61,7 +61,7 @@
   color: var(--lp-color-text-ui-secondary);
   font-weight: bold;
   font-size: var(--lp-font-size-100);
-  padding: 0.4rem 1.6rem;
+  padding: 0.25rem 1rem;
 }
 
 .popover {
@@ -84,7 +84,7 @@
   position: relative;
   flex-direction: row;
   border-radius: var(--lp-border-radius-regular);
-  min-height: 3.2rem;
+  min-height: 2rem;
   display: flex;
   overflow: visible;
   width: 100%;
@@ -115,7 +115,7 @@
 
 .valueContainer {
   flex: 1;
-  padding: 0.4rem;
+  padding: 0.25rem;
   display: grid;
   align-items: center;
 }
@@ -130,7 +130,7 @@
   text-overflow: ellipsis;
   white-space: nowrap;
   box-sizing: border-box;
-  font-size: 1.3rem;
+  font-size: 0.8125rem;
   text-align: left;
   display: flex;
   align-items: center;
@@ -154,7 +154,7 @@
 }
 
 .closeIndicatorContainer {
-  padding: 0.4rem;
+  padding: 0.25rem;
 
   svg {
     width: 16px;
@@ -163,7 +163,7 @@
 }
 
 .expandIndicatorContainer {
-  padding: 0.4rem;
+  padding: 0.25rem;
 
   svg {
     width: 20px;
@@ -212,15 +212,15 @@
 
   .searchIcon {
     position: absolute;
-    top: 1.5rem;
-    left: 1.4rem;
+    top: 0.9375rem;
+    left: 0.875rem;
   }
 
   input {
     width: 100%;
     border: none;
-    font-size: 1.6rem;
-    padding: 1.575rem 1.6rem 1.575rem 4rem;
+    font-size: 1rem;
+    padding: 0.98438rem 1rem 0.98438rem 2.5rem;
 
     &:focus-visible {
       outline: none;

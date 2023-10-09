@@ -1,8 +1,8 @@
 .Toggle-storygroup-wrapper {
   display: grid;
   grid-template-rows: 1fr;
-  grid-template-columns: 8rem auto;
-  grid-gap: 1.2rem;
+  grid-template-columns: 5rem auto;
+  grid-gap: 0.75rem;
   justify-items: flex-start;
   align-items: center;
 }
@@ -16,12 +16,12 @@
 .Toggle-iggy-grid {
   display: grid;
   grid-template-rows: 1fr;
-  grid-template-columns: 8rem auto;
-  grid-gap: 1.2rem;
+  grid-template-columns: 5rem auto;
+  grid-gap: 0.75rem;
   justify-items: flex-start;
   align-items: center;
 
   & h3 {
-    font-size: 1.2rem;
+    font-size: 0.75rem;
   }
 }

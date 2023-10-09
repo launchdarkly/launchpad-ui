@@ -10,7 +10,7 @@
 }
 
 .Popover {
-  --gap: 1rem;
+  --gap: 0.625rem;
 
   z-index: var(--lp-z-index-600);
   position: absolute;
