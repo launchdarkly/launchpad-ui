@@ -29,6 +29,8 @@
 '@launchpad-ui/form': minor
 '@launchpad-ui/menu': minor
 '@launchpad-ui/tag': minor
+'@launchpad-ui/data-table': minor
+'@launchpad-ui/inline-edit': minor
 '@launchpad-ui/core': minor
 ---
 
