@@ -1,5 +1,22 @@
 # @launchpad-ui/navigation
 
+## 0.12.0
+
+### Minor Changes
+
+- [#1033](https://github.com/launchdarkly/launchpad-ui/pull/1033) [`aa584e87`](https://github.com/launchdarkly/launchpad-ui/commit/aa584e87cb9961b84bfd906eae25be85e141e47a) Thanks [@Niznikr](https://github.com/Niznikr)! - Use base 16 font size
+
+### Patch Changes
+
+- Updated dependencies [[`aa584e87`](https://github.com/launchdarkly/launchpad-ui/commit/aa584e87cb9961b84bfd906eae25be85e141e47a)]:
+  - @launchpad-ui/popover@0.11.0
+  - @launchpad-ui/tooltip@0.8.0
+  - @launchpad-ui/tokens@0.8.0
+  - @launchpad-ui/icons@0.14.0
+  - @launchpad-ui/chip@0.9.0
+  - @launchpad-ui/menu@0.12.0
+  - @launchpad-ui/dropdown@0.6.74
+
 ## 0.11.45
 
 ### Patch Changes
