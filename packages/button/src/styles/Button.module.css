@@ -129,6 +129,7 @@
   background-color: var(--Button-color-background-primary-hover);
   color: var(--Button-color-text-primary-hover);
   box-shadow: var(--Button-box-shadow-hover);
+  border-color: var(--Button-color-border-primary-hover);
 }
 
 .Button--icon.Button--primary {

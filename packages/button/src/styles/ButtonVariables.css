@@ -90,13 +90,13 @@
   --Button-color-border-primary-hover: var(--lp-color-border-interactive-primary-hover);
   --Button-color-border-primary-focus: var(--lp-color-border-interactive-primary-focus);
   --Button-color-border-primary-active: var(--lp-color-border-interactive-primary-active);
-  --Button-color-text-primary: var(--lp-color-text-interactive-primary);
-  --Button-color-text-primary-hover: var(--lp-color-text-interactive-primary);
+  --Button-color-text-primary: var(--lp-color-text-interactive-primary-base);
+  --Button-color-text-primary-hover: var(--lp-color-text-interactive-primary-hover);
 
   /* PRIMARY WITH ICON */
   --Button-color-background-primary-withIcon: var(--lp-color-bg-interactive-primary-base);
   --Button-color-border-primary-withIcon: var(--lp-color-border-interactive-primary-base);
-  --Button-color-text-primary-withIcon: var(--lp-color-text-interactive-primary);
+  --Button-color-text-primary-withIcon: var(--lp-color-text-interactive-primary-base);
 
   /* ------- DESTRUCTIVE ------- */
   --Button-color-background-destructive: transparent;

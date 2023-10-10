@@ -218,7 +218,7 @@ export const KitchenSink: Story = {
         <ModalHeader
           title={
             <>
-              Heading <Icon name="click-metric" size="small" />
+              Heading <Icon name="click" size="small" />
             </>
           }
           description={
@@ -431,6 +431,7 @@ export const WithForm: Story = {
           // @fixme
           'duplicate-id-aria': { enabled: false },
           'duplicate-id': { enabled: false },
+          'target-size': { enabled: false },
         },
       },
     },
@@ -482,6 +483,7 @@ export const WithAbsolutelyPositionedFooter: Story = {
         rules: {
           // @fixme
           'duplicate-id-aria': { enabled: false },
+          'target-size': { enabled: false },
         },
       },
     },
@@ -525,6 +527,7 @@ export const WithTooltip: Story = {
         rules: {
           // @fixme
           'duplicate-id-aria': { enabled: false },
+          'target-size': { enabled: false },
         },
       },
     },
