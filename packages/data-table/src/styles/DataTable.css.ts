@@ -38,7 +38,7 @@ const cell = style([
 const headerCell = style([
   cell,
   {
-    padding: `1rem ${vars.spacing[600]}`,
+    padding: `0.625rem ${vars.spacing[600]}`,
   },
 ]);
 

@@ -17,6 +17,6 @@ export const local = style({
     [accentVar]: vars.color.pink[500],
   },
   backgroundColor: accentVar,
-  height: '10rem',
-  width: '10rem',
+  height: '6.25rem',
+  width: '6.25rem',
 });

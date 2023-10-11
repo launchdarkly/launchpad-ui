@@ -7,7 +7,7 @@ import { Fragment } from 'react';
 import styles from './styles/ProgressBubbles.module.css';
 import { useDimensions } from './utils';
 
-const ICON_WIDTH = 2.8;
+const ICON_WIDTH = 1.75;
 
 type ProgressBubbleInfo = {
   label: string;

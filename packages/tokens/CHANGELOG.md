@@ -1,5 +1,11 @@
 # @launchpad-ui/tokens
 
+## 0.8.0
+
+### Minor Changes
+
+- [#1033](https://github.com/launchdarkly/launchpad-ui/pull/1033) [`aa584e87`](https://github.com/launchdarkly/launchpad-ui/commit/aa584e87cb9961b84bfd906eae25be85e141e47a) Thanks [@Niznikr](https://github.com/Niznikr)! - Use base 16 font size
+
 ## 0.7.1
 
 ### Patch Changes

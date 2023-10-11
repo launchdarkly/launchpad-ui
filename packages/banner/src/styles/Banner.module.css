@@ -15,8 +15,8 @@
 
 .Banner {
   display: flex;
-  padding: 1.4rem 1.8rem;
-  font-size: 1.4rem;
+  padding: 0.875rem 1.125rem;
+  font-size: 0.875rem;
   line-height: 1.45;
   white-space: normal;
   border-bottom: 1px;
@@ -25,8 +25,8 @@
 
 .Banner-heading {
   margin-top: 0;
-  margin-bottom: 0.4rem;
-  font-size: 1.6rem;
+  margin-bottom: 0.25rem;
+  font-size: 1rem;
   font-weight: var(--lp-font-weight-medium);
   line-height: 1.25;
 }
@@ -36,7 +36,7 @@
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
-  margin-left: 1.4rem;
+  margin-left: 0.875rem;
   flex-grow: 1;
 }
 

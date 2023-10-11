@@ -35,7 +35,7 @@ jobs:
       - uses: pnpm/action-setup@v2
 
       - name: Derive appropriate SHAs for base and head for `nx affected` commands
-        uses: nrwl/nx-set-shas@v3
+        uses: nrwl/nx-set-shas@v4
         with:
           main-branch-name: ${{needs.branch-info.outputs.base-branch}}
 
@@ -63,7 +63,7 @@ jobs:
       - uses: pnpm/action-setup@v2
 
       - name: Derive appropriate SHAs for base and head for `nx affected` commands
-        uses: nrwl/nx-set-shas@v3
+        uses: nrwl/nx-set-shas@v4
         with:
           main-branch-name: ${{needs.branch-info.outputs.base-branch}}
 
@@ -91,7 +91,7 @@ jobs:
       - uses: pnpm/action-setup@v2
 
       - name: Derive appropriate SHAs for base and head for `nx affected` commands
-        uses: nrwl/nx-set-shas@v3
+        uses: nrwl/nx-set-shas@v4
         with:
           main-branch-name: ${{needs.branch-info.outputs.base-branch}}
 
@@ -148,7 +148,7 @@ jobs:
       - uses: pnpm/action-setup@v2
 
       - name: Derive appropriate SHAs for base and head for `nx affected` commands
-        uses: nrwl/nx-set-shas@v3
+        uses: nrwl/nx-set-shas@v4
 
       - name: Setup Node
         uses: actions/setup-node@v3
