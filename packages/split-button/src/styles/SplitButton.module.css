@@ -9,12 +9,12 @@
   border-left-width: 1px;
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
-  padding: 0 0.8rem;
-  margin-left: -0.1rem;
+  padding: 0 0.5rem;
+  margin-left: -0.0625rem;
 }
 
 .SplitButtonDrop:global([class*='_Button--small_']) {
-  padding: 0 0.4rem;
+  padding: 0 0.25rem;
 }
 
 .SplitButtonMain:global([class*='_Button_']) {
@@ -33,7 +33,7 @@
   }
 
   & :global([class*='_Button--primary_']).SplitButtonDrop {
-    margin-left: 0.1rem;
+    margin-left: 0.0625rem;
   }
 }
 

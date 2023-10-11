@@ -10,7 +10,7 @@
 }
 
 .drawer {
-  --page-gutter-width: 1rem;
+  --page-gutter-width: 0.625rem;
 
   z-index: var(--lp-z-index-400);
   position: fixed;
@@ -20,7 +20,7 @@
 
 @media (--tablet) {
   .drawer {
-    --page-gutter-width: 4rem;
+    --page-gutter-width: 2.5rem;
   }
 }
 
@@ -49,19 +49,19 @@
 
 @media (--tablet) {
   .small .content {
-    width: 45rem;
+    width: 28.125rem;
   }
 
   .medium .content {
-    width: 65rem;
+    width: 40.625rem;
   }
 
   .large .content {
-    width: 80rem;
+    width: 50rem;
   }
 
   .xLarge .content {
-    width: 120rem;
+    width: 75rem;
   }
 
   .full .content {
@@ -71,7 +71,7 @@
 }
 
 .content section {
-  padding: 3.2rem var(--page-gutter-width);
+  padding: 2rem var(--page-gutter-width);
 }
 
 .content section + section {
@@ -80,6 +80,6 @@
 
 .closeButton {
   position: absolute;
-  right: 1rem;
-  top: 1rem;
+  right: 0.625rem;
+  top: 0.625rem;
 }

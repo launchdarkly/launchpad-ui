@@ -67,10 +67,10 @@ export const decorators = [
         return (
           <MotionConfig reducedMotion="user">
             <div style={{ display: 'flex', flexDirection: 'row', minHeight: '100vh' }}>
-              <div style={{ width: '50vw', padding: '1rem' }}>
+              <div style={{ width: '50vw', padding: '0.625rem' }}>
                 <StoryFn />
               </div>
-              <div data-theme="dark" style={{ width: '50vw', padding: '1rem' }}>
+              <div data-theme="dark" style={{ width: '50vw', padding: '0.625rem' }}>
                 <StoryFn />
               </div>
             </div>
@@ -81,7 +81,7 @@ export const decorators = [
         document.documentElement.setAttribute('data-theme', theme);
         return (
           <MotionConfig reducedMotion="user">
-            <div style={{ padding: '1rem' }}>
+            <div style={{ padding: '0.625rem' }}>
               <StoryFn />
             </div>
           </MotionConfig>

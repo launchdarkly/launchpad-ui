@@ -42,5 +42,11 @@ module.exports = {
         ignoreProperties: ['line-clamp'],
       },
     ],
+    'number-max-precision': [
+      4,
+      {
+        ignoreUnits: ['rem'],
+      },
+    ],
   },
 };

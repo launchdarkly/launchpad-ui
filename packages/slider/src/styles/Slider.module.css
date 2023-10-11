@@ -1,6 +1,6 @@
 .Slider {
-  --slider-height: 1rem;
-  --slider-knob-size: 1.6rem;
+  --slider-height: 0.625rem;
+  --slider-knob-size: 1rem;
 
   position: relative;
   height: var(--slider-height);
