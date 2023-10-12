@@ -1,0 +1,236 @@
+heading:
+  1:
+    medium:
+      value:
+        fontWeight: '{ font.weight.medium.value }'
+        fontSize: '{ font.size.500.value }'
+        lineHeight: 1.75rem
+        fontFamily: '{ font.family.base.value }'
+        fontStyle: normal
+      $type: typography
+    semibold:
+      value:
+        fontWeight: '{ font.weight.semibold.value }'
+        fontSize: '{ font.size.500.value }'
+        lineHeight: 1.75rem
+        fontFamily: '{ font.family.base.value }'
+        fontStyle: normal
+      $type: typography
+    extrabold:
+      value:
+        fontWeight: '{ font.weight.extrabold.value }'
+        fontSize: '{ font.size.500.value }'
+        lineHeight: 1.75rem
+        fontFamily: '{ font.family.base.value }'
+        fontStyle: normal
+      $type: typography
+  2:
+    medium:
+      value:
+        fontWeight: '{ font.weight.medium.value }'
+        fontSize: '{ font.size.300.value }'
+        lineHeight: 1.5rem
+        fontFamily: '{ font.family.base.value }'
+        fontStyle: normal
+      $type: typography
+    semibold:
+      value:
+        fontWeight: '{ font.weight.semibold.value }'
+        fontSize: '{ font.size.300.value }'
+        lineHeight: 1.5rem
+        fontFamily: '{ font.family.base.value }'
+        fontStyle: normal
+      $type: typography
+    extrabold:
+      value:
+        fontWeight: '{ font.weight.extrabold.value }'
+        fontSize: '{ font.size.300.value }'
+        lineHeight: 1.5rem
+        fontFamily: '{ font.family.base.value }'
+        fontStyle: normal
+      $type: typography
+  3:
+    medium:
+      value:
+        fontWeight: '{ font.weight.medium.value }'
+        fontSize: '{ font.size.200.value }'
+        lineHeight: 1.5rem
+        fontFamily: '{ font.family.base.value }'
+        fontStyle: normal
+      $type: typography
+    semibold:
+      value:
+        fontWeight: '{ font.weight.semibold.value }'
+        fontSize: '{ font.size.200.value }'
+        lineHeight: 1.5rem
+        fontFamily: '{ font.family.base.value }'
+        fontStyle: normal
+      $type: typography
+    extrabold:
+      value:
+        fontWeight: '{ font.weight.extrabold.value }'
+        fontSize: '{ font.size.200.value }'
+        lineHeight: 1.5rem
+        fontFamily: '{ font.family.base.value }'
+        fontStyle: normal
+      $type: typography
+
+body:
+  1:
+    regular:
+      value:
+        fontWeight: '{ font.weight.regular.value }'
+        fontSize: '{ font.size.300.value }'
+        lineHeight: 1.5rem
+        fontFamily: '{ font.family.base.value }'
+        fontStyle: normal
+      $type: typography
+    semibold:
+      value:
+        fontWeight: '{ font.weight.semibold.value }'
+        fontSize: '{ font.size.300.value }'
+        lineHeight: 1.5rem
+        fontFamily: '{ font.family.base.value }'
+        fontStyle: normal
+      $type: typography
+    extrabold:
+      value:
+        fontWeight: '{ font.weight.extrabold.value }'
+        fontSize: '{ font.size.300.value }'
+        lineHeight: 1.5rem
+        fontFamily: '{ font.family.base.value }'
+        fontStyle: normal
+      $type: typography
+  2:
+    regular:
+      value:
+        fontWeight: '{ font.weight.regular.value }'
+        fontSize: '{ font.size.200.value }'
+        lineHeight: 1.5rem
+        fontFamily: '{ font.family.base.value }'
+        fontStyle: normal
+      $type: typography
+    semibold:
+      value:
+        fontWeight: '{ font.weight.semibold.value }'
+        fontSize: '{ font.size.200.value }'
+        lineHeight: 1.5rem
+        fontFamily: '{ font.family.base.value }'
+        fontStyle: normal
+      $type: typography
+    extrabold:
+      value:
+        fontWeight: '{ font.weight.extrabold.value }'
+        fontSize: '{ font.size.200.value }'
+        lineHeight: 1.5rem
+        fontFamily: '{ font.family.base.value }'
+        fontStyle: normal
+      $type: typography
+
+small:
+  1:
+    regular:
+      value:
+        fontWeight: '{ font.weight.regular.value }'
+        fontSize: '{ font.size.100.value }'
+        lineHeight: 1.25rem
+        fontFamily: '{ font.family.base.value }'
+        fontStyle: normal
+      $type: typography
+    medium:
+      value:
+        fontWeight: '{ font.weight.medium.value }'
+        fontSize: '{ font.size.100.value }'
+        lineHeight: 1.25rem
+        fontFamily: '{ font.family.base.value }'
+        fontStyle: normal
+      $type: typography
+    extrabold:
+      value:
+        fontWeight: '{ font.weight.extrabold.value }'
+        fontSize: '{ font.size.100.value }'
+        lineHeight: 1.25rem
+        fontFamily: '{ font.family.base.value }'
+        fontStyle: normal
+      $type: typography
+  2:
+    regular:
+      value:
+        fontWeight: '{ font.weight.regular.value }'
+        fontSize: '{ font.size.0.value }'
+        lineHeight: 1rem
+        fontFamily: '{ font.family.base.value }'
+        fontStyle: normal
+      $type: typography
+    medium:
+      value:
+        fontWeight: '{ font.weight.medium.value }'
+        fontSize: '{ font.size.0.value }'
+        lineHeight: 1rem
+        fontFamily: '{ font.family.base.value }'
+        fontStyle: normal
+      $type: typography
+    extrabold:
+      value:
+        fontWeight: '{ font.weight.extrabold.value }'
+        fontSize: '{ font.size.0.value }'
+        lineHeight: 1rem
+        fontFamily: '{ font.family.base.value }'
+        fontStyle: normal
+      $type: typography
+
+label:
+  1:
+    regular:
+      value:
+        fontWeight: '{ font.weight.regular.value }'
+        fontSize: '{ font.size.200.value }'
+        lineHeight: 1.25rem
+        fontFamily: '{ font.family.base.value }'
+        fontStyle: normal
+      $type: typography
+    medium:
+      value:
+        fontWeight: '{ font.weight.medium.value }'
+        fontSize: '{ font.size.200.value }'
+        lineHeight: 1.25rem
+        fontFamily: '{ font.family.base.value }'
+        fontStyle: normal
+      $type: typography
+  2:
+    regular:
+      value:
+        fontWeight: '{ font.weight.regular.value }'
+        fontSize: '{ font.size.100.value }'
+        lineHeight: 1.25rem
+        fontFamily: '{ font.family.base.value }'
+        fontStyle: normal
+      $type: typography
+    medium:
+      value:
+        fontWeight: '{ font.weight.medium.value }'
+        fontSize: '{ font.size.100.value }'
+        lineHeight: 1.25rem
+        fontFamily: '{ font.family.base.value }'
+        fontStyle: normal
+      $type: typography
+
+code:
+  1:
+    regular:
+      value:
+        fontWeight: '{ font.weight.regular.value }'
+        fontSize: '{ font.size.200.value }'
+        lineHeight: 1.5rem
+        fontFamily: '{ font.family.monospace.value }'
+        fontStyle: normal
+      $type: typography
+  2:
+    regular:
+      value:
+        fontWeight: '{ font.weight.regular.value }'
+        fontSize: '{ font.size.100.value }'
+        lineHeight: 1.25rem
+        fontFamily: '{ font.family.monospace.value }'
+        fontStyle: normal
+      $type: typography
