@@ -7,23 +7,30 @@ export default {
 };
 
 const sizes = tokens.size;
+const valueInPx = (value: string) => {
+  const removeLast3Chars = value.slice(0, -3);
+  const stringToNumber = parseFloat(removeLast3Chars.toString());
+
+  return `(${stringToNumber * 16}px)`;
+};
 
 export const Size = {
   render: () => (
     <div
       style={{
         display: 'grid',
-        gridTemplateColumns: 'auto auto 1fr',
+        gridTemplateColumns: 'max-content auto max-content',
         alignItems: 'center',
         gap: 'var(--lp-size-24)',
       }}
     >
       {Object.entries(sizes).map(([key, value]) => (
         <>
+          <CopyToClipboard text={`--lp-size-${key}`}>{`--lp-size-${key}`}</CopyToClipboard>
           <div>
-            <CopyToClipboard text={`--lp-size-${key}`}>{`--lp-size-${key}`}</CopyToClipboard>
+            {value}
+            {valueInPx(value)}
           </div>
-          <div>{value}</div>
           <div
             style={{
               backgroundColor: 'var(--lp-color-system-green-500)',
