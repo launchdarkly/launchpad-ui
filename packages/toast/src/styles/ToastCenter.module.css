@@ -1,6 +1,6 @@
 .ToastCenter {
   position: fixed;
-  inset: auto auto 7.25rem 50%;
+  inset: auto auto 4.53125rem 50%;
   transform: translateX(-50%);
   z-index: var(--lp-z-index-700);
 }
@@ -10,5 +10,5 @@
 }
 
 .ToastCenter-item:not(:first-child) {
-  margin-top: 2rem;
+  margin-top: 1.25rem;
 }

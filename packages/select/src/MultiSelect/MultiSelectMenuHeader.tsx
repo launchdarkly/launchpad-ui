@@ -34,7 +34,7 @@ const MultiSelectMenuHeader = <T extends object>(props: MultiSelectMenuHeaderPro
 
   return (
     <div data-test-id="menu-header">
-      <ButtonGroup style={{ margin: '0.8rem 1.6rem' }}>
+      <ButtonGroup style={{ margin: '0.5rem 1rem' }}>
         {isSelectableAll && (
           <Button onClick={handleSelectAll} data-test-id="select-all-btn">
             <div style={{ display: 'flex', alignItems: 'center' }}>

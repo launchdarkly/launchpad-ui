@@ -40,12 +40,12 @@ const render: ArgsStoryFn<ReactRenderer> = (args, { globals }) => (
       display: 'grid',
       justifyContent: 'space-evenly',
       gridTemplateColumns: globals.theme === 'side-by-side' ? 'repeat(3, auto)' : 'repeat(4, auto)',
-      rowGap: '4rem',
-      marginTop: '4rem',
+      rowGap: '2.5rem',
+      marginTop: '2.5rem',
     }}
   >
     {icons.map((item, index) => (
-      <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }} key={index}>
+      <div style={{ display: 'flex', alignItems: 'center', gap: '0.625rem' }} key={index}>
         <Icon name={item} size="medium" />
         <span>{item}</span>
       </div>

@@ -16,7 +16,7 @@
 }
 
 .sub {
-  height: 16rem;
+  height: 10rem;
 }
 
 .featureCard:hover {
@@ -79,7 +79,7 @@ input[type='radio']:focus + .featureCard {
   border: var(--lp-border-width-200) solid var(--color-border-interactive-disabled, #e6e6e6);
   color: var(--lp-color-text-interactive-disabled);
   background-color: var(--lp-color-bg-ui-primary);
-  height: 6rem;
+  height: 3.75rem;
 }
 
 .hide {
