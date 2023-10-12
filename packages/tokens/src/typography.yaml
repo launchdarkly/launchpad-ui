@@ -234,3 +234,13 @@ code:
         fontFamily: '{ font.family.monospace.value }'
         fontStyle: normal
       $type: typography
+
+display:
+  1:
+    value:
+      fontWeight: '{ font.weight.regular.value }'
+      fontSize: 3.75rem
+      lineHeight: 4.5rem
+      fontFamily: '{ font.family.display.value }'
+      fontStyle: normal
+    $type: typography

@@ -10,6 +10,7 @@ export const Typography = {
   render: () => {
     return (
       <div style={{ display: 'flex', flexDirection: 'column', gap: vars.spacing[900] }}>
+        <div style={{ font: vars.display[1] }}>Display 1</div>
         <div style={{ display: 'flex', flexDirection: 'column', gap: vars.spacing[600] }}>
           <h1 style={{ font: vars.heading[1].medium }}>Heading 1 - Medium</h1>
           <h1 style={{ font: vars.heading[1].semibold }}>Heading 1 - SemiBold</h1>

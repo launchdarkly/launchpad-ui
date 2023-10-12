@@ -41,6 +41,14 @@ h3 {
     U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
+@font-face {
+  font-family: 'Audimat 3000 Regulier';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('Audimat3000-Regulier.var-subset.woff2') format('woff2');
+}
+
 .sb-main-padded.sb-show-main {
   padding: 0;
   margin: 0;
