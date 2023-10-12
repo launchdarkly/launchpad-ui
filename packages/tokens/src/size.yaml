@@ -5,6 +5,8 @@ size:
     value: 0.0625rem
   2:
     value: 0.125rem
+  3:
+    value: 0.1875rem
   4:
     value: 0.25rem
   6:
@@ -85,6 +87,8 @@ size:
     value: 60.0rem
   1120:
     value: 70.0rem
+  1200:
+    value: 75.0rem
   1280:
     value: 80.0rem
   1440:
