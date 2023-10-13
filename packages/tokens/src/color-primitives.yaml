@@ -190,13 +190,13 @@ color:
       900:
         value: hsl(45, 57.8%, 32.5%)
   gradient:
-    yellowToCyan:
+    yellow-cyan:
       value: 'linear-gradient(126.73deg, { color.yellow.500.value } -38.66%, { color.cyan.500.value } 83.73%)'
-    cyanToBlue:
+    cyan-blue:
       value: 'linear-gradient(136.11deg, { color.cyan.500.value } 22.68%, { color.blue.500.value } 127.6%)'
-    cyanToPurple:
+    cyan-purple:
       value: 'linear-gradient(41.76deg, { color.purple.500.value } -17.05%, { color.cyan.500.value } 147.06%)'
-    purpleToBlue:
+    purple-blue:
       value: 'linear-gradient(131.04deg, { color.purple.500.value } -15.82%, { color.blue.500.value } 118.85%)'
-    pinkToPurple:
+    pink-purple:
       value: 'linear-gradient(39.47deg, { color.purple.500.value } -17.19%, { color.pink.500.value } 148.9%)'
