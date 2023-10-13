@@ -4,4 +4,4 @@
 ---
 
 [Tokens]: Add new success color alias tokens, border radius token, and gradient tokens.
-[Icons]: Add `stars` and `party-popper` icons.
+[Icons]: Add `star-circle` and `confetti` icons.
