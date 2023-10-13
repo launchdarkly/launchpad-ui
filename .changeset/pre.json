@@ -48,5 +48,10 @@
     "@launchpad-ui/types": "0.1.0",
     "@launchpad-ui/vars": "0.2.3"
   },
-  "changesets": []
+  "changesets": [
+    "cyan-donkeys-change",
+    "quick-apples-happen",
+    "quick-rockets-sit",
+    "selfish-pens-mate"
+  ]
 }

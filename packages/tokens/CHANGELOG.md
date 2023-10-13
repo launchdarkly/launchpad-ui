@@ -1,5 +1,17 @@
 # @launchpad-ui/tokens
 
+## 0.9.0-alpha.0
+
+### Minor Changes
+
+- [#1029](https://github.com/launchdarkly/launchpad-ui/pull/1029) [`00bee445`](https://github.com/launchdarkly/launchpad-ui/commit/00bee445065c0e48f31e1ca88105e5a418729c81) Thanks [@Niznikr](https://github.com/Niznikr)! - [Tokens] Update color primitives and aliases for product refresh
+
+- [#1020](https://github.com/launchdarkly/launchpad-ui/pull/1020) [`c041a984`](https://github.com/launchdarkly/launchpad-ui/commit/c041a984c3fd0c95f5e1e4a07416f6907ff75eac) Thanks [@Niznikr](https://github.com/Niznikr)! - Move color primitives to `themes.css`
+
+### Patch Changes
+
+- [#1037](https://github.com/launchdarkly/launchpad-ui/pull/1037) [`3f9e1881`](https://github.com/launchdarkly/launchpad-ui/commit/3f9e1881f5d878ad6c0dc26ea1f8c5623605db53) Thanks [@Niznikr](https://github.com/Niznikr)! - Add typography tokens
+
 ## 0.8.0
 
 ### Minor Changes
