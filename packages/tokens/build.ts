@@ -80,6 +80,7 @@ const myStyleDictionary = StyleDictionary.extend({
         'size/rem',
         'color/rgb',
         'dark/rgb',
+        'font/css',
       ],
       buildPath: 'dist/',
       files: [
