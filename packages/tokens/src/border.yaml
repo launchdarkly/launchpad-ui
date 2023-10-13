@@ -4,6 +4,8 @@ border:
       value: 0.188rem
     medium:
       value: 0.375rem
+    large:
+      value: 1rem
   width:
     100:
       value: 0rem
