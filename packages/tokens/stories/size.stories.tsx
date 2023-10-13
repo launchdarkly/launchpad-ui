@@ -9,8 +9,8 @@ export default {
 const sizes = tokens.size;
 
 const valueInPx = (value: string) => {
-  const removeLast3Chars = value.slice(0, -3);
-  const stringToNumber = parseFloat(removeLast3Chars.toString());
+  const removeRemChars = value.slice(0, -3); // remove 'rem' from string
+  const stringToNumber = parseFloat(removeRemChars.toString());
 
   return `(${stringToNumber * 16}px)`;
 };
