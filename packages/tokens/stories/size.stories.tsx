@@ -7,6 +7,7 @@ export default {
 };
 
 const sizes = tokens.size;
+
 const valueInPx = (value: string) => {
   const removeLast3Chars = value.slice(0, -3);
   const stringToNumber = parseFloat(removeLast3Chars.toString());
