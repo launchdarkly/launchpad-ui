@@ -1,5 +1,49 @@
 # @launchpad-ui/core
 
+## 0.47.1-alpha.0
+
+### Patch Changes
+
+- [#1030](https://github.com/launchdarkly/launchpad-ui/pull/1030) [`e48d0df6`](https://github.com/launchdarkly/launchpad-ui/commit/e48d0df69e5085bc31c6378fe2eaad581a5eb687) Thanks [@Niznikr](https://github.com/Niznikr)! - [Button, SplitButton] Convert to css modules
+
+- Updated dependencies [[`e48d0df6`](https://github.com/launchdarkly/launchpad-ui/commit/e48d0df69e5085bc31c6378fe2eaad581a5eb687)]:
+  - @launchpad-ui/split-button@0.9.1-alpha.0
+  - @launchpad-ui/inline-edit@0.2.1-alpha.0
+  - @launchpad-ui/snackbar@0.4.1-alpha.0
+  - @launchpad-ui/button@0.11.1-alpha.0
+  - @launchpad-ui/alert@0.8.1-alpha.0
+  - @launchpad-ui/form@0.10.1-alpha.0
+  - @launchpad-ui/avatar@0.6.1-alpha.0
+  - @launchpad-ui/banner@0.10.1-alpha.0
+  - @launchpad-ui/card@0.2.1-alpha.0
+  - @launchpad-ui/chip@0.9.1-alpha.0
+  - @launchpad-ui/clipboard@0.11.1-alpha.0
+  - @launchpad-ui/collapsible@0.1.32-alpha.0
+  - @launchpad-ui/columns@0.1.7-alpha.0
+  - @launchpad-ui/counter@0.4.1-alpha.0
+  - @launchpad-ui/data-table@0.2.1-alpha.0
+  - @launchpad-ui/drawer@0.5.1-alpha.0
+  - @launchpad-ui/dropdown@0.6.75-alpha.0
+  - @launchpad-ui/filter@0.6.1-alpha.0
+  - @launchpad-ui/inline@0.1.7-alpha.0
+  - @launchpad-ui/markdown@0.5.1-alpha.0
+  - @launchpad-ui/menu@0.12.1-alpha.0
+  - @launchpad-ui/modal@0.17.1-alpha.0
+  - @launchpad-ui/navigation@0.12.1-alpha.0
+  - @launchpad-ui/pagination@0.4.1-alpha.0
+  - @launchpad-ui/popover@0.11.1-alpha.0
+  - @launchpad-ui/progress@0.5.32-alpha.0
+  - @launchpad-ui/progress-bubbles@0.7.1-alpha.0
+  - @launchpad-ui/select@0.4.1-alpha.0
+  - @launchpad-ui/slider@0.5.1-alpha.0
+  - @launchpad-ui/stack@0.1.7-alpha.0
+  - @launchpad-ui/tab-list@0.5.1-alpha.0
+  - @launchpad-ui/table@0.6.1-alpha.0
+  - @launchpad-ui/tag@0.3.1-alpha.0
+  - @launchpad-ui/toast@0.3.1-alpha.0
+  - @launchpad-ui/toggle@0.7.1-alpha.0
+  - @launchpad-ui/tooltip@0.8.1-alpha.0
+
 ## 0.47.0
 
 ### Minor Changes
