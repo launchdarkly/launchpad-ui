@@ -74,7 +74,7 @@ color:
       success:
         base:
           value: '{ color.system.green.100.value }'
-          dark: '##00DA7B26' # color.system.green.500.value at opacity 15%
+          dark: '#00DA7B26' # color.system.green.500.value at opacity 15%
         hover:
           value: '{ color.system.green.200.value }'
           dark: '#00DA7B66' # color.system.green.500.value at opacity 40%
