@@ -1,5 +1,13 @@
 # @launchpad-ui/tokens
 
+## 0.8.1
+
+### Patch Changes
+
+- [#1038](https://github.com/launchdarkly/launchpad-ui/pull/1038) [`a2c657c1`](https://github.com/launchdarkly/launchpad-ui/commit/a2c657c17c4e5f3d034ae77bdbdb855010e46fb1) Thanks [@vroske-ld](https://github.com/vroske-ld)! - [Tokens]: Add new success color alias tokens, border radius token, and gradient tokens.
+  [Icons]: Add `star-circle` and `confetti` icons.
+  [Alert]: Update css to use new gradient tokens.
+
 ## 0.8.0
 
 ### Minor Changes

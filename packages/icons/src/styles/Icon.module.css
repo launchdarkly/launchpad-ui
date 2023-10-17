@@ -61,23 +61,23 @@
 }
 
 .yellowToCyan {
-  background: linear-gradient(126.73deg, #ebff38 -38.66%, #3dd6f5 83.73%);
+  background: var(--lp-color-gradient-yellow-cyan);
 }
 
 .cyanToBlue {
-  background: linear-gradient(136.11deg, #3dd6f5 22.68%, #405bff 127.6%);
+  background: var(--lp-color-gradient-cyan-blue);
 }
 
 .cyanToPurple {
-  background: linear-gradient(41.76deg, #a34fde -17.05%, #3dd6f5 147.06%);
+  background: var(--lp-color-gradient-cyan-purple);
 }
 
 .purpleToBlue {
-  background: linear-gradient(131.04deg, #a34fde -15.82%, #405bff 118.85%);
+  background: var(--lp-color-gradient-purple-blue);
 }
 
 .pinkToPurple {
-  background: linear-gradient(39.47deg, #a34fde -17.19%, #ff386b 148.9%);
+  background: var(--lp-color-gradient-pink-purple);
 }
 
 .isRounded {

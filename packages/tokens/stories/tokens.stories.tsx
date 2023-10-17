@@ -38,7 +38,7 @@ const getTokenTable = (tokens: Record<string, unknown>) => (
           <td>
             <div
               style={{
-                backgroundColor: value,
+                background: value,
                 height: '50px',
                 width: '150px',
                 border: '1px solid var(--lp-color-border-ui-primary)',
@@ -57,7 +57,18 @@ const getTokenTable = (tokens: Record<string, unknown>) => (
 
 const global = Object.keys(tokens.color)
   .filter((key) =>
-    ['black', 'blue', 'cyan', 'gray', 'pink', 'purple', 'white', 'yellow', 'system'].includes(key)
+    [
+      'black',
+      'blue',
+      'cyan',
+      'gray',
+      'pink',
+      'purple',
+      'white',
+      'yellow',
+      'system',
+      'gradient',
+    ].includes(key)
   )
   .reduce((obj, key) => {
     obj[key] = tokens.color[key];

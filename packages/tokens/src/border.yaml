@@ -4,6 +4,8 @@ border:
       value: '{ size.3.value }'
     medium:
       value: '{ size.6.value }'
+    large:
+      value: '{ size.16.value }'
   width:
     100:
       value: '{ size.0.value }'

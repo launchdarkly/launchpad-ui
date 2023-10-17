@@ -37,7 +37,7 @@ color:
       secondary-flair:
         base:
           value: '{ color.purple.100.value }'
-          dark: transparent
+          dark: '#2d1140' # purple-900 isn't dark enough
         active:
           value: '{ color.purple.300.value }'
           dark: '{ color.purple.900.value }'
@@ -71,6 +71,19 @@ color:
         hover:
           value: '{ color.purple.100.value }'
           dark: '{ color.purple.800.value }'
+      success:
+        base:
+          value: '{ color.system.green.100.value }'
+          dark: '#00DA7B26' # color.system.green.500.value at opacity 15%
+        hover:
+          value: '{ color.system.green.200.value }'
+          dark: '#00DA7B66' # color.system.green.500.value at opacity 40%
+        focus:
+          value: '{ color.system.green.300.value }'
+          dark: '#00DA7B4D' # color.system.green.500.value at opacity 30%
+        active:
+          value: '{ color.system.green.300.value }'
+          dark: '#00DA7B4D' # color.system.green.500.value at opacity 30%
       destructive:
         base:
           value: '{ color.white.0.value }'
@@ -198,6 +211,19 @@ color:
         hover:
           value: '{ color.purple.600.value }'
           dark: '{ color.purple.300.value }'
+      success:
+        base:
+          value: '{ color.system.green.400.value }'
+          dark: '{ color.system.green.900.value }'
+        hover:
+          value: '{ color.system.green.500.value }'
+          dark: '{ color.system.green.600.value }'
+        focus:
+          value: '{ color.system.green.600.value }'
+          dark: '{ color.system.green.600.value }'
+        active:
+          value: '{ color.system.green.600.value }'
+          dark: '{ color.system.green.800.value }'
       destructive:
         value: '{ color.system.red.700.value }'
         dark: '{ color.system.red.500.value }'
@@ -232,6 +258,19 @@ color:
     interactive:
       primary:
         value: '{ color.white.0.value }'
+      success:
+        base:
+          value: '{ color.system.green.900.value }'
+          dark: '{ color.system.green.500.value }'
+        hover:
+          value: '{ color.system.green.900.value }'
+          dark: '{ color.system.green.300.value }'
+        focus:
+          value: '{ color.system.green.900.value }'
+          dark: '{ color.system.green.300.value }'
+        active:
+          value: '{ color.system.green.900.value }'
+          dark: '{ color.system.green.300.value }'
       destructive:
         value: '{ color.system.red.700.value }'
         dark: '{ color.white.0.value }'
@@ -288,12 +327,24 @@ color:
       active:
         value: '{ color.purple.600.value }'
         dark: '{ color.purple.400.value }'
-
       primary:
         value: '{ color.white.0.value }'
       secondary:
         value: '{ color.gray.600.value }'
         dark: '{ color.gray.400.value }'
+      success:
+        base:
+          value: '{ color.system.green.900.value }'
+          dark: '{ color.system.green.500.value }'
+        hover:
+          value: '{ color.system.green.900.value }'
+          dark: '{ color.system.green.300.value }'
+        focus:
+          value: '{ color.system.green.900.value }'
+          dark: '{ color.system.green.300.value }'
+        active:
+          value: '{ color.system.green.900.value }'
+          dark: '{ color.system.green.300.value }'
       destructive:
         value: '{ color.system.red.700.value }'
         dark: '{ color.white.0.value }'
@@ -302,7 +353,7 @@ color:
         dark: '{ color.gray.700.value }'
       flair:
         focus:
-          value: '{ color.purple.700.value }'
+          value: '{ color.purple.800.value }'
           dark: '{ color.purple.300.value }'
         hover:
           value: '{ color.purple.700.value }'
@@ -311,7 +362,7 @@ color:
           value: '{ color.purple.600.value }'
           dark: '{ color.purple.400.value }'
         active:
-          value: '{ color.purple.700.value }'
+          value: '{ color.purple.800.value }'
           dark: '{ color.purple.300.value }'
     ui:
       primary:
