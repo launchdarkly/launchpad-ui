@@ -8,6 +8,6 @@ border:
     100:
       value: '{ size.0.value }'
     200:
-      value: '{ size.0.value }'
+      value: '{ size.1.value }'
     300:
       value: '{ size.2.value }'
