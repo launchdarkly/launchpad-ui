@@ -1,19 +1,19 @@
 spacing:
   100:
-    value: 0rem
+    value: '{ size.0.value }'
   200:
-    value: 0.25rem
+    value: '{ size.4.value }'
   300:
-    value: 0.5rem
+    value: '{ size.8.value }'
   400:
-    value: 0.75rem
+    value: '{ size.12.value }'
   500:
-    value: 1rem
+    value: '{ size.16.value }'
   600:
-    value: 1.25rem
+    value: '{ size.20.value }'
   700:
-    value: 1.5rem
+    value: '{ size.24.value }'
   800:
-    value: 1.75rem
+    value: '{ size.28.value }'
   900:
-    value: 2rem
+    value: '{ size.32.value }'

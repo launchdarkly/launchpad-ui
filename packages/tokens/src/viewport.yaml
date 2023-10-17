@@ -1,9 +1,9 @@
 viewport:
   mobile:
-    value: 0
+    value: '{ size.0.value }'
   tablet:
     value: 740px
   desktop:
     value: 992px
   wide:
-    value: 1200px
+    value: '{ size.1200.value }'
