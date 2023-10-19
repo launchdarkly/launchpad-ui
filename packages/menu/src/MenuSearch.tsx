@@ -24,7 +24,7 @@ const MenuSearch = forwardRef<HTMLInputElement, MenuSearchProps>((props, ref) =>
   } = props;
 
   return (
-    <div className="Menu-search">
+    <div className={styles['Menu-search']}>
       <TextField
         {...finalProps}
         ref={ref}

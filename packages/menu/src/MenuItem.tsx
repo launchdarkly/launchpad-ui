@@ -76,7 +76,7 @@ const MenuItem = <P, T extends ElementType = typeof defaultElement>({
   const renderIcon = icon && cloneElement(icon, { size: 'small' });
 
   const renderedItem = (
-    <FocusRing focusRingClass="has-focus">
+    <FocusRing focusRingClass={styles['has-focus']}>
       <Component
         {...rest}
         disabled={disabled}
@@ -96,7 +96,7 @@ const MenuItem = <P, T extends ElementType = typeof defaultElement>({
           children
         ) : (
           <>
-            {icon && <span className="Menu-item-icon">{renderIcon}</span>}
+            {icon && <span className={styles['Menu-item-icon']}>{renderIcon}</span>}
             {children}
           </>
         )}
