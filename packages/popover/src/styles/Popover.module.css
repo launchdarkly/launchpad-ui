@@ -34,7 +34,7 @@
 
 .Popover-content {
   background: var(--lp-color-bg-overlay-primary);
-  border-radius: var(--lp-border-radius-regular);
+  border-radius: var(--lp-border-radius-medium);
   box-shadow: var(--lp-component-popover-shadow);
 }
 
