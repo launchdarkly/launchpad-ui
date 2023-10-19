@@ -76,6 +76,7 @@ const icons = [
   'device-server',
   'devices',
   'document-question',
+  'door-exit',
   'download',
   'edit',
   'edit-circle',
