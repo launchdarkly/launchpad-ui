@@ -1,5 +1,11 @@
 # @launchpad-ui/tokens
 
+## 0.8.2
+
+### Patch Changes
+
+- [#1031](https://github.com/launchdarkly/launchpad-ui/pull/1031) [`9097483d`](https://github.com/launchdarkly/launchpad-ui/commit/9097483d04b22bbec5163a0b8ccc73594bd9e242) Thanks [@matthewferry](https://github.com/matthewferry)! - Add size primitive tokens
+
 ## 0.8.1
 
 ### Patch Changes

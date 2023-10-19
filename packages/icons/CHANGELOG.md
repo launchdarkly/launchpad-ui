@@ -1,5 +1,14 @@
 # @launchpad-ui/icons
 
+## 0.14.2
+
+### Patch Changes
+
+- [#1048](https://github.com/launchdarkly/launchpad-ui/pull/1048) [`f106ce0e`](https://github.com/launchdarkly/launchpad-ui/commit/f106ce0e7514fe79ed2dcb2b79c9ae302ae08214) Thanks [@matthewferry](https://github.com/matthewferry)! - Add building and door icons for org and signout uses
+
+- Updated dependencies [[`9097483d`](https://github.com/launchdarkly/launchpad-ui/commit/9097483d04b22bbec5163a0b8ccc73594bd9e242)]:
+  - @launchpad-ui/tokens@0.8.2
+
 ## 0.14.1
 
 ### Patch Changes
