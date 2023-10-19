@@ -1,5 +1,4 @@
 .MenuItem {
-  padding: 0.3125rem;
+  color: blue;
   font-weight: bold;
-  border-bottom: 1px solid #ccc;
 }
