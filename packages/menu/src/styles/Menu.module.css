@@ -80,7 +80,7 @@
   margin-right: var(--lp-spacing-300);
 }
 
-.Menu-item .Gravatar {
+.Menu-item :global(.Gravatar) {
   margin-right: 0.3125rem;
 }
 

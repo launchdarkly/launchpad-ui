@@ -8,7 +8,7 @@ import { FocusRing } from '@react-aria/focus';
 import { cx } from 'classix';
 import { cloneElement } from 'react';
 
-import './styles/Menu.css';
+import styles from './styles/Menu.module.css';
 
 // Merge two types and get rid of overlapping definitions
 type Merge<T, U> = Omit<T, keyof U> & U;
@@ -82,11 +82,11 @@ const MenuItem = <P, T extends ElementType = typeof defaultElement>({
         disabled={disabled}
         aria-disabled={disabled ? disabled : undefined}
         className={cx(
-          'Menu-item',
+          styles['Menu-item'],
           className,
-          isHighlighted && 'is-highlighted',
-          nested && 'Menu-item--nested',
-          groupHeader && 'Menu-item--header'
+          isHighlighted && styles['is-highlighted'],
+          nested && styles['Menu-item--nested'],
+          groupHeader && styles['Menu-item--header']
         )}
         data-test-id={testId}
         role={role}

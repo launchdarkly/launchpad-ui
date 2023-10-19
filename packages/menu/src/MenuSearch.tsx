@@ -3,7 +3,7 @@ import type { ChangeEvent } from 'react';
 import { TextField } from '@launchpad-ui/form';
 import { forwardRef } from 'react';
 
-import './styles/Menu.css';
+import styles from './styles/Menu.module.css';
 
 type MenuSearchProps = {
   ariaLabel?: string;
@@ -28,7 +28,7 @@ const MenuSearch = forwardRef<HTMLInputElement, MenuSearchProps>((props, ref) =>
       <TextField
         {...finalProps}
         ref={ref}
-        className="Menu-search-input"
+        className={styles['Menu-search-input']}
         tiny
         id={id}
         type="search"
