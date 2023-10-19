@@ -23,21 +23,33 @@ type Story = StoryObj<typeof Menu>;
 
 export const Basic: Story = {
   args: {
-    children: [<MenuItem key="1">item 1</MenuItem>, <MenuItem key="2">item 2</MenuItem>],
+    children: [
+      <MenuItem key="1">Item 1</MenuItem>,
+      <MenuItem key="2">Item 2</MenuItem>,
+      <MenuItem key="3">Item 3</MenuItem>,
+      <MenuItem key="4">Item 4</MenuItem>,
+      <MenuItem key="5" disabled>
+        Disabled item
+      </MenuItem>,
+    ],
   },
   play: async () => {
     await userEvent.tab();
   },
 };
 
-export const WithDisabledItemsAndCustomMenuItemClasses: Story = {
+export const WithGroupHeader: Story = {
   args: {
-    menuItemClassName: 'MenuItem',
     children: [
-      <MenuItem key="1" disabled>
-        item 1
+      <MenuItem key="1" groupHeader>
+        Group
       </MenuItem>,
-      <MenuItem key="2">item 2</MenuItem>,
+      <MenuItem key="2">Group item 1</MenuItem>,
+      <MenuItem key="3">Group item 2</MenuItem>,
+      <MenuItem key="4">Group item 3</MenuItem>,
+      <MenuItem key="5">Group item 4</MenuItem>,
+      <MenuDivider key="6" />,
+      <MenuItem key="7">Stand-alone item 1</MenuItem>,
     ],
   },
 };
@@ -46,10 +58,11 @@ export const WithSearch: Story = {
   args: {
     children: [
       <MenuSearch key="search" />,
-      <MenuItem key="1">item 1</MenuItem>,
-      <MenuItem key="2">item 2</MenuItem>,
-      <MenuDivider key="divider" />,
-      <MenuItem key="3">item 3</MenuItem>,
+      <MenuItem key="1">Item 1</MenuItem>,
+      <MenuItem key="2">Item 2</MenuItem>,
+      <MenuItem key="3">Item 3</MenuItem>,
+      <MenuItem key="4">Item 4</MenuItem>,
+      <MenuItem key="5">Item 5</MenuItem>,
     ],
   },
   parameters: {
@@ -61,6 +74,19 @@ export const WithSearch: Story = {
         },
       },
     },
+  },
+};
+
+export const WithCustomMenuItemClasses: Story = {
+  args: {
+    menuItemClassName: 'MenuItem',
+    children: [
+      <MenuItem key="1">Item 1</MenuItem>,
+      <MenuItem key="2">Item 2</MenuItem>,
+      <MenuItem key="3">Item 3</MenuItem>,
+      <MenuItem key="4">Item 4</MenuItem>,
+      <MenuItem key="5">Item 5</MenuItem>,
+    ],
   },
 };
 
@@ -84,6 +110,8 @@ export const WithHighlightedMenuItem: Story = {
       <MenuItem key="2" isHighlighted>
         item 2
       </MenuItem>,
+      <MenuItem key="3">item 3</MenuItem>,
+      <MenuItem key="4">item 4</MenuItem>,
     ],
   },
 };
@@ -91,11 +119,17 @@ export const WithHighlightedMenuItem: Story = {
 export const WithMenuItemIcons: Story = {
   args: {
     children: [
-      <MenuItem key="1" icon={<Icon name="check" />}>
-        item 1
+      <MenuItem key="1" groupHeader>
+        Color mode
       </MenuItem>,
-      <MenuItem key="2" icon={<Icon name="info" />}>
-        item 2
+      <MenuItem key="2" icon={<Icon name="theme-light" />}>
+        Light
+      </MenuItem>,
+      <MenuItem key="3" icon={<Icon name="theme-dark" />}>
+        Dark
+      </MenuItem>,
+      <MenuItem key="4" icon={<Icon name="device-desktop" />}>
+        Use system
       </MenuItem>,
     ],
   },
