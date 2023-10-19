@@ -1,5 +1,12 @@
 # @launchpad-ui/inline-edit
 
+## 0.2.1-alpha.1
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @launchpad-ui/form@0.10.1-alpha.1
+
 ## 0.2.1-alpha.0
 
 ### Patch Changes

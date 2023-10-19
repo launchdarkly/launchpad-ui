@@ -1,5 +1,18 @@
 # @launchpad-ui/menu
 
+## 0.12.1-alpha.1
+
+### Patch Changes
+
+- [#1046](https://github.com/launchdarkly/launchpad-ui/pull/1046) [`36b47d4c`](https://github.com/launchdarkly/launchpad-ui/commit/36b47d4c0dad59849db23d0e112e3b4b36b53f5e) Thanks [@Niznikr](https://github.com/Niznikr)! - [Menu] Use CSS modules
+
+- [#1043](https://github.com/launchdarkly/launchpad-ui/pull/1043) [`6cc6da28`](https://github.com/launchdarkly/launchpad-ui/commit/6cc6da28f200f101664d8d6730cbc83893917290) Thanks [@matthewferry](https://github.com/matthewferry)! - Refresh menu styles
+
+- Updated dependencies [[`6cc6da28`](https://github.com/launchdarkly/launchpad-ui/commit/6cc6da28f200f101664d8d6730cbc83893917290)]:
+  - @launchpad-ui/popover@0.11.1-alpha.1
+  - @launchpad-ui/tooltip@0.8.1-alpha.1
+  - @launchpad-ui/form@0.10.1-alpha.1
+
 ## 0.12.1-alpha.0
 
 ### Patch Changes

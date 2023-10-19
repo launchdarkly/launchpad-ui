@@ -1,5 +1,11 @@
 # @launchpad-ui/popover
 
+## 0.11.1-alpha.1
+
+### Patch Changes
+
+- [#1043](https://github.com/launchdarkly/launchpad-ui/pull/1043) [`6cc6da28`](https://github.com/launchdarkly/launchpad-ui/commit/6cc6da28f200f101664d8d6730cbc83893917290) Thanks [@matthewferry](https://github.com/matthewferry)! - Refresh menu styles
+
 ## 0.11.1-alpha.0
 
 ### Patch Changes
