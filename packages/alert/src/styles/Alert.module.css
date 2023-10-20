@@ -114,7 +114,7 @@
 }
 
 .Alert.Alert--notification.Alert--flair-strong {
-  background: linear-gradient(41.76deg, #a34fde -17.05%, #3dd6f5 147.06%),
+  background: var(--lp-color-gradient-cyan-purple),
     linear-gradient(0deg, rgb(255 255 255 / 0.3), rgb(255 255 255 / 0.3));
 }
 
@@ -124,7 +124,7 @@
   inset: 0;
   border-radius: 2px;
   border: 1px solid transparent;
-  background: linear-gradient(131.04deg, #a34fde -15.82%, #405bff 118.85%) border-box;
+  background: var(--lp-color-gradient-purple-blue) border-box;
   mask:
     linear-gradient(#fff 0 0) padding-box,
     linear-gradient(#fff 0 0);

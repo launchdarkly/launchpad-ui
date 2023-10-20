@@ -8,23 +8,23 @@ font:
       value: '"Audimat 3000 Regulier"'
   size:
     0:
-      value: 0.625rem
+      value: '{ size.10.value }'
     100:
-      value: 0.75rem
+      value: '{ size.12.value }'
     200:
-      value: 0.875rem
+      value: '{ size.14.value }'
     300:
-      value: 1rem
+      value: '{ size.16.value }'
     400:
-      value: 1.125rem
+      value: '{ size.18.value }'
     500:
-      value: 1.25rem
+      value: '{ size.20.value }'
     600:
-      value: 1.563rem
+      value: '{ size.24.value }'
     700:
-      value: 2rem
+      value: '{ size.32.value }'
     800:
-      value: 2.875rem
+      value: '{ size.44.value }'
   weight:
     light:
       value: 300

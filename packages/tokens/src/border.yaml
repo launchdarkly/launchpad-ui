@@ -1,13 +1,15 @@
 border:
   radius:
     regular:
-      value: 0.188rem
+      value: '{ size.3.value }'
     medium:
-      value: 0.375rem
+      value: '{ size.6.value }'
+    large:
+      value: '{ size.16.value }'
   width:
     100:
-      value: 0rem
+      value: '{ size.0.value }'
     200:
-      value: 0.063rem
+      value: '{ size.1.value }'
     300:
-      value: 0.125rem
+      value: '{ size.2.value }'

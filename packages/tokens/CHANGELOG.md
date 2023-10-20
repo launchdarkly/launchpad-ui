@@ -12,6 +12,20 @@
 
 - [#1037](https://github.com/launchdarkly/launchpad-ui/pull/1037) [`3f9e1881`](https://github.com/launchdarkly/launchpad-ui/commit/3f9e1881f5d878ad6c0dc26ea1f8c5623605db53) Thanks [@Niznikr](https://github.com/Niznikr)! - Add typography tokens
 
+## 0.8.2
+
+### Patch Changes
+
+- [#1031](https://github.com/launchdarkly/launchpad-ui/pull/1031) [`9097483d`](https://github.com/launchdarkly/launchpad-ui/commit/9097483d04b22bbec5163a0b8ccc73594bd9e242) Thanks [@matthewferry](https://github.com/matthewferry)! - Add size primitive tokens
+
+## 0.8.1
+
+### Patch Changes
+
+- [#1038](https://github.com/launchdarkly/launchpad-ui/pull/1038) [`a2c657c1`](https://github.com/launchdarkly/launchpad-ui/commit/a2c657c17c4e5f3d034ae77bdbdb855010e46fb1) Thanks [@vroske-ld](https://github.com/vroske-ld)! - [Tokens]: Add new success color alias tokens, border radius token, and gradient tokens.
+  [Icons]: Add `star-circle` and `confetti` icons.
+  [Alert]: Update css to use new gradient tokens.
+
 ## 0.8.0
 
 ### Minor Changes
