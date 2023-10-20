@@ -185,7 +185,7 @@ label:
       value:
         fontWeight: '{ font.weight.regular.value }'
         fontSize: '{ font.size.200.value }'
-        lineHeight: 1.25rem
+        lineHeight: 1.5rem
         fontFamily: '{ font.family.base.value }'
         fontStyle: normal
       $type: typography
@@ -193,7 +193,7 @@ label:
       value:
         fontWeight: '{ font.weight.medium.value }'
         fontSize: '{ font.size.200.value }'
-        lineHeight: 1.25rem
+        lineHeight: 1.5rem
         fontFamily: '{ font.family.base.value }'
         fontStyle: normal
       $type: typography

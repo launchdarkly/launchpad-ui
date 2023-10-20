@@ -51,7 +51,7 @@ const TokenTable = ({ tokens }: { tokens: Record<string, string> }) => {
                 <div
                   ref={(element) => (itemEls.current[key] = element)}
                   style={{
-                    backgroundColor: value,
+                    background: value,
                     height: '50px',
                     width: '150px',
                     border: '1px solid var(--lp-color-border-ui-primary)',
@@ -72,7 +72,18 @@ const TokenTable = ({ tokens }: { tokens: Record<string, string> }) => {
 
 const global = Object.keys(vars.color)
   .filter((key) =>
-    ['black', 'blue', 'cyan', 'gray', 'pink', 'purple', 'white', 'yellow', 'system'].includes(key)
+    [
+      'black',
+      'blue',
+      'cyan',
+      'gray',
+      'pink',
+      'purple',
+      'white',
+      'yellow',
+      'system',
+      'gradient',
+    ].includes(key)
   )
   .reduce((obj, key) => {
     obj[key] = vars.color[key];
