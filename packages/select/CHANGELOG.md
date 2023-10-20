@@ -1,5 +1,17 @@
 # @launchpad-ui/select
 
+## 0.4.3-alpha.0
+
+### Patch Changes
+
+- Updated dependencies [[`00bee445`](https://github.com/launchdarkly/launchpad-ui/commit/00bee445065c0e48f31e1ca88105e5a418729c81), [`c041a984`](https://github.com/launchdarkly/launchpad-ui/commit/c041a984c3fd0c95f5e1e4a07416f6907ff75eac), [`e48d0df6`](https://github.com/launchdarkly/launchpad-ui/commit/e48d0df69e5085bc31c6378fe2eaad581a5eb687), [`3f9e1881`](https://github.com/launchdarkly/launchpad-ui/commit/3f9e1881f5d878ad6c0dc26ea1f8c5623605db53), [`6cc6da28`](https://github.com/launchdarkly/launchpad-ui/commit/6cc6da28f200f101664d8d6730cbc83893917290)]:
+  - @launchpad-ui/tokens@0.9.0-alpha.1
+  - @launchpad-ui/button@0.11.3-alpha.0
+  - @launchpad-ui/popover@0.11.3-alpha.0
+  - @launchpad-ui/icons@0.14.3-alpha.0
+  - @launchpad-ui/modal@0.17.3-alpha.0
+  - @launchpad-ui/tooltip@0.8.3-alpha.0
+
 ## 0.4.1-alpha.1
 
 ### Patch Changes
