@@ -1,6 +1,6 @@
 import { CopyToClipboard } from '@launchpad-ui/clipboard';
 
-import tokens from '../dist/default.json';
+import tokens from '../dist/index.es.js';
 
 export default {
   title: 'Tokens/Size',
