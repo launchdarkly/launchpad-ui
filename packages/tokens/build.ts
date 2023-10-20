@@ -18,9 +18,13 @@ StyleDictionary.registerFormat({
 
 StyleDictionary.registerFormat({
   name: 'css/theme-variables',
-  formatter: function ({ dictionary, file }) {
+  formatter: function ({ dictionary, file, options }) {
     const darkTokens = themeTokens(dictionary, 'dark');
-    const defaultTokens = themeTokens(dictionary);
+    const defaultTokens = StyleDictionary.formatHelpers.formattedVariables({
+      format: 'css',
+      dictionary,
+      outputReferences: options.outputReferences,
+    });
 
     const darkColorCSSVariables = `[data-theme='dark'] {\n${darkTokens}\n}\n`;
     const defaultColorCSSVariables = `:root, [data-theme='default'] {\n${defaultTokens}\n}\n`;
@@ -152,7 +156,9 @@ const themeTokens = (dictionary: StyleDictionary.Dictionary, theme = '') =>
       if (dictionary.usesReference(original)) {
         const refs = dictionary.getReferences(original);
         refs.forEach((ref) => {
-          value = `var(--${ref.name})`;
+          value = value.replace(ref.value, () => {
+            return `var(--${ref.name})`;
+          });
         });
       }
       return `  --${token.name}: ${value};`;
