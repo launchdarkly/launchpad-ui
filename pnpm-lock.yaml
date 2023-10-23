@@ -1540,8 +1540,8 @@ importers:
         specifier: ^2.0.1
         version: 2.0.1(color2k@2.0.2)(json5@2.2.3)(prettier@2.8.8)(style-dictionary@3.8.0)
       ts-node:
-        specifier: ^10.9.1
-        version: 10.9.1(@types/node@18.18.3)(typescript@5.2.2)
+        specifier: ^11.0.0-beta.1
+        version: 11.0.0-beta.1(@types/node@18.18.3)(typescript@5.2.2)
       yaml:
         specifier: ^2.3.1
         version: 2.3.2
@@ -7666,6 +7666,14 @@ packages:
 
   /@tsconfig/node16@1.0.4:
     resolution: {integrity: sha512-vxhUy4J8lyeyinH7Azl1pdd43GJhZH/tP2weN8TntQblOY+A0XbT8DJk1/oCPuOOyg/Ja757rG0CgHcWC8OfMA==}
+    dev: true
+
+  /@tsconfig/node18@18.2.2:
+    resolution: {integrity: sha512-d6McJeGsuoRlwWZmVIeE8CUA27lu6jLjvv1JzqmpsytOYYbVi1tHZEnwCNVOXnj4pyLvneZlFlpXUK+X9wBWyw==}
+    dev: true
+
+  /@tsconfig/node20@20.1.2:
+    resolution: {integrity: sha512-madaWq2k+LYMEhmcp0fs+OGaLFk0OenpHa4gmI4VEmCKX4PJntQ6fnnGADVFrVkBj0wIdAlQnK/MrlYTHsa1gQ==}
     dev: true
 
   /@types/acorn@4.0.6:
@@ -17786,6 +17794,35 @@ packages:
       typescript: 5.2.2
       v8-compile-cache-lib: 3.0.1
       yn: 3.1.1
+    dev: true
+
+  /ts-node@11.0.0-beta.1(@types/node@18.18.3)(typescript@5.2.2):
+    resolution: {integrity: sha512-WMSROP+1pU22Q/Tm40mjfRg130yD8i0g6ROST04ZpocfH8sl1zD75ON4XQMcBEVViXMVemJBH0alflE7xePdRA==}
+    hasBin: true
+    peerDependencies:
+      '@swc/core': '>=1.3.85'
+      '@swc/wasm': '>=1.3.85'
+      '@types/node': '*'
+      typescript: '>=4.4'
+    peerDependenciesMeta:
+      '@swc/core':
+        optional: true
+      '@swc/wasm':
+        optional: true
+    dependencies:
+      '@cspotcode/source-map-support': 0.8.1
+      '@tsconfig/node14': 1.0.3
+      '@tsconfig/node16': 1.0.4
+      '@tsconfig/node18': 18.2.2
+      '@tsconfig/node20': 20.1.2
+      '@types/node': 18.18.3
+      acorn: 8.10.0
+      acorn-walk: 8.2.0
+      arg: 4.1.3
+      diff: 4.0.2
+      make-error: 1.3.6
+      typescript: 5.2.2
+      v8-compile-cache-lib: 3.0.1
     dev: true
 
   /tsconfig-paths@3.14.2:

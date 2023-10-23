@@ -39,7 +39,7 @@
     "json-to-ts": "^1.7.0",
     "style-dictionary": "^3.8.0",
     "style-dictionary-utils": "^2.0.1",
-    "ts-node": "^10.9.1",
+    "ts-node": "^11.0.0-beta.1",
     "yaml": "^2.3.1"
   }
 }
