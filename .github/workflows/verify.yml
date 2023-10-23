@@ -40,7 +40,7 @@ jobs:
           main-branch-name: ${{needs.branch-info.outputs.base-branch}}
 
       - name: Setup Node
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: 18
           cache: pnpm
@@ -68,7 +68,7 @@ jobs:
           main-branch-name: ${{needs.branch-info.outputs.base-branch}}
 
       - name: Setup Node
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: 18
           cache: pnpm
@@ -96,7 +96,7 @@ jobs:
           main-branch-name: ${{needs.branch-info.outputs.base-branch}}
 
       - name: Setup Node
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: 18
           cache: pnpm
@@ -151,7 +151,7 @@ jobs:
         uses: nrwl/nx-set-shas@v4
 
       - name: Setup Node
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: 18
           cache: pnpm
