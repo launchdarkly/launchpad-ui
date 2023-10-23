@@ -19,18 +19,18 @@
     "@react-stately/collections": "3.10.2",
     "@react-stately/data": "3.10.3",
     "@react-stately/table": "3.11.2",
-    "@remix-run/css-bundle": "^2.0.0",
-    "@remix-run/node": "^2.0.0",
-    "@remix-run/react": "^2.0.0",
-    "@remix-run/serve": "^2.0.0",
+    "@remix-run/css-bundle": "^2.1.0",
+    "@remix-run/node": "^2.1.0",
+    "@remix-run/react": "^2.1.0",
+    "@remix-run/serve": "^2.1.0",
     "isbot": "^3.7.0",
     "react": "18.2.0",
     "react-dom": "18.2.0"
   },
   "devDependencies": {
-    "@remix-run/dev": "^2.0.0",
-    "@remix-run/eslint-config": "^2.0.0",
-    "eslint": "^8.51.0",
+    "@remix-run/dev": "^2.1.0",
+    "@remix-run/eslint-config": "^2.1.0",
+    "eslint": "^8.52.0",
     "typescript": "^5.2.2"
   },
   "engines": {
