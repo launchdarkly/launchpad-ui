@@ -298,7 +298,7 @@ color:
         dark: '{ color.gray.500.value }'
     ui:
       primary:
-        value: currentvalue
+        value: currentcolor
         dark: '{ color.white.0.value }'
       primary-flair:
         value: '{ color.purple.500.value }'

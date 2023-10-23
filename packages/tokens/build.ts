@@ -1,7 +1,15 @@
 import JsonToTS from 'json-to-ts';
 import StyleDictionary from 'style-dictionary-utils';
-import Color from 'tinycolor2';
 import yaml from 'yaml';
+
+const reservedColorValues = [
+  'inherit',
+  'initial',
+  'revert',
+  'unset',
+  'currentcolor',
+  'transparent',
+];
 
 StyleDictionary.registerFormat({
   name: 'custom/format/custom-media',
@@ -47,21 +55,23 @@ StyleDictionary.registerFormat({
 });
 
 StyleDictionary.registerTransform({
-  type: 'attribute',
-  name: 'dark/rgb',
-  matcher: (token) => token.dark,
-  transformer: (token) => {
-    token.dark = Color(token.dark).toRgbString();
-    return token;
-  },
-});
-
-StyleDictionary.registerTransform({
   type: 'value',
   transitive: true,
   name: 'value/path',
   transformer: (token) => {
     return token.name;
+  },
+});
+
+StyleDictionary.registerTransform({
+  type: StyleDictionary.transform[`color/rgb`].type,
+  name: 'custom/rgb',
+  matcher: StyleDictionary.transform[`color/rgb`].matcher,
+  transformer: (token) => {
+    if (reservedColorValues.includes(token.value)) {
+      return token.value;
+    }
+    return StyleDictionary.transform[`color/rgb`].transformer(token, {});
   },
 });
 
@@ -82,8 +92,7 @@ const myStyleDictionary = StyleDictionary.extend({
         'time/seconds',
         'content/icon',
         'size/rem',
-        'color/rgb',
-        'dark/rgb',
+        'custom/rgb',
         'font/css',
       ],
       buildPath: 'dist/',
@@ -160,6 +169,11 @@ const themeTokens = (dictionary: StyleDictionary.Dictionary, theme = '') =>
             return `var(--${ref.name})`;
           });
         });
+      } else if (!reservedColorValues.includes(value)) {
+        value = StyleDictionary.transform[`color/rgb`].transformer(
+          { value } as StyleDictionary.TransformedToken,
+          {}
+        );
       }
       return `  --${token.name}: ${value};`;
     })
