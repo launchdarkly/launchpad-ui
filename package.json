@@ -14,6 +14,7 @@
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "generate": "plop",
     "graph": "nx affected:graph",
+    "icons:build": "node ./scripts/build-icons.js",
     "lint": "eslint '**/*.{ts,tsx,js}' --ignore-pattern '/packages/' --ignore-pattern '/apps/'",
     "lint:ci": "pnpm build:transform && pnpm lint && pnpm lint:packages",
     "lint:packages": "nx affected --target=lint",
