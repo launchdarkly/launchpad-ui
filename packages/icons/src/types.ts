@@ -135,6 +135,7 @@ const icons = [
   'person-circle',
   'person-circle-outline',
   'person-gear',
+  'person-off',
   'person-remove',
   'play',
   'play-circle',
