@@ -1,5 +1,11 @@
 # @launchpad-ui/icons
 
+## 0.14.3
+
+### Patch Changes
+
+- [#1063](https://github.com/launchdarkly/launchpad-ui/pull/1063) [`77903b21`](https://github.com/launchdarkly/launchpad-ui/commit/77903b21a8a714b27ec68e6d972f5897747c5d17) Thanks [@matthewferry](https://github.com/matthewferry)! - Feat: add org settings icons and minor updates to people and gear icons
+
 ## 0.14.2
 
 ### Patch Changes

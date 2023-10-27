@@ -1,5 +1,12 @@
 # @launchpad-ui/popover
 
+## 0.11.3
+
+### Patch Changes
+
+- Updated dependencies [[`d4d424c9`](https://github.com/launchdarkly/launchpad-ui/commit/d4d424c99a5aafb5937dd9f9ae71693e4cf076f6)]:
+  - @launchpad-ui/focus-trap@0.1.13
+
 ## 0.11.2
 
 ### Patch Changes
