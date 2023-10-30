@@ -1537,8 +1537,8 @@ importers:
   packages/tokens:
     devDependencies:
       style-dictionary:
-        specifier: ^3.9.0
-        version: 3.9.0
+        specifier: 3.8.0
+        version: 3.8.0
       yaml:
         specifier: ^2.3.1
         version: 2.3.3
@@ -17146,8 +17146,8 @@ packages:
       through: 2.3.8
     dev: true
 
-  /style-dictionary@3.9.0:
-    resolution: {integrity: sha512-mnq8QfPJoj3ellKHRKZwmCgYUGgwYtoagW5edyKpR09O1W4/XqBdeKXoY/LbeIKqHrqVR7sGgk6E/dNYkPS4aA==}
+  /style-dictionary@3.8.0:
+    resolution: {integrity: sha512-wHlB/f5eO3mDcYv6WtOz6gvQC477jBKrwuIXe+PtHskTCBsJdAOvL8hCquczJxDui2TnwpeNE+2msK91JJomZg==}
     engines: {node: '>=12.0.0'}
     hasBin: true
     dependencies:
