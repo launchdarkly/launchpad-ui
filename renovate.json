@@ -15,5 +15,5 @@
     }
   ],
   "rangeStrategy": "bump",
-  "ignoreDeps": ["react-router-dom"]
+  "ignoreDeps": ["react-router-dom", "style-dictionary"]
 }
