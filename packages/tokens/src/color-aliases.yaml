@@ -40,16 +40,16 @@ color:
       secondary-flair:
         base:
           value: '{ color.purple.100.value }'
-          dark: '#2d1140' # purple-900 isn't dark enough
+          dark: '#2d1140' # purple-950 isn't dark enough
         active:
-          value: '{ color.purple.300.value }'
-          dark: '{ color.purple.900.value }'
+          value: '{ color.purple.400.value }'
+          dark: '{ color.purple.950.value }'
         focus:
+          value: '{ color.purple.400.value }'
+          dark: '{ color.purple.950.value }'
+        hover:
           value: '{ color.purple.300.value }'
           dark: '{ color.purple.900.value }'
-        hover:
-          value: '{ color.purple.200.value }'
-          dark: '{ color.purple.800.value }'
       tertiary:
         base:
           value: transparent
@@ -66,14 +66,14 @@ color:
         base:
           value: transparent
         active:
-          value: '{ color.purple.200.value }'
-          dark: '{ color.purple.900.value }'
+          value: '{ color.purple.300.value }'
+          dark: '{ color.purple.950.value }'
         focus:
-          value: '{ color.purple.200.value }'
-          dark: '{ color.purple.900.value }'
+          value: '{ color.purple.300.value }'
+          dark: '{ color.purple.950.value }'
         hover:
           value: '{ color.purple.100.value }'
-          dark: '{ color.purple.800.value }'
+          dark: '{ color.purple.900.value }'
       success:
         base:
           value: '{ color.system.green.100.value }'
@@ -111,8 +111,8 @@ color:
         value: '{ color.white.950.value }'
         dark: '{ color.gray.950.value }'
       primary-flair:
-        value: '{ color.purple.200.value }'
-        dark: '{ color.purple.900.value }'
+        value: '{ color.purple.300.value }'
+        dark: '{ color.purple.950.value }'
       secondary:
         value: '{ color.gray.0.value }'
         dark: '{ color.gray.900.value }'
@@ -198,17 +198,17 @@ color:
           value: '{ color.blue.400.value }'
       primary-flair:
         base:
-          value: '{ color.purple.500.value }'
-          dark: '{ color.purple.400.value }'
-        active:
-          value: '{ color.purple.700.value }'
-          dark: '{ color.purple.700.value }'
-        focus:
-          value: '{ color.purple.700.value }'
-          dark: '{ color.purple.700.value }'
-        hover:
           value: '{ color.purple.600.value }'
           dark: '{ color.purple.500.value }'
+        active:
+          value: '{ color.purple.800.value }'
+          dark: '{ color.purple.800.value }'
+        focus:
+          value: '{ color.purple.800.value }'
+          dark: '{ color.purple.800.value }'
+        hover:
+          value: '{ color.purple.700.value }'
+          dark: '{ color.purple.600.value }'
       secondary:
         base:
           value: '{ color.gray.300.value }'
@@ -222,17 +222,17 @@ color:
           value: '{ color.gray.600.value }'
       secondary-flair:
         base:
-          value: '{ color.purple.500.value }'
-          dark: '{ color.purple.500.value }'
-        active:
-          value: '{ color.purple.700.value }'
-          dark: '{ color.purple.600.value }'
-        focus:
-          value: '{ color.purple.700.value }'
-          dark: '{ color.purple.600.value }'
-        hover:
           value: '{ color.purple.600.value }'
-          dark: '{ color.purple.400.value }'
+          dark: '{ color.purple.600.value }'
+        active:
+          value: '{ color.purple.800.value }'
+          dark: '{ color.purple.700.value }'
+        focus:
+          value: '{ color.purple.800.value }'
+          dark: '{ color.purple.700.value }'
+        hover:
+          value: '{ color.purple.700.value }'
+          dark: '{ color.purple.500.value }'
       success:
         base:
           value: '{ color.system.green.400.value }'
@@ -257,8 +257,8 @@ color:
         value: '{ color.gray.200.value }'
         dark: '{ color.gray.700.value }'
       primary-flair:
-        value: '{ color.purple.300.value }'
-        dark: '{ color.purple.600.value }'
+        value: '{ color.purple.400.value }'
+        dark: '{ color.purple.700.value }'
       secondary:
         value: '{ color.gray.100.value }'
         dark: '{ color.gray.800.value }'
@@ -306,8 +306,8 @@ color:
       secondary:
         value: '{ color.gray.500.value }'
       primary-flair:
-        value: '{ color.purple.500.value }'
-        dark: '{ color.purple.300.value }'
+        value: '{ color.purple.600.value }'
+        dark: '{ color.purple.400.value }'
     field:
       base:
         value: '{ color.gray.600.value }'
@@ -349,8 +349,8 @@ color:
         value: '{ color.blue.600.value }'
         dark: '{ color.blue.400.value }'
       active:
-        value: '{ color.purple.600.value }'
-        dark: '{ color.purple.400.value }'
+        value: '{ color.purple.700.value }'
+        dark: '{ color.purple.500.value }'
       primary:
         base:
           value: '{ color.white.950.value }'
@@ -385,17 +385,17 @@ color:
         dark: '{ color.gray.600.value }'
       flair:
         focus:
-          value: '{ color.purple.800.value }'
-          dark: '{ color.purple.300.value }'
-        hover:
-          value: '{ color.purple.700.value }'
-          dark: '{ color.purple.300.value }'
-        base:
-          value: '{ color.purple.600.value }'
+          value: '{ color.purple.900.value }'
           dark: '{ color.purple.400.value }'
-        active:
+        hover:
           value: '{ color.purple.800.value }'
-          dark: '{ color.purple.300.value }'
+          dark: '{ color.purple.400.value }'
+        base:
+          value: '{ color.purple.700.value }'
+          dark: '{ color.purple.500.value }'
+        active:
+          value: '{ color.purple.900.value }'
+          dark: '{ color.purple.400.value }'
     ui:
       primary:
         base:
@@ -429,8 +429,8 @@ color:
         dark: '{ color.gray.400.value }'
     product:
       beta:
-        value: '{ color.purple.500.value }'
-        dark: '{ color.purple.400.value }'
+        value: '{ color.purple.600.value }'
+        dark: '{ color.purple.500.value }'
       code:
         value: '{ color.pink.600.value }'
         dark: '{ color.pink.300.value }'
@@ -438,8 +438,8 @@ color:
         value: '{ color.gray.950.value }'
         dark: '{ color.yellow.500.value }'
       flair:
-        value: '{ color.purple.600.value }'
-        dark: '{ color.purple.400.value }'
+        value: '{ color.purple.700.value }'
+        dark: '{ color.purple.500.value }'
       toggle-chip-on:
         value: '{ color.system.green.700.value }'
         dark: '{ color.system.green.500.value }'
