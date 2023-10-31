@@ -392,7 +392,7 @@ color:
           dark: '{ color.purple.400.value }'
         base:
           value: '{ color.purple.700.value }'
-          dark: '{ color.purple.500.value }'
+          dark: '{ color.purple.400.value }'
         active:
           value: '{ color.purple.900.value }'
           dark: '{ color.purple.400.value }'
