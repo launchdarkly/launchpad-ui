@@ -1,12 +1,12 @@
 :root {
-  --lp-component-alert-notification-flair-strong-color-text: var(--lp-color-white-0);
-  --lp-component-alert-notification-flair-strong-color-fill: var(--lp-color-white-0);
-  --lp-component-alert-notification-flair-strong-button-color-bg: var(--lp-color-white-0);
+  --lp-component-alert-notification-flair-strong-color-text: var(--lp-color-white-950);
+  --lp-component-alert-notification-flair-strong-color-fill: var(--lp-color-white-950);
+  --lp-component-alert-notification-flair-strong-button-color-bg: var(--lp-color-white-950);
   --lp-component-alert-notification-flair-strong-button-color-bg-hover: var(--lp-color-gray-100);
   --lp-component-alert-notification-flair-strong-button-color-bg-focus: var(--lp-color-gray-200);
   --lp-component-alert-notification-flair-strong-button-color-bg-active: var(--lp-color-gray-200);
   --lp-component-alert-notification-flair-strong-button-button-color-border: var(
-    --lp-color-white-0
+    --lp-color-white-950
   );
   --lp-component-alert-notification-flair-strong-button-color-text: var(--lp-color-black-300);
   --lp-component-alert-notification-flair-strong-button-color-text-hover: var(--lp-color-black-300);

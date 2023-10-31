@@ -225,9 +225,9 @@
 .Button.Button--close:active {
   background-color: hsl(0 0% 12.9% / 0.7);
   box-shadow:
-    0 0 0 1px var(--lp-color-black-200),
+    0 0 0 1px var(--lp-color-gray-950),
     0 0 0 4px hsl(0 0% 12.9% / 0.1);
-  color: var(--lp-color-white-0);
+  color: var(--lp-color-white-950);
 }
 
 .Button.Button--close[disabled],

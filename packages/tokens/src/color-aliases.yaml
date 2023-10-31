@@ -89,8 +89,8 @@ color:
           dark: '#00DA7B4D' # color.system.green.500.value at opacity 30%
       destructive:
         base:
-          value: '{ color.white.0.value }'
-          dark: '{ color.black.300.value }'
+          value: '{ color.white.950.value }'
+          dark: '{ color.gray.950.value }'
         active:
           value: '{ color.system.red.200.value }'
           dark: '#E5242426'
@@ -108,31 +108,34 @@ color:
         dark: '#3DD6F533'
     ui:
       primary:
-        value: '{ color.white.0.value }'
-        dark: '{ color.black.300.value }'
+        value: '{ color.white.950.value }'
+        dark: '{ color.gray.950.value }'
       primary-flair:
         value: '{ color.purple.200.value }'
         dark: '{ color.purple.900.value }'
       secondary:
-        value: '{ color.white.100.value }'
-        dark: '{ color.black.100.value }'
+        value: '{ color.gray.0.value }'
+        dark: '{ color.gray.900.value }'
       tertiary:
+        value: '{ color.gray.50.value }'
+        dark: '{ color.black.900.value }'
+      quaternary:
         value: '{ color.gray.100.value }'
-        dark: '{ color.black.400.value }'
+        dark: '{ color.gray.800.value }'
     overlay:
       primary:
-        value: '{ color.white.0.value }'
-        dark: '{ color.black.100.value }'
+        value: '{ color.white.950.value }'
+        dark: '{ color.gray.900.value }'
       secondary:
-        value: '{ color.black.300.value }'
-        dark: '{ color.black.100.value }'
+        value: '{ color.gray.950.value }'
+        dark: '{ color.gray.900.value }'
     field:
       base:
-        value: '{ color.white.0.value }'
+        value: '{ color.white.950.value }'
         dark: transparent
       disabled:
         value: '{ color.gray.100.value }'
-        dark: '{ color.black.100.value }'
+        dark: '{ color.gray.900.value }'
       aside:
         value: '{ color.gray.100.value }'
         dark: '{ color.gray.800.value }'
@@ -276,7 +279,7 @@ color:
         dark: '{ color.system.yellow.500.value }'
     interactive:
       primary:
-        value: '{ color.white.0.value }'
+        value: '{ color.white.950.value }'
       success:
         base:
           value: '{ color.system.green.900.value }'
@@ -292,14 +295,16 @@ color:
           dark: '{ color.system.green.300.value }'
       destructive:
         value: '{ color.system.red.700.value }'
-        dark: '{ color.white.0.value }'
+        dark: '{ color.white.950.value }'
       disabled:
         value: '{ color.gray.700.value }'
         dark: '{ color.gray.500.value }'
     ui:
       primary:
         value: currentcolor
-        dark: '{ color.white.0.value }'
+        dark: '{ color.white.950.value }'
+      secondary:
+        value: '{ color.gray.500.value }'
       primary-flair:
         value: '{ color.purple.500.value }'
         dark: '{ color.purple.300.value }'
@@ -314,18 +319,18 @@ color:
         value: '{ color.blue.500.value }'
         dark: '{ color.cyan.500.value }'
       primary:
-        value: '{ color.white.0.value }'
-        dark: '{ color.black.300.value }'
+        value: '{ color.white.950.value }'
+        dark: '{ color.gray.950.value }'
     ui:
       primary:
         value: '{ color.gray.500.value }'
-        dark: '{ color.black.0.value }'
+        dark: '{ color.black.950.value }'
 
   text:
     feedback:
       base:
-        value: '{ color.black.300.value }'
-        dark: '{ color.white.0.value }'
+        value: '{ color.gray.950.value }'
+        dark: '{ color.white.950.value }'
       error:
         value: '{ color.system.red.600.value }'
         dark: '{ color.system.red.400.value }'
@@ -348,14 +353,14 @@ color:
         dark: '{ color.purple.400.value }'
       primary:
         base:
-          value: '{ color.white.0.value }'
+          value: '{ color.white.950.value }'
         active:
-          value: '{ color.white.0.value }'
+          value: '{ color.white.950.value }'
         focus:
-          value: '{ color.white.0.value }'
+          value: '{ color.white.950.value }'
         hover:
-          value: '{ color.white.0.value }'
-          dark: '{ color.black.300.value }'
+          value: '{ color.white.950.value }'
+          dark: '{ color.gray.950.value }'
       secondary:
         value: '{ color.gray.600.value }'
         dark: '{ color.gray.400.value }'
@@ -374,7 +379,7 @@ color:
           dark: '{ color.system.green.300.value }'
       destructive:
         value: '{ color.system.red.700.value }'
-        dark: '{ color.white.0.value }'
+        dark: '{ color.white.950.value }'
       disabled:
         value: '{ color.gray.500.value }'
         dark: '{ color.gray.600.value }'
@@ -394,11 +399,11 @@ color:
     ui:
       primary:
         base:
-          value: '{ color.black.300.value }'
-          dark: '{ color.white.0.value }'
+          value: '{ color.gray.950.value }'
+          dark: '{ color.white.950.value }'
         inverted:
-          value: '{ color.white.0.value }'
-          dark: '{ color.black.300.value }'
+          value: '{ color.white.950.value }'
+          dark: '{ color.gray.950.value }'
       secondary:
         value: '{ color.gray.800.value }'
         dark: '{ color.gray.200.value }'
@@ -410,8 +415,8 @@ color:
         value: '{ color.gray.800.value }'
         dark: '{ color.gray.100.value }'
       secondary:
-        value: '{ color.white.0.value }'
-        dark: '{ color.black.300.value }'
+        value: '{ color.white.950.value }'
+        dark: '{ color.gray.950.value }'
     field:
       base:
         value: '{ color.gray.600.value }'
@@ -430,7 +435,7 @@ color:
         value: '{ color.pink.600.value }'
         dark: '{ color.pink.300.value }'
       federal:
-        value: '{ color.black.300.value }'
+        value: '{ color.gray.950.value }'
         dark: '{ color.yellow.500.value }'
       flair:
         value: '{ color.purple.600.value }'
