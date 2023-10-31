@@ -361,6 +361,31 @@ importers:
         specifier: 18.2.0
         version: 18.2.0(react@18.2.0)
 
+  packages/box:
+    dependencies:
+      '@launchpad-ui/vars':
+        specifier: workspace:~
+        version: link:../vars
+      '@vanilla-extract/css':
+        specifier: ^1.13.0
+        version: 1.13.0
+      '@vanilla-extract/dynamic':
+        specifier: ^2.0.3
+        version: 2.0.3
+      rainbow-sprinkles:
+        specifier: ^0.17.0
+        version: 0.17.0(@vanilla-extract/css@1.13.0)(@vanilla-extract/dynamic@2.0.3)
+    devDependencies:
+      flat:
+        specifier: ^6.0.1
+        version: 6.0.1
+      react:
+        specifier: 18.2.0
+        version: 18.2.0
+      react-dom:
+        specifier: 18.2.0
+        version: 18.2.0(react@18.2.0)
+
   packages/button:
     dependencies:
       '@launchpad-ui/icons':
@@ -8425,6 +8450,12 @@ packages:
       media-query-parser: 2.0.2
       outdent: 0.8.0
 
+  /@vanilla-extract/dynamic@2.0.3:
+    resolution: {integrity: sha512-Rglfw2gXAYiBzAQ4jgUG7rBgE2c88e/zcG27ZVoIqMHVq56wf2C1katGMm1yFMNBgzqM7oBNYzz4YOMzznydkg==}
+    dependencies:
+      '@vanilla-extract/private': 1.0.3
+    dev: false
+
   /@vanilla-extract/integration@6.2.2(@types/node@20.8.8):
     resolution: {integrity: sha512-gV3qPFjFap1+IrPeuFy+tEZOq7l7ifJf1ik/kluDWhPr1ffsFG9puq1/jjJ4rod1BIC79Q5ZWPNvBInHyxfCew==}
     dependencies:
@@ -11599,6 +11630,12 @@ packages:
 
   /flat@5.0.2:
     resolution: {integrity: sha512-b6suED+5/3rTpUBdG1gupIl8MPFCAMA0QXwmljLhvCUKcUvdE4gWky9zpuGCcXHOsz4J9wPGNWq6OKpmIzz3hQ==}
+    hasBin: true
+    dev: true
+
+  /flat@6.0.1:
+    resolution: {integrity: sha512-/3FfIa8mbrg3xE7+wAhWeV+bd7L2Mof+xtZb5dRDKZ+wDvYJK4WDYeIOuOhre5Yv5aQObZrlbRmk3RTSiuQBtw==}
+    engines: {node: '>=18'}
     hasBin: true
     dev: true
 
@@ -15884,6 +15921,16 @@ packages:
     resolution: {integrity: sha512-WuyALRjWPDGtt/wzJiadO5AXY+8hZ80hVpe6MyivgraREW751X3SbhRvG3eLKOYN+8VEvqLcf3wdnt44Z4S4SA==}
     engines: {node: '>=10'}
     dev: true
+
+  /rainbow-sprinkles@0.17.0(@vanilla-extract/css@1.13.0)(@vanilla-extract/dynamic@2.0.3):
+    resolution: {integrity: sha512-ok3NrylQ0szvJtuBYaB/w09L9zOvvqcSQrvycT2A5XJxQNvwvkeADvTqQWGOQ3b6MkO8UmYccBPt8g8vVvxM9A==}
+    peerDependencies:
+      '@vanilla-extract/css': ^1
+      '@vanilla-extract/dynamic': ^2
+    dependencies:
+      '@vanilla-extract/css': 1.13.0
+      '@vanilla-extract/dynamic': 2.0.3
+    dev: false
 
   /ramda@0.29.0:
     resolution: {integrity: sha512-BBea6L67bYLtdbOqfp8f58fPMqEwx0doL+pAi8TZyp2YWz8R9G8z9x75CZI8W+ftqhFHCpEX2cRnUUXK130iKA==}
