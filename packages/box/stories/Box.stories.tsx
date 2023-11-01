@@ -1,5 +1,7 @@
 import type { StoryObj } from '@storybook/react';
 
+import { Button } from '@launchpad-ui/button';
+
 import { Box } from '../src';
 
 export default {
@@ -22,5 +24,15 @@ export const Example: Story = {
     padding: '$400',
     width: '$400',
     children: 'I am a box',
+  },
+};
+
+export const Composition: Story = {
+  args: {
+    background: '$yellow-cyan',
+    borderColor: '$cyan.500',
+    color: '$black.0',
+    asChild: true,
+    children: <Button>Button</Button>,
   },
 };

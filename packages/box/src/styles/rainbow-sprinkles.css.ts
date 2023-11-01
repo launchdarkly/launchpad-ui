@@ -2,7 +2,7 @@ import { vars } from '@launchpad-ui/vars';
 import { flatten } from 'flat';
 import { defineProperties, createRainbowSprinkles } from 'rainbow-sprinkles';
 
-const { bg, border, fill, shadow, text, ...global } = vars.color;
+const { bg, border, fill, shadow, text, gradient, ...global } = vars.color;
 
 type FlattenObjectKeys<T extends Record<string, unknown>, Key = keyof T> = Key extends string
   ? T[Key] extends Record<string, unknown>
@@ -10,15 +10,19 @@ type FlattenObjectKeys<T extends Record<string, unknown>, Key = keyof T> = Key e
     : `${Key}`
   : never;
 
-type FlatKeys = FlattenObjectKeys<typeof global>;
+type GlobalKeys = FlattenObjectKeys<typeof global>;
+type GradientKeys = FlattenObjectKeys<typeof gradient>;
 
-const colors = flatten<typeof global, Record<FlatKeys, string>>(global);
+const colors = flatten<typeof global, Record<GlobalKeys, string>>(global);
+const gradients = flatten<typeof gradient, Record<GradientKeys, string>>(gradient);
 
 const responsiveProperties = defineProperties({
   dynamicProperties: {
     // Define pre-determined values, which will be autosuggested
     color: colors,
+    background: gradients,
     backgroundColor: colors,
+    borderColor: colors,
     gap: vars.spacing,
     padding: vars.spacing,
     paddingLeft: vars.spacing,
@@ -35,8 +39,10 @@ const responsiveProperties = defineProperties({
     marginRight: vars.spacing,
     marginBottom: vars.spacing,
     borderRadius: vars.border.radius,
+    borderWidth: vars.border.width,
     fontFamily: vars.font.family,
     fontSize: vars.font.size,
+    fontWeight: vars.font.weight,
     lineHeight: vars['line-height'],
     zIndex: vars['z-index'],
     width: vars.size,
