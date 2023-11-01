@@ -28,33 +28,30 @@ color:
       value: '#101741'
       dark: '#23328C'
   cyan:
+    0:
+      value: '#e5fbff'
+    50:
+      value: '#c9f4fd'
     100:
-      value: '#E7FAFE'
-      dark: '#F5FDFE'
+      value: '#a6efff'
     200:
-      value: '#B6F0FB'
-      dark: '#E2F9FD'
+      value: '#7ae9fe'
     300:
-      value: '#81E4F8'
-      dark: '#B1EFFB'
+      value: '#35defa'
     400:
-      value: '#47D8F5'
-      dark: '#6DE0F7'
+      value: '#00cded'
     500:
-      value: '#1FD0F4'
-      dark: '#3DD6F5'
+      value: '#00b8d7'
     600:
-      value: '#0BBBE0'
-      dark: '#34B6D0'
+      value: '#00a0bc'
     700:
-      value: '#0993AE'
-      dark: '#2EA0B8'
+      value: '#007d95'
     800:
-      value: '#076B7E'
-      dark: '#288B9F'
+      value: '#00677b'
     900:
-      value: '#04424E'
-      dark: '#227687'
+      value: '#004f5e'
+    950:
+      value: '#003742'
   pink:
     0:
       value: '#FFF5F8'
@@ -295,11 +292,11 @@ color:
         dark: '#836B23'
   gradient:
     yellow-cyan:
-      value: 'linear-gradient(126.73deg, { color.yellow.500.value } -38.66%, { color.cyan.500.value } 83.73%)'
+      value: 'linear-gradient(126.73deg, { color.yellow.500.value } -38.66%, { color.cyan.400.value } 83.73%)'
     cyan-blue:
-      value: 'linear-gradient(136.11deg, { color.cyan.500.value } 22.68%, { color.blue.500.value } 127.6%)'
+      value: 'linear-gradient(136.11deg, { color.cyan.400.value } 22.68%, { color.blue.500.value } 127.6%)'
     cyan-purple:
-      value: 'linear-gradient(41.76deg, { color.purple.600.value } -17.05%, { color.cyan.500.value } 147.06%)'
+      value: 'linear-gradient(41.76deg, { color.purple.600.value } -17.05%, { color.cyan.400.value } 147.06%)'
     purple-blue:
       value: 'linear-gradient(131.04deg, { color.purple.600.value } -15.82%, { color.blue.500.value } 118.85%)'
     pink-purple:

@@ -173,10 +173,10 @@ color:
         dark: '{ color.gray.500.value }'
       active:
         value: '{ color.blue.500.value }'
-        dark: '{ color.cyan.500.value }'
+        dark: '{ color.cyan.400.value }'
       focus:
         value: '{ color.blue.500.value }'
-        dark: '{ color.cyan.500.value }'
+        dark: '{ color.cyan.400.value }'
       error:
         value: '{ color.system.red.600.value }'
         dark: '{ color.system.red.600.value }'
@@ -186,7 +186,7 @@ color:
     interactive:
       focus:
         value: '{ color.blue.500.value }'
-        dark: '{ color.cyan.500.value }'
+        dark: '{ color.cyan.400.value }'
       primary:
         base:
           value: '{ color.blue.500.value }'
@@ -317,7 +317,7 @@ color:
     interactive:
       focus:
         value: '{ color.blue.500.value }'
-        dark: '{ color.cyan.500.value }'
+        dark: '{ color.cyan.400.value }'
       primary:
         value: '{ color.white.950.value }'
         dark: '{ color.gray.950.value }'
