@@ -45,7 +45,7 @@ const ROWS = [
     description: 'An element used to display and allow inline editing of a form element value.',
   },
   {
-    name: '--lp-color-blue-100',
+    name: '--lp-color-blue-50',
     type: 'Token',
     status: 'beta',
     key: 3,
@@ -98,7 +98,7 @@ export const Example: Story = {
             <Cell>Alpha</Cell>
           </Row>
           <Row>
-            <Cell>--lp-color-blue-100</Cell>
+            <Cell>--lp-color-blue-50</Cell>
             <Cell>Token</Cell>
             <Cell>Beta</Cell>
           </Row>

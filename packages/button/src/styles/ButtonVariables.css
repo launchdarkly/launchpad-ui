@@ -172,8 +172,8 @@
   --Button-icon-color-fill-disabled-active: var(--lp-color-fill-interactive-disabled);
 
   /* SEARCH BAR CLEAR BUTTON ICON */
-  --Button-icon-clear-color-fill: var(--lp-color-blue-600);
-  --Button-icon-clear-color-text: var(--lp-color-blue-600);
+  --Button-icon-clear-color-fill: var(--lp-color-blue-700);
+  --Button-icon-clear-color-text: var(--lp-color-blue-700);
 
   /* ------- PRIMARY FLAIR ------- */
   --Button-color-border-primary-flair: var(--lp-color-border-interactive-primary-flair-base);

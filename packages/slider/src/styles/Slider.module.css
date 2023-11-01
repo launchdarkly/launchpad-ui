@@ -65,7 +65,7 @@
 .Slider input[type='range']:focus::-webkit-slider-thumb {
   box-shadow:
     0 0 0 1px var(--lp-color-white-950),
-    0 0 0 2px var(--lp-color-blue-500),
+    0 0 0 2px var(--lp-color-blue-600),
     0 0 0 5px rgb(0 126 255 / 0.1);
 }
 
@@ -89,7 +89,7 @@
 .Slider input[type='range']:focus::-moz-range-thumb {
   box-shadow:
     0 0 0 1px var(--lp-color-white-950),
-    0 0 0 2px var(--lp-color-blue-500),
+    0 0 0 2px var(--lp-color-blue-600),
     0 0 0 5px rgb(0 126 255 / 0.1);
 }
 

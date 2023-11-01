@@ -7,7 +7,7 @@ color:
         value: '{ color.system.red.100.value }'
         dark: '#E83B3B26'
       info:
-        value: '{ color.blue.100.value }'
+        value: '{ color.blue.50.value }'
         dark: '#405BFF26'
       success:
         value: '{ color.system.green.100.value }'
@@ -18,13 +18,13 @@ color:
     interactive:
       primary:
         base:
-          value: '{ color.blue.500.value }'
+          value: '{ color.blue.600.value }'
         active:
-          value: '{ color.blue.600.value }'
+          value: '{ color.blue.700.value }'
         focus:
-          value: '{ color.blue.600.value }'
+          value: '{ color.blue.700.value }'
         hover:
-          value: '{ color.blue.400.value }'
+          value: '{ color.blue.500.value }'
       secondary:
         base:
           value: transparent
@@ -104,7 +104,7 @@ color:
         value: '{ color.gray.100.value }'
         dark: '{ color.gray.800.value }'
       link:
-        value: '{ color.blue.100.value }'
+        value: '{ color.blue.50.value }'
         dark: '#3DD6F533'
     ui:
       primary:
@@ -159,8 +159,8 @@ color:
         value: '{ color.system.red.500.value }'
         dark: '{ color.system.red.500.value }'
       info:
-        value: '{ color.blue.500.value }'
-        dark: '{ color.blue.500.value }'
+        value: '{ color.blue.600.value }'
+        dark: '{ color.blue.600.value }'
       success:
         value: '{ color.system.green.600.value }'
         dark: '{ color.system.green.500.value }'
@@ -172,10 +172,10 @@ color:
         value: '{ color.gray.300.value }'
         dark: '{ color.gray.500.value }'
       active:
-        value: '{ color.blue.500.value }'
+        value: '{ color.blue.600.value }'
         dark: '{ color.cyan.400.value }'
       focus:
-        value: '{ color.blue.500.value }'
+        value: '{ color.blue.600.value }'
         dark: '{ color.cyan.400.value }'
       error:
         value: '{ color.system.red.600.value }'
@@ -185,17 +185,17 @@ color:
         dark: '{ color.gray.700.value }'
     interactive:
       focus:
-        value: '{ color.blue.500.value }'
+        value: '{ color.blue.600.value }'
         dark: '{ color.cyan.400.value }'
       primary:
         base:
-          value: '{ color.blue.500.value }'
+          value: '{ color.blue.600.value }'
         active:
-          value: '{ color.blue.600.value }'
+          value: '{ color.blue.700.value }'
         focus:
-          value: '{ color.blue.600.value }'
+          value: '{ color.blue.700.value }'
         hover:
-          value: '{ color.blue.400.value }'
+          value: '{ color.blue.500.value }'
       primary-flair:
         base:
           value: '{ color.purple.600.value }'
@@ -269,8 +269,8 @@ color:
         value: '{ color.system.red.500.value }'
         dark: '{ color.system.red.500.value }'
       info:
-        value: '{ color.blue.500.value }'
-        dark: '{ color.blue.400.value }'
+        value: '{ color.blue.600.value }'
+        dark: '{ color.blue.500.value }'
       success:
         value: '{ color.system.green.700.value }'
         dark: '{ color.system.green.500.value }'
@@ -316,7 +316,7 @@ color:
   shadow:
     interactive:
       focus:
-        value: '{ color.blue.500.value }'
+        value: '{ color.blue.600.value }'
         dark: '{ color.cyan.400.value }'
       primary:
         value: '{ color.white.950.value }'
@@ -341,13 +341,13 @@ color:
         value: '{ color.system.yellow.800.value }'
         dark: '{ color.system.yellow.500.value }'
       info:
-        value: '{ color.blue.700.value }'
-        dark: '{ color.blue.400.value }'
+        value: '{ color.blue.800.value }'
+        dark: '{ color.blue.500.value }'
     interactive:
       # links
       base:
-        value: '{ color.blue.600.value }'
-        dark: '{ color.blue.400.value }'
+        value: '{ color.blue.700.value }'
+        dark: '{ color.blue.500.value }'
       active:
         value: '{ color.purple.700.value }'
         dark: '{ color.purple.500.value }'
