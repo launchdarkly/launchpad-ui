@@ -2,7 +2,7 @@ import { vars } from '@launchpad-ui/vars';
 import { flatten } from 'flat';
 import { defineProperties, createRainbowSprinkles } from 'rainbow-sprinkles';
 
-const { bg, border, fill, shadow, text, gradient, ...global } = vars.color;
+const { bg, border, fill, shadow, text, ...global } = vars.color;
 
 type FlattenObjectKeys<T extends Record<string, unknown>, Key = keyof T> = Key extends string
   ? T[Key] extends Record<string, unknown>
