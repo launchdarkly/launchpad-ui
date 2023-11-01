@@ -1,5 +1,35 @@
 # @launchpad-ui/core
 
+## 0.47.4
+
+### Patch Changes
+
+- [#1070](https://github.com/launchdarkly/launchpad-ui/pull/1070) [`bb8eed2f`](https://github.com/launchdarkly/launchpad-ui/commit/bb8eed2ff3fc04495109a44041e6591e0e8696d6) Thanks [@matthewferry](https://github.com/matthewferry)! - Add diamond icons
+
+- Updated dependencies []:
+  - @launchpad-ui/alert@0.8.4
+  - @launchpad-ui/avatar@0.6.4
+  - @launchpad-ui/banner@0.10.4
+  - @launchpad-ui/button@0.11.4
+  - @launchpad-ui/chip@0.9.4
+  - @launchpad-ui/clipboard@0.11.4
+  - @launchpad-ui/collapsible@0.1.35
+  - @launchpad-ui/drawer@0.5.4
+  - @launchpad-ui/dropdown@0.6.78
+  - @launchpad-ui/filter@0.6.4
+  - @launchpad-ui/form@0.10.4
+  - @launchpad-ui/inline-edit@0.2.4
+  - @launchpad-ui/menu@0.12.4
+  - @launchpad-ui/modal@0.17.4
+  - @launchpad-ui/navigation@0.12.4
+  - @launchpad-ui/pagination@0.4.4
+  - @launchpad-ui/select@0.4.4
+  - @launchpad-ui/snackbar@0.4.4
+  - @launchpad-ui/tag@0.3.4
+  - @launchpad-ui/toast@0.3.4
+  - @launchpad-ui/split-button@0.9.4
+  - @launchpad-ui/card@0.2.4
+
 ## 0.47.3
 
 ### Patch Changes
