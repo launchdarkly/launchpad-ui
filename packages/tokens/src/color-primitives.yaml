@@ -229,33 +229,30 @@ color:
         value: '#00522E'
         dark: '#007844'
     red:
+      0:
+        value: '#FFF5F3'
+      50:
+        value: '#FFE7E4'
       100:
-        value: '#FCE8E8'
-        dark: '#FEF5F5'
+        value: '#FDD4CE'
       200:
-        value: '#F7BBBB'
-        dark: '#FCE2E2'
+        value: '#F7BCB3'
       300:
-        value: '#F18888'
-        dark: '#F6B1B1'
+        value: '#F48D7F'
       400:
-        value: '#EB5656'
-        dark: '#EE6C6C'
+        value: '#F35240'
       500:
-        value: '#E52424'
-        dark: '#E83B3B'
+        value: '#E52618'
       600:
-        value: '#C41717'
-        dark: '#C73333'
+        value: '#C41A01'
       700:
-        value: '#9B1212'
-        dark: '#AE2C2C'
+        value: '#9B1403'
       800:
-        value: '#720D0D'
-        dark: '#972626'
+        value: '#720E06'
       900:
-        value: '#490808'
-        dark: '#802020'
+        value: '#490904'
+      950:
+        value: '#370403'
     yellow:
       100:
         value: '#FCF6E3'
