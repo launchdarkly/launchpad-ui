@@ -56,33 +56,30 @@ color:
       value: '#04424E'
       dark: '#227687'
   pink:
-    100:
+    0:
+      value: '#FFF5F8'
+    50:
       value: '#FFE5EC'
-      dark: '#FFF5F8'
+    100:
+      value: '#FFD0DC'
     200:
       value: '#FFADC2'
-      dark: '#FFE1E9'
     300:
       value: '#FF7599'
-      dark: '#FFAFC4'
     400:
       value: '#FF3D6F'
-      dark: '#FF6A90'
     500:
       value: '#FF1451'
-      dark: '#FF386B'
     600:
-      value: '#EB003C'
-      dark: '#D9305B'
+      value: '#DC0A40'
     700:
       value: '#B8002F'
-      dark: '#BF2A50'
     800:
       value: '#850022'
-      dark: '#A62446'
     900:
       value: '#520015'
-      dark: '#8C1F3B'
+    950:
+      value: '#410E1A'
   purple:
     0:
       value: '#FAF6FD'
