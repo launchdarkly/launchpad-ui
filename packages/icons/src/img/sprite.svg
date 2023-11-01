@@ -559,6 +559,20 @@
       />
       <path d="M17.5 16.73a.9.9 0 0 1 .9.9v.01a.9.9 0 1 1-1.8 0v-.01a.9.9 0 0 1 .9-.9Z" />
     </symbol>
+    <symbol viewBox="0 0 24 24" id="lp-icon-diamond">
+      <path
+        fill-rule="evenodd"
+        d="M10.94 2.788a1.5 1.5 0 0 1 2.12 0l8.152 8.151a1.5 1.5 0 0 1 0 2.122l-8.151 8.151a1.5 1.5 0 0 1-2.122 0l-8.151-8.151a1.5 1.5 0 0 1 0-2.122l8.151-8.151Z"
+        clip-rule="evenodd"
+      />
+    </symbol>
+    <symbol viewBox="0 0 24 24" id="lp-icon-diamond-outline">
+      <path
+        fill-rule="evenodd"
+        d="M10.94 2.788a1.5 1.5 0 0 1 2.12 0l8.152 8.151a1.5 1.5 0 0 1 0 2.122l-8.151 8.151a1.5 1.5 0 0 1-2.122 0l-8.151-8.151a1.5 1.5 0 0 1 0-2.122l8.151-8.151ZM12 4.273 4.273 12 12 19.727 19.727 12 12 4.273Z"
+        clip-rule="evenodd"
+      />
+    </symbol>
     <symbol viewBox="0 0 24 24" id="lp-icon-document-question">
       <path
         fill-rule="evenodd"
