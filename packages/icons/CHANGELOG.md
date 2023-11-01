@@ -1,5 +1,11 @@
 # @launchpad-ui/icons
 
+## 0.14.4
+
+### Patch Changes
+
+- [#1070](https://github.com/launchdarkly/launchpad-ui/pull/1070) [`bb8eed2f`](https://github.com/launchdarkly/launchpad-ui/commit/bb8eed2ff3fc04495109a44041e6591e0e8696d6) Thanks [@matthewferry](https://github.com/matthewferry)! - Add diamond icons
+
 ## 0.14.3
 
 ### Patch Changes
