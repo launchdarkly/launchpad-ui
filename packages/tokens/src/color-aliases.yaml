@@ -5,16 +5,16 @@ color:
         value: '{ color.gray.800.value }'
       error:
         value: '{ color.system.red.50.value }'
-        dark: '#E83B3B26'
+        dark: '{ color.system.red.900.value }'
       info:
         value: '{ color.blue.50.value }'
-        dark: '#405BFF26'
+        dark: '{ color.blue.900.value }'
       success:
         value: '{ color.system.green.100.value }'
-        dark: '#00DA7B26'
+        dark: '{ color.system.green.900.value }'
       warning:
         value: '{ color.system.yellow.100.value }'
-        dark: '#EEC34026'
+        dark: '{ color.system.yellow.900.value }'
     interactive:
       primary:
         base:
@@ -42,7 +42,7 @@ color:
       secondary-flair:
         base:
           value: '{ color.purple.100.value }'
-          dark: '#2d1140' # purple-950 isn't dark enough
+          dark: '{ color.purple.950.value }'
         active:
           value: '{ color.purple.400.value }'
           dark: '{ color.purple.950.value }'
@@ -144,7 +144,7 @@ color:
     product:
       beta:
         value: '{ color.purple.100.value }'
-        dark: '#A34FDE26'
+        dark: '{ color.purple.900.value }'
       federal:
         value: '{ color.yellow.500.value }'
         dark: '#E8FF1F26'
@@ -338,21 +338,21 @@ color:
         dark: '{ color.system.red.400.value }'
       success:
         value: '{ color.system.green.800.value }'
-        dark: '{ color.system.green.500.value }'
+        dark: '{ color.system.green.400.value }'
       warning:
         value: '{ color.system.yellow.800.value }'
         dark: '{ color.system.yellow.500.value }'
       info:
         value: '{ color.blue.800.value }'
-        dark: '{ color.blue.500.value }'
+        dark: '{ color.blue.300.value }'
     interactive:
       # links
       base:
         value: '{ color.blue.700.value }'
-        dark: '{ color.blue.500.value }'
+        dark: '{ color.blue.400.value }'
       active:
         value: '{ color.purple.700.value }'
-        dark: '{ color.purple.500.value }'
+        dark: '{ color.purple.400.value }'
       primary:
         base:
           value: '{ color.white.950.value }'
@@ -432,7 +432,7 @@ color:
     product:
       beta:
         value: '{ color.purple.600.value }'
-        dark: '{ color.purple.500.value }'
+        dark: '{ color.purple.400.value }'
       code:
         value: '{ color.pink.600.value }'
         dark: '{ color.pink.300.value }'

@@ -86,11 +86,11 @@ color:
     300:
       value: '#D4ADF0'
     400:
-      value: '#B97AE6'
+      value: '#BF80ED'
     500:
       value: '#A14BDD'
     600:
-      value: '#9331D8'
+      value: '#912fd6'
     700:
       value: '#8325C6'
     800:
@@ -237,7 +237,7 @@ color:
       300:
         value: '#F48D7F'
       400:
-        value: '#F35240'
+        value: '#F74C3A'
       500:
         value: '#E52618'
       600:
