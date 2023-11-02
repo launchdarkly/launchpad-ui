@@ -8,7 +8,10 @@ import turbosnap from 'vite-plugin-turbosnap';
 import tsconfig from '../tsconfig.json';
 
 const getStories = () =>
-  fg.sync([path.resolve(__dirname, `../packages/**/stories/*.stories.tsx`), '!**/node_modules']);
+  fg.sync([
+    path.resolve(__dirname, `../packages/**/stories/*.stories.{mdx,tsx}`),
+    '!**/node_modules',
+  ]);
 
 const config: StorybookConfig = {
   stories: [...getStories()],
@@ -27,6 +30,7 @@ const config: StorybookConfig = {
     '@storybook/addon-interactions',
     'storybook-addon-pseudo-states',
     '@etchteam/storybook-addon-status',
+    '@storybook/addon-designs',
   ],
   framework: '@storybook/react-vite',
   core: {

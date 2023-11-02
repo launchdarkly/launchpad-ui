@@ -14,6 +14,18 @@
 - Updated dependencies [[`00bee445`](https://github.com/launchdarkly/launchpad-ui/commit/00bee445065c0e48f31e1ca88105e5a418729c81), [`c041a984`](https://github.com/launchdarkly/launchpad-ui/commit/c041a984c3fd0c95f5e1e4a07416f6907ff75eac), [`3f9e1881`](https://github.com/launchdarkly/launchpad-ui/commit/3f9e1881f5d878ad6c0dc26ea1f8c5623605db53)]:
   - @launchpad-ui/tokens@0.9.0-alpha.0
 
+## 0.14.4
+
+### Patch Changes
+
+- [#1070](https://github.com/launchdarkly/launchpad-ui/pull/1070) [`bb8eed2f`](https://github.com/launchdarkly/launchpad-ui/commit/bb8eed2ff3fc04495109a44041e6591e0e8696d6) Thanks [@matthewferry](https://github.com/matthewferry)! - Add diamond icons
+
+## 0.14.3
+
+### Patch Changes
+
+- [#1063](https://github.com/launchdarkly/launchpad-ui/pull/1063) [`77903b21`](https://github.com/launchdarkly/launchpad-ui/commit/77903b21a8a714b27ec68e6d972f5897747c5d17) Thanks [@matthewferry](https://github.com/matthewferry)! - Feat: add org settings icons and minor updates to people and gear icons
+
 ## 0.14.2
 
 ### Patch Changes

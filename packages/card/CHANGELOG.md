@@ -1,14 +1,6 @@
 # @launchpad-ui/card
 
-## 0.2.3-alpha.0
-
-### Patch Changes
-
-- Updated dependencies [[`00bee445`](https://github.com/launchdarkly/launchpad-ui/commit/00bee445065c0e48f31e1ca88105e5a418729c81), [`c041a984`](https://github.com/launchdarkly/launchpad-ui/commit/c041a984c3fd0c95f5e1e4a07416f6907ff75eac), [`e48d0df6`](https://github.com/launchdarkly/launchpad-ui/commit/e48d0df69e5085bc31c6378fe2eaad581a5eb687), [`3f9e1881`](https://github.com/launchdarkly/launchpad-ui/commit/3f9e1881f5d878ad6c0dc26ea1f8c5623605db53)]:
-  - @launchpad-ui/tokens@0.9.0-alpha.1
-  - @launchpad-ui/form@0.10.3-alpha.0
-
-## 0.2.1-alpha.1
+## 0.2.4
 
 ### Patch Changes
 
@@ -22,6 +14,14 @@
 - Updated dependencies [[`00bee445`](https://github.com/launchdarkly/launchpad-ui/commit/00bee445065c0e48f31e1ca88105e5a418729c81), [`c041a984`](https://github.com/launchdarkly/launchpad-ui/commit/c041a984c3fd0c95f5e1e4a07416f6907ff75eac), [`e48d0df6`](https://github.com/launchdarkly/launchpad-ui/commit/e48d0df69e5085bc31c6378fe2eaad581a5eb687), [`3f9e1881`](https://github.com/launchdarkly/launchpad-ui/commit/3f9e1881f5d878ad6c0dc26ea1f8c5623605db53)]:
   - @launchpad-ui/tokens@0.9.0-alpha.0
   - @launchpad-ui/form@0.10.1-alpha.0
+  - @launchpad-ui/form@0.10.4
+
+## 0.2.3
+
+### Patch Changes
+
+- Updated dependencies [[`d4d424c9`](https://github.com/launchdarkly/launchpad-ui/commit/d4d424c99a5aafb5937dd9f9ae71693e4cf076f6)]:
+  - @launchpad-ui/form@0.10.3
 
 ## 0.2.2
 
