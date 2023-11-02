@@ -30,7 +30,7 @@
     "./dist/contract.json": "./dist/contract.json"
   },
   "scripts": {
-    "build": "ts-node --esm ./build.ts",
+    "build": "node --loader ts-node/esm ./build.ts",
     "clean": "rm -rf dist",
     "lint": "eslint '**/*.{ts,tsx,js}'",
     "test": "exit 0"
