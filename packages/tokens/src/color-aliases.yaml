@@ -269,10 +269,10 @@ color:
     feedback:
       error:
         value: '{ color.system.red.500.value }'
-        dark: '{ color.system.red.500.value }'
+        dark: '{ color.system.red.400.value }'
       info:
         value: '{ color.blue.600.value }'
-        dark: '{ color.blue.500.value }'
+        dark: '{ color.blue.400.value }'
       success:
         value: '{ color.system.green.700.value }'
         dark: '{ color.system.green.500.value }'
