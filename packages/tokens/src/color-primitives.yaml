@@ -251,33 +251,30 @@ color:
       950:
         value: '#370403'
     yellow:
+      0:
+        value: '#FFFCF2'
+      50:
+        value: '#FEF6DB'
       100:
-        value: '#FCF6E3'
-        dark: '#FEFCF5'
+        value: '#FEF1C6'
       200:
-        value: '#F8E6AF'
-        dark: '#FCF6E2'
+        value: '#FDE59E'
       300:
-        value: '#F3D67C'
-        dark: '#F8E7B3'
+        value: '#F5D672'
       400:
         value: '#EEC649'
-        dark: '#F2D270'
       500:
         value: '#EBBA23'
-        dark: '#EEC340'
       600:
         value: '#D7A613'
-        dark: '#CAA636'
       700:
-        value: '#A88210'
-        dark: '#A98A2D'
+        value: '#A37D03'
       800:
-        value: '#795D0B'
-        dark: '#9B7F2A'
+        value: '#795605'
       900:
-        value: '#4B3B07'
-        dark: '#836B23'
+        value: '#52370A'
+      950:
+        value: '#3D2B10'
   gradient:
     yellow-cyan:
       value: 'linear-gradient(126.73deg, { color.yellow.500.value } -38.66%, { color.cyan.400.value } 83.73%)'
