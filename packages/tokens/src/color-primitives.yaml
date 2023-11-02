@@ -201,33 +201,30 @@ color:
       value: '#000000'
   system:
     green:
+      0:
+        value: '#EEFDF7'
+      50:
+        value: '#DAFCEE'
       100:
-        value: '#E5FFF4'
-        dark: '#F2FDF8'
+        value: '#C3FDE5'
       200:
         value: '#94FFD0'
-        dark: '#D9F9EB'
       300:
         value: '#42FFAD'
-        dark: '#99F0CA'
       400:
         value: '#00F087'
-        dark: '#40E39C'
       500:
         value: '#00CC73'
-        dark: '#00DA7B'
       600:
         value: '#00A85F'
-        dark: '#00B969'
       700:
         value: '#00854B'
-        dark: '#00A45C'
       800:
         value: '#006B3C'
-        dark: '#008E50'
       900:
         value: '#00522E'
-        dark: '#007844'
+      950:
+        value: '#003A21'
     red:
       0:
         value: '#FFF5F3'
