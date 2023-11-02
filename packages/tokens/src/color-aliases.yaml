@@ -19,12 +19,14 @@ color:
       primary:
         base:
           value: '{ color.blue.600.value }'
+          dark: '{ color.blue.500.value}'
         active:
           value: '{ color.blue.700.value }'
         focus:
           value: '{ color.blue.700.value }'
         hover:
           value: '{ color.blue.500.value }'
+          dark: '{ color.blue.400.value}'
       secondary:
         base:
           value: transparent
