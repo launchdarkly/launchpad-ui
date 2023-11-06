@@ -106,13 +106,13 @@ div.ProgressBubbles-icon--current {
 }
 
 .ProgressBubbles-icon svg {
-  fill: var(--lp-color-white-0);
+  fill: var(--lp-color-white-950);
   height: 1rem;
   width: 1rem;
 }
 
 .ProgressBubbles-icon--pending svg {
-  fill: var(--lp-color-white-0);
+  fill: var(--lp-color-white-950);
 }
 
 div.ProgressBubbles-icon--current svg {
@@ -124,7 +124,7 @@ div.ProgressBubbles-icon--pending {
 }
 
 div.ProgressBubbles-icon--warning {
-  background-color: var(--lp-color-white-0);
+  background-color: var(--lp-color-white-950);
   border: none;
 }
 

@@ -1,272 +1,288 @@
 color:
   blue:
-    100:
+    0:
+      value: '#F5F7FF'
+    50:
       value: '#E5EBFF'
-      dark: '#F5F7FF'
+    100:
+      value: '#D6DDFF'
     200:
-      value: '#B3BDFF'
-      dark: '#E2E6FF'
+      value: '#C1CAFF'
     300:
-      value: '#7587FF'
-      dark: '#B3BDFF'
+      value: '#98AAFF'
     400:
-      value: '#4D65FF'
-      dark: '#7084FF'
+      value: '#5F7BFF'
     500:
+      value: '#3C5EFB'
+    600:
       value: '#2443FF'
-      dark: '#4761FF'
-    600:
-      value: '#2840D2'
-      dark: '#364DD9'
     700:
-      value: '#27379B'
-      dark: '#3044BF'
+      value: '#2936B5'
     800:
-      value: '#1C276E'
-      dark: '#2A3BA6'
+      value: '#24318A'
     900:
-      value: '#101741'
-      dark: '#23328C'
+      value: '#1D2865'
+    950:
+      value: '#111946'
   cyan:
+    0:
+      value: '#e5fbff'
+    50:
+      value: '#c9f4fd'
     100:
-      value: '#E7FAFE'
-      dark: '#F5FDFE'
+      value: '#a6efff'
     200:
-      value: '#B6F0FB'
-      dark: '#E2F9FD'
+      value: '#7ae9fe'
     300:
-      value: '#81E4F8'
-      dark: '#B1EFFB'
+      value: '#35defa'
     400:
-      value: '#47D8F5'
-      dark: '#6DE0F7'
+      value: '#00cded'
     500:
-      value: '#1FD0F4'
-      dark: '#3DD6F5'
+      value: '#00b8d7'
     600:
-      value: '#0BBBE0'
-      dark: '#34B6D0'
+      value: '#00a0bc'
     700:
-      value: '#0993AE'
-      dark: '#2EA0B8'
+      value: '#007d95'
     800:
-      value: '#076B7E'
-      dark: '#288B9F'
+      value: '#00677b'
     900:
-      value: '#04424E'
-      dark: '#227687'
+      value: '#004f5e'
+    950:
+      value: '#003742'
   pink:
-    100:
+    0:
+      value: '#FFF5F8'
+    50:
       value: '#FFE5EC'
-      dark: '#FFF5F8'
+    100:
+      value: '#FFD0DC'
     200:
       value: '#FFADC2'
-      dark: '#FFE1E9'
     300:
       value: '#FF7599'
-      dark: '#FFAFC4'
     400:
       value: '#FF3D6F'
-      dark: '#FF6A90'
     500:
       value: '#FF1451'
-      dark: '#FF386B'
     600:
-      value: '#EB003C'
-      dark: '#D9305B'
+      value: '#DC0A40'
     700:
       value: '#B8002F'
-      dark: '#BF2A50'
     800:
       value: '#850022'
-      dark: '#A62446'
     900:
       value: '#520015'
-      dark: '#8C1F3B'
+    950:
+      value: '#410E1A'
   purple:
-    100:
-      value: '#EFE1FA'
-      dark: '#FAF6FD'
-    200:
-      value: '#D4ADF0'
-      dark: '#F1E5FA'
-    300:
-      value: '#B97AE6'
-      dark: '#DAB9F2'
-    400:
-      value: '#A14BDD'
-      dark: '#BA7BE6'
-    500:
-      value: '#9331D8'
-      dark: '#A34FDE'
-    600:
-      value: '#8325C6'
-      dark: '#8B43BD'
-    700:
-      value: '#671D9B'
-      dark: '#7A3BA7'
-    800:
-      value: '#4B1570'
-      dark: '#6A3390'
-    900:
-      value: '#2E0C45'
-      dark: '#5A2B7A'
-  yellow:
-    100:
-      value: '#FCFFE5'
-      dark: '#FEFFF5'
-    200:
-      value: '#F7FFB2'
-      dark: '#FCFFE1'
-    300:
-      value: '#F2FF80'
-      dark: '#F7FFAF'
-    400:
-      value: '#EEFF4D'
-      dark: '#F3FF88'
-    500:
-      value: '#E8FF1F'
-      dark: '#EBFF38'
-    600:
-      value: '#D3EB00'
-      dark: '#C8D930'
-    700:
-      value: '#8B9721'
-      dark: '#B0BF2A'
-    800:
-      value: '#646D18'
-      dark: '#99A624'
-    900:
-      value: '#3D430F'
-      dark: '#818C1F'
-  white:
-    100:
-      value: '#F1F2F4'
     0:
-      value: '#FFFFFF'
-  gray:
+      value: '#FBF5FF'
+    50:
+      value: '#F5EAFC'
     100:
-      value: '#E3E4E8'
+      value: '#EEDBFB'
     200:
-      value: '#D5D6DD'
+      value: '#E2C9F4'
     300:
-      value: '#B7B9C5'
+      value: '#D4ADF0'
     400:
-      value: '#9D9FAF'
+      value: '#BF80ED'
     500:
-      value: '#8C8FA1'
+      value: '#A14BDD'
     600:
-      value: '#686B7F'
+      value: '#912fd6'
+    700:
+      value: '#8325C6'
+    800:
+      value: '#671D9B'
+    900:
+      value: '#4B1570'
+    950:
+      value: '#2E0C45'
+  yellow:
+    0:
+      value: '#FCFEF0'
+    50:
+      value: '#F9FDD3'
+    100:
+      value: '#F7FFAF'
+    200:
+      value: '#F3FC88'
+    300:
+      value: '#E2F160'
+    400:
+      value: '#D8EB33'
+    500:
+      value: '#E6FD1A'
+    600:
+      value: '#BACA00'
+    700:
+      value: '#94A300'
+    800:
+      value: '#7A8202'
+    900:
+      value: '#62680F'
+    950:
+      value: '#393D06'
+  gray:
+    0:
+      value: '#FCFCFC'
+    50:
+      value: '#F7F7F8'
+    100:
+      value: '#E8E9EE'
+    200:
+      value: '#D6D8DC'
+    300:
+      value: '#BCBDC3'
+    400:
+      value: '#A1A3AB'
+    500:
+      value: '#868893'
+    600:
+      value: '#6C6E7A'
     700:
       value: '#515362'
     800:
-      value: '#3B3C48'
+      value: '#373841'
     900:
-      value: '#2E2F38'
-  black:
-    100:
-      value: '#282828'
-    200:
-      value: '#212121'
-    300:
+      value: '#26272E'
+    950:
       value: '#191919'
-    400:
-      value: '#121212'
+  white:
     0:
+      value: '#FFFFFF0d'
+    50:
+      value: '#FFFFFF1a'
+    100:
+      value: '#FFFFFF26'
+    200:
+      value: '#FFFFFF33'
+    300:
+      value: '#FFFFFF4d'
+    400:
+      value: '#FFFFFF66'
+    500:
+      value: '#FFFFFF80'
+    600:
+      value: '#FFFFFF99'
+    700:
+      value: '#FFFFFFb3'
+    800:
+      value: '#FFFFFFcc'
+    900:
+      value: '#FFFFFFe6'
+    950:
+      value: '#FFFFFF'
+  black:
+    0:
+      value: '#0000000d'
+    50:
+      value: '#0000001a'
+    100:
+      value: '#00000026'
+    200:
+      value: '#00000033'
+    300:
+      value: '#0000004d'
+    400:
+      value: '#00000066'
+    500:
+      value: '#00000080'
+    600:
+      value: '#00000099'
+    700:
+      value: '#000000b3'
+    800:
+      value: '#000000cc'
+    900:
+      value: '#000000e6'
+    950:
       value: '#000000'
   system:
     green:
+      0:
+        value: '#EEFDF7'
+      50:
+        value: '#DAFCEE'
       100:
-        value: '#E5FFF4'
-        dark: '#F2FDF8'
+        value: '#C3FDE5'
       200:
         value: '#94FFD0'
-        dark: '#D9F9EB'
       300:
         value: '#42FFAD'
-        dark: '#99F0CA'
       400:
         value: '#00F087'
-        dark: '#40E39C'
       500:
         value: '#00CC73'
-        dark: '#00DA7B'
       600:
         value: '#00A85F'
-        dark: '#00B969'
       700:
         value: '#00854B'
-        dark: '#00A45C'
       800:
         value: '#006B3C'
-        dark: '#008E50'
       900:
         value: '#00522E'
-        dark: '#007844'
+      950:
+        value: '#003A21'
     red:
+      0:
+        value: '#FFF5F3'
+      50:
+        value: '#FFE7E4'
       100:
-        value: '#FCE8E8'
-        dark: '#FEF5F5'
+        value: '#FDD4CE'
       200:
-        value: '#F7BBBB'
-        dark: '#FCE2E2'
+        value: '#F7BCB3'
       300:
-        value: '#F18888'
-        dark: '#F6B1B1'
+        value: '#F48D7F'
       400:
-        value: '#EB5656'
-        dark: '#EE6C6C'
+        value: '#F74C3A'
       500:
-        value: '#E52424'
-        dark: '#E83B3B'
+        value: '#E52618'
       600:
-        value: '#C41717'
-        dark: '#C73333'
+        value: '#C41A01'
       700:
-        value: '#9B1212'
-        dark: '#AE2C2C'
+        value: '#9B1403'
       800:
-        value: '#720D0D'
-        dark: '#972626'
+        value: '#720E06'
       900:
-        value: '#490808'
-        dark: '#802020'
+        value: '#490904'
+      950:
+        value: '#370403'
     yellow:
+      0:
+        value: '#FFFCF2'
+      50:
+        value: '#FEF6DB'
       100:
-        value: '#FCF6E3'
-        dark: '#FEFCF5'
+        value: '#FEF1C6'
       200:
-        value: '#F8E6AF'
-        dark: '#FCF6E2'
+        value: '#FDE59E'
       300:
-        value: '#F3D67C'
-        dark: '#F8E7B3'
+        value: '#F5D672'
       400:
         value: '#EEC649'
-        dark: '#F2D270'
       500:
         value: '#EBBA23'
-        dark: '#EEC340'
       600:
         value: '#D7A613'
-        dark: '#CAA636'
       700:
-        value: '#A88210'
-        dark: '#A98A2D'
+        value: '#A37D03'
       800:
-        value: '#795D0B'
-        dark: '#9B7F2A'
+        value: '#795605'
       900:
-        value: '#4B3B07'
-        dark: '#836B23'
+        value: '#52370A'
+      950:
+        value: '#3D2B10'
   gradient:
     yellow-cyan:
-      value: 'linear-gradient(126.73deg, { color.yellow.500.value } -38.66%, { color.cyan.500.value } 83.73%)'
+      value: 'linear-gradient(126.73deg, { color.yellow.500.value } -38.66%, { color.cyan.400.value } 83.73%)'
     cyan-blue:
-      value: 'linear-gradient(136.11deg, { color.cyan.500.value } 22.68%, { color.blue.500.value } 127.6%)'
+      value: 'linear-gradient(136.11deg, { color.cyan.400.value } 22.68%, { color.blue.600.value } 127.6%)'
     cyan-purple:
-      value: 'linear-gradient(41.76deg, { color.purple.500.value } -17.05%, { color.cyan.500.value } 147.06%)'
+      value: 'linear-gradient(41.76deg, { color.purple.600.value } -17.05%, { color.cyan.400.value } 147.06%)'
     purple-blue:
-      value: 'linear-gradient(131.04deg, { color.purple.500.value } -15.82%, { color.blue.500.value } 118.85%)'
+      value: 'linear-gradient(131.04deg, { color.purple.600.value } -15.82%, { color.blue.600.value } 118.85%)'
     pink-purple:
-      value: 'linear-gradient(39.47deg, { color.purple.500.value } -17.19%, { color.pink.500.value } 148.9%)'
+      value: 'linear-gradient(39.47deg, { color.purple.600.value } -17.19%, { color.pink.500.value } 148.9%)'

@@ -3,12 +3,12 @@
 :root,
 [data-theme='default'] {
   --lp-component-modal-color-bg-overlay: rgb(40 40 40 / 0.5);
-  --lp-component-modal-color-bg-content: var(--lp-color-white-0);
+  --lp-component-modal-color-bg-content: var(--lp-color-white-950);
 }
 
 [data-theme='dark'] {
   --lp-component-modal-color-bg-overlay: rgb(25 25 25 / 0.75);
-  --lp-component-modal-color-bg-content: var(--lp-color-black-200);
+  --lp-component-modal-color-bg-content: var(--lp-color-gray-950);
 }
 
 :global(.has-overlay) {

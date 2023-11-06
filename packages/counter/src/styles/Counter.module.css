@@ -6,7 +6,7 @@
   padding: 2px 8px;
   border-radius: 0.625rem;
   color: var(--lp-color-text-ui-secondary);
-  border: 1px solid var(--lp-color-blue-500);
+  border: 1px solid var(--lp-color-blue-600);
   min-width: 1.25rem;
   vertical-align: middle;
 }

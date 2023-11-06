@@ -10,8 +10,8 @@
   --lp-component-toggle-color-background-on: var(--lp-color-system-green-700);
   --lp-component-toggle-color-text: var(--lp-color-text-ui-primary-base);
   --lp-component-toggle-color-text-disabled: var(--lp-color-gray-500);
-  --lp-component-toggle-color-text-disabled-on: var(--lp-color-white-0);
-  --lp-component-toggle-color-text-on: var(--lp-color-white-0);
+  --lp-component-toggle-color-text-disabled-on: var(--lp-color-white-950);
+  --lp-component-toggle-color-text-on: var(--lp-color-white-950);
   --lp-component-toggle-height: 1.5rem; /* 24px */
   --lp-component-toggle-transition-timing-function: ease-in-out;
   --lp-component-toggle-transition-duration: var(--lp-duration-100);
@@ -160,7 +160,7 @@
   left: 0;
   width: var(--lp-component-toggle-pin-size);
   height: var(--lp-component-toggle-pin-size);
-  background-color: var(--lp-color-white-0);
+  background-color: var(--lp-color-white-950);
   border-radius: 50%;
   box-shadow: var(--lp-component-toggle-pin-box-shadow);
   transform: var(--lp-component-toggle-pin-transform);

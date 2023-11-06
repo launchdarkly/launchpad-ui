@@ -26,15 +26,15 @@
   /* Remaining Legacy Tokens */
   --Button-border-default: 1px solid transparent;
   --Button-box-shadow-default-active: none;
-  --Button-color-boxShadow-1-default-active: var(--lp-color-white-0);
+  --Button-color-boxShadow-1-default-active: var(--lp-color-white-950);
   --Button-color-boxShadow-2-default-active: hsl(231.5 100% 62.5% / 0.1);
   --Button-color-boxShadow-1-default-withIcon-focus: var(--lp-color-shadow-interactive-focus);
   --Button-color-boxShadow-2-default-withIcon-focus: hsl(231.5 100% 62.5% / 0.1);
   --Button-box-shadow-withIcon-focus: 0 0 0 1px
       var(--Button-color-boxShadow-1-default-withIcon-focus),
     0 0 0 4px var(--Button-color-boxShadow-2-default-withIcon-focus);
-  --Button-color-text-destructive-focus: var(--lp-color-white-0);
-  --Button-color-background-disabled-withIcon: var(--lp-color-white-0);
+  --Button-color-text-destructive-focus: var(--lp-color-white-950);
+  --Button-color-background-disabled-withIcon: var(--lp-color-white-950);
   --Button-color-border-disabled-withIcon: transparent;
 
   /* End Remaining Legacy Tokens */
@@ -172,8 +172,8 @@
   --Button-icon-color-fill-disabled-active: var(--lp-color-fill-interactive-disabled);
 
   /* SEARCH BAR CLEAR BUTTON ICON */
-  --Button-icon-clear-color-fill: var(--lp-color-blue-600);
-  --Button-icon-clear-color-text: var(--lp-color-blue-600);
+  --Button-icon-clear-color-fill: var(--lp-color-blue-700);
+  --Button-icon-clear-color-text: var(--lp-color-blue-700);
 
   /* ------- PRIMARY FLAIR ------- */
   --Button-color-border-primary-flair: var(--lp-color-border-interactive-primary-flair-base);
