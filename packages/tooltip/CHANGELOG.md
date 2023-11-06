@@ -23,6 +23,13 @@
   - @launchpad-ui/tokens@0.9.0-alpha.0
   - @launchpad-ui/popover@0.11.1-alpha.0
 
+## 0.8.3
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @launchpad-ui/popover@0.11.3
+
 ## 0.8.2
 
 ### Patch Changes

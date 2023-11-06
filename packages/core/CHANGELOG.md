@@ -116,6 +116,75 @@
   - @launchpad-ui/toggle@0.7.1-alpha.0
   - @launchpad-ui/tooltip@0.8.1-alpha.0
 
+## 0.47.4
+
+### Patch Changes
+
+- [#1070](https://github.com/launchdarkly/launchpad-ui/pull/1070) [`bb8eed2f`](https://github.com/launchdarkly/launchpad-ui/commit/bb8eed2ff3fc04495109a44041e6591e0e8696d6) Thanks [@matthewferry](https://github.com/matthewferry)! - Add diamond icons
+
+- Updated dependencies []:
+  - @launchpad-ui/alert@0.8.4
+  - @launchpad-ui/avatar@0.6.4
+  - @launchpad-ui/banner@0.10.4
+  - @launchpad-ui/button@0.11.4
+  - @launchpad-ui/chip@0.9.4
+  - @launchpad-ui/clipboard@0.11.4
+  - @launchpad-ui/collapsible@0.1.35
+  - @launchpad-ui/drawer@0.5.4
+  - @launchpad-ui/dropdown@0.6.78
+  - @launchpad-ui/filter@0.6.4
+  - @launchpad-ui/form@0.10.4
+  - @launchpad-ui/inline-edit@0.2.4
+  - @launchpad-ui/menu@0.12.4
+  - @launchpad-ui/modal@0.17.4
+  - @launchpad-ui/navigation@0.12.4
+  - @launchpad-ui/pagination@0.4.4
+  - @launchpad-ui/select@0.4.4
+  - @launchpad-ui/snackbar@0.4.4
+  - @launchpad-ui/tag@0.3.4
+  - @launchpad-ui/toast@0.3.4
+  - @launchpad-ui/split-button@0.9.4
+  - @launchpad-ui/card@0.2.4
+
+## 0.47.3
+
+### Patch Changes
+
+- [#1063](https://github.com/launchdarkly/launchpad-ui/pull/1063) [`77903b21`](https://github.com/launchdarkly/launchpad-ui/commit/77903b21a8a714b27ec68e6d972f5897747c5d17) Thanks [@matthewferry](https://github.com/matthewferry)! - Feat: add org settings icons and minor updates to people and gear icons
+
+- [#1052](https://github.com/launchdarkly/launchpad-ui/pull/1052) [`d4d424c9`](https://github.com/launchdarkly/launchpad-ui/commit/d4d424c99a5aafb5937dd9f9ae71693e4cf076f6) Thanks [@renovate](https://github.com/apps/renovate)! - Update dependencies
+
+- Updated dependencies [[`d4d424c9`](https://github.com/launchdarkly/launchpad-ui/commit/d4d424c99a5aafb5937dd9f9ae71693e4cf076f6)]:
+  - @launchpad-ui/inline-edit@0.2.3
+  - @launchpad-ui/data-table@0.2.3
+  - @launchpad-ui/focus-trap@0.1.13
+  - @launchpad-ui/navigation@0.12.3
+  - @launchpad-ui/pagination@0.4.3
+  - @launchpad-ui/dropdown@0.6.77
+  - @launchpad-ui/tab-list@0.5.3
+  - @launchpad-ui/drawer@0.5.3
+  - @launchpad-ui/filter@0.6.3
+  - @launchpad-ui/select@0.4.3
+  - @launchpad-ui/toggle@0.7.3
+  - @launchpad-ui/modal@0.17.3
+  - @launchpad-ui/form@0.10.3
+  - @launchpad-ui/menu@0.12.3
+  - @launchpad-ui/tag@0.3.3
+  - @launchpad-ui/alert@0.8.3
+  - @launchpad-ui/avatar@0.6.3
+  - @launchpad-ui/banner@0.10.3
+  - @launchpad-ui/button@0.11.3
+  - @launchpad-ui/chip@0.9.3
+  - @launchpad-ui/clipboard@0.11.3
+  - @launchpad-ui/collapsible@0.1.34
+  - @launchpad-ui/snackbar@0.4.3
+  - @launchpad-ui/toast@0.3.3
+  - @launchpad-ui/popover@0.11.3
+  - @launchpad-ui/split-button@0.9.3
+  - @launchpad-ui/card@0.2.3
+  - @launchpad-ui/progress-bubbles@0.7.3
+  - @launchpad-ui/tooltip@0.8.3
+
 ## 0.47.2
 
 ### Patch Changes

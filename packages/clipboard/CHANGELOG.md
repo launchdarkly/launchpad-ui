@@ -25,6 +25,21 @@
   - @launchpad-ui/icons@0.14.1-alpha.0
   - @launchpad-ui/tooltip@0.8.1-alpha.0
 
+## 0.11.4
+
+### Patch Changes
+
+- Updated dependencies [[`bb8eed2f`](https://github.com/launchdarkly/launchpad-ui/commit/bb8eed2ff3fc04495109a44041e6591e0e8696d6)]:
+  - @launchpad-ui/icons@0.14.4
+
+## 0.11.3
+
+### Patch Changes
+
+- Updated dependencies [[`77903b21`](https://github.com/launchdarkly/launchpad-ui/commit/77903b21a8a714b27ec68e6d972f5897747c5d17)]:
+  - @launchpad-ui/icons@0.14.3
+  - @launchpad-ui/tooltip@0.8.3
+
 ## 0.11.2
 
 ### Patch Changes

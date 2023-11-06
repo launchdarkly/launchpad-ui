@@ -15,3 +15,4 @@ playwright-report/
 *.log
 .nyc_output
 .idea
+.nx/cache

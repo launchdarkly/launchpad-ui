@@ -18,6 +18,25 @@
   - @launchpad-ui/button@0.11.1-alpha.0
   - @launchpad-ui/icons@0.14.1-alpha.0
 
+## 0.17.4
+
+### Patch Changes
+
+- Updated dependencies [[`bb8eed2f`](https://github.com/launchdarkly/launchpad-ui/commit/bb8eed2ff3fc04495109a44041e6591e0e8696d6)]:
+  - @launchpad-ui/icons@0.14.4
+  - @launchpad-ui/button@0.11.4
+
+## 0.17.3
+
+### Patch Changes
+
+- [#1052](https://github.com/launchdarkly/launchpad-ui/pull/1052) [`d4d424c9`](https://github.com/launchdarkly/launchpad-ui/commit/d4d424c99a5aafb5937dd9f9ae71693e4cf076f6) Thanks [@renovate](https://github.com/apps/renovate)! - Update dependencies
+
+- Updated dependencies [[`77903b21`](https://github.com/launchdarkly/launchpad-ui/commit/77903b21a8a714b27ec68e6d972f5897747c5d17), [`d4d424c9`](https://github.com/launchdarkly/launchpad-ui/commit/d4d424c99a5aafb5937dd9f9ae71693e4cf076f6)]:
+  - @launchpad-ui/icons@0.14.3
+  - @launchpad-ui/focus-trap@0.1.13
+  - @launchpad-ui/button@0.11.3
+
 ## 0.17.2
 
 ### Patch Changes

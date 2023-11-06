@@ -1,6 +1,6 @@
 {
   "name": "@launchpad-ui/modal",
-  "version": "0.17.3-alpha.0",
+  "version": "0.17.4",
   "status": "beta",
   "publishConfig": {
     "access": "public"
@@ -37,8 +37,8 @@
     "@launchpad-ui/icons": "workspace:~",
     "@launchpad-ui/portal": "workspace:~",
     "@launchpad-ui/tokens": "workspace:~",
-    "@react-aria/interactions": "3.19.0",
-    "@react-aria/overlays": "3.18.0",
+    "@react-aria/interactions": "3.19.1",
+    "@react-aria/overlays": "3.18.1",
     "classix": "2.1.17",
     "framer-motion": "10.16.1"
   },
