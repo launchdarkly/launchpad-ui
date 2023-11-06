@@ -1,5 +1,55 @@
 # @launchpad-ui/core
 
+## 0.47.5-alpha.0
+
+### Patch Changes
+
+- [#1030](https://github.com/launchdarkly/launchpad-ui/pull/1030) [`e48d0df6`](https://github.com/launchdarkly/launchpad-ui/commit/e48d0df69e5085bc31c6378fe2eaad581a5eb687) Thanks [@Niznikr](https://github.com/Niznikr)! - [Button, SplitButton] Convert to css modules
+
+- [#1068](https://github.com/launchdarkly/launchpad-ui/pull/1068) [`941d2d60`](https://github.com/launchdarkly/launchpad-ui/commit/941d2d60c96f095e7043852f02bc6b5f157edb3b) Thanks [@matthewferry](https://github.com/matthewferry)! - Feat: remap colors from 9 to 12 steps
+
+- [#1046](https://github.com/launchdarkly/launchpad-ui/pull/1046) [`36b47d4c`](https://github.com/launchdarkly/launchpad-ui/commit/36b47d4c0dad59849db23d0e112e3b4b36b53f5e) Thanks [@Niznikr](https://github.com/Niznikr)! - [Menu] Use CSS modules
+
+- [#1043](https://github.com/launchdarkly/launchpad-ui/pull/1043) [`6cc6da28`](https://github.com/launchdarkly/launchpad-ui/commit/6cc6da28f200f101664d8d6730cbc83893917290) Thanks [@matthewferry](https://github.com/matthewferry)! - Refresh menu styles
+
+- Updated dependencies [[`e48d0df6`](https://github.com/launchdarkly/launchpad-ui/commit/e48d0df69e5085bc31c6378fe2eaad581a5eb687), [`36b47d4c`](https://github.com/launchdarkly/launchpad-ui/commit/36b47d4c0dad59849db23d0e112e3b4b36b53f5e), [`6cc6da28`](https://github.com/launchdarkly/launchpad-ui/commit/6cc6da28f200f101664d8d6730cbc83893917290)]:
+  - @launchpad-ui/split-button@0.9.5-alpha.0
+  - @launchpad-ui/inline-edit@0.2.5-alpha.0
+  - @launchpad-ui/snackbar@0.4.5-alpha.0
+  - @launchpad-ui/button@0.11.5-alpha.0
+  - @launchpad-ui/alert@0.8.5-alpha.0
+  - @launchpad-ui/form@0.10.5-alpha.0
+  - @launchpad-ui/menu@0.12.5-alpha.0
+  - @launchpad-ui/popover@0.11.3-alpha.1
+  - @launchpad-ui/avatar@0.6.5-alpha.0
+  - @launchpad-ui/banner@0.10.5-alpha.0
+  - @launchpad-ui/card@0.2.5-alpha.0
+  - @launchpad-ui/chip@0.9.5-alpha.0
+  - @launchpad-ui/clipboard@0.11.5-alpha.0
+  - @launchpad-ui/collapsible@0.1.36-alpha.0
+  - @launchpad-ui/columns@0.1.9-alpha.1
+  - @launchpad-ui/counter@0.4.3-alpha.1
+  - @launchpad-ui/data-table@0.2.3-alpha.1
+  - @launchpad-ui/drawer@0.5.5-alpha.0
+  - @launchpad-ui/dropdown@0.6.79-alpha.0
+  - @launchpad-ui/filter@0.6.5-alpha.0
+  - @launchpad-ui/inline@0.1.9-alpha.1
+  - @launchpad-ui/markdown@0.5.3-alpha.1
+  - @launchpad-ui/modal@0.17.5-alpha.0
+  - @launchpad-ui/navigation@0.12.5-alpha.0
+  - @launchpad-ui/pagination@0.4.5-alpha.0
+  - @launchpad-ui/progress@0.5.34-alpha.1
+  - @launchpad-ui/progress-bubbles@0.7.3-alpha.1
+  - @launchpad-ui/select@0.4.5-alpha.0
+  - @launchpad-ui/slider@0.5.3-alpha.1
+  - @launchpad-ui/stack@0.1.9-alpha.1
+  - @launchpad-ui/tab-list@0.5.3-alpha.1
+  - @launchpad-ui/table@0.6.3-alpha.1
+  - @launchpad-ui/tag@0.3.5-alpha.0
+  - @launchpad-ui/toast@0.3.5-alpha.0
+  - @launchpad-ui/toggle@0.7.3-alpha.1
+  - @launchpad-ui/tooltip@0.8.3-alpha.1
+
 ## 0.47.3-alpha.0
 
 ### Patch Changes
