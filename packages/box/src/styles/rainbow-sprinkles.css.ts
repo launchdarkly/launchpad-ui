@@ -19,10 +19,6 @@ const gradients = flatten<typeof gradient, Record<GradientKeys, string>>(gradien
 const responsiveProperties = defineProperties({
   dynamicProperties: {
     // Define pre-determined values, which will be autosuggested
-    color: colors,
-    background: gradients,
-    backgroundColor: colors,
-    borderColor: colors,
     gap: vars.spacing,
     padding: vars.spacing,
     paddingLeft: vars.spacing,
@@ -61,7 +57,6 @@ const responsiveProperties = defineProperties({
     display: ['block', 'flex', 'inline-block', 'inline-flex'],
   },
   shorthands: {
-    bg: ['backgroundColor'],
     p: ['padding'],
     pl: ['paddingLeft'],
     pr: ['paddingRight'],
@@ -83,6 +78,23 @@ const responsiveProperties = defineProperties({
   },
 });
 
-export const rainbowSprinkles = createRainbowSprinkles(responsiveProperties);
+const colorProperties = defineProperties({
+  conditions: {
+    lightMode: { selector: '[data-theme="default"] &' },
+    darkMode: { selector: '[data-theme="dark"] &' },
+  },
+  defaultCondition: 'lightMode',
+  dynamicProperties: {
+    color: colors,
+    background: gradients,
+    backgroundColor: colors,
+    borderColor: colors,
+  },
+  shorthands: {
+    bg: ['backgroundColor'],
+  },
+});
+
+export const rainbowSprinkles = createRainbowSprinkles(responsiveProperties, colorProperties);
 
 export type Sprinkles = Parameters<typeof rainbowSprinkles>[0];
