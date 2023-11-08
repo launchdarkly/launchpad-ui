@@ -12,11 +12,27 @@ type FlattenObjectKeys<T extends Record<string, unknown>, Key = keyof T> = Key e
 
 type GlobalKeys = FlattenObjectKeys<typeof global>;
 type GradientKeys = FlattenObjectKeys<typeof gradient>;
+type BackgroundKeys = FlattenObjectKeys<typeof bg>;
+type BorderKeys = FlattenObjectKeys<typeof border>;
+type FillKeys = FlattenObjectKeys<typeof fill>;
+type TextKeys = FlattenObjectKeys<typeof text>;
 
 const colors = flatten<typeof global, Record<GlobalKeys, string>>(global);
 const gradients = flatten<typeof gradient, Record<GradientKeys, string>>(gradient);
+const backgrounds = flatten<typeof bg, Record<BackgroundKeys, string>>(bg);
+const borders = flatten<typeof border, Record<BorderKeys, string>>(border);
+const fills = flatten<typeof fill, Record<FillKeys, string>>(fill);
+const texts = flatten<typeof text, Record<TextKeys, string>>(text);
 
 const responsiveProperties = defineProperties({
+  conditions: {
+    default: {},
+    mobile: { '@media': '(--mobile)' },
+    tablet: { '@media': '(--tablet)' },
+    desktop: { '@media': '(--desktop)' },
+    wide: { '@media': '(--wide)' },
+  },
+  defaultCondition: 'default',
   dynamicProperties: {
     // Define pre-determined values, which will be autosuggested
     gap: vars.spacing,
@@ -85,10 +101,11 @@ const colorProperties = defineProperties({
   },
   defaultCondition: 'lightMode',
   dynamicProperties: {
-    color: colors,
+    color: { ...colors, ...texts },
     background: gradients,
-    backgroundColor: colors,
-    borderColor: colors,
+    backgroundColor: { ...colors, ...backgrounds },
+    borderColor: { ...colors, ...borders },
+    fill: { ...colors, ...fills },
   },
   shorthands: {
     bg: ['backgroundColor'],

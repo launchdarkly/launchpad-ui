@@ -4,6 +4,7 @@ import React from 'react';
 
 import '../packages/tokens/dist/index.css';
 import '../packages/tokens/dist/themes.css';
+import '../packages/tokens/dist/media-queries.css';
 
 export const parameters = {
   actions: { argTypesRegex: '^on.*' },
