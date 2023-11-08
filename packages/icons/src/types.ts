@@ -77,6 +77,8 @@ const icons = [
   'device-mobile',
   'device-server',
   'devices',
+  'diamond',
+  'diamond-outline',
   'document-question',
   'door-exit',
   'download',
