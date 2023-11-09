@@ -96,7 +96,7 @@ const responsiveProperties = defineProperties({
 
 const colorProperties = defineProperties({
   conditions: {
-    lightMode: { selector: '[data-theme="default"] &' },
+    lightMode: { selector: ':root &, [data-theme="default"] &' },
     darkMode: { selector: '[data-theme="dark"] &' },
   },
   defaultCondition: 'lightMode',

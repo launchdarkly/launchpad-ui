@@ -6,6 +6,7 @@
       "@launchpad-ui/alert": ["./packages/alert/src"],
       "@launchpad-ui/avatar": ["./packages/avatar/src"],
       "@launchpad-ui/banner": ["./packages/banner/src"],
+      "@launchpad-ui/box": ["./packages/box/src"],
       "@launchpad-ui/button": ["./packages/button/src"],
       "@launchpad-ui/card": ["./packages/card/src"],
       "@launchpad-ui/chip": ["./packages/chip/src"],
