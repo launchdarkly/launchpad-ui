@@ -51,7 +51,7 @@ const useMultiSelectState = <T extends object>(props: MultiSelectProps<T>): Mult
 
   // Revert input value and close menu
   const revert = () => {
-    if (props.allowsCustomValue && selectedKeys.size === 0) {
+    if (props.allowsCustomValue && selectedKeys instanceof Set && selectedKeys.size === 0) {
       commitCustomValue();
     } else {
       commitSelection();

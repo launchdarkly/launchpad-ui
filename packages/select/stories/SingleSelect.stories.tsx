@@ -1,5 +1,5 @@
+import type { Key } from '@react-types/shared';
 import type { StoryObj } from '@storybook/react';
-import type { Key } from 'react';
 
 import { Chip } from '@launchpad-ui/chip';
 import { useMemo, useState } from 'react';

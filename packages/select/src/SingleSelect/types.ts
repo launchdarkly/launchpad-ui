@@ -1,4 +1,4 @@
-import type { Key } from 'react';
+import type { Key } from '@react-types/shared';
 
 type SingleSelection = {
   /** The currently selected keys in the collection (controlled). */

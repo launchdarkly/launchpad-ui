@@ -76,11 +76,11 @@ const Menu = <T extends number | string>(props: MenuProps<T>) => {
   const focusManager = useFocusManager();
 
   const handleArrowDown = useCallback(() => {
-    focusManager.focusNext({ wrap: true });
+    focusManager?.focusNext({ wrap: true });
   }, [focusManager]);
 
   const handleArrowUp = useCallback(() => {
-    focusManager.focusPrevious({ wrap: true });
+    focusManager?.focusPrevious({ wrap: true });
   }, [focusManager]);
 
   const reduceItems = useMemo(() => {
@@ -186,7 +186,7 @@ const Menu = <T extends number | string>(props: MenuProps<T>) => {
 type ItemVirtualizerProps<T> = Omit<ControlledMenuProps<T>, 'children'> & {
   items: ReactElement[] | null;
   searchElement?: ReactElement | null;
-  focusManager: FocusManager;
+  focusManager?: FocusManager;
 };
 
 const ItemVirtualizer = <T extends number | string>(props: ItemVirtualizerProps<T>) => {
@@ -260,11 +260,11 @@ const ItemVirtualizer = <T extends number | string>(props: ItemVirtualizerProps<
       switch (direction) {
         case 'next':
           rowVirtualizer.scrollToIndex(nextIndex);
-          focusManager.focusNext();
+          focusManager?.focusNext();
           break;
         case 'previous':
           rowVirtualizer.scrollToIndex(nextIndex);
-          focusManager.focusPrevious();
+          focusManager?.focusPrevious();
           break;
         default:
           break;
