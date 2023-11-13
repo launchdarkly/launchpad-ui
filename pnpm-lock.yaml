@@ -129,8 +129,8 @@ importers:
         specifier: ^0.34.1
         version: 0.34.6(vitest@0.34.6)
       chromatic:
-        specifier: ^7.5.4
-        version: 7.6.0
+        specifier: ^8.0.0
+        version: 8.0.0
       concurrently:
         specifier: ^8.2.0
         version: 8.2.2
@@ -9539,8 +9539,8 @@ packages:
     engines: {node: '>=10'}
     dev: true
 
-  /chromatic@7.6.0:
-    resolution: {integrity: sha512-4MwlX8EDMyfQKf1NXTdUhJ2b0EYueByaVrF75pdFaOzHH7n3OhzknmQYbUSegLiFhKvHuvM8nZvf9SCajO+Cow==}
+  /chromatic@8.0.0:
+    resolution: {integrity: sha512-K3wKac6XrbyZ+Hyt1Y3j5PIdvq/RA1LvVObhJ2VUuy6utTeEKoBIIIU7U0C6ZPj67WVk70+FjpDCv619SowcdQ==}
     hasBin: true
     dev: true
 
