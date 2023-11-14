@@ -6,13 +6,13 @@ import { Box } from '../src';
 
 describe('Box', () => {
   it('renders', () => {
-    render(<Box bg="$black.100">I am a box</Box>);
+    render(<Box backgroundColor="$black.100">I am a box</Box>);
     expect(screen.getByText('I am a box')).toBeVisible();
   });
 
   it('supports asChild prop', () => {
     render(
-      <Box bg="$black.100" asChild>
+      <Box backgroundColor="$black.100" asChild>
         <Button>I am a button</Button>
       </Box>
     );

@@ -19,7 +19,7 @@ type Story = StoryObj<typeof Box>;
 
 export const Example: Story = {
   args: {
-    bg: { lightMode: '$black.100', darkMode: '$gray.700' },
+    backgroundColor: { default: '$black.100', dark: '$gray.700' },
     color: '$white.0',
     padding: { desktop: '$400', tablet: '$300', mobile: '$200' },
     width: { desktop: '$400', tablet: '$256', mobile: '$192' },

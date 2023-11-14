@@ -11,7 +11,12 @@ type BoxProps = Sprinkles & {
   'data-test-id'?: string;
 };
 
-const Box = ({ asChild, children, 'data-test-id': testId = 'box', ...props }: BoxProps) => {
+const Box = ({
+  asChild,
+  children,
+  'data-test-id': testId = asChild ? undefined : 'box',
+  ...props
+}: BoxProps) => {
   const Component = asChild ? Slot : 'div';
   const { className, style, otherProps } = rainbowSprinkles(props);
 

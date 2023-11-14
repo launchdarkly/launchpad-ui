@@ -373,17 +373,17 @@ importers:
         specifier: workspace:~
         version: link:../vars
       '@radix-ui/react-slot':
-        specifier: ^1.0.2
+        specifier: 1.0.2
         version: 1.0.2(@types/react@18.2.33)(react@18.2.0)
       '@vanilla-extract/css':
         specifier: ^1.14.0
         version: 1.14.0
       '@vanilla-extract/dynamic':
-        specifier: ^2.0.3
-        version: 2.0.3
+        specifier: 2.1.0
+        version: 2.1.0
       rainbow-sprinkles:
-        specifier: ^0.17.0
-        version: 0.17.0(@vanilla-extract/css@1.14.0)(@vanilla-extract/dynamic@2.0.3)
+        specifier: 0.17.0
+        version: 0.17.0(@vanilla-extract/css@1.14.0)(@vanilla-extract/dynamic@2.1.0)
     devDependencies:
       flat:
         specifier: ^6.0.1
@@ -404,7 +404,7 @@ importers:
         specifier: workspace:~
         version: link:../tokens
       '@radix-ui/react-slot':
-        specifier: ^1.0.0
+        specifier: 1.0.2
         version: 1.0.2(@types/react@18.2.33)(react@18.2.0)
       classix:
         specifier: 2.1.17
@@ -467,7 +467,7 @@ importers:
         specifier: workspace:~
         version: link:../tooltip
       '@radix-ui/react-slot':
-        specifier: ^1.0.0
+        specifier: 1.0.2
         version: 1.0.2(@types/react@18.2.33)(react@18.2.0)
       '@react-aria/live-announcer':
         specifier: 3.3.1
@@ -1001,7 +1001,7 @@ importers:
         specifier: workspace:~
         version: link:../tooltip
       '@radix-ui/react-slot':
-        specifier: ^1.0.0
+        specifier: 1.0.2
         version: 1.0.2(@types/react@18.2.33)(react@18.2.0)
       '@react-aria/focus':
         specifier: 3.15.0
@@ -8487,8 +8487,8 @@ packages:
       modern-ahocorasick: 1.0.1
       outdent: 0.8.0
 
-  /@vanilla-extract/dynamic@2.0.3:
-    resolution: {integrity: sha512-Rglfw2gXAYiBzAQ4jgUG7rBgE2c88e/zcG27ZVoIqMHVq56wf2C1katGMm1yFMNBgzqM7oBNYzz4YOMzznydkg==}
+  /@vanilla-extract/dynamic@2.1.0:
+    resolution: {integrity: sha512-8zl0IgBYRtgD1h+56Zu13wHTiMTJSVEa4F7RWX9vTB/5Xe2KtjoiqApy/szHPVFA56c+ex6A4GpCQjT1bKXbYw==}
     dependencies:
       '@vanilla-extract/private': 1.0.3
     dev: false
@@ -16004,14 +16004,14 @@ packages:
     engines: {node: '>=10'}
     dev: true
 
-  /rainbow-sprinkles@0.17.0(@vanilla-extract/css@1.14.0)(@vanilla-extract/dynamic@2.0.3):
+  /rainbow-sprinkles@0.17.0(@vanilla-extract/css@1.14.0)(@vanilla-extract/dynamic@2.1.0):
     resolution: {integrity: sha512-ok3NrylQ0szvJtuBYaB/w09L9zOvvqcSQrvycT2A5XJxQNvwvkeADvTqQWGOQ3b6MkO8UmYccBPt8g8vVvxM9A==}
     peerDependencies:
       '@vanilla-extract/css': ^1
       '@vanilla-extract/dynamic': ^2
     dependencies:
       '@vanilla-extract/css': 1.14.0
-      '@vanilla-extract/dynamic': 2.0.3
+      '@vanilla-extract/dynamic': 2.1.0
     dev: false
 
   /ramda@0.29.0:
@@ -17317,7 +17317,7 @@ packages:
     resolution: {integrity: sha512-EH+yRj6h3GAe/fRiyaoO2F9l9Tgg50AOFhaszyfov9v6ayXJ1IkSHwTxd7lB48FmOeSGDPLjatjO11fJpmarkQ==}
     engines: {node: ^14.13.1 || >=16.0.0}
     peerDependencies:
-      stylelint: ^15.10.0 || 15
+      stylelint: ^15.10.0
     dependencies:
       stylelint: 15.11.0(typescript@5.2.2)
     dev: true
@@ -17326,7 +17326,7 @@ packages:
     resolution: {integrity: sha512-u0VSZnVyW9VSryBG2LSO+OQTjN7zF9XJaAJRX/4EwkmU0R2jYwmBSN10acqZisDitS0CLiEiGjX7+Hrq8TAhfQ==}
     engines: {node: ^14.13.1 || >=16.0.0}
     peerDependencies:
-      stylelint: ^15.10.0 || 15
+      stylelint: ^15.10.0
     dependencies:
       stylelint: 15.11.0(typescript@5.2.2)
       stylelint-config-recommended: 13.0.0(stylelint@15.11.0)
@@ -17336,7 +17336,7 @@ packages:
     resolution: {integrity: sha512-nz6Dok3IdcXDjJXevLwkdc9bgXkv/jJ9FmBWrPWVVHX+iF402zywsNQymTg8VH45Hpf/Sg/BD6Kbm+qOBlmhag==}
     engines: {node: ^16 || ^18 || ^20}
     peerDependencies:
-      stylelint: 10 - 15 || 15
+      stylelint: 10 - 15
     dependencies:
       postcss-value-parser: 4.2.0
       resolve: 1.22.8

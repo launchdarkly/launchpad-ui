@@ -72,46 +72,26 @@ const responsiveProperties = defineProperties({
     // Build out utility classes that don't use CSS variables
     display: ['block', 'flex', 'inline-block', 'inline-flex'],
   },
-  shorthands: {
-    p: ['padding'],
-    pl: ['paddingLeft'],
-    pr: ['paddingRight'],
-    pt: ['paddingTop'],
-    pb: ['paddingBottom'],
-    paddingX: ['paddingLeft', 'paddingRight'],
-    paddingY: ['paddingTop', 'paddingBottom'],
-    px: ['paddingLeft', 'paddingRight'],
-    py: ['paddingTop', 'paddingBottom'],
-    m: ['margin'],
-    mr: ['marginRight'],
-    ml: ['marginLeft'],
-    mt: ['marginTop'],
-    mb: ['marginBottom'],
-    marginX: ['marginLeft', 'marginRight'],
-    marginY: ['marginTop', 'marginBottom'],
-    mx: ['marginLeft', 'marginRight'],
-    my: ['marginTop', 'marginBottom'],
-  },
+  shorthands: {},
 });
 
-const colorProperties = defineProperties({
+const themedProperties = defineProperties({
   conditions: {
-    lightMode: { selector: ':root &, [data-theme="default"] &' },
-    darkMode: { selector: '[data-theme="dark"] &' },
+    default: { selector: ':root &, [data-theme="default"] &' },
+    dark: { selector: '[data-theme="dark"] &' },
   },
-  defaultCondition: 'lightMode',
+  defaultCondition: 'default',
   dynamicProperties: {
     color: { ...colors, ...texts },
     background: gradients,
     backgroundColor: { ...colors, ...backgrounds },
     borderColor: { ...colors, ...borders },
     fill: { ...colors, ...fills },
+    borderStyle: true,
   },
-  shorthands: {
-    bg: ['backgroundColor'],
-  },
+  shorthands: {},
 });
 
-export const rainbowSprinkles = createRainbowSprinkles(responsiveProperties, colorProperties);
+export const rainbowSprinkles = createRainbowSprinkles(responsiveProperties, themedProperties);
 
 export type Sprinkles = Parameters<typeof rainbowSprinkles>[0];

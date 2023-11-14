@@ -122,8 +122,7 @@
   "pnpm": {
     "peerDependencyRules": {
       "allowedVersions": {
-        "react": "18",
-        "stylelint": "15"
+        "react": "18"
       }
     }
   },
