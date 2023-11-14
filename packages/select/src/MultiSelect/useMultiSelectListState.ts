@@ -1,13 +1,19 @@
 import type { ListState } from '@react-stately/list';
-import type { CollectionBase, MultipleSelection, Node, SelectionMode } from '@react-types/shared';
-import type { Key } from 'react';
+import type {
+  CollectionBase,
+  Key,
+  MultipleSelection,
+  Node,
+  Selection,
+  SelectionMode,
+} from '@react-types/shared';
 
 import { useListState } from '@react-stately/list';
 
 type UseMultiSelectListProps<T> = CollectionBase<T> & MultipleSelection;
 
 type MultiSelectListState<T> = ListState<T> & {
-  selectedKeys: Set<Key>;
+  selectedKeys: Selection;
   setSelectedKeys(keys: Iterable<Key>): void;
   selectedItems: (Node<T> | null)[] | null;
   selectionMode: SelectionMode;

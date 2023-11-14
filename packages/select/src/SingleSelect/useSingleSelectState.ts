@@ -2,7 +2,6 @@ import type { SingleSelectProps } from './SingleSelect';
 import type { SharedSelectState } from '../types';
 import type { SingleSelectListState } from '@react-stately/list';
 import type { SelectionMode } from '@react-types/shared';
-import type { Key } from 'react';
 
 import { useSingleSelectListState } from '@react-stately/list';
 import { useMenuTriggerState } from '@react-stately/menu';
@@ -48,7 +47,7 @@ const useSingleSelectState = <T extends object>(
 
   const commitCustomValue = () => {
     // lastSelectedKey.current = null;
-    setSelectedKey(null as unknown as Key);
+    setSelectedKey(null);
     triggerState.close();
   };
 

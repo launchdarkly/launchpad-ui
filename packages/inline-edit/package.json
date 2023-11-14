@@ -32,10 +32,10 @@
     "test": "vitest run --coverage"
   },
   "dependencies": {
-    "@react-aria/button": "3.8.4",
-    "@react-aria/focus": "3.14.3",
-    "@react-aria/interactions": "3.19.1",
-    "@react-aria/utils": "3.21.1",
+    "@react-aria/button": "3.9.0",
+    "@react-aria/focus": "3.15.0",
+    "@react-aria/interactions": "3.20.0",
+    "@react-aria/utils": "3.22.0",
     "@launchpad-ui/button": "workspace:~",
     "@launchpad-ui/form": "workspace:~",
     "@launchpad-ui/icons": "workspace:~",
@@ -45,7 +45,7 @@
     "classix": "2.1.17"
   },
   "peerDependencies": {
-    "@vanilla-extract/css": "^1.12.0",
+    "@vanilla-extract/css": "^1.14.0",
     "react": "18.2.0",
     "react-dom": "18.2.0"
   },
