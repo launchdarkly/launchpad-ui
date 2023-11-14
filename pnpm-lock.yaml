@@ -23,6 +23,9 @@ importers:
       '@commitlint/config-conventional':
         specifier: ^18.4.0
         version: 18.4.0
+      '@csstools/postcss-global-data':
+        specifier: ^2.1.0
+        version: 2.1.0(postcss@8.4.31)
       '@etchteam/storybook-addon-status':
         specifier: ^4.2.4
         version: 4.2.4(@types/react-dom@18.2.14)(@types/react@18.2.33)
@@ -188,6 +191,9 @@ importers:
       postcss:
         specifier: ^8.4.31
         version: 8.4.31
+      postcss-custom-media:
+        specifier: ^10.0.2
+        version: 10.0.2(postcss@8.4.31)
       postcss-import:
         specifier: ^15.1.0
         version: 15.1.0(postcss@8.4.31)
@@ -361,6 +367,34 @@ importers:
         specifier: 18.2.0
         version: 18.2.0(react@18.2.0)
 
+  packages/box:
+    dependencies:
+      '@launchpad-ui/vars':
+        specifier: workspace:~
+        version: link:../vars
+      '@radix-ui/react-slot':
+        specifier: 1.0.2
+        version: 1.0.2(@types/react@18.2.33)(react@18.2.0)
+      '@vanilla-extract/css':
+        specifier: ^1.14.0
+        version: 1.14.0
+      '@vanilla-extract/dynamic':
+        specifier: 2.1.0
+        version: 2.1.0
+      rainbow-sprinkles:
+        specifier: 0.17.0
+        version: 0.17.0(@vanilla-extract/css@1.14.0)(@vanilla-extract/dynamic@2.1.0)
+    devDependencies:
+      flat:
+        specifier: ^6.0.1
+        version: 6.0.1
+      react:
+        specifier: 18.2.0
+        version: 18.2.0
+      react-dom:
+        specifier: 18.2.0
+        version: 18.2.0(react@18.2.0)
+
   packages/button:
     dependencies:
       '@launchpad-ui/icons':
@@ -370,7 +404,7 @@ importers:
         specifier: workspace:~
         version: link:../tokens
       '@radix-ui/react-slot':
-        specifier: ^1.0.0
+        specifier: 1.0.2
         version: 1.0.2(@types/react@18.2.33)(react@18.2.0)
       classix:
         specifier: 2.1.17
@@ -433,7 +467,7 @@ importers:
         specifier: workspace:~
         version: link:../tooltip
       '@radix-ui/react-slot':
-        specifier: ^1.0.0
+        specifier: 1.0.2
         version: 1.0.2(@types/react@18.2.33)(react@18.2.0)
       '@react-aria/live-announcer':
         specifier: 3.3.1
@@ -501,6 +535,9 @@ importers:
       '@launchpad-ui/banner':
         specifier: workspace:~
         version: link:../banner
+      '@launchpad-ui/box':
+        specifier: workspace:~
+        version: link:../box
       '@launchpad-ui/button':
         specifier: workspace:~
         version: link:../button
@@ -669,11 +706,11 @@ importers:
         specifier: 3.2.3
         version: 3.2.3(react@18.2.0)
       '@vanilla-extract/css':
-        specifier: ^1.12.0
-        version: 1.13.0
+        specifier: ^1.14.0
+        version: 1.14.0
       '@vanilla-extract/recipes':
         specifier: ^0.5.0
-        version: 0.5.0(@vanilla-extract/css@1.13.0)
+        version: 0.5.0(@vanilla-extract/css@1.14.0)
       classix:
         specifier: 2.1.17
         version: 2.1.17
@@ -905,11 +942,11 @@ importers:
         specifier: 3.22.0
         version: 3.22.0(react@18.2.0)
       '@vanilla-extract/css':
-        specifier: ^1.12.0
-        version: 1.13.0
+        specifier: ^1.14.0
+        version: 1.14.0
       '@vanilla-extract/recipes':
         specifier: ^0.5.0
-        version: 0.5.0(@vanilla-extract/css@1.13.0)
+        version: 0.5.0(@vanilla-extract/css@1.14.0)
       classix:
         specifier: 2.1.17
         version: 2.1.17
@@ -964,7 +1001,7 @@ importers:
         specifier: workspace:~
         version: link:../tooltip
       '@radix-ui/react-slot':
-        specifier: ^1.0.0
+        specifier: 1.0.2
         version: 1.0.2(@types/react@18.2.33)(react@18.2.0)
       '@react-aria/focus':
         specifier: 3.15.0
@@ -3512,6 +3549,15 @@ packages:
       '@csstools/css-color-parser': 1.4.0(@csstools/css-parser-algorithms@2.3.2)(@csstools/css-tokenizer@2.2.1)
       '@csstools/css-parser-algorithms': 2.3.2(@csstools/css-tokenizer@2.2.1)
       '@csstools/css-tokenizer': 2.2.1
+      postcss: 8.4.31
+    dev: true
+
+  /@csstools/postcss-global-data@2.1.0(postcss@8.4.31):
+    resolution: {integrity: sha512-n8SoAaapXATQ/fI8c0GVM+VNfvpNo6fN/79GGTjqatEG8bZNh72b2r+KKLVMcQHvRKjDlXxzurxnf6L5nsxDGA==}
+    engines: {node: ^14 || ^16 || >=18}
+    peerDependencies:
+      postcss: ^8.4
+    dependencies:
       postcss: 8.4.31
     dev: true
 
@@ -8426,22 +8472,6 @@ packages:
       - supports-color
     dev: true
 
-  /@vanilla-extract/css@1.13.0:
-    resolution: {integrity: sha512-JFFBXhnJrPlGqHBabagXqo5ghXw9mtV270ycIGyLDZG8NAK5eRwAYkMowAxuzK7wZSm67GnETWYB7b0AUmyttg==}
-    dependencies:
-      '@emotion/hash': 0.9.1
-      '@vanilla-extract/private': 1.0.3
-      ahocorasick: 1.0.2
-      chalk: 4.1.2
-      css-what: 6.1.0
-      cssesc: 3.0.0
-      csstype: 3.1.2
-      deep-object-diff: 1.1.9
-      deepmerge: 4.3.1
-      media-query-parser: 2.0.2
-      outdent: 0.8.0
-    dev: false
-
   /@vanilla-extract/css@1.14.0:
     resolution: {integrity: sha512-rYfm7JciWZ8PFzBM/HDiE2GLnKI3xJ6/vdmVJ5BSgcCZ5CxRlM9Cjqclni9lGzF3eMOijnUhCd/KV8TOzyzbMA==}
     dependencies:
@@ -8456,7 +8486,12 @@ packages:
       media-query-parser: 2.0.2
       modern-ahocorasick: 1.0.1
       outdent: 0.8.0
-    dev: true
+
+  /@vanilla-extract/dynamic@2.1.0:
+    resolution: {integrity: sha512-8zl0IgBYRtgD1h+56Zu13wHTiMTJSVEa4F7RWX9vTB/5Xe2KtjoiqApy/szHPVFA56c+ex6A4GpCQjT1bKXbYw==}
+    dependencies:
+      '@vanilla-extract/private': 1.0.3
+    dev: false
 
   /@vanilla-extract/integration@6.2.2(@types/node@20.9.0):
     resolution: {integrity: sha512-gV3qPFjFap1+IrPeuFy+tEZOq7l7ifJf1ik/kluDWhPr1ffsFG9puq1/jjJ4rod1BIC79Q5ZWPNvBInHyxfCew==}
@@ -8488,12 +8523,12 @@ packages:
   /@vanilla-extract/private@1.0.3:
     resolution: {integrity: sha512-17kVyLq3ePTKOkveHxXuIJZtGYs+cSoev7BlP+Lf4916qfDhk/HBjvlYDe8egrea7LNPHKwSZJK/bzZC+Q6AwQ==}
 
-  /@vanilla-extract/recipes@0.5.0(@vanilla-extract/css@1.13.0):
+  /@vanilla-extract/recipes@0.5.0(@vanilla-extract/css@1.14.0):
     resolution: {integrity: sha512-NfdZ8XyqCDG2RsO3FmYPALDMKg5045dRD97NbBb0Fog3LMDVXZxYgDOct5FAWob8U6W4GbhVpRZt1X9hNnH6fA==}
     peerDependencies:
       '@vanilla-extract/css': ^1.0.0
     dependencies:
-      '@vanilla-extract/css': 1.13.0
+      '@vanilla-extract/css': 1.14.0
     dev: false
 
   /@vanilla-extract/vite-plugin@3.9.0(@types/node@20.9.0)(vite@4.5.0):
@@ -8776,10 +8811,6 @@ packages:
       clean-stack: 4.2.0
       indent-string: 5.0.0
     dev: true
-
-  /ahocorasick@1.0.2:
-    resolution: {integrity: sha512-hCOfMzbFx5IDutmWLAt6MZwOUjIfSM9G9FyVxytmE4Rs/5YDPWQrD/+IR1w+FweD9H2oOZEnv36TmkjhNURBVA==}
-    dev: false
 
   /ajv@6.12.6:
     resolution: {integrity: sha512-j3fVLgvTo527anyYyJOGTYJbG+vnnQYvE0m5mmkc1TK+nxAppkCLMIL0aZ4dblVCNoGShhm+kzE4ZUykBoMg4g==}
@@ -11674,6 +11705,12 @@ packages:
     hasBin: true
     dev: true
 
+  /flat@6.0.1:
+    resolution: {integrity: sha512-/3FfIa8mbrg3xE7+wAhWeV+bd7L2Mof+xtZb5dRDKZ+wDvYJK4WDYeIOuOhre5Yv5aQObZrlbRmk3RTSiuQBtw==}
+    engines: {node: '>=18'}
+    hasBin: true
+    dev: true
+
   /flatted@3.2.9:
     resolution: {integrity: sha512-36yxDn5H7OFZQla0/jFJmbIKTdZAQHngCedGxiMmpNfEZM0sdEeT+WczLQrjK6D7o2aiyLYDnkw0R3JK0Qv1RQ==}
     dev: true
@@ -14428,7 +14465,6 @@ packages:
 
   /modern-ahocorasick@1.0.1:
     resolution: {integrity: sha512-yoe+JbhTClckZ67b2itRtistFKf8yPYelHLc7e5xAwtNAXxM6wJTUx2C7QeVSJFDzKT7bCIFyBVybPMKvmB9AA==}
-    dev: true
 
   /morgan@1.10.0:
     resolution: {integrity: sha512-AbegBVI4sh6El+1gNwvD5YIck7nSA36weD7xvIxG4in80j/UoK8AEGaWnnz8v1GxonMCltmlNs5ZKbGvl9b1XQ==}
@@ -15968,6 +16004,16 @@ packages:
     engines: {node: '>=10'}
     dev: true
 
+  /rainbow-sprinkles@0.17.0(@vanilla-extract/css@1.14.0)(@vanilla-extract/dynamic@2.1.0):
+    resolution: {integrity: sha512-ok3NrylQ0szvJtuBYaB/w09L9zOvvqcSQrvycT2A5XJxQNvwvkeADvTqQWGOQ3b6MkO8UmYccBPt8g8vVvxM9A==}
+    peerDependencies:
+      '@vanilla-extract/css': ^1
+      '@vanilla-extract/dynamic': ^2
+    dependencies:
+      '@vanilla-extract/css': 1.14.0
+      '@vanilla-extract/dynamic': 2.1.0
+    dev: false
+
   /ramda@0.29.0:
     resolution: {integrity: sha512-BBea6L67bYLtdbOqfp8f58fPMqEwx0doL+pAi8TZyp2YWz8R9G8z9x75CZI8W+ftqhFHCpEX2cRnUUXK130iKA==}
     dev: true
@@ -17271,7 +17317,7 @@ packages:
     resolution: {integrity: sha512-EH+yRj6h3GAe/fRiyaoO2F9l9Tgg50AOFhaszyfov9v6ayXJ1IkSHwTxd7lB48FmOeSGDPLjatjO11fJpmarkQ==}
     engines: {node: ^14.13.1 || >=16.0.0}
     peerDependencies:
-      stylelint: ^15.10.0 || 15
+      stylelint: ^15.10.0
     dependencies:
       stylelint: 15.11.0(typescript@5.2.2)
     dev: true
@@ -17280,7 +17326,7 @@ packages:
     resolution: {integrity: sha512-u0VSZnVyW9VSryBG2LSO+OQTjN7zF9XJaAJRX/4EwkmU0R2jYwmBSN10acqZisDitS0CLiEiGjX7+Hrq8TAhfQ==}
     engines: {node: ^14.13.1 || >=16.0.0}
     peerDependencies:
-      stylelint: ^15.10.0 || 15
+      stylelint: ^15.10.0
     dependencies:
       stylelint: 15.11.0(typescript@5.2.2)
       stylelint-config-recommended: 13.0.0(stylelint@15.11.0)
@@ -17290,7 +17336,7 @@ packages:
     resolution: {integrity: sha512-nz6Dok3IdcXDjJXevLwkdc9bgXkv/jJ9FmBWrPWVVHX+iF402zywsNQymTg8VH45Hpf/Sg/BD6Kbm+qOBlmhag==}
     engines: {node: ^16 || ^18 || ^20}
     peerDependencies:
-      stylelint: 10 - 15 || 15
+      stylelint: 10 - 15
     dependencies:
       postcss-value-parser: 4.2.0
       resolve: 1.22.8

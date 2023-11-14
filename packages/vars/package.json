@@ -32,7 +32,7 @@
     "@launchpad-ui/tokens": "workspace:~"
   },
   "peerDependencies": {
-    "@vanilla-extract/css": "^1.12.0"
+    "@vanilla-extract/css": "^1.14.0"
   },
   "peerDependenciesMeta": {
     "@vanilla-extract/css": {

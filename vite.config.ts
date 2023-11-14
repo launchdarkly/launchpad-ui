@@ -71,6 +71,7 @@ export default defineConfig({
         ...Object.keys(packageJSON.peerDependencies || {}),
         'react/jsx-runtime',
         '@vanilla-extract/recipes/createRuntimeFn',
+        'rainbow-sprinkles/createRuntimeFn',
       ],
     },
     sourcemap: true,

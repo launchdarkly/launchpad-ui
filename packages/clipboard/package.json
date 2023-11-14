@@ -36,7 +36,7 @@
     "@launchpad-ui/tokens": "workspace:~",
     "@launchpad-ui/tooltip": "workspace:~",
     "@react-aria/live-announcer": "3.3.1",
-    "@radix-ui/react-slot": "^1.0.0",
+    "@radix-ui/react-slot": "1.0.2",
     "classix": "2.1.17"
   },
   "peerDependencies": {

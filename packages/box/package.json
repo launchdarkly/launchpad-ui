@@ -1,11 +1,11 @@
 {
-  "name": "@launchpad-ui/button",
-  "version": "0.11.4",
-  "status": "beta",
+  "name": "@launchpad-ui/box",
+  "version": "0.0.1",
+  "status": "alpha",
   "publishConfig": {
     "access": "public"
   },
-  "description": "An element that triggers an action based on user interaction.",
+  "description": "A polymorphic React component with design token sprinkles.",
   "files": [
     "dist"
   ],
@@ -28,20 +28,22 @@
   "scripts": {
     "build": "vite build -c ../../vite.config.ts && tsc --project tsconfig.build.json",
     "clean": "rm -rf dist",
-    "lint": "eslint '**/*.{ts,tsx,js}' && stylelint '**/*.css' --ignore-path ../../.stylelintignore",
+    "lint": "eslint '**/*.{ts,tsx,js}'",
     "test": "vitest run --coverage"
   },
   "dependencies": {
-    "@launchpad-ui/icons": "workspace:~",
-    "@launchpad-ui/tokens": "workspace:~",
+    "@launchpad-ui/vars": "workspace:~",
     "@radix-ui/react-slot": "1.0.2",
-    "classix": "2.1.17"
+    "@vanilla-extract/dynamic": "2.1.0",
+    "rainbow-sprinkles": "0.17.0"
   },
   "peerDependencies": {
+    "@vanilla-extract/css": "^1.14.0",
     "react": "18.2.0",
     "react-dom": "18.2.0"
   },
   "devDependencies": {
+    "flat": "^6.0.1",
     "react": "18.2.0",
     "react-dom": "18.2.0"
   }

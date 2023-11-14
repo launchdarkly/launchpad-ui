@@ -37,7 +37,7 @@
     "@launchpad-ui/popover": "workspace:~",
     "@launchpad-ui/tokens": "workspace:~",
     "@launchpad-ui/tooltip": "workspace:~",
-    "@radix-ui/react-slot": "^1.0.0",
+    "@radix-ui/react-slot": "1.0.2",
     "@react-aria/focus": "3.15.0",
     "@react-aria/separator": "3.3.8",
     "classix": "2.1.17",
