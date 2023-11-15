@@ -24,6 +24,14 @@ const borders = flatten<typeof border, Record<BorderKeys, string>>(border);
 const fills = flatten<typeof fill, Record<FillKeys, string>>(fill);
 const texts = flatten<typeof text, Record<TextKeys, string>>(text);
 
+const colorProperties = {
+  color: { ...colors, ...texts },
+  background: gradients,
+  backgroundColor: { ...colors, ...backgrounds },
+  borderColor: { ...colors, ...borders },
+  fill: { ...colors, ...fills },
+};
+
 const responsiveProperties = defineProperties({
   conditions: {
     default: {},
@@ -94,13 +102,26 @@ const themedProperties = defineProperties({
   },
   defaultCondition: 'default',
   dynamicProperties: {
-    color: { ...colors, ...texts },
-    background: gradients,
-    backgroundColor: { ...colors, ...backgrounds },
-    borderColor: { ...colors, ...borders },
-    fill: { ...colors, ...fills },
+    ...colorProperties,
     borderStyle: true,
     boxShadow: true,
+  },
+  shorthands: {},
+});
+
+const interactiveProperties = defineProperties({
+  conditions: {
+    default: {},
+    active: { selector: '&:active' },
+    hover: { selector: '&:hover' },
+    focusVisible: { selector: '&:focus-visible' },
+  },
+  defaultCondition: 'default',
+  dynamicProperties: {
+    ...colorProperties,
+    borderStyle: true,
+    boxShadow: true,
+    textDecoration: true,
   },
   shorthands: {},
 });
@@ -110,6 +131,8 @@ const unconditionalProperties = defineProperties({
     cursor: true,
     opacity: true,
     textTransform: true,
+    transform: true,
+    transition: true,
     transitionProperty: true,
     transitionDelay: true,
     transitionDuration: vars.duration,
@@ -126,6 +149,7 @@ const unconditionalProperties = defineProperties({
 export const rainbowSprinkles = createRainbowSprinkles(
   responsiveProperties,
   themedProperties,
+  interactiveProperties,
   unconditionalProperties
 );
 

@@ -2,4 +2,4 @@
 '@launchpad-ui/box': patch
 ---
 
-Add CSS props
+Add CSS props and interactive conditions
