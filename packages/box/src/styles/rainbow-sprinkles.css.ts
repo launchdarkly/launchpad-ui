@@ -45,6 +45,7 @@ const responsiveProperties = defineProperties({
     left: vars.spacing,
     right: vars.spacing,
     bottom: vars.spacing,
+    inset: vars.spacing,
     margin: vars.spacing,
     marginTop: vars.spacing,
     marginLeft: vars.spacing,
@@ -56,17 +57,28 @@ const responsiveProperties = defineProperties({
     fontSize: vars.font.size,
     fontWeight: vars.font.weight,
     lineHeight: vars['line-height'],
-    zIndex: vars['z-index'],
     width: vars.size,
     height: vars.size,
+    maxHeight: vars.size,
+    maxWidth: vars.size,
+    minHeight: vars.size,
+    minWidth: vars.size,
     // Will work with any CSS value
     display: true,
     textAlign: true,
+    flex: true,
+    flexBasis: true,
     flexDirection: true,
+    flexGrow: true,
+    flexShrink: true,
+    flexWrap: true,
     justifyContent: true,
+    justifySelf: true,
     alignItems: true,
+    alignSelf: true,
     position: true,
     verticalAlign: true,
+    overflow: true,
   },
   staticProperties: {
     // Build out utility classes that don't use CSS variables
@@ -88,10 +100,33 @@ const themedProperties = defineProperties({
     borderColor: { ...colors, ...borders },
     fill: { ...colors, ...fills },
     borderStyle: true,
+    boxShadow: true,
   },
   shorthands: {},
 });
 
-export const rainbowSprinkles = createRainbowSprinkles(responsiveProperties, themedProperties);
+const unconditionalProperties = defineProperties({
+  dynamicProperties: {
+    cursor: true,
+    opacity: true,
+    textTransform: true,
+    transitionProperty: true,
+    transitionDelay: true,
+    transitionDuration: vars.duration,
+    transitionTimingFunction: true,
+    visibility: true,
+    whiteSpace: true,
+    wordBreak: true,
+    wordWrap: true,
+    zIndex: vars['z-index'],
+  },
+  shorthands: {},
+});
+
+export const rainbowSprinkles = createRainbowSprinkles(
+  responsiveProperties,
+  themedProperties,
+  unconditionalProperties
+);
 
 export type Sprinkles = Parameters<typeof rainbowSprinkles>[0];
