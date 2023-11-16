@@ -1,6 +1,6 @@
 import type { DummyItem } from './constants';
-import type { MultiSelectTriggerProps } from '../MultiSelect';
-import type { SingleSelectTriggerProps } from '../SingleSelect';
+import type { MultiSelectTriggerProps } from '../src/MultiSelect';
+import type { SingleSelectTriggerProps } from '../src/SingleSelect';
 
 import { IconButton } from '@launchpad-ui/button';
 import { Icon } from '@launchpad-ui/icons';

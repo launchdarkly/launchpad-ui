@@ -6,6 +6,8 @@ import { vanillaExtractPlugin } from '@vanilla-extract/vite-plugin';
 import react from '@vitejs/plugin-react-swc';
 import { PluginPure } from 'rollup-plugin-pure';
 import { defineConfig } from 'vite';
+// eslint-disable-next-line import/no-unresolved
+import { configDefaults } from 'vitest/config';
 
 import tsconfig from './tsconfig.json';
 import { cssImport } from './vite-plugin-css';
@@ -57,6 +59,7 @@ export default defineConfig({
       branches: 70,
       statements: 90,
       include: ['**/src/**'],
+      exclude: [...configDefaults.exclude, '**/types.ts'],
     },
   },
   build: {

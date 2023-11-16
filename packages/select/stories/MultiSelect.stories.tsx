@@ -4,9 +4,9 @@ import type { StoryObj } from '@storybook/react';
 import { Chip } from '@launchpad-ui/chip';
 import { useState } from 'react';
 
+import { FRUIT } from '../__tests__/constants';
+import { CustomMultiSelectTrigger } from '../__tests__/examples';
 import { MultiSelectTrigger, MultiSelect, SelectItem } from '../src';
-import { FRUIT } from '../src/__tests__/constants';
-import { CustomMultiSelectTrigger } from '../src/__tests__/examples';
 
 export default {
   component: MultiSelect,
