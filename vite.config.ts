@@ -56,7 +56,7 @@ export default defineConfig({
       functions: 70,
       branches: 70,
       statements: 90,
-      exclude: ['**/*.spec.tsx', '**/test/'],
+      include: ['**/src/**'],
     },
   },
   build: {
