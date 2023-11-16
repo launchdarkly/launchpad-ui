@@ -1,7 +1,7 @@
 import { it, expect, describe } from 'vitest';
 
-import { SelectItem, SingleSelect, SingleSelectTrigger } from '..';
-import { render, screen, userEvent } from '../../../../test/utils';
+import { render, screen, userEvent } from '../../../test/utils';
+import { SelectItem, SingleSelect, SingleSelectTrigger } from '../src';
 
 import { FRUIT } from './constants';
 import { CustomSingleSelectTrigger } from './examples';
