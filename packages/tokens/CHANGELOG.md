@@ -1,5 +1,17 @@
 # @launchpad-ui/tokens
 
+## 0.9.0
+
+### Minor Changes
+
+- [#1084](https://github.com/launchdarkly/launchpad-ui/pull/1084) [`997f65fb`](https://github.com/launchdarkly/launchpad-ui/commit/997f65fbc84233ae0a55141ae88671382ba22f81) Thanks [@Niznikr](https://github.com/Niznikr)! - Feat: remap colors from 9 to 12 steps
+
+### Patch Changes
+
+- [#1084](https://github.com/launchdarkly/launchpad-ui/pull/1084) [`997f65fb`](https://github.com/launchdarkly/launchpad-ui/commit/997f65fbc84233ae0a55141ae88671382ba22f81) Thanks [@Niznikr](https://github.com/Niznikr)! - Add typography tokens
+
+- [#1084](https://github.com/launchdarkly/launchpad-ui/pull/1084) [`997f65fb`](https://github.com/launchdarkly/launchpad-ui/commit/997f65fbc84233ae0a55141ae88671382ba22f81) Thanks [@Niznikr](https://github.com/Niznikr)! - Keep CSS color keywords
+
 ## 0.9.0-alpha.2
 
 ### Minor Changes
