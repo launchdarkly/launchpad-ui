@@ -1,5 +1,5 @@
 ---
-'@launchpad-ui/tokens': patch
+'@launchpad-ui/tokens': minor
 '@launchpad-ui/core': patch
 ---
 

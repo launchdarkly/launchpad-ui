@@ -103,7 +103,7 @@ const myStyleDictionary = StyleDictionary.extend({
           options: {
             outputReferences: true,
           },
-          filter: (token) => token.attributes?.category !== 'color',
+          filter: (token) => token.filePath !== 'src/color-aliases.yaml',
         },
         {
           destination: 'themes.css',
@@ -111,7 +111,8 @@ const myStyleDictionary = StyleDictionary.extend({
           options: {
             outputReferences: true,
           },
-          filter: (token) => token.attributes?.category === 'color',
+          filter: (token) =>
+            token.filePath === 'src/color-aliases.yaml' && token.attributes?.category === 'color',
         },
       ],
     },
