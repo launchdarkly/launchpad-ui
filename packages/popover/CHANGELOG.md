@@ -1,5 +1,14 @@
 # @launchpad-ui/popover
 
+## 0.11.5
+
+### Patch Changes
+
+- [#1084](https://github.com/launchdarkly/launchpad-ui/pull/1084) [`997f65fb`](https://github.com/launchdarkly/launchpad-ui/commit/997f65fbc84233ae0a55141ae88671382ba22f81) Thanks [@Niznikr](https://github.com/Niznikr)! - Refresh menu styles
+
+- Updated dependencies [[`997f65fb`](https://github.com/launchdarkly/launchpad-ui/commit/997f65fbc84233ae0a55141ae88671382ba22f81), [`997f65fb`](https://github.com/launchdarkly/launchpad-ui/commit/997f65fbc84233ae0a55141ae88671382ba22f81), [`997f65fb`](https://github.com/launchdarkly/launchpad-ui/commit/997f65fbc84233ae0a55141ae88671382ba22f81)]:
+  - @launchpad-ui/tokens@0.9.0
+
 ## 0.11.3-alpha.1
 
 ### Patch Changes

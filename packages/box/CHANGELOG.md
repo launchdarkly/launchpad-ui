@@ -1,5 +1,14 @@
 # @launchpad-ui/box
 
+## 0.1.1
+
+### Patch Changes
+
+- [#1081](https://github.com/launchdarkly/launchpad-ui/pull/1081) [`17cec674`](https://github.com/launchdarkly/launchpad-ui/commit/17cec6744d21ecd9dea131a9d87f332b40014751) Thanks [@Niznikr](https://github.com/Niznikr)! - Add CSS props and interactive conditions
+
+- Updated dependencies []:
+  - @launchpad-ui/vars@0.2.7
+
 ## 0.1.0
 
 ### Minor Changes
