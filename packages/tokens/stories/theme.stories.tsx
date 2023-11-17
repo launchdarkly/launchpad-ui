@@ -45,8 +45,8 @@ export const NestedThemes = {
                 <h1>Inverted theme</h1>
 
                 <p>
-                  By adding <code>data-theme-inverted</code> anywhere in the application tree, you
-                  can make the children will adopt that theme. <Chip>Chip</Chip>
+                  By adding <code>data-theme=&quot;dark&quot;</code> to a container, you can make
+                  the children adopt that theme. <Chip>Chip</Chip>
                 </p>
 
                 <Button>Click me</Button>

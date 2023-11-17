@@ -20,7 +20,7 @@
 
 .Progress-track {
   fill: none;
-  stroke: var(--lp-color-white-100);
+  stroke: var(--lp-color-gray-50);
 }
 
 .Progress-head {

@@ -1,12 +1,12 @@
 :root {
-  --lp-component-alert-notification-flair-strong-color-text: var(--lp-color-white-0);
-  --lp-component-alert-notification-flair-strong-color-fill: var(--lp-color-white-0);
-  --lp-component-alert-notification-flair-strong-button-color-bg: var(--lp-color-white-0);
+  --lp-component-alert-notification-flair-strong-color-text: var(--lp-color-white-950);
+  --lp-component-alert-notification-flair-strong-color-fill: var(--lp-color-white-950);
+  --lp-component-alert-notification-flair-strong-button-color-bg: var(--lp-color-white-950);
   --lp-component-alert-notification-flair-strong-button-color-bg-hover: var(--lp-color-gray-100);
   --lp-component-alert-notification-flair-strong-button-color-bg-focus: var(--lp-color-gray-200);
   --lp-component-alert-notification-flair-strong-button-color-bg-active: var(--lp-color-gray-200);
   --lp-component-alert-notification-flair-strong-button-button-color-border: var(
-    --lp-color-white-0
+    --lp-color-white-950
   );
   --lp-component-alert-notification-flair-strong-button-color-text: var(--lp-color-black-300);
   --lp-component-alert-notification-flair-strong-button-color-text-hover: var(--lp-color-black-300);
@@ -41,7 +41,7 @@
   line-height: 1.25;
 }
 
-.Alert :global(.ButtonGroup) {
+.Alert :global([class*='_ButtonGroup_']) {
   margin-top: 0.75rem;
 }
 
@@ -197,7 +197,7 @@
   margin-left: auto;
 }
 
-.Alert-content :global(a:not(.Button)) {
+.Alert-content :global(a:not([class*='_Button_'])) {
   color: var(--lp-color-text-interactive-base);
 
   &:hover {

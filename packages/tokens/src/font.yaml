@@ -4,7 +4,11 @@ font:
       value: inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, Helvetica, Arial, sans-serif
     monospace:
       value: SFMono-Regular, Consolas, Liberation Mono, Menlo, Courier, monospace
+    display:
+      value: Audimat\ 3000 Regulier
   size:
+    0:
+      value: '{ size.10.value }'
     100:
       value: '{ size.12.value }'
     200:
@@ -32,3 +36,5 @@ font:
       value: 600
     bold:
       value: 700
+    extrabold:
+      value: 800

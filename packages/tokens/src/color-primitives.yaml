@@ -1,202 +1,288 @@
 color:
   blue:
+    0:
+      value: '#F5F7FF'
+    50:
+      value: '#E5EBFF'
     100:
-      value: hsl(228, 100%, 98%)
+      value: '#D6DDFF'
     200:
-      value: hsl(231.7, 100%, 94.3%)
+      value: '#C1CAFF'
     300:
-      value: hsl(232.1, 100%, 85.1%)
+      value: '#98AAFF'
     400:
-      value: hsl(231.6, 100%, 72%)
+      value: '#5F7BFF'
     500:
-      value: hsl(231.5, 100%, 62.5%)
+      value: '#3C5EFB'
     600:
-      value: hsl(231.5, 68.2%, 53.1%)
+      value: '#2443FF'
     700:
-      value: hsl(231.6, 59.8%, 46.9%)
+      value: '#2936B5'
     800:
-      value: hsl(231.8, 59.6%, 40.8%)
+      value: '#24318A'
     900:
-      value: hsl(231.4, 60%, 34.3%)
+      value: '#1D2865'
+    950:
+      value: '#111946'
   cyan:
+    0:
+      value: '#e5fbff'
+    50:
+      value: '#c9f4fd'
     100:
-      value: hsl(186.7, 81.8%, 97.8%)
+      value: '#a6efff'
     200:
-      value: hsl(188.9, 87.1%, 93.9%)
+      value: '#7ae9fe'
     300:
-      value: hsl(189.7, 90.2%, 83.9%)
+      value: '#35defa'
     400:
-      value: hsl(190, 89.6%, 69.8%)
+      value: '#00cded'
     500:
-      value: hsl(190.1, 90.2%, 60%)
+      value: '#00b8d7'
     600:
-      value: hsl(190, 62.4%, 51%)
+      value: '#00a0bc'
     700:
-      value: hsl(190.4, 60%, 45.1%)
+      value: '#007d95'
     800:
-      value: hsl(190.1, 59.8%, 39%)
+      value: '#00677b'
     900:
-      value: hsl(190.1, 59.8%, 33.1%)
+      value: '#004f5e'
+    950:
+      value: '#003742'
   pink:
+    0:
+      value: '#FFF5F8'
+    50:
+      value: '#FFE5EC'
     100:
-      value: hsl(342, 100%, 98%)
+      value: '#FFD0DC'
     200:
-      value: hsl(344, 100%, 94.1%)
+      value: '#FFADC2'
     300:
-      value: hsl(344.3, 100%, 84.3%)
+      value: '#FF7599'
     400:
-      value: hsl(344.7, 100%, 70.8%)
+      value: '#FF3D6F'
     500:
-      value: hsl(344.6, 100%, 61%)
+      value: '#FF1451'
     600:
-      value: hsl(345, 69%, 50%)
+      value: '#DC0A40'
     700:
-      value: hsl(344.7, 63.9%, 45.7%)
+      value: '#B8002F'
     800:
-      value: hsl(344.3, 64.4%, 39.6%)
+      value: '#850022'
     900:
-      value: hsl(344.6, 63.7%, 33.5%)
+      value: '#520015'
+    950:
+      value: '#410E1A'
   purple:
+    0:
+      value: '#FBF5FF'
+    50:
+      value: '#F5EAFC'
     100:
-      value: hsl(274.3, 63.6%, 97.8%)
+      value: '#EEDBFB'
     200:
-      value: hsl(274.3, 67.7%, 93.9%)
+      value: '#E2C9F4'
     300:
-      value: hsl(274.7, 68.7%, 83.7%)
+      value: '#D4ADF0'
     400:
-      value: hsl(275.3, 68.2%, 69.2%)
+      value: '#BF80ED'
     500:
-      value: hsl(275.2, 68.4%, 59%)
+      value: '#A14BDD'
     600:
-      value: hsl(275.4, 48%, 50.2%)
+      value: '#912fd6'
     700:
-      value: hsl(275, 47.8%, 44.3%)
+      value: '#8325C6'
     800:
-      value: hsl(275.5, 47.7%, 38.2%)
+      value: '#671D9B'
     900:
-      value: hsl(275.7, 47.9%, 32.4%)
+      value: '#4B1570'
+    950:
+      value: '#2E0C45'
   yellow:
-    100:
-      value: hsl(66, 100%, 98%)
-    200:
-      value: hsl(66, 100%, 94.1%)
-    300:
-      value: hsl(66, 100%, 84.3%)
-    400:
-      value: hsl(66.1, 100%, 76.7%)
-    500:
-      value: hsl(66, 100%, 61%)
-    600:
-      value: hsl(66, 69%, 52%)
-    700:
-      value: hsl(66, 63.9%, 45.7%)
-    800:
-      value: hsl(66, 64.4%, 39.6%)
-    900:
-      value: hsl(66.1, 63.7%, 33.5%)
-  white:
-    100:
-      value: hsl(0, 0%, 97.3%)
-    200:
-      value: hsl(0, 0%, 93.7%)
     0:
-      value: hsl(0, 0%, 100%)
+      value: '#FCFEF0'
+    50:
+      value: '#F9FDD3'
+    100:
+      value: '#F7FFAF'
+    200:
+      value: '#F3FC88'
+    300:
+      value: '#E2F160'
+    400:
+      value: '#D8EB33'
+    500:
+      value: '#E6FD1A'
+    600:
+      value: '#BACA00'
+    700:
+      value: '#94A300'
+    800:
+      value: '#7A8202'
+    900:
+      value: '#62680F'
+    950:
+      value: '#393D06'
   gray:
-    100:
-      value: hsl(0, 0%, 90.2%)
-    200:
-      value: hsl(200, 3.4%, 82.5%)
-    300:
-      value: hsl(210, 3.1%, 74.5%)
-    400:
-      value: hsl(216, 2.9%, 66.5%)
-    500:
-      value: hsl(216, 2.4%, 58.6%)
-    600:
-      value: hsl(225, 1.8%, 45%)
-    700:
-      value: hsl(220, 1.7%, 35.1%)
-    800:
-      value: hsl(270, 1.5%, 25.5%)
-    900:
-      value: hsl(0, 0%, 19%)
-  black:
-    100:
-      value: hsl(0, 0%, 15.7%)
-    200:
-      value: hsl(0, 0%, 12.9%)
-    300:
-      value: hsl(0, 0%, 9.8%)
-    400:
-      value: hsl(0, 0%, 7%)
     0:
-      value: hsl(0, 0%, 0%)
+      value: '#FCFCFC'
+    50:
+      value: '#F7F7F8'
+    100:
+      value: '#E8E9EE'
+    200:
+      value: '#D6D8DC'
+    300:
+      value: '#BCBDC3'
+    400:
+      value: '#A1A3AB'
+    500:
+      value: '#868893'
+    600:
+      value: '#6C6E7A'
+    700:
+      value: '#515362'
+    800:
+      value: '#373841'
+    900:
+      value: '#26272E'
+    950:
+      value: '#191919'
+  white:
+    0:
+      value: '#FFFFFF0d'
+    50:
+      value: '#FFFFFF1a'
+    100:
+      value: '#FFFFFF26'
+    200:
+      value: '#FFFFFF33'
+    300:
+      value: '#FFFFFF4d'
+    400:
+      value: '#FFFFFF66'
+    500:
+      value: '#FFFFFF80'
+    600:
+      value: '#FFFFFF99'
+    700:
+      value: '#FFFFFFb3'
+    800:
+      value: '#FFFFFFcc'
+    900:
+      value: '#FFFFFFe6'
+    950:
+      value: '#FFFFFF'
+  black:
+    0:
+      value: '#0000000d'
+    50:
+      value: '#0000001a'
+    100:
+      value: '#00000026'
+    200:
+      value: '#00000033'
+    300:
+      value: '#0000004d'
+    400:
+      value: '#00000066'
+    500:
+      value: '#00000080'
+    600:
+      value: '#00000099'
+    700:
+      value: '#000000b3'
+    800:
+      value: '#000000cc'
+    900:
+      value: '#000000e6'
+    950:
+      value: '#000000'
   system:
     green:
+      0:
+        value: '#EEFDF7'
+      50:
+        value: '#DAFCEE'
       100:
-        value: hsl(152.7, 73.3%, 97.1%)
+        value: '#C3FDE5'
       200:
-        value: hsl(153.8, 72.7%, 91.4%)
+        value: '#94FFD0'
       300:
-        value: hsl(153.8, 74.4%, 77.1%)
+        value: '#42FFAD'
       400:
-        value: hsl(153.9, 74.4%, 57.1%)
+        value: '#00F087'
       500:
-        value: hsl(153.9, 100%, 42.7%)
+        value: '#00CC73'
       600:
-        value: hsl(154.1, 100%, 36.3%)
+        value: '#00A85F'
       700:
-        value: hsl(153.7, 100%, 32.2%)
+        value: '#00854B'
       800:
-        value: hsl(153.8, 100%, 27.8%)
+        value: '#006B3C'
       900:
-        value: hsl(154, 100%, 23.5%)
+        value: '#00522E'
+      950:
+        value: '#003A21'
     red:
+      0:
+        value: '#FFF5F3'
+      50:
+        value: '#FFE7E4'
       100:
-        value: hsl(0, 81.8%, 97.8%)
+        value: '#FDD4CE'
       200:
-        value: hsl(0, 81.3%, 93.7%)
+        value: '#F7BCB3'
       300:
-        value: hsl(0, 79.3%, 82.9%)
+        value: '#F48D7F'
       400:
-        value: hsl(0, 79.3%, 67.8%)
+        value: '#F74C3A'
       500:
-        value: hsl(0, 79%, 57.1%)
+        value: '#E52618'
       600:
-        value: hsl(0, 59.5%, 49%)
+        value: '#C41A01'
       700:
-        value: hsl(0, 59.6%, 42.7%)
+        value: '#9B1403'
       800:
-        value: hsl(0, 59.8%, 37.1%)
+        value: '#720E06'
       900:
-        value: hsl(0, 60%, 31.4%)
+        value: '#490904'
+      950:
+        value: '#370403'
     yellow:
+      0:
+        value: '#FFFCF2'
+      50:
+        value: '#FEF6DB'
       100:
-        value: hsl(46.7, 81.8%, 97.8%)
+        value: '#FEF1C6'
       200:
-        value: hsl(46.2, 81.3%, 93.7%)
+        value: '#FDE59E'
       300:
-        value: hsl(45.2, 83.1%, 83.7%)
+        value: '#F5D672'
       400:
-        value: hsl(45.2, 83.3%, 69.4%)
+        value: '#EEC649'
       500:
-        value: hsl(45.2, 83.7%, 59.2%)
+        value: '#EBBA23'
       600:
-        value: hsl(45.4, 58.3%, 50.2%)
+        value: '#D7A613'
       700:
-        value: hsl(45, 57.9%, 42%)
+        value: '#A37D03'
       800:
-        value: hsl(45.1, 57.4%, 38.6%)
+        value: '#795605'
       900:
-        value: hsl(45, 57.8%, 32.5%)
+        value: '#52370A'
+      950:
+        value: '#3D2B10'
   gradient:
     yellow-cyan:
-      value: 'linear-gradient(126.73deg, { color.yellow.500.value } -38.66%, { color.cyan.500.value } 83.73%)'
+      value: 'linear-gradient(126.73deg, { color.yellow.500.value } -38.66%, { color.cyan.400.value } 83.73%)'
     cyan-blue:
-      value: 'linear-gradient(136.11deg, { color.cyan.500.value } 22.68%, { color.blue.500.value } 127.6%)'
+      value: 'linear-gradient(136.11deg, { color.cyan.400.value } 22.68%, { color.blue.600.value } 127.6%)'
     cyan-purple:
-      value: 'linear-gradient(41.76deg, { color.purple.500.value } -17.05%, { color.cyan.500.value } 147.06%)'
+      value: 'linear-gradient(41.76deg, { color.purple.600.value } -17.05%, { color.cyan.400.value } 147.06%)'
     purple-blue:
-      value: 'linear-gradient(131.04deg, { color.purple.500.value } -15.82%, { color.blue.500.value } 118.85%)'
+      value: 'linear-gradient(131.04deg, { color.purple.600.value } -15.82%, { color.blue.600.value } 118.85%)'
     pink-purple:
-      value: 'linear-gradient(39.47deg, { color.purple.500.value } -17.19%, { color.pink.500.value } 148.9%)'
+      value: 'linear-gradient(39.47deg, { color.purple.600.value } -17.19%, { color.pink.500.value } 148.9%)'

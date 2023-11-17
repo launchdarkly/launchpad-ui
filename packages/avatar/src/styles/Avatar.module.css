@@ -15,15 +15,15 @@
 
 .Avatar--initials {
   border: none;
-  color: var(--lp-color-white-0);
+  color: var(--lp-color-white-950);
 }
 
 .Avatar--color0 {
-  background-color: var(--lp-color-yellow-800);
+  background-color: var(--lp-color-yellow-900);
 }
 
 .Avatar--color1 {
-  background-color: var(--lp-color-blue-500);
+  background-color: var(--lp-color-blue-600);
 }
 
 .Avatar--color2 {
@@ -31,11 +31,11 @@
 }
 
 .Avatar--color3 {
-  background-color: var(--lp-color-cyan-600);
+  background-color: var(--lp-color-cyan-500);
 }
 
 .Avatar--color4 {
-  background-color: var(--lp-color-purple-500);
+  background-color: var(--lp-color-purple-600);
 }
 
 .Avatar-initials-content {

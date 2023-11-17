@@ -21,6 +21,7 @@ import { MenuDivider } from './MenuDivider';
 import { MenuItem } from './MenuItem';
 import { MenuItemList } from './MenuItemList';
 import { MenuSearch } from './MenuSearch';
+import styles from './styles/Menu.module.css';
 import {
   chainEventHandlers,
   createItemId,
@@ -368,7 +369,7 @@ const ItemVirtualizer = <T extends number | string>(props: ItemVirtualizerProps<
             key={virtualRow.index}
             ref={virtualRow.measureRef}
             role="presentation"
-            className={cx('VirtualMenu-item')}
+            className={styles['VirtualMenu-item']}
             style={{
               transform: `translateY(${virtualRow.start}px)`,
             }}
@@ -386,7 +387,7 @@ const ItemVirtualizer = <T extends number | string>(props: ItemVirtualizerProps<
       <MenuItemList ref={parentRef} role="presentation">
         <div
           role="presentation"
-          className="VirtualMenu-item-list"
+          className={styles['VirtualMenu-item-list']}
           style={{
             height: `${rowVirtualizer.totalSize}px`,
           }}

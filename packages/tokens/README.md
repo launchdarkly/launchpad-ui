@@ -26,7 +26,7 @@ $ npm install @launchpad-ui/tokens
 ### ES Modules
 
 ```js
-import { ColorBlue500 } from '@launchpad-ui/tokens';
+import tokens from '@launchpad-ui/tokens';
 ```
 
 ### CommonJS Modules

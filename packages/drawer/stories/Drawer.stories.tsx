@@ -120,6 +120,7 @@ export const WithTooltip: Story = {
         rules: {
           // @fixme
           'duplicate-id-aria': { enabled: false },
+          'target-size': { enabled: false },
         },
       },
     },

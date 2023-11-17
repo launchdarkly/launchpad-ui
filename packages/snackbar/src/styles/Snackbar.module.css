@@ -1,6 +1,6 @@
 .Snackbar {
   background-color: var(--lp-color-bg-feedback-primary);
-  color: var(--lp-color-white-0);
+  color: var(--lp-color-white-950);
   padding: var(--lp-spacing-500);
   display: inline-flex;
   gap: 0.875rem;
@@ -20,7 +20,7 @@
 }
 
 .Snackbar--info .Snackbar-icon {
-  fill: var(--lp-color-cyan-500);
+  fill: var(--lp-color-cyan-400);
 }
 
 .Snackbar--warning .Snackbar-icon {
@@ -37,7 +37,7 @@
   font-size: 1rem;
   font-weight: var(--lp-font-weight-medium);
   line-height: 1.5;
-  color: var(--lp-color-white-0);
+  color: var(--lp-color-white-950);
 }
 
 .Snackbar-content {
@@ -52,7 +52,7 @@
 
   & a,
   & a:hover {
-    color: var(--lp-color-cyan-500);
+    color: var(--lp-color-cyan-400);
   }
 
   & .Snackbar-description {
@@ -60,6 +60,6 @@
   }
 }
 
-.Snackbar-close:global(.Button):global(.Button--close) svg {
+.Snackbar-close:global([class*='_Button_']):global([class*='_Button--close_']) svg {
   fill: var(--lp-color-gray-400);
 }

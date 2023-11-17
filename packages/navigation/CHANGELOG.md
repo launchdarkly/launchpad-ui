@@ -1,5 +1,54 @@
 # @launchpad-ui/navigation
 
+## 0.12.5-alpha.0
+
+### Patch Changes
+
+- Updated dependencies [[`00bee445`](https://github.com/launchdarkly/launchpad-ui/commit/00bee445065c0e48f31e1ca88105e5a418729c81), [`c041a984`](https://github.com/launchdarkly/launchpad-ui/commit/c041a984c3fd0c95f5e1e4a07416f6907ff75eac), [`941d2d60`](https://github.com/launchdarkly/launchpad-ui/commit/941d2d60c96f095e7043852f02bc6b5f157edb3b), [`3f9e1881`](https://github.com/launchdarkly/launchpad-ui/commit/3f9e1881f5d878ad6c0dc26ea1f8c5623605db53), [`36b47d4c`](https://github.com/launchdarkly/launchpad-ui/commit/36b47d4c0dad59849db23d0e112e3b4b36b53f5e), [`260d052f`](https://github.com/launchdarkly/launchpad-ui/commit/260d052f3f47043cca470747e7d861417873fa41), [`6cc6da28`](https://github.com/launchdarkly/launchpad-ui/commit/6cc6da28f200f101664d8d6730cbc83893917290)]:
+  - @launchpad-ui/tokens@0.9.0-alpha.2
+  - @launchpad-ui/menu@0.12.5-alpha.0
+  - @launchpad-ui/popover@0.11.3-alpha.1
+  - @launchpad-ui/chip@0.9.5-alpha.0
+  - @launchpad-ui/dropdown@0.6.79-alpha.0
+  - @launchpad-ui/icons@0.14.5-alpha.0
+  - @launchpad-ui/tooltip@0.8.3-alpha.1
+
+## 0.12.3-alpha.0
+
+### Patch Changes
+
+- Updated dependencies [[`00bee445`](https://github.com/launchdarkly/launchpad-ui/commit/00bee445065c0e48f31e1ca88105e5a418729c81), [`c041a984`](https://github.com/launchdarkly/launchpad-ui/commit/c041a984c3fd0c95f5e1e4a07416f6907ff75eac), [`3f9e1881`](https://github.com/launchdarkly/launchpad-ui/commit/3f9e1881f5d878ad6c0dc26ea1f8c5623605db53), [`36b47d4c`](https://github.com/launchdarkly/launchpad-ui/commit/36b47d4c0dad59849db23d0e112e3b4b36b53f5e), [`6cc6da28`](https://github.com/launchdarkly/launchpad-ui/commit/6cc6da28f200f101664d8d6730cbc83893917290)]:
+  - @launchpad-ui/tokens@0.9.0-alpha.1
+  - @launchpad-ui/menu@0.12.3-alpha.0
+  - @launchpad-ui/popover@0.11.3-alpha.0
+  - @launchpad-ui/chip@0.9.3-alpha.0
+  - @launchpad-ui/dropdown@0.6.77-alpha.0
+  - @launchpad-ui/icons@0.14.3-alpha.0
+  - @launchpad-ui/tooltip@0.8.3-alpha.0
+
+## 0.12.1-alpha.1
+
+### Patch Changes
+
+- Updated dependencies [[`36b47d4c`](https://github.com/launchdarkly/launchpad-ui/commit/36b47d4c0dad59849db23d0e112e3b4b36b53f5e), [`6cc6da28`](https://github.com/launchdarkly/launchpad-ui/commit/6cc6da28f200f101664d8d6730cbc83893917290)]:
+  - @launchpad-ui/menu@0.12.1-alpha.1
+  - @launchpad-ui/popover@0.11.1-alpha.1
+  - @launchpad-ui/dropdown@0.6.75-alpha.1
+  - @launchpad-ui/tooltip@0.8.1-alpha.1
+
+## 0.12.1-alpha.0
+
+### Patch Changes
+
+- Updated dependencies [[`00bee445`](https://github.com/launchdarkly/launchpad-ui/commit/00bee445065c0e48f31e1ca88105e5a418729c81), [`c041a984`](https://github.com/launchdarkly/launchpad-ui/commit/c041a984c3fd0c95f5e1e4a07416f6907ff75eac), [`3f9e1881`](https://github.com/launchdarkly/launchpad-ui/commit/3f9e1881f5d878ad6c0dc26ea1f8c5623605db53)]:
+  - @launchpad-ui/tokens@0.9.0-alpha.0
+  - @launchpad-ui/chip@0.9.1-alpha.0
+  - @launchpad-ui/dropdown@0.6.75-alpha.0
+  - @launchpad-ui/icons@0.14.1-alpha.0
+  - @launchpad-ui/menu@0.12.1-alpha.0
+  - @launchpad-ui/popover@0.11.1-alpha.0
+  - @launchpad-ui/tooltip@0.8.1-alpha.0
+
 ## 0.12.5
 
 ### Patch Changes

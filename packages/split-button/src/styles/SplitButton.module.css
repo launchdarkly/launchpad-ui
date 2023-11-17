@@ -5,22 +5,7 @@
     0 0 0 4px var(--lp-color-shadow-interactive-focus);
 }
 
-.SplitButton {
-  align-items: flex-start;
-  display: flex;
-  line-height: 1;
-  isolation: isolate;
-
-  & .Button--default.SplitButton-main {
-    --lp-component-splitbutton--color-border-primary: var(--lp-color-border-ui-primary);
-  }
-
-  & .Button--primary.SplitButton-drop {
-    margin-left: 0.0625rem;
-  }
-}
-
-.SplitButton-drop.Button {
+.SplitButtonDrop:global([class*='_Button_']) {
   border-left-width: 1px;
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
@@ -28,16 +13,35 @@
   margin-left: -0.0625rem;
 }
 
-.SplitButton-drop.Button > span {
-  line-height: 1;
+.SplitButtonDrop:global([class*='_Button--small_']) {
+  padding: 0 0.25rem;
 }
 
-.SplitButton-main.Button {
+.SplitButtonMain:global([class*='_Button_']) {
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
 }
 
-.SplitButton-main.Button:not([disabled]) {
+.SplitButton {
+  align-items: flex-start;
+  display: flex;
+  line-height: 1;
+  isolation: isolate;
+
+  & :global([class*='_Button--default_']).SplitButtonMain {
+    --lp-component-splitbutton--color-border-primary: var(--lp-color-border-ui-primary);
+  }
+
+  & :global([class*='_Button--primary_']).SplitButtonDrop {
+    margin-left: 0.0625rem;
+  }
+}
+
+.SplitButtonDrop:global([class*='_Button_']) > span {
+  line-height: 1;
+}
+
+.SplitButtonMain:global([class*='_Button_']):not([disabled]) {
   border-right: 1px solid var(--lp-component-splitbutton--color-border-primary);
 }
 
@@ -57,24 +61,20 @@
   z-index: 0;
 }
 
-.SplitButton-main.Button:focus-visible {
+.SplitButtonMain:global([class*='_Button_']):focus-visible {
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
   box-shadow: var(--lp-component-splitbutton-color-shadow-focus);
 }
 
-.SplitButton-drop.Button--small {
-  padding: 0 0.25rem;
-}
-
-.SplitButton-drop.Button:focus-visible {
+.SplitButtonDrop:global([class*='_Button_']):focus-visible {
   box-shadow: var(--lp-component-splitbutton-color-shadow-focus);
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
   border-left-width: 1px;
 }
 
-.SplitButton-main.Button:active,
-.SplitButton-drop.Button:active {
+.SplitButtonMain:global([class*='_Button_']):active,
+.SplitButtonDrop:global([class*='_Button_']):active {
   box-shadow: none;
 }

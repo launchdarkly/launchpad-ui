@@ -4,7 +4,7 @@ import type { ComponentPropsWithRef } from 'react';
 import { cx } from 'classix';
 import { forwardRef } from 'react';
 
-import './styles/Menu.css';
+import styles from './styles/Menu.module.css';
 
 type MenuBaseProps = ComponentPropsWithRef<'div'> & {
   isVirtual?: boolean;
@@ -13,7 +13,11 @@ type MenuBaseProps = ComponentPropsWithRef<'div'> & {
 
 const MenuBase = forwardRef<HTMLDivElement, MenuBaseProps>(
   ({ children, size, isVirtual, ...props }, ref) => {
-    const classes = cx('Menu', isVirtual && 'Menu--isVirtual', size && `MenuSize--${size}`);
+    const classes = cx(
+      styles.Menu,
+      isVirtual && styles['Menu--isVirtual'],
+      size && styles[`MenuSize--${size}`]
+    );
 
     return (
       <div {...props} role="menu" className={classes} ref={ref}>

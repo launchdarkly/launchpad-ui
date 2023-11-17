@@ -1,40 +1,3 @@
-:root,
-[data-theme='default'] {
-  --lp-component-chip-color-bg-info: var(--lp-color-blue-200);
-  --lp-component-chip-color-text-info: var(--lp-color-blue-600);
-  --lp-component-chip-color-bg-warning: var(--lp-color-system-yellow-200);
-  --lp-component-chip-color-text-warning: var(--lp-color-system-yellow-900);
-  --lp-component-chip-color-bg-error: var(--lp-color-system-red-200);
-  --lp-component-chip-color-text-error: var(--lp-color-system-red-700);
-  --lp-component-chip-color-bg-success: var(--lp-color-system-green-200);
-  --lp-component-chip-color-text-success: var(--lp-color-system-green-900);
-  --lp-component-chip-color-bg-beta: var(--lp-color-purple-200);
-  --lp-component-chip-color-text-beta: var(--lp-color-purple-600);
-  --lp-component-chip-color-bg-federal: var(--lp-color-yellow-500);
-  --lp-component-chip-color-text-federal: var(--lp-color-black-0);
-  --lp-component-chip-color-bg-default: var(--lp-color-gray-100);
-  --lp-component-chip-color-text-default: var(--lp-color-gray-800);
-}
-
-[data-theme='dark'] {
-  --lp-component-chip-color-bg-info: #212647;
-  --lp-component-chip-color-text-info: var(--lp-color-blue-300);
-  --lp-component-chip-color-bg-warning: #3c351f;
-  --lp-component-chip-color-text-warning: var(--lp-color-system-yellow-500);
-  --lp-component-chip-color-bg-error: hsl(0 59% 49% / 0.2);
-  --lp-component-chip-color-text-error: var(--lp-color-system-red-400);
-  --lp-component-chip-color-bg-success: #143929;
-  --lp-component-chip-color-text-success: var(--lp-color-system-green-500);
-  --lp-component-chip-color-bg-label: var(--lp-color-black-100);
-  --lp-component-chip-color-text-label: var(--lp-color-gray-100);
-  --lp-component-chip-color-bg-beta: #30213a;
-  --lp-component-chip-color-text-beta: var(--lp-color-purple-400);
-  --lp-component-chip-color-bg-federal: #43471e;
-  --lp-component-chip-color-text-federal: var(--lp-color-yellow-500);
-  --lp-component-chip-color-bg-default: var(--lp-color-gray-900);
-  --lp-component-chip-color-text-default: var(--lp-color-gray-100);
-}
-
 .chip {
   display: inline-flex;
   align-items: center;
@@ -44,8 +7,8 @@
   overflow: hidden;
   text-overflow: ellipsis;
   max-width: 100%;
-  color: var(--lp-component-chip-color-text-default);
-  background-color: var(--lp-component-chip-color-bg-default);
+  color: var(--lp-color-text-ui-secondary);
+  background-color: var(--lp-color-bg-ui-quaternary);
   transition: all 0.1s ease-in-out;
 }
 
@@ -64,38 +27,38 @@
 }
 
 .info {
-  background-color: var(--lp-component-chip-color-bg-info);
-  color: var(--lp-component-chip-color-text-info);
+  background-color: var(--lp-color-bg-feedback-info);
+  color: var(--lp-color-text-feedback-info);
 }
 
 .new {
-  background-color: var(--lp-component-chip-color-bg-success);
-  color: var(--lp-component-chip-color-text-success);
+  background-color: var(--lp-color-bg-feedback-success);
+  color: var(--lp-color-text-feedback-success);
 }
 
 .beta {
-  background-color: var(--lp-component-chip-color-bg-beta);
-  color: var(--lp-component-chip-color-text-beta);
+  background-color: var(--lp-color-bg-product-beta);
+  color: var(--lp-color-text-product-beta);
 }
 
 .success {
-  background-color: var(--lp-component-chip-color-bg-success);
-  color: var(--lp-component-chip-color-text-success);
+  background-color: var(--lp-color-bg-feedback-success);
+  color: var(--lp-color-text-feedback-success);
 }
 
 .warning {
-  background-color: var(--lp-component-chip-color-bg-warning);
-  color: var(--lp-component-chip-color-text-warning);
+  background-color: var(--lp-color-bg-feedback-warning);
+  color: var(--lp-color-text-feedback-warning);
 }
 
 .error {
-  background-color: var(--lp-component-chip-color-bg-error);
-  color: var(--lp-component-chip-color-text-error);
+  background-color: var(--lp-color-bg-feedback-error);
+  color: var(--lp-color-text-feedback-error);
 }
 
 .federal {
-  background-color: var(--lp-component-chip-color-bg-federal);
-  color: var(--lp-component-chip-color-text-federal);
+  background-color: var(--lp-color-bg-product-federal);
+  color: var(--lp-color-text-product-federal);
 }
 
 .clickable:hover {

@@ -1,0 +1,152 @@
+.Menu-item {
+  background-color: transparent;
+  border-radius: var(--lp-border-radius-regular);
+  border-width: var(--lp-border-width-100);
+  color: var(--lp-color-text-ui-primary-base);
+  cursor: pointer;
+  display: block;
+  font: var(--lp-label-1-medium);
+  outline: none;
+  overflow: hidden;
+  padding-inline: var(--lp-spacing-300);
+  padding-block: var(--lp-spacing-200);
+  position: relative;
+  text-align: left;
+  text-decoration: none;
+  text-overflow: ellipsis;
+  user-select: none;
+  white-space: nowrap;
+  width: 100%;
+}
+
+.Menu-item-list {
+  max-height: 55vh;
+  min-width: 7.5rem;
+  overflow: auto;
+  padding: var(--lp-spacing-200);
+}
+
+.Menu .Menu-item:not([disabled]):not([aria-disabled]):not(.Menu-item--header) {
+  &:active {
+    text-decoration: none;
+    background-color: var(--lp-color-bg-interactive-secondary-active);
+  }
+
+  &:hover:not(:active):not(.has-focus) {
+    background-color: var(--lp-color-bg-interactive-secondary-hover);
+  }
+
+  &.has-focus {
+    background-color: var(--lp-color-bg-interactive-secondary-hover);
+    box-shadow: inset 0 0 0 2px var(--lp-color-shadow-interactive-focus);
+  }
+}
+
+.Menu {
+  background: var(--lp-color-bg-overlay-primary);
+  border-radius: var(--lp-border-radius-medium);
+  font-family: var(--lp-font-family-base);
+
+  &:focus {
+    outline: none;
+  }
+
+  /* Override our link styles for link component */
+  & a.Menu-item {
+    &:focus:not(:hover):not(.has-focus) {
+      text-decoration: none;
+      box-shadow: none;
+    }
+
+    /* Ensures that links that are disabled don't show active styles */
+    &:active[disabled],
+    &:active[aria-disabled] {
+      text-decoration: none;
+      color: var(--lp-color-text-interactive-disabled);
+    }
+  }
+}
+
+.Menu-item--nested {
+  padding-left: 2.5rem;
+}
+
+.Menu-item--header {
+  font: var(--lp-small-1-regular);
+  color: var(--lp-color-text-ui-tertiary);
+}
+
+.Menu-item-icon {
+  margin-right: var(--lp-spacing-300);
+}
+
+.Menu-item :global(.Gravatar) {
+  margin-right: 0.3125rem;
+}
+
+.Menu-item.is-highlighted {
+  background-color: var(--lp-color-bg-interactive-secondary-hover);
+}
+
+.Menu-item[aria-disabled],
+.Menu-item[disabled] {
+  color: var(--lp-color-text-interactive-disabled);
+  cursor: not-allowed;
+}
+
+.Menu-divider {
+  border-top: 1px solid var(--lp-color-border-ui-secondary);
+  margin: var(--lp-spacing-200) 0;
+}
+
+.Menu-search {
+  border-bottom: 1px solid var(--lp-color-border-ui-secondary);
+  padding: var(--lp-spacing-300);
+}
+
+[class^='_Popover-content_'] .Menu-search {
+  width: 100%;
+
+  /* Removing anything that could give it some height */
+  & .Menu-search-hidden-placeholder {
+    padding-top: 0;
+    padding-bottom: 0;
+    height: 0;
+    border: none;
+    visibility: hidden;
+  }
+}
+
+.Menu--isVirtual {
+  display: flex;
+  align-items: stretch;
+  flex-direction: column;
+}
+
+.MenuSize--xl {
+  width: 20rem;
+}
+
+.MenuSize--lg {
+  width: 15rem;
+}
+
+.MenuSize--md {
+  width: 10rem;
+}
+
+.MenuSize--sm {
+  width: 7.5rem;
+}
+
+.VirtualMenu-item-list {
+  width: 100%;
+  position: relative;
+}
+
+.VirtualMenu-item {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}

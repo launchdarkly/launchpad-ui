@@ -5,7 +5,7 @@ import { cx } from 'classix';
 import { forwardRef, useContext, useMemo } from 'react';
 
 import { SplitButtonContext } from './context';
-import './styles/SplitButton.css';
+import styles from './styles/SplitButton.module.css';
 
 type SplitButtonDropdownButtonProps = Omit<DropdownButtonProps, 'kind' | 'size' | 'children'>;
 
@@ -38,7 +38,7 @@ const SplitButtonDropdownButton = forwardRef<HTMLButtonElement, SplitButtonDropd
       <DropdownButton
         {...rest}
         ref={ref}
-        className={cx('SplitButton-drop', className)}
+        className={cx(styles.SplitButtonDrop, className)}
         kind={kind}
         disabled={isDisabled}
         size={size}

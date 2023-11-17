@@ -23,7 +23,7 @@
     border: 1px solid transparent;
 
     svg {
-      fill: var(--lp-color-border-interactive-secondary-base);
+      fill: var(--lp-color-fill-ui-secondary);
     }
   }
 

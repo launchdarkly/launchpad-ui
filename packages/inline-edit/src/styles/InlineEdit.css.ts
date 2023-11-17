@@ -21,7 +21,7 @@ const inline = recipe({
 
 const cancelButton = style({
   selectors: {
-    '.Button--icon&': {
+    '[class*="_Button--icon_"]&': {
       height: '1.875rem',
       width: '1.875rem',
     },
