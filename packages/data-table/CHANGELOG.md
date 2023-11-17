@@ -24,6 +24,15 @@
   - @launchpad-ui/tokens@0.9.0-alpha.0
   - @launchpad-ui/vars@0.2.4-alpha.0
 
+## 0.2.4
+
+### Patch Changes
+
+- [#1076](https://github.com/launchdarkly/launchpad-ui/pull/1076) [`d7c33a5a`](https://github.com/launchdarkly/launchpad-ui/commit/d7c33a5aa04eee1f350c6a973da56f4770b70d39) Thanks [@renovate](https://github.com/apps/renovate)! - Update dependencies
+
+- Updated dependencies [[`d7c33a5a`](https://github.com/launchdarkly/launchpad-ui/commit/d7c33a5aa04eee1f350c6a973da56f4770b70d39)]:
+  - @launchpad-ui/vars@0.2.6
+
 ## 0.2.3
 
 ### Patch Changes

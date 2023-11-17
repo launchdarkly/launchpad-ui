@@ -1,29 +1,5 @@
 # @launchpad-ui/avatar
 
-## 0.6.5-alpha.0
-
-### Patch Changes
-
-- Updated dependencies [[`00bee445`](https://github.com/launchdarkly/launchpad-ui/commit/00bee445065c0e48f31e1ca88105e5a418729c81), [`c041a984`](https://github.com/launchdarkly/launchpad-ui/commit/c041a984c3fd0c95f5e1e4a07416f6907ff75eac), [`941d2d60`](https://github.com/launchdarkly/launchpad-ui/commit/941d2d60c96f095e7043852f02bc6b5f157edb3b), [`3f9e1881`](https://github.com/launchdarkly/launchpad-ui/commit/3f9e1881f5d878ad6c0dc26ea1f8c5623605db53), [`260d052f`](https://github.com/launchdarkly/launchpad-ui/commit/260d052f3f47043cca470747e7d861417873fa41)]:
-  - @launchpad-ui/tokens@0.9.0-alpha.2
-  - @launchpad-ui/icons@0.14.5-alpha.0
-
-## 0.6.3-alpha.0
-
-### Patch Changes
-
-- Updated dependencies [[`00bee445`](https://github.com/launchdarkly/launchpad-ui/commit/00bee445065c0e48f31e1ca88105e5a418729c81), [`c041a984`](https://github.com/launchdarkly/launchpad-ui/commit/c041a984c3fd0c95f5e1e4a07416f6907ff75eac), [`3f9e1881`](https://github.com/launchdarkly/launchpad-ui/commit/3f9e1881f5d878ad6c0dc26ea1f8c5623605db53)]:
-  - @launchpad-ui/tokens@0.9.0-alpha.1
-  - @launchpad-ui/icons@0.14.3-alpha.0
-
-## 0.6.1-alpha.0
-
-### Patch Changes
-
-- Updated dependencies [[`00bee445`](https://github.com/launchdarkly/launchpad-ui/commit/00bee445065c0e48f31e1ca88105e5a418729c81), [`c041a984`](https://github.com/launchdarkly/launchpad-ui/commit/c041a984c3fd0c95f5e1e4a07416f6907ff75eac), [`3f9e1881`](https://github.com/launchdarkly/launchpad-ui/commit/3f9e1881f5d878ad6c0dc26ea1f8c5623605db53)]:
-  - @launchpad-ui/tokens@0.9.0-alpha.0
-  - @launchpad-ui/icons@0.14.1-alpha.0
-
 ## 0.6.4
 
 ### Patch Changes

@@ -18,7 +18,7 @@
   - @launchpad-ui/icons@0.14.3-alpha.0
   - @launchpad-ui/tooltip@0.8.3-alpha.0
 
-## 0.11.1-alpha.1
+## 0.11.5
 
 ### Patch Changes
 
@@ -33,6 +33,7 @@
   - @launchpad-ui/tokens@0.9.0-alpha.0
   - @launchpad-ui/icons@0.14.1-alpha.0
   - @launchpad-ui/tooltip@0.8.1-alpha.0
+  - @launchpad-ui/tooltip@0.8.4
 
 ## 0.11.4
 

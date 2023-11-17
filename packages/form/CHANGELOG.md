@@ -43,6 +43,15 @@
   - @launchpad-ui/icons@0.14.1-alpha.0
   - @launchpad-ui/tooltip@0.8.1-alpha.0
 
+## 0.10.5
+
+### Patch Changes
+
+- [#1076](https://github.com/launchdarkly/launchpad-ui/pull/1076) [`d7c33a5a`](https://github.com/launchdarkly/launchpad-ui/commit/d7c33a5aa04eee1f350c6a973da56f4770b70d39) Thanks [@renovate](https://github.com/apps/renovate)! - Update dependencies
+
+- Updated dependencies []:
+  - @launchpad-ui/tooltip@0.8.4
+
 ## 0.10.4
 
 ### Patch Changes

@@ -1,6 +1,6 @@
 {
   "name": "@launchpad-ui/core",
-  "version": "0.47.5-alpha.0",
+  "version": "0.47.5",
   "status": "beta",
   "publishConfig": {
     "access": "public"
@@ -39,6 +39,7 @@
     "@launchpad-ui/alert": "workspace:~",
     "@launchpad-ui/avatar": "workspace:~",
     "@launchpad-ui/banner": "workspace:~",
+    "@launchpad-ui/box": "workspace:~",
     "@launchpad-ui/button": "workspace:~",
     "@launchpad-ui/card": "workspace:~",
     "@launchpad-ui/chip": "workspace:~",

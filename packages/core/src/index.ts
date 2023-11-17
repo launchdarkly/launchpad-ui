@@ -2,6 +2,7 @@
 export type { AlertProps } from '@launchpad-ui/alert';
 export type { AvatarProps } from '@launchpad-ui/avatar';
 export type { BannerProps } from '@launchpad-ui/banner';
+export type { BoxProps } from '@launchpad-ui/box';
 export type {
   ButtonProps,
   UploadButtonProps,
@@ -114,6 +115,7 @@ export type { RadioCardProps } from '@launchpad-ui/card';
 export { Alert } from '@launchpad-ui/alert';
 export { Avatar } from '@launchpad-ui/avatar';
 export { Banner } from '@launchpad-ui/banner';
+export { Box } from '@launchpad-ui/box';
 export { Button, ButtonGroup, UploadButton, IconButton } from '@launchpad-ui/button';
 export { Chip } from '@launchpad-ui/chip';
 export { CopyConfirmation, CopyToClipboard, CopyCodeButton } from '@launchpad-ui/clipboard';

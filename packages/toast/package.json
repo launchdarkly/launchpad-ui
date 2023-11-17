@@ -1,6 +1,6 @@
 {
   "name": "@launchpad-ui/toast",
-  "version": "0.3.5-alpha.0",
+  "version": "0.3.4",
   "status": "alpha",
   "publishConfig": {
     "access": "public"

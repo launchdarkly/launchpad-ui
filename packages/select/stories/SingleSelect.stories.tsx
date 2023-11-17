@@ -1,12 +1,12 @@
+import type { Key } from '@react-types/shared';
 import type { StoryObj } from '@storybook/react';
-import type { Key } from 'react';
 
 import { Chip } from '@launchpad-ui/chip';
 import { useMemo, useState } from 'react';
 
+import { FRUIT, SECTIONED_ITEMS } from '../__tests__/constants';
+import { CustomSingleSelectTrigger } from '../__tests__/examples';
 import { SingleSelect, SingleSelectTrigger, SelectItem, SelectSection } from '../src';
-import { FRUIT, SECTIONED_ITEMS } from '../src/__tests__/constants';
-import { CustomSingleSelectTrigger } from '../src/__tests__/examples';
 
 export default {
   component: SingleSelect,

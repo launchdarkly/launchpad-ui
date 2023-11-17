@@ -6,6 +6,8 @@ import { vanillaExtractPlugin } from '@vanilla-extract/vite-plugin';
 import react from '@vitejs/plugin-react-swc';
 import { PluginPure } from 'rollup-plugin-pure';
 import { defineConfig } from 'vite';
+// eslint-disable-next-line import/no-unresolved
+import { configDefaults } from 'vitest/config';
 
 import tsconfig from './tsconfig.json';
 import { cssImport } from './vite-plugin-css';
@@ -56,7 +58,8 @@ export default defineConfig({
       functions: 70,
       branches: 70,
       statements: 90,
-      exclude: ['**/*.spec.tsx', '**/test/'],
+      include: ['**/src/**'],
+      exclude: [...configDefaults.exclude, '**/types.ts'],
     },
   },
   build: {
@@ -71,6 +74,7 @@ export default defineConfig({
         ...Object.keys(packageJSON.peerDependencies || {}),
         'react/jsx-runtime',
         '@vanilla-extract/recipes/createRuntimeFn',
+        'rainbow-sprinkles/createRuntimeFn',
       ],
     },
     sourcemap: true,
