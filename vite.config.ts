@@ -39,6 +39,7 @@ export default defineConfig({
     react(),
     vanillaExtractPlugin(),
     cssImport(),
+    // @ts-expect-error rollup-plugin-pure needs to update vite plugin types
     PluginPure({
       functions: PURE_CALLS,
       sourcemap: true,

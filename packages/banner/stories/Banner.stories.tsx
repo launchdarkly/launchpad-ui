@@ -51,15 +51,15 @@ export default {
 type Story = StoryObj<typeof Banner>;
 
 export const Error: Story = {
-  args: { children: 'Error banner with icon', dismissible: true, kind: 'error' },
+  args: { children: 'Error banner with icon', kind: 'error' },
 };
 
 export const Warning: Story = {
-  args: { children: 'Warning banner with icon', dismissible: true, kind: 'warning' },
+  args: { children: 'Warning banner with icon', kind: 'warning' },
 };
 
 export const Info: Story = {
-  args: { children: 'Info banner with icon', dismissible: true, kind: 'info' },
+  args: { children: 'Info banner with icon', kind: 'info' },
 };
 
 export const WithStackedBanners: Story = {
@@ -77,7 +77,6 @@ export const WithHeader: Story = {
   args: {
     header: 'Banner header',
     children: 'This is an example of a banner with a header',
-    dismissible: true,
     kind: 'error',
   },
 };

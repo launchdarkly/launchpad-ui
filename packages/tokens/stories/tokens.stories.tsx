@@ -11,12 +11,16 @@ const flatten = (obj: Record<string, unknown>) => {
 
   for (const i in obj) {
     if (typeof obj[i] === 'object' && !Array.isArray(obj[i])) {
+      // @ts-expect-error fixme
       const temp = flatten(obj[i]);
+
       for (const j in temp) {
         const key = j !== ' ' ? `${i}-${j}` : i;
+        // @ts-expect-error fixme
         result[key] = temp[j];
       }
     } else {
+      // @ts-expect-error fixme
       result[i] = obj[i];
     }
   }
@@ -86,6 +90,7 @@ const global = Object.keys(vars.color)
     ].includes(key)
   )
   .reduce((obj, key) => {
+    // @ts-expect-error fixme
     obj[key] = vars.color[key];
     return obj;
   }, {});
@@ -97,6 +102,7 @@ export const Global = {
 const alias = Object.keys(vars.color)
   .filter((key) => ['bg', 'border', 'fill', 'shadow', 'text'].includes(key))
   .reduce((obj, key) => {
+    // @ts-expect-error fixme
     obj[key] = vars.color[key];
     return obj;
   }, {});

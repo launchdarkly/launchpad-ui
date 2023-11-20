@@ -48,5 +48,6 @@
       "@launchpad-ui/types": ["./packages/types/src"],
       "@launchpad-ui/vars": ["./packages/vars/src"]
     }
-  }
+  },
+  "exclude": ["./storybook-static", "./apps"]
 }

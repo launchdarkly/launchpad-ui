@@ -84,7 +84,7 @@ type PopoverTargetProps = {
   ref: RefObject<HTMLElement>;
   className?: string;
   isopen?: boolean;
-  'data-test-id': string;
+  'data-test-id'?: string;
   style?: CSSProperties;
 };
 

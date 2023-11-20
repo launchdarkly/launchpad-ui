@@ -1,6 +1,7 @@
 import type { DummyItem } from './constants';
 import type { MultiSelectTriggerProps } from '../src/MultiSelect';
 import type { SingleSelectTriggerProps } from '../src/SingleSelect';
+import type { Node } from '@react-types/shared';
 
 import { IconButton } from '@launchpad-ui/button';
 import { Icon } from '@launchpad-ui/icons';
@@ -11,7 +12,7 @@ const CustomMultiSelectTrigger = (props: MultiSelectTriggerProps<DummyItem>) => 
 
   return (
     <TagGroup
-      items={(state.selectedItems as Iterable<object>) || []}
+      items={(state.selectedItems as Iterable<Node<DummyItem>>) || []}
       onRemove={(keys) => state.selectionManager.setSelectedKeys(keys)}
       action={() => (
         <IconButton

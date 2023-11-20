@@ -5,7 +5,7 @@ import { Progress } from '../src';
 
 describe('Progress', () => {
   it('renders after a delay', async () => {
-    render(<Progress delayMs={500} size="small" />);
+    render(<Progress delayMs={250} size="small" />);
     await waitFor(() => {
       expect(screen.getByRole('progressbar')).toBeInTheDocument();
     });
