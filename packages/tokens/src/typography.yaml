@@ -145,9 +145,9 @@ small:
         fontFamily: '{ font.family.base.value }'
         fontStyle: normal
       $type: typography
-    extrabold:
+    semibold:
       value:
-        fontWeight: '{ font.weight.extrabold.value }'
+        fontWeight: '{ font.weight.semibold.value }'
         fontSize: '{ font.size.100.value }'
         lineHeight: 1.25rem
         fontFamily: '{ font.family.base.value }'
@@ -170,9 +170,9 @@ small:
         fontFamily: '{ font.family.base.value }'
         fontStyle: normal
       $type: typography
-    extrabold:
+    semibold:
       value:
-        fontWeight: '{ font.weight.extrabold.value }'
+        fontWeight: '{ font.weight.semibold.value }'
         fontSize: '{ font.size.0.value }'
         lineHeight: 1rem
         fontFamily: '{ font.family.base.value }'
