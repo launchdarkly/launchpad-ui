@@ -34,7 +34,7 @@ export default {
   },
 } as Meta;
 
-const render: ArgsStoryFn<ReactRenderer> = (args, { globals }) => (
+const render: ArgsStoryFn<ReactRenderer> = (_args, { globals }) => (
   <div
     style={{
       display: 'grid',

@@ -11,13 +11,19 @@ type AppliedFilterButtonProps = {
   className?: string;
   children: ReactNode;
   onClickFilterButton?(): void;
-  'data-test-id': string;
+  'data-test-id'?: string;
 };
 
 type Ref = HTMLButtonElement;
 
 const AppliedFilterButton = forwardRef<Ref, AppliedFilterButtonProps>((props, ref) => {
-  const { name, className, children, onClickFilterButton, 'data-test-id': testId } = props;
+  const {
+    name,
+    className,
+    children,
+    onClickFilterButton,
+    'data-test-id': testId = 'applied-filter-button',
+  } = props;
 
   const hasDescription = Children.count(children) !== 0;
 

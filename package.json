@@ -25,7 +25,8 @@
     "test:ui": "vitest --ui",
     "test:watch": "vitest",
     "prepare": "husky install",
-    "release": "nx affected --target=build --base=HEAD~1 --head=HEAD --exclude=@launchpad-ui/remix && changeset publish"
+    "release": "nx affected --target=build --base=HEAD~1 --head=HEAD --exclude=@launchpad-ui/remix && changeset publish",
+    "typecheck": "pnpm build:transform && tsc --noEmit --emitDeclarationOnly false --skipLibCheck"
   },
   "repository": {
     "type": "git",

@@ -10,7 +10,8 @@
     "clean": "rm -rf public build",
     "lint": "eslint '**/*.{ts,tsx,js}' && stylelint '**/*.css' --ignore-path ../../.stylelintignore",
     "start": "remix-serve ./build/index.js",
-    "test": "exit 0"
+    "test": "exit 0",
+    "typecheck": "tsc"
   },
   "dependencies": {
     "@launchpad-ui/core": "workspace:~",

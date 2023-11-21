@@ -5,7 +5,7 @@ import { Chip } from '../src';
 
 describe('Chip', () => {
   it('renders', () => {
-    render(<Chip size="normal">Default Chip</Chip>);
+    render(<Chip size="small">Default Chip</Chip>);
     expect(screen.getByText('Default Chip')).toBeInTheDocument();
   });
 

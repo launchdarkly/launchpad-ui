@@ -33,7 +33,7 @@ export const createWithClassesDecorator = (
       const componentKey = `${name} with ${state}`;
       // We don't want to modify the original props
       const modifiedProps = merge(args, {});
-      const DecoratedComponent = component;
+      const DecoratedComponent = component || Fragment;
       modifiedProps.className = classWithState;
       if (renderFunc) {
         if (!originalStoryFn) {

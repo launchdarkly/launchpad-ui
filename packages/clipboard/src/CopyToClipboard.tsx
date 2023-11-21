@@ -1,5 +1,5 @@
 import type { TooltipProps } from '@launchpad-ui/tooltip';
-import type { ComponentProps, KeyboardEventHandler } from 'react';
+import type { ComponentPropsWithoutRef, KeyboardEventHandler } from 'react';
 
 import { Icon } from '@launchpad-ui/icons';
 import { Tooltip } from '@launchpad-ui/tooltip';
@@ -11,7 +11,7 @@ import { forwardRef, useCallback, useImperativeHandle, useRef, useState } from '
 import { CopyCodeButton } from './CopyCodeButton';
 import styles from './styles/CopyToClipboard.module.css';
 
-type CopyToClipboardProps = ComponentProps<'span'> & {
+type CopyToClipboardProps = ComponentPropsWithoutRef<'span'> & {
   triggerAriaLabel?: string;
   customCopiedText?: string;
   text: string;

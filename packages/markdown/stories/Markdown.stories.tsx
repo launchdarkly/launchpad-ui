@@ -88,7 +88,7 @@ function parseLinkFromDOMNode(node: DOMNode) {
     return;
   }
   const { href } = node.attribs;
-  const textNode = node.firstChild;
+  const textNode = node.firstChild as DOMNode;
   if (!textNode || !isDOMText(textNode)) {
     return;
   }

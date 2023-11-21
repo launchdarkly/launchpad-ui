@@ -29,7 +29,7 @@ type TagProps<T extends object> = AriaTagProps<T> & {
 const Tag = <T extends object>(props: TagProps<T>) => {
   const { children, item, state, onClick, size = 'small' } = props;
 
-  const { hoverProps, isHovered } = useHover({});
+  const { hoverProps } = useHover({});
   const { isFocusVisible, focusProps } = useFocusRing({ within: true });
   const ref = useRef<HTMLDivElement>(null);
 
@@ -48,8 +48,6 @@ const Tag = <T extends object>(props: TagProps<T>) => {
     styles.tag,
     styles[size],
     isFocusVisible && styles.isFocusVisible,
-    isHovered && styles.isHovered,
-    !allowsRemoving && styles.isReadOnly,
     onClick && styles.isInteractive,
     allowsRemoving && styles.removable
   );

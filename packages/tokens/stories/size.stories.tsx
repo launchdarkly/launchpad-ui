@@ -1,12 +1,15 @@
+import type { default as Tokens } from '../dist';
+
 import { CopyToClipboard } from '@launchpad-ui/clipboard';
 
+// @ts-expect-error ts not detecting d.ts for es file
 import tokens from '../dist/index.es.js';
 
 export default {
   title: 'Tokens/Size',
 };
 
-const sizes = tokens.size;
+const sizes: typeof Tokens.size = tokens.size;
 
 const valueInPx = (value: string) => {
   const removeRemChars = value.slice(0, -3); // remove 'rem' from string
