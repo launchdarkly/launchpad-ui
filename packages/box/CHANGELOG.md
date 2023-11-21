@@ -1,5 +1,14 @@
 # @launchpad-ui/box
 
+## 0.1.2
+
+### Patch Changes
+
+- [#1087](https://github.com/launchdarkly/launchpad-ui/pull/1087) [`30243499`](https://github.com/launchdarkly/launchpad-ui/commit/30243499ed7e7de205825e8a0f3d9360537deadb) Thanks [@Niznikr](https://github.com/Niznikr)! - Add typography tokens to box
+
+- Updated dependencies []:
+  - @launchpad-ui/vars@0.2.8
+
 ## 0.1.1
 
 ### Patch Changes
