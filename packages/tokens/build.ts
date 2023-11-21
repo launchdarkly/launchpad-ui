@@ -147,7 +147,7 @@ const myStyleDictionary = StyleDictionary.extend({
     },
     json: {
       buildPath: 'dist/',
-      transforms: ['attribute/cti', 'name/cti/kebab', 'font/css', 'value/path'],
+      transforms: ['attribute/cti', 'name/cti/kebab', 'value/path'],
       files: [
         {
           format: 'json/nested',
