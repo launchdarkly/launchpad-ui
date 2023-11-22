@@ -1,0 +1,47 @@
+{
+  "name": "@launchpad-ui/components",
+  "version": "0.0.1",
+  "status": "beta",
+  "publishConfig": {
+    "access": "public"
+  },
+  "description": "An implementation of LaunchDarklys's LaunchPad Design System using React Aria Components.",
+  "files": [
+    "dist"
+  ],
+  "main": "dist/index.js",
+  "module": "dist/index.es.js",
+  "types": "dist/index.d.ts",
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.es.js",
+      "require": "./dist/index.js"
+    },
+    "./package.json": "./package.json",
+    "./style.css": "./dist/style.css"
+  },
+  "source": "src/index.ts",
+  "scripts": {
+    "build": "vite build -c ../../vite.config.ts && tsc --project tsconfig.build.json",
+    "clean": "rm -rf dist",
+    "lint": "eslint '**/*.{ts,tsx,js}'",
+    "test": "vitest run --coverage"
+  },
+  "dependencies": {
+    "react-aria-components": "1.0.0-rc.0"
+  },
+  "peerDependencies": {
+    "@stylexjs/stylex": "0.2.0-beta.27",
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
+  },
+  "devDependencies": {
+    "@stylexjs/rollup-plugin": "0.2.0-beta.27",
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
+  }
+}
