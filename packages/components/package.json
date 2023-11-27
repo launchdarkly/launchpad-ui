@@ -5,7 +5,7 @@
   "publishConfig": {
     "access": "public"
   },
-  "description": "An implementation of LaunchDarklys's LaunchPad Design System using React Aria Components.",
+  "description": "An implementation of LaunchDarkly's LaunchPad Design System using React Aria Components.",
   "files": [
     "dist"
   ],

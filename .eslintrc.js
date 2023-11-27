@@ -47,6 +47,7 @@ module.exports = {
       },
     ],
     '@typescript-eslint/consistent-type-imports': 'error',
+    '@typescript-eslint/consistent-type-definitions': 0,
     'testing-library/prefer-user-event': 'error',
     'import/order': [
       'error',
