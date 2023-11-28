@@ -4,6 +4,8 @@ import type { ProgressBarProps as AriaProgressBarProps } from 'react-aria-compon
 import * as stylex from '@stylexjs/stylex';
 import { ProgressBar as AriaProgressBar } from 'react-aria-components';
 
+import { tokens } from './tokens.stylex';
+
 const spin = stylex.keyframes({
   from: { transform: 'rotate(0deg)' },
   to: { transform: 'rotate(359deg)' },
@@ -15,9 +17,15 @@ const styles = stylex.create({
   },
   indeterminate: {
     animationName: spin,
-    animationDuration: 'var(--lp-duration-350)',
+    animationDuration: tokens['duration.350'],
     animationTimingFunction: 'linear',
     animationIterationCount: 'infinite',
+  },
+  outerCircle: {
+    stroke: tokens['color.gray.50'],
+  },
+  innerCircle: {
+    stroke: tokens['color.gray.500'],
   },
 });
 
@@ -46,25 +54,25 @@ const ProgressBar = ({ style, ...rest }: ProgressBarProps) => {
             cx={center}
             cy={center}
             r={r - (strokeWidth / 2 - 0.25)}
-            stroke="var(--lp-color-gray-50)"
             strokeWidth={0.5}
+            {...stylex.props(styles.outerCircle)}
           />
           <circle
             cx={center}
             cy={center}
             r={r + (strokeWidth / 2 - 0.25)}
-            stroke="var(--lp-color-gray-50)"
             strokeWidth={0.5}
+            {...stylex.props(styles.outerCircle)}
           />
           <circle
             cx={center}
             cy={center}
             r={r}
-            stroke="var(--lp-color-gray-500)"
             strokeDasharray={`${c} ${c}`}
             strokeDashoffset={c - (rest.isIndeterminate ? 0.25 : percentage! / 100) * c}
             strokeLinecap="round"
             transform="rotate(-90 16 16)"
+            {...stylex.props(styles.innerCircle)}
           />
         </svg>
       )}
