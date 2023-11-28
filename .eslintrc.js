@@ -20,7 +20,14 @@ module.exports = {
       jsx: true,
     },
   },
-  plugins: ['react', '@typescript-eslint', 'testing-library', 'functional', 'jsx-a11y'],
+  plugins: [
+    'react',
+    '@typescript-eslint',
+    'testing-library',
+    'functional',
+    'jsx-a11y',
+    '@stylexjs',
+  ],
   settings: {
     react: {
       version: 'detect',
@@ -95,6 +102,7 @@ module.exports = {
         ],
       },
     ],
+    '@stylexjs/valid-styles': 'error',
   },
   overrides: [
     {

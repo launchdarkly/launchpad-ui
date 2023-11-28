@@ -66,6 +66,7 @@
     "@storybook/theming": "^7.6.3",
     "@storybook/types": "^7.6.3",
     "@stylexjs/babel-plugin": "^0.2.0-beta.27",
+    "@stylexjs/eslint-plugin": "^0.2.0-beta.27",
     "@stylexjs/rollup-plugin": "^0.2.0-beta.27",
     "@stylexjs/stylex": "^0.2.0-beta.27",
     "@testing-library/dom": "^9.3.0",

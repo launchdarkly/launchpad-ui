@@ -88,10 +88,13 @@ importers:
         version: 7.6.3
       '@stylexjs/babel-plugin':
         specifier: ^0.2.0-beta.27
-        version: 0.2.0-beta.27(@babel/core@7.23.2)(@babel/traverse@7.23.2)(@babel/types@7.23.0)
+        version: 0.2.0-beta.27(@babel/core@7.23.3)(@babel/traverse@7.23.4)(@babel/types@7.23.4)
+      '@stylexjs/eslint-plugin':
+        specifier: ^0.2.0-beta.27
+        version: 0.2.0-beta.27
       '@stylexjs/rollup-plugin':
         specifier: ^0.2.0-beta.27
-        version: 0.2.0-beta.27(@babel/traverse@7.23.2)(@babel/types@7.23.0)
+        version: 0.2.0-beta.27(@babel/traverse@7.23.4)(@babel/types@7.23.4)
       '@stylexjs/stylex':
         specifier: ^0.2.0-beta.27
         version: 0.2.0-beta.27
@@ -1726,7 +1729,7 @@ packages:
     engines: {node: '>=6.9.0'}
     dependencies:
       '@ampproject/remapping': 2.2.1
-      '@babel/code-frame': 7.22.13
+      '@babel/code-frame': 7.23.4
       '@babel/generator': 7.23.4
       '@babel/helper-compilation-targets': 7.22.15
       '@babel/helper-module-transforms': 7.23.3(@babel/core@7.23.3)
@@ -1941,6 +1944,18 @@ packages:
       '@babel/core': ^7.0.0
     dependencies:
       '@babel/core': 7.23.5
+      '@babel/helper-environment-visitor': 7.22.20
+      '@babel/helper-member-expression-to-functions': 7.23.0
+      '@babel/helper-optimise-call-expression': 7.22.5
+    dev: true
+
+  /@babel/helper-replace-supers@7.22.20(@babel/core@7.23.3):
+    resolution: {integrity: sha512-qsW0In3dbwQUbK8kejJ4R7IHVGwHJlV6lpG6UA7a9hSa2YEiAib+N1T2kr6PEeUT+Fl7najmSOS6SmAwCHK6Tw==}
+    engines: {node: '>=6.9.0'}
+    peerDependencies:
+      '@babel/core': ^7.0.0
+    dependencies:
+      '@babel/core': 7.23.3
       '@babel/helper-environment-visitor': 7.22.20
       '@babel/helper-member-expression-to-functions': 7.23.0
       '@babel/helper-optimise-call-expression': 7.22.5
@@ -8139,24 +8154,28 @@ packages:
       file-system-cache: 2.3.0
     dev: true
 
-  /@stylexjs/babel-plugin@0.2.0-beta.27(@babel/core@7.23.2)(@babel/traverse@7.23.2)(@babel/types@7.23.0):
+  /@stylexjs/babel-plugin@0.2.0-beta.27(@babel/core@7.23.3)(@babel/traverse@7.23.4)(@babel/types@7.23.4):
     resolution: {integrity: sha512-bmnpWzUVIuJTqm2cfsUK6I7m9LKkr6ODQkFIio21GuKSNoUl4w2PJ7hwS4cxKdI8+i8NRkZhei8mfebroixs1Q==}
     peerDependencies:
       '@babel/core': ^7.19.6
       '@babel/traverse': ^7.0.0-0
       '@babel/types': ^7.15.6
     dependencies:
-      '@babel/core': 7.23.2
-      '@babel/traverse': 7.23.2
-      '@babel/types': 7.23.0
+      '@babel/core': 7.23.3
+      '@babel/traverse': 7.23.4
+      '@babel/types': 7.23.4
       '@stylexjs/shared': 0.2.0-beta.27
     dev: true
 
-  /@stylexjs/rollup-plugin@0.2.0-beta.27(@babel/traverse@7.23.2)(@babel/types@7.23.0):
+  /@stylexjs/eslint-plugin@0.2.0-beta.27:
+    resolution: {integrity: sha512-cEXiCeZVLs6q04HF8KeE4b0mEZ5dCT2lRiZ5hqYNpzQZBgbD80mwpjNdujxHQFt0ANmhsswPz5cU+UhxxPkqMg==}
+    dev: true
+
+  /@stylexjs/rollup-plugin@0.2.0-beta.27(@babel/traverse@7.23.4)(@babel/types@7.23.4):
     resolution: {integrity: sha512-eFuyPs+/+baCndSjoS9ve/cUfoLialnZZewhXMpxkV1mh9SNHgnmkJjd+mhE+fwGCzZ1c4cXoIbVCrljaqxuvQ==}
     dependencies:
-      '@babel/core': 7.23.2
-      '@stylexjs/babel-plugin': 0.2.0-beta.27(@babel/core@7.23.2)(@babel/traverse@7.23.2)(@babel/types@7.23.0)
+      '@babel/core': 7.23.3
+      '@stylexjs/babel-plugin': 0.2.0-beta.27(@babel/core@7.23.3)(@babel/traverse@7.23.4)(@babel/types@7.23.4)
     transitivePeerDependencies:
       - '@babel/traverse'
       - '@babel/types'
@@ -8314,8 +8333,8 @@ packages:
   /@types/babel__core@7.20.5:
     resolution: {integrity: sha512-qoQprZvz5wQFJwMDqeseRXWv3rqMvhgpbXFfVyWhbx9X47POIA6i/+dXefEmZKoAgOaTdaIgNSMqMIU61yRyzA==}
     dependencies:
-      '@babel/parser': 7.23.0
-      '@babel/types': 7.23.0
+      '@babel/parser': 7.23.4
+      '@babel/types': 7.23.4
       '@types/babel__generator': 7.6.6
       '@types/babel__template': 7.4.3
       '@types/babel__traverse': 7.20.3
