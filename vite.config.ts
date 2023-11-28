@@ -41,7 +41,26 @@ const PURE_CALLS = [
 export default defineConfig(({ mode }) => {
   return {
     plugins: [
-      react({ babel: { plugins: mode !== 'production' ? [styleXPluginDev] : [] } }),
+      react({
+        babel: {
+          plugins:
+            mode !== 'production'
+              ? [
+                  [
+                    styleXPluginDev,
+                    {
+                      dev: true,
+                      // Required for CSS variable support
+                      unstable_moduleResolution: {
+                        type: 'commonJS',
+                        rootDir: __dirname,
+                      },
+                    },
+                  ],
+                ]
+              : [],
+        },
+      }),
       vanillaExtractPlugin(),
       cssImport(),
       PluginPure({
@@ -83,7 +102,16 @@ export default defineConfig(({ mode }) => {
           '@vanilla-extract/recipes/createRuntimeFn',
           'rainbow-sprinkles/createRuntimeFn',
         ],
-        plugins: [stylexPlugin({ fileName: 'style.css' })],
+        plugins: [
+          stylexPlugin({
+            fileName: 'style.css',
+            // Required for CSS variable support
+            unstable_moduleResolution: {
+              type: 'commonJS',
+              rootDir: __dirname,
+            },
+          }),
+        ],
       },
       sourcemap: true,
       minify: false,
