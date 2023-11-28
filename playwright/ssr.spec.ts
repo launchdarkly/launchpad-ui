@@ -29,9 +29,11 @@ test.describe('Remix SSR', async () => {
           .replace(/(^[A-Z])/, ([first]) => first.toLowerCase())
           .replace(/([A-Z])/g, ([letter]) => `-${letter.toLowerCase()}`);
 
-      const element = page.locator(`[data-test-id=${dashify(component.name)}]`);
+      const element = page.getByTestId(dashify(component.name));
+      // @ts-expect-error role
+      const rac = page.getByRole(component.role);
 
-      await expect(element).toBeVisible();
+      await expect(element.or(rac)).toBeVisible();
     });
   }
 });

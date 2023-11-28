@@ -257,6 +257,9 @@ importers:
 
   apps/remix:
     dependencies:
+      '@launchpad-ui/components':
+        specifier: workspace:~
+        version: link:../../packages/components
       '@launchpad-ui/core':
         specifier: workspace:~
         version: link:../../packages/core

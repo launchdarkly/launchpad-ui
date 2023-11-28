@@ -33,14 +33,14 @@ interface ProgressBarProps extends Omit<AriaProgressBarProps, 'style'> {
   style?: StyleXStyles;
 }
 
-const ProgressBar = ({ style, ...rest }: ProgressBarProps) => {
+const ProgressBar = ({ style, ...props }: ProgressBarProps) => {
   const center = 16;
   const strokeWidth = 4;
   const r = 16 - strokeWidth;
   const c = 2 * r * Math.PI;
 
   return (
-    <AriaProgressBar {...rest} {...stylex.props(styles.base, style)}>
+    <AriaProgressBar {...props} {...stylex.props(styles.base, style)}>
       {({ percentage }) => (
         <svg
           width={64}
@@ -48,7 +48,7 @@ const ProgressBar = ({ style, ...rest }: ProgressBarProps) => {
           viewBox="0 0 32 32"
           fill="none"
           strokeWidth={strokeWidth}
-          {...stylex.props(rest.isIndeterminate && styles.indeterminate)}
+          {...stylex.props(props.isIndeterminate && styles.indeterminate)}
         >
           <circle
             cx={center}
@@ -69,7 +69,7 @@ const ProgressBar = ({ style, ...rest }: ProgressBarProps) => {
             cy={center}
             r={r}
             strokeDasharray={`${c} ${c}`}
-            strokeDashoffset={c - (rest.isIndeterminate ? 0.25 : percentage! / 100) * c}
+            strokeDashoffset={c - (props.isIndeterminate ? 0.25 : percentage! / 100) * c}
             strokeLinecap="round"
             transform="rotate(-90 16 16)"
             {...stylex.props(styles.innerCircle)}
