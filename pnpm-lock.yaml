@@ -538,6 +538,9 @@ importers:
 
   packages/components:
     dependencies:
+      '@launchpad-ui/tokens':
+        specifier: workspace:~
+        version: link:../tokens
       '@stylexjs/stylex':
         specifier: 0.2.0-beta.27
         version: 0.2.0-beta.27

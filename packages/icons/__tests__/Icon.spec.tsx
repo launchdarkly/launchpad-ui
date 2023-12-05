@@ -5,7 +5,7 @@ import { Icon, StatusIcon, FlairIcon } from '../src';
 
 describe('Icon', () => {
   it('renders', () => {
-    render(<Icon name="add" size="medium" />);
+    render(<Icon name="add" size="medium" description="add" />);
     expect(screen.getByRole('img', { hidden: true })).toBeInTheDocument();
   });
 

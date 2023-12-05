@@ -4,3 +4,4 @@ storybook-static/
 build/
 public/build/
 coverage
+packages/components/src/tokens.stylex.ts
