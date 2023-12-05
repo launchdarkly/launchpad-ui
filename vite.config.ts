@@ -55,10 +55,12 @@ export default defineConfig({
     setupFiles: [path.resolve(__dirname, './test/setup.ts')],
     include: ['**/__tests__/*.spec.{ts,tsx}'],
     coverage: {
-      lines: 90,
-      functions: 70,
-      branches: 70,
-      statements: 90,
+      thresholds: {
+        lines: 90,
+        functions: 70,
+        branches: 70,
+        statements: 90,
+      },
       include: ['**/src/**'],
       exclude: [...configDefaults.exclude, '**/types.ts'],
     },
