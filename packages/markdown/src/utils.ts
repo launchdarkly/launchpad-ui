@@ -33,7 +33,7 @@ function renderMarkdown(
     return link.replace('<a', "<a target='_blank' rel='noopener noreferrer'");
   };
 
-  const html = marked(source, { renderer });
+  const html = marked(source, { renderer }) as string;
 
   const sanitizationConfig: Config = {
     KEEP_CONTENT: false,
