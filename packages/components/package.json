@@ -28,7 +28,7 @@
   "scripts": {
     "build": "vite build -c ../../vite.config.ts && tsc --project tsconfig.build.json",
     "clean": "rm -rf dist",
-    "lint": "eslint '**/*.{ts,tsx,js}'",
+    "lint": "eslint '**/*.{ts,tsx,js}' --ignore-pattern 'tokens.stylex.ts'",
     "test": "vitest run --coverage"
   },
   "dependencies": {
@@ -36,7 +36,7 @@
     "react-aria-components": "1.0.0-rc.0"
   },
   "peerDependencies": {
-    "@stylexjs/stylex": "0.2.0-beta.27",
+    "@stylexjs/stylex": "0.3.0",
     "react": "18.2.0",
     "react-dom": "18.2.0"
   },

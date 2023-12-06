@@ -87,17 +87,17 @@ importers:
         specifier: ^7.6.3
         version: 7.6.3
       '@stylexjs/babel-plugin':
-        specifier: ^0.2.0-beta.27
-        version: 0.2.0-beta.27(@babel/core@7.23.5)(@babel/traverse@7.23.5)(@babel/types@7.23.5)
+        specifier: ^0.3.0
+        version: 0.3.0(@babel/core@7.23.5)(@babel/traverse@7.23.5)(@babel/types@7.23.5)
       '@stylexjs/eslint-plugin':
-        specifier: ^0.2.0-beta.27
-        version: 0.2.0-beta.27
+        specifier: ^0.3.0
+        version: 0.3.0
       '@stylexjs/rollup-plugin':
-        specifier: ^0.2.0-beta.27
-        version: 0.2.0-beta.27(@babel/traverse@7.23.5)(@babel/types@7.23.5)
+        specifier: ^0.3.0
+        version: 0.3.0(@babel/traverse@7.23.5)(@babel/types@7.23.5)
       '@stylexjs/stylex':
-        specifier: ^0.2.0-beta.27
-        version: 0.2.0-beta.27
+        specifier: ^0.3.0
+        version: 0.3.0
       '@testing-library/dom':
         specifier: ^9.3.0
         version: 9.3.3
@@ -542,8 +542,8 @@ importers:
         specifier: workspace:~
         version: link:../tokens
       '@stylexjs/stylex':
-        specifier: 0.2.0-beta.27
-        version: 0.2.0-beta.27
+        specifier: 0.3.0
+        version: 0.3.0
       react-aria-components:
         specifier: 1.0.0-rc.0
         version: 1.0.0-rc.0(react-dom@18.2.0)(react@18.2.0)
@@ -8024,8 +8024,8 @@ packages:
       file-system-cache: 2.3.0
     dev: true
 
-  /@stylexjs/babel-plugin@0.2.0-beta.27(@babel/core@7.23.5)(@babel/traverse@7.23.5)(@babel/types@7.23.5):
-    resolution: {integrity: sha512-bmnpWzUVIuJTqm2cfsUK6I7m9LKkr6ODQkFIio21GuKSNoUl4w2PJ7hwS4cxKdI8+i8NRkZhei8mfebroixs1Q==}
+  /@stylexjs/babel-plugin@0.3.0(@babel/core@7.23.5)(@babel/traverse@7.23.5)(@babel/types@7.23.5):
+    resolution: {integrity: sha512-OwViUP78aOMt3zJ9Uhrk2UMveMocyuZ/9Lhru+4j71aarimi2syIas20NpBeNUgzjzcmQXzLkSxVQizUGkGGbA==}
     peerDependencies:
       '@babel/core': ^7.19.6
       '@babel/traverse': ^7.0.0-0
@@ -8034,32 +8034,32 @@ packages:
       '@babel/core': 7.23.5
       '@babel/traverse': 7.23.5
       '@babel/types': 7.23.5
-      '@stylexjs/shared': 0.2.0-beta.27
+      '@stylexjs/shared': 0.3.0
     dev: true
 
-  /@stylexjs/eslint-plugin@0.2.0-beta.27:
-    resolution: {integrity: sha512-cEXiCeZVLs6q04HF8KeE4b0mEZ5dCT2lRiZ5hqYNpzQZBgbD80mwpjNdujxHQFt0ANmhsswPz5cU+UhxxPkqMg==}
+  /@stylexjs/eslint-plugin@0.3.0:
+    resolution: {integrity: sha512-/XeqkTSV4XqOq5Z/61TvQMG1prdP+XTOauqDaDYyETdxu1pg/3h/88hhkSyHkjeBfVoLxfG0GIxpq4efhUWzpQ==}
     dev: true
 
-  /@stylexjs/rollup-plugin@0.2.0-beta.27(@babel/traverse@7.23.5)(@babel/types@7.23.5):
-    resolution: {integrity: sha512-eFuyPs+/+baCndSjoS9ve/cUfoLialnZZewhXMpxkV1mh9SNHgnmkJjd+mhE+fwGCzZ1c4cXoIbVCrljaqxuvQ==}
+  /@stylexjs/rollup-plugin@0.3.0(@babel/traverse@7.23.5)(@babel/types@7.23.5):
+    resolution: {integrity: sha512-ZBF/e1kx5rVsLQiN/vdxqn+UZB3GlWBXSR2gljCxBLprCi5oI4SNua3S+wAYSc/Np0NG+EsWLi2OAPi77lghCA==}
     dependencies:
       '@babel/core': 7.23.5
-      '@stylexjs/babel-plugin': 0.2.0-beta.27(@babel/core@7.23.5)(@babel/traverse@7.23.5)(@babel/types@7.23.5)
+      '@stylexjs/babel-plugin': 0.3.0(@babel/core@7.23.5)(@babel/traverse@7.23.5)(@babel/types@7.23.5)
     transitivePeerDependencies:
       - '@babel/traverse'
       - '@babel/types'
       - supports-color
     dev: true
 
-  /@stylexjs/shared@0.2.0-beta.27:
-    resolution: {integrity: sha512-lNcXMniGY3CXV+Kk2twXIxcNqgNFHO1Y5QLdKYVEDfCqGlC24ZVXTeJKUdycHZFp4b2tOr9MIgmShF6hN3R3LA==}
+  /@stylexjs/shared@0.3.0:
+    resolution: {integrity: sha512-Pw47Nm0SB9baLmbR5LvWnH+9WEGXWaMf0QDsNAGUJuC0JAD5oK7pSwQFhM06QHZIxGMh10CjGhSsQgmvPCYQ0Q==}
     dependencies:
       postcss-value-parser: 4.2.0
     dev: true
 
-  /@stylexjs/stylex@0.2.0-beta.27:
-    resolution: {integrity: sha512-heht9US2I/KGWOWXpGhRM4V/n7TF4KH9xFRKzEK4UpkfX5It1697JSc679Yb4pU5PvTvGau1D9Vi5uLeniSkeQ==}
+  /@stylexjs/stylex@0.3.0:
+    resolution: {integrity: sha512-iO9ayGjZ54IXIkXOLoNKf/GWS/3EGtJaxdLxvy7nUa30eUw6qMVvEgRi58S7MT+e/FJub5xaCM/j0oDHlDgcIg==}
     dependencies:
       css-mediaquery: 0.1.2
       invariant: 2.2.4
