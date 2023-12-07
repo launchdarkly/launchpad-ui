@@ -3,7 +3,7 @@ import type { ToastRecord, ToastProps } from '../src';
 import type { StoryObj } from '@storybook/react';
 
 import { Button } from '@launchpad-ui/button';
-import { userEvent, within } from '@storybook/testing-library';
+import { userEvent, within } from '@storybook/test';
 import { useId, useState } from 'react';
 
 import { ToastCenter } from '../src';
