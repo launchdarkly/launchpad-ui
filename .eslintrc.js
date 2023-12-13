@@ -106,7 +106,8 @@ module.exports = {
   },
   overrides: [
     {
-      files: ['**/__tests__/**/*.spec.[jt]s?(x)'],
+      files: ['**/__tests__/**/*.spec.[jt]s?(x)', '**/?(*.)+(spec|test).[jt]s?(x)'],
+      excludedFiles: 'playwright/*',
       extends: ['plugin:testing-library/react'],
     },
     {

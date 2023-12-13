@@ -2,6 +2,7 @@ import type { StyleXStyles } from '@stylexjs/stylex';
 import type { ProgressBarProps as AriaProgressBarProps } from 'react-aria-components';
 
 import * as stylex from '@stylexjs/stylex';
+import { clsx } from 'clsx';
 import { ProgressBar as AriaProgressBar } from 'react-aria-components';
 
 import { tokens } from './tokens.stylex';
@@ -44,14 +45,20 @@ interface ProgressBarProps extends Omit<AriaProgressBarProps, 'style'> {
   size?: 'small' | 'medium' | 'large';
 }
 
-const ProgressBar = ({ style, size = 'small', ...props }: ProgressBarProps) => {
+const ProgressBar = ({ style, size = 'small', className, ...props }: ProgressBarProps) => {
   const center = 16;
   const strokeWidth = 4;
   const r = 16 - strokeWidth;
   const c = 2 * r * Math.PI;
 
+  const stylexProps = stylex.props(styles.base, styles[size], style);
+
   return (
-    <AriaProgressBar {...props} {...stylex.props(styles.base, styles[size], style)}>
+    <AriaProgressBar
+      {...props}
+      className={clsx(stylexProps.className, className)}
+      style={stylexProps.style}
+    >
       {({ percentage }) => (
         <svg
           width={64}
