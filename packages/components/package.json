@@ -33,11 +33,11 @@
   },
   "dependencies": {
     "@launchpad-ui/tokens": "workspace:~",
+    "@stylexjs/stylex": "0.3.0",
     "react-aria-components": "1.0.0-rc.0",
     "clsx": "2.0.0"
   },
   "peerDependencies": {
-    "@stylexjs/stylex": "0.3.0",
     "react": "18.2.0",
     "react-dom": "18.2.0"
   },

@@ -68,7 +68,6 @@
     "@stylexjs/babel-plugin": "^0.3.0",
     "@stylexjs/eslint-plugin": "^0.3.0",
     "@stylexjs/rollup-plugin": "^0.3.0",
-    "@stylexjs/stylex": "^0.3.0",
     "@testing-library/dom": "^9.3.0",
     "@testing-library/jest-dom": "^6.1.2",
     "@testing-library/react": "^14.1.0",
