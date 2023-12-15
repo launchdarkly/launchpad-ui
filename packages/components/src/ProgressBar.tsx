@@ -1,8 +1,10 @@
 import type { StyleXStyles } from '@stylexjs/stylex';
+import type { ForwardedRef } from 'react';
 import type { ProgressBarProps as AriaProgressBarProps } from 'react-aria-components';
 
 import * as stylex from '@stylexjs/stylex';
 import { clsx } from 'clsx';
+import { forwardRef } from 'react';
 import { ProgressBar as AriaProgressBar } from 'react-aria-components';
 
 import { tokens } from './tokens.stylex';
@@ -16,15 +18,6 @@ const styles = stylex.create({
   base: {
     display: 'inline-block',
     transformOrigin: '0 0',
-  },
-  small: {
-    transform: 'scale(0.25)',
-  },
-  medium: {
-    transform: 'scale(0.375)',
-  },
-  large: {
-    transform: 'scale(0.5)',
   },
   indeterminate: {
     animationName: spin,
@@ -40,55 +33,75 @@ const styles = stylex.create({
   },
 });
 
+const variants = stylex.create({
+  small: {
+    transform: 'scale(0.25)',
+  },
+  medium: {
+    transform: 'scale(0.375)',
+  },
+  large: {
+    transform: 'scale(0.5)',
+  },
+});
+
 interface ProgressBarProps extends Omit<AriaProgressBarProps, 'style'> {
   style?: StyleXStyles;
-  size?: 'small' | 'medium' | 'large';
+  size?: keyof typeof variants;
 }
 
-const ProgressBar = ({ style, size = 'small', className, ...props }: ProgressBarProps) => {
-  const center = 16;
-  const strokeWidth = 4;
-  const r = 16 - strokeWidth;
-  const c = 2 * r * Math.PI;
+const ProgressBar = forwardRef(
+  (
+    { style, size = 'small', className, ...props }: ProgressBarProps,
+    ref: ForwardedRef<HTMLDivElement>
+  ) => {
+    const center = 16;
+    const strokeWidth = 4;
+    const r = 16 - strokeWidth;
+    const c = 2 * r * Math.PI;
 
-  const stylexProps = stylex.props(styles.base, styles[size], style);
+    const stylexProps = stylex.props(styles.base, variants[size], style);
 
-  return (
-    <AriaProgressBar
-      {...props}
-      className={clsx(stylexProps.className, className)}
-      style={stylexProps.style}
-    >
-      {({ percentage }) => (
-        <svg
-          width={64}
-          height={64}
-          viewBox="0 0 32 32"
-          fill="none"
-          strokeWidth={strokeWidth}
-          {...stylex.props(props.isIndeterminate && styles.indeterminate)}
-        >
-          <circle
-            cx={center}
-            cy={center}
-            r={r}
+    return (
+      <AriaProgressBar
+        {...props}
+        ref={ref}
+        className={clsx(stylexProps.className, className)}
+        style={stylexProps.style}
+      >
+        {({ percentage }) => (
+          <svg
+            width={64}
+            height={64}
+            viewBox="0 0 32 32"
+            fill="none"
             strokeWidth={strokeWidth}
-            {...stylex.props(styles.outerCircle)}
-          />
-          <circle
-            cx={center}
-            cy={center}
-            r={r}
-            strokeDasharray={`${c} ${c}`}
-            strokeDashoffset={c - (props.isIndeterminate ? 0.34 : percentage! / 100) * c}
-            transform="rotate(-90 16 16)"
-            {...stylex.props(styles.innerCircle)}
-          />
-        </svg>
-      )}
-    </AriaProgressBar>
-  );
-};
+            {...stylex.props(props.isIndeterminate && styles.indeterminate)}
+          >
+            <circle
+              cx={center}
+              cy={center}
+              r={r}
+              strokeWidth={strokeWidth}
+              {...stylex.props(styles.outerCircle)}
+            />
+            <circle
+              cx={center}
+              cy={center}
+              r={r}
+              strokeDasharray={`${c} ${c}`}
+              strokeDashoffset={c - (props.isIndeterminate ? 0.34 : percentage! / 100) * c}
+              transform="rotate(-90 16 16)"
+              {...stylex.props(styles.innerCircle)}
+            />
+          </svg>
+        )}
+      </AriaProgressBar>
+    );
+  }
+);
+
+ProgressBar.displayName = 'ProgressBar';
 
 export { ProgressBar };
 export type { ProgressBarProps };
