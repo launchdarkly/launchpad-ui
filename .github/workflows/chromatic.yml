@@ -106,9 +106,9 @@ jobs:
 
       - name: Upload blob report to GitHub Actions Artifacts
         if: always()
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
-          name: all-blob-reports
+          name: a11y-blob-reports-${{ matrix.shard }}
           path: blob-report
           retention-days: 1
 
@@ -138,17 +138,16 @@ jobs:
         run: pnpm install
 
       - name: Download blob reports from GitHub Actions Artifacts
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
-          name: all-blob-reports
           path: all-blob-reports
 
       - name: Merge into HTML Report
         run: pnpm playwright merge-reports --reporter html ./all-blob-reports
 
       - name: Upload HTML report
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
-          name: html-report--attempt-${{ github.run_attempt }}
+          name: a11y-html-report--attempt-${{ github.run_attempt }}
           path: playwright-report
           retention-days: 14
