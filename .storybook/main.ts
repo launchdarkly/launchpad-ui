@@ -3,6 +3,7 @@ import type { StorybookConfig } from '@storybook/react-vite';
 import path from 'path';
 import fs from 'fs';
 import fg from 'fast-glob';
+import stylexPlugin from '@stylexjs/rollup-plugin';
 import turbosnap from 'vite-plugin-turbosnap';
 
 import tsconfig from '../tsconfig.json';
@@ -49,6 +50,15 @@ const config: StorybookConfig = {
   async viteFinal(config, { configType }) {
     if (configType === 'PRODUCTION') {
       config.plugins?.push(turbosnap({ rootDir: config.root || process.cwd() }));
+      config.build!.rollupOptions!.plugins = [
+        stylexPlugin({
+          // Required for CSS variable support
+          unstable_moduleResolution: {
+            type: 'commonJS',
+            rootDir: __dirname,
+          },
+        }),
+      ];
     }
 
     return config;
@@ -57,6 +67,10 @@ const config: StorybookConfig = {
     autodocs: true,
     defaultName: 'Docs',
   },
+  previewHead: (head) => `
+    ${head}
+    ${process.env.NODE_ENV === 'production' ? '<link href="./stylex.css" rel="stylesheet" />' : ''}
+  `,
 };
 
 const getPackageStatusEnvVars = () => {

@@ -20,7 +20,14 @@ module.exports = {
       jsx: true,
     },
   },
-  plugins: ['react', '@typescript-eslint', 'testing-library', 'functional', 'jsx-a11y'],
+  plugins: [
+    'react',
+    '@typescript-eslint',
+    'testing-library',
+    'functional',
+    'jsx-a11y',
+    '@stylexjs',
+  ],
   settings: {
     react: {
       version: 'detect',
@@ -47,7 +54,7 @@ module.exports = {
       },
     ],
     '@typescript-eslint/consistent-type-imports': 'error',
-    '@typescript-eslint/consistent-type-definitions': ['error', 'type'],
+    '@typescript-eslint/consistent-type-definitions': 0,
     'testing-library/prefer-user-event': 'error',
     'import/order': [
       'error',
@@ -95,10 +102,12 @@ module.exports = {
         ],
       },
     ],
+    '@stylexjs/valid-styles': 'error',
   },
   overrides: [
     {
       files: ['**/__tests__/**/*.spec.[jt]s?(x)', '**/?(*.)+(spec|test).[jt]s?(x)'],
+      excludedFiles: 'playwright/*',
       extends: ['plugin:testing-library/react'],
     },
     {

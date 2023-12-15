@@ -54,6 +54,25 @@ StyleDictionary.registerFormat({
   },
 });
 
+StyleDictionary.registerFormat({
+  name: 'typescript/stylex',
+  formatter({ dictionary }) {
+    const tokens = dictionary.allProperties
+      .map((prop) => {
+        const { name, value } = prop;
+        return `  '${name}': '${value}',`;
+      })
+      .join('\n');
+
+    return (
+      `import * as stylex from '@stylexjs/stylex';\n\n` +
+      'export const tokens = stylex.defineVars({\n' +
+      tokens +
+      '\n});\n'
+    );
+  },
+});
+
 StyleDictionary.registerTransform({
   type: 'value',
   transitive: true,
@@ -72,6 +91,15 @@ StyleDictionary.registerTransform({
       return token.value;
     }
     return StyleDictionary.transform[`color/rgb`].transformer(token, {});
+  },
+});
+
+StyleDictionary.registerTransform({
+  type: 'value',
+  transitive: true,
+  name: 'value/var',
+  transformer: (token) => {
+    return `var(--lp-${token.path.join('-')})`;
   },
 });
 
@@ -152,6 +180,16 @@ const myStyleDictionary = StyleDictionary.extend({
         {
           format: 'json/nested',
           destination: 'contract.json',
+        },
+      ],
+    },
+    stylex: {
+      buildPath: '../components/src/',
+      transforms: ['attribute/cti', 'name/pathToDotNotation', 'value/var'],
+      files: [
+        {
+          format: 'typescript/stylex',
+          destination: 'tokens.stylex.ts',
         },
       ],
     },

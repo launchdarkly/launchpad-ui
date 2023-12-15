@@ -2,8 +2,11 @@
 
 import path from 'path';
 
+import styleXPluginDev from '@stylexjs/babel-plugin';
+// @ts-expect-error no types
+import stylexPlugin from '@stylexjs/rollup-plugin';
 import { vanillaExtractPlugin } from '@vanilla-extract/vite-plugin';
-import react from '@vitejs/plugin-react-swc';
+import react from '@vitejs/plugin-react';
 import { PluginPure } from 'rollup-plugin-pure';
 import { defineConfig } from 'vite';
 // eslint-disable-next-line import/no-unresolved
@@ -34,53 +37,84 @@ const PURE_CALLS = [
   'lazy',
 ];
 
-export default defineConfig({
-  plugins: [
-    react(),
-    vanillaExtractPlugin(),
-    cssImport(),
-    // @ts-expect-error rollup-plugin-pure needs to update vite plugin types
-    PluginPure({
-      functions: PURE_CALLS,
-      sourcemap: true,
-      exclude: [/node_modules/],
-    }),
-  ],
-  resolve: {
-    alias,
-  },
-  test: {
-    globals: true,
-    environment: 'jsdom',
-    setupFiles: [path.resolve(__dirname, './test/setup.ts')],
-    include: ['**/__tests__/*.spec.{ts,tsx}'],
-    coverage: {
-      thresholds: {
-        lines: 90,
-        functions: 70,
-        branches: 70,
-        statements: 90,
+// @ts-expect-error rollup-plugin-pure needs to update vite plugin types
+export default defineConfig(({ mode }) => {
+  return {
+    plugins: [
+      react({
+        babel: {
+          plugins:
+            mode !== 'production'
+              ? [
+                  [
+                    styleXPluginDev,
+                    {
+                      dev: true,
+                      // Required for CSS variable support
+                      unstable_moduleResolution: {
+                        type: 'commonJS',
+                        rootDir: __dirname,
+                      },
+                    },
+                  ],
+                ]
+              : [],
+        },
+      }),
+      vanillaExtractPlugin(),
+      cssImport(),
+      PluginPure({
+        functions: PURE_CALLS,
+        sourcemap: true,
+        exclude: [/node_modules/],
+      }),
+    ],
+    resolve: {
+      alias,
+    },
+    test: {
+      globals: true,
+      environment: 'jsdom',
+      setupFiles: [path.resolve(__dirname, './test/setup.ts')],
+      include: ['**/__tests__/*.spec.{ts,tsx}'],
+      coverage: {
+        thresholds: {
+          lines: 90,
+          functions: 70,
+          branches: 70,
+          statements: 90,
+        },
+        include: ['**/src/**'],
+        exclude: [...configDefaults.exclude, '**/types.ts'],
       },
-      include: ['**/src/**'],
-      exclude: [...configDefaults.exclude, '**/types.ts'],
     },
-  },
-  build: {
-    lib: {
-      entry: packageJSON.source,
-      formats: ['es', 'cjs'],
-      fileName: (format) => (format === 'es' ? 'index.es.js' : 'index.js'),
+    build: {
+      lib: {
+        entry: packageJSON.source,
+        formats: ['es', 'cjs'],
+        fileName: (format) => (format === 'es' ? 'index.es.js' : 'index.js'),
+      },
+      rollupOptions: {
+        external: [
+          ...Object.keys(packageJSON.dependencies || {}),
+          ...Object.keys(packageJSON.peerDependencies || {}),
+          'react/jsx-runtime',
+          '@vanilla-extract/recipes/createRuntimeFn',
+          'rainbow-sprinkles/createRuntimeFn',
+        ],
+        plugins: [
+          stylexPlugin({
+            fileName: 'style.css',
+            // Required for CSS variable support
+            unstable_moduleResolution: {
+              type: 'commonJS',
+              rootDir: __dirname,
+            },
+          }),
+        ],
+      },
+      sourcemap: true,
+      minify: false,
     },
-    rollupOptions: {
-      external: [
-        ...Object.keys(packageJSON.dependencies || {}),
-        ...Object.keys(packageJSON.peerDependencies || {}),
-        'react/jsx-runtime',
-        '@vanilla-extract/recipes/createRuntimeFn',
-        'rainbow-sprinkles/createRuntimeFn',
-      ],
-    },
-    sourcemap: true,
-    minify: false,
-  },
+  };
 });
