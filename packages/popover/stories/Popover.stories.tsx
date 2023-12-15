@@ -1,7 +1,7 @@
 import type { StoryObj, StoryFn } from '@storybook/react';
 
 import { Button } from '@launchpad-ui/button';
-import { userEvent, within } from '@storybook/test';
+import { userEvent, within } from '@storybook/testing-library';
 
 import { Popover } from '../src';
 

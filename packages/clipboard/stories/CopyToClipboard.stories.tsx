@@ -1,7 +1,7 @@
 import type { CopyToClipboardHandleRef } from '../src/CopyToClipboard';
 import type { StoryObj, StoryFn } from '@storybook/react';
 
-import { userEvent, within } from '@storybook/test';
+import { userEvent, within } from '@storybook/testing-library';
 import { useRef } from 'react';
 
 import { CopyToClipboard } from '../src';

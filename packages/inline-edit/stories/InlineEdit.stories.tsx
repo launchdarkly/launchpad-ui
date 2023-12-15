@@ -5,7 +5,7 @@ import { CopyToClipboard } from '@launchpad-ui/clipboard';
 import { Form, FormField, IconField, TextArea, TextField } from '@launchpad-ui/form';
 import { Icon } from '@launchpad-ui/icons';
 import { useState } from '@storybook/client-api';
-import { userEvent, within } from '@storybook/test';
+import { userEvent, within } from '@storybook/testing-library';
 
 import { InlineEdit } from '../src';
 
