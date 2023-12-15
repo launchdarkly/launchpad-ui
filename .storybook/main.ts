@@ -4,6 +4,7 @@ import path from 'path';
 import fs from 'fs';
 import fg from 'fast-glob';
 import stylexPlugin from '@stylexjs/rollup-plugin';
+import { mergeConfig } from 'vite';
 import turbosnap from 'vite-plugin-turbosnap';
 
 import tsconfig from '../tsconfig.json';
@@ -48,20 +49,27 @@ const config: StorybookConfig = {
     return { ...config, ...packageStatuses };
   },
   async viteFinal(config, { configType }) {
-    if (configType === 'PRODUCTION') {
-      config.plugins?.push(turbosnap({ rootDir: config.root || process.cwd() }));
-      config.build!.rollupOptions!.plugins = [
-        stylexPlugin({
-          // Required for CSS variable support
-          unstable_moduleResolution: {
-            type: 'commonJS',
-            rootDir: __dirname,
-          },
-        }),
-      ];
-    }
-
-    return config;
+    return mergeConfig(
+      config,
+      configType === 'PRODUCTION'
+        ? {
+            plugins: [turbosnap({ rootDir: config.root || process.cwd() })],
+            build: {
+              rollupOptions: {
+                plugins: [
+                  stylexPlugin({
+                    // Required for CSS variable support
+                    unstable_moduleResolution: {
+                      type: 'commonJS',
+                      rootDir: __dirname,
+                    },
+                  }),
+                ],
+              },
+            },
+          }
+        : {}
+    );
   },
   docs: {
     autodocs: true,

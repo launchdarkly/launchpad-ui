@@ -62,7 +62,7 @@
     "@storybook/core-events": "^7.6.3",
     "@storybook/react": "^7.6.3",
     "@storybook/react-vite": "^7.6.3",
-    "@storybook/test": "^7.6.3",
+    "@storybook/testing-library": "^0.2.2",
     "@storybook/theming": "^7.6.3",
     "@storybook/types": "^7.6.3",
     "@stylexjs/babel-plugin": "^0.3.0",

@@ -5,7 +5,7 @@ import { Button } from '@launchpad-ui/button';
 import { Icon } from '@launchpad-ui/icons';
 import { Tooltip } from '@launchpad-ui/tooltip';
 import { useState } from '@storybook/client-api';
-import { userEvent, within } from '@storybook/test';
+import { userEvent, within } from '@storybook/testing-library';
 import { useRef } from 'react';
 
 import { REACT_NODE_TYPE_DOCS } from '../../../.storybook/utils';

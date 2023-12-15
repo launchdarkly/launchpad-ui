@@ -3,7 +3,7 @@ import type { SnackbarRecord, SnackbarProps } from '../src';
 import type { StoryObj } from '@storybook/react';
 
 import { Button } from '@launchpad-ui/button';
-import { userEvent, within } from '@storybook/test';
+import { userEvent, within } from '@storybook/testing-library';
 import { useId, useState } from 'react';
 
 import { SnackbarCenter } from '../src';
