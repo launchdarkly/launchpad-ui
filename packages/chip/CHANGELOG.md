@@ -1,5 +1,13 @@
 # @launchpad-ui/chip
 
+## 0.9.7
+
+### Patch Changes
+
+- Updated dependencies [[`861c925`](https://github.com/launchdarkly/launchpad-ui/commit/861c92546a6689042336a51297ad600b957b6d21)]:
+  - @launchpad-ui/tokens@0.9.2
+  - @launchpad-ui/icons@0.14.7
+
 ## 0.9.6
 
 ### Patch Changes
