@@ -1,5 +1,11 @@
 # @launchpad-ui/icons
 
+## 0.14.8
+
+### Patch Changes
+
+- [#1108](https://github.com/launchdarkly/launchpad-ui/pull/1108) [`c8357e5`](https://github.com/launchdarkly/launchpad-ui/commit/c8357e52195c31a3e03432cf4079279746b4c660) Thanks [@vroske-ld](https://github.com/vroske-ld)! - [Icons] Add `arrow-connect-star` and `arrow-connect-star-outline` icons.
+
 ## 0.14.7
 
 ### Patch Changes
