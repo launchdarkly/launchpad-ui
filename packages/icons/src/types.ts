@@ -13,6 +13,8 @@ const icons = [
   'approval-pending',
   'approvals',
   'arrow-connect',
+  'arrow-connect-star',
+  'arrow-connect-star-outline',
   'arrow-down-thin',
   'arrow-left-thin',
   'arrow-right-thin',
