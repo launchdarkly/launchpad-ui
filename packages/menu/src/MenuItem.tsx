@@ -29,7 +29,7 @@ type MenuItemOwnProps = {
   nested?: boolean;
   groupHeader?: boolean;
   tooltip?: string | ReactElement;
-  tooltipOptions?: typeof Tooltip;
+  tooltipOptions?: ComponentPropsWithRef<typeof Tooltip>;
   tooltipPlacement?: PopoverPlacement;
   asChild?: boolean;
   'data-test-id'?: string;
