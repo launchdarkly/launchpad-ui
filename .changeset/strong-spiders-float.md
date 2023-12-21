@@ -1,6 +1,6 @@
 ---
-'@launchpad-ui/icons': minor
-'@launchpad-ui/core': minor
+'@launchpad-ui/icons': patch
+'@launchpad-ui/core': patch
 ---
 
 Add circles icon
