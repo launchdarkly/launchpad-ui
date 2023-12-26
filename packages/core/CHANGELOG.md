@@ -1,5 +1,35 @@
 # @launchpad-ui/core
 
+## 0.47.10
+
+### Patch Changes
+
+- [#1113](https://github.com/launchdarkly/launchpad-ui/pull/1113) [`b1b889c`](https://github.com/launchdarkly/launchpad-ui/commit/b1b889c6807dc28f90fc17319f019e678302c285) Thanks [@qshaner](https://github.com/qshaner)! - Add circles icon
+
+- Updated dependencies []:
+  - @launchpad-ui/alert@0.8.10
+  - @launchpad-ui/avatar@0.6.9
+  - @launchpad-ui/banner@0.10.9
+  - @launchpad-ui/button@0.11.9
+  - @launchpad-ui/chip@0.9.9
+  - @launchpad-ui/clipboard@0.11.10
+  - @launchpad-ui/collapsible@0.1.40
+  - @launchpad-ui/drawer@0.5.10
+  - @launchpad-ui/dropdown@0.6.84
+  - @launchpad-ui/filter@0.6.10
+  - @launchpad-ui/form@0.10.10
+  - @launchpad-ui/inline-edit@0.2.10
+  - @launchpad-ui/menu@0.12.10
+  - @launchpad-ui/modal@0.17.10
+  - @launchpad-ui/navigation@0.12.10
+  - @launchpad-ui/pagination@0.4.10
+  - @launchpad-ui/select@0.4.10
+  - @launchpad-ui/snackbar@0.4.9
+  - @launchpad-ui/tag@0.3.10
+  - @launchpad-ui/toast@0.3.9
+  - @launchpad-ui/split-button@0.9.10
+  - @launchpad-ui/card@0.2.10
+
 ## 0.47.9
 
 ### Patch Changes
