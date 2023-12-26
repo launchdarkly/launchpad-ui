@@ -1,5 +1,11 @@
 # @launchpad-ui/icons
 
+## 0.14.9
+
+### Patch Changes
+
+- [#1113](https://github.com/launchdarkly/launchpad-ui/pull/1113) [`b1b889c`](https://github.com/launchdarkly/launchpad-ui/commit/b1b889c6807dc28f90fc17319f019e678302c285) Thanks [@qshaner](https://github.com/qshaner)! - Add circles icon
+
 ## 0.14.8
 
 ### Patch Changes
