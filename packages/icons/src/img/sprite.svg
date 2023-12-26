@@ -456,6 +456,13 @@
         clip-rule="evenodd"
       />
     </symbol>
+    <symbol viewBox="0 0 16 16" id="lp-icon-circles">
+      <path
+        fill-rule="evenodd"
+        d="M3.792 7a2.917 2.917 0 1 1-2.914 3.043l-.003-.126.003-.127A2.917 2.917 0 0 1 3.792 7ZM10.208 7a2.917 2.917 0 1 1-2.913 3.043l-.003-.126.003-.127A2.917 2.917 0 0 1 10.208 7ZM7 1.167A2.917 2.917 0 1 1 4.086 4.21l-.003-.127.003-.126A2.917 2.917 0 0 1 7 1.167Z"
+        clip-rule="evenodd"
+      />
+    </symbol>
     <symbol viewBox="0 0 24 24" id="lp-icon-click">
       <path
         fill-rule="evenodd"

@@ -61,6 +61,7 @@ const icons = [
   'circle',
   'circle-dashed',
   'circle-outline',
+  'circles',
   'click',
   'clipboard-edit',
   'clock',
