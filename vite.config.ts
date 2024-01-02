@@ -3,7 +3,6 @@
 import path from 'path';
 
 import styleXPluginDev from '@stylexjs/babel-plugin';
-// @ts-expect-error no types
 import stylexPlugin from '@stylexjs/rollup-plugin';
 import { vanillaExtractPlugin } from '@vanilla-extract/vite-plugin';
 import react from '@vitejs/plugin-react';
