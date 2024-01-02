@@ -1,5 +1,16 @@
 # @launchpad-ui/filter
 
+## 0.6.11
+
+### Patch Changes
+
+- [#1114](https://github.com/launchdarkly/launchpad-ui/pull/1114) [`51987f5`](https://github.com/launchdarkly/launchpad-ui/commit/51987f538462e2a8378aa9e15a7ef99020c941c4) Thanks [@renovate](https://github.com/apps/renovate)! - Update dependencies
+
+- Updated dependencies [[`51987f5`](https://github.com/launchdarkly/launchpad-ui/commit/51987f538462e2a8378aa9e15a7ef99020c941c4), [`ff53eee`](https://github.com/launchdarkly/launchpad-ui/commit/ff53eee1874f5264ffcf27f57852c55568e0f2dc)]:
+  - @launchpad-ui/dropdown@0.6.85
+  - @launchpad-ui/menu@0.12.11
+  - @launchpad-ui/tooltip@0.8.8
+
 ## 0.6.10
 
 ### Patch Changes
@@ -755,7 +766,7 @@
   .selector {
     color: #000;
 
-    [data-theme='dark'] & {
+    [data-theme="dark"] & {
       color: #fff;
     }
   }
@@ -765,11 +776,11 @@
 
   ```css
   :root,
-  [data-theme='default'] {
+  [data-theme="default"] {
     --my-component-color-text: #000;
   }
 
-  [data-theme='dark'] {
+  [data-theme="dark"] {
     --my-component-color-text: #fff;
   }
 
@@ -1578,13 +1589,13 @@
   Before:
 
   ```js
-  import alertStyles from '@launchpad-ui/alert/styles/Alert.css';
+  import alertStyles from "@launchpad-ui/alert/styles/Alert.css";
   ```
 
   After:
 
   ```js
-  import alertStyles from '@launchpad-ui/alert/style.css';
+  import alertStyles from "@launchpad-ui/alert/style.css";
   ```
 
   The `core` package no longer bundles styles. If you need to import stylesheets for the components (in a Remix app for example) simply import them from the individual packages that come included when you install the `core` package.

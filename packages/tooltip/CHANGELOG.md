@@ -1,5 +1,12 @@
 # @launchpad-ui/tooltip
 
+## 0.8.8
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @launchpad-ui/popover@0.11.8
+
 ## 0.8.7
 
 ### Patch Changes
@@ -340,7 +347,7 @@
   .selector {
     color: #000;
 
-    [data-theme='dark'] & {
+    [data-theme="dark"] & {
       color: #fff;
     }
   }
@@ -350,11 +357,11 @@
 
   ```css
   :root,
-  [data-theme='default'] {
+  [data-theme="default"] {
     --my-component-color-text: #000;
   }
 
-  [data-theme='dark'] {
+  [data-theme="dark"] {
     --my-component-color-text: #fff;
   }
 
@@ -822,13 +829,13 @@
   Before:
 
   ```js
-  import alertStyles from '@launchpad-ui/alert/styles/Alert.css';
+  import alertStyles from "@launchpad-ui/alert/styles/Alert.css";
   ```
 
   After:
 
   ```js
-  import alertStyles from '@launchpad-ui/alert/style.css';
+  import alertStyles from "@launchpad-ui/alert/style.css";
   ```
 
   The `core` package no longer bundles styles. If you need to import stylesheets for the components (in a Remix app for example) simply import them from the individual packages that come included when you install the `core` package.

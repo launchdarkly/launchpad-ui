@@ -1,5 +1,14 @@
 # @launchpad-ui/dropdown
 
+## 0.6.85
+
+### Patch Changes
+
+- [#1114](https://github.com/launchdarkly/launchpad-ui/pull/1114) [`51987f5`](https://github.com/launchdarkly/launchpad-ui/commit/51987f538462e2a8378aa9e15a7ef99020c941c4) Thanks [@renovate](https://github.com/apps/renovate)! - Update dependencies
+
+- Updated dependencies []:
+  - @launchpad-ui/popover@0.11.8
+
 ## 0.6.84
 
 ### Patch Changes
@@ -1068,13 +1077,13 @@
   Before:
 
   ```js
-  import alertStyles from '@launchpad-ui/alert/styles/Alert.css';
+  import alertStyles from "@launchpad-ui/alert/styles/Alert.css";
   ```
 
   After:
 
   ```js
-  import alertStyles from '@launchpad-ui/alert/style.css';
+  import alertStyles from "@launchpad-ui/alert/style.css";
   ```
 
   The `core` package no longer bundles styles. If you need to import stylesheets for the components (in a Remix app for example) simply import them from the individual packages that come included when you install the `core` package.

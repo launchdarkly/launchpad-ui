@@ -1,5 +1,34 @@
 # @launchpad-ui/core
 
+## 0.47.11
+
+### Patch Changes
+
+- [#1114](https://github.com/launchdarkly/launchpad-ui/pull/1114) [`51987f5`](https://github.com/launchdarkly/launchpad-ui/commit/51987f538462e2a8378aa9e15a7ef99020c941c4) Thanks [@renovate](https://github.com/apps/renovate)! - Update dependencies
+
+- Updated dependencies [[`51987f5`](https://github.com/launchdarkly/launchpad-ui/commit/51987f538462e2a8378aa9e15a7ef99020c941c4), [`ff53eee`](https://github.com/launchdarkly/launchpad-ui/commit/ff53eee1874f5264ffcf27f57852c55568e0f2dc)]:
+  - @launchpad-ui/inline-edit@0.2.11
+  - @launchpad-ui/data-table@0.2.8
+  - @launchpad-ui/focus-trap@0.1.15
+  - @launchpad-ui/navigation@0.12.11
+  - @launchpad-ui/pagination@0.4.11
+  - @launchpad-ui/dropdown@0.6.85
+  - @launchpad-ui/tab-list@0.5.8
+  - @launchpad-ui/drawer@0.5.11
+  - @launchpad-ui/filter@0.6.11
+  - @launchpad-ui/select@0.4.11
+  - @launchpad-ui/toggle@0.7.8
+  - @launchpad-ui/modal@0.17.11
+  - @launchpad-ui/form@0.10.11
+  - @launchpad-ui/menu@0.12.11
+  - @launchpad-ui/tag@0.3.11
+  - @launchpad-ui/popover@0.11.8
+  - @launchpad-ui/split-button@0.9.11
+  - @launchpad-ui/card@0.2.11
+  - @launchpad-ui/progress-bubbles@0.7.8
+  - @launchpad-ui/tooltip@0.8.8
+  - @launchpad-ui/clipboard@0.11.11
+
 ## 0.47.10
 
 ### Patch Changes
@@ -1353,7 +1382,7 @@
   **Before**
 
   ```js
-  import { Add } from '@launchpad-ui/icons';
+  import { Add } from "@launchpad-ui/icons";
 
   const MyIcon = () => <Add size="medium" />;
   ```
@@ -1361,7 +1390,7 @@
   **After**
 
   ```js
-  import { Icon } from '@launchpad-ui/icons';
+  import { Icon } from "@launchpad-ui/icons";
 
   const MyIcon = () => <Icon name="add" size="medium" />;
   ```
@@ -1371,17 +1400,17 @@
   For example, if importing a static asset returns a resolved URL you can do the following in your app to load the icons:
 
   ```js
-  import { IconContext } from '@launchpad-ui/icons';
-  import icons from '@launchpad-ui/icons/sprite.svg';
-  import { createRoot } from 'react-dom/client';
+  import { IconContext } from "@launchpad-ui/icons";
+  import icons from "@launchpad-ui/icons/sprite.svg";
+  import { createRoot } from "react-dom/client";
 
-  const domNode = document.getElementById('root');
+  const domNode = document.getElementById("root");
   const root = createRoot(domNode);
 
   root.render(
     <IconContext.Provider value={{ path: icons }}>
       <App />
-    </IconContext.Provider>
+    </IconContext.Provider>,
   );
   ```
 
@@ -1651,13 +1680,13 @@
   Before:
 
   ```js
-  import { Add } from '@launchpad-ui/core';
+  import { Add } from "@launchpad-ui/core";
   ```
 
   After:
 
   ```js
-  import { Add } from '@launchpad-ui/icons';
+  import { Add } from "@launchpad-ui/icons";
   ```
 
 ## 0.38.3
@@ -2467,7 +2496,7 @@
   .selector {
     color: #000;
 
-    [data-theme='dark'] & {
+    [data-theme="dark"] & {
       color: #fff;
     }
   }
@@ -2477,11 +2506,11 @@
 
   ```css
   :root,
-  [data-theme='default'] {
+  [data-theme="default"] {
     --my-component-color-text: #000;
   }
 
-  [data-theme='dark'] {
+  [data-theme="dark"] {
     --my-component-color-text: #fff;
   }
 
@@ -5123,13 +5152,13 @@
   Before:
 
   ```js
-  import alertStyles from '@launchpad-ui/alert/styles/Alert.css';
+  import alertStyles from "@launchpad-ui/alert/styles/Alert.css";
   ```
 
   After:
 
   ```js
-  import alertStyles from '@launchpad-ui/alert/style.css';
+  import alertStyles from "@launchpad-ui/alert/style.css";
   ```
 
   The `core` package no longer bundles styles. If you need to import stylesheets for the components (in a Remix app for example) simply import them from the individual packages that come included when you install the `core` package.
@@ -5936,7 +5965,7 @@
   This requires that you wrap your app with [LazyMotion](https://www.framer.com/docs/lazy-motion/) to use these components:
 
   ```jsx
-  import { LazyMotion, domAnimation } from 'framer-motion';
+  import { LazyMotion, domAnimation } from "framer-motion";
 
   <LazyMotion features={domAnimation}>
     <App />

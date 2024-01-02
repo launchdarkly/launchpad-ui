@@ -1,5 +1,14 @@
 # @launchpad-ui/modal
 
+## 0.17.11
+
+### Patch Changes
+
+- [#1114](https://github.com/launchdarkly/launchpad-ui/pull/1114) [`51987f5`](https://github.com/launchdarkly/launchpad-ui/commit/51987f538462e2a8378aa9e15a7ef99020c941c4) Thanks [@renovate](https://github.com/apps/renovate)! - Update dependencies
+
+- Updated dependencies [[`51987f5`](https://github.com/launchdarkly/launchpad-ui/commit/51987f538462e2a8378aa9e15a7ef99020c941c4)]:
+  - @launchpad-ui/focus-trap@0.1.15
+
 ## 0.17.10
 
 ### Patch Changes
@@ -555,7 +564,7 @@
   .selector {
     color: #000;
 
-    [data-theme='dark'] & {
+    [data-theme="dark"] & {
       color: #fff;
     }
   }
@@ -565,11 +574,11 @@
 
   ```css
   :root,
-  [data-theme='default'] {
+  [data-theme="default"] {
     --my-component-color-text: #000;
   }
 
-  [data-theme='dark'] {
+  [data-theme="dark"] {
     --my-component-color-text: #fff;
   }
 
@@ -1308,13 +1317,13 @@
   Before:
 
   ```js
-  import alertStyles from '@launchpad-ui/alert/styles/Alert.css';
+  import alertStyles from "@launchpad-ui/alert/styles/Alert.css";
   ```
 
   After:
 
   ```js
-  import alertStyles from '@launchpad-ui/alert/style.css';
+  import alertStyles from "@launchpad-ui/alert/style.css";
   ```
 
   The `core` package no longer bundles styles. If you need to import stylesheets for the components (in a Remix app for example) simply import them from the individual packages that come included when you install the `core` package.
@@ -1480,7 +1489,7 @@
   This requires that you wrap your app with [LazyMotion](https://www.framer.com/docs/lazy-motion/) to use these components:
 
   ```jsx
-  import { LazyMotion, domAnimation } from 'framer-motion';
+  import { LazyMotion, domAnimation } from "framer-motion";
 
   <LazyMotion features={domAnimation}>
     <App />

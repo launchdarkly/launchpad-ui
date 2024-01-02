@@ -1,5 +1,16 @@
 # @launchpad-ui/select
 
+## 0.4.11
+
+### Patch Changes
+
+- [#1114](https://github.com/launchdarkly/launchpad-ui/pull/1114) [`51987f5`](https://github.com/launchdarkly/launchpad-ui/commit/51987f538462e2a8378aa9e15a7ef99020c941c4) Thanks [@renovate](https://github.com/apps/renovate)! - Update dependencies
+
+- Updated dependencies [[`51987f5`](https://github.com/launchdarkly/launchpad-ui/commit/51987f538462e2a8378aa9e15a7ef99020c941c4)]:
+  - @launchpad-ui/modal@0.17.11
+  - @launchpad-ui/popover@0.11.8
+  - @launchpad-ui/tooltip@0.8.8
+
 ## 0.4.10
 
 ### Patch Changes
@@ -692,7 +703,7 @@
   .selector {
     color: #000;
 
-    [data-theme='dark'] & {
+    [data-theme="dark"] & {
       color: #fff;
     }
   }
@@ -702,11 +713,11 @@
 
   ```css
   :root,
-  [data-theme='default'] {
+  [data-theme="default"] {
     --my-component-color-text: #000;
   }
 
-  [data-theme='dark'] {
+  [data-theme="dark"] {
     --my-component-color-text: #fff;
   }
 
