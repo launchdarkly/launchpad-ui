@@ -140,7 +140,9 @@ jobs:
       - name: Download blob reports from GitHub Actions Artifacts
         uses: actions/download-artifact@v4
         with:
+          pattern: a11y-blob-reports-*
           path: all-blob-reports
+          merge-multiple: true
 
       - name: Merge into HTML Report
         run: pnpm playwright merge-reports --reporter html ./all-blob-reports
