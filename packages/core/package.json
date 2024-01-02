@@ -30,7 +30,7 @@
   },
   "source": "src/index.ts",
   "scripts": {
-    "build": "vite build -c ../../vite.config.ts && tsc --project tsconfig.build.json",
+    "build": "vite build -c ../../vite.config.mts && tsc --project tsconfig.build.json",
     "clean": "rm -rf dist",
     "lint": "eslint '**/*.{ts,tsx,js}'",
     "test": "exit 0"
