@@ -1,5 +1,18 @@
 # @launchpad-ui/menu
 
+## 0.12.11
+
+### Patch Changes
+
+- [#1114](https://github.com/launchdarkly/launchpad-ui/pull/1114) [`51987f5`](https://github.com/launchdarkly/launchpad-ui/commit/51987f538462e2a8378aa9e15a7ef99020c941c4) Thanks [@renovate](https://github.com/apps/renovate)! - Update dependencies
+
+- [#1112](https://github.com/launchdarkly/launchpad-ui/pull/1112) [`ff53eee`](https://github.com/launchdarkly/launchpad-ui/commit/ff53eee1874f5264ffcf27f57852c55568e0f2dc) Thanks [@cjhensen](https://github.com/cjhensen)! - use proper type for exposing tooltip options on MenuItem
+
+- Updated dependencies [[`51987f5`](https://github.com/launchdarkly/launchpad-ui/commit/51987f538462e2a8378aa9e15a7ef99020c941c4)]:
+  - @launchpad-ui/form@0.10.11
+  - @launchpad-ui/popover@0.11.8
+  - @launchpad-ui/tooltip@0.8.8
+
 ## 0.12.10
 
 ### Patch Changes
@@ -387,7 +400,7 @@
   **Before**
 
   ```js
-  import { Add } from '@launchpad-ui/icons';
+  import { Add } from "@launchpad-ui/icons";
 
   const MyIcon = () => <Add size="medium" />;
   ```
@@ -395,7 +408,7 @@
   **After**
 
   ```js
-  import { Icon } from '@launchpad-ui/icons';
+  import { Icon } from "@launchpad-ui/icons";
 
   const MyIcon = () => <Icon name="add" size="medium" />;
   ```
@@ -405,17 +418,17 @@
   For example, if importing a static asset returns a resolved URL you can do the following in your app to load the icons:
 
   ```js
-  import { IconContext } from '@launchpad-ui/icons';
-  import icons from '@launchpad-ui/icons/sprite.svg';
-  import { createRoot } from 'react-dom/client';
+  import { IconContext } from "@launchpad-ui/icons";
+  import icons from "@launchpad-ui/icons/sprite.svg";
+  import { createRoot } from "react-dom/client";
 
-  const domNode = document.getElementById('root');
+  const domNode = document.getElementById("root");
   const root = createRoot(domNode);
 
   root.render(
     <IconContext.Provider value={{ path: icons }}>
       <App />
-    </IconContext.Provider>
+    </IconContext.Provider>,
   );
   ```
 
@@ -1378,13 +1391,13 @@
   Before:
 
   ```js
-  import alertStyles from '@launchpad-ui/alert/styles/Alert.css';
+  import alertStyles from "@launchpad-ui/alert/styles/Alert.css";
   ```
 
   After:
 
   ```js
-  import alertStyles from '@launchpad-ui/alert/style.css';
+  import alertStyles from "@launchpad-ui/alert/style.css";
   ```
 
   The `core` package no longer bundles styles. If you need to import stylesheets for the components (in a Remix app for example) simply import them from the individual packages that come included when you install the `core` package.
