@@ -25,7 +25,7 @@
   },
   "source": "src/index.ts",
   "scripts": {
-    "build": "vite build -c ../../vite.config.ts && tsc --project tsconfig.build.json",
+    "build": "vite build -c ../../vite.config.mts && tsc --project tsconfig.build.json",
     "clean": "rm -rf dist",
     "lint": "eslint '**/*.{ts,tsx,js}'",
     "test": "vitest run --coverage"
@@ -35,7 +35,7 @@
     "@launchpad-ui/icons": "workspace:~",
     "@launchpad-ui/popover": "workspace:~",
     "@launchpad-ui/tokens": "workspace:~",
-    "@react-aria/utils": "3.22.0",
+    "@react-aria/utils": "3.23.0",
     "classix": "2.1.17"
   },
   "peerDependencies": {

@@ -3,7 +3,6 @@
 import path from 'path';
 
 import styleXPluginDev from '@stylexjs/babel-plugin';
-// @ts-expect-error no types
 import stylexPlugin from '@stylexjs/rollup-plugin';
 import { vanillaExtractPlugin } from '@vanilla-extract/vite-plugin';
 import react from '@vitejs/plugin-react';
@@ -21,8 +20,9 @@ Object.keys(paths).forEach((key) => {
   alias[key] = path.resolve(__dirname, paths[key as keyof typeof paths][0]);
 });
 
-// eslint-disable-next-line @typescript-eslint/no-var-requires
-const packageJSON = require(path.resolve('./package.json'));
+const { default: packageJSON } = await import(path.resolve('./package.json'), {
+  assert: { type: 'json' },
+});
 
 // https://github.com/babel/babel/blob/main/packages/babel-plugin-transform-react-pure-annotations/src/index.ts
 const PURE_CALLS = [
@@ -110,6 +110,7 @@ export default defineConfig(({ mode }) => {
               type: 'commonJS',
               rootDir: __dirname,
             },
+            useCSSLayers: true,
           }),
         ],
       },

@@ -26,7 +26,7 @@
   },
   "source": "src/index.ts",
   "scripts": {
-    "build": "vite build -c ../../vite.config.ts && tsc --project tsconfig.build.json",
+    "build": "vite build -c ../../vite.config.mts && tsc --project tsconfig.build.json",
     "clean": "rm -rf dist",
     "lint": "eslint '**/*.{ts,tsx,js}' && stylelint '**/*.css' --ignore-path ../../.stylelintignore",
     "test": "vitest run --coverage"
@@ -38,7 +38,7 @@
     "@launchpad-ui/menu": "workspace:~",
     "@launchpad-ui/tokens": "workspace:~",
     "@launchpad-ui/tooltip": "workspace:~",
-    "@react-aria/visually-hidden": "3.8.7",
+    "@react-aria/visually-hidden": "3.8.8",
     "classix": "2.1.17"
   },
   "peerDependencies": {

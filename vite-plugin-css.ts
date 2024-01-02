@@ -1,8 +1,7 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
 import type { Plugin, ResolvedConfig } from 'vite';
 
-const fs = require('fs');
-const path = require('path');
+import fs from 'fs';
+import path from 'path';
 
 const cssImport = (): Plugin => {
   let config: ResolvedConfig;

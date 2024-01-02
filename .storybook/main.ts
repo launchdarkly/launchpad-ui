@@ -63,6 +63,7 @@ const config: StorybookConfig = {
                       type: 'commonJS',
                       rootDir: __dirname,
                     },
+                    useCSSLayers: true,
                   }),
                 ],
               },
