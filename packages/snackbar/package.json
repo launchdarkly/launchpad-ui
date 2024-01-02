@@ -36,7 +36,7 @@
     "@launchpad-ui/icons": "workspace:~",
     "@launchpad-ui/tokens": "workspace:~",
     "classix": "2.1.17",
-    "framer-motion": "10.16.1"
+    "framer-motion": "10.17.0"
   },
   "peerDependencies": {
     "react": "18.2.0",
