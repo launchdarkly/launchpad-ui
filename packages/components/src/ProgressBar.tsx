@@ -12,7 +12,7 @@ type ProgressBarProps = AriaProgressBarProps & ProgressBarVariants;
 
 const ProgressBar = forwardRef(
   (
-    { style, size = 'small', className, ...props }: ProgressBarProps,
+    { size = 'small', className, ...props }: ProgressBarProps,
     ref: ForwardedRef<HTMLDivElement>
   ) => {
     const center = 16;
