@@ -16,6 +16,11 @@ export const local = style({
   vars: {
     [accentVar]: vars.color.pink[500],
   },
+  selectors: {
+    ['[data-theme="dark"] &']: {
+      vars: { [accentVar]: vars.color.pink[200] },
+    },
+  },
   backgroundColor: accentVar,
   height: '6.25rem',
   width: '6.25rem',
