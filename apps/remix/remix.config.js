@@ -3,6 +3,6 @@
  */
 module.exports = {
   ignoredRouteFiles: ['**/.*'],
-  serverDependenciesToBundle: [/^@launchpad-ui/, 'marked', '@stylexjs/stylex'],
+  serverDependenciesToBundle: [/^@launchpad-ui/, 'marked'],
   serverModuleFormat: 'cjs',
 };
