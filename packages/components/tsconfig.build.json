@@ -2,7 +2,6 @@
   "extends": "../../tsconfig.base.json",
   "include": ["src/*.ts", "src/*.tsx", "../../types/declarations.d.ts"],
   "compilerOptions": {
-    "outDir": "./dist",
-    "skipLibCheck": true
+    "outDir": "./dist"
   }
 }
