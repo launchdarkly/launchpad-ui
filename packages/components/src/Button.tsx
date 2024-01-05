@@ -6,14 +6,17 @@ import { clsx } from 'clsx';
 import { forwardRef } from 'react';
 import { Button as AriaButton } from 'react-aria-components';
 
-import { base, variants } from './styles/Button.css';
+import { variants } from './styles/Button.css';
 
 type ButtonProps = AriaButtonProps & ButtonVariants;
 
 const Button = forwardRef(
-  ({ size = 'medium', className, ...props }: ButtonProps, ref: ForwardedRef<HTMLButtonElement>) => {
+  (
+    { size = 'medium', variant = 'default', className, ...props }: ButtonProps,
+    ref: ForwardedRef<HTMLButtonElement>
+  ) => {
     return (
-      <AriaButton {...props} ref={ref} className={clsx(base, variants({ size }), className)} />
+      <AriaButton {...props} ref={ref} className={clsx(variants({ size, variant }), className)} />
     );
   }
 );
