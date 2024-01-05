@@ -17,6 +17,8 @@ const variants = recipe({
       '&[disabled][data-disabled]': {
         backgroundColor: vars.color.bg.interactive.disabled,
         border: `1px solid ${vars.color.border.interactive.disabled}`,
+        color: vars.color.text.interactive.disabled,
+        cursor: 'not-allowed',
       },
     },
   },
@@ -63,11 +65,75 @@ const variants = recipe({
           backgroundColor: vars.color.bg.interactive.primary.focus,
         },
       },
-      destructive: {},
-      minimal: {},
+      destructive: {
+        backgroundColor: vars.color.bg.interactive.destructive.base,
+        color: vars.color.text.interactive.destructive,
+        border: `1px solid ${vars.color.border.interactive.destructive}`,
+        ':hover': {
+          backgroundColor: vars.color.bg.interactive.destructive.hover,
+        },
+        ':active': {
+          backgroundColor: vars.color.bg.interactive.destructive.active,
+        },
+        ':focus-visible': {
+          backgroundColor: vars.color.bg.interactive.destructive.focus,
+        },
+      },
+      minimal: {
+        backgroundColor: vars.color.bg.interactive.tertiary.base,
+        color: vars.color.text.ui.primary.base,
+        border: 'none',
+        ':hover': {
+          backgroundColor: vars.color.bg.interactive.tertiary.hover,
+        },
+        ':active': {
+          backgroundColor: vars.color.bg.interactive.tertiary.active,
+        },
+        ':focus-visible': {
+          backgroundColor: vars.color.bg.interactive.tertiary.focus,
+        },
+        selectors: {
+          '&[disabled][data-disabled]': {
+            backgroundColor: vars.color.bg.interactive.tertiary.base,
+            border: 'none',
+          },
+        },
+      },
       primaryFlair: {},
-      defaultFlair: {},
-      minimalFlair: {},
+      defaultFlair: {
+        backgroundColor: vars.color.bg.interactive['secondary-flair'].base,
+        color: vars.color.text.interactive.flair.base,
+        border: `1px solid ${vars.color.border.interactive['secondary-flair'].base}`,
+        ':hover': {
+          backgroundColor: vars.color.bg.interactive['secondary-flair'].hover,
+          color: vars.color.text.interactive.flair.hover,
+        },
+        ':active': {
+          backgroundColor: vars.color.bg.interactive['secondary-flair'].active,
+          color: vars.color.text.interactive.flair.active,
+        },
+        ':focus-visible': {
+          backgroundColor: vars.color.bg.interactive['secondary-flair'].focus,
+          color: vars.color.text.interactive.flair.focus,
+        },
+      },
+      minimalFlair: {
+        backgroundColor: vars.color.bg.interactive['tertiary-flair'].base,
+        color: vars.color.text.interactive.flair.base,
+        border: 'none',
+        ':hover': {
+          backgroundColor: vars.color.bg.interactive['tertiary-flair'].hover,
+          color: vars.color.text.interactive.flair.hover,
+        },
+        ':active': {
+          backgroundColor: vars.color.bg.interactive['tertiary-flair'].active,
+          color: vars.color.text.interactive.flair.active,
+        },
+        ':focus-visible': {
+          backgroundColor: vars.color.bg.interactive['tertiary-flair'].focus,
+          color: vars.color.text.interactive.flair.focus,
+        },
+      },
     },
   },
   defaultVariants: {
