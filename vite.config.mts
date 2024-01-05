@@ -2,10 +2,8 @@
 
 import path from 'path';
 
-import styleXPluginDev from '@stylexjs/babel-plugin';
-import stylexPlugin from '@stylexjs/rollup-plugin';
 import { vanillaExtractPlugin } from '@vanilla-extract/vite-plugin';
-import react from '@vitejs/plugin-react';
+import react from '@vitejs/plugin-react-swc';
 import { PluginPure } from 'rollup-plugin-pure';
 import { defineConfig } from 'vite';
 // eslint-disable-next-line import/no-unresolved
@@ -38,29 +36,10 @@ const PURE_CALLS = [
 ];
 
 // @ts-expect-error rollup-plugin-pure needs to update vite plugin types
-export default defineConfig(({ mode }) => {
+export default defineConfig(() => {
   return {
     plugins: [
-      react({
-        babel: {
-          plugins:
-            mode !== 'production'
-              ? [
-                  [
-                    styleXPluginDev,
-                    {
-                      dev: true,
-                      // Required for CSS variable support
-                      unstable_moduleResolution: {
-                        type: 'commonJS',
-                        rootDir: __dirname,
-                      },
-                    },
-                  ],
-                ]
-              : [],
-        },
-      }),
+      react(),
       vanillaExtractPlugin(),
       cssImport(),
       PluginPure({
@@ -101,17 +80,6 @@ export default defineConfig(({ mode }) => {
           'react/jsx-runtime',
           '@vanilla-extract/recipes/createRuntimeFn',
           'rainbow-sprinkles/createRuntimeFn',
-        ],
-        plugins: [
-          stylexPlugin({
-            fileName: 'style.css',
-            // Required for CSS variable support
-            unstable_moduleResolution: {
-              type: 'commonJS',
-              rootDir: __dirname,
-            },
-            useCSSLayers: true,
-          }),
         ],
       },
       sourcemap: true,
