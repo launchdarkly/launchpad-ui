@@ -8019,7 +8019,7 @@ packages:
       '@storybook/instrumenter': 7.6.7
       '@storybook/preview-api': 7.6.7
       '@testing-library/dom': 9.3.3
-      '@testing-library/jest-dom': 6.1.6(vitest@1.1.1)
+      '@testing-library/jest-dom': 6.2.0(vitest@1.1.1)
       '@testing-library/user-event': 14.3.0(@testing-library/dom@9.3.3)
       '@types/chai': 4.3.11
       '@vitest/expect': 0.34.7
