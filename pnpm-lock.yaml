@@ -77,9 +77,9 @@ importers:
       '@storybook/react-vite':
         specifier: ^7.6.3
         version: 7.6.7(react-dom@18.2.0)(react@18.2.0)(rollup@3.29.4)(typescript@5.3.3)(vite@5.0.10)
-      '@storybook/testing-library':
-        specifier: ^0.2.2
-        version: 0.2.2
+      '@storybook/test':
+        specifier: ^7.6.7
+        version: 7.6.7(vitest@1.1.1)
       '@storybook/theming':
         specifier: ^7.6.3
         version: 7.6.7(react-dom@18.2.0)(react@18.2.0)
@@ -7837,6 +7837,18 @@ packages:
     resolution: {integrity: sha512-FcOqPAXACP0I3oJ/ws6/rrPT9WGhu915Cg8D02a9YxLo0DE9zI+a9A5gRGvmQ09fiWPukqI8ZAEoQEdWUKMQdQ==}
     dev: true
 
+  /@storybook/instrumenter@7.6.7:
+    resolution: {integrity: sha512-Q4NstXZKCk62MkP7jgpg5CRFmhszg9QdoN8CwffuUGtjQRADhmeRHgP4usB87Sg6Tq9MLSopAEqUZxlKKYeeag==}
+    dependencies:
+      '@storybook/channels': 7.6.7
+      '@storybook/client-logger': 7.6.7
+      '@storybook/core-events': 7.6.7
+      '@storybook/global': 5.0.0
+      '@storybook/preview-api': 7.6.7
+      '@vitest/utils': 0.34.7
+      util: 0.12.5
+    dev: true
+
   /@storybook/manager-api@7.6.7(react-dom@18.2.0)(react@18.2.0):
     resolution: {integrity: sha512-3Wk/BvuGUlw/X05s57zZO7gJbzfUeE9Xe+CSIvuH7RY5jx9PYnNwqNlTXPXhJ5LPvwMthae7WJVn3SuBpbptoQ==}
     dependencies:
@@ -7999,12 +8011,26 @@ packages:
       - supports-color
     dev: true
 
-  /@storybook/testing-library@0.2.2:
-    resolution: {integrity: sha512-L8sXFJUHmrlyU2BsWWZGuAjv39Jl1uAqUHdxmN42JY15M4+XCMjGlArdCCjDe1wpTSW6USYISA9axjZojgtvnw==}
+  /@storybook/test@7.6.7(vitest@1.1.1):
+    resolution: {integrity: sha512-6gyRIvtOSq/ODYjpUO8LgY1YlWoYINhhKtLKwZasbp8hQ0zkd2vRSWlVCwzsw28cZXo2UL92UNSgEVD1sf73Qg==}
     dependencies:
+      '@storybook/client-logger': 7.6.7
+      '@storybook/core-events': 7.6.7
+      '@storybook/instrumenter': 7.6.7
+      '@storybook/preview-api': 7.6.7
       '@testing-library/dom': 9.3.3
-      '@testing-library/user-event': 14.5.2(@testing-library/dom@9.3.3)
-      ts-dedent: 2.2.0
+      '@testing-library/jest-dom': 6.1.6(vitest@1.1.1)
+      '@testing-library/user-event': 14.3.0(@testing-library/dom@9.3.3)
+      '@types/chai': 4.3.11
+      '@vitest/expect': 0.34.7
+      '@vitest/spy': 0.34.7
+      chai: 4.3.10
+      util: 0.12.5
+    transitivePeerDependencies:
+      - '@jest/globals'
+      - '@types/jest'
+      - jest
+      - vitest
     dev: true
 
   /@storybook/theming@7.6.7(react-dom@18.2.0)(react@18.2.0):
@@ -8242,6 +8268,15 @@ packages:
       react-dom: 18.2.0(react@18.2.0)
     dev: true
 
+  /@testing-library/user-event@14.3.0(@testing-library/dom@9.3.3):
+    resolution: {integrity: sha512-P02xtBBa8yMaLhK8CzJCIns8rqwnF6FxhR9zs810flHOBXUYCFjLd8Io1rQrAkQRWEmW2PGdZIEdMxf/KLsqFA==}
+    engines: {node: '>=12', npm: '>=6'}
+    peerDependencies:
+      '@testing-library/dom': '>=7.21.4'
+    dependencies:
+      '@testing-library/dom': 9.3.3
+    dev: true
+
   /@testing-library/user-event@14.5.2(@testing-library/dom@9.3.3):
     resolution: {integrity: sha512-YAh82Wh4TIrxYLmfGcixwD18oIjyC1pFQC2Y01F2lzV2HTMiYrI0nze0FD0ocB//CKS/7jIUgae+adPqxK5yCQ==}
     engines: {node: '>=12', npm: '>=6'}
@@ -8311,6 +8346,10 @@ packages:
     dependencies:
       '@types/connect': 3.4.38
       '@types/node': 20.10.6
+    dev: true
+
+  /@types/chai@4.3.11:
+    resolution: {integrity: sha512-qQR1dr2rGIHYlJulmr8Ioq3De0Le9E4MJ5AiaeAETJJpndT1uUNHsGFK3L/UIu+rbkQSdj8J/w2bCsBZc/Y5fQ==}
     dev: true
 
   /@types/connect@3.4.38:
@@ -9116,6 +9155,14 @@ packages:
       - supports-color
     dev: true
 
+  /@vitest/expect@0.34.7:
+    resolution: {integrity: sha512-G9iEtwrD6ZQ4MVHZufif9Iqz3eLtuwBBNx971fNAGPaugM7ftAWjQN+ob2zWhtzURp8RK3zGXOxVb01mFo3zAQ==}
+    dependencies:
+      '@vitest/spy': 0.34.7
+      '@vitest/utils': 0.34.7
+      chai: 4.3.10
+    dev: true
+
   /@vitest/expect@1.1.1:
     resolution: {integrity: sha512-Qpw01C2Hyb3085jBkOJLQ7HRX0Ncnh2qV4p+xWmmhcIUlMykUF69zsnZ1vPmAjZpomw9+5tWEGOQ0GTfR8U+kA==}
     dependencies:
@@ -9140,6 +9187,12 @@ packages:
       pretty-format: 29.7.0
     dev: true
 
+  /@vitest/spy@0.34.7:
+    resolution: {integrity: sha512-NMMSzOY2d8L0mcOt4XcliDOS1ISyGlAXuQtERWVOoVHnKwmG+kKhinAiGw3dTtMQWybfa89FG8Ucg9tiC/FhTQ==}
+    dependencies:
+      tinyspy: 2.2.0
+    dev: true
+
   /@vitest/spy@1.1.1:
     resolution: {integrity: sha512-hDU2KkOTfFp4WFFPWwHFauddwcKuGQ7gF6Un/ZZkCogoAiTMN7/7YKvUDbywPZZ754iCQGjdUmXN3t4k0jm1IQ==}
     dependencies:
@@ -9159,6 +9212,14 @@ packages:
       picocolors: 1.0.0
       sirv: 2.0.4
       vitest: 1.1.1(@types/node@20.10.6)(@vitest/ui@1.1.1)(jsdom@23.2.0)
+    dev: true
+
+  /@vitest/utils@0.34.7:
+    resolution: {integrity: sha512-ziAavQLpCYS9sLOorGrFFKmy2gnfiNU0ZJ15TsMz/K92NAPS/rp9K4z6AJQQk5Y8adCy4Iwpxy7pQumQ/psnRg==}
+    dependencies:
+      diff-sequences: 29.6.3
+      loupe: 2.3.7
+      pretty-format: 29.7.0
     dev: true
 
   /@vitest/utils@1.1.1:
