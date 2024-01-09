@@ -74,6 +74,8 @@ const icons = [
   'copy-code',
   'copy-content',
   'credit-card',
+  'crown',
+  'crown-outline',
   'delete',
   'dependency',
   'device-desktop',
