@@ -1,5 +1,14 @@
 # @launchpad-ui/icons
 
+## 0.14.10
+
+### Patch Changes
+
+- [#1126](https://github.com/launchdarkly/launchpad-ui/pull/1126) [`afa8fdc`](https://github.com/launchdarkly/launchpad-ui/commit/afa8fdc38ed89b885e2446a2065029b9cbd9cb4e) Thanks [@captchadex](https://github.com/captchadex)! - Added crown and crown-outline icons
+
+- Updated dependencies [[`91cfeaf`](https://github.com/launchdarkly/launchpad-ui/commit/91cfeafde3848c6a5e86536f747e38362ca523c1)]:
+  - @launchpad-ui/tokens@0.9.3
+
 ## 0.14.9
 
 ### Patch Changes
@@ -221,7 +230,7 @@
   **Before**
 
   ```js
-  import { Add } from '@launchpad-ui/icons';
+  import { Add } from "@launchpad-ui/icons";
 
   const MyIcon = () => <Add size="medium" />;
   ```
@@ -229,7 +238,7 @@
   **After**
 
   ```js
-  import { Icon } from '@launchpad-ui/icons';
+  import { Icon } from "@launchpad-ui/icons";
 
   const MyIcon = () => <Icon name="add" size="medium" />;
   ```
@@ -239,17 +248,17 @@
   For example, if importing a static asset returns a resolved URL you can do the following in your app to load the icons:
 
   ```js
-  import { IconContext } from '@launchpad-ui/icons';
-  import icons from '@launchpad-ui/icons/sprite.svg';
-  import { createRoot } from 'react-dom/client';
+  import { IconContext } from "@launchpad-ui/icons";
+  import icons from "@launchpad-ui/icons/sprite.svg";
+  import { createRoot } from "react-dom/client";
 
-  const domNode = document.getElementById('root');
+  const domNode = document.getElementById("root");
   const root = createRoot(domNode);
 
   root.render(
     <IconContext.Provider value={{ path: icons }}>
       <App />
-    </IconContext.Provider>
+    </IconContext.Provider>,
   );
   ```
 
@@ -647,13 +656,13 @@
   Before:
 
   ```js
-  import alertStyles from '@launchpad-ui/alert/styles/Alert.css';
+  import alertStyles from "@launchpad-ui/alert/styles/Alert.css";
   ```
 
   After:
 
   ```js
-  import alertStyles from '@launchpad-ui/alert/style.css';
+  import alertStyles from "@launchpad-ui/alert/style.css";
   ```
 
   The `core` package no longer bundles styles. If you need to import stylesheets for the components (in a Remix app for example) simply import them from the individual packages that come included when you install the `core` package.

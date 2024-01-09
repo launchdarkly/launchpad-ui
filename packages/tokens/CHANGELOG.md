@@ -1,5 +1,11 @@
 # @launchpad-ui/tokens
 
+## 0.9.3
+
+### Patch Changes
+
+- [#1124](https://github.com/launchdarkly/launchpad-ui/pull/1124) [`91cfeaf`](https://github.com/launchdarkly/launchpad-ui/commit/91cfeafde3848c6a5e86536f747e38362ca523c1) Thanks [@Niznikr](https://github.com/Niznikr)! - Use Vanilla Extract for component styles
+
 ## 0.9.2
 
 ### Patch Changes
@@ -192,7 +198,7 @@
   .selector {
     color: #000;
 
-    [data-theme='dark'] & {
+    [data-theme="dark"] & {
       color: #fff;
     }
   }
@@ -202,11 +208,11 @@
 
   ```css
   :root,
-  [data-theme='default'] {
+  [data-theme="default"] {
     --my-component-color-text: #000;
   }
 
-  [data-theme='dark'] {
+  [data-theme="dark"] {
     --my-component-color-text: #fff;
   }
 

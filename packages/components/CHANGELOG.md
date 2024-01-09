@@ -1,5 +1,15 @@
 # @launchpad-ui/components
 
+## 0.1.2
+
+### Patch Changes
+
+- [#1124](https://github.com/launchdarkly/launchpad-ui/pull/1124) [`91cfeaf`](https://github.com/launchdarkly/launchpad-ui/commit/91cfeafde3848c6a5e86536f747e38362ca523c1) Thanks [@Niznikr](https://github.com/Niznikr)! - Use Vanilla Extract for component styles
+
+- Updated dependencies [[`91cfeaf`](https://github.com/launchdarkly/launchpad-ui/commit/91cfeafde3848c6a5e86536f747e38362ca523c1)]:
+  - @launchpad-ui/tokens@0.9.3
+  - @launchpad-ui/vars@0.2.10
+
 ## 0.1.1
 
 ### Patch Changes
