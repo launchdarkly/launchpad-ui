@@ -1,5 +1,12 @@
 # @launchpad-ui/table
 
+## 0.6.6
+
+### Patch Changes
+
+- Updated dependencies [[`91cfeaf`](https://github.com/launchdarkly/launchpad-ui/commit/91cfeafde3848c6a5e86536f747e38362ca523c1)]:
+  - @launchpad-ui/tokens@0.9.3
+
 ## 0.6.5
 
 ### Patch Changes
@@ -167,7 +174,7 @@
   .selector {
     color: #000;
 
-    [data-theme='dark'] & {
+    [data-theme="dark"] & {
       color: #fff;
     }
   }
@@ -177,11 +184,11 @@
 
   ```css
   :root,
-  [data-theme='default'] {
+  [data-theme="default"] {
     --my-component-color-text: #000;
   }
 
-  [data-theme='dark'] {
+  [data-theme="dark"] {
     --my-component-color-text: #fff;
   }
 
@@ -434,13 +441,13 @@
   Before:
 
   ```js
-  import alertStyles from '@launchpad-ui/alert/styles/Alert.css';
+  import alertStyles from "@launchpad-ui/alert/styles/Alert.css";
   ```
 
   After:
 
   ```js
-  import alertStyles from '@launchpad-ui/alert/style.css';
+  import alertStyles from "@launchpad-ui/alert/style.css";
   ```
 
   The `core` package no longer bundles styles. If you need to import stylesheets for the components (in a Remix app for example) simply import them from the individual packages that come included when you install the `core` package.

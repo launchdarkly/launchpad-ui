@@ -1,5 +1,12 @@
 # @launchpad-ui/box
 
+## 0.1.4
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @launchpad-ui/vars@0.2.10
+
 ## 0.1.3
 
 ### Patch Changes
