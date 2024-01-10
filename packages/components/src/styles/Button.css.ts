@@ -15,6 +15,7 @@ const variants = recipe({
     },
     selectors: {
       '&[disabled][data-disabled]': {
+        background: 'unset',
         backgroundColor: vars.color.bg.interactive.disabled,
         border: `1px solid ${vars.color.border.interactive.disabled}`,
         color: vars.color.text.interactive.disabled,
@@ -57,6 +58,7 @@ const variants = recipe({
         border: `1px solid ${vars.color.border.interactive.primary.base}`,
         ':hover': {
           backgroundColor: vars.color.bg.interactive.primary.hover,
+          color: vars.color.text.interactive.primary.hover,
         },
         ':active': {
           backgroundColor: vars.color.bg.interactive.primary.active,
@@ -99,7 +101,23 @@ const variants = recipe({
           },
         },
       },
-      primaryFlair: {},
+      primaryFlair: {
+        background: 'linear-gradient(124deg, #a34fde 0%, #405bff 98.05%)',
+        color: vars.color.text.interactive.primary.base,
+        border: `1px solid ${vars.color.border.interactive['primary-flair'].base}`,
+        ':hover': {
+          background: 'linear-gradient(124deg, #9655c3 0%, #4b5fdd 98.05%)',
+          border: `1px solid ${vars.color.border.interactive['primary-flair'].hover}`,
+        },
+        ':active': {
+          background: 'linear-gradient(124deg, #8741b9 0%, #3b50ce 98.05%)',
+          border: `1px solid ${vars.color.border.interactive['primary-flair'].active}`,
+        },
+        ':focus-visible': {
+          background: 'linear-gradient(124deg, #8741b9 0%, #3b50ce 98.05%)',
+          border: `1px solid ${vars.color.border.interactive['primary-flair'].focus}`,
+        },
+      },
       defaultFlair: {
         backgroundColor: vars.color.bg.interactive['secondary-flair'].base,
         color: vars.color.text.interactive.flair.base,
