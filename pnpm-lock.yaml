@@ -544,6 +544,9 @@ importers:
       react-aria-components:
         specifier: 1.0.0
         version: 1.0.0(react-dom@18.2.0)(react@18.2.0)
+      react-router-dom:
+        specifier: 6.16.0
+        version: 6.16.0(react-dom@18.2.0)(react@18.2.0)
     devDependencies:
       react:
         specifier: 18.2.0

@@ -25,7 +25,7 @@ const ButtonGroup = forwardRef(
   }
 );
 
-ButtonGroup.displayName = 'Button';
+ButtonGroup.displayName = 'ButtonGroup';
 
 export { ButtonGroup };
 export type { ButtonGroupProps };

@@ -8,6 +8,11 @@ import { variants as buttonGroup } from './ButtonGroup.css';
 const variants = recipe({
   base: {
     font: vars.label[1].medium,
+    display: 'inline-flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    margin: 0,
+    textDecoration: 'none',
     cursor: 'pointer',
     borderRadius: vars.border.radius.medium,
     borderStyle: 'solid',
