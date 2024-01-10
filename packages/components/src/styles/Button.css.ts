@@ -11,6 +11,7 @@ const variants = recipe({
     display: 'inline-flex',
     alignItems: 'center',
     justifyContent: 'center',
+    gap: vars.spacing[200],
     margin: 0,
     textDecoration: 'none',
     cursor: 'pointer',

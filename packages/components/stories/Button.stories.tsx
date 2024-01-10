@@ -1,5 +1,7 @@
 import type { Meta, StoryFn, StoryObj } from '@storybook/react';
 
+import { Icon } from '@launchpad-ui/icons';
+
 import { Button } from '../src';
 
 const meta: Meta<typeof Button> = {
@@ -61,4 +63,14 @@ export const DefaultFlair: Story = {
 
 export const MinimalFlair: Story = {
   render: (args) => renderStates({ children: 'Minimal flair', variant: 'minimalFlair', ...args }),
+};
+
+export const WithIcon: Story = {
+  args: {
+    children: (
+      <>
+        With icon <Icon name="add" size="small" />
+      </>
+    ),
+  },
 };
