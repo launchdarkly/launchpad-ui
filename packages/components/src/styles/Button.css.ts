@@ -8,7 +8,9 @@ const variants = recipe({
     font: vars.label[1].medium,
     cursor: 'pointer',
     borderRadius: vars.border.radius.medium,
-    border: `1px solid ${vars.color.border.interactive.secondary.base}`,
+    borderStyle: 'solid',
+    borderWidth: '1px',
+    borderColor: vars.color.border.interactive.secondary.base,
     ':focus-visible': {
       outline: `2px solid ${vars.color.shadow.interactive.focus}`,
       outlineOffset: '2px',
@@ -17,7 +19,7 @@ const variants = recipe({
       '&[disabled][data-disabled]': {
         background: 'unset',
         backgroundColor: vars.color.bg.interactive.disabled,
-        border: `1px solid ${vars.color.border.interactive.disabled}`,
+        borderColor: vars.color.border.interactive.disabled,
         color: vars.color.text.interactive.disabled,
         cursor: 'not-allowed',
       },
@@ -55,7 +57,7 @@ const variants = recipe({
       primary: {
         backgroundColor: vars.color.bg.interactive.primary.base,
         color: vars.color.text.interactive.primary.base,
-        border: `1px solid ${vars.color.border.interactive.primary.base}`,
+        borderColor: vars.color.border.interactive.primary.base,
         ':hover': {
           backgroundColor: vars.color.bg.interactive.primary.hover,
           color: vars.color.text.interactive.primary.hover,
@@ -70,7 +72,7 @@ const variants = recipe({
       destructive: {
         backgroundColor: vars.color.bg.interactive.destructive.base,
         color: vars.color.text.interactive.destructive,
-        border: `1px solid ${vars.color.border.interactive.destructive}`,
+        borderColor: vars.color.border.interactive.destructive,
         ':hover': {
           backgroundColor: vars.color.bg.interactive.destructive.hover,
         },
@@ -97,31 +99,30 @@ const variants = recipe({
         selectors: {
           '&[disabled][data-disabled]': {
             backgroundColor: vars.color.bg.interactive.tertiary.base,
-            border: 'none',
           },
         },
       },
       primaryFlair: {
         background: 'linear-gradient(124deg, #a34fde 0%, #405bff 98.05%)',
         color: vars.color.text.interactive.primary.base,
-        border: `1px solid ${vars.color.border.interactive['primary-flair'].base}`,
+        borderColor: vars.color.border.interactive['primary-flair'].base,
         ':hover': {
           background: 'linear-gradient(124deg, #9655c3 0%, #4b5fdd 98.05%)',
-          border: `1px solid ${vars.color.border.interactive['primary-flair'].hover}`,
+          borderColor: vars.color.border.interactive['primary-flair'].hover,
         },
         ':active': {
           background: 'linear-gradient(124deg, #8741b9 0%, #3b50ce 98.05%)',
-          border: `1px solid ${vars.color.border.interactive['primary-flair'].active}`,
+          borderColor: vars.color.border.interactive['primary-flair'].active,
         },
         ':focus-visible': {
           background: 'linear-gradient(124deg, #8741b9 0%, #3b50ce 98.05%)',
-          border: `1px solid ${vars.color.border.interactive['primary-flair'].focus}`,
+          borderColor: vars.color.border.interactive['primary-flair'].focus,
         },
       },
       defaultFlair: {
         backgroundColor: vars.color.bg.interactive['secondary-flair'].base,
         color: vars.color.text.interactive.flair.base,
-        border: `1px solid ${vars.color.border.interactive['secondary-flair'].base}`,
+        borderColor: vars.color.border.interactive['secondary-flair'].base,
         ':hover': {
           backgroundColor: vars.color.bg.interactive['secondary-flair'].hover,
           color: vars.color.text.interactive.flair.hover,
