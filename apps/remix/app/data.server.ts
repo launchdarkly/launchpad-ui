@@ -38,7 +38,9 @@ export async function getComponents() {
     { to: 'components/toast', name: 'Toast' },
     { to: 'components/toggle', name: 'Toggle' },
     { to: 'components/tooltip', name: 'Tooltip' },
-    { to: 'rac/progress-bar', name: 'ProgressBar', role: 'progressbar' },
+    { to: 'rac/button', name: 'RAC Button', role: 'button' },
+    { to: 'rac/link-button', name: 'RAC LinkButton', role: 'link' },
+    { to: 'rac/progress-bar', name: 'RAC ProgressBar', role: 'progressbar' },
     // plop end components
   ];
 }
