@@ -1,6 +1,7 @@
 import type { Meta, StoryFn, StoryObj } from '@storybook/react';
 
 import { Icon } from '@launchpad-ui/icons';
+import { vars } from '@launchpad-ui/vars';
 
 import { Button } from '../src';
 
@@ -28,13 +29,36 @@ export default meta;
 type Story = StoryObj<typeof Button>;
 
 const renderStates = (args: Story['args']) => (
-  <>
-    <Button {...args} />
-    <Button {...args} className="pseudo-hover" />
-    <Button {...args} className="pseudo-focus-visible" />
-    <Button {...args} className="pseudo-active" />
-    <Button isDisabled {...args} />
-  </>
+  <div
+    style={{
+      display: 'grid',
+      gridTemplateRows: '1fr',
+      gridTemplateColumns: `${vars.size[128]} auto`,
+      gap: vars.spacing[400],
+      alignItems: 'center',
+    }}
+  >
+    <>
+      <span style={{ font: vars.body[1].semibold }}>Resting</span>
+      <Button {...args} />
+    </>
+    <>
+      <span style={{ font: vars.body[1].semibold }}>Hover</span>
+      <Button {...args} className="pseudo-hover" />
+    </>
+    <>
+      <span style={{ font: vars.body[1].semibold }}>Focus</span>
+      <Button {...args} className="pseudo-focus-visible" />
+    </>
+    <>
+      <span style={{ font: vars.body[1].semibold }}>Active</span>
+      <Button {...args} className="pseudo-active" />
+    </>
+    <>
+      <span style={{ font: vars.body[1].semibold }}>Disabled</span>
+      <Button isDisabled {...args} />
+    </>
+  </div>
 );
 
 export const Default: Story = {

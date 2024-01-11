@@ -14,6 +14,7 @@ const variants = recipe({
     gap: vars.spacing[200],
     margin: 0,
     textDecoration: 'none',
+    appearance: 'none',
     cursor: 'pointer',
     borderRadius: vars.border.radius.medium,
     borderStyle: 'solid',
