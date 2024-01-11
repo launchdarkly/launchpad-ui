@@ -32,8 +32,10 @@
     "test": "vitest run --coverage"
   },
   "dependencies": {
+    "@launchpad-ui/icons": "workspace:~",
     "@launchpad-ui/tokens": "workspace:~",
     "@launchpad-ui/vars": "workspace:~",
+    "@react-types/shared": "3.22.0",
     "@vanilla-extract/recipes": "0.5.1",
     "clsx": "2.1.0",
     "react-aria-components": "1.0.0",

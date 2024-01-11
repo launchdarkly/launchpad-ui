@@ -526,12 +526,18 @@ importers:
 
   packages/components:
     dependencies:
+      '@launchpad-ui/icons':
+        specifier: workspace:~
+        version: link:../icons
       '@launchpad-ui/tokens':
         specifier: workspace:~
         version: link:../tokens
       '@launchpad-ui/vars':
         specifier: workspace:~
         version: link:../vars
+      '@react-types/shared':
+        specifier: 3.22.0
+        version: 3.22.0(react@18.2.0)
       '@vanilla-extract/css':
         specifier: ^1.14.0
         version: 1.14.0
