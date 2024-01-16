@@ -76,6 +76,7 @@
 .primary:active {
   background-color: var(--lp-color-bg-interactive-primary-active);
   border-color: var(--lp-color-border-interactive-primary-active);
+  color: var(--lp-color-text-interactive-primary-base);
 }
 
 .primary:focus-visible {
