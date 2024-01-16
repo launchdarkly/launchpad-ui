@@ -1,14 +1,13 @@
-import type { ButtonVariants } from './styles/Button.css';
+import type { ButtonVariants } from './Button';
 import type { ForwardedRef, MouseEvent } from 'react';
 import type { LinkProps } from 'react-aria-components';
 import type { LinkProps as RouterLinkProps } from 'react-router-dom';
 
-import { clsx } from 'clsx';
 import { forwardRef } from 'react';
 import { Link } from 'react-aria-components';
 import { useHref, useLinkClickHandler } from 'react-router-dom';
 
-import { variants } from './styles/Button.css';
+import { button } from './Button';
 
 type LinkButtonProps = LinkProps & RouterLinkProps & ButtonVariants;
 
@@ -37,7 +36,7 @@ const LinkButton = forwardRef(
       <Link
         {...props}
         ref={ref}
-        className={clsx(variants({ size, variant }), className)}
+        className={button({ size, variant, className })}
         href={href}
         onPress={(event) => {
           props.onPress?.(event);

@@ -1,0 +1,190 @@
+.base {
+  font: var(--lp-label-1-medium);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--lp-spacing-200);
+  margin: 0;
+  text-decoration: none;
+  appearance: none;
+  cursor: pointer;
+  border-radius: var(--lp-border-radius-medium);
+  border-style: solid;
+  border-width: 1px;
+}
+
+.base:focus-visible {
+  outline: 2px solid var(--lp-color-shadow-interactive-focus);
+  outline-offset: 2px;
+  z-index: 1;
+}
+
+.base[disabled][data-disabled] {
+  background: transparent none repeat 0 0 / auto auto padding-box border-box scroll;
+  background: initial;
+  background-color: var(--lp-color-bg-interactive-disabled);
+  border-color: var(--lp-color-border-interactive-disabled);
+  color: var(--lp-color-text-interactive-disabled);
+  cursor: not-allowed;
+}
+
+.small {
+  line-height: var(--lp-font-size-300);
+  padding: 3px var(--lp-spacing-300);
+}
+
+.medium {
+  line-height: var(--lp-font-size-300);
+  padding: 7px var(--lp-spacing-300);
+}
+
+.large {
+  font-size: var(--lp-font-size-300);
+  padding: 7px var(--lp-spacing-400);
+}
+
+.default {
+  background-color: var(--lp-color-bg-interactive-secondary-base);
+  border-color: var(--lp-color-border-interactive-secondary-base);
+  color: var(--lp-color-text-ui-primary-base);
+}
+
+.default:hover {
+  background-color: var(--lp-color-bg-interactive-secondary-hover);
+}
+
+.default:active {
+  background-color: var(--lp-color-bg-interactive-secondary-active);
+}
+
+.default:focus-visible {
+  background-color: var(--lp-color-bg-interactive-secondary-focus);
+}
+
+.primary {
+  background-color: var(--lp-color-bg-interactive-primary-base);
+  border-color: var(--lp-color-border-interactive-primary-base);
+  color: var(--lp-color-text-interactive-primary-base);
+}
+
+.primary:hover {
+  background-color: var(--lp-color-bg-interactive-primary-hover);
+  border-color: var(--lp-color-border-interactive-primary-hover);
+  color: var(--lp-color-text-interactive-primary-hover);
+}
+
+.primary:active {
+  background-color: var(--lp-color-bg-interactive-primary-active);
+  border-color: var(--lp-color-border-interactive-primary-active);
+}
+
+.primary:focus-visible {
+  background-color: var(--lp-color-bg-interactive-primary-focus);
+  border-color: var(--lp-color-border-interactive-primary-focus);
+}
+
+.destructive {
+  background-color: var(--lp-color-bg-interactive-destructive-base);
+  border-color: var(--lp-color-border-interactive-destructive);
+  color: var(--lp-color-text-interactive-destructive);
+}
+
+.destructive:hover {
+  background-color: var(--lp-color-bg-interactive-destructive-hover);
+}
+
+.destructive:active {
+  background-color: var(--lp-color-bg-interactive-destructive-active);
+}
+
+.destructive:focus-visible {
+  background-color: var(--lp-color-bg-interactive-destructive-focus);
+}
+
+.minimal {
+  background-color: var(--lp-color-bg-interactive-tertiary-base);
+  border: none;
+  color: var(--lp-color-text-ui-primary-base);
+}
+
+.minimal:hover {
+  background-color: var(--lp-color-bg-interactive-tertiary-hover);
+}
+
+.minimal:active {
+  background-color: var(--lp-color-bg-interactive-tertiary-active);
+}
+
+.minimal:focus-visible {
+  background-color: var(--lp-color-bg-interactive-tertiary-focus);
+}
+
+.minimal[disabled][data-disabled] {
+  background-color: var(--lp-color-bg-interactive-tertiary-base);
+}
+
+.primaryFlair {
+  background: linear-gradient(124deg, #a34fde 0%, #405bff 98.05%);
+  border-color: var(--lp-color-border-interactive-primary-flair-base);
+  color: var(--lp-color-text-interactive-primary-base);
+}
+
+.primaryFlair:hover {
+  background: linear-gradient(124deg, #9655c3 0%, #4b5fdd 98.05%);
+  border-color: var(--lp-color-border-interactive-primary-flair-hover);
+}
+
+.primaryFlair:active {
+  background: linear-gradient(124deg, #8741b9 0%, #3b50ce 98.05%);
+  border-color: var(--lp-color-border-interactive-primary-flair-active);
+}
+
+.primaryFlair:focus-visible {
+  background: linear-gradient(124deg, #8741b9 0%, #3b50ce 98.05%);
+  border-color: var(--lp-color-border-interactive-primary-flair-focus);
+}
+
+.defaultFlair {
+  background-color: var(--lp-color-bg-interactive-secondary-flair-base);
+  border-color: var(--lp-color-border-interactive-secondary-flair-base);
+  color: var(--lp-color-text-interactive-flair-base);
+}
+
+.defaultFlair:hover {
+  background-color: var(--lp-color-bg-interactive-secondary-flair-hover);
+  border-color: var(--lp-color-border-interactive-secondary-flair-hover);
+  color: var(--lp-color-text-interactive-flair-hover);
+}
+
+.defaultFlair:active {
+  background-color: var(--lp-color-bg-interactive-secondary-flair-active);
+  border-color: var(--lp-color-border-interactive-secondary-flair-active);
+  color: var(--lp-color-text-interactive-flair-active);
+}
+
+.defaultFlair:focus-visible {
+  background-color: var(--lp-color-bg-interactive-secondary-flair-focus);
+  border-color: var(--lp-color-border-interactive-secondary-flair-focus);
+  color: var(--lp-color-text-interactive-flair-focus);
+}
+
+.minimalFlair {
+  background-color: var(--lp-color-bg-interactive-tertiary-flair-base);
+  border: none;
+  color: var(--lp-color-text-interactive-flair-base);
+}
+
+.minimalFlair:hover {
+  background-color: var(--lp-color-bg-interactive-tertiary-flair-hover);
+  color: var(--lp-color-text-interactive-flair-hover);
+}
+
+.minimalFlair:active {
+  background-color: var(--lp-color-bg-interactive-tertiary-flair-active);
+  color: var(--lp-color-text-interactive-flair-active);
+}
+
+.minimalFlair:focus-visible {
+  background-color: var(--lp-color-bg-interactive-tertiary-flair-focus);
+  color: var(--lp-color-text-interactive-flair-focus);
+}

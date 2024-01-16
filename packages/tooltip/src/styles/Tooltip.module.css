@@ -15,7 +15,7 @@
   z-index: var(--lp-z-index-800);
 }
 
-[class^='_Popover-content_'].Tooltip-popover-content {
+[class*='_Popover-content_'].Tooltip-popover-content {
   font-size: 0.8125rem;
   padding: 0.3125rem 0.625rem;
   border: 1px solid var(--lp-component-popover-color-border);
@@ -23,7 +23,7 @@
   color: var(--lp-component-popover-color-text);
 }
 
-[class^='_Popover-content_'].Tooltip-popover-content kbd {
+[class*='_Popover-content_'].Tooltip-popover-content kbd {
   color: var(--lp-color-gray-100);
   background-color: var(--lp-color-gray-900);
   border: 0.0625rem solid var(--lp-color-gray-700);

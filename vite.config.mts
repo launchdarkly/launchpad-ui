@@ -4,6 +4,8 @@ import path from 'path';
 
 import { vanillaExtractPlugin } from '@vanilla-extract/vite-plugin';
 import react from '@vitejs/plugin-react-swc';
+import browserslist from 'browserslist';
+import { browserslistToTargets } from 'lightningcss';
 import { PluginPure } from 'rollup-plugin-pure';
 import { defineConfig } from 'vite';
 // eslint-disable-next-line import/no-unresolved
@@ -19,6 +21,10 @@ Object.keys(paths).forEach((key) => {
 });
 
 const { default: packageJSON } = await import(path.resolve('./package.json'), {
+  assert: { type: 'json' },
+});
+
+const { default: rootPackageJSON } = await import(path.resolve(__dirname, './package.json'), {
   assert: { type: 'json' },
 });
 
@@ -38,6 +44,18 @@ const PURE_CALLS = [
 // @ts-expect-error rollup-plugin-pure needs to update vite plugin types
 export default defineConfig(() => {
   return {
+    css: {
+      transformer: 'lightningcss',
+      lightningcss: {
+        targets: browserslistToTargets(browserslist(rootPackageJSON.browserslist)),
+        drafts: {
+          customMedia: true,
+        },
+        cssModules: {
+          pattern: '[hash]_[local]_',
+        },
+      },
+    },
     plugins: [
       react(),
       vanillaExtractPlugin(),
@@ -84,6 +102,7 @@ export default defineConfig(() => {
       },
       sourcemap: true,
       minify: false,
+      cssMinify: 'lightningcss',
     },
   };
 });
