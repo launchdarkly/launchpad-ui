@@ -69,6 +69,7 @@
     "@testing-library/jest-dom": "^6.2.0",
     "@testing-library/react": "^14.1.0",
     "@testing-library/user-event": "^14.5.1",
+    "@types/css-modules": "^1.0.5",
     "@types/node": "^20.11.4",
     "@types/react": "^18.2.8",
     "@types/react-dom": "^18.2.4",
