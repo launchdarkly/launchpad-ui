@@ -287,6 +287,9 @@ importers:
       react-dom:
         specifier: 18.2.0
         version: 18.2.0(react@18.2.0)
+      react-router-dom:
+        specifier: 6.16.0
+        version: 6.16.0(react-dom@18.2.0)(react@18.2.0)
     devDependencies:
       '@remix-run/dev':
         specifier: ^2.4.0
@@ -526,12 +529,18 @@ importers:
 
   packages/components:
     dependencies:
+      '@launchpad-ui/icons':
+        specifier: workspace:~
+        version: link:../icons
       '@launchpad-ui/tokens':
         specifier: workspace:~
         version: link:../tokens
       '@launchpad-ui/vars':
         specifier: workspace:~
         version: link:../vars
+      '@react-types/shared':
+        specifier: 3.22.0
+        version: 3.22.0(react@18.2.0)
       '@vanilla-extract/css':
         specifier: ^1.14.0
         version: 1.14.0
@@ -544,6 +553,9 @@ importers:
       react-aria-components:
         specifier: 1.0.0
         version: 1.0.0(react-dom@18.2.0)(react@18.2.0)
+      react-router-dom:
+        specifier: 6.16.0
+        version: 6.16.0(react-dom@18.2.0)(react@18.2.0)
     devDependencies:
       react:
         specifier: 18.2.0

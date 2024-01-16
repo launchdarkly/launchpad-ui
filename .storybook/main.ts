@@ -61,6 +61,17 @@ const config: StorybookConfig = {
     autodocs: true,
     defaultName: 'Docs',
   },
+  typescript: {
+    reactDocgen: 'react-docgen-typescript',
+    reactDocgenTypescriptOptions: {
+      shouldExtractLiteralValuesFromEnum: true,
+      propFilter: (prop) =>
+        prop.parent
+          ? !/node_modules/.test(prop.parent.fileName) ||
+            /(react-aria-components|@react-types|react-router-dom)/.test(prop.parent.fileName)
+          : true,
+    },
+  },
 };
 
 const getPackageStatusEnvVars = () => {

@@ -11,7 +11,12 @@
     {
       "matchUpdateTypes": ["patch"],
       "enabled": false,
-      "excludePackagePatterns": ["^@react-aria", "^@react-stately", "^@react-types"]
+      "excludePackagePatterns": [
+        "^@react-aria",
+        "^@react-stately",
+        "^@react-types",
+        "^react-aria-components"
+      ]
     }
   ],
   "rangeStrategy": "bump",
