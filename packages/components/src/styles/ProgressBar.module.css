@@ -13,11 +13,11 @@
   transform-origin: 0 0;
 }
 
-.innerCircle {
+.outerCircle {
   stroke: var(--lp-color-white-100);
 }
 
-.outerCircle {
+.innerCircle {
   stroke: var(--lp-color-gray-500);
 }
 
