@@ -381,6 +381,9 @@ importers:
 
   packages/box:
     dependencies:
+      '@launchpad-ui/tokens':
+        specifier: workspace:~
+        version: link:../tokens
       '@launchpad-ui/vars':
         specifier: workspace:~
         version: link:../vars
