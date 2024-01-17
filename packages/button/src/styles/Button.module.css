@@ -443,7 +443,7 @@
 }
 
 .Button.Button--close:focus-visible {
-  background-color: hsl(0 0 100% / 0.1);
+  background-color: rgb(255 255 255 / 0.1);
   box-shadow:
     0 0 0 1px hsl(225 1.8% 43.5% / 0.7),
     0 0 0 4px hsl(0 0% 12.9% / 0.1);
