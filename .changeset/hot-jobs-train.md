@@ -1,6 +1,6 @@
 ---
-"@launchpad-ui/icons": patch
-"@launchpad-ui/core": patch
+"@launchpad-ui/icons": minor
+"@launchpad-ui/core": minor
 ---
 
-fix: update icon svg sprite to use 20x20 viewbox
+[Icons] update icon svg sprite to use 20x20 viewbox and remove `pulse-active`, `verified`, and `circles`
