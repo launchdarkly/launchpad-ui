@@ -24,7 +24,7 @@ const icons = [
   'arrow-up-right-circle',
   'arrow-up-right-circle-outline',
   'arrow-up-thin',
-  'maximize',
+  'arrows-maximize',
   'article',
   'border-all',
   'brain',
