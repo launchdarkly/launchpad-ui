@@ -1,5 +1,45 @@
 # @launchpad-ui/core
 
+## 0.48.0
+
+### Minor Changes
+
+- [#1137](https://github.com/launchdarkly/launchpad-ui/pull/1137) [`4636c17`](https://github.com/launchdarkly/launchpad-ui/commit/4636c17a17c28b741687fd81fe9ec869d4be91a5) Thanks [@matthewferry](https://github.com/matthewferry)! - [Icons] update icon svg sprite to use 20x20 viewbox and remove `pulse-active`, `verified`, and `circles`
+
+### Patch Changes
+
+- [#1134](https://github.com/launchdarkly/launchpad-ui/pull/1134) [`8be21f6`](https://github.com/launchdarkly/launchpad-ui/commit/8be21f6a9a518f980e11d54e59325b32c7876910) Thanks [@renovate](https://github.com/apps/renovate)! - Update dependencies
+
+- [#1131](https://github.com/launchdarkly/launchpad-ui/pull/1131) [`4c18b26`](https://github.com/launchdarkly/launchpad-ui/commit/4c18b261496392f3331ba0c2d3aafc04d54691c3) Thanks [@qshaner](https://github.com/qshaner)! - patch(icon): add arrows-maximize and fix svg for circles icons
+
+- Updated dependencies [[`8be21f6`](https://github.com/launchdarkly/launchpad-ui/commit/8be21f6a9a518f980e11d54e59325b32c7876910)]:
+  - @launchpad-ui/markdown@0.5.7
+  - @launchpad-ui/snackbar@0.4.11
+  - @launchpad-ui/popover@0.11.10
+  - @launchpad-ui/drawer@0.5.13
+  - @launchpad-ui/select@0.4.13
+  - @launchpad-ui/modal@0.17.13
+  - @launchpad-ui/toast@0.3.11
+  - @launchpad-ui/form@0.10.13
+  - @launchpad-ui/alert@0.8.12
+  - @launchpad-ui/avatar@0.6.11
+  - @launchpad-ui/banner@0.10.11
+  - @launchpad-ui/button@0.11.11
+  - @launchpad-ui/chip@0.9.11
+  - @launchpad-ui/clipboard@0.11.13
+  - @launchpad-ui/collapsible@0.1.42
+  - @launchpad-ui/dropdown@0.6.87
+  - @launchpad-ui/filter@0.6.13
+  - @launchpad-ui/inline-edit@0.2.13
+  - @launchpad-ui/menu@0.12.13
+  - @launchpad-ui/navigation@0.12.13
+  - @launchpad-ui/pagination@0.4.13
+  - @launchpad-ui/tag@0.3.13
+  - @launchpad-ui/progress-bubbles@0.7.10
+  - @launchpad-ui/split-button@0.9.13
+  - @launchpad-ui/tooltip@0.8.10
+  - @launchpad-ui/card@0.2.13
+
 ## 0.47.12
 
 ### Patch Changes
