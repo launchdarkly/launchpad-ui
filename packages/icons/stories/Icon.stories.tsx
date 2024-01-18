@@ -2,6 +2,8 @@
 import type { Meta, ReactRenderer } from '@storybook/react';
 import type { ArgsStoryFn } from '@storybook/types';
 
+import { CopyToClipboard } from '@launchpad-ui/clipboard';
+
 import { Icon } from '../src';
 import { icons } from '../src/types';
 
@@ -34,20 +36,41 @@ export default {
   },
 } as Meta;
 
-const render: ArgsStoryFn<ReactRenderer> = (_args, { globals }) => (
+const render: ArgsStoryFn<ReactRenderer> = () => (
   <div
     style={{
       display: 'grid',
       justifyContent: 'space-evenly',
-      gridTemplateColumns: globals.theme === 'side-by-side' ? 'repeat(3, auto)' : 'repeat(4, auto)',
-      rowGap: '2.5rem',
-      marginTop: '2.5rem',
+      gridTemplateColumns: 'repeat(auto-fill, minmax(8rem, 1fr))',
+      gridAutoRows: '1fr',
+      rowGap: '1rem',
+      columnGap: '1rem',
     }}
   >
     {icons.map((item, index) => (
-      <div style={{ display: 'flex', alignItems: 'center', gap: '0.625rem' }} key={index}>
-        <Icon name={item} size="medium" />
-        <span>{item}</span>
+      <div
+        style={{
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          gap: '0.625rem',
+          textAlign: 'center',
+        }}
+        key={index}
+      >
+        <div
+          style={{
+            padding: '2rem',
+            border: '1px dashed var(--lp-color-border-ui-primary)',
+            borderRadius: 'var(--lp-border-radius-medium)',
+            width: '100%',
+          }}
+        >
+          <Icon name={item} size="medium" />
+        </div>
+        <CopyToClipboard text={item} asChild={true}>
+          <span style={{ font: 'var(--lp-code-2-regular)' }}>{item}</span>
+        </CopyToClipboard>
       </div>
     ))}
   </div>
