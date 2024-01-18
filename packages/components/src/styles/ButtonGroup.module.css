@@ -1,0 +1,31 @@
+.base {
+  display: flex;
+}
+
+.basic {
+  gap: var(--lp-size-10);
+}
+
+.compact {
+  gap: initial;
+}
+
+.large {
+  gap: var(--lp-spacing-600);
+}
+
+.compact :first-child {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-right: none;
+}
+
+.compact :last-child {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  border-left: none;
+}
+
+.compact :not(:first-child):not(:last-child) {
+  border-radius: 0;
+}

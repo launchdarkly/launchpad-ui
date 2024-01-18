@@ -1,0 +1,13 @@
+.base {
+  padding: 0;
+}
+
+.small {
+  height: var(--lp-size-24);
+  width: var(--lp-size-24);
+}
+
+.medium {
+  height: var(--lp-size-32);
+  width: var(--lp-size-32);
+}

@@ -28,21 +28,18 @@
   "scripts": {
     "build": "vite build -c ../../vite.config.mts && tsc --project tsconfig.build.json",
     "clean": "rm -rf dist",
-    "lint": "eslint '**/*.{ts,tsx,js}'",
+    "lint": "eslint '**/*.{ts,tsx,js}' && stylelint '**/*.css' --ignore-path ../../.stylelintignore",
     "test": "vitest run --coverage"
   },
   "dependencies": {
     "@launchpad-ui/icons": "workspace:~",
     "@launchpad-ui/tokens": "workspace:~",
-    "@launchpad-ui/vars": "workspace:~",
     "@react-types/shared": "3.22.0",
-    "@vanilla-extract/recipes": "0.5.1",
-    "clsx": "2.1.0",
+    "class-variance-authority": "0.7.0",
     "react-aria-components": "1.0.1",
     "react-router-dom": "6.16.0"
   },
   "peerDependencies": {
-    "@vanilla-extract/css": "^1.14.0",
     "react": "18.2.0",
     "react-dom": "18.2.0"
   },

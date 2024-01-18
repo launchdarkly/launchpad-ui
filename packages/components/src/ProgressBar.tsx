@@ -1,14 +1,27 @@
-import type { ProgressBarVariants } from './styles/ProgressBar.css';
+import type { VariantProps } from 'class-variance-authority';
 import type { ForwardedRef } from 'react';
 import type { ProgressBarProps as AriaProgressBarProps } from 'react-aria-components';
 
-import { clsx } from 'clsx';
+import { cva, cx } from 'class-variance-authority';
 import { forwardRef } from 'react';
 import { ProgressBar as AriaProgressBar } from 'react-aria-components';
 
-import { base, indeterminate, outerCircle, innerCircle, variants } from './styles/ProgressBar.css';
+import styles from './styles/ProgressBar.module.css';
 
-type ProgressBarProps = AriaProgressBarProps & ProgressBarVariants;
+const progressBar = cva(styles.base, {
+  variants: {
+    size: {
+      small: styles.small,
+      medium: styles.medium,
+      large: styles.large,
+    },
+  },
+  defaultVariants: {
+    size: 'small',
+  },
+});
+
+type ProgressBarProps = AriaProgressBarProps & VariantProps<typeof progressBar>;
 
 const ProgressBar = forwardRef(
   (
@@ -21,7 +34,7 @@ const ProgressBar = forwardRef(
     const c = 2 * r * Math.PI;
 
     return (
-      <AriaProgressBar {...props} ref={ref} className={clsx(base, variants({ size }), className)}>
+      <AriaProgressBar {...props} ref={ref} className={progressBar({ size, className })}>
         {({ percentage }) => (
           <svg
             width={64}
@@ -29,14 +42,14 @@ const ProgressBar = forwardRef(
             viewBox="0 0 32 32"
             fill="none"
             strokeWidth={strokeWidth}
-            className={clsx(props.isIndeterminate && indeterminate)}
+            className={cx(props.isIndeterminate && styles.indeterminate)}
           >
             <circle
               cx={center}
               cy={center}
               r={r}
               strokeWidth={strokeWidth}
-              className={outerCircle}
+              className={styles.outerCircle}
             />
             <circle
               cx={center}
@@ -45,7 +58,7 @@ const ProgressBar = forwardRef(
               strokeDasharray={`${c} ${c}`}
               strokeDashoffset={c - (props.isIndeterminate ? 0.34 : percentage! / 100) * c}
               transform="rotate(-90 16 16)"
-              className={innerCircle}
+              className={styles.innerCircle}
             />
           </svg>
         )}

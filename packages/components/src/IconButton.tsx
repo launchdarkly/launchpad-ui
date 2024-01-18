@@ -1,25 +1,35 @@
-import type { ButtonVariants } from './styles/Button.css';
-import type { IconButtonVariants } from './styles/IconButton.css';
+import type { ButtonVariants } from './Button';
 import type { IconProps } from '@launchpad-ui/icons';
 import type { AriaLabelingProps } from '@react-types/shared';
+import type { VariantProps } from 'class-variance-authority';
 import type { ForwardedRef } from 'react';
 import type { ButtonProps as AriaButtonProps } from 'react-aria-components';
 
 import { Icon } from '@launchpad-ui/icons';
-import { clsx } from 'clsx';
+import { cva, cx } from 'class-variance-authority';
 import { forwardRef } from 'react';
 import { Button as AriaButton } from 'react-aria-components';
 
-import { variants as baseVariants } from './styles/Button.css';
-import { variants } from './styles/IconButton.css';
+import { button } from './Button';
+import styles from './styles/IconButton.module.css';
 
-type BaseVariants = NonNullable<ButtonVariants>;
+const iconButton = cva(styles.base, {
+  variants: {
+    size: {
+      small: styles.small,
+      medium: styles.medium,
+    },
+  },
+  defaultVariants: {
+    size: 'medium',
+  },
+});
 
 type IconButtonProps = Omit<AriaButtonProps, 'children'> &
   Required<Pick<AriaLabelingProps, 'aria-label'>> &
-  IconButtonVariants & {
+  VariantProps<typeof iconButton> & {
     icon: IconProps['name'];
-    variant?: Extract<BaseVariants['variant'], 'default' | 'primary' | 'destructive' | 'minimal'>;
+    variant?: Extract<ButtonVariants['variant'], 'default' | 'primary' | 'destructive' | 'minimal'>;
   };
 
 const IconButton = forwardRef(
@@ -31,7 +41,7 @@ const IconButton = forwardRef(
       <AriaButton
         {...props}
         ref={ref}
-        className={clsx(baseVariants({ size, variant }), variants({ size }), className)}
+        className={cx(button({ size, variant }), iconButton({ size, className }))}
       >
         <Icon name={icon} size="small" aria-hidden />
       </AriaButton>

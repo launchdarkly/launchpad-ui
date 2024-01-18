@@ -1,14 +1,27 @@
-import type { ButtonGroupVariants } from './styles/ButtonGroup.css';
+import type { VariantProps } from 'class-variance-authority';
 import type { ComponentPropsWithRef, ForwardedRef } from 'react';
 
-import { clsx } from 'clsx';
+import { cva } from 'class-variance-authority';
 import { forwardRef } from 'react';
 import { ButtonContext } from 'react-aria-components';
 
-import { variants } from './styles/ButtonGroup.css';
+import styles from './styles/ButtonGroup.module.css';
+
+const buttonGroup = cva(styles.base, {
+  variants: {
+    spacing: {
+      basic: styles.basic,
+      compact: styles.compact,
+      large: styles.large,
+    },
+  },
+  defaultVariants: {
+    spacing: 'basic',
+  },
+});
 
 type ButtonGroupProps = ComponentPropsWithRef<'div'> &
-  ButtonGroupVariants & {
+  VariantProps<typeof buttonGroup> & {
     isDisabled?: boolean;
   };
 
@@ -18,7 +31,7 @@ const ButtonGroup = forwardRef(
     ref: ForwardedRef<HTMLDivElement>
   ) => {
     return (
-      <div {...props} ref={ref} className={clsx(variants({ spacing }), className)}>
+      <div {...props} ref={ref} className={buttonGroup({ spacing, className })}>
         <ButtonContext.Provider value={{ isDisabled }}>{children}</ButtonContext.Provider>
       </div>
     );

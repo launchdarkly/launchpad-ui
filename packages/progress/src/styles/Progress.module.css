@@ -15,7 +15,10 @@
 }
 
 .Progress--indeterminate {
-  animation: indeterminate var(--lp-duration-350) linear infinite;
+  animation-name: indeterminate;
+  animation-duration: var(--lp-duration-350);
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
 }
 
 .Progress-track {

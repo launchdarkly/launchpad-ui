@@ -1,3 +1,4 @@
+import tokens from '@launchpad-ui/tokens';
 import { vars } from '@launchpad-ui/vars';
 import { flatten } from 'flat';
 import { defineProperties, createRainbowSprinkles } from 'rainbow-sprinkles';
@@ -38,10 +39,10 @@ const typographies = flatten<typeof typography, Record<TypographyKeys, string>>(
 const responsiveProperties = defineProperties({
   conditions: {
     default: {},
-    mobile: { '@media': '(--mobile)' },
-    tablet: { '@media': '(--tablet)' },
-    desktop: { '@media': '(--desktop)' },
-    wide: { '@media': '(--wide)' },
+    mobile: { '@media': `screen and (min-width: ${tokens.viewport.mobile})` },
+    tablet: { '@media': `screen and (min-width: ${tokens.viewport.tablet})` },
+    desktop: { '@media': `screen and (min-width: ${tokens.viewport.desktop})` },
+    wide: { '@media': `screen and (min-width: ${tokens.viewport.wide})` },
   },
   defaultCondition: 'default',
   dynamicProperties: {
