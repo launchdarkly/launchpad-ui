@@ -1,5 +1,15 @@
 # @launchpad-ui/icons
 
+## 0.15.0
+
+### Minor Changes
+
+- [#1137](https://github.com/launchdarkly/launchpad-ui/pull/1137) [`4636c17`](https://github.com/launchdarkly/launchpad-ui/commit/4636c17a17c28b741687fd81fe9ec869d4be91a5) Thanks [@matthewferry](https://github.com/matthewferry)! - [Icons] update icon svg sprite to use 20x20 viewbox and remove `pulse-active`, `verified`, and `circles`
+
+### Patch Changes
+
+- [#1131](https://github.com/launchdarkly/launchpad-ui/pull/1131) [`4c18b26`](https://github.com/launchdarkly/launchpad-ui/commit/4c18b261496392f3331ba0c2d3aafc04d54691c3) Thanks [@qshaner](https://github.com/qshaner)! - patch(icon): add arrows-maximize and fix svg for circles icons
+
 ## 0.14.10
 
 ### Patch Changes

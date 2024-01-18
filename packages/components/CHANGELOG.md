@@ -1,5 +1,18 @@
 # @launchpad-ui/components
 
+## 0.1.3
+
+### Patch Changes
+
+- [#1134](https://github.com/launchdarkly/launchpad-ui/pull/1134) [`8be21f6`](https://github.com/launchdarkly/launchpad-ui/commit/8be21f6a9a518f980e11d54e59325b32c7876910) Thanks [@renovate](https://github.com/apps/renovate)! - Update dependencies
+
+- [#1136](https://github.com/launchdarkly/launchpad-ui/pull/1136) [`dd367d5`](https://github.com/launchdarkly/launchpad-ui/commit/dd367d527085f054a65ac14694a3cab467b25f10) Thanks [@Niznikr](https://github.com/Niznikr)! - Use CSS modules and Lightning CSS for styles
+
+- [#1132](https://github.com/launchdarkly/launchpad-ui/pull/1132) [`37435c4`](https://github.com/launchdarkly/launchpad-ui/commit/37435c44e375a7782e6bd1c82f3f86bf583267af) Thanks [@Niznikr](https://github.com/Niznikr)! - Add `Button`, `ButtonGroup`, `IconButton`, and `LinkButton`
+
+- Updated dependencies [[`4636c17`](https://github.com/launchdarkly/launchpad-ui/commit/4636c17a17c28b741687fd81fe9ec869d4be91a5), [`4c18b26`](https://github.com/launchdarkly/launchpad-ui/commit/4c18b261496392f3331ba0c2d3aafc04d54691c3)]:
+  - @launchpad-ui/icons@0.15.0
+
 ## 0.1.2
 
 ### Patch Changes

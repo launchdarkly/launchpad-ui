@@ -1,5 +1,11 @@
 # @launchpad-ui/markdown
 
+## 0.5.7
+
+### Patch Changes
+
+- [#1134](https://github.com/launchdarkly/launchpad-ui/pull/1134) [`8be21f6`](https://github.com/launchdarkly/launchpad-ui/commit/8be21f6a9a518f980e11d54e59325b32c7876910) Thanks [@renovate](https://github.com/apps/renovate)! - Update dependencies
+
 ## 0.5.6
 
 ### Patch Changes
