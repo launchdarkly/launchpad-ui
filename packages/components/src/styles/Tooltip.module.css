@@ -32,6 +32,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: var(--lp-spacing-200);
   border-radius: var(--lp-border-radius-regular);
   border: 1px solid var(--lp-color-border-overlay-secondary);
   background-color: var(--lp-color-bg-overlay-secondary);
