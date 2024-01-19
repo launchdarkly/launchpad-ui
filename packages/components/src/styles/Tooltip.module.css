@@ -27,9 +27,8 @@
 
   isolation: isolate;
   z-index: var(--lp-z-index-800);
-  font: var(--lp-small-1-regular);
-  font-size: 0.8125rem;
-  padding: var(--lp-spacing-300) var(--lp-spacing-500);
+  font: var(--lp-body-2-regular);
+  padding: var(--lp-spacing-300) var(--lp-spacing-400);
   display: flex;
   justify-content: center;
   align-items: center;
