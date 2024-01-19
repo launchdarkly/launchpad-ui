@@ -1,5 +1,5 @@
 /* eslint-disable react-hooks/rules-of-hooks */
-import type { StoryObj } from '@storybook/react';
+import type { StoryFn, StoryObj } from '@storybook/react';
 
 import { Button } from '@launchpad-ui/button';
 import { Icon } from '@launchpad-ui/icons';
@@ -66,6 +66,17 @@ export default {
   args: {
     size: 'medium',
   },
+  decorators: [
+    (Story: StoryFn) => (
+      <div
+        style={{
+          height: '100vh',
+        }}
+      >
+        <Story />
+      </div>
+    ),
+  ],
 };
 
 type Story = StoryObj<typeof Modal>;
