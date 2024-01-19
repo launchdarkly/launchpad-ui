@@ -7,4 +7,7 @@ export const allModes = {
     backgrounds: 'dark',
     theme: 'dark',
   },
+  mobile: {
+    viewport: 320,
+  },
 };

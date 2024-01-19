@@ -8,6 +8,7 @@ import { useState } from '@storybook/client-api';
 import { userEvent, within } from '@storybook/test';
 import { useRef } from 'react';
 
+import { allModes } from '../../../.storybook/modes';
 import { REACT_NODE_TYPE_DOCS } from '../../../.storybook/utils';
 import { AbsoluteModalFooter, Modal, ModalBody, ModalFooter, ModalHeader } from '../src';
 
@@ -251,7 +252,11 @@ export const KitchenSink: Story = {
   },
   parameters: {
     docs: { disable: true },
-    chromatic: { viewports: [320, 1200] },
+    chromatic: {
+      modes: {
+        mobile: allModes.mobile,
+      },
+    },
     a11y: {
       options: {
         rules: {

@@ -4,6 +4,7 @@ import type { ReactNode } from 'react';
 
 import { MemoryRouter } from 'react-router-dom';
 
+import { allModes } from '../../../.storybook/modes';
 import { Navigation, NavigationItem } from '../src';
 
 export default {
@@ -59,7 +60,11 @@ export const Primary: Story = {
     children: (item) => <NavigationItem key={item.to} {...item} />,
   },
   parameters: {
-    chromatic: { viewports: [320, 1200] },
+    chromatic: {
+      modes: {
+        mobile: allModes.mobile,
+      },
+    },
   },
 };
 
