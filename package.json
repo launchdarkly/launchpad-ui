@@ -50,6 +50,7 @@
     "@storybook/addon-designs": "^7.0.5",
     "@storybook/addon-essentials": "^7.6.3",
     "@storybook/addon-interactions": "^7.6.3",
+    "@storybook/addon-themes": "^7.6.10",
     "@storybook/addons": "^7.6.3",
     "@storybook/api": "^7.6.3",
     "@storybook/blocks": "^7.6.3",

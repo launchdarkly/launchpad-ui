@@ -129,6 +129,7 @@
     linear-gradient(#fff 0 0) padding-box,
     linear-gradient(#fff 0 0);
   mask-composite: xor;
+  mask-composite: xor;
 }
 
 .Alert.Alert--notification.Alert--flair-strong.Alert--bordered {
