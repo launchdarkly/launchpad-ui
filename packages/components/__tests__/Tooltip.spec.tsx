@@ -1,7 +1,7 @@
 import { it, expect, describe } from 'vitest';
 
 import { render, screen, userEvent } from '../../../test/utils';
-import { Button, OverlayArrow, Tooltip, TooltipTrigger } from '../src';
+import { Button, Tooltip, TooltipTrigger } from '../src';
 
 describe('Tooltip', () => {
   it('renders', async () => {
@@ -9,10 +9,7 @@ describe('Tooltip', () => {
     render(
       <TooltipTrigger>
         <Button>Trigger</Button>
-        <Tooltip>
-          <OverlayArrow />
-          Message
-        </Tooltip>
+        <Tooltip>Message</Tooltip>
       </TooltipTrigger>
     );
     await user.hover(document.body);
