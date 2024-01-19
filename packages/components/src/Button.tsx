@@ -34,16 +34,14 @@ const button = cva(styles.base, {
 type ButtonVariants = VariantProps<typeof button>;
 type ButtonProps = AriaButtonProps & ButtonVariants;
 
-const Button = forwardRef(
-  (
-    { size = 'medium', variant = 'default', className, ...props }: ButtonProps,
-    ref: ForwardedRef<HTMLButtonElement>
-  ) => {
-    return <AriaButton {...props} ref={ref} className={button({ size, variant, className })} />;
-  }
-);
+const _Button = (
+  { size = 'medium', variant = 'default', className, ...props }: ButtonProps,
+  ref: ForwardedRef<HTMLButtonElement>
+) => {
+  return <AriaButton {...props} ref={ref} className={button({ size, variant, className })} />;
+};
 
-Button.displayName = 'Button';
+const Button = forwardRef(_Button);
 
 export { Button, button };
 export type { ButtonProps, ButtonVariants };
