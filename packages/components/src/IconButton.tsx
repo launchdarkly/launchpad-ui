@@ -32,24 +32,22 @@ type IconButtonProps = Omit<AriaButtonProps, 'children'> &
     variant?: Extract<ButtonVariants['variant'], 'default' | 'primary' | 'destructive' | 'minimal'>;
   };
 
-const IconButton = forwardRef(
-  (
-    { size = 'medium', variant = 'default', className, icon, ...props }: IconButtonProps,
-    ref: ForwardedRef<HTMLButtonElement>
-  ) => {
-    return (
-      <AriaButton
-        {...props}
-        ref={ref}
-        className={cx(button({ size, variant }), iconButton({ size, className }))}
-      >
-        <Icon name={icon} size="small" aria-hidden />
-      </AriaButton>
-    );
-  }
-);
+const _IconButton = (
+  { size = 'medium', variant = 'default', className, icon, ...props }: IconButtonProps,
+  ref: ForwardedRef<HTMLButtonElement>
+) => {
+  return (
+    <AriaButton
+      {...props}
+      ref={ref}
+      className={cx(button({ size, variant }), iconButton({ size, className }))}
+    >
+      <Icon name={icon} size="small" aria-hidden />
+    </AriaButton>
+  );
+};
 
-IconButton.displayName = 'IconButton';
+const IconButton = forwardRef(_IconButton);
 
 export { IconButton };
 export type { IconButtonProps };

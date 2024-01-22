@@ -25,20 +25,18 @@ type ButtonGroupProps = ComponentPropsWithRef<'div'> &
     isDisabled?: boolean;
   };
 
-const ButtonGroup = forwardRef(
-  (
-    { children, className, spacing = 'basic', isDisabled, ...props }: ButtonGroupProps,
-    ref: ForwardedRef<HTMLDivElement>
-  ) => {
-    return (
-      <div {...props} ref={ref} className={buttonGroup({ spacing, className })}>
-        <ButtonContext.Provider value={{ isDisabled }}>{children}</ButtonContext.Provider>
-      </div>
-    );
-  }
-);
+const _ButtonGroup = (
+  { children, className, spacing = 'basic', isDisabled, ...props }: ButtonGroupProps,
+  ref: ForwardedRef<HTMLDivElement>
+) => {
+  return (
+    <div {...props} ref={ref} className={buttonGroup({ spacing, className })}>
+      <ButtonContext.Provider value={{ isDisabled }}>{children}</ButtonContext.Provider>
+    </div>
+  );
+};
 
-ButtonGroup.displayName = 'ButtonGroup';
+const ButtonGroup = forwardRef(_ButtonGroup);
 
 export { ButtonGroup };
 export type { ButtonGroupProps };

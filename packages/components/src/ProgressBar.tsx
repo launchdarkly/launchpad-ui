@@ -23,51 +23,49 @@ const progressBar = cva(styles.base, {
 
 type ProgressBarProps = AriaProgressBarProps & VariantProps<typeof progressBar>;
 
-const ProgressBar = forwardRef(
-  (
-    { size = 'small', className, ...props }: ProgressBarProps,
-    ref: ForwardedRef<HTMLDivElement>
-  ) => {
-    const center = 16;
-    const strokeWidth = 4;
-    const r = 16 - strokeWidth;
-    const c = 2 * r * Math.PI;
+const _ProgressBar = (
+  { size = 'small', className, ...props }: ProgressBarProps,
+  ref: ForwardedRef<HTMLDivElement>
+) => {
+  const center = 16;
+  const strokeWidth = 4;
+  const r = 16 - strokeWidth;
+  const c = 2 * r * Math.PI;
 
-    return (
-      <AriaProgressBar {...props} ref={ref} className={progressBar({ size, className })}>
-        {({ percentage }) => (
-          <svg
-            width={64}
-            height={64}
-            viewBox="0 0 32 32"
-            fill="none"
+  return (
+    <AriaProgressBar {...props} ref={ref} className={progressBar({ size, className })}>
+      {({ percentage }) => (
+        <svg
+          width={64}
+          height={64}
+          viewBox="0 0 32 32"
+          fill="none"
+          strokeWidth={strokeWidth}
+          className={cx(props.isIndeterminate && styles.indeterminate)}
+        >
+          <circle
+            cx={center}
+            cy={center}
+            r={r}
             strokeWidth={strokeWidth}
-            className={cx(props.isIndeterminate && styles.indeterminate)}
-          >
-            <circle
-              cx={center}
-              cy={center}
-              r={r}
-              strokeWidth={strokeWidth}
-              className={styles.outerCircle}
-            />
-            <circle
-              cx={center}
-              cy={center}
-              r={r}
-              strokeDasharray={`${c} ${c}`}
-              strokeDashoffset={c - (props.isIndeterminate ? 0.34 : percentage! / 100) * c}
-              transform="rotate(-90 16 16)"
-              className={styles.innerCircle}
-            />
-          </svg>
-        )}
-      </AriaProgressBar>
-    );
-  }
-);
+            className={styles.outerCircle}
+          />
+          <circle
+            cx={center}
+            cy={center}
+            r={r}
+            strokeDasharray={`${c} ${c}`}
+            strokeDashoffset={c - (props.isIndeterminate ? 0.34 : percentage! / 100) * c}
+            transform="rotate(-90 16 16)"
+            className={styles.innerCircle}
+          />
+        </svg>
+      )}
+    </AriaProgressBar>
+  );
+};
 
-ProgressBar.displayName = 'ProgressBar';
+const ProgressBar = forwardRef(_ProgressBar);
 
 export { ProgressBar };
 export type { ProgressBarProps };

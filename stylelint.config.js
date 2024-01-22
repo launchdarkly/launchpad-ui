@@ -3,10 +3,7 @@ const path = require('path');
 
 const fg = require('fast-glob');
 
-let cssPaths = [];
-(async () => {
-  cssPaths = await fg([path.resolve(__dirname, `packages/**/src/**/*.css`), '!**/node_modules']);
-})();
+const cssPaths = fg.sync([path.resolve(__dirname, `packages/**/src/**/*.css`), '!**/node_modules']);
 
 module.exports = {
   extends: ['stylelint-config-standard'],
@@ -15,6 +12,7 @@ module.exports = {
     'declaration-no-important': true,
     'custom-property-pattern': null,
     'selector-class-pattern': null,
+    'block-no-empty': null,
     'hue-degree-notation': 'number',
     'alpha-value-notation': 'number',
     'csstools/value-no-unknown-custom-properties': [
