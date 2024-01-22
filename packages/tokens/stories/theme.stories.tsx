@@ -59,5 +59,12 @@ export const NestedThemes = {
 
     return <NestedThemesComponent />;
   },
-  parameters: { docs: { disable: false } },
+  parameters: {
+    docs: { disable: false },
+    chromatic: {
+      modes: {
+        dark: { disable: true },
+      },
+    },
+  },
 };
