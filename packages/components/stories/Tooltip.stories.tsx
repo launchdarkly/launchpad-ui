@@ -1,6 +1,6 @@
 import type { Meta, StoryFn, StoryObj } from '@storybook/react';
 
-import { userEvent, within } from '@storybook/test';
+import { expect, userEvent, within } from '@storybook/test';
 
 import { Tooltip, TooltipTrigger, Button } from '../src';
 
@@ -11,6 +11,7 @@ const meta: Meta<typeof Tooltip> = {
     status: {
       type: import.meta.env.STORYBOOK_PACKAGE_STATUS__COMPONENTS,
     },
+    chromatic: { pauseAnimationAtEnd: true },
   },
   decorators: [
     (Story: StoryFn) => (
@@ -38,5 +39,7 @@ export const Example: Story = {
     const canvas = within(canvasElement);
 
     await userEvent.hover(canvas.getByRole('button'));
+    const body = canvasElement.ownerDocument.body;
+    await expect(await within(body).findByRole('tooltip'));
   },
 };
