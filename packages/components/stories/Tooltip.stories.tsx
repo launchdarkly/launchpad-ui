@@ -1,7 +1,6 @@
 import type { Meta, StoryFn, StoryObj } from '@storybook/react';
 
 import { userEvent, within } from '@storybook/test';
-import isChromatic from 'chromatic';
 
 import { Tooltip, TooltipTrigger, Button } from '../src';
 
@@ -15,7 +14,7 @@ const meta: Meta<typeof Tooltip> = {
   },
   decorators: [
     (Story: StoryFn) => (
-      <div style={{ height: isChromatic() ? 'var(--lp-size-320)' : undefined }}>
+      <div style={{ height: 'var(--lp-size-96)' }}>
         <Story />
       </div>
     ),
