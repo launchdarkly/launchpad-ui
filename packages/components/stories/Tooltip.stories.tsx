@@ -30,6 +30,6 @@ export const Example: Story = {
   play: async ({ canvasElement }: { canvasElement: HTMLElement }) => {
     const canvas = within(canvasElement);
 
-    await userEvent.hover(canvas.getAllByRole('button')[0]);
+    await userEvent.hover(canvas.getByRole('button'));
   },
 };
