@@ -1,5 +1,5 @@
 /* eslint-disable react-hooks/rules-of-hooks */
-import type { StoryObj } from '@storybook/react';
+import type { StoryFn, StoryObj } from '@storybook/react';
 
 import { Button } from '@launchpad-ui/button';
 import { Icon } from '@launchpad-ui/icons';
@@ -8,6 +8,7 @@ import { useState } from '@storybook/client-api';
 import { userEvent, within } from '@storybook/test';
 import { useRef } from 'react';
 
+import { allModes } from '../../../.storybook/modes';
 import { REACT_NODE_TYPE_DOCS } from '../../../.storybook/utils';
 import { AbsoluteModalFooter, Modal, ModalBody, ModalFooter, ModalHeader } from '../src';
 
@@ -65,6 +66,17 @@ export default {
   args: {
     size: 'medium',
   },
+  decorators: [
+    (Story: StoryFn) => (
+      <div
+        style={{
+          height: '100vh',
+        }}
+      >
+        <Story />
+      </div>
+    ),
+  ],
 };
 
 type Story = StoryObj<typeof Modal>;
@@ -251,7 +263,11 @@ export const KitchenSink: Story = {
   },
   parameters: {
     docs: { disable: true },
-    chromatic: { viewports: [320, 1200] },
+    chromatic: {
+      modes: {
+        mobile: allModes.mobile,
+      },
+    },
     a11y: {
       options: {
         rules: {

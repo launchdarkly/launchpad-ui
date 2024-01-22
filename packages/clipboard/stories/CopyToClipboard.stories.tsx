@@ -50,9 +50,7 @@ export const Default: Story = {
   play: async ({ canvasElement }: { canvasElement: HTMLElement }) => {
     const canvas = within(canvasElement);
 
-    const buttons = canvas.getAllByRole('button');
-    userEvent.hover(buttons[0]);
-    userEvent.click(buttons[1]);
+    userEvent.hover(canvas.getByRole('button'));
   },
 };
 
@@ -61,9 +59,7 @@ export const Basic: Story = {
   play: async ({ canvasElement }: { canvasElement: HTMLElement }) => {
     const canvas = within(canvasElement);
 
-    const buttons = canvas.getAllByRole('button');
-    userEvent.hover(buttons[0]);
-    userEvent.click(buttons[1]);
+    userEvent.click(canvas.getByRole('button'));
   },
 };
 
@@ -72,9 +68,7 @@ export const Minimal: Story = {
   play: async ({ canvasElement }: { canvasElement: HTMLElement }) => {
     const canvas = within(canvasElement);
 
-    const buttons = canvas.getAllByRole('button');
-    userEvent.hover(buttons[0]);
-    userEvent.click(buttons[1]);
+    userEvent.hover(canvas.getByRole('button'));
   },
 };
 

@@ -41,6 +41,9 @@ importers:
       '@storybook/addon-interactions':
         specifier: ^7.6.3
         version: 7.6.7
+      '@storybook/addon-themes':
+        specifier: ^7.6.10
+        version: 7.6.10
       '@storybook/addons':
         specifier: ^7.6.3
         version: 7.6.7(react-dom@18.2.0)(react@18.2.0)
@@ -7074,6 +7077,12 @@ packages:
     resolution: {integrity: sha512-gu2y46ijjMkXlxy1f8Cctgjw5b5y8vSIqNAYlrs5/Qy+hJAWyU6lj2PFGOCCUG4L+F45fAjwWAin6qz43+WnRQ==}
     dependencies:
       '@storybook/global': 5.0.0
+      ts-dedent: 2.2.0
+    dev: true
+
+  /@storybook/addon-themes@7.6.10:
+    resolution: {integrity: sha512-fsWr9FOVMJoD9bsXf1B7uHRajWx2Lruhi3VYGt/AZG6a/g38ja31+lWynpESOGxv4hOCyoNIAdC5JZFbMg7mOA==}
+    dependencies:
       ts-dedent: 2.2.0
     dev: true
 

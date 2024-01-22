@@ -32,6 +32,7 @@ const config: StorybookConfig = {
     'storybook-addon-pseudo-states',
     '@etchteam/storybook-addon-status',
     '@storybook/addon-designs',
+    '@storybook/addon-themes',
   ],
   framework: '@storybook/react-vite',
   core: {

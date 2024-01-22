@@ -1,6 +1,8 @@
-import isChromatic from 'chromatic';
+import { withThemeByDataAttribute } from '@storybook/addon-themes';
 import { MotionConfig } from 'framer-motion';
 import React from 'react';
+
+import { allModes } from './modes';
 
 import '../packages/tokens/dist/index.css';
 import '../packages/tokens/dist/themes.css';
@@ -16,6 +18,19 @@ export const parameters = {
       method: 'alphabetical',
       order: ['Components', 'Tokens'],
       locales: 'en-US',
+    },
+  },
+  backgrounds: {
+    default: 'default',
+    values: [
+      { name: 'default', value: 'var(--lp-color-bg-ui-primary)' },
+      { name: 'dark', value: 'var(--lp-color-bg-ui-primary)' },
+    ],
+  },
+  chromatic: {
+    modes: {
+      default: allModes.default,
+      dark: allModes.dark,
     },
   },
   status: {
@@ -41,53 +56,19 @@ export const parameters = {
   },
 };
 
-export const globalTypes = {
-  theme: {
-    name: 'Theme',
-    description: 'Global theme for components',
-    defaultValue: isChromatic() ? 'side-by-side' : 'default',
-    toolbar: {
-      icon: 'circlehollow',
-      title: 'Theme',
-      items: [
-        { value: 'default', icon: 'circlehollow', title: 'default' },
-        { value: 'dark', icon: 'circle', title: 'dark' },
-        { value: 'side-by-side', icon: 'sidebar', title: 'side by side' },
-      ],
-    },
-  },
-};
-
 export const decorators = [
-  (StoryFn, context) => {
-    const theme = context.parameters.theme || context.globals.theme;
-
-    switch (theme) {
-      case 'side-by-side': {
-        document.documentElement.setAttribute('data-theme', 'default');
-        return (
-          <MotionConfig reducedMotion="user">
-            <div style={{ display: 'flex', flexDirection: 'row', minHeight: '100vh' }}>
-              <div style={{ width: '50vw', padding: '0.625rem' }}>
-                <StoryFn />
-              </div>
-              <div data-theme="dark" style={{ width: '50vw', padding: '0.625rem' }}>
-                <StoryFn />
-              </div>
-            </div>
-          </MotionConfig>
-        );
-      }
-      default: {
-        document.documentElement.setAttribute('data-theme', theme);
-        return (
-          <MotionConfig reducedMotion="user">
-            <div style={{ padding: '0.625rem' }}>
-              <StoryFn />
-            </div>
-          </MotionConfig>
-        );
-      }
-    }
-  },
+  (StoryFn) => (
+    <MotionConfig reducedMotion="user">
+      <div style={{ padding: '0.625rem' }}>
+        <StoryFn />
+      </div>
+    </MotionConfig>
+  ),
+  withThemeByDataAttribute({
+    themes: {
+      default: 'default',
+      dark: 'dark',
+    },
+    defaultTheme: 'default',
+  }),
 ];

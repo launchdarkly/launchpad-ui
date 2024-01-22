@@ -15,7 +15,6 @@ export default {
     status: {
       type: import.meta.env.STORYBOOK_PACKAGE_STATUS__ICONS,
     },
-    chromatic: { viewports: [1700] },
   },
   argTypes: {
     name: {
