@@ -90,7 +90,7 @@ jobs:
 
       - name: Cache Browsers
         id: cache-browsers
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: ~/.cache/ms-playwright
           key: ${{ runner.os }}-playwright-${{ steps.get-version.outputs.VERSION }}
