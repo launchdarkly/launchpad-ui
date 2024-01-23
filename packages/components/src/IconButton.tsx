@@ -8,7 +8,7 @@ import type { ButtonProps as AriaButtonProps } from 'react-aria-components';
 import { Icon } from '@launchpad-ui/icons';
 import { cva, cx } from 'class-variance-authority';
 import { forwardRef } from 'react';
-import { Button as AriaButton } from 'react-aria-components';
+import { Button as AriaButton, composeRenderProps } from 'react-aria-components';
 
 import { button } from './Button';
 import styles from './styles/IconButton.module.css';
@@ -33,14 +33,16 @@ type IconButtonProps = Omit<AriaButtonProps, 'children'> &
   };
 
 const _IconButton = (
-  { size = 'medium', variant = 'default', className, icon, ...props }: IconButtonProps,
+  { size = 'medium', variant = 'default', icon, ...props }: IconButtonProps,
   ref: ForwardedRef<HTMLButtonElement>
 ) => {
   return (
     <AriaButton
       {...props}
       ref={ref}
-      className={cx(button({ size, variant }), iconButton({ size, className }))}
+      className={composeRenderProps(props.className, (className, renderProps) =>
+        cx(button({ ...renderProps, size, variant, className }), iconButton({ size }))
+      )}
     >
       <Icon name={icon} size="small" aria-hidden />
     </AriaButton>

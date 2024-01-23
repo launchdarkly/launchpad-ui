@@ -4,7 +4,7 @@ import type { LinkProps } from 'react-aria-components';
 import type { LinkProps as RouterLinkProps } from 'react-router-dom';
 
 import { forwardRef } from 'react';
-import { Link } from 'react-aria-components';
+import { Link, composeRenderProps } from 'react-aria-components';
 import { useHref, useLinkClickHandler } from 'react-router-dom';
 
 import { button } from './Button';
@@ -12,16 +12,7 @@ import { button } from './Button';
 type LinkButtonProps = LinkProps & RouterLinkProps & ButtonVariants;
 
 const _LinkButton = (
-  {
-    size = 'medium',
-    variant = 'default',
-    className,
-    to,
-    replace,
-    state,
-    target,
-    ...props
-  }: LinkButtonProps,
+  { size = 'medium', variant = 'default', to, replace, state, target, ...props }: LinkButtonProps,
   ref: ForwardedRef<HTMLAnchorElement>
 ) => {
   const href = useHref(to);
@@ -35,7 +26,9 @@ const _LinkButton = (
     <Link
       {...props}
       ref={ref}
-      className={button({ size, variant, className })}
+      className={composeRenderProps(props.className, (className, renderProps) =>
+        button({ ...renderProps, size, variant, className })
+      )}
       href={href}
       onPress={(event) => {
         props.onPress?.(event);

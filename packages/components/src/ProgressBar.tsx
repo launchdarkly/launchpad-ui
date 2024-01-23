@@ -4,7 +4,7 @@ import type { ProgressBarProps as AriaProgressBarProps } from 'react-aria-compon
 
 import { cva, cx } from 'class-variance-authority';
 import { forwardRef } from 'react';
-import { ProgressBar as AriaProgressBar } from 'react-aria-components';
+import { ProgressBar as AriaProgressBar, composeRenderProps } from 'react-aria-components';
 
 import styles from './styles/ProgressBar.module.css';
 
@@ -24,7 +24,7 @@ const progressBar = cva(styles.base, {
 type ProgressBarProps = AriaProgressBarProps & VariantProps<typeof progressBar>;
 
 const _ProgressBar = (
-  { size = 'small', className, ...props }: ProgressBarProps,
+  { size = 'small', ...props }: ProgressBarProps,
   ref: ForwardedRef<HTMLDivElement>
 ) => {
   const center = 16;
@@ -33,7 +33,13 @@ const _ProgressBar = (
   const c = 2 * r * Math.PI;
 
   return (
-    <AriaProgressBar {...props} ref={ref} className={progressBar({ size, className })}>
+    <AriaProgressBar
+      {...props}
+      ref={ref}
+      className={composeRenderProps(props.className, (className, renderProps) =>
+        progressBar({ ...renderProps, size, className })
+      )}
+    >
       {({ percentage }) => (
         <svg
           width={64}

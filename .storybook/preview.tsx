@@ -9,7 +9,7 @@ import '../packages/tokens/dist/themes.css';
 import '../packages/tokens/dist/media-queries.css';
 
 export const parameters = {
-  actions: { argTypesRegex: '^on.*' },
+  actions: { disable: true },
   controls: { expanded: true },
   options: {
     showPanel: true,
