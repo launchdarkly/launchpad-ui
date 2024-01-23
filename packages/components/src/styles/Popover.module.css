@@ -29,7 +29,11 @@
   transform: translate3d(0, 0, 0);
   will-change: transform, opacity;
 
-  .arrow svg {
+  & [slot='title'] {
+    font: var(--lp-heading-2-medium);
+  }
+
+  & .arrow svg {
     display: block;
     fill: var(--lp-color-bg-overlay-primary);
     stroke: var(--lp-color-border-ui-primary);

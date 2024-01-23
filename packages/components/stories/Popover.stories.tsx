@@ -2,7 +2,7 @@ import type { Meta, StoryFn, StoryObj } from '@storybook/react';
 
 import { expect, userEvent, within } from '@storybook/test';
 
-import { OverlayArrow, Popover, Dialog, DialogTrigger, Button } from '../src';
+import { OverlayArrow, Popover, Dialog, DialogTrigger, Heading, Button } from '../src';
 
 const meta: Meta<typeof Popover> = {
   component: Popover,
@@ -58,6 +58,23 @@ export const WithArrow: Story = {
         <Popover {...args}>
           <OverlayArrow />
           <Dialog>Message</Dialog>
+        </Popover>
+      </DialogTrigger>
+    );
+  },
+  ...open,
+};
+
+export const WithHeading: Story = {
+  render: (args) => {
+    return (
+      <DialogTrigger>
+        <Button>Trigger</Button>
+        <Popover {...args}>
+          <Dialog>
+            <Heading slot="title">Title</Heading>
+            <div>Message</div>
+          </Dialog>
         </Popover>
       </DialogTrigger>
     );
