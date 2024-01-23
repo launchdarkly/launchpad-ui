@@ -4,7 +4,7 @@ import type { ButtonProps as AriaButtonProps } from 'react-aria-components';
 
 import { cva } from 'class-variance-authority';
 import { forwardRef } from 'react';
-import { Button as AriaButton } from 'react-aria-components';
+import { Button as AriaButton, composeRenderProps } from 'react-aria-components';
 
 import styles from './styles/Button.module.css';
 
@@ -35,10 +35,18 @@ type ButtonVariants = VariantProps<typeof button>;
 type ButtonProps = AriaButtonProps & ButtonVariants;
 
 const _Button = (
-  { size = 'medium', variant = 'default', className, ...props }: ButtonProps,
+  { size = 'medium', variant = 'default', ...props }: ButtonProps,
   ref: ForwardedRef<HTMLButtonElement>
 ) => {
-  return <AriaButton {...props} ref={ref} className={button({ size, variant, className })} />;
+  return (
+    <AriaButton
+      {...props}
+      ref={ref}
+      className={composeRenderProps(props.className, (className, renderProps) =>
+        button({ ...renderProps, size, variant, className })
+      )}
+    />
+  );
 };
 
 const Button = forwardRef(_Button);

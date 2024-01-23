@@ -14,12 +14,16 @@
 }
 
 .base:focus-visible {
+  outline: none;
+}
+
+.base[data-focus-visible] {
   outline: 2px solid var(--lp-color-shadow-interactive-focus);
   outline-offset: 2px;
   z-index: 1;
 }
 
-.base[disabled][data-disabled] {
+.base[data-disabled] {
   background: transparent none repeat 0 0 / auto auto padding-box border-box scroll;
   background: initial;
   background-color: var(--lp-color-bg-interactive-disabled);
@@ -49,15 +53,15 @@
   color: var(--lp-color-text-ui-primary-base);
 }
 
-.default:hover {
+.default[data-hovered] {
   background-color: var(--lp-color-bg-interactive-secondary-hover);
 }
 
-.default:active {
+.default[data-pressed] {
   background-color: var(--lp-color-bg-interactive-secondary-active);
 }
 
-.default:focus-visible {
+.default[data-focus-visible] {
   background-color: var(--lp-color-bg-interactive-secondary-focus);
 }
 
@@ -67,19 +71,19 @@
   color: var(--lp-color-text-interactive-primary-base);
 }
 
-.primary:hover {
+.primary[data-hovered] {
   background-color: var(--lp-color-bg-interactive-primary-hover);
   border-color: var(--lp-color-border-interactive-primary-hover);
   color: var(--lp-color-text-interactive-primary-hover);
 }
 
-.primary:active {
+.primary[data-pressed] {
   background-color: var(--lp-color-bg-interactive-primary-active);
   border-color: var(--lp-color-border-interactive-primary-active);
   color: var(--lp-color-text-interactive-primary-base);
 }
 
-.primary:focus-visible {
+.primary[data-focus-visible] {
   background-color: var(--lp-color-bg-interactive-primary-focus);
   border-color: var(--lp-color-border-interactive-primary-focus);
 }
@@ -90,15 +94,15 @@
   color: var(--lp-color-text-interactive-destructive);
 }
 
-.destructive:hover {
+.destructive[data-hovered] {
   background-color: var(--lp-color-bg-interactive-destructive-hover);
 }
 
-.destructive:active {
+.destructive[data-pressed] {
   background-color: var(--lp-color-bg-interactive-destructive-active);
 }
 
-.destructive:focus-visible {
+.destructive[data-focus-visible] {
   background-color: var(--lp-color-bg-interactive-destructive-focus);
 }
 
@@ -108,19 +112,19 @@
   color: var(--lp-color-text-ui-primary-base);
 }
 
-.minimal:hover {
+.minimal[data-hovered] {
   background-color: var(--lp-color-bg-interactive-tertiary-hover);
 }
 
-.minimal:active {
+.minimal[data-pressed] {
   background-color: var(--lp-color-bg-interactive-tertiary-active);
 }
 
-.minimal:focus-visible {
+.minimal[data-focus-visible] {
   background-color: var(--lp-color-bg-interactive-tertiary-focus);
 }
 
-.minimal[disabled][data-disabled] {
+.minimal[data-disabled] {
   background-color: var(--lp-color-bg-interactive-tertiary-base);
 }
 
@@ -130,17 +134,17 @@
   color: var(--lp-color-text-interactive-primary-base);
 }
 
-.primaryFlair:hover {
+.primaryFlair[data-hovered] {
   background: linear-gradient(124deg, #9655c3 0%, #4b5fdd 98.05%);
   border-color: var(--lp-color-border-interactive-primary-flair-hover);
 }
 
-.primaryFlair:active {
+.primaryFlair[data-pressed] {
   background: linear-gradient(124deg, #8741b9 0%, #3b50ce 98.05%);
   border-color: var(--lp-color-border-interactive-primary-flair-active);
 }
 
-.primaryFlair:focus-visible {
+.primaryFlair[data-focus-visible] {
   background: linear-gradient(124deg, #8741b9 0%, #3b50ce 98.05%);
   border-color: var(--lp-color-border-interactive-primary-flair-focus);
 }
@@ -151,19 +155,19 @@
   color: var(--lp-color-text-interactive-flair-base);
 }
 
-.defaultFlair:hover {
+.defaultFlair[data-hovered] {
   background-color: var(--lp-color-bg-interactive-secondary-flair-hover);
   border-color: var(--lp-color-border-interactive-secondary-flair-hover);
   color: var(--lp-color-text-interactive-flair-hover);
 }
 
-.defaultFlair:active {
+.defaultFlair[data-pressed] {
   background-color: var(--lp-color-bg-interactive-secondary-flair-active);
   border-color: var(--lp-color-border-interactive-secondary-flair-active);
   color: var(--lp-color-text-interactive-flair-active);
 }
 
-.defaultFlair:focus-visible {
+.defaultFlair[data-focus-visible] {
   background-color: var(--lp-color-bg-interactive-secondary-flair-focus);
   border-color: var(--lp-color-border-interactive-secondary-flair-focus);
   color: var(--lp-color-text-interactive-flair-focus);
@@ -175,17 +179,17 @@
   color: var(--lp-color-text-interactive-flair-base);
 }
 
-.minimalFlair:hover {
+.minimalFlair[data-hovered] {
   background-color: var(--lp-color-bg-interactive-tertiary-flair-hover);
   color: var(--lp-color-text-interactive-flair-hover);
 }
 
-.minimalFlair:active {
+.minimalFlair[data-pressed] {
   background-color: var(--lp-color-bg-interactive-tertiary-flair-active);
   color: var(--lp-color-text-interactive-flair-active);
 }
 
-.minimalFlair:focus-visible {
+.minimalFlair[data-focus-visible] {
   background-color: var(--lp-color-bg-interactive-tertiary-flair-focus);
   color: var(--lp-color-text-interactive-flair-focus);
 }
