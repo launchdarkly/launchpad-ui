@@ -1,0 +1,98 @@
+:root,
+[data-theme='default'] {
+  --lp-popover-shadow: 0px 4px 4px 0px rgb(40 40 40 / 0.08), 0px 1px 2px 0px rgb(40 40 40 / 0.1),
+    0px 0px 4px 0px rgb(40 40 40 / 0.12);
+}
+
+@keyframes slide {
+  from {
+    transform: var(--origin);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.popover {
+  --lp-popover-offset: var(--lp-size-4);
+  --lp-arrow-offset: var(--lp-size-6);
+
+  isolation: isolate;
+  padding: var(--lp-spacing-500);
+  border-radius: var(--lp-border-radius-regular);
+  border: 1px solid var(--lp-color-border-ui-primary);
+  background-color: var(--lp-color-bg-overlay-primary);
+  box-shadow: var(--lp-popover-shadow);
+  transform: translate3d(0, 0, 0);
+  will-change: transform, opacity;
+
+  .arrow svg {
+    display: block;
+    fill: var(--lp-color-bg-overlay-primary);
+    stroke: var(--lp-color-border-ui-primary);
+    stroke-width: 1px;
+  }
+
+  &[data-placement='top'] {
+    --origin: translateY(4px);
+
+    margin-bottom: var(--lp-popover-offset);
+
+    &:has(.arrow) {
+      margin-bottom: var(--lp-arrow-offset);
+    }
+  }
+
+  &[data-placement='bottom'] {
+    --origin: translateY(-4px);
+
+    margin-top: var(--lp-popover-offset);
+
+    & .arrow svg {
+      transform: rotate(180deg);
+    }
+
+    &:has(.arrow) {
+      margin-top: var(--lp-arrow-offset);
+    }
+  }
+
+  &[data-placement='right'] {
+    --origin: translateX(-4px);
+
+    margin-left: var(--lp-popover-offset);
+
+    & .arrow svg {
+      transform: rotate(90deg);
+    }
+
+    &:has(.arrow) {
+      margin-left: var(--lp-arrow-offset);
+    }
+  }
+
+  &[data-placement='left'] {
+    --origin: translateX(4px);
+
+    margin-right: var(--lp-popover-offset);
+
+    & .arrow svg {
+      transform: rotate(-90deg);
+    }
+
+    &:has(.arrow) {
+      margin-right: var(--lp-arrow-offset);
+    }
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    &[data-entering] {
+      animation-name: slide;
+      animation-duration: 200ms;
+      animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+    }
+  }
+}

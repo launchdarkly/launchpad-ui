@@ -23,7 +23,6 @@
   --lp-tooltip-offset: var(--lp-size-4);
 
   isolation: isolate;
-  z-index: var(--lp-z-index-800);
   font: var(--lp-body-2-regular);
   padding: var(--lp-spacing-300) var(--lp-spacing-400);
   display: flex;
@@ -33,7 +32,7 @@
   border-radius: var(--lp-border-radius-regular);
   border: 1px solid var(--lp-color-border-overlay-secondary);
   background-color: var(--lp-color-bg-overlay-secondary);
-  box-shadow: var(--lp-component-popover-shadow);
+  box-shadow: var(--lp-popover-shadow);
   color: var(--lp-tooltip-color-text);
   transform: translate3d(0, 0, 0);
   will-change: transform, opacity;
