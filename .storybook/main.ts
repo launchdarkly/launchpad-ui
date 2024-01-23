@@ -27,12 +27,7 @@ const config: StorybookConfig = {
   },
   addons: [
     '@storybook/addon-a11y',
-    {
-      name: '@storybook/addon-essentials',
-      options: {
-        actions: false,
-      },
-    },
+    '@storybook/addon-essentials',
     '@storybook/addon-interactions',
     'storybook-addon-pseudo-states',
     '@etchteam/storybook-addon-status',

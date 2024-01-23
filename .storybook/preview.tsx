@@ -9,6 +9,7 @@ import '../packages/tokens/dist/themes.css';
 import '../packages/tokens/dist/media-queries.css';
 
 export const parameters = {
+  actions: { disable: true },
   controls: { expanded: true },
   options: {
     showPanel: true,
