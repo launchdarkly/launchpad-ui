@@ -15,7 +15,7 @@ const meta: Meta<typeof Popover> = {
   },
   decorators: [
     (Story: StoryFn) => (
-      <div style={{ height: 'var(--lp-size-112)' }}>
+      <div style={{ height: 'var(--lp-size-144)' }}>
         <Story />
       </div>
     ),
