@@ -9,30 +9,6 @@ import styles from './styles/Switch.module.css';
 
 const _switch = cva(styles.switch);
 
-const track = cva(styles.track, {
-  variants: {
-    isSelected: {
-      false: styles.trackOff,
-      true: styles.trackOn,
-    },
-    isDisabled: {
-      true: '',
-    },
-  },
-});
-
-const handle = cva(styles.handle, {
-  variants: {
-    isSelected: {
-      false: styles.handleOff,
-      true: styles.handleOn,
-    },
-    isDisabled: {
-      true: '',
-    },
-  },
-});
-
 type SwitchProps = Omit<AriaSwitchProps, 'children'> & {
   children?: ReactNode;
 };
@@ -46,10 +22,12 @@ const _Switch = ({ children, ...props }: SwitchProps, ref: ForwardedRef<HTMLLabe
         _switch({ ...renderProps, className })
       )}
     >
-      {(renderProps) => (
+      {({ isSelected }) => (
         <>
-          <div className={track({ ...renderProps })}>
-            <span className={handle({ ...renderProps })} />
+          <div className={styles.track}>
+            {isSelected && <div className={styles.label}>On</div>}
+            <span className={styles.handle} />
+            {!isSelected && <div className={styles.label}>Off</div>}
           </div>
           {children}
         </>
