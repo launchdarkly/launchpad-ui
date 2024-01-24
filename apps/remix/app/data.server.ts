@@ -42,6 +42,7 @@ export async function getComponents() {
     { to: 'rac/link-button', name: 'RAC LinkButton', role: 'link' },
     { to: 'rac/popover', name: 'RAC Popover', role: 'dialog' },
     { to: 'rac/progress-bar', name: 'RAC ProgressBar', role: 'progressbar' },
+    { to: 'rac/switch', name: 'RAC Switch', role: 'switch' },
     { to: 'rac/tooltip', name: 'RAC Tooltip', role: 'tooltip' },
     // plop end components
   ];
