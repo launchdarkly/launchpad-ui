@@ -40,14 +40,14 @@ const _ProgressBar = (
         progressBar({ ...renderProps, size, className })
       )}
     >
-      {({ percentage }) => (
+      {({ percentage, isIndeterminate }) => (
         <svg
           width={64}
           height={64}
           viewBox="0 0 32 32"
           fill="none"
           strokeWidth={strokeWidth}
-          className={cx(props.isIndeterminate && styles.indeterminate)}
+          className={cx(isIndeterminate && styles.indeterminate)}
         >
           <circle
             cx={center}
@@ -61,7 +61,7 @@ const _ProgressBar = (
             cy={center}
             r={r}
             strokeDasharray={`${c} ${c}`}
-            strokeDashoffset={c - (props.isIndeterminate ? 0.34 : percentage! / 100) * c}
+            strokeDashoffset={c - (isIndeterminate ? 0.34 : percentage! / 100) * c}
             transform="rotate(-90 16 16)"
             className={styles.innerCircle}
           />

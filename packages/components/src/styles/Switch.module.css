@@ -1,0 +1,48 @@
+.switch {
+  display: flex;
+  align-items: center;
+  gap: var(--lp-spacing-200);
+}
+
+.track {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: var(--lp-spacing-200);
+  width: 3.375rem;
+  height: var(--lp-size-24);
+  border-radius: var(--lp-border-radius-large);
+  transition: all var(--lp-duration-100) ease-in-out;
+  container-type: inline-size;
+}
+
+.trackOff {
+  background-color: var(--lp-color-bg-interactive-secondary-hover);
+  border: 1px solid var(--lp-color-border-interactive-secondary-base);
+}
+
+.trackOn {
+  background-color: var(--lp-color-system-green-700);
+  border: 1px solid var(--lp-color-system-green-800);
+}
+
+.handle {
+  display: block;
+  background-color: var(--lp-color-white-950);
+  width: var(--lp-size-16);
+  height: var(--lp-size-16);
+  border-radius: var(--lp-border-radius-large);
+  box-shadow:
+    0 0 1px 0 hsl(0 0% 12.9% / 0.35),
+    0 0 2px 0 hsl(0 0% 12.9% / 0.75),
+    0 0 1px 0 hsl(0 0% 12.9% / 0.75);
+  transition: transform var(--lp-duration-100) ease-in-out;
+}
+
+.handleOff {
+  transform: translateX(0%);
+}
+
+.handleOn {
+  transform: translateX(calc(100cqw - 100%));
+}
