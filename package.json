@@ -24,7 +24,7 @@
     "test:packages": "pnpm build:transform && nx affected --target=test --exclude=@launchpad-ui/remix",
     "test:ui": "vitest --ui",
     "test:watch": "vitest",
-    "prepare": "husky install",
+    "prepare": "husky",
     "release": "nx affected --target=build --base=HEAD~1 --head=HEAD --exclude=@launchpad-ui/remix && changeset publish",
     "typecheck": "pnpm build:transform && tsc --noEmit --emitDeclarationOnly false --skipLibCheck"
   },
@@ -95,7 +95,7 @@
     "eslint-plugin-testing-library": "^6.2.0",
     "fast-glob": "^3.3.0",
     "framer-motion": "10.18.0",
-    "husky": "^8.0.1",
+    "husky": "^9.0.3",
     "jsdom": "^24.0.0",
     "lightningcss": "^1.23.0",
     "lint-staged": "^15.2.0",

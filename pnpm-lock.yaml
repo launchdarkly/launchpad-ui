@@ -177,8 +177,8 @@ importers:
         specifier: 10.18.0
         version: 10.18.0(react-dom@18.2.0)(react@18.2.0)
       husky:
-        specifier: ^8.0.1
-        version: 8.0.3
+        specifier: ^9.0.3
+        version: 9.0.3
       jsdom:
         specifier: ^24.0.0
         version: 24.0.0
@@ -12562,9 +12562,9 @@ packages:
     engines: {node: '>=16.17.0'}
     dev: true
 
-  /husky@8.0.3:
-    resolution: {integrity: sha512-+dQSyqPh4x1hlO1swXBiNb2HzTDN1I2IGLQx1GrBuiqFJfoMrnZWwVmatvSiO+Iz8fBUnf+lekwNo4c2LlXItg==}
-    engines: {node: '>=14'}
+  /husky@9.0.3:
+    resolution: {integrity: sha512-MNRluWx5bvZ2Ft2Z9ni5KZAgNFrQSM4LKvEtTJVKTjGRqliI1CeWv8HWnPXfM+4snOaU04bb7IU2u6TPDb8ROw==}
+    engines: {node: '>=18'}
     hasBin: true
     dev: true
 
