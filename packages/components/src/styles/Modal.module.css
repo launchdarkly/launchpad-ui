@@ -1,0 +1,63 @@
+:root,
+[data-theme='default'] {
+  --lp-overlay-bg: #28282880;
+}
+
+[data-theme='dark'] {
+  --lp-overlay-bg: #282828b2;
+}
+
+@keyframes modal-fade {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes modal-zoom {
+  from {
+    transform: scale(0.8);
+  }
+
+  to {
+    transform: scale(1);
+  }
+}
+
+.modal {
+  box-shadow: 0 0 6px 0 #939598;
+  border-radius: var(--lp-border-radius-regular);
+  background-color: var(--lp-color-bg-overlay-primary);
+  border: 1px solid var(--lp-color-border-ui-secondary);
+  outline: none;
+  max-width: 300px;
+  padding: var(--lp-spacing-700);
+
+  &[data-entering] {
+    animation: modal-zoom 300ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  /* stylelint-disable-next-line csstools/value-no-unknown-custom-properties */
+  height: var(--visual-viewport-height);
+  background: var(--lp-overlay-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: var(--lp-z-index-500);
+
+  &[data-entering] {
+    animation: modal-fade var(--lp-duration-200);
+  }
+
+  &[data-exiting] {
+    animation: modal-fade 150ms reverse ease-in;
+  }
+}
