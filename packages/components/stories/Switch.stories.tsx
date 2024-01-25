@@ -16,6 +16,10 @@ export default meta;
 
 type Story = StoryObj<typeof Switch>;
 
-export const Example: Story = {
+export const Off: Story = {
   args: {},
+};
+
+export const On: Story = {
+  args: { defaultSelected: true },
 };
