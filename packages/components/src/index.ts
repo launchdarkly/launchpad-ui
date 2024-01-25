@@ -4,7 +4,7 @@ export type { DialogProps, DialogTriggerProps } from './Dialog';
 export type { HeadingProps } from './Heading';
 export type { IconButtonProps } from './IconButton';
 export type { LinkButtonProps } from './LinkButton';
-export type { ModalOverlayProps } from './Modal';
+export type { ModalProps, ModalOverlayProps } from './Modal';
 export type { OverlayArrowProps, PopoverProps } from './Popover';
 export type { ProgressBarProps } from './ProgressBar';
 export type { SwitchProps } from './Switch';

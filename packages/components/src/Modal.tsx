@@ -1,3 +1,4 @@
+import type { VariantProps } from 'class-variance-authority';
 import type { ForwardedRef } from 'react';
 import type { ModalOverlayProps } from 'react-aria-components';
 
@@ -11,16 +12,31 @@ import {
 
 import styles from './styles/Modal.module.css';
 
-const modal = cva(styles.modal);
+const modal = cva(styles.base, {
+  variants: {
+    variant: {
+      default: styles.default,
+      drawer: styles.drawer,
+    },
+  },
+  defaultVariants: {
+    variant: 'default',
+  },
+});
 const overlay = cva(styles.overlay);
 
-const _Modal = (props: ModalOverlayProps, ref: ForwardedRef<HTMLDivElement>) => {
+type ModalProps = ModalOverlayProps & VariantProps<typeof modal>;
+
+const _Modal = (
+  { variant = 'default', ...props }: ModalProps,
+  ref: ForwardedRef<HTMLDivElement>
+) => {
   return (
     <AriaModal
       {...props}
       ref={ref}
       className={composeRenderProps(props.className, (className, renderProps) =>
-        modal({ ...renderProps, className })
+        modal({ ...renderProps, variant, className })
       )}
     />
   );
@@ -48,4 +64,4 @@ const _ModalOverlay = (props: ModalOverlayProps, ref: ForwardedRef<HTMLDivElemen
 const ModalOverlay = forwardRef(_ModalOverlay);
 
 export { Modal, ModalOverlay };
-export type { ModalOverlayProps };
+export type { ModalProps, ModalOverlayProps };
