@@ -34,6 +34,11 @@ const _Popover = (props: PopoverProps, ref: ForwardedRef<HTMLDivElement>) => {
   );
 };
 
+/**
+ * A popover is an overlay element positioned relative to a trigger.
+ *
+ * https://react-spectrum.adobe.com/react-aria/Popover.html
+ */
 const Popover = forwardRef(_Popover);
 
 const _OverlayArrow = (props: OverlayArrowProps, ref: ForwardedRef<HTMLDivElement>) => {

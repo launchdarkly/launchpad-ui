@@ -71,6 +71,11 @@ const _ProgressBar = (
   );
 };
 
+/**
+ * Progress bars show either determinate or indeterminate progress of an operation over time.
+ *
+ * https://react-spectrum.adobe.com/react-aria/ProgressBar.html
+ */
 const ProgressBar = forwardRef(_ProgressBar);
 
 export { ProgressBar };
