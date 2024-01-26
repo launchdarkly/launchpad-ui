@@ -1,3 +1,5 @@
+@import '../../../tokens/dist/media-queries.css';
+
 :root,
 [data-theme='default'] {
   --lp-overlay-bg: #28282880;
@@ -37,11 +39,25 @@
   }
 }
 
+@keyframes sheet {
+  from {
+    transform: translateY(100%);
+  }
+
+  to {
+    transform: translateY(0);
+  }
+}
+
 .base {
   border-radius: var(--lp-border-radius-regular);
   background-color: var(--lp-color-bg-overlay-primary);
   outline: none;
   padding: var(--lp-spacing-700);
+
+  & [slot='title'] {
+    font: var(--lp-heading-2-medium);
+  }
 }
 
 .default {
@@ -112,6 +128,27 @@
 
     &:has(.drawer) {
       animation-duration: var(--lp-duration-300);
+    }
+  }
+}
+
+@media not (--tablet) {
+  .default {
+    position: fixed;
+    bottom: 0;
+    width: 100vw;
+
+    &[data-entering] {
+      animation-name: sheet;
+      animation-duration: var(--lp-duration-200);
+      animation-timing-function: ease-in;
+    }
+
+    &[data-exiting] {
+      animation-name: sheet;
+      animation-duration: var(--lp-duration-200);
+      animation-direction: reverse;
+      animation-timing-function: ease-in;
     }
   }
 }

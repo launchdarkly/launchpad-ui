@@ -1,5 +1,9 @@
-import type { Meta, StoryFn, StoryObj } from '@storybook/react';
+import type { Meta, StoryFn, StoryObj, ReactRenderer } from '@storybook/react';
+import type { PlayFunction } from '@storybook/types';
 
+import { expect, userEvent, within } from '@storybook/test';
+
+import { allModes } from '../../../.storybook/modes';
 import { Modal, ModalOverlay, Button, Dialog, DialogTrigger, Heading, IconButton } from '../src';
 
 const meta: Meta<typeof Modal> = {
@@ -24,31 +28,52 @@ export default meta;
 
 type Story = StoryObj<typeof Modal>;
 
+const renderModal = (args: Story['args']) => (
+  <DialogTrigger>
+    <Button>Trigger</Button>
+    <ModalOverlay>
+      <Modal {...args}>
+        <Dialog>
+          {({ close }) => (
+            <>
+              <Heading slot="title">Title</Heading>
+              <IconButton
+                aria-label="close"
+                icon="cancel"
+                size="small"
+                variant="minimal"
+                onPress={close}
+              />
+              <div>Body text</div>
+            </>
+          )}
+        </Dialog>
+      </Modal>
+    </ModalOverlay>
+  </DialogTrigger>
+);
+
+const play: PlayFunction<ReactRenderer> = async ({ canvasElement }) => {
+  const canvas = within(canvasElement);
+
+  await userEvent.click(canvas.getByRole('button'));
+  const body = canvasElement.ownerDocument.body;
+  await expect(await within(body).findByRole('dialog'));
+};
+
 export const Example: Story = {
-  render: (args) => {
-    return (
-      <DialogTrigger>
-        <Button>Trigger</Button>
-        <ModalOverlay>
-          <Modal {...args}>
-            <Dialog>
-              {({ close }) => (
-                <>
-                  <Heading slot="title">Title</Heading>
-                  <IconButton
-                    aria-label="close"
-                    icon="cancel"
-                    size="small"
-                    variant="minimal"
-                    onPress={close}
-                  />
-                  <div>Body text</div>
-                </>
-              )}
-            </Dialog>
-          </Modal>
-        </ModalOverlay>
-      </DialogTrigger>
-    );
+  render: (args) => renderModal(args),
+  play,
+  parameters: {
+    chromatic: {
+      modes: {
+        mobile: allModes.mobile,
+      },
+    },
   },
+};
+
+export const Drawer: Story = {
+  render: (args) => renderModal({ variant: 'drawer', ...args }),
+  play,
 };

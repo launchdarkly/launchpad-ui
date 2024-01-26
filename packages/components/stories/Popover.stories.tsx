@@ -1,4 +1,5 @@
-import type { Meta, StoryFn, StoryObj } from '@storybook/react';
+import type { Meta, StoryFn, StoryObj, ReactRenderer } from '@storybook/react';
+import type { PlayFunction } from '@storybook/types';
 
 import { expect, userEvent, within } from '@storybook/test';
 
@@ -26,14 +27,16 @@ export default meta;
 
 type Story = StoryObj<typeof Popover>;
 
-const open = {
-  play: async ({ canvasElement }: { canvasElement: HTMLElement }) => {
-    const canvas = within(canvasElement);
+const play: PlayFunction<ReactRenderer> = async ({
+  canvasElement,
+}: {
+  canvasElement: HTMLElement;
+}) => {
+  const canvas = within(canvasElement);
 
-    await userEvent.click(canvas.getByRole('button'));
-    const body = canvasElement.ownerDocument.body;
-    await expect(await within(body).findByRole('dialog'));
-  },
+  await userEvent.click(canvas.getByRole('button'));
+  const body = canvasElement.ownerDocument.body;
+  await expect(await within(body).findByRole('dialog'));
 };
 
 export const Example: Story = {
@@ -47,7 +50,7 @@ export const Example: Story = {
       </DialogTrigger>
     );
   },
-  ...open,
+  play,
 };
 
 export const WithArrow: Story = {
@@ -62,7 +65,7 @@ export const WithArrow: Story = {
       </DialogTrigger>
     );
   },
-  ...open,
+  play,
 };
 
 export const WithHeading: Story = {
@@ -79,5 +82,5 @@ export const WithHeading: Story = {
       </DialogTrigger>
     );
   },
-  ...open,
+  play,
 };

@@ -1,4 +1,5 @@
-import type { Meta, StoryFn, StoryObj } from '@storybook/react';
+import type { Meta, StoryFn, StoryObj, ReactRenderer } from '@storybook/react';
+import type { PlayFunction } from '@storybook/types';
 
 import { Icon } from '@launchpad-ui/icons';
 import { vars } from '@launchpad-ui/vars';
@@ -62,53 +63,55 @@ const renderStates = (args: Story['args']) => (
   </div>
 );
 
-const states = {
-  play: async ({ canvasElement }: { canvasElement: HTMLElement }) => {
-    const canvas = within(canvasElement);
+const play: PlayFunction<ReactRenderer> = async ({
+  canvasElement,
+}: {
+  canvasElement: HTMLElement;
+}) => {
+  const canvas = within(canvasElement);
 
-    const buttons = canvas.getAllByRole('button');
-    await userEvent.hover(buttons[1]);
-    await userEvent.pointer([{ keys: '[TouchA>]', target: buttons[3] }]);
-    await userEvent.tab();
-    await userEvent.tab();
-    await userEvent.tab();
-    await userEvent.tab();
-  },
+  const buttons = canvas.getAllByRole('button');
+  await userEvent.hover(buttons[1]);
+  await userEvent.pointer([{ keys: '[TouchA>]', target: buttons[3] }]);
+  await userEvent.tab();
+  await userEvent.tab();
+  await userEvent.tab();
+  await userEvent.tab();
 };
 
 export const Default: Story = {
   render: (args) => renderStates({ children: 'Default', ...args }),
-  ...states,
+  play,
 };
 
 export const Primary: Story = {
   render: (args) => renderStates({ children: 'Primary', variant: 'primary', ...args }),
-  ...states,
+  play,
 };
 
 export const Minimal: Story = {
   render: (args) => renderStates({ children: 'Minimal', variant: 'minimal', ...args }),
-  ...states,
+  play,
 };
 
 export const Destructive: Story = {
   render: (args) => renderStates({ children: 'Destructive', variant: 'destructive', ...args }),
-  ...states,
+  play,
 };
 
 export const PrimaryFlair: Story = {
   render: (args) => renderStates({ children: 'Primary flair', variant: 'primaryFlair', ...args }),
-  ...states,
+  play,
 };
 
 export const DefaultFlair: Story = {
   render: (args) => renderStates({ children: 'Default flair', variant: 'defaultFlair', ...args }),
-  ...states,
+  play,
 };
 
 export const MinimalFlair: Story = {
   render: (args) => renderStates({ children: 'Minimal flair', variant: 'minimalFlair', ...args }),
-  ...states,
+  play,
 };
 
 export const WithIcon: Story = {
@@ -123,10 +126,10 @@ export const WithIcon: Story = {
 
 export const Small: Story = {
   render: (args) => renderStates({ children: 'Default', size: 'small', ...args }),
-  ...states,
+  play,
 };
 
 export const Large: Story = {
   render: (args) => renderStates({ children: 'Default', size: 'large', ...args }),
-  ...states,
+  play,
 };

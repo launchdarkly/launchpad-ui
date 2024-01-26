@@ -33,9 +33,11 @@
   transform: scale(0.5);
 }
 
-.indeterminate {
-  animation-name: spin;
-  animation-duration: var(--lp-duration-350);
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
+@media (prefers-reduced-motion: no-preference) {
+  .indeterminate {
+    animation-name: spin;
+    animation-duration: var(--lp-duration-350);
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
 }

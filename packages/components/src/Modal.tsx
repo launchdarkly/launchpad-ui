@@ -61,6 +61,9 @@ const _ModalOverlay = (props: ModalOverlayProps, ref: ForwardedRef<HTMLDivElemen
   );
 };
 
+/**
+ * A ModalOverlay is a wrapper for a Modal which allows customizing the backdrop element.
+ */
 const ModalOverlay = forwardRef(_ModalOverlay);
 
 export { Modal, ModalOverlay };
