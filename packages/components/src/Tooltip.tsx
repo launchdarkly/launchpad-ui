@@ -33,6 +33,11 @@ const _Tooltip = (props: TooltipProps, ref: ForwardedRef<HTMLDivElement>) => {
   );
 };
 
+/**
+ * A tooltip displays a description of an element on hover or focus.
+ *
+ * https://react-spectrum.adobe.com/react-aria/Tooltip.html
+ */
 const Tooltip = forwardRef(_Tooltip);
 
 const TooltipTrigger = (props: TooltipTriggerProps) => {

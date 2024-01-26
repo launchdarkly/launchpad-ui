@@ -49,6 +49,11 @@ const _Button = (
   );
 };
 
+/**
+ * A button allows a user to perform an action, with mouse, touch, and keyboard interactions.
+ *
+ * https://react-spectrum.adobe.com/react-aria/Button.html
+ */
 const Button = forwardRef(_Button);
 
 export { Button, button };

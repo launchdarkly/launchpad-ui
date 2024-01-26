@@ -43,6 +43,11 @@ const _LinkButton = (
   );
 };
 
+/**
+ * A link allows a user to navigate to another page or resource within a web page or application.
+ *
+ * https://react-spectrum.adobe.com/react-aria/Link.html
+ */
 const LinkButton = forwardRef(_LinkButton);
 
 export { LinkButton };

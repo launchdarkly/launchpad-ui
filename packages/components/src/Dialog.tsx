@@ -13,6 +13,11 @@ const _Dialog = ({ className, ...props }: DialogProps, ref: ForwardedRef<HTMLEle
   return <AriaDialog {...props} ref={ref} className={dialog({ className })} />;
 };
 
+/**
+ * A dialog is an overlay shown above other content in an application.
+ *
+ * https://react-spectrum.adobe.com/react-aria/Dialog.html
+ */
 const Dialog = forwardRef(_Dialog);
 
 export { Dialog, DialogTrigger };
