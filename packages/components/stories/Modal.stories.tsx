@@ -16,11 +16,14 @@ const meta: Meta<typeof Modal> = {
     chromatic: { pauseAnimationAtEnd: true },
   },
   decorators: [
-    (Story: StoryFn) => (
-      <div style={{ height: '100vh' }}>
+    (Story: StoryFn, { viewMode }) =>
+      viewMode === 'story' ? (
+        <div style={{ height: '100vh' }}>
+          <Story />
+        </div>
+      ) : (
         <Story />
-      </div>
-    ),
+      ),
   ],
 };
 
