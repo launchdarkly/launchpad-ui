@@ -1,5 +1,21 @@
 # @launchpad-ui/components
 
+## 0.1.4
+
+### Patch Changes
+
+- [#1146](https://github.com/launchdarkly/launchpad-ui/pull/1146) [`824faa9`](https://github.com/launchdarkly/launchpad-ui/commit/824faa9a91027f7e062886965cce5b9cba826634) Thanks [@Niznikr](https://github.com/Niznikr)! - Add `Dialog`, `DialogTrigger`, `Heading`, `OverlayArrow`, and `Popover`
+
+- [#1145](https://github.com/launchdarkly/launchpad-ui/pull/1145) [`f49f91f`](https://github.com/launchdarkly/launchpad-ui/commit/f49f91fd1f3a5ad18d32da635ec4f3486bf42589) Thanks [@Niznikr](https://github.com/Niznikr)! - Replace pseudo selectors with RAC data attributes
+
+- [#1148](https://github.com/launchdarkly/launchpad-ui/pull/1148) [`caaa840`](https://github.com/launchdarkly/launchpad-ui/commit/caaa8408d0eed3f716a204eaa3d9cf0ca02440bf) Thanks [@Niznikr](https://github.com/Niznikr)! - Add `Switch`
+
+- [#1143](https://github.com/launchdarkly/launchpad-ui/pull/1143) [`8fed876`](https://github.com/launchdarkly/launchpad-ui/commit/8fed8760bb3242eda79a38a66582d85f8bf506ed) Thanks [@Niznikr](https://github.com/Niznikr)! - Add `Tooltip` and `TooltipTrigger`
+
+- Updated dependencies [[`8fed876`](https://github.com/launchdarkly/launchpad-ui/commit/8fed8760bb3242eda79a38a66582d85f8bf506ed), [`a26559f`](https://github.com/launchdarkly/launchpad-ui/commit/a26559f3d858ef651cd9a5672fc4f1baedb88e63)]:
+  - @launchpad-ui/tokens@0.9.4
+  - @launchpad-ui/icons@0.15.1
+
 ## 0.1.3
 
 ### Patch Changes
