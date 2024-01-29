@@ -14,12 +14,17 @@ import styles from './styles/Modal.module.css';
 
 const modal = cva(styles.base, {
   variants: {
+    size: {
+      small: styles.small,
+      medium: styles.medium,
+    },
     variant: {
       default: styles.default,
       drawer: styles.drawer,
     },
   },
   defaultVariants: {
+    size: 'medium',
     variant: 'default',
   },
 });
@@ -28,7 +33,7 @@ const overlay = cva(styles.overlay);
 type ModalProps = ModalOverlayProps & VariantProps<typeof modal>;
 
 const _Modal = (
-  { variant = 'default', ...props }: ModalProps,
+  { size = 'medium', variant = 'default', ...props }: ModalProps,
   ref: ForwardedRef<HTMLDivElement>
 ) => {
   return (
@@ -36,7 +41,7 @@ const _Modal = (
       {...props}
       ref={ref}
       className={composeRenderProps(props.className, (className, renderProps) =>
-        modal({ ...renderProps, variant, className })
+        modal({ ...renderProps, size, variant, className })
       )}
     />
   );

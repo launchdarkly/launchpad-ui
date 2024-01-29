@@ -36,15 +36,21 @@ const renderModal = (args: Story['args']) => (
         <Dialog>
           {({ close }) => (
             <>
-              <Heading slot="title">Title</Heading>
-              <IconButton
-                aria-label="close"
-                icon="cancel"
-                size="small"
-                variant="minimal"
-                onPress={close}
-              />
-              <div>Body text</div>
+              <div slot="header">
+                <Heading slot="title">Title</Heading>
+                <IconButton
+                  aria-label="close"
+                  icon="cancel"
+                  size="small"
+                  variant="minimal"
+                  onPress={close}
+                />
+              </div>
+              <div slot="body">Body text</div>
+              <div slot="footer">
+                <Button onPress={close}>Cancel</Button>
+                <Button variant="primary">Confirm</Button>
+              </div>
             </>
           )}
         </Dialog>
@@ -76,4 +82,11 @@ export const Example: Story = {
 export const Drawer: Story = {
   render: (args) => renderModal({ variant: 'drawer', ...args }),
   play,
+  parameters: {
+    chromatic: {
+      modes: {
+        mobile: allModes.mobile,
+      },
+    },
+  },
 };
