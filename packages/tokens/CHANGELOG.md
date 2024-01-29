@@ -1,5 +1,11 @@
 # @launchpad-ui/tokens
 
+## 0.9.4
+
+### Patch Changes
+
+- [#1143](https://github.com/launchdarkly/launchpad-ui/pull/1143) [`8fed876`](https://github.com/launchdarkly/launchpad-ui/commit/8fed8760bb3242eda79a38a66582d85f8bf506ed) Thanks [@Niznikr](https://github.com/Niznikr)! - Add `Tooltip` and `TooltipTrigger`
+
 ## 0.9.3
 
 ### Patch Changes

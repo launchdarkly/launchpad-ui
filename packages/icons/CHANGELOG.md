@@ -1,5 +1,14 @@
 # @launchpad-ui/icons
 
+## 0.15.1
+
+### Patch Changes
+
+- [#1149](https://github.com/launchdarkly/launchpad-ui/pull/1149) [`a26559f`](https://github.com/launchdarkly/launchpad-ui/commit/a26559f3d858ef651cd9a5672fc4f1baedb88e63) Thanks [@matthewferry](https://github.com/matthewferry)! - feat(icons): add chart-bar, chart-line, and key icons
+
+- Updated dependencies [[`8fed876`](https://github.com/launchdarkly/launchpad-ui/commit/8fed8760bb3242eda79a38a66582d85f8bf506ed)]:
+  - @launchpad-ui/tokens@0.9.4
+
 ## 0.15.0
 
 ### Minor Changes
