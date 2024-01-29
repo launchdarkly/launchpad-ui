@@ -58,6 +58,7 @@
 
   & [slot='title'] {
     font: var(--lp-heading-2-medium);
+    flex-grow: 1;
   }
 
   & [role='dialog']:has(> [slot='body']) {
@@ -68,7 +69,8 @@
 
   & [slot='header'] {
     display: flex;
-    justify-content: space-between;
+    align-items: center;
+    gap: var(--lp-spacing-300);
   }
 
   & [slot='footer'] {
