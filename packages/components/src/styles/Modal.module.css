@@ -61,7 +61,7 @@
     flex-grow: 1;
   }
 
-  & [role='dialog']:has(> [slot='body']) {
+  & [role='dialog']:has([slot='body']) {
     display: flex;
     flex-direction: column;
     gap: var(--lp-spacing-700);
