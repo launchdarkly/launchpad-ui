@@ -1,0 +1,30 @@
+.menu {
+  outline: none;
+}
+
+.item {
+  padding-block: var(--lp-spacing-200);
+  padding-inline: var(--lp-spacing-200);
+  border-radius: var(--lp-border-radius-regular);
+  outline: none;
+  cursor: default;
+  color: var(--lp-color-text-ui-primary-base);
+  font: var(--lp-label-1-medium);
+
+  &[data-hovered] {
+    background-color: var(--lp-color-bg-interactive-secondary-hover);
+  }
+
+  &[data-pressed] {
+    background-color: var(--lp-color-bg-interactive-secondary-active);
+  }
+
+  &[data-focus-visible] {
+    background-color: var(--lp-color-bg-interactive-secondary-hover);
+  }
+
+  &[data-disabled] {
+    color: var(--lp-color-text-interactive-disabled);
+    cursor: not-allowed;
+  }
+}
