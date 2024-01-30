@@ -57,7 +57,7 @@
   box-shadow: 0 0 6px 0 #939598;
 
   & [slot='title'] {
-    font: var(--lp-heading-2-medium);
+    font: var(--lp-heading-1-semibold);
     flex-grow: 1;
   }
 
@@ -177,6 +177,7 @@
   .default {
     position: fixed;
     bottom: 0;
+    border-radius: 0;
 
     & [slot='footer'] {
       align-items: stretch;
