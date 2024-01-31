@@ -1,4 +1,6 @@
 .menu {
+  max-height: inherit;
+  overflow: auto;
   outline: none;
   min-width: var(--lp-size-144);
   max-width: var(--lp-size-400);
