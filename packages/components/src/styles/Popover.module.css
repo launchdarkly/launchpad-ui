@@ -95,7 +95,7 @@
   @media (prefers-reduced-motion: no-preference) {
     &[data-entering] {
       animation-name: slide;
-      animation-duration: 200ms;
+      animation-duration: var(--lp-duration-200);
       animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
     }
   }

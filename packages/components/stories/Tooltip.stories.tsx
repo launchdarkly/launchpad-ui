@@ -35,7 +35,7 @@ export const Example: Story = {
       </TooltipTrigger>
     );
   },
-  play: async ({ canvasElement }: { canvasElement: HTMLElement }) => {
+  play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
 
     await userEvent.hover(canvas.getByRole('button'));
