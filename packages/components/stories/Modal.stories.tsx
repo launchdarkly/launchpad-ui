@@ -87,8 +87,11 @@ export const Example: Story = {
 };
 
 export const Drawer: Story = {
-  render: (args) => renderModal({ variant: 'drawer', ...args }),
+  render: (args) => renderModal(args),
   play,
+  args: {
+    variant: 'drawer',
+  },
   parameters: {
     chromatic: {
       modes: {

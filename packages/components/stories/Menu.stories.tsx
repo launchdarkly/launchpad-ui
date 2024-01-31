@@ -95,7 +95,7 @@ export const Grouping: Story = {
 
 export const Selection: Story = {
   render: (args) => {
-    const [selected, setSelected] = useState<AriaSelection>(new Set());
+    const [selected, setSelected] = useState<AriaSelection>(new Set(['react-aria-1']));
 
     return renderMenu({
       selectedKeys: selected,
