@@ -50,7 +50,9 @@ const _MenuItem = <T extends object>(
     >
       {composeRenderProps(props.children, (children, { selectionMode, isSelected }) => (
         <>
-          {selectionMode !== 'none' && isSelected && <Icon name="check" size="small" />}
+          {selectionMode !== 'none' && (
+            <span className={styles.check}>{isSelected && <Icon name="check" size="small" />}</span>
+          )}
           {children}
         </>
       ))}

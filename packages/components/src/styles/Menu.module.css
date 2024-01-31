@@ -51,13 +51,10 @@
   }
 
   &[data-selection-mode] {
-    display: flex;
-    align-items: center;
-    gap: var(--lp-spacing-200);
-  }
-
-  &[aria-checked='false'] {
-    padding-left: var(--lp-spacing-700);
+    grid-template-areas:
+      'check label kbd'
+      'check desc  kbd';
+    grid-template-columns: min-content 1fr min-content;
   }
 
   & [slot='label'] {
@@ -74,4 +71,9 @@
     font: var(--lp-code-1-regular);
     text-align: end;
   }
+}
+
+.check {
+  grid-area: check;
+  width: var(--lp-size-16);
 }

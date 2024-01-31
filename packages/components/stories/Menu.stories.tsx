@@ -29,7 +29,7 @@ const meta: Meta<typeof Menu> = {
   },
   decorators: [
     (Story: StoryFn) => (
-      <div style={{ height: 'var(--lp-size-160)' }}>
+      <div style={{ height: 'var(--lp-size-224)' }}>
         <Story />
       </div>
     ),
