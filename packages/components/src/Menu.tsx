@@ -5,6 +5,7 @@ import type {
   MenuTriggerProps,
 } from 'react-aria-components';
 
+import { Icon } from '@launchpad-ui/icons';
 import { cva } from 'class-variance-authority';
 import { forwardRef } from 'react';
 import {
@@ -46,7 +47,14 @@ const _MenuItem = <T extends object>(
       className={composeRenderProps(props.className, (className, renderProps) =>
         item({ ...renderProps, className })
       )}
-    />
+    >
+      {composeRenderProps(props.children, (children, { selectionMode, isSelected }) => (
+        <>
+          {selectionMode !== 'none' && isSelected && <Icon name="check" size="small" />}
+          {children}
+        </>
+      ))}
+    </AriaMenuItem>
   );
 };
 
