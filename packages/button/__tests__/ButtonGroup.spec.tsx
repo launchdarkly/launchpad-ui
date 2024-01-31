@@ -23,7 +23,7 @@ describe('ButtonGroup', () => {
       </ButtonGroup>
     );
     // eslint-disable-next-line testing-library/no-container, testing-library/no-node-access
-    expect(container.querySelector('[class*="_ButtonGroup--compact_"]')).not.toBeNull();
+    expect(container.querySelector('[class*="_ButtonGroup--compact"]')).not.toBeNull();
     expect(screen.getByRole('button', { name: 'One' })).toBeInTheDocument();
     expect(screen.getByRole('button', { name: 'Two' })).toBeInTheDocument();
   });
@@ -36,7 +36,7 @@ describe('ButtonGroup', () => {
       </ButtonGroup>
     );
     // eslint-disable-next-line testing-library/no-container, testing-library/no-node-access
-    expect(container.querySelector('[class*="_ButtonGroup--large_"]')).not.toBeNull();
+    expect(container.querySelector('[class*="_ButtonGroup--large"]')).not.toBeNull();
     expect(screen.getByRole('button', { name: 'One' })).toBeInTheDocument();
     expect(screen.getByRole('button', { name: 'Two' })).toBeInTheDocument();
   });
