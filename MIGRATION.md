@@ -1,5 +1,100 @@
 # Migration @launchpad-ui/core
 
+## 0.49.0
+
+### Component class name pattern changed
+
+Class names have been updated from `[hash]_[local]_` to `[hash]_[local]`. Update selectors targeting LP class names accordingly:
+
+```css
+[class*='_Button_'] {
+  ...
+}
+```
+
+**After**
+
+```css
+[class*='_Button'] {
+  ...
+}
+```
+
+## 0.48.0
+
+### Remove icons
+
+Icons `pulse-active`, `verified`, and `circles` have been removed.
+
+## 0.47.0
+
+### Base 16 font size
+
+The base font size for all tokens and components is now 16. Update `rem` values accordingly. https://nekocalc.com/px-to-rem-converter
+
+## 0.46.0
+
+### Icon refresh
+
+See https://launchpad.launchdarkly.com/?path=/story/components-icon--default for latest set of icons.
+
+## 0.45.0
+
+### Remove icons
+
+Icons `warning-circle` and `arrow-thin-right-circle` have been removed.
+
+## 0.44.0
+
+### Remove bar-chart icon
+
+Icon `bar-chart` has been replaced by `experiment`.
+
+## 0.42.0
+
+### Use sprites for icons
+
+**Before**
+
+```js
+import { Add } from '@launchpad-ui/icons';
+
+const MyIcon = () => <Add size="medium" />;
+```
+
+**After**
+
+```js
+import { Icon } from '@launchpad-ui/icons';
+
+const MyIcon = () => <Icon name="add" size="medium" />;
+```
+
+By default, the component expects `@launchpad-ui/icons/dist/sprite.svg` to be available from `APP_ROOT/static/sprite.svg` in your app. A custom path to the sprite can be set via the `IconContext` provider.
+
+For example, if importing a static asset returns a resolved URL you can do the following in your app to load the icons:
+
+```js
+import { IconContext } from '@launchpad-ui/icons';
+import icons from '@launchpad-ui/icons/sprite.svg';
+import { createRoot } from 'react-dom/client';
+
+const domNode = document.getElementById('root');
+const root = createRoot(domNode);
+
+root.render(
+  <IconContext.Provider value={{ path: icons }}>
+    <App />
+  </IconContext.Provider>
+);
+```
+
+## 0.41.0
+
+### Modal size renaming
+
+Modal size `normal` renamed to `medium`.
+
 ## 0.40.0
 
 ### TagGroup API changes

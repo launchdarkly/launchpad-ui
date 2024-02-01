@@ -41,68 +41,66 @@ const PURE_CALLS = [
   'lazy',
 ];
 
-// @ts-expect-error rollup-plugin-pure needs to update vite plugin types
-export default defineConfig(() => {
-  return {
-    css: {
-      transformer: 'lightningcss',
-      lightningcss: {
-        targets: browserslistToTargets(browserslist(rootPackageJSON.browserslist)),
-        drafts: {
-          customMedia: true,
-        },
-        cssModules: {
-          pattern: '[hash]_[local]_',
-        },
+export default defineConfig({
+  css: {
+    transformer: 'lightningcss',
+    lightningcss: {
+      targets: browserslistToTargets(browserslist(rootPackageJSON.browserslist)),
+      drafts: {
+        customMedia: true,
+      },
+      cssModules: {
+        pattern: '[hash]_[local]',
       },
     },
-    plugins: [
-      react(),
-      vanillaExtractPlugin(),
-      cssImport(),
-      PluginPure({
-        functions: PURE_CALLS,
-        sourcemap: true,
-        exclude: [/node_modules/],
-      }),
-    ],
-    resolve: {
-      alias,
-    },
-    test: {
-      globals: true,
-      environment: 'jsdom',
-      setupFiles: [path.resolve(__dirname, './test/setup.ts')],
-      include: ['**/__tests__/*.spec.{ts,tsx}'],
-      coverage: {
-        thresholds: {
-          lines: 90,
-          functions: 70,
-          branches: 70,
-          statements: 90,
-        },
-        include: ['**/src/**'],
-        exclude: [...configDefaults.exclude, '**/types.ts'],
-      },
-    },
-    build: {
-      lib: {
-        entry: packageJSON.source,
-        formats: ['es', 'cjs'],
-        fileName: (format) => (format === 'es' ? 'index.es.js' : 'index.js'),
-      },
-      rollupOptions: {
-        external: [
-          ...Object.keys(packageJSON.dependencies || {}),
-          ...Object.keys(packageJSON.peerDependencies || {}),
-          'react/jsx-runtime',
-          '@vanilla-extract/recipes/createRuntimeFn',
-          'rainbow-sprinkles/createRuntimeFn',
-        ],
-      },
+  },
+  plugins: [
+    react(),
+    vanillaExtractPlugin(),
+    cssImport(),
+    // @ts-expect-error plugin needs vite v5 types
+    PluginPure({
+      functions: PURE_CALLS,
       sourcemap: true,
-      minify: false,
-      cssMinify: 'lightningcss',
+      exclude: [/node_modules/],
+    }),
+  ],
+  resolve: {
+    alias,
+  },
+  test: {
+    globals: true,
+    environment: 'jsdom',
+    setupFiles: [path.resolve(__dirname, './test/setup.ts')],
+    include: ['**/__tests__/*.spec.{ts,tsx}'],
+    coverage: {
+      thresholds: {
+        lines: 90,
+        functions: 70,
+        branches: 70,
+        statements: 90,
+      },
+      include: ['**/src/**'],
+      exclude: [...configDefaults.exclude, '**/types.ts'],
     },
-  };
+  },
+  build: {
+    lib: {
+      entry: packageJSON.source,
+      formats: ['es', 'cjs'],
+      fileName: (format) => (format === 'es' ? 'index.es.js' : 'index.js'),
+    },
+    rollupOptions: {
+      external: [
+        ...Object.keys(packageJSON.dependencies || {}),
+        ...Object.keys(packageJSON.peerDependencies || {}),
+        'react/jsx-runtime',
+        '@vanilla-extract/recipes/createRuntimeFn',
+        'rainbow-sprinkles/createRuntimeFn',
+      ],
+    },
+    sourcemap: true,
+    minify: false,
+    cssMinify: 'lightningcss',
+  },
 });

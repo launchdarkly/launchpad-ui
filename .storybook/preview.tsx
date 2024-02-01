@@ -54,6 +54,11 @@ export const parameters = {
       },
     },
   },
+  docs: {
+    source: {
+      excludeDecorators: true,
+    },
+  },
 };
 
 export const decorators = [

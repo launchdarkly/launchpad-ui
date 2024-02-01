@@ -40,7 +40,7 @@ describe('FilterMenu', () => {
     expect(
       screen
         .getByRole('menuitemradio', { name: 'two' })
-        .parentElement?.querySelector('[class*="_Menu-divider_"]')
+        .parentElement?.querySelector('[class*="_Menu-divider"]')
     ).toBeVisible();
   });
 

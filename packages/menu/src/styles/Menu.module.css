@@ -104,7 +104,7 @@
   padding: var(--lp-spacing-300);
 }
 
-[class*='_Popover-content_'] .Menu-search {
+[class*='_Popover-content'] .Menu-search {
   width: 100%;
 
   /* Removing anything that could give it some height */
