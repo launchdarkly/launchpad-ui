@@ -1,5 +1,13 @@
 # @launchpad-ui/clipboard
 
+## 0.11.15
+
+### Patch Changes
+
+- Updated dependencies [[`36d8a2d`](https://github.com/launchdarkly/launchpad-ui/commit/36d8a2d52706213197a02387475338733ccc37f5)]:
+  - @launchpad-ui/tooltip@0.9.0
+  - @launchpad-ui/icons@0.16.0
+
 ## 0.11.14
 
 ### Patch Changes

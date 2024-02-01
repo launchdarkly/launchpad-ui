@@ -1,5 +1,16 @@
 # @launchpad-ui/components
 
+## 0.1.5
+
+### Patch Changes
+
+- [#1154](https://github.com/launchdarkly/launchpad-ui/pull/1154) [`36d8a2d`](https://github.com/launchdarkly/launchpad-ui/commit/36d8a2d52706213197a02387475338733ccc37f5) Thanks [@Niznikr](https://github.com/Niznikr)! - Add `Menu`, `MenuItem`, `MenuTrigger`, `Header`, `Keyboard`, `Section`, `Separator`, and `Text`
+
+- [#1152](https://github.com/launchdarkly/launchpad-ui/pull/1152) [`9769dbe`](https://github.com/launchdarkly/launchpad-ui/commit/9769dbe4352867dfe2ade381fdc9ca834d28f49e) Thanks [@Niznikr](https://github.com/Niznikr)! - Add `Modal` and `ModalOverlay`
+
+- Updated dependencies [[`36d8a2d`](https://github.com/launchdarkly/launchpad-ui/commit/36d8a2d52706213197a02387475338733ccc37f5)]:
+  - @launchpad-ui/icons@0.16.0
+
 ## 0.1.4
 
 ### Patch Changes
