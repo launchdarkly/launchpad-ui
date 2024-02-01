@@ -1,5 +1,11 @@
 # @launchpad-ui/popover
 
+## 0.11.12
+
+### Patch Changes
+
+- [#1156](https://github.com/launchdarkly/launchpad-ui/pull/1156) [`5fa37ae`](https://github.com/launchdarkly/launchpad-ui/commit/5fa37ae6952eeb1950738f8365d42cb6b665b93e) Thanks [@Niznikr](https://github.com/Niznikr)! - Change class pattern to `[hash]_[local]`
+
 ## 0.11.11
 
 ### Patch Changes

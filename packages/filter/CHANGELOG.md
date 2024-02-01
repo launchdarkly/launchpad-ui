@@ -1,5 +1,18 @@
 # @launchpad-ui/filter
 
+## 0.7.1
+
+### Patch Changes
+
+- [#1156](https://github.com/launchdarkly/launchpad-ui/pull/1156) [`5fa37ae`](https://github.com/launchdarkly/launchpad-ui/commit/5fa37ae6952eeb1950738f8365d42cb6b665b93e) Thanks [@Niznikr](https://github.com/Niznikr)! - Change class pattern to `[hash]_[local]`
+
+- Updated dependencies [[`5fa37ae`](https://github.com/launchdarkly/launchpad-ui/commit/5fa37ae6952eeb1950738f8365d42cb6b665b93e)]:
+  - @launchpad-ui/button@0.12.1
+  - @launchpad-ui/dropdown@0.6.90
+  - @launchpad-ui/icons@0.16.1
+  - @launchpad-ui/menu@0.13.1
+  - @launchpad-ui/tooltip@0.9.1
+
 ## 0.7.0
 
 ### Minor Changes
