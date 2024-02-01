@@ -1,5 +1,38 @@
 # @launchpad-ui/core
 
+## 0.49.0
+
+### Minor Changes
+
+- [#1154](https://github.com/launchdarkly/launchpad-ui/pull/1154) [`36d8a2d`](https://github.com/launchdarkly/launchpad-ui/commit/36d8a2d52706213197a02387475338733ccc37f5) Thanks [@Niznikr](https://github.com/Niznikr)! - Change class pattern to `[hash]_[local]`
+
+### Patch Changes
+
+- Updated dependencies [[`36d8a2d`](https://github.com/launchdarkly/launchpad-ui/commit/36d8a2d52706213197a02387475338733ccc37f5)]:
+  - @launchpad-ui/split-button@0.10.0
+  - @launchpad-ui/inline-edit@0.3.0
+  - @launchpad-ui/snackbar@0.5.0
+  - @launchpad-ui/tooltip@0.9.0
+  - @launchpad-ui/button@0.12.0
+  - @launchpad-ui/filter@0.7.0
+  - @launchpad-ui/alert@0.9.0
+  - @launchpad-ui/form@0.11.0
+  - @launchpad-ui/menu@0.13.0
+  - @launchpad-ui/clipboard@0.11.15
+  - @launchpad-ui/navigation@0.12.15
+  - @launchpad-ui/select@0.4.15
+  - @launchpad-ui/tag@0.3.15
+  - @launchpad-ui/banner@0.10.13
+  - @launchpad-ui/collapsible@0.1.44
+  - @launchpad-ui/drawer@0.5.15
+  - @launchpad-ui/dropdown@0.6.89
+  - @launchpad-ui/modal@0.17.15
+  - @launchpad-ui/pagination@0.4.15
+  - @launchpad-ui/card@0.2.15
+  - @launchpad-ui/avatar@0.6.13
+  - @launchpad-ui/chip@0.9.13
+  - @launchpad-ui/toast@0.3.13
+
 ## 0.48.1
 
 ### Patch Changes

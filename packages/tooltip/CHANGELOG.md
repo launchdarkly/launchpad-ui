@@ -1,5 +1,11 @@
 # @launchpad-ui/tooltip
 
+## 0.9.0
+
+### Minor Changes
+
+- [#1154](https://github.com/launchdarkly/launchpad-ui/pull/1154) [`36d8a2d`](https://github.com/launchdarkly/launchpad-ui/commit/36d8a2d52706213197a02387475338733ccc37f5) Thanks [@Niznikr](https://github.com/Niznikr)! - Change class pattern to `[hash]_[local]`
+
 ## 0.8.11
 
 ### Patch Changes
