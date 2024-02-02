@@ -38,6 +38,7 @@
     'label kbd'
     'desc  kbd';
   align-items: center;
+  justify-content: flex-start;
   column-gap: var(--lp-spacing-300);
   forced-color-adjust: none;
   text-decoration: none;

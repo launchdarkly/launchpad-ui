@@ -34,6 +34,7 @@
     0 0 1px 0 rgb(33 33 33 / 0.35);
   transition: transform var(--lp-duration-200) ease-in-out;
   transform: translateX(0%);
+  z-index: 1;
 }
 
 .label {
