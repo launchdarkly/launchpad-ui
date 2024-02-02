@@ -66,17 +66,22 @@
       'label'
       'desc';
 
+    &[data-selection-mode] {
+      grid-template-areas:
+        'check label'
+        'check desc';
+    }
+
     &:has(kbd) {
       grid-template-areas:
         'label kbd'
         'desc kbd';
-    }
 
-    &[data-selection-mode] {
-      grid-template-areas:
-        'check label kbd'
-        'check desc  kbd';
-      grid-template-columns: min-content 1fr min-content;
+      &[data-selection-mode] {
+        grid-template-areas:
+          'check label kbd'
+          'check desc  kbd';
+      }
     }
   }
 
