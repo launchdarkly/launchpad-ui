@@ -1,5 +1,11 @@
 # @launchpad-ui/components
 
+## 0.1.7
+
+### Patch Changes
+
+- [#1158](https://github.com/launchdarkly/launchpad-ui/pull/1158) [`8ae2c84`](https://github.com/launchdarkly/launchpad-ui/commit/8ae2c84780ae939b531b18652c761838bf2d6c1b) Thanks [@Niznikr](https://github.com/Niznikr)! - Align menu item contents
+
 ## 0.1.6
 
 ### Patch Changes
