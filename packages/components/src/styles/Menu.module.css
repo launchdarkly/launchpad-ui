@@ -81,6 +81,7 @@
         grid-template-areas:
           'check label kbd'
           'check desc  kbd';
+        grid-template-columns: min-content 1fr min-content;
       }
     }
   }
