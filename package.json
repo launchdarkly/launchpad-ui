@@ -76,7 +76,7 @@
     "@typescript-eslint/eslint-plugin": "^6.20.0",
     "@typescript-eslint/parser": "^6.20.0",
     "@vanilla-extract/css": "^1.14.0",
-    "@vanilla-extract/vite-plugin": "^3.9.2",
+    "@vanilla-extract/vite-plugin": "^4.0.2",
     "@vitejs/plugin-react-swc": "^3.5.0",
     "@vitest/coverage-v8": "^1.2.0",
     "@vitest/ui": "^1.2.0",
