@@ -70,6 +70,7 @@
       grid-template-areas:
         'check label'
         'check desc';
+      grid-template-columns: min-content 1fr;
     }
 
     &:has(kbd) {
