@@ -1,0 +1,4 @@
+.error {
+  color: var(--lp-color-text-feedback-error);
+  font: var(--lp-body-2-regular);
+}
