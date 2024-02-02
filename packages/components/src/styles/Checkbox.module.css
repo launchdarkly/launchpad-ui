@@ -1,0 +1,32 @@
+.box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--lp-size-16);
+  height: var(--lp-size-16);
+  border-radius: 2px;
+  border: var(--lp-border-width-200) solid var(--lp-color-gray-500);
+  background: var(--lp-color-white-100);
+  transition:
+    all var(--lp-duration-100) ease-in-out,
+    outline,
+    outline-offset 0ms;
+}
+
+.checkbox {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: var(--lp-spacing-200);
+  font: var(--lp-body-2-regular);
+
+  &[data-selected] .box,
+  &[data-indeterminate] .box {
+    background-color: var(--lp-color-border-interactive-primary-base);
+    border-color: var(--lp-color-border-interactive-primary-base);
+  }
+}
+
+.icon {
+  fill: var(--lp-color-text-interactive-primary-base);
+}

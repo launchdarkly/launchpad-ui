@@ -1,5 +1,6 @@
 export type { ButtonProps } from './Button';
 export type { ButtonGroupProps } from './ButtonGroup';
+export type { CheckboxProps } from './Checkbox';
 export type { DialogProps, DialogTriggerProps } from './Dialog';
 export type { HeadingProps } from './Heading';
 export type { IconButtonProps } from './IconButton';
@@ -16,6 +17,7 @@ export type { TooltipProps, TooltipTriggerProps } from './Tooltip';
 
 export { Button } from './Button';
 export { ButtonGroup } from './ButtonGroup';
+export { Checkbox } from './Checkbox';
 export { Dialog, DialogTrigger } from './Dialog';
 export { Header } from './Header';
 export { Heading } from './Heading';
