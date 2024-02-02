@@ -2,6 +2,7 @@
 import type { Meta, StoryFn, StoryObj } from '@storybook/react';
 import type { Selection as AriaSelection } from 'react-aria-components';
 
+import { Icon } from '@launchpad-ui/icons';
 import { expect, userEvent, within } from '@storybook/test';
 import { useState } from 'react';
 
@@ -132,4 +133,61 @@ export const Descriptions: Story = {
     );
   },
   ...open,
+};
+
+export const Icons: Story = {
+  render: (args) => {
+    return (
+      <MenuTrigger>
+        <Button>Trigger</Button>
+        <Popover>
+          <Menu {...args}>
+            <MenuItem>
+              <Text slot="label">
+                <Icon name="add" size="small" /> Add
+              </Text>
+            </MenuItem>
+            <MenuItem>
+              <Icon name="edit" size="small" /> Edit
+            </MenuItem>
+            <MenuItem>
+              <Icon name="delete" size="small" /> Delete
+            </MenuItem>
+          </Menu>
+        </Popover>
+      </MenuTrigger>
+    );
+  },
+  ...open,
+};
+
+export const States: Story = {
+  render: (args) => {
+    return (
+      <MenuTrigger>
+        <Button>Trigger</Button>
+        <Popover>
+          <Menu {...args}>
+            <MenuItem>Resting</MenuItem>
+            <MenuItem>Active</MenuItem>
+            <MenuItem>Focus Visible</MenuItem>
+            <MenuItem>Disabled</MenuItem>
+          </Menu>
+        </Popover>
+      </MenuTrigger>
+    );
+  },
+  args: {
+    disabledKeys: new Set(['react-aria-4']),
+  },
+  play: async ({ canvasElement }: { canvasElement: HTMLElement }) => {
+    const canvas = within(canvasElement);
+
+    await userEvent.click(canvas.getByRole('button'));
+    const body = canvasElement.ownerDocument.body;
+
+    const menuitems = await within(body).findAllByRole('menuitem');
+    await userEvent.pointer([{ keys: '[TouchA>]', target: menuitems[1] }]);
+    await userEvent.keyboard('{arrowdown}');
+  },
 };
