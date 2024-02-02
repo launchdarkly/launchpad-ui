@@ -143,7 +143,9 @@ export const Icons: Story = {
         <Popover>
           <Menu {...args}>
             <MenuItem>
-              <Icon name="add" size="small" /> Add
+              <Text slot="label">
+                <Icon name="add" size="small" /> Add
+              </Text>
             </MenuItem>
             <MenuItem>
               <Icon name="edit" size="small" /> Edit

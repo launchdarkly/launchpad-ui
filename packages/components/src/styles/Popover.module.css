@@ -45,6 +45,7 @@
 
   &[data-trigger='MenuTrigger'] {
     padding: var(--lp-spacing-200);
+    max-width: var(--lp-menu-max-width);
   }
 
   &[data-placement='top'] {

@@ -1,9 +1,13 @@
+:root {
+  --lp-menu-max-width: var(--lp-size-400);
+}
+
 .menu {
   max-height: inherit;
   overflow: auto;
   outline: none;
   min-width: var(--lp-size-144);
-  max-width: var(--lp-size-400);
+  max-width: var(--lp-menu-max-width);
 
   & header {
     font: var(--lp-heading-3-semibold);
@@ -33,13 +37,9 @@
   color: var(--lp-color-text-ui-primary-base);
   font: var(--lp-label-1-medium);
   position: relative;
-  display: grid;
-  grid-template-areas:
-    'label kbd'
-    'desc  kbd';
-  align-items: center;
-  justify-content: flex-start;
+  display: flex;
   column-gap: var(--lp-spacing-300);
+  align-items: center;
   forced-color-adjust: none;
   text-decoration: none;
 
@@ -60,15 +60,31 @@
     cursor: not-allowed;
   }
 
-  &[data-selection-mode] {
+  &:has([slot='label']) {
+    display: grid;
     grid-template-areas:
-      'check label kbd'
-      'check desc  kbd';
-    grid-template-columns: min-content 1fr min-content;
+      'label'
+      'desc';
+
+    &:has(kbd) {
+      grid-template-areas:
+        'label kbd'
+        'desc kbd';
+    }
+
+    &[data-selection-mode] {
+      grid-template-areas:
+        'check label kbd'
+        'check desc  kbd';
+      grid-template-columns: min-content 1fr min-content;
+    }
   }
 
   & [slot='label'] {
     grid-area: label;
+    display: flex;
+    align-items: center;
+    gap: var(--lp-spacing-300);
   }
 
   & [slot='description'] {
