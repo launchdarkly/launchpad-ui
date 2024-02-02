@@ -137,7 +137,7 @@ color:
         dark: transparent
       disabled:
         value: '{ color.gray.100.value }'
-        dark: '{ color.gray.900.value }'
+        dark: '{ color.gray.800.value }'
       aside:
         value: '{ color.gray.100.value }'
         dark: '{ color.gray.800.value }'
