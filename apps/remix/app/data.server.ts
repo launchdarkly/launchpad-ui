@@ -39,6 +39,8 @@ export async function getComponents() {
     { to: 'components/toggle', name: 'Toggle' },
     { to: 'components/tooltip', name: 'Tooltip' },
     { to: 'rac/button', name: 'RAC Button', role: 'button' },
+    { to: 'rac/checkbox', name: 'RAC Checkbox', role: 'checkbox' },
+    { to: 'rac/checkbox-group', name: 'RAC Checkbox Group', role: 'group' },
     { to: 'rac/link-button', name: 'RAC LinkButton', role: 'link' },
     { to: 'rac/menu', name: 'RAC Menu', role: 'menu' },
     { to: 'rac/modal', name: 'RAC Modal', role: 'dialog' },
