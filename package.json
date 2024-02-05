@@ -94,7 +94,7 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-testing-library": "^6.2.0",
     "fast-glob": "^3.3.0",
-    "framer-motion": "10.18.0",
+    "framer-motion": "11.0.3",
     "husky": "^9.0.3",
     "jsdom": "^24.0.0",
     "lightningcss": "^1.23.0",
