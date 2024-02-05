@@ -35,7 +35,7 @@
   &[data-selected],
   &[data-indeterminate] {
     & .box {
-      background-color: var(--lp-color-border-interactive-primary-base);
+      background-color: var(--lp-color-bg-interactive-primary-base);
       border-color: var(--lp-color-border-interactive-primary-base);
     }
   }
@@ -61,7 +61,7 @@
     &[data-selected],
     &[data-indeterminate] {
       & .box {
-        background-color: var(--lp-color-border-field-error);
+        background-color: var(--lp-color-bg-field-error);
       }
     }
   }
