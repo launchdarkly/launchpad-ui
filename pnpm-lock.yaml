@@ -174,8 +174,8 @@ importers:
         specifier: ^3.3.0
         version: 3.3.2
       framer-motion:
-        specifier: 10.18.0
-        version: 10.18.0(react-dom@18.2.0)(react@18.2.0)
+        specifier: 11.0.3
+        version: 11.0.3(react-dom@18.2.0)(react@18.2.0)
       husky:
         specifier: ^9.0.3
         version: 9.0.7
@@ -780,8 +780,8 @@ importers:
         specifier: 2.1.17
         version: 2.1.17
       framer-motion:
-        specifier: 10.18.0
-        version: 10.18.0(react-dom@18.2.0)(react@18.2.0)
+        specifier: 11.0.3
+        version: 11.0.3(react-dom@18.2.0)(react@18.2.0)
     devDependencies:
       react:
         specifier: 18.2.0
@@ -1078,8 +1078,8 @@ importers:
         specifier: 2.1.17
         version: 2.1.17
       framer-motion:
-        specifier: 10.18.0
-        version: 10.18.0(react-dom@18.2.0)(react@18.2.0)
+        specifier: 11.0.3
+        version: 11.0.3(react-dom@18.2.0)(react@18.2.0)
     devDependencies:
       react:
         specifier: 18.2.0
@@ -1196,8 +1196,8 @@ importers:
         specifier: 2.1.17
         version: 2.1.17
       framer-motion:
-        specifier: 10.18.0
-        version: 10.18.0(react-dom@18.2.0)(react@18.2.0)
+        specifier: 11.0.3
+        version: 11.0.3(react-dom@18.2.0)(react@18.2.0)
     devDependencies:
       react:
         specifier: 18.2.0
@@ -1399,8 +1399,8 @@ importers:
         specifier: 2.1.17
         version: 2.1.17
       framer-motion:
-        specifier: 10.18.0
-        version: 10.18.0(react-dom@18.2.0)(react@18.2.0)
+        specifier: 11.0.3
+        version: 11.0.3(react-dom@18.2.0)(react@18.2.0)
     devDependencies:
       react:
         specifier: 18.2.0
@@ -1561,8 +1561,8 @@ importers:
         specifier: 2.1.17
         version: 2.1.17
       framer-motion:
-        specifier: 10.18.0
-        version: 10.18.0(react-dom@18.2.0)(react@18.2.0)
+        specifier: 11.0.3
+        version: 11.0.3(react-dom@18.2.0)(react@18.2.0)
     devDependencies:
       react:
         specifier: 18.2.0
@@ -11852,8 +11852,8 @@ packages:
     resolution: {integrity: sha512-buRG0fpBtRHSTCOASe6hD258tEubFoRLb4ZNA6NxMVHNw2gOcwHo9wyablzMzOA5z9xA9L1KNjk/Nt6MT9aYow==}
     engines: {node: '>= 0.6'}
 
-  /framer-motion@10.18.0(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-oGlDh1Q1XqYPksuTD/usb0I70hq95OUzmL9+6Zd+Hs4XV0oaISBa/UUMSjYiq6m8EUF32132mOJ8xVZS+I0S6w==}
+  /framer-motion@11.0.3(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-6x2poQpIWBdbZwLd73w6cKZ1I9IEPIU94C6/Swp1Zt3LJ+sB5bPe1E2wC6EH5hSISXNkMJ4afH7AdwS7MrtkWw==}
     peerDependencies:
       react: ^18.0.0 || 18
       react-dom: ^18.0.0
