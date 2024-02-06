@@ -1,0 +1,5 @@
+.text {
+  &[slot='description'] {
+    font: var(--lp-small-1-regular);
+  }
+}
