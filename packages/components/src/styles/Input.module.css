@@ -1,0 +1,24 @@
+.input {
+  font: var(--lp-body-2-regular);
+  color: var(--lp-color-text-ui-primary-base);
+  padding: var(--lp-spacing-200);
+  border-radius: var(--lp-border-radius-regular);
+  border: var(--lp-border-width-200) solid var(--lp-color-border-field-base);
+  background-color: var(--lp-color-bg-field-base);
+
+  &[data-focus-visible] {
+    outline: 2px solid var(--lp-color-shadow-interactive-focus);
+    outline-offset: -1px;
+    z-index: 1;
+  }
+
+  &[data-disabled] {
+    color: var(--lp-color-text-field-disabled);
+    background-color: var(--lp-color-bg-field-disabled);
+    border-color: var(--lp-color-bg-field-disabled);
+  }
+
+  &[data-invalid] {
+    border-color: var(--lp-color-border-field-error);
+  }
+}

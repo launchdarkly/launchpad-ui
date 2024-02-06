@@ -46,6 +46,7 @@ export async function getComponents() {
     { to: 'rac/modal', name: 'RAC Modal', role: 'dialog' },
     { to: 'rac/popover', name: 'RAC Popover', role: 'dialog' },
     { to: 'rac/progress-bar', name: 'RAC ProgressBar', role: 'progressbar' },
+    { to: 'rac/radio-group', name: 'RAC RadioGroup', role: 'radiogroup' },
     { to: 'rac/switch', name: 'RAC Switch', role: 'switch' },
     { to: 'rac/tooltip', name: 'RAC Tooltip', role: 'tooltip' },
     // plop end components
