@@ -21,4 +21,8 @@
   &[data-invalid] {
     border-color: var(--lp-color-border-field-error);
   }
+
+  &::placeholder {
+    color: var(--lp-color-text-field-placeholder);
+  }
 }
