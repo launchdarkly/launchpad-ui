@@ -5,8 +5,9 @@
   border-radius: var(--lp-border-radius-regular);
   border: var(--lp-border-width-200) solid var(--lp-color-border-field-base);
   background-color: var(--lp-color-bg-field-base);
+  flex: 1;
 
-  &[data-focus-visible] {
+  &[data-focused] {
     outline: 2px solid var(--lp-color-shadow-interactive-focus);
     outline-offset: -1px;
     z-index: 1;

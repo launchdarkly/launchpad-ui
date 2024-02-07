@@ -21,12 +21,12 @@ const _Input = (props: InputProps, ref: ForwardedRef<HTMLInputElement>) => {
   );
 };
 
-const Input = forwardRef(_Input);
-
 /**
  * An input allows a user to input text.
  *
  * https://react-spectrum.adobe.com/react-aria/TextField.html
  */
+const Input = forwardRef(_Input);
+
 export { Input };
 export type { InputProps };

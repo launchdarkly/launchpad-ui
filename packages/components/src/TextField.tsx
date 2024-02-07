@@ -21,12 +21,12 @@ const _TextField = (props: TextFieldProps, ref: ForwardedRef<HTMLDivElement>) =>
   );
 };
 
-const TextField = forwardRef(_TextField);
-
 /**
  * A text field allows a user to enter a plain text value with a keyboard.
  *
  * https://react-spectrum.adobe.com/react-aria/TextField.html
  */
+const TextField = forwardRef(_TextField);
+
 export { TextField };
 export type { TextFieldProps };

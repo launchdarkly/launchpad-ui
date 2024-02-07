@@ -21,12 +21,12 @@ const _TextArea = (props: TextAreaProps, ref: ForwardedRef<HTMLTextAreaElement>)
   );
 };
 
-const TextArea = forwardRef(_TextArea);
-
 /**
  * A textarea allows a user to input mult-line text.
  *
  * https://react-spectrum.adobe.com/react-aria/TextField.html
  */
+const TextArea = forwardRef(_TextArea);
+
 export { TextArea };
 export type { TextAreaProps };
