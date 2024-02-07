@@ -8,9 +8,8 @@
   }
 }
 
-.base {
-  display: inline-block;
-  transform-origin: 0 0;
+.progress {
+  display: inline-flex;
 }
 
 .outerCircle {
@@ -21,16 +20,24 @@
   stroke: var(--lp-color-gray-500);
 }
 
+.base {
+  height: var(--lp-size-64);
+  width: var(--lp-size-64);
+}
+
 .small {
-  transform: scale(0.25);
+  height: var(--lp-size-16);
+  width: var(--lp-size-16);
 }
 
 .medium {
-  transform: scale(0.375);
+  height: var(--lp-size-24);
+  width: var(--lp-size-24);
 }
 
 .large {
-  transform: scale(0.5);
+  height: var(--lp-size-32);
+  width: var(--lp-size-32);
 }
 
 @media (prefers-reduced-motion: no-preference) {
