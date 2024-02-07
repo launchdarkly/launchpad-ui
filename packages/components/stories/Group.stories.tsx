@@ -3,6 +3,7 @@ import type { Meta, StoryFn, StoryObj } from '@storybook/react';
 
 import { Icon } from '@launchpad-ui/icons';
 import { vars } from '@launchpad-ui/vars';
+import { expect, waitFor, within } from '@storybook/test';
 import { useState } from 'react';
 
 import { TextField, Input, Label, Group, IconButton, ProgressBar } from '../src';
@@ -56,6 +57,12 @@ export const Example: Story = {
       </TextField>
     );
   },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    await waitFor(async () => {
+      await expect(canvas.getByRole('button')).toBeVisible();
+    });
+  },
 };
 
 export const Loading: Story = {
@@ -69,5 +76,11 @@ export const Loading: Story = {
         </Group>
       </TextField>
     );
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    await waitFor(async () => {
+      await expect(canvas.getByRole('progressbar')).toBeVisible();
+    });
   },
 };
