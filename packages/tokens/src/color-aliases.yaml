@@ -111,18 +111,18 @@ color:
     ui:
       primary:
         value: '{ color.white.950.value }'
-        dark: '{ color.gray.950.value }'
+        dark: '{ color.black.950.value }'
       primary-flair:
         value: '{ color.purple.300.value }'
         dark: '{ color.purple.950.value }'
       secondary:
-        value: '{ color.gray.0.value }'
-        dark: '{ color.gray.900.value }'
-      tertiary:
         value: '{ color.gray.50.value }'
-        dark: '{ color.black.900.value }'
-      quaternary:
+        dark: '{ color.gray.950.value }'
+      tertiary:
         value: '{ color.gray.100.value }'
+        dark: '{ color.gray.900.value }'
+      quaternary:
+        value: '{ color.gray.200.value }'
         dark: '{ color.gray.800.value }'
     overlay:
       primary:
@@ -134,10 +134,10 @@ color:
     field:
       base:
         value: '{ color.white.950.value }'
-        dark: transparent
+        dark: '{ color.black.950.value }'
       disabled:
         value: '{ color.gray.100.value }'
-        dark: '{ color.gray.900.value }'
+        dark: '{ color.gray.800.value }'
       aside:
         value: '{ color.gray.100.value }'
         dark: '{ color.gray.800.value }'
@@ -171,8 +171,8 @@ color:
         dark: '{ color.system.yellow.500.value }'
     field:
       base:
-        value: '{ color.gray.300.value }'
-        dark: '{ color.gray.500.value }'
+        value: '{ color.gray.200.value }'
+        dark: '{ color.gray.800.value }'
       active:
         value: '{ color.blue.600.value }'
         dark: '{ color.cyan.400.value }'
@@ -183,8 +183,8 @@ color:
         value: '{ color.system.red.600.value }'
         dark: '{ color.system.red.600.value }'
       disabled:
-        value: '{ color.gray.500.value }'
-        dark: '{ color.gray.700.value }'
+        value: '{ color.gray.200.value }'
+        dark: '{ color.gray.800.value }'
     interactive:
       focus:
         value: '{ color.blue.600.value }'
@@ -213,15 +213,17 @@ color:
           dark: '{ color.purple.600.value }'
       secondary:
         base:
-          value: '{ color.gray.300.value }'
-          dark: '{ color.gray.500.value }'
+          value: '{ color.gray.200.value }'
+          dark: '{ color.gray.800.value }'
         active:
-          value: '{ color.gray.700.value }'
-          dark: '{ color.gray.100.value }'
+          value: '{ color.gray.200.value }'
+          dark: '{ color.gray.800.value }'
         focus:
-          value: '{ color.gray.700.value }'
+          value: '{ color.gray.200.value }'
+          dark: '{ color.gray.800.value }'
         hover:
-          value: '{ color.gray.600.value }'
+          value: '{ color.gray.200.value }'
+          dark: '{ color.gray.800.value }'
       secondary-flair:
         base:
           value: '{ color.purple.600.value }'
@@ -257,13 +259,13 @@ color:
     ui:
       primary:
         value: '{ color.gray.200.value }'
-        dark: '{ color.gray.700.value }'
+        dark: '{ color.gray.800.value }'
       primary-flair:
         value: '{ color.purple.400.value }'
         dark: '{ color.purple.700.value }'
       secondary:
         value: '{ color.gray.100.value }'
-        dark: '{ color.gray.800.value }'
+        dark: '{ color.gray.900.value }'
     overlay:
       secondary:
         value: '{ color.gray.800.value }'
