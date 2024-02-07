@@ -6,6 +6,7 @@
   border: var(--lp-border-width-200) solid var(--lp-color-border-field-base);
   background-color: var(--lp-color-bg-field-base);
   flex: 1;
+  min-width: 0;
 
   &[data-focused] {
     outline: 2px solid var(--lp-color-shadow-interactive-focus);
