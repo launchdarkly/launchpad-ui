@@ -14,6 +14,7 @@ const meta: Meta<typeof Group> = {
     status: {
       type: import.meta.env.STORYBOOK_PACKAGE_STATUS__COMPONENTS,
     },
+    chromatic: { pauseAnimationAtEnd: true },
   },
   decorators: [
     (Story: StoryFn) => (
@@ -64,7 +65,7 @@ export const Loading: Story = {
         <Label>Label</Label>
         <Group {...args}>
           <Input />
-          <ProgressBar isIndeterminate />
+          <ProgressBar isIndeterminate aria-label="loading" />
         </Group>
       </TextField>
     );
