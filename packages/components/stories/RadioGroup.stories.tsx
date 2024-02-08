@@ -77,17 +77,3 @@ export const Validation: Story = {
     await userEvent.click(canvas.getByRole('button'));
   },
 };
-
-export const Horizontal: Story = {
-  args: {
-    children: (
-      <>
-        <Label>Group</Label>
-        <Radio value="1">First</Radio>
-        <Radio value="2">Second</Radio>
-        <Radio value="3">Third</Radio>
-      </>
-    ),
-    orientation: 'horizontal',
-  },
-};

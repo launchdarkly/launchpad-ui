@@ -11,9 +11,6 @@
   border-radius: var(--lp-border-radius-medium);
   border-style: solid;
   border-width: 1px;
-}
-
-.base:focus-visible {
   outline: none;
 }
 
