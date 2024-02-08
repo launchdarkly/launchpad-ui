@@ -1,4 +1,5 @@
 import { withThemeByDataAttribute } from '@storybook/addon-themes';
+import { themes } from '@storybook/theming';
 import { MotionConfig } from 'framer-motion';
 import React from 'react';
 
@@ -58,6 +59,7 @@ export const parameters = {
     source: {
       excludeDecorators: true,
     },
+    theme: window.matchMedia('(prefers-color-scheme: dark)').matches ? themes.dark : themes.light,
   },
 };
 
