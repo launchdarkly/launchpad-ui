@@ -1,9 +1,9 @@
 import { withThemeByDataAttribute } from '@storybook/addon-themes';
 import { themes } from '@storybook/theming';
-import { MotionConfig } from 'framer-motion';
 import React from 'react';
 
 import { allModes } from './modes';
+import { Box } from '../packages/box';
 
 import '../packages/tokens/dist/index.css';
 import '../packages/tokens/dist/themes.css';
@@ -64,13 +64,35 @@ export const parameters = {
 };
 
 export const decorators = [
-  (StoryFn) => (
-    <MotionConfig reducedMotion="user">
-      <div style={{ padding: '0.625rem' }}>
+  (StoryFn, context) => {
+    const mirror = context.viewMode === 'story' ? context.globals.mirror : undefined;
+    const sideBySide = mirror === 'side-by-side';
+    const stacked = mirror === 'stacked';
+
+    return mirror ? (
+      <Box display="flex" flexDirection={sideBySide ? 'row' : 'column'} minHeight="100vh">
+        <Box
+          padding="$300"
+          width={sideBySide ? '50vw' : undefined}
+          height={stacked ? '50vh' : undefined}
+        >
+          <StoryFn />
+        </Box>
+        <Box
+          data-theme="dark"
+          padding="$300"
+          width={sideBySide ? '50vw' : undefined}
+          height={stacked ? '50vh' : undefined}
+        >
+          <StoryFn />
+        </Box>
+      </Box>
+    ) : (
+      <Box padding="$300">
         <StoryFn />
-      </div>
-    </MotionConfig>
-  ),
+      </Box>
+    );
+  },
   withThemeByDataAttribute({
     themes: {
       default: 'default',
@@ -79,3 +101,19 @@ export const decorators = [
     defaultTheme: 'default',
   }),
 ];
+
+export const globalTypes = {
+  mirror: {
+    name: 'Mirror',
+    description: 'Mirror themes',
+    toolbar: {
+      icon: 'mirror',
+      items: [
+        { value: undefined, type: 'reset', title: 'reset' },
+        { value: 'side-by-side', icon: 'sidebyside', title: 'side by side' },
+        { value: 'stacked', icon: 'stacked', title: 'stacked' },
+      ],
+      dynamicTitle: true,
+    },
+  },
+};
