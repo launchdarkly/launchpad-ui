@@ -3,7 +3,7 @@ import { themes } from '@storybook/theming';
 import React from 'react';
 
 import { allModes } from './modes';
-import { Box } from '../packages/box';
+import { Box } from '../packages/box/src';
 
 import '../packages/tokens/dist/index.css';
 import '../packages/tokens/dist/themes.css';
