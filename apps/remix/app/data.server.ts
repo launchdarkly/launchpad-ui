@@ -48,6 +48,7 @@ export async function getComponents() {
     { to: 'rac/popover', name: 'RAC Popover', role: 'dialog' },
     { to: 'rac/progress-bar', name: 'RAC ProgressBar', role: 'progressbar' },
     { to: 'rac/radio-group', name: 'RAC RadioGroup', role: 'radiogroup' },
+    { to: 'rac/search-field', name: 'RAC SearchField', role: 'searchbox' },
     { to: 'rac/switch', name: 'RAC Switch', role: 'switch' },
     { to: 'rac/text-field', name: 'RAC TextField', role: 'textbox' },
     { to: 'rac/tooltip', name: 'RAC Tooltip', role: 'tooltip' },
