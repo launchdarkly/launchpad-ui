@@ -1,5 +1,15 @@
 # @launchpad-ui/components
 
+## 0.1.8
+
+### Patch Changes
+
+- [#1164](https://github.com/launchdarkly/launchpad-ui/pull/1164) [`2041cd5`](https://github.com/launchdarkly/launchpad-ui/commit/2041cd53385561cc3e02474f5d2c767f79603b58) Thanks [@Niznikr](https://github.com/Niznikr)! - Add `Checkbox`, `CheckboxGroup`, `Label`, `Form`, and `FieldError`
+
+- Updated dependencies [[`2041cd5`](https://github.com/launchdarkly/launchpad-ui/commit/2041cd53385561cc3e02474f5d2c767f79603b58), [`fb6080e`](https://github.com/launchdarkly/launchpad-ui/commit/fb6080e2081d66b3b9fafb4e5bc7f57a74889358)]:
+  - @launchpad-ui/tokens@0.9.5
+  - @launchpad-ui/icons@0.16.2
+
 ## 0.1.7
 
 ### Patch Changes
