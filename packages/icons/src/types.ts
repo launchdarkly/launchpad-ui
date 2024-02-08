@@ -5,6 +5,7 @@ const icons = [
   'add-circle-outline',
   'alert-rhombus',
   'analyze',
+  'api',
   'application',
   'application-plus',
   'application-plus-outline',
@@ -227,6 +228,7 @@ const icons = [
   'package-outline',
   'visibility',
   'visibility-off',
+  'visibility-scan',
   'warning',
   'warning-outline',
 ] as const;
