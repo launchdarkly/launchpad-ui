@@ -1,5 +1,13 @@
 # @launchpad-ui/box
 
+## 0.1.6
+
+### Patch Changes
+
+- Updated dependencies [[`2041cd5`](https://github.com/launchdarkly/launchpad-ui/commit/2041cd53385561cc3e02474f5d2c767f79603b58)]:
+  - @launchpad-ui/tokens@0.9.5
+  - @launchpad-ui/vars@0.2.12
+
 ## 0.1.5
 
 ### Patch Changes

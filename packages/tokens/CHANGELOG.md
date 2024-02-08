@@ -1,5 +1,11 @@
 # @launchpad-ui/tokens
 
+## 0.9.5
+
+### Patch Changes
+
+- [#1164](https://github.com/launchdarkly/launchpad-ui/pull/1164) [`2041cd5`](https://github.com/launchdarkly/launchpad-ui/commit/2041cd53385561cc3e02474f5d2c767f79603b58) Thanks [@Niznikr](https://github.com/Niznikr)! - Add `Checkbox`, `CheckboxGroup`, `Label`, `Form`, and `FieldError`
+
 ## 0.9.4
 
 ### Patch Changes
