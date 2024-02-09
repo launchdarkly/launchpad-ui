@@ -2,7 +2,7 @@
   font: var(--lp-body-2-regular);
   color: var(--lp-color-text-ui-primary-base);
   padding: var(--lp-spacing-200);
-  border-radius: var(--lp-border-radius-regular);
+  border-radius: var(--lp-border-radius-medium);
   border: var(--lp-border-width-200) solid var(--lp-color-border-field-base);
   background-color: var(--lp-color-bg-field-base);
   flex: 1;
