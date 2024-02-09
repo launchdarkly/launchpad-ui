@@ -1,15 +1,17 @@
+import type { ReactRenderer } from '@storybook/react';
+import type { DecoratorFunction, GlobalTypes, Parameters } from '@storybook/types';
+
+import { Box } from '@launchpad-ui/box';
 import { withThemeByDataAttribute } from '@storybook/addon-themes';
 import { themes } from '@storybook/theming';
-import React from 'react';
 
 import { allModes } from './modes';
-import { Box } from '../packages/box/src';
 
 import '../packages/tokens/dist/index.css';
 import '../packages/tokens/dist/themes.css';
 import '../packages/tokens/dist/media-queries.css';
 
-export const parameters = {
+export const parameters: Parameters = {
   actions: { disable: true },
   controls: { expanded: true },
   options: {
@@ -63,7 +65,7 @@ export const parameters = {
   },
 };
 
-export const decorators = [
+export const decorators: DecoratorFunction<ReactRenderer>[] = [
   (StoryFn, context) => {
     const mirror = context.viewMode === 'story' ? context.globals.mirror : undefined;
     const sideBySide = mirror === 'side-by-side';
@@ -93,7 +95,7 @@ export const decorators = [
       </Box>
     );
   },
-  withThemeByDataAttribute({
+  withThemeByDataAttribute<ReactRenderer>({
     themes: {
       default: 'default',
       dark: 'dark',
@@ -102,7 +104,7 @@ export const decorators = [
   }),
 ];
 
-export const globalTypes = {
+export const globalTypes: GlobalTypes = {
   mirror: {
     name: 'Mirror',
     description: 'Mirror themes',
