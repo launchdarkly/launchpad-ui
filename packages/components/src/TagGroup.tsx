@@ -46,8 +46,11 @@ const _TagList = <T extends object>(props: TagListProps<T>, ref: ForwardedRef<HT
 const TagList = forwardRef(_TagList);
 
 const _Tag = ({ children, ...props }: TagProps, ref: ForwardedRef<HTMLDivElement>) => {
+  const textValue = typeof children === 'string' ? children : undefined;
+
   return (
     <AriaTag
+      textValue={textValue}
       {...props}
       ref={ref}
       className={composeRenderProps(props.className, (className, renderProps) =>
