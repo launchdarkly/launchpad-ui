@@ -1,5 +1,6 @@
+import type { VariantProps } from 'class-variance-authority';
 import type { ForwardedRef } from 'react';
-import type { TagGroupProps, TagListProps, TagProps } from 'react-aria-components';
+import type { TagGroupProps, TagListProps, TagProps as AriaTagProps } from 'react-aria-components';
 
 import { cva } from 'class-variance-authority';
 import { forwardRef } from 'react';
@@ -15,7 +16,24 @@ import styles from './styles/TagGroup.module.css';
 
 const group = cva(styles.group);
 const list = cva(styles.list);
-const tag = cva(styles.tag);
+const tag = cva(styles.tag, {
+  variants: {
+    variant: {
+      default: styles.default,
+      success: styles.success,
+      warning: styles.warning,
+      error: styles.error,
+      beta: styles.beta,
+      federal: styles.federal,
+      new: styles.new,
+    },
+  },
+  defaultVariants: {
+    variant: 'default',
+  },
+});
+
+type TagProps = AriaTagProps & VariantProps<typeof tag>;
 
 const _TagGroup = ({ className, ...props }: TagGroupProps, ref: ForwardedRef<HTMLDivElement>) => {
   return <AriaTagGroup {...props} ref={ref} className={group({ className })} />;
@@ -45,7 +63,10 @@ const _TagList = <T extends object>(props: TagListProps<T>, ref: ForwardedRef<HT
  */
 const TagList = forwardRef(_TagList);
 
-const _Tag = ({ children, ...props }: TagProps, ref: ForwardedRef<HTMLDivElement>) => {
+const _Tag = (
+  { variant = 'default', children, ...props }: TagProps,
+  ref: ForwardedRef<HTMLDivElement>
+) => {
   const textValue = typeof children === 'string' ? children : undefined;
 
   return (
@@ -54,7 +75,7 @@ const _Tag = ({ children, ...props }: TagProps, ref: ForwardedRef<HTMLDivElement
       {...props}
       ref={ref}
       className={composeRenderProps(props.className, (className, renderProps) =>
-        tag({ ...renderProps, className })
+        tag({ ...renderProps, variant, className })
       )}
     >
       {({ allowsRemoving }) => (

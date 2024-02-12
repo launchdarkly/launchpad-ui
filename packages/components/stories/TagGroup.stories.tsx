@@ -78,3 +78,22 @@ export const States: Story = {
     await userEvent.keyboard('{arrowdown}');
   },
 };
+
+export const Variants: Story = {
+  args: {
+    children: (
+      <>
+        <Label>Label</Label>
+        <TagList>
+          <Tag>Default</Tag>
+          <Tag variant="success">Success</Tag>
+          <Tag variant="warning">Warning</Tag>
+          <Tag variant="error">Error</Tag>
+          <Tag variant="beta">Beta</Tag>
+          <Tag variant="federal">Federal</Tag>
+          <Tag variant="new">New</Tag>
+        </TagList>
+      </>
+    ),
+  },
+};
