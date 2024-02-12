@@ -1,6 +1,9 @@
+import type { ReactRenderer } from '@storybook/react';
+import type { DecoratorFunction, GlobalTypes, Parameters } from '@storybook/types';
+
+import { Box } from '@launchpad-ui/box';
 import { withThemeByDataAttribute } from '@storybook/addon-themes';
-import { MotionConfig } from 'framer-motion';
-import React from 'react';
+import { themes } from '@storybook/theming';
 
 import { allModes } from './modes';
 
@@ -8,7 +11,7 @@ import '../packages/tokens/dist/index.css';
 import '../packages/tokens/dist/themes.css';
 import '../packages/tokens/dist/media-queries.css';
 
-export const parameters = {
+export const parameters: Parameters = {
   actions: { disable: true },
   controls: { expanded: true },
   options: {
@@ -58,18 +61,41 @@ export const parameters = {
     source: {
       excludeDecorators: true,
     },
+    theme: window.matchMedia('(prefers-color-scheme: dark)').matches ? themes.dark : themes.light,
   },
 };
 
-export const decorators = [
-  (StoryFn) => (
-    <MotionConfig reducedMotion="user">
-      <div style={{ padding: '0.625rem' }}>
+export const decorators: DecoratorFunction<ReactRenderer>[] = [
+  (StoryFn, context) => {
+    const mirror = context.viewMode === 'story' ? context.globals.mirror : undefined;
+    const sideBySide = mirror === 'side-by-side';
+    const stacked = mirror === 'stacked';
+
+    return mirror ? (
+      <Box display="flex" flexDirection={sideBySide ? 'row' : 'column'} minHeight="100vh">
+        <Box
+          padding="$300"
+          width={sideBySide ? '50vw' : undefined}
+          height={stacked ? '50vh' : undefined}
+        >
+          <StoryFn />
+        </Box>
+        <Box
+          data-theme="dark"
+          padding="$300"
+          width={sideBySide ? '50vw' : undefined}
+          height={stacked ? '50vh' : undefined}
+        >
+          <StoryFn />
+        </Box>
+      </Box>
+    ) : (
+      <Box padding="$300">
         <StoryFn />
-      </div>
-    </MotionConfig>
-  ),
-  withThemeByDataAttribute({
+      </Box>
+    );
+  },
+  withThemeByDataAttribute<ReactRenderer>({
     themes: {
       default: 'default',
       dark: 'dark',
@@ -77,3 +103,19 @@ export const decorators = [
     defaultTheme: 'default',
   }),
 ];
+
+export const globalTypes: GlobalTypes = {
+  mirror: {
+    name: 'Mirror',
+    description: 'Mirror themes',
+    toolbar: {
+      icon: 'mirror',
+      items: [
+        { value: undefined, type: 'reset', title: 'reset' },
+        { value: 'side-by-side', icon: 'sidebyside', title: 'side by side' },
+        { value: 'stacked', icon: 'stacked', title: 'stacked' },
+      ],
+      dynamicTitle: true,
+    },
+  },
+};

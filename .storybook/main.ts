@@ -79,10 +79,13 @@ const config: StorybookConfig = {
 
 const getPackageStatusEnvVars = () => {
   const paths = tsconfig.compilerOptions.paths;
-  const statuses = {};
+  const statuses: Record<string, string> = {};
 
   Object.keys(paths).forEach((key) => {
-    const filepath = path.resolve(__dirname, `.${paths[key][0]}/../package.json`);
+    const filepath = path.resolve(
+      __dirname,
+      `.${paths[key as keyof typeof paths][0]}/../package.json`
+    );
     const contents = fs.readFileSync(filepath);
     const { status } = JSON.parse(contents.toString());
     const statusKey = key.replace('@launchpad-ui/', '').replace(/-/g, '_').toUpperCase();

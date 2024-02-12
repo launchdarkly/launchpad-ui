@@ -50,5 +50,13 @@
       "@launchpad-ui/vars": ["./packages/vars/src"]
     }
   },
+  "include": [
+    "./packages",
+    "./playwright",
+    "./test",
+    "./types",
+    ".storybook/**/*.ts",
+    ".storybook/**/*.tsx"
+  ],
   "exclude": ["./storybook-static", "./apps"]
 }
