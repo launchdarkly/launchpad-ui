@@ -37,7 +37,10 @@ module.exports = {
     'property-no-unknown': [
       true,
       {
-        ignoreProperties: ['line-clamp'],
+        ignoreProperties: [
+          // https://lightningcss.dev/css-modules.html#class-composition
+          'composes',
+        ],
       },
     ],
     'number-max-precision': [

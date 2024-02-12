@@ -1,5 +1,5 @@
 .label {
-  font: var(--lp-body-2-regular);
+  font: var(--lp-label-1-regular);
   cursor: default;
   white-space: nowrap;
 }

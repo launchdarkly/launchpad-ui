@@ -41,12 +41,16 @@ export async function getComponents() {
     { to: 'rac/button', name: 'RAC Button', role: 'button' },
     { to: 'rac/checkbox', name: 'RAC Checkbox', role: 'checkbox' },
     { to: 'rac/checkbox-group', name: 'RAC Checkbox Group', role: 'group' },
+    { to: 'rac/group', name: 'RAC Group', role: 'group' },
     { to: 'rac/link-button', name: 'RAC LinkButton', role: 'link' },
     { to: 'rac/menu', name: 'RAC Menu', role: 'menu' },
     { to: 'rac/modal', name: 'RAC Modal', role: 'dialog' },
     { to: 'rac/popover', name: 'RAC Popover', role: 'dialog' },
     { to: 'rac/progress-bar', name: 'RAC ProgressBar', role: 'progressbar' },
+    { to: 'rac/radio-group', name: 'RAC RadioGroup', role: 'radiogroup' },
+    { to: 'rac/search-field', name: 'RAC SearchField', role: 'searchbox' },
     { to: 'rac/switch', name: 'RAC Switch', role: 'switch' },
+    { to: 'rac/text-field', name: 'RAC TextField', role: 'textbox' },
     { to: 'rac/tooltip', name: 'RAC Tooltip', role: 'tooltip' },
     // plop end components
   ];

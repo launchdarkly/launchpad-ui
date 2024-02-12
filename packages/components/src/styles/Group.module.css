@@ -1,0 +1,19 @@
+.group {
+  composes: input from './Input.module.css';
+  display: flex;
+  align-items: center;
+  gap: var(--lp-spacing-300);
+  overflow: hidden;
+
+  &[data-focus-within] {
+    outline: 2px solid var(--lp-color-shadow-interactive-focus);
+    outline-offset: -1px;
+    z-index: 1;
+  }
+
+  & input[data-rac] {
+    padding: 0;
+    outline: none;
+    border: none;
+  }
+}

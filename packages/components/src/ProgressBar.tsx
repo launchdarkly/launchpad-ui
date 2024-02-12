@@ -8,7 +8,9 @@ import { ProgressBar as AriaProgressBar, composeRenderProps } from 'react-aria-c
 
 import styles from './styles/ProgressBar.module.css';
 
-const progressBar = cva(styles.base, {
+const progressBar = cva(styles.progress);
+
+const icon = cva(styles.base, {
   variants: {
     size: {
       small: styles.small,
@@ -21,7 +23,7 @@ const progressBar = cva(styles.base, {
   },
 });
 
-type ProgressBarProps = AriaProgressBarProps & VariantProps<typeof progressBar>;
+type ProgressBarProps = AriaProgressBarProps & VariantProps<typeof icon>;
 
 const _ProgressBar = (
   { size = 'small', ...props }: ProgressBarProps,
@@ -37,17 +39,15 @@ const _ProgressBar = (
       {...props}
       ref={ref}
       className={composeRenderProps(props.className, (className, renderProps) =>
-        progressBar({ ...renderProps, size, className })
+        progressBar({ ...renderProps, className })
       )}
     >
       {({ percentage, isIndeterminate }) => (
         <svg
-          width={64}
-          height={64}
           viewBox="0 0 32 32"
           fill="none"
           strokeWidth={strokeWidth}
-          className={cx(isIndeterminate && styles.indeterminate)}
+          className={cx(icon({ size }), isIndeterminate && styles.indeterminate)}
         >
           <circle
             cx={center}
