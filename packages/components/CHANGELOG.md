@@ -1,5 +1,11 @@
 # @launchpad-ui/components
 
+## 0.1.9
+
+### Patch Changes
+
+- [#1166](https://github.com/launchdarkly/launchpad-ui/pull/1166) [`cf3e241`](https://github.com/launchdarkly/launchpad-ui/commit/cf3e241a50687df58cbc03b41b7a8403f4df55be) Thanks [@Niznikr](https://github.com/Niznikr)! - Add `RadioGroup`, `TextField`, `Group`, and `SearchField`
+
 ## 0.1.8
 
 ### Patch Changes
