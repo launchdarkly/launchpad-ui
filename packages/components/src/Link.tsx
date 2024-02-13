@@ -14,6 +14,7 @@ const link = cva(styles.base, {
   variants: {
     variant: {
       default: styles.default,
+      subtle: styles.subtle,
     },
   },
   defaultVariants: {

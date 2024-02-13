@@ -1,15 +1,14 @@
 .base {
 }
 
-.default {
-  text-decoration: underline;
+.link {
   cursor: pointer;
   outline: none;
   border-radius: var(--lp-border-radius-regular);
-  color: var(--lp-color-text-interactive-base);
+  text-decoration: none;
 
   &[data-hovered] {
-    text-decoration: none;
+    text-decoration: underline;
   }
 
   &[data-pressed] {
@@ -26,4 +25,14 @@
     outline-offset: 2px;
     z-index: 1;
   }
+}
+
+.default {
+  composes: link;
+  color: var(--lp-color-text-interactive-base);
+}
+
+.subtle {
+  composes: link;
+  color: var(--lp-color-text-ui-secondary);
 }

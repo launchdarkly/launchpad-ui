@@ -26,6 +26,14 @@ export const Example: Story = {
   },
 };
 
+export const Subtle: Story = {
+  args: {
+    children: 'Link',
+    href: '#',
+    variant: 'subtle',
+  },
+};
+
 export const States: Story = {
   render: (args) => {
     const styles = { width: 'fit-content' };
