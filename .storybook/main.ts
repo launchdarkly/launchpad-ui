@@ -71,7 +71,9 @@ const config: StorybookConfig = {
       propFilter: (prop) =>
         prop.parent
           ? !/node_modules/.test(prop.parent.fileName) ||
-            /(react-aria-components|@react-types|react-router-dom)/.test(prop.parent.fileName)
+            /(react-aria-components|react-aria|react-stately|@react-types|@react-aria|@react-stately|react-router-dom)/.test(
+              prop.parent.fileName
+            )
           : true,
     },
   },

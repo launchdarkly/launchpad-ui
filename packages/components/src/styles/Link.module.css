@@ -1,0 +1,29 @@
+.base {
+}
+
+.default {
+  text-decoration: underline;
+  cursor: pointer;
+  outline: none;
+  border-radius: var(--lp-border-radius-regular);
+  color: var(--lp-color-text-interactive-base);
+
+  &[data-hovered] {
+    text-decoration: none;
+  }
+
+  &[data-pressed] {
+    color: var(--lp-color-text-interactive-active);
+  }
+
+  &[data-disabled] {
+    cursor: not-allowed;
+    color: var(--lp-color-text-interactive-disabled);
+  }
+
+  &[data-focus-visible] {
+    outline: 2px solid var(--lp-color-shadow-interactive-focus);
+    outline-offset: 2px;
+    z-index: 1;
+  }
+}
