@@ -51,6 +51,7 @@ export async function getComponents() {
     { to: 'rac/radio-group', name: 'RAC RadioGroup', role: 'radiogroup' },
     { to: 'rac/search-field', name: 'RAC SearchField', role: 'searchbox' },
     { to: 'rac/switch', name: 'RAC Switch', role: 'switch' },
+    { to: 'rac/tag-group', name: 'RAC TagGroup', role: 'grid' },
     { to: 'rac/text-field', name: 'RAC TextField', role: 'textbox' },
     { to: 'rac/tooltip', name: 'RAC Tooltip', role: 'tooltip' },
     // plop end components
