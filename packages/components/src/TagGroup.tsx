@@ -18,6 +18,10 @@ const group = cva(styles.group);
 const list = cva(styles.list);
 const tag = cva(styles.tag, {
   variants: {
+    size: {
+      small: styles.small,
+      medium: styles.medium,
+    },
     variant: {
       default: styles.default,
       success: styles.success,
@@ -29,6 +33,7 @@ const tag = cva(styles.tag, {
     },
   },
   defaultVariants: {
+    size: 'medium',
     variant: 'default',
   },
 });
@@ -64,7 +69,7 @@ const _TagList = <T extends object>(props: TagListProps<T>, ref: ForwardedRef<HT
 const TagList = forwardRef(_TagList);
 
 const _Tag = (
-  { variant = 'default', children, ...props }: TagProps,
+  { size = 'medium', variant = 'default', children, ...props }: TagProps,
   ref: ForwardedRef<HTMLDivElement>
 ) => {
   const textValue = typeof children === 'string' ? children : undefined;
@@ -75,7 +80,7 @@ const _Tag = (
       {...props}
       ref={ref}
       className={composeRenderProps(props.className, (className, renderProps) =>
-        tag({ ...renderProps, variant, className })
+        tag({ ...renderProps, size, variant, className })
       )}
     >
       {({ allowsRemoving }) => (

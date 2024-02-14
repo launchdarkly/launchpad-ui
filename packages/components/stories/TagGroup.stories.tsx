@@ -35,6 +35,21 @@ export const Example: Story = {
   },
 };
 
+export const Small: Story = {
+  args: {
+    children: (
+      <>
+        <Label>Label</Label>
+        <TagList>
+          <Tag size="small">One</Tag>
+          <Tag size="small">Two</Tag>
+          <Tag size="small">Three</Tag>
+        </TagList>
+      </>
+    ),
+  },
+};
+
 export const Removable: Story = {
   render: (args) => {
     const list = useListData({

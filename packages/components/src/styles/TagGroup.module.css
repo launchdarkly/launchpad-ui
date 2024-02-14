@@ -11,7 +11,6 @@
 }
 
 .tag {
-  font: var(--lp-small-1-medium);
   display: flex;
   gap: var(--lp-spacing-200);
   align-items: center;
@@ -38,6 +37,14 @@
   &[data-selection-mode] {
     border: 1px solid var(--lp-color-border-interactive-secondary-base);
   }
+}
+
+.small {
+  font: var(--lp-small-1-medium);
+}
+
+.medium {
+  font: var(--lp-label-1-medium);
 }
 
 .default {
