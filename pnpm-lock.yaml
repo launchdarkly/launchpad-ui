@@ -549,8 +549,8 @@ importers:
         specifier: 18.2.0
         version: 18.2.0(react@18.2.0)
       react-stately:
-        specifier: 3.29.1
-        version: 3.29.1(react@18.2.0)
+        specifier: 3.30.0
+        version: 3.30.0(react@18.2.0)
 
   packages/core:
     dependencies:
