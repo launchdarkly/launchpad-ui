@@ -38,8 +38,8 @@
     "@launchpad-ui/tokens": "workspace:~",
     "@launchpad-ui/tooltip": "workspace:~",
     "@radix-ui/react-slot": "1.0.2",
-    "@react-aria/focus": "3.16.0",
-    "@react-aria/separator": "3.3.9",
+    "@react-aria/focus": "3.16.1",
+    "@react-aria/separator": "3.3.10",
     "classix": "2.1.17",
     "react-virtual": "2.10.4"
   },

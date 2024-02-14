@@ -36,7 +36,7 @@
     "@launchpad-ui/tokens": "workspace:~",
     "@react-types/shared": "3.22.0",
     "class-variance-authority": "0.7.0",
-    "react-aria-components": "1.0.1",
+    "react-aria-components": "1.1.0",
     "react-router-dom": "6.16.0"
   },
   "peerDependencies": {
