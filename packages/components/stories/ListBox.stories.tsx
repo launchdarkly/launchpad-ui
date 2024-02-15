@@ -26,5 +26,6 @@ export const Example: Story = {
       </>
     ),
     'aria-label': 'Items',
+    selectionMode: 'single',
   },
 };

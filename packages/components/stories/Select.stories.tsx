@@ -2,6 +2,7 @@ import type { Meta, StoryFn, StoryObj } from '@storybook/react';
 
 import { Icon } from '@launchpad-ui/icons';
 import { vars } from '@launchpad-ui/vars';
+import { expect, userEvent, within } from '@storybook/test';
 
 import { Select, SelectValue, Label, Button, ListBox, ListBoxItem, Popover } from '../src';
 
@@ -44,5 +45,12 @@ export const Example: Story = {
         </Popover>
       </>
     ),
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+
+    await userEvent.click(canvas.getByRole('button'));
+    const body = canvasElement.ownerDocument.body;
+    await expect(await within(body).findByRole('listbox'));
   },
 };

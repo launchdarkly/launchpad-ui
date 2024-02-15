@@ -434,7 +434,7 @@ color:
         value: '{ color.gray.700.value }'
         dark: '{ color.gray.500.value }'
       placeholder:
-        value: '{ color.gray.500.value }'
+        value: '{ color.gray.600.value }'
         dark: '{ color.gray.400.value }'
     product:
       beta:
