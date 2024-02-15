@@ -190,3 +190,11 @@
   background-color: var(--lp-color-bg-interactive-tertiary-flair-focus);
   color: var(--lp-color-text-interactive-flair-focus);
 }
+
+.select {
+  composes: input from './Input.module.css';
+  display: flex;
+  align-items: center;
+  gap: var(--lp-spacing-300);
+  width: 100%;
+}

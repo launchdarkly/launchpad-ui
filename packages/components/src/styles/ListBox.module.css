@@ -1,0 +1,10 @@
+.box {
+  max-height: inherit;
+  overflow: auto;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.item {
+  outline: none;
+}
