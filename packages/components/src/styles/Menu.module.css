@@ -66,6 +66,12 @@
       'label'
       'desc';
 
+    &[data-has-submenu] {
+      grid-template-areas:
+        'label submenu'
+        'desc submenu';
+    }
+
     &[data-selection-mode] {
       grid-template-areas:
         'check label'
@@ -108,4 +114,9 @@
 .check {
   grid-area: check;
   width: var(--lp-size-16);
+}
+
+.submenu {
+  grid-area: submenu;
+  margin-left: auto;
 }

@@ -43,7 +43,8 @@
     padding: var(--lp-spacing-500);
   }
 
-  &[data-trigger='MenuTrigger'] {
+  &[data-trigger='MenuTrigger'],
+  &[data-trigger='SubmenuTrigger'] {
     padding: var(--lp-spacing-200);
     max-width: var(--lp-menu-max-width);
   }
