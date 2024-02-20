@@ -3,6 +3,10 @@
   flex-direction: column;
   align-items: flex-start;
   gap: var(--lp-spacing-200);
+
+  &[data-invalid] [aria-haspopup='listbox'] {
+    border-color: var(--lp-color-border-field-error);
+  }
 }
 
 .value {
@@ -11,5 +15,9 @@
 
   &[data-placeholder] {
     color: var(--lp-color-text-field-placeholder);
+  }
+
+  & [slot='description'] {
+    display: none;
   }
 }

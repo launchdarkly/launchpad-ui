@@ -1,6 +1,7 @@
 import type { ForwardedRef } from 'react';
 import type { ListBoxProps, ListBoxItemProps } from 'react-aria-components';
 
+import { Icon } from '@launchpad-ui/icons';
 import { cva } from 'class-variance-authority';
 import { forwardRef } from 'react';
 import {
@@ -37,14 +38,24 @@ const _ListBoxItem = <T extends object>(
   props: ListBoxItemProps<T>,
   ref: ForwardedRef<HTMLDivElement>
 ) => {
+  const textValue =
+    props.textValue || (typeof props.children === 'string' ? props.children : undefined);
   return (
     <AriaListBoxItem
+      textValue={textValue}
       {...props}
       ref={ref}
       className={composeRenderProps(props.className, (className, renderProps) =>
         item({ ...renderProps, className })
       )}
-    />
+    >
+      {composeRenderProps(props.children, (children, { isSelected }) => (
+        <>
+          {children}
+          {isSelected && <Icon name="check" size="medium" className={styles.check} />}
+        </>
+      ))}
+    </AriaListBoxItem>
   );
 };
 

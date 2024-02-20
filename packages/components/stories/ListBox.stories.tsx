@@ -1,4 +1,9 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 import type { Meta, StoryObj } from '@storybook/react';
+import type { Selection as AriaSelection } from 'react-aria-components';
+
+import { userEvent, within } from '@storybook/test';
+import { useState } from 'react';
 
 import { ListBox, ListBoxItem, Section, Header } from '../src';
 
@@ -50,5 +55,47 @@ export const Grouping: Story = {
     ),
     'aria-label': 'Items',
     selectionMode: 'multiple',
+  },
+};
+
+export const Selection: Story = {
+  render: (args) => {
+    const [selected, setSelected] = useState<AriaSelection>(new Set(['react-aria-1']));
+
+    return (
+      <ListBox selectedKeys={selected} onSelectionChange={setSelected} {...args}>
+        <ListBoxItem>Item one</ListBoxItem>
+        <ListBoxItem>Item two</ListBoxItem>
+        <ListBoxItem>Item three</ListBoxItem>
+      </ListBox>
+    );
+  },
+  args: {
+    'aria-label': 'Items',
+    selectionMode: 'single',
+  },
+  ...open,
+};
+
+export const States: Story = {
+  args: {
+    children: (
+      <>
+        <ListBoxItem>Resting</ListBoxItem>
+        <ListBoxItem>Active</ListBoxItem>
+        <ListBoxItem>Focus Visible</ListBoxItem>
+        <ListBoxItem>Disabled</ListBoxItem>
+      </>
+    ),
+    'aria-label': 'Items',
+    selectionMode: 'single',
+    disabledKeys: new Set(['react-aria-4']),
+  },
+  play: async ({ canvasElement }: { canvasElement: HTMLElement }) => {
+    const canvas = within(canvasElement);
+
+    const options = await canvas.findAllByRole('option');
+    await userEvent.pointer([{ keys: '[TouchA>]', target: options[1] }]);
+    await userEvent.keyboard('{arrowdown}');
   },
 };
