@@ -1,6 +1,10 @@
 .box {
   composes: menu from './Menu.module.css';
   padding: var(--lp-spacing-200);
+
+  & section:not(:first-child) {
+    margin-top: var(--lp-spacing-300);
+  }
 }
 
 .item {
