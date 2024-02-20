@@ -1,49 +1,45 @@
 {
-  "name": "@launchpad-ui/alert",
-  "version": "0.9.2",
-  "status": "beta",
-  "publishConfig": {
-    "access": "public"
-  },
-  "description": "An element that informs users of a state or function of the product at a more granular level than banners.",
-  "files": [
-    "dist"
-  ],
-  "main": "dist/index.js",
-  "module": "dist/index.es.js",
-  "types": "dist/index.d.ts",
-  "sideEffects": [
-    "**/*.css"
-  ],
-  "exports": {
-    ".": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/index.es.js",
-      "require": "./dist/index.js"
-    },
-    "./package.json": "./package.json",
-    "./style.css": "./dist/style.css"
-  },
-  "source": "src/index.ts",
-  "scripts": {
-    "build": "vite build -c ../../vite.config.mts && tsc --project tsconfig.build.json",
-    "clean": "rm -rf dist",
-    "lint": "eslint '**/*.{ts,tsx,js}' && stylelint '**/*.css' --ignore-path ../../.stylelintignore",
-    "test": "vitest run --coverage"
-  },
-  "dependencies": {
-    "@launchpad-ui/button": "workspace:~",
-    "@launchpad-ui/icons": "workspace:~",
-    "@launchpad-ui/tokens": "workspace:~",
-    "@react-stately/utils": "3.9.0",
-    "classix": "2.1.17"
-  },
-  "peerDependencies": {
-    "react": "18.2.0",
-    "react-dom": "18.2.0"
-  },
-  "devDependencies": {
-    "react": "18.2.0",
-    "react-dom": "18.2.0"
-  }
+	"name": "@launchpad-ui/alert",
+	"version": "0.9.2",
+	"status": "beta",
+	"publishConfig": {
+		"access": "public"
+	},
+	"description": "An element that informs users of a state or function of the product at a more granular level than banners.",
+	"files": ["dist"],
+	"main": "dist/index.js",
+	"module": "dist/index.es.js",
+	"types": "dist/index.d.ts",
+	"sideEffects": ["**/*.css"],
+	"exports": {
+		".": {
+			"types": "./dist/index.d.ts",
+			"import": "./dist/index.es.js",
+			"require": "./dist/index.js"
+		},
+		"./package.json": "./package.json",
+		"./style.css": "./dist/style.css"
+	},
+	"source": "src/index.ts",
+	"scripts": {
+		"build": "vite build -c ../../vite.config.mts && tsc --project tsconfig.build.json",
+		"clean": "rm -rf dist",
+		"lint": "biome lint && stylelint '**/*.css' --ignore-path ../../.stylelintignore",
+		"test": "vitest run --coverage"
+	},
+	"dependencies": {
+		"@launchpad-ui/button": "workspace:~",
+		"@launchpad-ui/icons": "workspace:~",
+		"@launchpad-ui/tokens": "workspace:~",
+		"@react-stately/utils": "3.9.0",
+		"classix": "2.1.17"
+	},
+	"peerDependencies": {
+		"react": "18.2.0",
+		"react-dom": "18.2.0"
+	},
+	"devDependencies": {
+		"react": "18.2.0",
+		"react-dom": "18.2.0"
+	}
 }

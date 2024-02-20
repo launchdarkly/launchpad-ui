@@ -1,56 +1,52 @@
 {
-  "name": "@launchpad-ui/tag",
-  "version": "0.3.18",
-  "status": "alpha",
-  "publishConfig": {
-    "access": "public"
-  },
-  "description": "Tags allow users to categorize content. They can represent keywords or people, and are grouped to describe an item or a search request.",
-  "files": [
-    "dist"
-  ],
-  "main": "dist/index.js",
-  "module": "dist/index.es.js",
-  "types": "dist/index.d.ts",
-  "sideEffects": [
-    "**/*.css"
-  ],
-  "exports": {
-    ".": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/index.es.js",
-      "require": "./dist/index.js"
-    },
-    "./package.json": "./package.json",
-    "./style.css": "./dist/style.css"
-  },
-  "source": "src/index.ts",
-  "scripts": {
-    "build": "vite build -c ../../vite.config.mts && tsc --project tsconfig.build.json",
-    "clean": "rm -rf dist",
-    "lint": "eslint '**/*.{ts,tsx,js}' && stylelint '**/*.css' --ignore-path ../../.stylelintignore",
-    "test": "vitest run --coverage"
-  },
-  "dependencies": {
-    "@launchpad-ui/button": "workspace:~",
-    "@launchpad-ui/icons": "workspace:~",
-    "@launchpad-ui/tokens": "workspace:~",
-    "@launchpad-ui/tooltip": "workspace:~",
-    "@react-aria/focus": "3.16.1",
-    "@react-aria/interactions": "3.21.0",
-    "@react-aria/tag": "3.3.2",
-    "@react-aria/utils": "3.23.1",
-    "@react-stately/list": "3.10.2",
-    "@react-aria/selection": "3.17.4",
-    "@react-types/shared": "3.22.0",
-    "classix": "2.1.17"
-  },
-  "peerDependencies": {
-    "react": "18.2.0",
-    "react-dom": "18.2.0"
-  },
-  "devDependencies": {
-    "react": "18.2.0",
-    "react-dom": "18.2.0"
-  }
+	"name": "@launchpad-ui/tag",
+	"version": "0.3.18",
+	"status": "alpha",
+	"publishConfig": {
+		"access": "public"
+	},
+	"description": "Tags allow users to categorize content. They can represent keywords or people, and are grouped to describe an item or a search request.",
+	"files": ["dist"],
+	"main": "dist/index.js",
+	"module": "dist/index.es.js",
+	"types": "dist/index.d.ts",
+	"sideEffects": ["**/*.css"],
+	"exports": {
+		".": {
+			"types": "./dist/index.d.ts",
+			"import": "./dist/index.es.js",
+			"require": "./dist/index.js"
+		},
+		"./package.json": "./package.json",
+		"./style.css": "./dist/style.css"
+	},
+	"source": "src/index.ts",
+	"scripts": {
+		"build": "vite build -c ../../vite.config.mts && tsc --project tsconfig.build.json",
+		"clean": "rm -rf dist",
+		"lint": "biome lint && stylelint '**/*.css' --ignore-path ../../.stylelintignore",
+		"test": "vitest run --coverage"
+	},
+	"dependencies": {
+		"@launchpad-ui/button": "workspace:~",
+		"@launchpad-ui/icons": "workspace:~",
+		"@launchpad-ui/tokens": "workspace:~",
+		"@launchpad-ui/tooltip": "workspace:~",
+		"@react-aria/focus": "3.16.1",
+		"@react-aria/interactions": "3.21.0",
+		"@react-aria/tag": "3.3.2",
+		"@react-aria/utils": "3.23.1",
+		"@react-stately/list": "3.10.2",
+		"@react-aria/selection": "3.17.4",
+		"@react-types/shared": "3.22.0",
+		"classix": "2.1.17"
+	},
+	"peerDependencies": {
+		"react": "18.2.0",
+		"react-dom": "18.2.0"
+	},
+	"devDependencies": {
+		"react": "18.2.0",
+		"react-dom": "18.2.0"
+	}
 }

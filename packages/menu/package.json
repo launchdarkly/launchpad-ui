@@ -1,54 +1,50 @@
 {
-  "name": "@launchpad-ui/menu",
-  "version": "0.13.3",
-  "status": "beta",
-  "publishConfig": {
-    "access": "public"
-  },
-  "description": "An element that presents a list of items a user can choose from.",
-  "files": [
-    "dist"
-  ],
-  "main": "dist/index.js",
-  "module": "dist/index.es.js",
-  "types": "dist/index.d.ts",
-  "sideEffects": [
-    "**/*.css"
-  ],
-  "exports": {
-    ".": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/index.es.js",
-      "require": "./dist/index.js"
-    },
-    "./package.json": "./package.json",
-    "./style.css": "./dist/style.css"
-  },
-  "source": "src/index.ts",
-  "scripts": {
-    "build": "vite build -c ../../vite.config.mts && tsc --project tsconfig.build.json",
-    "clean": "rm -rf dist",
-    "lint": "eslint '**/*.{ts,tsx,js}' && stylelint '**/*.css' --ignore-path ../../.stylelintignore",
-    "test": "vitest run --coverage"
-  },
-  "dependencies": {
-    "@launchpad-ui/form": "workspace:~",
-    "@launchpad-ui/icons": "workspace:~",
-    "@launchpad-ui/popover": "workspace:~",
-    "@launchpad-ui/tokens": "workspace:~",
-    "@launchpad-ui/tooltip": "workspace:~",
-    "@radix-ui/react-slot": "1.0.2",
-    "@react-aria/focus": "3.16.1",
-    "@react-aria/separator": "3.3.10",
-    "classix": "2.1.17",
-    "react-virtual": "2.10.4"
-  },
-  "peerDependencies": {
-    "react": "18.2.0",
-    "react-dom": "18.2.0"
-  },
-  "devDependencies": {
-    "react": "18.2.0",
-    "react-dom": "18.2.0"
-  }
+	"name": "@launchpad-ui/menu",
+	"version": "0.13.3",
+	"status": "beta",
+	"publishConfig": {
+		"access": "public"
+	},
+	"description": "An element that presents a list of items a user can choose from.",
+	"files": ["dist"],
+	"main": "dist/index.js",
+	"module": "dist/index.es.js",
+	"types": "dist/index.d.ts",
+	"sideEffects": ["**/*.css"],
+	"exports": {
+		".": {
+			"types": "./dist/index.d.ts",
+			"import": "./dist/index.es.js",
+			"require": "./dist/index.js"
+		},
+		"./package.json": "./package.json",
+		"./style.css": "./dist/style.css"
+	},
+	"source": "src/index.ts",
+	"scripts": {
+		"build": "vite build -c ../../vite.config.mts && tsc --project tsconfig.build.json",
+		"clean": "rm -rf dist",
+		"lint": "biome lint && stylelint '**/*.css' --ignore-path ../../.stylelintignore",
+		"test": "vitest run --coverage"
+	},
+	"dependencies": {
+		"@launchpad-ui/form": "workspace:~",
+		"@launchpad-ui/icons": "workspace:~",
+		"@launchpad-ui/popover": "workspace:~",
+		"@launchpad-ui/tokens": "workspace:~",
+		"@launchpad-ui/tooltip": "workspace:~",
+		"@radix-ui/react-slot": "1.0.2",
+		"@react-aria/focus": "3.16.1",
+		"@react-aria/separator": "3.3.10",
+		"classix": "2.1.17",
+		"react-virtual": "2.10.4"
+	},
+	"peerDependencies": {
+		"react": "18.2.0",
+		"react-dom": "18.2.0"
+	},
+	"devDependencies": {
+		"react": "18.2.0",
+		"react-dom": "18.2.0"
+	}
 }
