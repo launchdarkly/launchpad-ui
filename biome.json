@@ -7,13 +7,15 @@
 			"storybook-static/**",
 			"test-results/**",
 			"coverage/**"
-		]
+		],
+		"ignoreUnknown": true
 	},
 	"organizeImports": {
 		"enabled": true
 	},
 	"formatter": {
-		"enabled": false
+		"enabled": false,
+		"lineWidth": 100
 	},
 	"linter": {
 		"enabled": false,

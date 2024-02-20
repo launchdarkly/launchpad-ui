@@ -40,7 +40,7 @@ To verify component server-side rendering support we use a [Remix](https://remix
 
 ## Code Style
 
-We use [ESLint](https://eslint.org/) and [Stylelint](https://stylelint.io/) to highlight problems in our code and [Prettier](https://prettier.io/) to format it to be consistent across the repo.
+We use [Biome](https://biomejs.dev/) and [Stylelint](https://stylelint.io/) to highlight problems in our code and [Biome](https://biomejs.dev/) to format it to be consistent across the repo.
 
 ## Git
 
