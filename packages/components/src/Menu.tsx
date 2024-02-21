@@ -3,6 +3,7 @@ import type {
   MenuProps as AriaMenuProps,
   MenuItemProps,
   MenuTriggerProps,
+  SubmenuTriggerProps,
 } from 'react-aria-components';
 
 import { Icon } from '@launchpad-ui/icons';
@@ -12,6 +13,7 @@ import {
   Menu as AriaMenu,
   MenuItem as AriaMenuItem,
   MenuTrigger,
+  SubmenuTrigger,
   composeRenderProps,
 } from 'react-aria-components';
 
@@ -48,12 +50,13 @@ const _MenuItem = <T extends object>(
         item({ ...renderProps, className })
       )}
     >
-      {composeRenderProps(props.children, (children, { selectionMode, isSelected }) => (
+      {composeRenderProps(props.children, (children, { selectionMode, isSelected, hasSubmenu }) => (
         <>
           {selectionMode !== 'none' && (
             <span className={styles.check}>{isSelected && <Icon name="check" size="small" />}</span>
           )}
           {children}
+          {hasSubmenu && <Icon name="chevron-right" size="small" className={styles.submenu} />}
         </>
       ))}
     </AriaMenuItem>
@@ -65,5 +68,5 @@ const _MenuItem = <T extends object>(
  */
 const MenuItem = forwardRef(_MenuItem);
 
-export { Menu, MenuItem, MenuTrigger };
-export type { MenuProps, MenuItemProps, MenuTriggerProps };
+export { Menu, MenuItem, MenuTrigger, SubmenuTrigger };
+export type { MenuProps, MenuItemProps, MenuTriggerProps, SubmenuTriggerProps };
