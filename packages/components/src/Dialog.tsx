@@ -10,7 +10,7 @@ import styles from './styles/Dialog.module.css';
 const dialog = cva(styles.dialog);
 
 const _Dialog = ({ className, ...props }: DialogProps, ref: ForwardedRef<HTMLElement>) => {
-  return <AriaDialog {...props} ref={ref} className={dialog({ className })} />;
+	return <AriaDialog {...props} ref={ref} className={dialog({ className })} />;
 };
 
 /**

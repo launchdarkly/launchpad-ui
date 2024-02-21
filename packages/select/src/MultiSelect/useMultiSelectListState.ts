@@ -1,11 +1,11 @@
 import type { ListState } from '@react-stately/list';
 import type {
-  CollectionBase,
-  Key,
-  MultipleSelection,
-  Node,
-  Selection,
-  SelectionMode,
+	CollectionBase,
+	Key,
+	MultipleSelection,
+	Node,
+	Selection,
+	SelectionMode,
 } from '@react-types/shared';
 
 import { useListState } from '@react-stately/list';
@@ -13,58 +13,58 @@ import { useListState } from '@react-stately/list';
 type UseMultiSelectListProps<T> = CollectionBase<T> & MultipleSelection;
 
 type MultiSelectListState<T> = ListState<T> & {
-  selectedKeys: Selection;
-  setSelectedKeys(keys: Iterable<Key>): void;
-  selectedItems: (Node<T> | null)[] | null;
-  selectionMode: SelectionMode;
+	selectedKeys: Selection;
+	setSelectedKeys(keys: Iterable<Key>): void;
+	selectedItems: (Node<T> | null)[] | null;
+	selectionMode: SelectionMode;
 };
 
 const useMultiSelectListState = <T extends object>(
-  props: UseMultiSelectListProps<T>
+	props: UseMultiSelectListProps<T>,
 ): MultiSelectListState<T> => {
-  const {
-    collection,
-    disabledKeys,
-    selectionManager,
-    selectionManager: { setSelectedKeys, selectedKeys, selectionMode },
-  } = useListState({ ...props, selectionMode: 'multiple' });
+	const {
+		collection,
+		disabledKeys,
+		selectionManager,
+		selectionManager: { setSelectedKeys, selectedKeys, selectionMode },
+	} = useListState({ ...props, selectionMode: 'multiple' });
 
-  const missingKeys: Key[] = [];
+	const missingKeys: Key[] = [];
 
-  const selectedItems =
-    selectedKeys.size !== 0
-      ? Array.from(selectedKeys)
-          .map((key) => {
-            const item = collection.getItem(key);
+	const selectedItems =
+		selectedKeys.size !== 0
+			? Array.from(selectedKeys)
+					.map((key) => {
+						const item = collection.getItem(key);
 
-            if (!item) {
-              missingKeys.push(key);
-            }
+						if (!item) {
+							missingKeys.push(key);
+						}
 
-            return item;
-          })
-          // Remove undefined values when some keys are not present in the collection
-          .filter(Boolean)
-      : null;
+						return item;
+					})
+					// Remove undefined values when some keys are not present in the collection
+					.filter(Boolean)
+			: null;
 
-  if (missingKeys.length) {
-    // eslint-disable-next-line no-console
-    console.warn(
-      `Select: Keys "${missingKeys.join(
-        ', '
-      )}" passed to "selectedKeys" are not present in the collection.`
-    );
-  }
+	if (missingKeys.length) {
+		// eslint-disable-next-line no-console
+		console.warn(
+			`Select: Keys "${missingKeys.join(
+				', ',
+			)}" passed to "selectedKeys" are not present in the collection.`,
+		);
+	}
 
-  return {
-    collection,
-    disabledKeys,
-    selectionManager,
-    selectionMode,
-    selectedKeys,
-    setSelectedKeys: setSelectedKeys.bind(selectionManager),
-    selectedItems,
-  };
+	return {
+		collection,
+		disabledKeys,
+		selectionManager,
+		selectionMode,
+		selectedKeys,
+		setSelectedKeys: setSelectedKeys.bind(selectionManager),
+		selectedItems,
+	};
 };
 
 export { useMultiSelectListState };

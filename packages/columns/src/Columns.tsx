@@ -6,27 +6,27 @@ import { cx } from 'classix';
 import styles from './styles/Columns.module.css';
 
 type ColumnsProps = ComponentProps<'div'> & {
-  'data-test-id'?: string;
-  gap?: Space;
-  alignY?: 'top' | 'center' | 'bottom';
-  children?: ReactNode;
+	'data-test-id'?: string;
+	gap?: Space;
+	alignY?: 'top' | 'center' | 'bottom';
+	children?: ReactNode;
 };
 
 const Columns = ({
-  children,
-  className,
-  'data-test-id': testId = 'columns',
-  gap = '0',
-  alignY = 'top',
+	children,
+	className,
+	'data-test-id': testId = 'columns',
+	gap = '0',
+	alignY = 'top',
 }: ColumnsProps) => {
-  return (
-    <div
-      className={cx(styles.columns, styles[`gap-${gap}`], styles[`alignY-${alignY}`], className)}
-      data-test-id={testId}
-    >
-      {children}
-    </div>
-  );
+	return (
+		<div
+			className={cx(styles.columns, styles[`gap-${gap}`], styles[`alignY-${alignY}`], className)}
+			data-test-id={testId}
+		>
+			{children}
+		</div>
+	);
 };
 
 export { Columns };

@@ -7,76 +7,76 @@ import styles from './styles/Form.module.css';
 import { createFieldErrorId } from './utils';
 
 type TextFieldProps = ComponentProps<'input'> & {
-  suffix?: string;
-  tiny?: boolean;
-  overrideWidth?: string;
-  'data-test-id'?: string;
+	suffix?: string;
+	tiny?: boolean;
+	overrideWidth?: string;
+	'data-test-id'?: string;
 };
 
 const TextField = forwardRef<HTMLInputElement, TextFieldProps>(
-  (
-    {
-      className,
-      type = 'text',
-      tiny = false,
-      readOnly,
-      tabIndex = 0,
-      suffix,
-      overrideWidth,
-      'data-test-id': testId = 'text-field',
-      autoComplete,
-      ...rest
-    },
-    ref
-  ) => {
-    const classes = overrideWidth
-      ? className
-      : cx(styles.formInput, tiny && styles.formInputTiny, className);
+	(
+		{
+			className,
+			type = 'text',
+			tiny = false,
+			readOnly,
+			tabIndex = 0,
+			suffix,
+			overrideWidth,
+			'data-test-id': testId = 'text-field',
+			autoComplete,
+			...rest
+		},
+		ref,
+	) => {
+		const classes = overrideWidth
+			? className
+			: cx(styles.formInput, tiny && styles.formInputTiny, className);
 
-    const disablePasswordManagers = autoComplete === 'off';
+		const disablePasswordManagers = autoComplete === 'off';
 
-    if (suffix) {
-      return (
-        <div className={styles.suffixContainer}>
-          <input
-            {...rest}
-            type={type}
-            data-test-id={testId}
-            autoComplete={autoComplete}
-            className={classes}
-            readOnly={readOnly}
-            ref={ref}
-            aria-describedby={rest['aria-describedby'] || createFieldErrorId(rest.id)}
-          />
-          <label className={styles.suffix} htmlFor={rest.id}>
-            {suffix}
-          </label>
-        </div>
-      );
-    }
+		if (suffix) {
+			return (
+				<div className={styles.suffixContainer}>
+					<input
+						{...rest}
+						type={type}
+						data-test-id={testId}
+						autoComplete={autoComplete}
+						className={classes}
+						readOnly={readOnly}
+						ref={ref}
+						aria-describedby={rest['aria-describedby'] || createFieldErrorId(rest.id)}
+					/>
+					<label className={styles.suffix} htmlFor={rest.id}>
+						{suffix}
+					</label>
+				</div>
+			);
+		}
 
-    return (
-      <input
-        {...rest}
-        data-1p-ignore={disablePasswordManagers} // "data-1p-ignore" is added to prevent 1Password from injecting a password autofill icon
-        type={type}
-        className={classes}
-        readOnly={readOnly}
-        tabIndex={tabIndex}
-        autoComplete={autoComplete}
-        ref={ref}
-        data-test-id={testId}
-        style={
-          overrideWidth
-            ? {
-                width: overrideWidth,
-              }
-            : undefined
-        }
-        aria-describedby={rest['aria-describedby'] || createFieldErrorId(rest.id)}
-      />
-    );
-  }
+		return (
+			<input
+				{...rest}
+				data-1p-ignore={disablePasswordManagers} // "data-1p-ignore" is added to prevent 1Password from injecting a password autofill icon
+				type={type}
+				className={classes}
+				readOnly={readOnly}
+				tabIndex={tabIndex}
+				autoComplete={autoComplete}
+				ref={ref}
+				data-test-id={testId}
+				style={
+					overrideWidth
+						? {
+								width: overrideWidth,
+						  }
+						: undefined
+				}
+				aria-describedby={rest['aria-describedby'] || createFieldErrorId(rest.id)}
+			/>
+		);
+	},
 );
 
 TextField.displayName = 'TextField';

@@ -10,48 +10,48 @@ import { useMemo } from 'react';
 import styles from './styles/Select.module.css';
 
 type SelectPopoverProps = Omit<AriaPopoverProps, 'popoverRef'> & {
-  children: ReactNode;
-  state: OverlayTriggerState;
-  className?: string;
-  popoverRef?: RefObject<HTMLDivElement>;
+	children: ReactNode;
+	state: OverlayTriggerState;
+	className?: string;
+	popoverRef?: RefObject<HTMLDivElement>;
 };
 
 const SelectPopover = (props: SelectPopoverProps) => {
-  const popoverRef = useObjectRef(props.popoverRef);
-  const { state, children, className, isNonModal = true, triggerRef, offset = 8 } = props;
+	const popoverRef = useObjectRef(props.popoverRef);
+	const { state, children, className, isNonModal = true, triggerRef, offset = 8 } = props;
 
-  const {
-    popoverProps: { style: popoverStyle, ...popoverPropsRest },
-  } = usePopover(
-    {
-      ...props,
-      isNonModal: true,
-      offset,
-      popoverRef,
-    },
-    state
-  );
+	const {
+		popoverProps: { style: popoverStyle, ...popoverPropsRest },
+	} = usePopover(
+		{
+			...props,
+			isNonModal: true,
+			offset,
+			popoverRef,
+		},
+		state,
+	);
 
-  const width = useMemo(() => {
-    const clientWidth = triggerRef.current?.clientWidth || 0;
-    const minWidth = 400;
-    return clientWidth < minWidth ? minWidth : clientWidth;
-  }, [triggerRef]);
+	const width = useMemo(() => {
+		const clientWidth = triggerRef.current?.clientWidth || 0;
+		const minWidth = 400;
+		return clientWidth < minWidth ? minWidth : clientWidth;
+	}, [triggerRef]);
 
-  return (
-    <Overlay>
-      <div
-        {...popoverPropsRest}
-        style={{ ...popoverStyle, width }}
-        ref={popoverRef}
-        className={cx(styles.popover, className)}
-      >
-        {!isNonModal && <DismissButton onDismiss={state.close} />}
-        {children}
-        <DismissButton onDismiss={state.close} />
-      </div>
-    </Overlay>
-  );
+	return (
+		<Overlay>
+			<div
+				{...popoverPropsRest}
+				style={{ ...popoverStyle, width }}
+				ref={popoverRef}
+				className={cx(styles.popover, className)}
+			>
+				{!isNonModal && <DismissButton onDismiss={state.close} />}
+				{children}
+				<DismissButton onDismiss={state.close} />
+			</div>
+		</Overlay>
+	);
 };
 
 export { SelectPopover };

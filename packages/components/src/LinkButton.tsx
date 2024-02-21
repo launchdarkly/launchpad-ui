@@ -11,19 +11,19 @@ import { Link } from './Link';
 type LinkButtonProps = LinkProps & ButtonVariants;
 
 const _LinkButton = (
-  { size = 'medium', variant = 'default', ...props }: LinkButtonProps,
-  ref: ForwardedRef<HTMLAnchorElement>
+	{ size = 'medium', variant = 'default', ...props }: LinkButtonProps,
+	ref: ForwardedRef<HTMLAnchorElement>,
 ) => {
-  return (
-    <Link
-      {...props}
-      ref={ref}
-      className={composeRenderProps(props.className, (className, renderProps) =>
-        button({ ...renderProps, size, variant, className })
-      )}
-      variant={null}
-    />
-  );
+	return (
+		<Link
+			{...props}
+			ref={ref}
+			className={composeRenderProps(props.className, (className, renderProps) =>
+				button({ ...renderProps, size, variant, className }),
+			)}
+			variant={null}
+		/>
+	);
 };
 
 /**

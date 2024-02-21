@@ -10,15 +10,15 @@ import styles from './styles/SearchField.module.css';
 const search = cva(styles.search);
 
 const _SearchField = (props: SearchFieldProps, ref: ForwardedRef<HTMLDivElement>) => {
-  return (
-    <AriaSearchField
-      {...props}
-      ref={ref}
-      className={composeRenderProps(props.className, (className, renderProps) =>
-        search({ ...renderProps, className })
-      )}
-    />
-  );
+	return (
+		<AriaSearchField
+			{...props}
+			ref={ref}
+			className={composeRenderProps(props.className, (className, renderProps) =>
+				search({ ...renderProps, className }),
+			)}
+		/>
+	);
 };
 
 /**

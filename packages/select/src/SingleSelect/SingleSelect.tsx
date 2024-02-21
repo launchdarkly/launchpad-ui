@@ -16,74 +16,74 @@ import { useSingleSelect } from './useSingleSelect';
 import { useSingleSelectState } from './useSingleSelectState';
 
 type SingleSelectProps<T extends object> = SharedSelectProps<T> &
-  SingleSelection & {
-    trigger?: (props: SingleSelectTriggerProps<T>) => JSX.Element;
-  };
+	SingleSelection & {
+		trigger?: (props: SingleSelectTriggerProps<T>) => JSX.Element;
+	};
 
 const SingleSelect = <T extends object>(props: SingleSelectProps<T>) => {
-  const {
-    autoFocus,
-    excludeFromTabOrder,
-    disabled: isDisabled,
-    label,
-    trigger = SingleSelectTrigger,
-    'data-test-id': testId = 'select',
-    placeholder,
-  } = props;
-  const filterInputRef = useRef<HTMLInputElement>(null);
-  const triggerRef = useRef<HTMLButtonElement>(null);
-  const popoverRef = useRef<HTMLDivElement>(null);
-  const listBoxRef = useRef<HTMLDivElement>(null);
+	const {
+		autoFocus,
+		excludeFromTabOrder,
+		disabled: isDisabled,
+		label,
+		trigger = SingleSelectTrigger,
+		'data-test-id': testId = 'select',
+		placeholder,
+	} = props;
+	const filterInputRef = useRef<HTMLInputElement>(null);
+	const triggerRef = useRef<HTMLButtonElement>(null);
+	const popoverRef = useRef<HTMLDivElement>(null);
+	const listBoxRef = useRef<HTMLDivElement>(null);
 
-  const state = useSingleSelectState(props);
+	const state = useSingleSelectState(props);
 
-  const { labelProps, triggerProps, valueProps, menuProps, filterInputProps } = useSingleSelect(
-    props,
-    state,
-    {
-      triggerRef,
-      listBoxRef,
-      filterInputRef,
-    }
-  );
+	const { labelProps, triggerProps, valueProps, menuProps, filterInputProps } = useSingleSelect(
+		props,
+		state,
+		{
+			triggerRef,
+			listBoxRef,
+			filterInputRef,
+		},
+	);
 
-  const { buttonProps } = useButton(
-    { ...triggerProps, autoFocus, excludeFromTabOrder, isDisabled },
-    triggerRef
-  );
+	const { buttonProps } = useButton(
+		{ ...triggerProps, autoFocus, excludeFromTabOrder, isDisabled },
+		triggerRef,
+	);
 
-  const { focusProps } = useFocusRing({ autoFocus });
+	const { focusProps } = useFocusRing({ autoFocus });
 
-  const renderedTrigger = trigger({
-    state,
-    triggerProps: mergeProps(buttonProps, focusProps, { 'data-test-id': 'select-trigger' }),
-    valueProps,
-    triggerRef,
-    placeholder,
-  });
+	const renderedTrigger = trigger({
+		state,
+		triggerProps: mergeProps(buttonProps, focusProps, { 'data-test-id': 'select-trigger' }),
+		valueProps,
+		triggerRef,
+		placeholder,
+	});
 
-  return (
-    <div data-test-id={testId}>
-      <VisuallyHidden>
-        <label {...labelProps}>{label}</label>
-      </VisuallyHidden>
+	return (
+		<div data-test-id={testId}>
+			<VisuallyHidden>
+				<label {...labelProps}>{label}</label>
+			</VisuallyHidden>
 
-      {renderedTrigger}
+			{renderedTrigger}
 
-      {state.isOpen && (
-        <SelectPopover state={state} popoverRef={popoverRef} triggerRef={triggerRef}>
-          <SelectListBox
-            {...menuProps}
-            listBoxRef={listBoxRef}
-            filterInputRef={filterInputRef}
-            filterInputProps={filterInputProps}
-            hasFilter={props.hasFilter}
-            state={state}
-          />
-        </SelectPopover>
-      )}
-    </div>
-  );
+			{state.isOpen && (
+				<SelectPopover state={state} popoverRef={popoverRef} triggerRef={triggerRef}>
+					<SelectListBox
+						{...menuProps}
+						listBoxRef={listBoxRef}
+						filterInputRef={filterInputRef}
+						filterInputProps={filterInputProps}
+						hasFilter={props.hasFilter}
+						state={state}
+					/>
+				</SelectPopover>
+			)}
+		</div>
+	);
 };
 
 export { SingleSelect };

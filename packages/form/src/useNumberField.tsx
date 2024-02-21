@@ -13,82 +13,82 @@ import styles from './styles/Form.module.css';
 import { useObjectMemo } from './utils';
 
 type UseNumberFieldProps = AriaNumberFieldProps & {
-  className?: string;
-  'data-test-id'?: string;
-  id?: string;
-  name?: string;
+	className?: string;
+	'data-test-id'?: string;
+	id?: string;
+	name?: string;
 };
 
 const defaultFormatOptions: Intl.NumberFormatOptions = {
-  maximumFractionDigits: 6,
+	maximumFractionDigits: 6,
 };
 
 const useNumberField = ({
-  className: rootClassName,
-  'data-test-id': testId = 'input',
-  id,
-  name,
-  ...otherProps
+	className: rootClassName,
+	'data-test-id': testId = 'input',
+	id,
+	name,
+	...otherProps
 }: UseNumberFieldProps = {}): {
-  fieldErrorProps: ReturnType<typeof useReactAriaNumberField>['errorMessageProps'];
-  formHintProps: ReturnType<typeof useReactAriaNumberField>['descriptionProps'];
-  labelProps: ReturnType<typeof useReactAriaNumberField>['labelProps'];
-  renderNumberField: () => JSX.Element;
+	fieldErrorProps: ReturnType<typeof useReactAriaNumberField>['errorMessageProps'];
+	formHintProps: ReturnType<typeof useReactAriaNumberField>['descriptionProps'];
+	labelProps: ReturnType<typeof useReactAriaNumberField>['labelProps'];
+	renderNumberField: () => JSX.Element;
 } => {
-  // @react-aria's hooks have a state-updating effect somewhere that depends on "formatOptions",
-  // so we need to memoize it to prevent an infinite render loop.
-  const formatOptions = useObjectMemo({
-    ...defaultFormatOptions,
-    ...otherProps.formatOptions,
-  });
-  const { locale } = useLocale();
-  const numberFieldState = useNumberFieldState({ ...otherProps, locale, formatOptions });
-  const inputRef = useRef<HTMLInputElement>(null);
-  const {
-    descriptionProps: formHintProps,
-    errorMessageProps: fieldErrorProps,
-    labelProps,
-    groupProps,
-    inputProps,
-    incrementButtonProps,
-    decrementButtonProps,
-  } = useReactAriaNumberField({ ...otherProps, formatOptions, id }, numberFieldState, inputRef);
+	// @react-aria's hooks have a state-updating effect somewhere that depends on "formatOptions",
+	// so we need to memoize it to prevent an infinite render loop.
+	const formatOptions = useObjectMemo({
+		...defaultFormatOptions,
+		...otherProps.formatOptions,
+	});
+	const { locale } = useLocale();
+	const numberFieldState = useNumberFieldState({ ...otherProps, locale, formatOptions });
+	const inputRef = useRef<HTMLInputElement>(null);
+	const {
+		descriptionProps: formHintProps,
+		errorMessageProps: fieldErrorProps,
+		labelProps,
+		groupProps,
+		inputProps,
+		incrementButtonProps,
+		decrementButtonProps,
+	} = useReactAriaNumberField({ ...otherProps, formatOptions, id }, numberFieldState, inputRef);
 
-  return {
-    fieldErrorProps,
-    formHintProps,
-    labelProps,
-    renderNumberField: () => (
-      <div {...groupProps} className={styles.numberField}>
-        <input
-          {...inputProps}
-          className={cx(styles.formInput, styles['numberField-input'])}
-          data-test-id={testId}
-          name={name}
-          ref={inputRef}
-        />
-        <div className={styles['numberField-stepperContainer']}>
-          <Stepper {...incrementButtonProps}>
-            <Icon name="chevron-up" />
-          </Stepper>
-          <Stepper {...decrementButtonProps}>
-            <Icon name="chevron-down" />
-          </Stepper>
-        </div>
-      </div>
-    ),
-  };
+	return {
+		fieldErrorProps,
+		formHintProps,
+		labelProps,
+		renderNumberField: () => (
+			<div {...groupProps} className={styles.numberField}>
+				<input
+					{...inputProps}
+					className={cx(styles.formInput, styles['numberField-input'])}
+					data-test-id={testId}
+					name={name}
+					ref={inputRef}
+				/>
+				<div className={styles['numberField-stepperContainer']}>
+					<Stepper {...incrementButtonProps}>
+						<Icon name='chevron-up' />
+					</Stepper>
+					<Stepper {...decrementButtonProps}>
+						<Icon name='chevron-down' />
+					</Stepper>
+				</div>
+			</div>
+		),
+	};
 };
 
 const Stepper = (props: AriaButtonProps) => {
-  const buttonRef = useRef<HTMLButtonElement>(null);
-  const { buttonProps } = useButton(props, buttonRef);
+	const buttonRef = useRef<HTMLButtonElement>(null);
+	const { buttonProps } = useButton(props, buttonRef);
 
-  return (
-    <button {...buttonProps} className={styles['numberField-stepper']} ref={buttonRef}>
-      {props.children}
-    </button>
-  );
+	return (
+		<button {...buttonProps} className={styles['numberField-stepper']} ref={buttonRef}>
+			{props.children}
+		</button>
+	);
 };
 
 export { useNumberField };

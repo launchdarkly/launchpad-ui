@@ -8,10 +8,10 @@ import styles from './styles/Modal.module.css';
 import { useAbsoluteFooter } from './utils';
 
 const AbsoluteModalFooter = ({ className, ...rest }: ModalFooterProps) => {
-  const ref = useRef<HTMLDivElement>(null);
-  useAbsoluteFooter(ref);
+	const ref = useRef<HTMLDivElement>(null);
+	useAbsoluteFooter(ref);
 
-  return <ModalFooter ref={ref} className={cx(className, styles.absoluteFooter)} {...rest} />;
+	return <ModalFooter ref={ref} className={cx(className, styles.absoluteFooter)} {...rest} />;
 };
 
 export { AbsoluteModalFooter };

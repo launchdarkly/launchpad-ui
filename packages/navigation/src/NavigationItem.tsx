@@ -9,24 +9,24 @@ import type { NavItemWithTooltipProps } from './NavItemWithTooltip';
 // to `NavLink`, so we need to omit their `onClick` implementations for type
 // correctness.
 type NavigationItemProps = Omit<NavItemProps, 'onClick'> &
-  Omit<NavItemWithTooltipProps, 'onClick'> & {
-    tooltip?: boolean | ReactElement;
-  } & {
-    onClick?(e: MouseEvent, state: { collapsed: boolean }): void;
-  };
+	Omit<NavItemWithTooltipProps, 'onClick'> & {
+		tooltip?: boolean | ReactElement;
+	} & {
+		onClick?(e: MouseEvent, state: { collapsed: boolean }): void;
+	};
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 const NavigationItem = (_props: NavigationItemProps) => {
-  return null;
+	return null;
 };
 
 NavigationItem.getCollectionNode = function* (props: NavigationItemProps) {
-  yield {
-    type: 'item',
-    props,
-    'aria-label': props.name,
-    hasChildNodes: false,
-  };
+	yield {
+		type: 'item',
+		props,
+		'aria-label': props.name,
+		hasChildNodes: false,
+	};
 };
 
 export { NavigationItem };

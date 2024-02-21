@@ -1,8 +1,8 @@
 export type { MultiSelectProps, MultiSelectTriggerProps, MultiSelectState } from './MultiSelect';
 export type {
-  SingleSelectProps,
-  SingleSelectTriggerProps,
-  SingleSelectState,
+	SingleSelectProps,
+	SingleSelectTriggerProps,
+	SingleSelectState,
 } from './SingleSelect';
 export type { SelectItemProps } from './SelectItem';
 export type { SelectSectionProps } from './SelectSection';

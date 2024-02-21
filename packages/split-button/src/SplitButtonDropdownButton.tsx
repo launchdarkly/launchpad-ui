@@ -10,43 +10,43 @@ import styles from './styles/SplitButton.module.css';
 type SplitButtonDropdownButtonProps = Omit<DropdownButtonProps, 'kind' | 'size' | 'children'>;
 
 const SplitButtonDropdownButton = forwardRef<HTMLButtonElement, SplitButtonDropdownButtonProps>(
-  (props, ref) => {
-    const {
-      disabled,
-      className,
-      'aria-label': ariaLabel,
-      'data-test-id': testId = 'split-button-dropdown-button',
-      ...rest
-    } = props;
-    const { disabled: parentDisabled, kind, size } = useContext(SplitButtonContext);
+	(props, ref) => {
+		const {
+			disabled,
+			className,
+			'aria-label': ariaLabel,
+			'data-test-id': testId = 'split-button-dropdown-button',
+			...rest
+		} = props;
+		const { disabled: parentDisabled, kind, size } = useContext(SplitButtonContext);
 
-    const isDisabled = parentDisabled || disabled;
+		const isDisabled = parentDisabled || disabled;
 
-    const label = useMemo(() => {
-      let value = 'More options';
+		const label = useMemo(() => {
+			let value = 'More options';
 
-      if (isDisabled) {
-        value = 'These options are unavailable';
-      } else if (ariaLabel) {
-        value = ariaLabel;
-      }
+			if (isDisabled) {
+				value = 'These options are unavailable';
+			} else if (ariaLabel) {
+				value = ariaLabel;
+			}
 
-      return value;
-    }, [ariaLabel, isDisabled]);
+			return value;
+		}, [ariaLabel, isDisabled]);
 
-    return (
-      <DropdownButton
-        {...rest}
-        ref={ref}
-        className={cx(styles.SplitButtonDrop, className)}
-        kind={kind}
-        disabled={isDisabled}
-        size={size}
-        data-test-id={testId}
-        aria-label={label}
-      />
-    );
-  }
+		return (
+			<DropdownButton
+				{...rest}
+				ref={ref}
+				className={cx(styles.SplitButtonDrop, className)}
+				kind={kind}
+				disabled={isDisabled}
+				size={size}
+				data-test-id={testId}
+				aria-label={label}
+			/>
+		);
+	},
 );
 
 SplitButtonDropdownButton.displayName = 'SplitButtonDropdownButton';

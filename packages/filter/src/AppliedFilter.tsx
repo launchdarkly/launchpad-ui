@@ -9,66 +9,66 @@ import { FilterMenu } from './FilterMenu';
 const SEARCH_INPUT_THRESHOLD = 4;
 
 type AppliedFilterProps = {
-  searchValue?: string;
-  onSearchChange?(event: ChangeEvent<HTMLInputElement>): void;
-  onClearFilter?(): void;
-  searchPlaceholder?: string;
-  name?: ReactNode;
-  description: ReactNode;
-  options: FilterOption[];
-  className?: string;
-  onStateChange?({ isOpen }: { isOpen?: boolean }): void;
-  onSelect?(item: FilterOption): void;
-  isEmpty?: boolean;
-  isLoading?: boolean;
-  onClickFilterButton?(): void;
-  searchAriaLabel?: string;
-  searchId?: string;
-  'data-test-id'?: string;
+	searchValue?: string;
+	onSearchChange?(event: ChangeEvent<HTMLInputElement>): void;
+	onClearFilter?(): void;
+	searchPlaceholder?: string;
+	name?: ReactNode;
+	description: ReactNode;
+	options: FilterOption[];
+	className?: string;
+	onStateChange?({ isOpen }: { isOpen?: boolean }): void;
+	onSelect?(item: FilterOption): void;
+	isEmpty?: boolean;
+	isLoading?: boolean;
+	onClickFilterButton?(): void;
+	searchAriaLabel?: string;
+	searchId?: string;
+	'data-test-id'?: string;
 };
 
 const AppliedFilter = ({
-  searchValue,
-  onSearchChange,
-  searchPlaceholder,
-  name,
-  description,
-  options,
-  className,
-  isEmpty,
-  isLoading,
-  onClickFilterButton,
-  onClearFilter,
-  searchAriaLabel,
-  searchId,
-  'data-test-id': testId = 'applied-filter',
-  ...props
+	searchValue,
+	onSearchChange,
+	searchPlaceholder,
+	name,
+	description,
+	options,
+	className,
+	isEmpty,
+	isLoading,
+	onClickFilterButton,
+	onClearFilter,
+	searchAriaLabel,
+	searchId,
+	'data-test-id': testId = 'applied-filter',
+	...props
 }: AppliedFilterProps) => {
-  const enableSearch =
-    onSearchChange && (!!searchValue || options.length > SEARCH_INPUT_THRESHOLD || !isEmpty);
+	const enableSearch =
+		onSearchChange && (!!searchValue || options.length > SEARCH_INPUT_THRESHOLD || !isEmpty);
 
-  return (
-    <Dropdown targetClassName={className} placement="bottom-start" enableArrow={false} {...props}>
-      <AppliedFilterButton
-        data-test-id={testId}
-        name={name}
-        onClickFilterButton={onClickFilterButton}
-      >
-        {description}
-      </AppliedFilterButton>
-      <FilterMenu
-        options={options}
-        searchValue={searchValue}
-        searchPlaceholder={searchPlaceholder}
-        enableSearch={enableSearch}
-        searchAriaLabel={searchAriaLabel}
-        searchId={searchId}
-        onSearchChange={onSearchChange}
-        onClearFilter={onClearFilter}
-        isLoading={isLoading}
-      />
-    </Dropdown>
-  );
+	return (
+		<Dropdown targetClassName={className} placement='bottom-start' enableArrow={false} {...props}>
+			<AppliedFilterButton
+				data-test-id={testId}
+				name={name}
+				onClickFilterButton={onClickFilterButton}
+			>
+				{description}
+			</AppliedFilterButton>
+			<FilterMenu
+				options={options}
+				searchValue={searchValue}
+				searchPlaceholder={searchPlaceholder}
+				enableSearch={enableSearch}
+				searchAriaLabel={searchAriaLabel}
+				searchId={searchId}
+				onSearchChange={onSearchChange}
+				onClearFilter={onClearFilter}
+				isLoading={isLoading}
+			/>
+		</Dropdown>
+	);
 };
 
 export type { AppliedFilterProps };

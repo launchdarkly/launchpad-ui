@@ -5,10 +5,10 @@ import type { TagGroupProps, TagListProps, TagProps as AriaTagProps } from 'reac
 import { cva } from 'class-variance-authority';
 import { forwardRef } from 'react';
 import {
-  Tag as AriaTag,
-  TagGroup as AriaTagGroup,
-  TagList as AriaTagList,
-  composeRenderProps,
+	Tag as AriaTag,
+	TagGroup as AriaTagGroup,
+	TagList as AriaTagList,
+	composeRenderProps,
 } from 'react-aria-components';
 
 import { IconButton } from './IconButton';
@@ -17,31 +17,31 @@ import styles from './styles/TagGroup.module.css';
 const group = cva(styles.group);
 const list = cva(styles.list);
 const tag = cva(styles.tag, {
-  variants: {
-    size: {
-      small: styles.small,
-      medium: styles.medium,
-    },
-    variant: {
-      default: styles.default,
-      success: styles.success,
-      warning: styles.warning,
-      error: styles.error,
-      beta: styles.beta,
-      federal: styles.federal,
-      new: styles.new,
-    },
-  },
-  defaultVariants: {
-    size: 'medium',
-    variant: 'default',
-  },
+	variants: {
+		size: {
+			small: styles.small,
+			medium: styles.medium,
+		},
+		variant: {
+			default: styles.default,
+			success: styles.success,
+			warning: styles.warning,
+			error: styles.error,
+			beta: styles.beta,
+			federal: styles.federal,
+			new: styles.new,
+		},
+	},
+	defaultVariants: {
+		size: 'medium',
+		variant: 'default',
+	},
 });
 
 type TagProps = AriaTagProps & VariantProps<typeof tag>;
 
 const _TagGroup = ({ className, ...props }: TagGroupProps, ref: ForwardedRef<HTMLDivElement>) => {
-  return <AriaTagGroup {...props} ref={ref} className={group({ className })} />;
+	return <AriaTagGroup {...props} ref={ref} className={group({ className })} />;
 };
 
 /**
@@ -52,15 +52,15 @@ const _TagGroup = ({ className, ...props }: TagGroupProps, ref: ForwardedRef<HTM
 const TagGroup = forwardRef(_TagGroup);
 
 const _TagList = <T extends object>(props: TagListProps<T>, ref: ForwardedRef<HTMLDivElement>) => {
-  return (
-    <AriaTagList
-      {...props}
-      ref={ref}
-      className={composeRenderProps(props.className, (className, renderProps) =>
-        list({ ...renderProps, className })
-      )}
-    />
-  );
+	return (
+		<AriaTagList
+			{...props}
+			ref={ref}
+			className={composeRenderProps(props.className, (className, renderProps) =>
+				list({ ...renderProps, className }),
+			)}
+		/>
+	);
 };
 
 /**
@@ -69,36 +69,36 @@ const _TagList = <T extends object>(props: TagListProps<T>, ref: ForwardedRef<HT
 const TagList = forwardRef(_TagList);
 
 const _Tag = (
-  { size = 'medium', variant = 'default', children, ...props }: TagProps,
-  ref: ForwardedRef<HTMLDivElement>
+	{ size = 'medium', variant = 'default', children, ...props }: TagProps,
+	ref: ForwardedRef<HTMLDivElement>,
 ) => {
-  const textValue = typeof children === 'string' ? children : undefined;
+	const textValue = typeof children === 'string' ? children : undefined;
 
-  return (
-    <AriaTag
-      textValue={textValue}
-      {...props}
-      ref={ref}
-      className={composeRenderProps(props.className, (className, renderProps) =>
-        tag({ ...renderProps, size, variant, className })
-      )}
-    >
-      {({ allowsRemoving }) => (
-        <>
-          {children}
-          {allowsRemoving && (
-            <IconButton
-              aria-label="Remove"
-              size="small"
-              variant="minimal"
-              icon="cancel-circle-outline"
-              slot="remove"
-            />
-          )}
-        </>
-      )}
-    </AriaTag>
-  );
+	return (
+		<AriaTag
+			textValue={textValue}
+			{...props}
+			ref={ref}
+			className={composeRenderProps(props.className, (className, renderProps) =>
+				tag({ ...renderProps, size, variant, className }),
+			)}
+		>
+			{({ allowsRemoving }) => (
+				<>
+					{children}
+					{allowsRemoving && (
+						<IconButton
+							aria-label='Remove'
+							size='small'
+							variant='minimal'
+							icon='cancel-circle-outline'
+							slot='remove'
+						/>
+					)}
+				</>
+			)}
+		</AriaTag>
+	);
 };
 
 /**

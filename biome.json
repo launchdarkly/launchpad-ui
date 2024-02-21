@@ -14,7 +14,7 @@
 		"enabled": true
 	},
 	"formatter": {
-		"enabled": false,
+		"enabled": true,
 		"lineWidth": 100
 	},
 	"linter": {

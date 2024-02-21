@@ -1,8 +1,8 @@
 export type { MultiSelectProps } from './MultiSelect';
 export type { MultiSelectState } from './useMultiSelectState';
 export type {
-  MultiSelectTriggerProps,
-  MultiSelectTriggerChildrenState,
+	MultiSelectTriggerProps,
+	MultiSelectTriggerChildrenState,
 } from './MultiSelectTrigger';
 
 export { MultiSelect } from './MultiSelect';

@@ -12,24 +12,24 @@ const radio = cva(styles.radio);
 const circle = cva(styles.circle);
 
 const _Radio = ({ children, ...props }: RadioProps, ref: ForwardedRef<HTMLLabelElement>) => {
-  return (
-    <AriaRadio
-      {...props}
-      ref={ref}
-      className={composeRenderProps(props.className, (className, renderProps) =>
-        radio({ ...renderProps, className })
-      )}
-    >
-      {({ isSelected }) => (
-        <>
-          <div className={circle()}>
-            {isSelected ? <Icon name="circle" className={styles.icon} /> : null}
-          </div>
-          {children}
-        </>
-      )}
-    </AriaRadio>
-  );
+	return (
+		<AriaRadio
+			{...props}
+			ref={ref}
+			className={composeRenderProps(props.className, (className, renderProps) =>
+				radio({ ...renderProps, className }),
+			)}
+		>
+			{({ isSelected }) => (
+				<>
+					<div className={circle()}>
+						{isSelected ? <Icon name='circle' className={styles.icon} /> : null}
+					</div>
+					{children}
+				</>
+			)}
+		</AriaRadio>
+	);
 };
 
 /**
