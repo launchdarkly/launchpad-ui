@@ -16,7 +16,7 @@ const meta: Meta<typeof Select> = {
   },
   decorators: [
     (Story: StoryFn) => (
-      <div style={{ width: vars.size[240] }}>
+      <div style={{ width: vars.size[240], height: vars.size[240] }}>
         <Story />
       </div>
     ),
