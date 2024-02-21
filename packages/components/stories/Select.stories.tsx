@@ -13,13 +13,6 @@ const meta: Meta<typeof Select> = {
     status: {
       type: import.meta.env.STORYBOOK_PACKAGE_STATUS__COMPONENTS,
     },
-    a11y: {
-      options: {
-        rules: {
-          'aria-hidden-focus': { enabled: false },
-        },
-      },
-    },
   },
   decorators: [
     (Story: StoryFn) => (
