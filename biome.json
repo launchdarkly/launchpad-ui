@@ -6,7 +6,8 @@
 			"playwright-report/**",
 			"storybook-static/**",
 			"test-results/**",
-			"coverage/**"
+			"coverage/**",
+			"build/**"
 		],
 		"ignoreUnknown": true
 	},
@@ -51,7 +52,7 @@
 	},
 	"overrides": [
 		{
-			"include": ["*.stories.tsx", "apps/remix/app"],
+			"include": ["*.stories.tsx", "apps/remix/app", "*.config.*", "playwright"],
 			"linter": {
 				"rules": {
 					"style": {
