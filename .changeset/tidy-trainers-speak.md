@@ -3,4 +3,4 @@
 "@launchpad-ui/tokens": patch
 ---
 
-Add `ListBox` and `Select`
+Add `ListBox`, `Select`, and `ComboBox`

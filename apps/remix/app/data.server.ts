@@ -41,6 +41,7 @@ export async function getComponents() {
     { to: 'rac/button', name: 'RAC Button', role: 'button' },
     { to: 'rac/checkbox', name: 'RAC Checkbox', role: 'checkbox' },
     { to: 'rac/checkbox-group', name: 'RAC Checkbox Group', role: 'group' },
+    { to: 'rac/combo-box', name: 'RAC ComboBox', role: 'combobox' },
     { to: 'rac/group', name: 'RAC Group', role: 'group' },
     { to: 'rac/link', name: 'RAC Link', role: 'link' },
     { to: 'rac/link-button', name: 'RAC LinkButton', role: 'link' },
