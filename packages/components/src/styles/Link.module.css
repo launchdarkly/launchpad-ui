@@ -1,0 +1,38 @@
+.base {
+}
+
+.link {
+  cursor: pointer;
+  outline: none;
+  border-radius: var(--lp-border-radius-regular);
+  text-decoration: none;
+
+  &[data-hovered] {
+    text-decoration: underline;
+  }
+
+  &[data-pressed] {
+    color: var(--lp-color-text-interactive-active);
+  }
+
+  &[data-disabled] {
+    cursor: not-allowed;
+    color: var(--lp-color-text-interactive-disabled);
+  }
+
+  &[data-focus-visible] {
+    outline: 2px solid var(--lp-color-shadow-interactive-focus);
+    outline-offset: 2px;
+    z-index: 1;
+  }
+}
+
+.default {
+  composes: link;
+  color: var(--lp-color-text-interactive-base);
+}
+
+.subtle {
+  composes: link;
+  color: var(--lp-color-text-ui-secondary);
+}
