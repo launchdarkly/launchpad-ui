@@ -1,4 +1,3 @@
-/* eslint-disable react-hooks/rules-of-hooks */
 import type { StoryObj } from '@storybook/react';
 
 import { CopyToClipboard } from '@launchpad-ui/clipboard';

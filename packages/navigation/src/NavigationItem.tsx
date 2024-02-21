@@ -15,7 +15,6 @@ type NavigationItemProps = Omit<NavItemProps, 'onClick'> &
 		onClick?(e: MouseEvent, state: { collapsed: boolean }): void;
 	};
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const NavigationItem = (_props: NavigationItemProps) => {
 	return null;
 };

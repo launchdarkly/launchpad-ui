@@ -1,4 +1,3 @@
-/* eslint-disable import/namespace */
 import type { Meta, ReactRenderer } from '@storybook/react';
 import type { ArgsStoryFn } from '@storybook/types';
 

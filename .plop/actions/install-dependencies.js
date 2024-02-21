@@ -16,7 +16,7 @@ function installDependencies(_, config) {
 	});
 }
 
-module.exports = function (plop) {
+module.exports = (plop) => {
 	plop.setDefaultInclude({ actionTypes: true });
 	plop.setActionType('installDependencies', installDependencies);
 };

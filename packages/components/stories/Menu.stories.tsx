@@ -1,4 +1,3 @@
-/* eslint-disable react-hooks/rules-of-hooks */
 import type { Meta, StoryFn, StoryObj } from '@storybook/react';
 import type { Selection as AriaSelection } from 'react-aria-components';
 

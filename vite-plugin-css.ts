@@ -32,7 +32,6 @@ const cssImport = (): Plugin => {
 			}
 
 			for (const file of files) {
-				// eslint-disable-next-line @typescript-eslint/ban-ts-comment
 				// @ts-ignore
 				if (!bundle[file].isEntry) {
 					continue;

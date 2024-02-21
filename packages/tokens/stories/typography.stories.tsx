@@ -1,5 +1,3 @@
-/* eslint-disable jsx-a11y/label-has-associated-control */
-
 import { vars } from '@launchpad-ui/vars';
 
 export default {

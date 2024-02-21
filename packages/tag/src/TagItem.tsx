@@ -9,7 +9,6 @@ type TagItemProps<T extends object, P extends ElementType> = ItemProps<T> & {
 };
 
 const TagItem = <T extends object, P extends ElementType = 'div'>(
-	// eslint-disable-next-line @typescript-eslint/no-unused-vars
 	_props: TagItemProps<T, P> & Omit<ComponentPropsWithoutRef<P>, keyof TagItemProps<T, P>>,
 ) => {
 	return null;
@@ -17,7 +16,7 @@ const TagItem = <T extends object, P extends ElementType = 'div'>(
 
 TagItem.getCollectionNode = function* getCollectionNode<T extends object>(
 	props: ItemProps<T>,
-	// eslint-disable-next-line @typescript-eslint/no-explicit-any
+	// biome-ignore lint/suspicious/noExplicitAny: <explanation>
 	context: any,
 ) {
 	const rendered = props.title || props.children;

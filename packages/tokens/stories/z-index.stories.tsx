@@ -15,14 +15,12 @@ export default {
 
 export const Example: StoryObj = {
 	render: () => {
-		/* eslint-disable react-hooks/rules-of-hooks */
 		const [showModal, setShowModal] = useState(true);
 		const [showDrawer, setShowDrawer] = useState(true);
 		const [isDropdownOpen, setIsDropdownOpen] = useState(true);
 		const [toasts, setToasts] = useState<ToastRecord[]>([
 			{ _id: '1', kind: 'success', content: 'z-index-700' },
 		]);
-		/* eslint-enable react-hooks/rules-of-hooks */
 
 		const button = <Button onClick={() => setShowDrawer(true)}>Open drawer</Button>;
 		const modalButton = <Button onClick={() => setShowModal(true)}>Open modal</Button>;

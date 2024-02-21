@@ -26,7 +26,7 @@ StyleDictionary.registerFormat({
 
 StyleDictionary.registerFormat({
 	name: 'css/theme-variables',
-	formatter: function ({ dictionary, file, options }) {
+	formatter: ({ dictionary, file, options }) => {
 		const darkTokens = themeTokens(dictionary, 'dark');
 		const defaultTokens = StyleDictionary.formatHelpers.formattedVariables({
 			format: 'css',

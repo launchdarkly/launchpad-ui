@@ -129,13 +129,12 @@ const TagGroup = <T extends object>(props: TagGroupProps<T>) => {
 	}, [maxRows, setTagState, containerRef, state.collection.size]);
 
 	useResizeObserver({ ref: containerRef, onResize: updateVisibleTagCount });
-	// eslint-disable-next-line react-hooks/exhaustive-deps
 	useLayoutEffect(updateVisibleTagCount, [children]);
 
+	// biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
 	useEffect(() => {
 		// Recalculate visible tags when fonts are loaded.
 		document.fonts?.ready.then(() => updateVisibleTagCount());
-		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
 
 	let visibleTags = [...state.collection];

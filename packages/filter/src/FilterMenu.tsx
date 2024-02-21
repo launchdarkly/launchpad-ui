@@ -7,7 +7,7 @@ import { Menu, MenuDivider, MenuItem, MenuSearch } from '@launchpad-ui/menu';
 
 import styles from './styles/Filter.module.css';
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
+// biome-ignore lint/suspicious/noExplicitAny: <explanation>
 type FilterOption<T = any> = {
 	name?: ReactNode;
 	isDisabled?: boolean;
@@ -83,6 +83,7 @@ const FilterMenu = ({
 				)}
 				{filterOptions.map((option, index) => {
 					if (option.isDivider) {
+						// biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
 						return <MenuDivider key={`divider-${index}`} />;
 					}
 					return (

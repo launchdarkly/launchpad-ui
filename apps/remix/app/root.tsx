@@ -89,6 +89,7 @@ export function ErrorBoundary() {
 
 	// when true, this is what used to go to `CatchBoundary`
 	if (isRouteErrorResponse(error)) {
+		// biome-ignore lint/suspicious/noImplicitAnyLet: <explanation>
 		let message;
 		switch (error.status) {
 			case 401:

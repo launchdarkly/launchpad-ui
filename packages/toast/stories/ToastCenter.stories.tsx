@@ -1,5 +1,4 @@
 import type { StoryObj } from '@storybook/react';
-/* eslint-disable react-hooks/rules-of-hooks */
 import type { ToastProps, ToastRecord } from '../src';
 
 import { Button } from '@launchpad-ui/button';

@@ -1,4 +1,3 @@
-/* eslint-disable react-hooks/rules-of-hooks */
 import type { Meta, StoryFn, StoryObj } from '@storybook/react';
 
 import { Icon } from '@launchpad-ui/icons';

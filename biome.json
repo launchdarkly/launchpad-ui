@@ -18,9 +18,23 @@
 		"lineWidth": 100
 	},
 	"linter": {
-		"enabled": false,
+		"enabled": true,
 		"rules": {
-			"recommended": true
+			"recommended": true,
+			"correctness": {
+				"noUnusedVariables": "error",
+				"useHookAtTopLevel": "error"
+			},
+			"style": {
+				"noDefaultExport": "error",
+				"noNamespace": "error",
+				"useFragmentSyntax": "error"
+			},
+			"nursery": {
+				"noUnusedImports": "error",
+				"useExportType": "error",
+				"useImportType": "error"
+			}
 		}
 	},
 	"javascript": {
@@ -34,5 +48,17 @@
 		"clientKind": "git",
 		"useIgnoreFile": true,
 		"defaultBranch": "main"
-	}
+	},
+	"overrides": [
+		{
+			"include": ["*.stories.tsx", "apps/remix/app"],
+			"linter": {
+				"rules": {
+					"style": {
+						"noDefaultExport": "off"
+					}
+				}
+			}
+		}
+	]
 }

@@ -48,7 +48,6 @@ const useMultiSelectListState = <T extends object>(
 			: null;
 
 	if (missingKeys.length) {
-		// eslint-disable-next-line no-console
 		console.warn(
 			`Select: Keys "${missingKeys.join(
 				', ',

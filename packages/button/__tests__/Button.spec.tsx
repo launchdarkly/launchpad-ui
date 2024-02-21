@@ -16,7 +16,6 @@ describe('Button', () => {
 				<a href='/'>Default Button Link</a>
 			</Button>,
 		);
-		// eslint-disable-next-line testing-library/no-container, testing-library/no-node-access
 		expect(container.querySelector('a')).not.toBeNull();
 	});
 
@@ -54,7 +53,6 @@ describe('Button', () => {
 
 	it('can render an icon', async () => {
 		const { container } = render(<Button kind='primary' icon={<Icon name='add' />} />);
-		// eslint-disable-next-line testing-library/no-container, testing-library/no-node-access
 		expect(container.querySelector('svg')).not.toBeNull();
 	});
 

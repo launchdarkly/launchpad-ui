@@ -5,7 +5,6 @@ import { Children } from 'react';
 
 type SelectSectionProps<T extends object> = SectionProps<T>;
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const Section = <T extends object>(_: SelectSectionProps<T>) => {
 	return null;
 };

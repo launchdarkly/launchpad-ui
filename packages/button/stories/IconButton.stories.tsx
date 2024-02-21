@@ -10,7 +10,7 @@ import './Button.stories.css';
 const buttonTemplateWithStates: Decorator = (storyComponent, context) => {
 	const { viewMode, args } = context;
 
-	// eslint-disable-next-line @typescript-eslint/no-explicit-any
+	// biome-ignore lint/suspicious/noExplicitAny: <explanation>
 	const storyArgs = args as any;
 	const buttonLabel = storyArgs?.children || '';
 

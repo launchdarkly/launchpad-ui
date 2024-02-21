@@ -196,7 +196,7 @@ const ItemVirtualizer = <T extends number | string>(props: ItemVirtualizerProps<
 		searchElement,
 		itemHeight = 31.5,
 		menuItemClassName,
-		items: items,
+		items,
 		focusManager,
 		onSelect,
 	} = props;

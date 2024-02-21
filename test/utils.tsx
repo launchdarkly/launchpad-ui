@@ -1,4 +1,3 @@
-/* eslint-disable import/export */
 import type { ReactElement } from 'react';
 
 import { cleanup, render } from '@testing-library/react';
@@ -15,7 +14,6 @@ const customRender = (ui: ReactElement, options = {}): ReturnType<typeof render>
 		...options,
 	});
 
-// eslint-disable-next-line no-restricted-syntax
 export * from '@testing-library/react';
 export { default as userEvent } from '@testing-library/user-event';
 // override render export

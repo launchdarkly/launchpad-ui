@@ -88,7 +88,7 @@ const WithImperativeHandleWrapper = () => {
 	};
 
 	return (
-		// eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions
+		// biome-ignore lint/a11y/useKeyWithClickEvents: <explanation>
 		<div
 			onClick={handleClick}
 			style={{ border: '3px solid #efefef', padding: '1.25rem', maxWidth: '500px' }}

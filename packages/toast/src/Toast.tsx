@@ -23,11 +23,11 @@ const Toast = ({
 	'data-test-id': testId = 'toast',
 	...rest
 }: ToastProps) => {
+	// biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
 	useEffect(() => {
 		setTimeout(() => {
 			onDismiss();
 		}, 6000);
-		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
 
 	return (

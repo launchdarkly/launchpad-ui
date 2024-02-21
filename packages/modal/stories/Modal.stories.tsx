@@ -1,4 +1,3 @@
-/* eslint-disable react-hooks/rules-of-hooks */
 import type { StoryFn, StoryObj } from '@storybook/react';
 
 import { Button } from '@launchpad-ui/button';

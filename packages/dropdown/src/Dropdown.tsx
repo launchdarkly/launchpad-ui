@@ -60,10 +60,10 @@ const Dropdown = <T extends string | object | number>(props: DropdownProps<T>) =
 		}
 	}, [isOpen, hasOpened]);
 
+	// biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
 	useEffect(() => {
 		setHasOpened(isOpen);
 		onStateChange?.({ isOpen });
-		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [isOpen]);
 
 	const renderTrigger = () => {

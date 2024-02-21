@@ -4,7 +4,6 @@ import { expect, test } from '@playwright/test';
 test.describe.configure({ mode: 'parallel' });
 
 test.describe('Storybook a11y', async () => {
-	// eslint-disable-next-line @typescript-eslint/no-var-requires
 	const stories = require('./stories.json');
 	const themes = ['default', 'dark'];
 
@@ -26,7 +25,6 @@ test.describe('Storybook a11y', async () => {
 				});
 
 				const storyContext = await page.evaluate(
-					// eslint-disable-next-line @typescript-eslint/ban-ts-comment
 					// @ts-ignore
 					({ storyId }) => globalThis.__getContext(storyId),
 					{

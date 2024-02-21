@@ -1,11 +1,11 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
 const path = require('path');
 
 const fg = require('fast-glob');
 
-const cssPaths = fg.sync([path.resolve(__dirname, `packages/**/src/**/*.css`), '!**/node_modules']);
+const cssPaths = fg.sync([path.resolve(__dirname, 'packages/**/src/**/*.css'), '!**/node_modules']);
 
 module.exports = {
+	allowEmptyInput: true,
 	extends: ['stylelint-config-standard'],
 	plugins: ['stylelint-value-no-unknown-custom-properties'],
 	rules: {

@@ -1,5 +1,4 @@
 import type { StoryObj } from '@storybook/react';
-/* eslint-disable react-hooks/rules-of-hooks */
 import type { SnackbarProps, SnackbarRecord } from '../src';
 
 import { Button } from '@launchpad-ui/button';
@@ -29,7 +28,7 @@ const makeSnackbar = (id: string) => {
 		kind,
 		description: 'This is a message.',
 		cta: (
-			<a href='/' target='_blank'>
+			<a href='/' target='_blank' rel='noreferrer'>
 				Link
 			</a>
 		),

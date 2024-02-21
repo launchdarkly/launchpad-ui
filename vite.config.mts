@@ -8,7 +8,6 @@ import browserslist from 'browserslist';
 import { browserslistToTargets } from 'lightningcss';
 import { PluginPure } from 'rollup-plugin-pure';
 import { defineConfig } from 'vite';
-// eslint-disable-next-line import/no-unresolved
 import { configDefaults } from 'vitest/config';
 
 import tsconfig from './tsconfig.json';

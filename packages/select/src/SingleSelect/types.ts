@@ -6,7 +6,7 @@ type SingleSelection = {
 	/** The initial selected keys in the collection (uncontrolled). */
 	defaultSelectedKey?: Key;
 	/** Handler that is called when the selection changes. */
-	// eslint-disable-next-line @typescript-eslint/no-explicit-any
+	// biome-ignore lint/suspicious/noExplicitAny: <explanation>
 	onSelectionChange?: (key: Key) => any;
 };
 

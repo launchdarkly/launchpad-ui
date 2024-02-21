@@ -56,7 +56,6 @@ const Avatar = ({
 						processImageSource(res);
 					}
 				})
-				// eslint-disable-next-line @typescript-eslint/no-empty-function
 				.catch(() => {});
 		} else {
 			setImageSource('');
