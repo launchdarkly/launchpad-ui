@@ -1,7 +1,8 @@
+import type { VariantProps } from 'class-variance-authority';
 import type { ForwardedRef } from 'react';
 import type {
   MenuProps as AriaMenuProps,
-  MenuItemProps,
+  MenuItemProps as AriaMenuItemProps,
   MenuTriggerProps,
   SubmenuTriggerProps,
 } from 'react-aria-components';
@@ -19,10 +20,21 @@ import {
 
 import styles from './styles/Menu.module.css';
 
-type MenuProps<T> = AriaMenuProps<T>;
-
 const menu = cva(styles.menu);
-const item = cva(styles.item);
+const item = cva(styles.item, {
+  variants: {
+    variant: {
+      default: styles.default,
+      destructive: styles.destructive,
+    },
+  },
+  defaultVariants: {
+    variant: 'default',
+  },
+});
+
+type MenuProps<T> = AriaMenuProps<T>;
+type MenuItemProps<T> = AriaMenuItemProps<T> & VariantProps<typeof item>;
 
 const _Menu = <T extends object>(
   { className, ...props }: MenuProps<T>,
@@ -39,7 +51,7 @@ const _Menu = <T extends object>(
 const Menu = forwardRef(_Menu);
 
 const _MenuItem = <T extends object>(
-  props: MenuItemProps<T>,
+  { variant = 'default', ...props }: MenuItemProps<T>,
   ref: ForwardedRef<HTMLDivElement>
 ) => {
   return (
@@ -47,7 +59,7 @@ const _MenuItem = <T extends object>(
       {...props}
       ref={ref}
       className={composeRenderProps(props.className, (className, renderProps) =>
-        item({ ...renderProps, className })
+        item({ ...renderProps, variant, className })
       )}
     >
       {composeRenderProps(props.children, (children, { selectionMode, isSelected, hasSubmenu }) => (
