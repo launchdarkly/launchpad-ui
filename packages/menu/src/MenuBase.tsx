@@ -1,5 +1,5 @@
-import type { MenuProps } from './Menu';
 import type { ComponentPropsWithRef } from 'react';
+import type { MenuProps } from './Menu';
 
 import { cx } from 'classix';
 import { forwardRef } from 'react';

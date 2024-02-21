@@ -1,5 +1,5 @@
-import type { TextFieldProps } from './TextField';
 import type { FocusEvent } from 'react';
+import type { TextFieldProps } from './TextField';
 
 import { cx } from 'classix';
 import { forwardRef, useState } from 'react';

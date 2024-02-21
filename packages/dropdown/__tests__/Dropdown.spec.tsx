@@ -2,7 +2,7 @@ import type { RefObject } from 'react';
 
 import { Menu, MenuItem } from '@launchpad-ui/menu';
 import { useRef } from 'react';
-import { it, expect, describe, vi } from 'vitest';
+import { describe, expect, it, vi } from 'vitest';
 
 import { render, screen, userEvent } from '../../../test/utils';
 import { Dropdown, DropdownButton } from '../src';

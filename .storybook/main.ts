@@ -1,7 +1,7 @@
 import type { StorybookConfig } from '@storybook/react-vite';
 
-import path from 'path';
 import fs from 'fs';
+import path from 'path';
 import fg from 'fast-glob';
 import { mergeConfig } from 'vite';
 import turbosnap from 'vite-plugin-turbosnap';

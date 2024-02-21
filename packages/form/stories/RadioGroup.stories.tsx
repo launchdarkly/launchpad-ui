@@ -1,6 +1,6 @@
 import type { StoryObj } from '@storybook/react';
 
-import { RadioGroup, Radio, Label } from '../src';
+import { Label, Radio, RadioGroup } from '../src';
 
 export default {
   component: RadioGroup,

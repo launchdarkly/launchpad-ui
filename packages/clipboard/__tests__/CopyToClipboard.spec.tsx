@@ -2,7 +2,7 @@ import type { CopyToClipboardProps } from '../src';
 import type { CopyToClipboardHandleRef } from '../src/CopyToClipboard';
 
 import { useRef } from 'react';
-import { it, expect, describe, vi } from 'vitest';
+import { describe, expect, it, vi } from 'vitest';
 
 import { render, screen, userEvent, waitFor } from '../../../test/utils';
 import { CopyToClipboard } from '../src';

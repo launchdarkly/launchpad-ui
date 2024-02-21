@@ -1,7 +1,7 @@
-import { it, expect, describe } from 'vitest';
+import { describe, expect, it } from 'vitest';
 
 import { render, screen } from '../../../test/utils';
-import { Checkbox, CheckboxGroup, Label, Text, FieldError } from '../src';
+import { Checkbox, CheckboxGroup, FieldError, Label, Text } from '../src';
 
 describe('CheckboxGroup', () => {
   it('renders', () => {

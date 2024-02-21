@@ -1,6 +1,6 @@
 import { CopyToClipboard } from '@launchpad-ui/clipboard';
 import { vars } from '@launchpad-ui/vars';
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 export default {
   title: 'Tokens/Colors',

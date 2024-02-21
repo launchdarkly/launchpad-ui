@@ -1,5 +1,5 @@
-import type { CopyToClipboardProps } from './CopyToClipboard';
 import type { ButtonHTMLAttributes, ReactNode } from 'react';
+import type { CopyToClipboardProps } from './CopyToClipboard';
 
 import { Icon } from '@launchpad-ui/icons';
 import { cx } from 'classix';

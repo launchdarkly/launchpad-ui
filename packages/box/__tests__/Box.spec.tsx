@@ -1,5 +1,5 @@
 import { Button } from '@launchpad-ui/button';
-import { it, expect, describe } from 'vitest';
+import { describe, expect, it } from 'vitest';
 
 import { render, screen } from '../../../test/utils';
 import { Box } from '../src';

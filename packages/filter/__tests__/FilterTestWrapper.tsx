@@ -1,5 +1,5 @@
-import type { FilterOption } from '../src/FilterMenu';
 import type { ChangeEvent } from 'react';
+import type { FilterOption } from '../src/FilterMenu';
 
 import { useState } from 'react';
 

@@ -1,7 +1,7 @@
-import { it, expect, describe } from 'vitest';
+import { describe, expect, it } from 'vitest';
 
 import { render, screen, userEvent } from '../../../test/utils';
-import { OverlayArrow, Popover, Dialog, DialogTrigger, Button } from '../src';
+import { Button, Dialog, DialogTrigger, OverlayArrow, Popover } from '../src';
 
 describe('Popover', () => {
   it('renders', async () => {

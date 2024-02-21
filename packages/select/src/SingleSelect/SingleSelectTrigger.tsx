@@ -1,7 +1,7 @@
-import type { SingleSelectState } from './useSingleSelectState';
-import type { SharedSelectTriggerProps } from '../types';
 import type { Node } from '@react-types/shared';
 import type { ReactNode } from 'react';
+import type { SharedSelectTriggerProps } from '../types';
+import type { SingleSelectState } from './useSingleSelectState';
 
 import { Icon } from '@launchpad-ui/icons';
 import { cx } from 'classix';

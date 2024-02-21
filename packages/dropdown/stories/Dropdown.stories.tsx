@@ -1,4 +1,4 @@
-import type { StoryObj, StoryFn } from '@storybook/react';
+import type { StoryFn, StoryObj } from '@storybook/react';
 
 import { Menu, MenuItem } from '@launchpad-ui/menu';
 

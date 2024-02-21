@@ -1,7 +1,7 @@
-import { it, expect, describe } from 'vitest';
+import { describe, expect, it } from 'vitest';
 
 import { render, screen, userEvent } from '../../../test/utils';
-import { MultiSelectTrigger, MultiSelect, SelectItem } from '../src';
+import { MultiSelect, MultiSelectTrigger, SelectItem } from '../src';
 
 import { FRUIT } from './constants';
 import { CustomMultiSelectTrigger } from './examples';

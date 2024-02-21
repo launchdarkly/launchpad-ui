@@ -2,9 +2,9 @@ import type { InlineEditProps } from '../src';
 
 import { TextArea } from '@launchpad-ui/form';
 import { useState } from 'react';
-import { it, expect, describe, vi } from 'vitest';
+import { describe, expect, it, vi } from 'vitest';
 
-import { render, screen, waitFor, userEvent } from '../../../test/utils';
+import { render, screen, userEvent, waitFor } from '../../../test/utils';
 import { InlineEdit } from '../src';
 
 const InlineEditComponent = ({ ...props }: Omit<Partial<InlineEditProps>, 'ref'>) => {

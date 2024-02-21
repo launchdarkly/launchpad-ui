@@ -1,5 +1,5 @@
-import type { IconProps } from './Icon';
 import type { ComponentProps, ReactElement } from 'react';
+import type { IconProps } from './Icon';
 
 import { cx } from 'classix';
 import { cloneElement } from 'react';

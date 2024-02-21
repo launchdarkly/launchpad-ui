@@ -1,4 +1,4 @@
-import { ModalOverlay, Modal, Dialog, DialogTrigger, Button } from '@launchpad-ui/components';
+import { Button, Dialog, DialogTrigger, Modal, ModalOverlay } from '@launchpad-ui/components';
 
 export default function Index() {
   return (

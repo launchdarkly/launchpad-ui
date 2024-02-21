@@ -1,7 +1,7 @@
-import type { AnnotatedStoryFn, StoryContext } from '@storybook/types';
 import type { Args, Decorator, ReactRenderer } from '@storybook/react';
-import { Fragment } from 'react';
+import type { AnnotatedStoryFn, StoryContext } from '@storybook/types';
 import merge from 'deepmerge';
+import { Fragment } from 'react';
 
 /**
  * Creates a decorator function that returns a new component with that class name added.

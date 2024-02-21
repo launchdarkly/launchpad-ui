@@ -2,7 +2,7 @@ import type { Meta, StoryFn, StoryObj } from '@storybook/react';
 
 import { expect, userEvent, within } from '@storybook/test';
 
-import { Tooltip, TooltipTrigger, Button } from '../src';
+import { Button, Tooltip, TooltipTrigger } from '../src';
 
 const meta: Meta<typeof Tooltip> = {
   component: Tooltip,

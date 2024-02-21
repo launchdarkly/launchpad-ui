@@ -1,6 +1,6 @@
-import type { FilterOption } from './FilterMenu';
 import type { MenuProps } from '@launchpad-ui/menu';
 import type { ChangeEvent, ReactNode, SyntheticEvent } from 'react';
+import type { FilterOption } from './FilterMenu';
 
 import { Dropdown } from '@launchpad-ui/dropdown';
 import { cx } from 'classix';

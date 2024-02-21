@@ -1,5 +1,5 @@
-import type { Sprinkles } from './styles/rainbow-sprinkles.css';
 import type { ReactNode } from 'react';
+import type { Sprinkles } from './styles/rainbow-sprinkles.css';
 
 import { Slot } from '@radix-ui/react-slot';
 

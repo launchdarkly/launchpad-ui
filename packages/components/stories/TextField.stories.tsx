@@ -3,7 +3,7 @@ import type { Meta, StoryFn, StoryObj } from '@storybook/react';
 import { vars } from '@launchpad-ui/vars';
 import { userEvent } from '@storybook/test';
 
-import { TextField, Input, TextArea, Label, Text } from '../src';
+import { Input, Label, Text, TextArea, TextField } from '../src';
 
 const meta: Meta<typeof TextField> = {
   component: TextField,

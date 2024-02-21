@@ -4,7 +4,7 @@ import { Icon } from '@launchpad-ui/icons';
 import { vars } from '@launchpad-ui/vars';
 import { userEvent } from '@storybook/test';
 
-import { SearchField, Group, Input, Label, Text, IconButton } from '../src';
+import { Group, IconButton, Input, Label, SearchField, Text } from '../src';
 
 const meta: Meta<typeof SearchField> = {
   component: SearchField,

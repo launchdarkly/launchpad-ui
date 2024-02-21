@@ -1,15 +1,15 @@
 import {
-  Form,
-  RadioGroup,
-  Radio,
-  Label,
+  Checkbox,
   CompactTextField,
+  Form,
   FormField,
-  TextField,
   IconField,
+  Label,
+  Radio,
+  RadioGroup,
   SelectField,
   TextArea,
-  Checkbox,
+  TextField,
 } from '@launchpad-ui/core';
 import { Icon } from '@launchpad-ui/icons';
 

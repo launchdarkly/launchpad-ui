@@ -1,5 +1,5 @@
 import { Icon } from '@launchpad-ui/icons';
-import { it, expect, describe } from 'vitest';
+import { describe, expect, it } from 'vitest';
 
 import { render, screen } from '../../../test/utils';
 import { IconField } from '../src';

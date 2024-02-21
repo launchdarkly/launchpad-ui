@@ -1,6 +1,6 @@
+import type { ForwardedRef } from 'react';
 import type { ButtonVariants } from './Button';
 import type { LinkProps } from './Link';
-import type { ForwardedRef } from 'react';
 
 import { forwardRef } from 'react';
 import { composeRenderProps } from 'react-aria-components';

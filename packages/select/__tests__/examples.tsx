@@ -1,7 +1,7 @@
-import type { DummyItem } from './constants';
+import type { Node } from '@react-types/shared';
 import type { MultiSelectTriggerProps } from '../src/MultiSelect';
 import type { SingleSelectTriggerProps } from '../src/SingleSelect';
-import type { Node } from '@react-types/shared';
+import type { DummyItem } from './constants';
 
 import { IconButton } from '@launchpad-ui/button';
 import { Icon } from '@launchpad-ui/icons';

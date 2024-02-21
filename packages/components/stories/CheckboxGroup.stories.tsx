@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 
 import { userEvent, within } from '@storybook/test';
 
-import { Checkbox, CheckboxGroup, Label, Text, Form, FieldError, Button } from '../src';
+import { Button, Checkbox, CheckboxGroup, FieldError, Form, Label, Text } from '../src';
 
 const meta: Meta<typeof CheckboxGroup> = {
   component: CheckboxGroup,

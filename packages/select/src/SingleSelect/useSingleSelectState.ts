@@ -1,7 +1,7 @@
-import type { SingleSelectProps } from './SingleSelect';
-import type { SharedSelectState } from '../types';
 import type { SingleSelectListState } from '@react-stately/list';
 import type { SelectionMode } from '@react-types/shared';
+import type { SharedSelectState } from '../types';
+import type { SingleSelectProps } from './SingleSelect';
 
 import { useSingleSelectListState } from '@react-stately/list';
 import { useMenuTriggerState } from '@react-stately/menu';

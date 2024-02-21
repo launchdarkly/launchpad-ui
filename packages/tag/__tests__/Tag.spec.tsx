@@ -1,8 +1,8 @@
-import type { MockTag } from './constants';
 import type { TagGroupProps } from '../src';
+import type { MockTag } from './constants';
 
 import { useState } from 'react';
-import { it, expect, describe, vi } from 'vitest';
+import { describe, expect, it, vi } from 'vitest';
 
 import { render, screen, userEvent } from '../../../test/utils';
 import { TagGroup, TagItem } from '../src';

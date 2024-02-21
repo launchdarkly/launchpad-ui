@@ -1,5 +1,5 @@
-import type { PaginationChange } from './PaginationButton';
 import type { ComponentProps } from 'react';
+import type { PaginationChange } from './PaginationButton';
 
 import { cx } from 'classix';
 

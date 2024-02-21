@@ -1,7 +1,7 @@
 import tokens from '@launchpad-ui/tokens';
 import { vars } from '@launchpad-ui/vars';
 import { flatten } from 'flat';
-import { defineProperties, createRainbowSprinkles } from 'rainbow-sprinkles';
+import { createRainbowSprinkles, defineProperties } from 'rainbow-sprinkles';
 
 const { bg, border, fill, shadow, text, gradient, ...global } = vars.color;
 const { body, heading, small, label, code, display } = vars;

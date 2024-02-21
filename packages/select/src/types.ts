@@ -9,7 +9,7 @@ import type {
   DOMProps,
   FocusableElement,
 } from '@react-types/shared';
-import type { DOMAttributes, HTMLAttributes, ComponentProps, ReactNode, RefObject } from 'react';
+import type { ComponentProps, DOMAttributes, HTMLAttributes, ReactNode, RefObject } from 'react';
 
 type SharedSelectProps<T extends object> = CollectionBase<T> &
   DOMProps &

@@ -1,7 +1,7 @@
-import { it, expect, describe } from 'vitest';
+import { describe, expect, it } from 'vitest';
 
 import { render, screen } from '../../../test/utils';
-import { SearchField, Label, Input, Group, IconButton } from '../src';
+import { Group, IconButton, Input, Label, SearchField } from '../src';
 
 describe('SearchField', () => {
   it('renders', () => {

@@ -1,4 +1,4 @@
-import { TagGroup, TagList, Tag, Label } from '@launchpad-ui/components';
+import { Label, Tag, TagGroup, TagList } from '@launchpad-ui/components';
 
 export default function Index() {
   return (

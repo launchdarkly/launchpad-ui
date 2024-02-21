@@ -1,9 +1,9 @@
-import type { StoryObj, Decorator, StoryFn } from '@storybook/react';
+import type { Decorator, StoryFn, StoryObj } from '@storybook/react';
 
 import { useEffect } from '@storybook/addons';
 import { useId } from 'react';
 
-import { createWithClassesDecorator, PseudoClasses } from '../../../.storybook/utils';
+import { PseudoClasses, createWithClassesDecorator } from '../../../.storybook/utils';
 import { Toggle } from '../src';
 
 import './Toggle.stories.css';

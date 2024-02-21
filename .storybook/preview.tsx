@@ -8,8 +8,8 @@ import { themes } from '@storybook/theming';
 import { allModes } from './modes';
 
 import '../packages/tokens/dist/index.css';
-import '../packages/tokens/dist/themes.css';
 import '../packages/tokens/dist/media-queries.css';
+import '../packages/tokens/dist/themes.css';
 
 export const parameters: Parameters = {
   actions: { disable: true },

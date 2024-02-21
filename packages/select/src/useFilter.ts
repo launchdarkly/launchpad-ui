@@ -1,5 +1,5 @@
-import type { FilterFn, SharedSelectProps } from './types';
 import type { Collection, Node } from '@react-types/shared';
+import type { FilterFn, SharedSelectProps } from './types';
 
 import { ListCollection } from '@react-stately/list';
 import { useCallback, useMemo } from 'react';

@@ -1,6 +1,6 @@
-import type { SharedSelectState } from './types';
 import type { ItemProps } from '@react-types/shared';
 import type { ComponentPropsWithoutRef, ElementType } from 'react';
+import type { SharedSelectState } from './types';
 
 type SelectItemProps<T extends object, P extends ElementType> = ItemProps<T> & {
   as?: P;

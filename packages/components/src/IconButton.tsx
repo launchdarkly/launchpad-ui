@@ -1,9 +1,9 @@
-import type { ButtonVariants } from './Button';
 import type { IconProps } from '@launchpad-ui/icons';
 import type { AriaLabelingProps } from '@react-types/shared';
 import type { VariantProps } from 'class-variance-authority';
 import type { ForwardedRef } from 'react';
 import type { ButtonProps as AriaButtonProps } from 'react-aria-components';
+import type { ButtonVariants } from './Button';
 
 import { Icon } from '@launchpad-ui/icons';
 import { cva, cx } from 'class-variance-authority';

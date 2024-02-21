@@ -1,10 +1,10 @@
 import {
+  Menu,
+  MenuItem,
   SplitButton,
   SplitButtonDropdown,
   SplitButtonDropdownButton,
   SplitButtonMainButton,
-  Menu,
-  MenuItem,
   Tooltip,
 } from '@launchpad-ui/core';
 import { useState } from 'react';

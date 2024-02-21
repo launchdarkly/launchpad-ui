@@ -6,7 +6,7 @@ import { useMemo, useState } from 'react';
 
 import { FRUIT, SECTIONED_ITEMS } from '../__tests__/constants';
 import { CustomSingleSelectTrigger } from '../__tests__/examples';
-import { SingleSelect, SingleSelectTrigger, SelectItem, SelectSection } from '../src';
+import { SelectItem, SelectSection, SingleSelect, SingleSelectTrigger } from '../src';
 
 export default {
   component: SingleSelect,

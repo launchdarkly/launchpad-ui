@@ -1,6 +1,6 @@
-/* eslint-disable react-hooks/rules-of-hooks */
-import type { SnackbarRecord, SnackbarProps } from '../src';
 import type { StoryObj } from '@storybook/react';
+/* eslint-disable react-hooks/rules-of-hooks */
+import type { SnackbarProps, SnackbarRecord } from '../src';
 
 import { Button } from '@launchpad-ui/button';
 import { userEvent, within } from '@storybook/test';

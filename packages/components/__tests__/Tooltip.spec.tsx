@@ -1,4 +1,4 @@
-import { it, expect, describe } from 'vitest';
+import { describe, expect, it } from 'vitest';
 
 import { render, screen, userEvent } from '../../../test/utils';
 import { Button, Tooltip, TooltipTrigger } from '../src';

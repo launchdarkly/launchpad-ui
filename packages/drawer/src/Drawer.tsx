@@ -10,7 +10,7 @@ import { useFocusWithin } from '@react-aria/interactions';
 import { usePreventScroll } from '@react-aria/overlays';
 import { cx } from 'classix';
 import { LazyMotion, m } from 'framer-motion';
-import { useState, Suspense, useEffect, useRef } from 'react';
+import { Suspense, useEffect, useRef, useState } from 'react';
 
 import { DRAWER_LABELLED_BY } from './constants';
 import styles from './styles/Drawer.module.css';

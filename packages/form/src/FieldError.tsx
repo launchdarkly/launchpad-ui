@@ -1,5 +1,5 @@
-import type { FieldPath } from './utils';
 import type { ComponentProps } from 'react';
+import type { FieldPath } from './utils';
 
 import { Icon } from '@launchpad-ui/icons';
 import { cx } from 'classix';

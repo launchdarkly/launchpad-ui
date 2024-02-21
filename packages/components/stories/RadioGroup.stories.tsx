@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 
 import { userEvent, within } from '@storybook/test';
 
-import { Radio, RadioGroup, Label, Text, Form, FieldError, Button } from '../src';
+import { Button, FieldError, Form, Label, Radio, RadioGroup, Text } from '../src';
 
 const meta: Meta<typeof RadioGroup> = {
   component: RadioGroup,

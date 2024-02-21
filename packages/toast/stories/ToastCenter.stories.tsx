@@ -1,6 +1,6 @@
-/* eslint-disable react-hooks/rules-of-hooks */
-import type { ToastRecord, ToastProps } from '../src';
 import type { StoryObj } from '@storybook/react';
+/* eslint-disable react-hooks/rules-of-hooks */
+import type { ToastProps, ToastRecord } from '../src';
 
 import { Button } from '@launchpad-ui/button';
 import { userEvent, within } from '@storybook/test';

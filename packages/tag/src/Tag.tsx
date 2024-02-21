@@ -1,9 +1,9 @@
-import type { TagGroupProps } from './TagGroup';
-import type { TagItemProps } from './TagItem';
 import type { AriaTagProps } from '@react-aria/tag';
 import type { ListState } from '@react-stately/list';
 import type { Node } from '@react-types/shared';
 import type { ElementType, ReactNode } from 'react';
+import type { TagGroupProps } from './TagGroup';
+import type { TagItemProps } from './TagItem';
 
 import { Icon } from '@launchpad-ui/icons';
 import { Tooltip } from '@launchpad-ui/tooltip';

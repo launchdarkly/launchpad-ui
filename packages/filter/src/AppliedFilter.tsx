@@ -1,5 +1,5 @@
-import type { FilterOption } from './FilterMenu';
 import type { ChangeEvent, ReactNode } from 'react';
+import type { FilterOption } from './FilterMenu';
 
 import { Dropdown } from '@launchpad-ui/dropdown';
 

@@ -1,9 +1,9 @@
-import type { Meta, StoryFn, StoryObj, ReactRenderer } from '@storybook/react';
+import type { Meta, ReactRenderer, StoryFn, StoryObj } from '@storybook/react';
 import type { PlayFunction } from '@storybook/types';
 
 import { expect, userEvent, within } from '@storybook/test';
 
-import { OverlayArrow, Popover, Dialog, DialogTrigger, Heading, Button } from '../src';
+import { Button, Dialog, DialogTrigger, Heading, OverlayArrow, Popover } from '../src';
 
 const meta: Meta<typeof Popover> = {
   component: Popover,

@@ -8,7 +8,7 @@
 		"dev": "remix dev",
 		"build": "remix build",
 		"clean": "rm -rf public build",
-		"lint": "biome lint && stylelint '**/*.css' --ignore-path ../../.stylelintignore",
+		"lint": "stylelint '**/*.css' --ignore-path ../../.stylelintignore",
 		"start": "remix-serve ./build/index.js",
 		"test": "exit 0",
 		"typecheck": "tsc"

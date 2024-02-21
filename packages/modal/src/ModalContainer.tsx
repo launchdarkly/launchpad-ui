@@ -1,13 +1,13 @@
-import type { ModalProps } from './Modal';
 import type { Variants } from 'framer-motion';
 import type { MouseEvent } from 'react';
+import type { ModalProps } from './Modal';
 
 import { FocusTrap } from '@launchpad-ui/focus-trap';
 import { useFocusWithin } from '@react-aria/interactions';
 import { usePreventScroll } from '@react-aria/overlays';
 import { cx } from 'classix';
 import { LazyMotion, m } from 'framer-motion';
-import { useState, useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 import { MODAL_DESCRIBED_BY, MODAL_LABELLED_BY } from './constants';
 import styles from './styles/Modal.module.css';

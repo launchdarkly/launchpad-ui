@@ -1,10 +1,10 @@
 import type { AriaCheckboxProps } from '@react-aria/checkbox';
-import type { AriaTableProps, AriaTableColumnResizeProps } from '@react-aria/table';
+import type { AriaTableColumnResizeProps, AriaTableProps } from '@react-aria/table';
 import type {
-  TableState,
-  TableStateProps,
   TableColumnResizeState,
   TableColumnResizeStateProps,
+  TableState,
+  TableStateProps,
 } from '@react-stately/table';
 import type { GridNode } from '@react-types/grid';
 import type { ComponentProps, ForwardedRef, ReactNode } from 'react';
@@ -36,13 +36,13 @@ import { cx } from 'classix';
 import { forwardRef, useCallback, useMemo, useRef, useState } from 'react';
 
 import {
-  table,
   cell as tableCell,
-  headerCell,
-  selectCell,
   header,
-  row,
+  headerCell,
   resizer,
+  row,
+  selectCell,
+  table,
 } from './styles/DataTable.css';
 
 type DataTableProps<T extends object> = TableStateProps<T> &

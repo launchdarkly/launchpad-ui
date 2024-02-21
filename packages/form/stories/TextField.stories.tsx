@@ -1,6 +1,6 @@
-import type { StoryObj, Decorator, StoryFn } from '@storybook/react';
+import type { Decorator, StoryFn, StoryObj } from '@storybook/react';
 
-import { createWithClassesDecorator, PseudoClasses } from '../../../.storybook/utils';
+import { PseudoClasses, createWithClassesDecorator } from '../../../.storybook/utils';
 import { TextField } from '../src';
 
 import './TextArea.stories.css';

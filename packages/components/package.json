@@ -1,51 +1,47 @@
 {
-  "name": "@launchpad-ui/components",
-  "version": "0.1.10",
-  "status": "beta",
-  "publishConfig": {
-    "access": "public"
-  },
-  "description": "An implementation of LaunchDarkly's LaunchPad Design System using React Aria Components.",
-  "files": [
-    "dist"
-  ],
-  "main": "dist/index.js",
-  "module": "dist/index.es.js",
-  "types": "dist/index.d.ts",
-  "sideEffects": [
-    "**/*.css"
-  ],
-  "exports": {
-    ".": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/index.es.js",
-      "require": "./dist/index.js"
-    },
-    "./package.json": "./package.json",
-    "./style.css": "./dist/style.css"
-  },
-  "source": "src/index.ts",
-  "scripts": {
-    "build": "vite build -c ../../vite.config.mts && tsc --project tsconfig.build.json",
-    "clean": "rm -rf dist",
-    "lint": "eslint '**/*.{ts,tsx,js}' && stylelint '**/*.css' --ignore-path ../../.stylelintignore",
-    "test": "vitest run --coverage"
-  },
-  "dependencies": {
-    "@launchpad-ui/icons": "workspace:~",
-    "@launchpad-ui/tokens": "workspace:~",
-    "@react-types/shared": "3.22.0",
-    "class-variance-authority": "0.7.0",
-    "react-aria-components": "1.1.0",
-    "react-router-dom": "6.16.0"
-  },
-  "peerDependencies": {
-    "react": "18.2.0",
-    "react-dom": "18.2.0"
-  },
-  "devDependencies": {
-    "react-stately": "3.30.0",
-    "react": "18.2.0",
-    "react-dom": "18.2.0"
-  }
+	"name": "@launchpad-ui/components",
+	"version": "0.1.10",
+	"status": "beta",
+	"publishConfig": {
+		"access": "public"
+	},
+	"description": "An implementation of LaunchDarkly's LaunchPad Design System using React Aria Components.",
+	"files": ["dist"],
+	"main": "dist/index.js",
+	"module": "dist/index.es.js",
+	"types": "dist/index.d.ts",
+	"sideEffects": ["**/*.css"],
+	"exports": {
+		".": {
+			"types": "./dist/index.d.ts",
+			"import": "./dist/index.es.js",
+			"require": "./dist/index.js"
+		},
+		"./package.json": "./package.json",
+		"./style.css": "./dist/style.css"
+	},
+	"source": "src/index.ts",
+	"scripts": {
+		"build": "vite build -c ../../vite.config.mts && tsc --project tsconfig.build.json",
+		"clean": "rm -rf dist",
+		"lint": "stylelint '**/*.css' --ignore-path ../../.stylelintignore",
+		"test": "vitest run --coverage"
+	},
+	"dependencies": {
+		"@launchpad-ui/icons": "workspace:~",
+		"@launchpad-ui/tokens": "workspace:~",
+		"@react-types/shared": "3.22.0",
+		"class-variance-authority": "0.7.0",
+		"react-aria-components": "1.1.0",
+		"react-router-dom": "6.16.0"
+	},
+	"peerDependencies": {
+		"react": "18.2.0",
+		"react-dom": "18.2.0"
+	},
+	"devDependencies": {
+		"react-stately": "3.30.0",
+		"react": "18.2.0",
+		"react-dom": "18.2.0"
+	}
 }

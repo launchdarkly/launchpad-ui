@@ -1,6 +1,6 @@
-import type { NavigationItemProps } from '../src';
 import type { StoryObj } from '@storybook/react';
 import type { ReactNode } from 'react';
+import type { NavigationItemProps } from '../src';
 
 import { MemoryRouter } from 'react-router-dom';
 

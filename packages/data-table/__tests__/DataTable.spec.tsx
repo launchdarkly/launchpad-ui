@@ -1,7 +1,7 @@
 import type { DataTableProps } from '../src';
 
 import { Cell, Column, Row, TableBody, TableHeader } from '@react-stately/table';
-import { it, expect, describe } from 'vitest';
+import { describe, expect, it } from 'vitest';
 
 import { render, screen } from '../../../test/utils';
 import { DataTable } from '../src';

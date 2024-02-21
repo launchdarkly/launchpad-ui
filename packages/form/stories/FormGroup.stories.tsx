@@ -1,6 +1,6 @@
 import type { StoryObj } from '@storybook/react';
 
-import { Label, RequiredAsterisk, TextField, FormHint, FormGroup } from '../src';
+import { FormGroup, FormHint, Label, RequiredAsterisk, TextField } from '../src';
 
 export default {
   component: FormGroup,

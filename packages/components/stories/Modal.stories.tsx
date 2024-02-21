@@ -1,11 +1,11 @@
-import type { Meta, StoryFn, StoryObj, ReactRenderer } from '@storybook/react';
+import type { Meta, ReactRenderer, StoryFn, StoryObj } from '@storybook/react';
 import type { PlayFunction } from '@storybook/types';
 
 import { Icon } from '@launchpad-ui/icons';
 import { expect, userEvent, within } from '@storybook/test';
 
 import { allModes } from '../../../.storybook/modes';
-import { Modal, ModalOverlay, Button, Dialog, DialogTrigger, Heading, IconButton } from '../src';
+import { Button, Dialog, DialogTrigger, Heading, IconButton, Modal, ModalOverlay } from '../src';
 
 const meta: Meta<typeof Modal> = {
   component: Modal,

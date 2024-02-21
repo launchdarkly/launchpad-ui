@@ -1,7 +1,7 @@
+import type { KeyboardEvent, RefObject } from 'react';
+import type { SelectAria, SharedUseSelectProps } from '../types';
 import type { SingleSelectProps } from './SingleSelect';
 import type { SingleSelectState } from './useSingleSelectState';
-import type { SelectAria, SharedUseSelectProps } from '../types';
-import type { KeyboardEvent, RefObject } from 'react';
 
 import { chain } from '@react-aria/utils';
 

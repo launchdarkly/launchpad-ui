@@ -1,4 +1,4 @@
-import { CopyToClipboard, Chip } from '@launchpad-ui/core';
+import { Chip, CopyToClipboard } from '@launchpad-ui/core';
 
 export default function Index() {
   return (

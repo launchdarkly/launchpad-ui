@@ -1,5 +1,5 @@
-import type { NavProps } from './Nav';
 import type { CollectionBase } from '@react-types/shared';
+import type { NavProps } from './Nav';
 
 import { useResizeObserver, useValueEffect } from '@react-aria/utils';
 import { cx } from 'classix';

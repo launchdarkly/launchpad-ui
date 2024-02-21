@@ -2,7 +2,7 @@ import type { AriaPopoverProps } from '@react-aria/overlays';
 import type { OverlayTriggerState } from '@react-stately/overlays';
 import type { ReactNode, RefObject } from 'react';
 
-import { usePopover, DismissButton, Overlay } from '@react-aria/overlays';
+import { DismissButton, Overlay, usePopover } from '@react-aria/overlays';
 import { useObjectRef } from '@react-aria/utils';
 import { cx } from 'classix';
 import { useMemo } from 'react';

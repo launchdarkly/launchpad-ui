@@ -1,5 +1,5 @@
-import type { ButtonProps } from './Button';
 import type { ChangeEventHandler, KeyboardEvent } from 'react';
+import type { ButtonProps } from './Button';
 
 import { useRef } from 'react';
 

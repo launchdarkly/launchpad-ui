@@ -1,4 +1,4 @@
-import { CheckboxGroup, Checkbox, Label } from '@launchpad-ui/components';
+import { Checkbox, CheckboxGroup, Label } from '@launchpad-ui/components';
 
 export default function Index() {
   return (

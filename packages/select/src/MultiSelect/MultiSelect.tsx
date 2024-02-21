@@ -1,6 +1,6 @@
-import type { MultiSelectTriggerProps } from './MultiSelectTrigger';
-import type { SharedSelectProps } from '../types';
 import type { MultipleSelection } from '@react-types/shared';
+import type { SharedSelectProps } from '../types';
+import type { MultiSelectTriggerProps } from './MultiSelectTrigger';
 
 import { useButton } from '@react-aria/button';
 import { useFocusRing } from '@react-aria/focus';

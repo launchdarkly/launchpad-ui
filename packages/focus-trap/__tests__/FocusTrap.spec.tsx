@@ -1,6 +1,6 @@
 import type { ReactNode } from 'react';
 
-import { it, expect, describe } from 'vitest';
+import { describe, expect, it } from 'vitest';
 
 import { render, renderHook, screen, userEvent } from '../../../test/utils';
 import { FocusTrap, FocusTrapContext, useFocusTrapContext } from '../src';

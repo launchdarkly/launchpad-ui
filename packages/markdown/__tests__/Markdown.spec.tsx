@@ -1,5 +1,5 @@
 import parse from 'html-react-parser';
-import { it, expect, describe } from 'vitest';
+import { describe, expect, it } from 'vitest';
 
 import { render, screen } from '../../../test/utils';
 import { Markdown } from '../src';

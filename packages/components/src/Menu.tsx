@@ -1,7 +1,7 @@
 import type { ForwardedRef } from 'react';
 import type {
-  MenuProps as AriaMenuProps,
   MenuItemProps,
+  MenuProps as AriaMenuProps,
   MenuTriggerProps,
   SubmenuTriggerProps,
 } from 'react-aria-components';

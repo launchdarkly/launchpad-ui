@@ -1,8 +1,8 @@
+import type { BaseEvent } from '@react-types/shared';
+import type { FocusEvent, KeyboardEvent, RefObject } from 'react';
 import type { MultiSelectProps, MultiSelectState } from './MultiSelect';
 import type { SingleSelectProps, SingleSelectState } from './SingleSelect';
 import type { SelectAria, SharedUseSelectProps } from './types';
-import type { BaseEvent } from '@react-types/shared';
-import type { FocusEvent, KeyboardEvent, RefObject } from 'react';
 
 import { setInteractionModality } from '@react-aria/interactions';
 import { useField } from '@react-aria/label';

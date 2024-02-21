@@ -5,7 +5,7 @@ import { Icon } from '@launchpad-ui/icons';
 import { vars } from '@launchpad-ui/vars';
 import { useState } from 'react';
 
-import { TextField, Input, Label, Group, IconButton, ProgressBar } from '../src';
+import { Group, IconButton, Input, Label, ProgressBar, TextField } from '../src';
 
 const meta: Meta<typeof Group> = {
   component: Group,

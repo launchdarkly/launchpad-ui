@@ -1,7 +1,7 @@
-import { it, expect, describe } from 'vitest';
+import { describe, expect, it } from 'vitest';
 
 import { render, screen } from '../../../test/utils';
-import { Columns, Column } from '../src';
+import { Column, Columns } from '../src';
 
 describe('Columns', () => {
   it('renders', () => {

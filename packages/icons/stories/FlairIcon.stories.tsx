@@ -1,6 +1,6 @@
 import type { StoryObj } from '@storybook/react';
 
-import { Icon, FlairIcon } from '../src';
+import { FlairIcon, Icon } from '../src';
 
 export default {
   component: FlairIcon,

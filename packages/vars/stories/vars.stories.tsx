@@ -1,6 +1,6 @@
 import type { StoryObj } from '@storybook/react';
 
-import { local, container } from './Story.css';
+import { container, local } from './Story.css';
 
 export default {
   title: 'Styles/Vars',

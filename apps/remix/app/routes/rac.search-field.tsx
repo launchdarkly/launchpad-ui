@@ -1,4 +1,4 @@
-import { SearchField, Input, Label, Group, IconButton } from '@launchpad-ui/components';
+import { Group, IconButton, Input, Label, SearchField } from '@launchpad-ui/components';
 
 export default function Index() {
   return (

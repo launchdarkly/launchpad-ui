@@ -1,7 +1,7 @@
-import { it, expect, describe } from 'vitest';
+import { describe, expect, it } from 'vitest';
 
 import { render, screen } from '../../../test/utils';
-import { TagGroup, TagList, Tag, Label } from '../src';
+import { Label, Tag, TagGroup, TagList } from '../src';
 
 describe('TagGroup', () => {
   it('renders', () => {

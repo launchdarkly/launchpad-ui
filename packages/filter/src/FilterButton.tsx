@@ -1,4 +1,4 @@
-import type { ReactNode, SyntheticEvent, MouseEvent } from 'react';
+import type { MouseEvent, ReactNode, SyntheticEvent } from 'react';
 
 import { IconButton } from '@launchpad-ui/button';
 import { Icon } from '@launchpad-ui/icons';

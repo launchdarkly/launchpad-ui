@@ -1,6 +1,6 @@
+import type { SharedSelectProps } from '../types';
 import type { SingleSelectTriggerProps } from './SingleSelectTrigger';
 import type { SingleSelection } from './types';
-import type { SharedSelectProps } from '../types';
 
 import { useButton } from '@react-aria/button';
 import { useFocusRing } from '@react-aria/focus';

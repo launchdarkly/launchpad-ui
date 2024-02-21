@@ -1,4 +1,4 @@
-import { Popover, Menu, MenuItem, MenuTrigger, Button } from '@launchpad-ui/components';
+import { Button, Menu, MenuItem, MenuTrigger, Popover } from '@launchpad-ui/components';
 
 export default function Index() {
   return (

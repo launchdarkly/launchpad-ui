@@ -1,7 +1,7 @@
-import type { SplitButtonProps } from '../src';
 import type { IconProps } from '@launchpad-ui/icons';
-import type { StoryObj, Decorator } from '@storybook/react';
+import type { Decorator, StoryObj } from '@storybook/react';
 import type { ReactElement } from 'react';
+import type { SplitButtonProps } from '../src';
 
 import { Icon as LPIcon } from '@launchpad-ui/icons';
 import { Menu, MenuItem } from '@launchpad-ui/menu';

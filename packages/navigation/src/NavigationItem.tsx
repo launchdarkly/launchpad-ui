@@ -1,6 +1,6 @@
+import type { MouseEvent, ReactElement } from 'react';
 import type { NavItemProps } from './NavItem';
 import type { NavItemWithTooltipProps } from './NavItemWithTooltip';
-import type { ReactElement, MouseEvent } from 'react';
 
 // The public interface for `NavigationItem` should include an `onClick` prop
 // that receives an additional `state` param (determined by either

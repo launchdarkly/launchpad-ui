@@ -1,6 +1,6 @@
-import type { NavProps } from './Nav';
 import type { CollectionBase } from '@react-types/shared';
 import type { MouseEvent } from 'react';
+import type { NavProps } from './Nav';
 
 import { useListState } from '@react-stately/list';
 

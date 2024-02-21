@@ -3,21 +3,21 @@ import type { Meta, StoryFn, StoryObj } from '@storybook/react';
 import type { Selection as AriaSelection } from 'react-aria-components';
 
 import { Icon } from '@launchpad-ui/icons';
-import { expect, userEvent, within, waitFor } from '@storybook/test';
+import { expect, userEvent, waitFor, within } from '@storybook/test';
 import { useState } from 'react';
 
 import {
+  Button,
+  Header,
+  Keyboard,
   Menu,
   MenuItem,
   MenuTrigger,
-  SubmenuTrigger,
-  Header,
-  Keyboard,
+  Popover,
   Section,
   Separator,
+  SubmenuTrigger,
   Text,
-  Button,
-  Popover,
 } from '../src';
 
 const meta: Meta<typeof Menu> = {

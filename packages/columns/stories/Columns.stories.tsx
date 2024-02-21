@@ -1,7 +1,7 @@
 import type { StoryObj } from '@storybook/react';
 
 import { Block } from '../../../.storybook/Block';
-import { Columns, Column } from '../src';
+import { Column, Columns } from '../src';
 
 export default {
   component: Columns,

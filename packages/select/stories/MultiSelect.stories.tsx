@@ -6,7 +6,7 @@ import { useState } from 'react';
 
 import { FRUIT } from '../__tests__/constants';
 import { CustomMultiSelectTrigger } from '../__tests__/examples';
-import { MultiSelectTrigger, MultiSelect, SelectItem } from '../src';
+import { MultiSelect, MultiSelectTrigger, SelectItem } from '../src';
 
 export default {
   component: MultiSelect,

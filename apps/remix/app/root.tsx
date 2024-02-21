@@ -10,15 +10,15 @@ import {
   Outlet,
   Scripts,
   ScrollRestoration,
-  useRouteError,
   isRouteErrorResponse,
+  useRouteError,
 } from '@remix-run/react';
 
+import icons from '@launchpad-ui/icons/sprite.svg';
+import iconStyles from '@launchpad-ui/icons/style.css';
 import launchpadStyles from '@launchpad-ui/tokens/index.css';
 import themeStyles from '@launchpad-ui/tokens/themes.css';
 import globalStyles from './styles/global.css';
-import iconStyles from '@launchpad-ui/icons/style.css';
-import icons from '@launchpad-ui/icons/sprite.svg';
 
 export const links: LinksFunction = () => {
   return [

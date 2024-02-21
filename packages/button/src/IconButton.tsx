@@ -9,7 +9,7 @@ import type {
 
 import { Slot } from '@radix-ui/react-slot';
 import { cx } from 'classix';
-import { isValidElement, cloneElement, forwardRef, memo } from 'react';
+import { cloneElement, forwardRef, isValidElement, memo } from 'react';
 
 import styles from './styles/Button.module.css';
 

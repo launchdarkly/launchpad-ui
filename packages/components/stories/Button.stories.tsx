@@ -1,4 +1,4 @@
-import type { Meta, StoryFn, StoryObj, ReactRenderer } from '@storybook/react';
+import type { Meta, ReactRenderer, StoryFn, StoryObj } from '@storybook/react';
 import type { PlayFunction } from '@storybook/types';
 
 import { Icon } from '@launchpad-ui/icons';

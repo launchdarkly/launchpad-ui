@@ -1,4 +1,4 @@
-import { it, expect, describe, vi } from 'vitest';
+import { describe, expect, it, vi } from 'vitest';
 
 import { render, screen, waitFor } from '../../../test/utils';
 import { Progress } from '../src';

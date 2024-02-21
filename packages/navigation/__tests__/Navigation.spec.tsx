@@ -1,7 +1,7 @@
 import type { NavigationItemProps } from '../src';
 
 import { MemoryRouter } from 'react-router-dom';
-import { it, expect, describe, vi } from 'vitest';
+import { describe, expect, it, vi } from 'vitest';
 
 import { render, screen, userEvent, waitFor } from '../../../test/utils';
 import { Navigation, NavigationItem } from '../src';

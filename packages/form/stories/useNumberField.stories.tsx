@@ -1,5 +1,5 @@
-import type { FormFieldProps } from '../src/FormField';
 import type { StoryObj } from '@storybook/react';
+import type { FormFieldProps } from '../src/FormField';
 
 import { FormField } from '../src/FormField';
 import { useNumberField } from '../src/useNumberField';

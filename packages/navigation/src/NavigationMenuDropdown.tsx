@@ -1,5 +1,5 @@
-import type { NavProps } from './Nav';
 import type { CollectionBase } from '@react-types/shared';
+import type { NavProps } from './Nav';
 
 import { Chip } from '@launchpad-ui/chip';
 import { Dropdown, DropdownButton } from '@launchpad-ui/dropdown';

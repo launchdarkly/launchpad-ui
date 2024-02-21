@@ -1,4 +1,4 @@
-import type { KeyboardEvent, ComponentProps } from 'react';
+import type { ComponentProps, KeyboardEvent } from 'react';
 
 import { cx } from 'classix';
 import { forwardRef } from 'react';

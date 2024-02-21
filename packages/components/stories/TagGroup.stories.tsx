@@ -4,7 +4,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { userEvent } from '@storybook/test';
 import { useListData } from 'react-stately';
 
-import { TagGroup, TagList, Tag, Label } from '../src';
+import { Label, Tag, TagGroup, TagList } from '../src';
 
 const meta: Meta<typeof TagGroup> = {
   component: TagGroup,

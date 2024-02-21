@@ -1,6 +1,6 @@
-import type { TagGroupActionProps } from './types';
 import type { AriaTagGroupProps } from '@react-aria/tag';
 import type { Key } from '@react-types/shared';
+import type { TagGroupActionProps } from './types';
 
 import { Button } from '@launchpad-ui/button';
 import { FocusScope } from '@react-aria/focus';

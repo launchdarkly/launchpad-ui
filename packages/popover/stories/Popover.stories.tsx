@@ -1,4 +1,4 @@
-import type { StoryObj, StoryFn } from '@storybook/react';
+import type { StoryFn, StoryObj } from '@storybook/react';
 
 import { Button } from '@launchpad-ui/button';
 import { userEvent, within } from '@storybook/test';

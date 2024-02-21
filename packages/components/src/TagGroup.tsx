@@ -5,9 +5,9 @@ import type { TagGroupProps, TagListProps, TagProps as AriaTagProps } from 'reac
 import { cva } from 'class-variance-authority';
 import { forwardRef } from 'react';
 import {
+  Tag as AriaTag,
   TagGroup as AriaTagGroup,
   TagList as AriaTagList,
-  Tag as AriaTag,
   composeRenderProps,
 } from 'react-aria-components';
 

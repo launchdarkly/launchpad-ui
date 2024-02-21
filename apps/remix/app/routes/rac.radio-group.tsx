@@ -1,4 +1,4 @@
-import { RadioGroup, Radio, Label } from '@launchpad-ui/components';
+import { Label, Radio, RadioGroup } from '@launchpad-ui/components';
 
 export default function Index() {
   return (

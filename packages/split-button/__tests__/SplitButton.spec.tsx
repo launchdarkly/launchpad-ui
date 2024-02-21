@@ -1,6 +1,6 @@
 import { Menu, MenuItem } from '@launchpad-ui/menu';
 import { Tooltip } from '@launchpad-ui/tooltip';
-import { it, expect, describe } from 'vitest';
+import { describe, expect, it } from 'vitest';
 
 import { render, screen, userEvent, waitFor } from '../../../test/utils';
 import {

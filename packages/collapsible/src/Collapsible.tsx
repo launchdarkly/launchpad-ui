@@ -1,5 +1,5 @@
-import type { CollapsibleTriggerProps } from './CollapsibleTrigger';
 import type { ComponentProps, ReactNode } from 'react';
+import type { CollapsibleTriggerProps } from './CollapsibleTrigger';
 
 import { Icon } from '@launchpad-ui/icons';
 import { cx } from 'classix';

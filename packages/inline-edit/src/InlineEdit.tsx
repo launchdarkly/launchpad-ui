@@ -1,9 +1,9 @@
-import type { InlineVariants } from './styles/InlineEdit.css';
 import type { IconFieldProps, TextAreaProps, TextFieldProps } from '@launchpad-ui/form';
 import type { ComponentProps, KeyboardEventHandler, ReactElement } from 'react';
+import type { InlineVariants } from './styles/InlineEdit.css';
 
 import { ButtonGroup, IconButton } from '@launchpad-ui/button';
-import { TextField, TextArea } from '@launchpad-ui/form';
+import { TextArea, TextField } from '@launchpad-ui/form';
 import { Icon } from '@launchpad-ui/icons';
 import { useButton } from '@react-aria/button';
 import { focusSafely } from '@react-aria/focus';
@@ -12,7 +12,7 @@ import { mergeProps, mergeRefs, useUpdateEffect } from '@react-aria/utils';
 import { cx } from 'classix';
 import { Children, cloneElement, forwardRef, useRef, useState } from 'react';
 
-import { container, cancelButton, inline, readButton } from './styles/InlineEdit.css';
+import { cancelButton, container, inline, readButton } from './styles/InlineEdit.css';
 
 type InlineEditProps = ComponentProps<'div'> &
   InlineVariants &

@@ -1,5 +1,5 @@
-import type { IconName } from './types';
 import type { ComponentProps } from 'react';
+import type { IconName } from './types';
 
 import { cx } from 'classix';
 import { useContext, useId } from 'react';

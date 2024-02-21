@@ -1,6 +1,6 @@
 import type { ToastRecord } from '../src';
 
-import { it, expect, describe } from 'vitest';
+import { describe, expect, it } from 'vitest';
 
 import { render, screen } from '../../../test/utils';
 import { ToastCenter } from '../src';
