@@ -1,5 +1,11 @@
 # @launchpad-ui/tokens
 
+## 0.9.6
+
+### Patch Changes
+
+- [#1179](https://github.com/launchdarkly/launchpad-ui/pull/1179) [`31b5c98`](https://github.com/launchdarkly/launchpad-ui/commit/31b5c98c49768e62f6474c8696b40e9cb52ea25d) Thanks [@Niznikr](https://github.com/Niznikr)! - Add `ListBox`, `Select`, and `ComboBox`
+
 ## 0.9.5
 
 ### Patch Changes
