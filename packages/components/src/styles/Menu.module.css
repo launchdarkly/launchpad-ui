@@ -21,7 +21,7 @@
     padding-inline: var(--lp-size-2);
   }
 
-  &:has([data-selection-mode]) {
+  &:has([data-selection-mode][role='menuitem']) {
     & header {
       padding-left: var(--lp-spacing-800);
     }
