@@ -81,7 +81,7 @@
     "@vitest/coverage-v8": "^1.2.0",
     "@vitest/ui": "^1.2.0",
     "browserslist": "^4.23.0",
-    "chromatic": "^10.9.3",
+    "chromatic": "^11.0.0",
     "concurrently": "^8.2.0",
     "deepmerge": "^4.3.1",
     "eslint": "^8.56.0",
