@@ -1,23 +1,15 @@
+import type { Args, StoryContext } from '@storybook/react';
+
 import { Button } from '@launchpad-ui/button';
 import { Chip } from '@launchpad-ui/chip';
-import { useEffect, useState } from 'react';
 
 export default {
 	title: 'Tokens/Themes',
 };
 
 export const NestedThemes = {
-	render: () => {
+	render: (_args: Args, context: StoryContext) => {
 		const NestedThemesComponent = () => {
-			const [theme, setTheme] = useState('default');
-
-			useEffect(() => {
-				const dataTheme = document.documentElement.getAttribute('data-theme');
-				if (dataTheme) {
-					setTheme(dataTheme);
-				}
-			}, [setTheme]);
-
 			return (
 				<>
 					<div
@@ -32,7 +24,7 @@ export const NestedThemes = {
 						<p>Currently, we are in a default mode context.</p>
 						<Button>Click me</Button>
 
-						<div data-theme={theme === 'default' ? 'dark' : 'default'}>
+						<div data-theme={context.globals.theme === 'default' ? 'dark' : 'default'}>
 							<div
 								style={{
 									backgroundColor: 'var(--lp-color-bg-ui-primary)',

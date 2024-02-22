@@ -13,6 +13,7 @@ type DrawerHeaderProps = ComponentProps<'div'> & {
 const DrawerHeader = ({
 	className,
 	children,
+	// biome-ignore lint/correctness/noUnusedVariables: <explanation>
 	titleID,
 	titleClassName,
 	'data-test-id': testId = 'drawer-header',

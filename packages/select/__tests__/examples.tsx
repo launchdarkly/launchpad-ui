@@ -41,7 +41,7 @@ const CustomSingleSelectTrigger = (props: SingleSelectTriggerProps<DummyItem>) =
 		return <span>{item.textValue}</span>;
 	};
 	return (
-		<button {...triggerProps} data-test-id="custom-trigger" ref={triggerRef}>
+		<button type="button" {...triggerProps} data-test-id="custom-trigger" ref={triggerRef}>
 			{getRenderedSelected()}
 		</button>
 	);

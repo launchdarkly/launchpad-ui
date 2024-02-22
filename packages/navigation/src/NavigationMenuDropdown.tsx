@@ -36,6 +36,7 @@ const NavigationMenuDropdown = <T extends object>(props: NavigationMenuDropdownP
 		);
 	});
 
+	// biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
 	useEffect(() => {
 		if (!buttonRef.current) {
 			return;

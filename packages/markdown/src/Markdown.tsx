@@ -53,6 +53,7 @@ const Markdown = ({
 				<div
 					// We sanitize "source" (via DOMPurify) before inserting it into the DOM, to protect against XSS attacks.
 					// Using dangerouslySetInnerHTML is safe.
+					// biome-ignore lint/security/noDangerouslySetInnerHtml: <explanation>
 					dangerouslySetInnerHTML={{
 						__html: renderedMarkdown,
 					}}

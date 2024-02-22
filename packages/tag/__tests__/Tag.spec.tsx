@@ -87,7 +87,7 @@ describe('Tag', () => {
 		render(
 			<TagGroupComponent
 				action={() => (
-					<button onClick={spy} data-test-id="action-btn">
+					<button type="button" onClick={spy} data-test-id="action-btn">
 						Click me
 					</button>
 				)}

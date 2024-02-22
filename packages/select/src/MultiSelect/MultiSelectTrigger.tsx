@@ -43,6 +43,7 @@ const MultiSelectTrigger = <T extends object>(props: MultiSelectTriggerProps<T>)
 
 	return (
 		<button
+			type="button"
 			{...triggerProps}
 			ref={triggerRef}
 			className={cx(

@@ -67,7 +67,9 @@ export const WithHtmlButton: Story = {
 		onStateChange: () => undefined,
 		onSelect: () => undefined,
 		children: [
-			<button key="1">native html button</button>,
+			<button key="1" type="button">
+				native html button
+			</button>,
 			<Menu key="2">
 				<MenuItem>Item 1</MenuItem>
 			</Menu>,

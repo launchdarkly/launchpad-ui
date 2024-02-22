@@ -100,6 +100,7 @@ export const Info: Story = {
 	args: { kind: 'info', children: 'Info alert', dismissible: false },
 };
 
+// biome-ignore lint/suspicious/noShadowRestrictedNames: <explanation>
 export const Error: Story = {
 	args: { kind: 'error', children: 'Error alert', dismissible: false },
 };

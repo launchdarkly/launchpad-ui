@@ -24,7 +24,8 @@ const defaultFormatOptions: Intl.NumberFormatOptions = {
 };
 
 const useNumberField = ({
-	className: rootClassName,
+	// biome-ignore lint/correctness/noUnusedVariables: <explanation>
+	className,
 	'data-test-id': testId = 'input',
 	id,
 	name,
@@ -85,7 +86,12 @@ const Stepper = (props: AriaButtonProps) => {
 	const { buttonProps } = useButton(props, buttonRef);
 
 	return (
-		<button {...buttonProps} className={styles['numberField-stepper']} ref={buttonRef}>
+		<button
+			type="button"
+			{...buttonProps}
+			className={styles['numberField-stepper']}
+			ref={buttonRef}
+		>
 			{props.children}
 		</button>
 	);

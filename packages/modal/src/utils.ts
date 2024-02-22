@@ -34,6 +34,7 @@ const useOverflowY = (ref: MutableRefObject<HTMLDivElement | null>) => {
 			}),
 	);
 
+	// biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
 	useEffect(() => {
 		const { current: element } = ref;
 		const observer = observerRef.current(element);
@@ -62,6 +63,7 @@ const useAbsoluteFooter = (ref: MutableRefObject<HTMLDivElement | null>) => {
 		}),
 	);
 
+	// biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
 	useEffect(() => {
 		const currentObserver = observer.current;
 		const { current } = ref;

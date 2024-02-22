@@ -50,6 +50,7 @@ export default {
 
 type Story = StoryObj<typeof Banner>;
 
+// biome-ignore lint/suspicious/noShadowRestrictedNames: <explanation>
 export const Error: Story = {
 	args: { children: 'Error banner with icon', kind: 'error' },
 };

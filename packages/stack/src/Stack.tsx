@@ -24,9 +24,10 @@ const Stack = ({
 	return (
 		<div
 			{...props}
-			className={cx(styles.flex, styles[`gap-${gap}`], !!align && styles[align])}
+			className={cx(styles.flex, styles[`gap-${gap}`], !!align && styles[align], className)}
 			data-test-id={testId}
 		>
+			{/* biome-ignore lint/suspicious/noArrayIndexKey: <explanation> */}
 			{Children.map(children, (child, index) => child && <div key={index}>{child}</div>)}
 		</div>
 	);

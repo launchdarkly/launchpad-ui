@@ -26,7 +26,7 @@ const SplitButtonMainButton = forwardRef<HTMLButtonElement, SplitButtonMainButto
 		const classes = cx(styles.SplitButtonMain, className);
 
 		const label = useMemo(() => {
-			let value;
+			let value = '';
 
 			if (isDisabled) {
 				value = 'These options are unavailable';

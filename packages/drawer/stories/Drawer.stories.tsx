@@ -114,7 +114,7 @@ export const WithTooltip: Story = {
 					</section>
 					<section>
 						<Tooltip content="If you hit the escape key hovering over this tooltip, it should dismiss the tooltip but not the drawer.">
-							<button>Hover over me or focus on me!</button>
+							<button type="button">Hover over me or focus on me!</button>
 						</Tooltip>
 					</section>
 				</Drawer>

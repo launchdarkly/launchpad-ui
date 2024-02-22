@@ -12,14 +12,14 @@ describe('Overlay', () => {
 	it('renders children when open', () => {
 		const { rerender } = render(
 			<Overlay isOpen={false} onClose={() => undefined}>
-				<button>test</button>
+				<button type="button">test</button>
 			</Overlay>,
 		);
 		expect(screen.queryByRole('button')).toBeNull();
 
 		rerender(
 			<Overlay isOpen onClose={() => undefined}>
-				<button>test</button>
+				<button type="button">test</button>
 			</Overlay>,
 		);
 		expect(screen.getByRole('button')).toBeInTheDocument();
@@ -31,7 +31,7 @@ describe('Overlay', () => {
 
 		render(
 			<Overlay isOpen onClose={spy}>
-				<button>test</button>
+				<button type="button">test</button>
 			</Overlay>,
 		);
 
@@ -45,7 +45,7 @@ describe('Overlay', () => {
 		const user = userEvent.setup();
 		render(
 			<Overlay isOpen onClose={() => undefined} isModal>
-				<button>test</button>
+				<button type="button">test</button>
 			</Overlay>,
 		);
 
@@ -58,7 +58,7 @@ describe('Overlay', () => {
 		const user = userEvent.setup();
 		render(
 			<>
-				<button>test</button>
+				<button type="button">test</button>
 				<Overlay isOpen onClose={() => undefined}>
 					<div tabIndex={0} role="tab">
 						div

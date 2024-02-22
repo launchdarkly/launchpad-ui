@@ -68,6 +68,7 @@ const tableBody = (item: (typeof ROWS)[number]) => (
 						</CopyToClipboard>
 					</Stack>
 				)}
+				{/* biome-ignore lint/complexity/noUselessFragments: <explanation> */}
 				{columnKey === 'type' && <>{item[columnKey]}</>}
 				{columnKey === 'status' && (
 					<Chip kind={item[columnKey] === 'alpha' ? 'new' : 'beta'}>{item[columnKey]}</Chip>

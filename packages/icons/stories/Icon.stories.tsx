@@ -54,6 +54,7 @@ const render: ArgsStoryFn<ReactRenderer> = () => (
 					gap: '0.625rem',
 					textAlign: 'center',
 				}}
+				// biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
 				key={index}
 			>
 				<div

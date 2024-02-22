@@ -42,6 +42,7 @@ export const Success: Story = { args: { children: 'Success Chip', kind: 'success
 
 export const Warning: Story = { args: { children: 'Warning Chip', kind: 'warning' } };
 
+// biome-ignore lint/suspicious/noShadowRestrictedNames: <explanation>
 export const Error: Story = { args: { children: 'Error Chip', kind: 'error' } };
 
 export const Info: Story = { args: { children: 'Info Chip', kind: 'info' } };

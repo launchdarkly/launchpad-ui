@@ -39,6 +39,7 @@ const SingleSelectTrigger = <T extends object>(props: SingleSelectTriggerProps<T
 
 	return (
 		<button
+			type="button"
 			{...triggerProps}
 			ref={triggerRef}
 			className={cx(

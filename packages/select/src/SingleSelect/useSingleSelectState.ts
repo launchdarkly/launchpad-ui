@@ -94,6 +94,7 @@ const useSingleSelectState = <T extends object>(
 		// commitCustomValue();
 	};
 
+	// biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
 	useEffect(() => {
 		// Reset focused key when the menu closes
 		if (triggerState.isOpen && collection.size !== 0) {
@@ -103,6 +104,7 @@ const useSingleSelectState = <T extends object>(
 		}
 	}, [triggerState.isOpen, collection]);
 
+	// biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
 	useEffect(() => {
 		if (filteredCollection.size !== 0) {
 			selectionManager.setFocusedKey(filteredCollection.getFirstKey());

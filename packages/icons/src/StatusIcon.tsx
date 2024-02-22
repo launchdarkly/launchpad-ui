@@ -8,7 +8,7 @@ type StatusIconProps = Omit<IconProps, 'name'> & {
 
 const StatusIcon = ({ kind, size = 'medium', ...rest }: StatusIconProps) => {
 	let name: IconProps['name'];
-	let ariaLabel;
+	let ariaLabel = '';
 
 	switch (kind) {
 		case 'success':

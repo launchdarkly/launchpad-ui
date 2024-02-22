@@ -65,6 +65,7 @@ const Tag = <T extends object>(props: TagProps<T>) => {
 				{allowsRemoving && (
 					<Tooltip content="Remove" allowBoundaryElementOverflow>
 						<button
+							type="button"
 							className={styles.removeButton}
 							tabIndex={-1}
 							data-test-id="remove-tag-btn"

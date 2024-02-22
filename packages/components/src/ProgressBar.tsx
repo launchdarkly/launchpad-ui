@@ -43,6 +43,7 @@ const _ProgressBar = (
 			)}
 		>
 			{({ percentage, isIndeterminate }) => (
+				// biome-ignore lint/a11y/noSvgWithoutTitle: <explanation>
 				<svg
 					viewBox="0 0 32 32"
 					fill="none"
@@ -61,7 +62,7 @@ const _ProgressBar = (
 						cy={center}
 						r={r}
 						strokeDasharray={`${c} ${c}`}
-						strokeDashoffset={c - (isIndeterminate ? 0.34 : percentage! / 100) * c}
+						strokeDashoffset={c - (isIndeterminate ? 0.34 : percentage || 0 / 100) * c}
 						transform="rotate(-90 16 16)"
 						className={styles.innerCircle}
 					/>

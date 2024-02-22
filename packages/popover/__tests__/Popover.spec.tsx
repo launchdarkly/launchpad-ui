@@ -7,7 +7,7 @@ describe('Popover', () => {
 	it('renders', () => {
 		render(
 			<Popover isOpen enableArrow>
-				<button>Target</button>
+				<button type="button">Target</button>
 				<span>Content</span>
 			</Popover>,
 		);
@@ -18,7 +18,7 @@ describe('Popover', () => {
 		const user = userEvent.setup();
 		render(
 			<Popover>
-				<button>Target</button>
+				<button type="button">Target</button>
 				<span>Content</span>
 			</Popover>,
 		);
@@ -30,7 +30,7 @@ describe('Popover', () => {
 	it('does not open when content is empty string', async () => {
 		render(
 			<Popover content="">
-				<button>Target</button>
+				<button type="button">Target</button>
 			</Popover>,
 		);
 
@@ -45,7 +45,7 @@ describe('Popover', () => {
 		const user = userEvent.setup();
 		render(
 			<Popover interactionKind="hover">
-				<button>Target</button>
+				<button type="button">Target</button>
 				<span>Content</span>
 			</Popover>,
 		);
@@ -64,7 +64,7 @@ describe('Popover', () => {
 		const user = userEvent.setup();
 		render(
 			<Popover interactionKind="hover-or-focus">
-				<button>Target</button>
+				<button type="button">Target</button>
 				<span>Content</span>
 			</Popover>,
 		);
@@ -83,7 +83,7 @@ describe('Popover', () => {
 		const user = userEvent.setup();
 		render(
 			<Popover interactionKind="hover">
-				<button>Target</button>
+				<button type="button">Target</button>
 				<span>Content</span>
 			</Popover>,
 		);
@@ -100,7 +100,7 @@ describe('Popover', () => {
 		const user = userEvent.setup();
 		render(
 			<Popover>
-				<button>Target</button>
+				<button type="button">Target</button>
 				<span>Content</span>
 			</Popover>,
 		);
@@ -114,7 +114,7 @@ describe('Popover', () => {
 		const spy = vi.fn();
 		render(
 			<Popover interactionKind="hover" onClose={spy}>
-				<button>Target</button>
+				<button type="button">Target</button>
 				<span>Content</span>
 			</Popover>,
 		);

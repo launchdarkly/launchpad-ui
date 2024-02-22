@@ -30,6 +30,7 @@ const AppliedFilterButton = forwardRef<Ref, AppliedFilterButtonProps>((props, re
 	return (
 		<div data-test-id={testId}>
 			<button
+				type="button"
 				aria-haspopup
 				className={cx(styles.appliedButton, className)}
 				ref={ref}

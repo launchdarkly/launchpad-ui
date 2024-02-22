@@ -7,7 +7,7 @@ describe('Tooltip', () => {
 	it('renders', () => {
 		render(
 			<Tooltip isOpen>
-				<button>Target</button>
+				<button type="button">Target</button>
 				<span>Content</span>
 			</Tooltip>,
 		);
@@ -17,7 +17,7 @@ describe('Tooltip', () => {
 	it('exposes the base component', () => {
 		render(
 			<TooltipBase isOpen>
-				<button>Target</button>
+				<button type="button">Target</button>
 				<span>Content</span>
 			</TooltipBase>,
 		);

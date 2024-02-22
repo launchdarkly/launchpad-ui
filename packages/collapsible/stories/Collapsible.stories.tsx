@@ -38,7 +38,7 @@ export const WithCustomTrigger: Story = {
 	args: {
 		label: (isOpen) => `${isOpen ? 'Less' : 'More'} details`,
 		trigger: ({ toggleOpen, label, triggerProps }) => (
-			<button onClick={toggleOpen} {...triggerProps}>
+			<button type="button" onClick={toggleOpen} {...triggerProps}>
 				{label}
 			</button>
 		),

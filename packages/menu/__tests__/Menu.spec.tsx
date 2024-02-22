@@ -110,7 +110,7 @@ describe('Menu', () => {
 		const user = userEvent.setup();
 		render(
 			<Popover>
-				<button>Target</button>
+				<button type="button">Target</button>
 				<Menu>
 					<MenuItem item="one">one</MenuItem>
 					<MenuItem item="two">two</MenuItem>
@@ -144,7 +144,7 @@ describe('Menu', () => {
 	it('can cycle through items with keyboard and virtualization enabled', async () => {
 		render(
 			<Popover>
-				<button>Target</button>
+				<button type="button">Target</button>
 				<Menu enableVirtualization>
 					<MenuItem item="one">one</MenuItem>
 					<MenuItem item="two">two</MenuItem>

@@ -19,7 +19,7 @@ describe('Modal', () => {
 			<Modal>
 				<ModalHeader title="Title" />
 				<ModalBody>Body</ModalBody>
-				<ModalFooter primaryButton={<button>Click me</button>} />
+				<ModalFooter primaryButton={<button type="button">Click me</button>} />
 			</Modal>,
 		);
 		expect(await screen.findByRole('dialog')).toBeInTheDocument();
@@ -30,7 +30,7 @@ describe('Modal', () => {
 			<Modal>
 				<ModalHeader title="Title" />
 				<ModalBody>Body</ModalBody>
-				<AbsoluteModalFooter primaryButton={<button>Click me</button>} />
+				<AbsoluteModalFooter primaryButton={<button type="button">Click me</button>} />
 			</Modal>,
 		);
 		expect(await screen.findByRole('dialog')).toBeInTheDocument();

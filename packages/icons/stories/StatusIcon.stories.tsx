@@ -20,6 +20,7 @@ export const Success: Story = {
 	args: { kind: 'success' },
 };
 
+// biome-ignore lint/suspicious/noShadowRestrictedNames: <explanation>
 export const Error: Story = {
 	args: { kind: 'error' },
 };

@@ -24,6 +24,7 @@ const ELEMENTS = [
 
 export const Example: Story = {
 	args: {
+		// biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
 		children: [...Array(10)].map((_, i) => <Block width="64" key={i} />),
 		gap: '2',
 	},

@@ -65,6 +65,7 @@ const FilterButton = forwardRef<Ref, FilterButtonProps>((props, ref) => {
 		<div className={styles.buttonContainer} data-test-id={testId}>
 			<button
 				{...rest}
+				type="button"
 				aria-labelledby={`${nameId} ${hasDescription ? descriptionId : ''}`}
 				aria-haspopup
 				disabled={isDisabled}

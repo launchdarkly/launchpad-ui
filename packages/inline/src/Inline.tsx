@@ -39,6 +39,7 @@ const Inline = ({
 				children,
 				(child, index) =>
 					child && (
+						// biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
 						<div key={index} className={styles.item}>
 							{child}
 						</div>

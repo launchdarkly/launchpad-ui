@@ -39,7 +39,7 @@ const UploadButton = ({
 	};
 
 	const handleChange: ChangeEventHandler<HTMLInputElement> = (event) => {
-		let file;
+		let file: File | undefined;
 
 		if (event) {
 			const e = event;

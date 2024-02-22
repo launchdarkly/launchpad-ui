@@ -48,6 +48,7 @@ describe('Collapsible', () => {
 				label={label}
 				trigger={(props) => (
 					<button
+						type="button"
 						onClick={props.toggleOpen}
 						data-test-id="custom-collapsible-trigger"
 						{...props.triggerProps}

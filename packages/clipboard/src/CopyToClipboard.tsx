@@ -62,6 +62,7 @@ const CopyToClipboard = forwardRef<CopyToClipboardHandleRef, CopyToClipboardProp
 
 		const classes = cx(styles.CopyToClipboard, className);
 
+		// biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
 		const handleCopy = useCallback(async () => {
 			await navigator.clipboard.writeText(text);
 			const node = triggerRef.current;

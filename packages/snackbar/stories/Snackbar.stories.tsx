@@ -15,6 +15,7 @@ export default {
 
 type Story = StoryObj<typeof Snackbar>;
 
+// biome-ignore lint/suspicious/noShadowRestrictedNames: <explanation>
 export const Error: Story = {
 	args: {
 		kind: 'error',
