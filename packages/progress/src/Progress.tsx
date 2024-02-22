@@ -53,6 +53,9 @@ const Progress = ({
 			height={diameter}
 			viewBox={`0 0 ${diameter} ${diameter}`}
 			data-test-id={testId}
+			// biome-ignore lint/a11y/noNoninteractiveElementToInteractiveRole: <explanation>
+			// biome-ignore lint/a11y/useAriaPropsForRole: <explanation>
+			role="progressbar"
 			aria-valuemin={0}
 			aria-valuetext="loading"
 			aria-valuemax={100}
