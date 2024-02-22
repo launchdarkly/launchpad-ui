@@ -75,7 +75,7 @@ const ModalContainer = ({
 
 	const handleOverlayClick = (event: MouseEvent<HTMLDivElement>) => {
 		if (cancelWithOverlayClick && event.target === event.currentTarget) {
-			onCancel && onCancel();
+			onCancel?.();
 		}
 	};
 

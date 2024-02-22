@@ -10,7 +10,7 @@ import tsconfig from '../tsconfig.json';
 
 const getStories = () =>
 	fg.sync([
-		path.resolve(__dirname, `../packages/**/stories/*.stories.{mdx,tsx}`),
+		path.resolve(__dirname, '../packages/**/stories/*.stories.{mdx,tsx}'),
 		'!**/node_modules',
 	]);
 
@@ -83,7 +83,7 @@ const getPackageStatusEnvVars = () => {
 	const paths = tsconfig.compilerOptions.paths;
 	const statuses: Record<string, string> = {};
 
-	Object.keys(paths).forEach((key) => {
+	for (const key of Object.keys(paths)) {
 		const filepath = path.resolve(
 			__dirname,
 			`.${paths[key as keyof typeof paths][0]}/../package.json`,
@@ -92,7 +92,7 @@ const getPackageStatusEnvVars = () => {
 		const { status } = JSON.parse(contents.toString());
 		const statusKey = key.replace('@launchpad-ui/', '').replace(/-/g, '_').toUpperCase();
 		statuses[`STORYBOOK_PACKAGE_STATUS__${statusKey}`] = status;
-	});
+	}
 
 	return statuses;
 };

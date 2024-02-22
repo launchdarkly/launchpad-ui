@@ -36,12 +36,13 @@ const Progress = ({
 	};
 
 	const isIndeterminate = value === undefined || value === null;
-	const diameter = (dimensions[size] && dimensions[size].diameter) || dimensions.small.diameter;
+	const diameter = dimensions[size]?.diameter || dimensions.small.diameter;
 	const strokeWidth = diameter * (isIndeterminate ? 0.1 : 0.5);
 	const radius = diameter * 0.5 - strokeWidth * 0.5;
 	const circumference = 2 * Math.PI * radius;
 
 	const indicator = (
+		// biome-ignore lint/a11y/noSvgWithoutTitle: <explanation>
 		<svg
 			className={cx(
 				styles.Progress,
@@ -52,7 +53,6 @@ const Progress = ({
 			height={diameter}
 			viewBox={`0 0 ${diameter} ${diameter}`}
 			data-test-id={testId}
-			role='progressbar'
 			aria-valuemin={0}
 			aria-valuetext='loading'
 			aria-valuemax={100}

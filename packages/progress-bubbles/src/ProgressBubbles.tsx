@@ -44,11 +44,10 @@ const ProgressBubbles = ({
 	const { ref, dimensions } = useDimensions();
 	let children = [];
 
-	if (items && items.length) {
+	if (items?.length) {
 		children = items.map((item, idx) => {
 			// If multiple icons exist, then children is populated on props
-			const hasMultipleIcons =
-				item.icons && item.icons.props.children && item.icons.props.children.length;
+			const hasMultipleIcons = item.icons?.props.children?.length;
 			let numIcons = 0;
 			if (item.icons) {
 				numIcons = hasMultipleIcons ? item.icons.props.children.length : 1;
@@ -81,6 +80,7 @@ const ProgressBubbles = ({
 			);
 
 			return (
+				// biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
 				<Fragment key={idx}>
 					{!!idx && (
 						<div
@@ -90,10 +90,10 @@ const ProgressBubbles = ({
 							)}
 						/>
 					)}
-					<div className={styles['ProgressBubblesIconContainer']}>
+					<div className={styles.ProgressBubblesIconContainer}>
 						{item.popover ? (
 							<Popover
-								targetClassName={styles['ProgressBubblesPopoverTarget']}
+								targetClassName={styles.ProgressBubblesPopoverTarget}
 								restrictWidth={false}
 								enforceFocus
 								offset={item.popoverOffset}
@@ -122,7 +122,7 @@ const ProgressBubbles = ({
 								styles['ProgressBubbles-line'],
 								i <= currentBubble && styles['ProgressBubbles--filled'],
 							)}
-						></div>
+						/>
 					)}
 					<div
 						className={cx(

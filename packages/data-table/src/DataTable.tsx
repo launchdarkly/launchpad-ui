@@ -88,7 +88,7 @@ const DataTable = forwardRef(
 		const layout = useMemo(() => ({ ...layoutState, tableState: state }), [layoutState, state]);
 
 		useLayoutEffect(() => {
-			if (scrollRef && scrollRef.current) {
+			if (scrollRef?.current) {
 				setTableWidth(scrollRef.current.clientWidth);
 			}
 		}, []);
@@ -109,7 +109,8 @@ const DataTable = forwardRef(
 				<TableRowGroup type='thead'>
 					{collection.headerRows.map((headerRow) => (
 						<TableHeaderRow key={headerRow.key} item={headerRow} state={state}>
-							{[...collection.getChildren!(headerRow.key)].map((column) =>
+							{/* biome-ignore lint/correctness/noUnsafeOptionalChaining: <explanation> */}
+							{[...collection.getChildren?.(headerRow.key)].map((column) =>
 								column.props.isSelectionCell ? (
 									<TableSelectAllCell
 										key={column.key}
@@ -135,7 +136,8 @@ const DataTable = forwardRef(
 				<TableRowGroup type='tbody' ref={scrollRef}>
 					{[...collection].map((row) => (
 						<TableRow key={row.key} item={row} state={state}>
-							{[...collection.getChildren!(row.key)].map((cell) =>
+							{/* biome-ignore lint/correctness/noUnsafeOptionalChaining: <explanation> */}
+							{[...collection.getChildren?.(row.key)].map((cell) =>
 								cell.props.isSelectionCell ? (
 									<TableCheckboxCell key={cell.key} cell={cell} state={state} layout={layout} />
 								) : (
@@ -316,6 +318,7 @@ const TableCheckboxCell = <T extends object>({
 }: TableCheckboxCellProps<T>) => {
 	const ref = useRef<HTMLTableCellElement>(null);
 	const { gridCellProps } = useTableCell({ node: cell }, state, ref);
+	// biome-ignore lint/style/noNonNullAssertion: <explanation>
 	const { checkboxProps } = useTableSelectionCheckbox({ key: cell.parentKey! }, state);
 	const { allowsResizing } = cell.column?.props ?? {};
 

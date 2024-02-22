@@ -106,7 +106,7 @@ const ButtonComponent = forwardRef<HTMLButtonElement, ButtonProps>((props, ref) 
 	const handleClick = (event: MouseEvent<HTMLAnchorElement> & MouseEvent<HTMLButtonElement>) => {
 		if (disabled) return event.preventDefault();
 
-		onClick && onClick(event);
+		onClick?.(event);
 	};
 
 	const handleKeyDown: KeyboardEventHandler<HTMLButtonElement> = (event) => {

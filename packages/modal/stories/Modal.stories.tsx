@@ -285,14 +285,10 @@ export const TallBody: Story = {
 			<Modal>
 				<ModalHeader
 					title='Title'
-					description={
-						<>
-							This example is meant to illustrate how the modal overflows when there is a lot of
+					description='This example is meant to illustrate how the modal overflows when there is a lot of
 							text. You can make your viewport smaller to get a better idea. Lorem ipsum dolor sit
 							amet, consectetur adipiscing elit. Ut malesuada ultricies mauris, in gravida nibh
-							vehicula vel.
-						</>
-					}
+							vehicula vel.'
 				/>
 				<ModalBody>
 					<p>
@@ -416,7 +412,7 @@ export const WithForm: Story = {
 						id='my-form'
 						onSubmit={(event) => {
 							if (inputRef.current) {
-								alert('A name was submitted: ' + inputRef.current.value);
+								alert(`A name was submitted: ${inputRef.current.value}`);
 							}
 
 							event.preventDefault();
@@ -461,21 +457,17 @@ export const WithAbsolutelyPositionedFooter: Story = {
 			<Modal>
 				<ModalHeader
 					title='Title'
-					description={
-						<>
-							In the case of forms, it&apos;s possible you need the modal body and footer contents
+					description='In the case of forms, it&apos;s possible you need the modal body and footer contents
 							to be wrapped in a form. In this case, you lose the default positioning with the
 							normal implementation. In these cases, you can absolutely position the footer so it
-							can be nested within the modal body.
-						</>
-					}
+							can be nested within the modal body.'
 				/>
 				<ModalBody>
 					<p>Try out this form:</p>
 					<form
 						onSubmit={(event) => {
 							if (inputRef.current) {
-								alert('A name was submitted: ' + inputRef.current.value);
+								alert(`A name was submitted: ${inputRef.current.value}`);
 							}
 
 							event.preventDefault();
@@ -517,6 +509,7 @@ export const WithTooltip: Story = {
 					<ModalHeader title='Heading' description='A description' />
 					<ModalBody>
 						<Tooltip content='If you hit the escape key hovering over this tooltip, it should dismiss the tooltip but not the drawer.'>
+							{/* biome-ignore lint/a11y/useButtonType: <explanation> */}
 							<button>Hover over me or focus on me!</button>
 						</Tooltip>
 					</ModalBody>

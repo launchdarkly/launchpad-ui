@@ -20,7 +20,7 @@ const CopyCodeButton = forwardRef<HTMLButtonElement, CopyCodeButtonProps>(
 				ref={ref}
 				data-test-id={testId}
 				type='button'
-				className={cx(styles['CopyCodeButton'], className, kind && styles[kind])}
+				className={cx(styles.CopyCodeButton, className, kind && styles[kind])}
 				{...rest}
 			>
 				{children}

@@ -25,6 +25,7 @@ const useFilteredCollection = <T extends object>(
 
 const filterCollection = <T extends object>(
 	collection: Collection<Node<T>>,
+	// biome-ignore lint/style/useDefaultParameterLast: <explanation>
 	inputValue = '',
 	filter: FilterFn,
 ): Collection<Node<T>> => {

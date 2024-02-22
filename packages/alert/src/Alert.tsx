@@ -151,7 +151,7 @@ const Alert = ({
 											? 'default'
 											: 'defaultFlair')
 									}
-									className={cx(primaryButton.className, styles['PrimaryButton'])}
+									className={cx(primaryButton.className, styles.PrimaryButton)}
 								/>
 							)}
 
@@ -160,7 +160,7 @@ const Alert = ({
 									kind='link'
 									asChild
 									onClick={link?.onClick}
-									className={styles['LinkButton']}
+									className={styles.LinkButton}
 									icon={<Icon name='link-external' size='small' />}
 								>
 									<a href={link.href}>{link.text}</a>

@@ -30,8 +30,7 @@ const Overlay = ({
 	const handleDocumentClick = useCallback(
 		(event: MouseEvent) => {
 			const eventTarget = event.target as Element;
-			const wasClickInOverlay =
-				containerElement.current && containerElement.current.contains(eventTarget);
+			const wasClickInOverlay = containerElement.current?.contains(eventTarget);
 			// wasClickInBody accounts for clicks in portals within the popover, which are outside of the body and therefore not in the overlay
 			const wasClickInBody = !!eventTarget.closest('body');
 

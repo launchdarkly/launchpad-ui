@@ -46,7 +46,7 @@ const FormField = ({
 	FieldErrorProps = {},
 }: FormFieldProps) => {
 	const handleBlur = () => {
-		onBlur && onBlur(name);
+		onBlur?.(name);
 	};
 
 	return (

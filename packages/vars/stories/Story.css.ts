@@ -17,7 +17,7 @@ export const local = style({
 		[accentVar]: vars.color.pink[500],
 	},
 	selectors: {
-		['[data-theme="dark"] &']: {
+		'[data-theme="dark"] &': {
 			vars: { [accentVar]: vars.color.pink[200] },
 		},
 	},

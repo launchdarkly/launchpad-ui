@@ -46,11 +46,9 @@ StyleDictionary.registerFormat({
 StyleDictionary.registerFormat({
 	name: 'typescript/accurate-module-declarations',
 	formatter({ dictionary }) {
-		return (
-			'declare const root: RootObject\n' +
-			'export default root\n' +
-			JsonToTS(StyleDictionary.formatHelpers.minifyDictionary(dictionary.tokens)).join('\n')
-		);
+		return `declare const root: RootObject\nexport default root\n${JsonToTS(
+			StyleDictionary.formatHelpers.minifyDictionary(dictionary.tokens),
+		).join('\n')}`;
 	},
 });
 
@@ -64,14 +62,14 @@ StyleDictionary.registerTransform({
 });
 
 StyleDictionary.registerTransform({
-	type: StyleDictionary.transform[`color/rgb`].type,
+	type: StyleDictionary.transform['color/rgb'].type,
 	name: 'custom/rgb',
-	matcher: StyleDictionary.transform[`color/rgb`].matcher,
+	matcher: StyleDictionary.transform['color/rgb'].matcher,
 	transformer: (token) => {
 		if (reservedColorValues.includes(token.value)) {
 			return token.value;
 		}
-		return StyleDictionary.transform[`color/rgb`].transformer(token, {});
+		return StyleDictionary.transform['color/rgb'].transformer(token, {});
 	},
 });
 
@@ -165,19 +163,19 @@ const themeTokens = (dictionary: StyleDictionary.Dictionary, theme = '') =>
 			const original = token.original[theme] || token.original.value;
 			if (dictionary.usesReference(original)) {
 				const refs = dictionary.getReferences(original);
-				refs.forEach((ref) => {
+				for (const ref of refs) {
 					value = value.replace(ref.value, () => {
 						return `var(--${ref.name})`;
 					});
-				});
+				}
 			} else if (!reservedColorValues.includes(value)) {
-				value = StyleDictionary.transform[`color/rgb`].transformer(
+				value = StyleDictionary.transform['color/rgb'].transformer(
 					{ value } as StyleDictionary.TransformedToken,
 					{},
 				);
 			}
 			return `  --${token.name}: ${value};`;
 		})
-		.join(`\n`);
+		.join('\n');
 
 myStyleDictionary.buildAllPlatforms();

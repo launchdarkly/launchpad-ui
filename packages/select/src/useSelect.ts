@@ -141,7 +141,7 @@ const useSelect = <T extends object>(
 	});
 
 	typeSelectProps.onKeyDown = typeSelectProps.onKeyDownCapture;
-	delete typeSelectProps.onKeyDownCapture;
+	typeSelectProps.onKeyDownCapture = undefined;
 
 	const domProps = filterDOMProps(props, { labelable: true });
 	const triggerProps = mergeProps(!hasFilter ? typeSelectProps : {}, menuTriggerProps, fieldProps);

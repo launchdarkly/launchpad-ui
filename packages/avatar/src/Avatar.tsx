@@ -77,14 +77,13 @@ const Avatar = ({
 					<span className={styles['Avatar-initials-content']}>{initials}</span>
 				</div>
 			);
-		} else {
-			return cloneElement(defaultIcon, {
-				className: classes,
-				'data-test-id': testId,
-				size,
-				...(rest as IconProps),
-			});
 		}
+		return cloneElement(defaultIcon, {
+			className: classes,
+			'data-test-id': testId,
+			size,
+			...(rest as IconProps),
+		});
 	}
 
 	const dimension = DIMENSIONS[size];

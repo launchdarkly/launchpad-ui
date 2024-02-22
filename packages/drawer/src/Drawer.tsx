@@ -103,11 +103,11 @@ const DrawerContainer = ({
 		return () => {
 			removeOverlayAndEventHandler();
 		};
-	}, [onCancel, testId, isFocusWithin]);
+	}, [onCancel, isFocusWithin]);
 
 	const handleOverlayClick = (event: MouseEvent<HTMLDivElement>) => {
 		if (event.target === event.currentTarget) {
-			onCancel && onCancel();
+			onCancel?.();
 		}
 	};
 

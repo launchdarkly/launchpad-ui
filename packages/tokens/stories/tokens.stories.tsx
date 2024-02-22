@@ -42,7 +42,7 @@ const TokenTable = ({ tokens }: { tokens: Record<string, string> }) => {
 		<table style={{ borderCollapse: 'separate', borderSpacing: '20px 0' }}>
 			<thead>
 				<tr>
-					<th></th>
+					<th />
 					<th style={{ textAlign: 'left' }}>Name</th>
 					<th style={{ textAlign: 'left' }}>Value</th>
 				</tr>
@@ -53,6 +53,7 @@ const TokenTable = ({ tokens }: { tokens: Record<string, string> }) => {
 						<tr key={key}>
 							<td>
 								<div
+									// biome-ignore lint/suspicious/noAssignInExpressions: <explanation>
 									ref={(element) => (itemEls.current[key] = element)}
 									style={{
 										background: value,
@@ -60,7 +61,7 @@ const TokenTable = ({ tokens }: { tokens: Record<string, string> }) => {
 										width: '150px',
 										border: '1px solid var(--lp-color-border-ui-primary)',
 									}}
-								></div>
+								/>
 							</td>
 							<td>
 								<CopyToClipboard text={`--lp-color-${key}`}>{`--lp-color-${key}`}</CopyToClipboard>

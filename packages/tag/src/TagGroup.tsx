@@ -52,6 +52,7 @@ const TagGroup = <T extends object>(props: TagGroupProps<T>) => {
 	});
 
 	/* c8 ignore start */
+	// biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
 	const keyboardDelegate = useMemo(() => {
 		const collection = isCollapsed
 			? new ListCollection([...state.collection].slice(0, tagState.visibleTagCount))
@@ -67,6 +68,7 @@ const TagGroup = <T extends object>(props: TagGroupProps<T>) => {
 	const { gridProps } = useTagGroup({ ...useTagGroupProps, keyboardDelegate }, state, tagsRef);
 	const actionsId = useId();
 
+	// biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
 	const updateVisibleTagCount = useCallback(() => {
 		if (maxRows && maxRows > 0) {
 			const computeVisibleTagCount = () => {
@@ -100,12 +102,14 @@ const TagGroup = <T extends object>(props: TagGroupProps<T>) => {
 
 				// Remove tags until there is space for the collapse button and action button (if present) on the last row.
 				const buttonsWidth = buttons.reduce(
+					// biome-ignore lint/style/noParameterAssign: <explanation>
+					// biome-ignore lint/suspicious/noAssignInExpressions: <explanation>
 					(acc, curr) => (acc += curr.getBoundingClientRect().width),
 					0,
 				);
 
-				const containerEnd = currContainerRef.getBoundingClientRect()['right'];
-				const lastTagEnd = tags[index - 1]?.getBoundingClientRect()['right'];
+				const containerEnd = currContainerRef.getBoundingClientRect().right;
+				const lastTagEnd = tags[index - 1]?.getBoundingClientRect().right;
 				let availableWidth = containerEnd - lastTagEnd;
 
 				for (const tagWidth of tagWidths.reverse()) {

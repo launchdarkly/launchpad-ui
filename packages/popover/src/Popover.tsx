@@ -97,7 +97,7 @@ type PopoverContentProps = {
 };
 
 const isOrContainsElement = (referenceElement: Element, element: Element) => {
-	return referenceElement === element || (referenceElement && referenceElement.contains(element));
+	return referenceElement === element || referenceElement?.contains(element);
 };
 
 /**
@@ -248,6 +248,7 @@ const Popover = ({
 		};
 	}, []);
 
+	// biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
 	useEffect(() => {
 		const updatePopover = async () => {
 			if (isOpen && !(popoverElement === null || popoverElement === undefined)) {
@@ -394,7 +395,7 @@ const Popover = ({
 					)}
 					tabIndex={interactionKind === 'click' ? -1 : undefined}
 				>
-					{enableArrow && <div id='arrow' ref={arrowRef}></div>}
+					{enableArrow && <div id='arrow' ref={arrowRef} />}
 					{restrictHeight ? <div className={styles['Popover-scroller']}>{content}</div> : content}
 				</m.div>
 			</LazyMotion>
