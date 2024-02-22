@@ -153,7 +153,7 @@ export const Icons: Story = {
             <MenuItem>
               <Icon name="edit" size="small" /> Edit
             </MenuItem>
-            <MenuItem>
+            <MenuItem variant="destructive">
               <Icon name="delete" size="small" /> Delete
             </MenuItem>
           </Menu>
