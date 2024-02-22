@@ -109,8 +109,8 @@ const DataTable = forwardRef(
 				<TableRowGroup type="thead">
 					{collection.headerRows.map((headerRow) => (
 						<TableHeaderRow key={headerRow.key} item={headerRow} state={state}>
-							{/* biome-ignore lint/correctness/noUnsafeOptionalChaining: <explanation> */}
-							{[...collection.getChildren?.(headerRow.key)].map((column) =>
+							{/* biome-ignore lint/style/noNonNullAssertion: <explanation> */}
+							{[...collection.getChildren!(headerRow.key)].map((column) =>
 								column.props.isSelectionCell ? (
 									<TableSelectAllCell
 										key={column.key}
@@ -136,8 +136,8 @@ const DataTable = forwardRef(
 				<TableRowGroup type="tbody" ref={scrollRef}>
 					{[...collection].map((row) => (
 						<TableRow key={row.key} item={row} state={state}>
-							{/* biome-ignore lint/correctness/noUnsafeOptionalChaining: <explanation> */}
-							{[...collection.getChildren?.(row.key)].map((cell) =>
+							{/* biome-ignore lint/style/noNonNullAssertion: <explanation> */}
+							{[...collection.getChildren!(row.key)].map((cell) =>
 								cell.props.isSelectionCell ? (
 									<TableCheckboxCell key={cell.key} cell={cell} state={state} layout={layout} />
 								) : (
