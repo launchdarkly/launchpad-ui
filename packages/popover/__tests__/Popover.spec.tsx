@@ -29,7 +29,7 @@ describe('Popover', () => {
 
 	it('does not open when content is empty string', async () => {
 		render(
-			<Popover content=''>
+			<Popover content="">
 				<button>Target</button>
 			</Popover>,
 		);
@@ -44,7 +44,7 @@ describe('Popover', () => {
 	it('opens and closes on mouse hover/unhover of the target', async () => {
 		const user = userEvent.setup();
 		render(
-			<Popover interactionKind='hover'>
+			<Popover interactionKind="hover">
 				<button>Target</button>
 				<span>Content</span>
 			</Popover>,
@@ -63,7 +63,7 @@ describe('Popover', () => {
 	it('opens and closes on mouse focus/blur of the target', async () => {
 		const user = userEvent.setup();
 		render(
-			<Popover interactionKind='hover-or-focus'>
+			<Popover interactionKind="hover-or-focus">
 				<button>Target</button>
 				<span>Content</span>
 			</Popover>,
@@ -82,7 +82,7 @@ describe('Popover', () => {
 	it('closes when the Escape key is pressed', async () => {
 		const user = userEvent.setup();
 		render(
-			<Popover interactionKind='hover'>
+			<Popover interactionKind="hover">
 				<button>Target</button>
 				<span>Content</span>
 			</Popover>,
@@ -113,7 +113,7 @@ describe('Popover', () => {
 		const user = userEvent.setup();
 		const spy = vi.fn();
 		render(
-			<Popover interactionKind='hover' onClose={spy}>
+			<Popover interactionKind="hover" onClose={spy}>
 				<button>Target</button>
 				<span>Content</span>
 			</Popover>,

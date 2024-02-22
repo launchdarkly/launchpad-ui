@@ -23,10 +23,10 @@ export const Example: Story = {
 		children: (
 			<>
 				<Label>Group</Label>
-				<Radio value='1'>First</Radio>
-				<Radio value='2'>Second</Radio>
-				<Radio value='3'>Third</Radio>
-				<Text slot='description'>Description</Text>
+				<Radio value="1">First</Radio>
+				<Radio value="2">Second</Radio>
+				<Radio value="3">Third</Radio>
+				<Text slot="description">Description</Text>
 			</>
 		),
 		defaultValue: '1',
@@ -43,11 +43,11 @@ export const States: Story = {
 		children: (
 			<>
 				<Label>Group</Label>
-				<Radio value='1'>Resting</Radio>
-				<Radio value='2' isDisabled>
+				<Radio value="1">Resting</Radio>
+				<Radio value="2" isDisabled>
 					Selected, Disabled
 				</Radio>
-				<Radio value='3' isDisabled>
+				<Radio value="3" isDisabled>
 					Disabled
 				</Radio>
 			</>
@@ -62,12 +62,12 @@ export const Validation: Story = {
 			<Form>
 				<RadioGroup {...args}>
 					<Label>Pick one</Label>
-					<Radio value='1'>First</Radio>
-					<Radio value='2'>Second</Radio>
-					<Radio value='3'>Third</Radio>
+					<Radio value="1">First</Radio>
+					<Radio value="2">Second</Radio>
+					<Radio value="3">Third</Radio>
 					<FieldError />
 				</RadioGroup>
-				<Button type='submit'>Submit</Button>
+				<Button type="submit">Submit</Button>
 			</Form>
 		);
 	},

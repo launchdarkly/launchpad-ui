@@ -395,7 +395,7 @@ const Popover = ({
 					)}
 					tabIndex={interactionKind === 'click' ? -1 : undefined}
 				>
-					{enableArrow && <div id='arrow' ref={arrowRef} />}
+					{enableArrow && <div id="arrow" ref={arrowRef} />}
 					{restrictHeight ? <div className={styles['Popover-scroller']}>{content}</div> : content}
 				</m.div>
 			</LazyMotion>
@@ -406,7 +406,7 @@ const Popover = ({
 				id={popoverId.current}
 				ref={contentRef}
 				className={classes}
-				role='tooltip'
+				role="tooltip"
 				data-test-id={testId}
 				aria-hidden={!isOpen}
 				{...handlers}

@@ -99,7 +99,7 @@ const WithImperativeHandleWrapper = () => {
 				<code>CopyToClipboard</code> component. This is useful when you need to handle the copy
 				event in a customized way from the parent.
 			</p>
-			<CopyToClipboard text='Content' ref={ref}>
+			<CopyToClipboard text="Content" ref={ref}>
 				Copy content
 			</CopyToClipboard>
 		</div>

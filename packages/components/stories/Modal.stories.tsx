@@ -40,23 +40,23 @@ const renderModal = (args: Story['args'], destructive = false) => (
 				<Dialog>
 					{({ close }) => (
 						<>
-							<div slot='header'>
+							<div slot="header">
 								{destructive && (
-									<Icon name='warning' size='medium' fill='var(--lp-color-fill-feedback-warning)' />
+									<Icon name="warning" size="medium" fill="var(--lp-color-fill-feedback-warning)" />
 								)}
-								<Heading slot='title'>Title</Heading>
+								<Heading slot="title">Title</Heading>
 								<IconButton
-									aria-label='close'
-									icon='cancel'
-									size='small'
-									variant='minimal'
+									aria-label="close"
+									icon="cancel"
+									size="small"
+									variant="minimal"
 									onPress={close}
 								/>
 							</div>
-							<div slot='body'>Body text</div>
-							<div slot='footer'>
+							<div slot="body">Body text</div>
+							<div slot="footer">
 								<Button onPress={close}>Cancel</Button>
-								<Button variant='primary'>Confirm</Button>
+								<Button variant="primary">Confirm</Button>
 							</div>
 						</>
 					)}

@@ -53,8 +53,8 @@ const SingleSelectTrigger = <T extends object>(props: SingleSelectTriggerProps<T
 				</span>
 			</span>
 			<span className={styles.indicatorsContainer}>
-				<span className={styles.expandIndicatorContainer} aria-hidden='true'>
-					<Icon name='chevron-down' />
+				<span className={styles.expandIndicatorContainer} aria-hidden="true">
+					<Icon name="chevron-down" />
 				</span>
 			</span>
 		</button>

@@ -27,7 +27,7 @@ const FilterTestWrapper = (props?: Partial<FilterProps>) => {
 	return (
 		<Filter
 			{...props}
-			name='author'
+			name="author"
 			description={description.name}
 			options={options}
 			onSelect={onSelect}

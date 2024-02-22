@@ -6,7 +6,7 @@ import { Radio } from '../src';
 describe('Radio', () => {
 	it('renders', () => {
 		render(
-			<Radio value='one' aria-label='Test Radio' onChange={() => undefined}>
+			<Radio value="one" aria-label="Test Radio" onChange={() => undefined}>
 				Label
 			</Radio>,
 		);
@@ -15,7 +15,7 @@ describe('Radio', () => {
 
 	it('warns about a11y requirements', () => {
 		console.warn = vi.fn();
-		render(<Radio value='one' onChange={() => undefined} disabled />);
+		render(<Radio value="one" onChange={() => undefined} disabled />);
 		expect(console.warn).toHaveBeenCalledWith(
 			'If you do not provide children, you must specify an aria-label for accessibility',
 		);

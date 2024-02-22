@@ -102,11 +102,11 @@ export const Default: Story = {
 			<>
 				{button}
 				<Modal {...props} onCancel={() => setShow(!show)}>
-					<ModalHeader title='Heading' description='A description' />
+					<ModalHeader title="Heading" description="A description" />
 					<ModalBody>Body text</ModalBody>
 					<ModalFooter
 						primaryButton={
-							<Button kind='primary' onClick={() => setShow(false)}>
+							<Button kind="primary" onClick={() => setShow(false)}>
 								Okay
 							</Button>
 						}
@@ -135,13 +135,13 @@ export const Default: Story = {
 export const Destructive: Story = {
 	render: () => {
 		return (
-			<Modal status='warning' size='small'>
-				<ModalHeader title='Unsaved changes' />
+			<Modal status="warning" size="small">
+				<ModalHeader title="Unsaved changes" />
 				<ModalBody>
 					<p>If you leave this page, any unsaved changes will be lost.</p>
 				</ModalBody>
 				<ModalFooter
-					primaryButton={<Button kind='destructive'>Leave page</Button>}
+					primaryButton={<Button kind="destructive">Leave page</Button>}
 					secondaryButton={<Button>Cancel</Button>}
 				/>
 			</Modal>
@@ -163,13 +163,13 @@ export const Destructive: Story = {
 export const Small: Story = {
 	render: () => {
 		return (
-			<Modal size='small'>
-				<ModalHeader title='Heading' />
+			<Modal size="small">
+				<ModalHeader title="Heading" />
 				<ModalBody>
 					<p>Body text</p>
 				</ModalBody>
 				<ModalFooter
-					primaryButton={<Button kind='primary'>Okay</Button>}
+					primaryButton={<Button kind="primary">Okay</Button>}
 					secondaryButton={<Button>Cancel</Button>}
 				/>
 			</Modal>
@@ -191,8 +191,8 @@ export const Small: Story = {
 export const Large: Story = {
 	render: () => {
 		return (
-			<Modal size='large'>
-				<ModalHeader title='Heading' />
+			<Modal size="large">
+				<ModalHeader title="Heading" />
 				<ModalBody>
 					<p>
 						The <code>large</code> modal is only appropriate when the contents of the modal
@@ -203,7 +203,7 @@ export const Large: Story = {
 					</p>
 				</ModalBody>
 				<ModalFooter
-					primaryButton={<Button kind='primary'>Okay</Button>}
+					primaryButton={<Button kind="primary">Okay</Button>}
 					secondaryButton={<Button>Cancel</Button>}
 				/>
 			</Modal>
@@ -225,11 +225,11 @@ export const Large: Story = {
 export const KitchenSink: Story = {
 	render: () => {
 		return (
-			<Modal status='warning' size='medium'>
+			<Modal status="warning" size="medium">
 				<ModalHeader
 					title={
 						<>
-							Heading <Icon name='click' size='small' />
+							Heading <Icon name="click" size="small" />
 						</>
 					}
 					description={
@@ -251,7 +251,7 @@ export const KitchenSink: Story = {
 				</ModalBody>
 				<ModalFooter
 					primaryButton={
-						<Button icon={<Icon name='check' />} kind='primary'>
+						<Button icon={<Icon name="check" />} kind="primary">
 							Okay
 						</Button>
 					}
@@ -284,11 +284,11 @@ export const TallBody: Story = {
 		return (
 			<Modal>
 				<ModalHeader
-					title='Title'
-					description='This example is meant to illustrate how the modal overflows when there is a lot of
+					title="Title"
+					description="This example is meant to illustrate how the modal overflows when there is a lot of
 							text. You can make your viewport smaller to get a better idea. Lorem ipsum dolor sit
 							amet, consectetur adipiscing elit. Ut malesuada ultricies mauris, in gravida nibh
-							vehicula vel.'
+							vehicula vel."
 				/>
 				<ModalBody>
 					<p>
@@ -369,15 +369,15 @@ export const TallBody: Story = {
 export const ForcedDarkTheme: Story = {
 	render: () => {
 		return (
-			<Modal size='small' theme='dark'>
-				<ModalHeader title='Inverted theme' />
+			<Modal size="small" theme="dark">
+				<ModalHeader title="Inverted theme" />
 				<ModalBody>
 					<p>
 						You can force set the theme using the <code>theme</code> prop.
 					</p>
 				</ModalBody>
 				<ModalFooter
-					primaryButton={<Button kind='destructive'>Leave page</Button>}
+					primaryButton={<Button kind="destructive">Leave page</Button>}
 					secondaryButton={<Button>Cancel</Button>}
 				/>
 			</Modal>
@@ -403,13 +403,13 @@ export const WithForm: Story = {
 		return (
 			<Modal>
 				<ModalHeader
-					title='Title'
-					description='This example shows how the modal works when a form wraps the body and footer.'
+					title="Title"
+					description="This example shows how the modal works when a form wraps the body and footer."
 				/>
 				<ModalBody>
 					<p>Try out this form:</p>
 					<form
-						id='my-form'
+						id="my-form"
 						onSubmit={(event) => {
 							if (inputRef.current) {
 								alert(`A name was submitted: ${inputRef.current.value}`);
@@ -418,15 +418,15 @@ export const WithForm: Story = {
 							event.preventDefault();
 						}}
 					>
-						<label htmlFor='name'>
+						<label htmlFor="name">
 							Your Name
-							<input type='text' name='name' id='name' ref={inputRef} />
+							<input type="text" name="name" id="name" ref={inputRef} />
 						</label>
 					</form>
 				</ModalBody>
 				<ModalFooter
 					primaryButton={
-						<Button type='submit' form='my-form'>
+						<Button type="submit" form="my-form">
 							Submit
 						</Button>
 					}
@@ -456,11 +456,11 @@ export const WithAbsolutelyPositionedFooter: Story = {
 		return (
 			<Modal>
 				<ModalHeader
-					title='Title'
-					description='In the case of forms, it&apos;s possible you need the modal body and footer contents
+					title="Title"
+					description="In the case of forms, it&apos;s possible you need the modal body and footer contents
 							to be wrapped in a form. In this case, you lose the default positioning with the
 							normal implementation. In these cases, you can absolutely position the footer so it
-							can be nested within the modal body.'
+							can be nested within the modal body."
 				/>
 				<ModalBody>
 					<p>Try out this form:</p>
@@ -473,11 +473,11 @@ export const WithAbsolutelyPositionedFooter: Story = {
 							event.preventDefault();
 						}}
 					>
-						<label htmlFor='name'>
+						<label htmlFor="name">
 							Your Name
-							<input type='text' name='name' id='name' ref={inputRef} />
+							<input type="text" name="name" id="name" ref={inputRef} />
 						</label>
-						<AbsoluteModalFooter primaryButton={<Button type='submit'>Submit</Button>} />
+						<AbsoluteModalFooter primaryButton={<Button type="submit">Submit</Button>} />
 					</form>
 				</ModalBody>
 			</Modal>
@@ -506,16 +506,16 @@ export const WithTooltip: Story = {
 			<>
 				{button}
 				<Modal {...props} onCancel={() => setShow(!show)}>
-					<ModalHeader title='Heading' description='A description' />
+					<ModalHeader title="Heading" description="A description" />
 					<ModalBody>
-						<Tooltip content='If you hit the escape key hovering over this tooltip, it should dismiss the tooltip but not the drawer.'>
+						<Tooltip content="If you hit the escape key hovering over this tooltip, it should dismiss the tooltip but not the drawer.">
 							{/* biome-ignore lint/a11y/useButtonType: <explanation> */}
 							<button>Hover over me or focus on me!</button>
 						</Tooltip>
 					</ModalBody>
 					<ModalFooter
 						primaryButton={
-							<Button kind='primary' onClick={() => setShow(false)}>
+							<Button kind="primary" onClick={() => setShow(false)}>
 								Okay
 							</Button>
 						}

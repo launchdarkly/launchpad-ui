@@ -17,14 +17,14 @@ const buttonTemplateWithStates: Decorator = (storyComponent, context) => {
 
 	const PseudoStateButtons = ButtonStates.map((className, index) => (
 		<Fragment key={`${className}_Button`}>
-			<span className='Button-state-label'>
+			<span className="Button-state-label">
 				{ButtonLabels[ButtonLabels.length - 1 >= index ? index : ButtonLabels.length - 1]}
 			</span>
 			<ButtonGroup {...storyArgs}>
-				<Button kind='default' className={className}>
+				<Button kind="default" className={className}>
 					First
 				</Button>
-				<Button kind='primary' className={className}>
+				<Button kind="primary" className={className}>
 					Second
 				</Button>
 			</ButtonGroup>
@@ -34,14 +34,14 @@ const buttonTemplateWithStates: Decorator = (storyComponent, context) => {
 		return storyComponent();
 	}
 	return (
-		<div className='Storygroup-wrapper'>
+		<div className="Storygroup-wrapper">
 			{PseudoStateButtons}
-			<span className='Button-state-label'>Disabled</span>
+			<span className="Button-state-label">Disabled</span>
 			<ButtonGroup {...storyArgs}>
-				<Button kind='default' disabled>
+				<Button kind="default" disabled>
 					First
 				</Button>
-				<Button kind='primary'>Second</Button>
+				<Button kind="primary">Second</Button>
 			</ButtonGroup>
 		</div>
 	);

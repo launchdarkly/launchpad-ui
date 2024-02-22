@@ -26,7 +26,7 @@ export const Basic: Story = {
 	render: () => {
 		return (
 			<MultiSelect
-				label='Fruit'
+				label="Fruit"
 				items={FRUIT}
 				disabledKeys={['2']}
 				onSelectionChange={(keys) => console.log(Array.from(keys))}
@@ -54,7 +54,7 @@ export const Filterable: Story = {
 	render: () => {
 		return (
 			<MultiSelect
-				label='Fruit'
+				label="Fruit"
 				defaultItems={FRUIT}
 				hasFilter
 				onSelectionChange={(keys) => console.log(Array.from(keys))}
@@ -87,7 +87,7 @@ export const WithCustomTrigger: Story = {
 					more items, we render a plus button that opens the dropdown.
 				</p>
 				<MultiSelect
-					label='Fruit'
+					label="Fruit"
 					defaultItems={FRUIT}
 					hasFilter
 					onSelectionChange={(keys) => console.log(Array.from(keys))}
@@ -115,7 +115,7 @@ export const MultiSelectWithCustomSelectedRender: Story = {
 	render: () => {
 		return (
 			<MultiSelect
-				label='Fruit'
+				label="Fruit"
 				items={FRUIT}
 				onSelectionChange={(keys) => console.log(Array.from(keys))}
 				trigger={(props) => (
@@ -157,7 +157,7 @@ export const MultiSelectWithSelectAll: Story = {
 	render: () => {
 		return (
 			<MultiSelect
-				label='Fruit'
+				label="Fruit"
 				items={FRUIT}
 				onSelectionChange={(keys) => console.log(Array.from(keys))}
 				isSelectableAll
@@ -200,7 +200,7 @@ export const WithControlledSelectedKeys: Story = {
 
 			return (
 				<MultiSelect
-					label='Fruit'
+					label="Fruit"
 					items={FRUIT}
 					selectedKeys={selectedKeys}
 					onSelectionChange={(keys) => setSelectedKeys(keys)}
@@ -228,7 +228,7 @@ export const WithControlledSelectedKeys: Story = {
 export const WithUncontrolledItems: Story = {
 	render: () => {
 		return (
-			<MultiSelect label='Fruit' defaultItems={FRUIT}>
+			<MultiSelect label="Fruit" defaultItems={FRUIT}>
 				{(item) => <SelectItem textValue={item.name}>{item.name}</SelectItem>}
 			</MultiSelect>
 		);

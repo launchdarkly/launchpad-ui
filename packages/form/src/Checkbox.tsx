@@ -45,7 +45,7 @@ const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
 					aria-labelledby={ariaLabelledby}
 					className={styles.checkbox}
 					disabled={disabled}
-					type='checkbox'
+					type="checkbox"
 					data-test-id={testId}
 				/>{' '}
 				{disabled ? <span className={styles.labelDisabled}>{children}</span> : children}

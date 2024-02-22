@@ -37,11 +37,11 @@ const Banner = ({
 			</div>
 			{!!onDismiss && (
 				<IconButton
-					aria-label='Close banner'
-					icon={<Icon name='cancel' size='small' />}
-					size='small'
+					aria-label="Close banner"
+					icon={<Icon name="cancel" size="small" />}
+					size="small"
 					onClick={onDismiss}
-					kind='close'
+					kind="close"
 					data-test-id={`${testId}-dismiss-button`}
 				/>
 			)}

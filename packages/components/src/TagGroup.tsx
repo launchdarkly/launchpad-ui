@@ -88,11 +88,11 @@ const _Tag = (
 					{children}
 					{allowsRemoving && (
 						<IconButton
-							aria-label='Remove'
-							size='small'
-							variant='minimal'
-							icon='cancel-circle-outline'
-							slot='remove'
+							aria-label="Remove"
+							size="small"
+							variant="minimal"
+							icon="cancel-circle-outline"
+							slot="remove"
 						/>
 					)}
 				</>

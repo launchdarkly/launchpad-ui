@@ -24,7 +24,7 @@ describe('ProgressBubbles', () => {
 
 	it('renders with items', () => {
 		const items = [
-			{ label: 'Stage 1', icons: <Icon name='info' /> },
+			{ label: 'Stage 1', icons: <Icon name="info" /> },
 			{
 				label: 'Stage 2',
 			},
@@ -36,8 +36,8 @@ describe('ProgressBubbles', () => {
 				label: 'Stage 4',
 				icons: (
 					<>
-						<Icon name='info' />
-						<Icon name='add' />
+						<Icon name="info" />
+						<Icon name="add" />
 					</>
 				),
 			},

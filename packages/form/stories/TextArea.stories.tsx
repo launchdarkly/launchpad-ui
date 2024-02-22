@@ -18,14 +18,14 @@ const withRestingAndDisabledStates: Decorator = (story, context) => {
 	}
 
 	return (
-		<div className='Textarea-storygroup-wrapper'>
-			<span className='Textarea-state-label'>Resting</span>
+		<div className="Textarea-storygroup-wrapper">
+			<span className="Textarea-state-label">Resting</span>
 			{story()}
 			{originalTemplate && (
 				<>
-					<span className='Textarea-state-label'>Disabled</span>
+					<span className="Textarea-state-label">Disabled</span>
 					{originalTemplate({ ...args, disabled: true, id: 'Disabled' }, context)}
-					<span className='Textarea-state-label'>Empty</span>
+					<span className="Textarea-state-label">Empty</span>
 					{originalTemplate(
 						{ ...args, value: '', placeholder: 'Enter text here', id: 'Placeholder' },
 						context,
@@ -47,7 +47,7 @@ export default {
 			textFieldId = textFieldId[0].toUpperCase() + textFieldId.slice(1);
 			return (
 				<>
-					<span className='Textarea-state-label'>{`${
+					<span className="Textarea-state-label">{`${
 						args.className?.replace('pseudo-', '') || ''
 					}`}</span>
 					{originalStory({ ...args, id: textFieldId }, context)}

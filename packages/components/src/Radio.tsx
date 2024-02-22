@@ -23,7 +23,7 @@ const _Radio = ({ children, ...props }: RadioProps, ref: ForwardedRef<HTMLLabelE
 			{({ isSelected }) => (
 				<>
 					<div className={circle()}>
-						{isSelected ? <Icon name='circle' className={styles.icon} /> : null}
+						{isSelected ? <Icon name="circle" className={styles.icon} /> : null}
 					</div>
 					{children}
 				</>

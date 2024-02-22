@@ -6,7 +6,7 @@ import { render, screen, userEvent, waitFor } from '../../../test/utils';
 import { Filter } from '../src';
 
 const createComponent = (props?: Partial<FilterProps>) => (
-	<Filter name='author' description='osmo' options={[]} {...props} />
+	<Filter name="author" description="osmo" options={[]} {...props} />
 );
 
 const oneOption = [

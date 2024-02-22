@@ -53,10 +53,10 @@ const _MenuItem = <T extends object>(
 			{composeRenderProps(props.children, (children, { selectionMode, isSelected, hasSubmenu }) => (
 				<>
 					{selectionMode !== 'none' && (
-						<span className={styles.check}>{isSelected && <Icon name='check' size='small' />}</span>
+						<span className={styles.check}>{isSelected && <Icon name="check" size="small" />}</span>
 					)}
 					{children}
-					{hasSubmenu && <Icon name='chevron-right' size='small' className={styles.submenu} />}
+					{hasSubmenu && <Icon name="chevron-right" size="small" className={styles.submenu} />}
 				</>
 			))}
 		</AriaMenuItem>

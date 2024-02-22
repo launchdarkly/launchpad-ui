@@ -42,7 +42,7 @@ const NavItem = ({
 			data-text={name}
 			onClick={onClick}
 			role={role}
-			data-nav-target='true' // used by Navigation to check rendered width
+			data-nav-target="true" // used by Navigation to check rendered width
 			data-test-id={testId}
 			aria-selected={role === 'tab' ? selected : undefined}
 		>
@@ -52,8 +52,8 @@ const NavItem = ({
 						{name}
 						<Chip
 							className={styles['NavItem-chip']}
-							size='tiny'
-							data-test-id='nav-item-chip'
+							size="tiny"
+							data-test-id="nav-item-chip"
 							kind={status}
 						>
 							{titlecase(status)}

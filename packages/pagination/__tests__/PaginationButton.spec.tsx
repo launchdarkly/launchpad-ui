@@ -7,8 +7,8 @@ describe('PaginationButton', () => {
 	it('renders', () => {
 		render(
 			<PaginationButton
-				kind='first'
-				resourceName='resource'
+				kind="first"
+				resourceName="resource"
 				disabled={false}
 				onClick={() => undefined}
 			/>,

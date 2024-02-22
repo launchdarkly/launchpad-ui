@@ -5,7 +5,7 @@ import { FieldSet } from '../src';
 
 describe('FieldSet', () => {
 	it('renders', () => {
-		render(<FieldSet data-test-id='testing' />);
+		render(<FieldSet data-test-id="testing" />);
 		expect(screen.getByTestId('testing')).toBeInTheDocument();
 	});
 });

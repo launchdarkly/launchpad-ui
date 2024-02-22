@@ -8,7 +8,7 @@ export default function Index() {
 		<>
 			{button}
 			<Modal onCancel={() => setShow(!show)}>
-				<ModalHeader title='Title' />
+				<ModalHeader title="Title" />
 				<ModalBody>
 					<p>Body text</p>
 				</ModalBody>

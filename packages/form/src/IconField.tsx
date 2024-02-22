@@ -40,7 +40,7 @@ const IconField = ({
 				icon={cloneElement(icon, {
 					className: styles.iconFieldIconFill,
 				})}
-				size='small'
+				size="small"
 				className={styles.iconFieldIcon}
 				style={renderIconLast ? { right: '0.313rem' } : { left: '0.313rem' }}
 				aria-label={ariaLabel}

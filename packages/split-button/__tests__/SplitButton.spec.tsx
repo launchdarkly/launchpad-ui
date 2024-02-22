@@ -30,12 +30,12 @@ describe('SplitButton', () => {
 		const user = userEvent.setup();
 		render(
 			<SplitButton>
-				<Tooltip content='Main tooltip'>
+				<Tooltip content="Main tooltip">
 					<SplitButtonMainButton>Save changes</SplitButtonMainButton>
 				</Tooltip>
 				<SplitButtonDropdown>
-					<Tooltip content='Dropdown tooltip'>
-						<SplitButtonDropdownButton aria-label='Test dropdown button' />
+					<Tooltip content="Dropdown tooltip">
+						<SplitButtonDropdownButton aria-label="Test dropdown button" />
 					</Tooltip>
 					<Menu>
 						<MenuItem>Save changes</MenuItem>

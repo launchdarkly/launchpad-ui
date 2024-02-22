@@ -30,7 +30,7 @@ type CopyToClipboardHandleRef = {
 
 const CopyConfirmation = () => (
 	<span className={styles['Clipboard-confirmation']}>
-		<Icon name='check-circle' className={styles['Clipboard-checkmark']} size='medium' />
+		<Icon name="check-circle" className={styles['Clipboard-checkmark']} size="medium" />
 		<span className={styles['Clipboard-copied']}>Copied!</span>
 	</span>
 );
@@ -122,7 +122,7 @@ const CopyToClipboard = forwardRef<CopyToClipboardHandleRef, CopyToClipboardProp
 						onKeyDown={handleKeyDown}
 						ref={triggerRef}
 						aria-label={triggerAriaLabelText}
-						role='button'
+						role="button"
 						kind={kind}
 						tabIndex={0}
 					>

@@ -8,7 +8,7 @@ describe('UploadButton', () => {
 
 	it('renders', () => {
 		render(
-			<UploadButton maxSize={1000000} onSelect={() => undefined} id='test'>
+			<UploadButton maxSize={1000000} onSelect={() => undefined} id="test">
 				Upload
 			</UploadButton>,
 		);
@@ -21,7 +21,7 @@ describe('UploadButton', () => {
 
 		const user = userEvent.setup();
 		render(
-			<UploadButton maxSize={1000000} onSelect={spy} id='test'>
+			<UploadButton maxSize={1000000} onSelect={spy} id="test">
 				Upload
 			</UploadButton>,
 		);
@@ -38,7 +38,7 @@ describe('UploadButton', () => {
 
 		const user = userEvent.setup();
 		render(
-			<UploadButton maxSize={1000000} onSelect={spy} id='test'>
+			<UploadButton maxSize={1000000} onSelect={spy} id="test">
 				Upload
 			</UploadButton>,
 		);
@@ -55,7 +55,7 @@ describe('UploadButton', () => {
 
 		const user = userEvent.setup();
 		render(
-			<UploadButton maxSize={1000000} onSelect={spy} id='test'>
+			<UploadButton maxSize={1000000} onSelect={spy} id="test">
 				Upload
 			</UploadButton>,
 		);
@@ -72,7 +72,7 @@ describe('UploadButton', () => {
 
 		const user = userEvent.setup();
 		render(
-			<UploadButton maxSize={1000000} onSelect={spy} disabled id='test'>
+			<UploadButton maxSize={1000000} onSelect={spy} disabled id="test">
 				Upload
 			</UploadButton>,
 		);
@@ -87,7 +87,7 @@ describe('UploadButton', () => {
 
 		const user = userEvent.setup();
 		render(
-			<UploadButton maxSize={1} onSelect={spy} id='test'>
+			<UploadButton maxSize={1} onSelect={spy} id="test">
 				Upload
 			</UploadButton>,
 		);

@@ -17,10 +17,10 @@ export default {
 type Story = StoryObj<typeof Stack>;
 
 const ELEMENTS = [
-	<Block width='32' key={1} />,
-	<Block width='48' key={2} />,
-	<Block width='64' key={3} />,
-	<Block width='80' key={4} />,
+	<Block width="32" key={1} />,
+	<Block width="48" key={2} />,
+	<Block width="64" key={3} />,
+	<Block width="80" key={4} />,
 ];
 
 export const Example: Story = {

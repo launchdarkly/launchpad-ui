@@ -20,7 +20,7 @@ const MenuBase = forwardRef<HTMLDivElement, MenuBaseProps>(
 		);
 
 		return (
-			<div {...props} role='menu' className={classes} ref={ref}>
+			<div {...props} role="menu" className={classes} ref={ref}>
 				{children}
 			</div>
 		);

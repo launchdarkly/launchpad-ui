@@ -53,10 +53,10 @@ export const Default: Story = {
 		value: 'kindA',
 		children: (
 			<>
-				<Radio id='A' value='kindA' checked />
-				<Label htmlFor='A'>A</Label>
-				<Radio id='B' value='kindB' />
-				<Label htmlFor='B'>B</Label>
+				<Radio id="A" value="kindA" checked />
+				<Label htmlFor="A">A</Label>
+				<Radio id="B" value="kindB" />
+				<Label htmlFor="B">B</Label>
 			</>
 		),
 	},

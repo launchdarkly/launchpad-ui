@@ -29,7 +29,7 @@ export const Example: Story = {
 			<>
 				<InlineEdit
 					defaultValue={editValue}
-					aria-label='edit value'
+					aria-label="edit value"
 					{...args}
 					onConfirm={setEditValue}
 				>
@@ -54,7 +54,7 @@ export const EditTitle: Story = {
 			<div style={{ width: '500px' }}>
 				<InlineEdit
 					defaultValue={editValue}
-					aria-label='edit value'
+					aria-label="edit value"
 					{...args}
 					onConfirm={setEditValue}
 					hideEdit
@@ -74,11 +74,11 @@ export const EditCopy: Story = {
 			<div style={{ width: 'max-content' }}>
 				<InlineEdit
 					defaultValue={editValue}
-					aria-label='edit value'
+					aria-label="edit value"
 					{...args}
 					onConfirm={setEditValue}
 				>
-					<CopyToClipboard text={editValue} kind='basic'>
+					<CopyToClipboard text={editValue} kind="basic">
 						{editValue}
 					</CopyToClipboard>
 				</InlineEdit>
@@ -94,7 +94,7 @@ export const WithTextarea: Story = {
 		return (
 			<InlineEdit
 				defaultValue={editValue}
-				aria-label='edit value'
+				aria-label="edit value"
 				{...args}
 				onConfirm={setEditValue}
 				renderInput={<TextArea />}
@@ -112,18 +112,18 @@ export const InForm: Story = {
 		return (
 			<Form>
 				<FormField
-					name='Name'
-					label='Name'
-					htmlFor='inline-edit'
+					name="Name"
+					label="Name"
+					htmlFor="inline-edit"
 					isRequired
 					errorMessage={editValue ? undefined : 'No value entered'}
 				>
 					<InlineEdit
 						defaultValue={editValue}
-						aria-label='edit value'
+						aria-label="edit value"
 						{...args}
 						onConfirm={setEditValue}
-						renderInput={<TextField id='inline-edit' />}
+						renderInput={<TextField id="inline-edit" />}
 					>
 						<span>{editValue || 'Enter a value'}</span>
 					</InlineEdit>
@@ -152,7 +152,7 @@ export const Controlled: Story = {
 			<InlineEdit
 				defaultValue={editValue}
 				isEditing={isEditing}
-				aria-label='edit value'
+				aria-label="edit value"
 				onCancel={() => setEditing(false)}
 				onEdit={() => setEditing(true)}
 				onConfirm={(value) => {
@@ -175,7 +175,7 @@ export const Validation: Story = {
 			<InlineEdit
 				defaultValue={editValue}
 				isEditing={isEditing}
-				aria-label='edit value'
+				aria-label="edit value"
 				onCancel={() => setEditing(false)}
 				onEdit={() => setEditing(true)}
 				onConfirm={(value) => {
@@ -185,13 +185,13 @@ export const Validation: Story = {
 				renderInput={
 					<IconField
 						icon={
-							<Icon name='alert-rhombus' style={{ fill: 'var(--lp-color-text-feedback-error)' }} />
+							<Icon name="alert-rhombus" style={{ fill: 'var(--lp-color-text-feedback-error)' }} />
 						}
-						tooltip='Value is required'
-						ariaLabel='Error'
+						tooltip="Value is required"
+						ariaLabel="Error"
 						renderIconLast
 					>
-						<TextField id='inline-edit' />
+						<TextField id="inline-edit" />
 					</IconField>
 				}
 			>

@@ -60,7 +60,7 @@ describe('Overlay', () => {
 			<>
 				<button>test</button>
 				<Overlay isOpen onClose={() => undefined}>
-					<div tabIndex={0} role='tab'>
+					<div tabIndex={0} role="tab">
 						div
 					</div>
 				</Overlay>

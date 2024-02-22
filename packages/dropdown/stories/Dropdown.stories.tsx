@@ -38,10 +38,10 @@ export const Example: Story = {
 		onStateChange: () => undefined,
 		onSelect: () => undefined,
 		children: [
-			<DropdownButton size='small' kind='primary' key='1'>
+			<DropdownButton size="small" kind="primary" key="1">
 				Click this button
 			</DropdownButton>,
-			<Menu key='2'>
+			<Menu key="2">
 				<MenuItem>Item 1</MenuItem>
 				<MenuItem>Item 2</MenuItem>
 				<MenuItem>Item 3</MenuItem>
@@ -67,8 +67,8 @@ export const WithHtmlButton: Story = {
 		onStateChange: () => undefined,
 		onSelect: () => undefined,
 		children: [
-			<button key='1'>native html button</button>,
-			<Menu key='2'>
+			<button key="1">native html button</button>,
+			<Menu key="2">
 				<MenuItem>Item 1</MenuItem>
 			</Menu>,
 		],
@@ -81,10 +81,10 @@ export const NoArrow: Story = {
 		onStateChange: () => undefined,
 		onSelect: () => undefined,
 		children: [
-			<DropdownButton hideCaret kind='primary' key='1'>
+			<DropdownButton hideCaret kind="primary" key="1">
 				DropdownButton
 			</DropdownButton>,
-			<Menu key='2'>
+			<Menu key="2">
 				<MenuItem>Item 1</MenuItem>
 			</Menu>,
 		],

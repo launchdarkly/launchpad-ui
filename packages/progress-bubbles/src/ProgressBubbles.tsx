@@ -100,7 +100,7 @@ const ProgressBubbles = ({
 								interactionKind={popoverInteraction}
 								target={item.icons}
 							>
-								<div role='button' tabIndex={0}>
+								<div role="button" tabIndex={0}>
 									{bubble}
 								</div>
 								{item.popover}

@@ -19,7 +19,7 @@ export default function Index() {
 
 	return (
 		<SplitButton>
-			<Tooltip content='Main tooltip'>
+			<Tooltip content="Main tooltip">
 				<SplitButtonMainButton>Save changes</SplitButtonMainButton>
 			</Tooltip>
 			<SplitButtonDropdown
@@ -27,7 +27,7 @@ export default function Index() {
 				onInteraction={() => setOpen(!open)}
 				onSelect={handleSelect}
 			>
-				<Tooltip content='Dropdown tooltip'>
+				<Tooltip content="Dropdown tooltip">
 					<SplitButtonDropdownButton />
 				</Tooltip>
 				<Menu>

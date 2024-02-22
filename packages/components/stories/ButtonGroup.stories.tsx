@@ -20,7 +20,7 @@ const defaultArgs = {
 	children: (
 		<>
 			<Button>First</Button>
-			<Button variant='primary'>Second</Button>
+			<Button variant="primary">Second</Button>
 			<Button>Third</Button>
 		</>
 	),

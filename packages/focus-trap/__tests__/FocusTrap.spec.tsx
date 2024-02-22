@@ -8,9 +8,9 @@ import { FocusTrap, FocusTrapContext, useFocusTrapContext } from '../src';
 const createComponent = () => (
 	<>
 		<FocusTrap autoFocus restoreFocus>
-			<button data-test-id='in-trap'>In</button>
+			<button data-test-id="in-trap">In</button>
 		</FocusTrap>
-		<button data-test-id='out-trap'>Out</button>
+		<button data-test-id="out-trap">Out</button>
 	</>
 );
 

@@ -63,7 +63,7 @@ export default function App() {
 
 function Document({ children, title }: { children: ReactNode; title?: string }) {
 	return (
-		<html lang='en'>
+		<html lang="en">
 			<head>
 				{title ? <title>{title}</title> : null}
 				<Meta />
@@ -123,7 +123,7 @@ export function ErrorBoundary() {
 	}
 
 	return (
-		<Document title='Error!'>
+		<Document title="Error!">
 			<Layout>
 				<div>
 					<h1>There was an error</h1>

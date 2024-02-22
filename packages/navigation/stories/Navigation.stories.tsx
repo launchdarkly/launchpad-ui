@@ -72,10 +72,10 @@ export const Secondary: Story = {
 	args: {
 		kind: 'secondary',
 		children: [
-			<NavigationItem key={1} name='First' to='/first' />,
-			<NavigationItem key={2} name='Second' to='/second' />,
-			<NavigationItem key={3} name='Third' to='/third' />,
-			<NavigationItem key={4} name='Fourth' to='/fourth' />,
+			<NavigationItem key={1} name="First" to="/first" />,
+			<NavigationItem key={2} name="Second" to="/second" />,
+			<NavigationItem key={3} name="Third" to="/third" />,
+			<NavigationItem key={4} name="Fourth" to="/fourth" />,
 		],
 	},
 };

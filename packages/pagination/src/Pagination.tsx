@@ -46,13 +46,13 @@ const Pagination = ({
 		>
 			<PaginationButton
 				resourceName={resourceName}
-				kind='first'
+				kind="first"
 				disabled={!!isFirstDisabled}
 				onClick={onChange}
 			/>
 			<PaginationButton
 				resourceName={resourceName}
-				kind='prev'
+				kind="prev"
 				disabled={!!isPrevDisabled}
 				onClick={onChange}
 			/>
@@ -64,13 +64,13 @@ const Pagination = ({
 			/>
 			<PaginationButton
 				resourceName={resourceName}
-				kind='next'
+				kind="next"
 				disabled={!!isNextDisabled}
 				onClick={onChange}
 			/>
 			<PaginationButton
 				resourceName={resourceName}
-				kind='last'
+				kind="last"
 				disabled={!!isLastDisabled}
 				onClick={onChange}
 			/>

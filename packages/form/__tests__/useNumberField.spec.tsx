@@ -11,9 +11,9 @@ const Component = () => {
 	return (
 		<FormField
 			isRequired={false}
-			label='Number'
-			name='Number'
-			htmlFor='Number'
+			label="Number"
+			name="Number"
+			htmlFor="Number"
 			LabelProps={labelProps}
 			FormHintProps={formHintProps}
 			FieldErrorProps={fieldErrorProps}

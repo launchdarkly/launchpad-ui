@@ -23,7 +23,7 @@ const CollapsibleTrigger = (props: CollapsibleTriggerProps) => {
 			icon={icon}
 			renderIconFirst
 			onClick={toggleOpen}
-			data-test-id='collapsible-trigger'
+			data-test-id="collapsible-trigger"
 			{...triggerProps}
 		>
 			{label}

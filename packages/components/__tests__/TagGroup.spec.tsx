@@ -30,6 +30,8 @@ describe('TagGroup', () => {
 			</TagGroup>,
 		);
 		const buttons = screen.getAllByRole('button');
-		buttons.forEach((button) => expect(button).toBeVisible());
+		for (const button of buttons) {
+			expect(button).toBeVisible();
+		}
 	});
 });

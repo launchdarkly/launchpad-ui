@@ -17,11 +17,11 @@ const CustomMultiSelectTrigger = (props: MultiSelectTriggerProps<DummyItem>) => 
 			action={() => (
 				<IconButton
 					{...triggerProps}
-					size='small'
-					aria-label='Edit'
+					size="small"
+					aria-label="Edit"
 					ref={triggerRef}
-					icon={<Icon name='edit' />}
-					data-test-id='custom-trigger'
+					icon={<Icon name="edit" />}
+					data-test-id="custom-trigger"
 				/>
 			)}
 		>
@@ -41,7 +41,7 @@ const CustomSingleSelectTrigger = (props: SingleSelectTriggerProps<DummyItem>) =
 		return <span>{item.textValue}</span>;
 	};
 	return (
-		<button {...triggerProps} data-test-id='custom-trigger' ref={triggerRef}>
+		<button {...triggerProps} data-test-id="custom-trigger" ref={triggerRef}>
 			{getRenderedSelected()}
 		</button>
 	);

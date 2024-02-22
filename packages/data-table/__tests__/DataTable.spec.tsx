@@ -41,7 +41,7 @@ describe('DataTable', () => {
 	});
 
 	it('renders checkboxes when selectable', () => {
-		render(<DataTableComponent selectionMode='multiple' />);
+		render(<DataTableComponent selectionMode="multiple" />);
 		expect(screen.getByLabelText('Select All')).toBeVisible();
 	});
 
@@ -49,9 +49,13 @@ describe('DataTable', () => {
 		render(<DataTableComponent resizable />);
 
 		const resizers = screen.getAllByRole('presentation');
-		resizers.forEach((resizer) => expect(resizer).toBeVisible());
+		for (const resizer of resizers) {
+			expect(resizer).toBeVisible();
+		}
 
 		const inputs = screen.getAllByLabelText('Resizer');
-		inputs.forEach((input) => expect(input).toBeInTheDocument());
+		for (const input of inputs) {
+			expect(input).toBeInTheDocument();
+		}
 	});
 });

@@ -164,7 +164,7 @@ const TagGroup = <T extends object>(props: TagGroupProps<T>) => {
 	return (
 		<FocusScope>
 			<div ref={containerRef} className={styles.tagGroupContainer} data-test-id={testId}>
-				<div ref={tagsRef} {...gridProps} className={styles.tagGroup} data-test-id='tag-list'>
+				<div ref={tagsRef} {...gridProps} className={styles.tagGroup} data-test-id="tag-list">
 					{visibleTags.map((item) => (
 						<Tag
 							{...item.props}
@@ -181,19 +181,19 @@ const TagGroup = <T extends object>(props: TagGroupProps<T>) => {
 				</div>
 				{showActions && (
 					<div
-						role='group'
+						role="group"
 						id={actionsId}
-						aria-label='Actions'
+						aria-label="Actions"
 						aria-labelledby={`${gridProps.id} ${actionsId}`}
 						className={styles.tagGroupActions}
-						data-test-id='tag-actions'
+						data-test-id="tag-actions"
 					>
 						<>
 							{tagState.showCollapseButton && (
 								<Button
 									size={size}
-									kind='minimal'
-									data-test-id='tag-group-collapse-action-btn'
+									kind="minimal"
+									data-test-id="tag-group-collapse-action-btn"
 									onClick={handlePressCollapse}
 									aria-label={collapseLabel}
 								>

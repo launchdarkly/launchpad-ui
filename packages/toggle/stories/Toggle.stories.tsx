@@ -20,13 +20,13 @@ const useModifiedClassLists: Decorator = (story, context) => {
 		// get the id's attached to each input element
 		// they contains the pseudo class name that we attached above
 		const inputElements = Array.from(document.getElementsByTagName('input'));
-		inputElements.forEach((inputEl) => {
+		for (const inputEl of inputElements) {
 			const elementId = inputEl.getAttribute('id')?.trim();
 			if (elementId && !inputEl.classList.contains(elementId)) {
 				// add to its class list if its not there
 				inputEl.classList.add(elementId);
 			}
-		});
+		}
 	}, []);
 	const { originalStoryFn, args, viewMode } = context;
 	// Original typing is not entirely accurate.
@@ -38,12 +38,12 @@ const useModifiedClassLists: Decorator = (story, context) => {
 	}
 
 	return (
-		<div className='Toggle-storygroup-wrapper '>
-			<span className='Toggle-state-label'>Resting</span>
+		<div className="Toggle-storygroup-wrapper ">
+			<span className="Toggle-state-label">Resting</span>
 			{story()}
 			{originalTemplate && (
 				<>
-					<span className='Toggle-state-label'>Disabled</span>
+					<span className="Toggle-state-label">Disabled</span>
 					{originalTemplate({ ...args, disabled: true, id: 'disabled-toggle' }, context)}
 				</>
 			)}
@@ -63,7 +63,7 @@ export default {
 	decorators: [
 		createWithClassesDecorator(testingChromaticClassNames, (args, originalStory, context) => (
 			<>
-				<span className='Toggle-state-label'>{`${
+				<span className="Toggle-state-label">{`${
 					args.className?.replace('pseudo-', '').replace('-all', '') || ''
 				}`}</span>
 				{originalStory({ ...args, id: args.className }, context)}
@@ -91,7 +91,7 @@ export const AriaLabelledByExample: Story = {
 		const Component = () => {
 			const id = useId();
 			return (
-				<div className='Toggle-iggy-grid'>
+				<div className="Toggle-iggy-grid">
 					<h3 id={id}>Activate Iggy</h3>
 					<Toggle aria-labelledby={id} defaultSelected />
 				</div>

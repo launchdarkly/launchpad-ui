@@ -45,7 +45,7 @@ export const Example: StoryObj = {
 				)}
 				{showModal ? (
 					<Modal onCancel={() => setShowModal(!showModal)}>
-						<ModalHeader title='Example modal title' />
+						<ModalHeader title="Example modal title" />
 						<ModalBody>
 							<div>
 								<p>z-index-500</p>
@@ -56,7 +56,7 @@ export const Example: StoryObj = {
 							>
 								<DropdownButton>Dropdown</DropdownButton>
 								<Menu>
-									<MenuItem tooltip='z-index-800' tooltipPlacement='right'>
+									<MenuItem tooltip="z-index-800" tooltipPlacement="right">
 										z-index-600
 									</MenuItem>
 									<MenuItem>Item 2</MenuItem>

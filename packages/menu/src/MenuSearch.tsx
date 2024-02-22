@@ -31,9 +31,9 @@ const MenuSearch = forwardRef<HTMLInputElement, MenuSearchProps>((props, ref) =>
 				className={styles['Menu-search-input']}
 				tiny
 				id={id}
-				type='search'
+				type="search"
 				data-test-id={testId}
-				autoComplete='off'
+				autoComplete="off"
 				placeholder={placeholder}
 				aria-label={ariaLabel || 'Search'}
 			/>

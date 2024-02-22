@@ -51,7 +51,7 @@ type Story = StoryObj<typeof Tooltip>;
 
 export const Default: Story = {
 	args: {
-		children: [<Button key='1'>Target</Button>, <span key='2'>Content to show</span>],
+		children: [<Button key="1">Target</Button>, <span key="2">Content to show</span>],
 	},
 	play: async ({ canvasElement }: { canvasElement: HTMLElement }) => {
 		const canvas = within(canvasElement);

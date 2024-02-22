@@ -54,8 +54,8 @@ const SelectListBox = <T extends object>(props: SelectListBoxProps<T>) => {
 	return (
 		<>
 			{hasFilter && (
-				<div data-test-id='search-filter' className={styles.search}>
-					<Icon name='search' size='medium' className={styles.searchIcon} />
+				<div data-test-id="search-filter" className={styles.search}>
+					<Icon name="search" size="medium" className={styles.searchIcon} />
 					<VisuallyHidden>
 						<label id={filterLabelProps.id} htmlFor={filterInputProps.id}>
 							Search options
@@ -64,8 +64,8 @@ const SelectListBox = <T extends object>(props: SelectListBoxProps<T>) => {
 					<input
 						{...filterInputProps}
 						aria-controls={listBoxProps.id}
-						role='combobox'
-						placeholder='Search'
+						role="combobox"
+						placeholder="Search"
 						aria-expanded
 						aria-activedescendant={focusedItem ? getItemId(state, focusedItem.key) : undefined}
 						ref={filterInputRef}
@@ -77,9 +77,9 @@ const SelectListBox = <T extends object>(props: SelectListBoxProps<T>) => {
 				<div
 					{...listBoxProps}
 					ref={listBoxRef}
-					role='listbox'
+					role="listbox"
 					className={styles.options}
-					data-test-id='select-menu'
+					data-test-id="select-menu"
 				>
 					{[...state.collection].map((item) =>
 						item.type === 'section' ? (
@@ -157,7 +157,7 @@ const Option = <T extends object>({ item, state }: OptionProps<T>) => {
 			)}
 		>
 			{state.selectionManager.selectionMode === 'multiple' && (
-				<input type='checkbox' disabled={isDisabled} checked={isSelected} readOnly />
+				<input type="checkbox" disabled={isDisabled} checked={isSelected} readOnly />
 			)}
 			{typeof item.rendered === 'string' ? <span>{item.rendered}</span> : item.rendered}
 		</Component>

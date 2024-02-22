@@ -39,7 +39,7 @@ const Snackbar = ({
 			{...rest}
 			className={cx(styles.Snackbar, styles[`Snackbar--${kind}`], className)}
 			data-test-id={testId}
-			role='status'
+			role="status"
 		>
 			<StatusIcon kind={kind} className={styles['Snackbar-icon']} />
 			<div className={styles['Snackbar-content']}>
@@ -47,12 +47,12 @@ const Snackbar = ({
 				<span className={styles['Snackbar-description']}>{description}</span> {CTA}
 			</div>
 			<IconButton
-				icon={<Icon name='cancel' size='small' />}
-				size='small'
-				aria-label='Dismiss'
-				kind='close'
+				icon={<Icon name="cancel" size="small" />}
+				size="small"
+				aria-label="Dismiss"
+				kind="close"
 				className={styles['Snackbar-close']}
-				data-test-id='snackbar-dismiss'
+				data-test-id="snackbar-dismiss"
 				onClick={onDismiss}
 			/>
 		</div>

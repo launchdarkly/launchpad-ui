@@ -44,8 +44,8 @@ const _ProgressBar = (
 		>
 			{({ percentage, isIndeterminate }) => (
 				<svg
-					viewBox='0 0 32 32'
-					fill='none'
+					viewBox="0 0 32 32"
+					fill="none"
 					strokeWidth={strokeWidth}
 					className={cx(icon({ size }), isIndeterminate && styles.indeterminate)}
 				>
@@ -62,7 +62,7 @@ const _ProgressBar = (
 						r={r}
 						strokeDasharray={`${c} ${c}`}
 						strokeDashoffset={c - (isIndeterminate ? 0.34 : percentage! / 100) * c}
-						transform='rotate(-90 16 16)'
+						transform="rotate(-90 16 16)"
 						className={styles.innerCircle}
 					/>
 				</svg>

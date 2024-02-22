@@ -10,7 +10,7 @@ describe('Group', () => {
 				<Label>Label</Label>
 				<Group>
 					<Input />
-					<IconButton icon='add' aria-label='add' size='small' />
+					<IconButton icon="add" aria-label="add" size="small" />
 				</Group>
 			</TextField>,
 		);

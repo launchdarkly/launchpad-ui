@@ -5,7 +5,7 @@ import { Chip } from '../src';
 
 describe('Chip', () => {
 	it('renders', () => {
-		render(<Chip size='small'>Default Chip</Chip>);
+		render(<Chip size="small">Default Chip</Chip>);
 		expect(screen.getByText('Default Chip')).toBeInTheDocument();
 	});
 
@@ -13,7 +13,7 @@ describe('Chip', () => {
 		const spy = vi.fn();
 		const user = userEvent.setup();
 		render(
-			<Chip kind='new' onClick={spy}>
+			<Chip kind="new" onClick={spy}>
 				New Chip
 			</Chip>,
 		);

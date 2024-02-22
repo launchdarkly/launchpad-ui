@@ -30,7 +30,7 @@ export const ReadOnly: Story = {
 export const ReadOnlyTiny: Story = {
 	render: () => {
 		return (
-			<TagGroup size='tiny' items={MOCK_TAGS}>
+			<TagGroup size="tiny" items={MOCK_TAGS}>
 				{(item) => <TagItem>{item.name}</TagItem>}
 			</TagGroup>
 		);
@@ -65,7 +65,7 @@ export const RemovableTiny: Story = {
 
 			return (
 				<TagGroup
-					size='tiny'
+					size="tiny"
 					onRemove={(keys) => {
 						setItems((prevItems) => prevItems.filter((item) => !keys.has(item.id)));
 					}}
@@ -93,7 +93,7 @@ export const WithClearAction: Story = {
 					hideActionWhenEmpty
 					items={items}
 					action={({ size }) => (
-						<Button size={size} onClick={() => setItems([])} aria-label='Clear'>
+						<Button size={size} onClick={() => setItems([])} aria-label="Clear">
 							Clear
 						</Button>
 					)}
@@ -117,11 +117,11 @@ export const WithClearActionTiny: Story = {
 					onRemove={(keys) => {
 						setItems((prevItems) => prevItems.filter((item) => !keys.has(item.id)));
 					}}
-					size='tiny'
+					size="tiny"
 					hideActionWhenEmpty
 					items={items}
 					action={({ size }) => (
-						<Button size={size} onClick={() => setItems([])} aria-label='Clear'>
+						<Button size={size} onClick={() => setItems([])} aria-label="Clear">
 							Clear
 						</Button>
 					)}
@@ -149,9 +149,9 @@ export const WithCustomAction: Story = {
 					items={items}
 					action={() => (
 						<IconButton
-							aria-label='Custom'
-							icon={<Icon name='edit' />}
-							size='small'
+							aria-label="Custom"
+							icon={<Icon name="edit" />}
+							size="small"
 							onClick={() => alert('Pressed custom action')}
 						/>
 					)}
@@ -181,7 +181,7 @@ export const WithMaxRowsTiny: Story = {
 	render: () => {
 		return (
 			<div style={{ maxWidth: 290, border: '1px solid #efefef', padding: '0.625rem' }}>
-				<TagGroup maxRows={2} items={MOCK_TAGS} size='tiny'>
+				<TagGroup maxRows={2} items={MOCK_TAGS} size="tiny">
 					{(item) => <TagItem>{item.name}</TagItem>}
 				</TagGroup>
 			</div>
@@ -205,7 +205,7 @@ export const WithCustomTagContent: Story = {
 			<TagGroup items={MOCK_TAGS}>
 				{(item) => (
 					<TagItem>
-						<Icon name='star' size='tiny' style={{ transform: 'translateY(-1px)' }} /> {item.name}
+						<Icon name="star" size="tiny" style={{ transform: 'translateY(-1px)' }} /> {item.name}
 					</TagItem>
 				)}
 			</TagGroup>
@@ -218,7 +218,7 @@ export const WithTagItemRenderedAs: Story = {
 		return (
 			<TagGroup items={MOCK_TAGS}>
 				{(item) => (
-					<TagItem as='a' href='/'>
+					<TagItem as="a" href="/">
 						{item.name}
 					</TagItem>
 				)}
@@ -240,7 +240,7 @@ export const WithOnTagClick: Story = {
 export const WithOnTagClickTiny: Story = {
 	render: () => {
 		return (
-			<TagGroup size='tiny' onTagClick={(key) => alert(`Clicked ${key}`)} items={MOCK_TAGS}>
+			<TagGroup size="tiny" onTagClick={(key) => alert(`Clicked ${key}`)} items={MOCK_TAGS}>
 				{(item) => <TagItem>{item.name}</TagItem>}
 			</TagGroup>
 		);

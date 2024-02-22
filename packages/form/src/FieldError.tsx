@@ -28,12 +28,12 @@ const FieldError = ({
 		<span
 			{...rest}
 			className={cx(styles.fieldError, className)}
-			aria-live='polite'
+			aria-live="polite"
 			data-test-id={testId}
-			aria-label='Error'
+			aria-label="Error"
 			id={createFieldErrorId(name)}
 		>
-			<Icon name='alert-rhombus' size='small' /> {errorMessage}
+			<Icon name="alert-rhombus" size="small" /> {errorMessage}
 		</span>
 	);
 };

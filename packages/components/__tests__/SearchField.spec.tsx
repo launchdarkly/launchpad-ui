@@ -11,10 +11,10 @@ describe('SearchField', () => {
 				<Group>
 					<Input />
 					<IconButton
-						icon='cancel-circle-outline'
-						aria-label='clear'
-						size='small'
-						variant='minimal'
+						icon="cancel-circle-outline"
+						aria-label="clear"
+						size="small"
+						variant="minimal"
 					/>
 				</Group>
 			</SearchField>,

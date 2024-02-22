@@ -37,7 +37,7 @@ export const RadioCard = ({
 		)}
 		checked={checked}
 		disabled={disabled}
-		data-test-id='card'
+		data-test-id="card"
 		{...rest}
 		value={value}
 	>

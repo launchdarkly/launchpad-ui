@@ -16,10 +16,10 @@ type PaginationButtonProps<T = PaginationChange> = {
 };
 
 const ICON_MAP = {
-	first: <Icon name='chevrons-left' />,
-	prev: <Icon name='chevron-left' />,
-	next: <Icon name='chevron-right' />,
-	last: <Icon name='chevrons-right' />,
+	first: <Icon name="chevrons-left" />,
+	prev: <Icon name="chevron-left" />,
+	next: <Icon name="chevron-right" />,
+	last: <Icon name="chevrons-right" />,
 };
 
 const LABEL_MAP: { [key in PaginationChange]: string } = {
@@ -51,7 +51,7 @@ const PaginationButton = ({
 		<IconButton
 			disabled={disabled}
 			className={classes}
-			size='small'
+			size="small"
 			data-test-id={testId}
 			onClick={() => onClick(kind)}
 			icon={IconComponent}

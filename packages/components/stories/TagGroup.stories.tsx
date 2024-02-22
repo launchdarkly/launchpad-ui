@@ -40,9 +40,9 @@ export const Small: Story = {
 			<>
 				<Label>Label</Label>
 				<TagList>
-					<Tag size='small'>One</Tag>
-					<Tag size='small'>Two</Tag>
-					<Tag size='small'>Three</Tag>
+					<Tag size="small">One</Tag>
+					<Tag size="small">Two</Tag>
+					<Tag size="small">Three</Tag>
 				</TagList>
 			</>
 		),
@@ -100,12 +100,12 @@ export const Variants: Story = {
 				<Label>Label</Label>
 				<TagList>
 					<Tag>Default</Tag>
-					<Tag variant='success'>Success</Tag>
-					<Tag variant='warning'>Warning</Tag>
-					<Tag variant='error'>Error</Tag>
-					<Tag variant='beta'>Beta</Tag>
-					<Tag variant='federal'>Federal</Tag>
-					<Tag variant='new'>New</Tag>
+					<Tag variant="success">Success</Tag>
+					<Tag variant="warning">Warning</Tag>
+					<Tag variant="error">Error</Tag>
+					<Tag variant="beta">Beta</Tag>
+					<Tag variant="federal">Federal</Tag>
+					<Tag variant="new">New</Tag>
 				</TagList>
 			</>
 		),

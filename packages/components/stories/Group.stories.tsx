@@ -41,13 +41,13 @@ export const Example: Story = {
 			>
 				<Label>Label</Label>
 				<Group {...args}>
-					<Icon name='search' size='small' />
+					<Icon name="search" size="small" />
 					<Input />
 					<IconButton
-						icon='cancel-circle-outline'
-						aria-label='clear'
-						size='small'
-						variant='minimal'
+						icon="cancel-circle-outline"
+						aria-label="clear"
+						size="small"
+						variant="minimal"
 						isDisabled={args.isDisabled}
 						onPress={() => setText('')}
 					/>
@@ -64,7 +64,7 @@ export const Loading: Story = {
 				<Label>Label</Label>
 				<Group {...args}>
 					<Input />
-					<ProgressBar isIndeterminate aria-label='loading' />
+					<ProgressBar isIndeterminate aria-label="loading" />
 				</Group>
 			</TextField>
 		);

@@ -56,7 +56,7 @@ const splitButtonTemplateWithStates: Decorator = (storyComponent, context) => {
 
 	const PseudoStateButtons = SplitButtonStates.map((className, index) => (
 		<Fragment key={`${className}_Button`}>
-			<span className='Button-state-label'>
+			<span className="Button-state-label">
 				{
 					SplitButtonLabels[
 						SplitButtonLabels.length - 1 >= index ? index : SplitButtonLabels.length - 1
@@ -70,11 +70,11 @@ const splitButtonTemplateWithStates: Decorator = (storyComponent, context) => {
 		return storyComponent();
 	}
 	return (
-		<div className='Storygroup-wrapper'>
-			<span className='Button-state-label'>Resting </span>
+		<div className="Storygroup-wrapper">
+			<span className="Button-state-label">Resting </span>
 			{storyComponent()}
 			{PseudoStateButtons}
-			<span className='Button-state-label'>Disabled</span>{' '}
+			<span className="Button-state-label">Disabled</span>{' '}
 			<SplitButtonExample {...storyArgs} disabled />
 		</div>
 	);
@@ -259,6 +259,6 @@ export const Icon: Story = {
 		...SplitButtonArgs,
 		kind: 'default',
 		size: 'small',
-		icon: <LPIcon name='person' />,
+		icon: <LPIcon name="person" />,
 	},
 };

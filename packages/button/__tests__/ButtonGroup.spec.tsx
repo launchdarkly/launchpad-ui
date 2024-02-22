@@ -17,7 +17,7 @@ describe('ButtonGroup', () => {
 
 	it('renders with compact spacing', () => {
 		const { container } = render(
-			<ButtonGroup spacing='compact'>
+			<ButtonGroup spacing="compact">
 				<Button>One</Button>
 				<Button>Two</Button>
 			</ButtonGroup>,
@@ -29,7 +29,7 @@ describe('ButtonGroup', () => {
 
 	it('renders with large spacing', () => {
 		const { container } = render(
-			<ButtonGroup spacing='large'>
+			<ButtonGroup spacing="large">
 				<Button>One</Button>
 				<Button>Two</Button>
 			</ButtonGroup>,
@@ -44,11 +44,11 @@ describe('ButtonGroup', () => {
 		const spyTwo = vi.fn();
 		const user = userEvent.setup();
 		render(
-			<ButtonGroup spacing='large'>
-				<Button aria-label='one' onClick={spyOne}>
+			<ButtonGroup spacing="large">
+				<Button aria-label="one" onClick={spyOne}>
 					One
 				</Button>
-				<Button aria-label='two' onClick={spyTwo}>
+				<Button aria-label="two" onClick={spyTwo}>
 					Two
 				</Button>
 			</ButtonGroup>,

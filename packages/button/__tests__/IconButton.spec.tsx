@@ -6,14 +6,14 @@ import { IconButton } from '../src';
 
 describe('Button', () => {
 	it('renders', () => {
-		render(<IconButton aria-label='Close' icon={<Icon name='cancel' />} />);
+		render(<IconButton aria-label="Close" icon={<Icon name="cancel" />} />);
 		expect(screen.getByRole('button', { name: 'Close' })).toBeInTheDocument();
 	});
 
 	it('can render as a slotted link', () => {
 		const { container } = render(
-			<IconButton aria-label='Close' icon={<Icon name='cancel' />} asChild>
-				<a href='/'>Test</a>
+			<IconButton aria-label="Close" icon={<Icon name="cancel" />} asChild>
+				<a href="/">Test</a>
 			</IconButton>,
 		);
 		expect(container.querySelector('a')).not.toBeNull();
@@ -22,7 +22,7 @@ describe('Button', () => {
 	it('handles clicks', async () => {
 		const spy = vi.fn();
 		const user = userEvent.setup();
-		render(<IconButton aria-label='Close' icon={<Icon name='cancel' />} onClick={spy} />);
+		render(<IconButton aria-label="Close" icon={<Icon name="cancel" />} onClick={spy} />);
 
 		await user.click(screen.getByRole('button', { name: 'Close' }));
 
@@ -33,8 +33,8 @@ describe('Button', () => {
 		const spy = vi.fn();
 		const user = userEvent.setup();
 		render(
-			<IconButton aria-label='Close' icon={<Icon name='cancel' />} onClick={spy} asChild>
-				<a href='/'>Test</a>
+			<IconButton aria-label="Close" icon={<Icon name="cancel" />} onClick={spy} asChild>
+				<a href="/">Test</a>
 			</IconButton>,
 		);
 
@@ -45,14 +45,14 @@ describe('Button', () => {
 
 	it('is focusable', async () => {
 		const user = userEvent.setup();
-		render(<IconButton aria-label='Close' icon={<Icon name='cancel' />} />);
+		render(<IconButton aria-label="Close" icon={<Icon name="cancel" />} />);
 
 		await user.tab();
 		expect(screen.getByRole('button', { name: 'Close' })).toHaveFocus();
 	});
 
 	it('can render an icon', async () => {
-		const { container } = render(<IconButton aria-label='Close' icon={<Icon name='cancel' />} />);
+		const { container } = render(<IconButton aria-label="Close" icon={<Icon name="cancel" />} />);
 		expect(container.querySelector('svg')).not.toBeNull();
 	});
 });

@@ -46,7 +46,7 @@ const AppliedFilterButton = forwardRef<Ref, AppliedFilterButtonProps>((props, re
 						{children}
 					</span>
 				)}
-				<Icon name='chevron-down' size='small' data-test-id={`${testId}-expand`} />
+				<Icon name="chevron-down" size="small" data-test-id={`${testId}-expand`} />
 			</button>
 		</div>
 	);

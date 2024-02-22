@@ -10,7 +10,7 @@ describe('CheckboxGroup', () => {
 				<Label>Label</Label>
 				<Checkbox>Checkbox 1</Checkbox>
 				<Checkbox>Checkbox 2</Checkbox>
-				<Text slot='description'>Description</Text>
+				<Text slot="description">Description</Text>
 				<FieldError />
 			</CheckboxGroup>,
 		);

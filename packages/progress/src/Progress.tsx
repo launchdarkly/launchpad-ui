@@ -54,7 +54,7 @@ const Progress = ({
 			viewBox={`0 0 ${diameter} ${diameter}`}
 			data-test-id={testId}
 			aria-valuemin={0}
-			aria-valuetext='loading'
+			aria-valuetext="loading"
 			aria-valuemax={100}
 		>
 			<circle

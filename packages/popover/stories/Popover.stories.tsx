@@ -67,8 +67,8 @@ type Story = StoryObj<typeof Popover>;
 export const Default: Story = {
 	args: {
 		children: [
-			<Button key='1'>Target</Button>,
-			<div key='2' style={{ padding: '1.25rem' }}>
+			<Button key="1">Target</Button>,
+			<div key="2" style={{ padding: '1.25rem' }}>
 				Content to show
 			</div>,
 		],

@@ -48,7 +48,7 @@ const renderMenu = (args: Story['args']) => (
 			<Menu {...args}>
 				<MenuItem>Item one</MenuItem>
 				<MenuItem>
-					<Text slot='label'>Item two</Text>
+					<Text slot="label">Item two</Text>
 				</MenuItem>
 				<MenuItem>Item three</MenuItem>
 			</Menu>
@@ -120,13 +120,13 @@ export const Descriptions: Story = {
 				<Popover>
 					<Menu {...args}>
 						<MenuItem>
-							<Text slot='label'>Copy</Text>
-							<Text slot='description'>Copy the selected text</Text>
+							<Text slot="label">Copy</Text>
+							<Text slot="description">Copy the selected text</Text>
 							<Keyboard>⌘C</Keyboard>
 						</MenuItem>
 						<MenuItem>
-							<Text slot='label'>Paste</Text>
-							<Text slot='description'>Paste the copied text</Text>
+							<Text slot="label">Paste</Text>
+							<Text slot="description">Paste the copied text</Text>
 							<Keyboard>⌘V</Keyboard>
 						</MenuItem>
 					</Menu>
@@ -145,15 +145,15 @@ export const Icons: Story = {
 				<Popover>
 					<Menu {...args}>
 						<MenuItem>
-							<Text slot='label'>
-								<Icon name='add' size='small' /> Add
+							<Text slot="label">
+								<Icon name="add" size="small" /> Add
 							</Text>
 						</MenuItem>
 						<MenuItem>
-							<Icon name='edit' size='small' /> Edit
+							<Icon name="edit" size="small" /> Edit
 						</MenuItem>
 						<MenuItem>
-							<Icon name='delete' size='small' /> Delete
+							<Icon name="delete" size="small" /> Delete
 						</MenuItem>
 					</Menu>
 				</Popover>

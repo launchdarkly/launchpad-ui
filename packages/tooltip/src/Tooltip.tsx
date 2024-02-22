@@ -24,7 +24,7 @@ const TooltipBase = ({
 	return (
 		<Popover
 			enforceFocus={false}
-			interactionKind='hover-or-focus'
+			interactionKind="hover-or-focus"
 			hoverCloseDelay={hoverCloseDelay}
 			popoverClassName={cx(styles.Tooltip, className)}
 			popoverContentClassName={cx(popoverContentClassName, styles['Tooltip-popover-content'])}

@@ -23,10 +23,10 @@ export const Example: Story = {
 		children: (
 			<>
 				<Label>Group</Label>
-				<Checkbox value='1'>First</Checkbox>
-				<Checkbox value='2'>Second</Checkbox>
-				<Checkbox value='3'>Third</Checkbox>
-				<Text slot='description'>Description</Text>
+				<Checkbox value="1">First</Checkbox>
+				<Checkbox value="2">Second</Checkbox>
+				<Checkbox value="3">Third</Checkbox>
+				<Text slot="description">Description</Text>
 			</>
 		),
 	},
@@ -38,18 +38,18 @@ export const Validation: Story = {
 			<Form>
 				<CheckboxGroup {...args}>
 					<Label>Agree to the following</Label>
-					<Checkbox value='terms' isRequired>
+					<Checkbox value="terms" isRequired>
 						Terms and conditions
 					</Checkbox>
-					<Checkbox value='privacy' isRequired>
+					<Checkbox value="privacy" isRequired>
 						Privacy policy
 					</Checkbox>
-					<Checkbox value='cookies' isRequired>
+					<Checkbox value="cookies" isRequired>
 						Cookie policy
 					</Checkbox>
 					<FieldError />
 				</CheckboxGroup>
-				<Button type='submit'>Submit</Button>
+				<Button type="submit">Submit</Button>
 			</Form>
 		);
 	},

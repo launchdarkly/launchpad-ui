@@ -10,7 +10,7 @@ describe('Select', () => {
 	describe('with default single select trigger', () => {
 		it('renders', () => {
 			render(
-				<SingleSelect label='Fruit' items={FRUIT}>
+				<SingleSelect label="Fruit" items={FRUIT}>
 					{(item) => <SelectItem>{item.name}</SelectItem>}
 				</SingleSelect>,
 			);
@@ -20,7 +20,7 @@ describe('Select', () => {
 		it('opens menu, selects item, and updates selected value', async () => {
 			const user = userEvent.setup();
 			render(
-				<SingleSelect label='Fruit' items={FRUIT}>
+				<SingleSelect label="Fruit" items={FRUIT}>
 					{(item) => <SelectItem>{item.name}</SelectItem>}
 				</SingleSelect>,
 			);
@@ -33,7 +33,7 @@ describe('Select', () => {
 			const user = userEvent.setup();
 
 			render(
-				<SingleSelect label='Fruit' items={FRUIT}>
+				<SingleSelect label="Fruit" items={FRUIT}>
 					{(item) => <SelectItem>{item.name}</SelectItem>}
 				</SingleSelect>,
 			);
@@ -51,7 +51,7 @@ describe('Select', () => {
 
 			render(
 				<SingleSelect
-					label='Fruit'
+					label="Fruit"
 					trigger={(props) => (
 						<SingleSelectTrigger {...props}>{() => DUMMY_TEXT}</SingleSelectTrigger>
 					)}
@@ -72,7 +72,7 @@ describe('Select', () => {
 	describe('with custom single select trigger', () => {
 		it('renders', () => {
 			render(
-				<SingleSelect label='Fruit' trigger={CustomSingleSelectTrigger} items={FRUIT}>
+				<SingleSelect label="Fruit" trigger={CustomSingleSelectTrigger} items={FRUIT}>
 					{(item) => <SelectItem>{item.name}</SelectItem>}
 				</SingleSelect>,
 			);
@@ -84,7 +84,7 @@ describe('Select', () => {
 			const user = userEvent.setup();
 
 			render(
-				<SingleSelect label='Fruit' trigger={CustomSingleSelectTrigger} items={FRUIT}>
+				<SingleSelect label="Fruit" trigger={CustomSingleSelectTrigger} items={FRUIT}>
 					{(item) => <SelectItem>{item.name}</SelectItem>}
 				</SingleSelect>,
 			);
@@ -100,9 +100,9 @@ describe('Select', () => {
 			const user = userEvent.setup();
 
 			render(
-				<SingleSelect label='Fruit' items={FRUIT}>
+				<SingleSelect label="Fruit" items={FRUIT}>
 					{(item) => (
-						<SelectItem as='a' href='/'>
+						<SelectItem as="a" href="/">
 							{item.name}
 						</SelectItem>
 					)}
@@ -111,9 +111,9 @@ describe('Select', () => {
 
 			await user.click(screen.getByTestId('select-trigger'));
 
-			screen.getAllByRole('option').forEach((option) => {
+			for (const option of screen.getAllByRole('option')) {
 				expect(option).toHaveAttribute('href');
-			});
+			}
 		});
 	});
 });

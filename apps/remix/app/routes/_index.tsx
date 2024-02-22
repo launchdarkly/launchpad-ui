@@ -27,7 +27,7 @@ export default function Index() {
 			<Menu>
 				{data.components.map((component) => (
 					<MenuItem asChild key={component.to}>
-						<Link to={component.to} prefetch='intent' target='_blank'>
+						<Link to={component.to} prefetch="intent" target="_blank">
 							{component.name}
 						</Link>
 					</MenuItem>

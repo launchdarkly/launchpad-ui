@@ -18,8 +18,8 @@ type Story = StoryObj<typeof IconField>;
 
 export const Default: Story = {
 	args: {
-		icon: <Icon name='info' />,
-		children: <TextField id='Date' value='12/01/2022' />,
+		icon: <Icon name="info" />,
+		children: <TextField id="Date" value="12/01/2022" />,
 	},
 	parameters: {
 		a11y: {

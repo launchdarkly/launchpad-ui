@@ -6,7 +6,7 @@ import { render, screen, userEvent } from '../../../test/utils';
 import { Banner } from '../src';
 
 const createComponent = (props?: BannerProps) => (
-	<Banner kind='info' {...props}>
+	<Banner kind="info" {...props}>
 		Banner
 	</Banner>
 );
@@ -20,7 +20,7 @@ describe('Banner', () => {
 	it('can be dismissible', async () => {
 		const onDismiss = vi.fn();
 		render(
-			<Banner kind='info' onDismiss={onDismiss}>
+			<Banner kind="info" onDismiss={onDismiss}>
 				An important message
 			</Banner>,
 		);
@@ -30,7 +30,7 @@ describe('Banner', () => {
 	it('renders a header when passed', async () => {
 		const header = 'My header';
 		render(
-			<Banner kind='info' header={header}>
+			<Banner kind="info" header={header}>
 				An important message
 			</Banner>,
 		);
@@ -43,7 +43,7 @@ describe('Banner', () => {
 		const user = userEvent.setup();
 		const content = 'An important message';
 		render(
-			<Banner kind='info' onDismiss={onDismiss}>
+			<Banner kind="info" onDismiss={onDismiss}>
 				{content}
 			</Banner>,
 		);

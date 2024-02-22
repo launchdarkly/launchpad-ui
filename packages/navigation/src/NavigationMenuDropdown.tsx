@@ -47,8 +47,8 @@ const NavigationMenuDropdown = <T extends object>(props: NavigationMenuDropdownP
 
 	return (
 		<nav aria-label={`${props.kind} navigation`}>
-			<Dropdown placement='bottom-start'>
-				<DropdownButton data-test-id='navigation-menu-button' ref={buttonRef}>
+			<Dropdown placement="bottom-start">
+				<DropdownButton data-test-id="navigation-menu-button" ref={buttonRef}>
 					{selectedItem}
 				</DropdownButton>
 				<Menu menuItemClassName={styles.NavigationMenuItem}>
@@ -63,7 +63,7 @@ const NavigationMenuDropdown = <T extends object>(props: NavigationMenuDropdownP
 									collapsed: true,
 								});
 							}}
-							icon={item.props.name === selectedItem ? <Icon name='check' /> : undefined}
+							icon={item.props.name === selectedItem ? <Icon name="check" /> : undefined}
 						>
 							<div
 								style={{

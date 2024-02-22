@@ -118,7 +118,7 @@ export const WithIcon: Story = {
 	args: {
 		children: (
 			<>
-				With icon <Icon name='add' size='small' />
+				With icon <Icon name="add" size="small" />
 			</>
 		),
 	},

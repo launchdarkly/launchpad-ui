@@ -13,7 +13,7 @@ const DropdownButton = forwardRef<HTMLButtonElement, DropdownButtonProps>((props
 
 	return (
 		<Button {...rest} data-test-id={testId} ref={ref}>
-			{children} {!hideCaret && <Icon name='chevron-down' size='small' />}
+			{children} {!hideCaret && <Icon name="chevron-down" size="small" />}
 		</Button>
 	);
 });

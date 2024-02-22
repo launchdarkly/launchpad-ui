@@ -10,7 +10,7 @@ describe('Select', () => {
 	describe('with default multi select trigger', () => {
 		it('renders', () => {
 			render(
-				<MultiSelect label='Fruit' items={FRUIT}>
+				<MultiSelect label="Fruit" items={FRUIT}>
 					{(item) => <SelectItem>{item.name}</SelectItem>}
 				</MultiSelect>,
 			);
@@ -21,7 +21,7 @@ describe('Select', () => {
 			const user = userEvent.setup();
 
 			render(
-				<MultiSelect label='Fruit' items={FRUIT}>
+				<MultiSelect label="Fruit" items={FRUIT}>
 					{(item) => <SelectItem>{item.name}</SelectItem>}
 				</MultiSelect>,
 			);
@@ -40,7 +40,7 @@ describe('Select', () => {
 			const user = userEvent.setup();
 
 			render(
-				<MultiSelect label='Fruit' isClearable items={FRUIT}>
+				<MultiSelect label="Fruit" isClearable items={FRUIT}>
 					{(item) => <SelectItem>{item.name}</SelectItem>}
 				</MultiSelect>,
 			);
@@ -63,7 +63,7 @@ describe('Select', () => {
 			const user = userEvent.setup();
 
 			render(
-				<MultiSelect label='Fruit' isSelectableAll items={FRUIT}>
+				<MultiSelect label="Fruit" isSelectableAll items={FRUIT}>
 					{(item) => <SelectItem>{item.name}</SelectItem>}
 				</MultiSelect>,
 			);
@@ -85,7 +85,7 @@ describe('Select', () => {
 
 			render(
 				<MultiSelect
-					label='Fruit'
+					label="Fruit"
 					trigger={(props) => (
 						<MultiSelectTrigger {...props}>{() => DUMMY_TEXT}</MultiSelectTrigger>
 					)}
@@ -107,7 +107,7 @@ describe('Select', () => {
 	describe('with custom multi select trigger', () => {
 		it('renders', () => {
 			render(
-				<MultiSelect label='Fruit' trigger={CustomMultiSelectTrigger} items={FRUIT}>
+				<MultiSelect label="Fruit" trigger={CustomMultiSelectTrigger} items={FRUIT}>
 					{(item) => <SelectItem>{item.name}</SelectItem>}
 				</MultiSelect>,
 			);
@@ -119,7 +119,7 @@ describe('Select', () => {
 			const user = userEvent.setup();
 
 			render(
-				<MultiSelect label='Fruit' trigger={CustomMultiSelectTrigger} items={FRUIT}>
+				<MultiSelect label="Fruit" trigger={CustomMultiSelectTrigger} items={FRUIT}>
 					{(item) => <SelectItem>{item.name}</SelectItem>}
 				</MultiSelect>,
 			);
@@ -136,7 +136,7 @@ describe('Select', () => {
 			const user = userEvent.setup();
 
 			render(
-				<MultiSelect label='Fruit' trigger={CustomMultiSelectTrigger} items={FRUIT}>
+				<MultiSelect label="Fruit" trigger={CustomMultiSelectTrigger} items={FRUIT}>
 					{(item) => <SelectItem>{item.name}</SelectItem>}
 				</MultiSelect>,
 			);

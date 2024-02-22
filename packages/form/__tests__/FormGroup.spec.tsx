@@ -5,7 +5,7 @@ import { FormGroup } from '../src';
 
 describe('FormGroup', () => {
 	it('renders', () => {
-		render(<FormGroup data-test-id='testing' isInvalid />);
+		render(<FormGroup data-test-id="testing" isInvalid />);
 		expect(screen.getByTestId('testing')).toBeInTheDocument();
 	});
 });

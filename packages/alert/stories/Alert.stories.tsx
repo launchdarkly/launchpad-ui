@@ -155,7 +155,7 @@ export const WithActions: Story = {
 				My description
 				<ButtonGroup>
 					<Button>Label</Button>
-					<Button kind='minimal'>Label</Button>
+					<Button kind="minimal">Label</Button>
 				</ButtonGroup>
 			</div>
 		),
@@ -174,7 +174,7 @@ export const WithContent: Story = {
 				</ul>
 				<ButtonGroup>
 					<Button>Label</Button>
-					<Button kind='minimal'>Label</Button>
+					<Button kind="minimal">Label</Button>
 				</ButtonGroup>
 			</>
 		),

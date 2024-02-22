@@ -17,7 +17,7 @@ describe('Modal', () => {
 	it('renders', async () => {
 		render(
 			<Modal>
-				<ModalHeader title='Title' />
+				<ModalHeader title="Title" />
 				<ModalBody>Body</ModalBody>
 				<ModalFooter primaryButton={<button>Click me</button>} />
 			</Modal>,
@@ -28,7 +28,7 @@ describe('Modal', () => {
 	it('renders with absolute footer', async () => {
 		render(
 			<Modal>
-				<ModalHeader title='Title' />
+				<ModalHeader title="Title" />
 				<ModalBody>Body</ModalBody>
 				<AbsoluteModalFooter primaryButton={<button>Click me</button>} />
 			</Modal>,
@@ -70,7 +70,7 @@ describe('Modal', () => {
 		const user = userEvent.setup();
 		render(
 			<Modal onCancel={spy}>
-				<ModalHeader title='Title' />
+				<ModalHeader title="Title" />
 				Body
 			</Modal>,
 		);
@@ -83,8 +83,8 @@ describe('Modal', () => {
 
 	it('renders header icon when warning status is passed', async () => {
 		render(
-			<Modal status='warning'>
-				<ModalHeader title='Title' />
+			<Modal status="warning">
+				<ModalHeader title="Title" />
 				Body
 			</Modal>,
 		);
@@ -97,7 +97,7 @@ describe('Modal', () => {
 	it('renders required field when prop is passed', async () => {
 		render(
 			<Modal>
-				<ModalHeader title='Title' hasRequiredField />
+				<ModalHeader title="Title" hasRequiredField />
 				Body
 			</Modal>,
 		);
@@ -112,7 +112,7 @@ describe('Modal', () => {
 
 		render(
 			<Modal>
-				<ModalHeader title='Title' description={content} />
+				<ModalHeader title="Title" description={content} />
 				Body
 			</Modal>,
 		);

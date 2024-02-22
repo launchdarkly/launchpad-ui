@@ -20,7 +20,7 @@ export const Error: Story = {
 		kind: 'error',
 		description: 'This is a message.',
 		cta: (
-			<a href='/' target='_blank' rel='noreferrer'>
+			<a href="/" target="_blank" rel="noreferrer">
 				Link
 			</a>
 		),
@@ -32,7 +32,7 @@ export const Info: Story = {
 		kind: 'info',
 		description: 'This is a message.',
 		cta: (
-			<a href='/' target='_blank' rel='noreferrer'>
+			<a href="/" target="_blank" rel="noreferrer">
 				Link
 			</a>
 		),
@@ -44,7 +44,7 @@ export const Warning: Story = {
 		kind: 'warning',
 		description: 'This is a message.',
 		cta: (
-			<a href='/' target='_blank' rel='noreferrer'>
+			<a href="/" target="_blank" rel="noreferrer">
 				Link
 			</a>
 		),
@@ -56,7 +56,7 @@ export const Success: Story = {
 		kind: 'success',
 		description: 'This is a message.',
 		cta: (
-			<a href='/' target='_blank' rel='noreferrer'>
+			<a href="/" target="_blank" rel="noreferrer">
 				Link
 			</a>
 		),
@@ -69,7 +69,7 @@ export const WithHeader: Story = {
 		header: 'Snackbar header',
 		description: 'This is a message.',
 		cta: (
-			<a href='/' target='_blank' rel='noreferrer'>
+			<a href="/" target="_blank" rel="noreferrer">
 				Link
 			</a>
 		),

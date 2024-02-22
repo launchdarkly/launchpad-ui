@@ -5,7 +5,7 @@ import { Link } from '../src';
 
 describe('Link', () => {
 	it('renders', () => {
-		render(<Link href='#'>Link</Link>);
+		render(<Link href="#">Link</Link>);
 		expect(screen.getByRole('link')).toBeVisible();
 	});
 });

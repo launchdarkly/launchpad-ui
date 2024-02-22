@@ -16,15 +16,15 @@ const createMenu = ({
 }: Omit<MenuProps<string>, 'children'> & TestMenu = {}) => (
 	<Menu<string> {...props}>
 		{hideSearch ? null : <MenuSearch />}
-		<MenuItem item='one'>one</MenuItem>
-		<MenuItem item='two' disabled>
+		<MenuItem item="one">one</MenuItem>
+		<MenuItem item="two" disabled>
 			two
 		</MenuItem>
-		<MenuItem item='three' isHighlighted>
+		<MenuItem item="three" isHighlighted>
 			three
 		</MenuItem>
 		<MenuDivider />
-		<MenuItem item='four' nested>
+		<MenuItem item="four" nested>
 			four
 		</MenuItem>
 	</Menu>
@@ -95,7 +95,7 @@ describe('Menu', () => {
 		const user = userEvent.setup();
 		render(
 			<Menu>
-				<MenuItem item='one' tooltip='hi'>
+				<MenuItem item="one" tooltip="hi">
 					one
 				</MenuItem>
 			</Menu>,
@@ -112,9 +112,9 @@ describe('Menu', () => {
 			<Popover>
 				<button>Target</button>
 				<Menu>
-					<MenuItem item='one'>one</MenuItem>
-					<MenuItem item='two'>two</MenuItem>
-					<MenuItem item='three'>three</MenuItem>
+					<MenuItem item="one">one</MenuItem>
+					<MenuItem item="two">two</MenuItem>
+					<MenuItem item="three">three</MenuItem>
 				</Menu>
 			</Popover>,
 		);
@@ -133,8 +133,8 @@ describe('Menu', () => {
 		const text = 'Click me';
 		render(
 			<Menu>
-				<MenuItem asChild item='one' disabled>
-					<a href='https://www.launchdarkly.com'>{text}</a>
+				<MenuItem asChild item="one" disabled>
+					<a href="https://www.launchdarkly.com">{text}</a>
 				</MenuItem>
 			</Menu>,
 		);
@@ -146,9 +146,9 @@ describe('Menu', () => {
 			<Popover>
 				<button>Target</button>
 				<Menu enableVirtualization>
-					<MenuItem item='one'>one</MenuItem>
-					<MenuItem item='two'>two</MenuItem>
-					<MenuItem item='three'>three</MenuItem>
+					<MenuItem item="one">one</MenuItem>
+					<MenuItem item="two">two</MenuItem>
+					<MenuItem item="three">three</MenuItem>
 				</Menu>
 			</Popover>,
 		);

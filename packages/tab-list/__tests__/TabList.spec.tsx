@@ -9,10 +9,10 @@ describe('TabList', () => {
 	it('renders', async () => {
 		render(
 			<TabList>
-				<Item key='1' title='First Tab'>
+				<Item key="1" title="First Tab">
 					<p style={{ padding: '1rem' }}>Active tabpanel</p>
 				</Item>
-				<Item key='2' title='Another tab'>
+				<Item key="2" title="Another tab">
 					<p style={{ padding: '1rem' }}>Another tabpanel</p>
 				</Item>
 			</TabList>,
@@ -25,10 +25,10 @@ describe('TabList', () => {
 		const user = userEvent.setup();
 		render(
 			<TabList>
-				<Item key='1' title='First Tab'>
+				<Item key="1" title="First Tab">
 					<p style={{ padding: '1rem' }}>Active tabpanel</p>
 				</Item>
-				<Item key='2' title='Another tab'>
+				<Item key="2" title="Another tab">
 					<p style={{ padding: '1rem' }}>Another tabpanel</p>
 				</Item>
 			</TabList>,
@@ -47,10 +47,10 @@ describe('TabList', () => {
 		const user = userEvent.setup();
 		render(
 			<TabList>
-				<Item key='1' title='First Tab'>
+				<Item key="1" title="First Tab">
 					<p style={{ padding: '1rem' }}>Active tabpanel</p>
 				</Item>
-				<Item key='2' title='Another tab'>
+				<Item key="2" title="Another tab">
 					<p style={{ padding: '1rem' }}>Another tabpanel</p>
 				</Item>
 			</TabList>,
@@ -72,11 +72,11 @@ describe('TabList', () => {
 
 	it('renders a default selected Tab', async () => {
 		render(
-			<TabList activeTab='2'>
-				<Item key='1' title='First Tab'>
+			<TabList activeTab="2">
+				<Item key="1" title="First Tab">
 					<p style={{ padding: '1rem' }}>Active tabpanel</p>
 				</Item>
-				<Item key='2' title='Another tab'>
+				<Item key="2" title="Another tab">
 					<p style={{ padding: '1rem' }}>Another tabpanel</p>
 				</Item>
 			</TabList>,
@@ -91,16 +91,16 @@ describe('TabList', () => {
 	it('renders a disabled Tab', async () => {
 		render(
 			<TabList disabledTabs={['3', '4']}>
-				<Item key='1' title='First Tab'>
+				<Item key="1" title="First Tab">
 					<p style={{ padding: '1rem' }}>Active tabpanel</p>
 				</Item>
-				<Item key='2' title='Another tab'>
+				<Item key="2" title="Another tab">
 					<p style={{ padding: '1rem' }}>Another tabpanel</p>
 				</Item>
-				<Item key='3' title='One more tab'>
+				<Item key="3" title="One more tab">
 					<p style={{ padding: '1rem' }}>One more tabpanel</p>
 				</Item>
-				<Item key='4' title='Yet another tab'>
+				<Item key="4" title="Yet another tab">
 					<p style={{ padding: '1rem' }}>Yet another tabpanel</p>
 				</Item>
 			</TabList>,
@@ -114,16 +114,16 @@ describe('TabList', () => {
 		const user = userEvent.setup();
 		render(
 			<TabList>
-				<Item key='3' title='First Tab'>
+				<Item key="3" title="First Tab">
 					<div>
 						<p style={{ padding: '1rem 0' }}>Active tabpanel</p>
-						<Button kind='primary'>Click me once</Button>
+						<Button kind="primary">Click me once</Button>
 					</div>
 				</Item>
-				<Item key='4' title='Another tab'>
+				<Item key="4" title="Another tab">
 					<div>
 						<p style={{ padding: '1rem 0' }}>Another tabpanel</p>
-						<Button kind='primary'>Click me twice</Button>
+						<Button kind="primary">Click me twice</Button>
 					</div>
 				</Item>
 			</TabList>,

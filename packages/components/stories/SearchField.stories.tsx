@@ -33,16 +33,16 @@ export const Example: Story = {
 			<>
 				<Label>Label</Label>
 				<Group>
-					<Icon name='search' size='small' />
-					<Input placeholder='Enter a value' />
+					<Icon name="search" size="small" />
+					<Input placeholder="Enter a value" />
 					<IconButton
-						icon='cancel-circle-outline'
-						aria-label='clear'
-						size='small'
-						variant='minimal'
+						icon="cancel-circle-outline"
+						aria-label="clear"
+						size="small"
+						variant="minimal"
 					/>
 				</Group>
-				<Text slot='description'>Description</Text>
+				<Text slot="description">Description</Text>
 			</>
 		),
 	},
@@ -52,12 +52,12 @@ export const States: Story = {
 	render: (args) => {
 		const ExampleGroup = (
 			<Group>
-				<Input placeholder='Enter a value' />
+				<Input placeholder="Enter a value" />
 				<IconButton
-					icon='cancel-circle-outline'
-					aria-label='clear'
-					size='small'
-					variant='minimal'
+					icon="cancel-circle-outline"
+					aria-label="clear"
+					size="small"
+					variant="minimal"
 				/>
 			</Group>
 		);

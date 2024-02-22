@@ -60,10 +60,10 @@ const tableBody = (item: (typeof ROWS)[number]) => (
 		{(columnKey) => (
 			<Cell>
 				{columnKey === 'name' && (
-					<Stack gap='3'>
+					<Stack gap="3">
 						<span>{item[columnKey]}</span>
 						<span>{item.description}</span>
-						<CopyToClipboard text={item.package} kind='basic'>
+						<CopyToClipboard text={item.package} kind="basic">
 							{item.package}
 						</CopyToClipboard>
 					</Stack>
@@ -80,7 +80,7 @@ const tableBody = (item: (typeof ROWS)[number]) => (
 export const Example: Story = {
 	render: (args) => {
 		return (
-			<DataTable aria-label='Example table' {...args}>
+			<DataTable aria-label="Example table" {...args}>
 				<TableHeader>
 					<Column>Name</Column>
 					<Column>Type</Column>
@@ -111,7 +111,7 @@ export const Example: Story = {
 export const Selection: Story = {
 	render: (args) => {
 		return (
-			<DataTable aria-label='Selection table' selectionMode='multiple' {...args}>
+			<DataTable aria-label="Selection table" selectionMode="multiple" {...args}>
 				<TableHeader columns={COLUMNS}>{(column) => <Column>{column.name}</Column>}</TableHeader>
 				<TableBody items={ROWS}>
 					{(item) => (
@@ -126,7 +126,7 @@ export const Selection: Story = {
 export const Composition: Story = {
 	render: (args) => {
 		return (
-			<DataTable aria-label='Composition table' {...args}>
+			<DataTable aria-label="Composition table" {...args}>
 				<TableHeader columns={COLUMNS}>{(column) => <Column>{column.name}</Column>}</TableHeader>
 				<TableBody items={ROWS}>{tableBody}</TableBody>
 			</DataTable>
@@ -138,7 +138,7 @@ export const ResizableColumns: Story = {
 	render: (args) => {
 		return (
 			<DataTable
-				aria-label='Resizable columns table'
+				aria-label="Resizable columns table"
 				tableWidth={1000}
 				getDefaultMinWidth={() => 200}
 				getDefaultWidth={(column) => (column.colIndex === 0 ? 500 : undefined)}

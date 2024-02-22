@@ -4,7 +4,7 @@ import { MemoryRouter } from 'react-router-dom';
 export default function Index() {
 	return (
 		<MemoryRouter>
-			<LinkButton to='/'>LinkButton</LinkButton>
+			<LinkButton to="/">LinkButton</LinkButton>
 		</MemoryRouter>
 	);
 }

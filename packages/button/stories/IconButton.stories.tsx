@@ -19,7 +19,7 @@ const buttonTemplateWithStates: Decorator = (storyComponent, context) => {
 
 	const PseudoStateButtons = ButtonStates.map((className, index) => (
 		<Fragment key={`${className}_Button`}>
-			<span className='Button-state-label'>
+			<span className="Button-state-label">
 				{ButtonLabels[ButtonLabels.length - 1 >= index ? index : ButtonLabels.length - 1]}
 			</span>
 			<IconButton {...storyArgs} className={className}>
@@ -33,11 +33,11 @@ const buttonTemplateWithStates: Decorator = (storyComponent, context) => {
 	}
 
 	return (
-		<div className='Storygroup-wrapper'>
-			<span className='Button-state-label'>Resting</span>
+		<div className="Storygroup-wrapper">
+			<span className="Button-state-label">Resting</span>
 			{storyComponent()}
 			{PseudoStateButtons}
-			<span className='Button-state-label'>Disabled</span>
+			<span className="Button-state-label">Disabled</span>
 			<IconButton {...storyArgs} disabled>
 				{buttonLabel}
 			</IconButton>
@@ -135,7 +135,7 @@ export default {
 
 type Story = StoryObj<typeof IconButton>;
 
-const icon = <Icon name='add' />;
+const icon = <Icon name="add" />;
 
 export const Minimal: Story = {
 	args: { icon, 'aria-label': 'Button' },
@@ -184,7 +184,7 @@ export const Small: Story = {
 
 export const AsAnchorChild: Story = {
 	args: {
-		children: <a href='/'>Anchor tag</a>,
+		children: <a href="/">Anchor tag</a>,
 		asChild: true,
 		'aria-label': 'Anchor child',
 		icon,

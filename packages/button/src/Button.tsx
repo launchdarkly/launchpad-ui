@@ -87,10 +87,10 @@ const ButtonComponent = forwardRef<HTMLButtonElement, ButtonProps>((props, ref) 
 
 	const getFinalChildren = (c: ReactNode) => [
 		renderIconFirst && renderIcon,
-		isLoading && <span key='text'>{loadingText || c}</span>,
-		!isLoading && c && <span key='text'>{c}</span>,
+		isLoading && <span key="text">{loadingText || c}</span>,
+		!isLoading && c && <span key="text">{c}</span>,
 		!renderIconFirst && renderIcon,
-		isLoading && <span key='spinner'>…</span>,
+		isLoading && <span key="spinner">…</span>,
 	];
 
 	const renderChildren = () => {

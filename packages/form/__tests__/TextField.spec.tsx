@@ -7,9 +7,9 @@ describe('TextField', () => {
 	it('renders', () => {
 		render(
 			<TextField
-				value='my text'
-				aria-label='My Text Field'
-				name='myTextField'
+				value="my text"
+				aria-label="My Text Field"
+				name="myTextField"
 				onChange={() => undefined}
 			/>,
 		);
@@ -19,10 +19,10 @@ describe('TextField', () => {
 	it('renders with suffix', () => {
 		render(
 			<TextField
-				value='my text'
-				suffix='my suffix'
-				aria-label='My Text Field'
-				name='myTextField'
+				value="my text"
+				suffix="my suffix"
+				aria-label="My Text Field"
+				name="myTextField"
 				onChange={() => undefined}
 			/>,
 		);

@@ -27,7 +27,7 @@ const DIMENSIONS = {
 const Avatar = ({
 	alt = '',
 	url,
-	defaultIcon = <Icon name='person' />,
+	defaultIcon = <Icon name="person" />,
 	className,
 	initials,
 	size = 'medium',

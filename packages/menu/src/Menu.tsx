@@ -90,7 +90,7 @@ const Menu = <T extends number | string>(props: MenuProps<T>) => {
 			// the virtualized menu has its own handlers and props
 			let searchElem = null;
 			let elements: ReactElement[] = [];
-			(childrenProps as ReactElement[]).forEach((child: ReactElement) => {
+			for (const child of childrenProps as ReactElement[]) {
 				switch (child.type) {
 					case MenuSearch:
 						searchElem = child;
@@ -102,7 +102,7 @@ const Menu = <T extends number | string>(props: MenuProps<T>) => {
 					default:
 						break;
 				}
-			});
+			}
 			return { items: elements, searchElement: searchElem };
 		}
 
@@ -179,7 +179,7 @@ const Menu = <T extends number | string>(props: MenuProps<T>) => {
 	return (
 		<MenuBase data-test-id={testId} size={size}>
 			{reduceItems.searchElement}
-			<MenuItemList role='presentation'>{reduceItems.items}</MenuItemList>
+			<MenuItemList role="presentation">{reduceItems.items}</MenuItemList>
 		</MenuBase>
 	);
 };
@@ -342,6 +342,7 @@ const ItemVirtualizer = <T extends number | string>(props: ItemVirtualizerProps<
 		}
 	};
 
+	// biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
 	const renderSearch = useMemo(
 		() =>
 			searchElement
@@ -357,6 +358,7 @@ const ItemVirtualizer = <T extends number | string>(props: ItemVirtualizerProps<
 		[searchElement, lastVirtualItemIndex, focusMenuItem],
 	);
 
+	// biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
 	const renderItems = useMemo(
 		() =>
 			rowVirtualizer.virtualItems.map((virtualRow) => {
@@ -368,7 +370,7 @@ const ItemVirtualizer = <T extends number | string>(props: ItemVirtualizerProps<
 					<div
 						key={virtualRow.index}
 						ref={virtualRow.measureRef}
-						role='presentation'
+						role="presentation"
 						className={styles['VirtualMenu-item']}
 						style={{
 							transform: `translateY(${virtualRow.start}px)`,
@@ -384,9 +386,9 @@ const ItemVirtualizer = <T extends number | string>(props: ItemVirtualizerProps<
 	return (
 		<>
 			{renderSearch}
-			<MenuItemList ref={parentRef} role='presentation'>
+			<MenuItemList ref={parentRef} role="presentation">
 				<div
-					role='presentation'
+					role="presentation"
 					className={styles['VirtualMenu-item-list']}
 					style={{
 						height: `${rowVirtualizer.totalSize}px`,

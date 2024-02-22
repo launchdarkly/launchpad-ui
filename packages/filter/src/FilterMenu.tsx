@@ -60,8 +60,8 @@ const FilterMenu = ({
 					tabIndex={0}
 					className={styles.filterClearButton}
 					onClick={onClearFilter}
-					kind='link'
-					data-test-id='clear-filter-button'
+					kind="link"
+					data-test-id="clear-filter-button"
 				>
 					CLEAR FILTER
 				</Button>
@@ -90,16 +90,16 @@ const FilterMenu = ({
 						<MenuItem
 							item={option}
 							disabled={option.isDisabled}
-							icon={option.isChecked ? <Icon name='check' /> : undefined}
+							icon={option.isChecked ? <Icon name="check" /> : undefined}
 							key={option.value}
-							role='menuitemradio'
+							role="menuitemradio"
 							aria-checked={option.isChecked ? 'true' : undefined}
 							nested={option.nested}
 							groupHeader={option.groupHeader}
 							tooltip={
 								option.isDisabled && disabledOptionTooltip ? disabledOptionTooltip : undefined
 							}
-							tooltipPlacement='right'
+							tooltipPlacement="right"
 						>
 							{option.name}
 						</MenuItem>

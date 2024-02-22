@@ -6,7 +6,7 @@ import { render, screen, userEvent } from '../../../test/utils';
 import { AppliedFilterButton } from '../src/AppliedFilterButton';
 
 const createComponent = ({ children, ...rest }: Partial<AppliedFilterButtonProps>) => (
-	<AppliedFilterButton name='author' {...rest}>
+	<AppliedFilterButton name="author" {...rest}>
 		{children}
 	</AppliedFilterButton>
 );

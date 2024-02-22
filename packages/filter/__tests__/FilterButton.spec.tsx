@@ -4,7 +4,7 @@ import { render, screen, userEvent, waitFor } from '../../../test/utils';
 import { FilterButton, type FilterButtonProps } from '../src/';
 
 const createComponent = ({ children, ...rest }: Partial<FilterButtonProps>) => (
-	<FilterButton name='author' {...rest}>
+	<FilterButton name="author" {...rest}>
 		{children}
 	</FilterButton>
 );

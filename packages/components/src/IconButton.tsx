@@ -44,7 +44,7 @@ const _IconButton = (
 				cx(button({ ...renderProps, size, variant, className }), iconButton({ size })),
 			)}
 		>
-			<Icon name={icon} size='small' aria-hidden />
+			<Icon name={icon} size="small" aria-hidden />
 		</AriaButton>
 	);
 };

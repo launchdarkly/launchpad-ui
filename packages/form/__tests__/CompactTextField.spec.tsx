@@ -5,7 +5,7 @@ import { CompactTextField } from '../src';
 
 describe('CompactTextField', () => {
 	it('renders', () => {
-		render(<CompactTextField label='Email' aria-label='Email' onChange={() => undefined} />);
+		render(<CompactTextField label="Email" aria-label="Email" onChange={() => undefined} />);
 		expect(screen.getByLabelText('Email')).toBeInTheDocument();
 	});
 
@@ -14,8 +14,8 @@ describe('CompactTextField', () => {
 		const spy = vi.fn();
 		render(
 			<CompactTextField
-				label='Email'
-				aria-label='Email'
+				label="Email"
+				aria-label="Email"
 				onChange={() => undefined}
 				onFocus={spy}
 			/>,
@@ -29,7 +29,7 @@ describe('CompactTextField', () => {
 		const user = userEvent.setup();
 		const spy = vi.fn();
 		render(
-			<CompactTextField label='Email' aria-label='Email' onChange={() => undefined} onBlur={spy} />,
+			<CompactTextField label="Email" aria-label="Email" onChange={() => undefined} onBlur={spy} />,
 		);
 
 		await user.tab();

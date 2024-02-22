@@ -6,7 +6,7 @@ import { Stack } from '../src';
 describe('Stack', () => {
 	it('renders', () => {
 		render(
-			<Stack gap='2' align='center'>
+			<Stack gap="2" align="center">
 				<div>a</div>
 				<div>b</div>
 				<div>c</div>

@@ -119,9 +119,9 @@ const InlineEdit = forwardRef<HTMLInputElement, InlineEditProps>(
 				{children}
 				<IconButton
 					ref={editRef}
-					icon={<Icon name='edit' />}
+					icon={<Icon name="edit" />}
 					aria-label={editButtonLabel}
-					size='small'
+					size="small"
 					onClick={handleEdit}
 				/>
 			</>
@@ -155,16 +155,16 @@ const InlineEdit = forwardRef<HTMLInputElement, InlineEditProps>(
 				{...focusWithinProps}
 			>
 				{input}
-				<ButtonGroup spacing='compact'>
+				<ButtonGroup spacing="compact">
 					<IconButton
-						kind='primary'
-						icon={<Icon name='check' />}
+						kind="primary"
+						icon={<Icon name="check" />}
 						aria-label={confirmButtonLabel}
 						onClick={handleConfirm}
 					/>
 					<IconButton
-						kind='default'
-						icon={<Icon name='cancel' />}
+						kind="default"
+						icon={<Icon name="cancel" />}
 						aria-label={cancelButtonLabel}
 						className={cancelButton}
 						onClick={handleCancel}

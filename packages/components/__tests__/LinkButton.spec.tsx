@@ -8,7 +8,7 @@ describe('LinkButton', () => {
 	it('renders', () => {
 		render(
 			<MemoryRouter>
-				<LinkButton to='/'>LinkButton</LinkButton>
+				<LinkButton to="/">LinkButton</LinkButton>
 			</MemoryRouter>,
 		);
 		expect(screen.getByRole('link')).toBeVisible();
@@ -20,7 +20,7 @@ describe('LinkButton', () => {
 
 		render(
 			<MemoryRouter>
-				<LinkButton to='/' onPress={spy}>
+				<LinkButton to="/" onPress={spy}>
 					LinkButton
 				</LinkButton>
 			</MemoryRouter>,

@@ -35,7 +35,7 @@ const Toast = ({
 			{...rest}
 			className={cx(styles.Toast, styles[`Toast--${kind}`], className)}
 			data-test-id={testId}
-			role='status'
+			role="status"
 		>
 			{kind !== 'info' && <StatusIcon kind={kind} className={styles['Toast-icon']} />}
 			<p className={styles['Toast-content']}>{content}</p>

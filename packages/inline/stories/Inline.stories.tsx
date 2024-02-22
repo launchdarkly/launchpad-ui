@@ -17,14 +17,14 @@ export default {
 type Story = StoryObj<typeof Inline>;
 
 const ELEMENTS = [
-	<Block width='32' height='32' key={1} />,
-	<Block width='48' height='48' key={2} />,
-	<Block width='72' height='72' key={3} />,
+	<Block width="32" height="32" key={1} />,
+	<Block width="48" height="48" key={2} />,
+	<Block width="72" height="72" key={3} />,
 ];
 
 export const Example: Story = {
 	args: {
-		children: [...Array(10)].map((_, i) => <Block width='64' key={i} />),
+		children: [...Array(10)].map((_, i) => <Block width="64" key={i} />),
 		gap: '2',
 	},
 };

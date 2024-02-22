@@ -121,20 +121,20 @@ const DrawerContainer = ({
 				ref={ref}
 			>
 				<m.div
-					initial='hidden'
-					animate='visible'
+					initial="hidden"
+					animate="visible"
 					variants={overlay}
 					transition={{ duration: 0.15 }}
-					role='presentation'
+					role="presentation"
 					className={styles.overlay}
 					onMouseDown={handleOverlayClick}
 				>
 					<FocusTrap autoFocus restoreFocus>
 						<m.div
-							initial='hidden'
-							animate='visible'
+							initial="hidden"
+							animate="visible"
 							variants={slideRight}
-							role='dialog'
+							role="dialog"
 							aria-labelledby={DRAWER_LABELLED_BY}
 							aria-describedby={DRAWER_LABELLED_BY}
 							aria-modal
@@ -144,11 +144,11 @@ const DrawerContainer = ({
 						>
 							{!hideCancel && (
 								<IconButton
-									aria-label='close'
-									icon={<Icon name='cancel' size='medium' />}
+									aria-label="close"
+									icon={<Icon name="cancel" size="medium" />}
 									className={styles.closeButton}
 									onClick={onCancel}
-									data-test-id='drawer-close-button'
+									data-test-id="drawer-close-button"
 								/>
 							)}
 							<Suspense fallback={<Progress />}>{children}</Suspense>

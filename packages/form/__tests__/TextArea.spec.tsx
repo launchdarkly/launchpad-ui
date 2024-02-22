@@ -7,9 +7,9 @@ describe('TextArea', () => {
 	it('renders', () => {
 		render(
 			<TextArea
-				value='my text'
-				aria-label='My Text Area'
-				name='mytextarea'
+				value="my text"
+				aria-label="My Text Area"
+				name="mytextarea"
 				onChange={() => undefined}
 			/>,
 		);
@@ -19,7 +19,7 @@ describe('TextArea', () => {
 	it('handles arrows and escape keys', async () => {
 		const spy = vi.fn();
 		const user = userEvent.setup();
-		render(<TextArea value='my text' onKeyDown={spy} />);
+		render(<TextArea value="my text" onKeyDown={spy} />);
 
 		await user.type(screen.getByRole('textbox'), '{arrowleft}');
 		expect(spy).toHaveBeenCalledTimes(0);

@@ -126,26 +126,26 @@ const ModalContainer = ({
 				{...focusWithinProps}
 				className={styles.overlayContainer}
 				data-modal
-				data-test-id='modal-overlay-container'
+				data-test-id="modal-overlay-container"
 				ref={ref}
 				{...(theme ? { 'data-theme': theme } : {})}
 			>
 				<m.div
-					initial='hidden'
-					animate='visible'
+					initial="hidden"
+					animate="visible"
 					variants={overlay}
 					transition={{ duration: 0.15 }}
-					role='presentation'
+					role="presentation"
 					className={styles.overlay}
-					data-test-id='modal-overlay'
+					data-test-id="modal-overlay"
 					onMouseDown={handleOverlayClick}
 				>
 					<FocusTrap autoFocus restoreFocus>
 						<m.div
-							initial='hidden'
-							animate='visible'
+							initial="hidden"
+							animate="visible"
 							variants={isDesktopViewport ? transitions.desktopPop : transitions.mobileSlideUp}
-							role='dialog'
+							role="dialog"
 							aria-labelledby={MODAL_LABELLED_BY}
 							aria-describedby={MODAL_DESCRIBED_BY}
 							aria-modal

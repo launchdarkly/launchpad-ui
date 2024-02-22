@@ -22,8 +22,8 @@ describe('ButtonGroup', () => {
 			</ButtonGroup>,
 		);
 		const buttons = screen.getAllByRole('button');
-		buttons.forEach((button) => {
+		for (const button of buttons) {
 			expect(button).toBeDisabled();
-		});
+		}
 	});
 });

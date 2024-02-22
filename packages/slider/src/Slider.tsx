@@ -43,7 +43,7 @@ const Slider = ({
 			{!hideTrack && <div className={styles['Slider-track']} />}
 			{!hideTrack && <div className={styles['Slider-fill']} style={{ width: `${value}%` }} />}
 			<input
-				type='range'
+				type="range"
 				value={value}
 				min={min}
 				max={max}

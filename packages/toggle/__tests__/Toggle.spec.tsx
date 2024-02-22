@@ -77,7 +77,7 @@ describe('Toggle', () => {
 		};
 		render(
 			<div>
-				<span id='CatsId'>Cats</span>
+				<span id="CatsId">Cats</span>
 				<Toggle {...toggleProps} />
 			</div>,
 		);

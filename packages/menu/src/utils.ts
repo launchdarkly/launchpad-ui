@@ -15,6 +15,7 @@ const handleKeyboardInteractions = (
 		ArrowUp: keyHandlers.handleUp,
 		ArrowDown: keyHandlers.handleDown,
 		Enter: keyHandlers.handleEnter,
+		// biome-ignore lint/suspicious/noConfusingVoidType: <explanation>
 	} as Record<string, (e: KeyboardEvent) => void | undefined>;
 
 	if (ops[event.key]) {
@@ -26,7 +27,9 @@ const handleKeyboardInteractions = (
 const chainEventHandlers =
 	(...handlers: (EventHandler<SyntheticEvent> | undefined)[]) =>
 	(event: SyntheticEvent) => {
-		handlers.forEach((h) => typeof h === 'function' && h(event));
+		for (const h of handlers) {
+			typeof h === 'function' && h(event);
+		}
 	};
 
 export { createItemId, getNodeForIndex, handleKeyboardInteractions, chainEventHandlers };

@@ -26,19 +26,19 @@ export const Example: Story = {
 	},
 };
 const items = [
-	{ label: 'Stage 1', icons: <Icon name='check' /> },
+	{ label: 'Stage 1', icons: <Icon name="check" /> },
 	{
 		label: 'Stage 2',
 		icons: (
 			<>
-				<Icon name='calendar-schedule' />
-				<Icon name='shield-key' />
+				<Icon name="calendar-schedule" />
+				<Icon name="shield-key" />
 			</>
 		),
 	},
 	{
 		label: 'Stage 3',
-		icons: <Icon name='warning' />,
+		icons: <Icon name="warning" />,
 		isWarning: true,
 	},
 	{
@@ -46,7 +46,7 @@ const items = [
 	},
 	{
 		label: 'Complete',
-		icons: <Icon name='star' />,
+		icons: <Icon name="star" />,
 		popover: (
 			<div style={{ padding: '0.625rem' }}>
 				<p>You can trigger a popover from a progress bubble item</p>

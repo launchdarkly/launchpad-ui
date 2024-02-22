@@ -7,9 +7,9 @@ describe('Columns', () => {
 	it('renders', () => {
 		render(
 			<Columns>
-				<Column size='1/3'>1</Column>
-				<Column size='1/3'>2</Column>
-				<Column size='1/3'>3</Column>
+				<Column size="1/3">1</Column>
+				<Column size="1/3">2</Column>
+				<Column size="1/3">3</Column>
 			</Columns>,
 		);
 		expect(screen.getByTestId('columns')).toBeInTheDocument();

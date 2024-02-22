@@ -27,7 +27,7 @@ export const Basic: Story = {
 		const Component = () => {
 			return (
 				<SingleSelect
-					label='Fruit'
+					label="Fruit"
 					defaultItems={FRUIT}
 					onSelectionChange={(key) => console.log(key)}
 				>
@@ -57,7 +57,7 @@ export const WithUncontrolledSelectedKey: Story = {
 			const [selectedKey, setSelectedKey] = useState<Key>(FRUIT[0].id);
 			return (
 				<SingleSelect
-					label='Fruit'
+					label="Fruit"
 					selectedKey={selectedKey}
 					items={FRUIT}
 					onSelectionChange={(key) => setSelectedKey(key)}
@@ -86,7 +86,7 @@ export const WithControlledSelectedKey: Story = {
 	render: () => {
 		const Component = () => {
 			return (
-				<SingleSelect label='Fruit' defaultSelectedKey={FRUIT[2].id} items={FRUIT}>
+				<SingleSelect label="Fruit" defaultSelectedKey={FRUIT[2].id} items={FRUIT}>
 					{(item) => <SelectItem textValue={item.name}>{item.name}</SelectItem>}
 				</SingleSelect>
 			);
@@ -112,7 +112,7 @@ export const WithControlledFilterable: Story = {
 		const Component = () => {
 			return (
 				<SingleSelect
-					label='Fruit'
+					label="Fruit"
 					hasFilter
 					defaultItems={FRUIT}
 					onSelectionChange={(key) => console.log(key)}
@@ -149,7 +149,7 @@ export const WithUncontrolledFilterable: Story = {
 
 			return (
 				<SingleSelect
-					label='Fruit'
+					label="Fruit"
 					hasFilter
 					items={filteredFruit}
 					onFilterChange={setFilterValue}
@@ -180,7 +180,7 @@ export const WithCustomSelectedRender: Story = {
 	render: () => {
 		return (
 			<SingleSelect
-				label='Fruit'
+				label="Fruit"
 				items={FRUIT}
 				onSelectionChange={(key) => console.log(key)}
 				trigger={(props) => (
@@ -219,7 +219,7 @@ export const WithCustomTrigger: Story = {
 	render: () => {
 		return (
 			<SingleSelect
-				label='Fruit'
+				label="Fruit"
 				defaultItems={FRUIT}
 				onSelectionChange={(key) => console.log(key)}
 				trigger={CustomSingleSelectTrigger}
@@ -245,7 +245,7 @@ export const SingleSelectWithSections: Story = {
 	render: () => {
 		return (
 			<SingleSelect
-				label='Produce'
+				label="Produce"
 				defaultItems={SECTIONED_ITEMS}
 				hasFilter
 				onSelectionChange={(key) => console.log(key)}
@@ -279,13 +279,13 @@ export const WithSelectItemRenderedAs: Story = {
 	render: () => {
 		return (
 			<SingleSelect
-				label='Produce'
+				label="Produce"
 				defaultItems={FRUIT}
 				hasFilter
 				onSelectionChange={(key) => console.log(key)}
 			>
 				{(item) => (
-					<SelectItem as='a' href='#' textValue={item.name}>
+					<SelectItem as="a" href="#" textValue={item.name}>
 						{item.name} <Chip>ID: {item.id}</Chip>
 					</SelectItem>
 				)}
@@ -310,7 +310,7 @@ export const WithAllowsCustomValue: Story = {
 		const Component = () => {
 			return (
 				<SingleSelect
-					label='Fruit'
+					label="Fruit"
 					defaultItems={FRUIT}
 					hasFilter
 					allowsCustomValue

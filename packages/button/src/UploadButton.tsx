@@ -64,18 +64,18 @@ const UploadButton = ({
 				ref={inputRef}
 				id={id}
 				style={{ display: 'none' }}
-				type='file'
+				type="file"
 				onChange={handleChange}
 				disabled={disabled}
 				accept={accept}
-				data-test-id='upload-button-input'
+				data-test-id="upload-button-input"
 			/>
 			<label htmlFor={id}>
 				<Button
 					{...rest}
 					disabled={disabled}
 					tabIndex={disabled ? -1 : 0}
-					role='button'
+					role="button"
 					onKeyDown={handleKeyDown}
 					onClick={handleClick}
 				>

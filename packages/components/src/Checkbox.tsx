@@ -24,9 +24,9 @@ const _Checkbox = ({ children, ...props }: CheckboxProps, ref: ForwardedRef<HTML
 				<>
 					<div className={box()}>
 						{isIndeterminate ? (
-							<Icon name='minus' size='small' className={styles.icon} />
+							<Icon name="minus" size="small" className={styles.icon} />
 						) : isSelected ? (
-							<Icon name='check' size='small' className={styles.icon} />
+							<Icon name="check" size="small" className={styles.icon} />
 						) : null}
 					</div>
 					{children}

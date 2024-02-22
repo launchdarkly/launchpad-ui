@@ -6,14 +6,14 @@ import { Button } from '../src';
 
 describe('Button', () => {
 	it('renders', () => {
-		render(<Button type='button'>Default Button</Button>);
+		render(<Button type="button">Default Button</Button>);
 		expect(screen.getByText('Default Button')).toBeInTheDocument();
 	});
 
 	it('can render links into child slot', () => {
 		const { container } = render(
 			<Button asChild>
-				<a href='/'>Default Button Link</a>
+				<a href="/">Default Button Link</a>
 			</Button>,
 		);
 		expect(container.querySelector('a')).not.toBeNull();
@@ -34,7 +34,7 @@ describe('Button', () => {
 		const user = userEvent.setup();
 		render(
 			<Button onClick={spy} asChild>
-				<a href='/'>Default Button Link</a>
+				<a href="/">Default Button Link</a>
 			</Button>,
 		);
 
@@ -45,20 +45,20 @@ describe('Button', () => {
 
 	it('is focusable', async () => {
 		const user = userEvent.setup();
-		render(<Button kind='primary'>Primary Button</Button>);
+		render(<Button kind="primary">Primary Button</Button>);
 
 		await user.tab();
 		expect(screen.getByRole('button')).toHaveFocus();
 	});
 
 	it('can render an icon', async () => {
-		const { container } = render(<Button kind='primary' icon={<Icon name='add' />} />);
+		const { container } = render(<Button kind="primary" icon={<Icon name="add" />} />);
 		expect(container.querySelector('svg')).not.toBeNull();
 	});
 
 	it('shows loading text when loading', async () => {
 		render(
-			<Button isLoading loadingText='loading'>
+			<Button isLoading loadingText="loading">
 				Primary Button
 			</Button>,
 		);

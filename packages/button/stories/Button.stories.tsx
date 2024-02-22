@@ -19,7 +19,7 @@ const buttonTemplateWithStates: Decorator = (storyComponent, context) => {
 
 	const PseudoStateButtons = ButtonStates.map((className, index) => (
 		<Fragment key={`${className}_Button`}>
-			<span className='Button-state-label'>
+			<span className="Button-state-label">
 				{ButtonLabels[ButtonLabels.length - 1 >= index ? index : ButtonLabels.length - 1]}
 			</span>
 			<Button {...storyArgs} className={className}>
@@ -31,11 +31,11 @@ const buttonTemplateWithStates: Decorator = (storyComponent, context) => {
 		return storyComponent();
 	}
 	return (
-		<div className='Storygroup-wrapper'>
-			<span className='Button-state-label'>Resting</span>
+		<div className="Storygroup-wrapper">
+			<span className="Button-state-label">Resting</span>
 			{storyComponent()}
 			{PseudoStateButtons}
-			<span className='Button-state-label'>Disabled</span>
+			<span className="Button-state-label">Disabled</span>
 			<Button {...storyArgs} disabled>
 				{buttonLabel}
 			</Button>
@@ -183,7 +183,7 @@ export const Link: Story = { args: { children: 'Link', kind: 'link' } };
 export const PrimaryFlair: Story = { args: { children: 'Primary flair', kind: 'primaryFlair' } };
 
 export const PrimaryFlairWithIcon: Story = {
-	args: { children: 'Primary flair with icon', icon: <Icon name='add' />, kind: 'primaryFlair' },
+	args: { children: 'Primary flair with icon', icon: <Icon name="add" />, kind: 'primaryFlair' },
 };
 
 export const DefaultFlair: Story = {
@@ -201,7 +201,7 @@ export const DefaultFlair: Story = {
 };
 
 export const DefaultFlairWithIcon: Story = {
-	args: { children: 'Default flair with icon', icon: <Icon name='add' />, kind: 'defaultFlair' },
+	args: { children: 'Default flair with icon', icon: <Icon name="add" />, kind: 'defaultFlair' },
 	parameters: {
 		a11y: {
 			options: {
@@ -217,14 +217,14 @@ export const DefaultFlairWithIcon: Story = {
 export const MinimalFlair: Story = { args: { children: 'Minimal flair', kind: 'minimalFlair' } };
 
 export const MinimalFlairWithIcon: Story = {
-	args: { children: 'Minimal flair with icon', icon: <Icon name='add' />, kind: 'minimalFlair' },
+	args: { children: 'Minimal flair with icon', icon: <Icon name="add" />, kind: 'minimalFlair' },
 };
 
 export const AsAnchorChild: Story = {
 	args: {
-		children: <a href='/'>Anchor tag</a>,
+		children: <a href="/">Anchor tag</a>,
 		asChild: true,
-		icon: <Icon name='add' />,
+		icon: <Icon name="add" />,
 		kind: 'destructive',
 	},
 	parameters: {
@@ -240,29 +240,29 @@ export const AsAnchorChild: Story = {
 };
 
 export const WithIcon: Story = {
-	args: { children: 'With icon', icon: <Icon name='add' /> },
+	args: { children: 'With icon', icon: <Icon name="add" /> },
 };
 
 export const WithIconPrimary: Story = {
-	args: { children: 'With icon', icon: <Icon name='chevron-down' />, kind: 'primary' },
+	args: { children: 'With icon', icon: <Icon name="chevron-down" />, kind: 'primary' },
 };
 
 export const BigButtonWithIcon: Story = {
-	args: { children: 'Click me', icon: <Icon name='add' />, kind: 'primary', size: 'big' },
+	args: { children: 'Click me', icon: <Icon name="add" />, kind: 'primary', size: 'big' },
 };
 
 export const SmallButtonWithIcon: Story = {
-	args: { children: 'Click me', icon: <Icon name='add' />, kind: 'primary', size: 'small' },
+	args: { children: 'Click me', icon: <Icon name="add" />, kind: 'primary', size: 'small' },
 };
 
 export const TinyButtonWithIcon: Story = {
-	args: { children: 'Click me', icon: <Icon name='add' />, kind: 'primary', size: 'tiny' },
+	args: { children: 'Click me', icon: <Icon name="add" />, kind: 'primary', size: 'tiny' },
 };
 
 export const WithIconDestructive: Story = {
 	args: {
 		children: 'With icon',
-		icon: <Icon name='add' />,
+		icon: <Icon name="add" />,
 		kind: 'destructive',
 	},
 };
@@ -270,7 +270,7 @@ export const WithIconDestructive: Story = {
 export const WithIconFirst: Story = {
 	args: {
 		children: 'With icon left',
-		icon: <Icon name='add' />,
+		icon: <Icon name="add" />,
 		renderIconFirst: true,
 	},
 };

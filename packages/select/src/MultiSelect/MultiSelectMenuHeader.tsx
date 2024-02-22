@@ -33,13 +33,13 @@ const MultiSelectMenuHeader = <T extends object>(props: MultiSelectMenuHeaderPro
 	if (!hasHeader) return null;
 
 	return (
-		<div data-test-id='menu-header'>
+		<div data-test-id="menu-header">
 			<ButtonGroup style={{ margin: '0.5rem 1rem' }}>
 				{isSelectableAll && (
-					<Button onClick={handleSelectAll} data-test-id='select-all-btn'>
+					<Button onClick={handleSelectAll} data-test-id="select-all-btn">
 						<div style={{ display: 'flex', alignItems: 'center' }}>
 							<input
-								type='checkbox'
+								type="checkbox"
 								checked={isAllSelection}
 								ref={refAllButton}
 								readOnly
@@ -50,7 +50,7 @@ const MultiSelectMenuHeader = <T extends object>(props: MultiSelectMenuHeaderPro
 					</Button>
 				)}
 				{hasClearButton && (
-					<Button onClick={handleClear} data-test-id='clear-btn'>
+					<Button onClick={handleClear} data-test-id="clear-btn">
 						Clear
 					</Button>
 				)}

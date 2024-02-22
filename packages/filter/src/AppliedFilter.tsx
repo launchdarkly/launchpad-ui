@@ -48,7 +48,7 @@ const AppliedFilter = ({
 		onSearchChange && (!!searchValue || options.length > SEARCH_INPUT_THRESHOLD || !isEmpty);
 
 	return (
-		<Dropdown targetClassName={className} placement='bottom-start' enableArrow={false} {...props}>
+		<Dropdown targetClassName={className} placement="bottom-start" enableArrow={false} {...props}>
 			<AppliedFilterButton
 				data-test-id={testId}
 				name={name}

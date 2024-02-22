@@ -43,7 +43,7 @@ const Radio = ({
 				disabled={disabled}
 				id={id}
 				data-test-id={testId}
-				type='radio'
+				type="radio"
 			/>
 			<Label className={labelClassName} htmlFor={id} style={labelStyle}>
 				{disabled ? <span className={styles.labelDisabled}>{children}</span> : children}

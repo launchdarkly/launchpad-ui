@@ -60,9 +60,9 @@ export const Default: Story = {
 		'aria-label': 'select',
 		children: (
 			<>
-				<option value='a'>a</option>
-				<option value='b'>b</option>
-				<option value='c'>c</option>
+				<option value="a">a</option>
+				<option value="b">b</option>
+				<option value="c">c</option>
 			</>
 		),
 		onChange: () => undefined,

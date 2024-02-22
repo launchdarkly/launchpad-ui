@@ -17,14 +17,14 @@ const withRestingAndDisabledStates: Decorator = (story, context) => {
 		return story();
 	}
 	return (
-		<div className='Textarea-storygroup-wrapper'>
-			<span className='Textarea-state-label'>Resting</span>
+		<div className="Textarea-storygroup-wrapper">
+			<span className="Textarea-state-label">Resting</span>
 			{story()}
 			{originalTemplate && (
 				<>
-					<span className='Textarea-state-label'>Disabled</span>
+					<span className="Textarea-state-label">Disabled</span>
 					{originalTemplate({ ...args, disabled: true, id: 'Disabled' }, context)}
-					<span className='Textarea-state-label'>Empty</span>
+					<span className="Textarea-state-label">Empty</span>
 					{originalTemplate(
 						{ ...args, value: '', placeholder: 'Enter text here', id: 'Empty' },
 						context,
@@ -47,7 +47,7 @@ export default {
 			const fieldId = stateName[0].toUpperCase() + stateName.slice(1);
 			return (
 				<>
-					<span className='Textarea-state-label'>{stateName}</span>
+					<span className="Textarea-state-label">{stateName}</span>
 					{storyFn({ ...args, id: fieldId }, context)}
 				</>
 			);
@@ -131,7 +131,7 @@ export const NumberWithSuffix: Story = {
 	render: ({ id = '', ...args }) => {
 		const numberFieldId = `${id} Number Field`;
 		return (
-			<div className='Textarea-number-wrapper'>
+			<div className="Textarea-number-wrapper">
 				<TextField {...args} id={numberFieldId} />
 			</div>
 		);

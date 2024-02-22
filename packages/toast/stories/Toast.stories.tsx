@@ -38,7 +38,7 @@ export const WithLink: Story = {
 		kind: 'success',
 		content: (
 			<>
-				This has a link. <a href='/'>Link</a>
+				This has a link. <a href="/">Link</a>
 			</>
 		),
 	},

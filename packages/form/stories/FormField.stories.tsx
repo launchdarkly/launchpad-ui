@@ -60,7 +60,7 @@ export const Default: Story = {
 		label: 'Email',
 		name: 'Email',
 		htmlFor: 'Email',
-		children: <TextField id='Email' value='testing@launchdarkly.com' />,
+		children: <TextField id="Email" value="testing@launchdarkly.com" />,
 	},
 	parameters: {
 		a11y: {
@@ -82,7 +82,7 @@ export const WithError: Story = {
 		htmlFor: 'Email',
 		errorMessage: 'Oops, you entered an incorrect email',
 		isInvalid: true,
-		children: <TextField id='Email' value='testing@launchdarkly.com' />,
+		children: <TextField id="Email" value="testing@launchdarkly.com" />,
 	},
 	parameters: {
 		a11y: {
@@ -103,7 +103,7 @@ export const WithHint: Story = {
 		name: 'Email',
 		htmlFor: 'Email',
 		hint: 'Must be a valid email',
-		children: <TextField id='Email' autoComplete='email' value='testing@launchdarkly.com' />,
+		children: <TextField id="Email" autoComplete="email" value="testing@launchdarkly.com" />,
 	},
 	parameters: {
 		a11y: {
@@ -124,7 +124,7 @@ export const WithPasswordManagerDisabled: Story = {
 		name: 'Name',
 		htmlFor: 'Name',
 		hint: 'Must not be blank',
-		children: <TextField id='Name' autoComplete='off' value='First Name' />,
+		children: <TextField id="Name" autoComplete="off" value="First Name" />,
 	},
 	parameters: {
 		a11y: {

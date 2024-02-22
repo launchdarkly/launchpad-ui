@@ -8,9 +8,9 @@ describe('Radio', () => {
 		render(
 			<RadioGroup>
 				<Label>Label</Label>
-				<Radio value='1'>First</Radio>
-				<Radio value='2'>Second</Radio>
-				<Radio value='3'>Third</Radio>
+				<Radio value="1">First</Radio>
+				<Radio value="2">Second</Radio>
+				<Radio value="3">Third</Radio>
 			</RadioGroup>,
 		);
 		expect(screen.getByRole('radiogroup')).toBeVisible();
@@ -18,11 +18,11 @@ describe('Radio', () => {
 
 	it('renders selected', () => {
 		render(
-			<RadioGroup defaultValue='2'>
+			<RadioGroup defaultValue="2">
 				<Label>Label</Label>
-				<Radio value='1'>First</Radio>
-				<Radio value='2'>Second</Radio>
-				<Radio value='3'>Third</Radio>
+				<Radio value="1">First</Radio>
+				<Radio value="2">Second</Radio>
+				<Radio value="3">Third</Radio>
 			</RadioGroup>,
 		);
 		expect(screen.getByRole('radiogroup')).toBeVisible();

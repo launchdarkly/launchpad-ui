@@ -58,16 +58,16 @@ const Tag = <T extends object>(props: TagProps<T>) => {
 			className={classes}
 			ref={ref}
 			onClick={onClick && (() => onClick(item.key))}
-			data-test-id='tag'
+			data-test-id="tag"
 		>
 			<div className={cx(styles.tagCell)} {...gridCellProps}>
 				<span className={styles.tagContent}>{children}</span>
 				{allowsRemoving && (
-					<Tooltip content='Remove' allowBoundaryElementOverflow>
+					<Tooltip content="Remove" allowBoundaryElementOverflow>
 						<button
 							className={styles.removeButton}
 							tabIndex={-1}
-							data-test-id='remove-tag-btn'
+							data-test-id="remove-tag-btn"
 							onClick={(e) => {
 								e.stopPropagation();
 								// biome-ignore lint/suspicious/noExplicitAny: <explanation>
@@ -75,7 +75,7 @@ const Tag = <T extends object>(props: TagProps<T>) => {
 							}}
 							{...removeButtonProps}
 						>
-							<Icon name='cancel' size='small' />
+							<Icon name="cancel" size="small" />
 						</button>
 					</Tooltip>
 				)}

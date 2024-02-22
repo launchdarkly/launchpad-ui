@@ -33,7 +33,7 @@ describe('Snackbar', () => {
 	it('dismisses when cta is clicked', async () => {
 		const spy = vi.fn();
 		const user = userEvent.setup();
-		render(<Snackbar {...props} cta={<a href='/'>Click me</a>} onDismiss={spy} />);
+		render(<Snackbar {...props} cta={<a href="/">Click me</a>} onDismiss={spy} />);
 
 		await user.click(screen.getByRole('link'));
 

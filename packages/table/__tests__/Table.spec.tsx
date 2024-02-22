@@ -8,19 +8,19 @@ describe('Table', () => {
 		render(
 			<Table auto compact isResourceTable>
 				<TableHead>
-					<TableRow verticalAlign='middle'>
-						<TableHeadCell id='1' scope='col' defaultColWidth='one-of-twelve'>
+					<TableRow verticalAlign="middle">
+						<TableHeadCell id="1" scope="col" defaultColWidth="one-of-twelve">
 							Col 1
 						</TableHeadCell>
-						<TableHeadCell id='2' scope='col'>
+						<TableHeadCell id="2" scope="col">
 							Col 2
 						</TableHeadCell>
 					</TableRow>
 				</TableHead>
 				<TableBody>
 					<TableRow>
-						<TableCell headers='1'>Data 1</TableCell>
-						<TableCell headers='2'>Data 2</TableCell>
+						<TableCell headers="1">Data 1</TableCell>
+						<TableCell headers="2">Data 2</TableCell>
 					</TableRow>
 				</TableBody>
 			</Table>,

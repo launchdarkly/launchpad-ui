@@ -9,9 +9,9 @@ import { CopyToClipboard } from '../src';
 
 const createComponent = ({ children, ...rest }: Partial<CopyToClipboardProps>) => (
 	<CopyToClipboard
-		text='Copy content'
+		text="Copy content"
 		tooltipOptions={{ hoverOpenDelay: 0 }}
-		data-test-id='test-component'
+		data-test-id="test-component"
 		{...rest}
 	>
 		{children || 'Copy content'}
@@ -87,8 +87,8 @@ describe('CopyToClipboard', () => {
 
 			return (
 				// biome-ignore lint/a11y/useKeyWithClickEvents: <explanation>
-				<div data-test-id='wrapper' onClick={handleClick}>
-					<CopyToClipboard text='Copy content' ref={ref}>
+				<div data-test-id="wrapper" onClick={handleClick}>
+					<CopyToClipboard text="Copy content" ref={ref}>
 						Copy
 					</CopyToClipboard>
 				</div>

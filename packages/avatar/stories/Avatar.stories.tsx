@@ -34,7 +34,7 @@ export const Image: Story = {
 	args: {
 		url: 'https://picsum.photos/id/1025/200/200',
 		alt: 'Pugsy Darkly',
-		defaultIcon: <Icon name='person' />,
+		defaultIcon: <Icon name="person" />,
 	},
 };
 

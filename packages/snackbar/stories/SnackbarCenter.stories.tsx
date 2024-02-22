@@ -28,7 +28,7 @@ const makeSnackbar = (id: string) => {
 		kind,
 		description: 'This is a message.',
 		cta: (
-			<a href='/' target='_blank' rel='noreferrer'>
+			<a href="/" target="_blank" rel="noreferrer">
 				Link
 			</a>
 		),

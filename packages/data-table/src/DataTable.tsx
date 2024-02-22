@@ -106,7 +106,7 @@ const DataTable = forwardRef(
 				className={cx(table, className)}
 				data-test-id={testId}
 			>
-				<TableRowGroup type='thead'>
+				<TableRowGroup type="thead">
 					{collection.headerRows.map((headerRow) => (
 						<TableHeaderRow key={headerRow.key} item={headerRow} state={state}>
 							{/* biome-ignore lint/correctness/noUnsafeOptionalChaining: <explanation> */}
@@ -133,7 +133,7 @@ const DataTable = forwardRef(
 						</TableHeaderRow>
 					))}
 				</TableRowGroup>
-				<TableRowGroup type='tbody' ref={scrollRef}>
+				<TableRowGroup type="tbody" ref={scrollRef}>
 					{[...collection].map((row) => (
 						<TableRow key={row.key} item={row} state={state}>
 							{/* biome-ignore lint/correctness/noUnsafeOptionalChaining: <explanation> */}
@@ -228,7 +228,7 @@ const TableColumnHeader = <T extends object>({
 					{column.rendered}
 					{allowsSorting && (
 						<span
-							aria-hidden='true'
+							aria-hidden="true"
 							style={{
 								padding: '0 2px',
 								visibility: state.sortDescriptor?.column === column.key ? 'visible' : 'hidden',
@@ -245,7 +245,7 @@ const TableColumnHeader = <T extends object>({
 						onResizeStart={onResizeStart}
 						onResize={onResize}
 						onResizeEnd={onResizeEnd}
-						aria-label='Resizer'
+						aria-label="Resizer"
 					/>
 				)}
 			</div>
@@ -406,7 +406,7 @@ const Resizer = <T extends object>({
 
 	return (
 		<div
-			role='presentation'
+			role="presentation"
 			className={resizer({ focus: isFocusVisible, active: layout.resizingColumn === column.key })}
 			{...resizerProps}
 		>

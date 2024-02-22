@@ -42,7 +42,7 @@ const Collapsible = (props: CollapsibleProps) => {
 
 	const label = typeof props.label === 'string' ? props.label : props.label(isOpen);
 
-	const icon = isOpen ? <Icon name='chevron-up' /> : <Icon name='chevron-down' />;
+	const icon = isOpen ? <Icon name="chevron-up" /> : <Icon name="chevron-down" />;
 
 	const renderedTrigger = trigger({
 		label,
@@ -60,7 +60,7 @@ const Collapsible = (props: CollapsibleProps) => {
 	return (
 		<div data-test-id={testId} {...rest}>
 			<div className={cx(styles.trigger, isOpen && styles.isOpen)}>{renderedTrigger}</div>
-			<div id={panelId} aria-labelledby={triggerId} role='region'>
+			<div id={panelId} aria-labelledby={triggerId} role="region">
 				{keepContentInDomWhenClosed ? (
 					<div style={{ display: isOpen ? 'block' : 'none' }}>{children}</div>
 				) : (

@@ -24,11 +24,11 @@ type Story = StoryObj<typeof Menu>;
 export const Basic: Story = {
 	args: {
 		children: [
-			<MenuItem key='1'>Item 1</MenuItem>,
-			<MenuItem key='2'>Item 2</MenuItem>,
-			<MenuItem key='3'>Item 3</MenuItem>,
-			<MenuItem key='4'>Item 4</MenuItem>,
-			<MenuItem key='5' disabled>
+			<MenuItem key="1">Item 1</MenuItem>,
+			<MenuItem key="2">Item 2</MenuItem>,
+			<MenuItem key="3">Item 3</MenuItem>,
+			<MenuItem key="4">Item 4</MenuItem>,
+			<MenuItem key="5" disabled>
 				Disabled item
 			</MenuItem>,
 		],
@@ -41,15 +41,15 @@ export const Basic: Story = {
 export const WithGroupHeader: Story = {
 	args: {
 		children: [
-			<MenuItem key='1' groupHeader>
+			<MenuItem key="1" groupHeader>
 				Group
 			</MenuItem>,
-			<MenuItem key='2'>Group item 1</MenuItem>,
-			<MenuItem key='3'>Group item 2</MenuItem>,
-			<MenuItem key='4'>Group item 3</MenuItem>,
-			<MenuItem key='5'>Group item 4</MenuItem>,
-			<MenuDivider key='6' />,
-			<MenuItem key='7'>Stand-alone item 1</MenuItem>,
+			<MenuItem key="2">Group item 1</MenuItem>,
+			<MenuItem key="3">Group item 2</MenuItem>,
+			<MenuItem key="4">Group item 3</MenuItem>,
+			<MenuItem key="5">Group item 4</MenuItem>,
+			<MenuDivider key="6" />,
+			<MenuItem key="7">Stand-alone item 1</MenuItem>,
 		],
 	},
 };
@@ -57,12 +57,12 @@ export const WithGroupHeader: Story = {
 export const WithSearch: Story = {
 	args: {
 		children: [
-			<MenuSearch key='search' />,
-			<MenuItem key='1'>Item 1</MenuItem>,
-			<MenuItem key='2'>Item 2</MenuItem>,
-			<MenuItem key='3'>Item 3</MenuItem>,
-			<MenuItem key='4'>Item 4</MenuItem>,
-			<MenuItem key='5'>Item 5</MenuItem>,
+			<MenuSearch key="search" />,
+			<MenuItem key="1">Item 1</MenuItem>,
+			<MenuItem key="2">Item 2</MenuItem>,
+			<MenuItem key="3">Item 3</MenuItem>,
+			<MenuItem key="4">Item 4</MenuItem>,
+			<MenuItem key="5">Item 5</MenuItem>,
 		],
 	},
 	parameters: {
@@ -81,11 +81,11 @@ export const WithCustomMenuItemClasses: Story = {
 	args: {
 		menuItemClassName: 'MenuItem',
 		children: [
-			<MenuItem key='1'>Item 1</MenuItem>,
-			<MenuItem key='2'>Item 2</MenuItem>,
-			<MenuItem key='3'>Item 3</MenuItem>,
-			<MenuItem key='4'>Item 4</MenuItem>,
-			<MenuItem key='5'>Item 5</MenuItem>,
+			<MenuItem key="1">Item 1</MenuItem>,
+			<MenuItem key="2">Item 2</MenuItem>,
+			<MenuItem key="3">Item 3</MenuItem>,
+			<MenuItem key="4">Item 4</MenuItem>,
+			<MenuItem key="5">Item 5</MenuItem>,
 		],
 	},
 };
@@ -93,10 +93,10 @@ export const WithCustomMenuItemClasses: Story = {
 export const WithTooltips: Story = {
 	args: {
 		children: [
-			<MenuItem key='1' tooltip='Hello'>
+			<MenuItem key="1" tooltip="Hello">
 				item 1
 			</MenuItem>,
-			<MenuItem key='2'>item 2</MenuItem>,
+			<MenuItem key="2">item 2</MenuItem>,
 		],
 	},
 };
@@ -104,14 +104,14 @@ export const WithTooltips: Story = {
 export const WithHighlightedMenuItem: Story = {
 	args: {
 		children: [
-			<MenuItem key='1' tooltip='Hello'>
+			<MenuItem key="1" tooltip="Hello">
 				item 1
 			</MenuItem>,
-			<MenuItem key='2' isHighlighted>
+			<MenuItem key="2" isHighlighted>
 				item 2
 			</MenuItem>,
-			<MenuItem key='3'>item 3</MenuItem>,
-			<MenuItem key='4'>item 4</MenuItem>,
+			<MenuItem key="3">item 3</MenuItem>,
+			<MenuItem key="4">item 4</MenuItem>,
 		],
 	},
 };
@@ -119,16 +119,16 @@ export const WithHighlightedMenuItem: Story = {
 export const WithMenuItemIcons: Story = {
 	args: {
 		children: [
-			<MenuItem key='1' groupHeader>
+			<MenuItem key="1" groupHeader>
 				Color mode
 			</MenuItem>,
-			<MenuItem key='2' icon={<Icon name='theme-light' />}>
+			<MenuItem key="2" icon={<Icon name="theme-light" />}>
 				Light
 			</MenuItem>,
-			<MenuItem key='3' icon={<Icon name='theme-dark' />}>
+			<MenuItem key="3" icon={<Icon name="theme-dark" />}>
 				Dark
 			</MenuItem>,
-			<MenuItem key='4' icon={<Icon name='device-desktop' />}>
+			<MenuItem key="4" icon={<Icon name="device-desktop" />}>
 				Use system
 			</MenuItem>,
 		],
@@ -138,12 +138,12 @@ export const WithMenuItemIcons: Story = {
 export const WithSlottedChild: Story = {
 	args: {
 		children: [
-			<MenuItem key='1' asChild>
-				<a href='https://www.launchdarkly.com' target='_blank' rel='noreferrer'>
+			<MenuItem key="1" asChild>
+				<a href="https://www.launchdarkly.com" target="_blank" rel="noreferrer">
 					Item 1
 				</a>
 			</MenuItem>,
-			<MenuItem key='2'>item 2</MenuItem>,
+			<MenuItem key="2">item 2</MenuItem>,
 		],
 	},
 };

@@ -75,7 +75,7 @@ export const WithHeading: Story = {
 				<Button>Trigger</Button>
 				<Popover {...args}>
 					<Dialog>
-						<Heading slot='title'>Title</Heading>
+						<Heading slot="title">Title</Heading>
 						<div>Message</div>
 					</Dialog>
 				</Popover>

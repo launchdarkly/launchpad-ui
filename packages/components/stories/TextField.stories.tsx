@@ -31,8 +31,8 @@ export const Example: Story = {
 		children: (
 			<>
 				<Label>Label</Label>
-				<Input placeholder='Enter a value' />
-				<Text slot='description'>Description</Text>
+				<Input placeholder="Enter a value" />
+				<Text slot="description">Description</Text>
 			</>
 		),
 	},

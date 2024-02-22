@@ -157,11 +157,11 @@ const Alert = ({
 
 							{link && (
 								<Button
-									kind='link'
+									kind="link"
 									asChild
 									onClick={link?.onClick}
 									className={styles.LinkButton}
-									icon={<Icon name='link-external' size='small' />}
+									icon={<Icon name="link-external" size="small" />}
 								>
 									<a href={link.href}>{link.text}</a>
 								</Button>
@@ -172,11 +172,11 @@ const Alert = ({
 			</div>
 			{dismissible && (
 				<IconButton
-					aria-label='Close this alert.'
-					size='small'
+					aria-label="Close this alert."
+					size="small"
 					className={styles['Alert-close']}
-					icon={<Icon name='cancel' size='small' />}
-					kind='close'
+					icon={<Icon name="cancel" size="small" />}
+					kind="close"
 					onClick={() => setDismissedState(true)}
 					data-test-id={`${testId}-dismiss-button`}
 				/>

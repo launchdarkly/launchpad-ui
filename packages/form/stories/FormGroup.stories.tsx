@@ -47,10 +47,10 @@ export const Default: Story = {
 		name: 'key',
 		children: (
 			<>
-				<Label htmlFor='key'>
+				<Label htmlFor="key">
 					Key <RequiredAsterisk />
 				</Label>
-				<TextField id='key' name='key' />
+				<TextField id="key" name="key" />
 				<FormHint>Use this key in your code.</FormHint>
 			</>
 		),
@@ -64,17 +64,17 @@ export const Default: Story = {
 				</p>
 				<p>Below are two fields each wrapped in a FormGroup.</p>
 				<FormGroup>
-					<Label htmlFor='key'>
+					<Label htmlFor="key">
 						Key <RequiredAsterisk />
 					</Label>
-					<TextField id='key' name='key' />
+					<TextField id="key" name="key" />
 					<FormHint>Use this key in your code.</FormHint>
 				</FormGroup>
 				<FormGroup>
-					<Label htmlFor='key'>
+					<Label htmlFor="key">
 						Key <RequiredAsterisk />
 					</Label>
-					<TextField id='key' name='key' />
+					<TextField id="key" name="key" />
 					<FormHint>Use this key in your code.</FormHint>
 				</FormGroup>
 			</>

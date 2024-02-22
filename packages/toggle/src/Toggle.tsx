@@ -72,7 +72,7 @@ const Toggle = (props: ToggleProps) => {
 	);
 
 	return (
-		<label className={classes} data-test-id='toggle-label'>
+		<label className={classes} data-test-id="toggle-label">
 			<FocusRing autoFocus={autoFocus}>
 				<input
 					{...inputProps}

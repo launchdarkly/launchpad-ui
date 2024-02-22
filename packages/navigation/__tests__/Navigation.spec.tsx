@@ -19,7 +19,7 @@ globalThis.matchMedia = vi.fn().mockReturnValue({
 
 const createComponent = (items: NavigationItemProps[]) => (
 	<MemoryRouter>
-		<Navigation items={items} title='nav' kind='primary'>
+		<Navigation items={items} title="nav" kind="primary">
 			{(item) => (
 				<NavigationItem
 					key={item.to}

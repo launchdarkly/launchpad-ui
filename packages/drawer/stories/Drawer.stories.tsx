@@ -75,7 +75,7 @@ export const ForcedDarkTheme: Story = {
 		return show ? (
 			<>
 				{button}
-				<Drawer theme='dark' onCancel={() => setShow(!show)}>
+				<Drawer theme="dark" onCancel={() => setShow(!show)}>
 					<section>
 						<DrawerHeader>Example drawer title</DrawerHeader>
 					</section>
@@ -113,7 +113,7 @@ export const WithTooltip: Story = {
 						<DrawerHeader>Example drawer title</DrawerHeader>
 					</section>
 					<section>
-						<Tooltip content='If you hit the escape key hovering over this tooltip, it should dismiss the tooltip but not the drawer.'>
+						<Tooltip content="If you hit the escape key hovering over this tooltip, it should dismiss the tooltip but not the drawer.">
 							<button>Hover over me or focus on me!</button>
 						</Tooltip>
 					</section>

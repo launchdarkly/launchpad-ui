@@ -26,17 +26,17 @@ export const Example: Story = {
 		compact: false,
 		auto: false,
 		children: [
-			<TableHead key='head'>
+			<TableHead key="head">
 				<TableRow>
-					<TableHeadCell id={TableHeaders.TYPE} scope='col'>
+					<TableHeadCell id={TableHeaders.TYPE} scope="col">
 						Type
 					</TableHeadCell>
-					<TableHeadCell id={TableHeaders.TOTAL} scope='col'>
+					<TableHeadCell id={TableHeaders.TOTAL} scope="col">
 						Total
 					</TableHeadCell>
 				</TableRow>
 			</TableHead>,
-			<TableBody key='body'>
+			<TableBody key="body">
 				{[
 					{ key: 'test1', total: 203, name: 'feature' },
 					{ key: 'test2', name: 'click', total: 22 },

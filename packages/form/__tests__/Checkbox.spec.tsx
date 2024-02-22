@@ -6,7 +6,7 @@ import { Checkbox } from '../src';
 describe('Checkbox', () => {
 	it('renders', () => {
 		render(
-			<Checkbox checked={false} aria-label='Test checkbox' onChange={() => undefined}>
+			<Checkbox checked={false} aria-label="Test checkbox" onChange={() => undefined}>
 				Label
 			</Checkbox>,
 		);
@@ -17,7 +17,7 @@ describe('Checkbox', () => {
 		render(
 			<Checkbox
 				checked={false}
-				aria-label='Test checkbox'
+				aria-label="Test checkbox"
 				onChange={() => undefined}
 				disabled={true}
 			>
