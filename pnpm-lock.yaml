@@ -135,8 +135,8 @@ importers:
         specifier: ^4.23.0
         version: 4.23.0
       chromatic:
-        specifier: ^10.9.3
-        version: 10.9.3
+        specifier: ^11.0.0
+        version: 11.0.0
       concurrently:
         specifier: ^8.2.0
         version: 8.2.2
@@ -9749,8 +9749,8 @@ packages:
     engines: {node: '>=10'}
     dev: true
 
-  /chromatic@10.9.3:
-    resolution: {integrity: sha512-orjiRwXjX1tiEwukb5T/tZsR+mLQ7QQa6nL4XYhhzvlHZSQkBWaZWOPQamC2+7JfgRKB0PEwbzoQajOa/e3PxQ==}
+  /chromatic@11.0.0:
+    resolution: {integrity: sha512-utzRVqdMrpzYwZNf7dHWU0z0/rx6SH/FUVNozQxYHDtQfYUdEj+Ro4OSch5+Wsk2FoUmznJyLkaC2J839z1N7A==}
     hasBin: true
     peerDependencies:
       '@chromatic-com/cypress': ^0.5.2 || ^1.0.0
