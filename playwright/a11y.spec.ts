@@ -83,6 +83,7 @@ test.describe('Storybook a11y', async () => {
 					})
 					.include('#storybook-root')
 					.include('[data-test-id="portal"]')
+					.exclude('[data-a11y-ignore="aria-hidden-focus"]')
 					.analyze();
 
 				await expect(accessibilityScanResults.violations).toEqual([]);

@@ -63,6 +63,17 @@ export const parameters: Parameters = {
 		},
 		theme: window.matchMedia('(prefers-color-scheme: dark)').matches ? themes.dark : themes.light,
 	},
+	// https://react-spectrum.adobe.com/react-aria/accessibility.html#false-positives
+	a11y: {
+		config: {
+			rules: [
+				{
+					id: 'aria-hidden-focus',
+					selector: 'body *:not([data-a11y-ignore="aria-hidden-focus"])',
+				},
+			],
+		},
+	},
 };
 
 export const decorators: DecoratorFunction<ReactRenderer>[] = [

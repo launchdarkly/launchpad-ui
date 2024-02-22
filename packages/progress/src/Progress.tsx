@@ -42,7 +42,6 @@ const Progress = ({
 	const circumference = 2 * Math.PI * radius;
 
 	const indicator = (
-		// biome-ignore lint/a11y/noSvgWithoutTitle: <explanation>
 		<svg
 			className={cx(
 				styles.Progress,

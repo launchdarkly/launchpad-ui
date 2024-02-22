@@ -2,9 +2,13 @@ import type { VariantProps } from 'class-variance-authority';
 import type { ForwardedRef } from 'react';
 import type { ButtonProps as AriaButtonProps } from 'react-aria-components';
 
-import { cva } from 'class-variance-authority';
-import { forwardRef } from 'react';
-import { Button as AriaButton, composeRenderProps } from 'react-aria-components';
+import { cva, cx } from 'class-variance-authority';
+import { forwardRef, useContext } from 'react';
+import {
+	Button as AriaButton,
+	SelectStateContext,
+	composeRenderProps,
+} from 'react-aria-components';
 
 import styles from './styles/Button.module.css';
 
@@ -38,12 +42,14 @@ const _Button = (
 	{ size = 'medium', variant = 'default', ...props }: ButtonProps,
 	ref: ForwardedRef<HTMLButtonElement>,
 ) => {
+	const state = useContext(SelectStateContext);
+
 	return (
 		<AriaButton
 			{...props}
 			ref={ref}
 			className={composeRenderProps(props.className, (className, renderProps) =>
-				button({ ...renderProps, size, variant, className }),
+				state ? cx(styles.select, className) : button({ ...renderProps, size, variant, className }),
 			)}
 		/>
 	);

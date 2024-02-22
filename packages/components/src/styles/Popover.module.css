@@ -49,6 +49,12 @@
     max-width: var(--lp-menu-max-width);
   }
 
+  &[data-trigger='Select'],
+  &[data-trigger='ComboBox'] {
+    /* stylelint-disable-next-line csstools/value-no-unknown-custom-properties */
+    min-width: var(--trigger-width);
+  }
+
   &[data-placement='top'] {
     --origin: translateY(4px);
 

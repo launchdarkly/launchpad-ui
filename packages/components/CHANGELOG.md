@@ -1,5 +1,21 @@
 # @launchpad-ui/components
 
+## 0.1.11
+
+### Patch Changes
+
+- [#1175](https://github.com/launchdarkly/launchpad-ui/pull/1175) [`d1095b9`](https://github.com/launchdarkly/launchpad-ui/commit/d1095b974e1c88418e09fcb83251c5b764e19e15) Thanks [@Niznikr](https://github.com/Niznikr)! - Add `SubmenuTrigger`
+
+- [#1180](https://github.com/launchdarkly/launchpad-ui/pull/1180) [`e59252b`](https://github.com/launchdarkly/launchpad-ui/commit/e59252b82f300e43666e94a80ea6b1b3815fb599) Thanks [@Niznikr](https://github.com/Niznikr)! - Add destructive `MenuItem` variant
+
+- [#1179](https://github.com/launchdarkly/launchpad-ui/pull/1179) [`31b5c98`](https://github.com/launchdarkly/launchpad-ui/commit/31b5c98c49768e62f6474c8696b40e9cb52ea25d) Thanks [@Niznikr](https://github.com/Niznikr)! - Add `ListBox`, `Select`, and `ComboBox`
+
+- [#1174](https://github.com/launchdarkly/launchpad-ui/pull/1174) [`9ed0114`](https://github.com/launchdarkly/launchpad-ui/commit/9ed01146d71d499830279e10036e538b1aaf8e8e) Thanks [@Niznikr](https://github.com/Niznikr)! - Add `Link` and `TagGroup`
+
+- Updated dependencies [[`31b5c98`](https://github.com/launchdarkly/launchpad-ui/commit/31b5c98c49768e62f6474c8696b40e9cb52ea25d)]:
+  - @launchpad-ui/tokens@0.9.6
+  - @launchpad-ui/icons@0.16.3
+
 ## 0.1.10
 
 ### Patch Changes
