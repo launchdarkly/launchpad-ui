@@ -34,6 +34,7 @@
 			"nursery": {
 				"noUnusedImports": "error",
 				"useExportType": "error",
+				"useGroupedTypeImport": "error",
 				"useImportType": "error"
 			}
 		}
