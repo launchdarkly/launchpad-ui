@@ -18,20 +18,20 @@
 		"@launchpad-ui/core": "workspace:~",
 		"@launchpad-ui/icons": "workspace:~",
 		"@launchpad-ui/tokens": "workspace:~",
-		"@react-stately/collections": "3.10.4",
-		"@react-stately/data": "3.11.1",
-		"@react-stately/table": "3.11.5",
-		"@remix-run/css-bundle": "^2.6.0",
-		"@remix-run/node": "^2.6.0",
-		"@remix-run/react": "^2.6.0",
-		"@remix-run/serve": "^2.6.0",
+		"@react-stately/collections": "3.10.5",
+		"@react-stately/data": "3.11.2",
+		"@react-stately/table": "3.11.6",
+		"@remix-run/css-bundle": "^2.7.2",
+		"@remix-run/node": "^2.7.2",
+		"@remix-run/react": "^2.7.2",
+		"@remix-run/serve": "^2.7.2",
 		"isbot": "^5.1.0",
 		"react": "18.2.0",
 		"react-dom": "18.2.0",
 		"react-router-dom": "6.16.0"
 	},
 	"devDependencies": {
-		"@remix-run/dev": "^2.6.0",
+		"@remix-run/dev": "^2.7.2",
 		"typescript": "^5.3.2"
 	},
 	"engines": {

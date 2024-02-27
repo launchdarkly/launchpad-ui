@@ -30,9 +30,9 @@
 	"dependencies": {
 		"@launchpad-ui/icons": "workspace:~",
 		"@launchpad-ui/tokens": "workspace:~",
-		"@react-types/shared": "3.22.0",
+		"@react-types/shared": "3.22.1",
 		"class-variance-authority": "0.7.0",
-		"react-aria-components": "1.1.0",
+		"react-aria-components": "1.1.1",
 		"react-router-dom": "6.16.0"
 	},
 	"peerDependencies": {
@@ -40,7 +40,7 @@
 		"react-dom": "18.2.0"
 	},
 	"devDependencies": {
-		"react-stately": "3.30.0",
+		"react-stately": "3.30.1",
 		"react": "18.2.0",
 		"react-dom": "18.2.0"
 	}
