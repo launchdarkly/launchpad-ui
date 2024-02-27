@@ -5,54 +5,54 @@ import type { ButtonProps as AriaButtonProps } from 'react-aria-components';
 import { cva, cx } from 'class-variance-authority';
 import { forwardRef, useContext } from 'react';
 import {
-  Button as AriaButton,
-  SelectStateContext,
-  composeRenderProps,
+	Button as AriaButton,
+	SelectStateContext,
+	composeRenderProps,
 } from 'react-aria-components';
 
 import styles from './styles/Button.module.css';
 
 const button = cva(styles.base, {
-  variants: {
-    size: {
-      small: styles.small,
-      medium: styles.medium,
-      large: styles.large,
-    },
-    variant: {
-      default: styles.default,
-      primary: styles.primary,
-      destructive: styles.destructive,
-      minimal: styles.minimal,
-      primaryFlair: styles.primaryFlair,
-      defaultFlair: styles.defaultFlair,
-      minimalFlair: styles.minimalFlair,
-    },
-  },
-  defaultVariants: {
-    size: 'medium',
-    variant: 'default',
-  },
+	variants: {
+		size: {
+			small: styles.small,
+			medium: styles.medium,
+			large: styles.large,
+		},
+		variant: {
+			default: styles.default,
+			primary: styles.primary,
+			destructive: styles.destructive,
+			minimal: styles.minimal,
+			primaryFlair: styles.primaryFlair,
+			defaultFlair: styles.defaultFlair,
+			minimalFlair: styles.minimalFlair,
+		},
+	},
+	defaultVariants: {
+		size: 'medium',
+		variant: 'default',
+	},
 });
 
 type ButtonVariants = VariantProps<typeof button>;
 type ButtonProps = AriaButtonProps & ButtonVariants;
 
 const _Button = (
-  { size = 'medium', variant = 'default', ...props }: ButtonProps,
-  ref: ForwardedRef<HTMLButtonElement>
+	{ size = 'medium', variant = 'default', ...props }: ButtonProps,
+	ref: ForwardedRef<HTMLButtonElement>,
 ) => {
-  const state = useContext(SelectStateContext);
+	const state = useContext(SelectStateContext);
 
-  return (
-    <AriaButton
-      {...props}
-      ref={ref}
-      className={composeRenderProps(props.className, (className, renderProps) =>
-        state ? cx(styles.select, className) : button({ ...renderProps, size, variant, className })
-      )}
-    />
-  );
+	return (
+		<AriaButton
+			{...props}
+			ref={ref}
+			className={composeRenderProps(props.className, (className, renderProps) =>
+				state ? cx(styles.select, className) : button({ ...renderProps, size, variant, className }),
+			)}
+		/>
+	);
 };
 
 /**

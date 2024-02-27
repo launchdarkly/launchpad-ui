@@ -4,9 +4,9 @@ import type { SelectProps, SelectValueProps } from 'react-aria-components';
 import { cva } from 'class-variance-authority';
 import { forwardRef } from 'react';
 import {
-  Select as AriaSelect,
-  SelectValue as AriaSelectValue,
-  composeRenderProps,
+	Select as AriaSelect,
+	SelectValue as AriaSelectValue,
+	composeRenderProps,
 } from 'react-aria-components';
 
 import styles from './styles/Select.module.css';
@@ -15,15 +15,15 @@ const select = cva(styles.select);
 const value = cva(styles.value);
 
 const _Select = <T extends object>(props: SelectProps<T>, ref: ForwardedRef<HTMLDivElement>) => {
-  return (
-    <AriaSelect
-      {...props}
-      ref={ref}
-      className={composeRenderProps(props.className, (className, renderProps) =>
-        select({ ...renderProps, className })
-      )}
-    />
-  );
+	return (
+		<AriaSelect
+			{...props}
+			ref={ref}
+			className={composeRenderProps(props.className, (className, renderProps) =>
+				select({ ...renderProps, className }),
+			)}
+		/>
+	);
 };
 
 /**
@@ -34,18 +34,18 @@ const _Select = <T extends object>(props: SelectProps<T>, ref: ForwardedRef<HTML
 const Select = forwardRef(_Select);
 
 const _SelectValue = <T extends object>(
-  props: SelectValueProps<T>,
-  ref: ForwardedRef<HTMLSpanElement>
+	props: SelectValueProps<T>,
+	ref: ForwardedRef<HTMLSpanElement>,
 ) => {
-  return (
-    <AriaSelectValue
-      {...props}
-      ref={ref}
-      className={composeRenderProps(props.className, (className, renderProps) =>
-        value({ ...renderProps, className })
-      )}
-    />
-  );
+	return (
+		<AriaSelectValue
+			{...props}
+			ref={ref}
+			className={composeRenderProps(props.className, (className, renderProps) =>
+				value({ ...renderProps, className }),
+			)}
+		/>
+	);
 };
 
 /**

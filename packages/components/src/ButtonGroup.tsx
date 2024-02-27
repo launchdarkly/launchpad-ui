@@ -8,32 +8,32 @@ import { ButtonContext } from 'react-aria-components';
 import styles from './styles/ButtonGroup.module.css';
 
 const buttonGroup = cva(styles.base, {
-  variants: {
-    spacing: {
-      basic: styles.basic,
-      compact: styles.compact,
-      large: styles.large,
-    },
-  },
-  defaultVariants: {
-    spacing: 'basic',
-  },
+	variants: {
+		spacing: {
+			basic: styles.basic,
+			compact: styles.compact,
+			large: styles.large,
+		},
+	},
+	defaultVariants: {
+		spacing: 'basic',
+	},
 });
 
 type ButtonGroupProps = ComponentPropsWithRef<'div'> &
-  VariantProps<typeof buttonGroup> & {
-    isDisabled?: boolean;
-  };
+	VariantProps<typeof buttonGroup> & {
+		isDisabled?: boolean;
+	};
 
 const _ButtonGroup = (
-  { children, className, spacing = 'basic', isDisabled, ...props }: ButtonGroupProps,
-  ref: ForwardedRef<HTMLDivElement>
+	{ children, className, spacing = 'basic', isDisabled, ...props }: ButtonGroupProps,
+	ref: ForwardedRef<HTMLDivElement>,
 ) => {
-  return (
-    <div {...props} ref={ref} className={buttonGroup({ spacing, className })}>
-      <ButtonContext.Provider value={{ isDisabled }}>{children}</ButtonContext.Provider>
-    </div>
-  );
+	return (
+		<div {...props} ref={ref} className={buttonGroup({ spacing, className })}>
+			<ButtonContext.Provider value={{ isDisabled }}>{children}</ButtonContext.Provider>
+		</div>
+	);
 };
 
 const ButtonGroup = forwardRef(_ButtonGroup);

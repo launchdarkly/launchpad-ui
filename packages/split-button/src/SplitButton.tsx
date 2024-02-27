@@ -7,28 +7,28 @@ import { SplitButtonContext } from './context';
 import styles from './styles/SplitButton.module.css';
 
 type SplitButtonProps = ComponentProps<'div'> & {
-  kind?: Extract<ButtonProps['kind'], 'primary' | 'default'>;
-  size?: ButtonProps['size'];
-  disabled?: boolean;
-  'data-test-id'?: string;
+	kind?: Extract<ButtonProps['kind'], 'primary' | 'default'>;
+	size?: ButtonProps['size'];
+	disabled?: boolean;
+	'data-test-id'?: string;
 };
 
 const SplitButton = ({
-  disabled,
-  kind,
-  size,
-  children,
-  className,
-  'data-test-id': testId = 'split-button',
-  ...rest
+	disabled,
+	kind,
+	size,
+	children,
+	className,
+	'data-test-id': testId = 'split-button',
+	...rest
 }: SplitButtonProps) => {
-  return (
-    <SplitButtonContext.Provider value={{ disabled: !!disabled, kind, size }}>
-      <div {...rest} className={cx(styles.SplitButton, className)} data-test-id={testId}>
-        {children}
-      </div>
-    </SplitButtonContext.Provider>
-  );
+	return (
+		<SplitButtonContext.Provider value={{ disabled: !!disabled, kind, size }}>
+			<div {...rest} className={cx(styles.SplitButton, className)} data-test-id={testId}>
+				{children}
+			</div>
+		</SplitButtonContext.Provider>
+	);
 };
 
 SplitButton.displayName = 'SplitButton';

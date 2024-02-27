@@ -49,7 +49,7 @@ jobs:
         run: pnpm install
 
       - name: Lint
-        run: pnpm lint:ci
+        run: pnpm lint:packages
 
   test:
     name: Test
@@ -202,3 +202,17 @@ jobs:
 
       - name: Type Check
         run: pnpm typecheck
+
+  quality:
+    name: Quality
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Biome
+        uses: biomejs/setup-biome@v2
+
+      - name: Run Biome
+        run: biome ci .

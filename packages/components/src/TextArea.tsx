@@ -10,15 +10,15 @@ import styles from './styles/Input.module.css';
 const input = cva(styles.input);
 
 const _TextArea = (props: TextAreaProps, ref: ForwardedRef<HTMLTextAreaElement>) => {
-  return (
-    <AriaTextArea
-      {...props}
-      ref={ref}
-      className={composeRenderProps(props.className, (className, renderProps) =>
-        input({ ...renderProps, className })
-      )}
-    />
-  );
+	return (
+		<AriaTextArea
+			{...props}
+			ref={ref}
+			className={composeRenderProps(props.className, (className, renderProps) =>
+				input({ ...renderProps, className }),
+			)}
+		/>
+	);
 };
 
 /**

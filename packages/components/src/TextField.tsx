@@ -10,15 +10,15 @@ import styles from './styles/TextField.module.css';
 const field = cva(styles.field);
 
 const _TextField = (props: TextFieldProps, ref: ForwardedRef<HTMLDivElement>) => {
-  return (
-    <AriaTextField
-      {...props}
-      ref={ref}
-      className={composeRenderProps(props.className, (className, renderProps) =>
-        field({ ...renderProps, className })
-      )}
-    />
-  );
+	return (
+		<AriaTextField
+			{...props}
+			ref={ref}
+			className={composeRenderProps(props.className, (className, renderProps) =>
+				field({ ...renderProps, className }),
+			)}
+		/>
+	);
 };
 
 /**

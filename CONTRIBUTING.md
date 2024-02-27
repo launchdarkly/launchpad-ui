@@ -168,7 +168,7 @@ Simply run `pnpm generate component` and follow the prompts, and you'll be well 
 
 ### Javascript Styleguide
 
-All Javascript code is linted with [Prettier](https://prettier.io/) and [ESLint](https://eslint.org/).
+All Javascript code is linted with [Biome](https://biomejs.dev/).
 
 ### CSS Styleguide
 

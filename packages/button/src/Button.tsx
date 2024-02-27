@@ -1,140 +1,140 @@
 import type { IconProps } from '@launchpad-ui/icons';
 import type {
-  ButtonHTMLAttributes,
-  ElementType,
-  KeyboardEventHandler,
-  MouseEvent,
-  ReactElement,
-  ReactNode,
+	ButtonHTMLAttributes,
+	ElementType,
+	KeyboardEventHandler,
+	MouseEvent,
+	ReactElement,
+	ReactNode,
 } from 'react';
 
 import { Slot } from '@radix-ui/react-slot';
 import { cx } from 'classix';
-import { isValidElement, cloneElement, forwardRef, memo } from 'react';
+import { cloneElement, forwardRef, isValidElement, memo } from 'react';
 
 import styles from './styles/Button.module.css';
 
 type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
-  isLoading?: boolean;
-  loadingText?: string | JSX.Element;
-  size?: 'tiny' | 'small' | 'medium' | 'big';
-  kind?:
-    | 'default'
-    | 'primary'
-    | 'destructive'
-    | 'minimal'
-    | 'link'
-    | 'close'
-    | 'primaryFlair'
-    | 'defaultFlair'
-    | 'minimalFlair';
-  fit?: boolean;
-  disabled?: boolean;
-  icon?: ReactElement<Omit<IconProps, 'size'>>;
-  renderIconFirst?: boolean;
-  asChild?: boolean;
-  'data-test-id'?: string;
+	isLoading?: boolean;
+	loadingText?: string | JSX.Element;
+	size?: 'tiny' | 'small' | 'medium' | 'big';
+	kind?:
+		| 'default'
+		| 'primary'
+		| 'destructive'
+		| 'minimal'
+		| 'link'
+		| 'close'
+		| 'primaryFlair'
+		| 'defaultFlair'
+		| 'minimalFlair';
+	fit?: boolean;
+	disabled?: boolean;
+	icon?: ReactElement<Omit<IconProps, 'size'>>;
+	renderIconFirst?: boolean;
+	asChild?: boolean;
+	'data-test-id'?: string;
 };
 
 const ButtonComponent = forwardRef<HTMLButtonElement, ButtonProps>((props, ref) => {
-  const {
-    icon,
-    children,
-    className,
-    size,
-    fit,
-    kind = 'default',
-    isLoading = false,
-    loadingText,
-    renderIconFirst = false,
-    disabled = false,
-    asChild = false,
-    onKeyDown,
-    onClick,
-    type = 'button',
-    'data-test-id': testId = 'button',
-    ...rest
-  } = props;
+	const {
+		icon,
+		children,
+		className,
+		size,
+		fit,
+		kind = 'default',
+		isLoading = false,
+		loadingText,
+		renderIconFirst = false,
+		disabled = false,
+		asChild = false,
+		onKeyDown,
+		onClick,
+		type = 'button',
+		'data-test-id': testId = 'button',
+		...rest
+	} = props;
 
-  const Component: ElementType = asChild ? Slot : 'button';
+	const Component: ElementType = asChild ? Slot : 'button';
 
-  const classes = cx(
-    styles.Button,
-    styles[`Button--${kind}`],
-    size && styles[`Button--${size}`],
-    fit && styles['Button--fit'],
-    className
-  );
+	const classes = cx(
+		styles.Button,
+		styles[`Button--${kind}`],
+		size && styles[`Button--${size}`],
+		fit && styles['Button--fit'],
+		className,
+	);
 
-  const getIconSize = () => {
-    let iconSize: IconProps['size'] = 'small';
+	const getIconSize = () => {
+		let iconSize: IconProps['size'] = 'small';
 
-    if (size === 'big') {
-      iconSize = 'medium';
-    }
+		if (size === 'big') {
+			iconSize = 'medium';
+		}
 
-    return iconSize;
-  };
+		return iconSize;
+	};
 
-  const renderIcon =
-    icon &&
-    cloneElement(icon as ReactElement<IconProps>, {
-      key: 'icon',
-      size: getIconSize(),
-      'aria-hidden': true,
-      className: cx(icon.props.className, styles['Button-icon']),
-    });
+	const renderIcon =
+		icon &&
+		cloneElement(icon as ReactElement<IconProps>, {
+			key: 'icon',
+			size: getIconSize(),
+			'aria-hidden': true,
+			className: cx(icon.props.className, styles['Button-icon']),
+		});
 
-  const getFinalChildren = (c: ReactNode) => [
-    renderIconFirst && renderIcon,
-    isLoading && <span key="text">{loadingText || c}</span>,
-    !isLoading && c && <span key="text">{c}</span>,
-    !renderIconFirst && renderIcon,
-    isLoading && <span key="spinner">…</span>,
-  ];
+	const getFinalChildren = (c: ReactNode) => [
+		renderIconFirst && renderIcon,
+		isLoading && <span key="text">{loadingText || c}</span>,
+		!isLoading && c && <span key="text">{c}</span>,
+		!renderIconFirst && renderIcon,
+		isLoading && <span key="spinner">…</span>,
+	];
 
-  const renderChildren = () => {
-    if (asChild && isValidElement(children)) {
-      return cloneElement(children, undefined, getFinalChildren(children.props.children));
-    }
+	const renderChildren = () => {
+		if (asChild && isValidElement(children)) {
+			return cloneElement(children, undefined, getFinalChildren(children.props.children));
+		}
 
-    return getFinalChildren(children);
-  };
+		return getFinalChildren(children);
+	};
 
-  const isDisabled = disabled || isLoading;
+	const isDisabled = disabled || isLoading;
 
-  const handleClick = (event: MouseEvent<HTMLAnchorElement> & MouseEvent<HTMLButtonElement>) => {
-    if (disabled) return event.preventDefault();
+	const handleClick = (event: MouseEvent<HTMLAnchorElement> & MouseEvent<HTMLButtonElement>) => {
+		if (disabled) return event.preventDefault();
 
-    onClick && onClick(event);
-  };
+		onClick?.(event);
+	};
 
-  const handleKeyDown: KeyboardEventHandler<HTMLButtonElement> = (event) => {
-    if (event.target instanceof HTMLAnchorElement) {
-      const spacebarKeys = ['Spacebar', ' '];
+	const handleKeyDown: KeyboardEventHandler<HTMLButtonElement> = (event) => {
+		if (event.target instanceof HTMLAnchorElement) {
+			const spacebarKeys = ['Spacebar', ' '];
 
-      if (spacebarKeys.includes(event.key)) {
-        event.preventDefault();
-        const link = event.target as HTMLAnchorElement;
-        link.click();
-      }
-    }
-  };
+			if (spacebarKeys.includes(event.key)) {
+				event.preventDefault();
+				const link = event.target as HTMLAnchorElement;
+				link.click();
+			}
+		}
+	};
 
-  return (
-    <Component
-      className={classes}
-      ref={ref}
-      onClick={handleClick}
-      onKeyDown={onKeyDown || handleKeyDown}
-      disabled={isDisabled}
-      type={asChild ? undefined : type}
-      data-test-id={testId}
-      {...rest}
-    >
-      {renderChildren()}
-    </Component>
-  );
+	return (
+		<Component
+			className={classes}
+			ref={ref}
+			onClick={handleClick}
+			onKeyDown={onKeyDown || handleKeyDown}
+			disabled={isDisabled}
+			type={asChild ? undefined : type}
+			data-test-id={testId}
+			{...rest}
+		>
+			{renderChildren()}
+		</Component>
+	);
 });
 
 ButtonComponent.displayName = 'Button';

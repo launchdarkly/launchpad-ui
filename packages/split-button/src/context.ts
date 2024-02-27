@@ -3,15 +3,15 @@ import type { ButtonProps } from '@launchpad-ui/button';
 import { createContext } from 'react';
 
 type SplitButtonContextState = {
-  disabled?: boolean;
-  kind?: ButtonProps['kind'];
-  size?: ButtonProps['size'];
+	disabled?: boolean;
+	kind?: ButtonProps['kind'];
+	size?: ButtonProps['size'];
 };
 
 const SplitButtonContext = createContext<SplitButtonContextState>({
-  disabled: false,
-  kind: 'default',
-  size: 'medium',
+	disabled: false,
+	kind: 'default',
+	size: 'medium',
 });
 
 export { SplitButtonContext };

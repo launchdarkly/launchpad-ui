@@ -6,29 +6,29 @@ import { useSeparator } from '@react-aria/separator';
 import styles from './styles/Menu.module.css';
 
 type MenuDividerProps = SeparatorProps & {
-  innerRef?: RefObject<HTMLDivElement>;
-  'data-test-id'?: string;
+	innerRef?: RefObject<HTMLDivElement>;
+	'data-test-id'?: string;
 };
 
 const MenuDivider = ({
-  elementType = 'div',
-  orientation,
-  innerRef,
-  'data-test-id': testId = 'menu-divider',
+	elementType = 'div',
+	orientation,
+	innerRef,
+	'data-test-id': testId = 'menu-divider',
 }: MenuDividerProps) => {
-  const { separatorProps } = useSeparator({
-    orientation,
-    elementType,
-  });
+	const { separatorProps } = useSeparator({
+		orientation,
+		elementType,
+	});
 
-  return (
-    <div
-      {...separatorProps}
-      data-test-id={testId}
-      ref={innerRef}
-      className={styles['Menu-divider']}
-    />
-  );
+	return (
+		<div
+			{...separatorProps}
+			data-test-id={testId}
+			ref={innerRef}
+			className={styles['Menu-divider']}
+		/>
+	);
 };
 
 export { MenuDivider };

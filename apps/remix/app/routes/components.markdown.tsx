@@ -12,5 +12,5 @@ This is markdown content.
 `;
 
 export default function Index() {
-  return <Markdown source={SAMPLE_MARKDOWN} />;
+	return <Markdown source={SAMPLE_MARKDOWN} />;
 }

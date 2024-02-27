@@ -10,18 +10,18 @@ import styles from './styles/ComboBox.module.css';
 const box = cva(styles.box);
 
 const _ComboBox = <T extends object>(
-  props: ComboBoxProps<T>,
-  ref: ForwardedRef<HTMLDivElement>
+	props: ComboBoxProps<T>,
+	ref: ForwardedRef<HTMLDivElement>,
 ) => {
-  return (
-    <AriaComboBox
-      {...props}
-      ref={ref}
-      className={composeRenderProps(props.className, (className, renderProps) =>
-        box({ ...renderProps, className })
-      )}
-    />
-  );
+	return (
+		<AriaComboBox
+			{...props}
+			ref={ref}
+			className={composeRenderProps(props.className, (className, renderProps) =>
+				box({ ...renderProps, className }),
+			)}
+		/>
+	);
 };
 
 /**

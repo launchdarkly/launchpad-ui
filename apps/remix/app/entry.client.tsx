@@ -3,8 +3,8 @@ import { StrictMode } from 'react';
 import { hydrateRoot } from 'react-dom/client';
 
 hydrateRoot(
-  document,
-  <StrictMode>
-    <RemixBrowser />
-  </StrictMode>
+	document,
+	<StrictMode>
+		<RemixBrowser />
+	</StrictMode>,
 );

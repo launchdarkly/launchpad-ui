@@ -10,15 +10,15 @@ import styles from './styles/Group.module.css';
 const group = cva(styles.group);
 
 const _Group = (props: GroupProps, ref: ForwardedRef<HTMLDivElement>) => {
-  return (
-    <AriaGroup
-      {...props}
-      ref={ref}
-      className={composeRenderProps(props.className, (className, renderProps) =>
-        group({ ...renderProps, className })
-      )}
-    />
-  );
+	return (
+		<AriaGroup
+			{...props}
+			ref={ref}
+			className={composeRenderProps(props.className, (className, renderProps) =>
+				group({ ...renderProps, className }),
+			)}
+		/>
+	);
 };
 
 /**

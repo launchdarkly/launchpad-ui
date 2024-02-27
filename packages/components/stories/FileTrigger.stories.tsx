@@ -1,15 +1,15 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { FileTrigger, Button } from '../src';
+import { Button, FileTrigger } from '../src';
 
 const meta: Meta<typeof FileTrigger> = {
-  component: FileTrigger,
-  title: 'React Aria Components/FileTrigger',
-  parameters: {
-    status: {
-      type: import.meta.env.STORYBOOK_PACKAGE_STATUS__COMPONENTS,
-    },
-  },
+	component: FileTrigger,
+	title: 'React Aria Components/FileTrigger',
+	parameters: {
+		status: {
+			type: import.meta.env.STORYBOOK_PACKAGE_STATUS__COMPONENTS,
+		},
+	},
 };
 
 export default meta;
@@ -17,7 +17,7 @@ export default meta;
 type Story = StoryObj<typeof FileTrigger>;
 
 export const Example: Story = {
-  args: {
-    children: <Button>Select a file</Button>,
-  },
+	args: {
+		children: <Button>Select a file</Button>,
+	},
 };

@@ -10,15 +10,15 @@ import styles from './styles/Input.module.css';
 const input = cva(styles.input);
 
 const _Input = (props: InputProps, ref: ForwardedRef<HTMLInputElement>) => {
-  return (
-    <AriaInput
-      {...props}
-      ref={ref}
-      className={composeRenderProps(props.className, (className, renderProps) =>
-        input({ ...renderProps, className })
-      )}
-    />
-  );
+	return (
+		<AriaInput
+			{...props}
+			ref={ref}
+			className={composeRenderProps(props.className, (className, renderProps) =>
+				input({ ...renderProps, className }),
+			)}
+		/>
+	);
 };
 
 /**

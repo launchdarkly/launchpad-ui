@@ -10,15 +10,15 @@ import styles from './styles/RadioGroup.module.css';
 const group = cva(styles.group);
 
 const _RadioGroup = (props: RadioGroupProps, ref: ForwardedRef<HTMLDivElement>) => {
-  return (
-    <AriaRadioGroup
-      {...props}
-      ref={ref}
-      className={composeRenderProps(props.className, (className, renderProps) =>
-        group({ ...renderProps, className })
-      )}
-    />
-  );
+	return (
+		<AriaRadioGroup
+			{...props}
+			ref={ref}
+			className={composeRenderProps(props.className, (className, renderProps) =>
+				group({ ...renderProps, className }),
+			)}
+		/>
+	);
 };
 
 /**
