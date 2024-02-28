@@ -1,3 +1,5 @@
+import './styles/themes.css';
+
 export type { ButtonProps } from './Button';
 export type { ButtonGroupProps } from './ButtonGroup';
 export type { CheckboxProps } from './Checkbox';
