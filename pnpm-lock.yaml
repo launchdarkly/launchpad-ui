@@ -26,6 +26,9 @@ importers:
       '@commitlint/config-conventional':
         specifier: ^19.0.3
         version: 19.0.3
+      '@commitlint/types':
+        specifier: ^19.0.3
+        version: 19.0.3
       '@etchteam/storybook-addon-status':
         specifier: ^4.2.4
         version: 4.2.4(@types/react-dom@18.2.18)(@types/react@18.2.48)
