@@ -1,14 +1,5 @@
 @import '../../../tokens/dist/media-queries.css';
 
-:root,
-[data-theme='default'] {
-  --lp-overlay-bg: #28282880;
-}
-
-[data-theme='dark'] {
-  --lp-overlay-bg: #282828b2;
-}
-
 @keyframes fade {
   from {
     opacity: 0;
@@ -134,7 +125,7 @@
   width: 100vw;
   /* stylelint-disable-next-line csstools/value-no-unknown-custom-properties */
   height: var(--visual-viewport-height);
-  background: var(--lp-overlay-bg);
+  background: light-dark(#28282880, #282828b2);
   display: flex;
   align-items: center;
   justify-content: center;
