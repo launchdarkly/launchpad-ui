@@ -36,8 +36,6 @@ We use [Vitest](https://vitest.dev/) to run our unit tests as it is Jest compati
 
 To test accessibility we use [Playwright](https://playwright.dev/) with [@axe-core/playwright](https://github.com/dequelabs/axe-core-npm/blob/develop/packages/playwright/README.md) to run checks on Storybook stories.
 
-To verify component server-side rendering support we use a [Remix](https://remix.run/) playground app to integrate our components into. Powered by esbuild, Remix builds are speedy, making it a great choice for local and CI environments. Playwright is used to verify SSR support by running tests in a headless browser.
-
 ## Code Style
 
 We use [Biome](https://biomejs.dev/) and [Stylelint](https://stylelint.io/) to highlight problems in our code and [Biome](https://biomejs.dev/) to format it to be consistent across the repo.

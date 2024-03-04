@@ -103,25 +103,6 @@ module.exports = (plop) => {
 				template: "export { {{pascalCase name}} } from '@launchpad-ui/{{dashCase name}}';\n$1",
 				type: 'modify',
 			},
-			/*
-			 * Local Remix integration
-			 */
-			{
-				type: 'add',
-				path: 'apps/remix/app/routes/components.{{dashCase name}}.tsx',
-				templateFile: '.plop/templates/component/remix-example.tsx.hbs',
-			},
-			{
-				path: 'apps/remix/app/data.server.ts',
-				pattern: /(plop start components)/g,
-				template: "$1\n    { to: 'components/{{dashCase name}}', name: '{{pascalCase name}}' },",
-				type: 'modify',
-				transform: (file) =>
-					sortModification(file, {
-						openPatternStr: 'plop start components',
-						closePatternStr: 'plop end components',
-					}),
-			},
 			{
 				type: 'installDependencies',
 				path: process.cwd(),
