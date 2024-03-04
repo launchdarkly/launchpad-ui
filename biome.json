@@ -53,7 +53,7 @@
 	},
 	"overrides": [
 		{
-			"include": ["*.stories.tsx", "apps/remix/app", "*.config.*", "playwright", ".storybook"],
+			"include": ["*.stories.tsx", "*.config.*", "playwright", ".storybook"],
 			"linter": {
 				"rules": {
 					"style": {
