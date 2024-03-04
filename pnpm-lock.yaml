@@ -33,8 +33,8 @@ importers:
         specifier: ^4.2.4
         version: 4.2.4(@types/react-dom@18.2.18)(@types/react@18.2.48)
       '@playwright/test':
-        specifier: ^1.41.0
-        version: 1.41.1
+        specifier: ^1.42.1
+        version: 1.42.1
       '@storybook/addon-a11y':
         specifier: ^7.6.3
         version: 7.6.12
@@ -174,8 +174,8 @@ importers:
         specifier: ^0.2.1
         version: 0.2.1(rollup@3.29.4)
       storybook-addon-pseudo-states:
-        specifier: ^2.1.0
-        version: 2.1.2(@storybook/components@7.6.12)(@storybook/core-events@7.6.12)(@storybook/manager-api@7.6.12)(@storybook/preview-api@7.6.12)(@storybook/theming@7.6.12)(react-dom@18.2.0)(react@18.2.0)
+        specifier: ^2.2.0
+        version: 2.2.0(@storybook/components@7.6.12)(@storybook/core-events@7.6.12)(@storybook/manager-api@7.6.12)(@storybook/preview-api@7.6.12)(@storybook/theming@7.6.12)(react-dom@18.2.0)(react@18.2.0)
       stylelint:
         specifier: ^16.2.0
         version: 16.2.0(typescript@5.3.3)
@@ -4264,12 +4264,12 @@ packages:
     dev: true
     optional: true
 
-  /@playwright/test@1.41.1:
-    resolution: {integrity: sha512-9g8EWTjiQ9yFBXc6HjCWe41msLpxEX0KhmfmPl9RPLJdfzL4F0lg2BdJ91O9azFdl11y1pmpwdjBiSxvqc+btw==}
+  /@playwright/test@1.42.1:
+    resolution: {integrity: sha512-Gq9rmS54mjBL/7/MvBaNOBwbfnh7beHvS6oS4srqXFcQHpQCV1+c8JXWE8VLPyRDhgS3H8x8A7hztqI9VnwrAQ==}
     engines: {node: '>=16'}
     hasBin: true
     dependencies:
-      playwright: 1.41.1
+      playwright: 1.42.1
     dev: true
 
   /@polka/url@1.0.0-next.24:
@@ -12775,12 +12775,18 @@ packages:
     hasBin: true
     dev: true
 
-  /playwright@1.41.1:
-    resolution: {integrity: sha512-gdZAWG97oUnbBdRL3GuBvX3nDDmUOuqzV/D24dytqlKt+eI5KbwusluZRGljx1YoJKZ2NRPaeWiFTeGZO7SosQ==}
+  /playwright-core@1.42.1:
+    resolution: {integrity: sha512-mxz6zclokgrke9p1vtdy/COWBH+eOZgYUVVU34C73M+4j4HLlQJHtfcqiqqxpP0o8HhMkflvfbquLX5dg6wlfA==}
+    engines: {node: '>=16'}
+    hasBin: true
+    dev: true
+
+  /playwright@1.42.1:
+    resolution: {integrity: sha512-PgwB03s2DZBcNRoW+1w9E+VkLBxweib6KTXM0M3tkiT4jVxKSi6PmVJ591J+0u10LUrgxB7dLRbiJqO5s2QPMg==}
     engines: {node: '>=16'}
     hasBin: true
     dependencies:
-      playwright-core: 1.41.1
+      playwright-core: 1.42.1
     optionalDependencies:
       fsevents: 2.3.2
     dev: true
@@ -14065,8 +14071,8 @@ packages:
     resolution: {integrity: sha512-siT1RiqlfQnGqgT/YzXVUNsom9S0H1OX+dpdGN1xkyYATo4I6sep5NmsRD/40s3IIOvlCq6akxkqG82urIZW1w==}
     dev: true
 
-  /storybook-addon-pseudo-states@2.1.2(@storybook/components@7.6.12)(@storybook/core-events@7.6.12)(@storybook/manager-api@7.6.12)(@storybook/preview-api@7.6.12)(@storybook/theming@7.6.12)(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-AHv6q1JiQEUnMyZE3729iV6cNmBW7bueeytc4Lga4+8W1En8YNea5VjqAdrDNJhXVU0QEEIGtxkD3EoC9aVWLw==}
+  /storybook-addon-pseudo-states@2.2.0(@storybook/components@7.6.12)(@storybook/core-events@7.6.12)(@storybook/manager-api@7.6.12)(@storybook/preview-api@7.6.12)(@storybook/theming@7.6.12)(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-9hgTXfK3dS3Q3mIuXEjseHrE9QeJnHOIiFg5URsPt+9mpmL/4iTLBR1msdaE94c+l5dZJHsK46M87BRixfcEIg==}
     peerDependencies:
       '@storybook/components': ^7.4.6
       '@storybook/core-events': ^7.4.6
