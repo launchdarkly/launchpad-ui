@@ -10,7 +10,10 @@ import tsconfig from '../tsconfig.json';
 
 const getStories = () =>
 	fg.sync([
-		path.resolve(__dirname, '../packages/**/stories/*.stories.{mdx,tsx}'),
+		path.resolve(
+			__dirname,
+			'../packages/!(button|card|chip|counter|drawer|dropdown|filter|focus-trap|form|menu|modal|overlay|popover|portal|progress|select|tag|toggle|tooltip)/stories/*.stories.{mdx,tsx}',
+		),
 		'!**/node_modules',
 	]);
 
