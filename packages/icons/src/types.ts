@@ -158,6 +158,7 @@ const icons = [
 	'network-cloud',
 	'notifications',
 	'notifications-add',
+	'notifications-check',
 	'notifications-gear',
 	'notifications-outline',
 	'notifications-tilt',
