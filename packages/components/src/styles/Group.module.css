@@ -16,5 +16,6 @@
     padding: 0;
     outline: none;
     border: none;
+    border-radius: unset;
   }
 }
