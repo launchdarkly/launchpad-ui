@@ -1,16 +1,20 @@
 {
 	"name": "@launchpad-ui/toggle",
-	"version": "0.7.14",
+	"version": "0.7.15",
 	"status": "beta",
 	"publishConfig": {
 		"access": "public"
 	},
 	"description": "An element that represents on/off values as opposed to selection.",
-	"files": ["dist"],
+	"files": [
+		"dist"
+	],
 	"main": "dist/index.js",
 	"module": "dist/index.es.js",
 	"types": "dist/index.d.ts",
-	"sideEffects": ["**/*.css"],
+	"sideEffects": [
+		"**/*.css"
+	],
 	"exports": {
 		".": {
 			"types": "./dist/index.d.ts",

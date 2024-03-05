@@ -1,5 +1,14 @@
 # @launchpad-ui/icons
 
+## 0.16.4
+
+### Patch Changes
+
+- [#1191](https://github.com/launchdarkly/launchpad-ui/pull/1191) [`369664c`](https://github.com/launchdarkly/launchpad-ui/commit/369664c3c21f93e844f0d3ae9a4ef80ad2d03bfb) Thanks [@matthewferry](https://github.com/matthewferry)! - feat(icons): add notifications-check icon
+
+- Updated dependencies [[`3b792b5`](https://github.com/launchdarkly/launchpad-ui/commit/3b792b5cb706338be57848a3773152aa6c4597dc)]:
+  - @launchpad-ui/tokens@0.9.7
+
 ## 0.16.3
 
 ### Patch Changes
@@ -305,7 +314,7 @@
   root.render(
     <IconContext.Provider value={{ path: icons }}>
       <App />
-    </IconContext.Provider>,
+    </IconContext.Provider>
   );
   ```
 

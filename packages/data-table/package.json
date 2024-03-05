@@ -1,16 +1,20 @@
 {
 	"name": "@launchpad-ui/data-table",
-	"version": "0.2.13",
+	"version": "0.2.14",
 	"status": "alpha",
 	"publishConfig": {
 		"access": "public"
 	},
 	"description": "An element used to display data in rows and columns.",
-	"files": ["dist"],
+	"files": [
+		"dist"
+	],
 	"main": "dist/index.js",
 	"module": "dist/index.es.js",
 	"types": "dist/index.d.ts",
-	"sideEffects": ["**/*.css"],
+	"sideEffects": [
+		"**/*.css"
+	],
 	"exports": {
 		".": {
 			"types": "./dist/index.d.ts",

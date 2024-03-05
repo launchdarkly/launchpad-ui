@@ -1,16 +1,20 @@
 {
 	"name": "@launchpad-ui/drawer",
-	"version": "0.5.19",
+	"version": "0.5.20",
 	"status": "alpha",
 	"publishConfig": {
 		"access": "public"
 	},
 	"description": "A partial overlay that appears from the right side of the screen.",
-	"files": ["dist"],
+	"files": [
+		"dist"
+	],
 	"main": "dist/index.js",
 	"module": "dist/index.es.js",
 	"types": "dist/index.d.ts",
-	"sideEffects": ["**/*.css"],
+	"sideEffects": [
+		"**/*.css"
+	],
 	"exports": {
 		".": {
 			"types": "./dist/index.d.ts",

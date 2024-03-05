@@ -1,16 +1,20 @@
 {
 	"name": "@launchpad-ui/tag",
-	"version": "0.3.19",
+	"version": "0.3.20",
 	"status": "alpha",
 	"publishConfig": {
 		"access": "public"
 	},
 	"description": "Tags allow users to categorize content. They can represent keywords or people, and are grouped to describe an item or a search request.",
-	"files": ["dist"],
+	"files": [
+		"dist"
+	],
 	"main": "dist/index.js",
 	"module": "dist/index.es.js",
 	"types": "dist/index.d.ts",
-	"sideEffects": ["**/*.css"],
+	"sideEffects": [
+		"**/*.css"
+	],
 	"exports": {
 		".": {
 			"types": "./dist/index.d.ts",

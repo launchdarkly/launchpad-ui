@@ -1,16 +1,20 @@
 {
 	"name": "@launchpad-ui/menu",
-	"version": "0.13.4",
+	"version": "0.13.5",
 	"status": "beta",
 	"publishConfig": {
 		"access": "public"
 	},
 	"description": "An element that presents a list of items a user can choose from.",
-	"files": ["dist"],
+	"files": [
+		"dist"
+	],
 	"main": "dist/index.js",
 	"module": "dist/index.es.js",
 	"types": "dist/index.d.ts",
-	"sideEffects": ["**/*.css"],
+	"sideEffects": [
+		"**/*.css"
+	],
 	"exports": {
 		".": {
 			"types": "./dist/index.d.ts",

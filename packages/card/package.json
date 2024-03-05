@@ -1,16 +1,20 @@
 {
 	"name": "@launchpad-ui/card",
-	"version": "0.2.19",
+	"version": "0.2.20",
 	"status": "alpha",
 	"publishConfig": {
 		"access": "public"
 	},
 	"description": "",
-	"files": ["dist"],
+	"files": [
+		"dist"
+	],
 	"main": "dist/index.js",
 	"module": "dist/index.es.js",
 	"types": "dist/index.d.ts",
-	"sideEffects": ["**/*.css"],
+	"sideEffects": [
+		"**/*.css"
+	],
 	"exports": {
 		".": {
 			"types": "./dist/index.d.ts",

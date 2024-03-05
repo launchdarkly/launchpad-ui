@@ -1,16 +1,20 @@
 {
 	"name": "@launchpad-ui/counter",
-	"version": "0.4.10",
+	"version": "0.4.11",
 	"status": "beta",
 	"publishConfig": {
 		"access": "public"
 	},
 	"description": "Indicates the count value of a resource.",
-	"files": ["dist"],
+	"files": [
+		"dist"
+	],
 	"main": "dist/index.js",
 	"module": "dist/index.es.js",
 	"types": "dist/index.d.ts",
-	"sideEffects": ["**/*.css"],
+	"sideEffects": [
+		"**/*.css"
+	],
 	"exports": {
 		".": {
 			"types": "./dist/index.d.ts",

@@ -1,16 +1,20 @@
 {
 	"name": "@launchpad-ui/icons",
-	"version": "0.16.3",
+	"version": "0.16.4",
 	"status": "beta",
 	"publishConfig": {
 		"access": "public"
 	},
 	"description": "An element that supplements content and represents an action or feature within LaunchDarkly.",
-	"files": ["dist"],
+	"files": [
+		"dist"
+	],
 	"main": "dist/index.js",
 	"module": "dist/index.es.js",
 	"types": "dist/index.d.ts",
-	"sideEffects": ["**/*.css"],
+	"sideEffects": [
+		"**/*.css"
+	],
 	"exports": {
 		".": {
 			"types": "./dist/index.d.ts",

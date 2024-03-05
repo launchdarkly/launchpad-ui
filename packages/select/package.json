@@ -1,16 +1,20 @@
 {
 	"name": "@launchpad-ui/select",
-	"version": "0.4.19",
+	"version": "0.4.20",
 	"status": "alpha",
 	"publishConfig": {
 		"access": "public"
 	},
 	"description": "Select dropdowns supporting single and multi select.",
-	"files": ["dist"],
+	"files": [
+		"dist"
+	],
 	"main": "dist/index.js",
 	"module": "dist/index.es.js",
 	"types": "dist/index.d.ts",
-	"sideEffects": ["**/*.css"],
+	"sideEffects": [
+		"**/*.css"
+	],
 	"exports": {
 		".": {
 			"types": "./dist/index.d.ts",

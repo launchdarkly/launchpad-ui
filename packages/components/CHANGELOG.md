@@ -1,5 +1,21 @@
 # @launchpad-ui/components
 
+## 0.1.12
+
+### Patch Changes
+
+- [#1183](https://github.com/launchdarkly/launchpad-ui/pull/1183) [`3b792b5`](https://github.com/launchdarkly/launchpad-ui/commit/3b792b5cb706338be57848a3773152aa6c4597dc) Thanks [@renovate](https://github.com/apps/renovate)! - Update dependencies
+
+- [#1192](https://github.com/launchdarkly/launchpad-ui/pull/1192) [`bd8f9d3`](https://github.com/launchdarkly/launchpad-ui/commit/bd8f9d391e7127285d5b070d429d88e32cf5326e) Thanks [@Niznikr](https://github.com/Niznikr)! - Override `forwardRef` to support generics
+
+- [#1194](https://github.com/launchdarkly/launchpad-ui/pull/1194) [`c94edc9`](https://github.com/launchdarkly/launchpad-ui/commit/c94edc9e15b60475a79432428138c79d9000af9b) Thanks [@Niznikr](https://github.com/Niznikr)! - Unset border radius for `Input` in `Group`
+
+- [#1186](https://github.com/launchdarkly/launchpad-ui/pull/1186) [`3885078`](https://github.com/launchdarkly/launchpad-ui/commit/388507850f729a4a95650d73ea72f8a7224eb161) Thanks [@Niznikr](https://github.com/Niznikr)! - Use light-dark() color function for theme styles
+
+- Updated dependencies [[`3b792b5`](https://github.com/launchdarkly/launchpad-ui/commit/3b792b5cb706338be57848a3773152aa6c4597dc), [`369664c`](https://github.com/launchdarkly/launchpad-ui/commit/369664c3c21f93e844f0d3ae9a4ef80ad2d03bfb)]:
+  - @launchpad-ui/tokens@0.9.7
+  - @launchpad-ui/icons@0.16.4
+
 ## 0.1.11
 
 ### Patch Changes
