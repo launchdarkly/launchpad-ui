@@ -5,7 +5,6 @@ import type {
 } from 'react-aria-components';
 
 import { cva } from 'class-variance-authority';
-import { forwardRef } from 'react';
 import {
 	Tooltip as AriaTooltip,
 	TooltipTrigger as AriaTooltipTrigger,
@@ -13,6 +12,7 @@ import {
 } from 'react-aria-components';
 
 import styles from './styles/Tooltip.module.css';
+import { forwardRef } from './utils';
 
 type TooltipProps = Omit<AriaTooltipProps, 'offset' | 'crossOffset'>;
 type TooltipTriggerProps = Omit<TooltipTriggerComponentProps, 'delay' | 'closeDelay'>;

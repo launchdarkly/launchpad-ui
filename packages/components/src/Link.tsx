@@ -4,11 +4,11 @@ import type { LinkProps as AriaLinkProps } from 'react-aria-components';
 import type { LinkProps as _RouterLinkProps } from 'react-router-dom';
 
 import { cva } from 'class-variance-authority';
-import { forwardRef } from 'react';
 import { Link as AriaLink, composeRenderProps } from 'react-aria-components';
 import { useHref, useLinkClickHandler } from 'react-router-dom';
 
 import styles from './styles/Link.module.css';
+import { forwardRef } from './utils';
 
 const link = cva(styles.base, {
 	variants: {

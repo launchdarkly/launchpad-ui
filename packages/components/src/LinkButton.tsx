@@ -2,11 +2,11 @@ import type { ForwardedRef } from 'react';
 import type { ButtonVariants } from './Button';
 import type { LinkProps } from './Link';
 
-import { forwardRef } from 'react';
 import { composeRenderProps } from 'react-aria-components';
 
 import { button } from './Button';
 import { Link } from './Link';
+import { forwardRef } from './utils';
 
 type LinkButtonProps = LinkProps & ButtonVariants;
 

@@ -5,7 +5,6 @@ import type {
 } from 'react-aria-components';
 
 import { cva } from 'class-variance-authority';
-import { forwardRef } from 'react';
 import {
 	OverlayArrow as AriaOverlayArrow,
 	Popover as AriaPopover,
@@ -13,6 +12,7 @@ import {
 } from 'react-aria-components';
 
 import styles from './styles/Popover.module.css';
+import { forwardRef } from './utils';
 
 type PopoverProps = Omit<AriaPopoverProps, 'offset' | 'crossOffset'>;
 type OverlayArrowProps = Omit<AriaOverlayArrowProps, 'children'>;

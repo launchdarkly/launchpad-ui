@@ -61,9 +61,7 @@ export const Removable: Story = {
 		return (
 			<TagGroup onRemove={(keys) => list.remove(...keys)} {...args}>
 				<Label>Label</Label>
-				<TagList items={list.items}>
-					{(item: { id?: number; name?: string }) => <Tag>{item.name}</Tag>}
-				</TagList>
+				<TagList items={list.items}>{(item) => <Tag>{item.name}</Tag>}</TagList>
 			</TagGroup>
 		);
 	},
