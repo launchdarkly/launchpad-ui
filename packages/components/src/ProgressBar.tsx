@@ -3,10 +3,10 @@ import type { ForwardedRef } from 'react';
 import type { ProgressBarProps as AriaProgressBarProps } from 'react-aria-components';
 
 import { cva, cx } from 'class-variance-authority';
-import { forwardRef } from 'react';
 import { ProgressBar as AriaProgressBar, composeRenderProps } from 'react-aria-components';
 
 import styles from './styles/ProgressBar.module.css';
+import { forwardRef } from './utils';
 
 const progressBar = cva(styles.progress);
 

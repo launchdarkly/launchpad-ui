@@ -3,7 +3,7 @@ import type { ForwardedRef } from 'react';
 import type { ButtonProps as AriaButtonProps } from 'react-aria-components';
 
 import { cva, cx } from 'class-variance-authority';
-import { forwardRef, useContext } from 'react';
+import { useContext } from 'react';
 import {
 	Button as AriaButton,
 	SelectStateContext,
@@ -11,6 +11,7 @@ import {
 } from 'react-aria-components';
 
 import styles from './styles/Button.module.css';
+import { forwardRef } from './utils';
 
 const button = cva(styles.base, {
 	variants: {

@@ -3,7 +3,6 @@ import type { ForwardedRef } from 'react';
 import type { ModalOverlayProps } from 'react-aria-components';
 
 import { cva } from 'class-variance-authority';
-import { forwardRef } from 'react';
 import {
 	Modal as AriaModal,
 	ModalOverlay as AriaModalOverlay,
@@ -11,6 +10,7 @@ import {
 } from 'react-aria-components';
 
 import styles from './styles/Modal.module.css';
+import { forwardRef } from './utils';
 
 const modal = cva(styles.base, {
 	variants: {

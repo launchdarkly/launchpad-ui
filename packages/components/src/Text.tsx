@@ -2,10 +2,10 @@ import type { ForwardedRef } from 'react';
 import type { TextProps } from 'react-aria-components';
 
 import { cva } from 'class-variance-authority';
-import { forwardRef } from 'react';
 import { Text as AriaText } from 'react-aria-components';
 
 import styles from './styles/Text.module.css';
+import { forwardRef } from './utils';
 
 const text = cva(styles.text);
 

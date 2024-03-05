@@ -2,10 +2,10 @@ import type { ForwardedRef } from 'react';
 import type { GroupProps } from 'react-aria-components';
 
 import { cva } from 'class-variance-authority';
-import { forwardRef } from 'react';
 import { Group as AriaGroup, composeRenderProps } from 'react-aria-components';
 
 import styles from './styles/Group.module.css';
+import { forwardRef } from './utils';
 
 const group = cva(styles.group);
 

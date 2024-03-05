@@ -2,7 +2,6 @@ import type { ForwardedRef } from 'react';
 import type { SelectProps, SelectValueProps } from 'react-aria-components';
 
 import { cva } from 'class-variance-authority';
-import { forwardRef } from 'react';
 import {
 	Select as AriaSelect,
 	SelectValue as AriaSelectValue,
@@ -10,6 +9,7 @@ import {
 } from 'react-aria-components';
 
 import styles from './styles/Select.module.css';
+import { forwardRef } from './utils';
 
 const select = cva(styles.select);
 const value = cva(styles.value);

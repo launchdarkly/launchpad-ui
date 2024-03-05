@@ -3,7 +3,6 @@ import type { ListBoxItemProps, ListBoxProps } from 'react-aria-components';
 
 import { Icon } from '@launchpad-ui/icons';
 import { cva } from 'class-variance-authority';
-import { forwardRef } from 'react';
 import {
 	ListBox as AriaListBox,
 	ListBoxItem as AriaListBoxItem,
@@ -11,6 +10,7 @@ import {
 } from 'react-aria-components';
 
 import styles from './styles/ListBox.module.css';
+import { forwardRef } from './utils';
 
 const box = cva(styles.box);
 const item = cva(styles.item);

@@ -3,7 +3,6 @@ import type { ForwardedRef } from 'react';
 import type { TagGroupProps, TagListProps, TagProps as AriaTagProps } from 'react-aria-components';
 
 import { cva } from 'class-variance-authority';
-import { forwardRef } from 'react';
 import {
 	Tag as AriaTag,
 	TagGroup as AriaTagGroup,
@@ -13,6 +12,7 @@ import {
 
 import { IconButton } from './IconButton';
 import styles from './styles/TagGroup.module.css';
+import { forwardRef } from './utils';
 
 const group = cva(styles.group);
 const list = cva(styles.list);
