@@ -1,12 +1,14 @@
 {
 	"name": "@launchpad-ui/focus-trap",
-	"version": "0.1.16",
+	"version": "0.1.17",
 	"status": "beta",
 	"publishConfig": {
 		"access": "public"
 	},
 	"description": "An internal utility not intended for public usage.",
-	"files": ["dist"],
+	"files": [
+		"dist"
+	],
 	"main": "dist/index.js",
 	"module": "dist/index.es.js",
 	"types": "dist/index.d.ts",

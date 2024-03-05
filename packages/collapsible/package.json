@@ -1,16 +1,20 @@
 {
 	"name": "@launchpad-ui/collapsible",
-	"version": "0.1.47",
+	"version": "0.1.48",
 	"status": "alpha",
 	"publishConfig": {
 		"access": "public"
 	},
 	"description": "A progressive disclosure component that allows the user to to click a trigger to show more content",
-	"files": ["dist"],
+	"files": [
+		"dist"
+	],
 	"main": "dist/index.js",
 	"module": "dist/index.es.js",
 	"types": "dist/index.d.ts",
-	"sideEffects": ["**/*.css"],
+	"sideEffects": [
+		"**/*.css"
+	],
 	"exports": {
 		".": {
 			"types": "./dist/index.d.ts",

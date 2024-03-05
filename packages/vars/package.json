@@ -1,12 +1,14 @@
 {
 	"name": "@launchpad-ui/vars",
-	"version": "0.2.13",
+	"version": "0.2.14",
 	"status": "alpha",
 	"publishConfig": {
 		"access": "public"
 	},
 	"description": "Vanilla Extract design token references for LaunchPad styles.",
-	"files": ["dist"],
+	"files": [
+		"dist"
+	],
 	"main": "dist/index.js",
 	"module": "dist/index.es.js",
 	"types": "dist/index.d.ts",

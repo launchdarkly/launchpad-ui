@@ -1,5 +1,53 @@
 # @launchpad-ui/core
 
+## 0.49.5
+
+### Patch Changes
+
+- [#1183](https://github.com/launchdarkly/launchpad-ui/pull/1183) [`3b792b5`](https://github.com/launchdarkly/launchpad-ui/commit/3b792b5cb706338be57848a3773152aa6c4597dc) Thanks [@renovate](https://github.com/apps/renovate)! - Update dependencies
+
+- [#1191](https://github.com/launchdarkly/launchpad-ui/pull/1191) [`369664c`](https://github.com/launchdarkly/launchpad-ui/commit/369664c3c21f93e844f0d3ae9a4ef80ad2d03bfb) Thanks [@matthewferry](https://github.com/matthewferry)! - feat(icons): add notifications-check icon
+
+- Updated dependencies [[`3b792b5`](https://github.com/launchdarkly/launchpad-ui/commit/3b792b5cb706338be57848a3773152aa6c4597dc)]:
+  - @launchpad-ui/inline-edit@0.3.5
+  - @launchpad-ui/data-table@0.2.14
+  - @launchpad-ui/focus-trap@0.1.17
+  - @launchpad-ui/navigation@0.12.20
+  - @launchpad-ui/pagination@0.4.20
+  - @launchpad-ui/clipboard@0.11.20
+  - @launchpad-ui/dropdown@0.6.94
+  - @launchpad-ui/markdown@0.5.12
+  - @launchpad-ui/tab-list@0.5.15
+  - @launchpad-ui/drawer@0.5.20
+  - @launchpad-ui/filter@0.7.5
+  - @launchpad-ui/select@0.4.20
+  - @launchpad-ui/toggle@0.7.15
+  - @launchpad-ui/alert@0.9.4
+  - @launchpad-ui/modal@0.17.20
+  - @launchpad-ui/form@0.11.5
+  - @launchpad-ui/menu@0.13.5
+  - @launchpad-ui/tag@0.3.20
+  - @launchpad-ui/popover@0.11.16
+  - @launchpad-ui/split-button@0.10.5
+  - @launchpad-ui/avatar@0.6.17
+  - @launchpad-ui/banner@0.10.17
+  - @launchpad-ui/box@0.1.8
+  - @launchpad-ui/button@0.12.4
+  - @launchpad-ui/card@0.2.20
+  - @launchpad-ui/chip@0.9.17
+  - @launchpad-ui/collapsible@0.1.48
+  - @launchpad-ui/columns@0.1.17
+  - @launchpad-ui/counter@0.4.11
+  - @launchpad-ui/inline@0.1.17
+  - @launchpad-ui/progress@0.5.42
+  - @launchpad-ui/progress-bubbles@0.7.16
+  - @launchpad-ui/slider@0.5.11
+  - @launchpad-ui/snackbar@0.5.4
+  - @launchpad-ui/stack@0.1.17
+  - @launchpad-ui/table@0.6.11
+  - @launchpad-ui/toast@0.3.17
+  - @launchpad-ui/tooltip@0.9.5
+
 ## 0.49.4
 
 ### Patch Changes
@@ -1733,7 +1781,7 @@
   root.render(
     <IconContext.Provider value={{ path: icons }}>
       <App />
-    </IconContext.Provider>,
+    </IconContext.Provider>
   );
   ```
 

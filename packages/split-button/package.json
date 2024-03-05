@@ -1,16 +1,20 @@
 {
 	"name": "@launchpad-ui/split-button",
-	"version": "0.10.4",
+	"version": "0.10.5",
 	"status": "beta",
 	"publishConfig": {
 		"access": "public"
 	},
 	"description": "An element that presents an immediate action and additional options from a dropdown.",
-	"files": ["dist"],
+	"files": [
+		"dist"
+	],
 	"main": "dist/index.js",
 	"module": "dist/index.es.js",
 	"types": "dist/index.d.ts",
-	"sideEffects": ["**/*.css"],
+	"sideEffects": [
+		"**/*.css"
+	],
 	"exports": {
 		".": {
 			"types": "./dist/index.d.ts",

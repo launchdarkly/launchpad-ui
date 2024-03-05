@@ -1,16 +1,20 @@
 {
 	"name": "@launchpad-ui/snackbar",
-	"version": "0.5.3",
+	"version": "0.5.4",
 	"status": "alpha",
 	"publishConfig": {
 		"access": "public"
 	},
 	"description": "An element that provides brief messages about app processes with a CTA.",
-	"files": ["dist"],
+	"files": [
+		"dist"
+	],
 	"main": "dist/index.js",
 	"module": "dist/index.es.js",
 	"types": "dist/index.d.ts",
-	"sideEffects": ["**/*.css"],
+	"sideEffects": [
+		"**/*.css"
+	],
 	"exports": {
 		".": {
 			"types": "./dist/index.d.ts",

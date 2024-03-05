@@ -1,16 +1,20 @@
 {
 	"name": "@launchpad-ui/form",
-	"version": "0.11.4",
+	"version": "0.11.5",
 	"status": "beta",
 	"publishConfig": {
 		"access": "public"
 	},
 	"description": "Elements for composing forms, such as input fields, labels, radio buttons, etc.",
-	"files": ["dist"],
+	"files": [
+		"dist"
+	],
 	"main": "dist/index.js",
 	"module": "dist/index.es.js",
 	"types": "dist/index.d.ts",
-	"sideEffects": ["**/*.css"],
+	"sideEffects": [
+		"**/*.css"
+	],
 	"exports": {
 		".": {
 			"types": "./dist/index.d.ts",
