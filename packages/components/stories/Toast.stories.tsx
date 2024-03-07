@@ -1,6 +1,6 @@
 import type { Meta, StoryFn, StoryObj } from '@storybook/react';
 
-import { Button, ToastContainer, ToastQueue } from '../src';
+import { Button, SnackbarContainer, SnackbarQueue, ToastContainer, ToastQueue } from '../src';
 
 const meta: Meta<typeof ToastContainer> = {
 	component: ToastContainer,
@@ -33,6 +33,26 @@ export const Example: Story = {
 			<>
 				<ToastContainer {...args} />
 				<Button onPress={() => ToastQueue.info(<span>An info toast!</span>)}>Show toast</Button>
+			</>
+		);
+	},
+};
+
+export const Snackbar: Story = {
+	render: (args) => {
+		return (
+			<>
+				<SnackbarContainer {...args} />
+				<Button
+					onPress={() =>
+						SnackbarQueue.info({
+							title: 'An info snackbar',
+							description: 'Dismiss me!',
+						})
+					}
+				>
+					Show snackbar
+				</Button>
 			</>
 		);
 	},
