@@ -2,6 +2,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-shrink: 0;
   width: var(--lp-size-16);
   height: var(--lp-size-16);
   border-radius: 2px;
