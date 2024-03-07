@@ -44,6 +44,7 @@
 .toast {
   display: flex;
   align-items: center;
+  font: var(--lp-body-1-regular);
   gap: var(--lp-spacing-300);
   background: var(--lp-color-bg-feedback-primary);
   color: var(--lp-color-white-950);

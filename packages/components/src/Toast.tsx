@@ -10,6 +10,7 @@ import { cva } from 'class-variance-authority';
 import { useRef } from 'react';
 import { createPortal } from 'react-dom';
 
+import { IconButton } from './IconButton';
 import styles from './styles/Toast.module.css';
 
 const status = cva(styles.status, {
@@ -57,7 +58,7 @@ const ToastRegion = <T extends ToastValue>({ state, ...props }: ToastRegionProps
 
 const Toast = <T extends ToastValue>({ state, ...props }: ToastProps<T>) => {
 	const ref = useRef(null);
-	const { toastProps, titleProps } = useToast(props, state, ref);
+	const { toastProps, titleProps, closeButtonProps } = useToast(props, state, ref);
 	const { children, variant } = props.toast.content;
 
 	return (
@@ -74,7 +75,14 @@ const Toast = <T extends ToastValue>({ state, ...props }: ToastProps<T>) => {
 		>
 			<StatusIcon kind={variant || 'info'} className={status({ variant })} />
 			<div {...titleProps}>{children}</div>
-			{/* <IconButton aria-label="Close" {...closeButtonProps} icon="cancel" /> */}
+			<IconButton
+				data-theme="dark"
+				aria-label="Close"
+				{...closeButtonProps}
+				icon="cancel"
+				variant="minimal"
+				size="small"
+			/>
 		</div>
 	);
 };
