@@ -3,8 +3,8 @@ import type { StoryObj } from '@storybook/react';
 import { CopyToClipboard } from '@launchpad-ui/clipboard';
 import { Form, FormField, IconField, TextArea, TextField } from '@launchpad-ui/form';
 import { Icon } from '@launchpad-ui/icons';
-import { useState } from '@storybook/client-api';
 import { userEvent, within } from '@storybook/test';
+import { useState } from 'react';
 
 import { InlineEdit } from '../src';
 

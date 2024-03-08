@@ -3,8 +3,6 @@ import type { StorybookConfig } from '@storybook/react-vite';
 import fs from 'fs';
 import path from 'path';
 import fg from 'fast-glob';
-import { mergeConfig } from 'vite';
-import turbosnap from 'vite-plugin-turbosnap';
 
 import tsconfig from '../tsconfig.json';
 
@@ -18,22 +16,12 @@ const getStories = () =>
 	]);
 
 const config: StorybookConfig = {
-	stories: [...getStories()],
-	features: {
-		/*
-		 * CSS order issues occur when async chunks are used
-		 * See: https://github.com/vitejs/vite/pull/9278
-		 * TODO: remove once Vite has the fix released
-		 */
-		storyStoreV7: false,
-		buildStoriesJson: true,
-	},
+	stories: [...getStories(), '../packages/**/*.mdx'],
 	addons: [
 		'@storybook/addon-a11y',
 		'@storybook/addon-essentials',
 		'@storybook/addon-interactions',
 		'storybook-addon-pseudo-states',
-		'@etchteam/storybook-addon-status',
 		'@storybook/addon-designs',
 		'@storybook/addon-themes',
 	],
@@ -51,15 +39,8 @@ const config: StorybookConfig = {
 
 		return { ...config, ...packageStatuses };
 	},
-	async viteFinal(config, { configType }) {
-		return mergeConfig(
-			config,
-			configType === 'PRODUCTION'
-				? {
-						plugins: [turbosnap({ rootDir: config.root || process.cwd() })],
-				  }
-				: {},
-		);
+	async viteFinal(config) {
+		return config;
 	},
 	docs: {
 		autodocs: true,

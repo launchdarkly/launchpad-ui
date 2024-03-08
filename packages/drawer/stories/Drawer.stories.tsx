@@ -2,7 +2,7 @@ import type { StoryFn, StoryObj } from '@storybook/react';
 
 import { Button } from '@launchpad-ui/button';
 import { Tooltip } from '@launchpad-ui/tooltip';
-import { useState } from '@storybook/client-api';
+import { useState } from 'react';
 
 import { Drawer, DrawerHeader } from '../src';
 

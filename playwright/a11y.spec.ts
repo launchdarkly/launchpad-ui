@@ -19,7 +19,7 @@ test.describe('Storybook a11y', async () => {
 				await page.addScriptTag({
 					content: `
           async function __getContext(storyId) {
-            return globalThis.__STORYBOOK_PREVIEW__.storyStore.loadStory({ storyId });
+            return globalThis.__STORYBOOK_STORY_STORE__.loadStory({ storyId });
           }
         `,
 				});
