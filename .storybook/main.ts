@@ -2,21 +2,14 @@ import type { StorybookConfig } from '@storybook/react-vite';
 
 import fs from 'fs';
 import path from 'path';
-import fg from 'fast-glob';
 
 import tsconfig from '../tsconfig.json';
 
-const getStories = () =>
-	fg.sync([
-		path.resolve(
-			__dirname,
-			'../packages/!(button|card|chip|counter|drawer|dropdown|filter|focus-trap|form|menu|modal|overlay|popover|portal|progress|select|tag|toggle|tooltip)/stories/*.stories.{mdx,tsx}',
-		),
-		'!**/node_modules',
-	]);
-
 const config: StorybookConfig = {
-	stories: [...getStories(), '../packages/**/*.mdx'],
+	stories: [
+		'../packages/!(button|card|chip|counter|drawer|dropdown|filter|focus-trap|form|menu|modal|overlay|popover|portal|progress|select|tag|toggle|tooltip)/stories/*.stories.{mdx,tsx}',
+		'../packages/**/*.mdx',
+	],
 	addons: [
 		'@storybook/addon-a11y',
 		'@storybook/addon-essentials',

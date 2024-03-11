@@ -24,6 +24,9 @@ test.describe('Storybook a11y', async () => {
         `,
 				});
 
+				// @ts-ignore
+				await page.evaluate(() => window.__STORYBOOK_PREVIEW__.ready());
+
 				const storyContext = await page.evaluate(
 					// @ts-ignore
 					({ storyId }) => globalThis.__getContext(storyId),
