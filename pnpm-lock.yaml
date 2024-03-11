@@ -12,7 +12,7 @@ importers:
         specifier: ^4.8.5
         version: 4.8.5(playwright-core@1.42.1)
       '@biomejs/biome':
-        specifier: ^1.5.3
+        specifier: 1.5.3
         version: 1.5.3
       '@changesets/changelog-github':
         specifier: ^0.5.0
