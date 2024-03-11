@@ -7,11 +7,11 @@ import type { ButtonVariants } from './Button';
 
 import { Icon } from '@launchpad-ui/icons';
 import { cva, cx } from 'class-variance-authority';
+import { forwardRef } from 'react';
 import { Button as AriaButton, composeRenderProps } from 'react-aria-components';
 
 import { button } from './Button';
 import styles from './styles/IconButton.module.css';
-import { forwardRef } from './utils';
 
 const iconButton = cva(styles.base, {
 	variants: {

@@ -3,10 +3,10 @@ import type { RadioProps } from 'react-aria-components';
 
 import { Icon } from '@launchpad-ui/icons';
 import { cva } from 'class-variance-authority';
+import { forwardRef } from 'react';
 import { Radio as AriaRadio, composeRenderProps } from 'react-aria-components';
 
 import styles from './styles/Radio.module.css';
-import { forwardRef } from './utils';
 
 const radio = cva(styles.radio);
 const circle = cva(styles.circle);

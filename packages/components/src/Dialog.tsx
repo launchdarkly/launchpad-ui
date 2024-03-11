@@ -2,10 +2,10 @@ import type { ForwardedRef } from 'react';
 import type { DialogProps, DialogTriggerProps } from 'react-aria-components';
 
 import { cva } from 'class-variance-authority';
+import { forwardRef } from 'react';
 import { Dialog as AriaDialog, DialogTrigger } from 'react-aria-components';
 
 import styles from './styles/Dialog.module.css';
-import { forwardRef } from './utils';
 
 const dialog = cva(styles.dialog);
 

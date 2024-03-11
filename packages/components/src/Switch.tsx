@@ -2,10 +2,10 @@ import type { ForwardedRef, ReactNode } from 'react';
 import type { SwitchProps as AriaSwitchProps } from 'react-aria-components';
 
 import { cva } from 'class-variance-authority';
+import { forwardRef } from 'react';
 import { Switch as AriaSwitch, composeRenderProps } from 'react-aria-components';
 
 import styles from './styles/Switch.module.css';
-import { forwardRef } from './utils';
 
 const _switch = cva(styles.switch);
 

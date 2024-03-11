@@ -1,16 +1,11 @@
-import type { ReactNode, Ref, RefAttributes } from 'react';
+import type { ReactElement, Ref, RefAttributes } from 'react';
 
-import { forwardRef as reactForwardRef } from 'react';
-
-/**
- * forwardRef with generics support.
- *
- * https://www.totaltypescript.com/forwardref-with-generic-components#the-solution
- */
+// https://github.com/adobe/react-spectrum/blob/main/packages/react-aria-components/src/utils.tsx#L20-L24
 // biome-ignore lint/complexity/noBannedTypes: <explanation>
-const forwardRef = <T, P = {}>(
-	render: (props: P, ref: Ref<T>) => ReactNode,
-	// biome-ignore lint/suspicious/noExplicitAny: <explanation>
-): ((props: P & RefAttributes<T>) => ReactNode) => reactForwardRef(render) as any;
+declare function forwardRef<T, P = {}>(
+	render: (props: P, ref: Ref<T>) => ReactElement | null,
+): (props: P & RefAttributes<T>) => ReactElement | null;
 
-export { forwardRef };
+type forwardRefType = typeof forwardRef;
+
+export type { forwardRefType };

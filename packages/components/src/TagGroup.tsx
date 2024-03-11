@@ -1,8 +1,10 @@
 import type { VariantProps } from 'class-variance-authority';
 import type { ForwardedRef } from 'react';
 import type { TagGroupProps, TagListProps, TagProps as AriaTagProps } from 'react-aria-components';
+import type { forwardRefType } from './utils';
 
 import { cva } from 'class-variance-authority';
+import { forwardRef } from 'react';
 import {
 	Tag as AriaTag,
 	TagGroup as AriaTagGroup,
@@ -12,7 +14,6 @@ import {
 
 import { IconButton } from './IconButton';
 import styles from './styles/TagGroup.module.css';
-import { forwardRef } from './utils';
 
 const group = cva(styles.group);
 const list = cva(styles.list);
@@ -66,7 +67,7 @@ const _TagList = <T extends object>(props: TagListProps<T>, ref: ForwardedRef<HT
 /**
  * A tag list is a container for tags within a TagGroup.
  */
-const TagList = forwardRef(_TagList);
+const TagList = (forwardRef as forwardRefType)(_TagList);
 
 const _Tag = (
 	{ size = 'medium', variant = 'default', children, ...props }: TagProps,
