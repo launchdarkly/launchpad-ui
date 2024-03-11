@@ -74,7 +74,6 @@ export const Selection: Story = {
 		'aria-label': 'Items',
 		selectionMode: 'single',
 	},
-	...open,
 };
 
 export const States: Story = {

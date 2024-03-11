@@ -12,7 +12,12 @@ const config: StorybookConfig = {
 	],
 	addons: [
 		'@storybook/addon-a11y',
-		'@storybook/addon-essentials',
+		{
+			name: '@storybook/addon-essentials',
+			options: {
+				actions: false,
+			},
+		},
 		'@storybook/addon-interactions',
 		'storybook-addon-pseudo-states',
 		'@storybook/addon-designs',
@@ -47,8 +52,7 @@ const config: StorybookConfig = {
 			shouldRemoveUndefinedFromOptional: true,
 			propFilter: (prop) =>
 				prop.parent
-					? !/node_modules/.test(prop.parent.fileName) ||
-					  /(react-aria-components|react-aria|react-stately|@react-types|@react-aria|@react-stately|react-router-dom)/.test(
+					? !/launchpad-ui\/node_modules\/.pnpm\/(?!react-aria-components|react-aria|react-stately|@react-types|@react-aria|@react-stately|react-router-dom)/.test(
 							prop.parent.fileName,
 					  )
 					: true,
