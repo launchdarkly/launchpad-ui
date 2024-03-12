@@ -38,6 +38,7 @@ export const Example: Story = {
 	play: async ({ canvasElement }) => {
 		const canvas = within(canvasElement);
 
+		await userEvent.hover(canvasElement);
 		await userEvent.hover(canvas.getByRole('button'));
 		const body = canvasElement.ownerDocument.body;
 		await expect(await within(body).findByRole('tooltip'));
