@@ -2,7 +2,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import type { Selection as AriaSelection } from 'react-aria-components';
 
-import { userEvent, within } from '@storybook/test';
+import { fireEvent, userEvent, within } from '@storybook/test';
 import { useState } from 'react';
 
 import { Header, ListBox, ListBoxItem, Section } from '../src';
@@ -94,7 +94,7 @@ export const States: Story = {
 		const canvas = within(canvasElement);
 
 		const options = await canvas.findAllByRole('option');
-		await userEvent.pointer([{ keys: '[TouchA>]', target: options[1] }]);
+		await fireEvent.pointerDown(options[1], { pointerType: 'touch' });
 		await userEvent.keyboard('{arrowdown}');
 	},
 };

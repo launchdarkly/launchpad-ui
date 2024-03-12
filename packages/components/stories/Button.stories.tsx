@@ -3,7 +3,7 @@ import type { PlayFunction } from '@storybook/types';
 
 import { Icon } from '@launchpad-ui/icons';
 import { vars } from '@launchpad-ui/vars';
-import { userEvent, within } from '@storybook/test';
+import { fireEvent, userEvent, within } from '@storybook/test';
 
 import { Button } from '../src';
 
@@ -72,7 +72,7 @@ const play: PlayFunction<ReactRenderer> = async ({
 
 	const buttons = canvas.getAllByRole('button');
 	await userEvent.hover(buttons[1]);
-	await userEvent.pointer([{ keys: '[TouchA>]', target: buttons[3] }]);
+	await fireEvent.pointerDown(buttons[3], { pointerType: 'touch' });
 	await userEvent.tab();
 	await userEvent.tab();
 	await userEvent.tab();
