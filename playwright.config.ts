@@ -18,4 +18,10 @@ export default defineConfig({
 		screenshot: 'only-on-failure',
 		testIdAttribute: 'data-test-id',
 	},
+	...(!process.env.CI && {
+		webServer: {
+			command: 'pnpm storybook:build && pnpm dlx http-server storybook-static -s',
+			url: 'http://127.0.0.1:8080',
+		},
+	}),
 });
