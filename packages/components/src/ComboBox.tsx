@@ -1,11 +1,12 @@
 import type { ForwardedRef } from 'react';
 import type { ComboBoxProps } from 'react-aria-components';
+import type { forwardRefType } from './utils';
 
 import { cva } from 'class-variance-authority';
+import { forwardRef } from 'react';
 import { ComboBox as AriaComboBox, composeRenderProps } from 'react-aria-components';
 
 import styles from './styles/ComboBox.module.css';
-import { forwardRef } from './utils';
 
 const box = cva(styles.box);
 
@@ -29,7 +30,7 @@ const _ComboBox = <T extends object>(
  *
  * https://react-spectrum.adobe.com/react-aria/ComboBox.html
  */
-const ComboBox = forwardRef(_ComboBox);
+const ComboBox = (forwardRef as forwardRefType)(_ComboBox);
 
 export { ComboBox };
 export type { ComboBoxProps };

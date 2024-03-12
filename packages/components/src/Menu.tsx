@@ -6,9 +6,11 @@ import type {
 	MenuTriggerProps,
 	SubmenuTriggerProps,
 } from 'react-aria-components';
+import type { forwardRefType } from './utils';
 
 import { Icon } from '@launchpad-ui/icons';
 import { cva } from 'class-variance-authority';
+import { forwardRef } from 'react';
 import {
 	Menu as AriaMenu,
 	MenuItem as AriaMenuItem,
@@ -18,7 +20,6 @@ import {
 } from 'react-aria-components';
 
 import styles from './styles/Menu.module.css';
-import { forwardRef } from './utils';
 
 const menu = cva(styles.menu);
 const item = cva(styles.item, {
@@ -48,7 +49,7 @@ const _Menu = <T extends object>(
  *
  * https://react-spectrum.adobe.com/react-aria/Menu.html
  */
-const Menu = forwardRef(_Menu);
+const Menu = (forwardRef as forwardRefType)(_Menu);
 
 const _MenuItem = <T extends object>(
 	{ variant = 'default', ...props }: MenuItemProps<T>,
@@ -78,7 +79,7 @@ const _MenuItem = <T extends object>(
 /**
  * A MenuItem represents an individual action in a Menu.
  */
-const MenuItem = forwardRef(_MenuItem);
+const MenuItem = (forwardRef as forwardRefType)(_MenuItem);
 
 export { Menu, MenuItem, MenuTrigger, SubmenuTrigger };
 export type { MenuProps, MenuItemProps, MenuTriggerProps, SubmenuTriggerProps };

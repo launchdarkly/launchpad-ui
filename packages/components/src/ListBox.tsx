@@ -1,8 +1,10 @@
 import type { ForwardedRef } from 'react';
 import type { ListBoxItemProps, ListBoxProps } from 'react-aria-components';
+import type { forwardRefType } from './utils';
 
 import { Icon } from '@launchpad-ui/icons';
 import { cva } from 'class-variance-authority';
+import { forwardRef } from 'react';
 import {
 	ListBox as AriaListBox,
 	ListBoxItem as AriaListBoxItem,
@@ -10,7 +12,6 @@ import {
 } from 'react-aria-components';
 
 import styles from './styles/ListBox.module.css';
-import { forwardRef } from './utils';
 
 const box = cva(styles.box);
 const item = cva(styles.item);
@@ -32,7 +33,7 @@ const _ListBox = <T extends object>(props: ListBoxProps<T>, ref: ForwardedRef<HT
  *
  * https://react-spectrum.adobe.com/react-aria/ListBox.html
  */
-const ListBox = forwardRef(_ListBox);
+const ListBox = (forwardRef as forwardRefType)(_ListBox);
 
 const _ListBoxItem = <T extends object>(
 	props: ListBoxItemProps<T>,
@@ -64,7 +65,7 @@ const _ListBoxItem = <T extends object>(
  *
  * https://react-spectrum.adobe.com/react-aria/ListBox.html
  */
-const ListBoxItem = forwardRef(_ListBoxItem);
+const ListBoxItem = (forwardRef as forwardRefType)(_ListBoxItem);
 
 export { ListBox, ListBoxItem };
 export type { ListBoxProps, ListBoxItemProps };

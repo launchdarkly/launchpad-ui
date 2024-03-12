@@ -2,10 +2,10 @@ import type { ForwardedRef } from 'react';
 import type { SearchFieldProps } from 'react-aria-components';
 
 import { cva } from 'class-variance-authority';
+import { forwardRef } from 'react';
 import { SearchField as AriaSearchField, composeRenderProps } from 'react-aria-components';
 
 import styles from './styles/SearchField.module.css';
-import { forwardRef } from './utils';
 
 const search = cva(styles.search);
 

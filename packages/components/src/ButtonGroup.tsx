@@ -2,10 +2,10 @@ import type { VariantProps } from 'class-variance-authority';
 import type { ComponentPropsWithRef, ForwardedRef } from 'react';
 
 import { cva } from 'class-variance-authority';
+import { forwardRef } from 'react';
 import { ButtonContext } from 'react-aria-components';
 
 import styles from './styles/ButtonGroup.module.css';
-import { forwardRef } from './utils';
 
 const buttonGroup = cva(styles.base, {
 	variants: {

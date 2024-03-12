@@ -2,10 +2,10 @@ import type { ForwardedRef } from 'react';
 import type { RadioGroupProps } from 'react-aria-components';
 
 import { cva } from 'class-variance-authority';
+import { forwardRef } from 'react';
 import { RadioGroup as AriaRadioGroup, composeRenderProps } from 'react-aria-components';
 
 import styles from './styles/RadioGroup.module.css';
-import { forwardRef } from './utils';
 
 const group = cva(styles.group);
 

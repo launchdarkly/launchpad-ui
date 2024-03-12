@@ -33,6 +33,7 @@ export type { TextProps } from './Text';
 export type { TextAreaProps } from './TextArea';
 export type { TextFieldProps } from './TextField';
 export type { TooltipProps, TooltipTriggerProps } from './Tooltip';
+export type { forwardRefType } from './utils';
 
 export { Button } from './Button';
 export { ButtonGroup } from './ButtonGroup';
@@ -69,4 +70,3 @@ export { Text } from './Text';
 export { TextArea } from './TextArea';
 export { TextField } from './TextField';
 export { Tooltip, TooltipTrigger } from './Tooltip';
-export { forwardRef } from './utils';

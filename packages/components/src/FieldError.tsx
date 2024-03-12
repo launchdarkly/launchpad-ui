@@ -2,10 +2,10 @@ import type { ForwardedRef } from 'react';
 import type { FieldErrorProps } from 'react-aria-components';
 
 import { cva } from 'class-variance-authority';
+import { forwardRef } from 'react';
 import { FieldError as AriaFieldError, composeRenderProps } from 'react-aria-components';
 
 import styles from './styles/FieldError.module.css';
-import { forwardRef } from './utils';
 
 const error = cva(styles.error);
 

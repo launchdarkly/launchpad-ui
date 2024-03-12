@@ -2,10 +2,10 @@ import type { ForwardedRef } from 'react';
 import type { InputProps } from 'react-aria-components';
 
 import { cva } from 'class-variance-authority';
+import { forwardRef } from 'react';
 import { Input as AriaInput, composeRenderProps } from 'react-aria-components';
 
 import styles from './styles/Input.module.css';
-import { forwardRef } from './utils';
 
 const input = cva(styles.input);
 

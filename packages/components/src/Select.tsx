@@ -1,7 +1,9 @@
 import type { ForwardedRef } from 'react';
 import type { SelectProps, SelectValueProps } from 'react-aria-components';
+import type { forwardRefType } from './utils';
 
 import { cva } from 'class-variance-authority';
+import { forwardRef } from 'react';
 import {
 	Select as AriaSelect,
 	SelectValue as AriaSelectValue,
@@ -9,7 +11,6 @@ import {
 } from 'react-aria-components';
 
 import styles from './styles/Select.module.css';
-import { forwardRef } from './utils';
 
 const select = cva(styles.select);
 const value = cva(styles.value);
@@ -31,7 +32,7 @@ const _Select = <T extends object>(props: SelectProps<T>, ref: ForwardedRef<HTML
  *
  * https://react-spectrum.adobe.com/react-aria/Select.html
  */
-const Select = forwardRef(_Select);
+const Select = (forwardRef as forwardRefType)(_Select);
 
 const _SelectValue = <T extends object>(
 	props: SelectValueProps<T>,
@@ -53,7 +54,7 @@ const _SelectValue = <T extends object>(
  *
  * https://react-spectrum.adobe.com/react-aria/Select.html
  */
-const SelectValue = forwardRef(_SelectValue);
+const SelectValue = (forwardRef as forwardRefType)(_SelectValue);
 
 export { Select, SelectValue };
 export type { SelectProps, SelectValueProps };

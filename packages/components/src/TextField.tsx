@@ -2,10 +2,10 @@ import type { ForwardedRef } from 'react';
 import type { TextFieldProps } from 'react-aria-components';
 
 import { cva } from 'class-variance-authority';
+import { forwardRef } from 'react';
 import { TextField as AriaTextField, composeRenderProps } from 'react-aria-components';
 
 import styles from './styles/TextField.module.css';
-import { forwardRef } from './utils';
 
 const field = cva(styles.field);
 
