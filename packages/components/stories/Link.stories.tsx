@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
 import { vars } from '@launchpad-ui/vars';
-import { userEvent, within } from '@storybook/test';
+import { fireEvent, userEvent, within } from '@storybook/test';
 
 import { Link } from '../src';
 
@@ -65,7 +65,7 @@ export const States: Story = {
 
 		const links = canvas.getAllByRole('link');
 		await userEvent.hover(links[0]);
-		await userEvent.pointer([{ keys: '[TouchA>]', target: links[3] }]);
+		await fireEvent.pointerDown(links[3], { pointerType: 'touch' });
 		await userEvent.tab();
 		await userEvent.tab();
 		await userEvent.tab();

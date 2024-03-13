@@ -2,7 +2,7 @@ import type { Meta, StoryFn, StoryObj } from '@storybook/react';
 import type { Selection as AriaSelection } from 'react-aria-components';
 
 import { Icon } from '@launchpad-ui/icons';
-import { expect, userEvent, waitFor, within } from '@storybook/test';
+import { expect, fireEvent, userEvent, waitFor, within } from '@storybook/test';
 import { useState } from 'react';
 
 import {
@@ -189,7 +189,7 @@ export const States: Story = {
 		const body = canvasElement.ownerDocument.body;
 
 		const menuitems = await within(body).findAllByRole('menuitem');
-		await userEvent.pointer([{ keys: '[TouchA>]', target: menuitems[1] }]);
+		await fireEvent.pointerDown(menuitems[1], { pointerType: 'touch' });
 		await userEvent.keyboard('{arrowdown}');
 	},
 };

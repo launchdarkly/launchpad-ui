@@ -1,7 +1,6 @@
 import type { Decorator, StoryFn, StoryObj } from '@storybook/react';
 
-import { useEffect } from '@storybook/addons';
-import { useId } from 'react';
+import { useEffect, useId } from 'react';
 
 import { PseudoClasses, createWithClassesDecorator } from '../../../.storybook/utils';
 import { Toggle } from '../src';

@@ -57,7 +57,6 @@ export default defineConfig({
 		react(),
 		vanillaExtractPlugin(),
 		cssImport(),
-		// @ts-expect-error plugin needs vite v5 types
 		PluginPure({
 			functions: PURE_CALLS,
 			sourcemap: true,

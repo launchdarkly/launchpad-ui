@@ -2,38 +2,24 @@ import type { StorybookConfig } from '@storybook/react-vite';
 
 import fs from 'fs';
 import path from 'path';
-import fg from 'fast-glob';
-import { mergeConfig } from 'vite';
-import turbosnap from 'vite-plugin-turbosnap';
 
 import tsconfig from '../tsconfig.json';
 
-const getStories = () =>
-	fg.sync([
-		path.resolve(
-			__dirname,
-			'../packages/!(button|card|chip|counter|drawer|dropdown|filter|focus-trap|form|menu|modal|overlay|popover|portal|progress|select|tag|toggle|tooltip)/stories/*.stories.{mdx,tsx}',
-		),
-		'!**/node_modules',
-	]);
-
 const config: StorybookConfig = {
-	stories: [...getStories()],
-	features: {
-		/*
-		 * CSS order issues occur when async chunks are used
-		 * See: https://github.com/vitejs/vite/pull/9278
-		 * TODO: remove once Vite has the fix released
-		 */
-		storyStoreV7: false,
-		buildStoriesJson: true,
-	},
+	stories: [
+		'../packages/!(button|card|chip|counter|drawer|dropdown|filter|focus-trap|form|menu|modal|overlay|popover|portal|progress|select|tag|toggle|tooltip)/stories/*.stories.{mdx,tsx}',
+		'../packages/**/*.mdx',
+	],
 	addons: [
 		'@storybook/addon-a11y',
-		'@storybook/addon-essentials',
+		{
+			name: '@storybook/addon-essentials',
+			options: {
+				actions: false,
+			},
+		},
 		'@storybook/addon-interactions',
 		'storybook-addon-pseudo-states',
-		'@etchteam/storybook-addon-status',
 		'@storybook/addon-designs',
 		'@storybook/addon-themes',
 	],
@@ -51,15 +37,8 @@ const config: StorybookConfig = {
 
 		return { ...config, ...packageStatuses };
 	},
-	async viteFinal(config, { configType }) {
-		return mergeConfig(
-			config,
-			configType === 'PRODUCTION'
-				? {
-						plugins: [turbosnap({ rootDir: config.root || process.cwd() })],
-				  }
-				: {},
-		);
+	async viteFinal(config) {
+		return config;
 	},
 	docs: {
 		autodocs: true,
@@ -73,8 +52,7 @@ const config: StorybookConfig = {
 			shouldRemoveUndefinedFromOptional: true,
 			propFilter: (prop) =>
 				prop.parent
-					? !/node_modules/.test(prop.parent.fileName) ||
-					  /(react-aria-components|react-aria|react-stately|@react-types|@react-aria|@react-stately|react-router-dom)/.test(
+					? !/launchpad-ui\/node_modules\/.pnpm\/(?!react-aria-components|react-aria|react-stately|@react-types|@react-aria|@react-stately|react-router-dom)/.test(
 							prop.parent.fileName,
 					  )
 					: true,

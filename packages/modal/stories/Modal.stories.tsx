@@ -3,8 +3,8 @@ import type { StoryFn, StoryObj } from '@storybook/react';
 import { Button } from '@launchpad-ui/button';
 import { Icon } from '@launchpad-ui/icons';
 import { Tooltip } from '@launchpad-ui/tooltip';
-import { useState } from '@storybook/client-api';
 import { userEvent, within } from '@storybook/test';
+import { useState } from 'react';
 import { useRef } from 'react';
 
 import { allModes } from '../../../.storybook/modes';
