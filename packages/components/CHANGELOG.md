@@ -1,5 +1,13 @@
 # @launchpad-ui/components
 
+## 0.1.13
+
+### Patch Changes
+
+- [#1195](https://github.com/launchdarkly/launchpad-ui/pull/1195) [`0f8c7fe`](https://github.com/launchdarkly/launchpad-ui/commit/0f8c7fea9d0ef26b5eab4738f1331d5a390a120e) Thanks [@Niznikr](https://github.com/Niznikr)! - Prevent `Checkbox` from shrinking
+
+- [#1198](https://github.com/launchdarkly/launchpad-ui/pull/1198) [`ce938ef`](https://github.com/launchdarkly/launchpad-ui/commit/ce938eff72376368ec90ff6c0cf63c6f92a22cd6) Thanks [@Niznikr](https://github.com/Niznikr)! - Cast generics for forwardRef
+
 ## 0.1.12
 
 ### Patch Changes
