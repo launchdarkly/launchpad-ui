@@ -7,6 +7,8 @@ import { Button, Dialog, DialogTrigger, Heading, OverlayArrow, Popover } from '.
 
 const meta: Meta<typeof Popover> = {
 	component: Popover,
+	// @ts-ignore
+	subcomponents: { OverlayArrow, DialogTrigger },
 	title: 'React Aria Components/Popover',
 	parameters: {
 		status: {

@@ -36,8 +36,8 @@ importers:
         specifier: ^8.0.0
         version: 8.0.0
       '@storybook/addon-designs':
-        specifier: ^8.0.0-next.1
-        version: 8.0.0-next.1(@storybook/addon-docs@8.0.0)(@storybook/components@8.0.0)(@storybook/manager-api@8.0.0)(@storybook/preview-api@8.0.0)(@storybook/theming@8.0.0)(react-dom@18.2.0)(react@18.2.0)
+        specifier: ^8.0.0
+        version: 8.0.0(@storybook/blocks@8.0.0)(@storybook/components@8.0.0)(@storybook/theming@8.0.0)(react-dom@18.2.0)(react@18.2.0)
       '@storybook/addon-essentials':
         specifier: ^8.0.0
         version: 8.0.0(@types/react@18.2.62)(react-dom@18.2.0)(react@18.2.0)
@@ -5549,27 +5549,29 @@ packages:
       - supports-color
     dev: true
 
-  /@storybook/addon-designs@8.0.0-next.1(@storybook/addon-docs@8.0.0)(@storybook/components@8.0.0)(@storybook/manager-api@8.0.0)(@storybook/preview-api@8.0.0)(@storybook/theming@8.0.0)(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-i5vU8WxDzj6EaOvWG2ItFD4dGQl3/pWwwhpE8ACf3vbY7YfXUgKAHZeVOhknsgGmA1dpUO61lVuUXNNn8wSl3A==}
+  /@storybook/addon-designs@8.0.0(@storybook/blocks@8.0.0)(@storybook/components@8.0.0)(@storybook/theming@8.0.0)(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-xCiv2PmdUXgco8IHVIY+pe5pWQQoPVwsyimhap1v68kDUuLio5glOS8pTm1zf2KWj8AqXreio/j5krOZpQyKSQ==}
     peerDependencies:
-      '@storybook/addon-docs': ^8.0.0-alpha.10 || ^8.0.0
-      '@storybook/components': ^8.0.0-alpha.10 || ^8.0.0
-      '@storybook/manager-api': ^8.0.0-alpha.10 || ^8.0.0
-      '@storybook/preview-api': ^8.0.0-alpha.10 || ^8.0.0
-      '@storybook/theming': ^8.0.0-alpha.10 || ^8.0.0
-      react: ^16.8.0 || ^17.0.0 || ^18.0.0 || 18
-      react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
+      '@storybook/blocks': ^8.0.0
+      '@storybook/components': ^8.0.0
+      '@storybook/theming': ^8.0.0
+      react: ^18.2.0 || 18
+      react-dom: ^18.2.0
     peerDependenciesMeta:
+      '@storybook/blocks':
+        optional: true
+      '@storybook/components':
+        optional: true
+      '@storybook/theming':
+        optional: true
       react:
         optional: true
       react-dom:
         optional: true
     dependencies:
       '@figspec/react': 1.0.3(react@18.2.0)
-      '@storybook/addon-docs': 8.0.0
+      '@storybook/blocks': 8.0.0(@types/react@18.2.62)(react-dom@18.2.0)(react@18.2.0)
       '@storybook/components': 8.0.0(@types/react@18.2.62)(react-dom@18.2.0)(react@18.2.0)
-      '@storybook/manager-api': 8.0.0(react-dom@18.2.0)(react@18.2.0)
-      '@storybook/preview-api': 8.0.0
       '@storybook/theming': 8.0.0(react-dom@18.2.0)(react@18.2.0)
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
@@ -13364,13 +13366,6 @@ packages:
     engines: {node: '>=8'}
     dependencies:
       has-flag: 4.0.0
-
-  /supports-color@8.1.1:
-    resolution: {integrity: sha512-MpUEN2OodtUzxvKQl72cUF7RQ5EiHsGvSsVG0ia9c5RbWGL2CI4C7EpPS8UTBIplnlzZiNuV56w+FuNxy3ty2Q==}
-    engines: {node: '>=10'}
-    dependencies:
-      has-flag: 4.0.0
-    dev: true
 
   /supports-hyperlinks@3.0.0:
     resolution: {integrity: sha512-QBDPHyPQDRTy9ku4URNGY5Lah8PAaXs6tAAwp55sL5WCsSW7GIfdf6W5ixfziW+t7wh3GVvHyHHyQ1ESsoRvaA==}

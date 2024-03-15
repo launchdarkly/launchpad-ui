@@ -21,6 +21,8 @@ import {
 
 const meta: Meta<typeof Menu> = {
 	component: Menu,
+	// @ts-ignore
+	subcomponents: { MenuItem, MenuTrigger, SubmenuTrigger },
 	title: 'React Aria Components/Menu',
 	parameters: {
 		status: {

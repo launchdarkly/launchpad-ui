@@ -6,6 +6,8 @@ import { Button, Tooltip, TooltipTrigger } from '../src';
 
 const meta: Meta<typeof Tooltip> = {
 	component: Tooltip,
+	// @ts-ignore
+	subcomponents: { TooltipTrigger },
 	title: 'React Aria Components/Tooltip',
 	parameters: {
 		status: {

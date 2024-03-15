@@ -9,6 +9,8 @@ import { Button, Dialog, DialogTrigger, Heading, IconButton, Modal, ModalOverlay
 
 const meta: Meta<typeof Modal> = {
 	component: Modal,
+	// @ts-ignore
+	subcomponents: { ModalOverlay, Dialog, DialogTrigger },
 	title: 'React Aria Components/Modal',
 	parameters: {
 		status: {

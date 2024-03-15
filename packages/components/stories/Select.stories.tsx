@@ -8,6 +8,8 @@ import { Button, Label, ListBox, ListBoxItem, Popover, Select, SelectValue, Text
 
 const meta: Meta<typeof Select> = {
 	component: Select,
+	// @ts-ignore
+	subcomponents: { SelectValue },
 	title: 'React Aria Components/Select',
 	parameters: {
 		status: {
