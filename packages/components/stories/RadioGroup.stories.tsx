@@ -6,6 +6,8 @@ import { Button, FieldError, Form, Label, Radio, RadioGroup, Text } from '../src
 
 const meta: Meta<typeof RadioGroup> = {
 	component: RadioGroup,
+	// @ts-ignore
+	subcomponents: { Radio },
 	title: 'React Aria Components/RadioGroup',
 	parameters: {
 		status: {

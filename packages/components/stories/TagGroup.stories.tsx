@@ -7,6 +7,8 @@ import { Label, Tag, TagGroup, TagList } from '../src';
 
 const meta: Meta<typeof TagGroup> = {
 	component: TagGroup,
+	// @ts-ignore
+	subcomponents: { TagList, Tag },
 	title: 'React Aria Components/TagGroup',
 	parameters: {
 		status: {

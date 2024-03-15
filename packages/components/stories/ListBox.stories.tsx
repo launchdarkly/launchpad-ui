@@ -9,6 +9,8 @@ import { Header, ListBox, ListBoxItem, Section } from '../src';
 
 const meta: Meta<typeof ListBox> = {
 	component: ListBox,
+	// @ts-ignore
+	subcomponents: { ListBoxItem },
 	title: 'React Aria Components/ListBox',
 	parameters: {
 		status: {

@@ -15,7 +15,7 @@
 
   isolation: isolate;
   font: var(--lp-body-2-regular);
-  padding: var(--lp-spacing-300) var(--lp-spacing-400);
+  padding: var(--lp-spacing-200) var(--lp-spacing-300);
   display: flex;
   justify-content: center;
   align-items: center;
