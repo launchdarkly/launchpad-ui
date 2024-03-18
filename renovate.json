@@ -22,5 +22,5 @@
 		}
 	],
 	"rangeStrategy": "bump",
-	"ignoreDeps": ["react-router-dom", "style-dictionary"]
+	"ignoreDeps": ["react-router-dom", "style-dictionary", "@biomejs/biome"]
 }
