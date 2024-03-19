@@ -35,8 +35,8 @@ const button = cva(styles.base, {
 	},
 });
 
-type ButtonVariants = VariantProps<typeof button>;
-type ButtonProps = AriaButtonProps & ButtonVariants;
+interface ButtonVariants extends VariantProps<typeof button> {}
+interface ButtonProps extends AriaButtonProps, ButtonVariants {}
 
 const _Button = (
 	{ size = 'medium', variant = 'default', ...props }: ButtonProps,

@@ -14,8 +14,8 @@ import {
 
 import styles from './styles/Popover.module.css';
 
-type PopoverProps = Omit<AriaPopoverProps, 'offset' | 'crossOffset'>;
-type OverlayArrowProps = Omit<AriaOverlayArrowProps, 'children'>;
+interface PopoverProps extends Omit<AriaPopoverProps, 'offset' | 'crossOffset'> {}
+interface OverlayArrowProps extends Omit<AriaOverlayArrowProps, 'children'> {}
 
 const popover = cva(styles.popover);
 const arrow = cva(styles.arrow);

@@ -20,10 +20,9 @@ const buttonGroup = cva(styles.base, {
 	},
 });
 
-type ButtonGroupProps = ComponentPropsWithRef<'div'> &
-	VariantProps<typeof buttonGroup> & {
-		isDisabled?: boolean;
-	};
+interface ButtonGroupProps extends ComponentPropsWithRef<'div'>, VariantProps<typeof buttonGroup> {
+	isDisabled?: boolean;
+}
 
 const _ButtonGroup = (
 	{ children, className, spacing = 'basic', isDisabled, ...props }: ButtonGroupProps,

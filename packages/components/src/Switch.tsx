@@ -9,9 +9,9 @@ import styles from './styles/Switch.module.css';
 
 const _switch = cva(styles.switch);
 
-type SwitchProps = Omit<AriaSwitchProps, 'children'> & {
+interface SwitchProps extends Omit<AriaSwitchProps, 'children'> {
 	children?: ReactNode;
-};
+}
 
 const _Switch = ({ children, ...props }: SwitchProps, ref: ForwardedRef<HTMLLabelElement>) => {
 	return (

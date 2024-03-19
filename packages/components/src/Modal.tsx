@@ -30,7 +30,7 @@ const modal = cva(styles.base, {
 });
 const overlay = cva(styles.overlay);
 
-type ModalProps = ModalOverlayProps & VariantProps<typeof modal>;
+interface ModalProps extends ModalOverlayProps, VariantProps<typeof modal> {}
 
 const _Modal = (
 	{ size = 'medium', variant = 'default', ...props }: ModalProps,

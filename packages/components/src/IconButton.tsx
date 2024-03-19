@@ -25,12 +25,13 @@ const iconButton = cva(styles.base, {
 	},
 });
 
-type IconButtonProps = Omit<AriaButtonProps, 'children'> &
-	Required<Pick<AriaLabelingProps, 'aria-label'>> &
-	VariantProps<typeof iconButton> & {
-		icon: IconProps['name'];
-		variant?: Extract<ButtonVariants['variant'], 'default' | 'primary' | 'destructive' | 'minimal'>;
-	};
+interface IconButtonProps
+	extends Omit<AriaButtonProps, 'children' | 'aria-label'>,
+		Required<Pick<AriaLabelingProps, 'aria-label'>>,
+		VariantProps<typeof iconButton> {
+	icon: IconProps['name'];
+	variant?: Extract<ButtonVariants['variant'], 'default' | 'primary' | 'destructive' | 'minimal'>;
+}
 
 const _IconButton = (
 	{ size = 'medium', variant = 'default', icon, ...props }: IconButtonProps,
