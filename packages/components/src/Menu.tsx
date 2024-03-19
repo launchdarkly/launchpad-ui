@@ -34,8 +34,8 @@ const item = cva(styles.item, {
 	},
 });
 
-type MenuProps<T> = AriaMenuProps<T>;
-type MenuItemProps<T> = AriaMenuItemProps<T> & VariantProps<typeof item>;
+interface MenuProps<T> extends AriaMenuProps<T> {}
+interface MenuItemProps<T> extends AriaMenuItemProps<T>, VariantProps<typeof item> {}
 
 const _Menu = <T extends object>(
 	{ className, ...props }: MenuProps<T>,

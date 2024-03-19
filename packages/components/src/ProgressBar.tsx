@@ -23,7 +23,7 @@ const icon = cva(styles.base, {
 	},
 });
 
-type ProgressBarProps = AriaProgressBarProps & VariantProps<typeof icon>;
+interface ProgressBarProps extends AriaProgressBarProps, VariantProps<typeof icon> {}
 
 const _ProgressBar = (
 	{ size = 'small', ...props }: ProgressBarProps,

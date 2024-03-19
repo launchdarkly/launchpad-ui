@@ -14,8 +14,8 @@ import {
 
 import styles from './styles/Tooltip.module.css';
 
-type TooltipProps = Omit<AriaTooltipProps, 'offset' | 'crossOffset'>;
-type TooltipTriggerProps = Omit<TooltipTriggerComponentProps, 'delay' | 'closeDelay'>;
+interface TooltipProps extends Omit<AriaTooltipProps, 'offset' | 'crossOffset'> {}
+interface TooltipTriggerProps extends Omit<TooltipTriggerComponentProps, 'delay' | 'closeDelay'> {}
 
 const tooltip = cva(styles.tooltip);
 

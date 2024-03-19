@@ -22,8 +22,20 @@ const link = cva(styles.base, {
 	},
 });
 
-type RouterLinkProps = Omit<_RouterLinkProps, 'children' | 'className' | 'slot'>;
-type LinkProps = AriaLinkProps & Partial<RouterLinkProps> & VariantProps<typeof link>;
+interface RouterLinkProps
+	extends Omit<
+		_RouterLinkProps,
+		| 'children'
+		| 'className'
+		| 'slot'
+		| 'style'
+		| 'download'
+		| 'onBlur'
+		| 'onFocus'
+		| 'onKeyDown'
+		| 'onKeyUp'
+	> {}
+interface LinkProps extends AriaLinkProps, Partial<RouterLinkProps>, VariantProps<typeof link> {}
 
 const _RACLink = (
 	{ variant = 'default', ...props }: AriaLinkProps & VariantProps<typeof link>,

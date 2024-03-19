@@ -8,7 +8,7 @@ import { composeRenderProps } from 'react-aria-components';
 import { button } from './Button';
 import { Link } from './Link';
 
-type LinkButtonProps = LinkProps & ButtonVariants;
+interface LinkButtonProps extends Omit<LinkProps, 'variant'>, ButtonVariants {}
 
 const _LinkButton = (
 	{ size = 'medium', variant = 'default', ...props }: LinkButtonProps,
