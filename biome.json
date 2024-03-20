@@ -26,6 +26,9 @@
 				"noUnusedVariables": "error",
 				"useHookAtTopLevel": "error"
 			},
+			"performance": {
+				"noDelete": "off"
+			},
 			"style": {
 				"noDefaultExport": "error",
 				"noNamespace": "error",
