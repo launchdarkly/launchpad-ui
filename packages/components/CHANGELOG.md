@@ -1,5 +1,15 @@
 # @launchpad-ui/components
 
+## 0.1.14
+
+### Patch Changes
+
+- [#1200](https://github.com/launchdarkly/launchpad-ui/pull/1200) [`948fd02`](https://github.com/launchdarkly/launchpad-ui/commit/948fd0246ef7d357d927b65a78f372dd2f292ece) Thanks [@Niznikr](https://github.com/Niznikr)! - Adjust padding on `Tooltip` and `Input`
+
+- [#1203](https://github.com/launchdarkly/launchpad-ui/pull/1203) [`df6563d`](https://github.com/launchdarkly/launchpad-ui/commit/df6563d365f58c0e2367db585ad9864947d2cd55) Thanks [@Niznikr](https://github.com/Niznikr)! - Use interface instead of intersection
+
+- [#1202](https://github.com/launchdarkly/launchpad-ui/pull/1202) [`3f5c975`](https://github.com/launchdarkly/launchpad-ui/commit/3f5c97505ffd092313eda764cb8c43b9ffeb07a6) Thanks [@Niznikr](https://github.com/Niznikr)! - Correct `ComboBox` popover size and position
+
 ## 0.1.13
 
 ### Patch Changes
