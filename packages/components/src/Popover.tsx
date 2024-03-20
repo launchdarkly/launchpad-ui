@@ -9,7 +9,9 @@ import { forwardRef } from 'react';
 import {
 	OverlayArrow as AriaOverlayArrow,
 	Popover as AriaPopover,
+	PopoverContext,
 	composeRenderProps,
+	useSlottedContext,
 } from 'react-aria-components';
 
 import styles from './styles/Popover.module.css';
@@ -21,11 +23,13 @@ const popover = cva(styles.popover);
 const arrow = cva(styles.arrow);
 
 const _Popover = (props: PopoverProps, ref: ForwardedRef<HTMLDivElement>) => {
+	const context = useSlottedContext(PopoverContext);
+	const isComboBox = context?.trigger === 'ComboBox';
 	return (
 		<AriaPopover
 			{...props}
-			offset={0}
-			crossOffset={0}
+			offset={isComboBox ? 9 : 4}
+			crossOffset={isComboBox ? -8 : 0}
 			ref={ref}
 			className={composeRenderProps(props.className, (className, renderProps) =>
 				popover({ ...renderProps, className }),

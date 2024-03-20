@@ -11,8 +11,7 @@
 }
 
 .popover {
-  --lp-popover-offset: var(--lp-size-4);
-  --lp-arrow-offset: var(--lp-size-6);
+  --lp-arrow-offset: var(--lp-size-2);
 
   isolation: isolate;
   border-radius: var(--lp-border-radius-regular);
@@ -44,16 +43,18 @@
     max-width: var(--lp-menu-max-width);
   }
 
-  &[data-trigger='Select'],
-  &[data-trigger='ComboBox'] {
+  &[data-trigger='Select'] {
     /* stylelint-disable-next-line csstools/value-no-unknown-custom-properties */
     min-width: var(--trigger-width);
   }
 
+  &[data-trigger='ComboBox'] {
+    /* stylelint-disable-next-line csstools/value-no-unknown-custom-properties */
+    min-width: calc(var(--lp-spacing-300) * 2 + var(--trigger-width) + 2px);
+  }
+
   &[data-placement='top'] {
     --origin: translateY(4px);
-
-    margin-bottom: var(--lp-popover-offset);
 
     &:has(.arrow) {
       margin-bottom: var(--lp-arrow-offset);
@@ -62,8 +63,6 @@
 
   &[data-placement='bottom'] {
     --origin: translateY(-4px);
-
-    margin-top: var(--lp-popover-offset);
 
     & .arrow svg {
       transform: rotate(180deg);
@@ -77,8 +76,6 @@
   &[data-placement='right'] {
     --origin: translateX(-4px);
 
-    margin-left: var(--lp-popover-offset);
-
     & .arrow svg {
       transform: rotate(90deg);
     }
@@ -90,8 +87,6 @@
 
   &[data-placement='left'] {
     --origin: translateX(4px);
-
-    margin-right: var(--lp-popover-offset);
 
     & .arrow svg {
       transform: rotate(-90deg);
