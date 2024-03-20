@@ -34,7 +34,7 @@ const TableCell = ({ align = 'left', className, children, ...rest }: TableCellPr
 	// remove hasScope from rest props so we don't pollute the dom element
 	const restProps: Partial<TableCellProps> = rest;
 	if ('hasScope' in restProps) {
-		restProps.hasScope = undefined;
+		delete restProps.hasScope;
 	}
 
 	return (
