@@ -1,5 +1,32 @@
 # @launchpad-ui/table
 
+## 0.6.12
+
+### Patch Changes
+
+- [#1205](https://github.com/launchdarkly/launchpad-ui/pull/1205) [`cde5fe7`](https://github.com/launchdarkly/launchpad-ui/commit/cde5fe72ac43bcd1dd51d5c84117b62f90700f03) Thanks [@Niznikr](https://github.com/Niznikr)! - [Table] Fix prop deletion
+
+## 0.6.11
+
+### Patch Changes
+
+- Updated dependencies [[`3b792b5`](https://github.com/launchdarkly/launchpad-ui/commit/3b792b5cb706338be57848a3773152aa6c4597dc)]:
+  - @launchpad-ui/tokens@0.9.7
+
+## 0.6.10
+
+### Patch Changes
+
+- Updated dependencies [[`31b5c98`](https://github.com/launchdarkly/launchpad-ui/commit/31b5c98c49768e62f6474c8696b40e9cb52ea25d)]:
+  - @launchpad-ui/tokens@0.9.6
+
+## 0.6.9
+
+### Patch Changes
+
+- Updated dependencies [[`2041cd5`](https://github.com/launchdarkly/launchpad-ui/commit/2041cd53385561cc3e02474f5d2c767f79603b58)]:
+  - @launchpad-ui/tokens@0.9.5
+
 ## 0.6.8
 
 ### Patch Changes

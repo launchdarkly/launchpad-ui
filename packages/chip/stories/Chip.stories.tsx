@@ -5,43 +5,44 @@ import { Icon } from '@launchpad-ui/icons';
 import { Chip } from '../src';
 
 export default {
-  component: Chip,
-  title: 'Components/Chip',
-  description: 'Chips can be used as visual indicators for tags.',
-  parameters: {
-    status: {
-      type: import.meta.env.STORYBOOK_PACKAGE_STATUS__CHIP,
-    },
-  },
-  argTypes: {
-    className: {
-      table: {
-        category: 'Presentation',
-      },
-    },
-    kind: {
-      table: {
-        category: 'Presentation',
-      },
-    },
-    children: {
-      table: {
-        category: 'Content',
-      },
-    },
-  },
+	component: Chip,
+	title: 'Components/Chip',
+	description: 'Chips can be used as visual indicators for tags.',
+	parameters: {
+		status: {
+			type: import.meta.env.STORYBOOK_PACKAGE_STATUS__CHIP,
+		},
+	},
+	argTypes: {
+		className: {
+			table: {
+				category: 'Presentation',
+			},
+		},
+		kind: {
+			table: {
+				category: 'Presentation',
+			},
+		},
+		children: {
+			table: {
+				category: 'Content',
+			},
+		},
+	},
 };
 
 type Story = StoryObj<typeof Chip>;
 
 export const Default: Story = {
-  args: { children: 'Default Chip' },
+	args: { children: 'Default Chip' },
 };
 
 export const Success: Story = { args: { children: 'Success Chip', kind: 'success' } };
 
 export const Warning: Story = { args: { children: 'Warning Chip', kind: 'warning' } };
 
+// biome-ignore lint/suspicious/noShadowRestrictedNames: <explanation>
 export const Error: Story = { args: { children: 'Error Chip', kind: 'error' } };
 
 export const Info: Story = { args: { children: 'Info Chip', kind: 'info' } };
@@ -55,9 +56,9 @@ export const Beta: Story = { args: { children: 'Beta Chip', kind: 'beta' } };
 export const Tiny: Story = { args: { children: 'Tiny Chip', size: 'tiny', kind: 'success' } };
 
 export const WithIcon: Story = {
-  args: { children: 'Chip', icon: <Icon name="star" />, kind: 'success' },
+	args: { children: 'Chip', icon: <Icon name="star" />, kind: 'success' },
 };
 
 export const TinyWithIcon: Story = {
-  args: { children: 'Tiny Chip', icon: <Icon name="star" />, size: 'tiny', kind: 'success' },
+	args: { children: 'Tiny Chip', icon: <Icon name="star" />, size: 'tiny', kind: 'success' },
 };

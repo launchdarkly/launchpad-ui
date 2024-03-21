@@ -7,23 +7,23 @@ import styles from './styles/Modal.module.css';
 import { useOverflowY } from './utils';
 
 type ModalBodyProps = ComponentProps<'div'> & {
-  'data-test-id'?: string;
+	'data-test-id'?: string;
 };
 
 const ModalBody = ({
-  children,
-  className,
-  'data-test-id': testId = 'modal-body',
-  ...rest
+	children,
+	className,
+	'data-test-id': testId = 'modal-body',
+	...rest
 }: ModalBodyProps) => {
-  const ref = useRef<HTMLDivElement>(null);
-  useOverflowY(ref);
+	const ref = useRef<HTMLDivElement>(null);
+	useOverflowY(ref);
 
-  return (
-    <div {...rest} ref={ref} className={cx(styles.body, className)} data-test-id={testId}>
-      {children}
-    </div>
-  );
+	return (
+		<div {...rest} ref={ref} className={cx(styles.body, className)} data-test-id={testId}>
+			{children}
+		</div>
+	);
 };
 
 export { ModalBody };

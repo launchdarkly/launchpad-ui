@@ -1,5 +1,23 @@
 # @launchpad-ui/tokens
 
+## 0.9.7
+
+### Patch Changes
+
+- [#1183](https://github.com/launchdarkly/launchpad-ui/pull/1183) [`3b792b5`](https://github.com/launchdarkly/launchpad-ui/commit/3b792b5cb706338be57848a3773152aa6c4597dc) Thanks [@renovate](https://github.com/apps/renovate)! - Update dependencies
+
+## 0.9.6
+
+### Patch Changes
+
+- [#1179](https://github.com/launchdarkly/launchpad-ui/pull/1179) [`31b5c98`](https://github.com/launchdarkly/launchpad-ui/commit/31b5c98c49768e62f6474c8696b40e9cb52ea25d) Thanks [@Niznikr](https://github.com/Niznikr)! - Add `ListBox`, `Select`, and `ComboBox`
+
+## 0.9.5
+
+### Patch Changes
+
+- [#1164](https://github.com/launchdarkly/launchpad-ui/pull/1164) [`2041cd5`](https://github.com/launchdarkly/launchpad-ui/commit/2041cd53385561cc3e02474f5d2c767f79603b58) Thanks [@Niznikr](https://github.com/Niznikr)! - Add `Checkbox`, `CheckboxGroup`, `Label`, `Form`, and `FieldError`
+
 ## 0.9.4
 
 ### Patch Changes

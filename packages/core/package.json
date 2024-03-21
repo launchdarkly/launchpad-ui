@@ -1,89 +1,89 @@
 {
-  "name": "@launchpad-ui/core",
-  "version": "0.49.1",
-  "status": "beta",
-  "publishConfig": {
-    "access": "public"
-  },
-  "description": "Contains all LaunchPad design system packages.",
-  "files": [
-    "dist"
-  ],
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/launchdarkly/launchpad-ui",
-    "directory": "packages/core"
-  },
-  "main": "dist/index.js",
-  "module": "dist/index.es.js",
-  "types": "dist/index.d.ts",
-  "sideEffects": [
-    "**/*.css"
-  ],
-  "exports": {
-    ".": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/index.es.js",
-      "require": "./dist/index.js"
-    },
-    "./package.json": "./package.json"
-  },
-  "source": "src/index.ts",
-  "scripts": {
-    "build": "vite build -c ../../vite.config.mts && tsc --project tsconfig.build.json",
-    "clean": "rm -rf dist",
-    "lint": "eslint '**/*.{ts,tsx,js}'",
-    "test": "exit 0"
-  },
-  "dependencies": {
-    "@launchpad-ui/alert": "workspace:~",
-    "@launchpad-ui/avatar": "workspace:~",
-    "@launchpad-ui/banner": "workspace:~",
-    "@launchpad-ui/box": "workspace:~",
-    "@launchpad-ui/button": "workspace:~",
-    "@launchpad-ui/card": "workspace:~",
-    "@launchpad-ui/chip": "workspace:~",
-    "@launchpad-ui/clipboard": "workspace:~",
-    "@launchpad-ui/collapsible": "workspace:~",
-    "@launchpad-ui/columns": "workspace:~",
-    "@launchpad-ui/counter": "workspace:~",
-    "@launchpad-ui/data-table": "workspace:~",
-    "@launchpad-ui/drawer": "workspace:~",
-    "@launchpad-ui/dropdown": "workspace:~",
-    "@launchpad-ui/filter": "workspace:~",
-    "@launchpad-ui/focus-trap": "workspace:~",
-    "@launchpad-ui/form": "workspace:~",
-    "@launchpad-ui/inline": "workspace:~",
-    "@launchpad-ui/inline-edit": "workspace:~",
-    "@launchpad-ui/markdown": "workspace:~",
-    "@launchpad-ui/menu": "workspace:~",
-    "@launchpad-ui/modal": "workspace:~",
-    "@launchpad-ui/navigation": "workspace:~",
-    "@launchpad-ui/overlay": "workspace:~",
-    "@launchpad-ui/pagination": "workspace:~",
-    "@launchpad-ui/popover": "workspace:~",
-    "@launchpad-ui/portal": "workspace:~",
-    "@launchpad-ui/progress": "workspace:~",
-    "@launchpad-ui/progress-bubbles": "workspace:~",
-    "@launchpad-ui/select": "workspace:~",
-    "@launchpad-ui/slider": "workspace:~",
-    "@launchpad-ui/snackbar": "workspace:~",
-    "@launchpad-ui/split-button": "workspace:~",
-    "@launchpad-ui/stack": "workspace:~",
-    "@launchpad-ui/tab-list": "workspace:~",
-    "@launchpad-ui/table": "workspace:~",
-    "@launchpad-ui/tag": "workspace:~",
-    "@launchpad-ui/toast": "workspace:~",
-    "@launchpad-ui/toggle": "workspace:~",
-    "@launchpad-ui/tooltip": "workspace:~",
-    "@launchpad-ui/types": "workspace:~"
-  },
-  "peerDependencies": {
-    "react": "18.2.0",
-    "react-dom": "18.2.0"
-  },
-  "devDependencies": {
-    "react": "18.2.0",
-    "react-dom": "18.2.0"
-  }
+	"name": "@launchpad-ui/core",
+	"version": "0.49.6",
+	"status": "beta",
+	"publishConfig": {
+		"access": "public"
+	},
+	"description": "Contains all LaunchPad design system packages.",
+	"files": [
+		"dist"
+	],
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/launchdarkly/launchpad-ui",
+		"directory": "packages/core"
+	},
+	"main": "dist/index.js",
+	"module": "dist/index.es.js",
+	"types": "dist/index.d.ts",
+	"sideEffects": [
+		"**/*.css"
+	],
+	"exports": {
+		".": {
+			"types": "./dist/index.d.ts",
+			"import": "./dist/index.es.js",
+			"require": "./dist/index.js"
+		},
+		"./package.json": "./package.json"
+	},
+	"source": "src/index.ts",
+	"scripts": {
+		"build": "vite build -c ../../vite.config.mts && tsc --project tsconfig.build.json",
+		"clean": "rm -rf dist",
+		"lint": "exit 0",
+		"test": "exit 0"
+	},
+	"dependencies": {
+		"@launchpad-ui/alert": "workspace:~",
+		"@launchpad-ui/avatar": "workspace:~",
+		"@launchpad-ui/banner": "workspace:~",
+		"@launchpad-ui/box": "workspace:~",
+		"@launchpad-ui/button": "workspace:~",
+		"@launchpad-ui/card": "workspace:~",
+		"@launchpad-ui/chip": "workspace:~",
+		"@launchpad-ui/clipboard": "workspace:~",
+		"@launchpad-ui/collapsible": "workspace:~",
+		"@launchpad-ui/columns": "workspace:~",
+		"@launchpad-ui/counter": "workspace:~",
+		"@launchpad-ui/data-table": "workspace:~",
+		"@launchpad-ui/drawer": "workspace:~",
+		"@launchpad-ui/dropdown": "workspace:~",
+		"@launchpad-ui/filter": "workspace:~",
+		"@launchpad-ui/focus-trap": "workspace:~",
+		"@launchpad-ui/form": "workspace:~",
+		"@launchpad-ui/inline": "workspace:~",
+		"@launchpad-ui/inline-edit": "workspace:~",
+		"@launchpad-ui/markdown": "workspace:~",
+		"@launchpad-ui/menu": "workspace:~",
+		"@launchpad-ui/modal": "workspace:~",
+		"@launchpad-ui/navigation": "workspace:~",
+		"@launchpad-ui/overlay": "workspace:~",
+		"@launchpad-ui/pagination": "workspace:~",
+		"@launchpad-ui/popover": "workspace:~",
+		"@launchpad-ui/portal": "workspace:~",
+		"@launchpad-ui/progress": "workspace:~",
+		"@launchpad-ui/progress-bubbles": "workspace:~",
+		"@launchpad-ui/select": "workspace:~",
+		"@launchpad-ui/slider": "workspace:~",
+		"@launchpad-ui/snackbar": "workspace:~",
+		"@launchpad-ui/split-button": "workspace:~",
+		"@launchpad-ui/stack": "workspace:~",
+		"@launchpad-ui/tab-list": "workspace:~",
+		"@launchpad-ui/table": "workspace:~",
+		"@launchpad-ui/tag": "workspace:~",
+		"@launchpad-ui/toast": "workspace:~",
+		"@launchpad-ui/toggle": "workspace:~",
+		"@launchpad-ui/tooltip": "workspace:~",
+		"@launchpad-ui/types": "workspace:~"
+	},
+	"peerDependencies": {
+		"react": "18.2.0",
+		"react-dom": "18.2.0"
+	},
+	"devDependencies": {
+		"react": "18.2.0",
+		"react-dom": "18.2.0"
+	}
 }

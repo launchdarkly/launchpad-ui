@@ -1,27 +1,25 @@
 {
-  "name": "@launchpad-ui/types",
-  "version": "0.1.0",
-  "status": "alpha",
-  "publishConfig": {
-    "access": "public"
-  },
-  "description": "Shared types for LaunchPad components.",
-  "files": [
-    "dist"
-  ],
-  "types": "dist/index.d.ts",
-  "sideEffects": false,
-  "exports": {
-    ".": {
-      "types": "./dist/index.d.ts"
-    },
-    "./package.json": "./package.json"
-  },
-  "source": "src/index.ts",
-  "scripts": {
-    "build": "tsc --project tsconfig.build.json",
-    "clean": "rm -rf dist",
-    "lint": "eslint '**/*.{ts,tsx,js}'",
-    "test": "exit 0"
-  }
+	"name": "@launchpad-ui/types",
+	"version": "0.1.0",
+	"status": "alpha",
+	"publishConfig": {
+		"access": "public"
+	},
+	"description": "Shared types for LaunchPad components.",
+	"files": ["dist"],
+	"types": "dist/index.d.ts",
+	"sideEffects": false,
+	"exports": {
+		".": {
+			"types": "./dist/index.d.ts"
+		},
+		"./package.json": "./package.json"
+	},
+	"source": "src/index.ts",
+	"scripts": {
+		"build": "tsc --project tsconfig.build.json",
+		"clean": "rm -rf dist",
+		"lint": "exit 0",
+		"test": "exit 0"
+	}
 }

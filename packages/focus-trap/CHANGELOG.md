@@ -1,5 +1,17 @@
 # @launchpad-ui/focus-trap
 
+## 0.1.17
+
+### Patch Changes
+
+- [#1183](https://github.com/launchdarkly/launchpad-ui/pull/1183) [`3b792b5`](https://github.com/launchdarkly/launchpad-ui/commit/3b792b5cb706338be57848a3773152aa6c4597dc) Thanks [@renovate](https://github.com/apps/renovate)! - Update dependencies
+
+## 0.1.16
+
+### Patch Changes
+
+- [#1172](https://github.com/launchdarkly/launchpad-ui/pull/1172) [`42bc7f4`](https://github.com/launchdarkly/launchpad-ui/commit/42bc7f40eca3fb451d8e6764c0409ca38fdf6ece) Thanks [@renovate](https://github.com/apps/renovate)! - Update dependencies
+
 ## 0.1.15
 
 ### Patch Changes

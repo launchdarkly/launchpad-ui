@@ -11,29 +11,29 @@ import styles from './styles/Checkbox.module.css';
 const checkbox = cva(styles.checkbox);
 const box = cva(styles.box);
 
-const _Checkbox = ({ children, ...props }: CheckboxProps, ref: ForwardedRef<HTMLLabelElement>) => {
-  return (
-    <AriaCheckbox
-      {...props}
-      ref={ref}
-      className={composeRenderProps(props.className, (className, renderProps) =>
-        checkbox({ ...renderProps, className })
-      )}
-    >
-      {({ isSelected, isIndeterminate }) => (
-        <>
-          <div className={box()}>
-            {isIndeterminate ? (
-              <Icon name="minus" size="small" className={styles.icon} />
-            ) : isSelected ? (
-              <Icon name="check" size="small" className={styles.icon} />
-            ) : null}
-          </div>
-          {children}
-        </>
-      )}
-    </AriaCheckbox>
-  );
+const _Checkbox = (props: CheckboxProps, ref: ForwardedRef<HTMLLabelElement>) => {
+	return (
+		<AriaCheckbox
+			{...props}
+			ref={ref}
+			className={composeRenderProps(props.className, (className, renderProps) =>
+				checkbox({ ...renderProps, className }),
+			)}
+		>
+			{composeRenderProps(props.children, (children, { isSelected, isIndeterminate }) => (
+				<>
+					<div className={box()}>
+						{isIndeterminate ? (
+							<Icon name="minus" size="small" className={styles.icon} />
+						) : isSelected ? (
+							<Icon name="check" size="small" className={styles.icon} />
+						) : null}
+					</div>
+					{children}
+				</>
+			))}
+		</AriaCheckbox>
+	);
 };
 
 /**

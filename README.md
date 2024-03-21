@@ -56,16 +56,6 @@ The following command will build Storybook, start the server, and run a11y tests
 $ pnpm e2e:a11y
 ```
 
-#### SSR Tests
-
-SSR support is tested using a [Remix](https://remix.run/) app [found in the monorepo](./apps/remix/README.md).
-
-The following command will build the app, start the server, and run Playwright tests to verify the components have rendered:
-
-```sh
-$ pnpm e2e:ssr
-```
-
 ## LaunchPad Architecture
 
 LaunchPad is set up as a monorepo where each component package is bundled and delivered as its own NPM package. While you can technically import each component package separately, we do recommend using the "bundled" version of LaunchPad at `@launchpad-ui/core`. The team chose to treat each component as a separate package internally for improved testing, version management, and isolation guarantees.
@@ -79,10 +69,6 @@ When we talk about "components" in LaunchPad, we're talking about a UI component
 While all LaunchPad UI components are packages, not all packages are necessarily "components." A package can be defined to store utilities such as tokens used by other packages, shared helper functions, etc.
 
 LaunchPad libraries may depend on one another, as in the case of our modal library depending on the button library. This dependency, just like with shared utility libraries, is simply represented as a package.json import.
-
-### The `apps` Directory
-
-The apps directory is essentially a standalone project that has easy access to our workspace packages. Currently, we have a Remix application that we use for SSR testing, but you could build other apps such as a docs website or another testing playground.
 
 ### Versioning
 

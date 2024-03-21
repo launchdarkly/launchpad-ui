@@ -11,9 +11,6 @@
   border-radius: var(--lp-border-radius-medium);
   border-style: solid;
   border-width: 1px;
-}
-
-.base:focus-visible {
   outline: none;
 }
 
@@ -192,4 +189,12 @@
 .minimalFlair[data-focus-visible] {
   background-color: var(--lp-color-bg-interactive-tertiary-flair-focus);
   color: var(--lp-color-text-interactive-flair-focus);
+}
+
+.select {
+  composes: input from './Input.module.css';
+  display: flex;
+  align-items: center;
+  gap: var(--lp-spacing-300);
+  width: 100%;
 }

@@ -1,8 +1,8 @@
 export type { SingleSelectProps } from './SingleSelect';
 export type { SingleSelectState } from './useSingleSelectState';
 export type {
-  SingleSelectTriggerProps,
-  SingleSelectTriggerChildrenState,
+	SingleSelectTriggerProps,
+	SingleSelectTriggerChildrenState,
 } from './SingleSelectTrigger';
 
 export { SingleSelect } from './SingleSelect';

@@ -1,5 +1,179 @@
 # @launchpad-ui/core
 
+## 0.49.6
+
+### Patch Changes
+
+- [#1205](https://github.com/launchdarkly/launchpad-ui/pull/1205) [`cde5fe7`](https://github.com/launchdarkly/launchpad-ui/commit/cde5fe72ac43bcd1dd51d5c84117b62f90700f03) Thanks [@Niznikr](https://github.com/Niznikr)! - [Table] Fix prop deletion
+
+- Updated dependencies [[`cde5fe7`](https://github.com/launchdarkly/launchpad-ui/commit/cde5fe72ac43bcd1dd51d5c84117b62f90700f03)]:
+  - @launchpad-ui/table@0.6.12
+
+## 0.49.5
+
+### Patch Changes
+
+- [#1183](https://github.com/launchdarkly/launchpad-ui/pull/1183) [`3b792b5`](https://github.com/launchdarkly/launchpad-ui/commit/3b792b5cb706338be57848a3773152aa6c4597dc) Thanks [@renovate](https://github.com/apps/renovate)! - Update dependencies
+
+- [#1191](https://github.com/launchdarkly/launchpad-ui/pull/1191) [`369664c`](https://github.com/launchdarkly/launchpad-ui/commit/369664c3c21f93e844f0d3ae9a4ef80ad2d03bfb) Thanks [@matthewferry](https://github.com/matthewferry)! - feat(icons): add notifications-check icon
+
+- Updated dependencies [[`3b792b5`](https://github.com/launchdarkly/launchpad-ui/commit/3b792b5cb706338be57848a3773152aa6c4597dc)]:
+  - @launchpad-ui/inline-edit@0.3.5
+  - @launchpad-ui/data-table@0.2.14
+  - @launchpad-ui/focus-trap@0.1.17
+  - @launchpad-ui/navigation@0.12.20
+  - @launchpad-ui/pagination@0.4.20
+  - @launchpad-ui/clipboard@0.11.20
+  - @launchpad-ui/dropdown@0.6.94
+  - @launchpad-ui/markdown@0.5.12
+  - @launchpad-ui/tab-list@0.5.15
+  - @launchpad-ui/drawer@0.5.20
+  - @launchpad-ui/filter@0.7.5
+  - @launchpad-ui/select@0.4.20
+  - @launchpad-ui/toggle@0.7.15
+  - @launchpad-ui/alert@0.9.4
+  - @launchpad-ui/modal@0.17.20
+  - @launchpad-ui/form@0.11.5
+  - @launchpad-ui/menu@0.13.5
+  - @launchpad-ui/tag@0.3.20
+  - @launchpad-ui/popover@0.11.16
+  - @launchpad-ui/split-button@0.10.5
+  - @launchpad-ui/avatar@0.6.17
+  - @launchpad-ui/banner@0.10.17
+  - @launchpad-ui/box@0.1.8
+  - @launchpad-ui/button@0.12.4
+  - @launchpad-ui/card@0.2.20
+  - @launchpad-ui/chip@0.9.17
+  - @launchpad-ui/collapsible@0.1.48
+  - @launchpad-ui/columns@0.1.17
+  - @launchpad-ui/counter@0.4.11
+  - @launchpad-ui/inline@0.1.17
+  - @launchpad-ui/progress@0.5.42
+  - @launchpad-ui/progress-bubbles@0.7.16
+  - @launchpad-ui/slider@0.5.11
+  - @launchpad-ui/snackbar@0.5.4
+  - @launchpad-ui/stack@0.1.17
+  - @launchpad-ui/table@0.6.11
+  - @launchpad-ui/toast@0.3.17
+  - @launchpad-ui/tooltip@0.9.5
+
+## 0.49.4
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @launchpad-ui/alert@0.9.3
+  - @launchpad-ui/avatar@0.6.16
+  - @launchpad-ui/banner@0.10.16
+  - @launchpad-ui/box@0.1.7
+  - @launchpad-ui/button@0.12.3
+  - @launchpad-ui/card@0.2.19
+  - @launchpad-ui/chip@0.9.16
+  - @launchpad-ui/clipboard@0.11.19
+  - @launchpad-ui/collapsible@0.1.47
+  - @launchpad-ui/columns@0.1.16
+  - @launchpad-ui/counter@0.4.10
+  - @launchpad-ui/data-table@0.2.13
+  - @launchpad-ui/drawer@0.5.19
+  - @launchpad-ui/dropdown@0.6.93
+  - @launchpad-ui/filter@0.7.4
+  - @launchpad-ui/form@0.11.4
+  - @launchpad-ui/inline@0.1.16
+  - @launchpad-ui/inline-edit@0.3.4
+  - @launchpad-ui/markdown@0.5.11
+  - @launchpad-ui/menu@0.13.4
+  - @launchpad-ui/modal@0.17.19
+  - @launchpad-ui/navigation@0.12.19
+  - @launchpad-ui/pagination@0.4.19
+  - @launchpad-ui/popover@0.11.15
+  - @launchpad-ui/progress@0.5.41
+  - @launchpad-ui/progress-bubbles@0.7.15
+  - @launchpad-ui/select@0.4.19
+  - @launchpad-ui/slider@0.5.10
+  - @launchpad-ui/snackbar@0.5.3
+  - @launchpad-ui/split-button@0.10.4
+  - @launchpad-ui/stack@0.1.16
+  - @launchpad-ui/tab-list@0.5.14
+  - @launchpad-ui/table@0.6.10
+  - @launchpad-ui/tag@0.3.19
+  - @launchpad-ui/toast@0.3.16
+  - @launchpad-ui/toggle@0.7.14
+  - @launchpad-ui/tooltip@0.9.4
+
+## 0.49.3
+
+### Patch Changes
+
+- [#1172](https://github.com/launchdarkly/launchpad-ui/pull/1172) [`42bc7f4`](https://github.com/launchdarkly/launchpad-ui/commit/42bc7f40eca3fb451d8e6764c0409ca38fdf6ece) Thanks [@renovate](https://github.com/apps/renovate)! - Update dependencies
+
+- Updated dependencies [[`42bc7f4`](https://github.com/launchdarkly/launchpad-ui/commit/42bc7f40eca3fb451d8e6764c0409ca38fdf6ece)]:
+  - @launchpad-ui/inline-edit@0.3.3
+  - @launchpad-ui/data-table@0.2.12
+  - @launchpad-ui/focus-trap@0.1.16
+  - @launchpad-ui/navigation@0.12.18
+  - @launchpad-ui/pagination@0.4.18
+  - @launchpad-ui/dropdown@0.6.92
+  - @launchpad-ui/tab-list@0.5.13
+  - @launchpad-ui/drawer@0.5.18
+  - @launchpad-ui/filter@0.7.3
+  - @launchpad-ui/select@0.4.18
+  - @launchpad-ui/toggle@0.7.13
+  - @launchpad-ui/modal@0.17.18
+  - @launchpad-ui/form@0.11.3
+  - @launchpad-ui/menu@0.13.3
+  - @launchpad-ui/tag@0.3.18
+  - @launchpad-ui/popover@0.11.14
+  - @launchpad-ui/split-button@0.10.3
+  - @launchpad-ui/card@0.2.18
+  - @launchpad-ui/progress-bubbles@0.7.14
+  - @launchpad-ui/tooltip@0.9.3
+  - @launchpad-ui/clipboard@0.11.18
+
+## 0.49.2
+
+### Patch Changes
+
+- [#1168](https://github.com/launchdarkly/launchpad-ui/pull/1168) [`fb6080e`](https://github.com/launchdarkly/launchpad-ui/commit/fb6080e2081d66b3b9fafb4e5bc7f57a74889358) Thanks [@matthewferry](https://github.com/matthewferry)! - feat(icons): add api and visibility-scan icons
+
+- Updated dependencies []:
+  - @launchpad-ui/alert@0.9.2
+  - @launchpad-ui/avatar@0.6.15
+  - @launchpad-ui/banner@0.10.15
+  - @launchpad-ui/box@0.1.6
+  - @launchpad-ui/button@0.12.2
+  - @launchpad-ui/card@0.2.17
+  - @launchpad-ui/chip@0.9.15
+  - @launchpad-ui/clipboard@0.11.17
+  - @launchpad-ui/collapsible@0.1.46
+  - @launchpad-ui/columns@0.1.15
+  - @launchpad-ui/counter@0.4.9
+  - @launchpad-ui/data-table@0.2.11
+  - @launchpad-ui/drawer@0.5.17
+  - @launchpad-ui/dropdown@0.6.91
+  - @launchpad-ui/filter@0.7.2
+  - @launchpad-ui/form@0.11.2
+  - @launchpad-ui/inline@0.1.15
+  - @launchpad-ui/inline-edit@0.3.2
+  - @launchpad-ui/markdown@0.5.10
+  - @launchpad-ui/menu@0.13.2
+  - @launchpad-ui/modal@0.17.17
+  - @launchpad-ui/navigation@0.12.17
+  - @launchpad-ui/pagination@0.4.17
+  - @launchpad-ui/popover@0.11.13
+  - @launchpad-ui/progress@0.5.40
+  - @launchpad-ui/progress-bubbles@0.7.13
+  - @launchpad-ui/select@0.4.17
+  - @launchpad-ui/slider@0.5.9
+  - @launchpad-ui/snackbar@0.5.2
+  - @launchpad-ui/split-button@0.10.2
+  - @launchpad-ui/stack@0.1.15
+  - @launchpad-ui/tab-list@0.5.12
+  - @launchpad-ui/table@0.6.9
+  - @launchpad-ui/tag@0.3.17
+  - @launchpad-ui/toast@0.3.15
+  - @launchpad-ui/toggle@0.7.12
+  - @launchpad-ui/tooltip@0.9.2
+
 ## 0.49.1
 
 ### Patch Changes

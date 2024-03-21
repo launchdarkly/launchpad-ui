@@ -16,109 +16,110 @@ type Merge<T, U> = Omit<T, keyof U> & U;
 type PropsWithComponent<P, T extends ElementType> = P & { component?: T };
 
 type PolymorphicPropsWithRef<P, T extends ElementType> = Merge<
-  T extends keyof JSX.IntrinsicElements
-    ? PropsWithRef<JSX.IntrinsicElements[T]>
-    : ComponentPropsWithRef<T>,
-  PropsWithComponent<P, T>
+	T extends keyof JSX.IntrinsicElements
+		? PropsWithRef<JSX.IntrinsicElements[T]>
+		: ComponentPropsWithRef<T>,
+	PropsWithComponent<P, T>
 >;
 
 type MenuItemOwnProps = {
-  isHighlighted?: boolean;
-  icon?: ReactElement<IconProps>;
-  disabled?: boolean;
-  nested?: boolean;
-  groupHeader?: boolean;
-  tooltip?: string | ReactElement;
-  tooltipOptions?: ComponentPropsWithRef<typeof Tooltip>;
-  tooltipPlacement?: PopoverPlacement;
-  asChild?: boolean;
-  'data-test-id'?: string;
+	isHighlighted?: boolean;
+	icon?: ReactElement<IconProps>;
+	disabled?: boolean;
+	nested?: boolean;
+	groupHeader?: boolean;
+	tooltip?: string | ReactElement;
+	tooltipOptions?: ComponentPropsWithRef<typeof Tooltip>;
+	tooltipPlacement?: PopoverPlacement;
+	asChild?: boolean;
+	'data-test-id'?: string;
 };
 
 const defaultElement = 'button';
 
 type MenuItemProps<P, T extends ElementType = typeof defaultElement> = PolymorphicPropsWithRef<
-  | (MenuItemOwnProps & {
-      item: P; // Infer the type if it is included
-    })
-  | (MenuItemOwnProps & {
-      item?: undefined;
-    }),
-  T
+	| (MenuItemOwnProps & {
+			item: P; // Infer the type if it is included
+	  })
+	| (MenuItemOwnProps & {
+			item?: undefined;
+	  }),
+	T
 >;
 
 const MenuItem = <P, T extends ElementType = typeof defaultElement>({
-  ...props
+	...props
 }: MenuItemProps<P, T>) => {
-  const {
-    // TODO: remove component prop once we migrate over to asChild format
-    component,
-    children,
-    isHighlighted,
-    icon,
-    nested,
-    groupHeader,
-    item,
-    disabled,
-    className,
-    tooltip,
-    role = 'menuitem',
-    tooltipPlacement,
-    onKeyDown,
-    tooltipOptions,
-    asChild,
-    'data-test-id': testId = 'menu-item',
-    ...rest
-  } = props;
+	const {
+		// TODO: remove component prop once we migrate over to asChild format
+		component,
+		children,
+		isHighlighted,
+		icon,
+		nested,
+		groupHeader,
+		// biome-ignore lint/correctness/noUnusedVariables: <explanation>
+		item,
+		disabled,
+		className,
+		tooltip,
+		role = 'menuitem',
+		tooltipPlacement,
+		onKeyDown,
+		tooltipOptions,
+		asChild,
+		'data-test-id': testId = 'menu-item',
+		...rest
+	} = props;
 
-  const Component: ElementType = component || (asChild ? Slot : defaultElement);
+	const Component: ElementType = component || (asChild ? Slot : defaultElement);
 
-  const renderIcon = icon && cloneElement(icon, { size: 'small' });
+	const renderIcon = icon && cloneElement(icon, { size: 'small' });
 
-  const renderedItem = (
-    <FocusRing focusRingClass={styles['has-focus']}>
-      <Component
-        {...rest}
-        disabled={disabled}
-        aria-disabled={disabled ? disabled : undefined}
-        className={cx(
-          styles['Menu-item'],
-          className,
-          isHighlighted && styles['is-highlighted'],
-          nested && styles['Menu-item--nested'],
-          groupHeader && styles['Menu-item--header']
-        )}
-        data-test-id={testId}
-        role={role}
-        onKeyDown={onKeyDown}
-      >
-        {asChild ? (
-          children
-        ) : (
-          <>
-            {icon && <span className={styles['Menu-item-icon']}>{renderIcon}</span>}
-            {children}
-          </>
-        )}
-      </Component>
-    </FocusRing>
-  );
+	const renderedItem = (
+		<FocusRing focusRingClass={styles['has-focus']}>
+			<Component
+				{...rest}
+				disabled={disabled}
+				aria-disabled={disabled ? disabled : undefined}
+				className={cx(
+					styles['Menu-item'],
+					className,
+					isHighlighted && styles['is-highlighted'],
+					nested && styles['Menu-item--nested'],
+					groupHeader && styles['Menu-item--header'],
+				)}
+				data-test-id={testId}
+				role={role}
+				onKeyDown={onKeyDown}
+			>
+				{asChild ? (
+					children
+				) : (
+					<>
+						{icon && <span className={styles['Menu-item-icon']}>{renderIcon}</span>}
+						{children}
+					</>
+				)}
+			</Component>
+		</FocusRing>
+	);
 
-  if (tooltip) {
-    return (
-      <Tooltip
-        content={tooltip}
-        rootElementStyle={{ display: 'block' }}
-        allowBoundaryElementOverflow
-        placement={tooltipPlacement ? tooltipPlacement : 'bottom'}
-        {...(tooltipOptions || {})}
-      >
-        {renderedItem}
-      </Tooltip>
-    );
-  }
+	if (tooltip) {
+		return (
+			<Tooltip
+				content={tooltip}
+				rootElementStyle={{ display: 'block' }}
+				allowBoundaryElementOverflow
+				placement={tooltipPlacement ? tooltipPlacement : 'bottom'}
+				{...(tooltipOptions || {})}
+			>
+				{renderedItem}
+			</Tooltip>
+		);
+	}
 
-  return renderedItem;
+	return renderedItem;
 };
 
 export { MenuItem };

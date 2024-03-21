@@ -1,52 +1,52 @@
 {
-  "name": "@launchpad-ui/tab-list",
-  "version": "0.5.11",
-  "status": "beta",
-  "publishConfig": {
-    "access": "public"
-  },
-  "description": "An element that navigates between related sections of content on the same page.",
-  "files": [
-    "dist"
-  ],
-  "main": "dist/index.js",
-  "module": "dist/index.es.js",
-  "types": "dist/index.d.ts",
-  "sideEffects": [
-    "**/*.css"
-  ],
-  "exports": {
-    ".": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/index.es.js",
-      "require": "./dist/index.js"
-    },
-    "./package.json": "./package.json",
-    "./style.css": "./dist/style.css"
-  },
-  "source": "src/index.ts",
-  "scripts": {
-    "build": "vite build -c ../../vite.config.mts && tsc --project tsconfig.build.json",
-    "clean": "rm -rf dist",
-    "lint": "eslint '**/*.{ts,tsx,js}' && stylelint '**/*.css' --ignore-path ../../.stylelintignore",
-    "test": "vitest run --coverage"
-  },
-  "dependencies": {
-    "@react-aria/tabs": "3.8.3",
-    "@react-stately/tabs": "3.6.3",
-    "@react-types/shared": "3.22.0",
-    "@react-types/tabs": "3.3.4",
-    "@launchpad-ui/tokens": "workspace:~",
-    "classix": "2.1.17"
-  },
-  "peerDependencies": {
-    "@react-stately/collections": "3.10.4",
-    "react": "18.2.0",
-    "react-dom": "18.2.0"
-  },
-  "devDependencies": {
-    "@react-stately/collections": "3.10.4",
-    "react": "18.2.0",
-    "react-dom": "18.2.0"
-  }
+	"name": "@launchpad-ui/tab-list",
+	"version": "0.5.15",
+	"status": "beta",
+	"publishConfig": {
+		"access": "public"
+	},
+	"description": "An element that navigates between related sections of content on the same page.",
+	"files": [
+		"dist"
+	],
+	"main": "dist/index.js",
+	"module": "dist/index.es.js",
+	"types": "dist/index.d.ts",
+	"sideEffects": [
+		"**/*.css"
+	],
+	"exports": {
+		".": {
+			"types": "./dist/index.d.ts",
+			"import": "./dist/index.es.js",
+			"require": "./dist/index.js"
+		},
+		"./package.json": "./package.json",
+		"./style.css": "./dist/style.css"
+	},
+	"source": "src/index.ts",
+	"scripts": {
+		"build": "vite build -c ../../vite.config.mts && tsc --project tsconfig.build.json",
+		"clean": "rm -rf dist",
+		"lint": "stylelint '**/*.css' --ignore-path ../../.stylelintignore",
+		"test": "vitest run --coverage"
+	},
+	"dependencies": {
+		"@react-aria/tabs": "3.8.5",
+		"@react-stately/tabs": "3.6.4",
+		"@react-types/shared": "3.22.1",
+		"@react-types/tabs": "3.3.5",
+		"@launchpad-ui/tokens": "workspace:~",
+		"classix": "2.1.17"
+	},
+	"peerDependencies": {
+		"@react-stately/collections": "3.10.5",
+		"react": "18.2.0",
+		"react-dom": "18.2.0"
+	},
+	"devDependencies": {
+		"@react-stately/collections": "3.10.5",
+		"react": "18.2.0",
+		"react-dom": "18.2.0"
+	}
 }

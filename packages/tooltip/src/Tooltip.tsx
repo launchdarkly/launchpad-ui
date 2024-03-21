@@ -8,37 +8,37 @@ import { forwardRef } from 'react';
 import styles from './styles/Tooltip.module.css';
 
 type TooltipProps = Omit<PopoverProps, 'children'> & {
-  className?: string;
-  children?: ReactNode;
+	className?: string;
+	children?: ReactNode;
 };
 
 const TooltipBase = ({
-  className,
-  children,
-  targetClassName,
-  hoverCloseDelay = 0,
-  'data-test-id': testId = 'tooltip',
-  popoverContentClassName,
-  ...props
+	className,
+	children,
+	targetClassName,
+	hoverCloseDelay = 0,
+	'data-test-id': testId = 'tooltip',
+	popoverContentClassName,
+	...props
 }: TooltipProps) => {
-  return (
-    <Popover
-      enforceFocus={false}
-      interactionKind="hover-or-focus"
-      hoverCloseDelay={hoverCloseDelay}
-      popoverClassName={cx(styles.Tooltip, className)}
-      popoverContentClassName={cx(popoverContentClassName, styles['Tooltip-popover-content'])}
-      targetClassName={targetClassName}
-      data-test-id={testId}
-      {...props}
-    >
-      {children}
-    </Popover>
-  );
+	return (
+		<Popover
+			enforceFocus={false}
+			interactionKind="hover-or-focus"
+			hoverCloseDelay={hoverCloseDelay}
+			popoverClassName={cx(styles.Tooltip, className)}
+			popoverContentClassName={cx(popoverContentClassName, styles['Tooltip-popover-content'])}
+			targetClassName={targetClassName}
+			data-test-id={testId}
+			{...props}
+		>
+			{children}
+		</Popover>
+	);
 };
 
 const Tooltip = forwardRef<Element, TooltipProps>((props, ref) => (
-  <TooltipBase {...props} targetElementRef={ref} />
+	<TooltipBase {...props} targetElementRef={ref} />
 ));
 
 Tooltip.displayName = 'Tooltip';

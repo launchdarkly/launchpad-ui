@@ -10,7 +10,7 @@ import styles from './styles/Text.module.css';
 const text = cva(styles.text);
 
 const _Text = ({ className, ...props }: TextProps, ref: ForwardedRef<HTMLElement>) => {
-  return <AriaText {...props} ref={ref} className={text({ className })} />;
+	return <AriaText {...props} ref={ref} className={text({ className })} />;
 };
 
 const Text = forwardRef(_Text);

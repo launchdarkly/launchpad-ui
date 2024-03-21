@@ -1,45 +1,45 @@
 {
-  "name": "@launchpad-ui/tokens",
-  "version": "0.9.4",
-  "status": "beta",
-  "publishConfig": {
-    "access": "public"
-  },
-  "description": "LaunchPad design tokens delivered as CSS custom properties, CommonJS modules, and ES modules.",
-  "files": [
-    "dist"
-  ],
-  "type": "module",
-  "style": "dist/index.css",
-  "main": "dist/index.js",
-  "module": "dist/index.es.js",
-  "types": "dist/index.d.ts",
-  "sideEffects": [
-    "**/*.css"
-  ],
-  "exports": {
-    ".": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/index.es.js",
-      "require": "./dist/index.js"
-    },
-    "./package.json": "./package.json",
-    "./themes.css": "./dist/themes.css",
-    "./index.css": "./dist/index.css",
-    "./media-queries.css": "./dist/media-queries.css",
-    "./dist/contract.json": "./dist/contract.json"
-  },
-  "scripts": {
-    "build": "node --loader ts-node/esm ./build.ts",
-    "clean": "rm -rf dist",
-    "lint": "eslint '**/*.{ts,tsx,js}'",
-    "test": "exit 0"
-  },
-  "devDependencies": {
-    "json-to-ts": "^1.7.0",
-    "style-dictionary": "3.8.0",
-    "style-dictionary-utils": "^2.0.1",
-    "ts-node": "^11.0.0-beta.1",
-    "yaml": "^2.3.1"
-  }
+	"name": "@launchpad-ui/tokens",
+	"version": "0.9.7",
+	"status": "beta",
+	"publishConfig": {
+		"access": "public"
+	},
+	"description": "LaunchPad design tokens delivered as CSS custom properties, CommonJS modules, and ES modules.",
+	"files": [
+		"dist"
+	],
+	"type": "module",
+	"style": "dist/index.css",
+	"main": "dist/index.js",
+	"module": "dist/index.es.js",
+	"types": "dist/index.d.ts",
+	"sideEffects": [
+		"**/*.css"
+	],
+	"exports": {
+		".": {
+			"types": "./dist/index.d.ts",
+			"import": "./dist/index.es.js",
+			"require": "./dist/index.js"
+		},
+		"./package.json": "./package.json",
+		"./themes.css": "./dist/themes.css",
+		"./index.css": "./dist/index.css",
+		"./media-queries.css": "./dist/media-queries.css",
+		"./dist/contract.json": "./dist/contract.json"
+	},
+	"scripts": {
+		"build": "node --loader ts-node/esm ./build.ts",
+		"clean": "rm -rf dist",
+		"lint": "exit 0",
+		"test": "exit 0"
+	},
+	"devDependencies": {
+		"json-to-ts": "^1.7.0",
+		"style-dictionary": "3.8.0",
+		"style-dictionary-utils": "^2.0.1",
+		"ts-node": "^11.0.0-beta.1",
+		"yaml": "^2.4.0"
+	}
 }

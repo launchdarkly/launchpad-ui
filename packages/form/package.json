@@ -1,54 +1,54 @@
 {
-  "name": "@launchpad-ui/form",
-  "version": "0.11.1",
-  "status": "beta",
-  "publishConfig": {
-    "access": "public"
-  },
-  "description": "Elements for composing forms, such as input fields, labels, radio buttons, etc.",
-  "files": [
-    "dist"
-  ],
-  "main": "dist/index.js",
-  "module": "dist/index.es.js",
-  "types": "dist/index.d.ts",
-  "sideEffects": [
-    "**/*.css"
-  ],
-  "exports": {
-    ".": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/index.es.js",
-      "require": "./dist/index.js"
-    },
-    "./package.json": "./package.json",
-    "./style.css": "./dist/style.css"
-  },
-  "source": "src/index.ts",
-  "scripts": {
-    "build": "vite build -c ../../vite.config.mts && tsc --project tsconfig.build.json",
-    "clean": "rm -rf dist",
-    "lint": "eslint '**/*.{ts,tsx,js}' && stylelint '**/*.css' --ignore-path ../../.stylelintignore",
-    "test": "vitest run --coverage"
-  },
-  "dependencies": {
-    "@launchpad-ui/button": "workspace:~",
-    "@launchpad-ui/icons": "workspace:~",
-    "@launchpad-ui/tokens": "workspace:~",
-    "@launchpad-ui/tooltip": "workspace:~",
-    "@react-aria/button": "3.9.1",
-    "@react-aria/i18n": "3.10.0",
-    "@react-aria/numberfield": "3.10.2",
-    "@react-aria/visually-hidden": "3.8.8",
-    "@react-stately/numberfield": "3.8.0",
-    "classix": "2.1.17"
-  },
-  "peerDependencies": {
-    "react": "18.2.0",
-    "react-dom": "18.2.0"
-  },
-  "devDependencies": {
-    "react": "18.2.0",
-    "react-dom": "18.2.0"
-  }
+	"name": "@launchpad-ui/form",
+	"version": "0.11.5",
+	"status": "beta",
+	"publishConfig": {
+		"access": "public"
+	},
+	"description": "Elements for composing forms, such as input fields, labels, radio buttons, etc.",
+	"files": [
+		"dist"
+	],
+	"main": "dist/index.js",
+	"module": "dist/index.es.js",
+	"types": "dist/index.d.ts",
+	"sideEffects": [
+		"**/*.css"
+	],
+	"exports": {
+		".": {
+			"types": "./dist/index.d.ts",
+			"import": "./dist/index.es.js",
+			"require": "./dist/index.js"
+		},
+		"./package.json": "./package.json",
+		"./style.css": "./dist/style.css"
+	},
+	"source": "src/index.ts",
+	"scripts": {
+		"build": "vite build -c ../../vite.config.mts && tsc --project tsconfig.build.json",
+		"clean": "rm -rf dist",
+		"lint": "stylelint '**/*.css' --ignore-path ../../.stylelintignore",
+		"test": "vitest run --coverage"
+	},
+	"dependencies": {
+		"@launchpad-ui/button": "workspace:~",
+		"@launchpad-ui/icons": "workspace:~",
+		"@launchpad-ui/tokens": "workspace:~",
+		"@launchpad-ui/tooltip": "workspace:~",
+		"@react-aria/button": "3.9.3",
+		"@react-aria/i18n": "3.10.2",
+		"@react-aria/numberfield": "3.11.1",
+		"@react-aria/visually-hidden": "3.8.10",
+		"@react-stately/numberfield": "3.9.1",
+		"classix": "2.1.17"
+	},
+	"peerDependencies": {
+		"react": "18.2.0",
+		"react-dom": "18.2.0"
+	},
+	"devDependencies": {
+		"react": "18.2.0",
+		"react-dom": "18.2.0"
+	}
 }

@@ -5,22 +5,22 @@ import { cx } from 'classix';
 import styles from './styles/Form.module.css';
 
 type FormHintProps = ComponentProps<'div'> & {
-  'data-test-id'?: string;
+	'data-test-id'?: string;
 };
 
 const FormHint = ({
-  className,
-  children,
-  'data-test-id': testId = 'form-hint',
-  ...rest
+	className,
+	children,
+	'data-test-id': testId = 'form-hint',
+	...rest
 }: FormHintProps) => {
-  const classes = cx(styles.hint, className);
+	const classes = cx(styles.hint, className);
 
-  return (
-    <div {...rest} data-test-id={testId} className={classes}>
-      {children}
-    </div>
-  );
+	return (
+		<div {...rest} data-test-id={testId} className={classes}>
+			{children}
+		</div>
+	);
 };
 
 export { FormHint };

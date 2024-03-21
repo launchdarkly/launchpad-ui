@@ -10,15 +10,15 @@ import styles from './styles/CheckboxGroup.module.css';
 const group = cva(styles.group);
 
 const _CheckboxGroup = (props: CheckboxGroupProps, ref: ForwardedRef<HTMLDivElement>) => {
-  return (
-    <AriaCheckboxGroup
-      {...props}
-      ref={ref}
-      className={composeRenderProps(props.className, (className, renderProps) =>
-        group({ ...renderProps, className })
-      )}
-    />
-  );
+	return (
+		<AriaCheckboxGroup
+			{...props}
+			ref={ref}
+			className={composeRenderProps(props.className, (className, renderProps) =>
+				group({ ...renderProps, className }),
+			)}
+		/>
+	);
 };
 
 /**

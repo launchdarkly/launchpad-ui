@@ -21,7 +21,7 @@
     padding-inline: var(--lp-size-2);
   }
 
-  &:has([data-selection-mode]) {
+  &:has([data-selection-mode][role='menuitem']) {
     & header {
       padding-left: var(--lp-spacing-800);
     }
@@ -66,6 +66,12 @@
       'label'
       'desc';
 
+    &[data-has-submenu] {
+      grid-template-areas:
+        'label submenu'
+        'desc submenu';
+    }
+
     &[data-selection-mode] {
       grid-template-areas:
         'check label'
@@ -108,4 +114,28 @@
 .check {
   grid-area: check;
   width: var(--lp-size-16);
+}
+
+.submenu {
+  grid-area: submenu;
+  margin-left: auto;
+}
+
+.default {
+}
+
+.destructive {
+  color: var(--lp-color-text-interactive-destructive);
+
+  &[data-hovered] {
+    background-color: var(--lp-color-bg-interactive-destructive-hover);
+  }
+
+  &[data-pressed] {
+    background-color: var(--lp-color-bg-interactive-destructive-active);
+  }
+
+  &[data-focus-visible] {
+    background-color: var(--lp-color-bg-interactive-destructive-hover);
+  }
 }

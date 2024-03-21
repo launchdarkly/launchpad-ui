@@ -1,24 +1,26 @@
 {
-  "extends": [
-    "config:base",
-    ":separateMultipleMajorReleases",
-    ":maintainLockFilesMonthly",
-    ":widenPeerDependencies",
-    "schedule:weekly",
-    "group:allNonMajor"
-  ],
-  "packageRules": [
-    {
-      "matchUpdateTypes": ["patch"],
-      "enabled": false,
-      "excludePackagePatterns": [
-        "^@react-aria",
-        "^@react-stately",
-        "^@react-types",
-        "^react-aria-components"
-      ]
-    }
-  ],
-  "rangeStrategy": "bump",
-  "ignoreDeps": ["react-router-dom", "style-dictionary"]
+	"extends": [
+		"config:base",
+		":separateMultipleMajorReleases",
+		":maintainLockFilesMonthly",
+		":widenPeerDependencies",
+		"schedule:weekly",
+		"group:allNonMajor"
+	],
+	"packageRules": [
+		{
+			"matchUpdateTypes": ["patch"],
+			"enabled": false,
+			"excludePackagePatterns": [
+				"^@react-aria",
+				"^@react-stately",
+				"^@react-types",
+				"^react-aria-components",
+				"^react-stately",
+				"^react-aria"
+			]
+		}
+	],
+	"rangeStrategy": "bump",
+	"ignoreDeps": ["react-router-dom", "style-dictionary", "@biomejs/biome"]
 }

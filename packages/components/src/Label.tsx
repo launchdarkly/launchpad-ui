@@ -10,7 +10,7 @@ import styles from './styles/Label.module.css';
 const label = cva(styles.label);
 
 const _Label = ({ className, ...props }: LabelProps, ref: ForwardedRef<HTMLLabelElement>) => {
-  return <AriaLabel {...props} ref={ref} className={label({ className })} />;
+	return <AriaLabel {...props} ref={ref} className={label({ className })} />;
 };
 
 const Label = forwardRef(_Label);

@@ -10,15 +10,15 @@ import styles from './styles/FieldError.module.css';
 const error = cva(styles.error);
 
 const _FieldError = (props: FieldErrorProps, ref: ForwardedRef<HTMLElement>) => {
-  return (
-    <AriaFieldError
-      {...props}
-      ref={ref}
-      className={composeRenderProps(props.className, (className, renderProps) =>
-        error({ ...renderProps, className })
-      )}
-    />
-  );
+	return (
+		<AriaFieldError
+			{...props}
+			ref={ref}
+			className={composeRenderProps(props.className, (className, renderProps) =>
+				error({ ...renderProps, className }),
+			)}
+		/>
+	);
 };
 
 /**

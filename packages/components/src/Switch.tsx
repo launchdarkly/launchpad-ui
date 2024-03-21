@@ -9,31 +9,31 @@ import styles from './styles/Switch.module.css';
 
 const _switch = cva(styles.switch);
 
-type SwitchProps = Omit<AriaSwitchProps, 'children'> & {
-  children?: ReactNode;
-};
+interface SwitchProps extends Omit<AriaSwitchProps, 'children'> {
+	children?: ReactNode;
+}
 
-const _Switch = ({ children, ...props }: SwitchProps, ref: ForwardedRef<HTMLLabelElement>) => {
-  return (
-    <AriaSwitch
-      {...props}
-      ref={ref}
-      className={composeRenderProps(props.className, (className, renderProps) =>
-        _switch({ ...renderProps, className })
-      )}
-    >
-      {({ isSelected }) => (
-        <>
-          <div className={styles.track}>
-            {isSelected && <div className={styles.label}>On</div>}
-            <span className={styles.handle} />
-            {!isSelected && <div className={styles.label}>Off</div>}
-          </div>
-          {children}
-        </>
-      )}
-    </AriaSwitch>
-  );
+const _Switch = (props: SwitchProps, ref: ForwardedRef<HTMLLabelElement>) => {
+	return (
+		<AriaSwitch
+			{...props}
+			ref={ref}
+			className={composeRenderProps(props.className, (className, renderProps) =>
+				_switch({ ...renderProps, className }),
+			)}
+		>
+			{composeRenderProps(props.children, (children, { isSelected }) => (
+				<>
+					<div className={styles.track}>
+						{isSelected && <div className={styles.label}>On</div>}
+						<span className={styles.handle} />
+						{!isSelected && <div className={styles.label}>Off</div>}
+					</div>
+					{children}
+				</>
+			))}
+		</AriaSwitch>
+	);
 };
 
 /**
