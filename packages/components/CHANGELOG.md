@@ -1,5 +1,13 @@
 # @launchpad-ui/components
 
+## 0.1.15
+
+### Patch Changes
+
+- [#1209](https://github.com/launchdarkly/launchpad-ui/pull/1209) [`f261f6a`](https://github.com/launchdarkly/launchpad-ui/commit/f261f6aae05f47513584dfccf2578c45f4c13212) Thanks [@Niznikr](https://github.com/Niznikr)! - Set `Group` context within `TextField`
+
+- [#1207](https://github.com/launchdarkly/launchpad-ui/pull/1207) [`fae1ae6`](https://github.com/launchdarkly/launchpad-ui/commit/fae1ae6d9648d72256dbcef04bc4e996b0946861) Thanks [@Niznikr](https://github.com/Niznikr)! - Ensure render props can be used as children
+
 ## 0.1.14
 
 ### Patch Changes
