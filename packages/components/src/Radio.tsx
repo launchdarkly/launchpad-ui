@@ -11,7 +11,7 @@ import styles from './styles/Radio.module.css';
 const radio = cva(styles.radio);
 const circle = cva(styles.circle);
 
-const _Radio = ({ children, ...props }: RadioProps, ref: ForwardedRef<HTMLLabelElement>) => {
+const _Radio = (props: RadioProps, ref: ForwardedRef<HTMLLabelElement>) => {
 	return (
 		<AriaRadio
 			{...props}
@@ -20,14 +20,14 @@ const _Radio = ({ children, ...props }: RadioProps, ref: ForwardedRef<HTMLLabelE
 				radio({ ...renderProps, className }),
 			)}
 		>
-			{({ isSelected }) => (
+			{composeRenderProps(props.children, (children, { isSelected }) => (
 				<>
 					<div className={circle()}>
 						{isSelected ? <Icon name="circle" className={styles.icon} /> : null}
 					</div>
 					{children}
 				</>
-			)}
+			))}
 		</AriaRadio>
 	);
 };
