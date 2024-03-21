@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest';
 
 import { render, screen } from '../../../test/utils';
-import { Input, Label, TextArea, TextField } from '../src';
+import { Group, IconButton, Input, Label, TextArea, TextField } from '../src';
 
 describe('TextField', () => {
 	it('renders an input', () => {
@@ -22,5 +22,18 @@ describe('TextField', () => {
 			</TextField>,
 		);
 		expect(screen.getByRole('textbox')).toBeVisible();
+	});
+
+	it('sets context for groups', () => {
+		render(
+			<TextField isInvalid>
+				<Label>Label</Label>
+				<Group>
+					<Input />
+					<IconButton icon="add" aria-label="add" size="small" />
+				</Group>
+			</TextField>,
+		);
+		expect(screen.getByRole('group')).toHaveAttribute('data-invalid', 'true');
 	});
 });
