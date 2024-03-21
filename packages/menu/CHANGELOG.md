@@ -1,5 +1,16 @@
 # @launchpad-ui/menu
 
+## 0.13.6
+
+### Patch Changes
+
+- Updated dependencies [[`fdc91bb`](https://github.com/launchdarkly/launchpad-ui/commit/fdc91bb7630b1a84279ee7b6013d694fafb9fd39)]:
+  - @launchpad-ui/tokens@0.9.8
+  - @launchpad-ui/form@0.11.6
+  - @launchpad-ui/icons@0.16.5
+  - @launchpad-ui/popover@0.11.17
+  - @launchpad-ui/tooltip@0.9.6
+
 ## 0.13.5
 
 ### Patch Changes
@@ -531,7 +542,7 @@
   root.render(
     <IconContext.Provider value={{ path: icons }}>
       <App />
-    </IconContext.Provider>
+    </IconContext.Provider>,
   );
   ```
 
