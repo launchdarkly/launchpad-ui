@@ -3,7 +3,12 @@ import type { TextFieldProps } from 'react-aria-components';
 
 import { cva } from 'class-variance-authority';
 import { forwardRef } from 'react';
-import { TextField as AriaTextField, composeRenderProps } from 'react-aria-components';
+import {
+	GroupContext,
+	Provider,
+	TextField as AriaTextField,
+	composeRenderProps,
+} from 'react-aria-components';
 
 import styles from './styles/TextField.module.css';
 
@@ -17,7 +22,11 @@ const _TextField = (props: TextFieldProps, ref: ForwardedRef<HTMLDivElement>) =>
 			className={composeRenderProps(props.className, (className, renderProps) =>
 				field({ ...renderProps, className }),
 			)}
-		/>
+		>
+			{composeRenderProps(props.children, (children, { isInvalid, isDisabled }) => (
+				<Provider values={[[GroupContext, { isInvalid, isDisabled }]]}>{children}</Provider>
+			))}
+		</AriaTextField>
 	);
 };
 
