@@ -70,10 +70,10 @@ const _TagList = <T extends object>(props: TagListProps<T>, ref: ForwardedRef<HT
 const TagList = (forwardRef as forwardRefType)(_TagList);
 
 const _Tag = (
-	{ size = 'medium', variant = 'default', children, ...props }: TagProps,
+	{ size = 'medium', variant = 'default', ...props }: TagProps,
 	ref: ForwardedRef<HTMLDivElement>,
 ) => {
-	const textValue = typeof children === 'string' ? children : undefined;
+	const textValue = typeof props.children === 'string' ? props.children : undefined;
 
 	return (
 		<AriaTag
@@ -84,7 +84,7 @@ const _Tag = (
 				tag({ ...renderProps, size, variant, className }),
 			)}
 		>
-			{({ allowsRemoving }) => (
+			{composeRenderProps(props.children, (children, { allowsRemoving }) => (
 				<>
 					{children}
 					{allowsRemoving && (
@@ -97,7 +97,7 @@ const _Tag = (
 						/>
 					)}
 				</>
-			)}
+			))}
 		</AriaTag>
 	);
 };

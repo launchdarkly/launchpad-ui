@@ -11,7 +11,7 @@ import styles from './styles/Checkbox.module.css';
 const checkbox = cva(styles.checkbox);
 const box = cva(styles.box);
 
-const _Checkbox = ({ children, ...props }: CheckboxProps, ref: ForwardedRef<HTMLLabelElement>) => {
+const _Checkbox = (props: CheckboxProps, ref: ForwardedRef<HTMLLabelElement>) => {
 	return (
 		<AriaCheckbox
 			{...props}
@@ -20,7 +20,7 @@ const _Checkbox = ({ children, ...props }: CheckboxProps, ref: ForwardedRef<HTML
 				checkbox({ ...renderProps, className }),
 			)}
 		>
-			{({ isSelected, isIndeterminate }) => (
+			{composeRenderProps(props.children, (children, { isSelected, isIndeterminate }) => (
 				<>
 					<div className={box()}>
 						{isIndeterminate ? (
@@ -31,7 +31,7 @@ const _Checkbox = ({ children, ...props }: CheckboxProps, ref: ForwardedRef<HTML
 					</div>
 					{children}
 				</>
-			)}
+			))}
 		</AriaCheckbox>
 	);
 };

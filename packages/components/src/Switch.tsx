@@ -13,7 +13,7 @@ interface SwitchProps extends Omit<AriaSwitchProps, 'children'> {
 	children?: ReactNode;
 }
 
-const _Switch = ({ children, ...props }: SwitchProps, ref: ForwardedRef<HTMLLabelElement>) => {
+const _Switch = (props: SwitchProps, ref: ForwardedRef<HTMLLabelElement>) => {
 	return (
 		<AriaSwitch
 			{...props}
@@ -22,7 +22,7 @@ const _Switch = ({ children, ...props }: SwitchProps, ref: ForwardedRef<HTMLLabe
 				_switch({ ...renderProps, className }),
 			)}
 		>
-			{({ isSelected }) => (
+			{composeRenderProps(props.children, (children, { isSelected }) => (
 				<>
 					<div className={styles.track}>
 						{isSelected && <div className={styles.label}>On</div>}
@@ -31,7 +31,7 @@ const _Switch = ({ children, ...props }: SwitchProps, ref: ForwardedRef<HTMLLabe
 					</div>
 					{children}
 				</>
-			)}
+			))}
 		</AriaSwitch>
 	);
 };
