@@ -176,29 +176,29 @@ color:
       value: '#FFFFFF'
   black:
     0:
-      value: '#0000000d'
+      value: '#0B0B0B0d'
     50:
-      value: '#0000001a'
+      value: '#0B0B0B1a'
     100:
-      value: '#00000026'
+      value: '#0B0B0B26'
     200:
-      value: '#00000033'
+      value: '#0B0B0B33'
     300:
-      value: '#0000004d'
+      value: '#0B0B0B4d'
     400:
-      value: '#00000066'
+      value: '#0B0B0B66'
     500:
-      value: '#00000080'
+      value: '#0B0B0B80'
     600:
-      value: '#00000099'
+      value: '#0B0B0B99'
     700:
-      value: '#000000b3'
+      value: '#0B0B0Bb3'
     800:
-      value: '#000000cc'
+      value: '#0B0B0Bcc'
     900:
-      value: '#000000e6'
+      value: '#0B0B0Be6'
     950:
-      value: '#000000'
+      value: '#0B0B0B'
   system:
     green:
       0:
