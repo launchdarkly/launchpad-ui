@@ -1,10 +1,10 @@
-.input {
+.base {
   font: var(--lp-body-2-regular);
   color: var(--lp-color-text-ui-primary-base);
   padding: var(--lp-spacing-200) var(--lp-spacing-300);
   border-radius: var(--lp-border-radius-medium);
-  border: var(--lp-border-width-200) solid var(--lp-color-border-field-base);
-  background-color: var(--lp-color-bg-field-base);
+  border-width: var(--lp-border-width-200);
+  border-style: solid;
   flex: 1;
   min-width: 0;
 
@@ -26,5 +26,23 @@
 
   &::placeholder {
     color: var(--lp-color-text-field-placeholder);
+  }
+}
+
+.default {
+  border-color: var(--lp-color-border-field-base);
+  background-color: var(--lp-color-bg-field-base);
+}
+
+.subtle {
+  background-color: inherit;
+
+  &:not([data-invalid]) {
+    border-color: transparent;
+  }
+
+  &[data-hovered]:not([data-focused]) {
+    background-color: var(--lp-color-bg-interactive-secondary-hover);
+    cursor: default;
   }
 }

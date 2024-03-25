@@ -82,3 +82,15 @@ export const MultiLine: Story = {
 		defaultValue: 'Value',
 	},
 };
+
+export const Subtle: Story = {
+	args: {
+		children: (
+			<>
+				<Label>Label</Label>
+				<Input placeholder="Enter a value" variant="subtle" />
+				<Text slot="description">Description</Text>
+			</>
+		),
+	},
+};
