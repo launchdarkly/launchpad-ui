@@ -6,17 +6,13 @@
 		"access": "public"
 	},
 	"description": "LaunchPad design tokens delivered as CSS custom properties, CommonJS modules, and ES modules.",
-	"files": [
-		"dist"
-	],
+	"files": ["dist"],
 	"type": "module",
 	"style": "dist/index.css",
 	"main": "dist/index.js",
 	"module": "dist/index.es.js",
 	"types": "dist/index.d.ts",
-	"sideEffects": [
-		"**/*.css"
-	],
+	"sideEffects": ["**/*.css"],
 	"exports": {
 		".": {
 			"types": "./dist/index.d.ts",

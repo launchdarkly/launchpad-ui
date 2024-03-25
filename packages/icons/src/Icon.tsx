@@ -21,7 +21,6 @@ const Icon = ({
 	subtle,
 	className,
 	size,
-	// biome-ignore lint/correctness/noUnusedVariables: <explanation>
 	children,
 	'data-test-id': testId = 'icon',
 	'aria-label': ariaLabel,

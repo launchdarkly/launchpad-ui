@@ -4,9 +4,9 @@ import type { TextFieldProps } from 'react-aria-components';
 import { cva } from 'class-variance-authority';
 import { forwardRef } from 'react';
 import {
+	TextField as AriaTextField,
 	GroupContext,
 	Provider,
-	TextField as AriaTextField,
 	composeRenderProps,
 } from 'react-aria-components';
 
