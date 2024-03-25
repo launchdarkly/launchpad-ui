@@ -41,7 +41,7 @@
     border-color: transparent;
   }
 
-  &[data-hovered]:not([data-focused]) {
+  &[data-hovered]:not([data-focused]):not([data-focus-within]) {
     background-color: var(--lp-color-bg-interactive-secondary-hover);
     cursor: default;
   }

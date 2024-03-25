@@ -1,21 +1,28 @@
 import type { ForwardedRef } from 'react';
-import type { GroupProps } from 'react-aria-components';
+import type { GroupProps as AriaGroupProps } from 'react-aria-components';
+import type { InputVariants } from './Input';
 
-import { cva } from 'class-variance-authority';
+import { cva, cx } from 'class-variance-authority';
 import { forwardRef } from 'react';
 import { Group as AriaGroup, composeRenderProps } from 'react-aria-components';
 
+import { input } from './Input';
 import styles from './styles/Group.module.css';
 
 const group = cva(styles.group);
 
-const _Group = (props: GroupProps, ref: ForwardedRef<HTMLDivElement>) => {
+interface GroupProps extends AriaGroupProps, InputVariants {}
+
+const _Group = (
+	{ variant = 'default', ...props }: GroupProps,
+	ref: ForwardedRef<HTMLDivElement>,
+) => {
 	return (
 		<AriaGroup
 			{...props}
 			ref={ref}
 			className={composeRenderProps(props.className, (className, renderProps) =>
-				group({ ...renderProps, className }),
+				cx(input({ variant }), group({ ...renderProps, className })),
 			)}
 		/>
 	);

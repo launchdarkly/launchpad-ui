@@ -1,5 +1,4 @@
 .group {
-  composes: base from './Input.module.css';
   display: flex;
   align-items: center;
   gap: var(--lp-spacing-300);
@@ -17,5 +16,7 @@
     outline: none;
     border: none;
     border-radius: unset;
+    background-color: inherit;
+    cursor: inherit;
   }
 }
