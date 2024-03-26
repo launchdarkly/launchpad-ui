@@ -23,7 +23,7 @@ const _Tooltip = (props: TooltipProps, ref: ForwardedRef<HTMLDivElement>) => {
 	return (
 		<AriaTooltip
 			{...props}
-			offset={0}
+			offset={4}
 			crossOffset={0}
 			ref={ref}
 			className={composeRenderProps(props.className, (className, renderProps) =>
@@ -41,7 +41,7 @@ const _Tooltip = (props: TooltipProps, ref: ForwardedRef<HTMLDivElement>) => {
 const Tooltip = forwardRef(_Tooltip);
 
 const TooltipTrigger = (props: TooltipTriggerProps) => {
-	return <AriaTooltipTrigger {...props} delay={500} closeDelay={0} />;
+	return <AriaTooltipTrigger {...props} delay={500} closeDelay={250} />;
 };
 
 export { Tooltip, TooltipTrigger };
