@@ -22,5 +22,10 @@
 		}
 	],
 	"rangeStrategy": "bump",
-	"ignoreDeps": ["react-router-dom", "style-dictionary", "@biomejs/biome"]
+	"ignoreDeps": [
+		"react-router-dom",
+		"style-dictionary",
+		"@biomejs/biome",
+		"storybook-addon-pseudo-states"
+	]
 }
