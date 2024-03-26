@@ -53,7 +53,7 @@ const Chip = ({
 						onKeyDown,
 						tabIndex: 0,
 						role: 'button',
-				  }
+					}
 				: {})}
 			{...rest}
 		>

@@ -14,7 +14,6 @@ type FormGroupProps = ComponentProps<'fieldset'> & {
 const FormGroup = (props: FormGroupProps) => {
 	const {
 		className,
-		// biome-ignore lint/correctness/noUnusedVariables: <explanation>
 		name,
 		ignoreValidation,
 		isInvalid,

@@ -17,6 +17,7 @@
   padding: var(--lp-spacing-100) var(--lp-spacing-200);
   border-radius: var(--lp-border-radius-medium);
   outline: none;
+  cursor: default;
 
   &[data-focus-visible] {
     outline: 2px solid var(--lp-color-shadow-interactive-focus);

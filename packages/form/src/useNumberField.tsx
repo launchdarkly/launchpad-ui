@@ -24,7 +24,6 @@ const defaultFormatOptions: Intl.NumberFormatOptions = {
 };
 
 const useNumberField = ({
-	// biome-ignore lint/correctness/noUnusedVariables: <explanation>
 	className,
 	'data-test-id': testId = 'input',
 	id,

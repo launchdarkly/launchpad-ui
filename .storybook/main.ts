@@ -54,7 +54,7 @@ const config: StorybookConfig = {
 				prop.parent
 					? !/launchpad-ui\/node_modules\/.pnpm\/(?!react-aria-components|react-aria|react-stately|@react-types|@react-aria|@react-stately|react-router-dom|class-variance-authority)/.test(
 							prop.parent.fileName,
-					  )
+						)
 					: true,
 		},
 	},

@@ -133,7 +133,7 @@ const Menu = <T extends number | string>(props: MenuProps<T>) => {
 											onKeyDown: () => undefined,
 											tabIndex: -1,
 											disabled: true,
-									  })
+										})
 									: cloneElement(child, {
 											className: cx(child.props.className, menuItemClassName),
 											item: child.props.item ?? items.length,
@@ -146,7 +146,7 @@ const Menu = <T extends number | string>(props: MenuProps<T>) => {
 													handleDown: handleArrowDown,
 													handleUp: handleArrowUp,
 												}),
-									  }),
+										}),
 							),
 							searchElement,
 						};
@@ -300,7 +300,7 @@ const ItemVirtualizer = <T extends number | string>(props: ItemVirtualizerProps<
 							? () => undefined
 							: chainEventHandlers(childProps.onClick, () => {
 									onSelect?.(childProps.item as T);
-							  }),
+								}),
 					} as MenuItemProps<T>;
 				default:
 					return {};
@@ -353,12 +353,11 @@ const ItemVirtualizer = <T extends number | string>(props: ItemVirtualizerProps<
 								handleFocusForward: () => focusMenuItem(0),
 							}),
 						ref: searchRef,
-				  })
+					})
 				: null,
 		[searchElement, lastVirtualItemIndex, focusMenuItem],
 	);
 
-	// biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
 	const renderItems = useMemo(
 		() =>
 			rowVirtualizer.virtualItems.map((virtualRow) => {

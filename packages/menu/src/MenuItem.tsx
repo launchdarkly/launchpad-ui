@@ -58,7 +58,6 @@ const MenuItem = <P, T extends ElementType = typeof defaultElement>({
 		icon,
 		nested,
 		groupHeader,
-		// biome-ignore lint/correctness/noUnusedVariables: <explanation>
 		item,
 		disabled,
 		className,

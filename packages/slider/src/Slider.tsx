@@ -33,7 +33,7 @@ const Slider = ({
 }: SliderProps) => {
 	const valueHandler =
 		(callback: (value: number) => void) => (event: SyntheticEvent<HTMLInputElement>) =>
-			callback(parseFloat(event.currentTarget.value));
+			callback(Number.parseFloat(event.currentTarget.value));
 
 	return (
 		<div

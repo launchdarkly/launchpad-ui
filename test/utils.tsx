@@ -14,6 +14,7 @@ const customRender = (ui: ReactElement, options = {}): ReturnType<typeof render>
 		...options,
 	});
 
+// biome-ignore lint/nursery/noReExportAll: <explanation>
 export * from '@testing-library/react';
 export { default as userEvent } from '@testing-library/user-event';
 // override render export
