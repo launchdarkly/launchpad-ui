@@ -5,6 +5,7 @@ import { describe, expect, it, vi } from 'vitest';
 
 import { render, screen, userEvent, waitFor } from '../../../test/utils';
 import { Navigation, NavigationItem } from '../src';
+// biome-ignore lint/nursery/noNamespaceImport: <explanation>
 import * as ctx from '../src/NavigationContext';
 
 globalThis.matchMedia = vi.fn().mockReturnValue({

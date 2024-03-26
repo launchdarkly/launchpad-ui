@@ -24,7 +24,8 @@
 			"recommended": true,
 			"correctness": {
 				"noUnusedVariables": "error",
-				"useHookAtTopLevel": "error"
+				"useHookAtTopLevel": "error",
+				"noUnusedImports": "error"
 			},
 			"performance": {
 				"noDelete": "off"
@@ -32,13 +33,13 @@
 			"style": {
 				"noDefaultExport": "error",
 				"noNamespace": "error",
-				"useFragmentSyntax": "error"
+				"useFragmentSyntax": "error",
+				"useNodejsImportProtocol": "off"
 			},
 			"nursery": {
-				"noUnusedImports": "error",
-				"useExportType": "error",
-				"useGroupedTypeImport": "error",
-				"useImportType": "error"
+				"noDuplicateJsonKeys": "error",
+				"noNamespaceImport": "error",
+				"noReExportAll": "error"
 			}
 		}
 	},

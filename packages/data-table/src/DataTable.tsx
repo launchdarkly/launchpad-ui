@@ -36,13 +36,13 @@ import { cx } from 'classix';
 import { forwardRef, useCallback, useMemo, useRef, useState } from 'react';
 
 import {
-	cell as tableCell,
 	header,
 	headerCell,
 	resizer,
 	row,
 	selectCell,
 	table,
+	cell as tableCell,
 } from './styles/DataTable.css';
 
 type DataTableProps<T extends object> = TableStateProps<T> &

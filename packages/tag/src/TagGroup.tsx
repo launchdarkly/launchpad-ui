@@ -80,7 +80,7 @@ const TagGroup = <T extends object>(props: TagGroupProps<T>) => {
 
 				const tags = [...currTagsRef.children];
 				const buttons = [...currContainerRef.querySelectorAll('button')];
-				let currY = -Infinity;
+				let currY = Number.NEGATIVE_INFINITY;
 				let rowCount = 0;
 				let index = 0;
 				const tagWidths = [];

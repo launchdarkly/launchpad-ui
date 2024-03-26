@@ -70,7 +70,7 @@ const TextField = forwardRef<HTMLInputElement, TextFieldProps>(
 					overrideWidth
 						? {
 								width: overrideWidth,
-						  }
+							}
 						: undefined
 				}
 				aria-describedby={rest['aria-describedby'] || createFieldErrorId(rest.id)}

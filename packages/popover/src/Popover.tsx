@@ -3,11 +3,11 @@ import type { ComputePositionConfig, Placement, Strategy } from '@floating-ui/do
 import type {
 	CSSProperties,
 	FocusEvent,
-	KeyboardEvent as ReactKeyboardEvent,
 	MouseEvent,
 	PointerEvent,
 	ReactElement,
 	ReactHTML,
+	KeyboardEvent as ReactKeyboardEvent,
 	ReactNode,
 	Ref,
 	RefObject,

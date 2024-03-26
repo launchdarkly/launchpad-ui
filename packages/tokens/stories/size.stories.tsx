@@ -13,7 +13,7 @@ const sizes: typeof Tokens.size = tokens.size;
 
 const valueInPx = (value: string) => {
 	const removeRemChars = value.slice(0, -3); // remove 'rem' from string
-	const stringToNumber = parseFloat(removeRemChars.toString());
+	const stringToNumber = Number.parseFloat(removeRemChars.toString());
 
 	return `(${stringToNumber * 16}px)`;
 };
