@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { Button, ButtonGroup } from '../src';
+import { Button, ButtonGroup, IconButton, Menu, MenuItem, MenuTrigger, Popover } from '../src';
 
 const meta: Meta<typeof ButtonGroup> = {
 	component: ButtonGroup,
@@ -36,4 +36,24 @@ export const Compact: Story = {
 
 export const Large: Story = {
 	args: { ...defaultArgs, spacing: 'large' },
+};
+
+export const SplitButton: Story = {
+	args: {
+		children: (
+			<>
+				<Button>Split button</Button>
+				<MenuTrigger>
+					<IconButton icon="chevron-down" aria-label="open" />
+					<Popover>
+						<Menu>
+							<MenuItem>Item one</MenuItem>
+							<MenuItem>Item two</MenuItem>
+						</Menu>
+					</Popover>
+				</MenuTrigger>
+			</>
+		),
+		spacing: 'compact',
+	},
 };

@@ -1,9 +1,10 @@
 import type { VariantProps } from 'class-variance-authority';
-import type { ComponentPropsWithRef, ForwardedRef } from 'react';
+import type { ForwardedRef } from 'react';
+import type { GroupProps } from 'react-aria-components';
 
 import { cva } from 'class-variance-authority';
 import { forwardRef } from 'react';
-import { ButtonContext } from 'react-aria-components';
+import { ButtonContext, Group, Provider, composeRenderProps } from 'react-aria-components';
 
 import styles from './styles/ButtonGroup.module.css';
 
@@ -20,18 +21,24 @@ const buttonGroup = cva(styles.base, {
 	},
 });
 
-interface ButtonGroupProps extends ComponentPropsWithRef<'div'>, VariantProps<typeof buttonGroup> {
-	isDisabled?: boolean;
-}
+interface ButtonGroupProps extends GroupProps, VariantProps<typeof buttonGroup> {}
 
 const _ButtonGroup = (
-	{ children, className, spacing = 'basic', isDisabled, ...props }: ButtonGroupProps,
+	{ spacing = 'basic', ...props }: ButtonGroupProps,
 	ref: ForwardedRef<HTMLDivElement>,
 ) => {
 	return (
-		<div {...props} ref={ref} className={buttonGroup({ spacing, className })}>
-			<ButtonContext.Provider value={{ isDisabled }}>{children}</ButtonContext.Provider>
-		</div>
+		<Group
+			{...props}
+			ref={ref}
+			className={composeRenderProps(props.className, (className, renderProps) =>
+				buttonGroup({ ...renderProps, spacing, className }),
+			)}
+		>
+			{composeRenderProps(props.children, (children, { isDisabled }) => (
+				<Provider values={[[ButtonContext, { isDisabled }]]}>{children}</Provider>
+			))}
+		</Group>
 	);
 };
 
