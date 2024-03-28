@@ -1,7 +1,5 @@
 {
-	"affected": {
-		"defaultBase": "main"
-	},
+	"defaultBase": "main",
 	"workspaceLayout": {
 		"appsDir": "apps",
 		"libsDir": "packages"
