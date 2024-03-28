@@ -1,5 +1,15 @@
 # @launchpad-ui/components
 
+## 0.1.17
+
+### Patch Changes
+
+- [#1212](https://github.com/launchdarkly/launchpad-ui/pull/1212) [`8721318`](https://github.com/launchdarkly/launchpad-ui/commit/87213189c1ed307017211af84c7b39bf2b20b78a) Thanks [@Niznikr](https://github.com/Niznikr)! - Ensure `Tooltip` content can be hovered
+
+- [#1219](https://github.com/launchdarkly/launchpad-ui/pull/1219) [`8be48f6`](https://github.com/launchdarkly/launchpad-ui/commit/8be48f6c6fd1cb63b226eb10166342d731e9dbed) Thanks [@Niznikr](https://github.com/Niznikr)! - Make `Modal` dismissable by default
+
+- [#1218](https://github.com/launchdarkly/launchpad-ui/pull/1218) [`5c0e1b3`](https://github.com/launchdarkly/launchpad-ui/commit/5c0e1b3585025d644fdae75c02a04e5c8557d837) Thanks [@Niznikr](https://github.com/Niznikr)! - Add `LinkIconButton`
+
 ## 0.1.16
 
 ### Patch Changes
