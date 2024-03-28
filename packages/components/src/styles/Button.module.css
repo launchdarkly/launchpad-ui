@@ -193,9 +193,12 @@
 }
 
 .select {
-  composes: input from './Input.module.css';
   display: flex;
   align-items: center;
   gap: var(--lp-spacing-300);
   width: 100%;
+}
+
+.invalid {
+  border-color: var(--lp-color-border-field-error);
 }
