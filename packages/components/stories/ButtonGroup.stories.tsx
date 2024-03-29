@@ -45,7 +45,7 @@ export const SplitButton: Story = {
 				<Button>Split button</Button>
 				<MenuTrigger>
 					<IconButton icon="chevron-down" aria-label="open" />
-					<Popover>
+					<Popover placement="bottom end">
 						<Menu>
 							<MenuItem>Item one</MenuItem>
 							<MenuItem>Item two</MenuItem>
