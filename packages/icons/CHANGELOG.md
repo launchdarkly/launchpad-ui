@@ -1,5 +1,11 @@
 # @launchpad-ui/icons
 
+## 0.16.6
+
+### Patch Changes
+
+- [#1222](https://github.com/launchdarkly/launchpad-ui/pull/1222) [`4d77457`](https://github.com/launchdarkly/launchpad-ui/commit/4d7745766ba9f40eafb6800504a915ef99bf815a) Thanks [@Niznikr](https://github.com/Niznikr)! - Add tag icon
+
 ## 0.16.5
 
 ### Patch Changes
