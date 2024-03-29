@@ -51,34 +51,32 @@ const toast = cva(styles.toast, {
 	},
 });
 
-type RegionVariants = VariantProps<typeof region>;
-type IconVariants = VariantProps<typeof icon>;
-type ToastVariants = VariantProps<typeof toast>;
+interface RegionVariants extends VariantProps<typeof region> {}
+interface IconVariants extends VariantProps<typeof icon> {}
+interface ToastVariants extends VariantProps<typeof toast> {}
 
-type ToastContent = {
+interface ToastContent {
 	children: ReactNode;
-};
+}
 
-type ToastValue = IconVariants & ToastContent;
+interface ToastValue extends IconVariants, ToastContent {}
 
-type SnackbarContent = {
+interface SnackbarContent {
 	title?: ReactNode;
 	description: ReactNode;
-};
+}
 
-type SnackbarValue = IconVariants & SnackbarContent;
+interface SnackbarValue extends IconVariants, SnackbarContent {}
 
-type ToastOptions = Omit<AriaToastOptions, 'timeout'>;
+interface ToastOptions extends Omit<AriaToastOptions, 'timeout'> {}
 
-type ToastRegionProps<T> = AriaToastRegionProps &
-	RegionVariants & {
-		state: ToastState<T>;
-	};
+interface ToastRegionProps<T> extends AriaToastRegionProps, RegionVariants {
+	state: ToastState<T>;
+}
 
-type ToastProps<T> = AriaToastProps<T> &
-	ToastVariants & {
-		state: ToastState<T>;
-	};
+interface ToastProps<T> extends AriaToastProps<T>, ToastVariants {
+	state: ToastState<T>;
+}
 
 const ToastRegion = <T extends ToastValue | SnackbarValue>({
 	state,
