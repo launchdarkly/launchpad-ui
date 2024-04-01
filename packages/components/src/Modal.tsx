@@ -54,9 +54,13 @@ const _Modal = (
  */
 const Modal = forwardRef(_Modal);
 
-const _ModalOverlay = (props: ModalOverlayProps, ref: ForwardedRef<HTMLDivElement>) => {
+const _ModalOverlay = (
+	{ isDismissable = true, ...props }: ModalOverlayProps,
+	ref: ForwardedRef<HTMLDivElement>,
+) => {
 	return (
 		<AriaModalOverlay
+			isDismissable={isDismissable}
 			{...props}
 			ref={ref}
 			className={composeRenderProps(props.className, (className, renderProps) =>

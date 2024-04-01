@@ -214,6 +214,7 @@ const icons = [
 	'swap-horiz',
 	'swap-vertical',
 	'sync',
+	'tag',
 	'terminal',
 	'text-box-search',
 	'theme-dark',
