@@ -1,10 +1,11 @@
-import type { ReactElement, Ref, RefAttributes } from 'react';
+import type { NamedExoticComponent, ReactElement, Ref, RefAttributes } from 'react';
 
 // https://github.com/adobe/react-spectrum/blob/main/packages/react-aria-components/src/utils.tsx#L20-L24
 // biome-ignore lint/complexity/noBannedTypes: <explanation>
 declare function forwardRef<T, P = {}>(
 	render: (props: P, ref: Ref<T>) => ReactElement | null,
-): ((props: P & RefAttributes<T>) => ReactElement | null) & { displayName?: string | undefined };
+): ((props: P & RefAttributes<T>) => ReactElement | null) &
+	Pick<NamedExoticComponent, 'displayName'>;
 
 type forwardRefType = typeof forwardRef;
 
