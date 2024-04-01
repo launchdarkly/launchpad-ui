@@ -174,14 +174,22 @@ const ToastQueue = {
 };
 
 const SnackbarQueue = {
-	error: (content: SnackbarContent, options?: ToastOptions) =>
-		snackbarQueue.add({ ...content, status: 'error' }, { ...options }),
-	info: (content: SnackbarContent, options?: ToastOptions) =>
-		snackbarQueue.add({ ...content, status: 'info' }, { ...options }),
-	success: (content: SnackbarContent, options?: ToastOptions) =>
-		snackbarQueue.add({ ...content, status: 'success' }, { ...options }),
-	warning: (content: SnackbarContent, options?: ToastOptions) =>
-		snackbarQueue.add({ ...content, status: 'warning' }, { ...options }),
+	error: (content: SnackbarContent, options?: ToastOptions) => {
+		const key = snackbarQueue.add({ ...content, status: 'error' }, { ...options });
+		return () => snackbarQueue.close(key);
+	},
+	info: (content: SnackbarContent, options?: ToastOptions) => {
+		const key = snackbarQueue.add({ ...content, status: 'info' }, { ...options });
+		return () => snackbarQueue.close(key);
+	},
+	success: (content: SnackbarContent, options?: ToastOptions) => {
+		const key = snackbarQueue.add({ ...content, status: 'success' }, { ...options });
+		return () => snackbarQueue.close(key);
+	},
+	warning: (content: SnackbarContent, options?: ToastOptions) => {
+		const key = snackbarQueue.add({ ...content, status: 'warning' }, { ...options });
+		return () => snackbarQueue.close(key);
+	},
 };
 
 /**
