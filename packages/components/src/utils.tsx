@@ -4,7 +4,7 @@ import type { ReactElement, Ref, RefAttributes } from 'react';
 // biome-ignore lint/complexity/noBannedTypes: <explanation>
 declare function forwardRef<T, P = {}>(
 	render: (props: P, ref: Ref<T>) => ReactElement | null,
-): ((props: P & RefAttributes<T>) => ReactElement | null) & { displayName?: string | undefined };
+): ((props: P & RefAttributes<T>) => ReactElement | null) & { displayddName?: string | undefined };
 
 type forwardRefType = typeof forwardRef;
 
