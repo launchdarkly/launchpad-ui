@@ -1,0 +1,13 @@
+.group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--lp-spacing-500);
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+.legend {
+  font: var(--lp-label-1-medium);
+  padding: 0;
+}
