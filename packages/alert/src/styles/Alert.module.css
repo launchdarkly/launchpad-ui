@@ -193,7 +193,7 @@
   word-break: break-word;
 }
 
-.Alert-close {
+.Alert .Alert-close {
   margin-left: auto;
 }
 
