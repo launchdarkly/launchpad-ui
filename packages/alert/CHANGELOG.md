@@ -1,5 +1,11 @@
 # @launchpad-ui/alert
 
+## 0.9.7
+
+### Patch Changes
+
+- [#1226](https://github.com/launchdarkly/launchpad-ui/pull/1226) [`ef3e58d`](https://github.com/launchdarkly/launchpad-ui/commit/ef3e58dc4b7f062248359987db606fbe9981289c) Thanks [@Niznikr](https://github.com/Niznikr)! - Bump alert close specificity
+
 ## 0.9.6
 
 ### Patch Changes
