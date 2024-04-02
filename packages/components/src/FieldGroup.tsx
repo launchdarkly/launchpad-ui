@@ -1,4 +1,4 @@
-import type { FieldsetHTMLAttributes, ForwardedRef } from 'react';
+import type { ContextType, FieldsetHTMLAttributes, ForwardedRef } from 'react';
 
 import { cva } from 'class-variance-authority';
 import { forwardRef, useId } from 'react';
@@ -31,7 +31,7 @@ const _FieldGroup = (
 		isInvalid: !!errorMessage,
 		'aria-describedby': errorMessage ? errorId : undefined,
 		isDisabled,
-	};
+	} satisfies ContextType<typeof TextFieldContext>;
 	return (
 		<fieldset {...props} ref={ref} className={group({ className })}>
 			<legend className={styles.legend}>{title}</legend>
