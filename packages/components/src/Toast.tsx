@@ -1,13 +1,14 @@
 import type { AriaToastProps, AriaToastRegionProps } from '@react-aria/toast';
 import type { ToastOptions as AriaToastOptions, ToastState } from '@react-stately/toast';
 import type { VariantProps } from 'class-variance-authority';
-import type { ReactNode } from 'react';
+import type { ReactElement, ReactNode } from 'react';
 
 import { StatusIcon } from '@launchpad-ui/icons';
 import { useToast, useToastRegion } from '@react-aria/toast';
+import { mergeProps } from '@react-aria/utils';
 import { ToastQueue as AriaToastQueue, useToastQueue } from '@react-stately/toast';
 import { cva } from 'class-variance-authority';
-import { useRef } from 'react';
+import { cloneElement, useRef } from 'react';
 import { createPortal } from 'react-dom';
 
 import { IconButton } from './IconButton';
@@ -64,6 +65,7 @@ interface ToastValue extends IconVariants, ToastContent {}
 interface SnackbarContent {
 	title?: ReactNode;
 	description: ReactNode;
+	action?: ReactElement;
 }
 
 interface SnackbarValue extends IconVariants, SnackbarContent {}
@@ -113,7 +115,10 @@ const Toast = <T extends ToastValue | SnackbarValue>({
 	);
 
 	const content: IconVariants & Partial<SnackbarContent & ToastContent> = props.toast.content;
-	const { children, status, title, description } = content;
+	const { children, status, title, description, action } = content;
+	const cta =
+		action &&
+		cloneElement(action, mergeProps(action.props, { onPress: () => state.close(props.toast.key) }));
 
 	return (
 		<div
@@ -138,6 +143,7 @@ const Toast = <T extends ToastValue | SnackbarValue>({
 					</div>
 					<div {...descriptionProps} className={styles.description}>
 						{description}
+						{cta}
 					</div>
 				</div>
 			)}
