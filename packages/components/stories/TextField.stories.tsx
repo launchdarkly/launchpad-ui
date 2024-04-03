@@ -83,7 +83,7 @@ export const MultiLine: Story = {
 	},
 };
 
-export const Subtle: Story = {
+export const Minimal: Story = {
 	render: (args) => {
 		return (
 			<div
@@ -95,11 +95,11 @@ export const Subtle: Story = {
 			>
 				<TextField {...args}>
 					<Label>Resting</Label>
-					<Input variant="subtle" />
+					<Input variant="minimal" />
 				</TextField>
 				<TextField {...args}>
 					<Label>Hover</Label>
-					<Input variant="subtle" />
+					<Input variant="minimal" />
 				</TextField>
 			</div>
 		);

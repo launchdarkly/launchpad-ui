@@ -34,7 +34,7 @@
   background-color: var(--lp-color-bg-field-base);
 }
 
-.subtle {
+.minimal {
   background-color: inherit;
 
   &:not([data-invalid]) {

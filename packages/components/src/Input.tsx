@@ -12,7 +12,7 @@ const input = cva(styles.base, {
 	variants: {
 		variant: {
 			default: styles.default,
-			subtle: styles.subtle,
+			minimal: styles.minimal,
 		},
 	},
 	defaultVariants: {
