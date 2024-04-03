@@ -150,8 +150,8 @@ importers:
         specifier: ^0.2.1
         version: 0.2.1(rollup@4.13.2)
       storybook-addon-pseudo-states:
-        specifier: ^3.0.0
-        version: 3.0.1
+        specifier: ^2.3.0-next.1
+        version: 2.3.0-next.1
       stylelint:
         specifier: ^16.3.0
         version: 16.3.1(typescript@5.4.3)
@@ -13065,8 +13065,8 @@ packages:
     resolution: {integrity: sha512-4QcZ+yx7nzEFiV4BMLnr/pRa5HYzNITX2ri0Zh6sT9EyQHbBHacC6YigllUPU9X3D0f/22QCgfokpKs52YRrUg==}
     dev: true
 
-  /storybook-addon-pseudo-states@3.0.1:
-    resolution: {integrity: sha512-ciHKl08CXU1Xf9ABbxvZB5KimHO/OpC9PtHpBLIC7R8TWHsdpFHku1zuK9opx1+hXw61woUrbh4cJ5Bn2lTXRw==}
+  /storybook-addon-pseudo-states@2.3.0-next.1:
+    resolution: {integrity: sha512-BKw9H+KIy26qr50pOpsF7SBTkLhGD6//9T1E/naw2RcBwCQhAP57X9s9WP4DxQql4IAcXxVKiDx16JWx85Teqg==}
     dev: true
 
   /stream-shift@1.0.3:

@@ -1,7 +1,7 @@
 import type { Meta, StoryFn, StoryObj } from '@storybook/react';
 
 import { vars } from '@launchpad-ui/vars';
-import { userEvent } from '@storybook/test';
+import { userEvent, within } from '@storybook/test';
 
 import { Input, Label, Text, TextArea, TextField } from '../src';
 
@@ -80,5 +80,35 @@ export const MultiLine: Story = {
 			</>
 		),
 		defaultValue: 'Value',
+	},
+};
+
+export const Minimal: Story = {
+	render: (args) => {
+		return (
+			<div
+				style={{
+					display: 'flex',
+					flexDirection: 'column',
+					gap: vars.spacing[400],
+				}}
+			>
+				<TextField {...args}>
+					<Label>Resting</Label>
+					<Input variant="minimal" />
+				</TextField>
+				<TextField {...args}>
+					<Label>Hover</Label>
+					<Input variant="minimal" />
+				</TextField>
+			</div>
+		);
+	},
+	args: { defaultValue: 'Value' },
+	play: async ({ canvasElement }) => {
+		const canvas = within(canvasElement);
+
+		const inputs = canvas.getAllByRole('textbox');
+		await userEvent.hover(inputs[1]);
 	},
 };

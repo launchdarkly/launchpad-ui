@@ -1,21 +1,24 @@
 import type { ForwardedRef } from 'react';
-import type { TextAreaProps } from 'react-aria-components';
+import type { TextAreaProps as AriaTextAreaProps } from 'react-aria-components';
+import type { InputVariants } from './Input';
 
-import { cva } from 'class-variance-authority';
 import { forwardRef } from 'react';
 import { TextArea as AriaTextArea, composeRenderProps } from 'react-aria-components';
 
-import styles from './styles/Input.module.css';
+import { input } from './Input';
 
-const input = cva(styles.input);
+interface TextAreaProps extends AriaTextAreaProps, InputVariants {}
 
-const _TextArea = (props: TextAreaProps, ref: ForwardedRef<HTMLTextAreaElement>) => {
+const _TextArea = (
+	{ variant = 'default', ...props }: TextAreaProps,
+	ref: ForwardedRef<HTMLTextAreaElement>,
+) => {
 	return (
 		<AriaTextArea
 			{...props}
 			ref={ref}
 			className={composeRenderProps(props.className, (className, renderProps) =>
-				input({ ...renderProps, className }),
+				input({ ...renderProps, variant, className }),
 			)}
 		/>
 	);

@@ -3,13 +3,15 @@ import type { ForwardedRef } from 'react';
 import type { ButtonProps as AriaButtonProps } from 'react-aria-components';
 
 import { cva, cx } from 'class-variance-authority';
-import { forwardRef, useContext } from 'react';
+import { forwardRef } from 'react';
 import {
 	Button as AriaButton,
-	SelectStateContext,
+	SelectContext,
 	composeRenderProps,
+	useSlottedContext,
 } from 'react-aria-components';
 
+import { input } from './Input';
 import styles from './styles/Button.module.css';
 
 const button = cva(styles.base, {
@@ -42,14 +44,15 @@ const _Button = (
 	{ size = 'medium', variant = 'default', ...props }: ButtonProps,
 	ref: ForwardedRef<HTMLButtonElement>,
 ) => {
-	const state = useContext(SelectStateContext);
-
+	const selectContext = useSlottedContext(SelectContext);
 	return (
 		<AriaButton
 			{...props}
 			ref={ref}
 			className={composeRenderProps(props.className, (className, renderProps) =>
-				state ? cx(styles.select, className) : button({ ...renderProps, size, variant, className }),
+				selectContext
+					? cx(input(), styles.select, selectContext.isInvalid && styles.invalid, className)
+					: button({ ...renderProps, size, variant, className }),
 			)}
 		/>
 	);
