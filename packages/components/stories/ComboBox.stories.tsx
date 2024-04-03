@@ -5,6 +5,7 @@ import { expect, userEvent, within } from '@storybook/test';
 
 import {
 	ComboBox,
+	ComboBoxClearButton,
 	Group,
 	IconButton,
 	Input,
@@ -17,6 +18,8 @@ import {
 
 const meta: Meta<typeof ComboBox> = {
 	component: ComboBox,
+	// @ts-ignore
+	subcomponents: { ComboBoxClearButton },
 	title: 'React Aria Components/ComboBox',
 	parameters: {
 		status: {

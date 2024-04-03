@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryFn, StoryObj } from '@storybook/react';
 import type { ComponentPropsWithoutRef, Fragment } from 'react';
 
 import { Icon } from '@launchpad-ui/icons';
@@ -23,6 +23,13 @@ const Container = (props: ComponentPropsWithoutRef<typeof Fragment>) => <>{props
 const meta: Meta<typeof Container> = {
 	title: 'Recipes/Composition',
 	component: Container,
+	decorators: [
+		(Story: StoryFn) => (
+			<div style={{ height: 'var(--lp-size-224)' }}>
+				<Story />
+			</div>
+		),
+	],
 	argTypes: {
 		children: {
 			control: false,
