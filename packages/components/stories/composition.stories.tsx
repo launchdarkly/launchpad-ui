@@ -53,7 +53,7 @@ export const CopyToClipboard: Story = {
 	},
 };
 
-export const ComboboxDialog: Story = {
+export const ComboBoxDialog: Story = {
 	args: {
 		children: (
 			<DialogTrigger>
@@ -83,4 +83,5 @@ export const ComboboxDialog: Story = {
 
 		await userEvent.click(canvas.getByRole('button'));
 	},
+	name: 'ComboBoxDialog',
 };
