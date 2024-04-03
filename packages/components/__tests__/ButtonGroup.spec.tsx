@@ -11,7 +11,7 @@ describe('ButtonGroup', () => {
 				<Button>Button 2</Button>
 			</ButtonGroup>,
 		);
-		expect(screen.getAllByRole('button')).toHaveLength(2);
+		expect(screen.getByRole('group')).toBeVisible();
 	});
 
 	it('sets disabled on all buttons', () => {
