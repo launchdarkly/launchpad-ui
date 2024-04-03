@@ -41,7 +41,7 @@ export { Button } from './Button';
 export { ButtonGroup } from './ButtonGroup';
 export { Checkbox } from './Checkbox';
 export { CheckboxGroup } from './CheckboxGroup';
-export { ComboBox } from './ComboBox';
+export { ComboBox, ComboBoxClearButton } from './ComboBox';
 export { Dialog, DialogTrigger } from './Dialog';
 export { FieldError } from './FieldError';
 export { FieldGroup } from './FieldGroup';
