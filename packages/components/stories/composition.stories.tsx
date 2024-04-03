@@ -49,7 +49,7 @@ export const CopyToClipboard: Story = {
 				<Button size="small" onPress={() => navigator.clipboard.writeText('content')}>
 					Copy content <Icon name="copy-clipboard" size="small" />
 				</Button>
-				<Tooltip>Copy to clipboard</Tooltip>
+				<Tooltip placement="bottom">Copy to clipboard</Tooltip>
 			</TooltipTrigger>
 		),
 	},
@@ -65,7 +65,7 @@ export const ComboBoxDialog: Story = {
 		children: (
 			<DialogTrigger>
 				<Button>Trigger</Button>
-				<Popover trigger="ComboBoxDialog">
+				<Popover trigger="ComboBoxDialog" placement="bottom start">
 					<Dialog>
 						{/* @ts-ignore */}
 						<ComboBox aria-label="list" autoFocus menuTrigger="focus" allowsEmptyCollection>
