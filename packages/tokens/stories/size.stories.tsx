@@ -6,7 +6,7 @@ import { CopyToClipboard } from '@launchpad-ui/clipboard';
 import tokens from '../dist/index.es.js';
 
 export default {
-	title: 'Tokens/Size',
+	title: 'Foundations/Tokens/Size',
 };
 
 const sizes: typeof Tokens.size = tokens.size;

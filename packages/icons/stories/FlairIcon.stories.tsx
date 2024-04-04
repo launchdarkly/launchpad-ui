@@ -4,7 +4,7 @@ import { FlairIcon, Icon } from '../src';
 
 export default {
 	component: FlairIcon,
-	title: 'Components/Icon/FlairIcon',
+	title: 'Foundations/Icons/FlairIcon',
 	description:
 		'Flair icons can be used as either square or circular icons with gradient backgrounds.',
 	parameters: {

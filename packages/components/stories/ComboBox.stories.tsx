@@ -20,7 +20,7 @@ const meta: Meta<typeof ComboBox> = {
 	component: ComboBox,
 	// @ts-ignore
 	subcomponents: { ComboBoxClearButton },
-	title: 'React Aria Components/ComboBox',
+	title: 'Components/Pickers/ComboBox',
 	parameters: {
 		status: {
 			type: import.meta.env.STORYBOOK_PACKAGE_STATUS__COMPONENTS,

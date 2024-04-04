@@ -7,7 +7,7 @@ import { TabList } from '../src';
 
 export default {
 	component: TabList,
-	title: 'Components/TabList',
+	title: 'Legacy/Sunset/TabList',
 	description: 'TabList navigates between related sections of content on the same page.',
 	parameters: {
 		status: {

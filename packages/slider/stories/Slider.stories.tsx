@@ -4,7 +4,7 @@ import { Slider } from '../src';
 
 export default {
 	component: Slider,
-	title: 'Components/Slider',
+	title: 'Legacy/Sunset/Slider',
 	description: 'An element used to set a value within a range.',
 	parameters: {
 		status: {

@@ -37,7 +37,7 @@ const withRestingAndDisabledStates: Decorator = (story, context) => {
 
 export default {
 	component: TextField,
-	title: 'Components/Form/TextField',
+	title: 'Legacy/Deprecated/Form/TextField',
 	description: 'A text field allows the user to provide values."',
 	decorators: [
 		createWithClassesDecorator(chromaticTestStyles, (args, storyFn, context) => {
@@ -58,6 +58,7 @@ export default {
 		status: {
 			type: import.meta.env.STORYBOOK_PACKAGE_STATUS__FORM,
 		},
+		chromatic: { disableSnapshot: true },
 	},
 	argTypes: {
 		disabled: {

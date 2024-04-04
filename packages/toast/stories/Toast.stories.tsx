@@ -4,7 +4,7 @@ import { Toast } from '../src';
 
 export default {
 	component: Toast,
-	title: 'Components/Toast',
+	title: 'Legacy/Sunset/Toast',
 	description: 'An element that provides brief messages about app processes with a CTA.',
 	parameters: {
 		status: {

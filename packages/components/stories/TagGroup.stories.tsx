@@ -9,7 +9,7 @@ const meta: Meta<typeof TagGroup> = {
 	component: TagGroup,
 	// @ts-ignore
 	subcomponents: { TagList, Tag },
-	title: 'React Aria Components/TagGroup',
+	title: 'Components/Collections/TagGroup',
 	parameters: {
 		status: {
 			type: import.meta.env.STORYBOOK_PACKAGE_STATUS__COMPONENTS,

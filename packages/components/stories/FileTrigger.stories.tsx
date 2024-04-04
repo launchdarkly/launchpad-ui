@@ -4,7 +4,7 @@ import { Button, FileTrigger } from '../src';
 
 const meta: Meta<typeof FileTrigger> = {
 	component: FileTrigger,
-	title: 'React Aria Components/FileTrigger',
+	title: 'Components/Buttons/FileTrigger',
 	parameters: {
 		status: {
 			type: import.meta.env.STORYBOOK_PACKAGE_STATUS__COMPONENTS,

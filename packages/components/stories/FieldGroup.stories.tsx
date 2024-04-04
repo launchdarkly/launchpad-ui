@@ -16,7 +16,7 @@ import {
 
 const meta: Meta<typeof FieldGroup> = {
 	component: FieldGroup,
-	title: 'React Aria Components/FieldGroup',
+	title: 'Components/Forms/FieldGroup',
 	parameters: {
 		status: {
 			type: import.meta.env.STORYBOOK_PACKAGE_STATUS__COMPONENTS,
