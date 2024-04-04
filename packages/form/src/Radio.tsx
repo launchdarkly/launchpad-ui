@@ -11,6 +11,11 @@ type RadioProps = Omit<ComponentProps<'input'>, 'type'> & {
 	'data-test-id'?: string;
 };
 
+/**
+ * @deprecated use `RadioGroup` from `@launchpad-ui/components` instead
+ *
+ * https://launchpad.launchdarkly.com/?path=/docs/components-forms-radiogroup--docs
+ */
 const Radio = ({
 	'aria-label': ariaLabel,
 	'aria-labelledby': ariaLabelledby,

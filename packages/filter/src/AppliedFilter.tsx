@@ -27,6 +27,11 @@ type AppliedFilterProps = {
 	'data-test-id'?: string;
 };
 
+/**
+ * @deprecated use `Menu` from `@launchpad-ui/components` instead
+ *
+ * https://launchpad.launchdarkly.com/?path=/docs/components-collections-menu--docs
+ */
 const AppliedFilter = ({
 	searchValue,
 	onSearchChange,

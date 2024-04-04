@@ -20,6 +20,11 @@ type SingleSelectProps<T extends object> = SharedSelectProps<T> &
 		trigger?: (props: SingleSelectTriggerProps<T>) => JSX.Element;
 	};
 
+/**
+ * @deprecated use `Select` from `@launchpad-ui/components` instead
+ *
+ * https://launchpad.launchdarkly.com/?path=/docs/components-pickers-select--docs
+ */
 const SingleSelect = <T extends object>(props: SingleSelectProps<T>) => {
 	const {
 		autoFocus,

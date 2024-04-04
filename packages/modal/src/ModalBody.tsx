@@ -10,6 +10,11 @@ type ModalBodyProps = ComponentProps<'div'> & {
 	'data-test-id'?: string;
 };
 
+/**
+ * @deprecated use `div[slot='body']` with `Modal` from `@launchpad-ui/components` instead
+ *
+ * https://launchpad.launchdarkly.com/?path=/docs/components-overlays-modal--docs
+ */
 const ModalBody = ({
 	children,
 	className,

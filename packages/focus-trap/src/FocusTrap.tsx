@@ -9,12 +9,20 @@ type FocusTrapContextType = {
 	contain: boolean;
 };
 
+/**
+ * @deprecated use attribute `data-react-aria-top-layer` for overlays in `@launchpad-ui/components` instead
+ *
+ * https://github.com/adobe/react-spectrum/discussions/6000#discussioncomment-8671656
+ */
 const FocusTrapContext = createContext<FocusTrapContextType>({
 	contain: true,
 });
 
 const useFocusTrapContext = () => useContext(FocusTrapContext);
 
+/**
+ * @deprecated not used for overlays in `@launchpad-ui/components`
+ */
 const FocusTrap = (props: FocusTrapProps) => {
 	const { contain } = useFocusTrapContext();
 

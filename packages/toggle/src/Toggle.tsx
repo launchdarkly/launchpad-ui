@@ -51,6 +51,11 @@ type ToggleProps = InputBase &
  * goodness (the useFocus hook is leveraged).
  */
 
+/**
+ * @deprecated use `Switch` from `@launchpad-ui/components` instead
+ *
+ * https://launchpad.launchdarkly.com/?path=/docs/components-forms-switch--docs
+ */
 const Toggle = (props: ToggleProps) => {
 	const { className, isDisabled = false, autoFocus, 'data-test-id': testId = 'toggle' } = props;
 

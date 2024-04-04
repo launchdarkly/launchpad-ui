@@ -13,6 +13,11 @@ type CheckboxProps = ComponentProps<'input'> & {
 	'data-test-id'?: string;
 };
 
+/**
+ * @deprecated use `Checkbox` or `CheckboxGroup` from `@launchpad-ui/components` instead
+ *
+ * https://launchpad.launchdarkly.com/?path=/docs/components-forms-checkbox--docs
+ */
 const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
 	(
 		{

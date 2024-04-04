@@ -17,6 +17,11 @@ type ModalHeaderProps = {
 	'data-test-id'?: string;
 };
 
+/**
+ * @deprecated use `div[slot='header']` with `Modal` from `@launchpad-ui/components` instead
+ *
+ * https://launchpad.launchdarkly.com/?path=/docs/components-overlays-modal--docs
+ */
 const ModalHeader = ({
 	withCloseButton = true,
 	title,

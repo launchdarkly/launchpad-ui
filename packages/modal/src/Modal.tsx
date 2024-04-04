@@ -17,6 +17,11 @@ type ModalProps = {
 	'data-test-id'?: string;
 };
 
+/**
+ * @deprecated use `Modal` from `@launchpad-ui/components` instead
+ *
+ * https://launchpad.launchdarkly.com/?path=/docs/components-overlays-modal--docs
+ */
 const Modal = ({
 	className,
 	onCancel,

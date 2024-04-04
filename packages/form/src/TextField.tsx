@@ -13,6 +13,11 @@ type TextFieldProps = ComponentProps<'input'> & {
 	'data-test-id'?: string;
 };
 
+/**
+ * @deprecated use `TextField` from `@launchpad-ui/components` instead
+ *
+ * https://launchpad.launchdarkly.com/?path=/docs/components-forms-textfield--docs
+ */
 const TextField = forwardRef<HTMLInputElement, TextFieldProps>(
 	(
 		{

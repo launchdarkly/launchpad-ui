@@ -62,6 +62,11 @@ type ControlledMenuProps<T> = {
 
 type MenuProps<T extends number | string> = ControlledMenuProps<T>;
 
+/**
+ * @deprecated use `Menu` or `ListBox` from `@launchpad-ui/components` instead
+ *
+ * https://launchpad.launchdarkly.com/?path=/docs/components-collections-menu--docs
+ */
 const Menu = <T extends number | string>(props: MenuProps<T>) => {
 	const {
 		children,

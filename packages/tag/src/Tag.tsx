@@ -26,6 +26,11 @@ type TagProps<T extends object> = AriaTagProps<T> & {
 	children: ReactNode;
 };
 
+/**
+ * @deprecated use `TagGroup` from `@launchpad-ui/components` instead
+ *
+ * https://launchpad.launchdarkly.com/?path=/docs/components-collections-taggroup--docs
+ */
 const Tag = <T extends object>(props: TagProps<T>) => {
 	const { children, item, state, onClick, size = 'small' } = props;
 

@@ -13,6 +13,11 @@ type CompactTextFieldProps = TextFieldProps & {
 	needsErrorFeedback?: boolean;
 };
 
+/**
+ * @deprecated use `TextField` from `@launchpad-ui/components` instead
+ *
+ * https://launchpad.launchdarkly.com/?path=/docs/components-forms-textfield--docs
+ */
 const CompactTextField = forwardRef<HTMLInputElement, CompactTextFieldProps>(
 	(
 		{

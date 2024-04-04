@@ -17,6 +17,11 @@ type IconFieldProps = ComponentProps<'div'> & {
 	ariaLabel?: string;
 };
 
+/**
+ * @deprecated use `Group` from `@launchpad-ui/components` instead
+ *
+ * https://launchpad.launchdarkly.com/?path=/docs/components-content-group--docs
+ */
 const IconField = ({
 	icon,
 	children,

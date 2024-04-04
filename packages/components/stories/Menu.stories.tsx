@@ -22,7 +22,7 @@ import {
 const meta: Meta<typeof Menu> = {
 	component: Menu,
 	// @ts-ignore
-	subcomponents: { MenuItem, MenuTrigger, SubmenuTrigger },
+	subcomponents: { MenuItem, MenuTrigger, SubmenuTrigger, Section, Header, Keyboard, Separator },
 	title: 'Components/Collections/Menu',
 	parameters: {
 		status: {

@@ -13,6 +13,11 @@ type ChipProps = ComponentProps<'span'> & {
 	'data-test-id'?: string;
 };
 
+/**
+ * @deprecated use `TagGroup` from `@launchpad-ui/components` instead
+ *
+ * https://launchpad.launchdarkly.com/?path=/docs/components-collections-taggroup--docs
+ */
 const Chip = ({
 	kind,
 	onClick,

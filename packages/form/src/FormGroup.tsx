@@ -11,6 +11,11 @@ type FormGroupProps = ComponentProps<'fieldset'> & {
 	'data-test-id'?: string;
 };
 
+/**
+ * @deprecated use `FieldGroup` from `@launchpad-ui/components` instead
+ *
+ * https://launchpad.launchdarkly.com/?path=/docs/components-forms-fieldgroup--docs
+ */
 const FormGroup = (props: FormGroupProps) => {
 	const {
 		className,

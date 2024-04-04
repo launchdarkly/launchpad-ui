@@ -12,6 +12,11 @@ type LabelProps = ComponentProps<'label'> & {
 	'data-test-id'?: string;
 };
 
+/**
+ * @deprecated use `Label` from `@launchpad-ui/components` instead
+ *
+ * https://launchpad.launchdarkly.com/?path=/docs/components-forms-textfield--docs
+ */
 const Label = ({
 	disabled,
 	className,

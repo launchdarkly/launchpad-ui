@@ -10,6 +10,11 @@ type TextAreaProps = ComponentProps<'textarea'> & {
 	'data-test-id'?: string;
 };
 
+/**
+ * @deprecated use `TextArea` from `@launchpad-ui/components` instead
+ *
+ * https://launchpad.launchdarkly.com/?path=/docs/components-forms-textfield--docs#multi%20line
+ */
 const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
 	({ className, 'data-test-id': testId = 'text-area', ...props }, ref) => {
 		const onKeyDown = (e: KeyboardEvent<HTMLTextAreaElement>) => {

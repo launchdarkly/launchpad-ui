@@ -9,6 +9,11 @@ type ButtonGroupProps = ComponentProps<'div'> & {
 	'data-test-id'?: string;
 };
 
+/**
+ * @deprecated use `ButtonGroup` from `@launchpad-ui/components` instead
+ *
+ * https://launchpad.launchdarkly.com/?path=/docs/components-buttons-buttongroup--docs
+ */
 const ButtonGroup = ({
 	spacing = 'normal',
 	className,

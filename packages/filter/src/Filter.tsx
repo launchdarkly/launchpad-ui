@@ -37,6 +37,11 @@ type FilterProps = Pick<MenuProps<string>, 'size' | 'enableVirtualization'> & {
 	clearAriaLabel?: string;
 };
 
+/**
+ * @deprecated use `Menu` from `@launchpad-ui/components` instead
+ *
+ * https://launchpad.launchdarkly.com/?path=/docs/components-collections-menu--docs
+ */
 const Filter = ({
 	searchValue,
 	onSearchChange,

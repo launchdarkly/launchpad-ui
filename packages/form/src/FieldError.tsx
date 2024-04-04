@@ -13,6 +13,11 @@ type FieldErrorProps = ComponentProps<'span'> & {
 	'data-test-id'?: string;
 };
 
+/**
+ * @deprecated use `FieldError` from `@launchpad-ui/components` instead
+ *
+ * https://launchpad.launchdarkly.com/?path=/docs/components-forms-textfield--docs
+ */
 const FieldError = ({
 	name,
 	errorMessage,

@@ -8,6 +8,11 @@ type RequiredAsteriskProps = ComponentProps<'span'> & {
 	'data-test-id'?: string;
 };
 
+/**
+ * @deprecated use `Label` from `@launchpad-ui/components` instead
+ *
+ * https://launchpad.launchdarkly.com/?path=/docs/components-forms-textfield--docs
+ */
 const RequiredAsterisk = ({
 	className,
 	'data-test-id': testId = 'required-asterisk',

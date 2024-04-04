@@ -8,6 +8,11 @@ type FormHintProps = ComponentProps<'div'> & {
 	'data-test-id'?: string;
 };
 
+/**
+ * @deprecated use `Text` with `[slot='description']` from `@launchpad-ui/components` instead
+ *
+ * https://launchpad.launchdarkly.com/?path=/docs/components-forms-textfield--docs
+ */
 const FormHint = ({
 	className,
 	children,

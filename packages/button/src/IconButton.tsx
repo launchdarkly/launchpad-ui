@@ -106,6 +106,11 @@ const IconButtonComponent = forwardRef<HTMLButtonElement, IconButtonProps>((prop
 
 IconButtonComponent.displayName = 'IconButton';
 
+/**
+ * @deprecated use `IconButton` from `@launchpad-ui/components` instead
+ *
+ * https://launchpad.launchdarkly.com/?path=/docs/components-buttons-iconbutton--docs
+ */
 const IconButton = memo(IconButtonComponent);
 
 export { IconButton };
