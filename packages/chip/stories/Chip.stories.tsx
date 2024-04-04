@@ -6,7 +6,7 @@ import { Chip } from '../src';
 
 export default {
 	component: Chip,
-	title: 'Components/Deprecated/Chip',
+	title: 'Legacy/Deprecated/Chip',
 	description: 'Chips can be used as visual indicators for tags.',
 	parameters: {
 		status: {

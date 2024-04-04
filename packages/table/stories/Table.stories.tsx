@@ -5,7 +5,7 @@ import { Table, TableBody, TableCell, TableHead, TableHeadCell, TableRow } from 
 export default {
 	component: Table,
 	subcomponents: { TableBody, TableCell, TableHead, TableHeadCell, TableRow },
-	title: 'Components/Sunset/Table',
+	title: 'Legacy/Sunset/Table',
 	description: 'An element used to organize and display data to users.',
 	parameters: {
 		status: {

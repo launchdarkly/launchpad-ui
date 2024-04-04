@@ -4,7 +4,7 @@ import { UploadButton } from '../src';
 
 export default {
 	component: UploadButton,
-	title: 'Components/Deprecated/Button/UploadButton',
+	title: 'Legacy/Deprecated/Button/UploadButton',
 	description: 'UploadButtons trigger a native file upload experience.',
 	parameters: {
 		status: {

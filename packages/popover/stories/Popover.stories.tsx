@@ -7,7 +7,7 @@ import { Popover } from '../src';
 
 export default {
 	component: Popover,
-	title: 'Components/Deprecated/Popover',
+	title: 'Legacy/Deprecated/Popover',
 	description: 'Popovers display content within a portal triggered by user interactions.',
 	parameters: {
 		status: {

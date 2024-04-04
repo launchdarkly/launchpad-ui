@@ -8,7 +8,7 @@ const meta: Meta<typeof Tooltip> = {
 	component: Tooltip,
 	// @ts-ignore
 	subcomponents: { TooltipTrigger },
-	title: 'React Aria Components/Overlays/Tooltip',
+	title: 'Components/Overlays/Tooltip',
 	parameters: {
 		status: {
 			type: import.meta.env.STORYBOOK_PACKAGE_STATUS__COMPONENTS,

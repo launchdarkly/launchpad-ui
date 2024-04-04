@@ -10,7 +10,7 @@ import { SelectItem, SelectSection, SingleSelect, SingleSelectTrigger } from '..
 
 export default {
 	component: SingleSelect,
-	title: 'Components/Deprecated/Select/Single',
+	title: 'Legacy/Deprecated/Select/Single',
 	description:
 		'A Select combines a text input with a listbox, allowing users to filter a list of options to items matching a query.',
 	parameters: {

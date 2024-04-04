@@ -83,7 +83,7 @@ const splitButtonTemplateWithStates: Decorator = (storyComponent, context) => {
 export default {
 	component: SplitButtonExample,
 	subcomponents: { SplitButtonMainButton, SplitButtonDropdownButton, SplitButtonDropdown },
-	title: 'Components/Deprecated/SplitButton',
+	title: 'Legacy/Deprecated/SplitButton',
 	description:
 		'An element that presents an immediate action and additional options from a dropdown.',
 	parameters: {

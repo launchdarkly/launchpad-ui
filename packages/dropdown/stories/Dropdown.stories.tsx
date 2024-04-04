@@ -7,7 +7,7 @@ import { Dropdown, DropdownButton } from '../src';
 export default {
 	component: Dropdown,
 	subcomponents: { DropdownButton },
-	title: 'Components/Deprecated/Dropdown',
+	title: 'Legacy/Deprecated/Dropdown',
 	description: 'Dropdowns display a list of actions or options to a user.',
 	parameters: {
 		status: {

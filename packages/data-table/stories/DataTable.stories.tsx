@@ -9,7 +9,7 @@ import { DataTable } from '../src';
 
 export default {
 	component: DataTable,
-	title: 'Components/Sunset/DataTable',
+	title: 'Legacy/Sunset/DataTable',
 	description: 'An element used to display data in rows and columns.',
 	parameters: {
 		status: {

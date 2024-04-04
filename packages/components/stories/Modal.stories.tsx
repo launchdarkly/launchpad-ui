@@ -11,7 +11,7 @@ const meta: Meta<typeof Modal> = {
 	component: Modal,
 	// @ts-ignore
 	subcomponents: { ModalOverlay, Dialog, DialogTrigger },
-	title: 'React Aria Components/Overlays/Modal',
+	title: 'Components/Overlays/Modal',
 	parameters: {
 		status: {
 			type: import.meta.env.STORYBOOK_PACKAGE_STATUS__COMPONENTS,

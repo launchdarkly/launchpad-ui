@@ -4,7 +4,7 @@ import { Switch } from '../src';
 
 const meta: Meta<typeof Switch> = {
 	component: Switch,
-	title: 'React Aria Components/Forms/Switch',
+	title: 'Components/Forms/Switch',
 	parameters: {
 		status: {
 			type: import.meta.env.STORYBOOK_PACKAGE_STATUS__COMPONENTS,

@@ -7,7 +7,7 @@ import { Alert } from '../src';
 
 export default {
 	component: Alert,
-	title: 'Components/Sunset/Alert',
+	title: 'Legacy/Sunset/Alert',
 	description: 'Actions trigger alerts based on user interaction.',
 	parameters: {
 		status: {

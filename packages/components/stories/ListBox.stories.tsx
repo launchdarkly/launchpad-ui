@@ -11,7 +11,7 @@ const meta: Meta<typeof ListBox> = {
 	component: ListBox,
 	// @ts-ignore
 	subcomponents: { ListBoxItem },
-	title: 'React Aria Components/Collections/ListBox',
+	title: 'Components/Collections/ListBox',
 	parameters: {
 		status: {
 			type: import.meta.env.STORYBOOK_PACKAGE_STATUS__COMPONENTS,

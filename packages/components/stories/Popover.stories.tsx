@@ -9,7 +9,7 @@ const meta: Meta<typeof Popover> = {
 	component: Popover,
 	// @ts-ignore
 	subcomponents: { OverlayArrow, DialogTrigger },
-	title: 'React Aria Components/Overlays/Popover',
+	title: 'Components/Overlays/Popover',
 	parameters: {
 		status: {
 			type: import.meta.env.STORYBOOK_PACKAGE_STATUS__COMPONENTS,

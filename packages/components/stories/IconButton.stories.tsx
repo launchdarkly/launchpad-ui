@@ -4,7 +4,7 @@ import { IconButton } from '../src';
 
 const meta: Meta<typeof IconButton> = {
 	component: IconButton,
-	title: 'React Aria Components/Buttons/IconButton',
+	title: 'Components/Buttons/IconButton',
 	parameters: {
 		status: {
 			type: import.meta.env.STORYBOOK_PACKAGE_STATUS__COMPONENTS,

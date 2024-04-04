@@ -4,7 +4,7 @@ import { Snackbar } from '../src';
 
 export default {
 	component: Snackbar,
-	title: 'Components/Sunset/Snackbar',
+	title: 'Legacy/Sunset/Snackbar',
 	description: 'An element that provides brief messages about app processes with a CTA.',
 	parameters: {
 		status: {

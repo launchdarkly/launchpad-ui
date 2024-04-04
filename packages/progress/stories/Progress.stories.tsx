@@ -4,7 +4,7 @@ import { Progress } from '../src';
 
 export default {
 	component: Progress,
-	title: 'Components/Deprecated/Progress',
+	title: 'Legacy/Deprecated/Progress',
 	description: 'Progress indicates a page or content is loading.',
 	parameters: {
 		status: {

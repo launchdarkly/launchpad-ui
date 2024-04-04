@@ -10,7 +10,7 @@ import { InlineEdit } from '../src';
 
 export default {
 	component: InlineEdit,
-	title: 'Components/Deprecated/InlineEdit',
+	title: 'Legacy/Deprecated/InlineEdit',
 	description: 'An element used to display and allow inline editing of a form element value.',
 	parameters: {
 		status: {

@@ -10,7 +10,7 @@ import { Navigation, NavigationItem } from '../src';
 export default {
 	component: Navigation,
 	subcomponents: { NavigationItem },
-	title: 'Components/Sunset/Navigation',
+	title: 'Legacy/Sunset/Navigation',
 	description: 'An element used to provide navigation links to help users move through an app.',
 	parameters: {
 		status: {

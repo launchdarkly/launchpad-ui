@@ -8,7 +8,7 @@ import { CopyToClipboard } from '../src';
 
 export default {
 	component: CopyToClipboard,
-	title: 'Components/Sunset/CopyToClipboard',
+	title: 'Legacy/Sunset/CopyToClipboard',
 	description: 'Clipboards copy text to the clipboard.',
 	parameters: {
 		status: {

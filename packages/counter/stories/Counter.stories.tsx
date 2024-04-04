@@ -4,7 +4,7 @@ import { Counter } from '../src';
 
 export default {
 	component: Counter,
-	title: 'Components/Deprecated/Counter',
+	title: 'Legacy/Deprecated/Counter',
 	description: 'Indicates the count value of a resource.',
 	parameters: {
 		status: {

@@ -52,7 +52,7 @@ const useModifiedClassLists: Decorator = (story, context) => {
 
 export default {
 	component: Toggle,
-	title: 'Components/Deprecated/Toggle',
+	title: 'Legacy/Deprecated/Toggle',
 	description: 'Toggles represent on/off values as opposed to selection.',
 	parameters: {
 		status: {

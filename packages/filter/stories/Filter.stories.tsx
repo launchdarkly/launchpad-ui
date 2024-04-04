@@ -4,7 +4,7 @@ import { Filter } from '../src';
 
 export default {
 	component: Filter,
-	title: 'Components/Deprecated/Filter',
+	title: 'Legacy/Deprecated/Filter',
 	description: 'We use filters to filter our lists based on search critera.',
 	parameters: {
 		status: {
