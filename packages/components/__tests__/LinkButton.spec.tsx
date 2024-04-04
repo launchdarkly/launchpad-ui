@@ -1,3 +1,4 @@
+import { RouterProvider } from 'react-aria-components';
 import { MemoryRouter } from 'react-router-dom';
 import { describe, expect, it, vi } from 'vitest';
 
@@ -19,11 +20,13 @@ describe('LinkButton', () => {
 		const user = userEvent.setup();
 
 		render(
-			<MemoryRouter>
-				<LinkButton to="/" onPress={spy}>
-					LinkButton
-				</LinkButton>
-			</MemoryRouter>,
+			<RouterProvider navigate={vi.fn()}>
+				<MemoryRouter>
+					<LinkButton to="/path" onPress={spy}>
+						LinkButton
+					</LinkButton>
+				</MemoryRouter>
+			</RouterProvider>,
 		);
 
 		await user.click(screen.getByRole('link'));
