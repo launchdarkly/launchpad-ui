@@ -6,7 +6,7 @@ import { LinkIconButton } from '../src';
 
 const meta: Meta<typeof LinkIconButton> = {
 	component: LinkIconButton,
-	title: 'React Aria Components/LinkIconButton',
+	title: 'React Aria Components/Navigation/LinkIconButton',
 	parameters: {
 		status: {
 			type: import.meta.env.STORYBOOK_PACKAGE_STATUS__COMPONENTS,

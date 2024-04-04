@@ -52,12 +52,13 @@ const useModifiedClassLists: Decorator = (story, context) => {
 
 export default {
 	component: Toggle,
-	title: 'Components/Toggle',
+	title: 'Components/Deprecated/Toggle',
 	description: 'Toggles represent on/off values as opposed to selection.',
 	parameters: {
 		status: {
 			type: import.meta.env.STORYBOOK_PACKAGE_STATUS__TOGGLE,
 		},
+		chromatic: { disableSnapshot: true },
 	},
 	decorators: [
 		createWithClassesDecorator(testingChromaticClassNames, (args, originalStory, context) => (

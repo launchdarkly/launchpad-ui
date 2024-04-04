@@ -10,7 +10,7 @@ const meta: Meta<typeof Select> = {
 	component: Select,
 	// @ts-ignore
 	subcomponents: { SelectValue },
-	title: 'React Aria Components/Select',
+	title: 'React Aria Components/Pickers/Select',
 	parameters: {
 		status: {
 			type: import.meta.env.STORYBOOK_PACKAGE_STATUS__COMPONENTS,

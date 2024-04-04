@@ -4,7 +4,7 @@ import { Button } from '@launchpad-ui/button';
 import { Chip } from '@launchpad-ui/chip';
 
 export default {
-	title: 'Tokens/Themes',
+	title: 'Foundations/Tokens/Themes',
 };
 
 export const NestedThemes = {

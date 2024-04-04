@@ -6,7 +6,7 @@ import { Avatar } from '../src';
 
 export default {
 	component: Avatar,
-	title: 'Components/Avatar',
+	title: 'Components/Sunset/Avatar',
 	description: 'An element that represents a user visually.',
 	parameters: {
 		status: {

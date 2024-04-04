@@ -9,7 +9,7 @@ import { Drawer, DrawerHeader } from '../src';
 export default {
 	component: Drawer,
 	subcomponents: { DrawerHeader },
-	title: 'Components/Drawer',
+	title: 'Components/Deprecated/Drawer',
 	description: 'A partial overlay that appears from the right side of the screen.',
 	parameters: {
 		docs: {
@@ -18,6 +18,7 @@ export default {
 		status: {
 			type: import.meta.env.STORYBOOK_PACKAGE_STATUS__DRAWER,
 		},
+		chromatic: { disableSnapshot: true },
 	},
 	decorators: [
 		(Story: StoryFn) => (

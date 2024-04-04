@@ -8,7 +8,7 @@ import { Group, IconButton, Input, Label, SearchField, Text } from '../src';
 
 const meta: Meta<typeof SearchField> = {
 	component: SearchField,
-	title: 'React Aria Components/SearchField',
+	title: 'React Aria Components/Forms/SearchField',
 	parameters: {
 		status: {
 			type: import.meta.env.STORYBOOK_PACKAGE_STATUS__COMPONENTS,

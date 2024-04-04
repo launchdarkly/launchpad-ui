@@ -9,7 +9,7 @@ import { SnackbarCenter } from '../src';
 
 export default {
 	component: SnackbarCenter,
-	title: 'Components/Snackbar/SnackbarCenter',
+	title: 'Components/Sunset/Snackbar/SnackbarCenter',
 	description: 'A container for snackbars.',
 };
 

@@ -7,12 +7,13 @@ import { Popover } from '../src';
 
 export default {
 	component: Popover,
-	title: 'Components/Popover',
+	title: 'Components/Deprecated/Popover',
 	description: 'Popovers display content within a portal triggered by user interactions.',
 	parameters: {
 		status: {
 			type: import.meta.env.STORYBOOK_PACKAGE_STATUS__POPOVER,
 		},
+		chromatic: { disableSnapshot: true },
 	},
 	argTypes: {
 		placement: {

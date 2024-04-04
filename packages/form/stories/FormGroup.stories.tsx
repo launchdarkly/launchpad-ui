@@ -4,12 +4,13 @@ import { FormGroup, FormHint, Label, RequiredAsterisk, TextField } from '../src'
 
 export default {
 	component: FormGroup,
-	title: 'Components/Form/FormGroup',
+	title: 'Components/Deprecated/Form/FormGroup',
 	description: 'A group of form fields.',
 	parameters: {
 		status: {
 			type: import.meta.env.STORYBOOK_PACKAGE_STATUS__FORM,
 		},
+		chromatic: { disableSnapshot: true },
 	},
 	argTypes: {
 		className: {

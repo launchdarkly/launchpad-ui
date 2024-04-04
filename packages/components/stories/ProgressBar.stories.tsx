@@ -4,7 +4,7 @@ import { ProgressBar } from '../src';
 
 const meta: Meta<typeof ProgressBar> = {
 	component: ProgressBar,
-	title: 'React Aria Components/ProgressBar',
+	title: 'React Aria Components/Status/ProgressBar',
 	parameters: {
 		status: {
 			type: import.meta.env.STORYBOOK_PACKAGE_STATUS__COMPONENTS,

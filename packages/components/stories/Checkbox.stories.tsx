@@ -6,7 +6,7 @@ import { Checkbox } from '../src';
 
 const meta: Meta<typeof Checkbox> = {
 	component: Checkbox,
-	title: 'React Aria Components/Checkbox',
+	title: 'React Aria Components/Forms/Checkbox',
 	parameters: {
 		status: {
 			type: import.meta.env.STORYBOOK_PACKAGE_STATUS__COMPONENTS,

@@ -7,7 +7,7 @@ import { Input, Label, Text, TextArea, TextField } from '../src';
 
 const meta: Meta<typeof TextField> = {
 	component: TextField,
-	title: 'React Aria Components/TextField',
+	title: 'React Aria Components/Forms/TextField',
 	parameters: {
 		status: {
 			type: import.meta.env.STORYBOOK_PACKAGE_STATUS__COMPONENTS,

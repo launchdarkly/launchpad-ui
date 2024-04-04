@@ -4,7 +4,7 @@ import { StatusIcon } from '../src';
 
 export default {
 	component: StatusIcon,
-	title: 'Components/Icon/StatusIcon',
+	title: 'Components/Sunset/Icon/StatusIcon',
 	description:
 		'Flair icons can be used as either square or circular icons with gradient backgrounds.',
 	parameters: {

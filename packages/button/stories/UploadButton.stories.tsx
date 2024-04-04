@@ -4,12 +4,13 @@ import { UploadButton } from '../src';
 
 export default {
 	component: UploadButton,
-	title: 'Components/Button/UploadButton',
+	title: 'Components/Deprecated/Button/UploadButton',
 	description: 'UploadButtons trigger a native file upload experience.',
 	parameters: {
 		status: {
 			type: import.meta.env.STORYBOOK_PACKAGE_STATUS__BUTTON,
 		},
+		chromatic: { disableSnapshot: true },
 	},
 	argTypes: {
 		maxSize: {

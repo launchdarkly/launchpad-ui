@@ -8,7 +8,7 @@ const meta: Meta<typeof RadioGroup> = {
 	component: RadioGroup,
 	// @ts-ignore
 	subcomponents: { Radio },
-	title: 'React Aria Components/RadioGroup',
+	title: 'React Aria Components/Forms/RadioGroup',
 	parameters: {
 		status: {
 			type: import.meta.env.STORYBOOK_PACKAGE_STATUS__COMPONENTS,

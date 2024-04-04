@@ -10,13 +10,14 @@ import { MultiSelect, MultiSelectTrigger, SelectItem } from '../src';
 
 export default {
 	component: MultiSelect,
-	title: 'Components/Select/Multi',
+	title: 'Components/Deprecated/Select/Multi',
 	description:
 		'A Select combines a text input with a listbox, allowing users to filter a list of options to items matching a query.',
 	parameters: {
 		status: {
 			type: import.meta.env.STORYBOOK_PACKAGE_STATUS__SELECT,
 		},
+		chromatic: { disableSnapshot: true },
 	},
 };
 

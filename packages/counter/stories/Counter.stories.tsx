@@ -4,12 +4,13 @@ import { Counter } from '../src';
 
 export default {
 	component: Counter,
-	title: 'Components/Counter',
+	title: 'Components/Deprecated/Counter',
 	description: 'Indicates the count value of a resource.',
 	parameters: {
 		status: {
 			type: import.meta.env.STORYBOOK_PACKAGE_STATUS__COUNTER,
 		},
+		chromatic: { disableSnapshot: true },
 	},
 	argTypes: {
 		subtle: {

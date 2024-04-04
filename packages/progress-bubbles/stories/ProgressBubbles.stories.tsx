@@ -7,7 +7,7 @@ import { ProgressBubbles } from '../src';
 
 export default {
 	component: ProgressBubbles,
-	title: 'Components/ProgressBubbles',
+	title: 'Components/Sunset/ProgressBubbles',
 	description: 'Shows current progress through a multistep flow.',
 	parameters: {
 		status: {

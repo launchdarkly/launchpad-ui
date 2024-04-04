@@ -5,7 +5,7 @@ import { Inline } from '../src';
 
 export default {
 	component: Inline,
-	title: 'Components/Inline',
+	title: 'Components/Sunset/Inline',
 	description: 'An element used to add horizontal space between components.',
 	parameters: {
 		status: {

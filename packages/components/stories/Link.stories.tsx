@@ -7,7 +7,7 @@ import { Link } from '../src';
 
 const meta: Meta<typeof Link> = {
 	component: Link,
-	title: 'React Aria Components/Link',
+	title: 'React Aria Components/Navigation/Link',
 	parameters: {
 		status: {
 			type: import.meta.env.STORYBOOK_PACKAGE_STATUS__COMPONENTS,

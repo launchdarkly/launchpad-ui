@@ -6,7 +6,7 @@ import { Box } from '../src';
 
 export default {
 	component: Box,
-	title: 'Components/Box',
+	title: 'Components/Experimental/Box',
 	description: '',
 	parameters: {
 		status: {

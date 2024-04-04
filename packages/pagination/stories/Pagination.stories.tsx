@@ -4,7 +4,7 @@ import { Pagination } from '../src';
 
 export default {
 	component: Pagination,
-	title: 'Components/Pagination',
+	title: 'Components/Sunset/Pagination',
 	description: 'Navigate through a paged list.',
 	parameters: {
 		status: {

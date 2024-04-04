@@ -23,7 +23,7 @@ const meta: Meta<typeof Menu> = {
 	component: Menu,
 	// @ts-ignore
 	subcomponents: { MenuItem, MenuTrigger, SubmenuTrigger },
-	title: 'React Aria Components/Menu',
+	title: 'React Aria Components/Collections/Menu',
 	parameters: {
 		status: {
 			type: import.meta.env.STORYBOOK_PACKAGE_STATUS__COMPONENTS,

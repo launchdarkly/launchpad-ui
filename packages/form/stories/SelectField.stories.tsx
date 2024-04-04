@@ -4,12 +4,13 @@ import { SelectField } from '../src';
 
 export default {
 	component: SelectField,
-	title: 'Components/Form/SelectField',
+	title: 'Components/Deprecated/Form/SelectField',
 	description: 'A select field allows the user to select a value from a set of options."',
 	parameters: {
 		status: {
 			type: import.meta.env.STORYBOOK_PACKAGE_STATUS__FORM,
 		},
+		chromatic: { disableSnapshot: true },
 	},
 	argTypes: {
 		className: {
