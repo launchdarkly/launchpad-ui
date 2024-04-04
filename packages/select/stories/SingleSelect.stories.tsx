@@ -10,13 +10,14 @@ import { SelectItem, SelectSection, SingleSelect, SingleSelectTrigger } from '..
 
 export default {
 	component: SingleSelect,
-	title: 'Components/Select/Single',
+	title: 'Legacy/Deprecated/Select/Single',
 	description:
 		'A Select combines a text input with a listbox, allowing users to filter a list of options to items matching a query.',
 	parameters: {
 		status: {
 			type: import.meta.env.STORYBOOK_PACKAGE_STATUS__SELECT,
 		},
+		chromatic: { disableSnapshot: true },
 	},
 };
 

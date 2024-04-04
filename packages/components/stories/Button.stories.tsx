@@ -9,7 +9,7 @@ import { Button } from '../src';
 
 const meta: Meta<typeof Button> = {
 	component: Button,
-	title: 'React Aria Components/Button',
+	title: 'Components/Buttons/Button',
 	parameters: {
 		status: {
 			type: import.meta.env.STORYBOOK_PACKAGE_STATUS__COMPONENTS,

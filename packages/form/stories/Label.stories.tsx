@@ -4,12 +4,13 @@ import { Label } from '../src';
 
 export default {
 	component: Label,
-	title: 'Components/Form/Label',
+	title: 'Legacy/Deprecated/Form/Label',
 	description: 'A label describes a form field.',
 	parameters: {
 		status: {
 			type: import.meta.env.STORYBOOK_PACKAGE_STATUS__FORM,
 		},
+		chromatic: { disableSnapshot: true },
 	},
 	argTypes: {
 		className: {

@@ -4,13 +4,14 @@ import { FilterButton } from '../src';
 
 export default {
 	component: FilterButton,
-	title: 'Components/Filter/FilterButton',
+	title: 'Legacy/Deprecated/Filter/FilterButton',
 	description:
 		"When the Filter component doesn't suffice, construct your own custom filter using the FilterButton.",
 	parameters: {
 		status: {
 			type: import.meta.env.STORYBOOK_PACKAGE_STATUS__FILTER,
 		},
+		chromatic: { disableSnapshot: true },
 	},
 };
 

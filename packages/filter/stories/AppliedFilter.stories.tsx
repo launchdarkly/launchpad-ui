@@ -4,12 +4,13 @@ import { AppliedFilter } from '../src';
 
 export default {
 	component: AppliedFilter,
-	title: 'Components/Filter/AppliedFilter',
+	title: 'Legacy/Deprecated/Filter/AppliedFilter',
 	description: 'We use filters to filter our lists based on search critera.',
 	parameters: {
 		status: {
 			type: import.meta.env.STORYBOOK_PACKAGE_STATUS__FILTER,
 		},
+		chromatic: { disableSnapshot: true },
 	},
 	argTypes: {
 		testId: {

@@ -6,10 +6,7 @@ import path from 'path';
 import tsconfig from '../tsconfig.json';
 
 const config: StorybookConfig = {
-	stories: [
-		'../packages/!(button|card|chip|counter|drawer|dropdown|filter|focus-trap|form|menu|modal|overlay|popover|portal|progress|select|tag|toggle|tooltip)/stories/*.stories.{mdx,tsx}',
-		'../packages/**/*.mdx',
-	],
+	stories: ['../packages/**/*.stories.{mdx,tsx}', '../packages/**/*.mdx'],
 	addons: [
 		'@storybook/addon-a11y',
 		{

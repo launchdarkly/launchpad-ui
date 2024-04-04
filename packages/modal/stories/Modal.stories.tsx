@@ -13,13 +13,14 @@ import { AbsoluteModalFooter, Modal, ModalBody, ModalFooter, ModalHeader } from 
 
 export default {
 	component: Modal,
-	title: 'Components/Modal',
+	title: 'Legacy/Deprecated/Modal',
 	description: 'Modals presents users information and actions over a page.',
 	parameters: {
 		status: {
 			type: import.meta.env.STORYBOOK_PACKAGE_STATUS__MODAL,
 		},
 		controls: { sort: 'requiredFirst' },
+		chromatic: { disableSnapshot: true },
 	},
 	subcomponents: {
 		ModalHeader,

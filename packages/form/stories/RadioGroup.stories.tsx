@@ -4,12 +4,13 @@ import { Label, Radio, RadioGroup } from '../src';
 
 export default {
 	component: RadioGroup,
-	title: 'Components/Form/RadioGroup',
+	title: 'Legacy/Deprecated/Form/RadioGroup',
 	description: 'A radio button group allows the user to select one of a set of options.',
 	parameters: {
 		status: {
 			type: import.meta.env.STORYBOOK_PACKAGE_STATUS__FORM,
 		},
+		chromatic: { disableSnapshot: true },
 	},
 	argTypes: {
 		className: {

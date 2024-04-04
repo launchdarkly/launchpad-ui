@@ -8,7 +8,7 @@ import { icons } from '../src/types';
 
 export default {
 	component: Icon,
-	title: 'Components/Icon',
+	title: 'Foundations/Icons',
 	description: 'Icons supplement content and represent an action or feature within LaunchDarkly.',
 	parameters: {
 		status: {
@@ -75,6 +75,6 @@ const render: ArgsStoryFn<ReactRenderer> = () => (
 	</div>
 );
 
-export const Default = {
+export const Sprites = {
 	render,
 };

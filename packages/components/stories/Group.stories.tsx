@@ -8,7 +8,7 @@ import { Group, IconButton, Input, Label, ProgressBar, TextField } from '../src'
 
 const meta: Meta<typeof Group> = {
 	component: Group,
-	title: 'React Aria Components/Group',
+	title: 'Components/Content/Group',
 	parameters: {
 		status: {
 			type: import.meta.env.STORYBOOK_PACKAGE_STATUS__COMPONENTS,

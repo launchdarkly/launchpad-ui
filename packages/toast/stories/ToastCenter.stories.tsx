@@ -9,7 +9,7 @@ import { ToastCenter } from '../src';
 
 export default {
 	component: ToastCenter,
-	title: 'Components/Toast/ToastCenter',
+	title: 'Legacy/Sunset/Toast/ToastCenter',
 	description: 'A container for toasts.',
 };
 
