@@ -13,7 +13,6 @@ export default {
 		status: {
 			type: import.meta.env.STORYBOOK_PACKAGE_STATUS__ALERT,
 		},
-		chromatic: { disableSnapshot: true },
 	},
 	argTypes: {
 		testId: {
