@@ -33,5 +33,6 @@ describe('TagGroup', () => {
 		for (const button of buttons) {
 			expect(button).toBeVisible();
 		}
+		expect(buttons[0].getAttribute('aria-label')).toBe('Remove One');
 	});
 });

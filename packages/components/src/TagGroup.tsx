@@ -89,7 +89,7 @@ const _Tag = (
 					{children}
 					{allowsRemoving && (
 						<IconButton
-							aria-label="Remove"
+							aria-label={`Remove ${textValue ?? ''}`.trim()}
 							size="small"
 							variant="minimal"
 							icon="cancel-circle-outline"
