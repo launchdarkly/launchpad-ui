@@ -71,9 +71,6 @@ importers:
       '@storybook/types':
         specifier: ^8.0.2
         version: 8.0.5
-      '@testing-library/dom':
-        specifier: ^10.0.0
-        version: 10.0.0
       '@testing-library/jest-dom':
         specifier: ^6.4.0
         version: 6.4.2(vitest@1.4.0)
