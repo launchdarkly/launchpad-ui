@@ -10,7 +10,7 @@ importers:
     devDependencies:
       '@axe-core/playwright':
         specifier: ^4.9.0
-        version: 4.9.0(playwright-core@1.42.1)
+        version: 4.9.0(playwright-core@1.43.0)
       '@biomejs/biome':
         specifier: 1.6.3
         version: 1.6.3
@@ -1548,13 +1548,13 @@ packages:
       default-browser-id: 3.0.0
     dev: true
 
-  /@axe-core/playwright@4.9.0(playwright-core@1.42.1):
+  /@axe-core/playwright@4.9.0(playwright-core@1.43.0):
     resolution: {integrity: sha512-Q1Lz75dNsX38jof+aev7RficDMdH/HLOLySkDdXR0fUoeFcLdw4UNgDO2CNNP4CTpoesEdfYRdd6VmDXjhBgbA==}
     peerDependencies:
       playwright-core: '>= 1.0.0'
     dependencies:
       axe-core: 4.9.0
-      playwright-core: 1.42.1
+      playwright-core: 1.43.0
     dev: true
 
   /@babel/code-frame@7.24.2:
@@ -11872,12 +11872,6 @@ packages:
       jsonc-parser: 3.2.1
       mlly: 1.6.1
       pathe: 1.1.2
-    dev: true
-
-  /playwright-core@1.42.1:
-    resolution: {integrity: sha512-mxz6zclokgrke9p1vtdy/COWBH+eOZgYUVVU34C73M+4j4HLlQJHtfcqiqqxpP0o8HhMkflvfbquLX5dg6wlfA==}
-    engines: {node: '>=16'}
-    hasBin: true
     dev: true
 
   /playwright-core@1.43.0:
