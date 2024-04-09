@@ -12,6 +12,11 @@ type UploadButtonProps = Omit<ButtonProps, 'onSelect'> & {
 	id: string;
 };
 
+/**
+ * @deprecated use `FileTrigger` from `@launchpad-ui/components` instead
+ *
+ * https://launchpad.launchdarkly.com/?path=/docs/components-buttons-filetrigger--docs
+ */
 const UploadButton = ({
 	id,
 	className,

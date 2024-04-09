@@ -12,6 +12,11 @@ type TooltipProps = Omit<PopoverProps, 'children'> & {
 	children?: ReactNode;
 };
 
+/**
+ * @deprecated use `Tooltip` from `@launchpad-ui/components` instead
+ *
+ * https://launchpad.launchdarkly.com/?path=/docs/components-overlays-tooltip--docs
+ */
 const TooltipBase = ({
 	className,
 	children,
@@ -37,6 +42,11 @@ const TooltipBase = ({
 	);
 };
 
+/**
+ * @deprecated use `Tooltip` from `@launchpad-ui/components` instead
+ *
+ * https://launchpad.launchdarkly.com/?path=/docs/components-overlays-tooltip--docs
+ */
 const Tooltip = forwardRef<Element, TooltipProps>((props, ref) => (
 	<TooltipBase {...props} targetElementRef={ref} />
 ));

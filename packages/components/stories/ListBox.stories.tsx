@@ -10,7 +10,7 @@ import { Header, ListBox, ListBoxItem, Section } from '../src';
 const meta: Meta<typeof ListBox> = {
 	component: ListBox,
 	// @ts-ignore
-	subcomponents: { ListBoxItem },
+	subcomponents: { ListBoxItem, Section, Header },
 	title: 'Components/Collections/ListBox',
 	parameters: {
 		status: {

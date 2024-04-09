@@ -12,6 +12,11 @@ type ModalFooterProps = HTMLAttributes<HTMLDivElement> & {
 	'data-test-id'?: string;
 };
 
+/**
+ * @deprecated use `div[slot='footer']` with `Modal` from `@launchpad-ui/components` instead
+ *
+ * https://launchpad.launchdarkly.com/?path=/docs/components-overlays-modal--docs
+ */
 const ModalFooter = forwardRef<HTMLDivElement, ModalFooterProps>(
 	(
 		{ secondaryButton, primaryButton, className, 'data-test-id': testId = 'modal-footer', ...rest },

@@ -7,6 +7,11 @@ import { ModalFooter } from './ModalFooter';
 import styles from './styles/Modal.module.css';
 import { useAbsoluteFooter } from './utils';
 
+/**
+ * @deprecated use `div[slot='footer']` with `Modal` from `@launchpad-ui/components` instead
+ *
+ * https://launchpad.launchdarkly.com/?path=/docs/components-overlays-modal--docs
+ */
 const AbsoluteModalFooter = ({ className, ...rest }: ModalFooterProps) => {
 	const ref = useRef<HTMLDivElement>(null);
 	useAbsoluteFooter(ref);

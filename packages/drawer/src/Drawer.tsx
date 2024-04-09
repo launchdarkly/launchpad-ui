@@ -46,6 +46,11 @@ type DrawerProps = {
 	hideCancel?: boolean;
 };
 
+/**
+ * @deprecated use `Modal` from `@launchpad-ui/components` instead
+ *
+ * https://launchpad.launchdarkly.com/?path=/docs/components-overlays-modal--docs#drawer
+ */
 const Drawer = (props: DrawerProps) => (
 	<Portal>
 		<DrawerContainer {...props} />

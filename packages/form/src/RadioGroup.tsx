@@ -44,6 +44,11 @@ type RadioGroupProps = {
 	'data-test-id'?: string;
 };
 
+/**
+ * @deprecated use `RadioGroup` from `@launchpad-ui/components` instead
+ *
+ * https://launchpad.launchdarkly.com/?path=/docs/components-forms-radiogroup--docs
+ */
 const RadioGroup = (props: RadioGroupProps) => {
 	const {
 		name,

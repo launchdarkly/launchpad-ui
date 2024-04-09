@@ -25,6 +25,11 @@ type MultiSelectProps<T extends object> = SharedSelectProps<T> &
 		isSelectableAll?: boolean;
 	};
 
+/**
+ * @deprecated use `Select` from `@launchpad-ui/components` instead
+ *
+ * https://launchpad.launchdarkly.com/?path=/docs/components-pickers-select--docs
+ */
 const MultiSelect = <T extends object>(props: MultiSelectProps<T>) => {
 	const {
 		autoFocus,

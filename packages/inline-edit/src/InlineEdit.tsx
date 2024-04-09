@@ -29,6 +29,11 @@ type InlineEditProps = ComponentProps<'div'> &
 		confirmButtonLabel?: string;
 	};
 
+/**
+ * @deprecated use `minimal` variant for fields from `@launchpad-ui/components` instead
+ *
+ * https://launchpad.launchdarkly.com/?path=/docs/components-forms-textfield--docs#minimal
+ */
 const InlineEdit = forwardRef<HTMLInputElement, InlineEditProps>(
 	(
 		{

@@ -101,12 +101,9 @@ const isOrContainsElement = (referenceElement: Element, element: Element) => {
 };
 
 /**
- * Popover component driven by floating-ui.
+ * @deprecated use `Popover` from `@launchpad-ui/components` instead
  *
- * If you need more control over the popover's behavior,
- * you may specify the `isOpen` prop to use the component
- * in controlled mode.
- *
+ * https://launchpad.launchdarkly.com/?path=/docs/components-overlays-popover--docs
  */
 const Popover = ({
 	rootElementTag = 'span',

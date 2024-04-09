@@ -28,6 +28,11 @@ type FormFieldProps = {
 	FieldErrorProps?: Partial<FieldErrorProps>;
 };
 
+/**
+ * @deprecated use form elements from `@launchpad-ui/components` instead
+ *
+ * https://launchpad.launchdarkly.com/?path=/docs/components-forms-textfield--docs
+ */
 const FormField = ({
 	isRequired,
 	label,

@@ -14,6 +14,11 @@ type FormProps = ComponentProps<'form'> & {
 	'data-test-id'?: string;
 };
 
+/**
+ * @deprecated use `Form` from `@launchpad-ui/components` instead
+ *
+ * https://launchpad.launchdarkly.com/?path=/docs/components-forms-form--docs
+ */
 const Form = (props: FormProps) => {
 	const {
 		className,

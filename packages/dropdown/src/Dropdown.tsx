@@ -15,6 +15,11 @@ type DropdownProps<T extends string | object | number> = PopoverProps & {
 	onStateChange?: (state: DropdownState) => void;
 };
 
+/**
+ * @deprecated use `Menu` from `@launchpad-ui/components` instead
+ *
+ * https://launchpad.launchdarkly.com/?path=/docs/components-collections-menu--docs
+ */
 const Dropdown = <T extends string | object | number>(props: DropdownProps<T>) => {
 	const {
 		placement,

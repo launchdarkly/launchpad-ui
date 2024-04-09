@@ -10,7 +10,7 @@ import { Button, Dialog, DialogTrigger, Heading, IconButton, Modal, ModalOverlay
 const meta: Meta<typeof Modal> = {
 	component: Modal,
 	// @ts-ignore
-	subcomponents: { ModalOverlay, Dialog, DialogTrigger },
+	subcomponents: { ModalOverlay, Dialog, DialogTrigger, Heading },
 	title: 'Components/Overlays/Modal',
 	parameters: {
 		status: {

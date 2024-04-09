@@ -16,6 +16,11 @@ type ProgressProps = {
 const clamp = (number: number, lower: number, upper?: number) =>
 	upper ? Math.min(Math.max(number, lower), upper) : Math.min(number, lower);
 
+/**
+ * @deprecated use `ProgressBar` from `@launchpad-ui/components` instead
+ *
+ * https://launchpad.launchdarkly.com/?path=/docs/components-status-progressbar--docs
+ */
 const Progress = ({
 	value,
 	size = 'small',

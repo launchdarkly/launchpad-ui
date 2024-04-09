@@ -31,6 +31,11 @@ type TagGroupProps<T extends object> = AriaTagGroupProps<T> & {
 	maxRows?: number;
 };
 
+/**
+ * @deprecated use `TagGroup` from `@launchpad-ui/components` instead
+ *
+ * https://launchpad.launchdarkly.com/?path=/docs/components-collections-taggroup--docs
+ */
 const TagGroup = <T extends object>(props: TagGroupProps<T>) => {
 	const {
 		onRemove,

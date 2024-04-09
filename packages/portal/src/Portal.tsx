@@ -8,6 +8,9 @@ type PortalProps = ComponentProps<'div'> & {
 	'data-test-id'?: string;
 };
 
+/**
+ * @deprecated not used for overlays in `@launchpad-ui/components`
+ */
 const Portal = forwardRef<HTMLDivElement, PortalProps>(
 	(
 		{ container = globalThis?.document?.body, 'data-test-id': testId = 'portal', ...props },

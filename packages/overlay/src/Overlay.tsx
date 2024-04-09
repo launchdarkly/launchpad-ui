@@ -14,6 +14,9 @@ type OverlayProps = {
 	children?: ReactNode;
 };
 
+/**
+ * @deprecated not used for overlays in `@launchpad-ui/components`
+ */
 const Overlay = ({
 	isOpen,
 	lazy = true,

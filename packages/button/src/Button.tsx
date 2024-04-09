@@ -139,6 +139,11 @@ const ButtonComponent = forwardRef<HTMLButtonElement, ButtonProps>((props, ref) 
 
 ButtonComponent.displayName = 'Button';
 
+/**
+ * @deprecated use `Button` from `@launchpad-ui/components` instead
+ *
+ * https://launchpad.launchdarkly.com/?path=/docs/components-buttons-button--docs
+ */
 const Button = memo(ButtonComponent);
 
 export { Button };
