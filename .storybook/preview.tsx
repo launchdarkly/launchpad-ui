@@ -20,7 +20,7 @@ export const parameters: Parameters = {
 		panelPosition: 'bottom',
 		storySort: {
 			method: 'alphabetical',
-			order: ['Foundations', 'Components', 'Legacy'],
+			order: ['Foundations', 'Components', 'Recipes', 'Legacy'],
 			locales: 'en-US',
 		},
 	},

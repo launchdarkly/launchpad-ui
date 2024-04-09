@@ -53,6 +53,10 @@
     min-width: calc(var(--lp-spacing-300) * 2 + var(--trigger-width) + 2px);
   }
 
+  &[data-trigger='ComboBoxDialog'] {
+    padding: var(--lp-spacing-300);
+  }
+
   &[data-placement='top'] {
     --origin: translateY(4px);
 
