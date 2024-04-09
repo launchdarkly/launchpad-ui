@@ -2,7 +2,7 @@ import type { Meta, StoryFn, StoryObj } from '@storybook/react';
 import type { ComponentPropsWithoutRef, Fragment } from 'react';
 
 import { Icon } from '@launchpad-ui/icons';
-import { userEvent, within } from '@storybook/test';
+import { expect, userEvent, within } from '@storybook/test';
 import {
 	Button,
 	ComboBox,
@@ -23,6 +23,9 @@ const Container = (props: ComponentPropsWithoutRef<typeof Fragment>) => <>{props
 const meta: Meta<typeof Container> = {
 	title: 'Recipes/Composition',
 	component: Container,
+	parameters: {
+		chromatic: { pauseAnimationAtEnd: true },
+	},
 	decorators: [
 		(Story: StoryFn) => (
 			<div style={{ height: 'var(--lp-size-224)' }}>
@@ -57,6 +60,8 @@ export const CopyToClipboard: Story = {
 		const canvas = within(canvasElement);
 
 		await userEvent.hover(canvas.getByRole('button'));
+		const body = canvasElement.ownerDocument.body;
+		await expect(await within(body).findByRole('tooltip'));
 	},
 };
 
