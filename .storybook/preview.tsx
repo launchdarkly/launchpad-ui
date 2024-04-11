@@ -86,7 +86,7 @@ export const decorators: DecoratorFunction<ReactRenderer>[] = [
 		return mirror ? (
 			<Box display="flex" flexDirection={sideBySide ? 'row' : 'column'} minHeight="100vh">
 				<Box
-					padding="$300"
+					padding="$400"
 					width={sideBySide ? '50vw' : undefined}
 					height={stacked ? '50vh' : undefined}
 				>
@@ -94,7 +94,7 @@ export const decorators: DecoratorFunction<ReactRenderer>[] = [
 				</Box>
 				<Box
 					data-theme="dark"
-					padding="$300"
+					padding="$400"
 					width={sideBySide ? '50vw' : undefined}
 					height={stacked ? '50vh' : undefined}
 				>
@@ -102,7 +102,7 @@ export const decorators: DecoratorFunction<ReactRenderer>[] = [
 				</Box>
 			</Box>
 		) : (
-			<Box padding="$300">
+			<Box padding="$400">
 				<StoryFn />
 			</Box>
 		);
