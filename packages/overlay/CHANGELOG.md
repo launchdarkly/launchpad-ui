@@ -1,5 +1,16 @@
 # @launchpad-ui/overlay
 
+## 0.3.30
+
+### Patch Changes
+
+- [#1233](https://github.com/launchdarkly/launchpad-ui/pull/1233) [`d635813`](https://github.com/launchdarkly/launchpad-ui/commit/d63581359d661c6e8e40ce5ad2a6f2d557333db0) Thanks [@Niznikr](https://github.com/Niznikr)! - Tag deprecated components
+
+- [#1241](https://github.com/launchdarkly/launchpad-ui/pull/1241) [`28f0708`](https://github.com/launchdarkly/launchpad-ui/commit/28f070844e7d4b35d54634fd78faf534b5f897c0) Thanks [@Niznikr](https://github.com/Niznikr)! - Add repository and license fields to package.json
+
+- Updated dependencies [[`d635813`](https://github.com/launchdarkly/launchpad-ui/commit/d63581359d661c6e8e40ce5ad2a6f2d557333db0), [`28f0708`](https://github.com/launchdarkly/launchpad-ui/commit/28f070844e7d4b35d54634fd78faf534b5f897c0)]:
+  - @launchpad-ui/portal@0.1.5
+
 ## 0.3.29
 
 ### Patch Changes
@@ -246,13 +257,13 @@
   Before:
 
   ```js
-  import alertStyles from '@launchpad-ui/alert/styles/Alert.css';
+  import alertStyles from "@launchpad-ui/alert/styles/Alert.css";
   ```
 
   After:
 
   ```js
-  import alertStyles from '@launchpad-ui/alert/style.css';
+  import alertStyles from "@launchpad-ui/alert/style.css";
   ```
 
   The `core` package no longer bundles styles. If you need to import stylesheets for the components (in a Remix app for example) simply import them from the individual packages that come included when you install the `core` package.

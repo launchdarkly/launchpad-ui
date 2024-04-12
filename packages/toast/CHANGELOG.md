@@ -1,5 +1,15 @@
 # @launchpad-ui/toast
 
+## 0.3.20
+
+### Patch Changes
+
+- [#1241](https://github.com/launchdarkly/launchpad-ui/pull/1241) [`28f0708`](https://github.com/launchdarkly/launchpad-ui/commit/28f070844e7d4b35d54634fd78faf534b5f897c0) Thanks [@Niznikr](https://github.com/Niznikr)! - Add repository and license fields to package.json
+
+- Updated dependencies [[`28f0708`](https://github.com/launchdarkly/launchpad-ui/commit/28f070844e7d4b35d54634fd78faf534b5f897c0), [`6f00788`](https://github.com/launchdarkly/launchpad-ui/commit/6f00788e9b043aeb3fa6d00de1fa29d5962684ad)]:
+  - @launchpad-ui/tokens@0.9.9
+  - @launchpad-ui/icons@0.17.0
+
 ## 0.3.19
 
 ### Patch Changes
