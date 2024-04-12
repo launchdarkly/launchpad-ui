@@ -5,7 +5,12 @@
 	"publishConfig": {
 		"access": "public"
 	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/launchdarkly/launchpad-ui"
+	},
 	"description": "A progressive disclosure component that allows the user to to click a trigger to show more content",
+	"license": "Apache-2.0",
 	"files": ["dist"],
 	"main": "dist/index.js",
 	"module": "dist/index.es.js",
