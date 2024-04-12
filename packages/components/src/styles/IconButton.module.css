@@ -1,5 +1,6 @@
 .base {
   padding: 0;
+  flex-shrink: 0;
 }
 
 .small {
