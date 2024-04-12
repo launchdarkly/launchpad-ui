@@ -29,7 +29,7 @@
 		"url": "git+https://github.com/launchdarkly/launchpad-ui.git"
 	},
 	"author": "Catamorphic Co.",
-	"license": "",
+	"license": "Apache-2.0",
 	"bugs": {
 		"url": "https://github.com/launchdarkly/launchpad-ui/issues"
 	},
