@@ -36,7 +36,7 @@
 
 .minimal {
   background-color: inherit;
-  margin-left: calc(-1 * var(--lp-spacing-300));
+  margin-left: calc(-1 * var(--lp-spacing-300) - 1px);
 
   &:not([data-invalid]) {
     border-color: transparent;
