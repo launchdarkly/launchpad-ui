@@ -1,5 +1,15 @@
 # @launchpad-ui/data-table
 
+## 0.2.16
+
+### Patch Changes
+
+- [#1241](https://github.com/launchdarkly/launchpad-ui/pull/1241) [`28f0708`](https://github.com/launchdarkly/launchpad-ui/commit/28f070844e7d4b35d54634fd78faf534b5f897c0) Thanks [@Niznikr](https://github.com/Niznikr)! - Add repository and license fields to package.json
+
+- Updated dependencies [[`28f0708`](https://github.com/launchdarkly/launchpad-ui/commit/28f070844e7d4b35d54634fd78faf534b5f897c0)]:
+  - @launchpad-ui/tokens@0.9.9
+  - @launchpad-ui/vars@0.2.16
+
 ## 0.2.15
 
 ### Patch Changes

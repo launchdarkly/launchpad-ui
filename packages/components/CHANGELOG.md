@@ -1,5 +1,25 @@
 # @launchpad-ui/components
 
+## 0.1.18
+
+### Patch Changes
+
+- [#1230](https://github.com/launchdarkly/launchpad-ui/pull/1230) [`466bfab`](https://github.com/launchdarkly/launchpad-ui/commit/466bfab651c87d2843dc0c7ece725621df7693b2) Thanks [@Niznikr](https://github.com/Niznikr)! - Add `ComboBoxClearButton`
+
+- [#1236](https://github.com/launchdarkly/launchpad-ui/pull/1236) [`907ea91`](https://github.com/launchdarkly/launchpad-ui/commit/907ea919a96b83f4e657541457e645296144cfb6) Thanks [@Niznikr](https://github.com/Niznikr)! - Include `Tag` textValue in remove label
+
+- [#1228](https://github.com/launchdarkly/launchpad-ui/pull/1228) [`e237768`](https://github.com/launchdarkly/launchpad-ui/commit/e237768965186fd1dedbc4f3bad3044ce5344494) Thanks [@Niznikr](https://github.com/Niznikr)! - Add `FieldGroup`
+
+- [#1241](https://github.com/launchdarkly/launchpad-ui/pull/1241) [`28f0708`](https://github.com/launchdarkly/launchpad-ui/commit/28f070844e7d4b35d54634fd78faf534b5f897c0) Thanks [@Niznikr](https://github.com/Niznikr)! - Add repository and license fields to package.json
+
+- [#1214](https://github.com/launchdarkly/launchpad-ui/pull/1214) [`2d99ca2`](https://github.com/launchdarkly/launchpad-ui/commit/2d99ca2f668499f135553b9160a8cff0a94654f0) Thanks [@Niznikr](https://github.com/Niznikr)! - Add `minimal` variant to `Input`, `TextArea`, and `Group`
+
+- [#1240](https://github.com/launchdarkly/launchpad-ui/pull/1240) [`ad9b150`](https://github.com/launchdarkly/launchpad-ui/commit/ad9b150ed7556a2b83b93fe8159f66ead57f24c5) Thanks [@Niznikr](https://github.com/Niznikr)! - Prevent icon button shrinking
+
+- Updated dependencies [[`28f0708`](https://github.com/launchdarkly/launchpad-ui/commit/28f070844e7d4b35d54634fd78faf534b5f897c0), [`6f00788`](https://github.com/launchdarkly/launchpad-ui/commit/6f00788e9b043aeb3fa6d00de1fa29d5962684ad)]:
+  - @launchpad-ui/tokens@0.9.9
+  - @launchpad-ui/icons@0.17.0
+
 ## 0.1.17
 
 ### Patch Changes

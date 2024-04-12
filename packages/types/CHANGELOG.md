@@ -1,5 +1,11 @@
 # @launchpad-ui/types
 
+## 0.1.1
+
+### Patch Changes
+
+- [#1241](https://github.com/launchdarkly/launchpad-ui/pull/1241) [`28f0708`](https://github.com/launchdarkly/launchpad-ui/commit/28f070844e7d4b35d54634fd78faf534b5f897c0) Thanks [@Niznikr](https://github.com/Niznikr)! - Add repository and license fields to package.json
+
 ## 0.1.0
 
 ### Minor Changes
