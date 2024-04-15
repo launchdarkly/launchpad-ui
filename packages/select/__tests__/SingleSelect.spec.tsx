@@ -1,17 +1,21 @@
 import { describe, expect, it } from 'vitest';
 
 import { render, screen, userEvent } from '../../../test/utils';
-import { SelectItem, SingleSelect, SingleSelectTrigger } from '../src';
+import { SelectItem, SelectSection, SingleSelect, SingleSelectTrigger } from '../src';
 
-import { FRUIT } from './constants';
+import { FRUIT, SECTIONED_ITEMS } from './constants';
 import { CustomSingleSelectTrigger } from './examples';
 
 describe('Select', () => {
 	describe('with default single select trigger', () => {
 		it('renders', () => {
 			render(
-				<SingleSelect label="Fruit" items={FRUIT}>
-					{(item) => <SelectItem>{item.name}</SelectItem>}
+				<SingleSelect label="Fruit" items={SECTIONED_ITEMS}>
+					{(section) => (
+						<SelectSection key={section.name} title={section.name} items={section.items}>
+							{(item) => <SelectItem textValue={item.name}>{item.name}</SelectItem>}
+						</SelectSection>
+					)}
 				</SingleSelect>,
 			);
 			expect(screen.getByTestId('select')).toBeVisible();
