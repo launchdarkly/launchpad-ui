@@ -1,5 +1,13 @@
 # @launchpad-ui/components
 
+## 0.1.19
+
+### Patch Changes
+
+- [#1245](https://github.com/launchdarkly/launchpad-ui/pull/1245) [`19aa22a`](https://github.com/launchdarkly/launchpad-ui/commit/19aa22a9a032d15cac6c878d96e93bf95a2df8d5) Thanks [@Niznikr](https://github.com/Niznikr)! - Update `Menu` styles
+
+- [#1239](https://github.com/launchdarkly/launchpad-ui/pull/1239) [`3d40025`](https://github.com/launchdarkly/launchpad-ui/commit/3d400256e4ccdb761ce02029fdd7e7236627248e) Thanks [@Niznikr](https://github.com/Niznikr)! - Align minimal fields with label
+
 ## 0.1.18
 
 ### Patch Changes
