@@ -1,0 +1,7 @@
+.section {
+  padding: var(--lp-spacing-200);
+}
+
+.section + .section {
+  border-top: 1px solid var(--lp-color-border-ui-secondary);
+}
