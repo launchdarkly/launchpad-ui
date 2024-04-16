@@ -101,6 +101,10 @@
     }
   }
 
+  &:not(:is([data-trigger='MenuTrigger'], [data-trigger='SubmenuTrigger'])):not(:has(.arrow)) {
+    overflow: auto;
+  }
+
   @media (prefers-reduced-motion: no-preference) {
     &[data-entering] {
       animation-name: slide;
