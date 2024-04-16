@@ -10,7 +10,8 @@
   max-width: var(--lp-menu-max-width);
 
   & header {
-    font: var(--lp-heading-3-semibold);
+    font: var(--lp-label-2-medium);
+    color: var(--lp-color-text-ui-tertiary);
     padding-inline: var(--lp-spacing-200);
   }
 
@@ -18,7 +19,6 @@
     height: var(--lp-size-1);
     background: var(--lp-color-border-ui-secondary);
     margin-block: var(--lp-spacing-200);
-    padding-inline: var(--lp-size-2);
   }
 
   &:has([data-selection-mode][role='menuitem']) {
