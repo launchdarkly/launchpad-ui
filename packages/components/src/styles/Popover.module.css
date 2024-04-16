@@ -21,6 +21,7 @@
   0 0 4px 0 rgb(40 40 40 / 0.12);
   transform: translate3d(0, 0, 0);
   will-change: transform, opacity;
+  overflow: auto;
 
   & [slot='title'] {
     font: var(--lp-heading-2-medium);

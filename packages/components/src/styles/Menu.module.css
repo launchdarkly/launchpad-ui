@@ -9,20 +9,8 @@
   min-width: var(--lp-size-144);
   max-width: var(--lp-menu-max-width);
 
-  & header {
-    font: var(--lp-label-2-medium);
-    color: var(--lp-color-text-ui-tertiary);
-    padding-inline: var(--lp-spacing-200);
-  }
-
   &:not(:has([role='group'])) {
     padding: var(--lp-spacing-200);
-  }
-
-  &:has([data-selection-mode][role='menuitem']) {
-    & header {
-      padding-left: var(--lp-spacing-800);
-    }
   }
 }
 
