@@ -101,7 +101,7 @@
     }
   }
 
-  &:not(:is([data-trigger='MenuTrigger'], [data-trigger='SubmenuTrigger'])):not(:has(.arrow)) {
+  &:not(:is([data-trigger='MenuTrigger'], [data-trigger='SubmenuTrigger']), :has(.arrow)) {
     overflow: auto;
   }
 
