@@ -1,0 +1,5 @@
+.separator {
+  height: var(--lp-size-1);
+  background: var(--lp-color-border-ui-secondary);
+  margin-block: var(--lp-spacing-200);
+}

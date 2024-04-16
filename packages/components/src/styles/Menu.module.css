@@ -15,10 +15,8 @@
     padding-inline: var(--lp-spacing-200);
   }
 
-  & [role='separator'] {
-    height: var(--lp-size-1);
-    background: var(--lp-color-border-ui-secondary);
-    margin-block: var(--lp-spacing-200);
+  &:not(:has([role='group'])) {
+    padding: var(--lp-spacing-200);
   }
 
   &:has([data-selection-mode][role='menuitem']) {

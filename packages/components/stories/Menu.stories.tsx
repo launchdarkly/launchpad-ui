@@ -85,7 +85,6 @@ export const Grouping: Story = {
 							<MenuItem>Item one</MenuItem>
 							<MenuItem>Item two</MenuItem>
 						</Section>
-						<Separator />
 						<Section>
 							<Header>Group 2</Header>
 							<MenuItem>Item three</MenuItem>
