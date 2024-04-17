@@ -70,11 +70,11 @@ Then fetch and inject the sprite for `Icon` to render icons correctly:
 fetch('https://cdn.example.com/sprite.svg')
   .then(async (response) => response.text())
   .then((data) => {
-    const div = document.createElement('div');
-    div.id = 'lp-icons-sprite';
-    div.style.display = 'none';
-    div.innerHTML = data;
-    document.body.appendChild(div);
+    const parser = new DOMParser();
+    const content = parser.parseFromString(data, 'image/svg+xml').documentElement;
+    content.id = 'lp-icons-sprite';
+    content.style.display = 'none';
+    document.body.appendChild(content);
   })
   .catch((err) => {
     console.log('Failed to fetch sprite', err);

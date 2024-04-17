@@ -64,9 +64,9 @@ tealydan/fix/update-alert-max-width
 
 ### Step 2: Write and test your code
 
-See our [Guides](#guides) below for advice on how to accomplish common tasks.
+See our [common tasks section](#common-tasks) below for advice on how to accomplish common tasks.
 
-For testing, you can visit the [README.md](./README.md) to learn which test commands we have available. We have a minimum coverage score you must fulfill for unit tests, so make sure to write a few tests to cover base cases and any heavily-used interactions.
+For testing, you can visit the [tests section](#running-tests) to learn which test commands we have available. We have a minimum coverage score you must fulfill for unit tests, so make sure to write a few tests to cover base cases and any heavily-used interactions.
 
 You should also consider adding `axe` accessibility tests. See other packages for examples.
 
@@ -78,29 +78,22 @@ To generate a changelog:
 
 - Run `npx changeset`
 - You'll see a list of packages `changesets` has determined have changed
-  - Select the packages you've updated. **Note: you should always include `core` as well, even if you haven't directly modified it.** This is because core imports all other packages, so it should always be released alongside individual package releases. [More on this here.](#how-does-versioning-work-in-launchpad).
+  - Select the packages you've updated.
 - `changesets` will now ask what type of version change should occur:
   - A brand new package should receive a "minor" bump, which should set it at `0.1.0`.
   - For other version bumps, refer to [the semantic versioning docs](https://semver.org/spec/v0.1.0.html).
-  - `core` should always receive the highest bump you gave an individual package.
 - `changesets` will create a new `.md` file in the `.changeset` directory. Find it, and update the description to be more human readable.
 
 Here's an example of an acceptable file in the `.changeset` folder:
 
 ```md
 ---
-'@launchpad-ui/banner': patch
-'@launchpad-ui/alert': patch
-'@launchpad-ui/core': patch
+'@launchpad-ui/components': patch
+'@launchpad-ui/tokens': patch
 ---
 
-[Banner]: Update banner font size
-[Alert]: Add max width to container
+Add `Toast` to display brief, temporary notifications of actions, errors, or other events
 ```
-
-_Note that you don't have to leave a line item for core._
-
-Note: if you aren't updating packages that are released as NPM modules, you don't have to generate a changeset.
 
 ### Step 4: Commit your code
 
@@ -119,7 +112,7 @@ We follow the [Conventional Commits](https://www.conventionalcommits.org/en/v1.0
 Here's an example of an acceptable commit message:
 
 ```
-feat(notification): Add notification package
+feat(components): Add `Toast` component
 ```
 
 ### Step 5: Publish a pull request
@@ -143,6 +136,50 @@ $ pnpm chromatic --project-token PROJECT_TOKEN --branch-name FORKED_BRANCH --bui
 
 ## Common Tasks
 
+## Running LaunchPad locally
+
+### Installation
+
+[pnpm](https://pnpm.io/) is the package manager used in this monorepo.
+
+[After installing the package manager](https://pnpm.io/installation), run the following command to install the project's dependencies:
+
+```sh
+$ pnpm install
+```
+
+### Storybook
+
+[Storybook](https://storybook.js.org/) is used for local development of components.
+
+Run this command to start a local instance in your browser:
+
+```sh
+$ pnpm storybook
+```
+
+### Running Tests
+
+#### Unit Tests
+
+[Vitest](https://vitest.dev/) and [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/) are used to unit test the code.
+
+The following command will run unit tests in every package of the monorepo:
+
+```sh
+$ pnpm test
+```
+
+#### a11y Tests
+
+[Playwight](https://playwright.dev/) with [@axe-core/playwright](https://github.com/dequelabs/axe-core-npm/blob/develop/packages/playwright/README.md) is used to run accessibility checks on our stories in light and dark mode.
+
+The following command will build Storybook, start the server, and run a11y tests locally on them:
+
+```sh
+$ pnpm e2e:a11y
+```
+
 ### Generating New Packages With Plop
 
 With the help of [plop](https://plopjs.com), we can quickly scaffold new component files in a consistent and opinionated way.
@@ -151,7 +188,7 @@ Simply run `pnpm generate component` and follow the prompts, and you'll be well 
 
 ### Adding Dependencies to Packages
 
-- Don't pin dependencies, use caret ranges.
+- Pin dependencies.
 - Match dependency versions across packages when possible so that we can share dependency versions and reduce bundle sizes.
 - If a package depends on another LaunchPad package, use the workspace syntax to use latest compatible versions:
   - Ex: `"@launchpad-ui/tokens": "workspace:~"`
@@ -165,6 +202,14 @@ Simply run `pnpm generate component` and follow the prompts, and you'll be well 
 ---
 
 ## Styleguides
+
+### Monorepo
+
+We use a [monorepo structure](https://monorepo.tools/) to organize our code to be published to NPM.
+
+### Versioning
+
+We are using [major version zero (0.y.z) semantic versioning](https://semver.org/spec/v0.1.0.html) to indicate that the project is still in an "initial development" phase and anything may change at any time. When a new package is introduced, the initial version is set to `0.1.0`.
 
 ### Javascript Styleguide
 
