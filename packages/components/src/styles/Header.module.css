@@ -1,0 +1,9 @@
+.header {
+  font: var(--lp-label-2-medium);
+  color: var(--lp-color-text-ui-tertiary);
+  padding-inline: var(--lp-spacing-200);
+
+  &:has(+ [data-selection-mode]:is([role='menuitemcheckbox'], [role='menuitemradio'])) {
+    padding-left: var(--lp-spacing-800);
+  }
+}
