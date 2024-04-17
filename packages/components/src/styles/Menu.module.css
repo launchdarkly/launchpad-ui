@@ -16,7 +16,7 @@
 
 .item {
   padding-block: var(--lp-spacing-200);
-  padding-inline: var(--lp-spacing-200);
+  padding-inline: var(--lp-spacing-300);
   border-radius: var(--lp-border-radius-regular);
   outline: none;
   cursor: default;

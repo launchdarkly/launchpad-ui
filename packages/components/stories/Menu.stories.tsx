@@ -97,7 +97,7 @@ export const Grouping: Story = {
 	...open,
 };
 
-export const Selection: Story = {
+export const SingleSelection: Story = {
 	render: (args) => {
 		const [selected, setSelected] = useState<AriaSelection>(new Set(['react-aria-1']));
 
@@ -109,6 +109,22 @@ export const Selection: Story = {
 	},
 	args: {
 		selectionMode: 'single',
+	},
+	...open,
+};
+
+export const MultipleSelection: Story = {
+	render: (args) => {
+		const [selected, setSelected] = useState<AriaSelection>(new Set(['react-aria-1']));
+
+		return renderMenu({
+			selectedKeys: selected,
+			onSelectionChange: setSelected,
+			...args,
+		});
+	},
+	args: {
+		selectionMode: 'multiple',
 	},
 	...open,
 };

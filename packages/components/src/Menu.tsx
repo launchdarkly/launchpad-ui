@@ -19,6 +19,9 @@ import {
 	composeRenderProps,
 } from 'react-aria-components';
 
+import { Checkbox } from './Checkbox';
+import { Radio } from './Radio';
+import { RadioGroup } from './RadioGroup';
 import styles from './styles/Menu.module.css';
 
 const menu = cva(styles.menu);
@@ -65,8 +68,11 @@ const _MenuItem = <T extends object>(
 		>
 			{composeRenderProps(props.children, (children, { selectionMode, isSelected, hasSubmenu }) => (
 				<>
-					{selectionMode !== 'none' && (
-						<span className={styles.check}>{isSelected && <Icon name="check" size="small" />}</span>
+					{selectionMode === 'multiple' && <Checkbox isReadOnly isSelected={isSelected} />}
+					{selectionMode === 'single' && (
+						<RadioGroup isReadOnly value={isSelected ? '' : undefined}>
+							<Radio value="" />
+						</RadioGroup>
 					)}
 					{children}
 					{hasSubmenu && <Icon name="chevron-right" size="small" className={styles.submenu} />}
