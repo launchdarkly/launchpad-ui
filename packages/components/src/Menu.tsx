@@ -19,6 +19,8 @@ import {
 	composeRenderProps,
 } from 'react-aria-components';
 
+import { CheckboxInner, checkbox } from './Checkbox';
+import { RadioInner, radio } from './Radio';
 import styles from './styles/Menu.module.css';
 
 const menu = cva(styles.menu);
@@ -63,15 +65,32 @@ const _MenuItem = <T extends object>(
 				item({ ...renderProps, variant, className }),
 			)}
 		>
-			{composeRenderProps(props.children, (children, { selectionMode, isSelected, hasSubmenu }) => (
-				<>
-					{selectionMode !== 'none' && (
-						<span className={styles.check}>{isSelected && <Icon name="check" size="small" />}</span>
-					)}
-					{children}
-					{hasSubmenu && <Icon name="chevron-right" size="small" className={styles.submenu} />}
-				</>
-			))}
+			{composeRenderProps(
+				props.children,
+				(children, { selectionMode, isSelected, hasSubmenu, isDisabled }) => (
+					<>
+						{selectionMode === 'multiple' && (
+							<div
+								className={checkbox({ className: styles.check })}
+								data-selected={isSelected || undefined}
+								data-disabled={isDisabled || undefined}
+							>
+								<CheckboxInner isSelected={isSelected} />
+							</div>
+						)}
+						{selectionMode === 'single' && (
+							<div
+								className={radio({ className: styles.check })}
+								data-disabled={isDisabled || undefined}
+							>
+								<RadioInner isSelected={isSelected} />
+							</div>
+						)}
+						{children}
+						{hasSubmenu && <Icon name="chevron-right" size="small" className={styles.submenu} />}
+					</>
+				),
+			)}
 		</AriaMenuItem>
 	);
 };

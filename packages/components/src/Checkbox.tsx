@@ -1,5 +1,5 @@
 import type { ForwardedRef } from 'react';
-import type { CheckboxProps } from 'react-aria-components';
+import type { CheckboxProps, CheckboxRenderProps } from 'react-aria-components';
 
 import { Icon } from '@launchpad-ui/icons';
 import { cva } from 'class-variance-authority';
@@ -10,6 +10,16 @@ import styles from './styles/Checkbox.module.css';
 
 const checkbox = cva(styles.checkbox);
 const box = cva(styles.box);
+
+const CheckboxInner = ({ isSelected, isIndeterminate }: Partial<CheckboxRenderProps>) => (
+	<div className={box()}>
+		{isIndeterminate ? (
+			<Icon name="minus" size="small" className={styles.icon} />
+		) : isSelected ? (
+			<Icon name="check" size="small" className={styles.icon} />
+		) : null}
+	</div>
+);
 
 const _Checkbox = (props: CheckboxProps, ref: ForwardedRef<HTMLLabelElement>) => {
 	return (
@@ -22,13 +32,7 @@ const _Checkbox = (props: CheckboxProps, ref: ForwardedRef<HTMLLabelElement>) =>
 		>
 			{composeRenderProps(props.children, (children, { isSelected, isIndeterminate }) => (
 				<>
-					<div className={box()}>
-						{isIndeterminate ? (
-							<Icon name="minus" size="small" className={styles.icon} />
-						) : isSelected ? (
-							<Icon name="check" size="small" className={styles.icon} />
-						) : null}
-					</div>
+					<CheckboxInner isSelected={isSelected} isIndeterminate={isIndeterminate} />
 					{children}
 				</>
 			))}
@@ -43,5 +47,5 @@ const _Checkbox = (props: CheckboxProps, ref: ForwardedRef<HTMLLabelElement>) =>
  */
 const Checkbox = forwardRef(_Checkbox);
 
-export { Checkbox };
+export { Checkbox, CheckboxInner, checkbox };
 export type { CheckboxProps };

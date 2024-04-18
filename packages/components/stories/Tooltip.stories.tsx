@@ -14,6 +14,9 @@ const meta: Meta<typeof Tooltip> = {
 			type: import.meta.env.STORYBOOK_PACKAGE_STATUS__COMPONENTS,
 		},
 		chromatic: { pauseAnimationAtEnd: true },
+		a11y: {
+			element: '[data-overlay-container]',
+		},
 	},
 	decorators: [
 		(Story: StoryFn) => (
