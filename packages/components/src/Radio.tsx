@@ -1,5 +1,5 @@
 import type { ForwardedRef } from 'react';
-import type { RadioProps } from 'react-aria-components';
+import type { RadioProps, RadioRenderProps } from 'react-aria-components';
 
 import { Icon } from '@launchpad-ui/icons';
 import { cva } from 'class-variance-authority';
@@ -10,6 +10,12 @@ import styles from './styles/Radio.module.css';
 
 const radio = cva(styles.radio);
 const circle = cva(styles.circle);
+
+const RadioInner = ({ isSelected }: Partial<RadioRenderProps>) => (
+	<div className={circle()}>
+		{isSelected ? <Icon name="circle" className={styles.icon} /> : null}
+	</div>
+);
 
 const _Radio = (props: RadioProps, ref: ForwardedRef<HTMLLabelElement>) => {
 	return (
@@ -22,9 +28,7 @@ const _Radio = (props: RadioProps, ref: ForwardedRef<HTMLLabelElement>) => {
 		>
 			{composeRenderProps(props.children, (children, { isSelected }) => (
 				<>
-					<div className={circle()}>
-						{isSelected ? <Icon name="circle" className={styles.icon} /> : null}
-					</div>
+					<RadioInner isSelected={isSelected} />
 					{children}
 				</>
 			))}
@@ -39,5 +43,5 @@ const _Radio = (props: RadioProps, ref: ForwardedRef<HTMLLabelElement>) => {
  */
 const Radio = forwardRef(_Radio);
 
-export { Radio };
+export { Radio, RadioInner, radio };
 export type { RadioProps };

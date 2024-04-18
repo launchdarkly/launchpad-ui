@@ -99,7 +99,6 @@
 
 .check {
   grid-area: check;
-  width: var(--lp-size-16);
 }
 
 .submenu {
