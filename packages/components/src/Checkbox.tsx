@@ -11,8 +11,12 @@ import styles from './styles/Checkbox.module.css';
 const checkbox = cva(styles.checkbox);
 const box = cva(styles.box);
 
-const CheckboxInner = ({ isSelected, isIndeterminate }: Partial<CheckboxRenderProps>) => (
-	<div className={box()}>
+interface CheckboxInnerProps
+	extends Partial<CheckboxRenderProps>,
+		Pick<CheckboxProps, 'className'> {}
+
+const CheckboxInner = ({ className, isSelected, isIndeterminate }: CheckboxInnerProps) => (
+	<div className={box({ className })}>
 		{isIndeterminate ? (
 			<Icon name="minus" size="small" className={styles.icon} />
 		) : isSelected ? (

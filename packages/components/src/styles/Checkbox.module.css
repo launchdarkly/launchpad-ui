@@ -3,6 +3,7 @@
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
+  margin-top: var(--lp-spacing-200);
   width: var(--lp-size-16);
   height: var(--lp-size-16);
   border-radius: 2px;
@@ -21,7 +22,6 @@
 .checkbox {
   display: flex;
   flex-direction: row;
-  align-items: center;
   gap: var(--lp-spacing-200);
   font: var(--lp-label-1-regular);
 

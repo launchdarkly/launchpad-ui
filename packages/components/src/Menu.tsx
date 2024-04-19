@@ -75,7 +75,7 @@ const _MenuItem = <T extends object>(
 								data-selected={isSelected || undefined}
 								data-disabled={isDisabled || undefined}
 							>
-								<CheckboxInner isSelected={isSelected} />
+								<CheckboxInner isSelected={isSelected} className={styles.checkbox} />
 							</div>
 						)}
 						{selectionMode === 'single' && (
