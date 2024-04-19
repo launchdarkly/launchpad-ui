@@ -11,12 +11,8 @@ import styles from './styles/Checkbox.module.css';
 const checkbox = cva(styles.checkbox);
 const box = cva(styles.box);
 
-interface CheckboxInnerProps
-	extends Partial<CheckboxRenderProps>,
-		Pick<CheckboxProps, 'className'> {}
-
-const CheckboxInner = ({ className, isSelected, isIndeterminate }: CheckboxInnerProps) => (
-	<div className={box({ className })}>
+const CheckboxInner = ({ isSelected, isIndeterminate }: Partial<CheckboxRenderProps>) => (
+	<div className={box()}>
 		{isIndeterminate ? (
 			<Icon name="minus" size="small" className={styles.icon} />
 		) : isSelected ? (
@@ -36,7 +32,9 @@ const _Checkbox = (props: CheckboxProps, ref: ForwardedRef<HTMLLabelElement>) =>
 		>
 			{composeRenderProps(props.children, (children, { isSelected, isIndeterminate }) => (
 				<>
-					<CheckboxInner isSelected={isSelected} isIndeterminate={isIndeterminate} />
+					<div className={styles.container}>
+						<CheckboxInner isSelected={isSelected} isIndeterminate={isIndeterminate} />
+					</div>
 					{children}
 				</>
 			))}

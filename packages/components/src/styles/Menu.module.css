@@ -101,10 +101,6 @@
   grid-area: check;
 }
 
-.checkbox {
-  margin: 0;
-}
-
 .submenu {
   grid-area: submenu;
   margin-left: auto;
