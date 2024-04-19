@@ -32,7 +32,9 @@ const _Checkbox = (props: CheckboxProps, ref: ForwardedRef<HTMLLabelElement>) =>
 		>
 			{composeRenderProps(props.children, (children, { isSelected, isIndeterminate }) => (
 				<>
-					<CheckboxInner isSelected={isSelected} isIndeterminate={isIndeterminate} />
+					<div className={styles.container}>
+						<CheckboxInner isSelected={isSelected} isIndeterminate={isIndeterminate} />
+					</div>
 					{children}
 				</>
 			))}

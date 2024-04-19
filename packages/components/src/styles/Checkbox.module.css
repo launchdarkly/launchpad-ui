@@ -21,9 +21,9 @@
 .checkbox {
   display: flex;
   flex-direction: row;
-  align-items: center;
   gap: var(--lp-spacing-200);
   font: var(--lp-label-1-regular);
+  align-items: flex-start;
 
   &[data-focus-visible] {
     & .box {
@@ -66,4 +66,11 @@
       }
     }
   }
+}
+
+.container {
+  height: 1lh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

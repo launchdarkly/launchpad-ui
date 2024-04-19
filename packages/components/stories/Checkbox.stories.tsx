@@ -1,5 +1,6 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryFn, StoryObj } from '@storybook/react';
 
+import { vars } from '@launchpad-ui/vars';
 import { userEvent, within } from '@storybook/test';
 
 import { Checkbox } from '../src';
@@ -13,6 +14,13 @@ const meta: Meta<typeof Checkbox> = {
 		},
 		chromatic: { pauseAnimationAtEnd: true },
 	},
+	decorators: [
+		(Story: StoryFn) => (
+			<div style={{ width: vars.size[240] }}>
+				<Story />
+			</div>
+		),
+	],
 };
 
 export default meta;
