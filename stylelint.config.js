@@ -31,7 +31,7 @@ module.exports = {
 				ignorePseudoClasses: ['global', 'value'],
 			},
 		],
-		'selector-not-notation': 'simple',
+		'selector-not-notation': null,
 		'import-notation': 'string',
 		'media-feature-range-notation': 'prefix',
 		'property-no-unknown': [
