@@ -1,5 +1,24 @@
 # @launchpad-ui/components
 
+## 0.1.20
+
+### Patch Changes
+
+- [#1251](https://github.com/launchdarkly/launchpad-ui/pull/1251) [`4711e05`](https://github.com/launchdarkly/launchpad-ui/commit/4711e0577f9cc9a5880c04e6bc876763be200971) Thanks [@Niznikr](https://github.com/Niznikr)! - Update `Menu` selection states
+
+- [#1247](https://github.com/launchdarkly/launchpad-ui/pull/1247) [`778c8af`](https://github.com/launchdarkly/launchpad-ui/commit/778c8af6bf0354508678ee0fbc504f18abd8d9a5) Thanks [@Niznikr](https://github.com/Niznikr)! - Adjust `Input` padding
+
+- [#1254](https://github.com/launchdarkly/launchpad-ui/pull/1254) [`a1832c5`](https://github.com/launchdarkly/launchpad-ui/commit/a1832c545fa9ab0472e8414c22b2ae8f3a7408f3) Thanks [@Niznikr](https://github.com/Niznikr)! - Fix `Checkbox` label alignment when wrapped
+
+- [#1246](https://github.com/launchdarkly/launchpad-ui/pull/1246) [`8cae901`](https://github.com/launchdarkly/launchpad-ui/commit/8cae901ef0f8ccd9fe041d66dce1a88ebde2d54d) Thanks [@Niznikr](https://github.com/Niznikr)! - Extract `Header` styles
+
+- [#1248](https://github.com/launchdarkly/launchpad-ui/pull/1248) [`dd74ee6`](https://github.com/launchdarkly/launchpad-ui/commit/dd74ee687bcf3e1b9977f54b1deee0a5a2660b51) Thanks [@Niznikr](https://github.com/Niznikr)! - Set overflow on non-menu popovers
+
+- [#1252](https://github.com/launchdarkly/launchpad-ui/pull/1252) [`6d18250`](https://github.com/launchdarkly/launchpad-ui/commit/6d182509c0473f374aaf54f2458a3c4cdc4e93c3) Thanks [@Niznikr](https://github.com/Niznikr)! - Remove border from `Popover`
+
+- Updated dependencies [[`3ba2c5f`](https://github.com/launchdarkly/launchpad-ui/commit/3ba2c5f23e3d7ec1c8443f8e6afb4f1dab61d77f)]:
+  - @launchpad-ui/icons@0.17.1
+
 ## 0.1.19
 
 ### Patch Changes
