@@ -132,8 +132,8 @@ importers:
         specifier: ^15.2.0
         version: 15.2.2
       nx:
-        specifier: ^18.2.1
-        version: 18.2.1(@swc/core@1.4.11(@swc/helpers@0.5.8))
+        specifier: ^18.3.3
+        version: 18.3.3(@swc/core@1.4.11(@swc/helpers@0.5.8))
       plop:
         specifier: ^4.0.0
         version: 4.0.1
@@ -656,8 +656,8 @@ importers:
         specifier: 2.1.17
         version: 2.1.17
       framer-motion:
-        specifier: 11.0.3
-        version: 11.0.3(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+        specifier: 11.1.7
+        version: 11.1.7(@emotion/is-prop-valid@0.8.8)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
     devDependencies:
       react:
         specifier: 18.2.0
@@ -954,8 +954,8 @@ importers:
         specifier: 2.1.17
         version: 2.1.17
       framer-motion:
-        specifier: 11.0.3
-        version: 11.0.3(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+        specifier: 11.1.7
+        version: 11.1.7(@emotion/is-prop-valid@0.8.8)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
     devDependencies:
       react:
         specifier: 18.2.0
@@ -1072,8 +1072,8 @@ importers:
         specifier: 2.1.17
         version: 2.1.17
       framer-motion:
-        specifier: 11.0.3
-        version: 11.0.3(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+        specifier: 11.1.7
+        version: 11.1.7(@emotion/is-prop-valid@0.8.8)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
     devDependencies:
       react:
         specifier: 18.2.0
@@ -1275,8 +1275,8 @@ importers:
         specifier: 2.1.17
         version: 2.1.17
       framer-motion:
-        specifier: 11.0.3
-        version: 11.0.3(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+        specifier: 11.1.7
+        version: 11.1.7(@emotion/is-prop-valid@0.8.8)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
     devDependencies:
       react:
         specifier: 18.2.0
@@ -1437,8 +1437,8 @@ importers:
         specifier: 2.1.17
         version: 2.1.17
       framer-motion:
-        specifier: 11.0.3
-        version: 11.0.3(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+        specifier: 11.1.7
+        version: 11.1.7(@emotion/is-prop-valid@0.8.8)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
     devDependencies:
       react:
         specifier: 18.2.0
@@ -2803,66 +2803,66 @@ packages:
     resolution: {integrity: sha512-oGB+UxlgWcgQkgwo8GcEGwemoTFt3FIO9ababBmaGwXIoBKZ+GTy0pP185beGg7Llih/NSHSV2XAs1lnznocSg==}
     engines: {node: '>= 8'}
 
-  '@nrwl/tao@18.2.1':
-    resolution: {integrity: sha512-QOk9pCNBtu8Qk8Cr7WVbI4+Q/PdxXX+nWMU+xk1KyTjH+XYdAvVksrMqFndPAThIsPvC1fP2XCcMCxOX10F3rQ==}
+  '@nrwl/tao@18.3.3':
+    resolution: {integrity: sha512-f/PUDLpSMEObiLQ5sIDySJM+5DxSCNunkxxbY1R9rmQ1cFcgrHaXIHQqbSj91mMa3mmtbKACk8u1LbI+oQV0Tg==}
     hasBin: true
 
-  '@nx/nx-darwin-arm64@18.2.1':
-    resolution: {integrity: sha512-s6ilEYpzyBoeyjM4PkK0nOPWu2uBL2TPDAVIwVh7J2RuM3xINy45zgbmYBUwC4JZUCSJv7e0GQ7OpxEQVlOjDA==}
+  '@nx/nx-darwin-arm64@18.3.3':
+    resolution: {integrity: sha512-NpA2/7o1uUuaocMYopX9muxKif9HlGfWaXo2UeiR918usF6xri4aUqweZbaXVc9iqCAEbVMWUsjaLYGKPXHAjw==}
     engines: {node: '>= 10'}
     cpu: [arm64]
     os: [darwin]
 
-  '@nx/nx-darwin-x64@18.2.1':
-    resolution: {integrity: sha512-WpsnI+Z4qfqs0uyFyERLGKZSw3OIpKx3yr7fgFEyfUQS9pqIzqngh2gnoAnf/eYHKBZ2GNPjJ1n+fPHIuLP/dw==}
+  '@nx/nx-darwin-x64@18.3.3':
+    resolution: {integrity: sha512-aydPLbc7DeceJ6szRf6DLT4ERoPvwfWyFiGXdAlEZYWhjEuNZLeG8K6jA3yHeWltKfX/qJqhnyKbnubBNzBKlQ==}
     engines: {node: '>= 10'}
     cpu: [x64]
     os: [darwin]
 
-  '@nx/nx-freebsd-x64@18.2.1':
-    resolution: {integrity: sha512-AnbYoxvGHQPDXA5A+nPsVTYEQnXayKnC+NLUcxwoH5gW0Io4oBpck+RW4yf8Dt3zoB/RUw4X/TMKPAMXbD7HuA==}
+  '@nx/nx-freebsd-x64@18.3.3':
+    resolution: {integrity: sha512-sEYEWsK/fwC1l7wzls7RNOjhmrooH0lK0mpgj1vDXesLBSZ7k+pddAqaHFECN4QXBSbHZI2PWOEhbnIH+Errsg==}
     engines: {node: '>= 10'}
     cpu: [x64]
     os: [freebsd]
 
-  '@nx/nx-linux-arm-gnueabihf@18.2.1':
-    resolution: {integrity: sha512-01M5fq1hYQQPlSJ7VIJ+ADmadlRvrvrOngbhBWPdWM70XKNz46Z8Z8JrOq1n67QviAPwIYELBMR2c8Bi/NU7FQ==}
+  '@nx/nx-linux-arm-gnueabihf@18.3.3':
+    resolution: {integrity: sha512-B9GGMkrrzwiAfvew22x85ITO9TiNxbgRbKJQWQaoopNpXrnSWpY8WTNxpDT24fwV1qdQfsPKcY3F4O0NOUgPRA==}
     engines: {node: '>= 10'}
     cpu: [arm]
     os: [linux]
 
-  '@nx/nx-linux-arm64-gnu@18.2.1':
-    resolution: {integrity: sha512-mQf0/NAAYDrvhhkHbw8/xFiIJ8ldzMxT0sHe2syYbWdnAYWxbXUlDvaalHgILZNiELNsLopbZ6zyKbyj7gTMbw==}
+  '@nx/nx-linux-arm64-gnu@18.3.3':
+    resolution: {integrity: sha512-1EucHf5/0JeqZmhritqkpEdOcdo9Dl32gpFvhNfS6kCAYmaDlEl4zqedz3VIoj4C7+C0pV3mcRO9qB9H7GM5bQ==}
     engines: {node: '>= 10'}
     cpu: [arm64]
     os: [linux]
 
-  '@nx/nx-linux-arm64-musl@18.2.1':
-    resolution: {integrity: sha512-iP2vKQfiCNNUZm81jbIVz2IshtyUUFw7BLi4vTWYIxcknbRJIchNb0dubJBmJUx4593z3O3wst252rg2QlP+cw==}
+  '@nx/nx-linux-arm64-musl@18.3.3':
+    resolution: {integrity: sha512-HPgOgnYYLPVCBEaAkSEGPGzZqTDCiyCAF/qtvx5z0f1U/hZYb1ubgxw70ogY82Cafr7X4gQBz5k4/ZCnoCXlOQ==}
     engines: {node: '>= 10'}
     cpu: [arm64]
     os: [linux]
 
-  '@nx/nx-linux-x64-gnu@18.2.1':
-    resolution: {integrity: sha512-LHO+MlMgnm/v1CR0E/UfCUD9bfQWrA8btohv1ju/uHw32wW5P/MiMuLk0jrythWk++NZxpMzBIqcZrO2AcQgUg==}
+  '@nx/nx-linux-x64-gnu@18.3.3':
+    resolution: {integrity: sha512-FgYTQ3VEE6EUOGtJT9riRK8IBwPGFjKS+N2mudQJn2bB/9IumUvVRYQUIX08gqGLlqZPO6uUUhUjwZY8SnjRLQ==}
     engines: {node: '>= 10'}
     cpu: [x64]
     os: [linux]
 
-  '@nx/nx-linux-x64-musl@18.2.1':
-    resolution: {integrity: sha512-dXNf2P5bRg+u+xDCkqmmP5OABlHZ+zw7D5++uOnGT0D3Y9ZfNl7LVrTqKrTAFJlR6Ycb4ffjhauXF5Yh2tedeA==}
+  '@nx/nx-linux-x64-musl@18.3.3':
+    resolution: {integrity: sha512-QnWjGViR1Wj9gJXa1RJ9mXyy2/JzQ7NF2C4ulTYSH5St1HoxhkfnLsV0+uNLFEV9PSZq+2BfxmQuT8Appefv1A==}
     engines: {node: '>= 10'}
     cpu: [x64]
     os: [linux]
 
-  '@nx/nx-win32-arm64-msvc@18.2.1':
-    resolution: {integrity: sha512-6Dt3/qU2qKwzfXeaB+dS+oEasMbC16ZMC7E6pZTsiXqyjkh25lomiOYLBxBlHdGR4M06CzhFI3Vxtk8Hr7ltuQ==}
+  '@nx/nx-win32-arm64-msvc@18.3.3':
+    resolution: {integrity: sha512-Xn3LUaPsF8QkEYUVV3lc693NTCMWrfZBFXTy1cQpvLzQ+idsXQ/EGWoq93cIM3Nc2YWyblT2hHHelb8dHCZAlw==}
     engines: {node: '>= 10'}
     cpu: [arm64]
     os: [win32]
 
-  '@nx/nx-win32-x64-msvc@18.2.1':
-    resolution: {integrity: sha512-FsX7Y22WezvH+Z2sUUXSTKUyG8MGL7ObmIRTZxacY2sV1IiaXY5i3J/46AKkJ+lfp6ALULJ4lRlLwXo9jDHbiA==}
+  '@nx/nx-win32-x64-msvc@18.3.3':
+    resolution: {integrity: sha512-t8HvOnQEiaaoTFOOIrql30NPhIwDFO7jg0Jtz3Tbneulh7ceswJp71yFHsRGGrYZ23Tgg+Sna6M9qLRGzlRGkg==}
     engines: {node: '>= 10'}
     cpu: [x64]
     os: [win32]
@@ -5198,12 +5198,15 @@ packages:
     resolution: {integrity: sha512-buRG0fpBtRHSTCOASe6hD258tEubFoRLb4ZNA6NxMVHNw2gOcwHo9wyablzMzOA5z9xA9L1KNjk/Nt6MT9aYow==}
     engines: {node: '>= 0.6'}
 
-  framer-motion@11.0.3:
-    resolution: {integrity: sha512-6x2poQpIWBdbZwLd73w6cKZ1I9IEPIU94C6/Swp1Zt3LJ+sB5bPe1E2wC6EH5hSISXNkMJ4afH7AdwS7MrtkWw==}
+  framer-motion@11.1.7:
+    resolution: {integrity: sha512-cW11Pu53eDAXUEhv5hEiWuIXWhfkbV32PlgVISn7jRdcAiVrJ1S03YQQ0/DzoswGYYwKi4qYmHHjCzAH52eSdQ==}
     peerDependencies:
+      '@emotion/is-prop-valid': '*'
       react: ^18.0.0
       react-dom: ^18.0.0
     peerDependenciesMeta:
+      '@emotion/is-prop-valid':
+        optional: true
       react:
         optional: true
       react-dom:
@@ -6447,8 +6450,8 @@ packages:
   nwsapi@2.2.7:
     resolution: {integrity: sha512-ub5E4+FBPKwAZx0UwIQOjYWGHTEq5sPqHQNRN8Z9e4A7u3Tj1weLJsL59yH9vmvqEtBHaOmT6cYQKIZOxp35FQ==}
 
-  nx@18.2.1:
-    resolution: {integrity: sha512-wUYr1x6GnPvtHMY5pHVijuJbD077ObwGCX+pHZc1IreugAQBLmQ6bxPNCxuI0YjGeM39PD9ME+rxi6aAcJbUKw==}
+  nx@18.3.3:
+    resolution: {integrity: sha512-GqC5ANfTWV6SFbgquZwuRMI2Z2nO0c0Yx4JzM3x32aJOgXsmRml3WcV0a5648bIXSen34gylHYl2EHaxVWkzNQ==}
     hasBin: true
     peerDependencies:
       '@swc-node/register': ^1.8.0
@@ -9510,43 +9513,43 @@ snapshots:
       '@nodelib/fs.scandir': 2.1.5
       fastq: 1.17.1
 
-  '@nrwl/tao@18.2.1(@swc/core@1.4.11(@swc/helpers@0.5.8))':
+  '@nrwl/tao@18.3.3(@swc/core@1.4.11(@swc/helpers@0.5.8))':
     dependencies:
-      nx: 18.2.1(@swc/core@1.4.11(@swc/helpers@0.5.8))
+      nx: 18.3.3(@swc/core@1.4.11(@swc/helpers@0.5.8))
       tslib: 2.6.2
     transitivePeerDependencies:
       - '@swc-node/register'
       - '@swc/core'
       - debug
 
-  '@nx/nx-darwin-arm64@18.2.1':
+  '@nx/nx-darwin-arm64@18.3.3':
     optional: true
 
-  '@nx/nx-darwin-x64@18.2.1':
+  '@nx/nx-darwin-x64@18.3.3':
     optional: true
 
-  '@nx/nx-freebsd-x64@18.2.1':
+  '@nx/nx-freebsd-x64@18.3.3':
     optional: true
 
-  '@nx/nx-linux-arm-gnueabihf@18.2.1':
+  '@nx/nx-linux-arm-gnueabihf@18.3.3':
     optional: true
 
-  '@nx/nx-linux-arm64-gnu@18.2.1':
+  '@nx/nx-linux-arm64-gnu@18.3.3':
     optional: true
 
-  '@nx/nx-linux-arm64-musl@18.2.1':
+  '@nx/nx-linux-arm64-musl@18.3.3':
     optional: true
 
-  '@nx/nx-linux-x64-gnu@18.2.1':
+  '@nx/nx-linux-x64-gnu@18.3.3':
     optional: true
 
-  '@nx/nx-linux-x64-musl@18.2.1':
+  '@nx/nx-linux-x64-musl@18.3.3':
     optional: true
 
-  '@nx/nx-win32-arm64-msvc@18.2.1':
+  '@nx/nx-win32-arm64-msvc@18.3.3':
     optional: true
 
-  '@nx/nx-win32-x64-msvc@18.2.1':
+  '@nx/nx-win32-x64-msvc@18.3.3':
     optional: true
 
   '@pkgjs/parseargs@0.11.0':
@@ -12875,7 +12878,7 @@ snapshots:
 
   forwarded@0.2.0: {}
 
-  framer-motion@11.0.3(react-dom@18.2.0(react@18.2.0))(react@18.2.0):
+  framer-motion@11.1.7(@emotion/is-prop-valid@0.8.8)(react-dom@18.2.0(react@18.2.0))(react@18.2.0):
     dependencies:
       tslib: 2.6.2
     optionalDependencies:
@@ -14111,9 +14114,9 @@ snapshots:
 
   nwsapi@2.2.7: {}
 
-  nx@18.2.1(@swc/core@1.4.11(@swc/helpers@0.5.8)):
+  nx@18.3.3(@swc/core@1.4.11(@swc/helpers@0.5.8)):
     dependencies:
-      '@nrwl/tao': 18.2.1(@swc/core@1.4.11(@swc/helpers@0.5.8))
+      '@nrwl/tao': 18.3.3(@swc/core@1.4.11(@swc/helpers@0.5.8))
       '@yarnpkg/lockfile': 1.1.0
       '@yarnpkg/parsers': 3.0.0-rc.46
       '@zkochan/js-yaml': 0.0.6
@@ -14148,16 +14151,16 @@ snapshots:
       yargs: 17.7.2
       yargs-parser: 21.1.1
     optionalDependencies:
-      '@nx/nx-darwin-arm64': 18.2.1
-      '@nx/nx-darwin-x64': 18.2.1
-      '@nx/nx-freebsd-x64': 18.2.1
-      '@nx/nx-linux-arm-gnueabihf': 18.2.1
-      '@nx/nx-linux-arm64-gnu': 18.2.1
-      '@nx/nx-linux-arm64-musl': 18.2.1
-      '@nx/nx-linux-x64-gnu': 18.2.1
-      '@nx/nx-linux-x64-musl': 18.2.1
-      '@nx/nx-win32-arm64-msvc': 18.2.1
-      '@nx/nx-win32-x64-msvc': 18.2.1
+      '@nx/nx-darwin-arm64': 18.3.3
+      '@nx/nx-darwin-x64': 18.3.3
+      '@nx/nx-freebsd-x64': 18.3.3
+      '@nx/nx-linux-arm-gnueabihf': 18.3.3
+      '@nx/nx-linux-arm64-gnu': 18.3.3
+      '@nx/nx-linux-arm64-musl': 18.3.3
+      '@nx/nx-linux-x64-gnu': 18.3.3
+      '@nx/nx-linux-x64-musl': 18.3.3
+      '@nx/nx-win32-arm64-msvc': 18.3.3
+      '@nx/nx-win32-x64-msvc': 18.3.3
       '@swc/core': 1.4.11(@swc/helpers@0.5.8)
     transitivePeerDependencies:
       - debug
@@ -14257,7 +14260,7 @@ snapshots:
       bl: 4.1.0
       chalk: 4.1.2
       cli-cursor: 3.1.0
-      cli-spinners: 2.6.1
+      cli-spinners: 2.9.2
       is-interactive: 1.0.0
       log-symbols: 4.1.0
       strip-ansi: 6.0.1
