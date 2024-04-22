@@ -1,5 +1,11 @@
 # @launchpad-ui/icons
 
+## 0.17.1
+
+### Patch Changes
+
+- [#1255](https://github.com/launchdarkly/launchpad-ui/pull/1255) [`3ba2c5f`](https://github.com/launchdarkly/launchpad-ui/commit/3ba2c5f23e3d7ec1c8443f8e6afb4f1dab61d77f) Thanks [@matthewferry](https://github.com/matthewferry)! - feat(icons): add shortcut icons
+
 ## 0.17.0
 
 ### Minor Changes
