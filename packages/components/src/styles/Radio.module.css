@@ -11,12 +11,12 @@
     all var(--lp-duration-100) ease-in-out,
     outline,
     outline-offset 0ms;
-}
-
-.icon {
-  height: var(--lp-size-10);
-  width: var(--lp-size-10);
-  fill: var(--lp-color-bg-interactive-primary-base);
+  
+  & .icon {
+    height: var(--lp-size-10);
+    width: var(--lp-size-10);
+    fill: var(--lp-color-bg-interactive-primary-base);
+  }
 }
 
 .radio {
