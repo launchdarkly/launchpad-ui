@@ -12,10 +12,10 @@
     all var(--lp-duration-100) ease-in-out,
     outline,
     outline-offset 0ms;
-}
-
-.icon {
-  fill: var(--lp-color-text-interactive-primary-base);
+  
+  & .icon {
+    fill: var(--lp-color-text-interactive-primary-base);
+  }
 }
 
 .checkbox {
