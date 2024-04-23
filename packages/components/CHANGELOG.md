@@ -1,5 +1,13 @@
 # @launchpad-ui/components
 
+## 0.1.21
+
+### Patch Changes
+
+- [#1261](https://github.com/launchdarkly/launchpad-ui/pull/1261) [`662ae79`](https://github.com/launchdarkly/launchpad-ui/commit/662ae792ef46249e846968204937b9cbc83c1c6f) Thanks [@Niznikr](https://github.com/Niznikr)! - Increase `Radio` icon specificity
+
+- [#1259](https://github.com/launchdarkly/launchpad-ui/pull/1259) [`a8c88eb`](https://github.com/launchdarkly/launchpad-ui/commit/a8c88eb823b740deb522b771aafb0fe6e346157d) Thanks [@Niznikr](https://github.com/Niznikr)! - Increase `Checkbox` icon specificity
+
 ## 0.1.20
 
 ### Patch Changes
