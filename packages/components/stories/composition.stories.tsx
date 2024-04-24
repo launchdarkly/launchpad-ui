@@ -107,7 +107,7 @@ export const ComboBoxDialog: Story = {
 export const RadioButtonGroup: Story = {
 	args: {
 		children: (
-			<RadioGroup>
+			<RadioGroup defaultValue="1">
 				<Label>Group</Label>
 				<ButtonGroup spacing="compact" role="presentation">
 					<RadioButton value="1">First</RadioButton>

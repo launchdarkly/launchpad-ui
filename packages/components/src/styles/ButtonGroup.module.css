@@ -12,7 +12,6 @@
   & :first-child {
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
-    border-right: none;
   }
 
   & :last-child {
@@ -20,15 +19,12 @@
     border-bottom-left-radius: 0;
   }
 
-  & :not(:first-child):not(:last-child) {
-    border-radius: 0;
+  & :not(:first-child) {
+    margin-inline-start: -1px;
   }
 
-  /* At least three children */
-  &:has(> :nth-child(3)) {
-    & :last-child {
-      border-left: none;
-    }
+  & :not(:first-child):not(:last-child) {
+    border-radius: 0;
   }
 }
 
