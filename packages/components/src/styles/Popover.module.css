@@ -33,7 +33,8 @@
   }
 
   &[data-trigger='DialogTrigger'] {
-    padding: var(--lp-spacing-500);
+    padding: var(--lp-spacing-300);
+    min-width: var(--lp-size-192);
   }
 
   &[data-trigger='MenuTrigger'],
