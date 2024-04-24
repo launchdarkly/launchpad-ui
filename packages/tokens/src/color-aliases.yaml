@@ -108,6 +108,10 @@ color:
       link:
         value: '{ color.blue.50.value }'
         dark: '#3DD6F533'
+      selected:
+        base:
+          value: '{ color.blue.0.value }'
+          dark: '{ color.blue.950.value }'
     ui:
       primary:
         value: '{ color.white.950.value }'
@@ -259,6 +263,10 @@ color:
       disabled:
         value: '{ color.gray.100.value }'
         dark: '{ color.gray.600.value }'
+      selected:
+        base:
+          value: '{ color.blue.700.value }'
+          dark: '{ color.blue.300.value }'
     ui:
       primary:
         value: '{ color.gray.200.value }'

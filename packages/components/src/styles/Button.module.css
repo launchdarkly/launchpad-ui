@@ -63,6 +63,12 @@
   background-color: var(--lp-color-bg-interactive-secondary-focus);
 }
 
+.default[data-selected] {
+  background-color: var(--lp-color-bg-interactive-selected-base);
+  border-color: var(--lp-color-border-interactive-selected-base);
+  color: var(--lp-color-text-interactive-base);
+}
+
 .primary {
   background-color: var(--lp-color-bg-interactive-primary-base);
   border-color: var(--lp-color-border-interactive-primary-base);

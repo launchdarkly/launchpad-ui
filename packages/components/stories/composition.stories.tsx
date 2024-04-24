@@ -5,15 +5,20 @@ import { Icon } from '@launchpad-ui/icons';
 import { expect, userEvent, within } from '@storybook/test';
 import {
 	Button,
+	ButtonGroup,
 	ComboBox,
 	ComboBoxClearButton,
 	Dialog,
 	DialogTrigger,
 	Group,
 	Input,
+	Label,
 	ListBox,
 	ListBoxItem,
 	Popover,
+	RadioButton,
+	RadioGroup,
+	Text,
 	Tooltip,
 	TooltipTrigger,
 } from '../src';
@@ -97,4 +102,23 @@ export const ComboBoxDialog: Story = {
 		await userEvent.click(canvas.getByRole('button'));
 	},
 	name: 'ComboBoxDialog',
+};
+
+export const RadioButtonGroup: Story = {
+	args: {
+		children: (
+			<RadioGroup>
+				<Label>Group</Label>
+				<ButtonGroup spacing="compact" role="presentation">
+					<RadioButton value="1">First</RadioButton>
+					<RadioButton value="2">Second</RadioButton>
+					<RadioButton value="3">Third</RadioButton>
+					<RadioButton value="4">Fourth</RadioButton>
+					<RadioButton value="5">Fifth</RadioButton>
+				</ButtonGroup>
+				<Text slot="description">Description</Text>
+			</RadioGroup>
+		),
+	},
+	name: 'RadioButtonGroup',
 };
