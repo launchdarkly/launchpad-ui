@@ -1,5 +1,11 @@
 # @launchpad-ui/components
 
+## 0.1.22
+
+### Patch Changes
+
+- [#1262](https://github.com/launchdarkly/launchpad-ui/pull/1262) [`1d666d4`](https://github.com/launchdarkly/launchpad-ui/commit/1d666d4a7c95d8e9cf59b5ebf1d91f8017169933) Thanks [@Niznikr](https://github.com/Niznikr)! - Update `Popover` styles
+
 ## 0.1.21
 
 ### Patch Changes
