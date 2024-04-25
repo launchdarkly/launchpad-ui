@@ -36,6 +36,7 @@ export type { TagGroupProps, TagListProps, TagProps } from './TagGroup';
 export type { TextProps } from './Text';
 export type { TextAreaProps } from './TextArea';
 export type { TextFieldProps } from './TextField';
+export type { ToggleButtonProps } from './ToggleButton';
 export type { TooltipProps, TooltipTriggerProps } from './Tooltip';
 export type { forwardRefType } from './utils';
 
@@ -77,4 +78,5 @@ export { TagGroup, TagList, Tag } from './TagGroup';
 export { Text } from './Text';
 export { TextArea } from './TextArea';
 export { TextField } from './TextField';
+export { ToggleButton } from './ToggleButton';
 export { Tooltip, TooltipTrigger } from './Tooltip';
