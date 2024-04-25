@@ -1,30 +1,30 @@
 import type { IconProps } from '@launchpad-ui/icons';
 import type { AriaLabelingProps } from '@react-types/shared';
 import type { ForwardedRef } from 'react';
-import type { RadioProps } from 'react-aria-components';
+import type { ToggleButtonProps } from 'react-aria-components';
 import type { IconButtonVariants } from './IconButton';
 
 import { Icon } from '@launchpad-ui/icons';
 import { cx } from 'class-variance-authority';
 import { forwardRef } from 'react';
-import { Radio as AriaRadio, composeRenderProps } from 'react-aria-components';
+import { ToggleButton, composeRenderProps } from 'react-aria-components';
 
 import { button } from './Button';
 import { iconButton } from './IconButton';
 
-interface RadioIconButtonProps
-	extends Omit<RadioProps, 'children' | 'aria-label'>,
+interface ToggleIconButtonProps
+	extends Omit<ToggleButtonProps, 'children' | 'aria-label'>,
 		Required<Pick<AriaLabelingProps, 'aria-label'>>,
 		IconButtonVariants {
 	icon: IconProps['name'];
 }
 
-const _RadioIconButton = (
-	{ size = 'medium', variant = 'default', icon, ...props }: RadioIconButtonProps,
-	ref: ForwardedRef<HTMLLabelElement>,
+const _ToggleIconButton = (
+	{ size = 'medium', variant = 'default', icon, ...props }: ToggleIconButtonProps,
+	ref: ForwardedRef<HTMLButtonElement>,
 ) => {
 	return (
-		<AriaRadio
+		<ToggleButton
 			{...props}
 			ref={ref}
 			className={composeRenderProps(props.className, (className, renderProps) =>
@@ -32,16 +32,16 @@ const _RadioIconButton = (
 			)}
 		>
 			<Icon name={icon} size="small" aria-hidden />
-		</AriaRadio>
+		</ToggleButton>
 	);
 };
 
 /**
- * A radio represents an individual option within a radio group.
+ * A Toggle represents an individual option within a Toggle group.
  *
- * https://react-spectrum.adobe.com/react-aria/RadioGroup.html
+ * https://react-spectrum.adobe.com/react-aria/ToggleGroup.html
  */
-const RadioIconButton = forwardRef(_RadioIconButton);
+const ToggleIconButton = forwardRef(_ToggleIconButton);
 
-export { RadioIconButton };
-export type { RadioIconButtonProps };
+export { ToggleIconButton };
+export type { ToggleIconButtonProps };

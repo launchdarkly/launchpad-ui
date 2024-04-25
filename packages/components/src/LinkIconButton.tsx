@@ -14,7 +14,7 @@ import { iconButton } from './IconButton';
 import { Link } from './Link';
 
 interface LinkIconButtonProps
-	extends Omit<LinkProps, 'variant' | 'aria-label'>,
+	extends Omit<LinkProps, 'variant' | 'children' | 'aria-label'>,
 		Required<Pick<AriaLabelingProps, 'aria-label'>>,
 		IconButtonVariants {
 	icon: IconProps['name'];
