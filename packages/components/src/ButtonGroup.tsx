@@ -4,7 +4,13 @@ import type { GroupProps } from 'react-aria-components';
 
 import { cva } from 'class-variance-authority';
 import { forwardRef } from 'react';
-import { ButtonContext, Group, Provider, composeRenderProps } from 'react-aria-components';
+import {
+	ButtonContext,
+	Group,
+	Provider,
+	ToggleButtonContext,
+	composeRenderProps,
+} from 'react-aria-components';
 
 import styles from './styles/ButtonGroup.module.css';
 
@@ -36,7 +42,14 @@ const _ButtonGroup = (
 			)}
 		>
 			{composeRenderProps(props.children, (children, { isDisabled }) => (
-				<Provider values={[[ButtonContext, { isDisabled }]]}>{children}</Provider>
+				<Provider
+					values={[
+						[ButtonContext, { isDisabled }],
+						[ToggleButtonContext, { isDisabled }],
+					]}
+				>
+					{children}
+				</Provider>
 			))}
 		</Group>
 	);

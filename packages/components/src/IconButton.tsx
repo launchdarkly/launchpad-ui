@@ -28,12 +28,16 @@ const iconButton = cva(styles.base, {
 interface IconButtonVariants extends VariantProps<typeof iconButton> {
 	variant?: Extract<ButtonVariants['variant'], 'default' | 'primary' | 'destructive' | 'minimal'>;
 }
-interface IconButtonProps
-	extends Omit<AriaButtonProps, 'children' | 'aria-label'>,
-		Required<Pick<AriaLabelingProps, 'aria-label'>>,
+
+interface IconButtonBaseProps
+	extends Required<Pick<AriaLabelingProps, 'aria-label'>>,
 		IconButtonVariants {
 	icon: IconProps['name'];
+	children?: never;
 }
+interface IconButtonProps
+	extends Omit<AriaButtonProps, 'children' | 'aria-label'>,
+		IconButtonBaseProps {}
 
 const _IconButton = (
 	{ size = 'medium', variant = 'default', icon, ...props }: IconButtonProps,
@@ -60,4 +64,4 @@ const _IconButton = (
 const IconButton = forwardRef(_IconButton);
 
 export { IconButton, iconButton };
-export type { IconButtonProps, IconButtonVariants };
+export type { IconButtonProps, IconButtonBaseProps };
