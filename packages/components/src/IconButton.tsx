@@ -33,7 +33,7 @@ interface IconButtonBaseProps
 	extends Required<Pick<AriaLabelingProps, 'aria-label'>>,
 		IconButtonVariants {
 	icon: IconProps['name'];
-	children: never;
+	children?: never;
 }
 interface IconButtonProps
 	extends Omit<AriaButtonProps, 'children' | 'aria-label'>,
