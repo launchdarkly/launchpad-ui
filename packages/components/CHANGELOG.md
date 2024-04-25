@@ -1,5 +1,11 @@
 # @launchpad-ui/components
 
+## 0.1.24
+
+### Patch Changes
+
+- [#1266](https://github.com/launchdarkly/launchpad-ui/pull/1266) [`435a680`](https://github.com/launchdarkly/launchpad-ui/commit/435a680fb76846e89ab1c5f905c31037d3000f1a) Thanks [@Niznikr](https://github.com/Niznikr)! - Add `ToggleButton`
+
 ## 0.1.23
 
 ### Patch Changes
