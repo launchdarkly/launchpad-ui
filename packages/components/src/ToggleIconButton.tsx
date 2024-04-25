@@ -32,9 +32,9 @@ const _ToggleIconButton = (
 };
 
 /**
- * A Toggle represents an individual option within a Toggle group.
+ * A toggle button allows a user to toggle a selection on or off, for example switching between two states or modes.
  *
- * https://react-spectrum.adobe.com/react-aria/ToggleGroup.html
+ * https://react-spectrum.adobe.com/react-aria/ToggleButton.html
  */
 const ToggleIconButton = forwardRef(_ToggleIconButton);
 
