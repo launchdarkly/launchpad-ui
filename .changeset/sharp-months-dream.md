@@ -3,4 +3,4 @@
 "@launchpad-ui/tokens": patch
 ---
 
-Add `RadioButton`
+Add `RadioButton` and `RadioIconButton`

@@ -2,6 +2,7 @@ import type { Meta, StoryFn, StoryObj } from '@storybook/react';
 import type { ComponentPropsWithoutRef, Fragment } from 'react';
 
 import { Icon } from '@launchpad-ui/icons';
+import { vars } from '@launchpad-ui/vars';
 import { expect, userEvent, within } from '@storybook/test';
 import {
 	Button,
@@ -18,7 +19,7 @@ import {
 	Popover,
 	RadioButton,
 	RadioGroup,
-	Text,
+	RadioIconButton,
 	Tooltip,
 	TooltipTrigger,
 } from '../src';
@@ -107,17 +108,34 @@ export const ComboBoxDialog: Story = {
 export const RadioButtonGroup: Story = {
 	args: {
 		children: (
-			<RadioGroup defaultValue="1">
-				<Label>Group</Label>
-				<ButtonGroup spacing="compact" role="presentation">
-					<RadioButton value="1">First</RadioButton>
-					<RadioButton value="2">Second</RadioButton>
-					<RadioButton value="3">Third</RadioButton>
-					<RadioButton value="4">Fourth</RadioButton>
-					<RadioButton value="5">Fifth</RadioButton>
-				</ButtonGroup>
-				<Text slot="description">Description</Text>
-			</RadioGroup>
+			<div
+				style={{
+					display: 'flex',
+					flexDirection: 'column',
+					gap: vars.spacing[400],
+				}}
+			>
+				<RadioGroup defaultValue="1">
+					<Label>RadioButton</Label>
+					<ButtonGroup spacing="compact" role="presentation">
+						<RadioButton value="1">First</RadioButton>
+						<RadioButton value="2">Second</RadioButton>
+						<RadioButton value="3">Third</RadioButton>
+						<RadioButton value="4">Fourth</RadioButton>
+						<RadioButton value="5">Fifth</RadioButton>
+					</ButtonGroup>
+				</RadioGroup>
+				<RadioGroup defaultValue="1">
+					<Label>RadioIconButton</Label>
+					<ButtonGroup spacing="compact" role="presentation">
+						<RadioIconButton icon="flag" value="1" aria-label="flag" />
+						<RadioIconButton icon="flask" value="2" aria-label="flask" />
+						<RadioIconButton icon="key" value="3" aria-label="key" />
+						<RadioIconButton icon="lock" value="4" aria-label="lock" />
+						<RadioIconButton icon="robot" value="5" aria-label="robot" />
+					</ButtonGroup>
+				</RadioGroup>
+			</div>
 		),
 	},
 	name: 'RadioButtonGroup',
