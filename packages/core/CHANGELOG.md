@@ -1,5 +1,48 @@
 # @launchpad-ui/core
 
+## 0.49.12
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @launchpad-ui/alert@0.9.10
+  - @launchpad-ui/avatar@0.6.22
+  - @launchpad-ui/banner@0.10.22
+  - @launchpad-ui/box@0.1.11
+  - @launchpad-ui/button@0.12.9
+  - @launchpad-ui/card@0.2.25
+  - @launchpad-ui/chip@0.9.22
+  - @launchpad-ui/clipboard@0.11.25
+  - @launchpad-ui/collapsible@0.1.53
+  - @launchpad-ui/columns@0.1.20
+  - @launchpad-ui/counter@0.4.14
+  - @launchpad-ui/data-table@0.2.17
+  - @launchpad-ui/drawer@0.5.25
+  - @launchpad-ui/dropdown@0.6.99
+  - @launchpad-ui/filter@0.7.10
+  - @launchpad-ui/form@0.11.10
+  - @launchpad-ui/inline@0.1.20
+  - @launchpad-ui/inline-edit@0.3.10
+  - @launchpad-ui/markdown@0.5.15
+  - @launchpad-ui/menu@0.13.10
+  - @launchpad-ui/modal@0.17.25
+  - @launchpad-ui/navigation@0.12.25
+  - @launchpad-ui/pagination@0.4.25
+  - @launchpad-ui/popover@0.11.19
+  - @launchpad-ui/progress@0.5.45
+  - @launchpad-ui/progress-bubbles@0.7.19
+  - @launchpad-ui/select@0.4.25
+  - @launchpad-ui/slider@0.5.14
+  - @launchpad-ui/snackbar@0.5.9
+  - @launchpad-ui/split-button@0.10.10
+  - @launchpad-ui/stack@0.1.20
+  - @launchpad-ui/tab-list@0.5.18
+  - @launchpad-ui/table@0.6.15
+  - @launchpad-ui/tag@0.3.25
+  - @launchpad-ui/toast@0.3.22
+  - @launchpad-ui/toggle@0.7.18
+  - @launchpad-ui/tooltip@0.9.8
+
 ## 0.49.11
 
 ### Patch Changes

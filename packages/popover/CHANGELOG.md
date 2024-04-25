@@ -1,5 +1,12 @@
 # @launchpad-ui/popover
 
+## 0.11.19
+
+### Patch Changes
+
+- Updated dependencies [[`2002ab4`](https://github.com/launchdarkly/launchpad-ui/commit/2002ab411b61085099ded54cd94fbfc1d1b039d4)]:
+  - @launchpad-ui/tokens@0.9.10
+
 ## 0.11.18
 
 ### Patch Changes
