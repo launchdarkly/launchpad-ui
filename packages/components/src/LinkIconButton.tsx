@@ -1,7 +1,5 @@
-import type { IconProps } from '@launchpad-ui/icons';
-import type { AriaLabelingProps } from '@react-types/shared';
 import type { ForwardedRef } from 'react';
-import type { IconButtonVariants } from './IconButton';
+import type { IconButtonBaseProps } from './IconButton';
 import type { LinkProps } from './Link';
 
 import { Icon } from '@launchpad-ui/icons';
@@ -15,10 +13,7 @@ import { Link } from './Link';
 
 interface LinkIconButtonProps
 	extends Omit<LinkProps, 'variant' | 'children' | 'aria-label'>,
-		Required<Pick<AriaLabelingProps, 'aria-label'>>,
-		IconButtonVariants {
-	icon: IconProps['name'];
-}
+		IconButtonBaseProps {}
 
 const _LinkIconButton = (
 	{ size = 'medium', variant = 'default', icon, ...props }: LinkIconButtonProps,

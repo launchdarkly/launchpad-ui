@@ -1,8 +1,6 @@
-import type { IconProps } from '@launchpad-ui/icons';
-import type { AriaLabelingProps } from '@react-types/shared';
 import type { ForwardedRef } from 'react';
 import type { RadioProps } from 'react-aria-components';
-import type { IconButtonVariants } from './IconButton';
+import type { IconButtonBaseProps } from './IconButton';
 
 import { Icon } from '@launchpad-ui/icons';
 import { cx } from 'class-variance-authority';
@@ -14,10 +12,7 @@ import { iconButton } from './IconButton';
 
 interface RadioIconButtonProps
 	extends Omit<RadioProps, 'children' | 'aria-label'>,
-		Required<Pick<AriaLabelingProps, 'aria-label'>>,
-		IconButtonVariants {
-	icon: IconProps['name'];
-}
+		IconButtonBaseProps {}
 
 const _RadioIconButton = (
 	{ size = 'medium', variant = 'default', icon, ...props }: RadioIconButtonProps,
