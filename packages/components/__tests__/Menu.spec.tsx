@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest';
 
 import { render, screen, userEvent } from '../../../test/utils';
-import { Button, Menu, MenuItem, MenuTrigger, Popover } from '../src';
+import { Button, Header, Menu, MenuItem, MenuTrigger, Popover, Section, Separator } from '../src';
 
 describe('Menu', () => {
 	it('renders', async () => {
@@ -12,8 +12,12 @@ describe('Menu', () => {
 				<Popover>
 					<Menu>
 						<MenuItem>Item one</MenuItem>
-						<MenuItem>Item two</MenuItem>
-						<MenuItem>Item three</MenuItem>
+						<Separator />
+						<Section>
+							<Header>Section</Header>
+							<MenuItem>Item two</MenuItem>
+							<MenuItem>Item three</MenuItem>
+						</Section>
 					</Menu>
 				</Popover>
 			</MenuTrigger>,
