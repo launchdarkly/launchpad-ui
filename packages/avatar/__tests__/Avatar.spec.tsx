@@ -16,12 +16,12 @@ describe('Avatar', () => {
 			}),
 		);
 		globalThis.URL.createObjectURL = vi.fn();
-		render(<Avatar url="test" defaultIcon={<Icon name="person" />} />);
+		render(<Avatar url="test" defaultIcon={<Icon name="person" />} alt="avatar" />);
 		expect(screen.getByRole('img', { hidden: true })).toBeInTheDocument();
 	});
 
 	it('renders a default', () => {
-		render(<Avatar url="" defaultIcon={<Icon name="person" />} />);
+		render(<Avatar url="" defaultIcon={<Icon name="person" />} alt="avatar" />);
 		expect(screen.getByRole('img', { hidden: true })).toBeInTheDocument();
 	});
 
@@ -31,7 +31,7 @@ describe('Avatar', () => {
 				status: 404,
 			}),
 		);
-		render(<Avatar url="test" defaultIcon={<Icon name="person" />} />);
+		render(<Avatar url="test" defaultIcon={<Icon name="person" />} alt="avatar" />);
 		expect(screen.getByRole('img', { hidden: true })).toBeInTheDocument();
 	});
 
@@ -44,7 +44,7 @@ describe('Avatar', () => {
 			}),
 		);
 		globalThis.URL.createObjectURL = vi.fn().mockReturnValue(circle);
-		render(<Avatar url="test" defaultIcon={<Icon name="person" />} />);
+		render(<Avatar url="test" defaultIcon={<Icon name="person" />} alt="avatar" />);
 
 		await waitFor(() => {
 			expect(screen.getByRole('img')).toBeInTheDocument();
@@ -60,7 +60,7 @@ describe('Avatar', () => {
 			}),
 		);
 		globalThis.URL.createObjectURL = vi.fn().mockReturnValue('fake');
-		render(<Avatar url="test" defaultIcon={<Icon name="person" />} />);
+		render(<Avatar url="test" defaultIcon={<Icon name="person" />} alt="avatar" />);
 
 		await waitFor(() => {
 			expect(screen.getByRole('img')).toBeInTheDocument();
@@ -74,7 +74,7 @@ describe('Avatar', () => {
 	});
 
 	it('can render initials', () => {
-		render(<Avatar url="" defaultIcon={<Icon name="person" />} initials="AB" />);
+		render(<Avatar url="" defaultIcon={<Icon name="person" />} initials="AB" alt="avatar" />);
 		expect(screen.getByText('AB')).toBeInTheDocument();
 	});
 });
