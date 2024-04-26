@@ -31,6 +31,7 @@ const tag = cva(styles.tag, {
 			beta: styles.beta,
 			federal: styles.federal,
 			new: styles.new,
+			info: styles.info,
 		},
 	},
 	defaultVariants: {

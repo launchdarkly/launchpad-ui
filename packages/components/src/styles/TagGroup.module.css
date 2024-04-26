@@ -86,3 +86,8 @@
   color: var(--lp-color-text-feedback-success);
   background-color: var(--lp-color-bg-feedback-success);
 }
+
+.info {
+  color: var(--lp-color-text-feedback-info);
+  background-color: var(--lp-color-bg-feedback-info);
+}
