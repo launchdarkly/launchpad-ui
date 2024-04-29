@@ -43,6 +43,6 @@
 		}
 	},
 	"devDependencies": {
-		"@vanilla-extract/css": "^1.14.0"
+		"@vanilla-extract/css": "^1.15.0"
 	}
 }
