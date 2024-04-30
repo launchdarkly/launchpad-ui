@@ -17,6 +17,7 @@ const modal = cva(styles.base, {
 		size: {
 			small: styles.small,
 			medium: styles.medium,
+			large: styles.large,
 		},
 		variant: {
 			default: styles.default,
