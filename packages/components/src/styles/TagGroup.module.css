@@ -21,7 +21,7 @@
 
   &[data-focus-visible] {
     outline: 2px solid var(--lp-color-shadow-interactive-focus);
-    outline-offset: 2px;
+    outline-offset: -2px;
     z-index: 1;
   }
 

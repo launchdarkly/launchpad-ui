@@ -16,8 +16,8 @@
 }
 
 .base[data-focus-visible] {
-  box-shadow: 0 0 0 2px var(--lp-color-bg-ui-primary),
-  0 0 0 4px var(--lp-color-shadow-interactive-focus);
+  outline: 2px solid var(--lp-color-shadow-interactive-focus);
+  outline-offset: -2px;
   z-index: 2;
 }
 
@@ -85,6 +85,7 @@
 .primary[data-focus-visible] {
   background-color: var(--lp-color-bg-interactive-primary-focus);
   border-color: var(--lp-color-border-interactive-primary-focus);
+  box-shadow: inset 0 0 0 3px var(--lp-color-shadow-interactive-primary);
 }
 
 .destructive {
@@ -103,11 +104,12 @@
 
 .destructive[data-focus-visible] {
   background-color: var(--lp-color-bg-interactive-destructive-focus);
+  box-shadow: inset 0 0 0 3px var(--lp-color-shadow-interactive-primary);
 }
 
 .minimal {
   background-color: var(--lp-color-bg-interactive-tertiary-base);
-  border: none;
+  border-color: transparent;
   color: var(--lp-color-text-ui-primary-base);
 }
 
@@ -146,6 +148,7 @@
 .primaryFlair[data-focus-visible] {
   background: linear-gradient(124deg, #8741b9 0%, #3b50ce 98.05%);
   border-color: var(--lp-color-border-interactive-primary-flair-focus);
+  box-shadow: inset 0 0 0 3px var(--lp-color-shadow-interactive-primary);
 }
 
 .defaultFlair {
@@ -170,11 +173,12 @@
   background-color: var(--lp-color-bg-interactive-secondary-flair-focus);
   border-color: var(--lp-color-border-interactive-secondary-flair-focus);
   color: var(--lp-color-text-interactive-flair-focus);
+  box-shadow: inset 0 0 0 3px var(--lp-color-shadow-interactive-primary);
 }
 
 .minimalFlair {
   background-color: var(--lp-color-bg-interactive-tertiary-flair-base);
-  border: none;
+  border-color: transparent;
   color: var(--lp-color-text-interactive-flair-base);
 }
 
@@ -191,6 +195,7 @@
 .minimalFlair[data-focus-visible] {
   background-color: var(--lp-color-bg-interactive-tertiary-flair-focus);
   color: var(--lp-color-text-interactive-flair-focus);
+  box-shadow: inset 0 0 0 3px var(--lp-color-shadow-interactive-primary);
 }
 
 .select {
