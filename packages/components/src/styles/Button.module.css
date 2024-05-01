@@ -16,8 +16,8 @@
 }
 
 .base[data-focus-visible] {
-  box-shadow: 0 0 0 2px var(--lp-color-bg-ui-primary),
-  0 0 0 4px var(--lp-color-shadow-interactive-focus);
+  outline: 2px solid var(--lp-color-shadow-interactive-focus);
+  outline-offset: -2px;
   z-index: 2;
 }
 
@@ -85,6 +85,7 @@
 .primary[data-focus-visible] {
   background-color: var(--lp-color-bg-interactive-primary-focus);
   border-color: var(--lp-color-border-interactive-primary-focus);
+  box-shadow: inset 0 0 0 3px var(--lp-color-shadow-interactive-primary);
 }
 
 .destructive {

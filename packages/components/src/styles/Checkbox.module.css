@@ -11,7 +11,8 @@
   transition:
     all var(--lp-duration-100) ease-in-out,
     outline,
-    outline-offset 0ms;
+    outline-offset,
+    box-shadow 0ms;
   
   & .icon {
     fill: var(--lp-color-text-interactive-primary-base);
@@ -27,8 +28,8 @@
 
   &[data-focus-visible] {
     & .box {
-      outline: 2px solid var(--lp-color-shadow-interactive-focus);
-      outline-offset: 2px;
+      outline: 1px solid var(--lp-color-shadow-interactive-focus);
+      outline-offset: -1px;
       z-index: 1;
     }
   }
@@ -64,6 +65,12 @@
       & .box {
         background-color: var(--lp-color-bg-field-error);
       }
+    }
+  }
+
+  &[data-focus-visible]:is([data-selected], [data-indeterminate]) {
+    & .box {
+      box-shadow: inset 0 0 0 1px var(--lp-color-shadow-interactive-primary);
     }
   }
 }
