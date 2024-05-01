@@ -1,5 +1,17 @@
 # @launchpad-ui/components
 
+## 0.1.25
+
+### Patch Changes
+
+- [#1271](https://github.com/launchdarkly/launchpad-ui/pull/1271) [`914650c`](https://github.com/launchdarkly/launchpad-ui/commit/914650c6328756805a35dbed96e36901e229a715) Thanks [@Niznikr](https://github.com/Niznikr)! - Add `large` size for `Modal`
+
+- [#1275](https://github.com/launchdarkly/launchpad-ui/pull/1275) [`2285363`](https://github.com/launchdarkly/launchpad-ui/commit/2285363a4f5b20c48fb0769f6fb6c3d05fdfef38) Thanks [@Niznikr](https://github.com/Niznikr)! - Inset focus outline
+
+- [#1269](https://github.com/launchdarkly/launchpad-ui/pull/1269) [`bf9a16a`](https://github.com/launchdarkly/launchpad-ui/commit/bf9a16a654ee9f5799aaa76dd80725b4fef9b26e) Thanks [@Niznikr](https://github.com/Niznikr)! - Add `info` variant for `Tag`
+
+- [#1273](https://github.com/launchdarkly/launchpad-ui/pull/1273) [`248dde4`](https://github.com/launchdarkly/launchpad-ui/commit/248dde4c332798d92b39aaa0a5adfd9c2df9a50f) Thanks [@Niznikr](https://github.com/Niznikr)! - Adjust styles for `OverlayArrow`
+
 ## 0.1.24
 
 ### Patch Changes
