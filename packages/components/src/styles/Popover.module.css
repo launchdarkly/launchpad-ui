@@ -28,7 +28,7 @@
   & .arrow svg {
     display: block;
     fill: var(--lp-color-bg-overlay-primary);
-    stroke: var(--lp-color-border-ui-primary);
+    stroke: light-dark(var(--lp-color-border-ui-secondary), transparent);
     stroke-width: 1px;
   }
 
