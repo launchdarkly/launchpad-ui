@@ -36,6 +36,7 @@
 	"dependencies": {
 		"@launchpad-ui/icons": "workspace:~",
 		"@launchpad-ui/tokens": "workspace:~",
+		"@react-aria/utils": "3.24.0",
 		"@react-types/shared": "3.23.0",
 		"class-variance-authority": "0.7.0",
 		"react-aria-components": "1.2.0",

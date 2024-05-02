@@ -5,15 +5,14 @@ import type {
 } from 'react-aria-components';
 
 import { cva } from 'class-variance-authority';
-import { forwardRef } from 'react';
+import { forwardRef, useContext } from 'react';
 import {
 	OverlayArrow as AriaOverlayArrow,
 	Popover as AriaPopover,
-	PopoverContext,
 	composeRenderProps,
-	useSlottedContext,
 } from 'react-aria-components';
 
+import { PopoverContext } from './ComboBox';
 import styles from './styles/Popover.module.css';
 
 interface PopoverProps extends Omit<AriaPopoverProps, 'offset' | 'crossOffset'> {}
@@ -22,14 +21,15 @@ interface OverlayArrowProps extends Omit<AriaOverlayArrowProps, 'children'> {}
 const popover = cva(styles.popover);
 const arrow = cva(styles.arrow);
 
-const _Popover = (props: PopoverProps, ref: ForwardedRef<HTMLDivElement>) => {
-	const context = useSlottedContext(PopoverContext);
-	const isComboBox = context?.trigger === 'ComboBox';
+const _Popover = (props: PopoverProps, ref: ForwardedRef<HTMLElement>) => {
+	const popoverProps = useContext(PopoverContext);
+
 	return (
 		<AriaPopover
+			{...popoverProps}
 			{...props}
-			offset={isComboBox ? 9 : 4}
-			crossOffset={isComboBox ? -8 : 0}
+			offset={4}
+			crossOffset={0}
 			ref={ref}
 			className={composeRenderProps(props.className, (className, renderProps) =>
 				popover({ ...renderProps, className }),
