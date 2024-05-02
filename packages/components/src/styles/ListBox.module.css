@@ -1,5 +1,6 @@
 .box {
   composes: menu from './Menu.module.css';
+  max-width: unset;
 }
 
 .item {
