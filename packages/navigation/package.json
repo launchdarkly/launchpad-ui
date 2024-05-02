@@ -40,9 +40,9 @@
 		"@launchpad-ui/popover": "workspace:~",
 		"@launchpad-ui/tokens": "workspace:~",
 		"@launchpad-ui/tooltip": "workspace:~",
-		"@react-aria/utils": "3.23.2",
-		"@react-stately/list": "3.10.3",
-		"@react-types/shared": "3.22.1",
+		"@react-aria/utils": "3.24.0",
+		"@react-stately/list": "3.10.4",
+		"@react-types/shared": "3.23.0",
 		"classix": "2.1.17",
 		"react-router-dom": "6.16.0"
 	},
