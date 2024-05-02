@@ -50,7 +50,7 @@
 
   &[data-trigger='ComboBox'] {
     /* stylelint-disable-next-line csstools/value-no-unknown-custom-properties */
-    min-width: calc(var(--lp-spacing-300) * 2 + var(--trigger-width) + 2px);
+    min-width: var(--trigger-width);
   }
 
   &[data-trigger='ComboBoxDialog'] {

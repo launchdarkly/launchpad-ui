@@ -1,5 +1,6 @@
 import type { Meta, StoryFn, StoryObj } from '@storybook/react';
 
+import { Icon } from '@launchpad-ui/icons';
 import { vars } from '@launchpad-ui/vars';
 import { expect, userEvent, within } from '@storybook/test';
 
@@ -82,6 +83,7 @@ export const Descriptions: Story = {
 			<>
 				<Label>Label</Label>
 				<Group>
+					<Icon name="search" size="small" />
 					<Input />
 					<IconButton
 						icon="chevron-down"
