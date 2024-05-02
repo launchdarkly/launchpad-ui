@@ -1,5 +1,14 @@
 # @launchpad-ui/form
 
+## 0.11.11
+
+### Patch Changes
+
+- [#1276](https://github.com/launchdarkly/launchpad-ui/pull/1276) [`18b34a0`](https://github.com/launchdarkly/launchpad-ui/commit/18b34a05e8d9866d564727c4568c038925021f2a) Thanks [@renovate](https://github.com/apps/renovate)! - Update dependencies
+
+- Updated dependencies []:
+  - @launchpad-ui/tooltip@0.9.9
+
 ## 0.11.10
 
 ### Patch Changes
