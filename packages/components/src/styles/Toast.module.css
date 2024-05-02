@@ -35,6 +35,7 @@
   align-items: center;
   gap: var(--lp-spacing-600);
   outline: none;
+  z-index: var(--lp-z-index-700);
 }
 
 .bottom {
@@ -65,7 +66,7 @@
   @media (prefers-reduced-motion: no-preference) {
     &[data-animation="entering"] {
       animation-name: slide-in;
-      animation-duration: var(--lp-duration-200);
+      animation-duration: var(--lp-duration-300);
       animation-timing-function: ease-in;
     }
     
@@ -84,23 +85,28 @@
 }
 
 .default {
-  align-items: center;
   gap: var(--lp-spacing-300);
   padding: var(--lp-spacing-300) var(--lp-spacing-500);
 }
 
 .snackbar {
-  align-items: flex-start;
   gap: var(--lp-spacing-400);
   padding: var(--lp-spacing-500);
   width: var(--lp-size-400);
+
+  &:not(:has(.title:empty)) {
+    align-items: flex-start;
+  }
 }
 
 .content {
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: var(--lp-spacing-200);
+
+  &:not(:has(.title:empty)) {
+    gap: var(--lp-spacing-200);
+  }
 }
 
 .title {

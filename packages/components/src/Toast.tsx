@@ -143,6 +143,7 @@ const Toast = <T extends ToastValue | SnackbarValue>({
 					</div>
 					<div {...descriptionProps} className={styles.description}>
 						{description}
+						{cta && ' '}
 						{cta}
 					</div>
 				</div>
@@ -150,6 +151,7 @@ const Toast = <T extends ToastValue | SnackbarValue>({
 			<IconButton
 				aria-label="Close"
 				{...closeButtonProps}
+				children={undefined}
 				icon="cancel"
 				variant="minimal"
 				size="small"
@@ -211,6 +213,11 @@ const ToastContainer = (props: AriaToastRegionProps) => {
 		: null;
 };
 
+/**
+ * Toasts display brief, temporary notifications of actions, errors, or other events in an application.
+ *
+ * https://react-spectrum.adobe.com/react-aria/useToast.html
+ */
 const SnackbarContainer = (props: AriaToastRegionProps) => {
 	const state = useToastQueue(snackbarQueue);
 

@@ -1,15 +1,22 @@
 import type { Meta, StoryFn, StoryObj } from '@storybook/react';
 
-import { Button, SnackbarContainer, SnackbarQueue, ToastContainer, ToastQueue } from '../src';
+import { expect, userEvent, within } from '@storybook/test';
+
+import { Button, Link, SnackbarContainer, SnackbarQueue, ToastContainer, ToastQueue } from '../src';
 
 const meta: Meta<typeof ToastContainer> = {
 	component: ToastContainer,
-	title: 'React Aria Components/Toast',
+	// @ts-ignore
+	subcomponents: { SnackbarContainer },
+	title: 'Components/Status/Toast',
 	parameters: {
 		status: {
 			type: import.meta.env.STORYBOOK_PACKAGE_STATUS__COMPONENTS,
 		},
 		chromatic: { pauseAnimationAtEnd: true },
+		a11y: {
+			element: '[data-react-aria-top-layer]',
+		},
 	},
 	decorators: [
 		(Story: StoryFn, { viewMode }) =>
@@ -32,9 +39,18 @@ export const Example: Story = {
 		return (
 			<>
 				<ToastContainer {...args} />
-				<Button onPress={() => ToastQueue.info(<span>An info toast!</span>)}>Show toast</Button>
+				<Button onPress={() => ToastQueue.success(<span>A success toast!</span>)}>
+					Show toast
+				</Button>
 			</>
 		);
+	},
+	play: async ({ canvasElement }) => {
+		const canvas = within(canvasElement);
+
+		await userEvent.click(canvas.getByRole('button'));
+		const body = canvasElement.ownerDocument.body;
+		await expect(await within(body).findByRole('alert'));
 	},
 };
 
@@ -48,6 +64,7 @@ export const Snackbar: Story = {
 						SnackbarQueue.info({
 							title: 'An info snackbar',
 							description: 'Dismiss me!',
+							action: <Link href="/">Link</Link>,
 						})
 					}
 				>
@@ -55,5 +72,12 @@ export const Snackbar: Story = {
 				</Button>
 			</>
 		);
+	},
+	play: async ({ canvasElement }) => {
+		const canvas = within(canvasElement);
+
+		await userEvent.click(canvas.getByRole('button'));
+		const body = canvasElement.ownerDocument.body;
+		await expect(await within(body).findByRole('alert'));
 	},
 };
