@@ -1,5 +1,14 @@
 # @launchpad-ui/modal
 
+## 0.17.26
+
+### Patch Changes
+
+- [#1276](https://github.com/launchdarkly/launchpad-ui/pull/1276) [`18b34a0`](https://github.com/launchdarkly/launchpad-ui/commit/18b34a05e8d9866d564727c4568c038925021f2a) Thanks [@renovate](https://github.com/apps/renovate)! - Update dependencies
+
+- Updated dependencies [[`18b34a0`](https://github.com/launchdarkly/launchpad-ui/commit/18b34a05e8d9866d564727c4568c038925021f2a)]:
+  - @launchpad-ui/focus-trap@0.1.19
+
 ## 0.17.25
 
 ### Patch Changes
