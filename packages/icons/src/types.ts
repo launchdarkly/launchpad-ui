@@ -132,6 +132,8 @@ const icons = [
 	'globe-check',
 	'graduation-cap',
 	'graduation-cap-outline',
+	'grip-horiz',
+	'grip-vert',
 	'group',
 	'group-outline',
 	'half-circle',
