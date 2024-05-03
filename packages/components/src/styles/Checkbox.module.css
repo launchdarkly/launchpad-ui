@@ -5,7 +5,7 @@
   flex-shrink: 0;
   width: var(--lp-size-16);
   height: var(--lp-size-16);
-  border-radius: 2px;
+  border-radius: var(--lp-border-radius-regular);
   border: var(--lp-border-width-200) solid var(--lp-color-border-field-base);
   background: var(--lp-color-bg-field-base);
   transition:
