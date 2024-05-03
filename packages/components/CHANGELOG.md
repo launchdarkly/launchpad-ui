@@ -1,5 +1,18 @@
 # @launchpad-ui/components
 
+## 0.1.27
+
+### Patch Changes
+
+- [#1278](https://github.com/launchdarkly/launchpad-ui/pull/1278) [`efb873c`](https://github.com/launchdarkly/launchpad-ui/commit/efb873cca7fae23dfa2ebd8b5d93b030ee591921) Thanks [@Niznikr](https://github.com/Niznikr)! - Remove max-width on `ListBox`
+
+- [#1280](https://github.com/launchdarkly/launchpad-ui/pull/1280) [`35541d9`](https://github.com/launchdarkly/launchpad-ui/commit/35541d9646b394faafb14611a719caf79d7e7f3a) Thanks [@Niznikr](https://github.com/Niznikr)! - Set `Popover` trigger in `ComboBox` to `Group` instead of `Input`
+
+- [#1282](https://github.com/launchdarkly/launchpad-ui/pull/1282) [`e8373c2`](https://github.com/launchdarkly/launchpad-ui/commit/e8373c2fdfd579b7634731388119550a2c7b63ac) Thanks [@Niznikr](https://github.com/Niznikr)! - Adjust `Checkbox` border-radius
+
+- Updated dependencies [[`a923187`](https://github.com/launchdarkly/launchpad-ui/commit/a923187f7a679965f529ffe8598768adc3d78ce1)]:
+  - @launchpad-ui/icons@0.17.3
+
 ## 0.1.26
 
 ### Patch Changes
