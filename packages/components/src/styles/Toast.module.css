@@ -116,6 +116,10 @@
 .description {
   font: var(--lp-body-2-regular);
   color: var(--lp-color-text-ui-secondary);
+
+  & a {
+    text-decoration: underline;
+  }
 }
 
 .icon {
