@@ -1,5 +1,11 @@
 # @launchpad-ui/icons
 
+## 0.17.3
+
+### Patch Changes
+
+- [#1283](https://github.com/launchdarkly/launchpad-ui/pull/1283) [`a923187`](https://github.com/launchdarkly/launchpad-ui/commit/a923187f7a679965f529ffe8598768adc3d78ce1) Thanks [@matthewferry](https://github.com/matthewferry)! - feat(icons): add grip icons
+
 ## 0.17.2
 
 ### Patch Changes

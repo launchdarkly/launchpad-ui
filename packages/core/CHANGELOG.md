@@ -1,5 +1,35 @@
 # @launchpad-ui/core
 
+## 0.49.14
+
+### Patch Changes
+
+- [#1283](https://github.com/launchdarkly/launchpad-ui/pull/1283) [`a923187`](https://github.com/launchdarkly/launchpad-ui/commit/a923187f7a679965f529ffe8598768adc3d78ce1) Thanks [@matthewferry](https://github.com/matthewferry)! - feat(icons): add grip icons
+
+- Updated dependencies []:
+  - @launchpad-ui/alert@0.9.12
+  - @launchpad-ui/avatar@0.6.23
+  - @launchpad-ui/banner@0.10.23
+  - @launchpad-ui/button@0.12.10
+  - @launchpad-ui/chip@0.9.23
+  - @launchpad-ui/clipboard@0.11.27
+  - @launchpad-ui/collapsible@0.1.54
+  - @launchpad-ui/drawer@0.5.27
+  - @launchpad-ui/dropdown@0.6.101
+  - @launchpad-ui/filter@0.7.12
+  - @launchpad-ui/form@0.11.12
+  - @launchpad-ui/inline-edit@0.3.12
+  - @launchpad-ui/menu@0.13.12
+  - @launchpad-ui/modal@0.17.27
+  - @launchpad-ui/navigation@0.12.27
+  - @launchpad-ui/pagination@0.4.27
+  - @launchpad-ui/select@0.4.27
+  - @launchpad-ui/snackbar@0.5.10
+  - @launchpad-ui/tag@0.3.27
+  - @launchpad-ui/toast@0.3.23
+  - @launchpad-ui/split-button@0.10.12
+  - @launchpad-ui/card@0.2.27
+
 ## 0.49.13
 
 ### Patch Changes
