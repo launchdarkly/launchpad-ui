@@ -17,5 +17,9 @@ export default meta;
 type Story = StoryObj<typeof LinkButton>;
 
 export const Example: Story = {
-	args: { children: 'LinkButton', href: '/test', routerOptions: { state: { foo: 'bar' } } },
+	args: {
+		children: 'LinkButton',
+		href: { pathname: 'test' },
+		routerOptions: { state: { foo: 'bar' } },
+	},
 };
