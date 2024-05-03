@@ -22,14 +22,14 @@ type Story = StoryObj<typeof Link>;
 export const Example: Story = {
 	args: {
 		children: 'Link',
-		href: '#',
+		href: '/test',
 	},
 };
 
 export const Subtle: Story = {
 	args: {
 		children: 'Link',
-		href: '#',
+		href: '/test',
 		variant: 'subtle',
 	},
 };
@@ -71,6 +71,6 @@ export const States: Story = {
 		await userEvent.tab();
 	},
 	args: {
-		href: '#',
+		href: '/test',
 	},
 };

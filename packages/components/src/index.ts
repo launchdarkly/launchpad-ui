@@ -70,6 +70,7 @@ export { Radio } from './Radio';
 export { RadioButton } from './RadioButton';
 export { RadioGroup } from './RadioGroup';
 export { RadioIconButton } from './RadioIconButton';
+export { RouterProvider } from './RouterProvider';
 export { SearchField } from './SearchField';
 export { Section } from './Section';
 export { Select, SelectValue } from './Select';
