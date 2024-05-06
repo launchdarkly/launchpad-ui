@@ -1,6 +1,4 @@
-import type { Meta, StoryFn, StoryObj } from '@storybook/react';
-
-import { MemoryRouter } from 'react-router-dom';
+import type { Meta, StoryObj } from '@storybook/react';
 
 import { LinkButton } from '../src';
 
@@ -12,13 +10,6 @@ const meta: Meta<typeof LinkButton> = {
 			type: import.meta.env.STORYBOOK_PACKAGE_STATUS__COMPONENTS,
 		},
 	},
-	decorators: [
-		(Story: StoryFn) => (
-			<MemoryRouter>
-				<Story />
-			</MemoryRouter>
-		),
-	],
 };
 
 export default meta;
@@ -26,5 +17,9 @@ export default meta;
 type Story = StoryObj<typeof LinkButton>;
 
 export const Example: Story = {
-	args: { children: 'LinkButton', to: '/' },
+	args: {
+		children: 'LinkButton',
+		href: { pathname: 'test' },
+		routerOptions: { state: { foo: 'bar' } },
+	},
 };

@@ -8,7 +8,7 @@ describe('LinkIconButton', () => {
 	it('renders', () => {
 		render(
 			<MemoryRouter>
-				<LinkIconButton icon="add" aria-label="create" to="/" />
+				<LinkIconButton icon="add" aria-label="create" href="/" />
 			</MemoryRouter>,
 		);
 		expect(screen.getByRole('link')).toBeVisible();

@@ -1,8 +1,5 @@
 import type { StoryObj } from '@storybook/react';
-import type { ReactNode } from 'react';
 import type { NavigationItemProps } from '../src';
-
-import { MemoryRouter } from 'react-router-dom';
 
 import { allModes } from '../../../.storybook/modes';
 import { Navigation, NavigationItem } from '../src';
@@ -29,7 +26,6 @@ export default {
 			},
 		},
 	},
-	decorators: [(storyFn: () => ReactNode) => <MemoryRouter>{storyFn()}</MemoryRouter>],
 };
 
 type Story = StoryObj<typeof Navigation<NavigationItemProps>>;
