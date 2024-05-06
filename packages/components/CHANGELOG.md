@@ -1,5 +1,11 @@
 # @launchpad-ui/components
 
+## 0.2.1
+
+### Patch Changes
+
+- [#1287](https://github.com/launchdarkly/launchpad-ui/pull/1287) [`742acf4`](https://github.com/launchdarkly/launchpad-ui/commit/742acf4b0b83adf929121d512cbda180d4925419) Thanks [@Niznikr](https://github.com/Niznikr)! - Add `DOMProps` to `LinkProps`
+
 ## 0.2.0
 
 ### Minor Changes
