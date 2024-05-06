@@ -1,5 +1,11 @@
 # @launchpad-ui/components
 
+## 0.2.0
+
+### Minor Changes
+
+- [#1285](https://github.com/launchdarkly/launchpad-ui/pull/1285) [`5aeaa33`](https://github.com/launchdarkly/launchpad-ui/commit/5aeaa331f4c8aa3a5597c60fe2a409cf4a459c48) Thanks [@Niznikr](https://github.com/Niznikr)! - Use `href` and `routerOptions` with `RouterProvider` for links
+
 ## 0.1.27
 
 ### Patch Changes
