@@ -1,3 +1,4 @@
+import type { DOMProps } from '@react-types/shared';
 import type { VariantProps } from 'class-variance-authority';
 import type { ForwardedRef } from 'react';
 import type { LinkProps as AriaLinkProps } from 'react-aria-components';
@@ -20,7 +21,7 @@ const link = cva(styles.base, {
 	},
 });
 
-interface LinkProps extends AriaLinkProps, VariantProps<typeof link> {}
+interface LinkProps extends AriaLinkProps, VariantProps<typeof link>, DOMProps {}
 
 const _Link = (
 	{ variant = 'default', ...props }: LinkProps,
