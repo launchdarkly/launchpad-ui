@@ -159,6 +159,7 @@ const icons = [
 	'magic-wand',
 	'mail-question',
 	'map',
+	'map-check',
 	'map-code',
 	'map-search',
 	'metric-funnel',
