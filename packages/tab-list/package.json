@@ -1,0 +1,53 @@
+{
+	"name": "@launchpad-ui/tab-list",
+	"version": "0.5.19",
+	"status": "beta",
+	"publishConfig": {
+		"access": "public"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/launchdarkly/launchpad-ui"
+	},
+	"description": "An element that navigates between related sections of content on the same page.",
+	"license": "Apache-2.0",
+	"files": ["dist"],
+	"main": "dist/index.js",
+	"module": "dist/index.es.js",
+	"types": "dist/index.d.ts",
+	"sideEffects": ["**/*.css"],
+	"exports": {
+		".": {
+			"types": "./dist/index.d.ts",
+			"import": "./dist/index.es.js",
+			"require": "./dist/index.js"
+		},
+		"./package.json": "./package.json",
+		"./style.css": "./dist/style.css"
+	},
+	"source": "src/index.ts",
+	"scripts": {
+		"build": "vite build -c ../../vite.config.mts && tsc --project tsconfig.build.json",
+		"clean": "rm -rf dist",
+		"lint": "stylelint '**/*.css' --ignore-path ../../.stylelintignore",
+		"test": "vitest run --coverage"
+	},
+	"dependencies": {
+		"@react-aria/tabs": "3.9.0",
+		"@react-stately/tabs": "3.6.5",
+		"@react-types/shared": "3.23.0",
+		"@react-types/tabs": "3.3.6",
+		"@launchpad-ui/tokens": "workspace:~",
+		"classix": "2.1.17"
+	},
+	"peerDependencies": {
+		"@react-stately/collections": "3.10.6",
+		"react": "18.3.1",
+		"react-dom": "18.3.1"
+	},
+	"devDependencies": {
+		"@react-stately/collections": "3.10.6",
+		"react": "18.3.1",
+		"react-dom": "18.3.1"
+	}
+}

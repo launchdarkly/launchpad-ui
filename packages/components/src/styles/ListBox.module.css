@@ -1,0 +1,30 @@
+.box {
+  composes: menu from './Menu.module.css';
+  max-width: unset;
+}
+
+.item {
+  composes: item from './Menu.module.css';
+
+  &:has([slot='label']) {
+    &[data-selection-mode] {
+      grid-template-areas:
+        'label check'
+        'desc check';
+      grid-template-columns: max-content 1fr;
+    }
+  }
+
+  & [slot='label'] {
+    grid-area: label;
+  }
+
+  & [slot='description'] {
+    grid-area: desc;
+  }
+}
+
+.check {
+  grid-area: check;
+  margin-left: auto;
+}

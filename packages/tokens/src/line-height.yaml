@@ -1,0 +1,9 @@
+line-height:
+  100:
+    value: 1.12
+  200:
+    value: 1.285714286
+  300:
+    value: 1.5
+  400:
+    value: 2

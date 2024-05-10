@@ -1,0 +1,197 @@
+@import '../../../tokens/dist/media-queries.css';
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes zoom {
+  from {
+    transform: scale(0.8);
+  }
+
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes slide {
+  from {
+    transform: translateX(100%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes sheet {
+  from {
+    transform: translateY(100%);
+  }
+
+  to {
+    transform: translateY(0);
+  }
+}
+
+.base {
+  border-radius: var(--lp-border-radius-regular);
+  background-color: var(--lp-color-bg-overlay-primary);
+  outline: none;
+  padding: var(--lp-spacing-700);
+  box-shadow: 0 0 6px 0 #939598;
+
+  & [slot='title'] {
+    font: var(--lp-heading-1-semibold);
+    flex-grow: 1;
+  }
+
+  & [role='dialog']:has([slot='body']) {
+    display: flex;
+    flex-direction: column;
+    gap: var(--lp-spacing-700);
+  }
+
+  & [slot='header'] {
+    display: flex;
+    align-items: center;
+    gap: var(--lp-spacing-300);
+  }
+
+  & [slot='footer'] {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: var(--lp-size-10);
+  }
+}
+
+.small {
+  width: var(--lp-size-480);
+}
+
+.medium {
+  width: var(--lp-size-640);
+}
+
+.large {
+  width: var(--lp-size-800);
+}
+
+.default {
+  border: 1px solid var(--lp-color-border-ui-secondary);
+
+  @media (prefers-reduced-motion: no-preference) {
+    &[data-entering] {
+      animation-name: zoom;
+      animation-duration: var(--lp-duration-200);
+      animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+  }
+}
+
+.drawer {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: var(--lp-size-400);
+  border-left: 1px solid var(--lp-color-border-ui-secondary);
+
+  & [slot='footer'] {
+    justify-content: flex-start;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    &[data-entering] {
+      animation-name: slide;
+      animation-duration: var(--lp-duration-300);
+    }
+
+    &[data-exiting] {
+      animation-name: slide;
+      animation-duration: var(--lp-duration-300);
+      animation-direction: reverse;
+      animation-timing-function: ease-in;
+    }
+  }
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  /* stylelint-disable-next-line csstools/value-no-unknown-custom-properties */
+  height: var(--visual-viewport-height);
+  background: light-dark(#28282880, #282828b2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: var(--lp-z-index-500);
+
+  @media (prefers-reduced-motion: no-preference) {
+    &[data-entering] {
+      animation-name: fade;
+
+      &:has(.default) {
+        animation-duration: var(--lp-duration-200);
+      }
+
+      &:has(.drawer) {
+        animation-duration: var(--lp-duration-300);
+      }
+    }
+
+    &[data-exiting] {
+      animation-name: fade;
+      animation-direction: reverse;
+      animation-timing-function: ease-in;
+
+      &:has(.default) {
+        animation-duration: var(--lp-duration-200);
+      }
+
+      &:has(.drawer) {
+        animation-duration: var(--lp-duration-300);
+      }
+    }
+  }
+}
+
+@media not (--tablet) {
+  .base {
+    width: 100vw;
+  }
+
+  .default {
+    position: fixed;
+    bottom: 0;
+    border-radius: 0;
+
+    & [slot='footer'] {
+      align-items: stretch;
+      flex-direction: column-reverse;
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+      &[data-entering] {
+        animation-name: sheet;
+        animation-duration: var(--lp-duration-200);
+        animation-timing-function: ease-in;
+      }
+
+      &[data-exiting] {
+        animation-name: sheet;
+        animation-duration: var(--lp-duration-200);
+        animation-direction: reverse;
+        animation-timing-function: ease-in;
+      }
+    }
+  }
+}

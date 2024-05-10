@@ -1,0 +1,238 @@
+:root {
+  --lp-component-alert-notification-flair-strong-color-text: var(--lp-color-white-950);
+  --lp-component-alert-notification-flair-strong-color-fill: var(--lp-color-white-950);
+  --lp-component-alert-notification-flair-strong-button-color-bg: var(--lp-color-white-950);
+  --lp-component-alert-notification-flair-strong-button-color-bg-hover: var(--lp-color-gray-100);
+  --lp-component-alert-notification-flair-strong-button-color-bg-focus: var(--lp-color-gray-200);
+  --lp-component-alert-notification-flair-strong-button-color-bg-active: var(--lp-color-gray-200);
+  --lp-component-alert-notification-flair-strong-button-button-color-border: var(
+    --lp-color-white-950
+  );
+  --lp-component-alert-notification-flair-strong-button-color-text: var(--lp-color-black-300);
+  --lp-component-alert-notification-flair-strong-button-color-text-hover: var(--lp-color-black-300);
+  --lp-component-alert-notification-flair-strong-button-color-text-focus: var(--lp-color-black-300);
+  --lp-component-alert-notification-flair-strong-button-color-text-active: var(
+    --lp-color-black-300
+  );
+}
+
+.Alert {
+  position: relative;
+  display: flex;
+  gap: 0.875rem;
+  border: none;
+  padding: 0.875rem 1.125rem;
+  font-size: 0.875rem;
+  line-height: 1.45;
+  white-space: normal;
+  width: 100%;
+  background-color: var(--lp-color-bg-ui-primary);
+  color: var(--lp-color-text-feedback-base);
+  box-sizing: border-box;
+  border-radius: 2px;
+}
+
+.Alert-heading {
+  margin-top: 0;
+  margin-bottom: 0.25rem;
+  font-size: 1rem;
+  color: var(--lp-color-text-feedback-base);
+  font-weight: var(--lp-font-weight-medium);
+  line-height: 1.25;
+}
+
+.Alert :global([class*='_ButtonGroup']) {
+  margin-top: 0.75rem;
+}
+
+.Alert .Alert-icon {
+  line-height: 1.2857;
+}
+
+/* stylelint-disable-next-line no-descending-specificity */
+.Alert.Alert--inline {
+  background-color: unset;
+  padding: 0;
+}
+
+/* Alert size variants */
+
+.Alert.Alert--small {
+  font-size: 0.8125rem;
+}
+
+.Alert.Alert--small .Alert-icon {
+  top: auto;
+  transform: translateY(1px);
+}
+
+.Alert.Alert--wide {
+  width: 86%;
+  margin-top: 0.5rem;
+}
+
+.Alert.Alert--compact {
+  width: fit-content;
+}
+
+/* for Edge pre-2019 browsers. IE doesn't recognize @supports at all. */
+@supports not (width: fit-content) {
+  .Alert.Alert--compact {
+    display: table;
+  }
+}
+
+/* Alert kind variants */
+
+.Alert.Alert--info .Alert-icon svg {
+  fill: var(--lp-color-fill-feedback-info);
+}
+
+.Alert.Alert--success .Alert-icon svg {
+  fill: var(--lp-color-fill-feedback-success);
+}
+
+.Alert.Alert--warning .Alert-icon svg {
+  fill: var(--lp-color-fill-feedback-warning);
+}
+
+.Alert.Alert--error .Alert-icon svg {
+  fill: var(--lp-color-fill-feedback-error);
+}
+
+.Alert.Alert--notification.Alert--flair-default {
+  background: rgb(163 79 222 / 0.15);
+}
+
+.Alert.Alert--notification.Alert--flair-strong,
+.Alert.Alert--notification.Alert--flair-strong .Alert-heading {
+  color: var(--lp-component-alert-notification-flair-strong-color-text);
+}
+
+.Alert.Alert--notification.Alert--flair-strong .Alert-close svg {
+  fill: var(--lp-component-alert-notification-flair-strong-color-fill);
+}
+
+.Alert.Alert--notification.Alert--flair-strong {
+  background: var(--lp-color-gradient-cyan-purple),
+    linear-gradient(0deg, rgb(255 255 255 / 0.3), rgb(255 255 255 / 0.3));
+}
+
+.Alert.Alert--notification.Alert--flair-default.Alert--bordered::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 2px;
+  border: 1px solid transparent;
+  background: var(--lp-color-gradient-purple-blue) border-box;
+  mask:
+    linear-gradient(#fff 0 0) padding-box,
+    linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+}
+
+.Alert.Alert--notification.Alert--flair-strong.Alert--bordered {
+  border: 1px solid rgb(255 255 255 / 0.3);
+}
+
+.Alert.Alert--notification.Alert--flair-strong .PrimaryButton {
+  background: var(--lp-component-alert-notification-flair-strong-button-color-bg);
+  border-color: var(--lp-component-alert-notification-flair-strong-button-button-color-border);
+  color: var(--lp-component-alert-notification-flair-strong-button-color-text);
+}
+
+.Alert.Alert--notification.Alert--flair-strong .PrimaryButton:hover {
+  background: var(--lp-component-alert-notification-flair-strong-button-color-bg-hover);
+  color: var(--lp-component-alert-notification-flair-strong-button-color-text-hover);
+}
+
+.Alert.Alert--notification.Alert--flair-strong .PrimaryButton:focus {
+  background: var(--lp-component-alert-notification-flair-strong-button-color-bg-focus);
+  color: var(--lp-component-alert-notification-flair-strong-button-color-text-focus);
+}
+
+.Alert.Alert--notification.Alert--flair-strong .PrimaryButton:active {
+  background: var(--lp-component-alert-notification-flair-strong-button-color-bg-active);
+  color: var(--lp-component-alert-notification-flair-strong-button-color-text-active);
+}
+
+.Alert.Alert--notification .LinkButton {
+  text-decoration: none;
+}
+
+.Alert.Alert--notification.Alert--flair-strong .LinkButton {
+  color: var(--lp-component-alert-notification-flair-strong-color-text);
+}
+
+.Alert.Alert--info.Alert--bordered {
+  border: var(--lp-border-width-200) solid var(--lp-color-border-feedback-info);
+  background-color: var(--lp-color-bg-feedback-info);
+}
+
+.Alert.Alert--success.Alert--bordered {
+  border: var(--lp-border-width-200) solid var(--lp-color-border-feedback-success);
+  background-color: var(--lp-color-bg-feedback-success);
+}
+
+.Alert.Alert--warning.Alert--bordered {
+  border: var(--lp-border-width-200) solid var(--lp-color-border-feedback-warning);
+  background-color: var(--lp-color-bg-feedback-warning);
+}
+
+.Alert.Alert--error.Alert--bordered {
+  border: var(--lp-border-width-200) solid var(--lp-color-border-feedback-error);
+  background-color: var(--lp-color-bg-feedback-error);
+}
+
+/* Alert content styles */
+
+.Alert-content {
+  flex-grow: 1;
+  max-width: 43.75rem;
+  min-width: 1px;
+  word-break: break-word;
+}
+
+.Alert .Alert-close {
+  margin-left: auto;
+}
+
+.Alert-content :global(a:not([class*='_Button'])) {
+  color: var(--lp-color-text-interactive-base);
+
+  &:hover {
+    text-decoration: none;
+    box-shadow: none;
+  }
+
+  &:focus {
+    box-shadow:
+      0 0 0 1px hsl(0 0 100% / 0.7),
+      0 0 0 4px hsl(0 0% 9.8% / 0.1);
+  }
+
+  &:active {
+    color: var(--lp-color-text-interactive-active);
+    box-shadow: none;
+    text-decoration: underline;
+  }
+
+  &:focus:not(:focus-visible) {
+    outline: none;
+    box-shadow: none;
+  }
+}
+
+.Alert-content ul {
+  margin: 0 0 0.5em;
+}
+
+.Alert-content :only-child {
+  margin-bottom: 0;
+}
+
+.Alert-content p,
+.Alert ul {
+  list-style-position: outside;
+  margin: 0 0 0.5em;
+}

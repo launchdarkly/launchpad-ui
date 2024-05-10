@@ -1,0 +1,115 @@
+@keyframes slide {
+  from {
+    transform: var(--origin);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.popover {
+  --lp-arrow-offset: var(--lp-size-2);
+
+  isolation: isolate;
+  border-radius: var(--lp-border-radius-medium);
+  background-color: var(--lp-color-bg-overlay-primary);
+  box-shadow: 0 4px 4px 0 rgb(40 40 40 / 0.08), 0 1px 2px 0 rgb(40 40 40 / 0.1),
+  0 0 4px 0 rgb(40 40 40 / 0.12);
+  transform: translate3d(0, 0, 0);
+  will-change: transform, opacity;
+
+  & [slot='title'] {
+    font: var(--lp-heading-2-medium);
+  }
+
+  & .arrow svg {
+    display: block;
+    fill: var(--lp-color-bg-overlay-primary);
+    stroke: light-dark(var(--lp-color-border-ui-secondary), transparent);
+    stroke-width: 1px;
+  }
+
+  &[data-trigger='DialogTrigger'] {
+    padding: var(--lp-spacing-300);
+    min-width: var(--lp-size-192);
+  }
+
+  &[data-trigger='MenuTrigger'],
+  &[data-trigger='SubmenuTrigger'] {
+    min-width: var(--lp-size-192);
+    max-width: var(--lp-menu-max-width);
+  }
+
+  &[data-trigger='Select'] {
+    /* stylelint-disable-next-line csstools/value-no-unknown-custom-properties */
+    min-width: var(--trigger-width);
+  }
+
+  &[data-trigger='ComboBox'] {
+    /* stylelint-disable-next-line csstools/value-no-unknown-custom-properties */
+    min-width: var(--trigger-width);
+  }
+
+  &[data-trigger='ComboBoxDialog'] {
+    padding: var(--lp-spacing-300);
+  }
+
+  &[data-placement='top'] {
+    --origin: translateY(4px);
+
+    &:has(.arrow) {
+      margin-bottom: var(--lp-arrow-offset);
+    }
+  }
+
+  &[data-placement='bottom'] {
+    --origin: translateY(-4px);
+
+    & .arrow svg {
+      transform: rotate(180deg);
+    }
+
+    &:has(.arrow) {
+      margin-top: var(--lp-arrow-offset);
+    }
+  }
+
+  &[data-placement='right'] {
+    --origin: translateX(-4px);
+
+    & .arrow svg {
+      transform: rotate(90deg);
+    }
+
+    &:has(.arrow) {
+      margin-left: var(--lp-arrow-offset);
+    }
+  }
+
+  &[data-placement='left'] {
+    --origin: translateX(4px);
+
+    & .arrow svg {
+      transform: rotate(-90deg);
+    }
+
+    &:has(.arrow) {
+      margin-right: var(--lp-arrow-offset);
+    }
+  }
+
+  &:not(:is([data-trigger='MenuTrigger'], [data-trigger='SubmenuTrigger']), :has(.arrow)) {
+    overflow: auto;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    &[data-entering] {
+      animation-name: slide;
+      animation-duration: var(--lp-duration-200);
+      animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+    }
+  }
+}

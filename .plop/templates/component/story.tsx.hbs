@@ -1,0 +1,23 @@
+import type { StoryObj } from '@storybook/react';
+
+import { {{pascalCase name}} } from '../src';
+
+export default {
+  component: {{pascalCase name}},
+  title: 'Components/{{pascalCase name}}',
+  description: '{{description}}',
+  parameters: {
+    status: {
+      type: import.meta.env.STORYBOOK_PACKAGE_STATUS__{{constantCase name}},
+    },
+  },
+};
+
+type Story = StoryObj<typeof {{pascalCase name}}>;
+
+export const Example: Story = {
+  args: {
+    children: 'A lovely {{pascalCase name}} component.',
+    // arguments for your story
+  },
+};

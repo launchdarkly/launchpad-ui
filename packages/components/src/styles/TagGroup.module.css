@@ -1,0 +1,93 @@
+.group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--lp-spacing-200);
+}
+
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--lp-spacing-200);
+}
+
+.tag {
+  display: flex;
+  gap: var(--lp-spacing-200);
+  align-items: center;
+  padding: var(--lp-spacing-100) var(--lp-spacing-200);
+  border-radius: var(--lp-border-radius-medium);
+  outline: none;
+  cursor: default;
+
+  &[data-focus-visible] {
+    outline: 2px solid var(--lp-color-shadow-interactive-focus);
+    outline-offset: -2px;
+    z-index: 1;
+  }
+
+  &[data-selected] {
+    background-color: var(--lp-color-bg-ui-primary);
+    border-color: var(--lp-color-border-interactive-secondary-active);
+  }
+
+  &[data-disabled] {
+    border-color: var(--lp-color-border-interactive-disabled);
+    color: var(--lp-color-text-interactive-disabled);
+  }
+
+  &[data-selection-mode] {
+    border: 1px solid var(--lp-color-border-interactive-secondary-base);
+  }
+
+  &[data-allows-removing] {
+    padding-right: 0;
+  }
+}
+
+.small {
+  font: var(--lp-small-1-medium);
+}
+
+.medium {
+  font: var(--lp-label-1-medium);
+}
+
+.default {
+  color: var(--lp-color-text-ui-secondary);
+  background-color: var(--lp-color-bg-ui-secondary);
+}
+
+.success {
+  color: var(--lp-color-text-feedback-success);
+  background-color: var(--lp-color-bg-feedback-success);
+}
+
+.warning {
+  color: var(--lp-color-text-feedback-warning);
+  background-color: var(--lp-color-bg-feedback-warning);
+}
+
+.error {
+  color: var(--lp-color-text-feedback-error);
+  background-color: var(--lp-color-bg-feedback-error);
+}
+
+.beta {
+  color: var(--lp-color-text-product-beta);
+  background-color: var(--lp-color-bg-product-beta);
+}
+
+.federal {
+  color: var(--lp-color-text-product-federal);
+  background-color: var(--lp-color-bg-product-federal);
+}
+
+.new {
+  color: var(--lp-color-text-feedback-success);
+  background-color: var(--lp-color-bg-feedback-success);
+}
+
+.info {
+  color: var(--lp-color-text-feedback-info);
+  background-color: var(--lp-color-bg-feedback-info);
+}

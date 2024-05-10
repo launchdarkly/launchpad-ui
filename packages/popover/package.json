@@ -1,0 +1,52 @@
+{
+	"name": "@launchpad-ui/popover",
+	"version": "0.11.20",
+	"status": "beta",
+	"publishConfig": {
+		"access": "public"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/launchdarkly/launchpad-ui"
+	},
+	"description": "An element that displays content within a portal triggered by user interactions.",
+	"license": "Apache-2.0",
+	"files": ["dist"],
+	"main": "dist/index.js",
+	"module": "dist/index.es.js",
+	"types": "dist/index.d.ts",
+	"sideEffects": ["**/*.css"],
+	"exports": {
+		".": {
+			"types": "./dist/index.d.ts",
+			"import": "./dist/index.es.js",
+			"require": "./dist/index.js"
+		},
+		"./package.json": "./package.json",
+		"./style.css": "./dist/style.css"
+	},
+	"source": "src/index.ts",
+	"scripts": {
+		"build": "vite build -c ../../vite.config.mts && tsc --project tsconfig.build.json",
+		"clean": "rm -rf dist",
+		"lint": "stylelint '**/*.css' --ignore-path ../../.stylelintignore",
+		"test": "vitest run --coverage"
+	},
+	"dependencies": {
+		"@floating-ui/core": "1.6.0",
+		"@floating-ui/dom": "1.6.1",
+		"@launchpad-ui/focus-trap": "workspace:~",
+		"@launchpad-ui/overlay": "workspace:~",
+		"@launchpad-ui/tokens": "workspace:~",
+		"classix": "2.1.17",
+		"framer-motion": "11.1.7"
+	},
+	"peerDependencies": {
+		"react": "18.3.1",
+		"react-dom": "18.3.1"
+	},
+	"devDependencies": {
+		"react": "18.3.1",
+		"react-dom": "18.3.1"
+	}
+}

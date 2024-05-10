@@ -1,0 +1,70 @@
+{
+	"$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
+	"files": {
+		"ignore": [
+			"dist/**",
+			"playwright-report/**",
+			"storybook-static/**",
+			"test-results/**",
+			"coverage/**",
+			"build/**"
+		],
+		"ignoreUnknown": true
+	},
+	"organizeImports": {
+		"enabled": true
+	},
+	"formatter": {
+		"enabled": true,
+		"lineWidth": 100
+	},
+	"linter": {
+		"enabled": true,
+		"rules": {
+			"recommended": true,
+			"correctness": {
+				"noUnusedVariables": "error",
+				"useHookAtTopLevel": "error",
+				"noUnusedImports": "error"
+			},
+			"performance": {
+				"noDelete": "off"
+			},
+			"style": {
+				"noDefaultExport": "error",
+				"noNamespace": "error",
+				"useFragmentSyntax": "error",
+				"useNodejsImportProtocol": "off"
+			},
+			"nursery": {
+				"noDuplicateJsonKeys": "error",
+				"noNamespaceImport": "error",
+				"noReExportAll": "error"
+			}
+		}
+	},
+	"javascript": {
+		"formatter": {
+			"quoteStyle": "single",
+			"jsxQuoteStyle": "double"
+		}
+	},
+	"vcs": {
+		"enabled": true,
+		"clientKind": "git",
+		"useIgnoreFile": true,
+		"defaultBranch": "main"
+	},
+	"overrides": [
+		{
+			"include": ["*.stories.tsx", "*.config.*", "playwright", ".storybook"],
+			"linter": {
+				"rules": {
+					"style": {
+						"noDefaultExport": "off"
+					}
+				}
+			}
+		}
+	]
+}

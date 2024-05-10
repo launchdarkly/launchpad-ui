@@ -1,0 +1,50 @@
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.progress {
+  display: inline-flex;
+}
+
+.outerCircle {
+  stroke: var(--lp-color-white-100);
+}
+
+.innerCircle {
+  stroke: var(--lp-color-gray-500);
+}
+
+.base {
+  height: var(--lp-size-64);
+  width: var(--lp-size-64);
+}
+
+.small {
+  height: var(--lp-size-16);
+  width: var(--lp-size-16);
+}
+
+.medium {
+  height: var(--lp-size-24);
+  width: var(--lp-size-24);
+}
+
+.large {
+  height: var(--lp-size-32);
+  width: var(--lp-size-32);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .indeterminate {
+    animation-name: spin;
+    animation-duration: var(--lp-duration-350);
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+}

@@ -1,0 +1,17 @@
+.Storygroup-wrapper > * {
+  /* stylelint-disable-next-line declaration-no-important */
+  margin: auto 0 !important;
+}
+
+.Storygroup-wrapper {
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 7.5rem auto;
+  grid-gap: 0.75rem;
+  justify-items: flex-start;
+}
+
+.Button-state-label {
+  text-align: right;
+  font-weight: bold;
+}

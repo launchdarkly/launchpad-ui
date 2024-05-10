@@ -1,0 +1,465 @@
+color:
+  bg:
+    feedback:
+      primary:
+        value: '{ color.gray.800.value }'
+      error:
+        value: '{ color.system.red.50.value }'
+        dark: '{ color.system.red.900.value }'
+      info:
+        value: '{ color.blue.50.value }'
+        dark: '{ color.blue.900.value }'
+      success:
+        value: '{ color.system.green.100.value }'
+        dark: '{ color.system.green.900.value }'
+      warning:
+        value: '{ color.system.yellow.100.value }'
+        dark: '{ color.system.yellow.900.value }'
+    interactive:
+      primary:
+        base:
+          value: '{ color.blue.600.value }'
+          dark: '{ color.blue.500.value}'
+        active:
+          value: '{ color.blue.700.value }'
+        focus:
+          value: '{ color.blue.700.value }'
+        hover:
+          value: '{ color.blue.500.value }'
+          dark: '{ color.blue.400.value}'
+      secondary:
+        base:
+          value: transparent
+        active:
+          value: '{ color.gray.200.value }'
+          dark: '{ color.gray.800.value }'
+        focus:
+          value: '{ color.gray.200.value }'
+          dark: '{ color.gray.800.value }'
+        hover:
+          value: '{ color.gray.100.value }'
+          dark: '{ color.gray.700.value }'
+      secondary-flair:
+        base:
+          value: '{ color.purple.100.value }'
+          dark: '{ color.purple.950.value }'
+        active:
+          value: '{ color.purple.400.value }'
+          dark: '{ color.purple.950.value }'
+        focus:
+          value: '{ color.purple.400.value }'
+          dark: '{ color.purple.950.value }'
+        hover:
+          value: '{ color.purple.300.value }'
+          dark: '{ color.purple.900.value }'
+      tertiary:
+        base:
+          value: transparent
+        active:
+          value: '{ color.gray.200.value }'
+          dark: '{ color.gray.800.value }'
+        focus:
+          value: '{ color.gray.200.value }'
+          dark: '{ color.gray.800.value }'
+        hover:
+          value: '{ color.gray.100.value }'
+          dark: '{ color.gray.700.value }'
+      tertiary-flair:
+        base:
+          value: transparent
+        active:
+          value: '{ color.purple.300.value }'
+          dark: '{ color.purple.950.value }'
+        focus:
+          value: '{ color.purple.300.value }'
+          dark: '{ color.purple.950.value }'
+        hover:
+          value: '{ color.purple.100.value }'
+          dark: '{ color.purple.900.value }'
+      success:
+        base:
+          value: '{ color.system.green.100.value }'
+          dark: '#00DA7B26' # color.system.green.500.value at opacity 15%
+        hover:
+          value: '{ color.system.green.200.value }'
+          dark: '#00DA7B66' # color.system.green.500.value at opacity 40%
+        focus:
+          value: '{ color.system.green.300.value }'
+          dark: '#00DA7B4D' # color.system.green.500.value at opacity 30%
+        active:
+          value: '{ color.system.green.300.value }'
+          dark: '#00DA7B4D' # color.system.green.500.value at opacity 30%
+      destructive:
+        base:
+          value: '{ color.white.950.value }'
+          dark: '{ color.gray.950.value }'
+        active:
+          value: '{ color.system.red.200.value }'
+          dark: '#E5242426'
+        focus:
+          value: '{ color.system.red.200.value }'
+          dark: '#E5242426'
+        hover:
+          value: '{ color.system.red.50.value }'
+          dark: '#E5242433'
+      disabled:
+        value: '{ color.gray.100.value }'
+        dark: '{ color.gray.800.value }'
+      link:
+        value: '{ color.blue.50.value }'
+        dark: '#3DD6F533'
+      selected:
+        value: '{ color.blue.0.value }'
+        dark: '{ color.blue.950.value }'
+    ui:
+      primary:
+        value: '{ color.white.950.value }'
+        dark: '{ color.black.950.value }'
+      primary-flair:
+        value: '{ color.purple.300.value }'
+        dark: '{ color.purple.950.value }'
+      secondary:
+        value: '{ color.gray.50.value }'
+        dark: '{ color.gray.950.value }'
+      tertiary:
+        value: '{ color.gray.100.value }'
+        dark: '{ color.gray.900.value }'
+      quaternary:
+        value: '{ color.gray.200.value }'
+        dark: '{ color.gray.800.value }'
+    overlay:
+      primary:
+        value: '{ color.white.950.value }'
+        dark: '{ color.gray.900.value }'
+      secondary:
+        value: '{ color.gray.950.value }'
+        dark: '{ color.gray.900.value }'
+    field:
+      base:
+        value: '{ color.white.950.value }'
+        dark: '{ color.black.950.value }'
+      disabled:
+        value: '{ color.gray.100.value }'
+        dark: '{ color.gray.800.value }'
+      error:
+        value: '{ color.system.red.600.value }'
+        dark: '{ color.system.red.600.value }'
+      aside:
+        value: '{ color.gray.100.value }'
+        dark: '{ color.gray.800.value }'
+    product:
+      beta:
+        value: '{ color.purple.100.value }'
+        dark: '{ color.purple.900.value }'
+      federal:
+        value: '{ color.yellow.500.value }'
+        dark: '#E8FF1F26'
+      toggle-chip-on:
+        value: '{ color.system.green.100.value }'
+        dark: '#00DA7B26'
+      toggle-chip-off:
+        value: '{ color.gray.100.value }'
+        dark: '{ color.gray.800.value }'
+
+  border:
+    feedback:
+      error:
+        value: '{ color.system.red.500.value }'
+        dark: '{ color.system.red.500.value }'
+      info:
+        value: '{ color.blue.600.value }'
+        dark: '{ color.blue.600.value }'
+      success:
+        value: '{ color.system.green.600.value }'
+        dark: '{ color.system.green.500.value }'
+      warning:
+        value: '{ color.system.yellow.700.value }'
+        dark: '{ color.system.yellow.500.value }'
+    field:
+      base:
+        value: '{ color.gray.200.value }'
+        dark: '{ color.gray.600.value }'
+      active:
+        value: '{ color.blue.600.value }'
+        dark: '{ color.cyan.400.value }'
+      focus:
+        value: '{ color.blue.600.value }'
+        dark: '{ color.cyan.400.value }'
+      error:
+        value: '{ color.system.red.600.value }'
+        dark: '{ color.system.red.600.value }'
+      disabled:
+        value: '{ color.gray.200.value }'
+        dark: '{ color.gray.600.value }'
+    interactive:
+      focus:
+        value: '{ color.blue.600.value }'
+        dark: '{ color.cyan.400.value }'
+      primary:
+        base:
+          value: '{ color.blue.600.value }'
+        active:
+          value: '{ color.blue.700.value }'
+        focus:
+          value: '{ color.blue.700.value }'
+        hover:
+          value: '{ color.blue.500.value }'
+      primary-flair:
+        base:
+          value: '{ color.purple.600.value }'
+          dark: '{ color.purple.500.value }'
+        active:
+          value: '{ color.purple.800.value }'
+          dark: '{ color.purple.800.value }'
+        focus:
+          value: '{ color.purple.800.value }'
+          dark: '{ color.purple.800.value }'
+        hover:
+          value: '{ color.purple.700.value }'
+          dark: '{ color.purple.600.value }'
+      secondary:
+        base:
+          value: '{ color.gray.200.value }'
+          dark: '{ color.gray.600.value }'
+        active:
+          value: '{ color.gray.200.value }'
+          dark: '{ color.gray.600.value }'
+        focus:
+          value: '{ color.gray.200.value }'
+          dark: '{ color.gray.600.value }'
+        hover:
+          value: '{ color.gray.200.value }'
+          dark: '{ color.gray.600.value }'
+      secondary-flair:
+        base:
+          value: '{ color.purple.600.value }'
+          dark: '{ color.purple.600.value }'
+        active:
+          value: '{ color.purple.800.value }'
+          dark: '{ color.purple.700.value }'
+        focus:
+          value: '{ color.purple.800.value }'
+          dark: '{ color.purple.700.value }'
+        hover:
+          value: '{ color.purple.700.value }'
+          dark: '{ color.purple.500.value }'
+      success:
+        base:
+          value: '{ color.system.green.400.value }'
+          dark: '{ color.system.green.900.value }'
+        hover:
+          value: '{ color.system.green.500.value }'
+          dark: '{ color.system.green.600.value }'
+        focus:
+          value: '{ color.system.green.600.value }'
+          dark: '{ color.system.green.600.value }'
+        active:
+          value: '{ color.system.green.600.value }'
+          dark: '{ color.system.green.800.value }'
+      destructive:
+        value: '{ color.system.red.700.value }'
+        dark: '{ color.system.red.500.value }'
+      disabled:
+        value: '{ color.gray.100.value }'
+        dark: '{ color.gray.600.value }'
+      selected:
+        value: '{ color.blue.700.value }'
+        dark: '{ color.blue.300.value }'
+    ui:
+      primary:
+        value: '{ color.gray.200.value }'
+        dark: '{ color.gray.600.value }'
+      primary-flair:
+        value: '{ color.purple.400.value }'
+        dark: '{ color.purple.700.value }'
+      secondary:
+        value: '{ color.gray.100.value }'
+        dark: '{ color.gray.800.value }'
+    overlay:
+      secondary:
+        value: '{ color.gray.800.value }'
+        dark: '{ color.gray.600.value }'
+
+  fill:
+    feedback:
+      error:
+        value: '{ color.system.red.500.value }'
+        dark: '{ color.system.red.400.value }'
+      info:
+        value: '{ color.blue.600.value }'
+        dark: '{ color.blue.400.value }'
+      success:
+        value: '{ color.system.green.700.value }'
+        dark: '{ color.system.green.500.value }'
+      warning:
+        value: '{ color.system.yellow.700.value }'
+        dark: '{ color.system.yellow.500.value }'
+    interactive:
+      primary:
+        value: '{ color.white.950.value }'
+      success:
+        base:
+          value: '{ color.system.green.900.value }'
+          dark: '{ color.system.green.500.value }'
+        hover:
+          value: '{ color.system.green.900.value }'
+          dark: '{ color.system.green.300.value }'
+        focus:
+          value: '{ color.system.green.900.value }'
+          dark: '{ color.system.green.300.value }'
+        active:
+          value: '{ color.system.green.900.value }'
+          dark: '{ color.system.green.300.value }'
+      destructive:
+        value: '{ color.system.red.700.value }'
+        dark: '{ color.white.950.value }'
+      disabled:
+        value: '{ color.gray.700.value }'
+        dark: '{ color.gray.500.value }'
+    ui:
+      primary:
+        value: currentcolor
+        dark: '{ color.white.950.value }'
+      secondary:
+        value: '{ color.gray.500.value }'
+      primary-flair:
+        value: '{ color.purple.600.value }'
+        dark: '{ color.purple.400.value }'
+    field:
+      base:
+        value: '{ color.gray.600.value }'
+        dark: '{ color.gray.400.value }'
+
+  shadow:
+    interactive:
+      focus:
+        value: '{ color.blue.600.value }'
+        dark: '{ color.cyan.400.value }'
+      primary:
+        value: '{ color.white.950.value }'
+        dark: '{ color.gray.950.value }'
+    ui:
+      primary:
+        value: '{ color.gray.500.value }'
+        dark: '{ color.black.950.value }'
+
+  text:
+    feedback:
+      base:
+        value: '{ color.gray.950.value }'
+        dark: '{ color.white.950.value }'
+      error:
+        value: '{ color.system.red.600.value }'
+        dark: '{ color.system.red.400.value }'
+      success:
+        value: '{ color.system.green.800.value }'
+        dark: '{ color.system.green.400.value }'
+      warning:
+        value: '{ color.system.yellow.800.value }'
+        dark: '{ color.system.yellow.500.value }'
+      info:
+        value: '{ color.blue.800.value }'
+        dark: '{ color.blue.300.value }'
+    interactive:
+      # links
+      base:
+        value: '{ color.blue.700.value }'
+        dark: '{ color.blue.300.value }'
+      active:
+        value: '{ color.purple.700.value }'
+        dark: '{ color.purple.400.value }'
+      primary:
+        base:
+          value: '{ color.white.950.value }'
+        active:
+          value: '{ color.white.950.value }'
+        focus:
+          value: '{ color.white.950.value }'
+        hover:
+          value: '{ color.white.950.value }'
+          dark: '{ color.gray.950.value }'
+      secondary:
+        value: '{ color.gray.600.value }'
+        dark: '{ color.gray.400.value }'
+      success:
+        base:
+          value: '{ color.system.green.900.value }'
+          dark: '{ color.system.green.500.value }'
+        hover:
+          value: '{ color.system.green.900.value }'
+          dark: '{ color.system.green.300.value }'
+        focus:
+          value: '{ color.system.green.900.value }'
+          dark: '{ color.system.green.300.value }'
+        active:
+          value: '{ color.system.green.900.value }'
+          dark: '{ color.system.green.300.value }'
+      destructive:
+        value: '{ color.system.red.700.value }'
+        dark: '{ color.white.950.value }'
+      disabled:
+        value: '{ color.gray.500.value }'
+        dark: '{ color.gray.600.value }'
+      flair:
+        focus:
+          value: '{ color.purple.900.value }'
+          dark: '{ color.purple.400.value }'
+        hover:
+          value: '{ color.purple.800.value }'
+          dark: '{ color.purple.400.value }'
+        base:
+          value: '{ color.purple.700.value }'
+          dark: '{ color.purple.400.value }'
+        active:
+          value: '{ color.purple.900.value }'
+          dark: '{ color.purple.400.value }'
+    ui:
+      primary:
+        base:
+          value: '{ color.gray.950.value }'
+          dark: '{ color.white.950.value }'
+        inverted:
+          value: '{ color.white.950.value }'
+          dark: '{ color.gray.950.value }'
+      secondary:
+        value: '{ color.gray.800.value }'
+        dark: '{ color.gray.200.value }'
+      tertiary:
+        value: '{ color.gray.600.value }'
+        dark: '{ color.gray.400.value }'
+    overlay:
+      primary:
+        value: '{ color.gray.800.value }'
+        dark: '{ color.gray.100.value }'
+      secondary:
+        value: '{ color.white.950.value }'
+        dark: '{ color.gray.950.value }'
+    field:
+      base:
+        value: '{ color.gray.600.value }'
+        dark: '{ color.gray.400.value }'
+      disabled:
+        value: '{ color.gray.700.value }'
+        dark: '{ color.gray.500.value }'
+      placeholder:
+        value: '{ color.gray.600.value }'
+        dark: '{ color.gray.400.value }'
+    product:
+      beta:
+        value: '{ color.purple.600.value }'
+        dark: '{ color.purple.400.value }'
+      code:
+        value: '{ color.pink.600.value }'
+        dark: '{ color.pink.300.value }'
+      federal:
+        value: '{ color.gray.950.value }'
+        dark: '{ color.yellow.500.value }'
+      flair:
+        value: '{ color.purple.700.value }'
+        dark: '{ color.purple.500.value }'
+      toggle-chip-on:
+        value: '{ color.system.green.700.value }'
+        dark: '{ color.system.green.500.value }'
+      toggle-chip-off:
+        value: '{ color.gray.800.value }'
+        dark: '{ color.gray.200.value }'

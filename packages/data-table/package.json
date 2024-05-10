@@ -1,0 +1,59 @@
+{
+	"name": "@launchpad-ui/data-table",
+	"version": "0.2.18",
+	"status": "alpha",
+	"publishConfig": {
+		"access": "public"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/launchdarkly/launchpad-ui"
+	},
+	"description": "An element used to display data in rows and columns.",
+	"license": "Apache-2.0",
+	"files": ["dist"],
+	"main": "dist/index.js",
+	"module": "dist/index.es.js",
+	"types": "dist/index.d.ts",
+	"sideEffects": ["**/*.css"],
+	"exports": {
+		".": {
+			"types": "./dist/index.d.ts",
+			"import": "./dist/index.es.js",
+			"require": "./dist/index.js"
+		},
+		"./package.json": "./package.json",
+		"./style.css": "./dist/style.css"
+	},
+	"source": "src/index.ts",
+	"scripts": {
+		"build": "vite build -c ../../vite.config.mts && tsc --project tsconfig.build.json",
+		"clean": "rm -rf dist",
+		"lint": "exit 0",
+		"test": "vitest run --coverage"
+	},
+	"dependencies": {
+		"@launchpad-ui/tokens": "workspace:~",
+		"@launchpad-ui/vars": "workspace:~",
+		"@react-aria/checkbox": "3.14.2",
+		"@react-aria/focus": "3.17.0",
+		"@react-aria/table": "3.14.0",
+		"@react-aria/utils": "3.24.0",
+		"@react-aria/visually-hidden": "3.8.11",
+		"@react-stately/table": "3.11.7",
+		"@react-stately/toggle": "3.7.3",
+		"@react-types/grid": "3.2.5",
+		"@vanilla-extract/recipes": "^0.5.0",
+		"classix": "2.1.17"
+	},
+	"peerDependencies": {
+		"@react-stately/table": "3.11.7",
+		"@vanilla-extract/css": "^1.14.0",
+		"react": "18.3.1",
+		"react-dom": "18.3.1"
+	},
+	"devDependencies": {
+		"react": "18.3.1",
+		"react-dom": "18.3.1"
+	}
+}

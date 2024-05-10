@@ -1,0 +1,33 @@
+{
+	"defaultBase": "main",
+	"workspaceLayout": {
+		"appsDir": "apps",
+		"libsDir": "packages"
+	},
+	"tasksRunnerOptions": {
+		"default": {
+			"runner": "nx/tasks-runners/default",
+			"options": {
+				"cacheableOperations": ["build", "lint", "test", "e2e"],
+				"canTrackAnalytics": false,
+				"runtimeCacheInputs": ["node -v"],
+				"parallel": 10
+			}
+		}
+	},
+	"targetDefaults": {
+		"build": {
+			"dependsOn": ["^build"]
+		}
+	},
+	"$schema": "./node_modules/nx/schemas/nx-schema.json",
+	"namedInputs": {
+		"default": ["{projectRoot}/**/*", "sharedGlobals"],
+		"sharedGlobals": [
+			"{workspaceRoot}/.github/workflows/verify.yml",
+			"{workspaceRoot}/tsconfig.base.json",
+			"{workspaceRoot}/nx.json"
+		],
+		"production": ["default"]
+	}
+}

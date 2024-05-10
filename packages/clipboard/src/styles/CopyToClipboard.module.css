@@ -1,0 +1,15 @@
+.CopyToClipboard {
+  position: relative;
+}
+
+.Clipboard-checkmark svg {
+  fill: var(--lp-color-system-green-500);
+}
+
+.Clipboard-confirmation {
+  align-items: center;
+}
+
+.Clipboard-copied {
+  margin-left: 0.3125rem;
+}
