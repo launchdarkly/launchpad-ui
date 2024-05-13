@@ -141,6 +141,7 @@ const icons = [
 	'help',
 	'help-circle',
 	'help-circle-outline',
+	'holdout',
 	'hub',
 	'id-badge',
 	'id-card',
