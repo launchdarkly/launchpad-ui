@@ -1,5 +1,11 @@
 # @launchpad-ui/icons
 
+## 0.17.4
+
+### Patch Changes
+
+- [#1289](https://github.com/launchdarkly/launchpad-ui/pull/1289) [`554b1ce`](https://github.com/launchdarkly/launchpad-ui/commit/554b1ce907b7ef914bae64eb3e3bde5bac9d3842) Thanks [@stinachen](https://github.com/stinachen)! - feat(icons): add map-check-icon
+
 ## 0.17.3
 
 ### Patch Changes

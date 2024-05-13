@@ -1,6 +1,6 @@
 {
 	"name": "@launchpad-ui/icons",
-	"version": "0.17.3",
+	"version": "0.17.4",
 	"status": "beta",
 	"publishConfig": {
 		"access": "public"
