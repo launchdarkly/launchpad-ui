@@ -1,5 +1,33 @@
 # @launchpad-ui/core
 
+## 0.49.15
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @launchpad-ui/alert@0.9.13
+  - @launchpad-ui/avatar@0.6.24
+  - @launchpad-ui/banner@0.10.24
+  - @launchpad-ui/button@0.12.11
+  - @launchpad-ui/chip@0.9.24
+  - @launchpad-ui/clipboard@0.11.28
+  - @launchpad-ui/collapsible@0.1.55
+  - @launchpad-ui/drawer@0.5.28
+  - @launchpad-ui/dropdown@0.6.102
+  - @launchpad-ui/filter@0.7.13
+  - @launchpad-ui/form@0.11.13
+  - @launchpad-ui/inline-edit@0.3.13
+  - @launchpad-ui/menu@0.13.13
+  - @launchpad-ui/modal@0.17.28
+  - @launchpad-ui/navigation@0.12.28
+  - @launchpad-ui/pagination@0.4.28
+  - @launchpad-ui/select@0.4.28
+  - @launchpad-ui/snackbar@0.5.11
+  - @launchpad-ui/tag@0.3.28
+  - @launchpad-ui/toast@0.3.24
+  - @launchpad-ui/split-button@0.10.13
+  - @launchpad-ui/card@0.2.28
+
 ## 0.49.14
 
 ### Patch Changes
