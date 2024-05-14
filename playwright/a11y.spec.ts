@@ -87,6 +87,7 @@ test.describe('Storybook a11y', async () => {
 					.include('#storybook-root')
 					.include('[data-test-id="portal"]')
 					.include('[data-rac]')
+					.include('[data-react-aria-top-layer]')
 					.exclude('[data-a11y-ignore="aria-hidden-focus"]')
 					.analyze();
 

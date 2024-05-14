@@ -38,6 +38,7 @@ const PURE_CALLS = [
 	'isValidElement',
 	'memo',
 	'lazy',
+	'createPortal',
 ];
 
 export default defineConfig({

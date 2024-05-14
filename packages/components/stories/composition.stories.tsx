@@ -20,6 +20,8 @@ import {
 	RadioButton,
 	RadioGroup,
 	RadioIconButton,
+	ToastContainer,
+	ToastQueue,
 	Tooltip,
 	TooltipTrigger,
 } from '../src';
@@ -50,16 +52,24 @@ export default meta;
 
 type Story = StoryObj<typeof Container>;
 
-// TODO: show toast on press once RAC version is built
 export const CopyToClipboard: Story = {
 	args: {
 		children: (
-			<TooltipTrigger>
-				<Button size="small" onPress={() => navigator.clipboard.writeText('content')}>
-					Copy content <Icon name="copy-clipboard" size="small" />
-				</Button>
-				<Tooltip placement="bottom">Copy to clipboard</Tooltip>
-			</TooltipTrigger>
+			<>
+				<TooltipTrigger>
+					<Button
+						size="small"
+						onPress={() => {
+							navigator.clipboard.writeText('content');
+							ToastQueue.success('Copied!');
+						}}
+					>
+						Copy content <Icon name="copy-clipboard" size="small" />
+					</Button>
+					<Tooltip placement="bottom">Copy to clipboard</Tooltip>
+				</TooltipTrigger>
+				<ToastContainer />
+			</>
 		),
 	},
 	play: async ({ canvasElement }) => {
