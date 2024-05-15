@@ -6,7 +6,7 @@ import { Box } from '@launchpad-ui/box';
 import { RouterProvider as AriaRouterProvider } from '@launchpad-ui/components';
 import { withThemeByDataAttribute } from '@storybook/addon-themes';
 import { themes } from '@storybook/theming';
-import { BrowserRouter, useHref, useNavigate } from 'react-router-dom';
+import { BrowserRouter, useNavigate } from 'react-router-dom';
 
 import { allModes } from './modes';
 
@@ -17,11 +17,7 @@ import '../packages/tokens/dist/themes.css';
 
 const RouterProvider = ({ children }: { children: ReactNode }) => {
 	const navigate = useNavigate();
-	return (
-		<AriaRouterProvider navigate={navigate} useHref={useHref}>
-			{children}
-		</AriaRouterProvider>
-	);
+	return <AriaRouterProvider navigate={navigate}>{children}</AriaRouterProvider>;
 };
 
 export const parameters: Parameters = {
