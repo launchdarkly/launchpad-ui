@@ -5,6 +5,8 @@ const icons = [
 	'add-circle-outline',
 	'alert-rhombus',
 	'analyze',
+	'animal-cat',
+	'animal-turtle',
 	'api',
 	'application',
 	'application-plus',
