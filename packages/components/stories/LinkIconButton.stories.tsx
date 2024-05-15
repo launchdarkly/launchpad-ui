@@ -1,9 +1,11 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { LinkIconButton } from '../src';
+import { ExternalLinkIconButton, LinkIconButton } from '../src';
 
 const meta: Meta<typeof LinkIconButton> = {
 	component: LinkIconButton,
+	// @ts-ignore
+	subcomponents: { ExternalLinkIconButton },
 	title: 'Components/Navigation/LinkIconButton',
 	parameters: {
 		status: {
