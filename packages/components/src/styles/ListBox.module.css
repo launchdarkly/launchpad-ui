@@ -5,13 +5,14 @@
 
 .item {
   composes: item from './Menu.module.css';
+  justify-content: space-between;
 
   &:has([slot='label']) {
     &[data-selection-mode] {
       grid-template-areas:
         'label check'
         'desc check';
-      grid-template-columns: max-content 1fr;
+      grid-template-columns: 1fr min-content;
     }
   }
 
@@ -26,5 +27,9 @@
 
 .check {
   grid-area: check;
-  margin-left: auto;
+}
+
+.icon {
+  height: var(--lp-size-20);
+  width: var(--lp-size-20);
 }
