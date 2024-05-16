@@ -1,5 +1,35 @@
 # @launchpad-ui/core
 
+## 0.49.16
+
+### Patch Changes
+
+- [#1300](https://github.com/launchdarkly/launchpad-ui/pull/1300) [`877de79`](https://github.com/launchdarkly/launchpad-ui/commit/877de794d4347e088feb5be86cb8de0a299491b1) Thanks [@matthewferry](https://github.com/matthewferry)! - feat(icons): add cat and turtle icons
+
+- Updated dependencies []:
+  - @launchpad-ui/alert@0.9.14
+  - @launchpad-ui/avatar@0.6.25
+  - @launchpad-ui/banner@0.10.25
+  - @launchpad-ui/button@0.12.12
+  - @launchpad-ui/chip@0.9.25
+  - @launchpad-ui/clipboard@0.11.29
+  - @launchpad-ui/collapsible@0.1.56
+  - @launchpad-ui/drawer@0.5.29
+  - @launchpad-ui/dropdown@0.6.103
+  - @launchpad-ui/filter@0.7.14
+  - @launchpad-ui/form@0.11.14
+  - @launchpad-ui/inline-edit@0.3.14
+  - @launchpad-ui/menu@0.13.14
+  - @launchpad-ui/modal@0.17.29
+  - @launchpad-ui/navigation@0.12.29
+  - @launchpad-ui/pagination@0.4.29
+  - @launchpad-ui/select@0.4.29
+  - @launchpad-ui/snackbar@0.5.12
+  - @launchpad-ui/tag@0.3.29
+  - @launchpad-ui/toast@0.3.25
+  - @launchpad-ui/split-button@0.10.14
+  - @launchpad-ui/card@0.2.29
+
 ## 0.49.15
 
 ### Patch Changes
