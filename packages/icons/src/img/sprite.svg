@@ -1070,6 +1070,19 @@
         clip-rule="evenodd"
       />
     </symbol>
+    <symbol viewBox="0 0 20 20" id="lp-icon-holdout">
+      <path
+        fill-rule="evenodd"
+        d="M13.75 9.984a1.15 1.15 0 1 0 0 2.3 1.15 1.15 0 0 0 0-2.3Zm-2.65 1.15a2.65 2.65 0 1 1 5.3 0 2.65 2.65 0 0 1-5.3 0Z"
+        clip-rule="evenodd"
+      />
+      <path d="M9.917 14.067a2.4 2.4 0 1 1-4.8 0 2.4 2.4 0 0 1 4.8 0Z"/>
+      <path
+        fill-rule="evenodd"
+        d="M6.75 4.984a1.65 1.65 0 1 0 0 3.3 1.65 1.65 0 0 0 0-3.3ZM3.6 6.634a3.15 3.15 0 1 1 6.3 0 3.15 3.15 0 0 1-6.3 0Z"
+        clip-rule="evenodd"
+      />
+    </symbol>
     <symbol viewBox="0 0 20 20" id="lp-icon-hub">
       <path
         fill-rule="evenodd"
