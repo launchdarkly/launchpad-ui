@@ -63,6 +63,26 @@
   border-radius: var(--lp-border-radius-regular);
   box-shadow: 0 0 1px 0 rgb(0 0 0 / 0.25), 0 1px 2px 0 rgb(0 0 0 / 0.14), 0 4px 4px 0 rgb(0 0 0 / 0.06);
 
+  & .icon {
+    transform: translateY(2px);
+  }
+  
+  & .info {
+    fill: var(--lp-color-cyan-400);
+  }
+  
+  & .error {
+    fill: var(--lp-color-pink-500);
+  }
+  
+  & .warning {
+    fill: var(--lp-color-yellow-500);
+  }
+  
+  & .success {
+    fill: var(--lp-color-system-green-500);
+  }
+
   @media (prefers-reduced-motion: no-preference) {
     &[data-animation="entering"] {
       animation-name: slide-in;
@@ -120,24 +140,4 @@
   & a {
     text-decoration: underline;
   }
-}
-
-.icon {
-  transform: translateY(2px);
-}
-
-.info {
-  fill: var(--lp-color-cyan-400);
-}
-
-.error {
-  fill: var(--lp-color-pink-500);
-}
-
-.warning {
-  fill: var(--lp-color-yellow-500);
-}
-
-.success {
-  fill: var(--lp-color-system-green-500);
 }
