@@ -1,25 +1,33 @@
-import type { ElementType } from 'react';
-import type { AriaButtonProps } from 'react-aria';
+import type { ElementType, ForwardedRef, HTMLAttributes } from 'react';
+import type { AriaButtonProps, HoverEvents } from 'react-aria';
 
-import { forwardRef, useRef } from 'react';
+import { useObjectRef } from '@react-aria/utils';
+import { cva } from 'class-variance-authority';
+import { forwardRef } from 'react';
 import { mergeProps, useButton, useFocusRing, useHover } from 'react-aria';
 
-interface PressableProps<T extends ElementType = 'button'> extends AriaButtonProps<T> {}
+import styles from './styles/Pressable.module.css';
 
-const _Pressable = <T extends ElementType = 'span'>({
-	children,
-	elementType,
-	...props
-}: PressableProps<T>) => {
-	const ref = useRef(null);
+const pressable = cva(styles.pressable);
+
+interface PressableProps<T extends ElementType = 'button'>
+	extends AriaButtonProps<T>,
+		HoverEvents,
+		Pick<HTMLAttributes<T>, 'className'> {}
+
+const _Pressable = <T extends ElementType = 'span'>(
+	{ children, elementType, className, ...props }: PressableProps<T>,
+	ref: ForwardedRef<HTMLElement>,
+) => {
+	const domRef = useObjectRef(ref);
 	const ElementType = elementType || 'span';
 
-	const { buttonProps } = useButton(
+	const { buttonProps, isPressed } = useButton(
 		{
 			...props,
 			elementType: ElementType,
 		},
-		ref,
+		domRef,
 	);
 	const { focusProps, isFocused, isFocusVisible } = useFocusRing(props);
 	const { hoverProps, isHovered } = useHover(props);
@@ -27,7 +35,10 @@ const _Pressable = <T extends ElementType = 'span'>({
 	return (
 		<ElementType
 			{...mergeProps(buttonProps, focusProps, hoverProps)}
-			ref={ref}
+			className={pressable({ className })}
+			ref={domRef}
+			data-disabled={props.isDisabled || undefined}
+			data-pressed={isPressed || undefined}
 			data-hovered={isHovered || undefined}
 			data-focused={isFocused || undefined}
 			data-focus-visible={isFocusVisible || undefined}

@@ -3,7 +3,7 @@ import type { PlayFunction } from '@storybook/types';
 
 import { expect, userEvent, within } from '@storybook/test';
 
-import { Button, Dialog, DialogTrigger, Heading, OverlayArrow, Popover } from '../src';
+import { Button, Dialog, DialogTrigger, Heading, OverlayArrow, Popover, Pressable } from '../src';
 
 const meta: Meta<typeof Popover> = {
 	component: Popover,
@@ -83,6 +83,20 @@ export const WithHeading: Story = {
 						<Heading slot="title">Title</Heading>
 						<div>Message</div>
 					</Dialog>
+				</Popover>
+			</DialogTrigger>
+		);
+	},
+	play,
+};
+
+export const CustomTrigger: Story = {
+	render: (args) => {
+		return (
+			<DialogTrigger>
+				<Pressable>Trigger</Pressable>
+				<Popover {...args}>
+					<Dialog>Message</Dialog>
 				</Popover>
 			</DialogTrigger>
 		);
