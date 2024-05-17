@@ -60,7 +60,7 @@
         'label'
         'desc';
     }
-  
+
     &:has(kbd) {
       & .content {
         grid-template-areas:
