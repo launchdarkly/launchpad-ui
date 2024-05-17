@@ -1,2 +1,3 @@
 * @launchdarkly/team-core-product-frontend
-/packages/icons/src @matthewferry @antonio-darkly @launchdarkly/team-core-product-frontend
+/packages/icons/src @launchdarkly/team-core-product-frontend @matthewferry @antonio-darkly 
+/.changeset @launchdarkly/team-core-product-frontend @matthewferry @antonio-darkly 
