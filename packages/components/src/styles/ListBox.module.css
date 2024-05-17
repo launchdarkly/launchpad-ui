@@ -5,31 +5,8 @@
 
 .item {
   composes: item from './Menu.module.css';
-  justify-content: space-between;
-
-  &:has([slot='label']) {
-    &[data-selection-mode] {
-      grid-template-areas:
-        'label check'
-        'desc check';
-      grid-template-columns: 1fr min-content;
-    }
-  }
-
-  & [slot='label'] {
-    grid-area: label;
-  }
-
-  & [slot='description'] {
-    grid-area: desc;
-  }
 }
 
-.check {
-  grid-area: check;
-}
-
-.icon {
-  height: var(--lp-size-20);
-  width: var(--lp-size-20);
+.content {
+  composes: content from './Menu.module.css';
 }

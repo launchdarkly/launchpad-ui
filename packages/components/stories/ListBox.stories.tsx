@@ -2,10 +2,11 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import type { Selection as AriaSelection } from 'react-aria-components';
 
+import { Icon } from '@launchpad-ui/icons';
 import { fireEvent, userEvent, within } from '@storybook/test';
 import { useState } from 'react';
 
-import { Header, ListBox, ListBoxItem, Section } from '../src';
+import { Header, ListBox, ListBoxItem, Section, Text } from '../src';
 
 const meta: Meta<typeof ListBox> = {
 	component: ListBox,
@@ -73,6 +74,51 @@ export const Selection: Story = {
 		);
 	},
 	args: {
+		'aria-label': 'Items',
+		selectionMode: 'single',
+	},
+};
+
+export const Descriptions: Story = {
+	args: {
+		children: (
+			<>
+				<ListBoxItem>
+					<Text slot="label">Read</Text>
+					<Text slot="description">Read only</Text>
+				</ListBoxItem>
+				<ListBoxItem>
+					<Text slot="label">Write</Text>
+					<Text slot="description">Read and write only</Text>
+				</ListBoxItem>
+				<ListBoxItem>
+					<Text slot="label">Admin</Text>
+					<Text slot="description">Full access</Text>
+				</ListBoxItem>
+			</>
+		),
+		'aria-label': 'Items',
+		selectionMode: 'single',
+	},
+};
+
+export const Icons: Story = {
+	args: {
+		children: (
+			<>
+				<ListBoxItem>
+					<Text slot="label">
+						<Icon name="add" size="small" /> Add
+					</Text>
+				</ListBoxItem>
+				<ListBoxItem>
+					<Icon name="edit" size="small" /> Edit
+				</ListBoxItem>
+				<ListBoxItem>
+					<Icon name="delete" size="small" /> Delete
+				</ListBoxItem>
+			</>
+		),
 		'aria-label': 'Items',
 		selectionMode: 'single',
 	},
