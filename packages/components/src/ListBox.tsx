@@ -52,12 +52,8 @@ const _ListBoxItem = <T extends object>(
 		>
 			{composeRenderProps(props.children, (children, { isSelected }) => (
 				<>
-					{children}
-					{isSelected ? (
-						<Icon name="check" size="medium" className={styles.check} />
-					) : (
-						<div className={styles.icon} slot="check" />
-					)}
+					<span className={styles.content}>{children}</span>
+					{isSelected && <Icon name="check" size="medium" />}
 				</>
 			))}
 		</AriaListBoxItem>

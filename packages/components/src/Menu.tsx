@@ -71,7 +71,7 @@ const _MenuItem = <T extends object>(
 					<>
 						{selectionMode === 'multiple' && (
 							<div
-								className={checkbox({ className: styles.check })}
+								className={checkbox()}
 								data-selected={isSelected || undefined}
 								data-disabled={isDisabled || undefined}
 							>
@@ -79,15 +79,12 @@ const _MenuItem = <T extends object>(
 							</div>
 						)}
 						{selectionMode === 'single' && (
-							<div
-								className={radio({ className: styles.check })}
-								data-disabled={isDisabled || undefined}
-							>
+							<div className={radio()} data-disabled={isDisabled || undefined}>
 								<RadioInner isSelected={isSelected} />
 							</div>
 						)}
-						{children}
-						{hasSubmenu && <Icon name="chevron-right" size="small" className={styles.submenu} />}
+						<span className={styles.content}>{children}</span>
+						{hasSubmenu && <Icon name="chevron-right" size="small" />}
 					</>
 				),
 			)}

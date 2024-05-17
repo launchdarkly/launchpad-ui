@@ -13,7 +13,7 @@
     color: var(--lp-color-text-field-placeholder);
   }
 
-  & :is([slot='description'], [slot='check']) {
+  & :is([slot='description']) {
     display: none;
   }
 }
