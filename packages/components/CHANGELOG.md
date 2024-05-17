@@ -1,5 +1,11 @@
 # @launchpad-ui/components
 
+## 0.2.5
+
+### Patch Changes
+
+- [#1303](https://github.com/launchdarkly/launchpad-ui/pull/1303) [`0f73f3a`](https://github.com/launchdarkly/launchpad-ui/commit/0f73f3a9b85e7d16fc9ca36da212806e11c1e606) Thanks [@Niznikr](https://github.com/Niznikr)! - Refactor `ListBoxItem` and `MenuItem` styles
+
 ## 0.2.4
 
 ### Patch Changes
