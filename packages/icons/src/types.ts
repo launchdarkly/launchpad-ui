@@ -185,7 +185,6 @@ const icons = [
 	'package-outline',
 	'package-outline-bolt',
 	'package-send',
-	'package-send-bolt',
 	'password',
 	'pause',
 	'person',
