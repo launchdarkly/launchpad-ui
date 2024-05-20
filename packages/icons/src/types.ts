@@ -36,6 +36,7 @@ const icons = [
 	'book-outline',
 	'border-all',
 	'brain',
+	'broom',
 	'building',
 	'building-arrow-up-right',
 	'building-gear',
