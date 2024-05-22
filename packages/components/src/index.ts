@@ -65,7 +65,7 @@ export { ExternalLinkIconButton, LinkIconButton } from './LinkIconButton';
 export { ListBox, ListBoxItem } from './ListBox';
 export { Menu, MenuItem, MenuTrigger, SubmenuTrigger } from './Menu';
 export { Modal, ModalOverlay } from './Modal';
-export { OverlayArrow, Popover } from './Popover';
+export { HoverTrigger, OverlayArrow, Popover } from './Popover';
 export { ProgressBar } from './ProgressBar';
 export { Radio } from './Radio';
 export { RadioButton } from './RadioButton';
