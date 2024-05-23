@@ -1,9 +1,0 @@
-viewport:
-  mobile:
-    value: '{ size.0.value }'
-  tablet:
-    value: 740px
-  desktop:
-    value: 992px
-  wide:
-    value: '{ size.1200.value }'
