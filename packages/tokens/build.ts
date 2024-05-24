@@ -1,3 +1,4 @@
+import JsonToTS from 'json-to-ts';
 import StyleDictionary from 'style-dictionary';
 import { createPropertyFormatter, fileHeader, minifyDictionary } from 'style-dictionary/utils';
 
@@ -33,6 +34,24 @@ const sd = new StyleDictionary({
 						outputReferences: true,
 					},
 					filter: (token) => token.filePath === 'src/viewport.json',
+				},
+			],
+		},
+		js: {
+			transformGroup: 'js',
+			buildPath: 'dist/',
+			files: [
+				{
+					format: 'javascript/esm',
+					destination: 'index.es.js',
+				},
+				{
+					format: 'typescript/accurate-module-declarations',
+					destination: 'index.d.ts',
+				},
+				{
+					format: 'javascript/commonJs',
+					destination: 'index.js',
 				},
 			],
 		},
@@ -104,6 +123,32 @@ sd.registerFormat({
 				return `@custom-media --${size} screen and (min-width: ${$value});`;
 			})
 			.join('\n');
+	},
+});
+
+sd.registerFormat({
+	name: 'javascript/esm',
+	format: async ({ dictionary, file }) => {
+		const header = await fileHeader({ file });
+		return `${header}export default ${JSON.stringify(dictionary.tokens, null, 2)};\n`;
+	},
+});
+
+sd.registerFormat({
+	name: 'javascript/commonJs',
+	format: async ({ dictionary, file }) => {
+		const header = await fileHeader({ file });
+		return `${header}exports.default = ${JSON.stringify(dictionary.tokens, null, 2)};\n`;
+	},
+});
+
+sd.registerFormat({
+	name: 'typescript/accurate-module-declarations',
+	format: async ({ dictionary }) => {
+		// @ts-expect-error
+		return `declare const root: RootObject\nexport default root\n${JsonToTS(
+			minifyDictionary(dictionary.tokens),
+		).join('\n')}`;
 	},
 });
 
