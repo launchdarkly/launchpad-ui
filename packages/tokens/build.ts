@@ -130,7 +130,11 @@ sd.registerFormat({
 	name: 'javascript/esm',
 	format: async ({ dictionary, file }) => {
 		const header = await fileHeader({ file });
-		return `${header}export default ${JSON.stringify(dictionary.tokens, null, 2)};\n`;
+		return `${header}export default ${JSON.stringify(
+			minifyDictionary(dictionary.tokens, true),
+			(key, val) => (key === '$type' ? undefined : val),
+			2,
+		)};\n`;
 	},
 });
 
@@ -138,7 +142,11 @@ sd.registerFormat({
 	name: 'javascript/commonJs',
 	format: async ({ dictionary, file }) => {
 		const header = await fileHeader({ file });
-		return `${header}exports.default = ${JSON.stringify(dictionary.tokens, null, 2)};\n`;
+		return `${header}exports.default = ${JSON.stringify(
+			minifyDictionary(dictionary.tokens, true),
+			(key, val) => (key === '$type' ? undefined : val),
+			2,
+		)};\n`;
 	},
 });
 
@@ -147,7 +155,7 @@ sd.registerFormat({
 	format: async ({ dictionary }) => {
 		// @ts-expect-error
 		return `declare const root: RootObject\nexport default root\n${JsonToTS(
-			minifyDictionary(dictionary.tokens),
+			minifyDictionary(dictionary.tokens, true),
 		).join('\n')}`;
 	},
 });
