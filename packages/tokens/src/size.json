@@ -2,7 +2,7 @@
 	"size": {
 		"$type": "dimension",
 		"0": {
-			"$value": "0.0rem"
+			"$value": "0rem"
 		},
 		"1": {
 			"$value": "0.0625rem"
@@ -32,7 +32,7 @@
 			"$value": "0.875rem"
 		},
 		"16": {
-			"$value": "1.0rem"
+			"$value": "1rem"
 		},
 		"18": {
 			"$value": "1.125rem"
@@ -47,7 +47,7 @@
 			"$value": "1.75rem"
 		},
 		"32": {
-			"$value": "2.0rem"
+			"$value": "2rem"
 		},
 		"36": {
 			"$value": "2.25rem"
@@ -59,88 +59,88 @@
 			"$value": "2.75rem"
 		},
 		"48": {
-			"$value": "3.0rem"
+			"$value": "3rem"
 		},
 		"56": {
 			"$value": "3.5rem"
 		},
 		"64": {
-			"$value": "4.0rem"
+			"$value": "4rem"
 		},
 		"72": {
 			"$value": "4.5rem"
 		},
 		"80": {
-			"$value": "5.0rem"
+			"$value": "5rem"
 		},
 		"96": {
-			"$value": "6.0rem"
+			"$value": "6rem"
 		},
 		"112": {
-			"$value": "7.0rem"
+			"$value": "7rem"
 		},
 		"128": {
-			"$value": "8.0rem"
+			"$value": "8rem"
 		},
 		"144": {
-			"$value": "9.0rem"
+			"$value": "9rem"
 		},
 		"160": {
-			"$value": "10.0rem"
+			"$value": "10rem"
 		},
 		"176": {
-			"$value": "11.0rem"
+			"$value": "11rem"
 		},
 		"192": {
-			"$value": "12.0rem"
+			"$value": "12rem"
 		},
 		"208": {
-			"$value": "13.0rem"
+			"$value": "13rem"
 		},
 		"224": {
-			"$value": "14.0rem"
+			"$value": "14rem"
 		},
 		"240": {
-			"$value": "15.0rem"
+			"$value": "15rem"
 		},
 		"256": {
-			"$value": "16.0rem"
+			"$value": "16rem"
 		},
 		"320": {
-			"$value": "20.0rem"
+			"$value": "20rem"
 		},
 		"400": {
-			"$value": "25.0rem"
+			"$value": "25rem"
 		},
 		"480": {
-			"$value": "30.0rem"
+			"$value": "30rem"
 		},
 		"560": {
-			"$value": "35.0rem"
+			"$value": "35rem"
 		},
 		"640": {
-			"$value": "40.0rem"
+			"$value": "40rem"
 		},
 		"720": {
-			"$value": "45.0rem"
+			"$value": "45rem"
 		},
 		"800": {
-			"$value": "50.0rem"
+			"$value": "50rem"
 		},
 		"960": {
-			"$value": "60.0rem"
+			"$value": "60rem"
 		},
 		"1120": {
-			"$value": "70.0rem"
+			"$value": "70rem"
 		},
 		"1200": {
-			"$value": "75.0rem"
+			"$value": "75rem"
 		},
 		"1280": {
-			"$value": "80.0rem"
+			"$value": "80rem"
 		},
 		"1440": {
-			"$value": "90.0rem"
+			"$value": "90rem"
 		}
 	}
 }

@@ -26,6 +26,14 @@ const sd = new StyleDictionary({
 					},
 					filter: (token) => token.filePath === 'src/color-aliases.json',
 				},
+				{
+					destination: 'media-queries.css',
+					format: 'custom/media-query',
+					options: {
+						outputReferences: true,
+					},
+					filter: (token) => token.filePath === 'src/viewport.json',
+				},
 			],
 		},
 		json: {
@@ -83,6 +91,19 @@ sd.registerFormat({
 			(key, val) => (key === '$type' ? undefined : val),
 			2,
 		)}\n`;
+	},
+});
+
+sd.registerFormat({
+	name: 'custom/media-query',
+	format: async ({ dictionary }) => {
+		return dictionary.allTokens
+			.map((token) => {
+				const { attributes, $value } = token;
+				const size = attributes?.type;
+				return `@custom-media --${size} screen and (min-width: ${$value});`;
+			})
+			.join('\n');
 	},
 });
 
