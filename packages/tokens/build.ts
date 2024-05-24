@@ -156,7 +156,6 @@ sd.registerFormat({
 sd.registerFormat({
 	name: 'typescript/accurate-module-declarations',
 	format: async ({ dictionary, options }) => {
-		// @ts-expect-error
 		return `declare const root: RootObject\nexport default root\n${JsonToTS(
 			minifyDictionary(dictionary.tokens, options.usesDtcg),
 		).join('\n')}`;
