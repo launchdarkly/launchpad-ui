@@ -10,29 +10,24 @@ const sd = new StyleDictionary({
 			transformGroup: 'css',
 			transforms: ['name/kebab', 'time/seconds', 'size/rem', 'color/rgb'],
 			buildPath: 'dist/',
+			options: {
+				outputReferences: true,
+				usesDtcg: true,
+			},
 			files: [
 				{
 					destination: 'index.css',
 					format: 'css/variables',
-					options: {
-						outputReferences: true,
-					},
 					filter: (token) => token.filePath !== 'src/color-aliases.json',
 				},
 				{
 					destination: 'themes.css',
 					format: 'custom/css',
-					options: {
-						outputReferences: true,
-					},
 					filter: (token) => token.filePath === 'src/color-aliases.json',
 				},
 				{
 					destination: 'media-queries.css',
 					format: 'custom/media-query',
-					options: {
-						outputReferences: true,
-					},
 					filter: (token) => token.filePath === 'src/viewport.json',
 				},
 			],
@@ -40,6 +35,10 @@ const sd = new StyleDictionary({
 		js: {
 			transformGroup: 'js',
 			buildPath: 'dist/',
+			options: {
+				outputReferences: true,
+				usesDtcg: true,
+			},
 			files: [
 				{
 					format: 'javascript/esm',
@@ -58,6 +57,10 @@ const sd = new StyleDictionary({
 		json: {
 			buildPath: 'dist/',
 			transforms: ['name/kebab', 'custom/value/name'],
+			options: {
+				outputReferences: true,
+				usesDtcg: true,
+			},
 			files: [
 				{
 					destination: 'contract.json',
@@ -71,7 +74,7 @@ const sd = new StyleDictionary({
 sd.registerFormat({
 	name: 'custom/css',
 	format: async ({ dictionary, file, options }) => {
-		const { outputReferences, outputReferenceFallbacks } = options;
+		const { outputReferences, outputReferenceFallbacks, usesDtcg } = options;
 		const header = await fileHeader({ file });
 
 		const formatProperty = createPropertyFormatter({
@@ -79,7 +82,7 @@ sd.registerFormat({
 			outputReferenceFallbacks,
 			dictionary,
 			format: 'css',
-			usesDtcg: true,
+			usesDtcg,
 		});
 
 		const dark = dictionary.allTokens
@@ -104,9 +107,9 @@ sd.registerFormat({
 
 sd.registerFormat({
 	name: 'custom/json',
-	format: async ({ dictionary }) => {
+	format: async ({ dictionary, options }) => {
 		return `${JSON.stringify(
-			minifyDictionary(dictionary.tokens, true),
+			minifyDictionary(dictionary.tokens, options.usesDtcg),
 			(key, val) => (key === '$type' ? undefined : val),
 			2,
 		)}\n`;
@@ -128,10 +131,10 @@ sd.registerFormat({
 
 sd.registerFormat({
 	name: 'javascript/esm',
-	format: async ({ dictionary, file }) => {
+	format: async ({ dictionary, file, options }) => {
 		const header = await fileHeader({ file });
 		return `${header}export default ${JSON.stringify(
-			minifyDictionary(dictionary.tokens, true),
+			minifyDictionary(dictionary.tokens, options.usesDtcg),
 			(key, val) => (key === '$type' ? undefined : val),
 			2,
 		)};\n`;
@@ -140,10 +143,10 @@ sd.registerFormat({
 
 sd.registerFormat({
 	name: 'javascript/commonJs',
-	format: async ({ dictionary, file }) => {
+	format: async ({ dictionary, file, options }) => {
 		const header = await fileHeader({ file });
 		return `${header}exports.default = ${JSON.stringify(
-			minifyDictionary(dictionary.tokens, true),
+			minifyDictionary(dictionary.tokens, options.usesDtcg),
 			(key, val) => (key === '$type' ? undefined : val),
 			2,
 		)};\n`;
@@ -152,10 +155,10 @@ sd.registerFormat({
 
 sd.registerFormat({
 	name: 'typescript/accurate-module-declarations',
-	format: async ({ dictionary }) => {
+	format: async ({ dictionary, options }) => {
 		// @ts-expect-error
 		return `declare const root: RootObject\nexport default root\n${JsonToTS(
-			minifyDictionary(dictionary.tokens, true),
+			minifyDictionary(dictionary.tokens, options.usesDtcg),
 		).join('\n')}`;
 	},
 });
