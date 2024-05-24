@@ -1,27 +1,26 @@
 {
-	"border": {
-		"$type": "border",
-		"radius": {
-			"regular": {
-				"$value": "{size.3}"
-			},
-			"medium": {
-				"$value": "{size.6}"
-			},
-			"large": {
-				"$value": "{size.16}"
-			}
+	"borderRadius": {
+		"$type": "dimension",
+		"regular": {
+			"$value": "{size.3}"
 		},
-		"width": {
-			"100": {
-				"$value": "{size.0}"
-			},
-			"200": {
-				"$value": "{size.1}"
-			},
-			"300": {
-				"$value": "{size.2}"
-			}
+		"medium": {
+			"$value": "{size.6}"
+		},
+		"large": {
+			"$value": "{size.16}"
+		}
+	},
+	"borderWidth": {
+		"$type": "dimension",
+		"100": {
+			"$value": "{size.0}"
+		},
+		"200": {
+			"$value": "{size.1}"
+		},
+		"300": {
+			"$value": "{size.2}"
 		}
 	}
 }
