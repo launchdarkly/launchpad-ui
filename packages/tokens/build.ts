@@ -1,5 +1,5 @@
 import StyleDictionary from 'style-dictionary';
-import { createPropertyFormatter, fileHeader } from 'style-dictionary/utils';
+import { createPropertyFormatter, fileHeader, minifyDictionary } from 'style-dictionary/utils';
 
 const sd = new StyleDictionary({
 	source: ['src/*.json'],
@@ -25,6 +25,16 @@ const sd = new StyleDictionary({
 						outputReferences: true,
 					},
 					filter: (token) => token.filePath === 'src/color-aliases.json',
+				},
+			],
+		},
+		json: {
+			buildPath: 'dist/',
+			transforms: ['name/kebab', 'custom/value/name'],
+			files: [
+				{
+					destination: 'contract.json',
+					format: 'custom/json',
 				},
 			],
 		},
@@ -62,6 +72,26 @@ sd.registerFormat({
 		const darkTokens = `[data-theme='dark'] {\n${dark.map(formatProperty).join('\n')}\n}\n`;
 
 		return `${defaultTokens}\n${darkTokens}`;
+	},
+});
+
+sd.registerFormat({
+	name: 'custom/json',
+	format: async ({ dictionary }) => {
+		return `${JSON.stringify(
+			minifyDictionary(dictionary.tokens, true),
+			(key, val) => (key === '$type' ? undefined : val),
+			2,
+		)}\n`;
+	},
+});
+
+sd.registerTransform({
+	name: 'custom/value/name',
+	type: 'attribute',
+	transform: (token) => {
+		token.$value = token.name;
+		return token;
 	},
 });
 
