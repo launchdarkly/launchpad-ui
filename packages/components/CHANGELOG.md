@@ -1,5 +1,11 @@
 # @launchpad-ui/components
 
+## 0.2.7
+
+### Patch Changes
+
+- [#1302](https://github.com/launchdarkly/launchpad-ui/pull/1302) [`cf4fa5a`](https://github.com/launchdarkly/launchpad-ui/commit/cf4fa5accc48bbfd98d57920167d580b8253d2e4) Thanks [@Niznikr](https://github.com/Niznikr)! - Bump icon specificity in `Toast`
+
 ## 0.2.6
 
 ### Patch Changes
