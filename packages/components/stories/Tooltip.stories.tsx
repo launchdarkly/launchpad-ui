@@ -2,12 +2,12 @@ import type { Meta, StoryFn, StoryObj } from '@storybook/react';
 
 import { expect, userEvent, within } from '@storybook/test';
 
-import { Button, Tooltip, TooltipTrigger } from '../src';
+import { Button, Pressable, Tooltip, TooltipTrigger } from '../src';
 
 const meta: Meta<typeof Tooltip> = {
 	component: Tooltip,
 	// @ts-ignore
-	subcomponents: { TooltipTrigger },
+	subcomponents: { TooltipTrigger, Pressable },
 	title: 'Components/Overlays/Tooltip',
 	parameters: {
 		status: {
@@ -36,6 +36,25 @@ export const Example: Story = {
 		return (
 			<TooltipTrigger>
 				<Button>Trigger</Button>
+				<Tooltip {...args}>Message</Tooltip>
+			</TooltipTrigger>
+		);
+	},
+	play: async ({ canvasElement }) => {
+		const canvas = within(canvasElement);
+
+		await userEvent.hover(canvasElement);
+		await userEvent.hover(canvas.getByRole('button'));
+		const body = canvasElement.ownerDocument.body;
+		await expect(await within(body).findByRole('tooltip'));
+	},
+};
+
+export const CustomTrigger: Story = {
+	render: (args) => {
+		return (
+			<TooltipTrigger>
+				<Pressable>Trigger</Pressable>
 				<Tooltip {...args}>Message</Tooltip>
 			</TooltipTrigger>
 		);
