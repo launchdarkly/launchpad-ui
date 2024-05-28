@@ -28,18 +28,18 @@
 				"noUnusedImports": "error"
 			},
 			"performance": {
-				"noDelete": "off"
+				"noDelete": "off",
+				"noReExportAll": "error"
 			},
 			"style": {
 				"noDefaultExport": "error",
 				"noNamespace": "error",
 				"useFragmentSyntax": "error",
-				"useNodejsImportProtocol": "off"
+				"useNodejsImportProtocol": "off",
+				"noNamespaceImport": "error"
 			},
 			"nursery": {
-				"noDuplicateJsonKeys": "error",
-				"noNamespaceImport": "error",
-				"noReExportAll": "error"
+				"noDuplicateJsonKeys": "error"
 			}
 		}
 	},

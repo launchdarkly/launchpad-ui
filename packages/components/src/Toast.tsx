@@ -151,6 +151,7 @@ const Toast = <T extends ToastValue | SnackbarValue>({
 			<IconButton
 				aria-label="Close"
 				{...closeButtonProps}
+				/* biome-ignore lint/correctness/noChildrenProp: <explanation> */
 				children={undefined}
 				icon="cancel"
 				variant="minimal"

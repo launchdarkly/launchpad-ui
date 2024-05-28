@@ -1,6 +1,7 @@
 import type { default as Tokens } from '../dist';
 
 import { CopyToClipboard } from '@launchpad-ui/clipboard';
+import { Fragment } from 'react';
 
 // @ts-expect-error ts not detecting d.ts for es file
 import tokens from '../dist/index.es.js';
@@ -29,7 +30,7 @@ export const Size = {
 			}}
 		>
 			{Object.entries(sizes).map(([key, value]) => (
-				<>
+				<Fragment key={key}>
 					<CopyToClipboard text={`--lp-size-${key}`}>{`--lp-size-${key}`}</CopyToClipboard>
 					<div>
 						{value}
@@ -42,7 +43,7 @@ export const Size = {
 							height: 'var(--lp-size-16)',
 						}}
 					/>
-				</>
+				</Fragment>
 			))}
 		</div>
 	),
