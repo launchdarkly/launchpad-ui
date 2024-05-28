@@ -113,3 +113,9 @@
     }
   }
 }
+
+.hover {
+  & [data-testid='underlay'] {
+    pointer-events: none;
+  }
+}
