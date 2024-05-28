@@ -1262,6 +1262,13 @@
         clip-rule="evenodd"
       />
     </symbol>
+    <symbol viewBox="0 0 20 20" id="lp-icon-menu">
+      <path
+        fill-rule="evenodd"
+        d="M2.583 6.667a.75.75 0 0 1 .75-.75h13.334a.75.75 0 0 1 0 1.5H3.333a.75.75 0 0 1-.75-.75Zm0 6.666a.75.75 0 0 1 .75-.75h13.334a.75.75 0 0 1 0 1.5H3.333a.75.75 0 0 1-.75-.75Z"
+        clip-rule="evenodd"
+      />
+    </symbol>
     <symbol viewBox="0 0 20 20" id="lp-icon-metric-funnel">
       <path
         fill-rule="evenodd"
@@ -1759,6 +1766,20 @@
       <path
         fill-rule="evenodd"
         d="M5 4.083A.917.917 0 0 0 4.083 5v10a.917.917 0 0 0 .917.916h1.75V4.083H5Zm0-1.5A2.417 2.417 0 0 0 2.583 5v10A2.417 2.417 0 0 0 5 17.416h10A2.417 2.417 0 0 0 17.416 15V5A2.417 2.417 0 0 0 15 2.583H5Zm3.25 1.5v11.833H15a.917.917 0 0 0 .916-.916V5A.917.917 0 0 0 15 4.083H8.25Z"
+        clip-rule="evenodd"
+      />
+    </symbol>
+    <symbol viewBox="0 0 20 20" id="lp-icon-sidebar-right-collapse">
+      <path
+        fill-rule="evenodd"
+        d="M5 4.083A.917.917 0 0 0 4.083 5v10a.917.917 0 0 0 .917.917h6.75V4.083H5Zm0-1.5A2.417 2.417 0 0 0 2.583 5v10A2.417 2.417 0 0 0 5 17.417h10A2.417 2.417 0 0 0 17.417 15V5A2.417 2.417 0 0 0 15 2.583H5Z"
+        clip-rule="evenodd"
+      />
+    </symbol>
+    <symbol viewBox="0 0 20 20" id="lp-icon-sidebar-right-expand">
+      <path
+        fill-rule="evenodd"
+        d="M5 4.083A.917.917 0 0 0 4.083 5v10a.917.917 0 0 0 .917.917h6.75V4.083H5Zm0-1.5A2.417 2.417 0 0 0 2.583 5v10A2.417 2.417 0 0 0 5 17.417h10A2.417 2.417 0 0 0 17.417 15V5A2.417 2.417 0 0 0 15 2.583H5Zm8.25 1.5v11.834H15a.917.917 0 0 0 .917-.917V5A.917.917 0 0 0 15 4.083h-1.75Z"
         clip-rule="evenodd"
       />
     </symbol>
