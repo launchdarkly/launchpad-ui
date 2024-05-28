@@ -41,7 +41,7 @@ export function useDimensions<T extends HTMLElement>({ defaults }: UseDimensions
 		observer.observe(node);
 
 		return () => observer.disconnect();
-	}, [node]);
+	}, [node, measureDimensions]);
 
 	return {
 		ref,
