@@ -1,122 +1,44 @@
 import JsonToTS from 'json-to-ts';
-import StyleDictionary from 'style-dictionary-utils';
-import yaml from 'yaml';
+import StyleDictionary from 'style-dictionary';
+import { createPropertyFormatter, fileHeader, minifyDictionary } from 'style-dictionary/utils';
 
-const reservedColorValues = [
-	'inherit',
-	'initial',
-	'revert',
-	'unset',
-	'currentcolor',
-	'transparent',
-];
-
-StyleDictionary.registerFormat({
-	name: 'custom/format/custom-media',
-	formatter({ dictionary }) {
-		return dictionary.allProperties
-			.map((prop) => {
-				const { attributes, value } = prop;
-				const size = attributes?.type;
-				return `@custom-media --${size} screen and (min-width: ${value});`;
-			})
-			.join('\n');
-	},
-});
-
-StyleDictionary.registerFormat({
-	name: 'css/theme-variables',
-	formatter: ({ dictionary, file, options }) => {
-		const darkTokens = themeTokens(dictionary, 'dark');
-		const defaultTokens = StyleDictionary.formatHelpers.formattedVariables({
-			format: 'css',
-			dictionary,
-			outputReferences: options.outputReferences,
-		});
-
-		const darkColorCSSVariables = `[data-theme='dark'] {\n${darkTokens}\n}\n`;
-		const defaultColorCSSVariables = `:root, [data-theme='default'] {\n${defaultTokens}\n}\n`;
-
-		return `${StyleDictionary.formatHelpers.fileHeader({
-			file,
-		})}${defaultColorCSSVariables}\n${darkColorCSSVariables}`;
-	},
-});
-
-StyleDictionary.registerFormat({
-	name: 'typescript/accurate-module-declarations',
-	formatter({ dictionary }) {
-		return `declare const root: RootObject\nexport default root\n${JsonToTS(
-			StyleDictionary.formatHelpers.minifyDictionary(dictionary.tokens),
-		).join('\n')}`;
-	},
-});
-
-StyleDictionary.registerTransform({
-	type: 'value',
-	transitive: true,
-	name: 'value/path',
-	transformer: (token) => {
-		return token.name;
-	},
-});
-
-StyleDictionary.registerTransform({
-	type: StyleDictionary.transform['color/rgb'].type,
-	name: 'custom/rgb',
-	matcher: StyleDictionary.transform['color/rgb'].matcher,
-	transformer: (token) => {
-		if (reservedColorValues.includes(token.value)) {
-			return token.value;
-		}
-		return StyleDictionary.transform['color/rgb'].transformer(token, {});
-	},
-});
-
-const myStyleDictionary = StyleDictionary.extend({
-	parsers: [
-		{
-			pattern: /\.yaml$/,
-			parse: ({ contents }) => yaml.parse(contents),
-		},
-	],
-	source: ['src/**/*.yaml'],
+const sd = new StyleDictionary({
+	source: ['src/*.json'],
 	platforms: {
 		css: {
 			prefix: 'lp',
-			transforms: [
-				'attribute/cti',
-				'name/cti/kebab',
-				'time/seconds',
-				'content/icon',
-				'size/rem',
-				'custom/rgb',
-				'font/css',
-			],
+			transformGroup: 'css',
+			transforms: ['name/kebab', 'time/seconds', 'size/rem', 'color/rgb'],
 			buildPath: 'dist/',
+			options: {
+				outputReferences: true,
+				usesDtcg: true,
+			},
 			files: [
 				{
 					destination: 'index.css',
 					format: 'css/variables',
-					options: {
-						outputReferences: true,
-					},
-					filter: (token) => token.filePath !== 'src/color-aliases.yaml',
+					filter: (token) => token.filePath !== 'src/color-aliases.json',
 				},
 				{
 					destination: 'themes.css',
-					format: 'css/theme-variables',
-					options: {
-						outputReferences: true,
-					},
-					filter: (token) =>
-						token.filePath === 'src/color-aliases.yaml' && token.attributes?.category === 'color',
+					format: 'custom/css',
+					filter: (token) => token.filePath === 'src/color-aliases.json',
+				},
+				{
+					destination: 'media-queries.css',
+					format: 'custom/media-query',
+					filter: (token) => token.filePath === 'src/viewport.json',
 				},
 			],
 		},
-		ts: {
+		js: {
 			transformGroup: 'js',
 			buildPath: 'dist/',
+			options: {
+				outputReferences: true,
+				usesDtcg: true,
+			},
 			files: [
 				{
 					format: 'javascript/esm',
@@ -132,50 +54,121 @@ const myStyleDictionary = StyleDictionary.extend({
 				},
 			],
 		},
-		'media-query': {
-			transformGroup: 'css',
-			buildPath: 'dist/',
-			files: [
-				{
-					destination: 'media-queries.css',
-					format: 'custom/format/custom-media',
-					filter: { attributes: { category: 'viewport' } },
-				},
-			],
-		},
 		json: {
 			buildPath: 'dist/',
-			transforms: ['attribute/cti', 'name/cti/kebab', 'value/path'],
+			transforms: ['name/kebab', 'custom/value/name'],
+			options: {
+				outputReferences: true,
+				usesDtcg: true,
+			},
 			files: [
 				{
-					format: 'json/nested',
 					destination: 'contract.json',
+					format: 'custom/json',
 				},
 			],
 		},
 	},
 });
 
-const themeTokens = (dictionary: StyleDictionary.Dictionary, theme = '') =>
-	dictionary.allTokens
-		.map((token) => {
-			let value = token[theme] || token.value;
-			const original = token.original[theme] || token.original.value;
-			if (dictionary.usesReference(original)) {
-				const refs = dictionary.getReferences(original);
-				for (const ref of refs) {
-					value = value.replace(ref.value, () => {
-						return `var(--${ref.name})`;
-					});
-				}
-			} else if (!reservedColorValues.includes(value)) {
-				value = StyleDictionary.transform['color/rgb'].transformer(
-					{ value } as StyleDictionary.TransformedToken,
-					{},
-				);
-			}
-			return `  --${token.name}: ${value};`;
-		})
-		.join('\n');
+sd.registerFormat({
+	name: 'custom/css',
+	format: async ({ dictionary, file, options }) => {
+		const { outputReferences, outputReferenceFallbacks, usesDtcg } = options;
+		const header = await fileHeader({ file });
 
-myStyleDictionary.buildAllPlatforms();
+		const formatProperty = createPropertyFormatter({
+			outputReferences,
+			outputReferenceFallbacks,
+			dictionary,
+			format: 'css',
+			usesDtcg,
+		});
+
+		const dark = dictionary.allTokens
+			.filter((token) => !!token.dark)
+			.map((token) => {
+				const { dark } = token;
+				return Object.assign({}, token, {
+					$value: dark,
+					original: { ...token.original, $value: token.original.dark },
+				});
+			});
+
+		const defaultTokens = `${header}:root, [data-theme='default'] {\n${dictionary.allTokens
+			.filter((token) => !!token.$value)
+			.map(formatProperty)
+			.join('\n')}\n}\n`;
+		const darkTokens = `[data-theme='dark'] {\n${dark.map(formatProperty).join('\n')}\n}\n`;
+
+		return `${defaultTokens}\n${darkTokens}`;
+	},
+});
+
+sd.registerFormat({
+	name: 'custom/json',
+	format: async ({ dictionary, options }) => {
+		return `${JSON.stringify(
+			minifyDictionary(dictionary.tokens, options.usesDtcg),
+			(key, val) => (key === '$type' ? undefined : val),
+			2,
+		)}\n`;
+	},
+});
+
+sd.registerFormat({
+	name: 'custom/media-query',
+	format: async ({ dictionary }) => {
+		return dictionary.allTokens
+			.map((token) => {
+				const { attributes, $value } = token;
+				const size = attributes?.type;
+				return `@custom-media --${size} screen and (min-width: ${$value});`;
+			})
+			.join('\n');
+	},
+});
+
+sd.registerFormat({
+	name: 'javascript/esm',
+	format: async ({ dictionary, file, options }) => {
+		const header = await fileHeader({ file });
+		return `${header}export default ${JSON.stringify(
+			minifyDictionary(dictionary.tokens, options.usesDtcg),
+			(key, val) => (key === '$type' ? undefined : val),
+			2,
+		)};\n`;
+	},
+});
+
+sd.registerFormat({
+	name: 'javascript/commonJs',
+	format: async ({ dictionary, file, options }) => {
+		const header = await fileHeader({ file });
+		return `${header}exports.default = ${JSON.stringify(
+			minifyDictionary(dictionary.tokens, options.usesDtcg),
+			(key, val) => (key === '$type' ? undefined : val),
+			2,
+		)};\n`;
+	},
+});
+
+sd.registerFormat({
+	name: 'typescript/accurate-module-declarations',
+	format: async ({ dictionary, options }) => {
+		return `declare const root: RootObject\nexport default root\n${JsonToTS(
+			minifyDictionary(dictionary.tokens, options.usesDtcg),
+		).join('\n')}`;
+	},
+});
+
+sd.registerTransform({
+	name: 'custom/value/name',
+	type: 'attribute',
+	transform: (token) => {
+		token.$value = token.name;
+		return token;
+	},
+});
+
+await sd.buildAllPlatforms();
