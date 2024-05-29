@@ -1,5 +1,14 @@
 # @launchpad-ui/vars
 
+## 0.2.18
+
+### Patch Changes
+
+- [#1313](https://github.com/launchdarkly/launchpad-ui/pull/1313) [`bf904e8`](https://github.com/launchdarkly/launchpad-ui/commit/bf904e8ee2c27ee73d813f539cc5dfdf682e92fc) Thanks [@Niznikr](https://github.com/Niznikr)! - Update style-dictionary to v4
+
+- Updated dependencies [[`bf904e8`](https://github.com/launchdarkly/launchpad-ui/commit/bf904e8ee2c27ee73d813f539cc5dfdf682e92fc)]:
+  - @launchpad-ui/tokens@0.9.11
+
 ## 0.2.17
 
 ### Patch Changes
