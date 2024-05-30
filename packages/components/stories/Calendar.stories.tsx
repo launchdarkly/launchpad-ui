@@ -1,5 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
+import { parseDate } from '@internationalized/date';
+
 import { Calendar, CalendarCell, CalendarGrid, Heading, IconButton } from '../src';
 
 const meta: Meta<typeof Calendar> = {
@@ -40,5 +42,6 @@ export const Example: Story = {
 				<CalendarGrid>{(date) => <CalendarCell date={date} />}</CalendarGrid>
 			</>
 		),
+		defaultValue: parseDate('2024-01-01'),
 	},
 };

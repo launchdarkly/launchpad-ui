@@ -442,6 +442,9 @@ importers:
         specifier: 3.31.1
         version: 3.31.1(react@18.3.1)
     devDependencies:
+      '@internationalized/date':
+        specifier: 3.5.4
+        version: 3.5.4
       react:
         specifier: 18.3.1
         version: 18.3.1

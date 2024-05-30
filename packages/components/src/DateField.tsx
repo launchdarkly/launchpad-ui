@@ -12,6 +12,7 @@ import {
 	DateField as AriaDateField,
 	DateInput as AriaDateInput,
 	DateSegment as AriaDateSegment,
+	composeRenderProps,
 } from 'react-aria-components';
 
 import { input } from './Input';
@@ -22,10 +23,18 @@ const dateInput = cva(styles.input);
 const segment = cva(styles.segment);
 
 const _DateField = <T extends DateValue>(
-	{ className, ...props }: DateFieldProps<T>,
+	props: DateFieldProps<T>,
 	ref: ForwardedRef<HTMLDivElement>,
 ) => {
-	return <AriaDateField {...props} ref={ref} className={field({ className })} />;
+	return (
+		<AriaDateField
+			{...props}
+			ref={ref}
+			className={composeRenderProps(props.className, (className, renderProps) =>
+				field({ ...renderProps, className }),
+			)}
+		/>
+	);
 };
 
 /**
@@ -35,8 +44,16 @@ const _DateField = <T extends DateValue>(
  */
 const DateField = forwardRef(_DateField);
 
-const _DateInput = ({ className, ...props }: DateInputProps, ref: ForwardedRef<HTMLDivElement>) => {
-	return <AriaDateInput {...props} ref={ref} className={cx(input(), dateInput({ className }))} />;
+const _DateInput = (props: DateInputProps, ref: ForwardedRef<HTMLDivElement>) => {
+	return (
+		<AriaDateInput
+			{...props}
+			ref={ref}
+			className={composeRenderProps(props.className, (className, renderProps) =>
+				cx(input(), dateInput({ ...renderProps, className })),
+			)}
+		/>
+	);
 };
 
 /**
@@ -46,11 +63,16 @@ const _DateInput = ({ className, ...props }: DateInputProps, ref: ForwardedRef<H
  */
 const DateInput = forwardRef(_DateInput);
 
-const _DateSegment = (
-	{ className, ...props }: DateSegmentProps,
-	ref: ForwardedRef<HTMLDivElement>,
-) => {
-	return <AriaDateSegment {...props} ref={ref} className={segment({ className })} />;
+const _DateSegment = (props: DateSegmentProps, ref: ForwardedRef<HTMLDivElement>) => {
+	return (
+		<AriaDateSegment
+			{...props}
+			ref={ref}
+			className={composeRenderProps(props.className, (className, renderProps) =>
+				segment({ ...renderProps, className }),
+			)}
+		/>
+	);
 };
 
 /**

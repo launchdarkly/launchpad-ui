@@ -15,11 +15,12 @@ import { forwardRef } from 'react';
 import {
 	Calendar as AriaCalendar,
 	CalendarCell as AriaCalendarCell,
+	RangeCalendar as AriaRangeCalendar,
 	CalendarGrid,
 	CalendarGridBody,
 	CalendarGridHeader,
 	CalendarHeaderCell,
-	RangeCalendar,
+	composeRenderProps,
 } from 'react-aria-components';
 
 import { button } from './Button';
@@ -27,12 +28,21 @@ import styles from './styles/Calendar.module.css';
 
 const calendar = cva(styles.calendar);
 const cell = cva(styles.cell);
+const range = cva(styles.range);
 
 const _Calendar = <T extends DateValue>(
-	{ className, ...props }: CalendarProps<T>,
+	props: CalendarProps<T>,
 	ref: ForwardedRef<HTMLDivElement>,
 ) => {
-	return <AriaCalendar {...props} ref={ref} className={calendar({ className })} />;
+	return (
+		<AriaCalendar
+			{...props}
+			ref={ref}
+			className={composeRenderProps(props.className, (className, renderProps) =>
+				calendar({ ...renderProps, className }),
+			)}
+		/>
+	);
 };
 
 /**
@@ -42,15 +52,14 @@ const _Calendar = <T extends DateValue>(
  */
 const Calendar = forwardRef(_Calendar);
 
-const _CalendarCell = (
-	{ className, ...props }: CalendarCellProps,
-	ref: ForwardedRef<HTMLTableCellElement>,
-) => {
+const _CalendarCell = (props: CalendarCellProps, ref: ForwardedRef<HTMLTableCellElement>) => {
 	return (
 		<AriaCalendarCell
 			{...props}
 			ref={ref}
-			className={cx(button({ variant: 'default' }), cell({ className }))}
+			className={composeRenderProps(props.className, (className, renderProps) =>
+				cx(button({ variant: 'default' }), cell({ ...renderProps, className })),
+			)}
 		/>
 	);
 };
@@ -61,6 +70,28 @@ const _CalendarCell = (
  * https://react-spectrum.adobe.com/react-aria/Calendar.html
  */
 const CalendarCell = forwardRef(_CalendarCell);
+
+const _RangeCalendar = <T extends DateValue>(
+	props: RangeCalendarProps<T>,
+	ref: ForwardedRef<HTMLDivElement>,
+) => {
+	return (
+		<AriaRangeCalendar
+			{...props}
+			ref={ref}
+			className={composeRenderProps(props.className, (className, renderProps) =>
+				cx(calendar(), range({ ...renderProps, className })),
+			)}
+		/>
+	);
+};
+
+/**
+ * A range calendar displays one or more date grids and allows users to select a contiguous range of dates.
+ *
+ * https://react-spectrum.adobe.com/react-aria/RangeCalendar.html
+ */
+const RangeCalendar = forwardRef(_RangeCalendar);
 
 export {
 	Calendar,

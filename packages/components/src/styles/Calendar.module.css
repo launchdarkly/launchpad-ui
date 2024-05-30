@@ -34,3 +34,29 @@
     background-color: transparent;
   }
 }
+
+.range {
+  & table {
+    border-collapse: collapse;
+  }
+
+  & td {
+    padding: 2px 0;
+  }
+
+  & .cell {
+    &[data-selected] {
+      border-radius: 0;
+    }
+
+    &[data-selection-start] {
+      border-start-start-radius: var(--lp-border-radius-large);
+      border-end-start-radius: var(--lp-border-radius-large);
+    }
+  
+    &[data-selection-end] {
+      border-start-end-radius: var(--lp-border-radius-large);
+      border-end-end-radius: var(--lp-border-radius-large);
+    }
+  }
+}

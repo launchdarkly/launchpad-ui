@@ -8,6 +8,10 @@
 .input {
   display: flex;
   flex: 1;
+
+  &[slot='start'] {
+    flex: none;
+  }
 }
 
 .segment {
