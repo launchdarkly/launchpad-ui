@@ -4,6 +4,7 @@ import { cva } from 'class-variance-authority';
 import { forwardRef, useId } from 'react';
 import {
 	ComboBoxContext,
+	DateFieldContext,
 	NumberFieldContext,
 	Provider,
 	SearchFieldContext,
@@ -38,6 +39,7 @@ const _FieldGroup = (
 			<Provider
 				values={[
 					[ComboBoxContext, state],
+					[DateFieldContext, state],
 					[NumberFieldContext, state],
 					[SearchFieldContext, state],
 					[SelectContext, state],

@@ -11,7 +11,7 @@
     z-index: 1;
   }
 
-  & input[data-rac] {
+  & input[data-rac], [role='presentation'][data-rac] {
     padding: 0;
     outline: none;
     border: none;
