@@ -10,7 +10,7 @@
 
   &[data-focused] {
     outline: 2px solid var(--lp-color-shadow-interactive-focus);
-    outline-offset: -1px;
+    outline-offset: -2px;
     z-index: 1;
   }
 
