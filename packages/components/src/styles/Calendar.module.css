@@ -1,0 +1,29 @@
+.calendar {
+  & header {
+    display: flex;
+    align-items: center;
+    margin-bottom: var(--lp-spacing-500);
+
+    & h2 {
+      font: var(--lp-heading-1-semibold);
+      flex: 1;
+      text-align: center;
+    }
+  }
+
+  & th {
+    font: var(--lp-label-2-medium);
+  }
+}
+
+.cell {
+  padding: var(--lp-spacing-300);
+  cursor: default;
+  outline: none;
+  border: none;
+  width: 100%;
+
+  &[data-outside-month] {
+    display: none;
+  }
+}
