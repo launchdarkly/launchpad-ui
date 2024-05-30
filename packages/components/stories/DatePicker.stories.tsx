@@ -1,6 +1,7 @@
 import type { Meta, StoryFn, StoryObj } from '@storybook/react';
 
 import { vars } from '@launchpad-ui/vars';
+import { expect, userEvent, within } from '@storybook/test';
 
 import {
 	Calendar,
@@ -28,7 +29,9 @@ const meta: Meta<typeof DatePicker> = {
 	decorators: [
 		(Story: StoryFn) => (
 			<div style={{ width: vars.size[320], height: vars.size[480] }}>
-				<Story />
+				<div style={{ width: vars.size[240] }}>
+					<Story />
+				</div>
 			</div>
 		),
 	],
@@ -73,5 +76,12 @@ export const Example: Story = {
 				</Popover>
 			</>
 		),
+	},
+	play: async ({ canvasElement }) => {
+		const canvas = within(canvasElement);
+
+		await userEvent.click(canvas.getByRole('button'));
+		const body = canvasElement.ownerDocument.body;
+		await expect(await within(body).findByRole('application'));
 	},
 };

@@ -1,4 +1,7 @@
 .calendar {
+  width: fit-content;
+  max-width: 100%;
+
   & header {
     display: flex;
     align-items: center;
@@ -25,5 +28,9 @@
 
   &[data-outside-month] {
     display: none;
+  }
+
+  &[data-disabled] {
+    background-color: transparent;
   }
 }
