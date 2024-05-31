@@ -17,12 +17,13 @@
 .segment {
   outline: none;
 
-  &[data-focus-visible] {
-    background-color: var(--lp-color-bg-interactive-secondary-hover);
-  }
-
   &[data-placeholder] {
     color: var(--lp-color-text-field-placeholder);
+  }
+
+  &[data-focus-visible] {
+    background-color: var(--lp-color-bg-interactive-secondary-hover);
+    color: var(--lp-color-text-ui-secondary);
   }
 
   &[data-type='literal'] {
