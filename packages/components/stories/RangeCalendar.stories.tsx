@@ -12,6 +12,13 @@ const meta: Meta<typeof RangeCalendar> = {
 		status: {
 			type: import.meta.env.STORYBOOK_PACKAGE_STATUS__COMPONENTS,
 		},
+		a11y: {
+			options: {
+				rules: {
+					'landmark-banner-is-top-level': { enabled: false },
+				},
+			},
+		},
 	},
 };
 

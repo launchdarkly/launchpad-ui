@@ -5,6 +5,8 @@ import { forwardRef, useId } from 'react';
 import {
 	ComboBoxContext,
 	DateFieldContext,
+	DatePickerContext,
+	DateRangePickerContext,
 	NumberFieldContext,
 	Provider,
 	SearchFieldContext,
@@ -41,6 +43,8 @@ const _FieldGroup = (
 				values={[
 					[ComboBoxContext, state],
 					[DateFieldContext, state],
+					[DatePickerContext, state],
+					[DateRangePickerContext, state],
 					[NumberFieldContext, state],
 					[SearchFieldContext, state],
 					[SelectContext, state],
