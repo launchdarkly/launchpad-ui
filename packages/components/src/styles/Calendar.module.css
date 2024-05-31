@@ -45,6 +45,7 @@
 
   &[data-invalid] {
     background-color: var(--lp-color-bg-feedback-error);
+    color: var(--lp-color-text-feedback-error);
   }
 }
 
