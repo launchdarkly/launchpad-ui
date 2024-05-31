@@ -15,6 +15,7 @@
 }
 
 .segment {
+  padding: 0 0.125rem;
   outline: none;
 
   &[data-placeholder] {

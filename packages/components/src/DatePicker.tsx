@@ -19,6 +19,7 @@ const _DatePicker = <T extends DateValue>(
 ) => {
 	return (
 		<AriaDatePicker
+			shouldForceLeadingZeros={true}
 			{...props}
 			ref={ref}
 			className={composeRenderProps(props.className, (className, renderProps) =>
@@ -41,6 +42,7 @@ const _DateRangePicker = <T extends DateValue>(
 ) => {
 	return (
 		<AriaDateRangePicker
+			shouldForceLeadingZeros={true}
 			{...props}
 			ref={ref}
 			className={composeRenderProps(props.className, (className, renderProps) =>

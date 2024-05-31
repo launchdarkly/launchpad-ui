@@ -4,6 +4,8 @@ import type {
 	DateInputProps,
 	DateSegmentProps,
 	DateValue,
+	TimeFieldProps,
+	TimeValue,
 } from 'react-aria-components';
 
 import { cva, cx } from 'class-variance-authority';
@@ -12,6 +14,7 @@ import {
 	DateField as AriaDateField,
 	DateInput as AriaDateInput,
 	DateSegment as AriaDateSegment,
+	TimeField as AriaTimeField,
 	composeRenderProps,
 } from 'react-aria-components';
 
@@ -28,6 +31,7 @@ const _DateField = <T extends DateValue>(
 ) => {
 	return (
 		<AriaDateField
+			shouldForceLeadingZeros={true}
 			{...props}
 			ref={ref}
 			className={composeRenderProps(props.className, (className, renderProps) =>
@@ -82,5 +86,27 @@ const _DateSegment = (props: DateSegmentProps, ref: ForwardedRef<HTMLDivElement>
  */
 const DateSegment = forwardRef(_DateSegment);
 
-export { DateField, DateInput, DateSegment };
-export type { DateFieldProps, DateInputProps, DateSegmentProps };
+const _TimeField = <T extends TimeValue>(
+	props: TimeFieldProps<T>,
+	ref: ForwardedRef<HTMLDivElement>,
+) => {
+	return (
+		<AriaTimeField
+			{...props}
+			ref={ref}
+			className={composeRenderProps(props.className, (className, renderProps) =>
+				field({ ...renderProps, className }),
+			)}
+		/>
+	);
+};
+
+/**
+ * A time field allows users to enter and edit time values using a keyboard. Each part of a time value is displayed in an individually editable segment.
+ *
+ * https://react-spectrum.adobe.com/react-aria/TimeField.html
+ */
+const TimeField = forwardRef(_TimeField);
+
+export { DateField, DateInput, DateSegment, TimeField };
+export type { DateFieldProps, DateInputProps, DateSegmentProps, TimeFieldProps };

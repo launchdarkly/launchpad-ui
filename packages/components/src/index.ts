@@ -14,7 +14,7 @@ export type {
 export type { CheckboxProps } from './Checkbox';
 export type { CheckboxGroupProps } from './CheckboxGroup';
 export type { ComboBoxProps } from './ComboBox';
-export type { DateFieldProps, DateInputProps, DateSegmentProps } from './DateField';
+export type { DateFieldProps, DateInputProps, DateSegmentProps, TimeFieldProps } from './DateField';
 export type { DatePickerProps, DateRangePickerProps } from './DatePicker';
 export type { DialogProps, DialogTriggerProps } from './Dialog';
 export type { FieldErrorProps } from './FieldError';
@@ -67,7 +67,7 @@ export {
 export { Checkbox } from './Checkbox';
 export { CheckboxGroup } from './CheckboxGroup';
 export { ComboBox, ComboBoxClearButton } from './ComboBox';
-export { DateField, DateInput, DateSegment } from './DateField';
+export { DateField, DateInput, DateSegment, TimeField } from './DateField';
 export { DatePicker, DateRangePicker } from './DatePicker';
 export { Dialog, DialogTrigger } from './Dialog';
 export { FieldError } from './FieldError';
