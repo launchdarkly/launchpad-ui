@@ -17,7 +17,7 @@ const meta: Meta<typeof TimeField> = {
 		a11y: {
 			options: {
 				rules: {
-					'target-size-minimum': { enabled: false },
+					'target-size': { enabled: false },
 				},
 			},
 		},
