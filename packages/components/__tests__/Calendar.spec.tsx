@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest';
 
 import { render, screen } from '../../../test/utils';
-import { Calendar, CalendarCell, CalendarGrid, Heading, IconButton } from '../src';
+import { Calendar, CalendarCell, CalendarGrid, Heading, IconButton, RangeCalendar } from '../src';
 
 describe('Calendar', () => {
 	it('renders', () => {
@@ -26,6 +26,34 @@ describe('Calendar', () => {
 				</header>
 				<CalendarGrid>{(date) => <CalendarCell date={date} />}</CalendarGrid>
 			</Calendar>,
+		);
+		expect(screen.getByRole('application')).toBeVisible();
+	});
+});
+
+describe('RangeCalendar', () => {
+	it('renders', () => {
+		render(
+			<RangeCalendar>
+				<header>
+					<IconButton
+						slot="previous"
+						icon="chevron-left"
+						aria-label="previous"
+						size="small"
+						variant="minimal"
+					/>
+					<Heading />
+					<IconButton
+						slot="next"
+						icon="chevron-right"
+						aria-label="next"
+						size="small"
+						variant="minimal"
+					/>
+				</header>
+				<CalendarGrid>{(date) => <CalendarCell date={date} />}</CalendarGrid>
+			</RangeCalendar>,
 		);
 		expect(screen.getByRole('application')).toBeVisible();
 	});

@@ -7,6 +7,8 @@ import { DateField, DateInput, DateSegment, Label, Text } from '../src';
 
 const meta: Meta<typeof DateField> = {
 	component: DateField,
+	// @ts-ignore
+	subcomponents: { DateInput, DateSegment },
 	title: 'Components/Date and Time/DateField',
 	parameters: {
 		status: {

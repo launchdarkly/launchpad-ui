@@ -7,6 +7,8 @@ import { Calendar, CalendarCell, CalendarGrid, Heading, IconButton } from '../sr
 
 const meta: Meta<typeof Calendar> = {
 	component: Calendar,
+	// @ts-ignore
+	subcomponents: { CalendarCell, CalendarGrid, Heading },
 	title: 'Components/Date and Time/Calendar',
 	parameters: {
 		status: {
