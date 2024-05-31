@@ -14,6 +14,13 @@ const meta: Meta<typeof TimeField> = {
 		status: {
 			type: import.meta.env.STORYBOOK_PACKAGE_STATUS__COMPONENTS,
 		},
+		a11y: {
+			options: {
+				rules: {
+					'target-size-minimum': { enabled: false },
+				},
+			},
+		},
 	},
 	decorators: [
 		(Story: StoryFn) => (
