@@ -37,6 +37,10 @@
   &[data-disabled] {
     background-color: transparent;
   }
+
+  &[data-invalid] {
+    background-color: var(--lp-color-bg-feedback-error);
+  }
 }
 
 .range {
