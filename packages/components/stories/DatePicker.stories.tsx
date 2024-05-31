@@ -1,5 +1,6 @@
 import type { Meta, StoryFn, StoryObj } from '@storybook/react';
 
+import { parseDate } from '@internationalized/date';
 import { vars } from '@launchpad-ui/vars';
 import { expect, userEvent, within } from '@storybook/test';
 
@@ -76,6 +77,7 @@ export const Example: Story = {
 				</Popover>
 			</>
 		),
+		defaultValue: parseDate('2024-01-01'),
 	},
 	play: async ({ canvasElement }) => {
 		const canvas = within(canvasElement);

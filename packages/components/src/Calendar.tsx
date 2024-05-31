@@ -58,7 +58,7 @@ const _CalendarCell = (props: CalendarCellProps, ref: ForwardedRef<HTMLTableCell
 			{...props}
 			ref={ref}
 			className={composeRenderProps(props.className, (className, renderProps) =>
-				cx(button({ variant: 'default' }), cell({ ...renderProps, className })),
+				cx(button({ variant: 'minimal' }), cell({ ...renderProps, className })),
 			)}
 		/>
 	);

@@ -2,6 +2,10 @@
   width: fit-content;
   max-width: 100%;
 
+  & table {
+    border-collapse: collapse;
+  }
+
   & header {
     display: flex;
     align-items: center;
@@ -36,10 +40,6 @@
 }
 
 .range {
-  & table {
-    border-collapse: collapse;
-  }
-
   & td {
     padding: 2px 0;
   }

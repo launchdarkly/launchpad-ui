@@ -10,6 +10,7 @@ import {
 	SearchFieldContext,
 	SelectContext,
 	TextFieldContext,
+	TimeFieldContext,
 } from 'react-aria-components';
 
 import errorStyles from './styles/FieldError.module.css';
@@ -44,6 +45,7 @@ const _FieldGroup = (
 					[SearchFieldContext, state],
 					[SelectContext, state],
 					[TextFieldContext, state],
+					[TimeFieldContext, state],
 				]}
 			>
 				{children}
