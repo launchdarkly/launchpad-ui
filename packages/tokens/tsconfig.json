@@ -1,7 +1,10 @@
 {
 	"extends": "../../tsconfig.base.json",
-	"include": ["*.ts"],
 	"compilerOptions": {
-		"moduleResolution": "bundler"
+		"moduleResolution": "bundler",
+		"baseUrl": ".",
+		"paths": {
+			"@launchpad-ui/*": ["../*/src"]
+		}
 	}
 }

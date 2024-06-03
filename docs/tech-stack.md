@@ -2,7 +2,7 @@
 
 ## Design Tokens
 
-Design tokens are platform-agnostic design decisions that encapsulate our brand. They are the foundation to building user interfaces and new experiences. We write tokens in [yaml syntax](https://yaml.org/) for its readability and brevity.
+Design tokens are platform-agnostic design decisions that encapsulate our brand. They are the foundation to building user interfaces and new experiences. We write tokens in the [DTCG format](https://tr.designtokens.org/format/).
 
 ### Transforms
 
