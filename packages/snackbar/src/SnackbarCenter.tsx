@@ -23,6 +23,11 @@ type SnackbarCenterProps = {
 	dismissSnackbar(snackbarId: string): void;
 };
 
+/**
+ * @deprecated use `SnackbarContainer` from `@launchpad-ui/components` instead
+ *
+ * https://launchpad.launchdarkly.com/?path=/docs/components-status-toast--docs
+ */
 const SnackbarCenter = ({ snackbars, dismissSnackbar, className }: SnackbarCenterProps) => {
 	const classes = cx(styles.SnackbarCenter, className);
 

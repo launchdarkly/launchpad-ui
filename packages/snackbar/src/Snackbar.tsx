@@ -18,6 +18,11 @@ type SnackbarBaseProps = {
 
 type SnackbarProps = Omit<ComponentProps<'div'>, 'children'> & SnackbarBaseProps;
 
+/**
+ * @deprecated use `SnackbarQueue` from `@launchpad-ui/components` instead
+ *
+ * https://launchpad.launchdarkly.com/?path=/docs/components-status-toast--docs
+ */
 const Snackbar = ({
 	className,
 	kind,
