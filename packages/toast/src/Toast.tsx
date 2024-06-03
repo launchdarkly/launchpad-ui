@@ -15,6 +15,11 @@ type ToastBaseProps = {
 
 type ToastProps = Omit<ComponentProps<'div'>, 'children' | 'content'> & ToastBaseProps;
 
+/**
+ * @deprecated use `ToastQueue` from `@launchpad-ui/components` instead
+ *
+ * https://launchpad.launchdarkly.com/?path=/docs/components-status-toast--docs
+ */
 const Toast = ({
 	className,
 	kind,
