@@ -30,4 +30,12 @@
   &[data-type='literal'] {
     padding: 0;
   }
+
+  &[data-type]:last-of-type {
+    flex: 1;
+  }
+
+  &:is([data-type='hour'][aria-valuetext='Empty'], [data-type='minute'][aria-valuetext='Empty']) {
+    letter-spacing: 1px;
+  }
 }
