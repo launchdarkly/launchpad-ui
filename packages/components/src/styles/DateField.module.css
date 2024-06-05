@@ -22,17 +22,15 @@
     color: var(--lp-color-text-field-placeholder);
   }
 
-  &[data-focus-visible] {
-    background-color: var(--lp-color-bg-interactive-secondary-hover);
-    color: var(--lp-color-text-ui-secondary);
+  &:is([data-focus-visible], [data-focused]) {
+    background-color: var(--lp-color-shadow-interactive-focus);
+    color: var(--lp-color-text-ui-primary-inverted);
+    caret-color: transparent;
+    border-radius: var(--lp-border-radius-regular);
   }
 
   &[data-type='literal'] {
     padding: 0;
-  }
-
-  &[data-type]:last-of-type {
-    flex: 1;
   }
 
   &:is([data-type='hour'][aria-valuetext='Empty'], [data-type='minute'][aria-valuetext='Empty']) {
