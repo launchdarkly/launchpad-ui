@@ -54,7 +54,7 @@
 
 .title {
   display: block;
-  font-size: var(--lp-font-size-500);
+  font-size: var(--lp-font-size-400);
   line-height: 1.2;
   font-weight: var(--lp-font-weight-semibold);
   margin: 0;

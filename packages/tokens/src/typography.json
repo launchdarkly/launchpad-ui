@@ -6,7 +6,7 @@
 				"$value": {
 					"fontFamily": "{fontFamily.base}",
 					"fontWeight": "{fontWeight.medium}",
-					"fontSize": "{fontSize.500}",
+					"fontSize": "{fontSize.400}",
 					"lineHeight": "{lineHeight.400}"
 				}
 			},
@@ -14,7 +14,7 @@
 				"$value": {
 					"fontFamily": "{fontFamily.base}",
 					"fontWeight": "{fontWeight.semibold}",
-					"fontSize": "{fontSize.500}",
+					"fontSize": "{fontSize.400}",
 					"lineHeight": "{lineHeight.400}"
 				}
 			},
@@ -22,7 +22,7 @@
 				"$value": {
 					"fontFamily": "{fontFamily.base}",
 					"fontWeight": "{fontWeight.extrabold}",
-					"fontSize": "{fontSize.500}",
+					"fontSize": "{fontSize.400}",
 					"lineHeight": "{lineHeight.400}"
 				}
 			}
@@ -227,8 +227,8 @@
 			"$value": {
 				"fontFamily": "{fontFamily.display}",
 				"fontWeight": "{fontWeight.regular}",
-				"fontSize": "3.75rem",
-				"lineHeight": "4.5rem"
+				"fontSize": "{fontSize.800}",
+				"lineHeight": "{lineHeight.500}"
 			}
 		}
 	}

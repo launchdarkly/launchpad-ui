@@ -72,7 +72,7 @@
 }
 
 .TableHeader-title {
-  font-size: var(--lp-font-size-500);
+  font-size: var(--lp-font-size-400);
   font-weight: var(--lp-font-weight-regular);
   line-height: 1.5;
   display: flex;

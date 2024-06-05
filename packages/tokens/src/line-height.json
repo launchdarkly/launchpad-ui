@@ -2,16 +2,19 @@
 	"lineHeight": {
 		"$type": "number",
 		"100": {
-			"$value": "1rem"
+			"$value": "{size.16}"
 		},
 		"200": {
-			"$value": "1.25rem"
+			"$value": "{size.20}"
 		},
 		"300": {
-			"$value": "1.5rem"
+			"$value": "{size.24}"
 		},
 		"400": {
-			"$value": "1.75rem"
+			"$value": "{size.28}"
+		},
+		"500": {
+			"$value": "{size.72}"
 		}
 	}
 }

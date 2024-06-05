@@ -3,6 +3,8 @@
 "@launchpad-ui/components": patch
 "@launchpad-ui/counter": patch
 "@launchpad-ui/core": patch
+"@launchpad-ui/modal": patch
+"@launchpad-ui/table": patch
 ---
 
 Rework typography tokens:
