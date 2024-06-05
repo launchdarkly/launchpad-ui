@@ -1,5 +1,15 @@
 # @launchpad-ui/components
 
+## 0.2.9
+
+### Patch Changes
+
+- [#1320](https://github.com/launchdarkly/launchpad-ui/pull/1320) [`9f486b7`](https://github.com/launchdarkly/launchpad-ui/commit/9f486b73906dff909d2451812bfc46d9abaa1b39) Thanks [@Niznikr](https://github.com/Niznikr)! - Adjust `Input` focus outline offset
+
+- [#1321](https://github.com/launchdarkly/launchpad-ui/pull/1321) [`748b43e`](https://github.com/launchdarkly/launchpad-ui/commit/748b43e524681a9d2da66674b9fa22b5b4b85d02) Thanks [@Niznikr](https://github.com/Niznikr)! - Add `Calendar`, `DateField`, `DatePicker`, `DateRangePicker`, `RangeCalendar`, and `TimeField`
+
+- [#1314](https://github.com/launchdarkly/launchpad-ui/pull/1314) [`6a7eacd`](https://github.com/launchdarkly/launchpad-ui/commit/6a7eacde2339810283f9eaa0b2f965f425a919fb) Thanks [@renovate](https://github.com/apps/renovate)! - Update dependencies
+
 ## 0.2.8
 
 ### Patch Changes
