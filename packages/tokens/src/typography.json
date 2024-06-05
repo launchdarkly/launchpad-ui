@@ -7,7 +7,7 @@
 					"fontFamily": "{fontFamily.base}",
 					"fontWeight": "{fontWeight.medium}",
 					"fontSize": "{fontSize.500}",
-					"lineHeight": "1.75rem"
+					"lineHeight": "{lineHeight.400}"
 				}
 			},
 			"semibold": {
@@ -15,7 +15,7 @@
 					"fontFamily": "{fontFamily.base}",
 					"fontWeight": "{fontWeight.semibold}",
 					"fontSize": "{fontSize.500}",
-					"lineHeight": "1.75rem"
+					"lineHeight": "{lineHeight.400}"
 				}
 			},
 			"extrabold": {
@@ -23,7 +23,7 @@
 					"fontFamily": "{fontFamily.base}",
 					"fontWeight": "{fontWeight.extrabold}",
 					"fontSize": "{fontSize.500}",
-					"lineHeight": "1.75rem"
+					"lineHeight": "{lineHeight.400}"
 				}
 			}
 		},
@@ -33,7 +33,7 @@
 					"fontFamily": "{fontFamily.base}",
 					"fontWeight": "{fontWeight.medium}",
 					"fontSize": "{fontSize.300}",
-					"lineHeight": "1.5rem"
+					"lineHeight": "{lineHeight.300}"
 				}
 			},
 			"semibold": {
@@ -41,7 +41,7 @@
 					"fontFamily": "{fontFamily.base}",
 					"fontWeight": "{fontWeight.semibold}",
 					"fontSize": "{fontSize.300}",
-					"lineHeight": "1.5rem"
+					"lineHeight": "{lineHeight.300}"
 				}
 			},
 			"extrabold": {
@@ -49,7 +49,7 @@
 					"fontFamily": "{fontFamily.base}",
 					"fontWeight": "{fontWeight.extrabold}",
 					"fontSize": "{fontSize.300}",
-					"lineHeight": "1.5rem"
+					"lineHeight": "{lineHeight.300}"
 				}
 			}
 		},
@@ -59,7 +59,7 @@
 					"fontFamily": "{fontFamily.base}",
 					"fontWeight": "{fontWeight.medium}",
 					"fontSize": "{fontSize.200}",
-					"lineHeight": "1.5rem"
+					"lineHeight": "{lineHeight.200}"
 				}
 			},
 			"semibold": {
@@ -67,7 +67,7 @@
 					"fontFamily": "{fontFamily.base}",
 					"fontWeight": "{fontWeight.semibold}",
 					"fontSize": "{fontSize.200}",
-					"lineHeight": "1.5rem"
+					"lineHeight": "{lineHeight.200}"
 				}
 			},
 			"extrabold": {
@@ -75,7 +75,7 @@
 					"fontFamily": "{fontFamily.base}",
 					"fontWeight": "{fontWeight.extrabold}",
 					"fontSize": "{fontSize.200}",
-					"lineHeight": "1.5rem"
+					"lineHeight": "{lineHeight.200}"
 				}
 			}
 		}
@@ -87,7 +87,7 @@
 					"fontFamily": "{fontFamily.base}",
 					"fontWeight": "{fontWeight.regular}",
 					"fontSize": "{fontSize.300}",
-					"lineHeight": "1.5rem"
+					"lineHeight": "{lineHeight.300}"
 				}
 			},
 			"semibold": {
@@ -95,7 +95,7 @@
 					"fontFamily": "{fontFamily.base}",
 					"fontWeight": "{fontWeight.semibold}",
 					"fontSize": "{fontSize.300}",
-					"lineHeight": "1.5rem"
+					"lineHeight": "{lineHeight.300}"
 				}
 			},
 			"extrabold": {
@@ -103,7 +103,7 @@
 					"fontFamily": "{fontFamily.base}",
 					"fontWeight": "{fontWeight.extrabold}",
 					"fontSize": "{fontSize.300}",
-					"lineHeight": "1.5rem"
+					"lineHeight": "{lineHeight.300}"
 				}
 			}
 		},
@@ -113,7 +113,7 @@
 					"fontFamily": "{fontFamily.base}",
 					"fontWeight": "{fontWeight.regular}",
 					"fontSize": "{fontSize.200}",
-					"lineHeight": "1.5rem"
+					"lineHeight": "{lineHeight.200}"
 				}
 			},
 			"semibold": {
@@ -121,7 +121,7 @@
 					"fontFamily": "{fontFamily.base}",
 					"fontWeight": "{fontWeight.semibold}",
 					"fontSize": "{fontSize.200}",
-					"lineHeight": "1.5rem"
+					"lineHeight": "{lineHeight.200}"
 				}
 			},
 			"extrabold": {
@@ -129,7 +129,7 @@
 					"fontFamily": "{fontFamily.base}",
 					"fontWeight": "{fontWeight.extrabold}",
 					"fontSize": "{fontSize.200}",
-					"lineHeight": "1.5rem"
+					"lineHeight": "{lineHeight.200}"
 				}
 			}
 		}
@@ -141,7 +141,7 @@
 					"fontFamily": "{fontFamily.base}",
 					"fontWeight": "{fontWeight.regular}",
 					"fontSize": "{fontSize.100}",
-					"lineHeight": "1.25rem"
+					"lineHeight": "{lineHeight.100}"
 				}
 			},
 			"medium": {
@@ -149,7 +149,7 @@
 					"fontFamily": "{fontFamily.base}",
 					"fontWeight": "{fontWeight.medium}",
 					"fontSize": "{fontSize.100}",
-					"lineHeight": "1.25rem"
+					"lineHeight": "{lineHeight.100}"
 				}
 			},
 			"semibold": {
@@ -157,33 +157,7 @@
 					"fontFamily": "{fontFamily.base}",
 					"fontWeight": "{fontWeight.semibold}",
 					"fontSize": "{fontSize.100}",
-					"lineHeight": "1.25rem"
-				}
-			}
-		},
-		"2": {
-			"regular": {
-				"$value": {
-					"fontFamily": "{fontFamily.base}",
-					"fontWeight": "{fontWeight.regular}",
-					"fontSize": "{fontSize.0}",
-					"lineHeight": "1rem"
-				}
-			},
-			"medium": {
-				"$value": {
-					"fontFamily": "{fontFamily.base}",
-					"fontWeight": "{fontWeight.medium}",
-					"fontSize": "{fontSize.0}",
-					"lineHeight": "1rem"
-				}
-			},
-			"semibold": {
-				"$value": {
-					"fontFamily": "{fontFamily.base}",
-					"fontWeight": "{fontWeight.semibold}",
-					"fontSize": "{fontSize.0}",
-					"lineHeight": "1rem"
+					"lineHeight": "{lineHeight.100}"
 				}
 			}
 		}
@@ -195,7 +169,7 @@
 					"fontFamily": "{fontFamily.base}",
 					"fontWeight": "{fontWeight.regular}",
 					"fontSize": "{fontSize.200}",
-					"lineHeight": "1.5rem"
+					"lineHeight": "{lineHeight.200}"
 				}
 			},
 			"medium": {
@@ -203,7 +177,7 @@
 					"fontFamily": "{fontFamily.base}",
 					"fontWeight": "{fontWeight.medium}",
 					"fontSize": "{fontSize.200}",
-					"lineHeight": "1.5rem"
+					"lineHeight": "{lineHeight.200}"
 				}
 			}
 		},
@@ -213,7 +187,7 @@
 					"fontFamily": "{fontFamily.base}",
 					"fontWeight": "{fontWeight.regular}",
 					"fontSize": "{fontSize.100}",
-					"lineHeight": "1.25rem"
+					"lineHeight": "{lineHeight.100}"
 				}
 			},
 			"medium": {
@@ -221,7 +195,7 @@
 					"fontFamily": "{fontFamily.base}",
 					"fontWeight": "{fontWeight.medium}",
 					"fontSize": "{fontSize.100}",
-					"lineHeight": "1.25rem"
+					"lineHeight": "{lineHeight.100}"
 				}
 			}
 		}
@@ -233,7 +207,7 @@
 					"fontFamily": "{fontFamily.monospace}",
 					"fontWeight": "{fontWeight.regular}",
 					"fontSize": "{fontSize.200}",
-					"lineHeight": "1.5rem"
+					"lineHeight": "{lineHeight.200}"
 				}
 			}
 		},
@@ -243,7 +217,7 @@
 					"fontFamily": "{fontFamily.monospace}",
 					"fontWeight": "{fontWeight.regular}",
 					"fontSize": "{fontSize.100}",
-					"lineHeight": "1.25rem"
+					"lineHeight": "{lineHeight.100}"
 				}
 			}
 		}

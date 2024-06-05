@@ -31,17 +31,16 @@
 }
 
 .small {
-  line-height: var(--lp-font-size-300);
-  padding: 3px var(--lp-spacing-300);
+  padding: 1px var(--lp-spacing-300);
 }
 
 .medium {
-  line-height: var(--lp-font-size-300);
-  padding: 7px var(--lp-spacing-300);
+  padding: 5px var(--lp-spacing-300);
 }
 
 .large {
   font-size: var(--lp-font-size-300);
+  line-height: var(--lp-line-height-300);
   padding: 7px var(--lp-spacing-400);
 }
 
