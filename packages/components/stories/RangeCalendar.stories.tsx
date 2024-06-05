@@ -1,9 +1,29 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { parseDate } from '@internationalized/date';
+import {
+	endOfMonth,
+	endOfWeek,
+	getLocalTimeZone,
+	parseDate,
+	startOfMonth,
+	startOfWeek,
+	today,
+} from '@internationalized/date';
 import { vars } from '@launchpad-ui/vars';
+import { useLocale } from 'react-aria';
 
-import { CalendarCell, CalendarGrid, Heading, IconButton, RangeCalendar } from '../src';
+import {
+	CalendarCell,
+	CalendarGrid,
+	CalendarPicker,
+	Group,
+	Heading,
+	IconButton,
+	Preset,
+	RangeCalendar,
+	Separator,
+	Toolbar,
+} from '../src';
 
 const meta: Meta<typeof RangeCalendar> = {
 	component: RangeCalendar,
@@ -93,5 +113,52 @@ export const MultipleMonths: Story = {
 		),
 		defaultFocusedValue: parseDate('2024-02-01'),
 		visibleDuration: { months: 3 },
+	},
+};
+
+export const Presets: Story = {
+	render: (args) => {
+		const now = today(getLocalTimeZone());
+		const nextMonth = now.add({ months: 1 });
+		const { locale } = useLocale();
+		return (
+			<CalendarPicker style={{ width: 'fit-content' }}>
+				<Toolbar orientation="vertical" aria-label="presets">
+					<Group>
+						<Preset value={{ start: startOfMonth(now), end: endOfMonth(now) }}>This month</Preset>
+						<Preset value={{ start: startOfWeek(now, locale), end: endOfWeek(now, locale) }}>
+							This week
+						</Preset>
+						<Preset value={{ start: startOfMonth(nextMonth), end: endOfMonth(nextMonth) }}>
+							Next month
+						</Preset>
+					</Group>
+				</Toolbar>
+				<Separator orientation="vertical" />
+				<RangeCalendar {...args}>
+					<header>
+						<IconButton
+							slot="previous"
+							icon="chevron-left"
+							aria-label="previous"
+							size="small"
+							variant="minimal"
+						/>
+						<Heading />
+						<IconButton
+							slot="next"
+							icon="chevron-right"
+							aria-label="next"
+							size="small"
+							variant="minimal"
+						/>
+					</header>
+					<CalendarGrid>{(date) => <CalendarCell date={date} />}</CalendarGrid>
+				</RangeCalendar>
+			</CalendarPicker>
+		);
+	},
+	args: {
+		defaultFocusedValue: parseDate('2024-02-01'),
 	},
 };

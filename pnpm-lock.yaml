@@ -405,6 +405,9 @@ importers:
 
   packages/components:
     dependencies:
+      '@internationalized/date':
+        specifier: 3.5.4
+        version: 3.5.4
       '@launchpad-ui/icons':
         specifier: workspace:~
         version: link:../icons
@@ -439,9 +442,6 @@ importers:
         specifier: 6.16.0
         version: 6.16.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
     devDependencies:
-      '@internationalized/date':
-        specifier: 3.5.5
-        version: 3.5.5
       react:
         specifier: 18.3.1
         version: 18.3.1
