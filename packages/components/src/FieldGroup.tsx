@@ -4,11 +4,15 @@ import { cva } from 'class-variance-authority';
 import { forwardRef, useId } from 'react';
 import {
 	ComboBoxContext,
+	DateFieldContext,
+	DatePickerContext,
+	DateRangePickerContext,
 	NumberFieldContext,
 	Provider,
 	SearchFieldContext,
 	SelectContext,
 	TextFieldContext,
+	TimeFieldContext,
 } from 'react-aria-components';
 
 import errorStyles from './styles/FieldError.module.css';
@@ -38,10 +42,14 @@ const _FieldGroup = (
 			<Provider
 				values={[
 					[ComboBoxContext, state],
+					[DateFieldContext, state],
+					[DatePickerContext, state],
+					[DateRangePickerContext, state],
 					[NumberFieldContext, state],
 					[SearchFieldContext, state],
 					[SelectContext, state],
 					[TextFieldContext, state],
+					[TimeFieldContext, state],
 				]}
 			>
 				{children}

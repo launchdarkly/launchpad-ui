@@ -57,6 +57,10 @@
     padding: var(--lp-spacing-300);
   }
 
+  &:is([data-trigger='DatePicker'], [data-trigger='DateRangePicker']) {
+    padding: var(--lp-spacing-500);
+  }
+
   &[data-placement='top'] {
     --origin: translateY(4px);
 
