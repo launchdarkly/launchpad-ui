@@ -1,5 +1,11 @@
 # @launchpad-ui/icons
 
+## 0.18.2
+
+### Patch Changes
+
+- [#1329](https://github.com/launchdarkly/launchpad-ui/pull/1329) [`b255f1d`](https://github.com/launchdarkly/launchpad-ui/commit/b255f1dddf14c437585383cea5114ca93b949966) Thanks [@apucacao](https://github.com/apucacao)! - add osmo icon
+
 ## 0.18.1
 
 ### Patch Changes
