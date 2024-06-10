@@ -1,33 +1,33 @@
 .base {
-  display: flex;
+	display: flex;
 }
 
 .basic {
-  gap: var(--lp-size-10);
+	gap: var(--lp-size-10);
 }
 
 .compact {
-  gap: initial;
+	gap: initial;
 
-  & :first-child {
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 0;
-  }
+	& :first-child {
+		border-top-right-radius: 0;
+		border-bottom-right-radius: 0;
+	}
 
-  & :last-child {
-    border-top-left-radius: 0;
-    border-bottom-left-radius: 0;
-  }
+	& :last-child {
+		border-top-left-radius: 0;
+		border-bottom-left-radius: 0;
+	}
 
-  & :not(:first-child) {
-    margin-inline-start: -1px;
-  }
+	& :not(:first-child) {
+		margin-inline-start: -1px;
+	}
 
-  & :not(:first-child):not(:last-child) {
-    border-radius: 0;
-  }
+	& :not(:first-child):not(:last-child) {
+		border-radius: 0;
+	}
 }
 
 .large {
-  gap: var(--lp-spacing-600);
+	gap: var(--lp-spacing-600);
 }
