@@ -135,8 +135,8 @@ importers:
         specifier: ^15.2.0
         version: 15.2.5
       nx:
-        specifier: ^19.1.0
-        version: 19.1.1(@swc/core@1.5.24(@swc/helpers@0.5.11))
+        specifier: ^19.2.2
+        version: 19.2.2(@swc/core@1.5.24(@swc/helpers@0.5.11))
       plop:
         specifier: ^4.0.0
         version: 4.0.1
@@ -895,8 +895,8 @@ importers:
         specifier: 2.1.17
         version: 2.1.17
       isomorphic-dompurify:
-        specifier: ^2.11.0
-        version: 2.11.0
+        specifier: ^2.12.0
+        version: 2.12.0
       marked:
         specifier: ^12.0.0
         version: 12.0.2
@@ -2855,66 +2855,66 @@ packages:
     resolution: {integrity: sha512-oGB+UxlgWcgQkgwo8GcEGwemoTFt3FIO9ababBmaGwXIoBKZ+GTy0pP185beGg7Llih/NSHSV2XAs1lnznocSg==}
     engines: {node: '>= 8'}
 
-  '@nrwl/tao@19.1.1':
-    resolution: {integrity: sha512-03iaf+rnOEf5HHLsiSA7QIk63mBtcU4vkqkggoYLxJpMthx5nD4Z12nk+G/Z5RKWYUG4k3j6G7CFiIQRYOy7TA==}
+  '@nrwl/tao@19.2.2':
+    resolution: {integrity: sha512-G/m3EGXf3m9rM2sQQGpRPD40gfaWR6jFVCsZW66/6FXDo1dMUH5/U5JOBnD6vBdug8txKA1ceWHM74NkAB1QEg==}
     hasBin: true
 
-  '@nx/nx-darwin-arm64@19.1.1':
-    resolution: {integrity: sha512-5CcgmNhUg5N62zCuzNZfRRPvaLRZNhLk0OkpMa085atEshM8RUAMbN80ffINaBssYtKu6znJ9LhUK+q7C3KiFQ==}
+  '@nx/nx-darwin-arm64@19.2.2':
+    resolution: {integrity: sha512-AgvsZ0iDA0rklH0TqOIiTrbJysn7WfFFzhLYd1JnxS2Z3GAFPRoE6TxRSSqpTBmFqskrZhZyrjHllOoBD5odFQ==}
     engines: {node: '>= 10'}
     cpu: [arm64]
     os: [darwin]
 
-  '@nx/nx-darwin-x64@19.1.1':
-    resolution: {integrity: sha512-vDM9vZow3YLA3+7GKTqhtguNcbQPifMTbqm8Aevd/suqCChQsLyD1Hh1Z+o03RNolNTRacNb6GPvoKFY4BJ2tA==}
+  '@nx/nx-darwin-x64@19.2.2':
+    resolution: {integrity: sha512-YPd9Kmn5/YPYolBVYoficQmp8LFTe/PAI3dQ3NebOGFYw49PFmV0cdB8+4m0q70WCBMwyqo1x6a6MO9CvENkTg==}
     engines: {node: '>= 10'}
     cpu: [x64]
     os: [darwin]
 
-  '@nx/nx-freebsd-x64@19.1.1':
-    resolution: {integrity: sha512-FfOBrc1vndWYXSZVgbB9nWRp8/jo7f9b3g3ZfqaVwsGpcYcwz7dxiPV7HQKysTR0WNVv1aTi2Dg1CF+F94qlPw==}
+  '@nx/nx-freebsd-x64@19.2.2':
+    resolution: {integrity: sha512-43hMzFmYyi0aEiGa/VNXChzotL6nFG9hLSZhtpXAO6qyibSqKwlU5PjNyly/7y5gUGl7YfmdpwWwlOIYPSQoVw==}
     engines: {node: '>= 10'}
     cpu: [x64]
     os: [freebsd]
 
-  '@nx/nx-linux-arm-gnueabihf@19.1.1':
-    resolution: {integrity: sha512-Bb94MmoOsPnTI4n1mrILSwGmx9I50LEkEOgksoiOEYdykWKjbz6z4ZnFCJHTeF0bca1OmF5iCjFWU42KlLUsRQ==}
+  '@nx/nx-linux-arm-gnueabihf@19.2.2':
+    resolution: {integrity: sha512-locP8QQWI4NFb7kVe8Fflkpdnf9kw5o/WMROILJLFWlTy59K+NBQkpxRIhoUghJ6yckDxk1Kf2kmvV+xuX4f8Q==}
     engines: {node: '>= 10'}
     cpu: [arm]
     os: [linux]
 
-  '@nx/nx-linux-arm64-gnu@19.1.1':
-    resolution: {integrity: sha512-mqiRi95LOUTWldtif3f2aJOFLxg/2jnM1UYj85vUlaLZJmQK64OhQslCAAZCmEWkHAYqEooHaYqj30YmDb92jw==}
+  '@nx/nx-linux-arm64-gnu@19.2.2':
+    resolution: {integrity: sha512-uQUZs+56yplEjokgCC3Pv/nUr4v+/bCurc1v/juUH4byqCdvi+Cny7jqws49UELS+QkcTkWGBtajvf8U3JZEbQ==}
     engines: {node: '>= 10'}
     cpu: [arm64]
     os: [linux]
 
-  '@nx/nx-linux-arm64-musl@19.1.1':
-    resolution: {integrity: sha512-lhyVsuT19Ez4ynhen6dT+Zdq2cABXcphYSkVSASvZGvka/65AS+0D1hX0TFDPJvbTdsHwVszJQZzIqGmYUkhLA==}
+  '@nx/nx-linux-arm64-musl@19.2.2':
+    resolution: {integrity: sha512-rU6l18ubh0Chv7lkxshgm6o4IKduB+jztUBRR4SuOuTOLJ6okm51AqzdY+vy7esicEL3HnHWSJP/U5PwoAaNsA==}
     engines: {node: '>= 10'}
     cpu: [arm64]
     os: [linux]
 
-  '@nx/nx-linux-x64-gnu@19.1.1':
-    resolution: {integrity: sha512-zUQhMwz/gQ0up1iymwTqXbyLJca87HXOP+uAD5wfgarh0yhPDwcGaVsV8O8t2z8W/dH/yYmuppe3gAwsvd5SSg==}
+  '@nx/nx-linux-x64-gnu@19.2.2':
+    resolution: {integrity: sha512-rvGP3p0qmzHJu8cUcYnRDyJ1BkVExgmsWmtzyQrHl48+hvNrq805NrP3gTreOxqymRlBEXg7c22fRECI1CV1lA==}
     engines: {node: '>= 10'}
     cpu: [x64]
     os: [linux]
 
-  '@nx/nx-linux-x64-musl@19.1.1':
-    resolution: {integrity: sha512-3Gc2iwMbFAp50OlIqfgryTtZno/FqPW+AOP1Pijo/jJOZ8DHP3A7Zy8QoJYUgTQxCffzVbhshXW6yy403pV3OQ==}
+  '@nx/nx-linux-x64-musl@19.2.2':
+    resolution: {integrity: sha512-86pfT+z6SWKlJUoRy7MOMjRhrCPgSnAxbcH7jYCkqhokbCIDIv2IFWqMf0zdUqa8HqjRo13X6Jd6PhNYzWwJzw==}
     engines: {node: '>= 10'}
     cpu: [x64]
     os: [linux]
 
-  '@nx/nx-win32-arm64-msvc@19.1.1':
-    resolution: {integrity: sha512-91LJG0triTdZDHnT9l1N1YuIwhmR7iCbKsEv345OdPhHJeQ6GAuJCD0SqDk6aZ13xr7LoRlS8c6bnfctXeslQQ==}
+  '@nx/nx-win32-arm64-msvc@19.2.2':
+    resolution: {integrity: sha512-kJ3G0+nyAgBr5RTkNceC9zl2pekFEu0ec6ceLJ0tfcTwil76Ce3Xnlr0CFFNsre4T1v2RfFIDJL3EaRUXYep0w==}
     engines: {node: '>= 10'}
     cpu: [arm64]
     os: [win32]
 
-  '@nx/nx-win32-x64-msvc@19.1.1':
-    resolution: {integrity: sha512-rEWRqcW1osCeaZ9KPfZWARIdOHGd0WXRW6iqqRvZZEAIbGlZP/89Sj2o9Fvs5oHpng7kfrqsDbpbikmmlX7HTQ==}
+  '@nx/nx-win32-x64-msvc@19.2.2':
+    resolution: {integrity: sha512-9KKGYFgWfc4jHzHjnIp+DJt750NyG1kA4Q+DWf/UcFA5917UWuAw9rribFPRsqYkcwbu++Uajw5bI5yMLP7ThA==}
     engines: {node: '>= 10'}
     cpu: [x64]
     os: [win32]
@@ -5494,6 +5494,9 @@ packages:
     resolution: {integrity: sha512-zJ2mQYM18rEFOudeV4GShTGIQ7RbzA7ozbU9I/XBpm7kqgMywgmylMwXHxZJmkVoYkna9d2pVXVXPdYTP9ej8Q==}
     engines: {node: '>= 0.6'}
 
+  front-matter@4.0.2:
+    resolution: {integrity: sha512-I8ZuJ/qG92NWX8i5x1Y8qyj3vizhXS31OxjKDu3LKP+7/qBgfIKValiZIEwoVoJKUHlhWtYrktkxV1XsX+pPlg==}
+
   fs-constants@1.0.0:
     resolution: {integrity: sha512-y6OAwoSIf7FyjMIv94u+b5rdheZEjzR63GTyZJm5qh4Bi+2YgwLCcI/fPFZkL5PSixOt6ZNKm+w+Hfp/Bciwow==}
 
@@ -6120,8 +6123,8 @@ packages:
     resolution: {integrity: sha512-WhB9zCku7EGTj/HQQRz5aUQEUeoQZH2bWcltRErOpymJ4boYE6wL9Tbr23krRPSZ+C5zqNSrSw+Cc7sZZ4b7vg==}
     engines: {node: '>=0.10.0'}
 
-  isomorphic-dompurify@2.11.0:
-    resolution: {integrity: sha512-PNGGCbbSH7+zF45UKu4Kh+yI8hm1bWA8kIZQow4KMImnjYQtrqJA0ZmwHamYUU7+M5tQ84z7xXMWmZF/v5t5eA==}
+  isomorphic-dompurify@2.12.0:
+    resolution: {integrity: sha512-jJm6VgJ9toBLqNUHuLudn+2Q3NBBaoPbsh5SzzO2dp9Zq9+p6fEg4Ffuq9RZsofb8OnqE6FJVVq3MRDLlmBHpA==}
     engines: {node: '>=18'}
 
   istanbul-lib-coverage@3.2.2:
@@ -6745,8 +6748,8 @@ packages:
   nwsapi@2.2.10:
     resolution: {integrity: sha512-QK0sRs7MKv0tKe1+5uZIQk/C8XGza4DAnztJG8iD+TpJIORARrCxczA738awHrZoHeTjSSoHqao2teO0dC/gFQ==}
 
-  nx@19.1.1:
-    resolution: {integrity: sha512-9NPKoAQ+I3KcoFDThAVu7YznE9fKbV/AiE5dAXPbWfye9HjRdnhLQmXN122ADlq4pA5wkXwxvAxRLw2WA7Kkgw==}
+  nx@19.2.2:
+    resolution: {integrity: sha512-Tg3REVykwKmVBCsroeCE/KhHAJx3e/m0FgNZWXJhn3EEh01qhdsVfWpM/ecawin73or7YcvB/99S8vVPU1nczg==}
     hasBin: true
     peerDependencies:
       '@swc-node/register': ^1.8.0
@@ -9955,43 +9958,43 @@ snapshots:
       '@nodelib/fs.scandir': 2.1.5
       fastq: 1.17.1
 
-  '@nrwl/tao@19.1.1(@swc/core@1.5.24(@swc/helpers@0.5.11))':
+  '@nrwl/tao@19.2.2(@swc/core@1.5.24(@swc/helpers@0.5.11))':
     dependencies:
-      nx: 19.1.1(@swc/core@1.5.24(@swc/helpers@0.5.11))
+      nx: 19.2.2(@swc/core@1.5.24(@swc/helpers@0.5.11))
       tslib: 2.6.2
     transitivePeerDependencies:
       - '@swc-node/register'
       - '@swc/core'
       - debug
 
-  '@nx/nx-darwin-arm64@19.1.1':
+  '@nx/nx-darwin-arm64@19.2.2':
     optional: true
 
-  '@nx/nx-darwin-x64@19.1.1':
+  '@nx/nx-darwin-x64@19.2.2':
     optional: true
 
-  '@nx/nx-freebsd-x64@19.1.1':
+  '@nx/nx-freebsd-x64@19.2.2':
     optional: true
 
-  '@nx/nx-linux-arm-gnueabihf@19.1.1':
+  '@nx/nx-linux-arm-gnueabihf@19.2.2':
     optional: true
 
-  '@nx/nx-linux-arm64-gnu@19.1.1':
+  '@nx/nx-linux-arm64-gnu@19.2.2':
     optional: true
 
-  '@nx/nx-linux-arm64-musl@19.1.1':
+  '@nx/nx-linux-arm64-musl@19.2.2':
     optional: true
 
-  '@nx/nx-linux-x64-gnu@19.1.1':
+  '@nx/nx-linux-x64-gnu@19.2.2':
     optional: true
 
-  '@nx/nx-linux-x64-musl@19.1.1':
+  '@nx/nx-linux-x64-musl@19.2.2':
     optional: true
 
-  '@nx/nx-win32-arm64-msvc@19.1.1':
+  '@nx/nx-win32-arm64-msvc@19.2.2':
     optional: true
 
-  '@nx/nx-win32-x64-msvc@19.1.1':
+  '@nx/nx-win32-x64-msvc@19.2.2':
     optional: true
 
   '@pkgjs/parseargs@0.11.0':
@@ -13586,6 +13589,10 @@ snapshots:
 
   fresh@0.5.2: {}
 
+  front-matter@4.0.2:
+    dependencies:
+      js-yaml: 3.14.1
+
   fs-constants@1.0.0: {}
 
   fs-extra@11.1.1:
@@ -14195,7 +14202,7 @@ snapshots:
 
   isobject@3.0.1: {}
 
-  isomorphic-dompurify@2.11.0:
+  isomorphic-dompurify@2.12.0:
     dependencies:
       '@types/dompurify': 3.0.5
       dompurify: 3.1.5
@@ -14843,9 +14850,9 @@ snapshots:
 
   nwsapi@2.2.10: {}
 
-  nx@19.1.1(@swc/core@1.5.24(@swc/helpers@0.5.11)):
+  nx@19.2.2(@swc/core@1.5.24(@swc/helpers@0.5.11)):
     dependencies:
-      '@nrwl/tao': 19.1.1(@swc/core@1.5.24(@swc/helpers@0.5.11))
+      '@nrwl/tao': 19.2.2(@swc/core@1.5.24(@swc/helpers@0.5.11))
       '@yarnpkg/lockfile': 1.1.0
       '@yarnpkg/parsers': 3.0.0-rc.46
       '@zkochan/js-yaml': 0.0.7
@@ -14859,6 +14866,7 @@ snapshots:
       enquirer: 2.3.6
       figures: 3.2.0
       flat: 5.0.2
+      front-matter: 4.0.2
       fs-extra: 11.2.0
       ignore: 5.3.1
       jest-diff: 29.7.0
@@ -14879,16 +14887,16 @@ snapshots:
       yargs: 17.7.2
       yargs-parser: 21.1.1
     optionalDependencies:
-      '@nx/nx-darwin-arm64': 19.1.1
-      '@nx/nx-darwin-x64': 19.1.1
-      '@nx/nx-freebsd-x64': 19.1.1
-      '@nx/nx-linux-arm-gnueabihf': 19.1.1
-      '@nx/nx-linux-arm64-gnu': 19.1.1
-      '@nx/nx-linux-arm64-musl': 19.1.1
-      '@nx/nx-linux-x64-gnu': 19.1.1
-      '@nx/nx-linux-x64-musl': 19.1.1
-      '@nx/nx-win32-arm64-msvc': 19.1.1
-      '@nx/nx-win32-x64-msvc': 19.1.1
+      '@nx/nx-darwin-arm64': 19.2.2
+      '@nx/nx-darwin-x64': 19.2.2
+      '@nx/nx-freebsd-x64': 19.2.2
+      '@nx/nx-linux-arm-gnueabihf': 19.2.2
+      '@nx/nx-linux-arm64-gnu': 19.2.2
+      '@nx/nx-linux-arm64-musl': 19.2.2
+      '@nx/nx-linux-x64-gnu': 19.2.2
+      '@nx/nx-linux-x64-musl': 19.2.2
+      '@nx/nx-win32-arm64-msvc': 19.2.2
+      '@nx/nx-win32-x64-msvc': 19.2.2
       '@swc/core': 1.5.24(@swc/helpers@0.5.11)
     transitivePeerDependencies:
       - debug
@@ -14993,7 +15001,7 @@ snapshots:
       bl: 4.1.0
       chalk: 4.1.2
       cli-cursor: 3.1.0
-      cli-spinners: 2.6.1
+      cli-spinners: 2.9.2
       is-interactive: 1.0.0
       log-symbols: 4.1.0
       strip-ansi: 6.0.1
