@@ -1,11 +1,12 @@
 :root {
-  color-scheme: light dark;
+	color-scheme: light dark;
 }
 
-:root, [data-theme='default'] {
-  color-scheme: light;
+:root,
+[data-theme='default'] {
+	color-scheme: light;
 }
 
 [data-theme='dark'] {
-  color-scheme: dark;
+	color-scheme: dark;
 }

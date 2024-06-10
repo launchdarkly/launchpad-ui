@@ -1,49 +1,49 @@
 .base {
-  font: var(--lp-body-2-regular);
-  color: var(--lp-color-text-ui-primary-base);
-  padding: 3px var(--lp-spacing-300);
-  border-radius: var(--lp-border-radius-medium);
-  border-width: var(--lp-border-width-200);
-  border-style: solid;
-  flex: 1;
-  min-width: 0;
+	font: var(--lp-body-2-regular);
+	color: var(--lp-color-text-ui-primary-base);
+	padding: 3px var(--lp-spacing-300);
+	border-radius: var(--lp-border-radius-medium);
+	border-width: var(--lp-border-width-200);
+	border-style: solid;
+	flex: 1;
+	min-width: 0;
 
-  &:is([data-focused], [data-focus-within]) {
-    outline: 2px solid var(--lp-color-shadow-interactive-focus);
-    outline-offset: -2px;
-    z-index: 1;
-  }
+	&:is([data-focused], [data-focus-within]) {
+		outline: 2px solid var(--lp-color-shadow-interactive-focus);
+		outline-offset: -2px;
+		z-index: 1;
+	}
 
-  &[data-disabled] {
-    color: var(--lp-color-text-field-disabled);
-    background-color: var(--lp-color-bg-field-disabled);
-    border-color: var(--lp-color-bg-field-disabled);
-  }
+	&[data-disabled] {
+		color: var(--lp-color-text-field-disabled);
+		background-color: var(--lp-color-bg-field-disabled);
+		border-color: var(--lp-color-bg-field-disabled);
+	}
 
-  &[data-invalid] {
-    border-color: var(--lp-color-border-field-error);
-  }
+	&[data-invalid] {
+		border-color: var(--lp-color-border-field-error);
+	}
 
-  &::placeholder {
-    color: var(--lp-color-text-field-placeholder);
-  }
+	&::placeholder {
+		color: var(--lp-color-text-field-placeholder);
+	}
 }
 
 .default {
-  border-color: var(--lp-color-border-field-base);
-  background-color: var(--lp-color-bg-field-base);
+	border-color: var(--lp-color-border-field-base);
+	background-color: var(--lp-color-bg-field-base);
 }
 
 .minimal {
-  background-color: inherit;
-  margin-left: calc(-1 * var(--lp-spacing-300) - 1px);
+	background-color: inherit;
+	margin-left: calc(-1 * var(--lp-spacing-300) - 1px);
 
-  &:not([data-invalid]) {
-    border-color: transparent;
-  }
+	&:not([data-invalid]) {
+		border-color: transparent;
+	}
 
-  &[data-hovered]:not([data-focused]):not([data-focus-within]) {
-    background-color: var(--lp-color-bg-interactive-secondary-hover);
-    cursor: default;
-  }
+	&[data-hovered]:not([data-focused]):not([data-focus-within]) {
+		background-color: var(--lp-color-bg-interactive-secondary-hover);
+		cursor: default;
+	}
 }

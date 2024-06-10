@@ -1,5 +1,5 @@
 .trigger {
-  &.isOpen {
-    margin-bottom: var(--lp-spacing-300);
-  }
+	&.isOpen {
+		margin-bottom: var(--lp-spacing-300);
+	}
 }

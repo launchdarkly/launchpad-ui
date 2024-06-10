@@ -49,6 +49,19 @@
 			"jsxQuoteStyle": "double"
 		}
 	},
+	"css": {
+		"parser": {
+			"cssModules": true
+		},
+		"formatter": {
+			"enabled": true,
+			"lineWidth": 100,
+			"quoteStyle": "single"
+		},
+		"linter": {
+			"enabled": true
+		}
+	},
 	"vcs": {
 		"enabled": true,
 		"clientKind": "git",

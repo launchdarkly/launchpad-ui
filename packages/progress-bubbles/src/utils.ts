@@ -41,6 +41,7 @@ export function useDimensions<T extends HTMLElement>({ defaults }: UseDimensions
 		observer.observe(node);
 
 		return () => observer.disconnect();
+		// biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
 	}, [node, measureDimensions]);
 
 	return {

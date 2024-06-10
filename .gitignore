@@ -16,3 +16,4 @@ playwright-report/
 .nyc_output
 .idea
 .nx/cache
+.nx/workspace-data
