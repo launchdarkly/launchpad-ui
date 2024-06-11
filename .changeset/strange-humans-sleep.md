@@ -2,4 +2,4 @@
 "@launchpad-ui/components": patch
 ---
 
-Adjust `Input` focus outline offset
+Add `subtitle` slot to `Dialog`

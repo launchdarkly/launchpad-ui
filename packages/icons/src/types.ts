@@ -182,6 +182,7 @@ const icons = [
 	'notifications-gear',
 	'notifications-outline',
 	'notifications-tilt',
+	'osmo',
 	'package',
 	'package-outline',
 	'package-outline-bolt',

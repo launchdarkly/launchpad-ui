@@ -1,12 +1,12 @@
 .box {
-  composes: menu from './Menu.module.css';
-  max-width: unset;
+	composes: menu from './Menu.module.css';
+	max-width: unset;
 }
 
 .item {
-  composes: item from './Menu.module.css';
+	composes: item from './Menu.module.css';
 }
 
 .content {
-  composes: content from './Menu.module.css';
+	composes: content from './Menu.module.css';
 }
