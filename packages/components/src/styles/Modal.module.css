@@ -41,7 +41,7 @@
 }
 
 .base {
-	border-radius: var(--lp-border-radius-regular);
+	border-radius: var(--lp-border-radius-medium);
 	background-color: var(--lp-color-bg-overlay-primary);
 	outline: none;
 	padding: var(--lp-spacing-700);
@@ -55,13 +55,14 @@
 	& [role='dialog']:has( [slot='body']) {
 		display: flex;
 		flex-direction: column;
-		gap: var(--lp-spacing-700);
+		gap: var(--lp-spacing-600);
 	}
 
 	& [slot='header'] {
 		display: flex;
 		align-items: center;
 		gap: var(--lp-spacing-300);
+		flex-wrap: wrap;
 	}
 
 	& [slot='footer'] {
@@ -69,6 +70,12 @@
 		justify-content: flex-end;
 		align-items: center;
 		gap: var(--lp-size-10);
+	}
+
+	& [slot='subtitle'] {
+		font: var(--lp-body-1-regular);
+		color: var(--lp-color-text-ui-secondary);
+		flex-basis: 100%;
 	}
 }
 
