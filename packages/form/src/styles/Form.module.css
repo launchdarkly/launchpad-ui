@@ -1,270 +1,268 @@
 :root,
 [data-theme='default'] {
-  --lp-component-form-color-text-label-disabled: var(--lp-color-gray-800);
+	--lp-component-form-color-text-label-disabled: var(--lp-color-gray-800);
 }
 
 [data-theme='dark'] {
-  --lp-component-form-color-text-label-disabled: var(--lp-color-gray-400);
+	--lp-component-form-color-text-label-disabled: var(--lp-color-gray-400);
 }
 
 .formGroup {
-  margin: 1.25rem 0;
-  padding: 0;
-  border: none;
+	margin: 1.25rem 0;
+	padding: 0;
+	border: none;
 }
 
 /* The margin for .formGroup and the min-height of .form-fieldError
   should be equal to avoid content shift when errors are shown */
 .formIncreasedErrorMargin .formGroup {
-  margin: 1.75rem 0;
+	margin: 1.75rem 0;
 }
 
 .formInline .formGroup {
-  display: inline-block;
-  vertical-align: middle;
-  margin: 0;
+	display: inline-block;
+	vertical-align: middle;
+	margin: 0;
 }
 
 .form .formGroup:first-child {
-  margin-top: 0;
+	margin-top: 0;
 }
 
 .form .formGroup:last-child {
-  margin-bottom: 0;
+	margin-bottom: 0;
 }
 
 .formInput {
-  display: block;
-  width: 100%;
-  padding: 0.375rem 0.625rem;
-  font-size: 0.8125rem;
-  font-family: var(--lp-font-family-base);
-  line-height: var(--lp-line-height-300);
-  background-color: var(--lp-color-bg-field-base);
-  color: var(--lp-color-text-ui-primary-base);
-  border: 1px solid var(--lp-color-border-field-base);
-  border-radius: var(--lp-border-radius-regular);
-  transition: all var(--lp-duration-100) linear;
-  height: 2rem;
+	display: block;
+	width: 100%;
+	padding: 0.375rem 0.625rem;
+	font-size: 0.8125rem;
+	font-family: var(--lp-font-family-base);
+	line-height: var(--lp-line-height-300);
+	background-color: var(--lp-color-bg-field-base);
+	color: var(--lp-color-text-ui-primary-base);
+	border: 1px solid var(--lp-color-border-field-base);
+	border-radius: var(--lp-border-radius-regular);
+	transition: all var(--lp-duration-100) linear;
+	height: 2rem;
 }
 
 .formInput:placeholder-shown {
-  overflow: hidden;
-  text-overflow: ellipsis;
+	overflow: hidden;
+	text-overflow: ellipsis;
 }
 
 .formInput.isFocused,
 .formInput:focus {
-  outline: 0;
-  border-color: var(--lp-color-border-field-focus);
-  box-shadow: 0 0 0 3px hsl(231.5 100% 62.5% / 0.1);
+	outline: 0;
+	border-color: var(--lp-color-border-field-focus);
+	box-shadow: 0 0 0 3px hsl(231.5 100% 62.5% / 0.1);
 }
 
 select.formInput {
-  appearance: none;
-  background: transparent;
-  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M7.41 8.84L12 13.42l4.59-4.58L18 10.25l-6 6-6-6 1.41-1.41z' fill='%23646f7a'/></svg>");
-  background-size: 1.25rem;
-  background-repeat: no-repeat;
-  background-position:
-    right 0.4em top 50%,
-    0 0;
-  padding-right: 1.25rem;
+	appearance: none;
+	background: transparent;
+	background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M7.41 8.84L12 13.42l4.59-4.58L18 10.25l-6 6-6-6 1.41-1.41z' fill='%23646f7a'/></svg>");
+	background-size: 1.25rem;
+	background-repeat: no-repeat;
+	background-position: right 0.4em top 50%, 0 0;
+	padding-right: 1.25rem;
 }
 
 .suffixContainer .formInput {
-  border: none;
-  border-radius: var(--lp-border-radius-regular) 0 0 var(--lp-border-radius-regular);
+	border: none;
+	border-radius: var(--lp-border-radius-regular) 0 0 var(--lp-border-radius-regular);
 }
 
 .isInvalid .formInput,
 .form .isInvalid :global(.Select-control),
 .form .isInvalid :global(.CustomSelect) > div,
 .form .isInvalid .formInput {
-  border-color: var(--lp-color-border-field-error);
+	border-color: var(--lp-color-border-field-error);
 }
 
 .iconField:global(.IconBefore) .formInput {
-  padding-left: 1.875rem;
+	padding-left: 1.875rem;
 }
 
 .iconField:global(.IconAfter) .formInput {
-  padding-right: 1.875rem;
+	padding-right: 1.875rem;
 }
 
 .iconFieldIcon {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
 }
 
 .iconField:global(.IconBefore) .iconFieldIcon {
-  left: 0.625rem;
+	left: 0.625rem;
 }
 
 .iconField:global(.IconAfter) .iconFieldIcon {
-  right: 0.625rem;
+	right: 0.625rem;
 }
 
 .suffixContainer .formInput:focus {
-  box-shadow: none;
+	box-shadow: none;
 }
 
 .inlineForm .formGroup + .formGroup,
 .inlineForm .formGroup + :global([class*='_Button']) {
-  margin-left: 0.625rem;
+	margin-left: 0.625rem;
 }
 
 .label {
-  font-size: 0.8125rem;
-  font-family: var(--lp-font-family-base);
-  word-break: break-word;
+	font-size: 0.8125rem;
+	font-family: var(--lp-font-family-base);
+	word-break: break-word;
 }
 
 .labelDisabled {
-  color: var(--lp-component-form-color-text-label-disabled);
+	color: var(--lp-component-form-color-text-label-disabled);
 }
 
 .labelOptional {
-  margin-left: 0.4em;
-  color: var(--lp-color-text-ui-secondary);
-  fill: var(--lp-color-text-ui-secondary);
+	margin-left: 0.4em;
+	color: var(--lp-color-text-ui-secondary);
+	fill: var(--lp-color-text-ui-secondary);
 }
 
 .compactTextField .label {
-  position: absolute;
-  top: -2px;
-  left: 10px;
-  padding: 0 3px;
-  color: var(--lp-color-text-ui-primary-base);
-  opacity: 0;
-  pointer-events: none;
-  background-color: var(--lp-color-bg-ui-primary);
-  transform-origin: 0 0; /* preserve left alignment after scaling */
-  transition: all var(--lp-duration-100) ease-in-out;
-  z-index: 1; /* Fixes layout issue in Firefox */
+	position: absolute;
+	top: -2px;
+	left: 10px;
+	padding: 0 3px;
+	color: var(--lp-color-text-ui-primary-base);
+	opacity: 0;
+	pointer-events: none;
+	background-color: var(--lp-color-bg-ui-primary);
+	transform-origin: 0 0; /* preserve left alignment after scaling */
+	transition: all var(--lp-duration-100) ease-in-out;
+	z-index: 1; /* Fixes layout issue in Firefox */
 }
 
 .formGroup .label {
-  display: flex;
-  align-items: center;
-  margin-bottom: 0.125rem;
+	display: flex;
+	align-items: center;
+	margin-bottom: 0.125rem;
 }
 
 .formGroup .label + .label {
-  margin-top: 0.3125rem;
+	margin-top: 0.3125rem;
 }
 
 .fieldError {
-  color: var(--lp-color-text-feedback-error);
-  font-size: 0.8125rem;
+	color: var(--lp-color-text-feedback-error);
+	font-size: 0.8125rem;
 
-  & svg {
-    transform: translateY(-1px);
-  }
+	& svg {
+		transform: translateY(-1px);
+	}
 }
 
 /* The margin for .formGroup and the min-height of .form-fieldError
   should be equal to avoid content shift when errors are shown */
 .formIncreasedErrorMargin .fieldError {
-  min-height: 1.75rem;
+	min-height: 1.75rem;
 }
 
 .label .fieldError {
-  float: right;
+	float: right;
 }
 
 .form:not(.inlineForm) .fieldError {
-  display: block;
-  padding-top: 0.3125rem;
-  text-align: left;
+	display: block;
+	padding-top: 0.3125rem;
+	text-align: left;
 }
 
 .formIncreasedErrorMargin:not(.inlineForm) .fieldError {
-  padding-top: 0.0625rem;
-  padding-bottom: 0.3125rem;
+	padding-top: 0.0625rem;
+	padding-bottom: 0.3125rem;
 }
 
 .form .isInvalid .label {
-  color: var(--lp-color-text-feedback-error);
+	color: var(--lp-color-text-feedback-error);
 }
 
 .formInput::placeholder {
-  color: var(--lp-color-text-field-placeholder);
+	color: var(--lp-color-text-field-placeholder);
 }
 
 .formIncreasedErrorMargin .formGroup.isInvalid {
-  margin-bottom: 0;
+	margin-bottom: 0;
 }
 
 .formIncreasedErrorMargin .formGroup.isInvalid + .formGroup {
-  margin-top: 0;
+	margin-top: 0;
 }
 
 .hint {
-  display: block;
-  margin-top: 0.1875rem;
-  font-size: 0.8125rem;
-  font-weight: var(--lp-font-weight-regular);
-  color: var(--lp-color-text-ui-secondary);
+	display: block;
+	margin-top: 0.1875rem;
+	font-size: 0.8125rem;
+	font-weight: var(--lp-font-weight-regular);
+	color: var(--lp-color-text-ui-secondary);
 }
 
 .field .hint {
-  margin: 0;
-  font-size: 0.8125rem;
-  color: var(--lp-color-text-ui-secondary);
-  fill: var(--lp-color-text-ui-secondary);
+	margin: 0;
+	font-size: 0.8125rem;
+	color: var(--lp-color-text-ui-secondary);
+	fill: var(--lp-color-text-ui-secondary);
 }
 
 .form .field label,
 .form .field .isInvalid label {
-  color: var(--lp-color-text-ui-primary-base);
+	color: var(--lp-color-text-ui-primary-base);
 }
 
 .fieldErrorMessage {
-  color: var(--lp-color-text-feedback-error);
-  font-size: 0.8125rem;
+	color: var(--lp-color-text-feedback-error);
+	font-size: 0.8125rem;
 }
 
 .field.formGroup {
-  margin: 0.625rem 0;
+	margin: 0.625rem 0;
 }
 
 .field.formGroup:first-child {
-  margin-top: 0;
+	margin-top: 0;
 }
 
 .formInput.isDisabled,
 input.formInput:disabled,
 select.formInput:disabled,
 input.formInput:read-only {
-  opacity: 1;
-  background-color: var(--lp-color-bg-field-disabled);
-  color: var(--lp-color-text-field-disabled);
-  border-color: var(--lp-color-border-field-disabled);
+	opacity: 1;
+	background-color: var(--lp-color-bg-field-disabled);
+	color: var(--lp-color-text-field-disabled);
+	border-color: var(--lp-color-border-field-disabled);
 }
 
 .formInput.isDisabled:hover,
 .formInput:disabled:hover {
-  cursor: not-allowed;
+	cursor: not-allowed;
 }
 
 textarea.formInput {
-  min-height: 2.5em;
-  height: auto;
-  resize: none;
+	min-height: 2.5em;
+	height: auto;
+	resize: none;
 }
 
 textarea.formInput:disabled,
 textarea.formInput:read-only {
-  opacity: 1;
-  color: var(--lp-color-text-field-disabled);
-  background-color: var(--lp-color-bg-field-disabled);
-  border-color: var(--lp-color-border-field-disabled);
+	opacity: 1;
+	color: var(--lp-color-text-field-disabled);
+	background-color: var(--lp-color-bg-field-disabled);
+	border-color: var(--lp-color-border-field-disabled);
 }
 
 input.formInput::-webkit-autofill {
-  box-shadow: 0 0 0 50px var(--lp-color-bg-field-base) inset;
+	box-shadow: 0 0 0 50px var(--lp-color-bg-field-base) inset;
 }
 
 /* Hide the type=search cancel button in Webkit for consistency */
@@ -272,187 +270,187 @@ input[type='search']::-webkit-search-decoration,
 input[type='search']::-webkit-search-cancel-button,
 input[type='search']::-webkit-search-results-button,
 input[type='search']::-webkit-search-results-decoration {
-  display: none;
+	display: none;
 }
 
 /* Hide the type=search cancel button in IE for consistency */
 input[type='text']::-ms-clear,
 input[type='text']::-ms-reveal {
-  display: none;
-  width: 0;
-  height: 0;
+	display: none;
+	width: 0;
+	height: 0;
 }
 
 input[type='search']::-ms-clear,
 input[type='search']::-ms-reveal {
-  display: none;
-  width: 0;
-  height: 0;
+	display: none;
+	width: 0;
+	height: 0;
 }
 
 input[type='checkbox']:disabled {
-  pointer-events: none;
+	pointer-events: none;
 }
 
 .formInput[readonly],
 .formInput[readonly]:focus {
-  color: var(--lp-color-text-ui-secondary);
-  border-color: var(--lp-color-gray-500);
-  box-shadow: none;
+	color: var(--lp-color-text-ui-secondary);
+	border-color: var(--lp-color-gray-500);
+	box-shadow: none;
 }
 
 .checkbox {
-  align-self: flex-start; /* Default for .label is center, but this looks bad on multi-line checkbox labels */
-  flex-shrink: 0; /* Make sure the input itself doesn't shrink in flex layouts */
-  margin-right: 0.3125rem;
-  margin-top: 0.25rem;
+	align-self: flex-start; /* Default for .label is center, but this looks bad on multi-line checkbox labels */
+	flex-shrink: 0; /* Make sure the input itself doesn't shrink in flex layouts */
+	margin-right: 0.3125rem;
+	margin-top: 0.25rem;
 }
 
 .radio {
-  margin-right: 0.3125rem;
+	margin-right: 0.3125rem;
 }
 
 .number {
-  min-width: 2.8125rem;
+	min-width: 2.8125rem;
 }
 
 .suffixContainer {
-  display: inline-flex;
-  border: 1px solid var(--lp-color-border-field-base);
-  border-radius: var(--lp-border-radius-regular);
-  overflow: hidden;
-  transition: all 0.1s linear;
+	display: inline-flex;
+	border: 1px solid var(--lp-color-border-field-base);
+	border-radius: var(--lp-border-radius-regular);
+	overflow: hidden;
+	transition: all 0.1s linear;
 }
 
 .suffixContainer:focus-within {
-  border-color: var(--lp-color-border-field-focus);
-  box-shadow: 0 0 0 3px hsl(231.5 100% 62.5% / 0.1);
+	border-color: var(--lp-color-border-field-focus);
+	box-shadow: 0 0 0 3px hsl(231.5 100% 62.5% / 0.1);
 }
 
 .suffixContainer .suffix {
-  padding: 0 2px;
-  background-color: var(--lp-color-bg-field-aside);
-  color: var(--lp-color-text-ui-secondary);
-  cursor: text;
-  display: inline-flex;
-  align-items: center;
-  position: initial;
+	padding: 0 2px;
+	background-color: var(--lp-color-bg-field-aside);
+	color: var(--lp-color-text-ui-secondary);
+	cursor: text;
+	display: inline-flex;
+	align-items: center;
+	position: initial;
 }
 
 .suffix::-webkit-outer-spin-button,
 .suffix::-webkit-inner-spin-button {
-  appearance: none;
-  margin: 0;
+	appearance: none;
+	margin: 0;
 }
 
 /* Firefox */
 .suffix[type='number'] {
-  appearance: textfield;
+	appearance: textfield;
 }
 
 .iconFieldIconFill {
-  fill: var(--lp-color-fill-field-base);
+	fill: var(--lp-color-fill-field-base);
 }
 
 [class*='_Popover-target'].iconFieldButton {
-  display: block;
+	display: block;
 }
 
 .formInputTiny {
-  padding: 0.0625rem 0.375rem;
-  height: 1.5rem;
+	padding: 0.0625rem 0.375rem;
+	height: 1.5rem;
 }
 
 .iconField {
-  position: relative;
+	position: relative;
 }
 
 .requiredAsterisk {
-  color: var(--lp-color-text-feedback-error);
+	color: var(--lp-color-text-feedback-error);
 }
 
 .fieldSet {
-  border: none;
-  margin: 1.25rem 0;
-  padding: 0;
+	border: none;
+	margin: 1.25rem 0;
+	padding: 0;
 }
 
 .compactTextField {
-  position: relative;
-  width: 100%;
+	position: relative;
+	width: 100%;
 }
 
 .compactTextField.isActive .label {
-  border-radius: var(--lp-border-radius-regular);
-  opacity: 1;
-  pointer-events: auto;
-  transform: translate(0, -8px) scale(0.9); /* 2d transform to avoid webkit blurry text */
+	border-radius: var(--lp-border-radius-regular);
+	opacity: 1;
+	pointer-events: auto;
+	transform: translate(0, -8px) scale(0.9); /* 2d transform to avoid webkit blurry text */
 }
 
 .numberField {
-  display: flex;
-  position: relative;
+	display: flex;
+	position: relative;
 
-  & .numberField-input {
-    padding-right: 1.5rem;
-  }
+	& .numberField-input {
+		padding-right: 1.5rem;
+	}
 
-  & .numberField-stepperContainer {
-    display: flex;
-    opacity: 0;
-    flex-direction: column;
-    position: absolute;
-    width: 1.5rem;
-    top: 1px;
-    bottom: 1px;
-    right: 1px;
-    transition: all var(--lp-duration-100) linear;
+	& .numberField-stepperContainer {
+		display: flex;
+		opacity: 0;
+		flex-direction: column;
+		position: absolute;
+		width: 1.5rem;
+		top: 1px;
+		bottom: 1px;
+		right: 1px;
+		transition: all var(--lp-duration-100) linear;
 
-    & .numberField-stepper {
-      --numberField-stepper-padding: 0.25rem;
-      --numberField-stepper-border-radius: calc(var(--lp-border-radius-regular) - 0.0625rem);
+		& .numberField-stepper {
+			--numberField-stepper-padding: 0.25rem;
+			--numberField-stepper-border-radius: calc(var(--lp-border-radius-regular) - 0.0625rem);
 
-      background-color: var(--lp-color-bg-field-base);
-      flex: auto;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      cursor: pointer;
-      padding: 0 var(--numberField-stepper-padding);
-      border: none;
-      border-radius: 0;
-      min-height: 1px;
-      overflow: hidden;
+			background-color: var(--lp-color-bg-field-base);
+			flex: auto;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			cursor: pointer;
+			padding: 0 var(--numberField-stepper-padding);
+			border: none;
+			border-radius: 0;
+			min-height: 1px;
+			overflow: hidden;
 
-      &:first-child {
-        border-top-right-radius: var(--numberField-stepper-border-radius);
-        padding-top: var(--numberField-stepper-padding);
-      }
+			&:first-child {
+				border-top-right-radius: var(--numberField-stepper-border-radius);
+				padding-top: var(--numberField-stepper-padding);
+			}
 
-      &:last-child {
-        border-bottom-right-radius: var(--numberField-stepper-border-radius);
-        padding-bottom: var(--numberField-stepper-padding);
-      }
+			&:last-child {
+				border-bottom-right-radius: var(--numberField-stepper-border-radius);
+				padding-bottom: var(--numberField-stepper-padding);
+			}
 
-      &:hover {
-        background-color: var(--lp-color-bg-interactive-secondary-hover);
-      }
+			&:hover {
+				background-color: var(--lp-color-bg-interactive-secondary-hover);
+			}
 
-      &:active {
-        background-color: var(--lp-color-bg-interactive-secondary-active);
-      }
+			&:active {
+				background-color: var(--lp-color-bg-interactive-secondary-active);
+			}
 
-      & span:has(svg) {
-        width: 100%;
-        color: var(--lp-color-text-ui-primary-base);
-      }
-    }
-  }
+			& span:has( svg) {
+				width: 100%;
+				color: var(--lp-color-text-ui-primary-base);
+			}
+		}
+	}
 
-  &:hover,
-  &:has(input:focus) {
-    & .numberField-stepperContainer {
-      opacity: 1;
-    }
-  }
+	&:hover,
+	&:has( input:focus) {
+		& .numberField-stepperContainer {
+			opacity: 1;
+		}
+	}
 }

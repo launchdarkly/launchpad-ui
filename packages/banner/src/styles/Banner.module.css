@@ -2,71 +2,71 @@
 
 :root,
 [data-theme='default'] {
-  --lp-component-banner-color-bg-error: var(--lp-color-system-red-200);
-  --lp-component-banner-color-bg-warning: var(--lp-color-system-yellow-200);
-  --lp-component-banner-color-bg-info: var(--lp-color-blue-200);
+	--lp-component-banner-color-bg-error: var(--lp-color-system-red-200);
+	--lp-component-banner-color-bg-warning: var(--lp-color-system-yellow-200);
+	--lp-component-banner-color-bg-info: var(--lp-color-blue-200);
 }
 
 [data-theme='dark'] {
-  --lp-component-banner-color-bg-error: hsl(0 30% 17%);
-  --lp-component-banner-color-bg-warning: hsl(46 29% 17%);
-  --lp-component-banner-color-bg-info: hsl(232 32% 18%);
+	--lp-component-banner-color-bg-error: hsl(0 30% 17%);
+	--lp-component-banner-color-bg-warning: hsl(46 29% 17%);
+	--lp-component-banner-color-bg-info: hsl(232 32% 18%);
 }
 
 .Banner {
-  display: flex;
-  padding: 0.875rem 1.125rem;
-  font-size: 0.875rem;
-  line-height: 1.45;
-  white-space: normal;
-  border-bottom: 1px;
-  border-bottom-style: solid;
+	display: flex;
+	padding: 0.875rem 1.125rem;
+	font-size: 0.875rem;
+	line-height: 1.45;
+	white-space: normal;
+	border-bottom: 1px;
+	border-bottom-style: solid;
 }
 
 .Banner-heading {
-  margin-top: 0;
-  margin-bottom: 0.25rem;
-  font-size: 1rem;
-  font-weight: var(--lp-font-weight-medium);
-  line-height: 1.25;
+	margin-top: 0;
+	margin-bottom: 0.25rem;
+	font-size: 1rem;
+	font-weight: var(--lp-font-weight-medium);
+	line-height: 1.25;
 }
 
 .Banner-content {
-  color: var(--lp-color-text-feedback-base);
-  font-style: normal;
-  font-weight: 400;
-  font-size: 16px;
-  margin-left: 0.875rem;
-  flex-grow: 1;
+	color: var(--lp-color-text-feedback-base);
+	font-style: normal;
+	font-weight: 400;
+	font-size: 16px;
+	margin-left: 0.875rem;
+	flex-grow: 1;
 }
 
 .Banner.Banner--error {
-  border-bottom-color: var(--lp-color-border-feedback-error);
-  background-color: var(--lp-component-banner-color-bg-error);
+	border-bottom-color: var(--lp-color-border-feedback-error);
+	background-color: var(--lp-component-banner-color-bg-error);
 }
 
 .Banner.Banner--warning {
-  border-bottom-color: var(--lp-color-border-feedback-warning);
-  background-color: var(--lp-component-banner-color-bg-warning);
+	border-bottom-color: var(--lp-color-border-feedback-warning);
+	background-color: var(--lp-component-banner-color-bg-warning);
 }
 
 .Banner.Banner--info {
-  border-bottom-color: var(--lp-color-border-feedback-info);
-  background-color: var(--lp-component-banner-color-bg-info);
+	border-bottom-color: var(--lp-color-border-feedback-info);
+	background-color: var(--lp-component-banner-color-bg-info);
 }
 
 .Banner .Banner-icon {
-  transform: translateY(2px);
+	transform: translateY(2px);
 }
 
 .Banner.Banner--info .Banner-icon svg {
-  fill: var(--lp-color-fill-feedback-info);
+	fill: var(--lp-color-fill-feedback-info);
 }
 
 .Banner.Banner--error .Banner-icon svg {
-  fill: var(--lp-color-fill-feedback-error);
+	fill: var(--lp-color-fill-feedback-error);
 }
 
 .Banner.Banner--warning .Banner-icon svg {
-  fill: var(--lp-color-fill-feedback-warning);
+	fill: var(--lp-color-fill-feedback-warning);
 }

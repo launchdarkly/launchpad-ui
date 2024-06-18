@@ -1,5 +1,23 @@
 # @launchpad-ui/clipboard
 
+## 0.11.33
+
+### Patch Changes
+
+- Updated dependencies [[`b255f1d`](https://github.com/launchdarkly/launchpad-ui/commit/b255f1dddf14c437585383cea5114ca93b949966)]:
+  - @launchpad-ui/icons@0.18.2
+
+## 0.11.32
+
+### Patch Changes
+
+- [#1314](https://github.com/launchdarkly/launchpad-ui/pull/1314) [`6a7eacd`](https://github.com/launchdarkly/launchpad-ui/commit/6a7eacde2339810283f9eaa0b2f965f425a919fb) Thanks [@renovate](https://github.com/apps/renovate)! - Update dependencies
+
+- [#1324](https://github.com/launchdarkly/launchpad-ui/pull/1324) [`a5092d1`](https://github.com/launchdarkly/launchpad-ui/commit/a5092d102a14e0ada5cd4a161d13570f293bf9c0) Thanks [@Niznikr](https://github.com/Niznikr)! - Deprecate packages
+
+- Updated dependencies []:
+  - @launchpad-ui/tooltip@0.9.11
+
 ## 0.11.31
 
 ### Patch Changes

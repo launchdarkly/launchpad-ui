@@ -1,12 +1,12 @@
 .box {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: var(--lp-spacing-200);
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: var(--lp-spacing-200);
 
-  /* For inline listboxes not rendered in Popover such as ComboboxDialog */
-  & [data-rac][role='listbox'] {
-    padding: 0;
-    width: 100%;
-  }
+	/* For inline listboxes not rendered in Popover such as ComboboxDialog */
+	& [data-rac][role='listbox'] {
+		padding: 0;
+		width: 100%;
+	}
 }

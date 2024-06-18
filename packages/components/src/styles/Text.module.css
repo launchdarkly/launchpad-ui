@@ -1,6 +1,6 @@
 .text {
-  &[slot='description'] {
-    font: var(--lp-small-1-regular);
-    color: var(--lp-color-text-ui-secondary);
-  }
+	&[slot='description'] {
+		font: var(--lp-small-1-regular);
+		color: var(--lp-color-text-ui-secondary);
+	}
 }

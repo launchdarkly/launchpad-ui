@@ -1,31 +1,31 @@
 :root,
 [data-theme='default'] {
-  --lp-component-popover-color-bg: var(--lp-color-bg-overlay-secondary);
-  --lp-component-popover-color-text: var(--lp-color-text-overlay-secondary);
-  --lp-component-popover-color-border: inherit;
+	--lp-component-popover-color-bg: var(--lp-color-bg-overlay-secondary);
+	--lp-component-popover-color-text: var(--lp-color-text-overlay-secondary);
+	--lp-component-popover-color-border: inherit;
 }
 
 [data-theme='dark'] {
-  --lp-component-popover-color-bg: var(--lp-color-bg-overlay-primary);
-  --lp-component-popover-color-text: var(--lp-color-text-ui-primary-base);
-  --lp-component-popover-color-border: var(--lp-color-border-ui-secondary);
+	--lp-component-popover-color-bg: var(--lp-color-bg-overlay-primary);
+	--lp-component-popover-color-text: var(--lp-color-text-ui-primary-base);
+	--lp-component-popover-color-border: var(--lp-color-border-ui-secondary);
 }
 
 .Tooltip {
-  z-index: var(--lp-z-index-800);
+	z-index: var(--lp-z-index-800);
 }
 
 [class*='_Popover-content'].Tooltip-popover-content {
-  font-size: 0.8125rem;
-  padding: 0.3125rem 0.625rem;
-  border: 1px solid var(--lp-component-popover-color-border);
-  background-color: var(--lp-component-popover-color-bg);
-  color: var(--lp-component-popover-color-text);
+	font-size: 0.8125rem;
+	padding: 0.3125rem 0.625rem;
+	border: 1px solid var(--lp-component-popover-color-border);
+	background-color: var(--lp-component-popover-color-bg);
+	color: var(--lp-component-popover-color-text);
 }
 
 [class*='_Popover-content'].Tooltip-popover-content kbd {
-  color: var(--lp-color-gray-100);
-  background-color: var(--lp-color-gray-900);
-  border: 0.0625rem solid var(--lp-color-gray-700);
-  box-shadow: inset 0 -0.0625rem 0 var(--lp-color-gray-700);
+	color: var(--lp-color-gray-100);
+	background-color: var(--lp-color-gray-900);
+	border: 0.0625rem solid var(--lp-color-gray-700);
+	box-shadow: inset 0 -0.0625rem 0 var(--lp-color-gray-700);
 }

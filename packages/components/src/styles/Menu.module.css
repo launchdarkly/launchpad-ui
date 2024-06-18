@@ -1,108 +1,108 @@
 :root {
-  --lp-menu-max-width: var(--lp-size-400);
+	--lp-menu-max-width: var(--lp-size-400);
 }
 
 .menu {
-  max-height: inherit;
-  overflow: auto;
-  outline: none;
-  min-width: var(--lp-size-144);
-  max-width: var(--lp-menu-max-width);
+	max-height: inherit;
+	overflow: auto;
+	outline: none;
+	min-width: var(--lp-size-144);
+	max-width: var(--lp-menu-max-width);
 
-  &:not(:has([role='group'])) {
-    padding: var(--lp-spacing-200);
-  }
+	&:not(:has( [role='group'])) {
+		padding: var(--lp-spacing-200);
+	}
 }
 
 .item {
-  padding-block: var(--lp-spacing-200);
-  padding-inline: var(--lp-spacing-300);
-  border-radius: var(--lp-border-radius-regular);
-  outline: none;
-  cursor: default;
-  color: var(--lp-color-text-ui-primary-base);
-  font: var(--lp-label-1-medium);
-  position: relative;
-  display: flex;
-  column-gap: var(--lp-spacing-300);
-  align-items: center;
-  forced-color-adjust: none;
-  text-decoration: none;
+	padding-block: var(--lp-spacing-200);
+	padding-inline: var(--lp-spacing-300);
+	border-radius: var(--lp-border-radius-regular);
+	outline: none;
+	cursor: default;
+	color: var(--lp-color-text-ui-primary-base);
+	font: var(--lp-label-1-medium);
+	position: relative;
+	display: flex;
+	column-gap: var(--lp-spacing-300);
+	align-items: center;
+	forced-color-adjust: none;
+	text-decoration: none;
 
-  &[data-hovered] {
-    background-color: var(--lp-color-bg-interactive-secondary-hover);
-  }
+	&[data-hovered] {
+		background-color: var(--lp-color-bg-interactive-secondary-hover);
+	}
 
-  &[data-pressed] {
-    background-color: var(--lp-color-bg-interactive-secondary-active);
-  }
+	&[data-pressed] {
+		background-color: var(--lp-color-bg-interactive-secondary-active);
+	}
 
-  &[data-focus-visible] {
-    background-color: var(--lp-color-bg-interactive-secondary-hover);
-  }
+	&[data-focus-visible] {
+		background-color: var(--lp-color-bg-interactive-secondary-hover);
+	}
 
-  &[data-disabled] {
-    color: var(--lp-color-text-interactive-disabled);
-    cursor: not-allowed;
-  }
+	&[data-disabled] {
+		color: var(--lp-color-text-interactive-disabled);
+		cursor: not-allowed;
+	}
 
-  & .content {
-    display: flex;
-    align-items: center;
-    column-gap: var(--lp-spacing-300);
-    flex: 1;
-  }
+	& .content {
+		display: flex;
+		align-items: center;
+		column-gap: var(--lp-spacing-300);
+		flex: 1;
+	}
 
-  &:has([slot='label']) {
-    & .content {
-      display: grid;
-      grid-template-areas:
-        'label'
-        'desc';
-    }
+	&:has( [slot='label']) {
+		& .content {
+			display: grid;
+			grid-template-areas:
+				'label'
+				'desc';
+		}
 
-    &:has(kbd) {
-      & .content {
-        grid-template-areas:
-          'label kbd'
-          'desc kbd';
-        grid-template-columns: 1fr min-content;
-      }
-    }
-  }
+		&:has( kbd) {
+			& .content {
+				grid-template-areas:
+					'label kbd'
+					'desc kbd';
+				grid-template-columns: 1fr min-content;
+			}
+		}
+	}
 
-  & [slot='label'] {
-    grid-area: label;
-    display: flex;
-    align-items: center;
-    gap: var(--lp-spacing-300);
-  }
+	& [slot='label'] {
+		grid-area: label;
+		display: flex;
+		align-items: center;
+		gap: var(--lp-spacing-300);
+	}
 
-  & [slot='description'] {
-    grid-area: desc;
-  }
+	& [slot='description'] {
+		grid-area: desc;
+	}
 
-  & kbd {
-    grid-area: kbd;
-    font: var(--lp-code-1-regular);
-  }
+	& kbd {
+		grid-area: kbd;
+		font: var(--lp-code-1-regular);
+	}
 }
 
 .default {
 }
 
 .destructive {
-  color: var(--lp-color-text-interactive-destructive);
+	color: var(--lp-color-text-interactive-destructive);
 
-  &[data-hovered] {
-    background-color: var(--lp-color-bg-interactive-destructive-hover);
-  }
+	&[data-hovered] {
+		background-color: var(--lp-color-bg-interactive-destructive-hover);
+	}
 
-  &[data-pressed] {
-    background-color: var(--lp-color-bg-interactive-destructive-active);
-  }
+	&[data-pressed] {
+		background-color: var(--lp-color-bg-interactive-destructive-active);
+	}
 
-  &[data-focus-visible] {
-    background-color: var(--lp-color-bg-interactive-destructive-hover);
-  }
+	&[data-focus-visible] {
+		background-color: var(--lp-color-bg-interactive-destructive-hover);
+	}
 }
