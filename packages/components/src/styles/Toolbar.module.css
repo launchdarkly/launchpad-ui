@@ -1,19 +1,19 @@
 .toolbar {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--lp-spacing-300);
-  width: fit-content;
+	display: flex;
+	flex-wrap: wrap;
+	gap: var(--lp-spacing-300);
+	width: fit-content;
 
-  &[data-orientation='horizontal'] {
-    flex-direction: row;
-  }
+	&[data-orientation='horizontal'] {
+		flex-direction: row;
+	}
 
-  &[data-orientation='vertical'] {
-    flex-direction: column;
-    align-items: start;
-  }
+	&[data-orientation='vertical'] {
+		flex-direction: column;
+		align-items: start;
+	}
 
-  & [role='group'] {
-    display: contents;
-  }
+	& [role='group'] {
+		display: contents;
+	}
 }
