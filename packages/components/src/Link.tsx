@@ -52,7 +52,7 @@ const _Link = (
 				)}
 				href={href ? routerHref : undefined}
 			/>
-			{href && linkProps && <Icon name="chevron-right" size="small" />}
+			{href && linkProps && <Icon name="slash" className={styles.separator} />}
 		</>
 	);
 };

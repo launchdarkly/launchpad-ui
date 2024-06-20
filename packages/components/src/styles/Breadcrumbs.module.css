@@ -7,4 +7,14 @@
 }
 
 .crumb {
+	display: flex;
+	align-items: center;
+
+	& a {
+		font: var(--lp-heading-1-medium);
+	}
+
+	& [role='link'][data-current] {
+		font: var(--lp-heading-1-semibold);
+	}
 }
