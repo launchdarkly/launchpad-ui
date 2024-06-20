@@ -97,6 +97,7 @@ const icons = [
 	'copy-clipboard',
 	'copy-code',
 	'copy-content',
+	'created',
 	'credit-card',
 	'crown',
 	'crown-outline',
