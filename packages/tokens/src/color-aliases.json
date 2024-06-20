@@ -646,6 +646,28 @@
 					"$value": "{color.gray.800}",
 					"dark": "{color.gray.200}"
 				}
+			},
+			"code": {
+				"function": {
+					"$value": "{ color.cyan.600 }",
+					"dark": "{ color.cyan.200 }"
+				},
+				"tag": {
+					"$value": "{ color.purple.600 }",
+					"dark": "{ color.system.purple.300 }"
+				},
+				"string": {
+					"$value": "{ color.pink.600 }",
+					"dark": "{color.pink.300}"
+				},
+				"comment": {
+					"$value": "{color.gray.600}",
+					"dark": "{color.gray.400}"
+				},
+				"base": {
+					"$value": "{color.gray.800}",
+					"dark": "{color.gray.200}"
+				}
 			}
 		}
 	}
