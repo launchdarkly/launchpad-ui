@@ -1,5 +1,12 @@
 # @launchpad-ui/card
 
+## 0.2.34
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @launchpad-ui/form@0.11.19
+
 ## 0.2.33
 
 ### Patch Changes

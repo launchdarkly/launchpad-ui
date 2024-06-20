@@ -1,5 +1,11 @@
 # @launchpad-ui/icons
 
+## 0.18.3
+
+### Patch Changes
+
+- [#1338](https://github.com/launchdarkly/launchpad-ui/pull/1338) [`b74c95b`](https://github.com/launchdarkly/launchpad-ui/commit/b74c95ba1fab1d8364777954574ff4cc8fcee3f7) Thanks [@cmaija](https://github.com/cmaija)! - feat(icons): Add created icon
+
 ## 0.18.2
 
 ### Patch Changes
