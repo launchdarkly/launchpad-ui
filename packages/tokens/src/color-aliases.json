@@ -649,24 +649,22 @@
 			},
 			"code": {
 				"function": {
-					"$value": "{ color.cyan.600 }",
-					"dark": "{ color.cyan.200 }"
+					"$value": "{color.cyan.600}",
+					"dark": "{color.cyan.200}"
 				},
 				"tag": {
-					"$value": "{ color.purple.600 }",
-					"dark": "{ color.system.purple.300 }"
+					"$value": "{color.purple.600}",
+					"dark": "{color.purple.300}"
 				},
 				"string": {
-					"$value": "{ color.pink.600 }",
+					"$value": "{color.pink.600}",
 					"dark": "{color.pink.300}"
 				},
 				"comment": {
-					"$value": "{color.gray.600}",
-					"dark": "{color.gray.400}"
+					"$value": "{color.text.ui.tertiary}"
 				},
 				"base": {
-					"$value": "{color.gray.800}",
-					"dark": "{color.gray.200}"
+					"$value": "{color.text.ui.secondary}"
 				}
 			}
 		}
