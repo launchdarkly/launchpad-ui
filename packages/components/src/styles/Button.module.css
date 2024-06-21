@@ -32,11 +32,11 @@
 
 .small {
 	font: var(--lp-label-2-medium);
-	padding: 3px var(--lp-spacing-300);
+	padding: 1px var(--lp-spacing-300);
 }
 
 .medium {
-	padding: 5px var(--lp-spacing-300);
+	padding: 3px var(--lp-spacing-300);
 }
 
 .large {
