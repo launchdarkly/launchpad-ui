@@ -51,9 +51,9 @@ const open = {
 };
 
 export const Example: Story = {
-	args: {
-		children: (
-			<>
+	render: (args) => {
+		return (
+			<ComboBox {...args}>
 				<Label>Label</Label>
 				<Group>
 					<Input />
@@ -72,15 +72,15 @@ export const Example: Story = {
 						<ListBoxItem>Item three</ListBoxItem>
 					</ListBox>
 				</Popover>
-			</>
-		),
+			</ComboBox>
+		);
 	},
 };
 
 export const Descriptions: Story = {
-	args: {
-		children: (
-			<>
+	render: (args) => {
+		return (
+			<ComboBox selectedKey="react-aria-2" {...args}>
 				<Label>Label</Label>
 				<Group>
 					<Icon name="search" size="small" />
@@ -108,9 +108,8 @@ export const Descriptions: Story = {
 						</ListBoxItem>
 					</ListBox>
 				</Popover>
-			</>
-		),
-		selectedKey: 'react-aria-2',
+			</ComboBox>
+		);
 	},
 	...open,
 };

@@ -35,7 +35,7 @@
 	"dependencies": {
 		"@launchpad-ui/tokens": "workspace:~",
 		"@launchpad-ui/vars": "workspace:~",
-		"@radix-ui/react-slot": "1.0.2",
+		"@radix-ui/react-slot": "1.1.0",
 		"@vanilla-extract/dynamic": "2.1.0",
 		"rainbow-sprinkles": "0.17.0"
 	},
