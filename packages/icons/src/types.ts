@@ -43,6 +43,7 @@ const icons = [
 	'bullhorn',
 	'bullseye',
 	'bullseye-arrow',
+	'calculator',
 	'calendar',
 	'calendar-cancel',
 	'calendar-schedule',
