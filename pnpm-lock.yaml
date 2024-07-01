@@ -30,8 +30,8 @@ importers:
         specifier: ^19.0.3
         version: 19.0.3
       '@playwright/test':
-        specifier: ^1.44.0
-        version: 1.44.0
+        specifier: ^1.45.0
+        version: 1.45.0
       '@storybook/addon-a11y':
         specifier: ^8.1.1
         version: 8.1.1
@@ -4609,12 +4609,12 @@ packages:
     dev: true
     optional: true
 
-  /@playwright/test@1.44.0:
-    resolution: {integrity: sha512-rNX5lbNidamSUorBhB4XZ9SQTjAqfe5M+p37Z8ic0jPFBMo5iCtQz1kRWkEMg+rYOKSlVycpQmpqjSFq7LXOfg==}
-    engines: {node: '>=16'}
+  /@playwright/test@1.45.0:
+    resolution: {integrity: sha512-TVYsfMlGAaxeUllNkywbwek67Ncf8FRGn8ZlRdO291OL3NjG9oMbfVhyP82HQF0CZLMrYsvesqoUekxdWuF9Qw==}
+    engines: {node: '>=18'}
     hasBin: true
     dependencies:
-      playwright: 1.44.0
+      playwright: 1.45.0
     dev: true
 
   /@polka/url@1.0.0-next.24:
@@ -13029,12 +13029,18 @@ packages:
     hasBin: true
     dev: true
 
-  /playwright@1.44.0:
-    resolution: {integrity: sha512-F9b3GUCLQ3Nffrfb6dunPOkE5Mh68tR7zN32L4jCk4FjQamgesGay7/dAAe1WaMEGV04DkdJfcJzjoCKygUaRQ==}
-    engines: {node: '>=16'}
+  /playwright-core@1.45.0:
+    resolution: {integrity: sha512-lZmHlFQ0VYSpAs43dRq1/nJ9G/6SiTI7VPqidld9TDefL9tX87bTKExWZZUF5PeRyqtXqd8fQi2qmfIedkwsNQ==}
+    engines: {node: '>=18'}
+    hasBin: true
+    dev: true
+
+  /playwright@1.45.0:
+    resolution: {integrity: sha512-4z3ac3plDfYzGB6r0Q3LF8POPR20Z8D0aXcxbJvmfMgSSq1hkcgvFRXJk9rUq5H/MJ0Ktal869hhOdI/zUTeLA==}
+    engines: {node: '>=18'}
     hasBin: true
     dependencies:
-      playwright-core: 1.44.0
+      playwright-core: 1.45.0
     optionalDependencies:
       fsevents: 2.3.2
     dev: true
