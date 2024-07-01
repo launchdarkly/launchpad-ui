@@ -1,5 +1,11 @@
 # @launchpad-ui/icons
 
+## 0.18.5
+
+### Patch Changes
+
+- [#1343](https://github.com/launchdarkly/launchpad-ui/pull/1343) [`3c7a71e`](https://github.com/launchdarkly/launchpad-ui/commit/3c7a71e4fd7ba473d07e47a11c3f91f474900e50) Thanks [@lwonsower](https://github.com/lwonsower)! - Add calculator icon
+
 ## 0.18.4
 
 ### Patch Changes
