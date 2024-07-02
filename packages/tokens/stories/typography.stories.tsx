@@ -40,11 +40,6 @@ export const Typography = {
 					<span style={{ font: vars.small[1].semibold }}>Small 1 - SemiBold</span>
 				</div>
 				<div style={{ display: 'flex', flexDirection: 'column', gap: vars.spacing[600] }}>
-					<span style={{ font: vars.small[2].regular }}>Small 2 - Regular</span>
-					<span style={{ font: vars.small[2].medium }}>Small 2 - Medium</span>
-					<span style={{ font: vars.small[2].semibold }}>Small 2 - SemiBold</span>
-				</div>
-				<div style={{ display: 'flex', flexDirection: 'column', gap: vars.spacing[600] }}>
 					<label style={{ font: vars.label[1].regular, display: 'block' }}>Label 1 - Regular</label>
 					<label style={{ font: vars.label[1].medium, display: 'block' }}>Label 1 - Medium</label>
 				</div>
