@@ -9,6 +9,8 @@ export type {
 	CalendarGridBodyProps,
 	CalendarGridHeaderProps,
 	CalendarHeaderCellProps,
+	CalendarPickerProps,
+	PresetProps,
 	RangeCalendarProps,
 } from './Calendar';
 export type { CheckboxProps } from './Checkbox';
@@ -50,6 +52,7 @@ export type { TextFieldProps } from './TextField';
 export type { SnackbarValue, ToastOptions, ToastValue } from './Toast';
 export type { ToggleButtonProps } from './ToggleButton';
 export type { ToggleIconButtonProps } from './ToggleIconButton';
+export type { ToolbarProps } from './Toolbar';
 export type { TooltipProps, TooltipTriggerProps } from './Tooltip';
 export type { forwardRefType } from './utils';
 
@@ -62,6 +65,8 @@ export {
 	CalendarGridBody,
 	CalendarGridHeader,
 	CalendarHeaderCell,
+	CalendarPicker,
+	Preset,
 	RangeCalendar,
 } from './Calendar';
 export { Checkbox } from './Checkbox';
@@ -106,4 +111,5 @@ export { TextField } from './TextField';
 export { SnackbarContainer, SnackbarQueue, ToastContainer, ToastQueue } from './Toast';
 export { ToggleButton } from './ToggleButton';
 export { ToggleIconButton } from './ToggleIconButton';
+export { Toolbar } from './Toolbar';
 export { Tooltip, TooltipTrigger } from './Tooltip';
