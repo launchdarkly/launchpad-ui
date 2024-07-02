@@ -1,5 +1,16 @@
 # @launchpad-ui/split-button
 
+## 0.10.22
+
+### Patch Changes
+
+- Updated dependencies [[`6ab5b77`](https://github.com/launchdarkly/launchpad-ui/commit/6ab5b776c4dff94ad5be9a6fbf474126ae41c31c)]:
+  - @launchpad-ui/tokens@0.10.0
+  - @launchpad-ui/button@0.12.19
+  - @launchpad-ui/dropdown@0.6.111
+  - @launchpad-ui/popover@0.11.24
+  - @launchpad-ui/tooltip@0.9.13
+
 ## 0.10.21
 
 ### Patch Changes
