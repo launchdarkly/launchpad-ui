@@ -29,7 +29,8 @@
 		"./themes.css": "./dist/themes.css",
 		"./index.css": "./dist/index.css",
 		"./media-queries.css": "./dist/media-queries.css",
-		"./dist/contract.json": "./dist/contract.json"
+		"./dist/contract.json": "./dist/contract.json",
+		"./dist/tokens.json": "./dist/tokens.json"
 	},
 	"scripts": {
 		"build": "node --loader ts-node/esm ./build.ts",

@@ -1,0 +1,33 @@
+{
+	"name": "launchpad-design-system",
+	"displayName": "LaunchPad Design System",
+	"version": "0.0.1",
+	"publisher": "launchdarklyofficial",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/launchdarkly/launchpad-ui",
+		"directory": "apps/vscode"
+	},
+	"description": "LaunchPad Design System VSCode extension",
+	"license": "SEE LICENSE IN LICENSE.txt",
+	"engines": {
+		"vscode": "^1.90.0"
+	},
+	"activationEvents": ["onLanguage:css"],
+	"main": "dist/client.js",
+	"scripts": {
+		"vscode:prepublish": "esbuild ./src/client.ts ./src/server.ts --bundle --outdir=dist --external:vscode --format=cjs --platform=node",
+		"package": "pnpm dlx @vscode/vsce package --no-dependencies",
+		"publish": "pnpm dlx @vscode/vsce publish --no-dependencies"
+	},
+	"dependencies": {
+		"@launchpad-ui/tokens": "workspace:~",
+		"vscode-languageclient": "^9.0.1",
+		"vscode-languageserver": "^9.0.1",
+		"vscode-languageserver-textdocument": "^1.0.11"
+	},
+	"devDependencies": {
+		"@types/vscode": "^1.90.0",
+		"esbuild": "0.20.2"
+	}
+}

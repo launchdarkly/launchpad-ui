@@ -17,3 +17,4 @@ playwright-report/
 .idea
 .nx/cache
 .nx/workspace-data
+*.vsix

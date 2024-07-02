@@ -1,0 +1,40 @@
+name: Release LaunchPad for VS Code
+
+on:
+  push:
+    paths:
+      - 'apps/vscode/CHANGELOG.md'
+      - 'packages/tokens/CHANGELOG.md'
+    branches:
+      - main
+
+jobs:
+  release-vscode:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: pnpm/action-setup@v3
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Build tokens
+        run: build:transform
+
+      - name: Build extension
+        run: pnpm --filter=launchpad-design-system package
+
+      - name: Publish extension
+        run: pnpm --filter=launchpad-design-system publish
+        env:
+          VSCE_PAT: ${{ secrets.VSC_TOKEN }}
