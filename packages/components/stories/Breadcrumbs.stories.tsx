@@ -19,9 +19,9 @@ export default meta;
 type Story = StoryObj<typeof Breadcrumbs>;
 
 export const Example: Story = {
-	args: {
-		children: (
-			<>
+	render: (args) => {
+		return (
+			<Breadcrumbs {...args}>
 				<Breadcrumb>
 					<Link href="/">Components</Link>
 				</Breadcrumb>
@@ -31,7 +31,7 @@ export const Example: Story = {
 				<Breadcrumb>
 					<Link>Breadcrumbs</Link>
 				</Breadcrumb>
-			</>
-		),
+			</Breadcrumbs>
+		);
 	},
 };
