@@ -108,11 +108,7 @@ sd.registerFormat({
 sd.registerFormat({
 	name: 'custom/json',
 	format: async ({ dictionary, options }) => {
-		return `${JSON.stringify(
-			minifyDictionary(dictionary.tokens, options.usesDtcg),
-			(key, val) => (key === '$type' ? undefined : val),
-			2,
-		)}\n`;
+		return `${JSON.stringify(minifyDictionary(dictionary.tokens, options.usesDtcg), null, 2)}\n`;
 	},
 });
 
@@ -135,7 +131,7 @@ sd.registerFormat({
 		const header = await fileHeader({ file });
 		return `${header}export default ${JSON.stringify(
 			minifyDictionary(dictionary.tokens, options.usesDtcg),
-			(key, val) => (key === '$type' ? undefined : val),
+			null,
 			2,
 		)};\n`;
 	},
@@ -147,7 +143,7 @@ sd.registerFormat({
 		const header = await fileHeader({ file });
 		return `${header}exports.default = ${JSON.stringify(
 			minifyDictionary(dictionary.tokens, options.usesDtcg),
-			(key, val) => (key === '$type' ? undefined : val),
+			null,
 			2,
 		)};\n`;
 	},
