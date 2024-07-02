@@ -2,6 +2,7 @@
 }
 
 .link {
+	font: var(--lp-body-2-regular);
 	cursor: pointer;
 	outline: none;
 	border-radius: var(--lp-border-radius-regular);
@@ -15,9 +16,14 @@
 		color: var(--lp-color-text-interactive-active);
 	}
 
-	&[data-disabled] {
+	&[data-disabled]:not([data-current]) {
 		cursor: not-allowed;
 		color: var(--lp-color-text-interactive-disabled);
+	}
+
+	&[data-current] {
+		cursor: default;
+		font: var(--lp-body-2-semibold);
 	}
 
 	&[data-focus-visible] {
@@ -35,4 +41,10 @@
 .subtle {
 	composes: link;
 	color: var(--lp-color-text-ui-secondary);
+}
+
+.separator {
+	fill: var(--lp-color-fill-ui-secondary);
+	height: var(--lp-size-24);
+	width: var(--lp-size-24);
 }
