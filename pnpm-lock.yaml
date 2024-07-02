@@ -198,6 +198,9 @@ importers:
       esbuild:
         specifier: 0.20.2
         version: 0.20.2
+      style-dictionary:
+        specifier: ^4.0.0
+        version: 4.0.0
 
   packages/alert:
     dependencies:

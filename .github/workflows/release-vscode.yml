@@ -1,4 +1,4 @@
-name: Release LaunchPad for VS Code
+name: Release LaunchPad VS Code Extension
 
 on:
   push:

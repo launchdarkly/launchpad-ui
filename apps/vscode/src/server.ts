@@ -1,3 +1,4 @@
+import type { TransformedToken } from 'style-dictionary/types';
 import type {
 	CompletionItem,
 	InitializeResult,
@@ -20,7 +21,7 @@ import {
 const groupedTokens = Object.entries(tokens).reduce(
 	(accum, [key, value]) => {
 		accum[key] = value.map(
-			(token) =>
+			(token: TransformedToken) =>
 				({
 					label: `lp-${token.name}`,
 					insertText: `var(--lp-${token.name})`,

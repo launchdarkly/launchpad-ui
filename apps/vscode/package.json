@@ -8,11 +8,17 @@
 		"url": "https://github.com/launchdarkly/launchpad-ui",
 		"directory": "apps/vscode"
 	},
+	"homepage": "https://github.com/launchdarkly/launchpad-ui/blob/main/apps/vscode/README.md",
+	"bugs": {
+		"url": "https://github.com/launchdarkly/launchpad-ui/issues"
+	},
 	"description": "LaunchPad Design System VSCode extension",
 	"license": "SEE LICENSE IN LICENSE.txt",
+	"keywords": ["launchpad", "launchdarkly"],
 	"engines": {
 		"vscode": "^1.90.0"
 	},
+	"categories": ["Other"],
 	"activationEvents": ["onLanguage:css"],
 	"main": "dist/client.js",
 	"scripts": {
@@ -28,6 +34,7 @@
 	},
 	"devDependencies": {
 		"@types/vscode": "^1.90.0",
-		"esbuild": "0.20.2"
+		"esbuild": "0.20.2",
+		"style-dictionary": "^4.0.0"
 	}
 }
