@@ -1,0 +1,20 @@
+.crumbs {
+	display: flex;
+	align-items: center;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.crumb {
+	display: flex;
+	align-items: center;
+
+	& a {
+		font: var(--lp-heading-1-medium);
+	}
+
+	& [role='link'][data-current] {
+		font: var(--lp-heading-1-semibold);
+	}
+}
