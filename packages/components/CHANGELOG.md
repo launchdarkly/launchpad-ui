@@ -1,5 +1,29 @@
 # @launchpad-ui/components
 
+## 0.2.13
+
+### Patch Changes
+
+- Updated dependencies [[`3c7a71e`](https://github.com/launchdarkly/launchpad-ui/commit/3c7a71e4fd7ba473d07e47a11c3f91f474900e50)]:
+  - @launchpad-ui/icons@0.18.5
+
+## 0.2.12
+
+### Patch Changes
+
+- Updated dependencies [[`545560f`](https://github.com/launchdarkly/launchpad-ui/commit/545560fff3fdbfdabfa208e5662c21ae41a76322)]:
+  - @launchpad-ui/tokens@0.9.12
+  - @launchpad-ui/icons@0.18.4
+
+## 0.2.11
+
+### Patch Changes
+
+- [#1331](https://github.com/launchdarkly/launchpad-ui/pull/1331) [`fe8a521`](https://github.com/launchdarkly/launchpad-ui/commit/fe8a521f993d837818fcf4b1aaddafe7393de678) Thanks [@Niznikr](https://github.com/Niznikr)! - Add `subtitle` slot to `Dialog`
+
+- Updated dependencies [[`b74c95b`](https://github.com/launchdarkly/launchpad-ui/commit/b74c95ba1fab1d8364777954574ff4cc8fcee3f7)]:
+  - @launchpad-ui/icons@0.18.3
+
 ## 0.2.10
 
 ### Patch Changes

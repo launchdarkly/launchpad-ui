@@ -1,8 +1,9 @@
+/* stylelint-disable number-max-precision */
 .Counter {
 	display: inline-block;
 	font-size: 0.6875rem;
 	font-weight: var(--lp-font-weight-bold);
-	line-height: var(--lp-line-height-200);
+	line-height: 1.285714286;
 	padding: 2px 8px;
 	border-radius: 0.625rem;
 	color: var(--lp-color-text-ui-secondary);
@@ -16,3 +17,4 @@
 	color: var(--lp-color-text-ui-secondary);
 	background-color: var(--lp-color-bg-ui-secondary);
 }
+/* stylelint-enable number-max-precision */
