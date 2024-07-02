@@ -1,5 +1,14 @@
 # @launchpad-ui/icons
 
+## 0.18.6
+
+### Patch Changes
+
+- [#1337](https://github.com/launchdarkly/launchpad-ui/pull/1337) [`388d562`](https://github.com/launchdarkly/launchpad-ui/commit/388d5627583100d04713e76e57b765b9668314d1) Thanks [@Niznikr](https://github.com/Niznikr)! - Add `Breadcrumbs`
+
+- Updated dependencies [[`6ab5b77`](https://github.com/launchdarkly/launchpad-ui/commit/6ab5b776c4dff94ad5be9a6fbf474126ae41c31c)]:
+  - @launchpad-ui/tokens@0.10.0
+
 ## 0.18.5
 
 ### Patch Changes
