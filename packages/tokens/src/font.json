@@ -13,32 +13,29 @@
 	},
 	"fontSize": {
 		"$type": "dimension",
-		"0": {
-			"$value": "{size.10}"
-		},
 		"100": {
-			"$value": "{size.12}"
+			"$value": "{size.11}"
 		},
 		"200": {
-			"$value": "{size.14}"
+			"$value": "{size.13}"
 		},
 		"300": {
-			"$value": "{size.16}"
+			"$value": "{size.15}"
 		},
 		"400": {
-			"$value": "{size.18}"
-		},
-		"500": {
 			"$value": "{size.20}"
 		},
-		"600": {
+		"500": {
 			"$value": "{size.24}"
 		},
-		"700": {
+		"600": {
 			"$value": "{size.32}"
 		},
-		"800": {
+		"700": {
 			"$value": "{size.44}"
+		},
+		"800": {
+			"$value": "3.75rem"
 		}
 	},
 	"fontWeight": {

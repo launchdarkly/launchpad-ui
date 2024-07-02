@@ -107,11 +107,9 @@ export const SingleSelection: Story = {
 		return renderMenu({
 			selectedKeys: selected,
 			onSelectionChange: setSelected,
+			selectionMode: 'single',
 			...args,
 		});
-	},
-	args: {
-		selectionMode: 'single',
 	},
 	...open,
 };
@@ -123,11 +121,9 @@ export const MultipleSelection: Story = {
 		return renderMenu({
 			selectedKeys: selected,
 			onSelectionChange: setSelected,
+			selectionMode: 'multiple',
 			...args,
 		});
-	},
-	args: {
-		selectionMode: 'multiple',
 	},
 	...open,
 };
@@ -189,7 +185,7 @@ export const States: Story = {
 			<MenuTrigger>
 				<Button>Trigger</Button>
 				<Popover>
-					<Menu {...args}>
+					<Menu disabledKeys={new Set(['react-aria-4'])} {...args}>
 						<MenuItem>Resting</MenuItem>
 						<MenuItem>Active</MenuItem>
 						<MenuItem>Focus Visible</MenuItem>
@@ -198,9 +194,6 @@ export const States: Story = {
 				</Popover>
 			</MenuTrigger>
 		);
-	},
-	args: {
-		disabledKeys: new Set(['react-aria-4']),
 	},
 	play: async ({ canvasElement }: { canvasElement: HTMLElement }) => {
 		const canvas = within(canvasElement);

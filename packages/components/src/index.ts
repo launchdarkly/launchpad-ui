@@ -1,5 +1,6 @@
 import './styles/themes.css';
 
+export type { BreadcrumbsProps, BreadcrumbProps } from './Breadcrumbs';
 export type { ButtonProps } from './Button';
 export type { ButtonGroupProps } from './ButtonGroup';
 export type {
@@ -45,6 +46,7 @@ export type { SectionProps } from './Section';
 export type { SelectProps, SelectValueProps } from './Select';
 export type { SeparatorProps } from './Separator';
 export type { SwitchProps } from './Switch';
+export type { TabProps, TabsProps, TabListProps, TabPanelProps } from './Tabs';
 export type { TagGroupProps, TagListProps, TagProps } from './TagGroup';
 export type { TextProps } from './Text';
 export type { TextAreaProps } from './TextArea';
@@ -56,6 +58,7 @@ export type { ToolbarProps } from './Toolbar';
 export type { TooltipProps, TooltipTriggerProps } from './Tooltip';
 export type { forwardRefType } from './utils';
 
+export { Breadcrumbs, Breadcrumb } from './Breadcrumbs';
 export { Button } from './Button';
 export { ButtonGroup } from './ButtonGroup';
 export {
@@ -71,6 +74,7 @@ export {
 } from './Calendar';
 export { Checkbox } from './Checkbox';
 export { CheckboxGroup } from './CheckboxGroup';
+export { Collection } from './Collection';
 export { ComboBox, ComboBoxClearButton } from './ComboBox';
 export { DateField, DateInput, DateSegment, TimeField } from './DateField';
 export { DatePicker, DateRangePicker } from './DatePicker';
@@ -104,6 +108,7 @@ export { Section } from './Section';
 export { Select, SelectValue } from './Select';
 export { Separator } from './Separator';
 export { Switch } from './Switch';
+export { Tab, Tabs, TabList, TabPanel } from './Tabs';
 export { TagGroup, TagList, Tag } from './TagGroup';
 export { Text } from './Text';
 export { TextArea } from './TextArea';

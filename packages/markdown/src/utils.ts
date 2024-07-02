@@ -1,4 +1,5 @@
 import type { Config } from 'isomorphic-dompurify';
+import type { Tokens } from 'marked';
 
 import { sanitize } from 'isomorphic-dompurify';
 import { marked } from 'marked';
@@ -22,8 +23,8 @@ function renderMarkdown(
 		gfm: true,
 		breaks: true,
 	});
-	renderer.link = function (href: string, title: string, text: string) {
-		const link = marked.Renderer.prototype.link.call(this, href, title, text);
+	renderer.link = function ({ href, title, tokens }) {
+		const link = marked.Renderer.prototype.link.call(this, { href, title, tokens } as Tokens.Link);
 		if (!(href.startsWith('https://') || href.startsWith('http://'))) {
 			return link;
 		}

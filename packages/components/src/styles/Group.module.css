@@ -5,6 +5,10 @@
 	overflow: hidden;
 	width: 100%;
 
+	&:has( button[data-rac]) {
+		padding-block: 3px;
+	}
+
 	&[data-focus-within] {
 		outline: 2px solid var(--lp-color-shadow-interactive-focus);
 		outline-offset: -2px;

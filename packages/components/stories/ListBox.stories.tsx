@@ -25,23 +25,21 @@ export default meta;
 type Story = StoryObj<typeof ListBox>;
 
 export const Example: Story = {
-	args: {
-		children: (
-			<>
+	render: (args) => {
+		return (
+			<ListBox aria-label="Items" selectionMode="single" {...args}>
 				<ListBoxItem>Item one</ListBoxItem>
 				<ListBoxItem>Item two</ListBoxItem>
 				<ListBoxItem>Item three</ListBoxItem>
-			</>
-		),
-		'aria-label': 'Items',
-		selectionMode: 'single',
+			</ListBox>
+		);
 	},
 };
 
 export const Grouping: Story = {
-	args: {
-		children: (
-			<>
+	render: (args) => {
+		return (
+			<ListBox aria-label="Items" selectionMode="multiple" {...args}>
 				<Section>
 					<Header>Group 1</Header>
 					<ListBoxItem>Item one</ListBoxItem>
@@ -54,10 +52,8 @@ export const Grouping: Story = {
 					<ListBoxItem>Item five</ListBoxItem>
 					<ListBoxItem>Item six</ListBoxItem>
 				</Section>
-			</>
-		),
-		'aria-label': 'Items',
-		selectionMode: 'multiple',
+			</ListBox>
+		);
 	},
 };
 
@@ -66,23 +62,25 @@ export const Selection: Story = {
 		const [selected, setSelected] = useState<AriaSelection>(new Set(['react-aria-1']));
 
 		return (
-			<ListBox selectedKeys={selected} onSelectionChange={setSelected} {...args}>
+			<ListBox
+				aria-label="Items"
+				selectionMode="single"
+				selectedKeys={selected}
+				onSelectionChange={setSelected}
+				{...args}
+			>
 				<ListBoxItem>Item one</ListBoxItem>
 				<ListBoxItem>Item two</ListBoxItem>
 				<ListBoxItem>Item three</ListBoxItem>
 			</ListBox>
 		);
 	},
-	args: {
-		'aria-label': 'Items',
-		selectionMode: 'single',
-	},
 };
 
 export const Descriptions: Story = {
-	args: {
-		children: (
-			<>
+	render: (args) => {
+		return (
+			<ListBox aria-label="Items" selectionMode="single" {...args}>
 				<ListBoxItem>
 					<Text slot="label">Read</Text>
 					<Text slot="description">Read only</Text>
@@ -95,17 +93,15 @@ export const Descriptions: Story = {
 					<Text slot="label">Admin</Text>
 					<Text slot="description">Full access</Text>
 				</ListBoxItem>
-			</>
-		),
-		'aria-label': 'Items',
-		selectionMode: 'single',
+			</ListBox>
+		);
 	},
 };
 
 export const Icons: Story = {
-	args: {
-		children: (
-			<>
+	render: (args) => {
+		return (
+			<ListBox aria-label="Items" selectionMode="single" {...args}>
 				<ListBoxItem>
 					<Text slot="label">
 						<Icon name="add" size="small" /> Add
@@ -117,26 +113,26 @@ export const Icons: Story = {
 				<ListBoxItem>
 					<Icon name="delete" size="small" /> Delete
 				</ListBoxItem>
-			</>
-		),
-		'aria-label': 'Items',
-		selectionMode: 'single',
+			</ListBox>
+		);
 	},
 };
 
 export const States: Story = {
-	args: {
-		children: (
-			<>
+	render: (args) => {
+		return (
+			<ListBox
+				aria-label="Items"
+				selectionMode="single"
+				disabledKeys={new Set(['react-aria-4'])}
+				{...args}
+			>
 				<ListBoxItem>Resting</ListBoxItem>
 				<ListBoxItem>Active</ListBoxItem>
 				<ListBoxItem>Focus Visible</ListBoxItem>
 				<ListBoxItem>Disabled</ListBoxItem>
-			</>
-		),
-		'aria-label': 'Items',
-		selectionMode: 'single',
-		disabledKeys: new Set(['react-aria-4']),
+			</ListBox>
+		);
 	},
 	play: async ({ canvasElement }: { canvasElement: HTMLElement }) => {
 		const canvas = within(canvasElement);

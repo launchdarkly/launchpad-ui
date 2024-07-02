@@ -12,6 +12,6 @@
 	}
 
 	&[data-empty] button {
-		display: none;
+		visibility: hidden;
 	}
 }

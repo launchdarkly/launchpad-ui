@@ -29,7 +29,6 @@
 }
 
 .cell {
-	padding: var(--lp-spacing-300);
 	cursor: default;
 	outline: none;
 	border: none;
@@ -51,7 +50,7 @@
 
 .range {
 	& td {
-		padding: 2px 0;
+		padding: 1px 0;
 	}
 
 	& .cell {

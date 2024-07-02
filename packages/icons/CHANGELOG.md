@@ -1,5 +1,24 @@
 # @launchpad-ui/icons
 
+## 0.18.5
+
+### Patch Changes
+
+- [#1343](https://github.com/launchdarkly/launchpad-ui/pull/1343) [`3c7a71e`](https://github.com/launchdarkly/launchpad-ui/commit/3c7a71e4fd7ba473d07e47a11c3f91f474900e50) Thanks [@lwonsower](https://github.com/lwonsower)! - Add calculator icon
+
+## 0.18.4
+
+### Patch Changes
+
+- Updated dependencies [[`545560f`](https://github.com/launchdarkly/launchpad-ui/commit/545560fff3fdbfdabfa208e5662c21ae41a76322)]:
+  - @launchpad-ui/tokens@0.9.12
+
+## 0.18.3
+
+### Patch Changes
+
+- [#1338](https://github.com/launchdarkly/launchpad-ui/pull/1338) [`b74c95b`](https://github.com/launchdarkly/launchpad-ui/commit/b74c95ba1fab1d8364777954574ff4cc8fcee3f7) Thanks [@cmaija](https://github.com/cmaija)! - feat(icons): Add created icon
+
 ## 0.18.2
 
 ### Patch Changes

@@ -4,11 +4,13 @@ import type { ForwardedRef } from 'react';
 import type { LinkProps as AriaLinkProps } from 'react-aria-components';
 import type { To } from 'react-router-dom';
 
+import { Icon } from '@launchpad-ui/icons';
 import { cva } from 'class-variance-authority';
 import { forwardRef } from 'react';
-import { Link as AriaLink, composeRenderProps } from 'react-aria-components';
+import { Link as AriaLink, composeRenderProps, useSlottedContext } from 'react-aria-components';
 import { useHref } from 'react-router-dom';
 
+import { LinkContext } from './Breadcrumbs';
 import styles from './styles/Link.module.css';
 
 const link = cva(styles.base, {
@@ -37,15 +39,21 @@ const _Link = (
 ) => {
 	// @ts-expect-error href can be undefined https://react-spectrum.adobe.com/react-aria/Link.html#javascript-handled-links
 	const routerHref = useHref(href);
+	const linkProps = useSlottedContext(LinkContext);
+
 	return (
-		<AriaLink
-			{...props}
-			ref={ref}
-			className={composeRenderProps(props.className, (className, renderProps) =>
-				link({ ...renderProps, variant, className }),
-			)}
-			href={href ? routerHref : undefined}
-		/>
+		<>
+			<AriaLink
+				{...props}
+				{...linkProps}
+				ref={ref}
+				className={composeRenderProps(props.className, (className, renderProps) =>
+					link({ ...renderProps, variant: linkProps?.variant ?? variant, className }),
+				)}
+				href={href ? routerHref : undefined}
+			/>
+			{href && linkProps && <Icon name="slash" className={styles.separator} />}
+		</>
 	);
 };
 
