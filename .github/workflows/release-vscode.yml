@@ -28,11 +28,8 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
-      - name: Build tokens
-        run: build:transform
-
       - name: Build extension
-        run: pnpm --filter=launchpad-design-system package
+        run: pnpm nx run launchpad-design-system:build
 
       - name: Publish extension
         run: pnpm --filter=launchpad-design-system publish

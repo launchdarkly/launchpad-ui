@@ -1,5 +1,6 @@
 {
 	"name": "launchpad-design-system",
+	"private": true,
 	"displayName": "LaunchPad Design System",
 	"version": "0.0.1",
 	"publisher": "launchdarklyofficial",
@@ -23,7 +24,7 @@
 	"main": "dist/client.js",
 	"scripts": {
 		"vscode:prepublish": "esbuild ./src/client.ts ./src/server.ts --bundle --outdir=dist --external:vscode --format=cjs --platform=node",
-		"package": "pnpm dlx @vscode/vsce package --no-dependencies",
+		"build": "pnpm dlx @vscode/vsce package --no-dependencies",
 		"publish": "pnpm dlx @vscode/vsce publish --no-dependencies"
 	},
 	"dependencies": {
