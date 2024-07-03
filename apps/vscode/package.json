@@ -13,7 +13,7 @@
 	"bugs": {
 		"url": "https://github.com/launchdarkly/launchpad-ui/issues"
 	},
-	"description": "LaunchPad Design System VSCode extension",
+	"description": "LaunchPad VS Code extension",
 	"license": "SEE LICENSE IN LICENSE.txt",
 	"keywords": ["launchpad", "launchdarkly"],
 	"engines": {
@@ -25,7 +25,8 @@
 	"scripts": {
 		"vscode:prepublish": "esbuild ./src/client.ts ./src/server.ts --bundle --outdir=dist --external:vscode --format=cjs --platform=node",
 		"build": "pnpm dlx @vscode/vsce package --no-dependencies",
-		"publish": "pnpm dlx @vscode/vsce publish --no-dependencies"
+		"publish": "pnpm dlx @vscode/vsce publish --no-dependencies",
+		"watch": "pnpm vscode:prepublish --watch"
 	},
 	"dependencies": {
 		"@launchpad-ui/tokens": "workspace:~",

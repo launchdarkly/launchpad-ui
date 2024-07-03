@@ -1,0 +1,7 @@
+{
+	"recommendations": [
+		"biomejs.biome",
+		"GitHub.vscode-github-actions",
+		"connor4312.esbuild-problem-matchers"
+	]
+}
