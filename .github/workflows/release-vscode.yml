@@ -10,9 +10,26 @@ on:
 
 jobs:
   release-vscode:
+    # Prevents action from publishing on forks
+    if: github.repository == 'launchdarkly/launchpad-ui'
+    timeout-minutes: 15
     runs-on: ubuntu-latest
-
+    permissions:
+      id-token: write
+      contents: read
     steps:
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          audience: https://github.com/launchdarkly
+          role-to-assume: ${{ vars.AWS_ROLE_ARN }}
+          aws-region: us-east-1
+
+      - uses: dkershner6/aws-ssm-getparameters-action@v2
+        with:
+          parameterPairs: '/production/common/services/vscode_marketplace/vsce_pat = VSCE_PAT'
+          withDecryption: 'true'
+
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
@@ -33,5 +50,3 @@ jobs:
 
       - name: Publish extension
         run: pnpm --filter=launchpad-design-system publish
-        env:
-          VSCE_PAT: ${{ secrets.VSC_TOKEN }}
