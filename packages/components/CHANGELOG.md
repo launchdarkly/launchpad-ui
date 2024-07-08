@@ -1,5 +1,26 @@
 # @launchpad-ui/components
 
+## 0.2.14
+
+### Patch Changes
+
+- [#1337](https://github.com/launchdarkly/launchpad-ui/pull/1337) [`388d562`](https://github.com/launchdarkly/launchpad-ui/commit/388d5627583100d04713e76e57b765b9668314d1) Thanks [@Niznikr](https://github.com/Niznikr)! - Add `Breadcrumbs`
+
+- [#1333](https://github.com/launchdarkly/launchpad-ui/pull/1333) [`1d87de2`](https://github.com/launchdarkly/launchpad-ui/commit/1d87de22383be092db17c73166cbe08512db0ac9) Thanks [@Niznikr](https://github.com/Niznikr)! - Add `Tabs`
+
+- [#1325](https://github.com/launchdarkly/launchpad-ui/pull/1325) [`6ab5b77`](https://github.com/launchdarkly/launchpad-ui/commit/6ab5b776c4dff94ad5be9a6fbf474126ae41c31c) Thanks [@Niznikr](https://github.com/Niznikr)! - Rework typography tokens:
+
+  - Remove font-size-0
+  - font-size-100: 12px -> 11px
+  - font-size-200: 14px -> 13px
+  - font-size-300: 16px -> 15px
+  - Update line-height tokens
+  - Remove small-2-\*
+
+- Updated dependencies [[`388d562`](https://github.com/launchdarkly/launchpad-ui/commit/388d5627583100d04713e76e57b765b9668314d1), [`6ab5b77`](https://github.com/launchdarkly/launchpad-ui/commit/6ab5b776c4dff94ad5be9a6fbf474126ae41c31c)]:
+  - @launchpad-ui/icons@0.18.6
+  - @launchpad-ui/tokens@0.10.0
+
 ## 0.2.13
 
 ### Patch Changes
