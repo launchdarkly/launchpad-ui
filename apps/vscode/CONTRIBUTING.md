@@ -1,4 +1,4 @@
-# Contributing to `LaunchPad Design System` VS Code extension
+# Contributing to the `LaunchPad Design System` VS Code extension
 
 We're happily taking pull requests! Please read the `launchpad-ui` contributing docs for general guidance on contributing to this codebase.
 
