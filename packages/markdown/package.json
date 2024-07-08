@@ -35,7 +35,7 @@
 	"dependencies": {
 		"@launchpad-ui/tokens": "workspace:~",
 		"classix": "2.1.17",
-		"isomorphic-dompurify": "^2.12.0",
+		"isomorphic-dompurify": "^2.13.0",
 		"marked": "^13.0.0"
 	},
 	"peerDependencies": {
