@@ -1,5 +1,57 @@
 # @launchpad-ui/core
 
+## 0.49.24
+
+### Patch Changes
+
+- [#1325](https://github.com/launchdarkly/launchpad-ui/pull/1325) [`6ab5b77`](https://github.com/launchdarkly/launchpad-ui/commit/6ab5b776c4dff94ad5be9a6fbf474126ae41c31c) Thanks [@Niznikr](https://github.com/Niznikr)! - Rework typography tokens:
+
+  - Remove font-size-0
+  - font-size-100: 12px -> 11px
+  - font-size-200: 14px -> 13px
+  - font-size-300: 16px -> 15px
+  - Update line-height tokens
+  - Remove small-2-\*
+
+- Updated dependencies [[`6ab5b77`](https://github.com/launchdarkly/launchpad-ui/commit/6ab5b776c4dff94ad5be9a6fbf474126ae41c31c)]:
+  - @launchpad-ui/counter@0.4.17
+  - @launchpad-ui/modal@0.17.37
+  - @launchpad-ui/table@0.6.18
+  - @launchpad-ui/alert@0.9.22
+  - @launchpad-ui/avatar@0.6.32
+  - @launchpad-ui/banner@0.10.32
+  - @launchpad-ui/button@0.12.19
+  - @launchpad-ui/chip@0.9.32
+  - @launchpad-ui/clipboard@0.11.37
+  - @launchpad-ui/collapsible@0.1.63
+  - @launchpad-ui/drawer@0.5.37
+  - @launchpad-ui/dropdown@0.6.111
+  - @launchpad-ui/filter@0.7.22
+  - @launchpad-ui/form@0.11.22
+  - @launchpad-ui/inline-edit@0.3.22
+  - @launchpad-ui/menu@0.13.22
+  - @launchpad-ui/navigation@0.12.37
+  - @launchpad-ui/pagination@0.4.37
+  - @launchpad-ui/select@0.4.37
+  - @launchpad-ui/snackbar@0.5.20
+  - @launchpad-ui/tag@0.3.37
+  - @launchpad-ui/toast@0.3.33
+  - @launchpad-ui/box@0.1.14
+  - @launchpad-ui/card@0.2.37
+  - @launchpad-ui/columns@0.1.23
+  - @launchpad-ui/data-table@0.2.22
+  - @launchpad-ui/inline@0.1.23
+  - @launchpad-ui/markdown@0.5.19
+  - @launchpad-ui/popover@0.11.24
+  - @launchpad-ui/progress@0.5.48
+  - @launchpad-ui/progress-bubbles@0.7.24
+  - @launchpad-ui/slider@0.5.17
+  - @launchpad-ui/split-button@0.10.22
+  - @launchpad-ui/stack@0.1.23
+  - @launchpad-ui/tab-list@0.5.23
+  - @launchpad-ui/toggle@0.7.23
+  - @launchpad-ui/tooltip@0.9.13
+
 ## 0.49.23
 
 ### Patch Changes

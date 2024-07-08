@@ -1,5 +1,21 @@
 # @launchpad-ui/counter
 
+## 0.4.17
+
+### Patch Changes
+
+- [#1325](https://github.com/launchdarkly/launchpad-ui/pull/1325) [`6ab5b77`](https://github.com/launchdarkly/launchpad-ui/commit/6ab5b776c4dff94ad5be9a6fbf474126ae41c31c) Thanks [@Niznikr](https://github.com/Niznikr)! - Rework typography tokens:
+
+  - Remove font-size-0
+  - font-size-100: 12px -> 11px
+  - font-size-200: 14px -> 13px
+  - font-size-300: 16px -> 15px
+  - Update line-height tokens
+  - Remove small-2-\*
+
+- Updated dependencies [[`6ab5b77`](https://github.com/launchdarkly/launchpad-ui/commit/6ab5b776c4dff94ad5be9a6fbf474126ae41c31c)]:
+  - @launchpad-ui/tokens@0.10.0
+
 ## 0.4.16
 
 ### Patch Changes
