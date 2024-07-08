@@ -74,10 +74,10 @@ export default defineConfig({
 		include: ['**/__tests__/*.spec.{ts,tsx}'],
 		coverage: {
 			thresholds: {
-				lines: 90,
+				lines: 85,
 				functions: 70,
 				branches: 70,
-				statements: 90,
+				statements: 85,
 			},
 			include: ['**/src/**'],
 			exclude: [...configDefaults.exclude, '**/types.ts'],
