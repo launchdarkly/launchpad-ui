@@ -32,10 +32,7 @@ const groupedTokens = Object.entries(tokens).reduce(
 				({
 					label: `lp-${token.name}`,
 					insertText: `var(--lp-${token.name})`,
-					detail:
-						typeof token.$value === 'object'
-							? `${token.$value.fontWeight} ${token.$value.fontSize}/${token.$value.lineHeight} ${token.$value.fontFamily}`
-							: token.$value.toString(),
+					detail: token.$value.toString(),
 					documentation: token.$description,
 					kind: key === 'color' ? CompletionItemKind.Color : CompletionItemKind.Variable,
 				}) satisfies CompletionItem,

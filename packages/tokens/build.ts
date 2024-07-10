@@ -70,10 +70,10 @@ const sd = new StyleDictionary({
 				},
 			],
 		},
-		test: {
+		vscode: {
 			buildPath: 'dist/',
-			transformGroup: 'js',
-			transforms: ['name/kebab'],
+			transformGroup: 'css',
+			transforms: ['name/kebab', 'color/hex'],
 			options: {
 				outputReferences: true,
 				usesDtcg: true,
