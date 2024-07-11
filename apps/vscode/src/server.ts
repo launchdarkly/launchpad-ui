@@ -1,7 +1,6 @@
 import type { TransformedToken } from 'style-dictionary/types';
 import type {
 	ColorInformation,
-	ColorPresentation,
 	CompletionItem,
 	Hover,
 	InitializeResult,
@@ -9,6 +8,7 @@ import type {
 } from 'vscode-languageserver/node';
 
 import tokens from '@launchpad-ui/tokens/dist/tokens.json';
+import { getCSSLanguageService } from 'vscode-css-languageservice/lib/esm/cssLanguageService';
 import { TextDocument } from 'vscode-languageserver-textdocument';
 import {
 	Color,
@@ -18,9 +18,10 @@ import {
 	Range,
 	TextDocumentSyncKind,
 	TextDocuments,
-	TextEdit,
 	createConnection,
 } from 'vscode-languageserver/node';
+
+const cssLanguageService = getCSSLanguageService();
 
 /**
  * Grouped VS Code `CompletionItem`s for LP custom properties
@@ -178,8 +179,18 @@ connection.onDocumentColor(({ textDocument }) => {
 			);
 
 			const token = allTokens.find((token) => token.label === property);
-			if (token?.detail && property.startsWith('lp-color')) {
-				const color = parseColor(token.detail, 0);
+			if (
+				property.startsWith('lp-color') &&
+				token?.detail &&
+				!token?.detail.includes('linear-gradient')
+			) {
+				const rgb = token.detail
+					.trim()
+					.split('(')[1]
+					.split(')')[0]
+					.split(',')
+					.map((item) => Number.parseFloat(item));
+				const color = Color.create(rgb[0] / 255, rgb[1] / 255, rgb[2] / 255, rgb[3] ?? 1);
 				colorInfos.push({ color, range });
 			}
 		}
@@ -188,62 +199,20 @@ connection.onDocumentColor(({ textDocument }) => {
 	return colorInfos;
 });
 
-connection.onColorPresentation(({ color, range }) => {
-	const result: ColorPresentation[] = [];
-	const red256 = Math.round(color.red * 255);
-	const green256 = Math.round(color.green * 255);
-	const blue256 = Math.round(color.blue * 255);
+connection.onColorPresentation(({ textDocument, color, range }) => {
+	const doc = documents.get(textDocument.uri);
 
-	const toTwoDigitHex = (n: number) => {
-		const r = n.toString(16);
-		return r.length !== 2 ? `0${r}` : r;
-	};
+	if (!doc) {
+		return undefined;
+	}
 
-	const label = `#${toTwoDigitHex(red256)}${toTwoDigitHex(green256)}${toTwoDigitHex(blue256)}`;
-	result.push({ label: label, textEdit: TextEdit.replace(range, label) });
-
-	return result;
+	return cssLanguageService.getColorPresentations(
+		doc,
+		cssLanguageService.parseStylesheet(doc),
+		color,
+		range,
+	);
 });
-
-enum CharCode {
-	Digit0 = 48,
-	Digit9 = 57,
-
-	A = 65,
-	F = 70,
-
-	a = 97,
-	f = 102,
-}
-
-const parseHexDigit = (charCode: CharCode) => {
-	if (charCode >= CharCode.Digit0 && charCode <= CharCode.Digit9) {
-		return charCode - CharCode.Digit0;
-	}
-	if (charCode >= CharCode.A && charCode <= CharCode.F) {
-		return charCode - CharCode.A + 10;
-	}
-	if (charCode >= CharCode.a && charCode <= CharCode.f) {
-		return charCode - CharCode.a + 10;
-	}
-	return 0;
-};
-
-const parseColor = (content: string, offset: number) => {
-	const r =
-		(16 * parseHexDigit(content.charCodeAt(offset + 1)) +
-			parseHexDigit(content.charCodeAt(offset + 2))) /
-		255;
-	const g =
-		(16 * parseHexDigit(content.charCodeAt(offset + 3)) +
-			parseHexDigit(content.charCodeAt(offset + 4))) /
-		255;
-	const b =
-		(16 * parseHexDigit(content.charCodeAt(offset + 5)) +
-			parseHexDigit(content.charCodeAt(offset + 6))) /
-		255;
-	return Color.create(r, g, b, 1);
-};
 
 // Make the text document manager listen on the connection
 // for open, change and close text document events

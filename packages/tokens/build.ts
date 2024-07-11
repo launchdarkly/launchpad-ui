@@ -73,7 +73,7 @@ const sd = new StyleDictionary({
 		vscode: {
 			buildPath: 'dist/',
 			transformGroup: 'css',
-			transforms: ['name/kebab', 'color/hex'],
+			transforms: ['name/kebab', 'color/rgb'],
 			options: {
 				outputReferences: true,
 				usesDtcg: true,
