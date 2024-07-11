@@ -8,7 +8,7 @@
 }
 
 .legend {
-	font: var(--lp-label-1-medium);
+	font: var(--lp-text-label-1-medium);
 	padding: 0;
 	display: contents;
 }

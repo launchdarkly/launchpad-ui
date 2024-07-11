@@ -12,19 +12,19 @@
 		margin-bottom: var(--lp-spacing-500);
 
 		& h2 {
-			font: var(--lp-heading-1-semibold);
+			font: var(--lp-text-heading-1-semibold);
 			flex: 1;
 			text-align: center;
 		}
 	}
 
 	& th {
-		font: var(--lp-label-2-medium);
+		font: var(--lp-text-label-2-medium);
 	}
 
 	& [slot='errorMessage'] {
 		color: var(--lp-color-text-feedback-error);
-		font: var(--lp-body-2-regular);
+		font: var(--lp-text-body-2-regular);
 	}
 }
 

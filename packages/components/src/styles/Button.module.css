@@ -1,5 +1,5 @@
 .base {
-	font: var(--lp-label-1-medium);
+	font: var(--lp-text-label-1-medium);
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
@@ -31,7 +31,7 @@
 }
 
 .small {
-	font: var(--lp-label-2-medium);
+	font: var(--lp-text-label-2-medium);
 	padding: 1px var(--lp-spacing-300);
 }
 

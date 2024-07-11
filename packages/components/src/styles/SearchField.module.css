@@ -1,7 +1,7 @@
 .search {
 	display: flex;
 	flex-direction: column;
-	font: var(--lp-label-1-regular);
+	font: var(--lp-text-label-1-regular);
 	gap: var(--lp-spacing-200);
 
 	& input[data-rac] {

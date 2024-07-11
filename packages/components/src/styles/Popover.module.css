@@ -22,7 +22,7 @@
 	will-change: transform, opacity;
 
 	& [slot='title'] {
-		font: var(--lp-heading-2-medium);
+		font: var(--lp-text-heading-2-medium);
 	}
 
 	& .arrow svg {
