@@ -1,5 +1,11 @@
 # @launchpad-ui/components
 
+## 0.2.15
+
+### Patch Changes
+
+- [#1356](https://github.com/launchdarkly/launchpad-ui/pull/1356) [`9625735`](https://github.com/launchdarkly/launchpad-ui/commit/96257355a11b8f55dcb5b6dd438a7f4b60b6dee9) Thanks [@Niznikr](https://github.com/Niznikr)! - Ensure toasts dismiss with reduced motion
+
 ## 0.2.14
 
 ### Patch Changes
