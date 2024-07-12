@@ -10,7 +10,7 @@
 		"check": "biome check . --write",
 		"chromatic": "chromatic",
 		"clean": "nx run-many --target=clean --all",
-		"e2e:a11y": "STORYBOOK_URL=http://127.0.0.1:8080/ pnpm playwright test a11y",
+		"e2e:a11y": "STORYBOOK_URL=http://127.0.0.1:8080/ pnpm playwright test",
 		"generate": "plop",
 		"graph": "nx affected:graph",
 		"lint:packages": "pnpm build:transform && nx affected --target=lint",
