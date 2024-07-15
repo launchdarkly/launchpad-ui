@@ -46,21 +46,16 @@ const groupedTokens = Object.entries(tokens).reduce(
 const allTokens: CompletionItem[] = Object.values(groupedTokens).flat();
 
 const groupPatterns = {
-	body: /font/,
 	borderRadius: /border-radius/,
 	borderWidth: /border|border-width/,
-	code: /font/,
 	color: /color|background|shadow|border|outline|fill/,
-	display: /font/,
 	duration: /animation-duration|transition/,
 	fontFamily: /font-family/,
 	fontSize: /font-size/,
-	heading: /font/,
-	label: /font/,
 	lineHeight: /line-height/,
 	size: /height|min-height|max-height|width|min-width|max-width/,
-	small: /font/,
 	spacing: /margin|padding|gap|top|left|right|bottom/,
+	text: /font/,
 	zIndex: /z-index/,
 };
 
