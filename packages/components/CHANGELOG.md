@@ -1,5 +1,15 @@
 # @launchpad-ui/components
 
+## 0.2.16
+
+### Patch Changes
+
+- [#1355](https://github.com/launchdarkly/launchpad-ui/pull/1355) [`8c68adb`](https://github.com/launchdarkly/launchpad-ui/commit/8c68adbfeeda476c7e75f517cb9ca76d15695438) Thanks [@Niznikr](https://github.com/Niznikr)! - Add prefix `text` to typography tokens
+
+- Updated dependencies [[`8c68adb`](https://github.com/launchdarkly/launchpad-ui/commit/8c68adbfeeda476c7e75f517cb9ca76d15695438)]:
+  - @launchpad-ui/tokens@0.11.0
+  - @launchpad-ui/icons@0.18.7
+
 ## 0.2.15
 
 ### Patch Changes
