@@ -48,7 +48,7 @@
 	box-shadow: 0 0 6px 0 #939598;
 
 	& [slot='title'] {
-		font: var(--lp-heading-1-semibold);
+		font: var(--lp-text-heading-1-semibold);
 		flex-grow: 1;
 	}
 
@@ -73,7 +73,7 @@
 	}
 
 	& [slot='subtitle'] {
-		font: var(--lp-body-1-regular);
+		font: var(--lp-text-body-1-regular);
 		color: var(--lp-color-text-ui-secondary);
 		flex-basis: 100%;
 	}

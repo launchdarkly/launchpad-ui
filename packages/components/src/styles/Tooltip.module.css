@@ -12,7 +12,7 @@
 
 .tooltip {
 	isolation: isolate;
-	font: var(--lp-body-2-regular);
+	font: var(--lp-text-body-2-regular);
 	padding: var(--lp-spacing-200) var(--lp-spacing-300);
 	display: flex;
 	justify-content: center;

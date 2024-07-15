@@ -1,5 +1,5 @@
 .base {
-	font: var(--lp-body-2-regular);
+	font: var(--lp-text-body-2-regular);
 	color: var(--lp-color-text-ui-primary-base);
 	padding: 5px var(--lp-spacing-300);
 	border-radius: var(--lp-border-radius-medium);

@@ -58,7 +58,7 @@
 
 .toast {
 	display: inline-flex;
-	font: var(--lp-body-1-regular);
+	font: var(--lp-text-body-1-regular);
 	background: var(--lp-color-bg-feedback-primary);
 	color: var(--lp-color-white-950);
 	border-radius: var(--lp-border-radius-regular);
@@ -133,11 +133,11 @@
 }
 
 .title {
-	font: var(--lp-body-1-semibold);
+	font: var(--lp-text-body-1-semibold);
 }
 
 .description {
-	font: var(--lp-body-2-regular);
+	font: var(--lp-text-body-2-regular);
 	color: var(--lp-color-text-ui-secondary);
 
 	& a {
