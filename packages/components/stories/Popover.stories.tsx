@@ -11,6 +11,7 @@ import {
 	HoverTrigger,
 	OverlayArrow,
 	Popover,
+	Pressable,
 } from '../src';
 
 const meta: Meta<typeof Popover> = {
@@ -116,4 +117,18 @@ export const Hover: Story = {
 		const body = canvasElement.ownerDocument.body;
 		await expect(await within(body).findByRole('dialog'));
 	},
+};
+
+export const CustomTrigger: Story = {
+	render: (args) => {
+		return (
+			<DialogTrigger>
+				<Pressable>Trigger</Pressable>
+				<Popover {...args}>
+					<Dialog>Message</Dialog>
+				</Popover>
+			</DialogTrigger>
+		);
+	},
+	play,
 };
