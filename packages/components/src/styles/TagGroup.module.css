@@ -45,11 +45,11 @@
 }
 
 .small {
-	font: var(--lp-label-2-medium);
+	font: var(--lp-text-label-2-medium);
 }
 
 .medium {
-	font: var(--lp-label-1-medium);
+	font: var(--lp-text-label-1-medium);
 }
 
 .default {

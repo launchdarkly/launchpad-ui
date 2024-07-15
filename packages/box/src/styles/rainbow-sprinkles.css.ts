@@ -4,15 +4,7 @@ import { flatten } from 'flat';
 import { createRainbowSprinkles, defineProperties } from 'rainbow-sprinkles';
 
 const { bg, border, fill, shadow, text, gradient, ...global } = vars.color;
-const { body, heading, small, label, code, display } = vars;
-const typography = {
-	body,
-	heading,
-	small,
-	label,
-	code,
-	display,
-};
+const { text: typography } = vars;
 
 type FlattenObjectKeys<T extends Record<string, unknown>, Key = keyof T> = Key extends string
 	? T[Key] extends Record<string, unknown>

@@ -68,7 +68,7 @@ const render: ArgsStoryFn<ReactRenderer> = () => (
 					<Icon name={item} size="medium" />
 				</div>
 				<CopyToClipboard text={item} asChild={true}>
-					<span style={{ font: 'var(--lp-code-2-regular)' }}>{item}</span>
+					<span style={{ font: 'var(--lp-text-code-2-regular)' }}>{item}</span>
 				</CopyToClipboard>
 			</div>
 		))}

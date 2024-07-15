@@ -5,7 +5,7 @@
 	color: var(--lp-color-text-ui-primary-base);
 	cursor: pointer;
 	display: block;
-	font: var(--lp-label-1-medium);
+	font: var(--lp-text-label-1-medium);
 	outline: none;
 	overflow: hidden;
 	padding-inline: var(--lp-spacing-300);
@@ -72,7 +72,7 @@
 }
 
 .Menu-item--header {
-	font: var(--lp-small-1-regular);
+	font: var(--lp-text-small-1-regular);
 	color: var(--lp-color-text-ui-tertiary);
 }
 

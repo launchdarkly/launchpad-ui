@@ -1,5 +1,15 @@
 # @launchpad-ui/form
 
+## 0.11.23
+
+### Patch Changes
+
+- Updated dependencies [[`8c68adb`](https://github.com/launchdarkly/launchpad-ui/commit/8c68adbfeeda476c7e75f517cb9ca76d15695438)]:
+  - @launchpad-ui/tokens@0.11.0
+  - @launchpad-ui/button@0.12.20
+  - @launchpad-ui/icons@0.18.7
+  - @launchpad-ui/tooltip@0.9.14
+
 ## 0.11.22
 
 ### Patch Changes
@@ -607,7 +617,7 @@
   root.render(
     <IconContext.Provider value={{ path: icons }}>
       <App />
-    </IconContext.Provider>,
+    </IconContext.Provider>
   );
   ```
 

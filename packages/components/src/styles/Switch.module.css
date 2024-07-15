@@ -35,7 +35,7 @@
 .label {
 	position: absolute;
 	right: var(--lp-spacing-300);
-	font: var(--lp-body-2-semibold);
+	font: var(--lp-text-body-2-semibold);
 	color: var(--lp-color-text-ui-primary-base);
 }
 

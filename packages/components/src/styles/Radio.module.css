@@ -21,7 +21,7 @@
 	flex-direction: row;
 	align-items: center;
 	gap: var(--lp-spacing-200);
-	font: var(--lp-label-1-regular);
+	font: var(--lp-text-label-1-regular);
 
 	&[data-focus-visible] {
 		& .circle {

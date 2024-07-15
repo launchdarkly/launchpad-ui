@@ -1,5 +1,5 @@
 .header {
-	font: var(--lp-label-2-medium);
+	font: var(--lp-text-label-2-medium);
 	color: var(--lp-color-text-ui-tertiary);
 	padding-inline: var(--lp-spacing-200);
 }

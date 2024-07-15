@@ -36,6 +36,7 @@
 	gap: var(--lp-spacing-600);
 	outline: none;
 	z-index: var(--lp-z-index-700);
+	pointer-events: none;
 }
 
 .bottom {
@@ -56,13 +57,14 @@
 }
 
 .toast {
-	display: flex;
-	font: var(--lp-body-1-regular);
+	display: inline-flex;
+	font: var(--lp-text-body-1-regular);
 	background: var(--lp-color-bg-feedback-primary);
 	color: var(--lp-color-white-950);
 	border-radius: var(--lp-border-radius-regular);
 	box-shadow: 0 0 1px 0 rgb(0 0 0 / 0.25), 0 1px 2px 0 rgb(0 0 0 / 0.14), 0 4px 4px 0
 		rgb(0 0 0 / 0.06);
+	pointer-events: all;
 
 	& .icon {
 		transform: translateY(2px);
@@ -131,11 +133,11 @@
 }
 
 .title {
-	font: var(--lp-body-1-semibold);
+	font: var(--lp-text-body-1-semibold);
 }
 
 .description {
-	font: var(--lp-body-2-regular);
+	font: var(--lp-text-body-2-regular);
 	color: var(--lp-color-text-ui-secondary);
 
 	& a {
