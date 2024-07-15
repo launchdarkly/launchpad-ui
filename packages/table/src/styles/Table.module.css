@@ -1,145 +1,145 @@
 @import '../../../tokens/dist/media-queries.css';
 
 .Table {
-  --one-of-twelve: 8.333%;
-  --two-of-twelve: 16.667%;
-  --three-of-twelve: 25%;
-  --four-of-twelve: 33.333%;
-  --five-of-twelve: 41.667%;
-  --six-of-twelve: 50%;
+	--one-of-twelve: 8.333%;
+	--two-of-twelve: 16.667%;
+	--three-of-twelve: 25%;
+	--four-of-twelve: 33.333%;
+	--five-of-twelve: 41.667%;
+	--six-of-twelve: 50%;
 
-  table-layout: fixed;
-  border-collapse: collapse;
+	table-layout: fixed;
+	border-collapse: collapse;
 }
 
 .Table:not(.Table--auto) {
-  width: 100%;
+	width: 100%;
 }
 
 .Table--compact {
-  font-size: 0.8125rem;
+	font-size: 0.8125rem;
 }
 
 .Table-header {
-  border-bottom: 1px solid var(--lp-color-border-ui-primary);
+	border-bottom: 1px solid var(--lp-color-border-ui-primary);
 }
 
 .Table-cell {
-  padding: 0.625rem 1.25rem;
+	padding: 0.625rem 1.25rem;
 }
 
 .Table-cell--left {
-  text-align: left;
+	text-align: left;
 }
 
 .Table-cell--center {
-  text-align: center;
+	text-align: center;
 }
 
 .Table-cell--right {
-  text-align: right;
+	text-align: right;
 }
 
 .Table-cell--justify {
-  text-align: justify;
+	text-align: justify;
 }
 
 .Table-cell--char {
-  text-align: '.';
+	text-align: '.';
 }
 
 .Table--compact .Table-cell {
-  padding: 0.3125rem 0.625rem;
+	padding: 0.3125rem 0.625rem;
 }
 
 .Table-cell--head {
-  white-space: nowrap;
-  color: var(--lp-color-text-ui-secondary);
-  font-weight: var(--lp-font-weight-semibold);
+	white-space: nowrap;
+	color: var(--lp-color-text-ui-secondary);
+	font-weight: var(--lp-font-weight-semibold);
 }
 
 @media (--tablet) {
-  .Table-cell--head {
-    white-space: normal;
-  }
+	.Table-cell--head {
+		white-space: normal;
+	}
 }
 
 .Table--resourceTable .Table-cell--head {
-  background: var(--lp-color-bg-ui-secondary);
-  color: var(--lp-color-text-ui-secondary);
-  padding-top: 0.3125rem;
-  padding-bottom: 0.3125rem;
+	background: var(--lp-color-bg-ui-secondary);
+	color: var(--lp-color-text-ui-secondary);
+	padding-top: 0.3125rem;
+	padding-bottom: 0.3125rem;
 }
 
 .TableHeader-title {
-  font-size: var(--lp-font-size-500);
-  font-weight: var(--lp-font-weight-regular);
-  line-height: 1.5;
-  display: flex;
-  align-items: center;
+	font-size: var(--lp-font-size-400);
+	font-weight: var(--lp-font-weight-regular);
+	line-height: 1.5;
+	display: flex;
+	align-items: center;
 }
 
 .TableHeader-description {
-  font-size: 0.8125rem;
+	font-size: 0.8125rem;
 }
 
 .TableHeader-counter {
-  margin-top: -3px;
+	margin-top: -3px;
 }
 
 .TableHeaderToolbar-secondRow {
-  padding-bottom: 0.46875rem;
-  display: flex;
-  flex-wrap: wrap;
+	padding-bottom: 0.46875rem;
+	display: flex;
+	flex-wrap: wrap;
 }
 
 .Table--resourceTable .Table-row,
 .Table-row--top {
-  vertical-align: top;
+	vertical-align: top;
 }
 
 .Table-row--middle,
 .Table--resourceTable .Table-row--middle,
 .Table--resourceTable .Table-row .Table-cell--head {
-  vertical-align: middle;
+	vertical-align: middle;
 }
 
 .Table-row--bottom,
 .Table--resourceTable .Table-row--bottom {
-  vertical-align: bottom;
+	vertical-align: bottom;
 }
 
 .Table-body .Table-row + .Table-row {
-  border-top: 1px solid var(--lp-color-border-ui-secondary);
+	border-top: 1px solid var(--lp-color-border-ui-secondary);
 }
 
 /* Used for "smallest possible table column". Table cell will expand to fit content. */
 /* stylelint-disable selector-class-pattern */
 .Table-cell--width-zero {
-  width: 0;
+	width: 0;
 }
 
 .Table-cell--width-one-of-twelve {
-  width: var(--one-of-twelve);
+	width: var(--one-of-twelve);
 }
 
 .Table-cell--width-two-of-twelve {
-  width: var(--two-of-twelve);
+	width: var(--two-of-twelve);
 }
 
 .Table-cell--width-three-of-twelve {
-  width: var(--three-of-twelve);
+	width: var(--three-of-twelve);
 }
 
 .Table-cell--width-four-of-twelve {
-  width: var(--four-of-twelve);
+	width: var(--four-of-twelve);
 }
 
 .Table-cell--width-five-of-twelve {
-  width: var(--five-of-twelve);
+	width: var(--five-of-twelve);
 }
 
 .Table-cell--width-six-of-twelve {
-  width: var(--six-of-twelve);
+	width: var(--six-of-twelve);
 }
 /* stylelint-enable selector-class-pattern */

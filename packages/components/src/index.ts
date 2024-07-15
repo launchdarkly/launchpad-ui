@@ -1,10 +1,22 @@
 import './styles/themes.css';
 
+export type { BreadcrumbsProps, BreadcrumbProps } from './Breadcrumbs';
 export type { ButtonProps } from './Button';
 export type { ButtonGroupProps } from './ButtonGroup';
+export type {
+	CalendarProps,
+	CalendarCellProps,
+	CalendarGridProps,
+	CalendarGridBodyProps,
+	CalendarGridHeaderProps,
+	CalendarHeaderCellProps,
+	RangeCalendarProps,
+} from './Calendar';
 export type { CheckboxProps } from './Checkbox';
 export type { CheckboxGroupProps } from './CheckboxGroup';
 export type { ComboBoxProps } from './ComboBox';
+export type { DateFieldProps, DateInputProps, DateSegmentProps, TimeFieldProps } from './DateField';
+export type { DatePickerProps, DateRangePickerProps } from './DatePicker';
 export type { DialogProps, DialogTriggerProps } from './Dialog';
 export type { FieldErrorProps } from './FieldError';
 export type { FieldGroupProps } from './FieldGroup';
@@ -33,6 +45,7 @@ export type { SectionProps } from './Section';
 export type { SelectProps, SelectValueProps } from './Select';
 export type { SeparatorProps } from './Separator';
 export type { SwitchProps } from './Switch';
+export type { TabProps, TabsProps, TabListProps, TabPanelProps } from './Tabs';
 export type { TagGroupProps, TagListProps, TagProps } from './TagGroup';
 export type { TextProps } from './Text';
 export type { TextAreaProps } from './TextArea';
@@ -43,11 +56,24 @@ export type { ToggleIconButtonProps } from './ToggleIconButton';
 export type { TooltipProps, TooltipTriggerProps } from './Tooltip';
 export type { forwardRefType } from './utils';
 
+export { Breadcrumbs, Breadcrumb } from './Breadcrumbs';
 export { Button } from './Button';
 export { ButtonGroup } from './ButtonGroup';
+export {
+	Calendar,
+	CalendarCell,
+	CalendarGrid,
+	CalendarGridBody,
+	CalendarGridHeader,
+	CalendarHeaderCell,
+	RangeCalendar,
+} from './Calendar';
 export { Checkbox } from './Checkbox';
 export { CheckboxGroup } from './CheckboxGroup';
+export { Collection } from './Collection';
 export { ComboBox, ComboBoxClearButton } from './ComboBox';
+export { DateField, DateInput, DateSegment, TimeField } from './DateField';
+export { DatePicker, DateRangePicker } from './DatePicker';
 export { Dialog, DialogTrigger } from './Dialog';
 export { FieldError } from './FieldError';
 export { FieldGroup } from './FieldGroup';
@@ -66,7 +92,7 @@ export { ExternalLinkIconButton, LinkIconButton } from './LinkIconButton';
 export { ListBox, ListBoxItem } from './ListBox';
 export { Menu, MenuItem, MenuTrigger, SubmenuTrigger } from './Menu';
 export { Modal, ModalOverlay } from './Modal';
-export { OverlayArrow, Popover } from './Popover';
+export { HoverTrigger, OverlayArrow, Popover } from './Popover';
 export { Pressable } from './Pressable';
 export { ProgressBar } from './ProgressBar';
 export { Radio } from './Radio';
@@ -79,6 +105,7 @@ export { Section } from './Section';
 export { Select, SelectValue } from './Select';
 export { Separator } from './Separator';
 export { Switch } from './Switch';
+export { Tab, Tabs, TabList, TabPanel } from './Tabs';
 export { TagGroup, TagList, Tag } from './TagGroup';
 export { Text } from './Text';
 export { TextArea } from './TextArea';

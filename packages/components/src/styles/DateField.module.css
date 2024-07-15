@@ -1,0 +1,39 @@
+.field {
+	display: flex;
+	flex-direction: column;
+	font: var(--lp-text-label-1-regular);
+	gap: var(--lp-spacing-200);
+}
+
+.input {
+	display: flex;
+	flex: 1;
+
+	&[slot='start'] {
+		flex: none;
+	}
+}
+
+.segment {
+	padding: 0 0.125rem;
+	outline: none;
+
+	&[data-placeholder] {
+		color: var(--lp-color-text-field-placeholder);
+	}
+
+	&:is([data-focus-visible], [data-focused]) {
+		background-color: var(--lp-color-shadow-interactive-focus);
+		color: var(--lp-color-text-ui-primary-inverted);
+		caret-color: transparent;
+		border-radius: var(--lp-border-radius-regular);
+	}
+
+	&[data-type='literal'] {
+		padding: 0;
+	}
+
+	&:is([data-type='hour'][aria-valuetext='Empty'], [data-type='minute'][aria-valuetext='Empty']) {
+		letter-spacing: 1px;
+	}
+}

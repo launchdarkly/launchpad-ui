@@ -1,17 +1,17 @@
 .search {
-  display: flex;
-  flex-direction: column;
-  font: var(--lp-label-1-regular);
-  gap: var(--lp-spacing-200);
+	display: flex;
+	flex-direction: column;
+	font: var(--lp-text-label-1-regular);
+	gap: var(--lp-spacing-200);
 
-  & input[data-rac] {
-    &::-webkit-search-cancel-button,
-    &::-webkit-search-decoration {
-      appearance: none;
-    }
-  }
+	& input[data-rac] {
+		&::-webkit-search-cancel-button,
+		&::-webkit-search-decoration {
+			appearance: none;
+		}
+	}
 
-  &[data-empty] button {
-    display: none;
-  }
+	&[data-empty] button {
+		visibility: hidden;
+	}
 }

@@ -4,7 +4,7 @@ import { RadioCard } from '../src/RadioCard';
 
 export default {
 	component: RadioCard,
-	title: 'Legacy/Sunset/Card/RadioCard',
+	title: 'Legacy/Deprecated/Card/RadioCard',
 	description: 'A radio button with a label and optional image and subtext.',
 	decorators: [
 		(Story: StoryFn) => (

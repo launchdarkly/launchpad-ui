@@ -57,6 +57,7 @@ const ProgressBubbles = ({
 			const hideLabel = showCurrentLabelOnly && idx !== currentBubble;
 
 			const bubble = (
+				// biome-ignore lint/correctness/useJsxKeyInIterable: <explanation>
 				<div
 					className={cx(
 						styles['ProgressBubbles-icon'],

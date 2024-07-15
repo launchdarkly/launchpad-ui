@@ -23,6 +23,11 @@ type ToastCenterProps = {
 	onDismiss(toastId: string): void;
 };
 
+/**
+ * @deprecated use `ToastContainer` from `@launchpad-ui/components` instead
+ *
+ * https://launchpad.launchdarkly.com/?path=/docs/components-status-toast--docs
+ */
 const ToastCenter = ({ toasts, onDismiss, className }: ToastCenterProps) => {
 	const classes = cx(styles.ToastCenter, className);
 

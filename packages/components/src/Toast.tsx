@@ -8,11 +8,12 @@ import { useToast, useToastRegion } from '@react-aria/toast';
 import { mergeProps } from '@react-aria/utils';
 import { ToastQueue as AriaToastQueue, useToastQueue } from '@react-stately/toast';
 import { cva } from 'class-variance-authority';
-import { cloneElement, useRef } from 'react';
+import { cloneElement, useEffect, useRef } from 'react';
 import { createPortal } from 'react-dom';
 
 import { IconButton } from './IconButton';
 import styles from './styles/Toast.module.css';
+import { useMedia } from './utils';
 
 const region = cva(styles.region, {
 	variants: {
@@ -113,12 +114,20 @@ const Toast = <T extends ToastValue | SnackbarValue>({
 		state,
 		ref,
 	);
+	const useMotion = useMedia('(prefers-reduced-motion: no-preference)');
 
 	const content: IconVariants & Partial<SnackbarContent & ToastContent> = props.toast.content;
 	const { children, status, title, description, action } = content;
 	const cta =
 		action &&
 		cloneElement(action, mergeProps(action.props, { onPress: () => state.close(props.toast.key) }));
+
+	useEffect(() => {
+		// Ensure toast is removed with reduced motion after close is clicked or when timeout expires
+		if (useMotion === false && props.toast.animation === 'exiting') {
+			state.remove(props.toast.key);
+		}
+	}, [useMotion, props.toast, state]);
 
 	return (
 		<div
@@ -151,6 +160,7 @@ const Toast = <T extends ToastValue | SnackbarValue>({
 			<IconButton
 				aria-label="Close"
 				{...closeButtonProps}
+				/* biome-ignore lint/correctness/noChildrenProp: <explanation> */
 				children={undefined}
 				icon="cancel"
 				variant="minimal"

@@ -1,6 +1,6 @@
 {
 	"name": "@launchpad-ui/focus-trap",
-	"version": "0.1.19",
+	"version": "0.1.20",
 	"status": "beta",
 	"publishConfig": {
 		"access": "public"
@@ -32,7 +32,7 @@
 		"test": "vitest run --coverage"
 	},
 	"dependencies": {
-		"@react-aria/focus": "3.17.0"
+		"@react-aria/focus": "3.17.1"
 	},
 	"peerDependencies": {
 		"react": "18.3.1",

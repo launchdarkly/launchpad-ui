@@ -5,7 +5,16 @@ import { Icon } from '@launchpad-ui/icons';
 import { expect, userEvent, within } from '@storybook/test';
 
 import { allModes } from '../../../.storybook/modes';
-import { Button, Dialog, DialogTrigger, Heading, IconButton, Modal, ModalOverlay } from '../src';
+import {
+	Button,
+	Dialog,
+	DialogTrigger,
+	Heading,
+	IconButton,
+	Modal,
+	ModalOverlay,
+	Text,
+} from '../src';
 
 const meta: Meta<typeof Modal> = {
 	component: Modal,
@@ -57,6 +66,7 @@ const renderModal = (args: Story['args'], destructive = false) => (
 									variant="minimal"
 									onPress={close}
 								/>
+								<Text slot="subtitle">Subtitle</Text>
 							</div>
 							<div slot="body">Body text</div>
 							<div slot="footer">

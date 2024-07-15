@@ -1,5 +1,36 @@
 # @launchpad-ui/tokens
 
+## 0.11.0
+
+### Minor Changes
+
+- [#1355](https://github.com/launchdarkly/launchpad-ui/pull/1355) [`8c68adb`](https://github.com/launchdarkly/launchpad-ui/commit/8c68adbfeeda476c7e75f517cb9ca76d15695438) Thanks [@Niznikr](https://github.com/Niznikr)! - Add prefix `text` to typography tokens
+
+## 0.10.0
+
+### Minor Changes
+
+- [#1325](https://github.com/launchdarkly/launchpad-ui/pull/1325) [`6ab5b77`](https://github.com/launchdarkly/launchpad-ui/commit/6ab5b776c4dff94ad5be9a6fbf474126ae41c31c) Thanks [@Niznikr](https://github.com/Niznikr)! - Rework typography tokens:
+
+  - Remove font-size-0
+  - font-size-100: 12px -> 11px
+  - font-size-200: 14px -> 13px
+  - font-size-300: 16px -> 15px
+  - Update line-height tokens
+  - Remove small-2-\*
+
+## 0.9.12
+
+### Patch Changes
+
+- [#1339](https://github.com/launchdarkly/launchpad-ui/pull/1339) [`545560f`](https://github.com/launchdarkly/launchpad-ui/commit/545560fff3fdbfdabfa208e5662c21ae41a76322) Thanks [@kcacosta](https://github.com/kcacosta)! - Add code color aliases
+
+## 0.9.11
+
+### Patch Changes
+
+- [#1313](https://github.com/launchdarkly/launchpad-ui/pull/1313) [`bf904e8`](https://github.com/launchdarkly/launchpad-ui/commit/bf904e8ee2c27ee73d813f539cc5dfdf682e92fc) Thanks [@Niznikr](https://github.com/Niznikr)! - Update style-dictionary to v4
+
 ## 0.9.10
 
 ### Patch Changes

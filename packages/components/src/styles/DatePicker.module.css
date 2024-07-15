@@ -1,0 +1,7 @@
+.picker {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: var(--lp-spacing-200);
+	margin-bottom: var(--lp-spacing-300);
+}

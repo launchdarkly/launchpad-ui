@@ -1,0 +1,17 @@
+{
+	"viewport": {
+		"$type": "dimension",
+		"mobile": {
+			"$value": "{size.0}"
+		},
+		"tablet": {
+			"$value": "740px"
+		},
+		"desktop": {
+			"$value": "992px"
+		},
+		"wide": {
+			"$value": "{size.1200}"
+		}
+	}
+}

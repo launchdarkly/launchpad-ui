@@ -1,6 +1,6 @@
 {
 	"name": "@launchpad-ui/clipboard",
-	"version": "0.11.29",
+	"version": "0.11.38",
 	"status": "beta",
 	"publishConfig": {
 		"access": "public"
@@ -36,8 +36,8 @@
 		"@launchpad-ui/icons": "workspace:~",
 		"@launchpad-ui/tokens": "workspace:~",
 		"@launchpad-ui/tooltip": "workspace:~",
-		"@react-aria/live-announcer": "3.3.3",
-		"@radix-ui/react-slot": "1.0.2",
+		"@react-aria/live-announcer": "3.3.4",
+		"@radix-ui/react-slot": "1.1.0",
 		"classix": "2.1.17"
 	},
 	"peerDependencies": {

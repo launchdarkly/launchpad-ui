@@ -13,6 +13,11 @@ export type RadioCardProps = RadioProps & {
 	altText?: string;
 };
 
+/**
+ * @deprecated use a custom `RadioGroup` from `react-aria-components` instead
+ *
+ * https://react-spectrum.adobe.com/react-aria/examples/shipping-radio.html
+ */
 export const RadioCard = ({
 	label,
 	subText,

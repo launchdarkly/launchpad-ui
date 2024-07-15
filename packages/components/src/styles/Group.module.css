@@ -1,22 +1,27 @@
 .group {
-  display: flex;
-  align-items: center;
-  gap: var(--lp-spacing-300);
-  overflow: hidden;
-  width: 100%;
+	display: flex;
+	align-items: center;
+	gap: var(--lp-spacing-300);
+	overflow: hidden;
+	width: 100%;
 
-  &[data-focus-within] {
-    outline: 2px solid var(--lp-color-shadow-interactive-focus);
-    outline-offset: -2px;
-    z-index: 1;
-  }
+	&:has( button[data-rac]) {
+		padding-block: 3px;
+	}
 
-  & input[data-rac] {
-    padding: 0;
-    outline: none;
-    border: none;
-    border-radius: unset;
-    background-color: inherit;
-    cursor: inherit;
-  }
+	&[data-focus-within] {
+		outline: 2px solid var(--lp-color-shadow-interactive-focus);
+		outline-offset: -2px;
+		z-index: 1;
+	}
+
+	& input[data-rac],
+	[role='presentation'][data-rac] {
+		padding: 0;
+		outline: none;
+		border: none;
+		border-radius: unset;
+		background-color: inherit;
+		cursor: inherit;
+	}
 }

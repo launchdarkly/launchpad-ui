@@ -3,12 +3,21 @@ import type { PlayFunction } from '@storybook/types';
 
 import { expect, userEvent, within } from '@storybook/test';
 
-import { Button, Dialog, DialogTrigger, Heading, OverlayArrow, Popover, Pressable } from '../src';
+import {
+	Button,
+	Dialog,
+	DialogTrigger,
+	Heading,
+	HoverTrigger,
+	OverlayArrow,
+	Popover,
+	Pressable,
+} from '../src';
 
 const meta: Meta<typeof Popover> = {
 	component: Popover,
 	// @ts-ignore
-	subcomponents: { OverlayArrow, DialogTrigger },
+	subcomponents: { OverlayArrow, DialogTrigger, HoverTrigger },
 	title: 'Components/Overlays/Popover',
 	parameters: {
 		status: {
@@ -88,6 +97,26 @@ export const WithHeading: Story = {
 		);
 	},
 	play,
+};
+
+export const Hover: Story = {
+	render: (args) => {
+		return (
+			<HoverTrigger>
+				<Button>Trigger</Button>
+				<Popover {...args}>
+					<Dialog>Message</Dialog>
+				</Popover>
+			</HoverTrigger>
+		);
+	},
+	play: async ({ canvasElement }) => {
+		const canvas = within(canvasElement);
+
+		await userEvent.hover(canvas.getByRole('button'));
+		const body = canvasElement.ownerDocument.body;
+		await expect(await within(body).findByRole('dialog'));
+	},
 };
 
 export const CustomTrigger: Story = {

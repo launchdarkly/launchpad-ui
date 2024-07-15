@@ -1,0 +1,62 @@
+{
+	"fontFamily": {
+		"$type": "fontFamily",
+		"base": {
+			"$value": "inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, Helvetica, Arial, sans-serif"
+		},
+		"monospace": {
+			"$value": "SFMono-Regular, Consolas, Liberation Mono, Menlo, Courier, monospace"
+		},
+		"display": {
+			"$value": "Audimat\\ 3000 Regulier"
+		}
+	},
+	"fontSize": {
+		"$type": "dimension",
+		"100": {
+			"$value": "{size.11}"
+		},
+		"200": {
+			"$value": "{size.13}"
+		},
+		"300": {
+			"$value": "{size.15}"
+		},
+		"400": {
+			"$value": "{size.20}"
+		},
+		"500": {
+			"$value": "{size.24}"
+		},
+		"600": {
+			"$value": "{size.32}"
+		},
+		"700": {
+			"$value": "{size.44}"
+		},
+		"800": {
+			"$value": "3.75rem"
+		}
+	},
+	"fontWeight": {
+		"$type": "fontWeight",
+		"light": {
+			"$value": 300
+		},
+		"regular": {
+			"$value": 400
+		},
+		"medium": {
+			"$value": 500
+		},
+		"semibold": {
+			"$value": 600
+		},
+		"bold": {
+			"$value": 700
+		},
+		"extrabold": {
+			"$value": 800
+		}
+	}
+}

@@ -1,5 +1,65 @@
 # @launchpad-ui/icons
 
+## 0.18.7
+
+### Patch Changes
+
+- Updated dependencies [[`8c68adb`](https://github.com/launchdarkly/launchpad-ui/commit/8c68adbfeeda476c7e75f517cb9ca76d15695438)]:
+  - @launchpad-ui/tokens@0.11.0
+
+## 0.18.6
+
+### Patch Changes
+
+- [#1337](https://github.com/launchdarkly/launchpad-ui/pull/1337) [`388d562`](https://github.com/launchdarkly/launchpad-ui/commit/388d5627583100d04713e76e57b765b9668314d1) Thanks [@Niznikr](https://github.com/Niznikr)! - Add `Breadcrumbs`
+
+- Updated dependencies [[`6ab5b77`](https://github.com/launchdarkly/launchpad-ui/commit/6ab5b776c4dff94ad5be9a6fbf474126ae41c31c)]:
+  - @launchpad-ui/tokens@0.10.0
+
+## 0.18.5
+
+### Patch Changes
+
+- [#1343](https://github.com/launchdarkly/launchpad-ui/pull/1343) [`3c7a71e`](https://github.com/launchdarkly/launchpad-ui/commit/3c7a71e4fd7ba473d07e47a11c3f91f474900e50) Thanks [@lwonsower](https://github.com/lwonsower)! - Add calculator icon
+
+## 0.18.4
+
+### Patch Changes
+
+- Updated dependencies [[`545560f`](https://github.com/launchdarkly/launchpad-ui/commit/545560fff3fdbfdabfa208e5662c21ae41a76322)]:
+  - @launchpad-ui/tokens@0.9.12
+
+## 0.18.3
+
+### Patch Changes
+
+- [#1338](https://github.com/launchdarkly/launchpad-ui/pull/1338) [`b74c95b`](https://github.com/launchdarkly/launchpad-ui/commit/b74c95ba1fab1d8364777954574ff4cc8fcee3f7) Thanks [@cmaija](https://github.com/cmaija)! - feat(icons): Add created icon
+
+## 0.18.2
+
+### Patch Changes
+
+- [#1329](https://github.com/launchdarkly/launchpad-ui/pull/1329) [`b255f1d`](https://github.com/launchdarkly/launchpad-ui/commit/b255f1dddf14c437585383cea5114ca93b949966) Thanks [@apucacao](https://github.com/apucacao)! - add osmo icon
+
+## 0.18.1
+
+### Patch Changes
+
+- [#1317](https://github.com/launchdarkly/launchpad-ui/pull/1317) [`c0d7223`](https://github.com/launchdarkly/launchpad-ui/commit/c0d72237a9c327abab1a186c6c452b33fa196799) Thanks [@matthewferry](https://github.com/matthewferry)! - feat(icons): add menu, sidebar-right-\* icons
+
+- Updated dependencies [[`bf904e8`](https://github.com/launchdarkly/launchpad-ui/commit/bf904e8ee2c27ee73d813f539cc5dfdf682e92fc)]:
+  - @launchpad-ui/tokens@0.9.11
+
+## 0.18.0
+
+### Minor Changes
+
+- [#1307](https://github.com/launchdarkly/launchpad-ui/pull/1307) [`b2e8731`](https://github.com/launchdarkly/launchpad-ui/commit/b2e873183a438e8482d79ca28c37f0db159f41c2) Thanks [@matthewferry](https://github.com/matthewferry)! - fix(icons)!: remove package-send-bolt and update package-send
+
+### Patch Changes
+
+- [#1308](https://github.com/launchdarkly/launchpad-ui/pull/1308) [`69375b2`](https://github.com/launchdarkly/launchpad-ui/commit/69375b274a96ce25ec7103cd88d03dd6d4fbf111) Thanks [@matthewferry](https://github.com/matthewferry)! - feat: add broom icon
+
 ## 0.17.5
 
 ### Patch Changes
@@ -373,7 +433,7 @@
   root.render(
     <IconContext.Provider value={{ path: icons }}>
       <App />
-    </IconContext.Provider>,
+    </IconContext.Provider>
   );
   ```
 

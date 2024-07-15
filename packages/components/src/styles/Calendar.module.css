@@ -1,0 +1,71 @@
+.calendar {
+	width: fit-content;
+	max-width: 100%;
+
+	& table {
+		border-collapse: collapse;
+	}
+
+	& header {
+		display: flex;
+		align-items: center;
+		margin-bottom: var(--lp-spacing-500);
+
+		& h2 {
+			font: var(--lp-text-heading-1-semibold);
+			flex: 1;
+			text-align: center;
+		}
+	}
+
+	& th {
+		font: var(--lp-text-label-2-medium);
+	}
+
+	& [slot='errorMessage'] {
+		color: var(--lp-color-text-feedback-error);
+		font: var(--lp-text-body-2-regular);
+	}
+}
+
+.cell {
+	cursor: default;
+	outline: none;
+	border: none;
+	width: 100%;
+
+	&[data-outside-month] {
+		display: none;
+	}
+
+	&[data-disabled] {
+		background-color: transparent;
+	}
+
+	&[data-invalid] {
+		background-color: var(--lp-color-bg-feedback-error);
+		color: var(--lp-color-text-feedback-error);
+	}
+}
+
+.range {
+	& td {
+		padding: 1px 0;
+	}
+
+	& .cell {
+		&[data-selected] {
+			border-radius: 0;
+		}
+
+		&[data-selection-start] {
+			border-start-start-radius: var(--lp-border-radius-large);
+			border-end-start-radius: var(--lp-border-radius-large);
+		}
+
+		&[data-selection-end] {
+			border-start-end-radius: var(--lp-border-radius-large);
+			border-end-end-radius: var(--lp-border-radius-large);
+		}
+	}
+}

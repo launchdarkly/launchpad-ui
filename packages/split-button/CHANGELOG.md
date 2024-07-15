@@ -1,5 +1,90 @@
 # @launchpad-ui/split-button
 
+## 0.10.23
+
+### Patch Changes
+
+- Updated dependencies [[`8c68adb`](https://github.com/launchdarkly/launchpad-ui/commit/8c68adbfeeda476c7e75f517cb9ca76d15695438)]:
+  - @launchpad-ui/tokens@0.11.0
+  - @launchpad-ui/button@0.12.20
+  - @launchpad-ui/dropdown@0.6.112
+  - @launchpad-ui/popover@0.11.25
+  - @launchpad-ui/tooltip@0.9.14
+
+## 0.10.22
+
+### Patch Changes
+
+- Updated dependencies [[`6ab5b77`](https://github.com/launchdarkly/launchpad-ui/commit/6ab5b776c4dff94ad5be9a6fbf474126ae41c31c)]:
+  - @launchpad-ui/tokens@0.10.0
+  - @launchpad-ui/button@0.12.19
+  - @launchpad-ui/dropdown@0.6.111
+  - @launchpad-ui/popover@0.11.24
+  - @launchpad-ui/tooltip@0.9.13
+
+## 0.10.21
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @launchpad-ui/button@0.12.18
+  - @launchpad-ui/dropdown@0.6.110
+
+## 0.10.20
+
+### Patch Changes
+
+- Updated dependencies [[`545560f`](https://github.com/launchdarkly/launchpad-ui/commit/545560fff3fdbfdabfa208e5662c21ae41a76322)]:
+  - @launchpad-ui/tokens@0.9.12
+  - @launchpad-ui/button@0.12.17
+  - @launchpad-ui/dropdown@0.6.109
+  - @launchpad-ui/popover@0.11.23
+  - @launchpad-ui/tooltip@0.9.12
+
+## 0.10.19
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @launchpad-ui/button@0.12.16
+  - @launchpad-ui/dropdown@0.6.108
+
+## 0.10.18
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @launchpad-ui/button@0.12.15
+  - @launchpad-ui/dropdown@0.6.107
+
+## 0.10.17
+
+### Patch Changes
+
+- Updated dependencies [[`6a7eacd`](https://github.com/launchdarkly/launchpad-ui/commit/6a7eacde2339810283f9eaa0b2f965f425a919fb)]:
+  - @launchpad-ui/dropdown@0.6.106
+  - @launchpad-ui/popover@0.11.22
+  - @launchpad-ui/tooltip@0.9.11
+
+## 0.10.16
+
+### Patch Changes
+
+- Updated dependencies [[`bf904e8`](https://github.com/launchdarkly/launchpad-ui/commit/bf904e8ee2c27ee73d813f539cc5dfdf682e92fc)]:
+  - @launchpad-ui/tokens@0.9.11
+  - @launchpad-ui/button@0.12.14
+  - @launchpad-ui/dropdown@0.6.105
+  - @launchpad-ui/popover@0.11.21
+  - @launchpad-ui/tooltip@0.9.10
+
+## 0.10.15
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @launchpad-ui/button@0.12.13
+  - @launchpad-ui/dropdown@0.6.104
+
 ## 0.10.14
 
 ### Patch Changes
@@ -583,7 +668,7 @@
   root.render(
     <IconContext.Provider value={{ path: icons }}>
       <App />
-    </IconContext.Provider>,
+    </IconContext.Provider>
   );
   ```
 

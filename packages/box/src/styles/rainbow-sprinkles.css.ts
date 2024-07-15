@@ -4,15 +4,7 @@ import { flatten } from 'flat';
 import { createRainbowSprinkles, defineProperties } from 'rainbow-sprinkles';
 
 const { bg, border, fill, shadow, text, gradient, ...global } = vars.color;
-const { body, heading, small, label, code, display } = vars;
-const typography = {
-	body,
-	heading,
-	small,
-	label,
-	code,
-	display,
-};
+const { text: typography } = vars;
 
 type FlattenObjectKeys<T extends Record<string, unknown>, Key = keyof T> = Key extends string
 	? T[Key] extends Record<string, unknown>
@@ -63,13 +55,13 @@ const responsiveProperties = defineProperties({
 		marginLeft: vars.spacing,
 		marginRight: vars.spacing,
 		marginBottom: vars.spacing,
-		borderRadius: vars.border.radius,
-		borderWidth: vars.border.width,
+		borderRadius: vars.borderRadius,
+		borderWidth: vars.borderWidth,
 		font: typographies,
-		fontFamily: vars.font.family,
-		fontSize: vars.font.size,
-		fontWeight: vars.font.weight,
-		lineHeight: vars['line-height'],
+		fontFamily: vars.fontFamily,
+		fontSize: vars.fontSize,
+		fontWeight: vars.fontWeight,
+		lineHeight: vars.lineHeight,
 		width: vars.size,
 		height: vars.size,
 		maxHeight: vars.size,
@@ -137,7 +129,7 @@ const unconditionalProperties = defineProperties({
 		whiteSpace: true,
 		wordBreak: true,
 		wordWrap: true,
-		zIndex: vars['z-index'],
+		zIndex: vars.zIndex,
 	},
 	shorthands: {},
 });

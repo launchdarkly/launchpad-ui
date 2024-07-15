@@ -35,6 +35,11 @@ const CopyConfirmation = () => (
 	</span>
 );
 
+/**
+ * @deprecated follow the recipe from `@launchpad-ui/components` instead
+ *
+ * https://launchpad.launchdarkly.com/?path=/docs/recipes-composition--docs#copy%20to%20clipboard
+ */
 const CopyToClipboard = forwardRef<CopyToClipboardHandleRef, CopyToClipboardProps>(
 	(
 		{

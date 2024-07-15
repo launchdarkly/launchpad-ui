@@ -1,5 +1,94 @@
 # @launchpad-ui/menu
 
+## 0.13.23
+
+### Patch Changes
+
+- [#1355](https://github.com/launchdarkly/launchpad-ui/pull/1355) [`8c68adb`](https://github.com/launchdarkly/launchpad-ui/commit/8c68adbfeeda476c7e75f517cb9ca76d15695438) Thanks [@Niznikr](https://github.com/Niznikr)! - Add prefix `text` to typography tokens
+
+- Updated dependencies [[`8c68adb`](https://github.com/launchdarkly/launchpad-ui/commit/8c68adbfeeda476c7e75f517cb9ca76d15695438)]:
+  - @launchpad-ui/tokens@0.11.0
+  - @launchpad-ui/form@0.11.23
+  - @launchpad-ui/icons@0.18.7
+  - @launchpad-ui/popover@0.11.25
+  - @launchpad-ui/tooltip@0.9.14
+
+## 0.13.22
+
+### Patch Changes
+
+- Updated dependencies [[`388d562`](https://github.com/launchdarkly/launchpad-ui/commit/388d5627583100d04713e76e57b765b9668314d1), [`6ab5b77`](https://github.com/launchdarkly/launchpad-ui/commit/6ab5b776c4dff94ad5be9a6fbf474126ae41c31c)]:
+  - @launchpad-ui/icons@0.18.6
+  - @launchpad-ui/tokens@0.10.0
+  - @launchpad-ui/form@0.11.22
+  - @launchpad-ui/popover@0.11.24
+  - @launchpad-ui/tooltip@0.9.13
+
+## 0.13.21
+
+### Patch Changes
+
+- Updated dependencies [[`3c7a71e`](https://github.com/launchdarkly/launchpad-ui/commit/3c7a71e4fd7ba473d07e47a11c3f91f474900e50)]:
+  - @launchpad-ui/icons@0.18.5
+  - @launchpad-ui/form@0.11.21
+
+## 0.13.20
+
+### Patch Changes
+
+- Updated dependencies [[`545560f`](https://github.com/launchdarkly/launchpad-ui/commit/545560fff3fdbfdabfa208e5662c21ae41a76322)]:
+  - @launchpad-ui/tokens@0.9.12
+  - @launchpad-ui/form@0.11.20
+  - @launchpad-ui/icons@0.18.4
+  - @launchpad-ui/popover@0.11.23
+  - @launchpad-ui/tooltip@0.9.12
+
+## 0.13.19
+
+### Patch Changes
+
+- Updated dependencies [[`b74c95b`](https://github.com/launchdarkly/launchpad-ui/commit/b74c95ba1fab1d8364777954574ff4cc8fcee3f7)]:
+  - @launchpad-ui/icons@0.18.3
+  - @launchpad-ui/form@0.11.19
+
+## 0.13.18
+
+### Patch Changes
+
+- Updated dependencies [[`b255f1d`](https://github.com/launchdarkly/launchpad-ui/commit/b255f1dddf14c437585383cea5114ca93b949966)]:
+  - @launchpad-ui/icons@0.18.2
+  - @launchpad-ui/form@0.11.18
+
+## 0.13.17
+
+### Patch Changes
+
+- [#1314](https://github.com/launchdarkly/launchpad-ui/pull/1314) [`6a7eacd`](https://github.com/launchdarkly/launchpad-ui/commit/6a7eacde2339810283f9eaa0b2f965f425a919fb) Thanks [@renovate](https://github.com/apps/renovate)! - Update dependencies
+
+- Updated dependencies [[`6a7eacd`](https://github.com/launchdarkly/launchpad-ui/commit/6a7eacde2339810283f9eaa0b2f965f425a919fb)]:
+  - @launchpad-ui/form@0.11.17
+  - @launchpad-ui/popover@0.11.22
+  - @launchpad-ui/tooltip@0.9.11
+
+## 0.13.16
+
+### Patch Changes
+
+- Updated dependencies [[`bf904e8`](https://github.com/launchdarkly/launchpad-ui/commit/bf904e8ee2c27ee73d813f539cc5dfdf682e92fc), [`c0d7223`](https://github.com/launchdarkly/launchpad-ui/commit/c0d72237a9c327abab1a186c6c452b33fa196799)]:
+  - @launchpad-ui/tokens@0.9.11
+  - @launchpad-ui/icons@0.18.1
+  - @launchpad-ui/form@0.11.16
+  - @launchpad-ui/popover@0.11.21
+  - @launchpad-ui/tooltip@0.9.10
+
+## 0.13.15
+
+### Patch Changes
+
+- Updated dependencies [[`69375b2`](https://github.com/launchdarkly/launchpad-ui/commit/69375b274a96ce25ec7103cd88d03dd6d4fbf111), [`b2e8731`](https://github.com/launchdarkly/launchpad-ui/commit/b2e873183a438e8482d79ca28c37f0db159f41c2)]:
+  - @launchpad-ui/icons@0.18.0
+  - @launchpad-ui/form@0.11.15
+
 ## 0.13.14
 
 ### Patch Changes
@@ -619,7 +708,7 @@
   root.render(
     <IconContext.Provider value={{ path: icons }}>
       <App />
-    </IconContext.Provider>,
+    </IconContext.Provider>
   );
   ```
 

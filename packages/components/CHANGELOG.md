@@ -1,5 +1,106 @@
 # @launchpad-ui/components
 
+## 0.2.16
+
+### Patch Changes
+
+- [#1355](https://github.com/launchdarkly/launchpad-ui/pull/1355) [`8c68adb`](https://github.com/launchdarkly/launchpad-ui/commit/8c68adbfeeda476c7e75f517cb9ca76d15695438) Thanks [@Niznikr](https://github.com/Niznikr)! - Add prefix `text` to typography tokens
+
+- Updated dependencies [[`8c68adb`](https://github.com/launchdarkly/launchpad-ui/commit/8c68adbfeeda476c7e75f517cb9ca76d15695438)]:
+  - @launchpad-ui/tokens@0.11.0
+  - @launchpad-ui/icons@0.18.7
+
+## 0.2.15
+
+### Patch Changes
+
+- [#1356](https://github.com/launchdarkly/launchpad-ui/pull/1356) [`9625735`](https://github.com/launchdarkly/launchpad-ui/commit/96257355a11b8f55dcb5b6dd438a7f4b60b6dee9) Thanks [@Niznikr](https://github.com/Niznikr)! - Ensure toasts dismiss with reduced motion
+
+## 0.2.14
+
+### Patch Changes
+
+- [#1337](https://github.com/launchdarkly/launchpad-ui/pull/1337) [`388d562`](https://github.com/launchdarkly/launchpad-ui/commit/388d5627583100d04713e76e57b765b9668314d1) Thanks [@Niznikr](https://github.com/Niznikr)! - Add `Breadcrumbs`
+
+- [#1333](https://github.com/launchdarkly/launchpad-ui/pull/1333) [`1d87de2`](https://github.com/launchdarkly/launchpad-ui/commit/1d87de22383be092db17c73166cbe08512db0ac9) Thanks [@Niznikr](https://github.com/Niznikr)! - Add `Tabs`
+
+- [#1325](https://github.com/launchdarkly/launchpad-ui/pull/1325) [`6ab5b77`](https://github.com/launchdarkly/launchpad-ui/commit/6ab5b776c4dff94ad5be9a6fbf474126ae41c31c) Thanks [@Niznikr](https://github.com/Niznikr)! - Rework typography tokens:
+
+  - Remove font-size-0
+  - font-size-100: 12px -> 11px
+  - font-size-200: 14px -> 13px
+  - font-size-300: 16px -> 15px
+  - Update line-height tokens
+  - Remove small-2-\*
+
+- Updated dependencies [[`388d562`](https://github.com/launchdarkly/launchpad-ui/commit/388d5627583100d04713e76e57b765b9668314d1), [`6ab5b77`](https://github.com/launchdarkly/launchpad-ui/commit/6ab5b776c4dff94ad5be9a6fbf474126ae41c31c)]:
+  - @launchpad-ui/icons@0.18.6
+  - @launchpad-ui/tokens@0.10.0
+
+## 0.2.13
+
+### Patch Changes
+
+- Updated dependencies [[`3c7a71e`](https://github.com/launchdarkly/launchpad-ui/commit/3c7a71e4fd7ba473d07e47a11c3f91f474900e50)]:
+  - @launchpad-ui/icons@0.18.5
+
+## 0.2.12
+
+### Patch Changes
+
+- Updated dependencies [[`545560f`](https://github.com/launchdarkly/launchpad-ui/commit/545560fff3fdbfdabfa208e5662c21ae41a76322)]:
+  - @launchpad-ui/tokens@0.9.12
+  - @launchpad-ui/icons@0.18.4
+
+## 0.2.11
+
+### Patch Changes
+
+- [#1331](https://github.com/launchdarkly/launchpad-ui/pull/1331) [`fe8a521`](https://github.com/launchdarkly/launchpad-ui/commit/fe8a521f993d837818fcf4b1aaddafe7393de678) Thanks [@Niznikr](https://github.com/Niznikr)! - Add `subtitle` slot to `Dialog`
+
+- Updated dependencies [[`b74c95b`](https://github.com/launchdarkly/launchpad-ui/commit/b74c95ba1fab1d8364777954574ff4cc8fcee3f7)]:
+  - @launchpad-ui/icons@0.18.3
+
+## 0.2.10
+
+### Patch Changes
+
+- Updated dependencies [[`b255f1d`](https://github.com/launchdarkly/launchpad-ui/commit/b255f1dddf14c437585383cea5114ca93b949966)]:
+  - @launchpad-ui/icons@0.18.2
+
+## 0.2.9
+
+### Patch Changes
+
+- [#1320](https://github.com/launchdarkly/launchpad-ui/pull/1320) [`9f486b7`](https://github.com/launchdarkly/launchpad-ui/commit/9f486b73906dff909d2451812bfc46d9abaa1b39) Thanks [@Niznikr](https://github.com/Niznikr)! - Adjust `Input` focus outline offset
+
+- [#1321](https://github.com/launchdarkly/launchpad-ui/pull/1321) [`748b43e`](https://github.com/launchdarkly/launchpad-ui/commit/748b43e524681a9d2da66674b9fa22b5b4b85d02) Thanks [@Niznikr](https://github.com/Niznikr)! - Add `Calendar`, `DateField`, `DatePicker`, `DateRangePicker`, `RangeCalendar`, and `TimeField`
+
+- [#1314](https://github.com/launchdarkly/launchpad-ui/pull/1314) [`6a7eacd`](https://github.com/launchdarkly/launchpad-ui/commit/6a7eacde2339810283f9eaa0b2f965f425a919fb) Thanks [@renovate](https://github.com/apps/renovate)! - Update dependencies
+
+## 0.2.8
+
+### Patch Changes
+
+- [#1312](https://github.com/launchdarkly/launchpad-ui/pull/1312) [`5f9a49d`](https://github.com/launchdarkly/launchpad-ui/commit/5f9a49d9bc01fa67d256a866aad45d4a883d5b9b) Thanks [@Niznikr](https://github.com/Niznikr)! - Add `HoverTrigger`
+
+- Updated dependencies [[`bf904e8`](https://github.com/launchdarkly/launchpad-ui/commit/bf904e8ee2c27ee73d813f539cc5dfdf682e92fc), [`c0d7223`](https://github.com/launchdarkly/launchpad-ui/commit/c0d72237a9c327abab1a186c6c452b33fa196799)]:
+  - @launchpad-ui/tokens@0.9.11
+  - @launchpad-ui/icons@0.18.1
+
+## 0.2.7
+
+### Patch Changes
+
+- [#1302](https://github.com/launchdarkly/launchpad-ui/pull/1302) [`cf4fa5a`](https://github.com/launchdarkly/launchpad-ui/commit/cf4fa5accc48bbfd98d57920167d580b8253d2e4) Thanks [@Niznikr](https://github.com/Niznikr)! - Bump icon specificity in `Toast`
+
+## 0.2.6
+
+### Patch Changes
+
+- Updated dependencies [[`69375b2`](https://github.com/launchdarkly/launchpad-ui/commit/69375b274a96ce25ec7103cd88d03dd6d4fbf111), [`b2e8731`](https://github.com/launchdarkly/launchpad-ui/commit/b2e873183a438e8482d79ca28c37f0db159f41c2)]:
+  - @launchpad-ui/icons@0.18.0
+
 ## 0.2.5
 
 ### Patch Changes

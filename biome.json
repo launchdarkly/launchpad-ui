@@ -28,18 +28,18 @@
 				"noUnusedImports": "error"
 			},
 			"performance": {
-				"noDelete": "off"
+				"noDelete": "off",
+				"noReExportAll": "error"
 			},
 			"style": {
 				"noDefaultExport": "error",
 				"noNamespace": "error",
 				"useFragmentSyntax": "error",
-				"useNodejsImportProtocol": "off"
+				"useNodejsImportProtocol": "off",
+				"noNamespaceImport": "error"
 			},
 			"nursery": {
-				"noDuplicateJsonKeys": "error",
-				"noNamespaceImport": "error",
-				"noReExportAll": "error"
+				"noDuplicateJsonKeys": "error"
 			}
 		}
 	},
@@ -47,6 +47,19 @@
 		"formatter": {
 			"quoteStyle": "single",
 			"jsxQuoteStyle": "double"
+		}
+	},
+	"css": {
+		"parser": {
+			"cssModules": true
+		},
+		"formatter": {
+			"enabled": true,
+			"lineWidth": 100,
+			"quoteStyle": "single"
+		},
+		"linter": {
+			"enabled": true
 		}
 	},
 	"vcs": {

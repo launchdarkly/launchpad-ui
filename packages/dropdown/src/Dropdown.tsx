@@ -75,7 +75,7 @@ const Dropdown = <T extends string | object | number>(props: DropdownProps<T>) =
 		const { target } = parseChildren();
 		return cloneElement(target, {
 			'aria-haspopup': true,
-			'aria-expanded': isOpen ? true : false,
+			'aria-expanded': !!isOpen,
 			ref: target.ref ? mergeRefs(target.ref, triggerRef) : triggerRef,
 			isopen: isOpen?.toString(),
 		});
