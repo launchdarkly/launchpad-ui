@@ -3,7 +3,7 @@ import { MemoryRouter } from 'react-router-dom';
 import { describe, expect, it, vi } from 'vitest';
 
 import { render, screen, userEvent } from '../../../test/utils';
-import { ExternalLinkButton, LinkButton } from '../src';
+import { LinkButton } from '../src';
 
 describe('LinkButton', () => {
 	it('renders', () => {
@@ -32,12 +32,5 @@ describe('LinkButton', () => {
 		await user.click(screen.getByRole('link'));
 
 		expect(spy).toHaveBeenCalledTimes(1);
-	});
-});
-
-describe('ExternalLinkButton', () => {
-	it('renders', () => {
-		render(<ExternalLinkButton href="https://www.test.com">LinkButton</ExternalLinkButton>);
-		expect(screen.getByRole('link')).toBeVisible();
 	});
 });
