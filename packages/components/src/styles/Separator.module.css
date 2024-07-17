@@ -1,5 +1,14 @@
 .separator {
-	height: var(--lp-size-1);
-	background: var(--lp-color-border-ui-secondary);
+	background: var(--lp-color-border-ui-primary);
 	margin-block: var(--lp-spacing-200);
+
+	&[aria-orientation='vertical'] {
+		width: var(--lp-size-1);
+	}
+
+	&:not([aria-orientation='vertical']) {
+		border: none;
+		height: var(--lp-size-1);
+		width: 100%;
+	}
 }
