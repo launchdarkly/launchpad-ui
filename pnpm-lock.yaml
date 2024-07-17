@@ -423,6 +423,9 @@ importers:
       '@react-stately/toast':
         specifier: 3.0.0-beta.4
         version: 3.0.0-beta.4(react@18.3.1)
+      '@react-stately/utils':
+        specifier: 3.10.1
+        version: 3.10.1(react@18.3.1)
       '@react-types/shared':
         specifier: 3.23.1
         version: 3.23.1(react@18.3.1)

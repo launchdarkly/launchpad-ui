@@ -1,5 +1,6 @@
 import './styles/themes.css';
 
+export type { AlertProps } from './Alert';
 export type { BreadcrumbsProps, BreadcrumbProps } from './Breadcrumbs';
 export type { ButtonProps } from './Button';
 export type { ButtonGroupProps } from './ButtonGroup';
@@ -57,6 +58,7 @@ export type { ToggleIconButtonProps } from './ToggleIconButton';
 export type { TooltipProps, TooltipTriggerProps } from './Tooltip';
 export type { forwardRefType } from './utils';
 
+export { Alert } from './Alert';
 export { Breadcrumbs, Breadcrumb } from './Breadcrumbs';
 export { Button } from './Button';
 export { ButtonGroup } from './ButtonGroup';
