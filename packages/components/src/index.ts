@@ -33,6 +33,7 @@ export type { ExternalLinkIconButtonProps, LinkIconButtonProps } from './LinkIco
 export type { ListBoxProps, ListBoxItemProps } from './ListBox';
 export type { MenuProps, MenuItemProps, MenuTriggerProps, SubmenuTriggerProps } from './Menu';
 export type { ModalProps, ModalOverlayProps } from './Modal';
+export type { NumberFieldProps } from './NumberField';
 export type { OverlayArrowProps, PopoverProps } from './Popover';
 export type { PressableProps } from './Pressable';
 export type { ProgressBarProps } from './ProgressBar';
@@ -92,6 +93,7 @@ export { ExternalLinkIconButton, LinkIconButton } from './LinkIconButton';
 export { ListBox, ListBoxItem } from './ListBox';
 export { Menu, MenuItem, MenuTrigger, SubmenuTrigger } from './Menu';
 export { Modal, ModalOverlay } from './Modal';
+export { NumberField } from './NumberField';
 export { HoverTrigger, OverlayArrow, Popover } from './Popover';
 export { Pressable } from './Pressable';
 export { ProgressBar } from './ProgressBar';
