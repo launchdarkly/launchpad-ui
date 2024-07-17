@@ -32,6 +32,7 @@ export const Example: Story = {
 			<>
 				<Label>Label</Label>
 				<Group>
+					<Input />
 					<IconButton
 						icon="minus"
 						aria-label="decrement"
@@ -39,7 +40,6 @@ export const Example: Story = {
 						variant="minimal"
 						slot="decrement"
 					/>
-					<Input />
 					<IconButton
 						icon="add"
 						aria-label="increment"
@@ -58,6 +58,7 @@ export const States: Story = {
 	render: (args) => {
 		const ExampleGroup = (
 			<Group>
+				<Input />
 				<IconButton
 					icon="minus"
 					aria-label="decrement"
@@ -65,7 +66,6 @@ export const States: Story = {
 					variant="minimal"
 					slot="decrement"
 				/>
-				<Input />
 				<IconButton
 					icon="add"
 					aria-label="increment"

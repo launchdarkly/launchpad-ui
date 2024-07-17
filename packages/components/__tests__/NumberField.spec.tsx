@@ -9,6 +9,7 @@ describe('NumberField', () => {
 			<NumberField>
 				<Label>Label</Label>
 				<Group>
+					<Input />
 					<IconButton
 						icon="minus"
 						aria-label="decrement"
@@ -16,7 +17,6 @@ describe('NumberField', () => {
 						variant="minimal"
 						slot="decrement"
 					/>
-					<Input />
 					<IconButton
 						icon="add"
 						aria-label="increment"

@@ -17,6 +17,11 @@ const _NumberField = (props: NumberFieldProps, ref: ForwardedRef<HTMLDivElement>
 			className={composeRenderProps(props.className, (className, renderProps) =>
 				number({ ...renderProps, className }),
 			)}
+			formatOptions={{
+				maximumFractionDigits: 20,
+				useGrouping: false,
+				...(props.formatOptions ?? {}),
+			}}
 		/>
 	);
 };
