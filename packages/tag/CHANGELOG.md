@@ -1,5 +1,13 @@
 # @launchpad-ui/tag
 
+## 0.3.39
+
+### Patch Changes
+
+- Updated dependencies [[`1beb404`](https://github.com/launchdarkly/launchpad-ui/commit/1beb4043a3acfcfd0258ca491bd7265eb3c3a3aa)]:
+  - @launchpad-ui/icons@0.18.8
+  - @launchpad-ui/button@0.12.21
+
 ## 0.3.38
 
 ### Patch Changes
