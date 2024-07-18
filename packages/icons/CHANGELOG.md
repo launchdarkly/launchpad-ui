@@ -1,5 +1,11 @@
 # @launchpad-ui/icons
 
+## 0.18.8
+
+### Patch Changes
+
+- [#1364](https://github.com/launchdarkly/launchpad-ui/pull/1364) [`1beb404`](https://github.com/launchdarkly/launchpad-ui/commit/1beb4043a3acfcfd0258ca491bd7265eb3c3a3aa) Thanks [@qshaner](https://github.com/qshaner)! - Add notifications-off icon
+
 ## 0.18.7
 
 ### Patch Changes
