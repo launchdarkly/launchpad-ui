@@ -21,6 +21,9 @@ const _DropIndicator = (props: DropIndicatorProps, ref: ForwardedRef<HTMLElement
 	);
 };
 
+/**
+ * A DropIndicator is rendered between items in a collection to indicate where dropped data will be inserted.
+ */
 const DropIndicator = forwardRef(_DropIndicator);
 
 export { DropIndicator };
