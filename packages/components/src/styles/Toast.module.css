@@ -65,6 +65,7 @@
 	box-shadow: 0 0 1px 0 rgb(0 0 0 / 0.25), 0 1px 2px 0 rgb(0 0 0 / 0.14), 0 4px 4px 0
 		rgb(0 0 0 / 0.06);
 	pointer-events: all;
+	outline: none;
 
 	& .icon {
 		transform: translateY(2px);
@@ -84,6 +85,12 @@
 
 	& .success {
 		fill: var(--lp-color-system-green-500);
+	}
+
+	&[data-focus-visible] {
+		outline: 2px solid var(--lp-color-shadow-interactive-focus);
+		outline-offset: -2px;
+		z-index: 1;
 	}
 
 	@media (prefers-reduced-motion: no-preference) {
