@@ -1,5 +1,11 @@
 # @launchpad-ui/pagination
 
+## 0.4.40
+
+### Patch Changes
+
+- [#1366](https://github.com/launchdarkly/launchpad-ui/pull/1366) [`2a908c0`](https://github.com/launchdarkly/launchpad-ui/commit/2a908c093b5cc6a34bc4785727d0365f833bff0e) Thanks [@renovate](https://github.com/apps/renovate)! - Update dependencies
+
 ## 0.4.39
 
 ### Patch Changes

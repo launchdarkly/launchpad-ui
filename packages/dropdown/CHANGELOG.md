@@ -1,5 +1,14 @@
 # @launchpad-ui/dropdown
 
+## 0.6.114
+
+### Patch Changes
+
+- [#1366](https://github.com/launchdarkly/launchpad-ui/pull/1366) [`2a908c0`](https://github.com/launchdarkly/launchpad-ui/commit/2a908c093b5cc6a34bc4785727d0365f833bff0e) Thanks [@renovate](https://github.com/apps/renovate)! - Update dependencies
+
+- Updated dependencies []:
+  - @launchpad-ui/popover@0.11.26
+
 ## 0.6.113
 
 ### Patch Changes
