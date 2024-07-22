@@ -1,7 +1,7 @@
+import type { forwardRefType } from '@react-types/shared';
 import type { ForwardedRef } from 'react';
 import type { BreadcrumbProps, BreadcrumbsProps, ContextValue } from 'react-aria-components';
 import type { LinkProps } from './Link';
-import type { forwardRefType } from './utils';
 
 import { cva } from 'class-variance-authority';
 import { createContext, forwardRef } from 'react';

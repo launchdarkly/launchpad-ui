@@ -55,7 +55,6 @@ export type { SnackbarValue, ToastOptions, ToastValue } from './Toast';
 export type { ToggleButtonProps } from './ToggleButton';
 export type { ToggleIconButtonProps } from './ToggleIconButton';
 export type { TooltipProps, TooltipTriggerProps } from './Tooltip';
-export type { forwardRefType } from './utils';
 
 export { Breadcrumbs, Breadcrumb } from './Breadcrumbs';
 export { Button } from './Button';
