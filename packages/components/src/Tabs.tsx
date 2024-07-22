@@ -1,6 +1,6 @@
+import type { forwardRefType } from '@react-types/shared';
 import type { ForwardedRef } from 'react';
 import type { TabListProps, TabPanelProps, TabProps, TabsProps } from 'react-aria-components';
-import type { forwardRefType } from './utils';
 
 import { cva } from 'class-variance-authority';
 import { forwardRef } from 'react';

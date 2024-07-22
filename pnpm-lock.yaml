@@ -443,8 +443,8 @@ importers:
         version: 3.32.0(react@18.3.1)
     devDependencies:
       '@internationalized/date':
-        specifier: 3.5.4
-        version: 3.5.4
+        specifier: 3.5.5
+        version: 3.5.5
       react:
         specifier: 18.3.1
         version: 18.3.1
@@ -2596,9 +2596,6 @@ packages:
   '@inquirer/figures@1.0.3':
     resolution: {integrity: sha512-ErXXzENMH5pJt5/ssXV0DfWUZqly8nGzf0UcBV9xTnP+KyffE2mqyxIMBrZ8ijQck2nU0TQm40EQB53YreyWHw==}
     engines: {node: '>=18'}
-
-  '@internationalized/date@3.5.4':
-    resolution: {integrity: sha512-qoVJVro+O0rBaw+8HPjUB1iH8Ihf8oziEnqMnvhJUSuVIrHOuZ6eNLHNvzXJKUvAtaDiqMnRlg8Z2mgh09BlUw==}
 
   '@internationalized/date@3.5.5':
     resolution: {integrity: sha512-H+CfYvOZ0LTJeeLOqm19E3uj/4YjrmOFtBufDHPfvtI80hFAMqtrp7oCACpe4Cil5l8S0Qu/9dYfZc/5lY8WQQ==}
@@ -9162,10 +9159,6 @@ snapshots:
       tslib: 2.6.3
 
   '@inquirer/figures@1.0.3': {}
-
-  '@internationalized/date@3.5.4':
-    dependencies:
-      '@swc/helpers': 0.5.11
 
   '@internationalized/date@3.5.5':
     dependencies:
