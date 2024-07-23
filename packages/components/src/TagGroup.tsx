@@ -1,7 +1,7 @@
+import type { forwardRefType } from '@react-types/shared';
 import type { VariantProps } from 'class-variance-authority';
 import type { ForwardedRef } from 'react';
 import type { TagProps as AriaTagProps, TagGroupProps, TagListProps } from 'react-aria-components';
-import type { forwardRefType } from './utils';
 
 import { cva } from 'class-variance-authority';
 import { forwardRef } from 'react';

@@ -1,0 +1,6 @@
+.number {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: var(--lp-spacing-200);
+}

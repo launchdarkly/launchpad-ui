@@ -1,16 +1,7 @@
 import type { Href } from '@react-types/shared';
-import type { ReactElement, Ref, RefAttributes } from 'react';
 
 import { useEffect, useState } from 'react';
 import { useHref as useRouterHref } from 'react-router-dom';
-
-// https://github.com/adobe/react-spectrum/blob/main/packages/%40react-types/shared/src/refs.d.ts#L31-L33
-// biome-ignore lint/complexity/noBannedTypes: <explanation>
-declare function forwardRef<T, P = {}>(
-	render: (props: P, ref: Ref<T>) => ReactElement | null,
-): (props: P & RefAttributes<T>) => ReactElement | null;
-
-type forwardRefType = typeof forwardRef;
 
 const useMedia = (media: string) => {
 	const [isActive, setIsActive] = useState(false);
@@ -50,4 +41,3 @@ const useHref = (href: Href) => {
 };
 
 export { useHref, useMedia };
-export type { forwardRefType };

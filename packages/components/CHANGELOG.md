@@ -1,5 +1,22 @@
 # @launchpad-ui/components
 
+## 0.2.18
+
+### Patch Changes
+
+- [#1366](https://github.com/launchdarkly/launchpad-ui/pull/1366) [`2a908c0`](https://github.com/launchdarkly/launchpad-ui/commit/2a908c093b5cc6a34bc4785727d0365f833bff0e) Thanks [@renovate](https://github.com/apps/renovate)! - Update dependencies
+
+## 0.2.17
+
+### Patch Changes
+
+- [#1306](https://github.com/launchdarkly/launchpad-ui/pull/1306) [`1a34080`](https://github.com/launchdarkly/launchpad-ui/commit/1a34080aa11b7249d4bd1ff4747085ac58afb4e9) Thanks [@Niznikr](https://github.com/Niznikr)! - Add `Pressable`
+
+- [#1362](https://github.com/launchdarkly/launchpad-ui/pull/1362) [`15055cb`](https://github.com/launchdarkly/launchpad-ui/commit/15055cb0d8e0d5a301e562211fe7b1c0b7a52115) Thanks [@Niznikr](https://github.com/Niznikr)! - Add `NumberField`
+
+- Updated dependencies [[`1beb404`](https://github.com/launchdarkly/launchpad-ui/commit/1beb4043a3acfcfd0258ca491bd7265eb3c3a3aa)]:
+  - @launchpad-ui/icons@0.18.8
+
 ## 0.2.16
 
 ### Patch Changes
