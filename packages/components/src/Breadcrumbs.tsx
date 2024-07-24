@@ -9,6 +9,7 @@ import {
 	Breadcrumb as AriaBreadcrumb,
 	Breadcrumbs as AriaBreadcrumbs,
 	Provider,
+	composeRenderProps,
 } from 'react-aria-components';
 
 import styles from './styles/Breadcrumbs.module.css';
@@ -32,12 +33,15 @@ const _Breadcrumbs = <T extends object>(
  */
 const Breadcrumbs = (forwardRef as forwardRefType)(_Breadcrumbs);
 
-const _Breadcrumb = (
-	{ className, children, ...props }: BreadcrumbProps,
-	ref: ForwardedRef<HTMLLIElement>,
-) => {
+const _Breadcrumb = ({ children, ...props }: BreadcrumbProps, ref: ForwardedRef<HTMLLIElement>) => {
 	return (
-		<AriaBreadcrumb {...props} ref={ref} className={crumb({ className })}>
+		<AriaBreadcrumb
+			{...props}
+			ref={ref}
+			className={composeRenderProps(props.className, (className, renderProps) =>
+				crumb({ ...renderProps, className }),
+			)}
+		>
 			<Provider values={[[LinkContext, { variant: 'subtle' }]]}>{children}</Provider>
 		</AriaBreadcrumb>
 	);
