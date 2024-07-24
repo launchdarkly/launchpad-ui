@@ -1,5 +1,16 @@
 # @launchpad-ui/filter
 
+## 0.7.26
+
+### Patch Changes
+
+- [#1368](https://github.com/launchdarkly/launchpad-ui/pull/1368) [`4309328`](https://github.com/launchdarkly/launchpad-ui/commit/43093284b05b9093c503cb0b91819a74a6af9660) Thanks [@renovate](https://github.com/apps/renovate)! - Update dependencies
+
+- Updated dependencies [[`4309328`](https://github.com/launchdarkly/launchpad-ui/commit/43093284b05b9093c503cb0b91819a74a6af9660)]:
+  - @launchpad-ui/dropdown@0.6.115
+  - @launchpad-ui/menu@0.13.26
+  - @launchpad-ui/tooltip@0.9.16
+
 ## 0.7.25
 
 ### Patch Changes
