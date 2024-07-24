@@ -35,19 +35,19 @@
 	"dependencies": {
 		"@launchpad-ui/tokens": "workspace:~",
 		"@launchpad-ui/vars": "workspace:~",
-		"@react-aria/checkbox": "3.14.4",
-		"@react-aria/focus": "3.18.0",
-		"@react-aria/table": "3.15.0",
-		"@react-aria/utils": "3.25.0",
-		"@react-aria/visually-hidden": "3.8.13",
-		"@react-stately/table": "3.12.0",
-		"@react-stately/toggle": "3.7.5",
-		"@react-types/grid": "3.2.7",
+		"@react-aria/checkbox": "3.14.5",
+		"@react-aria/focus": "3.18.1",
+		"@react-aria/table": "3.15.1",
+		"@react-aria/utils": "3.25.1",
+		"@react-aria/visually-hidden": "3.8.14",
+		"@react-stately/table": "3.12.1",
+		"@react-stately/toggle": "3.7.6",
+		"@react-types/grid": "3.2.8",
 		"@vanilla-extract/recipes": "^0.5.0",
 		"classix": "2.1.17"
 	},
 	"peerDependencies": {
-		"@react-stately/table": "3.12.0",
+		"@react-stately/table": "3.12.1",
 		"@vanilla-extract/css": "^1.14.0",
 		"react": "18.3.1",
 		"react-dom": "18.3.1"
