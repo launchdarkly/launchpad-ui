@@ -895,8 +895,8 @@ importers:
         specifier: 2.1.17
         version: 2.1.17
       isomorphic-dompurify:
-        specifier: ^2.13.0
-        version: 2.13.0
+        specifier: ^2.14.0
+        version: 2.14.0
       marked:
         specifier: ^13.0.0
         version: 13.0.1
@@ -5657,8 +5657,8 @@ packages:
     resolution: {integrity: sha512-WhB9zCku7EGTj/HQQRz5aUQEUeoQZH2bWcltRErOpymJ4boYE6wL9Tbr23krRPSZ+C5zqNSrSw+Cc7sZZ4b7vg==}
     engines: {node: '>=0.10.0'}
 
-  isomorphic-dompurify@2.13.0:
-    resolution: {integrity: sha512-jVxFnyOiA3fKPkteQjfIogww9T/BIX1Basuwt5D50MB3Sqvki9yBNq96ICLHpbiDY79jc6RC555DeBbTCt6i6A==}
+  isomorphic-dompurify@2.14.0:
+    resolution: {integrity: sha512-7xyjuzBf3P/HBt0PbOpmv5LuV38TmfvidBFvgyuSWVMLwCGDITBPHWsBZ/L1a8DpcGz5PEintBeGdlrKzUqt5A==}
     engines: {node: '>=18'}
 
   istanbul-lib-coverage@3.2.2:
@@ -5721,6 +5721,15 @@ packages:
 
   jsdom@24.1.0:
     resolution: {integrity: sha512-6gpM7pRXCwIOKxX47cgOyvyQDN/Eh0f1MeKySBV2xGdKtqJBLj8P25eY3EVCWo2mglDDzozR2r2MW4T+JiNUZA==}
+    engines: {node: '>=18'}
+    peerDependencies:
+      canvas: ^2.11.2
+    peerDependenciesMeta:
+      canvas:
+        optional: true
+
+  jsdom@24.1.1:
+    resolution: {integrity: sha512-5O1wWV99Jhq4DV7rCLIoZ/UIhyQeDR7wHVyZAHAshbrvZsLs+Xzz7gtwnlJTJDjleiTKh54F4dXrX70vJQTyJQ==}
     engines: {node: '>=18'}
     peerDependencies:
       canvas: ^2.11.2
@@ -6244,6 +6253,9 @@ packages:
 
   nwsapi@2.2.10:
     resolution: {integrity: sha512-QK0sRs7MKv0tKe1+5uZIQk/C8XGza4DAnztJG8iD+TpJIORARrCxczA738awHrZoHeTjSSoHqao2teO0dC/gFQ==}
+
+  nwsapi@2.2.12:
+    resolution: {integrity: sha512-qXDmcVlZV4XRtKFzddidpfVP4oMSGhga+xdMc25mv8kaLUHtgzCDhUxkrN8exkGdTlLNaXj7CV3GtON7zuGZ+w==}
 
   nx@19.5.1:
     resolution: {integrity: sha512-aKctNLiK2hXl2536/qwnAqvSzNlIGwJdTBl2ajOnSyNrGWuLDMllTNTdp0/lU0QBJ2NSod3JbBQFV7cc9ILs4w==}
@@ -7761,6 +7773,18 @@ packages:
 
   ws@8.17.1:
     resolution: {integrity: sha512-6XQFvXTkbfUOZOKKILFG1PDK2NDQs4azKQl26T0YS5CxqWLgXajbPZ+h4gZekJyRqFU8pvnbAbbs/3TgRPy+GQ==}
+    engines: {node: '>=10.0.0'}
+    peerDependencies:
+      bufferutil: ^4.0.1
+      utf-8-validate: '>=5.0.2'
+    peerDependenciesMeta:
+      bufferutil:
+        optional: true
+      utf-8-validate:
+        optional: true
+
+  ws@8.18.0:
+    resolution: {integrity: sha512-8VbfWfHLbbwu3+N6OKsOMpBdT4kXPDDB9cJk2bJ6mh9ucxdlnNvH1e+roYkKmN9Nxw2yjz7VzeO9oOz2zJ04Pw==}
     engines: {node: '>=10.0.0'}
     peerDependencies:
       bufferutil: ^4.0.1
@@ -12905,11 +12929,11 @@ snapshots:
 
   isobject@3.0.1: {}
 
-  isomorphic-dompurify@2.13.0:
+  isomorphic-dompurify@2.14.0:
     dependencies:
       '@types/dompurify': 3.0.5
       dompurify: 3.1.6
-      jsdom: 24.1.0
+      jsdom: 24.1.1
     transitivePeerDependencies:
       - bufferutil
       - canvas
@@ -13018,6 +13042,34 @@ snapshots:
       whatwg-mimetype: 4.0.0
       whatwg-url: 14.0.0
       ws: 8.17.1
+      xml-name-validator: 5.0.0
+    transitivePeerDependencies:
+      - bufferutil
+      - supports-color
+      - utf-8-validate
+
+  jsdom@24.1.1:
+    dependencies:
+      cssstyle: 4.0.1
+      data-urls: 5.0.0
+      decimal.js: 10.4.3
+      form-data: 4.0.0
+      html-encoding-sniffer: 4.0.0
+      http-proxy-agent: 7.0.2
+      https-proxy-agent: 7.0.5
+      is-potential-custom-element-name: 1.0.1
+      nwsapi: 2.2.12
+      parse5: 7.1.2
+      rrweb-cssom: 0.7.1
+      saxes: 6.0.0
+      symbol-tree: 3.2.4
+      tough-cookie: 4.1.4
+      w3c-xmlserializer: 5.0.0
+      webidl-conversions: 7.0.0
+      whatwg-encoding: 3.1.1
+      whatwg-mimetype: 4.0.0
+      whatwg-url: 14.0.0
+      ws: 8.18.0
       xml-name-validator: 5.0.0
     transitivePeerDependencies:
       - bufferutil
@@ -13501,6 +13553,8 @@ snapshots:
       path-key: 4.0.0
 
   nwsapi@2.2.10: {}
+
+  nwsapi@2.2.12: {}
 
   nx@19.5.1(@swc/core@1.6.6(@swc/helpers@0.5.11)):
     dependencies:
@@ -15352,6 +15406,8 @@ snapshots:
       signal-exit: 4.1.0
 
   ws@8.17.1: {}
+
+  ws@8.18.0: {}
 
   xml-name-validator@5.0.0: {}
 
