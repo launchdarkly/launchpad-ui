@@ -1,6 +1,6 @@
+import type { forwardRefType } from '@react-types/shared';
 import type { ForwardedRef } from 'react';
 import type { ListBoxItemProps, ListBoxProps } from 'react-aria-components';
-import type { forwardRefType } from './utils';
 
 import { Icon } from '@launchpad-ui/icons';
 import { cva } from 'class-variance-authority';
@@ -35,10 +35,7 @@ const _ListBox = <T extends object>(props: ListBoxProps<T>, ref: ForwardedRef<HT
  */
 const ListBox = (forwardRef as forwardRefType)(_ListBox);
 
-const _ListBoxItem = <T extends object>(
-	props: ListBoxItemProps<T>,
-	ref: ForwardedRef<HTMLDivElement>,
-) => {
+const _ListBoxItem = <T extends object>(props: ListBoxItemProps<T>, ref: ForwardedRef<T>) => {
 	const textValue =
 		props.textValue || (typeof props.children === 'string' ? props.children : undefined);
 	return (

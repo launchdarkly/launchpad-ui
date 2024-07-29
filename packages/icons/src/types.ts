@@ -184,6 +184,7 @@ const icons = [
 	'notifications-check',
 	'notifications-gear',
 	'notifications-outline',
+	'notifications-off',
 	'notifications-tilt',
 	'osmo',
 	'package',

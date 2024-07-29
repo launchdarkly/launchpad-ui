@@ -1,5 +1,32 @@
 # @launchpad-ui/inline-edit
 
+## 0.3.26
+
+### Patch Changes
+
+- [#1368](https://github.com/launchdarkly/launchpad-ui/pull/1368) [`4309328`](https://github.com/launchdarkly/launchpad-ui/commit/43093284b05b9093c503cb0b91819a74a6af9660) Thanks [@renovate](https://github.com/apps/renovate)! - Update dependencies
+
+- Updated dependencies [[`4309328`](https://github.com/launchdarkly/launchpad-ui/commit/43093284b05b9093c503cb0b91819a74a6af9660)]:
+  - @launchpad-ui/form@0.11.26
+
+## 0.3.25
+
+### Patch Changes
+
+- [#1366](https://github.com/launchdarkly/launchpad-ui/pull/1366) [`2a908c0`](https://github.com/launchdarkly/launchpad-ui/commit/2a908c093b5cc6a34bc4785727d0365f833bff0e) Thanks [@renovate](https://github.com/apps/renovate)! - Update dependencies
+
+- Updated dependencies [[`2a908c0`](https://github.com/launchdarkly/launchpad-ui/commit/2a908c093b5cc6a34bc4785727d0365f833bff0e)]:
+  - @launchpad-ui/form@0.11.25
+
+## 0.3.24
+
+### Patch Changes
+
+- Updated dependencies [[`1beb404`](https://github.com/launchdarkly/launchpad-ui/commit/1beb4043a3acfcfd0258ca491bd7265eb3c3a3aa)]:
+  - @launchpad-ui/icons@0.18.8
+  - @launchpad-ui/button@0.12.21
+  - @launchpad-ui/form@0.11.24
+
 ## 0.3.23
 
 ### Patch Changes

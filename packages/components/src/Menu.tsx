@@ -1,3 +1,4 @@
+import type { forwardRefType } from '@react-types/shared';
 import type { VariantProps } from 'class-variance-authority';
 import type { ForwardedRef } from 'react';
 import type {
@@ -6,7 +7,6 @@ import type {
 	MenuTriggerProps,
 	SubmenuTriggerProps,
 } from 'react-aria-components';
-import type { forwardRefType } from './utils';
 
 import { Icon } from '@launchpad-ui/icons';
 import { cva } from 'class-variance-authority';
@@ -55,7 +55,7 @@ const Menu = (forwardRef as forwardRefType)(_Menu);
 
 const _MenuItem = <T extends object>(
 	{ variant = 'default', ...props }: MenuItemProps<T>,
-	ref: ForwardedRef<HTMLDivElement>,
+	ref: ForwardedRef<T>,
 ) => {
 	return (
 		<AriaMenuItem

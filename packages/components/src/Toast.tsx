@@ -9,6 +9,7 @@ import { mergeProps } from '@react-aria/utils';
 import { ToastQueue as AriaToastQueue, useToastQueue } from '@react-stately/toast';
 import { cva } from 'class-variance-authority';
 import { cloneElement, useEffect, useRef } from 'react';
+import { useFocusRing } from 'react-aria';
 import { createPortal } from 'react-dom';
 
 import { IconButton } from './IconButton';
@@ -109,12 +110,13 @@ const Toast = <T extends ToastValue | SnackbarValue>({
 	...props
 }: ToastProps<T>) => {
 	const ref = useRef(null);
-	const { toastProps, titleProps, descriptionProps, closeButtonProps } = useToast(
+	const { toastProps, contentProps, titleProps, descriptionProps, closeButtonProps } = useToast(
 		props,
 		state,
 		ref,
 	);
 	const useMotion = useMedia('(prefers-reduced-motion: no-preference)');
+	const { isFocusVisible, focusProps } = useFocusRing();
 
 	const content: IconVariants & Partial<SnackbarContent & ToastContent> = props.toast.content;
 	const { children, status, title, description, action } = content;
@@ -132,10 +134,11 @@ const Toast = <T extends ToastValue | SnackbarValue>({
 	return (
 		<div
 			data-theme="dark"
-			{...toastProps}
+			{...mergeProps(toastProps, focusProps)}
 			ref={ref}
 			className={toast({ variant })}
 			data-animation={props.toast.animation}
+			data-focus-visible={isFocusVisible || undefined}
 			onAnimationEnd={() => {
 				if (props.toast.animation === 'exiting') {
 					state.remove(props.toast.key);
@@ -143,20 +146,22 @@ const Toast = <T extends ToastValue | SnackbarValue>({
 			}}
 		>
 			<StatusIcon kind={status || 'info'} className={icon({ status })} />
-			{variant === 'default' ? (
-				<div {...titleProps}>{children}</div>
-			) : (
-				<div className={styles.content}>
-					<div {...titleProps} className={styles.title}>
-						{title}
-					</div>
-					<div {...descriptionProps} className={styles.description}>
-						{description}
-						{cta && ' '}
-						{cta}
-					</div>
-				</div>
-			)}
+			<div {...contentProps} className={styles.content}>
+				{variant === 'default' ? (
+					<div {...titleProps}>{children}</div>
+				) : (
+					<>
+						<div {...titleProps} className={styles.title}>
+							{title}
+						</div>
+						<div {...descriptionProps} className={styles.description}>
+							{description}
+							{cta && ' '}
+							{cta}
+						</div>
+					</>
+				)}
+			</div>
 			<IconButton
 				aria-label="Close"
 				{...closeButtonProps}
