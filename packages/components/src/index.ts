@@ -93,7 +93,7 @@ export { ListBox, ListBoxItem } from './ListBox';
 export { Menu, MenuItem, MenuTrigger, SubmenuTrigger } from './Menu';
 export { Modal, ModalOverlay } from './Modal';
 export { NumberField } from './NumberField';
-export { HoverTrigger, OverlayArrow, Popover } from './Popover';
+export { OverlayArrow, Popover } from './Popover';
 export { Pressable } from './Pressable';
 export { ProgressBar } from './ProgressBar';
 export { Radio } from './Radio';
