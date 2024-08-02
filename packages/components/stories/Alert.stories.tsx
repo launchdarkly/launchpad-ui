@@ -80,10 +80,8 @@ export const Actions: Story = {
 				<Heading>Heading</Heading>
 				<Text>Content</Text>
 				<ButtonGroup>
-					<Button size="small">Label</Button>
-					<Button size="small" variant="minimal">
-						Label
-					</Button>
+					<Button>Label</Button>
+					<Button variant="minimal">Label</Button>
 				</ButtonGroup>
 			</>
 		),
