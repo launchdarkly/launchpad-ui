@@ -1,5 +1,11 @@
 # @launchpad-ui/components
 
+## 0.3.0
+
+### Minor Changes
+
+- [#1373](https://github.com/launchdarkly/launchpad-ui/pull/1373) [`b3b2f30`](https://github.com/launchdarkly/launchpad-ui/commit/b3b2f3061c0231a39f249edc63722e776b544b74) Thanks [@Niznikr](https://github.com/Niznikr)! - Add `popover` variant for `Tooltip` to replace `HoverTrigger`
+
 ## 0.2.19
 
 ### Patch Changes
