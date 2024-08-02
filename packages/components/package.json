@@ -39,6 +39,7 @@
 		"@react-aria/toast": "3.0.0-beta.14",
 		"@react-aria/utils": "3.25.1",
 		"@react-stately/toast": "3.0.0-beta.5",
+		"@react-stately/utils": "3.10.2",
 		"@react-types/shared": "3.24.1",
 		"class-variance-authority": "0.7.0",
 		"react-aria": "3.34.1",
