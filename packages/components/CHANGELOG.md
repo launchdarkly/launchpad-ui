@@ -1,5 +1,11 @@
 # @launchpad-ui/components
 
+## 0.4.0
+
+### Minor Changes
+
+- [#1361](https://github.com/launchdarkly/launchpad-ui/pull/1361) [`2169c64`](https://github.com/launchdarkly/launchpad-ui/commit/2169c646754d66f0a34299af841754b259c3cfec) Thanks [@Niznikr](https://github.com/Niznikr)! - Handle external links with `useHref` wrapper
+
 ## 0.3.1
 
 ### Patch Changes
