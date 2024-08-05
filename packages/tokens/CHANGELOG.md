@@ -1,5 +1,11 @@
 # @launchpad-ui/tokens
 
+## 0.11.1
+
+### Patch Changes
+
+- [#1363](https://github.com/launchdarkly/launchpad-ui/pull/1363) [`3265579`](https://github.com/launchdarkly/launchpad-ui/commit/326557944061dbd1c7f74daf00454b902b91cb2d) Thanks [@Niznikr](https://github.com/Niznikr)! - Add `Alert`
+
 ## 0.11.0
 
 ### Minor Changes
