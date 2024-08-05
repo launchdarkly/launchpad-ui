@@ -19,7 +19,7 @@ import styles from './styles/Tooltip.module.css';
 interface TooltipProps
 	extends Omit<AriaTooltipProps, 'offset' | 'crossOffset'>,
 		VariantProps<typeof tooltip> {}
-interface TooltipTriggerProps extends Omit<TooltipTriggerComponentProps, 'delay' | 'closeDelay'> {}
+interface TooltipTriggerProps extends Omit<TooltipTriggerComponentProps, 'closeDelay'> {}
 
 const tooltip = cva(styles.base, {
 	variants: {
@@ -59,7 +59,7 @@ const _Tooltip = (
 const Tooltip = forwardRef(_Tooltip);
 
 const TooltipTrigger = (props: TooltipTriggerProps) => {
-	return <AriaTooltipTrigger {...props} delay={500} closeDelay={250} />;
+	return <AriaTooltipTrigger delay={500} {...props} closeDelay={250} />;
 };
 
 export { Tooltip, TooltipTrigger };
