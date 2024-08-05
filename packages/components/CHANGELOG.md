@@ -1,5 +1,17 @@
 # @launchpad-ui/components
 
+## 0.3.1
+
+### Patch Changes
+
+- [#1363](https://github.com/launchdarkly/launchpad-ui/pull/1363) [`3265579`](https://github.com/launchdarkly/launchpad-ui/commit/326557944061dbd1c7f74daf00454b902b91cb2d) Thanks [@Niznikr](https://github.com/Niznikr)! - Add `Alert`
+
+- [#1376](https://github.com/launchdarkly/launchpad-ui/pull/1376) [`8d73559`](https://github.com/launchdarkly/launchpad-ui/commit/8d73559c58cb3d281c7aa55e68407d8ba60a5f27) Thanks [@Niznikr](https://github.com/Niznikr)! - Allow setting `delay` on `TooltipTrigger`
+
+- Updated dependencies [[`3265579`](https://github.com/launchdarkly/launchpad-ui/commit/326557944061dbd1c7f74daf00454b902b91cb2d)]:
+  - @launchpad-ui/tokens@0.11.1
+  - @launchpad-ui/icons@0.18.9
+
 ## 0.3.0
 
 ### Minor Changes

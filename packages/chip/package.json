@@ -1,6 +1,6 @@
 {
 	"name": "@launchpad-ui/chip",
-	"version": "0.9.34",
+	"version": "0.9.35",
 	"status": "beta",
 	"publishConfig": {
 		"access": "public"

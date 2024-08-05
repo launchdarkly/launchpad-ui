@@ -1,5 +1,13 @@
 # @launchpad-ui/avatar
 
+## 0.6.35
+
+### Patch Changes
+
+- Updated dependencies [[`3265579`](https://github.com/launchdarkly/launchpad-ui/commit/326557944061dbd1c7f74daf00454b902b91cb2d)]:
+  - @launchpad-ui/tokens@0.11.1
+  - @launchpad-ui/icons@0.18.9
+
 ## 0.6.34
 
 ### Patch Changes
