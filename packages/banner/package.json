@@ -1,6 +1,6 @@
 {
 	"name": "@launchpad-ui/banner",
-	"version": "0.10.35",
+	"version": "0.10.36",
 	"status": "beta",
 	"publishConfig": {
 		"access": "public"
