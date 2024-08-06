@@ -89,7 +89,6 @@ export const ComboBoxDialog: Story = {
 				<Button>Trigger</Button>
 				<Popover trigger="ComboBoxDialog" placement="bottom start">
 					<Dialog>
-						{/* @ts-ignore */}
 						<ComboBox aria-label="list" autoFocus menuTrigger="focus" allowsEmptyCollection>
 							<Group>
 								<Icon name="search" size="small" />

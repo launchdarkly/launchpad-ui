@@ -1,0 +1,6 @@
+.indicator {
+	&[data-drop-target] {
+		outline: 1px solid var(--lp-color-border-interactive-focus);
+		transform: translateZ(0);
+	}
+}
