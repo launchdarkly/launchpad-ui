@@ -1,6 +1,6 @@
 {
 	"name": "@launchpad-ui/select",
-	"version": "0.4.42",
+	"version": "0.4.43",
 	"status": "alpha",
 	"publishConfig": {
 		"access": "public"

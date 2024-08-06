@@ -1,6 +1,6 @@
 {
 	"name": "@launchpad-ui/inline-edit",
-	"version": "0.3.27",
+	"version": "0.3.28",
 	"status": "alpha",
 	"publishConfig": {
 		"access": "public"

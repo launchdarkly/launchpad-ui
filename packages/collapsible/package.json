@@ -1,6 +1,6 @@
 {
 	"name": "@launchpad-ui/collapsible",
-	"version": "0.1.66",
+	"version": "0.1.67",
 	"status": "alpha",
 	"publishConfig": {
 		"access": "public"
