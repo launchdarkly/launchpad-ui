@@ -1,0 +1,29 @@
+{
+	"version": "0.2.0",
+	"configurations": [
+		{
+			"name": "launchpad-design-system: client",
+			"type": "extensionHost",
+			"request": "launch",
+			"runtimeExecutable": "${execPath}/apps/vscode",
+			"args": ["--extensionDevelopmentPath=${workspaceRoot}/apps/vscode"],
+			"outFiles": ["${workspaceRoot}/apps/vscode/dist/**/*.js"],
+			"preLaunchTask": "launchpad-design-system: start-dev",
+			"postDebugTask": "launchpad-design-system: stop-dev"
+		},
+		{
+			"name": "launchpad-design-system: server",
+			"type": "node",
+			"request": "attach",
+			"port": 6009,
+			"restart": true,
+			"outFiles": ["${workspaceRoot}/apps/vscode/dist/**/*.js"]
+		}
+	],
+	"compounds": [
+		{
+			"name": "launchpad-design-system: debug",
+			"configurations": ["launchpad-design-system: client", "launchpad-design-system: server"]
+		}
+	]
+}
