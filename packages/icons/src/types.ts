@@ -38,6 +38,7 @@ const icons = [
 	'border-all',
 	'brain',
 	'broom',
+	'bug',
 	'building',
 	'building-arrow-up-right',
 	'building-gear',
