@@ -1,5 +1,59 @@
 # @launchpad-ui/filter
 
+## 0.7.28
+
+### Patch Changes
+
+- Updated dependencies [[`0d981ef`](https://github.com/launchdarkly/launchpad-ui/commit/0d981efb7e1ca252b51194a47ea8d5c652656462)]:
+  - @launchpad-ui/icons@0.18.10
+  - @launchpad-ui/button@0.12.23
+  - @launchpad-ui/dropdown@0.6.117
+  - @launchpad-ui/menu@0.13.28
+
+## 0.7.27
+
+### Patch Changes
+
+- Updated dependencies [[`3265579`](https://github.com/launchdarkly/launchpad-ui/commit/326557944061dbd1c7f74daf00454b902b91cb2d)]:
+  - @launchpad-ui/tokens@0.11.1
+  - @launchpad-ui/button@0.12.22
+  - @launchpad-ui/dropdown@0.6.116
+  - @launchpad-ui/icons@0.18.9
+  - @launchpad-ui/menu@0.13.27
+  - @launchpad-ui/tooltip@0.9.17
+
+## 0.7.26
+
+### Patch Changes
+
+- [#1368](https://github.com/launchdarkly/launchpad-ui/pull/1368) [`4309328`](https://github.com/launchdarkly/launchpad-ui/commit/43093284b05b9093c503cb0b91819a74a6af9660) Thanks [@renovate](https://github.com/apps/renovate)! - Update dependencies
+
+- Updated dependencies [[`4309328`](https://github.com/launchdarkly/launchpad-ui/commit/43093284b05b9093c503cb0b91819a74a6af9660)]:
+  - @launchpad-ui/dropdown@0.6.115
+  - @launchpad-ui/menu@0.13.26
+  - @launchpad-ui/tooltip@0.9.16
+
+## 0.7.25
+
+### Patch Changes
+
+- [#1366](https://github.com/launchdarkly/launchpad-ui/pull/1366) [`2a908c0`](https://github.com/launchdarkly/launchpad-ui/commit/2a908c093b5cc6a34bc4785727d0365f833bff0e) Thanks [@renovate](https://github.com/apps/renovate)! - Update dependencies
+
+- Updated dependencies [[`2a908c0`](https://github.com/launchdarkly/launchpad-ui/commit/2a908c093b5cc6a34bc4785727d0365f833bff0e)]:
+  - @launchpad-ui/dropdown@0.6.114
+  - @launchpad-ui/menu@0.13.25
+  - @launchpad-ui/tooltip@0.9.15
+
+## 0.7.24
+
+### Patch Changes
+
+- Updated dependencies [[`1beb404`](https://github.com/launchdarkly/launchpad-ui/commit/1beb4043a3acfcfd0258ca491bd7265eb3c3a3aa)]:
+  - @launchpad-ui/icons@0.18.8
+  - @launchpad-ui/button@0.12.21
+  - @launchpad-ui/dropdown@0.6.113
+  - @launchpad-ui/menu@0.13.24
+
 ## 0.7.23
 
 ### Patch Changes

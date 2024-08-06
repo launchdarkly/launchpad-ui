@@ -1,13 +1,14 @@
-import type { Meta, StoryFn, StoryObj } from '@storybook/react';
+import type { Meta, ReactRenderer, StoryFn, StoryObj } from '@storybook/react';
+import type { PlayFunction } from '@storybook/types';
 
 import { expect, userEvent, within } from '@storybook/test';
 
-import { Button, Tooltip, TooltipTrigger } from '../src';
+import { Button, Pressable, Tooltip, TooltipTrigger } from '../src';
 
 const meta: Meta<typeof Tooltip> = {
 	component: Tooltip,
 	// @ts-ignore
-	subcomponents: { TooltipTrigger },
+	subcomponents: { TooltipTrigger, Pressable },
 	title: 'Components/Overlays/Tooltip',
 	parameters: {
 		status: {
@@ -31,6 +32,19 @@ export default meta;
 
 type Story = StoryObj<typeof Tooltip>;
 
+const play: PlayFunction<ReactRenderer> = async ({
+	canvasElement,
+}: {
+	canvasElement: HTMLElement;
+}) => {
+	const canvas = within(canvasElement);
+
+	await userEvent.hover(canvasElement);
+	await userEvent.hover(canvas.getByRole('button'));
+	const body = canvasElement.ownerDocument.body;
+	await expect(await within(body).findByRole('tooltip'));
+};
+
 export const Example: Story = {
 	render: (args) => {
 		return (
@@ -40,12 +54,31 @@ export const Example: Story = {
 			</TooltipTrigger>
 		);
 	},
-	play: async ({ canvasElement }) => {
-		const canvas = within(canvasElement);
+	play,
+};
 
-		await userEvent.hover(canvasElement);
-		await userEvent.hover(canvas.getByRole('button'));
-		const body = canvasElement.ownerDocument.body;
-		await expect(await within(body).findByRole('tooltip'));
+export const CustomTrigger: Story = {
+	render: (args) => {
+		return (
+			<TooltipTrigger>
+				<Pressable>Trigger</Pressable>
+				<Tooltip {...args}>Message</Tooltip>
+			</TooltipTrigger>
+		);
 	},
+	play,
+};
+
+export const Popover: Story = {
+	render: (args) => {
+		return (
+			<TooltipTrigger>
+				<Button>Trigger</Button>
+				<Tooltip variant="popover" {...args}>
+					Message
+				</Tooltip>
+			</TooltipTrigger>
+		);
+	},
+	play,
 };

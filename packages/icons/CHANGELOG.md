@@ -1,5 +1,24 @@
 # @launchpad-ui/icons
 
+## 0.18.10
+
+### Patch Changes
+
+- [#1378](https://github.com/launchdarkly/launchpad-ui/pull/1378) [`0d981ef`](https://github.com/launchdarkly/launchpad-ui/commit/0d981efb7e1ca252b51194a47ea8d5c652656462) Thanks [@matthewferry](https://github.com/matthewferry)! - feat(icons): add bug icon
+
+## 0.18.9
+
+### Patch Changes
+
+- Updated dependencies [[`3265579`](https://github.com/launchdarkly/launchpad-ui/commit/326557944061dbd1c7f74daf00454b902b91cb2d)]:
+  - @launchpad-ui/tokens@0.11.1
+
+## 0.18.8
+
+### Patch Changes
+
+- [#1364](https://github.com/launchdarkly/launchpad-ui/pull/1364) [`1beb404`](https://github.com/launchdarkly/launchpad-ui/commit/1beb4043a3acfcfd0258ca491bd7265eb3c3a3aa) Thanks [@qshaner](https://github.com/qshaner)! - Add notifications-off icon
+
 ## 0.18.7
 
 ### Patch Changes

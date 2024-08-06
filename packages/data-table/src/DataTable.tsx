@@ -46,7 +46,7 @@ import {
 } from './styles/DataTable.css';
 
 type DataTableProps<T extends object> = TableStateProps<T> &
-	AriaTableProps<T> &
+	AriaTableProps &
 	Pick<AriaTableColumnResizeProps<T>, 'onResizeStart' | 'onResize' | 'onResizeEnd'> &
 	Partial<TableColumnResizeStateProps<T>> &
 	ComponentProps<'div'> & {

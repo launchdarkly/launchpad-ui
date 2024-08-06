@@ -2,24 +2,15 @@ import type { ForwardedRef } from 'react';
 import type {
 	OverlayArrowProps as AriaOverlayArrowProps,
 	PopoverProps as AriaPopoverProps,
-	DialogTriggerProps,
 } from 'react-aria-components';
 
-import { PressResponder } from '@react-aria/interactions';
-import { useId, useLayoutEffect } from '@react-aria/utils';
 import { cva } from 'class-variance-authority';
-import { forwardRef, useCallback, useContext, useRef } from 'react';
-import { useHover, useOverlayTrigger } from 'react-aria';
+import { forwardRef, useContext } from 'react';
 import {
 	OverlayArrow as AriaOverlayArrow,
 	Popover as AriaPopover,
-	PopoverContext as AriaPopoverContext,
-	DialogContext,
-	OverlayTriggerStateContext,
-	Provider,
 	composeRenderProps,
 } from 'react-aria-components';
-import { useOverlayTriggerState } from 'react-stately';
 
 import { PopoverContext } from './ComboBox';
 import styles from './styles/Popover.module.css';
@@ -78,76 +69,5 @@ const _OverlayArrow = (props: OverlayArrowProps, ref: ForwardedRef<HTMLDivElemen
  */
 const OverlayArrow = forwardRef(_OverlayArrow);
 
-const HoverTrigger = (props: DialogTriggerProps) => {
-	const state = useOverlayTriggerState(props);
-
-	const buttonRef = useRef<HTMLButtonElement>(null);
-	const { triggerProps, overlayProps } = useOverlayTrigger({ type: 'dialog' }, state, buttonRef);
-
-	triggerProps.id = useId();
-	// @ts-expect-error
-	overlayProps['aria-labelledby'] = triggerProps.id;
-
-	const ref = useRef<HTMLSpanElement>(null);
-	const openTimeout = useRef<ReturnType<typeof setTimeout> | undefined>();
-
-	// biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
-	const cancelOpenTimeout = useCallback(() => {
-		if (openTimeout.current) {
-			clearTimeout(openTimeout.current);
-			openTimeout.current = undefined;
-		}
-	}, [openTimeout]);
-
-	const onHoverChange = (isHovering: boolean) => {
-		if (!openTimeout.current) {
-			openTimeout.current = setTimeout(() => {
-				cancelOpenTimeout();
-				state.setOpen(isHovering);
-			}, 250);
-		} else {
-			cancelOpenTimeout();
-		}
-	};
-
-	const { hoverProps } = useHover({
-		onHoverChange,
-	});
-
-	useLayoutEffect(() => {
-		return () => {
-			cancelOpenTimeout();
-		};
-	}, [cancelOpenTimeout]);
-
-	const shouldCloseOnInteractOutside = (target: Element) => {
-		return target !== buttonRef.current;
-	};
-
-	return (
-		<Provider
-			values={[
-				[OverlayTriggerStateContext, state],
-				[DialogContext, overlayProps],
-				[
-					AriaPopoverContext,
-					{
-						trigger: 'DialogTrigger',
-						triggerRef: buttonRef,
-						UNSTABLE_portalContainer: ref.current || undefined,
-						shouldCloseOnInteractOutside,
-					},
-				],
-			]}
-		>
-			<span className={styles.hover} ref={ref} {...hoverProps}>
-				<PressResponder {...triggerProps} ref={buttonRef} isPressed={state.isOpen}>
-					{props.children}
-				</PressResponder>
-			</span>
-		</Provider>
-	);
-};
-
-export { HoverTrigger, OverlayArrow, Popover };
+export { OverlayArrow, Popover };
 export type { OverlayArrowProps, PopoverProps };

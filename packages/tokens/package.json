@@ -1,6 +1,6 @@
 {
 	"name": "@launchpad-ui/tokens",
-	"version": "0.11.0",
+	"version": "0.11.1",
 	"status": "beta",
 	"publishConfig": {
 		"access": "public"
@@ -33,14 +33,14 @@
 		"./dist/tokens.json": "./dist/tokens.json"
 	},
 	"scripts": {
-		"build": "node --loader ts-node/esm ./build.ts",
+		"build": "tsx build.ts && tsc --noEmit",
 		"clean": "rm -rf dist",
 		"lint": "exit 0",
 		"test": "exit 0"
 	},
 	"devDependencies": {
 		"json-to-ts": "^2.1.0",
-		"style-dictionary": "^4.0.0",
-		"ts-node": "^11.0.0-beta.1"
+		"style-dictionary": "^4.0.1",
+		"tsx": "^4.16.2"
 	}
 }

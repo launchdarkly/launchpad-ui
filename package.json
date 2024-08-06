@@ -44,7 +44,7 @@
 		"@commitlint/types": "^19.0.3",
 		"@playwright/test": "^1.45.0",
 		"@storybook/addon-a11y": "^8.2.1",
-		"@storybook/addon-designs": "^8.0.0",
+		"@storybook/addon-designs": "^8.0.3",
 		"@storybook/addon-essentials": "^8.2.1",
 		"@storybook/addon-interactions": "^8.2.1",
 		"@storybook/addon-themes": "^8.2.1",
@@ -56,7 +56,7 @@
 		"@storybook/test": "^8.2.1",
 		"@storybook/theming": "^8.2.1",
 		"@storybook/types": "^8.2.1",
-		"@testing-library/dom": "^10.3.1",
+		"@testing-library/dom": "^10.4.0",
 		"@testing-library/jest-dom": "^6.4.2",
 		"@testing-library/react": "^16.0.0",
 		"@testing-library/user-event": "^14.5.2",
@@ -73,11 +73,11 @@
 		"chromatic": "^11.4.1",
 		"deepmerge": "^4.3.1",
 		"fast-glob": "^3.3.0",
-		"husky": "^9.0.3",
+		"husky": "^9.1.1",
 		"jsdom": "^24.1.0",
 		"lightningcss": "^1.25.0",
 		"lint-staged": "^15.2.0",
-		"nx": "^19.4.1",
+		"nx": "^19.5.1",
 		"plop": "^4.0.0",
 		"react": "18.3.1",
 		"react-dom": "18.3.1",
@@ -92,7 +92,7 @@
 		"vite": "^5.3.1",
 		"vitest": "^2.0.0"
 	},
-	"packageManager": "pnpm@9.5.0",
+	"packageManager": "pnpm@9.6.0",
 	"pnpm": {
 		"peerDependencyRules": {
 			"allowedVersions": {

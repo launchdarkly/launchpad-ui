@@ -3,12 +3,10 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { vars } from '@launchpad-ui/vars';
 import { fireEvent, userEvent, within } from '@storybook/test';
 
-import { ExternalLink, Link } from '../src';
+import { Link } from '../src';
 
 const meta: Meta<typeof Link> = {
 	component: Link,
-	// @ts-ignore
-	subcomponents: { ExternalLink },
 	title: 'Components/Navigation/Link',
 	parameters: {
 		status: {

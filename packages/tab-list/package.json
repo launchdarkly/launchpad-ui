@@ -1,6 +1,6 @@
 {
 	"name": "@launchpad-ui/tab-list",
-	"version": "0.5.24",
+	"version": "0.5.27",
 	"status": "beta",
 	"publishConfig": {
 		"access": "public"
@@ -33,20 +33,20 @@
 		"test": "vitest run --coverage"
 	},
 	"dependencies": {
-		"@react-aria/tabs": "3.9.1",
-		"@react-stately/tabs": "3.6.6",
-		"@react-types/shared": "3.23.1",
-		"@react-types/tabs": "3.3.7",
+		"@react-aria/tabs": "3.9.3",
+		"@react-stately/tabs": "3.6.8",
+		"@react-types/shared": "3.24.1",
+		"@react-types/tabs": "3.3.9",
 		"@launchpad-ui/tokens": "workspace:~",
 		"classix": "2.1.17"
 	},
 	"peerDependencies": {
-		"@react-stately/collections": "3.10.7",
+		"@react-stately/collections": "3.10.9",
 		"react": "18.3.1",
 		"react-dom": "18.3.1"
 	},
 	"devDependencies": {
-		"@react-stately/collections": "3.10.7",
+		"@react-stately/collections": "3.10.9",
 		"react": "18.3.1",
 		"react-dom": "18.3.1"
 	}

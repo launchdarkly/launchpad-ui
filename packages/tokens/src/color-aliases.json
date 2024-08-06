@@ -7,20 +7,20 @@
 					"$value": "{color.gray.800}"
 				},
 				"error": {
-					"$value": "{color.system.red.50}",
-					"dark": "{color.system.red.900}"
+					"$value": "{color.system.red.0}",
+					"dark": "{color.system.red.950}"
 				},
 				"info": {
-					"$value": "{color.blue.50}",
-					"dark": "{color.blue.900}"
+					"$value": "{color.blue.0}",
+					"dark": "{color.blue.950}"
 				},
 				"success": {
-					"$value": "{color.system.green.100}",
-					"dark": "{color.system.green.900}"
+					"$value": "{color.system.green.0}",
+					"dark": "{color.system.green.950}"
 				},
 				"warning": {
-					"$value": "{color.system.yellow.100}",
-					"dark": "{color.system.yellow.900}"
+					"$value": "{color.system.yellow.0}",
+					"dark": "{color.system.yellow.950}"
 				}
 			},
 			"interactive": {

@@ -12,6 +12,7 @@
 			"matchUpdateTypes": ["patch"],
 			"enabled": false,
 			"excludePackagePatterns": [
+				"^@internationalized",
 				"^@react-aria",
 				"^@react-stately",
 				"^@react-types",
