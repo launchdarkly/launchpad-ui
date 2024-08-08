@@ -128,6 +128,7 @@ const icons = [
 	'fingerprint-bolt',
 	'flag',
 	'flag-code',
+	'flag-health',
 	'flag-outline',
 	'flask',
 	'flask-bolt',
