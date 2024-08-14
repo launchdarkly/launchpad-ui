@@ -29,6 +29,9 @@
 		"./themes.css": "./dist/themes.css",
 		"./index.css": "./dist/index.css",
 		"./media-queries.css": "./dist/media-queries.css",
+		"./dist/themes.css": "./dist/themes.css",
+		"./dist/index.css": "./dist/index.css",
+		"./dist/media-queries.css": "./dist/media-queries.css",
 		"./dist/contract.json": "./dist/contract.json"
 	},
 	"scripts": {
