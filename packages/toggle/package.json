@@ -1,6 +1,6 @@
 {
 	"name": "@launchpad-ui/toggle",
-	"version": "0.7.27",
+	"version": "0.7.28",
 	"status": "beta",
 	"publishConfig": {
 		"access": "public"
