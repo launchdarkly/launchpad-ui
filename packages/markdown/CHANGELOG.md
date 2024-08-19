@@ -1,5 +1,11 @@
 # @launchpad-ui/markdown
 
+## 0.5.23
+
+### Patch Changes
+
+- [#1386](https://github.com/launchdarkly/launchpad-ui/pull/1386) [`0777b9b`](https://github.com/launchdarkly/launchpad-ui/commit/0777b9bfda4474bfd213d32f0685325cd6a6c6b5) Thanks [@apucacao](https://github.com/apucacao)! - Remove top margin from Markdown component
+
 ## 0.5.22
 
 ### Patch Changes
