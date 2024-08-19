@@ -1,5 +1,12 @@
 # @launchpad-ui/core
 
+## 0.49.32
+
+### Patch Changes
+
+- Updated dependencies [[`0777b9b`](https://github.com/launchdarkly/launchpad-ui/commit/0777b9bfda4474bfd213d32f0685325cd6a6c6b5)]:
+  - @launchpad-ui/markdown@0.5.23
+
 ## 0.49.31
 
 ### Patch Changes
