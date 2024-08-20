@@ -1,3 +1,4 @@
+import type { forwardRefType } from '@react-types/shared';
 import type { ForwardedRef } from 'react';
 import type {
 	CellProps,
@@ -9,7 +10,6 @@ import type {
 	TableHeaderProps,
 	TableProps,
 } from 'react-aria-components';
-import type { forwardRefType } from './utils';
 
 import { Icon } from '@launchpad-ui/icons';
 import { cva } from 'class-variance-authority';

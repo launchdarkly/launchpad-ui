@@ -92,4 +92,5 @@
 	color: inherit;
 	overflow: hidden;
 	text-overflow: ellipsis;
+	margin-left: calc(-1 * var(--lp-spacing-300) - 1px);
 }
