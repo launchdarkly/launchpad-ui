@@ -1,6 +1,6 @@
 {
 	"name": "@launchpad-ui/alert",
-	"version": "0.9.24",
+	"version": "0.9.28",
 	"status": "beta",
 	"publishConfig": {
 		"access": "public"
@@ -36,7 +36,7 @@
 		"@launchpad-ui/button": "workspace:~",
 		"@launchpad-ui/icons": "workspace:~",
 		"@launchpad-ui/tokens": "workspace:~",
-		"@react-stately/utils": "3.10.1",
+		"@react-stately/utils": "3.10.2",
 		"classix": "2.1.17"
 	},
 	"peerDependencies": {

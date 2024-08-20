@@ -1,3 +1,4 @@
+import type { VariantProps } from 'class-variance-authority';
 import type { ForwardedRef } from 'react';
 import type {
 	TooltipProps as AriaTooltipProps,
@@ -12,14 +13,30 @@ import {
 	composeRenderProps,
 } from 'react-aria-components';
 
+import popoverStyles from './styles/Popover.module.css';
 import styles from './styles/Tooltip.module.css';
 
-interface TooltipProps extends Omit<AriaTooltipProps, 'offset' | 'crossOffset'> {}
-interface TooltipTriggerProps extends Omit<TooltipTriggerComponentProps, 'delay' | 'closeDelay'> {}
+interface TooltipProps
+	extends Omit<AriaTooltipProps, 'offset' | 'crossOffset'>,
+		VariantProps<typeof tooltip> {}
+interface TooltipTriggerProps extends Omit<TooltipTriggerComponentProps, 'closeDelay'> {}
 
-const tooltip = cva(styles.tooltip);
+const tooltip = cva(styles.base, {
+	variants: {
+		variant: {
+			default: styles.tooltip,
+			popover: popoverStyles.popover,
+		},
+	},
+	defaultVariants: {
+		variant: 'default',
+	},
+});
 
-const _Tooltip = (props: TooltipProps, ref: ForwardedRef<HTMLDivElement>) => {
+const _Tooltip = (
+	{ variant = 'default', ...props }: TooltipProps,
+	ref: ForwardedRef<HTMLDivElement>,
+) => {
 	return (
 		<AriaTooltip
 			{...props}
@@ -27,8 +44,9 @@ const _Tooltip = (props: TooltipProps, ref: ForwardedRef<HTMLDivElement>) => {
 			crossOffset={0}
 			ref={ref}
 			className={composeRenderProps(props.className, (className, renderProps) =>
-				tooltip({ ...renderProps, className }),
+				tooltip({ ...renderProps, variant, className }),
 			)}
+			data-trigger={variant === 'popover' ? 'DialogTrigger' : undefined}
 		/>
 	);
 };
@@ -41,7 +59,7 @@ const _Tooltip = (props: TooltipProps, ref: ForwardedRef<HTMLDivElement>) => {
 const Tooltip = forwardRef(_Tooltip);
 
 const TooltipTrigger = (props: TooltipTriggerProps) => {
-	return <AriaTooltipTrigger {...props} delay={500} closeDelay={250} />;
+	return <AriaTooltipTrigger delay={500} {...props} closeDelay={250} />;
 };
 
 export { Tooltip, TooltipTrigger };

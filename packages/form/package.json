@@ -1,6 +1,6 @@
 {
 	"name": "@launchpad-ui/form",
-	"version": "0.11.24",
+	"version": "0.11.29",
 	"status": "beta",
 	"publishConfig": {
 		"access": "public"
@@ -37,11 +37,11 @@
 		"@launchpad-ui/icons": "workspace:~",
 		"@launchpad-ui/tokens": "workspace:~",
 		"@launchpad-ui/tooltip": "workspace:~",
-		"@react-aria/button": "3.9.5",
-		"@react-aria/i18n": "3.11.1",
-		"@react-aria/numberfield": "3.11.3",
-		"@react-aria/visually-hidden": "3.8.12",
-		"@react-stately/numberfield": "3.9.3",
+		"@react-aria/button": "3.9.7",
+		"@react-aria/i18n": "3.12.1",
+		"@react-aria/numberfield": "3.11.5",
+		"@react-aria/visually-hidden": "3.8.14",
+		"@react-stately/numberfield": "3.9.5",
 		"classix": "2.1.17"
 	},
 	"peerDependencies": {

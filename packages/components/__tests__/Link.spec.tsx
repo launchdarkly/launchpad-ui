@@ -1,24 +1,32 @@
 import { MemoryRouter } from 'react-router-dom';
-import { describe, expect, it } from 'vitest';
+import { describe, expect, it, vi } from 'vitest';
 
 import { render, screen } from '../../../test/utils';
-import { ExternalLink, Link } from '../src';
+import { Link, RouterProvider, useHref } from '../src';
 
 describe('Link', () => {
 	it('renders', () => {
+		const navigate = vi.fn();
 		render(
-			<MemoryRouter>
-				<Link href="/test">Link</Link>
-			</MemoryRouter>,
+			<RouterProvider navigate={navigate} useHref={useHref}>
+				<MemoryRouter>
+					<Link href="/test">Link</Link>
+				</MemoryRouter>
+			</RouterProvider>,
 		);
 		expect(screen.getByRole('link')).toBeVisible();
 		expect(screen.getByRole('link')).toHaveAttribute('href', '/test');
 	});
-});
 
-describe('ExternalLink', () => {
-	it('renders', () => {
-		render(<ExternalLink href="https://www.test.com">Link</ExternalLink>);
+	it('renders external links', () => {
+		const navigate = vi.fn();
+		render(
+			<RouterProvider navigate={navigate} useHref={useHref}>
+				<MemoryRouter>
+					<Link href="https://www.test.com">Link</Link>
+				</MemoryRouter>
+			</RouterProvider>,
+		);
 		expect(screen.getByRole('link')).toBeVisible();
 		expect(screen.getByRole('link')).toHaveAttribute('href', 'https://www.test.com');
 	});

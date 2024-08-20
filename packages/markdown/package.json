@@ -1,6 +1,6 @@
 {
 	"name": "@launchpad-ui/markdown",
-	"version": "0.5.20",
+	"version": "0.5.23",
 	"status": "beta",
 	"publishConfig": {
 		"access": "public"
@@ -35,8 +35,8 @@
 	"dependencies": {
 		"@launchpad-ui/tokens": "workspace:~",
 		"classix": "2.1.17",
-		"isomorphic-dompurify": "^2.13.0",
-		"marked": "^13.0.0"
+		"isomorphic-dompurify": "^2.14.0",
+		"marked": "^14.0.0"
 	},
 	"peerDependencies": {
 		"react": "18.3.1",

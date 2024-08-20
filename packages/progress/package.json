@@ -1,6 +1,6 @@
 {
 	"name": "@launchpad-ui/progress",
-	"version": "0.5.49",
+	"version": "0.5.51",
 	"status": "beta",
 	"publishConfig": {
 		"access": "public"

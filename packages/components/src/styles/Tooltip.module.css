@@ -10,6 +10,9 @@
 	}
 }
 
+.base {
+}
+
 .tooltip {
 	isolation: isolate;
 	font: var(--lp-text-body-2-regular);

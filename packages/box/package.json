@@ -1,6 +1,6 @@
 {
 	"name": "@launchpad-ui/box",
-	"version": "0.1.15",
+	"version": "0.1.17",
 	"status": "alpha",
 	"publishConfig": {
 		"access": "public"

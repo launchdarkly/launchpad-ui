@@ -3,7 +3,7 @@ import type { DecoratorFunction, GlobalTypes, Parameters } from '@storybook/type
 import type { ReactNode } from 'react';
 
 import { Box } from '@launchpad-ui/box';
-import { RouterProvider as AriaRouterProvider } from '@launchpad-ui/components';
+import { RouterProvider as AriaRouterProvider, useHref } from '@launchpad-ui/components';
 import { withThemeByDataAttribute } from '@storybook/addon-themes';
 import { themes } from '@storybook/theming';
 import { BrowserRouter, useNavigate } from 'react-router-dom';
@@ -17,7 +17,11 @@ import '../packages/tokens/dist/themes.css';
 
 const RouterProvider = ({ children }: { children: ReactNode }) => {
 	const navigate = useNavigate();
-	return <AriaRouterProvider navigate={navigate}>{children}</AriaRouterProvider>;
+	return (
+		<AriaRouterProvider navigate={navigate} useHref={useHref}>
+			{children}
+		</AriaRouterProvider>
+	);
 };
 
 export const parameters: Parameters = {

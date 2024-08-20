@@ -1,6 +1,6 @@
 {
 	"name": "@launchpad-ui/tag",
-	"version": "0.3.39",
+	"version": "0.3.44",
 	"status": "alpha",
 	"publishConfig": {
 		"access": "public"
@@ -37,13 +37,13 @@
 		"@launchpad-ui/icons": "workspace:~",
 		"@launchpad-ui/tokens": "workspace:~",
 		"@launchpad-ui/tooltip": "workspace:~",
-		"@react-aria/focus": "3.17.1",
-		"@react-aria/interactions": "3.21.3",
-		"@react-aria/tag": "3.4.1",
-		"@react-aria/utils": "3.24.1",
-		"@react-stately/list": "3.10.5",
-		"@react-aria/selection": "3.18.1",
-		"@react-types/shared": "3.23.1",
+		"@react-aria/focus": "3.18.1",
+		"@react-aria/interactions": "3.22.1",
+		"@react-aria/tag": "3.4.3",
+		"@react-aria/utils": "3.25.1",
+		"@react-stately/list": "3.10.7",
+		"@react-aria/selection": "3.19.1",
+		"@react-types/shared": "3.24.1",
 		"classix": "2.1.17"
 	},
 	"peerDependencies": {

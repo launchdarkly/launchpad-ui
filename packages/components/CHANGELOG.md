@@ -1,5 +1,56 @@
 # @launchpad-ui/components
 
+## 0.4.2
+
+### Patch Changes
+
+- Updated dependencies [[`af43516`](https://github.com/launchdarkly/launchpad-ui/commit/af435166439a8b4860fda2dea78e78fc477ed088)]:
+  - @launchpad-ui/tokens@0.11.2
+  - @launchpad-ui/icons@0.18.11
+
+## 0.4.1
+
+### Patch Changes
+
+- Updated dependencies [[`0d981ef`](https://github.com/launchdarkly/launchpad-ui/commit/0d981efb7e1ca252b51194a47ea8d5c652656462)]:
+  - @launchpad-ui/icons@0.18.10
+
+## 0.4.0
+
+### Minor Changes
+
+- [#1361](https://github.com/launchdarkly/launchpad-ui/pull/1361) [`2169c64`](https://github.com/launchdarkly/launchpad-ui/commit/2169c646754d66f0a34299af841754b259c3cfec) Thanks [@Niznikr](https://github.com/Niznikr)! - Handle external links with `useHref` wrapper
+
+## 0.3.1
+
+### Patch Changes
+
+- [#1363](https://github.com/launchdarkly/launchpad-ui/pull/1363) [`3265579`](https://github.com/launchdarkly/launchpad-ui/commit/326557944061dbd1c7f74daf00454b902b91cb2d) Thanks [@Niznikr](https://github.com/Niznikr)! - Add `Alert`
+
+- [#1376](https://github.com/launchdarkly/launchpad-ui/pull/1376) [`8d73559`](https://github.com/launchdarkly/launchpad-ui/commit/8d73559c58cb3d281c7aa55e68407d8ba60a5f27) Thanks [@Niznikr](https://github.com/Niznikr)! - Allow setting `delay` on `TooltipTrigger`
+
+- Updated dependencies [[`3265579`](https://github.com/launchdarkly/launchpad-ui/commit/326557944061dbd1c7f74daf00454b902b91cb2d)]:
+  - @launchpad-ui/tokens@0.11.1
+  - @launchpad-ui/icons@0.18.9
+
+## 0.3.0
+
+### Minor Changes
+
+- [#1373](https://github.com/launchdarkly/launchpad-ui/pull/1373) [`b3b2f30`](https://github.com/launchdarkly/launchpad-ui/commit/b3b2f3061c0231a39f249edc63722e776b544b74) Thanks [@Niznikr](https://github.com/Niznikr)! - Add `popover` variant for `Tooltip` to replace `HoverTrigger`
+
+## 0.2.19
+
+### Patch Changes
+
+- [#1368](https://github.com/launchdarkly/launchpad-ui/pull/1368) [`4309328`](https://github.com/launchdarkly/launchpad-ui/commit/43093284b05b9093c503cb0b91819a74a6af9660) Thanks [@renovate](https://github.com/apps/renovate)! - Update dependencies
+
+## 0.2.18
+
+### Patch Changes
+
+- [#1366](https://github.com/launchdarkly/launchpad-ui/pull/1366) [`2a908c0`](https://github.com/launchdarkly/launchpad-ui/commit/2a908c093b5cc6a34bc4785727d0365f833bff0e) Thanks [@renovate](https://github.com/apps/renovate)! - Update dependencies
+
 ## 0.2.17
 
 ### Patch Changes

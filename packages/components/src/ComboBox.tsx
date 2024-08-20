@@ -1,7 +1,7 @@
+import type { forwardRefType } from '@react-types/shared';
 import type { CSSProperties, ForwardedRef } from 'react';
 import type { ComboBoxProps, PopoverProps } from 'react-aria-components';
 import type { IconButtonProps } from './IconButton';
-import type { forwardRefType } from './utils';
 
 import { useResizeObserver } from '@react-aria/utils';
 import { cva } from 'class-variance-authority';
