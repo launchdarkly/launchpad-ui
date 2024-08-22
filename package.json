@@ -90,7 +90,6 @@
 		"typescript": "^5.5.2",
 		"typescript-plugin-css-modules": "^5.1.0",
 		"vite": "^5.4.0",
-		"vite-css-modules": "^1.4.2",
 		"vitest": "^2.0.0"
 	},
 	"packageManager": "pnpm@9.7.0",
