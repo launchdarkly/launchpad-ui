@@ -8,6 +8,7 @@ import browserslist from 'browserslist';
 import { browserslistToTargets } from 'lightningcss';
 import { PluginPure } from 'rollup-plugin-pure';
 import { defineConfig } from 'vite';
+import { patchCssModules } from 'vite-css-modules';
 import { configDefaults } from 'vitest/config';
 
 import tsconfig from './tsconfig.json';
@@ -53,8 +54,10 @@ export default defineConfig({
 				pattern: '[hash]_[local]',
 			},
 		},
+		devSourcemap: true,
 	},
 	plugins: [
+		patchCssModules(),
 		react(),
 		vanillaExtractPlugin(),
 		cssImport(),
