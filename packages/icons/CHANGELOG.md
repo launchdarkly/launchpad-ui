@@ -1,5 +1,11 @@
 # @launchpad-ui/icons
 
+## 0.18.12
+
+### Patch Changes
+
+- [#1380](https://github.com/launchdarkly/launchpad-ui/pull/1380) [`cffa2f9`](https://github.com/launchdarkly/launchpad-ui/commit/cffa2f9055bb8f33b1db0ef1db01ac65d2498a73) Thanks [@mguoynes](https://github.com/mguoynes)! - add flag-health icon
+
 ## 0.18.11
 
 ### Patch Changes

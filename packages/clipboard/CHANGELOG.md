@@ -1,5 +1,12 @@
 # @launchpad-ui/clipboard
 
+## 0.11.45
+
+### Patch Changes
+
+- Updated dependencies [[`cffa2f9`](https://github.com/launchdarkly/launchpad-ui/commit/cffa2f9055bb8f33b1db0ef1db01ac65d2498a73)]:
+  - @launchpad-ui/icons@0.18.12
+
 ## 0.11.44
 
 ### Patch Changes
