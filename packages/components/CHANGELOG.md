@@ -1,5 +1,16 @@
 # @launchpad-ui/components
 
+## 0.4.3
+
+### Patch Changes
+
+- [#1390](https://github.com/launchdarkly/launchpad-ui/pull/1390) [`219f80c`](https://github.com/launchdarkly/launchpad-ui/commit/219f80cc685ecc78ac194f4beb47956c9ece6f1e) Thanks [@Niznikr](https://github.com/Niznikr)! - Fix `Switch` animation on Firefox
+
+- [#1365](https://github.com/launchdarkly/launchpad-ui/pull/1365) [`55a2f0b`](https://github.com/launchdarkly/launchpad-ui/commit/55a2f0b43d9a066670bfbd969989471babef4fac) Thanks [@Niznikr](https://github.com/Niznikr)! - Add `Table`
+
+- Updated dependencies [[`cffa2f9`](https://github.com/launchdarkly/launchpad-ui/commit/cffa2f9055bb8f33b1db0ef1db01ac65d2498a73)]:
+  - @launchpad-ui/icons@0.18.12
+
 ## 0.4.2
 
 ### Patch Changes
