@@ -124,7 +124,6 @@ export {
 	Cell,
 	Column,
 	ColumnResizer,
-	ResizableTableColumn,
 	ResizableTableContainer,
 	Row,
 	Table,

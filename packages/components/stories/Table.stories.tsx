@@ -9,7 +9,6 @@ import {
 	Cell,
 	Column,
 	DropIndicator,
-	ResizableTableColumn,
 	ResizableTableContainer,
 	Row,
 	Table,
@@ -104,15 +103,15 @@ export const ColumnResizing: Story = {
 			>
 				<Table sortDescriptor={sortDescriptor} onSortChange={setSortDescriptor} {...args}>
 					<TableHeader>
-						<ResizableTableColumn id="name" isRowHeader allowsSorting>
+						<Column id="name" isRowHeader allowsSorting>
 							Name
-						</ResizableTableColumn>
-						<ResizableTableColumn id="description" allowsSorting>
+						</Column>
+						<Column id="description" allowsSorting>
 							Description
-						</ResizableTableColumn>
-						<ResizableTableColumn id="id" allowsSorting>
+						</Column>
+						<Column id="id" allowsSorting>
 							ID
-						</ResizableTableColumn>
+						</Column>
 					</TableHeader>
 					<TableBody items={items}>
 						{(item) => (

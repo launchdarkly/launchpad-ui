@@ -45,13 +45,15 @@
 }
 
 .resizer {
-	width: var(--lp-size-4);
+	width: var(--lp-size-12);
 	background-color: transparent;
 	height: var(--lp-size-24);
 	flex: 0 0 auto;
 	touch-action: none;
 	box-sizing: border-box;
 	background-clip: content-box;
+	border: var(--lp-size-4) transparent;
+	border-style: none solid;
 
 	&[data-resizable-direction='both'] {
 		cursor: ew-resize;
@@ -84,13 +86,8 @@
 	gap: var(--lp-spacing-200);
 }
 
-.button {
-	display: block;
+.truncate {
 	flex: 1;
-	text-align: start;
-	font: inherit;
-	color: inherit;
 	overflow: hidden;
 	text-overflow: ellipsis;
-	margin-left: calc(-1 * var(--lp-spacing-300) - 1px);
 }

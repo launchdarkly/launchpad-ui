@@ -13,27 +13,25 @@ import type {
 
 import { Icon } from '@launchpad-ui/icons';
 import { cva } from 'class-variance-authority';
-import { forwardRef } from 'react';
+import { createContext, forwardRef, useContext } from 'react';
 import { VisuallyHidden } from 'react-aria';
 import {
 	Cell as AriaCell,
 	Column as AriaColumn,
 	ColumnResizer as AriaColumnResizer,
+	ResizableTableContainer as AriaResizableTableContainer,
 	Row as AriaRow,
 	Table as AriaTable,
 	TableBody as AriaTableBody,
 	TableHeader as AriaTableHeader,
 	Collection,
-	ResizableTableContainer,
+	Provider,
 	composeRenderProps,
 	useTableOptions,
 } from 'react-aria-components';
 
-import { Button } from './Button';
 import { Checkbox } from './Checkbox';
 import { IconButton } from './IconButton';
-import { Menu, MenuItem, MenuTrigger } from './Menu';
-import { Popover } from './Popover';
 import styles from './styles/Table.module.css';
 
 const table = cva(styles.table);
@@ -43,6 +41,10 @@ const body = cva(styles.body);
 const row = cva(styles.row);
 const cell = cva(styles.cell);
 const resizer = cva(styles.resizer);
+
+const ResizableTableContainerContext = createContext<{ resizable: boolean } | null>({
+	resizable: false,
+});
 
 const _Table = (props: TableProps, ref: ForwardedRef<HTMLTableElement>) => {
 	return (
@@ -64,6 +66,7 @@ const _Table = (props: TableProps, ref: ForwardedRef<HTMLTableElement>) => {
 const Table = forwardRef(_Table);
 
 const _Column = (props: ColumnProps, ref: ForwardedRef<HTMLTableCellElement>) => {
+	const ctx = useContext(ResizableTableContainerContext);
 	return (
 		<AriaColumn
 			{...props}
@@ -71,7 +74,17 @@ const _Column = (props: ColumnProps, ref: ForwardedRef<HTMLTableCellElement>) =>
 			className={composeRenderProps(props.className, (className, renderProps) =>
 				column({ ...renderProps, className }),
 			)}
-		/>
+		>
+			{composeRenderProps(props.children, (children, { allowsSorting, sortDirection }) => (
+				<div className={styles.flex}>
+					<span className={styles.truncate}>{children}</span>
+					{allowsSorting && sortDirection && (
+						<Icon name={sortDirection === 'ascending' ? 'caret-up' : 'caret-down'} size="small" />
+					)}
+					{ctx?.resizable && <ColumnResizer />}
+				</div>
+			))}
+		</AriaColumn>
 	);
 };
 
@@ -201,77 +214,22 @@ const _ColumnResizer = (props: ColumnResizerProps, ref: ForwardedRef<HTMLDivElem
 
 const ColumnResizer = forwardRef(_ColumnResizer);
 
-const _ResizableTableColumn = (props: ColumnProps, ref: ForwardedRef<HTMLTableCellElement>) => {
+const _ResizableTableContainer = (
+	{ children, ...props }: ResizableTableContainerProps,
+	ref: ForwardedRef<HTMLDivElement>,
+) => {
 	return (
-		<AriaColumn
-			{...props}
-			ref={ref}
-			className={composeRenderProps(props.className, (className, renderProps) =>
-				column({ ...renderProps, className }),
-			)}
-		>
-			{composeRenderProps(
-				props.children,
-				(children, { startResize, sort, allowsSorting, sortDirection }) => (
-					<div className={styles.flex}>
-						<MenuTrigger>
-							<Button className={styles.button} variant="minimal">
-								{children}
-							</Button>
-							<Popover>
-								<Menu
-									onAction={(action) => {
-										if (action === 'sortAscending') {
-											sort('ascending');
-										} else if (action === 'sortDescending') {
-											sort('descending');
-										} else if (action === 'resize') {
-											startResize();
-										}
-									}}
-								>
-									{allowsSorting && (
-										<>
-											<MenuItem id="sortAscending">Sort Ascending</MenuItem>
-											<MenuItem id="sortDescending">Sort Descending</MenuItem>
-										</>
-									)}
-									<MenuItem id="resize">Resize</MenuItem>
-								</Menu>
-							</Popover>
-						</MenuTrigger>
-						{allowsSorting &&
-							(sortDirection === 'ascending' ? (
-								<Icon name="caret-up" size="small" />
-							) : (
-								<Icon name="caret-down" size="small" />
-							))}
-						<ColumnResizer />
-					</div>
-				),
-			)}
-		</AriaColumn>
+		<AriaResizableTableContainer {...props} ref={ref}>
+			<Provider values={[[ResizableTableContainerContext, { resizable: true }]]}>
+				{children}
+			</Provider>
+		</AriaResizableTableContainer>
 	);
 };
 
-/**
- * A column within a `<Table>`.
- *
- * https://react-spectrum.adobe.com/react-aria/Table.html
- */
-const ResizableTableColumn = forwardRef(_ResizableTableColumn);
+const ResizableTableContainer = forwardRef(_ResizableTableContainer);
 
-export {
-	Cell,
-	Column,
-	ColumnResizer,
-	ResizableTableColumn,
-	ResizableTableContainer,
-	Row,
-	Table,
-	TableBody,
-	TableHeader,
-};
+export { Cell, Column, ColumnResizer, ResizableTableContainer, Row, Table, TableBody, TableHeader };
 export type {
 	CellProps,
 	ColumnProps,
