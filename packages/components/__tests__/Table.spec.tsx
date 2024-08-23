@@ -1,16 +1,7 @@
 import { describe, expect, it } from 'vitest';
 
 import { render, screen } from '../../../test/utils';
-import {
-	Cell,
-	Column,
-	ResizableTableColumn,
-	ResizableTableContainer,
-	Row,
-	Table,
-	TableBody,
-	TableHeader,
-} from '../src';
+import { Cell, Column, ResizableTableContainer, Row, Table, TableBody, TableHeader } from '../src';
 
 describe('Table', () => {
 	it('renders', () => {
@@ -19,7 +10,7 @@ describe('Table', () => {
 				<Table>
 					<TableHeader>
 						<Column isRowHeader>Col 1</Column>
-						<ResizableTableColumn>Col 2</ResizableTableColumn>
+						<Column>Col 2</Column>
 					</TableHeader>
 					<TableBody>
 						<Row>
