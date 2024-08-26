@@ -28,7 +28,7 @@ const Demo = (props: Partial<FormFieldProps> = {}) => {
 
 export default {
 	component: Demo,
-	title: 'Legacy/Sunset/Form/useNumberField',
+	title: 'Legacy/Deprecated/Form/useNumberField',
 	description: 'A text field allows the user to provide numeric values.',
 	parameters: {
 		status: {

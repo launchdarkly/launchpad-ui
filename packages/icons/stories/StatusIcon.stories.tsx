@@ -4,13 +4,14 @@ import { StatusIcon } from '../src';
 
 export default {
 	component: StatusIcon,
-	title: 'Legacy/Sunset/Icon/StatusIcon',
+	title: 'Legacy/Deprecated/Icon/StatusIcon',
 	description:
 		'Flair icons can be used as either square or circular icons with gradient backgrounds.',
 	parameters: {
 		status: {
 			type: import.meta.env.STORYBOOK_PACKAGE_STATUS__ICONS,
 		},
+		chromatic: { disableSnapshot: true },
 	},
 };
 

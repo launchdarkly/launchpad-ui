@@ -5,12 +5,13 @@ import { Table, TableBody, TableCell, TableHead, TableHeadCell, TableRow } from 
 export default {
 	component: Table,
 	subcomponents: { TableBody, TableCell, TableHead, TableHeadCell, TableRow },
-	title: 'Legacy/Sunset/Table',
+	title: 'Legacy/Deprecated/Table',
 	description: 'An element used to organize and display data to users.',
 	parameters: {
 		status: {
 			type: import.meta.env.STORYBOOK_PACKAGE_STATUS__TABLE,
 		},
+		chromatic: { disableSnapshot: true },
 	},
 };
 

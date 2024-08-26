@@ -14,6 +14,7 @@ export default {
 		status: {
 			type: import.meta.env.STORYBOOK_PACKAGE_STATUS__CLIPBOARD,
 		},
+		chromatic: { disableSnapshot: true },
 	},
 	argTypes: {
 		children: {

@@ -12,6 +12,11 @@ type TableProps = ComponentProps<'table'> & {
 	'data-test-id'?: string;
 };
 
+/**
+ * @deprecated use `Table` from `@launchpad-ui/components` instead
+ *
+ * https://launchpad.launchdarkly.com/?path=/docs/components-collections-table--docs
+ */
 const Table = ({
 	auto,
 	compact,

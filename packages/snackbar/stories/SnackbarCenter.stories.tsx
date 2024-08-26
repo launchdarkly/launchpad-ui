@@ -11,6 +11,9 @@ export default {
 	component: SnackbarCenter,
 	title: 'Legacy/Deprecated/Snackbar/SnackbarCenter',
 	description: 'A container for snackbars.',
+	parameters: {
+		chromatic: { disableSnapshot: true },
+	},
 };
 
 type Story = StoryObj<typeof SnackbarCenter>;

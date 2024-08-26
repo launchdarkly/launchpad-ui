@@ -53,6 +53,11 @@ type DataTableProps<T extends object> = TableStateProps<T> &
 		'data-test-id'?: string;
 	};
 
+/**
+ * @deprecated use `Table` from `@launchpad-ui/components` instead
+ *
+ * https://launchpad.launchdarkly.com/?path=/docs/components-collections-table--docs
+ */
 const DataTable = forwardRef(
 	<T extends object>(
 		{ className, 'data-test-id': testId = 'data-table', ...props }: DataTableProps<T>,

@@ -15,6 +15,11 @@ type TableHeadCellProps = ComponentProps<'th'> & {
 		| 'six-of-twelve';
 };
 
+/**
+ * @deprecated use `Table` from `@launchpad-ui/components` instead
+ *
+ * https://launchpad.launchdarkly.com/?path=/docs/components-collections-table--docs
+ */
 const TableHeadCell = ({
 	align = 'left',
 	className,

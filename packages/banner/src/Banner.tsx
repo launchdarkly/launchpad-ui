@@ -13,6 +13,11 @@ type BannerProps = ComponentProps<'div'> & {
 	header?: ReactNode;
 };
 
+/**
+ * @deprecated use `Alert` from `@launchpad-ui/components` instead
+ *
+ * https://launchpad.launchdarkly.com/?path=/docs/components-status-alert--docs
+ */
 const Banner = ({
 	kind,
 	className,
