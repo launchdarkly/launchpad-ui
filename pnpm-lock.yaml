@@ -43,7 +43,7 @@ importers:
         version: 8.2.6(storybook@8.2.6(@babel/preset-env@7.25.3(@babel/core@7.25.2)))
       '@storybook/addon-interactions':
         specifier: ^8.2.1
-        version: 8.2.6(storybook@8.2.6(@babel/preset-env@7.25.3(@babel/core@7.25.2)))(vitest@2.0.5(@types/node@20.16.1)(@vitest/ui@2.0.5)(jsdom@24.1.1)(less@4.2.0)(lightningcss@1.26.0)(sass@1.77.8)(stylus@0.62.0))
+        version: 8.2.6(storybook@8.2.6(@babel/preset-env@7.25.3(@babel/core@7.25.2)))(vitest@2.0.5(@types/node@20.16.1)(@vitest/ui@2.0.5)(jsdom@25.0.0)(less@4.2.0)(lightningcss@1.26.0)(sass@1.77.8)(stylus@0.62.0))
       '@storybook/addon-themes':
         specifier: ^8.2.1
         version: 8.2.6(storybook@8.2.6(@babel/preset-env@7.25.3(@babel/core@7.25.2)))
@@ -64,7 +64,7 @@ importers:
         version: 8.2.6(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(rollup@4.19.1)(storybook@8.2.6(@babel/preset-env@7.25.3(@babel/core@7.25.2)))(typescript@5.5.4)(vite@5.4.0(@types/node@20.16.1)(less@4.2.0)(lightningcss@1.26.0)(sass@1.77.8)(stylus@0.62.0))
       '@storybook/test':
         specifier: ^8.2.1
-        version: 8.2.6(storybook@8.2.6(@babel/preset-env@7.25.3(@babel/core@7.25.2)))(vitest@2.0.5(@types/node@20.16.1)(@vitest/ui@2.0.5)(jsdom@24.1.1)(less@4.2.0)(lightningcss@1.26.0)(sass@1.77.8)(stylus@0.62.0))
+        version: 8.2.6(storybook@8.2.6(@babel/preset-env@7.25.3(@babel/core@7.25.2)))(vitest@2.0.5(@types/node@20.16.1)(@vitest/ui@2.0.5)(jsdom@25.0.0)(less@4.2.0)(lightningcss@1.26.0)(sass@1.77.8)(stylus@0.62.0))
       '@storybook/theming':
         specifier: ^8.2.1
         version: 8.2.6(storybook@8.2.6(@babel/preset-env@7.25.3(@babel/core@7.25.2)))
@@ -106,7 +106,7 @@ importers:
         version: 3.7.0(@swc/helpers@0.5.12)(vite@5.4.0(@types/node@20.16.1)(less@4.2.0)(lightningcss@1.26.0)(sass@1.77.8)(stylus@0.62.0))
       '@vitest/coverage-v8':
         specifier: ^2.0.0
-        version: 2.0.5(vitest@2.0.5(@types/node@20.16.1)(@vitest/ui@2.0.5)(jsdom@24.1.1)(less@4.2.0)(lightningcss@1.26.0)(sass@1.77.8)(stylus@0.62.0))
+        version: 2.0.5(vitest@2.0.5(@types/node@20.16.1)(@vitest/ui@2.0.5)(jsdom@25.0.0)(less@4.2.0)(lightningcss@1.26.0)(sass@1.77.8)(stylus@0.62.0))
       '@vitest/ui':
         specifier: ^2.0.0
         version: 2.0.5(vitest@2.0.5)
@@ -126,8 +126,8 @@ importers:
         specifier: ^9.1.1
         version: 9.1.4
       jsdom:
-        specifier: ^24.1.0
-        version: 24.1.1
+        specifier: ^25.0.0
+        version: 25.0.0
       lightningcss:
         specifier: ^1.26.0
         version: 1.26.0
@@ -175,7 +175,7 @@ importers:
         version: 5.4.0(@types/node@20.16.1)(less@4.2.0)(lightningcss@1.26.0)(sass@1.77.8)(stylus@0.62.0)
       vitest:
         specifier: ^2.0.0
-        version: 2.0.5(@types/node@20.16.1)(@vitest/ui@2.0.5)(jsdom@24.1.1)(less@4.2.0)(lightningcss@1.26.0)(sass@1.77.8)(stylus@0.62.0)
+        version: 2.0.5(@types/node@20.16.1)(@vitest/ui@2.0.5)(jsdom@25.0.0)(less@4.2.0)(lightningcss@1.26.0)(sass@1.77.8)(stylus@0.62.0)
 
   packages/alert:
     dependencies:
@@ -5816,6 +5816,15 @@ packages:
       canvas:
         optional: true
 
+  jsdom@25.0.0:
+    resolution: {integrity: sha512-OhoFVT59T7aEq75TVw9xxEfkXgacpqAhQaYgP9y/fDqWQCMB/b1H66RfmPm/MaeaAIU9nDwMOVTlPN51+ao6CQ==}
+    engines: {node: '>=18'}
+    peerDependencies:
+      canvas: ^2.11.2
+    peerDependenciesMeta:
+      canvas:
+        optional: true
+
   jsesc@0.5.0:
     resolution: {integrity: sha512-uZz5UnB7u4T9LvwmFqXii7pZSouaRPorGs5who1Ip7VO0wxanFvBL7GkM6dTHlgX+jhBApRetaWpnDabOeTcnA==}
     hasBin: true
@@ -10589,11 +10598,11 @@ snapshots:
       '@storybook/global': 5.0.0
       storybook: 8.2.6(@babel/preset-env@7.25.3(@babel/core@7.25.2))
 
-  '@storybook/addon-interactions@8.2.6(storybook@8.2.6(@babel/preset-env@7.25.3(@babel/core@7.25.2)))(vitest@2.0.5(@types/node@20.16.1)(@vitest/ui@2.0.5)(jsdom@24.1.1)(less@4.2.0)(lightningcss@1.26.0)(sass@1.77.8)(stylus@0.62.0))':
+  '@storybook/addon-interactions@8.2.6(storybook@8.2.6(@babel/preset-env@7.25.3(@babel/core@7.25.2)))(vitest@2.0.5(@types/node@20.16.1)(@vitest/ui@2.0.5)(jsdom@25.0.0)(less@4.2.0)(lightningcss@1.26.0)(sass@1.77.8)(stylus@0.62.0))':
     dependencies:
       '@storybook/global': 5.0.0
       '@storybook/instrumenter': 8.2.6(storybook@8.2.6(@babel/preset-env@7.25.3(@babel/core@7.25.2)))
-      '@storybook/test': 8.2.6(storybook@8.2.6(@babel/preset-env@7.25.3(@babel/core@7.25.2)))(vitest@2.0.5(@types/node@20.16.1)(@vitest/ui@2.0.5)(jsdom@24.1.1)(less@4.2.0)(lightningcss@1.26.0)(sass@1.77.8)(stylus@0.62.0))
+      '@storybook/test': 8.2.6(storybook@8.2.6(@babel/preset-env@7.25.3(@babel/core@7.25.2)))(vitest@2.0.5(@types/node@20.16.1)(@vitest/ui@2.0.5)(jsdom@25.0.0)(less@4.2.0)(lightningcss@1.26.0)(sass@1.77.8)(stylus@0.62.0))
       polished: 4.3.1
       storybook: 8.2.6(@babel/preset-env@7.25.3(@babel/core@7.25.2))
       ts-dedent: 2.2.0
@@ -10808,12 +10817,12 @@ snapshots:
     optionalDependencies:
       typescript: 5.5.4
 
-  '@storybook/test@8.2.6(storybook@8.2.6(@babel/preset-env@7.25.3(@babel/core@7.25.2)))(vitest@2.0.5(@types/node@20.16.1)(@vitest/ui@2.0.5)(jsdom@24.1.1)(less@4.2.0)(lightningcss@1.26.0)(sass@1.77.8)(stylus@0.62.0))':
+  '@storybook/test@8.2.6(storybook@8.2.6(@babel/preset-env@7.25.3(@babel/core@7.25.2)))(vitest@2.0.5(@types/node@20.16.1)(@vitest/ui@2.0.5)(jsdom@25.0.0)(less@4.2.0)(lightningcss@1.26.0)(sass@1.77.8)(stylus@0.62.0))':
     dependencies:
       '@storybook/csf': 0.1.11
       '@storybook/instrumenter': 8.2.6(storybook@8.2.6(@babel/preset-env@7.25.3(@babel/core@7.25.2)))
       '@testing-library/dom': 10.1.0
-      '@testing-library/jest-dom': 6.4.5(vitest@2.0.5(@types/node@20.16.1)(@vitest/ui@2.0.5)(jsdom@24.1.1)(less@4.2.0)(lightningcss@1.26.0)(sass@1.77.8)(stylus@0.62.0))
+      '@testing-library/jest-dom': 6.4.5(vitest@2.0.5(@types/node@20.16.1)(@vitest/ui@2.0.5)(jsdom@25.0.0)(less@4.2.0)(lightningcss@1.26.0)(sass@1.77.8)(stylus@0.62.0))
       '@testing-library/user-event': 14.5.2(@testing-library/dom@10.1.0)
       '@vitest/expect': 1.6.0
       '@vitest/spy': 1.6.0
@@ -10913,7 +10922,7 @@ snapshots:
       lz-string: 1.5.0
       pretty-format: 27.5.1
 
-  '@testing-library/jest-dom@6.4.5(vitest@2.0.5(@types/node@20.16.1)(@vitest/ui@2.0.5)(jsdom@24.1.1)(less@4.2.0)(lightningcss@1.26.0)(sass@1.77.8)(stylus@0.62.0))':
+  '@testing-library/jest-dom@6.4.5(vitest@2.0.5(@types/node@20.16.1)(@vitest/ui@2.0.5)(jsdom@25.0.0)(less@4.2.0)(lightningcss@1.26.0)(sass@1.77.8)(stylus@0.62.0))':
     dependencies:
       '@adobe/css-tools': 4.4.0
       '@babel/runtime': 7.25.0
@@ -10924,7 +10933,7 @@ snapshots:
       lodash: 4.17.21
       redent: 3.0.0
     optionalDependencies:
-      vitest: 2.0.5(@types/node@20.16.1)(@vitest/ui@2.0.5)(jsdom@24.1.1)(less@4.2.0)(lightningcss@1.26.0)(sass@1.77.8)(stylus@0.62.0)
+      vitest: 2.0.5(@types/node@20.16.1)(@vitest/ui@2.0.5)(jsdom@25.0.0)(less@4.2.0)(lightningcss@1.26.0)(sass@1.77.8)(stylus@0.62.0)
 
   '@testing-library/jest-dom@6.5.0':
     dependencies:
@@ -11202,7 +11211,7 @@ snapshots:
     transitivePeerDependencies:
       - '@swc/helpers'
 
-  '@vitest/coverage-v8@2.0.5(vitest@2.0.5(@types/node@20.16.1)(@vitest/ui@2.0.5)(jsdom@24.1.1)(less@4.2.0)(lightningcss@1.26.0)(sass@1.77.8)(stylus@0.62.0))':
+  '@vitest/coverage-v8@2.0.5(vitest@2.0.5(@types/node@20.16.1)(@vitest/ui@2.0.5)(jsdom@25.0.0)(less@4.2.0)(lightningcss@1.26.0)(sass@1.77.8)(stylus@0.62.0))':
     dependencies:
       '@ampproject/remapping': 2.3.0
       '@bcoe/v8-coverage': 0.2.3
@@ -11216,7 +11225,7 @@ snapshots:
       std-env: 3.7.0
       test-exclude: 7.0.1
       tinyrainbow: 1.2.0
-      vitest: 2.0.5(@types/node@20.16.1)(@vitest/ui@2.0.5)(jsdom@24.1.1)(less@4.2.0)(lightningcss@1.26.0)(sass@1.77.8)(stylus@0.62.0)
+      vitest: 2.0.5(@types/node@20.16.1)(@vitest/ui@2.0.5)(jsdom@25.0.0)(less@4.2.0)(lightningcss@1.26.0)(sass@1.77.8)(stylus@0.62.0)
     transitivePeerDependencies:
       - supports-color
 
@@ -11265,7 +11274,7 @@ snapshots:
       pathe: 1.1.2
       sirv: 2.0.4
       tinyrainbow: 1.2.0
-      vitest: 2.0.5(@types/node@20.16.1)(@vitest/ui@2.0.5)(jsdom@24.1.1)(less@4.2.0)(lightningcss@1.26.0)(sass@1.77.8)(stylus@0.62.0)
+      vitest: 2.0.5(@types/node@20.16.1)(@vitest/ui@2.0.5)(jsdom@25.0.0)(less@4.2.0)(lightningcss@1.26.0)(sass@1.77.8)(stylus@0.62.0)
 
   '@vitest/utils@1.6.0':
     dependencies:
@@ -13114,6 +13123,34 @@ snapshots:
       - supports-color
 
   jsdom@24.1.1:
+    dependencies:
+      cssstyle: 4.0.1
+      data-urls: 5.0.0
+      decimal.js: 10.4.3
+      form-data: 4.0.0
+      html-encoding-sniffer: 4.0.0
+      http-proxy-agent: 7.0.2
+      https-proxy-agent: 7.0.5
+      is-potential-custom-element-name: 1.0.1
+      nwsapi: 2.2.12
+      parse5: 7.1.2
+      rrweb-cssom: 0.7.1
+      saxes: 6.0.0
+      symbol-tree: 3.2.4
+      tough-cookie: 4.1.4
+      w3c-xmlserializer: 5.0.0
+      webidl-conversions: 7.0.0
+      whatwg-encoding: 3.1.1
+      whatwg-mimetype: 4.0.0
+      whatwg-url: 14.0.0
+      ws: 8.18.0
+      xml-name-validator: 5.0.0
+    transitivePeerDependencies:
+      - bufferutil
+      - supports-color
+      - utf-8-validate
+
+  jsdom@25.0.0:
     dependencies:
       cssstyle: 4.0.1
       data-urls: 5.0.0
@@ -15297,7 +15334,7 @@ snapshots:
       sass: 1.77.8
       stylus: 0.62.0
 
-  vitest@2.0.5(@types/node@20.16.1)(@vitest/ui@2.0.5)(jsdom@24.1.1)(less@4.2.0)(lightningcss@1.26.0)(sass@1.77.8)(stylus@0.62.0):
+  vitest@2.0.5(@types/node@20.16.1)(@vitest/ui@2.0.5)(jsdom@25.0.0)(less@4.2.0)(lightningcss@1.26.0)(sass@1.77.8)(stylus@0.62.0):
     dependencies:
       '@ampproject/remapping': 2.3.0
       '@vitest/expect': 2.0.5
@@ -15321,7 +15358,7 @@ snapshots:
     optionalDependencies:
       '@types/node': 20.16.1
       '@vitest/ui': 2.0.5(vitest@2.0.5)
-      jsdom: 24.1.1
+      jsdom: 25.0.0
     transitivePeerDependencies:
       - less
       - lightningcss
