@@ -1,6 +1,6 @@
 {
 	"name": "@launchpad-ui/split-button",
-	"version": "0.10.30",
+	"version": "0.10.31",
 	"status": "beta",
 	"publishConfig": {
 		"access": "public"
