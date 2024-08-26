@@ -33,8 +33,8 @@
 		"test": "vitest run --coverage"
 	},
 	"dependencies": {
-		"@react-aria/tabs": "3.9.3",
-		"@react-stately/tabs": "3.6.8",
+		"@react-aria/tabs": "3.9.5",
+		"@react-stately/tabs": "3.6.9",
 		"@react-types/shared": "3.24.1",
 		"@react-types/tabs": "3.3.9",
 		"@launchpad-ui/tokens": "workspace:~",
