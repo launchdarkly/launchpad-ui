@@ -1,6 +1,6 @@
 {
 	"name": "@launchpad-ui/data-table",
-	"version": "0.2.27",
+	"version": "0.2.28",
 	"status": "alpha",
 	"publishConfig": {
 		"access": "public"

@@ -1,6 +1,6 @@
 {
 	"name": "@launchpad-ui/columns",
-	"version": "0.1.26",
+	"version": "0.1.27",
 	"status": "alpha",
 	"publishConfig": {
 		"access": "public"
