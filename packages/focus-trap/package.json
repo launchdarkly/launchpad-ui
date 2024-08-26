@@ -32,7 +32,7 @@
 		"test": "vitest run --coverage"
 	},
 	"dependencies": {
-		"@react-aria/focus": "3.18.1"
+		"@react-aria/focus": "3.18.2"
 	},
 	"peerDependencies": {
 		"react": "18.3.1",
