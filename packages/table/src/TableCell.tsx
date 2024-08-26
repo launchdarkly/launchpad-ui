@@ -28,6 +28,11 @@ type TableCellProps =
 	| TableCellWithScopeProps
 	| (TableCellWithHeadersProps & TableCellWithScopeProps);
 
+/**
+ * @deprecated use `Table` from `@launchpad-ui/components` instead
+ *
+ * https://launchpad.launchdarkly.com/?path=/docs/components-collections-table--docs
+ */
 const TableCell = ({ align = 'left', className, children, ...rest }: TableCellProps) => {
 	const classes = cx(styles['Table-cell'], styles[`Table-cell--${align}`], className);
 

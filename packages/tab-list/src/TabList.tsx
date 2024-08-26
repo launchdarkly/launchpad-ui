@@ -24,13 +24,10 @@ type TabListProps<T extends string | number> = AriaTabListProps<HTMLDivElement> 
 	'data-test-id'?: string;
 };
 
-/** React-aria' useTabListState hook supports a
- * selectedKey under the hood for showing
- * the selected tab, and disabledKeys for disabling
- * tabs. The prop names are not very intuitive,
- * so we use activeTab and disabledTabs instead
- * and re-assign props at the component level
- * for an improved developer experience.
+/**
+ * @deprecated use `Tabs` from `@launchpad-ui/components` instead
+ *
+ * https://launchpad.launchdarkly.com/?path=/docs/components-navigation-tabs--docs
  */
 const TabList = <T extends number | string>(props: TabListProps<T>) => {
 	const {

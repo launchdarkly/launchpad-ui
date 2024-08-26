@@ -9,12 +9,13 @@ import { DataTable } from '../src';
 
 export default {
 	component: DataTable,
-	title: 'Legacy/Sunset/DataTable',
+	title: 'Legacy/Deprecated/DataTable',
 	description: 'An element used to display data in rows and columns.',
 	parameters: {
 		status: {
 			type: import.meta.env.STORYBOOK_PACKAGE_STATUS__DATA_TABLE,
 		},
+		chromatic: { disableSnapshot: true },
 	},
 };
 

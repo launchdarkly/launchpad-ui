@@ -10,6 +10,7 @@ export default {
 		status: {
 			type: import.meta.env.STORYBOOK_PACKAGE_STATUS__SNACKBAR,
 		},
+		chromatic: { disableSnapshot: true },
 	},
 };
 

@@ -11,6 +11,9 @@ export default {
 	component: ToastCenter,
 	title: 'Legacy/Deprecated/Toast/ToastCenter',
 	description: 'A container for toasts.',
+	parameters: {
+		chromatic: { disableSnapshot: true },
+	},
 };
 
 type Story = StoryObj<typeof ToastCenter>;

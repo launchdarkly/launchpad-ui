@@ -77,6 +77,11 @@ type AlertProps = ComponentProps<'div'> & {
 	};
 };
 
+/**
+ * @deprecated use `Alert` from `@launchpad-ui/components` instead
+ *
+ * https://launchpad.launchdarkly.com/?path=/docs/components-status-alert--docs
+ */
 const Alert = ({
 	children,
 	className,

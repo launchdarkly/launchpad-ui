@@ -7,12 +7,13 @@ import { Alert } from '../src';
 
 export default {
 	component: Alert,
-	title: 'Legacy/Sunset/Alert',
+	title: 'Legacy/Deprecated/Alert',
 	description: 'Actions trigger alerts based on user interaction.',
 	parameters: {
 		status: {
 			type: import.meta.env.STORYBOOK_PACKAGE_STATUS__ALERT,
 		},
+		chromatic: { disableSnapshot: true },
 	},
 	argTypes: {
 		testId: {
