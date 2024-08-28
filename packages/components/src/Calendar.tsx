@@ -113,7 +113,7 @@ const _CalendarPicker = (
 	ref: ForwardedRef<HTMLDivElement>,
 ) => {
 	const [value, onChange] = useState<DateValue>();
-	const [range, onChangeRange] = useState<DateRange>();
+	const [range, onChangeRange] = useState<DateRange | null>();
 	const [focusedValue, onFocusChange] = useState<DateValue>();
 	return (
 		<Provider

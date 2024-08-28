@@ -1,5 +1,6 @@
+import type { VariantProps } from 'class-variance-authority';
 import type { ForwardedRef } from 'react';
-import type { ToolbarProps } from 'react-aria-components';
+import type { ToolbarProps as AriaToolbarProps } from 'react-aria-components';
 
 import { cva } from 'class-variance-authority';
 import { forwardRef } from 'react';
@@ -7,15 +8,31 @@ import { Toolbar as AriaToolbar, composeRenderProps } from 'react-aria-component
 
 import styles from './styles/Toolbar.module.css';
 
-const toolbar = cva(styles.toolbar);
+const toolbar = cva(styles.base, {
+	variants: {
+		spacing: {
+			basic: styles.basic,
+			compact: styles.compact,
+			large: styles.large,
+		},
+	},
+	defaultVariants: {
+		spacing: 'basic',
+	},
+});
 
-const _Toolbar = (props: ToolbarProps, ref: ForwardedRef<HTMLDivElement>) => {
+interface ToolbarProps extends AriaToolbarProps, VariantProps<typeof toolbar> {}
+
+const _Toolbar = (
+	{ spacing = 'basic', ...props }: ToolbarProps,
+	ref: ForwardedRef<HTMLDivElement>,
+) => {
 	return (
 		<AriaToolbar
 			{...props}
 			ref={ref}
 			className={composeRenderProps(props.className, (className, renderProps) =>
-				toolbar({ ...renderProps, className }),
+				toolbar({ ...renderProps, spacing, className }),
 			)}
 		/>
 	);
