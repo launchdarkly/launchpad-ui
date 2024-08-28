@@ -34,7 +34,7 @@
 		"test": "vitest run --coverage"
 	},
 	"dependencies": {
-		"@internationalized/date": "3.5.4",
+		"@internationalized/date": "3.5.5",
 		"@launchpad-ui/icons": "workspace:~",
 		"@launchpad-ui/tokens": "workspace:~",
 		"@react-aria/toast": "3.0.0-beta.15",
