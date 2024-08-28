@@ -44,7 +44,7 @@
 		background-color: var(--lp-color-bg-feedback-warning);
 	}
 
-	&:has( .heading) {
+	&:has(.heading) {
 		& .icon {
 			transform: translateY(2px);
 		}

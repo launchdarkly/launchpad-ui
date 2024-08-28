@@ -9,7 +9,7 @@
 	min-width: var(--lp-size-144);
 	max-width: var(--lp-menu-max-width);
 
-	&:not(:has( [role='group'])) {
+	&:not(:has([role='group'])) {
 		padding: var(--lp-spacing-200);
 	}
 }
@@ -53,7 +53,7 @@
 		flex: 1;
 	}
 
-	&:has( [slot='label']) {
+	&:has([slot='label']) {
 		& .content {
 			display: grid;
 			grid-template-areas:
@@ -61,7 +61,7 @@
 				'desc';
 		}
 
-		&:has( kbd) {
+		&:has(kbd) {
 			& .content {
 				grid-template-areas:
 					'label kbd'

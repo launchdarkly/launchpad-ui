@@ -64,7 +64,7 @@
 	&[data-placement='top'] {
 		--origin: translateY(4px);
 
-		&:has( .arrow) {
+		&:has(.arrow) {
 			margin-bottom: var(--lp-arrow-offset);
 		}
 	}
@@ -76,7 +76,7 @@
 			transform: rotate(180deg);
 		}
 
-		&:has( .arrow) {
+		&:has(.arrow) {
 			margin-top: var(--lp-arrow-offset);
 		}
 	}
@@ -88,7 +88,7 @@
 			transform: rotate(90deg);
 		}
 
-		&:has( .arrow) {
+		&:has(.arrow) {
 			margin-left: var(--lp-arrow-offset);
 		}
 	}
@@ -100,12 +100,12 @@
 			transform: rotate(-90deg);
 		}
 
-		&:has( .arrow) {
+		&:has(.arrow) {
 			margin-right: var(--lp-arrow-offset);
 		}
 	}
 
-	&:not(:is([data-trigger='MenuTrigger'], [data-trigger='SubmenuTrigger']), :has( .arrow)) {
+	&:not(:is([data-trigger='MenuTrigger'], [data-trigger='SubmenuTrigger']), :has(.arrow)) {
 		overflow: auto;
 	}
 
