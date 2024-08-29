@@ -124,7 +124,7 @@
 	padding: var(--lp-spacing-500);
 	width: var(--lp-size-400);
 
-	&:not(:has( .title:empty)) {
+	&:not(:has(.title:empty)) {
 		align-items: flex-start;
 	}
 }
@@ -134,7 +134,7 @@
 	display: flex;
 	flex-direction: column;
 
-	&:not(:has( .title:empty)) {
+	&:not(:has(.title:empty)) {
 		gap: var(--lp-spacing-200);
 	}
 }

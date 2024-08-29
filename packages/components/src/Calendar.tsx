@@ -1,4 +1,6 @@
-import type { ForwardedRef } from 'react';
+import type { CalendarDate } from '@internationalized/date';
+import type { RangeValue } from '@react-types/shared';
+import type { ForwardedRef, HTMLAttributes } from 'react';
 import type {
 	CalendarCellProps,
 	CalendarGridBodyProps,
@@ -6,25 +8,38 @@ import type {
 	CalendarGridProps,
 	CalendarHeaderCellProps,
 	CalendarProps,
+	DateRange,
 	DateValue,
 	RangeCalendarProps,
 } from 'react-aria-components';
+import type { ButtonProps } from './Button';
 
 import { cva, cx } from 'class-variance-authority';
-import { forwardRef } from 'react';
+import { forwardRef, useState } from 'react';
 import {
 	Calendar as AriaCalendar,
 	CalendarCell as AriaCalendarCell,
 	RangeCalendar as AriaRangeCalendar,
+	ButtonContext,
+	CalendarContext,
 	CalendarGrid,
 	CalendarGridBody,
 	CalendarGridHeader,
 	CalendarHeaderCell,
+	Provider,
+	RangeCalendarContext,
 	composeRenderProps,
+	useSlottedContext,
 } from 'react-aria-components';
 
-import { button } from './Button';
+import { Button, button } from './Button';
 import styles from './styles/Calendar.module.css';
+
+interface CalendarPickerProps extends HTMLAttributes<HTMLDivElement> {}
+
+interface PresetProps extends Omit<ButtonProps, 'value'> {
+	value: CalendarDate | RangeValue<CalendarDate>;
+}
 
 const calendar = cva(styles.calendar);
 const cell = cva(styles.cell);
@@ -93,6 +108,50 @@ const _RangeCalendar = <T extends DateValue>(
  */
 const RangeCalendar = forwardRef(_RangeCalendar);
 
+const _CalendarPicker = (
+	{ children, className, ...props }: CalendarPickerProps,
+	ref: ForwardedRef<HTMLDivElement>,
+) => {
+	const [value, onChange] = useState<DateValue>();
+	const [range, onChangeRange] = useState<DateRange | null>();
+	const [focusedValue, onFocusChange] = useState<DateValue>();
+	return (
+		<Provider
+			values={[
+				[CalendarContext, { value, onChange, focusedValue, onFocusChange }],
+				[
+					RangeCalendarContext,
+					{ value: range, onChange: onChangeRange, focusedValue, onFocusChange },
+				],
+				[ButtonContext, {}],
+			]}
+		>
+			<div {...props} ref={ref} className={cx(styles.picker, className)}>
+				{children}
+			</div>
+		</Provider>
+	);
+};
+
+const CalendarPicker = forwardRef(_CalendarPicker);
+
+const _Preset = ({ value, ...props }: PresetProps, ref: ForwardedRef<HTMLButtonElement>) => {
+	const context = useSlottedContext(CalendarContext);
+	const rangeContext = useSlottedContext(RangeCalendarContext);
+	const onPress = () => {
+		if ('start' in value) {
+			rangeContext?.onFocusChange?.(value.start);
+			rangeContext?.onChange?.(value);
+		} else {
+			context?.onFocusChange?.(value);
+			context?.onChange?.(value);
+		}
+	};
+	return <Button ref={ref} size="small" variant="minimal" {...props} onPress={onPress} />;
+};
+
+const Preset = forwardRef(_Preset);
+
 export {
 	Calendar,
 	CalendarCell,
@@ -100,6 +159,8 @@ export {
 	CalendarGridBody,
 	CalendarGridHeader,
 	CalendarHeaderCell,
+	CalendarPicker,
+	Preset,
 	RangeCalendar,
 };
 export type {
@@ -109,5 +170,7 @@ export type {
 	CalendarGridBodyProps,
 	CalendarGridHeaderProps,
 	CalendarHeaderCellProps,
+	CalendarPickerProps,
+	PresetProps,
 	RangeCalendarProps,
 };

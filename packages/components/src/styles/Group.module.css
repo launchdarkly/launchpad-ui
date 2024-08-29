@@ -5,11 +5,11 @@
 	overflow: hidden;
 	width: 100%;
 
-	&:has( [slot='increment'], [slot='decrement']) {
+	&:has([slot='increment'], [slot='decrement']) {
 		gap: 0;
 	}
 
-	&:has( button[data-rac]) {
+	&:has(button[data-rac]) {
 		padding-block: 3px;
 	}
 
