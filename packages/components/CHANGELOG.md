@@ -1,5 +1,11 @@
 # @launchpad-ui/components
 
+## 0.4.5
+
+### Patch Changes
+
+- [#1326](https://github.com/launchdarkly/launchpad-ui/pull/1326) [`c9c1800`](https://github.com/launchdarkly/launchpad-ui/commit/c9c180070f08d9945d0f0d31536ec26071d7cd72) Thanks [@Niznikr](https://github.com/Niznikr)! - Add `Toolbar` and `Calendar` presets
+
 ## 0.4.4
 
 ### Patch Changes
