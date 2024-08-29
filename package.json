@@ -40,7 +40,7 @@
 		"@changesets/changelog-github": "^0.5.0",
 		"@changesets/cli": "^2.27.1",
 		"@commitlint/cli": "^19.4.0",
-		"@commitlint/config-conventional": "^19.2.2",
+		"@commitlint/config-conventional": "^19.4.1",
 		"@commitlint/types": "^19.0.3",
 		"@playwright/test": "^1.46.0",
 		"@storybook/addon-a11y": "^8.2.1",
@@ -84,7 +84,7 @@
 		"react-router-dom": "6.16.0",
 		"rollup-plugin-pure": "^0.2.1",
 		"storybook-addon-pseudo-states": "^4.0.0",
-		"stylelint": "^16.7.0",
+		"stylelint": "^16.9.0",
 		"stylelint-config-standard": "^36.0.0",
 		"stylelint-value-no-unknown-custom-properties": "^6.0.1",
 		"typescript": "^5.5.2",
@@ -92,7 +92,7 @@
 		"vite": "^5.4.0",
 		"vitest": "^2.0.0"
 	},
-	"packageManager": "pnpm@9.8.0",
+	"packageManager": "pnpm@9.9.0",
 	"pnpm": {
 		"peerDependencyRules": {
 			"allowedVersions": {
