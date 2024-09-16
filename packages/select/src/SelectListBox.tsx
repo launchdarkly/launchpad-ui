@@ -74,6 +74,7 @@ const SelectListBox = <T extends object>(props: SelectListBoxProps<T>) => {
 			)}
 
 			<div className={styles.listBox}>
+				{/* biome-ignore lint/a11y/useFocusableInteractive: <explanation> */}
 				<div
 					{...listBoxProps}
 					ref={listBoxRef}

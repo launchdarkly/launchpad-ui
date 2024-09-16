@@ -217,7 +217,7 @@ All Javascript code is linted with [Biome](https://biomejs.dev/).
 
 ### CSS Styleguide
 
-All CSS code is linted with [Stylelint](https://stylelint.io/).
+All CSS code is linted with [Biome](https://biomejs.dev/).
 
 ### Specs Styleguide
 

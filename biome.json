@@ -22,10 +22,15 @@
 		"enabled": true,
 		"rules": {
 			"recommended": true,
+			"a11y": {
+				"noLabelWithoutControl": "off",
+				"useSemanticElements": "off"
+			},
 			"correctness": {
 				"noUnusedVariables": "error",
 				"useHookAtTopLevel": "error",
-				"noUnusedImports": "error"
+				"noUnusedImports": "error",
+				"noUnknownMediaFeatureName": "off"
 			},
 			"performance": {
 				"noDelete": "off",
@@ -38,8 +43,8 @@
 				"useNodejsImportProtocol": "off",
 				"noNamespaceImport": "error"
 			},
-			"nursery": {
-				"noDuplicateJsonKeys": "error"
+			"suspicious": {
+				"noEmptyBlock": "off"
 			}
 		}
 	},
@@ -57,9 +62,6 @@
 			"enabled": true,
 			"lineWidth": 100,
 			"quoteStyle": "single"
-		},
-		"linter": {
-			"enabled": true
 		}
 	},
 	"vcs": {
