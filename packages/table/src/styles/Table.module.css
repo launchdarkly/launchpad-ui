@@ -114,7 +114,6 @@
 }
 
 /* Used for "smallest possible table column". Table cell will expand to fit content. */
-/* stylelint-disable selector-class-pattern */
 .Table-cell--width-zero {
 	width: 0;
 }
@@ -142,4 +141,3 @@
 .Table-cell--width-six-of-twelve {
 	width: var(--six-of-twelve);
 }
-/* stylelint-enable selector-class-pattern */

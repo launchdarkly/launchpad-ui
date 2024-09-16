@@ -38,7 +38,7 @@ To test accessibility we use [Playwright](https://playwright.dev/) with [@axe-co
 
 ## Code Style
 
-We use [Biome](https://biomejs.dev/) and [Stylelint](https://stylelint.io/) to highlight problems in our code and [Biome](https://biomejs.dev/) to format it to be consistent across the repo.
+We use [Biome](https://biomejs.dev/) to highlight problems in our code and [Biome](https://biomejs.dev/) to format it to be consistent across the repo.
 
 ## Git
 

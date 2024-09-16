@@ -134,7 +134,6 @@
 	position: fixed;
 	inset: 0;
 	width: 100vw;
-	/* stylelint-disable-next-line csstools/value-no-unknown-custom-properties */
 	height: var(--visual-viewport-height);
 	background: light-dark(#28282880, #282828b2);
 	display: flex;

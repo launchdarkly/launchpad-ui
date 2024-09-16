@@ -44,12 +44,10 @@
 	}
 
 	&[data-trigger='Select'] {
-		/* stylelint-disable-next-line csstools/value-no-unknown-custom-properties */
 		min-width: var(--trigger-width);
 	}
 
 	&[data-trigger='ComboBox'] {
-		/* stylelint-disable-next-line csstools/value-no-unknown-custom-properties */
 		min-width: var(--trigger-width);
 	}
 
