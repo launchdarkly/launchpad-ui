@@ -1,3 +1,4 @@
+import './styles/base.css';
 import './styles/themes.css';
 
 export type { AlertProps } from './Alert';
