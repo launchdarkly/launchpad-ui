@@ -1,0 +1,23 @@
+{
+	"asset": {
+		"$type": "file",
+		"font": {
+			"Audimat 3000 Regulier": {
+				"400": {
+					"normal": {
+						"$value": "Audimat3000-Regulier.var-subset",
+						"formats": ["woff2"]
+					}
+				}
+			},
+			"Inter": {
+				"300 800": {
+					"normal": {
+						"$value": "Inter.var-subset",
+						"formats": ["woff2"]
+					}
+				}
+			}
+		}
+	}
+}

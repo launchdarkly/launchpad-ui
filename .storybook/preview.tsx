@@ -11,6 +11,7 @@ import { BrowserRouter, useNavigate } from 'react-router-dom';
 import { allModes } from './modes';
 
 import '../packages/components/src/styles/themes.css';
+import '../packages/tokens/dist/fonts.css';
 import '../packages/tokens/dist/index.css';
 import '../packages/tokens/dist/media-queries.css';
 import '../packages/tokens/dist/themes.css';
