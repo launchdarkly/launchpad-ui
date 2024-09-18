@@ -1,5 +1,17 @@
 # @launchpad-ui/components
 
+## 0.4.6
+
+### Patch Changes
+
+- [#1402](https://github.com/launchdarkly/launchpad-ui/pull/1402) [`c552afa`](https://github.com/launchdarkly/launchpad-ui/commit/c552afa4e13e280cf9863ef4ce9b5cf161d7071d) Thanks [@Niznikr](https://github.com/Niznikr)! - Include base styles in package
+
+- [#1404](https://github.com/launchdarkly/launchpad-ui/pull/1404) [`5b0cea4`](https://github.com/launchdarkly/launchpad-ui/commit/5b0cea420880233c75578de2101322c14d19f426) Thanks [@Niznikr](https://github.com/Niznikr)! - Fix styles for `TextArea` resizing
+
+- Updated dependencies [[`6f6619f`](https://github.com/launchdarkly/launchpad-ui/commit/6f6619f7b99541904512993652ba9b0918272f9b)]:
+  - @launchpad-ui/tokens@0.11.4
+  - @launchpad-ui/icons@0.18.14
+
 ## 0.4.5
 
 ### Patch Changes

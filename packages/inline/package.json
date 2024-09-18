@@ -1,6 +1,6 @@
 {
 	"name": "@launchpad-ui/inline",
-	"version": "0.1.27",
+	"version": "0.1.28",
 	"status": "alpha",
 	"publishConfig": {
 		"access": "public"

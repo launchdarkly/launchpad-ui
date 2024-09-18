@@ -1,5 +1,11 @@
 # @launchpad-ui/tokens
 
+## 0.11.4
+
+### Patch Changes
+
+- [#1405](https://github.com/launchdarkly/launchpad-ui/pull/1405) [`6f6619f`](https://github.com/launchdarkly/launchpad-ui/commit/6f6619f7b99541904512993652ba9b0918272f9b) Thanks [@Niznikr](https://github.com/Niznikr)! - Include fonts in package
+
 ## 0.11.3
 
 ### Patch Changes
