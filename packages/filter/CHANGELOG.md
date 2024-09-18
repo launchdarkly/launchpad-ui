@@ -1,5 +1,17 @@
 # @launchpad-ui/filter
 
+## 0.7.32
+
+### Patch Changes
+
+- Updated dependencies [[`6f6619f`](https://github.com/launchdarkly/launchpad-ui/commit/6f6619f7b99541904512993652ba9b0918272f9b)]:
+  - @launchpad-ui/tokens@0.11.4
+  - @launchpad-ui/button@0.12.27
+  - @launchpad-ui/dropdown@0.6.121
+  - @launchpad-ui/icons@0.18.14
+  - @launchpad-ui/menu@0.13.32
+  - @launchpad-ui/tooltip@0.9.20
+
 ## 0.7.31
 
 ### Patch Changes
