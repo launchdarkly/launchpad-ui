@@ -2,7 +2,7 @@
 	"fontFamily": {
 		"$type": "fontFamily",
 		"base": {
-			"$value": "inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, Helvetica, Arial, sans-serif"
+			"$value": "Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, Helvetica, Arial, sans-serif"
 		},
 		"monospace": {
 			"$value": "SFMono-Regular, Consolas, Liberation Mono, Menlo, Courier, monospace"

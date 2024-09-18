@@ -1,20 +1,3 @@
-@font-face {
-	font-family: inter;
-	font-style: normal;
-	font-weight: 300 800;
-	font-display: swap;
-	src: url('https://fonts.gstatic.com/s/inter/v7/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa1ZL7.woff2')
-		format('woff2');
-}
-
-@font-face {
-	font-family: 'Audimat 3000 Regulier';
-	font-style: normal;
-	font-weight: 400;
-	font-display: swap;
-	src: url('Audimat3000-Regulier.var-subset.woff2') format('woff2');
-}
-
 .sb-main-padded.sb-show-main {
 	padding: 0;
 	margin: 0;

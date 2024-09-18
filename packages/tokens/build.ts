@@ -8,7 +8,7 @@ const sd = new StyleDictionary({
 		css: {
 			prefix: 'lp',
 			transformGroup: 'css',
-			transforms: ['name/kebab', 'time/seconds', 'size/rem', 'color/rgb'],
+			transforms: ['name/kebab', 'time/seconds', 'size/rem', 'color/rgb', 'attribute/font'],
 			buildPath: 'dist/',
 			options: {
 				outputReferences: true,
@@ -30,7 +30,13 @@ const sd = new StyleDictionary({
 					format: 'custom/media-query',
 					filter: (token) => token.filePath === 'src/viewport.json',
 				},
+				{
+					destination: 'fonts.css',
+					format: 'custom/font-face',
+					filter: (token) => token.$type === 'file',
+				},
 			],
+			actions: ['copy_assets'],
 		},
 		js: {
 			transformGroup: 'js',
@@ -106,6 +112,26 @@ sd.registerFormat({
 });
 
 sd.registerFormat({
+	name: 'custom/font-face',
+	format: async ({ dictionary }) => {
+		return dictionary.allTokens
+			.map((token) => {
+				const {
+					// @ts-expect-error attr
+					attributes: { family, weight, style },
+					formats,
+					$value,
+				} = token;
+				const urls = formats.map(
+					(extension: string) => `url("./assets/${$value}.${extension}") format("${extension}")`,
+				);
+				return `@font-face {\n\tfont-family: "${family}";\n\tfont-style: ${style};\n\tfont-weight: ${weight};\n\tsrc: ${urls.join(',\n\t\t\t ')};\n\tfont-display: swap;\n}\n`;
+			})
+			.join('\n');
+	},
+});
+
+sd.registerFormat({
 	name: 'custom/json',
 	format: async ({ dictionary, options }) => {
 		return `${JSON.stringify(minifyDictionary(dictionary.tokens, options.usesDtcg), null, 2)}\n`;
@@ -165,6 +191,19 @@ sd.registerTransform({
 		token.$value = token.name;
 		return token;
 	},
+});
+
+sd.registerTransform({
+	name: 'attribute/font',
+	type: 'attribute',
+	filter: (token) => token.$type === 'file',
+	transform: (token) => ({
+		category: token.path[0],
+		type: token.path[1],
+		family: token.path[2],
+		weight: token.path[3],
+		style: token.path[4],
+	}),
 });
 
 await sd.buildAllPlatforms();
