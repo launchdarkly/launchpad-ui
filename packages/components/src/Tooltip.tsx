@@ -47,6 +47,7 @@ const _Tooltip = (
 				tooltip({ ...renderProps, variant, className }),
 			)}
 			data-trigger={variant === 'popover' ? 'DialogTrigger' : undefined}
+			data-theme="dark"
 		/>
 	);
 };

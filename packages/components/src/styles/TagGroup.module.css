@@ -54,7 +54,7 @@
 
 .default {
 	color: var(--lp-color-text-ui-secondary);
-	background-color: var(--lp-color-bg-ui-secondary);
+	background-color: var(--lp-color-bg-ui-tertiary);
 }
 
 .success {

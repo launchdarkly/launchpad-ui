@@ -1,12 +1,12 @@
 :root,
 [data-theme='default'] {
-	--lp-component-popover-color-bg: var(--lp-color-bg-overlay-secondary);
+	--lp-component-popover-color-bg: var(--lp-color-gray-900);
 	--lp-component-popover-color-text: var(--lp-color-text-overlay-secondary);
 	--lp-component-popover-color-border: inherit;
 }
 
 [data-theme='dark'] {
-	--lp-component-popover-color-bg: var(--lp-color-bg-overlay-primary);
+	--lp-component-popover-color-bg: var(--lp-color-bg-overlay-secondary);
 	--lp-component-popover-color-text: var(--lp-color-text-ui-primary-base);
 	--lp-component-popover-color-border: var(--lp-color-border-ui-secondary);
 }

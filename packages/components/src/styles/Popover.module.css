@@ -15,7 +15,7 @@
 
 	isolation: isolate;
 	border-radius: var(--lp-border-radius-medium);
-	background-color: var(--lp-color-bg-overlay-primary);
+	background-color: var(--lp-color-bg-overlay-secondary);
 	box-shadow: 0 4px 4px 0 rgb(40 40 40 / 0.08), 0 1px 2px 0 rgb(40 40 40 / 0.1), 0 0 4px 0
 		rgb(40 40 40 / 0.12);
 	transform: translate3d(0, 0, 0);
@@ -27,7 +27,7 @@
 
 	& .arrow svg {
 		display: block;
-		fill: var(--lp-color-bg-overlay-primary);
+		fill: var(--lp-color-bg-overlay-secondary);
 		stroke: light-dark(var(--lp-color-border-ui-secondary), transparent);
 		stroke-width: 1px;
 	}

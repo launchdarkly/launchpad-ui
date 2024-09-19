@@ -15,6 +15,7 @@ import '../packages/tokens/dist/fonts.css';
 import '../packages/tokens/dist/index.css';
 import '../packages/tokens/dist/media-queries.css';
 import '../packages/tokens/dist/themes.css';
+import './styles.css';
 
 const RouterProvider = ({ children }: { children: ReactNode }) => {
 	const navigate = useNavigate();
