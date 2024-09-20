@@ -5,6 +5,7 @@
 }
 
 .track {
+	position: relative;
 	display: flex;
 	align-items: center;
 	gap: var(--lp-spacing-200);
