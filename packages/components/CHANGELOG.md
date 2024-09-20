@@ -1,5 +1,11 @@
 # @launchpad-ui/components
 
+## 0.4.7
+
+### Patch Changes
+
+- [#1407](https://github.com/launchdarkly/launchpad-ui/pull/1407) [`977ee0c`](https://github.com/launchdarkly/launchpad-ui/commit/977ee0cba3444650f660749954ee901093c6be10) Thanks [@Niznikr](https://github.com/Niznikr)! - Fix `Switch` styles for Chrome 129
+
 ## 0.4.6
 
 ### Patch Changes
