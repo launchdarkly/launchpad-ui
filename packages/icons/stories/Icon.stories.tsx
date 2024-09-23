@@ -15,23 +15,6 @@ export default {
 			type: import.meta.env.STORYBOOK_PACKAGE_STATUS__ICONS,
 		},
 	},
-	argTypes: {
-		name: {
-			table: {
-				category: 'Presentation',
-			},
-		},
-		size: {
-			table: {
-				category: 'Presentation',
-			},
-		},
-		subtle: {
-			table: {
-				category: 'Presentation',
-			},
-		},
-	},
 } as Meta;
 
 const render: ArgsStoryFn<ReactRenderer> = () => (

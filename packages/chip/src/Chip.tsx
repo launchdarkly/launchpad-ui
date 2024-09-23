@@ -35,9 +35,9 @@ const Chip = ({
 		icon &&
 		cloneElement(icon, {
 			key: 'icon',
-			size,
+			...(size === 'small' && { size }),
 			'aria-hidden': true,
-			className: cx(icon.props.className, styles.icon),
+			className: cx(icon.props.className, styles.icon, size === 'tiny' && styles.tiny),
 		});
 
 	const classes = cx(

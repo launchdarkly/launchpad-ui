@@ -10,7 +10,7 @@ describe('Icon', () => {
 	});
 
 	it('is labelled by a title', () => {
-		render(<Icon name="info" size="medium" title="info" subtle />);
+		render(<Icon name="info" size="medium" title="info" variant="subtle" />);
 		expect(screen.getByTitle('info')).toBeInTheDocument();
 	});
 
