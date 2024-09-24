@@ -1,4 +1,4 @@
-import type { Meta, ReactRenderer } from '@storybook/react';
+import type { Meta, ReactRenderer, StoryObj } from '@storybook/react';
 import type { ArgsStoryFn } from '@storybook/types';
 
 import { CopyToClipboard } from '@launchpad-ui/clipboard';
@@ -6,16 +6,19 @@ import { CopyToClipboard } from '@launchpad-ui/clipboard';
 import { Icon } from '../src';
 import { icons } from '../src/types';
 
-export default {
+const meta: Meta<typeof Icon> = {
 	component: Icon,
 	title: 'Foundations/Icons',
-	description: 'Icons supplement content and represent an action or feature within LaunchDarkly.',
 	parameters: {
 		status: {
 			type: import.meta.env.STORYBOOK_PACKAGE_STATUS__ICONS,
 		},
 	},
-} as Meta;
+};
+
+export default meta;
+
+type Story = StoryObj<typeof Icon>;
 
 const render: ArgsStoryFn<ReactRenderer> = () => (
 	<div
@@ -60,4 +63,10 @@ const render: ArgsStoryFn<ReactRenderer> = () => (
 
 export const Sprites = {
 	render,
+};
+
+export const Custom: Story = {
+	args: {
+		children: <use href="#app-icon-smile" />,
+	},
 };

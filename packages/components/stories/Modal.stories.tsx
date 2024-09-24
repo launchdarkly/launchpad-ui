@@ -56,7 +56,12 @@ const renderModal = (args: Story['args'], destructive = false) => (
 						<>
 							<div slot="header">
 								{destructive && (
-									<Icon name="warning" size="medium" fill="var(--lp-color-fill-feedback-warning)" />
+									<Icon
+										name="warning"
+										size="medium"
+										variant={null}
+										fill="var(--lp-color-fill-feedback-warning)"
+									/>
 								)}
 								<Heading slot="title">Title</Heading>
 								<IconButton

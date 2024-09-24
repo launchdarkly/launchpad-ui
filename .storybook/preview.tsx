@@ -9,6 +9,7 @@ import { withThemeByDataAttribute } from '@storybook/addon-themes';
 import { themes } from '@storybook/theming';
 import { BrowserRouter, useNavigate } from 'react-router-dom';
 
+import custom from './custom.svg';
 import { allModes } from './modes';
 
 import '../packages/components/src/styles/themes.css';
@@ -23,6 +24,19 @@ fetch(sprite)
 		const parser = new DOMParser();
 		const content = parser.parseFromString(data, 'image/svg+xml').documentElement;
 		content.id = 'lp-icons-sprite';
+		content.style.display = 'none';
+		document.body.appendChild(content);
+	})
+	.catch((err) => {
+		console.log('Failed to fetch sprite', err);
+	});
+
+fetch(custom)
+	.then(async (response) => response.text())
+	.then((data) => {
+		const parser = new DOMParser();
+		const content = parser.parseFromString(data, 'image/svg+xml').documentElement;
+		content.id = 'app-icons-sprite';
 		content.style.display = 'none';
 		document.body.appendChild(content);
 	})
