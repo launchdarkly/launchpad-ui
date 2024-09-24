@@ -37,7 +37,7 @@ const Chip = ({
 			key: 'icon',
 			...(size === 'small' && { size }),
 			'aria-hidden': true,
-			className: cx(icon.props.className, styles.icon, size === 'tiny' && styles.tiny),
+			className: cx(icon.props.className, styles.icon, size === 'tiny' && styles.tinyIcon),
 		});
 
 	const classes = cx(

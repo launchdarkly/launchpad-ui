@@ -57,7 +57,7 @@ const Icon = ({
 			aria-hidden={props['aria-hidden'] ?? (!props['aria-labelledby'] && !props['aria-label'])}
 			focusable={focusable}
 			role={role}
-			className={icon({ size, variant, className })}
+			className={icon({ size, variant: props.fill ? null : variant, className })}
 			{...props}
 			{...labelProps}
 		>
