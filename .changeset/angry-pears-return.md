@@ -9,6 +9,7 @@
 Align API with RAC components:
   - Remove `IconContext`
   - Remove outer `span`
+  - Remove props `title` and `description` in favor of composition
   - Prop `subtle` -> `variant`
   - Prop `children` for custom icons
   - Consolidate sizes

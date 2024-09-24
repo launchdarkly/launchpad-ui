@@ -5,12 +5,16 @@ import { FlairIcon, Icon, StatusIcon } from '../src';
 
 describe('Icon', () => {
 	it('renders', () => {
-		render(<Icon name="add" size="medium" description="add" />);
+		render(<Icon name="add" size="medium" />);
 		expect(screen.getByRole('img', { hidden: true })).toBeInTheDocument();
 	});
 
 	it('is labelled by a title', () => {
-		render(<Icon name="info" size="medium" title="info" variant="subtle" />);
+		render(
+			<Icon name="info" size="medium" variant="subtle" aria-labelledby="title">
+				<title id="title">info</title>
+			</Icon>,
+		);
 		expect(screen.getByTitle('info')).toBeInTheDocument();
 	});
 

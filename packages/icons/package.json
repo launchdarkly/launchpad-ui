@@ -35,7 +35,6 @@
 	},
 	"dependencies": {
 		"@launchpad-ui/tokens": "workspace:~",
-		"@react-aria/utils": "3.25.2",
 		"class-variance-authority": "0.7.0"
 	},
 	"peerDependencies": {
