@@ -63,7 +63,8 @@ const Icon = ({
 		>
 			{title && <title id={titleId}>{title}</title>}
 			{description && <desc id={descriptionId}>{description}</desc>}
-			{children || <use href={`#lp-icon-${name}`} />}
+			{name && <use href={`#lp-icon-${name}`} />}
+			{children}
 		</svg>
 	);
 };
