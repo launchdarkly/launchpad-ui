@@ -795,6 +795,9 @@ importers:
 
   packages/icons:
     dependencies:
+      '@launchpad-ui/box':
+        specifier: workspace:~
+        version: link:../box
       '@launchpad-ui/tokens':
         specifier: workspace:~
         version: link:../tokens
