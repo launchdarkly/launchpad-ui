@@ -7,9 +7,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Setup Go
-        uses: actions/setup-go@v4
+        uses: actions/setup-go@v5
         with:
-          go-version-file: go.mod
+          go-version: 'stable'
 
       - name: Generate SBOM
         uses: launchdarkly/gh-actions/actions/dependency-scan/generate-sbom@main
