@@ -12,9 +12,9 @@ jobs:
           go-version-file: go.mod
 
       - name: Generate SBOM
-        uses: launchdarkly/common-actions/dependency-scan/generate-sbom@main
+        uses: launchdarkly/gh-actions/actions/dependency-scan/generate-sbom@main
         with:
           types: 'go,nodejs'
 
       - name: Evaluate SBOM Policy
-        uses: launchdarkly/common-actions/dependency-scan/evaluate-policy@main
+        uses: launchdarkly/gh-actions/actions/dependency-scan/evaluate-policy@main
