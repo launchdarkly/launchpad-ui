@@ -24,11 +24,7 @@ const config: StorybookConfig = {
 	core: {
 		disableTelemetry: true,
 	},
-	staticDirs: [
-		'.',
-		{ from: '../packages/icons/src/img', to: '/static' },
-		{ from: '../packages/card/src/img', to: '/static' },
-	],
+	staticDirs: ['.', { from: '../packages/card/src/img', to: '/static' }],
 	env: (config) => {
 		const packageStatuses = getPackageStatusEnvVars();
 

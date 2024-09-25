@@ -798,9 +798,9 @@ importers:
       '@launchpad-ui/tokens':
         specifier: workspace:~
         version: link:../tokens
-      classix:
-        specifier: 2.1.17
-        version: 2.1.17
+      class-variance-authority:
+        specifier: 0.7.0
+        version: 0.7.0
     devDependencies:
       react:
         specifier: 18.3.1

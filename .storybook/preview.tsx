@@ -4,10 +4,12 @@ import type { ReactNode } from 'react';
 
 import { Box } from '@launchpad-ui/box';
 import { RouterProvider as AriaRouterProvider, useHref } from '@launchpad-ui/components';
+import sprite from '@launchpad-ui/icons/img/sprite.svg';
 import { withThemeByDataAttribute } from '@storybook/addon-themes';
 import { themes } from '@storybook/theming';
 import { BrowserRouter, useNavigate } from 'react-router-dom';
 
+import custom from './custom.svg';
 import { allModes } from './modes';
 
 import '../packages/components/src/styles/themes.css';
@@ -15,6 +17,32 @@ import '../packages/tokens/dist/fonts.css';
 import '../packages/tokens/dist/index.css';
 import '../packages/tokens/dist/media-queries.css';
 import '../packages/tokens/dist/themes.css';
+
+fetch(sprite)
+	.then(async (response) => response.text())
+	.then((data) => {
+		const parser = new DOMParser();
+		const content = parser.parseFromString(data, 'image/svg+xml').documentElement;
+		content.id = 'lp-icons-sprite';
+		content.style.display = 'none';
+		document.body.appendChild(content);
+	})
+	.catch((err) => {
+		console.log('Failed to fetch sprite', err);
+	});
+
+fetch(custom)
+	.then(async (response) => response.text())
+	.then((data) => {
+		const parser = new DOMParser();
+		const content = parser.parseFromString(data, 'image/svg+xml').documentElement;
+		content.id = 'app-icons-sprite';
+		content.style.display = 'none';
+		document.body.appendChild(content);
+	})
+	.catch((err) => {
+		console.log('Failed to fetch sprite', err);
+	});
 
 const RouterProvider = ({ children }: { children: ReactNode }) => {
 	const navigate = useNavigate();

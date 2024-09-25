@@ -80,8 +80,9 @@ const Avatar = ({
 		}
 		return cloneElement(defaultIcon, {
 			className: classes,
+			// @ts-expect-error pass through
 			'data-test-id': testId,
-			size,
+			...(size !== 'tiny' && { size }),
 			...(rest as IconProps),
 		});
 	}

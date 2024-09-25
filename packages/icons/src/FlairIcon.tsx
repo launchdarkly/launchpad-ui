@@ -1,7 +1,7 @@
 import type { ComponentProps, ReactElement } from 'react';
 import type { IconProps } from './Icon';
 
-import { cx } from 'classix';
+import { cx } from 'class-variance-authority';
 import { cloneElement } from 'react';
 
 import styles from './styles/Icon.module.css';
