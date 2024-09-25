@@ -3,5 +3,5 @@
 ---
 
 Use `Box` for `FlairIcon`:
-- Round by default
-- Prop `gradient` -> `background`
+  - Round by default
+  - Prop `gradient` -> `background`
