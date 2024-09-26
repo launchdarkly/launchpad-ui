@@ -1,5 +1,40 @@
 # @launchpad-ui/core
 
+## 0.49.36
+
+### Patch Changes
+
+- [#1411](https://github.com/launchdarkly/launchpad-ui/pull/1411) [`6341b25`](https://github.com/launchdarkly/launchpad-ui/commit/6341b256039fabceb3d720b9ec63b29b3a600632) Thanks [@Niznikr](https://github.com/Niznikr)! - Align API with RAC components:
+  - Remove `IconContext`
+  - Remove outer `span`
+  - Remove props `title` and `description` in favor of composition
+  - Prop `subtle` -> `variant`
+  - Prop `children` for custom icons
+  - Consolidate sizes
+- Updated dependencies [[`6341b25`](https://github.com/launchdarkly/launchpad-ui/commit/6341b256039fabceb3d720b9ec63b29b3a600632)]:
+  - @launchpad-ui/avatar@0.6.41
+  - @launchpad-ui/chip@0.9.41
+  - @launchpad-ui/filter@0.7.33
+  - @launchpad-ui/alert@0.9.32
+  - @launchpad-ui/banner@0.10.41
+  - @launchpad-ui/button@0.12.28
+  - @launchpad-ui/clipboard@0.11.48
+  - @launchpad-ui/collapsible@0.1.72
+  - @launchpad-ui/drawer@0.5.48
+  - @launchpad-ui/dropdown@0.6.122
+  - @launchpad-ui/form@0.11.33
+  - @launchpad-ui/inline-edit@0.3.33
+  - @launchpad-ui/menu@0.13.33
+  - @launchpad-ui/modal@0.17.48
+  - @launchpad-ui/navigation@0.12.48
+  - @launchpad-ui/pagination@0.4.48
+  - @launchpad-ui/select@0.4.48
+  - @launchpad-ui/snackbar@0.5.29
+  - @launchpad-ui/tag@0.3.48
+  - @launchpad-ui/toast@0.3.42
+  - @launchpad-ui/split-button@0.10.33
+  - @launchpad-ui/card@0.2.48
+
 ## 0.49.35
 
 ### Patch Changes
