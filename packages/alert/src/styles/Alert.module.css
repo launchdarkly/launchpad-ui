@@ -81,19 +81,19 @@
 
 /* Alert kind variants */
 
-.Alert.Alert--info .Alert-icon svg {
+.Alert.Alert--info .Alert-icon {
 	fill: var(--lp-color-fill-feedback-info);
 }
 
-.Alert.Alert--success .Alert-icon svg {
+.Alert.Alert--success .Alert-icon {
 	fill: var(--lp-color-fill-feedback-success);
 }
 
-.Alert.Alert--warning .Alert-icon svg {
+.Alert.Alert--warning .Alert-icon {
 	fill: var(--lp-color-fill-feedback-warning);
 }
 
-.Alert.Alert--error .Alert-icon svg {
+.Alert.Alert--error .Alert-icon {
 	fill: var(--lp-color-fill-feedback-error);
 }
 
@@ -106,7 +106,7 @@
 	color: var(--lp-component-alert-notification-flair-strong-color-text);
 }
 
-.Alert.Alert--notification.Alert--flair-strong .Alert-close svg {
+.Alert.Alert--notification.Alert--flair-strong .Alert-close {
 	fill: var(--lp-component-alert-notification-flair-strong-color-fill);
 }
 

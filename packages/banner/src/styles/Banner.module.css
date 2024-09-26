@@ -59,14 +59,14 @@
 	transform: translateY(2px);
 }
 
-.Banner.Banner--info .Banner-icon svg {
+.Banner.Banner--info .Banner-icon {
 	fill: var(--lp-color-fill-feedback-info);
 }
 
-.Banner.Banner--error .Banner-icon svg {
+.Banner.Banner--error .Banner-icon {
 	fill: var(--lp-color-fill-feedback-error);
 }
 
-.Banner.Banner--warning .Banner-icon svg {
+.Banner.Banner--warning .Banner-icon {
 	fill: var(--lp-color-fill-feedback-warning);
 }
