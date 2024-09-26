@@ -44,7 +44,7 @@ describe('Icon', () => {
 
 	it('renders a flair icon', () => {
 		render(
-			<FlairIcon isRounded>
+			<FlairIcon>
 				<Icon name="info" size="medium" />
 			</FlairIcon>,
 		);

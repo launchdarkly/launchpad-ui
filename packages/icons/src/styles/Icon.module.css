@@ -9,7 +9,7 @@
 }
 
 .subtle {
-	fill: var(--lp-color-gray-600);
+	fill: var(--lp-color-fill-ui-secondary);
 }
 
 .small {
@@ -25,42 +25,4 @@
 .large {
 	width: var(--lp-size-40);
 	height: var(--lp-size-40);
-}
-
-.flairIcon {
-	fill: white;
-}
-
-.yellowToCyan {
-	background: var(--lp-color-gradient-yellow-cyan);
-}
-
-.cyanToBlue {
-	background: var(--lp-color-gradient-cyan-blue);
-}
-
-.cyanToPurple {
-	background: var(--lp-color-gradient-cyan-purple);
-}
-
-.purpleToBlue {
-	background: var(--lp-color-gradient-purple-blue);
-}
-
-.pinkToPurple {
-	background: var(--lp-color-gradient-pink-purple);
-}
-
-.isRounded {
-	border-radius: 6.25rem;
-}
-
-.flairIconContainer {
-	display: flex;
-	flex-direction: row;
-	justify-content: center;
-	align-items: center;
-	padding: var(--lp-spacing-400);
-	width: fit-content;
-	height: fit-content;
 }
