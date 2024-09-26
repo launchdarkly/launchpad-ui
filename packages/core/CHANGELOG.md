@@ -1,5 +1,19 @@
 # @launchpad-ui/core
 
+## 0.49.37
+
+### Patch Changes
+
+- [#1414](https://github.com/launchdarkly/launchpad-ui/pull/1414) [`17cdcbd`](https://github.com/launchdarkly/launchpad-ui/commit/17cdcbd38a732e9356c3792c4dc07427e9354fd7) Thanks [@Niznikr](https://github.com/Niznikr)! - Update legacy styles with icons
+
+- Updated dependencies [[`17cdcbd`](https://github.com/launchdarkly/launchpad-ui/commit/17cdcbd38a732e9356c3792c4dc07427e9354fd7)]:
+  - @launchpad-ui/clipboard@0.11.49
+  - @launchpad-ui/banner@0.10.42
+  - @launchpad-ui/alert@0.9.33
+  - @launchpad-ui/toast@0.3.43
+  - @launchpad-ui/modal@0.17.49
+  - @launchpad-ui/select@0.4.49
+
 ## 0.49.36
 
 ### Patch Changes

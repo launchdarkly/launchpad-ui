@@ -1,5 +1,11 @@
 # @launchpad-ui/clipboard
 
+## 0.11.49
+
+### Patch Changes
+
+- [#1414](https://github.com/launchdarkly/launchpad-ui/pull/1414) [`17cdcbd`](https://github.com/launchdarkly/launchpad-ui/commit/17cdcbd38a732e9356c3792c4dc07427e9354fd7) Thanks [@Niznikr](https://github.com/Niznikr)! - Update legacy styles with icons
+
 ## 0.11.48
 
 ### Patch Changes
