@@ -44,6 +44,7 @@ const Icon = ({
 			focusable={focusable}
 			role={role}
 			className={icon({ size, variant, className })}
+			data-icon={name}
 			{...props}
 		>
 			{name && <use href={`#lp-icon-${name}`} />}
