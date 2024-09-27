@@ -1,5 +1,11 @@
 # @launchpad-ui/icons
 
+## 0.19.1
+
+### Patch Changes
+
+- [#1416](https://github.com/launchdarkly/launchpad-ui/pull/1416) [`f537aef`](https://github.com/launchdarkly/launchpad-ui/commit/f537aef5280ee098346c89039fe84fb2ea8542ba) Thanks [@Niznikr](https://github.com/Niznikr)! - Add `data-icon` attribute
+
 ## 0.19.0
 
 ### Minor Changes
