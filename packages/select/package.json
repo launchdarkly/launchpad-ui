@@ -67,7 +67,7 @@
 		"@react-types/overlays": "3.8.9",
 		"@react-types/select": "3.9.6",
 		"@react-types/shared": "3.24.1",
-		"classix": "2.1.17"
+		"classix": "2.2.0"
 	},
 	"peerDependencies": {
 		"react": "18.3.1",

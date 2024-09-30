@@ -43,7 +43,7 @@
 		"@react-stately/list": "3.10.8",
 		"@react-aria/selection": "3.19.3",
 		"@react-types/shared": "3.24.1",
-		"classix": "2.1.17"
+		"classix": "2.2.0"
 	},
 	"peerDependencies": {
 		"react": "18.3.1",

@@ -36,7 +36,7 @@
 		"@react-aria/focus": "3.18.2",
 		"@react-aria/switch": "3.6.7",
 		"@react-stately/toggle": "3.7.7",
-		"classix": "2.1.17"
+		"classix": "2.2.0"
 	},
 	"peerDependencies": {
 		"react": "18.3.1",

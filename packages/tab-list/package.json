@@ -37,7 +37,7 @@
 		"@react-types/shared": "3.24.1",
 		"@react-types/tabs": "3.3.9",
 		"@launchpad-ui/tokens": "workspace:~",
-		"classix": "2.1.17"
+		"classix": "2.2.0"
 	},
 	"peerDependencies": {
 		"@react-stately/collections": "3.10.9",
