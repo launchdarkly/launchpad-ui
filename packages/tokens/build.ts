@@ -1,3 +1,5 @@
+import type { TransformedToken } from 'style-dictionary/types';
+
 import JsonToTS from 'json-to-ts';
 import StyleDictionary from 'style-dictionary';
 import { createPropertyFormatter, fileHeader, minifyDictionary } from 'style-dictionary/utils';
@@ -71,6 +73,21 @@ const sd = new StyleDictionary({
 				{
 					destination: 'contract.json',
 					format: 'custom/json',
+				},
+			],
+		},
+		vscode: {
+			buildPath: 'dist/',
+			transformGroup: 'css',
+			transforms: ['name/kebab', 'color/rgb'],
+			options: {
+				outputReferences: true,
+				usesDtcg: true,
+			},
+			files: [
+				{
+					destination: 'tokens.json',
+					format: 'json/category',
 				},
 			],
 		},
@@ -181,6 +198,19 @@ sd.registerFormat({
 		return `declare const root: RootObject\nexport default root\n${JsonToTS(
 			minifyDictionary(dictionary.tokens, options.usesDtcg),
 		).join('\n')}`;
+	},
+});
+
+sd.registerFormat({
+	name: 'json/category',
+	format: async ({ dictionary }) => {
+		const groups = dictionary.allTokens.reduce((acc: TransformedToken, obj) => {
+			const key = obj.attributes?.category as string;
+			const group = acc[key] ?? [];
+			// biome-ignore lint/performance/noAccumulatingSpread: <explanation>
+			return { ...acc, [key]: [...group, obj] };
+		}, {} as TransformedToken);
+		return `${JSON.stringify(groups, null, 2)}\n`;
 	},
 });
 
