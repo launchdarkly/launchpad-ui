@@ -48,4 +48,4 @@ jobs:
         run: pnpm nx run launchpad-design-system:build
 
       - name: Publish extension
-        run: pnpm --filter=launchpad-design-system publish
+        run: pnpm nx run launchpad-design-system:publish
