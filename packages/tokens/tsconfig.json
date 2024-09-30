@@ -6,6 +6,7 @@
 		"paths": {
 			"@launchpad-ui/*": ["../*/src"]
 		},
-		"emitDeclarationOnly": false
+		"emitDeclarationOnly": false,
+		"skipLibCheck": true
 	}
 }
