@@ -37,7 +37,7 @@
 		"@launchpad-ui/progress": "workspace:~",
 		"@launchpad-ui/tokens": "workspace:~",
 		"@react-aria/visually-hidden": "3.8.15",
-		"classix": "2.1.17"
+		"classix": "2.2.0"
 	},
 	"peerDependencies": {
 		"react": "18.3.1",

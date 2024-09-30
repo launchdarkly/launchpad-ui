@@ -35,8 +35,8 @@
 		"@launchpad-ui/button": "workspace:~",
 		"@launchpad-ui/icons": "workspace:~",
 		"@launchpad-ui/tokens": "workspace:~",
-		"classix": "2.1.17",
-		"framer-motion": "11.5.4"
+		"classix": "2.2.0",
+		"framer-motion": "11.9.0"
 	},
 	"peerDependencies": {
 		"react": "18.3.1",
