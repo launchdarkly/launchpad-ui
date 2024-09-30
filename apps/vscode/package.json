@@ -15,14 +15,14 @@
 	},
 	"description": "LaunchPad VS Code extension",
 	"license": "SEE LICENSE IN LICENSE.txt",
-	"keywords": ["launchpad", "launchdarkly"],
+	"keywords": ["launchpad", "launchdarkly", "design system", "design tokens"],
 	"engines": {
 		"vscode": "^1.90.0"
 	},
 	"categories": ["Other"],
 	"icon": "images/osmo.png",
 	"galleryBanner": {
-		"color": "#00522E",
+		"color": "#FFFFFF",
 		"theme": "light"
 	},
 	"activationEvents": ["onLanguage:css"],
