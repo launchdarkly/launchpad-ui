@@ -20,6 +20,11 @@
 		"vscode": "^1.90.0"
 	},
 	"categories": ["Other"],
+	"icon": "images/osmo.png",
+	"galleryBanner": {
+		"color": "#00522E",
+		"theme": "light"
+	},
 	"activationEvents": ["onLanguage:css"],
 	"main": "dist/client.js",
 	"scripts": {
@@ -37,7 +42,7 @@
 	},
 	"devDependencies": {
 		"@types/vscode": "^1.90.0",
-		"esbuild": "0.21.5",
+		"esbuild": "0.23.1",
 		"style-dictionary": "^4.0.1"
 	}
 }
