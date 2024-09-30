@@ -1,5 +1,11 @@
 # launchpad-design-system
 
+## 0.1.1
+
+### Patch Changes
+
+- [#1421](https://github.com/launchdarkly/launchpad-ui/pull/1421) [`7862357`](https://github.com/launchdarkly/launchpad-ui/commit/78623576be5d339190dbc7ca5b870f97c2be6658) Thanks [@Niznikr](https://github.com/Niznikr)! - Fix banner
+
 ## 0.1.0
 
 ### Minor Changes
