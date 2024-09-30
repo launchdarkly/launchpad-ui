@@ -1,0 +1,20 @@
+name: Dependency Scan
+
+on: pull_request
+
+jobs:
+  dependency-scan:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Setup Go
+        uses: actions/setup-go@v5
+        with:
+          go-version: 'stable'
+
+      - name: Generate SBOM
+        uses: launchdarkly/gh-actions/actions/dependency-scan/generate-sbom@main
+        with:
+          types: 'go,nodejs'
+
+      - name: Evaluate SBOM Policy
+        uses: launchdarkly/gh-actions/actions/dependency-scan/evaluate-policy@main

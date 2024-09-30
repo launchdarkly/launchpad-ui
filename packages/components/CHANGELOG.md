@@ -1,5 +1,72 @@
 # @launchpad-ui/components
 
+## 0.4.9
+
+### Patch Changes
+
+- Updated dependencies [[`f537aef`](https://github.com/launchdarkly/launchpad-ui/commit/f537aef5280ee098346c89039fe84fb2ea8542ba)]:
+  - @launchpad-ui/icons@0.19.1
+
+## 0.4.8
+
+### Patch Changes
+
+- Updated dependencies [[`6341b25`](https://github.com/launchdarkly/launchpad-ui/commit/6341b256039fabceb3d720b9ec63b29b3a600632), [`05feada`](https://github.com/launchdarkly/launchpad-ui/commit/05feada3d4f4e6c03d124b1f4443e790d7b35274)]:
+  - @launchpad-ui/icons@0.19.0
+
+## 0.4.7
+
+### Patch Changes
+
+- [#1407](https://github.com/launchdarkly/launchpad-ui/pull/1407) [`977ee0c`](https://github.com/launchdarkly/launchpad-ui/commit/977ee0cba3444650f660749954ee901093c6be10) Thanks [@Niznikr](https://github.com/Niznikr)! - Fix `Switch` styles for Chrome 129
+
+## 0.4.6
+
+### Patch Changes
+
+- [#1402](https://github.com/launchdarkly/launchpad-ui/pull/1402) [`c552afa`](https://github.com/launchdarkly/launchpad-ui/commit/c552afa4e13e280cf9863ef4ce9b5cf161d7071d) Thanks [@Niznikr](https://github.com/Niznikr)! - Include base styles in package
+
+- [#1404](https://github.com/launchdarkly/launchpad-ui/pull/1404) [`5b0cea4`](https://github.com/launchdarkly/launchpad-ui/commit/5b0cea420880233c75578de2101322c14d19f426) Thanks [@Niznikr](https://github.com/Niznikr)! - Fix styles for `TextArea` resizing
+
+- Updated dependencies [[`6f6619f`](https://github.com/launchdarkly/launchpad-ui/commit/6f6619f7b99541904512993652ba9b0918272f9b)]:
+  - @launchpad-ui/tokens@0.11.4
+  - @launchpad-ui/icons@0.18.14
+
+## 0.4.5
+
+### Patch Changes
+
+- [#1326](https://github.com/launchdarkly/launchpad-ui/pull/1326) [`c9c1800`](https://github.com/launchdarkly/launchpad-ui/commit/c9c180070f08d9945d0f0d31536ec26071d7cd72) Thanks [@Niznikr](https://github.com/Niznikr)! - Add `Toolbar` and `Calendar` presets
+
+## 0.4.4
+
+### Patch Changes
+
+- [#1392](https://github.com/launchdarkly/launchpad-ui/pull/1392) [`3e49dc6`](https://github.com/launchdarkly/launchpad-ui/commit/3e49dc63a89c8eaed56a3d75cef501e685a5852f) Thanks [@renovate](https://github.com/apps/renovate)! - Update dependencies
+
+- Updated dependencies [[`3e49dc6`](https://github.com/launchdarkly/launchpad-ui/commit/3e49dc63a89c8eaed56a3d75cef501e685a5852f)]:
+  - @launchpad-ui/tokens@0.11.3
+  - @launchpad-ui/icons@0.18.13
+
+## 0.4.3
+
+### Patch Changes
+
+- [#1390](https://github.com/launchdarkly/launchpad-ui/pull/1390) [`219f80c`](https://github.com/launchdarkly/launchpad-ui/commit/219f80cc685ecc78ac194f4beb47956c9ece6f1e) Thanks [@Niznikr](https://github.com/Niznikr)! - Fix `Switch` animation on Firefox
+
+- [#1365](https://github.com/launchdarkly/launchpad-ui/pull/1365) [`55a2f0b`](https://github.com/launchdarkly/launchpad-ui/commit/55a2f0b43d9a066670bfbd969989471babef4fac) Thanks [@Niznikr](https://github.com/Niznikr)! - Add `Table`
+
+- Updated dependencies [[`cffa2f9`](https://github.com/launchdarkly/launchpad-ui/commit/cffa2f9055bb8f33b1db0ef1db01ac65d2498a73)]:
+  - @launchpad-ui/icons@0.18.12
+
+## 0.4.2
+
+### Patch Changes
+
+- Updated dependencies [[`af43516`](https://github.com/launchdarkly/launchpad-ui/commit/af435166439a8b4860fda2dea78e78fc477ed088)]:
+  - @launchpad-ui/tokens@0.11.2
+  - @launchpad-ui/icons@0.18.11
+
 ## 0.4.1
 
 ### Patch Changes

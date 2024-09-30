@@ -4,12 +4,13 @@ import { Banner } from '../src';
 
 export default {
 	component: Banner,
-	title: 'Legacy/Sunset/Banner',
+	title: 'Legacy/Deprecated/Banner',
 	description: 'Banners contain a system-wide message or status.',
 	parameters: {
 		status: {
 			type: import.meta.env.STORYBOOK_PACKAGE_STATUS__BANNER,
 		},
+		chromatic: { disableSnapshot: true },
 	},
 	argTypes: {
 		testId: {

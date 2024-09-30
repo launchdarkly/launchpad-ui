@@ -23,34 +23,6 @@ jobs:
     outputs:
       base-branch: ${{ steps.get-base-branch.outputs.BRANCH }}
 
-  lint:
-    name: Lint
-    needs: [branch-info]
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-
-      - uses: pnpm/action-setup@v3
-
-      - name: Derive appropriate SHAs for base and head for `nx affected` commands
-        uses: nrwl/nx-set-shas@v4
-        with:
-          main-branch-name: ${{needs.branch-info.outputs.base-branch}}
-
-      - name: Setup Node
-        uses: actions/setup-node@v4
-        with:
-          node-version: 20
-          cache: pnpm
-
-      - name: Install Dependencies
-        run: pnpm install
-
-      - name: Lint
-        run: pnpm lint:packages
-
   test:
     name: Test
     needs: [branch-info]

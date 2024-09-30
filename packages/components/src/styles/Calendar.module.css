@@ -69,3 +69,16 @@
 		}
 	}
 }
+
+.picker {
+	display: flex;
+	gap: var(--lp-spacing-300);
+
+	&:has([data-orientation='horizontal']) {
+		flex-direction: column;
+	}
+
+	&:has([data-orientation='vertical']) {
+		flex-direction: row;
+	}
+}

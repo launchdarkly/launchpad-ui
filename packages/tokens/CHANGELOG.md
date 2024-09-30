@@ -1,5 +1,23 @@
 # @launchpad-ui/tokens
 
+## 0.11.4
+
+### Patch Changes
+
+- [#1405](https://github.com/launchdarkly/launchpad-ui/pull/1405) [`6f6619f`](https://github.com/launchdarkly/launchpad-ui/commit/6f6619f7b99541904512993652ba9b0918272f9b) Thanks [@Niznikr](https://github.com/Niznikr)! - Include fonts in package
+
+## 0.11.3
+
+### Patch Changes
+
+- [#1392](https://github.com/launchdarkly/launchpad-ui/pull/1392) [`3e49dc6`](https://github.com/launchdarkly/launchpad-ui/commit/3e49dc63a89c8eaed56a3d75cef501e685a5852f) Thanks [@renovate](https://github.com/apps/renovate)! - Update dependencies
+
+## 0.11.2
+
+### Patch Changes
+
+- [#1383](https://github.com/launchdarkly/launchpad-ui/pull/1383) [`af43516`](https://github.com/launchdarkly/launchpad-ui/commit/af435166439a8b4860fda2dea78e78fc477ed088) Thanks [@kwatkins-ld](https://github.com/kwatkins-ld)! - Add generated .css files in the dist folder to package exports
+
 ## 0.11.1
 
 ### Patch Changes

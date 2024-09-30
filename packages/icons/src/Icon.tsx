@@ -1,64 +1,55 @@
-import type { ComponentProps } from 'react';
+import type { VariantProps } from 'class-variance-authority';
+import type { SVGAttributes } from 'react';
 import type { IconName } from './types';
 
-import { cx } from 'classix';
-import { useContext, useId } from 'react';
+import { cva } from 'class-variance-authority';
 
-import { IconContext } from './context';
 import styles from './styles/Icon.module.css';
 
-type IconProps = ComponentProps<'svg'> & {
-	name: IconName;
-	subtle?: boolean;
-	size?: 'micro' | 'tiny' | 'small' | 'medium' | 'mlarge' | 'large' | 'xlarge' | 'huge';
-	'data-test-id'?: string;
-	title?: string;
-	description?: string;
-};
+const icon = cva(styles.base, {
+	variants: {
+		size: {
+			small: styles.small,
+			medium: styles.medium,
+			large: styles.large,
+		},
+		variant: {
+			default: styles.default,
+			subtle: styles.subtle,
+		},
+	},
+	defaultVariants: {
+		size: 'medium',
+		variant: 'default',
+	},
+});
+
+interface IconProps extends SVGAttributes<SVGElement>, VariantProps<typeof icon> {
+	name?: IconName;
+}
 
 const Icon = ({
 	name,
-	subtle,
 	className,
-	size,
 	children,
-	'data-test-id': testId = 'icon',
-	'aria-label': ariaLabel,
-	'aria-labelledby': ariaLabelledBy,
-	'aria-hidden': ariaHidden,
-	title,
-	description,
 	focusable = false,
 	role = 'img',
+	size = 'medium',
+	variant = 'default',
 	...props
 }: IconProps) => {
-	const sizeClass = size ? styles[size] : false;
-	const classes = cx(styles.icon, sizeClass, subtle && styles.subtle, `icon-${name}`, className);
-	const prefix = `svg-${useId()}`;
-	const isAriaHidden = ariaHidden ?? (!ariaLabelledBy && !ariaLabel);
-	const titleId = title && `${prefix}-${name}-title`;
-	const descriptionId = description && `${prefix}-${name}-description`;
-
-	const { path: contextPath } = useContext(IconContext);
-	const iconId = `lp-icon-${name}`;
-	const spritePath = contextPath === undefined ? '/static/sprite.svg' : contextPath;
-
 	return (
-		<span data-test-id={testId} className={classes}>
-			<svg
-				aria-hidden={isAriaHidden}
-				aria-label={ariaLabel}
-				aria-labelledby={titleId || ariaLabelledBy}
-				aria-describedby={descriptionId}
-				focusable={focusable}
-				role={role}
-				{...props}
-			>
-				{title && <title id={titleId}>{title}</title>}
-				{description && <desc id={descriptionId}>{description}</desc>}
-				<use href={`${spritePath}#${iconId}`} />
-			</svg>
-		</span>
+		<svg
+			aria-hidden={props['aria-hidden'] ?? (!props['aria-labelledby'] && !props['aria-label'])}
+			focusable={focusable}
+			role={role}
+			className={icon({ size, variant, className })}
+			data-icon={name}
+			{...props}
+		>
+			{name && <use href={`#lp-icon-${name}`} />}
+			{children}
+		</svg>
 	);
 };
 

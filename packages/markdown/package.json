@@ -1,6 +1,6 @@
 {
 	"name": "@launchpad-ui/markdown",
-	"version": "0.5.21",
+	"version": "0.5.25",
 	"status": "beta",
 	"publishConfig": {
 		"access": "public"
@@ -29,14 +29,13 @@
 	"scripts": {
 		"build": "vite build -c ../../vite.config.mts && tsc --project tsconfig.build.json",
 		"clean": "rm -rf dist",
-		"lint": "stylelint '**/*.css' --ignore-path ../../.stylelintignore",
 		"test": "vitest run --coverage"
 	},
 	"dependencies": {
 		"@launchpad-ui/tokens": "workspace:~",
-		"classix": "2.1.17",
-		"isomorphic-dompurify": "^2.14.0",
-		"marked": "^13.0.0"
+		"classix": "2.2.0",
+		"isomorphic-dompurify": "^2.16.0",
+		"marked": "^14.1.0"
 	},
 	"peerDependencies": {
 		"react": "18.3.1",

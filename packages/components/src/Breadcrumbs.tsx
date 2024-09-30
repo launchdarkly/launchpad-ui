@@ -33,7 +33,7 @@ const _Breadcrumbs = <T extends object>(
  */
 const Breadcrumbs = (forwardRef as forwardRefType)(_Breadcrumbs);
 
-const _Breadcrumb = ({ children, ...props }: BreadcrumbProps, ref: ForwardedRef<HTMLLIElement>) => {
+const _Breadcrumb = (props: BreadcrumbProps, ref: ForwardedRef<HTMLLIElement>) => {
 	return (
 		<AriaBreadcrumb
 			{...props}
@@ -42,7 +42,9 @@ const _Breadcrumb = ({ children, ...props }: BreadcrumbProps, ref: ForwardedRef<
 				crumb({ ...renderProps, className }),
 			)}
 		>
-			<Provider values={[[LinkContext, { variant: 'subtle' }]]}>{children}</Provider>
+			{composeRenderProps(props.children, (children) => (
+				<Provider values={[[LinkContext, { variant: 'subtle' }]]}>{children}</Provider>
+			))}
 		</AriaBreadcrumb>
 	);
 };

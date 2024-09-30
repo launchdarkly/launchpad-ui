@@ -206,7 +206,7 @@ export const WithCustomTagContent: Story = {
 			<TagGroup items={MOCK_TAGS}>
 				{(item) => (
 					<TagItem>
-						<Icon name="star" size="tiny" style={{ transform: 'translateY(-1px)' }} /> {item.name}
+						<Icon name="star" size="small" style={{ transform: 'translateY(-1px)' }} /> {item.name}
 					</TagItem>
 				)}
 			</TagGroup>

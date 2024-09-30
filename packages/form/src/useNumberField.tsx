@@ -23,6 +23,11 @@ const defaultFormatOptions: Intl.NumberFormatOptions = {
 	maximumFractionDigits: 6,
 };
 
+/**
+ * @deprecated use `NumberField` from `@launchpad-ui/components` instead
+ *
+ * https://launchpad.launchdarkly.com/?path=/docs/components-forms-numberfield--docs
+ */
 const useNumberField = ({
 	className,
 	'data-test-id': testId = 'input',

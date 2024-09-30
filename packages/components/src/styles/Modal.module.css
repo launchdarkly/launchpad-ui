@@ -52,7 +52,7 @@
 		flex-grow: 1;
 	}
 
-	& [role='dialog']:has( [slot='body']) {
+	& [role='dialog']:has([slot='body']) {
 		display: flex;
 		flex-direction: column;
 		gap: var(--lp-spacing-600);
@@ -134,7 +134,6 @@
 	position: fixed;
 	inset: 0;
 	width: 100vw;
-	/* stylelint-disable-next-line csstools/value-no-unknown-custom-properties */
 	height: var(--visual-viewport-height);
 	background: light-dark(#28282880, #282828b2);
 	display: flex;
@@ -146,11 +145,11 @@
 		&[data-entering] {
 			animation-name: fade;
 
-			&:has( .default) {
+			&:has(.default) {
 				animation-duration: var(--lp-duration-200);
 			}
 
-			&:has( .drawer) {
+			&:has(.drawer) {
 				animation-duration: var(--lp-duration-300);
 			}
 		}
@@ -160,11 +159,11 @@
 			animation-direction: reverse;
 			animation-timing-function: ease-in;
 
-			&:has( .default) {
+			&:has(.default) {
 				animation-duration: var(--lp-duration-200);
 			}
 
-			&:has( .drawer) {
+			&:has(.drawer) {
 				animation-duration: var(--lp-duration-300);
 			}
 		}

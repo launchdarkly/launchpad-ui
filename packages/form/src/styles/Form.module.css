@@ -440,7 +440,7 @@ input[type='checkbox']:disabled {
 				background-color: var(--lp-color-bg-interactive-secondary-active);
 			}
 
-			& span:has( svg) {
+			& span:has(svg) {
 				width: 100%;
 				color: var(--lp-color-text-ui-primary-base);
 			}
@@ -448,7 +448,7 @@ input[type='checkbox']:disabled {
 	}
 
 	&:hover,
-	&:has( input:focus) {
+	&:has(input:focus) {
 		& .numberField-stepperContainer {
 			opacity: 1;
 		}

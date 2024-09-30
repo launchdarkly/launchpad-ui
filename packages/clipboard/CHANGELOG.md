@@ -1,5 +1,59 @@
 # @launchpad-ui/clipboard
 
+## 0.11.50
+
+### Patch Changes
+
+- Updated dependencies [[`f537aef`](https://github.com/launchdarkly/launchpad-ui/commit/f537aef5280ee098346c89039fe84fb2ea8542ba)]:
+  - @launchpad-ui/icons@0.19.1
+
+## 0.11.49
+
+### Patch Changes
+
+- [#1414](https://github.com/launchdarkly/launchpad-ui/pull/1414) [`17cdcbd`](https://github.com/launchdarkly/launchpad-ui/commit/17cdcbd38a732e9356c3792c4dc07427e9354fd7) Thanks [@Niznikr](https://github.com/Niznikr)! - Update legacy styles with icons
+
+## 0.11.48
+
+### Patch Changes
+
+- Updated dependencies [[`6341b25`](https://github.com/launchdarkly/launchpad-ui/commit/6341b256039fabceb3d720b9ec63b29b3a600632), [`05feada`](https://github.com/launchdarkly/launchpad-ui/commit/05feada3d4f4e6c03d124b1f4443e790d7b35274)]:
+  - @launchpad-ui/icons@0.19.0
+
+## 0.11.47
+
+### Patch Changes
+
+- Updated dependencies [[`6f6619f`](https://github.com/launchdarkly/launchpad-ui/commit/6f6619f7b99541904512993652ba9b0918272f9b)]:
+  - @launchpad-ui/tokens@0.11.4
+  - @launchpad-ui/icons@0.18.14
+  - @launchpad-ui/tooltip@0.9.20
+
+## 0.11.46
+
+### Patch Changes
+
+- Updated dependencies [[`3e49dc6`](https://github.com/launchdarkly/launchpad-ui/commit/3e49dc63a89c8eaed56a3d75cef501e685a5852f)]:
+  - @launchpad-ui/tokens@0.11.3
+  - @launchpad-ui/icons@0.18.13
+  - @launchpad-ui/tooltip@0.9.19
+
+## 0.11.45
+
+### Patch Changes
+
+- Updated dependencies [[`cffa2f9`](https://github.com/launchdarkly/launchpad-ui/commit/cffa2f9055bb8f33b1db0ef1db01ac65d2498a73)]:
+  - @launchpad-ui/icons@0.18.12
+
+## 0.11.44
+
+### Patch Changes
+
+- Updated dependencies [[`af43516`](https://github.com/launchdarkly/launchpad-ui/commit/af435166439a8b4860fda2dea78e78fc477ed088)]:
+  - @launchpad-ui/tokens@0.11.2
+  - @launchpad-ui/icons@0.18.11
+  - @launchpad-ui/tooltip@0.9.18
+
 ## 0.11.43
 
 ### Patch Changes

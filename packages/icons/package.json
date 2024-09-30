@@ -1,6 +1,6 @@
 {
 	"name": "@launchpad-ui/icons",
-	"version": "0.18.10",
+	"version": "0.19.1",
 	"status": "beta",
 	"publishConfig": {
 		"access": "public"
@@ -31,12 +31,12 @@
 	"scripts": {
 		"build": "vite build -c ../../vite.config.mts && tsc --project tsconfig.build.json && cp src/img/sprite.svg dist",
 		"clean": "rm -rf dist",
-		"lint": "stylelint '**/*.css' --ignore-path ../../.stylelintignore",
 		"test": "vitest run --coverage"
 	},
 	"dependencies": {
+		"@launchpad-ui/box": "workspace:~",
 		"@launchpad-ui/tokens": "workspace:~",
-		"classix": "2.1.17"
+		"class-variance-authority": "0.7.0"
 	},
 	"peerDependencies": {
 		"react": "18.3.1",

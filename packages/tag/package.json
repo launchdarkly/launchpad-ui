@@ -1,6 +1,6 @@
 {
 	"name": "@launchpad-ui/tag",
-	"version": "0.3.43",
+	"version": "0.3.49",
 	"status": "alpha",
 	"publishConfig": {
 		"access": "public"
@@ -29,7 +29,6 @@
 	"scripts": {
 		"build": "vite build -c ../../vite.config.mts && tsc --project tsconfig.build.json",
 		"clean": "rm -rf dist",
-		"lint": "stylelint '**/*.css' --ignore-path ../../.stylelintignore",
 		"test": "vitest run --coverage"
 	},
 	"dependencies": {
@@ -37,14 +36,14 @@
 		"@launchpad-ui/icons": "workspace:~",
 		"@launchpad-ui/tokens": "workspace:~",
 		"@launchpad-ui/tooltip": "workspace:~",
-		"@react-aria/focus": "3.18.1",
-		"@react-aria/interactions": "3.22.1",
-		"@react-aria/tag": "3.4.3",
-		"@react-aria/utils": "3.25.1",
-		"@react-stately/list": "3.10.7",
-		"@react-aria/selection": "3.19.1",
+		"@react-aria/focus": "3.18.2",
+		"@react-aria/interactions": "3.22.2",
+		"@react-aria/tag": "3.4.5",
+		"@react-aria/utils": "3.25.2",
+		"@react-stately/list": "3.10.8",
+		"@react-aria/selection": "3.19.3",
 		"@react-types/shared": "3.24.1",
-		"classix": "2.1.17"
+		"classix": "2.2.0"
 	},
 	"peerDependencies": {
 		"react": "18.3.1",

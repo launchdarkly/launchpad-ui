@@ -1,6 +1,6 @@
 {
 	"name": "@launchpad-ui/stack",
-	"version": "0.1.25",
+	"version": "0.1.28",
 	"status": "alpha",
 	"publishConfig": {
 		"access": "public"
@@ -29,13 +29,12 @@
 	"scripts": {
 		"build": "vite build -c ../../vite.config.mts && tsc --project tsconfig.build.json",
 		"clean": "rm -rf dist",
-		"lint": "stylelint '**/*.css' --ignore-path ../../.stylelintignore",
 		"test": "vitest run --coverage"
 	},
 	"dependencies": {
 		"@launchpad-ui/tokens": "workspace:~",
 		"@launchpad-ui/types": "workspace:~",
-		"classix": "2.1.17"
+		"classix": "2.2.0"
 	},
 	"peerDependencies": {
 		"react": "18.3.1",

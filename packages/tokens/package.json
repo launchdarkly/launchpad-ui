@@ -1,6 +1,6 @@
 {
 	"name": "@launchpad-ui/tokens",
-	"version": "0.11.1",
+	"version": "0.11.4",
 	"status": "beta",
 	"publishConfig": {
 		"access": "public"
@@ -29,6 +29,11 @@
 		"./themes.css": "./dist/themes.css",
 		"./index.css": "./dist/index.css",
 		"./media-queries.css": "./dist/media-queries.css",
+		"./fonts.css": "./dist/fonts.css",
+		"./dist/themes.css": "./dist/themes.css",
+		"./dist/index.css": "./dist/index.css",
+		"./dist/media-queries.css": "./dist/media-queries.css",
+		"./dist/fonts.css": "./dist/fonts.css",
 		"./dist/contract.json": "./dist/contract.json",
 		"./dist/tokens.json": "./dist/tokens.json"
 	},
@@ -40,7 +45,7 @@
 	},
 	"devDependencies": {
 		"json-to-ts": "^2.1.0",
-		"style-dictionary": "^4.0.1",
-		"tsx": "^4.16.2"
+		"style-dictionary": "^4.1.0",
+		"tsx": "^4.19.0"
 	}
 }

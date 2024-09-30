@@ -1,95 +1,28 @@
-.icon {
+.base {
 	display: inline-block;
 	vertical-align: middle;
-	position: relative;
 	flex: none;
+}
+
+.default {
 	fill: currentcolor;
 }
 
 .subtle {
-	fill: var(--lp-color-gray-600);
+	fill: var(--lp-color-fill-ui-secondary);
 }
 
 .small {
-	width: 1rem;
-	height: 1rem;
-}
-
-.tiny {
-	width: 0.625rem;
-	height: 0.625rem;
-}
-
-.micro {
-	width: 0.4375rem;
-	height: 0.4375rem;
+	width: var(--lp-size-16);
+	height: var(--lp-size-16);
 }
 
 .medium {
-	width: 1.25rem;
-	height: 1.25rem;
-}
-
-.mlarge {
-	width: 1.875rem;
-	height: 1.875rem;
+	width: var(--lp-size-20);
+	height: var(--lp-size-20);
 }
 
 .large {
-	width: 2.5rem;
-	height: 2.5rem;
-}
-
-.xlarge {
-	width: 3.75rem;
-	height: 3.75rem;
-}
-
-.huge {
-	width: 6.25rem;
-	height: 6.25rem;
-}
-
-.icon svg {
-	width: 100%;
-	height: 100%;
-	display: block;
-}
-
-.flairIcon svg {
-	fill: white;
-}
-
-.yellowToCyan {
-	background: var(--lp-color-gradient-yellow-cyan);
-}
-
-.cyanToBlue {
-	background: var(--lp-color-gradient-cyan-blue);
-}
-
-.cyanToPurple {
-	background: var(--lp-color-gradient-cyan-purple);
-}
-
-.purpleToBlue {
-	background: var(--lp-color-gradient-purple-blue);
-}
-
-.pinkToPurple {
-	background: var(--lp-color-gradient-pink-purple);
-}
-
-.isRounded {
-	border-radius: 6.25rem;
-}
-
-.flairIconContainer {
-	display: flex;
-	flex-direction: row;
-	justify-content: center;
-	align-items: center;
-	padding: var(--lp-spacing-400);
-	width: fit-content;
-	height: fit-content;
+	width: var(--lp-size-40);
+	height: var(--lp-size-40);
 }

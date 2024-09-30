@@ -1,5 +1,55 @@
 # @launchpad-ui/icons
 
+## 0.19.1
+
+### Patch Changes
+
+- [#1416](https://github.com/launchdarkly/launchpad-ui/pull/1416) [`f537aef`](https://github.com/launchdarkly/launchpad-ui/commit/f537aef5280ee098346c89039fe84fb2ea8542ba) Thanks [@Niznikr](https://github.com/Niznikr)! - Add `data-icon` attribute
+
+## 0.19.0
+
+### Minor Changes
+
+- [#1411](https://github.com/launchdarkly/launchpad-ui/pull/1411) [`6341b25`](https://github.com/launchdarkly/launchpad-ui/commit/6341b256039fabceb3d720b9ec63b29b3a600632) Thanks [@Niznikr](https://github.com/Niznikr)! - Align API with RAC components:
+
+  - Remove `IconContext`
+  - Remove outer `span`
+  - Remove props `title` and `description` in favor of composition
+  - Prop `subtle` -> `variant`
+  - Prop `children` for custom icons
+  - Consolidate sizes
+
+- [#1413](https://github.com/launchdarkly/launchpad-ui/pull/1413) [`05feada`](https://github.com/launchdarkly/launchpad-ui/commit/05feada3d4f4e6c03d124b1f4443e790d7b35274) Thanks [@Niznikr](https://github.com/Niznikr)! - Use `Box` for `FlairIcon`:
+  - Round by default
+  - Prop `gradient` -> `background`
+
+## 0.18.14
+
+### Patch Changes
+
+- Updated dependencies [[`6f6619f`](https://github.com/launchdarkly/launchpad-ui/commit/6f6619f7b99541904512993652ba9b0918272f9b)]:
+  - @launchpad-ui/tokens@0.11.4
+
+## 0.18.13
+
+### Patch Changes
+
+- Updated dependencies [[`3e49dc6`](https://github.com/launchdarkly/launchpad-ui/commit/3e49dc63a89c8eaed56a3d75cef501e685a5852f)]:
+  - @launchpad-ui/tokens@0.11.3
+
+## 0.18.12
+
+### Patch Changes
+
+- [#1380](https://github.com/launchdarkly/launchpad-ui/pull/1380) [`cffa2f9`](https://github.com/launchdarkly/launchpad-ui/commit/cffa2f9055bb8f33b1db0ef1db01ac65d2498a73) Thanks [@mguoynes](https://github.com/mguoynes)! - add flag-health icon
+
+## 0.18.11
+
+### Patch Changes
+
+- Updated dependencies [[`af43516`](https://github.com/launchdarkly/launchpad-ui/commit/af435166439a8b4860fda2dea78e78fc477ed088)]:
+  - @launchpad-ui/tokens@0.11.2
+
 ## 0.18.10
 
 ### Patch Changes

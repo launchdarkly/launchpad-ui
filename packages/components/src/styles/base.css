@@ -1,0 +1,28 @@
+html {
+	font-size: 100%;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	text-rendering: optimizelegibility;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+body {
+	font: var(--lp-text-body-1-regular);
+}
+
+[data-theme] {
+	background-color: var(--lp-color-bg-ui-primary);
+	color: var(--lp-color-text-ui-secondary);
+}
+
+h1,
+h2,
+h3 {
+	color: var(--lp-color-text-ui-primary-base);
+	margin: 0;
+}

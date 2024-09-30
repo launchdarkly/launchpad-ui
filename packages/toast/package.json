@@ -1,6 +1,6 @@
 {
 	"name": "@launchpad-ui/toast",
-	"version": "0.3.37",
+	"version": "0.3.44",
 	"status": "alpha",
 	"publishConfig": {
 		"access": "public"
@@ -29,14 +29,13 @@
 	"scripts": {
 		"build": "vite build -c ../../vite.config.mts && tsc --project tsconfig.build.json",
 		"clean": "rm -rf dist",
-		"lint": "stylelint '**/*.css' --ignore-path ../../.stylelintignore",
 		"test": "vitest run --coverage"
 	},
 	"dependencies": {
 		"@launchpad-ui/icons": "workspace:~",
 		"@launchpad-ui/tokens": "workspace:~",
-		"classix": "2.1.17",
-		"framer-motion": "11.3.0"
+		"classix": "2.2.0",
+		"framer-motion": "11.9.0"
 	},
 	"peerDependencies": {
 		"react": "18.3.1",

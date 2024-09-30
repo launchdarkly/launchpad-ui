@@ -53,6 +53,7 @@ export default defineConfig({
 				pattern: '[hash]_[local]',
 			},
 		},
+		devSourcemap: true,
 	},
 	plugins: [
 		react(),

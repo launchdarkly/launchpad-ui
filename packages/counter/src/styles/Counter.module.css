@@ -1,4 +1,3 @@
-/* stylelint-disable number-max-precision */
 .Counter {
 	display: inline-block;
 	font-size: 0.6875rem;
@@ -17,4 +16,3 @@
 	color: var(--lp-color-text-ui-secondary);
 	background-color: var(--lp-color-bg-ui-secondary);
 }
-/* stylelint-enable number-max-precision */

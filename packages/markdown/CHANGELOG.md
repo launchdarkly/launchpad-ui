@@ -1,5 +1,34 @@
 # @launchpad-ui/markdown
 
+## 0.5.25
+
+### Patch Changes
+
+- Updated dependencies [[`6f6619f`](https://github.com/launchdarkly/launchpad-ui/commit/6f6619f7b99541904512993652ba9b0918272f9b)]:
+  - @launchpad-ui/tokens@0.11.4
+
+## 0.5.24
+
+### Patch Changes
+
+- [#1392](https://github.com/launchdarkly/launchpad-ui/pull/1392) [`3e49dc6`](https://github.com/launchdarkly/launchpad-ui/commit/3e49dc63a89c8eaed56a3d75cef501e685a5852f) Thanks [@renovate](https://github.com/apps/renovate)! - Update dependencies
+
+- Updated dependencies [[`3e49dc6`](https://github.com/launchdarkly/launchpad-ui/commit/3e49dc63a89c8eaed56a3d75cef501e685a5852f)]:
+  - @launchpad-ui/tokens@0.11.3
+
+## 0.5.23
+
+### Patch Changes
+
+- [#1386](https://github.com/launchdarkly/launchpad-ui/pull/1386) [`0777b9b`](https://github.com/launchdarkly/launchpad-ui/commit/0777b9bfda4474bfd213d32f0685325cd6a6c6b5) Thanks [@apucacao](https://github.com/apucacao)! - Remove top margin from Markdown component
+
+## 0.5.22
+
+### Patch Changes
+
+- Updated dependencies [[`af43516`](https://github.com/launchdarkly/launchpad-ui/commit/af435166439a8b4860fda2dea78e78fc477ed088)]:
+  - @launchpad-ui/tokens@0.11.2
+
 ## 0.5.21
 
 ### Patch Changes

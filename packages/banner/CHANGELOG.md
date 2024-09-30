@@ -1,5 +1,62 @@
 # @launchpad-ui/banner
 
+## 0.10.43
+
+### Patch Changes
+
+- Updated dependencies [[`f537aef`](https://github.com/launchdarkly/launchpad-ui/commit/f537aef5280ee098346c89039fe84fb2ea8542ba)]:
+  - @launchpad-ui/icons@0.19.1
+  - @launchpad-ui/button@0.12.29
+
+## 0.10.42
+
+### Patch Changes
+
+- [#1414](https://github.com/launchdarkly/launchpad-ui/pull/1414) [`17cdcbd`](https://github.com/launchdarkly/launchpad-ui/commit/17cdcbd38a732e9356c3792c4dc07427e9354fd7) Thanks [@Niznikr](https://github.com/Niznikr)! - Update legacy styles with icons
+
+## 0.10.41
+
+### Patch Changes
+
+- Updated dependencies [[`6341b25`](https://github.com/launchdarkly/launchpad-ui/commit/6341b256039fabceb3d720b9ec63b29b3a600632), [`05feada`](https://github.com/launchdarkly/launchpad-ui/commit/05feada3d4f4e6c03d124b1f4443e790d7b35274)]:
+  - @launchpad-ui/icons@0.19.0
+  - @launchpad-ui/button@0.12.28
+
+## 0.10.40
+
+### Patch Changes
+
+- Updated dependencies [[`6f6619f`](https://github.com/launchdarkly/launchpad-ui/commit/6f6619f7b99541904512993652ba9b0918272f9b)]:
+  - @launchpad-ui/tokens@0.11.4
+  - @launchpad-ui/button@0.12.27
+  - @launchpad-ui/icons@0.18.14
+
+## 0.10.39
+
+### Patch Changes
+
+- Updated dependencies [[`3e49dc6`](https://github.com/launchdarkly/launchpad-ui/commit/3e49dc63a89c8eaed56a3d75cef501e685a5852f)]:
+  - @launchpad-ui/tokens@0.11.3
+  - @launchpad-ui/button@0.12.26
+  - @launchpad-ui/icons@0.18.13
+
+## 0.10.38
+
+### Patch Changes
+
+- Updated dependencies [[`cffa2f9`](https://github.com/launchdarkly/launchpad-ui/commit/cffa2f9055bb8f33b1db0ef1db01ac65d2498a73)]:
+  - @launchpad-ui/icons@0.18.12
+  - @launchpad-ui/button@0.12.25
+
+## 0.10.37
+
+### Patch Changes
+
+- Updated dependencies [[`af43516`](https://github.com/launchdarkly/launchpad-ui/commit/af435166439a8b4860fda2dea78e78fc477ed088)]:
+  - @launchpad-ui/tokens@0.11.2
+  - @launchpad-ui/button@0.12.24
+  - @launchpad-ui/icons@0.18.11
+
 ## 0.10.36
 
 ### Patch Changes

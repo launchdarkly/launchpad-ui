@@ -2,10 +2,14 @@ import type { ForwardedRef } from 'react';
 import type { TextAreaProps as AriaTextAreaProps } from 'react-aria-components';
 import type { InputVariants } from './Input';
 
+import { cva, cx } from 'class-variance-authority';
 import { forwardRef } from 'react';
 import { TextArea as AriaTextArea, composeRenderProps } from 'react-aria-components';
 
 import { input } from './Input';
+import styles from './styles/TextArea.module.css';
+
+const area = cva(styles.area);
 
 interface TextAreaProps extends AriaTextAreaProps, InputVariants {}
 
@@ -18,7 +22,7 @@ const _TextArea = (
 			{...props}
 			ref={ref}
 			className={composeRenderProps(props.className, (className, renderProps) =>
-				input({ ...renderProps, variant, className }),
+				cx(input({ variant }), area({ ...renderProps, className })),
 			)}
 		/>
 	);
