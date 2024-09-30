@@ -4,7 +4,6 @@ on:
   push:
     paths:
       - 'apps/vscode/CHANGELOG.md'
-      - 'packages/tokens/CHANGELOG.md'
     branches:
       - main
 
