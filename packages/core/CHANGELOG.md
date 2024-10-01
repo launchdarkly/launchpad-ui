@@ -1,5 +1,43 @@
 # @launchpad-ui/core
 
+## 0.49.39
+
+### Patch Changes
+
+- [#1424](https://github.com/launchdarkly/launchpad-ui/pull/1424) [`7684e7d`](https://github.com/launchdarkly/launchpad-ui/commit/7684e7d0ad40063e8cdda92811f92d63e20401b4) Thanks [@renovate](https://github.com/apps/renovate)! - Update dependencies
+
+- Updated dependencies [[`7684e7d`](https://github.com/launchdarkly/launchpad-ui/commit/7684e7d0ad40063e8cdda92811f92d63e20401b4)]:
+  - @launchpad-ui/inline-edit@0.3.35
+  - @launchpad-ui/data-table@0.2.30
+  - @launchpad-ui/focus-trap@0.1.24
+  - @launchpad-ui/navigation@0.12.50
+  - @launchpad-ui/pagination@0.4.50
+  - @launchpad-ui/clipboard@0.11.51
+  - @launchpad-ui/dropdown@0.6.124
+  - @launchpad-ui/tab-list@0.5.31
+  - @launchpad-ui/drawer@0.5.50
+  - @launchpad-ui/filter@0.7.35
+  - @launchpad-ui/select@0.4.51
+  - @launchpad-ui/toggle@0.7.31
+  - @launchpad-ui/alert@0.9.35
+  - @launchpad-ui/modal@0.17.51
+  - @launchpad-ui/form@0.11.35
+  - @launchpad-ui/menu@0.13.35
+  - @launchpad-ui/tag@0.3.50
+  - @launchpad-ui/popover@0.11.32
+  - @launchpad-ui/split-button@0.10.35
+  - @launchpad-ui/card@0.2.50
+  - @launchpad-ui/box@0.1.20
+  - @launchpad-ui/progress-bubbles@0.7.32
+  - @launchpad-ui/tooltip@0.9.21
+  - @launchpad-ui/avatar@0.6.43
+  - @launchpad-ui/banner@0.10.44
+  - @launchpad-ui/button@0.12.30
+  - @launchpad-ui/chip@0.9.43
+  - @launchpad-ui/collapsible@0.1.74
+  - @launchpad-ui/snackbar@0.5.31
+  - @launchpad-ui/toast@0.3.45
+
 ## 0.49.38
 
 ### Patch Changes

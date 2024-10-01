@@ -1,5 +1,12 @@
 # @launchpad-ui/chip
 
+## 0.9.43
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @launchpad-ui/icons@0.19.2
+
 ## 0.9.42
 
 ### Patch Changes

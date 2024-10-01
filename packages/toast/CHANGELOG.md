@@ -1,5 +1,12 @@
 # @launchpad-ui/toast
 
+## 0.3.45
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @launchpad-ui/icons@0.19.2
+
 ## 0.3.44
 
 ### Patch Changes
