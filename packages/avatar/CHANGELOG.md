@@ -1,5 +1,12 @@
 # @launchpad-ui/avatar
 
+## 0.6.43
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @launchpad-ui/icons@0.19.2
+
 ## 0.6.42
 
 ### Patch Changes

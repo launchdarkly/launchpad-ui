@@ -1,6 +1,6 @@
 {
 	"name": "@launchpad-ui/focus-trap",
-	"version": "0.1.23",
+	"version": "0.1.24",
 	"status": "beta",
 	"publishConfig": {
 		"access": "public"

@@ -1,5 +1,12 @@
 # @launchpad-ui/button
 
+## 0.12.30
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @launchpad-ui/icons@0.19.2
+
 ## 0.12.29
 
 ### Patch Changes

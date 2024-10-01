@@ -1,5 +1,12 @@
 # @launchpad-ui/icons
 
+## 0.19.2
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @launchpad-ui/box@0.1.20
+
 ## 0.19.1
 
 ### Patch Changes

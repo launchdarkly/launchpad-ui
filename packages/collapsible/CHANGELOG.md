@@ -1,5 +1,13 @@
 # @launchpad-ui/collapsible
 
+## 0.1.74
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @launchpad-ui/icons@0.19.2
+  - @launchpad-ui/button@0.12.30
+
 ## 0.1.73
 
 ### Patch Changes
