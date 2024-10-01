@@ -36,7 +36,7 @@
 		"@launchpad-ui/icons": "workspace:~",
 		"@launchpad-ui/popover": "workspace:~",
 		"@launchpad-ui/tokens": "workspace:~",
-		"@react-aria/utils": "3.25.2",
+		"@react-aria/utils": "3.25.3",
 		"classix": "2.2.0"
 	},
 	"peerDependencies": {

@@ -62,7 +62,7 @@
 		"@types/node": "^20.16.1",
 		"@types/react": "^18.3.1",
 		"@types/react-dom": "^18.3.0",
-		"@vanilla-extract/css": "^1.15.0",
+		"@vanilla-extract/css": "^1.16.0",
 		"@vanilla-extract/vite-plugin": "^4.0.2",
 		"@vitejs/plugin-react-swc": "^3.7.0",
 		"@vitest/coverage-v8": "^2.1.1",

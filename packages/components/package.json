@@ -33,17 +33,17 @@
 		"test": "vitest run --coverage"
 	},
 	"dependencies": {
-		"@internationalized/date": "3.5.5",
+		"@internationalized/date": "3.5.6",
 		"@launchpad-ui/icons": "workspace:~",
 		"@launchpad-ui/tokens": "workspace:~",
-		"@react-aria/toast": "3.0.0-beta.15",
-		"@react-aria/utils": "3.25.2",
-		"@react-stately/toast": "3.0.0-beta.5",
-		"@react-stately/utils": "3.10.3",
-		"@react-types/shared": "3.24.1",
+		"@react-aria/toast": "3.0.0-beta.16",
+		"@react-aria/utils": "3.25.3",
+		"@react-stately/toast": "3.0.0-beta.6",
+		"@react-stately/utils": "3.10.4",
+		"@react-types/shared": "3.25.0",
 		"class-variance-authority": "0.7.0",
-		"react-aria": "3.34.3",
-		"react-aria-components": "1.3.3",
+		"react-aria": "3.35.0",
+		"react-aria-components": "1.4.0",
 		"react-router-dom": "6.16.0"
 	},
 	"peerDependencies": {
@@ -53,6 +53,6 @@
 	"devDependencies": {
 		"react": "18.3.1",
 		"react-dom": "18.3.1",
-		"react-stately": "3.32.2"
+		"react-stately": "3.33.0"
 	}
 }
