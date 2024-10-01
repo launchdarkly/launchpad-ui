@@ -4,6 +4,7 @@ import type { PlayFunction } from '@storybook/types';
 import { Icon } from '@launchpad-ui/icons';
 import { vars } from '@launchpad-ui/vars';
 import { fireEvent, userEvent, within } from '@storybook/test';
+import { useEffect, useRef, useState } from 'react';
 
 import { Button } from '../src';
 
@@ -132,4 +133,35 @@ export const Small: Story = {
 export const Large: Story = {
 	render: (args) => renderStates({ children: 'Default', size: 'large', ...args }),
 	play,
+};
+
+export const Pending: Story = {
+	render: (args) => {
+		const [isPending, setPending] = useState(false);
+
+		const timeout = useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
+		const handlePress = () => {
+			setPending(true);
+			timeout.current = setTimeout(() => {
+				setPending(false);
+				timeout.current = undefined;
+			}, 2000);
+		};
+
+		useEffect(() => {
+			return () => {
+				clearTimeout(timeout.current);
+			};
+		}, []);
+
+		return <Button isPending={isPending} onPress={handlePress} {...args} />;
+	},
+	args: {
+		children: 'Pending',
+	},
+	play: async ({ canvasElement }) => {
+		const canvas = within(canvasElement);
+
+		await userEvent.click(canvas.getByRole('button'));
+	},
 };

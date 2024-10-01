@@ -12,6 +12,7 @@ import {
 } from 'react-aria-components';
 
 import { input } from './Input';
+import { ProgressBar } from './ProgressBar';
 import styles from './styles/Button.module.css';
 
 const button = cva(styles.base, {
@@ -54,7 +55,16 @@ const _Button = (
 					? cx(input(), styles.select, selectContext.isInvalid && styles.invalid, className)
 					: button({ ...renderProps, size, variant, className }),
 			)}
-		/>
+		>
+			{composeRenderProps(props.children, (children, { isPending }) => (
+				<>
+					{children}
+					{isPending && (
+						<ProgressBar isIndeterminate aria-label="loading" className={styles.progress} />
+					)}
+				</>
+			))}
+		</AriaButton>
 	);
 };
 
