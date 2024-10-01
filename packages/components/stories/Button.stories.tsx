@@ -81,57 +81,61 @@ const play: PlayFunction<ReactRenderer> = async ({
 };
 
 export const Default: Story = {
-	render: (args) => renderStates({ children: 'Default', ...args }),
+	render: (args) => renderStates({ children: <Text>Default</Text>, ...args }),
 	play,
 };
 
 export const Primary: Story = {
-	render: (args) => renderStates({ children: 'Primary', variant: 'primary', ...args }),
+	render: (args) => renderStates({ children: <Text>Primary</Text>, variant: 'primary', ...args }),
 	play,
 };
 
 export const Minimal: Story = {
-	render: (args) => renderStates({ children: 'Minimal', variant: 'minimal', ...args }),
+	render: (args) => renderStates({ children: <Text>Minimal</Text>, variant: 'minimal', ...args }),
 	play,
 };
 
 export const Destructive: Story = {
-	render: (args) => renderStates({ children: 'Destructive', variant: 'destructive', ...args }),
+	render: (args) =>
+		renderStates({ children: <Text>Destructive</Text>, variant: 'destructive', ...args }),
 	play,
 };
 
 export const PrimaryFlair: Story = {
-	render: (args) => renderStates({ children: 'Primary flair', variant: 'primaryFlair', ...args }),
+	render: (args) =>
+		renderStates({ children: <Text>Primary flair</Text>, variant: 'primaryFlair', ...args }),
 	play,
 };
 
 export const DefaultFlair: Story = {
-	render: (args) => renderStates({ children: 'Default flair', variant: 'defaultFlair', ...args }),
+	render: (args) =>
+		renderStates({ children: <Text>Default flair</Text>, variant: 'defaultFlair', ...args }),
 	play,
 };
 
 export const MinimalFlair: Story = {
-	render: (args) => renderStates({ children: 'Minimal flair', variant: 'minimalFlair', ...args }),
+	render: (args) =>
+		renderStates({ children: <Text>Minimal flair</Text>, variant: 'minimalFlair', ...args }),
 	play,
 };
 
 export const WithIcon: Story = {
 	args: {
 		children: (
-			<>
+			<Text>
 				With icon <Icon name="add" size="small" />
-			</>
+			</Text>
 		),
 	},
 };
 
 export const Small: Story = {
-	render: (args) => renderStates({ children: 'Default', size: 'small', ...args }),
+	render: (args) => renderStates({ children: <Text>Default</Text>, size: 'small', ...args }),
 	play,
 };
 
 export const Large: Story = {
-	render: (args) => renderStates({ children: 'Default', size: 'large', ...args }),
+	render: (args) => renderStates({ children: <Text>Default</Text>, size: 'large', ...args }),
 	play,
 };
 

@@ -60,8 +60,8 @@ const _Button = (
 		>
 			{composeRenderProps(props.children, (children, { isPending }) => (
 				<Provider values={[[TextContext, { className: isPending ? styles.pending : undefined }]]}>
-					{children}
 					{isPending && <ProgressBar isIndeterminate aria-label="loading" />}
+					{children}
 				</Provider>
 			))}
 		</AriaButton>
