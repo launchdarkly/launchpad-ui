@@ -216,6 +216,12 @@
 	z-index: 1;
 }
 
+.base[data-pending] {
+	& [data-icon] {
+		opacity: 50%;
+	}
+}
+
 .pending {
 	opacity: 50%;
 }

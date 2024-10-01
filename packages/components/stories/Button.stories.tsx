@@ -122,9 +122,10 @@ export const MinimalFlair: Story = {
 export const WithIcon: Story = {
 	args: {
 		children: (
-			<Text>
-				With icon <Icon name="add" size="small" />
-			</Text>
+			<>
+				<Text>With icon </Text>
+				<Icon name="add" size="small" />
+			</>
 		),
 	},
 };
