@@ -60,6 +60,8 @@ const icons = [
 	'change-history',
 	'chart-area',
 	'chart-bar',
+	'chart-cube-root',
+	'chart-crossing-lines',
 	'chart-dashboard',
 	'chart-histogram',
 	'chart-infographic',
