@@ -216,14 +216,6 @@
 	z-index: 1;
 }
 
-.base[data-pending] {
-	position: relative;
-	color: transparent;
-}
-
-.progress {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
+.pending {
+	opacity: 50%;
 }

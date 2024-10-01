@@ -6,7 +6,7 @@ import { vars } from '@launchpad-ui/vars';
 import { fireEvent, userEvent, within } from '@storybook/test';
 import { useEffect, useRef, useState } from 'react';
 
-import { Button } from '../src';
+import { Button, Text } from '../src';
 
 const meta: Meta<typeof Button> = {
 	component: Button,
@@ -157,7 +157,7 @@ export const Pending: Story = {
 		return <Button isPending={isPending} onPress={handlePress} {...args} />;
 	},
 	args: {
-		children: 'Pending',
+		children: <Text>Pending</Text>,
 	},
 	play: async ({ canvasElement }) => {
 		const canvas = within(canvasElement);

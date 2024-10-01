@@ -6,7 +6,9 @@ import { cva, cx } from 'class-variance-authority';
 import { forwardRef } from 'react';
 import {
 	Button as AriaButton,
+	Provider,
 	SelectContext,
+	TextContext,
 	composeRenderProps,
 	useSlottedContext,
 } from 'react-aria-components';
@@ -57,12 +59,10 @@ const _Button = (
 			)}
 		>
 			{composeRenderProps(props.children, (children, { isPending }) => (
-				<>
+				<Provider values={[[TextContext, { className: isPending ? styles.pending : undefined }]]}>
 					{children}
-					{isPending && (
-						<ProgressBar isIndeterminate aria-label="loading" className={styles.progress} />
-					)}
-				</>
+					{isPending && <ProgressBar isIndeterminate aria-label="loading" />}
+				</Provider>
 			))}
 		</AriaButton>
 	);
