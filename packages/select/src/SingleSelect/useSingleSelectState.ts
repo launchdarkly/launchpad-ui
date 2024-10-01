@@ -63,7 +63,7 @@ const useSingleSelectState = <T extends object>(
 	const commitSelection = () => {
 		// If multiple things are controlled, call onSelectionChange
 		if (props.selectedKey !== undefined && props.filterValue !== undefined) {
-			if (props.onSelectionChange) props.onSelectionChange(selectedKey);
+			if (props.onSelectionChange && selectedKey !== null) props.onSelectionChange(selectedKey);
 
 			// Stop menu from reopening from useEffect
 			// const itemText = collection.getItem(selectedKey)?.textValue ?? '';
