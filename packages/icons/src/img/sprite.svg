@@ -458,7 +458,7 @@
         clip-rule="evenodd"
       />
     </symbol>
-    <symbol  viewBox="0 0 20 20" id="lp-icon-chart-crossing-lines">
+    <symbol  viewBox="0 0 20 20" id="lp-icon-chart-lines-crossed">
       <path 
       fill-rule="evenodd" 
       clip-rule="evenodd" 
