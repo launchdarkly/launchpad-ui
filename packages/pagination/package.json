@@ -1,6 +1,6 @@
 {
 	"name": "@launchpad-ui/pagination",
-	"version": "0.4.50",
+	"version": "0.4.51",
 	"status": "beta",
 	"publishConfig": {
 		"access": "public"

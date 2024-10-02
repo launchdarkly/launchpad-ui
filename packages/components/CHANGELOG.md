@@ -1,5 +1,14 @@
 # @launchpad-ui/components
 
+## 0.4.11
+
+### Patch Changes
+
+- [#1426](https://github.com/launchdarkly/launchpad-ui/pull/1426) [`04723e9`](https://github.com/launchdarkly/launchpad-ui/commit/04723e9faf8d9b39820daacd36d8e8c5089cc107) Thanks [@Niznikr](https://github.com/Niznikr)! - Show `ProgressBar` for pending buttons
+
+- Updated dependencies [[`47f4952`](https://github.com/launchdarkly/launchpad-ui/commit/47f4952825645633161075899738b869bb343066)]:
+  - @launchpad-ui/icons@0.19.3
+
 ## 0.4.10
 
 ### Patch Changes
