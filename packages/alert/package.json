@@ -1,6 +1,6 @@
 {
 	"name": "@launchpad-ui/alert",
-	"version": "0.9.35",
+	"version": "0.9.36",
 	"status": "beta",
 	"publishConfig": {
 		"access": "public"

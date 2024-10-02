@@ -1,5 +1,11 @@
 # @launchpad-ui/icons
 
+## 0.19.3
+
+### Patch Changes
+
+- [#1427](https://github.com/launchdarkly/launchpad-ui/pull/1427) [`47f4952`](https://github.com/launchdarkly/launchpad-ui/commit/47f4952825645633161075899738b869bb343066) Thanks [@qshaner](https://github.com/qshaner)! - feat(icons): add chart-cube-root and chart-crossing-lines icons
+
 ## 0.19.2
 
 ### Patch Changes
