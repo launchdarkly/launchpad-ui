@@ -503,9 +503,6 @@ importers:
       '@launchpad-ui/counter':
         specifier: workspace:~
         version: link:../counter
-      '@launchpad-ui/data-table':
-        specifier: workspace:~
-        version: link:../data-table
       '@launchpad-ui/drawer':
         specifier: workspace:~
         version: link:../drawer
@@ -560,12 +557,6 @@ importers:
       '@launchpad-ui/select':
         specifier: workspace:~
         version: link:../select
-      '@launchpad-ui/slider':
-        specifier: workspace:~
-        version: link:../slider
-      '@launchpad-ui/snackbar':
-        specifier: workspace:~
-        version: link:../snackbar
       '@launchpad-ui/split-button':
         specifier: workspace:~
         version: link:../split-button
@@ -581,12 +572,6 @@ importers:
       '@launchpad-ui/tag':
         specifier: workspace:~
         version: link:../tag
-      '@launchpad-ui/toast':
-        specifier: workspace:~
-        version: link:../toast
-      '@launchpad-ui/toggle':
-        specifier: workspace:~
-        version: link:../toggle
       '@launchpad-ui/tooltip':
         specifier: workspace:~
         version: link:../tooltip
@@ -606,55 +591,6 @@ importers:
       '@launchpad-ui/tokens':
         specifier: workspace:~
         version: link:../tokens
-      classix:
-        specifier: 2.2.0
-        version: 2.2.0
-    devDependencies:
-      react:
-        specifier: 18.3.1
-        version: 18.3.1
-      react-dom:
-        specifier: 18.3.1
-        version: 18.3.1(react@18.3.1)
-
-  packages/data-table:
-    dependencies:
-      '@launchpad-ui/tokens':
-        specifier: workspace:~
-        version: link:../tokens
-      '@launchpad-ui/vars':
-        specifier: workspace:~
-        version: link:../vars
-      '@react-aria/checkbox':
-        specifier: 3.14.7
-        version: 3.14.7(react@18.3.1)
-      '@react-aria/focus':
-        specifier: 3.18.3
-        version: 3.18.3(react@18.3.1)
-      '@react-aria/table':
-        specifier: 3.15.4
-        version: 3.15.4(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@react-aria/utils':
-        specifier: 3.25.3
-        version: 3.25.3(react@18.3.1)
-      '@react-aria/visually-hidden':
-        specifier: 3.8.16
-        version: 3.8.16(react@18.3.1)
-      '@react-stately/table':
-        specifier: 3.12.3
-        version: 3.12.3(react@18.3.1)
-      '@react-stately/toggle':
-        specifier: 3.7.8
-        version: 3.7.8(react@18.3.1)
-      '@react-types/grid':
-        specifier: 3.2.9
-        version: 3.2.9(react@18.3.1)
-      '@vanilla-extract/css':
-        specifier: ^1.14.0
-        version: 1.15.5
-      '@vanilla-extract/recipes':
-        specifier: ^0.5.0
-        version: 0.5.5(@vanilla-extract/css@1.15.5)
       classix:
         specifier: 2.2.0
         version: 2.2.0
@@ -1287,47 +1223,6 @@ importers:
         specifier: 18.3.1
         version: 18.3.1(react@18.3.1)
 
-  packages/slider:
-    dependencies:
-      '@launchpad-ui/tokens':
-        specifier: workspace:~
-        version: link:../tokens
-      classix:
-        specifier: 2.2.0
-        version: 2.2.0
-    devDependencies:
-      react:
-        specifier: 18.3.1
-        version: 18.3.1
-      react-dom:
-        specifier: 18.3.1
-        version: 18.3.1(react@18.3.1)
-
-  packages/snackbar:
-    dependencies:
-      '@launchpad-ui/button':
-        specifier: workspace:~
-        version: link:../button
-      '@launchpad-ui/icons':
-        specifier: workspace:~
-        version: link:../icons
-      '@launchpad-ui/tokens':
-        specifier: workspace:~
-        version: link:../tokens
-      classix:
-        specifier: 2.2.0
-        version: 2.2.0
-      framer-motion:
-        specifier: 11.9.0
-        version: 11.9.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-    devDependencies:
-      react:
-        specifier: 18.3.1
-        version: 18.3.1
-      react-dom:
-        specifier: 18.3.1
-        version: 18.3.1(react@18.3.1)
-
   packages/split-button:
     dependencies:
       '@launchpad-ui/button':
@@ -1461,56 +1356,6 @@ importers:
         specifier: 2.2.0
         version: 2.2.0
     devDependencies:
-      react:
-        specifier: 18.3.1
-        version: 18.3.1
-      react-dom:
-        specifier: 18.3.1
-        version: 18.3.1(react@18.3.1)
-
-  packages/toast:
-    dependencies:
-      '@launchpad-ui/icons':
-        specifier: workspace:~
-        version: link:../icons
-      '@launchpad-ui/tokens':
-        specifier: workspace:~
-        version: link:../tokens
-      classix:
-        specifier: 2.2.0
-        version: 2.2.0
-      framer-motion:
-        specifier: 11.9.0
-        version: 11.9.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-    devDependencies:
-      react:
-        specifier: 18.3.1
-        version: 18.3.1
-      react-dom:
-        specifier: 18.3.1
-        version: 18.3.1(react@18.3.1)
-
-  packages/toggle:
-    dependencies:
-      '@launchpad-ui/tokens':
-        specifier: workspace:~
-        version: link:../tokens
-      '@react-aria/focus':
-        specifier: 3.18.3
-        version: 3.18.3(react@18.3.1)
-      '@react-aria/switch':
-        specifier: 3.6.8
-        version: 3.6.8(react@18.3.1)
-      '@react-stately/toggle':
-        specifier: 3.7.8
-        version: 3.7.8(react@18.3.1)
-      classix:
-        specifier: 2.2.0
-        version: 2.2.0
-    devDependencies:
-      '@react-types/shared':
-        specifier: 3.25.0
-        version: 3.25.0(react@18.3.1)
       react:
         specifier: 18.3.1
         version: 18.3.1
