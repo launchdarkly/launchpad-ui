@@ -58,3 +58,4 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ env.CUSTOM_GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NPM_CONFIG_PROVENANCE: true
