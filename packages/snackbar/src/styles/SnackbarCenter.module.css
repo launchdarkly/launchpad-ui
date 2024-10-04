@@ -1,9 +1,0 @@
-.SnackbarCenter {
-	position: fixed;
-	inset: 1.25rem 1.25rem auto auto;
-	z-index: var(--lp-z-index-400);
-}
-
-.SnackbarCenter-item:not(:first-child) {
-	margin-top: 1.25rem;
-}

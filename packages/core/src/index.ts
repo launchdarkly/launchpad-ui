@@ -81,8 +81,6 @@ export type {
 	SelectItemProps,
 	SelectSectionProps,
 } from '@launchpad-ui/select';
-export type { SliderProps } from '@launchpad-ui/slider';
-export type { SnackbarProps, SnackbarCenterProps, SnackbarRecord } from '@launchpad-ui/snackbar';
 export type {
 	SplitButtonProps,
 	SplitButtonDropdownProps,
@@ -99,15 +97,12 @@ export type {
 	TableRowProps,
 } from '@launchpad-ui/table';
 export type { TagGroupProps, TagGroupActionProps } from '@launchpad-ui/tag';
-export type { ToastProps, ToastCenterProps, ToastRecord } from '@launchpad-ui/toast';
-export type { ToggleProps } from '@launchpad-ui/toggle';
 export type { TooltipProps } from '@launchpad-ui/tooltip';
 export type { StackProps } from '@launchpad-ui/stack';
 export type { Space } from '@launchpad-ui/types';
 export type { InlineProps } from '@launchpad-ui/inline';
 export type { ColumnProps, ColumnsProps } from '@launchpad-ui/columns';
 export type { InlineEditProps } from '@launchpad-ui/inline-edit';
-export type { DataTableProps } from '@launchpad-ui/data-table';
 export type { RadioCardProps } from '@launchpad-ui/card';
 // plop end type exports
 
@@ -175,8 +170,6 @@ export {
 	SelectItem,
 	SelectSection,
 } from '@launchpad-ui/select';
-export { Slider } from '@launchpad-ui/slider';
-export { Snackbar, SnackbarCenter } from '@launchpad-ui/snackbar';
 export {
 	SplitButton,
 	SplitButtonDropdown,
@@ -193,13 +186,10 @@ export {
 	TableRow,
 } from '@launchpad-ui/table';
 export { TagGroup, TagItem } from '@launchpad-ui/tag';
-export { Toast, ToastCenter } from '@launchpad-ui/toast';
-export { Toggle } from '@launchpad-ui/toggle';
 export { Tooltip, TooltipBase } from '@launchpad-ui/tooltip';
 export { Stack } from '@launchpad-ui/stack';
 export { Inline } from '@launchpad-ui/inline';
 export { Column, Columns } from '@launchpad-ui/columns';
 export { InlineEdit } from '@launchpad-ui/inline-edit';
-export { DataTable } from '@launchpad-ui/data-table';
 export { RadioCard } from '@launchpad-ui/card';
 // plop end module exports
