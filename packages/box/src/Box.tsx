@@ -10,12 +10,12 @@ interface BoxProps extends Sprinkles, Omit<HTMLAttributes<HTMLDivElement>, 'colo
 	asChild?: boolean;
 }
 
-const Box = ({ asChild, children, className: classes, ...props }: BoxProps) => {
+const Box = ({ asChild, children, className, ...props }: BoxProps) => {
 	const Component = asChild ? Slot : 'div';
-	const { className, style, otherProps } = rainbowSprinkles(props);
+	const { className: classes, style, otherProps } = rainbowSprinkles(props);
 
 	return (
-		<Component className={cx(classes, className)} style={style} {...otherProps}>
+		<Component className={cx(className, classes)} style={style} {...otherProps}>
 			{children}
 		</Component>
 	);
