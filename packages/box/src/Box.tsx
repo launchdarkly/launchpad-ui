@@ -1,27 +1,21 @@
-import type { ReactNode } from 'react';
+import type { HTMLAttributes } from 'react';
 import type { Sprinkles } from './styles/rainbow-sprinkles.css';
 
 import { Slot } from '@radix-ui/react-slot';
+import { cx } from 'class-variance-authority';
 
 import { rainbowSprinkles } from './styles/rainbow-sprinkles.css';
 
-type BoxProps = Sprinkles & {
-	children?: ReactNode;
+interface BoxProps extends Sprinkles, Omit<HTMLAttributes<HTMLDivElement>, 'color'> {
 	asChild?: boolean;
-	'data-test-id'?: string;
-};
+}
 
-const Box = ({
-	asChild,
-	children,
-	'data-test-id': testId = asChild ? undefined : 'box',
-	...props
-}: BoxProps) => {
+const Box = ({ asChild, children, className, ...props }: BoxProps) => {
 	const Component = asChild ? Slot : 'div';
-	const { className, style, otherProps } = rainbowSprinkles(props);
+	const { className: classes, style, otherProps } = rainbowSprinkles(props);
 
 	return (
-		<Component className={className} style={style} data-test-id={testId} {...otherProps}>
+		<Component className={cx(className, classes)} style={style} {...otherProps}>
 			{children}
 		</Component>
 	);
