@@ -37,6 +37,7 @@
 		"@launchpad-ui/vars": "workspace:~",
 		"@radix-ui/react-slot": "1.1.0",
 		"@vanilla-extract/dynamic": "2.1.0",
+		"class-variance-authority": "0.7.0",
 		"rainbow-sprinkles": "0.17.3"
 	},
 	"peerDependencies": {
