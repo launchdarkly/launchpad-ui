@@ -59,8 +59,8 @@
 .toast {
 	display: inline-flex;
 	font: var(--lp-text-body-1-regular);
-	background: var(--lp-color-bg-feedback-primary);
-	color: var(--lp-color-white-950);
+	background: var(--lp-color-bg-overlay-secondary);
+	color: var(--lp-color-text-ui-primary-base);
 	border-radius: var(--lp-border-radius-regular);
 	box-shadow:
 		0px 0px 1px 0px var(--lp-color-shadow-ui-primary), 0px 1px 2px 0px var(

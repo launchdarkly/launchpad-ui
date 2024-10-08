@@ -133,7 +133,8 @@
 	inset: 0;
 	width: 100vw;
 	height: var(--visual-viewport-height);
-	background: light-dark(#28282880, #282828b2);
+	background: var(--lp-color-black-500);
+	backdrop-filter: blur(1px);
 	display: flex;
 	align-items: center;
 	justify-content: center;
