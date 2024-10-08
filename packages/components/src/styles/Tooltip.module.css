@@ -22,11 +22,12 @@
 	align-items: center;
 	gap: var(--lp-spacing-200);
 	border-radius: var(--lp-border-radius-regular);
-	border: 1px solid var(--lp-color-border-overlay-secondary);
 	background-color: var(--lp-color-bg-overlay-secondary);
-	box-shadow: 0 4px 4px 0 rgb(40 40 40 / 0.08), 0 1px 2px 0 rgb(40 40 40 / 0.1), 0 0 4px 0
-		rgb(40 40 40 / 0.12);
-	color: light-dark(var(--lp-color-text-overlay-secondary), var(--lp-color-text-ui-primary-base));
+	box-shadow:
+		0px 0px 1px 0px var(--lp-color-shadow-ui-primary), 0px 1px 2px 0px var(
+			--lp-color-shadow-ui-primary
+		), 0px 2px 8px 0px var(--lp-color-shadow-ui-secondary);
+	color: var(--lp-color-text-ui-primary-base);
 	transform: translate3d(0, 0, 0);
 	will-change: transform, opacity;
 
