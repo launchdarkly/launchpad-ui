@@ -47,7 +47,7 @@ export const Size = {
 						<div>{value}</div>
 						<div
 							style={{
-								backgroundColor: 'var(--lp-color-system-green-500)',
+								backgroundColor: 'var(--lp-color-green-500)',
 								width: value,
 								height: 'var(--lp-size-16)',
 							}}
