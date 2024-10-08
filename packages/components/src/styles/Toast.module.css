@@ -72,19 +72,15 @@
 	}
 
 	& .info {
-		fill: var(--lp-color-cyan-400);
+		fill: var(--lp-color-fill-feedback-info);
 	}
 
 	& .error {
-		fill: var(--lp-color-pink-500);
-	}
-
-	& .warning {
-		fill: var(--lp-color-yellow-500);
+		fill: var(--lp-color-fill-feedback-error);
 	}
 
 	& .success {
-		fill: var(--lp-color-system-green-500);
+		fill: var(--lp-color-fill-feedback-success);
 	}
 
 	&[data-focus-visible] {

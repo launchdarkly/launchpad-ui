@@ -52,18 +52,6 @@ export const Success: Story = {
 	},
 };
 
-export const Warning: Story = {
-	args: {
-		children: (
-			<>
-				<Heading>Heading</Heading>
-				<Text>Content</Text>
-			</>
-		),
-		status: 'warning',
-	},
-};
-
 export const Subtle: Story = {
 	args: {
 		children: <Text>Content</Text>,
