@@ -348,19 +348,25 @@
 		},
 		"gradient": {
 			"yellow-cyan": {
-				"$value": "linear-gradient(126.73deg, {color.yellow.500} -38.66%, {color.cyan.400} 83.73%)"
+				"$value": "linear-gradient(127deg, {color.brand.yellow.base} -38.66%, {color.brand.cyan.base} 83.73%)"
+			},
+			"yellow-pink": {
+				"$value": "linear-gradient(180deg, {color.brand.yellow.base} 0%, {color.brand.pink.base} 100%)"
+			},
+			"yellow-blue-pale": {
+				"$value": "linear-gradient(0deg, {color.white.50} 0%, {color.white.50} 100%), linear-gradient(180deg, {color.brand.yellow.light} 0%, {color.brand.blue.light} 100%)"
 			},
 			"cyan-blue": {
-				"$value": "linear-gradient(136.11deg, {color.cyan.400} 22.68%, {color.blue.600} 127.6%)"
+				"$value": "linear-gradient(136deg, {color.brand.cyan.base} 22.68%, {color.brand.blue.base} 127.6%)"
 			},
 			"cyan-purple": {
-				"$value": "linear-gradient(41.76deg, {color.purple.600} -17.05%, {color.cyan.400} 147.06%)"
+				"$value": "linear-gradient(42deg, {color.brand.purple.base} -17.05%, {color.brand.cyan.base} 147.06%)"
 			},
 			"purple-blue": {
-				"$value": "linear-gradient(131.04deg, {color.purple.600} -15.82%, {color.blue.600} 118.85%)"
+				"$value": "linear-gradient(131deg, {color.brand.purple.base} -15.82%, {color.brand.blue.base} 118.85%)"
 			},
-			"pink-purple": {
-				"$value": "linear-gradient(39.47deg, {color.purple.600} -17.19%, {color.pink.500} 148.9%)"
+			"purple-pink": {
+				"$value": "linear-gradient(39deg, {color.brand.purple.base} -17.19%, {color.brand.pink.base} 148.9%)"
 			}
 		}
 	}
