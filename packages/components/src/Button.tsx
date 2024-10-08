@@ -29,9 +29,6 @@ const button = cva(styles.base, {
 			primary: styles.primary,
 			destructive: styles.destructive,
 			minimal: styles.minimal,
-			primaryFlair: styles.primaryFlair,
-			defaultFlair: styles.defaultFlair,
-			minimalFlair: styles.minimalFlair,
 		},
 	},
 	defaultVariants: {

@@ -101,24 +101,6 @@ export const Destructive: Story = {
 	play,
 };
 
-export const PrimaryFlair: Story = {
-	render: (args) =>
-		renderStates({ children: <Text>Primary flair</Text>, variant: 'primaryFlair', ...args }),
-	play,
-};
-
-export const DefaultFlair: Story = {
-	render: (args) =>
-		renderStates({ children: <Text>Default flair</Text>, variant: 'defaultFlair', ...args }),
-	play,
-};
-
-export const MinimalFlair: Story = {
-	render: (args) =>
-		renderStates({ children: <Text>Minimal flair</Text>, variant: 'minimalFlair', ...args }),
-	play,
-};
-
 export const WithIcon: Story = {
 	args: {
 		children: (
