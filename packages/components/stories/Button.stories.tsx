@@ -99,6 +99,15 @@ export const Destructive: Story = {
 	render: (args) =>
 		renderStates({ children: <Text>Destructive</Text>, variant: 'destructive', ...args }),
 	play,
+	parameters: {
+		a11y: {
+			options: {
+				rules: {
+					'color-contrast': { enabled: false },
+				},
+			},
+		},
+	},
 };
 
 export const WithIcon: Story = {

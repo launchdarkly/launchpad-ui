@@ -79,13 +79,14 @@
 .primary[data-pressed] {
 	background-color: var(--lp-color-bg-interactive-primary-active);
 	border-color: var(--lp-color-border-interactive-primary-active);
-	color: var(--lp-color-text-interactive-primary-base);
+	color: var(--lp-color-text-interactive-primary-active);
 }
 
 .primary[data-focus-visible] {
 	background-color: var(--lp-color-bg-interactive-primary-focus);
 	border-color: var(--lp-color-border-interactive-primary-focus);
 	box-shadow: inset 0 0 0 3px var(--lp-color-shadow-interactive-primary);
+	color: var(--lp-color-text-interactive-primary-focus);
 }
 
 .destructive {
