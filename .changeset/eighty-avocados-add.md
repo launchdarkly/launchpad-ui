@@ -9,6 +9,9 @@
 "@launchpad-ui/modal": patch
 "@launchpad-ui/chip": patch
 "@launchpad-ui/tag": patch
+"@launchpad-ui/popover": patch
+"@launchpad-ui/menu": patch
+"@launchpad-ui/select": patch
 "@launchpad-ui/core": patch
 ---
 
