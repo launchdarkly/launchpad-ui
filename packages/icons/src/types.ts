@@ -133,6 +133,7 @@ const icons = [
 	'flag-health',
 	'flag-outline',
 	'flask',
+	'flask-arrow',
 	'flask-bolt',
 	'folders',
 	'forward',
