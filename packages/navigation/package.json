@@ -1,6 +1,6 @@
 {
 	"name": "@launchpad-ui/navigation",
-	"version": "0.12.51",
+	"version": "0.12.52",
 	"status": "beta",
 	"publishConfig": {
 		"access": "public"

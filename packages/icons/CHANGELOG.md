@@ -1,5 +1,14 @@
 # @launchpad-ui/icons
 
+## 0.19.4
+
+### Patch Changes
+
+- [#1437](https://github.com/launchdarkly/launchpad-ui/pull/1437) [`b407647`](https://github.com/launchdarkly/launchpad-ui/commit/b4076476961677b2ce5141b46cb55910ccc372f1) Thanks [@hsadhvani](https://github.com/hsadhvani)! - feat(icons): add flask-arrow icon
+
+- Updated dependencies [[`2b70773`](https://github.com/launchdarkly/launchpad-ui/commit/2b707733f0729b482b196ffecba46af967b88433)]:
+  - @launchpad-ui/box@0.1.21
+
 ## 0.19.3
 
 ### Patch Changes
