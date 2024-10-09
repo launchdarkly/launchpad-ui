@@ -1,5 +1,36 @@
 # @launchpad-ui/core
 
+## 0.50.0
+
+### Minor Changes
+
+- [#1429](https://github.com/launchdarkly/launchpad-ui/pull/1429) [`a0b138f`](https://github.com/launchdarkly/launchpad-ui/commit/a0b138f40aae771566611c1d89c0cb8e0e706ba4) Thanks [@Niznikr](https://github.com/Niznikr)! - Remove data-table, slider, snackbar, toast, and toggle packages
+
+### Patch Changes
+
+- Updated dependencies [[`2b70773`](https://github.com/launchdarkly/launchpad-ui/commit/2b707733f0729b482b196ffecba46af967b88433)]:
+  - @launchpad-ui/box@0.1.21
+  - @launchpad-ui/alert@0.9.37
+  - @launchpad-ui/avatar@0.6.45
+  - @launchpad-ui/banner@0.10.46
+  - @launchpad-ui/button@0.12.32
+  - @launchpad-ui/chip@0.9.45
+  - @launchpad-ui/clipboard@0.11.53
+  - @launchpad-ui/collapsible@0.1.76
+  - @launchpad-ui/drawer@0.5.52
+  - @launchpad-ui/dropdown@0.6.126
+  - @launchpad-ui/filter@0.7.37
+  - @launchpad-ui/form@0.11.37
+  - @launchpad-ui/inline-edit@0.3.37
+  - @launchpad-ui/menu@0.13.37
+  - @launchpad-ui/modal@0.17.53
+  - @launchpad-ui/navigation@0.12.52
+  - @launchpad-ui/pagination@0.4.52
+  - @launchpad-ui/select@0.4.53
+  - @launchpad-ui/tag@0.3.52
+  - @launchpad-ui/split-button@0.10.37
+  - @launchpad-ui/card@0.2.52
+
 ## 0.49.40
 
 ### Patch Changes
