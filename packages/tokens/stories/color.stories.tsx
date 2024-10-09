@@ -1,4 +1,10 @@
-import { CopyToClipboard } from '@launchpad-ui/clipboard';
+import {
+	Button,
+	ToastContainer,
+	ToastQueue,
+	Tooltip,
+	TooltipTrigger,
+} from '@launchpad-ui/components';
 import { vars } from '@launchpad-ui/vars';
 import { useEffect, useRef, useState } from 'react';
 
@@ -39,56 +45,60 @@ const TokenTable = ({ tokens }: { tokens: Record<string, string> }) => {
 	}, []);
 
 	return (
-		<table style={{ borderCollapse: 'separate', borderSpacing: '20px 0' }}>
-			<thead>
-				<tr>
-					<th />
-					<th style={{ textAlign: 'left' }}>Name</th>
-					<th style={{ textAlign: 'left' }}>Value</th>
-				</tr>
-			</thead>
-			<tbody>
-				{Object.entries(tokens).map(([key, value]) => {
-					return (
-						<tr key={key}>
-							<td>
-								<div
-									// biome-ignore lint/suspicious/noAssignInExpressions: <explanation>
-									ref={(element) => (itemEls.current[key] = element)}
-									style={{
-										background: value,
-										height: '50px',
-										width: '150px',
-										border: '1px solid var(--lp-color-border-ui-primary)',
-									}}
-								/>
-							</td>
-							<td>
-								<CopyToClipboard text={`--lp-color-${key}`}>{`--lp-color-${key}`}</CopyToClipboard>
-							</td>
-							<td>{colors[key]}</td>
-						</tr>
-					);
-				})}
-			</tbody>
-		</table>
+		<>
+			<table style={{ borderCollapse: 'separate', borderSpacing: '20px 0' }}>
+				<thead>
+					<tr>
+						<th />
+						<th style={{ textAlign: 'left' }}>Name</th>
+						<th style={{ textAlign: 'left' }}>Value</th>
+					</tr>
+				</thead>
+				<tbody>
+					{Object.entries(tokens).map(([key, value]) => {
+						return (
+							<tr key={key}>
+								<td>
+									<div
+										// biome-ignore lint/suspicious/noAssignInExpressions: <explanation>
+										ref={(element) => (itemEls.current[key] = element)}
+										style={{
+											background: value,
+											height: '50px',
+											width: '150px',
+											border: '1px solid var(--lp-color-border-ui-primary)',
+										}}
+									/>
+								</td>
+								<td>
+									<TooltipTrigger>
+										<Button
+											onPress={() => {
+												navigator.clipboard.writeText(`--lp-color-${key}`);
+												ToastQueue.success('Copied!');
+											}}
+											style={{ font: 'var(--lp-text-code-1-regular)' }}
+											variant="minimal"
+										>
+											{`--lp-color-${key}`}
+										</Button>
+										<Tooltip placement="bottom">Copy to clipboard</Tooltip>
+									</TooltipTrigger>
+								</td>
+								<td>{colors[key]}</td>
+							</tr>
+						);
+					})}
+				</tbody>
+			</table>
+			<ToastContainer />
+		</>
 	);
 };
 
 const global = Object.keys(vars.color)
 	.filter((key) =>
-		[
-			'black',
-			'blue',
-			'cyan',
-			'gray',
-			'pink',
-			'purple',
-			'white',
-			'yellow',
-			'system',
-			'gradient',
-		].includes(key),
+		['black', 'blue', 'green', 'gray', 'red', 'purple', 'white', 'brand', 'gradient'].includes(key),
 	)
 	.reduce((obj, key) => {
 		// @ts-expect-error fixme

@@ -2,15 +2,17 @@
 
 :root,
 [data-theme='default'] {
-	--lp-component-banner-color-bg-error: var(--lp-color-system-red-200);
-	--lp-component-banner-color-bg-warning: var(--lp-color-system-yellow-200);
-	--lp-component-banner-color-bg-info: var(--lp-color-blue-200);
+	--lp-component-banner-color-bg-error: var(--lp-color-bg-feedback-error);
+	--lp-component-banner-color-bg-warning: var(--lp-color-brand-yellow-light);
+	--lp-component-banner-color-bg-info: var(--lp-color-bg-feedback-info);
+	--lp-component-banner-fill-warning: var(--lp-color-brand-yellow-dark);
+	--lp-component-banner-border-warning: var(--lp-color-brand-yellow-dark);
 }
 
 [data-theme='dark'] {
-	--lp-component-banner-color-bg-error: hsl(0 30% 17%);
-	--lp-component-banner-color-bg-warning: hsl(46 29% 17%);
-	--lp-component-banner-color-bg-info: hsl(232 32% 18%);
+	--lp-component-banner-color-bg-warning: var(--lp-color-brand-orange-dark);
+	--lp-component-banner-fill-warning: var(--lp-color-brand-yellow-base);
+	--lp-component-banner-border-warning: var(--lp-color-brand-yellow-base);
 }
 
 .Banner {
@@ -46,7 +48,7 @@
 }
 
 .Banner.Banner--warning {
-	border-bottom-color: var(--lp-color-border-feedback-warning);
+	border-bottom-color: var(--lp-component-banner-border-warning);
 	background-color: var(--lp-component-banner-color-bg-warning);
 }
 
@@ -68,5 +70,5 @@
 }
 
 .Banner.Banner--warning .Banner-icon {
-	fill: var(--lp-color-fill-feedback-warning);
+	fill: var(--lp-component-banner-fill-warning);
 }

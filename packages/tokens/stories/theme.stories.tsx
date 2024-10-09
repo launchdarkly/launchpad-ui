@@ -1,7 +1,6 @@
 import type { Args, StoryContext } from '@storybook/react';
 
-import { Button } from '@launchpad-ui/button';
-import { Chip } from '@launchpad-ui/chip';
+import { Button } from '@launchpad-ui/components';
 
 export default {
 	title: 'Foundations/Tokens/Themes',
@@ -38,7 +37,7 @@ export const NestedThemes = {
 
 								<p>
 									By adding <code>data-theme=&quot;dark&quot;</code> to a container, you can make
-									the children adopt that theme. <Chip>Chip</Chip>
+									the children adopt that theme.
 								</p>
 
 								<Button>Click me</Button>

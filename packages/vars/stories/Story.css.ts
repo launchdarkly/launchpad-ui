@@ -14,11 +14,11 @@ export const container = style({
 
 export const local = style({
 	vars: {
-		[accentVar]: vars.color.pink[500],
+		[accentVar]: vars.color.red[500],
 	},
 	selectors: {
 		'[data-theme="dark"] &': {
-			vars: { [accentVar]: vars.color.pink[200] },
+			vars: { [accentVar]: vars.color.red[200] },
 		},
 	},
 	backgroundColor: accentVar,

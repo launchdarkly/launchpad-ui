@@ -63,7 +63,7 @@
 
 .headerIcon {
 	transform: translateY(2px);
-	fill: var(--lp-color-fill-feedback-warning);
+	fill: var(--lp-color-brand-yellow-dark);
 }
 
 .headerMain {

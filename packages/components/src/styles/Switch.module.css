@@ -50,8 +50,8 @@
 
 .switch[data-selected] {
 	& .track {
-		background-color: var(--lp-color-system-green-700);
-		border: 1px solid var(--lp-color-system-green-800);
+		background-color: var(--lp-color-green-500);
+		border: 1px solid var(--lp-color-green-600);
 	}
 
 	& .handle {

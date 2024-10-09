@@ -33,7 +33,7 @@
 /* Popover content */
 
 .Popover-content {
-	background: var(--lp-color-bg-overlay-primary);
+	background: var(--lp-color-bg-overlay-secondary);
 	border-radius: var(--lp-border-radius-medium);
 	box-shadow: var(--lp-component-popover-shadow);
 }
@@ -71,7 +71,7 @@
 	width: 10px;
 	height: 10px;
 	background: inherit;
-	background-color: var(--lp-color-bg-overlay-primary);
+	background-color: var(--lp-color-bg-overlay-secondary);
 	color: var(--lp-color-text-ui-primary-base);
 }
 

@@ -39,6 +39,7 @@ const _Tooltip = (
 ) => {
 	return (
 		<AriaTooltip
+			data-theme={variant === 'default' ? 'dark' : undefined}
 			{...props}
 			offset={4}
 			crossOffset={0}

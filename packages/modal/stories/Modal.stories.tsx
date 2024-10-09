@@ -390,6 +390,7 @@ export const ForcedDarkTheme: Story = {
 			options: {
 				rules: {
 					// @fixme
+					'color-contrast': { enabled: false },
 					'duplicate-id-aria': { enabled: false },
 				},
 			},

@@ -62,11 +62,6 @@
 	background-color: var(--lp-color-bg-feedback-success);
 }
 
-.warning {
-	color: var(--lp-color-text-feedback-warning);
-	background-color: var(--lp-color-bg-feedback-warning);
-}
-
 .error {
 	color: var(--lp-color-text-feedback-error);
 	background-color: var(--lp-color-bg-feedback-error);

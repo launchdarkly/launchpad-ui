@@ -18,30 +18,27 @@
 	&.success .icon {
 		color: var(--lp-color-fill-feedback-success);
 	}
-
-	&.warning .icon {
-		color: var(--lp-color-fill-feedback-warning);
-	}
 }
 
 .default {
 	align-items: flex-start;
 	padding: var(--lp-spacing-400);
+	border-style: solid;
+	border-width: 1px;
 
 	&.error {
 		background-color: var(--lp-color-bg-feedback-error);
+		border-color: var(--lp-color-border-feedback-error);
 	}
 
 	&.info {
 		background-color: var(--lp-color-bg-feedback-info);
+		border-color: var(--lp-color-border-feedback-info);
 	}
 
 	&.success {
 		background-color: var(--lp-color-bg-feedback-success);
-	}
-
-	&.warning {
-		background-color: var(--lp-color-bg-feedback-warning);
+		border-color: var(--lp-color-border-feedback-success);
 	}
 
 	&:has(.heading) {

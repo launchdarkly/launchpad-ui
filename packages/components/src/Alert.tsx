@@ -17,7 +17,6 @@ const alert = cva(styles.base, {
 			error: styles.error,
 			info: styles.info,
 			success: styles.success,
-			warning: styles.warning,
 		},
 		variant: {
 			default: styles.default,

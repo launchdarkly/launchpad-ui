@@ -43,7 +43,7 @@
 }
 
 .Menu {
-	background: var(--lp-color-bg-overlay-primary);
+	background: var(--lp-color-bg-overlay-secondary);
 	border-radius: var(--lp-border-radius-medium);
 	font-family: var(--lp-font-family-base);
 
