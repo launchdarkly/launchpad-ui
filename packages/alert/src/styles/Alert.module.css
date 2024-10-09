@@ -12,6 +12,15 @@
 	--lp-component-alert-notification-flair-strong-button-color-text-hover: var(--lp-color-black-300);
 	--lp-component-alert-notification-flair-strong-button-color-text-focus: var(--lp-color-black-300);
 	--lp-component-alert-notification-flair-strong-button-color-text-active: var(--lp-color-black-300);
+	--lp-component-alert-color-bg-warning: var(--lp-color-brand-yellow-light);
+	--lp-component-alert-fill-warning: var(--lp-color-brand-yellow-dark);
+	--lp-component-alert-border-warning: var(--lp-color-brand-yellow-dark);
+}
+
+[data-theme='dark'] {
+	--lp-component-alert-color-bg-warning: var(--lp-color-brand-orange-dark);
+	--lp-component-alert-fill-warning: var(--lp-color-brand-yellow-base);
+	--lp-component-alert-border-warning: var(--lp-color-brand-yellow-base);
 }
 
 .Alert {
@@ -90,7 +99,7 @@
 }
 
 .Alert.Alert--warning .Alert-icon {
-	fill: var(--lp-color-fill-feedback-warning);
+	fill: var(--lp-component-alert-fill-warning);
 }
 
 .Alert.Alert--error .Alert-icon {
@@ -170,8 +179,8 @@
 }
 
 .Alert.Alert--warning.Alert--bordered {
-	border: var(--lp-border-width-200) solid var(--lp-color-border-feedback-warning);
-	background-color: var(--lp-color-bg-feedback-warning);
+	border: var(--lp-border-width-200) solid var(--lp-component-alert-border-warning);
+	background-color: var(--lp-component-alert-color-bg-warning);
 }
 
 .Alert.Alert--error.Alert--bordered {
