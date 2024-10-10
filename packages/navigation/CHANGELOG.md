@@ -1,5 +1,23 @@
 # @launchpad-ui/navigation
 
+## 0.12.53
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @launchpad-ui/dropdown@0.6.127
+  - @launchpad-ui/menu@0.13.38
+
+## 0.12.52
+
+### Patch Changes
+
+- Updated dependencies [[`b407647`](https://github.com/launchdarkly/launchpad-ui/commit/b4076476961677b2ce5141b46cb55910ccc372f1)]:
+  - @launchpad-ui/icons@0.19.4
+  - @launchpad-ui/chip@0.9.45
+  - @launchpad-ui/dropdown@0.6.126
+  - @launchpad-ui/menu@0.13.37
+
 ## 0.12.51
 
 ### Patch Changes

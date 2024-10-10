@@ -1,5 +1,18 @@
 # @launchpad-ui/button
 
+## 0.12.33
+
+### Patch Changes
+
+- [#1440](https://github.com/launchdarkly/launchpad-ui/pull/1440) [`3b7b076`](https://github.com/launchdarkly/launchpad-ui/commit/3b7b0768418c5b6b78891ee393ad05147d6b0445) Thanks [@Niznikr](https://github.com/Niznikr)! - Update font styles to match RAC
+
+## 0.12.32
+
+### Patch Changes
+
+- Updated dependencies [[`b407647`](https://github.com/launchdarkly/launchpad-ui/commit/b4076476961677b2ce5141b46cb55910ccc372f1)]:
+  - @launchpad-ui/icons@0.19.4
+
 ## 0.12.31
 
 ### Patch Changes
