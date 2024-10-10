@@ -38,6 +38,7 @@ const sd = new StyleDictionary({
 					filter: (token) => token.$type === 'file',
 				},
 			],
+			actions: ['copy_assets'],
 		},
 		js: {
 			transformGroup: 'js',
