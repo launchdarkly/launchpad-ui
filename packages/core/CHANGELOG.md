@@ -1,5 +1,30 @@
 # @launchpad-ui/core
 
+## 0.50.1
+
+### Patch Changes
+
+- [#1440](https://github.com/launchdarkly/launchpad-ui/pull/1440) [`3b7b076`](https://github.com/launchdarkly/launchpad-ui/commit/3b7b0768418c5b6b78891ee393ad05147d6b0445) Thanks [@Niznikr](https://github.com/Niznikr)! - Update font styles to match RAC
+
+- Updated dependencies [[`3b7b076`](https://github.com/launchdarkly/launchpad-ui/commit/3b7b0768418c5b6b78891ee393ad05147d6b0445)]:
+  - @launchpad-ui/button@0.12.33
+  - @launchpad-ui/alert@0.9.38
+  - @launchpad-ui/banner@0.10.47
+  - @launchpad-ui/collapsible@0.1.77
+  - @launchpad-ui/drawer@0.5.53
+  - @launchpad-ui/dropdown@0.6.127
+  - @launchpad-ui/filter@0.7.38
+  - @launchpad-ui/form@0.11.38
+  - @launchpad-ui/inline-edit@0.3.38
+  - @launchpad-ui/modal@0.17.54
+  - @launchpad-ui/pagination@0.4.53
+  - @launchpad-ui/select@0.4.54
+  - @launchpad-ui/split-button@0.10.38
+  - @launchpad-ui/tag@0.3.53
+  - @launchpad-ui/navigation@0.12.53
+  - @launchpad-ui/card@0.2.53
+  - @launchpad-ui/menu@0.13.38
+
 ## 0.50.0
 
 ### Minor Changes

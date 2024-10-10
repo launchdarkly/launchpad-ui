@@ -1,5 +1,12 @@
 # @launchpad-ui/menu
 
+## 0.13.38
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @launchpad-ui/form@0.11.38
+
 ## 0.13.37
 
 ### Patch Changes
