@@ -129,13 +129,6 @@
 				},
 				"disabled": {
 					"$value": "{color.bg.ui.tertiary}"
-				},
-				"error": {
-					"$value": "{color.red.600}"
-				},
-				"aside": {
-					"$value": "{color.bg.ui.secondary}",
-					"dark": "{color.bg.ui.primary}"
 				}
 			},
 			"product": {
@@ -146,14 +139,6 @@
 				"federal": {
 					"$value": "{color.brand.yellow.base}",
 					"dark": "{color.brand.yellow.dark}"
-				},
-				"toggle-on": {
-					"$value": "{color.green.600}",
-					"dark": "{color.green.700}"
-				},
-				"toggle-off": {
-					"$value": "{color.gray.100}",
-					"dark": "{color.gray.800}"
 				}
 			}
 		},
@@ -373,16 +358,6 @@
 					"dark": "{color.gray.400}"
 				}
 			},
-			"overlay": {
-				"primary": {
-					"$value": "{color.gray.800}",
-					"dark": "{color.gray.100}"
-				},
-				"secondary": {
-					"$value": "{color.white.950}",
-					"dark": "{color.gray.950}"
-				}
-			},
 			"field": {
 				"disabled": {
 					"$value": "{color.gray.500}"
@@ -398,18 +373,6 @@
 				},
 				"federal": {
 					"$value": "{color.gray.950}"
-				},
-				"toggle-on": {
-					"$value": "{color.green.700}",
-					"dark": "{color.green.500}"
-				},
-				"toggle-off": {
-					"$value": "{color.gray.800}",
-					"dark": "{color.gray.200}"
-				},
-				"ready-to-complete": {
-					"$value": "{color.purple.700}",
-					"dark": "{color.purple.500}"
 				}
 			},
 			"code": {

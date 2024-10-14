@@ -143,7 +143,6 @@
 
 .description {
 	font: var(--lp-text-body-2-regular);
-	color: var(--lp-color-text-ui-secondary);
 
 	& a {
 		text-decoration: underline;

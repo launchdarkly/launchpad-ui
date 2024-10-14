@@ -7,16 +7,16 @@
 		margin-top: var(--lp-spacing-300);
 	}
 
-	&.error .icon {
-		color: var(--lp-color-fill-feedback-error);
+	&.error [data-icon] {
+		fill: var(--lp-color-fill-feedback-error);
 	}
 
-	&.info .icon {
-		color: var(--lp-color-fill-feedback-info);
+	&.info [data-icon] {
+		fill: var(--lp-color-fill-feedback-info);
 	}
 
-	&.success .icon {
-		color: var(--lp-color-fill-feedback-success);
+	&.success [data-icon] {
+		fill: var(--lp-color-fill-feedback-success);
 	}
 }
 
@@ -52,6 +52,18 @@
 	align-items: center;
 	padding: 0;
 	background-color: transparent;
+
+	&.error {
+		color: var(--lp-color-text-feedback-error);
+	}
+
+	&.info {
+		color: var(--lp-color-text-feedback-info);
+	}
+
+	&.success {
+		color: var(--lp-color-text-feedback-success);
+	}
 }
 
 .content {

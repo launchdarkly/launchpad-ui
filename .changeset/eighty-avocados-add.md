@@ -12,6 +12,7 @@
 "@launchpad-ui/popover": patch
 "@launchpad-ui/menu": patch
 "@launchpad-ui/select": patch
+"@launchpad-ui/form": patch
 "@launchpad-ui/core": patch
 ---
 

@@ -28,4 +28,8 @@
 		background-color: inherit;
 		cursor: inherit;
 	}
+
+	& [data-icon] {
+		fill: var(--lp-color-fill-ui-secondary);
+	}
 }

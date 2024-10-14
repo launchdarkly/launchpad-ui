@@ -1,7 +1,7 @@
 :root,
 [data-theme='default'] {
 	--lp-component-popover-color-bg: var(--lp-color-gray-950);
-	--lp-component-popover-color-text: var(--lp-color-text-overlay-secondary);
+	--lp-component-popover-color-text: var(--lp-color-white-950);
 	--lp-component-popover-color-border: inherit;
 }
 
