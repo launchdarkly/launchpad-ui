@@ -113,10 +113,6 @@ export const parameters: Parameters = {
 					id: 'aria-hidden-focus',
 					selector: 'body *:not([data-a11y-ignore="aria-hidden-focus"])',
 				},
-				{
-					id: 'color-contrast',
-					selector: '*:not([data-placeholder])',
-				},
 			],
 		},
 	},

@@ -89,7 +89,6 @@ test.describe('Storybook a11y', async () => {
 					.include('[data-rac]')
 					.include('[data-react-aria-top-layer]')
 					.exclude('[data-a11y-ignore="aria-hidden-focus"]')
-					.exclude('[data-placeholder]')
 					.analyze();
 
 				await expect(accessibilityScanResults.violations).toEqual([]);

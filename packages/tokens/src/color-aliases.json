@@ -363,7 +363,8 @@
 					"$value": "{color.gray.500}"
 				},
 				"placeholder": {
-					"$value": "{color.gray.500}"
+					"$value": "{color.gray.500}",
+					"dark": "{color.gray.400}"
 				}
 			},
 			"product": {
