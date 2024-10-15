@@ -20,22 +20,22 @@ export const Square: Story = {
 	args: { children: <Icon name="flag" />, borderRadius: '0' },
 };
 
-export const BlueToPurple: Story = {
+export const BluePurple: Story = {
 	args: { children: <Icon name="shield-key" /> },
 };
 
-export const YellowToCyan: Story = {
+export const YellowCyan: Story = {
 	args: { children: <Icon name="arrow-up-right-circle" />, background: '$yellow-cyan' },
 };
 
-export const PinkToPurple: Story = {
-	args: { children: <Icon name="flask" />, background: '$pink-purple' },
+export const PurplePink: Story = {
+	args: { children: <Icon name="flask" />, background: '$purple-pink' },
 };
 
-export const CyanToBlue: Story = {
+export const CyanBlue: Story = {
 	args: { children: <Icon name="a-to-b" />, background: '$cyan-blue' },
 };
 
-export const CyanToPurple: Story = {
+export const CyanPurple: Story = {
 	args: { children: <Icon name="warning" />, background: '$cyan-purple' },
 };

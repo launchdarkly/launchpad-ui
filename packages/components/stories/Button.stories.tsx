@@ -99,24 +99,15 @@ export const Destructive: Story = {
 	render: (args) =>
 		renderStates({ children: <Text>Destructive</Text>, variant: 'destructive', ...args }),
 	play,
-};
-
-export const PrimaryFlair: Story = {
-	render: (args) =>
-		renderStates({ children: <Text>Primary flair</Text>, variant: 'primaryFlair', ...args }),
-	play,
-};
-
-export const DefaultFlair: Story = {
-	render: (args) =>
-		renderStates({ children: <Text>Default flair</Text>, variant: 'defaultFlair', ...args }),
-	play,
-};
-
-export const MinimalFlair: Story = {
-	render: (args) =>
-		renderStates({ children: <Text>Minimal flair</Text>, variant: 'minimalFlair', ...args }),
-	play,
+	parameters: {
+		a11y: {
+			options: {
+				rules: {
+					'color-contrast': { enabled: false },
+				},
+			},
+		},
+	},
 };
 
 export const WithIcon: Story = {

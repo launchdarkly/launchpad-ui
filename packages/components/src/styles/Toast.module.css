@@ -59,11 +59,13 @@
 .toast {
 	display: inline-flex;
 	font: var(--lp-text-body-1-regular);
-	background: var(--lp-color-bg-feedback-primary);
-	color: var(--lp-color-white-950);
+	background: var(--lp-color-bg-overlay-secondary);
+	color: var(--lp-color-text-ui-primary-base);
 	border-radius: var(--lp-border-radius-regular);
-	box-shadow: 0 0 1px 0 rgb(0 0 0 / 0.25), 0 1px 2px 0 rgb(0 0 0 / 0.14), 0 4px 4px 0
-		rgb(0 0 0 / 0.06);
+	box-shadow:
+		0px 0px 1px 0px var(--lp-color-shadow-ui-primary), 0px 1px 2px 0px var(
+			--lp-color-shadow-ui-primary
+		), 0px 2px 8px 0px var(--lp-color-shadow-ui-secondary);
 	pointer-events: all;
 	outline: none;
 
@@ -72,19 +74,15 @@
 	}
 
 	& .info {
-		fill: var(--lp-color-cyan-400);
+		fill: var(--lp-color-fill-feedback-info);
 	}
 
 	& .error {
-		fill: var(--lp-color-pink-500);
-	}
-
-	& .warning {
-		fill: var(--lp-color-yellow-500);
+		fill: var(--lp-color-fill-feedback-error);
 	}
 
 	& .success {
-		fill: var(--lp-color-system-green-500);
+		fill: var(--lp-color-fill-feedback-success);
 	}
 
 	&[data-focus-visible] {
@@ -145,7 +143,6 @@
 
 .description {
 	font: var(--lp-text-body-2-regular);
-	color: var(--lp-color-text-ui-secondary);
 
 	& a {
 		text-decoration: underline;

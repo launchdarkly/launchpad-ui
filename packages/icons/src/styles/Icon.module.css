@@ -5,7 +5,7 @@
 }
 
 .default {
-	fill: currentcolor;
+	fill: var(--lp-color-fill-ui-primary);
 }
 
 .subtle {

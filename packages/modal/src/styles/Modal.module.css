@@ -63,7 +63,7 @@
 
 .headerIcon {
 	transform: translateY(2px);
-	fill: var(--lp-color-fill-feedback-warning);
+	fill: var(--lp-color-brand-yellow-dark);
 }
 
 .headerMain {
@@ -74,13 +74,13 @@
 
 .headerDescription {
 	font-size: 0.875rem;
-	color: var(--lp-color-text-overlay-primary);
+	color: var(--lp-color-text-ui-secondary);
 	margin: 0;
 }
 
 .headerRequiredFields {
 	font-size: 0.875rem;
-	color: var(--lp-color-text-overlay-primary);
+	color: var(--lp-color-text-ui-secondary);
 	font-weight: var(--lp-font-weight-regular);
 }
 

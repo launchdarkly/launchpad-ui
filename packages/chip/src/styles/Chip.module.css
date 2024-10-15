@@ -47,8 +47,8 @@
 }
 
 .warning {
-	background-color: var(--lp-color-bg-feedback-warning);
-	color: var(--lp-color-text-feedback-warning);
+	background-color: var(--lp-color-brand-yellow-light);
+	color: var(--lp-color-brand-orange-dark);
 }
 
 .error {
