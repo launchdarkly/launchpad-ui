@@ -13,10 +13,6 @@
 	border-width: 1px;
 	outline: none;
 	white-space: nowrap;
-
-	& [data-icon] {
-		fill: currentColor;
-	}
 }
 
 .base[data-focus-visible] {
@@ -72,6 +68,10 @@
 	border-color: var(--lp-color-border-interactive-primary-base);
 	color: var(--lp-color-text-interactive-primary-base);
 	z-index: 1;
+
+	& [data-icon] {
+		fill: var(--lp-color-text-interactive-primary-base);
+	}
 }
 
 .primary[data-hovered] {
@@ -97,6 +97,10 @@
 	background-color: var(--lp-color-bg-interactive-destructive-base);
 	border-color: var(--lp-color-border-interactive-destructive);
 	color: var(--lp-color-text-interactive-destructive);
+
+	& [data-icon] {
+		fill: var(--lp-color-fill-interactive-destructive);
+	}
 }
 
 .destructive[data-hovered] {

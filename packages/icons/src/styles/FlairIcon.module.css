@@ -1,0 +1,5 @@
+.flair {
+	& [data-icon] {
+		fill: var(--lp-color-white-950);
+	}
+}
