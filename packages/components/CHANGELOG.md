@@ -1,5 +1,11 @@
 # @launchpad-ui/components
 
+## 0.5.1
+
+### Patch Changes
+
+- [#1444](https://github.com/launchdarkly/launchpad-ui/pull/1444) [`395dc94`](https://github.com/launchdarkly/launchpad-ui/commit/395dc94c95fe30281564ad40cdd231ad5a3f0365) Thanks [@Niznikr](https://github.com/Niznikr)! - Add `error` variant to `Toast`
+
 ## 0.5.0
 
 ### Minor Changes
