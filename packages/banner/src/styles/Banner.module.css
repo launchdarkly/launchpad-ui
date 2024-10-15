@@ -12,7 +12,7 @@
 [data-theme='dark'] {
 	--lp-component-banner-color-bg-warning: var(--lp-color-brand-orange-dark);
 	--lp-component-banner-fill-warning: var(--lp-color-brand-yellow-base);
-	--lp-component-banner-border-warning: var(--lp-color-brand-yellow-base);
+	--lp-component-banner-border-warning: var(--lp-color-brand-orange-base);
 }
 
 .Banner {

@@ -20,7 +20,7 @@
 [data-theme='dark'] {
 	--lp-component-alert-color-bg-warning: var(--lp-color-brand-orange-dark);
 	--lp-component-alert-fill-warning: var(--lp-color-brand-yellow-base);
-	--lp-component-alert-border-warning: var(--lp-color-brand-yellow-base);
+	--lp-component-alert-border-warning: var(--lp-color-brand-orange-base);
 }
 
 .Alert {

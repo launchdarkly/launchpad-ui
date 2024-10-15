@@ -3,7 +3,7 @@
 }
 
 .Clipboard-checkmark {
-	fill: var(--lp-color-green-500);
+	fill: var(--lp-color-fill-feedback-success);
 }
 
 .Clipboard-confirmation {
