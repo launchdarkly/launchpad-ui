@@ -1,5 +1,13 @@
 # @launchpad-ui/icons
 
+## 0.19.5
+
+### Patch Changes
+
+- Updated dependencies [[`3c7fdd9`](https://github.com/launchdarkly/launchpad-ui/commit/3c7fdd9176154cf8bafdc37813dbb5ab6b9a4988)]:
+  - @launchpad-ui/tokens@0.12.0
+  - @launchpad-ui/box@0.1.22
+
 ## 0.19.4
 
 ### Patch Changes
