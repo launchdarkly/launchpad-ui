@@ -273,7 +273,6 @@ const icons = [
 	'toggle-on',
 	'toggle-stack',
 	'tools',
-	'topology-star-3',
 	'triangle-square-circle',
 	'visibility',
 	'visibility-off',
