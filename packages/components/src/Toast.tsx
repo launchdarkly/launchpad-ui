@@ -187,6 +187,8 @@ const snackbarQueue = new AriaToastQueue<SnackbarValue>({
 const timeout = 6000;
 
 const ToastQueue = {
+	error: (children: ToastContent['children'], options?: ToastOptions) =>
+		toastQueue.add({ children, status: 'error' }, { ...options, timeout }),
 	info: (children: ToastContent['children'], options?: ToastOptions) =>
 		toastQueue.add({ children, status: 'info' }, { ...options, timeout }),
 	success: (children: ToastContent['children'], options?: ToastOptions) =>
