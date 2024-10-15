@@ -199,9 +199,9 @@
 	--Button-icon-color-fill-destructive-active: var(--lp-color-fill-interactive-destructive);
 
 	/* BUTTON ICON DISABLED */
-	--Button-icon-color-fill-disabled: var(--lp-color-fill-interactive-disabled);
-	--Button-icon-color-fill-disabled-hover: var(--lp-color-fill-interactive-disabled);
-	--Button-icon-color-fill-disabled-active: var(--lp-color-fill-interactive-disabled);
+	--Button-icon-color-fill-disabled: var(--lp-color-text-interactive-disabled);
+	--Button-icon-color-fill-disabled-hover: var(--lp-color-text-interactive-disabled);
+	--Button-icon-color-fill-disabled-active: var(--lp-color-text-interactive-disabled);
 
 	/* SEARCH BAR CLEAR BUTTON ICON */
 	--Button-icon-clear-color-fill: var(--lp-color-blue-700);
@@ -304,6 +304,10 @@
 .Button--fit {
 	display: block;
 	width: 100%;
+}
+
+.Button-icon {
+	fill: currentColor;
 }
 
 .Button:not(.Button--icon) > .Button-icon {
@@ -409,21 +413,21 @@
 	box-shadow: var(--Button-box-shadow-active);
 }
 
-.Button--icon.Button--primary .Button-icon {
+.Button--icon.Button--primary :global(.Button-icon) {
 	fill: var(--Button-icon-color-fill-primary);
 }
 
 .Button--primary:hover .Button-icon,
-.Button--icon.Button--primary:hover .Button-icon {
+.Button--icon.Button--primary:hover :global(.Button-icon) {
 	fill: var(--Button-icon-color-fill-primary-hover);
 }
 
-.Button--icon.Button--primary:focus-visible .Button-icon {
+.Button--icon.Button--primary:focus-visible :global(.Button-icon) {
 	fill: var(--Button-icon-color-fill-primary-focus);
 }
 
 .Button--primary:active .Button-icon,
-.Button--icon.Button--primary:active .Button-icon {
+.Button--icon.Button--primary:active :global(.Button-icon) {
 	fill: var(--Button-icon-color-fill-primary-active);
 }
 
@@ -536,19 +540,19 @@
 	box-shadow: var(--Button-box-shadow-focus);
 }
 
-.Button--icon.Button--destructive .Button-icon {
+.Button--icon.Button--destructive :global(.Button-icon) {
 	fill: var(--Button-icon-color-fill-destructive);
 }
 
-.Button--icon.Button--destructive:hover .Button-icon {
+.Button--icon.Button--destructive:hover :global(.Button-icon) {
 	fill: var(--Button-icon-color-fill-destructive-hover);
 }
 
-.Button--icon.Button--destructive:focus-visible .Button-icon {
+.Button--icon.Button--destructive:focus-visible :global(.Button-icon) {
 	fill: var(--Button-icon-color-fill-destructive-focus);
 }
 
-.Button--icon.Button--destructive:active .Button-icon {
+.Button--icon.Button--destructive:active :global(.Button-icon) {
 	fill: var(--Button-icon-color-fill-destructive-active);
 }
 
@@ -619,7 +623,7 @@
 	border-color: var(--Button-color-border-disabled);
 }
 
-.Button[disabled] [class*='_icon'] {
+.Button[disabled] [data-icon] {
 	fill: var(--Button-icon-color-fill-disabled);
 }
 

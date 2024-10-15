@@ -13,6 +13,10 @@
 	border-width: 1px;
 	outline: none;
 	white-space: nowrap;
+
+	& [data-icon] {
+		fill: currentColor;
+	}
 }
 
 .base[data-focus-visible] {
