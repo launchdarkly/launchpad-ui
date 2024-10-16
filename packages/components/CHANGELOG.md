@@ -1,5 +1,11 @@
 # @launchpad-ui/components
 
+## 0.5.2
+
+### Patch Changes
+
+- [#1446](https://github.com/launchdarkly/launchpad-ui/pull/1446) [`1b58ab6`](https://github.com/launchdarkly/launchpad-ui/commit/1b58ab61f9a9420efe9ca00e28e1d44301d59a2a) Thanks [@Niznikr](https://github.com/Niznikr)! - Use separate stacking context for `Switch`
+
 ## 0.5.1
 
 ### Patch Changes
