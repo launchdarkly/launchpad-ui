@@ -2,6 +2,7 @@
 	display: flex;
 	align-items: center;
 	gap: var(--lp-spacing-200);
+	isolation: isolate;
 }
 
 .track {
