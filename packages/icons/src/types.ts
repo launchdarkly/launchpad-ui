@@ -198,6 +198,7 @@ const icons = [
 	'package-send',
 	'password',
 	'pause',
+	'percentage',
 	'person',
 	'person-add',
 	'person-check',
