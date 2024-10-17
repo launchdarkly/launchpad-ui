@@ -1,5 +1,11 @@
 # @launchpad-ui/icons
 
+## 0.19.6
+
+### Patch Changes
+
+- [#1439](https://github.com/launchdarkly/launchpad-ui/pull/1439) [`3764368`](https://github.com/launchdarkly/launchpad-ui/commit/37643680983e00db444723ffc7e83394191521e5) Thanks [@tiffanylphan](https://github.com/tiffanylphan)! - add ai config icons
+
 ## 0.19.5
 
 ### Patch Changes
