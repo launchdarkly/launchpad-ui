@@ -1,0 +1,14 @@
+.disclosure {
+	& [data-icon='chevron-right'] {
+		rotate: 0deg;
+		transition: rotate var(--lp-duration-200);
+	}
+
+	&[data-expanded] [slot='trigger'] [data-icon='chevron-right'] {
+		rotate: 90deg;
+	}
+}
+
+.panel {
+	padding-left: var(--lp-spacing-300);
+}
