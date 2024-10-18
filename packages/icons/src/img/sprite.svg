@@ -1500,6 +1500,13 @@
         clip-rule="evenodd"
       />
     </symbol>
+    <symbol viewBox="0 0 20 20" id="lp-icon-percentage">
+      <path
+        fill-rule="evenodd"
+        d="M13.333 14.166a1.667 1.667 0 1 0 0-3.333 1.667 1.667 0 0 0 0 3.333Zm0 1.5a3.167 3.167 0 1 0 0-6.333 3.167 3.167 0 0 0 0 6.333ZM6.667 9.167a1.667 1.667 0 1 0 0-3.334 1.667 1.667 0 0 0 0 3.334Zm0 1.5a3.167 3.167 0 1 0 0-6.334 3.167 3.167 0 0 0 0 6.334Zm8.606-5.773a.75.75 0 0 1 0 1.06l-10 10a.75.75 0 0 1-1.06-1.061l10-10a.75.75 0 0 1 1.06 0Z"
+        clip-rule="evenodd"
+      />
+    </symbol>
     <symbol viewBox="0 0 20 20" id="lp-icon-person">
       <path
         fill-rule="evenodd"
