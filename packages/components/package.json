@@ -36,14 +36,14 @@
 		"@internationalized/date": "3.5.6",
 		"@launchpad-ui/icons": "workspace:~",
 		"@launchpad-ui/tokens": "workspace:~",
-		"@react-aria/toast": "3.0.0-beta.16",
+		"@react-aria/toast": "3.0.0-beta.17",
 		"@react-aria/utils": "3.25.3",
 		"@react-stately/toast": "3.0.0-beta.6",
 		"@react-stately/utils": "3.10.4",
 		"@react-types/shared": "3.25.0",
 		"class-variance-authority": "0.7.0",
-		"react-aria": "3.35.0",
-		"react-aria-components": "1.4.0",
+		"react-aria": "3.35.1",
+		"react-aria-components": "1.4.1",
 		"react-router-dom": "6.16.0"
 	},
 	"peerDependencies": {
