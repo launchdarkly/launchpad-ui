@@ -38,7 +38,7 @@
 		"@launchpad-ui/menu": "workspace:~",
 		"@launchpad-ui/tokens": "workspace:~",
 		"@launchpad-ui/tooltip": "workspace:~",
-		"@react-aria/visually-hidden": "3.8.16",
+		"@react-aria/visually-hidden": "3.8.17",
 		"classix": "2.2.0"
 	},
 	"peerDependencies": {
