@@ -1,5 +1,5 @@
 ---
-"@launchpad-ui/icons": patch
+"@launchpad-ui/icons": minor
 ---
 
 Change `FlairIcon` to `BadgeIcon`
