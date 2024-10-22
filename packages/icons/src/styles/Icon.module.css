@@ -12,6 +12,11 @@
 	fill: var(--lp-color-fill-ui-secondary);
 }
 
+.tiny {
+	width: var(--lp-size-12);
+	height: var(--lp-size-12);
+}
+
 .small {
 	width: var(--lp-size-16);
 	height: var(--lp-size-16);
