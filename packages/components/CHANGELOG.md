@@ -1,5 +1,18 @@
 # @launchpad-ui/components
 
+## 0.5.3
+
+### Patch Changes
+
+- [#1449](https://github.com/launchdarkly/launchpad-ui/pull/1449) [`ee205b6`](https://github.com/launchdarkly/launchpad-ui/commit/ee205b68b4e9877b7cd6a95c6532c888e37224f5) Thanks [@renovate](https://github.com/apps/renovate)! - Update dependencies
+
+- [#1452](https://github.com/launchdarkly/launchpad-ui/pull/1452) [`e8cc0db`](https://github.com/launchdarkly/launchpad-ui/commit/e8cc0dbeed04ac188512611030ba5a7c49b0f8aa) Thanks [@Niznikr](https://github.com/Niznikr)! - Add `orientation` prop to `ButtonGroup`
+
+- [#1450](https://github.com/launchdarkly/launchpad-ui/pull/1450) [`4c639da`](https://github.com/launchdarkly/launchpad-ui/commit/4c639da39edab16cdb198db38d6d158197ebf999) Thanks [@Niznikr](https://github.com/Niznikr)! - Fix `Button` detection of `Select` context
+
+- Updated dependencies [[`3764368`](https://github.com/launchdarkly/launchpad-ui/commit/37643680983e00db444723ffc7e83394191521e5)]:
+  - @launchpad-ui/icons@0.19.6
+
 ## 0.5.2
 
 ### Patch Changes

@@ -1,6 +1,6 @@
 {
 	"name": "@launchpad-ui/tooltip",
-	"version": "0.9.22",
+	"version": "0.9.23",
 	"status": "beta",
 	"publishConfig": {
 		"access": "public"
