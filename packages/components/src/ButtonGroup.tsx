@@ -1,3 +1,4 @@
+import type { Orientation } from '@react-types/shared';
 import type { VariantProps } from 'class-variance-authority';
 import type { ForwardedRef } from 'react';
 import type { GroupProps } from 'react-aria-components';
@@ -21,16 +22,22 @@ const buttonGroup = cva(styles.base, {
 			compact: styles.compact,
 			large: styles.large,
 		},
+		orientation: {
+			horizontal: styles.horizontal,
+			vertical: styles.vertical,
+		},
 	},
 	defaultVariants: {
 		spacing: 'basic',
 	},
 });
 
-interface ButtonGroupProps extends GroupProps, VariantProps<typeof buttonGroup> {}
+interface ButtonGroupProps extends GroupProps, VariantProps<typeof buttonGroup> {
+	orientation?: Orientation | null;
+}
 
 const _ButtonGroup = (
-	{ spacing = 'basic', ...props }: ButtonGroupProps,
+	{ spacing = 'basic', orientation = 'horizontal', ...props }: ButtonGroupProps,
 	ref: ForwardedRef<HTMLDivElement>,
 ) => {
 	return (
@@ -38,8 +45,9 @@ const _ButtonGroup = (
 			{...props}
 			ref={ref}
 			className={composeRenderProps(props.className, (className, renderProps) =>
-				buttonGroup({ ...renderProps, spacing, className }),
+				buttonGroup({ ...renderProps, spacing, orientation, className }),
 			)}
+			data-orientation={orientation}
 		>
 			{composeRenderProps(props.children, (children, { isDisabled }) => (
 				<Provider
