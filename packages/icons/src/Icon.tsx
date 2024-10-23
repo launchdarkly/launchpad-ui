@@ -3,12 +3,14 @@ import type { SVGAttributes } from 'react';
 import type { IconName } from './types';
 
 import { cva } from 'class-variance-authority';
+import { createContext, useContext } from 'react';
 
 import styles from './styles/Icon.module.css';
 
 const icon = cva(styles.base, {
 	variants: {
 		size: {
+			tiny: styles.tiny,
 			small: styles.small,
 			medium: styles.medium,
 			large: styles.large,
@@ -24,6 +26,8 @@ const icon = cva(styles.base, {
 	},
 });
 
+const IconContext = createContext<IconProps>({});
+
 interface IconProps extends SVGAttributes<SVGElement>, VariantProps<typeof icon> {
 	name?: IconName;
 }
@@ -38,12 +42,13 @@ const Icon = ({
 	variant = 'default',
 	...props
 }: IconProps) => {
+	const ctx = useContext(IconContext);
 	return (
 		<svg
 			aria-hidden={props['aria-hidden'] ?? (!props['aria-labelledby'] && !props['aria-label'])}
 			focusable={focusable}
 			role={role}
-			className={icon({ size, variant, className })}
+			className={icon({ size: ctx.size || size, variant, className })}
 			data-icon={name}
 			{...props}
 		>
@@ -53,5 +58,5 @@ const Icon = ({
 	);
 };
 
-export { Icon };
+export { Icon, IconContext };
 export type { IconProps };
