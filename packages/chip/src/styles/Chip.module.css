@@ -8,7 +8,7 @@
 	text-overflow: ellipsis;
 	max-width: 100%;
 	color: var(--lp-color-text-ui-secondary);
-	background-color: var(--lp-color-bg-ui-quaternary);
+	background-color: var(--lp-color-bg-ui-tertiary);
 	transition: all 0.1s ease-in-out;
 }
 
