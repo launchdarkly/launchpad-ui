@@ -5,6 +5,7 @@
 
 	&[data-orientation='horizontal'] {
 		flex-direction: row;
+		align-items: center;
 	}
 
 	&[data-orientation='vertical'] {
