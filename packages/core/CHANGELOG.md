@@ -1,5 +1,33 @@
 # @launchpad-ui/core
 
+## 0.50.4
+
+### Patch Changes
+
+- [#1455](https://github.com/launchdarkly/launchpad-ui/pull/1455) [`61f61e9`](https://github.com/launchdarkly/launchpad-ui/commit/61f61e9a72111b7cd036bbcbaf34c74cd3193082) Thanks [@Niznikr](https://github.com/Niznikr)! - Update `Tag` default styles
+
+- Updated dependencies [[`61f61e9`](https://github.com/launchdarkly/launchpad-ui/commit/61f61e9a72111b7cd036bbcbaf34c74cd3193082)]:
+  - @launchpad-ui/chip@0.9.48
+  - @launchpad-ui/navigation@0.12.56
+  - @launchpad-ui/alert@0.9.41
+  - @launchpad-ui/avatar@0.6.48
+  - @launchpad-ui/banner@0.10.50
+  - @launchpad-ui/button@0.12.36
+  - @launchpad-ui/clipboard@0.11.56
+  - @launchpad-ui/collapsible@0.1.80
+  - @launchpad-ui/drawer@0.5.56
+  - @launchpad-ui/dropdown@0.6.130
+  - @launchpad-ui/filter@0.7.41
+  - @launchpad-ui/form@0.11.41
+  - @launchpad-ui/inline-edit@0.3.41
+  - @launchpad-ui/menu@0.13.41
+  - @launchpad-ui/modal@0.17.57
+  - @launchpad-ui/pagination@0.4.56
+  - @launchpad-ui/select@0.4.57
+  - @launchpad-ui/tag@0.3.56
+  - @launchpad-ui/split-button@0.10.41
+  - @launchpad-ui/card@0.2.56
+
 ## 0.50.3
 
 ### Patch Changes

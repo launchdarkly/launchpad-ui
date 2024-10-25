@@ -1,5 +1,14 @@
 # @launchpad-ui/components
 
+## 0.5.4
+
+### Patch Changes
+
+- [#1455](https://github.com/launchdarkly/launchpad-ui/pull/1455) [`61f61e9`](https://github.com/launchdarkly/launchpad-ui/commit/61f61e9a72111b7cd036bbcbaf34c74cd3193082) Thanks [@Niznikr](https://github.com/Niznikr)! - Update `Tag` default styles
+
+- Updated dependencies [[`17eb30b`](https://github.com/launchdarkly/launchpad-ui/commit/17eb30b6757f6ff4ffb4d3a4acee3f95ed554411)]:
+  - @launchpad-ui/icons@0.20.0
+
 ## 0.5.3
 
 ### Patch Changes
