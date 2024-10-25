@@ -1,5 +1,11 @@
 # @launchpad-ui/icons
 
+## 0.20.0
+
+### Minor Changes
+
+- [#1451](https://github.com/launchdarkly/launchpad-ui/pull/1451) [`17eb30b`](https://github.com/launchdarkly/launchpad-ui/commit/17eb30b6757f6ff4ffb4d3a4acee3f95ed554411) Thanks [@Niznikr](https://github.com/Niznikr)! - Change `FlairIcon` to `BadgeIcon`
+
 ## 0.19.6
 
 ### Patch Changes
