@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
 import { Icon } from '@launchpad-ui/icons';
+import { vars } from '@launchpad-ui/vars';
 
 import { Button, Disclosure, DisclosurePanel, Heading } from '../src';
 
@@ -26,6 +27,27 @@ export const Example: Story = {
 			<>
 				<Heading>
 					<Button slot="trigger" variant="minimal">
+						<Icon name="chevron-right" size="small" />
+						Header
+					</Button>
+				</Heading>
+				<DisclosurePanel>
+					<p>Panel with content.</p>
+				</DisclosurePanel>
+			</>
+		),
+	},
+};
+
+export const Accordion: Story = {
+	args: {
+		children: (
+			<>
+				<Heading>
+					<Button
+						slot="trigger"
+						style={{ padding: vars.spacing[400], width: '100%', justifyContent: 'flex-start' }}
+					>
 						<Icon name="chevron-right" size="small" />
 						Header
 					</Button>
