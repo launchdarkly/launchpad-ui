@@ -4,6 +4,9 @@ import type { ComponentPropsWithoutRef, Fragment } from 'react';
 import { Icon } from '@launchpad-ui/icons';
 import { vars } from '@launchpad-ui/vars';
 import { expect, userEvent, within } from '@storybook/test';
+import { useRef, useState } from 'react';
+import { VisuallyHidden } from 'react-aria';
+
 import {
 	Button,
 	ButtonGroup,
@@ -16,10 +19,14 @@ import {
 	Label,
 	ListBox,
 	ListBoxItem,
+	type ListBoxItemProps,
 	Popover,
 	RadioButton,
 	RadioGroup,
 	RadioIconButton,
+	Select,
+	SelectValue,
+	Text,
 	ToastContainer,
 	ToastQueue,
 	Tooltip,
@@ -148,4 +155,70 @@ export const RadioButtonGroup: Story = {
 		),
 	},
 	name: 'RadioButtonGroup',
+};
+
+export const ListBoxTooltip: Story = {
+	render: () => {
+		const [isOpen, setOpen] = useState(false);
+
+		const options = [
+			{ id: 1, name: 'Item one', description: 'Description one' },
+			{ id: 2, name: 'Item two', description: 'Description two' },
+			{ id: 3, name: 'Item three', description: 'Description three' },
+		];
+
+		const MyItem = (props: ListBoxItemProps<(typeof options)[number]>) => {
+			const ref = useRef(null);
+			return (
+				<ListBoxItem ref={ref} {...props}>
+					{({ isFocused }) => {
+						return (
+							<>
+								{props.children}
+								<TooltipTrigger isOpen={isFocused}>
+									<Tooltip triggerRef={ref} placement="right" offset={8}>
+										{props.value?.description}
+									</Tooltip>
+								</TooltipTrigger>
+							</>
+						);
+					}}
+				</ListBoxItem>
+			);
+		};
+
+		return (
+			<div
+				style={{
+					width: vars.size[240],
+				}}
+			>
+				<Select isOpen={isOpen} onOpenChange={setOpen}>
+					<Label>Select</Label>
+					<Button>
+						<SelectValue />
+						<Icon name="chevron-down" size="small" />
+					</Button>
+					<Popover>
+						<ListBox items={options}>
+							{(item) => (
+								<MyItem textValue={item.name}>
+									<Text slot="label">{item.name}</Text>
+									<VisuallyHidden>
+										<Text slot="description">{item.description}</Text>
+									</VisuallyHidden>
+								</MyItem>
+							)}
+						</ListBox>
+					</Popover>
+				</Select>
+			</div>
+		);
+	},
+	play: async ({ canvasElement }) => {
+		const canvas = within(canvasElement);
+
+		await userEvent.click(canvas.getByRole('button'));
+	},
+	name: 'ListBox Tooltip',
 };
