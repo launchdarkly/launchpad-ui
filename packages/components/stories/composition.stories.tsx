@@ -19,6 +19,7 @@ import {
 	Label,
 	ListBox,
 	ListBoxItem,
+	type ListBoxItemProps,
 	Popover,
 	RadioButton,
 	RadioGroup,
@@ -161,10 +162,30 @@ export const ListBoxTooltip: Story = {
 		const [isOpen, setOpen] = useState(false);
 
 		const options = [
-			{ id: 1, name: 'Item one', description: 'Description one', ref: useRef(null) },
-			{ id: 2, name: 'Item two', description: 'Description two', ref: useRef(null) },
-			{ id: 3, name: 'Item three', description: 'Description three', ref: useRef(null) },
+			{ id: 1, name: 'Item one', description: 'Description one' },
+			{ id: 2, name: 'Item two', description: 'Description two' },
+			{ id: 3, name: 'Item three', description: 'Description three' },
 		];
+
+		const MyItem = (props: ListBoxItemProps<(typeof options)[number]>) => {
+			const ref = useRef(null);
+			return (
+				<ListBoxItem ref={ref} {...props}>
+					{({ isFocused }) => {
+						return (
+							<>
+								{props.children}
+								<TooltipTrigger isOpen={isFocused}>
+									<Tooltip triggerRef={ref} placement="right" offset={8}>
+										{props.value?.description}
+									</Tooltip>
+								</TooltipTrigger>
+							</>
+						);
+					}}
+				</ListBoxItem>
+			);
+		};
 
 		return (
 			<div
@@ -181,23 +202,12 @@ export const ListBoxTooltip: Story = {
 					<Popover>
 						<ListBox items={options}>
 							{(item) => (
-								<ListBoxItem textValue={item.name} ref={item.ref}>
-									{({ isFocused }) => {
-										return (
-											<>
-												<Text slot="label">{item.name}</Text>
-												<VisuallyHidden>
-													<Text slot="description">{item.description}</Text>
-												</VisuallyHidden>
-												<TooltipTrigger isOpen={isOpen && isFocused}>
-													<Tooltip triggerRef={item.ref} placement="right" offset={8}>
-														{item.description}
-													</Tooltip>
-												</TooltipTrigger>
-											</>
-										);
-									}}
-								</ListBoxItem>
+								<MyItem textValue={item.name}>
+									<Text slot="label">{item.name}</Text>
+									<VisuallyHidden>
+										<Text slot="description">{item.description}</Text>
+									</VisuallyHidden>
+								</MyItem>
 							)}
 						</ListBox>
 					</Popover>
