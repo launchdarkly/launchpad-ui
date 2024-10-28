@@ -329,7 +329,7 @@ input[type='checkbox']:disabled {
 
 .suffixContainer .suffix {
 	padding: 0 2px;
-	background-color: var(--lp-color-bg-field-aside);
+	background-color: light-dark(var(--lp-color-bg-ui-secondary), var(--lp-color-bg-ui-primary));
 	color: var(--lp-color-text-ui-secondary);
 	cursor: text;
 	display: inline-flex;

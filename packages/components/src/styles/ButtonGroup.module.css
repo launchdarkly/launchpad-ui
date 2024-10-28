@@ -7,27 +7,18 @@
 }
 
 .compact {
+	composes: buttonGroup from './base.module.css';
 	gap: initial;
-
-	& :first-child {
-		border-top-right-radius: 0;
-		border-bottom-right-radius: 0;
-	}
-
-	& :last-child {
-		border-top-left-radius: 0;
-		border-bottom-left-radius: 0;
-	}
-
-	& :not(:first-child) {
-		margin-inline-start: -1px;
-	}
-
-	& :not(:first-child):not(:last-child) {
-		border-radius: 0;
-	}
 }
 
 .large {
 	gap: var(--lp-spacing-600);
+}
+
+.horizontal {
+	flex-direction: row;
+}
+
+.vertical {
+	flex-direction: column;
 }

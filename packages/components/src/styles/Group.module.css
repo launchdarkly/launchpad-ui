@@ -28,4 +28,8 @@
 		background-color: inherit;
 		cursor: inherit;
 	}
+
+	&:has(input[data-rac]) [data-icon] {
+		fill: var(--lp-color-fill-ui-secondary);
+	}
 }

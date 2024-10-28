@@ -15,7 +15,7 @@ import {
 import { PopoverContext } from './ComboBox';
 import styles from './styles/Popover.module.css';
 
-interface PopoverProps extends Omit<AriaPopoverProps, 'offset' | 'crossOffset'> {}
+interface PopoverProps extends AriaPopoverProps {}
 interface OverlayArrowProps extends Omit<AriaOverlayArrowProps, 'children'> {}
 
 const popover = cva(styles.popover);
@@ -26,10 +26,10 @@ const _Popover = (props: PopoverProps, ref: ForwardedRef<HTMLElement>) => {
 
 	return (
 		<AriaPopover
-			{...popoverProps}
-			{...props}
 			offset={4}
 			crossOffset={0}
+			{...popoverProps}
+			{...props}
 			ref={ref}
 			className={composeRenderProps(props.className, (className, renderProps) =>
 				popover({ ...renderProps, className }),

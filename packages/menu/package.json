@@ -1,6 +1,6 @@
 {
 	"name": "@launchpad-ui/menu",
-	"version": "0.13.36",
+	"version": "0.13.41",
 	"status": "beta",
 	"publishConfig": {
 		"access": "public"
@@ -38,7 +38,7 @@
 		"@launchpad-ui/tokens": "workspace:~",
 		"@launchpad-ui/tooltip": "workspace:~",
 		"@radix-ui/react-slot": "1.1.0",
-		"@react-aria/focus": "3.18.3",
+		"@react-aria/focus": "3.18.4",
 		"@react-aria/separator": "3.4.3",
 		"classix": "2.2.0",
 		"react-virtual": "2.10.4"

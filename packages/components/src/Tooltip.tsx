@@ -16,10 +16,8 @@ import {
 import popoverStyles from './styles/Popover.module.css';
 import styles from './styles/Tooltip.module.css';
 
-interface TooltipProps
-	extends Omit<AriaTooltipProps, 'offset' | 'crossOffset'>,
-		VariantProps<typeof tooltip> {}
-interface TooltipTriggerProps extends Omit<TooltipTriggerComponentProps, 'closeDelay'> {}
+interface TooltipProps extends AriaTooltipProps, VariantProps<typeof tooltip> {}
+interface TooltipTriggerProps extends TooltipTriggerComponentProps {}
 
 const tooltip = cva(styles.base, {
 	variants: {
@@ -39,9 +37,10 @@ const _Tooltip = (
 ) => {
 	return (
 		<AriaTooltip
-			{...props}
+			data-theme={variant === 'default' ? 'dark' : undefined}
 			offset={4}
 			crossOffset={0}
+			{...props}
 			ref={ref}
 			className={composeRenderProps(props.className, (className, renderProps) =>
 				tooltip({ ...renderProps, variant, className }),
@@ -59,7 +58,7 @@ const _Tooltip = (
 const Tooltip = forwardRef(_Tooltip);
 
 const TooltipTrigger = (props: TooltipTriggerProps) => {
-	return <AriaTooltipTrigger delay={500} {...props} closeDelay={250} />;
+	return <AriaTooltipTrigger delay={500} closeDelay={250} {...props} />;
 };
 
 export { Tooltip, TooltipTrigger };

@@ -34,7 +34,6 @@ const icon = cva(styles.icon, {
 			error: styles.error,
 			info: styles.info,
 			success: styles.success,
-			warning: styles.warning,
 		},
 	},
 	defaultVariants: {
@@ -188,12 +187,12 @@ const snackbarQueue = new AriaToastQueue<SnackbarValue>({
 const timeout = 6000;
 
 const ToastQueue = {
+	error: (children: ToastContent['children'], options?: ToastOptions) =>
+		toastQueue.add({ children, status: 'error' }, { ...options, timeout }),
 	info: (children: ToastContent['children'], options?: ToastOptions) =>
 		toastQueue.add({ children, status: 'info' }, { ...options, timeout }),
 	success: (children: ToastContent['children'], options?: ToastOptions) =>
 		toastQueue.add({ children, status: 'success' }, { ...options, timeout }),
-	warning: (children: ToastContent['children'], options?: ToastOptions) =>
-		toastQueue.add({ children, status: 'warning' }, { ...options, timeout }),
 };
 
 const SnackbarQueue = {
@@ -207,10 +206,6 @@ const SnackbarQueue = {
 	},
 	success: (content: SnackbarContent, options?: ToastOptions) => {
 		const key = snackbarQueue.add({ ...content, status: 'success' }, { ...options });
-		return () => snackbarQueue.close(key);
-	},
-	warning: (content: SnackbarContent, options?: ToastOptions) => {
-		const key = snackbarQueue.add({ ...content, status: 'warning' }, { ...options });
 		return () => snackbarQueue.close(key);
 	},
 };

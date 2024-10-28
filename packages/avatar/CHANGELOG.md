@@ -1,5 +1,38 @@
 # @launchpad-ui/avatar
 
+## 0.6.48
+
+### Patch Changes
+
+- Updated dependencies [[`17eb30b`](https://github.com/launchdarkly/launchpad-ui/commit/17eb30b6757f6ff4ffb4d3a4acee3f95ed554411)]:
+  - @launchpad-ui/icons@0.20.0
+
+## 0.6.47
+
+### Patch Changes
+
+- [#1453](https://github.com/launchdarkly/launchpad-ui/pull/1453) [`03941ca`](https://github.com/launchdarkly/launchpad-ui/commit/03941ca44b814a5e6ce14fd90023a0b2f0223973) Thanks [@Niznikr](https://github.com/Niznikr)! - Tweak avatar style
+
+- Updated dependencies [[`3764368`](https://github.com/launchdarkly/launchpad-ui/commit/37643680983e00db444723ffc7e83394191521e5)]:
+  - @launchpad-ui/icons@0.19.6
+
+## 0.6.46
+
+### Patch Changes
+
+- [#1438](https://github.com/launchdarkly/launchpad-ui/pull/1438) [`3c7fdd9`](https://github.com/launchdarkly/launchpad-ui/commit/3c7fdd9176154cf8bafdc37813dbb5ab6b9a4988) Thanks [@Niznikr](https://github.com/Niznikr)! - Use updated tokens
+
+- Updated dependencies [[`3c7fdd9`](https://github.com/launchdarkly/launchpad-ui/commit/3c7fdd9176154cf8bafdc37813dbb5ab6b9a4988)]:
+  - @launchpad-ui/tokens@0.12.0
+  - @launchpad-ui/icons@0.19.5
+
+## 0.6.45
+
+### Patch Changes
+
+- Updated dependencies [[`b407647`](https://github.com/launchdarkly/launchpad-ui/commit/b4076476961677b2ce5141b46cb55910ccc372f1)]:
+  - @launchpad-ui/icons@0.19.4
+
 ## 0.6.44
 
 ### Patch Changes
