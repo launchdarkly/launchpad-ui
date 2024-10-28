@@ -159,12 +159,11 @@ export const RadioButtonGroup: Story = {
 export const ListBoxTooltip: Story = {
 	render: () => {
 		const [isOpen, setOpen] = useState(false);
-		const triggerRef = useRef(null);
 
 		const options = [
-			{ id: 1, name: 'Item one', description: 'Description one' },
-			{ id: 2, name: 'Item two', description: 'Description two' },
-			{ id: 3, name: 'Item three', description: 'Description three' },
+			{ id: 1, name: 'Item one', description: 'Description one', ref: useRef(null) },
+			{ id: 2, name: 'Item two', description: 'Description two', ref: useRef(null) },
+			{ id: 3, name: 'Item three', description: 'Description three', ref: useRef(null) },
 		];
 
 		return (
@@ -182,18 +181,16 @@ export const ListBoxTooltip: Story = {
 					<Popover>
 						<ListBox items={options}>
 							{(item) => (
-								<ListBoxItem textValue={item.name}>
+								<ListBoxItem textValue={item.name} ref={item.ref}>
 									{({ isFocused }) => {
 										return (
 											<>
-												<Text slot="label" ref={isFocused ? triggerRef : undefined}>
-													{item.name}
-												</Text>
+												<Text slot="label">{item.name}</Text>
 												<VisuallyHidden>
 													<Text slot="description">{item.description}</Text>
 												</VisuallyHidden>
 												<TooltipTrigger isOpen={isOpen && isFocused}>
-													<Tooltip triggerRef={triggerRef} placement="right" offset={16}>
+													<Tooltip triggerRef={item.ref} placement="right" offset={8}>
 														{item.description}
 													</Tooltip>
 												</TooltipTrigger>
@@ -207,6 +204,11 @@ export const ListBoxTooltip: Story = {
 				</Select>
 			</div>
 		);
+	},
+	play: async ({ canvasElement }) => {
+		const canvas = within(canvasElement);
+
+		await userEvent.click(canvas.getByRole('button'));
 	},
 	name: 'ListBox Tooltip',
 };
