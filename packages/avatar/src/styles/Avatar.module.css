@@ -19,7 +19,7 @@
 }
 
 .Avatar--color0 {
-	background-color: var(--lp-color-yellow-900);
+	background-color: var(--lp-color-brand-yellow-dark);
 }
 
 .Avatar--color1 {
@@ -27,11 +27,11 @@
 }
 
 .Avatar--color2 {
-	background-color: var(--lp-color-pink-500);
+	background-color: var(--lp-color-brand-pink-base);
 }
 
 .Avatar--color3 {
-	background-color: var(--lp-color-cyan-500);
+	background-color: var(--lp-color-brand-cyan-base);
 }
 
 .Avatar--color4 {

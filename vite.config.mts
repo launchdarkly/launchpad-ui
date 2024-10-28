@@ -20,11 +20,11 @@ for (const key of Object.keys(paths)) {
 }
 
 const { default: packageJSON } = await import(path.resolve('./package.json'), {
-	assert: { type: 'json' },
+	with: { type: 'json' },
 });
 
 const { default: rootPackageJSON } = await import(path.resolve(__dirname, './package.json'), {
-	assert: { type: 'json' },
+	with: { type: 'json' },
 });
 
 // https://github.com/babel/babel/blob/main/packages/babel-plugin-transform-react-pure-annotations/src/index.ts

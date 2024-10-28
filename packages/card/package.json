@@ -1,6 +1,6 @@
 {
 	"name": "@launchpad-ui/card",
-	"version": "0.2.51",
+	"version": "0.2.56",
 	"status": "alpha",
 	"publishConfig": {
 		"access": "public"

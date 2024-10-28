@@ -1,5 +1,19 @@
 # @launchpad-ui/box
 
+## 0.1.22
+
+### Patch Changes
+
+- Updated dependencies [[`3c7fdd9`](https://github.com/launchdarkly/launchpad-ui/commit/3c7fdd9176154cf8bafdc37813dbb5ab6b9a4988)]:
+  - @launchpad-ui/tokens@0.12.0
+  - @launchpad-ui/vars@0.3.0
+
+## 0.1.21
+
+### Patch Changes
+
+- [#1432](https://github.com/launchdarkly/launchpad-ui/pull/1432) [`2b70773`](https://github.com/launchdarkly/launchpad-ui/commit/2b707733f0729b482b196ffecba46af967b88433) Thanks [@Niznikr](https://github.com/Niznikr)! - Support `className` for `Box`
+
 ## 0.1.20
 
 ### Patch Changes

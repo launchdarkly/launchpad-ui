@@ -7,3 +7,45 @@
 		z-index: 1;
 	}
 }
+
+.buttonGroup {
+	&[data-orientation='horizontal'] {
+		& :first-child {
+			border-top-right-radius: 0;
+			border-bottom-right-radius: 0;
+		}
+
+		& :last-child {
+			border-top-left-radius: 0;
+			border-bottom-left-radius: 0;
+		}
+
+		& :not(:first-child) {
+			margin-inline-start: -1px;
+		}
+
+		& :not(:first-child):not(:last-child) {
+			border-radius: 0;
+		}
+	}
+
+	&[data-orientation='vertical'] {
+		& :first-child {
+			border-bottom-left-radius: 0;
+			border-bottom-right-radius: 0;
+		}
+
+		& :last-child {
+			border-top-left-radius: 0;
+			border-top-right-radius: 0;
+		}
+
+		& :not(:first-child):not([role='separator']) {
+			margin-block-start: -1px;
+		}
+
+		& :not(:first-child):not(:last-child) {
+			border-radius: 0;
+		}
+	}
+}

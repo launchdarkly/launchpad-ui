@@ -1,0 +1,110 @@
+.base {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 50%;
+}
+
+.default {
+	background: var(--lp-color-bg-ui-tertiary);
+
+	& [data-icon] {
+		fill: var(--lp-color-fill-ui-secondary);
+	}
+}
+
+.tiny {
+	padding: var(--lp-size-2);
+}
+
+.small {
+	padding: var(--lp-spacing-200);
+}
+
+.medium {
+	padding: var(--lp-spacing-300);
+}
+
+.large {
+	padding: var(--lp-spacing-400);
+}
+
+.blue {
+	background: var(--lp-color-brand-blue-light);
+}
+
+.cyan {
+	background: var(--lp-color-brand-cyan-base);
+}
+
+.purple {
+	background: var(--lp-color-brand-purple-base);
+}
+
+.pink {
+	background: var(--lp-color-brand-pink-base);
+}
+
+.orange {
+	background: var(--lp-color-brand-orange-base);
+}
+
+.yellow {
+	background: var(--lp-color-brand-yellow-base);
+}
+
+.green {
+	background: var(--lp-color-brand-green-base);
+}
+
+.gradient1 {
+	background: var(--lp-color-gradient-yellow-cyan);
+}
+
+.gradient2 {
+	background: var(--lp-color-gradient-yellow-pink);
+}
+
+.gradient3 {
+	background: var(--lp-color-gradient-cyan-purple);
+}
+
+.gradient4 {
+	background: var(--lp-color-gradient-cyan-blue);
+}
+
+.gradient5 {
+	background: var(--lp-color-gradient-purple-blue);
+}
+
+.gradient6 {
+	background: var(--lp-color-gradient-purple-pink);
+}
+
+.gradient7 {
+	background: var(--lp-color-gradient-yellow-blue-pale);
+}
+
+.blue,
+.cyan,
+.purple,
+.pink,
+.orange,
+.gradient1,
+.gradient2,
+.gradient3,
+.gradient4,
+.gradient5,
+.gradient6 {
+	& [data-icon] {
+		fill: var(--lp-color-white-900);
+	}
+}
+
+.yellow,
+.green,
+.gradient7 {
+	& [data-icon] {
+		fill: var(--lp-color-black-700);
+	}
+}

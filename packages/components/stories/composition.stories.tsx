@@ -136,7 +136,7 @@ export const RadioButtonGroup: Story = {
 				</RadioGroup>
 				<RadioGroup defaultValue="1">
 					<Label>RadioIconButton</Label>
-					<ButtonGroup spacing="compact" role="presentation">
+					<ButtonGroup spacing="compact" role="presentation" orientation="vertical">
 						<RadioIconButton icon="flag" value="1" aria-label="flag" />
 						<RadioIconButton icon="flask" value="2" aria-label="flask" />
 						<RadioIconButton icon="key" value="3" aria-label="key" />

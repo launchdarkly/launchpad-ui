@@ -1,5 +1,34 @@
 # @launchpad-ui/icons
 
+## 0.20.0
+
+### Minor Changes
+
+- [#1451](https://github.com/launchdarkly/launchpad-ui/pull/1451) [`17eb30b`](https://github.com/launchdarkly/launchpad-ui/commit/17eb30b6757f6ff4ffb4d3a4acee3f95ed554411) Thanks [@Niznikr](https://github.com/Niznikr)! - Change `FlairIcon` to `BadgeIcon`
+
+## 0.19.6
+
+### Patch Changes
+
+- [#1439](https://github.com/launchdarkly/launchpad-ui/pull/1439) [`3764368`](https://github.com/launchdarkly/launchpad-ui/commit/37643680983e00db444723ffc7e83394191521e5) Thanks [@tiffanylphan](https://github.com/tiffanylphan)! - add ai config icons
+
+## 0.19.5
+
+### Patch Changes
+
+- Updated dependencies [[`3c7fdd9`](https://github.com/launchdarkly/launchpad-ui/commit/3c7fdd9176154cf8bafdc37813dbb5ab6b9a4988)]:
+  - @launchpad-ui/tokens@0.12.0
+  - @launchpad-ui/box@0.1.22
+
+## 0.19.4
+
+### Patch Changes
+
+- [#1437](https://github.com/launchdarkly/launchpad-ui/pull/1437) [`b407647`](https://github.com/launchdarkly/launchpad-ui/commit/b4076476961677b2ce5141b46cb55910ccc372f1) Thanks [@hsadhvani](https://github.com/hsadhvani)! - feat(icons): add flask-arrow icon
+
+- Updated dependencies [[`2b70773`](https://github.com/launchdarkly/launchpad-ui/commit/2b707733f0729b482b196ffecba46af967b88433)]:
+  - @launchpad-ui/box@0.1.21
+
 ## 0.19.3
 
 ### Patch Changes

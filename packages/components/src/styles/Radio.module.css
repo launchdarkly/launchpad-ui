@@ -48,11 +48,5 @@
 		& .circle {
 			border-color: var(--lp-color-border-field-error);
 		}
-
-		&[data-selected] {
-			& .icon {
-				fill: var(--lp-color-bg-field-error);
-			}
-		}
 	}
 }

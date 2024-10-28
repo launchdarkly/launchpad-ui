@@ -55,13 +55,6 @@
 		& .box {
 			border-color: var(--lp-color-border-field-error);
 		}
-
-		&[data-selected],
-		&[data-indeterminate] {
-			& .box {
-				background-color: var(--lp-color-bg-field-error);
-			}
-		}
 	}
 
 	&[data-focus-visible]:is([data-selected], [data-indeterminate]) {

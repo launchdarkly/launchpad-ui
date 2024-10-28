@@ -1,8 +1,6 @@
 import type { Meta, ReactRenderer, StoryFn, StoryObj } from '@storybook/react';
-import type { PlayFunction } from '@storybook/types';
-
-import { Icon } from '@launchpad-ui/icons';
 import { expect, userEvent, within } from '@storybook/test';
+import type { PlayFunction } from '@storybook/types';
 
 import { allModes } from '../../../.storybook/modes';
 import {
@@ -46,7 +44,7 @@ export default meta;
 
 type Story = StoryObj<typeof Modal>;
 
-const renderModal = (args: Story['args'], destructive = false) => (
+const renderModal = (args: Story['args']) => (
 	<DialogTrigger>
 		<Button>Trigger</Button>
 		<ModalOverlay>
@@ -55,14 +53,6 @@ const renderModal = (args: Story['args'], destructive = false) => (
 					{({ close }) => (
 						<>
 							<div slot="header">
-								{destructive && (
-									<Icon
-										name="warning"
-										size="medium"
-										variant={null}
-										fill="var(--lp-color-fill-feedback-warning)"
-									/>
-								)}
 								<Heading slot="title">Title</Heading>
 								<IconButton
 									aria-label="close"
@@ -119,9 +109,4 @@ export const Drawer: Story = {
 			},
 		},
 	},
-};
-
-export const Destructive: Story = {
-	render: (args) => renderModal(args, true),
-	play,
 };

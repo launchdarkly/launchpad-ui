@@ -1,5 +1,38 @@
 # @launchpad-ui/chip
 
+## 0.9.48
+
+### Patch Changes
+
+- [#1455](https://github.com/launchdarkly/launchpad-ui/pull/1455) [`61f61e9`](https://github.com/launchdarkly/launchpad-ui/commit/61f61e9a72111b7cd036bbcbaf34c74cd3193082) Thanks [@Niznikr](https://github.com/Niznikr)! - Update `Tag` default styles
+
+- Updated dependencies [[`17eb30b`](https://github.com/launchdarkly/launchpad-ui/commit/17eb30b6757f6ff4ffb4d3a4acee3f95ed554411)]:
+  - @launchpad-ui/icons@0.20.0
+
+## 0.9.47
+
+### Patch Changes
+
+- Updated dependencies [[`3764368`](https://github.com/launchdarkly/launchpad-ui/commit/37643680983e00db444723ffc7e83394191521e5)]:
+  - @launchpad-ui/icons@0.19.6
+
+## 0.9.46
+
+### Patch Changes
+
+- [#1438](https://github.com/launchdarkly/launchpad-ui/pull/1438) [`3c7fdd9`](https://github.com/launchdarkly/launchpad-ui/commit/3c7fdd9176154cf8bafdc37813dbb5ab6b9a4988) Thanks [@Niznikr](https://github.com/Niznikr)! - Use updated tokens
+
+- Updated dependencies [[`3c7fdd9`](https://github.com/launchdarkly/launchpad-ui/commit/3c7fdd9176154cf8bafdc37813dbb5ab6b9a4988)]:
+  - @launchpad-ui/tokens@0.12.0
+  - @launchpad-ui/icons@0.19.5
+
+## 0.9.45
+
+### Patch Changes
+
+- Updated dependencies [[`b407647`](https://github.com/launchdarkly/launchpad-ui/commit/b4076476961677b2ce5141b46cb55910ccc372f1)]:
+  - @launchpad-ui/icons@0.19.4
+
 ## 0.9.44
 
 ### Patch Changes

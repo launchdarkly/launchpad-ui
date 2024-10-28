@@ -34,6 +34,10 @@
 	& :global([class*='_Button--primary']).SplitButtonDrop {
 		margin-left: 0.0625rem;
 	}
+
+	& [data-icon] {
+		fill: currentColor;
+	}
 }
 
 .SplitButtonDrop:global([class*='_Button']) > span {

@@ -1,6 +1,7 @@
 .separator {
 	background: var(--lp-color-border-ui-primary);
 	margin-block: var(--lp-spacing-200);
+	align-self: stretch;
 
 	&[aria-orientation='vertical'] {
 		width: var(--lp-size-1);

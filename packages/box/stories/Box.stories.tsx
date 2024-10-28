@@ -1,6 +1,6 @@
 import type { StoryObj } from '@storybook/react';
 
-import { Button } from '@launchpad-ui/button';
+import { Button } from '@launchpad-ui/components';
 
 import { Box } from '../src';
 

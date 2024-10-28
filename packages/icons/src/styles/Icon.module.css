@@ -5,11 +5,16 @@
 }
 
 .default {
-	fill: currentcolor;
+	fill: var(--lp-color-fill-ui-primary);
 }
 
 .subtle {
 	fill: var(--lp-color-fill-ui-secondary);
+}
+
+.tiny {
+	width: var(--lp-size-12);
+	height: var(--lp-size-12);
 }
 
 .small {

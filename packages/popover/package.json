@@ -1,6 +1,6 @@
 {
 	"name": "@launchpad-ui/popover",
-	"version": "0.11.32",
+	"version": "0.11.34",
 	"status": "beta",
 	"publishConfig": {
 		"access": "public"
@@ -38,7 +38,7 @@
 		"@launchpad-ui/overlay": "workspace:~",
 		"@launchpad-ui/tokens": "workspace:~",
 		"classix": "2.2.0",
-		"framer-motion": "11.9.0"
+		"framer-motion": "11.11.1"
 	},
 	"peerDependencies": {
 		"react": "18.3.1",

@@ -54,17 +54,12 @@
 
 .default {
 	color: var(--lp-color-text-ui-secondary);
-	background-color: var(--lp-color-bg-ui-secondary);
+	background-color: var(--lp-color-bg-ui-tertiary);
 }
 
 .success {
 	color: var(--lp-color-text-feedback-success);
 	background-color: var(--lp-color-bg-feedback-success);
-}
-
-.warning {
-	color: var(--lp-color-text-feedback-warning);
-	background-color: var(--lp-color-bg-feedback-warning);
 }
 
 .error {
