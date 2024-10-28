@@ -4,6 +4,9 @@ import type { ComponentPropsWithoutRef, Fragment } from 'react';
 import { Icon } from '@launchpad-ui/icons';
 import { vars } from '@launchpad-ui/vars';
 import { expect, userEvent, within } from '@storybook/test';
+import { useRef, useState } from 'react';
+import { VisuallyHidden } from 'react-aria';
+
 import {
 	Button,
 	ButtonGroup,
@@ -20,6 +23,9 @@ import {
 	RadioButton,
 	RadioGroup,
 	RadioIconButton,
+	Select,
+	SelectValue,
+	Text,
 	ToastContainer,
 	ToastQueue,
 	Tooltip,
@@ -148,4 +154,59 @@ export const RadioButtonGroup: Story = {
 		),
 	},
 	name: 'RadioButtonGroup',
+};
+
+export const ListBoxTooltip: Story = {
+	render: () => {
+		const [isOpen, setOpen] = useState(false);
+		const triggerRef = useRef(null);
+
+		const options = [
+			{ id: 1, name: 'Item one', description: 'Description one' },
+			{ id: 2, name: 'Item two', description: 'Description two' },
+			{ id: 3, name: 'Item three', description: 'Description three' },
+		];
+
+		return (
+			<div
+				style={{
+					width: vars.size[240],
+				}}
+			>
+				<Select isOpen={isOpen} onOpenChange={setOpen}>
+					<Label>Select</Label>
+					<Button>
+						<SelectValue />
+						<Icon name="chevron-down" size="small" />
+					</Button>
+					<Popover>
+						<ListBox items={options}>
+							{(item) => (
+								<ListBoxItem textValue={item.name}>
+									{({ isFocused }) => {
+										return (
+											<>
+												<Text slot="label" ref={isFocused ? triggerRef : undefined}>
+													{item.name}
+												</Text>
+												<VisuallyHidden>
+													<Text slot="description">{item.description}</Text>
+												</VisuallyHidden>
+												<TooltipTrigger isOpen={isOpen && isFocused}>
+													<Tooltip triggerRef={triggerRef} placement="right" offset={16}>
+														{item.description}
+													</Tooltip>
+												</TooltipTrigger>
+											</>
+										);
+									}}
+								</ListBoxItem>
+							)}
+						</ListBox>
+					</Popover>
+				</Select>
+			</div>
+		);
+	},
+	name: 'ListBox Tooltip',
 };
