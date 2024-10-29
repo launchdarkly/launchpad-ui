@@ -1,6 +1,6 @@
 {
 	"name": "@launchpad-ui/avatar",
-	"version": "0.6.48",
+	"version": "0.6.49",
 	"status": "beta",
 	"publishConfig": {
 		"access": "public"
