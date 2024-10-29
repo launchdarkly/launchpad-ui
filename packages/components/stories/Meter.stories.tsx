@@ -1,5 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
+import { vars } from '@launchpad-ui/vars';
+
 import { Meter } from '../src';
 
 const meta: Meta<typeof Meter> = {
@@ -26,5 +28,23 @@ export default meta;
 type Story = StoryObj<typeof Meter>;
 
 export const Example: Story = {
-	args: { value: 40, 'aria-label': 'percent diff' },
+	args: { value: 14, 'aria-label': 'percent diff' },
+};
+
+export const Values: Story = {
+	render: () => {
+		return (
+			<div
+				style={{
+					display: 'flex',
+					flexDirection: 'column',
+					gap: vars.spacing[400],
+				}}
+			>
+				<Meter value={1} aria-label="1" />
+				<Meter value={25} aria-label="25" />
+				<Meter value={100} aria-label="100" />
+			</div>
+		);
+	},
 };

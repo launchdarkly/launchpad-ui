@@ -10,6 +10,7 @@
 
 .innerCircle {
 	stroke: var(--fill-color);
+	stroke-linecap: round;
 }
 
 .value {
@@ -18,6 +19,12 @@
 	text-anchor: middle;
 	dominant-baseline: middle;
 	font-size: 50%;
+}
+
+.unit {
+	font: var(--lp-text-label-2-medium);
+	fill: var(--lp-color-text-ui-primary-base);
+	font-size: 40%;
 }
 
 .base {

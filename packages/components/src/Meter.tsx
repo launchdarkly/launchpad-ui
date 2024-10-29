@@ -44,7 +44,10 @@ const _Meter = (props: MeterProps, ref: ForwardedRef<HTMLDivElement>) => {
 						className={styles.innerCircle}
 					/>
 					<text x={16} y={16} className={styles.value}>
-						{valueText}
+						{valueText?.match(/\d+/)?.[0]}
+						<tspan dy={1} className={styles.unit}>
+							{valueText?.replace(/\d+/, '')}
+						</tspan>
 					</text>
 				</svg>
 			)}
