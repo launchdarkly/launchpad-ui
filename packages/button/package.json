@@ -1,6 +1,6 @@
 {
 	"name": "@launchpad-ui/button",
-	"version": "0.12.36",
+	"version": "0.12.37",
 	"status": "beta",
 	"publishConfig": {
 		"access": "public"

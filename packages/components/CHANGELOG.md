@@ -1,5 +1,16 @@
 # @launchpad-ui/components
 
+## 0.5.5
+
+### Patch Changes
+
+- [#1457](https://github.com/launchdarkly/launchpad-ui/pull/1457) [`8c4d654`](https://github.com/launchdarkly/launchpad-ui/commit/8c4d65442691cd8a86c360abfb0b961221bb4e2c) Thanks [@Niznikr](https://github.com/Niznikr)! - Align items in `Toolbar`
+
+- [#1460](https://github.com/launchdarkly/launchpad-ui/pull/1460) [`8122ee1`](https://github.com/launchdarkly/launchpad-ui/commit/8122ee106276b3bda30f35f855b05381a2cdb48f) Thanks [@Niznikr](https://github.com/Niznikr)! - Expose all props for `Tooltip` and `Popover`
+
+- Updated dependencies [[`3ba61af`](https://github.com/launchdarkly/launchpad-ui/commit/3ba61afe28f4d473bdad24cadfaa3bc824f53cb3)]:
+  - @launchpad-ui/icons@0.20.1
+
 ## 0.5.4
 
 ### Patch Changes

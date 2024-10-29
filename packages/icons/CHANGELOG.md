@@ -1,5 +1,11 @@
 # @launchpad-ui/icons
 
+## 0.20.1
+
+### Patch Changes
+
+- [#1434](https://github.com/launchdarkly/launchpad-ui/pull/1434) [`3ba61af`](https://github.com/launchdarkly/launchpad-ui/commit/3ba61afe28f4d473bdad24cadfaa3bc824f53cb3) Thanks [@mguoynes](https://github.com/mguoynes)! - add percentage icon
+
 ## 0.20.0
 
 ### Minor Changes
