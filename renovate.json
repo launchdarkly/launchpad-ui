@@ -1,6 +1,6 @@
 {
 	"extends": [
-		"config:base",
+		"config:recommended",
 		":separateMultipleMajorReleases",
 		":maintainLockFilesMonthly",
 		":widenPeerDependencies",
@@ -9,19 +9,24 @@
 	],
 	"packageRules": [
 		{
-			"matchUpdateTypes": ["patch"],
+			"matchUpdateTypes": [
+				"patch"
+			],
 			"enabled": false,
-			"excludePackagePatterns": [
-				"^@internationalized",
-				"^@react-aria",
-				"^@react-stately",
-				"^@react-types",
-				"^react-aria-components",
-				"^react-stately",
-				"^react-aria"
+			"matchPackageNames": [
+				"!/^@internationalized/",
+				"!/^@react-aria/",
+				"!/^@react-stately/",
+				"!/^@react-types/",
+				"!/^react-aria-components/",
+				"!/^react-stately/",
+				"!/^react-aria/"
 			]
 		}
 	],
 	"rangeStrategy": "bump",
-	"ignoreDeps": ["react-router-dom", "@biomejs/biome"]
+	"ignoreDeps": [
+		"react-router-dom",
+		"@biomejs/biome"
+	]
 }
