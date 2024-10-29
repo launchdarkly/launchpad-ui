@@ -9,9 +9,7 @@
 	],
 	"packageRules": [
 		{
-			"matchUpdateTypes": [
-				"patch"
-			],
+			"matchUpdateTypes": ["patch"],
 			"enabled": false,
 			"matchPackageNames": [
 				"!/^@internationalized/",
@@ -25,8 +23,5 @@
 		}
 	],
 	"rangeStrategy": "bump",
-	"ignoreDeps": [
-		"react-router-dom",
-		"@biomejs/biome"
-	]
+	"ignoreDeps": ["react-router-dom", "@biomejs/biome"]
 }
