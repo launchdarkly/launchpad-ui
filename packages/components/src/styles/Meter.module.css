@@ -1,0 +1,26 @@
+.meter {
+	--fill-color: var(--lp-color-brand-cyan-base);
+
+	display: inline-flex;
+}
+
+.outerCircle {
+	stroke: var(--lp-color-bg-ui-tertiary);
+}
+
+.innerCircle {
+	stroke: var(--fill-color);
+}
+
+.value {
+	font: var(--lp-text-label-2-medium);
+	fill: var(--lp-color-text-ui-primary-base);
+	text-anchor: middle;
+	dominant-baseline: middle;
+	font-size: 50%;
+}
+
+.base {
+	height: var(--lp-size-128);
+	width: var(--lp-size-128);
+}
