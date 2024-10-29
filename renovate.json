@@ -1,6 +1,6 @@
 {
 	"extends": [
-		"config:base",
+		"config:recommended",
 		":separateMultipleMajorReleases",
 		":maintainLockFilesMonthly",
 		":widenPeerDependencies",
@@ -11,14 +11,14 @@
 		{
 			"matchUpdateTypes": ["patch"],
 			"enabled": false,
-			"excludePackagePatterns": [
-				"^@internationalized",
-				"^@react-aria",
-				"^@react-stately",
-				"^@react-types",
-				"^react-aria-components",
-				"^react-stately",
-				"^react-aria"
+			"matchPackageNames": [
+				"!/^@internationalized/",
+				"!/^@react-aria/",
+				"!/^@react-stately/",
+				"!/^@react-types/",
+				"!/^react-aria-components/",
+				"!/^react-stately/",
+				"!/^react-aria/"
 			]
 		}
 	],
