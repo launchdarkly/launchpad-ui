@@ -10,5 +10,5 @@
 }
 
 .panel {
-	padding-left: var(--lp-spacing-300);
+	padding: 0 var(--lp-spacing-300);
 }

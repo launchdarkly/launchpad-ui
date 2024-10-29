@@ -47,6 +47,7 @@ export const Accordion: Story = {
 					<Button
 						slot="trigger"
 						style={{ padding: vars.spacing[400], width: '100%', justifyContent: 'flex-start' }}
+						variant="minimal"
 					>
 						<Icon name="chevron-right" size="small" />
 						Header
@@ -57,5 +58,9 @@ export const Accordion: Story = {
 				</DisclosurePanel>
 			</>
 		),
+		style: {
+			border: `1px solid ${vars.color.border.interactive.secondary.base}`,
+			borderRadius: vars.borderRadius.medium,
+		},
 	},
 };
