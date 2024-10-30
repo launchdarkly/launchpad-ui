@@ -11,9 +11,9 @@ const meter = cva(styles.meter);
 const icon = cva(styles.base);
 
 const _Meter = (props: MeterProps, ref: ForwardedRef<HTMLDivElement>) => {
-	const center = 16;
-	const strokeWidth = 2;
-	const r = 16 - strokeWidth;
+	const center = 64;
+	const strokeWidth = 8;
+	const r = 64 - strokeWidth;
 	const c = 2 * r * Math.PI;
 
 	return (
@@ -26,7 +26,7 @@ const _Meter = (props: MeterProps, ref: ForwardedRef<HTMLDivElement>) => {
 		>
 			{({ percentage, valueText }) => (
 				// biome-ignore lint/a11y/noSvgWithoutTitle: <explanation>
-				<svg viewBox="0 0 32 32" fill="none" strokeWidth={strokeWidth} className={icon()}>
+				<svg viewBox="0 0 128 128" fill="none" strokeWidth={strokeWidth} className={icon()}>
 					<circle
 						cx={center}
 						cy={center}
@@ -40,14 +40,12 @@ const _Meter = (props: MeterProps, ref: ForwardedRef<HTMLDivElement>) => {
 						r={r}
 						strokeDasharray={`${c} ${c}`}
 						strokeDashoffset={c - (percentage / 100) * c}
-						transform="rotate(-90 16 16)"
+						transform="rotate(-90 64 64)"
 						className={styles.innerCircle}
 					/>
-					<text x={16} y={16} className={styles.value}>
+					<text x={center} y={center} className={styles.value}>
 						{valueText?.match(/\d+/)?.[0]}
-						<tspan dy={1} className={styles.unit}>
-							{valueText?.replace(/\d+/, '')}
-						</tspan>
+						<tspan className={styles.unit}>{valueText?.replace(/\d+/, '')}</tspan>
 					</text>
 				</svg>
 			)}

@@ -14,17 +14,18 @@
 }
 
 .value {
-	font: var(--lp-text-label-2-medium);
 	fill: var(--lp-color-text-ui-primary-base);
+	font: var(--lp-text-body-1-semibold);
+	font-size: var(--lp-font-size-600);
 	text-anchor: middle;
 	dominant-baseline: middle;
-	font-size: 50%;
+	font-variant-numeric: tabular-nums;
 }
 
 .unit {
-	font: var(--lp-text-label-2-medium);
-	fill: var(--lp-color-text-ui-primary-base);
-	font-size: 40%;
+	font-size: var(--lp-font-size-200);
+	text-anchor: middle;
+	dominant-baseline: middle;
 }
 
 .base {
