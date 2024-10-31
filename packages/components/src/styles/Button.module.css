@@ -1,4 +1,5 @@
 .base {
+	composes: interactive from './base.module.css';
 	font: var(--lp-text-label-1-medium);
 	display: inline-flex;
 	align-items: center;
@@ -7,7 +8,6 @@
 	margin: 0;
 	text-decoration: none;
 	appearance: none;
-	cursor: pointer;
 	border-radius: var(--lp-border-radius-medium);
 	border-style: solid;
 	border-width: 1px;
@@ -27,7 +27,6 @@
 	background-color: var(--lp-color-bg-interactive-disabled);
 	border-color: var(--lp-color-border-interactive-disabled);
 	color: var(--lp-color-text-interactive-disabled);
-	cursor: not-allowed;
 }
 
 .small {
@@ -139,6 +138,7 @@
 }
 
 .select {
+	composes: interactive from './base.module.css';
 	display: flex;
 	align-items: center;
 	gap: var(--lp-spacing-300);
@@ -157,6 +157,8 @@
 }
 
 .base[data-pending] {
+	cursor: wait;
+
 	& [data-icon] {
 		opacity: 50%;
 	}

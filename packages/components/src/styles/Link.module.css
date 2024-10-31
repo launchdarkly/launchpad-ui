@@ -2,8 +2,8 @@
 }
 
 .link {
+	composes: interactive from './base.module.css';
 	font: var(--lp-text-body-2-regular);
-	cursor: pointer;
 	outline: none;
 	border-radius: var(--lp-border-radius-regular);
 	text-decoration: none;

@@ -49,3 +49,31 @@
 		}
 	}
 }
+
+.interactive {
+	cursor: pointer;
+
+	&[data-disabled] {
+		cursor: not-allowed;
+	}
+}
+
+.field {
+	&:is(input, textarea) {
+		cursor: text;
+	}
+
+	&[data-disabled] {
+		cursor: not-allowed;
+	}
+}
+
+.selectable {
+	&[data-selection-mode] {
+		cursor: pointer;
+	}
+
+	&[data-disabled][data-selection-mode] {
+		cursor: not-allowed;
+	}
+}

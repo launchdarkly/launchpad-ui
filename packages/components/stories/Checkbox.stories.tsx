@@ -42,7 +42,7 @@ export const Indeterminate: Story = {
 export const States: Story = {
 	render: (args) => {
 		return (
-			<>
+			<div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
 				<Checkbox {...args}>Focus Visible</Checkbox>
 				<Checkbox isDisabled {...args}>
 					Disabled
@@ -56,7 +56,7 @@ export const States: Story = {
 				<Checkbox isInvalid isSelected {...args}>
 					Checked, Invalid
 				</Checkbox>
-			</>
+			</div>
 		);
 	},
 	play: async ({ canvasElement }) => {
