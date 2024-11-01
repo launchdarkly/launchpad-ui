@@ -1,6 +1,6 @@
 .switch {
 	composes: interactive from './base.module.css';
-	display: inline-flex;
+	display: flex;
 	align-items: center;
 	gap: var(--lp-spacing-200);
 	isolation: isolate;
