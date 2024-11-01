@@ -1,0 +1,17 @@
+.list {
+	display: flex;
+	flex-direction: column;
+}
+
+.item {
+	composes: interactive from './base.module.css';
+	display: flex;
+	align-items: center;
+	box-shadow: inset 0 -1px 0 0 var(--lp-color-border-ui-secondary);
+	outline: none;
+	padding-block: var(--lp-spacing-300);
+
+	&[data-hovered] {
+		background-color: var(--lp-color-bg-ui-secondary);
+	}
+}
