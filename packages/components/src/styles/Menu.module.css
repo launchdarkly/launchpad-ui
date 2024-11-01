@@ -15,11 +15,11 @@
 }
 
 .item {
+	composes: interactive from './base.module.css';
 	padding-block: var(--lp-spacing-200);
 	padding-inline: var(--lp-spacing-300);
 	border-radius: var(--lp-border-radius-regular);
 	outline: none;
-	cursor: default;
 	color: var(--lp-color-text-ui-primary-base);
 	font: var(--lp-text-label-1-medium);
 	position: relative;
@@ -43,7 +43,6 @@
 
 	&[data-disabled] {
 		color: var(--lp-color-text-interactive-disabled);
-		cursor: not-allowed;
 	}
 
 	& .content {

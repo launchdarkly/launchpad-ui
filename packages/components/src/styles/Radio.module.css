@@ -17,6 +17,7 @@
 }
 
 .radio {
+	composes: interactive from './base.module.css';
 	display: flex;
 	flex-direction: row;
 	align-items: center;

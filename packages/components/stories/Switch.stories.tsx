@@ -23,3 +23,7 @@ export const Off: Story = {
 export const On: Story = {
 	args: { defaultSelected: true },
 };
+
+export const States: Story = {
+	args: { isDisabled: true },
+};

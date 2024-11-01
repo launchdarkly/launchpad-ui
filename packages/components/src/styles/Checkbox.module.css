@@ -16,7 +16,8 @@
 }
 
 .checkbox {
-	display: flex;
+	composes: interactive from './base.module.css';
+	display: inline-flex;
 	flex-direction: row;
 	gap: var(--lp-spacing-200);
 	font: var(--lp-text-label-1-regular);

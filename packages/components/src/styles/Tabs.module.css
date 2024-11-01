@@ -15,12 +15,12 @@
 }
 
 .tab {
+	composes: interactive from './base.module.css';
 	font: var(--lp-text-label-1-medium);
 	color: var(--lp-color-text-ui-primary-base);
 	padding: var(--lp-spacing-200) var(--lp-spacing-300);
 	border-bottom: 2px solid transparent;
 	position: relative;
-	cursor: default;
 	outline: none;
 
 	&[data-hovered] {

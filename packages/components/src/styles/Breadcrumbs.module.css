@@ -10,7 +10,7 @@
 	display: flex;
 	align-items: center;
 
-	& a {
+	& :is(a, [role='link']) {
 		font: var(--lp-text-heading-1-medium);
 	}
 

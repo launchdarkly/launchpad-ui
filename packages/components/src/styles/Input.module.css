@@ -1,4 +1,5 @@
 .base {
+	composes: field from './base.module.css';
 	font: var(--lp-text-body-2-regular);
 	color: var(--lp-color-text-ui-primary-base);
 	padding: 5px var(--lp-spacing-300);
@@ -44,6 +45,5 @@
 
 	&[data-hovered]:not([data-focused]):not([data-focus-within]) {
 		background-color: var(--lp-color-bg-interactive-secondary-hover);
-		cursor: default;
 	}
 }
