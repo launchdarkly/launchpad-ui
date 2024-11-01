@@ -71,22 +71,6 @@ export type { PopoverPlacement, PopoverProps, Offset } from '@launchpad-ui/popov
 export type { PortalProps } from '@launchpad-ui/portal';
 export type { DelayedIndicatorProps, ProgressProps } from '@launchpad-ui/progress';
 export type { ProgressBubblesProps, ProgressBubbleInfo } from '@launchpad-ui/progress-bubbles';
-export type {
-	MultiSelectProps,
-	MultiSelectTriggerProps,
-	MultiSelectState,
-	SingleSelectProps,
-	SingleSelectTriggerProps,
-	SingleSelectState,
-	SelectItemProps,
-	SelectSectionProps,
-} from '@launchpad-ui/select';
-export type {
-	SplitButtonProps,
-	SplitButtonDropdownProps,
-	SplitButtonDropdownButtonProps,
-	SplitButtonMainButtonProps,
-} from '@launchpad-ui/split-button';
 export type { TabListProps } from '@launchpad-ui/tab-list';
 export type {
 	TableProps,
@@ -162,20 +146,6 @@ export { Popover } from '@launchpad-ui/popover';
 export { Portal } from '@launchpad-ui/portal';
 export { DelayedIndicator, Progress } from '@launchpad-ui/progress';
 export { ProgressBubbles } from '@launchpad-ui/progress-bubbles';
-export {
-	MultiSelect,
-	MultiSelectTrigger,
-	SingleSelect,
-	SingleSelectTrigger,
-	SelectItem,
-	SelectSection,
-} from '@launchpad-ui/select';
-export {
-	SplitButton,
-	SplitButtonDropdown,
-	SplitButtonDropdownButton,
-	SplitButtonMainButton,
-} from '@launchpad-ui/split-button';
 export { TabList } from '@launchpad-ui/tab-list';
 export {
 	Table,
