@@ -19,7 +19,6 @@
 	font-size: var(--lp-font-size-600);
 	text-anchor: middle;
 	dominant-baseline: middle;
-	font-variant-numeric: tabular-nums;
 }
 
 .unit {
