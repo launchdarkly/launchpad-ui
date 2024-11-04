@@ -22,6 +22,10 @@ $ yarn add @launchpad-ui/components @launchpad-ui/icons @launchpad-ui/tokens
 
 [![npm version](https://img.shields.io/npm/v/@launchpad-ui/tokens.svg?label=@launchpad-ui/tokens)](https://www.npmjs.com/package/@launchpad-ui/tokens)
 
+## Apps
+
+[![version](https://img.shields.io/visual-studio-marketplace/v/LaunchDarklyOfficial.launchpad-design-system?label=LaunchPad%20VS%20Code%20extension)](https://marketplace.visualstudio.com/items?itemName=LaunchDarklyOfficial.launchpad-design-system)
+
 ## Contributing
 
 We welcome contributions! See the [contributing docs](https://github.com/launchdarkly/launchpad-ui/blob/main/CONTRIBUTING.md) to learn how to get started.
