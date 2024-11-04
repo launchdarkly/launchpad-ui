@@ -1,0 +1,33 @@
+.meter {
+	--fill-color: var(--lp-color-brand-cyan-base);
+
+	display: inline-flex;
+}
+
+.outerCircle {
+	stroke: var(--lp-color-bg-ui-tertiary);
+}
+
+.innerCircle {
+	stroke: var(--fill-color);
+	stroke-linecap: round;
+}
+
+.value {
+	fill: var(--lp-color-text-ui-primary-base);
+	font: var(--lp-text-body-1-semibold);
+	font-size: var(--lp-font-size-600);
+	text-anchor: middle;
+	dominant-baseline: middle;
+}
+
+.unit {
+	font-size: var(--lp-font-size-200);
+	text-anchor: middle;
+	dominant-baseline: middle;
+}
+
+.base {
+	height: var(--lp-size-128);
+	width: var(--lp-size-128);
+}
