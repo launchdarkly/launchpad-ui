@@ -1,5 +1,11 @@
 # @launchpad-ui/core
 
+## 0.51.0
+
+### Minor Changes
+
+- [#1467](https://github.com/launchdarkly/launchpad-ui/pull/1467) [`54bd513`](https://github.com/launchdarkly/launchpad-ui/commit/54bd5139ca76226e648bb0e0b48265d8e0e6c05e) Thanks [@Niznikr](https://github.com/Niznikr)! - Remove select and split-button packages
+
 ## 0.50.5
 
 ### Patch Changes
