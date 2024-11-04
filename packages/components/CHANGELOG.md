@@ -1,5 +1,15 @@
 # @launchpad-ui/components
 
+## 0.5.6
+
+### Patch Changes
+
+- [#1430](https://github.com/launchdarkly/launchpad-ui/pull/1430) [`b538443`](https://github.com/launchdarkly/launchpad-ui/commit/b538443670a518a602bfe56df3ff326d116017cd) Thanks [@Niznikr](https://github.com/Niznikr)! - Add `Disclosure`
+
+- [#1462](https://github.com/launchdarkly/launchpad-ui/pull/1462) [`a194110`](https://github.com/launchdarkly/launchpad-ui/commit/a1941101434d24b57aec5f3feab39cdf13926bcb) Thanks [@Niznikr](https://github.com/Niznikr)! - Add `Meter`
+
+- [#1465](https://github.com/launchdarkly/launchpad-ui/pull/1465) [`d422f17`](https://github.com/launchdarkly/launchpad-ui/commit/d422f172481328b8c8cef52d8be8ac2af29baa5d) Thanks [@Niznikr](https://github.com/Niznikr)! - Add pointers for interactive elements
+
 ## 0.5.5
 
 ### Patch Changes
