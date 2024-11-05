@@ -25,17 +25,17 @@
 
 .small {
 	font: var(--lp-text-label-2-semibold);
-	padding: calc(3px + var(--lp-button-padding)) var(--lp-spacing-300);
+	padding: calc(3px + var(--lp-button-padding, 0px)) var(--lp-spacing-300);
 }
 
 .medium {
 	font: var(--lp-text-label-1-semibold);
-	padding: calc(5px + var(--lp-button-padding)) var(--lp-spacing-300);
+	padding: calc(5px + var(--lp-button-padding, 0px)) var(--lp-spacing-300);
 }
 
 .large {
 	font: var(--lp-text-body-1-semibold);
-	padding: calc(7px + var(--lp-button-padding)) var(--lp-spacing-400);
+	padding: calc(7px + var(--lp-button-padding, 0px)) var(--lp-spacing-400);
 }
 
 .default {
