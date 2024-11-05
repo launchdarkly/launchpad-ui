@@ -23,7 +23,7 @@ export const NestedThemes = {
 						<p>Currently, we are in a default mode context.</p>
 						<Button>Click me</Button>
 
-						<div data-theme={context.globals.theme === 'default' ? 'dark' : 'default'}>
+						<div data-theme={context.globals.theme === 'dark' ? 'default' : 'dark'}>
 							<div
 								style={{
 									backgroundColor: 'var(--lp-color-bg-ui-primary)',
