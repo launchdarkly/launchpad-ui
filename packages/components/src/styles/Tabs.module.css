@@ -22,6 +22,7 @@
 	border-bottom: 2px solid transparent;
 	position: relative;
 	outline: none;
+	text-decoration: none;
 
 	&[data-hovered] {
 		background-color: var(--lp-color-bg-interactive-secondary-hover);

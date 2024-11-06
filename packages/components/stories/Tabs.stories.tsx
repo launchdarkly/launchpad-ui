@@ -3,6 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { Tab, TabList, TabPanel, Tabs } from '../src';
 
 import { userEvent, within } from '@storybook/test';
+import { Route, Routes, useLocation } from 'react-router-dom';
 
 const meta: Meta<typeof Tabs> = {
 	component: Tabs,
@@ -63,4 +64,39 @@ export const States: Story = {
 		const tabs = canvas.getAllByRole('tab');
 		await userEvent.hover(tabs[2]);
 	},
+};
+
+export const Links: Story = {
+	render: (args) => {
+		const { pathname } = useLocation();
+		return (
+			<Tabs selectedKey={pathname} {...args}>
+				<TabList aria-label="tabs">
+					<Tab id="/tab1" href="/tab1">
+						Tab 1
+					</Tab>
+					<Tab id="/tab2" href="/tab2">
+						Tab 2
+					</Tab>
+					<Tab id="/tab3" href="/tab3">
+						Tab 3
+					</Tab>
+				</TabList>
+				<TabPanel id={pathname}>
+					<Routes>
+						<Route path="/tab1" element={<>Tab body 1</>} />
+						<Route path="/tab2" element={<>Tab body 2</>} />
+						<Route path="/tab3" element={<>Tab body 3</>} />
+					</Routes>
+				</TabPanel>
+			</Tabs>
+		);
+	},
+	decorators: [
+		(Story) => (
+			<Routes>
+				<Route path="/*" element={<Story />} />
+			</Routes>
+		),
+	],
 };
