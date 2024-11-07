@@ -30,6 +30,7 @@
 	color: var(--lp-color-text-ui-primary-base);
 	transform: translate3d(0, 0, 0);
 	will-change: transform, opacity;
+	max-width: var(--lp-menu-max-width);
 
 	&[data-placement='top'] {
 		--origin: translateY(4px);
