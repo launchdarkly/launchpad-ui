@@ -1,5 +1,19 @@
 # @launchpad-ui/components
 
+## 0.5.7
+
+### Patch Changes
+
+- [#1472](https://github.com/launchdarkly/launchpad-ui/pull/1472) [`4638391`](https://github.com/launchdarkly/launchpad-ui/commit/4638391dab663722ad18c7cfdf913ddfbb07b44c) Thanks [@Niznikr](https://github.com/Niznikr)! - Refresh `Button` styles
+
+- [#1473](https://github.com/launchdarkly/launchpad-ui/pull/1473) [`42f63c5`](https://github.com/launchdarkly/launchpad-ui/commit/42f63c5de128210e7eeb5fb704e28955e8af178d) Thanks [@Niznikr](https://github.com/Niznikr)! - Style `Tabs` as links
+
+- [#1474](https://github.com/launchdarkly/launchpad-ui/pull/1474) [`cfc961e`](https://github.com/launchdarkly/launchpad-ui/commit/cfc961e3dd0d12f3084d862742ec65af00412c43) Thanks [@Niznikr](https://github.com/Niznikr)! - Add max-width to `Tooltip`
+
+- Updated dependencies [[`4638391`](https://github.com/launchdarkly/launchpad-ui/commit/4638391dab663722ad18c7cfdf913ddfbb07b44c), [`34f1227`](https://github.com/launchdarkly/launchpad-ui/commit/34f12273a181b5b7d8823b4f678e5d7f941d9a93)]:
+  - @launchpad-ui/tokens@0.12.1
+  - @launchpad-ui/icons@0.20.2
+
 ## 0.5.6
 
 ### Patch Changes
