@@ -2,7 +2,7 @@
 	"name": "launchpad-design-system",
 	"private": true,
 	"displayName": "LaunchPad Design System",
-	"version": "0.1.2",
+	"version": "0.1.3",
 	"publisher": "launchdarklyofficial",
 	"repository": {
 		"type": "git",

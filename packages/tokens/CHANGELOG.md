@@ -1,5 +1,13 @@
 # @launchpad-ui/tokens
 
+## 0.12.1
+
+### Patch Changes
+
+- [#1472](https://github.com/launchdarkly/launchpad-ui/pull/1472) [`4638391`](https://github.com/launchdarkly/launchpad-ui/commit/4638391dab663722ad18c7cfdf913ddfbb07b44c) Thanks [@Niznikr](https://github.com/Niznikr)! - Refresh `Button` styles
+
+- [#1469](https://github.com/launchdarkly/launchpad-ui/pull/1469) [`34f1227`](https://github.com/launchdarkly/launchpad-ui/commit/34f12273a181b5b7d8823b4f678e5d7f941d9a93) Thanks [@Niznikr](https://github.com/Niznikr)! - Update gradient angles
+
 ## 0.12.0
 
 ### Minor Changes
