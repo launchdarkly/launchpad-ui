@@ -104,4 +104,8 @@
 	&[data-focus-visible] {
 		background-color: var(--lp-color-bg-interactive-destructive-hover);
 	}
+
+	& [data-icon] {
+		fill: currentColor;
+	}
 }
