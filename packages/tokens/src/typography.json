@@ -170,7 +170,7 @@
 						"fontFamily": "{fontFamily.base}",
 						"fontWeight": "{fontWeight.regular}",
 						"fontSize": "{fontSize.200}",
-						"lineHeight": "{lineHeight.300}"
+						"lineHeight": "{lineHeight.200}"
 					}
 				},
 				"medium": {
@@ -178,7 +178,15 @@
 						"fontFamily": "{fontFamily.base}",
 						"fontWeight": "{fontWeight.medium}",
 						"fontSize": "{fontSize.200}",
-						"lineHeight": "{lineHeight.300}"
+						"lineHeight": "{lineHeight.200}"
+					}
+				},
+				"semibold": {
+					"$value": {
+						"fontFamily": "{fontFamily.base}",
+						"fontWeight": "{fontWeight.semibold}",
+						"fontSize": "{fontSize.200}",
+						"lineHeight": "{lineHeight.200}"
 					}
 				}
 			},
@@ -188,7 +196,7 @@
 						"fontFamily": "{fontFamily.base}",
 						"fontWeight": "{fontWeight.regular}",
 						"fontSize": "{fontSize.100}",
-						"lineHeight": "{lineHeight.200}"
+						"lineHeight": "{lineHeight.100}"
 					}
 				},
 				"medium": {
@@ -196,7 +204,15 @@
 						"fontFamily": "{fontFamily.base}",
 						"fontWeight": "{fontWeight.medium}",
 						"fontSize": "{fontSize.100}",
-						"lineHeight": "{lineHeight.200}"
+						"lineHeight": "{lineHeight.100}"
+					}
+				},
+				"semibold": {
+					"$value": {
+						"fontFamily": "{fontFamily.base}",
+						"fontWeight": "{fontWeight.semibold}",
+						"fontSize": "{fontSize.100}",
+						"lineHeight": "{lineHeight.100}"
 					}
 				}
 			}

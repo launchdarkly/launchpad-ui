@@ -118,7 +118,7 @@ sd.registerFormat({
 				});
 			});
 
-		const defaultTokens = `${header}:root, [data-theme='default'] {\n${dictionary.allTokens
+		const defaultTokens = `${header}:root, [data-theme] {\n${dictionary.allTokens
 			.filter((token) => !!token.$value)
 			.map(formatProperty)
 			.join('\n')}\n}\n`;

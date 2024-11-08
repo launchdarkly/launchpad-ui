@@ -40,10 +40,10 @@
 				},
 				"secondary": {
 					"base": {
-						"$value": "transparent"
+						"$value": "{color.bg.ui.primary}"
 					},
 					"active": {
-						"$value": "transparent"
+						"$value": "{color.bg.ui.primary}"
 					},
 					"focus": {
 						"$value": "{color.gray.50}",
@@ -72,18 +72,20 @@
 				},
 				"destructive": {
 					"base": {
-						"$value": "transparent"
+						"$value": "{color.red.500}",
+						"dark": "{color.red.600}"
 					},
 					"active": {
-						"$value": "transparent"
+						"$value": "{color.red.500}",
+						"dark": "{color.red.600}"
 					},
 					"focus": {
-						"$value": "{color.red.50}",
-						"dark": "#FF496D1A"
+						"$value": "{color.red.600}",
+						"dark": "{color.red.500}"
 					},
 					"hover": {
-						"$value": "{color.red.50}",
-						"dark": "#FF496D1A"
+						"$value": "{color.red.600}",
+						"dark": "{color.red.500}"
 					}
 				},
 				"disabled": {

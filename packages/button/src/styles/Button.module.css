@@ -131,7 +131,7 @@
 	--Button-color-text-primary-withIcon: var(--lp-color-text-interactive-primary-base);
 
 	/* ------- DESTRUCTIVE ------- */
-	--Button-color-background-destructive: transparent;
+	--Button-color-background-destructive: var(--lp-color-bg-interactive-destructive-base);
 	--lp-component-button-color-border-destructive-hover: var(
 		--lp-color-border-interactive-destructive
 	);
@@ -260,18 +260,15 @@
 	align-items: center;
 	justify-content: center;
 	margin: 0;
-	font-family: var(--lp-font-family-base);
-	font-weight: var(--Button-font-weight);
 	text-align: center;
 	text-decoration: none;
 	text-transform: var(--Button-text-transform);
 	vertical-align: initial;
 	white-space: nowrap;
-	border: var(--Button-border-default);
+	border: none;
 	border-radius: var(--Button-border-radius-default);
-	font-size: var(--Button-font-size-default);
-	line-height: var(--Button-line-height-default);
-	padding: 3px var(--lp-spacing-300);
+	font: var(--lp-text-label-1-semibold);
+	padding: calc(5px + var(--Button-padding, 0px)) var(--lp-spacing-300);
 	cursor: default;
 	user-select: none;
 	appearance: none;
@@ -279,6 +276,7 @@
 }
 
 .Button--tiny {
+	font: var(--lp-text-label-2-semibold);
 	border-radius: var(--Button-border-radius-small);
 	font-size: var(--lp-font-size-100);
 	line-height: 114%;
@@ -288,16 +286,14 @@
 
 .Button--small {
 	border-radius: var(--Button-border-radius-small);
-	font-size: var(--Button-font-size-small);
-	line-height: var(--Button-line-height-small);
-	padding: 1px var(--lp-spacing-300);
+	font: var(--lp-text-label-2-semibold);
+	padding: calc(3px + var(--Button-padding, 0px)) var(--lp-spacing-300);
 	min-height: 1.5rem;
 }
 
 .Button--big {
-	font-size: var(--Button-font-size-large);
-	line-height: var(--Button-line-height-large);
-	padding: 7px var(--lp-spacing-400);
+	font: var(--lp-text-body-1-semibold);
+	padding: calc(7px + var(--Button-padding, 0px)) var(--lp-spacing-400);
 	min-height: 2.5rem;
 }
 
@@ -343,6 +339,8 @@
 /* ------- DEFAULT ------- */
 
 .Button--default {
+	--Button-padding: 0px;
+	border: var(--Button-border-default);
 	background-color: var(--lp-component-button-color-bg-default);
 	border-color: var(--Button-color-border-default);
 	color: var(--Button-color-text-default);
@@ -361,7 +359,6 @@
 .Button--icon.Button--default:hover {
 	background-color: var(--Button-color-background-default-hover);
 	color: var(--Button-color-text-default-hover);
-	box-shadow: var(--Button-box-shadow-hover);
 }
 
 .Button--default:focus-visible {
@@ -378,34 +375,32 @@
 /* ------- PRIMARY, ICON, SUBMIT, MINIMAL ------- */
 
 .Button--primary {
+	--Button-padding: 1px;
 	background-color: var(--Button-color-background-primary);
-	border-color: var(--Button-color-border-primary);
 	color: var(--Button-color-text-primary);
+
+	& [data-icon] {
+		fill: var(--lp-color-text-interactive-primary-base);
+	}
 }
 
 .Button--primary:hover {
 	background-color: var(--Button-color-background-primary-hover);
 	color: var(--Button-color-text-primary-hover);
-	box-shadow: var(--Button-box-shadow-hover);
-	border-color: var(--Button-color-border-primary-hover);
 }
 
 .Button--icon.Button--primary {
 	background-color: var(--Button-color-background-primary-withIcon);
-	border: 1px solid var(--Button-color-border-primary-withIcon);
 	color: var(--Button-color-text-primary-withIcon);
 }
 
 .Button--icon.Button--primary:hover {
 	background-color: var(--Button-color-background-primary-focus);
-	border: 1px solid var(--Button-color-border-primary-focus);
-	box-shadow: var(--Button-box-shadow-hover);
 }
 
 .Button--primary:focus-visible,
 .Button--icon.Button--primary:focus-visible {
 	background-color: var(--Button-color-background-primary-focus);
-	border: 1px solid var(--Button-color-border-primary-focus);
 }
 
 .Button--primary:active {
@@ -434,6 +429,7 @@
 /* ------- MINIMAL ------- */
 
 .Button.Button--minimal {
+	--Button-padding: 1px;
 	background-color: var(--lp-color-bg-interactive-tertiary-base);
 	color: var(--lp-color-text-ui-primary-base);
 }
@@ -445,13 +441,6 @@
 
 .Button.Button--minimal:active {
 	background-color: var(--lp-color-bg-interactive-tertiary-active);
-}
-
-.Button.Button--minimal[disabled],
-.Button.Button--minimal[disabled]:hover {
-	background-color: var(--lp-color-bg-interactive-tertiary-base);
-	border: none;
-	color: var(--lp-color-text-interactive-disabled);
 }
 
 /* ------- CLOSE ICON BUTTON ------- */
@@ -482,25 +471,21 @@
 	color: var(--lp-color-white-950);
 }
 
-.Button.Button--close[disabled],
-.Button.Button--close[disabled]:hover {
-	background-color: transparent;
-	border: none;
-	color: var(--lp-color-gray-500);
-}
-
 /* ------- DESTRUCTIVE ------- */
 
 .Button--destructive {
+	--Button-padding: 1px;
 	background-color: var(--Button-color-background-destructive);
-	border-color: var(--lp-component-button-color-border-destructive);
-	color: var(--Button-color-text-destructive);
+	color: var(--Button-color-text-primary);
+
+	& [data-icon] {
+		fill: var(--lp-color-text-interactive-primary-base);
+	}
 }
 
 .Button--destructive:hover {
 	background-color: var(--lp-component-button-color-bg-destructive-hover);
-	color: var(--Button-color-text-destructive-hover);
-	box-shadow: var(--Button-box-shadow-hover);
+	color: var(--Button-color-text-primary-hover);
 }
 
 .Button--destructive:focus-visible {
@@ -511,28 +496,22 @@
 .Button--destructive:active {
 	background-color: var(--lp-component-button-color-bg-destructive-active);
 	box-shadow: var(--Button-box-shadow-active);
-	color: var(--Button-color-text-destructive-active);
 }
 
 .Button--destructive .Button-icon {
-	fill: var(--Button-icon-color-fill-destructive);
+	fill: var(--Button-icon-color-fill-primary);
 }
 
 .Button--destructive:hover .Button-icon {
-	fill: var(--Button-icon-color-fill-destructive-hover);
+	fill: var(--Button-icon-color-fill-primary-hover);
 }
 
 .Button--destructive:active .Button-icon {
-	fill: var(--Button-icon-color-fill-destructive-active);
-}
-
-.Button--icon.Button--destructive {
-	border-color: var(--lp-component-button-color-border-destructive-withIcon);
+	fill: var(--Button-icon-color-fill-primary-active);
 }
 
 .Button--icon.Button--destructive:hover {
 	background-color: var(--Button-color-background-destructive-withIcon-hover);
-	box-shadow: var(--Button-box-shadow-hover);
 }
 
 .Button--icon.Button--destructive:focus-visible {
@@ -541,19 +520,19 @@
 }
 
 .Button--icon.Button--destructive :global(.Button-icon) {
-	fill: var(--Button-icon-color-fill-destructive);
+	fill: var(--Button-icon-color-fill-primary);
 }
 
 .Button--icon.Button--destructive:hover :global(.Button-icon) {
-	fill: var(--Button-icon-color-fill-destructive-hover);
+	fill: var(--Button-icon-color-fill-primary-hover);
 }
 
 .Button--icon.Button--destructive:focus-visible :global(.Button-icon) {
-	fill: var(--Button-icon-color-fill-destructive-focus);
+	fill: var(--Button-icon-color-fill-primary-focus);
 }
 
 .Button--icon.Button--destructive:active :global(.Button-icon) {
-	fill: var(--Button-icon-color-fill-destructive-active);
+	fill: var(--Button-icon-color-fill-primary-active);
 }
 
 /* ------- LINK ------- */
@@ -601,41 +580,13 @@
 .Button[disabled] {
 	cursor: not-allowed;
 	box-shadow: none;
-	background-color: var(--Button-color-background-disabled);
-	color: var(--Button-color-text-disabled);
-	border-color: var(--Button-color-border-disabled);
+	opacity: 0.64;
 }
 
 /* Why are we adding states to a disabled button? */
 .Button[disabled]:hover {
 	cursor: not-allowed;
 	box-shadow: none;
-	background-color: var(--Button-color-background-disabled-hover);
-	color: var(--Button-color-text-disabled-hover);
-	border-color: var(--Button-color-border-disabled);
-}
-
-.Button[disabled]:active {
-	cursor: not-allowed;
-	box-shadow: none;
-	background-color: var(--Button-color-background-disabled-active);
-	color: var(--Button-color-text-disabled-active);
-	border-color: var(--Button-color-border-disabled);
-}
-
-.Button[disabled] [data-icon] {
-	fill: var(--Button-icon-color-fill-disabled);
-}
-
-.Button--link[disabled] {
-	background-color: transparent;
-	border-color: transparent;
-	color: var(--Button-color-link-disabled);
-	text-decoration: none;
-}
-
-.Button--link[disabled]:hover {
-	color: var(--Button-color-link-disabled-hover);
 }
 
 .Button.Button--icon {
@@ -655,12 +606,12 @@
 /* ------- PRIMARY FLAIR ------- */
 
 .Button--primaryFlair {
+	--Button-padding: 1px;
 	background: var(
 		--lp-color-bg-interactive-primary-flair-base-dark,
 		linear-gradient(124deg, #a34fde 0%, #405bff 98.05%)
 	);
 	border-radius: var(--lp-radius-medium, 6px);
-	border: 1px solid var(--Button-color-border-primary-flair);
 	color: var(--Button-color-text-primary);
 }
 
@@ -679,8 +630,6 @@
 		--lp-color-bg-interactive-primary-flair-hover-dark,
 		linear-gradient(124deg, #9655c3 0%, #4b5fdd 98.05%)
 	);
-	border: 1px solid var(--Button-color-border-primary-flair-hover);
-	box-shadow: var(--Button-box-shadow-hover);
 }
 
 .Button--primaryFlair:focus-visible {
@@ -688,7 +637,6 @@
 		--lp-color-bg-interactive-primary-flair-focus-dark,
 		linear-gradient(124deg, #8741b9 0%, #3b50ce 98.05%)
 	);
-	border: 1px solid var(--lp-color-border-interactive-primary-flair-focus);
 }
 
 .Button--icon.Button--primaryFlair:active,
@@ -697,22 +645,14 @@
 		--lp-color-bg-interactive-primary-flair-active-dark,
 		linear-gradient(124deg, #8741b9 0%, #3b50ce 98.05%)
 	);
-	border: 1px solid var(--lp-color-border-interactive-primary-flair-active);
 	box-shadow: var(--Button-box-shadow-active);
-}
-
-.Button.Button--primaryFlair[disabled],
-.Button.Button--primaryFlair[disabled]:hover {
-	background: var(--Button-color-background-disabled);
-	border: none;
-	color: var(--lp-color-text-interactive-disabled);
 }
 
 /* ------- DEFAULT FLAIR ------- */
 
 .Button--defaultFlair {
+	--Button-padding: 1px;
 	background-color: var(--Button-color-background-default-flair);
-	border-color: var(--Button-color-border-default-flair);
 	color: var(--Button-color-text-default-flair);
 }
 
@@ -729,7 +669,6 @@
 .Button--icon.Button--defaultFlair:hover {
 	background-color: var(--Button-color-background-default-flair-hover);
 	color: var(--Button-color-text-default-flair-hover);
-	box-shadow: var(--Button-box-shadow-hover);
 }
 
 .Button--defaultFlair:focus-visible {
@@ -744,16 +683,10 @@
 	color: var(--Button-color-text-default-flair-active);
 }
 
-.Button.Button--defaultFlair[disabled],
-.Button.Button--defaultFlair[disabled]:hover {
-	background: var(--Button-color-background-disabled);
-	border: none;
-	color: var(--lp-color-text-interactive-disabled);
-}
-
 /* ------- MINIMAL FLAIR ------- */
 
 .Button.Button--minimalFlair {
+	--Button-padding: 1px;
 	background-color: var(--Button-color-background-minimal-flair);
 	color: var(--Button-color-text-minimal-flair);
 }
@@ -771,7 +704,6 @@
 .Button--icon.Button--minimalFlair:hover {
 	background-color: var(--Button-color-background-minimal-flair-hover);
 	color: var(--Button-color-text-minimal-flair-hover);
-	box-shadow: var(--Button-box-shadow-hover);
 }
 
 .Button--minimalFlair:focus-visible {
@@ -784,13 +716,6 @@
 	background-color: var(--Button-color-background-minimal-flair-active);
 	color: var(--Button-color-text-minimal-flair-active);
 	box-shadow: var(--Button-box-shadow-active);
-}
-
-.Button.Button--minimalFlair[disabled],
-.Button.Button--minimalFlair[disabled]:hover {
-	background: var(--Button-color-background-disabled);
-	border: none;
-	color: var(--lp-color-text-interactive-disabled);
 }
 
 .ButtonGroup {
