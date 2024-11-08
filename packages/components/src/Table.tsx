@@ -160,7 +160,7 @@ const _Row = <T extends object>(
 		>
 			{allowsDragging && (
 				<Cell>
-					{/* @ts-ignore RAC adds label */}
+					{/* @ts-expect-error RAC adds label */}
 					<IconButton slot="drag" icon="grip-horiz" variant="minimal" size="small" />
 				</Cell>
 			)}
