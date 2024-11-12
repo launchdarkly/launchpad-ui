@@ -9,6 +9,7 @@
 }
 
 .progress {
+	--fill: var(--lp-color-gray-500);
 	display: inline-flex;
 }
 
@@ -17,7 +18,7 @@
 }
 
 .innerCircle {
-	stroke: var(--lp-color-gray-500);
+	stroke: var(--fill);
 }
 
 .base {

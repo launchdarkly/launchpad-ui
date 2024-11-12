@@ -154,3 +154,7 @@
 .pending {
 	opacity: 50%;
 }
+
+.progress {
+	--fill: currentColor;
+}
