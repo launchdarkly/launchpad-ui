@@ -1,5 +1,11 @@
 # @launchpad-ui/components
 
+## 0.5.8
+
+### Patch Changes
+
+- [#1476](https://github.com/launchdarkly/launchpad-ui/pull/1476) [`c286a2b`](https://github.com/launchdarkly/launchpad-ui/commit/c286a2bf6c28ecb60febf7cf652de05acb5cf7e2) Thanks [@Niznikr](https://github.com/Niznikr)! - Update fill for pending button progress
+
 ## 0.5.7
 
 ### Patch Changes
