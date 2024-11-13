@@ -187,15 +187,26 @@ const snackbarQueue = new AriaToastQueue<SnackbarValue>({
 const timeout = 6000;
 
 const ToastQueue = {
+	clear: () => {
+		for (const toast of toastQueue.visibleToasts) {
+			toastQueue.close(toast.key);
+		}
+	},
 	error: (children: ToastContent['children'], options?: ToastOptions) =>
 		toastQueue.add({ children, status: 'error' }, { ...options, timeout }),
 	info: (children: ToastContent['children'], options?: ToastOptions) =>
 		toastQueue.add({ children, status: 'info' }, { ...options, timeout }),
 	success: (children: ToastContent['children'], options?: ToastOptions) =>
 		toastQueue.add({ children, status: 'success' }, { ...options, timeout }),
+	visibleToasts: () => toastQueue.visibleToasts,
 };
 
 const SnackbarQueue = {
+	clear: () => {
+		for (const toast of snackbarQueue.visibleToasts) {
+			snackbarQueue.close(toast.key);
+		}
+	},
 	error: (content: SnackbarContent, options?: ToastOptions) => {
 		const key = snackbarQueue.add({ ...content, status: 'error' }, { ...options });
 		return () => snackbarQueue.close(key);
@@ -208,6 +219,7 @@ const SnackbarQueue = {
 		const key = snackbarQueue.add({ ...content, status: 'success' }, { ...options });
 		return () => snackbarQueue.close(key);
 	},
+	visibleToasts: () => snackbarQueue.visibleToasts,
 };
 
 /**

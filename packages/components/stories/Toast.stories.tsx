@@ -2,7 +2,15 @@ import type { Meta, StoryFn, StoryObj } from '@storybook/react';
 
 import { expect, userEvent, within } from '@storybook/test';
 
-import { Button, Link, SnackbarContainer, SnackbarQueue, ToastContainer, ToastQueue } from '../src';
+import {
+	Button,
+	ButtonGroup,
+	Link,
+	SnackbarContainer,
+	SnackbarQueue,
+	ToastContainer,
+	ToastQueue,
+} from '../src';
 
 const meta: Meta<typeof ToastContainer> = {
 	component: ToastContainer,
@@ -39,16 +47,25 @@ export const Example: Story = {
 		return (
 			<>
 				<ToastContainer {...args} />
-				<Button onPress={() => ToastQueue.success(<span>A success toast!</span>)}>
-					Show toast
-				</Button>
+				<ButtonGroup>
+					<Button onPress={() => ToastQueue.success(<span>A success toast!</span>)}>
+						Show toast
+					</Button>
+					<Button
+						onPress={() => {
+							ToastQueue.clear();
+						}}
+					>
+						Clear
+					</Button>
+				</ButtonGroup>
 			</>
 		);
 	},
 	play: async ({ canvasElement }) => {
 		const canvas = within(canvasElement);
 
-		await userEvent.click(canvas.getByRole('button'));
+		await userEvent.click(canvas.getAllByRole('button')[0]);
 		const body = canvasElement.ownerDocument.body;
 		await expect(await within(body).findByRole('alert'));
 	},
@@ -59,24 +76,33 @@ export const Snackbar: Story = {
 		return (
 			<>
 				<SnackbarContainer {...args} />
-				<Button
-					onPress={() =>
-						SnackbarQueue.info({
-							title: 'An info snackbar',
-							description: 'Dismiss me!',
-							action: <Link href="/">Link</Link>,
-						})
-					}
-				>
-					Show snackbar
-				</Button>
+				<ButtonGroup>
+					<Button
+						onPress={() => {
+							SnackbarQueue.info({
+								title: 'An info snackbar',
+								description: 'Dismiss me!',
+								action: <Link href="/">Link</Link>,
+							});
+						}}
+					>
+						Show snackbar
+					</Button>
+					<Button
+						onPress={() => {
+							SnackbarQueue.clear();
+						}}
+					>
+						Clear
+					</Button>
+				</ButtonGroup>
 			</>
 		);
 	},
 	play: async ({ canvasElement }) => {
 		const canvas = within(canvasElement);
 
-		await userEvent.click(canvas.getByRole('button'));
+		await userEvent.click(canvas.getAllByRole('button')[0]);
 		const body = canvasElement.ownerDocument.body;
 		await expect(await within(body).findByRole('alert'));
 	},
