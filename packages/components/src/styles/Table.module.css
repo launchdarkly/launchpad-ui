@@ -18,6 +18,10 @@
 }
 
 .body {
+	&[data-empty] {
+		font: var(--lp-text-body-2-semibold);
+		text-align: center;
+	}
 }
 
 .row {

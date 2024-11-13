@@ -180,3 +180,18 @@ export const DragAndDrop: Story = {
 		'aria-label': 'table',
 	},
 };
+
+export const Empty: Story = {
+	args: {
+		children: (
+			<>
+				<TableHeader>
+					<Column isRowHeader>Name</Column>
+					<Column>Description</Column>
+					<Column>ID</Column>
+				</TableHeader>
+				<TableBody renderEmptyState={() => 'No results found'}>{[]}</TableBody>
+			</>
+		),
+	},
+};
