@@ -95,14 +95,17 @@
 
 	&[data-hovered] {
 		background-color: var(--lp-color-bg-interactive-destructive-hover);
+		color: var(--lp-color-text-interactive-primary-base);
 	}
 
 	&[data-pressed] {
 		background-color: var(--lp-color-bg-interactive-destructive-active);
+		color: var(--lp-color-text-interactive-primary-base);
 	}
 
 	&[data-focus-visible] {
 		background-color: var(--lp-color-bg-interactive-destructive-hover);
+		color: var(--lp-color-text-interactive-primary-base);
 	}
 
 	& [data-icon] {
