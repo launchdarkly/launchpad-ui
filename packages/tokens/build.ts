@@ -10,7 +10,7 @@ const sd = new StyleDictionary({
 		css: {
 			prefix: 'lp',
 			transformGroup: 'css',
-			transforms: ['name/kebab', 'time/seconds', 'size/rem', 'color/rgb', 'attribute/font'],
+			transforms: ['name/kebab', 'time/seconds', 'size/remToPx', 'color/rgb', 'attribute/font'],
 			buildPath: 'dist/',
 			options: {
 				outputReferences: true,
@@ -19,7 +19,7 @@ const sd = new StyleDictionary({
 			files: [
 				{
 					destination: 'index.css',
-					format: 'css/variables',
+					format: 'css/property',
 					filter: (token) => token.filePath !== 'src/color-aliases.json',
 				},
 				{
@@ -211,6 +211,42 @@ sd.registerFormat({
 			return { ...acc, [key]: [...group, obj] };
 		}, {} as TransformedToken);
 		return `${JSON.stringify(groups, null, 2)}\n`;
+	},
+});
+
+sd.registerFormat({
+	name: 'css/property',
+	format: async ({ dictionary, file }) => {
+		const header = await fileHeader({ file });
+		return (
+			header +
+			dictionary.allTokens
+				.map((token) => {
+					let syntax = '*';
+					switch (token.$type) {
+						case 'color':
+							syntax = token.name.includes('gradient') ? '*' : '<color>';
+							break;
+						case 'duration':
+							syntax = '<time>';
+							break;
+						case 'dimension':
+							syntax = '<length>';
+							break;
+						case 'number':
+							syntax = '<integer>';
+							break;
+						case 'fontWeight':
+							syntax = '<integer>';
+							break;
+						default:
+							break;
+					}
+
+					return `@property --${token.name} {\n\tsyntax: "${syntax}";\n\tinherits: false;\n\tinitial-value: ${token.$value};\n}\n`;
+				})
+				.join('\n')
+		);
 	},
 });
 

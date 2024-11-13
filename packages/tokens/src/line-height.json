@@ -1,6 +1,6 @@
 {
 	"lineHeight": {
-		"$type": "number",
+		"$type": "dimension",
 		"100": {
 			"$value": "{size.16}"
 		},
