@@ -275,6 +275,7 @@ const icons = [
 	'toggle-stack',
 	'tools',
 	'triangle-square-circle',
+	'upload',
 	'visibility',
 	'visibility-off',
 	'visibility-scan',
