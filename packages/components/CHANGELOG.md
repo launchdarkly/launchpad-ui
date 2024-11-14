@@ -1,5 +1,15 @@
 # @launchpad-ui/components
 
+## 0.5.9
+
+### Patch Changes
+
+- [#1480](https://github.com/launchdarkly/launchpad-ui/pull/1480) [`0c7ee47`](https://github.com/launchdarkly/launchpad-ui/commit/0c7ee478a1886b661dfb8e6a80b0405626c0dc5c) Thanks [@Niznikr](https://github.com/Niznikr)! - Support clearing `Toast` queues
+
+- [#1483](https://github.com/launchdarkly/launchpad-ui/pull/1483) [`a2d44fa`](https://github.com/launchdarkly/launchpad-ui/commit/a2d44fa6c4d84dd85c1d95d985c26619bb4fce5e) Thanks [@Niznikr](https://github.com/Niznikr)! - Fix destructive `MenuItem` styles
+
+- [#1475](https://github.com/launchdarkly/launchpad-ui/pull/1475) [`93f59e6`](https://github.com/launchdarkly/launchpad-ui/commit/93f59e69a2ca667b99094d71a544bb00c2bcf5f5) Thanks [@Niznikr](https://github.com/Niznikr)! - Add `GridList`
+
 ## 0.5.8
 
 ### Patch Changes
