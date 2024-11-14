@@ -1,5 +1,11 @@
 # @launchpad-ui/components
 
+## 0.5.10
+
+### Patch Changes
+
+- [#1482](https://github.com/launchdarkly/launchpad-ui/pull/1482) [`cc785df`](https://github.com/launchdarkly/launchpad-ui/commit/cc785dfedb485880573993f056b71dcf0f0323ac) Thanks [@Niznikr](https://github.com/Niznikr)! - Match `Button` display for `Pressable`
+
 ## 0.5.9
 
 ### Patch Changes
