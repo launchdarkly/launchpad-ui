@@ -1,5 +1,29 @@
 # @launchpad-ui/core
 
+## 0.51.2
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @launchpad-ui/alert@0.9.44
+  - @launchpad-ui/avatar@0.6.51
+  - @launchpad-ui/banner@0.10.53
+  - @launchpad-ui/button@0.12.39
+  - @launchpad-ui/chip@0.9.51
+  - @launchpad-ui/clipboard@0.11.59
+  - @launchpad-ui/collapsible@0.1.83
+  - @launchpad-ui/drawer@0.5.59
+  - @launchpad-ui/dropdown@0.6.133
+  - @launchpad-ui/filter@0.7.44
+  - @launchpad-ui/form@0.11.44
+  - @launchpad-ui/inline-edit@0.3.44
+  - @launchpad-ui/menu@0.13.44
+  - @launchpad-ui/modal@0.17.60
+  - @launchpad-ui/navigation@0.12.59
+  - @launchpad-ui/pagination@0.4.59
+  - @launchpad-ui/tag@0.3.59
+  - @launchpad-ui/card@0.2.59
+
 ## 0.51.1
 
 ### Patch Changes
@@ -3131,7 +3155,7 @@
   root.render(
     <IconContext.Provider value={{ path: icons }}>
       <App />
-    </IconContext.Provider>
+    </IconContext.Provider>,
   );
   ```
 
