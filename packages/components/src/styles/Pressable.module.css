@@ -1,5 +1,6 @@
 .pressable {
 	outline: none;
+	display: inline-flex;
 }
 
 .pressable[data-focus-visible] {
