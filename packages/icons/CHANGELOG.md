@@ -1,5 +1,11 @@
 # @launchpad-ui/icons
 
+## 0.20.3
+
+### Patch Changes
+
+- [#1485](https://github.com/launchdarkly/launchpad-ui/pull/1485) [`18a3a22`](https://github.com/launchdarkly/launchpad-ui/commit/18a3a22cd15781ea9a23859422e41a72021c32c9) Thanks [@andrewklatzke](https://github.com/andrewklatzke)! - Add Upload icon to Icon options
+
 ## 0.20.2
 
 ### Patch Changes
@@ -558,7 +564,7 @@
   root.render(
     <IconContext.Provider value={{ path: icons }}>
       <App />
-    </IconContext.Provider>
+    </IconContext.Provider>,
   );
   ```
 
