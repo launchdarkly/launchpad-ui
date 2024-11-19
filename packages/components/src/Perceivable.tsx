@@ -28,7 +28,9 @@ const Perceivable = ({ children }: PerceivableProps) => {
 
 	return (
 		<Provider values={[[PerceivableContext, { ...props }]]}>
-			<FocusableProvider aria-disabled="true">{children}</FocusableProvider>
+			<FocusableProvider aria-disabled="true" data-lp="">
+				{children}
+			</FocusableProvider>
 		</Provider>
 	);
 };

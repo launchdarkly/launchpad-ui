@@ -78,7 +78,7 @@
 	}
 }
 
-:global([data-rac][aria-disabled='true']):not([href]) {
+:global([data-lp][aria-disabled='true']) {
 	opacity: 0.64;
 	cursor: default;
 }
