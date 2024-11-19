@@ -19,4 +19,8 @@
 	&[data-drop-target] {
 		background-color: var(--lp-color-bg-interactive-selected);
 	}
+
+	&[data-disabled] {
+		opacity: 0.64;
+	}
 }
