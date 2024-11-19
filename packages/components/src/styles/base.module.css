@@ -77,3 +77,8 @@
 		cursor: not-allowed;
 	}
 }
+
+:global([data-rac][aria-disabled='true']):not([href]) {
+	opacity: 0.64;
+	cursor: default;
+}
