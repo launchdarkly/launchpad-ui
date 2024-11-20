@@ -16,6 +16,17 @@ export default meta;
 
 type Story = StoryObj<typeof Alert>;
 
+export const Neutral: Story = {
+	args: {
+		children: (
+			<>
+				<Heading>Heading</Heading>
+				<Text>Content</Text>
+			</>
+		),
+	},
+};
+
 export const Info: Story = {
 	args: {
 		children: (
@@ -24,6 +35,7 @@ export const Info: Story = {
 				<Text>Content</Text>
 			</>
 		),
+		status: 'info',
 	},
 };
 
@@ -52,10 +64,10 @@ export const Success: Story = {
 	},
 };
 
-export const Subtle: Story = {
+export const Inline: Story = {
 	args: {
 		children: <Text>Content</Text>,
-		variant: 'subtle',
+		variant: 'inline',
 		isDismissable: true,
 		onDismiss: () => undefined,
 	},
