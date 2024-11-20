@@ -77,3 +77,8 @@
 		cursor: not-allowed;
 	}
 }
+
+:global([data-lp][aria-disabled='true']) {
+	opacity: 0.64;
+	cursor: default;
+}

@@ -36,6 +36,7 @@
 		"@internationalized/date": "3.5.6",
 		"@launchpad-ui/icons": "workspace:~",
 		"@launchpad-ui/tokens": "workspace:~",
+		"@react-aria/focus": "3.18.4",
 		"@react-aria/toast": "3.0.0-beta.17",
 		"@react-aria/utils": "3.25.3",
 		"@react-stately/toast": "3.0.0-beta.6",

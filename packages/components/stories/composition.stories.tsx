@@ -1,10 +1,10 @@
 import type { Meta, StoryFn, StoryObj } from '@storybook/react';
-import type { ComponentPropsWithoutRef, Fragment } from 'react';
+import type { ComponentPropsWithoutRef } from 'react';
 
 import { Icon } from '@launchpad-ui/icons';
 import { vars } from '@launchpad-ui/vars';
 import { expect, userEvent, within } from '@storybook/test';
-import { useRef, useState } from 'react';
+import { type Fragment, useRef, useState } from 'react';
 import { VisuallyHidden } from 'react-aria';
 
 import {
@@ -15,11 +15,13 @@ import {
 	Dialog,
 	DialogTrigger,
 	Group,
+	IconButton,
 	Input,
 	Label,
 	ListBox,
 	ListBoxItem,
 	type ListBoxItemProps,
+	Perceivable,
 	Popover,
 	RadioButton,
 	RadioGroup,
@@ -221,4 +223,35 @@ export const ListBoxTooltip: Story = {
 		await userEvent.click(canvas.getByRole('button'));
 	},
 	name: 'ListBox Tooltip',
+};
+
+export const DisabledWithTooltip: Story = {
+	render: () => {
+		return (
+			<div
+				style={{
+					display: 'inline-flex',
+					flexDirection: 'column',
+					gap: vars.spacing[400],
+				}}
+			>
+				<Perceivable>
+					<TooltipTrigger>
+						<Button onPress={() => console.log('Pressed')}>Button</Button>
+						<Tooltip placement="right">Message</Tooltip>
+					</TooltipTrigger>
+					<TooltipTrigger>
+						<IconButton
+							icon="add"
+							size="small"
+							variant="minimal"
+							aria-label="create"
+							onPress={() => console.log('Pressed')}
+						/>
+						<Tooltip placement="right">Message</Tooltip>
+					</TooltipTrigger>
+				</Perceivable>
+			</div>
+		);
+	},
 };
