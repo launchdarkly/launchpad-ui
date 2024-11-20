@@ -1,75 +1,62 @@
 :root {
-	--lp-component-alert-notification-flair-strong-color-text: var(--lp-color-white-950);
-	--lp-component-alert-notification-flair-strong-color-fill: var(--lp-color-white-950);
-	--lp-component-alert-notification-flair-strong-button-color-bg: var(--lp-color-white-950);
-	--lp-component-alert-notification-flair-strong-button-color-bg-hover: var(--lp-color-gray-100);
-	--lp-component-alert-notification-flair-strong-button-color-bg-focus: var(--lp-color-gray-200);
-	--lp-component-alert-notification-flair-strong-button-color-bg-active: var(--lp-color-gray-200);
-	--lp-component-alert-notification-flair-strong-button-button-color-border: var(
-		--lp-color-white-950
-	);
-	--lp-component-alert-notification-flair-strong-button-color-text: var(--lp-color-black-300);
-	--lp-component-alert-notification-flair-strong-button-color-text-hover: var(--lp-color-black-300);
-	--lp-component-alert-notification-flair-strong-button-color-text-focus: var(--lp-color-black-300);
-	--lp-component-alert-notification-flair-strong-button-color-text-active: var(--lp-color-black-300);
-	--lp-component-alert-color-bg-warning: var(--lp-color-brand-yellow-light);
 	--lp-component-alert-fill-warning: var(--lp-color-brand-yellow-dark);
-	--lp-component-alert-border-warning: var(--lp-color-brand-yellow-dark);
 }
 
 [data-theme='dark'] {
-	--lp-component-alert-color-bg-warning: var(--lp-color-brand-orange-dark);
 	--lp-component-alert-fill-warning: var(--lp-color-brand-yellow-base);
-	--lp-component-alert-border-warning: var(--lp-color-brand-orange-base);
 }
 
 .Alert {
 	position: relative;
 	display: flex;
-	gap: 0.875rem;
-	border: none;
-	padding: 0.875rem 1.125rem;
-	font-size: 0.875rem;
-	line-height: 1.45;
+	gap: var(--lp-spacing-500);
+	font: var(--lp-text-body-2-regular);
+	padding: var(--lp-spacing-700);
 	white-space: normal;
 	width: 100%;
 	background-color: var(--lp-color-bg-ui-primary);
-	color: var(--lp-color-text-feedback-base);
 	box-sizing: border-box;
-	border-radius: 2px;
+	border-radius: var(--lp-border-radius-regular);
+	border: 1px solid var(--lp-color-border-ui-primary);
+
+	&::before {
+		position: absolute;
+		background: linear-gradient(91deg, var(--color-1) 0%, var(--color-2) 100%);
+		border-radius: calc(var(--lp-border-radius-regular) - 1px)
+			calc(var(--lp-border-radius-regular) - 1px) 0 0;
+		width: 100%;
+		height: var(--lp-size-8);
+		top: 0;
+		left: 0;
+		content: '';
+	}
 }
 
 .Alert-heading {
 	margin-top: 0;
-	margin-bottom: 0.25rem;
-	font-size: 1rem;
-	color: var(--lp-color-text-feedback-base);
-	font-weight: var(--lp-font-weight-medium);
-	line-height: 1.25;
+	margin-bottom: var(--lp-spacing-200);
+	font: var(--lp-text-heading-2-semibold);
 }
 
 .Alert :global([class*='_ButtonGroup']) {
-	margin-top: 0.75rem;
+	margin-top: var(--lp-spacing-700);
 }
 
-.Alert .Alert-icon {
-	line-height: 1.2857;
+.Alert.Alert--bordered .Alert-icon {
+	transform: translateY(2px);
 }
 
 .Alert.Alert--inline {
-	background-color: unset;
 	padding: 0;
+	border: none;
+	gap: var(--lp-spacing-300);
+	align-items: center;
 }
 
 /* Alert size variants */
 
 .Alert.Alert--small {
 	font-size: 0.8125rem;
-}
-
-.Alert.Alert--small .Alert-icon {
-	top: auto;
-	transform: translateY(1px);
 }
 
 .Alert.Alert--wide {
@@ -106,86 +93,43 @@
 	fill: var(--lp-color-fill-feedback-error);
 }
 
-.Alert.Alert--notification.Alert--flair-default {
-	background: rgb(163 79 222 / 0.15);
-}
-
-.Alert.Alert--notification.Alert--flair-strong,
-.Alert.Alert--notification.Alert--flair-strong .Alert-heading {
-	color: var(--lp-component-alert-notification-flair-strong-color-text);
-}
-
-.Alert.Alert--notification.Alert--flair-strong .Alert-close {
-	fill: var(--lp-component-alert-notification-flair-strong-color-fill);
-}
-
-.Alert.Alert--notification.Alert--flair-strong {
-	background: var(--lp-color-gradient-cyan-purple),
-		linear-gradient(0deg, rgb(255 255 255 / 0.3), rgb(255 255 255 / 0.3));
-}
-
-.Alert.Alert--notification.Alert--flair-default.Alert--bordered::before {
-	content: '';
-	position: absolute;
-	inset: 0;
-	border-radius: 2px;
-	border: 1px solid transparent;
-	background: var(--lp-color-gradient-purple-blue) border-box;
-	mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
-	mask-composite: exclude;
+.Alert.Alert--notification.Alert--flair-default.Alert--bordered {
+	--color-1: var(--lp-color-purple-500);
+	--color-2: var(--lp-color-purple-400);
 }
 
 .Alert.Alert--notification.Alert--flair-strong.Alert--bordered {
-	border: 1px solid rgb(255 255 255 / 0.3);
-}
-
-.Alert.Alert--notification.Alert--flair-strong .PrimaryButton {
-	background: var(--lp-component-alert-notification-flair-strong-button-color-bg);
-	border-color: var(--lp-component-alert-notification-flair-strong-button-button-color-border);
-	color: var(--lp-component-alert-notification-flair-strong-button-color-text);
-}
-
-.Alert.Alert--notification.Alert--flair-strong .PrimaryButton:hover {
-	background: var(--lp-component-alert-notification-flair-strong-button-color-bg-hover);
-	color: var(--lp-component-alert-notification-flair-strong-button-color-text-hover);
-}
-
-.Alert.Alert--notification.Alert--flair-strong .PrimaryButton:focus {
-	background: var(--lp-component-alert-notification-flair-strong-button-color-bg-focus);
-	color: var(--lp-component-alert-notification-flair-strong-button-color-text-focus);
-}
-
-.Alert.Alert--notification.Alert--flair-strong .PrimaryButton:active {
-	background: var(--lp-component-alert-notification-flair-strong-button-color-bg-active);
-	color: var(--lp-component-alert-notification-flair-strong-button-color-text-active);
+	--color-1: var(--lp-color-blue-500);
+	--color-2: var(--lp-color-purple-500);
 }
 
 .Alert.Alert--notification .LinkButton {
 	text-decoration: none;
 }
 
-.Alert.Alert--notification.Alert--flair-strong .LinkButton {
-	color: var(--lp-component-alert-notification-flair-strong-color-text);
+.Alert.Alert--bordered {
+	--color-1: var(--lp-color-gray-500);
+	--color-2: var(--lp-color-gray-400);
 }
 
 .Alert.Alert--info.Alert--bordered {
-	border: var(--lp-border-width-200) solid var(--lp-color-border-feedback-info);
-	background-color: var(--lp-color-bg-feedback-info);
+	--color-1: var(--lp-color-blue-500);
+	--color-2: var(--lp-color-blue-400);
 }
 
 .Alert.Alert--success.Alert--bordered {
-	border: var(--lp-border-width-200) solid var(--lp-color-border-feedback-success);
-	background-color: var(--lp-color-bg-feedback-success);
+	--color-1: var(--lp-color-green-500);
+	--color-2: var(--lp-color-green-400);
 }
 
 .Alert.Alert--warning.Alert--bordered {
-	border: var(--lp-border-width-200) solid var(--lp-component-alert-border-warning);
-	background-color: var(--lp-component-alert-color-bg-warning);
+	--color-1: var(--lp-color-brand-yellow-dark);
+	--color-2: var(--lp-color-brand-yellow-base);
 }
 
 .Alert.Alert--error.Alert--bordered {
-	border: var(--lp-border-width-200) solid var(--lp-color-border-feedback-error);
-	background-color: var(--lp-color-bg-feedback-error);
+	--color-1: var(--lp-color-red-500);
+	--color-2: var(--lp-color-red-400);
 }
 
 /* Alert content styles */
@@ -197,32 +141,14 @@
 	word-break: break-word;
 }
 
-.Alert .Alert-close {
-	margin-left: auto;
+.Alert.Alert--bordered .Alert-close {
+	position: absolute;
+	right: var(--lp-spacing-300);
+	top: var(--lp-spacing-500);
 }
 
-.Alert-content :global(a:not([class*='_Button'])) {
-	color: var(--lp-color-text-interactive-base);
-
-	&:hover {
-		text-decoration: none;
-		box-shadow: none;
-	}
-
-	&:focus {
-		box-shadow: 0 0 0 1px hsl(0 0 100% / 0.7), 0 0 0 4px hsl(0 0% 9.8% / 0.1);
-	}
-
-	&:active {
-		color: var(--lp-color-text-interactive-active);
-		box-shadow: none;
-		text-decoration: underline;
-	}
-
-	&:focus:not(:focus-visible) {
-		outline: none;
-		box-shadow: none;
-	}
+.Alert.Alert--inline .Alert-close {
+	margin-left: auto;
 }
 
 .Alert-content ul {
