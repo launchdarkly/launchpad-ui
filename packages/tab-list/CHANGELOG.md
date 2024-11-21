@@ -1,5 +1,11 @@
 # @launchpad-ui/tab-list
 
+## 0.5.35
+
+### Patch Changes
+
+- [#1492](https://github.com/launchdarkly/launchpad-ui/pull/1492) [`21d0a50`](https://github.com/launchdarkly/launchpad-ui/commit/21d0a50717d7374949de0aed08e7574d31d60aa2) Thanks [@renovate](https://github.com/apps/renovate)! - Update dependencies
+
 ## 0.5.34
 
 ### Patch Changes
