@@ -1,5 +1,14 @@
 # @launchpad-ui/inline-edit
 
+## 0.3.45
+
+### Patch Changes
+
+- [#1492](https://github.com/launchdarkly/launchpad-ui/pull/1492) [`21d0a50`](https://github.com/launchdarkly/launchpad-ui/commit/21d0a50717d7374949de0aed08e7574d31d60aa2) Thanks [@renovate](https://github.com/apps/renovate)! - Update dependencies
+
+- Updated dependencies [[`21d0a50`](https://github.com/launchdarkly/launchpad-ui/commit/21d0a50717d7374949de0aed08e7574d31d60aa2)]:
+  - @launchpad-ui/form@0.11.45
+
 ## 0.3.44
 
 ### Patch Changes

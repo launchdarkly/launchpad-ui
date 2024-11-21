@@ -1,6 +1,6 @@
 {
 	"name": "@launchpad-ui/clipboard",
-	"version": "0.11.59",
+	"version": "0.11.60",
 	"status": "beta",
 	"publishConfig": {
 		"access": "public"
