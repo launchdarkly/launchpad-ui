@@ -16,20 +16,19 @@
 	width: 100%;
 	background-color: var(--lp-color-bg-ui-primary);
 	box-sizing: border-box;
-	border-radius: var(--lp-border-radius-regular);
+	border-radius: var(--lp-border-radius-medium);
 	border: 1px solid var(--lp-color-border-ui-primary);
+}
 
-	&::before {
-		position: absolute;
-		background: linear-gradient(91deg, var(--color-1) 0%, var(--color-2) 100%);
-		border-radius: calc(var(--lp-border-radius-regular) - 1px)
-			calc(var(--lp-border-radius-regular) - 1px) 0 0;
-		width: 100%;
-		height: var(--lp-size-8);
-		top: 0;
-		left: 0;
-		content: '';
-	}
+.bar {
+	position: absolute;
+	background: linear-gradient(91deg, var(--color-1) 0%, var(--color-2) 100%);
+	border-radius: calc(var(--lp-border-radius-medium) - 1px)
+		calc(var(--lp-border-radius-medium) - 1px) 0 0;
+	width: 100%;
+	height: var(--lp-size-8);
+	top: 0;
+	left: 0;
 }
 
 .Alert-heading {

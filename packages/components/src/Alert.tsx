@@ -55,6 +55,7 @@ const _Alert = (
 
 	return open ? (
 		<div ref={ref} {...props} role="alert" className={alert({ status, variant, className })}>
+			{variant === 'default' && <div role="presentation" className={styles.bar} />}
 			{status !== 'neutral' && <StatusIcon kind={status || 'info'} className={styles.icon} />}
 			<div className={styles.content}>
 				<Provider values={[[HeadingContext, { className: styles.heading }]]}>{children}</Provider>
