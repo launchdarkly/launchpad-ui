@@ -41,7 +41,7 @@
 	margin-top: var(--lp-spacing-700);
 }
 
-.Alert.Alert--bordered .Alert-icon {
+.Alert.Alert--bordered:has(.Alert-heading) .Alert-icon {
 	transform: translateY(2px);
 }
 
