@@ -129,6 +129,8 @@ const Alert = ({
 			data-test-id={testId}
 			role={['info', 'success', 'notification'].includes(kind) ? 'status' : 'alert'}
 		>
+			{!isInline && <div role="presentation" className={styles.bar} />}
+			<div role="presentation" className={styles.bar} />
 			{!noIcon && (
 				<StatusIcon
 					kind={kind}
@@ -156,7 +158,7 @@ const Alert = ({
 											? 'default'
 											: 'defaultFlair')
 									}
-									className={cx(primaryButton.className, styles.PrimaryButton)}
+									className={cx(primaryButton.className)}
 								/>
 							)}
 
@@ -181,7 +183,7 @@ const Alert = ({
 					size="small"
 					className={styles['Alert-close']}
 					icon={<Icon name="cancel" size="small" />}
-					kind="close"
+					kind="minimal"
 					onClick={() => setDismissedState(true)}
 					data-test-id={`${testId}-dismiss-button`}
 				/>
