@@ -130,7 +130,6 @@ const Alert = ({
 			role={['info', 'success', 'notification'].includes(kind) ? 'status' : 'alert'}
 		>
 			{!isInline && <div role="presentation" className={styles.bar} />}
-			<div role="presentation" className={styles.bar} />
 			{!noIcon && (
 				<StatusIcon
 					kind={kind}
