@@ -1,5 +1,11 @@
 # @launchpad-ui/components
 
+## 0.6.0
+
+### Minor Changes
+
+- [#1491](https://github.com/launchdarkly/launchpad-ui/pull/1491) [`7f59dbc`](https://github.com/launchdarkly/launchpad-ui/commit/7f59dbc4d590655d0fff675b6039370e618ce431) Thanks [@Niznikr](https://github.com/Niznikr)! - Refresh `Alert` styles
+
 ## 0.5.12
 
 ### Patch Changes

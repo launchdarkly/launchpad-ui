@@ -1,5 +1,14 @@
 # @launchpad-ui/core
 
+## 0.51.4
+
+### Patch Changes
+
+- [#1491](https://github.com/launchdarkly/launchpad-ui/pull/1491) [`7f59dbc`](https://github.com/launchdarkly/launchpad-ui/commit/7f59dbc4d590655d0fff675b6039370e618ce431) Thanks [@Niznikr](https://github.com/Niznikr)! - Refresh `Alert` styles
+
+- Updated dependencies [[`7f59dbc`](https://github.com/launchdarkly/launchpad-ui/commit/7f59dbc4d590655d0fff675b6039370e618ce431)]:
+  - @launchpad-ui/alert@0.9.46
+
 ## 0.51.3
 
 ### Patch Changes
