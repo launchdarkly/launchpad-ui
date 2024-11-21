@@ -4,8 +4,8 @@ import type { DisclosurePanelProps, DisclosureProps } from 'react-aria-component
 import { cva } from 'class-variance-authority';
 import { forwardRef } from 'react';
 import {
-	UNSTABLE_Disclosure as AriaDisclosure,
-	UNSTABLE_DisclosurePanel as AriaDisclosurePanel,
+	Disclosure as AriaDisclosure,
+	DisclosurePanel as AriaDisclosurePanel,
 } from 'react-aria-components';
 
 import styles from './styles/Disclosure.module.css';

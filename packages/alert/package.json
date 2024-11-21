@@ -35,7 +35,7 @@
 		"@launchpad-ui/button": "workspace:~",
 		"@launchpad-ui/icons": "workspace:~",
 		"@launchpad-ui/tokens": "workspace:~",
-		"@react-stately/utils": "3.10.4",
+		"@react-stately/utils": "3.10.5",
 		"classix": "2.2.0"
 	},
 	"peerDependencies": {
