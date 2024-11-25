@@ -2,12 +2,14 @@
 	background-color: var(--lp-color-bg-ui-secondary);
 	border: 1px solid var(--lp-color-border-ui-primary);
 	border-radius: var(--lp-border-radius-medium);
-	vertical-align: middle;
-	text-align: center;
+	align-items: center;
+	justify-content: center;
 	margin: 0;
 	outline: none;
 	padding: var(--lp-spacing-500) var(--lp-spacing-700);
-	display: inline-block;
+	display: inline-flex;
+	flex-direction: column;
+	gap: var(--lp-spacing-400);
 
 	&[data-focus-visible],
 	&[data-drop-target] {
