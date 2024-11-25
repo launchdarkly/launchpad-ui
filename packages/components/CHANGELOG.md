@@ -1,5 +1,19 @@
 # @launchpad-ui/components
 
+## 0.6.0
+
+### Minor Changes
+
+- [#1491](https://github.com/launchdarkly/launchpad-ui/pull/1491) [`7f59dbc`](https://github.com/launchdarkly/launchpad-ui/commit/7f59dbc4d590655d0fff675b6039370e618ce431) Thanks [@Niznikr](https://github.com/Niznikr)! - Refresh `Alert` styles
+
+## 0.5.12
+
+### Patch Changes
+
+- [#1488](https://github.com/launchdarkly/launchpad-ui/pull/1488) [`5ab1acf`](https://github.com/launchdarkly/launchpad-ui/commit/5ab1acfe745a4cff0b058693876c27b783a77e34) Thanks [@Niznikr](https://github.com/Niznikr)! - Add `Perceivable` to support `aria-disabled` for RAC
+
+- [#1492](https://github.com/launchdarkly/launchpad-ui/pull/1492) [`21d0a50`](https://github.com/launchdarkly/launchpad-ui/commit/21d0a50717d7374949de0aed08e7574d31d60aa2) Thanks [@renovate](https://github.com/apps/renovate)! - Update dependencies
+
 ## 0.5.11
 
 ### Patch Changes

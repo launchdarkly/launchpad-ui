@@ -1,6 +1,6 @@
 {
 	"name": "@launchpad-ui/dropdown",
-	"version": "0.6.133",
+	"version": "0.6.134",
 	"status": "beta",
 	"publishConfig": {
 		"access": "public"
@@ -36,7 +36,7 @@
 		"@launchpad-ui/icons": "workspace:~",
 		"@launchpad-ui/popover": "workspace:~",
 		"@launchpad-ui/tokens": "workspace:~",
-		"@react-aria/utils": "3.25.3",
+		"@react-aria/utils": "3.26.0",
 		"classix": "2.2.0"
 	},
 	"peerDependencies": {

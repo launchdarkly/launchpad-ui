@@ -1,6 +1,6 @@
 {
 	"name": "@launchpad-ui/filter",
-	"version": "0.7.44",
+	"version": "0.7.45",
 	"status": "beta",
 	"publishConfig": {
 		"access": "public"
@@ -38,7 +38,7 @@
 		"@launchpad-ui/menu": "workspace:~",
 		"@launchpad-ui/tokens": "workspace:~",
 		"@launchpad-ui/tooltip": "workspace:~",
-		"@react-aria/visually-hidden": "3.8.17",
+		"@react-aria/visually-hidden": "3.8.18",
 		"classix": "2.2.0"
 	},
 	"peerDependencies": {

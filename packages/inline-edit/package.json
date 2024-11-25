@@ -1,6 +1,6 @@
 {
 	"name": "@launchpad-ui/inline-edit",
-	"version": "0.3.44",
+	"version": "0.3.45",
 	"status": "alpha",
 	"publishConfig": {
 		"access": "public"
@@ -33,10 +33,10 @@
 		"test": "vitest run --coverage"
 	},
 	"dependencies": {
-		"@react-aria/button": "3.10.1",
-		"@react-aria/focus": "3.18.4",
-		"@react-aria/interactions": "3.22.4",
-		"@react-aria/utils": "3.25.3",
+		"@react-aria/button": "3.11.0",
+		"@react-aria/focus": "3.19.0",
+		"@react-aria/interactions": "3.22.5",
+		"@react-aria/utils": "3.26.0",
 		"@launchpad-ui/button": "workspace:~",
 		"@launchpad-ui/form": "workspace:~",
 		"@launchpad-ui/icons": "workspace:~",

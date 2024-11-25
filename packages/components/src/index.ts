@@ -121,6 +121,7 @@ export { Menu, MenuItem, MenuTrigger, SubmenuTrigger } from './Menu';
 export { Meter } from './Meter';
 export { Modal, ModalOverlay } from './Modal';
 export { NumberField } from './NumberField';
+export { Perceivable } from './Perceivable';
 export { OverlayArrow, Popover } from './Popover';
 export { Pressable } from './Pressable';
 export { ProgressBar } from './ProgressBar';

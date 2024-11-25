@@ -15,6 +15,7 @@ import {
 } from 'react-aria-components';
 
 import { input } from './Input';
+import { PerceivableContext } from './Perceivable';
 import { ProgressBar } from './ProgressBar';
 import styles from './styles/Button.module.css';
 
@@ -47,9 +48,12 @@ const _Button = (
 ) => {
 	const selectContext = useSlottedContext(SelectContext);
 	const state = useContext(SelectStateContext);
+	const ctx = useContext(PerceivableContext);
+
 	return (
 		<AriaButton
 			{...props}
+			{...ctx}
 			ref={ref}
 			className={composeRenderProps(props.className, (className, renderProps) =>
 				state

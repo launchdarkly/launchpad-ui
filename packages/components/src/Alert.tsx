@@ -14,17 +14,18 @@ import styles from './styles/Alert.module.css';
 const alert = cva(styles.base, {
 	variants: {
 		status: {
+			neutral: styles.neutral,
 			error: styles.error,
 			info: styles.info,
 			success: styles.success,
 		},
 		variant: {
 			default: styles.default,
-			subtle: styles.subtle,
+			inline: styles.inline,
 		},
 	},
 	defaultVariants: {
-		status: 'info',
+		status: 'neutral',
 		variant: 'default',
 	},
 });
@@ -41,7 +42,7 @@ const _Alert = (
 	{
 		className,
 		children,
-		status = 'info',
+		status = 'neutral',
 		variant = 'default',
 		isDismissable,
 		isOpen,
@@ -54,7 +55,8 @@ const _Alert = (
 
 	return open ? (
 		<div ref={ref} {...props} role="alert" className={alert({ status, variant, className })}>
-			<StatusIcon kind={status || 'info'} className={styles.icon} />
+			{variant === 'default' && <div role="presentation" className={styles.bar} />}
+			{status !== 'neutral' && <StatusIcon kind={status || 'info'} className={styles.icon} />}
 			<div className={styles.content}>
 				<Provider values={[[HeadingContext, { className: styles.heading }]]}>{children}</Provider>
 			</div>
@@ -64,6 +66,7 @@ const _Alert = (
 					icon="cancel"
 					variant="minimal"
 					size="small"
+					className={styles.close}
 					onPress={() => setOpen(false)}
 				/>
 			)}

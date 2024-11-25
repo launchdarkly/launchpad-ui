@@ -7,10 +7,11 @@ import type { ButtonVariants } from './Button';
 
 import { Icon } from '@launchpad-ui/icons';
 import { cva, cx } from 'class-variance-authority';
-import { forwardRef } from 'react';
+import { forwardRef, useContext } from 'react';
 import { Button as AriaButton, composeRenderProps } from 'react-aria-components';
 
 import { button } from './Button';
+import { PerceivableContext } from './Perceivable';
 import styles from './styles/IconButton.module.css';
 
 const iconButton = cva(styles.base, {
@@ -43,9 +44,11 @@ const _IconButton = (
 	{ size = 'medium', variant = 'default', icon, ...props }: IconButtonProps,
 	ref: ForwardedRef<HTMLButtonElement>,
 ) => {
+	const ctx = useContext(PerceivableContext);
 	return (
 		<AriaButton
 			{...props}
+			{...ctx}
 			ref={ref}
 			className={composeRenderProps(props.className, (className, renderProps) =>
 				cx(button({ ...renderProps, size, variant, className }), iconButton({ size })),

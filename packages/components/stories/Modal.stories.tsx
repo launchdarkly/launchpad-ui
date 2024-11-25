@@ -65,7 +65,7 @@ const renderModal = (args: Story['args']) => (
 							</div>
 							<div slot="body">Body text</div>
 							<div slot="footer">
-								<Button onPress={close}>Cancel</Button>
+								<Button slot="close">Cancel</Button>
 								<Button variant="primary">Confirm</Button>
 							</div>
 						</>

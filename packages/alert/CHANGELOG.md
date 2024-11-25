@@ -1,5 +1,23 @@
 # @launchpad-ui/alert
 
+## 0.9.47
+
+### Patch Changes
+
+- [#1494](https://github.com/launchdarkly/launchpad-ui/pull/1494) [`2e03be1`](https://github.com/launchdarkly/launchpad-ui/commit/2e03be13780de17ef57ff9d7b6c0f69afad0d054) Thanks [@Niznikr](https://github.com/Niznikr)! - Fix legacy alert styles
+
+## 0.9.46
+
+### Patch Changes
+
+- [#1491](https://github.com/launchdarkly/launchpad-ui/pull/1491) [`7f59dbc`](https://github.com/launchdarkly/launchpad-ui/commit/7f59dbc4d590655d0fff675b6039370e618ce431) Thanks [@Niznikr](https://github.com/Niznikr)! - Refresh `Alert` styles
+
+## 0.9.45
+
+### Patch Changes
+
+- [#1492](https://github.com/launchdarkly/launchpad-ui/pull/1492) [`21d0a50`](https://github.com/launchdarkly/launchpad-ui/commit/21d0a50717d7374949de0aed08e7574d31d60aa2) Thanks [@renovate](https://github.com/apps/renovate)! - Update dependencies
+
 ## 0.9.44
 
 ### Patch Changes
