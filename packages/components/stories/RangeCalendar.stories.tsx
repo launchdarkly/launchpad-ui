@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
+import type { ComponentType } from 'react';
 
 import {
 	endOfMonth,
@@ -27,8 +28,7 @@ import {
 
 const meta: Meta<typeof RangeCalendar> = {
 	component: RangeCalendar,
-	// @ts-ignore
-	subcomponents: { CalendarCell, CalendarGrid, Heading },
+	subcomponents: { CalendarCell, CalendarGrid, Heading } as Record<string, ComponentType<unknown>>,
 	title: 'Components/Date and Time/RangeCalendar',
 	parameters: {
 		status: {

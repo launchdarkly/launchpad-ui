@@ -1,4 +1,5 @@
 import type { Meta, StoryFn, StoryObj } from '@storybook/react';
+import type { ComponentType } from 'react';
 
 import { Icon } from '@launchpad-ui/icons';
 import { vars } from '@launchpad-ui/vars';
@@ -8,8 +9,7 @@ import { Button, Label, ListBox, ListBoxItem, Popover, Select, SelectValue, Text
 
 const meta: Meta<typeof Select> = {
 	component: Select,
-	// @ts-ignore
-	subcomponents: { SelectValue },
+	subcomponents: { SelectValue } as Record<string, ComponentType<unknown>>,
 	title: 'Components/Pickers/Select',
 	parameters: {
 		status: {

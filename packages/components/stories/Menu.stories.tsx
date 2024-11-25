@@ -1,4 +1,5 @@
 import type { Meta, StoryFn, StoryObj } from '@storybook/react';
+import type { ComponentType } from 'react';
 import type { Selection as AriaSelection } from 'react-aria-components';
 
 import { Icon } from '@launchpad-ui/icons';
@@ -11,9 +12,9 @@ import {
 	Keyboard,
 	Menu,
 	MenuItem,
+	MenuSection,
 	MenuTrigger,
 	Popover,
-	Section,
 	Separator,
 	SubmenuTrigger,
 	Text,
@@ -21,8 +22,15 @@ import {
 
 const meta: Meta<typeof Menu> = {
 	component: Menu,
-	// @ts-ignore
-	subcomponents: { MenuItem, MenuTrigger, SubmenuTrigger, Section, Header, Keyboard, Separator },
+	subcomponents: {
+		MenuItem,
+		MenuTrigger,
+		SubmenuTrigger,
+		MenuSection,
+		Header,
+		Keyboard,
+		Separator,
+	} as Record<string, ComponentType<unknown>>,
 	title: 'Components/Collections/Menu',
 	parameters: {
 		status: {
@@ -83,15 +91,15 @@ export const Grouping: Story = {
 				<Button>Trigger</Button>
 				<Popover>
 					<Menu {...args}>
-						<Section>
+						<MenuSection>
 							<Header>Group 1</Header>
 							<MenuItem>Item one</MenuItem>
 							<MenuItem>Item two</MenuItem>
-						</Section>
-						<Section>
+						</MenuSection>
+						<MenuSection>
 							<Header>Group 2</Header>
 							<MenuItem>Item three</MenuItem>
-						</Section>
+						</MenuSection>
 					</Menu>
 				</Popover>
 			</MenuTrigger>

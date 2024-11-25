@@ -1,6 +1,8 @@
 import type { Meta, ReactRenderer, StoryFn, StoryObj } from '@storybook/react';
-import { expect, userEvent, within } from '@storybook/test';
 import type { PlayFunction } from '@storybook/types';
+import type { ComponentType } from 'react';
+
+import { expect, userEvent, within } from '@storybook/test';
 
 import { allModes } from '../../../.storybook/modes';
 import {
@@ -16,8 +18,10 @@ import {
 
 const meta: Meta<typeof Modal> = {
 	component: Modal,
-	// @ts-ignore
-	subcomponents: { ModalOverlay, Dialog, DialogTrigger, Heading },
+	subcomponents: { ModalOverlay, Dialog, DialogTrigger, Heading } as Record<
+		string,
+		ComponentType<unknown>
+	>,
 	title: 'Components/Overlays/Modal',
 	parameters: {
 		status: {

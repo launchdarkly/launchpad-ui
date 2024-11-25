@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
+import type { ComponentType } from 'react';
 
 import { useDragAndDrop } from 'react-aria-components';
 import { useListData } from 'react-stately';
@@ -17,8 +18,7 @@ import {
 
 const meta: Meta<typeof GridList> = {
 	component: GridList,
-	// @ts-ignore
-	subcomponents: { GridListItem },
+	subcomponents: { GridListItem } as Record<string, ComponentType<unknown>>,
 	title: 'Components/Collections/GridList',
 	parameters: {
 		status: {
