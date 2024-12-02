@@ -89,6 +89,7 @@ export default defineConfig({
 			entry: packageJSON.source,
 			formats: ['es', 'cjs'],
 			fileName: (format) => (format === 'es' ? 'index.es.js' : 'index.js'),
+			cssFileName: 'style',
 		},
 		rollupOptions: {
 			external: [

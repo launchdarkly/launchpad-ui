@@ -89,6 +89,9 @@
 	},
 	"packageManager": "pnpm@9.14.2",
 	"pnpm": {
+		"overrides": {
+			"vite": "^6.0.2"
+		},
 		"peerDependencyRules": {
 			"allowedVersions": {
 				"react": "18",
