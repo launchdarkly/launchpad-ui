@@ -175,6 +175,7 @@ export const ListBoxTooltip: Story = {
 				<ListBoxItem ref={ref} {...props}>
 					{({ isFocused }) => {
 						return (
+							/* @ts-expect-error render props */
 							<>
 								{props.children}
 								<TooltipTrigger isOpen={isFocused}>
