@@ -1,7 +1,7 @@
 import type { Config } from 'isomorphic-dompurify';
 import type { Tokens } from 'marked';
 
-import { sanitize } from 'isomorphic-dompurify';
+import DOMPurify from 'isomorphic-dompurify';
 import { marked } from 'marked';
 
 function isAnchorNode(node: Element): node is HTMLAnchorElement {
@@ -48,7 +48,7 @@ function renderMarkdown(
 		sanitizationConfig.ALLOWED_TAGS = allowedTags;
 	}
 
-	return sanitize(html, sanitizationConfig);
+	return DOMPurify.sanitize(html, sanitizationConfig);
 }
 
 export { isAnchorNode, renderMarkdown };
