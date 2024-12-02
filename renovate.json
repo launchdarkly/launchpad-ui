@@ -4,7 +4,7 @@
 		":separateMultipleMajorReleases",
 		":maintainLockFilesMonthly",
 		":widenPeerDependencies",
-		"schedule:weekly",
+		"schedule:monthly",
 		"group:allNonMajor"
 	],
 	"packageRules": [
