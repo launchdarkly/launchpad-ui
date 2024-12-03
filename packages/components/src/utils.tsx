@@ -1,7 +1,7 @@
 import type { Href } from '@react-types/shared';
 
 import { useEffect, useState } from 'react';
-import { useHref as useRouterHref } from 'react-router-dom';
+import { useHref as useRouterHref } from 'react-router';
 
 const useMedia = (media: string) => {
 	const [isActive, setIsActive] = useState(false);
@@ -30,7 +30,7 @@ const useMedia = (media: string) => {
 
 const ABSOLUTE_URL_REGEX = /^(?:[a-z][a-z0-9+.-]*:|\/\/)/i;
 
-// https://github.com/remix-run/react-router/blob/main/packages/react-router-dom/index.tsx#L957-L962
+// https://github.com/remix-run/react-router/blob/main/packages/react-router/lib/dom/lib.tsx#L577-L585
 const useHref = (href: Href) => {
 	let absoluteHref: string | undefined;
 	if (typeof href === 'string' && ABSOLUTE_URL_REGEX.test(href)) {
