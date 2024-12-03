@@ -7,7 +7,7 @@ import { RouterProvider as AriaRouterProvider, useHref } from '@launchpad-ui/com
 import sprite from '@launchpad-ui/icons/img/sprite.svg';
 import { withThemeByDataAttribute } from '@storybook/addon-themes';
 import { themes } from '@storybook/theming';
-import { BrowserRouter, useNavigate } from 'react-router-dom';
+import { BrowserRouter, useNavigate } from 'react-router';
 
 import custom from './custom.svg';
 import { allModes } from './modes';

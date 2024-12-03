@@ -3,7 +3,7 @@ import type { MouseEvent } from 'react';
 
 import { Chip } from '@launchpad-ui/chip';
 import { cx } from 'classix';
-import { NavLink, useLocation } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router';
 
 import styles from './styles/Navigation.module.css';
 import { titlecase } from './utils';
