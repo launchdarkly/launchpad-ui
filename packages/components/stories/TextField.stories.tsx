@@ -1,4 +1,5 @@
 import type { Meta, StoryFn, StoryObj } from '@storybook/react';
+import type { ComponentType } from 'react';
 
 import { vars } from '@launchpad-ui/vars';
 import { userEvent, within } from '@storybook/test';
@@ -7,8 +8,10 @@ import { FieldError, Input, Label, Text, TextArea, TextField } from '../src';
 
 const meta: Meta<typeof TextField> = {
 	component: TextField,
-	// @ts-ignore
-	subcomponents: { Label, Text, Input, TextArea, FieldError },
+	subcomponents: { Label, Text, Input, TextArea, FieldError } as Record<
+		string,
+		ComponentType<unknown>
+	>,
 	title: 'Components/Forms/TextField',
 	parameters: {
 		status: {

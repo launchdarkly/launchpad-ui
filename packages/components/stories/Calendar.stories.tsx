@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
+import type { ComponentType } from 'react';
 
 import {
 	getLocalTimeZone,
@@ -25,8 +26,10 @@ import {
 
 const meta: Meta<typeof Calendar> = {
 	component: Calendar,
-	// @ts-ignore
-	subcomponents: { CalendarCell, CalendarGrid, CalendarPicker, Heading, Preset },
+	subcomponents: { CalendarCell, CalendarGrid, CalendarPicker, Heading, Preset } as Record<
+		string,
+		ComponentType<unknown>
+	>,
 	title: 'Components/Date and Time/Calendar',
 	parameters: {
 		status: {

@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
+import type { ComponentType } from 'react';
 
 import { userEvent } from '@storybook/test';
 import { useListData } from 'react-stately';
@@ -7,8 +8,7 @@ import { Label, Tag, TagGroup, TagList } from '../src';
 
 const meta: Meta<typeof TagGroup> = {
 	component: TagGroup,
-	// @ts-ignore
-	subcomponents: { TagList, Tag },
+	subcomponents: { TagList, Tag } as Record<string, ComponentType<unknown>>,
 	title: 'Components/Collections/TagGroup',
 	parameters: {
 		status: {

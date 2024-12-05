@@ -1,11 +1,11 @@
 import type { Meta, StoryObj } from '@storybook/react';
+import type { ComponentType } from 'react';
 
 import { Breadcrumb, Breadcrumbs, Link } from '../src';
 
 const meta: Meta<typeof Breadcrumbs> = {
 	component: Breadcrumbs,
-	// @ts-ignore
-	subcomponents: { Breadcrumb },
+	subcomponents: { Breadcrumb } as Record<string, ComponentType<unknown>>,
 	title: 'Components/Navigation/Breadcrumbs',
 	parameters: {
 		status: {

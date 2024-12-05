@@ -1,4 +1,5 @@
 import type { Meta, StoryFn, StoryObj } from '@storybook/react';
+import type { ComponentType } from 'react';
 
 import { vars } from '@launchpad-ui/vars';
 import { userEvent } from '@storybook/test';
@@ -7,8 +8,7 @@ import { DateField, DateInput, DateSegment, Label, Text } from '../src';
 
 const meta: Meta<typeof DateField> = {
 	component: DateField,
-	// @ts-ignore
-	subcomponents: { DateInput, DateSegment },
+	subcomponents: { DateInput, DateSegment } as Record<string, ComponentType<unknown>>,
 	title: 'Components/Date and Time/DateField',
 	parameters: {
 		status: {

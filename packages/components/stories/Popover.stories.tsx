@@ -1,5 +1,6 @@
 import type { Meta, ReactRenderer, StoryFn, StoryObj } from '@storybook/react';
 import type { PlayFunction } from '@storybook/types';
+import type { ComponentType } from 'react';
 
 import { expect, userEvent, within } from '@storybook/test';
 
@@ -7,8 +8,7 @@ import { Button, Dialog, DialogTrigger, Heading, OverlayArrow, Popover, Pressabl
 
 const meta: Meta<typeof Popover> = {
 	component: Popover,
-	// @ts-ignore
-	subcomponents: { OverlayArrow, DialogTrigger },
+	subcomponents: { OverlayArrow, DialogTrigger } as Record<string, ComponentType<unknown>>,
 	title: 'Components/Overlays/Popover',
 	parameters: {
 		status: {
