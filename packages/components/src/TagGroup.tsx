@@ -39,7 +39,8 @@ const tag = cva(styles.tag, {
 	},
 });
 
-interface TagProps extends AriaTagProps, VariantProps<typeof tag> {}
+interface TagVariants extends VariantProps<typeof tag> {}
+interface TagProps extends AriaTagProps, TagVariants {}
 
 const _TagGroup = ({ className, ...props }: TagGroupProps, ref: ForwardedRef<HTMLDivElement>) => {
 	return <AriaTagGroup {...props} ref={ref} className={group({ className })} />;
@@ -107,5 +108,5 @@ const _Tag = (
  */
 const Tag = forwardRef(_Tag);
 
-export { TagGroup, TagList, Tag };
-export type { TagGroupProps, TagListProps, TagProps };
+export { TagGroup, TagList, Tag, tag };
+export type { TagGroupProps, TagListProps, TagProps, TagVariants };
