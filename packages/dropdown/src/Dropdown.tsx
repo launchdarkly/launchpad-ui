@@ -35,7 +35,7 @@ const Dropdown = <T extends string | object | number>(props: DropdownProps<T>) =
 		...rest
 	} = props;
 
-	const triggerRef = useRef<HTMLElement>();
+	const triggerRef = useRef<HTMLElement | null>(null);
 	const [isOpen, setIsOpen] = useState(isOpenProp ?? false);
 	const [hasOpened, setHasOpened] = useState(isOpen);
 
@@ -102,7 +102,8 @@ const Dropdown = <T extends string | object | number>(props: DropdownProps<T>) =
 			target: targetChild as FunctionComponentElement<
 				AriaAttributes & { ref: ForwardedRef<HTMLElement | undefined>; isopen: string }
 			>,
-			content: contentChild as ReactElement,
+			// biome-ignore lint/suspicious/noExplicitAny: <explanation>
+			content: contentChild as ReactElement<any>,
 		};
 	};
 

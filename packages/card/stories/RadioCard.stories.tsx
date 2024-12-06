@@ -1,4 +1,4 @@
-import type { StoryFn, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 
 import { RadioCard } from '../src/RadioCard';
 
@@ -7,7 +7,7 @@ export default {
 	title: 'Legacy/Deprecated/Card/RadioCard',
 	description: 'A radio button with a label and optional image and subtext.',
 	decorators: [
-		(Story: StoryFn) => (
+		(Story) => (
 			<div style={{ display: 'flex', width: '15rem' }}>
 				<Story />
 			</div>
@@ -19,7 +19,7 @@ export default {
 		},
 		chromatic: { disableSnapshot: true },
 	},
-};
+} as Meta<typeof RadioCard>;
 
 type Story = StoryObj<typeof RadioCard>;
 

@@ -1,4 +1,4 @@
-import type { MouseEvent, ReactNode, SyntheticEvent } from 'react';
+import type { JSX, MouseEvent, ReactNode, SyntheticEvent } from 'react';
 
 import { IconButton } from '@launchpad-ui/button';
 import { Icon } from '@launchpad-ui/icons';
@@ -32,7 +32,7 @@ const FilterButton = forwardRef<Ref, FilterButtonProps>((props, ref) => {
 		name,
 		hideName,
 		isClearable,
-		clearTooltip,
+		clearTooltip = 'Clear filter',
 		onClear,
 		disabled,
 		isSelected,
@@ -101,10 +101,6 @@ const FilterButton = forwardRef<Ref, FilterButtonProps>((props, ref) => {
 		</div>
 	);
 });
-
-FilterButton.defaultProps = {
-	clearTooltip: 'Clear filter',
-};
 
 FilterButton.displayName = 'FilterButton';
 

@@ -1,5 +1,6 @@
 import type { StoryObj } from '@storybook/react';
 import type { DOMNode, Element, Text } from 'html-react-parser';
+import type { JSX } from 'react';
 
 import parse from 'html-react-parser';
 

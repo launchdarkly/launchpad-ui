@@ -1,5 +1,5 @@
 import type { IconProps } from '@launchpad-ui/icons';
-import type { ComponentProps, ReactElement } from 'react';
+import type { ComponentProps, JSX, ReactElement } from 'react';
 
 import { IconButton } from '@launchpad-ui/button';
 import { Tooltip } from '@launchpad-ui/tooltip';

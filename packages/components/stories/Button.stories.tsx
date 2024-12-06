@@ -1,4 +1,4 @@
-import type { Meta, ReactRenderer, StoryFn, StoryObj } from '@storybook/react';
+import type { Meta, ReactRenderer, StoryObj } from '@storybook/react';
 import type { PlayFunction } from '@storybook/types';
 
 import { Icon } from '@launchpad-ui/icons';
@@ -17,7 +17,7 @@ const meta: Meta<typeof Button> = {
 		},
 	},
 	decorators: [
-		(Story: StoryFn) => (
+		(Story) => (
 			<div
 				style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: '1rem' }}
 			>

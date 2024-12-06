@@ -1,4 +1,4 @@
-import type { StoryFn, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 
 import { Button } from '@launchpad-ui/button';
 import { userEvent, within } from '@storybook/test';
@@ -33,7 +33,7 @@ export default {
 		},
 	},
 	decorators: [
-		(Story: StoryFn) => (
+		(Story) => (
 			<div
 				style={{
 					height: '100vh',
@@ -46,7 +46,7 @@ export default {
 			</div>
 		),
 	],
-};
+} as Meta<typeof Tooltip>;
 
 type Story = StoryObj<typeof Tooltip>;
 

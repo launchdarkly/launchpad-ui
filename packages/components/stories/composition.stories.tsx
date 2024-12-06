@@ -1,4 +1,4 @@
-import type { Meta, StoryFn, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 import type { ComponentPropsWithoutRef } from 'react';
 
 import { Icon } from '@launchpad-ui/icons';
@@ -44,7 +44,7 @@ const meta: Meta<typeof Container> = {
 		chromatic: { pauseAnimationAtEnd: true },
 	},
 	decorators: [
-		(Story: StoryFn) => (
+		(Story) => (
 			<div style={{ height: 'var(--lp-size-224)' }}>
 				<Story />
 			</div>

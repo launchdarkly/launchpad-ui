@@ -49,8 +49,8 @@ describe('FilterButton', () => {
 		it('should render a tooltip with default label', async () => {
 			const user = userEvent.setup();
 			render(createComponent({ isClearable: true }));
-			expect(true).toBe(true);
 
+			await user.hover(document.body);
 			await user.hover(screen.getByRole('button', { name: 'Clear filter' }));
 
 			await waitFor(() => {

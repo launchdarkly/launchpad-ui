@@ -67,7 +67,8 @@ const RadioGroup = (props: RadioGroupProps) => {
 			return elem;
 		}
 
-		const item = elem as ReactElement;
+		// biome-ignore lint/suspicious/noExplicitAny: <explanation>
+		const item = elem as ReactElement<any>;
 
 		if (item?.type && item.type === Radio) {
 			return cloneElement(item, {

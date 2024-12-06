@@ -1,4 +1,4 @@
-import type { StoryFn, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 
 import { Button } from '@launchpad-ui/button';
 import { Tooltip } from '@launchpad-ui/tooltip';
@@ -21,7 +21,7 @@ export default {
 		chromatic: { disableSnapshot: true },
 	},
 	decorators: [
-		(Story: StoryFn) => (
+		(Story) => (
 			<div
 				style={{
 					height: '100vh',
@@ -31,7 +31,7 @@ export default {
 			</div>
 		),
 	],
-};
+} as Meta<typeof Drawer>;
 
 type Story = StoryObj<typeof Drawer>;
 

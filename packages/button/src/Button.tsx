@@ -2,6 +2,7 @@ import type { IconProps } from '@launchpad-ui/icons';
 import type {
 	ButtonHTMLAttributes,
 	ElementType,
+	JSX,
 	KeyboardEventHandler,
 	MouseEvent,
 	ReactElement,
@@ -95,7 +96,12 @@ const ButtonComponent = forwardRef<HTMLButtonElement, ButtonProps>((props, ref) 
 
 	const renderChildren = () => {
 		if (asChild && isValidElement(children)) {
-			return cloneElement(children, undefined, getFinalChildren(children.props.children));
+			return cloneElement(
+				children,
+				undefined,
+				// biome-ignore lint/suspicious/noExplicitAny: <explanation>
+				getFinalChildren((children as ReactElement<any>).props.children),
+			);
 		}
 
 		return getFinalChildren(children);

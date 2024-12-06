@@ -1,4 +1,4 @@
-import type { Meta, ReactRenderer, StoryFn, StoryObj } from '@storybook/react';
+import type { Meta, ReactRenderer, StoryObj } from '@storybook/react';
 import type { PlayFunction } from '@storybook/types';
 
 import { expect, userEvent, within } from '@storybook/test';
@@ -20,7 +20,7 @@ const meta: Meta<typeof Popover> = {
 		},
 	},
 	decorators: [
-		(Story: StoryFn) => (
+		(Story) => (
 			<div style={{ height: 'var(--lp-size-144)' }}>
 				<Story />
 			</div>

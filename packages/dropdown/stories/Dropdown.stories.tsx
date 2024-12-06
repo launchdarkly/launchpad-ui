@@ -1,4 +1,4 @@
-import type { StoryFn, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 
 import { Menu, MenuItem } from '@launchpad-ui/menu';
 
@@ -16,7 +16,7 @@ export default {
 		chromatic: { disableSnapshot: true },
 	},
 	decorators: [
-		(Story: StoryFn) => (
+		(Story) => (
 			<div
 				style={{
 					height: '100vh',
@@ -29,7 +29,7 @@ export default {
 			</div>
 		),
 	],
-};
+} as Meta<typeof Dropdown>;
 
 type Story = StoryObj<typeof Dropdown>;
 

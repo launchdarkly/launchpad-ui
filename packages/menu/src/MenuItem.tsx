@@ -1,6 +1,6 @@
 import type { IconProps } from '@launchpad-ui/icons';
 import type { PopoverPlacement } from '@launchpad-ui/popover';
-import type { ComponentPropsWithRef, ElementType, PropsWithRef, ReactElement } from 'react';
+import type { ComponentPropsWithRef, ElementType, JSX, PropsWithRef, ReactElement } from 'react';
 
 import { Tooltip } from '@launchpad-ui/tooltip';
 import { Slot } from '@radix-ui/react-slot';
