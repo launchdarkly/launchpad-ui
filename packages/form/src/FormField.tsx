@@ -1,3 +1,4 @@
+import type { JSX } from 'react';
 import type { FieldErrorProps } from './FieldError';
 import type { FormHintProps } from './FormHint';
 import type { LabelProps } from './Label';

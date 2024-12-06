@@ -3,10 +3,10 @@ import type { ComputePositionConfig, Placement, Strategy } from '@floating-ui/do
 import type {
 	CSSProperties,
 	FocusEvent,
+	JSX,
 	MouseEvent,
 	PointerEvent,
 	ReactElement,
-	ReactHTML,
 	KeyboardEvent as ReactKeyboardEvent,
 	ReactNode,
 	Ref,
@@ -64,7 +64,7 @@ type PopoverProps = {
 	restrictHeight?: boolean;
 	restrictWidth?: boolean;
 	rootElementStyle?: CSSProperties;
-	rootElementTag?: keyof ReactHTML;
+	rootElementTag?: keyof JSX.IntrinsicElements;
 	target?: string | JSX.Element;
 	targetElementRef?: Ref<Element>;
 	targetClassName?: string;
@@ -147,8 +147,8 @@ const Popover = ({
 		return;
 	}, []);
 	const arrowRef = useRef<HTMLDivElement>(null);
-	const timeoutRef = useRef<ReturnType<typeof setTimeout>>();
-	const optionsRef = useRef<Partial<ComputePositionConfig>>();
+	const timeoutRef = useRef<ReturnType<typeof setTimeout>>(null);
+	const optionsRef = useRef<Partial<ComputePositionConfig>>({});
 	const popoverId = useRef(`popover-${useId()}`);
 
 	const updatePosition = useCallback(async () => {
@@ -385,6 +385,7 @@ const Popover = ({
 					transition={{ duration: 0.15 }}
 					initial={{ opacity: 0 }}
 					animate={{ opacity: 1 }}
+					/* @ts-expect-error framer */
 					className={cx(
 						styles['Popover-content'],
 						restrictWidth && styles['Popover-content--restrictWidth'],
@@ -420,10 +421,13 @@ const Popover = ({
 	const { target, content } = parseChildren();
 	const hasEmptyContent =
 		content === null || content === undefined || (typeof content === 'string' && !content);
-	const isTargetDisabled = isValidElement(target) ? !!target?.props?.disabled : false;
+	const isTargetDisabled = isValidElement(target)
+		? // biome-ignore lint/suspicious/noExplicitAny: <explanation>
+			!!(target as ReactElement<any>)?.props?.disabled
+		: false;
 
 	const targetProps: PopoverTargetProps = {
-		ref: targetRef,
+		ref: targetRef as RefObject<HTMLElement>,
 		className: cx(
 			styles['Popover-target'],
 			targetClassName,
@@ -453,7 +457,8 @@ const Popover = ({
 	return createElement(
 		rootElementTag,
 		targetProps,
-		cloneElement(target as ReactElement, {
+		// biome-ignore lint/suspicious/noExplicitAny: <explanation>
+		cloneElement(target as ReactElement<any>, {
 			ref: targetElementRef,
 			...(isOpen && { 'aria-describedby': popoverId.current }),
 			'data-state': isOpen ? 'open' : 'closed',

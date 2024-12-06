@@ -130,6 +130,7 @@ const DrawerContainer = ({
 					animate="visible"
 					variants={overlay}
 					transition={{ duration: 0.15 }}
+					/* @ts-expect-error framer */
 					role="presentation"
 					className={styles.overlay}
 					onMouseDown={handleOverlayClick}
@@ -139,6 +140,7 @@ const DrawerContainer = ({
 							initial="hidden"
 							animate="visible"
 							variants={slideRight}
+							/* @ts-expect-error framer */
 							role="dialog"
 							aria-labelledby={DRAWER_LABELLED_BY}
 							aria-describedby={DRAWER_LABELLED_BY}

@@ -1,5 +1,6 @@
 import type { AriaButtonProps } from '@react-aria/button';
 import type { AriaNumberFieldProps } from '@react-aria/numberfield';
+import type { JSX } from 'react';
 
 import { Icon } from '@launchpad-ui/icons';
 import { useButton } from '@react-aria/button';

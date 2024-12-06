@@ -1,4 +1,4 @@
-import type { Meta, StoryFn, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 
 import { vars } from '@launchpad-ui/vars';
 import { userEvent } from '@storybook/test';
@@ -14,7 +14,7 @@ const meta: Meta<typeof NumberField> = {
 		},
 	},
 	decorators: [
-		(Story: StoryFn) => (
+		(Story) => (
 			<div style={{ width: vars.size[240] }}>
 				<Story />
 			</div>

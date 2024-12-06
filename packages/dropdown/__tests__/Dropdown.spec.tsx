@@ -73,7 +73,7 @@ describe('Dropdown', () => {
 	});
 
 	it('preserves ref passed to menu target', () => {
-		let ref: RefObject<HTMLButtonElement> | undefined;
+		let ref: RefObject<HTMLButtonElement | null> | undefined;
 		const Component = () => {
 			ref = useRef<HTMLButtonElement>(null);
 			return (
