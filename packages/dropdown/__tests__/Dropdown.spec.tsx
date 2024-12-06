@@ -1,4 +1,4 @@
-import type { RefObject } from 'react';
+import type { RefObject } from '@react-types/shared';
 
 import { Menu, MenuItem } from '@launchpad-ui/menu';
 import { useRef } from 'react';

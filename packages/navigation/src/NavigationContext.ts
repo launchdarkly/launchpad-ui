@@ -1,4 +1,4 @@
-import type { RefObject } from 'react';
+import type { RefObject } from '@react-types/shared';
 
 import { createContext, useContext } from 'react';
 

@@ -135,7 +135,7 @@ const ModalContainer = ({
 					animate="visible"
 					variants={overlay}
 					transition={{ duration: 0.15 }}
-					/* @ts-expect-error framer */
+					/* @ts-ignore framer */
 					role="presentation"
 					className={styles.overlay}
 					data-test-id="modal-overlay"
@@ -146,7 +146,7 @@ const ModalContainer = ({
 							initial="hidden"
 							animate="visible"
 							variants={isDesktopViewport ? transitions.desktopPop : transitions.mobileSlideUp}
-							/* @ts-expect-error framer */
+							/* @ts-ignore framer */
 							role="dialog"
 							aria-labelledby={MODAL_LABELLED_BY}
 							aria-describedby={MODAL_DESCRIBED_BY}

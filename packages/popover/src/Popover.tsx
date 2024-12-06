@@ -147,7 +147,7 @@ const Popover = ({
 		return;
 	}, []);
 	const arrowRef = useRef<HTMLDivElement>(null);
-	const timeoutRef = useRef<ReturnType<typeof setTimeout>>(null);
+	const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 	const optionsRef = useRef<Partial<ComputePositionConfig>>({});
 	const popoverId = useRef(`popover-${useId()}`);
 
@@ -385,7 +385,7 @@ const Popover = ({
 					transition={{ duration: 0.15 }}
 					initial={{ opacity: 0 }}
 					animate={{ opacity: 1 }}
-					/* @ts-expect-error framer */
+					/* @ts-ignore framer */
 					className={cx(
 						styles['Popover-content'],
 						restrictWidth && styles['Popover-content--restrictWidth'],
