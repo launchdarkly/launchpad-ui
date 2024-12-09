@@ -1891,6 +1891,9 @@
         clip-rule="evenodd"
       />
     </symbol>
+    <symbol viewBox="0 0 20 20" id="lp-icon-snowflake" fill="none">
+      <path d="M8.33325 13V9.33333L11.3333 11M5.66659 13V9.33333L2.66659 11M1.33325 8.66667L4.33325 7L1.33325 5.33333M12.6666 5.33333L9.66658 7L12.6666 8.66667M5.66659 1V4.66667L2.66659 3M8.33325 1V4.66667L11.3333 3M6.99992 6.33333L7.66658 7L6.99992 7.66667L6.33325 7L6.99992 6.33333Z" stroke="#29B5E8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
     <symbol viewBox="0 0 20 20" id="lp-icon-star">
       <path
         fill-rule="evenodd"
