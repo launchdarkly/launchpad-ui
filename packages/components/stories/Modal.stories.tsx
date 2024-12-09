@@ -1,4 +1,4 @@
-import type { Meta, ReactRenderer, StoryFn, StoryObj } from '@storybook/react';
+import type { Meta, ReactRenderer, StoryObj } from '@storybook/react';
 import type { PlayFunction } from '@storybook/types';
 import type { ComponentType } from 'react';
 
@@ -33,7 +33,7 @@ const meta: Meta<typeof Modal> = {
 		},
 	},
 	decorators: [
-		(Story: StoryFn, { viewMode }) =>
+		(Story, { viewMode }) =>
 			viewMode === 'story' ? (
 				<div style={{ height: '100vh' }}>
 					<Story />

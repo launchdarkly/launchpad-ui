@@ -60,8 +60,9 @@ const TokenTable = ({ tokens }: { tokens: Record<string, string> }) => {
 							<tr key={key}>
 								<td>
 									<div
-										// biome-ignore lint/suspicious/noAssignInExpressions: <explanation>
-										ref={(element) => (itemEls.current[key] = element)}
+										ref={(element) => {
+											itemEls.current[key] = element;
+										}}
 										style={{
 											background: value,
 											height: '50px',

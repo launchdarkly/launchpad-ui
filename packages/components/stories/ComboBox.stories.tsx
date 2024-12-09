@@ -1,4 +1,4 @@
-import type { Meta, StoryFn, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 import type { ComponentType } from 'react';
 
 import { Icon } from '@launchpad-ui/icons';
@@ -28,7 +28,7 @@ const meta: Meta<typeof ComboBox> = {
 		},
 	},
 	decorators: [
-		(Story: StoryFn) => (
+		(Story) => (
 			<div style={{ width: vars.size[240], height: vars.size[240] }}>
 				<Story />
 			</div>

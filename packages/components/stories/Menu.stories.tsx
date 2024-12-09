@@ -1,4 +1,4 @@
-import type { Meta, StoryFn, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 import type { ComponentType } from 'react';
 import type { Selection as AriaSelection } from 'react-aria-components';
 
@@ -42,7 +42,7 @@ const meta: Meta<typeof Menu> = {
 		},
 	},
 	decorators: [
-		(Story: StoryFn) => (
+		(Story) => (
 			<div style={{ height: 'var(--lp-size-320)' }}>
 				<Story />
 			</div>

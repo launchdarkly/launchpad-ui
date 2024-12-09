@@ -1,5 +1,5 @@
 import type { TooltipProps } from '@launchpad-ui/tooltip';
-import type { ComponentPropsWithoutRef, KeyboardEventHandler } from 'react';
+import type { ComponentPropsWithoutRef, JSX, KeyboardEventHandler } from 'react';
 
 import { Icon } from '@launchpad-ui/icons';
 import { Tooltip } from '@launchpad-ui/tooltip';

@@ -1,0 +1,9 @@
+.group {
+	composes: buttonGroup from './base.module.css';
+	display: flex;
+
+	&[data-orientation='vertical'] {
+		flex-direction: column;
+		width: fit-content;
+	}
+}

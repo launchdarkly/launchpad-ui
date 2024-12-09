@@ -24,6 +24,7 @@ export type { DatePickerProps, DateRangePickerProps } from './DatePicker';
 export type { DialogProps, DialogTriggerProps } from './Dialog';
 export type { DisclosureProps, DisclosurePanelProps } from './Disclosure';
 export type { DropIndicatorProps } from './DropIndicator';
+export type { DropZoneProps } from './DropZone';
 export type { FieldErrorProps } from './FieldError';
 export type { FieldGroupProps } from './FieldGroup';
 export type { FileTriggerProps } from './FileTrigger';
@@ -65,12 +66,14 @@ export type {
 	TableHeaderProps,
 } from './Table';
 export type { TabProps, TabsProps, TabListProps, TabPanelProps } from './Tabs';
+export type { TagButtonProps } from './TagButton';
 export type { TagGroupProps, TagListProps, TagProps } from './TagGroup';
 export type { TextProps } from './Text';
 export type { TextAreaProps } from './TextArea';
 export type { TextFieldProps } from './TextField';
 export type { SnackbarValue, ToastOptions, ToastValue } from './Toast';
 export type { ToggleButtonProps } from './ToggleButton';
+export type { ToggleButtonGroupProps } from './ToggleButtonGroup';
 export type { ToggleIconButtonProps } from './ToggleIconButton';
 export type { ToolbarProps } from './Toolbar';
 export type { TooltipProps, TooltipTriggerProps } from './Tooltip';
@@ -99,6 +102,7 @@ export { DatePicker, DateRangePicker } from './DatePicker';
 export { Dialog, DialogTrigger } from './Dialog';
 export { Disclosure, DisclosurePanel } from './Disclosure';
 export { DropIndicator } from './DropIndicator';
+export { DropZone } from './DropZone';
 export { FieldError } from './FieldError';
 export { FieldGroup } from './FieldGroup';
 export { FileTrigger } from './FileTrigger';
@@ -144,12 +148,14 @@ export {
 	TableHeader,
 } from './Table';
 export { Tab, Tabs, TabList, TabPanel } from './Tabs';
+export { TagButton } from './TagButton';
 export { TagGroup, TagList, Tag } from './TagGroup';
 export { Text } from './Text';
 export { TextArea } from './TextArea';
 export { TextField } from './TextField';
 export { SnackbarContainer, SnackbarQueue, ToastContainer, ToastQueue } from './Toast';
 export { ToggleButton } from './ToggleButton';
+export { ToggleButtonGroup } from './ToggleButtonGroup';
 export { ToggleIconButton } from './ToggleIconButton';
 export { Toolbar } from './Toolbar';
 export { Tooltip, TooltipTrigger } from './Tooltip';

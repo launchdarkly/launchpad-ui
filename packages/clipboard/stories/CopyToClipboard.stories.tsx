@@ -1,4 +1,4 @@
-import type { StoryFn, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 import type { CopyToClipboardHandleRef } from '../src/CopyToClipboard';
 
 import { userEvent, within } from '@storybook/test';
@@ -29,7 +29,7 @@ export default {
 		},
 	},
 	decorators: [
-		(Story: StoryFn) => (
+		(Story) => (
 			<div
 				style={{
 					height: '100vh',
@@ -42,7 +42,7 @@ export default {
 			</div>
 		),
 	],
-};
+} as Meta<typeof CopyToClipboard>;
 
 type Story = StoryObj<typeof CopyToClipboard>;
 

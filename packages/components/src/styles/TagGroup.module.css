@@ -46,10 +46,12 @@
 
 .small {
 	font: var(--lp-text-label-2-medium);
+	height: var(--lp-size-20);
 }
 
 .medium {
 	font: var(--lp-text-label-1-medium);
+	height: var(--lp-size-24);
 }
 
 .default {

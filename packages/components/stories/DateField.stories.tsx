@@ -1,4 +1,4 @@
-import type { Meta, StoryFn, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 import type { ComponentType } from 'react';
 
 import { vars } from '@launchpad-ui/vars';
@@ -16,7 +16,7 @@ const meta: Meta<typeof DateField> = {
 		},
 	},
 	decorators: [
-		(Story: StoryFn) => (
+		(Story) => (
 			<div style={{ width: vars.size[240] }}>
 				<Story />
 			</div>
