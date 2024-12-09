@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
+import type { ComponentType } from 'react';
 
 import { Icon } from '@launchpad-ui/icons';
 import { vars } from '@launchpad-ui/vars';
@@ -7,8 +8,7 @@ import { Button, Disclosure, DisclosurePanel, Heading } from '../src';
 
 const meta: Meta<typeof Disclosure> = {
 	component: Disclosure,
-	// @ts-ignore
-	subcomponents: { DisclosurePanel },
+	subcomponents: { DisclosurePanel } as Record<string, ComponentType<unknown>>,
 	title: 'Components/Navigation/Disclosure',
 	parameters: {
 		status: {

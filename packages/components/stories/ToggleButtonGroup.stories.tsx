@@ -1,11 +1,11 @@
 import type { Meta, StoryObj } from '@storybook/react';
+import type { ComponentType } from 'react';
 
 import { ToggleButton, ToggleButtonGroup, ToggleIconButton } from '../src';
 
 const meta: Meta<typeof ToggleButtonGroup> = {
 	component: ToggleButtonGroup,
-	// @ts-ignore
-	subcomponents: { ToggleButton },
+	subcomponents: { ToggleButton } as Record<string, ComponentType<unknown>>,
 	title: 'Components/Buttons/ToggleButtonGroup',
 	parameters: {
 		status: {

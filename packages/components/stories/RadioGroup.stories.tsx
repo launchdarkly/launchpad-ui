@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
+import type { ComponentType } from 'react';
 
 import { userEvent, within } from '@storybook/test';
 
@@ -6,8 +7,7 @@ import { Button, FieldError, Form, Label, Radio, RadioGroup, Text } from '../src
 
 const meta: Meta<typeof RadioGroup> = {
 	component: RadioGroup,
-	// @ts-ignore
-	subcomponents: { Radio },
+	subcomponents: { Radio } as Record<string, ComponentType<unknown>>,
 	title: 'Components/Forms/RadioGroup',
 	parameters: {
 		status: {

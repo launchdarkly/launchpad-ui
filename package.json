@@ -12,7 +12,7 @@
 		"clean": "nx run-many --target=clean --all",
 		"e2e:a11y": "STORYBOOK_URL=http://127.0.0.1:8080/ pnpm playwright test",
 		"generate": "plop",
-		"graph": "nx affected:graph",
+		"graph": "nx graph --affected",
 		"storybook": "pnpm build:transform && sb dev -p 3000",
 		"storybook:build": "pnpm build:transform && sb build --quiet",
 		"test": "pnpm build:transform && vitest run --coverage",
