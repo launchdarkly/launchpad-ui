@@ -45,7 +45,7 @@ const config: StorybookConfig = {
 			shouldRemoveUndefinedFromOptional: true,
 			propFilter: (prop) =>
 				prop.parent
-					? !/launchpad-ui\/node_modules\/.pnpm\/(?!react-aria-components|react-aria|react-stately|@react-types|@react-aria|@react-stately|react-router-dom|class-variance-authority|@internationalized)/.test(
+					? !/launchpad-ui\/node_modules\/.pnpm\/(?!react-aria-components|react-aria|react-stately|@react-types|@react-aria|@react-stately|react-router|class-variance-authority|@internationalized)/.test(
 							prop.parent.fileName,
 						)
 					: true,

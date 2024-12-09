@@ -7,7 +7,7 @@ import { Icon } from '@launchpad-ui/icons';
 import { Menu, MenuItem } from '@launchpad-ui/menu';
 import { useListState } from '@react-stately/list';
 import { useEffect, useRef, useState } from 'react';
-import { NavLink, useLocation } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router';
 
 import styles from './styles/Navigation.module.css';
 import { titlecase } from './utils';
