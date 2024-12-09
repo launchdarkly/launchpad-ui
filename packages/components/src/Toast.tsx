@@ -66,7 +66,8 @@ interface ToastValue extends IconVariants, ToastContent {}
 interface SnackbarContent {
 	title?: ReactNode;
 	description: ReactNode;
-	action?: ReactElement;
+	// biome-ignore lint/suspicious/noExplicitAny: <explanation>
+	action?: ReactElement<any>;
 }
 
 interface SnackbarValue extends IconVariants, SnackbarContent {}

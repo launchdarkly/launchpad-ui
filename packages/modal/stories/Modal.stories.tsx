@@ -1,4 +1,4 @@
-import type { StoryFn, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 
 import { Button } from '@launchpad-ui/button';
 import { Icon } from '@launchpad-ui/icons';
@@ -35,7 +35,6 @@ export default {
 			control: { type: 'radio', description: 'lkfjdslkfds' },
 		},
 		children: {
-			type: { required: true },
 			description: 'A slot for adding child components.',
 			control: 'text',
 			table: {
@@ -67,7 +66,7 @@ export default {
 		size: 'medium',
 	},
 	decorators: [
-		(Story: StoryFn) => (
+		(Story) => (
 			<div
 				style={{
 					height: '100vh',
@@ -77,7 +76,7 @@ export default {
 			</div>
 		),
 	],
-};
+} as Meta<typeof Modal>;
 
 type Story = StoryObj<typeof Modal>;
 

@@ -114,7 +114,8 @@ const Menu = <T extends number | string>(props: MenuProps<T>) => {
 		return (childrenProps as ReactElement[]).reduce(
 			(
 				{ items, searchElement }: { items: ReactElement[]; searchElement: null | ReactElement },
-				child,
+				// biome-ignore lint/suspicious/noExplicitAny: <explanation>
+				child: ReactElement<any>,
 			) => {
 				switch (child.type) {
 					case MenuSearch:
@@ -210,7 +211,7 @@ const ItemVirtualizer = <T extends number | string>(props: ItemVirtualizerProps<
 
 	const focusedItemIndex = useRef<number | null>(null);
 	const parentRef = useRef<HTMLDivElement | null>(null);
-	const searchRef = useRef<HTMLInputElement>();
+	const searchRef = useRef<HTMLInputElement | null>(null);
 
 	const [nextFocusValue, setNextFocusValue] = useState<number | null>(null);
 
@@ -351,7 +352,8 @@ const ItemVirtualizer = <T extends number | string>(props: ItemVirtualizerProps<
 	const renderSearch = useMemo(
 		() =>
 			searchElement
-				? cloneElement(searchElement, {
+				? // biome-ignore lint/suspicious/noExplicitAny: <explanation>
+					cloneElement(searchElement as ReactElement<any>, {
 						onKeyDown: (e: KeyboardEvent) =>
 							handleKeyboardFocusKeydown(e, {
 								handleFocusBackward: () => focusMenuItem(lastVirtualItemIndex),

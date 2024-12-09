@@ -1,4 +1,4 @@
-import type { Meta, StoryFn, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 
 import { parseDate } from '@internationalized/date';
 import { vars } from '@launchpad-ui/vars';
@@ -32,7 +32,7 @@ const meta: Meta<typeof DatePicker> = {
 		},
 	},
 	decorators: [
-		(Story: StoryFn) => (
+		(Story) => (
 			<div style={{ width: vars.size[320], height: vars.size[480] }}>
 				<div style={{ width: vars.size[240] }}>
 					<Story />
