@@ -1,5 +1,11 @@
 # @launchpad-ui/navigation
 
+## 0.12.61
+
+### Patch Changes
+
+- [#1502](https://github.com/launchdarkly/launchpad-ui/pull/1502) [`90d9944`](https://github.com/launchdarkly/launchpad-ui/commit/90d994492f09e52c360d52171d02e0369a2daeea) Thanks [@Niznikr](https://github.com/Niznikr)! - Update React Router to v7
+
 ## 0.12.60
 
 ### Patch Changes

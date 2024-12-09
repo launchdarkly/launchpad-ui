@@ -1,5 +1,13 @@
 # @launchpad-ui/components
 
+## 0.6.2
+
+### Patch Changes
+
+- [#1498](https://github.com/launchdarkly/launchpad-ui/pull/1498) [`9225ca1`](https://github.com/launchdarkly/launchpad-ui/commit/9225ca13db7b472198f0280b5e075bf5b281a47c) Thanks [@Niznikr](https://github.com/Niznikr)! - Replace `Section` with `ListBoxSection` and `MenuSection`
+
+- [#1502](https://github.com/launchdarkly/launchpad-ui/pull/1502) [`90d9944`](https://github.com/launchdarkly/launchpad-ui/commit/90d994492f09e52c360d52171d02e0369a2daeea) Thanks [@Niznikr](https://github.com/Niznikr)! - Update React Router to v7
+
 ## 0.6.1
 
 ### Patch Changes
