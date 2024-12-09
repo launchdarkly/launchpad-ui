@@ -1,5 +1,15 @@
 # @launchpad-ui/components
 
+## 0.6.1
+
+### Patch Changes
+
+- [#1496](https://github.com/launchdarkly/launchpad-ui/pull/1496) [`cd85be1`](https://github.com/launchdarkly/launchpad-ui/commit/cd85be144135e2586125a957714b01d71234ee41) Thanks [@Niznikr](https://github.com/Niznikr)! - Add `ToggleButtonGroup`
+
+- [#1489](https://github.com/launchdarkly/launchpad-ui/pull/1489) [`b7083bd`](https://github.com/launchdarkly/launchpad-ui/commit/b7083bdafce29dd82069f437fe25a3245718d182) Thanks [@Niznikr](https://github.com/Niznikr)! - Add `DropZone`
+
+- [#1504](https://github.com/launchdarkly/launchpad-ui/pull/1504) [`99df328`](https://github.com/launchdarkly/launchpad-ui/commit/99df3284c510013f963e5ba06bce4ecfe39d9cbd) Thanks [@Niznikr](https://github.com/Niznikr)! - Add `TagButton`
+
 ## 0.6.0
 
 ### Minor Changes

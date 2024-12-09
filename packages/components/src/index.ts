@@ -51,7 +51,7 @@ export type { RadioButtonProps } from './RadioButton';
 export type { RadioGroupProps } from './RadioGroup';
 export type { RadioIconButtonProps } from './RadioIconButton';
 export type { SearchFieldProps } from './SearchField';
-export type { SectionProps } from './Section';
+export type { ListBoxSectionProps, MenuSectionProps } from './Section';
 export type { SelectProps, SelectValueProps } from './Select';
 export type { SeparatorProps } from './Separator';
 export type { SwitchProps } from './Switch';
@@ -66,12 +66,14 @@ export type {
 	TableHeaderProps,
 } from './Table';
 export type { TabProps, TabsProps, TabListProps, TabPanelProps } from './Tabs';
+export type { TagButtonProps } from './TagButton';
 export type { TagGroupProps, TagListProps, TagProps } from './TagGroup';
 export type { TextProps } from './Text';
 export type { TextAreaProps } from './TextArea';
 export type { TextFieldProps } from './TextField';
 export type { SnackbarValue, ToastOptions, ToastValue } from './Toast';
 export type { ToggleButtonProps } from './ToggleButton';
+export type { ToggleButtonGroupProps } from './ToggleButtonGroup';
 export type { ToggleIconButtonProps } from './ToggleIconButton';
 export type { ToolbarProps } from './Toolbar';
 export type { TooltipProps, TooltipTriggerProps } from './Tooltip';
@@ -131,7 +133,7 @@ export { RadioGroup } from './RadioGroup';
 export { RadioIconButton } from './RadioIconButton';
 export { RouterProvider } from './RouterProvider';
 export { SearchField } from './SearchField';
-export { Section } from './Section';
+export { ListBoxSection, MenuSection } from './Section';
 export { Select, SelectValue } from './Select';
 export { Separator } from './Separator';
 export { Switch } from './Switch';
@@ -146,12 +148,14 @@ export {
 	TableHeader,
 } from './Table';
 export { Tab, Tabs, TabList, TabPanel } from './Tabs';
+export { TagButton } from './TagButton';
 export { TagGroup, TagList, Tag } from './TagGroup';
 export { Text } from './Text';
 export { TextArea } from './TextArea';
 export { TextField } from './TextField';
 export { SnackbarContainer, SnackbarQueue, ToastContainer, ToastQueue } from './Toast';
 export { ToggleButton } from './ToggleButton';
+export { ToggleButtonGroup } from './ToggleButtonGroup';
 export { ToggleIconButton } from './ToggleIconButton';
 export { Toolbar } from './Toolbar';
 export { Tooltip, TooltipTrigger } from './Tooltip';

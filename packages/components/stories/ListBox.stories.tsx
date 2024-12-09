@@ -1,16 +1,16 @@
 import type { Meta, StoryObj } from '@storybook/react';
+import type { ComponentType } from 'react';
 import type { Selection as AriaSelection } from 'react-aria-components';
 
 import { Icon } from '@launchpad-ui/icons';
 import { fireEvent, userEvent, within } from '@storybook/test';
 import { useState } from 'react';
 
-import { Header, ListBox, ListBoxItem, Section, Text } from '../src';
+import { Header, ListBox, ListBoxItem, ListBoxSection, Text } from '../src';
 
 const meta: Meta<typeof ListBox> = {
 	component: ListBox,
-	// @ts-ignore
-	subcomponents: { ListBoxItem, Section, Header },
+	subcomponents: { ListBoxItem, ListBoxSection, Header } as Record<string, ComponentType<unknown>>,
 	title: 'Components/Collections/ListBox',
 	parameters: {
 		status: {
@@ -39,18 +39,18 @@ export const Grouping: Story = {
 	render: (args) => {
 		return (
 			<ListBox aria-label="Items" selectionMode="multiple" {...args}>
-				<Section>
+				<ListBoxSection>
 					<Header>Group 1</Header>
 					<ListBoxItem>Item one</ListBoxItem>
 					<ListBoxItem>Item two</ListBoxItem>
 					<ListBoxItem>Item three</ListBoxItem>
-				</Section>
-				<Section>
+				</ListBoxSection>
+				<ListBoxSection>
 					<Header>Group 2</Header>
 					<ListBoxItem>Item four</ListBoxItem>
 					<ListBoxItem>Item five</ListBoxItem>
 					<ListBoxItem>Item six</ListBoxItem>
-				</Section>
+				</ListBoxSection>
 			</ListBox>
 		);
 	},

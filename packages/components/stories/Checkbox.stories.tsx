@@ -1,4 +1,4 @@
-import type { Meta, StoryFn, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 
 import { vars } from '@launchpad-ui/vars';
 import { userEvent, within } from '@storybook/test';
@@ -15,7 +15,7 @@ const meta: Meta<typeof Checkbox> = {
 		chromatic: { pauseAnimationAtEnd: true },
 	},
 	decorators: [
-		(Story: StoryFn) => (
+		(Story) => (
 			<div style={{ width: vars.size[240] }}>
 				<Story />
 			</div>

@@ -1,5 +1,6 @@
-import type { Meta, ReactRenderer, StoryFn, StoryObj } from '@storybook/react';
+import type { Meta, ReactRenderer, StoryObj } from '@storybook/react';
 import type { PlayFunction } from '@storybook/types';
+import type { ComponentType } from 'react';
 
 import { expect, userEvent, within } from '@storybook/test';
 
@@ -7,8 +8,7 @@ import { Button, Pressable, Tooltip, TooltipTrigger } from '../src';
 
 const meta: Meta<typeof Tooltip> = {
 	component: Tooltip,
-	// @ts-ignore
-	subcomponents: { TooltipTrigger, Pressable },
+	subcomponents: { TooltipTrigger, Pressable } as Record<string, ComponentType<unknown>>,
 	title: 'Components/Overlays/Tooltip',
 	parameters: {
 		status: {
@@ -20,7 +20,7 @@ const meta: Meta<typeof Tooltip> = {
 		},
 	},
 	decorators: [
-		(Story: StoryFn) => (
+		(Story) => (
 			<div style={{ height: 'var(--lp-size-96)' }}>
 				<Story />
 			</div>

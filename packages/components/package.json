@@ -1,6 +1,6 @@
 {
 	"name": "@launchpad-ui/components",
-	"version": "0.6.0",
+	"version": "0.6.1",
 	"status": "beta",
 	"publishConfig": {
 		"access": "public"
@@ -48,12 +48,12 @@
 		"react-router": "7.0.1"
 	},
 	"peerDependencies": {
-		"react": "18.3.1",
-		"react-dom": "18.3.1"
+		"react": "^18.0.0 || ^19.0.0",
+		"react-dom": "^18.0.0 || ^19.0.0"
 	},
 	"devDependencies": {
-		"react": "18.3.1",
-		"react-dom": "18.3.1",
+		"react": "19.0.0",
+		"react-dom": "19.0.0",
 		"react-stately": "3.34.0"
 	}
 }

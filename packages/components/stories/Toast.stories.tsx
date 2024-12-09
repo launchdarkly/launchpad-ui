@@ -1,4 +1,5 @@
-import type { Meta, StoryFn, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
+import type { ComponentType } from 'react';
 
 import { expect, userEvent, within } from '@storybook/test';
 
@@ -14,8 +15,7 @@ import {
 
 const meta: Meta<typeof ToastContainer> = {
 	component: ToastContainer,
-	// @ts-ignore
-	subcomponents: { SnackbarContainer },
+	subcomponents: { SnackbarContainer } as Record<string, ComponentType<unknown>>,
 	title: 'Components/Status/Toast',
 	parameters: {
 		status: {
@@ -27,7 +27,7 @@ const meta: Meta<typeof ToastContainer> = {
 		},
 	},
 	decorators: [
-		(Story: StoryFn, { viewMode }) =>
+		(Story, { viewMode }) =>
 			viewMode === 'story' ? (
 				<div style={{ height: '100vh' }}>
 					<Story />

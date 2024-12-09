@@ -1,4 +1,5 @@
-import type { Meta, StoryFn, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
+import type { ComponentType } from 'react';
 
 import { vars } from '@launchpad-ui/vars';
 import { userEvent } from '@storybook/test';
@@ -7,8 +8,7 @@ import { DateInput, DateSegment, Label, Text, TimeField } from '../src';
 
 const meta: Meta<typeof TimeField> = {
 	component: TimeField,
-	// @ts-ignore
-	subcomponents: { DateInput, DateSegment },
+	subcomponents: { DateInput, DateSegment } as Record<string, ComponentType<unknown>>,
 	title: 'Components/Date and Time/TimeField',
 	parameters: {
 		status: {
@@ -23,7 +23,7 @@ const meta: Meta<typeof TimeField> = {
 		},
 	},
 	decorators: [
-		(Story: StoryFn) => (
+		(Story) => (
 			<div style={{ width: vars.size[240] }}>
 				<Story />
 			</div>

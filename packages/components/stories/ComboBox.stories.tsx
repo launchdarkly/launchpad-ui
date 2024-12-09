@@ -1,4 +1,5 @@
-import type { Meta, StoryFn, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
+import type { ComponentType } from 'react';
 
 import { Icon } from '@launchpad-ui/icons';
 import { vars } from '@launchpad-ui/vars';
@@ -19,8 +20,7 @@ import {
 
 const meta: Meta<typeof ComboBox> = {
 	component: ComboBox,
-	// @ts-ignore
-	subcomponents: { ComboBoxClearButton },
+	subcomponents: { ComboBoxClearButton } as Record<string, ComponentType<unknown>>,
 	title: 'Components/Pickers/ComboBox',
 	parameters: {
 		status: {
@@ -28,7 +28,7 @@ const meta: Meta<typeof ComboBox> = {
 		},
 	},
 	decorators: [
-		(Story: StoryFn) => (
+		(Story) => (
 			<div style={{ width: vars.size[240], height: vars.size[240] }}>
 				<Story />
 			</div>

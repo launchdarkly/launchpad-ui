@@ -1,4 +1,5 @@
 import type { Offset, PopoverProps } from '@launchpad-ui/popover';
+import type { JSX } from 'react';
 
 import { Popover } from '@launchpad-ui/popover';
 import { cx } from 'classix';

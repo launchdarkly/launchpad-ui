@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
+import type { ComponentType } from 'react';
 
 import { Tab, TabList, TabPanel, Tabs } from '../src';
 
@@ -7,8 +8,7 @@ import { Route, Routes, useLocation } from 'react-router';
 
 const meta: Meta<typeof Tabs> = {
 	component: Tabs,
-	// @ts-ignore
-	subcomponents: { Tab, TabList, TabPanel },
+	subcomponents: { Tab, TabList, TabPanel } as Record<string, ComponentType<unknown>>,
 	title: 'Components/Navigation/Tabs',
 	parameters: {
 		status: {

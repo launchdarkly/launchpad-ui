@@ -1,5 +1,5 @@
 import type { Offset, PopoverPlacement } from '@launchpad-ui/popover';
-import type { MouseEvent } from 'react';
+import type { JSX, MouseEvent } from 'react';
 
 import { Tooltip } from '@launchpad-ui/tooltip';
 

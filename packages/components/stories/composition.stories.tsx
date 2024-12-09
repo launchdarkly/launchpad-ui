@@ -1,4 +1,4 @@
-import type { Meta, StoryFn, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 import type { ComponentPropsWithoutRef } from 'react';
 
 import { Icon } from '@launchpad-ui/icons';
@@ -28,6 +28,7 @@ import {
 	RadioIconButton,
 	Select,
 	SelectValue,
+	TagButton,
 	Text,
 	ToastContainer,
 	ToastQueue,
@@ -44,7 +45,7 @@ const meta: Meta<typeof Container> = {
 		chromatic: { pauseAnimationAtEnd: true },
 	},
 	decorators: [
-		(Story: StoryFn) => (
+		(Story) => (
 			<div style={{ height: 'var(--lp-size-224)' }}>
 				<Story />
 			</div>
@@ -253,6 +254,20 @@ export const DisabledWithTooltip: Story = {
 					</TooltipTrigger>
 				</Perceivable>
 			</div>
+		);
+	},
+};
+
+export const TagWithOverlay: Story = {
+	render: () => {
+		return (
+			<TooltipTrigger>
+				<TagButton>
+					<Icon name="osmo" size="small" />
+					TagButton
+				</TagButton>
+				<Tooltip placement="right">Message</Tooltip>
+			</TooltipTrigger>
 		);
 	},
 };

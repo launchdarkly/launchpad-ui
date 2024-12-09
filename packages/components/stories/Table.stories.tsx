@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
+import type { ComponentType } from 'react';
 import type { SortDescriptor } from 'react-aria-components';
 
 import { useState } from 'react';
@@ -18,8 +19,10 @@ import {
 
 const meta: Meta<typeof Table> = {
 	component: Table,
-	// @ts-ignore
-	subcomponents: { Cell, Column, ResizableTableContainer, Row, TableBody, TableHeader },
+	subcomponents: { Cell, Column, ResizableTableContainer, Row, TableBody, TableHeader } as Record<
+		string,
+		ComponentType<unknown>
+	>,
 	title: 'Components/Collections/Table',
 	parameters: {
 		status: {
