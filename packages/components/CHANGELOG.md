@@ -1,5 +1,11 @@
 # @launchpad-ui/components
 
+## 0.6.3
+
+### Patch Changes
+
+- [#1508](https://github.com/launchdarkly/launchpad-ui/pull/1508) [`714abcf`](https://github.com/launchdarkly/launchpad-ui/commit/714abcff02a83d92219ccd1a5ac22f390e2efaa7) Thanks [@Niznikr](https://github.com/Niznikr)! - Add `warning` variant for `Alert`
+
 ## 0.6.2
 
 ### Patch Changes
