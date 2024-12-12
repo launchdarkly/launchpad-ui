@@ -1,5 +1,11 @@
 # @launchpad-ui/components
 
+## 0.6.4
+
+### Patch Changes
+
+- [#1510](https://github.com/launchdarkly/launchpad-ui/pull/1510) [`45a873b`](https://github.com/launchdarkly/launchpad-ui/commit/45a873bc55c79545e3320c8bd56288b2da26dbf0) Thanks [@Niznikr](https://github.com/Niznikr)! - Fix `Checkbox` in Safari
+
 ## 0.6.3
 
 ### Patch Changes
