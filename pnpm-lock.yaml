@@ -106,7 +106,7 @@ importers:
         version: 3.7.2(@swc/helpers@0.5.13)(vite@6.0.2(@types/node@22.10.1)(jiti@1.21.6)(less@4.2.0)(lightningcss@1.28.1)(sass@1.80.5)(stylus@0.62.0)(tsx@4.19.2)(yaml@2.6.0))
       '@vitest/coverage-v8':
         specifier: ^2.1.1
-        version: 2.1.4(vitest@2.1.4(@types/node@22.10.1)(@vitest/ui@2.1.4)(jiti@1.21.6)(jsdom@25.0.1)(less@4.2.0)(lightningcss@1.28.1)(sass@1.80.5)(stylus@0.62.0)(tsx@4.19.2)(yaml@2.6.0))
+        version: 2.1.4(vitest@2.1.4)
       '@vitest/ui':
         specifier: ^2.1.1
         version: 2.1.4(vitest@2.1.4)
@@ -283,8 +283,8 @@ importers:
         specifier: 0.7.0
         version: 0.7.0
       rainbow-sprinkles:
-        specifier: 0.17.3
-        version: 0.17.3(@vanilla-extract/css@1.16.0)(@vanilla-extract/dynamic@2.1.0)
+        specifier: 1.0.0
+        version: 1.0.0(@vanilla-extract/css@1.16.0)(@vanilla-extract/dynamic@2.1.0)
     devDependencies:
       flat:
         specifier: ^6.0.1
@@ -5437,8 +5437,8 @@ packages:
   queue-microtask@1.2.3:
     resolution: {integrity: sha512-NuaNSa6flKT5JaSYQzJok04JzTL1CA6aGhv5rfLW3PgqA+M2ChpZQnAC8h8i4ZFkBS8X5RqkDBHA7r4hej3K9A==}
 
-  rainbow-sprinkles@0.17.3:
-    resolution: {integrity: sha512-tu00bbDozceDz/ajL8YzDn5L0mf0uVHR93v2tfGKKbemKeuPk8R4mXUokleKsA24vzrPiw26iMK53HdRy6HLag==}
+  rainbow-sprinkles@1.0.0:
+    resolution: {integrity: sha512-CNgJJq+NnTWXLMfzk9NsMwKkIzEaRLGmVNz8b4K5EQmV2QBzqZMKpjWuPGB1mbHL4S4Ttvtm2DkqGLTPJWMliQ==}
     peerDependencies:
       '@vanilla-extract/css': ^1
       '@vanilla-extract/dynamic': ^2
@@ -8850,7 +8850,7 @@ snapshots:
     transitivePeerDependencies:
       - '@swc/helpers'
 
-  '@vitest/coverage-v8@2.1.4(vitest@2.1.4(@types/node@22.10.1)(@vitest/ui@2.1.4)(jiti@1.21.6)(jsdom@25.0.1)(less@4.2.0)(lightningcss@1.28.1)(sass@1.80.5)(stylus@0.62.0)(tsx@4.19.2)(yaml@2.6.0))':
+  '@vitest/coverage-v8@2.1.4(vitest@2.1.4)':
     dependencies:
       '@ampproject/remapping': 2.3.0
       '@bcoe/v8-coverage': 0.2.3
@@ -11211,7 +11211,7 @@ snapshots:
 
   queue-microtask@1.2.3: {}
 
-  rainbow-sprinkles@0.17.3(@vanilla-extract/css@1.16.0)(@vanilla-extract/dynamic@2.1.0):
+  rainbow-sprinkles@1.0.0(@vanilla-extract/css@1.16.0)(@vanilla-extract/dynamic@2.1.0):
     dependencies:
       '@vanilla-extract/css': 1.16.0
       '@vanilla-extract/dynamic': 2.1.0
