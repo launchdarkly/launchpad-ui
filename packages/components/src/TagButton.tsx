@@ -1,19 +1,22 @@
-import type { ForwardedRef } from 'react';
+import type { RefObject } from 'react';
 import type { ButtonProps } from 'react-aria-components';
 import type { TagVariants } from './TagGroup';
 
-import { forwardRef } from 'react';
 import { composeRenderProps } from 'react-aria-components';
 
 import { Button } from './Button';
 import { tag } from './TagGroup';
 
-interface TagButtonProps extends ButtonProps, Omit<TagVariants, 'variant'> {}
+interface TagButtonProps extends ButtonProps, Omit<TagVariants, 'variant'> {
+	ref?: RefObject<HTMLButtonElement | null>;
+}
 
-const _TagButton = (
-	{ size = 'medium', ...props }: TagButtonProps,
-	ref: ForwardedRef<HTMLButtonElement>,
-) => {
+/**
+ * A button allows a user to perform an action, with mouse, touch, and keyboard interactions.
+ *
+ * https://react-spectrum.adobe.com/react-aria/Button.html
+ */
+const TagButton = ({ size = 'medium', ref, ...props }: TagButtonProps) => {
 	return (
 		<Button
 			{...props}
@@ -26,13 +29,6 @@ const _TagButton = (
 		/>
 	);
 };
-
-/**
- * A button allows a user to perform an action, with mouse, touch, and keyboard interactions.
- *
- * https://react-spectrum.adobe.com/react-aria/Button.html
- */
-const TagButton = forwardRef(_TagButton);
 
 export { TagButton };
 export type { TagButtonProps };

@@ -1,9 +1,12 @@
-import type { forwardRefType } from '@react-types/shared';
-import type { ForwardedRef } from 'react';
-import type { TabListProps, TabPanelProps, TabProps, TabsProps } from 'react-aria-components';
+import type { RefObject } from 'react';
+import type {
+	TabListProps as AriaTabListProps,
+	TabPanelProps as AriaTabPanelProps,
+	TabProps as AriaTabProps,
+	TabsProps as AriaTabsProps,
+} from 'react-aria-components';
 
 import { cva } from 'class-variance-authority';
-import { forwardRef } from 'react';
 import {
 	Tab as AriaTab,
 	TabList as AriaTabList,
@@ -19,7 +22,28 @@ const panel = cva(styles.panel);
 const tab = cva(styles.tab);
 const tabs = cva(styles.tabs);
 
-const _Tabs = (props: TabsProps, ref: ForwardedRef<HTMLDivElement>) => {
+interface TabsProps extends AriaTabsProps {
+	ref?: RefObject<HTMLDivElement | null>;
+}
+
+interface TabListProps<T extends object> extends AriaTabListProps<T> {
+	ref?: RefObject<HTMLDivElement | null>;
+}
+
+interface TabProps extends AriaTabProps {
+	ref?: RefObject<HTMLDivElement | null>;
+}
+
+interface TabPanelProps extends AriaTabPanelProps {
+	ref?: RefObject<HTMLDivElement | null>;
+}
+
+/**
+ * Tabs organize content into multiple sections and allow users to navigate between them.
+ *
+ * https://react-spectrum.adobe.com/react-aria/Tabs.html
+ */
+const Tabs = ({ ref, ...props }: TabsProps) => {
 	return (
 		<AriaTabs
 			{...props}
@@ -32,13 +56,12 @@ const _Tabs = (props: TabsProps, ref: ForwardedRef<HTMLDivElement>) => {
 };
 
 /**
- * Tabs organize content into multiple sections and allow users to navigate between them.
+ * A TabList is used within Tabs to group tabs that a user can switch between.
+ * The ids of the items within the `<TabList>` must match up with a corresponding item inside the `<TabPanels>`.
  *
  * https://react-spectrum.adobe.com/react-aria/Tabs.html
  */
-const Tabs = forwardRef(_Tabs);
-
-const _TabList = <T extends object>(props: TabListProps<T>, ref: ForwardedRef<HTMLDivElement>) => {
+const TabList = <T extends object>({ ref, ...props }: TabListProps<T>) => {
 	return (
 		<AriaTabList
 			{...props}
@@ -51,14 +74,11 @@ const _TabList = <T extends object>(props: TabListProps<T>, ref: ForwardedRef<HT
 };
 
 /**
- * A TabList is used within Tabs to group tabs that a user can switch between.
- * The ids of the items within the `<TabList>` must match up with a corresponding item inside the `<TabPanels>`.
+ * A Tab provides a title for an individual item within a TabList.
  *
  * https://react-spectrum.adobe.com/react-aria/Tabs.html
  */
-const TabList = (forwardRef as forwardRefType)(_TabList);
-
-const _Tab = (props: TabProps, ref: ForwardedRef<HTMLDivElement>) => {
+const Tab = ({ ref, ...props }: TabProps) => {
 	return (
 		<AriaTab
 			{...props}
@@ -71,13 +91,11 @@ const _Tab = (props: TabProps, ref: ForwardedRef<HTMLDivElement>) => {
 };
 
 /**
- * A Tab provides a title for an individual item within a TabList.
+ * A TabPanel provides the content for a tab.
  *
  * https://react-spectrum.adobe.com/react-aria/Tabs.html
  */
-const Tab = forwardRef(_Tab);
-
-const _TabPanel = (props: TabPanelProps, ref: ForwardedRef<HTMLDivElement>) => {
+const TabPanel = ({ ref, ...props }: TabPanelProps) => {
 	return (
 		<AriaTabPanel
 			{...props}
@@ -88,13 +106,6 @@ const _TabPanel = (props: TabPanelProps, ref: ForwardedRef<HTMLDivElement>) => {
 		/>
 	);
 };
-
-/**
- * A TabPanel provides the content for a tab.
- *
- * https://react-spectrum.adobe.com/react-aria/Tabs.html
- */
-const TabPanel = forwardRef(_TabPanel);
 
 export { Tab, Tabs, TabList, TabPanel };
 export type { TabProps, TabsProps, TabListProps, TabPanelProps };

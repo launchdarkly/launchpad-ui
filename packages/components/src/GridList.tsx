@@ -1,9 +1,10 @@
-import type { forwardRefType } from '@react-types/shared';
-import type { ForwardedRef } from 'react';
-import type { GridListItemProps, GridListProps } from 'react-aria-components';
+import type { RefObject } from 'react';
+import type {
+	GridListItemProps as AriaGridListItemProps,
+	GridListProps as AriaGridListProps,
+} from 'react-aria-components';
 
 import { cva } from 'class-variance-authority';
-import { forwardRef } from 'react';
 import {
 	GridList as AriaGridList,
 	GridListItem as AriaGridListItem,
@@ -17,10 +18,20 @@ import styles from './styles/GridList.module.css';
 const list = cva(styles.list);
 const item = cva(styles.item);
 
-const _GridList = <T extends object>(
-	props: GridListProps<T>,
-	ref: ForwardedRef<HTMLDivElement>,
-) => {
+interface GridListProps<T extends object> extends AriaGridListProps<T> {
+	ref?: RefObject<HTMLDivElement | null>;
+}
+
+interface GridListItemProps<T extends object> extends AriaGridListItemProps<T> {
+	ref?: RefObject<T | null>;
+}
+
+/**
+ * A grid list displays a list of interactive items, with support for keyboard navigation, single or multiple selection, and row actions.
+ *
+ * https://react-spectrum.adobe.com/react-aria/GridList.html
+ */
+const GridList = <T extends object>({ ref, ...props }: GridListProps<T>) => {
 	return (
 		<AriaGridList
 			{...props}
@@ -33,13 +44,11 @@ const _GridList = <T extends object>(
 };
 
 /**
- * A grid list displays a list of interactive items, with support for keyboard navigation, single or multiple selection, and row actions.
+ * A GridListItem represents an individual item in a GridList.
  *
  * https://react-spectrum.adobe.com/react-aria/GridList.html
  */
-const GridList = (forwardRef as forwardRefType)(_GridList);
-
-const _GridListItem = <T extends object>(props: GridListItemProps<T>, ref: ForwardedRef<T>) => {
+const GridListItem = <T extends object>({ ref, ...props }: GridListItemProps<T>) => {
 	const textValue =
 		props.textValue || (typeof props.children === 'string' ? props.children : undefined);
 	return (
@@ -69,13 +78,6 @@ const _GridListItem = <T extends object>(props: GridListItemProps<T>, ref: Forwa
 		</AriaGridListItem>
 	);
 };
-
-/**
- * A GridListItem represents an individual item in a GridList.
- *
- * https://react-spectrum.adobe.com/react-aria/GridList.html
- */
-const GridListItem = (forwardRef as forwardRefType)(_GridListItem);
 
 export { GridList, GridListItem };
 export type { GridListProps, GridListItemProps };

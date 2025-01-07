@@ -1,8 +1,11 @@
-import type { ForwardedRef } from 'react';
-import type { DatePickerProps, DateRangePickerProps, DateValue } from 'react-aria-components';
+import type { RefObject } from 'react';
+import type {
+	DatePickerProps as AriaDatePickerProps,
+	DateRangePickerProps as AriaDateRangePickerProps,
+	DateValue,
+} from 'react-aria-components';
 
 import { cva } from 'class-variance-authority';
-import { forwardRef } from 'react';
 import {
 	DatePicker as AriaDatePicker,
 	DateRangePicker as AriaDateRangePicker,
@@ -13,35 +16,22 @@ import styles from './styles/DatePicker.module.css';
 
 const picker = cva(styles.picker);
 
-const _DatePicker = <T extends DateValue>(
-	props: DatePickerProps<T>,
-	ref: ForwardedRef<HTMLDivElement>,
-) => {
-	return (
-		<AriaDatePicker
-			shouldForceLeadingZeros={true}
-			{...props}
-			ref={ref}
-			className={composeRenderProps(props.className, (className, renderProps) =>
-				picker({ ...renderProps, className }),
-			)}
-		/>
-	);
-};
+interface DatePickerProps<T extends DateValue> extends AriaDatePickerProps<T> {
+	ref?: RefObject<HTMLDivElement | null>;
+}
+
+interface DateRangePickerProps<T extends DateValue> extends AriaDateRangePickerProps<T> {
+	ref?: RefObject<HTMLDivElement | null>;
+}
 
 /**
  * A date picker combines a DateField and a Calendar popover to allow users to enter or select a date and time value.
  *
  * https://react-spectrum.adobe.com/react-aria/DatePicker.html
  */
-const DatePicker = forwardRef(_DatePicker);
-
-const _DateRangePicker = <T extends DateValue>(
-	props: DateRangePickerProps<T>,
-	ref: ForwardedRef<HTMLDivElement>,
-) => {
+const DatePicker = <T extends DateValue>({ ref, ...props }: DatePickerProps<T>) => {
 	return (
-		<AriaDateRangePicker
+		<AriaDatePicker
 			shouldForceLeadingZeros={true}
 			{...props}
 			ref={ref}
@@ -57,7 +47,18 @@ const _DateRangePicker = <T extends DateValue>(
  *
  * https://react-spectrum.adobe.com/react-aria/DateRangePicker.html
  */
-const DateRangePicker = forwardRef(_DateRangePicker);
+const DateRangePicker = <T extends DateValue>({ ref, ...props }: DateRangePickerProps<T>) => {
+	return (
+		<AriaDateRangePicker
+			shouldForceLeadingZeros={true}
+			{...props}
+			ref={ref}
+			className={composeRenderProps(props.className, (className, renderProps) =>
+				picker({ ...renderProps, className }),
+			)}
+		/>
+	);
+};
 
 export { DatePicker, DateRangePicker };
 export type { DatePickerProps, DateRangePickerProps };

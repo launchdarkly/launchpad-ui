@@ -1,15 +1,14 @@
-import type { ForwardedRef } from 'react';
+import type { RefObject } from 'react';
 import type {
-	DateFieldProps,
-	DateInputProps,
-	DateSegmentProps,
+	DateFieldProps as AriaDateFieldProps,
+	DateInputProps as AriaDateInputProps,
+	DateSegmentProps as AriaDateSegmentProps,
+	TimeFieldProps as AriaTimeFieldProps,
 	DateValue,
-	TimeFieldProps,
 	TimeValue,
 } from 'react-aria-components';
 
 import { cva, cx } from 'class-variance-authority';
-import { forwardRef } from 'react';
 import {
 	DateField as AriaDateField,
 	DateInput as AriaDateInput,
@@ -25,10 +24,28 @@ const field = cva(styles.field);
 const dateInput = cva(styles.input);
 const segment = cva(styles.segment);
 
-const _DateField = <T extends DateValue>(
-	props: DateFieldProps<T>,
-	ref: ForwardedRef<HTMLDivElement>,
-) => {
+interface DateFieldProps<T extends DateValue> extends AriaDateFieldProps<T> {
+	ref?: RefObject<HTMLDivElement | null>;
+}
+
+interface DateInputProps extends AriaDateInputProps {
+	ref?: RefObject<HTMLDivElement | null>;
+}
+
+interface DateSegmentProps extends AriaDateSegmentProps {
+	ref?: RefObject<HTMLDivElement | null>;
+}
+
+interface TimeFieldProps<T extends TimeValue> extends AriaTimeFieldProps<T> {
+	ref?: RefObject<HTMLDivElement | null>;
+}
+
+/**
+ * A date field allows users to enter and edit date and time values using a keyboard. Each part of a date value is displayed in an individually editable segment.
+ *
+ * https://react-spectrum.adobe.com/react-aria/DateField.html
+ */
+const DateField = <T extends DateValue>({ ref, ...props }: DateFieldProps<T>) => {
 	return (
 		<AriaDateField
 			shouldForceLeadingZeros={true}
@@ -42,13 +59,11 @@ const _DateField = <T extends DateValue>(
 };
 
 /**
- * A date field allows users to enter and edit date and time values using a keyboard. Each part of a date value is displayed in an individually editable segment.
+ * A date input groups the editable date segments within a date field.
  *
  * https://react-spectrum.adobe.com/react-aria/DateField.html
  */
-const DateField = forwardRef(_DateField);
-
-const _DateInput = (props: DateInputProps, ref: ForwardedRef<HTMLDivElement>) => {
+const DateInput = ({ ref, ...props }: DateInputProps) => {
 	return (
 		<AriaDateInput
 			{...props}
@@ -61,13 +76,11 @@ const _DateInput = (props: DateInputProps, ref: ForwardedRef<HTMLDivElement>) =>
 };
 
 /**
- * A date input groups the editable date segments within a date field.
+ * A date segment displays an individual unit of a date and time, and allows users to edit the value by typing or using the arrow keys to increment and decrement.
  *
  * https://react-spectrum.adobe.com/react-aria/DateField.html
  */
-const DateInput = forwardRef(_DateInput);
-
-const _DateSegment = (props: DateSegmentProps, ref: ForwardedRef<HTMLDivElement>) => {
+const DateSegment = ({ ref, ...props }: DateSegmentProps) => {
 	return (
 		<AriaDateSegment
 			{...props}
@@ -80,16 +93,11 @@ const _DateSegment = (props: DateSegmentProps, ref: ForwardedRef<HTMLDivElement>
 };
 
 /**
- * A date segment displays an individual unit of a date and time, and allows users to edit the value by typing or using the arrow keys to increment and decrement.
+ * A time field allows users to enter and edit time values using a keyboard. Each part of a time value is displayed in an individually editable segment.
  *
- * https://react-spectrum.adobe.com/react-aria/DateField.html
+ * https://react-spectrum.adobe.com/react-aria/TimeField.html
  */
-const DateSegment = forwardRef(_DateSegment);
-
-const _TimeField = <T extends TimeValue>(
-	props: TimeFieldProps<T>,
-	ref: ForwardedRef<HTMLDivElement>,
-) => {
+const TimeField = <T extends TimeValue>({ ref, ...props }: TimeFieldProps<T>) => {
 	return (
 		<AriaTimeField
 			{...props}
@@ -100,13 +108,6 @@ const _TimeField = <T extends TimeValue>(
 		/>
 	);
 };
-
-/**
- * A time field allows users to enter and edit time values using a keyboard. Each part of a time value is displayed in an individually editable segment.
- *
- * https://react-spectrum.adobe.com/react-aria/TimeField.html
- */
-const TimeField = forwardRef(_TimeField);
 
 export { DateField, DateInput, DateSegment, TimeField };
 export type { DateFieldProps, DateInputProps, DateSegmentProps, TimeFieldProps };

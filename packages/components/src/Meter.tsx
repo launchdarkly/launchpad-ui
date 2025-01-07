@@ -1,8 +1,7 @@
-import type { ForwardedRef } from 'react';
-import type { MeterProps } from 'react-aria-components';
+import type { RefObject } from 'react';
+import type { MeterProps as AriaMeterProps } from 'react-aria-components';
 
 import { cva } from 'class-variance-authority';
-import { forwardRef } from 'react';
 import { Meter as AriaMeter, composeRenderProps } from 'react-aria-components';
 import styles from './styles/Meter.module.css';
 
@@ -10,7 +9,16 @@ const meter = cva(styles.meter);
 
 const icon = cva(styles.base);
 
-const _Meter = (props: MeterProps, ref: ForwardedRef<HTMLDivElement>) => {
+interface MeterProps extends AriaMeterProps {
+	ref?: RefObject<HTMLDivElement | null>;
+}
+
+/**
+ * A meter represents a quantity within a known range, or a fractional value.
+ *
+ * https://react-spectrum.adobe.com/react-aria/Meter.html
+ */
+const Meter = ({ ref, ...props }: MeterProps) => {
 	const center = 64;
 	const strokeWidth = 8;
 	const r = 64 - strokeWidth;
@@ -52,13 +60,6 @@ const _Meter = (props: MeterProps, ref: ForwardedRef<HTMLDivElement>) => {
 		</AriaMeter>
 	);
 };
-
-/**
- * A meter represents a quantity within a known range, or a fractional value.
- *
- * https://react-spectrum.adobe.com/react-aria/Meter.html
- */
-const Meter = forwardRef(_Meter);
 
 export { Meter };
 export type { MeterProps };

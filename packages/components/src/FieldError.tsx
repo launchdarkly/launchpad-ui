@@ -1,15 +1,21 @@
-import type { ForwardedRef } from 'react';
-import type { FieldErrorProps } from 'react-aria-components';
+import type { RefObject } from 'react';
+import type { FieldErrorProps as AriaFieldErrorProps } from 'react-aria-components';
 
 import { cva } from 'class-variance-authority';
-import { forwardRef } from 'react';
 import { FieldError as AriaFieldError, composeRenderProps } from 'react-aria-components';
 
 import styles from './styles/FieldError.module.css';
 
 const error = cva(styles.error);
 
-const _FieldError = (props: FieldErrorProps, ref: ForwardedRef<HTMLElement>) => {
+interface FieldErrorProps extends AriaFieldErrorProps {
+	ref?: RefObject<HTMLElement | null>;
+}
+
+/**
+ * A FieldError displays validation errors for a form field.
+ */
+const FieldError = ({ ref, ...props }: FieldErrorProps) => {
 	return (
 		<AriaFieldError
 			{...props}
@@ -20,11 +26,6 @@ const _FieldError = (props: FieldErrorProps, ref: ForwardedRef<HTMLElement>) => 
 		/>
 	);
 };
-
-/**
- * A FieldError displays validation errors for a form field.
- */
-const FieldError = forwardRef(_FieldError);
 
 export { FieldError };
 export type { FieldErrorProps };

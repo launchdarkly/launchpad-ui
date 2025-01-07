@@ -1,8 +1,7 @@
-import type { ForwardedRef, ReactNode } from 'react';
+import type { ReactNode, RefObject } from 'react';
 import type { SwitchProps as AriaSwitchProps } from 'react-aria-components';
 
 import { cva } from 'class-variance-authority';
-import { forwardRef } from 'react';
 import { Switch as AriaSwitch, composeRenderProps } from 'react-aria-components';
 
 import styles from './styles/Switch.module.css';
@@ -11,9 +10,15 @@ const _switch = cva(styles.switch);
 
 interface SwitchProps extends Omit<AriaSwitchProps, 'children'> {
 	children?: ReactNode;
+	ref?: RefObject<HTMLLabelElement | null>;
 }
 
-const _Switch = (props: SwitchProps, ref: ForwardedRef<HTMLLabelElement>) => {
+/**
+ * A switch allows a user to turn a setting on or off.
+ *
+ * https://react-spectrum.adobe.com/react-aria/Switch.html
+ */
+const Switch = ({ ref, ...props }: SwitchProps) => {
 	return (
 		<AriaSwitch
 			{...props}
@@ -35,13 +40,6 @@ const _Switch = (props: SwitchProps, ref: ForwardedRef<HTMLLabelElement>) => {
 		</AriaSwitch>
 	);
 };
-
-/**
- * A switch allows a user to turn a setting on or off.
- *
- * https://react-spectrum.adobe.com/react-aria/Switch.html
- */
-const Switch = forwardRef(_Switch);
 
 export { Switch };
 export type { SwitchProps };
