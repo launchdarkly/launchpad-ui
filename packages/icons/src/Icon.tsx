@@ -1,5 +1,5 @@
 import type { VariantProps } from 'class-variance-authority';
-import type { SVGAttributes } from 'react';
+import type { RefObject, SVGAttributes } from 'react';
 import type { IconName } from './types';
 
 import { cva } from 'class-variance-authority';
@@ -30,6 +30,7 @@ const IconContext = createContext<IconProps>({});
 
 interface IconProps extends SVGAttributes<SVGElement>, VariantProps<typeof icon> {
 	name?: IconName;
+	ref?: RefObject<SVGSVGElement | null>;
 }
 
 const Icon = ({
@@ -40,6 +41,7 @@ const Icon = ({
 	role = 'img',
 	size = 'medium',
 	variant = 'default',
+	ref,
 	...props
 }: IconProps) => {
 	const ctx = useContext(IconContext);
@@ -50,6 +52,7 @@ const Icon = ({
 			role={role}
 			className={icon({ size: ctx.size || size, variant, className })}
 			data-icon={name}
+			ref={ref}
 			{...props}
 		>
 			{name && <use href={`#lp-icon-${name}`} />}

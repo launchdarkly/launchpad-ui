@@ -1,10 +1,12 @@
-import type { forwardRefType } from '@react-types/shared';
 import type { VariantProps } from 'class-variance-authority';
-import type { ForwardedRef } from 'react';
-import type { TagProps as AriaTagProps, TagGroupProps, TagListProps } from 'react-aria-components';
+import type { RefObject } from 'react';
+import type {
+	TagGroupProps as AriaTagGroupProps,
+	TagListProps as AriaTagListProps,
+	TagProps as AriaTagProps,
+} from 'react-aria-components';
 
 import { cva } from 'class-variance-authority';
-import { forwardRef } from 'react';
 import {
 	Tag as AriaTag,
 	TagGroup as AriaTagGroup,
@@ -40,20 +42,31 @@ const tag = cva(styles.tag, {
 });
 
 interface TagVariants extends VariantProps<typeof tag> {}
-interface TagProps extends AriaTagProps, TagVariants {}
+interface TagProps extends AriaTagProps, TagVariants {
+	ref?: RefObject<HTMLDivElement | null>;
+}
 
-const _TagGroup = ({ className, ...props }: TagGroupProps, ref: ForwardedRef<HTMLDivElement>) => {
-	return <AriaTagGroup {...props} ref={ref} className={group({ className })} />;
-};
+interface TagGroupProps extends AriaTagGroupProps {
+	ref?: RefObject<HTMLDivElement | null>;
+}
+
+interface TagListProps<T> extends AriaTagListProps<T> {
+	ref?: RefObject<HTMLDivElement | null>;
+}
 
 /**
  * A tag group is a focusable list of labels, categories, keywords, filters, or other items, with support for keyboard navigation, selection, and removal.
  *
  * https://react-spectrum.adobe.com/react-aria/TagGroup.html
  */
-const TagGroup = forwardRef(_TagGroup);
+const TagGroup = ({ className, ref, ...props }: TagGroupProps) => {
+	return <AriaTagGroup {...props} ref={ref} className={group({ className })} />;
+};
 
-const _TagList = <T extends object>(props: TagListProps<T>, ref: ForwardedRef<HTMLDivElement>) => {
+/**
+ * A tag list is a container for tags within a TagGroup.
+ */
+const TagList = <T extends object>({ ref, ...props }: TagListProps<T>) => {
 	return (
 		<AriaTagList
 			{...props}
@@ -66,14 +79,9 @@ const _TagList = <T extends object>(props: TagListProps<T>, ref: ForwardedRef<HT
 };
 
 /**
- * A tag list is a container for tags within a TagGroup.
+ * A Tag is an individual item within a TagList.
  */
-const TagList = (forwardRef as forwardRefType)(_TagList);
-
-const _Tag = (
-	{ size = 'medium', variant = 'default', ...props }: TagProps,
-	ref: ForwardedRef<HTMLDivElement>,
-) => {
+const Tag = ({ size = 'medium', variant = 'default', ref, ...props }: TagProps) => {
 	const textValue = typeof props.children === 'string' ? props.children : undefined;
 
 	return (
@@ -102,11 +110,6 @@ const _Tag = (
 		</AriaTag>
 	);
 };
-
-/**
- * A Tag is an individual item within a TagList.
- */
-const Tag = forwardRef(_Tag);
 
 export { TagGroup, TagList, Tag, tag };
 export type { TagGroupProps, TagListProps, TagProps, TagVariants };

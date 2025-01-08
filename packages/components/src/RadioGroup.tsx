@@ -1,15 +1,23 @@
-import type { ForwardedRef } from 'react';
-import type { RadioGroupProps } from 'react-aria-components';
+import type { RefObject } from 'react';
+import type { RadioGroupProps as AriaRadioGroupProps } from 'react-aria-components';
 
 import { cva } from 'class-variance-authority';
-import { forwardRef } from 'react';
 import { RadioGroup as AriaRadioGroup, composeRenderProps } from 'react-aria-components';
 
 import styles from './styles/RadioGroup.module.css';
 
 const group = cva(styles.group);
 
-const _RadioGroup = (props: RadioGroupProps, ref: ForwardedRef<HTMLDivElement>) => {
+interface RadioGroupProps extends AriaRadioGroupProps {
+	ref?: RefObject<HTMLDivElement | null>;
+}
+
+/**
+ * A radio group allows a user to select a single item from a list of mutually exclusive options.
+ *
+ * https://react-spectrum.adobe.com/react-aria/RadioGroup.html
+ */
+const RadioGroup = ({ ref, ...props }: RadioGroupProps) => {
 	return (
 		<AriaRadioGroup
 			{...props}
@@ -20,13 +28,6 @@ const _RadioGroup = (props: RadioGroupProps, ref: ForwardedRef<HTMLDivElement>) 
 		/>
 	);
 };
-
-/**
- * A radio group allows a user to select a single item from a list of mutually exclusive options.
- *
- * https://react-spectrum.adobe.com/react-aria/RadioGroup.html
- */
-const RadioGroup = forwardRef(_RadioGroup);
 
 export { RadioGroup };
 export type { RadioGroupProps };

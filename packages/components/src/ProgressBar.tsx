@@ -1,9 +1,8 @@
 import type { VariantProps } from 'class-variance-authority';
-import type { ForwardedRef } from 'react';
+import type { RefObject } from 'react';
 import type { ProgressBarProps as AriaProgressBarProps } from 'react-aria-components';
 
 import { cva, cx } from 'class-variance-authority';
-import { forwardRef } from 'react';
 import { ProgressBar as AriaProgressBar, composeRenderProps } from 'react-aria-components';
 
 import styles from './styles/ProgressBar.module.css';
@@ -23,12 +22,16 @@ const icon = cva(styles.base, {
 	},
 });
 
-interface ProgressBarProps extends AriaProgressBarProps, VariantProps<typeof icon> {}
+interface ProgressBarProps extends AriaProgressBarProps, VariantProps<typeof icon> {
+	ref?: RefObject<HTMLDivElement | null>;
+}
 
-const _ProgressBar = (
-	{ size = 'small', ...props }: ProgressBarProps,
-	ref: ForwardedRef<HTMLDivElement>,
-) => {
+/**
+ * Progress bars show either determinate or indeterminate progress of an operation over time.
+ *
+ * https://react-spectrum.adobe.com/react-aria/ProgressBar.html
+ */
+const ProgressBar = ({ size = 'small', ref, ...props }: ProgressBarProps) => {
 	const center = 16;
 	const strokeWidth = 4;
 	const r = 16 - strokeWidth;
@@ -71,13 +74,6 @@ const _ProgressBar = (
 		</AriaProgressBar>
 	);
 };
-
-/**
- * Progress bars show either determinate or indeterminate progress of an operation over time.
- *
- * https://react-spectrum.adobe.com/react-aria/ProgressBar.html
- */
-const ProgressBar = forwardRef(_ProgressBar);
 
 export { ProgressBar };
 export type { ProgressBarProps };

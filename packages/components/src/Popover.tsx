@@ -1,11 +1,11 @@
-import type { ForwardedRef } from 'react';
+import type { RefObject } from 'react';
 import type {
 	OverlayArrowProps as AriaOverlayArrowProps,
 	PopoverProps as AriaPopoverProps,
 } from 'react-aria-components';
 
 import { cva } from 'class-variance-authority';
-import { forwardRef, useContext } from 'react';
+import { useContext } from 'react';
 import {
 	OverlayArrow as AriaOverlayArrow,
 	Popover as AriaPopover,
@@ -15,13 +15,22 @@ import {
 import { PopoverContext } from './ComboBox';
 import styles from './styles/Popover.module.css';
 
-interface PopoverProps extends AriaPopoverProps {}
-interface OverlayArrowProps extends Omit<AriaOverlayArrowProps, 'children'> {}
+interface PopoverProps extends AriaPopoverProps {
+	ref?: RefObject<HTMLElement | null>;
+}
+interface OverlayArrowProps extends Omit<AriaOverlayArrowProps, 'children'> {
+	ref?: RefObject<HTMLDivElement | null>;
+}
 
 const popover = cva(styles.popover);
 const arrow = cva(styles.arrow);
 
-const _Popover = (props: PopoverProps, ref: ForwardedRef<HTMLElement>) => {
+/**
+ * A popover is an overlay element positioned relative to a trigger.
+ *
+ * https://react-spectrum.adobe.com/react-aria/Popover.html
+ */
+const Popover = ({ ref, ...props }: PopoverProps) => {
 	const popoverProps = useContext(PopoverContext);
 
 	return (
@@ -39,13 +48,11 @@ const _Popover = (props: PopoverProps, ref: ForwardedRef<HTMLElement>) => {
 };
 
 /**
- * A popover is an overlay element positioned relative to a trigger.
+ * An OverlayArrow renders a custom arrow element relative to an overlay element such as a popover or tooltip such that it aligns with a trigger element.
  *
  * https://react-spectrum.adobe.com/react-aria/Popover.html
  */
-const Popover = forwardRef(_Popover);
-
-const _OverlayArrow = (props: OverlayArrowProps, ref: ForwardedRef<HTMLDivElement>) => {
+const OverlayArrow = ({ ref, ...props }: OverlayArrowProps) => {
 	return (
 		<AriaOverlayArrow
 			{...props}
@@ -61,13 +68,6 @@ const _OverlayArrow = (props: OverlayArrowProps, ref: ForwardedRef<HTMLDivElemen
 		</AriaOverlayArrow>
 	);
 };
-
-/**
- * An OverlayArrow renders a custom arrow element relative to an overlay element such as a popover or tooltip such that it aligns with a trigger element.
- *
- * https://react-spectrum.adobe.com/react-aria/Popover.html
- */
-const OverlayArrow = forwardRef(_OverlayArrow);
 
 export { OverlayArrow, Popover };
 export type { OverlayArrowProps, PopoverProps };

@@ -1,19 +1,18 @@
-import type { forwardRefType } from '@react-types/shared';
-import type { ForwardedRef } from 'react';
+import type { RefObject } from 'react';
 import type {
-	CellProps,
-	ColumnProps,
-	ColumnResizerProps,
-	ResizableTableContainerProps,
-	RowProps,
-	TableBodyProps,
-	TableHeaderProps,
-	TableProps,
+	CellProps as AriaCellProps,
+	ColumnProps as AriaColumnProps,
+	ColumnResizerProps as AriaColumnResizerProps,
+	ResizableTableContainerProps as AriaResizableTableContainerProps,
+	RowProps as AriaRowProps,
+	TableBodyProps as AriaTableBodyProps,
+	TableHeaderProps as AriaTableHeaderProps,
+	TableProps as AriaTableProps,
 } from 'react-aria-components';
 
 import { Icon } from '@launchpad-ui/icons';
 import { cva } from 'class-variance-authority';
-import { createContext, forwardRef, useContext } from 'react';
+import { createContext, useContext } from 'react';
 import { VisuallyHidden } from 'react-aria';
 import {
 	Cell as AriaCell,
@@ -46,7 +45,44 @@ const ResizableTableContainerContext = createContext<{ resizable: boolean } | nu
 	resizable: false,
 });
 
-const _Table = (props: TableProps, ref: ForwardedRef<HTMLTableElement>) => {
+interface TableProps extends AriaTableProps {
+	ref?: RefObject<HTMLTableElement | null>;
+}
+
+interface ColumnProps extends AriaColumnProps {
+	ref?: RefObject<HTMLTableCellElement | null>;
+}
+
+interface TableHeaderProps<T extends object> extends AriaTableHeaderProps<T> {
+	ref?: RefObject<HTMLTableSectionElement | null>;
+}
+
+interface TableBodyProps<T extends object> extends AriaTableBodyProps<T> {
+	ref?: RefObject<HTMLTableSectionElement | null>;
+}
+
+interface RowProps<T extends object> extends AriaRowProps<T> {
+	ref?: RefObject<HTMLTableRowElement | null>;
+}
+
+interface CellProps extends AriaCellProps {
+	ref?: RefObject<HTMLTableCellElement | null>;
+}
+
+interface ColumnResizerProps extends AriaColumnResizerProps {
+	ref?: RefObject<HTMLDivElement | null>;
+}
+
+interface ResizableTableContainerProps extends AriaResizableTableContainerProps {
+	ref?: RefObject<HTMLDivElement | null>;
+}
+
+/**
+ * A table displays data in rows and columns and enables a user to navigate its contents via directional navigation keys, and optionally supports row selection and sorting.
+ *
+ * https://react-spectrum.adobe.com/react-aria/Table.html
+ */
+const Table = ({ ref, ...props }: TableProps) => {
 	return (
 		<AriaTable
 			{...props}
@@ -59,13 +95,11 @@ const _Table = (props: TableProps, ref: ForwardedRef<HTMLTableElement>) => {
 };
 
 /**
- * A table displays data in rows and columns and enables a user to navigate its contents via directional navigation keys, and optionally supports row selection and sorting.
+ * A column within a `<Table>`.
  *
  * https://react-spectrum.adobe.com/react-aria/Table.html
  */
-const Table = forwardRef(_Table);
-
-const _Column = (props: ColumnProps, ref: ForwardedRef<HTMLTableCellElement>) => {
+const Column = ({ ref, ...props }: ColumnProps) => {
 	const ctx = useContext(ResizableTableContainerContext);
 	return (
 		<AriaColumn
@@ -89,16 +123,11 @@ const _Column = (props: ColumnProps, ref: ForwardedRef<HTMLTableCellElement>) =>
 };
 
 /**
- * A column within a `<Table>`.
+ * A header within a `<Table>`, containing the table columns.
  *
  * https://react-spectrum.adobe.com/react-aria/Table.html
  */
-const Column = forwardRef(_Column);
-
-const _TableHeader = <T extends object>(
-	{ className, ...props }: TableHeaderProps<T>,
-	ref: ForwardedRef<HTMLTableSectionElement>,
-) => {
+const TableHeader = <T extends object>({ className, ref, ...props }: TableHeaderProps<T>) => {
 	const { selectionBehavior, selectionMode, allowsDragging } = useTableOptions();
 	return (
 		<AriaTableHeader {...props} ref={ref} className={header({ className })}>
@@ -116,16 +145,11 @@ const _TableHeader = <T extends object>(
 };
 
 /**
- * A header within a `<Table>`, containing the table columns.
+ * The body of a `<Table>`, containing the table rows.
  *
  * https://react-spectrum.adobe.com/react-aria/Table.html
  */
-const TableHeader = (forwardRef as forwardRefType)(_TableHeader);
-
-const _TableBody = <T extends object>(
-	props: TableBodyProps<T>,
-	ref: ForwardedRef<HTMLTableSectionElement>,
-) => {
+const TableBody = <T extends object>({ ref, ...props }: TableBodyProps<T>) => {
 	return (
 		<AriaTableBody
 			{...props}
@@ -138,16 +162,11 @@ const _TableBody = <T extends object>(
 };
 
 /**
- * The body of a `<Table>`, containing the table rows.
+ * A row within a `<Table>`.
  *
  * https://react-spectrum.adobe.com/react-aria/Table.html
  */
-const TableBody = (forwardRef as forwardRefType)(_TableBody);
-
-const _Row = <T extends object>(
-	{ columns, children, ...props }: RowProps<T>,
-	ref: ForwardedRef<HTMLTableRowElement>,
-) => {
+const Row = <T extends object>({ columns, children, ref, ...props }: RowProps<T>) => {
 	const { selectionBehavior, allowsDragging } = useTableOptions();
 
 	return (
@@ -175,13 +194,11 @@ const _Row = <T extends object>(
 };
 
 /**
- * A row within a `<Table>`.
+ * A cell within a table row.
  *
  * https://react-spectrum.adobe.com/react-aria/Table.html
  */
-const Row = (forwardRef as forwardRefType)(_Row);
-
-const _Cell = (props: CellProps, ref: ForwardedRef<HTMLTableCellElement>) => {
+const Cell = ({ ref, ...props }: CellProps) => {
 	return (
 		<AriaCell
 			{...props}
@@ -193,14 +210,7 @@ const _Cell = (props: CellProps, ref: ForwardedRef<HTMLTableCellElement>) => {
 	);
 };
 
-/**
- * A cell within a table row.
- *
- * https://react-spectrum.adobe.com/react-aria/Table.html
- */
-const Cell = forwardRef(_Cell);
-
-const _ColumnResizer = (props: ColumnResizerProps, ref: ForwardedRef<HTMLDivElement>) => {
+const ColumnResizer = ({ ref, ...props }: ColumnResizerProps) => {
 	return (
 		<AriaColumnResizer
 			{...props}
@@ -212,12 +222,7 @@ const _ColumnResizer = (props: ColumnResizerProps, ref: ForwardedRef<HTMLDivElem
 	);
 };
 
-const ColumnResizer = forwardRef(_ColumnResizer);
-
-const _ResizableTableContainer = (
-	{ children, ...props }: ResizableTableContainerProps,
-	ref: ForwardedRef<HTMLDivElement>,
-) => {
+const ResizableTableContainer = ({ children, ref, ...props }: ResizableTableContainerProps) => {
 	return (
 		<AriaResizableTableContainer {...props} ref={ref}>
 			<Provider values={[[ResizableTableContainerContext, { resizable: true }]]}>
@@ -226,8 +231,6 @@ const _ResizableTableContainer = (
 		</AriaResizableTableContainer>
 	);
 };
-
-const ResizableTableContainer = forwardRef(_ResizableTableContainer);
 
 export { Cell, Column, ColumnResizer, ResizableTableContainer, Row, Table, TableBody, TableHeader };
 export type {

@@ -1,11 +1,10 @@
 import type { DOMProps } from '@react-types/shared';
 import type { VariantProps } from 'class-variance-authority';
-import type { ForwardedRef } from 'react';
+import type { RefObject } from 'react';
 import type { LinkProps as AriaLinkProps } from 'react-aria-components';
 
 import { Icon } from '@launchpad-ui/icons';
 import { cva } from 'class-variance-authority';
-import { forwardRef } from 'react';
 import { Link as AriaLink, composeRenderProps, useSlottedContext } from 'react-aria-components';
 
 import { LinkContext } from './Breadcrumbs';
@@ -23,12 +22,16 @@ const link = cva(styles.base, {
 	},
 });
 
-interface LinkProps extends AriaLinkProps, VariantProps<typeof link>, DOMProps {}
+interface LinkProps extends AriaLinkProps, VariantProps<typeof link>, DOMProps {
+	ref?: RefObject<HTMLAnchorElement | null>;
+}
 
-const _Link = (
-	{ variant = 'default', href, ...props }: LinkProps,
-	ref: ForwardedRef<HTMLAnchorElement>,
-) => {
+/**
+ * A link allows a user to navigate to another page or resource within a web page or application.
+ *
+ * https://react-spectrum.adobe.com/react-aria/Link.html
+ */
+const Link = ({ variant = 'default', href, ref, ...props }: LinkProps) => {
 	const linkProps = useSlottedContext(LinkContext);
 
 	return (
@@ -46,13 +49,6 @@ const _Link = (
 		</>
 	);
 };
-
-/**
- * A link allows a user to navigate to another page or resource within a web page or application.
- *
- * https://react-spectrum.adobe.com/react-aria/Link.html
- */
-const Link = forwardRef(_Link);
 
 export { Link };
 export type { LinkProps };

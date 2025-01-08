@@ -1,11 +1,10 @@
-import type { forwardRefType } from '@react-types/shared';
-import type { CSSProperties, ForwardedRef } from 'react';
-import type { ComboBoxProps, PopoverProps } from 'react-aria-components';
+import type { CSSProperties, RefObject } from 'react';
+import type { ComboBoxProps as AriaComboBoxProps, PopoverProps } from 'react-aria-components';
 import type { IconButtonProps } from './IconButton';
 
 import { useResizeObserver } from '@react-aria/utils';
 import { cva } from 'class-variance-authority';
-import { createContext, forwardRef, useCallback, useContext, useRef, useState } from 'react';
+import { createContext, useCallback, useContext, useRef, useState } from 'react';
 import {
 	ComboBox as AriaComboBox,
 	ComboBoxStateContext,
@@ -21,10 +20,18 @@ const box = cva(styles.box);
 
 const PopoverContext = createContext<PopoverProps>({});
 
-const _ComboBox = <T extends object>(
-	props: ComboBoxProps<T>,
-	ref: ForwardedRef<HTMLDivElement>,
-) => {
+interface ComboBoxProps<T extends object> extends AriaComboBoxProps<T> {
+	ref?: RefObject<HTMLDivElement | null>;
+}
+
+interface ComboBoxClearButtonProps extends Partial<IconButtonProps> {}
+
+/**
+ * A combo box combines a text input with a listbox, allowing users to filter a list of options to items matching a query.
+ *
+ * https://react-spectrum.adobe.com/react-aria/ComboBox.html
+ */
+const ComboBox = <T extends object>({ ref, ...props }: ComboBoxProps<T>) => {
 	const groupRef = useRef<HTMLDivElement>(null);
 	// https://github.com/adobe/react-spectrum/blob/main/packages/react-aria-components/src/ComboBox.tsx#L155-L170
 	const [groupWidth, setGroupWidth] = useState<string | null>(null);
@@ -68,17 +75,7 @@ const _ComboBox = <T extends object>(
 	);
 };
 
-/**
- * A combo box combines a text input with a listbox, allowing users to filter a list of options to items matching a query.
- *
- * https://react-spectrum.adobe.com/react-aria/ComboBox.html
- */
-const ComboBox = (forwardRef as forwardRefType)(_ComboBox);
-
-const _ComboBoxClearButton = (
-	props: Partial<IconButtonProps>,
-	ref: ForwardedRef<HTMLButtonElement>,
-) => {
+const ComboBoxClearButton = ({ ref, ...props }: ComboBoxClearButtonProps) => {
 	const state = useContext(ComboBoxStateContext);
 	return (
 		<IconButton
@@ -94,7 +91,5 @@ const _ComboBoxClearButton = (
 	);
 };
 
-const ComboBoxClearButton = forwardRef(_ComboBoxClearButton);
-
 export { ComboBox, ComboBoxClearButton, PopoverContext };
-export type { ComboBoxProps };
+export type { ComboBoxProps, ComboBoxClearButtonProps };

@@ -1,9 +1,8 @@
 import type { VariantProps } from 'class-variance-authority';
-import type { ForwardedRef } from 'react';
+import type { RefObject } from 'react';
 import type { InputProps as AriaInputProps } from 'react-aria-components';
 
 import { cva } from 'class-variance-authority';
-import { forwardRef } from 'react';
 import { Input as AriaInput, composeRenderProps } from 'react-aria-components';
 
 import styles from './styles/Input.module.css';
@@ -21,12 +20,16 @@ const input = cva(styles.base, {
 });
 
 interface InputVariants extends VariantProps<typeof input> {}
-interface InputProps extends AriaInputProps, InputVariants {}
+interface InputProps extends AriaInputProps, InputVariants {
+	ref?: RefObject<HTMLInputElement | null>;
+}
 
-const _Input = (
-	{ variant = 'default', ...props }: InputProps,
-	ref: ForwardedRef<HTMLInputElement>,
-) => {
+/**
+ * An input allows a user to input text.
+ *
+ * https://react-spectrum.adobe.com/react-aria/TextField.html
+ */
+const Input = ({ variant = 'default', ref, ...props }: InputProps) => {
 	return (
 		<AriaInput
 			{...props}
@@ -37,13 +40,6 @@ const _Input = (
 		/>
 	);
 };
-
-/**
- * An input allows a user to input text.
- *
- * https://react-spectrum.adobe.com/react-aria/TextField.html
- */
-const Input = forwardRef(_Input);
 
 export { Input, input };
 export type { InputProps, InputVariants };

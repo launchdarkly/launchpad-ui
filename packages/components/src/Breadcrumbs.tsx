@@ -1,10 +1,13 @@
-import type { forwardRefType } from '@react-types/shared';
-import type { ForwardedRef } from 'react';
-import type { BreadcrumbProps, BreadcrumbsProps, ContextValue } from 'react-aria-components';
+import type { RefObject } from 'react';
+import type {
+	BreadcrumbProps as AriaBreadcrumbProps,
+	BreadcrumbsProps as AriaBreadcrumbsProps,
+	ContextValue,
+} from 'react-aria-components';
 import type { LinkProps } from './Link';
 
 import { cva } from 'class-variance-authority';
-import { createContext, forwardRef } from 'react';
+import { createContext } from 'react';
 import {
 	Breadcrumb as AriaBreadcrumb,
 	Breadcrumbs as AriaBreadcrumbs,
@@ -19,21 +22,29 @@ const crumb = cva(styles.crumb);
 
 const LinkContext = createContext<ContextValue<LinkProps, HTMLAnchorElement>>(null);
 
-const _Breadcrumbs = <T extends object>(
-	{ className, ...props }: BreadcrumbsProps<T>,
-	ref: ForwardedRef<HTMLOListElement>,
-) => {
-	return <AriaBreadcrumbs {...props} ref={ref} className={crumbs({ className })} />;
-};
+interface BreadcrumbsProps<T extends object> extends AriaBreadcrumbsProps<T> {
+	ref?: RefObject<HTMLOListElement | null>;
+}
+
+interface BreadcrumbProps extends AriaBreadcrumbProps {
+	ref?: RefObject<HTMLLIElement | null>;
+}
 
 /**
  * Breadcrumbs display a hierarchy of links to the current page or resource in an application.
  *
  * https://react-spectrum.adobe.com/react-aria/Breadcrumbs.html
  */
-const Breadcrumbs = (forwardRef as forwardRefType)(_Breadcrumbs);
+const Breadcrumbs = <T extends object>({ className, ref, ...props }: BreadcrumbsProps<T>) => {
+	return <AriaBreadcrumbs {...props} ref={ref} className={crumbs({ className })} />;
+};
 
-const _Breadcrumb = (props: BreadcrumbProps, ref: ForwardedRef<HTMLLIElement>) => {
+/**
+ * A Breadcrumb represents an individual item in a `<Breadcrumbs>` list.
+ *
+ * https://react-spectrum.adobe.com/react-aria/Breadcrumbs.html
+ */
+const Breadcrumb = ({ ref, ...props }: BreadcrumbProps) => {
 	return (
 		<AriaBreadcrumb
 			{...props}
@@ -48,13 +59,6 @@ const _Breadcrumb = (props: BreadcrumbProps, ref: ForwardedRef<HTMLLIElement>) =
 		</AriaBreadcrumb>
 	);
 };
-
-/**
- * A Breadcrumb represents an individual item in a `<Breadcrumbs>` list.
- *
- * https://react-spectrum.adobe.com/react-aria/Breadcrumbs.html
- */
-const Breadcrumb = forwardRef(_Breadcrumb);
 
 export { Breadcrumbs, Breadcrumb, LinkContext };
 export type { BreadcrumbsProps, BreadcrumbProps };

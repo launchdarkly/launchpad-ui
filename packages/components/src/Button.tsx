@@ -1,9 +1,9 @@
 import type { VariantProps } from 'class-variance-authority';
-import type { ForwardedRef } from 'react';
+import type { RefObject } from 'react';
 import type { ButtonProps as AriaButtonProps } from 'react-aria-components';
 
 import { cva, cx } from 'class-variance-authority';
-import { forwardRef, useContext } from 'react';
+import { useContext } from 'react';
 import {
 	Button as AriaButton,
 	Provider,
@@ -40,12 +40,16 @@ const button = cva(styles.base, {
 });
 
 interface ButtonVariants extends VariantProps<typeof button> {}
-interface ButtonProps extends AriaButtonProps, ButtonVariants {}
+interface ButtonProps extends AriaButtonProps, ButtonVariants {
+	ref?: RefObject<HTMLButtonElement | null>;
+}
 
-const _Button = (
-	{ size = 'medium', variant = 'default', ...props }: ButtonProps,
-	ref: ForwardedRef<HTMLButtonElement>,
-) => {
+/**
+ * A button allows a user to perform an action, with mouse, touch, and keyboard interactions.
+ *
+ * https://react-spectrum.adobe.com/react-aria/Button.html
+ */
+const Button = ({ size = 'medium', variant = 'default', ref, ...props }: ButtonProps) => {
 	const selectContext = useSlottedContext(SelectContext);
 	const state = useContext(SelectStateContext);
 	const ctx = useContext(PerceivableContext);
@@ -72,13 +76,6 @@ const _Button = (
 		</AriaButton>
 	);
 };
-
-/**
- * A button allows a user to perform an action, with mouse, touch, and keyboard interactions.
- *
- * https://react-spectrum.adobe.com/react-aria/Button.html
- */
-const Button = forwardRef(_Button);
 
 export { Button, button };
 export type { ButtonProps, ButtonVariants };

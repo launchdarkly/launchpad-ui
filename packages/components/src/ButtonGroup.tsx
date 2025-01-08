@@ -1,10 +1,9 @@
 import type { Orientation } from '@react-types/shared';
 import type { VariantProps } from 'class-variance-authority';
-import type { ForwardedRef } from 'react';
+import type { RefObject } from 'react';
 import type { GroupProps } from 'react-aria-components';
 
 import { cva } from 'class-variance-authority';
-import { forwardRef } from 'react';
 import {
 	ButtonContext,
 	Group,
@@ -34,12 +33,15 @@ const buttonGroup = cva(styles.base, {
 
 interface ButtonGroupProps extends GroupProps, VariantProps<typeof buttonGroup> {
 	orientation?: Orientation | null;
+	ref?: RefObject<HTMLDivElement | null>;
 }
 
-const _ButtonGroup = (
-	{ spacing = 'basic', orientation = 'horizontal', ...props }: ButtonGroupProps,
-	ref: ForwardedRef<HTMLDivElement>,
-) => {
+const ButtonGroup = ({
+	spacing = 'basic',
+	orientation = 'horizontal',
+	ref,
+	...props
+}: ButtonGroupProps) => {
 	return (
 		<Group
 			{...props}
@@ -62,8 +64,6 @@ const _ButtonGroup = (
 		</Group>
 	);
 };
-
-const ButtonGroup = forwardRef(_ButtonGroup);
 
 export { ButtonGroup };
 export type { ButtonGroupProps };

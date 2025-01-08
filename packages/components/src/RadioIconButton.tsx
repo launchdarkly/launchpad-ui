@@ -1,10 +1,9 @@
-import type { ForwardedRef } from 'react';
+import type { RefObject } from 'react';
 import type { RadioProps } from 'react-aria-components';
 import type { IconButtonBaseProps } from './IconButton';
 
 import { Icon } from '@launchpad-ui/icons';
 import { cx } from 'class-variance-authority';
-import { forwardRef } from 'react';
 import { Radio as AriaRadio, composeRenderProps } from 'react-aria-components';
 
 import { button } from './Button';
@@ -12,12 +11,22 @@ import { iconButton } from './IconButton';
 
 interface RadioIconButtonProps
 	extends Omit<RadioProps, 'children' | 'aria-label'>,
-		IconButtonBaseProps {}
+		IconButtonBaseProps {
+	ref?: RefObject<HTMLLabelElement | null>;
+}
 
-const _RadioIconButton = (
-	{ size = 'medium', variant = 'default', icon, ...props }: RadioIconButtonProps,
-	ref: ForwardedRef<HTMLLabelElement>,
-) => {
+/**
+ * A radio represents an individual option within a radio group.
+ *
+ * https://react-spectrum.adobe.com/react-aria/RadioGroup.html
+ */
+const RadioIconButton = ({
+	size = 'medium',
+	variant = 'default',
+	icon,
+	ref,
+	...props
+}: RadioIconButtonProps) => {
 	return (
 		<AriaRadio
 			{...props}
@@ -30,13 +39,6 @@ const _RadioIconButton = (
 		</AriaRadio>
 	);
 };
-
-/**
- * A radio represents an individual option within a radio group.
- *
- * https://react-spectrum.adobe.com/react-aria/RadioGroup.html
- */
-const RadioIconButton = forwardRef(_RadioIconButton);
 
 export { RadioIconButton };
 export type { RadioIconButtonProps };

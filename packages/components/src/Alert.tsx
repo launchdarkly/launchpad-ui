@@ -1,10 +1,9 @@
 import type { VariantProps } from 'class-variance-authority';
-import type { ForwardedRef, HTMLAttributes } from 'react';
+import type { HTMLAttributes, RefObject } from 'react';
 
 import { StatusIcon } from '@launchpad-ui/icons';
 import { useControlledState } from '@react-stately/utils';
 import { cva } from 'class-variance-authority';
-import { forwardRef } from 'react';
 import { HeadingContext, Provider } from 'react-aria-components';
 
 import { IconButton } from './IconButton';
@@ -37,21 +36,20 @@ interface AlertProps extends HTMLAttributes<HTMLDivElement>, AlertVariants {
 	isDismissable?: boolean;
 	isOpen?: boolean;
 	onDismiss?: () => void;
+	ref?: RefObject<HTMLDivElement | null>;
 }
 
-const _Alert = (
-	{
-		className,
-		children,
-		status = 'neutral',
-		variant = 'default',
-		isDismissable,
-		isOpen,
-		onDismiss,
-		...props
-	}: AlertProps,
-	ref: ForwardedRef<HTMLDivElement>,
-) => {
+const Alert = ({
+	className,
+	children,
+	status = 'neutral',
+	variant = 'default',
+	isDismissable,
+	isOpen,
+	onDismiss,
+	ref,
+	...props
+}: AlertProps) => {
 	const [open, setOpen] = useControlledState(isOpen, true, (val) => !val && onDismiss?.());
 
 	return open ? (
@@ -74,8 +72,6 @@ const _Alert = (
 		</div>
 	) : null;
 };
-
-const Alert = forwardRef(_Alert);
 
 export { Alert };
 export type { AlertProps };

@@ -1,9 +1,8 @@
-import type { ElementType, ForwardedRef, HTMLAttributes } from 'react';
+import type { ElementType, HTMLAttributes, RefObject } from 'react';
 import type { AriaButtonProps, HoverEvents } from 'react-aria';
 
 import { useObjectRef } from '@react-aria/utils';
 import { cva } from 'class-variance-authority';
-import { forwardRef } from 'react';
 import { mergeProps, useButton, useFocusRing, useHover } from 'react-aria';
 
 import styles from './styles/Pressable.module.css';
@@ -13,12 +12,17 @@ const pressable = cva(styles.pressable);
 interface PressableProps<T extends ElementType = 'button'>
 	extends AriaButtonProps<T>,
 		HoverEvents,
-		Pick<HTMLAttributes<T>, 'className'> {}
+		Pick<HTMLAttributes<T>, 'className'> {
+	ref?: RefObject<HTMLElement | null>;
+}
 
-const _Pressable = <T extends ElementType = 'span'>(
-	{ children, elementType, className, ...props }: PressableProps<T>,
-	ref: ForwardedRef<HTMLElement>,
-) => {
+const Pressable = <T extends ElementType = 'span'>({
+	children,
+	elementType,
+	className,
+	ref,
+	...props
+}: PressableProps<T>) => {
 	const domRef = useObjectRef(ref);
 	const ElementType = elementType || 'span';
 
@@ -47,8 +51,6 @@ const _Pressable = <T extends ElementType = 'span'>(
 		</ElementType>
 	);
 };
-
-const Pressable = forwardRef(_Pressable);
 
 export { Pressable };
 export type { PressableProps };

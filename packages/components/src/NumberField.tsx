@@ -1,15 +1,23 @@
-import type { ForwardedRef } from 'react';
-import type { NumberFieldProps } from 'react-aria-components';
+import type { RefObject } from 'react';
+import type { NumberFieldProps as AriaNumberFieldProps } from 'react-aria-components';
 
 import { cva } from 'class-variance-authority';
-import { forwardRef } from 'react';
 import { NumberField as AriaNumberField, composeRenderProps } from 'react-aria-components';
 
 import styles from './styles/NumberField.module.css';
 
 const number = cva(styles.number);
 
-const _NumberField = (props: NumberFieldProps, ref: ForwardedRef<HTMLDivElement>) => {
+interface NumberFieldProps extends AriaNumberFieldProps {
+	ref?: RefObject<HTMLDivElement | null>;
+}
+
+/**
+ * A number field allows a user to enter a number, and increment or decrement the value using stepper buttons.
+ *
+ * https://react-spectrum.adobe.com/react-aria/NumberField.html
+ */
+const NumberField = ({ ref, ...props }: NumberFieldProps) => {
 	return (
 		<AriaNumberField
 			{...props}
@@ -25,13 +33,6 @@ const _NumberField = (props: NumberFieldProps, ref: ForwardedRef<HTMLDivElement>
 		/>
 	);
 };
-
-/**
- * A number field allows a user to enter a number, and increment or decrement the value using stepper buttons.
- *
- * https://react-spectrum.adobe.com/react-aria/NumberField.html
- */
-const NumberField = forwardRef(_NumberField);
 
 export { NumberField };
 export type { NumberFieldProps };
