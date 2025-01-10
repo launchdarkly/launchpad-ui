@@ -26,8 +26,8 @@
 }
 
 .initials {
-	fill: var(--lp-color-white-950);
 	font: var(--lp-text-label-1-semibold);
+	font-size: var(--lp-font-size-100);
 }
 
 .yellow {
@@ -48,4 +48,10 @@
 
 .purple {
 	background-color: var(--lp-color-purple-600);
+}
+
+.text {
+	fill: var(--lp-color-white-950);
+	text-anchor: middle;
+	dominant-baseline: central;
 }

@@ -72,14 +72,7 @@ const Avatar = ({
 				)}
 				viewBox="0 0 24 24"
 			>
-				<text
-					x="50%"
-					y="50%"
-					alignmentBaseline="middle"
-					dominantBaseline="middle"
-					textAnchor="middle"
-					dy=".125em"
-				>
+				<text x="50%" y="50%" className={styles.text}>
 					{children}
 				</text>
 			</svg>
