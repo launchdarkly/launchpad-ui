@@ -6,7 +6,11 @@ import path from 'path';
 import tsconfig from '../tsconfig.json';
 
 const config: StorybookConfig = {
-	stories: ['../packages/**/*.stories.{mdx,tsx}', '../packages/**/*.mdx'],
+	stories: [
+		'../docs/stories/**/*.mdx',
+		'../packages/**/*.mdx',
+		'../packages/**/*.stories.{mdx,tsx}',
+	],
 	addons: [
 		'@storybook/addon-a11y',
 		{
