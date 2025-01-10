@@ -3,7 +3,7 @@ import type { StoryObj } from '@storybook/react';
 import { container, local } from './Story.css';
 
 export default {
-	title: 'Foundations/Tokens/Vars',
+	title: 'Tokens/Vars',
 	parameters: {
 		status: {
 			type: import.meta.env.STORYBOOK_PACKAGE_STATUS__VARS,

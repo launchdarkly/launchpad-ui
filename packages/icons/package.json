@@ -34,7 +34,6 @@
 		"test": "vitest run --coverage"
 	},
 	"dependencies": {
-		"@launchpad-ui/box": "workspace:~",
 		"@launchpad-ui/tokens": "workspace:~",
 		"class-variance-authority": "0.7.0"
 	},

@@ -3,7 +3,7 @@ import type { Args, StoryContext } from '@storybook/react';
 import { Button } from '@launchpad-ui/components';
 
 export default {
-	title: 'Foundations/Tokens/Themes',
+	title: 'Tokens/Themes',
 };
 
 export const NestedThemes = {
