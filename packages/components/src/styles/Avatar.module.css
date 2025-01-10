@@ -1,0 +1,51 @@
+.base {
+	background-color: var(--lp-color-bg-ui-primary);
+	border-radius: 100%;
+}
+
+.small {
+	width: var(--lp-size-16);
+	height: var(--lp-size-16);
+}
+
+.medium {
+	width: var(--lp-size-24);
+	height: var(--lp-size-24);
+}
+
+.large {
+	width: var(--lp-size-40);
+	height: var(--lp-size-40);
+}
+
+.icon {
+	border: 1px solid var(--lp-color-border-ui-primary);
+}
+
+.image {
+}
+
+.initials {
+	fill: var(--lp-color-white-950);
+	font: var(--lp-text-label-1-semibold);
+}
+
+.yellow {
+	background-color: var(--lp-color-brand-yellow-dark);
+}
+
+.blue {
+	background-color: var(--lp-color-blue-600);
+}
+
+.pink {
+	background-color: var(--lp-color-brand-pink-base);
+}
+
+.cyan {
+	background-color: var(--lp-color-brand-cyan-base);
+}
+
+.purple {
+	background-color: var(--lp-color-purple-600);
+}
