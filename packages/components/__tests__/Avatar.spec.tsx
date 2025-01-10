@@ -40,8 +40,8 @@ describe('Avatar', () => {
 	});
 
 	it('renders', async () => {
-		render(<Avatar src="https://avatars.githubusercontent.com/u/2147624?v=4" />);
-		expect(await screen.findByRole('img')).toBeVisible();
+		render(<Avatar src="https://avatars.githubusercontent.com/u/2147624?v=4" alt="engineer" />);
+		expect(await screen.findByRole('img', { name: 'engineer' })).toBeVisible();
 	});
 
 	it('renders icon on error', async () => {

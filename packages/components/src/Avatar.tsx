@@ -48,7 +48,7 @@ interface InitialsAvatarProps extends SVGAttributes<SVGElement>, AvatarVariants 
 const Avatar = ({ className, children, size = 'medium', ref, src, ...props }: AvatarProps) => {
 	const status = useImageLoadingStatus(src);
 
-	if (status === 'error') {
+	if (status !== 'loaded') {
 		return children ? (
 			<InitialsAvatar size={size}>{children}</InitialsAvatar>
 		) : (
@@ -57,9 +57,7 @@ const Avatar = ({ className, children, size = 'medium', ref, src, ...props }: Av
 	}
 
 	// biome-ignore lint/a11y/useAltText: <explanation>
-	return status === 'loaded' ? (
-		<img ref={ref} src={src} {...props} className={avatar({ size, className })} />
-	) : null;
+	return <img ref={ref} src={src} {...props} className={avatar({ size, className })} />;
 };
 
 const IconAvatar = ({ className, size = 'medium', name = 'person', ...props }: IconAvatarProps) => {
