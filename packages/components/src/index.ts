@@ -2,7 +2,7 @@ import './styles/base.css';
 import './styles/themes.css';
 
 export type { AlertProps } from './Alert';
-export type { AvatarProps } from './Avatar';
+export type { AvatarProps, IconAvatarProps, InitialsAvatarProps } from './Avatar';
 export type { BreadcrumbsProps, BreadcrumbProps } from './Breadcrumbs';
 export type { ButtonProps } from './Button';
 export type { ButtonGroupProps } from './ButtonGroup';
@@ -80,7 +80,7 @@ export type { ToolbarProps } from './Toolbar';
 export type { TooltipProps, TooltipTriggerProps } from './Tooltip';
 
 export { Alert } from './Alert';
-export { Avatar } from './Avatar';
+export { Avatar, IconAvatar, InitialsAvatar } from './Avatar';
 export { Breadcrumbs, Breadcrumb } from './Breadcrumbs';
 export { Button } from './Button';
 export { ButtonGroup } from './ButtonGroup';
@@ -161,4 +161,4 @@ export { ToggleButtonGroup } from './ToggleButtonGroup';
 export { ToggleIconButton } from './ToggleIconButton';
 export { Toolbar } from './Toolbar';
 export { Tooltip, TooltipTrigger } from './Tooltip';
-export { useHref, useMedia } from './utils';
+export { useHref, useImageLoadingStatus, useMedia } from './utils';
