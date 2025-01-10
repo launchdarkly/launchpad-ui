@@ -34,28 +34,18 @@ import {
 	ToastQueue,
 	Tooltip,
 	TooltipTrigger,
-} from '../src';
+} from '../../src';
 
 const Container = (props: ComponentPropsWithoutRef<typeof Fragment>) => <>{props.children}</>;
 
 const meta: Meta<typeof Container> = {
-	title: 'Recipes/Composition',
 	component: Container,
-	parameters: {
-		chromatic: { pauseAnimationAtEnd: true },
-	},
-	decorators: [
-		(Story) => (
-			<div style={{ height: 'var(--lp-size-224)' }}>
-				<Story />
-			</div>
-		),
-	],
 	argTypes: {
 		children: {
 			control: false,
 		},
 	},
+	tags: ['!dev', '!autodocs'],
 };
 
 export default meta;
