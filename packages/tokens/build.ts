@@ -5,7 +5,7 @@ import StyleDictionary from 'style-dictionary';
 import { createPropertyFormatter, fileHeader, minifyDictionary } from 'style-dictionary/utils';
 
 const sd = new StyleDictionary({
-	source: ['src/*.json'],
+	source: ['tokens/*.json'],
 	platforms: {
 		css: {
 			prefix: 'lp',
@@ -20,17 +20,17 @@ const sd = new StyleDictionary({
 				{
 					destination: 'index.css',
 					format: 'css/variables',
-					filter: (token) => token.filePath !== 'src/color-aliases.json',
+					filter: (token) => token.filePath !== 'tokens/color-aliases.json',
 				},
 				{
 					destination: 'themes.css',
 					format: 'custom/css',
-					filter: (token) => token.filePath === 'src/color-aliases.json',
+					filter: (token) => token.filePath === 'tokens/color-aliases.json',
 				},
 				{
 					destination: 'media-queries.css',
 					format: 'custom/media-query',
-					filter: (token) => token.filePath === 'src/viewport.json',
+					filter: (token) => token.filePath === 'tokens/viewport.json',
 				},
 				{
 					destination: 'fonts.css',
