@@ -1,8 +1,44 @@
-import type { TransformedToken } from 'style-dictionary/types';
+import type { Config, TransformedToken } from 'style-dictionary/types';
 
 import JsonToTS from 'json-to-ts';
 import StyleDictionary from 'style-dictionary';
-import { createPropertyFormatter, fileHeader, minifyDictionary } from 'style-dictionary/utils';
+import { fileHeader, minifyDictionary } from 'style-dictionary/utils';
+
+const themes = ['dark', 'default'].map(
+	(theme) =>
+		({
+			source: ['tokens/color-primitives.json', `tokens/*.${theme}.json`],
+			platforms: {
+				css: {
+					prefix: 'lp',
+					transformGroup: 'css',
+					transforms: ['color/rgb'],
+					options: {
+						outputReferences: true,
+						usesDtcg: true,
+					},
+					files: [
+						{
+							destination: `${theme}.css`,
+							format: 'css/variables',
+							options: {
+								selector: theme === 'default' ? ':root, [data-theme]' : `[data-theme='${theme}']`,
+							},
+							filter: (token) => token.filePath.includes(theme),
+						},
+					],
+				},
+			},
+		}) satisfies Config,
+);
+
+const runSD = async (cfg: Config) => {
+	const sd = new StyleDictionary(cfg);
+	const [file] = await sd.formatPlatform('css');
+	return [file.destination, file.output];
+};
+
+const outputs = Object.fromEntries(await Promise.all(themes.map(runSD)));
 
 const sd = new StyleDictionary({
 	source: ['tokens/*.json'],
@@ -20,12 +56,11 @@ const sd = new StyleDictionary({
 				{
 					destination: 'index.css',
 					format: 'css/variables',
-					filter: (token) => token.filePath !== 'tokens/color-aliases.json',
+					filter: (token) => !token.filePath.includes('aliases'),
 				},
 				{
 					destination: 'themes.css',
-					format: 'custom/css',
-					filter: (token) => token.filePath === 'tokens/color-aliases.json',
+					format: 'css/themes',
 				},
 				{
 					destination: 'media-queries.css',
@@ -95,36 +130,12 @@ const sd = new StyleDictionary({
 });
 
 sd.registerFormat({
-	name: 'custom/css',
-	format: async ({ dictionary, file, options }) => {
-		const { outputReferences, outputReferenceFallbacks, usesDtcg } = options;
-		const header = await fileHeader({ file });
+	name: 'css/themes',
+	format: async () => {
+		const light = outputs['default.css'];
+		const dark = outputs['dark.css'];
 
-		const formatProperty = createPropertyFormatter({
-			outputReferences,
-			outputReferenceFallbacks,
-			dictionary,
-			format: 'css',
-			usesDtcg,
-		});
-
-		const dark = dictionary.allTokens
-			.filter((token) => !!token.dark)
-			.map((token) => {
-				const { dark } = token;
-				return Object.assign({}, token, {
-					$value: dark,
-					original: { ...token.original, $value: token.original.dark },
-				});
-			});
-
-		const defaultTokens = `${header}:root, [data-theme] {\n${dictionary.allTokens
-			.filter((token) => !!token.$value)
-			.map(formatProperty)
-			.join('\n')}\n}\n`;
-		const darkTokens = `[data-theme='dark'] {\n${dark.map(formatProperty).join('\n')}\n}\n`;
-
-		return `${defaultTokens}\n${darkTokens}`;
+		return `${light}\n${dark}`;
 	},
 });
 

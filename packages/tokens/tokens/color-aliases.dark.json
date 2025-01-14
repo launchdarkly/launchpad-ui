@@ -1,0 +1,242 @@
+{
+	"color": {
+		"$type": "color",
+		"bg": {
+			"feedback": {
+				"error": {
+					"$value": "{color.red.900}"
+				},
+				"info": {
+					"$value": "{color.blue.900}"
+				},
+				"success": {
+					"$value": "{color.green.900}"
+				}
+			},
+			"interactive": {
+				"primary": {
+					"base": {
+						"$value": "{color.blue.600}"
+					},
+					"active": {
+						"$value": "{color.blue.600}"
+					},
+					"focus": {
+						"$value": "{color.blue.500}"
+					},
+					"hover": {
+						"$value": "{color.blue.500}"
+					}
+				},
+				"secondary": {
+					"focus": {
+						"$value": "{color.gray.800}"
+					},
+					"hover": {
+						"$value": "{color.gray.800}"
+					}
+				},
+				"tertiary": {
+					"focus": {
+						"$value": "{color.gray.800}"
+					},
+					"hover": {
+						"$value": "{color.gray.800}"
+					}
+				},
+				"destructive": {
+					"base": {
+						"$value": "{color.red.600}"
+					},
+					"active": {
+						"$value": "{color.red.600}"
+					},
+					"focus": {
+						"$value": "{color.red.500}"
+					},
+					"hover": {
+						"$value": "{color.red.500}"
+					}
+				},
+				"disabled": {
+					"$value": "{color.gray.800}"
+				},
+				"link": {
+					"$value": "#4761FF33"
+				},
+				"selected": {
+					"$value": "{color.blue.950}"
+				}
+			},
+			"ui": {
+				"primary": {
+					"$value": "{color.gray.950}"
+				},
+				"secondary": {
+					"$value": "{color.gray.900}"
+				},
+				"tertiary": {
+					"$value": "{color.gray.800}"
+				}
+			},
+			"overlay": {
+				"secondary": {
+					"$value": "{color.bg.ui.secondary}"
+				}
+			},
+			"field": {
+				"base": {
+					"$value": "{color.bg.ui.secondary}"
+				}
+			},
+			"product": {
+				"beta": {
+					"$value": "{color.purple.900}"
+				},
+				"federal": {
+					"$value": "{color.brand.yellow.dark}"
+				}
+			}
+		},
+		"border": {
+			"feedback": {
+				"error": {
+					"$value": "{color.red.400}"
+				},
+				"info": {
+					"$value": "{color.blue.400}"
+				},
+				"success": {
+					"$value": "{color.green.400}"
+				}
+			},
+			"field": {
+				"active": {
+					"$value": "{color.blue.400}"
+				},
+				"focus": {
+					"$value": "{color.blue.400}"
+				}
+			},
+			"interactive": {
+				"focus": {
+					"$value": "{color.blue.400}"
+				},
+				"selected": {
+					"$value": "{color.blue.400}"
+				}
+			},
+			"ui": {
+				"primary": {
+					"$value": "{color.gray.700}"
+				},
+				"secondary": {
+					"$value": "{color.gray.800}"
+				}
+			}
+		},
+		"fill": {
+			"ui": {
+				"primary": {
+					"$value": "{color.gray.200}"
+				}
+			},
+			"field": {
+				"base": {
+					"$value": "{color.gray.400}"
+				}
+			}
+		},
+		"shadow": {
+			"interactive": {
+				"focus": {
+					"$value": "{color.blue.400}"
+				},
+				"primary": {
+					"$value": "{color.gray.950}"
+				}
+			},
+			"ui": {
+				"primary": {
+					"$value": "{color.black.200}"
+				},
+				"secondary": {
+					"$value": "{color.black.100}"
+				}
+			}
+		},
+		"text": {
+			"feedback": {
+				"error": {
+					"$value": "{color.red.400}"
+				},
+				"success": {
+					"$value": "{color.green.400}"
+				},
+				"info": {
+					"$value": "{color.blue.400}"
+				}
+			},
+			"interactive": {
+				"base": {
+					"$value": "{color.blue.400}"
+				},
+				"active": {
+					"$value": "{color.purple.400}"
+				},
+				"secondary": {
+					"$value": "{color.gray.400}"
+				},
+				"disabled": {
+					"$value": "{color.gray.600}"
+				}
+			},
+			"ui": {
+				"primary": {
+					"base": {
+						"$value": "{color.gray.0}"
+					},
+					"inverted": {
+						"$value": "{color.gray.950}"
+					}
+				},
+				"secondary": {
+					"$value": "{color.gray.400}"
+				}
+			},
+			"field": {
+				"placeholder": {
+					"$value": "{color.gray.400}"
+				}
+			},
+			"product": {
+				"beta": {
+					"$value": "{color.purple.400}"
+				}
+			},
+			"code": {
+				"function": {
+					"$value": "{color.brand.purple.base}"
+				},
+				"tag": {
+					"$value": "{color.brand.orange.base}"
+				},
+				"string": {
+					"$value": "{color.brand.cyan.light}"
+				},
+				"base": {
+					"$value": "{color.gray.200}"
+				},
+				"keyword": {
+					"$value": "{color.brand.pink.light}"
+				},
+				"title": {
+					"$value": "{color.brand.orange.light}"
+				},
+				"number": {
+					"$value": "{color.brand.blue.light}"
+				}
+			}
+		}
+	}
+}
