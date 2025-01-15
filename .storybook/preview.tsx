@@ -61,7 +61,16 @@ export const parameters: Parameters = {
 		panelPosition: 'bottom',
 		storySort: {
 			method: 'alphabetical',
-			order: ['Foundations', 'Components', 'Recipes', 'Legacy'],
+			order: [
+				'Getting started',
+				'Contributing',
+				'Guidelines',
+				'Tokens',
+				'Components',
+				['*', ['Icon', 'BadgeIcon']],
+				'Recipes',
+				'Legacy',
+			],
 			locales: 'en-US',
 		},
 	},

@@ -9,7 +9,7 @@ import { vars } from '@launchpad-ui/vars';
 import { useEffect, useRef, useState } from 'react';
 
 export default {
-	title: 'Foundations/Tokens/Color',
+	title: 'Tokens/Color',
 };
 
 const flatten = (obj: Record<string, unknown>) => {

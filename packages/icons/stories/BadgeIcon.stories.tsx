@@ -4,7 +4,7 @@ import { BadgeIcon, Icon } from '../src';
 
 const meta: Meta<typeof BadgeIcon> = {
 	component: BadgeIcon,
-	title: 'Foundations/Icons/BadgeIcon',
+	title: 'Components/Icons/BadgeIcon',
 	parameters: {
 		status: {
 			type: import.meta.env.STORYBOOK_PACKAGE_STATUS__ICONS,

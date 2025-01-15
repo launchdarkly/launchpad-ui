@@ -1,7 +1,7 @@
 import { vars } from '@launchpad-ui/vars';
 
 export default {
-	title: 'Foundations/Tokens/Typography',
+	title: 'Tokens/Typography',
 };
 
 export const Typography = {

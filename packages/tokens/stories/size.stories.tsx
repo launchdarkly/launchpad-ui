@@ -13,7 +13,7 @@ import { Fragment } from 'react';
 import tokens from '../dist/index.es.js';
 
 export default {
-	title: 'Foundations/Tokens/Size',
+	title: 'Tokens/Size',
 };
 
 const sizes: typeof Tokens.size = tokens.size;

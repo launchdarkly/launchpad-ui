@@ -1,7 +1,6 @@
-import type { BoxProps } from '@launchpad-ui/box';
 import type { VariantProps } from 'class-variance-authority';
+import type { HTMLAttributes } from 'react';
 
-import { Box } from '@launchpad-ui/box';
 import { cva } from 'class-variance-authority';
 
 import { IconContext } from './Icon';
@@ -39,7 +38,7 @@ const badge = cva(styles.base, {
 	},
 });
 
-interface BadgeIconProps extends BoxProps, VariantProps<typeof badge> {}
+interface BadgeIconProps extends HTMLAttributes<HTMLDivElement>, VariantProps<typeof badge> {}
 
 const BadgeIcon = ({
 	children,
@@ -49,9 +48,9 @@ const BadgeIcon = ({
 	...props
 }: BadgeIconProps) => {
 	return (
-		<Box className={badge({ size, variant, className })} {...props}>
+		<div className={badge({ size, variant, className })} {...props}>
 			<IconContext.Provider value={{ size }}>{children}</IconContext.Provider>
-		</Box>
+		</div>
 	);
 };
 
