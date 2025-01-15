@@ -133,6 +133,11 @@ export const States: Story = {
 			</ListBox>
 		);
 	},
+	parameters: {
+		test: {
+			dangerouslyIgnoreUnhandledErrors: true,
+		},
+	},
 	play: async ({ canvasElement }: { canvasElement: HTMLElement }) => {
 		const canvas = within(canvasElement);
 

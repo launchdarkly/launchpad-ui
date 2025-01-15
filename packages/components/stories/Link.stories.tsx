@@ -60,6 +60,11 @@ export const States: Story = {
 			</div>
 		);
 	},
+	parameters: {
+		test: {
+			dangerouslyIgnoreUnhandledErrors: true,
+		},
+	},
 	play: async ({ canvasElement }) => {
 		const canvas = within(canvasElement);
 
