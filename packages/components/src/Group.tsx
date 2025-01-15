@@ -1,9 +1,8 @@
-import type { ForwardedRef } from 'react';
+import type { RefObject } from 'react';
 import type { GroupProps as AriaGroupProps } from 'react-aria-components';
 import type { InputVariants } from './Input';
 
 import { cva, cx } from 'class-variance-authority';
-import { forwardRef } from 'react';
 import { Group as AriaGroup, composeRenderProps } from 'react-aria-components';
 
 import { input } from './Input';
@@ -11,12 +10,16 @@ import styles from './styles/Group.module.css';
 
 const group = cva(styles.group);
 
-interface GroupProps extends AriaGroupProps, InputVariants {}
+interface GroupProps extends AriaGroupProps, InputVariants {
+	ref?: RefObject<HTMLDivElement | null>;
+}
 
-const _Group = (
-	{ variant = 'default', ...props }: GroupProps,
-	ref: ForwardedRef<HTMLDivElement>,
-) => {
+/**
+ * A group represents a set of related UI controls, and supports interactive states for styling.
+ *
+ * https://react-spectrum.adobe.com/react-aria/Group.html
+ */
+const Group = ({ variant = 'default', ref, ...props }: GroupProps) => {
 	return (
 		<AriaGroup
 			{...props}
@@ -27,13 +30,6 @@ const _Group = (
 		/>
 	);
 };
-
-/**
- * A group represents a set of related UI controls, and supports interactive states for styling.
- *
- * https://react-spectrum.adobe.com/react-aria/Group.html
- */
-const Group = forwardRef(_Group);
 
 export { Group };
 export type { GroupProps };

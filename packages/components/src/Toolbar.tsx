@@ -1,9 +1,8 @@
 import type { VariantProps } from 'class-variance-authority';
-import type { ForwardedRef } from 'react';
+import type { RefObject } from 'react';
 import type { ToolbarProps as AriaToolbarProps } from 'react-aria-components';
 
 import { cva } from 'class-variance-authority';
-import { forwardRef } from 'react';
 import { Toolbar as AriaToolbar, composeRenderProps } from 'react-aria-components';
 
 import styles from './styles/Toolbar.module.css';
@@ -21,12 +20,16 @@ const toolbar = cva(styles.base, {
 	},
 });
 
-interface ToolbarProps extends AriaToolbarProps, VariantProps<typeof toolbar> {}
+interface ToolbarProps extends AriaToolbarProps, VariantProps<typeof toolbar> {
+	ref?: RefObject<HTMLDivElement | null>;
+}
 
-const _Toolbar = (
-	{ spacing = 'basic', ...props }: ToolbarProps,
-	ref: ForwardedRef<HTMLDivElement>,
-) => {
+/**
+ * A toolbar is a container for a set of interactive controls, such as buttons, dropdown menus, or checkboxes, with arrow key navigation.
+ *
+ * https://react-spectrum.adobe.com/react-aria/Toolbar.html
+ */
+const Toolbar = ({ spacing = 'basic', ref, ...props }: ToolbarProps) => {
 	return (
 		<AriaToolbar
 			{...props}
@@ -37,13 +40,6 @@ const _Toolbar = (
 		/>
 	);
 };
-
-/**
- * A toolbar is a container for a set of interactive controls, such as buttons, dropdown menus, or checkboxes, with arrow key navigation.
- *
- * https://react-spectrum.adobe.com/react-aria/Toolbar.html
- */
-const Toolbar = forwardRef(_Toolbar);
 
 export { Toolbar };
 export type { ToolbarProps };

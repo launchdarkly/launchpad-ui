@@ -1,9 +1,11 @@
-import type { ForwardedRef } from 'react';
-import type { CheckboxProps, CheckboxRenderProps } from 'react-aria-components';
+import type { RefObject } from 'react';
+import type {
+	CheckboxProps as AriaCheckboxProps,
+	CheckboxRenderProps,
+} from 'react-aria-components';
 
 import { Icon } from '@launchpad-ui/icons';
 import { cva } from 'class-variance-authority';
-import { forwardRef } from 'react';
 import { Checkbox as AriaCheckbox, composeRenderProps } from 'react-aria-components';
 
 import styles from './styles/Checkbox.module.css';
@@ -21,7 +23,16 @@ const CheckboxInner = ({ isSelected, isIndeterminate }: Partial<CheckboxRenderPr
 	</div>
 );
 
-const _Checkbox = (props: CheckboxProps, ref: ForwardedRef<HTMLLabelElement>) => {
+interface CheckboxProps extends AriaCheckboxProps {
+	ref?: RefObject<HTMLLabelElement | null>;
+}
+
+/**
+ * A checkbox allows a user to select multiple items from a list of individual items, or to mark one individual item as selected.
+ *
+ * https://react-spectrum.adobe.com/react-aria/Checkbox.html
+ */
+const Checkbox = ({ ref, ...props }: CheckboxProps) => {
 	return (
 		<AriaCheckbox
 			{...props}
@@ -41,13 +52,6 @@ const _Checkbox = (props: CheckboxProps, ref: ForwardedRef<HTMLLabelElement>) =>
 		</AriaCheckbox>
 	);
 };
-
-/**
- * A checkbox allows a user to select multiple items from a list of individual items, or to mark one individual item as selected.
- *
- * https://react-spectrum.adobe.com/react-aria/Checkbox.html
- */
-const Checkbox = forwardRef(_Checkbox);
 
 export { Checkbox, CheckboxInner, checkbox };
 export type { CheckboxProps };

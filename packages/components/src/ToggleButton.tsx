@@ -1,18 +1,26 @@
-import type { ForwardedRef } from 'react';
+import type { RefObject } from 'react';
 import type { ToggleButtonProps as AriaToggleButtonProps } from 'react-aria-components';
 import type { ButtonVariants } from './Button';
 
-import { forwardRef } from 'react';
 import { ToggleButton as AriaToggleButton, composeRenderProps } from 'react-aria-components';
 
 import { button } from './Button';
 
-interface ToggleButtonProps extends AriaToggleButtonProps, ButtonVariants {}
+interface ToggleButtonProps extends AriaToggleButtonProps, ButtonVariants {
+	ref?: RefObject<HTMLButtonElement | null>;
+}
 
-const _ToggleButton = (
-	{ size = 'medium', variant = 'default', ...props }: ToggleButtonProps,
-	ref: ForwardedRef<HTMLButtonElement>,
-) => {
+/**
+ * A toggle button allows a user to toggle a selection on or off, for example switching between two states or modes.
+ *
+ * https://react-spectrum.adobe.com/react-aria/ToggleButton.html
+ */
+const ToggleButton = ({
+	size = 'medium',
+	variant = 'default',
+	ref,
+	...props
+}: ToggleButtonProps) => {
 	return (
 		<AriaToggleButton
 			{...props}
@@ -23,13 +31,6 @@ const _ToggleButton = (
 		/>
 	);
 };
-
-/**
- * A toggle button allows a user to toggle a selection on or off, for example switching between two states or modes.
- *
- * https://react-spectrum.adobe.com/react-aria/ToggleButton.html
- */
-const ToggleButton = forwardRef(_ToggleButton);
 
 export { ToggleButton };
 export type { ToggleButtonProps };

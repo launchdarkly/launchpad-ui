@@ -1,6 +1,5 @@
-import type { forwardRefType } from '@react-types/shared';
 import type { VariantProps } from 'class-variance-authority';
-import type { ForwardedRef } from 'react';
+import type { RefObject } from 'react';
 import type {
 	MenuItemProps as AriaMenuItemProps,
 	MenuProps as AriaMenuProps,
@@ -10,7 +9,6 @@ import type {
 
 import { Icon } from '@launchpad-ui/icons';
 import { cva } from 'class-variance-authority';
-import { forwardRef } from 'react';
 import {
 	Menu as AriaMenu,
 	MenuItem as AriaMenuItem,
@@ -36,27 +34,26 @@ const item = cva(styles.item, {
 	},
 });
 
-interface MenuProps<T> extends AriaMenuProps<T> {}
-interface MenuItemProps<T> extends AriaMenuItemProps<T>, VariantProps<typeof item> {}
-
-const _Menu = <T extends object>(
-	{ className, ...props }: MenuProps<T>,
-	ref: ForwardedRef<HTMLDivElement>,
-) => {
-	return <AriaMenu {...props} ref={ref} className={menu({ className })} />;
-};
+interface MenuProps<T> extends AriaMenuProps<T> {
+	ref?: RefObject<HTMLDivElement | null>;
+}
+interface MenuItemProps<T> extends AriaMenuItemProps<T>, VariantProps<typeof item> {
+	ref?: RefObject<T | null>;
+}
 
 /**
  * A menu displays a list of actions or options that a user can choose.
  *
  * https://react-spectrum.adobe.com/react-aria/Menu.html
  */
-const Menu = (forwardRef as forwardRefType)(_Menu);
+const Menu = <T extends object>({ className, ref, ...props }: MenuProps<T>) => {
+	return <AriaMenu {...props} ref={ref} className={menu({ className })} />;
+};
 
-const _MenuItem = <T extends object>(
-	{ variant = 'default', ...props }: MenuItemProps<T>,
-	ref: ForwardedRef<T>,
-) => {
+/**
+ * A MenuItem represents an individual action in a Menu.
+ */
+const MenuItem = <T extends object>({ variant = 'default', ref, ...props }: MenuItemProps<T>) => {
 	return (
 		<AriaMenuItem
 			{...props}
@@ -91,11 +88,6 @@ const _MenuItem = <T extends object>(
 		</AriaMenuItem>
 	);
 };
-
-/**
- * A MenuItem represents an individual action in a Menu.
- */
-const MenuItem = (forwardRef as forwardRefType)(_MenuItem);
 
 export { Menu, MenuItem, MenuTrigger, SubmenuTrigger };
 export type { MenuProps, MenuItemProps, MenuTriggerProps, SubmenuTriggerProps };

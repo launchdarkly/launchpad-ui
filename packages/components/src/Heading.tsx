@@ -1,19 +1,20 @@
-import type { ForwardedRef } from 'react';
-import type { HeadingProps } from 'react-aria-components';
+import type { RefObject } from 'react';
+import type { HeadingProps as AriaHeadingProps } from 'react-aria-components';
 
 import { cva } from 'class-variance-authority';
-import { forwardRef } from 'react';
 import { Heading as AriaHeading } from 'react-aria-components';
 
 import styles from './styles/Heading.module.css';
 
 const heading = cva(styles.heading);
 
-const _Heading = ({ className, ...props }: HeadingProps, ref: ForwardedRef<HTMLHeadingElement>) => {
+interface HeadingProps extends AriaHeadingProps {
+	ref?: RefObject<HTMLHeadingElement | null>;
+}
+
+const Heading = ({ className, ref, ...props }: HeadingProps) => {
 	return <AriaHeading {...props} ref={ref} className={heading({ className })} />;
 };
-
-const Heading = forwardRef(_Heading);
 
 export { Heading };
 export type { HeadingProps };

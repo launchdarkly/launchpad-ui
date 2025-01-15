@@ -1,10 +1,11 @@
-import type { forwardRefType } from '@react-types/shared';
-import type { ForwardedRef } from 'react';
-import type { ListBoxItemProps, ListBoxProps } from 'react-aria-components';
+import type { RefObject } from 'react';
+import type {
+	ListBoxItemProps as AriaListBoxItemProps,
+	ListBoxProps as AriaListBoxProps,
+} from 'react-aria-components';
 
 import { Icon } from '@launchpad-ui/icons';
 import { cva } from 'class-variance-authority';
-import { forwardRef } from 'react';
 import {
 	ListBox as AriaListBox,
 	ListBoxItem as AriaListBoxItem,
@@ -16,7 +17,19 @@ import styles from './styles/ListBox.module.css';
 const box = cva(styles.box);
 const item = cva(styles.item);
 
-const _ListBox = <T extends object>(props: ListBoxProps<T>, ref: ForwardedRef<HTMLDivElement>) => {
+interface ListBoxProps<T> extends AriaListBoxProps<T> {
+	ref?: RefObject<HTMLDivElement | null>;
+}
+interface ListBoxItemProps<T> extends AriaListBoxItemProps<T> {
+	ref?: RefObject<T | null>;
+}
+
+/**
+ * A listbox displays a list of options and allows a user to select one or more of them.
+ *
+ * https://react-spectrum.adobe.com/react-aria/ListBox.html
+ */
+const ListBox = <T extends object>({ ref, ...props }: ListBoxProps<T>) => {
 	return (
 		<AriaListBox
 			{...props}
@@ -29,13 +42,11 @@ const _ListBox = <T extends object>(props: ListBoxProps<T>, ref: ForwardedRef<HT
 };
 
 /**
- * A listbox displays a list of options and allows a user to select one or more of them.
+ * A ListBoxItem represents an individual option in a ListBox.
  *
  * https://react-spectrum.adobe.com/react-aria/ListBox.html
  */
-const ListBox = (forwardRef as forwardRefType)(_ListBox);
-
-const _ListBoxItem = <T extends object>(props: ListBoxItemProps<T>, ref: ForwardedRef<T>) => {
+const ListBoxItem = <T extends object>({ ref, ...props }: ListBoxItemProps<T>) => {
 	const textValue =
 		props.textValue || (typeof props.children === 'string' ? props.children : undefined);
 	return (
@@ -56,13 +67,6 @@ const _ListBoxItem = <T extends object>(props: ListBoxItemProps<T>, ref: Forward
 		</AriaListBoxItem>
 	);
 };
-
-/**
- * A ListBoxItem represents an individual option in a ListBox.
- *
- * https://react-spectrum.adobe.com/react-aria/ListBox.html
- */
-const ListBoxItem = (forwardRef as forwardRefType)(_ListBoxItem);
 
 export { ListBox, ListBoxItem };
 export type { ListBoxProps, ListBoxItemProps };

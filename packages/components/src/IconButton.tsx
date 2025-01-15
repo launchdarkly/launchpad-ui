@@ -1,13 +1,13 @@
 import type { IconProps } from '@launchpad-ui/icons';
 import type { AriaLabelingProps } from '@react-types/shared';
 import type { VariantProps } from 'class-variance-authority';
-import type { ForwardedRef } from 'react';
+import type { RefObject } from 'react';
 import type { ButtonProps as AriaButtonProps } from 'react-aria-components';
 import type { ButtonVariants } from './Button';
 
 import { Icon } from '@launchpad-ui/icons';
 import { cva, cx } from 'class-variance-authority';
-import { forwardRef, useContext } from 'react';
+import { useContext } from 'react';
 import { Button as AriaButton, composeRenderProps } from 'react-aria-components';
 
 import { button } from './Button';
@@ -38,12 +38,22 @@ interface IconButtonBaseProps
 }
 interface IconButtonProps
 	extends Omit<AriaButtonProps, 'children' | 'aria-label'>,
-		IconButtonBaseProps {}
+		IconButtonBaseProps {
+	ref?: RefObject<HTMLButtonElement | null>;
+}
 
-const _IconButton = (
-	{ size = 'medium', variant = 'default', icon, ...props }: IconButtonProps,
-	ref: ForwardedRef<HTMLButtonElement>,
-) => {
+/**
+ * A button allows a user to perform an action, with mouse, touch, and keyboard interactions.
+ *
+ * https://react-spectrum.adobe.com/react-aria/Button.html
+ */
+const IconButton = ({
+	size = 'medium',
+	variant = 'default',
+	icon,
+	ref,
+	...props
+}: IconButtonProps) => {
 	const ctx = useContext(PerceivableContext);
 	return (
 		<AriaButton
@@ -58,13 +68,6 @@ const _IconButton = (
 		</AriaButton>
 	);
 };
-
-/**
- * A button allows a user to perform an action, with mouse, touch, and keyboard interactions.
- *
- * https://react-spectrum.adobe.com/react-aria/Button.html
- */
-const IconButton = forwardRef(_IconButton);
 
 export { IconButton, iconButton };
 export type { IconButtonProps, IconButtonBaseProps };

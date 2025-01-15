@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import type { ComponentPropsWithoutRef } from 'react';
 
+import { Box } from '@launchpad-ui/box';
 import { Icon } from '@launchpad-ui/icons';
 import { vars } from '@launchpad-ui/vars';
 import { expect, userEvent, within } from '@storybook/test';
@@ -268,6 +269,24 @@ export const TagWithOverlay: Story = {
 				</TagButton>
 				<Tooltip placement="right">Message</Tooltip>
 			</TooltipTrigger>
+		);
+	},
+};
+
+export const Pagination: Story = {
+	render: () => {
+		return (
+			<Box display="flex" alignItems="center">
+				<IconButton icon="chevrons-left" size="small" variant="minimal" aria-label="first" />
+				<IconButton icon="chevron-left" size="small" variant="minimal" aria-label="previous" />
+				<Box display="flex" alignItems="center" gap="$200" marginInline="$200">
+					<Text style={{ fontWeight: vars.fontWeight.semibold }}>1-2</Text>
+					<Text> of </Text>
+					<Text style={{ fontWeight: vars.fontWeight.semibold }}>4</Text>
+				</Box>
+				<IconButton icon="chevron-right" size="small" variant="minimal" aria-label="next" />
+				<IconButton icon="chevrons-right" size="small" variant="minimal" aria-label="last" />
+			</Box>
 		);
 	},
 };

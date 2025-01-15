@@ -1,21 +1,21 @@
 import type { CalendarDate } from '@internationalized/date';
 import type { RangeValue } from '@react-types/shared';
-import type { ForwardedRef, HTMLAttributes } from 'react';
+import type { HTMLAttributes, RefObject } from 'react';
 import type {
-	CalendarCellProps,
+	CalendarCellProps as AriaCalendarCellProps,
+	CalendarProps as AriaCalendarProps,
+	RangeCalendarProps as AriaRangeCalendarProps,
 	CalendarGridBodyProps,
 	CalendarGridHeaderProps,
 	CalendarGridProps,
 	CalendarHeaderCellProps,
-	CalendarProps,
 	DateRange,
 	DateValue,
-	RangeCalendarProps,
 } from 'react-aria-components';
 import type { ButtonProps } from './Button';
 
 import { cva, cx } from 'class-variance-authority';
-import { forwardRef, useState } from 'react';
+import { useState } from 'react';
 import {
 	Calendar as AriaCalendar,
 	CalendarCell as AriaCalendarCell,
@@ -35,20 +35,37 @@ import {
 import { Button, button } from './Button';
 import styles from './styles/Calendar.module.css';
 
-interface CalendarPickerProps extends HTMLAttributes<HTMLDivElement> {}
+interface CalendarPickerProps extends HTMLAttributes<HTMLDivElement> {
+	ref?: RefObject<HTMLDivElement | null>;
+}
 
 interface PresetProps extends Omit<ButtonProps, 'value'> {
 	value: CalendarDate | RangeValue<CalendarDate>;
+	ref?: RefObject<HTMLButtonElement | null>;
 }
 
 const calendar = cva(styles.calendar);
 const cell = cva(styles.cell);
 const range = cva(styles.range);
 
-const _Calendar = <T extends DateValue>(
-	props: CalendarProps<T>,
-	ref: ForwardedRef<HTMLDivElement>,
-) => {
+interface CalendarProps<T extends DateValue> extends AriaCalendarProps<T> {
+	ref?: RefObject<HTMLDivElement | null>;
+}
+
+interface CalendarCellProps extends AriaCalendarCellProps {
+	ref?: RefObject<HTMLTableCellElement | null>;
+}
+
+interface RangeCalendarProps<T extends DateValue> extends AriaRangeCalendarProps<T> {
+	ref?: RefObject<HTMLDivElement | null>;
+}
+
+/**
+ * A calendar displays one or more date grids and allows users to select a single date.
+ *
+ * https://react-spectrum.adobe.com/react-aria/Calendar.html
+ */
+const Calendar = <T extends DateValue>({ ref, ...props }: CalendarProps<T>) => {
 	return (
 		<AriaCalendar
 			{...props}
@@ -61,13 +78,11 @@ const _Calendar = <T extends DateValue>(
 };
 
 /**
- * A calendar displays one or more date grids and allows users to select a single date.
+ * A calendar cell displays a date cell within a calendar grid which can be selected by the user.
  *
  * https://react-spectrum.adobe.com/react-aria/Calendar.html
  */
-const Calendar = forwardRef(_Calendar);
-
-const _CalendarCell = (props: CalendarCellProps, ref: ForwardedRef<HTMLTableCellElement>) => {
+const CalendarCell = ({ ref, ...props }: CalendarCellProps) => {
 	return (
 		<AriaCalendarCell
 			{...props}
@@ -80,16 +95,11 @@ const _CalendarCell = (props: CalendarCellProps, ref: ForwardedRef<HTMLTableCell
 };
 
 /**
- * A calendar cell displays a date cell within a calendar grid which can be selected by the user.
+ * A range calendar displays one or more date grids and allows users to select a contiguous range of dates.
  *
- * https://react-spectrum.adobe.com/react-aria/Calendar.html
+ * https://react-spectrum.adobe.com/react-aria/RangeCalendar.html
  */
-const CalendarCell = forwardRef(_CalendarCell);
-
-const _RangeCalendar = <T extends DateValue>(
-	props: RangeCalendarProps<T>,
-	ref: ForwardedRef<HTMLDivElement>,
-) => {
+const RangeCalendar = <T extends DateValue>({ ref, ...props }: RangeCalendarProps<T>) => {
 	return (
 		<AriaRangeCalendar
 			{...props}
@@ -101,17 +111,7 @@ const _RangeCalendar = <T extends DateValue>(
 	);
 };
 
-/**
- * A range calendar displays one or more date grids and allows users to select a contiguous range of dates.
- *
- * https://react-spectrum.adobe.com/react-aria/RangeCalendar.html
- */
-const RangeCalendar = forwardRef(_RangeCalendar);
-
-const _CalendarPicker = (
-	{ children, className, ...props }: CalendarPickerProps,
-	ref: ForwardedRef<HTMLDivElement>,
-) => {
+const CalendarPicker = ({ children, className, ref, ...props }: CalendarPickerProps) => {
 	const [value, onChange] = useState<DateValue>();
 	const [range, onChangeRange] = useState<DateRange | null>();
 	const [focusedValue, onFocusChange] = useState<DateValue>();
@@ -133,9 +133,7 @@ const _CalendarPicker = (
 	);
 };
 
-const CalendarPicker = forwardRef(_CalendarPicker);
-
-const _Preset = ({ value, ...props }: PresetProps, ref: ForwardedRef<HTMLButtonElement>) => {
+const Preset = ({ value, ref, ...props }: PresetProps) => {
 	const context = useSlottedContext(CalendarContext);
 	const rangeContext = useSlottedContext(RangeCalendarContext);
 	const onPress = () => {
@@ -149,8 +147,6 @@ const _Preset = ({ value, ...props }: PresetProps, ref: ForwardedRef<HTMLButtonE
 	};
 	return <Button ref={ref} size="small" variant="minimal" {...props} onPress={onPress} />;
 };
-
-const Preset = forwardRef(_Preset);
 
 export {
 	Calendar,

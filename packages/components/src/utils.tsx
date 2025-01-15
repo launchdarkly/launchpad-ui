@@ -1,7 +1,9 @@
 import type { Href } from '@react-types/shared';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useLayoutEffect, useState } from 'react';
 import { useHref as useRouterHref } from 'react-router';
+
+type ImageLoadingStatus = 'idle' | 'loading' | 'loaded' | 'error';
 
 const useMedia = (media: string) => {
 	const [isActive, setIsActive] = useState(false);
@@ -40,4 +42,34 @@ const useHref = (href: Href) => {
 	return absoluteHref || routerHref;
 };
 
-export { useHref, useMedia };
+const useImageLoadingStatus = (src?: string) => {
+	const [loadingStatus, setLoadingStatus] = useState<ImageLoadingStatus>('idle');
+
+	useLayoutEffect(() => {
+		if (!src) {
+			setLoadingStatus('error');
+			return;
+		}
+
+		let isMounted = true;
+		const image = new window.Image();
+
+		const updateStatus = (status: ImageLoadingStatus) => () => {
+			if (!isMounted) return;
+			setLoadingStatus(status);
+		};
+
+		setLoadingStatus('loading');
+		image.onload = updateStatus('loaded');
+		image.onerror = updateStatus('error');
+		image.src = src;
+
+		return () => {
+			isMounted = false;
+		};
+	}, [src]);
+
+	return loadingStatus;
+};
+
+export { useHref, useImageLoadingStatus, useMedia };

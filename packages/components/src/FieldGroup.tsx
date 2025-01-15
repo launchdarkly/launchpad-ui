@@ -1,7 +1,7 @@
-import type { ContextType, FieldsetHTMLAttributes, ForwardedRef } from 'react';
+import type { ContextType, FieldsetHTMLAttributes, RefObject } from 'react';
 
 import { cva } from 'class-variance-authority';
-import { forwardRef, useId } from 'react';
+import { useId } from 'react';
 import {
 	ComboBoxContext,
 	DateFieldContext,
@@ -22,14 +22,23 @@ interface FieldGroupProps extends FieldsetHTMLAttributes<HTMLFieldSetElement> {
 	title?: string;
 	errorMessage?: string;
 	isDisabled?: boolean;
+	ref?: RefObject<HTMLFieldSetElement | null>;
 }
 
 const group = cva(styles.group);
 
-const _FieldGroup = (
-	{ title, children, errorMessage, isDisabled, className, ...props }: FieldGroupProps,
-	ref: ForwardedRef<HTMLFieldSetElement>,
-) => {
+/**
+ * A field group represents a set of related form elements in a form.
+ */
+const FieldGroup = ({
+	title,
+	children,
+	errorMessage,
+	isDisabled,
+	className,
+	ref,
+	...props
+}: FieldGroupProps) => {
 	const errorId = useId();
 	const state = {
 		isInvalid: !!errorMessage,
@@ -62,11 +71,6 @@ const _FieldGroup = (
 		</fieldset>
 	);
 };
-
-/**
- * A field group represents a set of related form elements in a form.
- */
-const FieldGroup = forwardRef(_FieldGroup);
 
 export { FieldGroup };
 export type { FieldGroupProps };

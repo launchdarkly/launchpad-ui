@@ -1,9 +1,10 @@
-import type { forwardRefType } from '@react-types/shared';
-import type { ForwardedRef } from 'react';
-import type { SelectProps, SelectValueProps } from 'react-aria-components';
+import type { RefObject } from 'react';
+import type {
+	SelectProps as AriaSelectProps,
+	SelectValueProps as AriaSelectValueProps,
+} from 'react-aria-components';
 
 import { cva } from 'class-variance-authority';
-import { forwardRef } from 'react';
 import {
 	Select as AriaSelect,
 	SelectValue as AriaSelectValue,
@@ -15,7 +16,20 @@ import styles from './styles/Select.module.css';
 const select = cva(styles.select);
 const value = cva(styles.value);
 
-const _Select = <T extends object>(props: SelectProps<T>, ref: ForwardedRef<HTMLDivElement>) => {
+interface SelectProps<T extends object> extends AriaSelectProps<T> {
+	ref?: RefObject<HTMLDivElement | null>;
+}
+
+interface SelectValueProps<T extends object> extends AriaSelectValueProps<T> {
+	ref?: RefObject<HTMLSpanElement | null>;
+}
+
+/**
+ * A select displays a collapsible list of options and allows a user to select one of them.
+ *
+ * https://react-spectrum.adobe.com/react-aria/Select.html
+ */
+const Select = <T extends object>({ ref, ...props }: SelectProps<T>) => {
 	return (
 		<AriaSelect
 			{...props}
@@ -28,16 +42,11 @@ const _Select = <T extends object>(props: SelectProps<T>, ref: ForwardedRef<HTML
 };
 
 /**
- * A select displays a collapsible list of options and allows a user to select one of them.
+ * SelectValue renders the current value of a Select, or a placeholder if no value is selected. It is usually placed within the button element.
  *
  * https://react-spectrum.adobe.com/react-aria/Select.html
  */
-const Select = (forwardRef as forwardRefType)(_Select);
-
-const _SelectValue = <T extends object>(
-	props: SelectValueProps<T>,
-	ref: ForwardedRef<HTMLSpanElement>,
-) => {
+const SelectValue = <T extends object>({ ref, ...props }: SelectValueProps<T>) => {
 	return (
 		<AriaSelectValue
 			{...props}
@@ -48,13 +57,6 @@ const _SelectValue = <T extends object>(
 		/>
 	);
 };
-
-/**
- * SelectValue renders the current value of a Select, or a placeholder if no value is selected. It is usually placed within the button element.
- *
- * https://react-spectrum.adobe.com/react-aria/Select.html
- */
-const SelectValue = (forwardRef as forwardRefType)(_SelectValue);
 
 export { Select, SelectValue };
 export type { SelectProps, SelectValueProps };

@@ -1,9 +1,8 @@
 import type { VariantProps } from 'class-variance-authority';
-import type { ForwardedRef } from 'react';
-import type { ModalOverlayProps } from 'react-aria-components';
+import type { RefObject } from 'react';
+import type { ModalOverlayProps as AriaModalOverlayProps } from 'react-aria-components';
 
 import { cva } from 'class-variance-authority';
-import { forwardRef } from 'react';
 import {
 	Modal as AriaModal,
 	ModalOverlay as AriaModalOverlay,
@@ -31,12 +30,20 @@ const modal = cva(styles.base, {
 });
 const overlay = cva(styles.overlay);
 
-interface ModalProps extends ModalOverlayProps, VariantProps<typeof modal> {}
+interface ModalProps extends AriaModalOverlayProps, VariantProps<typeof modal> {
+	ref?: RefObject<HTMLDivElement | null>;
+}
 
-const _Modal = (
-	{ size = 'medium', variant = 'default', ...props }: ModalProps,
-	ref: ForwardedRef<HTMLDivElement>,
-) => {
+interface ModalOverlayProps extends AriaModalOverlayProps, VariantProps<typeof modal> {
+	ref?: RefObject<HTMLDivElement | null>;
+}
+
+/**
+ * A modal is an overlay element which blocks interaction with elements outside it.
+ *
+ * https://react-spectrum.adobe.com/react-aria/Modal.html
+ */
+const Modal = ({ size = 'medium', variant = 'default', ref, ...props }: ModalProps) => {
 	return (
 		<AriaModal
 			{...props}
@@ -49,16 +56,9 @@ const _Modal = (
 };
 
 /**
- * A modal is an overlay element which blocks interaction with elements outside it.
- *
- * https://react-spectrum.adobe.com/react-aria/Modal.html
+ * A ModalOverlay is a wrapper for a Modal which allows customizing the backdrop element.
  */
-const Modal = forwardRef(_Modal);
-
-const _ModalOverlay = (
-	{ isDismissable = true, ...props }: ModalOverlayProps,
-	ref: ForwardedRef<HTMLDivElement>,
-) => {
+const ModalOverlay = ({ isDismissable = true, ref, ...props }: ModalOverlayProps) => {
 	return (
 		<AriaModalOverlay
 			isDismissable={isDismissable}
@@ -70,11 +70,6 @@ const _ModalOverlay = (
 		/>
 	);
 };
-
-/**
- * A ModalOverlay is a wrapper for a Modal which allows customizing the backdrop element.
- */
-const ModalOverlay = forwardRef(_ModalOverlay);
 
 export { Modal, ModalOverlay };
 export type { ModalProps, ModalOverlayProps };

@@ -1,12 +1,11 @@
 import type { VariantProps } from 'class-variance-authority';
-import type { ForwardedRef } from 'react';
+import type { RefObject } from 'react';
 import type {
 	TooltipProps as AriaTooltipProps,
 	TooltipTriggerComponentProps,
 } from 'react-aria-components';
 
 import { cva } from 'class-variance-authority';
-import { forwardRef } from 'react';
 import {
 	Tooltip as AriaTooltip,
 	TooltipTrigger as AriaTooltipTrigger,
@@ -16,7 +15,9 @@ import {
 import popoverStyles from './styles/Popover.module.css';
 import styles from './styles/Tooltip.module.css';
 
-interface TooltipProps extends AriaTooltipProps, VariantProps<typeof tooltip> {}
+interface TooltipProps extends AriaTooltipProps, VariantProps<typeof tooltip> {
+	ref?: RefObject<HTMLDivElement | null>;
+}
 interface TooltipTriggerProps extends TooltipTriggerComponentProps {}
 
 const tooltip = cva(styles.base, {
@@ -31,10 +32,12 @@ const tooltip = cva(styles.base, {
 	},
 });
 
-const _Tooltip = (
-	{ variant = 'default', ...props }: TooltipProps,
-	ref: ForwardedRef<HTMLDivElement>,
-) => {
+/**
+ * A tooltip displays a description of an element on hover or focus.
+ *
+ * https://react-spectrum.adobe.com/react-aria/Tooltip.html
+ */
+const Tooltip = ({ variant = 'default', ref, ...props }: TooltipProps) => {
 	return (
 		<AriaTooltip
 			data-theme={variant === 'default' ? 'dark' : undefined}
@@ -49,13 +52,6 @@ const _Tooltip = (
 		/>
 	);
 };
-
-/**
- * A tooltip displays a description of an element on hover or focus.
- *
- * https://react-spectrum.adobe.com/react-aria/Tooltip.html
- */
-const Tooltip = forwardRef(_Tooltip);
 
 const TooltipTrigger = (props: TooltipTriggerProps) => {
 	return <AriaTooltipTrigger delay={500} closeDelay={250} {...props} />;
