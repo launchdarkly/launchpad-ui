@@ -47,7 +47,7 @@ const sd = new StyleDictionary({
 			prefix: 'lp',
 			basePxFontSize: 16,
 			transformGroup: 'css',
-			transforms: ['name/kebab', 'time/seconds', 'size/pxToRem', 'color/rgb', 'attribute/font'],
+			transforms: ['name/kebab', 'size/pxToRem', 'color/rgb', 'attribute/font'],
 			buildPath: 'dist/',
 			options: {
 				outputReferences: true,
@@ -77,7 +77,9 @@ const sd = new StyleDictionary({
 			actions: ['copy_assets'],
 		},
 		js: {
+			basePxFontSize: 16,
 			transformGroup: 'js',
+			transforms: ['size/pxToRem', 'color/rgb'],
 			buildPath: 'dist/',
 			options: {
 				outputReferences: true,
@@ -113,9 +115,10 @@ const sd = new StyleDictionary({
 			],
 		},
 		vscode: {
+			basePxFontSize: 16,
 			buildPath: 'dist/',
 			transformGroup: 'css',
-			transforms: ['name/kebab', 'color/rgb'],
+			transforms: ['name/kebab', 'size/pxToRem', 'color/rgb'],
 			options: {
 				outputReferences: true,
 				usesDtcg: true,
