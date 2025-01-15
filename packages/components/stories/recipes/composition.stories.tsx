@@ -40,6 +40,9 @@ const Container = (props: ComponentPropsWithoutRef<typeof Fragment>) => <>{props
 
 const meta: Meta<typeof Container> = {
 	component: Container,
+	parameters: {
+		chromatic: { pauseAnimationAtEnd: true },
+	},
 	argTypes: {
 		children: {
 			control: false,
