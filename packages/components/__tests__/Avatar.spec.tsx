@@ -44,13 +44,6 @@ describe('Avatar', () => {
 		expect(await screen.findByRole('img', { name: 'engineer' })).toBeVisible();
 	});
 
-	it('renders icon on error', async () => {
-		// biome-ignore lint/suspicious/noExplicitAny: <explanation>
-		(window.Image as any) = ErrorImage;
-		render(<Avatar src="https://avatars.githubusercontent.com/u/00000" />);
-		expect(await screen.findByRole('img', { hidden: true })).toBeVisible();
-	});
-
 	it('renders initials on error', async () => {
 		// biome-ignore lint/suspicious/noExplicitAny: <explanation>
 		(window.Image as any) = ErrorImage;

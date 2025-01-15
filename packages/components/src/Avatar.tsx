@@ -1,8 +1,6 @@
-import type { IconProps } from '@launchpad-ui/icons';
 import type { VariantProps } from 'class-variance-authority';
 import type { ImgHTMLAttributes, RefObject, SVGAttributes } from 'react';
 
-import { Icon } from '@launchpad-ui/icons';
 import { cva, cx } from 'class-variance-authority';
 
 import styles from './styles/Avatar.module.css';
@@ -39,36 +37,17 @@ interface AvatarProps extends ImgHTMLAttributes<HTMLImageElement>, AvatarVariant
 	ref?: RefObject<HTMLImageElement | null>;
 }
 
-interface IconAvatarProps extends Omit<IconProps, 'size'>, AvatarVariants {
-	ref?: RefObject<SVGSVGElement | null>;
-}
-
 interface InitialsAvatarProps extends SVGAttributes<SVGElement>, AvatarVariants {}
 
 const Avatar = ({ className, children, size = 'medium', ref, src, ...props }: AvatarProps) => {
 	const status = useImageLoadingStatus(src);
 
 	if (status !== 'loaded') {
-		return children ? (
-			<InitialsAvatar size={size}>{children}</InitialsAvatar>
-		) : (
-			<IconAvatar size={size} />
-		);
+		return <InitialsAvatar size={size}>{children}</InitialsAvatar>;
 	}
 
 	// biome-ignore lint/a11y/useAltText: <explanation>
 	return <img ref={ref} src={src} {...props} className={avatar({ size, className })} />;
-};
-
-const IconAvatar = ({ className, size = 'medium', name = 'person', ...props }: IconAvatarProps) => {
-	return (
-		<Icon
-			name={name}
-			size={size}
-			className={cx(avatar({ size, className }), styles.icon)}
-			{...props}
-		/>
-	);
 };
 
 const InitialsAvatar = ({
@@ -99,5 +78,5 @@ const InitialsAvatar = ({
 	);
 };
 
-export { Avatar, IconAvatar, InitialsAvatar };
-export type { AvatarProps, IconAvatarProps, InitialsAvatarProps };
+export { Avatar, InitialsAvatar };
+export type { AvatarProps, InitialsAvatarProps };

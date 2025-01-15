@@ -2,11 +2,11 @@ import type { Meta, StoryObj } from '@storybook/react';
 import type { ComponentType } from 'react';
 
 import { Box } from '@launchpad-ui/box';
-import { Avatar, IconAvatar, InitialsAvatar } from '../src';
+import { Avatar, InitialsAvatar } from '../src';
 
 const meta: Meta<typeof Avatar> = {
 	component: Avatar,
-	subcomponents: { IconAvatar, InitialsAvatar } as Record<string, ComponentType<unknown>>,
+	subcomponents: { InitialsAvatar } as Record<string, ComponentType<unknown>>,
 	title: 'Components/Content/Avatar',
 };
 
@@ -19,10 +19,6 @@ export const Example: Story = {
 		src: 'https://avatars.githubusercontent.com/u/2147624?v=4',
 		alt: 'engineer',
 	},
-};
-
-export const Icon: Story = {
-	render: (args) => <IconAvatar size={args.size} />,
 };
 
 export const Initials: Story = {

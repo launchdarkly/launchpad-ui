@@ -18,13 +18,6 @@
 	height: var(--lp-size-40);
 }
 
-.icon {
-	border: 1px solid var(--lp-color-border-ui-primary);
-}
-
-.image {
-}
-
 .initials {
 	font: var(--lp-text-label-1-semibold);
 	font-size: var(--lp-font-size-100);
