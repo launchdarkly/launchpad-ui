@@ -1,6 +1,6 @@
 {
 	"name": "@launchpad-ui/menu",
-	"version": "0.13.45",
+	"version": "0.13.46",
 	"status": "beta",
 	"publishConfig": {
 		"access": "public"
