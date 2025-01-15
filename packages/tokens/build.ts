@@ -45,8 +45,9 @@ const sd = new StyleDictionary({
 	platforms: {
 		css: {
 			prefix: 'lp',
+			basePxFontSize: 16,
 			transformGroup: 'css',
-			transforms: ['name/kebab', 'time/seconds', 'size/rem', 'color/rgb', 'attribute/font'],
+			transforms: ['name/kebab', 'time/seconds', 'size/pxToRem', 'color/rgb', 'attribute/font'],
 			buildPath: 'dist/',
 			options: {
 				outputReferences: true,

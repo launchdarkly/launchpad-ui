@@ -5,10 +5,10 @@
 			"$value": "{size.0}"
 		},
 		"tablet": {
-			"$value": "740px"
+			"$value": 740
 		},
 		"desktop": {
-			"$value": "992px"
+			"$value": 992
 		},
 		"wide": {
 			"$value": "{size.1200}"
