@@ -43,6 +43,13 @@ const meta: Meta<typeof Container> = {
 	parameters: {
 		chromatic: { pauseAnimationAtEnd: true },
 	},
+	decorators: [
+		(Story) => (
+			<div style={{ minHeight: 'var(--lp-size-208)' }}>
+				<Story />
+			</div>
+		),
+	],
 	argTypes: {
 		children: {
 			control: false,
