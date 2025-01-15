@@ -22,9 +22,6 @@ const meta: Meta<typeof ToastContainer> = {
 			type: import.meta.env.STORYBOOK_PACKAGE_STATUS__COMPONENTS,
 		},
 		chromatic: { pauseAnimationAtEnd: true },
-		a11y: {
-			element: '[data-react-aria-top-layer]',
-		},
 	},
 	decorators: [
 		(Story, { viewMode }) =>

@@ -28,9 +28,6 @@ const meta: Meta<typeof Modal> = {
 			type: import.meta.env.STORYBOOK_PACKAGE_STATUS__COMPONENTS,
 		},
 		chromatic: { pauseAnimationAtEnd: true },
-		a11y: {
-			element: 'div[data-rac]',
-		},
 	},
 	decorators: [
 		(Story, { viewMode }) =>

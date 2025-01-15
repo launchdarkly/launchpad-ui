@@ -27,9 +27,6 @@ const meta: Meta<typeof DateRangePicker> = {
 			type: import.meta.env.STORYBOOK_PACKAGE_STATUS__COMPONENTS,
 		},
 		chromatic: { pauseAnimationAtEnd: true },
-		a11y: {
-			element: '[data-trigger]',
-		},
 	},
 	decorators: [
 		(Story) => (

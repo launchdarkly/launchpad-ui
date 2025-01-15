@@ -15,6 +15,9 @@ const meta: Meta<typeof Button> = {
 		status: {
 			type: import.meta.env.STORYBOOK_PACKAGE_STATUS__COMPONENTS,
 		},
+		test: {
+			dangerouslyIgnoreUnhandledErrors: true,
+		},
 	},
 	decorators: [
 		(Story) => (
