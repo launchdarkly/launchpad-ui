@@ -1,4 +1,4 @@
-import type { RefObject } from 'react';
+import type { Ref } from 'react';
 import type {
 	GridListItemProps as AriaGridListItemProps,
 	GridListProps as AriaGridListProps,
@@ -19,11 +19,11 @@ const list = cva(styles.list);
 const item = cva(styles.item);
 
 interface GridListProps<T extends object> extends AriaGridListProps<T> {
-	ref?: RefObject<HTMLDivElement | null>;
+	ref?: Ref<HTMLDivElement>;
 }
 
 interface GridListItemProps<T extends object> extends AriaGridListItemProps<T> {
-	ref?: RefObject<T | null>;
+	ref?: Ref<T>;
 }
 
 /**

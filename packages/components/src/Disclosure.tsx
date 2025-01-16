@@ -1,4 +1,4 @@
-import type { RefObject } from 'react';
+import type { Ref } from 'react';
 import type {
 	DisclosurePanelProps as AriaDisclosurePanelProps,
 	DisclosureProps as AriaDisclosureProps,
@@ -16,11 +16,11 @@ const disclosure = cva(styles.disclosure);
 const panel = cva(styles.panel);
 
 interface DisclosureProps extends AriaDisclosureProps {
-	ref?: RefObject<HTMLDivElement | null>;
+	ref?: Ref<HTMLDivElement>;
 }
 
 interface DisclosurePanelProps extends AriaDisclosurePanelProps {
-	ref?: RefObject<HTMLDivElement | null>;
+	ref?: Ref<HTMLDivElement>;
 }
 
 /**

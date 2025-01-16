@@ -1,4 +1,4 @@
-import type { ContextType, FieldsetHTMLAttributes, RefObject } from 'react';
+import type { ContextType, FieldsetHTMLAttributes, Ref } from 'react';
 
 import { cva } from 'class-variance-authority';
 import { useId } from 'react';
@@ -22,7 +22,7 @@ interface FieldGroupProps extends FieldsetHTMLAttributes<HTMLFieldSetElement> {
 	title?: string;
 	errorMessage?: string;
 	isDisabled?: boolean;
-	ref?: RefObject<HTMLFieldSetElement | null>;
+	ref?: Ref<HTMLFieldSetElement>;
 }
 
 const group = cva(styles.group);

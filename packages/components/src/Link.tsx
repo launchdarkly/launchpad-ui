@@ -1,6 +1,6 @@
 import type { DOMProps } from '@react-types/shared';
 import type { VariantProps } from 'class-variance-authority';
-import type { RefObject } from 'react';
+import type { Ref } from 'react';
 import type { LinkProps as AriaLinkProps } from 'react-aria-components';
 
 import { Icon } from '@launchpad-ui/icons';
@@ -23,7 +23,7 @@ const link = cva(styles.base, {
 });
 
 interface LinkProps extends AriaLinkProps, VariantProps<typeof link>, DOMProps {
-	ref?: RefObject<HTMLAnchorElement | null>;
+	ref?: Ref<HTMLAnchorElement>;
 }
 
 /**

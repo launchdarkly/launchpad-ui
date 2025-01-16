@@ -1,4 +1,4 @@
-import type { RefObject } from 'react';
+import type { Ref } from 'react';
 import type {
 	DatePickerProps as AriaDatePickerProps,
 	DateRangePickerProps as AriaDateRangePickerProps,
@@ -17,11 +17,11 @@ import styles from './styles/DatePicker.module.css';
 const picker = cva(styles.picker);
 
 interface DatePickerProps<T extends DateValue> extends AriaDatePickerProps<T> {
-	ref?: RefObject<HTMLDivElement | null>;
+	ref?: Ref<HTMLDivElement>;
 }
 
 interface DateRangePickerProps<T extends DateValue> extends AriaDateRangePickerProps<T> {
-	ref?: RefObject<HTMLDivElement | null>;
+	ref?: Ref<HTMLDivElement>;
 }
 
 /**

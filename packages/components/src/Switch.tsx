@@ -1,4 +1,4 @@
-import type { ReactNode, RefObject } from 'react';
+import type { ReactNode, Ref } from 'react';
 import type { SwitchProps as AriaSwitchProps } from 'react-aria-components';
 
 import { cva } from 'class-variance-authority';
@@ -10,7 +10,7 @@ const _switch = cva(styles.switch);
 
 interface SwitchProps extends Omit<AriaSwitchProps, 'children'> {
 	children?: ReactNode;
-	ref?: RefObject<HTMLLabelElement | null>;
+	ref?: Ref<HTMLLabelElement>;
 }
 
 /**

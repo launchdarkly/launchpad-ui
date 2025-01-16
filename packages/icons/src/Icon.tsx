@@ -1,5 +1,5 @@
 import type { VariantProps } from 'class-variance-authority';
-import type { RefObject, SVGAttributes } from 'react';
+import type { Ref, SVGAttributes } from 'react';
 import type { IconName } from './types';
 
 import { cva } from 'class-variance-authority';
@@ -30,7 +30,7 @@ const IconContext = createContext<IconProps>({});
 
 interface IconProps extends SVGAttributes<SVGElement>, VariantProps<typeof icon> {
 	name?: IconName;
-	ref?: RefObject<SVGSVGElement | null>;
+	ref?: Ref<SVGSVGElement>;
 }
 
 const Icon = ({

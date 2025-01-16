@@ -1,5 +1,5 @@
 import type { VariantProps } from 'class-variance-authority';
-import type { ImgHTMLAttributes, RefObject, SVGAttributes } from 'react';
+import type { ImgHTMLAttributes, Ref, SVGAttributes } from 'react';
 
 import { cva, cx } from 'class-variance-authority';
 
@@ -34,7 +34,7 @@ const colors = cva(null, {
 interface AvatarVariants extends VariantProps<typeof avatar> {}
 
 interface AvatarProps extends ImgHTMLAttributes<HTMLImageElement>, AvatarVariants {
-	ref?: RefObject<HTMLImageElement | null>;
+	ref?: Ref<HTMLImageElement>;
 }
 
 interface InitialsAvatarProps extends SVGAttributes<SVGElement>, AvatarVariants {}

@@ -1,4 +1,4 @@
-import type { RefObject } from 'react';
+import type { Ref } from 'react';
 import type { RadioProps as AriaRadioProps, RadioRenderProps } from 'react-aria-components';
 
 import { Icon } from '@launchpad-ui/icons';
@@ -11,7 +11,7 @@ const radio = cva(styles.radio);
 const circle = cva(styles.circle);
 
 interface RadioProps extends AriaRadioProps {
-	ref?: RefObject<HTMLLabelElement | null>;
+	ref?: Ref<HTMLLabelElement>;
 }
 
 const RadioInner = ({ isSelected }: Partial<RadioRenderProps>) => (

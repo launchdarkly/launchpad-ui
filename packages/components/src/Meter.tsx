@@ -1,4 +1,4 @@
-import type { RefObject } from 'react';
+import type { Ref } from 'react';
 import type { MeterProps as AriaMeterProps } from 'react-aria-components';
 
 import { cva } from 'class-variance-authority';
@@ -10,7 +10,7 @@ const meter = cva(styles.meter);
 const icon = cva(styles.base);
 
 interface MeterProps extends AriaMeterProps {
-	ref?: RefObject<HTMLDivElement | null>;
+	ref?: Ref<HTMLDivElement>;
 }
 
 /**

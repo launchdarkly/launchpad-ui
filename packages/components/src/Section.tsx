@@ -1,4 +1,4 @@
-import type { RefObject } from 'react';
+import type { Ref } from 'react';
 import type {
 	ListBoxSectionProps as AriaListBoxSectionProps,
 	MenuSectionProps as AriaMenuSectionProps,
@@ -15,11 +15,11 @@ import styles from './styles/Section.module.css';
 const section = cva(styles.section);
 
 interface ListBoxSectionProps<T extends object> extends AriaListBoxSectionProps<T> {
-	ref?: RefObject<HTMLElement | null>;
+	ref?: Ref<HTMLElement>;
 }
 
 interface MenuSectionProps<T extends object> extends AriaMenuSectionProps<T> {
-	ref?: RefObject<HTMLElement | null>;
+	ref?: Ref<HTMLElement>;
 }
 
 /**

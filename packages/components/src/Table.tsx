@@ -1,4 +1,4 @@
-import type { RefObject } from 'react';
+import type { Ref } from 'react';
 import type {
 	CellProps as AriaCellProps,
 	ColumnProps as AriaColumnProps,
@@ -46,35 +46,35 @@ const ResizableTableContainerContext = createContext<{ resizable: boolean } | nu
 });
 
 interface TableProps extends AriaTableProps {
-	ref?: RefObject<HTMLTableElement | null>;
+	ref?: Ref<HTMLTableElement>;
 }
 
 interface ColumnProps extends AriaColumnProps {
-	ref?: RefObject<HTMLTableCellElement | null>;
+	ref?: Ref<HTMLTableCellElement>;
 }
 
 interface TableHeaderProps<T extends object> extends AriaTableHeaderProps<T> {
-	ref?: RefObject<HTMLTableSectionElement | null>;
+	ref?: Ref<HTMLTableSectionElement>;
 }
 
 interface TableBodyProps<T extends object> extends AriaTableBodyProps<T> {
-	ref?: RefObject<HTMLTableSectionElement | null>;
+	ref?: Ref<HTMLTableSectionElement>;
 }
 
 interface RowProps<T extends object> extends AriaRowProps<T> {
-	ref?: RefObject<HTMLTableRowElement | null>;
+	ref?: Ref<HTMLTableRowElement>;
 }
 
 interface CellProps extends AriaCellProps {
-	ref?: RefObject<HTMLTableCellElement | null>;
+	ref?: Ref<HTMLTableCellElement>;
 }
 
 interface ColumnResizerProps extends AriaColumnResizerProps {
-	ref?: RefObject<HTMLDivElement | null>;
+	ref?: Ref<HTMLDivElement>;
 }
 
 interface ResizableTableContainerProps extends AriaResizableTableContainerProps {
-	ref?: RefObject<HTMLDivElement | null>;
+	ref?: Ref<HTMLDivElement>;
 }
 
 /**

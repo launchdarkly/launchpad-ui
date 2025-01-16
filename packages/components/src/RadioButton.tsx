@@ -1,4 +1,4 @@
-import type { RefObject } from 'react';
+import type { Ref } from 'react';
 import type { RadioProps } from 'react-aria-components';
 import type { ButtonVariants } from './Button';
 
@@ -7,7 +7,7 @@ import { Radio as AriaRadio, composeRenderProps } from 'react-aria-components';
 import { button } from './Button';
 
 interface RadioButtonProps extends RadioProps, ButtonVariants {
-	ref?: RefObject<HTMLLabelElement | null>;
+	ref?: Ref<HTMLLabelElement>;
 }
 
 /**

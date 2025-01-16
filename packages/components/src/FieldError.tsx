@@ -1,4 +1,4 @@
-import type { RefObject } from 'react';
+import type { Ref } from 'react';
 import type { FieldErrorProps as AriaFieldErrorProps } from 'react-aria-components';
 
 import { cva } from 'class-variance-authority';
@@ -9,7 +9,7 @@ import styles from './styles/FieldError.module.css';
 const error = cva(styles.error);
 
 interface FieldErrorProps extends AriaFieldErrorProps {
-	ref?: RefObject<HTMLElement | null>;
+	ref?: Ref<HTMLElement>;
 }
 
 /**

@@ -1,7 +1,7 @@
 import type { IconProps } from '@launchpad-ui/icons';
 import type { AriaLabelingProps } from '@react-types/shared';
 import type { VariantProps } from 'class-variance-authority';
-import type { RefObject } from 'react';
+import type { Ref } from 'react';
 import type { ButtonProps as AriaButtonProps } from 'react-aria-components';
 import type { ButtonVariants } from './Button';
 
@@ -39,7 +39,7 @@ interface IconButtonBaseProps
 interface IconButtonProps
 	extends Omit<AriaButtonProps, 'children' | 'aria-label'>,
 		IconButtonBaseProps {
-	ref?: RefObject<HTMLButtonElement | null>;
+	ref?: Ref<HTMLButtonElement>;
 }
 
 /**

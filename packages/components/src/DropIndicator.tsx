@@ -1,4 +1,4 @@
-import type { RefObject } from 'react';
+import type { Ref } from 'react';
 import type { DropIndicatorProps as AriaDropIndicatorProps } from 'react-aria-components';
 
 import { cva } from 'class-variance-authority';
@@ -9,7 +9,7 @@ import styles from './styles/DropIndicator.module.css';
 const indicator = cva(styles.indicator);
 
 interface DropIndicatorProps extends AriaDropIndicatorProps {
-	ref?: RefObject<HTMLElement | null>;
+	ref?: Ref<HTMLElement>;
 }
 
 /**

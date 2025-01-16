@@ -1,4 +1,4 @@
-import type { RefObject } from 'react';
+import type { Ref } from 'react';
 import type { RadioProps } from 'react-aria-components';
 import type { IconButtonBaseProps } from './IconButton';
 
@@ -12,7 +12,7 @@ import { iconButton } from './IconButton';
 interface RadioIconButtonProps
 	extends Omit<RadioProps, 'children' | 'aria-label'>,
 		IconButtonBaseProps {
-	ref?: RefObject<HTMLLabelElement | null>;
+	ref?: Ref<HTMLLabelElement>;
 }
 
 /**

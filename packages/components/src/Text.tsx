@@ -1,4 +1,4 @@
-import type { RefObject } from 'react';
+import type { Ref } from 'react';
 import type { TextProps as AriaTextProps } from 'react-aria-components';
 
 import { cva } from 'class-variance-authority';
@@ -9,7 +9,7 @@ import styles from './styles/Text.module.css';
 const text = cva(styles.text);
 
 interface TextProps extends AriaTextProps {
-	ref?: RefObject<HTMLElement | null>;
+	ref?: Ref<HTMLElement>;
 }
 
 const Text = ({ className, ref, ...props }: TextProps) => {

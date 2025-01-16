@@ -1,5 +1,5 @@
 import type { VariantProps } from 'class-variance-authority';
-import type { RefObject } from 'react';
+import type { Ref } from 'react';
 import type {
 	MenuItemProps as AriaMenuItemProps,
 	MenuProps as AriaMenuProps,
@@ -35,10 +35,10 @@ const item = cva(styles.item, {
 });
 
 interface MenuProps<T> extends AriaMenuProps<T> {
-	ref?: RefObject<HTMLDivElement | null>;
+	ref?: Ref<HTMLDivElement>;
 }
 interface MenuItemProps<T> extends AriaMenuItemProps<T>, VariantProps<typeof item> {
-	ref?: RefObject<T | null>;
+	ref?: Ref<T>;
 }
 
 /**

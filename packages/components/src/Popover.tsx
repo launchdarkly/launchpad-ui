@@ -1,4 +1,4 @@
-import type { RefObject } from 'react';
+import type { Ref } from 'react';
 import type {
 	OverlayArrowProps as AriaOverlayArrowProps,
 	PopoverProps as AriaPopoverProps,
@@ -16,10 +16,10 @@ import { PopoverContext } from './ComboBox';
 import styles from './styles/Popover.module.css';
 
 interface PopoverProps extends AriaPopoverProps {
-	ref?: RefObject<HTMLElement | null>;
+	ref?: Ref<HTMLElement>;
 }
 interface OverlayArrowProps extends Omit<AriaOverlayArrowProps, 'children'> {
-	ref?: RefObject<HTMLDivElement | null>;
+	ref?: Ref<HTMLDivElement>;
 }
 
 const popover = cva(styles.popover);

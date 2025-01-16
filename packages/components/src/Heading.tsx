@@ -1,4 +1,4 @@
-import type { RefObject } from 'react';
+import type { Ref } from 'react';
 import type { HeadingProps as AriaHeadingProps } from 'react-aria-components';
 
 import { cva } from 'class-variance-authority';
@@ -9,7 +9,7 @@ import styles from './styles/Heading.module.css';
 const heading = cva(styles.heading);
 
 interface HeadingProps extends AriaHeadingProps {
-	ref?: RefObject<HTMLHeadingElement | null>;
+	ref?: Ref<HTMLHeadingElement>;
 }
 
 const Heading = ({ className, ref, ...props }: HeadingProps) => {

@@ -1,4 +1,4 @@
-import type { RefObject } from 'react';
+import type { Ref } from 'react';
 import type {
 	DateFieldProps as AriaDateFieldProps,
 	DateInputProps as AriaDateInputProps,
@@ -25,19 +25,19 @@ const dateInput = cva(styles.input);
 const segment = cva(styles.segment);
 
 interface DateFieldProps<T extends DateValue> extends AriaDateFieldProps<T> {
-	ref?: RefObject<HTMLDivElement | null>;
+	ref?: Ref<HTMLDivElement>;
 }
 
 interface DateInputProps extends AriaDateInputProps {
-	ref?: RefObject<HTMLDivElement | null>;
+	ref?: Ref<HTMLDivElement>;
 }
 
 interface DateSegmentProps extends AriaDateSegmentProps {
-	ref?: RefObject<HTMLDivElement | null>;
+	ref?: Ref<HTMLDivElement>;
 }
 
 interface TimeFieldProps<T extends TimeValue> extends AriaTimeFieldProps<T> {
-	ref?: RefObject<HTMLDivElement | null>;
+	ref?: Ref<HTMLDivElement>;
 }
 
 /**

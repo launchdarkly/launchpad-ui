@@ -1,5 +1,5 @@
 import type { VariantProps } from 'class-variance-authority';
-import type { HTMLAttributes, RefObject } from 'react';
+import type { HTMLAttributes, Ref } from 'react';
 
 import { StatusIcon } from '@launchpad-ui/icons';
 import { useControlledState } from '@react-stately/utils';
@@ -36,7 +36,7 @@ interface AlertProps extends HTMLAttributes<HTMLDivElement>, AlertVariants {
 	isDismissable?: boolean;
 	isOpen?: boolean;
 	onDismiss?: () => void;
-	ref?: RefObject<HTMLDivElement | null>;
+	ref?: Ref<HTMLDivElement>;
 }
 
 const Alert = ({

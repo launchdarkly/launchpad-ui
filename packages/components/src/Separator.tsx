@@ -1,4 +1,4 @@
-import type { RefObject } from 'react';
+import type { Ref } from 'react';
 import type { SeparatorProps as AriaSeparatorProps } from 'react-aria-components';
 
 import { cva } from 'class-variance-authority';
@@ -9,7 +9,7 @@ import styles from './styles/Separator.module.css';
 const separator = cva(styles.separator);
 
 interface SeparatorProps extends AriaSeparatorProps {
-	ref?: RefObject<HTMLElement | null>;
+	ref?: Ref<HTMLElement>;
 }
 
 const Separator = ({ className, ref, ...props }: SeparatorProps) => {

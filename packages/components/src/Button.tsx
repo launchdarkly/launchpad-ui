@@ -1,5 +1,5 @@
 import type { VariantProps } from 'class-variance-authority';
-import type { RefObject } from 'react';
+import type { Ref } from 'react';
 import type { ButtonProps as AriaButtonProps } from 'react-aria-components';
 
 import { cva, cx } from 'class-variance-authority';
@@ -41,7 +41,7 @@ const button = cva(styles.base, {
 
 interface ButtonVariants extends VariantProps<typeof button> {}
 interface ButtonProps extends AriaButtonProps, ButtonVariants {
-	ref?: RefObject<HTMLButtonElement | null>;
+	ref?: Ref<HTMLButtonElement>;
 }
 
 /**

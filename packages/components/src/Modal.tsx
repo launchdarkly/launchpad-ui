@@ -1,5 +1,5 @@
 import type { VariantProps } from 'class-variance-authority';
-import type { RefObject } from 'react';
+import type { Ref } from 'react';
 import type { ModalOverlayProps as AriaModalOverlayProps } from 'react-aria-components';
 
 import { cva } from 'class-variance-authority';
@@ -31,11 +31,11 @@ const modal = cva(styles.base, {
 const overlay = cva(styles.overlay);
 
 interface ModalProps extends AriaModalOverlayProps, VariantProps<typeof modal> {
-	ref?: RefObject<HTMLDivElement | null>;
+	ref?: Ref<HTMLDivElement>;
 }
 
 interface ModalOverlayProps extends AriaModalOverlayProps, VariantProps<typeof modal> {
-	ref?: RefObject<HTMLDivElement | null>;
+	ref?: Ref<HTMLDivElement>;
 }
 
 /**

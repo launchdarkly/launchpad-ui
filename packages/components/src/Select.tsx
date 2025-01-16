@@ -1,4 +1,4 @@
-import type { RefObject } from 'react';
+import type { Ref } from 'react';
 import type {
 	SelectProps as AriaSelectProps,
 	SelectValueProps as AriaSelectValueProps,
@@ -17,11 +17,11 @@ const select = cva(styles.select);
 const value = cva(styles.value);
 
 interface SelectProps<T extends object> extends AriaSelectProps<T> {
-	ref?: RefObject<HTMLDivElement | null>;
+	ref?: Ref<HTMLDivElement>;
 }
 
 interface SelectValueProps<T extends object> extends AriaSelectValueProps<T> {
-	ref?: RefObject<HTMLSpanElement | null>;
+	ref?: Ref<HTMLSpanElement>;
 }
 
 /**

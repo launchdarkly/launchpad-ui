@@ -1,4 +1,4 @@
-import type { RefObject } from 'react';
+import type { Ref } from 'react';
 import type {
 	ListBoxItemProps as AriaListBoxItemProps,
 	ListBoxProps as AriaListBoxProps,
@@ -18,10 +18,10 @@ const box = cva(styles.box);
 const item = cva(styles.item);
 
 interface ListBoxProps<T> extends AriaListBoxProps<T> {
-	ref?: RefObject<HTMLDivElement | null>;
+	ref?: Ref<HTMLDivElement>;
 }
 interface ListBoxItemProps<T> extends AriaListBoxItemProps<T> {
-	ref?: RefObject<T | null>;
+	ref?: Ref<T>;
 }
 
 /**
