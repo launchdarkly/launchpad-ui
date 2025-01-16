@@ -1,5 +1,22 @@
 # @launchpad-ui/components
 
+## 0.7.0
+
+### Minor Changes
+
+- [#1515](https://github.com/launchdarkly/launchpad-ui/pull/1515) [`fe07097`](https://github.com/launchdarkly/launchpad-ui/commit/fe0709739722a6dd6bd27a02963b05039732d756) Thanks [@Niznikr](https://github.com/Niznikr)! - Use `ref` prop instead of `forwardRef` and drop React 18 support
+
+### Patch Changes
+
+- [#1522](https://github.com/launchdarkly/launchpad-ui/pull/1522) [`61beac9`](https://github.com/launchdarkly/launchpad-ui/commit/61beac9d41d4980af76eaf3c54a3b907439ab196) Thanks [@matthewferry](https://github.com/matthewferry)! - chore: update Label to medium font weight
+
+- [#1521](https://github.com/launchdarkly/launchpad-ui/pull/1521) [`0e7d403`](https://github.com/launchdarkly/launchpad-ui/commit/0e7d4038e7686684001e59df0e83ae2f8191f9ba) Thanks [@renovate](https://github.com/apps/renovate)! - Update dependencies
+
+- [#1519](https://github.com/launchdarkly/launchpad-ui/pull/1519) [`62008bd`](https://github.com/launchdarkly/launchpad-ui/commit/62008bd87b6d14bb75573b05eee7d50bcfbc8ed4) Thanks [@Niznikr](https://github.com/Niznikr)! - Add `Avatar`
+
+- Updated dependencies [[`fe07097`](https://github.com/launchdarkly/launchpad-ui/commit/fe0709739722a6dd6bd27a02963b05039732d756), [`c543426`](https://github.com/launchdarkly/launchpad-ui/commit/c5434262ed7471d3c16bfd10c2f97429209bed44)]:
+  - @launchpad-ui/icons@0.21.0
+
 ## 0.6.4
 
 ### Patch Changes

@@ -1,5 +1,15 @@
 # @launchpad-ui/icons
 
+## 0.21.0
+
+### Minor Changes
+
+- [#1515](https://github.com/launchdarkly/launchpad-ui/pull/1515) [`fe07097`](https://github.com/launchdarkly/launchpad-ui/commit/fe0709739722a6dd6bd27a02963b05039732d756) Thanks [@Niznikr](https://github.com/Niznikr)! - Use `ref` prop instead of `forwardRef` and drop React 18 support
+
+### Patch Changes
+
+- [#1520](https://github.com/launchdarkly/launchpad-ui/pull/1520) [`c543426`](https://github.com/launchdarkly/launchpad-ui/commit/c5434262ed7471d3c16bfd10c2f97429209bed44) Thanks [@matthewferry](https://github.com/matthewferry)! - chore: remove Box from BadgeIcon
+
 ## 0.20.3
 
 ### Patch Changes
