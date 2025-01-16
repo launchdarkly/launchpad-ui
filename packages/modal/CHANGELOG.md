@@ -1,5 +1,16 @@
 # @launchpad-ui/modal
 
+## 0.17.62
+
+### Patch Changes
+
+- [#1521](https://github.com/launchdarkly/launchpad-ui/pull/1521) [`0e7d403`](https://github.com/launchdarkly/launchpad-ui/commit/0e7d4038e7686684001e59df0e83ae2f8191f9ba) Thanks [@renovate](https://github.com/apps/renovate)! - Update dependencies
+
+- Updated dependencies [[`fe07097`](https://github.com/launchdarkly/launchpad-ui/commit/fe0709739722a6dd6bd27a02963b05039732d756), [`c543426`](https://github.com/launchdarkly/launchpad-ui/commit/c5434262ed7471d3c16bfd10c2f97429209bed44), [`0e7d403`](https://github.com/launchdarkly/launchpad-ui/commit/0e7d4038e7686684001e59df0e83ae2f8191f9ba)]:
+  - @launchpad-ui/icons@0.21.0
+  - @launchpad-ui/focus-trap@0.1.27
+  - @launchpad-ui/button@0.12.40
+
 ## 0.17.61
 
 ### Patch Changes
