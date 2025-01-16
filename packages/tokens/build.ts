@@ -2,6 +2,7 @@ import type { Config, TransformedToken } from 'style-dictionary/types';
 
 import JsonToTS from 'json-to-ts';
 import StyleDictionary from 'style-dictionary';
+import { formats, transformGroups, transforms } from 'style-dictionary/enums';
 import { fileHeader, minifyDictionary } from 'style-dictionary/utils';
 
 const themes = ['dark', 'default'].map(
@@ -11,8 +12,8 @@ const themes = ['dark', 'default'].map(
 			platforms: {
 				css: {
 					prefix: 'lp',
-					transformGroup: 'css',
-					transforms: ['color/rgb'],
+					transformGroup: transformGroups.css,
+					transforms: [transforms.colorRgb],
 					options: {
 						outputReferences: true,
 						usesDtcg: true,
@@ -20,7 +21,7 @@ const themes = ['dark', 'default'].map(
 					files: [
 						{
 							destination: `${theme}.css`,
-							format: 'css/variables',
+							format: formats.cssVariables,
 							options: {
 								selector: theme === 'default' ? ':root, [data-theme]' : `[data-theme='${theme}']`,
 							},
@@ -46,8 +47,13 @@ const sd = new StyleDictionary({
 		css: {
 			prefix: 'lp',
 			basePxFontSize: 16,
-			transformGroup: 'css',
-			transforms: ['name/kebab', 'size/pxToRem', 'color/rgb', 'attribute/font'],
+			transformGroup: transformGroups.css,
+			transforms: [
+				transforms.nameKebab,
+				transforms.sizePxToRem,
+				transforms.colorRgb,
+				'attribute/font',
+			],
 			buildPath: 'dist/',
 			options: {
 				outputReferences: true,
@@ -56,7 +62,7 @@ const sd = new StyleDictionary({
 			files: [
 				{
 					destination: 'index.css',
-					format: 'css/variables',
+					format: formats.cssVariables,
 					filter: (token) => !token.filePath.includes('aliases'),
 				},
 				{
@@ -78,8 +84,8 @@ const sd = new StyleDictionary({
 		},
 		js: {
 			basePxFontSize: 16,
-			transformGroup: 'js',
-			transforms: ['size/pxToRem', 'color/rgb'],
+			transformGroup: transformGroups.js,
+			transforms: [transforms.sizePxToRem, transforms.colorRgb],
 			buildPath: 'dist/',
 			options: {
 				outputReferences: true,
@@ -102,7 +108,7 @@ const sd = new StyleDictionary({
 		},
 		json: {
 			buildPath: 'dist/',
-			transforms: ['name/kebab', 'custom/value/name'],
+			transforms: [transforms.nameKebab, 'custom/value/name'],
 			options: {
 				outputReferences: true,
 				usesDtcg: true,
@@ -117,8 +123,8 @@ const sd = new StyleDictionary({
 		vscode: {
 			basePxFontSize: 16,
 			buildPath: 'dist/',
-			transformGroup: 'css',
-			transforms: ['name/kebab', 'size/pxToRem', 'color/rgb'],
+			transformGroup: transformGroups.css,
+			transforms: [transforms.nameKebab, transforms.sizePxToRem, transforms.colorRgb],
 			options: {
 				outputReferences: true,
 				usesDtcg: true,
