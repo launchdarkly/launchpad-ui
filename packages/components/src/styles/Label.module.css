@@ -1,4 +1,4 @@
 .label {
-	font: var(--lp-text-label-1-regular);
+	font: var(--lp-text-label-1-medium);
 	white-space: nowrap;
 }
