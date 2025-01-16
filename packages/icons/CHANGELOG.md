@@ -1,5 +1,11 @@
 # @launchpad-ui/icons
 
+## 0.21.1
+
+### Patch Changes
+
+- [#1523](https://github.com/launchdarkly/launchpad-ui/pull/1523) [`3e8616a`](https://github.com/launchdarkly/launchpad-ui/commit/3e8616a4a7d844698357ab2c9fbb928c3d666340) Thanks [@Niznikr](https://github.com/Niznikr)! - Support `RefCallback` on refs
+
 ## 0.21.0
 
 ### Minor Changes
