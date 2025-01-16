@@ -1,4 +1,4 @@
-import type { CSSProperties, RefObject } from 'react';
+import type { CSSProperties, Ref } from 'react';
 import type { ComboBoxProps as AriaComboBoxProps, PopoverProps } from 'react-aria-components';
 import type { IconButtonProps } from './IconButton';
 
@@ -21,7 +21,7 @@ const box = cva(styles.box);
 const PopoverContext = createContext<PopoverProps>({});
 
 interface ComboBoxProps<T extends object> extends AriaComboBoxProps<T> {
-	ref?: RefObject<HTMLDivElement | null>;
+	ref?: Ref<HTMLDivElement>;
 }
 
 interface ComboBoxClearButtonProps extends Partial<IconButtonProps> {}

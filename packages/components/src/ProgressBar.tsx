@@ -1,5 +1,5 @@
 import type { VariantProps } from 'class-variance-authority';
-import type { RefObject } from 'react';
+import type { Ref } from 'react';
 import type { ProgressBarProps as AriaProgressBarProps } from 'react-aria-components';
 
 import { cva, cx } from 'class-variance-authority';
@@ -23,7 +23,7 @@ const icon = cva(styles.base, {
 });
 
 interface ProgressBarProps extends AriaProgressBarProps, VariantProps<typeof icon> {
-	ref?: RefObject<HTMLDivElement | null>;
+	ref?: Ref<HTMLDivElement>;
 }
 
 /**

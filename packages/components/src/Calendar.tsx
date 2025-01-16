@@ -1,6 +1,6 @@
 import type { CalendarDate } from '@internationalized/date';
 import type { RangeValue } from '@react-types/shared';
-import type { HTMLAttributes, RefObject } from 'react';
+import type { HTMLAttributes, Ref } from 'react';
 import type {
 	CalendarCellProps as AriaCalendarCellProps,
 	CalendarProps as AriaCalendarProps,
@@ -36,12 +36,12 @@ import { Button, button } from './Button';
 import styles from './styles/Calendar.module.css';
 
 interface CalendarPickerProps extends HTMLAttributes<HTMLDivElement> {
-	ref?: RefObject<HTMLDivElement | null>;
+	ref?: Ref<HTMLDivElement>;
 }
 
 interface PresetProps extends Omit<ButtonProps, 'value'> {
 	value: CalendarDate | RangeValue<CalendarDate>;
-	ref?: RefObject<HTMLButtonElement | null>;
+	ref?: Ref<HTMLButtonElement>;
 }
 
 const calendar = cva(styles.calendar);
@@ -49,15 +49,15 @@ const cell = cva(styles.cell);
 const range = cva(styles.range);
 
 interface CalendarProps<T extends DateValue> extends AriaCalendarProps<T> {
-	ref?: RefObject<HTMLDivElement | null>;
+	ref?: Ref<HTMLDivElement>;
 }
 
 interface CalendarCellProps extends AriaCalendarCellProps {
-	ref?: RefObject<HTMLTableCellElement | null>;
+	ref?: Ref<HTMLTableCellElement>;
 }
 
 interface RangeCalendarProps<T extends DateValue> extends AriaRangeCalendarProps<T> {
-	ref?: RefObject<HTMLDivElement | null>;
+	ref?: Ref<HTMLDivElement>;
 }
 
 /**

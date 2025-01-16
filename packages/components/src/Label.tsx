@@ -1,4 +1,4 @@
-import type { RefObject } from 'react';
+import type { Ref } from 'react';
 import type { LabelProps as AriaLabelProps } from 'react-aria-components';
 
 import { cva } from 'class-variance-authority';
@@ -9,7 +9,7 @@ import styles from './styles/Label.module.css';
 const label = cva(styles.label);
 
 interface LabelProps extends AriaLabelProps {
-	ref?: RefObject<HTMLLabelElement | null>;
+	ref?: Ref<HTMLLabelElement>;
 }
 
 const Label = ({ className, ref, ...props }: LabelProps) => {

@@ -1,6 +1,6 @@
 import type { Orientation } from '@react-types/shared';
 import type { VariantProps } from 'class-variance-authority';
-import type { RefObject } from 'react';
+import type { Ref } from 'react';
 import type { GroupProps } from 'react-aria-components';
 
 import { cva } from 'class-variance-authority';
@@ -33,7 +33,7 @@ const buttonGroup = cva(styles.base, {
 
 interface ButtonGroupProps extends GroupProps, VariantProps<typeof buttonGroup> {
 	orientation?: Orientation | null;
-	ref?: RefObject<HTMLDivElement | null>;
+	ref?: Ref<HTMLDivElement>;
 }
 
 const ButtonGroup = ({

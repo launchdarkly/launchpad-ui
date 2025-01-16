@@ -1,4 +1,4 @@
-import type { RefObject } from 'react';
+import type { Ref } from 'react';
 import type {
 	CheckboxProps as AriaCheckboxProps,
 	CheckboxRenderProps,
@@ -24,7 +24,7 @@ const CheckboxInner = ({ isSelected, isIndeterminate }: Partial<CheckboxRenderPr
 );
 
 interface CheckboxProps extends AriaCheckboxProps {
-	ref?: RefObject<HTMLLabelElement | null>;
+	ref?: Ref<HTMLLabelElement>;
 }
 
 /**

@@ -1,4 +1,4 @@
-import type { RefObject } from 'react';
+import type { Ref } from 'react';
 import type {
 	TabListProps as AriaTabListProps,
 	TabPanelProps as AriaTabPanelProps,
@@ -23,19 +23,19 @@ const tab = cva(styles.tab);
 const tabs = cva(styles.tabs);
 
 interface TabsProps extends AriaTabsProps {
-	ref?: RefObject<HTMLDivElement | null>;
+	ref?: Ref<HTMLDivElement>;
 }
 
 interface TabListProps<T extends object> extends AriaTabListProps<T> {
-	ref?: RefObject<HTMLDivElement | null>;
+	ref?: Ref<HTMLDivElement>;
 }
 
 interface TabProps extends AriaTabProps {
-	ref?: RefObject<HTMLDivElement | null>;
+	ref?: Ref<HTMLDivElement>;
 }
 
 interface TabPanelProps extends AriaTabPanelProps {
-	ref?: RefObject<HTMLDivElement | null>;
+	ref?: Ref<HTMLDivElement>;
 }
 
 /**

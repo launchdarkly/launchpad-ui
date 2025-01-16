@@ -1,4 +1,4 @@
-import type { ElementType, HTMLAttributes, RefObject } from 'react';
+import type { ElementType, HTMLAttributes, Ref } from 'react';
 import type { AriaButtonProps, HoverEvents } from 'react-aria';
 
 import { useObjectRef } from '@react-aria/utils';
@@ -13,7 +13,7 @@ interface PressableProps<T extends ElementType = 'button'>
 	extends AriaButtonProps<T>,
 		HoverEvents,
 		Pick<HTMLAttributes<T>, 'className'> {
-	ref?: RefObject<HTMLElement | null>;
+	ref?: Ref<HTMLElement>;
 }
 
 const Pressable = <T extends ElementType = 'span'>({

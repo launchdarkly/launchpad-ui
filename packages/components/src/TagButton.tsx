@@ -1,4 +1,4 @@
-import type { RefObject } from 'react';
+import type { Ref } from 'react';
 import type { ButtonProps } from 'react-aria-components';
 import type { TagVariants } from './TagGroup';
 
@@ -8,7 +8,7 @@ import { Button } from './Button';
 import { tag } from './TagGroup';
 
 interface TagButtonProps extends ButtonProps, Omit<TagVariants, 'variant'> {
-	ref?: RefObject<HTMLButtonElement | null>;
+	ref?: Ref<HTMLButtonElement>;
 }
 
 /**

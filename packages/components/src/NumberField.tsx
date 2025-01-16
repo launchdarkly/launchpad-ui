@@ -1,4 +1,4 @@
-import type { RefObject } from 'react';
+import type { Ref } from 'react';
 import type { NumberFieldProps as AriaNumberFieldProps } from 'react-aria-components';
 
 import { cva } from 'class-variance-authority';
@@ -9,7 +9,7 @@ import styles from './styles/NumberField.module.css';
 const number = cva(styles.number);
 
 interface NumberFieldProps extends AriaNumberFieldProps {
-	ref?: RefObject<HTMLDivElement | null>;
+	ref?: Ref<HTMLDivElement>;
 }
 
 /**

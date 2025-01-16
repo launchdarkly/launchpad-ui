@@ -1,5 +1,5 @@
 import type { VariantProps } from 'class-variance-authority';
-import type { RefObject } from 'react';
+import type { Ref } from 'react';
 import type {
 	TagGroupProps as AriaTagGroupProps,
 	TagListProps as AriaTagListProps,
@@ -43,15 +43,15 @@ const tag = cva(styles.tag, {
 
 interface TagVariants extends VariantProps<typeof tag> {}
 interface TagProps extends AriaTagProps, TagVariants {
-	ref?: RefObject<HTMLDivElement | null>;
+	ref?: Ref<HTMLDivElement>;
 }
 
 interface TagGroupProps extends AriaTagGroupProps {
-	ref?: RefObject<HTMLDivElement | null>;
+	ref?: Ref<HTMLDivElement>;
 }
 
 interface TagListProps<T> extends AriaTagListProps<T> {
-	ref?: RefObject<HTMLDivElement | null>;
+	ref?: Ref<HTMLDivElement>;
 }
 
 /**

@@ -1,5 +1,5 @@
 import type { VariantProps } from 'class-variance-authority';
-import type { RefObject } from 'react';
+import type { Ref } from 'react';
 import type { InputProps as AriaInputProps } from 'react-aria-components';
 
 import { cva } from 'class-variance-authority';
@@ -21,7 +21,7 @@ const input = cva(styles.base, {
 
 interface InputVariants extends VariantProps<typeof input> {}
 interface InputProps extends AriaInputProps, InputVariants {
-	ref?: RefObject<HTMLInputElement | null>;
+	ref?: Ref<HTMLInputElement>;
 }
 
 /**

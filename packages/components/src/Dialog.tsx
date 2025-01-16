@@ -1,4 +1,4 @@
-import type { RefObject } from 'react';
+import type { Ref } from 'react';
 import type { DialogProps as AriaDialogProps, DialogTriggerProps } from 'react-aria-components';
 
 import { useSlotId } from '@react-aria/utils';
@@ -16,7 +16,7 @@ import styles from './styles/Dialog.module.css';
 const dialog = cva(styles.dialog);
 
 interface DialogProps extends AriaDialogProps {
-	ref?: RefObject<HTMLElement | null>;
+	ref?: Ref<HTMLElement>;
 }
 
 /**

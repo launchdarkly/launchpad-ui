@@ -1,4 +1,4 @@
-import type { RefObject } from 'react';
+import type { Ref } from 'react';
 import type { TextAreaProps as AriaTextAreaProps } from 'react-aria-components';
 import type { InputVariants } from './Input';
 
@@ -11,7 +11,7 @@ import styles from './styles/TextArea.module.css';
 const area = cva(styles.area);
 
 interface TextAreaProps extends AriaTextAreaProps, InputVariants {
-	ref?: RefObject<HTMLTextAreaElement | null>;
+	ref?: Ref<HTMLTextAreaElement>;
 }
 
 /**

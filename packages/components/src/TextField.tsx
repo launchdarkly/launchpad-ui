@@ -1,4 +1,4 @@
-import type { RefObject } from 'react';
+import type { Ref } from 'react';
 import type { TextFieldProps as AriaTextFieldProps } from 'react-aria-components';
 
 import { cva } from 'class-variance-authority';
@@ -14,7 +14,7 @@ import styles from './styles/TextField.module.css';
 const field = cva(styles.field);
 
 interface TextFieldProps extends AriaTextFieldProps {
-	ref?: RefObject<HTMLDivElement | null>;
+	ref?: Ref<HTMLDivElement>;
 }
 
 /**

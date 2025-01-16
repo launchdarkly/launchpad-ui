@@ -1,4 +1,4 @@
-import type { RefObject } from 'react';
+import type { Ref } from 'react';
 import type { RadioGroupProps as AriaRadioGroupProps } from 'react-aria-components';
 
 import { cva } from 'class-variance-authority';
@@ -9,7 +9,7 @@ import styles from './styles/RadioGroup.module.css';
 const group = cva(styles.group);
 
 interface RadioGroupProps extends AriaRadioGroupProps {
-	ref?: RefObject<HTMLDivElement | null>;
+	ref?: Ref<HTMLDivElement>;
 }
 
 /**

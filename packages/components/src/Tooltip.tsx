@@ -1,5 +1,5 @@
 import type { VariantProps } from 'class-variance-authority';
-import type { RefObject } from 'react';
+import type { Ref } from 'react';
 import type {
 	TooltipProps as AriaTooltipProps,
 	TooltipTriggerComponentProps,
@@ -16,7 +16,7 @@ import popoverStyles from './styles/Popover.module.css';
 import styles from './styles/Tooltip.module.css';
 
 interface TooltipProps extends AriaTooltipProps, VariantProps<typeof tooltip> {
-	ref?: RefObject<HTMLDivElement | null>;
+	ref?: Ref<HTMLDivElement>;
 }
 interface TooltipTriggerProps extends TooltipTriggerComponentProps {}
 

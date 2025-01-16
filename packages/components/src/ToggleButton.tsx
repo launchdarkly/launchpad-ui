@@ -1,4 +1,4 @@
-import type { RefObject } from 'react';
+import type { Ref } from 'react';
 import type { ToggleButtonProps as AriaToggleButtonProps } from 'react-aria-components';
 import type { ButtonVariants } from './Button';
 
@@ -7,7 +7,7 @@ import { ToggleButton as AriaToggleButton, composeRenderProps } from 'react-aria
 import { button } from './Button';
 
 interface ToggleButtonProps extends AriaToggleButtonProps, ButtonVariants {
-	ref?: RefObject<HTMLButtonElement | null>;
+	ref?: Ref<HTMLButtonElement>;
 }
 
 /**

@@ -1,4 +1,4 @@
-import type { RefObject } from 'react';
+import type { Ref } from 'react';
 import type { ToggleButtonProps } from 'react-aria-components';
 import type { IconButtonBaseProps } from './IconButton';
 
@@ -12,7 +12,7 @@ import { iconButton } from './IconButton';
 interface ToggleIconButtonProps
 	extends Omit<ToggleButtonProps, 'children' | 'aria-label'>,
 		IconButtonBaseProps {
-	ref?: RefObject<HTMLButtonElement | null>;
+	ref?: Ref<HTMLButtonElement>;
 }
 
 /**

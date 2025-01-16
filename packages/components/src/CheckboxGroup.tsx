@@ -1,4 +1,4 @@
-import type { RefObject } from 'react';
+import type { Ref } from 'react';
 import type { CheckboxGroupProps as AriaCheckboxGroupProps } from 'react-aria-components';
 
 import { cva } from 'class-variance-authority';
@@ -9,7 +9,7 @@ import styles from './styles/CheckboxGroup.module.css';
 const group = cva(styles.group);
 
 interface CheckboxGroupProps extends AriaCheckboxGroupProps {
-	ref?: RefObject<HTMLDivElement | null>;
+	ref?: Ref<HTMLDivElement>;
 }
 
 /**

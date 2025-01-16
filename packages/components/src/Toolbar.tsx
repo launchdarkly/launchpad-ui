@@ -1,5 +1,5 @@
 import type { VariantProps } from 'class-variance-authority';
-import type { RefObject } from 'react';
+import type { Ref } from 'react';
 import type { ToolbarProps as AriaToolbarProps } from 'react-aria-components';
 
 import { cva } from 'class-variance-authority';
@@ -21,7 +21,7 @@ const toolbar = cva(styles.base, {
 });
 
 interface ToolbarProps extends AriaToolbarProps, VariantProps<typeof toolbar> {
-	ref?: RefObject<HTMLDivElement | null>;
+	ref?: Ref<HTMLDivElement>;
 }
 
 /**

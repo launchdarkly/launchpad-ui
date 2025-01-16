@@ -1,4 +1,4 @@
-import type { RefObject } from 'react';
+import type { Ref } from 'react';
 import type {
 	BreadcrumbProps as AriaBreadcrumbProps,
 	BreadcrumbsProps as AriaBreadcrumbsProps,
@@ -23,11 +23,11 @@ const crumb = cva(styles.crumb);
 const LinkContext = createContext<ContextValue<LinkProps, HTMLAnchorElement>>(null);
 
 interface BreadcrumbsProps<T extends object> extends AriaBreadcrumbsProps<T> {
-	ref?: RefObject<HTMLOListElement | null>;
+	ref?: Ref<HTMLOListElement>;
 }
 
 interface BreadcrumbProps extends AriaBreadcrumbProps {
-	ref?: RefObject<HTMLLIElement | null>;
+	ref?: Ref<HTMLLIElement>;
 }
 
 /**

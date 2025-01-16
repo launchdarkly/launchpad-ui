@@ -1,4 +1,4 @@
-import type { RefObject } from 'react';
+import type { Ref } from 'react';
 import type { GroupProps as AriaGroupProps } from 'react-aria-components';
 import type { InputVariants } from './Input';
 
@@ -11,7 +11,7 @@ import styles from './styles/Group.module.css';
 const group = cva(styles.group);
 
 interface GroupProps extends AriaGroupProps, InputVariants {
-	ref?: RefObject<HTMLDivElement | null>;
+	ref?: Ref<HTMLDivElement>;
 }
 
 /**
