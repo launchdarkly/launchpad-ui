@@ -5,33 +5,9 @@ import StyleDictionary from 'style-dictionary';
 import { formats, transformGroups, transforms } from 'style-dictionary/enums';
 import { fileHeader, minifyDictionary } from 'style-dictionary/utils';
 
-const themes = ['dark', 'default'].map(
-	(theme) =>
-		({
-			source: ['tokens/color-primitives.json', `tokens/*.${theme}.json`],
-			platforms: {
-				css: {
-					prefix: 'lp',
-					transformGroup: transformGroups.css,
-					transforms: [transforms.colorRgb],
-					options: {
-						outputReferences: true,
-						usesDtcg: true,
-					},
-					files: [
-						{
-							destination: `${theme}.css`,
-							format: formats.cssVariables,
-							options: {
-								selector: theme === 'default' ? ':root, [data-theme]' : `[data-theme='${theme}']`,
-							},
-							filter: (token) => token.filePath.includes(theme),
-						},
-					],
-				},
-			},
-		}) satisfies Config,
-);
+import { css, themes } from './themes';
+
+const configs = themes.map(css);
 
 const runSD = async (cfg: Config) => {
 	const sd = new StyleDictionary(cfg);
@@ -39,7 +15,7 @@ const runSD = async (cfg: Config) => {
 	return [file.destination, file.output];
 };
 
-const outputs = Object.fromEntries(await Promise.all(themes.map(runSD)));
+const aliasTokens = Object.fromEntries(await Promise.all(configs.map(runSD)));
 
 const sd = new StyleDictionary({
 	source: ['tokens/*.json'],
@@ -142,8 +118,8 @@ const sd = new StyleDictionary({
 sd.registerFormat({
 	name: 'css/themes',
 	format: async () => {
-		const light = outputs['default.css'];
-		const dark = outputs['dark.css'];
+		const light = aliasTokens['default.css'];
+		const dark = aliasTokens['dark.css'];
 
 		return `${light}\n${dark}`;
 	},

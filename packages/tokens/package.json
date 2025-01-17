@@ -38,10 +38,10 @@
 		"./dist/tokens.json": "./dist/tokens.json"
 	},
 	"scripts": {
-		"build": "tsx build.ts && tsc --noEmit",
+		"build": "tsx src/build.ts && tsc --noEmit",
 		"clean": "rm -rf dist",
 		"lint": "exit 0",
-		"test": "exit 0"
+		"test": "vitest run"
 	},
 	"devDependencies": {
 		"json-to-ts": "^2.1.0",
