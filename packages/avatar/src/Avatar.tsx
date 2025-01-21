@@ -24,6 +24,11 @@ const DIMENSIONS = {
 	large: '40',
 };
 
+/**
+ * @deprecated use `Avatar` from `@launchpad-ui/components` instead
+ *
+ * https://launchpad.launchdarkly.com/?path=/docs/components-content-avatar--docs
+ */
 const Avatar = ({
 	alt = '',
 	url,

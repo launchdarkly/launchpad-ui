@@ -30,7 +30,7 @@ export const Example: Story = {
 export const Composition: Story = {
 	args: {
 		background: '$yellow-cyan',
-		borderColor: '$cyan.500',
+		borderColor: '$brand.cyan.base',
 		color: '$black.900',
 		asChild: true,
 		children: <Button>Button</Button>,

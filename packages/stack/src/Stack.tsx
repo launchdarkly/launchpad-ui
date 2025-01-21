@@ -13,6 +13,11 @@ type StackProps = ComponentProps<'div'> & {
 	children: ReactNode;
 };
 
+/**
+ * @deprecated use `Box` instead
+ *
+ * https://launchpad.launchdarkly.com/?path=/docs/legacy-experimental-box--docs
+ */
 const Stack = ({
 	children,
 	className,
