@@ -5,7 +5,7 @@ import { Table, TableBody, TableCell, TableHead, TableHeadCell, TableRow } from 
 export default {
 	component: Table,
 	subcomponents: { TableBody, TableCell, TableHead, TableHeadCell, TableRow },
-	title: 'Legacy/Deprecated/Table',
+	title: 'Legacy/Table',
 	description: 'An element used to organize and display data to users.',
 	parameters: {
 		status: {

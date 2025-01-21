@@ -4,7 +4,7 @@ import { Banner } from '../src';
 
 export default {
 	component: Banner,
-	title: 'Legacy/Deprecated/Banner',
+	title: 'Legacy/Banner',
 	description: 'Banners contain a system-wide message or status.',
 	parameters: {
 		status: {

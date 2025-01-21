@@ -4,7 +4,7 @@ import { Checkbox } from '../src';
 
 export default {
 	component: Checkbox,
-	title: 'Legacy/Deprecated/Form/Checkbox',
+	title: 'Legacy/Form/Checkbox',
 	description: 'A checkbox allows the user to toggle between checked and unchecked states.',
 	parameters: {
 		status: {

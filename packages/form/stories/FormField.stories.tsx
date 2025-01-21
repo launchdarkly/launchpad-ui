@@ -4,7 +4,7 @@ import { FormField, TextField } from '../src';
 
 export default {
 	component: FormField,
-	title: 'Legacy/Deprecated/Form/FormField',
+	title: 'Legacy/Form/FormField',
 	description:
 		'A FormField is an opinionated way to organize form field components like labels, errors, hints, and the field itself."',
 	parameters: {

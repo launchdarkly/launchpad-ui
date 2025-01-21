@@ -9,7 +9,7 @@ import { TagGroup, TagItem } from '../src';
 
 export default {
 	component: TagGroup,
-	title: 'Legacy/Deprecated/TagGroup',
+	title: 'Legacy/TagGroup',
 	description:
 		'Tags allow users to categorize content. They can represent keywords or people, and are grouped to describe an item or a search request.',
 	parameters: {

@@ -7,7 +7,7 @@ import { Alert } from '../src';
 
 export default {
 	component: Alert,
-	title: 'Legacy/Deprecated/Alert',
+	title: 'Legacy/Alert',
 	description: 'Actions trigger alerts based on user interaction.',
 	parameters: {
 		status: {

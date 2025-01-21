@@ -9,7 +9,7 @@ import { Markdown } from '../src';
 
 export default {
 	component: Markdown,
-	title: 'Legacy/Sunset/Markdown',
+	title: 'Legacy/Markdown',
 	description: 'Render formatted plaintext.',
 	parameters: {
 		status: {

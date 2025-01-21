@@ -5,7 +5,7 @@ import { Column, Columns } from '../src';
 
 export default {
 	component: Columns,
-	title: 'Legacy/Sunset/Columns',
+	title: 'Legacy/Columns',
 	description: 'Elements used to lay out content horizontally with consistent spacing.',
 	parameters: {
 		status: {

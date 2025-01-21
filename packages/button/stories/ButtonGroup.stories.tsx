@@ -49,7 +49,7 @@ const buttonTemplateWithStates: Decorator = (storyComponent, context) => {
 
 export default {
 	component: ButtonGroup,
-	title: 'Legacy/Deprecated/Button/ButtonGroup',
+	title: 'Legacy/Button/ButtonGroup',
 	description: 'ButtonGroups group related actions and trigger them based on user interaction.',
 	decorators: [buttonTemplateWithStates],
 	parameters: {

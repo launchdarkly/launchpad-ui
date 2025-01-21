@@ -37,7 +37,7 @@ const withRestingAndDisabledStates: Decorator = (story, context) => {
 
 export default {
 	component: TextField,
-	title: 'Legacy/Deprecated/Form/TextField',
+	title: 'Legacy/Form/TextField',
 	description: 'A text field allows the user to provide values."',
 	decorators: [
 		createWithClassesDecorator(chromaticTestStyles, (args, storyFn, context) => {

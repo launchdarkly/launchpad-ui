@@ -8,7 +8,7 @@ import { CopyToClipboard } from '../src';
 
 export default {
 	component: CopyToClipboard,
-	title: 'Legacy/Deprecated/CopyToClipboard',
+	title: 'Legacy/CopyToClipboard',
 	description: 'Clipboards copy text to the clipboard.',
 	parameters: {
 		status: {

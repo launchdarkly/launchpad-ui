@@ -4,7 +4,7 @@ import { Collapsible } from '../src';
 
 export default {
 	component: Collapsible,
-	title: 'Legacy/Sunset/Collapsible',
+	title: 'Legacy/Collapsible',
 	description:
 		'A progressive disclosure component that allows the user to to click a trigger to show more content',
 	parameters: {

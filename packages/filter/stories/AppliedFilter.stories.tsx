@@ -4,7 +4,7 @@ import { AppliedFilter } from '../src';
 
 export default {
 	component: AppliedFilter,
-	title: 'Legacy/Deprecated/Filter/AppliedFilter',
+	title: 'Legacy/Filter/AppliedFilter',
 	description: 'We use filters to filter our lists based on search critera.',
 	parameters: {
 		status: {

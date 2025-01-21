@@ -9,7 +9,7 @@ import { Drawer, DrawerHeader } from '../src';
 export default {
 	component: Drawer,
 	subcomponents: { DrawerHeader },
-	title: 'Legacy/Deprecated/Drawer',
+	title: 'Legacy/Drawer',
 	description: 'A partial overlay that appears from the right side of the screen.',
 	parameters: {
 		docs: {

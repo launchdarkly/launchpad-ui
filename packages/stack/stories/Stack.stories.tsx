@@ -5,7 +5,7 @@ import { Stack } from '../src';
 
 export default {
 	component: Stack,
-	title: 'Legacy/Sunset/Stack',
+	title: 'Legacy/Stack',
 	description: 'An element used to add space between components.',
 	parameters: {
 		status: {

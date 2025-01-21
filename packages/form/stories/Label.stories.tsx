@@ -4,7 +4,7 @@ import { Label } from '../src';
 
 export default {
 	component: Label,
-	title: 'Legacy/Deprecated/Form/Label',
+	title: 'Legacy/Form/Label',
 	description: 'A label describes a form field.',
 	parameters: {
 		status: {

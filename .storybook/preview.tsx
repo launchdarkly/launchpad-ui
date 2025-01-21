@@ -87,27 +87,6 @@ export const parameters: Parameters = {
 			dark: allModes.dark,
 		},
 	},
-	status: {
-		statuses: {
-			alpha: {
-				background: 'hsl(275.4, 48%, 50.2%)',
-				color: '#ffffff',
-				description:
-					'This component is very unstable and will likely break when upgrading versions.',
-			},
-			beta: {
-				background: 'hsl(45.4, 58.3%, 50.2%)',
-				color: '#ffffff',
-				description:
-					'This component is still relatively unstable and may break when upgrading versions.',
-			},
-			stable: {
-				background: 'hsl(154.1, 100%, 36.3%)',
-				color: '#ffffff',
-				description: 'This component is stable for production use.',
-			},
-		},
-	},
 	docs: {
 		source: {
 			excludeDecorators: true,

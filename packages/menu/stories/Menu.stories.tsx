@@ -10,7 +10,7 @@ import './Menu.stories.css';
 export default {
 	component: Menu,
 	subcomponents: { MenuDivider, MenuItem, MenuSearch },
-	title: 'Legacy/Deprecated/Menu',
+	title: 'Legacy/Menu',
 	description: 'Menus present a list of items a user can choose from.',
 	parameters: {
 		status: {
