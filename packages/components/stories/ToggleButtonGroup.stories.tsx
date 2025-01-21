@@ -7,11 +7,6 @@ const meta: Meta<typeof ToggleButtonGroup> = {
 	component: ToggleButtonGroup,
 	subcomponents: { ToggleButton } as Record<string, ComponentType<unknown>>,
 	title: 'Components/Buttons/ToggleButtonGroup',
-	parameters: {
-		status: {
-			type: import.meta.env.STORYBOOK_PACKAGE_STATUS__COMPONENTS,
-		},
-	},
 };
 
 export default meta;

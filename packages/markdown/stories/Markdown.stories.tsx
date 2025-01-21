@@ -12,9 +12,7 @@ export default {
 	title: 'Legacy/Markdown',
 	description: 'Render formatted plaintext.',
 	parameters: {
-		status: {
-			type: import.meta.env.STORYBOOK_PACKAGE_STATUS__MARKDOWN,
-		},
+		chromatic: { disableSnapshot: true },
 	},
 	argTypes: {
 		className: {

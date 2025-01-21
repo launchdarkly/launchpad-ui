@@ -15,9 +15,6 @@ export default {
 		docs: {
 			page: null,
 		},
-		status: {
-			type: import.meta.env.STORYBOOK_PACKAGE_STATUS__DRAWER,
-		},
 		chromatic: { disableSnapshot: true },
 	},
 	decorators: [

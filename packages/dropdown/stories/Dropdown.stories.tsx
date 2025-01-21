@@ -10,9 +10,6 @@ export default {
 	title: 'Legacy/Dropdown',
 	description: 'Dropdowns display a list of actions or options to a user.',
 	parameters: {
-		status: {
-			type: import.meta.env.STORYBOOK_PACKAGE_STATUS__DROPDOWN,
-		},
 		chromatic: { disableSnapshot: true },
 	},
 	decorators: [

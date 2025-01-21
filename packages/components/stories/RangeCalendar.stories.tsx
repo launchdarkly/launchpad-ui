@@ -31,9 +31,6 @@ const meta: Meta<typeof RangeCalendar> = {
 	subcomponents: { CalendarCell, CalendarGrid, Heading } as Record<string, ComponentType<unknown>>,
 	title: 'Components/Date and Time/RangeCalendar',
 	parameters: {
-		status: {
-			type: import.meta.env.STORYBOOK_PACKAGE_STATUS__COMPONENTS,
-		},
 		a11y: {
 			options: {
 				rules: {

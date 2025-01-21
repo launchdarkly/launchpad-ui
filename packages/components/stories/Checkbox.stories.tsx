@@ -9,9 +9,6 @@ const meta: Meta<typeof Checkbox> = {
 	component: Checkbox,
 	title: 'Components/Forms/Checkbox',
 	parameters: {
-		status: {
-			type: import.meta.env.STORYBOOK_PACKAGE_STATUS__COMPONENTS,
-		},
 		chromatic: { pauseAnimationAtEnd: true },
 	},
 	decorators: [

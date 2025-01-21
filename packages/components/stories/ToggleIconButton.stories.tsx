@@ -7,11 +7,6 @@ import { ToggleIconButton } from '../src';
 const meta: Meta<typeof ToggleIconButton> = {
 	component: ToggleIconButton,
 	title: 'Components/Buttons/ToggleIconButton',
-	parameters: {
-		status: {
-			type: import.meta.env.STORYBOOK_PACKAGE_STATUS__COMPONENTS,
-		},
-	},
 };
 
 export default meta;

@@ -11,9 +11,6 @@ export default {
 	title: 'Legacy/CopyToClipboard',
 	description: 'Clipboards copy text to the clipboard.',
 	parameters: {
-		status: {
-			type: import.meta.env.STORYBOOK_PACKAGE_STATUS__CLIPBOARD,
-		},
 		chromatic: { disableSnapshot: true },
 	},
 	argTypes: {

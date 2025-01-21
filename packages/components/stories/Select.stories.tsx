@@ -11,11 +11,6 @@ const meta: Meta<typeof Select> = {
 	component: Select,
 	subcomponents: { SelectValue } as Record<string, ComponentType<unknown>>,
 	title: 'Components/Pickers/Select',
-	parameters: {
-		status: {
-			type: import.meta.env.STORYBOOK_PACKAGE_STATUS__COMPONENTS,
-		},
-	},
 	decorators: [
 		(Story) => (
 			<div style={{ width: vars.size[240], height: vars.size[240] }}>

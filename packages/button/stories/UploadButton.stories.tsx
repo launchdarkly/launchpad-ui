@@ -7,9 +7,6 @@ export default {
 	title: 'Legacy/Button/UploadButton',
 	description: 'UploadButtons trigger a native file upload experience.',
 	parameters: {
-		status: {
-			type: import.meta.env.STORYBOOK_PACKAGE_STATUS__BUTTON,
-		},
 		chromatic: { disableSnapshot: true },
 	},
 	argTypes: {

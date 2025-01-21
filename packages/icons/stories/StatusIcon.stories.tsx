@@ -8,9 +8,6 @@ export default {
 	description:
 		'Flair icons can be used as either square or circular icons with gradient backgrounds.',
 	parameters: {
-		status: {
-			type: import.meta.env.STORYBOOK_PACKAGE_STATUS__ICONS,
-		},
 		chromatic: { disableSnapshot: true },
 	},
 };

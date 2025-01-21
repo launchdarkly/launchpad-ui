@@ -13,9 +13,6 @@ export default {
 	description:
 		'Tags allow users to categorize content. They can represent keywords or people, and are grouped to describe an item or a search request.',
 	parameters: {
-		status: {
-			type: import.meta.env.STORYBOOK_PACKAGE_STATUS__TAG,
-		},
 		chromatic: { disableSnapshot: true },
 	},
 };

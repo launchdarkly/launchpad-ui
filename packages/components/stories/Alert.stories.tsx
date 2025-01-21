@@ -5,11 +5,6 @@ import { Alert, Button, ButtonGroup, Heading, Text } from '../src';
 const meta: Meta<typeof Alert> = {
 	component: Alert,
 	title: 'Components/Status/Alert',
-	parameters: {
-		status: {
-			type: import.meta.env.STORYBOOK_PACKAGE_STATUS__COMPONENTS,
-		},
-	},
 };
 
 export default meta;

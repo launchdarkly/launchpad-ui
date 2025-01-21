@@ -20,11 +20,6 @@ const meta: Meta<typeof GridList> = {
 	component: GridList,
 	subcomponents: { GridListItem } as Record<string, ComponentType<unknown>>,
 	title: 'Components/Collections/GridList',
-	parameters: {
-		status: {
-			type: import.meta.env.STORYBOOK_PACKAGE_STATUS__COMPONENTS,
-		},
-	},
 };
 
 export default meta;

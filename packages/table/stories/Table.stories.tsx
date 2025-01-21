@@ -8,9 +8,6 @@ export default {
 	title: 'Legacy/Table',
 	description: 'An element used to organize and display data to users.',
 	parameters: {
-		status: {
-			type: import.meta.env.STORYBOOK_PACKAGE_STATUS__TABLE,
-		},
 		chromatic: { disableSnapshot: true },
 	},
 };

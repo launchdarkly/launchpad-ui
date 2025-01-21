@@ -7,9 +7,6 @@ export default {
 	title: 'Legacy/Form/Checkbox',
 	description: 'A checkbox allows the user to toggle between checked and unchecked states.',
 	parameters: {
-		status: {
-			type: import.meta.env.STORYBOOK_PACKAGE_STATUS__FORM,
-		},
 		chromatic: { disableSnapshot: true },
 	},
 	argTypes: {

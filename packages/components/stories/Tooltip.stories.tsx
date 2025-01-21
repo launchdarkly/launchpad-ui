@@ -11,9 +11,6 @@ const meta: Meta<typeof Tooltip> = {
 	subcomponents: { TooltipTrigger, Pressable } as Record<string, ComponentType<unknown>>,
 	title: 'Components/Overlays/Tooltip',
 	parameters: {
-		status: {
-			type: import.meta.env.STORYBOOK_PACKAGE_STATUS__COMPONENTS,
-		},
 		chromatic: { pauseAnimationAtEnd: true },
 	},
 	decorators: [

@@ -16,9 +16,6 @@ export default {
 	title: 'Legacy/Modal',
 	description: 'Modals presents users information and actions over a page.',
 	parameters: {
-		status: {
-			type: import.meta.env.STORYBOOK_PACKAGE_STATUS__MODAL,
-		},
 		controls: { sort: 'requiredFirst' },
 		chromatic: { disableSnapshot: true },
 	},

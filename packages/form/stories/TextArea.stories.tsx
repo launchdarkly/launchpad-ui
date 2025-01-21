@@ -57,9 +57,6 @@ export default {
 		withRestingAndDisabledStates,
 	],
 	parameters: {
-		status: {
-			type: import.meta.env.STORYBOOK_PACKAGE_STATUS__FORM,
-		},
 		chromatic: { disableSnapshot: true },
 	},
 	argTypes: {

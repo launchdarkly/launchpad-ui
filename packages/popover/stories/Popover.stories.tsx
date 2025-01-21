@@ -10,9 +10,6 @@ export default {
 	title: 'Legacy/Popover',
 	description: 'Popovers display content within a portal triggered by user interactions.',
 	parameters: {
-		status: {
-			type: import.meta.env.STORYBOOK_PACKAGE_STATUS__POPOVER,
-		},
 		chromatic: { disableSnapshot: true },
 	},
 	argTypes: {

@@ -7,9 +7,6 @@ export default {
 	title: 'Legacy/Form/Radio',
 	description: 'A radio button allows the user to select one of a set of options."',
 	parameters: {
-		status: {
-			type: import.meta.env.STORYBOOK_PACKAGE_STATUS__FORM,
-		},
 		chromatic: { disableSnapshot: true },
 	},
 };

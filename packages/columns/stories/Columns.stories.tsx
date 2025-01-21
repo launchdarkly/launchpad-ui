@@ -8,9 +8,7 @@ export default {
 	title: 'Legacy/Columns',
 	description: 'Elements used to lay out content horizontally with consistent spacing.',
 	parameters: {
-		status: {
-			type: import.meta.env.STORYBOOK_PACKAGE_STATUS__COLUMNS,
-		},
+		chromatic: { disableSnapshot: true },
 	},
 };
 

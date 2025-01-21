@@ -9,9 +9,6 @@ export default {
 	title: 'Legacy/Chip',
 	description: 'Chips can be used as visual indicators for tags.',
 	parameters: {
-		status: {
-			type: import.meta.env.STORYBOOK_PACKAGE_STATUS__CHIP,
-		},
 		chromatic: { disableSnapshot: true },
 	},
 	argTypes: {

@@ -7,11 +7,6 @@ import { Button, Checkbox, CheckboxGroup, FieldError, Form, Label, Text } from '
 const meta: Meta<typeof CheckboxGroup> = {
 	component: CheckboxGroup,
 	title: 'Components/Forms/CheckboxGroup',
-	parameters: {
-		status: {
-			type: import.meta.env.STORYBOOK_PACKAGE_STATUS__COMPONENTS,
-		},
-	},
 };
 
 export default meta;

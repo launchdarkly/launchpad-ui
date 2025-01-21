@@ -5,11 +5,6 @@ import { Button, ButtonGroup, IconButton, Menu, MenuItem, MenuTrigger, Popover }
 const meta: Meta<typeof ButtonGroup> = {
 	component: ButtonGroup,
 	title: 'Components/Buttons/ButtonGroup',
-	parameters: {
-		status: {
-			type: import.meta.env.STORYBOOK_PACKAGE_STATUS__COMPONENTS,
-		},
-	},
 };
 
 export default meta;

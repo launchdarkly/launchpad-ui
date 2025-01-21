@@ -13,11 +13,6 @@ const meta: Meta<typeof TextField> = {
 		ComponentType<unknown>
 	>,
 	title: 'Components/Forms/TextField',
-	parameters: {
-		status: {
-			type: import.meta.env.STORYBOOK_PACKAGE_STATUS__COMPONENTS,
-		},
-	},
 	decorators: [
 		(Story) => (
 			<div style={{ width: vars.size[240] }}>

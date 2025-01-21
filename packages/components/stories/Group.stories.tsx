@@ -10,9 +10,6 @@ const meta: Meta<typeof Group> = {
 	component: Group,
 	title: 'Components/Content/Group',
 	parameters: {
-		status: {
-			type: import.meta.env.STORYBOOK_PACKAGE_STATUS__COMPONENTS,
-		},
 		chromatic: { pauseAnimationAtEnd: true },
 	},
 	decorators: [

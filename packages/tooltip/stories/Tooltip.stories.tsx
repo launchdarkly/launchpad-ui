@@ -10,9 +10,6 @@ export default {
 	title: 'Legacy/Tooltip',
 	description: 'Tooltips provide additional information on hover or focus.',
 	parameters: {
-		status: {
-			type: import.meta.env.STORYBOOK_PACKAGE_STATUS__TOOLTIP,
-		},
 		chromatic: { disableSnapshot: true },
 	},
 	argTypes: {

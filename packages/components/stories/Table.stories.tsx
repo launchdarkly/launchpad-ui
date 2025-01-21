@@ -24,11 +24,6 @@ const meta: Meta<typeof Table> = {
 		ComponentType<unknown>
 	>,
 	title: 'Components/Collections/Table',
-	parameters: {
-		status: {
-			type: import.meta.env.STORYBOOK_PACKAGE_STATUS__COMPONENTS,
-		},
-	},
 };
 
 export default meta;

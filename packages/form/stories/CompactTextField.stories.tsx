@@ -7,9 +7,6 @@ export default {
 	title: 'Legacy/Form/CompactTextField',
 	description: 'A compact text field allows the user to provide values.',
 	parameters: {
-		status: {
-			type: import.meta.env.STORYBOOK_PACKAGE_STATUS__FORM,
-		},
 		chromatic: { disableSnapshot: true },
 	},
 	argTypes: {

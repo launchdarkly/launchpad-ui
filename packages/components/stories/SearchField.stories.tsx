@@ -9,11 +9,6 @@ import { Group, IconButton, Input, Label, SearchField, Text } from '../src';
 const meta: Meta<typeof SearchField> = {
 	component: SearchField,
 	title: 'Components/Forms/SearchField',
-	parameters: {
-		status: {
-			type: import.meta.env.STORYBOOK_PACKAGE_STATUS__COMPONENTS,
-		},
-	},
 	decorators: [
 		(Story) => (
 			<div style={{ width: vars.size[240] }}>

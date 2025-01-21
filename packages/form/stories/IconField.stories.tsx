@@ -8,9 +8,6 @@ export default {
 	title: 'Legacy/Form/IconField',
 	description: 'An IconField renders an icon placed next to a passed field."',
 	parameters: {
-		status: {
-			type: import.meta.env.STORYBOOK_PACKAGE_STATUS__FORM,
-		},
 		chromatic: { disableSnapshot: true },
 	},
 };

@@ -7,9 +7,6 @@ export default {
 	title: 'Legacy/Filter',
 	description: 'We use filters to filter our lists based on search critera.',
 	parameters: {
-		status: {
-			type: import.meta.env.STORYBOOK_PACKAGE_STATUS__FILTER,
-		},
 		chromatic: { disableSnapshot: true },
 	},
 	argTypes: {

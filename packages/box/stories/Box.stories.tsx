@@ -8,11 +8,6 @@ export default {
 	component: Box,
 	title: 'Legacy/Experimental/Box',
 	description: '',
-	parameters: {
-		status: {
-			type: import.meta.env.STORYBOOK_PACKAGE_STATUS__BOX,
-		},
-	},
 };
 
 type Story = StoryObj<typeof Box>;

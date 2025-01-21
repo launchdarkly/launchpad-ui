@@ -10,9 +10,7 @@ export default {
 	title: 'Legacy/ProgressBubbles',
 	description: 'Shows current progress through a multistep flow.',
 	parameters: {
-		status: {
-			type: import.meta.env.STORYBOOK_PACKAGE_STATUS__PROGRESS_BUBBLES,
-		},
+		chromatic: { disableSnapshot: true },
 	},
 };
 

@@ -49,9 +49,6 @@ export default {
 	description: 'Buttons trigger actions based on user interaction.',
 	decorators: [buttonTemplateWithStates],
 	parameters: {
-		status: {
-			type: import.meta.env.STORYBOOK_PACKAGE_STATUS__BUTTON,
-		},
 		chromatic: { disableSnapshot: true },
 	},
 	argTypes: {

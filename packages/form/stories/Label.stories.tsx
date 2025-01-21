@@ -7,9 +7,6 @@ export default {
 	title: 'Legacy/Form/Label',
 	description: 'A label describes a form field.',
 	parameters: {
-		status: {
-			type: import.meta.env.STORYBOOK_PACKAGE_STATUS__FORM,
-		},
 		chromatic: { disableSnapshot: true },
 	},
 	argTypes: {

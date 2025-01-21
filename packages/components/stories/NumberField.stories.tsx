@@ -8,11 +8,6 @@ import { Group, IconButton, Input, Label, NumberField } from '../src';
 const meta: Meta<typeof NumberField> = {
 	component: NumberField,
 	title: 'Components/Forms/NumberField',
-	parameters: {
-		status: {
-			type: import.meta.env.STORYBOOK_PACKAGE_STATUS__COMPONENTS,
-		},
-	},
 	decorators: [
 		(Story) => (
 			<div style={{ width: vars.size[240] }}>

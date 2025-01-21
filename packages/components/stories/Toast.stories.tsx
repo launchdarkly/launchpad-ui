@@ -18,9 +18,6 @@ const meta: Meta<typeof ToastContainer> = {
 	subcomponents: { SnackbarContainer } as Record<string, ComponentType<unknown>>,
 	title: 'Components/Status/Toast',
 	parameters: {
-		status: {
-			type: import.meta.env.STORYBOOK_PACKAGE_STATUS__COMPONENTS,
-		},
 		chromatic: { pauseAnimationAtEnd: true },
 	},
 	decorators: [

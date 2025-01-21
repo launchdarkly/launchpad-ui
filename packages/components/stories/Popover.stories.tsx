@@ -11,9 +11,6 @@ const meta: Meta<typeof Popover> = {
 	subcomponents: { OverlayArrow, DialogTrigger } as Record<string, ComponentType<unknown>>,
 	title: 'Components/Overlays/Popover',
 	parameters: {
-		status: {
-			type: import.meta.env.STORYBOOK_PACKAGE_STATUS__COMPONENTS,
-		},
 		chromatic: { pauseAnimationAtEnd: true },
 	},
 	decorators: [

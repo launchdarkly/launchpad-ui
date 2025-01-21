@@ -14,9 +14,6 @@ export default {
 		),
 	],
 	parameters: {
-		status: {
-			type: import.meta.env.STORYBOOK_PACKAGE_STATUS__RADIOCARD,
-		},
 		chromatic: { disableSnapshot: true },
 	},
 } as Meta<typeof RadioCard>;

@@ -7,9 +7,6 @@ export default {
 	title: 'Legacy/Form/FormGroup',
 	description: 'A group of form fields.',
 	parameters: {
-		status: {
-			type: import.meta.env.STORYBOOK_PACKAGE_STATUS__FORM,
-		},
 		chromatic: { disableSnapshot: true },
 	},
 	argTypes: {

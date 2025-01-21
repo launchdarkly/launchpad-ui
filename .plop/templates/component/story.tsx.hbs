@@ -6,11 +6,6 @@ export default {
   component: {{pascalCase name}},
   title: 'Components/{{pascalCase name}}',
   description: '{{description}}',
-  parameters: {
-    status: {
-      type: import.meta.env.STORYBOOK_PACKAGE_STATUS__{{constantCase name}},
-    },
-  },
 };
 
 type Story = StoryObj<typeof {{pascalCase name}}>;

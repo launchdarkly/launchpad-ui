@@ -8,9 +8,6 @@ export default {
 	description:
 		'A FormField is an opinionated way to organize form field components like labels, errors, hints, and the field itself."',
 	parameters: {
-		status: {
-			type: import.meta.env.STORYBOOK_PACKAGE_STATUS__FORM,
-		},
 		chromatic: { disableSnapshot: true },
 	},
 	argTypes: {

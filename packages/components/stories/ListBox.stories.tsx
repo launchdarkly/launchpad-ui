@@ -12,11 +12,6 @@ const meta: Meta<typeof ListBox> = {
 	component: ListBox,
 	subcomponents: { ListBoxItem, ListBoxSection, Header } as Record<string, ComponentType<unknown>>,
 	title: 'Components/Collections/ListBox',
-	parameters: {
-		status: {
-			type: import.meta.env.STORYBOOK_PACKAGE_STATUS__COMPONENTS,
-		},
-	},
 };
 
 export default meta;

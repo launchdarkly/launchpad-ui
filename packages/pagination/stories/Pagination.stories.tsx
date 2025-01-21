@@ -7,9 +7,7 @@ export default {
 	title: 'Legacy/Pagination',
 	description: 'Navigate through a paged list.',
 	parameters: {
-		status: {
-			type: import.meta.env.STORYBOOK_PACKAGE_STATUS__PAGINATION,
-		},
+		chromatic: { disableSnapshot: true },
 	},
 };
 

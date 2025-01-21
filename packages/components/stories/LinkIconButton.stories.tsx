@@ -5,11 +5,6 @@ import { LinkIconButton } from '../src';
 const meta: Meta<typeof LinkIconButton> = {
 	component: LinkIconButton,
 	title: 'Components/Navigation/LinkIconButton',
-	parameters: {
-		status: {
-			type: import.meta.env.STORYBOOK_PACKAGE_STATUS__COMPONENTS,
-		},
-	},
 };
 
 export default meta;
