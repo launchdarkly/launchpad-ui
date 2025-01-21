@@ -23,9 +23,6 @@ const meta: Meta<typeof DateRangePicker> = {
 	component: DateRangePicker,
 	title: 'Components/Date and Time/DateRangePicker',
 	parameters: {
-		status: {
-			type: import.meta.env.STORYBOOK_PACKAGE_STATUS__COMPONENTS,
-		},
 		chromatic: { pauseAnimationAtEnd: true },
 	},
 	decorators: [

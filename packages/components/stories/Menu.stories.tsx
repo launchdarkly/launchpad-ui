@@ -33,9 +33,6 @@ const meta: Meta<typeof Menu> = {
 	} as Record<string, ComponentType<unknown>>,
 	title: 'Components/Collections/Menu',
 	parameters: {
-		status: {
-			type: import.meta.env.STORYBOOK_PACKAGE_STATUS__COMPONENTS,
-		},
 		chromatic: { pauseAnimationAtEnd: true },
 	},
 	decorators: [

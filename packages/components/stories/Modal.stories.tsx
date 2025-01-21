@@ -24,9 +24,6 @@ const meta: Meta<typeof Modal> = {
 	>,
 	title: 'Components/Overlays/Modal',
 	parameters: {
-		status: {
-			type: import.meta.env.STORYBOOK_PACKAGE_STATUS__COMPONENTS,
-		},
 		chromatic: { pauseAnimationAtEnd: true },
 	},
 	decorators: [

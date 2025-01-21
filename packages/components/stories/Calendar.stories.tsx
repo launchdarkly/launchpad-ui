@@ -32,9 +32,6 @@ const meta: Meta<typeof Calendar> = {
 	>,
 	title: 'Components/Date and Time/Calendar',
 	parameters: {
-		status: {
-			type: import.meta.env.STORYBOOK_PACKAGE_STATUS__COMPONENTS,
-		},
 		a11y: {
 			options: {
 				rules: {

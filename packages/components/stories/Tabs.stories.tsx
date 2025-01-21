@@ -10,11 +10,6 @@ const meta: Meta<typeof Tabs> = {
 	component: Tabs,
 	subcomponents: { Tab, TabList, TabPanel } as Record<string, ComponentType<unknown>>,
 	title: 'Components/Navigation/Tabs',
-	parameters: {
-		status: {
-			type: import.meta.env.STORYBOOK_PACKAGE_STATUS__COMPONENTS,
-		},
-	},
 };
 
 export default meta;

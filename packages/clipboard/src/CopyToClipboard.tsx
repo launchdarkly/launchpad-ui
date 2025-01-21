@@ -38,7 +38,7 @@ const CopyConfirmation = () => (
 /**
  * @deprecated follow the recipe from `@launchpad-ui/components` instead
  *
- * https://launchpad.launchdarkly.com/?path=/docs/recipes-composition--docs#copy%20to%20clipboard
+ * https://launchpad.launchdarkly.com/?path=/docs/recipes-copytoclipboard--docs
  */
 const CopyToClipboard = forwardRef<CopyToClipboardHandleRef, CopyToClipboardProps>(
 	(

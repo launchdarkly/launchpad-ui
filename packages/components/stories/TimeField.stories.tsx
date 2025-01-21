@@ -11,9 +11,6 @@ const meta: Meta<typeof TimeField> = {
 	subcomponents: { DateInput, DateSegment } as Record<string, ComponentType<unknown>>,
 	title: 'Components/Date and Time/TimeField',
 	parameters: {
-		status: {
-			type: import.meta.env.STORYBOOK_PACKAGE_STATUS__COMPONENTS,
-		},
 		a11y: {
 			options: {
 				rules: {

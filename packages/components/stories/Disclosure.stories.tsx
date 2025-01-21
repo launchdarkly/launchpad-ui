@@ -10,11 +10,6 @@ const meta: Meta<typeof Disclosure> = {
 	component: Disclosure,
 	subcomponents: { DisclosurePanel } as Record<string, ComponentType<unknown>>,
 	title: 'Components/Navigation/Disclosure',
-	parameters: {
-		status: {
-			type: import.meta.env.STORYBOOK_PACKAGE_STATUS__COMPONENTS,
-		},
-	},
 };
 
 export default meta;

@@ -17,11 +17,6 @@ import {
 const meta: Meta<typeof FieldGroup> = {
 	component: FieldGroup,
 	title: 'Components/Forms/FieldGroup',
-	parameters: {
-		status: {
-			type: import.meta.env.STORYBOOK_PACKAGE_STATUS__COMPONENTS,
-		},
-	},
 };
 
 export default meta;

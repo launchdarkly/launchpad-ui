@@ -6,12 +6,10 @@ import { Avatar } from '../src';
 
 export default {
 	component: Avatar,
-	title: 'Legacy/Sunset/Avatar',
+	title: 'Legacy/Avatar',
 	description: 'An element that represents a user visually.',
 	parameters: {
-		status: {
-			type: import.meta.env.STORYBOOK_PACKAGE_STATUS__AVATAR,
-		},
+		chromatic: { disableSnapshot: true },
 	},
 	argTypes: {
 		size: {

@@ -21,6 +21,11 @@ type NavigationState = {
 	collapsed: boolean;
 };
 
+/**
+ * @deprecated use `Tabs` from `@launchpad-ui/components` instead
+ *
+ * https://launchpad.launchdarkly.com/?path=/docs/components-navigation-tabs--docs
+ */
 const Navigation = <T extends object>(props: NavigationProps<T>) => {
 	const { children, className, 'data-test-id': testId = 'navigation' } = props;
 	const wrapperRef = useRef<HTMLDivElement>(null);

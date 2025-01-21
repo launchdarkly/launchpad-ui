@@ -8,11 +8,6 @@ import { Button, DropZone, FileTrigger, Text } from '../src';
 const meta: Meta<typeof DropZone> = {
 	component: DropZone,
 	title: 'Components/Drag and drop/DropZone',
-	parameters: {
-		status: {
-			type: import.meta.env.STORYBOOK_PACKAGE_STATUS__COMPONENTS,
-		},
-	},
 };
 
 export default meta;

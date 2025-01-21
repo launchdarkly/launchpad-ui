@@ -9,12 +9,10 @@ import { Markdown } from '../src';
 
 export default {
 	component: Markdown,
-	title: 'Legacy/Sunset/Markdown',
+	title: 'Legacy/Markdown',
 	description: 'Render formatted plaintext.',
 	parameters: {
-		status: {
-			type: import.meta.env.STORYBOOK_PACKAGE_STATUS__MARKDOWN,
-		},
+		chromatic: { disableSnapshot: true },
 	},
 	argTypes: {
 		className: {

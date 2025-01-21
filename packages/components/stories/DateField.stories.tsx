@@ -10,11 +10,6 @@ const meta: Meta<typeof DateField> = {
 	component: DateField,
 	subcomponents: { DateInput, DateSegment } as Record<string, ComponentType<unknown>>,
 	title: 'Components/Date and Time/DateField',
-	parameters: {
-		status: {
-			type: import.meta.env.STORYBOOK_PACKAGE_STATUS__COMPONENTS,
-		},
-	},
 	decorators: [
 		(Story) => (
 			<div style={{ width: vars.size[240] }}>

@@ -31,6 +31,9 @@ type ProgressBubblesProps = {
 	'data-test-id'?: string;
 };
 
+/**
+ * @deprecated
+ */
 const ProgressBubbles = ({
 	className,
 	vertical,

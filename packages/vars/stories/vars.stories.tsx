@@ -4,11 +4,6 @@ import { container, local } from './Story.css';
 
 export default {
 	title: 'Tokens/Vars',
-	parameters: {
-		status: {
-			type: import.meta.env.STORYBOOK_PACKAGE_STATUS__VARS,
-		},
-	},
 };
 
 type Story = StoryObj;

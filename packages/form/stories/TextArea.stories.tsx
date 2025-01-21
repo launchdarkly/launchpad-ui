@@ -38,7 +38,7 @@ const withRestingAndDisabledStates: Decorator = (story, context) => {
 
 export default {
 	component: TextArea,
-	title: 'Legacy/Deprecated/Form/TextArea',
+	title: 'Legacy/Form/TextArea',
 	description: 'A styled form textarea component',
 	decorators: [
 		createWithClassesDecorator(testingChromaticClassNames, (args, originalStory, context) => {
@@ -57,9 +57,6 @@ export default {
 		withRestingAndDisabledStates,
 	],
 	parameters: {
-		status: {
-			type: import.meta.env.STORYBOOK_PACKAGE_STATUS__FORM,
-		},
 		chromatic: { disableSnapshot: true },
 	},
 	argTypes: {

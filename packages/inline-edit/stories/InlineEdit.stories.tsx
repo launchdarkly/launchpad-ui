@@ -10,12 +10,9 @@ import { InlineEdit } from '../src';
 
 export default {
 	component: InlineEdit,
-	title: 'Legacy/Deprecated/InlineEdit',
+	title: 'Legacy/InlineEdit',
 	description: 'An element used to display and allow inline editing of a form element value.',
 	parameters: {
-		status: {
-			type: import.meta.env.STORYBOOK_PACKAGE_STATUS__INLINE_EDIT,
-		},
 		chromatic: { disableSnapshot: true },
 	},
 };

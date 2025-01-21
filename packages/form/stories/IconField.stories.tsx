@@ -5,12 +5,9 @@ import { IconField, TextField } from '../src';
 
 export default {
 	component: IconField,
-	title: 'Legacy/Deprecated/Form/IconField',
+	title: 'Legacy/Form/IconField',
 	description: 'An IconField renders an icon placed next to a passed field."',
 	parameters: {
-		status: {
-			type: import.meta.env.STORYBOOK_PACKAGE_STATUS__FORM,
-		},
 		chromatic: { disableSnapshot: true },
 	},
 };

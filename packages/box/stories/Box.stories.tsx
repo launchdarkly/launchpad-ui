@@ -8,11 +8,6 @@ export default {
 	component: Box,
 	title: 'Legacy/Experimental/Box',
 	description: '',
-	parameters: {
-		status: {
-			type: import.meta.env.STORYBOOK_PACKAGE_STATUS__BOX,
-		},
-	},
 };
 
 type Story = StoryObj<typeof Box>;
@@ -30,7 +25,7 @@ export const Example: Story = {
 export const Composition: Story = {
 	args: {
 		background: '$yellow-cyan',
-		borderColor: '$cyan.500',
+		borderColor: '$brand.cyan.base',
 		color: '$black.900',
 		asChild: true,
 		children: <Button>Button</Button>,

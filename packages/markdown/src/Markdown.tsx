@@ -30,6 +30,9 @@ type MarkdownProps = {
 	children?: (renderedMarkdown: string) => ReactNode;
 };
 
+/**
+ * @deprecated
+ */
 const Markdown = ({
 	source,
 	className,

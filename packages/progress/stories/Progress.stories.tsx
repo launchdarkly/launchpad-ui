@@ -4,12 +4,9 @@ import { Progress } from '../src';
 
 export default {
 	component: Progress,
-	title: 'Legacy/Deprecated/Progress',
+	title: 'Legacy/Progress',
 	description: 'Progress indicates a page or content is loading.',
 	parameters: {
-		status: {
-			type: import.meta.env.STORYBOOK_PACKAGE_STATUS__PROGRESS,
-		},
 		chromatic: { disableSnapshot: true },
 	},
 	argTypes: {

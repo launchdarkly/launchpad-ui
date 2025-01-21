@@ -21,6 +21,11 @@ type PaginationProps = ComponentProps<'nav'> & {
 	'data-test-id'?: string;
 };
 
+/**
+ * @deprecated follow the recipe from `@launchpad-ui/components` instead
+ *
+ * https://launchpad.launchdarkly.com/?path=/docs/recipes-pagination--docs
+ */
 const Pagination = ({
 	className,
 	resourceName,

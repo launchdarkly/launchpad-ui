@@ -8,11 +8,6 @@ import { icons } from '../src/types';
 const meta: Meta<typeof Icon> = {
 	component: Icon,
 	title: 'Components/Icons/Icon',
-	parameters: {
-		status: {
-			type: import.meta.env.STORYBOOK_PACKAGE_STATUS__ICONS,
-		},
-	},
 };
 
 export default meta;

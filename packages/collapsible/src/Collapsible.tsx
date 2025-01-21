@@ -18,6 +18,11 @@ type CollapsibleProps = Omit<ComponentProps<'div'>, 'className'> & {
 	'data-test-id'?: string;
 };
 
+/**
+ * @deprecated use `Disclosure` from `@launchpad-ui/components` instead
+ *
+ * https://launchpad.launchdarkly.com/?path=/docs/components-navigation-disclosure--docs
+ */
 const Collapsible = (props: CollapsibleProps) => {
 	const {
 		children,

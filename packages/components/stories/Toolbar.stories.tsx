@@ -7,11 +7,6 @@ import { Button, Group, IconButton, Separator, Toolbar } from '../src';
 const meta: Meta<typeof Toolbar> = {
 	component: Toolbar,
 	title: 'Components/Content/Toolbar',
-	parameters: {
-		status: {
-			type: import.meta.env.STORYBOOK_PACKAGE_STATUS__COMPONENTS,
-		},
-	},
 };
 
 export default meta;

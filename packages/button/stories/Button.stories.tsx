@@ -45,13 +45,10 @@ const buttonTemplateWithStates: Decorator = (storyComponent, context) => {
 
 export default {
 	component: Button,
-	title: 'Legacy/Deprecated/Button',
+	title: 'Legacy/Button',
 	description: 'Buttons trigger actions based on user interaction.',
 	decorators: [buttonTemplateWithStates],
 	parameters: {
-		status: {
-			type: import.meta.env.STORYBOOK_PACKAGE_STATUS__BUTTON,
-		},
 		chromatic: { disableSnapshot: true },
 	},
 	argTypes: {

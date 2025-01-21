@@ -23,9 +23,6 @@ const meta: Meta<typeof DatePicker> = {
 	component: DatePicker,
 	title: 'Components/Date and Time/DatePicker',
 	parameters: {
-		status: {
-			type: import.meta.env.STORYBOOK_PACKAGE_STATUS__COMPONENTS,
-		},
 		chromatic: { pauseAnimationAtEnd: true },
 	},
 	decorators: [

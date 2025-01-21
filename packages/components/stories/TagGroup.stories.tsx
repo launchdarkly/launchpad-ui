@@ -10,11 +10,6 @@ const meta: Meta<typeof TagGroup> = {
 	component: TagGroup,
 	subcomponents: { TagList, Tag } as Record<string, ComponentType<unknown>>,
 	title: 'Components/Collections/TagGroup',
-	parameters: {
-		status: {
-			type: import.meta.env.STORYBOOK_PACKAGE_STATUS__COMPONENTS,
-		},
-	},
 };
 
 export default meta;

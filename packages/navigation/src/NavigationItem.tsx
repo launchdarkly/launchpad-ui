@@ -15,6 +15,11 @@ type NavigationItemProps = Omit<NavItemProps, 'onClick'> &
 		onClick?(e: MouseEvent, state: { collapsed: boolean }): void;
 	};
 
+/**
+ * @deprecated use `Tabs` from `@launchpad-ui/components` instead
+ *
+ * https://launchpad.launchdarkly.com/?path=/docs/components-navigation-tabs--docs
+ */
 const NavigationItem = (_props: NavigationItemProps) => {
 	return null;
 };

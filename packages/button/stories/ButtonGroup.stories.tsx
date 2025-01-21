@@ -49,13 +49,10 @@ const buttonTemplateWithStates: Decorator = (storyComponent, context) => {
 
 export default {
 	component: ButtonGroup,
-	title: 'Legacy/Deprecated/Button/ButtonGroup',
+	title: 'Legacy/Button/ButtonGroup',
 	description: 'ButtonGroups group related actions and trigger them based on user interaction.',
 	decorators: [buttonTemplateWithStates],
 	parameters: {
-		status: {
-			type: import.meta.env.STORYBOOK_PACKAGE_STATUS__BUTTON,
-		},
 		chromatic: { disableSnapshot: true },
 	},
 	argTypes: {

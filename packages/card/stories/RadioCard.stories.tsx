@@ -4,7 +4,7 @@ import { RadioCard } from '../src/RadioCard';
 
 export default {
 	component: RadioCard,
-	title: 'Legacy/Deprecated/Card/RadioCard',
+	title: 'Legacy/Card/RadioCard',
 	description: 'A radio button with a label and optional image and subtext.',
 	decorators: [
 		(Story) => (
@@ -14,9 +14,6 @@ export default {
 		),
 	],
 	parameters: {
-		status: {
-			type: import.meta.env.STORYBOOK_PACKAGE_STATUS__RADIOCARD,
-		},
 		chromatic: { disableSnapshot: true },
 	},
 } as Meta<typeof RadioCard>;
