@@ -6,7 +6,7 @@ settings:
 
 overrides:
   '@joshwooding/vite-plugin-react-docgen-typescript': 0.3.0
-  vite: ^6.0.2
+  vite: ^6.0.9
 
 importers:
 
@@ -38,7 +38,7 @@ importers:
         version: 1.49.0
       '@storybook/addon-a11y':
         specifier: ^8.5.0
-        version: 8.5.0(storybook@8.5.0(prettier@3.4.1))(vitest@3.0.0)
+        version: 8.5.0(storybook@8.5.0(prettier@3.4.1))(vitest@3.0.0(@types/node@22.10.1)(@vitest/ui@3.0.0)(jiti@1.21.6)(jsdom@26.0.0)(less@4.2.0)(lightningcss@1.29.1)(sass@1.80.5)(stylus@0.62.0)(tsx@4.19.2)(yaml@2.6.1))
       '@storybook/addon-designs':
         specifier: ^8.0.3
         version: 8.0.4(@storybook/blocks@8.5.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(storybook@8.5.0(prettier@3.4.1)))(@storybook/components@8.5.0(storybook@8.5.0(prettier@3.4.1)))(@storybook/theming@8.5.0(storybook@8.5.0(prettier@3.4.1)))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
@@ -107,7 +107,7 @@ importers:
         version: 3.7.2(@swc/helpers@0.5.13)(vite@6.0.9(@types/node@22.10.1)(jiti@1.21.6)(less@4.2.0)(lightningcss@1.29.1)(sass@1.80.5)(stylus@0.62.0)(tsx@4.19.2)(yaml@2.6.1))
       '@vitest/coverage-v8':
         specifier: ^3.0.0
-        version: 3.0.0(vitest@3.0.0)
+        version: 3.0.0(vitest@3.0.0(@types/node@22.10.1)(@vitest/ui@3.0.0)(jiti@1.21.6)(jsdom@26.0.0)(less@4.2.0)(lightningcss@1.29.1)(sass@1.80.5)(stylus@0.62.0)(tsx@4.19.2)(yaml@2.6.1))
       '@vitest/ui':
         specifier: ^3.0.0
         version: 3.0.0(vitest@3.0.0)
@@ -163,7 +163,7 @@ importers:
         specifier: ^5.1.0
         version: 5.1.0(typescript@5.7.2)
       vite:
-        specifier: ^6.0.2
+        specifier: ^6.0.9
         version: 6.0.9(@types/node@22.10.1)(jiti@1.21.6)(less@4.2.0)(lightningcss@1.29.1)(sass@1.80.5)(stylus@0.62.0)(tsx@4.19.2)(yaml@2.6.1)
       vitest:
         specifier: ^3.0.0
@@ -2102,7 +2102,7 @@ packages:
     resolution: {integrity: sha512-2D6y7fNvFmsLmRt6UCOFJPvFoPMJGT0Uh1Wg0RaigUp7kdQPs6yYn8Dmx6GZkOH/NW0yMTwRz/p0SRMMRo50vA==}
     peerDependencies:
       typescript: '>= 4.3.x'
-      vite: ^6.0.2
+      vite: ^6.0.9
     peerDependenciesMeta:
       typescript:
         optional: true
@@ -3139,7 +3139,7 @@ packages:
     resolution: {integrity: sha512-GVJFjAxX/mL3bmXX6N619ShuYprkh6Ix08JU6QGNf/tTkG92BxjgCqQdfovBrviDhFyO2bhkdlEp6ujMo5CbZA==}
     peerDependencies:
       storybook: ^8.5.0
-      vite: ^6.0.2
+      vite: ^6.0.9
 
   '@storybook/components@8.5.0':
     resolution: {integrity: sha512-DhaHtwfEcfWYj3ih/5RBSDHe3Idxyf+oHw2/DmaLKJX6MluhdK3ZqigjRcTmA9Gj/SbR4CkHEEtDzAvBlW0BYw==}
@@ -3202,7 +3202,7 @@ packages:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0-beta
       react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0-beta
       storybook: ^8.5.0
-      vite: ^6.0.2
+      vite: ^6.0.9
     peerDependenciesMeta:
       '@storybook/test':
         optional: true
@@ -3461,12 +3461,12 @@ packages:
   '@vanilla-extract/vite-plugin@4.0.17':
     resolution: {integrity: sha512-qyAEmBcwih7E3lMrcFZX1Ph81TQos1FFyxOu5JmNmu/F/g7HkcCXFV897pNKFmXgED/TzuyrFVcIRimg5pPc9A==}
     peerDependencies:
-      vite: ^6.0.2
+      vite: ^6.0.9
 
   '@vitejs/plugin-react-swc@3.7.2':
     resolution: {integrity: sha512-y0byko2b2tSVVf5Gpng1eEhX1OvPC7x8yns1Fx8jDzlJp4LS6CMkCPfLw47cjyoMrshQDoQw4qcgjsU9VvlCew==}
     peerDependencies:
-      vite: ^6.0.2
+      vite: ^6.0.9
 
   '@vitest/coverage-v8@3.0.0':
     resolution: {integrity: sha512-wfXdOyYhm6L5GndWv6qP95gfyfkNKDFpTZPplOxHLo9DiQ1B7L3bMNngWAvDa+PMK4WrX4Pzef2FZ8E8qKVBuw==}
@@ -3487,7 +3487,7 @@ packages:
     resolution: {integrity: sha512-8ytqYjIRzAM90O7n8A0TCbziTnouIG+UGuMHmoRJpKh4vvah4uENw5UAMMNjdKCtzgMiTrZ9XU+xzwCwcxuxGQ==}
     peerDependencies:
       msw: ^2.4.9
-      vite: ^6.0.2
+      vite: ^6.0.9
     peerDependenciesMeta:
       msw:
         optional: true
@@ -5298,11 +5298,6 @@ packages:
   mute-stream@1.0.0:
     resolution: {integrity: sha512-avsJQhyd+680gKXyG/sQc0nXaC6rBkPOfyHYcFb9+hdkqQkR9bdnkJ0AMZhke0oesPqIO+mFFJ+IdBc7mst4IA==}
     engines: {node: ^14.17.0 || ^16.13.0 || >=18.0.0}
-
-  nanoid@3.3.7:
-    resolution: {integrity: sha512-eSRppjcPIatRIMC1U6UngP8XFcz8MQWGQdt1MTBQ7NaAmvXDfvNxbvWV3x2y6CdEUciCSsDHDQZbhYaB8QEo2g==}
-    engines: {node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1}
-    hasBin: true
 
   nanoid@3.3.8:
     resolution: {integrity: sha512-WNLf5Sd8oZxOm+TzppcYk8gVOgP+l58xNy58D0nbUnOxOWRWvlcCV4kUF7ltmI6PsrLl/BgKEyS4mqsGChFN0w==}
@@ -8755,13 +8750,13 @@ snapshots:
 
   '@sinclair/typebox@0.27.8': {}
 
-  '@storybook/addon-a11y@8.5.0(storybook@8.5.0(prettier@3.4.1))(vitest@3.0.0)':
+  '@storybook/addon-a11y@8.5.0(storybook@8.5.0(prettier@3.4.1))(vitest@3.0.0(@types/node@22.10.1)(@vitest/ui@3.0.0)(jiti@1.21.6)(jsdom@26.0.0)(less@4.2.0)(lightningcss@1.29.1)(sass@1.80.5)(stylus@0.62.0)(tsx@4.19.2)(yaml@2.6.1))':
     dependencies:
       '@storybook/addon-highlight': 8.5.0(storybook@8.5.0(prettier@3.4.1))
       '@storybook/test': 8.5.0(storybook@8.5.0(prettier@3.4.1))
       axe-core: 4.10.2
       storybook: 8.5.0(prettier@3.4.1)
-      vitest-axe: 0.1.0(vitest@3.0.0)
+      vitest-axe: 0.1.0(vitest@3.0.0(@types/node@22.10.1)(@vitest/ui@3.0.0)(jiti@1.21.6)(jsdom@26.0.0)(less@4.2.0)(lightningcss@1.29.1)(sass@1.80.5)(stylus@0.62.0)(tsx@4.19.2)(yaml@2.6.1))
     transitivePeerDependencies:
       - vitest
 
@@ -8908,8 +8903,8 @@ snapshots:
       '@storybook/csf': 0.1.12
       better-opn: 3.0.2
       browser-assert: 1.2.1
-      esbuild: 0.24.2
-      esbuild-register: 3.6.0(esbuild@0.24.2)
+      esbuild: 0.24.0
+      esbuild-register: 3.6.0(esbuild@0.24.0)
       jsdoc-type-pratt-parser: 4.1.0
       process: 0.11.10
       recast: 0.23.9
@@ -9204,11 +9199,11 @@ snapshots:
 
   '@types/postcss-modules-local-by-default@4.0.2':
     dependencies:
-      postcss: 8.4.47
+      postcss: 8.5.1
 
   '@types/postcss-modules-scope@3.0.4':
     dependencies:
-      postcss: 8.4.47
+      postcss: 8.5.1
 
   '@types/react-dom@19.0.1':
     dependencies:
@@ -9318,7 +9313,7 @@ snapshots:
     transitivePeerDependencies:
       - '@swc/helpers'
 
-  '@vitest/coverage-v8@3.0.0(vitest@3.0.0)':
+  '@vitest/coverage-v8@3.0.0(vitest@3.0.0(@types/node@22.10.1)(@vitest/ui@3.0.0)(jiti@1.21.6)(jsdom@26.0.0)(less@4.2.0)(lightningcss@1.29.1)(sass@1.80.5)(stylus@0.62.0)(tsx@4.19.2)(yaml@2.6.1))':
     dependencies:
       '@ampproject/remapping': 2.3.0
       '@bcoe/v8-coverage': 1.0.2
@@ -10090,10 +10085,10 @@ snapshots:
       string.prototype.trimleft: 2.1.3
       string.prototype.trimright: 2.1.3
 
-  esbuild-register@3.6.0(esbuild@0.24.2):
+  esbuild-register@3.6.0(esbuild@0.24.0):
     dependencies:
       debug: 4.4.0
-      esbuild: 0.24.2
+      esbuild: 0.24.0
     transitivePeerDependencies:
       - supports-color
 
@@ -11266,8 +11261,6 @@ snapshots:
 
   mute-stream@1.0.0: {}
 
-  nanoid@3.3.7: {}
-
   nanoid@3.3.8: {}
 
   needle@3.3.1:
@@ -11699,7 +11692,7 @@ snapshots:
 
   postcss@8.4.47:
     dependencies:
-      nanoid: 3.3.7
+      nanoid: 3.3.8
       picocolors: 1.1.1
       source-map-js: 1.2.1
 
@@ -12636,7 +12629,7 @@ snapshots:
       tsx: 4.19.2
       yaml: 2.6.1
 
-  vitest-axe@0.1.0(vitest@3.0.0):
+  vitest-axe@0.1.0(vitest@3.0.0(@types/node@22.10.1)(@vitest/ui@3.0.0)(jiti@1.21.6)(jsdom@26.0.0)(less@4.2.0)(lightningcss@1.29.1)(sass@1.80.5)(stylus@0.62.0)(tsx@4.19.2)(yaml@2.6.1)):
     dependencies:
       aria-query: 5.3.2
       axe-core: 4.10.2
