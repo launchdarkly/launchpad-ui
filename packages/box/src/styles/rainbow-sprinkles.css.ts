@@ -3,8 +3,8 @@ import { vars } from '@launchpad-ui/vars';
 import { flatten } from 'flat';
 import { createRainbowSprinkles, defineProperties } from 'rainbow-sprinkles';
 
-const { bg, border, fill, shadow, text, gradient, ...global } = vars.color;
-const { text: typography } = vars;
+const { bg, border, fill, shadow, text, ...global } = vars.color;
+const { text: typography, gradient } = vars;
 
 type FlattenObjectKeys<T extends Record<string, unknown>, Key = keyof T> = Key extends string
 	? T[Key] extends Record<string, unknown>
@@ -13,7 +13,6 @@ type FlattenObjectKeys<T extends Record<string, unknown>, Key = keyof T> = Key e
 	: never;
 
 type GlobalKeys = FlattenObjectKeys<typeof global>;
-type GradientKeys = FlattenObjectKeys<typeof gradient>;
 type BackgroundKeys = FlattenObjectKeys<typeof bg>;
 type BorderKeys = FlattenObjectKeys<typeof border>;
 type FillKeys = FlattenObjectKeys<typeof fill>;
@@ -21,7 +20,6 @@ type TextKeys = FlattenObjectKeys<typeof text>;
 type TypographyKeys = FlattenObjectKeys<typeof typography>;
 
 const colors = flatten<typeof global, Record<GlobalKeys, string>>(global);
-const gradients = flatten<typeof gradient, Record<GradientKeys, string>>(gradient);
 const backgrounds = flatten<typeof bg, Record<BackgroundKeys, string>>(bg);
 const borders = flatten<typeof border, Record<BorderKeys, string>>(border);
 const fills = flatten<typeof fill, Record<FillKeys, string>>(fill);
@@ -115,7 +113,7 @@ const themedProperties = defineProperties({
 	defaultCondition: 'default',
 	dynamicProperties: {
 		color: { ...colors, ...texts },
-		background: gradients,
+		background: gradient,
 		backgroundColor: { ...colors, ...backgrounds },
 		borderColor: { ...colors, ...borders },
 		fill: { ...colors, ...fills },
