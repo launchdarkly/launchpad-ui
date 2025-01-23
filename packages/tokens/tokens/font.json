@@ -35,7 +35,7 @@
 			"$value": "{size.44}"
 		},
 		"800": {
-			"$value": "3.75rem"
+			"$value": 60
 		}
 	},
 	"fontWeight": {

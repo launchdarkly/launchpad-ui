@@ -1226,9 +1226,6 @@ importers:
       json-to-ts:
         specifier: ^2.1.0
         version: 2.1.0
-      prettier:
-        specifier: ^3.4.1
-        version: 3.4.1
       style-dictionary:
         specifier: ^4.3.0
         version: 4.3.0

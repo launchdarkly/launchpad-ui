@@ -49,7 +49,7 @@ jobs:
           buildScriptName: 'storybook:build'
           exitOnceUploaded: true
           onlyChanged: true
-          externals: packages/(icons/src/img|tokens/src)/**
+          externals: packages/(icons/src/img|tokens/tokens)/**
 
   a11y:
     name: a11y

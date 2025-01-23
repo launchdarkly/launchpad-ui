@@ -1,16 +1,35 @@
-import type { TransformedToken } from 'style-dictionary/types';
+import type { Config, TransformedToken } from 'style-dictionary/types';
 
 import JsonToTS from 'json-to-ts';
 import StyleDictionary from 'style-dictionary';
-import { createPropertyFormatter, fileHeader, minifyDictionary } from 'style-dictionary/utils';
+import { formats, transformGroups, transforms } from 'style-dictionary/enums';
+import { fileHeader, minifyDictionary } from 'style-dictionary/utils';
+
+import { css, themes } from './themes';
+
+const configs = themes.map(css);
+
+const runSD = async (cfg: Config) => {
+	const sd = new StyleDictionary(cfg);
+	const [file] = await sd.formatPlatform('css');
+	return [file.destination, file.output];
+};
+
+const aliasTokens = Object.fromEntries(await Promise.all(configs.map(runSD)));
 
 const sd = new StyleDictionary({
-	source: ['src/*.json'],
+	source: ['tokens/*.json'],
 	platforms: {
 		css: {
 			prefix: 'lp',
-			transformGroup: 'css',
-			transforms: ['name/kebab', 'time/seconds', 'size/rem', 'color/rgb', 'attribute/font'],
+			basePxFontSize: 16,
+			transformGroup: transformGroups.css,
+			transforms: [
+				transforms.nameKebab,
+				transforms.sizePxToRem,
+				transforms.colorRgb,
+				'attribute/font',
+			],
 			buildPath: 'dist/',
 			options: {
 				outputReferences: true,
@@ -19,18 +38,17 @@ const sd = new StyleDictionary({
 			files: [
 				{
 					destination: 'index.css',
-					format: 'css/variables',
-					filter: (token) => token.filePath !== 'src/color-aliases.json',
+					format: formats.cssVariables,
+					filter: (token) => !token.filePath.includes('aliases'),
 				},
 				{
 					destination: 'themes.css',
-					format: 'custom/css',
-					filter: (token) => token.filePath === 'src/color-aliases.json',
+					format: 'css/themes',
 				},
 				{
 					destination: 'media-queries.css',
 					format: 'custom/media-query',
-					filter: (token) => token.filePath === 'src/viewport.json',
+					filter: (token) => token.filePath === 'tokens/viewport.json',
 				},
 				{
 					destination: 'fonts.css',
@@ -41,7 +59,9 @@ const sd = new StyleDictionary({
 			actions: ['copy_assets'],
 		},
 		js: {
-			transformGroup: 'js',
+			basePxFontSize: 16,
+			transformGroup: transformGroups.js,
+			transforms: [transforms.sizePxToRem, transforms.colorRgb],
 			buildPath: 'dist/',
 			options: {
 				outputReferences: true,
@@ -64,7 +84,7 @@ const sd = new StyleDictionary({
 		},
 		json: {
 			buildPath: 'dist/',
-			transforms: ['name/kebab', 'custom/value/name'],
+			transforms: [transforms.nameKebab, 'custom/value/name'],
 			options: {
 				outputReferences: true,
 				usesDtcg: true,
@@ -77,9 +97,10 @@ const sd = new StyleDictionary({
 			],
 		},
 		vscode: {
+			basePxFontSize: 16,
 			buildPath: 'dist/',
-			transformGroup: 'css',
-			transforms: ['name/kebab', 'color/rgb'],
+			transformGroup: transformGroups.css,
+			transforms: [transforms.nameKebab, transforms.sizePxToRem, transforms.colorRgb],
 			options: {
 				outputReferences: true,
 				usesDtcg: true,
@@ -95,36 +116,12 @@ const sd = new StyleDictionary({
 });
 
 sd.registerFormat({
-	name: 'custom/css',
-	format: async ({ dictionary, file, options }) => {
-		const { outputReferences, outputReferenceFallbacks, usesDtcg } = options;
-		const header = await fileHeader({ file });
+	name: 'css/themes',
+	format: async () => {
+		const light = aliasTokens['default.css'];
+		const dark = aliasTokens['dark.css'];
 
-		const formatProperty = createPropertyFormatter({
-			outputReferences,
-			outputReferenceFallbacks,
-			dictionary,
-			format: 'css',
-			usesDtcg,
-		});
-
-		const dark = dictionary.allTokens
-			.filter((token) => !!token.dark)
-			.map((token) => {
-				const { dark } = token;
-				return Object.assign({}, token, {
-					$value: dark,
-					original: { ...token.original, $value: token.original.dark },
-				});
-			});
-
-		const defaultTokens = `${header}:root, [data-theme] {\n${dictionary.allTokens
-			.filter((token) => !!token.$value)
-			.map(formatProperty)
-			.join('\n')}\n}\n`;
-		const darkTokens = `[data-theme='dark'] {\n${dark.map(formatProperty).join('\n')}\n}\n`;
-
-		return `${defaultTokens}\n${darkTokens}`;
+		return `${light}\n${dark}`;
 	},
 });
 

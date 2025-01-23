@@ -38,14 +38,13 @@
 		"./dist/tokens.json": "./dist/tokens.json"
 	},
 	"scripts": {
-		"build": "tsx build.ts && tsc --noEmit",
+		"build": "tsx src/build.ts && tsc --noEmit",
 		"clean": "rm -rf dist",
 		"lint": "exit 0",
-		"test": "exit 0"
+		"test": "vitest run"
 	},
 	"devDependencies": {
 		"json-to-ts": "^2.1.0",
-		"prettier": "^3.4.1",
 		"style-dictionary": "^4.3.0",
 		"tsx": "^4.19.0"
 	}

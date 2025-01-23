@@ -129,7 +129,7 @@ There are just a few things to keep in mind:
 Note: if you are creating a pull request from a fork, CI checks will only run when it is `ready for review`. To run Chromatic, you will need to make a build locally in the terminal using the project token found in Chromatic:
 
 ```sh
-$ pnpm chromatic --project-token PROJECT_TOKEN --branch-name FORKED_BRANCH --build-script-name storybook:build --exit-once-uploaded --only-changed --externals "packages/icons/src/img/**" --externals "packages/tokens/src/**"
+$ pnpm chromatic --project-token PROJECT_TOKEN --branch-name FORKED_BRANCH --build-script-name storybook:build --exit-once-uploaded --only-changed --externals "packages/icons/src/img/**" --externals "packages/tokens/tokens/**"
 ```
 
 ---

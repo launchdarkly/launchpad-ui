@@ -1,0 +1,174 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Tokens > builds dark alias tokens 1`] = `
+"/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+[data-theme='dark'] {
+  --lp-color-bg-interactive-link: rgba(71, 97, 255, 0.2);
+  --lp-color-bg-feedback-error: var(--lp-color-red-900);
+  --lp-color-bg-feedback-info: var(--lp-color-blue-900);
+  --lp-color-bg-feedback-success: var(--lp-color-green-900);
+  --lp-color-bg-interactive-primary-base: var(--lp-color-blue-600);
+  --lp-color-bg-interactive-primary-active: var(--lp-color-blue-600);
+  --lp-color-bg-interactive-primary-focus: var(--lp-color-blue-500);
+  --lp-color-bg-interactive-primary-hover: var(--lp-color-blue-500);
+  --lp-color-bg-interactive-secondary-focus: var(--lp-color-gray-800);
+  --lp-color-bg-interactive-secondary-hover: var(--lp-color-gray-800);
+  --lp-color-bg-interactive-tertiary-focus: var(--lp-color-gray-800);
+  --lp-color-bg-interactive-tertiary-hover: var(--lp-color-gray-800);
+  --lp-color-bg-interactive-destructive-base: var(--lp-color-red-600);
+  --lp-color-bg-interactive-destructive-active: var(--lp-color-red-600);
+  --lp-color-bg-interactive-destructive-focus: var(--lp-color-red-500);
+  --lp-color-bg-interactive-destructive-hover: var(--lp-color-red-500);
+  --lp-color-bg-interactive-disabled: var(--lp-color-gray-800);
+  --lp-color-bg-interactive-selected: var(--lp-color-blue-950);
+  --lp-color-bg-ui-primary: var(--lp-color-gray-950);
+  --lp-color-bg-ui-secondary: var(--lp-color-gray-900);
+  --lp-color-bg-ui-tertiary: var(--lp-color-gray-800);
+  --lp-color-bg-product-beta: var(--lp-color-purple-900);
+  --lp-color-bg-product-federal: var(--lp-color-brand-yellow-dark);
+  --lp-color-border-feedback-error: var(--lp-color-red-400);
+  --lp-color-border-feedback-info: var(--lp-color-blue-400);
+  --lp-color-border-feedback-success: var(--lp-color-green-400);
+  --lp-color-border-field-active: var(--lp-color-blue-400);
+  --lp-color-border-field-focus: var(--lp-color-blue-400);
+  --lp-color-border-interactive-focus: var(--lp-color-blue-400);
+  --lp-color-border-interactive-selected: var(--lp-color-blue-400);
+  --lp-color-border-ui-primary: var(--lp-color-gray-700);
+  --lp-color-border-ui-secondary: var(--lp-color-gray-800);
+  --lp-color-fill-ui-primary: var(--lp-color-gray-200);
+  --lp-color-fill-field-base: var(--lp-color-gray-400);
+  --lp-color-shadow-interactive-focus: var(--lp-color-blue-400);
+  --lp-color-shadow-interactive-primary: var(--lp-color-gray-950);
+  --lp-color-shadow-ui-primary: var(--lp-color-black-200);
+  --lp-color-shadow-ui-secondary: var(--lp-color-black-100);
+  --lp-color-text-feedback-error: var(--lp-color-red-400);
+  --lp-color-text-feedback-success: var(--lp-color-green-400);
+  --lp-color-text-feedback-info: var(--lp-color-blue-400);
+  --lp-color-text-interactive-base: var(--lp-color-blue-400);
+  --lp-color-text-interactive-active: var(--lp-color-purple-400);
+  --lp-color-text-interactive-secondary: var(--lp-color-gray-400);
+  --lp-color-text-interactive-disabled: var(--lp-color-gray-600);
+  --lp-color-text-ui-primary-base: var(--lp-color-gray-0);
+  --lp-color-text-ui-primary-inverted: var(--lp-color-gray-950);
+  --lp-color-text-ui-secondary: var(--lp-color-gray-400);
+  --lp-color-text-field-placeholder: var(--lp-color-gray-400);
+  --lp-color-text-product-beta: var(--lp-color-purple-400);
+  --lp-color-text-code-function: var(--lp-color-brand-purple-base);
+  --lp-color-text-code-tag: var(--lp-color-brand-orange-base);
+  --lp-color-text-code-string: var(--lp-color-brand-cyan-light);
+  --lp-color-text-code-base: var(--lp-color-gray-200);
+  --lp-color-text-code-keyword: var(--lp-color-brand-pink-light);
+  --lp-color-text-code-title: var(--lp-color-brand-orange-light);
+  --lp-color-text-code-number: var(--lp-color-brand-blue-light);
+  --lp-color-bg-overlay-secondary: var(--lp-color-bg-ui-secondary);
+  --lp-color-bg-field-base: var(--lp-color-bg-ui-secondary);
+}
+"
+`;
+
+exports[`Tokens > builds default alias tokens 1`] = `
+"/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+:root, [data-theme] {
+  --lp-color-bg-interactive-tertiary-base: rgba(0, 0, 0, 0);
+  --lp-color-bg-interactive-tertiary-active: rgba(0, 0, 0, 0);
+  --lp-color-border-interactive-primary-base: rgba(0, 0, 0, 0);
+  --lp-color-border-interactive-primary-active: rgba(0, 0, 0, 0);
+  --lp-color-border-interactive-primary-focus: rgba(0, 0, 0, 0);
+  --lp-color-border-interactive-primary-hover: rgba(0, 0, 0, 0);
+  --lp-color-border-interactive-disabled: rgba(0, 0, 0, 0);
+  --lp-color-bg-feedback-primary: var(--lp-color-gray-800);
+  --lp-color-bg-feedback-error: var(--lp-color-red-50);
+  --lp-color-bg-feedback-info: var(--lp-color-blue-50);
+  --lp-color-bg-feedback-success: var(--lp-color-green-50);
+  --lp-color-bg-interactive-primary-base: var(--lp-color-blue-500);
+  --lp-color-bg-interactive-primary-active: var(--lp-color-blue-500);
+  --lp-color-bg-interactive-primary-focus: var(--lp-color-blue-600);
+  --lp-color-bg-interactive-primary-hover: var(--lp-color-blue-600);
+  --lp-color-bg-interactive-secondary-focus: var(--lp-color-gray-50);
+  --lp-color-bg-interactive-secondary-hover: var(--lp-color-gray-50);
+  --lp-color-bg-interactive-tertiary-focus: var(--lp-color-gray-50);
+  --lp-color-bg-interactive-tertiary-hover: var(--lp-color-gray-50);
+  --lp-color-bg-interactive-destructive-base: var(--lp-color-red-500);
+  --lp-color-bg-interactive-destructive-active: var(--lp-color-red-500);
+  --lp-color-bg-interactive-destructive-focus: var(--lp-color-red-600);
+  --lp-color-bg-interactive-destructive-hover: var(--lp-color-red-600);
+  --lp-color-bg-interactive-disabled: var(--lp-color-gray-100);
+  --lp-color-bg-interactive-link: var(--lp-color-blue-50);
+  --lp-color-bg-interactive-selected: var(--lp-color-blue-0);
+  --lp-color-bg-ui-primary: var(--lp-color-white-950);
+  --lp-color-bg-ui-secondary: var(--lp-color-gray-0);
+  --lp-color-bg-ui-tertiary: var(--lp-color-gray-50);
+  --lp-color-bg-product-beta: var(--lp-color-purple-100);
+  --lp-color-bg-product-federal: var(--lp-color-brand-yellow-base);
+  --lp-color-border-feedback-error: var(--lp-color-red-500);
+  --lp-color-border-feedback-info: var(--lp-color-blue-500);
+  --lp-color-border-feedback-success: var(--lp-color-green-500);
+  --lp-color-border-field-active: var(--lp-color-blue-500);
+  --lp-color-border-field-focus: var(--lp-color-blue-500);
+  --lp-color-border-interactive-focus: var(--lp-color-blue-500);
+  --lp-color-border-interactive-selected: var(--lp-color-blue-500);
+  --lp-color-border-ui-primary: var(--lp-color-gray-100);
+  --lp-color-border-ui-secondary: var(--lp-color-gray-50);
+  --lp-color-fill-feedback-error: var(--lp-color-red-500);
+  --lp-color-fill-feedback-info: var(--lp-color-blue-500);
+  --lp-color-fill-feedback-success: var(--lp-color-green-500);
+  --lp-color-fill-interactive-primary: var(--lp-color-white-950);
+  --lp-color-fill-interactive-destructive: var(--lp-color-red-500);
+  --lp-color-fill-ui-primary: var(--lp-color-gray-700);
+  --lp-color-fill-ui-secondary: var(--lp-color-gray-500);
+  --lp-color-fill-field-base: var(--lp-color-gray-600);
+  --lp-color-shadow-interactive-focus: var(--lp-color-blue-600);
+  --lp-color-shadow-interactive-primary: var(--lp-color-white-950);
+  --lp-color-shadow-ui-primary: var(--lp-color-black-50);
+  --lp-color-shadow-ui-secondary: var(--lp-color-black-0);
+  --lp-color-text-feedback-error: var(--lp-color-red-600);
+  --lp-color-text-feedback-success: var(--lp-color-green-600);
+  --lp-color-text-feedback-info: var(--lp-color-blue-600);
+  --lp-color-text-interactive-base: var(--lp-color-blue-600);
+  --lp-color-text-interactive-active: var(--lp-color-purple-700);
+  --lp-color-text-interactive-primary-base: var(--lp-color-white-950);
+  --lp-color-text-interactive-primary-active: var(--lp-color-white-950);
+  --lp-color-text-interactive-primary-focus: var(--lp-color-white-950);
+  --lp-color-text-interactive-primary-hover: var(--lp-color-white-950);
+  --lp-color-text-interactive-secondary: var(--lp-color-gray-600);
+  --lp-color-text-interactive-disabled: var(--lp-color-gray-500);
+  --lp-color-text-ui-primary-base: var(--lp-color-gray-900);
+  --lp-color-text-ui-primary-inverted: var(--lp-color-white-950);
+  --lp-color-text-ui-secondary: var(--lp-color-gray-600);
+  --lp-color-text-field-disabled: var(--lp-color-gray-500);
+  --lp-color-text-field-placeholder: var(--lp-color-gray-500);
+  --lp-color-text-product-beta: var(--lp-color-purple-600);
+  --lp-color-text-product-federal: var(--lp-color-gray-950);
+  --lp-color-text-code-function: var(--lp-color-brand-purple-dark);
+  --lp-color-text-code-tag: var(--lp-color-brand-orange-dark);
+  --lp-color-text-code-string: var(--lp-color-brand-cyan-dark);
+  --lp-color-text-code-comment: var(--lp-color-gray-400);
+  --lp-color-text-code-base: var(--lp-color-gray-600);
+  --lp-color-text-code-keyword: var(--lp-color-brand-pink-base);
+  --lp-color-text-code-title: var(--lp-color-brand-orange-base);
+  --lp-color-text-code-number: var(--lp-color-brand-blue-dark);
+  --lp-color-bg-interactive-secondary-base: var(--lp-color-bg-ui-primary);
+  --lp-color-bg-interactive-secondary-active: var(--lp-color-bg-ui-primary);
+  --lp-color-bg-overlay-primary: var(--lp-color-bg-ui-primary);
+  --lp-color-bg-overlay-secondary: var(--lp-color-bg-ui-primary);
+  --lp-color-bg-field-base: var(--lp-color-bg-ui-primary);
+  --lp-color-bg-field-disabled: var(--lp-color-bg-ui-tertiary);
+  --lp-color-border-field-base: var(--lp-color-border-ui-primary);
+  --lp-color-border-field-error: var(--lp-color-border-feedback-error);
+  --lp-color-border-field-disabled: var(--lp-color-border-ui-secondary);
+  --lp-color-border-interactive-secondary-base: var(--lp-color-border-ui-primary);
+  --lp-color-border-interactive-secondary-active: var(--lp-color-border-ui-primary);
+  --lp-color-border-interactive-secondary-focus: var(--lp-color-border-ui-primary);
+  --lp-color-border-interactive-secondary-hover: var(--lp-color-border-ui-primary);
+  --lp-color-border-interactive-destructive: var(--lp-color-border-feedback-error);
+  --lp-color-text-feedback-base: var(--lp-color-text-ui-primary-base);
+  --lp-color-text-interactive-destructive: var(--lp-color-text-feedback-error);
+}
+"
+`;
