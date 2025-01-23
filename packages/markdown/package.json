@@ -1,6 +1,6 @@
 {
 	"name": "@launchpad-ui/markdown",
-	"version": "0.5.28",
+	"version": "0.5.29",
 	"status": "beta",
 	"publishConfig": {
 		"access": "public"
