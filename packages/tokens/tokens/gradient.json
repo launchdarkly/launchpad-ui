@@ -1,0 +1,26 @@
+{
+	"gradient": {
+		"$type": "gradient",
+		"yellow-cyan": {
+			"$value": "linear-gradient(127deg, {color.brand.yellow.base} -38.66%, {color.brand.cyan.base} 83.73%)"
+		},
+		"yellow-pink": {
+			"$value": "linear-gradient(148deg, {color.brand.yellow.base} 13.5%, {color.brand.pink.base} 90.96%)"
+		},
+		"yellow-blue-pale": {
+			"$value": "linear-gradient(0deg, {color.white.50} 0%, {color.white.50} 100%), linear-gradient(151deg, {color.brand.yellow.light} 5.75%, {color.brand.blue.light} 90%)"
+		},
+		"cyan-blue": {
+			"$value": "linear-gradient(136deg, {color.brand.cyan.base} 22.68%, {color.brand.blue.base} 127.6%)"
+		},
+		"cyan-purple": {
+			"$value": "linear-gradient(323deg, {color.brand.purple.base} -11.93%, {color.brand.cyan.base} 125.4%)"
+		},
+		"purple-blue": {
+			"$value": "linear-gradient(131deg, {color.brand.purple.base} -15.82%, {color.brand.blue.base} 118.85%)"
+		},
+		"purple-pink": {
+			"$value": "linear-gradient(326deg, {color.brand.purple.base} -9.86%, {color.brand.pink.base} 112.59%)"
+		}
+	}
+}

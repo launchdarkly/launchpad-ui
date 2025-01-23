@@ -1223,6 +1223,9 @@ importers:
 
   packages/tokens:
     devDependencies:
+      '@figma/rest-api-spec':
+        specifier: ^0.22.0
+        version: 0.22.0
       json-to-ts:
         specifier: ^2.1.0
         version: 2.1.0
@@ -2034,6 +2037,9 @@ packages:
     engines: {node: '>=18'}
     cpu: [x64]
     os: [win32]
+
+  '@figma/rest-api-spec@0.22.0':
+    resolution: {integrity: sha512-8XEdN41ahdUXMTR+E3CMmtXqlJYzuHun4VYUCElrkGsd6g1BFEYTiNCwIHy34Ooct2O8/zwpysnkw52EzVKdtQ==}
 
   '@figspec/components@1.0.3':
     resolution: {integrity: sha512-fBwHzJ4ouuOUJEi+yBZIrOy+0/fAjB3AeTcIHTT1PRxLz8P63xwC7R0EsIJXhScIcc+PljGmqbbVJCjLsnaGYA==}
@@ -7353,6 +7359,8 @@ snapshots:
 
   '@esbuild/win32-x64@0.24.2':
     optional: true
+
+  '@figma/rest-api-spec@0.22.0': {}
 
   '@figspec/components@1.0.3':
     dependencies:

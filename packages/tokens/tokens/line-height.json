@@ -1,6 +1,13 @@
 {
 	"lineHeight": {
 		"$type": "number",
+		"$extensions": {
+			"com.figma": {
+				"hiddenFromPublishing": false,
+				"scopes": ["LINE_HEIGHT"],
+				"codeSyntax": {}
+			}
+		},
 		"100": {
 			"$value": "{size.16}"
 		},

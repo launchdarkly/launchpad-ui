@@ -2,6 +2,13 @@
 	"color": {
 		"$type": "color",
 		"bg": {
+			"$extensions": {
+				"com.figma": {
+					"hiddenFromPublishing": false,
+					"scopes": ["FRAME_FILL", "SHAPE_FILL"],
+					"codeSyntax": {}
+				}
+			},
 			"feedback": {
 				"primary": {
 					"$value": "{color.gray.800}"
@@ -120,6 +127,13 @@
 			}
 		},
 		"border": {
+			"$extensions": {
+				"com.figma": {
+					"hiddenFromPublishing": false,
+					"scopes": ["STROKE_COLOR"],
+					"codeSyntax": {}
+				}
+			},
 			"feedback": {
 				"error": {
 					"$value": "{color.red.500}"
@@ -200,6 +214,13 @@
 			}
 		},
 		"fill": {
+			"$extensions": {
+				"com.figma": {
+					"hiddenFromPublishing": false,
+					"scopes": ["FRAME_FILL", "SHAPE_FILL"],
+					"codeSyntax": {}
+				}
+			},
 			"feedback": {
 				"error": {
 					"$value": "{color.red.500}"
@@ -234,6 +255,13 @@
 			}
 		},
 		"shadow": {
+			"$extensions": {
+				"com.figma": {
+					"hiddenFromPublishing": false,
+					"scopes": ["EFFECT_COLOR"],
+					"codeSyntax": {}
+				}
+			},
 			"interactive": {
 				"focus": {
 					"$value": "{color.blue.600}"
@@ -252,6 +280,13 @@
 			}
 		},
 		"text": {
+			"$extensions": {
+				"com.figma": {
+					"hiddenFromPublishing": false,
+					"scopes": ["TEXT_FILL"],
+					"codeSyntax": {}
+				}
+			},
 			"feedback": {
 				"base": {
 					"$value": "{color.text.ui.primary.base}"

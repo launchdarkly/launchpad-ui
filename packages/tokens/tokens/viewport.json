@@ -1,6 +1,13 @@
 {
 	"viewport": {
 		"$type": "dimension",
+		"$extensions": {
+			"com.figma": {
+				"hiddenFromPublishing": false,
+				"scopes": ["WIDTH_HEIGHT"],
+				"codeSyntax": {}
+			}
+		},
 		"mobile": {
 			"$value": "{size.0}"
 		},

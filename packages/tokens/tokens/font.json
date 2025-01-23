@@ -1,6 +1,13 @@
 {
 	"fontFamily": {
 		"$type": "fontFamily",
+		"$extensions": {
+			"com.figma": {
+				"hiddenFromPublishing": false,
+				"scopes": ["FONT_FAMILY"],
+				"codeSyntax": {}
+			}
+		},
 		"base": {
 			"$value": "Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, Helvetica, Arial, sans-serif"
 		},
@@ -13,6 +20,13 @@
 	},
 	"fontSize": {
 		"$type": "dimension",
+		"$extensions": {
+			"com.figma": {
+				"hiddenFromPublishing": false,
+				"scopes": ["FONT_SIZE"],
+				"codeSyntax": {}
+			}
+		},
 		"100": {
 			"$value": "{size.11}"
 		},
@@ -40,6 +54,13 @@
 	},
 	"fontWeight": {
 		"$type": "fontWeight",
+		"$extensions": {
+			"com.figma": {
+				"hiddenFromPublishing": false,
+				"scopes": ["FONT_WEIGHT"],
+				"codeSyntax": {}
+			}
+		},
 		"light": {
 			"$value": 300
 		},
