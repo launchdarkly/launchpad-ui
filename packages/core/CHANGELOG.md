@@ -1,5 +1,22 @@
 # @launchpad-ui/core
 
+## 0.51.9
+
+### Patch Changes
+
+- [#1527](https://github.com/launchdarkly/launchpad-ui/pull/1527) [`e2b9bad`](https://github.com/launchdarkly/launchpad-ui/commit/e2b9bad5882f7e917100b66ae4de9114b3408cdc) Thanks [@Niznikr](https://github.com/Niznikr)! - Deprecate packages
+
+- Updated dependencies [[`e2b9bad`](https://github.com/launchdarkly/launchpad-ui/commit/e2b9bad5882f7e917100b66ae4de9114b3408cdc)]:
+  - @launchpad-ui/progress-bubbles@0.7.38
+  - @launchpad-ui/collapsible@0.1.86
+  - @launchpad-ui/navigation@0.12.64
+  - @launchpad-ui/pagination@0.4.63
+  - @launchpad-ui/markdown@0.5.29
+  - @launchpad-ui/columns@0.1.31
+  - @launchpad-ui/avatar@0.6.54
+  - @launchpad-ui/inline@0.1.31
+  - @launchpad-ui/stack@0.1.31
+
 ## 0.51.8
 
 ### Patch Changes
