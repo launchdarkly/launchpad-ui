@@ -1,4 +1,4 @@
-import type { RGBA } from '@figma/rest-api-spec';
+import type { LocalVariable, RGBA, VariableValue } from '@figma/rest-api-spec';
 import type {
 	Config,
 	DesignToken,
@@ -13,6 +13,10 @@ import { formats, transformGroups, transforms } from 'style-dictionary/enums';
 import { fileHeader, minifyDictionary } from 'style-dictionary/utils';
 
 import { css, themes } from './themes';
+
+interface Variable extends Partial<LocalVariable> {
+	value: VariableValue;
+}
 
 const configs = themes.map(css);
 
@@ -298,8 +302,8 @@ sd.registerFormat({
 				value: token.$type === 'color' ? { r: r / 255, g: g / 255, b: b / 255, a } : token.$value,
 				hiddenFromPublishing,
 				scopes,
-				codeSyntax: `var(--lp-${token.name})`,
-			};
+				codeSyntax: { WEB: `var(--lp-${token.name})` },
+			} satisfies Variable;
 		});
 		return `${JSON.stringify(tokens, null, 2)}\n`;
 	},
