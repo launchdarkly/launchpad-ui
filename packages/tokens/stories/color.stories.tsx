@@ -75,13 +75,15 @@ const TokenTable = ({ tokens }: { tokens: Record<string, string> }) => {
 									<TooltipTrigger>
 										<Button
 											onPress={() => {
-												navigator.clipboard.writeText(`--lp-color-${key}`);
+												navigator.clipboard.writeText(
+													value.substring(value.lastIndexOf('--'), value.lastIndexOf(')')),
+												);
 												ToastQueue.success('Copied!');
 											}}
 											style={{ font: 'var(--lp-text-code-1-regular)' }}
 											variant="minimal"
 										>
-											{`--lp-color-${key}`}
+											{value.substring(value.lastIndexOf('--'), value.lastIndexOf(')'))}
 										</Button>
 										<Tooltip placement="bottom">Copy to clipboard</Tooltip>
 									</TooltipTrigger>
@@ -98,9 +100,7 @@ const TokenTable = ({ tokens }: { tokens: Record<string, string> }) => {
 };
 
 const global = Object.keys(vars.color)
-	.filter((key) =>
-		['black', 'blue', 'green', 'gray', 'red', 'purple', 'white', 'brand', 'gradient'].includes(key),
-	)
+	.filter((key) => !['bg', 'border', 'fill', 'shadow', 'text'].includes(key))
 	.reduce((obj, key) => {
 		// @ts-expect-error fixme
 		obj[key] = vars.color[key];
@@ -108,7 +108,7 @@ const global = Object.keys(vars.color)
 	}, {});
 
 export const Global = {
-	render: () => <TokenTable tokens={flatten(global)} />,
+	render: () => <TokenTable tokens={{ ...flatten(global), ...vars.gradient }} />,
 };
 
 const alias = Object.keys(vars.color)

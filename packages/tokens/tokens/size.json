@@ -1,6 +1,13 @@
 {
 	"size": {
 		"$type": "dimension",
+		"$extensions": {
+			"com.figma": {
+				"hiddenFromPublishing": false,
+				"scopes": ["WIDTH_HEIGHT", "GAP"],
+				"codeSyntax": {}
+			}
+		},
 		"0": {
 			"$value": 0
 		},

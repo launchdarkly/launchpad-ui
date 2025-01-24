@@ -1,6 +1,13 @@
 {
 	"borderRadius": {
 		"$type": "dimension",
+		"$extensions": {
+			"com.figma": {
+				"hiddenFromPublishing": false,
+				"scopes": ["CORNER_RADIUS"],
+				"codeSyntax": {}
+			}
+		},
 		"regular": {
 			"$value": "{size.3}"
 		},
@@ -13,6 +20,13 @@
 	},
 	"borderWidth": {
 		"$type": "dimension",
+		"$extensions": {
+			"com.figma": {
+				"hiddenFromPublishing": false,
+				"scopes": ["STROKE_FLOAT"],
+				"codeSyntax": {}
+			}
+		},
 		"100": {
 			"$value": "{size.0}"
 		},

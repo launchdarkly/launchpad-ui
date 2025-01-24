@@ -58,31 +58,31 @@
 }
 
 .gradient1 {
-	background: var(--lp-color-gradient-yellow-cyan);
+	background: var(--lp-gradient-yellow-cyan);
 }
 
 .gradient2 {
-	background: var(--lp-color-gradient-yellow-pink);
+	background: var(--lp-gradient-yellow-pink);
 }
 
 .gradient3 {
-	background: var(--lp-color-gradient-cyan-purple);
+	background: var(--lp-gradient-cyan-purple);
 }
 
 .gradient4 {
-	background: var(--lp-color-gradient-cyan-blue);
+	background: var(--lp-gradient-cyan-blue);
 }
 
 .gradient5 {
-	background: var(--lp-color-gradient-purple-blue);
+	background: var(--lp-gradient-purple-blue);
 }
 
 .gradient6 {
-	background: var(--lp-color-gradient-purple-pink);
+	background: var(--lp-gradient-purple-pink);
 }
 
 .gradient7 {
-	background: var(--lp-color-gradient-yellow-blue-pale);
+	background: var(--lp-gradient-yellow-blue-pale);
 }
 
 .blue,

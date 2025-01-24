@@ -1,4 +1,11 @@
-import type { Config, TransformedToken } from 'style-dictionary/types';
+import type { LocalVariable, RGBA, VariableValue } from '@figma/rest-api-spec';
+import type {
+	Config,
+	DesignToken,
+	DesignTokens,
+	PreprocessedTokens,
+	TransformedToken,
+} from 'style-dictionary/types';
 
 import JsonToTS from 'json-to-ts';
 import StyleDictionary from 'style-dictionary';
@@ -6,6 +13,10 @@ import { formats, transformGroups, transforms } from 'style-dictionary/enums';
 import { fileHeader, minifyDictionary } from 'style-dictionary/utils';
 
 import { css, themes } from './themes';
+
+interface Variable extends Partial<LocalVariable> {
+	value: VariableValue;
+}
 
 const configs = themes.map(css);
 
@@ -17,8 +28,57 @@ const runSD = async (cfg: Config) => {
 
 const aliasTokens = Object.fromEntries(await Promise.all(configs.map(runSD)));
 
+/**
+ * [$extensions](https://tr.designtokens.org/format/#extensions-0)
+ *
+ * https://github.com/amzn/style-dictionary/blob/main/lib/utils/typeDtcgDelegate.js
+ */
+const extensionsDtcgDelegate = (tokens: DesignTokens): PreprocessedTokens => {
+	const clone = structuredClone(tokens);
+
+	const recurse = (slice: DesignTokens | DesignToken, _extensions: string) => {
+		let extensions = _extensions;
+		const keys = Object.keys(slice);
+		if (!keys.includes('$extensions') && extensions && keys.includes('$value')) {
+			slice.$extensions = extensions;
+		}
+
+		if (slice.$extensions) {
+			extensions = slice.$extensions;
+			if (slice.$value === undefined) {
+				delete slice.$extensions;
+			}
+		}
+
+		for (const val of Object.values(slice)) {
+			if (typeof val === 'object') {
+				recurse(val, extensions);
+			}
+		}
+	};
+	//@ts-ignore
+	recurse(clone);
+	return clone as PreprocessedTokens;
+};
+
+const removeExtensions = (slice: DesignTokens | DesignToken): PreprocessedTokens => {
+	delete slice.$extensions;
+	for (const value of Object.values(slice)) {
+		if (typeof value === 'object') {
+			removeExtensions(value);
+		}
+	}
+	return slice as PreprocessedTokens;
+};
+
 const sd = new StyleDictionary({
 	source: ['tokens/*.json'],
+	hooks: {
+		preprocessors: {
+			extensions: extensionsDtcgDelegate,
+			'strip-extensions': removeExtensions,
+		},
+	},
 	platforms: {
 		css: {
 			prefix: 'lp',
@@ -82,20 +142,6 @@ const sd = new StyleDictionary({
 				},
 			],
 		},
-		json: {
-			buildPath: 'dist/',
-			transforms: [transforms.nameKebab, 'custom/value/name'],
-			options: {
-				outputReferences: true,
-				usesDtcg: true,
-			},
-			files: [
-				{
-					destination: 'contract.json',
-					format: 'custom/json',
-				},
-			],
-		},
 		vscode: {
 			basePxFontSize: 16,
 			buildPath: 'dist/',
@@ -109,6 +155,37 @@ const sd = new StyleDictionary({
 				{
 					destination: 'tokens.json',
 					format: 'json/category',
+				},
+			],
+		},
+		figma: {
+			buildPath: 'dist/',
+			transforms: [transforms.nameKebab, transforms.attributeColor],
+			preprocessors: ['extensions'],
+			options: {
+				outputReferences: true,
+				usesDtcg: true,
+			},
+			files: [
+				{
+					destination: 'figma.json',
+					format: 'json/figma',
+					filter: (token) => token.$extensions,
+				},
+			],
+		},
+		json: {
+			buildPath: 'dist/',
+			transforms: [transforms.nameKebab, 'custom/value/name'],
+			preprocessors: ['strip-extensions'],
+			options: {
+				outputReferences: true,
+				usesDtcg: true,
+			},
+			files: [
+				{
+					destination: 'contract.json',
+					format: 'custom/json',
 				},
 			],
 		},
@@ -208,6 +285,27 @@ sd.registerFormat({
 			return { ...acc, [key]: [...group, obj] };
 		}, {} as TransformedToken);
 		return `${JSON.stringify(groups, null, 2)}\n`;
+	},
+});
+
+sd.registerFormat({
+	name: 'json/figma',
+	format: async ({ dictionary }) => {
+		const tokens = dictionary.allTokens.map((token) => {
+			const { attributes, $description: description, $extensions } = token;
+			const { hiddenFromPublishing, scopes } = $extensions['com.figma'];
+			const { r, g, b, a } = { ...(attributes?.rgb as RGBA) };
+
+			return {
+				name: token.name.replaceAll('-', '/'),
+				description,
+				value: token.$type === 'color' ? { r: r / 255, g: g / 255, b: b / 255, a } : token.$value,
+				hiddenFromPublishing,
+				scopes,
+				codeSyntax: { WEB: `var(--lp-${token.name})` },
+			} satisfies Variable;
+		});
+		return `${JSON.stringify(tokens, null, 2)}\n`;
 	},
 });
 

@@ -52,6 +52,7 @@ const groupPatterns = {
 	duration: /animation-duration|transition/,
 	fontFamily: /font-family/,
 	fontSize: /font-size/,
+	gradient: /background/,
 	lineHeight: /line-height/,
 	size: /height|min-height|max-height|width|min-width|max-width/,
 	spacing: /margin|padding|gap|top|left|right|bottom/,

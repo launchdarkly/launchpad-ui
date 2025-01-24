@@ -1,6 +1,13 @@
 {
 	"spacing": {
 		"$type": "dimension",
+		"$extensions": {
+			"com.figma": {
+				"hiddenFromPublishing": false,
+				"scopes": ["GAP"],
+				"codeSyntax": {}
+			}
+		},
 		"100": {
 			"$value": "{size.0}"
 		},
