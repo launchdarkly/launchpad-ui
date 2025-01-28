@@ -1,6 +1,7 @@
 {
 	"extends": "../../tsconfig.base.json",
 	"compilerOptions": {
+		"lib": ["es2024", "dom", "dom.iterable"],
 		"moduleResolution": "bundler",
 		"baseUrl": ".",
 		"paths": {

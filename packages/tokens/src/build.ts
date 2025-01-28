@@ -1,4 +1,4 @@
-import type { LocalVariable, RGBA, VariableValue } from '@figma/rest-api-spec';
+import type { RGBA, VariableValue } from '@figma/rest-api-spec';
 import type {
 	Config,
 	DesignToken,
@@ -6,17 +6,14 @@ import type {
 	PreprocessedTokens,
 	TransformedToken,
 } from 'style-dictionary/types';
+import type { Variable } from './types';
 
 import JsonToTS from 'json-to-ts';
 import StyleDictionary from 'style-dictionary';
 import { formats, transformGroups, transforms } from 'style-dictionary/enums';
-import { fileHeader, minifyDictionary } from 'style-dictionary/utils';
+import { fileHeader, minifyDictionary, usesReferences } from 'style-dictionary/utils';
 
 import { css, themes } from './themes';
-
-interface Variable extends Partial<LocalVariable> {
-	value: VariableValue;
-}
 
 const configs = themes.map(css);
 
@@ -69,6 +66,21 @@ const removeExtensions = (slice: DesignTokens | DesignToken): PreprocessedTokens
 		}
 	}
 	return slice as PreprocessedTokens;
+};
+
+const getResolvedType = (value: DesignToken['$value']) => {
+	switch (typeof value) {
+		case 'object':
+			return 'COLOR';
+		case 'number':
+			return 'FLOAT';
+		case 'string':
+			return 'STRING';
+		case 'boolean':
+			return 'BOOLEAN';
+		default:
+			throw new Error(`Invalid token type: ${typeof value}`);
+	}
 };
 
 const sd = new StyleDictionary({
@@ -294,15 +306,37 @@ sd.registerFormat({
 		const tokens = dictionary.allTokens.map((token) => {
 			const { attributes, $description: description, $extensions } = token;
 			const { hiddenFromPublishing, scopes } = $extensions['com.figma'];
+
+			const [collection, mode] = token.filePath
+				.replace('tokens/', '')
+				.split('.')
+				.filter((path) => path !== 'json');
+
 			const { r, g, b, a } = { ...(attributes?.rgb as RGBA) };
+			const original: VariableValue =
+				token.$type === 'color' ? { r: r / 255, g: g / 255, b: b / 255, a } : token.$value;
+			const value: VariableValue = usesReferences(token.original.$value)
+				? {
+						type: 'VARIABLE_ALIAS',
+						id: token.original.$value
+							.trim()
+							.replace(/[\{\}]/g, '')
+							.split('.')
+							.join('/'),
+					}
+				: original;
+			const resolvedType = getResolvedType(original);
 
 			return {
-				name: token.name.replaceAll('-', '/'),
+				name: token.name.split('-').join('/'),
 				description,
-				value: token.$type === 'color' ? { r: r / 255, g: g / 255, b: b / 255, a } : token.$value,
+				value,
 				hiddenFromPublishing,
 				scopes,
 				codeSyntax: { WEB: `var(--lp-${token.name})` },
+				resolvedType,
+				collection,
+				mode,
 			} satisfies Variable;
 		});
 		return `${JSON.stringify(tokens, null, 2)}\n`;
