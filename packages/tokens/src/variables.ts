@@ -3,7 +3,6 @@ import type {
 	LocalVariable,
 	LocalVariableCollection,
 	PostVariablesRequestBody,
-	RGBA,
 	VariableAlias,
 	VariableCodeSyntax,
 	VariableCreate,
@@ -11,6 +10,8 @@ import type {
 	VariableValue,
 } from '@figma/rest-api-spec';
 import type { Variable } from './types';
+
+import { colorApproximatelyEqual } from './color';
 
 const areSetsEqual = <T>(a: Set<T>, b: Set<T>) => {
 	return a.size === b.size && [...a].every((item) => b.has(item));
@@ -57,20 +58,13 @@ const compareVariableValues = (a: VariableValue, b: VariableValue) => {
 		}
 
 		if ('a' in a && 'a' in b) {
-			return isColorEqual(a, b);
+			return colorApproximatelyEqual(a, b);
 		}
 	} else {
 		return a === b;
 	}
 
 	return false;
-};
-
-const isColorEqual = (a: RGBA, b: RGBA) => {
-	return (
-		Object.keys(a).length === Object.keys(b).length &&
-		Object.keys(a).every((key) => a[key as keyof RGBA] === b[key as keyof RGBA])
-	);
 };
 
 const isCodeSyntaxEqual = (a: VariableCodeSyntax, b: VariableCodeSyntax) => {
@@ -131,7 +125,7 @@ const tokenAndVariableDifferences = (token: Variable, variable: LocalVariable | 
 };
 
 const generatePostVariablesPayload = (
-	tokens: Variable[],
+	tokens: Record<string, Record<string, Variable[]>>,
 	localVariables: GetLocalVariablesResponse,
 ) => {
 	const localVariableCollectionsByName: { [name: string]: LocalVariableCollection } = {};
@@ -167,106 +161,106 @@ const generatePostVariablesPayload = (
 		variableModeValues: [],
 	};
 
-	const collections = Object.groupBy(tokens, ({ collection }) => collection);
+	for (const [modeName, modeTokens] of Object.entries(tokens)) {
+		for (const [collectionName, collectionTokens] of Object.entries(modeTokens)) {
+			const variableCollection = localVariableCollectionsByName[collectionName];
+			// Use the actual variable collection id or use the name as the temporary id
+			const variableCollectionId = variableCollection ? variableCollection.id : collectionName;
+			const variableMode = variableCollection?.modes.find((mode) => mode.name === modeName);
+			// Use the actual mode id or use the name as the temporary id
+			const modeId = variableMode ? variableMode.modeId : Math.random().toString(36).slice(2);
 
-	for (const [collectionName, collectionTokens] of Object.entries(collections)) {
-		const modeName = 'Value';
-
-		const variableCollection = localVariableCollectionsByName[collectionName];
-		// Use the actual variable collection id or use the name as the temporary id
-		const variableCollectionId = variableCollection ? variableCollection.id : collectionName;
-		const variableMode = variableCollection?.modes.find((mode) => mode.name === modeName);
-		// Use the actual mode id or use the name as the temporary id
-		const modeId = variableMode ? variableMode.modeId : Math.random().toString(36).slice(2);
-
-		if (
-			!variableCollection &&
-			!postVariablesPayload.variableCollections?.find((c) => c.id === variableCollectionId)
-		) {
-			postVariablesPayload.variableCollections?.push({
-				action: 'CREATE',
-				id: variableCollectionId,
-				name: variableCollectionId,
-				initialModeId: modeId, // Use the initial mode as the first mode
-			});
-
-			// Rename the initial mode, since we're using it as our first mode in the collection
-			postVariablesPayload.variableModes?.push({
-				action: 'UPDATE',
-				id: modeId,
-				name: modeName,
-				variableCollectionId,
-			});
-		}
-
-		// Add a new mode if it doesn't exist in the Figma file
-		// and it's not the initial mode in the collection
-		if (
-			!variableMode &&
-			!postVariablesPayload.variableCollections?.find(
-				(c) => c.id === variableCollectionId && 'initialModeId' in c && c.initialModeId === modeId,
-			)
-		) {
-			postVariablesPayload.variableModes?.push({
-				action: 'CREATE',
-				id: modeId,
-				name: modeId,
-				variableCollectionId,
-			});
-		}
-
-		const localVariablesByName = localVariablesByCollectionAndName[variableCollection?.id] || {};
-
-		for (const token of collectionTokens || []) {
-			const tokenName = token.name || '';
-			const variable = localVariablesByName[tokenName];
-			const variableId = variable ? variable.id : tokenName;
-			const variableInPayload = postVariablesPayload.variables?.find(
-				(v) =>
-					v.id === variableId &&
-					'variableCollectionId' in v &&
-					v.variableCollectionId === variableCollectionId,
-			);
-			const differences = tokenAndVariableDifferences(token, variable);
-
-			// Add a new variable if it doesn't exist in the Figma file,
-			// and we haven't added it already in another mode
-			if (!variable && !variableInPayload) {
-				postVariablesPayload.variables?.push({
+			if (
+				!variableCollection &&
+				!postVariablesPayload.variableCollections?.find((c) => c.id === variableCollectionId)
+			) {
+				postVariablesPayload.variableCollections?.push({
 					action: 'CREATE',
-					id: variableId,
-					name: tokenName,
-					variableCollectionId,
-					resolvedType: token.resolvedType || 'STRING',
-					...differences,
+					id: variableCollectionId,
+					name: variableCollectionId,
+					initialModeId: modeId, // Use the initial mode as the first mode
 				});
-			} else if (variable && Object.keys(differences).length > 0) {
-				if (variable.remote) {
-					throw new Error(
-						`Cannot update remote variable "${variable.name}" in collection "${collectionName}"`,
-					);
-				}
 
-				postVariablesPayload.variables?.push({
+				// Rename the initial mode, since we're using it as our first mode in the collection
+				postVariablesPayload.variableModes?.push({
 					action: 'UPDATE',
-					id: variableId,
-					...differences,
+					id: modeId,
+					name: modeName,
+					variableCollectionId,
 				});
 			}
 
-			const existingVariableValue = variable && variableMode ? variable.valuesByMode[modeId] : null;
-			const newVariableValue = variableValueFromToken(token, localVariablesByCollectionAndName);
-
-			// Only include the variable mode value in the payload if it's different from the existing value
+			// Add a new mode if it doesn't exist in the Figma file
+			// and it's not the initial mode in the collection
 			if (
-				existingVariableValue === null ||
-				!compareVariableValues(existingVariableValue, newVariableValue)
+				!variableMode &&
+				!postVariablesPayload.variableCollections?.find(
+					(c) =>
+						c.id === variableCollectionId && 'initialModeId' in c && c.initialModeId === modeId,
+				)
 			) {
-				postVariablesPayload.variableModeValues?.push({
-					variableId,
-					modeId,
-					value: newVariableValue,
+				postVariablesPayload.variableModes?.push({
+					action: 'CREATE',
+					id: modeId,
+					name: modeName,
+					variableCollectionId,
 				});
+			}
+
+			const localVariablesByName = localVariablesByCollectionAndName[variableCollection?.id] || {};
+
+			for (const token of collectionTokens || []) {
+				const tokenName = token.name || '';
+				const variable = localVariablesByName[tokenName];
+				const variableId = variable ? variable.id : tokenName;
+				const variableInPayload = postVariablesPayload.variables?.find(
+					(v) =>
+						v.id === variableId &&
+						'variableCollectionId' in v &&
+						v.variableCollectionId === variableCollectionId,
+				);
+				const differences = tokenAndVariableDifferences(token, variable);
+
+				// Add a new variable if it doesn't exist in the Figma file,
+				// and we haven't added it already in another mode
+				if (!variable && !variableInPayload) {
+					postVariablesPayload.variables?.push({
+						action: 'CREATE',
+						id: variableId,
+						name: tokenName,
+						variableCollectionId,
+						resolvedType: token.resolvedType || 'STRING',
+						...differences,
+					});
+				} else if (variable && Object.keys(differences).length > 0) {
+					if (variable.remote) {
+						throw new Error(
+							`Cannot update remote variable "${variable.name}" in collection "${collectionName}"`,
+						);
+					}
+
+					postVariablesPayload.variables?.push({
+						action: 'UPDATE',
+						id: variableId,
+						...differences,
+					});
+				}
+
+				const existingVariableValue =
+					variable && variableMode ? variable.valuesByMode[modeId] : null;
+				const newVariableValue = variableValueFromToken(token, localVariablesByCollectionAndName);
+
+				// Only include the variable mode value in the payload if it's different from the existing value
+				if (
+					existingVariableValue === null ||
+					!compareVariableValues(existingVariableValue, newVariableValue)
+				) {
+					postVariablesPayload.variableModeValues?.push({
+						variableId,
+						modeId,
+						value: newVariableValue,
+					});
+				}
 			}
 		}
 	}

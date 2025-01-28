@@ -15,6 +15,7 @@ import { fileHeader, minifyDictionary, usesReferences } from 'style-dictionary/u
 
 import { css, themes } from './themes';
 
+const [light, dark] = themes;
 const configs = themes.map(css);
 
 const runSD = async (cfg: Config) => {
@@ -180,7 +181,7 @@ const sd = new StyleDictionary({
 			},
 			files: [
 				{
-					destination: 'figma.json',
+					destination: `figma.${light}.json`,
 					format: 'json/figma',
 					filter: (token) => token.$extensions,
 				},
@@ -204,17 +205,38 @@ const sd = new StyleDictionary({
 	},
 });
 
-sd.registerFormat({
-	name: 'css/themes',
-	format: async () => {
-		const light = aliasTokens['default.css'];
-		const dark = aliasTokens['dark.css'];
-
-		return `${light}\n${dark}`;
+const modes = new StyleDictionary({
+	source: ['tokens/color-primitives.json', `tokens/*.${light}.json`, `tokens/*.${dark}.json`],
+	platforms: {
+		figma: {
+			buildPath: 'dist/',
+			transforms: [transforms.nameKebab, transforms.attributeColor],
+			options: {
+				outputReferences: true,
+				usesDtcg: true,
+			},
+			files: [
+				{
+					destination: `figma.${dark}.json`,
+					format: 'json/figma',
+					filter: (token) => !token.filePath.includes('primitives'),
+				},
+			],
+		},
 	},
 });
 
-sd.registerFormat({
+StyleDictionary.registerFormat({
+	name: 'css/themes',
+	format: async () => {
+		const lightMode = aliasTokens[`${light}.css`];
+		const darkMode = aliasTokens[`${dark}.css`];
+
+		return `${lightMode}\n${darkMode}`;
+	},
+});
+
+StyleDictionary.registerFormat({
 	name: 'custom/font-face',
 	format: async ({ dictionary }) => {
 		return dictionary.allTokens
@@ -234,14 +256,14 @@ sd.registerFormat({
 	},
 });
 
-sd.registerFormat({
+StyleDictionary.registerFormat({
 	name: 'custom/json',
 	format: async ({ dictionary, options }) => {
 		return `${JSON.stringify(minifyDictionary(dictionary.tokens, options.usesDtcg), null, 2)}\n`;
 	},
 });
 
-sd.registerFormat({
+StyleDictionary.registerFormat({
 	name: 'custom/media-query',
 	format: async ({ dictionary }) => {
 		return dictionary.allTokens
@@ -254,7 +276,7 @@ sd.registerFormat({
 	},
 });
 
-sd.registerFormat({
+StyleDictionary.registerFormat({
 	name: 'javascript/esm',
 	format: async ({ dictionary, file, options }) => {
 		const header = await fileHeader({ file });
@@ -266,7 +288,7 @@ sd.registerFormat({
 	},
 });
 
-sd.registerFormat({
+StyleDictionary.registerFormat({
 	name: 'javascript/commonJs',
 	format: async ({ dictionary, file, options }) => {
 		const header = await fileHeader({ file });
@@ -278,7 +300,7 @@ sd.registerFormat({
 	},
 });
 
-sd.registerFormat({
+StyleDictionary.registerFormat({
 	name: 'typescript/accurate-module-declarations',
 	format: async ({ dictionary, options }) => {
 		return `declare const root: RootObject\nexport default root\n${JsonToTS(
@@ -287,7 +309,7 @@ sd.registerFormat({
 	},
 });
 
-sd.registerFormat({
+StyleDictionary.registerFormat({
 	name: 'json/category',
 	format: async ({ dictionary }) => {
 		const groups = dictionary.allTokens.reduce((acc: TransformedToken, obj) => {
@@ -300,14 +322,14 @@ sd.registerFormat({
 	},
 });
 
-sd.registerFormat({
+StyleDictionary.registerFormat({
 	name: 'json/figma',
 	format: async ({ dictionary }) => {
 		const tokens = dictionary.allTokens.map((token) => {
 			const { attributes, $description: description, $extensions } = token;
-			const { hiddenFromPublishing, scopes } = $extensions['com.figma'];
+			const { hiddenFromPublishing, scopes } = $extensions?.['com.figma'] || {};
 
-			const [collection, mode] = token.filePath
+			const [collection] = token.filePath
 				.replace('tokens/', '')
 				.split('.')
 				.filter((path) => path !== 'json');
@@ -336,14 +358,13 @@ sd.registerFormat({
 				codeSyntax: { WEB: `var(--lp-${token.name})` },
 				resolvedType,
 				collection,
-				mode,
 			} satisfies Variable;
 		});
 		return `${JSON.stringify(tokens, null, 2)}\n`;
 	},
 });
 
-sd.registerTransform({
+StyleDictionary.registerTransform({
 	name: 'custom/value/name',
 	type: 'attribute',
 	transform: (token) => {
@@ -352,7 +373,7 @@ sd.registerTransform({
 	},
 });
 
-sd.registerTransform({
+StyleDictionary.registerTransform({
 	name: 'attribute/font',
 	type: 'attribute',
 	filter: (token) => token.$type === 'file',
@@ -366,3 +387,4 @@ sd.registerTransform({
 });
 
 await sd.buildAllPlatforms();
+await modes.buildAllPlatforms();

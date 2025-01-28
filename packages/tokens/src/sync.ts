@@ -1,6 +1,7 @@
 import type { Variable } from './types';
 
-import tokens from '../dist/figma.json';
+import darkTokens from '../dist/figma.dark.json';
+import defaultTokens from '../dist/figma.default.json';
 import { FigmaApi } from './figma';
 import { generatePostVariablesPayload } from './variables';
 
@@ -10,7 +11,14 @@ const main = async () => {
 
 	const localVariables = await api.getLocalVariables(fileKey);
 
-	const postVariablesPayload = generatePostVariablesPayload(tokens as Variable[], localVariables);
+	const tokens = {
+		Default: Object.groupBy(defaultTokens, ({ collection }) => collection),
+		Dark: Object.groupBy(darkTokens, ({ collection }) => collection),
+	};
+	const postVariablesPayload = generatePostVariablesPayload(
+		tokens as Record<string, Record<string, Variable[]>>,
+		localVariables,
+	);
 
 	if (Object.values(postVariablesPayload).every((value) => value.length === 0)) {
 		console.log('%c ✅ Tokens are already up to date with the Figma file', 'color:green;');
