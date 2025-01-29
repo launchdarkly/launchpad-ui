@@ -21,7 +21,7 @@
 		"test:watch": "vitest",
 		"prepare": "husky",
 		"release": "nx affected --target=build --base=HEAD~1 --head=HEAD --exclude=launchpad-design-system && changeset publish",
-		"typecheck": "pnpm build:transform && tsc --noEmit --emitDeclarationOnly false --skipLibCheck --moduleResolution bundler"
+		"typecheck": "pnpm build:transform && tsc --noEmit --emitDeclarationOnly false --skipLibCheck --moduleResolution bundler --lib 'es2024, dom, dom.iterable'"
 	},
 	"repository": {
 		"type": "git",
