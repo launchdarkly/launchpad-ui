@@ -10,7 +10,7 @@ import type { Variable } from './types';
 
 import JsonToTS from 'json-to-ts';
 import StyleDictionary from 'style-dictionary';
-import { formats, transformGroups, transforms } from 'style-dictionary/enums';
+import { formats, transformGroups, transformTypes, transforms } from 'style-dictionary/enums';
 import { fileHeader, minifyDictionary, usesReferences } from 'style-dictionary/utils';
 
 import { css, themes } from './themes';
@@ -366,7 +366,7 @@ StyleDictionary.registerFormat({
 
 StyleDictionary.registerTransform({
 	name: 'custom/value/name',
-	type: 'attribute',
+	type: transformTypes.attribute,
 	transform: (token) => {
 		token.$value = token.name;
 		return token;
@@ -375,7 +375,7 @@ StyleDictionary.registerTransform({
 
 StyleDictionary.registerTransform({
 	name: 'attribute/font',
-	type: 'attribute',
+	type: transformTypes.attribute,
 	filter: (token) => token.$type === 'file',
 	transform: (token) => ({
 		category: token.path[0],

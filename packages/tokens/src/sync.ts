@@ -5,9 +5,10 @@ import defaultTokens from '../dist/figma.default.json';
 import { FigmaApi } from './figma';
 import { generatePostVariablesPayload } from './variables';
 
+// https://github.com/gerard-figma/figma-variables-to-styledictionary
 const main = async () => {
-	const fileKey = '';
-	const api = new FigmaApi('');
+	const fileKey = process.env.FIGMA_FILE_KEY ?? '';
+	const api = new FigmaApi(process.env.FIGMA_TOKEN ?? '');
 
 	const localVariables = await api.getLocalVariables(fileKey);
 
