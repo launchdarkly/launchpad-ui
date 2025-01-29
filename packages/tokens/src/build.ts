@@ -144,6 +144,9 @@ const sd = new StyleDictionary({
 				{
 					format: 'javascript/esm',
 					destination: 'index.es.js',
+					options: {
+						minify: true,
+					},
 				},
 				{
 					format: 'typescript/accurate-module-declarations',
@@ -273,18 +276,6 @@ StyleDictionary.registerFormat({
 				return `@custom-media --${size} screen and (min-width: ${$value});`;
 			})
 			.join('\n');
-	},
-});
-
-StyleDictionary.registerFormat({
-	name: 'javascript/esm',
-	format: async ({ dictionary, file, options }) => {
-		const header = await fileHeader({ file });
-		return `${header}export default ${JSON.stringify(
-			minifyDictionary(dictionary.tokens, options.usesDtcg),
-			null,
-			2,
-		)};\n`;
 	},
 });
 
