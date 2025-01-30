@@ -90,8 +90,7 @@
 	"packageManager": "pnpm@9.15.3",
 	"pnpm": {
 		"overrides": {
-			"@joshwooding/vite-plugin-react-docgen-typescript": "0.3.0",
-			"vite": "^6.0.9"
+			"@joshwooding/vite-plugin-react-docgen-typescript": "0.3.0"
 		},
 		"peerDependencyRules": {
 			"allowedVersions": {
