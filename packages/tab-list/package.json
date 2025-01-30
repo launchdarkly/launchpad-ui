@@ -1,6 +1,6 @@
 {
 	"name": "@launchpad-ui/tab-list",
-	"version": "0.5.36",
+	"version": "0.5.37",
 	"status": "beta",
 	"publishConfig": {
 		"access": "public"

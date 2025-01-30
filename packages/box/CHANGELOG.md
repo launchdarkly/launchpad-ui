@@ -1,5 +1,15 @@
 # @launchpad-ui/box
 
+## 0.1.24
+
+### Patch Changes
+
+- [#1530](https://github.com/launchdarkly/launchpad-ui/pull/1530) [`eb7e2a8`](https://github.com/launchdarkly/launchpad-ui/commit/eb7e2a817e97263f9c1ff830bdf4c1b8cbb304c6) Thanks [@Niznikr](https://github.com/Niznikr)! - Remove `color` prefix from `gradient` tokens
+
+- Updated dependencies [[`eb7e2a8`](https://github.com/launchdarkly/launchpad-ui/commit/eb7e2a817e97263f9c1ff830bdf4c1b8cbb304c6)]:
+  - @launchpad-ui/tokens@0.12.2
+  - @launchpad-ui/vars@0.3.2
+
 ## 0.1.23
 
 ### Patch Changes
