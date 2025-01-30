@@ -5,7 +5,7 @@ settings:
   excludeLinksFromLockfile: false
 
 overrides:
-  '@joshwooding/vite-plugin-react-docgen-typescript': 0.3.0
+  '@joshwooding/vite-plugin-react-docgen-typescript': 0.5.0
 
 importers:
 
@@ -2100,11 +2100,11 @@ packages:
     resolution: {integrity: sha512-mo5j5X+jIZmJQveBKeS/clAueipV7KgiX1vMgCxam1RNYiqE1w62n0/tJJnHtjW8ZHcQco5gY85jA3mi0L+nSA==}
     engines: {node: ^14.15.0 || ^16.10.0 || >=18.0.0}
 
-  '@joshwooding/vite-plugin-react-docgen-typescript@0.3.0':
-    resolution: {integrity: sha512-2D6y7fNvFmsLmRt6UCOFJPvFoPMJGT0Uh1Wg0RaigUp7kdQPs6yYn8Dmx6GZkOH/NW0yMTwRz/p0SRMMRo50vA==}
+  '@joshwooding/vite-plugin-react-docgen-typescript@0.5.0':
+    resolution: {integrity: sha512-qYDdL7fPwLRI+bJNurVcis+tNgJmvWjH4YTBGXTA8xMuxFrnAz6E5o35iyzyKbq5J5Lr8mJGfrR5GXl+WGwhgQ==}
     peerDependencies:
       typescript: '>= 4.3.x'
-      vite: ^3.0.0 || ^4.0.0 || ^5.0.0
+      vite: ^3.0.0 || ^4.0.0 || ^5.0.0 || ^6.0.0
     peerDependenciesMeta:
       typescript:
         optional: true
@@ -3392,9 +3392,6 @@ packages:
   '@types/fined@1.1.5':
     resolution: {integrity: sha512-2N93vadEGDFhASTIRbizbl4bNqpMOId5zZfj6hHqYZfEzEfO9onnU4Im8xvzo8uudySDveDHBOOSlTWf38ErfQ==}
 
-  '@types/glob@7.2.0':
-    resolution: {integrity: sha512-ZUxbzKl0IfJILTS6t7ip5fQQM/J3TJYubDm3nMbgubNNYS62eXeUpoLUC8/7fJNiFYHTrGPQn7hspDUzIHX3UA==}
-
   '@types/inquirer@9.0.7':
     resolution: {integrity: sha512-Q0zyBupO6NxGRZut/JdmqYKOnN95Eg5V8Csg3PGKkP+FnvsUZx1jAyK7fztIszxxMuoBA6E3KXWvdZVXIpx60g==}
 
@@ -3403,9 +3400,6 @@ packages:
 
   '@types/mdx@2.0.13':
     resolution: {integrity: sha512-+OWZQfAYyio6YkJb3HLxDrvnx6SWWDbC0zVPfBRzUk0/nqoDyf6dNxQi3eArPe8rJ473nobTMQ/8Zk+LxJ+Yuw==}
-
-  '@types/minimatch@5.1.2':
-    resolution: {integrity: sha512-K0VQKziLUWkVKiRVrx4a40iPaxTUefQmjtkQofBkYRcoaaL/8rhwDWww9qWbrgicNOgnpIsMxyNIUM4+n6dUIA==}
 
   '@types/node@12.20.55':
     resolution: {integrity: sha512-J8xLz7q2OFulZ2cyGTLE1TbbZcjpno7FaN6zdJNrgAdrJ+DZzh/uFR6YrTb4C+nXakvud8Q4+rbhoIWlYQbUFQ==}
@@ -4449,12 +4443,6 @@ packages:
   glob-parent@5.1.2:
     resolution: {integrity: sha512-AOIgSQCepiJYwP3ARnGx+5VnTu2HBYdzbGP45eLw1vr3zB3vZLeyed1sC9hnbcOc9/SrMyM5RPQrkGz4aS9Zow==}
     engines: {node: '>= 6'}
-
-  glob-promise@4.2.2:
-    resolution: {integrity: sha512-xcUzJ8NWN5bktoTIX7eOclO1Npxd/dyVqUJxlLIDasT4C7KZyqlPIwkdJ0Ypiy3p2ZKahTjK4M9uC3sNSfNMzw==}
-    engines: {node: '>=12'}
-    peerDependencies:
-      glob: ^7.1.6
 
   glob@10.4.5:
     resolution: {integrity: sha512-7Bv8RF0k6xjo7d4A/PxYLbUCfb6c+Vpd2/mB2yRDlew7Jb5hEXiCD9ibfO7wpk8i4sevK6DFny9h7EYbM3/sHg==}
@@ -7448,10 +7436,9 @@ snapshots:
     dependencies:
       '@sinclair/typebox': 0.27.8
 
-  '@joshwooding/vite-plugin-react-docgen-typescript@0.3.0(typescript@5.7.2)(vite@6.0.9(@types/node@22.10.1)(jiti@1.21.6)(less@4.2.0)(lightningcss@1.29.1)(sass@1.80.5)(stylus@0.62.0)(tsx@4.19.2)(yaml@2.6.1))':
+  '@joshwooding/vite-plugin-react-docgen-typescript@0.5.0(typescript@5.7.2)(vite@6.0.9(@types/node@22.10.1)(jiti@1.21.6)(less@4.2.0)(lightningcss@1.29.1)(sass@1.80.5)(stylus@0.62.0)(tsx@4.19.2)(yaml@2.6.1))':
     dependencies:
-      glob: 7.2.3
-      glob-promise: 4.2.2(glob@7.2.3)
+      glob: 10.4.5
       magic-string: 0.27.0
       react-docgen-typescript: 2.2.2(typescript@5.7.2)
       vite: 6.0.9(@types/node@22.10.1)(jiti@1.21.6)(less@4.2.0)(lightningcss@1.29.1)(sass@1.80.5)(stylus@0.62.0)(tsx@4.19.2)(yaml@2.6.1)
@@ -8980,7 +8967,7 @@ snapshots:
 
   '@storybook/react-vite@8.5.0(@storybook/test@8.5.0(storybook@8.5.0(prettier@3.4.1)))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(rollup@4.31.0)(storybook@8.5.0(prettier@3.4.1))(typescript@5.7.2)(vite@6.0.9(@types/node@22.10.1)(jiti@1.21.6)(less@4.2.0)(lightningcss@1.29.1)(sass@1.80.5)(stylus@0.62.0)(tsx@4.19.2)(yaml@2.6.1))':
     dependencies:
-      '@joshwooding/vite-plugin-react-docgen-typescript': 0.3.0(typescript@5.7.2)(vite@6.0.9(@types/node@22.10.1)(jiti@1.21.6)(less@4.2.0)(lightningcss@1.29.1)(sass@1.80.5)(stylus@0.62.0)(tsx@4.19.2)(yaml@2.6.1))
+      '@joshwooding/vite-plugin-react-docgen-typescript': 0.5.0(typescript@5.7.2)(vite@6.0.9(@types/node@22.10.1)(jiti@1.21.6)(less@4.2.0)(lightningcss@1.29.1)(sass@1.80.5)(stylus@0.62.0)(tsx@4.19.2)(yaml@2.6.1))
       '@rollup/pluginutils': 5.1.3(rollup@4.31.0)
       '@storybook/builder-vite': 8.5.0(storybook@8.5.0(prettier@3.4.1))(vite@6.0.9(@types/node@22.10.1)(jiti@1.21.6)(less@4.2.0)(lightningcss@1.29.1)(sass@1.80.5)(stylus@0.62.0)(tsx@4.19.2)(yaml@2.6.1))
       '@storybook/react': 8.5.0(@storybook/test@8.5.0(storybook@8.5.0(prettier@3.4.1)))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(storybook@8.5.0(prettier@3.4.1))(typescript@5.7.2)
@@ -9183,11 +9170,6 @@ snapshots:
 
   '@types/fined@1.1.5': {}
 
-  '@types/glob@7.2.0':
-    dependencies:
-      '@types/minimatch': 5.1.2
-      '@types/node': 22.10.1
-
   '@types/inquirer@9.0.7':
     dependencies:
       '@types/through': 0.0.33
@@ -9199,8 +9181,6 @@ snapshots:
       '@types/node': 22.10.1
 
   '@types/mdx@2.0.13': {}
-
-  '@types/minimatch@5.1.2': {}
 
   '@types/node@12.20.55': {}
 
@@ -10431,11 +10411,6 @@ snapshots:
   glob-parent@5.1.2:
     dependencies:
       is-glob: 4.0.3
-
-  glob-promise@4.2.2(glob@7.2.3):
-    dependencies:
-      '@types/glob': 7.2.0
-      glob: 7.2.3
 
   glob@10.4.5:
     dependencies:
