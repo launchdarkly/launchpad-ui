@@ -41,10 +41,12 @@
 		"build": "tsx src/build.ts && tsc --noEmit",
 		"clean": "rm -rf dist",
 		"lint": "exit 0",
-		"test": "vitest run"
+		"test": "vitest run",
+		"sync": "tsx src/sync.ts"
 	},
 	"devDependencies": {
-		"@figma/rest-api-spec": "^0.22.0",
+		"@figma/rest-api-spec": "^0.23.0",
+		"axios": "^1.7.9",
 		"json-to-ts": "^2.1.0",
 		"style-dictionary": "^4.3.0",
 		"tsx": "^4.19.0"

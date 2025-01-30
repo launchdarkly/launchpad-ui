@@ -1224,8 +1224,11 @@ importers:
   packages/tokens:
     devDependencies:
       '@figma/rest-api-spec':
-        specifier: ^0.22.0
-        version: 0.22.0
+        specifier: ^0.23.0
+        version: 0.23.0
+      axios:
+        specifier: ^1.7.9
+        version: 1.7.9
       json-to-ts:
         specifier: ^2.1.0
         version: 2.1.0
@@ -2038,8 +2041,8 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@figma/rest-api-spec@0.22.0':
-    resolution: {integrity: sha512-8XEdN41ahdUXMTR+E3CMmtXqlJYzuHun4VYUCElrkGsd6g1BFEYTiNCwIHy34Ooct2O8/zwpysnkw52EzVKdtQ==}
+  '@figma/rest-api-spec@0.23.0':
+    resolution: {integrity: sha512-x7oWMfg8cYv1yGAxqEzq6m0Eg3mzqa96PvrXBLPWbm3xHiA3Zj9KvhfQau2hVi6BCVBW+ZcJYvllg25JXe6y+w==}
 
   '@figspec/components@1.0.3':
     resolution: {integrity: sha512-fBwHzJ4ouuOUJEi+yBZIrOy+0/fAjB3AeTcIHTT1PRxLz8P63xwC7R0EsIJXhScIcc+PljGmqbbVJCjLsnaGYA==}
@@ -3676,8 +3679,8 @@ packages:
     resolution: {integrity: sha512-RE3mdQ7P3FRSe7eqCWoeQ/Z9QXrtniSjp1wUjt5nRC3WIpz5rSCve6o3fsZ2aCpJtrZjSZgjwXAoTO5k4tEI0w==}
     engines: {node: '>=4'}
 
-  axios@1.7.7:
-    resolution: {integrity: sha512-S4kL7XrjgBmvdGut0sN3yJxqYzrDOnivkBiN0OFs6hLiUam3UPvswUo0kqGyhqUZGEOytHyumEdXsAkgCOUf3Q==}
+  axios@1.7.9:
+    resolution: {integrity: sha512-LhLcE7Hbiryz8oMDdDptSrWowmB4Bl6RCt6sIJKpRB4XtVf0iEgewX3au/pJqm+Py1kCASkb/FFKjxQaLtxJvw==}
 
   balanced-match@1.0.2:
     resolution: {integrity: sha512-3oSeUO0TMV67hN1AmbXsK4yaqU7tjiHlbxRDZOpH0KW9+CeX4bRAaX0Anxt0tx2MrpRpWwQaPwIlISEJhYU5Pw==}
@@ -7360,7 +7363,7 @@ snapshots:
   '@esbuild/win32-x64@0.24.2':
     optional: true
 
-  '@figma/rest-api-spec@0.22.0': {}
+  '@figma/rest-api-spec@0.23.0': {}
 
   '@figspec/components@1.0.3':
     dependencies:
@@ -9562,7 +9565,7 @@ snapshots:
 
   axe-core@4.10.2: {}
 
-  axios@1.7.7:
+  axios@1.7.9:
     dependencies:
       follow-redirects: 1.15.9
       form-data: 4.0.1
@@ -11323,7 +11326,7 @@ snapshots:
       '@yarnpkg/lockfile': 1.1.0
       '@yarnpkg/parsers': 3.0.0-rc.46
       '@zkochan/js-yaml': 0.0.7
-      axios: 1.7.7
+      axios: 1.7.9
       chalk: 4.1.2
       cli-cursor: 3.1.0
       cli-spinners: 2.6.1

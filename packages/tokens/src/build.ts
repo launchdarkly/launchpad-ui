@@ -1,4 +1,4 @@
-import type { LocalVariable, RGBA, VariableValue } from '@figma/rest-api-spec';
+import type { RGBA, VariableValue } from '@figma/rest-api-spec';
 import type {
 	Config,
 	DesignToken,
@@ -6,18 +6,16 @@ import type {
 	PreprocessedTokens,
 	TransformedToken,
 } from 'style-dictionary/types';
+import type { Variable } from './types';
 
 import JsonToTS from 'json-to-ts';
 import StyleDictionary from 'style-dictionary';
-import { formats, transformGroups, transforms } from 'style-dictionary/enums';
-import { fileHeader, minifyDictionary } from 'style-dictionary/utils';
+import { formats, transformGroups, transformTypes, transforms } from 'style-dictionary/enums';
+import { fileHeader, minifyDictionary, usesReferences } from 'style-dictionary/utils';
 
 import { css, themes } from './themes';
 
-interface Variable extends Partial<LocalVariable> {
-	value: VariableValue;
-}
-
+const [light, dark] = themes;
 const configs = themes.map(css);
 
 const runSD = async (cfg: Config) => {
@@ -69,6 +67,21 @@ const removeExtensions = (slice: DesignTokens | DesignToken): PreprocessedTokens
 		}
 	}
 	return slice as PreprocessedTokens;
+};
+
+const getResolvedType = (value: DesignToken['$value']) => {
+	switch (typeof value) {
+		case 'object':
+			return 'COLOR';
+		case 'number':
+			return 'FLOAT';
+		case 'string':
+			return 'STRING';
+		case 'boolean':
+			return 'BOOLEAN';
+		default:
+			throw new Error(`Invalid token type: ${typeof value}`);
+	}
 };
 
 const sd = new StyleDictionary({
@@ -131,6 +144,9 @@ const sd = new StyleDictionary({
 				{
 					format: 'javascript/esm',
 					destination: 'index.es.js',
+					options: {
+						minify: true,
+					},
 				},
 				{
 					format: 'typescript/accurate-module-declarations',
@@ -168,7 +184,7 @@ const sd = new StyleDictionary({
 			},
 			files: [
 				{
-					destination: 'figma.json',
+					destination: `figma.${light}.json`,
 					format: 'json/figma',
 					filter: (token) => token.$extensions,
 				},
@@ -192,17 +208,38 @@ const sd = new StyleDictionary({
 	},
 });
 
-sd.registerFormat({
-	name: 'css/themes',
-	format: async () => {
-		const light = aliasTokens['default.css'];
-		const dark = aliasTokens['dark.css'];
-
-		return `${light}\n${dark}`;
+const modes = new StyleDictionary({
+	source: ['tokens/color-primitives.json', `tokens/*.${light}.json`, `tokens/*.${dark}.json`],
+	platforms: {
+		figma: {
+			buildPath: 'dist/',
+			transforms: [transforms.nameKebab, transforms.attributeColor],
+			options: {
+				outputReferences: true,
+				usesDtcg: true,
+			},
+			files: [
+				{
+					destination: `figma.${dark}.json`,
+					format: 'json/figma',
+					filter: (token) => !token.filePath.includes('primitives'),
+				},
+			],
+		},
 	},
 });
 
-sd.registerFormat({
+StyleDictionary.registerFormat({
+	name: 'css/themes',
+	format: async () => {
+		const lightMode = aliasTokens[`${light}.css`];
+		const darkMode = aliasTokens[`${dark}.css`];
+
+		return `${lightMode}\n${darkMode}`;
+	},
+});
+
+StyleDictionary.registerFormat({
 	name: 'custom/font-face',
 	format: async ({ dictionary }) => {
 		return dictionary.allTokens
@@ -222,14 +259,14 @@ sd.registerFormat({
 	},
 });
 
-sd.registerFormat({
+StyleDictionary.registerFormat({
 	name: 'custom/json',
 	format: async ({ dictionary, options }) => {
 		return `${JSON.stringify(minifyDictionary(dictionary.tokens, options.usesDtcg), null, 2)}\n`;
 	},
 });
 
-sd.registerFormat({
+StyleDictionary.registerFormat({
 	name: 'custom/media-query',
 	format: async ({ dictionary }) => {
 		return dictionary.allTokens
@@ -242,19 +279,7 @@ sd.registerFormat({
 	},
 });
 
-sd.registerFormat({
-	name: 'javascript/esm',
-	format: async ({ dictionary, file, options }) => {
-		const header = await fileHeader({ file });
-		return `${header}export default ${JSON.stringify(
-			minifyDictionary(dictionary.tokens, options.usesDtcg),
-			null,
-			2,
-		)};\n`;
-	},
-});
-
-sd.registerFormat({
+StyleDictionary.registerFormat({
 	name: 'javascript/commonJs',
 	format: async ({ dictionary, file, options }) => {
 		const header = await fileHeader({ file });
@@ -266,7 +291,7 @@ sd.registerFormat({
 	},
 });
 
-sd.registerFormat({
+StyleDictionary.registerFormat({
 	name: 'typescript/accurate-module-declarations',
 	format: async ({ dictionary, options }) => {
 		return `declare const root: RootObject\nexport default root\n${JsonToTS(
@@ -275,7 +300,7 @@ sd.registerFormat({
 	},
 });
 
-sd.registerFormat({
+StyleDictionary.registerFormat({
 	name: 'json/category',
 	format: async ({ dictionary }) => {
 		const groups = dictionary.allTokens.reduce((acc: TransformedToken, obj) => {
@@ -288,39 +313,60 @@ sd.registerFormat({
 	},
 });
 
-sd.registerFormat({
+StyleDictionary.registerFormat({
 	name: 'json/figma',
 	format: async ({ dictionary }) => {
 		const tokens = dictionary.allTokens.map((token) => {
-			const { attributes, $description: description, $extensions } = token;
-			const { hiddenFromPublishing, scopes } = $extensions['com.figma'];
+			const { attributes, $description: description = '', $extensions } = token;
+			const { hiddenFromPublishing, scopes } = $extensions?.['com.figma'] || {};
+
+			const [collection] = token.filePath
+				.replace('tokens/', '')
+				.split('.')
+				.filter((path) => path !== 'json');
+
 			const { r, g, b, a } = { ...(attributes?.rgb as RGBA) };
+			const original: VariableValue =
+				token.$type === 'color' ? { r: r / 255, g: g / 255, b: b / 255, a } : token.$value;
+			const value: VariableValue = usesReferences(token.original.$value)
+				? {
+						type: 'VARIABLE_ALIAS',
+						id: token.original.$value
+							.trim()
+							.replace(/[\{\}]/g, '')
+							.split('.')
+							.join('/'),
+					}
+				: original;
+			const resolvedType = getResolvedType(original);
 
 			return {
-				name: token.name.replaceAll('-', '/'),
+				name: token.name.split('-').join('/'),
 				description,
-				value: token.$type === 'color' ? { r: r / 255, g: g / 255, b: b / 255, a } : token.$value,
+				value,
 				hiddenFromPublishing,
 				scopes,
 				codeSyntax: { WEB: `var(--lp-${token.name})` },
+				resolvedType,
+				collection,
 			} satisfies Variable;
 		});
 		return `${JSON.stringify(tokens, null, 2)}\n`;
 	},
 });
 
-sd.registerTransform({
+StyleDictionary.registerTransform({
 	name: 'custom/value/name',
-	type: 'attribute',
+	type: transformTypes.attribute,
 	transform: (token) => {
 		token.$value = token.name;
 		return token;
 	},
 });
 
-sd.registerTransform({
+StyleDictionary.registerTransform({
 	name: 'attribute/font',
-	type: 'attribute',
+	type: transformTypes.attribute,
 	filter: (token) => token.$type === 'file',
 	transform: (token) => ({
 		category: token.path[0],
@@ -332,3 +378,4 @@ sd.registerTransform({
 });
 
 await sd.buildAllPlatforms();
+await modes.buildAllPlatforms();
