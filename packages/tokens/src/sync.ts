@@ -17,7 +17,7 @@ const main = async () => {
 		Dark: Object.groupBy(darkTokens, ({ collection }) => collection),
 	};
 	const postVariablesPayload = generatePostVariablesPayload(
-		tokens as Record<string, Record<string, Variable[]>>,
+		tokens as unknown as Record<string, Record<string, Variable[]>>,
 		localVariables,
 	);
 

@@ -31,10 +31,12 @@ const variableValueFromToken = (
 		// When mapping aliases to existing local variables, we assume that variable names
 		// are unique *across all collections* in the Figma file
 		for (const localVariablesByName of Object.values(localVariablesByCollectionAndName)) {
-			if (localVariablesByName[value]) {
+			// Remove the root since the collection acts as the root - color/blue/500 -> blue/500
+			const name = value.split('/').slice(1).join('/');
+			if (localVariablesByName[name]) {
 				return {
 					type: 'VARIABLE_ALIAS',
-					id: localVariablesByName[value].id,
+					id: localVariablesByName[name].id,
 				};
 			}
 		}
@@ -207,12 +209,13 @@ const generatePostVariablesPayload = (
 				});
 			}
 
-			const localVariablesByName = localVariablesByCollectionAndName[variableCollection?.id] || {};
+			const localVariablesByName = localVariablesByCollectionAndName[variableCollection?.id];
 
-			for (const token of collectionTokens || []) {
-				const tokenName = token.name || '';
+			for (const token of collectionTokens) {
+				// Remove the root since the collection acts as the root - color/blue/500 -> blue/500
+				const tokenName = token.name.split('/').slice(1).join('/');
 				const variable = localVariablesByName[tokenName];
-				const variableId = variable ? variable.id : tokenName;
+				const variableId = variable ? variable.id : token.name;
 				const variableInPayload = postVariablesPayload.variables?.find(
 					(v) =>
 						v.id === variableId &&
@@ -229,7 +232,7 @@ const generatePostVariablesPayload = (
 						id: variableId,
 						name: tokenName,
 						variableCollectionId,
-						resolvedType: token.resolvedType || 'STRING',
+						resolvedType: token.resolvedType,
 						...differences,
 					});
 				} else if (variable && Object.keys(differences).length > 0) {

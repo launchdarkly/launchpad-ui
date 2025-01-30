@@ -317,7 +317,7 @@ StyleDictionary.registerFormat({
 	name: 'json/figma',
 	format: async ({ dictionary }) => {
 		const tokens = dictionary.allTokens.map((token) => {
-			const { attributes, $description: description, $extensions } = token;
+			const { attributes, $description: description = '', $extensions } = token;
 			const { hiddenFromPublishing, scopes } = $extensions?.['com.figma'] || {};
 
 			const [collection] = token.filePath
