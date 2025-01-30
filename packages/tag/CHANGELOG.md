@@ -1,5 +1,11 @@
 # @launchpad-ui/tag
 
+## 0.3.64
+
+### Patch Changes
+
+- [#1534](https://github.com/launchdarkly/launchpad-ui/pull/1534) [`1ecd89a`](https://github.com/launchdarkly/launchpad-ui/commit/1ecd89ae0075ebd7fdeeb3f1ace5e0087953e831) Thanks [@pheggeseth](https://github.com/pheggeseth)! - Update Tag styles to truncate text content to one line
+
 ## 0.3.63
 
 ### Patch Changes
