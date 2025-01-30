@@ -42,11 +42,11 @@
 		"@launchpad-ui/icons": "workspace:~",
 		"@launchpad-ui/tokens": "workspace:~",
 		"@launchpad-ui/vars": "workspace:~",
-		"@vanilla-extract/recipes": "^0.5.0",
+		"@vanilla-extract/recipes": "^0.5.5",
 		"classix": "2.2.0"
 	},
 	"peerDependencies": {
-		"@vanilla-extract/css": "^1.14.0",
+		"@vanilla-extract/css": "^1.17.1",
 		"react": "^18.0.0 || ^19.0.0",
 		"react-dom": "^18.0.0 || ^19.0.0"
 	},
