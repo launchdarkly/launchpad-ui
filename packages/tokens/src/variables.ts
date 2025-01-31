@@ -214,7 +214,7 @@ const generatePostVariablesPayload = (
 			for (const token of collectionTokens) {
 				// Remove the root since the collection acts as the root - color/blue/500 -> blue/500
 				const tokenName = token.name.split('/').slice(1).join('/');
-				const variable = localVariablesByName[tokenName];
+				const variable = localVariablesByName?.[tokenName];
 				const variableId = variable ? variable.id : token.name;
 				const variableInPayload = postVariablesPayload.variables?.find(
 					(v) =>
