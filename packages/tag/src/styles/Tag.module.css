@@ -53,10 +53,13 @@ a.tag,
 .tagCell {
 	display: flex;
 	align-items: center;
+	min-width: 0px;
 }
 
 .tagContent {
 	padding: 0.25rem 0.125rem 0.25rem 0;
+	overflow: hidden;
+	text-overflow: ellipsis;
 
 	.tiny & {
 		padding: 0.09375rem 0.125rem 0.09375rem 0;

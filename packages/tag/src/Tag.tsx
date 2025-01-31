@@ -65,7 +65,7 @@ const Tag = <T extends object>(props: TagProps<T>) => {
 			onClick={onClick && (() => onClick(item.key))}
 			data-test-id="tag"
 		>
-			<div className={cx(styles.tagCell)} {...gridCellProps}>
+			<div className={styles.tagCell} {...gridCellProps}>
 				<span className={styles.tagContent}>{children}</span>
 				{allowsRemoving && (
 					<Tooltip content="Remove" allowBoundaryElementOverflow>
