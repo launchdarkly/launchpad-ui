@@ -17,11 +17,11 @@
 		& div[data-rac] {
 			display: table-row;
 		}
-	}
-}
 
-.label {
-	display: table-cell;
-	font: var(--lp-text-label-1-regular);
-	color: var(--lp-color-text-ui-secondary);
+		& .label {
+			display: table-cell;
+			font: var(--lp-text-label-1-regular);
+			color: var(--lp-color-text-ui-secondary);
+		}
+	}
 }
