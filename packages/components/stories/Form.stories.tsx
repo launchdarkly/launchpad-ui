@@ -1,8 +1,22 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
+import { Icon } from '@launchpad-ui/icons';
+import { vars } from '@launchpad-ui/vars';
 import { Controller, useForm } from 'react-hook-form';
 
-import { Button, FieldError, Form, Input, Label, TextField } from '../src';
+import {
+	Button,
+	FieldError,
+	Form,
+	Input,
+	Label,
+	ListBox,
+	ListBoxItem,
+	Popover,
+	Select,
+	SelectValue,
+	TextField,
+} from '../src';
 
 const meta: Meta<typeof Form> = {
 	component: Form,
@@ -26,6 +40,55 @@ export const Example: Story = {
 			</>
 		),
 	},
+};
+
+export const Horizontal: Story = {
+	args: {
+		children: (
+			<>
+				<Select name="status" defaultSelectedKey="in-progress">
+					<Label>Status</Label>
+					<Button>
+						<SelectValue />
+						<Icon name="chevron-down" size="small" />
+					</Button>
+					<Popover>
+						<ListBox>
+							<ListBoxItem id="backlog">Backlog</ListBoxItem>
+							<ListBoxItem id="in-progress">In Progress</ListBoxItem>
+							<ListBoxItem id="in-review">In Review</ListBoxItem>
+							<ListBoxItem id="done">Done</ListBoxItem>
+						</ListBox>
+					</Popover>
+					<FieldError />
+				</Select>
+				<Select name="label" defaultSelectedKey="design-tokens">
+					<Label>Label</Label>
+					<Button>
+						<SelectValue />
+						<Icon name="chevron-down" size="small" />
+					</Button>
+					<Popover>
+						<ListBox>
+							<ListBoxItem id="design-tokens">Design Tokens</ListBoxItem>
+							<ListBoxItem id="components">Components</ListBoxItem>
+							<ListBoxItem id="recipes">Recipes</ListBoxItem>
+							<ListBoxItem id="design">Design</ListBoxItem>
+						</ListBox>
+					</Popover>
+					<FieldError />
+				</Select>
+			</>
+		),
+		orientation: 'horizontal',
+	},
+	decorators: [
+		(Story) => (
+			<div style={{ width: vars.size[400] }}>
+				<Story />
+			</div>
+		),
+	],
 };
 
 export const ReactHookForm: Story = {
