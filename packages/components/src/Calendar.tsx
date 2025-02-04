@@ -10,6 +10,7 @@ import type {
 	DateValue,
 } from 'react-aria-components';
 
+import { getLocalTimeZone, isToday } from '@internationalized/date';
 import { cva, cx } from 'class-variance-authority';
 import {
 	Calendar as AriaCalendar,
@@ -86,7 +87,26 @@ const CalendarCell = ({ ref, ...props }: CalendarCellProps) => {
 					cell({ ...renderProps, className }),
 				),
 			)}
-		/>
+		>
+			{composeRenderProps(props.children, (children, { defaultChildren, isSelected }) => (
+				<>
+					{children ?? defaultChildren}
+					{!isSelected && isToday(props.date, getLocalTimeZone()) && (
+						<svg
+							aria-hidden="true"
+							xmlns="http://www.w3.org/2000/svg"
+							width="4"
+							height="4"
+							viewBox="0 0 4 4"
+							fill="none"
+							className={styles.today}
+						>
+							<circle cx="2" cy="2" r="2" />
+						</svg>
+					)}
+				</>
+			))}
+		</AriaCalendarCell>
 	);
 };
 
