@@ -1,0 +1,27 @@
+.form {
+	&[data-orientation='vertical'] {
+		display: flex;
+		flex-direction: column;
+		align-items: start;
+		gap: var(--lp-spacing-300);
+	}
+
+	&[data-orientation='horizontal'] {
+		text-align: start;
+		display: table;
+		border-collapse: separate;
+		width: 100%;
+		table-layout: fixed;
+		border-spacing: 0 var(--lp-spacing-300);
+
+		& div[data-rac] {
+			display: table-row;
+		}
+
+		& .label {
+			display: table-cell;
+			font: var(--lp-text-label-1-regular);
+			color: var(--lp-color-text-ui-secondary);
+		}
+	}
+}
