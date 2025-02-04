@@ -48,7 +48,9 @@ export const Example: Story = {
 				<Label>Date</Label>
 				<Group>
 					<Icon name="calendar" size="small" />
-					<DateInput>{(segment) => <DateSegment segment={segment} />}</DateInput>
+					<DateInput>
+						{(segment) => <DateSegment segment={{ ...segment, isEditable: false }} />}
+					</DateInput>
 					<IconButton icon="chevron-down" aria-label="open" size="small" variant="minimal" />
 				</Group>
 				<Popover>
