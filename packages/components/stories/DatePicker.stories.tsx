@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
 import { parseDate } from '@internationalized/date';
+import { Icon } from '@launchpad-ui/icons';
 import { vars } from '@launchpad-ui/vars';
 import { expect, userEvent, within } from '@storybook/test';
 
@@ -46,8 +47,9 @@ export const Example: Story = {
 			<>
 				<Label>Date</Label>
 				<Group>
+					<Icon name="calendar" size="small" />
 					<DateInput>{(segment) => <DateSegment segment={segment} />}</DateInput>
-					<IconButton icon="calendar" aria-label="calendar" size="small" variant="minimal" />
+					<IconButton icon="chevron-down" aria-label="open" size="small" variant="minimal" />
 				</Group>
 				<Popover>
 					<Dialog>
@@ -75,7 +77,7 @@ export const Example: Story = {
 				</Popover>
 			</>
 		),
-		defaultValue: parseDate('2024-01-01'),
+		defaultValue: parseDate('2025-01-01'),
 	},
 	play: async ({ canvasElement }) => {
 		const canvas = within(canvasElement);

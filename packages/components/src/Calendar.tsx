@@ -1,6 +1,4 @@
-import type { CalendarDate } from '@internationalized/date';
-import type { RangeValue } from '@react-types/shared';
-import type { HTMLAttributes, Ref } from 'react';
+import type { Ref } from 'react';
 import type {
 	CalendarCellProps as AriaCalendarCellProps,
 	CalendarProps as AriaCalendarProps,
@@ -9,40 +7,26 @@ import type {
 	CalendarGridHeaderProps,
 	CalendarGridProps,
 	CalendarHeaderCellProps,
-	DateRange,
 	DateValue,
 } from 'react-aria-components';
-import type { ButtonProps } from './Button';
 
 import { cva, cx } from 'class-variance-authority';
-import { useState } from 'react';
 import {
 	Calendar as AriaCalendar,
 	CalendarCell as AriaCalendarCell,
 	RangeCalendar as AriaRangeCalendar,
-	ButtonContext,
 	CalendarContext,
 	CalendarGrid,
 	CalendarGridBody,
 	CalendarGridHeader,
 	CalendarHeaderCell,
-	Provider,
 	RangeCalendarContext,
 	composeRenderProps,
 	useSlottedContext,
 } from 'react-aria-components';
 
-import { Button, button } from './Button';
+import { button } from './Button';
 import styles from './styles/Calendar.module.css';
-
-interface CalendarPickerProps extends HTMLAttributes<HTMLDivElement> {
-	ref?: Ref<HTMLDivElement>;
-}
-
-interface PresetProps extends Omit<ButtonProps, 'value'> {
-	value: CalendarDate | RangeValue<CalendarDate>;
-	ref?: Ref<HTMLButtonElement>;
-}
 
 const calendar = cva(styles.calendar);
 const cell = cva(styles.cell);
@@ -128,43 +112,6 @@ const RangeCalendar = <T extends DateValue>({
 	);
 };
 
-const CalendarPicker = ({ children, className, ref, ...props }: CalendarPickerProps) => {
-	const [value, onChange] = useState<DateValue>();
-	const [range, onChangeRange] = useState<DateRange | null>();
-	const [focusedValue, onFocusChange] = useState<DateValue>();
-	return (
-		<Provider
-			values={[
-				[CalendarContext, { value, onChange, focusedValue, onFocusChange }],
-				[
-					RangeCalendarContext,
-					{ value: range, onChange: onChangeRange, focusedValue, onFocusChange },
-				],
-				[ButtonContext, {}],
-			]}
-		>
-			<div {...props} ref={ref} className={cx(styles.picker, className)}>
-				{children}
-			</div>
-		</Provider>
-	);
-};
-
-const Preset = ({ value, ref, ...props }: PresetProps) => {
-	const context = useSlottedContext(CalendarContext);
-	const rangeContext = useSlottedContext(RangeCalendarContext);
-	const onPress = () => {
-		if ('start' in value) {
-			rangeContext?.onFocusChange?.(value.start);
-			rangeContext?.onChange?.(value);
-		} else {
-			context?.onFocusChange?.(value);
-			context?.onChange?.(value);
-		}
-	};
-	return <Button ref={ref} size="small" variant="minimal" {...props} onPress={onPress} />;
-};
-
 export {
 	Calendar,
 	CalendarCell,
@@ -172,8 +119,6 @@ export {
 	CalendarGridBody,
 	CalendarGridHeader,
 	CalendarHeaderCell,
-	CalendarPicker,
-	Preset,
 	RangeCalendar,
 };
 export type {
@@ -183,7 +128,5 @@ export type {
 	CalendarGridBodyProps,
 	CalendarGridHeaderProps,
 	CalendarHeaderCellProps,
-	CalendarPickerProps,
-	PresetProps,
 	RangeCalendarProps,
 };

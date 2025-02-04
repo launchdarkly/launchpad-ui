@@ -13,8 +13,6 @@ export type {
 	CalendarGridBodyProps,
 	CalendarGridHeaderProps,
 	CalendarHeaderCellProps,
-	CalendarPickerProps,
-	PresetProps,
 	RangeCalendarProps,
 } from './Calendar';
 export type { CheckboxProps } from './Checkbox';
@@ -91,8 +89,6 @@ export {
 	CalendarGridBody,
 	CalendarGridHeader,
 	CalendarHeaderCell,
-	CalendarPicker,
-	Preset,
 	RangeCalendar,
 } from './Calendar';
 export { Checkbox } from './Checkbox';

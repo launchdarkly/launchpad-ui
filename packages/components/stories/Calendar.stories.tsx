@@ -1,35 +1,14 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import type { ComponentType } from 'react';
 
-import {
-	getLocalTimeZone,
-	parseDate,
-	startOfMonth,
-	startOfWeek,
-	today,
-} from '@internationalized/date';
+import { parseDate } from '@internationalized/date';
 import { vars } from '@launchpad-ui/vars';
-import { useLocale } from 'react-aria';
 
-import {
-	Calendar,
-	CalendarCell,
-	CalendarGrid,
-	CalendarPicker,
-	Group,
-	Heading,
-	IconButton,
-	Preset,
-	Separator,
-	Toolbar,
-} from '../src';
+import { Calendar, CalendarCell, CalendarGrid, Heading, IconButton } from '../src';
 
 const meta: Meta<typeof Calendar> = {
 	component: Calendar,
-	subcomponents: { CalendarCell, CalendarGrid, CalendarPicker, Heading, Preset } as Record<
-		string,
-		ComponentType<unknown>
-	>,
+	subcomponents: { CalendarCell, CalendarGrid, Heading } as Record<string, ComponentType<unknown>>,
 	title: 'Components/Date and Time/Calendar',
 	parameters: {
 		a11y: {
@@ -47,7 +26,7 @@ export default meta;
 type Story = StoryObj<typeof Calendar>;
 
 const renderCalendar = (args: Story['args']) => (
-	<Calendar defaultValue={parseDate('2024-01-01')} {...args}>
+	<Calendar defaultValue={parseDate('2025-01-01')} {...args}>
 		<header>
 			<IconButton
 				slot="previous"
@@ -91,25 +70,5 @@ export const States: Story = {
 				},
 			},
 		},
-	},
-};
-
-export const Presets: Story = {
-	render: (args) => {
-		const now = today(getLocalTimeZone());
-		const { locale } = useLocale();
-		return (
-			<CalendarPicker style={{ width: 'fit-content' }}>
-				<Toolbar orientation="vertical" aria-label="presets">
-					<Group>
-						<Preset value={now}>Today</Preset>
-						<Preset value={startOfWeek(now.add({ weeks: 1 }), locale)}>Next week</Preset>
-						<Preset value={startOfMonth(now.add({ months: 1 }))}>Next month</Preset>
-					</Group>
-				</Toolbar>
-				<Separator orientation="vertical" />
-				{renderCalendar(args)}
-			</CalendarPicker>
-		);
 	},
 };
