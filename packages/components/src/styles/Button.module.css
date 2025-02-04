@@ -137,7 +137,7 @@
 	border-color: var(--lp-color-border-field-error);
 }
 
-.base[data-selected] {
+.base[data-selected]:where(button, label) {
 	background-color: var(--lp-color-bg-interactive-selected);
 	border-color: var(--lp-color-border-interactive-selected);
 	z-index: 1;

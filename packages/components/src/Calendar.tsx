@@ -83,12 +83,24 @@ const Calendar = <T extends DateValue>({ ref, ...props }: CalendarProps<T>) => {
  * https://react-spectrum.adobe.com/react-aria/Calendar.html
  */
 const CalendarCell = ({ ref, ...props }: CalendarCellProps) => {
+	const context = useSlottedContext(CalendarContext);
+	const rangeContext = useSlottedContext(RangeCalendarContext);
+
 	return (
 		<AriaCalendarCell
 			{...props}
 			ref={ref}
 			className={composeRenderProps(props.className, (className, renderProps) =>
-				cx(button({ variant: 'minimal' }), cell({ ...renderProps, className })),
+				cx(
+					button({
+						variant:
+							(context && renderProps.isSelected) ||
+							(rangeContext && (renderProps.isSelectionStart || renderProps.isSelectionEnd))
+								? 'primary'
+								: 'minimal',
+					}),
+					cell({ ...renderProps, className }),
+				),
 			)}
 		/>
 	);
@@ -99,9 +111,14 @@ const CalendarCell = ({ ref, ...props }: CalendarCellProps) => {
  *
  * https://react-spectrum.adobe.com/react-aria/RangeCalendar.html
  */
-const RangeCalendar = <T extends DateValue>({ ref, ...props }: RangeCalendarProps<T>) => {
+const RangeCalendar = <T extends DateValue>({
+	ref,
+	pageBehavior = 'single',
+	...props
+}: RangeCalendarProps<T>) => {
 	return (
 		<AriaRangeCalendar
+			pageBehavior={pageBehavior}
 			{...props}
 			ref={ref}
 			className={composeRenderProps(props.className, (className, renderProps) =>

@@ -49,22 +49,37 @@
 
 .range {
 	& td {
-		padding: 1px 0;
+		padding: var(--lp-size-2) 0;
 	}
 
 	& .cell {
-		&[data-selected] {
+		&[data-selected]:not(:where([data-selection-start], [data-selection-end])) {
 			border-radius: 0;
+			background-color: var(--lp-color-bg-interactive-selected);
+			color: var(--lp-color-text-interactive-selected);
 		}
 
-		&[data-selection-start] {
-			border-start-start-radius: var(--lp-border-radius-large);
-			border-end-start-radius: var(--lp-border-radius-large);
-		}
-
+		&[data-selection-start],
 		&[data-selection-end] {
-			border-start-end-radius: var(--lp-border-radius-large);
-			border-end-end-radius: var(--lp-border-radius-large);
+			transform-style: preserve-3d;
+
+			&::after {
+				background-color: var(--lp-color-bg-interactive-selected);
+				position: absolute;
+				width: var(--lp-size-20);
+				height: 100%;
+				content: '';
+				right: calc(-1 * var(--lp-size-4));
+				transform: translateZ(-1px);
+			}
+		}
+
+		&[data-selection-start]::after {
+			right: calc(-1 * var(--lp-size-4));
+		}
+
+		&[data-selection-end]::after {
+			left: calc(-1 * var(--lp-size-4));
 		}
 	}
 }

@@ -102,14 +102,11 @@ export const MultipleMonths: Story = {
 					<CalendarGrid offset={{ months: 1 }}>
 						{(date) => <CalendarCell date={date} />}
 					</CalendarGrid>
-					<CalendarGrid offset={{ months: 2 }}>
-						{(date) => <CalendarCell date={date} />}
-					</CalendarGrid>
 				</div>
 			</>
 		),
-		defaultFocusedValue: parseDate('2024-02-01'),
-		visibleDuration: { months: 3 },
+		defaultFocusedValue: parseDate('2024-01-01'),
+		visibleDuration: { months: 2 },
 	},
 };
 
