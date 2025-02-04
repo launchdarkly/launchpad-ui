@@ -1,10 +1,11 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import type { ComponentType } from 'react';
 
+import { Icon } from '@launchpad-ui/icons';
 import { vars } from '@launchpad-ui/vars';
 import { userEvent } from '@storybook/test';
 
-import { DateInput, DateSegment, Label, Text, TimeField } from '../src';
+import { DateInput, DateSegment, Group, Label, Text, TimeField } from '../src';
 
 const meta: Meta<typeof TimeField> = {
 	component: TimeField,
@@ -37,7 +38,10 @@ export const Example: Story = {
 		children: (
 			<>
 				<Label>Time</Label>
-				<DateInput>{(segment) => <DateSegment segment={segment} />}</DateInput>
+				<Group>
+					<Icon name="clock" size="small" />
+					<DateInput>{(segment) => <DateSegment segment={segment} />}</DateInput>
+				</Group>
 				<Text slot="description">Please select a time.</Text>
 			</>
 		),
@@ -56,15 +60,24 @@ export const States: Story = {
 			>
 				<TimeField {...args}>
 					<Label>Focus Visible</Label>
-					<DateInput>{(segment) => <DateSegment segment={segment} />}</DateInput>
+					<Group>
+						<Icon name="clock" size="small" />
+						<DateInput>{(segment) => <DateSegment segment={segment} />}</DateInput>
+					</Group>
 				</TimeField>
 				<TimeField isInvalid {...args}>
 					<Label>Invalid</Label>
-					<DateInput>{(segment) => <DateSegment segment={segment} />}</DateInput>
+					<Group>
+						<Icon name="clock" size="small" />
+						<DateInput>{(segment) => <DateSegment segment={segment} />}</DateInput>
+					</Group>
 				</TimeField>
 				<TimeField isDisabled {...args}>
 					<Label>Disabled</Label>
-					<DateInput>{(segment) => <DateSegment segment={segment} />}</DateInput>
+					<Group>
+						<Icon name="clock" size="small" />
+						<DateInput>{(segment) => <DateSegment segment={segment} />}</DateInput>
+					</Group>
 				</TimeField>
 			</div>
 		);

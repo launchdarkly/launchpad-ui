@@ -20,7 +20,8 @@
 	}
 
 	& input[data-rac],
-	[role='presentation'][data-rac] {
+	[role='presentation'][data-rac],
+	[role='group'][data-rac] {
 		padding: 0;
 		outline: none;
 		border: none;

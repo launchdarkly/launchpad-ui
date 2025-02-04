@@ -32,7 +32,6 @@ interface DateRangePickerProps<T extends DateValue> extends AriaDateRangePickerP
 const DatePicker = <T extends DateValue>({ ref, ...props }: DatePickerProps<T>) => {
 	return (
 		<AriaDatePicker
-			shouldForceLeadingZeros={true}
 			{...props}
 			ref={ref}
 			className={composeRenderProps(props.className, (className, renderProps) =>
@@ -50,7 +49,6 @@ const DatePicker = <T extends DateValue>({ ref, ...props }: DatePickerProps<T>) 
 const DateRangePicker = <T extends DateValue>({ ref, ...props }: DateRangePickerProps<T>) => {
 	return (
 		<AriaDateRangePicker
-			shouldForceLeadingZeros={true}
 			{...props}
 			ref={ref}
 			className={composeRenderProps(props.className, (className, renderProps) =>

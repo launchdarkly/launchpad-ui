@@ -15,7 +15,7 @@
 }
 
 .segment {
-	padding: 0 0.125rem;
+	padding: 0;
 	outline: none;
 
 	&[data-placeholder] {
@@ -23,8 +23,8 @@
 	}
 
 	&:is([data-focus-visible], [data-focused]) {
-		background-color: var(--lp-color-shadow-interactive-focus);
-		color: var(--lp-color-text-ui-primary-inverted);
+		background-color: var(--lp-color-bg-interactive-primary-base);
+		color: var(--lp-color-text-interactive-primary-base);
 		caret-color: transparent;
 		border-radius: var(--lp-border-radius-regular);
 	}
