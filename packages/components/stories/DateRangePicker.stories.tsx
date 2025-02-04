@@ -8,9 +8,8 @@ import { expect, userEvent, within } from '@storybook/test';
 import {
 	CalendarCell,
 	CalendarGrid,
-	DateInput,
 	DateRangePicker,
-	DateSegment,
+	DateRangePickerValue,
 	Dialog,
 	Group,
 	Heading,
@@ -48,13 +47,9 @@ export const Example: Story = {
 				<Label>Date</Label>
 				<Group>
 					<Icon name="calendar" size="small" />
-					<DateInput slot="start">
-						{(segment) => <DateSegment segment={{ ...segment, isEditable: false }} />}
-					</DateInput>
+					<DateRangePickerValue slot="start" />
 					<Icon name="arrow-right-thin" size="small" />
-					<DateInput slot="end">
-						{(segment) => <DateSegment segment={{ ...segment, isEditable: false }} />}
-					</DateInput>
+					<DateRangePickerValue slot="end" />
 					<IconButton icon="chevron-down" aria-label="open" size="small" variant="minimal" />
 				</Group>
 				<Popover>

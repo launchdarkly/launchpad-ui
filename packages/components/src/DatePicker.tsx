@@ -3,12 +3,18 @@ import type {
 	DatePickerProps as AriaDatePickerProps,
 	DateRangePickerProps as AriaDateRangePickerProps,
 	DateValue,
+	SlotProps,
 } from 'react-aria-components';
 
 import { cva } from 'class-variance-authority';
+import { useContext } from 'react';
+import { useLocale } from 'react-aria';
 import {
 	DatePicker as AriaDatePicker,
 	DateRangePicker as AriaDateRangePicker,
+	DatePickerStateContext,
+	DateRangePickerStateContext,
+	Text,
 	composeRenderProps,
 } from 'react-aria-components';
 
@@ -58,5 +64,31 @@ const DateRangePicker = <T extends DateValue>({ ref, ...props }: DateRangePicker
 	);
 };
 
-export { DatePicker, DateRangePicker };
+const DatePickerValue = () => {
+	const state = useContext(DatePickerStateContext);
+	const { locale } = useLocale();
+	const date = state?.formatValue(locale, { month: 'short' });
+
+	return (
+		/* @ts-expect-error unset slot */
+		<Text slot={null} className={styles.value}>
+			{date}
+		</Text>
+	);
+};
+
+const DateRangePickerValue = ({ slot }: SlotProps) => {
+	const state = useContext(DateRangePickerStateContext);
+	const { locale } = useLocale();
+	const date = state?.formatValue(locale, { month: 'short' });
+
+	return (
+		/* @ts-expect-error unset slot */
+		<Text slot={null} className={slot === 'end' ? styles.value : undefined}>
+			{date?.[slot as keyof typeof date]}
+		</Text>
+	);
+};
+
+export { DatePicker, DateRangePicker, DatePickerValue, DateRangePickerValue };
 export type { DatePickerProps, DateRangePickerProps };

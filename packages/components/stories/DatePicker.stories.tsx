@@ -9,9 +9,8 @@ import {
 	Calendar,
 	CalendarCell,
 	CalendarGrid,
-	DateInput,
 	DatePicker,
-	DateSegment,
+	DatePickerValue,
 	Dialog,
 	Group,
 	Heading,
@@ -48,9 +47,7 @@ export const Example: Story = {
 				<Label>Date</Label>
 				<Group>
 					<Icon name="calendar" size="small" />
-					<DateInput>
-						{(segment) => <DateSegment segment={{ ...segment, isEditable: false }} />}
-					</DateInput>
+					<DatePickerValue />
 					<IconButton icon="chevron-down" aria-label="open" size="small" variant="minimal" />
 				</Group>
 				<Popover>
