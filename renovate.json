@@ -27,6 +27,7 @@
 		"react-router",
 		"@biomejs/biome",
 		"nx",
-		"@joshwooding/vite-plugin-react-docgen-typescript"
+		"@joshwooding/vite-plugin-react-docgen-typescript",
+		"@storybook/addon-designs"
 	]
 }
