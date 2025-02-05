@@ -12,7 +12,7 @@
 		margin-bottom: var(--lp-spacing-500);
 
 		& h2 {
-			font: var(--lp-text-heading-1-semibold);
+			font: var(--lp-text-heading-2-semibold);
 			flex: 1;
 			text-align: center;
 		}
@@ -20,11 +20,16 @@
 
 	& th {
 		font: var(--lp-text-label-2-medium);
+		color: var(--lp-color-text-ui-secondary);
 	}
 
 	& [slot='errorMessage'] {
 		color: var(--lp-color-text-feedback-error);
 		font: var(--lp-text-body-2-regular);
+	}
+
+	& td {
+		padding: var(--lp-size-2);
 	}
 }
 
@@ -50,37 +55,45 @@
 
 .range {
 	& td {
-		padding: var(--lp-size-2) 0;
+		padding: var(--lp-size-2);
 	}
 
 	& .cell {
-		&[data-selected]:not(:where([data-selection-start], [data-selection-end])) {
-			border-radius: 0;
-			background-color: var(--lp-color-bg-interactive-selected);
-			color: var(--lp-color-text-interactive-selected);
-		}
-
-		&[data-selection-start],
-		&[data-selection-end] {
+		&[data-selected] {
 			transform-style: preserve-3d;
 
 			&::after {
 				background-color: var(--lp-color-bg-interactive-selected);
 				position: absolute;
-				width: var(--lp-size-20);
 				height: 100%;
 				content: '';
-				right: calc(-1 * var(--lp-size-4));
 				transform: translateZ(-1px);
 			}
 		}
 
+		&[data-selected]:not(:where([data-selection-start], [data-selection-end])) {
+			border-radius: 0;
+			color: var(--lp-color-text-interactive-selected);
+
+			&::after {
+				width: var(--lp-size-40);
+				left: calc(-1 * var(--lp-size-4));
+			}
+		}
+
 		&[data-selection-start]::after {
+			width: var(--lp-size-20);
 			right: calc(-1 * var(--lp-size-4));
 		}
 
 		&[data-selection-end]::after {
+			width: var(--lp-size-20);
 			left: calc(-1 * var(--lp-size-4));
+		}
+
+		&[data-selection-start][data-selection-end]::after {
+			right: 0;
+			left: 0;
 		}
 	}
 }
