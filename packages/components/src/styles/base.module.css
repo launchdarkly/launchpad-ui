@@ -89,6 +89,16 @@
 	align-items: center;
 	gap: var(--lp-spacing-300);
 	width: 100%;
+
+	&[data-disabled] {
+		opacity: 1;
+	}
+
+	&[data-pressed],
+	&[data-focus-visible],
+	&[data-hovered] {
+		background-color: var(--lp-color-bg-field-base);
+	}
 }
 
 .invalid {
