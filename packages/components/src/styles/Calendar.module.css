@@ -2,7 +2,7 @@
 	width: fit-content;
 	max-width: 100%;
 
-	& table {
+	& .grid {
 		border-collapse: collapse;
 	}
 

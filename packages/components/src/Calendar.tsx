@@ -1,11 +1,11 @@
 import type { Ref } from 'react';
 import type {
 	CalendarCellProps as AriaCalendarCellProps,
+	CalendarGridProps as AriaCalendarGridProps,
 	CalendarProps as AriaCalendarProps,
 	RangeCalendarProps as AriaRangeCalendarProps,
 	CalendarGridBodyProps,
 	CalendarGridHeaderProps,
-	CalendarGridProps,
 	CalendarHeaderCellProps,
 	DateValue,
 } from 'react-aria-components';
@@ -15,9 +15,9 @@ import { cva, cx } from 'class-variance-authority';
 import {
 	Calendar as AriaCalendar,
 	CalendarCell as AriaCalendarCell,
+	CalendarGrid as AriaCalendarGrid,
 	RangeCalendar as AriaRangeCalendar,
 	CalendarContext,
-	CalendarGrid,
 	CalendarGridBody,
 	CalendarGridHeader,
 	CalendarHeaderCell,
@@ -31,6 +31,7 @@ import styles from './styles/Calendar.module.css';
 
 const calendar = cva(styles.calendar);
 const cell = cva(styles.cell);
+const grid = cva(styles.grid);
 const range = cva(styles.range);
 
 interface CalendarProps<T extends DateValue> extends AriaCalendarProps<T> {
@@ -39,6 +40,10 @@ interface CalendarProps<T extends DateValue> extends AriaCalendarProps<T> {
 
 interface CalendarCellProps extends AriaCalendarCellProps {
 	ref?: Ref<HTMLTableCellElement>;
+}
+
+interface CalendarGridProps extends AriaCalendarGridProps {
+	ref?: Ref<HTMLTableElement>;
 }
 
 interface RangeCalendarProps<T extends DateValue> extends AriaRangeCalendarProps<T> {
@@ -107,6 +112,22 @@ const CalendarCell = ({ ref, ...props }: CalendarCellProps) => {
 				</>
 			))}
 		</AriaCalendarCell>
+	);
+};
+
+/**
+ * A calendar grid displays a single grid of days within a calendar or range calendar which can be keyboard navigated and selected by the user.
+ *
+ * https://react-spectrum.adobe.com/react-aria/Calendar.html
+ */
+const CalendarGrid = ({ ref, className, weekdayStyle = 'short', ...props }: CalendarGridProps) => {
+	return (
+		<AriaCalendarGrid
+			weekdayStyle={weekdayStyle}
+			{...props}
+			ref={ref}
+			className={grid({ className })}
+		/>
 	);
 };
 
