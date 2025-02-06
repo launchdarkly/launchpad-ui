@@ -1,24 +1,30 @@
-import type { Ref } from 'react';
+import type { CSSProperties, Ref } from 'react';
 import type {
 	DatePickerProps as AriaDatePickerProps,
 	DateRangePickerProps as AriaDateRangePickerProps,
 	DateValue,
-	SlotProps,
 } from 'react-aria-components';
 
-import { cva } from 'class-variance-authority';
-import { useContext } from 'react';
+import { Icon } from '@launchpad-ui/icons';
+import { useResizeObserver } from '@react-aria/utils';
+import { cva, cx } from 'class-variance-authority';
+import { useCallback, useContext, useRef, useState } from 'react';
 import { useLocale } from 'react-aria';
 import {
 	DatePicker as AriaDatePicker,
 	DateRangePicker as AriaDateRangePicker,
 	DatePickerStateContext,
 	DateRangePickerStateContext,
+	PopoverContext,
+	Provider,
 	Text,
 	composeRenderProps,
 } from 'react-aria-components';
 
+import { ButtonContext } from './Button';
+import { input } from './Input';
 import styles from './styles/DatePicker.module.css';
+import baseStyles from './styles/base.module.css';
 
 const picker = cva(styles.picker);
 
@@ -36,6 +42,20 @@ interface DateRangePickerProps<T extends DateValue> extends AriaDateRangePickerP
  * https://react-spectrum.adobe.com/react-aria/DatePicker.html
  */
 const DatePicker = <T extends DateValue>({ ref, ...props }: DatePickerProps<T>) => {
+	const buttonRef = useRef<HTMLButtonElement>(null);
+	// https://github.com/adobe/react-spectrum/blob/main/packages/react-aria-components/src/DatePicker.tsx#L108-L118
+	const [buttonWidth, setButtonWidth] = useState<string | null>(null);
+	const onResize = useCallback(() => {
+		if (buttonRef.current) {
+			setButtonWidth(`${buttonRef.current.offsetWidth}px`);
+		}
+	}, []);
+
+	useResizeObserver({
+		ref: buttonRef,
+		onResize: onResize,
+	});
+
 	return (
 		<AriaDatePicker
 			{...props}
@@ -43,7 +63,34 @@ const DatePicker = <T extends DateValue>({ ref, ...props }: DatePickerProps<T>) 
 			className={composeRenderProps(props.className, (className, renderProps) =>
 				picker({ ...renderProps, className }),
 			)}
-		/>
+		>
+			{composeRenderProps(props.children, (children, { isDisabled, isInvalid }) => (
+				<Provider
+					values={[
+						[
+							ButtonContext,
+							{
+								ref: buttonRef,
+								isDisabled,
+								className: cx(input(), baseStyles.picker, isInvalid && baseStyles.invalid),
+								variant: null,
+							},
+						],
+						[
+							PopoverContext,
+							{
+								trigger: 'DatePicker',
+								triggerRef: buttonRef,
+								placement: 'bottom start',
+								style: { '--trigger-width': buttonWidth } as CSSProperties,
+							},
+						],
+					]}
+				>
+					{children}
+				</Provider>
+			))}
+		</AriaDatePicker>
 	);
 };
 
@@ -53,6 +100,20 @@ const DatePicker = <T extends DateValue>({ ref, ...props }: DatePickerProps<T>) 
  * https://react-spectrum.adobe.com/react-aria/DateRangePicker.html
  */
 const DateRangePicker = <T extends DateValue>({ ref, ...props }: DateRangePickerProps<T>) => {
+	const buttonRef = useRef<HTMLButtonElement>(null);
+	// https://github.com/adobe/react-spectrum/blob/main/packages/react-aria-components/src/DatePicker.tsx#L212-L222
+	const [buttonWidth, setButtonWidth] = useState<string | null>(null);
+	const onResize = useCallback(() => {
+		if (buttonRef.current) {
+			setButtonWidth(`${buttonRef.current.offsetWidth}px`);
+		}
+	}, []);
+
+	useResizeObserver({
+		ref: buttonRef,
+		onResize: onResize,
+	});
+
 	return (
 		<AriaDateRangePicker
 			{...props}
@@ -60,7 +121,34 @@ const DateRangePicker = <T extends DateValue>({ ref, ...props }: DateRangePicker
 			className={composeRenderProps(props.className, (className, renderProps) =>
 				picker({ ...renderProps, className }),
 			)}
-		/>
+		>
+			{composeRenderProps(props.children, (children, { isDisabled, isInvalid }) => (
+				<Provider
+					values={[
+						[
+							ButtonContext,
+							{
+								ref: buttonRef,
+								isDisabled,
+								className: cx(input(), baseStyles.picker, isInvalid && baseStyles.invalid),
+								variant: null,
+							},
+						],
+						[
+							PopoverContext,
+							{
+								trigger: 'DateRangePicker',
+								triggerRef: buttonRef,
+								placement: 'bottom start',
+								style: { '--trigger-width': buttonWidth } as CSSProperties,
+							},
+						],
+					]}
+				>
+					{children}
+				</Provider>
+			))}
+		</AriaDateRangePicker>
 	);
 };
 
@@ -69,26 +157,24 @@ const DatePickerValue = () => {
 	const { locale } = useLocale();
 	const date = state?.formatValue(locale, { month: 'short' });
 
-	return (
-		/* @ts-expect-error unset slot */
-		<Text slot={null} className={styles.value}>
-			{date}
-		</Text>
-	);
+	return <Text className={styles.value}>{date}</Text>;
 };
 
-const DateRangePickerValue = ({ slot }: SlotProps) => {
+const DateRangePickerValue = () => {
 	const state = useContext(DateRangePickerStateContext);
 	const { locale } = useLocale();
 	const date = state?.formatValue(locale, { month: 'short' });
 
-	return (
-		/* @ts-expect-error unset slot */
-		<Text slot={null} className={slot === 'end' ? styles.value : undefined}>
-			{date?.[slot as keyof typeof date]}
-		</Text>
+	return date?.start === date?.end ? (
+		<Text className={styles.value}>{date?.end}</Text>
+	) : (
+		<>
+			<Text>{date?.start}</Text>
+			<Icon name="arrow-right-thin" size="small" />
+			<Text className={styles.value}>{date?.end}</Text>
+		</>
 	);
 };
 
-export { DatePicker, DateRangePicker, DatePickerValue, DateRangePickerValue };
+export { DatePicker, DateRangePicker, DatePickerValue, DateRangePickerValue, ButtonContext };
 export type { DatePickerProps, DateRangePickerProps };

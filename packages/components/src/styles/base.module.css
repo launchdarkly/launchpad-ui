@@ -82,3 +82,15 @@
 	opacity: 0.64;
 	cursor: default;
 }
+
+.picker {
+	composes: interactive;
+	display: flex;
+	align-items: center;
+	gap: var(--lp-spacing-300);
+	width: 100%;
+}
+
+.invalid {
+	border-color: var(--lp-color-border-field-error);
+}

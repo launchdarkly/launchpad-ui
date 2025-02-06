@@ -4,14 +4,18 @@ import type {
 	SelectValueProps as AriaSelectValueProps,
 } from 'react-aria-components';
 
-import { cva } from 'class-variance-authority';
+import { cva, cx } from 'class-variance-authority';
 import {
 	Select as AriaSelect,
 	SelectValue as AriaSelectValue,
+	Provider,
 	composeRenderProps,
 } from 'react-aria-components';
 
+import { ButtonContext } from './Button';
+import { input } from './Input';
 import styles from './styles/Select.module.css';
+import baseStyles from './styles/base.module.css';
 
 const select = cva(styles.select);
 const value = cva(styles.value);
@@ -37,7 +41,23 @@ const Select = <T extends object>({ ref, ...props }: SelectProps<T>) => {
 			className={composeRenderProps(props.className, (className, renderProps) =>
 				select({ ...renderProps, className }),
 			)}
-		/>
+		>
+			{composeRenderProps(props.children, (children, { isInvalid }) => (
+				<Provider
+					values={[
+						[
+							ButtonContext,
+							{
+								className: cx(input(), baseStyles.picker, isInvalid && baseStyles.invalid),
+								variant: null,
+							},
+						],
+					]}
+				>
+					{children}
+				</Provider>
+			))}
+		</AriaSelect>
 	);
 };
 

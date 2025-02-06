@@ -125,18 +125,6 @@
 	background-color: var(--lp-color-bg-interactive-tertiary-focus);
 }
 
-.select {
-	composes: interactive from './base.module.css';
-	display: flex;
-	align-items: center;
-	gap: var(--lp-spacing-300);
-	width: 100%;
-}
-
-.invalid {
-	border-color: var(--lp-color-border-field-error);
-}
-
 .base[data-selected]:where(button, label) {
 	background-color: var(--lp-color-bg-interactive-selected);
 	border-color: var(--lp-color-border-interactive-selected);

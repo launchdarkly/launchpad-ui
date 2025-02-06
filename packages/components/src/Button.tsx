@@ -2,19 +2,16 @@ import type { VariantProps } from 'class-variance-authority';
 import type { Ref } from 'react';
 import type { ButtonProps as AriaButtonProps } from 'react-aria-components';
 
-import { cva, cx } from 'class-variance-authority';
-import { useContext } from 'react';
+import { mergeProps, mergeRefs } from '@react-aria/utils';
+import { cva } from 'class-variance-authority';
+import { createContext, useContext, useMemo } from 'react';
 import {
 	Button as AriaButton,
 	Provider,
-	SelectContext,
-	SelectStateContext,
 	TextContext,
 	composeRenderProps,
-	useSlottedContext,
 } from 'react-aria-components';
 
-import { input } from './Input';
 import { PerceivableContext } from './Perceivable';
 import { ProgressBar } from './ProgressBar';
 import styles from './styles/Button.module.css';
@@ -39,6 +36,8 @@ const button = cva(styles.base, {
 	},
 });
 
+const ButtonContext = createContext<ButtonProps | null>(null);
+
 interface ButtonVariants extends VariantProps<typeof button> {}
 interface ButtonProps extends AriaButtonProps, ButtonVariants {
 	ref?: Ref<HTMLButtonElement>;
@@ -50,22 +49,22 @@ interface ButtonProps extends AriaButtonProps, ButtonVariants {
  * https://react-spectrum.adobe.com/react-aria/Button.html
  */
 const Button = ({ size = 'medium', variant = 'default', ref, ...props }: ButtonProps) => {
-	const selectContext = useSlottedContext(SelectContext);
-	const state = useContext(SelectStateContext);
-	const ctx = useContext(PerceivableContext);
+	const ctx = useContext(ButtonContext);
+	const perceivableContext = useContext(PerceivableContext);
+
+	const buttonRef = useMemo(() => mergeRefs(ref, ctx?.ref), [ref, ctx?.ref]);
+	const buttonProps = mergeProps(ctx, props);
 
 	return (
 		<AriaButton
-			{...props}
-			{...ctx}
-			ref={ref}
-			className={composeRenderProps(props.className, (className, renderProps) =>
-				state
-					? cx(input(), styles.select, selectContext?.isInvalid && styles.invalid, className)
-					: button({ ...renderProps, size, variant, className }),
+			{...buttonProps}
+			{...perceivableContext}
+			ref={buttonRef}
+			className={composeRenderProps(buttonProps.className, (className, renderProps) =>
+				button({ ...renderProps, size, variant, className }),
 			)}
 		>
-			{composeRenderProps(props.children, (children, { isPending }) => (
+			{composeRenderProps(buttonProps.children, (children, { isPending }) => (
 				<Provider values={[[TextContext, { className: isPending ? styles.pending : undefined }]]}>
 					{isPending && (
 						<ProgressBar isIndeterminate aria-label="loading" className={styles.progress} />
@@ -77,5 +76,5 @@ const Button = ({ size = 'medium', variant = 'default', ref, ...props }: ButtonP
 	);
 };
 
-export { Button, button };
+export { Button, ButtonContext, button };
 export type { ButtonProps, ButtonVariants };

@@ -6,12 +6,12 @@ import { vars } from '@launchpad-ui/vars';
 import { expect, userEvent, within } from '@storybook/test';
 
 import {
+	Button,
 	CalendarCell,
 	CalendarGrid,
 	DateRangePicker,
 	DateRangePickerValue,
 	Dialog,
-	Group,
 	Heading,
 	IconButton,
 	Label,
@@ -45,13 +45,11 @@ export const Example: Story = {
 		children: (
 			<>
 				<Label>Date</Label>
-				<Group>
+				<Button>
 					<Icon name="calendar" size="small" />
-					<DateRangePickerValue slot="start" />
-					<Icon name="arrow-right-thin" size="small" />
-					<DateRangePickerValue slot="end" />
-					<IconButton icon="chevron-down" aria-label="open" size="small" variant="minimal" />
-				</Group>
+					<DateRangePickerValue />
+					<Icon name="chevron-down" size="small" />
+				</Button>
 				<Popover>
 					<Dialog>
 						<RangeCalendar>
