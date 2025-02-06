@@ -61,7 +61,7 @@
 	}
 
 	&:is([data-trigger='DatePicker'], [data-trigger='DateRangePicker']) {
-		padding: var(--lp-spacing-500);
+		padding: var(--lp-spacing-600);
 	}
 
 	&[data-placement='top'] {
