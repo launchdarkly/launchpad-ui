@@ -2,4 +2,4 @@
 "@launchpad-ui/components": patch
 ---
 
-chore: update checkbox svgs
+feat: update checkbox and radio styles and svgs
