@@ -76,7 +76,11 @@ const MenuItem = <T extends object>({ variant = 'default', ref, ...props }: Menu
 							</div>
 						)}
 						{selectionMode === 'single' && (
-							<div className={radio()} data-disabled={isDisabled || undefined}>
+							<div
+								className={radio()}
+								data-selected={isSelected || undefined}
+								data-disabled={isDisabled || undefined}
+							>
 								<RadioInner isSelected={isSelected} />
 							</div>
 						)}

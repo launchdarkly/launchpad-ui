@@ -4,7 +4,6 @@ import type {
 	CheckboxRenderProps,
 } from 'react-aria-components';
 
-import { Icon } from '@launchpad-ui/icons';
 import { cva } from 'class-variance-authority';
 import { Checkbox as AriaCheckbox, composeRenderProps } from 'react-aria-components';
 
@@ -16,9 +15,21 @@ const box = cva(styles.box);
 const CheckboxInner = ({ isSelected, isIndeterminate }: Partial<CheckboxRenderProps>) => (
 	<div className={box()}>
 		{isIndeterminate ? (
-			<Icon name="minus" size="small" className={styles.icon} />
+			<svg aria-hidden="true" className={styles.icon} viewBox="0 0 16 16">
+				<path
+					fillRule="evenodd"
+					clipPath="evenodd"
+					d="M3.5 8a1 1 0 0 1 1-1h7a1 1 0 1 1 0 2h-7a1 1 0 0 1-1-1Z"
+				/>
+			</svg>
 		) : isSelected ? (
-			<Icon name="check" size="small" className={styles.icon} />
+			<svg aria-hidden="true" className={styles.icon} viewBox="0 0 16 16">
+				<path
+					fillRule="evenodd"
+					clipPath="evenodd"
+					d="M12.581 3.686a1 1 0 0 1 .233 1.395l-5 7a1 1 0 0 1-1.521.126l-2.5-2.5a1 1 0 0 1 1.414-1.414l1.665 1.665 4.314-6.04a1 1 0 0 1 1.395-.232Z"
+				/>
+			</svg>
 		) : null}
 	</div>
 );
