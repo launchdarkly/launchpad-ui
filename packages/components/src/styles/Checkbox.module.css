@@ -11,7 +11,7 @@
 	transition: all var(--lp-duration-100) ease-in-out, outline, outline-offset, box-shadow 0ms;
 
 	& .icon {
-		fill: var(--lp-color-text-interactive-primary-base);
+		fill: var(--lp-color-fill-interactive-primary);
 		width: var(--lp-size-16);
 		height: var(--lp-size-16);
 	}
