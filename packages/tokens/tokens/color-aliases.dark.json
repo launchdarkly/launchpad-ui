@@ -189,6 +189,9 @@
 				},
 				"disabled": {
 					"$value": "{color.gray.600}"
+				},
+				"selected": {
+					"$value": "{color.blue.100}"
 				}
 			},
 			"ui": {

@@ -4,4 +4,10 @@
 	align-items: flex-start;
 	gap: var(--lp-spacing-200);
 	margin-bottom: var(--lp-spacing-300);
+	width: 100%;
+}
+
+.value {
+	flex: 1;
+	text-align: start;
 }

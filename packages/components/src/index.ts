@@ -13,8 +13,6 @@ export type {
 	CalendarGridBodyProps,
 	CalendarGridHeaderProps,
 	CalendarHeaderCellProps,
-	CalendarPickerProps,
-	PresetProps,
 	RangeCalendarProps,
 } from './Calendar';
 export type { CheckboxProps } from './Checkbox';
@@ -91,8 +89,6 @@ export {
 	CalendarGridBody,
 	CalendarGridHeader,
 	CalendarHeaderCell,
-	CalendarPicker,
-	Preset,
 	RangeCalendar,
 } from './Calendar';
 export { Checkbox } from './Checkbox';
@@ -100,7 +96,7 @@ export { CheckboxGroup } from './CheckboxGroup';
 export { Collection } from './Collection';
 export { ComboBox, ComboBoxClearButton } from './ComboBox';
 export { DateField, DateInput, DateSegment, TimeField } from './DateField';
-export { DatePicker, DateRangePicker } from './DatePicker';
+export { DatePicker, DateRangePicker, DatePickerValue, DateRangePickerValue } from './DatePicker';
 export { Dialog, DialogTrigger } from './Dialog';
 export { Disclosure, DisclosurePanel } from './Disclosure';
 export { DropIndicator } from './DropIndicator';

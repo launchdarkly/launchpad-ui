@@ -1,10 +1,11 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import type { ComponentType } from 'react';
 
+import { Icon } from '@launchpad-ui/icons';
 import { vars } from '@launchpad-ui/vars';
 import { userEvent } from '@storybook/test';
 
-import { DateField, DateInput, DateSegment, Label, Text } from '../src';
+import { DateField, DateInput, DateSegment, Group, Label, Text } from '../src';
 
 const meta: Meta<typeof DateField> = {
 	component: DateField,
@@ -28,7 +29,10 @@ export const Example: Story = {
 		children: (
 			<>
 				<Label>Date</Label>
-				<DateInput>{(segment) => <DateSegment segment={segment} />}</DateInput>
+				<Group>
+					<Icon name="calendar" size="small" />
+					<DateInput>{(segment) => <DateSegment segment={segment} />}</DateInput>
+				</Group>
 				<Text slot="description">Please select a weekday.</Text>
 			</>
 		),
@@ -47,15 +51,24 @@ export const States: Story = {
 			>
 				<DateField {...args}>
 					<Label>Focus Visible</Label>
-					<DateInput>{(segment) => <DateSegment segment={segment} />}</DateInput>
+					<Group>
+						<Icon name="calendar" size="small" />
+						<DateInput>{(segment) => <DateSegment segment={segment} />}</DateInput>
+					</Group>
 				</DateField>
 				<DateField isInvalid {...args}>
 					<Label>Invalid</Label>
-					<DateInput>{(segment) => <DateSegment segment={segment} />}</DateInput>
+					<Group>
+						<Icon name="calendar" size="small" />
+						<DateInput>{(segment) => <DateSegment segment={segment} />}</DateInput>
+					</Group>
 				</DateField>
 				<DateField isDisabled {...args}>
 					<Label>Disabled</Label>
-					<DateInput>{(segment) => <DateSegment segment={segment} />}</DateInput>
+					<Group>
+						<Icon name="calendar" size="small" />
+						<DateInput>{(segment) => <DateSegment segment={segment} />}</DateInput>
+					</Group>
 				</DateField>
 			</div>
 		);

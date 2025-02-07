@@ -33,7 +33,7 @@ interface ComboBoxClearButtonProps extends Partial<IconButtonProps> {}
  */
 const ComboBox = <T extends object>({ ref, ...props }: ComboBoxProps<T>) => {
 	const groupRef = useRef<HTMLDivElement>(null);
-	// https://github.com/adobe/react-spectrum/blob/main/packages/react-aria-components/src/ComboBox.tsx#L155-L170
+	// https://github.com/adobe/react-spectrum/blob/main/packages/react-aria-components/src/ComboBox.tsx#L152-L166
 	const [groupWidth, setGroupWidth] = useState<string | null>(null);
 	// biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
 	const onResize = useCallback(() => {

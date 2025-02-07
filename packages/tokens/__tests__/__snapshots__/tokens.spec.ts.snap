@@ -51,6 +51,7 @@ exports[`Tokens > builds dark alias tokens 1`] = `
   --lp-color-text-interactive-active: var(--lp-color-purple-400);
   --lp-color-text-interactive-secondary: var(--lp-color-gray-400);
   --lp-color-text-interactive-disabled: var(--lp-color-gray-600);
+  --lp-color-text-interactive-selected: var(--lp-color-blue-100);
   --lp-color-text-ui-primary-base: var(--lp-color-gray-0);
   --lp-color-text-ui-primary-inverted: var(--lp-color-gray-950);
   --lp-color-text-ui-secondary: var(--lp-color-gray-400);
@@ -138,6 +139,7 @@ exports[`Tokens > builds default alias tokens 1`] = `
   --lp-color-text-interactive-primary-hover: var(--lp-color-white-950);
   --lp-color-text-interactive-secondary: var(--lp-color-gray-600);
   --lp-color-text-interactive-disabled: var(--lp-color-gray-500);
+  --lp-color-text-interactive-selected: var(--lp-color-blue-600);
   --lp-color-text-ui-primary-base: var(--lp-color-gray-900);
   --lp-color-text-ui-primary-inverted: var(--lp-color-white-950);
   --lp-color-text-ui-secondary: var(--lp-color-gray-600);

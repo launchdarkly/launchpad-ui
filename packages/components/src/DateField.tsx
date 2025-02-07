@@ -48,7 +48,6 @@ interface TimeFieldProps<T extends TimeValue> extends AriaTimeFieldProps<T> {
 const DateField = <T extends DateValue>({ ref, ...props }: DateFieldProps<T>) => {
 	return (
 		<AriaDateField
-			shouldForceLeadingZeros={true}
 			{...props}
 			ref={ref}
 			className={composeRenderProps(props.className, (className, renderProps) =>

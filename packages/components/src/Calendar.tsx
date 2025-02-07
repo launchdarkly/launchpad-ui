@@ -1,51 +1,37 @@
-import type { CalendarDate } from '@internationalized/date';
-import type { RangeValue } from '@react-types/shared';
-import type { HTMLAttributes, Ref } from 'react';
+import type { Ref } from 'react';
 import type {
 	CalendarCellProps as AriaCalendarCellProps,
+	CalendarGridProps as AriaCalendarGridProps,
 	CalendarProps as AriaCalendarProps,
 	RangeCalendarProps as AriaRangeCalendarProps,
 	CalendarGridBodyProps,
 	CalendarGridHeaderProps,
-	CalendarGridProps,
 	CalendarHeaderCellProps,
-	DateRange,
 	DateValue,
 } from 'react-aria-components';
-import type { ButtonProps } from './Button';
 
+import { getLocalTimeZone, isToday } from '@internationalized/date';
 import { cva, cx } from 'class-variance-authority';
-import { useState } from 'react';
 import {
 	Calendar as AriaCalendar,
 	CalendarCell as AriaCalendarCell,
+	CalendarGrid as AriaCalendarGrid,
 	RangeCalendar as AriaRangeCalendar,
-	ButtonContext,
 	CalendarContext,
-	CalendarGrid,
 	CalendarGridBody,
 	CalendarGridHeader,
 	CalendarHeaderCell,
-	Provider,
 	RangeCalendarContext,
 	composeRenderProps,
 	useSlottedContext,
 } from 'react-aria-components';
 
-import { Button, button } from './Button';
+import { button } from './Button';
 import styles from './styles/Calendar.module.css';
-
-interface CalendarPickerProps extends HTMLAttributes<HTMLDivElement> {
-	ref?: Ref<HTMLDivElement>;
-}
-
-interface PresetProps extends Omit<ButtonProps, 'value'> {
-	value: CalendarDate | RangeValue<CalendarDate>;
-	ref?: Ref<HTMLButtonElement>;
-}
 
 const calendar = cva(styles.calendar);
 const cell = cva(styles.cell);
+const grid = cva(styles.grid);
 const range = cva(styles.range);
 
 interface CalendarProps<T extends DateValue> extends AriaCalendarProps<T> {
@@ -54,6 +40,10 @@ interface CalendarProps<T extends DateValue> extends AriaCalendarProps<T> {
 
 interface CalendarCellProps extends AriaCalendarCellProps {
 	ref?: Ref<HTMLTableCellElement>;
+}
+
+interface CalendarGridProps extends AriaCalendarGridProps {
+	ref?: Ref<HTMLTableElement>;
 }
 
 interface RangeCalendarProps<T extends DateValue> extends AriaRangeCalendarProps<T> {
@@ -83,13 +73,60 @@ const Calendar = <T extends DateValue>({ ref, ...props }: CalendarProps<T>) => {
  * https://react-spectrum.adobe.com/react-aria/Calendar.html
  */
 const CalendarCell = ({ ref, ...props }: CalendarCellProps) => {
+	const context = useSlottedContext(CalendarContext);
+	const rangeContext = useSlottedContext(RangeCalendarContext);
+
 	return (
 		<AriaCalendarCell
 			{...props}
 			ref={ref}
 			className={composeRenderProps(props.className, (className, renderProps) =>
-				cx(button({ variant: 'minimal' }), cell({ ...renderProps, className })),
+				cx(
+					button({
+						variant:
+							(context && renderProps.isSelected) ||
+							(rangeContext && (renderProps.isSelectionStart || renderProps.isSelectionEnd))
+								? 'primary'
+								: 'minimal',
+					}),
+					cell({ ...renderProps, className }),
+				),
 			)}
+		>
+			{composeRenderProps(props.children, (children, { defaultChildren, isSelected }) => (
+				<>
+					{children ?? defaultChildren}
+					{!isSelected && isToday(props.date, getLocalTimeZone()) && (
+						<svg
+							aria-hidden="true"
+							xmlns="http://www.w3.org/2000/svg"
+							width="4"
+							height="4"
+							viewBox="0 0 4 4"
+							fill="none"
+							className={styles.today}
+						>
+							<circle cx="2" cy="2" r="2" />
+						</svg>
+					)}
+				</>
+			))}
+		</AriaCalendarCell>
+	);
+};
+
+/**
+ * A calendar grid displays a single grid of days within a calendar or range calendar which can be keyboard navigated and selected by the user.
+ *
+ * https://react-spectrum.adobe.com/react-aria/Calendar.html
+ */
+const CalendarGrid = ({ ref, className, weekdayStyle = 'short', ...props }: CalendarGridProps) => {
+	return (
+		<AriaCalendarGrid
+			weekdayStyle={weekdayStyle}
+			{...props}
+			ref={ref}
+			className={grid({ className })}
 		/>
 	);
 };
@@ -99,9 +136,14 @@ const CalendarCell = ({ ref, ...props }: CalendarCellProps) => {
  *
  * https://react-spectrum.adobe.com/react-aria/RangeCalendar.html
  */
-const RangeCalendar = <T extends DateValue>({ ref, ...props }: RangeCalendarProps<T>) => {
+const RangeCalendar = <T extends DateValue>({
+	ref,
+	pageBehavior = 'single',
+	...props
+}: RangeCalendarProps<T>) => {
 	return (
 		<AriaRangeCalendar
+			pageBehavior={pageBehavior}
 			{...props}
 			ref={ref}
 			className={composeRenderProps(props.className, (className, renderProps) =>
@@ -111,43 +153,6 @@ const RangeCalendar = <T extends DateValue>({ ref, ...props }: RangeCalendarProp
 	);
 };
 
-const CalendarPicker = ({ children, className, ref, ...props }: CalendarPickerProps) => {
-	const [value, onChange] = useState<DateValue>();
-	const [range, onChangeRange] = useState<DateRange | null>();
-	const [focusedValue, onFocusChange] = useState<DateValue>();
-	return (
-		<Provider
-			values={[
-				[CalendarContext, { value, onChange, focusedValue, onFocusChange }],
-				[
-					RangeCalendarContext,
-					{ value: range, onChange: onChangeRange, focusedValue, onFocusChange },
-				],
-				[ButtonContext, {}],
-			]}
-		>
-			<div {...props} ref={ref} className={cx(styles.picker, className)}>
-				{children}
-			</div>
-		</Provider>
-	);
-};
-
-const Preset = ({ value, ref, ...props }: PresetProps) => {
-	const context = useSlottedContext(CalendarContext);
-	const rangeContext = useSlottedContext(RangeCalendarContext);
-	const onPress = () => {
-		if ('start' in value) {
-			rangeContext?.onFocusChange?.(value.start);
-			rangeContext?.onChange?.(value);
-		} else {
-			context?.onFocusChange?.(value);
-			context?.onChange?.(value);
-		}
-	};
-	return <Button ref={ref} size="small" variant="minimal" {...props} onPress={onPress} />;
-};
-
 export {
 	Calendar,
 	CalendarCell,
@@ -155,8 +160,6 @@ export {
 	CalendarGridBody,
 	CalendarGridHeader,
 	CalendarHeaderCell,
-	CalendarPicker,
-	Preset,
 	RangeCalendar,
 };
 export type {
@@ -166,7 +169,5 @@ export type {
 	CalendarGridBodyProps,
 	CalendarGridHeaderProps,
 	CalendarHeaderCellProps,
-	CalendarPickerProps,
-	PresetProps,
 	RangeCalendarProps,
 };

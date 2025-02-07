@@ -2,7 +2,7 @@
 	width: fit-content;
 	max-width: 100%;
 
-	& table {
+	& .grid {
 		border-collapse: collapse;
 	}
 
@@ -12,7 +12,7 @@
 		margin-bottom: var(--lp-spacing-500);
 
 		& h2 {
-			font: var(--lp-text-heading-1-semibold);
+			font: var(--lp-text-heading-2-semibold);
 			flex: 1;
 			text-align: center;
 		}
@@ -20,11 +20,16 @@
 
 	& th {
 		font: var(--lp-text-label-2-medium);
+		color: var(--lp-color-text-ui-secondary);
 	}
 
 	& [slot='errorMessage'] {
 		color: var(--lp-color-text-feedback-error);
 		font: var(--lp-text-body-2-regular);
+	}
+
+	& td {
+		padding: var(--lp-size-2);
 	}
 }
 
@@ -32,6 +37,7 @@
 	outline: none;
 	border: none;
 	width: 100%;
+	position: relative;
 
 	&[data-outside-month] {
 		display: none;
@@ -49,22 +55,45 @@
 
 .range {
 	& td {
-		padding: 1px 0;
+		padding: var(--lp-size-2);
 	}
 
 	& .cell {
 		&[data-selected] {
+			transform-style: preserve-3d;
+
+			&::after {
+				background-color: var(--lp-color-bg-interactive-selected);
+				position: absolute;
+				height: 100%;
+				content: '';
+				transform: translateZ(-1px);
+			}
+		}
+
+		&[data-selected]:not(:where([data-selection-start], [data-selection-end])) {
 			border-radius: 0;
+			color: var(--lp-color-text-interactive-selected);
+
+			&::after {
+				width: var(--lp-size-40);
+				left: calc(-1 * var(--lp-size-4));
+			}
 		}
 
-		&[data-selection-start] {
-			border-start-start-radius: var(--lp-border-radius-large);
-			border-end-start-radius: var(--lp-border-radius-large);
+		&[data-selection-start]::after {
+			width: var(--lp-size-20);
+			right: calc(-1 * var(--lp-size-4));
 		}
 
-		&[data-selection-end] {
-			border-start-end-radius: var(--lp-border-radius-large);
-			border-end-end-radius: var(--lp-border-radius-large);
+		&[data-selection-end]::after {
+			width: var(--lp-size-20);
+			left: calc(-1 * var(--lp-size-4));
+		}
+
+		&[data-selection-start][data-selection-end]::after {
+			right: 0;
+			left: 0;
 		}
 	}
 }
@@ -80,4 +109,10 @@
 	&:has([data-orientation='vertical']) {
 		flex-direction: row;
 	}
+}
+
+.today {
+	fill: var(--lp-color-fill-ui-secondary);
+	position: absolute;
+	bottom: var(--lp-size-2);
 }
