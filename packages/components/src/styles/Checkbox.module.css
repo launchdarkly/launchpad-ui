@@ -50,7 +50,8 @@
 			border-color: var(--lp-color-bg-field-disabled);
 
 			& .icon {
-				fill: var(--lp-color-text-field-disabled);
+				fill: var(--lp-color-fill-ui-primary);
+				opacity: 0.6;
 			}
 		}
 	}
