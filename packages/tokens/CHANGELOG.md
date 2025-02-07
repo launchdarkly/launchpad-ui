@@ -1,5 +1,11 @@
 # @launchpad-ui/tokens
 
+## 0.12.3
+
+### Patch Changes
+
+- [#1540](https://github.com/launchdarkly/launchpad-ui/pull/1540) [`f2a84ba`](https://github.com/launchdarkly/launchpad-ui/commit/f2a84bac6e7f97f54f1b0a61e4983a17c304d4d2) Thanks [@Niznikr](https://github.com/Niznikr)! - Polish date/time components
+
 ## 0.12.2
 
 ### Patch Changes

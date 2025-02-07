@@ -1,5 +1,17 @@
 # @launchpad-ui/components
 
+## 0.7.3
+
+### Patch Changes
+
+- [#1540](https://github.com/launchdarkly/launchpad-ui/pull/1540) [`f2a84ba`](https://github.com/launchdarkly/launchpad-ui/commit/f2a84bac6e7f97f54f1b0a61e4983a17c304d4d2) Thanks [@Niznikr](https://github.com/Niznikr)! - Polish date/time components
+
+- [#1538](https://github.com/launchdarkly/launchpad-ui/pull/1538) [`e6c06f2`](https://github.com/launchdarkly/launchpad-ui/commit/e6c06f296f13a745cd63a7fc0966f19a258c1e58) Thanks [@Niznikr](https://github.com/Niznikr)! - Add `orientation` prop to `Form`
+
+- Updated dependencies [[`f2a84ba`](https://github.com/launchdarkly/launchpad-ui/commit/f2a84bac6e7f97f54f1b0a61e4983a17c304d4d2)]:
+  - @launchpad-ui/tokens@0.12.3
+  - @launchpad-ui/icons@0.21.3
+
 ## 0.7.2
 
 ### Patch Changes
