@@ -92,12 +92,20 @@
 
 	&[data-disabled] {
 		opacity: 1;
+
+		& :where([data-icon]) {
+			opacity: 0.6;
+		}
 	}
 
 	&[data-pressed],
 	&[data-focus-visible],
 	&[data-hovered] {
 		background-color: var(--lp-color-bg-field-base);
+	}
+
+	& :where([data-icon]:last-child) {
+		fill: var(--lp-color-fill-ui-secondary);
 	}
 }
 
