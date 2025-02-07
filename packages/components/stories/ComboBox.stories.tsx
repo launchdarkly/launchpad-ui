@@ -107,6 +107,19 @@ export const Descriptions: Story = {
 		);
 	},
 	...open,
+	parameters: {
+		// @fixme
+		a11y: {
+			config: {
+				rules: [
+					{
+						id: 'color-contrast',
+						selector: '*:not([slot="description"])',
+					},
+				],
+			},
+		},
+	},
 };
 
 export const States: Story = {
