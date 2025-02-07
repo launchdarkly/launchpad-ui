@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
+import type { ComponentType } from 'react';
 
 import { parseDate } from '@internationalized/date';
 import { Icon } from '@launchpad-ui/icons';
@@ -9,9 +10,13 @@ import {
 	Button,
 	CalendarCell,
 	CalendarGrid,
+	DateInput,
 	DateRangePicker,
 	DateRangePickerValue,
+	DateSegment,
 	Dialog,
+	Form,
+	Group,
 	Heading,
 	IconButton,
 	Label,
@@ -21,6 +26,7 @@ import {
 
 const meta: Meta<typeof DateRangePicker> = {
 	component: DateRangePicker,
+	subcomponents: { DateRangePickerValue } as Record<string, ComponentType<unknown>>,
 	title: 'Components/Date and Time/DateRangePicker',
 	parameters: {
 		chromatic: { pauseAnimationAtEnd: true },
@@ -76,6 +82,61 @@ export const Example: Story = {
 				</Popover>
 			</>
 		),
+		defaultValue: {
+			start: parseDate('2025-01-08'),
+			end: parseDate('2025-01-15'),
+		},
+	},
+	play: async ({ canvasElement }) => {
+		const canvas = within(canvasElement);
+
+		await userEvent.click(canvas.getByRole('button'));
+		const body = canvasElement.ownerDocument.body;
+		await expect(await within(body).findByRole('application'));
+	},
+};
+
+export const InForms: Story = {
+	render: (args) => {
+		return (
+			<Form>
+				<DateRangePicker {...args}>
+					<Label>Date</Label>
+					<Group>
+						<DateInput slot="start">{(segment) => <DateSegment segment={segment} />}</DateInput>
+						<Icon name="arrow-right-thin" size="small" />
+						<DateInput slot="end">{(segment) => <DateSegment segment={segment} />}</DateInput>
+						<IconButton icon="calendar" aria-label="calendar" size="small" variant="minimal" />
+					</Group>
+					<Popover>
+						<Dialog>
+							<RangeCalendar>
+								<header>
+									<IconButton
+										slot="previous"
+										icon="chevron-left"
+										aria-label="previous"
+										size="small"
+										variant="minimal"
+									/>
+									<Heading />
+									<IconButton
+										slot="next"
+										icon="chevron-right"
+										aria-label="next"
+										size="small"
+										variant="minimal"
+									/>
+								</header>
+								<CalendarGrid>{(date) => <CalendarCell date={date} />}</CalendarGrid>
+							</RangeCalendar>
+						</Dialog>
+					</Popover>
+				</DateRangePicker>
+			</Form>
+		);
+	},
+	args: {
 		defaultValue: {
 			start: parseDate('2025-01-08'),
 			end: parseDate('2025-01-15'),

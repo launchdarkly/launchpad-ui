@@ -15,10 +15,12 @@ import {
 	DateRangePicker as AriaDateRangePicker,
 	DatePickerStateContext,
 	DateRangePickerStateContext,
+	FormContext,
 	PopoverContext,
 	Provider,
 	Text,
 	composeRenderProps,
+	useSlottedContext,
 } from 'react-aria-components';
 
 import { ButtonContext } from './Button';
@@ -42,7 +44,9 @@ interface DateRangePickerProps<T extends DateValue> extends AriaDateRangePickerP
  * https://react-spectrum.adobe.com/react-aria/DatePicker.html
  */
 const DatePicker = <T extends DateValue>({ ref, ...props }: DatePickerProps<T>) => {
+	const formContext = useSlottedContext(FormContext);
 	const buttonRef = useRef<HTMLButtonElement>(null);
+
 	// https://github.com/adobe/react-spectrum/blob/main/packages/react-aria-components/src/DatePicker.tsx#L108-L118
 	const [buttonWidth, setButtonWidth] = useState<string | null>(null);
 	const onResize = useCallback(() => {
@@ -64,32 +68,36 @@ const DatePicker = <T extends DateValue>({ ref, ...props }: DatePickerProps<T>) 
 				picker({ ...renderProps, className }),
 			)}
 		>
-			{composeRenderProps(props.children, (children, { isDisabled, isInvalid }) => (
-				<Provider
-					values={[
-						[
-							ButtonContext,
-							{
-								ref: buttonRef,
-								isDisabled,
-								className: cx(input(), baseStyles.picker, isInvalid && baseStyles.invalid),
-								variant: null,
-							},
-						],
-						[
-							PopoverContext,
-							{
-								trigger: 'DatePicker',
-								triggerRef: buttonRef,
-								placement: 'bottom start',
-								style: { '--trigger-width': buttonWidth } as CSSProperties,
-							},
-						],
-					]}
-				>
-					{children}
-				</Provider>
-			))}
+			{composeRenderProps(props.children, (children, { isDisabled, isInvalid }) =>
+				formContext ? (
+					children
+				) : (
+					<Provider
+						values={[
+							[
+								ButtonContext,
+								{
+									ref: buttonRef,
+									isDisabled,
+									className: cx(input(), baseStyles.picker, isInvalid && baseStyles.invalid),
+									variant: null,
+								},
+							],
+							[
+								PopoverContext,
+								{
+									trigger: 'DatePicker',
+									triggerRef: buttonRef,
+									placement: 'bottom start',
+									style: { '--trigger-width': buttonWidth } as CSSProperties,
+								},
+							],
+						]}
+					>
+						{children}
+					</Provider>
+				),
+			)}
 		</AriaDatePicker>
 	);
 };
@@ -100,7 +108,9 @@ const DatePicker = <T extends DateValue>({ ref, ...props }: DatePickerProps<T>) 
  * https://react-spectrum.adobe.com/react-aria/DateRangePicker.html
  */
 const DateRangePicker = <T extends DateValue>({ ref, ...props }: DateRangePickerProps<T>) => {
+	const formContext = useSlottedContext(FormContext);
 	const buttonRef = useRef<HTMLButtonElement>(null);
+
 	// https://github.com/adobe/react-spectrum/blob/main/packages/react-aria-components/src/DatePicker.tsx#L212-L222
 	const [buttonWidth, setButtonWidth] = useState<string | null>(null);
 	const onResize = useCallback(() => {
@@ -122,32 +132,36 @@ const DateRangePicker = <T extends DateValue>({ ref, ...props }: DateRangePicker
 				picker({ ...renderProps, className }),
 			)}
 		>
-			{composeRenderProps(props.children, (children, { isDisabled, isInvalid }) => (
-				<Provider
-					values={[
-						[
-							ButtonContext,
-							{
-								ref: buttonRef,
-								isDisabled,
-								className: cx(input(), baseStyles.picker, isInvalid && baseStyles.invalid),
-								variant: null,
-							},
-						],
-						[
-							PopoverContext,
-							{
-								trigger: 'DateRangePicker',
-								triggerRef: buttonRef,
-								placement: 'bottom start',
-								style: { '--trigger-width': buttonWidth } as CSSProperties,
-							},
-						],
-					]}
-				>
-					{children}
-				</Provider>
-			))}
+			{composeRenderProps(props.children, (children, { isDisabled, isInvalid }) =>
+				formContext ? (
+					children
+				) : (
+					<Provider
+						values={[
+							[
+								ButtonContext,
+								{
+									ref: buttonRef,
+									isDisabled,
+									className: cx(input(), baseStyles.picker, isInvalid && baseStyles.invalid),
+									variant: null,
+								},
+							],
+							[
+								PopoverContext,
+								{
+									trigger: 'DateRangePicker',
+									triggerRef: buttonRef,
+									placement: 'bottom start',
+									style: { '--trigger-width': buttonWidth } as CSSProperties,
+								},
+							],
+						]}
+					>
+						{children}
+					</Provider>
+				),
+			)}
 		</AriaDateRangePicker>
 	);
 };
