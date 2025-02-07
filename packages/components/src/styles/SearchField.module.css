@@ -11,7 +11,7 @@
 		}
 	}
 
-	&[data-empty] button {
+	&[data-empty] button[tabindex='-1'] {
 		visibility: hidden;
 	}
 }

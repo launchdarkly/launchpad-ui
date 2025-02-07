@@ -37,7 +37,8 @@
 		background-color: var(--lp-color-bg-interactive-secondary-active);
 	}
 
-	&[data-focus-visible] {
+	&[data-focus-visible],
+	&[data-focused] {
 		background-color: var(--lp-color-bg-interactive-secondary-hover);
 	}
 
