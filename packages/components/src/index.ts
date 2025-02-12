@@ -2,6 +2,7 @@ import './styles/base.css';
 import './styles/themes.css';
 
 export type { AlertProps } from './Alert';
+export type { AutocompleteProps } from './Autocomplete';
 export type { AvatarProps, InitialsAvatarProps } from './Avatar';
 export type { BreadcrumbsProps, BreadcrumbProps } from './Breadcrumbs';
 export type { ButtonProps } from './Button';
@@ -78,6 +79,7 @@ export type { ToolbarProps } from './Toolbar';
 export type { TooltipProps, TooltipTriggerProps } from './Tooltip';
 
 export { Alert } from './Alert';
+export { Autocomplete } from './Autocomplete';
 export { Avatar, InitialsAvatar } from './Avatar';
 export { Breadcrumbs, Breadcrumb } from './Breadcrumbs';
 export { Button } from './Button';
