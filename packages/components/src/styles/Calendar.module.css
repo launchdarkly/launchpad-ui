@@ -3,7 +3,8 @@
 	max-width: 100%;
 
 	& .grid {
-		border-collapse: collapse;
+		border-collapse: separate;
+		border-spacing: var(--lp-spacing-200);
 	}
 
 	& header {
@@ -21,6 +22,8 @@
 	& th {
 		font: var(--lp-text-label-2-medium);
 		color: var(--lp-color-text-ui-secondary);
+		padding: 0;
+		height: var(--lp-size-28);
 	}
 
 	& [slot='errorMessage'] {
@@ -29,14 +32,14 @@
 	}
 
 	& td {
-		padding: var(--lp-size-2);
+		padding: 0;
 	}
 }
 
 .cell {
 	outline: none;
 	border: none;
-	width: 100%;
+	width: var(--lp-size-32);
 	position: relative;
 
 	&[data-outside-month] {
@@ -55,7 +58,27 @@
 
 .range {
 	& td {
-		padding: var(--lp-size-2);
+		&:first-child {
+			& [data-selected]::after {
+				width: var(--lp-size-20);
+				right: calc(-1 * var(--lp-size-4));
+			}
+
+			& [data-selection-end]::after {
+				content: none;
+			}
+		}
+
+		&:last-child {
+			& [data-selected]::after {
+				width: var(--lp-size-20);
+				left: calc(-1 * var(--lp-size-4));
+			}
+
+			& [data-selection-start]::after {
+				content: none;
+			}
+		}
 	}
 
 	& .cell {
@@ -72,12 +95,11 @@
 		}
 
 		&[data-selected]:not(:where([data-selection-start], [data-selection-end])) {
-			border-radius: 0;
+			background-color: var(--lp-color-bg-interactive-selected);
 			color: var(--lp-color-text-interactive-selected);
 
 			&::after {
 				width: var(--lp-size-40);
-				left: calc(-1 * var(--lp-size-4));
 			}
 		}
 
@@ -92,8 +114,7 @@
 		}
 
 		&[data-selection-start][data-selection-end]::after {
-			right: 0;
-			left: 0;
+			content: none;
 		}
 	}
 }
