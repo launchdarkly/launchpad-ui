@@ -1,5 +1,15 @@
 # @launchpad-ui/components
 
+## 0.7.4
+
+### Patch Changes
+
+- [#1544](https://github.com/launchdarkly/launchpad-ui/pull/1544) [`56b4aa8`](https://github.com/launchdarkly/launchpad-ui/commit/56b4aa86211eafa7821c62082651a00ced6a6a4c) Thanks [@Niznikr](https://github.com/Niznikr)! - Add `Autocomplete`
+
+- [#1548](https://github.com/launchdarkly/launchpad-ui/pull/1548) [`279be09`](https://github.com/launchdarkly/launchpad-ui/commit/279be09ed82d6839f2f0c1a3183e3941ea2c638d) Thanks [@Niznikr](https://github.com/Niznikr)! - Correct calendar styles
+
+- [#1543](https://github.com/launchdarkly/launchpad-ui/pull/1543) [`18b554a`](https://github.com/launchdarkly/launchpad-ui/commit/18b554ac7051ab84b42bffcdedc4bbb3113e7b61) Thanks [@matthewferry](https://github.com/matthewferry)! - feat: update checkbox and radio styles and svgs
+
 ## 0.7.3
 
 ### Patch Changes
