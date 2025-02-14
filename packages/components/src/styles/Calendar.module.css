@@ -3,7 +3,8 @@
 	max-width: 100%;
 
 	& .grid {
-		border-collapse: collapse;
+		border-collapse: separate;
+		border-spacing: var(--lp-spacing-200);
 	}
 
 	& header {
@@ -21,6 +22,8 @@
 	& th {
 		font: var(--lp-text-label-2-medium);
 		color: var(--lp-color-text-ui-secondary);
+		padding: 0;
+		height: var(--lp-size-28);
 	}
 
 	& [slot='errorMessage'] {
@@ -29,14 +32,14 @@
 	}
 
 	& td {
-		padding: var(--lp-size-2);
+		padding: 0;
 	}
 }
 
 .cell {
 	outline: none;
 	border: none;
-	width: 100%;
+	width: var(--lp-size-32);
 	position: relative;
 
 	&[data-outside-month] {
@@ -55,45 +58,46 @@
 
 .range {
 	& td {
-		padding: var(--lp-size-2);
+		& [data-selected]:not(:where([data-selection-start], [data-selection-end]))::after {
+			background-color: var(--lp-color-bg-interactive-selected);
+			position: absolute;
+			height: 100%;
+			content: '';
+			transform: translateZ(-1px);
+			/* Width of cell + 2 * border-spacing + 2 * space from border-radius */
+			width: calc(var(--lp-size-32) + (2 * var(--lp-spacing-200)) + (2 * var(--lp-size-6)));
+		}
+
+		&:first-child {
+			& [data-selected]::after {
+				width: var(--lp-size-20);
+				right: calc(-1 * var(--lp-size-10));
+			}
+		}
+
+		&:last-child {
+			& [data-selected]::after {
+				width: var(--lp-size-20);
+				left: calc(-1 * var(--lp-size-10));
+			}
+		}
+
+		&:has(+ td [data-outside-month]),
+		&:has([data-outside-month]) + td {
+			& [data-selected]::after {
+				content: none;
+			}
+		}
 	}
 
 	& .cell {
 		&[data-selected] {
 			transform-style: preserve-3d;
-
-			&::after {
-				background-color: var(--lp-color-bg-interactive-selected);
-				position: absolute;
-				height: 100%;
-				content: '';
-				transform: translateZ(-1px);
-			}
 		}
 
 		&[data-selected]:not(:where([data-selection-start], [data-selection-end])) {
-			border-radius: 0;
+			background-color: var(--lp-color-bg-interactive-selected);
 			color: var(--lp-color-text-interactive-selected);
-
-			&::after {
-				width: var(--lp-size-40);
-				left: calc(-1 * var(--lp-size-4));
-			}
-		}
-
-		&[data-selection-start]::after {
-			width: var(--lp-size-20);
-			right: calc(-1 * var(--lp-size-4));
-		}
-
-		&[data-selection-end]::after {
-			width: var(--lp-size-20);
-			left: calc(-1 * var(--lp-size-4));
-		}
-
-		&[data-selection-start][data-selection-end]::after {
-			right: 0;
-			left: 0;
 		}
 	}
 }
