@@ -58,24 +58,33 @@
 
 .range {
 	& td {
+		& [data-selected]:not(:where([data-selection-start], [data-selection-end]))::after {
+			background-color: var(--lp-color-bg-interactive-selected);
+			position: absolute;
+			height: 100%;
+			content: '';
+			transform: translateZ(-1px);
+			/* Width of cell + 2 * border-spacing + 2 * space from border-radius */
+			width: calc(var(--lp-size-32) + (2 * var(--lp-spacing-200)) + (2 * var(--lp-size-6)));
+		}
+
 		&:first-child {
 			& [data-selected]::after {
 				width: var(--lp-size-20);
-				right: calc(-1 * var(--lp-size-4));
-			}
-
-			& [data-selection-end]::after {
-				content: none;
+				right: calc(-1 * var(--lp-size-10));
 			}
 		}
 
 		&:last-child {
 			& [data-selected]::after {
 				width: var(--lp-size-20);
-				left: calc(-1 * var(--lp-size-4));
+				left: calc(-1 * var(--lp-size-10));
 			}
+		}
 
-			& [data-selection-start]::after {
+		&:has(+ td [data-outside-month]),
+		&:has([data-outside-month]) + td {
+			& [data-selected]::after {
 				content: none;
 			}
 		}
@@ -84,37 +93,11 @@
 	& .cell {
 		&[data-selected] {
 			transform-style: preserve-3d;
-
-			&::after {
-				background-color: var(--lp-color-bg-interactive-selected);
-				position: absolute;
-				height: 100%;
-				content: '';
-				transform: translateZ(-1px);
-			}
 		}
 
 		&[data-selected]:not(:where([data-selection-start], [data-selection-end])) {
 			background-color: var(--lp-color-bg-interactive-selected);
 			color: var(--lp-color-text-interactive-selected);
-
-			&::after {
-				width: var(--lp-size-40);
-			}
-		}
-
-		&[data-selection-start]::after {
-			width: var(--lp-size-20);
-			right: calc(-1 * var(--lp-size-4));
-		}
-
-		&[data-selection-end]::after {
-			width: var(--lp-size-20);
-			left: calc(-1 * var(--lp-size-4));
-		}
-
-		&[data-selection-start][data-selection-end]::after {
-			content: none;
 		}
 	}
 }
