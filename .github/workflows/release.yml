@@ -34,7 +34,7 @@ jobs:
           fetch-depth: 0
           token: ${{ env.CUSTOM_GITHUB_TOKEN }}
 
-      - uses: pnpm/action-setup@v3
+      - uses: pnpm/action-setup@v4
 
       - name: Derive appropriate SHAs for base and head for `nx affected` commands
         uses: nrwl/nx-set-shas@v4
