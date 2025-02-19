@@ -1,0 +1,9 @@
+{
+	"codeConnect": {
+		"include": ["packages/components/figma/**", "packages/components/src/**"],
+		"parser": "react",
+		"importPaths": {
+			"packages/components/src/*": "@launchpad-ui/components"
+		}
+	}
+}
