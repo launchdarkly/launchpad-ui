@@ -9,10 +9,14 @@ figma.connect(
 	'https://www.figma.com/design/98HKKXL2dTle29ikJ3tzk7/LaunchPad?node-id=1-27006',
 	{
 		props: {
-			//hasIconLeft: figma.boolean('Has icon left'),
-			//leftIcon: figma.instance('Left icon'),
-			//hasIconRight: figma.boolean('Has icon right'),
-			//rightIcon: figma.instance('Right icon'),
+			hasIconLeft: figma.boolean('Has icon left', {
+				true: figma.instance('Left icon'),
+				false: undefined,
+			}),
+			hasIconRight: figma.boolean('Has icon right', {
+				true: figma.instance('Right icon'),
+				false: undefined,
+			}),
 			label: figma.string('Label'),
 			variant: figma.enum('Variant', {
 				Primary: 'primary',
@@ -25,10 +29,33 @@ figma.connect(
 				Small: 'small',
 				Large: 'large',
 			}),
+			isDisabled: figma.enum('State', { Disabled: true }),
+			isFocusVisible: figma.enum('State', { ':focus-visible': true }),
+			isHovered: figma.enum('State', { ':hover': true }),
+			isPressed: figma.enum('State', { ':active': true }),
 		},
-		example: ({ label, variant, size }) => (
-			<Button variant={variant} size={size}>
+		example: ({
+			hasIconLeft,
+			hasIconRight,
+			label,
+			variant,
+			size,
+			isDisabled,
+			isFocusVisible,
+			isHovered,
+			isPressed,
+		}) => (
+			<Button
+				variant={variant}
+				size={size}
+				isDisabled={isDisabled}
+				isFocusVisible={isFocusVisible}
+				isHovered={isHovered}
+				isPressed={isPressed}
+			>
+				{hasIconLeft}
 				{label}
+				{hasIconRight}
 			</Button>
 		),
 	},

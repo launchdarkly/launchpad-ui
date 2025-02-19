@@ -1,9 +1,15 @@
 {
 	"codeConnect": {
-		"include": ["packages/components/figma/**", "packages/components/src/**"],
+		"include": [
+			"packages/components/figma/**",
+			"packages/components/src/**",
+			"packages/icons/figma/**",
+			"packages/icons/src/**"
+		],
 		"parser": "react",
 		"importPaths": {
-			"packages/components/src/*": "@launchpad-ui/components"
+			"packages/components/src/*": "@launchpad-ui/components",
+			"packages/icons/src/*": "@launchpad-ui/icons"
 		}
 	}
 }
