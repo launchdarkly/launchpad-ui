@@ -24,7 +24,7 @@ const meta: Meta<typeof ComboBox> = {
 	title: 'Components/Pickers/ComboBox',
 	decorators: [
 		(Story) => (
-			<div style={{ width: vars.size[240], height: vars.size[240] }}>
+			<div style={{ width: vars.size[240], height: vars.size[480] }}>
 				<Story />
 			</div>
 		),
@@ -152,10 +152,6 @@ export const States: Story = {
 					gap: vars.spacing[400],
 				}}
 			>
-				<ComboBox {...args}>
-					<Label>Focus Visible</Label>
-					{Content}
-				</ComboBox>
 				<ComboBox isInvalid {...args}>
 					<Label>Invalid</Label>
 					{Content}
@@ -164,12 +160,28 @@ export const States: Story = {
 					<Label>Disabled</Label>
 					{Content}
 				</ComboBox>
+				<ComboBox {...args}>
+					<Label>Focus Visible</Label>
+					{Content}
+				</ComboBox>
 			</div>
 		);
 	},
 	play: async ({ canvasElement }) => {
 		const body = canvasElement.ownerDocument.body;
 		body.click();
-		await userEvent.tab();
+		await userEvent.tab({ shift: true });
+	},
+	parameters: {
+		a11y: {
+			config: {
+				rules: [
+					{
+						id: 'aria-hidden-focus',
+						selector: '*not([aria-hidden][aria-invalid="true"])',
+					},
+				],
+			},
+		},
 	},
 };

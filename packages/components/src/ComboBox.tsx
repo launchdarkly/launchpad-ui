@@ -31,7 +31,7 @@ interface ComboBoxClearButtonProps extends Partial<IconButtonProps> {}
  *
  * https://react-spectrum.adobe.com/react-aria/ComboBox.html
  */
-const ComboBox = <T extends object>({ ref, ...props }: ComboBoxProps<T>) => {
+const ComboBox = <T extends object>({ ref, menuTrigger = 'focus', ...props }: ComboBoxProps<T>) => {
 	const groupRef = useRef<HTMLDivElement>(null);
 	// https://github.com/adobe/react-spectrum/blob/main/packages/react-aria-components/src/ComboBox.tsx#L152-L166
 	const [groupWidth, setGroupWidth] = useState<string | null>(null);
@@ -49,6 +49,7 @@ const ComboBox = <T extends object>({ ref, ...props }: ComboBoxProps<T>) => {
 
 	return (
 		<AriaComboBox
+			menuTrigger={menuTrigger}
 			{...props}
 			ref={ref}
 			className={composeRenderProps(props.className, (className, renderProps) =>
