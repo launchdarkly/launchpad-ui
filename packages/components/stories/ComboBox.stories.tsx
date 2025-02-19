@@ -152,10 +152,6 @@ export const States: Story = {
 					gap: vars.spacing[400],
 				}}
 			>
-				<ComboBox {...args}>
-					<Label>Focus Visible</Label>
-					{Content}
-				</ComboBox>
 				<ComboBox isInvalid {...args}>
 					<Label>Invalid</Label>
 					{Content}
@@ -164,12 +160,16 @@ export const States: Story = {
 					<Label>Disabled</Label>
 					{Content}
 				</ComboBox>
+				<ComboBox {...args}>
+					<Label>Focus Visible</Label>
+					{Content}
+				</ComboBox>
 			</div>
 		);
 	},
 	play: async ({ canvasElement }) => {
 		const body = canvasElement.ownerDocument.body;
 		body.click();
-		await userEvent.tab();
+		await userEvent.tab({ shift: true });
 	},
 };
