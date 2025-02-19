@@ -1,4 +1,4 @@
-// @ts-nocheck
+import type { ButtonProps } from '../src';
 
 import figma from '@figma/code-connect';
 
@@ -18,13 +18,13 @@ figma.connect(
 				false: undefined,
 			}),
 			label: figma.string('Label'),
-			variant: figma.enum('Variant', {
+			variant: figma.enum<ButtonProps['variant']>('Variant', {
 				Primary: 'primary',
 				Default: 'default',
 				Minimal: 'minimal',
 				Destructive: 'destructive',
 			}),
-			size: figma.enum('Size', {
+			size: figma.enum<ButtonProps['size']>('Size', {
 				Medium: 'medium',
 				Small: 'small',
 				Large: 'large',
@@ -34,25 +34,8 @@ figma.connect(
 			isHovered: figma.enum('State', { ':hover': true }),
 			isPressed: figma.enum('State', { ':active': true }),
 		},
-		example: ({
-			hasIconLeft,
-			hasIconRight,
-			label,
-			variant,
-			size,
-			isDisabled,
-			isFocusVisible,
-			isHovered,
-			isPressed,
-		}) => (
-			<Button
-				variant={variant}
-				size={size}
-				isDisabled={isDisabled}
-				isFocusVisible={isFocusVisible}
-				isHovered={isHovered}
-				isPressed={isPressed}
-			>
+		example: ({ hasIconLeft, hasIconRight, label, variant, size, isDisabled }) => (
+			<Button variant={variant} size={size} isDisabled={isDisabled}>
 				{hasIconLeft}
 				{label}
 				{hasIconRight}
