@@ -23,11 +23,5 @@
 		}
 	],
 	"rangeStrategy": "bump",
-	"ignoreDeps": [
-		"react-router",
-		"@biomejs/biome",
-		"nx",
-		"@joshwooding/vite-plugin-react-docgen-typescript",
-		"@storybook/addon-designs"
-	]
+	"ignoreDeps": ["react-router", "@biomejs/biome"]
 }
