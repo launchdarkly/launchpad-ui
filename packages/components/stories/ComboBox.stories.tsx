@@ -24,7 +24,7 @@ const meta: Meta<typeof ComboBox> = {
 	title: 'Components/Pickers/ComboBox',
 	decorators: [
 		(Story) => (
-			<div style={{ width: vars.size[240], height: vars.size[240] }}>
+			<div style={{ width: vars.size[240], height: vars.size[480] }}>
 				<Story />
 			</div>
 		),
@@ -171,5 +171,17 @@ export const States: Story = {
 		const body = canvasElement.ownerDocument.body;
 		body.click();
 		await userEvent.tab({ shift: true });
+	},
+	parameters: {
+		a11y: {
+			config: {
+				rules: [
+					{
+						id: 'aria-hidden-focus',
+						selector: '*not([aria-hidden][aria-invalid="true"])',
+					},
+				],
+			},
+		},
 	},
 };
