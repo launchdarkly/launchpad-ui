@@ -1,5 +1,11 @@
 # @launchpad-ui/components
 
+## 0.7.5
+
+### Patch Changes
+
+- [#1550](https://github.com/launchdarkly/launchpad-ui/pull/1550) [`61e71c4`](https://github.com/launchdarkly/launchpad-ui/commit/61e71c4a851b3daabd55c15f4c8224f34aaacb07) Thanks [@Niznikr](https://github.com/Niznikr)! - Open `ComboBox` on focus
+
 ## 0.7.4
 
 ### Patch Changes
