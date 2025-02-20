@@ -1,6 +1,8 @@
+import type { IconProps } from '@launchpad-ui/icons';
 import type { ButtonProps } from '../src';
 
 import figma from '@figma/code-connect';
+import { Icon } from '@launchpad-ui/icons';
 
 import { Button } from '../src';
 
@@ -10,11 +12,15 @@ figma.connect(
 	{
 		props: {
 			hasIconLeft: figma.boolean('Has icon left', {
-				true: figma.instance('Left icon'),
+				true: figma
+					.instance('Left icon')
+					.render<IconProps>(({ name }) => <Icon name={name} size="small" />),
 				false: undefined,
 			}),
 			hasIconRight: figma.boolean('Has icon right', {
-				true: figma.instance('Right icon'),
+				true: figma
+					.instance('Right icon')
+					.render<IconProps>(({ name }) => <Icon name={name} size="small" />),
 				false: undefined,
 			}),
 			label: figma.string('Label'),
@@ -25,8 +31,8 @@ figma.connect(
 				Destructive: 'destructive',
 			}),
 			size: figma.enum<ButtonProps['size']>('Size', {
-				Medium: 'medium',
 				Small: 'small',
+				Medium: 'medium',
 				Large: 'large',
 			}),
 			isDisabled: figma.enum('State', { Disabled: true }),
