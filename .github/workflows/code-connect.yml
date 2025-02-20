@@ -1,0 +1,54 @@
+name: Figma Code Connect Publish
+
+on:
+  push:
+    paths:
+      - 'packages/components/figma/**'
+      - 'packages/icons/figma/**'
+    branches:
+      - main
+
+jobs:
+  code-connect:
+    name: Code Connect
+    # Prevents action from publishing on forks
+    if: github.repository == 'launchdarkly/launchpad-ui'
+    timeout-minutes: 15
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: read
+    steps:
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          audience: https://github.com/launchdarkly
+          role-to-assume: ${{ vars.AWS_ROLE_ARN }}
+          aws-region: us-east-1
+
+      - uses: dkershner6/aws-ssm-getparameters-action@v2
+        with:
+          parameterPairs: |
+            /production/common/launchpad-ui/figma-access-token = FIGMA_ACCESS_TOKEN
+          withDecryption: 'true'
+
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: pnpm/action-setup@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Generate icons
+        run: pnpm nx run @launchpad-ui/icons:connect
+
+      - name: Connect publish
+        run: pnpm figma connect publish --exit-on-unreadable-files
