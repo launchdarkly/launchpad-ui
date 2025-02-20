@@ -3,6 +3,7 @@ import type { ComponentType } from 'react';
 import type { Selection as AriaSelection } from 'react-aria-components';
 
 import { Icon } from '@launchpad-ui/icons';
+import { vars } from '@launchpad-ui/vars';
 import { fireEvent, userEvent, within } from '@storybook/test';
 import { useState } from 'react';
 
@@ -12,6 +13,13 @@ const meta: Meta<typeof ListBox> = {
 	component: ListBox,
 	subcomponents: { ListBoxItem, ListBoxSection, Header } as Record<string, ComponentType<unknown>>,
 	title: 'Components/Collections/ListBox',
+	decorators: [
+		(Story) => (
+			<div style={{ width: vars.size[400] }}>
+				<Story />
+			</div>
+		),
+	],
 };
 
 export default meta;
