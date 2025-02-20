@@ -1,5 +1,11 @@
 # @launchpad-ui/components
 
+## 0.7.6
+
+### Patch Changes
+
+- [#1553](https://github.com/launchdarkly/launchpad-ui/pull/1553) [`0425dc1`](https://github.com/launchdarkly/launchpad-ui/commit/0425dc18b71e7baf11a74f68297b07bfda43d427) Thanks [@Niznikr](https://github.com/Niznikr)! - Fix `ListBox` width
+
 ## 0.7.5
 
 ### Patch Changes
