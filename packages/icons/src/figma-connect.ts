@@ -8,7 +8,20 @@ const generateIcons = async () => {
 
 	fs.writeFileSync(
 		'figma/Icon.figma.tsx',
-		`// Do not edit directly, this file was auto-generated.\n\nimport figma from '@figma/code-connect';\n\nimport { Icon } from '../src';\n\n${components.map((c) => `figma.connect(Icon, '${c.figmaUrl}', {\n\texample: () => <Icon name="${c.name}" />,\n});`).join('\n\n')}\n`,
+		`// Do not edit directly, this file was auto-generated.
+
+import figma from '@figma/code-connect';
+
+import { Icon } from '../src';
+
+${components
+	.map(
+		(c) => `figma.connect(Icon, '${c.figmaUrl}', {
+	example: () => <Icon name="${c.name}" />,
+});`,
+	)
+	.join('\n\n')}
+`,
 	);
 };
 
