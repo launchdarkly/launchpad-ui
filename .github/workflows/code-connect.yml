@@ -47,8 +47,5 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
-      - name: Generate icons
-        run: pnpm nx run @launchpad-ui/icons:connect
-
       - name: Connect publish
         run: pnpm figma connect publish --exit-on-unreadable-files

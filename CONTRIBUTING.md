@@ -197,7 +197,8 @@ Simply run `pnpm generate component` and follow the prompts, and you'll be well 
 
 - Add the SVG body content into a new symbol entry with id `lp-icon-{name}` in the `/src/image/sprite.svg` file in the `@launchpad/icons` package.
 - Add its `id` (minus prefix `lp-icon`) to the icons array in `/src/types.ts`.
-- Run `pnpm storybook` and visit the "Icons" page to ensure your icon was generated properly.
+- Run `pnpm storybook` and visit the `Components/Icons` page to ensure your icon was generated properly.
+- Run `pnpm nx run @launchpad-ui/icons:connect` (https://github.com/figma/code-connect/blob/main/cli/scripts/README.md) to update the icons Figma Code Connect file.
 
 ---
 

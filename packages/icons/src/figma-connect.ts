@@ -1,6 +1,7 @@
 import fs from 'fs';
 import { client } from '@figma/code-connect';
 
+// https://github.com/figma/code-connect/blob/main/cli/scripts/README.md
 const generateIcons = async () => {
 	const components = await client.getComponents(
 		'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7?node-id=1-1483',
