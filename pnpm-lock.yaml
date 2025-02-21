@@ -56,6 +56,9 @@ importers:
       '@storybook/components':
         specifier: ^8.5.8
         version: 8.5.8(storybook@8.5.8(prettier@3.4.1))
+      '@storybook/manager-api':
+        specifier: ^8.5.8
+        version: 8.5.8(storybook@8.5.8(prettier@3.4.1))
       '@storybook/react':
         specifier: ^8.5.8
         version: 8.5.8(@storybook/test@8.5.8(storybook@8.5.8(prettier@3.4.1)))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(storybook@8.5.8(prettier@3.4.1))(typescript@5.7.2)
