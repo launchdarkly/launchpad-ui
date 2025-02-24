@@ -1,5 +1,13 @@
 # @launchpad-ui/menu
 
+## 0.13.50
+
+### Patch Changes
+
+- Updated dependencies [[`2714397`](https://github.com/launchdarkly/launchpad-ui/commit/27143973e8e689424779273c393b70967d849f99)]:
+  - @launchpad-ui/icons@0.21.4
+  - @launchpad-ui/form@0.11.50
+
 ## 0.13.49
 
 ### Patch Changes
@@ -964,7 +972,7 @@
   root.render(
     <IconContext.Provider value={{ path: icons }}>
       <App />
-    </IconContext.Provider>,
+    </IconContext.Provider>
   );
   ```
 
