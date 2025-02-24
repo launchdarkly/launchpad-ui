@@ -1,5 +1,11 @@
 # @launchpad-ui/icons
 
+## 0.21.4
+
+### Patch Changes
+
+- [#1555](https://github.com/launchdarkly/launchpad-ui/pull/1555) [`2714397`](https://github.com/launchdarkly/launchpad-ui/commit/27143973e8e689424779273c393b70967d849f99) Thanks [@Niznikr](https://github.com/Niznikr)! - Add icons `binary`, `clock-x`, `flask-caution`, `flask-end`, `flask-pause`, `flask-play`, `flask-stop`, `flask-sync`, `flask-x`, `hash`, `sort-asc`, `sort-desc`, and `sparkles`
+
 ## 0.21.3
 
 ### Patch Changes
@@ -596,7 +602,7 @@
   root.render(
     <IconContext.Provider value={{ path: icons }}>
       <App />
-    </IconContext.Provider>,
+    </IconContext.Provider>
   );
   ```
 
