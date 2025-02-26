@@ -5,9 +5,9 @@ import type { LinkProps as AriaLinkProps } from 'react-aria-components';
 
 import { Icon } from '@launchpad-ui/icons';
 import { cva } from 'class-variance-authority';
-import { Link as AriaLink, composeRenderProps, useSlottedContext } from 'react-aria-components';
+import { createContext, useContext } from 'react';
+import { Link as AriaLink, composeRenderProps } from 'react-aria-components';
 
-import { LinkContext } from './Breadcrumbs';
 import styles from './styles/Link.module.css';
 
 const link = cva(styles.base, {
@@ -22,6 +22,8 @@ const link = cva(styles.base, {
 	},
 });
 
+const LinkContext = createContext<LinkProps | null>(null);
+
 interface LinkProps extends AriaLinkProps, VariantProps<typeof link>, DOMProps {
 	ref?: Ref<HTMLAnchorElement>;
 }
@@ -32,7 +34,7 @@ interface LinkProps extends AriaLinkProps, VariantProps<typeof link>, DOMProps {
  * https://react-spectrum.adobe.com/react-aria/Link.html
  */
 const Link = ({ variant = 'default', href, ref, ...props }: LinkProps) => {
-	const linkProps = useSlottedContext(LinkContext);
+	const linkProps = useContext(LinkContext);
 
 	return (
 		<>
@@ -45,10 +47,10 @@ const Link = ({ variant = 'default', href, ref, ...props }: LinkProps) => {
 				)}
 				href={href}
 			/>
-			{href && linkProps && <Icon name="slash" className={styles.separator} />}
+			{href && linkProps && <Icon name="slash" className={styles.separator} size={null} />}
 		</>
 	);
 };
 
-export { Link };
+export { Link, LinkContext };
 export type { LinkProps };
