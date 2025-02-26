@@ -25,7 +25,7 @@ export const Cyan: Story = {
 	args: { children, variant: 'cyan' },
 };
 
-export const Puple: Story = {
+export const Purple: Story = {
 	args: { children, variant: 'purple' },
 };
 

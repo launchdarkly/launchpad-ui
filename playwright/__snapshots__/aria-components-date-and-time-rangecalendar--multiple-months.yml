@@ -132,15 +132,15 @@
           - button /Friday, February \d+, \d+/
         - gridcell /Saturday, February \d+, \d+/:
           - button /Saturday, February \d+, \d+/
-      - row /Sunday, February \d+, \d+ Monday, February \d+, \d+ Today, Tuesday, February \d+, \d+ Wednesday, February \d+, \d+ Thursday, February \d+, \d+ Friday, February \d+, \d+/:
+      - row /Sunday, February \d+, \d+ Monday, February \d+, \d+ Tuesday, February \d+, \d+ Today, Wednesday, February \d+, \d+ Thursday, February \d+, \d+ Friday, February \d+, \d+/:
         - gridcell /Sunday, February \d+, \d+/:
           - button /Sunday, February \d+, \d+/
         - gridcell /Monday, February \d+, \d+/:
           - button /Monday, February \d+, \d+/
-        - gridcell /Today, Tuesday, February \d+, \d+/:
-          - button /Today, Tuesday, February \d+, \d+/
-        - gridcell /Wednesday, February \d+, \d+/:
-          - button /Wednesday, February \d+, \d+/
+        - gridcell /Tuesday, February \d+, \d+/:
+          - button /Tuesday, February \d+, \d+/
+        - gridcell /Today, Wednesday, February \d+, \d+/:
+          - button /Today, Wednesday, February \d+, \d+/
         - gridcell /Thursday, February \d+, \d+/:
           - button /Thursday, February \d+, \d+/
         - gridcell /Friday, February \d+, \d+/:

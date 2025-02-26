@@ -6,6 +6,9 @@ test.describe.configure({ mode: 'parallel' });
 test.describe('Storybook a11y', async () => {
 	const stories: string[] = require('./stories.json');
 	const themes = ['default', 'dark'];
+	const snapshots = stories.filter(
+		(story) => story.startsWith('components') && !story.includes('icons'),
+	);
 
 	for (const theme of themes) {
 		for (const story of stories) {
@@ -92,13 +95,23 @@ test.describe('Storybook a11y', async () => {
 					.analyze();
 
 				await expect(accessibilityScanResults.violations).toEqual([]);
-
-				if (theme === 'default' && story.startsWith('components')) {
-					await expect(page.locator('body')).toMatchAriaSnapshot({
-						name: `aria-${story}.yml`,
-					});
-				}
 			});
 		}
+	}
+
+	for (const story of snapshots) {
+		test(`aria snapshot: ${story}`, async ({ page }) => {
+			await page.goto(`${process.env.STORYBOOK_URL}iframe.html?args=&id=${story}&viewMode=story`);
+
+			// @ts-ignore
+			await page.evaluate(() => window.__STORYBOOK_PREVIEW__.ready());
+			const root = page.locator('#storybook-root');
+			await root.waitFor();
+			await page.waitForLoadState('domcontentloaded');
+
+			await expect(page.locator('body')).toMatchAriaSnapshot({
+				name: `aria-${story}.yml`,
+			});
+		});
 	}
 });
