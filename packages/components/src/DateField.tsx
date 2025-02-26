@@ -17,7 +17,6 @@ import {
 	composeRenderProps,
 } from 'react-aria-components';
 
-import { input } from './Input';
 import styles from './styles/DateField.module.css';
 
 const field = cva(styles.field);
@@ -68,7 +67,7 @@ const DateInput = ({ ref, ...props }: DateInputProps) => {
 			{...props}
 			ref={ref}
 			className={composeRenderProps(props.className, (className, renderProps) =>
-				cx(input(), dateInput({ ...renderProps, className })),
+				cx(dateInput({ ...renderProps, className })),
 			)}
 		/>
 	);
