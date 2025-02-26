@@ -1,0 +1,4 @@
+- radiogroup:
+  - radio "flask"
+  - radio "flag"
+  - radio "toggle"

@@ -1,0 +1,26 @@
+- grid "table":
+  - rowgroup:
+    - row "Name Resizer Description Resizer ID Resizer":
+      - columnheader "Name Resizer":
+        - slider "Resizer Name"
+      - columnheader "Description Resizer":
+        - slider "Resizer Description"
+      - columnheader "ID Resizer":
+        - slider "Resizer ID"
+  - rowgroup:
+    - row "Name 1":
+      - rowheader "Name 1"
+      - gridcell "Some data"
+      - gridcell /\d+/
+    - row "Name 2":
+      - rowheader "Name 2"
+      - gridcell "Some data"
+      - gridcell /\d+/
+    - row "Name 3":
+      - rowheader "Name 3"
+      - gridcell "Some data"
+      - gridcell /\d+/
+    - row "Name 4":
+      - rowheader "Name 4"
+      - gridcell "Some data"
+      - gridcell /\d+/

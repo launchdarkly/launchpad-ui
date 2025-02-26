@@ -1,0 +1,4 @@
+- listbox "Items":
+  - option "Item one" [selected]
+  - option "Item two"
+  - option "Item three"

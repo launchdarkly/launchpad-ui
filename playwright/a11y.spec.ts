@@ -4,7 +4,7 @@ import { expect, test } from '@playwright/test';
 test.describe.configure({ mode: 'parallel' });
 
 test.describe('Storybook a11y', async () => {
-	const stories = require('./stories.json');
+	const stories: string[] = require('./stories.json');
 	const themes = ['default', 'dark'];
 
 	for (const theme of themes) {
@@ -92,6 +92,12 @@ test.describe('Storybook a11y', async () => {
 					.analyze();
 
 				await expect(accessibilityScanResults.violations).toEqual([]);
+
+				if (theme === 'default' && story.startsWith('components')) {
+					await expect(page.locator('body')).toMatchAriaSnapshot({
+						name: `aria-${story}.yml`,
+					});
+				}
 			});
 		}
 	}

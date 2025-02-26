@@ -1,0 +1,4 @@
+- group:
+  - button "First"
+  - button "Second"
+  - button "Third"

@@ -1,0 +1,10 @@
+- text: Resting
+- button "Default"
+- text: Hover
+- button "Default"
+- text: Focus
+- button "Default"
+- text: Active
+- button "Default"
+- text: Disabled
+- button "Default" [disabled]

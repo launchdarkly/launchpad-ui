@@ -1,0 +1,5 @@
+- text: Label
+- group:
+  - combobox "Label"
+  - button "Show suggestions Label"
+- text: Description

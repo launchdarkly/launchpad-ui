@@ -1,0 +1,7 @@
+- text: Date
+- group "Date":
+  - group "Date":
+    - spinbutton "month, Date"
+    - spinbutton "day, Date"
+    - spinbutton "year, Date"
+- text: Please select a weekday.
