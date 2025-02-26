@@ -2,12 +2,9 @@ import type { Ref } from 'react';
 import type {
 	BreadcrumbProps as AriaBreadcrumbProps,
 	BreadcrumbsProps as AriaBreadcrumbsProps,
-	ContextValue,
 } from 'react-aria-components';
-import type { LinkProps } from './Link';
 
 import { cva } from 'class-variance-authority';
-import { createContext } from 'react';
 import {
 	Breadcrumb as AriaBreadcrumb,
 	Breadcrumbs as AriaBreadcrumbs,
@@ -15,12 +12,11 @@ import {
 	composeRenderProps,
 } from 'react-aria-components';
 
+import { LinkContext } from './Link';
 import styles from './styles/Breadcrumbs.module.css';
 
 const crumbs = cva(styles.crumbs);
 const crumb = cva(styles.crumb);
-
-const LinkContext = createContext<ContextValue<LinkProps, HTMLAnchorElement>>(null);
 
 interface BreadcrumbsProps<T extends object> extends AriaBreadcrumbsProps<T> {
 	ref?: Ref<HTMLOListElement>;
@@ -60,5 +56,5 @@ const Breadcrumb = ({ ref, ...props }: BreadcrumbProps) => {
 	);
 };
 
-export { Breadcrumbs, Breadcrumb, LinkContext };
+export { Breadcrumbs, Breadcrumb };
 export type { BreadcrumbsProps, BreadcrumbProps };
