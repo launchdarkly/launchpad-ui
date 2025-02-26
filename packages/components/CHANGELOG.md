@@ -1,5 +1,11 @@
 # @launchpad-ui/components
 
+## 0.7.8
+
+### Patch Changes
+
+- [#1558](https://github.com/launchdarkly/launchpad-ui/pull/1558) [`ee7c84f`](https://github.com/launchdarkly/launchpad-ui/commit/ee7c84fd3bb957f30ddaf8e7355a9fd1c435f732) Thanks [@Niznikr](https://github.com/Niznikr)! - Reset size of `Breadcrumb` slash icon
+
 ## 0.7.7
 
 ### Patch Changes
