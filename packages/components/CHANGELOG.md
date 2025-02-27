@@ -1,5 +1,11 @@
 # @launchpad-ui/components
 
+## 0.7.10
+
+### Patch Changes
+
+- [#1563](https://github.com/launchdarkly/launchpad-ui/pull/1563) [`2365bc6`](https://github.com/launchdarkly/launchpad-ui/commit/2365bc603c0fd8efc8515b90d2ad5f0c3bb66bcf) Thanks [@Niznikr](https://github.com/Niznikr)! - Use render props for `Breadcrumb` separator
+
 ## 0.7.9
 
 ### Patch Changes
