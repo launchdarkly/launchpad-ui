@@ -18,3 +18,9 @@
 		font: var(--lp-text-heading-1-semibold);
 	}
 }
+
+.separator {
+	fill: var(--lp-color-fill-ui-secondary);
+	height: var(--lp-size-24);
+	width: var(--lp-size-24);
+}

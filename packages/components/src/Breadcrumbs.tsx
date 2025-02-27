@@ -4,6 +4,7 @@ import type {
 	BreadcrumbsProps as AriaBreadcrumbsProps,
 } from 'react-aria-components';
 
+import { Icon } from '@launchpad-ui/icons';
 import { cva } from 'class-variance-authority';
 import {
 	Breadcrumb as AriaBreadcrumb,
@@ -49,8 +50,11 @@ const Breadcrumb = ({ ref, ...props }: BreadcrumbProps) => {
 				crumb({ ...renderProps, className }),
 			)}
 		>
-			{composeRenderProps(props.children, (children) => (
-				<Provider values={[[LinkContext, { variant: 'subtle' }]]}>{children}</Provider>
+			{composeRenderProps(props.children, (children, { isCurrent }) => (
+				<Provider values={[[LinkContext, { variant: 'subtle' }]]}>
+					{children}
+					{!isCurrent && <Icon name="slash" className={styles.separator} size={null} />}
+				</Provider>
 			))}
 		</AriaBreadcrumb>
 	);
