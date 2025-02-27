@@ -1,5 +1,11 @@
 # @launchpad-ui/components
 
+## 0.7.9
+
+### Patch Changes
+
+- [#1561](https://github.com/launchdarkly/launchpad-ui/pull/1561) [`af67820`](https://github.com/launchdarkly/launchpad-ui/commit/af67820a5a23c20d10a401c8159853abf9d47bea) Thanks [@Niznikr](https://github.com/Niznikr)! - Simplify `DateInput` styles
+
 ## 0.7.8
 
 ### Patch Changes
