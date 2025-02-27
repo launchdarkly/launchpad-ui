@@ -1,0 +1,3 @@
+- button "Dismiss"
+- dialog "Trigger": Message
+- button "Dismiss"

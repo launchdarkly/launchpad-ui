@@ -1,0 +1,6 @@
+- meter "1":
+  - img: 1%
+- meter /\d+/:
+  - img: /\d+%/
+- meter /\d+/:
+  - img: /\d+%/

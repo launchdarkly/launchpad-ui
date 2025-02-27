@@ -1,0 +1,4 @@
+- text: Label
+- group:
+  - textbox "Label"
+  - button "clear"

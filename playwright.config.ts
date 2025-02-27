@@ -18,6 +18,11 @@ export default defineConfig({
 		screenshot: 'only-on-failure',
 		testIdAttribute: 'data-test-id',
 	},
+	expect: {
+		toMatchAriaSnapshot: {
+			pathTemplate: '{testDir}/__snapshots__/{arg}{ext}',
+		},
+	},
 	...(!process.env.CI && {
 		webServer: {
 			command: 'pnpm storybook:build && pnpm dlx http-server storybook-static -s',

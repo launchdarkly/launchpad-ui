@@ -1,0 +1,5 @@
+- listbox "Items":
+  - option "Resting"
+  - option "Active"
+  - option "Focus Visible"
+  - option "Disabled" [disabled]

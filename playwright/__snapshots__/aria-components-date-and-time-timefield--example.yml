@@ -1,0 +1,7 @@
+- text: Time
+- group "Time":
+  - group "Time":
+    - spinbutton "hour, Time"
+    - spinbutton "minute, Time"
+    - spinbutton "AM/PM, Time"
+- text: Please select a time.

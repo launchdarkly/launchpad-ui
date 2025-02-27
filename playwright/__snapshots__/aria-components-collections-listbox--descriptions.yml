@@ -1,0 +1,4 @@
+- listbox "Items":
+  - option "Read": Read Read only
+  - option "Write": Write Read and write only
+  - option "Admin": Admin Full access

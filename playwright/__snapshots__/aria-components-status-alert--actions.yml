@@ -1,0 +1,7 @@
+- alert:
+  - heading "Heading" [level=3]
+  - text: Content
+  - group:
+    - button "Label"
+    - button "Label"
+  - button "Close"

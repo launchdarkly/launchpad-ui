@@ -1,0 +1,5 @@
+- group "legend":
+  - text: legend Label
+  - textbox "Label"
+  - button "Select an item Label"
+  - text: Please fill out the fields.

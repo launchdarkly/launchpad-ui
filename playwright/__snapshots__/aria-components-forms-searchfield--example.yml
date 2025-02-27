@@ -1,0 +1,4 @@
+- text: Label
+- group:
+  - searchbox "Label"
+- text: Description

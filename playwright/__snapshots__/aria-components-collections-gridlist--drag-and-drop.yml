@@ -1,0 +1,21 @@
+- grid:
+  - row "Drag Item one options":
+    - gridcell "Drag Item one options":
+      - button "Drag"
+      - button "options"
+  - row "Drag Item two options":
+    - gridcell "Drag Item two options":
+      - button "Drag"
+      - button "options"
+  - row "Drag Item three options":
+    - gridcell "Drag Item three options":
+      - button "Drag"
+      - button "options"
+  - row "Drag Item four options":
+    - gridcell "Drag Item four options":
+      - button "Drag"
+      - button "options"
+  - row "Drag Item five options":
+    - gridcell "Drag Item five options":
+      - button "Drag"
+      - button "options"

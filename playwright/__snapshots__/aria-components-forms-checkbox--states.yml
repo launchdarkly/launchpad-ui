@@ -1,0 +1,10 @@
+- checkbox "Focus Visible"
+- text: Focus Visible
+- checkbox "Disabled" [disabled]
+- text: Disabled
+- checkbox "Checked, Disabled" [checked] [disabled]
+- text: Checked, Disabled
+- checkbox "Invalid"
+- text: Invalid
+- checkbox "Checked, Invalid" [checked]
+- text: Checked, Invalid

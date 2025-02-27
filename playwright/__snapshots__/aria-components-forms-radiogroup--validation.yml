@@ -1,0 +1,6 @@
+- radiogroup "Pick one":
+  - radio "First"
+  - radio "Second"
+  - radio "Third"
+  - text: Third Please select one of these options.
+- button "Submit"

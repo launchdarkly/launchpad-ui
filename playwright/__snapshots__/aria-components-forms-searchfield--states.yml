@@ -1,0 +1,12 @@
+- text: Focus Visible
+- group:
+  - searchbox "Focus Visible"
+  - button "clear"
+- text: Invalid
+- group:
+  - searchbox "Invalid"
+  - button "clear"
+- text: Disabled
+- group:
+  - searchbox "Disabled" [disabled]
+  - button "clear" [disabled]

@@ -1,0 +1,8 @@
+- button "Dismiss"
+- dialog "Title":
+  - heading "Title" [level=2]
+  - button "close"
+  - heading "Subtitle" [level=3]
+  - text: Body text
+  - button "Cancel"
+  - button "Confirm"

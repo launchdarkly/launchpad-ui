@@ -1,0 +1,10 @@
+- text: Resting
+- button "Destructive"
+- text: Hover
+- button "Destructive"
+- text: Focus
+- button "Destructive"
+- text: Active
+- button "Destructive"
+- text: Disabled
+- button "Destructive" [disabled]

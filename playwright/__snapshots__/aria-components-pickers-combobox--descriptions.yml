@@ -1,0 +1,9 @@
+- log: 3 options available.
+- log
+- group:
+  - combobox "Label" [expanded]: Item two
+- listbox "Suggestions Label":
+  - option "Item one": Item one Description one
+  - option "Item two" [selected]: Item two Description two
+  - option "Item three": Item three Description three
+- button "Dismiss"

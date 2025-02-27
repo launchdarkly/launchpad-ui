@@ -1,0 +1,8 @@
+- group:
+  - button "Show toast"
+  - button "Clear"
+- region "1 notification.":
+  - alertdialog "A success toast!":
+    - img "Success icon"
+    - alert: A success toast!
+    - button "Close"

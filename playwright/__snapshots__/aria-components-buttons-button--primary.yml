@@ -1,0 +1,10 @@
+- text: Resting
+- button "Primary"
+- text: Hover
+- button "Primary"
+- text: Focus
+- button "Primary"
+- text: Active
+- button "Primary"
+- text: Disabled
+- button "Primary" [disabled]

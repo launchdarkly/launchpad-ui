@@ -1,0 +1,6 @@
+- button "Dismiss"
+- menu "Trigger":
+  - menuitem "Item one"
+  - menuitem "Item two"
+  - menuitem "Item three"
+- button "Dismiss"
