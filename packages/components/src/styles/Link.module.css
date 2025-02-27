@@ -42,9 +42,3 @@
 	composes: link;
 	color: var(--lp-color-text-ui-secondary);
 }
-
-.separator {
-	fill: var(--lp-color-fill-ui-secondary);
-	height: var(--lp-size-24);
-	width: var(--lp-size-24);
-}

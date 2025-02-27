@@ -3,7 +3,6 @@ import type { VariantProps } from 'class-variance-authority';
 import type { Ref } from 'react';
 import type { LinkProps as AriaLinkProps } from 'react-aria-components';
 
-import { Icon } from '@launchpad-ui/icons';
 import { cva } from 'class-variance-authority';
 import { createContext, useContext } from 'react';
 import { Link as AriaLink, composeRenderProps } from 'react-aria-components';
@@ -37,18 +36,15 @@ const Link = ({ variant = 'default', href, ref, ...props }: LinkProps) => {
 	const linkProps = useContext(LinkContext);
 
 	return (
-		<>
-			<AriaLink
-				{...props}
-				{...linkProps}
-				ref={ref}
-				className={composeRenderProps(props.className, (className, renderProps) =>
-					link({ ...renderProps, variant: linkProps?.variant ?? variant, className }),
-				)}
-				href={href}
-			/>
-			{href && linkProps && <Icon name="slash" className={styles.separator} size={null} />}
-		</>
+		<AriaLink
+			{...props}
+			{...linkProps}
+			ref={ref}
+			className={composeRenderProps(props.className, (className, renderProps) =>
+				link({ ...renderProps, variant: linkProps?.variant ?? variant, className }),
+			)}
+			href={href}
+		/>
 	);
 };
 
