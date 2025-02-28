@@ -7,7 +7,7 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/launchdarkly/launchpad-ui",
+		"url": "git+https://github.com/launchdarkly/launchpad-ui.git",
 		"directory": "packages/icons"
 	},
 	"description": "An element that supplements content and represents an action or feature within LaunchDarkly.",

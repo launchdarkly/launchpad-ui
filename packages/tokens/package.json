@@ -7,7 +7,7 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/launchdarkly/launchpad-ui",
+		"url": "git+https://github.com/launchdarkly/launchpad-ui.git",
 		"directory": "packages/tokens"
 	},
 	"description": "LaunchPad design tokens delivered as CSS custom properties, CommonJS modules, and ES modules.",
