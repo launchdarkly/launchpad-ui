@@ -1,0 +1,39 @@
+name: Preview release
+
+on:
+  pull_request:
+    paths:
+      - 'packages/components/**'
+      - 'packages/icons/**'
+      - 'packages/tokens/**'
+  push:
+    paths:
+      - 'packages/components/**'
+      - 'packages/icons/**'
+      - 'packages/tokens/**'
+    branches:
+      - main
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: pnpm/action-setup@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Build
+        run: pnpm nx run @launchpad-ui/components:build
+
+      - run: pnpm dlx pkg-pr-new publish --compact --pnpm --no-template './packages/components' './packages/icons' './packages/tokens'
