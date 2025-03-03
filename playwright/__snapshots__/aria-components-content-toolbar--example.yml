@@ -1,0 +1,10 @@
+- toolbar:
+  - group:
+    - button "Filter"
+    - button "Sort"
+    - button "Display"
+  - separator
+  - group:
+    - button "Create"
+    - button "settings"
+    - button "help"

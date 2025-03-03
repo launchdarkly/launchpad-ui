@@ -1,0 +1,9 @@
+- button "Dismiss"
+- dialog "dialog with autocomplete":
+  - group:
+    - searchbox "search"
+  - menu "Suggestions":
+    - menuitemcheckbox "Item one"
+    - menuitemcheckbox "Item two"
+    - menuitemcheckbox "Item three"
+- button "Dismiss"

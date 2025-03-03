@@ -1,0 +1,11 @@
+- text: Label
+- grid "Label":
+  - row "One":
+    - gridcell "One Remove One One":
+      - button "Remove One One"
+  - row "Two":
+    - gridcell "Two Remove Two Two":
+      - button "Remove Two Two"
+  - row "Three":
+    - gridcell "Three Remove Three Three":
+      - button "Remove Three Three"

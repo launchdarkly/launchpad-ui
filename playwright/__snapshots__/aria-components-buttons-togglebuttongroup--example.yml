@@ -1,0 +1,4 @@
+- radiogroup:
+  - radio "First" [checked]
+  - radio "Second"
+  - radio "Third"

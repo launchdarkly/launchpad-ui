@@ -1,0 +1,4 @@
+- text: Resting
+- textbox "Resting"
+- text: Hover
+- textbox "Hover": Value

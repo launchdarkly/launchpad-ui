@@ -1,0 +1,4 @@
+- listbox "Items":
+  - option "Add"
+  - option "Edit"
+  - option "Delete"

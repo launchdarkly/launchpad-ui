@@ -1,0 +1,6 @@
+- button "Dismiss"
+- listbox "Select":
+  - option "Item one": Item one Description one
+  - option "Item two": Item two Description two
+  - option "Item three": Item three Description three
+- button "Dismiss"

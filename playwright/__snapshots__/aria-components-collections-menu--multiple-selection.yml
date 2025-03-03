@@ -1,0 +1,6 @@
+- button "Dismiss"
+- menu "Trigger":
+  - menuitemcheckbox "Item one" [checked]
+  - menuitemcheckbox "Item two"
+  - menuitemcheckbox "Item three"
+- button "Dismiss"

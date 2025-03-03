@@ -1,0 +1,16 @@
+- button "Dismiss"
+- menu "Trigger":
+  - menuitem "Item one"
+  - menuitem "Item two"
+  - menuitem "Item three"
+  - menuitem "Item four" [expanded]
+- button "Dismiss"
+- menu "Item four":
+  - menuitem "Item five"
+  - menuitem "Item six"
+  - menuitem "Item seven" [expanded]
+- button "Dismiss"
+- menu "Item seven":
+  - menuitem "Item eight"
+  - menuitem "Item nine"
+- button "Dismiss"

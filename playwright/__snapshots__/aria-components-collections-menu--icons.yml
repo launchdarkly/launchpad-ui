@@ -1,0 +1,6 @@
+- button "Dismiss"
+- menu "Trigger":
+  - menuitem "Add"
+  - menuitem "Edit"
+  - menuitem "Delete"
+- button "Dismiss"

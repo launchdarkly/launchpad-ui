@@ -1,0 +1,8 @@
+- text: Label
+- grid "Label":
+  - row "One":
+    - gridcell "One"
+  - row "Two":
+    - gridcell "Two"
+  - row "Three":
+    - gridcell "Three"

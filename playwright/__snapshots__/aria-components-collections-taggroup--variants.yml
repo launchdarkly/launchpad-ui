@@ -1,0 +1,16 @@
+- text: Label
+- grid "Label":
+  - row "Default":
+    - gridcell "Default"
+  - row "Success":
+    - gridcell "Success"
+  - row "Error":
+    - gridcell "Error"
+  - row "Beta":
+    - gridcell "Beta"
+  - row "Federal":
+    - gridcell "Federal"
+  - row "New":
+    - gridcell "New"
+  - row "Info":
+    - gridcell "Info"
