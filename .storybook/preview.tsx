@@ -13,7 +13,6 @@ import custom from './custom.svg';
 import { allModes } from './modes';
 
 import '../packages/components/src/styles/themes.css';
-import '../packages/tokens/dist/fonts.css';
 import '../packages/tokens/dist/index.css';
 import '../packages/tokens/dist/media-queries.css';
 import '../packages/tokens/dist/themes.css';
