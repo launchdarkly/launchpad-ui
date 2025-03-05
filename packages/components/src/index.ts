@@ -23,6 +23,7 @@ export type { DateFieldProps, DateInputProps, DateSegmentProps, TimeFieldProps }
 export type { DatePickerProps, DateRangePickerProps } from './DatePicker';
 export type { DialogProps, DialogTriggerProps } from './Dialog';
 export type { DisclosureProps, DisclosurePanelProps } from './Disclosure';
+export type { DisclosureGroupProps } from './DisclosureGroup';
 export type { DropIndicatorProps } from './DropIndicator';
 export type { DropZoneProps } from './DropZone';
 export type { FieldErrorProps } from './FieldError';
@@ -101,6 +102,7 @@ export { DateField, DateInput, DateSegment, TimeField } from './DateField';
 export { DatePicker, DateRangePicker, DatePickerValue, DateRangePickerValue } from './DatePicker';
 export { Dialog, DialogTrigger } from './Dialog';
 export { Disclosure, DisclosurePanel } from './Disclosure';
+export { DisclosureGroup } from './DisclosureGroup';
 export { DropIndicator } from './DropIndicator';
 export { DropZone } from './DropZone';
 export { FieldError } from './FieldError';
