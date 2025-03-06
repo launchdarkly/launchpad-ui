@@ -138,6 +138,8 @@ export const States: Story = {
 
 		const options = await canvas.findAllByRole('option');
 		await fireEvent.pointerDown(options[1], { pointerType: 'touch' });
+		await userEvent.tab();
+		await userEvent.keyboard('{arrowdown}');
 		await userEvent.keyboard('{arrowdown}');
 	},
 };

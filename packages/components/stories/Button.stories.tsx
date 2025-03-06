@@ -77,7 +77,6 @@ const play: PlayFunction<ReactRenderer> = async ({
 	await userEvent.tab();
 	await userEvent.tab();
 	await userEvent.tab();
-	await userEvent.tab();
 };
 
 export const Default: Story = {

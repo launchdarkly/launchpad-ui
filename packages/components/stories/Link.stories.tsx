@@ -68,7 +68,6 @@ export const States: Story = {
 		await fireEvent.pointerDown(links[3], { pointerType: 'touch' });
 		await userEvent.tab();
 		await userEvent.tab();
-		await userEvent.tab();
 	},
 	args: {
 		href: '/test',
