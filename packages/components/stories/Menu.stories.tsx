@@ -224,6 +224,7 @@ export const States: Story = {
 		const menuitems = await within(body).findAllByRole('menuitem');
 		await fireEvent.pointerDown(menuitems[1], { pointerType: 'touch' });
 		await userEvent.keyboard('{arrowdown}');
+		await userEvent.keyboard('{arrowdown}');
 	},
 };
 

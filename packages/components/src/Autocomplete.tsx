@@ -1,6 +1,6 @@
 import type { AutocompleteProps } from 'react-aria-components';
 
-import { UNSTABLE_Autocomplete } from 'react-aria-components';
+import { Autocomplete } from 'react-aria-components';
 
-export { UNSTABLE_Autocomplete as Autocomplete };
+export { Autocomplete };
 export type { AutocompleteProps };
