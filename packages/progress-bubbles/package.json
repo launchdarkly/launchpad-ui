@@ -1,6 +1,6 @@
 {
 	"name": "@launchpad-ui/progress-bubbles",
-	"version": "0.7.40",
+	"version": "0.7.41",
 	"status": "beta",
 	"publishConfig": {
 		"access": "public"

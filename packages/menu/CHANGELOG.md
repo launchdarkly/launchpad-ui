@@ -1,5 +1,16 @@
 # @launchpad-ui/menu
 
+## 0.13.51
+
+### Patch Changes
+
+- [#1571](https://github.com/launchdarkly/launchpad-ui/pull/1571) [`716f6f5`](https://github.com/launchdarkly/launchpad-ui/commit/716f6f5ecc1f2b243c2b961c4ef2bf57f87cce84) Thanks [@renovate](https://github.com/apps/renovate)! - Update dependencies
+
+- Updated dependencies [[`716f6f5`](https://github.com/launchdarkly/launchpad-ui/commit/716f6f5ecc1f2b243c2b961c4ef2bf57f87cce84)]:
+  - @launchpad-ui/form@0.11.51
+  - @launchpad-ui/popover@0.11.40
+  - @launchpad-ui/tooltip@0.9.29
+
 ## 0.13.50
 
 ### Patch Changes

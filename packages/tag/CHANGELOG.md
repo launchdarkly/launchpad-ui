@@ -1,5 +1,14 @@
 # @launchpad-ui/tag
 
+## 0.3.67
+
+### Patch Changes
+
+- [#1571](https://github.com/launchdarkly/launchpad-ui/pull/1571) [`716f6f5`](https://github.com/launchdarkly/launchpad-ui/commit/716f6f5ecc1f2b243c2b961c4ef2bf57f87cce84) Thanks [@renovate](https://github.com/apps/renovate)! - Update dependencies
+
+- Updated dependencies []:
+  - @launchpad-ui/tooltip@0.9.29
+
 ## 0.3.66
 
 ### Patch Changes
