@@ -1,5 +1,12 @@
 # @launchpad-ui/card
 
+## 0.2.66
+
+### Patch Changes
+
+- Updated dependencies [[`716f6f5`](https://github.com/launchdarkly/launchpad-ui/commit/716f6f5ecc1f2b243c2b961c4ef2bf57f87cce84)]:
+  - @launchpad-ui/form@0.11.51
+
 ## 0.2.65
 
 ### Patch Changes

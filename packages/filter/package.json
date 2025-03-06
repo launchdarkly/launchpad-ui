@@ -1,6 +1,6 @@
 {
 	"name": "@launchpad-ui/filter",
-	"version": "0.7.50",
+	"version": "0.7.51",
 	"status": "beta",
 	"publishConfig": {
 		"access": "public"

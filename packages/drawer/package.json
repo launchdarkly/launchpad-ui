@@ -1,6 +1,6 @@
 {
 	"name": "@launchpad-ui/drawer",
-	"version": "0.5.65",
+	"version": "0.5.66",
 	"status": "alpha",
 	"publishConfig": {
 		"access": "public"
