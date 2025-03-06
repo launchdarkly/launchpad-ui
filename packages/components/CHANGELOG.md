@@ -1,5 +1,11 @@
 # @launchpad-ui/components
 
+## 0.7.11
+
+### Patch Changes
+
+- [#1569](https://github.com/launchdarkly/launchpad-ui/pull/1569) [`9d2bd79`](https://github.com/launchdarkly/launchpad-ui/commit/9d2bd79c78ec6c98b7e43736bb8541843b52fa71) Thanks [@Niznikr](https://github.com/Niznikr)! - Pass label props to fallback `InitialsAvatar`
+
 ## 0.7.10
 
 ### Patch Changes
