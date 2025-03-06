@@ -1,8 +1,0 @@
-.pressable {
-	outline: none;
-	display: inline-flex;
-}
-
-.pressable[data-focus-visible] {
-	outline: 2px solid var(--lp-color-shadow-interactive-focus);
-}

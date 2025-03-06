@@ -4,11 +4,11 @@ import type { ComponentType } from 'react';
 
 import { expect, userEvent, within } from '@storybook/test';
 
-import { Button, Pressable, Tooltip, TooltipTrigger } from '../src';
+import { Button, Focusable, Tooltip, TooltipTrigger } from '../src';
 
 const meta: Meta<typeof Tooltip> = {
 	component: Tooltip,
-	subcomponents: { TooltipTrigger, Pressable } as Record<string, ComponentType<unknown>>,
+	subcomponents: { TooltipTrigger, Focusable } as Record<string, ComponentType<unknown>>,
 	title: 'Components/Overlays/Tooltip',
 	parameters: {
 		chromatic: { pauseAnimationAtEnd: true },
@@ -55,7 +55,10 @@ export const CustomTrigger: Story = {
 	render: (args) => {
 		return (
 			<TooltipTrigger>
-				<Pressable>Trigger</Pressable>
+				<Focusable>
+					{/* biome-ignore lint/a11y/useFocusableInteractive: <explanation> */}
+					<span role="button">Trigger</span>
+				</Focusable>
 				<Tooltip {...args}>Message</Tooltip>
 			</TooltipTrigger>
 		);
