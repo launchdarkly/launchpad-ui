@@ -1,6 +1,7 @@
 import type { VariantProps } from 'class-variance-authority';
 import type { ImgHTMLAttributes, Ref, SVGAttributes } from 'react';
 
+import { mergeProps, useLabels } from '@react-aria/utils';
 import { cva, cx } from 'class-variance-authority';
 
 import styles from './styles/Avatar.module.css';
@@ -41,13 +42,25 @@ interface InitialsAvatarProps extends SVGAttributes<SVGElement>, AvatarVariants 
 
 const Avatar = ({ className, children, size = 'medium', ref, src, ...props }: AvatarProps) => {
 	const status = useImageLoadingStatus(src);
+	const labelProps = useLabels(props);
 
 	if (status !== 'loaded') {
-		return <InitialsAvatar size={size}>{children}</InitialsAvatar>;
+		return (
+			<InitialsAvatar size={size} {...labelProps}>
+				{children}
+			</InitialsAvatar>
+		);
 	}
 
 	// biome-ignore lint/a11y/useAltText: <explanation>
-	return <img ref={ref} src={src} {...props} className={avatar({ size, className })} />;
+	return (
+		<img
+			ref={ref}
+			src={src}
+			{...mergeProps(props, labelProps)}
+			className={avatar({ size, className })}
+		/>
+	);
 };
 
 const InitialsAvatar = ({
