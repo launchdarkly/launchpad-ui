@@ -15,6 +15,7 @@ import {
 	MenuSection,
 	MenuTrigger,
 	Popover,
+	Pressable,
 	Separator,
 	SubmenuTrigger,
 	Text,
@@ -275,4 +276,27 @@ export const Submenus: Story = {
 		const subItems = await within(body).findAllByRole('menuitem');
 		await userEvent.hover(subItems[subItems.length - 1]);
 	},
+};
+
+export const CustomTrigger: Story = {
+	render: (args) => {
+		return (
+			<MenuTrigger>
+				<Pressable>
+					{/* biome-ignore lint/a11y/useFocusableInteractive: <explanation> */}
+					<span role="button">Trigger</span>
+				</Pressable>
+				<Popover>
+					<Menu {...args}>
+						<MenuItem>Item one</MenuItem>
+						<MenuItem>
+							<Text slot="label">Item two</Text>
+						</MenuItem>
+						<MenuItem>Item three</MenuItem>
+					</Menu>
+				</Popover>
+			</MenuTrigger>
+		);
+	},
+	...open,
 };
