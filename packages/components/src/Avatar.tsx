@@ -46,7 +46,7 @@ const Avatar = ({ className, children, size = 'medium', ref, src, ...props }: Av
 
 	if (status !== 'loaded') {
 		return (
-			<InitialsAvatar size={size} {...labelProps}>
+			<InitialsAvatar className={className} size={size} {...labelProps}>
 				{children}
 			</InitialsAvatar>
 		);
