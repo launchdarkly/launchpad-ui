@@ -1,5 +1,11 @@
 # @launchpad-ui/components
 
+## 0.7.13
+
+### Patch Changes
+
+- [#1574](https://github.com/launchdarkly/launchpad-ui/pull/1574) [`2f268ff`](https://github.com/launchdarkly/launchpad-ui/commit/2f268ff52a07facb847d1a7117035708cb862c6f) Thanks [@Niznikr](https://github.com/Niznikr)! - Pass `className` to `Avatar` fallback
+
 ## 0.7.12
 
 ### Patch Changes
