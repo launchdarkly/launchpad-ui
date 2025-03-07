@@ -1,20 +1,24 @@
-import type { AriaToastProps, AriaToastRegionProps } from '@react-aria/toast';
-import type { ToastOptions as AriaToastOptions, ToastState } from '@react-stately/toast';
 import type { VariantProps } from 'class-variance-authority';
-import type { ReactElement, ReactNode } from 'react';
+import type { Ref } from 'react';
+import type {
+	ToastProps as AriaToastProps,
+	ToastRegionProps as AriaToastRegionProps,
+	ToastOptions,
+} from 'react-aria-components';
 
 import { StatusIcon } from '@launchpad-ui/icons';
-import { useToast, useToastRegion } from '@react-aria/toast';
-import { mergeProps } from '@react-aria/utils';
-import { ToastQueue as AriaToastQueue, useToastQueue } from '@react-stately/toast';
 import { cva } from 'class-variance-authority';
-import { cloneElement, useEffect, useRef } from 'react';
-import { useFocusRing } from 'react-aria';
-import { createPortal } from 'react-dom';
+import {
+	UNSTABLE_Toast as AriaToast,
+	UNSTABLE_ToastContent as AriaToastContent,
+	UNSTABLE_ToastQueue as AriaToastQueue,
+	UNSTABLE_ToastRegion as AriaToastRegion,
+	Text,
+	composeRenderProps,
+} from 'react-aria-components';
 
 import { IconButton } from './IconButton';
 import styles from './styles/Toast.module.css';
-import { useMedia } from './utils';
 
 const region = cva(styles.region, {
 	variants: {
@@ -57,132 +61,27 @@ interface RegionVariants extends VariantProps<typeof region> {}
 interface IconVariants extends VariantProps<typeof icon> {}
 interface ToastVariants extends VariantProps<typeof toast> {}
 
-interface ToastContent {
-	children: ReactNode;
+interface ToastValue {
+	title: string;
+	description?: string;
 }
 
-interface ToastValue extends IconVariants, ToastContent {}
+interface ToastContent extends ToastValue, IconVariants {}
 
-interface SnackbarContent {
-	title?: ReactNode;
-	description: ReactNode;
-	// biome-ignore lint/suspicious/noExplicitAny: <explanation>
-	action?: ReactElement<any>;
+interface ToastProps<ToastContent> extends AriaToastProps<ToastContent>, ToastVariants {
+	ref?: Ref<HTMLDivElement>;
 }
 
-interface SnackbarValue extends IconVariants, SnackbarContent {}
+interface ToastRegionProps<ToastContent>
+	extends AriaToastRegionProps<ToastContent>,
+		RegionVariants {}
 
-interface ToastOptions extends Omit<AriaToastOptions, 'timeout'> {}
-
-interface ToastRegionProps<T> extends AriaToastRegionProps, RegionVariants {
-	state: ToastState<T>;
-}
-
-interface ToastProps<T> extends AriaToastProps<T>, ToastVariants {
-	state: ToastState<T>;
-}
-
-const ToastRegion = <T extends ToastValue | SnackbarValue>({
-	state,
-	placement = 'bottom',
-	...props
-}: ToastRegionProps<T>) => {
-	const ref = useRef(null);
-	const { regionProps } = useToastRegion(props, state, ref);
-
-	return (
-		<div {...regionProps} ref={ref} className={region({ placement })}>
-			{state.visibleToasts.map((toast) => (
-				<Toast
-					key={toast.key}
-					toast={toast}
-					state={state}
-					variant={placement === 'bottom' ? 'default' : 'snackbar'}
-				/>
-			))}
-		</div>
-	);
-};
-
-const Toast = <T extends ToastValue | SnackbarValue>({
-	state,
-	variant = 'default',
-	...props
-}: ToastProps<T>) => {
-	const ref = useRef(null);
-	const { toastProps, contentProps, titleProps, descriptionProps, closeButtonProps } = useToast(
-		props,
-		state,
-		ref,
-	);
-	const useMotion = useMedia('(prefers-reduced-motion: no-preference)');
-	const { isFocusVisible, focusProps } = useFocusRing();
-
-	const content: IconVariants & Partial<SnackbarContent & ToastContent> = props.toast.content;
-	const { children, status, title, description, action } = content;
-	const cta =
-		action &&
-		cloneElement(action, mergeProps(action.props, { onPress: () => state.close(props.toast.key) }));
-
-	useEffect(() => {
-		// Ensure toast is removed with reduced motion after close is clicked or when timeout expires
-		if (useMotion === false && props.toast.animation === 'exiting') {
-			state.remove(props.toast.key);
-		}
-	}, [useMotion, props.toast, state]);
-
-	return (
-		<div
-			data-theme="dark"
-			{...mergeProps(toastProps, focusProps)}
-			ref={ref}
-			className={toast({ variant })}
-			data-animation={props.toast.animation}
-			data-focus-visible={isFocusVisible || undefined}
-			onAnimationEnd={() => {
-				if (props.toast.animation === 'exiting') {
-					state.remove(props.toast.key);
-				}
-			}}
-		>
-			<StatusIcon kind={status || 'info'} className={icon({ status })} />
-			<div {...contentProps} className={styles.content}>
-				{variant === 'default' ? (
-					<div {...titleProps}>{children}</div>
-				) : (
-					<>
-						<div {...titleProps} className={styles.title}>
-							{title}
-						</div>
-						<div {...descriptionProps} className={styles.description}>
-							{description}
-							{cta && ' '}
-							{cta}
-						</div>
-					</>
-				)}
-			</div>
-			<IconButton
-				aria-label="Close"
-				{...closeButtonProps}
-				/* biome-ignore lint/correctness/noChildrenProp: <explanation> */
-				children={undefined}
-				icon="cancel"
-				variant="minimal"
-				size="small"
-			/>
-		</div>
-	);
-};
-
-const toastQueue = new AriaToastQueue<ToastValue>({
+const toastQueue = new AriaToastQueue<ToastContent>({
 	maxVisibleToasts: 5,
-	hasExitAnimation: true,
 });
 
-const snackbarQueue = new AriaToastQueue<SnackbarValue>({
+const snackbarQueue = new AriaToastQueue<ToastContent>({
 	maxVisibleToasts: 5,
-	hasExitAnimation: true,
 });
 
 const timeout = 6000;
@@ -193,12 +92,12 @@ const ToastQueue = {
 			toastQueue.close(toast.key);
 		}
 	},
-	error: (children: ToastContent['children'], options?: ToastOptions) =>
-		toastQueue.add({ children, status: 'error' }, { ...options, timeout }),
-	info: (children: ToastContent['children'], options?: ToastOptions) =>
-		toastQueue.add({ children, status: 'info' }, { ...options, timeout }),
-	success: (children: ToastContent['children'], options?: ToastOptions) =>
-		toastQueue.add({ children, status: 'success' }, { ...options, timeout }),
+	error: (content: ToastValue, options?: ToastOptions) =>
+		toastQueue.add({ ...content, status: 'error' }, { ...options, timeout }),
+	info: (content: ToastValue, options?: ToastOptions) =>
+		toastQueue.add({ ...content, status: 'info' }, { ...options, timeout }),
+	success: (content: ToastValue, options?: ToastOptions) =>
+		toastQueue.add({ ...content, status: 'success' }, { ...options, timeout }),
 	visibleToasts: () => toastQueue.visibleToasts,
 };
 
@@ -208,15 +107,15 @@ const SnackbarQueue = {
 			snackbarQueue.close(toast.key);
 		}
 	},
-	error: (content: SnackbarContent, options?: ToastOptions) => {
+	error: (content: ToastValue, options?: ToastOptions) => {
 		const key = snackbarQueue.add({ ...content, status: 'error' }, { ...options });
 		return () => snackbarQueue.close(key);
 	},
-	info: (content: SnackbarContent, options?: ToastOptions) => {
+	info: (content: ToastValue, options?: ToastOptions) => {
 		const key = snackbarQueue.add({ ...content, status: 'info' }, { ...options });
 		return () => snackbarQueue.close(key);
 	},
-	success: (content: SnackbarContent, options?: ToastOptions) => {
+	success: (content: ToastValue, options?: ToastOptions) => {
 		const key = snackbarQueue.add({ ...content, status: 'success' }, { ...options });
 		return () => snackbarQueue.close(key);
 	},
@@ -224,30 +123,63 @@ const SnackbarQueue = {
 };
 
 /**
- * Toasts display brief, temporary notifications of actions, errors, or other events in an application.
+ * A Toast displays a brief, temporary notification of actions, errors, or other events in an application.
  *
- * https://react-spectrum.adobe.com/react-aria/useToast.html
+ * https://react-spectrum.adobe.com/react-aria/Toast.html
  */
-const ToastContainer = (props: AriaToastRegionProps) => {
-	const state = useToastQueue(toastQueue);
-
-	return state.visibleToasts.length > 0
-		? createPortal(<ToastRegion {...props} state={state} placement="bottom" />, document.body)
-		: null;
+const Toast = ({ ref, variant, ...props }: ToastProps<ToastContent>) => {
+	return (
+		<AriaToast
+			{...props}
+			ref={ref}
+			className={composeRenderProps(props.className, (className, renderProps) =>
+				toast({ ...renderProps, className, variant }),
+			)}
+			data-theme="dark"
+		>
+			{composeRenderProps(props.children, (children, { toast }) => (
+				<>
+					<StatusIcon
+						kind={toast.content.status || 'info'}
+						className={icon({ status: toast.content.status })}
+					/>
+					<AriaToastContent className={styles.content}>
+						<Text slot="title">{toast.content.title}</Text>
+						<Text slot="description">{toast.content.description}</Text>
+						{children}
+					</AriaToastContent>
+					{toast.onClose && (
+						/* @ts-expect-error RAC adds label */
+						<IconButton size="small" variant="minimal" icon="cancel" slot="close" />
+					)}
+				</>
+			))}
+		</AriaToast>
+	);
 };
 
 /**
- * Toasts display brief, temporary notifications of actions, errors, or other events in an application.
+ * A ToastRegion displays one or more toast notifications.
  *
- * https://react-spectrum.adobe.com/react-aria/useToast.html
+ * https://react-spectrum.adobe.com/react-aria/Toast.html
  */
-const SnackbarContainer = (props: AriaToastRegionProps) => {
-	const state = useToastQueue(snackbarQueue);
-
-	return state.visibleToasts.length > 0
-		? createPortal(<ToastRegion {...props} state={state} placement="right" />, document.body)
-		: null;
+const ToastRegion = ({
+	placement = 'bottom',
+	queue = toastQueue,
+	children,
+	...props
+}: ToastRegionProps<ToastContent>) => {
+	return (
+		<AriaToastRegion
+			queue={queue}
+			className={composeRenderProps(props.className, (className, renderProps) =>
+				region({ ...renderProps, className, placement }),
+			)}
+			// biome-ignore lint/correctness/noChildrenProp: <explanation>
+			children={children}
+		/>
+	);
 };
 
-export { SnackbarContainer, SnackbarQueue, ToastContainer, ToastQueue };
-export type { SnackbarValue, ToastOptions, ToastValue };
+export { SnackbarQueue, ToastQueue, Toast, ToastRegion };
+export type { ToastOptions, ToastValue };
