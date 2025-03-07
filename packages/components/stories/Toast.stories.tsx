@@ -1,21 +1,18 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import type { ComponentType } from 'react';
 
 import { expect, userEvent, within } from '@storybook/test';
 
 import {
 	Button,
 	ButtonGroup,
-	Link,
-	SnackbarContainer,
+	//Link,
 	SnackbarQueue,
-	ToastContainer,
 	ToastQueue,
+	ToastRegion,
 } from '../src';
 
-const meta: Meta<typeof ToastContainer> = {
-	component: ToastContainer,
-	subcomponents: { SnackbarContainer } as Record<string, ComponentType<unknown>>,
+const meta: Meta<typeof ToastRegion> = {
+	component: ToastRegion,
 	title: 'Components/Status/Toast',
 	parameters: {
 		chromatic: { pauseAnimationAtEnd: true },
@@ -34,15 +31,15 @@ const meta: Meta<typeof ToastContainer> = {
 
 export default meta;
 
-type Story = StoryObj<typeof ToastContainer>;
+type Story = StoryObj<typeof ToastRegion>;
 
 export const Example: Story = {
 	render: (args) => {
 		return (
 			<>
-				<ToastContainer {...args} />
+				<ToastRegion {...args} />
 				<ButtonGroup>
-					<Button onPress={() => ToastQueue.success(<span>A success toast!</span>)}>
+					<Button onPress={() => ToastQueue.success({ title: 'A success toast!' })}>
 						Show toast
 					</Button>
 					<Button
@@ -69,14 +66,14 @@ export const Snackbar: Story = {
 	render: (args) => {
 		return (
 			<>
-				<SnackbarContainer {...args} />
+				<ToastRegion {...args} />
 				<ButtonGroup>
 					<Button
 						onPress={() => {
 							SnackbarQueue.info({
 								title: 'An info snackbar',
 								description: 'Dismiss me!',
-								action: <Link href="/">Link</Link>,
+								//action: <Link href="/">Link</Link>,
 							});
 						}}
 					>
