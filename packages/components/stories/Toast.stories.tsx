@@ -5,7 +5,7 @@ import { expect, userEvent, within } from '@storybook/test';
 import {
 	Button,
 	ButtonGroup,
-	//Link,
+	Link,
 	SnackbarQueue,
 	SnackbarRegion,
 	ToastQueue,
@@ -74,7 +74,7 @@ export const Snackbar: Story = {
 							SnackbarQueue.info({
 								title: 'An info snackbar',
 								description: 'Dismiss me!',
-								//action: <Link href="/">Link</Link>,
+								action: <Link href="/">Link</Link>,
 							});
 						}}
 					>

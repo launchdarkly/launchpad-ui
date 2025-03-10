@@ -1,5 +1,5 @@
 import type { VariantProps } from 'class-variance-authority';
-import type { ComponentProps, Ref } from 'react';
+import type { ComponentProps, ReactNode, Ref } from 'react';
 import type {
 	ToastProps as AriaToastProps,
 	ToastRegionProps as AriaToastRegionProps,
@@ -7,6 +7,7 @@ import type {
 } from 'react-aria-components';
 
 import { StatusIcon } from '@launchpad-ui/icons';
+import { PressResponder } from '@react-aria/interactions';
 import { cva } from 'class-variance-authority';
 import {
 	UNSTABLE_Toast as AriaToast,
@@ -63,8 +64,9 @@ interface IconVariants extends VariantProps<typeof icon> {}
 interface ToastVariants extends VariantProps<typeof toast> {}
 
 interface ToastValue {
-	title?: string;
-	description?: string;
+	title?: ReactNode;
+	description?: ReactNode;
+	action?: ReactNode;
 }
 
 interface LPToastContent extends ToastValue, IconVariants {}
@@ -160,9 +162,17 @@ const Toast = ({ ref, variant, ...props }: ToastProps<LPToastContent>) => {
 						className={icon({ status: toast.content.status })}
 					/>
 					<ToastContent data-theme="dark">
-						<Text slot="title">{toast.content.title}</Text>
-						<Text slot="description">{toast.content.description}</Text>
-						{children}
+						<PressResponder
+							onPress={() =>
+								variant === 'default' ? toastQueue.close(toast.key) : snackbarQueue.close(toast.key)
+							}
+						>
+							<Text slot="title">{toast.content.title}</Text>
+							<Text slot="description">
+								{toast.content.description} {toast.content.action}
+							</Text>
+							{children}
+						</PressResponder>
 					</ToastContent>
 					{/* @ts-expect-error RAC adds label */}
 					<IconButton size="small" variant="minimal" icon="cancel" slot="close" data-theme="dark" />

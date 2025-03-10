@@ -445,6 +445,9 @@ importers:
       '@react-aria/focus':
         specifier: 3.20.0
         version: 3.20.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
+      '@react-aria/interactions':
+        specifier: 3.24.0
+        version: 3.24.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       '@react-aria/utils':
         specifier: 3.28.0
         version: 3.28.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0)

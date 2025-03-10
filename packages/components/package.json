@@ -37,6 +37,7 @@
 		"@launchpad-ui/icons": "workspace:~",
 		"@launchpad-ui/tokens": "workspace:~",
 		"@react-aria/focus": "3.20.0",
+		"@react-aria/interactions": "3.24.0",
 		"@react-aria/utils": "3.28.0",
 		"@react-stately/utils": "3.10.5",
 		"@react-types/shared": "3.28.0",
