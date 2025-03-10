@@ -31,8 +31,8 @@ import {
 	SelectValue,
 	TagButton,
 	Text,
-	ToastContainer,
 	ToastQueue,
+	ToastRegion,
 	Tooltip,
 	TooltipTrigger,
 } from '../../src';
@@ -72,14 +72,14 @@ export const CopyToClipboard: Story = {
 						size="small"
 						onPress={() => {
 							navigator.clipboard.writeText('content');
-							ToastQueue.success('Copied!');
+							ToastQueue.success({ title: 'Copied!' });
 						}}
 					>
 						Copy content <Icon name="copy-clipboard" size="small" />
 					</Button>
 					<Tooltip placement="bottom">Copy to clipboard</Tooltip>
 				</TooltipTrigger>
-				<ToastContainer />
+				<ToastRegion />
 			</>
 		),
 	},

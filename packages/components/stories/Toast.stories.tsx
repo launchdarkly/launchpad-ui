@@ -7,6 +7,7 @@ import {
 	ButtonGroup,
 	//Link,
 	SnackbarQueue,
+	SnackbarRegion,
 	ToastQueue,
 	ToastRegion,
 } from '../src';
@@ -66,7 +67,7 @@ export const Snackbar: Story = {
 	render: (args) => {
 		return (
 			<>
-				<ToastRegion {...args} />
+				<SnackbarRegion {...args} />
 				<ButtonGroup>
 					<Button
 						onPress={() => {

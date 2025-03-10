@@ -1,12 +1,6 @@
 import type { default as Tokens } from '../dist';
 
-import {
-	Button,
-	ToastContainer,
-	ToastQueue,
-	Tooltip,
-	TooltipTrigger,
-} from '@launchpad-ui/components';
+import { Button, ToastQueue, ToastRegion, Tooltip, TooltipTrigger } from '@launchpad-ui/components';
 import { Fragment } from 'react';
 
 // @ts-expect-error ts not detecting d.ts for es file
@@ -35,7 +29,7 @@ export const Size = {
 							<Button
 								onPress={() => {
 									navigator.clipboard.writeText(`--lp-size-${key}`);
-									ToastQueue.success('Copied!');
+									ToastQueue.success({ title: 'Copied!' });
 								}}
 								style={{ font: 'var(--lp-text-code-1-regular)' }}
 								variant="minimal"
@@ -55,7 +49,7 @@ export const Size = {
 					</Fragment>
 				))}
 			</div>
-			<ToastContainer />
+			<ToastRegion />
 		</>
 	),
 };

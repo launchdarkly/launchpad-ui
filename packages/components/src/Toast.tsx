@@ -1,5 +1,5 @@
 import type { VariantProps } from 'class-variance-authority';
-import type { Ref } from 'react';
+import type { ComponentProps, Ref } from 'react';
 import type {
 	ToastProps as AriaToastProps,
 	ToastRegionProps as AriaToastRegionProps,
@@ -16,6 +16,7 @@ import {
 	Text,
 	composeRenderProps,
 } from 'react-aria-components';
+import { flushSync } from 'react-dom';
 
 import { IconButton } from './IconButton';
 import styles from './styles/Toast.module.css';
@@ -62,26 +63,42 @@ interface IconVariants extends VariantProps<typeof icon> {}
 interface ToastVariants extends VariantProps<typeof toast> {}
 
 interface ToastValue {
-	title: string;
+	title?: string;
 	description?: string;
 }
 
-interface ToastContent extends ToastValue, IconVariants {}
+interface LPToastContent extends ToastValue, IconVariants {}
 
-interface ToastProps<ToastContent> extends AriaToastProps<ToastContent>, ToastVariants {
+interface ToastProps<LPToastContent> extends AriaToastProps<LPToastContent>, ToastVariants {
 	ref?: Ref<HTMLDivElement>;
 }
 
-interface ToastRegionProps<ToastContent>
-	extends AriaToastRegionProps<ToastContent>,
+interface ToastRegionProps<LPToastContent>
+	extends Partial<AriaToastRegionProps<LPToastContent>>,
 		RegionVariants {}
 
-const toastQueue = new AriaToastQueue<ToastContent>({
+const animate = (fn: () => void) => {
+	if ('startViewTransition' in document) {
+		document
+			.startViewTransition(() => {
+				flushSync(fn);
+			})
+			.ready.catch(() => {});
+	} else {
+		fn();
+	}
+};
+
+const toastQueue = new AriaToastQueue<LPToastContent>({
 	maxVisibleToasts: 5,
+	// Wrap state updates in a CSS view transition.
+	wrapUpdate: animate,
 });
 
-const snackbarQueue = new AriaToastQueue<ToastContent>({
+const snackbarQueue = new AriaToastQueue<LPToastContent>({
 	maxVisibleToasts: 5,
+	// Wrap state updates in a CSS view transition.
+	wrapUpdate: animate,
 });
 
 const timeout = 6000;
@@ -127,7 +144,7 @@ const SnackbarQueue = {
  *
  * https://react-spectrum.adobe.com/react-aria/Toast.html
  */
-const Toast = ({ ref, variant, ...props }: ToastProps<ToastContent>) => {
+const Toast = ({ ref, variant, ...props }: ToastProps<LPToastContent>) => {
 	return (
 		<AriaToast
 			{...props}
@@ -135,7 +152,6 @@ const Toast = ({ ref, variant, ...props }: ToastProps<ToastContent>) => {
 			className={composeRenderProps(props.className, (className, renderProps) =>
 				toast({ ...renderProps, className, variant }),
 			)}
-			data-theme="dark"
 		>
 			{composeRenderProps(props.children, (children, { toast }) => (
 				<>
@@ -143,19 +159,26 @@ const Toast = ({ ref, variant, ...props }: ToastProps<ToastContent>) => {
 						kind={toast.content.status || 'info'}
 						className={icon({ status: toast.content.status })}
 					/>
-					<AriaToastContent className={styles.content}>
+					<ToastContent data-theme="dark">
 						<Text slot="title">{toast.content.title}</Text>
 						<Text slot="description">{toast.content.description}</Text>
 						{children}
-					</AriaToastContent>
-					{toast.onClose && (
-						/* @ts-expect-error RAC adds label */
-						<IconButton size="small" variant="minimal" icon="cancel" slot="close" />
-					)}
+					</ToastContent>
+					{/* @ts-expect-error RAC adds label */}
+					<IconButton size="small" variant="minimal" icon="cancel" slot="close" data-theme="dark" />
 				</>
 			))}
 		</AriaToast>
 	);
+};
+
+/**
+ * ToastContent wraps the main content of a toast notification.
+ *
+ * https://react-spectrum.adobe.com/react-aria/Toast.html
+ */
+const ToastContent = (props: ComponentProps<typeof AriaToastContent>) => {
+	return <AriaToastContent {...props} className={styles.content} />;
 };
 
 /**
@@ -168,18 +191,43 @@ const ToastRegion = ({
 	queue = toastQueue,
 	children,
 	...props
-}: ToastRegionProps<ToastContent>) => {
+}: ToastRegionProps<LPToastContent>) => {
 	return (
 		<AriaToastRegion
 			queue={queue}
 			className={composeRenderProps(props.className, (className, renderProps) =>
 				region({ ...renderProps, className, placement }),
 			)}
-			// biome-ignore lint/correctness/noChildrenProp: <explanation>
-			children={children}
-		/>
+		>
+			{({ toast }) => <Toast style={{ viewTransitionName: toast.key }} toast={toast} />}
+		</AriaToastRegion>
 	);
 };
 
-export { SnackbarQueue, ToastQueue, Toast, ToastRegion };
+/**
+ * A SnackbarRegion displays one or more snackbar notifications.
+ *
+ * https://react-spectrum.adobe.com/react-aria/Toast.html
+ */
+const SnackbarRegion = ({
+	placement = 'right',
+	queue = snackbarQueue,
+	children,
+	...props
+}: ToastRegionProps<LPToastContent>) => {
+	return (
+		<AriaToastRegion
+			queue={queue}
+			className={composeRenderProps(props.className, (className, renderProps) =>
+				region({ ...renderProps, className, placement }),
+			)}
+		>
+			{({ toast }) => (
+				<Toast style={{ viewTransitionName: toast.key }} toast={toast} variant="snackbar" />
+			)}
+		</AriaToastRegion>
+	);
+};
+
+export { SnackbarQueue, ToastQueue, Toast, ToastContent, ToastRegion, SnackbarRegion };
 export type { ToastOptions, ToastValue };
