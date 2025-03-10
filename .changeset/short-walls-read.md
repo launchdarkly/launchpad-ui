@@ -2,4 +2,4 @@
 "@launchpad-ui/icons": patch
 ---
 
-added the arrow-upper-right icon
+added the arrow-up-right icon

@@ -27,7 +27,7 @@ const icons = [
 	'arrow-undo',
 	'arrow-up-right-circle',
 	'arrow-up-right-circle-outline',
-	'arrow-upper-right',
+	'arrow-up-right',
 	'arrow-up-thin',
 	'arrows-maximize',
 	'article',
