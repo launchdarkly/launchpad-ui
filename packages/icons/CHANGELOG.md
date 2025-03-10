@@ -1,5 +1,11 @@
 # @launchpad-ui/icons
 
+## 0.21.5
+
+### Patch Changes
+
+- [#1577](https://github.com/launchdarkly/launchpad-ui/pull/1577) [`59d0de5`](https://github.com/launchdarkly/launchpad-ui/commit/59d0de591db74b32141ba319deaff97cfb322fa5) Thanks [@ari-launchdarkly](https://github.com/ari-launchdarkly)! - added the arrow-up-right icon
+
 ## 0.21.4
 
 ### Patch Changes
