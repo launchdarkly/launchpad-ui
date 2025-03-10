@@ -1,5 +1,11 @@
 # @launchpad-ui/components
 
+## 0.7.14
+
+### Patch Changes
+
+- [#1568](https://github.com/launchdarkly/launchpad-ui/pull/1568) [`f33950b`](https://github.com/launchdarkly/launchpad-ui/commit/f33950be285fb3a010a38908db1172be0818dcff) Thanks [@Niznikr](https://github.com/Niznikr)! - Add `DisclosureGroup`
+
 ## 0.7.13
 
 ### Patch Changes
