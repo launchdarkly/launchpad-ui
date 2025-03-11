@@ -176,8 +176,10 @@ const ToastRegion = ({
 			className={composeRenderProps(props.className, (className, renderProps) =>
 				region({ ...renderProps, className, placement }),
 			)}
+			{...props}
 		>
-			{({ toast }) => <Toast style={{ viewTransitionName: toast.key }} toast={toast} />}
+			{children ??
+				(({ toast }) => <Toast style={{ viewTransitionName: toast.key }} toast={toast} />)}
 		</AriaToastRegion>
 	);
 };
@@ -199,10 +201,12 @@ const SnackbarRegion = ({
 			className={composeRenderProps(props.className, (className, renderProps) =>
 				region({ ...renderProps, className, placement }),
 			)}
+			{...props}
 		>
-			{({ toast }) => (
-				<Toast style={{ viewTransitionName: toast.key }} toast={toast} variant="snackbar" />
-			)}
+			{children ??
+				(({ toast }) => (
+					<Toast style={{ viewTransitionName: toast.key }} toast={toast} variant="snackbar" />
+				))}
 		</AriaToastRegion>
 	);
 };
