@@ -1,5 +1,35 @@
 # @launchpad-ui/components
 
+## 0.8.0
+
+### Minor Changes
+
+- [#1573](https://github.com/launchdarkly/launchpad-ui/pull/1573) [`57a0f09`](https://github.com/launchdarkly/launchpad-ui/commit/57a0f095c802fc4cddfa2b884730a7788540f11a) Thanks [@Niznikr](https://github.com/Niznikr)! - Use RAC custom triggers via `Focusable` and `Pressable`
+
+- [#1581](https://github.com/launchdarkly/launchpad-ui/pull/1581) [`9f688ca`](https://github.com/launchdarkly/launchpad-ui/commit/9f688ca57617f685e5a4f7b454dc74edc2216554) Thanks [@Niznikr](https://github.com/Niznikr)! - Use RAC `Toast`:
+
+  **Before**
+
+  ```jsx
+  import { SnackbarContainer, ToastQueue, ToastContainer } from '@launchpad-ui/components';
+
+  ToastQueue.success(<span>A success toast!</span>);
+
+  <ToastContainer />
+  <SnackbarContainer />
+  ```
+
+  **After**
+
+  ```jsx
+  import { SnackbarRegion, ToastRegion, toastQueue } from '@launchpad-ui/components';
+
+  toastQueue.add({ title: 'A success toast!', status: 'success' });
+
+  <ToastRegion />
+  <SnackbarRegion />
+  ```
+
 ## 0.7.14
 
 ### Patch Changes
