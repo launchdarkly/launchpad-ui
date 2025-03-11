@@ -155,7 +155,7 @@ export { TagGroup, TagList, Tag } from './TagGroup';
 export { Text } from './Text';
 export { TextArea } from './TextArea';
 export { TextField } from './TextField';
-export { SnackbarQueue, ToastQueue, Toast, ToastRegion, SnackbarRegion } from './Toast';
+export { snackbarQueue, toastQueue, Toast, ToastRegion, SnackbarRegion } from './Toast';
 export { ToggleButton } from './ToggleButton';
 export { ToggleButtonGroup } from './ToggleButtonGroup';
 export { ToggleIconButton } from './ToggleIconButton';

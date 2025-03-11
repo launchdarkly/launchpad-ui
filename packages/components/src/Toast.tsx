@@ -91,7 +91,13 @@ const animate = (fn: () => void) => {
 	}
 };
 
-const toastQueue = new AriaToastQueue<LPToastContent>({
+class LPToastQueue<T> extends AriaToastQueue<T> {
+	add(content: T, options?: ToastOptions): string {
+		return super.add(content, { ...options, timeout: 6000 });
+	}
+}
+
+const toastQueue = new LPToastQueue<LPToastContent>({
 	maxVisibleToasts: 5,
 	// Wrap state updates in a CSS view transition.
 	wrapUpdate: animate,
@@ -102,44 +108,6 @@ const snackbarQueue = new AriaToastQueue<LPToastContent>({
 	// Wrap state updates in a CSS view transition.
 	wrapUpdate: animate,
 });
-
-const timeout = 6000;
-
-const ToastQueue = {
-	clear: () => {
-		for (const toast of toastQueue.visibleToasts) {
-			toastQueue.close(toast.key);
-		}
-	},
-	error: (content: ToastValue, options?: ToastOptions) =>
-		toastQueue.add({ ...content, status: 'error' }, { ...options, timeout }),
-	info: (content: ToastValue, options?: ToastOptions) =>
-		toastQueue.add({ ...content, status: 'info' }, { ...options, timeout }),
-	success: (content: ToastValue, options?: ToastOptions) =>
-		toastQueue.add({ ...content, status: 'success' }, { ...options, timeout }),
-	visibleToasts: () => toastQueue.visibleToasts,
-};
-
-const SnackbarQueue = {
-	clear: () => {
-		for (const toast of snackbarQueue.visibleToasts) {
-			snackbarQueue.close(toast.key);
-		}
-	},
-	error: (content: ToastValue, options?: ToastOptions) => {
-		const key = snackbarQueue.add({ ...content, status: 'error' }, { ...options });
-		return () => snackbarQueue.close(key);
-	},
-	info: (content: ToastValue, options?: ToastOptions) => {
-		const key = snackbarQueue.add({ ...content, status: 'info' }, { ...options });
-		return () => snackbarQueue.close(key);
-	},
-	success: (content: ToastValue, options?: ToastOptions) => {
-		const key = snackbarQueue.add({ ...content, status: 'success' }, { ...options });
-		return () => snackbarQueue.close(key);
-	},
-	visibleToasts: () => snackbarQueue.visibleToasts,
-};
 
 /**
  * A Toast displays a brief, temporary notification of actions, errors, or other events in an application.
@@ -239,5 +207,5 @@ const SnackbarRegion = ({
 	);
 };
 
-export { SnackbarQueue, ToastQueue, Toast, ToastContent, ToastRegion, SnackbarRegion };
+export { snackbarQueue, toastQueue, Toast, ToastContent, ToastRegion, SnackbarRegion };
 export type { ToastOptions, ToastValue };

@@ -6,10 +6,10 @@ import {
 	Button,
 	ButtonGroup,
 	Link,
-	SnackbarQueue,
 	SnackbarRegion,
-	ToastQueue,
 	ToastRegion,
+	snackbarQueue,
+	toastQueue,
 } from '../src';
 
 const meta: Meta<typeof ToastRegion> = {
@@ -40,12 +40,14 @@ export const Example: Story = {
 			<>
 				<ToastRegion {...args} />
 				<ButtonGroup>
-					<Button onPress={() => ToastQueue.success({ title: 'A success toast!' })}>
+					<Button onPress={() => toastQueue.add({ title: 'A success toast!', status: 'success' })}>
 						Show toast
 					</Button>
 					<Button
 						onPress={() => {
-							ToastQueue.clear();
+							for (const toast of toastQueue.visibleToasts) {
+								toastQueue.close(toast.key);
+							}
 						}}
 					>
 						Clear
@@ -71,10 +73,11 @@ export const Snackbar: Story = {
 				<ButtonGroup>
 					<Button
 						onPress={() => {
-							SnackbarQueue.info({
+							snackbarQueue.add({
 								title: 'An info snackbar',
 								description: 'Dismiss me!',
 								action: <Link href="/">Link</Link>,
+								status: 'info',
 							});
 						}}
 					>
@@ -82,7 +85,9 @@ export const Snackbar: Story = {
 					</Button>
 					<Button
 						onPress={() => {
-							SnackbarQueue.clear();
+							for (const toast of snackbarQueue.visibleToasts) {
+								snackbarQueue.close(toast.key);
+							}
 						}}
 					>
 						Clear

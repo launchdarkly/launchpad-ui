@@ -1,7 +1,7 @@
 import { describe, expect, it, vi } from 'vitest';
 
 import { render, screen, userEvent } from '../../../test/utils';
-import { Button, SnackbarQueue, SnackbarRegion, ToastQueue, ToastRegion } from '../src';
+import { Button, SnackbarRegion, ToastRegion, snackbarQueue, toastQueue } from '../src';
 
 globalThis.matchMedia = vi.fn().mockReturnValue({
 	matches: true,
@@ -19,7 +19,9 @@ describe('Toast', () => {
 		render(
 			<>
 				<ToastRegion />
-				<Button onPress={() => ToastQueue.info({ title: 'A toast!' })}>Show toast</Button>
+				<Button onPress={() => toastQueue.add({ title: 'A toast!', status: 'info' })}>
+					Show toast
+				</Button>
 			</>,
 		);
 
@@ -33,7 +35,7 @@ describe('Toast', () => {
 		render(
 			<>
 				<SnackbarRegion />
-				<Button onPress={() => SnackbarQueue.info({ description: 'A snackbar!' })}>
+				<Button onPress={() => snackbarQueue.add({ description: 'A snackbar!', status: 'info' })}>
 					Show toast
 				</Button>
 			</>,
