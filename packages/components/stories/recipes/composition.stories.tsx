@@ -31,10 +31,10 @@ import {
 	SelectValue,
 	TagButton,
 	Text,
-	ToastContainer,
-	ToastQueue,
+	ToastRegion,
 	Tooltip,
 	TooltipTrigger,
+	toastQueue,
 } from '../../src';
 
 const Container = (props: ComponentPropsWithoutRef<typeof Fragment>) => <>{props.children}</>;
@@ -72,14 +72,14 @@ export const CopyToClipboard: Story = {
 						size="small"
 						onPress={() => {
 							navigator.clipboard.writeText('content');
-							ToastQueue.success('Copied!');
+							toastQueue.add({ title: 'Copied!', status: 'success' });
 						}}
 					>
 						Copy content <Icon name="copy-clipboard" size="small" />
 					</Button>
 					<Tooltip placement="bottom">Copy to clipboard</Tooltip>
 				</TooltipTrigger>
-				<ToastContainer />
+				<ToastRegion />
 			</>
 		),
 	},

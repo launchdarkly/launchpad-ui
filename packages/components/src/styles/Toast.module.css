@@ -1,37 +1,7 @@
-@keyframes fade-in {
-	from {
-		opacity: 0;
-	}
-
-	to {
-		opacity: 1;
-	}
-}
-
-@keyframes fade-out {
-	from {
-		opacity: 1;
-	}
-
-	to {
-		opacity: 0;
-	}
-}
-
-@keyframes slide-in {
-	from {
-		transform: var(--slide-from);
-	}
-
-	to {
-		transform: var(--slide-to);
-	}
-}
-
 .region {
 	position: fixed;
 	display: flex;
-	flex-direction: column;
+	flex-direction: column-reverse;
 	align-items: center;
 	gap: var(--lp-spacing-600);
 	outline: none;
@@ -40,18 +10,12 @@
 }
 
 .bottom {
-	--slide-from: translateY(100%);
-	--slide-to: translateY(0);
-
 	bottom: var(--lp-spacing-900);
 	left: 0;
 	right: 0;
 }
 
 .right {
-	--slide-from: translateX(100%);
-	--slide-to: translateX(0);
-
 	top: var(--lp-spacing-900);
 	right: var(--lp-spacing-900);
 }
@@ -59,8 +23,8 @@
 .toast {
 	display: inline-flex;
 	font: var(--lp-text-body-1-regular);
-	background: var(--lp-color-bg-overlay-secondary);
-	color: var(--lp-color-text-ui-primary-base);
+	background: var(--lp-color-gray-900);
+	color: var(--lp-color-gray-0);
 	border-radius: var(--lp-border-radius-regular);
 	box-shadow:
 		0px 0px 1px 0px var(--lp-color-shadow-ui-primary), 0px 1px 2px 0px var(
@@ -90,26 +54,6 @@
 		outline-offset: -2px;
 		z-index: 1;
 	}
-
-	@media (prefers-reduced-motion: no-preference) {
-		&[data-animation='entering'] {
-			animation-name: slide-in;
-			animation-duration: var(--lp-duration-300);
-			animation-timing-function: ease-in;
-		}
-
-		&[data-animation='queued'] {
-			animation-name: fade-in;
-			animation-duration: var(--lp-duration-300);
-			animation-timing-function: ease-in;
-		}
-
-		&[data-animation='exiting'] {
-			animation-name: fade-out;
-			animation-duration: var(--lp-duration-300);
-			animation-timing-function: ease-in;
-		}
-	}
 }
 
 .default {
@@ -122,8 +66,12 @@
 	padding: var(--lp-spacing-500);
 	width: var(--lp-size-400);
 
-	&:not(:has(.title:empty)) {
-		align-items: flex-start;
+	& [slot='title'] {
+		font: var(--lp-text-body-1-semibold);
+	}
+
+	& .content {
+		gap: var(--lp-spacing-200);
 	}
 }
 
@@ -131,20 +79,14 @@
 	flex: 1;
 	display: flex;
 	flex-direction: column;
+	background: var(--lp-color-bg-overlay-secondary);
+	color: var(--lp-color-text-ui-primary-base);
 
-	&:not(:has(.title:empty)) {
-		gap: var(--lp-spacing-200);
-	}
-}
+	& [slot='description'] {
+		font: var(--lp-text-body-2-regular);
 
-.title {
-	font: var(--lp-text-body-1-semibold);
-}
-
-.description {
-	font: var(--lp-text-body-2-regular);
-
-	& a {
-		text-decoration: underline;
+		& a {
+			text-decoration: underline;
+		}
 	}
 }

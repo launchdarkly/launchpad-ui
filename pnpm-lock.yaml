@@ -445,15 +445,12 @@ importers:
       '@react-aria/focus':
         specifier: 3.20.0
         version: 3.20.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@react-aria/toast':
-        specifier: 3.0.0-beta.19
-        version: 3.0.0-beta.19(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
+      '@react-aria/interactions':
+        specifier: 3.24.0
+        version: 3.24.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       '@react-aria/utils':
         specifier: 3.28.0
         version: 3.28.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@react-stately/toast':
-        specifier: 3.0.0-beta.7
-        version: 3.0.0-beta.7(react@19.0.0)
       '@react-stately/utils':
         specifier: 3.10.5
         version: 3.10.5(react@19.0.0)
@@ -2203,12 +2200,6 @@ packages:
       react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0 || ^19.0.0-rc.1
       react-dom: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0 || ^19.0.0-rc.1
 
-  '@react-aria/landmark@3.0.0-beta.18':
-    resolution: {integrity: sha512-jFtWL7TYZrKucWNDx6ppUkGSqS2itkjhyLo9MIFqEg2mi4Lc2EoUjI/Gw9xMT+IJgebTcdQeXJpPskspl3Pojg==}
-    peerDependencies:
-      react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0 || ^19.0.0-rc.1
-      react-dom: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0 || ^19.0.0-rc.1
-
   '@react-aria/link@3.7.9':
     resolution: {integrity: sha512-2LE3p5Gqp1Tl/3JF4CmeJT3RsdDBawBaIMlqiOT7t505z1TZI8ygHHq5FFok8FMwpy2yxpqRNW9jDa3gZj575w==}
     peerDependencies:
@@ -2334,12 +2325,6 @@ packages:
 
   '@react-aria/toast@3.0.0':
     resolution: {integrity: sha512-KDbJy8BFNTjc9ABEVWrgiAFRtGHSkRPv2AK4b7Yv1sQ3ePuZ0BIUtn2DQODNAFbLs/Z/OgoqLYMOORqL3Ti7pQ==}
-    peerDependencies:
-      react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0 || ^19.0.0-rc.1
-      react-dom: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0 || ^19.0.0-rc.1
-
-  '@react-aria/toast@3.0.0-beta.19':
-    resolution: {integrity: sha512-LCMTcmSmum5CzBk+DIec66q6pJGEl+InQPJdsby7QG/row0ka6wHPvul78HVseN7dzg6G3xVjvHtVPOixkuegA==}
     peerDependencies:
       react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0 || ^19.0.0-rc.1
       react-dom: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0 || ^19.0.0-rc.1
@@ -2512,11 +2497,6 @@ packages:
 
   '@react-stately/toast@3.0.0':
     resolution: {integrity: sha512-g7e4hNO9E6kOqyBeLRAfZBihp1EIQikmaH3Uj/OZJXKvIDKJlNlpvwstUIcmEuEzqA1Uru78ozxIVWh3pg9ubg==}
-    peerDependencies:
-      react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0 || ^19.0.0-rc.1
-
-  '@react-stately/toast@3.0.0-beta.7':
-    resolution: {integrity: sha512-+KDkaOS5Y4ApOfiP0HHij4ySwAd1VM9/pI4rVTyHrzkp0R2Q0eBxZ74MpWMpVfJa2lSjb/qEm60tqJ3A+4R/cQ==}
     peerDependencies:
       react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0 || ^19.0.0-rc.1
 
@@ -7677,15 +7657,6 @@ snapshots:
       react-dom: 19.0.0(react@19.0.0)
       use-sync-external-store: 1.4.0(react@19.0.0)
 
-  '@react-aria/landmark@3.0.0-beta.18(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
-    dependencies:
-      '@react-aria/utils': 3.28.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@react-types/shared': 3.28.0(react@19.0.0)
-      '@swc/helpers': 0.5.13
-      react: 19.0.0
-      react-dom: 19.0.0(react@19.0.0)
-      use-sync-external-store: 1.4.0(react@19.0.0)
-
   '@react-aria/link@3.7.9(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
     dependencies:
       '@react-aria/interactions': 3.24.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
@@ -7960,19 +7931,6 @@ snapshots:
       '@react-aria/landmark': 3.0.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       '@react-aria/utils': 3.28.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       '@react-stately/toast': 3.0.0(react@19.0.0)
-      '@react-types/button': 3.11.0(react@19.0.0)
-      '@react-types/shared': 3.28.0(react@19.0.0)
-      '@swc/helpers': 0.5.13
-      react: 19.0.0
-      react-dom: 19.0.0(react@19.0.0)
-
-  '@react-aria/toast@3.0.0-beta.19(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
-    dependencies:
-      '@react-aria/i18n': 3.12.6(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@react-aria/interactions': 3.24.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@react-aria/landmark': 3.0.0-beta.18(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@react-aria/utils': 3.28.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@react-stately/toast': 3.0.0-beta.7(react@19.0.0)
       '@react-types/button': 3.11.0(react@19.0.0)
       '@react-types/shared': 3.28.0(react@19.0.0)
       '@swc/helpers': 0.5.13
@@ -8271,12 +8229,6 @@ snapshots:
       react: 19.0.0
 
   '@react-stately/toast@3.0.0(react@19.0.0)':
-    dependencies:
-      '@swc/helpers': 0.5.13
-      react: 19.0.0
-      use-sync-external-store: 1.4.0(react@19.0.0)
-
-  '@react-stately/toast@3.0.0-beta.7(react@19.0.0)':
     dependencies:
       '@swc/helpers': 0.5.13
       react: 19.0.0

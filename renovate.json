@@ -23,5 +23,5 @@
 		}
 	],
 	"rangeStrategy": "bump",
-	"ignoreDeps": ["react-router", "@biomejs/biome", "@react-aria/toast", "@react-stately/toast"]
+	"ignoreDeps": ["react-router", "@biomejs/biome"]
 }

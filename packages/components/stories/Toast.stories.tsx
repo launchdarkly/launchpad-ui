@@ -1,5 +1,4 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import type { ComponentType } from 'react';
 
 import { expect, userEvent, within } from '@storybook/test';
 
@@ -7,15 +6,14 @@ import {
 	Button,
 	ButtonGroup,
 	Link,
-	SnackbarContainer,
-	SnackbarQueue,
-	ToastContainer,
-	ToastQueue,
+	SnackbarRegion,
+	ToastRegion,
+	snackbarQueue,
+	toastQueue,
 } from '../src';
 
-const meta: Meta<typeof ToastContainer> = {
-	component: ToastContainer,
-	subcomponents: { SnackbarContainer } as Record<string, ComponentType<unknown>>,
+const meta: Meta<typeof ToastRegion> = {
+	component: ToastRegion,
 	title: 'Components/Status/Toast',
 	parameters: {
 		chromatic: { pauseAnimationAtEnd: true },
@@ -34,20 +32,22 @@ const meta: Meta<typeof ToastContainer> = {
 
 export default meta;
 
-type Story = StoryObj<typeof ToastContainer>;
+type Story = StoryObj<typeof ToastRegion>;
 
 export const Example: Story = {
 	render: (args) => {
 		return (
 			<>
-				<ToastContainer {...args} />
+				<ToastRegion {...args} />
 				<ButtonGroup>
-					<Button onPress={() => ToastQueue.success(<span>A success toast!</span>)}>
+					<Button onPress={() => toastQueue.add({ title: 'A success toast!', status: 'success' })}>
 						Show toast
 					</Button>
 					<Button
 						onPress={() => {
-							ToastQueue.clear();
+							for (const toast of toastQueue.visibleToasts) {
+								toastQueue.close(toast.key);
+							}
 						}}
 					>
 						Clear
@@ -69,14 +69,15 @@ export const Snackbar: Story = {
 	render: (args) => {
 		return (
 			<>
-				<SnackbarContainer {...args} />
+				<SnackbarRegion {...args} />
 				<ButtonGroup>
 					<Button
 						onPress={() => {
-							SnackbarQueue.info({
+							snackbarQueue.add({
 								title: 'An info snackbar',
 								description: 'Dismiss me!',
 								action: <Link href="/">Link</Link>,
+								status: 'info',
 							});
 						}}
 					>
@@ -84,7 +85,9 @@ export const Snackbar: Story = {
 					</Button>
 					<Button
 						onPress={() => {
-							SnackbarQueue.clear();
+							for (const toast of snackbarQueue.visibleToasts) {
+								snackbarQueue.close(toast.key);
+							}
 						}}
 					>
 						Clear
