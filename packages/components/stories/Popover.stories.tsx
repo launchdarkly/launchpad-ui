@@ -88,7 +88,10 @@ export const CustomTrigger: Story = {
 	render: (args) => {
 		return (
 			<DialogTrigger>
-				<Pressable>Trigger</Pressable>
+				<Pressable>
+					{/* biome-ignore lint/a11y/useFocusableInteractive: <explanation> */}
+					<span role="button">Trigger</span>
+				</Pressable>
 				<Popover {...args}>
 					<Dialog>Message</Dialog>
 				</Popover>
