@@ -1,4 +1,4 @@
-import { Button, ToastQueue, ToastRegion, Tooltip, TooltipTrigger } from '@launchpad-ui/components';
+import { Button, ToastRegion, Tooltip, TooltipTrigger, toastQueue } from '@launchpad-ui/components';
 import { vars } from '@launchpad-ui/vars';
 import { useEffect, useRef, useState } from 'react';
 
@@ -72,7 +72,7 @@ const TokenTable = ({ tokens }: { tokens: Record<string, string> }) => {
 												navigator.clipboard.writeText(
 													value.substring(value.lastIndexOf('--'), value.lastIndexOf(')')),
 												);
-												ToastQueue.success({ title: 'Copied!' });
+												toastQueue.add({ title: 'Copied!', status: 'success' });
 											}}
 											style={{ font: 'var(--lp-text-code-1-regular)' }}
 											variant="minimal"
