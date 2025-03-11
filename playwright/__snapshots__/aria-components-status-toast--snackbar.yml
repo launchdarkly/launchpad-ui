@@ -2,9 +2,11 @@
   - button "Show snackbar"
   - button "Clear"
 - region "1 notification.":
-  - alertdialog "An info snackbar":
-    - img "Info icon"
-    - alert:
-      - text: An info snackbar Dismiss me!
-      - link "Link"
-    - button "Close"
+  - list:
+    - listitem:
+      - alertdialog "An info snackbar":
+        - img "Info icon"
+        - alert:
+          - text: An info snackbar Dismiss me!
+          - link "Link"
+        - button "Close"
