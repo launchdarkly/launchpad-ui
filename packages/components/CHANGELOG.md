@@ -1,5 +1,11 @@
 # @launchpad-ui/components
 
+## 0.8.2
+
+### Patch Changes
+
+- [#1585](https://github.com/launchdarkly/launchpad-ui/pull/1585) [`3c1a1a1`](https://github.com/launchdarkly/launchpad-ui/commit/3c1a1a1ab130ec4a03e1099180a5f6313c874363) Thanks [@Niznikr](https://github.com/Niznikr)! - Prevent shift from `VisuallyHidden`
+
 ## 0.8.1
 
 ### Patch Changes
