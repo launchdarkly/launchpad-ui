@@ -3,7 +3,6 @@
 	flex-direction: column;
 	align-items: flex-start;
 	gap: var(--lp-spacing-200);
-	position: relative;
 
 	/* For inline listboxes not rendered in Popover such as ComboboxDialog */
 	& [data-rac][role='listbox'] {
