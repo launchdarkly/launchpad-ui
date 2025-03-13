@@ -11,6 +11,7 @@
 	border: none;
 	outline: none;
 	white-space: nowrap;
+	position: relative;
 }
 
 .base[data-focus-visible] {

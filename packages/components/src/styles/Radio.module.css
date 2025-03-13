@@ -23,6 +23,7 @@
 	align-items: center;
 	gap: var(--lp-size-8);
 	font: var(--lp-text-label-1-regular);
+	position: relative;
 
 	&[data-focus-visible] {
 		& .circle {
