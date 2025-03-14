@@ -246,28 +246,6 @@ importers:
         specifier: 19.0.0
         version: 19.0.0(react@19.0.0)
 
-  packages/banner:
-    dependencies:
-      '@launchpad-ui/button':
-        specifier: workspace:~
-        version: link:../button
-      '@launchpad-ui/icons':
-        specifier: workspace:~
-        version: link:../icons
-      '@launchpad-ui/tokens':
-        specifier: workspace:~
-        version: link:../tokens
-      classix:
-        specifier: 2.2.0
-        version: 2.2.0
-    devDependencies:
-      react:
-        specifier: 19.0.0
-        version: 19.0.0
-      react-dom:
-        specifier: 19.0.0
-        version: 19.0.0(react@19.0.0)
-
   packages/box:
     dependencies:
       '@launchpad-ui/tokens':
@@ -491,9 +469,6 @@ importers:
       '@launchpad-ui/avatar':
         specifier: workspace:~
         version: link:../avatar
-      '@launchpad-ui/banner':
-        specifier: workspace:~
-        version: link:../banner
       '@launchpad-ui/box':
         specifier: workspace:~
         version: link:../box
@@ -515,9 +490,6 @@ importers:
       '@launchpad-ui/columns':
         specifier: workspace:~
         version: link:../columns
-      '@launchpad-ui/counter':
-        specifier: workspace:~
-        version: link:../counter
       '@launchpad-ui/drawer':
         specifier: workspace:~
         version: link:../drawer
@@ -554,9 +526,6 @@ importers:
       '@launchpad-ui/overlay':
         specifier: workspace:~
         version: link:../overlay
-      '@launchpad-ui/pagination':
-        specifier: workspace:~
-        version: link:../pagination
       '@launchpad-ui/popover':
         specifier: workspace:~
         version: link:../popover
@@ -572,37 +541,15 @@ importers:
       '@launchpad-ui/stack':
         specifier: workspace:~
         version: link:../stack
-      '@launchpad-ui/tab-list':
-        specifier: workspace:~
-        version: link:../tab-list
       '@launchpad-ui/table':
         specifier: workspace:~
         version: link:../table
-      '@launchpad-ui/tag':
-        specifier: workspace:~
-        version: link:../tag
       '@launchpad-ui/tooltip':
         specifier: workspace:~
         version: link:../tooltip
       '@launchpad-ui/types':
         specifier: workspace:~
         version: link:../types
-    devDependencies:
-      react:
-        specifier: 19.0.0
-        version: 19.0.0
-      react-dom:
-        specifier: 19.0.0
-        version: 19.0.0(react@19.0.0)
-
-  packages/counter:
-    dependencies:
-      '@launchpad-ui/tokens':
-        specifier: workspace:~
-        version: link:../tokens
-      classix:
-        specifier: 2.2.0
-        version: 2.2.0
     devDependencies:
       react:
         specifier: 19.0.0
@@ -1011,34 +958,6 @@ importers:
         specifier: 19.0.0
         version: 19.0.0(react@19.0.0)
 
-  packages/pagination:
-    dependencies:
-      '@launchpad-ui/button':
-        specifier: workspace:~
-        version: link:../button
-      '@launchpad-ui/icons':
-        specifier: workspace:~
-        version: link:../icons
-      '@launchpad-ui/progress':
-        specifier: workspace:~
-        version: link:../progress
-      '@launchpad-ui/tokens':
-        specifier: workspace:~
-        version: link:../tokens
-      '@react-aria/visually-hidden':
-        specifier: 3.8.20
-        version: 3.8.20(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      classix:
-        specifier: 2.2.0
-        version: 2.2.0
-    devDependencies:
-      react:
-        specifier: 19.0.0
-        version: 19.0.0
-      react-dom:
-        specifier: 19.0.0
-        version: 19.0.0(react@19.0.0)
-
   packages/popover:
     dependencies:
       '@floating-ui/core':
@@ -1133,88 +1052,11 @@ importers:
         specifier: 19.0.0
         version: 19.0.0(react@19.0.0)
 
-  packages/tab-list:
-    dependencies:
-      '@launchpad-ui/tokens':
-        specifier: workspace:~
-        version: link:../tokens
-      '@react-aria/tabs':
-        specifier: 3.10.0
-        version: 3.10.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@react-stately/tabs':
-        specifier: 3.8.0
-        version: 3.8.0(react@19.0.0)
-      '@react-types/shared':
-        specifier: 3.28.0
-        version: 3.28.0(react@19.0.0)
-      '@react-types/tabs':
-        specifier: 3.3.13
-        version: 3.3.13(react@19.0.0)
-      classix:
-        specifier: 2.2.0
-        version: 2.2.0
-    devDependencies:
-      '@react-stately/collections':
-        specifier: 3.12.2
-        version: 3.12.2(react@19.0.0)
-      react:
-        specifier: 19.0.0
-        version: 19.0.0
-      react-dom:
-        specifier: 19.0.0
-        version: 19.0.0(react@19.0.0)
-
   packages/table:
     dependencies:
       '@launchpad-ui/tokens':
         specifier: workspace:~
         version: link:../tokens
-      classix:
-        specifier: 2.2.0
-        version: 2.2.0
-    devDependencies:
-      react:
-        specifier: 19.0.0
-        version: 19.0.0
-      react-dom:
-        specifier: 19.0.0
-        version: 19.0.0(react@19.0.0)
-
-  packages/tag:
-    dependencies:
-      '@launchpad-ui/button':
-        specifier: workspace:~
-        version: link:../button
-      '@launchpad-ui/icons':
-        specifier: workspace:~
-        version: link:../icons
-      '@launchpad-ui/tokens':
-        specifier: workspace:~
-        version: link:../tokens
-      '@launchpad-ui/tooltip':
-        specifier: workspace:~
-        version: link:../tooltip
-      '@react-aria/focus':
-        specifier: 3.20.0
-        version: 3.20.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@react-aria/interactions':
-        specifier: 3.24.0
-        version: 3.24.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@react-aria/selection':
-        specifier: 3.23.0
-        version: 3.23.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@react-aria/tag':
-        specifier: 3.5.0
-        version: 3.5.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@react-aria/utils':
-        specifier: 3.28.0
-        version: 3.28.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@react-stately/list':
-        specifier: 3.12.0
-        version: 3.12.0(react@19.0.0)
-      '@react-types/shared':
-        specifier: 3.28.0
-        version: 3.28.0(react@19.0.0)
       classix:
         specifier: 2.2.0
         version: 2.2.0
