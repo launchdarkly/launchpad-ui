@@ -1,7 +1,6 @@
 // plop start type exports
 export type { AlertProps } from '@launchpad-ui/alert';
 export type { AvatarProps } from '@launchpad-ui/avatar';
-export type { BannerProps } from '@launchpad-ui/banner';
 export type { BoxProps } from '@launchpad-ui/box';
 export type {
 	ButtonProps,
@@ -16,7 +15,6 @@ export type {
 	CopyCodeButtonProps,
 } from '@launchpad-ui/clipboard';
 export type { CollapsibleProps, CollapsibleTriggerProps } from '@launchpad-ui/collapsible';
-export type { CounterProps } from '@launchpad-ui/counter';
 export type { DrawerProps, DrawerHeaderProps } from '@launchpad-ui/drawer';
 export type { DropdownProps, DropdownButtonProps } from '@launchpad-ui/dropdown';
 export type {
@@ -66,12 +64,10 @@ export type {
 	NavigationItemProps,
 } from '@launchpad-ui/navigation';
 export type { OverlayProps } from '@launchpad-ui/overlay';
-export type { PaginationProps, PaginationChange } from '@launchpad-ui/pagination';
 export type { PopoverPlacement, PopoverProps, Offset } from '@launchpad-ui/popover';
 export type { PortalProps } from '@launchpad-ui/portal';
 export type { DelayedIndicatorProps, ProgressProps } from '@launchpad-ui/progress';
 export type { ProgressBubblesProps, ProgressBubbleInfo } from '@launchpad-ui/progress-bubbles';
-export type { TabListProps } from '@launchpad-ui/tab-list';
 export type {
 	TableProps,
 	TableBodyProps,
@@ -80,7 +76,6 @@ export type {
 	TableHeadCellProps,
 	TableRowProps,
 } from '@launchpad-ui/table';
-export type { TagGroupProps, TagGroupActionProps } from '@launchpad-ui/tag';
 export type { TooltipProps } from '@launchpad-ui/tooltip';
 export type { StackProps } from '@launchpad-ui/stack';
 export type { Space } from '@launchpad-ui/types';
@@ -93,13 +88,11 @@ export type { RadioCardProps } from '@launchpad-ui/card';
 // plop start module exports
 export { Alert } from '@launchpad-ui/alert';
 export { Avatar } from '@launchpad-ui/avatar';
-export { Banner } from '@launchpad-ui/banner';
 export { Box } from '@launchpad-ui/box';
 export { Button, ButtonGroup, UploadButton, IconButton } from '@launchpad-ui/button';
 export { Chip } from '@launchpad-ui/chip';
 export { CopyConfirmation, CopyToClipboard, CopyCodeButton } from '@launchpad-ui/clipboard';
 export { Collapsible } from '@launchpad-ui/collapsible';
-export { Counter } from '@launchpad-ui/counter';
 export { Drawer, DrawerHeader } from '@launchpad-ui/drawer';
 export { Dropdown, DropdownButton } from '@launchpad-ui/dropdown';
 export { AppliedFilter, Filter, FilterButton } from '@launchpad-ui/filter';
@@ -141,12 +134,10 @@ export {
 } from '@launchpad-ui/modal';
 export { Navigation, NavigationItem } from '@launchpad-ui/navigation';
 export { Overlay } from '@launchpad-ui/overlay';
-export { Pagination } from '@launchpad-ui/pagination';
 export { Popover } from '@launchpad-ui/popover';
 export { Portal } from '@launchpad-ui/portal';
 export { DelayedIndicator, Progress } from '@launchpad-ui/progress';
 export { ProgressBubbles } from '@launchpad-ui/progress-bubbles';
-export { TabList } from '@launchpad-ui/tab-list';
 export {
 	Table,
 	TableBody,
@@ -155,7 +146,6 @@ export {
 	TableHeadCell,
 	TableRow,
 } from '@launchpad-ui/table';
-export { TagGroup, TagItem } from '@launchpad-ui/tag';
 export { Tooltip, TooltipBase } from '@launchpad-ui/tooltip';
 export { Stack } from '@launchpad-ui/stack';
 export { Inline } from '@launchpad-ui/inline';
