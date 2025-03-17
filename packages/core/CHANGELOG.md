@@ -1,5 +1,11 @@
 # @launchpad-ui/core
 
+## 0.52.0
+
+### Minor Changes
+
+- [#1587](https://github.com/launchdarkly/launchpad-ui/pull/1587) [`8e46702`](https://github.com/launchdarkly/launchpad-ui/commit/8e46702032b216072c0fe3117766843681f17818) Thanks [@Niznikr](https://github.com/Niznikr)! - Remove banner, counter, pagination, tab-list, and tag packages
+
 ## 0.51.16
 
 ### Patch Changes
