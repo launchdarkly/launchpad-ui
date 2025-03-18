@@ -106,3 +106,19 @@ export const Variants: Story = {
 		),
 	},
 };
+
+export const Selection: Story = {
+	args: {
+		children: (
+			<>
+				<Label>Label</Label>
+				<TagList>
+					<Tag>One</Tag>
+					<Tag>Two</Tag>
+					<Tag>Three</Tag>
+				</TagList>
+			</>
+		),
+		selectionMode: 'multiple',
+	},
+};
