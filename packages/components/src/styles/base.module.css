@@ -69,7 +69,8 @@
 }
 
 .selectable {
-	&[data-selection-mode] {
+	&[data-selection-mode],
+	&[data-href] {
 		cursor: pointer;
 	}
 

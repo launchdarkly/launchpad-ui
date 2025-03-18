@@ -66,7 +66,6 @@ export type {
 	TableHeaderProps,
 } from './Table';
 export type { TabProps, TabsProps, TabListProps, TabPanelProps } from './Tabs';
-export type { TagButtonProps } from './TagButton';
 export type { TagGroupProps, TagListProps, TagProps } from './TagGroup';
 export type { TextProps } from './Text';
 export type { TextAreaProps } from './TextArea';
@@ -150,7 +149,6 @@ export {
 	TableHeader,
 } from './Table';
 export { Tab, Tabs, TabList, TabPanel } from './Tabs';
-export { TagButton } from './TagButton';
 export { TagGroup, TagList, Tag } from './TagGroup';
 export { Text } from './Text';
 export { TextArea } from './TextArea';

@@ -29,7 +29,6 @@ import {
 	RadioIconButton,
 	Select,
 	SelectValue,
-	TagButton,
 	Text,
 	ToastRegion,
 	Tooltip,
@@ -254,20 +253,6 @@ export const DisabledWithTooltip: Story = {
 					</TooltipTrigger>
 				</Perceivable>
 			</div>
-		);
-	},
-};
-
-export const TagWithOverlay: Story = {
-	render: () => {
-		return (
-			<TooltipTrigger>
-				<TagButton>
-					<Icon name="osmo" size="small" />
-					TagButton
-				</TagButton>
-				<Tooltip placement="right">Message</Tooltip>
-			</TooltipTrigger>
 		);
 	},
 };
