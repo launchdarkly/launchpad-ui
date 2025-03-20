@@ -1,5 +1,15 @@
 # @launchpad-ui/components
 
+## 0.9.0
+
+### Minor Changes
+
+- [#1589](https://github.com/launchdarkly/launchpad-ui/pull/1589) [`0ef9543`](https://github.com/launchdarkly/launchpad-ui/commit/0ef95433d955b7a6d34d1304ef6a4607fe061067) Thanks [@Niznikr](https://github.com/Niznikr)! - Remove `TagButton` and update `Tag` selection styles
+
+### Patch Changes
+
+- [#1591](https://github.com/launchdarkly/launchpad-ui/pull/1591) [`da49554`](https://github.com/launchdarkly/launchpad-ui/commit/da495542e6eef05869a132092250e73dce8f4e29) Thanks [@Niznikr](https://github.com/Niznikr)! - Conditionally render `PressResponder` in `Toast`
+
 ## 0.8.2
 
 ### Patch Changes
