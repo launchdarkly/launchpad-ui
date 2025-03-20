@@ -130,17 +130,23 @@ const Toast = ({ ref, variant, ...props }: ToastProps<LPToastContent>) => {
 						className={icon({ status: toast.content.status })}
 					/>
 					<ToastContent data-theme="dark">
-						<PressResponder
-							onPress={() =>
-								variant === 'default' ? toastQueue.close(toast.key) : snackbarQueue.close(toast.key)
-							}
-						>
-							<Text slot="title">{toast.content.title}</Text>
-							<Text slot="description">
-								{toast.content.description} {toast.content.action}
-							</Text>
-							{children}
-						</PressResponder>
+						<Text slot="title">{toast.content.title}</Text>
+						<Text slot="description">
+							{toast.content.description}
+							{toast.content.action && (
+								<PressResponder
+									onPress={() =>
+										variant === 'default'
+											? toastQueue.close(toast.key)
+											: snackbarQueue.close(toast.key)
+									}
+								>
+									{' '}
+									{toast.content.action}
+								</PressResponder>
+							)}
+						</Text>
+						{children}
 					</ToastContent>
 					{/* @ts-expect-error RAC adds label */}
 					<IconButton size="small" variant="minimal" icon="cancel" slot="close" data-theme="dark" />
