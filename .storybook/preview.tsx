@@ -12,6 +12,7 @@ import { BrowserRouter, useNavigate } from 'react-router';
 import custom from './custom.svg';
 import { allModes } from './modes';
 
+import '../packages/components/src/styles/base.css';
 import '../packages/components/src/styles/themes.css';
 import '../packages/tokens/dist/index.css';
 import '../packages/tokens/dist/media-queries.css';
