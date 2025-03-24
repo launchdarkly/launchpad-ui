@@ -1,5 +1,11 @@
 # @launchpad-ui/components
 
+## 0.9.1
+
+### Patch Changes
+
+- [#1592](https://github.com/launchdarkly/launchpad-ui/pull/1592) [`e06010c`](https://github.com/launchdarkly/launchpad-ui/commit/e06010c690f26c952725b74d07754a10ec27122f) Thanks [@Niznikr](https://github.com/Niznikr)! - Prevent form submission with `Perceivable`
+
 ## 0.9.0
 
 ### Minor Changes
