@@ -1,7 +1,7 @@
 import { describe, expect, it, vi } from 'vitest';
 
 import { render, screen, userEvent, waitFor } from '../../../test/utils';
-import { Button, Perceivable, Tooltip, TooltipTrigger } from '../src';
+import { Button, Form, Perceivable, Tooltip, TooltipTrigger } from '../src';
 
 describe('Perceivable', () => {
 	it('sets aria-disabled', async () => {
@@ -33,6 +33,27 @@ describe('Perceivable', () => {
 		);
 
 		await user.click(screen.getByRole('button', { hidden: true }));
-		expect(spy).toHaveBeenCalledTimes(0);
+		expect(spy).not.toHaveBeenCalled();
+	});
+
+	it('prevents form submission', async () => {
+		const spy = vi.fn();
+		const user = userEvent.setup();
+
+		render(
+			<Form onSubmit={spy}>
+				<Perceivable>
+					<TooltipTrigger>
+						<Button type="submit" name="name" value="value">
+							Button
+						</Button>
+						<Tooltip placement="right">Message</Tooltip>
+					</TooltipTrigger>
+				</Perceivable>
+			</Form>,
+		);
+
+		await user.click(screen.getByRole('button', { hidden: true }));
+		expect(spy).not.toHaveBeenCalled();
 	});
 });

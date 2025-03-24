@@ -24,6 +24,7 @@ const Perceivable = ({ children }: PerceivableProps) => {
 		onKeyUp: undefined,
 		onClick: undefined,
 		href: undefined,
+		type: 'button',
 	};
 
 	return (
