@@ -3,12 +3,13 @@ import type { DecoratorFunction, GlobalTypes, Parameters } from '@storybook/type
 import type { ReactNode } from 'react';
 
 import { Box } from '@launchpad-ui/box';
-import { RouterProvider as AriaRouterProvider, useHref } from '@launchpad-ui/components';
 import sprite from '@launchpad-ui/icons/img/sprite.svg';
 import { withThemeByDataAttribute } from '@storybook/addon-themes';
 import { themes } from '@storybook/theming';
 import { BrowserRouter, useNavigate } from 'react-router';
 
+import { RouterProvider as AriaRouterProvider } from '../packages/components/src/RouterProvider';
+import { useHref } from '../packages/components/src/utils';
 import custom from './custom.svg';
 import { allModes } from './modes';
 
