@@ -11,10 +11,9 @@ import {
 	composeRenderProps,
 } from 'react-aria-components';
 
+import { Icon } from '@launchpad-ui/icons';
 import { CheckboxInner } from './Checkbox';
 import { checkbox } from './Checkbox';
-import { RadioInner } from './Radio';
-import { radio } from './Radio';
 import styles from './styles/ListBox.module.css';
 const box = cva(styles.box);
 const item = cva(styles.item);
@@ -71,16 +70,8 @@ const ListBoxItem = <T extends object>({ ref, ...props }: ListBoxItemProps<T>) =
 							<CheckboxInner isSelected={isSelected} />
 						</div>
 					)}
-					{selectionMode === 'single' && (
-						<div
-							className={radio()}
-							data-selected={isSelected || undefined}
-							data-disabled={isDisabled || undefined}
-						>
-							<RadioInner isSelected={isSelected} />
-						</div>
-					)}
 					<span className={styles.content}>{children}</span>
+					{selectionMode === 'single' && isSelected && <Icon name="check-circle" size="small" />}
 				</>
 			))}
 		</AriaListBoxItem>
