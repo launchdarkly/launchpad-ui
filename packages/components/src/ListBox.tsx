@@ -4,7 +4,6 @@ import type {
 	ListBoxProps as AriaListBoxProps,
 } from 'react-aria-components';
 
-import { Icon } from '@launchpad-ui/icons';
 import { cva } from 'class-variance-authority';
 import {
 	ListBox as AriaListBox,
@@ -12,8 +11,11 @@ import {
 	composeRenderProps,
 } from 'react-aria-components';
 
+import { CheckboxInner } from './Checkbox';
+import { checkbox } from './Checkbox';
+import { RadioInner } from './Radio';
+import { radio } from './Radio';
 import styles from './styles/ListBox.module.css';
-
 const box = cva(styles.box);
 const item = cva(styles.item);
 
@@ -58,10 +60,27 @@ const ListBoxItem = <T extends object>({ ref, ...props }: ListBoxItemProps<T>) =
 				item({ ...renderProps, className }),
 			)}
 		>
-			{composeRenderProps(props.children, (children, { isSelected }) => (
+			{composeRenderProps(props.children, (children, { selectionMode, isDisabled, isSelected }) => (
 				<>
+					{selectionMode === 'multiple' && (
+						<div
+							className={checkbox()}
+							data-selected={isSelected || undefined}
+							data-disabled={isDisabled || undefined}
+						>
+							<CheckboxInner isSelected={isSelected} />
+						</div>
+					)}
+					{selectionMode === 'single' && (
+						<div
+							className={radio()}
+							data-selected={isSelected || undefined}
+							data-disabled={isDisabled || undefined}
+						>
+							<RadioInner isSelected={isSelected} />
+						</div>
+					)}
 					<span className={styles.content}>{children}</span>
-					{isSelected && <Icon name="check" size="medium" />}
 				</>
 			))}
 		</AriaListBoxItem>
