@@ -3,12 +3,14 @@ import type { Ref } from 'react';
 import type {
 	MenuItemProps as AriaMenuItemProps,
 	MenuProps as AriaMenuProps,
+	ContextValue,
 	MenuTriggerProps,
 	SubmenuTriggerProps,
 } from 'react-aria-components';
 
 import { Icon } from '@launchpad-ui/icons';
 import { cva } from 'class-variance-authority';
+import { createContext } from 'react';
 import {
 	Menu as AriaMenu,
 	MenuItem as AriaMenuItem,
@@ -20,6 +22,7 @@ import {
 import { CheckboxInner, checkbox } from './Checkbox';
 import { RadioInner, radio } from './Radio';
 import styles from './styles/Menu.module.css';
+import { useLPContextProps } from './utils';
 
 const menu = cva(styles.menu);
 const item = cva(styles.item, {
@@ -41,12 +44,16 @@ interface MenuItemProps<T> extends AriaMenuItemProps<T>, VariantProps<typeof ite
 	ref?: Ref<T>;
 }
 
+// biome-ignore lint/suspicious/noExplicitAny: <explanation>
+const MenuContext = createContext<ContextValue<MenuProps<any>, HTMLDivElement>>(null);
+
 /**
  * A menu displays a list of actions or options that a user can choose.
  *
  * https://react-spectrum.adobe.com/react-aria/Menu.html
  */
 const Menu = <T extends object>({ className, ref, ...props }: MenuProps<T>) => {
+	[props, ref] = useLPContextProps(props, ref, MenuContext);
 	return <AriaMenu {...props} ref={ref} className={menu({ className })} />;
 };
 
@@ -93,5 +100,5 @@ const MenuItem = <T extends object>({ variant = 'default', ref, ...props }: Menu
 	);
 };
 
-export { Menu, MenuItem, MenuTrigger, SubmenuTrigger };
+export { Menu, MenuContext, MenuItem, MenuTrigger, SubmenuTrigger };
 export type { MenuProps, MenuItemProps, MenuTriggerProps, SubmenuTriggerProps };

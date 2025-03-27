@@ -1,10 +1,10 @@
 import type { CSSProperties, Ref } from 'react';
-import type { ComboBoxProps as AriaComboBoxProps, PopoverProps } from 'react-aria-components';
+import type { ComboBoxProps as AriaComboBoxProps } from 'react-aria-components';
 import type { IconButtonProps } from './IconButton';
 
 import { useResizeObserver } from '@react-aria/utils';
 import { cva } from 'class-variance-authority';
-import { createContext, useCallback, useContext, useRef, useState } from 'react';
+import { useCallback, useContext, useRef, useState } from 'react';
 import {
 	ComboBox as AriaComboBox,
 	ComboBoxStateContext,
@@ -14,11 +14,10 @@ import {
 } from 'react-aria-components';
 
 import { IconButton } from './IconButton';
+import { PopoverContext } from './Popover';
 import styles from './styles/ComboBox.module.css';
 
 const box = cva(styles.box);
-
-const PopoverContext = createContext<PopoverProps>({});
 
 interface ComboBoxProps<T extends object> extends AriaComboBoxProps<T> {
 	ref?: Ref<HTMLDivElement>;
