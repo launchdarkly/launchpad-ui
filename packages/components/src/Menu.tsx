@@ -52,9 +52,17 @@ const MenuContext = createContext<ContextValue<MenuProps<any>, HTMLDivElement>>(
  *
  * https://react-spectrum.adobe.com/react-aria/Menu.html
  */
-const Menu = <T extends object>({ className, ref, ...props }: MenuProps<T>) => {
+const Menu = <T extends object>({ ref, ...props }: MenuProps<T>) => {
 	[props, ref] = useLPContextProps(props, ref, MenuContext);
-	return <AriaMenu {...props} ref={ref} className={menu({ className })} />;
+	return (
+		<AriaMenu
+			{...props}
+			ref={ref}
+			className={composeRenderProps(props.className, (className, renderProps) =>
+				menu({ ...renderProps, className }),
+			)}
+		/>
+	);
 };
 
 /**
