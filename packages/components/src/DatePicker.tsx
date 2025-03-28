@@ -2,13 +2,14 @@ import type { CSSProperties, Ref } from 'react';
 import type {
 	DatePickerProps as AriaDatePickerProps,
 	DateRangePickerProps as AriaDateRangePickerProps,
+	ContextValue,
 	DateValue,
 } from 'react-aria-components';
 
 import { Icon } from '@launchpad-ui/icons';
 import { useResizeObserver } from '@react-aria/utils';
 import { cva, cx } from 'class-variance-authority';
-import { useCallback, useContext, useRef, useState } from 'react';
+import { createContext, useCallback, useContext, useRef, useState } from 'react';
 import { useLocale } from 'react-aria';
 import {
 	DatePicker as AriaDatePicker,
@@ -27,6 +28,7 @@ import { ButtonContext } from './Button';
 import { input } from './Input';
 import styles from './styles/DatePicker.module.css';
 import baseStyles from './styles/base.module.css';
+import { useLPContextProps } from './utils';
 
 const picker = cva(styles.picker);
 
@@ -38,12 +40,18 @@ interface DateRangePickerProps<T extends DateValue> extends AriaDateRangePickerP
 	ref?: Ref<HTMLDivElement>;
 }
 
+const DatePickerContext =
+	createContext<ContextValue<DatePickerProps<DateValue>, HTMLDivElement>>(null);
+const DateRangePickerContext =
+	createContext<ContextValue<DateRangePickerProps<DateValue>, HTMLDivElement>>(null);
+
 /**
  * A date picker combines a DateField and a Calendar popover to allow users to enter or select a date and time value.
  *
  * https://react-spectrum.adobe.com/react-aria/DatePicker.html
  */
 const DatePicker = <T extends DateValue>({ ref, ...props }: DatePickerProps<T>) => {
+	[props, ref] = useLPContextProps(props, ref, DatePickerContext);
 	const formContext = useSlottedContext(FormContext);
 	const buttonRef = useRef<HTMLButtonElement>(null);
 
@@ -108,6 +116,7 @@ const DatePicker = <T extends DateValue>({ ref, ...props }: DatePickerProps<T>) 
  * https://react-spectrum.adobe.com/react-aria/DateRangePicker.html
  */
 const DateRangePicker = <T extends DateValue>({ ref, ...props }: DateRangePickerProps<T>) => {
+	[props, ref] = useLPContextProps(props, ref, DateRangePickerContext);
 	const formContext = useSlottedContext(FormContext);
 	const buttonRef = useRef<HTMLButtonElement>(null);
 
@@ -190,5 +199,13 @@ const DateRangePickerValue = () => {
 	);
 };
 
-export { DatePicker, DateRangePicker, DatePickerValue, DateRangePickerValue, ButtonContext };
+export {
+	DatePicker,
+	DatePickerContext,
+	DateRangePicker,
+	DatePickerValue,
+	DateRangePickerContext,
+	DateRangePickerValue,
+	ButtonContext,
+};
 export type { DatePickerProps, DateRangePickerProps };

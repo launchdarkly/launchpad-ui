@@ -2,12 +2,15 @@ import type { Ref } from 'react';
 import type {
 	CheckboxProps as AriaCheckboxProps,
 	CheckboxRenderProps,
+	ContextValue,
 } from 'react-aria-components';
 
 import { cva } from 'class-variance-authority';
+import { createContext } from 'react';
 import { Checkbox as AriaCheckbox, composeRenderProps } from 'react-aria-components';
 
 import styles from './styles/Checkbox.module.css';
+import { useLPContextProps } from './utils';
 
 const checkbox = cva(styles.checkbox);
 const box = cva(styles.box);
@@ -38,12 +41,15 @@ interface CheckboxProps extends AriaCheckboxProps {
 	ref?: Ref<HTMLLabelElement>;
 }
 
+const CheckboxContext = createContext<ContextValue<CheckboxProps, HTMLLabelElement>>(null);
+
 /**
  * A checkbox allows a user to select multiple items from a list of individual items, or to mark one individual item as selected.
  *
  * https://react-spectrum.adobe.com/react-aria/Checkbox.html
  */
 const Checkbox = ({ ref, ...props }: CheckboxProps) => {
+	[props, ref] = useLPContextProps(props, ref, CheckboxContext);
 	return (
 		<AriaCheckbox
 			{...props}
@@ -64,5 +70,5 @@ const Checkbox = ({ ref, ...props }: CheckboxProps) => {
 	);
 };
 
-export { Checkbox, CheckboxInner, checkbox };
+export { Checkbox, CheckboxContext, CheckboxInner, checkbox };
 export type { CheckboxProps };

@@ -2,18 +2,19 @@ import type { Ref } from 'react';
 import type {
 	OverlayArrowProps as AriaOverlayArrowProps,
 	PopoverProps as AriaPopoverProps,
+	ContextValue,
 } from 'react-aria-components';
 
 import { cva } from 'class-variance-authority';
-import { useContext } from 'react';
+import { createContext } from 'react';
 import {
 	OverlayArrow as AriaOverlayArrow,
 	Popover as AriaPopover,
 	composeRenderProps,
 } from 'react-aria-components';
 
-import { PopoverContext } from './ComboBox';
 import styles from './styles/Popover.module.css';
+import { useLPContextProps } from './utils';
 
 interface PopoverProps extends AriaPopoverProps {
 	ref?: Ref<HTMLElement>;
@@ -21,6 +22,8 @@ interface PopoverProps extends AriaPopoverProps {
 interface OverlayArrowProps extends Omit<AriaOverlayArrowProps, 'children'> {
 	ref?: Ref<HTMLDivElement>;
 }
+
+const PopoverContext = createContext<ContextValue<PopoverProps, HTMLElement>>(null);
 
 const popover = cva(styles.popover);
 const arrow = cva(styles.arrow);
@@ -31,13 +34,12 @@ const arrow = cva(styles.arrow);
  * https://react-spectrum.adobe.com/react-aria/Popover.html
  */
 const Popover = ({ ref, ...props }: PopoverProps) => {
-	const popoverProps = useContext(PopoverContext);
+	[props, ref] = useLPContextProps(props, ref, PopoverContext);
 
 	return (
 		<AriaPopover
 			offset={4}
 			crossOffset={0}
-			{...popoverProps}
 			{...props}
 			ref={ref}
 			className={composeRenderProps(props.className, (className, renderProps) =>
@@ -69,5 +71,5 @@ const OverlayArrow = ({ ref, ...props }: OverlayArrowProps) => {
 	);
 };
 
-export { OverlayArrow, Popover };
+export { OverlayArrow, Popover, PopoverContext };
 export type { OverlayArrowProps, PopoverProps };

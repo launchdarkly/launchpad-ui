@@ -2,10 +2,12 @@ import type { Ref } from 'react';
 import type {
 	BreadcrumbProps as AriaBreadcrumbProps,
 	BreadcrumbsProps as AriaBreadcrumbsProps,
+	ContextValue,
 } from 'react-aria-components';
 
 import { Icon } from '@launchpad-ui/icons';
 import { cva } from 'class-variance-authority';
+import { createContext } from 'react';
 import {
 	Breadcrumb as AriaBreadcrumb,
 	Breadcrumbs as AriaBreadcrumbs,
@@ -15,6 +17,7 @@ import {
 
 import { LinkContext } from './Link';
 import styles from './styles/Breadcrumbs.module.css';
+import { useLPContextProps } from './utils';
 
 const crumbs = cva(styles.crumbs);
 const crumb = cva(styles.crumb);
@@ -27,12 +30,19 @@ interface BreadcrumbProps extends AriaBreadcrumbProps {
 	ref?: Ref<HTMLLIElement>;
 }
 
+const BreadcrumbsContext =
+	// biome-ignore lint/suspicious/noExplicitAny: <explanation>
+	createContext<ContextValue<BreadcrumbsProps<any>, HTMLOListElement>>(null);
+
 /**
  * Breadcrumbs display a hierarchy of links to the current page or resource in an application.
  *
  * https://react-spectrum.adobe.com/react-aria/Breadcrumbs.html
  */
-const Breadcrumbs = <T extends object>({ className, ref, ...props }: BreadcrumbsProps<T>) => {
+const Breadcrumbs = <T extends object>({ ref, ...props }: BreadcrumbsProps<T>) => {
+	[props, ref] = useLPContextProps(props, ref, BreadcrumbsContext);
+	const { className } = props;
+
 	return <AriaBreadcrumbs {...props} ref={ref} className={crumbs({ className })} />;
 };
 
@@ -60,5 +70,5 @@ const Breadcrumb = ({ ref, ...props }: BreadcrumbProps) => {
 	);
 };
 
-export { Breadcrumbs, Breadcrumb };
+export { Breadcrumbs, BreadcrumbsContext, Breadcrumb };
 export type { BreadcrumbsProps, BreadcrumbProps };

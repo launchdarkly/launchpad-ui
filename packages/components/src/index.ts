@@ -80,25 +80,41 @@ export type { TooltipProps, TooltipTriggerProps } from './Tooltip';
 export { Alert } from './Alert';
 export { Autocomplete } from './Autocomplete';
 export { Avatar, InitialsAvatar } from './Avatar';
-export { Breadcrumbs, Breadcrumb } from './Breadcrumbs';
-export { Button } from './Button';
+export { Breadcrumbs, BreadcrumbsContext, Breadcrumb } from './Breadcrumbs';
+export { Button, ButtonContext } from './Button';
 export { ButtonGroup } from './ButtonGroup';
 export {
 	Calendar,
 	CalendarCell,
+	CalendarContext,
 	CalendarGrid,
 	CalendarGridBody,
 	CalendarGridHeader,
 	CalendarHeaderCell,
 	RangeCalendar,
+	RangeCalendarContext,
 } from './Calendar';
-export { Checkbox } from './Checkbox';
-export { CheckboxGroup } from './CheckboxGroup';
+export { Checkbox, CheckboxContext } from './Checkbox';
+export { CheckboxGroup, CheckboxGroupContext } from './CheckboxGroup';
 export { Collection } from './Collection';
-export { ComboBox, ComboBoxClearButton } from './ComboBox';
-export { DateField, DateInput, DateSegment, TimeField } from './DateField';
-export { DatePicker, DateRangePicker, DatePickerValue, DateRangePickerValue } from './DatePicker';
-export { Dialog, DialogTrigger } from './Dialog';
+export { ComboBox, ComboBoxClearButton, ComboBoxContext } from './ComboBox';
+export {
+	DateField,
+	DateFieldContext,
+	DateInput,
+	DateSegment,
+	TimeField,
+	TimeFieldContext,
+} from './DateField';
+export {
+	DatePicker,
+	DatePickerContext,
+	DateRangePicker,
+	DateRangePickerContext,
+	DatePickerValue,
+	DateRangePickerValue,
+} from './DatePicker';
+export { Dialog, DialogContext, DialogTrigger } from './Dialog';
 export { Disclosure, DisclosurePanel } from './Disclosure';
 export { DisclosureGroup } from './DisclosureGroup';
 export { DropIndicator } from './DropIndicator';
@@ -120,12 +136,12 @@ export { Link } from './Link';
 export { LinkButton } from './LinkButton';
 export { LinkIconButton } from './LinkIconButton';
 export { ListBox, ListBoxItem } from './ListBox';
-export { Menu, MenuItem, MenuTrigger, SubmenuTrigger } from './Menu';
+export { Menu, MenuContext, MenuItem, MenuTrigger, SubmenuTrigger } from './Menu';
 export { Meter } from './Meter';
 export { Modal, ModalOverlay } from './Modal';
 export { NumberField } from './NumberField';
 export { Perceivable } from './Perceivable';
-export { OverlayArrow, Popover } from './Popover';
+export { OverlayArrow, Popover, PopoverContext } from './Popover';
 export { Pressable } from './Pressable';
 export { ProgressBar } from './ProgressBar';
 export { Radio } from './Radio';
@@ -133,7 +149,7 @@ export { RadioButton } from './RadioButton';
 export { RadioGroup } from './RadioGroup';
 export { RadioIconButton } from './RadioIconButton';
 export { RouterProvider } from './RouterProvider';
-export { SearchField } from './SearchField';
+export { SearchField, SearchFieldContext } from './SearchField';
 export { ListBoxSection, MenuSection } from './Section';
 export { Select, SelectValue } from './Select';
 export { Separator } from './Separator';

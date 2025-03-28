@@ -1,10 +1,9 @@
 import type { VariantProps } from 'class-variance-authority';
 import type { Ref } from 'react';
-import type { ButtonProps as AriaButtonProps } from 'react-aria-components';
+import type { ButtonProps as AriaButtonProps, ContextValue } from 'react-aria-components';
 
-import { mergeProps, mergeRefs } from '@react-aria/utils';
 import { cva } from 'class-variance-authority';
-import { createContext, useContext, useMemo } from 'react';
+import { createContext, useContext } from 'react';
 import {
 	Button as AriaButton,
 	Provider,
@@ -15,6 +14,7 @@ import {
 import { PerceivableContext } from './Perceivable';
 import { ProgressBar } from './ProgressBar';
 import styles from './styles/Button.module.css';
+import { useLPContextProps } from './utils';
 
 const button = cva(styles.base, {
 	variants: {
@@ -36,35 +36,36 @@ const button = cva(styles.base, {
 	},
 });
 
-const ButtonContext = createContext<ButtonProps | null>(null);
-
 interface ButtonVariants extends VariantProps<typeof button> {}
 interface ButtonProps extends AriaButtonProps, ButtonVariants {
 	ref?: Ref<HTMLButtonElement>;
 }
+interface ButtonContextValue extends ButtonProps {
+	isPressed?: boolean;
+}
+
+const ButtonContext = createContext<ContextValue<ButtonContextValue, HTMLButtonElement>>(null);
 
 /**
  * A button allows a user to perform an action, with mouse, touch, and keyboard interactions.
  *
  * https://react-spectrum.adobe.com/react-aria/Button.html
  */
-const Button = ({ size = 'medium', variant = 'default', ref, ...props }: ButtonProps) => {
-	const ctx = useContext(ButtonContext);
+const Button = ({ ref, ...props }: ButtonProps) => {
+	[props, ref] = useLPContextProps(props, ref, ButtonContext);
 	const perceivableContext = useContext(PerceivableContext);
-
-	const buttonRef = useMemo(() => mergeRefs(ref, ctx?.ref), [ref, ctx?.ref]);
-	const buttonProps = mergeProps(ctx, props);
+	const { size = 'medium', variant = 'default' } = props;
 
 	return (
 		<AriaButton
-			{...buttonProps}
+			{...props}
 			{...perceivableContext}
-			ref={buttonRef}
-			className={composeRenderProps(buttonProps.className, (className, renderProps) =>
+			ref={ref}
+			className={composeRenderProps(props.className, (className, renderProps) =>
 				button({ ...renderProps, size, variant, className }),
 			)}
 		>
-			{composeRenderProps(buttonProps.children, (children, { isPending }) => (
+			{composeRenderProps(props.children, (children, { isPending }) => (
 				<Provider values={[[TextContext, { className: isPending ? styles.pending : undefined }]]}>
 					{isPending && (
 						<ProgressBar isIndeterminate aria-label="loading" className={styles.progress} />
