@@ -40,8 +40,11 @@ interface ButtonVariants extends VariantProps<typeof button> {}
 interface ButtonProps extends AriaButtonProps, ButtonVariants {
 	ref?: Ref<HTMLButtonElement>;
 }
+interface ButtonContextValue extends ButtonProps {
+	isPressed?: boolean;
+}
 
-const ButtonContext = createContext<ContextValue<ButtonProps, HTMLButtonElement>>(null);
+const ButtonContext = createContext<ContextValue<ButtonContextValue, HTMLButtonElement>>(null);
 
 /**
  * A button allows a user to perform an action, with mouse, touch, and keyboard interactions.
