@@ -20,7 +20,6 @@ import {
 } from 'react-aria-components';
 
 import { CheckboxInner, checkbox } from './Checkbox';
-import { RadioInner, radio } from './Radio';
 import styles from './styles/Menu.module.css';
 import { useLPContextProps } from './utils';
 
@@ -90,16 +89,8 @@ const MenuItem = <T extends object>({ variant = 'default', ref, ...props }: Menu
 								<CheckboxInner isSelected={isSelected} />
 							</div>
 						)}
-						{selectionMode === 'single' && (
-							<div
-								className={radio()}
-								data-selected={isSelected || undefined}
-								data-disabled={isDisabled || undefined}
-							>
-								<RadioInner isSelected={isSelected} />
-							</div>
-						)}
 						<span className={styles.content}>{children}</span>
+						{selectionMode === 'single' && isSelected && <Icon name="check-circle" size="small" />}
 						{hasSubmenu && <Icon name="chevron-right" size="small" />}
 					</>
 				),
