@@ -1,5 +1,11 @@
 # @launchpad-ui/components
 
+## 0.9.3
+
+### Patch Changes
+
+- [#1595](https://github.com/launchdarkly/launchpad-ui/pull/1595) [`840dae2`](https://github.com/launchdarkly/launchpad-ui/commit/840dae29e4eaf460c459c6bf2592b84fdb615d51) Thanks [@Niznikr](https://github.com/Niznikr)! - Export contexts
+
 ## 0.9.2
 
 ### Patch Changes
