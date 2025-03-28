@@ -8,12 +8,6 @@ export type {
 	ButtonGroupProps,
 	IconButtonProps,
 } from '@launchpad-ui/button';
-export type { ChipProps } from '@launchpad-ui/chip';
-export type {
-	CopyToClipboardProps,
-	CopyToClipboardHandleRef,
-	CopyCodeButtonProps,
-} from '@launchpad-ui/clipboard';
 export type { CollapsibleProps, CollapsibleTriggerProps } from '@launchpad-ui/collapsible';
 export type { DrawerProps, DrawerHeaderProps } from '@launchpad-ui/drawer';
 export type { DropdownProps, DropdownButtonProps } from '@launchpad-ui/dropdown';
@@ -66,7 +60,6 @@ export type {
 export type { OverlayProps } from '@launchpad-ui/overlay';
 export type { PopoverPlacement, PopoverProps, Offset } from '@launchpad-ui/popover';
 export type { PortalProps } from '@launchpad-ui/portal';
-export type { DelayedIndicatorProps, ProgressProps } from '@launchpad-ui/progress';
 export type { ProgressBubblesProps, ProgressBubbleInfo } from '@launchpad-ui/progress-bubbles';
 export type {
 	TableProps,
@@ -90,8 +83,6 @@ export { Alert } from '@launchpad-ui/alert';
 export { Avatar } from '@launchpad-ui/avatar';
 export { Box } from '@launchpad-ui/box';
 export { Button, ButtonGroup, UploadButton, IconButton } from '@launchpad-ui/button';
-export { Chip } from '@launchpad-ui/chip';
-export { CopyConfirmation, CopyToClipboard, CopyCodeButton } from '@launchpad-ui/clipboard';
 export { Collapsible } from '@launchpad-ui/collapsible';
 export { Drawer, DrawerHeader } from '@launchpad-ui/drawer';
 export { Dropdown, DropdownButton } from '@launchpad-ui/dropdown';
@@ -136,7 +127,6 @@ export { Navigation, NavigationItem } from '@launchpad-ui/navigation';
 export { Overlay } from '@launchpad-ui/overlay';
 export { Popover } from '@launchpad-ui/popover';
 export { Portal } from '@launchpad-ui/portal';
-export { DelayedIndicator, Progress } from '@launchpad-ui/progress';
 export { ProgressBubbles } from '@launchpad-ui/progress-bubbles';
 export {
 	Table,
