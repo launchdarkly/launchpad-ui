@@ -1,8 +1,13 @@
 import type { Ref } from 'react';
-import type { DialogProps as AriaDialogProps, DialogTriggerProps } from 'react-aria-components';
+import type {
+	DialogProps as AriaDialogProps,
+	ContextValue,
+	DialogTriggerProps,
+} from 'react-aria-components';
 
 import { useSlotId } from '@react-aria/utils';
 import { cva } from 'class-variance-authority';
+import { createContext } from 'react';
 import {
 	Dialog as AriaDialog,
 	DialogTrigger,
@@ -12,6 +17,7 @@ import {
 } from 'react-aria-components';
 
 import styles from './styles/Dialog.module.css';
+import { useLPContextProps } from './utils';
 
 const dialog = cva(styles.dialog);
 
@@ -19,13 +25,18 @@ interface DialogProps extends AriaDialogProps {
 	ref?: Ref<HTMLElement>;
 }
 
+const DialogContext = createContext<ContextValue<DialogProps, HTMLElement>>(null);
+
 /**
  * A dialog is an overlay shown above other content in an application.
  *
  * https://react-spectrum.adobe.com/react-aria/Dialog.html
  */
-const Dialog = ({ className, ref, ...props }: DialogProps) => {
+const Dialog = ({ ref, ...props }: DialogProps) => {
+	[props, ref] = useLPContextProps(props, ref, DialogContext);
+	const { className } = props;
 	const descriptionId = useSlotId();
+
 	return (
 		<AriaDialog
 			{...props}
@@ -53,5 +64,5 @@ const Dialog = ({ className, ref, ...props }: DialogProps) => {
 	);
 };
 
-export { Dialog, DialogTrigger };
+export { Dialog, DialogContext, DialogTrigger };
 export type { DialogProps, DialogTriggerProps };

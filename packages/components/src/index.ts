@@ -80,25 +80,41 @@ export type { TooltipProps, TooltipTriggerProps } from './Tooltip';
 export { Alert } from './Alert';
 export { Autocomplete } from './Autocomplete';
 export { Avatar, InitialsAvatar } from './Avatar';
-export { Breadcrumbs, Breadcrumb } from './Breadcrumbs';
+export { Breadcrumbs, BreadcrumbsContext, Breadcrumb } from './Breadcrumbs';
 export { Button, ButtonContext } from './Button';
 export { ButtonGroup } from './ButtonGroup';
 export {
 	Calendar,
 	CalendarCell,
+	CalendarContext,
 	CalendarGrid,
 	CalendarGridBody,
 	CalendarGridHeader,
 	CalendarHeaderCell,
 	RangeCalendar,
+	RangeCalendarContext,
 } from './Calendar';
-export { Checkbox } from './Checkbox';
-export { CheckboxGroup } from './CheckboxGroup';
+export { Checkbox, CheckboxContext } from './Checkbox';
+export { CheckboxGroup, CheckboxGroupContext } from './CheckboxGroup';
 export { Collection } from './Collection';
-export { ComboBox, ComboBoxClearButton } from './ComboBox';
-export { DateField, DateInput, DateSegment, TimeField } from './DateField';
-export { DatePicker, DateRangePicker, DatePickerValue, DateRangePickerValue } from './DatePicker';
-export { Dialog, DialogTrigger } from './Dialog';
+export { ComboBox, ComboBoxClearButton, ComboBoxContext } from './ComboBox';
+export {
+	DateField,
+	DateFieldContext,
+	DateInput,
+	DateSegment,
+	TimeField,
+	TimeFieldContext,
+} from './DateField';
+export {
+	DatePicker,
+	DatePickerContext,
+	DateRangePicker,
+	DateRangePickerContext,
+	DatePickerValue,
+	DateRangePickerValue,
+} from './DatePicker';
+export { Dialog, DialogContext, DialogTrigger } from './Dialog';
 export { Disclosure, DisclosurePanel } from './Disclosure';
 export { DisclosureGroup } from './DisclosureGroup';
 export { DropIndicator } from './DropIndicator';

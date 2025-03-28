@@ -4,11 +4,13 @@ import type {
 	DateInputProps as AriaDateInputProps,
 	DateSegmentProps as AriaDateSegmentProps,
 	TimeFieldProps as AriaTimeFieldProps,
+	ContextValue,
 	DateValue,
 	TimeValue,
 } from 'react-aria-components';
 
 import { cva, cx } from 'class-variance-authority';
+import { createContext } from 'react';
 import {
 	DateField as AriaDateField,
 	DateInput as AriaDateInput,
@@ -18,6 +20,7 @@ import {
 } from 'react-aria-components';
 
 import styles from './styles/DateField.module.css';
+import { useLPContextProps } from './utils';
 
 const field = cva(styles.field);
 const dateInput = cva(styles.input);
@@ -39,12 +42,18 @@ interface TimeFieldProps<T extends TimeValue> extends AriaTimeFieldProps<T> {
 	ref?: Ref<HTMLDivElement>;
 }
 
+const DateFieldContext =
+	createContext<ContextValue<DateFieldProps<DateValue>, HTMLDivElement>>(null);
+const TimeFieldContext =
+	createContext<ContextValue<TimeFieldProps<TimeValue>, HTMLDivElement>>(null);
+
 /**
  * A date field allows users to enter and edit date and time values using a keyboard. Each part of a date value is displayed in an individually editable segment.
  *
  * https://react-spectrum.adobe.com/react-aria/DateField.html
  */
 const DateField = <T extends DateValue>({ ref, ...props }: DateFieldProps<T>) => {
+	[props, ref] = useLPContextProps(props, ref, DateFieldContext);
 	return (
 		<AriaDateField
 			{...props}
@@ -96,6 +105,7 @@ const DateSegment = ({ ref, ...props }: DateSegmentProps) => {
  * https://react-spectrum.adobe.com/react-aria/TimeField.html
  */
 const TimeField = <T extends TimeValue>({ ref, ...props }: TimeFieldProps<T>) => {
+	[props, ref] = useLPContextProps(props, ref, TimeFieldContext);
 	return (
 		<AriaTimeField
 			{...props}
@@ -107,5 +117,5 @@ const TimeField = <T extends TimeValue>({ ref, ...props }: TimeFieldProps<T>) =>
 	);
 };
 
-export { DateField, DateInput, DateSegment, TimeField };
+export { DateField, DateFieldContext, DateInput, DateSegment, TimeField, TimeFieldContext };
 export type { DateFieldProps, DateInputProps, DateSegmentProps, TimeFieldProps };

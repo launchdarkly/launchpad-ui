@@ -7,27 +7,30 @@ import type {
 	CalendarGridBodyProps,
 	CalendarGridHeaderProps,
 	CalendarHeaderCellProps,
+	ContextValue,
 	DateValue,
 } from 'react-aria-components';
 
 import { getLocalTimeZone, isToday } from '@internationalized/date';
 import { cva, cx } from 'class-variance-authority';
+import { createContext } from 'react';
 import {
 	Calendar as AriaCalendar,
 	CalendarCell as AriaCalendarCell,
+	CalendarContext as AriaCalendarContext,
 	CalendarGrid as AriaCalendarGrid,
 	RangeCalendar as AriaRangeCalendar,
-	CalendarContext,
+	RangeCalendarContext as AriaRangeCalendarContext,
 	CalendarGridBody,
 	CalendarGridHeader,
 	CalendarHeaderCell,
-	RangeCalendarContext,
 	composeRenderProps,
 	useSlottedContext,
 } from 'react-aria-components';
 
 import { button } from './Button';
 import styles from './styles/Calendar.module.css';
+import { useLPContextProps } from './utils';
 
 const calendar = cva(styles.calendar);
 const cell = cva(styles.cell);
@@ -50,12 +53,17 @@ interface RangeCalendarProps<T extends DateValue> extends AriaRangeCalendarProps
 	ref?: Ref<HTMLDivElement>;
 }
 
+const CalendarContext = createContext<ContextValue<CalendarProps<DateValue>, HTMLDivElement>>(null);
+const RangeCalendarContext =
+	createContext<ContextValue<RangeCalendarProps<DateValue>, HTMLDivElement>>(null);
+
 /**
  * A calendar displays one or more date grids and allows users to select a single date.
  *
  * https://react-spectrum.adobe.com/react-aria/Calendar.html
  */
 const Calendar = <T extends DateValue>({ ref, ...props }: CalendarProps<T>) => {
+	[props, ref] = useLPContextProps(props, ref, CalendarContext);
 	return (
 		<AriaCalendar
 			{...props}
@@ -73,8 +81,8 @@ const Calendar = <T extends DateValue>({ ref, ...props }: CalendarProps<T>) => {
  * https://react-spectrum.adobe.com/react-aria/Calendar.html
  */
 const CalendarCell = ({ ref, ...props }: CalendarCellProps) => {
-	const context = useSlottedContext(CalendarContext);
-	const rangeContext = useSlottedContext(RangeCalendarContext);
+	const context = useSlottedContext(AriaCalendarContext);
+	const rangeContext = useSlottedContext(AriaRangeCalendarContext);
 
 	return (
 		<AriaCalendarCell
@@ -136,11 +144,10 @@ const CalendarGrid = ({ ref, className, weekdayStyle = 'short', ...props }: Cale
  *
  * https://react-spectrum.adobe.com/react-aria/RangeCalendar.html
  */
-const RangeCalendar = <T extends DateValue>({
-	ref,
-	pageBehavior = 'single',
-	...props
-}: RangeCalendarProps<T>) => {
+const RangeCalendar = <T extends DateValue>({ ref, ...props }: RangeCalendarProps<T>) => {
+	[props, ref] = useLPContextProps(props, ref, RangeCalendarContext);
+	const { pageBehavior = 'single' } = props;
+
 	return (
 		<AriaRangeCalendar
 			pageBehavior={pageBehavior}
@@ -156,11 +163,13 @@ const RangeCalendar = <T extends DateValue>({
 export {
 	Calendar,
 	CalendarCell,
+	CalendarContext,
 	CalendarGrid,
 	CalendarGridBody,
 	CalendarGridHeader,
 	CalendarHeaderCell,
 	RangeCalendar,
+	RangeCalendarContext,
 };
 export type {
 	CalendarProps,

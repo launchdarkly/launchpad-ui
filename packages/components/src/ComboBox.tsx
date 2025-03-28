@@ -1,10 +1,10 @@
 import type { CSSProperties, Ref } from 'react';
-import type { ComboBoxProps as AriaComboBoxProps } from 'react-aria-components';
+import type { ComboBoxProps as AriaComboBoxProps, ContextValue } from 'react-aria-components';
 import type { IconButtonProps } from './IconButton';
 
 import { useResizeObserver } from '@react-aria/utils';
 import { cva } from 'class-variance-authority';
-import { useCallback, useContext, useRef, useState } from 'react';
+import { createContext, useCallback, useContext, useRef, useState } from 'react';
 import {
 	ComboBox as AriaComboBox,
 	ComboBoxStateContext,
@@ -16,6 +16,7 @@ import {
 import { IconButton } from './IconButton';
 import { PopoverContext } from './Popover';
 import styles from './styles/ComboBox.module.css';
+import { useLPContextProps } from './utils';
 
 const box = cva(styles.box);
 
@@ -25,12 +26,17 @@ interface ComboBoxProps<T extends object> extends AriaComboBoxProps<T> {
 
 interface ComboBoxClearButtonProps extends Partial<IconButtonProps> {}
 
+// biome-ignore lint/suspicious/noExplicitAny: <explanation>
+const ComboBoxContext = createContext<ContextValue<ComboBoxProps<any>, HTMLDivElement>>(null);
+
 /**
  * A combo box combines a text input with a listbox, allowing users to filter a list of options to items matching a query.
  *
  * https://react-spectrum.adobe.com/react-aria/ComboBox.html
  */
-const ComboBox = <T extends object>({ ref, menuTrigger = 'focus', ...props }: ComboBoxProps<T>) => {
+const ComboBox = <T extends object>({ ref, ...props }: ComboBoxProps<T>) => {
+	[props, ref] = useLPContextProps(props, ref, ComboBoxContext);
+	const { menuTrigger = 'focus' } = props;
 	const groupRef = useRef<HTMLDivElement>(null);
 	// https://github.com/adobe/react-spectrum/blob/main/packages/react-aria-components/src/ComboBox.tsx#L152-L166
 	const [groupWidth, setGroupWidth] = useState<string | null>(null);
@@ -91,5 +97,5 @@ const ComboBoxClearButton = ({ ref, ...props }: ComboBoxClearButtonProps) => {
 	);
 };
 
-export { ComboBox, ComboBoxClearButton, PopoverContext };
+export { ComboBox, ComboBoxClearButton, ComboBoxContext };
 export type { ComboBoxProps, ComboBoxClearButtonProps };
