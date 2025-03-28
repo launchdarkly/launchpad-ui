@@ -1,5 +1,11 @@
 # @launchpad-ui/components
 
+## 0.9.2
+
+### Patch Changes
+
+- [#1596](https://github.com/launchdarkly/launchpad-ui/pull/1596) [`472b85e`](https://github.com/launchdarkly/launchpad-ui/commit/472b85e1ca14b6e3d1dd199c210b4f2c7c6905f2) Thanks [@apucacao](https://github.com/apucacao)! - Consistent selection handling for menu and listbox
+
 ## 0.9.1
 
 ### Patch Changes
