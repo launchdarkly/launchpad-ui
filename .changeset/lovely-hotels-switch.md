@@ -1,5 +1,5 @@
 ---
-"@launchpad-ui/components": minor
+"@launchpad-ui/components": patch
 ---
 
 Consistent selection handling for menu and listbox
