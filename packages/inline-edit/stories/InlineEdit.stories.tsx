@@ -1,6 +1,5 @@
 import type { StoryObj } from '@storybook/react';
 
-import { CopyToClipboard } from '@launchpad-ui/clipboard';
 import { Form, FormField, IconField, TextArea, TextField } from '@launchpad-ui/form';
 import { Icon } from '@launchpad-ui/icons';
 import { userEvent, within } from '@storybook/test';
@@ -58,27 +57,6 @@ export const EditTitle: Story = {
 					hideEdit
 				>
 					<h3>{editValue}</h3>
-				</InlineEdit>
-			</div>
-		);
-	},
-};
-
-export const EditCopy: Story = {
-	render: (args) => {
-		const [editValue, setEditValue] = useState('auto-generated-key');
-
-		return (
-			<div style={{ width: 'max-content' }}>
-				<InlineEdit
-					defaultValue={editValue}
-					aria-label="edit value"
-					{...args}
-					onConfirm={setEditValue}
-				>
-					<CopyToClipboard text={editValue} kind="basic">
-						{editValue}
-					</CopyToClipboard>
 				</InlineEdit>
 			</div>
 		);
