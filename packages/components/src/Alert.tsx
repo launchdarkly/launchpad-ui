@@ -6,6 +6,7 @@ import { useControlledState } from '@react-stately/utils';
 import { cva } from 'class-variance-authority';
 import { HeadingContext, Provider } from 'react-aria-components';
 
+import { ButtonGroupContext } from './ButtonGroup';
 import { IconButton } from './IconButton';
 
 import styles from './styles/Alert.module.css';
@@ -57,7 +58,19 @@ const Alert = ({
 			{variant === 'default' && <div role="presentation" className={styles.bar} />}
 			{status !== 'neutral' && <StatusIcon kind={status || 'info'} className={styles.icon} />}
 			<div className={styles.content}>
-				<Provider values={[[HeadingContext, { className: styles.heading }]]}>{children}</Provider>
+				<Provider
+					values={[
+						[HeadingContext, { className: styles.heading }],
+						[
+							ButtonGroupContext,
+							{
+								className: styles.buttonGroup,
+							},
+						],
+					]}
+				>
+					{children}
+				</Provider>
 			</div>
 			{isDismissable && (
 				<IconButton

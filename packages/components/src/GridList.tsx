@@ -2,9 +2,11 @@ import type { Ref } from 'react';
 import type {
 	GridListItemProps as AriaGridListItemProps,
 	GridListProps as AriaGridListProps,
+	ContextValue,
 } from 'react-aria-components';
 
 import { cva } from 'class-variance-authority';
+import { createContext } from 'react';
 import {
 	GridList as AriaGridList,
 	GridListItem as AriaGridListItem,
@@ -14,6 +16,7 @@ import {
 import { Checkbox } from './Checkbox';
 import { IconButton } from './IconButton';
 import styles from './styles/GridList.module.css';
+import { useLPContextProps } from './utils';
 
 const list = cva(styles.list);
 const item = cva(styles.item);
@@ -26,12 +29,16 @@ interface GridListItemProps<T extends object> extends AriaGridListItemProps<T> {
 	ref?: Ref<T>;
 }
 
+// biome-ignore lint/suspicious/noExplicitAny: <explanation>
+const GridListContext = createContext<ContextValue<GridListProps<any>, HTMLDivElement>>(null);
+
 /**
  * A grid list displays a list of interactive items, with support for keyboard navigation, single or multiple selection, and row actions.
  *
  * https://react-spectrum.adobe.com/react-aria/GridList.html
  */
 const GridList = <T extends object>({ ref, ...props }: GridListProps<T>) => {
+	[props, ref] = useLPContextProps(props, ref, GridListContext);
 	return (
 		<AriaGridList
 			{...props}
@@ -79,5 +86,5 @@ const GridListItem = <T extends object>({ ref, ...props }: GridListItemProps<T>)
 	);
 };
 
-export { GridList, GridListItem };
+export { GridList, GridListContext, GridListItem };
 export type { GridListProps, GridListItemProps };

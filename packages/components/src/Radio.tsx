@@ -1,10 +1,16 @@
 import type { Ref } from 'react';
-import type { RadioProps as AriaRadioProps, RadioRenderProps } from 'react-aria-components';
+import type {
+	RadioProps as AriaRadioProps,
+	ContextValue,
+	RadioRenderProps,
+} from 'react-aria-components';
 
 import { cva } from 'class-variance-authority';
+import { createContext } from 'react';
 import { Radio as AriaRadio, composeRenderProps } from 'react-aria-components';
 
 import styles from './styles/Radio.module.css';
+import { useLPContextProps } from './utils';
 
 const radio = cva(styles.radio);
 const circle = cva(styles.circle);
@@ -12,6 +18,8 @@ const circle = cva(styles.circle);
 interface RadioProps extends AriaRadioProps {
 	ref?: Ref<HTMLLabelElement>;
 }
+
+const RadioContext = createContext<ContextValue<RadioProps, HTMLLabelElement>>(null);
 
 const RadioInner = ({ isSelected }: Partial<RadioRenderProps>) => (
 	<div className={circle()}>
@@ -33,6 +41,7 @@ const RadioInner = ({ isSelected }: Partial<RadioRenderProps>) => (
  * https://react-spectrum.adobe.com/react-aria/RadioGroup.html
  */
 const Radio = ({ ref, ...props }: RadioProps) => {
+	[props, ref] = useLPContextProps(props, ref, RadioContext);
 	return (
 		<AriaRadio
 			{...props}
@@ -51,5 +60,5 @@ const Radio = ({ ref, ...props }: RadioProps) => {
 	);
 };
 
-export { Radio, RadioInner, radio };
+export { Radio, RadioContext, RadioInner, radio };
 export type { RadioProps };

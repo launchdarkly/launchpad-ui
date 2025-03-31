@@ -1,13 +1,15 @@
 import type { Ref } from 'react';
-import type { RadioProps } from 'react-aria-components';
+import type { ContextValue, RadioProps } from 'react-aria-components';
 import type { IconButtonBaseProps } from './IconButton';
 
 import { Icon } from '@launchpad-ui/icons';
 import { cx } from 'class-variance-authority';
+import { createContext } from 'react';
 import { Radio as AriaRadio, composeRenderProps } from 'react-aria-components';
 
 import { button } from './Button';
 import { iconButton } from './IconButton';
+import { useLPContextProps } from './utils';
 
 interface RadioIconButtonProps
 	extends Omit<RadioProps, 'children' | 'aria-label'>,
@@ -15,18 +17,18 @@ interface RadioIconButtonProps
 	ref?: Ref<HTMLLabelElement>;
 }
 
+const RadioIconButtonContext =
+	createContext<ContextValue<RadioIconButtonProps, HTMLLabelElement>>(null);
+
 /**
  * A radio represents an individual option within a radio group.
  *
  * https://react-spectrum.adobe.com/react-aria/RadioGroup.html
  */
-const RadioIconButton = ({
-	size = 'medium',
-	variant = 'default',
-	icon,
-	ref,
-	...props
-}: RadioIconButtonProps) => {
+const RadioIconButton = ({ ref, ...props }: RadioIconButtonProps) => {
+	[props, ref] = useLPContextProps(props, ref, RadioIconButtonContext);
+	const { size = 'medium', variant = 'default', icon } = props;
+
 	return (
 		<AriaRadio
 			{...props}
@@ -40,5 +42,5 @@ const RadioIconButton = ({
 	);
 };
 
-export { RadioIconButton };
+export { RadioIconButton, RadioIconButtonContext };
 export type { RadioIconButtonProps };

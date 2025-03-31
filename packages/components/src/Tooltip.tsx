@@ -2,10 +2,12 @@ import type { VariantProps } from 'class-variance-authority';
 import type { Ref } from 'react';
 import type {
 	TooltipProps as AriaTooltipProps,
+	ContextValue,
 	TooltipTriggerComponentProps,
 } from 'react-aria-components';
 
 import { cva } from 'class-variance-authority';
+import { createContext } from 'react';
 import {
 	Tooltip as AriaTooltip,
 	TooltipTrigger as AriaTooltipTrigger,
@@ -14,11 +16,14 @@ import {
 
 import popoverStyles from './styles/Popover.module.css';
 import styles from './styles/Tooltip.module.css';
+import { useLPContextProps } from './utils';
 
 interface TooltipProps extends AriaTooltipProps, VariantProps<typeof tooltip> {
 	ref?: Ref<HTMLDivElement>;
 }
 interface TooltipTriggerProps extends TooltipTriggerComponentProps {}
+
+const TooltipContext = createContext<ContextValue<TooltipProps, HTMLDivElement>>(null);
 
 const tooltip = cva(styles.base, {
 	variants: {
@@ -37,7 +42,10 @@ const tooltip = cva(styles.base, {
  *
  * https://react-spectrum.adobe.com/react-aria/Tooltip.html
  */
-const Tooltip = ({ variant = 'default', ref, ...props }: TooltipProps) => {
+const Tooltip = ({ ref, ...props }: TooltipProps) => {
+	[props, ref] = useLPContextProps(props, ref, TooltipContext);
+	const { variant = 'default' } = props;
+
 	return (
 		<AriaTooltip
 			data-theme={variant === 'default' ? 'dark' : undefined}
@@ -54,8 +62,9 @@ const Tooltip = ({ variant = 'default', ref, ...props }: TooltipProps) => {
 };
 
 const TooltipTrigger = (props: TooltipTriggerProps) => {
-	return <AriaTooltipTrigger delay={500} closeDelay={250} {...props} />;
+	const { delay = 500, closeDelay = 250 } = props;
+	return <AriaTooltipTrigger delay={delay} closeDelay={closeDelay} {...props} />;
 };
 
-export { Tooltip, TooltipTrigger };
+export { Tooltip, TooltipContext, TooltipTrigger };
 export type { TooltipProps, TooltipTriggerProps };

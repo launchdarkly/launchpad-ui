@@ -1,11 +1,13 @@
 import type { VariantProps } from 'class-variance-authority';
 import type { Ref } from 'react';
-import type { ProgressBarProps as AriaProgressBarProps } from 'react-aria-components';
+import type { ProgressBarProps as AriaProgressBarProps, ContextValue } from 'react-aria-components';
 
 import { cva, cx } from 'class-variance-authority';
+import { createContext } from 'react';
 import { ProgressBar as AriaProgressBar, composeRenderProps } from 'react-aria-components';
 
 import styles from './styles/ProgressBar.module.css';
+import { useLPContextProps } from './utils';
 
 const progressBar = cva(styles.progress);
 
@@ -26,12 +28,17 @@ interface ProgressBarProps extends AriaProgressBarProps, VariantProps<typeof ico
 	ref?: Ref<HTMLDivElement>;
 }
 
+const ProgressBarContext = createContext<ContextValue<ProgressBarProps, HTMLDivElement>>(null);
+
 /**
  * Progress bars show either determinate or indeterminate progress of an operation over time.
  *
  * https://react-spectrum.adobe.com/react-aria/ProgressBar.html
  */
-const ProgressBar = ({ size = 'small', ref, ...props }: ProgressBarProps) => {
+const ProgressBar = ({ ref, ...props }: ProgressBarProps) => {
+	[props, ref] = useLPContextProps(props, ref, ProgressBarContext);
+	const { size = 'small' } = props;
+
 	const center = 16;
 	const strokeWidth = 4;
 	const r = 16 - strokeWidth;
@@ -75,5 +82,5 @@ const ProgressBar = ({ size = 'small', ref, ...props }: ProgressBarProps) => {
 	);
 };
 
-export { ProgressBar };
+export { ProgressBar, ProgressBarContext };
 export type { ProgressBarProps };

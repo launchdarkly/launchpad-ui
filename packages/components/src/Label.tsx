@@ -1,11 +1,12 @@
 import type { Ref } from 'react';
-import type { LabelProps as AriaLabelProps } from 'react-aria-components';
+import type { LabelProps as AriaLabelProps, ContextValue } from 'react-aria-components';
 
 import { cva, cx } from 'class-variance-authority';
-import { Label as AriaLabel, useSlottedContext } from 'react-aria-components';
+import { createContext } from 'react';
+import { Label as AriaLabel } from 'react-aria-components';
 
-import { LabelContext } from './Form';
 import styles from './styles/Label.module.css';
+import { useLPContextProps } from './utils';
 
 const label = cva(styles.label);
 
@@ -13,18 +14,14 @@ interface LabelProps extends AriaLabelProps {
 	ref?: Ref<HTMLLabelElement>;
 }
 
-const Label = ({ className, ref, ...props }: LabelProps) => {
-	const labelProps = useSlottedContext(LabelContext);
+const LabelContext = createContext<ContextValue<LabelProps, HTMLLabelElement>>(null);
 
-	return (
-		<AriaLabel
-			{...props}
-			{...labelProps}
-			ref={ref}
-			className={cx(label({ className }), labelProps?.className)}
-		/>
-	);
+const Label = ({ ref, ...props }: LabelProps) => {
+	[props, ref] = useLPContextProps(props, ref, LabelContext);
+	const { className } = props;
+
+	return <AriaLabel {...props} ref={ref} className={cx(label({ className }))} />;
 };
 
-export { Label };
+export { Label, LabelContext };
 export type { LabelProps };

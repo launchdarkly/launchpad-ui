@@ -4,9 +4,11 @@ import type {
 	TagGroupProps as AriaTagGroupProps,
 	TagListProps as AriaTagListProps,
 	TagProps as AriaTagProps,
+	ContextValue,
 } from 'react-aria-components';
 
 import { cva } from 'class-variance-authority';
+import { createContext } from 'react';
 import {
 	Tag as AriaTag,
 	TagGroup as AriaTagGroup,
@@ -16,6 +18,7 @@ import {
 
 import { IconButton } from './IconButton';
 import styles from './styles/TagGroup.module.css';
+import { useLPContextProps } from './utils';
 
 const group = cva(styles.group);
 const list = cva(styles.list);
@@ -54,12 +57,19 @@ interface TagListProps<T> extends AriaTagListProps<T> {
 	ref?: Ref<HTMLDivElement>;
 }
 
+const TagGroupContext = createContext<ContextValue<TagGroupProps, HTMLDivElement>>(null);
+// biome-ignore lint/suspicious/noExplicitAny: <explanation>
+const TagListContext = createContext<ContextValue<TagListProps<any>, HTMLDivElement>>(null);
+
 /**
  * A tag group is a focusable list of labels, categories, keywords, filters, or other items, with support for keyboard navigation, selection, and removal.
  *
  * https://react-spectrum.adobe.com/react-aria/TagGroup.html
  */
-const TagGroup = ({ className, ref, ...props }: TagGroupProps) => {
+const TagGroup = ({ ref, ...props }: TagGroupProps) => {
+	[props, ref] = useLPContextProps(props, ref, TagGroupContext);
+	const { className } = props;
+
 	return <AriaTagGroup {...props} ref={ref} className={group({ className })} />;
 };
 
@@ -67,6 +77,7 @@ const TagGroup = ({ className, ref, ...props }: TagGroupProps) => {
  * A tag list is a container for tags within a TagGroup.
  */
 const TagList = <T extends object>({ ref, ...props }: TagListProps<T>) => {
+	[props, ref] = useLPContextProps(props, ref, TagListContext);
 	return (
 		<AriaTagList
 			{...props}
@@ -111,5 +122,5 @@ const Tag = ({ size = 'medium', variant = 'default', ref, ...props }: TagProps) 
 	);
 };
 
-export { TagGroup, TagList, Tag, tag };
+export { TagGroup, TagGroupContext, TagList, TagListContext, Tag, tag };
 export type { TagGroupProps, TagListProps, TagProps, TagVariants };

@@ -1,8 +1,12 @@
 import type { VariantProps } from 'class-variance-authority';
 import type { Ref } from 'react';
-import type { ModalOverlayProps as AriaModalOverlayProps } from 'react-aria-components';
+import type {
+	ModalOverlayProps as AriaModalOverlayProps,
+	ContextValue,
+} from 'react-aria-components';
 
 import { cva } from 'class-variance-authority';
+import { createContext } from 'react';
 import {
 	Modal as AriaModal,
 	ModalOverlay as AriaModalOverlay,
@@ -10,6 +14,7 @@ import {
 } from 'react-aria-components';
 
 import styles from './styles/Modal.module.css';
+import { useLPContextProps } from './utils';
 
 const modal = cva(styles.base, {
 	variants: {
@@ -38,12 +43,17 @@ interface ModalOverlayProps extends AriaModalOverlayProps, VariantProps<typeof m
 	ref?: Ref<HTMLDivElement>;
 }
 
+const ModalContext = createContext<ContextValue<ModalProps, HTMLDivElement>>(null);
+
 /**
  * A modal is an overlay element which blocks interaction with elements outside it.
  *
  * https://react-spectrum.adobe.com/react-aria/Modal.html
  */
-const Modal = ({ size = 'medium', variant = 'default', ref, ...props }: ModalProps) => {
+const Modal = ({ ref, ...props }: ModalProps) => {
+	[props, ref] = useLPContextProps(props, ref, ModalContext);
+	const { size = 'medium', variant = 'default' } = props;
+
 	return (
 		<AriaModal
 			{...props}
@@ -71,5 +81,5 @@ const ModalOverlay = ({ isDismissable = true, ref, ...props }: ModalOverlayProps
 	);
 };
 
-export { Modal, ModalOverlay };
+export { Modal, ModalContext, ModalOverlay };
 export type { ModalProps, ModalOverlayProps };

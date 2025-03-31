@@ -1,19 +1,27 @@
+import type { ContextValue } from 'react-aria-components';
 import type { ButtonVariants } from './Button';
 import type { LinkProps } from './Link';
 
+import { createContext } from 'react';
 import { composeRenderProps } from 'react-aria-components';
 
 import { button } from './Button';
 import { Link } from './Link';
+import { useLPContextProps } from './utils';
 
 interface LinkButtonProps extends Omit<LinkProps, 'variant'>, ButtonVariants {}
+
+const LinkButtonContext = createContext<ContextValue<LinkButtonProps, HTMLAnchorElement>>(null);
 
 /**
  * A link allows a user to navigate to another page or resource within a web page or application.
  *
  * https://react-spectrum.adobe.com/react-aria/Link.html
  */
-const LinkButton = ({ size = 'medium', variant = 'default', ref, ...props }: LinkButtonProps) => {
+const LinkButton = ({ ref, ...props }: LinkButtonProps) => {
+	[props, ref] = useLPContextProps(props, ref, LinkButtonContext);
+	const { size = 'medium', variant = 'default' } = props;
+
 	return (
 		<Link
 			{...props}
@@ -26,5 +34,5 @@ const LinkButton = ({ size = 'medium', variant = 'default', ref, ...props }: Lin
 	);
 };
 
-export { LinkButton };
+export { LinkButton, LinkButtonContext };
 export type { LinkButtonProps };

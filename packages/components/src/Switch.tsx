@@ -1,17 +1,20 @@
-import type { ReactNode, Ref } from 'react';
-import type { SwitchProps as AriaSwitchProps } from 'react-aria-components';
+import type { Ref } from 'react';
+import type { SwitchProps as AriaSwitchProps, ContextValue } from 'react-aria-components';
 
 import { cva } from 'class-variance-authority';
+import { createContext } from 'react';
 import { Switch as AriaSwitch, composeRenderProps } from 'react-aria-components';
 
 import styles from './styles/Switch.module.css';
+import { useLPContextProps } from './utils';
 
 const _switch = cva(styles.switch);
 
-interface SwitchProps extends Omit<AriaSwitchProps, 'children'> {
-	children?: ReactNode;
+interface SwitchProps extends AriaSwitchProps {
 	ref?: Ref<HTMLLabelElement>;
 }
+
+const SwitchContext = createContext<ContextValue<SwitchProps, HTMLLabelElement>>(null);
 
 /**
  * A switch allows a user to turn a setting on or off.
@@ -19,6 +22,7 @@ interface SwitchProps extends Omit<AriaSwitchProps, 'children'> {
  * https://react-spectrum.adobe.com/react-aria/Switch.html
  */
 const Switch = ({ ref, ...props }: SwitchProps) => {
+	[props, ref] = useLPContextProps(props, ref, SwitchContext);
 	return (
 		<AriaSwitch
 			{...props}
@@ -41,5 +45,5 @@ const Switch = ({ ref, ...props }: SwitchProps) => {
 	);
 };
 
-export { Switch };
+export { Switch, SwitchContext };
 export type { SwitchProps };
