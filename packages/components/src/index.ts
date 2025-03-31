@@ -82,7 +82,7 @@ export { Autocomplete } from './Autocomplete';
 export { Avatar, InitialsAvatar } from './Avatar';
 export { Breadcrumbs, BreadcrumbsContext, Breadcrumb } from './Breadcrumbs';
 export { Button, ButtonContext } from './Button';
-export { ButtonGroup } from './ButtonGroup';
+export { ButtonGroup, ButtonGroupContext } from './ButtonGroup';
 export {
 	Calendar,
 	CalendarCell,
@@ -145,15 +145,15 @@ export { OverlayArrow, Popover, PopoverContext } from './Popover';
 export { Pressable } from './Pressable';
 export { ProgressBar, ProgressBarContext } from './ProgressBar';
 export { Radio, RadioContext } from './Radio';
-export { RadioButton } from './RadioButton';
+export { RadioButton, RadioButtonContext } from './RadioButton';
 export { RadioGroup, RadioGroupContext } from './RadioGroup';
-export { RadioIconButton } from './RadioIconButton';
+export { RadioIconButton, RadioIconButtonContext } from './RadioIconButton';
 export { RouterProvider } from './RouterProvider';
 export { SearchField, SearchFieldContext } from './SearchField';
 export { ListBoxSection, MenuSection } from './Section';
 export { Select, SelectContext, SelectValue, SelectValueContext } from './Select';
-export { Separator } from './Separator';
-export { Switch } from './Switch';
+export { Separator, SeparatorContext } from './Separator';
+export { Switch, SwitchContext } from './Switch';
 export {
 	Cell,
 	Column,
@@ -162,17 +162,18 @@ export {
 	Row,
 	Table,
 	TableBody,
+	TableContext,
 	TableHeader,
 } from './Table';
-export { Tab, Tabs, TabList, TabPanel } from './Tabs';
-export { TagGroup, TagList, Tag } from './TagGroup';
-export { Text } from './Text';
-export { TextArea } from './TextArea';
-export { TextField } from './TextField';
+export { Tab, Tabs, TabsContext, TabList, TabPanel } from './Tabs';
+export { TagGroup, TagGroupContext, TagList, TagListContext, Tag } from './TagGroup';
+export { Text, TextContext } from './Text';
+export { TextArea, TextAreaContext } from './TextArea';
+export { TextField, TextFieldContext } from './TextField';
 export { snackbarQueue, toastQueue, Toast, ToastRegion, SnackbarRegion } from './Toast';
-export { ToggleButton } from './ToggleButton';
-export { ToggleButtonGroup } from './ToggleButtonGroup';
-export { ToggleIconButton } from './ToggleIconButton';
-export { Toolbar } from './Toolbar';
-export { Tooltip, TooltipTrigger } from './Tooltip';
+export { ToggleButton, ToggleButtonContext } from './ToggleButton';
+export { ToggleButtonGroup, ToggleButtonGroupContext } from './ToggleButtonGroup';
+export { ToggleIconButton, ToggleIconButtonContext } from './ToggleIconButton';
+export { Toolbar, ToolbarContext } from './Toolbar';
+export { Tooltip, TooltipContext, TooltipTrigger } from './Tooltip';
 export { useHref, useImageLoadingStatus, useMedia } from './utils';

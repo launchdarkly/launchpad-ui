@@ -4,9 +4,11 @@ import type {
 	TabPanelProps as AriaTabPanelProps,
 	TabProps as AriaTabProps,
 	TabsProps as AriaTabsProps,
+	ContextValue,
 } from 'react-aria-components';
 
 import { cva } from 'class-variance-authority';
+import { createContext } from 'react';
 import {
 	Tab as AriaTab,
 	TabList as AriaTabList,
@@ -16,6 +18,7 @@ import {
 } from 'react-aria-components';
 
 import styles from './styles/Tabs.module.css';
+import { useLPContextProps } from './utils';
 
 const list = cva(styles.list);
 const panel = cva(styles.panel);
@@ -38,12 +41,15 @@ interface TabPanelProps extends AriaTabPanelProps {
 	ref?: Ref<HTMLDivElement>;
 }
 
+const TabsContext = createContext<ContextValue<TabsProps, HTMLDivElement>>(null);
+
 /**
  * Tabs organize content into multiple sections and allow users to navigate between them.
  *
  * https://react-spectrum.adobe.com/react-aria/Tabs.html
  */
 const Tabs = ({ ref, ...props }: TabsProps) => {
+	[props, ref] = useLPContextProps(props, ref, TabsContext);
 	return (
 		<AriaTabs
 			{...props}
@@ -107,5 +113,5 @@ const TabPanel = ({ ref, ...props }: TabPanelProps) => {
 	);
 };
 
-export { Tab, Tabs, TabList, TabPanel };
+export { Tab, Tabs, TabsContext, TabList, TabPanel };
 export type { TabProps, TabsProps, TabListProps, TabPanelProps };

@@ -4,10 +4,6 @@
 	gap: var(--lp-spacing-500);
 	align-items: flex-start;
 
-	& [role='group'] {
-		margin-top: var(--lp-spacing-700);
-	}
-
 	&.error .icon {
 		fill: var(--lp-color-fill-feedback-error);
 	}
@@ -99,4 +95,8 @@
 .heading {
 	font: var(--lp-text-heading-2-semibold);
 	margin-bottom: var(--lp-spacing-200);
+}
+
+.buttonGroup {
+	margin-top: var(--lp-spacing-700);
 }

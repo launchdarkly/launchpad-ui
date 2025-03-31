@@ -8,6 +8,7 @@ import type {
 	TableBodyProps as AriaTableBodyProps,
 	TableHeaderProps as AriaTableHeaderProps,
 	TableProps as AriaTableProps,
+	ContextValue,
 } from 'react-aria-components';
 
 import { Icon } from '@launchpad-ui/icons';
@@ -32,6 +33,7 @@ import {
 import { Checkbox } from './Checkbox';
 import { IconButton } from './IconButton';
 import styles from './styles/Table.module.css';
+import { useLPContextProps } from './utils';
 
 const table = cva(styles.table);
 const column = cva(styles.column);
@@ -77,12 +79,15 @@ interface ResizableTableContainerProps extends AriaResizableTableContainerProps 
 	ref?: Ref<HTMLDivElement>;
 }
 
+const TableContext = createContext<ContextValue<TableProps, HTMLTableElement>>(null);
+
 /**
  * A table displays data in rows and columns and enables a user to navigate its contents via directional navigation keys, and optionally supports row selection and sorting.
  *
  * https://react-spectrum.adobe.com/react-aria/Table.html
  */
 const Table = ({ ref, ...props }: TableProps) => {
+	[props, ref] = useLPContextProps(props, ref, TableContext);
 	return (
 		<AriaTable
 			{...props}
@@ -127,10 +132,16 @@ const Column = ({ ref, ...props }: ColumnProps) => {
  *
  * https://react-spectrum.adobe.com/react-aria/Table.html
  */
-const TableHeader = <T extends object>({ className, ref, ...props }: TableHeaderProps<T>) => {
+const TableHeader = <T extends object>({ ref, ...props }: TableHeaderProps<T>) => {
 	const { selectionBehavior, selectionMode, allowsDragging } = useTableOptions();
 	return (
-		<AriaTableHeader {...props} ref={ref} className={header({ className })}>
+		<AriaTableHeader
+			{...props}
+			ref={ref}
+			className={composeRenderProps(props.className, (className, renderProps) =>
+				header({ ...renderProps, className }),
+			)}
+		>
 			{allowsDragging && (
 				<Column>
 					<VisuallyHidden>Drag</VisuallyHidden>
@@ -232,7 +243,17 @@ const ResizableTableContainer = ({ children, ref, ...props }: ResizableTableCont
 	);
 };
 
-export { Cell, Column, ColumnResizer, ResizableTableContainer, Row, Table, TableBody, TableHeader };
+export {
+	Cell,
+	Column,
+	ColumnResizer,
+	ResizableTableContainer,
+	Row,
+	Table,
+	TableBody,
+	TableContext,
+	TableHeader,
+};
 export type {
 	CellProps,
 	ColumnProps,

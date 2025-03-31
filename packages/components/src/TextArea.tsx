@@ -1,12 +1,14 @@
 import type { Ref } from 'react';
-import type { TextAreaProps as AriaTextAreaProps } from 'react-aria-components';
+import type { TextAreaProps as AriaTextAreaProps, ContextValue } from 'react-aria-components';
 import type { InputVariants } from './Input';
 
 import { cva, cx } from 'class-variance-authority';
+import { createContext } from 'react';
 import { TextArea as AriaTextArea, composeRenderProps } from 'react-aria-components';
 
 import { input } from './Input';
 import styles from './styles/TextArea.module.css';
+import { useLPContextProps } from './utils';
 
 const area = cva(styles.area);
 
@@ -14,12 +16,17 @@ interface TextAreaProps extends AriaTextAreaProps, InputVariants {
 	ref?: Ref<HTMLTextAreaElement>;
 }
 
+const TextAreaContext = createContext<ContextValue<TextAreaProps, HTMLTextAreaElement>>(null);
+
 /**
  * A textarea allows a user to input mult-line text.
  *
  * https://react-spectrum.adobe.com/react-aria/TextField.html
  */
-const TextArea = ({ variant = 'default', ref, ...props }: TextAreaProps) => {
+const TextArea = ({ ref, ...props }: TextAreaProps) => {
+	[props, ref] = useLPContextProps(props, ref, TextAreaContext);
+	const { variant = 'default' } = props;
+
 	return (
 		<AriaTextArea
 			{...props}
@@ -31,5 +38,5 @@ const TextArea = ({ variant = 'default', ref, ...props }: TextAreaProps) => {
 	);
 };
 
-export { TextArea };
+export { TextArea, TextAreaContext };
 export type { TextAreaProps };

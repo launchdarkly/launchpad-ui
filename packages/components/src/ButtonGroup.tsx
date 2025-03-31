@@ -1,9 +1,10 @@
 import type { Orientation } from '@react-types/shared';
 import type { VariantProps } from 'class-variance-authority';
 import type { Ref } from 'react';
-import type { GroupProps } from 'react-aria-components';
+import type { ContextValue, GroupProps } from 'react-aria-components';
 
 import { cva } from 'class-variance-authority';
+import { createContext } from 'react';
 import {
 	ButtonContext,
 	Group,
@@ -13,6 +14,7 @@ import {
 } from 'react-aria-components';
 
 import styles from './styles/ButtonGroup.module.css';
+import { useLPContextProps } from './utils';
 
 const buttonGroup = cva(styles.base, {
 	variants: {
@@ -36,12 +38,12 @@ interface ButtonGroupProps extends GroupProps, VariantProps<typeof buttonGroup> 
 	ref?: Ref<HTMLDivElement>;
 }
 
-const ButtonGroup = ({
-	spacing = 'basic',
-	orientation = 'horizontal',
-	ref,
-	...props
-}: ButtonGroupProps) => {
+const ButtonGroupContext = createContext<ContextValue<ButtonGroupProps, HTMLDivElement>>(null);
+
+const ButtonGroup = ({ ref, ...props }: ButtonGroupProps) => {
+	[props, ref] = useLPContextProps(props, ref, ButtonGroupContext);
+	const { spacing = 'basic', orientation = 'horizontal' } = props;
+
 	return (
 		<Group
 			{...props}
@@ -49,7 +51,7 @@ const ButtonGroup = ({
 			className={composeRenderProps(props.className, (className, renderProps) =>
 				buttonGroup({ ...renderProps, spacing, orientation, className }),
 			)}
-			data-orientation={orientation}
+			data-orientation={orientation ?? undefined}
 		>
 			{composeRenderProps(props.children, (children, { isDisabled }) => (
 				<Provider
@@ -65,5 +67,5 @@ const ButtonGroup = ({
 	);
 };
 
-export { ButtonGroup };
+export { ButtonGroup, ButtonGroupContext };
 export type { ButtonGroupProps };
