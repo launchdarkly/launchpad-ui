@@ -1,9 +1,12 @@
 import type { HTMLAttributes, Ref } from 'react';
+import type { ContextValue } from 'react-aria-components';
 
 import { cva } from 'class-variance-authority';
+import { createContext } from 'react';
 import { Header as AriaHeader } from 'react-aria-components';
 
 import styles from './styles/Header.module.css';
+import { useLPContextProps } from './utils';
 
 const header = cva(styles.header);
 
@@ -11,9 +14,14 @@ interface HeaderProps extends HTMLAttributes<HTMLElement> {
 	ref?: Ref<HTMLElement>;
 }
 
-const Header = ({ className, ref, ...props }: HeaderProps) => {
+const HeaderContext = createContext<ContextValue<HeaderProps, HTMLElement>>(null);
+
+const Header = ({ ref, ...props }: HeaderProps) => {
+	[props, ref] = useLPContextProps(props, ref, HeaderContext);
+	const { className } = props;
+
 	return <AriaHeader {...props} ref={ref} className={header({ className })} />;
 };
 
-export { Header };
+export { Header, HeaderContext };
 export type { HeaderProps };

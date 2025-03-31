@@ -53,13 +53,13 @@ const ButtonContext = createContext<ContextValue<ButtonContextValue, HTMLButtonE
  */
 const Button = ({ ref, ...props }: ButtonProps) => {
 	[props, ref] = useLPContextProps(props, ref, ButtonContext);
-	const perceivableContext = useContext(PerceivableContext);
+	const perceivableProps = useContext(PerceivableContext);
 	const { size = 'medium', variant = 'default' } = props;
 
 	return (
 		<AriaButton
 			{...props}
-			{...perceivableContext}
+			{...perceivableProps}
 			ref={ref}
 			className={composeRenderProps(props.className, (className, renderProps) =>
 				button({ ...renderProps, size, variant, className }),

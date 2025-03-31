@@ -1,13 +1,14 @@
 import type { DOMProps } from '@react-types/shared';
 import type { VariantProps } from 'class-variance-authority';
 import type { Ref } from 'react';
-import type { LinkProps as AriaLinkProps } from 'react-aria-components';
+import type { LinkProps as AriaLinkProps, ContextValue } from 'react-aria-components';
 
 import { cva } from 'class-variance-authority';
-import { createContext, useContext } from 'react';
+import { createContext } from 'react';
 import { Link as AriaLink, composeRenderProps } from 'react-aria-components';
 
 import styles from './styles/Link.module.css';
+import { useLPContextProps } from './utils';
 
 const link = cva(styles.base, {
 	variants: {
@@ -21,29 +22,28 @@ const link = cva(styles.base, {
 	},
 });
 
-const LinkContext = createContext<LinkProps | null>(null);
-
 interface LinkProps extends AriaLinkProps, VariantProps<typeof link>, DOMProps {
 	ref?: Ref<HTMLAnchorElement>;
 }
+
+const LinkContext = createContext<ContextValue<LinkProps, HTMLAnchorElement>>(null);
 
 /**
  * A link allows a user to navigate to another page or resource within a web page or application.
  *
  * https://react-spectrum.adobe.com/react-aria/Link.html
  */
-const Link = ({ variant = 'default', href, ref, ...props }: LinkProps) => {
-	const linkProps = useContext(LinkContext);
+const Link = ({ ref, ...props }: LinkProps) => {
+	[props, ref] = useLPContextProps(props, ref, LinkContext);
+	const { variant = 'default' } = props;
 
 	return (
 		<AriaLink
 			{...props}
-			{...linkProps}
 			ref={ref}
 			className={composeRenderProps(props.className, (className, renderProps) =>
-				link({ ...renderProps, variant: linkProps?.variant ?? variant, className }),
+				link({ ...renderProps, variant, className }),
 			)}
-			href={href}
 		/>
 	);
 };

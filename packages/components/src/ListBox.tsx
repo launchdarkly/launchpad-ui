@@ -2,19 +2,23 @@ import type { Ref } from 'react';
 import type {
 	ListBoxItemProps as AriaListBoxItemProps,
 	ListBoxProps as AriaListBoxProps,
+	ContextValue,
 } from 'react-aria-components';
 
+import { Icon } from '@launchpad-ui/icons';
 import { cva } from 'class-variance-authority';
+import { createContext } from 'react';
 import {
 	ListBox as AriaListBox,
 	ListBoxItem as AriaListBoxItem,
 	composeRenderProps,
 } from 'react-aria-components';
 
-import { Icon } from '@launchpad-ui/icons';
 import { CheckboxInner } from './Checkbox';
 import { checkbox } from './Checkbox';
 import styles from './styles/ListBox.module.css';
+import { useLPContextProps } from './utils';
+
 const box = cva(styles.box);
 const item = cva(styles.item);
 
@@ -25,12 +29,16 @@ interface ListBoxItemProps<T> extends AriaListBoxItemProps<T> {
 	ref?: Ref<T>;
 }
 
+// biome-ignore lint/suspicious/noExplicitAny: <explanation>
+const ListBoxContext = createContext<ContextValue<ListBoxProps<any>, HTMLDivElement>>(null);
+
 /**
  * A listbox displays a list of options and allows a user to select one or more of them.
  *
  * https://react-spectrum.adobe.com/react-aria/ListBox.html
  */
 const ListBox = <T extends object>({ ref, ...props }: ListBoxProps<T>) => {
+	[props, ref] = useLPContextProps(props, ref, ListBoxContext);
 	return (
 		<AriaListBox
 			{...props}
@@ -78,5 +86,5 @@ const ListBoxItem = <T extends object>({ ref, ...props }: ListBoxItemProps<T>) =
 	);
 };
 
-export { ListBox, ListBoxItem };
+export { ListBox, ListBoxContext, ListBoxItem };
 export type { ListBoxProps, ListBoxItemProps };

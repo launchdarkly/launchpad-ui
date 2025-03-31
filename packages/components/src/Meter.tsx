@@ -1,17 +1,21 @@
 import type { Ref } from 'react';
-import type { MeterProps as AriaMeterProps } from 'react-aria-components';
+import type { MeterProps as AriaMeterProps, ContextValue } from 'react-aria-components';
 
 import { cva } from 'class-variance-authority';
+import { createContext } from 'react';
 import { Meter as AriaMeter, composeRenderProps } from 'react-aria-components';
+
 import styles from './styles/Meter.module.css';
+import { useLPContextProps } from './utils';
 
 const meter = cva(styles.meter);
-
 const icon = cva(styles.base);
 
 interface MeterProps extends AriaMeterProps {
 	ref?: Ref<HTMLDivElement>;
 }
+
+const MeterContext = createContext<ContextValue<MeterProps, HTMLDivElement>>(null);
 
 /**
  * A meter represents a quantity within a known range, or a fractional value.
@@ -19,6 +23,8 @@ interface MeterProps extends AriaMeterProps {
  * https://react-spectrum.adobe.com/react-aria/Meter.html
  */
 const Meter = ({ ref, ...props }: MeterProps) => {
+	[props, ref] = useLPContextProps(props, ref, MeterContext);
+
 	const center = 64;
 	const strokeWidth = 8;
 	const r = 64 - strokeWidth;
@@ -61,5 +67,5 @@ const Meter = ({ ref, ...props }: MeterProps) => {
 	);
 };
 
-export { Meter };
+export { Meter, MeterContext };
 export type { MeterProps };

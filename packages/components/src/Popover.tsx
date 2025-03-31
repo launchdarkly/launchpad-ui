@@ -35,11 +35,12 @@ const arrow = cva(styles.arrow);
  */
 const Popover = ({ ref, ...props }: PopoverProps) => {
 	[props, ref] = useLPContextProps(props, ref, PopoverContext);
+	const { offset = 4, crossOffset = 0 } = props;
 
 	return (
 		<AriaPopover
-			offset={4}
-			crossOffset={0}
+			offset={offset}
+			crossOffset={crossOffset}
 			{...props}
 			ref={ref}
 			className={composeRenderProps(props.className, (className, renderProps) =>
