@@ -36,14 +36,14 @@
 		"@internationalized/date": "3.7.0",
 		"@launchpad-ui/icons": "workspace:~",
 		"@launchpad-ui/tokens": "workspace:~",
-		"@react-aria/focus": "3.20.0",
-		"@react-aria/interactions": "3.24.0",
-		"@react-aria/utils": "3.28.0",
+		"@react-aria/focus": "3.20.1",
+		"@react-aria/interactions": "3.24.1",
+		"@react-aria/utils": "3.28.1",
 		"@react-stately/utils": "3.10.5",
 		"@react-types/shared": "3.28.0",
 		"class-variance-authority": "0.7.0",
-		"react-aria": "3.38.0",
-		"react-aria-components": "1.7.0",
+		"react-aria": "3.38.1",
+		"react-aria-components": "1.7.1",
 		"react-router": "7.0.1"
 	},
 	"peerDependencies": {
@@ -51,9 +51,9 @@
 		"react-dom": "^19.0.0"
 	},
 	"devDependencies": {
-		"react": "19.0.0",
-		"react-dom": "19.0.0",
-		"react-hook-form": "7.54.2",
-		"react-stately": "3.36.0"
+		"react": "19.1.0",
+		"react-dom": "19.1.0",
+		"react-hook-form": "7.55.0",
+		"react-stately": "3.36.1"
 	}
 }
