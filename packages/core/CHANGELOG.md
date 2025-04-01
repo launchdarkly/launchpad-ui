@@ -1,5 +1,11 @@
 # @launchpad-ui/core
 
+## 0.53.0
+
+### Minor Changes
+
+- [#1599](https://github.com/launchdarkly/launchpad-ui/pull/1599) [`2a5074b`](https://github.com/launchdarkly/launchpad-ui/commit/2a5074bc2ec9a43fd29fbfd7f30a0b5fb8ea16d3) Thanks [@Niznikr](https://github.com/Niznikr)! - Remove chip, clipboard, and progress packages
+
 ## 0.52.0
 
 ### Minor Changes
