@@ -321,53 +321,6 @@ importers:
         specifier: 19.0.0
         version: 19.0.0(react@19.0.0)
 
-  packages/chip:
-    dependencies:
-      '@launchpad-ui/icons':
-        specifier: workspace:~
-        version: link:../icons
-      '@launchpad-ui/tokens':
-        specifier: workspace:~
-        version: link:../tokens
-      classix:
-        specifier: 2.2.0
-        version: 2.2.0
-    devDependencies:
-      react:
-        specifier: 19.0.0
-        version: 19.0.0
-      react-dom:
-        specifier: 19.0.0
-        version: 19.0.0(react@19.0.0)
-
-  packages/clipboard:
-    dependencies:
-      '@launchpad-ui/icons':
-        specifier: workspace:~
-        version: link:../icons
-      '@launchpad-ui/tokens':
-        specifier: workspace:~
-        version: link:../tokens
-      '@launchpad-ui/tooltip':
-        specifier: workspace:~
-        version: link:../tooltip
-      '@radix-ui/react-slot':
-        specifier: 1.1.0
-        version: 1.1.0(@types/react@19.0.0)(react@19.0.0)
-      '@react-aria/live-announcer':
-        specifier: 3.4.1
-        version: 3.4.1
-      classix:
-        specifier: 2.2.0
-        version: 2.2.0
-    devDependencies:
-      react:
-        specifier: 19.0.0
-        version: 19.0.0
-      react-dom:
-        specifier: 19.0.0
-        version: 19.0.0(react@19.0.0)
-
   packages/collapsible:
     dependencies:
       '@launchpad-ui/button':
@@ -478,12 +431,6 @@ importers:
       '@launchpad-ui/card':
         specifier: workspace:~
         version: link:../card
-      '@launchpad-ui/chip':
-        specifier: workspace:~
-        version: link:../chip
-      '@launchpad-ui/clipboard':
-        specifier: workspace:~
-        version: link:../clipboard
       '@launchpad-ui/collapsible':
         specifier: workspace:~
         version: link:../collapsible
@@ -532,9 +479,6 @@ importers:
       '@launchpad-ui/portal':
         specifier: workspace:~
         version: link:../portal
-      '@launchpad-ui/progress':
-        specifier: workspace:~
-        version: link:../progress
       '@launchpad-ui/progress-bubbles':
         specifier: workspace:~
         version: link:../progress-bubbles
@@ -573,8 +517,8 @@ importers:
         specifier: workspace:~
         version: link:../portal
       '@launchpad-ui/progress':
-        specifier: workspace:~
-        version: link:../progress
+        specifier: 0.5.57
+        version: 0.5.57(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       '@launchpad-ui/tokens':
         specifier: workspace:~
         version: link:../tokens
@@ -902,8 +846,8 @@ importers:
   packages/navigation:
     dependencies:
       '@launchpad-ui/chip':
-        specifier: workspace:~
-        version: link:../chip
+        specifier: 0.9.58
+        version: 0.9.58(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       '@launchpad-ui/dropdown':
         specifier: workspace:~
         version: link:../dropdown
@@ -990,22 +934,6 @@ importers:
         version: 19.0.0(react@19.0.0)
 
   packages/portal:
-    devDependencies:
-      react:
-        specifier: 19.0.0
-        version: 19.0.0
-      react-dom:
-        specifier: 19.0.0
-        version: 19.0.0(react@19.0.0)
-
-  packages/progress:
-    dependencies:
-      '@launchpad-ui/tokens':
-        specifier: workspace:~
-        version: link:../tokens
-      classix:
-        specifier: 2.2.0
-        version: 2.2.0
     devDependencies:
       react:
         specifier: 19.0.0
@@ -1866,6 +1794,27 @@ packages:
     engines: {node: '>=10.0'}
     peerDependencies:
       tslib: '2'
+
+  '@launchpad-ui/chip@0.9.58':
+    resolution: {integrity: sha512-57XRCU+XCLNGUS3pjdls0Oi2GDhly/QF4C4mEhswnhKg96pZ1pURKIV9AD3yEdLqMHgeNZKJBCNg78UHoZQFcA==}
+    peerDependencies:
+      react: ^18.0.0 || ^19.0.0
+      react-dom: ^18.0.0 || ^19.0.0
+
+  '@launchpad-ui/icons@0.21.6':
+    resolution: {integrity: sha512-jQGUyeYtJCdgZWwwf2xTBbG5GILdLpPbmL/HTWT8u3FmCYvI2B4/3D6luoZ4poXCKz6ChygoDRNmGdB25U8vmA==}
+    peerDependencies:
+      react: ^19.0.0
+      react-dom: ^19.0.0
+
+  '@launchpad-ui/progress@0.5.57':
+    resolution: {integrity: sha512-tRVb8Zo4DTrNEEFgB9cOLExC6LvOaPbo/KIGSFuSPO3u1VPwgnar92LMICm5U8gFfLIOUnkh8X0EuN4VvxAp2Q==}
+    peerDependencies:
+      react: ^18.0.0 || ^19.0.0
+      react-dom: ^18.0.0 || ^19.0.0
+
+  '@launchpad-ui/tokens@0.12.3':
+    resolution: {integrity: sha512-tdQo7KhIB4/RUHAF3oXCRgLpFFnnW0dUhSiHqndvPDsFgb197rEuvuWo5GnCBRJYjNelIoZydFlZIRSGmzwcpQ==}
 
   '@lit-labs/react@1.2.1':
     resolution: {integrity: sha512-DiZdJYFU0tBbdQkfwwRSwYyI/mcWkg3sWesKRsHUd4G+NekTmmeq9fzsurvcKTNVa0comNljwtg4Hvi1ds3V+A==}
@@ -7303,6 +7252,30 @@ snapshots:
   '@jsonjoy.com/util@1.5.0(tslib@2.8.1)':
     dependencies:
       tslib: 2.8.1
+
+  '@launchpad-ui/chip@0.9.58(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
+    dependencies:
+      '@launchpad-ui/icons': 0.21.6(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
+      '@launchpad-ui/tokens': 0.12.3
+      classix: 2.2.0
+      react: 19.0.0
+      react-dom: 19.0.0(react@19.0.0)
+
+  '@launchpad-ui/icons@0.21.6(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
+    dependencies:
+      '@launchpad-ui/tokens': 0.12.3
+      class-variance-authority: 0.7.0
+      react: 19.0.0
+      react-dom: 19.0.0(react@19.0.0)
+
+  '@launchpad-ui/progress@0.5.57(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
+    dependencies:
+      '@launchpad-ui/tokens': 0.12.3
+      classix: 2.2.0
+      react: 19.0.0
+      react-dom: 19.0.0(react@19.0.0)
+
+  '@launchpad-ui/tokens@0.12.3': {}
 
   '@lit-labs/react@1.2.1': {}
 
