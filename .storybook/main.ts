@@ -23,11 +23,7 @@ const config: StorybookConfig = {
 	core: {
 		disableTelemetry: true,
 	},
-	staticDirs: [
-		'.',
-		{ from: '../packages/card/src/img', to: '/static' },
-		{ from: '../packages/tokens/dist', to: '/static' },
-	],
+	staticDirs: ['.', { from: '../packages/tokens/dist', to: '/static' }],
 	async viteFinal(config) {
 		return config;
 	},
