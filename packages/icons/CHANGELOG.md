@@ -1,5 +1,11 @@
 # @launchpad-ui/icons
 
+## 0.21.7
+
+### Patch Changes
+
+- [#1607](https://github.com/launchdarkly/launchpad-ui/pull/1607) [`f0394fb`](https://github.com/launchdarkly/launchpad-ui/commit/f0394fb0c08d1bdbc29f4fa492d7bb84dfe87849) Thanks [@nhironaka](https://github.com/nhironaka)! - Add json and workflow icons
+
 ## 0.21.6
 
 ### Patch Changes
