@@ -75,13 +75,7 @@ export const parameters: Parameters = {
 			locales: 'en-US',
 		},
 	},
-	backgrounds: {
-		default: 'default',
-		values: [
-			{ name: 'default', value: 'var(--lp-color-bg-ui-primary)' },
-			{ name: 'dark', value: 'var(--lp-color-bg-ui-primary)' },
-		],
-	},
+	backgrounds: false,
 	chromatic: {
 		modes: {
 			default: allModes.default,
