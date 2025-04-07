@@ -1789,6 +1789,13 @@ figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=6-14
 	example: () => <Icon name="book-outline" />,
 });
 
+figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=13909-258', {
+	props: {
+		name: 'book-external-link',
+	},
+	example: () => <Icon name="book-external-link" />,
+});
+
 figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=6-141409', {
 	props: {
 		name: 'book-code',
