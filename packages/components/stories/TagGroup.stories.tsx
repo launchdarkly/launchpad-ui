@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import type { ComponentType } from 'react';
 
-import { userEvent } from '@storybook/test';
 import { useListData } from 'react-stately';
+import { userEvent } from 'storybook/test';
 
 import { Label, Tag, TagGroup, TagList } from '../src';
 

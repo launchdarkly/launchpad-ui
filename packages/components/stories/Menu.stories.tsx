@@ -3,8 +3,8 @@ import type { ComponentType } from 'react';
 import type { Selection as AriaSelection } from 'react-aria-components';
 
 import { Icon } from '@launchpad-ui/icons';
-import { expect, fireEvent, userEvent, waitFor, within } from '@storybook/test';
 import { useState } from 'react';
+import { expect, fireEvent, userEvent, waitFor, within } from 'storybook/test';
 
 import {
 	Button,

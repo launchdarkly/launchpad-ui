@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
 import { Icon } from '@launchpad-ui/icons';
-import { expect, userEvent, within } from '@storybook/test';
 import { useState } from 'react';
+import { expect, userEvent, within } from 'storybook/test';
 
 import {
 	Autocomplete,

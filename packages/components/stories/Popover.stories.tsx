@@ -1,8 +1,8 @@
 import type { Meta, ReactRenderer, StoryObj } from '@storybook/react';
-import type { PlayFunction } from '@storybook/types';
 import type { ComponentType } from 'react';
+import type { PlayFunction } from 'storybook/internal/types';
 
-import { expect, userEvent, within } from '@storybook/test';
+import { expect, userEvent, within } from 'storybook/test';
 
 import { Button, Dialog, DialogTrigger, Heading, OverlayArrow, Popover, Pressable } from '../src';
 

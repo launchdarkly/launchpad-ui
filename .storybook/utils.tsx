@@ -1,6 +1,6 @@
 import type { Args, Decorator, ReactRenderer } from '@storybook/react';
-import type { AnnotatedStoryFn, StoryContext } from '@storybook/types';
 import type { JSX } from 'react';
+import type { AnnotatedStoryFn, StoryContext } from 'storybook/internal/types';
 
 import merge from 'deepmerge';
 import { Fragment } from 'react';

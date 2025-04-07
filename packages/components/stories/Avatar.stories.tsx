@@ -18,6 +18,7 @@ export const Example: Story = {
 	args: {
 		src: 'https://avatars.githubusercontent.com/u/2147624?v=4',
 		alt: 'engineer',
+		'aria-label': 'engineer',
 	},
 };
 
@@ -40,5 +41,6 @@ export const Sizes: Story = {
 	args: {
 		src: 'https://avatars.githubusercontent.com/u/2147624?v=4',
 		alt: 'engineer',
+		'aria-label': 'engineer',
 	},
 };

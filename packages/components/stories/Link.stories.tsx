@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
 import { vars } from '@launchpad-ui/vars';
-import { fireEvent, userEvent, within } from '@storybook/test';
+import { fireEvent, userEvent, within } from 'storybook/test';
 
 import { Link } from '../src';
 

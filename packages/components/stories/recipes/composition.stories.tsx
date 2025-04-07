@@ -4,9 +4,9 @@ import type { ComponentPropsWithoutRef } from 'react';
 import { Box } from '@launchpad-ui/box';
 import { Icon } from '@launchpad-ui/icons';
 import { vars } from '@launchpad-ui/vars';
-import { expect, userEvent, within } from '@storybook/test';
 import { type Fragment, useRef, useState } from 'react';
 import { VisuallyHidden } from 'react-aria';
+import { expect, userEvent, within } from 'storybook/test';
 
 import {
 	Button,

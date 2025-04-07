@@ -1,10 +1,10 @@
 import type { Meta, ReactRenderer, StoryObj } from '@storybook/react';
-import type { PlayFunction } from '@storybook/types';
+import type { PlayFunction } from 'storybook/internal/types';
 
 import { Icon } from '@launchpad-ui/icons';
 import { vars } from '@launchpad-ui/vars';
-import { fireEvent, userEvent, within } from '@storybook/test';
 import { useEffect, useRef, useState } from 'react';
+import { fireEvent, userEvent, within } from 'storybook/test';
 
 import { Button, Text } from '../src';
 

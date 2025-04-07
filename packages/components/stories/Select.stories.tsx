@@ -3,7 +3,7 @@ import type { ComponentType } from 'react';
 
 import { Icon } from '@launchpad-ui/icons';
 import { vars } from '@launchpad-ui/vars';
-import { expect, userEvent, within } from '@storybook/test';
+import { expect, userEvent, within } from 'storybook/test';
 
 import { Button, Label, ListBox, ListBoxItem, Popover, Select, SelectValue, Text } from '../src';
 

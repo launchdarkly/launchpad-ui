@@ -2,8 +2,8 @@ import type { StoryObj } from '@storybook/react';
 
 import { Form, FormField, IconField, TextArea, TextField } from '@launchpad-ui/form';
 import { Icon } from '@launchpad-ui/icons';
-import { userEvent, within } from '@storybook/test';
 import { useState } from 'react';
+import { userEvent, within } from 'storybook/test';
 
 import { InlineEdit } from '../src';
 

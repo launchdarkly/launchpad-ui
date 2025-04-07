@@ -3,9 +3,9 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { Button } from '@launchpad-ui/button';
 import { Icon } from '@launchpad-ui/icons';
 import { Tooltip } from '@launchpad-ui/tooltip';
-import { userEvent, within } from '@storybook/test';
 import { useState } from 'react';
 import { useRef } from 'react';
+import { userEvent, within } from 'storybook/test';
 
 import { allModes } from '../../../.storybook/modes';
 import { REACT_NODE_TYPE_DOCS } from '../../../.storybook/utils';

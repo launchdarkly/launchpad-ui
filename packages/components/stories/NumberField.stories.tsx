@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
 import { vars } from '@launchpad-ui/vars';
-import { userEvent } from '@storybook/test';
+import { userEvent } from 'storybook/test';
 
 import { Group, IconButton, Input, Label, NumberField } from '../src';
 
