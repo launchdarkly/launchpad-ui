@@ -8,16 +8,10 @@ const config: StorybookConfig = {
 	],
 	addons: [
 		'@storybook/addon-a11y',
-		{
-			name: '@storybook/addon-essentials',
-			options: {
-				actions: false,
-			},
-		},
-		'@storybook/addon-interactions',
-		'storybook-addon-pseudo-states',
+		'@storybook/addon-docs',
 		'@storybook/addon-designs',
 		'@storybook/addon-themes',
+		'storybook-addon-pseudo-states',
 	],
 	framework: '@storybook/react-vite',
 	core: {
@@ -28,7 +22,6 @@ const config: StorybookConfig = {
 		return config;
 	},
 	docs: {
-		autodocs: true,
 		defaultName: 'Docs',
 	},
 	typescript: {

@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
 import { vars } from '@launchpad-ui/vars';
-import { userEvent, within } from '@storybook/test';
+import { userEvent, within } from 'storybook/test';
 
 import { Checkbox } from '../src';
 

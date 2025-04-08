@@ -3,7 +3,7 @@ import type { ComponentType } from 'react';
 
 import { Icon } from '@launchpad-ui/icons';
 import { vars } from '@launchpad-ui/vars';
-import { userEvent } from '@storybook/test';
+import { userEvent } from 'storybook/test';
 
 import { DateInput, DateSegment, Group, Label, Text, TimeField } from '../src';
 

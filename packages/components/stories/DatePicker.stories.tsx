@@ -4,7 +4,7 @@ import type { ComponentType } from 'react';
 import { parseDate } from '@internationalized/date';
 import { Icon } from '@launchpad-ui/icons';
 import { vars } from '@launchpad-ui/vars';
-import { expect, userEvent, within } from '@storybook/test';
+import { expect, userEvent, within } from 'storybook/test';
 
 import {
 	Button,

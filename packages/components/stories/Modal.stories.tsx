@@ -1,8 +1,8 @@
 import type { Meta, ReactRenderer, StoryObj } from '@storybook/react';
-import type { PlayFunction } from '@storybook/types';
 import type { ComponentType } from 'react';
+import type { PlayFunction } from 'storybook/internal/types';
 
-import { expect, userEvent, within } from '@storybook/test';
+import { expect, userEvent, waitFor, within } from 'storybook/test';
 
 import { allModes } from '../../../.storybook/modes';
 import {
@@ -24,7 +24,7 @@ const meta: Meta<typeof Modal> = {
 	>,
 	title: 'Components/Overlays/Modal',
 	parameters: {
-		chromatic: { pauseAnimationAtEnd: true },
+		chromatic: { pauseAnimationAtEnd: true, prefersReducedMotion: 'reduce' },
 	},
 	decorators: [
 		(Story, { viewMode }) =>
@@ -79,7 +79,9 @@ const play: PlayFunction<ReactRenderer> = async ({ canvasElement }) => {
 
 	await userEvent.click(canvas.getByRole('button'));
 	const body = canvasElement.ownerDocument.body;
-	await expect(await within(body).findByRole('dialog'));
+	await waitFor(async () => {
+		expect(await within(body).findByRole('dialog')).toBeVisible();
+	});
 };
 
 export const Example: Story = {

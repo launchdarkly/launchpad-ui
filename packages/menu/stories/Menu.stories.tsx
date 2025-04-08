@@ -1,7 +1,7 @@
 import type { StoryObj } from '@storybook/react';
 
 import { Icon } from '@launchpad-ui/icons';
-import { userEvent } from '@storybook/test';
+import { userEvent } from 'storybook/test';
 
 import { Menu, MenuDivider, MenuItem, MenuSearch } from '../src';
 

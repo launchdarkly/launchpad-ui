@@ -3,8 +3,8 @@ import type { ComponentType } from 'react';
 import type { Selection as AriaSelection } from 'react-aria-components';
 
 import { Icon } from '@launchpad-ui/icons';
-import { fireEvent, userEvent, within } from '@storybook/test';
 import { useState } from 'react';
+import { fireEvent, userEvent, within } from 'storybook/test';
 
 import { Header, ListBox, ListBoxItem, ListBoxSection, Text } from '../src';
 

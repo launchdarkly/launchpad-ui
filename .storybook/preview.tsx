@@ -1,12 +1,12 @@
 import type { ReactRenderer } from '@storybook/react';
-import type { DecoratorFunction, GlobalTypes, Parameters } from '@storybook/types';
 import type { ReactNode } from 'react';
+import type { DecoratorFunction, GlobalTypes, Parameters } from 'storybook/internal/types';
 
 import { Box } from '@launchpad-ui/box';
 import sprite from '@launchpad-ui/icons/img/sprite.svg';
 import { withThemeByDataAttribute } from '@storybook/addon-themes';
-import { themes } from '@storybook/theming';
 import { BrowserRouter, useNavigate } from 'react-router';
+import { themes } from 'storybook/theming';
 
 import { RouterProvider as AriaRouterProvider } from '../packages/components/src/RouterProvider';
 import { useHref } from '../packages/components/src/utils';
@@ -75,13 +75,7 @@ export const parameters: Parameters = {
 			locales: 'en-US',
 		},
 	},
-	backgrounds: {
-		default: 'default',
-		values: [
-			{ name: 'default', value: 'var(--lp-color-bg-ui-primary)' },
-			{ name: 'dark', value: 'var(--lp-color-bg-ui-primary)' },
-		],
-	},
+	backgrounds: false,
 	chromatic: {
 		modes: {
 			default: allModes.default,
@@ -95,6 +89,7 @@ export const parameters: Parameters = {
 		theme: window.matchMedia('(prefers-color-scheme: dark)').matches ? themes.dark : themes.light,
 		codePanel: true,
 	},
+	tags: ['autodocs'],
 };
 
 export const decorators: DecoratorFunction<ReactRenderer>[] = [

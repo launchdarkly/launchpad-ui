@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import type { ComponentType } from 'react';
 
-import { userEvent, within } from '@storybook/test';
+import { userEvent, within } from 'storybook/test';
 
 import { Button, FieldError, Form, Label, Radio, RadioGroup, Text } from '../src';
 

@@ -3,8 +3,8 @@ import type { ComponentType } from 'react';
 
 import { Tab, TabList, TabPanel, Tabs } from '../src';
 
-import { userEvent, within } from '@storybook/test';
 import { Route, Routes, useLocation } from 'react-router';
+import { userEvent, within } from 'storybook/test';
 
 const meta: Meta<typeof Tabs> = {
 	component: Tabs,
