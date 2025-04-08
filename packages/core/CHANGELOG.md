@@ -1,5 +1,11 @@
 # @launchpad-ui/core
 
+## 0.54.0
+
+### Minor Changes
+
+- [#1609](https://github.com/launchdarkly/launchpad-ui/pull/1609) [`42ac9bd`](https://github.com/launchdarkly/launchpad-ui/commit/42ac9bda4444248f03861597bdd4fb75dc9f7269) Thanks [@Niznikr](https://github.com/Niznikr)! - Remove avatar, card, collapsible, markdown, and progress-bubbles packages
+
 ## 0.53.1
 
 ### Patch Changes
