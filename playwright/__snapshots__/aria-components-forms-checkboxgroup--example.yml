@@ -1,7 +1,0 @@
-- group "Group":
-  - checkbox "First"
-  - text: First
-  - checkbox "Second"
-  - text: Second
-  - checkbox "Third"
-  - text: Third Description

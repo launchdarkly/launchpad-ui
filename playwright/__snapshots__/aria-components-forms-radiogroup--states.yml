@@ -1,7 +1,0 @@
-- radiogroup "Group":
-  - radio "Resting"
-  - text: Resting
-  - radio "Selected, Disabled" [checked] [disabled]
-  - text: Selected, Disabled
-  - radio "Disabled" [disabled]
-  - text: Disabled

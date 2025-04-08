@@ -72,7 +72,7 @@
 	},
 	"overrides": [
 		{
-			"include": ["*.stories.tsx", "*.config.*", "playwright", ".storybook"],
+			"include": ["*.stories.tsx", "*.config.*", ".storybook"],
 			"linter": {
 				"rules": {
 					"style": {

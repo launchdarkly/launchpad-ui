@@ -1,7 +1,0 @@
-- toolbar:
-  - group:
-    - button "add"
-    - button "edit"
-    - button "delete"
-    - button "settings"
-    - button "help"

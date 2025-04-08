@@ -33,7 +33,6 @@
 	"include": [
 		"./apps",
 		"./packages",
-		"./playwright",
 		"./test",
 		"./types",
 		".storybook/**/*.ts",

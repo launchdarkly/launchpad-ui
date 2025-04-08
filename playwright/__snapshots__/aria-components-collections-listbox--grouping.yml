@@ -1,9 +1,0 @@
-- listbox "Items":
-  - group "Group 1":
-    - option "Item one"
-    - option "Item two"
-    - option "Item three"
-  - group "Group 2":
-    - option "Item four"
-    - option "Item five"
-    - option "Item six"

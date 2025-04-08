@@ -1,4 +1,0 @@
-- alert:
-  - img "Success icon"
-  - heading "Heading" [level=3]
-  - text: Content

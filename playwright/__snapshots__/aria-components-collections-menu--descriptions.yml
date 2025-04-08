@@ -1,5 +1,0 @@
-- button "Dismiss"
-- menu "Trigger":
-  - menuitem "Copy": Copy Copy the selected text ⌘C
-  - menuitem "Paste": Paste Paste the copied text ⌘V
-- button "Dismiss"

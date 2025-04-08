@@ -1,8 +1,0 @@
-- button "Dismiss"
-- menu "Trigger":
-  - group "Group 1":
-    - menuitem "Item one"
-    - menuitem "Item two"
-  - group "Group 2":
-    - menuitem "Item three"
-- button "Dismiss"

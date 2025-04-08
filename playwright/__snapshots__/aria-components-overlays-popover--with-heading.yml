@@ -1,5 +1,0 @@
-- button "Dismiss"
-- dialog "Title":
-  - heading "Title" [level=2]
-  - text: Message
-- button "Dismiss"

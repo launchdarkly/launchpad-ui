@@ -1,9 +1,0 @@
-- log: 3 options available.
-- log
-- group:
-  - combobox "Focus Visible" [expanded]
-- listbox "Suggestions Focus Visible":
-  - option "Item one"
-  - option "Item two"
-  - option "Item three"
-- button "Dismiss"

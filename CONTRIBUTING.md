@@ -123,7 +123,7 @@ There are just a few things to keep in mind:
 
 - When titling a pull request, always use conventional commits in the same convention as in Step 4. The title is used as the commit description when a PR is squashed and merged.
 - You should use our pull request template and fill it out as much as possible.
-- If there are visual diffs between your branch and main, Chromatic will generate a list of changes that must be approved before the PR should be merged. This can be found in the Github actions list.
+- If there are visual diffs or a11y issues between your branch and main, Chromatic will generate a list of changes that must be approved before the PR should be merged. This can be found in the Github actions list.
 - The team will be automatically assigned to take a look.
 
 Note: if you are creating a pull request from a fork, CI checks will only run when it is `ready for review`. To run Chromatic, you will need to make a build locally in the terminal using the project token found in Chromatic:
@@ -168,16 +168,6 @@ The following command will run unit tests in every package of the monorepo:
 
 ```sh
 $ pnpm test
-```
-
-#### a11y Tests
-
-[Playwight](https://playwright.dev/) with [@axe-core/playwright](https://github.com/dequelabs/axe-core-npm/blob/develop/packages/playwright/README.md) is used to run accessibility checks on our stories in light and dark mode.
-
-The following command will build Storybook, start the server, and run a11y tests locally on them:
-
-```sh
-$ pnpm e2e:a11y
 ```
 
 ### Generating New Packages With Plop

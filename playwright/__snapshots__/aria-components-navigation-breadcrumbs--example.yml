@@ -1,7 +1,0 @@
-- list "Breadcrumbs":
-  - listitem:
-    - link "Components"
-  - listitem:
-    - link "Navigation"
-  - listitem:
-    - link "Breadcrumbs" [disabled]

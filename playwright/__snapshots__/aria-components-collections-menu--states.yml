@@ -1,7 +1,0 @@
-- button "Dismiss"
-- menu "Trigger":
-  - menuitem "Resting"
-  - menuitem "Active"
-  - menuitem "Focus Visible"
-  - menuitem "Disabled" [disabled]
-- button "Dismiss"

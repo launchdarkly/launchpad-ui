@@ -1,4 +1,0 @@
-- alert:
-  - img "Warning icon"
-  - heading "Heading" [level=3]
-  - text: Content
