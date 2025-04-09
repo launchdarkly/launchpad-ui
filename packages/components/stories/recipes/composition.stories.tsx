@@ -40,9 +40,6 @@ const Container = (props: ComponentPropsWithoutRef<typeof Fragment>) => <>{props
 
 const meta: Meta<typeof Container> = {
 	component: Container,
-	parameters: {
-		chromatic: { pauseAnimationAtEnd: true },
-	},
 	decorators: [
 		(Story) => (
 			<div style={{ minHeight: 'var(--lp-size-208)' }}>

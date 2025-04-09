@@ -23,9 +23,6 @@ const meta: Meta<typeof Modal> = {
 		ComponentType<unknown>
 	>,
 	title: 'Components/Overlays/Modal',
-	parameters: {
-		chromatic: { pauseAnimationAtEnd: true, prefersReducedMotion: 'reduce' },
-	},
 	decorators: [
 		(Story, { viewMode }) =>
 			viewMode === 'story' ? (

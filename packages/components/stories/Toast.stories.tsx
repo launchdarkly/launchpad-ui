@@ -15,9 +15,6 @@ import {
 const meta: Meta<typeof ToastRegion> = {
 	component: ToastRegion,
 	title: 'Components/Status/Toast',
-	parameters: {
-		chromatic: { pauseAnimationAtEnd: true },
-	},
 	decorators: [
 		(Story, { viewMode }) =>
 			viewMode === 'story' ? (

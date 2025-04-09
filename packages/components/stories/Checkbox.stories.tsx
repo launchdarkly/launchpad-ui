@@ -8,9 +8,6 @@ import { Checkbox } from '../src';
 const meta: Meta<typeof Checkbox> = {
 	component: Checkbox,
 	title: 'Components/Forms/Checkbox',
-	parameters: {
-		chromatic: { pauseAnimationAtEnd: true },
-	},
 	decorators: [
 		(Story) => (
 			<div style={{ width: vars.size[240] }}>

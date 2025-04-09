@@ -10,9 +10,6 @@ const meta: Meta<typeof Tooltip> = {
 	component: Tooltip,
 	subcomponents: { TooltipTrigger, Focusable } as Record<string, ComponentType<unknown>>,
 	title: 'Components/Overlays/Tooltip',
-	parameters: {
-		chromatic: { pauseAnimationAtEnd: true },
-	},
 	decorators: [
 		(Story) => (
 			<div style={{ height: 'var(--lp-size-96)' }}>
