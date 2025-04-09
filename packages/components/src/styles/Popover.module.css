@@ -45,7 +45,7 @@
 	&[data-trigger='MenuTrigger'],
 	&[data-trigger='SubmenuTrigger'] {
 		min-width: var(--lp-size-192);
-		max-width: var(--lp-menu-max-width);
+		max-width: var(--lp-size-400);
 	}
 
 	&[data-trigger='Select'] {
