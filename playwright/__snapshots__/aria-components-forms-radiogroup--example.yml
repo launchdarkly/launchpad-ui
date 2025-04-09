@@ -1,7 +1,0 @@
-- radiogroup "Group":
-  - radio "First" [checked]
-  - text: First
-  - radio "Second"
-  - text: Second
-  - radio "Third"
-  - text: Third Description

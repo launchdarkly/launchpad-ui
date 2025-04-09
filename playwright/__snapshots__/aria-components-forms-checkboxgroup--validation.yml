@@ -1,6 +1,0 @@
-- group "Agree to the following":
-  - checkbox "Terms and conditions"
-  - checkbox "Privacy policy"
-  - checkbox "Cookie policy"
-  - text: Cookie policy Please check this box if you want to proceed.
-- button "Submit"

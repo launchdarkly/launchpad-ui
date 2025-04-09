@@ -1,5 +1,0 @@
-- log: 3 options available.
-- log
-- dialog "Trigger":
-  - group:
-    - combobox "list" [expanded]

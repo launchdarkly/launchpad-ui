@@ -1,5 +1,0 @@
-- text: Label
-- group:
-  - textbox "Label"
-  - button "decrement Label"
-  - button "increment Label"

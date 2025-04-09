@@ -1,8 +1,0 @@
-- text: Label
-- grid "Label":
-  - row "Selected" [selected]:
-    - gridcell "Selected"
-  - row "Focus Visible":
-    - gridcell "Focus Visible"
-  - row "Disabled" [disabled]:
-    - gridcell "Disabled" [disabled]

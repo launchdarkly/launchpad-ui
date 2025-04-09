@@ -1,5 +1,0 @@
-- text: Label
-- group:
-  - textbox "Label"
-  - progressbar "loading":
-    - img

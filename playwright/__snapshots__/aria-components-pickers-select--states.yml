@@ -1,6 +1,0 @@
-- text: Focus Visible
-- button "Select an item Focus Visible"
-- text: Invalid
-- button "Select an item Invalid"
-- text: Disabled
-- button "Select an item Disabled" [disabled]

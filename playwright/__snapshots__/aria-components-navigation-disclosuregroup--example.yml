@@ -1,8 +1,0 @@
-- heading "Disclosure one" [level=3]:
-  - button "Disclosure one"
-- heading "Disclosure two" [level=3]:
-  - button "Disclosure two" [expanded]
-- group "Disclosure two":
-  - paragraph: Panel with content.
-- heading "Disclosure three" [level=3]:
-  - button "Disclosure three"

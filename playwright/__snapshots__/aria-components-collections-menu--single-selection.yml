@@ -1,6 +1,0 @@
-- button "Dismiss"
-- menu "Trigger":
-  - menuitemradio "Item one" [checked]
-  - menuitemradio "Item two"
-  - menuitemradio "Item three"
-- button "Dismiss"

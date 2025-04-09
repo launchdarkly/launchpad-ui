@@ -1,9 +1,0 @@
-- button "Dismiss"
-- dialog "dialog with autocomplete":
-  - group:
-    - searchbox "search"
-  - listbox "Suggestions":
-    - option "Item one"
-    - option "Item two"
-    - option "Item three"
-- button "Dismiss"

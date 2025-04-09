@@ -1,5 +1,0 @@
-- tablist "tabs":
-  - tab "Focus Visible" [selected]
-  - tab "Disabled" [disabled]
-  - tab "Hover"
-- tabpanel "Focus Visible"

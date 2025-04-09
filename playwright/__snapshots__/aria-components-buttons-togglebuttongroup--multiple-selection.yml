@@ -1,4 +1,0 @@
-- toolbar:
-  - button "First" [pressed]
-  - button "Second" [pressed]
-  - button "Third"

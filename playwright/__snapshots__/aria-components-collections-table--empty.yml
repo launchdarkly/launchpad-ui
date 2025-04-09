@@ -1,9 +1,0 @@
-- grid:
-  - rowgroup:
-    - row "Name Description ID":
-      - columnheader "Name"
-      - columnheader "Description"
-      - columnheader "ID"
-  - rowgroup:
-    - row "No results found":
-      - rowheader "No results found"

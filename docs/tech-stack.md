@@ -34,7 +34,7 @@ Our packages are built using [Vite](https://vitejs.dev/) for its speed, rich fea
 
 We use [Vitest](https://vitest.dev/) to run our unit tests as it is Jest compatible, supports ESM and TypeScript by default, generates [c8](https://github.com/bcoe/c8) code coverage, and provides an instant watch mode. [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/) is used to test our React components and write tests that closely resemble how a user would interact with our components.
 
-To test accessibility we use [Playwright](https://playwright.dev/) with [@axe-core/playwright](https://github.com/dequelabs/axe-core-npm/blob/develop/packages/playwright/README.md) to run checks on Storybook stories.
+To test for visual regressions and accessibility we use [Chromatic](https://www.chromatic.com/) to run checks on Storybook stories.
 
 ## Code Style
 
