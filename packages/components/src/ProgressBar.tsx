@@ -4,12 +4,28 @@ import type { ProgressBarProps as AriaProgressBarProps, ContextValue } from 'rea
 
 import { cva, cx } from 'class-variance-authority';
 import { createContext } from 'react';
-import { ProgressBar as AriaProgressBar, composeRenderProps } from 'react-aria-components';
+import {
+	ProgressBar as AriaProgressBar,
+	Provider,
+	Text,
+	composeRenderProps,
+} from 'react-aria-components';
 
+import { LabelContext } from './Label';
 import styles from './styles/ProgressBar.module.css';
 import { useLPContextProps } from './utils';
 
-const progressBar = cva(styles.progress);
+const progressBar = cva(styles.progress, {
+	variants: {
+		variant: {
+			line: styles.line,
+			circular: styles.circular,
+		},
+	},
+	defaultVariants: {
+		variant: 'circular',
+	},
+});
 
 const icon = cva(styles.base, {
 	variants: {
@@ -24,7 +40,10 @@ const icon = cva(styles.base, {
 	},
 });
 
-interface ProgressBarProps extends AriaProgressBarProps, VariantProps<typeof icon> {
+interface ProgressBarProps
+	extends AriaProgressBarProps,
+		VariantProps<typeof icon>,
+		VariantProps<typeof progressBar> {
 	ref?: Ref<HTMLDivElement>;
 }
 
@@ -37,7 +56,7 @@ const ProgressBarContext = createContext<ContextValue<ProgressBarProps, HTMLDivE
  */
 const ProgressBar = ({ ref, ...props }: ProgressBarProps) => {
 	[props, ref] = useLPContextProps(props, ref, ProgressBarContext);
-	const { size = 'small' } = props;
+	const { size = 'small', variant = 'circular' } = props;
 
 	const center = 16;
 	const strokeWidth = 4;
@@ -49,34 +68,52 @@ const ProgressBar = ({ ref, ...props }: ProgressBarProps) => {
 			{...props}
 			ref={ref}
 			className={composeRenderProps(props.className, (className, renderProps) =>
-				progressBar({ ...renderProps, className }),
+				progressBar({ ...renderProps, variant, className }),
 			)}
 		>
-			{({ percentage, isIndeterminate }) => (
-				// biome-ignore lint/a11y/noSvgWithoutTitle: <explanation>
-				<svg
-					viewBox="0 0 32 32"
-					fill="none"
-					strokeWidth={strokeWidth}
-					className={cx(icon({ size }), isIndeterminate && styles.indeterminate)}
-				>
-					<circle
-						cx={center}
-						cy={center}
-						r={r}
-						strokeWidth={strokeWidth}
-						className={styles.outerCircle}
-					/>
-					<circle
-						cx={center}
-						cy={center}
-						r={r}
-						strokeDasharray={`${c} ${c}`}
-						strokeDashoffset={c - (isIndeterminate ? 0.34 : percentage || 0 / 100) * c}
-						transform="rotate(-90 16 16)"
-						className={styles.innerCircle}
-					/>
-				</svg>
+			{composeRenderProps(
+				props.children,
+				(children, { isIndeterminate, percentage, valueText }) => (
+					<>
+						{variant === 'circular' && (
+							// biome-ignore lint/a11y/noSvgWithoutTitle: <explanation>
+							<svg
+								viewBox="0 0 32 32"
+								fill="none"
+								strokeWidth={strokeWidth}
+								className={cx(icon({ size }), isIndeterminate && styles.indeterminate)}
+							>
+								<circle
+									cx={center}
+									cy={center}
+									r={r}
+									strokeWidth={strokeWidth}
+									className={styles.outerCircle}
+								/>
+								<circle
+									cx={center}
+									cy={center}
+									r={r}
+									strokeDasharray={`${c} ${c}`}
+									strokeDashoffset={c - (isIndeterminate ? 0.34 : percentage || 0 / 100) * c}
+									transform="rotate(-90 16 16)"
+									className={styles.innerCircle}
+								/>
+							</svg>
+						)}
+						{variant === 'line' && (
+							<Provider values={[[LabelContext, { className: styles.label }]]}>
+								<div className={styles.container}>
+									{children}
+									<Text className={styles.value}>{valueText}</Text>
+								</div>
+								<div className={styles.bar}>
+									<div className={styles.fill} style={{ width: `${percentage}%` }} />
+								</div>
+							</Provider>
+						)}
+					</>
+				),
 			)}
 		</AriaProgressBar>
 	);

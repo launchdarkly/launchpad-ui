@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { ProgressBar } from '../src';
+import { Label, ProgressBar } from '../src';
 
 const meta: Meta<typeof ProgressBar> = {
 	component: ProgressBar,
@@ -13,4 +13,8 @@ type Story = StoryObj<typeof ProgressBar>;
 
 export const Example: Story = {
 	args: { isIndeterminate: true, 'aria-label': 'loading' },
+};
+
+export const Line: Story = {
+	args: { variant: 'line', value: 30, children: <Label>Loading…</Label> },
 };
