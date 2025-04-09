@@ -9,9 +9,6 @@ import { Group, IconButton, Input, Label, ProgressBar, TextField } from '../src'
 const meta: Meta<typeof Group> = {
 	component: Group,
 	title: 'Components/Content/Group',
-	parameters: {
-		chromatic: { pauseAnimationAtEnd: true },
-	},
 	decorators: [
 		(Story) => (
 			<div style={{ width: vars.size[240] }}>

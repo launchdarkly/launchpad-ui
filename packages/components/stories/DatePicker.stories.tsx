@@ -28,9 +28,6 @@ const meta: Meta<typeof DatePicker> = {
 	component: DatePicker,
 	subcomponents: { DatePickerValue } as Record<string, ComponentType<unknown>>,
 	title: 'Components/Date and Time/DatePicker',
-	parameters: {
-		chromatic: { pauseAnimationAtEnd: true },
-	},
 	decorators: [
 		(Story) => (
 			<div style={{ width: vars.size[320], height: vars.size[480] }}>

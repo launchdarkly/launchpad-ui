@@ -10,9 +10,6 @@ const meta: Meta<typeof Popover> = {
 	component: Popover,
 	subcomponents: { OverlayArrow, DialogTrigger } as Record<string, ComponentType<unknown>>,
 	title: 'Components/Overlays/Popover',
-	parameters: {
-		chromatic: { pauseAnimationAtEnd: true },
-	},
 	decorators: [
 		(Story) => (
 			<div style={{ height: 'var(--lp-size-144)' }}>

@@ -1,13 +1,12 @@
-:root {
-	--lp-menu-max-width: var(--lp-size-400);
-}
-
 .menu {
 	max-height: inherit;
 	overflow: auto;
 	outline: none;
 	min-width: var(--lp-size-144);
-	max-width: var(--lp-menu-max-width);
+
+	&:where([role='menu']) {
+		max-width: var(--lp-size-400);
+	}
 
 	&:not(:has([role='group'])) {
 		padding: var(--lp-spacing-200);

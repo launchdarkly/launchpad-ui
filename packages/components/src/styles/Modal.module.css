@@ -57,6 +57,7 @@
 		display: flex;
 		flex-direction: column;
 		gap: var(--lp-spacing-600);
+		height: 100%;
 	}
 
 	& [slot='header'] {
@@ -64,6 +65,10 @@
 		align-items: center;
 		gap: var(--lp-spacing-300);
 		flex-wrap: wrap;
+	}
+
+	& [slot='body'] {
+		overflow: auto;
 	}
 
 	& [slot='footer'] {

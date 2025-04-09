@@ -1,5 +1,4 @@
 .box {
-	--lp-menu-max-width: none;
 	composes: menu from './Menu.module.css';
 }
 

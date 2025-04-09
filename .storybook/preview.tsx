@@ -81,6 +81,8 @@ export const parameters: Parameters = {
 			default: allModes.default,
 			dark: allModes.dark,
 		},
+		pauseAnimationAtEnd: true,
+		prefersReducedMotion: 'reduce',
 	},
 	docs: {
 		source: {
