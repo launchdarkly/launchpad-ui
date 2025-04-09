@@ -1,5 +1,11 @@
 # @launchpad-ui/components
 
+## 0.9.6
+
+### Patch Changes
+
+- [#1612](https://github.com/launchdarkly/launchpad-ui/pull/1612) [`acc5a78`](https://github.com/launchdarkly/launchpad-ui/commit/acc5a78ee649ab44c8ea464d849fde8e58e261df) Thanks [@Niznikr](https://github.com/Niznikr)! - Handle overflow in `Modal`
+
 ## 0.9.5
 
 ### Patch Changes
