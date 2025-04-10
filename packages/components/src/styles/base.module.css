@@ -10,12 +10,12 @@
 
 .buttonGroup {
 	&[data-orientation='horizontal'] {
-		& :first-child {
+		& :first-child:not(:only-child) {
 			border-top-right-radius: 0;
 			border-bottom-right-radius: 0;
 		}
 
-		& :last-child {
+		& :last-child:not(:only-child) {
 			border-top-left-radius: 0;
 			border-bottom-left-radius: 0;
 		}
