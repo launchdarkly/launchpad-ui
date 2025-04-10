@@ -10,41 +10,41 @@
 
 .buttonGroup {
 	&[data-orientation='horizontal'] {
-		& :first-child:not(:only-child) {
+		& > :first-child:not(:only-child) {
 			border-top-right-radius: 0;
 			border-bottom-right-radius: 0;
 		}
 
-		& :last-child:not(:only-child) {
+		& > :last-child:not(:only-child) {
 			border-top-left-radius: 0;
 			border-bottom-left-radius: 0;
 		}
 
-		& :not(:first-child) {
+		& > :not(:first-child) {
 			margin-inline-start: -1px;
 		}
 
-		& :not(:first-child):not(:last-child) {
+		& > :not(:first-child):not(:last-child) {
 			border-radius: 0;
 		}
 	}
 
 	&[data-orientation='vertical'] {
-		& :first-child {
+		& > :first-child:not(:only-child) {
 			border-bottom-left-radius: 0;
 			border-bottom-right-radius: 0;
 		}
 
-		& :last-child {
+		& > :last-child:not(:only-child) {
 			border-top-left-radius: 0;
 			border-top-right-radius: 0;
 		}
 
-		& :not(:first-child):not([role='separator']) {
+		& > :not(:first-child):not([role='separator']) {
 			margin-block-start: -1px;
 		}
 
-		& :not(:first-child):not(:last-child) {
+		& > :not(:first-child):not(:last-child) {
 			border-radius: 0;
 		}
 	}
