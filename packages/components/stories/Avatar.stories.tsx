@@ -2,7 +2,8 @@ import type { Meta, StoryObj } from '@storybook/react';
 import type { ComponentType } from 'react';
 
 import { Box } from '@launchpad-ui/box';
-import { Avatar, InitialsAvatar } from '../src';
+
+import { Avatar, InitialsAvatar } from '../src/Avatar';
 
 const meta: Meta<typeof Avatar> = {
 	component: Avatar,

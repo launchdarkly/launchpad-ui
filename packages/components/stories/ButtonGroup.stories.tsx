@@ -1,6 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { Button, ButtonGroup, IconButton, Menu, MenuItem, MenuTrigger, Popover } from '../src';
+import { Button } from '../src/Button';
+import { ButtonGroup } from '../src/ButtonGroup';
+import { IconButton } from '../src/IconButton';
+import { Menu, MenuItem, MenuTrigger } from '../src/Menu';
+import { Popover } from '../src/Popover';
 
 const meta: Meta<typeof ButtonGroup> = {
 	component: ButtonGroup,

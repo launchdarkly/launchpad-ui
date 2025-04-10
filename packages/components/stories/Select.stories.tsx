@@ -5,7 +5,12 @@ import { Icon } from '@launchpad-ui/icons';
 import { vars } from '@launchpad-ui/vars';
 import { expect, userEvent, within } from 'storybook/test';
 
-import { Button, Label, ListBox, ListBoxItem, Popover, Select, SelectValue, Text } from '../src';
+import { Button } from '../src/Button';
+import { Label } from '../src/Label';
+import { ListBox, ListBoxItem } from '../src/ListBox';
+import { Popover } from '../src/Popover';
+import { Select, SelectValue } from '../src/Select';
+import { Text } from '../src/Text';
 
 const meta: Meta<typeof Select> = {
 	component: Select,

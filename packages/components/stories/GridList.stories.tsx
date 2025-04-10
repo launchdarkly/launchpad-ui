@@ -4,17 +4,12 @@ import type { ComponentType } from 'react';
 import { useDragAndDrop } from 'react-aria-components';
 import { useListData } from 'react-stately';
 
-import {
-	DropIndicator,
-	GridList,
-	GridListItem,
-	IconButton,
-	Menu,
-	MenuItem,
-	MenuTrigger,
-	Popover,
-	Text,
-} from '../src';
+import { DropIndicator } from '../src/DropIndicator';
+import { GridList, GridListItem } from '../src/GridList';
+import { IconButton } from '../src/IconButton';
+import { Menu, MenuItem, MenuTrigger } from '../src/Menu';
+import { Popover } from '../src/Popover';
+import { Text } from '../src/Text';
 
 const meta: Meta<typeof GridList> = {
 	component: GridList,

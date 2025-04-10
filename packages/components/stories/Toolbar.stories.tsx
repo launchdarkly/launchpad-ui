@@ -2,7 +2,11 @@ import type { Meta, StoryObj } from '@storybook/react';
 
 import { Icon } from '@launchpad-ui/icons';
 
-import { Button, Group, IconButton, Separator, Toolbar } from '../src';
+import { Button } from '../src/Button';
+import { Group } from '../src/Group';
+import { IconButton } from '../src/IconButton';
+import { Separator } from '../src/Separator';
+import { Toolbar } from '../src/Toolbar';
 
 const meta: Meta<typeof Toolbar> = {
 	component: Toolbar,

@@ -1,18 +1,15 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
 import { Icon } from '@launchpad-ui/icons';
-import {
-	Button,
-	FieldGroup,
-	Input,
-	Label,
-	ListBox,
-	ListBoxItem,
-	Popover,
-	Select,
-	SelectValue,
-	TextField,
-} from '../src';
+
+import { Button } from '../src/Button';
+import { FieldGroup } from '../src/FieldGroup';
+import { Input } from '../src/Input';
+import { Label } from '../src/Label';
+import { ListBox, ListBoxItem } from '../src/ListBox';
+import { Popover } from '../src/Popover';
+import { Select, SelectValue } from '../src/Select';
+import { TextField } from '../src/TextField';
 
 const meta: Meta<typeof FieldGroup> = {
 	component: FieldGroup,

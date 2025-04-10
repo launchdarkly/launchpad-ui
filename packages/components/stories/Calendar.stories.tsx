@@ -4,7 +4,9 @@ import type { ComponentType } from 'react';
 import { parseDate } from '@internationalized/date';
 import { vars } from '@launchpad-ui/vars';
 
-import { Calendar, CalendarCell, CalendarGrid, Heading, IconButton } from '../src';
+import { Calendar, CalendarCell, CalendarGrid } from '../src/Calendar';
+import { Heading } from '../src/Heading';
+import { IconButton } from '../src/IconButton';
 
 const meta: Meta<typeof Calendar> = {
 	component: Calendar,

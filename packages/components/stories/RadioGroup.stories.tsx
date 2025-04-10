@@ -3,7 +3,13 @@ import type { ComponentType } from 'react';
 
 import { userEvent, within } from 'storybook/test';
 
-import { Button, FieldError, Form, Label, Radio, RadioGroup, Text } from '../src';
+import { Button } from '../src/Button';
+import { FieldError } from '../src/FieldError';
+import { Form } from '../src/Form';
+import { Label } from '../src/Label';
+import { Radio } from '../src/Radio';
+import { RadioGroup } from '../src/RadioGroup';
+import { Text } from '../src/Text';
 
 const meta: Meta<typeof RadioGroup> = {
 	component: RadioGroup,

@@ -6,20 +6,15 @@ import { Icon } from '@launchpad-ui/icons';
 import { useState } from 'react';
 import { expect, fireEvent, userEvent, waitFor, within } from 'storybook/test';
 
-import {
-	Button,
-	Header,
-	Keyboard,
-	Menu,
-	MenuItem,
-	MenuSection,
-	MenuTrigger,
-	Popover,
-	Pressable,
-	Separator,
-	SubmenuTrigger,
-	Text,
-} from '../src';
+import { Button } from '../src/Button';
+import { Header } from '../src/Header';
+import { Keyboard } from '../src/Keyboard';
+import { Menu, MenuItem, MenuTrigger, SubmenuTrigger } from '../src/Menu';
+import { Popover } from '../src/Popover';
+import { Pressable } from '../src/Pressable';
+import { MenuSection } from '../src/Section';
+import { Separator } from '../src/Separator';
+import { Text } from '../src/Text';
 
 const meta: Meta<typeof Menu> = {
 	component: Menu,

@@ -1,6 +1,9 @@
-import { Button, ToastRegion, Tooltip, TooltipTrigger, toastQueue } from '@launchpad-ui/components';
 import { vars } from '@launchpad-ui/vars';
 import { useEffect, useRef, useState } from 'react';
+
+import { Button } from '../../components/src/Button';
+import { ToastRegion, toastQueue } from '../../components/src/Toast';
+import { Tooltip, TooltipTrigger } from '../../components/src/Tooltip';
 
 export default {
 	title: 'Tokens/Color',

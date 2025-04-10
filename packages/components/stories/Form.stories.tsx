@@ -4,19 +4,15 @@ import { Icon } from '@launchpad-ui/icons';
 import { vars } from '@launchpad-ui/vars';
 import { Controller, useForm } from 'react-hook-form';
 
-import {
-	Button,
-	FieldError,
-	Form,
-	Input,
-	Label,
-	ListBox,
-	ListBoxItem,
-	Popover,
-	Select,
-	SelectValue,
-	TextField,
-} from '../src';
+import { Button } from '../src/Button';
+import { FieldError } from '../src/FieldError';
+import { Form } from '../src/Form';
+import { Input } from '../src/Input';
+import { Label } from '../src/Label';
+import { ListBox, ListBoxItem } from '../src/ListBox';
+import { Popover } from '../src/Popover';
+import { Select, SelectValue } from '../src/Select';
+import { TextField } from '../src/TextField';
 
 const meta: Meta<typeof Form> = {
 	component: Form,

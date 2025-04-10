@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { Button, FileTrigger } from '../src';
+import { Button } from '../src/Button';
+import { FileTrigger } from '../src/FileTrigger';
 
 const meta: Meta<typeof FileTrigger> = {
 	component: FileTrigger,

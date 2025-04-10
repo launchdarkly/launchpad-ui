@@ -6,23 +6,17 @@ import { Icon } from '@launchpad-ui/icons';
 import { vars } from '@launchpad-ui/vars';
 import { expect, userEvent, within } from 'storybook/test';
 
-import {
-	Button,
-	CalendarCell,
-	CalendarGrid,
-	DateInput,
-	DateRangePicker,
-	DateRangePickerValue,
-	DateSegment,
-	Dialog,
-	Form,
-	Group,
-	Heading,
-	IconButton,
-	Label,
-	Popover,
-	RangeCalendar,
-} from '../src';
+import { Button } from '../src/Button';
+import { CalendarCell, CalendarGrid, RangeCalendar } from '../src/Calendar';
+import { DateInput, DateSegment } from '../src/DateField';
+import { DateRangePicker, DateRangePickerValue } from '../src/DatePicker';
+import { Dialog } from '../src/Dialog';
+import { Form } from '../src/Form';
+import { Group } from '../src/Group';
+import { Heading } from '../src/Heading';
+import { IconButton } from '../src/IconButton';
+import { Label } from '../src/Label';
+import { Popover } from '../src/Popover';
 
 const meta: Meta<typeof DateRangePicker> = {
 	component: DateRangePicker,

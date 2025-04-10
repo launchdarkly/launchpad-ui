@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 
 import { vars } from '@launchpad-ui/vars';
 
-import { Meter } from '../src';
+import { Meter } from '../src/Meter';
 
 const meta: Meta<typeof Meter> = {
 	component: Meter,

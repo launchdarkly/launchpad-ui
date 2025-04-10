@@ -4,7 +4,9 @@ import type { PlayFunction } from 'storybook/internal/types';
 
 import { expect, userEvent, within } from 'storybook/test';
 
-import { Button, Focusable, Tooltip, TooltipTrigger } from '../src';
+import { Button } from '../src/Button';
+import { Focusable } from '../src/Focusable';
+import { Tooltip, TooltipTrigger } from '../src/Tooltip';
 
 const meta: Meta<typeof Tooltip> = {
 	component: Tooltip,
