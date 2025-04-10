@@ -30,7 +30,7 @@
 	}
 }
 
-.default {
+._default {
 	border-color: var(--lp-color-border-field-base);
 	background-color: var(--lp-color-bg-field-base);
 }

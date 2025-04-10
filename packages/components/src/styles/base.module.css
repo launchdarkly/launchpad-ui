@@ -84,32 +84,6 @@
 	cursor: default;
 }
 
-.picker {
-	composes: interactive;
-	display: flex;
-	align-items: center;
-	gap: var(--lp-spacing-300);
-	width: 100%;
-
-	&[data-disabled] {
-		opacity: 1;
-
-		& :where([data-icon]) {
-			opacity: 0.64;
-		}
-	}
-
-	&[data-pressed],
-	&[data-focus-visible],
-	&[data-hovered] {
-		background-color: var(--lp-color-bg-field-base);
-	}
-
-	& :where([data-icon]:last-child) {
-		fill: var(--lp-color-fill-ui-secondary);
-	}
-}
-
 .invalid {
 	border-color: var(--lp-color-border-field-error);
 }

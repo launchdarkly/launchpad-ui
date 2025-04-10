@@ -25,7 +25,6 @@ import {
 } from 'react-aria-components';
 
 import { ButtonContext } from './Button';
-import { input } from './Input';
 import styles from './styles/DatePicker.module.css';
 import baseStyles from './styles/base.module.css';
 import { useLPContextProps } from './utils';
@@ -87,8 +86,9 @@ const DatePicker = <T extends DateValue>({ ref, ...props }: DatePickerProps<T>) 
 								{
 									ref: buttonRef,
 									isDisabled,
-									className: cx(input(), baseStyles.picker, isInvalid && baseStyles.invalid),
-									variant: null,
+									className: cx(isInvalid && baseStyles.invalid),
+									variant: 'picker',
+									size: null,
 								},
 							],
 							[
@@ -152,8 +152,9 @@ const DateRangePicker = <T extends DateValue>({ ref, ...props }: DateRangePicker
 								{
 									ref: buttonRef,
 									isDisabled,
-									className: cx(input(), baseStyles.picker, isInvalid && baseStyles.invalid),
-									variant: null,
+									className: cx(isInvalid && baseStyles.invalid),
+									variant: 'picker',
+									size: null,
 								},
 							],
 							[

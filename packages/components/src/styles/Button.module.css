@@ -147,3 +147,21 @@
 .progress {
 	--fill: currentColor;
 }
+
+.picker {
+	composes: base from './Input.module.css';
+	composes: _default from './Input.module.css';
+	composes: group from './Group.module.css';
+
+	&[data-disabled] {
+		opacity: 1;
+
+		& :where([data-icon]) {
+			opacity: 0.64;
+		}
+	}
+
+	& [data-icon]:last-child {
+		fill: var(--lp-color-fill-ui-secondary);
+	}
+}
