@@ -18,12 +18,12 @@ import { useLPContextProps } from './utils';
 const progressBar = cva(styles.progress, {
 	variants: {
 		variant: {
-			line: styles.line,
-			circular: styles.circular,
+			bar: styles.bar,
+			spinner: styles.spinner,
 		},
 	},
 	defaultVariants: {
-		variant: 'circular',
+		variant: 'spinner',
 	},
 });
 
@@ -56,7 +56,7 @@ const ProgressBarContext = createContext<ContextValue<ProgressBarProps, HTMLDivE
  */
 const ProgressBar = ({ ref, ...props }: ProgressBarProps) => {
 	[props, ref] = useLPContextProps(props, ref, ProgressBarContext);
-	const { size = 'small', variant = 'circular' } = props;
+	const { size = 'small', variant = 'spinner' } = props;
 
 	const center = 16;
 	const strokeWidth = 4;
@@ -75,7 +75,7 @@ const ProgressBar = ({ ref, ...props }: ProgressBarProps) => {
 				props.children,
 				(children, { isIndeterminate, percentage, valueText }) => (
 					<>
-						{variant === 'circular' && (
+						{variant === 'spinner' && (
 							// biome-ignore lint/a11y/noSvgWithoutTitle: <explanation>
 							<svg
 								viewBox="0 0 32 32"
@@ -101,13 +101,13 @@ const ProgressBar = ({ ref, ...props }: ProgressBarProps) => {
 								/>
 							</svg>
 						)}
-						{variant === 'line' && (
+						{variant === 'bar' && (
 							<Provider values={[[LabelContext, { className: styles.label }]]}>
 								<div className={styles.container}>
 									{children}
 									<Text className={styles.value}>{valueText}</Text>
 								</div>
-								<div className={styles.bar}>
+								<div className={styles.track}>
 									<div className={styles.fill} style={{ width: `${percentage}%` }} />
 								</div>
 							</Provider>

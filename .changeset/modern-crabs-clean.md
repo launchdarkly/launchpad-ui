@@ -2,4 +2,4 @@
 "@launchpad-ui/components": patch
 ---
 
-Add `line` variant for `ProgressBar`
+Add `bar` variant for `Meter` and `ProgressBar`

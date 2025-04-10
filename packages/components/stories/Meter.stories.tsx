@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 
 import { vars } from '@launchpad-ui/vars';
 
-import { Meter } from '../src';
+import { Label, Meter } from '../src';
 
 const meta: Meta<typeof Meter> = {
 	component: Meter,
@@ -44,4 +44,8 @@ export const Values: Story = {
 			</div>
 		);
 	},
+};
+
+export const Bar: Story = {
+	args: { variant: 'bar', value: 75, children: <Label>Loading…</Label> },
 };

@@ -15,6 +15,6 @@ export const Example: Story = {
 	args: { isIndeterminate: true, 'aria-label': 'loading' },
 };
 
-export const Line: Story = {
-	args: { variant: 'line', value: 30, children: <Label>Loading…</Label> },
+export const Bar: Story = {
+	args: { variant: 'bar', value: 30, children: <Label>Loading…</Label> },
 };

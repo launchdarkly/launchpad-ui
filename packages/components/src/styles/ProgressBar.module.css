@@ -11,12 +11,12 @@
 .progress {
 }
 
-.circular {
+.spinner {
 	--fill-color: var(--lp-color-gray-500);
 	display: inline-flex;
 }
 
-.line {
+.bar {
 	--fill-color: var(--lp-color-brand-cyan-base);
 	display: flex;
 	flex-direction: column;
@@ -44,7 +44,7 @@
 	font: var(--lp-text-label-1-semibold);
 }
 
-.bar {
+.track {
 	height: var(--lp-size-10);
 	border-radius: var(--lp-border-radius-medium);
 	background-color: var(--lp-color-bg-ui-tertiary);
