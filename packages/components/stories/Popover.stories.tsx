@@ -4,7 +4,11 @@ import type { PlayFunction } from 'storybook/internal/types';
 
 import { expect, userEvent, within } from 'storybook/test';
 
-import { Button, Dialog, DialogTrigger, Heading, OverlayArrow, Popover, Pressable } from '../src';
+import { Button } from '../src/Button';
+import { Dialog, DialogTrigger } from '../src/Dialog';
+import { Heading } from '../src/Heading';
+import { OverlayArrow, Popover } from '../src/Popover';
+import { Pressable } from '../src/Pressable';
 
 const meta: Meta<typeof Popover> = {
 	component: Popover,

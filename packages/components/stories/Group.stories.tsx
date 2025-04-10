@@ -4,7 +4,12 @@ import { Icon } from '@launchpad-ui/icons';
 import { vars } from '@launchpad-ui/vars';
 import { useState } from 'react';
 
-import { Group, IconButton, Input, Label, ProgressBar, TextField } from '../src';
+import { Group } from '../src/Group';
+import { IconButton } from '../src/IconButton';
+import { Input } from '../src/Input';
+import { Label } from '../src/Label';
+import { ProgressBar } from '../src/ProgressBar';
+import { TextField } from '../src/TextField';
 
 const meta: Meta<typeof Group> = {
 	component: Group,

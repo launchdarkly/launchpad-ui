@@ -6,7 +6,10 @@ import { Icon } from '@launchpad-ui/icons';
 import { useState } from 'react';
 import { fireEvent, userEvent, within } from 'storybook/test';
 
-import { Header, ListBox, ListBoxItem, ListBoxSection, Text } from '../src';
+import { Header } from '../src/Header';
+import { ListBox, ListBoxItem } from '../src/ListBox';
+import { ListBoxSection } from '../src/Section';
+import { Text } from '../src/Text';
 
 const meta: Meta<typeof ListBox> = {
 	component: ListBox,

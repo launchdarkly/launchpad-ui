@@ -4,7 +4,12 @@ import type { ComponentType } from 'react';
 import { vars } from '@launchpad-ui/vars';
 import { userEvent, within } from 'storybook/test';
 
-import { FieldError, Input, Label, Text, TextArea, TextField } from '../src';
+import { FieldError } from '../src/FieldError';
+import { Input } from '../src/Input';
+import { Label } from '../src/Label';
+import { Text } from '../src/Text';
+import { TextArea } from '../src/TextArea';
+import { TextField } from '../src/TextField';
 
 const meta: Meta<typeof TextField> = {
 	component: TextField,

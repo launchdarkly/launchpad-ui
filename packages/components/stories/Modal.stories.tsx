@@ -5,16 +5,12 @@ import type { PlayFunction } from 'storybook/internal/types';
 import { expect, userEvent, waitFor, within } from 'storybook/test';
 
 import { allModes } from '../../../.storybook/modes';
-import {
-	Button,
-	Dialog,
-	DialogTrigger,
-	Heading,
-	IconButton,
-	Modal,
-	ModalOverlay,
-	Text,
-} from '../src';
+import { Button } from '../src/Button';
+import { Dialog, DialogTrigger } from '../src/Dialog';
+import { Heading } from '../src/Heading';
+import { IconButton } from '../src/IconButton';
+import { Modal, ModalOverlay } from '../src/Modal';
+import { Text } from '../src/Text';
 
 const meta: Meta<typeof Modal> = {
 	component: Modal,

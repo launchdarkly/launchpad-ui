@@ -3,7 +3,10 @@ import type { FileDropItem } from 'react-aria';
 
 import { useState } from 'react';
 
-import { Button, DropZone, FileTrigger, Text } from '../src';
+import { Button } from '../src/Button';
+import { DropZone } from '../src/DropZone';
+import { FileTrigger } from '../src/FileTrigger';
+import { Text } from '../src/Text';
 
 const meta: Meta<typeof DropZone> = {
 	component: DropZone,

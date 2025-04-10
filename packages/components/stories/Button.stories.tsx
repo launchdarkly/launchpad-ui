@@ -6,7 +6,8 @@ import { vars } from '@launchpad-ui/vars';
 import { useEffect, useRef, useState } from 'react';
 import { fireEvent, userEvent, within } from 'storybook/test';
 
-import { Button, Text } from '../src';
+import { Button } from '../src/Button';
+import { Text } from '../src/Text';
 
 const meta: Meta<typeof Button> = {
 	component: Button,

@@ -5,18 +5,14 @@ import { Icon } from '@launchpad-ui/icons';
 import { vars } from '@launchpad-ui/vars';
 import { expect, userEvent, within } from 'storybook/test';
 
-import {
-	ComboBox,
-	ComboBoxClearButton,
-	Group,
-	IconButton,
-	Input,
-	Label,
-	ListBox,
-	ListBoxItem,
-	Popover,
-	Text,
-} from '../src';
+import { ComboBox, ComboBoxClearButton } from '../src/ComboBox';
+import { Group } from '../src/Group';
+import { IconButton } from '../src/IconButton';
+import { Input } from '../src/Input';
+import { Label } from '../src/Label';
+import { ListBox, ListBoxItem } from '../src/ListBox';
+import { Popover } from '../src/Popover';
+import { Text } from '../src/Text';
 
 const meta: Meta<typeof ComboBox> = {
 	component: ComboBox,

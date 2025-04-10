@@ -4,7 +4,9 @@ import type { ComponentType } from 'react';
 import { Icon } from '@launchpad-ui/icons';
 import { vars } from '@launchpad-ui/vars';
 
-import { Button, Disclosure, DisclosurePanel, Heading } from '../src';
+import { Button } from '../src/Button';
+import { Disclosure, DisclosurePanel } from '../src/Disclosure';
+import { Heading } from '../src/Heading';
 
 const meta: Meta<typeof Disclosure> = {
 	component: Disclosure,

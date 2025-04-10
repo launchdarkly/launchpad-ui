@@ -2,15 +2,10 @@ import type { Meta, StoryObj } from '@storybook/react';
 
 import { expect, userEvent, within } from 'storybook/test';
 
-import {
-	Button,
-	ButtonGroup,
-	Link,
-	SnackbarRegion,
-	ToastRegion,
-	snackbarQueue,
-	toastQueue,
-} from '../src';
+import { Button } from '../src/Button';
+import { ButtonGroup } from '../src/ButtonGroup';
+import { Link } from '../src/Link';
+import { SnackbarRegion, ToastRegion, snackbarQueue, toastQueue } from '../src/Toast';
 
 const meta: Meta<typeof ToastRegion> = {
 	component: ToastRegion,

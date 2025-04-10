@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 
 import { userEvent, within } from 'storybook/test';
 
-import { ToggleIconButton } from '../src';
+import { ToggleIconButton } from '../src/ToggleIconButton';
 
 const meta: Meta<typeof ToggleIconButton> = {
 	component: ToggleIconButton,

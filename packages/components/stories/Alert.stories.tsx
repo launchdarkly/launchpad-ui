@@ -1,6 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { Alert, Button, ButtonGroup, Heading, Text } from '../src';
+import { Alert } from '../src/Alert';
+import { Button } from '../src/Button';
+import { ButtonGroup } from '../src/ButtonGroup';
+import { Heading } from '../src/Heading';
+import { Text } from '../src/Text';
 
 const meta: Meta<typeof Alert> = {
 	component: Alert,

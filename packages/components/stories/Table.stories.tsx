@@ -6,16 +6,16 @@ import { useState } from 'react';
 import { useDragAndDrop } from 'react-aria-components';
 import { useListData } from 'react-stately';
 
+import { DropIndicator } from '../src/DropIndicator';
 import {
 	Cell,
 	Column,
-	DropIndicator,
 	ResizableTableContainer,
 	Row,
 	Table,
 	TableBody,
 	TableHeader,
-} from '../src';
+} from '../src/Table';
 
 const meta: Meta<typeof Table> = {
 	component: Table,
