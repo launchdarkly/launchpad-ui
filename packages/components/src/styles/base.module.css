@@ -10,41 +10,41 @@
 
 .buttonGroup {
 	&[data-orientation='horizontal'] {
-		& :where(button,label):first-child:not(:only-child) {
+		& :where(button, label):first-child:not(:only-child) {
 			border-top-right-radius: 0;
 			border-bottom-right-radius: 0;
 		}
 
-		& :where(button,label):last-child:not(:only-child) {
+		& :where(button, label):last-child:not(:only-child) {
 			border-top-left-radius: 0;
 			border-bottom-left-radius: 0;
 		}
 
-		& :where(button,label):not(:first-child) {
+		& :where(button, label):not(:first-child) {
 			margin-inline-start: -1px;
 		}
 
-		& :where(button,label):not(:first-child):not(:last-child) {
+		& :where(button, label):not(:first-child):not(:last-child) {
 			border-radius: 0;
 		}
 	}
 
 	&[data-orientation='vertical'] {
-		& :where(button,label):first-child:not(:only-child) {
+		& :where(button, label):first-child:not(:only-child) {
 			border-bottom-left-radius: 0;
 			border-bottom-right-radius: 0;
 		}
 
-		& :where(button,label):last-child:not(:only-child) {
+		& :where(button, label):last-child:not(:only-child) {
 			border-top-left-radius: 0;
 			border-top-right-radius: 0;
 		}
 
-		& :where(button,label):not(:first-child):not([role='separator']) {
+		& :where(button, label):not(:first-child):not([role='separator']) {
 			margin-block-start: -1px;
 		}
 
-		& :where(button,label):not(:first-child):not(:last-child) {
+		& :where(button, label):not(:first-child):not(:last-child) {
 			border-radius: 0;
 		}
 	}
