@@ -1,5 +1,11 @@
 # @launchpad-ui/components
 
+## 0.9.7
+
+### Patch Changes
+
+- [#1616](https://github.com/launchdarkly/launchpad-ui/pull/1616) [`0085fc6`](https://github.com/launchdarkly/launchpad-ui/commit/0085fc6940aeccd6b64fd730a01816ed80a78b91) Thanks [@apucacao](https://github.com/apucacao)! - Ensure single button in button group renders correctly
+
 ## 0.9.6
 
 ### Patch Changes
