@@ -8,8 +8,6 @@ import { Heading as AriaHeading } from 'react-aria-components';
 import styles from './styles/Heading.module.css';
 import { useLPContextProps } from './utils';
 
-// test
-
 const heading = cva(styles.heading);
 
 interface HeadingProps extends AriaHeadingProps {

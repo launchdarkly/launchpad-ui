@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { BadgeIcon, Icon } from '../src';
+import { BadgeIcon } from '../src/BadgeIcon';
+import { Icon } from '../src/Icon';
 
 const meta: Meta<typeof BadgeIcon> = {
 	component: BadgeIcon,
