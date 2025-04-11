@@ -122,6 +122,7 @@ const Toast = ({ ref, variant, ...props }: ToastProps<LPToastContent>) => {
 			className={composeRenderProps(props.className, (className, renderProps) =>
 				toast({ ...renderProps, className, variant }),
 			)}
+			data-theme="dark"
 		>
 			{composeRenderProps(props.children, (children, { toast }) => (
 				<>
@@ -129,7 +130,7 @@ const Toast = ({ ref, variant, ...props }: ToastProps<LPToastContent>) => {
 						kind={toast.content.status || 'info'}
 						className={icon({ status: toast.content.status })}
 					/>
-					<ToastContent data-theme="dark">
+					<ToastContent>
 						<Text slot="title">{toast.content.title}</Text>
 						<Text slot="description">
 							{toast.content.description}
@@ -149,7 +150,7 @@ const Toast = ({ ref, variant, ...props }: ToastProps<LPToastContent>) => {
 						{children}
 					</ToastContent>
 					{/* @ts-expect-error RAC adds label */}
-					<IconButton size="small" variant="minimal" icon="cancel" slot="close" data-theme="dark" />
+					<IconButton size="small" variant="minimal" icon="cancel" slot="close" />
 				</>
 			))}
 		</AriaToast>
