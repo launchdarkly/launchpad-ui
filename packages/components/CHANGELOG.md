@@ -1,5 +1,11 @@
 # @launchpad-ui/components
 
+## 0.9.11
+
+### Patch Changes
+
+- [#1626](https://github.com/launchdarkly/launchpad-ui/pull/1626) [`01ccf8f`](https://github.com/launchdarkly/launchpad-ui/commit/01ccf8f6b77cb733e063baab6846cffd82452f7d) Thanks [@renovate](https://github.com/apps/renovate)! - Update dependencies
+
 ## 0.9.10
 
 ### Patch Changes
