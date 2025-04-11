@@ -4,9 +4,8 @@ import type { MeterProps as AriaMeterProps, ContextValue } from 'react-aria-comp
 
 import { cva } from 'class-variance-authority';
 import { createContext } from 'react';
-import { Meter as AriaMeter, Provider, Text, composeRenderProps } from 'react-aria-components';
+import { Meter as AriaMeter, Text, composeRenderProps } from 'react-aria-components';
 
-import { LabelContext } from './Label';
 import styles from './styles/Meter.module.css';
 import { useLPContextProps } from './utils';
 
@@ -80,15 +79,13 @@ const Meter = ({ ref, ...props }: MeterProps) => {
 						</svg>
 					)}
 					{variant === 'bar' && (
-						<Provider values={[[LabelContext, { className: styles.label }]]}>
-							<div className={styles.container}>
-								{children}
-								<Text className={styles.value}>{valueText}</Text>
-							</div>
+						<>
+							{children}
+							<Text className={styles.value}>{valueText}</Text>
 							<div className={styles.track}>
 								<div className={styles.fill} style={{ width: `${percentage}%` }} />
 							</div>
-						</Provider>
+						</>
 					)}
 				</>
 			))}

@@ -18,8 +18,11 @@
 
 .bar {
 	--fill-color: var(--lp-color-brand-cyan-base);
-	display: flex;
-	flex-direction: column;
+	display: grid;
+	grid-template-areas:
+		'label value'
+		'bar bar';
+	grid-template-columns: 1fr auto;
 	gap: var(--lp-spacing-300);
 }
 
@@ -31,20 +34,13 @@
 	stroke: var(--fill-color);
 }
 
-.container {
-	display: flex;
-}
-
-.label {
-	flex: 1;
-	font: var(--lp-text-label-1-semibold);
-}
-
 .value {
-	font: var(--lp-text-label-1-semibold);
+	grid-area: value;
+	font: var(--lp-text-label-1-medium);
 }
 
 .track {
+	grid-area: bar;
 	height: var(--lp-size-10);
 	border-radius: var(--lp-border-radius-medium);
 	background-color: var(--lp-color-bg-ui-tertiary);

@@ -4,14 +4,8 @@ import type { ProgressBarProps as AriaProgressBarProps, ContextValue } from 'rea
 
 import { cva, cx } from 'class-variance-authority';
 import { createContext } from 'react';
-import {
-	ProgressBar as AriaProgressBar,
-	Provider,
-	Text,
-	composeRenderProps,
-} from 'react-aria-components';
+import { ProgressBar as AriaProgressBar, Text, composeRenderProps } from 'react-aria-components';
 
-import { LabelContext } from './Label';
 import styles from './styles/ProgressBar.module.css';
 import { useLPContextProps } from './utils';
 
@@ -102,15 +96,13 @@ const ProgressBar = ({ ref, ...props }: ProgressBarProps) => {
 							</svg>
 						)}
 						{variant === 'bar' && (
-							<Provider values={[[LabelContext, { className: styles.label }]]}>
-								<div className={styles.container}>
-									{children}
-									<Text className={styles.value}>{valueText}</Text>
-								</div>
+							<>
+								{children}
+								<Text className={styles.value}>{valueText}</Text>
 								<div className={styles.track}>
 									<div className={styles.fill} style={{ width: `${percentage}%` }} />
 								</div>
-							</Provider>
+							</>
 						)}
 					</>
 				),
