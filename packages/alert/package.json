@@ -35,7 +35,7 @@
 		"@launchpad-ui/button": "workspace:~",
 		"@launchpad-ui/icons": "workspace:~",
 		"@launchpad-ui/tokens": "workspace:~",
-		"@react-stately/utils": "3.10.5",
+		"@react-stately/utils": "3.10.6",
 		"classix": "2.2.0"
 	},
 	"peerDependencies": {
@@ -43,7 +43,7 @@
 		"react-dom": "^18.0.0 || ^19.0.0"
 	},
 	"devDependencies": {
-		"react": "19.0.0",
-		"react-dom": "19.0.0"
+		"react": "19.1.0",
+		"react-dom": "19.1.0"
 	}
 }

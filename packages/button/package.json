@@ -34,7 +34,7 @@
 	"dependencies": {
 		"@launchpad-ui/icons": "workspace:~",
 		"@launchpad-ui/tokens": "workspace:~",
-		"@radix-ui/react-slot": "1.1.0",
+		"@radix-ui/react-slot": "1.2.0",
 		"classix": "2.2.0"
 	},
 	"peerDependencies": {
@@ -42,7 +42,7 @@
 		"react-dom": "^18.0.0 || ^19.0.0"
 	},
 	"devDependencies": {
-		"react": "19.0.0",
-		"react-dom": "19.0.0"
+		"react": "19.1.0",
+		"react-dom": "19.1.0"
 	}
 }
