@@ -1,5 +1,11 @@
 # @launchpad-ui/components
 
+## 0.9.9
+
+### Patch Changes
+
+- [#1615](https://github.com/launchdarkly/launchpad-ui/pull/1615) [`1fa1565`](https://github.com/launchdarkly/launchpad-ui/commit/1fa1565b03bf7c036df723195c18b573e2d795ac) Thanks [@Niznikr](https://github.com/Niznikr)! - Add `bar` variant for `Meter` and `ProgressBar`
+
 ## 0.9.8
 
 ### Patch Changes
