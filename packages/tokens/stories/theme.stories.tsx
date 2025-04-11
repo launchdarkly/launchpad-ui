@@ -1,6 +1,6 @@
 import type { Args, StoryContext } from '@storybook/react';
 
-import { Button } from '@launchpad-ui/components';
+import { Button } from '../../components/src/Button';
 
 export default {
 	title: 'Tokens/Themes',

@@ -2,7 +2,10 @@ import type { Meta, StoryObj } from '@storybook/react';
 
 import { Icon } from '@launchpad-ui/icons';
 
-import { Button, Disclosure, DisclosureGroup, DisclosurePanel, Heading } from '../src';
+import { Button } from '../src/Button';
+import { Disclosure, DisclosurePanel } from '../src/Disclosure';
+import { DisclosureGroup } from '../src/DisclosureGroup';
+import { Heading } from '../src/Heading';
 
 const meta: Meta<typeof DisclosureGroup> = {
 	component: DisclosureGroup,

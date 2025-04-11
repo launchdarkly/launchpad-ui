@@ -5,7 +5,10 @@ import { Icon } from '@launchpad-ui/icons';
 import { vars } from '@launchpad-ui/vars';
 import { userEvent } from 'storybook/test';
 
-import { DateField, DateInput, DateSegment, Group, Label, Text } from '../src';
+import { DateField, DateInput, DateSegment } from '../src/DateField';
+import { Group } from '../src/Group';
+import { Label } from '../src/Label';
+import { Text } from '../src/Text';
 
 const meta: Meta<typeof DateField> = {
 	component: DateField,

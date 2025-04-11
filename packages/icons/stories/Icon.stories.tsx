@@ -1,8 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { Button, ToastRegion, Tooltip, TooltipTrigger, toastQueue } from '@launchpad-ui/components';
-
-import { Icon } from '../src';
+import { Button } from '../../components/src/Button';
+import { ToastRegion, toastQueue } from '../../components/src/Toast';
+import { Tooltip, TooltipTrigger } from '../../components/src/Tooltip';
+import { Icon } from '../src/Icon';
 import { icons } from '../src/types';
 
 const meta: Meta<typeof Icon> = {

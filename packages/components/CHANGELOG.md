@@ -1,5 +1,19 @@
 # @launchpad-ui/components
 
+## 0.9.8
+
+### Patch Changes
+
+- [#1620](https://github.com/launchdarkly/launchpad-ui/pull/1620) [`4ba1076`](https://github.com/launchdarkly/launchpad-ui/commit/4ba1076abdb4b9cee14dc59178aa1d8fed6796bf) Thanks [@apucacao](https://github.com/apucacao)! - Add min-width to menu item so consumers can truncate properly
+
+- [#1619](https://github.com/launchdarkly/launchpad-ui/pull/1619) [`af49c3c`](https://github.com/launchdarkly/launchpad-ui/commit/af49c3cf4bfe57384606019e6c9fd7d55dbe430e) Thanks [@apucacao](https://github.com/apucacao)! - Make sure button group only tweaks radii on immediate descendants
+
+## 0.9.7
+
+### Patch Changes
+
+- [#1616](https://github.com/launchdarkly/launchpad-ui/pull/1616) [`0085fc6`](https://github.com/launchdarkly/launchpad-ui/commit/0085fc6940aeccd6b64fd730a01816ed80a78b91) Thanks [@apucacao](https://github.com/apucacao)! - Ensure single button in button group renders correctly
+
 ## 0.9.6
 
 ### Patch Changes

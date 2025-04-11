@@ -3,7 +3,11 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { vars } from '@launchpad-ui/vars';
 import { userEvent } from 'storybook/test';
 
-import { Group, IconButton, Input, Label, NumberField } from '../src';
+import { Group } from '../src/Group';
+import { IconButton } from '../src/IconButton';
+import { Input } from '../src/Input';
+import { Label } from '../src/Label';
+import { NumberField } from '../src/NumberField';
 
 const meta: Meta<typeof NumberField> = {
 	component: NumberField,

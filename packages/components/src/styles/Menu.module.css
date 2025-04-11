@@ -50,6 +50,7 @@
 		align-items: center;
 		column-gap: var(--lp-spacing-300);
 		flex: 1;
+		min-width: 0;
 	}
 
 	&:has([slot='label']) {

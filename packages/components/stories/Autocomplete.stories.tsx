@@ -4,21 +4,16 @@ import { Icon } from '@launchpad-ui/icons';
 import { useState } from 'react';
 import { expect, userEvent, within } from 'storybook/test';
 
-import {
-	Autocomplete,
-	Button,
-	Dialog,
-	DialogTrigger,
-	Group,
-	IconButton,
-	Input,
-	ListBox,
-	ListBoxItem,
-	Menu,
-	MenuItem,
-	Popover,
-	SearchField,
-} from '../src';
+import { Autocomplete } from '../src/Autocomplete';
+import { Button } from '../src/Button';
+import { Dialog, DialogTrigger } from '../src/Dialog';
+import { Group } from '../src/Group';
+import { IconButton } from '../src/IconButton';
+import { Input } from '../src/Input';
+import { ListBox, ListBoxItem } from '../src/ListBox';
+import { Menu, MenuItem } from '../src/Menu';
+import { Popover } from '../src/Popover';
+import { SearchField } from '../src/SearchField';
 
 const meta: Meta<typeof Autocomplete> = {
 	component: Autocomplete,
