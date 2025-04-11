@@ -1,5 +1,11 @@
 # @launchpad-ui/components
 
+## 0.9.10
+
+### Patch Changes
+
+- [#1623](https://github.com/launchdarkly/launchpad-ui/pull/1623) [`bbe66a4`](https://github.com/launchdarkly/launchpad-ui/commit/bbe66a400c68f4e35c69c234b70060e7cfaa3597) Thanks [@Niznikr](https://github.com/Niznikr)! - Add `picker` variant for `Button`
+
 ## 0.9.9
 
 ### Patch Changes
