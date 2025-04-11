@@ -1,5 +1,27 @@
 # @launchpad-ui/core
 
+## 0.54.1
+
+### Patch Changes
+
+- [#1626](https://github.com/launchdarkly/launchpad-ui/pull/1626) [`01ccf8f`](https://github.com/launchdarkly/launchpad-ui/commit/01ccf8f6b77cb733e063baab6846cffd82452f7d) Thanks [@renovate](https://github.com/apps/renovate)! - Update dependencies
+
+- Updated dependencies [[`01ccf8f`](https://github.com/launchdarkly/launchpad-ui/commit/01ccf8f6b77cb733e063baab6846cffd82452f7d)]:
+  - @launchpad-ui/inline-edit@0.3.55
+  - @launchpad-ui/focus-trap@0.1.29
+  - @launchpad-ui/navigation@0.12.72
+  - @launchpad-ui/dropdown@0.6.144
+  - @launchpad-ui/popover@0.11.41
+  - @launchpad-ui/button@0.12.48
+  - @launchpad-ui/drawer@0.5.70
+  - @launchpad-ui/filter@0.7.55
+  - @launchpad-ui/alert@0.9.56
+  - @launchpad-ui/modal@0.17.71
+  - @launchpad-ui/form@0.11.55
+  - @launchpad-ui/menu@0.13.55
+  - @launchpad-ui/box@0.1.26
+  - @launchpad-ui/tooltip@0.9.30
+
 ## 0.54.0
 
 ### Minor Changes
