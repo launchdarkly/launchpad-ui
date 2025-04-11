@@ -12,7 +12,7 @@ import { useLPContextProps } from './utils';
 const input = cva(styles.base, {
 	variants: {
 		variant: {
-			default: styles.default,
+			default: styles._default,
 			minimal: styles.minimal,
 		},
 	},

@@ -15,7 +15,6 @@ import {
 } from 'react-aria-components';
 
 import { ButtonContext } from './Button';
-import { input } from './Input';
 import styles from './styles/Select.module.css';
 import baseStyles from './styles/base.module.css';
 import { useLPContextProps } from './utils';
@@ -58,8 +57,9 @@ const Select = <T extends object>({ ref, ...props }: SelectProps<T>) => {
 						[
 							ButtonContext,
 							{
-								className: cx(input(), baseStyles.picker, isInvalid && baseStyles.invalid),
-								variant: null,
+								className: cx(isInvalid && baseStyles.invalid),
+								variant: 'picker',
+								size: null,
 							},
 						],
 					]}

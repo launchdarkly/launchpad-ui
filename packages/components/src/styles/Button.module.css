@@ -1,5 +1,8 @@
 .base {
 	composes: interactive from './base.module.css';
+}
+
+.button {
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
@@ -14,13 +17,13 @@
 	position: relative;
 }
 
-.base[data-focus-visible] {
+.button[data-focus-visible] {
 	outline: 2px solid var(--lp-color-shadow-interactive-focus);
 	outline-offset: -2px;
 	z-index: 2;
 }
 
-.base[data-disabled] {
+.button[data-disabled] {
 	opacity: 0.64;
 }
 
@@ -40,6 +43,7 @@
 }
 
 .default {
+	composes: button;
 	--lp-button-padding: 0px;
 	background-color: var(--lp-color-bg-interactive-secondary-base);
 	border: 1px solid var(--lp-color-border-interactive-secondary-base);
@@ -59,6 +63,7 @@
 }
 
 .primary {
+	composes: button;
 	--lp-button-padding: 1px;
 	background-color: var(--lp-color-bg-interactive-primary-base);
 	color: var(--lp-color-text-interactive-primary-base);
@@ -86,6 +91,7 @@
 }
 
 .destructive {
+	composes: button;
 	--lp-button-padding: 1px;
 	background-color: var(--lp-color-bg-interactive-destructive-base);
 	color: var(--lp-color-text-interactive-primary-base);
@@ -109,6 +115,7 @@
 }
 
 .minimal {
+	composes: button;
 	--lp-button-padding: 1px;
 	background-color: var(--lp-color-bg-interactive-tertiary-base);
 	color: var(--lp-color-text-ui-primary-base);
@@ -126,13 +133,13 @@
 	background-color: var(--lp-color-bg-interactive-tertiary-focus);
 }
 
-.base[data-selected]:where(button, label) {
+.button[data-selected]:where(button, label) {
 	background-color: var(--lp-color-bg-interactive-selected);
 	border-color: var(--lp-color-border-interactive-selected);
 	z-index: 1;
 }
 
-.base[data-pending] {
+.button[data-pending] {
 	cursor: wait;
 
 	& [data-icon] {
@@ -146,4 +153,14 @@
 
 .progress {
 	--fill: currentColor;
+}
+
+.picker {
+	composes: base from './Input.module.css';
+	composes: _default from './Input.module.css';
+	composes: group from './Group.module.css';
+
+	& [data-icon]:last-child {
+		fill: var(--lp-color-fill-ui-secondary);
+	}
 }

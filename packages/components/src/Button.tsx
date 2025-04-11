@@ -28,6 +28,7 @@ const button = cva(styles.base, {
 			primary: styles.primary,
 			destructive: styles.destructive,
 			minimal: styles.minimal,
+			picker: styles.picker,
 		},
 	},
 	defaultVariants: {
