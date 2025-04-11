@@ -64,6 +64,7 @@ const icons = [
 	'chart-area',
 	'chart-bar',
 	'chart-cube-root',
+	'chart-density',
 	'chart-dashboard',
 	'chart-histogram',
 	'chart-infographic',

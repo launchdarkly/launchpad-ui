@@ -474,6 +474,13 @@
         clip-rule="evenodd"
       />
     </symbol>
+    <symbol viewBox="0 0 20 20" id="lp-icon-chart-density">
+      <path 
+        fill-rule="evenodd" 
+        d="M1.33301 12.8C6.79967 12.8 5.99967 3.20001 7.99967 3.20001C9.99967 3.20001 9.19967 12.8 14.6663 12.8" 
+        clip-rule="evenodd" 
+      />
+    </symbol>
     <symbol  viewBox="0 0 20 20" id="lp-icon-chart-lines-crossed">
       <path
         fill-rule="evenodd"
