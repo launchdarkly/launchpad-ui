@@ -1,17 +1,29 @@
+import type { VariantProps } from 'class-variance-authority';
 import type { Ref } from 'react';
 import type { MeterProps as AriaMeterProps, ContextValue } from 'react-aria-components';
 
 import { cva } from 'class-variance-authority';
 import { createContext } from 'react';
-import { Meter as AriaMeter, composeRenderProps } from 'react-aria-components';
+import { Meter as AriaMeter, Text, composeRenderProps } from 'react-aria-components';
 
 import styles from './styles/Meter.module.css';
 import { useLPContextProps } from './utils';
 
-const meter = cva(styles.meter);
+const meter = cva(styles.meter, {
+	variants: {
+		variant: {
+			bar: styles.bar,
+			donut: styles.donut,
+		},
+	},
+	defaultVariants: {
+		variant: 'donut',
+	},
+});
+
 const icon = cva(styles.base);
 
-interface MeterProps extends AriaMeterProps {
+interface MeterProps extends AriaMeterProps, VariantProps<typeof meter> {
 	ref?: Ref<HTMLDivElement>;
 }
 
@@ -24,6 +36,7 @@ const MeterContext = createContext<ContextValue<MeterProps, HTMLDivElement>>(nul
  */
 const Meter = ({ ref, ...props }: MeterProps) => {
 	[props, ref] = useLPContextProps(props, ref, MeterContext);
+	const { variant = 'donut' } = props;
 
 	const center = 64;
 	const strokeWidth = 8;
@@ -35,34 +48,47 @@ const Meter = ({ ref, ...props }: MeterProps) => {
 			{...props}
 			ref={ref}
 			className={composeRenderProps(props.className, (className, renderProps) =>
-				meter({ ...renderProps, className }),
+				meter({ ...renderProps, variant, className }),
 			)}
 		>
-			{({ percentage, valueText }) => (
-				// biome-ignore lint/a11y/noSvgWithoutTitle: <explanation>
-				<svg viewBox="0 0 128 128" fill="none" strokeWidth={strokeWidth} className={icon()}>
-					<circle
-						cx={center}
-						cy={center}
-						r={r}
-						strokeWidth={strokeWidth}
-						className={styles.outerCircle}
-					/>
-					<circle
-						cx={center}
-						cy={center}
-						r={r}
-						strokeDasharray={`${c} ${c}`}
-						strokeDashoffset={c - (percentage / 100) * c}
-						transform="rotate(-90 64 64)"
-						className={styles.innerCircle}
-					/>
-					<text x={center} y={center} className={styles.value}>
-						{valueText?.match(/\d+/)?.[0]}
-						<tspan className={styles.unit}>{valueText?.replace(/\d+/, '')}</tspan>
-					</text>
-				</svg>
-			)}
+			{composeRenderProps(props.children, (children, { percentage, valueText }) => (
+				<>
+					{variant === 'donut' && (
+						// biome-ignore lint/a11y/noSvgWithoutTitle: <explanation>
+						<svg viewBox="0 0 128 128" fill="none" strokeWidth={strokeWidth} className={icon()}>
+							<circle
+								cx={center}
+								cy={center}
+								r={r}
+								strokeWidth={strokeWidth}
+								className={styles.outerCircle}
+							/>
+							<circle
+								cx={center}
+								cy={center}
+								r={r}
+								strokeDasharray={`${c} ${c}`}
+								strokeDashoffset={c - (percentage / 100) * c}
+								transform="rotate(-90 64 64)"
+								className={styles.innerCircle}
+							/>
+							<text x={center} y={center} className={styles.text}>
+								{valueText?.match(/\d+/)?.[0]}
+								<tspan className={styles.unit}>{valueText?.replace(/\d+/, '')}</tspan>
+							</text>
+						</svg>
+					)}
+					{variant === 'bar' && (
+						<>
+							{children}
+							<Text className={styles.value}>{valueText}</Text>
+							<div className={styles.track}>
+								<div className={styles.fill} style={{ width: `${percentage}%` }} />
+							</div>
+						</>
+					)}
+				</>
+			))}
 		</AriaMeter>
 	);
 };

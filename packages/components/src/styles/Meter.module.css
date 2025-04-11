@@ -1,6 +1,17 @@
 .meter {
 	--fill-color: var(--lp-color-brand-cyan-base);
+}
 
+.bar {
+	display: grid;
+	grid-template-areas:
+		'label value'
+		'bar bar';
+	grid-template-columns: 1fr auto;
+	gap: var(--lp-spacing-300);
+}
+
+.donut {
 	display: inline-flex;
 }
 
@@ -14,6 +25,25 @@
 }
 
 .value {
+	grid-area: value;
+	font: var(--lp-text-label-1-medium);
+}
+
+.track {
+	grid-area: bar;
+	height: var(--lp-size-10);
+	border-radius: var(--lp-border-radius-medium);
+	background-color: var(--lp-color-bg-ui-tertiary);
+}
+
+.fill {
+	border-top-left-radius: var(--lp-border-radius-medium);
+	border-bottom-left-radius: var(--lp-border-radius-medium);
+	background-color: var(--fill-color);
+	height: 100%;
+}
+
+.text {
 	fill: var(--lp-color-text-ui-primary-base);
 	font: var(--lp-text-body-1-semibold);
 	font-size: var(--lp-font-size-600);

@@ -9,8 +9,21 @@
 }
 
 .progress {
-	--fill: var(--lp-color-gray-500);
+}
+
+.spinner {
+	--fill-color: var(--lp-color-gray-500);
 	display: inline-flex;
+}
+
+.bar {
+	--fill-color: var(--lp-color-brand-cyan-base);
+	display: grid;
+	grid-template-areas:
+		'label value'
+		'bar bar';
+	grid-template-columns: 1fr auto;
+	gap: var(--lp-spacing-300);
 }
 
 .outerCircle {
@@ -18,7 +31,26 @@
 }
 
 .innerCircle {
-	stroke: var(--fill);
+	stroke: var(--fill-color);
+}
+
+.value {
+	grid-area: value;
+	font: var(--lp-text-label-1-medium);
+}
+
+.track {
+	grid-area: bar;
+	height: var(--lp-size-10);
+	border-radius: var(--lp-border-radius-medium);
+	background-color: var(--lp-color-bg-ui-tertiary);
+}
+
+.fill {
+	border-top-left-radius: var(--lp-border-radius-medium);
+	border-bottom-left-radius: var(--lp-border-radius-medium);
+	background-color: var(--fill-color);
+	height: 100%;
 }
 
 .base {
