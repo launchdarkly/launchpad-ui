@@ -36,11 +36,11 @@
 		"@launchpad-ui/icons": "workspace:~",
 		"@launchpad-ui/tokens": "workspace:~",
 		"@launchpad-ui/tooltip": "workspace:~",
-		"@react-aria/button": "3.12.0",
-		"@react-aria/i18n": "3.12.6",
-		"@react-aria/numberfield": "3.11.11",
-		"@react-aria/visually-hidden": "3.8.20",
-		"@react-stately/numberfield": "3.9.10",
+		"@react-aria/button": "3.13.0",
+		"@react-aria/i18n": "3.12.8",
+		"@react-aria/numberfield": "3.11.13",
+		"@react-aria/visually-hidden": "3.8.22",
+		"@react-stately/numberfield": "3.9.11",
 		"classix": "2.2.0"
 	},
 	"peerDependencies": {
@@ -48,7 +48,7 @@
 		"react-dom": "^18.0.0 || ^19.0.0"
 	},
 	"devDependencies": {
-		"react": "19.0.0",
-		"react-dom": "19.0.0"
+		"react": "19.1.0",
+		"react-dom": "19.1.0"
 	}
 }
