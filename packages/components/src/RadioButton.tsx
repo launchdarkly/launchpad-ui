@@ -5,7 +5,7 @@ import type { ButtonVariants } from './Button';
 import { createContext } from 'react';
 import { Radio as AriaRadio, composeRenderProps } from 'react-aria-components';
 
-import { button } from './Button';
+import { buttonStyles } from './Button';
 import { useLPContextProps } from './utils';
 
 interface RadioButtonProps extends RadioProps, ButtonVariants {
@@ -28,7 +28,7 @@ const RadioButton = ({ ref, ...props }: RadioButtonProps) => {
 			{...props}
 			ref={ref}
 			className={composeRenderProps(props.className, (className, renderProps) =>
-				button({ ...renderProps, size, variant, className }),
+				buttonStyles({ ...renderProps, size, variant, className }),
 			)}
 		/>
 	);

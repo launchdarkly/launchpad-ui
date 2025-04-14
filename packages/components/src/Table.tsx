@@ -35,13 +35,13 @@ import { IconButton } from './IconButton';
 import styles from './styles/Table.module.css';
 import { useLPContextProps } from './utils';
 
-const table = cva(styles.table);
-const column = cva(styles.column);
-const header = cva(styles.header);
-const body = cva(styles.body);
-const row = cva(styles.row);
-const cell = cva(styles.cell);
-const resizer = cva(styles.resizer);
+const cellStyles = cva(styles.cell);
+const columnResizerStyles = cva(styles.resizer);
+const columnStyles = cva(styles.column);
+const rowStyles = cva(styles.row);
+const tableStyles = cva(styles.table);
+const tableBodyStyles = cva(styles.body);
+const tableHeaderStyles = cva(styles.header);
 
 const ResizableTableContainerContext = createContext<{ resizable: boolean } | null>({
 	resizable: false,
@@ -93,7 +93,7 @@ const Table = ({ ref, ...props }: TableProps) => {
 			{...props}
 			ref={ref}
 			className={composeRenderProps(props.className, (className, renderProps) =>
-				table({ ...renderProps, className }),
+				tableStyles({ ...renderProps, className }),
 			)}
 		/>
 	);
@@ -111,7 +111,7 @@ const Column = ({ ref, ...props }: ColumnProps) => {
 			{...props}
 			ref={ref}
 			className={composeRenderProps(props.className, (className, renderProps) =>
-				column({ ...renderProps, className }),
+				columnStyles({ ...renderProps, className }),
 			)}
 		>
 			{composeRenderProps(props.children, (children, { allowsSorting, sortDirection }) => (
@@ -139,7 +139,7 @@ const TableHeader = <T extends object>({ ref, ...props }: TableHeaderProps<T>) =
 			{...props}
 			ref={ref}
 			className={composeRenderProps(props.className, (className, renderProps) =>
-				header({ ...renderProps, className }),
+				tableHeaderStyles({ ...renderProps, className }),
 			)}
 		>
 			{allowsDragging && (
@@ -166,7 +166,7 @@ const TableBody = <T extends object>({ ref, ...props }: TableBodyProps<T>) => {
 			{...props}
 			ref={ref}
 			className={composeRenderProps(props.className, (className, renderProps) =>
-				body({ ...renderProps, className }),
+				tableBodyStyles({ ...renderProps, className }),
 			)}
 		/>
 	);
@@ -185,7 +185,7 @@ const Row = <T extends object>({ columns, children, ref, ...props }: RowProps<T>
 			{...props}
 			ref={ref}
 			className={composeRenderProps(props.className, (className, renderProps) =>
-				row({ ...renderProps, className }),
+				rowStyles({ ...renderProps, className }),
 			)}
 		>
 			{allowsDragging && (
@@ -215,7 +215,7 @@ const Cell = ({ ref, ...props }: CellProps) => {
 			{...props}
 			ref={ref}
 			className={composeRenderProps(props.className, (className, renderProps) =>
-				cell({ ...renderProps, className }),
+				cellStyles({ ...renderProps, className }),
 			)}
 		/>
 	);
@@ -227,7 +227,7 @@ const ColumnResizer = ({ ref, ...props }: ColumnResizerProps) => {
 			{...props}
 			ref={ref}
 			className={composeRenderProps(props.className, (className, renderProps) =>
-				resizer({ ...renderProps, className }),
+				columnResizerStyles({ ...renderProps, className }),
 			)}
 		/>
 	);
@@ -253,6 +253,13 @@ export {
 	TableBody,
 	TableContext,
 	TableHeader,
+	cellStyles,
+	columnResizerStyles,
+	columnStyles,
+	rowStyles,
+	tableStyles,
+	tableBodyStyles,
+	tableHeaderStyles,
 };
 export type {
 	CellProps,

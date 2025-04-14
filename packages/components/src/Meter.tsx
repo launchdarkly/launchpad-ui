@@ -9,7 +9,7 @@ import { Meter as AriaMeter, Text, composeRenderProps } from 'react-aria-compone
 import styles from './styles/Meter.module.css';
 import { useLPContextProps } from './utils';
 
-const meter = cva(styles.meter, {
+const meterStyles = cva(styles.meter, {
 	variants: {
 		variant: {
 			bar: styles.bar,
@@ -21,9 +21,7 @@ const meter = cva(styles.meter, {
 	},
 });
 
-const icon = cva(styles.base);
-
-interface MeterProps extends AriaMeterProps, VariantProps<typeof meter> {
+interface MeterProps extends AriaMeterProps, VariantProps<typeof meterStyles> {
 	ref?: Ref<HTMLDivElement>;
 }
 
@@ -48,14 +46,19 @@ const Meter = ({ ref, ...props }: MeterProps) => {
 			{...props}
 			ref={ref}
 			className={composeRenderProps(props.className, (className, renderProps) =>
-				meter({ ...renderProps, variant, className }),
+				meterStyles({ ...renderProps, variant, className }),
 			)}
 		>
 			{composeRenderProps(props.children, (children, { percentage, valueText }) => (
 				<>
 					{variant === 'donut' && (
 						// biome-ignore lint/a11y/noSvgWithoutTitle: <explanation>
-						<svg viewBox="0 0 128 128" fill="none" strokeWidth={strokeWidth} className={icon()}>
+						<svg
+							viewBox="0 0 128 128"
+							fill="none"
+							strokeWidth={strokeWidth}
+							className={styles.icon}
+						>
 							<circle
 								cx={center}
 								cy={center}
@@ -93,5 +96,5 @@ const Meter = ({ ref, ...props }: MeterProps) => {
 	);
 };
 
-export { Meter, MeterContext };
+export { Meter, MeterContext, meterStyles };
 export type { MeterProps };

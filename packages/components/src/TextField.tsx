@@ -13,7 +13,7 @@ import {
 import styles from './styles/TextField.module.css';
 import { useLPContextProps } from './utils';
 
-const field = cva(styles.field);
+const textFieldStyles = cva(styles.field);
 
 interface TextFieldProps extends AriaTextFieldProps {
 	ref?: Ref<HTMLDivElement>;
@@ -33,7 +33,7 @@ const TextField = ({ ref, ...props }: TextFieldProps) => {
 			{...props}
 			ref={ref}
 			className={composeRenderProps(props.className, (className, renderProps) =>
-				field({ ...renderProps, className }),
+				textFieldStyles({ ...renderProps, className }),
 			)}
 		>
 			{composeRenderProps(props.children, (children, { isInvalid, isDisabled }) => (
@@ -43,5 +43,5 @@ const TextField = ({ ref, ...props }: TextFieldProps) => {
 	);
 };
 
-export { TextField, TextFieldContext };
+export { TextField, TextFieldContext, textFieldStyles };
 export type { TextFieldProps };

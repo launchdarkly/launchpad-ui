@@ -19,8 +19,8 @@ import styles from './styles/Select.module.css';
 import baseStyles from './styles/base.module.css';
 import { useLPContextProps } from './utils';
 
-const select = cva(styles.select);
-const value = cva(styles.value);
+const selectStyles = cva(styles.select);
+const selectValueStyles = cva(styles.value);
 
 interface SelectProps<T extends object> extends AriaSelectProps<T> {
 	ref?: Ref<HTMLDivElement>;
@@ -48,7 +48,7 @@ const Select = <T extends object>({ ref, ...props }: SelectProps<T>) => {
 			{...props}
 			ref={ref}
 			className={composeRenderProps(props.className, (className, renderProps) =>
-				select({ ...renderProps, className }),
+				selectStyles({ ...renderProps, className }),
 			)}
 		>
 			{composeRenderProps(props.children, (children, { isInvalid }) => (
@@ -83,11 +83,11 @@ const SelectValue = <T extends object>({ ref, ...props }: SelectValueProps<T>) =
 			{...props}
 			ref={ref}
 			className={composeRenderProps(props.className, (className, renderProps) =>
-				value({ ...renderProps, className }),
+				selectValueStyles({ ...renderProps, className }),
 			)}
 		/>
 	);
 };
 
-export { Select, SelectContext, SelectValue, SelectValueContext };
+export { Select, SelectContext, SelectValue, SelectValueContext, selectStyles, selectValueStyles };
 export type { SelectProps, SelectValueProps };

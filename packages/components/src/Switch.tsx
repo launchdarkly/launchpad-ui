@@ -8,7 +8,7 @@ import { Switch as AriaSwitch, composeRenderProps } from 'react-aria-components'
 import styles from './styles/Switch.module.css';
 import { useLPContextProps } from './utils';
 
-const _switch = cva(styles.switch);
+const switchStyles = cva(styles.switch);
 
 interface SwitchProps extends AriaSwitchProps {
 	ref?: Ref<HTMLLabelElement>;
@@ -28,7 +28,7 @@ const Switch = ({ ref, ...props }: SwitchProps) => {
 			{...props}
 			ref={ref}
 			className={composeRenderProps(props.className, (className, renderProps) =>
-				_switch({ ...renderProps, className }),
+				switchStyles({ ...renderProps, className }),
 			)}
 		>
 			{composeRenderProps(props.children, (children, { isSelected }) => (
@@ -45,5 +45,5 @@ const Switch = ({ ref, ...props }: SwitchProps) => {
 	);
 };
 
-export { Switch, SwitchContext };
+export { Switch, SwitchContext, switchStyles };
 export type { SwitchProps };

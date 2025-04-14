@@ -29,7 +29,7 @@ import styles from './styles/DatePicker.module.css';
 import baseStyles from './styles/base.module.css';
 import { useLPContextProps } from './utils';
 
-const picker = cva(styles.picker);
+const datePickerStyles = cva(styles.picker);
 
 interface DatePickerProps<T extends DateValue> extends AriaDatePickerProps<T> {
 	ref?: Ref<HTMLDivElement>;
@@ -72,7 +72,7 @@ const DatePicker = <T extends DateValue>({ ref, ...props }: DatePickerProps<T>) 
 			{...props}
 			ref={ref}
 			className={composeRenderProps(props.className, (className, renderProps) =>
-				picker({ ...renderProps, className }),
+				datePickerStyles({ ...renderProps, className }),
 			)}
 		>
 			{composeRenderProps(props.children, (children, { isDisabled, isInvalid }) =>
@@ -138,7 +138,7 @@ const DateRangePicker = <T extends DateValue>({ ref, ...props }: DateRangePicker
 			{...props}
 			ref={ref}
 			className={composeRenderProps(props.className, (className, renderProps) =>
-				picker({ ...renderProps, className }),
+				datePickerStyles({ ...renderProps, className }),
 			)}
 		>
 			{composeRenderProps(props.children, (children, { isDisabled, isInvalid }) =>
@@ -207,6 +207,6 @@ export {
 	DatePickerValue,
 	DateRangePickerContext,
 	DateRangePickerValue,
-	ButtonContext,
+	datePickerStyles,
 };
 export type { DatePickerProps, DateRangePickerProps };

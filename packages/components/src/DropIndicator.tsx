@@ -6,7 +6,7 @@ import { DropIndicator as AriaDropIndicator, composeRenderProps } from 'react-ar
 
 import styles from './styles/DropIndicator.module.css';
 
-const indicator = cva(styles.indicator);
+const dropIndicatorStyles = cva(styles.indicator);
 
 interface DropIndicatorProps extends AriaDropIndicatorProps {
 	ref?: Ref<HTMLElement>;
@@ -21,11 +21,11 @@ const DropIndicator = ({ ref, ...props }: DropIndicatorProps) => {
 			{...props}
 			ref={ref}
 			className={composeRenderProps(props.className, (className, renderProps) =>
-				indicator({ ...renderProps, className }),
+				dropIndicatorStyles({ ...renderProps, className }),
 			)}
 		/>
 	);
 };
 
-export { DropIndicator };
+export { DropIndicator, dropIndicatorStyles };
 export type { DropIndicatorProps };

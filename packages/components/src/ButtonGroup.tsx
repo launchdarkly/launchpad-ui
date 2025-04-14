@@ -16,7 +16,7 @@ import {
 import styles from './styles/ButtonGroup.module.css';
 import { useLPContextProps } from './utils';
 
-const buttonGroup = cva(styles.base, {
+const buttonGroupStyles = cva(styles.base, {
 	variants: {
 		spacing: {
 			basic: styles.basic,
@@ -33,7 +33,7 @@ const buttonGroup = cva(styles.base, {
 	},
 });
 
-interface ButtonGroupProps extends GroupProps, VariantProps<typeof buttonGroup> {
+interface ButtonGroupProps extends GroupProps, VariantProps<typeof buttonGroupStyles> {
 	orientation?: Orientation | null;
 	ref?: Ref<HTMLDivElement>;
 }
@@ -49,7 +49,7 @@ const ButtonGroup = ({ ref, ...props }: ButtonGroupProps) => {
 			{...props}
 			ref={ref}
 			className={composeRenderProps(props.className, (className, renderProps) =>
-				buttonGroup({ ...renderProps, spacing, orientation, className }),
+				buttonGroupStyles({ ...renderProps, spacing, orientation, className }),
 			)}
 			data-orientation={orientation ?? undefined}
 		>
@@ -67,5 +67,5 @@ const ButtonGroup = ({ ref, ...props }: ButtonGroupProps) => {
 	);
 };
 
-export { ButtonGroup, ButtonGroupContext };
+export { ButtonGroup, ButtonGroupContext, buttonGroupStyles };
 export type { ButtonGroupProps };

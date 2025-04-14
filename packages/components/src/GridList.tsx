@@ -18,8 +18,8 @@ import { IconButton } from './IconButton';
 import styles from './styles/GridList.module.css';
 import { useLPContextProps } from './utils';
 
-const list = cva(styles.list);
-const item = cva(styles.item);
+const gridListStyles = cva(styles.list);
+const gridListItemStyles = cva(styles.item);
 
 interface GridListProps<T extends object> extends AriaGridListProps<T> {
 	ref?: Ref<HTMLDivElement>;
@@ -44,7 +44,7 @@ const GridList = <T extends object>({ ref, ...props }: GridListProps<T>) => {
 			{...props}
 			ref={ref}
 			className={composeRenderProps(props.className, (className, renderProps) =>
-				list({ ...renderProps, className }),
+				gridListStyles({ ...renderProps, className }),
 			)}
 		/>
 	);
@@ -64,7 +64,7 @@ const GridListItem = <T extends object>({ ref, ...props }: GridListItemProps<T>)
 			{...props}
 			ref={ref}
 			className={composeRenderProps(props.className, (className, renderProps) =>
-				item({ ...renderProps, className }),
+				gridListItemStyles({ ...renderProps, className }),
 			)}
 		>
 			{composeRenderProps(
@@ -86,5 +86,5 @@ const GridListItem = <T extends object>({ ref, ...props }: GridListItemProps<T>)
 	);
 };
 
-export { GridList, GridListContext, GridListItem };
+export { GridList, GridListContext, GridListItem, gridListItemStyles, gridListStyles };
 export type { GridListProps, GridListItemProps };

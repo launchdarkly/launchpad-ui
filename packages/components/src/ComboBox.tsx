@@ -18,7 +18,7 @@ import { PopoverContext } from './Popover';
 import styles from './styles/ComboBox.module.css';
 import { useLPContextProps } from './utils';
 
-const box = cva(styles.box);
+const comboBoxStyles = cva(styles.box);
 
 interface ComboBoxProps<T extends object> extends AriaComboBoxProps<T> {
 	ref?: Ref<HTMLDivElement>;
@@ -58,7 +58,7 @@ const ComboBox = <T extends object>({ ref, ...props }: ComboBoxProps<T>) => {
 			{...props}
 			ref={ref}
 			className={composeRenderProps(props.className, (className, renderProps) =>
-				box({ ...renderProps, className }),
+				comboBoxStyles({ ...renderProps, className }),
 			)}
 		>
 			{composeRenderProps(props.children, (children, { isInvalid, isDisabled }) => (
@@ -97,5 +97,5 @@ const ComboBoxClearButton = ({ ref, ...props }: ComboBoxClearButtonProps) => {
 	);
 };
 
-export { ComboBox, ComboBoxClearButton, ComboBoxContext };
+export { ComboBox, ComboBoxClearButton, ComboBoxContext, comboBoxStyles };
 export type { ComboBoxProps, ComboBoxClearButtonProps };

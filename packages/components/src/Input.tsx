@@ -9,7 +9,7 @@ import { Input as AriaInput, composeRenderProps } from 'react-aria-components';
 import styles from './styles/Input.module.css';
 import { useLPContextProps } from './utils';
 
-const input = cva(styles.base, {
+const inputStyles = cva(styles.base, {
 	variants: {
 		variant: {
 			default: styles._default,
@@ -21,7 +21,7 @@ const input = cva(styles.base, {
 	},
 });
 
-interface InputVariants extends VariantProps<typeof input> {}
+interface InputVariants extends VariantProps<typeof inputStyles> {}
 interface InputProps extends AriaInputProps, InputVariants {
 	ref?: Ref<HTMLInputElement>;
 }
@@ -42,11 +42,11 @@ const Input = ({ ref, ...props }: InputProps) => {
 			{...props}
 			ref={ref}
 			className={composeRenderProps(props.className, (className, renderProps) =>
-				input({ ...renderProps, variant, className }),
+				inputStyles({ ...renderProps, variant, className }),
 			)}
 		/>
 	);
 };
 
-export { Input, input, InputContext };
+export { Input, InputContext, inputStyles };
 export type { InputProps, InputVariants };

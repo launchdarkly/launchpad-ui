@@ -20,9 +20,9 @@ import { IconButton } from './IconButton';
 import styles from './styles/TagGroup.module.css';
 import { useLPContextProps } from './utils';
 
-const group = cva(styles.group);
-const list = cva(styles.list);
-const tag = cva(styles.tag, {
+const tagGroupStyles = cva(styles.group);
+const tagListStyles = cva(styles.list);
+const tagStyles = cva(styles.tag, {
 	variants: {
 		size: {
 			small: styles.small,
@@ -44,7 +44,7 @@ const tag = cva(styles.tag, {
 	},
 });
 
-interface TagVariants extends VariantProps<typeof tag> {}
+interface TagVariants extends VariantProps<typeof tagStyles> {}
 interface TagProps extends AriaTagProps, TagVariants {
 	ref?: Ref<HTMLDivElement>;
 }
@@ -70,7 +70,7 @@ const TagGroup = ({ ref, ...props }: TagGroupProps) => {
 	[props, ref] = useLPContextProps(props, ref, TagGroupContext);
 	const { className } = props;
 
-	return <AriaTagGroup {...props} ref={ref} className={group({ className })} />;
+	return <AriaTagGroup {...props} ref={ref} className={tagGroupStyles({ className })} />;
 };
 
 /**
@@ -83,7 +83,7 @@ const TagList = <T extends object>({ ref, ...props }: TagListProps<T>) => {
 			{...props}
 			ref={ref}
 			className={composeRenderProps(props.className, (className, renderProps) =>
-				list({ ...renderProps, className }),
+				tagListStyles({ ...renderProps, className }),
 			)}
 		/>
 	);
@@ -101,7 +101,7 @@ const Tag = ({ size = 'medium', variant = 'default', ref, ...props }: TagProps) 
 			{...props}
 			ref={ref}
 			className={composeRenderProps(props.className, (className, renderProps) =>
-				tag({ ...renderProps, size, variant, className }),
+				tagStyles({ ...renderProps, size, variant, className }),
 			)}
 		>
 			{composeRenderProps(props.children, (children, { allowsRemoving }) => (
@@ -122,5 +122,14 @@ const Tag = ({ size = 'medium', variant = 'default', ref, ...props }: TagProps) 
 	);
 };
 
-export { TagGroup, TagGroupContext, TagList, TagListContext, Tag, tag };
+export {
+	TagGroup,
+	TagGroupContext,
+	TagList,
+	TagListContext,
+	Tag,
+	tagGroupStyles,
+	tagListStyles,
+	tagStyles,
+};
 export type { TagGroupProps, TagListProps, TagProps, TagVariants };

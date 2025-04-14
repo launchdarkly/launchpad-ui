@@ -18,14 +18,14 @@ import popoverStyles from './styles/Popover.module.css';
 import styles from './styles/Tooltip.module.css';
 import { useLPContextProps } from './utils';
 
-interface TooltipProps extends AriaTooltipProps, VariantProps<typeof tooltip> {
+interface TooltipProps extends AriaTooltipProps, VariantProps<typeof tooltipStyles> {
 	ref?: Ref<HTMLDivElement>;
 }
 interface TooltipTriggerProps extends TooltipTriggerComponentProps {}
 
 const TooltipContext = createContext<ContextValue<TooltipProps, HTMLDivElement>>(null);
 
-const tooltip = cva(styles.base, {
+const tooltipStyles = cva(styles.base, {
 	variants: {
 		variant: {
 			default: styles.tooltip,
@@ -54,7 +54,7 @@ const Tooltip = ({ ref, ...props }: TooltipProps) => {
 			{...props}
 			ref={ref}
 			className={composeRenderProps(props.className, (className, renderProps) =>
-				tooltip({ ...renderProps, variant, className }),
+				tooltipStyles({ ...renderProps, variant, className }),
 			)}
 			data-trigger={variant === 'popover' ? 'DialogTrigger' : undefined}
 		/>
@@ -66,5 +66,5 @@ const TooltipTrigger = (props: TooltipTriggerProps) => {
 	return <AriaTooltipTrigger delay={delay} closeDelay={closeDelay} {...props} />;
 };
 
-export { Tooltip, TooltipContext, TooltipTrigger };
+export { Tooltip, TooltipContext, TooltipTrigger, tooltipStyles };
 export type { TooltipProps, TooltipTriggerProps };

@@ -8,7 +8,7 @@ import { DropZone as AriaDropZone, composeRenderProps } from 'react-aria-compone
 import styles from './styles/DropZone.module.css';
 import { useLPContextProps } from './utils';
 
-const zone = cva(styles.zone);
+const dropZoneStyles = cva(styles.zone);
 
 interface DropZoneProps extends AriaDropZoneProps {
 	ref?: Ref<HTMLDivElement>;
@@ -28,11 +28,11 @@ const DropZone = ({ ref, ...props }: DropZoneProps) => {
 			{...props}
 			ref={ref}
 			className={composeRenderProps(props.className, (className, renderProps) =>
-				zone({ ...renderProps, className }),
+				dropZoneStyles({ ...renderProps, className }),
 			)}
 		/>
 	);
 };
 
-export { DropZone, DropZoneContext };
+export { DropZone, DropZoneContext, dropZoneStyles };
 export type { DropZoneProps };

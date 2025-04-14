@@ -6,11 +6,11 @@ import { cva, cx } from 'class-variance-authority';
 import { createContext } from 'react';
 import { TextArea as AriaTextArea, composeRenderProps } from 'react-aria-components';
 
-import { input } from './Input';
+import { inputStyles } from './Input';
 import styles from './styles/TextArea.module.css';
 import { useLPContextProps } from './utils';
 
-const area = cva(styles.area);
+const textAreaStyles = cva(styles.area);
 
 interface TextAreaProps extends AriaTextAreaProps, InputVariants {
 	ref?: Ref<HTMLTextAreaElement>;
@@ -32,11 +32,11 @@ const TextArea = ({ ref, ...props }: TextAreaProps) => {
 			{...props}
 			ref={ref}
 			className={composeRenderProps(props.className, (className, renderProps) =>
-				cx(input({ variant }), area({ ...renderProps, className })),
+				cx(inputStyles({ variant }), textAreaStyles({ ...renderProps, className })),
 			)}
 		/>
 	);
 };
 
-export { TextArea, TextAreaContext };
+export { TextArea, TextAreaContext, textAreaStyles };
 export type { TextAreaProps };

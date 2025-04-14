@@ -20,10 +20,10 @@ import {
 import styles from './styles/Tabs.module.css';
 import { useLPContextProps } from './utils';
 
-const list = cva(styles.list);
-const panel = cva(styles.panel);
-const tab = cva(styles.tab);
-const tabs = cva(styles.tabs);
+const tabListStyles = cva(styles.list);
+const tabPanelStyles = cva(styles.panel);
+const tabStyles = cva(styles.tab);
+const tabsStyles = cva(styles.tabs);
 
 interface TabsProps extends AriaTabsProps {
 	ref?: Ref<HTMLDivElement>;
@@ -55,7 +55,7 @@ const Tabs = ({ ref, ...props }: TabsProps) => {
 			{...props}
 			ref={ref}
 			className={composeRenderProps(props.className, (className, renderProps) =>
-				tabs({ ...renderProps, className }),
+				tabsStyles({ ...renderProps, className }),
 			)}
 		/>
 	);
@@ -73,7 +73,7 @@ const TabList = <T extends object>({ ref, ...props }: TabListProps<T>) => {
 			{...props}
 			ref={ref}
 			className={composeRenderProps(props.className, (className, renderProps) =>
-				list({ ...renderProps, className }),
+				tabListStyles({ ...renderProps, className }),
 			)}
 		/>
 	);
@@ -90,7 +90,7 @@ const Tab = ({ ref, ...props }: TabProps) => {
 			{...props}
 			ref={ref}
 			className={composeRenderProps(props.className, (className, renderProps) =>
-				tab({ ...renderProps, className }),
+				tabStyles({ ...renderProps, className }),
 			)}
 		/>
 	);
@@ -107,11 +107,21 @@ const TabPanel = ({ ref, ...props }: TabPanelProps) => {
 			{...props}
 			ref={ref}
 			className={composeRenderProps(props.className, (className, renderProps) =>
-				panel({ ...renderProps, className }),
+				tabPanelStyles({ ...renderProps, className }),
 			)}
 		/>
 	);
 };
 
-export { Tab, Tabs, TabsContext, TabList, TabPanel };
+export {
+	Tab,
+	Tabs,
+	TabsContext,
+	TabList,
+	TabPanel,
+	tabListStyles,
+	tabPanelStyles,
+	tabStyles,
+	tabsStyles,
+};
 export type { TabProps, TabsProps, TabListProps, TabPanelProps };

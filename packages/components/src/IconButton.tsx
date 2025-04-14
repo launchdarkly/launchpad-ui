@@ -10,12 +10,12 @@ import { cva, cx } from 'class-variance-authority';
 import { createContext, useContext } from 'react';
 import { Button as AriaButton, composeRenderProps } from 'react-aria-components';
 
-import { button } from './Button';
+import { buttonStyles } from './Button';
 import { PerceivableContext } from './Perceivable';
 import styles from './styles/IconButton.module.css';
 import { useLPContextProps } from './utils';
 
-const iconButton = cva(styles.base, {
+const iconButtonStyles = cva(styles.base, {
 	variants: {
 		size: {
 			small: styles.small,
@@ -27,7 +27,7 @@ const iconButton = cva(styles.base, {
 	},
 });
 
-interface IconButtonVariants extends VariantProps<typeof iconButton> {
+interface IconButtonVariants extends VariantProps<typeof iconButtonStyles> {
 	variant?: Extract<ButtonVariants['variant'], 'default' | 'primary' | 'destructive' | 'minimal'>;
 }
 
@@ -66,7 +66,7 @@ const IconButton = ({ ref, ...props }: IconButtonProps) => {
 			{...perceivableProps}
 			ref={ref}
 			className={composeRenderProps(props.className, (className, renderProps) =>
-				cx(button({ ...renderProps, size, variant, className }), iconButton({ size })),
+				cx(buttonStyles({ ...renderProps, size, variant, className }), iconButtonStyles({ size })),
 			)}
 		>
 			<Icon name={icon} size="small" aria-hidden />
@@ -74,5 +74,5 @@ const IconButton = ({ ref, ...props }: IconButtonProps) => {
 	);
 };
 
-export { IconButton, IconButtonContext, iconButton };
+export { IconButton, IconButtonContext, iconButtonStyles };
 export type { IconButtonProps, IconButtonBaseProps };

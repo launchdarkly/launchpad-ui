@@ -8,7 +8,7 @@ import { RadioGroup as AriaRadioGroup, composeRenderProps } from 'react-aria-com
 import styles from './styles/RadioGroup.module.css';
 import { useLPContextProps } from './utils';
 
-const group = cva(styles.group);
+const radioGroupStyles = cva(styles.group);
 
 interface RadioGroupProps extends AriaRadioGroupProps {
 	ref?: Ref<HTMLDivElement>;
@@ -28,11 +28,11 @@ const RadioGroup = ({ ref, ...props }: RadioGroupProps) => {
 			{...props}
 			ref={ref}
 			className={composeRenderProps(props.className, (className, renderProps) =>
-				group({ ...renderProps, className }),
+				radioGroupStyles({ ...renderProps, className }),
 			)}
 		/>
 	);
 };
 
-export { RadioGroup, RadioGroupContext };
+export { RadioGroup, RadioGroupContext, radioGroupStyles };
 export type { RadioGroupProps };

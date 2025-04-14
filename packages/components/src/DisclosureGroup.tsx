@@ -6,7 +6,7 @@ import { DisclosureGroup as AriaDisclosureGroup } from 'react-aria-components';
 
 import styles from './styles/DisclosureGroup.module.css';
 
-const group = cva(styles.group);
+const disclosureGroupStyles = cva(styles.group);
 
 interface DisclosureGroupProps extends AriaDisclosureGroupProps {
 	ref?: Ref<HTMLDivElement>;
@@ -18,8 +18,10 @@ interface DisclosureGroupProps extends AriaDisclosureGroupProps {
  * https://react-spectrum.adobe.com/react-aria/DisclosureGroup.html
  */
 const DisclosureGroup = ({ className, ref, ...props }: DisclosureGroupProps) => {
-	return <AriaDisclosureGroup {...props} ref={ref} className={group({ className })} />;
+	return (
+		<AriaDisclosureGroup {...props} ref={ref} className={disclosureGroupStyles({ className })} />
+	);
 };
 
-export { DisclosureGroup };
+export { DisclosureGroup, disclosureGroupStyles };
 export type { DisclosureGroupProps };

@@ -28,14 +28,14 @@ import {
 	useSlottedContext,
 } from 'react-aria-components';
 
-import { button } from './Button';
+import { buttonStyles } from './Button';
 import styles from './styles/Calendar.module.css';
 import { useLPContextProps } from './utils';
 
-const calendar = cva(styles.calendar);
-const cell = cva(styles.cell);
-const grid = cva(styles.grid);
-const range = cva(styles.range);
+const calendarStyles = cva(styles.calendar);
+const calendarCellStyles = cva(styles.cell);
+const calendarGridStyles = cva(styles.grid);
+const rangeCalendarStyles = cva(styles.range);
 
 interface CalendarProps<T extends DateValue> extends AriaCalendarProps<T> {
 	ref?: Ref<HTMLDivElement>;
@@ -69,7 +69,7 @@ const Calendar = <T extends DateValue>({ ref, ...props }: CalendarProps<T>) => {
 			{...props}
 			ref={ref}
 			className={composeRenderProps(props.className, (className, renderProps) =>
-				calendar({ ...renderProps, className }),
+				calendarStyles({ ...renderProps, className }),
 			)}
 		/>
 	);
@@ -90,14 +90,14 @@ const CalendarCell = ({ ref, ...props }: CalendarCellProps) => {
 			ref={ref}
 			className={composeRenderProps(props.className, (className, renderProps) =>
 				cx(
-					button({
+					buttonStyles({
 						variant:
 							(context && renderProps.isSelected) ||
 							(rangeContext && (renderProps.isSelectionStart || renderProps.isSelectionEnd))
 								? 'primary'
 								: 'minimal',
 					}),
-					cell({ ...renderProps, className }),
+					calendarCellStyles({ ...renderProps, className }),
 				),
 			)}
 		>
@@ -134,7 +134,7 @@ const CalendarGrid = ({ ref, className, weekdayStyle = 'short', ...props }: Cale
 			weekdayStyle={weekdayStyle}
 			{...props}
 			ref={ref}
-			className={grid({ className })}
+			className={calendarGridStyles({ className })}
 		/>
 	);
 };
@@ -154,7 +154,7 @@ const RangeCalendar = <T extends DateValue>({ ref, ...props }: RangeCalendarProp
 			{...props}
 			ref={ref}
 			className={composeRenderProps(props.className, (className, renderProps) =>
-				cx(calendar(), range({ ...renderProps, className })),
+				cx(calendarStyles(), rangeCalendarStyles({ ...renderProps, className })),
 			)}
 		/>
 	);
@@ -170,6 +170,10 @@ export {
 	CalendarHeaderCell,
 	RangeCalendar,
 	RangeCalendarContext,
+	calendarCellStyles,
+	calendarGridStyles,
+	calendarStyles,
+	rangeCalendarStyles,
 };
 export type {
 	CalendarProps,

@@ -16,7 +16,7 @@ import {
 import styles from './styles/Modal.module.css';
 import { useLPContextProps } from './utils';
 
-const modal = cva(styles.base, {
+const modalStyles = cva(styles.base, {
 	variants: {
 		size: {
 			small: styles.small,
@@ -33,13 +33,13 @@ const modal = cva(styles.base, {
 		variant: 'default',
 	},
 });
-const overlay = cva(styles.overlay);
+const modalOverlayStyles = cva(styles.overlay);
 
-interface ModalProps extends AriaModalOverlayProps, VariantProps<typeof modal> {
+interface ModalProps extends AriaModalOverlayProps, VariantProps<typeof modalStyles> {
 	ref?: Ref<HTMLDivElement>;
 }
 
-interface ModalOverlayProps extends AriaModalOverlayProps, VariantProps<typeof modal> {
+interface ModalOverlayProps extends AriaModalOverlayProps {
 	ref?: Ref<HTMLDivElement>;
 }
 
@@ -59,7 +59,7 @@ const Modal = ({ ref, ...props }: ModalProps) => {
 			{...props}
 			ref={ref}
 			className={composeRenderProps(props.className, (className, renderProps) =>
-				modal({ ...renderProps, size, variant, className }),
+				modalStyles({ ...renderProps, size, variant, className }),
 			)}
 		/>
 	);
@@ -75,11 +75,11 @@ const ModalOverlay = ({ isDismissable = true, ref, ...props }: ModalOverlayProps
 			{...props}
 			ref={ref}
 			className={composeRenderProps(props.className, (className, renderProps) =>
-				overlay({ ...renderProps, className }),
+				modalOverlayStyles({ ...renderProps, className }),
 			)}
 		/>
 	);
 };
 
-export { Modal, ModalContext, ModalOverlay };
+export { Modal, ModalContext, ModalOverlay, modalOverlayStyles, modalStyles };
 export type { ModalProps, ModalOverlayProps };

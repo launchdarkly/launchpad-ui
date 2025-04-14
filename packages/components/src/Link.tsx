@@ -10,7 +10,7 @@ import { Link as AriaLink, composeRenderProps } from 'react-aria-components';
 import styles from './styles/Link.module.css';
 import { useLPContextProps } from './utils';
 
-const link = cva(styles.base, {
+const linkStyles = cva(styles.base, {
 	variants: {
 		variant: {
 			default: styles.default,
@@ -22,7 +22,7 @@ const link = cva(styles.base, {
 	},
 });
 
-interface LinkProps extends AriaLinkProps, VariantProps<typeof link>, DOMProps {
+interface LinkProps extends AriaLinkProps, VariantProps<typeof linkStyles>, DOMProps {
 	ref?: Ref<HTMLAnchorElement>;
 }
 
@@ -42,11 +42,11 @@ const Link = ({ ref, ...props }: LinkProps) => {
 			{...props}
 			ref={ref}
 			className={composeRenderProps(props.className, (className, renderProps) =>
-				link({ ...renderProps, variant, className }),
+				linkStyles({ ...renderProps, variant, className }),
 			)}
 		/>
 	);
 };
 
-export { Link, LinkContext };
+export { Link, LinkContext, linkStyles };
 export type { LinkProps };

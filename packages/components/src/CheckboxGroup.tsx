@@ -11,7 +11,7 @@ import { CheckboxGroup as AriaCheckboxGroup, composeRenderProps } from 'react-ar
 import styles from './styles/CheckboxGroup.module.css';
 import { useLPContextProps } from './utils';
 
-const group = cva(styles.group);
+const checkboxGroupStyles = cva(styles.group);
 
 interface CheckboxGroupProps extends AriaCheckboxGroupProps {
 	ref?: Ref<HTMLDivElement>;
@@ -31,11 +31,11 @@ const CheckboxGroup = ({ ref, ...props }: CheckboxGroupProps) => {
 			{...props}
 			ref={ref}
 			className={composeRenderProps(props.className, (className, renderProps) =>
-				group({ ...renderProps, className }),
+				checkboxGroupStyles({ ...renderProps, className }),
 			)}
 		/>
 	);
 };
 
-export { CheckboxGroup, CheckboxGroupContext };
+export { CheckboxGroup, CheckboxGroupContext, checkboxGroupStyles };
 export type { CheckboxGroupProps };
