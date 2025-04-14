@@ -94,6 +94,7 @@ export const Drawer: Story = {
 	play,
 	args: {
 		variant: 'drawer',
+		size: 'small',
 	},
 	parameters: {
 		chromatic: {
