@@ -9,7 +9,7 @@ import { Toolbar as AriaToolbar, composeRenderProps } from 'react-aria-component
 import styles from './styles/Toolbar.module.css';
 import { useLPContextProps } from './utils';
 
-const toolbar = cva(styles.base, {
+const toolbarStyles = cva(styles.base, {
 	variants: {
 		spacing: {
 			basic: styles.basic,
@@ -22,7 +22,7 @@ const toolbar = cva(styles.base, {
 	},
 });
 
-interface ToolbarProps extends AriaToolbarProps, VariantProps<typeof toolbar> {
+interface ToolbarProps extends AriaToolbarProps, VariantProps<typeof toolbarStyles> {
 	ref?: Ref<HTMLDivElement>;
 }
 
@@ -42,11 +42,11 @@ const Toolbar = ({ ref, ...props }: ToolbarProps) => {
 			{...props}
 			ref={ref}
 			className={composeRenderProps(props.className, (className, renderProps) =>
-				toolbar({ ...renderProps, spacing, className }),
+				toolbarStyles({ ...renderProps, spacing, className }),
 			)}
 		/>
 	);
 };
 
-export { Toolbar, ToolbarContext };
+export { Toolbar, ToolbarContext, toolbarStyles };
 export type { ToolbarProps };

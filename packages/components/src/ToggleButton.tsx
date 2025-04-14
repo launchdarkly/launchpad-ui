@@ -8,7 +8,7 @@ import type { ButtonVariants } from './Button';
 import { createContext } from 'react';
 import { ToggleButton as AriaToggleButton, composeRenderProps } from 'react-aria-components';
 
-import { button } from './Button';
+import { buttonStyles } from './Button';
 import { useLPContextProps } from './utils';
 
 interface ToggleButtonProps extends AriaToggleButtonProps, ButtonVariants {
@@ -31,7 +31,7 @@ const ToggleButton = ({ ref, ...props }: ToggleButtonProps) => {
 			{...props}
 			ref={ref}
 			className={composeRenderProps(props.className, (className, renderProps) =>
-				button({ ...renderProps, size, variant, className }),
+				buttonStyles({ ...renderProps, size, variant, className }),
 			)}
 		/>
 	);

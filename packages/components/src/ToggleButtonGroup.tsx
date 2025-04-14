@@ -14,7 +14,7 @@ import {
 import styles from './styles/ToggleButtonGroup.module.css';
 import { useLPContextProps } from './utils';
 
-const group = cva(styles.group);
+const toggleButtonGroupStyles = cva(styles.group);
 
 interface ToggleButtonGroupProps extends AriaToggleButtonGroupProps {
 	ref?: Ref<HTMLDivElement>;
@@ -35,11 +35,11 @@ const ToggleButtonGroup = ({ ref, ...props }: ToggleButtonGroupProps) => {
 			{...props}
 			ref={ref}
 			className={composeRenderProps(props.className, (className, renderProps) =>
-				group({ ...renderProps, className }),
+				toggleButtonGroupStyles({ ...renderProps, className }),
 			)}
 		/>
 	);
 };
 
-export { ToggleButtonGroup, ToggleButtonGroupContext };
+export { ToggleButtonGroup, ToggleButtonGroupContext, toggleButtonGroupStyles };
 export type { ToggleButtonGroupProps };

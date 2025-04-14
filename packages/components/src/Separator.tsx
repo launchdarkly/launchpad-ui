@@ -8,7 +8,7 @@ import { Separator as AriaSeparator } from 'react-aria-components';
 import styles from './styles/Separator.module.css';
 import { useLPContextProps } from './utils';
 
-const separator = cva(styles.separator);
+const separatorStyles = cva(styles.separator);
 
 interface SeparatorProps extends AriaSeparatorProps {
 	ref?: Ref<HTMLElement>;
@@ -20,8 +20,8 @@ const Separator = ({ ref, ...props }: SeparatorProps) => {
 	[props, ref] = useLPContextProps(props, ref, SeparatorContext);
 	const { className } = props;
 
-	return <AriaSeparator {...props} ref={ref} className={separator({ className })} />;
+	return <AriaSeparator {...props} ref={ref} className={separatorStyles({ className })} />;
 };
 
-export { Separator, SeparatorContext };
+export { Separator, SeparatorContext, separatorStyles };
 export type { SeparatorProps };

@@ -16,7 +16,7 @@ import { ProgressBar } from './ProgressBar';
 import styles from './styles/Button.module.css';
 import { useLPContextProps } from './utils';
 
-const button = cva(styles.base, {
+const buttonStyles = cva(styles.base, {
 	variants: {
 		size: {
 			small: styles.small,
@@ -37,7 +37,7 @@ const button = cva(styles.base, {
 	},
 });
 
-interface ButtonVariants extends VariantProps<typeof button> {}
+interface ButtonVariants extends VariantProps<typeof buttonStyles> {}
 interface ButtonProps extends AriaButtonProps, ButtonVariants {
 	ref?: Ref<HTMLButtonElement>;
 }
@@ -63,7 +63,7 @@ const Button = ({ ref, ...props }: ButtonProps) => {
 			{...perceivableProps}
 			ref={ref}
 			className={composeRenderProps(props.className, (className, renderProps) =>
-				button({ ...renderProps, size, variant, className }),
+				buttonStyles({ ...renderProps, size, variant, className }),
 			)}
 		>
 			{composeRenderProps(props.children, (children, { isPending }) => (
@@ -78,5 +78,5 @@ const Button = ({ ref, ...props }: ButtonProps) => {
 	);
 };
 
-export { Button, ButtonContext, button };
+export { Button, ButtonContext, buttonStyles };
 export type { ButtonProps, ButtonVariants };

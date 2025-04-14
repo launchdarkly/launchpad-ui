@@ -16,8 +16,8 @@ import {
 import styles from './styles/Disclosure.module.css';
 import { useLPContextProps } from './utils';
 
-const disclosure = cva(styles.disclosure);
-const panel = cva(styles.panel);
+const disclosureStyles = cva(styles.disclosure);
+const disclosurePanelStyles = cva(styles.panel);
 
 interface DisclosureProps extends AriaDisclosureProps {
 	ref?: Ref<HTMLDivElement>;
@@ -41,7 +41,7 @@ const Disclosure = ({ ref, ...props }: DisclosureProps) => {
 			{...props}
 			ref={ref}
 			className={composeRenderProps(props.className, (className, renderProps) =>
-				disclosure({ ...renderProps, className }),
+				disclosureStyles({ ...renderProps, className }),
 			)}
 		/>
 	);
@@ -58,11 +58,11 @@ const DisclosurePanel = ({ ref, ...props }: DisclosurePanelProps) => {
 			{...props}
 			ref={ref}
 			className={composeRenderProps(props.className, (className, renderProps) =>
-				panel({ ...renderProps, className }),
+				disclosurePanelStyles({ ...renderProps, className }),
 			)}
 		/>
 	);
 };
 
-export { Disclosure, DisclosureContext, DisclosurePanel };
+export { Disclosure, DisclosureContext, DisclosurePanel, disclosurePanelStyles, disclosureStyles };
 export type { DisclosureProps, DisclosurePanelProps };

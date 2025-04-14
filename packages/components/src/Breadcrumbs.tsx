@@ -19,8 +19,8 @@ import { LinkContext } from './Link';
 import styles from './styles/Breadcrumbs.module.css';
 import { useLPContextProps } from './utils';
 
-const crumbs = cva(styles.crumbs);
-const crumb = cva(styles.crumb);
+const breadCrumbsStyles = cva(styles.crumbs);
+const breadCrumbStyles = cva(styles.crumb);
 
 interface BreadcrumbsProps<T extends object> extends AriaBreadcrumbsProps<T> {
 	ref?: Ref<HTMLOListElement>;
@@ -43,7 +43,7 @@ const Breadcrumbs = <T extends object>({ ref, ...props }: BreadcrumbsProps<T>) =
 	[props, ref] = useLPContextProps(props, ref, BreadcrumbsContext);
 	const { className } = props;
 
-	return <AriaBreadcrumbs {...props} ref={ref} className={crumbs({ className })} />;
+	return <AriaBreadcrumbs {...props} ref={ref} className={breadCrumbsStyles({ className })} />;
 };
 
 /**
@@ -57,7 +57,7 @@ const Breadcrumb = ({ ref, ...props }: BreadcrumbProps) => {
 			{...props}
 			ref={ref}
 			className={composeRenderProps(props.className, (className, renderProps) =>
-				crumb({ ...renderProps, className }),
+				breadCrumbStyles({ ...renderProps, className }),
 			)}
 		>
 			{composeRenderProps(props.children, (children, { isCurrent }) => (
@@ -70,5 +70,5 @@ const Breadcrumb = ({ ref, ...props }: BreadcrumbProps) => {
 	);
 };
 
-export { Breadcrumbs, BreadcrumbsContext, Breadcrumb };
+export { Breadcrumbs, BreadcrumbsContext, Breadcrumb, breadCrumbStyles, breadCrumbsStyles };
 export type { BreadcrumbsProps, BreadcrumbProps };

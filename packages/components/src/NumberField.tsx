@@ -8,7 +8,7 @@ import { NumberField as AriaNumberField, composeRenderProps } from 'react-aria-c
 import styles from './styles/NumberField.module.css';
 import { useLPContextProps } from './utils';
 
-const number = cva(styles.number);
+const numberFieldStyles = cva(styles.number);
 
 interface NumberFieldProps extends AriaNumberFieldProps {
 	ref?: Ref<HTMLDivElement>;
@@ -36,11 +36,11 @@ const NumberField = ({ ref, ...props }: NumberFieldProps) => {
 			{...props}
 			ref={ref}
 			className={composeRenderProps(props.className, (className, renderProps) =>
-				number({ ...renderProps, className }),
+				numberFieldStyles({ ...renderProps, className }),
 			)}
 		/>
 	);
 };
 
-export { NumberField, NumberFieldContext };
+export { NumberField, NumberFieldContext, numberFieldStyles };
 export type { NumberFieldProps };

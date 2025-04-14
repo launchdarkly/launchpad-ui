@@ -12,8 +12,8 @@ import { Radio as AriaRadio, composeRenderProps } from 'react-aria-components';
 import styles from './styles/Radio.module.css';
 import { useLPContextProps } from './utils';
 
-const radio = cva(styles.radio);
-const circle = cva(styles.circle);
+const radioStyles = cva(styles.radio);
+const radioIconStyles = cva(styles.circle);
 
 interface RadioProps extends AriaRadioProps {
 	ref?: Ref<HTMLLabelElement>;
@@ -21,8 +21,8 @@ interface RadioProps extends AriaRadioProps {
 
 const RadioContext = createContext<ContextValue<RadioProps, HTMLLabelElement>>(null);
 
-const RadioInner = ({ isSelected }: Partial<RadioRenderProps>) => (
-	<div className={circle()}>
+const RadioIcon = ({ isSelected }: Partial<RadioRenderProps>) => (
+	<div className={radioIconStyles()}>
 		{isSelected ? (
 			<svg aria-hidden="true" className={styles.icon} viewBox="0 0 16 16">
 				<path
@@ -47,12 +47,12 @@ const Radio = ({ ref, ...props }: RadioProps) => {
 			{...props}
 			ref={ref}
 			className={composeRenderProps(props.className, (className, renderProps) =>
-				radio({ ...renderProps, className }),
+				radioStyles({ ...renderProps, className }),
 			)}
 		>
 			{composeRenderProps(props.children, (children, { isSelected }) => (
 				<>
-					<RadioInner isSelected={isSelected} />
+					<RadioIcon isSelected={isSelected} />
 					{children}
 				</>
 			))}
@@ -60,5 +60,5 @@ const Radio = ({ ref, ...props }: RadioProps) => {
 	);
 };
 
-export { Radio, RadioContext, RadioInner, radio };
+export { Radio, RadioContext, RadioIcon, radioIconStyles, radioStyles };
 export type { RadioProps };

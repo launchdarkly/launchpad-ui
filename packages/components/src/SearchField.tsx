@@ -8,7 +8,7 @@ import { SearchField as AriaSearchField, composeRenderProps } from 'react-aria-c
 import styles from './styles/SearchField.module.css';
 import { useLPContextProps } from './utils';
 
-const search = cva(styles.search);
+const searchFieldStyles = cva(styles.search);
 
 interface SearchFieldProps extends AriaSearchFieldProps {
 	ref?: Ref<HTMLDivElement>;
@@ -28,11 +28,11 @@ const SearchField = ({ ref, ...props }: SearchFieldProps) => {
 			{...props}
 			ref={ref}
 			className={composeRenderProps(props.className, (className, renderProps) =>
-				search({ ...renderProps, className }),
+				searchFieldStyles({ ...renderProps, className }),
 			)}
 		/>
 	);
 };
 
-export { SearchField, SearchFieldContext };
+export { SearchField, SearchFieldContext, searchFieldStyles };
 export type { SearchFieldProps };

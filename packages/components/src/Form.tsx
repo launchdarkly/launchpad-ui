@@ -10,7 +10,7 @@ import { LabelContext } from './Label';
 import styles from './styles/Form.module.css';
 import { useLPContextProps } from './utils';
 
-const form = cva(styles.form);
+const formStyles = cva(styles.form);
 
 interface FormProps extends AriaFormProps {
 	ref?: Ref<HTMLFormElement>;
@@ -32,7 +32,7 @@ const Form = ({ ref, ...props }: FormProps) => {
 		<AriaForm
 			{...props}
 			ref={ref}
-			className={form({ className })}
+			className={formStyles({ className })}
 			data-orientation={orientation || undefined}
 		>
 			<Provider values={[[LabelContext, { className: styles.label }]]}>{children}</Provider>
@@ -40,5 +40,5 @@ const Form = ({ ref, ...props }: FormProps) => {
 	);
 };
 
-export { Form, FormContext };
+export { Form, FormContext, formStyles };
 export type { FormProps };

@@ -22,7 +22,7 @@ import { flushSync } from 'react-dom';
 import { IconButton } from './IconButton';
 import styles from './styles/Toast.module.css';
 
-const region = cva(styles.region, {
+const toastRegionStyles = cva(styles.region, {
 	variants: {
 		placement: {
 			bottom: styles.bottom,
@@ -34,7 +34,7 @@ const region = cva(styles.region, {
 	},
 });
 
-const icon = cva(styles.icon, {
+const iconStyles = cva(styles.icon, {
 	variants: {
 		status: {
 			error: styles.error,
@@ -47,7 +47,7 @@ const icon = cva(styles.icon, {
 	},
 });
 
-const toast = cva(styles.toast, {
+const toastStyles = cva(styles.toast, {
 	variants: {
 		variant: {
 			default: styles.default,
@@ -59,9 +59,9 @@ const toast = cva(styles.toast, {
 	},
 });
 
-interface RegionVariants extends VariantProps<typeof region> {}
-interface IconVariants extends VariantProps<typeof icon> {}
-interface ToastVariants extends VariantProps<typeof toast> {}
+interface RegionVariants extends VariantProps<typeof toastRegionStyles> {}
+interface IconVariants extends VariantProps<typeof iconStyles> {}
+interface ToastVariants extends VariantProps<typeof toastStyles> {}
 
 interface ToastValue {
 	title?: ReactNode;
@@ -120,7 +120,7 @@ const Toast = ({ ref, variant, ...props }: ToastProps<LPToastContent>) => {
 			{...props}
 			ref={ref}
 			className={composeRenderProps(props.className, (className, renderProps) =>
-				toast({ ...renderProps, className, variant }),
+				toastStyles({ ...renderProps, className, variant }),
 			)}
 			data-theme="dark"
 		>
@@ -128,7 +128,7 @@ const Toast = ({ ref, variant, ...props }: ToastProps<LPToastContent>) => {
 				<>
 					<StatusIcon
 						kind={toast.content.status || 'info'}
-						className={icon({ status: toast.content.status })}
+						className={iconStyles({ status: toast.content.status })}
 					/>
 					<ToastContent>
 						<Text slot="title">{toast.content.title}</Text>
@@ -181,7 +181,7 @@ const ToastRegion = ({
 		<AriaToastRegion
 			queue={queue}
 			className={composeRenderProps(props.className, (className, renderProps) =>
-				region({ ...renderProps, className, placement }),
+				toastRegionStyles({ ...renderProps, className, placement }),
 			)}
 			{...props}
 		>
@@ -206,7 +206,7 @@ const SnackbarRegion = ({
 		<AriaToastRegion
 			queue={queue}
 			className={composeRenderProps(props.className, (className, renderProps) =>
-				region({ ...renderProps, className, placement }),
+				toastRegionStyles({ ...renderProps, className, placement }),
 			)}
 			{...props}
 		>
@@ -218,5 +218,14 @@ const SnackbarRegion = ({
 	);
 };
 
-export { snackbarQueue, toastQueue, Toast, ToastContent, ToastRegion, SnackbarRegion };
+export {
+	snackbarQueue,
+	toastQueue,
+	Toast,
+	ToastContent,
+	ToastRegion,
+	SnackbarRegion,
+	toastStyles,
+	toastRegionStyles,
+};
 export type { ToastOptions, ToastValue };

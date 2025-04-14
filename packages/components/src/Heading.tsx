@@ -8,7 +8,7 @@ import { Heading as AriaHeading } from 'react-aria-components';
 import styles from './styles/Heading.module.css';
 import { useLPContextProps } from './utils';
 
-const heading = cva(styles.heading);
+const headingStyles = cva(styles.heading);
 
 interface HeadingProps extends AriaHeadingProps {
 	ref?: Ref<HTMLHeadingElement>;
@@ -20,8 +20,8 @@ const Heading = ({ ref, ...props }: HeadingProps) => {
 	[props, ref] = useLPContextProps(props, ref, HeadingContext);
 	const { className } = props;
 
-	return <AriaHeading {...props} ref={ref} className={heading({ className })} />;
+	return <AriaHeading {...props} ref={ref} className={headingStyles({ className })} />;
 };
 
-export { Heading, HeadingContext };
+export { Heading, HeadingContext, headingStyles };
 export type { HeadingProps };

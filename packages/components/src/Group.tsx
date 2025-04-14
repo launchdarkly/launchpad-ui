@@ -6,11 +6,11 @@ import { cva, cx } from 'class-variance-authority';
 import { createContext } from 'react';
 import { Group as AriaGroup, composeRenderProps } from 'react-aria-components';
 
-import { input } from './Input';
+import { inputStyles } from './Input';
 import styles from './styles/Group.module.css';
 import { useLPContextProps } from './utils';
 
-const group = cva(styles.group);
+const groupStyles = cva(styles.group);
 
 interface GroupProps extends AriaGroupProps, InputVariants {
 	ref?: Ref<HTMLDivElement>;
@@ -32,11 +32,11 @@ const Group = ({ ref, ...props }: GroupProps) => {
 			{...props}
 			ref={ref}
 			className={composeRenderProps(props.className, (className, renderProps) =>
-				cx(input({ variant }), group({ ...renderProps, className })),
+				cx(inputStyles({ variant }), groupStyles({ ...renderProps, className })),
 			)}
 		/>
 	);
 };
 
-export { Group, GroupContext };
+export { Group, GroupContext, groupStyles };
 export type { GroupProps };

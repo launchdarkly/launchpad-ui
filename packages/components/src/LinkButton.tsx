@@ -5,7 +5,7 @@ import type { LinkProps } from './Link';
 import { createContext } from 'react';
 import { composeRenderProps } from 'react-aria-components';
 
-import { button } from './Button';
+import { buttonStyles } from './Button';
 import { Link } from './Link';
 import { useLPContextProps } from './utils';
 
@@ -27,7 +27,7 @@ const LinkButton = ({ ref, ...props }: LinkButtonProps) => {
 			{...props}
 			ref={ref}
 			className={composeRenderProps(props.className, (className, renderProps) =>
-				button({ ...renderProps, size, variant, className }),
+				buttonStyles({ ...renderProps, size, variant, className }),
 			)}
 			variant={null}
 		/>

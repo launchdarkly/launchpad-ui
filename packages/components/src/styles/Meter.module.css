@@ -57,7 +57,7 @@
 	dominant-baseline: middle;
 }
 
-.base {
+.icon {
 	height: var(--lp-size-128);
 	width: var(--lp-size-128);
 }

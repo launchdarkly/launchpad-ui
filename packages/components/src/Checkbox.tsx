@@ -12,11 +12,11 @@ import { Checkbox as AriaCheckbox, composeRenderProps } from 'react-aria-compone
 import styles from './styles/Checkbox.module.css';
 import { useLPContextProps } from './utils';
 
-const checkbox = cva(styles.checkbox);
-const box = cva(styles.box);
+const checkboxStyles = cva(styles.checkbox);
+const checkboxIconStyles = cva(styles.box);
 
-const CheckboxInner = ({ isSelected, isIndeterminate }: Partial<CheckboxRenderProps>) => (
-	<div className={box()}>
+const CheckboxIcon = ({ isSelected, isIndeterminate }: Partial<CheckboxRenderProps>) => (
+	<div className={checkboxIconStyles()}>
 		{isIndeterminate ? (
 			<svg aria-hidden="true" className={styles.icon} viewBox="0 0 16 16">
 				<path
@@ -55,13 +55,13 @@ const Checkbox = ({ ref, ...props }: CheckboxProps) => {
 			{...props}
 			ref={ref}
 			className={composeRenderProps(props.className, (className, renderProps) =>
-				checkbox({ ...renderProps, className }),
+				checkboxStyles({ ...renderProps, className }),
 			)}
 		>
 			{composeRenderProps(props.children, (children, { isSelected, isIndeterminate }) => (
 				<>
 					<div className={styles.container}>
-						<CheckboxInner isSelected={isSelected} isIndeterminate={isIndeterminate} />
+						<CheckboxIcon isSelected={isSelected} isIndeterminate={isIndeterminate} />
 					</div>
 					{children}
 				</>
@@ -70,5 +70,5 @@ const Checkbox = ({ ref, ...props }: CheckboxProps) => {
 	);
 };
 
-export { Checkbox, CheckboxContext, CheckboxInner, checkbox };
+export { Checkbox, CheckboxContext, CheckboxIcon, checkboxIconStyles, checkboxStyles };
 export type { CheckboxProps };

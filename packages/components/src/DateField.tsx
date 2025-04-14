@@ -22,9 +22,9 @@ import {
 import styles from './styles/DateField.module.css';
 import { useLPContextProps } from './utils';
 
-const field = cva(styles.field);
-const dateInput = cva(styles.input);
-const segment = cva(styles.segment);
+const dateFieldStyles = cva(styles.field);
+const dateInputStyles = cva(styles.input);
+const dateSegmentStyles = cva(styles.segment);
 
 interface DateFieldProps<T extends DateValue> extends AriaDateFieldProps<T> {
 	ref?: Ref<HTMLDivElement>;
@@ -59,7 +59,7 @@ const DateField = <T extends DateValue>({ ref, ...props }: DateFieldProps<T>) =>
 			{...props}
 			ref={ref}
 			className={composeRenderProps(props.className, (className, renderProps) =>
-				field({ ...renderProps, className }),
+				dateFieldStyles({ ...renderProps, className }),
 			)}
 		/>
 	);
@@ -76,7 +76,7 @@ const DateInput = ({ ref, ...props }: DateInputProps) => {
 			{...props}
 			ref={ref}
 			className={composeRenderProps(props.className, (className, renderProps) =>
-				cx(dateInput({ ...renderProps, className })),
+				cx(dateInputStyles({ ...renderProps, className })),
 			)}
 		/>
 	);
@@ -93,7 +93,7 @@ const DateSegment = ({ ref, ...props }: DateSegmentProps) => {
 			{...props}
 			ref={ref}
 			className={composeRenderProps(props.className, (className, renderProps) =>
-				segment({ ...renderProps, className }),
+				dateSegmentStyles({ ...renderProps, className }),
 			)}
 		/>
 	);
@@ -111,11 +111,21 @@ const TimeField = <T extends TimeValue>({ ref, ...props }: TimeFieldProps<T>) =>
 			{...props}
 			ref={ref}
 			className={composeRenderProps(props.className, (className, renderProps) =>
-				field({ ...renderProps, className }),
+				dateFieldStyles({ ...renderProps, className }),
 			)}
 		/>
 	);
 };
 
-export { DateField, DateFieldContext, DateInput, DateSegment, TimeField, TimeFieldContext };
+export {
+	DateField,
+	DateFieldContext,
+	DateInput,
+	DateSegment,
+	TimeField,
+	TimeFieldContext,
+	dateFieldStyles,
+	dateInputStyles,
+	dateSegmentStyles,
+};
 export type { DateFieldProps, DateInputProps, DateSegmentProps, TimeFieldProps };

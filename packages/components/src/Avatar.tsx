@@ -7,7 +7,7 @@ import { cva, cx } from 'class-variance-authority';
 import styles from './styles/Avatar.module.css';
 import { useImageLoadingStatus } from './utils';
 
-const avatar = cva(styles.base, {
+const avatarStyles = cva(styles.base, {
 	variants: {
 		size: {
 			small: styles.small,
@@ -32,7 +32,7 @@ const colors = cva(null, {
 	},
 });
 
-interface AvatarVariants extends VariantProps<typeof avatar> {}
+interface AvatarVariants extends VariantProps<typeof avatarStyles> {}
 
 interface AvatarProps extends ImgHTMLAttributes<HTMLImageElement>, AvatarVariants {
 	ref?: Ref<HTMLImageElement>;
@@ -58,7 +58,7 @@ const Avatar = ({ className, children, size = 'medium', ref, src, ...props }: Av
 			ref={ref}
 			src={src}
 			{...mergeProps(props, labelProps)}
-			className={avatar({ size, className })}
+			className={avatarStyles({ size, className })}
 		/>
 	);
 };
@@ -77,7 +77,7 @@ const InitialsAvatar = ({
 		<svg
 			role="img"
 			className={cx(
-				avatar({ size, className }),
+				avatarStyles({ size, className }),
 				colors({ color: color as keyof typeof colors }),
 				styles.initials,
 			)}
@@ -91,5 +91,5 @@ const InitialsAvatar = ({
 	);
 };
 
-export { Avatar, InitialsAvatar };
+export { Avatar, InitialsAvatar, avatarStyles };
 export type { AvatarProps, InitialsAvatarProps };

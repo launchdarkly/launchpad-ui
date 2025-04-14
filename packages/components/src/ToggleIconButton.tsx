@@ -7,8 +7,8 @@ import { cx } from 'class-variance-authority';
 import { createContext } from 'react';
 import { ToggleButton, composeRenderProps } from 'react-aria-components';
 
-import { button } from './Button';
-import { iconButton } from './IconButton';
+import { buttonStyles } from './Button';
+import { iconButtonStyles } from './IconButton';
 import { useLPContextProps } from './utils';
 
 interface ToggleIconButtonProps
@@ -34,7 +34,7 @@ const ToggleIconButton = ({ ref, ...props }: ToggleIconButtonProps) => {
 			{...props}
 			ref={ref}
 			className={composeRenderProps(props.className, (className, renderProps) =>
-				cx(button({ ...renderProps, size, variant, className }), iconButton({ size })),
+				cx(buttonStyles({ ...renderProps, size, variant, className }), iconButtonStyles({ size })),
 			)}
 		>
 			<Icon name={icon} size="small" aria-hidden />

@@ -8,7 +8,7 @@ import { FieldError as AriaFieldError, composeRenderProps } from 'react-aria-com
 import styles from './styles/FieldError.module.css';
 import { useLPContextProps } from './utils';
 
-const error = cva(styles.error);
+const fieldErrorStyles = cva(styles.error);
 
 interface FieldErrorProps extends AriaFieldErrorProps {
 	ref?: Ref<HTMLElement>;
@@ -26,11 +26,11 @@ const FieldError = ({ ref, ...props }: FieldErrorProps) => {
 			{...props}
 			ref={ref}
 			className={composeRenderProps(props.className, (className, renderProps) =>
-				error({ ...renderProps, className }),
+				fieldErrorStyles({ ...renderProps, className }),
 			)}
 		/>
 	);
 };
 
-export { FieldError, FieldErrorContext };
+export { FieldError, FieldErrorContext, fieldErrorStyles };
 export type { FieldErrorProps };

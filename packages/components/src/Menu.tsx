@@ -19,12 +19,12 @@ import {
 	composeRenderProps,
 } from 'react-aria-components';
 
-import { CheckboxInner, checkbox } from './Checkbox';
+import { CheckboxIcon, checkboxStyles } from './Checkbox';
 import styles from './styles/Menu.module.css';
 import { useLPContextProps } from './utils';
 
-const menu = cva(styles.menu);
-const item = cva(styles.item, {
+const menuStyles = cva(styles.menu);
+const menuItemStyles = cva(styles.item, {
 	variants: {
 		variant: {
 			default: styles.default,
@@ -39,7 +39,7 @@ const item = cva(styles.item, {
 interface MenuProps<T> extends AriaMenuProps<T> {
 	ref?: Ref<HTMLDivElement>;
 }
-interface MenuItemProps<T> extends AriaMenuItemProps<T>, VariantProps<typeof item> {
+interface MenuItemProps<T> extends AriaMenuItemProps<T>, VariantProps<typeof menuItemStyles> {
 	ref?: Ref<T>;
 }
 
@@ -58,7 +58,7 @@ const Menu = <T extends object>({ ref, ...props }: MenuProps<T>) => {
 			{...props}
 			ref={ref}
 			className={composeRenderProps(props.className, (className, renderProps) =>
-				menu({ ...renderProps, className }),
+				menuStyles({ ...renderProps, className }),
 			)}
 		/>
 	);
@@ -73,7 +73,7 @@ const MenuItem = <T extends object>({ variant = 'default', ref, ...props }: Menu
 			{...props}
 			ref={ref}
 			className={composeRenderProps(props.className, (className, renderProps) =>
-				item({ ...renderProps, variant, className }),
+				menuItemStyles({ ...renderProps, variant, className }),
 			)}
 		>
 			{composeRenderProps(
@@ -82,11 +82,11 @@ const MenuItem = <T extends object>({ variant = 'default', ref, ...props }: Menu
 					<>
 						{selectionMode === 'multiple' && (
 							<div
-								className={checkbox()}
+								className={checkboxStyles()}
 								data-selected={isSelected || undefined}
 								data-disabled={isDisabled || undefined}
 							>
-								<CheckboxInner isSelected={isSelected} />
+								<CheckboxIcon isSelected={isSelected} />
 							</div>
 						)}
 						<span className={styles.content}>{children}</span>
@@ -99,5 +99,5 @@ const MenuItem = <T extends object>({ variant = 'default', ref, ...props }: Menu
 	);
 };
 
-export { Menu, MenuContext, MenuItem, MenuTrigger, SubmenuTrigger };
+export { Menu, MenuContext, MenuItem, MenuTrigger, SubmenuTrigger, menuItemStyles, menuStyles };
 export type { MenuProps, MenuItemProps, MenuTriggerProps, SubmenuTriggerProps };

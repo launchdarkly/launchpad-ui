@@ -9,7 +9,7 @@ import { ProgressBar as AriaProgressBar, Text, composeRenderProps } from 'react-
 import styles from './styles/ProgressBar.module.css';
 import { useLPContextProps } from './utils';
 
-const progressBar = cva(styles.progress, {
+const progressBarStyles = cva(styles.progress, {
 	variants: {
 		variant: {
 			bar: styles.bar,
@@ -21,7 +21,7 @@ const progressBar = cva(styles.progress, {
 	},
 });
 
-const icon = cva(styles.base, {
+const iconStyles = cva(styles.base, {
 	variants: {
 		size: {
 			small: styles.small,
@@ -36,8 +36,8 @@ const icon = cva(styles.base, {
 
 interface ProgressBarProps
 	extends AriaProgressBarProps,
-		VariantProps<typeof icon>,
-		VariantProps<typeof progressBar> {
+		VariantProps<typeof iconStyles>,
+		VariantProps<typeof progressBarStyles> {
 	ref?: Ref<HTMLDivElement>;
 }
 
@@ -62,7 +62,7 @@ const ProgressBar = ({ ref, ...props }: ProgressBarProps) => {
 			{...props}
 			ref={ref}
 			className={composeRenderProps(props.className, (className, renderProps) =>
-				progressBar({ ...renderProps, variant, className }),
+				progressBarStyles({ ...renderProps, variant, className }),
 			)}
 		>
 			{composeRenderProps(
@@ -75,7 +75,7 @@ const ProgressBar = ({ ref, ...props }: ProgressBarProps) => {
 								viewBox="0 0 32 32"
 								fill="none"
 								strokeWidth={strokeWidth}
-								className={cx(icon({ size }), isIndeterminate && styles.indeterminate)}
+								className={cx(iconStyles({ size }), isIndeterminate && styles.indeterminate)}
 							>
 								<circle
 									cx={center}
@@ -111,5 +111,5 @@ const ProgressBar = ({ ref, ...props }: ProgressBarProps) => {
 	);
 };
 
-export { ProgressBar, ProgressBarContext };
+export { ProgressBar, ProgressBarContext, progressBarStyles };
 export type { ProgressBarProps };

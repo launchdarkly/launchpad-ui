@@ -25,8 +25,8 @@ interface OverlayArrowProps extends Omit<AriaOverlayArrowProps, 'children'> {
 
 const PopoverContext = createContext<ContextValue<PopoverProps, HTMLElement>>(null);
 
-const popover = cva(styles.popover);
-const arrow = cva(styles.arrow);
+const popoverStyles = cva(styles.popover);
+const overlayArrowStyles = cva(styles.arrow);
 
 /**
  * A popover is an overlay element positioned relative to a trigger.
@@ -44,7 +44,7 @@ const Popover = ({ ref, ...props }: PopoverProps) => {
 			{...props}
 			ref={ref}
 			className={composeRenderProps(props.className, (className, renderProps) =>
-				popover({ ...renderProps, className }),
+				popoverStyles({ ...renderProps, className }),
 			)}
 		/>
 	);
@@ -61,7 +61,7 @@ const OverlayArrow = ({ ref, ...props }: OverlayArrowProps) => {
 			{...props}
 			ref={ref}
 			className={composeRenderProps(props.className, (className, renderProps) =>
-				arrow({ ...renderProps, className }),
+				overlayArrowStyles({ ...renderProps, className }),
 			)}
 		>
 			{/* biome-ignore lint/a11y/noSvgWithoutTitle: <explanation> */}
@@ -72,5 +72,5 @@ const OverlayArrow = ({ ref, ...props }: OverlayArrowProps) => {
 	);
 };
 
-export { OverlayArrow, Popover, PopoverContext };
+export { OverlayArrow, Popover, PopoverContext, overlayArrowStyles, popoverStyles };
 export type { OverlayArrowProps, PopoverProps };

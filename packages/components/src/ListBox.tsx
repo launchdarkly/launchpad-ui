@@ -14,13 +14,12 @@ import {
 	composeRenderProps,
 } from 'react-aria-components';
 
-import { CheckboxInner } from './Checkbox';
-import { checkbox } from './Checkbox';
+import { CheckboxIcon, checkboxStyles } from './Checkbox';
 import styles from './styles/ListBox.module.css';
 import { useLPContextProps } from './utils';
 
-const box = cva(styles.box);
-const item = cva(styles.item);
+const listBoxStyles = cva(styles.box);
+const listBoxItemStyles = cva(styles.item);
 
 interface ListBoxProps<T> extends AriaListBoxProps<T> {
 	ref?: Ref<HTMLDivElement>;
@@ -44,7 +43,7 @@ const ListBox = <T extends object>({ ref, ...props }: ListBoxProps<T>) => {
 			{...props}
 			ref={ref}
 			className={composeRenderProps(props.className, (className, renderProps) =>
-				box({ ...renderProps, className }),
+				listBoxStyles({ ...renderProps, className }),
 			)}
 		/>
 	);
@@ -64,18 +63,18 @@ const ListBoxItem = <T extends object>({ ref, ...props }: ListBoxItemProps<T>) =
 			{...props}
 			ref={ref}
 			className={composeRenderProps(props.className, (className, renderProps) =>
-				item({ ...renderProps, className }),
+				listBoxItemStyles({ ...renderProps, className }),
 			)}
 		>
 			{composeRenderProps(props.children, (children, { selectionMode, isDisabled, isSelected }) => (
 				<>
 					{selectionMode === 'multiple' && (
 						<div
-							className={checkbox()}
+							className={checkboxStyles()}
 							data-selected={isSelected || undefined}
 							data-disabled={isDisabled || undefined}
 						>
-							<CheckboxInner isSelected={isSelected} />
+							<CheckboxIcon isSelected={isSelected} />
 						</div>
 					)}
 					<span className={styles.content}>{children}</span>
@@ -86,5 +85,5 @@ const ListBoxItem = <T extends object>({ ref, ...props }: ListBoxItemProps<T>) =
 	);
 };
 
-export { ListBox, ListBoxContext, ListBoxItem };
+export { ListBox, ListBoxContext, ListBoxItem, listBoxItemStyles, listBoxStyles };
 export type { ListBoxProps, ListBoxItemProps };

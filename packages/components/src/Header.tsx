@@ -8,7 +8,7 @@ import { Header as AriaHeader } from 'react-aria-components';
 import styles from './styles/Header.module.css';
 import { useLPContextProps } from './utils';
 
-const header = cva(styles.header);
+const headerStyles = cva(styles.header);
 
 interface HeaderProps extends HTMLAttributes<HTMLElement> {
 	ref?: Ref<HTMLElement>;
@@ -20,8 +20,8 @@ const Header = ({ ref, ...props }: HeaderProps) => {
 	[props, ref] = useLPContextProps(props, ref, HeaderContext);
 	const { className } = props;
 
-	return <AriaHeader {...props} ref={ref} className={header({ className })} />;
+	return <AriaHeader {...props} ref={ref} className={headerStyles({ className })} />;
 };
 
-export { Header, HeaderContext };
+export { Header, HeaderContext, headerStyles };
 export type { HeaderProps };

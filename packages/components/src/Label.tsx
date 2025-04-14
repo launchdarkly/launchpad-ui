@@ -8,7 +8,7 @@ import { Label as AriaLabel } from 'react-aria-components';
 import styles from './styles/Label.module.css';
 import { useLPContextProps } from './utils';
 
-const label = cva(styles.label);
+const labelStyles = cva(styles.label);
 
 interface LabelProps extends AriaLabelProps {
 	ref?: Ref<HTMLLabelElement>;
@@ -20,8 +20,8 @@ const Label = ({ ref, ...props }: LabelProps) => {
 	[props, ref] = useLPContextProps(props, ref, LabelContext);
 	const { className } = props;
 
-	return <AriaLabel {...props} ref={ref} className={cx(label({ className }))} />;
+	return <AriaLabel {...props} ref={ref} className={cx(labelStyles({ className }))} />;
 };
 
-export { Label, LabelContext };
+export { Label, LabelContext, labelStyles };
 export type { LabelProps };

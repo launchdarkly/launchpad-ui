@@ -25,7 +25,7 @@ interface FieldGroupProps extends FieldsetHTMLAttributes<HTMLFieldSetElement> {
 	ref?: Ref<HTMLFieldSetElement>;
 }
 
-const group = cva(styles.group);
+const fieldGroupStyles = cva(styles.group);
 
 /**
  * A field group represents a set of related form elements in a form.
@@ -46,7 +46,7 @@ const FieldGroup = ({
 		isDisabled,
 	} satisfies ContextType<typeof TextFieldContext>;
 	return (
-		<fieldset {...props} ref={ref} className={group({ className })}>
+		<fieldset {...props} ref={ref} className={fieldGroupStyles({ className })}>
 			<legend className={styles.legend}>{title}</legend>
 			<Provider
 				values={[
@@ -72,5 +72,5 @@ const FieldGroup = ({
 	);
 };
 
-export { FieldGroup };
+export { FieldGroup, fieldGroupStyles };
 export type { FieldGroupProps };
