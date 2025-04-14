@@ -16,7 +16,7 @@ figma.connect(
 				Minimal: 'minimal',
 				Destructive: 'destructive',
 			}),
-			size: figma.enum<IconButtonProps['size']>('Size', {
+			size: figma.enum<Exclude<IconButtonProps['size'], null>>('Size', {
 				Small: 'small',
 				Medium: 'medium',
 			}),

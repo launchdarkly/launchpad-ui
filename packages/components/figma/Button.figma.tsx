@@ -24,13 +24,13 @@ figma.connect(
 				false: undefined,
 			}),
 			label: figma.string('Label'),
-			variant: figma.enum<ButtonProps['variant']>('Variant', {
+			variant: figma.enum<Exclude<ButtonProps['variant'], null>>('Variant', {
 				Primary: 'primary',
 				Default: 'default',
 				Minimal: 'minimal',
 				Destructive: 'destructive',
 			}),
-			size: figma.enum<ButtonProps['size']>('Size', {
+			size: figma.enum<Exclude<ButtonProps['size'], null>>('Size', {
 				Small: 'small',
 				Medium: 'medium',
 				Large: 'large',
