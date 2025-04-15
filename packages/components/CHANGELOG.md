@@ -1,5 +1,13 @@
 # @launchpad-ui/components
 
+## 0.9.12
+
+### Patch Changes
+
+- [#1631](https://github.com/launchdarkly/launchpad-ui/pull/1631) [`90a7095`](https://github.com/launchdarkly/launchpad-ui/commit/90a7095ba1ce32b973de36eff2001860757933c0) Thanks [@Niznikr](https://github.com/Niznikr)! - Add sizes to `drawer` variant for `Modal`
+
+- [#1629](https://github.com/launchdarkly/launchpad-ui/pull/1629) [`d75bb10`](https://github.com/launchdarkly/launchpad-ui/commit/d75bb10344e4f7b18cd6b4a018106c83fee6d517) Thanks [@Niznikr](https://github.com/Niznikr)! - Export component styles
+
 ## 0.9.11
 
 ### Patch Changes
