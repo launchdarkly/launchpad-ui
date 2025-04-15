@@ -19,8 +19,8 @@ import { useLPContextProps } from './utils';
 const modalStyles = cva(styles.base, {
 	variants: {
 		size: {
-			small: styles.small,
-			medium: styles.medium,
+			small: undefined,
+			medium: undefined,
 			large: styles.large,
 		},
 		variant: {
@@ -32,6 +32,28 @@ const modalStyles = cva(styles.base, {
 		size: 'medium',
 		variant: 'default',
 	},
+	compoundVariants: [
+		{
+			variant: 'default',
+			size: 'small',
+			className: styles.defaultSmall,
+		},
+		{
+			variant: 'default',
+			size: 'medium',
+			className: styles.defaultMedium,
+		},
+		{
+			variant: 'drawer',
+			size: 'small',
+			className: styles.drawerSmall,
+		},
+		{
+			variant: 'drawer',
+			size: 'medium',
+			className: styles.drawerMedium,
+		},
+	],
 });
 const modalOverlayStyles = cva(styles.overlay);
 

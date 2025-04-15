@@ -69,6 +69,7 @@
 
 	& [slot='body'] {
 		overflow: auto;
+		flex: 1;
 	}
 
 	& [slot='footer'] {
@@ -85,16 +86,24 @@
 	}
 }
 
-.small {
+.defaultSmall {
 	width: var(--lp-size-480);
 }
 
-.medium {
+.defaultMedium {
 	width: var(--lp-size-640);
 }
 
 .large {
 	width: var(--lp-size-800);
+}
+
+.drawerSmall {
+	width: var(--lp-size-400);
+}
+
+.drawerMedium {
+	width: var(--lp-size-560);
 }
 
 .default {
@@ -112,11 +121,6 @@
 	top: 0;
 	bottom: 0;
 	right: 0;
-	width: var(--lp-size-400);
-
-	& [slot='footer'] {
-		justify-content: flex-start;
-	}
 
 	@media (prefers-reduced-motion: no-preference) {
 		&[data-entering] {
