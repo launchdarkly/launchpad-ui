@@ -1,5 +1,11 @@
 # @launchpad-ui/components
 
+## 0.9.13
+
+### Patch Changes
+
+- [#1632](https://github.com/launchdarkly/launchpad-ui/pull/1632) [`703e444`](https://github.com/launchdarkly/launchpad-ui/commit/703e4442c497b0f18f80ab6a25fbdcb8dc7fc7f3) Thanks [@Niznikr](https://github.com/Niznikr)! - Fix styles
+
 ## 0.9.12
 
 ### Patch Changes
