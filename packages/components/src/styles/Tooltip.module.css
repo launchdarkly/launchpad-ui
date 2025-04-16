@@ -17,10 +17,6 @@
 	isolation: isolate;
 	font: var(--lp-text-body-2-regular);
 	padding: var(--lp-spacing-200) var(--lp-spacing-300);
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	gap: var(--lp-spacing-200);
 	border-radius: var(--lp-border-radius-regular);
 	background-color: var(--lp-color-bg-overlay-secondary);
 	box-shadow:
@@ -31,6 +27,7 @@
 	transform: translate3d(0, 0, 0);
 	will-change: transform, opacity;
 	max-width: var(--lp-size-400);
+	overflow: auto;
 
 	&[data-placement='top'] {
 		--origin: translateY(4px);
