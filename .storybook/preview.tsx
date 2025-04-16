@@ -1,4 +1,4 @@
-import type { ReactRenderer } from '@storybook/react';
+import type { Preview, ReactRenderer } from '@storybook/react';
 import type { ReactNode } from 'react';
 import type { DecoratorFunction, GlobalTypes, Parameters } from 'storybook/internal/types';
 
@@ -54,7 +54,7 @@ const RouterProvider = ({ children }: { children: ReactNode }) => {
 	);
 };
 
-export const parameters: Parameters = {
+const parameters: Parameters = {
 	actions: { disable: true },
 	controls: { expanded: true },
 	options: {
@@ -85,16 +85,12 @@ export const parameters: Parameters = {
 		prefersReducedMotion: 'reduce',
 	},
 	docs: {
-		source: {
-			excludeDecorators: true,
-		},
 		theme: window.matchMedia('(prefers-color-scheme: dark)').matches ? themes.dark : themes.light,
 		codePanel: true,
 	},
-	tags: ['autodocs'],
 };
 
-export const decorators: DecoratorFunction<ReactRenderer>[] = [
+const decorators: DecoratorFunction<ReactRenderer>[] = [
 	(StoryFn, context) => {
 		const mirror = context.viewMode === 'story' ? context.globals.mirror : undefined;
 		const sideBySide = mirror === 'side-by-side';
@@ -139,7 +135,7 @@ export const decorators: DecoratorFunction<ReactRenderer>[] = [
 	}),
 ];
 
-export const globalTypes: GlobalTypes = {
+const globalTypes: GlobalTypes = {
 	mirror: {
 		name: 'Mirror',
 		description: 'Mirror themes',
@@ -154,3 +150,12 @@ export const globalTypes: GlobalTypes = {
 		},
 	},
 };
+
+const preview: Preview = {
+	tags: ['autodocs'],
+	parameters,
+	decorators,
+	globalTypes,
+};
+
+export default preview;
