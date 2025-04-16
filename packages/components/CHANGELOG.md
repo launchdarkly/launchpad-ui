@@ -1,5 +1,11 @@
 # @launchpad-ui/components
 
+## 0.9.14
+
+### Patch Changes
+
+- [#1635](https://github.com/launchdarkly/launchpad-ui/pull/1635) [`af444a0`](https://github.com/launchdarkly/launchpad-ui/commit/af444a073cc861bf1b884bdfc73ff86a658e6c98) Thanks [@Niznikr](https://github.com/Niznikr)! - Remove flex styles from `Tooltip`
+
 ## 0.9.13
 
 ### Patch Changes
