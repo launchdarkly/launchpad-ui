@@ -90,6 +90,7 @@
 	display: flex;
 	flex-direction: column;
 	font: var(--lp-text-body-2-regular);
+	align-items: flex-start;
 }
 
 .heading {
