@@ -181,17 +181,17 @@
 @media not (--tablet) {
 	.base {
 		width: 100vw;
+
+		& [slot='footer'] {
+			align-items: stretch;
+			flex-direction: column-reverse;
+		}
 	}
 
 	.default {
 		position: fixed;
 		bottom: 0;
 		border-radius: 0;
-
-		& [slot='footer'] {
-			align-items: stretch;
-			flex-direction: column-reverse;
-		}
 
 		@media (prefers-reduced-motion: no-preference) {
 			&[data-entering] {

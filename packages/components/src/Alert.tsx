@@ -31,7 +31,7 @@ const alertStyles = cva(styles.base, {
 	},
 });
 
-interface AlertVariants extends VariantProps<typeof alert> {}
+interface AlertVariants extends VariantProps<typeof alertStyles> {}
 
 interface AlertProps extends HTMLAttributes<HTMLDivElement>, AlertVariants {
 	isDismissable?: boolean;
