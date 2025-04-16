@@ -27,6 +27,7 @@
 	transform: translate3d(0, 0, 0);
 	will-change: transform, opacity;
 	max-width: var(--lp-size-400);
+	overflow: auto;
 
 	&[data-placement='top'] {
 		--origin: translateY(4px);
