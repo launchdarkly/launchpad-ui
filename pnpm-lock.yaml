@@ -178,31 +178,6 @@ importers:
         specifier: ^4.3.0
         version: 4.3.3
 
-  packages/alert:
-    dependencies:
-      '@launchpad-ui/button':
-        specifier: workspace:~
-        version: link:../button
-      '@launchpad-ui/icons':
-        specifier: workspace:~
-        version: link:../icons
-      '@launchpad-ui/tokens':
-        specifier: workspace:~
-        version: link:../tokens
-      '@react-stately/utils':
-        specifier: 3.10.6
-        version: 3.10.6(react@19.1.0)
-      classix:
-        specifier: 2.2.0
-        version: 2.2.0
-    devDependencies:
-      react:
-        specifier: 19.1.0
-        version: 19.1.0
-      react-dom:
-        specifier: 19.1.0
-        version: 19.1.0(react@19.1.0)
-
   packages/box:
     dependencies:
       '@launchpad-ui/tokens':
@@ -248,25 +223,6 @@ importers:
       '@radix-ui/react-slot':
         specifier: 1.2.0
         version: 1.2.0(@types/react@19.1.1)(react@19.1.0)
-      classix:
-        specifier: 2.2.0
-        version: 2.2.0
-    devDependencies:
-      react:
-        specifier: 19.1.0
-        version: 19.1.0
-      react-dom:
-        specifier: 19.1.0
-        version: 19.1.0(react@19.1.0)
-
-  packages/columns:
-    dependencies:
-      '@launchpad-ui/tokens':
-        specifier: workspace:~
-        version: link:../tokens
-      '@launchpad-ui/types':
-        specifier: workspace:~
-        version: link:../types
       classix:
         specifier: 2.2.0
         version: 2.2.0
@@ -332,18 +288,12 @@ importers:
 
   packages/core:
     dependencies:
-      '@launchpad-ui/alert':
-        specifier: workspace:~
-        version: link:../alert
       '@launchpad-ui/box':
         specifier: workspace:~
         version: link:../box
       '@launchpad-ui/button':
         specifier: workspace:~
         version: link:../button
-      '@launchpad-ui/columns':
-        specifier: workspace:~
-        version: link:../columns
       '@launchpad-ui/drawer':
         specifier: workspace:~
         version: link:../drawer
@@ -359,9 +309,6 @@ importers:
       '@launchpad-ui/form':
         specifier: workspace:~
         version: link:../form
-      '@launchpad-ui/inline':
-        specifier: workspace:~
-        version: link:../inline
       '@launchpad-ui/inline-edit':
         specifier: workspace:~
         version: link:../inline-edit
@@ -383,18 +330,12 @@ importers:
       '@launchpad-ui/portal':
         specifier: workspace:~
         version: link:../portal
-      '@launchpad-ui/stack':
-        specifier: workspace:~
-        version: link:../stack
       '@launchpad-ui/table':
         specifier: workspace:~
         version: link:../table
       '@launchpad-ui/tooltip':
         specifier: workspace:~
         version: link:../tooltip
-      '@launchpad-ui/types':
-        specifier: workspace:~
-        version: link:../types
     devDependencies:
       react:
         specifier: 19.1.0
@@ -569,25 +510,6 @@ importers:
       class-variance-authority:
         specifier: 0.7.0
         version: 0.7.0
-    devDependencies:
-      react:
-        specifier: 19.1.0
-        version: 19.1.0
-      react-dom:
-        specifier: 19.1.0
-        version: 19.1.0(react@19.1.0)
-
-  packages/inline:
-    dependencies:
-      '@launchpad-ui/tokens':
-        specifier: workspace:~
-        version: link:../tokens
-      '@launchpad-ui/types':
-        specifier: workspace:~
-        version: link:../types
-      classix:
-        specifier: 2.2.0
-        version: 2.2.0
     devDependencies:
       react:
         specifier: 19.1.0
@@ -818,25 +740,6 @@ importers:
         specifier: 19.1.0
         version: 19.1.0(react@19.1.0)
 
-  packages/stack:
-    dependencies:
-      '@launchpad-ui/tokens':
-        specifier: workspace:~
-        version: link:../tokens
-      '@launchpad-ui/types':
-        specifier: workspace:~
-        version: link:../types
-      classix:
-        specifier: 2.2.0
-        version: 2.2.0
-    devDependencies:
-      react:
-        specifier: 19.1.0
-        version: 19.1.0
-      react-dom:
-        specifier: 19.1.0
-        version: 19.1.0(react@19.1.0)
-
   packages/table:
     dependencies:
       '@launchpad-ui/tokens':
@@ -886,8 +789,6 @@ importers:
       react-dom:
         specifier: 19.1.0
         version: 19.1.0(react@19.1.0)
-
-  packages/types: {}
 
   packages/vars:
     dependencies:

@@ -33,16 +33,13 @@
 		"test": "exit 0"
 	},
 	"dependencies": {
-		"@launchpad-ui/alert": "workspace:~",
 		"@launchpad-ui/box": "workspace:~",
 		"@launchpad-ui/button": "workspace:~",
-		"@launchpad-ui/columns": "workspace:~",
 		"@launchpad-ui/drawer": "workspace:~",
 		"@launchpad-ui/dropdown": "workspace:~",
 		"@launchpad-ui/filter": "workspace:~",
 		"@launchpad-ui/focus-trap": "workspace:~",
 		"@launchpad-ui/form": "workspace:~",
-		"@launchpad-ui/inline": "workspace:~",
 		"@launchpad-ui/inline-edit": "workspace:~",
 		"@launchpad-ui/menu": "workspace:~",
 		"@launchpad-ui/modal": "workspace:~",
@@ -50,10 +47,8 @@
 		"@launchpad-ui/overlay": "workspace:~",
 		"@launchpad-ui/popover": "workspace:~",
 		"@launchpad-ui/portal": "workspace:~",
-		"@launchpad-ui/stack": "workspace:~",
 		"@launchpad-ui/table": "workspace:~",
-		"@launchpad-ui/tooltip": "workspace:~",
-		"@launchpad-ui/types": "workspace:~"
+		"@launchpad-ui/tooltip": "workspace:~"
 	},
 	"peerDependencies": {
 		"react": "^18.0.0 || ^19.0.0",
