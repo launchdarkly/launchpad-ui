@@ -1,5 +1,11 @@
 # @launchpad-ui/core
 
+## 0.55.0
+
+### Minor Changes
+
+- [#1637](https://github.com/launchdarkly/launchpad-ui/pull/1637) [`5f839c4`](https://github.com/launchdarkly/launchpad-ui/commit/5f839c428c43c88207349283450fc2a2cdee91b1) Thanks [@Niznikr](https://github.com/Niznikr)! - Remove alert, columns, inline, and stack packages
+
 ## 0.54.1
 
 ### Patch Changes
