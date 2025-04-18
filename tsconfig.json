@@ -3,10 +3,8 @@
 	"compilerOptions": {
 		"baseUrl": ".",
 		"paths": {
-			"@launchpad-ui/alert": ["./packages/alert/src"],
 			"@launchpad-ui/box": ["./packages/box/src"],
 			"@launchpad-ui/button": ["./packages/button/src"],
-			"@launchpad-ui/columns": ["./packages/columns/src"],
 			"@launchpad-ui/components": ["./packages/components/src"],
 			"@launchpad-ui/core": ["./packages/core/src"],
 			"@launchpad-ui/drawer": ["./packages/drawer/src"],
@@ -15,7 +13,6 @@
 			"@launchpad-ui/focus-trap": ["./packages/focus-trap/src"],
 			"@launchpad-ui/form": ["./packages/form/src"],
 			"@launchpad-ui/icons": ["./packages/icons/src"],
-			"@launchpad-ui/inline": ["./packages/inline/src"],
 			"@launchpad-ui/inline-edit": ["./packages/inline-edit/src"],
 			"@launchpad-ui/menu": ["./packages/menu/src"],
 			"@launchpad-ui/modal": ["./packages/modal/src"],
@@ -23,10 +20,8 @@
 			"@launchpad-ui/overlay": ["./packages/overlay/src"],
 			"@launchpad-ui/popover": ["./packages/popover/src"],
 			"@launchpad-ui/portal": ["./packages/portal/src"],
-			"@launchpad-ui/stack": ["./packages/stack/src"],
 			"@launchpad-ui/table": ["./packages/table/src"],
 			"@launchpad-ui/tooltip": ["./packages/tooltip/src"],
-			"@launchpad-ui/types": ["./packages/types/src"],
 			"@launchpad-ui/vars": ["./packages/vars/src"]
 		}
 	},
