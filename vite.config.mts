@@ -87,6 +87,7 @@ export default defineConfig({
 		},
 	},
 	build: {
+		target: 'es2022',
 		lib: {
 			entry: packageJSON.source,
 			formats: ['es', 'cjs'],
