@@ -1,5 +1,11 @@
 # @launchpad-ui/icons
 
+## 0.21.8
+
+### Patch Changes
+
+- [#1641](https://github.com/launchdarkly/launchpad-ui/pull/1641) [`9d74f7d`](https://github.com/launchdarkly/launchpad-ui/commit/9d74f7da3d07302dc0fa65e5a92b098bd8d94d37) Thanks [@awinders-launchdarkly](https://github.com/awinders-launchdarkly)! - add chart-bell and chart-forest icons
+
 ## 0.21.7
 
 ### Patch Changes
