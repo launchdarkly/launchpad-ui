@@ -1,5 +1,11 @@
 # @launchpad-ui/components
 
+## 0.9.16
+
+### Patch Changes
+
+- [#1643](https://github.com/launchdarkly/launchpad-ui/pull/1643) [`3bf865d`](https://github.com/launchdarkly/launchpad-ui/commit/3bf865d95d41a4684de07d09b31dfcdd7cc891e0) Thanks [@Niznikr](https://github.com/Niznikr)! - Ensure `Text` gets className from context
+
 ## 0.9.15
 
 ### Patch Changes
