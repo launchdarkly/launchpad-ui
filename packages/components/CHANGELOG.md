@@ -1,5 +1,11 @@
 # @launchpad-ui/components
 
+## 0.9.18
+
+### Patch Changes
+
+- [#1645](https://github.com/launchdarkly/launchpad-ui/pull/1645) [`29d9ab7`](https://github.com/launchdarkly/launchpad-ui/commit/29d9ab71bc629ecb7d2b4703796248e2cef9e6e4) Thanks [@Niznikr](https://github.com/Niznikr)! - Improve `Toolbar` styles
+
 ## 0.9.17
 
 ### Patch Changes
