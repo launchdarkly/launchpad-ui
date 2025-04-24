@@ -9,7 +9,7 @@ import type {
 	TimeValue,
 } from 'react-aria-components';
 
-import { cva, cx } from 'class-variance-authority';
+import { cva } from 'class-variance-authority';
 import { createContext } from 'react';
 import {
 	DateField as AriaDateField,
@@ -76,7 +76,7 @@ const DateInput = ({ ref, ...props }: DateInputProps) => {
 			{...props}
 			ref={ref}
 			className={composeRenderProps(props.className, (className, renderProps) =>
-				cx(dateInputStyles({ ...renderProps, className })),
+				dateInputStyles({ ...renderProps, className }),
 			)}
 		/>
 	);

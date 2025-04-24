@@ -3,9 +3,11 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { Icon } from '@launchpad-ui/icons';
 
 import { Button } from '../src/Button';
-import { Group } from '../src/Group';
+import { ButtonGroup } from '../src/ButtonGroup';
 import { IconButton } from '../src/IconButton';
 import { Separator } from '../src/Separator';
+import { ToggleButtonGroup } from '../src/ToggleButtonGroup';
+import { ToggleIconButton } from '../src/ToggleIconButton';
 import { Toolbar } from '../src/Toolbar';
 
 const meta: Meta<typeof Toolbar> = {
@@ -21,7 +23,7 @@ export const Example: Story = {
 	args: {
 		children: (
 			<>
-				<Group>
+				<ButtonGroup>
 					<Button variant="minimal">
 						<Icon name="filter-list" size="small" /> Filter{' '}
 						<Icon name="chevron-down" size="small" />
@@ -33,13 +35,13 @@ export const Example: Story = {
 						<Icon name="filter-tune" size="small" /> Display{' '}
 						<Icon name="chevron-down" size="small" />
 					</Button>
-				</Group>
-				<Separator orientation="vertical" />
-				<Group>
+				</ButtonGroup>
+				<Separator />
+				<ButtonGroup>
 					<Button variant="primary">Create</Button>
 					<IconButton icon="gear" variant="minimal" aria-label="settings" />
 					<IconButton icon="help" variant="minimal" aria-label="help" />
-				</Group>
+				</ButtonGroup>
 			</>
 		),
 	},
@@ -49,13 +51,11 @@ export const Orientation: Story = {
 	args: {
 		children: (
 			<>
-				<Group>
-					<IconButton icon="add" aria-label="add" />
-					<IconButton icon="edit" aria-label="edit" />
-					<IconButton icon="delete" aria-label="delete" />
-					<IconButton icon="gear" aria-label="settings" />
-					<IconButton icon="help" aria-label="help" />
-				</Group>
+				<IconButton icon="add" aria-label="add" />
+				<IconButton icon="edit" aria-label="edit" />
+				<IconButton icon="delete" aria-label="delete" />
+				<IconButton icon="gear" aria-label="settings" />
+				<IconButton icon="help" aria-label="help" />
 			</>
 		),
 		orientation: 'vertical',
@@ -67,13 +67,11 @@ export const Compact: Story = {
 	args: {
 		children: (
 			<>
-				<Group>
-					<IconButton icon="add" aria-label="add" />
-					<IconButton icon="edit" aria-label="edit" />
-					<IconButton icon="delete" aria-label="delete" />
-					<IconButton icon="gear" aria-label="settings" />
-					<IconButton icon="help" aria-label="help" />
-				</Group>
+				<IconButton icon="add" aria-label="add" />
+				<IconButton icon="edit" aria-label="edit" />
+				<IconButton icon="delete" aria-label="delete" />
+				<IconButton icon="gear" aria-label="settings" />
+				<IconButton icon="help" aria-label="help" />
 			</>
 		),
 		spacing: 'compact',
@@ -84,15 +82,36 @@ export const Large: Story = {
 	args: {
 		children: (
 			<>
-				<Group>
-					<IconButton icon="add" variant="minimal" aria-label="add" />
-					<IconButton icon="edit" variant="minimal" aria-label="edit" />
-					<IconButton icon="delete" variant="minimal" aria-label="delete" />
-					<IconButton icon="gear" variant="minimal" aria-label="settings" />
-					<IconButton icon="help" variant="minimal" aria-label="help" />
-				</Group>
+				<IconButton icon="add" variant="minimal" aria-label="add" />
+				<IconButton icon="edit" variant="minimal" aria-label="edit" />
+				<IconButton icon="delete" variant="minimal" aria-label="delete" />
+				<IconButton icon="gear" variant="minimal" aria-label="settings" />
+				<IconButton icon="help" variant="minimal" aria-label="help" />
 			</>
 		),
 		spacing: 'large',
+	},
+};
+
+export const Complex: Story = {
+	args: {
+		children: (
+			<>
+				<ButtonGroup spacing="compact">
+					<Button>Filter</Button>
+					<Button>Sort</Button>
+					<Button>Display</Button>
+				</ButtonGroup>
+				<ButtonGroup spacing="compact">
+					<Button>Create</Button>
+					<Button>Update</Button>
+				</ButtonGroup>
+				<ToggleButtonGroup>
+					<ToggleIconButton icon="star" aria-label="favorite" />
+					<ToggleIconButton icon="notifications" aria-label="notifications" />
+				</ToggleButtonGroup>
+			</>
+		),
+		spacing: 'compact',
 	},
 };
