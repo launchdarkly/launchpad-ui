@@ -8,9 +8,11 @@ import {
 	Toolbar as AriaToolbar,
 	Provider,
 	SeparatorContext,
+	ToggleButtonGroupContext,
 	composeRenderProps,
 } from 'react-aria-components';
 
+import { ButtonGroupContext } from './ButtonGroup';
 import styles from './styles/Toolbar.module.css';
 import { useLPContextProps } from './utils';
 
@@ -57,6 +59,8 @@ const Toolbar = ({ ref, ...props }: ToolbarProps) => {
 							SeparatorContext,
 							{ orientation: orientation === 'horizontal' ? 'vertical' : 'horizontal' },
 						],
+						[ButtonGroupContext, { orientation }],
+						[ToggleButtonGroupContext, { orientation }],
 					]}
 				>
 					{children}

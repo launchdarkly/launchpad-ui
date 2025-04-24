@@ -12,10 +12,6 @@
 		flex-direction: column;
 		align-items: start;
 	}
-
-	& [role='group'] {
-		display: contents;
-	}
 }
 
 .basic {
@@ -23,8 +19,7 @@
 }
 
 .compact {
-	composes: buttonGroup from './base.module.css';
-	gap: initial;
+	gap: var(--lp-spacing-200);
 }
 
 .large {
