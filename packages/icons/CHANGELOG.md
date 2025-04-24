@@ -1,5 +1,11 @@
 # @launchpad-ui/icons
 
+## 0.21.9
+
+### Patch Changes
+
+- [#1646](https://github.com/launchdarkly/launchpad-ui/pull/1646) [`a0d8c4d`](https://github.com/launchdarkly/launchpad-ui/commit/a0d8c4da4aa4b77ea4c33031cdf4cffa8bed86d3) Thanks [@Niznikr](https://github.com/Niznikr)! - Add missing `book-external-link`
+
 ## 0.21.8
 
 ### Patch Changes

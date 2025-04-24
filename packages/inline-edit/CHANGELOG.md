@@ -1,5 +1,14 @@
 # @launchpad-ui/inline-edit
 
+## 0.3.57
+
+### Patch Changes
+
+- Updated dependencies [[`a0d8c4d`](https://github.com/launchdarkly/launchpad-ui/commit/a0d8c4da4aa4b77ea4c33031cdf4cffa8bed86d3)]:
+  - @launchpad-ui/icons@0.21.9
+  - @launchpad-ui/button@0.12.50
+  - @launchpad-ui/form@0.11.57
+
 ## 0.3.56
 
 ### Patch Changes
