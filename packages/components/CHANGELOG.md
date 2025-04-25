@@ -1,5 +1,31 @@
 # @launchpad-ui/components
 
+## 0.9.18
+
+### Patch Changes
+
+- [#1645](https://github.com/launchdarkly/launchpad-ui/pull/1645) [`29d9ab7`](https://github.com/launchdarkly/launchpad-ui/commit/29d9ab71bc629ecb7d2b4703796248e2cef9e6e4) Thanks [@Niznikr](https://github.com/Niznikr)! - Improve `Toolbar` styles
+
+## 0.9.17
+
+### Patch Changes
+
+- Updated dependencies [[`a0d8c4d`](https://github.com/launchdarkly/launchpad-ui/commit/a0d8c4da4aa4b77ea4c33031cdf4cffa8bed86d3)]:
+  - @launchpad-ui/icons@0.21.9
+
+## 0.9.16
+
+### Patch Changes
+
+- [#1643](https://github.com/launchdarkly/launchpad-ui/pull/1643) [`3bf865d`](https://github.com/launchdarkly/launchpad-ui/commit/3bf865d95d41a4684de07d09b31dfcdd7cc891e0) Thanks [@Niznikr](https://github.com/Niznikr)! - Ensure `Text` gets className from context
+
+## 0.9.15
+
+### Patch Changes
+
+- Updated dependencies [[`9d74f7d`](https://github.com/launchdarkly/launchpad-ui/commit/9d74f7da3d07302dc0fa65e5a92b098bd8d94d37)]:
+  - @launchpad-ui/icons@0.21.8
+
 ## 0.9.14
 
 ### Patch Changes

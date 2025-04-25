@@ -1,5 +1,17 @@
 # @launchpad-ui/icons
 
+## 0.21.9
+
+### Patch Changes
+
+- [#1646](https://github.com/launchdarkly/launchpad-ui/pull/1646) [`a0d8c4d`](https://github.com/launchdarkly/launchpad-ui/commit/a0d8c4da4aa4b77ea4c33031cdf4cffa8bed86d3) Thanks [@Niznikr](https://github.com/Niznikr)! - Add missing `book-external-link`
+
+## 0.21.8
+
+### Patch Changes
+
+- [#1641](https://github.com/launchdarkly/launchpad-ui/pull/1641) [`9d74f7d`](https://github.com/launchdarkly/launchpad-ui/commit/9d74f7da3d07302dc0fa65e5a92b098bd8d94d37) Thanks [@awinders-launchdarkly](https://github.com/awinders-launchdarkly)! - add chart-bell and chart-forest icons
+
 ## 0.21.7
 
 ### Patch Changes

@@ -4,8 +4,15 @@ import type { ToolbarProps as AriaToolbarProps, ContextValue } from 'react-aria-
 
 import { cva } from 'class-variance-authority';
 import { createContext } from 'react';
-import { Toolbar as AriaToolbar, composeRenderProps } from 'react-aria-components';
+import {
+	Toolbar as AriaToolbar,
+	Provider,
+	SeparatorContext,
+	ToggleButtonGroupContext,
+	composeRenderProps,
+} from 'react-aria-components';
 
+import { ButtonGroupContext } from './ButtonGroup';
 import styles from './styles/Toolbar.module.css';
 import { useLPContextProps } from './utils';
 
@@ -44,7 +51,22 @@ const Toolbar = ({ ref, ...props }: ToolbarProps) => {
 			className={composeRenderProps(props.className, (className, renderProps) =>
 				toolbarStyles({ ...renderProps, spacing, className }),
 			)}
-		/>
+		>
+			{composeRenderProps(props.children, (children, { orientation }) => (
+				<Provider
+					values={[
+						[
+							SeparatorContext,
+							{ orientation: orientation === 'horizontal' ? 'vertical' : 'horizontal' },
+						],
+						[ButtonGroupContext, { orientation }],
+						[ToggleButtonGroupContext, { orientation }],
+					]}
+				>
+					{children}
+				</Provider>
+			))}
+		</AriaToolbar>
 	);
 };
 

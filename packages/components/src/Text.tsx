@@ -16,8 +16,10 @@ interface TextProps extends AriaTextProps {
 
 const TextContext = createContext<ContextValue<TextProps, HTMLElement>>(null);
 
-const Text = ({ className, ref, ...props }: TextProps) => {
+const Text = ({ ref, ...props }: TextProps) => {
 	[props, ref] = useLPContextProps(props, ref, TextContext);
+	const { className } = props;
+
 	return <AriaText {...props} ref={ref} className={textStyles({ className })} />;
 };
 

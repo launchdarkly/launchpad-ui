@@ -1,6 +1,6 @@
 {
 	"name": "@launchpad-ui/core",
-	"version": "0.55.0",
+	"version": "0.56.0",
 	"status": "beta",
 	"publishConfig": {
 		"access": "public"
@@ -33,14 +33,12 @@
 		"test": "exit 0"
 	},
 	"dependencies": {
-		"@launchpad-ui/box": "workspace:~",
 		"@launchpad-ui/button": "workspace:~",
 		"@launchpad-ui/drawer": "workspace:~",
 		"@launchpad-ui/dropdown": "workspace:~",
 		"@launchpad-ui/filter": "workspace:~",
 		"@launchpad-ui/focus-trap": "workspace:~",
 		"@launchpad-ui/form": "workspace:~",
-		"@launchpad-ui/inline-edit": "workspace:~",
 		"@launchpad-ui/menu": "workspace:~",
 		"@launchpad-ui/modal": "workspace:~",
 		"@launchpad-ui/navigation": "workspace:~",

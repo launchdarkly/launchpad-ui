@@ -1,5 +1,41 @@
 # @launchpad-ui/core
 
+## 0.56.0
+
+### Minor Changes
+
+- [#1650](https://github.com/launchdarkly/launchpad-ui/pull/1650) [`8fc5ed1`](https://github.com/launchdarkly/launchpad-ui/commit/8fc5ed1ba0fc61662c60fec21fb045708ed23fc6) Thanks [@Niznikr](https://github.com/Niznikr)! - Remove inline-edit package and move out Box from core
+
+## 0.55.2
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @launchpad-ui/button@0.12.50
+  - @launchpad-ui/drawer@0.5.72
+  - @launchpad-ui/dropdown@0.6.146
+  - @launchpad-ui/filter@0.7.57
+  - @launchpad-ui/form@0.11.57
+  - @launchpad-ui/inline-edit@0.3.57
+  - @launchpad-ui/menu@0.13.57
+  - @launchpad-ui/modal@0.17.73
+  - @launchpad-ui/navigation@0.12.74
+
+## 0.55.1
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @launchpad-ui/button@0.12.49
+  - @launchpad-ui/drawer@0.5.71
+  - @launchpad-ui/dropdown@0.6.145
+  - @launchpad-ui/filter@0.7.56
+  - @launchpad-ui/form@0.11.56
+  - @launchpad-ui/inline-edit@0.3.56
+  - @launchpad-ui/menu@0.13.56
+  - @launchpad-ui/modal@0.17.72
+  - @launchpad-ui/navigation@0.12.73
+
 ## 0.55.0
 
 ### Minor Changes

@@ -75,7 +75,13 @@ const parameters: Parameters = {
 			locales: 'en-US',
 		},
 	},
-	backgrounds: false,
+	backgrounds: {
+		default: 'default',
+		options: {
+			default: { name: 'Default', value: 'var(--lp-color-bg-ui-primary)' },
+			dark: { name: 'Dark', value: 'var(--lp-color-bg-ui-primary)' },
+		},
+	},
 	chromatic: {
 		modes: {
 			default: allModes.default,
@@ -156,6 +162,9 @@ const preview: Preview = {
 	parameters,
 	decorators,
 	globalTypes,
+	initialGlobals: {
+		backgrounds: { value: 'default' },
+	},
 };
 
 export default preview;
