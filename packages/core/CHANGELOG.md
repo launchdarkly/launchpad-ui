@@ -1,5 +1,11 @@
 # @launchpad-ui/core
 
+## 0.56.0
+
+### Minor Changes
+
+- [#1650](https://github.com/launchdarkly/launchpad-ui/pull/1650) [`8fc5ed1`](https://github.com/launchdarkly/launchpad-ui/commit/8fc5ed1ba0fc61662c60fec21fb045708ed23fc6) Thanks [@Niznikr](https://github.com/Niznikr)! - Remove inline-edit package and move out Box from core
+
 ## 0.55.2
 
 ### Patch Changes
