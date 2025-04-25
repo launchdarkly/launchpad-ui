@@ -13,7 +13,6 @@
 			"@launchpad-ui/focus-trap": ["./packages/focus-trap/src"],
 			"@launchpad-ui/form": ["./packages/form/src"],
 			"@launchpad-ui/icons": ["./packages/icons/src"],
-			"@launchpad-ui/inline-edit": ["./packages/inline-edit/src"],
 			"@launchpad-ui/menu": ["./packages/menu/src"],
 			"@launchpad-ui/modal": ["./packages/modal/src"],
 			"@launchpad-ui/navigation": ["./packages/navigation/src"],
