@@ -1,5 +1,4 @@
 // plop start type exports
-export type { BoxProps } from '@launchpad-ui/box';
 export type {
 	ButtonProps,
 	UploadButtonProps,
@@ -65,11 +64,9 @@ export type {
 	TableRowProps,
 } from '@launchpad-ui/table';
 export type { TooltipProps } from '@launchpad-ui/tooltip';
-export type { InlineEditProps } from '@launchpad-ui/inline-edit';
 // plop end type exports
 
 // plop start module exports
-export { Box } from '@launchpad-ui/box';
 export { Button, ButtonGroup, UploadButton, IconButton } from '@launchpad-ui/button';
 export { Drawer, DrawerHeader } from '@launchpad-ui/drawer';
 export { Dropdown, DropdownButton } from '@launchpad-ui/dropdown';
@@ -122,5 +119,4 @@ export {
 	TableRow,
 } from '@launchpad-ui/table';
 export { Tooltip, TooltipBase } from '@launchpad-ui/tooltip';
-export { InlineEdit } from '@launchpad-ui/inline-edit';
 // plop end module exports
