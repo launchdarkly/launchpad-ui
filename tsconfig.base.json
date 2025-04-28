@@ -1,9 +1,9 @@
 {
 	"compilerOptions": {
 		"plugins": [{ "name": "typescript-plugin-css-modules" }],
-		"target": "es2021",
+		"target": "es2022",
 		"module": "esnext",
-		"lib": ["es2021", "dom", "dom.iterable"],
+		"lib": ["es2022", "dom", "dom.iterable"],
 		"jsx": "react-jsx",
 		"declaration": true,
 		"declarationMap": true,

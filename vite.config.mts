@@ -3,7 +3,8 @@
 import path from 'path';
 
 import { vanillaExtractPlugin } from '@vanilla-extract/vite-plugin';
-import react from '@vitejs/plugin-react-swc';
+import react from '@vitejs/plugin-react-oxc';
+import swc from '@vitejs/plugin-react-swc';
 import browserslist from 'browserslist';
 import { browserslistToTargets } from 'lightningcss';
 import { PluginPure } from 'rollup-plugin-pure';
@@ -56,9 +57,10 @@ export default defineConfig({
 		devSourcemap: true,
 	},
 	plugins: [
-		react(),
+		process.env.VITEST === 'true' ? swc() : react(),
 		vanillaExtractPlugin(),
 		cssImport(),
+		// @ts-expect-error
 		PluginPure({
 			functions: PURE_CALLS,
 			sourcemap: true,
@@ -85,6 +87,7 @@ export default defineConfig({
 		},
 	},
 	build: {
+		target: 'es2022',
 		lib: {
 			entry: packageJSON.source,
 			formats: ['es', 'cjs'],
