@@ -129,8 +129,8 @@ importers:
         specifier: 19.1.0
         version: 19.1.0(react@19.1.0)
       react-router:
-        specifier: 7.0.1
-        version: 7.0.1(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
+        specifier: 7.5.2
+        version: 7.5.2(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       rollup-plugin-pure:
         specifier: ^0.3.0
         version: 0.3.0(rollup@4.40.0)
@@ -276,8 +276,8 @@ importers:
         specifier: 1.8.0
         version: 1.8.0(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       react-router:
-        specifier: 7.0.1
-        version: 7.0.1(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
+        specifier: 7.5.2
+        version: 7.5.2(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
     devDependencies:
       react:
         specifier: 19.1.0
@@ -631,8 +631,8 @@ importers:
         specifier: 2.2.0
         version: 2.2.0
       react-router:
-        specifier: 7.0.1
-        version: 7.0.1(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
+        specifier: 7.5.2
+        version: 7.5.2(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
     devDependencies:
       react:
         specifier: 19.1.0
@@ -2550,9 +2550,6 @@ packages:
 
   '@types/conventional-commits-parser@5.0.1':
     resolution: {integrity: sha512-7uz5EHdzz2TqoMfV7ee61Egf5y6NkcO4FB/1iCCQnbeiI1F3xzv3vK5dBCXUCLQgGYS+mUeigK1iKQzvED+QnQ==}
-
-  '@types/cookie@0.6.0':
-    resolution: {integrity: sha512-4Kh9a6B2bQciAhf7FSuMRRkUWecJgJu9nPnx3yzpsfXX/c50REIqpHY4C82bXP90qrLtXtkDxTZosYO3UpOwlA==}
 
   '@types/css-modules@1.0.5':
     resolution: {integrity: sha512-oeKafs/df9lwOvtfiXVliZsocFVOexK9PZtLQWuPeuVCFR7jwiqlg60lu80JTe5NFNtH3tnV6Fs/ySR8BUPHAw==}
@@ -4944,8 +4941,8 @@ packages:
   react-is@18.3.1:
     resolution: {integrity: sha512-/LLMVyas0ljjAtoYiPqYiL8VWXzUUdThrmU5+n20DZv+a+ClRoevUzw5JxU+Ieh5/c87ytoTBV9G1FiKfNJdmg==}
 
-  react-router@7.0.1:
-    resolution: {integrity: sha512-WVAhv9oWCNsja5AkK6KLpXJDSJCQizOIyOd4vvB/+eHGbYx5vkhcmcmwWjQ9yqkRClogi+xjEg9fNEOd5EX/tw==}
+  react-router@7.5.2:
+    resolution: {integrity: sha512-9Rw8r199klMnlGZ8VAsV/I8WrIF6IyJ90JQUdboupx1cdkgYqwnrYjH+I/nY/7cA1X5zia4mDJqH36npP7sxGQ==}
     engines: {node: '>=20.0.0'}
     peerDependencies:
       react: '>=18'
@@ -8171,8 +8168,6 @@ snapshots:
     dependencies:
       '@types/node': 22.14.1
 
-  '@types/cookie@0.6.0': {}
-
   '@types/css-modules@1.0.5': {}
 
   '@types/doctrine@0.0.9': {}
@@ -10861,9 +10856,8 @@ snapshots:
 
   react-is@18.3.1: {}
 
-  react-router@7.0.1(react-dom@19.1.0(react@19.1.0))(react@19.1.0):
+  react-router@7.5.2(react-dom@19.1.0(react@19.1.0))(react@19.1.0):
     dependencies:
-      '@types/cookie': 0.6.0
       cookie: 1.0.2
       react: 19.1.0
       set-cookie-parser: 2.7.1
