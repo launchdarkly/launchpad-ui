@@ -1,5 +1,11 @@
 # @launchpad-ui/components
 
+## 0.9.19
+
+### Patch Changes
+
+- [#1652](https://github.com/launchdarkly/launchpad-ui/pull/1652) [`4261337`](https://github.com/launchdarkly/launchpad-ui/commit/426133782894ab16ce52f2fe3cfd039712670f68) Thanks [@Niznikr](https://github.com/Niznikr)! - Update React Router to address security vulnerability
+
 ## 0.9.18
 
 ### Patch Changes
