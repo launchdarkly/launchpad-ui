@@ -240,6 +240,37 @@
 					"$value": "{color.brand.blue.light}"
 				}
 			}
+		},
+		"data": {
+			"info": {
+				"$value": "#996DD8"
+			},
+			"comparison": {
+				"$value": "#60656A"
+			},
+			"neutral": {
+				"$value": "#A8ADB3"
+			},
+			"positive": {
+				"$value": "#2B9556"
+			},
+			"negative": {
+				"$value": "#E84866"
+			},
+			"series": {
+				"1": {
+					"$value": "#23ABC5"
+				},
+				"2": {
+					"$value": "#F6B668"
+				},
+				"3": {
+					"$value": "#996DD8"
+				},
+				"4": {
+					"$value": "#2B9556"
+				}
+			}
 		}
 	}
 }

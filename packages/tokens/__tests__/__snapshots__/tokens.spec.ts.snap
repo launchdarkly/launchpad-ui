@@ -7,6 +7,15 @@ exports[`Tokens > builds dark alias tokens 1`] = `
 
 [data-theme='dark'] {
   --lp-color-bg-interactive-link: rgba(71, 97, 255, 0.2);
+  --lp-color-data-info: rgb(153, 109, 216);
+  --lp-color-data-comparison: rgb(96, 101, 106);
+  --lp-color-data-neutral: rgb(168, 173, 179);
+  --lp-color-data-positive: rgb(43, 149, 86);
+  --lp-color-data-negative: rgb(232, 72, 102);
+  --lp-color-data-series-1: rgb(35, 171, 197);
+  --lp-color-data-series-2: rgb(246, 182, 104);
+  --lp-color-data-series-3: rgb(153, 109, 216);
+  --lp-color-data-series-4: rgb(43, 149, 86);
   --lp-color-bg-feedback-error: var(--lp-color-red-900);
   --lp-color-bg-feedback-info: var(--lp-color-blue-900);
   --lp-color-bg-feedback-success: var(--lp-color-green-900);
@@ -83,6 +92,15 @@ exports[`Tokens > builds default alias tokens 1`] = `
   --lp-color-border-interactive-primary-focus: rgba(0, 0, 0, 0);
   --lp-color-border-interactive-primary-hover: rgba(0, 0, 0, 0);
   --lp-color-border-interactive-disabled: rgba(0, 0, 0, 0);
+  --lp-color-data-info: rgb(137, 96, 194);
+  --lp-color-data-comparison: rgb(169, 175, 180);
+  --lp-color-data-neutral: rgb(148, 153, 159);
+  --lp-color-data-positive: rgb(0, 131, 68);
+  --lp-color-data-negative: rgb(219, 34, 81);
+  --lp-color-data-series-1: rgb(52, 182, 208);
+  --lp-color-data-series-2: rgb(254, 190, 112);
+  --lp-color-data-series-3: rgb(137, 96, 194);
+  --lp-color-data-series-4: rgb(0, 131, 68);
   --lp-color-bg-feedback-primary: var(--lp-color-gray-800);
   --lp-color-bg-feedback-error: var(--lp-color-red-50);
   --lp-color-bg-feedback-info: var(--lp-color-blue-50);
