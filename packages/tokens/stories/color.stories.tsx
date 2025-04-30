@@ -9,6 +9,8 @@ export default {
 	title: 'Tokens/Color',
 };
 
+const ALIAS = ['bg', 'border', 'fill', 'shadow', 'text', 'data'];
+
 const flatten = (obj: Record<string, unknown>) => {
 	const result = {};
 
@@ -97,7 +99,7 @@ const TokenTable = ({ tokens }: { tokens: Record<string, string> }) => {
 };
 
 const global = Object.keys(vars.color)
-	.filter((key) => !['bg', 'border', 'fill', 'shadow', 'text'].includes(key))
+	.filter((key) => !ALIAS.includes(key))
 	.reduce((obj, key) => {
 		// @ts-expect-error fixme
 		obj[key] = vars.color[key];
@@ -109,7 +111,7 @@ export const Global = {
 };
 
 const alias = Object.keys(vars.color)
-	.filter((key) => ['bg', 'border', 'fill', 'shadow', 'text'].includes(key))
+	.filter((key) => ALIAS.includes(key))
 	.reduce((obj, key) => {
 		// @ts-expect-error fixme
 		obj[key] = vars.color[key];
