@@ -62,7 +62,7 @@ export const SplitLinkButton: Story = {
 	args: {
 		children: (
 			<>
-				<LinkButton>Split link button</LinkButton>
+				<LinkButton href="/hello">Split link button</LinkButton>
 				<MenuTrigger>
 					<IconButton icon="chevron-down" aria-label="open" />
 					<Popover placement="bottom end">
