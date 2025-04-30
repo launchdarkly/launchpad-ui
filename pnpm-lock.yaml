@@ -3463,14 +3463,6 @@ packages:
       picomatch:
         optional: true
 
-  fdir@6.4.4:
-    resolution: {integrity: sha512-1NZP+GK4GfuAv3PqKvxQRDMjdSRZjnkq7KfhlNrCNNlZ0ygQFpebfrnfnq/W7fpUnAv9aGWmY1zKx7FYL3gwhg==}
-    peerDependencies:
-      picomatch: ^3 || ^4
-    peerDependenciesMeta:
-      picomatch:
-        optional: true
-
   fflate@0.8.2:
     resolution: {integrity: sha512-cPJU47OaAoCbg0pBvzsgpTPhmhqI5eJjh/JIu8tPj5q+T7iLvW/JAYUqmE7KOB4R1ZyEhzBaIQpQpardBF5z8A==}
 
@@ -5467,10 +5459,6 @@ packages:
 
   tinyglobby@0.2.12:
     resolution: {integrity: sha512-qkf4trmKSIiMTs/E63cxH+ojC2unam7rJ0WrauAzpT3ECNTxGRMlaXxVbfxMUC/w0LaYk6jQ4y/nGR9uBO3tww==}
-    engines: {node: '>=12.0.0'}
-
-  tinyglobby@0.2.13:
-    resolution: {integrity: sha512-mEwzpUgrLySlveBwEVDMKk5B57bhLPYovRfPAXD5gA/98Opn0rCDj3GtLwFvCvH5RK9uPCExUROW5NjDwvqkxw==}
     engines: {node: '>=12.0.0'}
 
   tinypool@1.0.2:
@@ -9229,10 +9217,6 @@ snapshots:
     optionalDependencies:
       picomatch: 4.0.2
 
-  fdir@6.4.4(picomatch@4.0.2):
-    optionalDependencies:
-      picomatch: 4.0.2
-
   fflate@0.8.2: {}
 
   figures@3.2.0:
@@ -11026,12 +11010,12 @@ snapshots:
   rolldown-vite@6.3.3(@types/node@22.14.1)(esbuild@0.25.0)(jiti@2.4.2)(less@4.3.0)(sass@1.86.3)(stylus@0.62.0)(tsx@4.19.3)(typescript@5.8.3)(yaml@2.7.1):
     dependencies:
       '@oxc-project/runtime': 0.65.0
-      fdir: 6.4.4(picomatch@4.0.2)
+      fdir: 6.4.3(picomatch@4.0.2)
       lightningcss: 1.29.3
       picomatch: 4.0.2
       postcss: 8.5.3
       rolldown: 1.0.0-beta.7-commit.30e0395(@oxc-project/runtime@0.65.0)(typescript@5.8.3)
-      tinyglobby: 0.2.13
+      tinyglobby: 0.2.12
     optionalDependencies:
       '@types/node': 22.14.1
       esbuild: 0.25.0
@@ -11483,11 +11467,6 @@ snapshots:
   tinyglobby@0.2.12:
     dependencies:
       fdir: 6.4.3(picomatch@4.0.2)
-      picomatch: 4.0.2
-
-  tinyglobby@0.2.13:
-    dependencies:
-      fdir: 6.4.4(picomatch@4.0.2)
       picomatch: 4.0.2
 
   tinypool@1.0.2: {}
