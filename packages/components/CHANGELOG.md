@@ -1,5 +1,11 @@
 # @launchpad-ui/components
 
+## 0.9.20
+
+### Patch Changes
+
+- [#1655](https://github.com/launchdarkly/launchpad-ui/pull/1655) [`0637681`](https://github.com/launchdarkly/launchpad-ui/commit/06376817e624c3ce15efa94ced25fd14f5a6be10) Thanks [@apucacao](https://github.com/apucacao)! - Add support for link buttons in button groups
+
 ## 0.9.19
 
 ### Patch Changes
