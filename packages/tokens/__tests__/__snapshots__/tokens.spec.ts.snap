@@ -192,3 +192,118 @@ exports[`Tokens > builds default alias tokens 1`] = `
 }
 "
 `;
+
+exports[`Tokens > builds default primitive tokens 1`] = `
+"/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+:root {
+  --lp-color-gray-0: rgb(247, 249, 251);
+  --lp-color-gray-50: rgb(236, 239, 242);
+  --lp-color-gray-100: rgb(216, 221, 227);
+  --lp-color-gray-200: rgb(198, 203, 209);
+  --lp-color-gray-300: rgb(169, 175, 180);
+  --lp-color-gray-400: rgb(137, 142, 148);
+  --lp-color-gray-500: rgb(108, 114, 122);
+  --lp-color-gray-600: rgb(84, 90, 98);
+  --lp-color-gray-700: rgb(63, 69, 76);
+  --lp-color-gray-800: rgb(45, 50, 57);
+  --lp-color-gray-900: rgb(35, 37, 42);
+  --lp-color-gray-950: rgb(24, 26, 31);
+  --lp-color-blue-0: rgb(246, 248, 255);
+  --lp-color-blue-50: rgb(228, 234, 255);
+  --lp-color-blue-100: rgb(207, 217, 255);
+  --lp-color-blue-200: rgb(175, 191, 255);
+  --lp-color-blue-300: rgb(138, 158, 255);
+  --lp-color-blue-400: rgb(112, 132, 255);
+  --lp-color-blue-500: rgb(66, 94, 255);
+  --lp-color-blue-600: rgb(49, 68, 217);
+  --lp-color-blue-700: rgb(37, 54, 166);
+  --lp-color-blue-800: rgb(25, 38, 125);
+  --lp-color-blue-900: rgb(18, 29, 97);
+  --lp-color-blue-950: rgb(11, 20, 77);
+  --lp-color-purple-0: rgb(251, 246, 255);
+  --lp-color-purple-50: rgb(244, 233, 255);
+  --lp-color-purple-100: rgb(230, 208, 255);
+  --lp-color-purple-200: rgb(220, 185, 255);
+  --lp-color-purple-300: rgb(203, 145, 255);
+  --lp-color-purple-400: rgb(189, 97, 255);
+  --lp-color-purple-500: rgb(166, 54, 236);
+  --lp-color-purple-600: rgb(135, 23, 205);
+  --lp-color-purple-700: rgb(106, 0, 169);
+  --lp-color-purple-800: rgb(78, 0, 126);
+  --lp-color-purple-900: rgb(60, 2, 98);
+  --lp-color-purple-950: rgb(46, 0, 77);
+  --lp-color-green-0: rgb(229, 255, 232);
+  --lp-color-green-50: rgb(199, 251, 206);
+  --lp-color-green-100: rgb(163, 242, 180);
+  --lp-color-green-200: rgb(108, 224, 144);
+  --lp-color-green-300: rgb(30, 203, 106);
+  --lp-color-green-400: rgb(0, 164, 85);
+  --lp-color-green-500: rgb(0, 131, 68);
+  --lp-color-green-600: rgb(0, 105, 51);
+  --lp-color-green-700: rgb(0, 80, 37);
+  --lp-color-green-800: rgb(0, 59, 27);
+  --lp-color-green-900: rgb(9, 44, 23);
+  --lp-color-green-950: rgb(0, 33, 13);
+  --lp-color-red-0: rgb(255, 245, 246);
+  --lp-color-red-50: rgb(255, 232, 235);
+  --lp-color-red-100: rgb(255, 205, 214);
+  --lp-color-red-200: rgb(255, 181, 189);
+  --lp-color-red-300: rgb(255, 138, 150);
+  --lp-color-red-400: rgb(248, 79, 110);
+  --lp-color-red-500: rgb(219, 34, 81);
+  --lp-color-red-600: rgb(182, 7, 60);
+  --lp-color-red-700: rgb(140, 6, 43);
+  --lp-color-red-800: rgb(107, 0, 28);
+  --lp-color-red-900: rgb(78, 11, 22);
+  --lp-color-red-950: rgb(60, 4, 13);
+  --lp-color-black-0: rgba(7, 8, 12, 0.05);
+  --lp-color-black-50: rgba(7, 8, 12, 0.1);
+  --lp-color-black-100: rgba(7, 8, 12, 0.15);
+  --lp-color-black-200: rgba(7, 8, 12, 0.2);
+  --lp-color-black-300: rgba(7, 8, 12, 0.3);
+  --lp-color-black-400: rgba(7, 8, 12, 0.4);
+  --lp-color-black-500: rgba(7, 8, 12, 0.5);
+  --lp-color-black-600: rgba(7, 8, 12, 0.6);
+  --lp-color-black-700: rgba(7, 8, 12, 0.7);
+  --lp-color-black-800: rgba(7, 8, 12, 0.8);
+  --lp-color-black-900: rgba(7, 8, 12, 0.9);
+  --lp-color-black-950: rgb(7, 8, 12);
+  --lp-color-white-0: rgba(255, 255, 255, 0.05);
+  --lp-color-white-50: rgba(255, 255, 255, 0.1);
+  --lp-color-white-100: rgba(255, 255, 255, 0.15);
+  --lp-color-white-200: rgba(255, 255, 255, 0.2);
+  --lp-color-white-300: rgba(255, 255, 255, 0.3);
+  --lp-color-white-400: rgba(255, 255, 255, 0.4);
+  --lp-color-white-500: rgba(255, 255, 255, 0.5);
+  --lp-color-white-600: rgba(255, 255, 255, 0.6);
+  --lp-color-white-700: rgba(255, 255, 255, 0.7);
+  --lp-color-white-800: rgba(255, 255, 255, 0.8);
+  --lp-color-white-900: rgba(255, 255, 255, 0.9);
+  --lp-color-white-950: rgb(255, 255, 255);
+  --lp-color-brand-blue-light: rgb(112, 132, 255);
+  --lp-color-brand-blue-base: rgb(64, 91, 255);
+  --lp-color-brand-blue-dark: rgb(42, 59, 166);
+  --lp-color-brand-cyan-light: rgb(109, 224, 247);
+  --lp-color-brand-cyan-base: rgb(61, 214, 245);
+  --lp-color-brand-cyan-dark: rgb(35, 140, 163);
+  --lp-color-brand-purple-light: rgb(182, 117, 228);
+  --lp-color-brand-purple-base: rgb(163, 79, 222);
+  --lp-color-brand-purple-dark: rgb(106, 51, 144);
+  --lp-color-brand-pink-light: rgb(238, 93, 172);
+  --lp-color-brand-pink-base: rgb(255, 53, 162);
+  --lp-color-brand-pink-dark: rgb(129, 11, 75);
+  --lp-color-brand-orange-light: rgb(255, 208, 153);
+  --lp-color-brand-orange-base: rgb(255, 157, 41);
+  --lp-color-brand-orange-dark: rgb(163, 89, 1);
+  --lp-color-brand-yellow-light: rgb(247, 255, 175);
+  --lp-color-brand-yellow-base: rgb(235, 255, 56);
+  --lp-color-brand-yellow-dark: rgb(129, 140, 31);
+  --lp-color-brand-green-light: rgb(225, 255, 200);
+  --lp-color-brand-green-base: rgb(139, 239, 52);
+  --lp-color-brand-green-dark: rgb(67, 144, 0);
+}
+"
+`;
