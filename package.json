@@ -79,7 +79,7 @@
 		"tsx": "^4.19.3",
 		"typescript": "^5.8.2",
 		"typescript-plugin-css-modules": "^5.1.0",
-		"vite": "npm:rolldown-vite@6.3.5",
+		"vite": "npm:rolldown-vite@6.3.3",
 		"vitest": "^3.1.1"
 	},
 	"packageManager": "pnpm@10.8.0",
@@ -101,7 +101,7 @@
 			}
 		},
 		"overrides": {
-			"vite": "npm:rolldown-vite@6.3.5"
+			"vite": "npm:rolldown-vite@6.3.3"
 		}
 	},
 	"browserslist": ["last 2 versions", "not dead", "not IE 11"]
