@@ -51,7 +51,7 @@
 		"@testing-library/react": "^16.3.0",
 		"@testing-library/user-event": "^14.6.0",
 		"@types/css-modules": "^1.0.5",
-		"@types/node": "^22.14.0",
+		"@types/node": "^22.15.3",
 		"@types/react": "^19.1.1",
 		"@types/react-dom": "^19.1.2",
 		"@vanilla-extract/css": "^1.17.1",
@@ -68,21 +68,21 @@
 		"jsdom": "^26.0.0",
 		"lightningcss": "^1.29.1",
 		"lint-staged": "^15.5.1",
-		"nx": "20.7.2",
+		"nx": "20.8.1",
 		"plop": "^4.0.0",
 		"react": "19.1.0",
 		"react-dom": "19.1.0",
 		"react-router": "7.5.2",
-		"rollup-plugin-pure": "^0.3.0",
+		"rollup-plugin-pure": "^0.4.0",
 		"storybook": "^9.0.0-beta.5",
 		"storybook-addon-pseudo-states": "^9.0.0-beta.5",
 		"tsx": "^4.19.3",
 		"typescript": "^5.8.2",
 		"typescript-plugin-css-modules": "^5.1.0",
-		"vite": "npm:rolldown-vite@6.3.5",
+		"vite": "npm:rolldown-vite@6.3.6",
 		"vitest": "^3.1.1"
 	},
-	"packageManager": "pnpm@10.8.0",
+	"packageManager": "pnpm@10.10.0",
 	"pnpm": {
 		"onlyBuiltDependencies": [
 			"@biomejs/biome",
@@ -101,7 +101,7 @@
 			}
 		},
 		"overrides": {
-			"vite": "npm:rolldown-vite@6.3.3"
+			"vite": "npm:rolldown-vite@6.3.6"
 		}
 	},
 	"browserslist": ["last 2 versions", "not dead", "not IE 11"]
