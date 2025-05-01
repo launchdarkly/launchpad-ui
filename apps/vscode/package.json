@@ -43,6 +43,6 @@
 	"devDependencies": {
 		"@types/vscode": "^1.99.1",
 		"esbuild": "0.25.0",
-		"style-dictionary": "^4.3.0"
+		"style-dictionary": "^4.4.0"
 	}
 }
