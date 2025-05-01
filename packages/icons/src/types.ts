@@ -23,7 +23,7 @@ const icons = [
 	'arrow-connect',
 	'arrow-down-thin',
 	'arrow-left-thin',
-	'arrow-merge-both',
+	'arrow-merge',
 	'arrow-right-thin',
 	'arrow-undo',
 	'arrow-up-right-circle-outline',
