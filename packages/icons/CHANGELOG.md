@@ -1,5 +1,11 @@
 # @launchpad-ui/icons
 
+## 0.21.10
+
+### Patch Changes
+
+- [#1659](https://github.com/launchdarkly/launchpad-ui/pull/1659) [`be94e04`](https://github.com/launchdarkly/launchpad-ui/commit/be94e040386ca96fe7bf0e1bca8e48a54eae8fbd) Thanks [@jdonaghue-launchdarkly](https://github.com/jdonaghue-launchdarkly)! - add arrow-merge-both icon
+
 ## 0.21.9
 
 ### Patch Changes

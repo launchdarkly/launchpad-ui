@@ -1,5 +1,13 @@
 # @launchpad-ui/menu
 
+## 0.13.58
+
+### Patch Changes
+
+- Updated dependencies [[`be94e04`](https://github.com/launchdarkly/launchpad-ui/commit/be94e040386ca96fe7bf0e1bca8e48a54eae8fbd)]:
+  - @launchpad-ui/icons@0.21.10
+  - @launchpad-ui/form@0.11.58
+
 ## 0.13.57
 
 ### Patch Changes
