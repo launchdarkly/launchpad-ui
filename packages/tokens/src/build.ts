@@ -112,7 +112,7 @@ const sd = new StyleDictionary({
 				{
 					destination: 'index.css',
 					format: formats.cssVariables,
-					filter: (token) => !token.filePath.includes('aliases'),
+					filter: (token) => !token.filePath.includes('color'),
 				},
 				{
 					destination: 'themes.css',
@@ -209,7 +209,7 @@ const sd = new StyleDictionary({
 });
 
 const modes = new StyleDictionary({
-	source: ['tokens/color-primitives.json', `tokens/*.${light}.json`, `tokens/*.${dark}.json`],
+	source: [`tokens/*.${light}.json`, `tokens/*.${dark}.json`],
 	platforms: {
 		figma: {
 			buildPath: 'dist/',
@@ -222,7 +222,7 @@ const modes = new StyleDictionary({
 				{
 					destination: `figma.${dark}.json`,
 					format: 'json/figma',
-					filter: (token) => !token.filePath.includes('primitives'),
+					filter: (token) => token.filePath.includes(dark),
 				},
 			],
 		},
