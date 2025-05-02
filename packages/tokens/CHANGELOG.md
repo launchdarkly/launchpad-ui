@@ -1,5 +1,11 @@
 # @launchpad-ui/tokens
 
+## 0.12.5
+
+### Patch Changes
+
+- [#1662](https://github.com/launchdarkly/launchpad-ui/pull/1662) [`8569e48`](https://github.com/launchdarkly/launchpad-ui/commit/8569e48ba87d5e6c89a38564d65febdd197a3d48) Thanks [@Niznikr](https://github.com/Niznikr)! - Move default primitives to themes.css
+
 ## 0.12.4
 
 ### Patch Changes
