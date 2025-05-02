@@ -1,6 +1,6 @@
 {
 	"name": "@launchpad-ui/components",
-	"version": "0.9.21",
+	"version": "0.9.22",
 	"status": "beta",
 	"publishConfig": {
 		"access": "public"

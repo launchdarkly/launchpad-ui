@@ -1,5 +1,12 @@
 # @launchpad-ui/popover
 
+## 0.11.42
+
+### Patch Changes
+
+- Updated dependencies [[`3adc976`](https://github.com/launchdarkly/launchpad-ui/commit/3adc97627818ab0f9353a76f3432022f0948baee)]:
+  - @launchpad-ui/tokens@0.12.4
+
 ## 0.11.41
 
 ### Patch Changes

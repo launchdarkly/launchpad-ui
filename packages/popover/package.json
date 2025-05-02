@@ -1,6 +1,6 @@
 {
 	"name": "@launchpad-ui/popover",
-	"version": "0.11.41",
+	"version": "0.11.42",
 	"status": "beta",
 	"publishConfig": {
 		"access": "public"
