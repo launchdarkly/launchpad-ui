@@ -7,11 +7,11 @@ A modern, intuitive, and accessible design system built and used by the LaunchDa
 ## Installation
 
 ```sh
-$ npm install @launchpad-ui/components @launchpad-ui/icons @launchpad-ui/tokens
+npm install @launchpad-ui/components @launchpad-ui/icons @launchpad-ui/tokens
 ```
 
 ```sh
-$ yarn add @launchpad-ui/components @launchpad-ui/icons @launchpad-ui/tokens
+yarn add @launchpad-ui/components @launchpad-ui/icons @launchpad-ui/tokens
 ```
 
 ## Packages
