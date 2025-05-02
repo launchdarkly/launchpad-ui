@@ -1,5 +1,11 @@
 # @launchpad-ui/tokens
 
+## 0.12.4
+
+### Patch Changes
+
+- [#1654](https://github.com/launchdarkly/launchpad-ui/pull/1654) [`3adc976`](https://github.com/launchdarkly/launchpad-ui/commit/3adc97627818ab0f9353a76f3432022f0948baee) Thanks [@Niznikr](https://github.com/Niznikr)! - Add data alias tokens
+
 ## 0.12.3
 
 ### Patch Changes
