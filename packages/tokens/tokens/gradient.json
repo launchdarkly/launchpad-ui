@@ -21,6 +21,9 @@
 		},
 		"purple-pink": {
 			"$value": "linear-gradient(326deg, {color.brand.purple.base} -9.86%, {color.brand.pink.base} 112.59%)"
+		},
+		"blue-bg-primary": {
+			"$value": "linear-gradient(40deg, {color.brand.blue.light} -30.41%, {color.bg.ui.primary} 51.41%)"
 		}
 	}
 }

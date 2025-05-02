@@ -390,6 +390,44 @@
 					"$value": "{color.brand.blue.dark}"
 				}
 			}
+		},
+		"data": {
+			"$extensions": {
+				"com.figma": {
+					"hiddenFromPublishing": false,
+					"scopes": ["ALL_SCOPES"],
+					"codeSyntax": {}
+				}
+			},
+			"info": {
+				"$value": "#8960C2"
+			},
+			"comparison": {
+				"$value": "#A9AFB4"
+			},
+			"neutral": {
+				"$value": "#94999F"
+			},
+			"positive": {
+				"$value": "#008344"
+			},
+			"negative": {
+				"$value": "#DB2251"
+			},
+			"series": {
+				"1": {
+					"$value": "#34B6D0"
+				},
+				"2": {
+					"$value": "#FEBE70"
+				},
+				"3": {
+					"$value": "#8960C2"
+				},
+				"4": {
+					"$value": "#008344"
+				}
+			}
 		}
 	}
 }
