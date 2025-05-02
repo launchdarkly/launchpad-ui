@@ -38,7 +38,7 @@
 		"./dist/tokens.json": "./dist/tokens.json"
 	},
 	"scripts": {
-		"build": "tsx src/build.ts && tsc --noEmit",
+		"build": "pnpm clean && tsx src/build.ts && tsc --noEmit",
 		"clean": "rm -rf dist",
 		"lint": "exit 0",
 		"test": "vitest run",
