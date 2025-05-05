@@ -1,0 +1,5 @@
+---
+'@launchpad-ui/packages/icons': minor
+---
+
+Add `Toast` to display brief, temporary notifications of actions, errors, or other events
