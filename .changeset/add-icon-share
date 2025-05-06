@@ -1,5 +1,5 @@
 ---
-'@launchpad-ui/packages/icons': minor
+'@launchpad-ui/icons': patch
 ---
 
-Add `Toast` to display brief, temporary notifications of actions, errors, or other events
+Add `share` icon to the design system for use in sharing content or resources.
