@@ -1,5 +1,5 @@
 .base {
-	composes: interactive from "./base.module.css";
+	composes: interactive from './base.module.css';
 }
 
 .button {
@@ -161,9 +161,9 @@
 }
 
 .picker {
-	composes: base from "./Input.module.css";
-	composes: _default from "./Input.module.css";
-	composes: group from "./Group.module.css";
+	composes: base from './Input.module.css';
+	composes: _default from './Input.module.css';
+	composes: group from './Group.module.css';
 
 	& [data-icon]:last-child {
 		fill: var(--lp-color-fill-ui-secondary);
