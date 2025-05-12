@@ -10,6 +10,16 @@ overrides:
 importers:
 
   .:
+    dependencies:
+      '@launchpad-ui/components':
+        specifier: 0.9.22
+        version: 0.9.22(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
+      '@launchpad-ui/icons':
+        specifier: 0.21.11
+        version: 0.21.11(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
+      '@launchpad-ui/tokens':
+        specifier: 0.12.4
+        version: 0.12.4
     devDependencies:
       '@biomejs/biome':
         specifier: 1.9.1
@@ -88,7 +98,7 @@ importers:
         version: 3.9.0(@swc/helpers@0.5.17)(rolldown-vite@6.3.6(@types/node@22.15.3)(esbuild@0.25.0)(jiti@2.4.2)(less@4.3.0)(sass@1.86.3)(stylus@0.62.0)(tsx@4.19.3)(yaml@2.7.1))
       '@vitest/coverage-v8':
         specifier: ^3.1.1
-        version: 3.1.1(vitest@3.1.1)
+        version: 3.1.1(vitest@3.1.1(@types/node@22.15.3)(@vitest/ui@3.1.1)(esbuild@0.25.0)(jiti@2.4.2)(jsdom@26.1.0)(less@4.3.0)(sass@1.86.3)(stylus@0.62.0)(tsx@4.19.3)(yaml@2.7.1))
       '@vitest/ui':
         specifier: ^3.1.1
         version: 3.1.1(vitest@3.1.1)
@@ -1308,7 +1318,7 @@ packages:
     resolution: {integrity: sha512-qYDdL7fPwLRI+bJNurVcis+tNgJmvWjH4YTBGXTA8xMuxFrnAz6E5o35iyzyKbq5J5Lr8mJGfrR5GXl+WGwhgQ==}
     peerDependencies:
       typescript: '>= 4.3.x'
-      vite: ^3.0.0 || ^4.0.0 || ^5.0.0 || ^6.0.0
+      vite: npm:rolldown-vite@6.3.6
     peerDependenciesMeta:
       typescript:
         optional: true
@@ -1355,6 +1365,18 @@ packages:
       react: ^18.0.0 || ^19.0.0
       react-dom: ^18.0.0 || ^19.0.0
 
+  '@launchpad-ui/components@0.9.22':
+    resolution: {integrity: sha512-RtTUK+KZLqsIBib6Vb8dwUC3J7lEecRkvbp1Y/gKhcNi9b8ZE4Ee7eHf8BszsSP1GpkhRC5Pa6GAQMcCN/z5Gw==}
+    peerDependencies:
+      react: ^19.0.0
+      react-dom: ^19.0.0
+
+  '@launchpad-ui/icons@0.21.11':
+    resolution: {integrity: sha512-xSGg3iVX7Zm4kx5VTJ6c55J0/bYDe6tE3jPmVdqAQaXcsnK99s92k1PKpM6rrbKSbMuos05MRWsF2YVrQrqSEQ==}
+    peerDependencies:
+      react: ^19.0.0
+      react-dom: ^19.0.0
+
   '@launchpad-ui/icons@0.21.7':
     resolution: {integrity: sha512-y/oaFglHxh0fsrEdEMv1eysyzHNULKBhNWwSJbwVCXio7xwcCBtHpGP1gu0SREqCbCnG/VNB37Hgg4fyaGt3TA==}
     peerDependencies:
@@ -1369,6 +1391,9 @@ packages:
 
   '@launchpad-ui/tokens@0.12.3':
     resolution: {integrity: sha512-tdQo7KhIB4/RUHAF3oXCRgLpFFnnW0dUhSiHqndvPDsFgb197rEuvuWo5GnCBRJYjNelIoZydFlZIRSGmzwcpQ==}
+
+  '@launchpad-ui/tokens@0.12.4':
+    resolution: {integrity: sha512-U99yObFFLe3/GWcn6uLz0LoI8k/lAzmeJhzUkSirHGi8SoXZc3fgde6jsyx6e/9kUhemfYTYT61kMoYd4+12AA==}
 
   '@lit-labs/react@1.2.1':
     resolution: {integrity: sha512-DiZdJYFU0tBbdQkfwwRSwYyI/mcWkg3sWesKRsHUd4G+NekTmmeq9fzsurvcKTNVa0comNljwtg4Hvi1ds3V+A==}
@@ -2375,7 +2400,7 @@ packages:
     resolution: {integrity: sha512-FBrVGft5u26aB47AU5k4CgHqwAFp075KFAyRSj3eeqb8kJjHDuGeFKL02fr7dprqAYsko0BkksTWbYm/+c0ysg==}
     peerDependencies:
       storybook: ^9.0.0-beta.5
-      vite: ^5.0.0 || ^6.0.0
+      vite: npm:rolldown-vite@6.3.6
 
   '@storybook/csf-plugin@9.0.0-beta.5':
     resolution: {integrity: sha512-JoParjJNyRlzzJyoacPJSpeoZMT1JRNZfzsiLK8OH3ko1cnQrx0I38q2/w7rUOiqxEyp40DEwAmjv0srRHOJBA==}
@@ -2406,7 +2431,7 @@ packages:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0-beta
       react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0-beta
       storybook: ^9.0.0-beta.5
-      vite: ^5.0.0 || ^6.0.0
+      vite: npm:rolldown-vite@6.3.6
 
   '@storybook/react@9.0.0-beta.5':
     resolution: {integrity: sha512-sxqG+OCdofbS+cGfHigp7En2Ajmoyv2Kml4Z2G8dHunwM/eR/Qwzk23M56JtN6/nqOBkS88ySN5lEcolKrZYgQ==}
@@ -2625,18 +2650,18 @@ packages:
   '@vanilla-extract/vite-plugin@5.0.1':
     resolution: {integrity: sha512-65IhqaNEAv/KjO1jJ52hSXiKUJqeFPlyY/hpRT71Y6bFoasHhzOcZKIQ/ze4fQovjjDL4US565rEiIn1I2qhFA==}
     peerDependencies:
-      vite: ^5.0.0 || ^6.0.0
+      vite: npm:rolldown-vite@6.3.6
 
   '@vitejs/plugin-react-oxc@0.1.1':
     resolution: {integrity: sha512-1pGZcXfB5JGPuEwHxwScknfO6Lmz9agEmCuG6diruRhBjMgdro5tjJbz3dKlqxibTtpsiX01aaLHhfpc0l9/yg==}
     engines: {node: '>=20.0.0'}
     peerDependencies:
-      vite: ^6.3.0
+      vite: npm:rolldown-vite@6.3.6
 
   '@vitejs/plugin-react-swc@3.9.0':
     resolution: {integrity: sha512-jYFUSXhwMCYsh/aQTgSGLIN3Foz5wMbH9ahb0Zva//UzwZYbMiZd7oT3AU9jHT9DLswYDswsRwPU9jVF3yA48Q==}
     peerDependencies:
-      vite: ^4 || ^5 || ^6
+      vite: npm:rolldown-vite@6.3.6
 
   '@vitest/coverage-v8@3.1.1':
     resolution: {integrity: sha512-MgV6D2dhpD6Hp/uroUoAIvFqA8AuvXEFBC2eepG3WFc1pxTfdk1LEqqkWoWhjz+rytoqrnUUCdf6Lzco3iHkLQ==}
@@ -2657,7 +2682,7 @@ packages:
     resolution: {integrity: sha512-bmpJJm7Y7i9BBELlLuuM1J1Q6EQ6K5Ye4wcyOpOMXMcePYKSIYlpcrCm4l/O6ja4VJA5G2aMJiuZkZdnxlC3SA==}
     peerDependencies:
       msw: ^2.4.9
-      vite: ^5.0.0 || ^6.0.0
+      vite: npm:rolldown-vite@6.3.6
     peerDependenciesMeta:
       msw:
         optional: true
@@ -6619,9 +6644,33 @@ snapshots:
       react: 19.1.0
       react-dom: 19.1.0(react@19.1.0)
 
+  '@launchpad-ui/components@0.9.22(react-dom@19.1.0(react@19.1.0))(react@19.1.0)':
+    dependencies:
+      '@internationalized/date': 3.8.0
+      '@launchpad-ui/icons': 0.21.11(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
+      '@launchpad-ui/tokens': 0.12.4
+      '@react-aria/focus': 3.20.2(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
+      '@react-aria/interactions': 3.25.0(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
+      '@react-aria/utils': 3.28.2(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
+      '@react-stately/utils': 3.10.6(react@19.1.0)
+      '@react-types/shared': 3.29.0(react@19.1.0)
+      class-variance-authority: 0.7.0
+      react: 19.1.0
+      react-aria: 3.39.0(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
+      react-aria-components: 1.8.0(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
+      react-dom: 19.1.0(react@19.1.0)
+      react-router: 7.5.2(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
+
+  '@launchpad-ui/icons@0.21.11(react-dom@19.1.0(react@19.1.0))(react@19.1.0)':
+    dependencies:
+      '@launchpad-ui/tokens': 0.12.4
+      class-variance-authority: 0.7.0
+      react: 19.1.0
+      react-dom: 19.1.0(react@19.1.0)
+
   '@launchpad-ui/icons@0.21.7(react-dom@19.1.0(react@19.1.0))(react@19.1.0)':
     dependencies:
-      '@launchpad-ui/tokens': 0.12.3
+      '@launchpad-ui/tokens': 0.12.4
       class-variance-authority: 0.7.0
       react: 19.1.0
       react-dom: 19.1.0(react@19.1.0)
@@ -6634,6 +6683,8 @@ snapshots:
       react-dom: 19.1.0(react@19.1.0)
 
   '@launchpad-ui/tokens@0.12.3': {}
+
+  '@launchpad-ui/tokens@0.12.4': {}
 
   '@lit-labs/react@1.2.1': {}
 
@@ -8316,7 +8367,7 @@ snapshots:
     transitivePeerDependencies:
       - '@swc/helpers'
 
-  '@vitest/coverage-v8@3.1.1(vitest@3.1.1)':
+  '@vitest/coverage-v8@3.1.1(vitest@3.1.1(@types/node@22.15.3)(@vitest/ui@3.1.1)(esbuild@0.25.0)(jiti@2.4.2)(jsdom@26.1.0)(less@4.3.0)(sass@1.86.3)(stylus@0.62.0)(tsx@4.19.3)(yaml@2.7.1))':
     dependencies:
       '@ampproject/remapping': 2.3.0
       '@bcoe/v8-coverage': 1.0.2

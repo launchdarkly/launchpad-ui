@@ -59,6 +59,8 @@
 	font-weight: var(--lp-font-weight-semibold);
 	margin: 0;
 	overflow-wrap: anywhere;
+	min-width: 0;
+	flex: 1;
 }
 
 .headerIcon {
@@ -70,6 +72,7 @@
 	display: flex;
 	gap: 0.5rem;
 	align-items: flex-start;
+	min-width: 0;
 }
 
 .headerDescription {
@@ -91,6 +94,7 @@
 .closeButton {
 	margin-left: auto;
 	transform: translateY(-1px);
+	flex-shrink: 0;
 }
 
 .body {
