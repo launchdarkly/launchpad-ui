@@ -139,6 +139,10 @@
 	z-index: 1;
 }
 
+.button[data-pressed][aria-expanded] {
+	border-color: var(--lp-color-border-interactive-selected);
+}
+
 .button[data-pending] {
 	cursor: wait;
 

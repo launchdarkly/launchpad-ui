@@ -7,6 +7,7 @@ import { expect, userEvent, within } from 'storybook/test';
 import { Button } from '../src/Button';
 import { Dialog, DialogTrigger } from '../src/Dialog';
 import { Heading } from '../src/Heading';
+import { IconButton } from '../src/IconButton';
 import { OverlayArrow, Popover } from '../src/Popover';
 import { Pressable } from '../src/Pressable';
 
@@ -44,6 +45,20 @@ export const Example: Story = {
 		return (
 			<DialogTrigger>
 				<Button>Trigger</Button>
+				<Popover {...args}>
+					<Dialog>Message</Dialog>
+				</Popover>
+			</DialogTrigger>
+		);
+	},
+	play,
+};
+
+export const ExampleWithIconButton: Story = {
+	render: (args) => {
+		return (
+			<DialogTrigger>
+				<IconButton icon="info" aria-label="Trigger" />
 				<Popover {...args}>
 					<Dialog>Message</Dialog>
 				</Popover>
