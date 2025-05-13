@@ -5,19 +5,3 @@
 	text-overflow: ellipsis;
 	position: relative;
 }
-
-.heading:hover {
-	cursor: default;
-}
-
-.heading:hover::before {
-	content: attr(title);
-	position: absolute;
-	top: 100%;
-	left: 0;
-	background-color: var(--lp-color-background);
-	padding: var(--lp-size-4);
-	border-radius: var(--lp-radius-4);
-	z-index: 1000;
-	pointer-events: none;
-}
