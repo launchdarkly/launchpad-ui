@@ -1,5 +1,11 @@
 # @launchpad-ui/modal
 
+## 0.17.77
+
+### Patch Changes
+
+- [#1667](https://github.com/launchdarkly/launchpad-ui/pull/1667) [`a6f4290`](https://github.com/launchdarkly/launchpad-ui/commit/a6f429046627976677ec5af7cf7aa5a83f9ed051) Thanks [@traciklopez](https://github.com/traciklopez)! - Update title component in modal to fix long headers overflowing
+
 ## 0.17.76
 
 ### Patch Changes
