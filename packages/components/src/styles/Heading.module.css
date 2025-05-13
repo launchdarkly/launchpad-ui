@@ -1,2 +1,7 @@
 .heading {
+	white-space: nowrap;
+	max-width: calc(100% - var(--lp-size-32));
+	overflow: hidden;
+	text-overflow: ellipsis;
+	position: relative;
 }
