@@ -18,15 +18,9 @@ const HeadingContext = createContext<ContextValue<HeadingProps, HTMLHeadingEleme
 
 const Heading = ({ ref, ...props }: HeadingProps) => {
 	[props, ref] = useLPContextProps(props, ref, HeadingContext);
-	const { className, children } = props;
+	const { className } = props;
 
-	// Add title attribute to show full text content on hover when truncated
-	// Only applies the title if children is a string
-	const titleProps = typeof children === 'string' ? { title: children } : {};
-
-	return (
-		<AriaHeading {...props} {...titleProps} ref={ref} className={headingStyles({ className })} />
-	);
+	return <AriaHeading {...props} ref={ref} className={headingStyles({ className })} />;
 };
 
 export { Heading, HeadingContext, headingStyles };
