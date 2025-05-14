@@ -61,28 +61,6 @@ export const Example: Story = {
 	},
 };
 
-export const Overflow: Story = {
-	args: {
-		children: (
-			<>
-				<Label>Label</Label>
-				<Button>
-					<SelectValue />
-					<Icon name="chevron-down" size="small" />
-				</Button>
-				<Text slot="description">Description</Text>
-				<Popover>
-					<ListBox>
-						<ListBoxItem>Item one</ListBoxItem>
-						<ListBoxItem>Item two</ListBoxItem>
-						<ListBoxItem>Item three that has a very very long name, longer than the width of the trigger for the combobox</ListBoxItem>
-					</ListBox>
-				</Popover>
-			</>
-		),
-	},
-};
-
 export const Descriptions: Story = {
 	args: {
 		children: (
