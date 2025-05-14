@@ -49,11 +49,11 @@
 	}
 
 	&[data-trigger='Select'] {
-		min-width: var(--trigger-width);
+		width: var(--trigger-width);
 	}
 
 	&[data-trigger='ComboBox'] {
-		min-width: var(--trigger-width);
+		width: var(--trigger-width);
 	}
 
 	&[data-trigger='ComboBoxDialog'] {

@@ -16,8 +16,4 @@
 	& :is([slot='description']) {
 		display: none;
 	}
-
-	.react-aria-Popover[data-trigger='Select'] {
-		width: var(--trigger-width);
-	}
 }
