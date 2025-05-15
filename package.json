@@ -104,10 +104,5 @@
 			"vite": "npm:rolldown-vite@6.3.6"
 		}
 	},
-	"browserslist": ["last 2 versions", "not dead", "not IE 11"],
-	"dependencies": {
-		"@launchpad-ui/components": "0.9.22",
-		"@launchpad-ui/icons": "0.21.11",
-		"@launchpad-ui/tokens": "0.12.4"
-	}
+	"browserslist": ["last 2 versions", "not dead", "not IE 11"]
 }
