@@ -1,5 +1,11 @@
 # @launchpad-ui/icons
 
+## 0.21.13
+
+### Patch Changes
+
+- [#1665](https://github.com/launchdarkly/launchpad-ui/pull/1665) [`d061989`](https://github.com/launchdarkly/launchpad-ui/commit/d06198952a2a36f875a5b8c5c954c3ba1ba6a757) Thanks [@rapha-ld](https://github.com/rapha-ld)! - Add `share` icon to the design system for use in sharing content or resources.
+
 ## 0.21.12
 
 ### Patch Changes
