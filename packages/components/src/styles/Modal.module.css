@@ -51,6 +51,7 @@
 	& [slot='title'] {
 		font: var(--lp-text-heading-1-semibold);
 		flex-grow: 1;
+		grid-column: 1 / 2;
 	}
 
 	& [role='dialog']:has([slot='body']) {
@@ -61,10 +62,10 @@
 	}
 
 	& [slot='header'] {
-		display: flex;
-		align-items: center;
+		display: grid;
+		grid-template-columns: 1fr auto;
+		align-items: start;
 		gap: var(--lp-spacing-300);
-		flex-wrap: wrap;
 	}
 
 	& [slot='body'] {
@@ -84,6 +85,13 @@
 		color: var(--lp-color-text-ui-secondary);
 		flex-basis: 100%;
 	}
+}
+
+[slot='header'] > .Button,
+[slot='header'] > [aria-label='close'] {
+	grid-column: 2 / 3;
+	grid-row: 1 / 2;
+	align-self: start;
 }
 
 .defaultSmall {
