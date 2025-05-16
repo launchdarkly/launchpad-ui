@@ -1,5 +1,11 @@
 # @launchpad-ui/components
 
+## 0.9.25
+
+### Patch Changes
+
+- [#1669](https://github.com/launchdarkly/launchpad-ui/pull/1669) [`dff85bf`](https://github.com/launchdarkly/launchpad-ui/commit/dff85bfe66989e1e0d9bb0dc1caa8ed6670f46e4) Thanks [@cmaija](https://github.com/cmaija)! - update popover width to be the width of the trigge for selects and comboboxes
+
 ## 0.9.24
 
 ### Patch Changes
