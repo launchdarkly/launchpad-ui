@@ -244,6 +244,7 @@ const icons = [
 	'ruler-bolt',
 	'ruler',
 	'search',
+	'share',
 	'shield-account-outline',
 	'shield-account',
 	'shield-alert-outline',
