@@ -37,10 +37,10 @@
 		"@launchpad-ui/icons": "workspace:~",
 		"@launchpad-ui/portal": "workspace:~",
 		"@launchpad-ui/tokens": "workspace:~",
-		"@react-aria/interactions": "3.25.0",
-		"@react-aria/overlays": "3.27.0",
+		"@react-aria/interactions": "3.25.1",
+		"@react-aria/overlays": "3.27.1",
 		"classix": "2.2.0",
-		"framer-motion": "12.9.4"
+		"framer-motion": "12.12.1"
 	},
 	"peerDependencies": {
 		"react": "^18.0.0 || ^19.0.0",
