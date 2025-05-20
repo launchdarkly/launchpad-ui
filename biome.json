@@ -81,5 +81,10 @@
 				}
 			}
 		}
-	]
+	],
+	"json": {
+		"parser": {
+			"allowComments": true
+		}
+	}
 }
