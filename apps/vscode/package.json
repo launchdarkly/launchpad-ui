@@ -17,7 +17,7 @@
 	"license": "SEE LICENSE IN LICENSE.txt",
 	"keywords": ["launchpad", "launchdarkly", "design system", "design tokens"],
 	"engines": {
-		"vscode": "^1.99.2"
+		"vscode": "^1.100.2"
 	},
 	"categories": ["Other"],
 	"icon": "images/osmo.png",
@@ -41,7 +41,7 @@
 		"vscode-languageserver-textdocument": "^1.0.11"
 	},
 	"devDependencies": {
-		"@types/vscode": "^1.99.1",
+		"@types/vscode": "^1.100.0",
 		"esbuild": "0.25.0",
 		"style-dictionary": "^5.0.0"
 	}
