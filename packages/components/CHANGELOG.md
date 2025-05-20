@@ -1,5 +1,11 @@
 # @launchpad-ui/components
 
+## 0.9.27
+
+### Patch Changes
+
+- [#1675](https://github.com/launchdarkly/launchpad-ui/pull/1675) [`45d33b6`](https://github.com/launchdarkly/launchpad-ui/commit/45d33b6d28f2b09d969d832229a5b6c3f21b1c63) Thanks [@apucacao](https://github.com/apucacao)! - Revert change to popover widths
+
 ## 0.9.26
 
 ### Patch Changes
