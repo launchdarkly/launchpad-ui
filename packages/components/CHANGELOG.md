@@ -1,5 +1,11 @@
 # @launchpad-ui/components
 
+## 0.9.29
+
+### Patch Changes
+
+- [#1684](https://github.com/launchdarkly/launchpad-ui/pull/1684) [`d2041ae`](https://github.com/launchdarkly/launchpad-ui/commit/d2041ae3a2377fbaeaef47de82584d262ad74245) Thanks [@Niznikr](https://github.com/Niznikr)! - Fix pending button icon fill
+
 ## 0.9.28
 
 ### Patch Changes
