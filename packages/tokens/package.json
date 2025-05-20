@@ -1,6 +1,6 @@
 {
 	"name": "@launchpad-ui/tokens",
-	"version": "0.12.5",
+	"version": "0.12.6",
 	"status": "beta",
 	"publishConfig": {
 		"access": "public"
