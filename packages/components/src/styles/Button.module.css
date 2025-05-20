@@ -152,7 +152,7 @@
 }
 
 .progress {
-	--fill: currentColor;
+	--fill-color: currentColor;
 }
 
 .picker {
