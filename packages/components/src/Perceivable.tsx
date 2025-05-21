@@ -2,18 +2,20 @@ import type { KeyboardEvents, PressEvents } from '@react-types/shared';
 import type { ReactNode } from 'react';
 
 import { FocusableProvider } from '@react-aria/focus';
+import { ClearPressResponder } from '@react-aria/interactions';
 import { createContext } from 'react';
 import { Provider } from 'react-aria-components';
 
 interface InteractionProps extends KeyboardEvents, PressEvents {}
 
 interface PerceivableProps {
-	children: ReactNode;
+	children?: ReactNode;
+	isDisabled?: boolean;
 }
 
 const PerceivableContext = createContext<InteractionProps>({});
 
-const Perceivable = ({ children }: PerceivableProps) => {
+const Perceivable = ({ children, isDisabled = true }: PerceivableProps) => {
 	const props = {
 		onPress: undefined,
 		onPressStart: undefined,
@@ -27,12 +29,14 @@ const Perceivable = ({ children }: PerceivableProps) => {
 		type: 'button',
 	};
 
-	return (
+	return isDisabled ? (
 		<Provider values={[[PerceivableContext, { ...props }]]}>
 			<FocusableProvider aria-disabled="true" data-lp="">
-				{children}
+				<ClearPressResponder>{children}</ClearPressResponder>
 			</FocusableProvider>
 		</Provider>
+	) : (
+		children
 	);
 };
 

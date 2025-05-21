@@ -14,10 +14,12 @@ import { ButtonGroup } from '../../src/ButtonGroup';
 import { ComboBox, ComboBoxClearButton } from '../../src/ComboBox';
 import { Dialog, DialogTrigger } from '../../src/Dialog';
 import { Group } from '../../src/Group';
+import { Heading } from '../../src/Heading';
 import { IconButton } from '../../src/IconButton';
 import { Input } from '../../src/Input';
 import { Label } from '../../src/Label';
 import { ListBox, ListBoxItem } from '../../src/ListBox';
+import { Modal, ModalOverlay } from '../../src/Modal';
 import { Perceivable } from '../../src/Perceivable';
 import { Popover } from '../../src/Popover';
 import { RadioButton } from '../../src/RadioButton';
@@ -26,6 +28,7 @@ import { RadioIconButton } from '../../src/RadioIconButton';
 import { Select, SelectValue } from '../../src/Select';
 import { Text } from '../../src/Text';
 import { ToastRegion, toastQueue } from '../../src/Toast';
+import { ToggleButton } from '../../src/ToggleButton';
 import { Tooltip, TooltipTrigger } from '../../src/Tooltip';
 
 const Container = (props: ComponentPropsWithoutRef<typeof Fragment>) => <>{props.children}</>;
@@ -217,6 +220,7 @@ export const ListBoxTooltip: Story = {
 
 export const DisabledWithTooltip: Story = {
 	render: () => {
+		const [isDisabled, setIsDisabled] = useState(true);
 		return (
 			<div
 				style={{
@@ -225,22 +229,58 @@ export const DisabledWithTooltip: Story = {
 					gap: vars.spacing[400],
 				}}
 			>
-				<Perceivable>
-					<TooltipTrigger>
-						<Button onPress={() => console.log('Pressed')}>Button</Button>
-						<Tooltip placement="right">Message</Tooltip>
-					</TooltipTrigger>
-					<TooltipTrigger>
-						<IconButton
-							icon="add"
-							size="small"
-							variant="minimal"
-							aria-label="create"
-							onPress={() => console.log('Pressed')}
-						/>
-						<Tooltip placement="right">Message</Tooltip>
-					</TooltipTrigger>
-				</Perceivable>
+				<ToggleButton isSelected={isDisabled} onChange={setIsDisabled}>
+					Restrict
+				</ToggleButton>
+				<DialogTrigger>
+					<Perceivable isDisabled={isDisabled}>
+						<TooltipTrigger>
+							<Button onPress={() => console.log('Pressed')}>Button</Button>
+							<Tooltip placement="right">Message</Tooltip>
+						</TooltipTrigger>
+						<Popover>Message</Popover>
+					</Perceivable>
+				</DialogTrigger>
+				<DialogTrigger>
+					<Perceivable isDisabled={isDisabled}>
+						<TooltipTrigger>
+							<IconButton
+								icon="add"
+								size="small"
+								variant="minimal"
+								aria-label="create"
+								onPress={() => console.log('Pressed')}
+							/>
+							<Tooltip placement="right">Message</Tooltip>
+						</TooltipTrigger>
+						<ModalOverlay>
+							<Modal>
+								<Dialog>
+									{({ close }) => (
+										<>
+											<div slot="header">
+												<Heading slot="title">Title</Heading>
+												<IconButton
+													aria-label="close"
+													icon="cancel"
+													size="small"
+													variant="minimal"
+													onPress={close}
+												/>
+												<Text slot="subtitle">Subtitle</Text>
+											</div>
+											<div slot="body">Body text</div>
+											<div slot="footer">
+												<Button slot="close">Cancel</Button>
+												<Button variant="primary">Confirm</Button>
+											</div>
+										</>
+									)}
+								</Dialog>
+							</Modal>
+						</ModalOverlay>
+					</Perceivable>
+				</DialogTrigger>
 			</div>
 		);
 	},
