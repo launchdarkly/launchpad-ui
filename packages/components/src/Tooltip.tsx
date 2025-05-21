@@ -14,7 +14,7 @@ import {
 	composeRenderProps,
 } from 'react-aria-components';
 
-import popoverStyles from './styles/Popover.module.css';
+import { popoverStyles } from './Popover';
 import styles from './styles/Tooltip.module.css';
 import { useLPContextProps } from './utils';
 
@@ -29,7 +29,7 @@ const tooltipStyles = cva(styles.base, {
 	variants: {
 		variant: {
 			default: styles.tooltip,
-			popover: popoverStyles.popover,
+			popover: popoverStyles({ width: 'default' }),
 		},
 	},
 	defaultVariants: {

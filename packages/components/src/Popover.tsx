@@ -1,3 +1,4 @@
+import type { VariantProps } from 'class-variance-authority';
 import type { Ref } from 'react';
 import type {
 	OverlayArrowProps as AriaOverlayArrowProps,
@@ -16,7 +17,7 @@ import {
 import styles from './styles/Popover.module.css';
 import { useLPContextProps } from './utils';
 
-interface PopoverProps extends AriaPopoverProps {
+interface PopoverProps extends AriaPopoverProps, VariantProps<typeof popoverStyles> {
 	ref?: Ref<HTMLElement>;
 }
 interface OverlayArrowProps extends Omit<AriaOverlayArrowProps, 'children'> {
@@ -25,7 +26,17 @@ interface OverlayArrowProps extends Omit<AriaOverlayArrowProps, 'children'> {
 
 const PopoverContext = createContext<ContextValue<PopoverProps, HTMLElement>>(null);
 
-const popoverStyles = cva(styles.popover);
+const popoverStyles = cva(styles.popover, {
+	variants: {
+		width: {
+			default: styles.default,
+			trigger: styles.trigger,
+		},
+	},
+	defaultVariants: {
+		width: 'default',
+	},
+});
 const overlayArrowStyles = cva(styles.arrow);
 
 /**
@@ -35,7 +46,7 @@ const overlayArrowStyles = cva(styles.arrow);
  */
 const Popover = ({ ref, ...props }: PopoverProps) => {
 	[props, ref] = useLPContextProps(props, ref, PopoverContext);
-	const { offset = 4, crossOffset = 0 } = props;
+	const { offset = 4, crossOffset = 0, width = 'default' } = props;
 
 	return (
 		<AriaPopover
@@ -44,7 +55,7 @@ const Popover = ({ ref, ...props }: PopoverProps) => {
 			{...props}
 			ref={ref}
 			className={composeRenderProps(props.className, (className, renderProps) =>
-				popoverStyles({ ...renderProps, className }),
+				popoverStyles({ ...renderProps, width, className }),
 			)}
 		/>
 	);
