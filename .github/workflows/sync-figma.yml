@@ -18,19 +18,13 @@ jobs:
       id-token: write
       contents: read
     steps:
-      - name: Configure AWS Credentials
-        uses: aws-actions/configure-aws-credentials@v4
+      - name: Get Tokens
+        uses: launchdarkly/gh-actions/actions/release-secrets@release-secrets-v1.2.0
         with:
-          audience: https://github.com/launchdarkly
-          role-to-assume: ${{ vars.AWS_ROLE_ARN }}
-          aws-region: us-east-1
-
-      - uses: dkershner6/aws-ssm-getparameters-action@v2
-        with:
-          parameterPairs: |
+          aws_assume_role: ${{ vars.AWS_ROLE_ARN }}
+          ssm_parameter_pairs: |
             /production/common/launchpad-ui/figma-file-key = FIGMA_FILE_KEY,
             /production/common/launchpad-ui/figma-token = FIGMA_TOKEN
-          withDecryption: 'true'
 
       - uses: actions/checkout@v4
         with:
