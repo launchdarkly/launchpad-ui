@@ -43,6 +43,10 @@
 	height: 100%;
 }
 
+.max {
+	border-radius: var(--lp-border-radius-medium);
+}
+
 .text {
 	fill: var(--lp-color-text-ui-primary-base);
 	font: var(--lp-text-body-1-semibold);

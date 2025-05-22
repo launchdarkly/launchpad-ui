@@ -2,7 +2,7 @@ import type { VariantProps } from 'class-variance-authority';
 import type { Ref } from 'react';
 import type { MeterProps as AriaMeterProps, ContextValue } from 'react-aria-components';
 
-import { cva } from 'class-variance-authority';
+import { cva, cx } from 'class-variance-authority';
 import { createContext } from 'react';
 import { Meter as AriaMeter, Text, composeRenderProps } from 'react-aria-components';
 
@@ -86,7 +86,10 @@ const Meter = ({ ref, ...props }: MeterProps) => {
 							{children}
 							<Text className={styles.value}>{valueText}</Text>
 							<div className={styles.track}>
-								<div className={styles.fill} style={{ width: `${percentage}%` }} />
+								<div
+									className={cx(styles.fill, percentage === 100 && styles.max)}
+									style={{ width: `${percentage}%` }}
+								/>
 							</div>
 						</>
 					)}
