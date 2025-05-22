@@ -1,5 +1,13 @@
 # @launchpad-ui/components
 
+## 0.9.30
+
+### Patch Changes
+
+- [#1687](https://github.com/launchdarkly/launchpad-ui/pull/1687) [`7946753`](https://github.com/launchdarkly/launchpad-ui/commit/7946753bfa3041fe6d6bae17d5553b9d9c11130b) Thanks [@Niznikr](https://github.com/Niznikr)! - Add `width` prop to `Popover`
+
+- [#1686](https://github.com/launchdarkly/launchpad-ui/pull/1686) [`67d8c77`](https://github.com/launchdarkly/launchpad-ui/commit/67d8c7755d316cd44249d44396629842af61fe0c) Thanks [@Niznikr](https://github.com/Niznikr)! - Add `isDisabled` prop to `Perceivable` and clear press responders
+
 ## 0.9.29
 
 ### Patch Changes
