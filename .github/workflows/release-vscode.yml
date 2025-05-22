@@ -17,17 +17,11 @@ jobs:
       id-token: write
       contents: read
     steps:
-      - name: Configure AWS Credentials
-        uses: aws-actions/configure-aws-credentials@v4
+      - name: Get Token
+        uses: launchdarkly/gh-actions/actions/release-secrets@release-secrets-v1.2.0
         with:
-          audience: https://github.com/launchdarkly
-          role-to-assume: ${{ vars.AWS_ROLE_ARN }}
-          aws-region: us-east-1
-
-      - uses: dkershner6/aws-ssm-getparameters-action@v2
-        with:
-          parameterPairs: '/production/common/services/vscode_marketplace/vsce_pat = VSCE_PAT'
-          withDecryption: 'true'
+          aws_assume_role: ${{ vars.AWS_ROLE_ARN }}
+          ssm_parameter_pairs: '/production/common/services/vscode_marketplace/vsce_pat = VSCE_PAT'
 
       - uses: actions/checkout@v4
         with:
