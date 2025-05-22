@@ -101,7 +101,7 @@ const ProgressBar = ({ ref, ...props }: ProgressBarProps) => {
 								<Text className={styles.value}>{valueText}</Text>
 								<div className={styles.track}>
 									<div
-										className={cx(styles.fill, percentage === 100 && styles.max)}
+										className={cx(styles.fill, { [styles.max]: percentage === 100 })}
 										style={{ width: `${percentage}%` }}
 									/>
 								</div>
