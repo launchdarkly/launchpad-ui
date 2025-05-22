@@ -11,7 +11,7 @@
 }
 
 .popover {
-	--lp-arrow-offset: var(--lp-size-2);
+	--arrow-offset: var(--lp-size-2);
 
 	isolation: isolate;
 	border-radius: var(--lp-border-radius-medium);
@@ -39,6 +39,75 @@
 
 	&[data-trigger='DialogTrigger'] {
 		padding: var(--lp-spacing-300);
+	}
+
+	&[data-trigger='ComboBoxDialog'] {
+		padding: var(--lp-spacing-300);
+	}
+
+	&:is([data-trigger='DatePicker'], [data-trigger='DateRangePicker']) {
+		padding: var(--lp-spacing-600);
+	}
+
+	&[data-placement='top'] {
+		--origin: translateY(4px);
+
+		&:has(.arrow) {
+			margin-bottom: var(--arrow-offset);
+		}
+	}
+
+	&[data-placement='bottom'] {
+		--origin: translateY(-4px);
+
+		& .arrow svg {
+			transform: rotate(180deg);
+		}
+
+		&:has(.arrow) {
+			margin-top: var(--arrow-offset);
+		}
+	}
+
+	&[data-placement='right'] {
+		--origin: translateX(-4px);
+
+		& .arrow svg {
+			transform: rotate(90deg);
+		}
+
+		&:has(.arrow) {
+			margin-left: var(--arrow-offset);
+		}
+	}
+
+	&[data-placement='left'] {
+		--origin: translateX(4px);
+
+		& .arrow svg {
+			transform: rotate(-90deg);
+		}
+
+		&:has(.arrow) {
+			margin-right: var(--arrow-offset);
+		}
+	}
+
+	&:not(:is([data-trigger='MenuTrigger'], [data-trigger='SubmenuTrigger']), :has(.arrow)) {
+		overflow: auto;
+	}
+
+	@media (prefers-reduced-motion: no-preference) {
+		&[data-entering] {
+			animation-name: slide;
+			animation-duration: var(--lp-duration-200);
+			animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+		}
+	}
+}
+
+.default {
+	&[data-trigger='DialogTrigger'] {
 		min-width: var(--lp-size-192);
 	}
 
@@ -55,68 +124,10 @@
 	&[data-trigger='ComboBox'] {
 		min-width: var(--trigger-width);
 	}
+}
 
-	&[data-trigger='ComboBoxDialog'] {
-		padding: var(--lp-spacing-300);
-	}
-
-	&:is([data-trigger='DatePicker'], [data-trigger='DateRangePicker']) {
-		padding: var(--lp-spacing-600);
-	}
-
-	&[data-placement='top'] {
-		--origin: translateY(4px);
-
-		&:has(.arrow) {
-			margin-bottom: var(--lp-arrow-offset);
-		}
-	}
-
-	&[data-placement='bottom'] {
-		--origin: translateY(-4px);
-
-		& .arrow svg {
-			transform: rotate(180deg);
-		}
-
-		&:has(.arrow) {
-			margin-top: var(--lp-arrow-offset);
-		}
-	}
-
-	&[data-placement='right'] {
-		--origin: translateX(-4px);
-
-		& .arrow svg {
-			transform: rotate(90deg);
-		}
-
-		&:has(.arrow) {
-			margin-left: var(--lp-arrow-offset);
-		}
-	}
-
-	&[data-placement='left'] {
-		--origin: translateX(4px);
-
-		& .arrow svg {
-			transform: rotate(-90deg);
-		}
-
-		&:has(.arrow) {
-			margin-right: var(--lp-arrow-offset);
-		}
-	}
-
-	&:not(:is([data-trigger='MenuTrigger'], [data-trigger='SubmenuTrigger']), :has(.arrow)) {
-		overflow: auto;
-	}
-
-	@media (prefers-reduced-motion: no-preference) {
-		&[data-entering] {
-			animation-name: slide;
-			animation-duration: var(--lp-duration-200);
-			animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
-		}
+.trigger {
+	&[data-trigger] {
+		width: var(--trigger-width);
 	}
 }
