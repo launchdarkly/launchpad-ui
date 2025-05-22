@@ -1,7 +1,7 @@
 import { describe, expect, it, vi } from 'vitest';
 
 import { render, screen, userEvent, waitFor } from '../../../test/utils';
-import { Button, Form, Perceivable, Tooltip, TooltipTrigger } from '../src';
+import { Button, DialogTrigger, Form, Perceivable, Popover, Tooltip, TooltipTrigger } from '../src';
 
 describe('Perceivable', () => {
 	it('sets aria-disabled', async () => {
@@ -55,5 +55,24 @@ describe('Perceivable', () => {
 
 		await user.click(screen.getByRole('button', { hidden: true }));
 		expect(spy).not.toHaveBeenCalled();
+	});
+
+	it('clears press responders', async () => {
+		const user = userEvent.setup();
+
+		render(
+			<DialogTrigger>
+				<Perceivable>
+					<TooltipTrigger>
+						<Button onPress={() => console.log('Pressed')}>Button</Button>
+						<Tooltip placement="right">Message</Tooltip>
+					</TooltipTrigger>
+					<Popover>Message</Popover>
+				</Perceivable>
+			</DialogTrigger>,
+		);
+
+		await user.click(screen.getByRole('button', { hidden: true }));
+		expect(await screen.queryByRole('dialog')).toBeNull();
 	});
 });
