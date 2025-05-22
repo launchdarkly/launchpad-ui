@@ -132,6 +132,10 @@ Note: if you are creating a pull request from a fork, CI checks will only run wh
 $ pnpm chromatic --project-token PROJECT_TOKEN --branch-name FORKED_BRANCH --build-script-name storybook:build --exit-once-uploaded --only-changed --externals "packages/icons/src/img/**" --externals "packages/tokens/tokens/**"
 ```
 
+### Step 6: Test and verify your changes
+
+If you updated the `components`, `icons`, or `tokens` package your PR will be decorated with preview releases ([example](https://github.com/launchdarkly/launchpad-ui/pull/1686#issuecomment-2898653450)) which will allow you to install them to your project to test/verify. This is helpful for bug fixes or ensuring no regressions result from a refactoring and/or style changes.
+
 ---
 
 ## Common Tasks
@@ -170,12 +174,6 @@ The following command will run unit tests in every package of the monorepo:
 $ pnpm test
 ```
 
-### Generating New Packages With Plop
-
-With the help of [plop](https://plopjs.com), we can quickly scaffold new component files in a consistent and opinionated way.
-
-Simply run `pnpm generate component` and follow the prompts, and you'll be well on your way to adding a new component package to LaunchPad.
-
 ### Adding Dependencies to Packages
 
 - Pin dependencies.
@@ -212,6 +210,6 @@ All CSS code is linted with [Biome](https://biomejs.dev/).
 
 ### Specs Styleguide
 
-- Include thoughtfully-worded, well-structured [Vitest](https://vitest.dev/) specs in the `__test__` folder of each package.
+- Include thoughtfully-worded, well-structured [Vitest](https://vitest.dev/) specs in the `__tests__` folder of each package.
 - Treat `describe` as a noun or situation.
 - Treat `it` as a statement about state or how an operation changes state.

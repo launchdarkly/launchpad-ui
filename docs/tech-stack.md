@@ -6,7 +6,7 @@ Design tokens are platform-agnostic design decisions that encapsulate our brand.
 
 ### Transforms
 
-We use [Style Dictionary](https://amzn.github.io/style-dictionary/#/) to transform tokens into CSS custom properties, ES modules, and CommonJS modules.
+We use [Style Dictionary](https://styledictionary.com/) to transform tokens into CSS custom properties, ES modules, and CommonJS modules.
 
 ## Icons
 
@@ -14,7 +14,7 @@ Our icons are delivered as a SVG sprite that is then referenced in a React wrapp
 
 ## Components
 
-Our components are built using [React](https://beta.reactjs.org/). React is simple to use and has strong TypeScript support, making it easy to encapsulate state and expose functionality through properties for components. We use [TypeScript](https://www.typescriptlang.org/) to write cleaner code and provide strong editor integration for consumers of our components. Our styles are written in CSS and live alongside components. Plain CSS offers the best long-term caching and its latest features help address many of the issues CSS frameworks seek to solve, without a cost to performance.
+Our components are built using [React](https://react.dev/). React is simple to use and has strong TypeScript support, making it easy to encapsulate state and expose functionality through properties for components. We use [TypeScript](https://www.typescriptlang.org/) to write cleaner code and provide strong editor integration for consumers of our components. Our styles are written as [CSS modules](https://github.com/css-modules/css-modules) and transformed via [Lightning CSS](https://lightningcss.dev/).
 
 ## Package Manager
 
@@ -26,7 +26,7 @@ We use [Storybook](https://storybook.js.org/) to build and test our components i
 
 ## Build
 
-Our packages are built using [Vite](https://vitejs.dev/) for its speed, rich features, and ease to customize. Packages are built in ESM and CJS formats. Type declarations are emitted using the TypeScript compiler.
+Our packages are built using [Vite](https://vitejs.dev/) + [Rolldown](https://vite.dev/guide/rolldown.html) for its speed, rich features, and ease to customize. Packages are built in ESM and CJS formats. Type declarations are emitted using the TypeScript compiler.
 
 [Nx](https://nx.dev/) is used to run lint, test, and build scripts on only the packages affected by code changes. Its speed, caching abilities, and project graph features make it ideal for our project.
 
