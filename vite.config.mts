@@ -60,7 +60,6 @@ export default defineConfig({
 		process.env.VITEST === 'true' ? swc() : react(),
 		vanillaExtractPlugin(),
 		cssImport(),
-		// @ts-expect-error
 		PluginPure({
 			functions: PURE_CALLS,
 			sourcemap: true,
