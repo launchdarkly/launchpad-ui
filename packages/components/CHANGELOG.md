@@ -1,5 +1,11 @@
 # @launchpad-ui/components
 
+## 0.9.31
+
+### Patch Changes
+
+- [#1691](https://github.com/launchdarkly/launchpad-ui/pull/1691) [`0d8dcf6`](https://github.com/launchdarkly/launchpad-ui/commit/0d8dcf65be382bea925fc992fd695de589d2d3c9) Thanks [@Niznikr](https://github.com/Niznikr)! - Fix `Meter` max styling
+
 ## 0.9.30
 
 ### Patch Changes
