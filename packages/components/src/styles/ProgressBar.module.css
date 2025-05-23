@@ -53,6 +53,10 @@
 	height: 100%;
 }
 
+.max {
+	border-radius: var(--lp-border-radius-medium);
+}
+
 .base {
 	height: var(--lp-size-64);
 	width: var(--lp-size-64);
