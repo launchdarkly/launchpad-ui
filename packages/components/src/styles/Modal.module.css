@@ -50,7 +50,7 @@
 
 	& [slot='title'] {
 		font: var(--lp-text-heading-1-semibold);
-		flex-grow: 1;
+		grid-column: 1;
 	}
 
 	& [role='dialog']:has([slot='body']) {
@@ -61,10 +61,14 @@
 	}
 
 	& [slot='header'] {
-		display: flex;
+		display: grid;
+		grid-template-columns: 1fr;
 		align-items: center;
 		gap: var(--lp-spacing-300);
-		flex-wrap: wrap;
+
+		& button[data-rac] {
+			grid-column: 2;
+		}
 	}
 
 	& [slot='body'] {
@@ -82,7 +86,8 @@
 	& [slot='subtitle'] {
 		font: var(--lp-text-body-1-regular);
 		color: var(--lp-color-text-ui-secondary);
-		flex-basis: 100%;
+		grid-row: 2;
+		grid-column: 1 / span 2;
 	}
 }
 
