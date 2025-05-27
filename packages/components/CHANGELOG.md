@@ -1,5 +1,11 @@
 # @launchpad-ui/components
 
+## 0.9.32
+
+### Patch Changes
+
+- [#1693](https://github.com/launchdarkly/launchpad-ui/pull/1693) [`7434f3e`](https://github.com/launchdarkly/launchpad-ui/commit/7434f3ea1c0afb5b335532c31bd9d371d8233549) Thanks [@Niznikr](https://github.com/Niznikr)! - Remove max-width on `Heading`
+
 ## 0.9.31
 
 ### Patch Changes
