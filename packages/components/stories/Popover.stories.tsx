@@ -109,12 +109,20 @@ export const Hover: Story = {
 		return (
 			<HoverTrigger>
 				<Link href="/test">Link</Link>
-				<Popover {...args}>
+				<Popover {...args} data-testid="popover">
 					<Heading slot="title">Title</Heading>
 					<div>Message</div>
 					<Link href="/more">View more</Link>
 				</Popover>
 			</HoverTrigger>
 		);
+	},
+	play: async ({ canvasElement }: { canvasElement: HTMLElement }) => {
+		const canvas = within(canvasElement);
+
+		await userEvent.hover(canvasElement);
+		await userEvent.hover(canvas.getByRole('link'));
+		const body = canvasElement.ownerDocument.body;
+		await expect(await within(body).findByTestId('popover'));
 	},
 };
