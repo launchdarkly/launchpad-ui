@@ -7,6 +7,8 @@ import { expect, userEvent, within } from 'storybook/test';
 import { Button } from '../src/Button';
 import { Dialog, DialogTrigger } from '../src/Dialog';
 import { Heading } from '../src/Heading';
+import { HoverTrigger } from '../src/HoverTrigger';
+import { Link } from '../src/Link';
 import { OverlayArrow, Popover } from '../src/Popover';
 import { Pressable } from '../src/Pressable';
 
@@ -100,4 +102,19 @@ export const CustomTrigger: Story = {
 		);
 	},
 	play,
+};
+
+export const Hover: Story = {
+	render: (args) => {
+		return (
+			<HoverTrigger>
+				<Link href="/test">Link</Link>
+				<Popover {...args}>
+					<Heading slot="title">Title</Heading>
+					<div>Message</div>
+					<Link href="/more">View more</Link>
+				</Popover>
+			</HoverTrigger>
+		);
+	},
 };
