@@ -60,8 +60,9 @@
 	&:focus-visible {
 		outline: none;
 		border-color: var(--lp-color-border-interactive-secondary-focus);
-		box-shadow: 0 0 0 2px var(--lp-color-bg-ui-primary), 0 0 0 4px
-			var(--lp-color-shadow-interactive-focus);
+		box-shadow:
+			0 0 0 2px var(--lp-color-bg-ui-primary),
+			0 0 0 4px var(--lp-color-shadow-interactive-focus);
 	}
 }
 

@@ -1,4 +1,5 @@
 import fs from 'fs';
+
 import { client } from '@figma/code-connect';
 
 // https://github.com/figma/code-connect/blob/main/cli/scripts/README.md

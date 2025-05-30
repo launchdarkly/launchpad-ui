@@ -11,8 +11,8 @@ import { createContext } from 'react';
 import {
 	Breadcrumb as AriaBreadcrumb,
 	Breadcrumbs as AriaBreadcrumbs,
-	Provider,
 	composeRenderProps,
+	Provider,
 } from 'react-aria-components';
 
 import { LinkContext } from './Link';
@@ -31,7 +31,7 @@ interface BreadcrumbProps extends AriaBreadcrumbProps {
 }
 
 const BreadcrumbsContext =
-	// biome-ignore lint/suspicious/noExplicitAny: <explanation>
+	// biome-ignore lint/suspicious/noExplicitAny: ignore
 	createContext<ContextValue<BreadcrumbsProps<any>, HTMLOListElement>>(null);
 
 /**

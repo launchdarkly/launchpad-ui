@@ -114,7 +114,7 @@ const Menu = <T extends number | string>(props: MenuProps<T>) => {
 		return (childrenProps as ReactElement[]).reduce(
 			(
 				{ items, searchElement }: { items: ReactElement[]; searchElement: null | ReactElement },
-				// biome-ignore lint/suspicious/noExplicitAny: <explanation>
+				// biome-ignore lint/suspicious/noExplicitAny: ignore
 				child: ReactElement<any>,
 			) => {
 				switch (child.type) {
@@ -348,11 +348,11 @@ const ItemVirtualizer = <T extends number | string>(props: ItemVirtualizerProps<
 		}
 	};
 
-	// biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
+	// biome-ignore lint/correctness/useExhaustiveDependencies: ignore
 	const renderSearch = useMemo(
 		() =>
 			searchElement
-				? // biome-ignore lint/suspicious/noExplicitAny: <explanation>
+				? // biome-ignore lint/suspicious/noExplicitAny: ignore
 					cloneElement(searchElement as ReactElement<any>, {
 						onKeyDown: (e: KeyboardEvent) =>
 							handleKeyboardFocusKeydown(e, {

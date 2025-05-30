@@ -2,8 +2,8 @@ import type { ReactNode } from 'react';
 
 import { Portal } from '@launchpad-ui/portal';
 
-import { ModalContainer } from './ModalContainer';
 import { ModalContext } from './context';
+import { ModalContainer } from './ModalContainer';
 
 type ModalProps = {
 	children: ReactNode;

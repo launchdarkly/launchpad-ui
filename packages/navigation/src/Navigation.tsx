@@ -32,7 +32,7 @@ const Navigation = <T extends object>(props: NavigationProps<T>) => {
 	const itemListRef = useRef<HTMLDivElement>(null);
 	const [shouldCollapse, setCollapse] = useValueEffect(false);
 
-	// biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
+	// biome-ignore lint/correctness/useExhaustiveDependencies: ignore
 	const checkShouldCollapse = useCallback(() => {
 		function computeShouldCollapse() {
 			if (!wrapperRef.current || !itemListRef.current) {
@@ -53,7 +53,7 @@ const Navigation = <T extends object>(props: NavigationProps<T>) => {
 		});
 	}, [wrapperRef, itemListRef, setCollapse]);
 
-	// biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
+	// biome-ignore lint/correctness/useExhaustiveDependencies: ignore
 	useLayoutEffect(() => {
 		checkShouldCollapse();
 	}, [children, checkShouldCollapse]);

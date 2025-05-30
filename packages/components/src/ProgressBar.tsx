@@ -4,7 +4,7 @@ import type { ProgressBarProps as AriaProgressBarProps, ContextValue } from 'rea
 
 import { cva, cx } from 'class-variance-authority';
 import { createContext } from 'react';
-import { ProgressBar as AriaProgressBar, Text, composeRenderProps } from 'react-aria-components';
+import { ProgressBar as AriaProgressBar, composeRenderProps, Text } from 'react-aria-components';
 
 import styles from './styles/ProgressBar.module.css';
 import { useLPContextProps } from './utils';
@@ -70,7 +70,7 @@ const ProgressBar = ({ ref, ...props }: ProgressBarProps) => {
 				(children, { isIndeterminate, percentage, valueText }) => (
 					<>
 						{variant === 'spinner' && (
-							// biome-ignore lint/a11y/noSvgWithoutTitle: <explanation>
+							// biome-ignore lint/a11y/noSvgWithoutTitle: ignore
 							<svg
 								viewBox="0 0 32 32"
 								fill="none"

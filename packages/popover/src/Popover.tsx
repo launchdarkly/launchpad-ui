@@ -245,7 +245,7 @@ const Popover = ({
 		};
 	}, []);
 
-	// biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
+	// biome-ignore lint/correctness/useExhaustiveDependencies: ignore
 	useEffect(() => {
 		const updatePopover = async () => {
 			if (isOpen && !(popoverElement === null || popoverElement === undefined)) {
@@ -422,7 +422,7 @@ const Popover = ({
 	const hasEmptyContent =
 		content === null || content === undefined || (typeof content === 'string' && !content);
 	const isTargetDisabled = isValidElement(target)
-		? // biome-ignore lint/suspicious/noExplicitAny: <explanation>
+		? // biome-ignore lint/suspicious/noExplicitAny: ignore
 			!!(target as ReactElement<any>)?.props?.disabled
 		: false;
 
@@ -457,7 +457,7 @@ const Popover = ({
 	return createElement(
 		rootElementTag,
 		targetProps,
-		// biome-ignore lint/suspicious/noExplicitAny: <explanation>
+		// biome-ignore lint/suspicious/noExplicitAny: ignore
 		cloneElement(target as ReactElement<any>, {
 			ref: targetElementRef,
 			...(isOpen && { 'aria-describedby': popoverId.current }),

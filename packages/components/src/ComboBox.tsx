@@ -8,9 +8,9 @@ import { createContext, useCallback, useContext, useRef, useState } from 'react'
 import {
 	ComboBox as AriaComboBox,
 	ComboBoxStateContext,
+	composeRenderProps,
 	GroupContext,
 	Provider,
-	composeRenderProps,
 } from 'react-aria-components';
 
 import { IconButton } from './IconButton';
@@ -26,7 +26,7 @@ interface ComboBoxProps<T extends object> extends AriaComboBoxProps<T> {
 
 interface ComboBoxClearButtonProps extends Partial<IconButtonProps> {}
 
-// biome-ignore lint/suspicious/noExplicitAny: <explanation>
+// biome-ignore lint/suspicious/noExplicitAny: ignore
 const ComboBoxContext = createContext<ContextValue<ComboBoxProps<any>, HTMLDivElement>>(null);
 
 /**
@@ -40,7 +40,7 @@ const ComboBox = <T extends object>({ ref, ...props }: ComboBoxProps<T>) => {
 	const groupRef = useRef<HTMLDivElement>(null);
 	// https://github.com/adobe/react-spectrum/blob/main/packages/react-aria-components/src/ComboBox.tsx#L152-L166
 	const [groupWidth, setGroupWidth] = useState<string | null>(null);
-	// biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
+	// biome-ignore lint/correctness/useExhaustiveDependencies: ignore
 	const onResize = useCallback(() => {
 		if (groupRef.current) {
 			setGroupWidth(`${groupRef.current.offsetWidth}px`);
