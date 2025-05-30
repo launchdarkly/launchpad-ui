@@ -10,7 +10,7 @@ import type { Variable } from './types';
 
 import JsonToTS from 'json-to-ts';
 import StyleDictionary from 'style-dictionary';
-import { formats, transformGroups, transformTypes, transforms } from 'style-dictionary/enums';
+import { formats, transformGroups, transforms, transformTypes } from 'style-dictionary/enums';
 import { fileHeader, minifyDictionary, usesReferences } from 'style-dictionary/utils';
 
 import { css, themes } from './themes';
@@ -306,7 +306,7 @@ StyleDictionary.registerFormat({
 		const groups = dictionary.allTokens.reduce((acc: TransformedToken, obj) => {
 			const key = obj.attributes?.category as string;
 			const group = acc[key] ?? [];
-			// biome-ignore lint/performance/noAccumulatingSpread: <explanation>
+			// biome-ignore lint/performance/noAccumulatingSpread: ignore
 			return { ...acc, [key]: [...group, obj] };
 		}, {} as TransformedToken);
 		return `${JSON.stringify(groups, null, 2)}\n`;
@@ -331,11 +331,7 @@ StyleDictionary.registerFormat({
 			const value: VariableValue = usesReferences(token.original.$value)
 				? {
 						type: 'VARIABLE_ALIAS',
-						id: token.original.$value
-							.trim()
-							.replace(/[\{\}]/g, '')
-							.split('.')
-							.join('/'),
+						id: token.original.$value.trim().replace(/[{}]/g, '').split('.').join('/'),
 					}
 				: original;
 			const resolvedType = getResolvedType(original);

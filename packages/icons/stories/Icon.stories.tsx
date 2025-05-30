@@ -44,7 +44,7 @@ export const Gallery: Story = {
 								gap: '1rem',
 								textAlign: 'center',
 							}}
-							// biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
+							// biome-ignore lint/suspicious/noArrayIndexKey: ignore
 							key={index}
 						>
 							<div

@@ -10,13 +10,13 @@ import { createContext } from 'react';
 import {
 	Select as AriaSelect,
 	SelectValue as AriaSelectValue,
-	Provider,
 	composeRenderProps,
+	Provider,
 } from 'react-aria-components';
 
 import { ButtonContext } from './Button';
-import styles from './styles/Select.module.css';
 import baseStyles from './styles/base.module.css';
+import styles from './styles/Select.module.css';
 import { useLPContextProps } from './utils';
 
 const selectStyles = cva(styles.select);
@@ -30,10 +30,10 @@ interface SelectValueProps<T extends object> extends AriaSelectValueProps<T> {
 	ref?: Ref<HTMLSpanElement>;
 }
 
-// biome-ignore lint/suspicious/noExplicitAny: <explanation>
+// biome-ignore lint/suspicious/noExplicitAny: ignore
 const SelectContext = createContext<ContextValue<SelectProps<any>, HTMLDivElement>>(null);
 const SelectValueContext =
-	// biome-ignore lint/suspicious/noExplicitAny: <explanation>
+	// biome-ignore lint/suspicious/noExplicitAny: ignore
 	createContext<ContextValue<SelectValueProps<any>, HTMLSpanElement>>(null);
 
 /**

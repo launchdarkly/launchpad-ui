@@ -157,6 +157,7 @@
 
 .picker {
 	composes: base from './Input.module.css';
+	/* biome-ignore lint/suspicious/noDuplicateProperties: safe */
 	composes: _default from './Input.module.css';
 	composes: group from './Group.module.css';
 

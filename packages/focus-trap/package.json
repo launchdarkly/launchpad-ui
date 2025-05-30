@@ -11,7 +11,9 @@
 	},
 	"description": "An internal utility not intended for public usage.",
 	"license": "Apache-2.0",
-	"files": ["dist"],
+	"files": [
+		"dist"
+	],
 	"main": "dist/index.js",
 	"module": "dist/index.es.js",
 	"types": "dist/index.d.ts",

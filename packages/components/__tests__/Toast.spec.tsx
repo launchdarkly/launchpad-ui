@@ -1,7 +1,7 @@
 import { describe, expect, it, vi } from 'vitest';
 
 import { render, screen, userEvent } from '../../../test/utils';
-import { Button, SnackbarRegion, ToastRegion, snackbarQueue, toastQueue } from '../src';
+import { Button, SnackbarRegion, snackbarQueue, ToastRegion, toastQueue } from '../src';
 
 globalThis.matchMedia = vi.fn().mockReturnValue({
 	matches: true,

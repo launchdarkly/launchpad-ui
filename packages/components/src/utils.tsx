@@ -3,11 +3,9 @@ import type { Context, Ref } from 'react';
 import type { ContextValue, SlotProps } from 'react-aria-components';
 
 import { mergeRefs } from '@react-aria/utils';
-import { useMemo } from 'react';
+import { useEffect, useLayoutEffect, useMemo, useState } from 'react';
 import { mergeProps } from 'react-aria';
 import { useSlottedContext } from 'react-aria-components';
-
-import { useEffect, useLayoutEffect, useState } from 'react';
 import { useHref as useRouterHref } from 'react-router';
 
 type ImageLoadingStatus = 'idle' | 'loading' | 'loaded' | 'error';

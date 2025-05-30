@@ -14,9 +14,9 @@ import { createContext } from 'react';
 import {
 	Menu as AriaMenu,
 	MenuItem as AriaMenuItem,
+	composeRenderProps,
 	MenuTrigger,
 	SubmenuTrigger,
-	composeRenderProps,
 } from 'react-aria-components';
 
 import { CheckboxIcon, checkboxStyles } from './Checkbox';
@@ -43,7 +43,7 @@ interface MenuItemProps<T> extends AriaMenuItemProps<T>, VariantProps<typeof men
 	ref?: Ref<T>;
 }
 
-// biome-ignore lint/suspicious/noExplicitAny: <explanation>
+// biome-ignore lint/suspicious/noExplicitAny: ignore
 const MenuContext = createContext<ContextValue<MenuProps<any>, HTMLDivElement>>(null);
 
 /**

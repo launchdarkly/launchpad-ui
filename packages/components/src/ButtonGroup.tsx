@@ -7,10 +7,10 @@ import { cva } from 'class-variance-authority';
 import { createContext } from 'react';
 import {
 	ButtonContext,
+	composeRenderProps,
 	Group,
 	Provider,
 	ToggleButtonContext,
-	composeRenderProps,
 } from 'react-aria-components';
 
 import styles from './styles/ButtonGroup.module.css';

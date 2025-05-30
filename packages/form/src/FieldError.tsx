@@ -30,6 +30,7 @@ const FieldError = ({
 	}
 
 	return (
+		// biome-ignore lint/a11y/useAriaPropsSupportedByRole: ignore
 		<span
 			{...rest}
 			className={cx(styles.fieldError, className)}

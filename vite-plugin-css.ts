@@ -5,7 +5,7 @@ import path from 'path';
 
 const cssImport = (): Plugin => {
 	let config: ResolvedConfig;
-	let cssFile: string | undefined = undefined;
+	let cssFile: string | undefined;
 
 	return {
 		name: 'css-import',

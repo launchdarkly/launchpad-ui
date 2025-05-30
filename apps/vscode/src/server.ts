@@ -9,17 +9,17 @@ import type {
 
 import tokens from '@launchpad-ui/tokens/dist/tokens.json';
 import { getCSSLanguageService } from 'vscode-css-languageservice/lib/esm/cssLanguageService';
-import { TextDocument } from 'vscode-languageserver-textdocument';
 import {
 	Color,
 	CompletionItemKind,
+	createConnection,
 	MarkupKind,
 	ProposedFeatures,
 	Range,
 	TextDocumentSyncKind,
 	TextDocuments,
-	createConnection,
 } from 'vscode-languageserver/node';
+import { TextDocument } from 'vscode-languageserver-textdocument';
 
 const cssLanguageService = getCSSLanguageService();
 
@@ -163,7 +163,7 @@ connection.onDocumentColor(({ textDocument }) => {
 		cssVarRegExp.lastIndex = 0;
 		let match: RegExpExecArray | null;
 
-		// biome-ignore lint/suspicious/noAssignInExpressions: <explanation>
+		// biome-ignore lint/suspicious/noAssignInExpressions: ignore
 		while ((match = cssVarRegExp.exec(text)) != null) {
 			const offset = match.index;
 			const length = match[0].length;

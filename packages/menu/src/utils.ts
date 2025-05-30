@@ -15,7 +15,7 @@ const handleKeyboardInteractions = (
 		ArrowUp: keyHandlers.handleUp,
 		ArrowDown: keyHandlers.handleDown,
 		Enter: keyHandlers.handleEnter,
-		// biome-ignore lint/suspicious/noConfusingVoidType: <explanation>
+		// biome-ignore lint/suspicious/noConfusingVoidType: ignore
 	} as Record<string, (e: KeyboardEvent) => void | undefined>;
 
 	if (ops[event.key]) {

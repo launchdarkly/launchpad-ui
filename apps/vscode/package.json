@@ -15,17 +15,26 @@
 	},
 	"description": "LaunchPad VS Code extension",
 	"license": "SEE LICENSE IN LICENSE.txt",
-	"keywords": ["launchpad", "launchdarkly", "design system", "design tokens"],
+	"keywords": [
+		"launchpad",
+		"launchdarkly",
+		"design system",
+		"design tokens"
+	],
 	"engines": {
 		"vscode": "^1.100.2"
 	},
-	"categories": ["Other"],
+	"categories": [
+		"Other"
+	],
 	"icon": "images/osmo.png",
 	"galleryBanner": {
 		"color": "#FFFFFF",
 		"theme": "light"
 	},
-	"activationEvents": ["onLanguage:css"],
+	"activationEvents": [
+		"onLanguage:css"
+	],
 	"main": "dist/client.js",
 	"scripts": {
 		"vscode:prepublish": "esbuild ./src/client.ts ./src/server.ts --bundle --outdir=dist --external:vscode --format=cjs --platform=node",

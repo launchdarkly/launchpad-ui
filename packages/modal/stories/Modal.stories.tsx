@@ -3,8 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { Button } from '@launchpad-ui/button';
 import { Icon } from '@launchpad-ui/icons';
 import { Tooltip } from '@launchpad-ui/tooltip';
-import { useState } from 'react';
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import { userEvent, within } from 'storybook/test';
 
 import { allModes } from '../../../.storybook/modes';
@@ -507,7 +506,7 @@ export const WithTooltip: Story = {
 					<ModalHeader title="Heading" description="A description" />
 					<ModalBody>
 						<Tooltip content="If you hit the escape key hovering over this tooltip, it should dismiss the tooltip but not the drawer.">
-							{/* biome-ignore lint/a11y/useButtonType: <explanation> */}
+							{/* biome-ignore lint/a11y/useButtonType: ignore */}
 							<button>Hover over me or focus on me!</button>
 						</Tooltip>
 					</ModalBody>

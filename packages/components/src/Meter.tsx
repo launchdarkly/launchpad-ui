@@ -4,7 +4,7 @@ import type { MeterProps as AriaMeterProps, ContextValue } from 'react-aria-comp
 
 import { cva, cx } from 'class-variance-authority';
 import { createContext } from 'react';
-import { Meter as AriaMeter, Text, composeRenderProps } from 'react-aria-components';
+import { Meter as AriaMeter, composeRenderProps, Text } from 'react-aria-components';
 
 import styles from './styles/Meter.module.css';
 import { useLPContextProps } from './utils';
@@ -52,7 +52,7 @@ const Meter = ({ ref, ...props }: MeterProps) => {
 			{composeRenderProps(props.children, (children, { percentage, valueText }) => (
 				<>
 					{variant === 'donut' && (
-						// biome-ignore lint/a11y/noSvgWithoutTitle: <explanation>
+						// biome-ignore lint/a11y/noSvgWithoutTitle: ignore
 						<svg
 							viewBox="0 0 128 128"
 							fill="none"

@@ -42,26 +42,20 @@ const renderStates = (args: Story['args']) => (
 			alignItems: 'center',
 		}}
 	>
-		<>
-			<span style={{ font: vars.text.body[1].semibold }}>Resting</span>
-			<Button {...args} />
-		</>
-		<>
-			<span style={{ font: vars.text.body[1].semibold }}>Hover</span>
-			<Button {...args} />
-		</>
-		<>
-			<span style={{ font: vars.text.body[1].semibold }}>Focus</span>
-			<Button {...args} />
-		</>
-		<>
-			<span style={{ font: vars.text.body[1].semibold }}>Active</span>
-			<Button {...args} />
-		</>
-		<>
-			<span style={{ font: vars.text.body[1].semibold }}>Disabled</span>
-			<Button isDisabled {...args} />
-		</>
+		<span style={{ font: vars.text.body[1].semibold }}>Resting</span>
+		<Button {...args} />
+
+		<span style={{ font: vars.text.body[1].semibold }}>Hover</span>
+		<Button {...args} />
+
+		<span style={{ font: vars.text.body[1].semibold }}>Focus</span>
+		<Button {...args} />
+
+		<span style={{ font: vars.text.body[1].semibold }}>Active</span>
+		<Button {...args} />
+
+		<span style={{ font: vars.text.body[1].semibold }}>Disabled</span>
+		<Button isDisabled {...args} />
 	</div>
 );
 

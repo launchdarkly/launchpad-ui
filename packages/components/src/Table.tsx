@@ -25,8 +25,8 @@ import {
 	TableBody as AriaTableBody,
 	TableHeader as AriaTableHeader,
 	Collection,
-	Provider,
 	composeRenderProps,
+	Provider,
 	useTableOptions,
 } from 'react-aria-components';
 

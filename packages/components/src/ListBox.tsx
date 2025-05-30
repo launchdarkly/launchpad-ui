@@ -28,7 +28,7 @@ interface ListBoxItemProps<T> extends AriaListBoxItemProps<T> {
 	ref?: Ref<T>;
 }
 
-// biome-ignore lint/suspicious/noExplicitAny: <explanation>
+// biome-ignore lint/suspicious/noExplicitAny: ignore
 const ListBoxContext = createContext<ContextValue<ListBoxProps<any>, HTMLDivElement>>(null);
 
 /**

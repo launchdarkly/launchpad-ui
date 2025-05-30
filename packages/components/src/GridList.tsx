@@ -29,7 +29,7 @@ interface GridListItemProps<T extends object> extends AriaGridListItemProps<T> {
 	ref?: Ref<T>;
 }
 
-// biome-ignore lint/suspicious/noExplicitAny: <explanation>
+// biome-ignore lint/suspicious/noExplicitAny: ignore
 const GridListContext = createContext<ContextValue<GridListProps<any>, HTMLDivElement>>(null);
 
 /**

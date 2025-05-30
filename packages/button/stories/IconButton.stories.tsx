@@ -10,7 +10,7 @@ import './Button.stories.css';
 const buttonTemplateWithStates: Decorator = (storyComponent, context) => {
 	const { viewMode, args } = context;
 
-	// biome-ignore lint/suspicious/noExplicitAny: <explanation>
+	// biome-ignore lint/suspicious/noExplicitAny: ignore
 	const storyArgs = args as any;
 	const buttonLabel = storyArgs?.children || '';
 

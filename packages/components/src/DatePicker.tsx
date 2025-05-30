@@ -14,19 +14,19 @@ import { useLocale } from 'react-aria';
 import {
 	DatePicker as AriaDatePicker,
 	DateRangePicker as AriaDateRangePicker,
+	composeRenderProps,
 	DatePickerStateContext,
 	DateRangePickerStateContext,
 	FormContext,
 	PopoverContext,
 	Provider,
 	Text,
-	composeRenderProps,
 	useSlottedContext,
 } from 'react-aria-components';
 
 import { ButtonContext } from './Button';
-import styles from './styles/DatePicker.module.css';
 import baseStyles from './styles/base.module.css';
+import styles from './styles/DatePicker.module.css';
 import { useLPContextProps } from './utils';
 
 const datePickerStyles = cva(styles.picker);

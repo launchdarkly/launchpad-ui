@@ -1,7 +1,7 @@
-import path from 'path';
-
 import type { ExtensionContext } from 'vscode';
 import type { LanguageClientOptions, ServerOptions } from 'vscode-languageclient/node';
+
+import path from 'path';
 
 import { LanguageClient, TransportKind } from 'vscode-languageclient/node';
 

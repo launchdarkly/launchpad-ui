@@ -67,7 +67,7 @@ const RadioGroup = (props: RadioGroupProps) => {
 			return elem;
 		}
 
-		// biome-ignore lint/suspicious/noExplicitAny: <explanation>
+		// biome-ignore lint/suspicious/noExplicitAny: ignore
 		const item = elem as ReactElement<any>;
 
 		if (item?.type && item.type === Radio) {

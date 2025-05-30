@@ -52,7 +52,7 @@ const Avatar = ({ className, children, size = 'medium', ref, src, ...props }: Av
 		);
 	}
 
-	// biome-ignore lint/a11y/useAltText: <explanation>
+	// biome-ignore lint/a11y/useAltText: ignore
 	return (
 		<img
 			ref={ref}
@@ -73,7 +73,7 @@ const InitialsAvatar = ({
 		? (children.toString().charCodeAt(0) + children.toString().charCodeAt(1)) % 5
 		: 0;
 	return (
-		// biome-ignore lint/a11y/noSvgWithoutTitle: <explanation>
+		// biome-ignore lint/a11y/noSvgWithoutTitle: ignore
 		<svg
 			role="img"
 			className={cx(

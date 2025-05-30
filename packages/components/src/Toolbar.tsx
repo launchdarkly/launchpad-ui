@@ -6,10 +6,10 @@ import { cva } from 'class-variance-authority';
 import { createContext } from 'react';
 import {
 	Toolbar as AriaToolbar,
+	composeRenderProps,
 	Provider,
 	SeparatorContext,
 	ToggleButtonGroupContext,
-	composeRenderProps,
 } from 'react-aria-components';
 
 import { ButtonGroupContext } from './ButtonGroup';

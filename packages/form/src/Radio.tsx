@@ -1,4 +1,4 @@
-import type { CSSProperties, ComponentProps } from 'react';
+import type { ComponentProps, CSSProperties } from 'react';
 
 import { cx } from 'classix';
 

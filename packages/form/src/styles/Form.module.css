@@ -66,7 +66,9 @@ select.formInput {
 	background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M7.41 8.84L12 13.42l4.59-4.58L18 10.25l-6 6-6-6 1.41-1.41z' fill='%23646f7a'/></svg>");
 	background-size: 1.25rem;
 	background-repeat: no-repeat;
-	background-position: right 0.4em top 50%, 0 0;
+	background-position:
+		right 0.4em top 50%,
+		0 0;
 	padding-right: 1.25rem;
 }
 

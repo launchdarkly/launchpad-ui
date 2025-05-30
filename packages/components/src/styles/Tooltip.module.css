@@ -20,9 +20,9 @@
 	border-radius: var(--lp-border-radius-regular);
 	background-color: var(--lp-color-bg-overlay-secondary);
 	box-shadow:
-		0px 0px 1px 0px var(--lp-color-shadow-ui-primary), 0px 1px 2px 0px var(
-			--lp-color-shadow-ui-primary
-		), 0px 2px 8px 0px var(--lp-color-shadow-ui-secondary);
+		0px 0px 1px 0px var(--lp-color-shadow-ui-primary),
+		0px 1px 2px 0px var(--lp-color-shadow-ui-primary),
+		0px 2px 8px 0px var(--lp-color-shadow-ui-secondary);
 	color: var(--lp-color-text-ui-primary-base);
 	transform: translate3d(0, 0, 0);
 	will-change: transform, opacity;

@@ -5,7 +5,7 @@ import { expect, userEvent, within } from 'storybook/test';
 import { Button } from '../src/Button';
 import { ButtonGroup } from '../src/ButtonGroup';
 import { Link } from '../src/Link';
-import { SnackbarRegion, ToastRegion, snackbarQueue, toastQueue } from '../src/Toast';
+import { SnackbarRegion, snackbarQueue, ToastRegion, toastQueue } from '../src/Toast';
 
 const meta: Meta<typeof ToastRegion> = {
 	component: ToastRegion,

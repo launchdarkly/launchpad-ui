@@ -8,7 +8,11 @@
 	border-radius: var(--lp-border-radius-regular);
 	border: var(--lp-border-width-200) solid var(--lp-color-border-field-base);
 	background: var(--lp-color-bg-field-base);
-	transition: all var(--lp-duration-100) ease-in-out, outline, outline-offset, box-shadow 0ms;
+	transition:
+		all var(--lp-duration-100) ease-in-out,
+		outline,
+		outline-offset,
+		box-shadow 0ms;
 
 	& .icon {
 		fill: var(--lp-color-fill-interactive-primary);

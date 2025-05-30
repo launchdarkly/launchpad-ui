@@ -5,7 +5,6 @@ import { Fragment } from 'react';
 import { Button } from '../../components/src/Button';
 import { ToastRegion, toastQueue } from '../../components/src/Toast';
 import { Tooltip, TooltipTrigger } from '../../components/src/Tooltip';
-
 // @ts-expect-error ts not detecting d.ts for es file
 import tokens from '../dist/index.es.js';
 

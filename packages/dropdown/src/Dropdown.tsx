@@ -65,7 +65,7 @@ const Dropdown = <T extends string | object | number>(props: DropdownProps<T>) =
 		}
 	}, [isOpen, hasOpened]);
 
-	// biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
+	// biome-ignore lint/correctness/useExhaustiveDependencies: ignore
 	useEffect(() => {
 		setHasOpened(isOpen);
 		onStateChange?.({ isOpen });
@@ -102,7 +102,7 @@ const Dropdown = <T extends string | object | number>(props: DropdownProps<T>) =
 			target: targetChild as FunctionComponentElement<
 				AriaAttributes & { ref: ForwardedRef<HTMLElement | undefined>; isopen: string }
 			>,
-			// biome-ignore lint/suspicious/noExplicitAny: <explanation>
+			// biome-ignore lint/suspicious/noExplicitAny: ignore
 			content: contentChild as ReactElement<any>,
 		};
 	};

@@ -26,6 +26,7 @@
 
 .row {
 	composes: focus from './base.module.css';
+	/* biome-ignore lint/suspicious/noDuplicateProperties: safe */
 	composes: selectable from './base.module.css';
 
 	&[data-dragging] {

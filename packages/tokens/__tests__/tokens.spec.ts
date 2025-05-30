@@ -1,6 +1,7 @@
 import type { DesignTokens } from 'style-dictionary/types';
 
 import path from 'path';
+
 import StyleDictionary from 'style-dictionary';
 import { describe, expect, it } from 'vitest';
 

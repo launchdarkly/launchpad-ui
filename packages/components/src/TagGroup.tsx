@@ -58,7 +58,7 @@ interface TagListProps<T> extends AriaTagListProps<T> {
 }
 
 const TagGroupContext = createContext<ContextValue<TagGroupProps, HTMLDivElement>>(null);
-// biome-ignore lint/suspicious/noExplicitAny: <explanation>
+// biome-ignore lint/suspicious/noExplicitAny: ignore
 const TagListContext = createContext<ContextValue<TagListProps<any>, HTMLDivElement>>(null);
 
 /**

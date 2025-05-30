@@ -5,8 +5,8 @@ import { cx } from 'classix';
 import { forwardRef, useState } from 'react';
 
 import { Label } from './Label';
-import { TextField } from './TextField';
 import styles from './styles/Form.module.css';
+import { TextField } from './TextField';
 
 type CompactTextFieldProps = TextFieldProps & {
 	label: string;
