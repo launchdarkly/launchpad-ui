@@ -18,7 +18,7 @@ const HoverTrigger = ({ children, ...props }: HoverTriggerProps) => {
 
 	const state = {
 		...useTooltipTriggerState({ delay, closeDelay, ...props }),
-		setOpen: (isOpen: boolean) => (isOpen ? state.close() : state.open()),
+		setOpen: () => {},
 		toggle: () => (state.isOpen ? state.close(true) : state.open(true)),
 	};
 
@@ -43,7 +43,7 @@ const HoverTrigger = ({ children, ...props }: HoverTriggerProps) => {
 			]}
 		>
 			<PressResponder onPress={() => state.close(true)} ref={triggerRef}>
-				<span {...hoverProps} ref={ref}>
+				<span {...hoverProps} ref={ref} style={{ display: 'contents' }}>
 					{children}
 				</span>
 			</PressResponder>
