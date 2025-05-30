@@ -75,6 +75,7 @@
 	}
 }
 
+/* biome-ignore lint/style/noDescendingSpecificity: ignore */
 .content {
 	flex: 1;
 	display: flex;
