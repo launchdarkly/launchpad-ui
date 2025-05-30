@@ -2,7 +2,7 @@ import type { TooltipTriggerComponentProps } from 'react-aria-components';
 
 import { PressResponder } from '@react-aria/interactions';
 import { useRef } from 'react';
-import { useHover, useOverlayTrigger } from 'react-aria';
+import { useHover } from 'react-aria';
 import { OverlayTriggerStateContext, PopoverContext, Provider } from 'react-aria-components';
 import { useTooltipTriggerState } from 'react-stately';
 
@@ -21,7 +21,6 @@ const HoverTrigger = ({ children, ...props }: HoverTriggerProps) => {
 		setOpen: (isOpen: boolean) => (isOpen ? state.close() : state.open()),
 		toggle: () => (state.isOpen ? state.close(true) : state.open(true)),
 	};
-	const { triggerProps } = useOverlayTrigger({ type: 'dialog' }, state, triggerRef);
 
 	const { hoverProps } = useHover({
 		onHoverStart: () => state?.open(),
@@ -43,7 +42,7 @@ const HoverTrigger = ({ children, ...props }: HoverTriggerProps) => {
 				],
 			]}
 		>
-			<PressResponder {...triggerProps} ref={triggerRef}>
+			<PressResponder onPress={() => state.close(true)} ref={triggerRef}>
 				<span {...hoverProps} ref={ref}>
 					{children}
 				</span>
