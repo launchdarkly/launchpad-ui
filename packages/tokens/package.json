@@ -45,7 +45,7 @@
 		"sync": "tsx src/sync.ts"
 	},
 	"devDependencies": {
-		"@figma/rest-api-spec": "^0.30.0",
+		"@figma/rest-api-spec": "^0.31.0",
 		"axios": "^1.9.0",
 		"json-to-ts": "^2.1.0",
 		"style-dictionary": "^5.0.0"
