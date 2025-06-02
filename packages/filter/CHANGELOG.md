@@ -1,5 +1,14 @@
 # @launchpad-ui/filter
 
+## 0.7.63
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @launchpad-ui/dropdown@0.6.152
+  - @launchpad-ui/menu@0.13.63
+  - @launchpad-ui/tooltip@0.9.34
+
 ## 0.7.62
 
 ### Patch Changes
