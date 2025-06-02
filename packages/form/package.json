@@ -1,6 +1,6 @@
 {
 	"name": "@launchpad-ui/form",
-	"version": "0.11.62",
+	"version": "0.11.63",
 	"status": "beta",
 	"publishConfig": {
 		"access": "public"
