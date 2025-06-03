@@ -32,7 +32,6 @@
 	align-items: center;
 	justify-content: center;
 	gap: var(--lp-spacing-200);
-	flex: 1;
 	min-width: 0;
 }
 
@@ -169,5 +168,10 @@
 
 	& [data-icon]:last-child {
 		fill: var(--lp-color-fill-ui-secondary);
+	}
+
+	& .content {
+		flex: 1;
+		gap: var(--lp-spacing-300);
 	}
 }

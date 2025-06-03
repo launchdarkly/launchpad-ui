@@ -33,7 +33,7 @@
 		fill: var(--lp-color-fill-ui-secondary);
 	}
 
-	&[data-disabled] > :where([data-icon]) {
+	&[data-disabled] :where([data-icon]) {
 		opacity: 0.64;
 	}
 }
