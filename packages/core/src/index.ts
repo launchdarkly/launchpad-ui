@@ -1,32 +1,32 @@
 // plop start type exports
 export type {
-	ButtonProps,
-	UploadButtonProps,
 	ButtonGroupProps,
+	ButtonProps,
 	IconButtonProps,
+	UploadButtonProps,
 } from '@launchpad-ui/button';
-export type { DrawerProps, DrawerHeaderProps } from '@launchpad-ui/drawer';
-export type { DropdownProps, DropdownButtonProps } from '@launchpad-ui/dropdown';
+export type { DrawerHeaderProps, DrawerProps } from '@launchpad-ui/drawer';
+export type { DropdownButtonProps, DropdownProps } from '@launchpad-ui/dropdown';
 export type {
 	AppliedFilterProps,
-	FilterProps,
 	FilterButtonProps,
 	FilterOption,
+	FilterProps,
 } from '@launchpad-ui/filter';
-export type { FocusTrapProps, FocusTrapContextType } from '@launchpad-ui/focus-trap';
+export type { FocusTrapContextType, FocusTrapProps } from '@launchpad-ui/focus-trap';
 export type {
 	CheckboxProps,
 	CompactTextFieldProps,
 	FieldErrorProps,
 	FieldSetProps,
-	FormProps,
 	FormFieldProps,
 	FormGroupProps,
 	FormHintProps,
+	FormProps,
 	IconFieldProps,
 	LabelProps,
-	RadioProps,
 	RadioGroupProps,
+	RadioProps,
 	RequiredAsteriskProps,
 	SelectFieldProps,
 	TextAreaProps,
@@ -36,38 +36,39 @@ export type {
 export type {
 	MenuBaseProps,
 	MenuDividerProps,
-	MenuItemProps,
 	MenuItemListProps,
-	MenuSearchProps,
+	MenuItemProps,
 	MenuProps,
+	MenuSearchProps,
 } from '@launchpad-ui/menu';
 export type {
-	ModalProps,
 	ModalBodyProps,
-	ModalHeaderProps,
 	ModalFooterProps,
+	ModalHeaderProps,
+	ModalProps,
 } from '@launchpad-ui/modal';
 export type {
+	NavigationItemProps,
 	NavigationProps,
 	NavigationState,
-	NavigationItemProps,
 } from '@launchpad-ui/navigation';
 export type { OverlayProps } from '@launchpad-ui/overlay';
-export type { PopoverPlacement, PopoverProps, Offset } from '@launchpad-ui/popover';
+export type { Offset, PopoverPlacement, PopoverProps } from '@launchpad-ui/popover';
 export type { PortalProps } from '@launchpad-ui/portal';
 export type {
-	TableProps,
 	TableBodyProps,
 	TableCellProps,
-	TableHeadProps,
 	TableHeadCellProps,
+	TableHeadProps,
+	TableProps,
 	TableRowProps,
 } from '@launchpad-ui/table';
 export type { TooltipProps } from '@launchpad-ui/tooltip';
+
 // plop end type exports
 
 // plop start module exports
-export { Button, ButtonGroup, UploadButton, IconButton } from '@launchpad-ui/button';
+export { Button, ButtonGroup, IconButton, UploadButton } from '@launchpad-ui/button';
 export { Drawer, DrawerHeader } from '@launchpad-ui/drawer';
 export { Dropdown, DropdownButton } from '@launchpad-ui/dropdown';
 export { AppliedFilter, Filter, FilterButton } from '@launchpad-ui/filter';
@@ -92,19 +93,19 @@ export {
 	useNumberField,
 } from '@launchpad-ui/form';
 export {
+	Menu,
 	MenuBase,
 	MenuDivider,
 	MenuItem,
 	MenuItemList,
 	MenuSearch,
-	Menu,
 } from '@launchpad-ui/menu';
 export {
+	AbsoluteModalFooter,
 	Modal,
 	ModalBody,
-	ModalHeader,
 	ModalFooter,
-	AbsoluteModalFooter,
+	ModalHeader,
 } from '@launchpad-ui/modal';
 export { Navigation, NavigationItem } from '@launchpad-ui/navigation';
 export { Overlay } from '@launchpad-ui/overlay';

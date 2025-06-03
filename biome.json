@@ -1,18 +1,36 @@
 {
 	"$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
 	"files": {
-		"ignore": [
-			"dist/**",
-			"playwright-report/**",
-			"storybook-static/**",
-			"test-results/**",
-			"coverage/**",
-			"build/**"
+		"includes": [
+			"**",
+			"!**/dist/**",
+			"!**/playwright-report/**",
+			"!**/storybook-static/**",
+			"!**/test-results/**",
+			"!**/coverage/**",
+			"!**/build/**"
 		],
 		"ignoreUnknown": true
 	},
-	"organizeImports": {
-		"enabled": true
+	"assist": {
+		"actions": {
+			"source": {
+				"organizeImports": {
+					"level": "on",
+					"options": {
+						"groups": [
+							{ "type": true },
+							":BLANK_LINE:",
+							":NODE:",
+							":BLANK_LINE:",
+							":PACKAGE:",
+							":BLANK_LINE:",
+							":PATH:"
+						]
+					}
+				}
+			}
+		}
 	},
 	"formatter": {
 		"enabled": true,
@@ -34,14 +52,25 @@
 			},
 			"performance": {
 				"noDelete": "off",
-				"noReExportAll": "error"
+				"noReExportAll": "error",
+				"noNamespaceImport": "error"
 			},
 			"style": {
 				"noDefaultExport": "error",
 				"noNamespace": "error",
 				"useFragmentSyntax": "error",
 				"useNodejsImportProtocol": "off",
-				"noNamespaceImport": "error"
+				"noParameterAssign": "error",
+				"useAsConstAssertion": "error",
+				"useDefaultParameterLast": "error",
+				"useEnumInitializers": "error",
+				"useSelfClosingElements": "error",
+				"useSingleVarDeclarator": "error",
+				"noUnusedTemplateLiteral": "error",
+				"useNumberNamespace": "error",
+				"noInferrableTypes": "error",
+				"noUselessElse": "error",
+				"useImportType": "error"
 			},
 			"suspicious": {
 				"noEmptyBlock": "off"
@@ -72,7 +101,7 @@
 	},
 	"overrides": [
 		{
-			"include": ["*.stories.tsx", "*.config.*", ".storybook"],
+			"includes": ["**/*.stories.tsx", "**/*.config.*", "**/.storybook/**"],
 			"linter": {
 				"rules": {
 					"style": {

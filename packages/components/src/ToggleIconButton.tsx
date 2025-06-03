@@ -5,7 +5,7 @@ import type { IconButtonBaseProps } from './IconButton';
 import { Icon } from '@launchpad-ui/icons';
 import { cx } from 'class-variance-authority';
 import { createContext } from 'react';
-import { ToggleButton, composeRenderProps } from 'react-aria-components';
+import { composeRenderProps, ToggleButton } from 'react-aria-components';
 
 import { buttonStyles } from './Button';
 import { iconButtonStyles } from './IconButton';

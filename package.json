@@ -32,7 +32,7 @@
 	},
 	"homepage": "https://github.com/launchdarkly/launchpad-ui#readme",
 	"devDependencies": {
-		"@biomejs/biome": "1.9.1",
+		"@biomejs/biome": "2.0.0-beta.5",
 		"@changesets/changelog-github": "^0.5.0",
 		"@changesets/cli": "^2.28.1",
 		"@commitlint/cli": "^19.8.0",
@@ -102,5 +102,9 @@
 			"vite": "npm:rolldown-vite@6.3.16"
 		}
 	},
-	"browserslist": ["last 2 versions", "not dead", "not IE 11"]
+	"browserslist": [
+		"last 2 versions",
+		"not dead",
+		"not IE 11"
+	]
 }
