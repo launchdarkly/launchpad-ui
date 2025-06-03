@@ -68,11 +68,12 @@ const Button = ({ ref, ...props }: ButtonProps) => {
 		>
 			{composeRenderProps(props.children, (children, { isPending }) => (
 				<Provider values={[[TextContext, { className: isPending ? styles.pending : undefined }]]}>
-					<span>
+
 						{isPending && (
-							<ProgressBar isIndeterminate aria-label="loading" className={styles.progress} />
+							<span>
+										<ProgressBar isIndeterminate aria-label="loading" className={styles.progress} />
+							</span>
 						)}
-					</span>
 					<span>{children}</span>
 				</Provider>
 			))}
