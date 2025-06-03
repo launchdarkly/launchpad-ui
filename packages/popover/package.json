@@ -1,6 +1,6 @@
 {
 	"name": "@launchpad-ui/popover",
-	"version": "0.11.44",
+	"version": "0.11.45",
 	"status": "beta",
 	"publishConfig": {
 		"access": "public"
@@ -11,11 +11,15 @@
 	},
 	"description": "An element that displays content within a portal triggered by user interactions.",
 	"license": "Apache-2.0",
-	"files": ["dist"],
+	"files": [
+		"dist"
+	],
 	"main": "dist/index.js",
 	"module": "dist/index.es.js",
 	"types": "dist/index.d.ts",
-	"sideEffects": ["**/*.css"],
+	"sideEffects": [
+		"**/*.css"
+	],
 	"exports": {
 		".": {
 			"types": "./dist/index.d.ts",
@@ -38,7 +42,7 @@
 		"@launchpad-ui/overlay": "workspace:~",
 		"@launchpad-ui/tokens": "workspace:~",
 		"classix": "2.2.0",
-		"framer-motion": "12.12.1"
+		"framer-motion": "12.15.0"
 	},
 	"peerDependencies": {
 		"react": "^18.0.0 || ^19.0.0",

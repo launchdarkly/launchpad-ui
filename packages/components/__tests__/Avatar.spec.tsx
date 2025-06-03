@@ -10,7 +10,7 @@ class MockImage {
 		setTimeout(() => {
 			this.onload();
 		}, 300);
-		// biome-ignore lint/correctness/noConstructorReturn: <explanation>
+		// biome-ignore lint/correctness/noConstructorReturn: ignore
 		return this;
 	}
 }
@@ -22,7 +22,7 @@ class ErrorImage {
 		setTimeout(() => {
 			this.onerror();
 		}, 300);
-		// biome-ignore lint/correctness/noConstructorReturn: <explanation>
+		// biome-ignore lint/correctness/noConstructorReturn: ignore
 		return this;
 	}
 }
@@ -31,7 +31,7 @@ describe('Avatar', () => {
 	const orignalGlobalImage = window.Image;
 
 	beforeAll(() => {
-		// biome-ignore lint/suspicious/noExplicitAny: <explanation>
+		// biome-ignore lint/suspicious/noExplicitAny: ignore
 		(window.Image as any) = MockImage;
 	});
 
@@ -45,7 +45,7 @@ describe('Avatar', () => {
 	});
 
 	it('renders initials on error', async () => {
-		// biome-ignore lint/suspicious/noExplicitAny: <explanation>
+		// biome-ignore lint/suspicious/noExplicitAny: ignore
 		(window.Image as any) = ErrorImage;
 		render(<Avatar src="https://avatars.githubusercontent.com/u/00000">RN</Avatar>);
 		expect(await screen.findByRole('img')).toHaveTextContent('RN');

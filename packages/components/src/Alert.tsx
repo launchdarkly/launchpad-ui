@@ -8,7 +8,6 @@ import { HeadingContext, Provider } from 'react-aria-components';
 
 import { ButtonGroupContext } from './ButtonGroup';
 import { IconButton } from './IconButton';
-
 import styles from './styles/Alert.module.css';
 
 const alertStyles = cva(styles.base, {

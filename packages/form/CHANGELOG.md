@@ -1,5 +1,12 @@
 # @launchpad-ui/form
 
+## 0.11.63
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @launchpad-ui/tooltip@0.9.34
+
 ## 0.11.62
 
 ### Patch Changes

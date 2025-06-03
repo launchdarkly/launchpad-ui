@@ -1,5 +1,11 @@
 # @launchpad-ui/popover
 
+## 0.11.45
+
+### Patch Changes
+
+- [#1700](https://github.com/launchdarkly/launchpad-ui/pull/1700) [`286cb9f`](https://github.com/launchdarkly/launchpad-ui/commit/286cb9fa566c3e826d745ab692058075a948b280) Thanks [@renovate](https://github.com/apps/renovate)! - Update dependencies
+
 ## 0.11.44
 
 ### Patch Changes

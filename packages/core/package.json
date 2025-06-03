@@ -1,6 +1,6 @@
 {
 	"name": "@launchpad-ui/core",
-	"version": "0.56.7",
+	"version": "0.56.8",
 	"status": "beta",
 	"publishConfig": {
 		"access": "public"
@@ -12,11 +12,15 @@
 	},
 	"description": "Contains all LaunchPad design system packages.",
 	"license": "Apache-2.0",
-	"files": ["dist"],
+	"files": [
+		"dist"
+	],
 	"main": "dist/index.js",
 	"module": "dist/index.es.js",
 	"types": "dist/index.d.ts",
-	"sideEffects": ["**/*.css"],
+	"sideEffects": [
+		"**/*.css"
+	],
 	"exports": {
 		".": {
 			"types": "./dist/index.d.ts",

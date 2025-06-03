@@ -53,6 +53,7 @@
 	}
 
 	&:has(.heading) {
+		/* biome-ignore lint/style/noDescendingSpecificity: ignore */
 		& .icon {
 			transform: translateY(2px);
 		}

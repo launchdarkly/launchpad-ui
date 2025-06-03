@@ -10,10 +10,10 @@ import { cva } from 'class-variance-authority';
 import { createContext } from 'react';
 import {
 	Dialog as AriaDialog,
+	composeRenderProps,
 	DialogTrigger,
 	Provider,
 	TextContext,
-	composeRenderProps,
 } from 'react-aria-components';
 
 import styles from './styles/Dialog.module.css';

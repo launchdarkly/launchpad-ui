@@ -12,11 +12,15 @@
 	},
 	"description": "An implementation of LaunchDarkly's LaunchPad Design System using React Aria Components.",
 	"license": "Apache-2.0",
-	"files": ["dist"],
+	"files": [
+		"dist"
+	],
 	"main": "dist/index.js",
 	"module": "dist/index.es.js",
 	"types": "dist/index.d.ts",
-	"sideEffects": ["**/*.css"],
+	"sideEffects": [
+		"**/*.css"
+	],
 	"exports": {
 		".": {
 			"types": "./dist/index.d.ts",
@@ -53,7 +57,7 @@
 	"devDependencies": {
 		"react": "19.1.0",
 		"react-dom": "19.1.0",
-		"react-hook-form": "7.56.1",
+		"react-hook-form": "7.57.0",
 		"react-stately": "3.38.0"
 	}
 }

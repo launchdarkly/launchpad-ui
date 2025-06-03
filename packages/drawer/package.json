@@ -1,6 +1,6 @@
 {
 	"name": "@launchpad-ui/drawer",
-	"version": "0.5.77",
+	"version": "0.5.78",
 	"status": "alpha",
 	"publishConfig": {
 		"access": "public"
@@ -11,11 +11,15 @@
 	},
 	"description": "A partial overlay that appears from the right side of the screen.",
 	"license": "Apache-2.0",
-	"files": ["dist"],
+	"files": [
+		"dist"
+	],
 	"main": "dist/index.js",
 	"module": "dist/index.es.js",
 	"types": "dist/index.d.ts",
-	"sideEffects": ["**/*.css"],
+	"sideEffects": [
+		"**/*.css"
+	],
 	"exports": {
 		".": {
 			"types": "./dist/index.d.ts",
@@ -41,7 +45,7 @@
 		"@react-aria/interactions": "3.25.1",
 		"@react-aria/overlays": "3.27.1",
 		"classix": "2.2.0",
-		"framer-motion": "12.12.1"
+		"framer-motion": "12.15.0"
 	},
 	"peerDependencies": {
 		"react": "^18.0.0 || ^19.0.0",

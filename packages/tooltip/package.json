@@ -1,6 +1,6 @@
 {
 	"name": "@launchpad-ui/tooltip",
-	"version": "0.9.33",
+	"version": "0.9.34",
 	"status": "beta",
 	"publishConfig": {
 		"access": "public"
@@ -11,11 +11,15 @@
 	},
 	"description": "An element that provides additional information on hover or focus.",
 	"license": "Apache-2.0",
-	"files": ["dist"],
+	"files": [
+		"dist"
+	],
 	"main": "dist/index.js",
 	"module": "dist/index.es.js",
 	"types": "dist/index.d.ts",
-	"sideEffects": ["**/*.css"],
+	"sideEffects": [
+		"**/*.css"
+	],
 	"exports": {
 		".": {
 			"types": "./dist/index.d.ts",
