@@ -21,6 +21,7 @@ import {
 	PopoverContext,
 	Provider,
 	Text,
+	TextContext,
 	useSlottedContext,
 } from 'react-aria-components';
 
@@ -181,7 +182,11 @@ const DatePickerValue = () => {
 	const { locale } = useLocale();
 	const date = state?.formatValue(locale, { month: 'short' });
 
-	return <Text className={styles.value}>{date}</Text>;
+	return (
+		<TextContext.Provider value={undefined}>
+			<Text className={styles.value}>{date}</Text>
+		</TextContext.Provider>
+	);
 };
 
 const DateRangePickerValue = () => {
@@ -189,14 +194,18 @@ const DateRangePickerValue = () => {
 	const { locale } = useLocale();
 	const date = state?.formatValue(locale, { month: 'short' });
 
-	return date?.start === date?.end ? (
-		<Text className={styles.value}>{date?.end}</Text>
-	) : (
-		<>
-			<Text>{date?.start}</Text>
-			<Icon name="arrow-right-thin" size="small" />
-			<Text className={styles.value}>{date?.end}</Text>
-		</>
+	return (
+		<TextContext.Provider value={undefined}>
+			{date?.start === date?.end ? (
+				<Text className={styles.value}>{date?.end}</Text>
+			) : (
+				<>
+					<Text>{date?.start}</Text>
+					<Icon name="arrow-right-thin" size="small" />
+					<Text className={styles.value}>{date?.end}</Text>
+				</>
+			)}
+		</TextContext.Provider>
 	);
 };
 
