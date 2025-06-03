@@ -1,10 +1,7 @@
-import { Meta } from '@storybook/addon-docs/blocks';
-import { Figma } from '@storybook/addon-designs/blocks';
+import { Meta, Markdown } from '@storybook/addon-docs/blocks';
+
+import README from '../../README.md?raw';
 
 <Meta title="Getting started" />
 
-# Getting started
-
-LaunchPad is LaunchDarkly's design system. It’s a scalable library of reusable, functional elements & components tokens for standardized sizing, color, and more all guided by principles and patterns that our product teams leverage to create a consistent experience across our products. 
-
-<Figma url="https://www.figma.com/file/98HKKXL2dTle29ikJ3tzk7/LaunchPad?node-id=1-737" />
+<Markdown>{README}</Markdown>

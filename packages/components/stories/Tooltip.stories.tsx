@@ -55,7 +55,7 @@ export const CustomTrigger: Story = {
 		return (
 			<TooltipTrigger>
 				<Focusable>
-					{/* biome-ignore lint/a11y/useFocusableInteractive: <explanation> */}
+					{/* biome-ignore lint/a11y/useFocusableInteractive: ignore */}
 					<span role="button">Trigger</span>
 				</Focusable>
 				<Tooltip {...args}>Message</Tooltip>

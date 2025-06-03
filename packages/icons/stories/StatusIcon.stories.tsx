@@ -18,7 +18,7 @@ export const Success: Story = {
 	args: { kind: 'success' },
 };
 
-// biome-ignore lint/suspicious/noShadowRestrictedNames: <explanation>
+// biome-ignore lint/suspicious/noShadowRestrictedNames: ignore
 export const Error: Story = {
 	args: { kind: 'error' },
 };

@@ -5,9 +5,9 @@ import { cva } from 'class-variance-authority';
 import { createContext } from 'react';
 import {
 	TextField as AriaTextField,
+	composeRenderProps,
 	GroupContext,
 	Provider,
-	composeRenderProps,
 } from 'react-aria-components';
 
 import styles from './styles/TextField.module.css';

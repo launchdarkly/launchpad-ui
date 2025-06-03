@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import type { ComponentType } from 'react';
 
-import { Tab, TabList, TabPanel, Tabs } from '../src/Tabs';
-
 import { Route, Routes, useLocation } from 'react-router';
 import { userEvent, within } from 'storybook/test';
+
+import { Tab, TabList, TabPanel, Tabs } from '../src/Tabs';
 
 const meta: Meta<typeof Tabs> = {
 	component: Tabs,

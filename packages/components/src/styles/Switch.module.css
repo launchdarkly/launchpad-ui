@@ -15,7 +15,10 @@
 	width: 3.375rem;
 	height: var(--lp-size-24);
 	border-radius: var(--lp-border-radius-large);
-	transition: all var(--lp-duration-200) ease-in-out, outline, outline-offset 0ms;
+	transition:
+		all var(--lp-duration-200) ease-in-out,
+		outline,
+		outline-offset 0ms;
 	container-type: inline-size;
 	background-color: var(--lp-color-bg-interactive-secondary-hover);
 	border: 1px solid var(--lp-color-border-interactive-secondary-base);
@@ -27,8 +30,10 @@
 	width: var(--lp-size-16);
 	height: var(--lp-size-16);
 	border-radius: var(--lp-border-radius-large);
-	box-shadow: 0 0 1px 0 rgb(33 33 33 / 0.75), 0 0 2px 0 rgb(33 33 33 / 0.75), 0 0 1px 0
-		rgb(33 33 33 / 0.35);
+	box-shadow:
+		0 0 1px 0 rgb(33 33 33 / 0.75),
+		0 0 2px 0 rgb(33 33 33 / 0.75),
+		0 0 1px 0 rgb(33 33 33 / 0.35);
 	transition: transform var(--lp-duration-200) ease-in-out;
 	transform: translateX(0%);
 	z-index: 1;
@@ -57,8 +62,10 @@
 
 	& .handle {
 		transform: translateX(calc(100% + var(--lp-spacing-400)));
-		box-shadow: 0 0 1px 0 rgb(0 117 66 / 0.75), 0 0 2px 0 rgb(0 117 66 / 0.06), 0 0 1px 0
-			rgb(0 117 66 / 0.35);
+		box-shadow:
+			0 0 1px 0 rgb(0 117 66 / 0.75),
+			0 0 2px 0 rgb(0 117 66 / 0.06),
+			0 0 1px 0 rgb(0 117 66 / 0.35);
 	}
 
 	& .label {

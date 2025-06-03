@@ -14,8 +14,8 @@ import {
 	UNSTABLE_ToastContent as AriaToastContent,
 	UNSTABLE_ToastQueue as AriaToastQueue,
 	UNSTABLE_ToastRegion as AriaToastRegion,
-	Text,
 	composeRenderProps,
+	Text,
 } from 'react-aria-components';
 import { flushSync } from 'react-dom';
 

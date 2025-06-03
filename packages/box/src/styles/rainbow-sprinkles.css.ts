@@ -3,6 +3,7 @@ import { vars } from '@launchpad-ui/vars';
 import { flatten } from 'flat';
 import { createRainbowSprinkles, defineProperties } from 'rainbow-sprinkles';
 
+// biome-ignore lint/correctness/noUnusedVariables: ignore
 const { bg, border, fill, shadow, text, ...global } = vars.color;
 const { text: typography, gradient } = vars;
 

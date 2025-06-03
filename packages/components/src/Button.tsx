@@ -6,9 +6,9 @@ import { cva } from 'class-variance-authority';
 import { createContext, useContext } from 'react';
 import {
 	Button as AriaButton,
+	composeRenderProps,
 	Provider,
 	TextContext,
-	composeRenderProps,
 } from 'react-aria-components';
 
 import { PerceivableContext } from './Perceivable';
