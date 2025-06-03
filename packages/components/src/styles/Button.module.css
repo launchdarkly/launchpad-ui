@@ -27,6 +27,15 @@
 	opacity: 0.64;
 }
 
+.content {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: var(--lp-spacing-200);
+	flex: 1;
+	min-width: 0;
+}
+
 .small {
 	font: var(--lp-text-label-2-semibold);
 	padding: calc(3px + var(--lp-button-padding, 0px)) var(--lp-spacing-300);
@@ -142,13 +151,10 @@
 .button[data-pending] {
 	cursor: wait;
 
-	& [data-icon] {
+	& [data-icon],
+	.content {
 		opacity: 50%;
 	}
-}
-
-.pending {
-	opacity: 50%;
 }
 
 .progress {

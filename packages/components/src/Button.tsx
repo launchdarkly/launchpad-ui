@@ -4,12 +4,7 @@ import type { ButtonProps as AriaButtonProps, ContextValue } from 'react-aria-co
 
 import { cva } from 'class-variance-authority';
 import { createContext, useContext } from 'react';
-import {
-	Button as AriaButton,
-	composeRenderProps,
-	Provider,
-	TextContext,
-} from 'react-aria-components';
+import { Button as AriaButton, composeRenderProps } from 'react-aria-components';
 
 import { PerceivableContext } from './Perceivable';
 import { ProgressBar } from './ProgressBar';
@@ -67,15 +62,12 @@ const Button = ({ ref, ...props }: ButtonProps) => {
 			)}
 		>
 			{composeRenderProps(props.children, (children, { isPending }) => (
-				<Provider values={[[TextContext, { className: isPending ? styles.pending : undefined }]]}>
-
-						{isPending && (
-							<span>
-										<ProgressBar isIndeterminate aria-label="loading" className={styles.progress} />
-							</span>
-						)}
-					<span>{children}</span>
-				</Provider>
+				<>
+					{isPending && (
+						<ProgressBar isIndeterminate aria-label="loading" className={styles.progress} />
+					)}
+					<span className={styles.content}>{children}</span>
+				</>
 			))}
 		</AriaButton>
 	);

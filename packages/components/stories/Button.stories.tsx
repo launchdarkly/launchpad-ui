@@ -7,7 +7,6 @@ import { useEffect, useRef, useState } from 'react';
 import { fireEvent, userEvent, within } from 'storybook/test';
 
 import { Button } from '../src/Button';
-import { Text } from '../src/Text';
 
 const meta: Meta<typeof Button> = {
 	component: Button,
@@ -75,23 +74,22 @@ const play: PlayFunction<ReactRenderer> = async ({
 };
 
 export const Default: Story = {
-	render: (args) => renderStates({ children: <Text>Default</Text>, ...args }),
+	render: (args) => renderStates({ children: 'Default', ...args }),
 	play,
 };
 
 export const Primary: Story = {
-	render: (args) => renderStates({ children: <Text>Primary</Text>, variant: 'primary', ...args }),
+	render: (args) => renderStates({ children: 'Primary', variant: 'primary', ...args }),
 	play,
 };
 
 export const Minimal: Story = {
-	render: (args) => renderStates({ children: <Text>Minimal</Text>, variant: 'minimal', ...args }),
+	render: (args) => renderStates({ children: 'Minimal', variant: 'minimal', ...args }),
 	play,
 };
 
 export const Destructive: Story = {
-	render: (args) =>
-		renderStates({ children: <Text>Destructive</Text>, variant: 'destructive', ...args }),
+	render: (args) => renderStates({ children: 'Destructive', variant: 'destructive', ...args }),
 	play,
 	parameters: {
 		a11y: {
@@ -108,7 +106,7 @@ export const WithIcon: Story = {
 	args: {
 		children: (
 			<>
-				<Text>With icon </Text>
+				With icon
 				<Icon name="add" size="small" />
 			</>
 		),
@@ -116,12 +114,12 @@ export const WithIcon: Story = {
 };
 
 export const Small: Story = {
-	render: (args) => renderStates({ children: <Text>Default</Text>, size: 'small', ...args }),
+	render: (args) => renderStates({ children: 'Default', size: 'small', ...args }),
 	play,
 };
 
 export const Large: Story = {
-	render: (args) => renderStates({ children: <Text>Default</Text>, size: 'large', ...args }),
+	render: (args) => renderStates({ children: 'Default', size: 'large', ...args }),
 	play,
 };
 
@@ -147,7 +145,7 @@ export const Pending: Story = {
 		return <Button isPending={isPending} onPress={handlePress} {...args} />;
 	},
 	args: {
-		children: <Text>Pending</Text>,
+		children: 'Pending',
 	},
 	play: async ({ canvasElement }) => {
 		const canvas = within(canvasElement);
