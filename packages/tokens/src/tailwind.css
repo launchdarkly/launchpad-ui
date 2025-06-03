@@ -1,0 +1,21 @@
+@layer theme, components, utilities;
+@import 'tailwindcss/theme.css' layer(theme);
+@import 'tailwindcss/utilities.css' layer(utilities);
+
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+
+@theme inline {
+  --*: initial;
+  --color-red-500: var(--lp-color-red-500);
+  --color-text-code-function: var(--lp-color-text-code-function);
+}
+
+/* https://tailwindcss.com/docs/adding-custom-styles#matching-theme-values */
+
+@utility text-* {
+  color: --value(--color-text-*);
+}
+
+@utility border-* {
+  color: --value(--color-border-*);
+}

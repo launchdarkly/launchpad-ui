@@ -43,7 +43,7 @@ const renderStates = (args: Story['args']) => (
 		}}
 	>
 		<span style={{ font: vars.text.body[1].semibold }}>Resting</span>
-		<Button {...args} />
+		<Button {...args} className="text-red-500 data-hovered:text-code-function" />
 
 		<span style={{ font: vars.text.body[1].semibold }}>Hover</span>
 		<Button {...args} />

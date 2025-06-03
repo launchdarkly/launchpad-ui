@@ -18,6 +18,7 @@ import '../packages/components/src/styles/themes.css';
 import '../packages/tokens/dist/index.css';
 import '../packages/tokens/dist/media-queries.css';
 import '../packages/tokens/dist/themes.css';
+import '../packages/tokens/src/tailwind.css';
 
 fetch(sprite)
 	.then(async (response) => response.text())

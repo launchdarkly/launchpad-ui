@@ -2,6 +2,7 @@
 
 import path from 'path';
 
+import tailwindcss from '@tailwindcss/vite';
 import { vanillaExtractPlugin } from '@vanilla-extract/vite-plugin';
 import react from '@vitejs/plugin-react-oxc';
 import swc from '@vitejs/plugin-react-swc';
@@ -59,6 +60,7 @@ export default defineConfig({
 	plugins: [
 		process.env.VITEST === 'true' ? swc() : react(),
 		vanillaExtractPlugin(),
+		tailwindcss(),
 		cssImport(),
 		PluginPure({
 			functions: PURE_CALLS,

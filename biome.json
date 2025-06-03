@@ -8,7 +8,8 @@
 			"!**/storybook-static/**",
 			"!**/test-results/**",
 			"!**/coverage/**",
-			"!**/build/**"
+			"!**/build/**",
+			"!**/tailwind.css"
 		],
 		"ignoreUnknown": true
 	},
