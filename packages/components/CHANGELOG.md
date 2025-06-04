@@ -1,5 +1,11 @@
 # @launchpad-ui/components
 
+## 0.9.33
+
+### Patch Changes
+
+- [#1705](https://github.com/launchdarkly/launchpad-ui/pull/1705) [`152ab98`](https://github.com/launchdarkly/launchpad-ui/commit/152ab98239a486f4875785027ee2836db33d825f) Thanks [@Niznikr](https://github.com/Niznikr)! - Wrap `Button` string children with `Text`
+
 ## 0.9.32
 
 ### Patch Changes
