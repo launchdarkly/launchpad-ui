@@ -14,6 +14,7 @@ import {
 import { PerceivableContext } from './Perceivable';
 import { ProgressBar } from './ProgressBar';
 import styles from './styles/Button.module.css';
+import { Text } from './Text';
 import { useLPContextProps } from './utils';
 
 const buttonStyles = cva(styles.base, {
@@ -71,7 +72,7 @@ const Button = ({ ref, ...props }: ButtonProps) => {
 					{isPending && (
 						<ProgressBar isIndeterminate aria-label="loading" className={styles.progress} />
 					)}
-					{children}
+					{typeof children === 'string' ? <Text>{children}</Text> : children}
 				</Provider>
 			))}
 		</AriaButton>

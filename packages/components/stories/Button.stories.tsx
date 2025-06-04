@@ -147,7 +147,7 @@ export const Pending: Story = {
 		return <Button isPending={isPending} onPress={handlePress} {...args} />;
 	},
 	args: {
-		children: <Text>Pending</Text>,
+		children: 'Pending',
 	},
 	play: async ({ canvasElement }) => {
 		const canvas = within(canvasElement);
