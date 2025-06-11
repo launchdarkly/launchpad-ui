@@ -2332,5 +2332,12 @@
         clip-rule="evenodd"
       />
     </symbol>
+    <symbol viewBox="0 0 20 20" id="lp-icon-stack">
+      <path
+        fill-rule="evenodd"
+        d="M9.98889 17.3466L1.8 11.3372L0 12.6586L10 20L20 12.6586L18.1889 11.3267L9.98889 17.3466ZM10 14.6827L18.1778 8.67331L20 7.34137L10 0L0 7.34137L1.81111 8.67331L10 14.6827ZM10 2.65338L16.3778 7.34137L10 12.0294L3.62222 7.34137L10 2.65338Z"
+        clip-rule="evenodd"
+      />
+    </symbol>
   </defs>
 </svg>
