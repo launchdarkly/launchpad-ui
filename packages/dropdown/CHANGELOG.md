@@ -1,5 +1,13 @@
 # @launchpad-ui/dropdown
 
+## 0.6.153
+
+### Patch Changes
+
+- Updated dependencies [[`718a73a`](https://github.com/launchdarkly/launchpad-ui/commit/718a73a0115ddcd6fcbca6d1d5e8e5811b0c7a3f)]:
+  - @launchpad-ui/icons@0.21.15
+  - @launchpad-ui/button@0.12.56
+
 ## 0.6.152
 
 ### Patch Changes

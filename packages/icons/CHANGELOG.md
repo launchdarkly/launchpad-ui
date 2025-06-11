@@ -1,5 +1,11 @@
 # @launchpad-ui/icons
 
+## 0.21.15
+
+### Patch Changes
+
+- [#1707](https://github.com/launchdarkly/launchpad-ui/pull/1707) [`718a73a`](https://github.com/launchdarkly/launchpad-ui/commit/718a73a0115ddcd6fcbca6d1d5e8e5811b0c7a3f) Thanks [@cjhensen](https://github.com/cjhensen)! - Add stack icon
+
 ## 0.21.14
 
 ### Patch Changes
