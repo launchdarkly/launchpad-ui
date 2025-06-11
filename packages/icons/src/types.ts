@@ -266,6 +266,7 @@ const icons = [
 	'sparkle',
 	'sparkles',
 	'speedometer',
+	'stack',
 	'star-circle',
 	'star-outline',
 	'star',
