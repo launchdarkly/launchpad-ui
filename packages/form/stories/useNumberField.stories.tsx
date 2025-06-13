@@ -1,4 +1,4 @@
-import type { StoryObj } from '@storybook/react';
+import type { StoryObj } from '@storybook/react-vite';
 import type { FormFieldProps } from '../src/FormField';
 
 import { FormField } from '../src/FormField';

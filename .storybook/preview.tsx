@@ -1,4 +1,4 @@
-import type { Preview, ReactRenderer } from '@storybook/react';
+import type { Preview, ReactRenderer } from '@storybook/react-vite';
 import type { ReactNode } from 'react';
 import type { DecoratorFunction, GlobalTypes, Parameters } from 'storybook/internal/types';
 

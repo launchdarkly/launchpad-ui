@@ -1,4 +1,4 @@
-import type { StoryObj } from '@storybook/react';
+import type { StoryObj } from '@storybook/react-vite';
 
 import { Icon } from '@launchpad-ui/icons';
 import { userEvent } from 'storybook/test';

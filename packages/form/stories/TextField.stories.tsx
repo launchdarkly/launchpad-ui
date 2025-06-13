@@ -1,4 +1,4 @@
-import type { Decorator, StoryFn, StoryObj } from '@storybook/react';
+import type { Decorator, StoryFn, StoryObj } from '@storybook/react-vite';
 
 import { createWithClassesDecorator, PseudoClasses } from '../../../.storybook/utils';
 import { TextField } from '../src';

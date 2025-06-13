@@ -1,4 +1,4 @@
-import type { Meta, ReactRenderer, StoryObj } from '@storybook/react';
+import type { Meta, ReactRenderer, StoryObj } from '@storybook/react-vite';
 import type { PlayFunction } from 'storybook/internal/types';
 
 import { Icon } from '@launchpad-ui/icons';

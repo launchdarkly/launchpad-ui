@@ -1,4 +1,4 @@
-import type { StoryObj } from '@storybook/react';
+import type { StoryObj } from '@storybook/react-vite';
 
 import { Button } from '../../components/src/Button';
 import { Box } from '../src';
