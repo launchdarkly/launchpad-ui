@@ -1,4 +1,4 @@
-import type { Args, StoryContext } from '@storybook/react';
+import type { Args, StoryContext } from '@storybook/react-vite';
 
 import { Button } from '../../components/src/Button';
 
