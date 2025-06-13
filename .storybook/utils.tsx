@@ -1,4 +1,4 @@
-import type { Args, Decorator, ReactRenderer } from '@storybook/react';
+import type { Args, Decorator, ReactRenderer } from '@storybook/react-vite';
 import type { JSX } from 'react';
 import type { AnnotatedStoryFn, StoryContext } from 'storybook/internal/types';
 
