@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import type { ComponentType } from 'react';
 import type { Selection as AriaSelection } from 'react-aria-components';
 
