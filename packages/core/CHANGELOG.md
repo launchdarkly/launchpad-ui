@@ -1,5 +1,27 @@
 # @launchpad-ui/core
 
+## 0.56.10
+
+### Patch Changes
+
+- [#1709](https://github.com/launchdarkly/launchpad-ui/pull/1709) [`d7c78a5`](https://github.com/launchdarkly/launchpad-ui/commit/d7c78a534517e5289f744b1e0cd600c90e5ed2d7) Thanks [@nhironaka](https://github.com/nhironaka)! - chore: update storybook to 9.0.9, run renderer-to-framework migration
+
+- Updated dependencies [[`d7c78a5`](https://github.com/launchdarkly/launchpad-ui/commit/d7c78a534517e5289f744b1e0cd600c90e5ed2d7), [`0cb98b7`](https://github.com/launchdarkly/launchpad-ui/commit/0cb98b7c6470d2251fefc1c59968e190b5386e12)]:
+  - @launchpad-ui/button@0.12.57
+  - @launchpad-ui/drawer@0.6.0
+  - @launchpad-ui/dropdown@0.7.0
+  - @launchpad-ui/filter@0.8.0
+  - @launchpad-ui/focus-trap@0.2.0
+  - @launchpad-ui/form@0.12.0
+  - @launchpad-ui/menu@0.13.65
+  - @launchpad-ui/modal@0.18.0
+  - @launchpad-ui/navigation@0.13.0
+  - @launchpad-ui/overlay@0.3.31
+  - @launchpad-ui/popover@0.11.46
+  - @launchpad-ui/portal@0.1.6
+  - @launchpad-ui/table@0.6.31
+  - @launchpad-ui/tooltip@0.9.35
+
 ## 0.56.9
 
 ### Patch Changes

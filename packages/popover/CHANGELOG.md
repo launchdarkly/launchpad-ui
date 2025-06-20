@@ -1,5 +1,16 @@
 # @launchpad-ui/popover
 
+## 0.11.46
+
+### Patch Changes
+
+- [#1709](https://github.com/launchdarkly/launchpad-ui/pull/1709) [`d7c78a5`](https://github.com/launchdarkly/launchpad-ui/commit/d7c78a534517e5289f744b1e0cd600c90e5ed2d7) Thanks [@nhironaka](https://github.com/nhironaka)! - chore: update storybook to 9.0.9, run renderer-to-framework migration
+
+- Updated dependencies [[`d7c78a5`](https://github.com/launchdarkly/launchpad-ui/commit/d7c78a534517e5289f744b1e0cd600c90e5ed2d7), [`0cb98b7`](https://github.com/launchdarkly/launchpad-ui/commit/0cb98b7c6470d2251fefc1c59968e190b5386e12)]:
+  - @launchpad-ui/focus-trap@0.2.0
+  - @launchpad-ui/overlay@0.3.31
+  - @launchpad-ui/tokens@0.12.7
+
 ## 0.11.45
 
 ### Patch Changes

@@ -1,5 +1,21 @@
 # @launchpad-ui/dropdown
 
+## 0.7.0
+
+### Minor Changes
+
+- [#1712](https://github.com/launchdarkly/launchpad-ui/pull/1712) [`0cb98b7`](https://github.com/launchdarkly/launchpad-ui/commit/0cb98b7c6470d2251fefc1c59968e190b5386e12) Thanks [@vezaynk](https://github.com/vezaynk)! - @react-aria and react-router are now peer dependencies
+
+### Patch Changes
+
+- [#1709](https://github.com/launchdarkly/launchpad-ui/pull/1709) [`d7c78a5`](https://github.com/launchdarkly/launchpad-ui/commit/d7c78a534517e5289f744b1e0cd600c90e5ed2d7) Thanks [@nhironaka](https://github.com/nhironaka)! - chore: update storybook to 9.0.9, run renderer-to-framework migration
+
+- Updated dependencies [[`d7c78a5`](https://github.com/launchdarkly/launchpad-ui/commit/d7c78a534517e5289f744b1e0cd600c90e5ed2d7)]:
+  - @launchpad-ui/button@0.12.57
+  - @launchpad-ui/icons@0.21.16
+  - @launchpad-ui/popover@0.11.46
+  - @launchpad-ui/tokens@0.12.7
+
 ## 0.6.153
 
 ### Patch Changes
