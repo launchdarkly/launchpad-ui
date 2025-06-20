@@ -36,4 +36,4 @@ jobs:
       - name: Build
         run: pnpm nx run @launchpad-ui/components:build
 
-      - run: pnpm dlx pkg-pr-new publish --compact --pnpm --no-template './packages/components' './packages/icons' './packages/tokens'
+      - run: pnpm dlx pkg-pr-new publish --compact --pnpm --no-template --packageManager="yarn" './packages/components' './packages/icons' './packages/tokens'
