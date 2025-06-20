@@ -245,6 +245,10 @@ importers:
       '@launchpad-ui/tokens':
         specifier: workspace:~
         version: link:../tokens
+      class-variance-authority:
+        specifier: 0.7.0
+        version: 0.7.0
+    devDependencies:
       '@react-aria/focus':
         specifier: 3.20.3
         version: 3.20.3(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
@@ -260,28 +264,24 @@ importers:
       '@react-types/shared':
         specifier: 3.29.1
         version: 3.29.1(react@19.1.0)
-      class-variance-authority:
-        specifier: 0.7.0
-        version: 0.7.0
+      react:
+        specifier: 19.1.0
+        version: 19.1.0
       react-aria:
         specifier: 3.40.0
         version: 3.40.0(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       react-aria-components:
         specifier: 1.9.0
         version: 1.9.0(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
-      react-router:
-        specifier: 7.5.2
-        version: 7.5.2(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
-    devDependencies:
-      react:
-        specifier: 19.1.0
-        version: 19.1.0
       react-dom:
         specifier: 19.1.0
         version: 19.1.0(react@19.1.0)
       react-hook-form:
         specifier: 7.57.0
         version: 7.57.0(react@19.1.0)
+      react-router:
+        specifier: 7.5.2
+        version: 7.5.2(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       react-stately:
         specifier: 3.38.0
         version: 3.38.0(react@19.1.0)
@@ -612,6 +612,10 @@ importers:
       '@launchpad-ui/tooltip':
         specifier: workspace:~
         version: link:../tooltip
+      classix:
+        specifier: 2.2.0
+        version: 2.2.0
+    devDependencies:
       '@react-aria/utils':
         specifier: 3.29.0
         version: 3.29.0(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
@@ -621,19 +625,15 @@ importers:
       '@react-types/shared':
         specifier: 3.29.1
         version: 3.29.1(react@19.1.0)
-      classix:
-        specifier: 2.2.0
-        version: 2.2.0
-      react-router:
-        specifier: 7.5.2
-        version: 7.5.2(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
-    devDependencies:
       react:
         specifier: 19.1.0
         version: 19.1.0
       react-dom:
         specifier: 19.1.0
         version: 19.1.0(react@19.1.0)
+      react-router:
+        specifier: 7.5.2
+        version: 7.5.2(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
 
   packages/overlay:
     dependencies:
