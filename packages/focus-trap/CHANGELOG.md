@@ -1,5 +1,15 @@
 # @launchpad-ui/focus-trap
 
+## 0.2.0
+
+### Minor Changes
+
+- [#1712](https://github.com/launchdarkly/launchpad-ui/pull/1712) [`0cb98b7`](https://github.com/launchdarkly/launchpad-ui/commit/0cb98b7c6470d2251fefc1c59968e190b5386e12) Thanks [@vezaynk](https://github.com/vezaynk)! - @react-aria and react-router are now peer dependencies
+
+### Patch Changes
+
+- [#1709](https://github.com/launchdarkly/launchpad-ui/pull/1709) [`d7c78a5`](https://github.com/launchdarkly/launchpad-ui/commit/d7c78a534517e5289f744b1e0cd600c90e5ed2d7) Thanks [@nhironaka](https://github.com/nhironaka)! - chore: update storybook to 9.0.9, run renderer-to-framework migration
+
 ## 0.1.30
 
 ### Patch Changes

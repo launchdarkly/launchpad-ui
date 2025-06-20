@@ -1,5 +1,15 @@
 # @launchpad-ui/button
 
+## 0.12.57
+
+### Patch Changes
+
+- [#1709](https://github.com/launchdarkly/launchpad-ui/pull/1709) [`d7c78a5`](https://github.com/launchdarkly/launchpad-ui/commit/d7c78a534517e5289f744b1e0cd600c90e5ed2d7) Thanks [@nhironaka](https://github.com/nhironaka)! - chore: update storybook to 9.0.9, run renderer-to-framework migration
+
+- Updated dependencies [[`d7c78a5`](https://github.com/launchdarkly/launchpad-ui/commit/d7c78a534517e5289f744b1e0cd600c90e5ed2d7)]:
+  - @launchpad-ui/icons@0.21.16
+  - @launchpad-ui/tokens@0.12.7
+
 ## 0.12.56
 
 ### Patch Changes
