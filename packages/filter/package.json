@@ -42,15 +42,16 @@
 		"@launchpad-ui/menu": "workspace:~",
 		"@launchpad-ui/tokens": "workspace:~",
 		"@launchpad-ui/tooltip": "workspace:~",
-		"@react-aria/visually-hidden": "3.8.23",
 		"classix": "2.2.0"
 	},
 	"peerDependencies": {
 		"react": "^18.0.0 || ^19.0.0",
-		"react-dom": "^18.0.0 || ^19.0.0"
+		"react-dom": "^18.0.0 || ^19.0.0",
+		"@react-aria/visually-hidden": "3.8.23"
 	},
 	"devDependencies": {
 		"react": "19.1.0",
-		"react-dom": "19.1.0"
+		"react-dom": "19.1.0",
+		"@react-aria/visually-hidden": "3.8.23"
 	}
 }

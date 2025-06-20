@@ -358,12 +358,6 @@ importers:
       '@launchpad-ui/tokens':
         specifier: workspace:~
         version: link:../tokens
-      '@react-aria/interactions':
-        specifier: 3.25.1
-        version: 3.25.1(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
-      '@react-aria/overlays':
-        specifier: 3.27.1
-        version: 3.27.1(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       classix:
         specifier: 2.2.0
         version: 2.2.0
@@ -371,6 +365,12 @@ importers:
         specifier: 12.15.0
         version: 12.15.0(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
     devDependencies:
+      '@react-aria/interactions':
+        specifier: 3.25.1
+        version: 3.25.1(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
+      '@react-aria/overlays':
+        specifier: 3.27.1
+        version: 3.27.1(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       react:
         specifier: 19.1.0
         version: 19.1.0
@@ -392,13 +392,13 @@ importers:
       '@launchpad-ui/tokens':
         specifier: workspace:~
         version: link:../tokens
-      '@react-aria/utils':
-        specifier: 3.29.0
-        version: 3.29.0(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       classix:
         specifier: 2.2.0
         version: 2.2.0
     devDependencies:
+      '@react-aria/utils':
+        specifier: 3.29.0
+        version: 3.29.0(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       '@react-types/shared':
         specifier: 3.29.1
         version: 3.29.1(react@19.1.0)
@@ -429,13 +429,13 @@ importers:
       '@launchpad-ui/tooltip':
         specifier: workspace:~
         version: link:../tooltip
-      '@react-aria/visually-hidden':
-        specifier: 3.8.23
-        version: 3.8.23(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       classix:
         specifier: 2.2.0
         version: 2.2.0
     devDependencies:
+      '@react-aria/visually-hidden':
+        specifier: 3.8.23
+        version: 3.8.23(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       react:
         specifier: 19.1.0
         version: 19.1.0
@@ -444,11 +444,10 @@ importers:
         version: 19.1.0(react@19.1.0)
 
   packages/focus-trap:
-    dependencies:
+    devDependencies:
       '@react-aria/focus':
         specifier: 3.20.3
         version: 3.20.3(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
-    devDependencies:
       react:
         specifier: 19.1.0
         version: 19.1.0
@@ -470,6 +469,13 @@ importers:
       '@launchpad-ui/tooltip':
         specifier: workspace:~
         version: link:../tooltip
+      '@react-stately/numberfield':
+        specifier: 3.9.12
+        version: 3.9.12(react@19.1.0)
+      classix:
+        specifier: 2.2.0
+        version: 2.2.0
+    devDependencies:
       '@react-aria/button':
         specifier: 3.13.1
         version: 3.13.1(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
@@ -482,13 +488,6 @@ importers:
       '@react-aria/visually-hidden':
         specifier: 3.8.23
         version: 3.8.23(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
-      '@react-stately/numberfield':
-        specifier: 3.9.12
-        version: 3.9.12(react@19.1.0)
-      classix:
-        specifier: 2.2.0
-        version: 2.2.0
-    devDependencies:
       react:
         specifier: 19.1.0
         version: 19.1.0
@@ -569,12 +568,6 @@ importers:
       '@launchpad-ui/tokens':
         specifier: workspace:~
         version: link:../tokens
-      '@react-aria/interactions':
-        specifier: 3.25.1
-        version: 3.25.1(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
-      '@react-aria/overlays':
-        specifier: 3.27.1
-        version: 3.27.1(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       classix:
         specifier: 2.2.0
         version: 2.2.0
@@ -582,6 +575,12 @@ importers:
         specifier: 12.15.0
         version: 12.15.0(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
     devDependencies:
+      '@react-aria/interactions':
+        specifier: 3.25.1
+        version: 3.25.1(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
+      '@react-aria/overlays':
+        specifier: 3.27.1
+        version: 3.27.1(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       react:
         specifier: 19.1.0
         version: 19.1.0

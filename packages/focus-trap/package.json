@@ -33,15 +33,14 @@
 		"lint": "exit 0",
 		"test": "vitest run --coverage"
 	},
-	"dependencies": {
-		"@react-aria/focus": "3.20.3"
-	},
 	"peerDependencies": {
 		"react": "^18.0.0 || ^19.0.0",
-		"react-dom": "^18.0.0 || ^19.0.0"
+		"react-dom": "^18.0.0 || ^19.0.0",
+		"@react-aria/focus": "3.20.3"
 	},
 	"devDependencies": {
 		"react": "19.1.0",
-		"react-dom": "19.1.0"
+		"react-dom": "19.1.0",
+		"@react-aria/focus": "3.20.3"
 	}
 }

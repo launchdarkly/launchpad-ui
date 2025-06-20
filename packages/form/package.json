@@ -40,19 +40,23 @@
 		"@launchpad-ui/icons": "workspace:~",
 		"@launchpad-ui/tokens": "workspace:~",
 		"@launchpad-ui/tooltip": "workspace:~",
-		"@react-aria/button": "3.13.1",
-		"@react-aria/i18n": "3.12.9",
-		"@react-aria/numberfield": "3.11.14",
-		"@react-aria/visually-hidden": "3.8.23",
 		"@react-stately/numberfield": "3.9.12",
 		"classix": "2.2.0"
 	},
 	"peerDependencies": {
 		"react": "^18.0.0 || ^19.0.0",
-		"react-dom": "^18.0.0 || ^19.0.0"
+		"react-dom": "^18.0.0 || ^19.0.0",
+		"@react-aria/button": "3.13.1",
+		"@react-aria/i18n": "3.12.9",
+		"@react-aria/numberfield": "3.11.14",
+		"@react-aria/visually-hidden": "3.8.23"
 	},
 	"devDependencies": {
 		"react": "19.1.0",
-		"react-dom": "19.1.0"
+		"react-dom": "19.1.0",
+		"@react-aria/button": "3.13.1",
+		"@react-aria/i18n": "3.12.9",
+		"@react-aria/numberfield": "3.11.14",
+		"@react-aria/visually-hidden": "3.8.23"
 	}
 }
