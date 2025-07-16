@@ -180,6 +180,7 @@ const icons = [
 	'info',
 	'json',
 	'key',
+	'layers-difference',
 	'lightbulb',
 	'link-external',
 	'link',
