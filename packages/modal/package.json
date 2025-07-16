@@ -1,6 +1,6 @@
 {
 	"name": "@launchpad-ui/modal",
-	"version": "0.18.0",
+	"version": "0.18.1",
 	"status": "beta",
 	"publishConfig": {
 		"access": "public"
