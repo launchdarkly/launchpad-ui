@@ -1,5 +1,19 @@
 # @launchpad-ui/core
 
+## 0.56.11
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @launchpad-ui/button@0.12.58
+  - @launchpad-ui/drawer@0.6.1
+  - @launchpad-ui/dropdown@0.7.1
+  - @launchpad-ui/filter@0.8.1
+  - @launchpad-ui/form@0.12.1
+  - @launchpad-ui/menu@0.13.66
+  - @launchpad-ui/modal@0.18.1
+  - @launchpad-ui/navigation@0.13.1
+
 ## 0.56.10
 
 ### Patch Changes
