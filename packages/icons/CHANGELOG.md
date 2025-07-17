@@ -1,5 +1,11 @@
 # @launchpad-ui/icons
 
+## 0.21.17
+
+### Patch Changes
+
+- [#1716](https://github.com/launchdarkly/launchpad-ui/pull/1716) [`126b80a`](https://github.com/launchdarkly/launchpad-ui/commit/126b80a1e87f2df8d166948af21fca88d0eebf23) Thanks [@shmoolot](https://github.com/shmoolot)! - added the layers-difference icon
+
 ## 0.21.16
 
 ### Patch Changes
