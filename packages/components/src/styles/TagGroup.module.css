@@ -71,6 +71,11 @@
 	background-color: var(--lp-color-bg-feedback-error);
 }
 
+.warning {
+	color: var(--lp-color-text-feedback-warning);
+	background-color: var(--lp-color-bg-feedback-warning);
+}
+
 .beta {
 	color: var(--lp-color-text-product-beta);
 	background-color: var(--lp-color-bg-product-beta);
