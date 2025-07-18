@@ -21,6 +21,9 @@
 				},
 				"success": {
 					"$value": "{color.green.50}"
+				},
+				"warning": {
+					"$value": "{color.brand.orange.light}"
 				}
 			},
 			"interactive": {
@@ -299,6 +302,9 @@
 				},
 				"info": {
 					"$value": "{color.blue.600}"
+				},
+				"warning": {
+					"$value": "{color.brand.orange.dark}"
 				}
 			},
 			"interactive": {
