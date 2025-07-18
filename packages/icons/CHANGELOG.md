@@ -1,5 +1,11 @@
 # @launchpad-ui/icons
 
+## 0.21.18
+
+### Patch Changes
+
+- [#1717](https://github.com/launchdarkly/launchpad-ui/pull/1717) [`9dfee57`](https://github.com/launchdarkly/launchpad-ui/commit/9dfee576eba215d18b8e04257c635f5a2ad1dac2) Thanks [@yusinto](https://github.com/yusinto)! - added sandbox and rocket svgs
+
 ## 0.21.17
 
 ### Patch Changes
