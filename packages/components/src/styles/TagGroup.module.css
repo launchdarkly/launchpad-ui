@@ -30,7 +30,7 @@
 		color: var(--lp-color-text-interactive-disabled);
 	}
 
-	&[data-selection-mode] {
+	&[data-selection-mode='multiple'] {
 		background-color: var(--lp-color-bg-interactive-secondary-base);
 		border: 1px solid var(--lp-color-border-interactive-secondary-base);
 	}
