@@ -1,6 +1,6 @@
 {
 	"name": "@launchpad-ui/vars",
-	"version": "0.3.7",
+	"version": "0.3.8",
 	"status": "alpha",
 	"publishConfig": {
 		"access": "public"

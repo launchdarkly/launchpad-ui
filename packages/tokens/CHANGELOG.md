@@ -1,5 +1,11 @@
 # @launchpad-ui/tokens
 
+## 0.13.0
+
+### Minor Changes
+
+- [#1719](https://github.com/launchdarkly/launchpad-ui/pull/1719) [`77e938e`](https://github.com/launchdarkly/launchpad-ui/commit/77e938e4254b528e95a240186557061a5d6911eb) Thanks [@Zuzze](https://github.com/Zuzze)! - Warning feedback tokens and Tag warning variant added
+
 ## 0.12.7
 
 ### Patch Changes
