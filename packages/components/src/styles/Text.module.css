@@ -4,3 +4,101 @@
 		color: var(--lp-color-text-ui-secondary);
 	}
 }
+
+/* Typography variants based on Figma design system */
+.body1Regular {
+	font: var(--lp-text-body-1-regular);
+	color: var(--lp-color-text-ui-primary-base);
+}
+
+.body1Semibold {
+	font: var(--lp-text-body-1-semibold);
+	color: var(--lp-color-text-ui-primary-base);
+}
+
+.body1ExtraBold {
+	font: var(--lp-text-body-1-extrabold);
+	color: var(--lp-color-text-ui-primary-base);
+}
+
+.body2Regular {
+	font: var(--lp-text-body-2-regular);
+	color: var(--lp-color-text-ui-primary-base);
+}
+
+.body2Semibold {
+	font: var(--lp-text-body-2-semibold);
+	color: var(--lp-color-text-ui-primary-base);
+}
+
+.body2ExtraBold {
+	font: var(--lp-text-body-2-extrabold);
+	color: var(--lp-color-text-ui-primary-base);
+}
+
+.small1Regular {
+	font: var(--lp-text-small-1-regular);
+	color: var(--lp-color-text-ui-primary-base);
+}
+
+.small1Medium {
+	font: var(--lp-text-small-1-medium);
+	color: var(--lp-color-text-ui-primary-base);
+}
+
+.small1Semibold {
+	font: var(--lp-text-small-1-semibold);
+	color: var(--lp-color-text-ui-primary-base);
+}
+
+.label1Regular {
+	font: var(--lp-text-label-1-regular);
+	color: var(--lp-color-text-ui-primary-base);
+}
+
+.label1Medium {
+	font: var(--lp-text-label-1-medium);
+	color: var(--lp-color-text-ui-primary-base);
+}
+
+.label2Regular {
+	font: var(--lp-text-label-2-regular);
+	color: var(--lp-color-text-ui-primary-base);
+}
+
+.label2Medium {
+	font: var(--lp-text-label-2-medium);
+	color: var(--lp-color-text-ui-primary-base);
+}
+
+.code1Regular {
+	font: var(--lp-text-code-1-regular);
+	color: var(--lp-color-text-ui-primary-base);
+}
+
+.code2Regular {
+	font: var(--lp-text-code-2-regular);
+	color: var(--lp-color-text-ui-primary-base);
+}
+
+/* Text alignment */
+.left {
+	text-align: left;
+}
+
+.center {
+	text-align: center;
+}
+
+.right {
+	text-align: right;
+}
+
+/* Text truncation for maxLines */
+.truncate {
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: normal !important;
+}

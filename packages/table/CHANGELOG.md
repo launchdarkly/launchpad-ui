@@ -1,5 +1,12 @@
 # @launchpad-ui/table
 
+## 0.6.32
+
+### Patch Changes
+
+- Updated dependencies [[`77e938e`](https://github.com/launchdarkly/launchpad-ui/commit/77e938e4254b528e95a240186557061a5d6911eb)]:
+  - @launchpad-ui/tokens@0.13.0
+
 ## 0.6.31
 
 ### Patch Changes
