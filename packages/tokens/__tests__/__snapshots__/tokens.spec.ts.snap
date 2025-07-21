@@ -19,6 +19,7 @@ exports[`Tokens > builds dark tokens 1`] = `
   --lp-color-bg-feedback-error: var(--lp-color-red-900);
   --lp-color-bg-feedback-info: var(--lp-color-blue-900);
   --lp-color-bg-feedback-success: var(--lp-color-green-900);
+  --lp-color-bg-feedback-warning: var(--lp-color-brand-orange-dark);
   --lp-color-bg-interactive-primary-base: var(--lp-color-blue-600);
   --lp-color-bg-interactive-primary-active: var(--lp-color-blue-600);
   --lp-color-bg-interactive-primary-focus: var(--lp-color-blue-500);
@@ -56,6 +57,7 @@ exports[`Tokens > builds dark tokens 1`] = `
   --lp-color-text-feedback-error: var(--lp-color-red-400);
   --lp-color-text-feedback-success: var(--lp-color-green-400);
   --lp-color-text-feedback-info: var(--lp-color-blue-400);
+  --lp-color-text-feedback-warning: var(--lp-color-brand-orange-light);
   --lp-color-text-interactive-base: var(--lp-color-blue-400);
   --lp-color-text-interactive-active: var(--lp-color-purple-400);
   --lp-color-text-interactive-secondary: var(--lp-color-gray-400);
@@ -210,6 +212,7 @@ exports[`Tokens > builds default tokens 1`] = `
   --lp-color-bg-feedback-error: var(--lp-color-red-50);
   --lp-color-bg-feedback-info: var(--lp-color-blue-50);
   --lp-color-bg-feedback-success: var(--lp-color-green-50);
+  --lp-color-bg-feedback-warning: var(--lp-color-brand-orange-light);
   --lp-color-bg-interactive-primary-base: var(--lp-color-blue-500);
   --lp-color-bg-interactive-primary-active: var(--lp-color-blue-500);
   --lp-color-bg-interactive-primary-focus: var(--lp-color-blue-600);
@@ -254,6 +257,7 @@ exports[`Tokens > builds default tokens 1`] = `
   --lp-color-text-feedback-error: var(--lp-color-red-600);
   --lp-color-text-feedback-success: var(--lp-color-green-600);
   --lp-color-text-feedback-info: var(--lp-color-blue-600);
+  --lp-color-text-feedback-warning: var(--lp-color-brand-orange-dark);
   --lp-color-text-interactive-base: var(--lp-color-blue-600);
   --lp-color-text-interactive-active: var(--lp-color-purple-700);
   --lp-color-text-interactive-primary-base: var(--lp-color-white-950);

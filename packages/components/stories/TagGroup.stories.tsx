@@ -97,6 +97,7 @@ export const Variants: Story = {
 				<TagList>
 					<Tag>Default</Tag>
 					<Tag variant="success">Success</Tag>
+					<Tag variant="warning">Warning</Tag>
 					<Tag variant="error">Error</Tag>
 					<Tag variant="beta">Beta</Tag>
 					<Tag variant="federal">Federal</Tag>
