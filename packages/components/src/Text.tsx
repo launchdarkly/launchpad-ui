@@ -89,7 +89,7 @@ const getDefaultElementType = (variant: TextVariant): string => {
 /**
  * A generic Text component for body text.
  *
- * For headings, use `Heading`
+ * For headings, use [Heading](/docs/components-content-heading--docs)
  *
  * Built on top of [React Aria `Text` component](https://react-spectrum.adobe.com/react-spectrum/Text.html#text).
  */

@@ -82,7 +82,7 @@ const getDefaultLevel = (variant: HeadingVariant): AriaHeadingProps['level'] => 
 /**
  * A generic Heading component for headings and display text.
  *
- * For body text, use `Text`
+ * For body text, use [Text](/docs/components-content-text--docs)
  *
  * Built on top of [React Aria `Heading` component](https://react-spectrum.adobe.com/react-spectrum/Heading.html#heading).
  */
