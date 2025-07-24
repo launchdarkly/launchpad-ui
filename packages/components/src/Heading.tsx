@@ -88,7 +88,7 @@ const getDefaultLevel = (variant: HeadingVariant): AriaHeadingProps['level'] => 
  */
 const Heading = ({
 	ref,
-	variant = 'heading1Medium',
+	variant = 'heading3Regular',
 	align = 'left',
 	maxLines,
 	className,
