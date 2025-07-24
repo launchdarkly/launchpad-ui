@@ -1,5 +1,5 @@
 ---
-"@launchpad-ui/components": patch
+"@launchpad-ui/components": minor
 ---
 
 Heading and Text props extended

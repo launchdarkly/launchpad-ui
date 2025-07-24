@@ -3,11 +3,6 @@
 	overflow: hidden;
 	text-overflow: ellipsis;
 }
-
-.truncate {
-	white-space: normal !important;
-}
-
 /* https://www.figma.com/design/98HKKXL2dTle29ikJ3tzk7/%F0%9F%9A%80-LaunchPad?node-id=1-26765&m=dev */
 
 .display1 {
@@ -77,4 +72,5 @@
 	-webkit-box-orient: vertical;
 	overflow: hidden;
 	text-overflow: ellipsis;
+	white-space: normal;
 }
