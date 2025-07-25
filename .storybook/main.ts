@@ -45,6 +45,7 @@ const config: StorybookConfig = {
 							prop.parent.fileName,
 						)
 					: true,
+			shouldExtractValuesFromUnion: true,
 		},
 	},
 };

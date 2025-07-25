@@ -2,6 +2,14 @@ import { vars } from '@launchpad-ui/vars';
 
 export default {
 	title: 'Tokens/Typography',
+	parameters: {
+		docs: {
+			description: {
+				component:
+					'Typography tokens for the LaunchPad design system. For components using these tokens, see [Text](/docs/components-content-text--docs) and [Heading](/docs/components-content-heading--docs).',
+			},
+		},
+	},
 };
 
 export const Typography = {
