@@ -45,15 +45,6 @@ const textStyles = cva(styles.text, {
 			code1Regular: styles.code1Regular,
 			code2Regular: styles.code2Regular,
 		},
-		align: {
-			left: styles.left,
-			center: styles.center,
-			right: styles.right,
-		},
-	},
-	defaultVariants: {
-		variant: 'body2Regular',
-		align: 'left',
 	},
 });
 
@@ -61,8 +52,6 @@ interface TextProps extends Omit<AriaTextProps, 'className' | 'elementType'> {
 	ref?: Ref<HTMLElement>;
 	/** Typography variant following LaunchPad design system Typography tokens. */
 	variant?: TextVariant;
-	/** Text alignment */
-	align?: 'left' | 'center' | 'right';
 	/** Maximum number of lines to display. Overflowing text will be truncated with an ellipsis. */
 	maxLines?: number;
 	/** Optional HTML element type such as `span`, `label`, `small`, `code`, `p`, etc. Defaults to the appropriate semantic element based on the variant. */
@@ -93,24 +82,15 @@ const getDefaultElementType = (variant: TextVariant): string => {
  *
  * Built on top of [React Aria `Text` component](https://react-spectrum.adobe.com/react-spectrum/Text.html#text).
  */
-const Text = ({
-	ref,
-	variant = 'body2Regular',
-	align = 'left',
-	maxLines,
-	elementType,
-	className,
-	style,
-	...props
-}: TextProps) => {
+const Text = ({ ref, variant, maxLines, elementType, className, style, ...props }: TextProps) => {
 	[props, ref] = useLPContextProps(props, ref, TextContext);
 
 	return (
 		<AriaText
 			{...props}
 			ref={ref}
-			elementType={elementType ?? getDefaultElementType(variant)}
-			className={cx(textStyles({ variant, align }), maxLines && styles.truncate, className)}
+			elementType={elementType || (variant ? getDefaultElementType(variant) : undefined)}
+			className={cx(textStyles({ variant }), maxLines && styles.truncate, className)}
 			style={{
 				...style,
 				...(maxLines && {

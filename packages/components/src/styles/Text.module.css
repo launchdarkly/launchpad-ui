@@ -9,31 +9,37 @@
 .body1Regular {
 	font: var(--lp-text-body-1-regular);
 	color: var(--lp-color-text-ui-primary-base);
+	margin: 0; /* removes default browser margin for p */
 }
 
 .body1Semibold {
 	font: var(--lp-text-body-1-semibold);
 	color: var(--lp-color-text-ui-primary-base);
+	margin: 0;
 }
 
 .body1ExtraBold {
 	font: var(--lp-text-body-1-extrabold);
 	color: var(--lp-color-text-ui-primary-base);
+	margin: 0;
 }
 
 .body2Regular {
 	font: var(--lp-text-body-2-regular);
 	color: var(--lp-color-text-ui-primary-base);
+	margin: 0;
 }
 
 .body2Semibold {
 	font: var(--lp-text-body-2-semibold);
 	color: var(--lp-color-text-ui-primary-base);
+	margin: 0;
 }
 
 .body2ExtraBold {
 	font: var(--lp-text-body-2-extrabold);
 	color: var(--lp-color-text-ui-primary-base);
+	margin: 0;
 }
 
 .small1Regular {

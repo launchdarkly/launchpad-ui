@@ -32,10 +32,6 @@ const meta: Meta<typeof Text> = {
 				'code2Regular',
 			],
 		},
-		align: {
-			control: { type: 'select' },
-			options: ['left', 'center', 'right'],
-		},
 		maxLines: {
 			control: { type: 'number' },
 		},
@@ -120,16 +116,6 @@ export const Code1: Story = {
 			<Text variant="code1Regular">Code 1 Regular</Text>
 			<Text variant="code2Regular">Code 2 Regular</Text>
 		</div>
-	),
-};
-
-export const Alignment: Story = {
-	render: () => (
-		<>
-			<Text align="left">Left aligned text</Text>
-			<Text align="center">Center aligned text</Text>
-			<Text align="right">Right aligned text</Text>
-		</>
 	),
 };
 

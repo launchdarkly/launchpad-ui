@@ -35,15 +35,6 @@ const headingStyles = cva(styles.heading, {
 			heading3Semibold: styles.heading3Semibold,
 			heading3ExtraBold: styles.heading3ExtraBold,
 		},
-		align: {
-			left: styles.left,
-			center: styles.center,
-			right: styles.right,
-		},
-	},
-	defaultVariants: {
-		variant: 'heading1Medium',
-		align: 'left',
 	},
 });
 
@@ -51,8 +42,6 @@ interface HeadingProps extends Omit<AriaHeadingProps, 'className' | 'level'> {
 	ref?: Ref<HTMLHeadingElement>;
 	/** Typography variant following LaunchPad design system typography tokens. */
 	variant?: HeadingVariant;
-	/** Text alignment */
-	align?: 'left' | 'center' | 'right';
 	/** Maximum number of lines to display. Overflowing text will be truncated with an ellipsis. */
 	maxLines?: number;
 	/** Optional CSS class name */
@@ -86,24 +75,15 @@ const getDefaultLevel = (variant: HeadingVariant): AriaHeadingProps['level'] => 
  *
  * Built on top of [React Aria `Heading` component](https://react-spectrum.adobe.com/react-spectrum/Heading.html#heading).
  */
-const Heading = ({
-	ref,
-	variant = 'heading3Regular',
-	align = 'left',
-	maxLines,
-	className,
-	style,
-	level,
-	...props
-}: HeadingProps) => {
+const Heading = ({ ref, variant, maxLines, className, style, level, ...props }: HeadingProps) => {
 	[props, ref] = useLPContextProps(props, ref, HeadingContext);
 
 	return (
 		<AriaHeading
 			{...props}
 			ref={ref}
-			level={level || getDefaultLevel(variant)}
-			className={cx(headingStyles({ variant, align }), maxLines && styles.truncate, className)}
+			level={level || (variant ? getDefaultLevel(variant) : undefined)}
+			className={cx(headingStyles({ variant }), maxLines && styles.truncate, className)}
 			style={{
 				...style,
 				...(maxLines && {

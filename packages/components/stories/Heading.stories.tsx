@@ -27,10 +27,6 @@ const meta: Meta<typeof Heading> = {
 				'heading3ExtraBold',
 			],
 		},
-		align: {
-			control: { type: 'select' },
-			options: ['left', 'center', 'right'],
-		},
 		maxLines: {
 			control: { type: 'number' },
 		},
@@ -95,16 +91,6 @@ export const Heading3: Story = {
 			<Heading variant="heading3Semibold">Heading 3 Semibold</Heading>
 			<Heading variant="heading3ExtraBold">Heading 3 ExtraBold</Heading>
 		</div>
-	),
-};
-
-export const Alignment: Story = {
-	render: () => (
-		<>
-			<Heading align="left">Left aligned heading</Heading>
-			<Heading align="center">Center aligned heading</Heading>
-			<Heading align="right">Right aligned heading</Heading>
-		</>
 	),
 };
 
