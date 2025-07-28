@@ -24,10 +24,6 @@ const meta: Meta<typeof Text> = {
 				'small1Regular',
 				'small1Medium',
 				'small1Semibold',
-				'label1Regular',
-				'label1Medium',
-				'label2Regular',
-				'label2Medium',
 				'code1Regular',
 				'code2Regular',
 			],
@@ -79,24 +75,6 @@ export const Body2: Story = {
 			<Text variant="body2Semibold">Body 2 Semibold</Text>
 			<Text variant="body2ExtraBold">Body 2 ExtraBold</Text>
 		</>
-	),
-};
-
-export const Label1: Story = {
-	render: () => (
-		<div style={{ display: 'flex', flexDirection: 'column' }}>
-			<Text variant="label1Regular">Label 1 Regular</Text>
-			<Text variant="label1Medium">Label 1 Medium</Text>
-		</div>
-	),
-};
-
-export const Label2: Story = {
-	render: () => (
-		<div style={{ display: 'flex', flexDirection: 'column' }}>
-			<Text variant="label2Regular">Label 2 Regular</Text>
-			<Text variant="label2Medium">Label 2 Medium</Text>
-		</div>
 	),
 };
 

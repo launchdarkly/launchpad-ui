@@ -19,10 +19,6 @@ export type TextVariant =
 	| 'small1Regular'
 	| 'small1Medium'
 	| 'small1Semibold'
-	| 'label1Regular'
-	| 'label1Medium'
-	| 'label2Regular'
-	| 'label2Medium'
 	| 'code1Regular'
 	| 'code2Regular';
 
@@ -38,10 +34,6 @@ const textStyles = cva(styles.text, {
 			small1Regular: styles.small1Regular,
 			small1Medium: styles.small1Medium,
 			small1Semibold: styles.small1Semibold,
-			label1Regular: styles.label1Regular,
-			label1Medium: styles.label1Medium,
-			label2Regular: styles.label2Regular,
-			label2Medium: styles.label2Medium,
 			code1Regular: styles.code1Regular,
 			code2Regular: styles.code2Regular,
 		},
@@ -63,9 +55,6 @@ interface TextProps extends Omit<AriaTextProps, 'className' | 'elementType'> {
 const TextContext = createContext<ContextValue<TextProps, HTMLElement>>(null);
 
 const getDefaultElementType = (variant: TextVariant): string => {
-	if (variant.startsWith('label')) {
-		return 'label';
-	}
 	if (variant.startsWith('small')) {
 		return 'small';
 	}

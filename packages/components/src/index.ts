@@ -35,7 +35,7 @@ export type { GroupProps } from './Group';
 export type { HeadingProps, HeadingVariant } from './Heading';
 export type { IconButtonProps } from './IconButton';
 export type { InputProps } from './Input';
-export type { LabelProps } from './Label';
+export type { LabelProps, LabelVariant } from './Label';
 export type { LinkProps } from './Link';
 export type { LinkButtonProps } from './LinkButton';
 export type { LinkIconButtonProps } from './LinkIconButton';

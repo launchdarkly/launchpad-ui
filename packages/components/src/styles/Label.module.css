@@ -2,3 +2,46 @@
 	font: var(--lp-text-label-1-medium);
 	white-space: nowrap;
 }
+
+/* Label typography variants based on Figma design system */
+.label1Regular {
+	font: var(--lp-text-label-1-regular);
+	color: var(--lp-color-text-ui-primary-base);
+}
+
+.label1Medium {
+	font: var(--lp-text-label-1-medium);
+	color: var(--lp-color-text-ui-primary-base);
+}
+
+.label2Regular {
+	font: var(--lp-text-label-2-regular);
+	color: var(--lp-color-text-ui-primary-base);
+}
+
+.label2Medium {
+	font: var(--lp-text-label-2-medium);
+	color: var(--lp-color-text-ui-primary-base);
+}
+
+/* Text alignment */
+.left {
+	text-align: left;
+}
+
+.center {
+	text-align: center;
+}
+
+.right {
+	text-align: right;
+}
+
+/* Text truncation for maxLines */
+.truncate {
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: normal !important;
+}
