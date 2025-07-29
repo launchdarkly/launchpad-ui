@@ -160,7 +160,7 @@ export const RadioCardGroup: Story = {
 					maxWidth: vars.size[480],
 				}}
 			>
-				<RadioGroup defaultValue="feature">
+				<RadioGroup defaultValue="feature" variant="card">
 					<Label>Experiment type</Label>
 					<div
 						style={{
@@ -169,7 +169,7 @@ export const RadioCardGroup: Story = {
 							gap: vars.spacing[300],
 						}}
 					>
-						<Radio slot="card" value="feature">
+						<Radio value="feature">
 							<div slot="heading">
 								<div slot="icon">
 									<Icon name="flag" size="medium" />
@@ -178,7 +178,7 @@ export const RadioCardGroup: Story = {
 							</div>
 							<div slot="description">Compare treatments to see which one wins</div>
 						</Radio>
-						<Radio slot="card" value="funnel">
+						<Radio value="funnel">
 							<div slot="heading">
 								<div slot="icon">
 									<Icon name="flask" size="medium" />
@@ -187,7 +187,7 @@ export const RadioCardGroup: Story = {
 							</div>
 							<div slot="description">Track the success of a multi-step user flow</div>
 						</Radio>
-						<Radio slot="card" value="export">
+						<Radio value="export">
 							<div slot="heading">
 								<div slot="icon">
 									<Icon name="data" size="medium" />
@@ -196,7 +196,7 @@ export const RadioCardGroup: Story = {
 							</div>
 							<div slot="description">Create custom experiment analysis in your warehouse</div>
 						</Radio>
-						<Radio slot="card" value="snowflake" isDisabled>
+						<Radio value="snowflake" isDisabled>
 							<div slot="heading">
 								<div slot="icon">
 									<Icon name="circle" size="medium" />
@@ -205,7 +205,7 @@ export const RadioCardGroup: Story = {
 							</div>
 							<div slot="description">Analysis powered by your Snowflake warehouse</div>
 						</Radio>
-						<Radio slot="card" value="simple">
+						<Radio value="simple">
 							<div slot="heading">
 								<div slot="icon">
 									<Icon name="gear" size="medium" />

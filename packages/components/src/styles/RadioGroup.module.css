@@ -11,3 +11,7 @@
 		gap: var(--lp-spacing-300);
 	}
 }
+
+.card {
+	/* Card variant styles for RadioGroup */
+}
