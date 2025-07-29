@@ -1,4 +1,3 @@
-import type { VariantProps } from 'class-variance-authority';
 import type { Ref } from 'react';
 import type {
 	RadioProps as AriaRadioProps,
@@ -7,26 +6,16 @@ import type {
 } from 'react-aria-components';
 
 import { cva } from 'class-variance-authority';
-import { createContext, useContext } from 'react';
+import { createContext } from 'react';
 import { Radio as AriaRadio, composeRenderProps } from 'react-aria-components';
 
 import styles from './styles/Radio.module.css';
 import { useLPContextProps } from './utils';
 
-const radioStyles = cva(styles.radio, {
-	variants: {
-		variant: {
-			default: '',
-			card: styles.card,
-		},
-	},
-	defaultVariants: {
-		variant: 'default',
-	},
-});
+const radioStyles = cva(styles.radio);
 const radioIconStyles = cva(styles.circle);
 
-interface RadioProps extends AriaRadioProps, VariantProps<typeof radioStyles> {
+interface RadioProps extends AriaRadioProps {
 	ref?: Ref<HTMLLabelElement>;
 }
 
@@ -53,15 +42,13 @@ const RadioIcon = ({ isSelected }: Partial<RadioRenderProps>) => (
  */
 const Radio = ({ ref, ...props }: RadioProps) => {
 	[props, ref] = useLPContextProps(props, ref, RadioContext);
-	const contextProps = useContext(RadioContext) as any;
-	const { variant = 'default' } = { ...contextProps, ...props };
 
 	return (
 		<AriaRadio
 			{...props}
 			ref={ref}
 			className={composeRenderProps(props.className, (className, renderProps) =>
-				radioStyles({ ...renderProps, variant, className }),
+				radioStyles({ ...renderProps, className }),
 			)}
 		>
 			{composeRenderProps(props.children, (children, { isSelected }) => (

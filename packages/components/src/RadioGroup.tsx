@@ -4,9 +4,8 @@ import type { RadioGroupProps as AriaRadioGroupProps, ContextValue } from 'react
 
 import { cva } from 'class-variance-authority';
 import { createContext } from 'react';
-import { RadioGroup as AriaRadioGroup, composeRenderProps, Provider } from 'react-aria-components';
+import { RadioGroup as AriaRadioGroup, composeRenderProps } from 'react-aria-components';
 
-import { RadioContext } from './Radio';
 import styles from './styles/RadioGroup.module.css';
 import { useLPContextProps } from './utils';
 
@@ -35,20 +34,17 @@ const RadioGroupContext = createContext<ContextValue<RadioGroupProps, HTMLDivEle
  */
 const RadioGroup = ({ ref, ...props }: RadioGroupProps) => {
 	[props, ref] = useLPContextProps(props, ref, RadioGroupContext);
-	const { variant = 'default' } = props;
+	const { variant = 'default', ...restProps } = props;
 
 	return (
 		<AriaRadioGroup
-			{...props}
+			{...restProps}
 			ref={ref}
+			data-variant={variant}
 			className={composeRenderProps(props.className, (className, renderProps) =>
 				radioGroupStyles({ ...renderProps, variant, className }),
 			)}
-		>
-			{composeRenderProps(props.children, (children) => (
-				<Provider values={[[RadioContext, { variant } as any]]}>{children}</Provider>
-			))}
-		</AriaRadioGroup>
+		/>
 	);
 };
 
