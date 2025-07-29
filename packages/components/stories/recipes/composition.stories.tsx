@@ -170,32 +170,48 @@ export const RadioCardGroup: Story = {
 						}}
 					>
 						<Radio slot="card" value="feature">
-							<div slot="icon">
-								<Icon name="flag" size="medium" />
+							<div slot="heading">
+								<div slot="icon">
+									<Icon name="flag" size="medium" />
+								</div>
+								<div slot="label">Feature change</div>
 							</div>
-							<div slot="label">Feature change</div>
 							<div slot="description">Compare treatments to see which one wins</div>
 						</Radio>
 						<Radio slot="card" value="funnel">
-							<div slot="icon">
-								<Icon name="flask" size="medium" />
+							<div slot="heading">
+								<div slot="icon">
+									<Icon name="flask" size="medium" />
+								</div>
+								<div slot="label">Funnel optimization</div>
 							</div>
-							<div slot="label">Funnel optimization</div>
 							<div slot="description">Track the success of a multi-step user flow</div>
 						</Radio>
 						<Radio slot="card" value="export">
-							<div slot="icon">
-								<Icon name="data" size="medium" />
+							<div slot="heading">
+								<div slot="icon">
+									<Icon name="data" size="medium" />
+								</div>
+								<div slot="label">Data Export only</div>
 							</div>
-							<div slot="label">Data Export only</div>
 							<div slot="description">Create custom experiment analysis in your warehouse</div>
 						</Radio>
 						<Radio slot="card" value="snowflake" isDisabled>
-							<div slot="icon">
-								<Icon name="circle" size="medium" />
+							<div slot="heading">
+								<div slot="icon">
+									<Icon name="circle" size="medium" />
+								</div>
+								<div slot="label">Snowflake native</div>
 							</div>
-							<div slot="label">Snowflake native</div>
 							<div slot="description">Analysis powered by your Snowflake warehouse</div>
+						</Radio>
+						<Radio slot="card" value="simple">
+							<div slot="heading">
+								<div slot="icon">
+									<Icon name="gear" size="medium" />
+								</div>
+								<div slot="label">Simple option</div>
+							</div>
 						</Radio>
 					</div>
 				</RadioGroup>
