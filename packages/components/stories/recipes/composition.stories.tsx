@@ -174,7 +174,10 @@ export const RadioCardGroup: Story = {
 								<div slot="icon">
 									<Icon name="flag" size="medium" />
 								</div>
-								<div slot="label">Feature change</div>
+								<div>
+									<div slot="label">Feature change</div>
+									<div slot="subtitle">A/B test different variations</div>
+								</div>
 							</div>
 							<div slot="description">Compare treatments to see which one wins</div>
 						</Radio>
@@ -183,7 +186,10 @@ export const RadioCardGroup: Story = {
 								<div slot="icon">
 									<Icon name="flask" size="medium" />
 								</div>
-								<div slot="label">Funnel optimization</div>
+								<div>
+									<div slot="label">Funnel optimization</div>
+									<div slot="subtitle">Multi-step conversion tracking</div>
+								</div>
 							</div>
 							<div slot="description">Track the success of a multi-step user flow</div>
 						</Radio>
@@ -192,7 +198,10 @@ export const RadioCardGroup: Story = {
 								<div slot="icon">
 									<Icon name="data" size="medium" />
 								</div>
-								<div slot="label">Data Export only</div>
+								<div>
+									<div slot="label">Data Export only</div>
+									<div slot="subtitle">Raw data for analysis</div>
+								</div>
 							</div>
 							<div slot="description">Create custom experiment analysis in your warehouse</div>
 						</Radio>
@@ -201,7 +210,10 @@ export const RadioCardGroup: Story = {
 								<div slot="icon">
 									<Icon name="circle" size="medium" />
 								</div>
-								<div slot="label">Snowflake native</div>
+								<div>
+									<div slot="label">Snowflake native</div>
+									<div slot="subtitle">Warehouse-powered insights</div>
+								</div>
 							</div>
 							<div slot="description">Analysis powered by your Snowflake warehouse</div>
 						</Radio>
@@ -210,7 +222,10 @@ export const RadioCardGroup: Story = {
 								<div slot="icon">
 									<Icon name="gear" size="medium" />
 								</div>
-								<div slot="label">Simple option</div>
+								<div>
+									<div slot="label">Simple option</div>
+									<div slot="subtitle">Basic configuration</div>
+								</div>
 							</div>
 						</Radio>
 					</div>

@@ -106,10 +106,22 @@
 		color: var(--lp-color-text-ui-primary);
 	}
 
+	& [slot='heading'] [slot='subtitle'] {
+		font: var(--lp-text-body-2-regular);
+		color: var(--lp-color-text-ui-secondary);
+		text-align: left;
+		white-space: normal;
+	}
+
 	& [slot='description'] {
 		grid-area: description;
 		font: var(--lp-text-body-2-regular);
 		color: var(--lp-color-text-ui-secondary);
 		margin-top: var(--lp-spacing-200);
+	}
+
+	&[data-selected] [slot='heading'] [slot='subtitle'] {
+		color: var(--lp-color-text-ui-primary);
+		font-weight: var(--lp-font-weight-medium);
 	}
 }
