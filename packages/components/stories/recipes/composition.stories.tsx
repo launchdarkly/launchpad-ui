@@ -22,6 +22,7 @@ import { ListBox, ListBoxItem } from '../../src/ListBox';
 import { Modal, ModalOverlay } from '../../src/Modal';
 import { Perceivable } from '../../src/Perceivable';
 import { Popover } from '../../src/Popover';
+import { Radio } from '../../src/Radio';
 import { RadioButton } from '../../src/RadioButton';
 import { RadioGroup } from '../../src/RadioGroup';
 import { RadioIconButton } from '../../src/RadioIconButton';
@@ -146,6 +147,62 @@ export const RadioButtonGroup: Story = {
 		),
 	},
 	name: 'RadioButtonGroup',
+};
+
+export const RadioCardGroup: Story = {
+	args: {
+		children: (
+			<div
+				style={{
+					display: 'flex',
+					flexDirection: 'column',
+					gap: vars.spacing[400],
+					maxWidth: vars.size[480],
+				}}
+			>
+				<RadioGroup defaultValue="feature">
+					<Label>Experiment type</Label>
+					<div
+						style={{
+							display: 'flex',
+							flexDirection: 'column',
+							gap: vars.spacing[300],
+						}}
+					>
+						<Radio slot="card" value="feature">
+							<div slot="icon">
+								<Icon name="flag" size="medium" />
+							</div>
+							<div slot="label">Feature change</div>
+							<div slot="description">Compare treatments to see which one wins</div>
+						</Radio>
+						<Radio slot="card" value="funnel">
+							<div slot="icon">
+								<Icon name="flask" size="medium" />
+							</div>
+							<div slot="label">Funnel optimization</div>
+							<div slot="description">Track the success of a multi-step user flow</div>
+						</Radio>
+						<Radio slot="card" value="export">
+							<div slot="icon">
+								<Icon name="data" size="medium" />
+							</div>
+							<div slot="label">Data Export only</div>
+							<div slot="description">Create custom experiment analysis in your warehouse</div>
+						</Radio>
+						<Radio slot="card" value="snowflake" isDisabled>
+							<div slot="icon">
+								<Icon name="circle" size="medium" />
+							</div>
+							<div slot="label">Snowflake native</div>
+							<div slot="description">Analysis powered by your Snowflake warehouse</div>
+						</Radio>
+					</div>
+				</RadioGroup>
+			</div>
+		),
+	},
+	name: 'RadioCardGroup',
 };
 
 export const ListBoxTooltip: Story = {
