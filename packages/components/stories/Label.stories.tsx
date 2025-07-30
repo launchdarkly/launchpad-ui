@@ -5,6 +5,17 @@ import { Label } from '../src/Label';
 const meta: Meta<typeof Label> = {
 	title: 'Components/Content/Label',
 	component: Label,
+	parameters: {
+		docs: {
+			description: {
+				component: `
+A component for labels.
+
+For body text, use [Text](/docs/components-content-text--docs). For headings, use [Heading](/docs/components-content-heading--docs). For code, use [Code](/docs/components-content-code--docs).
+				`,
+			},
+		},
+	},
 	argTypes: {
 		children: {
 			control: { type: 'text' },
@@ -12,30 +23,16 @@ const meta: Meta<typeof Label> = {
 				type: { summary: 'React.ReactNode' },
 			},
 		},
-		variant: {
-			control: { type: 'select' },
-			options: ['label1Regular', 'label1Medium', 'label2Regular', 'label2Medium'],
-		},
-		align: {
-			control: { type: 'select' },
-			options: ['left', 'center', 'right'],
-		},
 		maxLines: {
 			control: { type: 'number' },
 		},
 		className: {
 			control: { type: 'text' },
 		},
-		ref: {
-			control: { type: 'object' },
-			description: 'Optional reference to the label DOM element',
-			table: {
-				type: { summary: 'Ref<HTMLLabelElement>' },
-			},
-		},
 		elementType: {
-			control: { type: 'select' },
-			options: ['label', 'span', 'p', 'div'],
+			table: {
+				disable: true,
+			},
 		},
 	},
 };
@@ -49,24 +46,6 @@ export const Default: Story = {
 	args: {
 		children: 'Label text',
 	},
-};
-
-export const Label1: Story = {
-	render: () => (
-		<div style={{ display: 'flex', flexDirection: 'column' }}>
-			<Label variant="label1Regular">Label 1 Regular</Label>
-			<Label variant="label1Medium">Label 1 Medium</Label>
-		</div>
-	),
-};
-
-export const Label2: Story = {
-	render: () => (
-		<div style={{ display: 'flex', flexDirection: 'column' }}>
-			<Label variant="label2Regular">Label 2 Regular</Label>
-			<Label variant="label2Medium">Label 2 Medium</Label>
-		</div>
-	),
 };
 
 /**

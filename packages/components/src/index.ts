@@ -18,6 +18,7 @@ export type {
 } from './Calendar';
 export type { CheckboxProps } from './Checkbox';
 export type { CheckboxGroupProps } from './CheckboxGroup';
+export type { CodeProps } from './Code';
 export type { ComboBoxProps } from './ComboBox';
 export type { DateFieldProps, DateInputProps, DateSegmentProps, TimeFieldProps } from './DateField';
 export type { DatePickerProps, DateRangePickerProps } from './DatePicker';
@@ -35,7 +36,7 @@ export type { GroupProps } from './Group';
 export type { HeadingProps, HeadingVariant } from './Heading';
 export type { IconButtonProps } from './IconButton';
 export type { InputProps } from './Input';
-export type { LabelProps, LabelVariant } from './Label';
+export type { LabelProps } from './Label';
 export type { LinkProps } from './Link';
 export type { LinkButtonProps } from './LinkButton';
 export type { LinkIconButtonProps } from './LinkIconButton';
@@ -112,6 +113,7 @@ export {
 	checkboxStyles,
 } from './Checkbox';
 export { CheckboxGroup, CheckboxGroupContext, checkboxGroupStyles } from './CheckboxGroup';
+export { Code } from './Code';
 export { Collection } from './Collection';
 export { ComboBox, ComboBoxClearButton, ComboBoxContext, comboBoxStyles } from './ComboBox';
 export {

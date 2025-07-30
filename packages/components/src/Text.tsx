@@ -18,9 +18,7 @@ export type TextVariant =
 	| 'body2ExtraBold'
 	| 'small1Regular'
 	| 'small1Medium'
-	| 'small1Semibold'
-	| 'code1Regular'
-	| 'code2Regular';
+	| 'small1Semibold';
 
 const textStyles = cva(styles.text, {
 	variants: {
@@ -34,8 +32,6 @@ const textStyles = cva(styles.text, {
 			small1Regular: styles.small1Regular,
 			small1Medium: styles.small1Medium,
 			small1Semibold: styles.small1Semibold,
-			code1Regular: styles.code1Regular,
-			code2Regular: styles.code2Regular,
 		},
 	},
 });
@@ -57,9 +53,6 @@ const TextContext = createContext<ContextValue<TextProps, HTMLElement>>(null);
 const getDefaultElementType = (variant: TextVariant): string => {
 	if (variant.startsWith('small')) {
 		return 'small';
-	}
-	if (variant.startsWith('code')) {
-		return 'code';
 	}
 	return 'p';
 };

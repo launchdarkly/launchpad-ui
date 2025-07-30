@@ -24,8 +24,6 @@ const meta: Meta<typeof Text> = {
 				'small1Regular',
 				'small1Medium',
 				'small1Semibold',
-				'code1Regular',
-				'code2Regular',
 			],
 		},
 		maxLines: {
@@ -84,15 +82,6 @@ export const Small1: Story = {
 			<Text variant="small1Regular">Small 1 Regular</Text>
 			<Text variant="small1Medium">Small 1 Medium</Text>
 			<Text variant="small1Semibold">Small 1 Semibold</Text>
-		</div>
-	),
-};
-
-export const Code1: Story = {
-	render: () => (
-		<div style={{ display: 'flex', flexDirection: 'column' }}>
-			<Text variant="code1Regular">Code 1 Regular</Text>
-			<Text variant="code2Regular">Code 2 Regular</Text>
 		</div>
 	),
 };
