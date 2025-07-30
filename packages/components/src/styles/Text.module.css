@@ -5,69 +5,31 @@
 	}
 }
 
-/* Typography variants based on Figma design system */
-.body1Regular {
-	font: var(--lp-text-body-1-regular);
-	color: var(--lp-color-text-ui-primary-base);
-	margin: 0; /* removes default browser margin for p */
-}
-
-.body1Semibold {
-	font: var(--lp-text-body-1-semibold);
+/* Size variants */
+.small {
+	font-size: var(--lp-font-size-100);
+	line-height: var(--lp-line-height-100);
 	color: var(--lp-color-text-ui-primary-base);
 	margin: 0;
 }
 
-.body1ExtraBold {
-	font: var(--lp-text-body-1-extrabold);
+.medium {
+	font-size: var(--lp-font-size-200);
+	line-height: var(--lp-line-height-200);
 	color: var(--lp-color-text-ui-primary-base);
 	margin: 0;
 }
 
-.body2Regular {
-	font: var(--lp-text-body-2-regular);
+.large {
+	font-size: var(--lp-font-size-300);
+	line-height: var(--lp-line-height-300);
 	color: var(--lp-color-text-ui-primary-base);
 	margin: 0;
 }
 
-.body2Semibold {
-	font: var(--lp-text-body-2-semibold);
-	color: var(--lp-color-text-ui-primary-base);
-	margin: 0;
-}
-
-.body2ExtraBold {
-	font: var(--lp-text-body-2-extrabold);
-	color: var(--lp-color-text-ui-primary-base);
-	margin: 0;
-}
-
-.small1Regular {
-	font: var(--lp-text-small-1-regular);
-	color: var(--lp-color-text-ui-primary-base);
-}
-
-.small1Medium {
-	font: var(--lp-text-small-1-medium);
-	color: var(--lp-color-text-ui-primary-base);
-}
-
-.small1Semibold {
-	font: var(--lp-text-small-1-semibold);
-	color: var(--lp-color-text-ui-primary-base);
-}
-
-/* Text alignment */
-.left {
-	text-align: left;
-}
-
-.center {
-	text-align: center;
-}
-
-.right {
-	text-align: right;
+/* Bold variant */
+.bold {
+	font-weight: var(--lp-font-weight-semibold);
 }
 
 /* Text truncation for maxLines */
@@ -76,5 +38,5 @@
 	-webkit-box-orient: vertical;
 	overflow: hidden;
 	text-overflow: ellipsis;
-	white-space: normal;
+	white-space: normal !important;
 }

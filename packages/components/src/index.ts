@@ -68,7 +68,7 @@ export type {
 } from './Table';
 export type { TabListProps, TabPanelProps, TabProps, TabsProps } from './Tabs';
 export type { TagGroupProps, TagListProps, TagProps } from './TagGroup';
-export type { TextProps, TextVariant } from './Text';
+export type { TextProps } from './Text';
 export type { TextAreaProps } from './TextArea';
 export type { TextFieldProps } from './TextField';
 export type { ToastOptions, ToastValue } from './Toast';
@@ -165,7 +165,7 @@ export { Heading, HeadingContext, headingStyles } from './Heading';
 export { IconButton, IconButtonContext, iconButtonStyles } from './IconButton';
 export { Input, InputContext, inputStyles } from './Input';
 export { Keyboard } from './Keyboard';
-export { Label, LabelContext, labelStyles } from './Label';
+export { Label, LabelContext } from './Label';
 export { Link, LinkContext, linkStyles } from './Link';
 export { LinkButton, LinkButtonContext } from './LinkButton';
 export { LinkIconButton, LinkIconButtonContext } from './LinkIconButton';

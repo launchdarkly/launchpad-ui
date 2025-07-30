@@ -5,6 +5,17 @@ import { Text } from '../src/Text';
 const meta: Meta<typeof Text> = {
 	title: 'Components/Content/Text',
 	component: Text,
+	parameters: {
+		docs: {
+			description: {
+				component: `
+A component for body text with flexible size and bold options.
+
+For headings, use [Heading](/docs/components-content-heading--docs). For labels, use [Label](/docs/components-content-label--docs). For code, use [Code](/docs/components-content-code--docs).
+				`,
+			},
+		},
+	},
 	argTypes: {
 		children: {
 			control: { type: 'text' },
@@ -12,25 +23,20 @@ const meta: Meta<typeof Text> = {
 				type: { summary: 'React.ReactNode' },
 			},
 		},
-		variant: {
+		size: {
 			control: { type: 'select' },
-			options: [
-				'body1Regular',
-				'body1Semibold',
-				'body1ExtraBold',
-				'body2Regular',
-				'body2Semibold',
-				'body2ExtraBold',
-				'small1Regular',
-				'small1Medium',
-				'small1Semibold',
-			],
+			options: ['small', 'medium', 'large'],
+		},
+		bold: {
+			control: { type: 'boolean' },
 		},
 		maxLines: {
 			control: { type: 'number' },
 		},
 		elementType: {
-			control: { type: 'text' },
+			table: {
+				disable: true,
+			},
 		},
 		className: {
 			control: { type: 'text' },
@@ -40,6 +46,7 @@ const meta: Meta<typeof Text> = {
 			description: 'Optional reference to the text DOM element',
 			table: {
 				type: { summary: 'Ref<HTMLElement>' },
+				disable: true,
 			},
 		},
 	},
@@ -56,32 +63,37 @@ export const Default: Story = {
 	},
 };
 
-export const Body1: Story = {
+export const Sizes: Story = {
 	render: () => (
-		<>
-			<Text variant="body1Regular">Body 1 Regular</Text>
-			<Text variant="body1Semibold">Body 1 Semibold</Text>
-			<Text variant="body1ExtraBold">Body 1 ExtraBold</Text>
-		</>
+		<div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+			<Text size="small">Small text</Text>
+			<Text size="medium">Medium text</Text>
+			<Text size="large">Large text</Text>
+		</div>
 	),
 };
 
-export const Body2: Story = {
-	render: () => (
-		<>
-			<Text variant="body2Regular">Body 2 Regular</Text>
-			<Text variant="body2Semibold">Body 2 Semibold</Text>
-			<Text variant="body2ExtraBold">Body 2 ExtraBold</Text>
-		</>
-	),
-};
-
-export const Small1: Story = {
+export const Bold: Story = {
 	render: () => (
 		<div style={{ display: 'flex', flexDirection: 'column' }}>
-			<Text variant="small1Regular">Small 1 Regular</Text>
-			<Text variant="small1Medium">Small 1 Medium</Text>
-			<Text variant="small1Semibold">Small 1 Semibold</Text>
+			<Text size="large" bold={false}>
+				Large regular
+			</Text>
+			<Text size="large" bold={true}>
+				Large bold
+			</Text>
+			<Text size="medium" bold={false}>
+				Medium regular
+			</Text>
+			<Text size="medium" bold={true}>
+				Medium bold
+			</Text>
+			<Text size="small" bold={false}>
+				Small regular
+			</Text>
+			<Text size="small" bold={true}>
+				Small bold
+			</Text>
 		</div>
 	),
 };
