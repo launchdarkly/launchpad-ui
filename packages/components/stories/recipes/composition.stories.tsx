@@ -293,9 +293,9 @@ export const Pagination: Story = {
 				<IconButton icon="chevrons-left" size="small" variant="minimal" aria-label="first" />
 				<IconButton icon="chevron-left" size="small" variant="minimal" aria-label="previous" />
 				<Box display="flex" alignItems="center" gap="$200" marginInline="$200">
-					<Text style={{ fontWeight: vars.fontWeight.semibold }}>1-2</Text>
+					<Text bold>1-2</Text>
 					<Text> of </Text>
-					<Text style={{ fontWeight: vars.fontWeight.semibold }}>4</Text>
+					<Text bold>4</Text>
 				</Box>
 				<IconButton icon="chevron-right" size="small" variant="minimal" aria-label="next" />
 				<IconButton icon="chevrons-right" size="small" variant="minimal" aria-label="last" />

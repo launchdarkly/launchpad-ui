@@ -55,6 +55,15 @@ export const Default: Story = {
 	},
 };
 
+export const Sizes: Story = {
+	render: () => (
+		<div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+			<Label size="small">Small label</Label>
+			<Label size="medium">Medium label</Label>
+		</div>
+	),
+};
+
 /**
  * Enable truncation (ellipsis) by setting the `maxLines` prop.
  */

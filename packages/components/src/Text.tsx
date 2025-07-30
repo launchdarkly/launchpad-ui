@@ -45,7 +45,7 @@ const getDefaultElementType = (size: 'small' | 'medium' | 'large'): string => {
 	if (size === 'small') {
 		return 'small';
 	}
-	return 'p';
+	return 'span';
 };
 
 /**

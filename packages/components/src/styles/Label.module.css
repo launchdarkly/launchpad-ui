@@ -1,10 +1,21 @@
 .label {
-	font: var(--lp-text-label-1-medium);
 	white-space: nowrap;
+}
+
+.small {
+	font: var(--lp-text-label-2-semibold);
+}
+
+.medium {
+	font: var(--lp-text-label-1-semibold);
 }
 
 form[orientation='horizontal'] .label {
 	font: var(--lp-text-label-1-regular);
+}
+
+form[orientation='horizontal'] .label.small {
+	font: var(--lp-text-label-2-regular);
 }
 
 /* Text truncation for maxLines */

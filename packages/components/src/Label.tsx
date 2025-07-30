@@ -7,10 +7,21 @@ import { Label as AriaLabel } from 'react-aria-components';
 import styles from './styles/Label.module.css';
 import { useLPContextProps } from './utils';
 
-const labelStyles = cva(styles.label);
+const labelStyles = cva(styles.label, {
+	variants: {
+		size: {
+			small: styles.small,
+			medium: styles.medium,
+		},
+	},
+	defaultVariants: {
+		size: 'medium',
+	},
+});
 
 interface LabelProps extends Omit<AriaLabelProps, 'className'> {
 	ref?: Ref<HTMLLabelElement>;
+	size?: 'small' | 'medium';
 	/** Maximum number of lines to display. Overflowing text will be truncated with an ellipsis. */
 	maxLines?: number;
 	/** Optional CSS class name */
@@ -26,14 +37,14 @@ const LabelContext = createContext<ContextValue<LabelProps, HTMLLabelElement>>(n
  *
  * Built on top of [React Aria `Label` component](https://react-spectrum.adobe.com/react-spectrum/Label.html#label).
  */
-const Label = ({ ref, maxLines, className, style, ...props }: LabelProps) => {
+const Label = ({ ref, maxLines, className, style, size, ...props }: LabelProps) => {
 	const [contextProps, contextRef] = useLPContextProps(props, ref, LabelContext);
 
 	return (
 		<AriaLabel
 			{...contextProps}
 			ref={contextRef}
-			className={cx(labelStyles({ className }), maxLines && styles.truncate)}
+			className={cx(labelStyles({ className, size }), maxLines && styles.truncate)}
 			style={{
 				...style,
 				...(maxLines && {
