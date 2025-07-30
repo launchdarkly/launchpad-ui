@@ -3,19 +3,15 @@
 }
 
 .small {
-	font: var(--lp-text-label-2-semibold);
+	font: var(--lp-text-label-2-medium);
 }
 
 .medium {
-	font: var(--lp-text-label-1-semibold);
+	font: var(--lp-text-label-1-medium);
 }
 
 form[orientation='horizontal'] .label {
 	font: var(--lp-text-label-1-regular);
-}
-
-form[orientation='horizontal'] .label.small {
-	font: var(--lp-text-label-2-regular);
 }
 
 /* Text truncation for maxLines */
