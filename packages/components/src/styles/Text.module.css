@@ -9,21 +9,18 @@
 .small {
 	font-size: var(--lp-font-size-100);
 	line-height: var(--lp-line-height-100);
-	color: var(--lp-color-text-ui-primary-base);
 	margin: 0;
 }
 
 .medium {
 	font-size: var(--lp-font-size-200);
 	line-height: var(--lp-line-height-200);
-	color: var(--lp-color-text-ui-primary-base);
 	margin: 0;
 }
 
 .large {
 	font-size: var(--lp-font-size-300);
 	line-height: var(--lp-line-height-300);
-	color: var(--lp-color-text-ui-primary-base);
 	margin: 0;
 }
 

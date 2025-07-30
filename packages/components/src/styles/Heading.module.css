@@ -12,25 +12,21 @@
 	white-space: normal;
 }
 
-/* Size variants */
 .small {
 	font-size: var(--lp-font-size-200);
 	line-height: var(--lp-line-height-200);
-	color: var(--lp-color-text-ui-primary-base);
 	font-weight: var(--lp-font-weight-medium);
 }
 
 .medium {
 	font-size: var(--lp-font-size-300);
 	line-height: var(--lp-line-height-300);
-	color: var(--lp-color-text-ui-primary-base);
 	font-weight: var(--lp-font-weight-medium);
 }
 
 .large {
 	font-size: var(--lp-font-size-500);
 	line-height: var(--lp-line-height-500);
-	color: var(--lp-color-text-ui-primary-base);
 	font-weight: var(--lp-font-weight-medium);
 }
 

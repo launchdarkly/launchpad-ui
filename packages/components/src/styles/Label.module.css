@@ -1,6 +1,5 @@
 .label {
 	font: var(--lp-text-label-1-medium);
-	color: var(--lp-color-text-ui-primary-base);
 	white-space: nowrap;
 }
 
