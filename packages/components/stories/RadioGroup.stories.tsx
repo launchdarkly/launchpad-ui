@@ -1,6 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import type { ComponentType } from 'react';
 
+import { Icon } from '@launchpad-ui/icons';
+import { vars } from '@launchpad-ui/vars';
 import { userEvent, within } from 'storybook/test';
 
 import { Button } from '../src/Button';
@@ -84,5 +86,92 @@ export const Validation: Story = {
 	play: async ({ canvasElement }) => {
 		const canvas = within(canvasElement);
 		await userEvent.click(canvas.getByRole('button'));
+	},
+};
+
+export const Card: Story = {
+	args: {
+		variant: 'card',
+		defaultValue: 'feature',
+	},
+	render: (args) => {
+		return (
+			<div
+				style={{
+					width: vars.size['320'],
+				}}
+			>
+				<RadioGroup {...args}>
+					<Label>Experiment type</Label>
+					<div
+						style={{
+							display: 'flex',
+							flexDirection: 'column',
+							gap: vars.spacing[300],
+						}}
+					>
+						<Radio value="feature">
+							<div slot="heading">
+								<div slot="icon">
+									<Icon name="flag" size="medium" />
+								</div>
+								<div>
+									<div slot="label">Feature change</div>
+									<div slot="subtitle">A/B test different variations</div>
+								</div>
+							</div>
+							<div slot="description">Compare treatments to see which one wins</div>
+						</Radio>
+						<Radio value="funnel">
+							<div slot="heading">
+								<div slot="icon">
+									<Icon name="flask" size="medium" />
+								</div>
+								<div>
+									<div slot="label">Funnel optimization</div>
+									<div slot="subtitle">Multi-step conversion tracking</div>
+								</div>
+							</div>
+							<div slot="description">Track the success of a multi-step user flow</div>
+						</Radio>
+						<Radio value="export">
+							<div slot="heading">
+								<div slot="icon">
+									<Icon name="data" size="medium" />
+								</div>
+								<div>
+									<div slot="label">Data Export only</div>
+									<div slot="subtitle">Raw data for analysis</div>
+								</div>
+							</div>
+							<div slot="description">Create custom experiment analysis in your warehouse</div>
+						</Radio>
+						<Radio value="snowflake" isDisabled>
+							<div slot="heading">
+								<div slot="icon">
+									<Icon name="circle" size="medium" />
+								</div>
+								<div>
+									<div slot="label">Snowflake native</div>
+									<div slot="subtitle">Warehouse-powered insights</div>
+								</div>
+							</div>
+							<div slot="description">Analysis powered by your Snowflake warehouse</div>
+						</Radio>
+						<Radio value="simple">
+							<div slot="heading">
+								<div slot="icon">
+									<Icon name="gear" size="medium" />
+								</div>
+								<div>
+									<div slot="label">Simple option</div>
+									<div slot="subtitle">Basic configuration</div>
+								</div>
+							</div>
+						</Radio>
+					</div>
+				</RadioGroup>
+			</div>
+		);
 	},
 };
