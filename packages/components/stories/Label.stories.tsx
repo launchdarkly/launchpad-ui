@@ -17,6 +17,13 @@ For body text, use [Text](/docs/components-content-text--docs). For headings, us
 		},
 	},
 	argTypes: {
+		ref: {
+			control: false,
+			description: 'Optional reference to the label DOM element',
+			table: {
+				type: { summary: 'Ref<HTMLLabelElement>' },
+			},
+		},
 		children: {
 			control: { type: 'text' },
 			table: {
