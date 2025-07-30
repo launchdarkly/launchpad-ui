@@ -6,7 +6,7 @@ export default {
 		docs: {
 			description: {
 				component:
-					'Typography tokens for the LaunchPad design system. For components using these tokens, see [Text](/docs/components-content-text--docs) and [Heading](/docs/components-content-heading--docs).',
+					'Typography tokens for the LaunchPad design system. For components using these tokens, see [Text](/docs/components-content-text--docs), [Heading](/docs/components-content-heading--docs), [Label](/docs/components-content-label--docs), and [Code](/docs/components-content-code--docs).',
 			},
 		},
 	},
