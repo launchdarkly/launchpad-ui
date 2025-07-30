@@ -46,5 +46,5 @@ const Label = ({ ref, maxLines, className, style, ...props }: LabelProps) => {
 
 Label.displayName = 'Label';
 
-export { Label, LabelContext };
+export { Label, LabelContext, labelStyles };
 export type { LabelProps };
