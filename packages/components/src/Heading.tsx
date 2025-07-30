@@ -8,82 +8,75 @@ import { Heading as AriaHeading } from 'react-aria-components';
 import styles from './styles/Heading.module.css';
 import { useLPContextProps } from './utils';
 
-/** variant names are based on Figma's naming convention */
-export type HeadingVariant =
-	| 'display1'
-	| 'heading1Medium'
-	| 'heading1Semibold'
-	| 'heading1ExtraBold'
-	| 'heading2Medium'
-	| 'heading2Semibold'
-	| 'heading2ExtraBold'
-	| 'heading3Regular'
-	| 'heading3Semibold'
-	| 'heading3ExtraBold';
-
 const headingStyles = cva(styles.heading, {
 	variants: {
-		variant: {
-			display1: styles.display1,
-			heading1Medium: styles.heading1Medium,
-			heading1Semibold: styles.heading1Semibold,
-			heading1ExtraBold: styles.heading1ExtraBold,
-			heading2Medium: styles.heading2Medium,
-			heading2Semibold: styles.heading2Semibold,
-			heading2ExtraBold: styles.heading2ExtraBold,
-			heading3Regular: styles.heading3Regular,
-			heading3Semibold: styles.heading3Semibold,
-			heading3ExtraBold: styles.heading3ExtraBold,
+		size: {
+			small: styles.small,
+			medium: styles.medium,
+			large: styles.large,
 		},
+		bold: {
+			true: styles.bold,
+		},
+	},
+	defaultVariants: {
+		size: 'medium',
+		bold: true,
 	},
 });
 
 interface HeadingProps extends Omit<AriaHeadingProps, 'className' | 'level'> {
 	ref?: Ref<HTMLHeadingElement>;
-	/** Typography variant following LaunchPad design system typography tokens. */
-	variant?: HeadingVariant;
+	/** Heading size */
+	size?: 'small' | 'medium' | 'large';
+	/** Whether to use bold font weight */
+	bold?: boolean;
 	/** Maximum number of lines to display. Overflowing text will be truncated with an ellipsis. */
 	maxLines?: number;
 	/** Optional CSS class name */
 	className?: AriaHeadingProps['className'];
-	/** Optional HTML heading level. Defaults to variant level. */
+	/** Optional HTML heading level. Defaults based on size (large=1, medium=2, small=3). */
 	level?: AriaHeadingProps['level'];
 }
 
 const HeadingContext = createContext<ContextValue<HeadingProps, HTMLHeadingElement>>(null);
 
-const getDefaultLevel = (variant: HeadingVariant): AriaHeadingProps['level'] => {
-	switch (variant) {
-		case 'display1':
-		case 'heading1Medium':
-		case 'heading1Semibold':
-		case 'heading1ExtraBold':
+const getDefaultLevel = (size: 'small' | 'medium' | 'large'): AriaHeadingProps['level'] => {
+	switch (size) {
+		case 'large':
 			return 1;
-		case 'heading2Medium':
-		case 'heading2Semibold':
-		case 'heading2ExtraBold':
+		case 'medium':
 			return 2;
-		default:
+		case 'small':
 			return 3;
 	}
 };
 
 /**
- * A generic Heading component for headings and display text.
+ * A generic Heading component for headings.
  *
- * For body text, use [Text](/docs/components-content-text--docs)
+ * For other text, use `Text`, `Label`, or `Code`.
  *
  * Built on top of [React Aria `Heading` component](https://react-spectrum.adobe.com/react-spectrum/Heading.html#heading).
  */
-const Heading = ({ ref, variant, maxLines, className, style, level, ...props }: HeadingProps) => {
+const Heading = ({
+	ref,
+	size = 'medium',
+	bold = true,
+	maxLines,
+	className,
+	style,
+	level,
+	...props
+}: HeadingProps) => {
 	[props, ref] = useLPContextProps(props, ref, HeadingContext);
 
 	return (
 		<AriaHeading
 			{...props}
 			ref={ref}
-			level={level || (variant ? getDefaultLevel(variant) : undefined)}
-			className={cx(headingStyles({ variant }), maxLines && styles.truncate, className)}
+			level={level || getDefaultLevel(size)}
+			className={cx(headingStyles({ size, bold }), maxLines && styles.truncate, className)}
 			style={{
 				...style,
 				...(maxLines && {

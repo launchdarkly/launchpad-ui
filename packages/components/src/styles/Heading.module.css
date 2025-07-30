@@ -3,74 +3,37 @@
 	overflow: hidden;
 	text-overflow: ellipsis;
 }
-/* https://www.figma.com/design/98HKKXL2dTle29ikJ3tzk7/%F0%9F%9A%80-LaunchPad?node-id=1-26765&m=dev */
-
-.display1 {
-	font: var(--lp-text-display-1);
-	color: var(--lp-color-text-ui-primary-base);
-}
-
-.heading1Medium {
-	font: var(--lp-text-heading-1-medium);
-	color: var(--lp-color-text-ui-primary-base);
-}
-
-.heading1Semibold {
-	font: var(--lp-text-heading-1-semibold);
-	color: var(--lp-color-text-ui-primary-base);
-}
-
-.heading1ExtraBold {
-	font: var(--lp-text-heading-1-extrabold);
-	color: var(--lp-color-text-ui-primary-base);
-}
-
-.heading2Medium {
-	font: var(--lp-text-heading-2-medium);
-	color: var(--lp-color-text-ui-primary-base);
-}
-
-.heading2Semibold {
-	font: var(--lp-text-heading-2-semibold);
-	color: var(--lp-color-text-ui-primary-base);
-}
-
-.heading2ExtraBold {
-	font: var(--lp-text-heading-2-extrabold);
-	color: var(--lp-color-text-ui-primary-base);
-}
-
-.heading3Regular {
-	font: var(--lp-text-heading-3-regular);
-	color: var(--lp-color-text-ui-primary-base);
-}
-
-.heading3Semibold {
-	font: var(--lp-text-heading-3-semibold);
-	color: var(--lp-color-text-ui-primary-base);
-}
-
-.heading3ExtraBold {
-	font: var(--lp-text-heading-3-extrabold);
-	color: var(--lp-color-text-ui-primary-base);
-}
-
-.left {
-	text-align: left;
-}
-
-.center {
-	text-align: center;
-}
-
-.right {
-	text-align: right;
-}
 
 .truncate {
 	display: -webkit-box;
 	-webkit-box-orient: vertical;
 	overflow: hidden;
 	text-overflow: ellipsis;
-	white-space: normal;
+	white-space: normal !important;
+}
+
+/* Size variants */
+.small {
+	font-size: var(--lp-font-size-200);
+	line-height: var(--lp-line-height-200);
+	color: var(--lp-color-text-ui-primary-base);
+	font-weight: var(--lp-font-weight-medium);
+}
+
+.medium {
+	font-size: var(--lp-font-size-300);
+	line-height: var(--lp-line-height-300);
+	color: var(--lp-color-text-ui-primary-base);
+	font-weight: var(--lp-font-weight-medium);
+}
+
+.large {
+	font-size: var(--lp-font-size-500);
+	line-height: var(--lp-line-height-500);
+	color: var(--lp-color-text-ui-primary-base);
+	font-weight: var(--lp-font-weight-medium);
+}
+
+.bold {
+	font-weight: var(--lp-font-weight-semibold);
 }

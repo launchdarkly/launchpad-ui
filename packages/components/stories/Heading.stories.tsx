@@ -5,6 +5,17 @@ import { Heading } from '../src/Heading';
 const meta: Meta<typeof Heading> = {
 	title: 'Components/Content/Heading',
 	component: Heading,
+	parameters: {
+		docs: {
+			description: {
+				component: `
+A component for headings with flexible size and bold options.
+
+For body text, use [Text](/docs/components-content-text--docs). For labels, use [Label](/docs/components-content-label--docs). For code, use [Code](/docs/components-content-code--docs).
+				`,
+			},
+		},
+	},
 	argTypes: {
 		children: {
 			control: { type: 'text' },
@@ -12,20 +23,12 @@ const meta: Meta<typeof Heading> = {
 				type: { summary: 'React.ReactNode' },
 			},
 		},
-		variant: {
+		size: {
 			control: { type: 'select' },
-			options: [
-				'display1',
-				'heading1Medium',
-				'heading1Semibold',
-				'heading1ExtraBold',
-				'heading2Medium',
-				'heading2Semibold',
-				'heading2ExtraBold',
-				'heading3Regular',
-				'heading3Semibold',
-				'heading3ExtraBold',
-			],
+			options: ['small', 'medium', 'large'],
+		},
+		bold: {
+			control: { type: 'boolean' },
 		},
 		maxLines: {
 			control: { type: 'number' },
@@ -37,10 +40,8 @@ const meta: Meta<typeof Heading> = {
 			control: { type: 'text' },
 		},
 		ref: {
-			control: { type: 'object' },
-			description: 'Optional reference to the heading DOM element',
 			table: {
-				type: { summary: 'Ref<HTMLHeadingElement>' },
+				disable: true,
 			},
 		},
 	},
@@ -57,39 +58,37 @@ export const Default: Story = {
 	},
 };
 
-export const Display1: Story = {
-	args: {
-		variant: 'display1',
-		children: 'Display 1',
-	},
-};
-
-export const Heading1: Story = {
-	render: () => (
-		<>
-			<Heading variant="heading1Medium">Heading 1 Medium</Heading>
-			<Heading variant="heading1Semibold">Heading 1 Semibold</Heading>
-			<Heading variant="heading1ExtraBold">Heading 1 ExtraBold</Heading>
-		</>
-	),
-};
-
-export const Heading2: Story = {
-	render: () => (
-		<>
-			<Heading variant="heading2Medium">Heading 2 Medium</Heading>
-			<Heading variant="heading2Semibold">Heading 2 Semibold</Heading>
-			<Heading variant="heading2ExtraBold">Heading 2 ExtraBold</Heading>
-		</>
-	),
-};
-
-export const Heading3: Story = {
+export const Sizes: Story = {
 	render: () => (
 		<div style={{ display: 'flex', flexDirection: 'column' }}>
-			<Heading variant="heading3Regular">Heading 3 Regular</Heading>
-			<Heading variant="heading3Semibold">Heading 3 Semibold</Heading>
-			<Heading variant="heading3ExtraBold">Heading 3 ExtraBold</Heading>
+			<Heading size="large">Large heading</Heading>
+			<Heading size="medium">Medium heading</Heading>
+			<Heading size="small">Small heading</Heading>
+		</div>
+	),
+};
+
+export const Bold: Story = {
+	render: () => (
+		<div style={{ display: 'flex', flexDirection: 'column' }}>
+			<Heading size="large" bold={false}>
+				Large regular
+			</Heading>
+			<Heading size="large" bold={true}>
+				Large bold
+			</Heading>
+			<Heading size="medium" bold={false}>
+				Medium regular
+			</Heading>
+			<Heading size="medium" bold={true}>
+				Medium bold
+			</Heading>
+			<Heading size="small" bold={false}>
+				Small regular
+			</Heading>
+			<Heading size="small" bold={true}>
+				Small bold
+			</Heading>
 		</div>
 	),
 };
@@ -99,7 +98,7 @@ export const Heading3: Story = {
  */
 export const Truncation: Story = {
 	render: () => (
-		<div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', width: '300px' }}>
+		<div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', width: '200px' }}>
 			<Heading maxLines={1}>
 				This is a very long heading that should be truncated after one line when the maxLines prop
 				is set to 1.

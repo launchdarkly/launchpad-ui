@@ -33,7 +33,7 @@ export type { FileTriggerProps } from './FileTrigger';
 export type { FormProps } from './Form';
 export type { GridListItemProps, GridListProps } from './GridList';
 export type { GroupProps } from './Group';
-export type { HeadingProps, HeadingVariant } from './Heading';
+export type { HeadingProps } from './Heading';
 export type { IconButtonProps } from './IconButton';
 export type { InputProps } from './Input';
 export type { LabelProps } from './Label';
