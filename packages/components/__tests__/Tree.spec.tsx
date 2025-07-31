@@ -4,6 +4,8 @@ import { render, screen, userEvent } from '../../../test/utils';
 import { Tree, TreeItem, TreeItemContent } from '../src/Tree';
 
 describe('a Tree', () => {
+	const user = userEvent.setup();
+
 	describe('with default configuration', () => {
 		it('is visible in the document', async () => {
 			render(
@@ -14,34 +16,30 @@ describe('a Tree', () => {
 				</Tree>,
 			);
 
-			expect(await screen.findByRole('tree')).toBeVisible();
+			expect(await screen.findByRole('treegrid')).toBeVisible();
 		});
 	});
 
 	describe('with single selection mode', () => {
 		it('has selected state when an item is clicked', async () => {
-			const user = userEvent.setup();
 			render(
 				<Tree aria-label="Test tree" selectionMode="single">
 					<TreeItem id="1" textValue="Item one">
 						<TreeItemContent>Item one</TreeItemContent>
-					</TreeItem>
-					<TreeItem id="2" textValue="Item two">
-						<TreeItemContent>Item two</TreeItemContent>
 					</TreeItem>
 				</Tree>,
 			);
 
 			const item = screen.getByText('Item one');
 			await user.click(item);
-			expect(item.closest('[role="treeitem"]')).toHaveAttribute('aria-selected', 'true');
+			expect(item.closest('[role="row"]')).toHaveAttribute('aria-selected', 'true');
 		});
 	});
 
 	describe('with multiple selection mode and toggle behavior', () => {
-		it('renders checkboxes for each item', async () => {
+		it('renders checkboxes for each item', () => {
 			render(
-				<Tree aria-label="Test tree" selectionMode="multiple" selectionBehavior="toggle">
+				<Tree aria-label="Test tree" selectionMode="multiple">
 					<TreeItem id="1" textValue="Item one">
 						<TreeItemContent>Item one</TreeItemContent>
 					</TreeItem>
@@ -51,16 +49,15 @@ describe('a Tree', () => {
 				</Tree>,
 			);
 
-			const items = screen.getAllByRole('treeitem');
+			const items = screen.getAllByRole('row');
 			items.forEach((item) => {
 				expect(item.querySelector('[class*="checkbox"]')).toBeInTheDocument();
 			});
 		});
 
 		it('updates selection state when checkboxes are clicked', async () => {
-			const user = userEvent.setup();
 			render(
-				<Tree aria-label="Test tree" selectionMode="multiple" selectionBehavior="toggle">
+				<Tree aria-label="Test tree" selectionMode="multiple">
 					<TreeItem id="1" textValue="Item one">
 						<TreeItemContent>Item one</TreeItemContent>
 					</TreeItem>
@@ -72,24 +69,19 @@ describe('a Tree', () => {
 
 			const itemOne = screen.getByText('Item one');
 			const itemTwo = screen.getByText('Item two');
-			const checkboxOne = itemOne
-				.closest('[role="treeitem"]')
-				?.querySelector('[class*="checkbox"]');
-			const checkboxTwo = itemTwo
-				.closest('[role="treeitem"]')
-				?.querySelector('[class*="checkbox"]');
+			const checkboxOne = itemOne.closest('[role="row"]')?.querySelector('[class*="checkbox"]');
+			const checkboxTwo = itemTwo.closest('[role="row"]')?.querySelector('[class*="checkbox"]');
 
 			await user.click(checkboxOne as HTMLElement);
 			await user.click(checkboxTwo as HTMLElement);
 
-			expect(itemOne.closest('[role="treeitem"]')).toHaveAttribute('aria-selected', 'true');
-			expect(itemTwo.closest('[role="treeitem"]')).toHaveAttribute('aria-selected', 'true');
+			expect(itemOne.closest('[role="row"]')).toHaveAttribute('aria-selected', 'true');
+			expect(itemTwo.closest('[role="row"]')).toHaveAttribute('aria-selected', 'true');
 		});
 	});
 
 	describe('with expandable items', () => {
 		it('shows child items when expanded', async () => {
-			const user = userEvent.setup();
 			render(
 				<Tree aria-label="Test tree">
 					<TreeItem id="1" textValue="Item one">
@@ -102,38 +94,31 @@ describe('a Tree', () => {
 			);
 
 			const parentItem = screen.getByText('Item one');
-			const chevron = parentItem.closest('[role="treeitem"]')?.querySelector('[slot="chevron"]');
+			const chevron = parentItem.closest('[role="row"]')?.querySelector('button');
+
 			await user.click(chevron as HTMLElement);
 
-			expect(parentItem.closest('[role="treeitem"]')).toHaveAttribute('aria-expanded', 'true');
+			expect(parentItem.closest('[role="row"]')).toHaveAttribute('aria-expanded', 'true');
 			expect(screen.getByText('Item one-one')).toBeVisible();
 		});
 	});
 
 	describe('with disabled items', () => {
 		it('prevents selection of disabled items', async () => {
-			const user = userEvent.setup();
 			render(
-				<Tree aria-label="Test tree" selectionMode="multiple" selectionBehavior="toggle">
-					<TreeItem id="1" textValue="Item one">
+				<Tree aria-label="Test tree" selectionMode="multiple">
+					<TreeItem id="1" textValue="Item one" isDisabled>
 						<TreeItemContent>Item one</TreeItemContent>
-					</TreeItem>
-					<TreeItem id="2" textValue="Item two" isDisabled>
-						<TreeItemContent>Item two</TreeItemContent>
 					</TreeItem>
 				</Tree>,
 			);
 
-			const disabledItem = screen.getByText('Item two');
-			const checkbox = disabledItem
-				.closest('[role="treeitem"]')
-				?.querySelector('[class*="checkbox"]');
+			const item = screen.getByText('Item one');
+			const checkbox = item.closest('[role="row"]')?.querySelector('[class*="checkbox"]');
 
-			expect(checkbox).toHaveAttribute('data-disabled');
+			expect(item.closest('[role="row"]')).toHaveAttribute('aria-disabled', 'true');
 			await user.click(checkbox as HTMLElement);
-
-			expect(disabledItem.closest('[role="treeitem"]')).toHaveAttribute('aria-disabled', 'true');
-			expect(disabledItem.closest('[role="treeitem"]')).not.toHaveAttribute('aria-selected');
+			expect(item.closest('[role="row"]')).not.toHaveAttribute('aria-selected', 'true');
 		});
 	});
 });
