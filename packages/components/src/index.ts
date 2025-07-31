@@ -76,6 +76,12 @@ export type { ToggleButtonGroupProps } from './ToggleButtonGroup';
 export type { ToggleIconButtonProps } from './ToggleIconButton';
 export type { ToolbarProps } from './Toolbar';
 export type { TooltipProps, TooltipTriggerProps } from './Tooltip';
+export type {
+	TreeItemContentProps,
+	TreeItemContentRenderProps,
+	TreeItemProps,
+	TreeProps,
+} from './Tree';
 
 export { Alert, alertStyles } from './Alert';
 export { Autocomplete } from './Autocomplete';
@@ -267,4 +273,5 @@ export {
 export { ToggleIconButton, ToggleIconButtonContext } from './ToggleIconButton';
 export { Toolbar, ToolbarContext, toolbarStyles } from './Toolbar';
 export { Tooltip, TooltipContext, TooltipTrigger, tooltipStyles } from './Tooltip';
+export { Tree, TreeContext, TreeItem, TreeItemContent, treeItemStyles, treeStyles } from './Tree';
 export { useHref, useImageLoadingStatus, useMedia } from './utils';
