@@ -1,0 +1,83 @@
+.tree {
+	max-height: inherit;
+	overflow: auto;
+	outline: none;
+	min-width: var(--lp-size-144);
+}
+
+.item {
+	composes: interactive from './base.module.css';
+	padding-block: var(--lp-spacing-200);
+	padding-inline: var(--lp-spacing-300);
+	border-radius: var(--lp-border-radius-regular);
+	outline: none;
+	color: var(--lp-color-text-ui-primary-base);
+	font: var(--lp-text-label-1-medium);
+	position: relative;
+	display: flex;
+	column-gap: var(--lp-spacing-300);
+	align-items: center;
+	forced-color-adjust: none;
+	text-decoration: none;
+
+	&:where([data-level]:not([data-level='1'])) {
+		padding-left: calc(var(--tree-item-level, 1) * var(--lp-spacing-500));
+	}
+
+	&[data-hovered] {
+		background-color: var(--lp-color-bg-interactive-secondary-hover);
+	}
+
+	&[data-pressed] {
+		background-color: var(--lp-color-bg-interactive-secondary-active);
+	}
+
+	&[data-focus-visible],
+	&[data-focused] {
+		background-color: var(--lp-color-bg-interactive-secondary-hover);
+	}
+
+	&[data-disabled] {
+		color: var(--lp-color-text-interactive-disabled);
+	}
+
+	& .content {
+		display: flex;
+		align-items: center;
+		column-gap: var(--lp-spacing-300);
+		flex: 1;
+		min-width: 0;
+	}
+
+	& .chevron {
+		padding: var(--lp-spacing-100);
+		border-radius: var(--lp-border-radius-regular);
+		color: var(--lp-color-text-ui-primary-base);
+
+		&[data-pressed] {
+			background-color: var(--lp-color-bg-interactive-secondary-active);
+		}
+	}
+
+	&:has([slot='label']) {
+		& .content {
+			display: grid;
+			grid-template-areas:
+				'label'
+				'desc';
+		}
+	}
+
+	& [slot='label'] {
+		grid-area: label;
+		display: flex;
+		align-items: center;
+		gap: var(--lp-spacing-300);
+	}
+
+	& [slot='description'] {
+		grid-area: desc;
+		font: var(--lp-text-label-2-regular);
+		color: var(--lp-color-text-ui-secondary-base);
+	}
+}

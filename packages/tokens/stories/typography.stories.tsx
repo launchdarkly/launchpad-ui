@@ -1,5 +1,9 @@
 import { vars } from '@launchpad-ui/vars';
 
+import { Button } from '../../components/src/Button';
+import { ToastRegion, toastQueue } from '../../components/src/Toast';
+import { Tooltip, TooltipTrigger } from '../../components/src/Tooltip';
+
 export default {
 	title: 'Tokens/Typography',
 	parameters: {
@@ -12,66 +16,156 @@ export default {
 	},
 };
 
+const flatten = (obj: Record<string, unknown>, prefix = ''): Record<string, string> => {
+	const result: Record<string, string> = {};
+
+	for (const [key, value] of Object.entries(obj)) {
+		const newKey = prefix ? `${prefix}-${key}` : key;
+
+		if (typeof value === 'string') {
+			result[newKey] = value;
+		} else if (typeof value === 'object' && value !== null) {
+			Object.assign(result, flatten(value as Record<string, unknown>, newKey));
+		}
+	}
+
+	return result;
+};
+
+const getDisplayText = (key: string) => {
+	const parts = key.split('-');
+
+	const category = parts[0]; // heading, body, etc.
+	const size = parts[1]; // 1, 2, etc.
+	const weight = parts[2]; // medium, semibold, etc.
+
+	if (weight) {
+		return `${category.charAt(0).toUpperCase() + category.slice(1)} ${size} - ${weight.charAt(0).toUpperCase() + weight.slice(1)}`;
+	}
+	if (category === 'display') {
+		return `Display ${size}`;
+	}
+
+	return key;
+};
+
+const getSemanticElement = (token: string, font: string) => {
+	const parts = token.split('-');
+	const category = parts[0]; // heading, body, etc.
+	const size = parts[1]; // 1, 2, etc.
+
+	console.log({ category, token });
+
+	switch (category) {
+		case 'display':
+			return {
+				element: 'div',
+				render: (text: string) => <div style={{ font }}>{text}</div>,
+			};
+		case 'heading':
+			if (size === '1') {
+				return {
+					element: 'h1',
+					render: (text: string) => <h1 style={{ font }}>{text}</h1>,
+				};
+			}
+			if (size === '2') {
+				return {
+					element: 'h2',
+					render: (text: string) => <h2 style={{ font }}>{text}</h2>,
+				};
+			}
+			if (size === '3') {
+				return {
+					element: 'h3',
+					render: (text: string) => <h3 style={{ font }}>{text}</h3>,
+				};
+			}
+			return {
+				element: 'div',
+				render: (text: string) => <div style={{ font }}>{text}</div>,
+			};
+		case 'body':
+		case 'small':
+			return {
+				element: 'span',
+				render: (text: string) => <span style={{ font }}>{text}</span>,
+			};
+		case 'label':
+			return {
+				element: 'label',
+				render: (text: string) => <label style={{ font }}>{text}</label>,
+			};
+		case 'code':
+			return {
+				element: 'code',
+				render: (text: string) => <code style={{ font }}>{text}</code>,
+			};
+		default:
+			return {
+				element: 'div',
+				render: (text: string) => <div style={{ font }}>{text}</div>,
+			};
+	}
+};
+
+const TokenTable = ({ tokens }: { tokens: Record<string, string> }) => {
+	return (
+		<>
+			<table style={{ borderCollapse: 'separate', borderSpacing: '20px 0', width: '100%' }}>
+				<thead>
+					<tr>
+						<th style={{ textAlign: 'left' }}>Sample</th>
+						<th style={{ textAlign: 'left' }}>Name</th>
+					</tr>
+				</thead>
+				<tbody>
+					{Object.entries(tokens).map(([key, value]) => {
+						const cssVar = `--lp-text-${key}`;
+						const { element, render } = getSemanticElement(key, value);
+
+						return (
+							<tr key={key}>
+								<td
+									style={{
+										paddingRight: vars.spacing[600],
+										paddingTop: vars.spacing[300],
+										paddingBottom: vars.spacing[300],
+									}}
+								>
+									{render(getDisplayText(key))}
+								</td>
+								<td
+									style={{
+										paddingRight: vars.spacing[600],
+										paddingTop: vars.spacing[300],
+										paddingBottom: vars.spacing[300],
+									}}
+								>
+									<TooltipTrigger>
+										<Button
+											onPress={() => {
+												navigator.clipboard.writeText(`<${element} style="font: ${value}" />`);
+												toastQueue.add({ title: 'Copied!', status: 'success' });
+											}}
+											style={{ font: 'var(--lp-text-code-1-regular)' }}
+											variant="minimal"
+										>
+											{cssVar}
+										</Button>
+										<Tooltip placement="bottom">Copy to clipboard</Tooltip>
+									</TooltipTrigger>
+								</td>
+							</tr>
+						);
+					})}
+				</tbody>
+			</table>
+			<ToastRegion />
+		</>
+	);
+};
+
 export const Typography = {
-	render: () => {
-		return (
-			<div style={{ display: 'flex', flexDirection: 'column', gap: vars.spacing[900] }}>
-				<div style={{ font: vars.text.display[1] }}>Display 1</div>
-				<div style={{ display: 'flex', flexDirection: 'column', gap: vars.spacing[600] }}>
-					<h1 style={{ font: vars.text.heading[1].medium }}>Heading 1 - Medium</h1>
-					<h1 style={{ font: vars.text.heading[1].semibold }}>Heading 1 - SemiBold</h1>
-					<h1 style={{ font: vars.text.heading[1].extrabold }}>Heading 1 - ExtraBold</h1>
-				</div>
-				<div style={{ display: 'flex', flexDirection: 'column', gap: vars.spacing[600] }}>
-					<h2 style={{ font: vars.text.heading[2].medium }}>Heading 2 - Medium</h2>
-					<h2 style={{ font: vars.text.heading[2].semibold }}>Heading 2 - SemiBold</h2>
-					<h2 style={{ font: vars.text.heading[2].extrabold }}>Heading 2 - ExtraBold</h2>
-				</div>
-				<div style={{ display: 'flex', flexDirection: 'column', gap: vars.spacing[600] }}>
-					<h3 style={{ font: vars.text.heading[3].medium }}>Heading 3 - Medium</h3>
-					<h3 style={{ font: vars.text.heading[3].semibold }}>Heading 3 - SemiBold</h3>
-					<h3 style={{ font: vars.text.heading[3].extrabold }}>Heading 3 - ExtraBold</h3>
-				</div>
-				<div style={{ display: 'flex', flexDirection: 'column', gap: vars.spacing[600] }}>
-					<span style={{ font: vars.text.body[1].regular }}>Body 1 - Regular</span>
-					<span style={{ font: vars.text.body[1].semibold }}>Body 1 - SemiBold</span>
-					<span style={{ font: vars.text.body[1].extrabold }}>Body 1 - ExtraBold</span>
-				</div>
-				<div style={{ display: 'flex', flexDirection: 'column', gap: vars.spacing[600] }}>
-					<span style={{ font: vars.text.body[2].regular }}>Body 2 - Regular</span>
-					<span style={{ font: vars.text.body[2].semibold }}>Body 2 - SemiBold</span>
-					<span style={{ font: vars.text.body[2].extrabold }}>Body 2 - ExtraBold</span>
-				</div>
-				<div style={{ display: 'flex', flexDirection: 'column', gap: vars.spacing[600] }}>
-					<span style={{ font: vars.text.small[1].regular }}>Small 1 - Regular</span>
-					<span style={{ font: vars.text.small[1].medium }}>Small 1 - Medium</span>
-					<span style={{ font: vars.text.small[1].semibold }}>Small 1 - SemiBold</span>
-				</div>
-				<div style={{ display: 'flex', flexDirection: 'column', gap: vars.spacing[600] }}>
-					<label style={{ font: vars.text.label[1].regular, display: 'block' }}>
-						Label 1 - Regular
-					</label>
-					<label style={{ font: vars.text.label[1].medium, display: 'block' }}>
-						Label 1 - Medium
-					</label>
-				</div>
-				<div style={{ display: 'flex', flexDirection: 'column', gap: vars.spacing[600] }}>
-					<label style={{ font: vars.text.label[2].regular, display: 'block' }}>
-						Label 2 - Regular
-					</label>
-					<label style={{ font: vars.text.label[2].medium, display: 'block' }}>
-						Label 2 - Medium
-					</label>
-				</div>
-				<div style={{ display: 'flex', flexDirection: 'column', gap: vars.spacing[600] }}>
-					<code style={{ font: vars.text.code[1].regular, display: 'block' }}>
-						Code 1 - Regular
-					</code>
-					<code style={{ font: vars.text.code[2].regular, display: 'block' }}>
-						Code 2 - Regular
-					</code>
-				</div>
-			</div>
-		);
-	},
+	render: () => <TokenTable tokens={flatten(vars.text)} />,
 };
