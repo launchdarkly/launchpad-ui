@@ -1,5 +1,19 @@
 # @launchpad-ui/components
 
+## 0.12.0
+
+### Minor Changes
+
+- [#1727](https://github.com/launchdarkly/launchpad-ui/pull/1727) [`126b926`](https://github.com/launchdarkly/launchpad-ui/commit/126b926ffbb5abc32c3c9ede36e58d73dad4670b) Thanks [@erangeles](https://github.com/erangeles)! - Tree component
+
+- [#1725](https://github.com/launchdarkly/launchpad-ui/pull/1725) [`c7aa09a`](https://github.com/launchdarkly/launchpad-ui/commit/c7aa09aebcce1dcf57939ebbb4a504e33974a67c) Thanks [@Zuzze](https://github.com/Zuzze)! - Heading and Text props extended
+
+### Patch Changes
+
+- Updated dependencies [[`acb181e`](https://github.com/launchdarkly/launchpad-ui/commit/acb181e7e4bb332872b1006e3ad4088dfacb7eab)]:
+  - @launchpad-ui/tokens@0.13.1
+  - @launchpad-ui/icons@0.21.20
+
 ## 0.11.0
 
 ### Minor Changes
