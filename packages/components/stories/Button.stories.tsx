@@ -116,12 +116,12 @@ export const WithIcon: Story = {
 };
 
 export const Small: Story = {
-	render: (args) => renderStates({ children: <Text>Default</Text>, size: 'small', ...args }),
+	render: (args) => renderStates({ children: 'Default', size: 'small', ...args }),
 	play,
 };
 
 export const Large: Story = {
-	render: (args) => renderStates({ children: <Text>Default</Text>, size: 'large', ...args }),
+	render: (args) => renderStates({ children: 'Default', size: 'large', ...args }),
 	play,
 };
 

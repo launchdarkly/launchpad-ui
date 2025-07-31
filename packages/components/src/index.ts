@@ -18,6 +18,7 @@ export type {
 } from './Calendar';
 export type { CheckboxProps } from './Checkbox';
 export type { CheckboxGroupProps } from './CheckboxGroup';
+export type { CodeProps } from './Code';
 export type { ComboBoxProps } from './ComboBox';
 export type { DateFieldProps, DateInputProps, DateSegmentProps, TimeFieldProps } from './DateField';
 export type { DatePickerProps, DateRangePickerProps } from './DatePicker';
@@ -118,6 +119,7 @@ export {
 	checkboxStyles,
 } from './Checkbox';
 export { CheckboxGroup, CheckboxGroupContext, checkboxGroupStyles } from './CheckboxGroup';
+export { Code } from './Code';
 export { Collection } from './Collection';
 export { ComboBox, ComboBoxClearButton, ComboBoxContext, comboBoxStyles } from './ComboBox';
 export {

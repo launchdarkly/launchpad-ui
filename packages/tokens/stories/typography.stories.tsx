@@ -6,6 +6,14 @@ import { Tooltip, TooltipTrigger } from '../../components/src/Tooltip';
 
 export default {
 	title: 'Tokens/Typography',
+	parameters: {
+		docs: {
+			description: {
+				component:
+					'Typography tokens for the LaunchPad design system. For components using these tokens, see [Text](/docs/components-content-text--docs), [Heading](/docs/components-content-heading--docs), [Label](/docs/components-content-label--docs), and [Code](/docs/components-content-code--docs).',
+			},
+		},
+	},
 };
 
 const flatten = (obj: Record<string, unknown>, prefix = ''): Record<string, string> => {

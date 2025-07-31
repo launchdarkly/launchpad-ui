@@ -1,0 +1,22 @@
+.code {
+	background: transparent;
+	font-weight: var(--lp-font-weight-regular);
+	border-radius: var(--lp-border-radius-regular);
+	color: var(--lp-color-text-code-string);
+	width: fit-content;
+	background-color: var(--lp-color-bg-ui-tertiary);
+	padding-top: var(--lp-spacing-100);
+	padding-bottom: var(--lp-spacing-100);
+	padding-left: var(--lp-spacing-200);
+	padding-right: var(--lp-spacing-200);
+	border: none;
+	outline: none;
+}
+
+.small {
+	font-size: var(--lp-font-size-100);
+}
+
+.medium {
+	font-size: var(--lp-font-size-200);
+}

@@ -5,9 +5,16 @@ import { Label } from '../src';
 export default {
 	component: Label,
 	title: 'Legacy/Form/Label',
-	description: 'A label describes a form field.',
+
 	parameters: {
 		chromatic: { disableSnapshot: true },
+		docs: {
+			description: {
+				component: `
+A label describes a form field. This component is deprecated. Use [Label](/docs/components-content-label--docs) from \`@launchpad-ui/components\` instead.
+				`,
+			},
+		},
 	},
 	argTypes: {
 		className: {

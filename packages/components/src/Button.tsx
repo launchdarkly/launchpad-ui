@@ -72,7 +72,11 @@ const Button = ({ ref, ...props }: ButtonProps) => {
 					{isPending && (
 						<ProgressBar isIndeterminate aria-label="loading" className={styles.progress} />
 					)}
-					{typeof children === 'string' ? <Text>{children}</Text> : children}
+					{typeof children === 'string' ? (
+						<Text size={size as 'small' | 'medium' | 'large'}>{children}</Text>
+					) : (
+						children
+					)}
 				</Provider>
 			))}
 		</AriaButton>

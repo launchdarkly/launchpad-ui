@@ -4,3 +4,36 @@
 		color: var(--lp-color-text-ui-secondary);
 	}
 }
+
+/* Size variants */
+.small {
+	font-size: var(--lp-font-size-100);
+	line-height: var(--lp-line-height-100);
+	margin: 0;
+}
+
+.medium {
+	font-size: var(--lp-font-size-200);
+	line-height: var(--lp-line-height-200);
+	margin: 0;
+}
+
+.large {
+	font-size: var(--lp-font-size-300);
+	line-height: var(--lp-line-height-300);
+	margin: 0;
+}
+
+/* Bold variant */
+.bold {
+	font-weight: var(--lp-font-weight-semibold);
+}
+
+/* Text truncation for maxLines */
+.truncate {
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: normal;
+}

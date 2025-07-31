@@ -3,3 +3,33 @@
 	overflow: hidden;
 	text-overflow: ellipsis;
 }
+
+.truncate {
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: normal;
+}
+
+.small {
+	font-size: var(--lp-font-size-200);
+	line-height: var(--lp-line-height-200);
+	font-weight: var(--lp-font-weight-medium);
+}
+
+.medium {
+	font-size: var(--lp-font-size-300);
+	line-height: var(--lp-line-height-300);
+	font-weight: var(--lp-font-weight-medium);
+}
+
+.large {
+	font-size: var(--lp-font-size-500);
+	line-height: var(--lp-line-height-500);
+	font-weight: var(--lp-font-weight-medium);
+}
+
+.bold {
+	font-weight: var(--lp-font-weight-semibold);
+}
