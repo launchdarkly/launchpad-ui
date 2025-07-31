@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import type { Selection } from 'react-aria-components';
 
 import { Icon } from '@launchpad-ui/icons';
@@ -20,39 +20,41 @@ export default meta;
 
 type Story = StoryObj<typeof Tree>;
 
+const renderTree = (args: Story['args']) => (
+	<Tree {...args} defaultExpandedKeys={['documents', 'photos', 'project']}>
+		<TreeItem id="documents" textValue="Documents">
+			<TreeItemContent>Documents</TreeItemContent>
+			<TreeItem id="project" textValue="Project">
+				<TreeItemContent>Project</TreeItemContent>
+				<TreeItem id="report" textValue="Weekly Report">
+					<TreeItemContent>Weekly Report</TreeItemContent>
+					<TreeItem id="yearly-report" textValue="Yearly Report">
+						<TreeItemContent>Yearly Report</TreeItemContent>
+					</TreeItem>
+				</TreeItem>
+			</TreeItem>
+		</TreeItem>
+		<TreeItem id="photos" textValue="Photos">
+			<TreeItemContent>Photos</TreeItemContent>
+			<TreeItem id="image1" textValue="Image 1">
+				<TreeItemContent>
+					<Icon name="analyze" size="small" /> Image 1
+				</TreeItemContent>
+			</TreeItem>
+			<TreeItem id="image2" textValue="Image 2">
+				<TreeItemContent>
+					<Icon name="application" size="small" /> Image 2
+				</TreeItemContent>
+			</TreeItem>
+		</TreeItem>
+	</Tree>
+);
+
 export const Default: Story = {
 	args: {
 		'aria-label': 'File System',
 	},
-	render: (args) => (
-		<Tree {...args} defaultExpandedKeys={['documents', 'photos', 'project']}>
-			<TreeItem id="documents" textValue="Documents">
-				<TreeItemContent>Documents</TreeItemContent>
-				<TreeItem id="project" textValue="Project">
-					<TreeItemContent>Project</TreeItemContent>
-					<TreeItem id="report" textValue="Weekly Report">
-						<TreeItemContent>Weekly Report</TreeItemContent>
-						<TreeItem id="yearly-report" textValue="Yearly Report">
-							<TreeItemContent>Yearly Report</TreeItemContent>
-						</TreeItem>
-					</TreeItem>
-				</TreeItem>
-			</TreeItem>
-			<TreeItem id="photos" textValue="Photos">
-				<TreeItemContent>Photos</TreeItemContent>
-				<TreeItem id="image1" textValue="Image 1">
-					<TreeItemContent>
-						<Icon name="analyze" size="small" /> Image 1
-					</TreeItemContent>
-				</TreeItem>
-				<TreeItem id="image2" textValue="Image 2">
-					<TreeItemContent>
-						<Icon name="application" size="small" /> Image 2
-					</TreeItemContent>
-				</TreeItem>
-			</TreeItem>
-		</Tree>
-	),
+	render: (args) => renderTree(args),
 };
 
 export const SingleSelection: Story = {
