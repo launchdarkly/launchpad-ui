@@ -32,6 +32,9 @@ export const Default: Story = {
 					<TreeItemContent>Project</TreeItemContent>
 					<TreeItem id="report" textValue="Weekly Report">
 						<TreeItemContent>Weekly Report</TreeItemContent>
+						<TreeItem id="yearly-report" textValue="Yearly Report">
+							<TreeItemContent>Yearly Report</TreeItemContent>
+						</TreeItem>
 					</TreeItem>
 				</TreeItem>
 			</TreeItem>

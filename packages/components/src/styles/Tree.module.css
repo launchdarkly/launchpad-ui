@@ -21,7 +21,7 @@
 	text-decoration: none;
 
 	&:where([data-level]:not([data-level='1'])) {
-		padding-left: calc((var(--tree-item-level, 1) - 1) * var(--lp-spacing-800));
+		padding-left: calc(var(--tree-item-level, 1) * var(--lp-spacing-500));
 	}
 
 	&[data-hovered] {
