@@ -36,11 +36,11 @@
 	"peerDependencies": {
 		"react": "^18.0.0 || ^19.0.0",
 		"react-dom": "^18.0.0 || ^19.0.0",
-		"@react-aria/focus": "3.20.5"
+		"@react-aria/focus": "3.21.0"
 	},
 	"devDependencies": {
 		"react": "19.1.0",
 		"react-dom": "19.1.0",
-		"@react-aria/focus": "3.20.5"
+		"@react-aria/focus": "3.21.0"
 	}
 }
