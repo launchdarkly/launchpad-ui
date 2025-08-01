@@ -40,7 +40,7 @@ interface MenuProps<T> extends AriaMenuProps<T> {
 	ref?: Ref<HTMLDivElement>;
 }
 interface MenuItemProps<T> extends AriaMenuItemProps<T>, VariantProps<typeof menuItemStyles> {
-	ref?: Ref<T>;
+	ref?: Ref<HTMLDivElement>;
 }
 
 // biome-ignore lint/suspicious/noExplicitAny: ignore
