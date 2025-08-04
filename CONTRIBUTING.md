@@ -162,6 +162,12 @@ Run this command to start a local instance in your browser:
 $ pnpm storybook
 ```
 
+### Figma Code Connect
+
+Figma Code Connect is a tool to connect LaunchPad code with LaunchPad Figma Design System real-time. When developers will click component or its insance in design, they will be directed which component and code they should use for implementing the design. 
+
+Using Figma connect requires generating an access Token in LaunchDarkly Figma. You can learn more about code connect [here](https://www.figma.com/code-connect-docs/).
+
 ### Running Tests
 
 #### Unit Tests
