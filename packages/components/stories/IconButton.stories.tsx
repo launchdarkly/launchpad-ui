@@ -5,7 +5,6 @@ import { IconButton } from '../src/IconButton';
 const meta: Meta<typeof IconButton> = {
 	component: IconButton,
 	title: 'Components/Buttons/IconButton',
-	tags: ['autodocs'],
 	parameters: {
 		design: {
 			type: 'figma',
