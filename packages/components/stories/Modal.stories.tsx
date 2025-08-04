@@ -19,6 +19,12 @@ const meta: Meta<typeof Modal> = {
 		ComponentType<unknown>
 	>,
 	title: 'Components/Overlays/Modal',
+	parameters: {
+		figma: {
+			design:
+				'https://www.figma.com/design/98HKKXL2dTle29ikJ3tzk7/%F0%9F%9A%80-LaunchPad?node-id=8079-93230&m=dev',
+		},
+	},
 	decorators: [
 		(Story, { viewMode }) =>
 			viewMode === 'story' ? (

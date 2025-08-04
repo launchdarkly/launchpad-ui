@@ -11,7 +11,7 @@ const meta: Meta<typeof ToggleIconButton> = {
 	parameters: {
 		design: {
 			type: 'figma',
-			url: 'https://www.figma.com/design/98HKKXL2dTle29ikJ3tzk7/%F0%9F%9A%80-LaunchPad?node-id=14355-114625&m=dev',
+			url: 'https://www.figma.com/design/98HKKXL2dTle29ikJ3tzk7/%F0%9F%9A%80-LaunchPad?node-id=14378-119382&m=dev',
 		},
 	},
 };

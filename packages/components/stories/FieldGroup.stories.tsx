@@ -14,6 +14,12 @@ import { TextField } from '../src/TextField';
 const meta: Meta<typeof FieldGroup> = {
 	component: FieldGroup,
 	title: 'Components/Forms/FieldGroup',
+	parameters: {
+		figma: {
+			design:
+				'https://www.figma.com/design/98HKKXL2dTle29ikJ3tzk7/%F0%9F%9A%80-LaunchPad?node-id=1-33331&m=dev',
+		},
+	},
 };
 
 export default meta;
