@@ -16,6 +16,10 @@ const meta: Meta<typeof Button> = {
 		test: {
 			dangerouslyIgnoreUnhandledErrors: true,
 		},
+		design: {
+			type: 'figma',
+			url: 'https://www.figma.com/design/98HKKXL2dTle29ikJ3tzk7/LaunchPad?node-id=1-27006',
+		},
 	},
 	decorators: [
 		(Story) => (

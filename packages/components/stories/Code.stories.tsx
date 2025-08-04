@@ -15,6 +15,10 @@ For body text, use [Text](/docs/components-content-text--docs ). For headings, u
         `,
 			},
 		},
+		design: {
+			type: 'figma',
+			url: 'https://www.figma.com/design/98HKKXL2dTle29ikJ3tzk7/%F0%9F%9A%80-LaunchPad?node-id=2308-667',
+		},
 	},
 	argTypes: {
 		children: {
