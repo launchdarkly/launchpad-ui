@@ -30,6 +30,72 @@ const meta: Meta<typeof Button> = {
 			</div>
 		),
 	],
+	argTypes: {
+		// Hide technical/internal props
+		ref: { table: { disable: true } },
+		children: { control: false },
+
+		// Button specific props
+		size: {
+			control: { type: 'radio' },
+			options: ['small', 'medium', 'large'],
+		},
+		variant: {
+			control: { type: 'radio' },
+			options: ['default', 'primary', 'destructive', 'minimal', 'picker'],
+		},
+
+		// Boolean props should be checkboxes
+		isDisabled: { control: { type: 'boolean' } },
+		isPending: { control: { type: 'boolean' } },
+		isPressed: { control: { type: 'boolean' } },
+		autoFocus: { control: { type: 'boolean' } },
+		excludeFromTabOrder: { control: { type: 'boolean' } },
+
+		// String props should be text inputs
+		type: { control: { type: 'text' } },
+		name: { control: { type: 'text' } },
+		value: { control: { type: 'text' } },
+		form: { control: { type: 'text' } },
+		formAction: { control: { type: 'text' } },
+		formEncType: { control: { type: 'text' } },
+		formMethod: { control: { type: 'text' } },
+		formTarget: { control: { type: 'text' } },
+		'aria-label': { control: { type: 'text' } },
+		'aria-labelledby': { control: { type: 'text' } },
+		'aria-describedby': { control: { type: 'text' } },
+		'aria-details': { control: { type: 'text' } },
+		className: { control: { type: 'text' } },
+		id: { control: { type: 'text' } },
+
+		// Function props should be disabled
+		onPress: { control: { disable: true } },
+		onClick: { control: { disable: true } },
+		onPressStart: { table: { disable: true } },
+		onPressEnd: { table: { disable: true } },
+		onPressChange: { table: { disable: true } },
+		onPressUp: { table: { disable: true } },
+		onFocus: { table: { disable: true } },
+		onBlur: { table: { disable: true } },
+		onFocusChange: { table: { disable: true } },
+		onKeyDown: { table: { disable: true } },
+		onKeyUp: { table: { disable: true } },
+		onHoverStart: { table: { disable: true } },
+		onHoverEnd: { table: { disable: true } },
+		onHoverChange: { table: { disable: true } },
+		'aria-controls': { table: { disable: true } },
+		'aria-expanded': { table: { disable: true } },
+		'aria-haspopup': { table: { disable: true } },
+		'aria-pressed': { table: { disable: true } },
+		'aria-required': { table: { disable: true } },
+		'aria-roledescription': { table: { disable: true } },
+		'aria-selected': { table: { disable: true } },
+
+		// Complex props should be disabled
+		style: { table: { disable: true } },
+		UNSAFE_className: { table: { disable: true } },
+		UNSAFE_style: { table: { disable: true } },
+	},
 };
 
 export default meta;
