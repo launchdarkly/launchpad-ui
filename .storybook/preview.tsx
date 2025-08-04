@@ -157,6 +157,170 @@ const globalTypes: GlobalTypes = {
 	},
 };
 
+// Auto-enhance argTypes based on prop types
+const enhanceArgTypes = (context: any) => {
+	const { argTypes } = context;
+	const enhanced: any = {};
+
+	Object.keys(argTypes || {}).forEach((key) => {
+		const argType = argTypes[key];
+
+		// Skip if already has a control defined, is disabled, or is ref
+		if (argType.control !== undefined || argType.table?.disable) {
+			return;
+		}
+
+		// Auto-detect control type based on prop type
+		if (argType.type) {
+			const typeName = argType.type.name || '';
+
+			// Function props → disable completely
+			if (
+				typeName === 'func' ||
+				typeName === 'function' ||
+				key.startsWith('on') ||
+				key === 'ref' ||
+				(key === 'children' && argType.type !== 'string')
+			) {
+				enhanced[key] = {
+					...argType,
+					control: { disable: true },
+				};
+			}
+			// Boolean props → toggle
+			else if (typeName === 'boolean' || (typeName === 'enum' && argType.type.value.length === 2)) {
+				enhanced[key] = {
+					...argType,
+					control: { type: 'boolean' },
+				};
+			}
+			// Check for boolean unions (like boolean | undefined) → checkbox
+			else if (typeName === 'union' && argType.type.value) {
+				const hasBoolean = argType.type.value.some((v: any) => v.name === 'boolean');
+
+				if (hasBoolean) {
+					enhanced[key] = {
+						...argType,
+						control: { type: 'boolean' },
+					};
+				} else {
+					// Component-specific props that should be radio buttons (whitelist approach)
+					const componentProps = [
+						'size',
+						'variant',
+						'spacing',
+						'orientation',
+						'color',
+						'appearance',
+						'position',
+						'placement',
+					];
+
+					if (componentProps.includes(key)) {
+						const options = argType.type.value
+							.filter((v: any) => {
+								if (v.name === 'literal') {
+									const value = v.value;
+									return (
+										value !== null &&
+										value !== undefined &&
+										value !== 'null' &&
+										value !== 'undefined' &&
+										value !== '' &&
+										typeof value === 'string'
+									);
+								}
+								return v.name !== 'null' && v.name !== 'undefined' && v.name !== 'void';
+							})
+							.map((v: any) => v.value || v.name)
+							.filter(Boolean);
+
+						if (options.length > 0) {
+							//
+							if (options.length <= 5) {
+								enhanced[key] = {
+									...argType,
+									control: { type: 'radio' },
+									options,
+								};
+							} else {
+								enhanced[key] = {
+									...argType,
+									control: { type: 'select' },
+									options,
+								};
+							}
+						}
+					} else {
+						// All other string/union props → text input
+						enhanced[key] = {
+							...argType,
+							control: { type: 'text' },
+						};
+					}
+				}
+			}
+			// Enum types → radio or select (for whitelisted component props only)
+			else if (typeName === 'enum' && argType.type.value) {
+				const componentProps = [
+					'size',
+					'variant',
+					'spacing',
+					'orientation',
+					'color',
+					'appearance',
+					'position',
+					'placement',
+				];
+
+				if (componentProps.includes(key)) {
+					const options = argType.type.value
+						.filter((v: any) => v !== null && v !== undefined && v !== 'null' && v !== 'undefined')
+						.map((v: any) => v);
+
+					if (options.length > 0) {
+						if (options.length <= 5) {
+							enhanced[key] = {
+								...argType,
+								control: { type: 'radio' },
+								options,
+							};
+						} else {
+							enhanced[key] = {
+								...argType,
+								control: { type: 'select' },
+								options,
+							};
+						}
+					}
+				} else {
+					// Non-whitelisted enums → text input
+					enhanced[key] = {
+						...argType,
+						control: { type: 'text' },
+					};
+				}
+			}
+			// All string props → text input
+			else if (typeName === 'string') {
+				enhanced[key] = {
+					...argType,
+					control: { type: 'text' },
+				};
+			}
+			// Number props → number input
+			else if (typeName === 'number') {
+				enhanced[key] = {
+					...argType,
+					control: { type: 'number' },
+				};
+			}
+		}
+	});
+
+	return enhanced;
+};
+
 const preview: Preview = {
 	tags: ['autodocs'],
 	parameters,
@@ -164,6 +328,38 @@ const preview: Preview = {
 	globalTypes,
 	initialGlobals: {
 		backgrounds: { value: 'default' },
+	},
+	// Auto-enhance argTypes for better controls
+	argTypesEnhancers: [(context) => enhanceArgTypes(context)],
+	// Global argTypes that apply to all stories
+	argTypes: {
+		// Hide function props globally by default to keep the prop table skimmable
+		onPressStart: { table: { disable: true } },
+		onPressEnd: { table: { disable: true } },
+		onPressChange: { table: { disable: true } },
+		onPressUp: { table: { disable: true } },
+		onFocusChange: { table: { disable: true } },
+		onHoverStart: { table: { disable: true } },
+		onHoverEnd: { table: { disable: true } },
+		preventFocusOnPress: { table: { disable: true } },
+		excludeFromTabOrder: { table: { disable: true } },
+
+		// Hide technical props
+		style: { table: { disable: true } },
+		UNSAFE_className: { table: { disable: true } },
+		UNSAFE_style: { table: { disable: true } },
+
+		// Hide verbose aria props (keep common ones like aria-label visible)
+		'aria-controls': { table: { disable: true } },
+		'aria-expanded': { table: { disable: true } },
+		'aria-haspopup': { table: { disable: true } },
+		'aria-pressed': { table: { disable: true } },
+		'aria-required': { table: { disable: true } },
+		'aria-roledescription': { table: { disable: true } },
+		'aria-selected': { table: { disable: true } },
+		'aria-describedby': { table: { disable: true } },
+		'aria-details': { table: { disable: true } },
+		'aria-labelledby': { table: { disable: true } },
 	},
 };
 

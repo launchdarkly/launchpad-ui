@@ -16,37 +16,6 @@ const meta: Meta<typeof ButtonGroup> = {
 			url: 'https://www.figma.com/design/98HKKXL2dTle29ikJ3tzk7/%F0%9F%9A%80-LaunchPad?node-id=14332-4328&m=dev',
 		},
 	},
-	argTypes: {
-		// Only show LaunchPad-specific props
-		spacing: {
-			control: { type: 'radio' },
-			options: ['basic', 'compact', 'large'],
-		},
-		orientation: {
-			control: { type: 'radio' },
-			options: ['horizontal', 'vertical'],
-		},
-		children: { control: false },
-
-		// Keep a few essential accessibility/state props
-		isDisabled: { control: { type: 'boolean' } },
-		'aria-label': { control: { type: 'text' } },
-
-		// Hide all other React Aria props systematically
-		ref: { table: { disable: true } },
-		isInvalid: { table: { disable: true } },
-		role: { table: { disable: true } },
-		'aria-labelledby': { table: { disable: true } },
-		'aria-describedby': { table: { disable: true } },
-		'aria-details': { table: { disable: true } },
-		className: { table: { disable: true } },
-		onHoverStart: { table: { disable: true } },
-		onHoverEnd: { table: { disable: true } },
-		onHoverChange: { table: { disable: true } },
-		style: { table: { disable: true } },
-		id: { table: { disable: true } },
-		slot: { table: { disable: true } },
-	},
 };
 
 export default meta;
