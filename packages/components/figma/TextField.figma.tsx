@@ -1,6 +1,7 @@
 import figma from '@figma/code-connect';
-import { Input, Label, Text } from '@launchpad-ui/components';
 
+import { Input } from '../src/Input';
+import { Label } from '../src/Label';
 import { TextField } from '../src/TextField';
 
 /**
@@ -12,7 +13,7 @@ import { TextField } from '../src/TextField';
 
 figma.connect(
 	TextField,
-	'https://www.figma.com/design/98HKKXL2dTle29ikJ3tzk7/%F0%9F%9A%80-LaunchPad?node-id=1%3A34232',
+	'https://www.figma.com/design/98HKKXL2dTle29ikJ3tzk7/%F0%9F%9A%80-LaunchPad?node-id=1-34232',
 	{
 		props: {
 			// These props were automatically mapped based on your linked code:
@@ -20,7 +21,6 @@ figma.connect(
 			id: figma.string('Validation message'),
 			name: figma.string('Validation message'),
 			multiline: figma.boolean('Multi Line'),
-			label: figma.string('Label'),
 			placeholder: figma.string('Placeholder'),
 			helpText: figma.string('Help text'),
 			validationMessage: figma.boolean('Validation message'),
@@ -30,7 +30,7 @@ figma.connect(
 				Invalid: 'invalid',
 			}),
 			minimal: figma.boolean('Minimal'),
-			description: figma.string('Description'),
+			//description: figma.string('Description'),
 			// No matching props could be found for these Figma properties:
 			// "value": figma.string('Value'),
 			// "validationMessage": figma.string('Validation message'),
@@ -59,8 +59,7 @@ figma.connect(
 				id={props.id}
 				name={props.name}
 			>
-				<Label>{props.label}</Label>
-				{props.description && <Text slot="description">{props.description}</Text>}
+				<Label>Label text</Label>
 				<Input placeholder={props.placeholder} value={props.value} />
 			</TextField>
 		),

@@ -15,29 +15,16 @@ figma.connect(
 	'https://www.figma.com/design/98HKKXL2dTle29ikJ3tzk7/%F0%9F%9A%80-LaunchPad?node-id=1%3A34050',
 	{
 		props: {
-			state: figma.enum('State', {
-				Resting: 'resting',
-				Hover: 'hover',
-				Active: 'active',
-				Focus: 'focus',
-				Disabled: 'disabled',
-			}),
-			toggle: figma.boolean('Toggle'),
-			// No matching props could be found for these Figma properties:
-			// "toggle": figma.boolean('Toggle'),
-			// "state": figma.enum('State', {
-			//   "Resting": "resting",
-			//   ":hover": "-hover",
-			//   ":active": "-active",
-			//   ":focus-visible": "-focus-visible",
-			//   "Disabled": "disabled"
-			// }),
-			// "hasLabel": figma.enum('Has label', {
-			//   "True": "true"
-			// })
+			isDisabled: figma.enum('State', { Disabled: true }),
+			isSelected: figma.boolean('Toggle'),
 		},
-		example: (props) => (
-			<Switch isSelected={props.toggle} isDisabled={props.state === 'disabled'} />
+		example: ({ isSelected, isDisabled }) => (
+			<Switch
+				isSelected={isSelected}
+				onChange={(selected) => {
+					console.log(selected);
+				}}
+			/>
 		),
 	},
 );

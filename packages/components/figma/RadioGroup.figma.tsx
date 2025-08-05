@@ -4,7 +4,7 @@ import { ButtonGroup, Label, RadioButton, RadioGroup } from '../src';
 
 figma.connect(
 	RadioGroup,
-	'https://www.figma.com/design/98HKKXL2dTle29ikJ3tzk7/%F0%9F%9A%80-LaunchPad?node-id=1-37500',
+	'https://www.figma.com/design/98HKKXL2dTle29ikJ3tzk7/%F0%9F%9A%80-LaunchPad?node-id=1-33595',
 	{
 		example: () => (
 			<RadioGroup defaultValue="1">

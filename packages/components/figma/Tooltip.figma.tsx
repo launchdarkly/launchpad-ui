@@ -1,6 +1,6 @@
 import figma from '@figma/code-connect';
-import { Button } from '@launchpad-ui/components';
 
+import { Button } from '../src/Button';
 import { Tooltip, TooltipTrigger } from '../src/Tooltip';
 
 /**
@@ -13,7 +13,7 @@ import { Tooltip, TooltipTrigger } from '../src/Tooltip';
 
 figma.connect(
 	Tooltip,
-	'https://www.figma.com/design/98HKKXL2dTle29ikJ3tzk7/%F0%9F%9A%80-LaunchPad?node-id=1%3A37251',
+	'https://www.figma.com/design/98HKKXL2dTle29ikJ3tzk7/%F0%9F%9A%80-LaunchPad?node-id=1-37251',
 	{
 		props: {
 			message: figma.string('Message'),
@@ -21,10 +21,10 @@ figma.connect(
 			// "icon": figma.instance('Icon'),
 			// "hasIcon": figma.boolean('Has icon')
 		},
-		example: (props) => (
+		example: ({ message }) => (
 			<TooltipTrigger>
 				<Button>Trigger tooltip</Button>
-				<Tooltip>{props.message}</Tooltip>
+				<Tooltip>{message}</Tooltip>
 			</TooltipTrigger>
 		),
 	},

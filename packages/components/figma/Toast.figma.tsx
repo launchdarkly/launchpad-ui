@@ -1,6 +1,7 @@
 import figma from '@figma/code-connect';
-import { Button, ButtonGroup } from '@launchpad-ui/components';
 
+import { Button } from '../src/Button';
+import { ButtonGroup } from '../src/ButtonGroup';
 import { Toast, ToastRegion, toastQueue } from '../src/Toast';
 
 /**
@@ -12,13 +13,13 @@ import { Toast, ToastRegion, toastQueue } from '../src/Toast';
 
 figma.connect(
 	Toast,
-	'https://www.figma.com/design/98HKKXL2dTle29ikJ3tzk7/%F0%9F%9A%80-LaunchPad?node-id=1%3A45160',
+	'https://www.figma.com/design/98HKKXL2dTle29ikJ3tzk7/%F0%9F%9A%80-LaunchPad?node-id=1-45160',
 	{
 		props: {
-			variant: figma.enum('Variant', {
+			/*variant: figma.enum('Variant', {
 				Default: 'default',
 				Snackbar: 'snackbar',
-			}),
+			}),*/
 			// No matching props could be found for these Figma properties:
 			// "message": figma.string('Message'),
 			// "hasLink": figma.boolean('Has link'),
@@ -36,8 +37,8 @@ figma.connect(
 			// })
 		},
 		example: (props) => (
-			<>
-				<ToastRegion />
+			<div>
+				<ToastRegion {...props} />
 				<ButtonGroup>
 					<Button onPress={() => toastQueue.add({ title: 'A success toast!', status: 'success' })}>
 						Show toast
@@ -52,7 +53,7 @@ figma.connect(
 						Clear
 					</Button>
 				</ButtonGroup>
-			</>
+			</div>
 		),
 	},
 );

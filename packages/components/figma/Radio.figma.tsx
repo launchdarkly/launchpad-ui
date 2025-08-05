@@ -12,11 +12,11 @@ import { Radio } from '../src/Radio';
 
 figma.connect(
 	Radio,
-	'https://www.figma.com/design/98HKKXL2dTle29ikJ3tzk7/%F0%9F%9A%80-LaunchPad?node-id=1%3A33572',
+	'https://www.figma.com/design/98HKKXL2dTle29ikJ3tzk7/%F0%9F%9A%80-LaunchPad?node-id=1-33572',
 	{
 		props: {
-			value: figma.string('Label'),
-			checked: figma.boolean('Selected'),
+			isSelected: figma.boolean('Selected'),
+			isDisabled: figma.enum('State', { Disabled: true }),
 			// No matching props could be found for these Figma properties:
 			// "hasLabel": figma.boolean('Has label'),
 			// "state": figma.enum('State', {
@@ -27,6 +27,10 @@ figma.connect(
 			// "selected": figma.boolean('Selected'),
 			// "focus": figma.boolean('Focus')
 		},
-		example: (props) => <Radio {...props} />,
+		example: ({ isSelected, isDisabled }) => (
+			<Radio isSelected={isSelected} value="1" isDisabled={isDisabled}>
+				Radio label
+			</Radio>
+		),
 	},
 );

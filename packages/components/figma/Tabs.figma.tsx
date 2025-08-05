@@ -14,9 +14,6 @@ figma.connect(
 	'https://www.figma.com/design/98HKKXL2dTle29ikJ3tzk7/%F0%9F%9A%80-LaunchPad?node-id=1%3A45112',
 	{
 		props: {
-			// These props were automatically mapped based on your linked code:
-			rel: figma.string('Label'),
-			selected: figma.boolean('Selected'),
 			// No matching props could be found for these Figma properties:
 			// "label": figma.string('Label'),
 			// "selected": figma.boolean('Selected'),
