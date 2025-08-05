@@ -1,0 +1,80 @@
+# Builder
+
+This recipe demonstrates how to create comprehensive visual builder interfaces using the LaunchPad design system. It showcases various builder patterns from simple drawing tools to complex component editors.
+
+## Key Features
+
+- **Component Library**: Drag-and-drop component palette with categorization
+- **Visual Canvas**: Interactive design surface with grid background and selection handles
+- **Properties Panel**: Dynamic property editor based on selected elements
+- **Layers Panel**: Hierarchical view of canvas elements with visibility controls
+- **Real-time Preview**: Live component customization and preview
+- **Multi-tool Interface**: Different builder modes (select, draw, text, shapes)
+
+## Story Variants
+
+### 1. Visual Builder
+A complete page builder interface featuring:
+- **Component Library** with filtered categories
+- **Layers Panel** showing element hierarchy  
+- **Main Canvas** with drag-drop functionality
+- **Properties Panel** for element customization
+- **Selection Handles** and visual feedback
+- **Real-time Updates** for element properties
+
+### 2. Minimal Builder
+A simplified drawing tool interface with:
+- **Compact Toolbar** with essential tools
+- **Clean Canvas** with grid background
+- **Tool Selection** (select, text, shapes)
+- **Export Functionality**
+
+### 3. Component Studio
+An advanced component customization modal featuring:
+- **Property Controls** for component variants
+- **Live Preview** with real-time updates
+- **Export Options** (code, templates)
+- **Modal-based Interface** for focused editing
+
+## Components Used
+
+- `GridList` & `GridListItem` - Component library and layers hierarchy
+- `Select` & `ListBox` - Dropdowns for categories and properties
+- `Button` & `ButtonGroup` - Actions and tool selection
+- `IconButton` - Toolbar tools and canvas controls
+- `Input` - Property value editing
+- `Modal` & `Dialog` - Component studio interface
+- `Tooltip` - Contextual help for tools
+- `Alert` - Status messages and help text
+- `Heading` & `Text` - Content hierarchy and labels
+
+## Design Patterns
+
+### Canvas Interaction
+- **Grid Background**: Visual alignment guide using CSS patterns
+- **Selection Handles**: Corner resize handles for selected elements
+- **Element Preview**: Simplified component representations
+- **Hover States**: Visual feedback for interactive elements
+
+### Panel Layout
+- **Fixed Sidebars**: Component library and properties panels
+- **Flexible Canvas**: Expandable main work area
+- **Responsive Sizing**: Panels adapt to content needs
+- **Scroll Behavior**: Independent scrolling for each panel
+
+### State Management
+- **Element Selection**: Active element highlighting and properties
+- **Tool States**: Active tool indication and mode switching
+- **Real-time Updates**: Property changes reflected immediately
+- **Component Addition**: Dynamic element creation and positioning
+
+## Usage Notes
+
+This recipe serves as a foundation for:
+- **Page Builders**: Website/app layout construction
+- **Component Editors**: Design system customization tools
+- **Drawing Applications**: Creative design interfaces
+- **Form Builders**: Dynamic form construction tools
+- **Dashboard Builders**: Analytics layout creators
+
+The interface patterns can be adapted for various builder use cases while maintaining consistent LaunchPad design system aesthetics and interactions.

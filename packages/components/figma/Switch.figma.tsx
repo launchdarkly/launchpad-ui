@@ -20,6 +20,7 @@ figma.connect(
 		},
 		example: ({ isSelected, isDisabled }) => (
 			<Switch
+				isDisabled={isDisabled}
 				isSelected={isSelected}
 				onChange={(selected) => {
 					console.log(selected);
