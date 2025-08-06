@@ -5,42 +5,33 @@ import { Icon } from '@launchpad-ui/icons';
 import { vars } from '@launchpad-ui/vars';
 
 import { Avatar } from '../src/Avatar';
-import { Breadcrumb, Breadcrumbs } from '../src/Breadcrumbs';
 import { Button } from '../src/Button';
 import { ButtonGroup } from '../src/ButtonGroup';
 import { Checkbox } from '../src/Checkbox';
 import { CheckboxGroup } from '../src/CheckboxGroup';
 import { Code } from '../src/Code';
-import { Disclosure } from '../src/Disclosure';
-import { DisclosureGroup } from '../src/DisclosureGroup';
 import { FieldGroup } from '../src/FieldGroup';
 import { FileTrigger } from '../src/FileTrigger';
-import { GridList, GridListItem } from '../src/GridList';
 import { Group } from '../src/Group';
 import { Heading } from '../src/Heading';
 import { IconButton } from '../src/IconButton';
 import { Input } from '../src/Input';
 import { Label } from '../src/Label';
 import { Link } from '../src/Link';
-import { LinkButton } from '../src/LinkButton';
-import { LinkIconButton } from '../src/LinkIconButton';
-import { ListBox, ListBoxItem } from '../src/ListBox';
 import { NumberField } from '../src/NumberField';
 import { RadioGroup } from '../src/RadioGroup';
 import { SearchField } from '../src/SearchField';
 import { Switch } from '../src/Switch';
-import { Cell, Column, Row, Table, TableBody, TableHeader } from '../src/Table';
-import { Tab, TabList, TabPanel, Tabs } from '../src/Tabs';
-import { Tag, TagGroup, TagList } from '../src/TagGroup';
 import { Text } from '../src/Text';
 import { TextField } from '../src/TextField';
 import { ToggleButton } from '../src/ToggleButton';
 import { ToggleButtonGroup } from '../src/ToggleButtonGroup';
 import { ToggleIconButton } from '../src/ToggleIconButton';
 import { Toolbar } from '../src/Toolbar';
-import { Tree, TreeItem, TreeItemContent } from '../src/Tree';
+import { collectionsCategory } from './overview/Collections';
 import { dateAndTimeCategory } from './overview/DateAndTime';
 import { dragAndDropCategory } from './overview/DragAndDrop';
+import { navigationCategory } from './overview/Navigation';
 import { overlaysCategory } from './overview/Overlays';
 import { pickersCategory } from './overview/Pickers';
 // Import modular sections from separate files
@@ -298,163 +289,8 @@ const componentCategories = [
 			},
 		],
 	},
-	{
-		category: 'Navigation',
-		components: [
-			{
-				name: 'Link',
-				component: (
-					<div style={{ display: 'flex', gap: '10px', flexDirection: 'column' }}>
-						<Link href="#">Sample Link</Link>
-						<Link href="#" variant="subtle">
-							Sample Link
-						</Link>
-					</div>
-				),
-				storyPath: 'components-navigation-link--docs',
-			},
-			{
-				name: 'LinkButton',
-				component: <LinkButton href="#">Link Button</LinkButton>,
-				storyPath: 'components-navigation-linkbutton--docs',
-			},
-			{
-				name: 'LinkIconButton',
-				component: <LinkIconButton icon="link" aria-label="External" href="#" />,
-				storyPath: 'components-navigation-linkiconbutton--docs',
-			},
-			{
-				name: 'Breadcrumbs',
-				component: (
-					<Breadcrumbs>
-						<Breadcrumb>
-							<Link href="#">Home</Link>
-						</Breadcrumb>
-						<Breadcrumb>
-							<Link href="#">Category</Link>
-						</Breadcrumb>
-						<Breadcrumb>
-							<Link>Page</Link>
-						</Breadcrumb>
-					</Breadcrumbs>
-				),
-				storyPath: 'components-navigation-breadcrumbs--docs',
-			},
-			{
-				name: 'Disclosure',
-				component: (
-					<Disclosure>
-						<Button slot="trigger">Expand</Button>
-						<Text>Hidden content</Text>
-					</Disclosure>
-				),
-				storyPath: 'components-navigation-disclosure--docs',
-			},
-			{
-				name: 'DisclosureGroup',
-				component: (
-					<DisclosureGroup>
-						<Disclosure>
-							<Button slot="trigger">Item 1</Button>
-							<Text>Content 1</Text>
-						</Disclosure>
-					</DisclosureGroup>
-				),
-				storyPath: 'components-navigation-disclosuregroup--docs',
-			},
-			{
-				name: 'Tabs',
-				component: (
-					<Tabs>
-						<TabList>
-							<Tab id="tab1">Tab 1</Tab>
-							<Tab id="tab2">Tab 2</Tab>
-						</TabList>
-						<TabPanel id="tab1">Content 1</TabPanel>
-						<TabPanel id="tab2">Content 2</TabPanel>
-					</Tabs>
-				),
-				storyPath: 'components-navigation-tabs--docs',
-			},
-		],
-	},
-	{
-		category: 'Collections',
-		components: [
-			{
-				name: 'Table',
-				component: (
-					<Table style={{ width: '200px' }}>
-						<TableHeader>
-							<Column>Name</Column>
-							<Column>Status</Column>
-						</TableHeader>
-						<TableBody>
-							<Row>
-								<Cell>Item 1</Cell>
-								<Cell>Active</Cell>
-							</Row>
-						</TableBody>
-					</Table>
-				),
-				storyPath: 'components-collections-table--docs',
-			},
-			{
-				name: 'GridList',
-				component: (
-					<GridList style={{ width: '200px' }} aria-label="Items">
-						<GridListItem>Item 1</GridListItem>
-						<GridListItem>Item 2</GridListItem>
-						<GridListItem>Item 3</GridListItem>
-					</GridList>
-				),
-				storyPath: 'components-collections-gridlist--docs',
-			},
-			{
-				name: 'ListBox',
-				component: (
-					<ListBox style={{ width: '200px' }} aria-label="Options">
-						<ListBoxItem>Option 1</ListBoxItem>
-						<ListBoxItem>Option 2</ListBoxItem>
-						<ListBoxItem>Option 3</ListBoxItem>
-					</ListBox>
-				),
-				storyPath: 'components-collections-listbox--docs',
-			},
-			{
-				name: 'Tree',
-				component: (
-					<Tree style={{ width: '200px' }}>
-						<TreeItem textValue="Item 1">
-							<TreeItemContent>Item 1</TreeItemContent>
-						</TreeItem>
-						<TreeItem textValue="Item 2">
-							<TreeItemContent>Item 2</TreeItemContent>
-						</TreeItem>
-					</Tree>
-				),
-				storyPath: 'components-collections-tree--docs',
-			},
-			{
-				name: 'TagGroup',
-				component: (
-					<TagGroup>
-						<Label>Tags</Label>
-						<TagList>
-							<Tag>React</Tag>
-							<Tag>TypeScript</Tag>
-						</TagList>
-					</TagGroup>
-				),
-				storyPath: 'components-collections-taggroup--docs',
-			},
-			{
-				name: 'Menu',
-				component: <Button>Open Menu</Button>,
-				storyPath: 'components-collections-menu--docs',
-			},
-		],
-	},
+	navigationCategory,
+	collectionsCategory,
 	statusCategory,
 	pickersCategory,
 	overlaysCategory,
