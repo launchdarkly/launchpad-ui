@@ -6,12 +6,12 @@ import { Box } from '@launchpad-ui/box';
 import sprite from '@launchpad-ui/icons/img/sprite.svg';
 import { withThemeByDataAttribute } from '@storybook/addon-themes';
 import { BrowserRouter, useNavigate } from 'react-router';
-import { themes } from 'storybook/theming';
 
 import { RouterProvider as AriaRouterProvider } from '../packages/components/src/RouterProvider';
 import { useHref } from '../packages/components/src/utils';
 import custom from './custom.svg';
 import { allModes } from './modes';
+import { darkTheme, lightTheme } from './themes';
 
 import '../packages/components/src/styles/base.css';
 import '../packages/components/src/styles/themes.css';
@@ -91,12 +91,62 @@ const parameters: Parameters = {
 		prefersReducedMotion: 'reduce',
 	},
 	docs: {
-		theme: window.matchMedia('(prefers-color-scheme: dark)').matches ? themes.dark : themes.light,
+		theme: lightTheme, // Default theme, will be updated dynamically
 		codePanel: true,
 	},
 };
 
 const decorators: DecoratorFunction<ReactRenderer>[] = [
+	// Dynamic theme updater for Storybook UI
+	(StoryFn, context) => {
+		const currentTheme = context.globals.theme || 'default';
+		const isDark = currentTheme === 'dark';
+
+		// Update the docs theme dynamically
+		if (context.parameters.docs) {
+			context.parameters.docs.theme = isDark ? darkTheme : lightTheme;
+		}
+
+		// Apply theme classes to the document
+		if (typeof window !== 'undefined') {
+			// Update current document (preview iframe)
+			const currentRoot = document.documentElement;
+			if (isDark) {
+				currentRoot.classList.add('dark-theme');
+				currentRoot.classList.remove('light-theme');
+			} else {
+				currentRoot.classList.add('light-theme');
+				currentRoot.classList.remove('dark-theme');
+			}
+
+			// Communicate theme change to manager via localStorage
+			localStorage.setItem('storybook-theme', currentTheme);
+			window.dispatchEvent(
+				new StorageEvent('storage', {
+					key: 'storybook-theme',
+					newValue: currentTheme,
+				}),
+			);
+
+			// Also try to update the parent document (manager)
+			if (window.parent && window.parent !== window) {
+				try {
+					const managerRoot = window.parent.document.documentElement;
+					if (isDark) {
+						managerRoot.classList.add('dark-theme');
+						managerRoot.classList.remove('light-theme');
+					} else {
+						managerRoot.classList.add('light-theme');
+						managerRoot.classList.remove('dark-theme');
+					}
+				} catch (_e) {
+					// Cross-origin restrictions, ignore
+				}
+			}
+		}
+
+		return <StoryFn />;
+	},
 	(StoryFn, context) => {
 		const mirror = context.viewMode === 'story' ? context.globals.mirror : undefined;
 		const sideBySide = mirror === 'side-by-side';

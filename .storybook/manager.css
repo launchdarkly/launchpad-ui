@@ -1,0 +1,247 @@
+/* Additional custom styles for Storybook manager UI */
+
+/* Light theme additional styles */
+.light-theme {
+	/* Custom CSS variables using LaunchPad design tokens */
+	--storybook-accent-color: #405bff; /* brand.blue.base */
+	--storybook-accent-hover: #7084ff; /* brand.blue.light */
+}
+
+/* Dark theme additional styles */
+.dark-theme {
+	/* Custom CSS variables using LaunchPad design tokens */
+	--storybook-accent-color: #7084ff; /* brand.blue.light */
+	--storybook-accent-hover: #405bff; /* brand.blue.base */
+}
+
+/* Docs container theming using LaunchPad design tokens */
+.docs-dark {
+	background-color: #181a1f !important; /* gray.950 */
+	color: #eceff2 !important; /* gray.50 */
+}
+
+.docs-light {
+	background-color: #ffffff !important; /* white.950 */
+	color: #23252a !important; /* gray.900 */
+}
+
+/* Code blocks in light mode - only target docs content, not Code components */
+:not(.dark-theme) .docblock-argstable code,
+:not(.dark-theme) .docblock-argstable-description code,
+:not(.dark-theme) .docblock-argstable-body code,
+.docs-light .docblock-argstable code,
+.docs-light .sbdocs code:not([class*='code_']) {
+	background-color: #eceff2 !important; /* gray.50 - matching --lp-color-bg-ui-tertiary light */
+	color: #238ca3 !important; /* brand.cyan.dark - matching --lp-color-text-code-string light */
+	border-color: #d8dde3 !important; /* gray.100 */
+	border-radius: 4px !important; /* matching --lp-border-radius-regular */
+	padding: 4px 8px !important; /* matching --lp-spacing-100 --lp-spacing-200 */
+	font-weight: 400 !important; /* matching --lp-font-weight-regular */
+}
+
+/* Dark theme docs content styling using LaunchPad design tokens */
+.docs-dark .docblock-argstable,
+.docs-dark .docblock-argstable table,
+.docs-dark .docblock-argstable tbody,
+.docs-dark .docblock-argstable tr,
+.docs-dark .docblock-argstable td,
+.docs-dark .docblock-argstable th {
+	background-color: #23252a !important; /* gray.900 */
+	color: #eceff2 !important; /* gray.50 */
+	border-color: #3f454c !important; /* gray.700 */
+}
+
+.docs-dark .docblock-argstable th {
+	background-color: #3f454c !important; /* gray.700 */
+	color: #eceff2 !important; /* gray.50 */
+}
+
+.docs-dark .docblock-argstable-body {
+	background-color: #23252a !important; /* gray.900 */
+}
+
+.docs-dark .docblock-code-toggle,
+.docs-dark .docblock-code-toggle button {
+	background-color: #3f454c !important; /* gray.700 */
+	color: #eceff2 !important; /* gray.50 */
+	border-color: #545a62 !important; /* gray.600 */
+}
+
+.docs-dark .docblock-code-toggle:hover,
+.docs-dark .docblock-code-toggle button:hover {
+	background-color: #545a62 !important; /* gray.600 */
+}
+
+/* Code blocks in docs - only target docs content, not Code components */
+.docs-dark .docblock-argstable code,
+.docs-dark .sbdocs code:not([class*='code_']),
+/* Target specific args table elements only in dark theme */
+	.dark-theme .docblock-argstable
+	code,
+.dark-theme .docblock-argstable-description code,
+.dark-theme .docblock-argstable-body code {
+	background-color: #2d3239 !important; /* gray.800 - matching --lp-color-bg-ui-tertiary dark */
+	color: #6de0f7 !important; /* brand.cyan.light - matching --lp-color-text-code-string dark */
+	border-color: #3f454c !important; /* gray.700 */
+	border-radius: 4px !important; /* matching --lp-border-radius-regular */
+	padding: 4px 8px !important; /* matching --lp-spacing-100 --lp-spacing-200 */
+	font-weight: 400 !important; /* matching --lp-font-weight-regular */
+}
+
+/* Only target Storybook-specific prism code blocks */
+.docs-dark .prism-code:not([class*='code_']),
+.dark-theme .docblock-argstable .prism-code {
+	background-color: #2d3239 !important; /* gray.800 - matching --lp-color-bg-ui-tertiary dark */
+}
+
+/* Description and other text content using LaunchPad design tokens */
+.docs-dark .sbdocs-content,
+.docs-dark .sbdocs-wrapper,
+.docs-dark .sbdocs-preview,
+.docs-dark .sbdocs p,
+.docs-dark .sbdocs h1,
+.docs-dark .sbdocs h2,
+.docs-dark .sbdocs h3,
+.docs-dark .sbdocs h4,
+.docs-dark .sbdocs h5,
+.docs-dark .sbdocs h6 {
+	color: #eceff2 !important; /* gray.50 */
+}
+
+.docs-dark .sbdocs-wrapper {
+	background-color: #181a1f !important; /* gray.950 */
+}
+
+/* Global dark theme styling for docs using LaunchPad design tokens */
+.dark-theme .sbdocs,
+.dark-theme .sbdocs-content,
+.dark-theme .sbdocs-wrapper,
+.dark-theme .sbdocs-preview {
+	background-color: #181a1f !important; /* gray.950 */
+	color: #eceff2 !important; /* gray.50 */
+}
+
+/* Args table styling for dark theme using LaunchPad design tokens */
+.dark-theme .docblock-argstable,
+.dark-theme .docblock-argstable table,
+.dark-theme .docblock-argstable tbody,
+.dark-theme .docblock-argstable tr,
+.dark-theme .docblock-argstable td,
+.dark-theme .docblock-argstable th {
+	background-color: #23252a !important; /* gray.900 */
+	color: #eceff2 !important; /* gray.50 */
+	border-color: #3f454c !important; /* gray.700 */
+}
+
+.dark-theme .docblock-argstable th {
+	background-color: #3f454c !important; /* gray.700 */
+	color: #eceff2 !important; /* gray.50 */
+}
+
+.dark-theme .docblock-argstable-body {
+	background-color: #23252a !important; /* gray.900 */
+}
+
+/* Text content in dark theme using LaunchPad design tokens */
+.dark-theme .sbdocs p,
+.dark-theme .sbdocs h1,
+.dark-theme .sbdocs h2,
+.dark-theme .sbdocs h3,
+.dark-theme .sbdocs h4,
+.dark-theme .sbdocs h5,
+.dark-theme .sbdocs h6,
+.dark-theme .sbdocs li,
+.dark-theme .sbdocs span,
+.dark-theme .sbdocs div {
+	color: #eceff2 !important; /* gray.50 */
+}
+
+/* Removed overly broad selectors to preserve Code.tsx component styling */
+
+/* Storybook-specific code styling - only target docs and args table, not actual Code components */
+.sb-main-padded .docblock-argstable code,
+.sb-main-padded .sbdocs code,
+.sb-main-padded .docs-story code:not([class*='code_']),
+.docblock-argstable-description code,
+#storybook-docs code:not([class*='code_']) {
+	background-color: #eceff2 !important; /* gray.50 - matching --lp-color-bg-ui-tertiary light */
+	color: #238ca3 !important; /* brand.cyan.dark - matching --lp-color-text-code-string light */
+	border-radius: 4px !important;
+	padding: 4px 8px !important;
+	font-weight: 400 !important;
+}
+
+.dark-theme .sb-main-padded .docblock-argstable code,
+.dark-theme .sb-main-padded .sbdocs code,
+.dark-theme .sb-main-padded .docs-story code:not([class*='code_']),
+.dark-theme .docblock-argstable-description code,
+.dark-theme #storybook-docs code:not([class*='code_']) {
+	background-color: #2d3239 !important; /* gray.800 - matching --lp-color-bg-ui-tertiary dark */
+	color: #6de0f7 !important; /* brand.cyan.light - matching --lp-color-text-code-string dark */
+	border-radius: 4px !important;
+	padding: 4px 8px !important;
+	font-weight: 400 !important;
+}
+
+/* Override any remaining light backgrounds using LaunchPad design tokens */
+.dark-theme .docs-story,
+.dark-theme [data-docs-story] {
+	background-color: #181a1f !important; /* gray.950 */
+	color: #eceff2 !important; /* gray.50 */
+}
+
+/* Smooth transitions for theme changes */
+html,
+body,
+#storybook-root {
+	transition:
+		background-color 0.3s ease,
+		color 0.3s ease;
+}
+
+/* Custom styling for sidebar and toolbar */
+.light-theme .sidebar {
+	background: #ffffff;
+	border-color: rgba(0, 0, 0, 0.1);
+}
+
+.dark-theme .sidebar {
+	background: #1e293b;
+	border-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Ensure proper contrast for interactive elements */
+.light-theme [data-selected='true'] {
+	background-color: #037dd6 !important;
+	color: white !important;
+}
+
+.dark-theme [data-selected='true'] {
+	background-color: #4f95ff !important;
+	color: white !important;
+}
+
+/* Custom scrollbar styling */
+.light-theme ::-webkit-scrollbar-track {
+	background: #f8fafc;
+}
+
+.light-theme ::-webkit-scrollbar-thumb {
+	background: #cbd5e1;
+}
+
+.light-theme ::-webkit-scrollbar-thumb:hover {
+	background: #94a3b8;
+}
+
+.dark-theme ::-webkit-scrollbar-track {
+	background: #1e293b;
+}
+
+.dark-theme ::-webkit-scrollbar-thumb {
+	background: #475569;
+}
+
+.dark-theme ::-webkit-scrollbar-thumb:hover {
+	background: #64748b;
+}
