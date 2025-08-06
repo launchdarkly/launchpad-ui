@@ -654,7 +654,7 @@ const componentCategories = [
 				name: 'ComboBoxDialog',
 				component: (
 					<div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-						<Button>Trigger</Button>
+						<Button>Trigger test</Button>
 						<span style={{ fontSize: '12px', color: vars.color.text.ui.secondary }}>+ Dialog</span>
 					</div>
 				),
