@@ -461,3 +461,34 @@ div[style*='grid-area: sidebar'],
 div[style*='grid-area:sidebar'] {
 	border-right: none !important;
 }
+
+/* Dark mode styling for preview toolbar */
+.dark-theme [data-test-id='sb-preview-toolbar'],
+html.dark-theme [data-test-id='sb-preview-toolbar'],
+body.dark-theme [data-test-id='sb-preview-toolbar'],
+.dark-theme .sb-preview-toolbar,
+html.dark-theme .sb-preview-toolbar,
+body.dark-theme .sb-preview-toolbar {
+	background-color: #23252a !important;
+	color: #eceff2 !important;
+	border-color: #3f454c !important;
+	border-top: 1px solid #3f454c !important;
+}
+
+/* Dark mode styling for toolbar buttons */
+.dark-theme [data-test-id='sb-preview-toolbar'] button,
+.dark-theme [data-test-id='sb-preview-toolbar'] [role='button'],
+.dark-theme .sb-preview-toolbar button,
+.dark-theme .sb-preview-toolbar [role='button'] {
+	background-color: transparent !important;
+	color: #eceff2 !important;
+	border-color: #3f454c !important;
+}
+
+.dark-theme [data-test-id='sb-preview-toolbar'] button:hover,
+.dark-theme [data-test-id='sb-preview-toolbar'] [role='button']:hover,
+.dark-theme .sb-preview-toolbar button:hover,
+.dark-theme .sb-preview-toolbar [role='button']:hover {
+	background-color: #3f454c !important;
+	color: #ffffff !important;
+}
