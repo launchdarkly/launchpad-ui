@@ -153,15 +153,15 @@
 
 /* Text content in dark theme using LaunchPad design tokens */
 .dark-theme .sbdocs p,
-.dark-theme .sbdocs h1,
-.dark-theme .sbdocs h2,
-.dark-theme .sbdocs h3,
-.dark-theme .sbdocs h4,
-.dark-theme .sbdocs h5,
-.dark-theme .sbdocs h6,
-.dark-theme .sbdocs li,
-.dark-theme .sbdocs span,
-.dark-theme .sbdocs div {
+.dark-theme :not(.docs-story) .sbdocs h1,
+.dark-theme :not(.docs-story) .sbdocs h2,
+.dark-theme :not(.docs-story) .sbdocs h3,
+.dark-theme :not(.docs-story) .sbdocs h4,
+.dark-theme :not(.docs-story) .sbdocs h5,
+.dark-theme :not(.docs-story) .sbdocs h6,
+.dark-theme :not(.docs-story) .sbdocs li,
+.dark-theme :not(.docs-story) .sbdocs span,
+.dark-theme :not(.docs-story) .sbdocs div {
 	color: #eceff2 !important; /* gray.50 */
 }
 
@@ -222,6 +222,11 @@ html.dark-theme table code,
 .dark-theme .docs-story,
 .dark-theme [data-docs-story] {
 	background-color: #181a1f !important; /* gray.950 */
+}
+
+/* Only apply text color to docs story wrapper, not story content */
+.dark-theme .docs-story > div:first-child,
+.dark-theme [data-docs-story] > div:first-child {
 	color: #eceff2 !important; /* gray.50 */
 }
 
@@ -320,29 +325,61 @@ body,
 	fill: white !important;
 }
 
-/* Documentation links styling */
-.light-theme .sbdocs a,
-.light-theme .docs-story a,
-.light-theme #storybook-docs a,
-.light-theme .docblock-argstable a,
-.dark-theme .sbdocs a,
-.dark-theme .docs-story a,
-.dark-theme #storybook-docs a,
-.dark-theme .docblock-argstable a {
+/* Documentation links styling - excluding story content */
+.light-theme .sbdocs a:not(.docs-story a),
+.light-theme #storybook-docs a:not(.docs-story a),
+.light-theme .docblock-argstable a:not(.docs-story a),
+.dark-theme .sbdocs a:not(.docs-story a),
+.dark-theme #storybook-docs a:not(.docs-story a),
+.dark-theme .docblock-argstable a:not(.docs-story a) {
 	color: #7084ff !important;
 	text-decoration: underline;
 }
 
-.light-theme .sbdocs a:hover,
-.light-theme .docs-story a:hover,
-.light-theme #storybook-docs a:hover,
-.light-theme .docblock-argstable a:hover,
-.dark-theme .sbdocs a:hover,
-.dark-theme .docs-story a:hover,
-.dark-theme #storybook-docs a:hover,
-.dark-theme .docblock-argstable a:hover {
+.light-theme .sbdocs a:hover:not(.docs-story a:hover),
+.light-theme #storybook-docs a:hover:not(.docs-story a:hover),
+.light-theme .docblock-argstable a:hover:not(.docs-story a:hover),
+.dark-theme .sbdocs a:hover:not(.docs-story a:hover),
+.dark-theme #storybook-docs a:hover:not(.docs-story a:hover),
+.dark-theme .docblock-argstable a:hover:not(.docs-story a:hover) {
 	color: #2536a6 !important;
 	text-decoration: underline;
+}
+
+/* Story content links should use their natural styling */
+.docs-story a {
+	all: revert !important;
+}
+
+/* Override specific CSS module classes for docblock-argstable in dark mode */
+/* Order by specificity: lowest to highest */
+.dark-theme .docblock-argstable tbody > tr > *,
+.dark-theme .docblock-argstable [class*='css-'] tbody > tr > *,
+.dark-theme .docblock-argstable .css-19yaz2m tbody > tr > *,
+.dark-theme .docblock-argstable .css-19yaz2m.css-19yaz2m tbody > tr > * {
+	background-color: #000000 !important;
+}
+
+/* Ensure table cells in dark mode argstable have proper black background */
+.dark-theme .docblock-argstable tbody tr td,
+.dark-theme .docblock-argstable tbody tr th {
+	background-color: #000000 !important;
+}
+
+/* Nuclear option: Force any CSS module class in argstable to black background */
+.dark-theme .docblock-argstable [class^='css-'],
+.dark-theme .docblock-argstable [class*=' css-'],
+.dark-theme .docblock-argstable table [class^='css-'],
+.dark-theme .docblock-argstable table [class*=' css-'] {
+	background-color: #000000 !important;
+}
+
+/* Extra specificity for stubborn CSS module classes */
+.dark-theme .docblock-argstable.docblock-argstable [class^='css-'],
+.dark-theme .docblock-argstable.docblock-argstable [class*=' css-'],
+.dark-theme .docblock-argstable tbody > tr > td[class^='css-'],
+.dark-theme .docblock-argstable tbody > tr > td[class*=' css-'] {
+	background-color: #000000 !important;
 }
 
 /* Custom scrollbar styling */
@@ -370,10 +407,10 @@ body,
 	background: #64748b;
 }
 
-/* FINAL OVERRIDE: Force all code elements in dark mode to use proper styling */
-html.dark-theme code,
-body.dark-theme code,
-.dark-theme * code {
+.dark-theme .sbdocs code:not(.docs-story code),
+.dark-theme #storybook-docs code:not(.docs-story code),
+.dark-theme .docblock-argstable code:not(.docs-story code),
+.dark-theme .sb-unstyled code:not(.docs-story code) {
 	background-color: #2d3239 !important;
 	color: #6de0f7 !important;
 	border-radius: 4px !important;
@@ -381,10 +418,10 @@ body.dark-theme code,
 	font-weight: 400 !important;
 }
 
-/* Exception: Don't override actual Code component styling */
-html.dark-theme [class*='code_'] code,
-body.dark-theme [class*='code_'] code,
-.dark-theme [class*='code_'] code {
+/* Exception: Don't override actual Code component styling or story content */
+.dark-theme [class*='code_'] code,
+.dark-theme .docs-story code,
+.dark-theme [data-docs-story] code {
 	background-color: unset !important;
 	color: unset !important;
 	border-radius: unset !important;
@@ -405,4 +442,16 @@ body.dark-theme [class*='code_'] code,
 .tree-node:hover,
 [role='treeitem']:hover {
 	background-color: rgba(84, 90, 98, 0.1) !important;
+}
+
+/* Sidebar text color in dark mode */
+.dark-theme .sidebar-item,
+.dark-theme [data-nodetype],
+.dark-theme .tree-node,
+.dark-theme [role='treeitem'],
+.dark-theme .sidebar-item span,
+.dark-theme [data-nodetype] span,
+.dark-theme .tree-node span,
+.dark-theme [role='treeitem'] span {
+	color: white !important;
 }

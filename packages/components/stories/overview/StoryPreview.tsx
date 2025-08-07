@@ -1,5 +1,14 @@
 // Universal component to render any story at smaller scale for overview
-export const StoryPreview = ({ story, scale = 0.8 }: { story: any; scale?: number }) => {
+import type { ReactNode } from 'react';
+
+interface StoryType {
+	render?: (args?: Record<string, unknown>) => ReactNode;
+	args?: Record<string, unknown> & {
+		children?: ReactNode;
+	};
+}
+
+export const StoryPreview = ({ story, scale = 1 }: { story: StoryType; scale?: number }) => {
 	// Handle different story structures:
 	// 1. Stories with custom render function (like Button.stories)
 	// 2. Stories with args that need to be passed to the component (like DatePicker)

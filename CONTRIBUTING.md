@@ -168,6 +168,18 @@ Figma Code Connect is a tool to connect LaunchPad code with LaunchPad Figma Desi
 
 Using Figma connect requires generating an access Token in LaunchDarkly Figma. You can learn more about code connect [here](https://www.figma.com/code-connect-docs/).
 
+Test Code Connect Build locally:
+
+```
+npx figma connect publish --dry-run
+```
+
+Publish all changes to Figma Dev Mode:
+
+```
+npx figma connect publish
+```
+
 ### Running Tests
 
 #### Unit Tests
