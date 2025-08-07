@@ -1,6 +1,8 @@
 import figma from '@figma/code-connect';
 
 import { Alert } from '../src/Alert';
+import { Heading } from '../src/Heading';
+import { Text } from '../src/Text';
 
 // Alert with header (when status and variant are undefined/default)
 figma.connect(
@@ -14,8 +16,8 @@ figma.connect(
 		},
 		example: (props) => (
 			<Alert isDismissable={props.isDismissable} onDismiss={() => {}}>
-				<h3>{props.headerText}</h3>
-				<p>{props.messageText}</p>
+				<Heading>{props.headerText}</Heading>
+				<Text>{props.messageText}</Text>
 			</Alert>
 		),
 	},
@@ -44,7 +46,7 @@ figma.connect(
 				variant={props.variant}
 				onDismiss={() => {}}
 			>
-				<p>{props.messageText}</p>
+				<Text>{props.messageText}</Text>
 			</Alert>
 		),
 	},
