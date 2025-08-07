@@ -27,7 +27,7 @@ const TextFieldContext = createContext<ContextValue<TextFieldProps, HTMLDivEleme
  * https://react-spectrum.adobe.com/react-aria/TextField.html
  */
 const TextField = ({ ref, ...props }: TextFieldProps) => {
-	[props, ref] = useLPContextProps(props, ref, TextFieldContext);
+	[props, ref] = useLPContextProps(props, ref, TextFieldContext, 'TextField');
 	return (
 		<AriaTextField
 			{...props}

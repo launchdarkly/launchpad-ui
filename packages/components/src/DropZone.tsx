@@ -22,7 +22,7 @@ const DropZoneContext = createContext<ContextValue<DropZoneProps, HTMLDivElement
  * https://react-spectrum.adobe.com/react-aria/DropZone.html
  */
 const DropZone = ({ ref, ...props }: DropZoneProps) => {
-	[props, ref] = useLPContextProps(props, ref, DropZoneContext);
+	[props, ref] = useLPContextProps(props, ref, DropZoneContext, 'DropZone');
 	return (
 		<AriaDropZone
 			{...props}

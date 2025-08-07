@@ -64,6 +64,7 @@ export type {
 	TableRowProps,
 } from '@launchpad-ui/table';
 export type { TooltipProps } from '@launchpad-ui/tooltip';
+export type { AttributionDataAttributes } from './utils/attribution';
 
 // plop end type exports
 
@@ -120,4 +121,6 @@ export {
 	TableRow,
 } from '@launchpad-ui/table';
 export { Tooltip, TooltipBase } from '@launchpad-ui/tooltip';
+
+export { addLaunchPadAttribution } from './utils';
 // plop end module exports

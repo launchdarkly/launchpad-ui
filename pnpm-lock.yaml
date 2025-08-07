@@ -214,6 +214,9 @@ importers:
 
   packages/button:
     dependencies:
+      '@launchpad-ui/core':
+        specifier: workspace:~
+        version: link:../core
       '@launchpad-ui/icons':
         specifier: workspace:~
         version: link:../icons
@@ -239,6 +242,9 @@ importers:
       '@internationalized/date':
         specifier: 3.8.2
         version: 3.8.2
+      '@launchpad-ui/core':
+        specifier: workspace:~
+        version: link:../core
       '@launchpad-ui/icons':
         specifier: workspace:~
         version: link:../icons

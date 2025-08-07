@@ -23,7 +23,7 @@ const ToggleButtonContext = createContext<ContextValue<ToggleButtonProps, HTMLBu
  * https://react-spectrum.adobe.com/react-aria/ToggleButton.html
  */
 const ToggleButton = ({ ref, ...props }: ToggleButtonProps) => {
-	[props, ref] = useLPContextProps(props, ref, ToggleButtonContext);
+	[props, ref] = useLPContextProps(props, ref, ToggleButtonContext, 'ToggleButton');
 	const { size = 'medium', variant = 'default' } = props;
 
 	return (

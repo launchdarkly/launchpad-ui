@@ -41,7 +41,7 @@ const RadioIcon = ({ isSelected }: Partial<RadioRenderProps>) => (
  * https://react-spectrum.adobe.com/react-aria/RadioGroup.html
  */
 const Radio = ({ ref, ...props }: RadioProps) => {
-	[props, ref] = useLPContextProps(props, ref, RadioContext);
+	[props, ref] = useLPContextProps(props, ref, RadioContext, 'Radio');
 	return (
 		<AriaRadio
 			{...props}

@@ -24,7 +24,7 @@ const TextAreaContext = createContext<ContextValue<TextAreaProps, HTMLTextAreaEl
  * https://react-spectrum.adobe.com/react-aria/TextField.html
  */
 const TextArea = ({ ref, ...props }: TextAreaProps) => {
-	[props, ref] = useLPContextProps(props, ref, TextAreaContext);
+	[props, ref] = useLPContextProps(props, ref, TextAreaContext, 'TextArea');
 	const { variant = 'default' } = props;
 
 	return (

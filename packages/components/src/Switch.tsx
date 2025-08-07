@@ -22,7 +22,7 @@ const SwitchContext = createContext<ContextValue<SwitchProps, HTMLLabelElement>>
  * https://react-spectrum.adobe.com/react-aria/Switch.html
  */
 const Switch = ({ ref, ...props }: SwitchProps) => {
-	[props, ref] = useLPContextProps(props, ref, SwitchContext);
+	[props, ref] = useLPContextProps(props, ref, SwitchContext, 'Switch');
 	return (
 		<AriaSwitch
 			{...props}
