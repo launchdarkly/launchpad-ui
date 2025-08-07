@@ -1,0 +1,54 @@
+{
+	"name": "@launchpad-ui/contrail",
+	"version": "0.1.0",
+	"status": "beta",
+	"publishConfig": {
+		"access": "public"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/launchdarkly/launchpad-ui.git",
+		"directory": "packages/contrail"
+	},
+	"description": "Developer tool for visually identifying LaunchPad components on the page and accessing their documentation.",
+	"license": "Apache-2.0",
+	"files": [
+		"dist"
+	],
+	"main": "dist/index.js",
+	"module": "dist/index.es.js",
+	"types": "dist/index.d.ts",
+	"sideEffects": [
+		"**/*.css"
+	],
+	"exports": {
+		".": {
+			"types": "./dist/index.d.ts",
+			"import": "./dist/index.es.js",
+			"require": "./dist/index.js"
+		},
+		"./package.json": "./package.json",
+		"./style.css": "./dist/style.css"
+	},
+	"source": "src/index.ts",
+	"scripts": {
+		"build": "npm run generate-metadata && vite build -c ../../vite.config.mts && tsc --project tsconfig.build.json",
+		"clean": "rm -rf dist",
+		"test": "vitest run --coverage",
+		"generate-metadata": "node scripts/generate-metadata.js"
+	},
+	"dependencies": {
+		"@launchpad-ui/components": "workspace:~",
+		"@launchpad-ui/core": "workspace:~",
+		"@launchpad-ui/icons": "workspace:~",
+		"@launchpad-ui/tokens": "workspace:~"
+	},
+	"peerDependencies": {
+		"react": "^19.0.0",
+		"react-dom": "^19.0.0"
+	},
+	"devDependencies": {
+		"react": "19.1.0",
+		"react-dom": "19.1.0"
+	}
+}

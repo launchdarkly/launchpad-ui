@@ -1,0 +1,149 @@
+/**
+ * Contrail component highlighting styles
+ */
+
+/* Main contrail container */
+.contrail {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	pointer-events: none;
+	z-index: 999999;
+}
+
+/* Component highlight overlay */
+.highlight {
+	position: absolute;
+	pointer-events: none;
+	border: 2px solid #3b82f6;
+	background: rgba(59, 130, 246, 0.1);
+	border-radius: 4px;
+	transition: all 0.15s ease-in-out;
+	box-shadow: 0 0 0 1px rgba(59, 130, 246, 0.2);
+}
+
+.highlight::before {
+	content: attr(data-component-name);
+	position: absolute;
+	top: -24px;
+	left: 0;
+	background: #3b82f6;
+	color: white;
+	padding: 2px 6px;
+	border-radius: 2px;
+	font-size: 11px;
+	font-family: ui-monospace, SFMono-Regular, 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono',
+		Consolas, 'Courier New', monospace;
+	font-weight: 500;
+	white-space: nowrap;
+	z-index: 1;
+}
+
+/* Hover state */
+.highlight:hover {
+	border-color: #1d4ed8;
+	background: rgba(29, 78, 216, 0.15);
+	box-shadow: 0 0 0 1px rgba(29, 78, 216, 0.3);
+}
+
+.highlight:hover::before {
+	background: #1d4ed8;
+}
+
+/* Info popover */
+.popover {
+	position: absolute;
+	background: white;
+	border: 1px solid #e5e7eb;
+	border-radius: 8px;
+	box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+	padding: 12px;
+	max-width: 280px;
+	z-index: 1000000;
+	pointer-events: auto;
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.popover-header {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	margin-bottom: 8px;
+}
+
+.popover-title {
+	font-weight: 600;
+	font-size: 14px;
+	color: #111827;
+	font-family: ui-monospace, SFMono-Regular, 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono',
+		Consolas, 'Courier New', monospace;
+}
+
+.popover-package {
+	font-size: 12px;
+	color: #6b7280;
+	background: #f3f4f6;
+	padding: 1px 4px;
+	border-radius: 3px;
+}
+
+.popover-description {
+	font-size: 13px;
+	color: #374151;
+	line-height: 1.4;
+	margin-bottom: 8px;
+}
+
+.popover-links {
+	display: flex;
+	gap: 8px;
+}
+
+.popover-link {
+	font-size: 12px;
+	color: #3b82f6;
+	text-decoration: none;
+	padding: 4px 8px;
+	border: 1px solid #e5e7eb;
+	border-radius: 4px;
+	transition: all 0.15s;
+}
+
+.popover-link:hover {
+	background: #f8fafc;
+	border-color: #3b82f6;
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+	.popover {
+		background: #1f2937;
+		border-color: #374151;
+		box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+	}
+
+	.popover-title {
+		color: #f9fafb;
+	}
+
+	.popover-package {
+		color: #9ca3af;
+		background: #374151;
+	}
+
+	.popover-description {
+		color: #d1d5db;
+	}
+
+	.popover-link {
+		color: #60a5fa;
+		border-color: #374151;
+	}
+
+	.popover-link:hover {
+		background: #374151;
+		border-color: #60a5fa;
+	}
+}
