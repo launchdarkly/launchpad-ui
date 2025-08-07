@@ -64,6 +64,7 @@ const parameters: Parameters = {
 			method: 'alphabetical',
 			order: [
 				'Getting started',
+				'Component Overview',
 				'Contributing',
 				'Guidelines',
 				'Tokens',
@@ -188,6 +189,7 @@ const decorators: DecoratorFunction<ReactRenderer>[] = [
 			dark: 'dark',
 		},
 		defaultTheme: 'default',
+		attributeName: 'data-theme',
 	}),
 ];
 

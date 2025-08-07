@@ -4,7 +4,7 @@
 .sidebar-header img,
 [data-item-id='brand'] img,
 .sidebar-brand img {
-	width: 80% !important;
+	width: 90% !important;
 	height: auto !important;
 	max-width: none !important;
 }
@@ -152,7 +152,7 @@
 }
 
 /* Text content in dark theme using LaunchPad design tokens */
-.dark-theme .sbdocs p,
+.dark-theme :not(.docs-story) .sbdocs p,
 .dark-theme :not(.docs-story) .sbdocs h1,
 .dark-theme :not(.docs-story) .sbdocs h2,
 .dark-theme :not(.docs-story) .sbdocs h3,
@@ -454,4 +454,10 @@ body,
 .dark-theme .tree-node span,
 .dark-theme [role='treeitem'] span {
 	color: white !important;
+}
+
+/* Remove border-right from side panel */
+div[style*='grid-area: sidebar'],
+div[style*='grid-area:sidebar'] {
+	border-right: none !important;
 }
