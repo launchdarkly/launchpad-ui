@@ -26,6 +26,10 @@ $ yarn add @launchpad-ui/components @launchpad-ui/icons @launchpad-ui/tokens
 
 [![version](https://img.shields.io/visual-studio-marketplace/v/LaunchDarklyOfficial.launchpad-design-system?label=LaunchPad%20VS%20Code%20extension)](https://marketplace.visualstudio.com/items?itemName=LaunchDarklyOfficial.launchpad-design-system)
 
+## AI Code Generation
+
+For consistent, high-quality AI-generated code that follows LaunchPad standards, see our [AI Prompt Header guide](AI_PROMPT_HEADER.md). This ensures AI assistants use our design system correctly and follow established patterns.
+
 ## Contributing
 
 We welcome contributions! See the [contributing docs](https://github.com/launchdarkly/launchpad-ui/blob/main/CONTRIBUTING.md) to learn how to get started.
