@@ -4,8 +4,7 @@ import { create } from 'storybook/theming';
 const baseTheme = {
 	brandTitle: 'LaunchPad UI',
 	brandUrl: 'https://github.com/launchdarkly/launchpad-ui',
-	brandImage:
-		'https://focuslab-cms.imgix.net/shared/ld_logolockup.png?auto=format&crop=focalpoint&fp-debug=false&fp-x=0.5&fp-y=0.5&ixlib=php-3.1.0&q=100&width=1216&s=74d6e3d96ccec2db5e6394a3c2e9bcef',
+	brandImage: './launchpad_logo.svg',
 	brandTarget: '_self',
 
 	// Typography

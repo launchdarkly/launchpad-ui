@@ -1,6 +1,6 @@
 # Contributing to LaunchPad UI
 
-:+1::tada: First off, thanks for taking the time to read our contribution docs! :tada::+1:
+First off, thanks for taking the time to read our contribution docs!
 
 The following is a set of guidelines for contributing to LaunchPad and its packages, which are hosted in the [LaunchDarkly Organization](https://github.com/launchdarkly) on GitHub. These are mostly guidelines, not rules. Use your best judgment, and feel free to propose changes to this document in a pull request.
 

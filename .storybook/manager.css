@@ -1,5 +1,14 @@
 /* Additional custom styles for Storybook manager UI */
 
+/* Brand logo styling */
+.sidebar-header img,
+[data-item-id='brand'] img,
+.sidebar-brand img {
+	width: 80% !important;
+	height: auto !important;
+	max-width: none !important;
+}
+
 /* Light theme additional styles */
 .light-theme {
 	/* Custom CSS variables using LaunchPad design tokens */
@@ -163,7 +172,12 @@
 .sb-main-padded .sbdocs code,
 .sb-main-padded .docs-story code:not([class*='code_']),
 .docblock-argstable-description code,
-#storybook-docs code:not([class*='code_']) {
+#storybook-docs code:not([class*='code_']),
+/* Additional specific selectors for argstable code */
+	.docblock-argstable td
+	code,
+.docblock-argstable-body code,
+.docblock-argstable-row code {
 	background-color: #eceff2 !important; /* gray.50 - matching --lp-color-bg-ui-tertiary light */
 	color: #238ca3 !important; /* brand.cyan.dark - matching --lp-color-text-code-string light */
 	border-radius: 4px !important;
@@ -175,7 +189,28 @@
 .dark-theme .sb-main-padded .sbdocs code,
 .dark-theme .sb-main-padded .docs-story code:not([class*='code_']),
 .dark-theme .docblock-argstable-description code,
-.dark-theme #storybook-docs code:not([class*='code_']) {
+.dark-theme #storybook-docs code:not([class*='code_']),
+/* Additional specific selectors for argstable code in dark mode */
+	.dark-theme .docblock-argstable
+	td
+	code,
+.dark-theme .docblock-argstable-body code,
+.dark-theme .docblock-argstable-row code,
+/* More comprehensive selectors for all possible argstable code elements */
+	.dark-theme .docblock-argstable
+	code,
+.dark-theme table code,
+.dark-theme tbody code,
+.dark-theme tr code,
+.dark-theme td code,
+html.dark-theme .docblock-argstable code,
+html.dark-theme table code,
+[data-theme='dark'] .docblock-argstable code,
+[data-theme='dark'] table code,
+/* Force override with highest specificity */
+	.dark-theme div[class*='docblock']
+	code,
+.dark-theme div[class*='argstable'] code {
 	background-color: #2d3239 !important; /* gray.800 - matching --lp-color-bg-ui-tertiary dark */
 	color: #6de0f7 !important; /* brand.cyan.light - matching --lp-color-text-code-string dark */
 	border-radius: 4px !important;
@@ -210,15 +245,104 @@ body,
 	border-color: rgba(255, 255, 255, 0.1);
 }
 
+/* All non-docs icon styling - folders and other items */
+.light-theme [data-ref-id*='--'] svg,
+.dark-theme [data-ref-id*='--'] svg,
+.light-theme .tree-node[data-nodetype='group'] svg,
+.dark-theme .tree-node[data-nodetype='group'] svg,
+.light-theme [data-item-id*='--'] svg,
+.dark-theme [data-item-id*='--'] svg,
+/* Target folder icons specifically */
+	.light-theme .sidebar-item
+	svg[data-icon='folder'],
+.dark-theme .sidebar-item svg[data-icon='folder'],
+.light-theme .tree-folder-icon svg,
+.dark-theme .tree-folder-icon svg,
+/* Additional selectors for various folder icon implementations */
+	.light-theme [data-nodetype='group']
+	svg,
+.dark-theme [data-nodetype='group'] svg,
+.light-theme [data-parent-id] svg,
+.dark-theme [data-parent-id] svg,
+.light-theme .sidebar-subheading svg,
+.dark-theme .sidebar-subheading svg {
+	color: #405bff !important;
+	fill: #405bff !important;
+}
+
+/* Docs icon styling */
+.light-theme [data-nodetype='component'] svg,
+.dark-theme [data-nodetype='component'] svg,
+.light-theme [data-ref-id*='docs'] svg,
+.dark-theme [data-ref-id*='docs'] svg,
+.light-theme [data-item-id*='docs'] svg,
+.dark-theme [data-item-id*='docs'] svg,
+/* Target docs icons specifically */
+	.light-theme .sidebar-item
+	svg[data-icon='document'],
+.dark-theme .sidebar-item svg[data-icon='document'],
+.light-theme .sidebar-item svg[data-icon='doc'],
+.dark-theme .sidebar-item svg[data-icon='doc'],
+.light-theme .tree-leaf-icon svg,
+.dark-theme .tree-leaf-icon svg,
+/* Additional selectors for docs icon implementations */
+	.light-theme [data-nodetype='story']
+	svg,
+.dark-theme [data-nodetype='story'] svg {
+	color: #3dd6f5 !important;
+	fill: #3dd6f5 !important;
+}
+
 /* Ensure proper contrast for interactive elements */
-.light-theme [data-selected='true'] {
-	background-color: #037dd6 !important;
+.light-theme [data-selected='true'],
+.dark-theme [data-selected='true'],
+/* Additional selectors for sidepanel items */
+.light-theme [aria-selected='true'],
+.dark-theme [aria-selected='true'],
+.light-theme .sidebar-item[data-selected='true'],
+.dark-theme .sidebar-item[data-selected='true'],
+.light-theme .tree-node[data-selected='true'],
+.dark-theme .tree-node[data-selected='true'] {
+	background-color: #425eff !important;
 	color: white !important;
 }
 
-.dark-theme [data-selected='true'] {
-	background-color: #4f95ff !important;
+/* Selected item icons should always be white */
+.light-theme [data-selected='true'] svg,
+.dark-theme [data-selected='true'] svg,
+.light-theme [aria-selected='true'] svg,
+.dark-theme [aria-selected='true'] svg,
+.light-theme .sidebar-item[data-selected='true'] svg,
+.dark-theme .sidebar-item[data-selected='true'] svg,
+.light-theme .tree-node[data-selected='true'] svg,
+.dark-theme .tree-node[data-selected='true'] svg {
 	color: white !important;
+	fill: white !important;
+}
+
+/* Documentation links styling */
+.light-theme .sbdocs a,
+.light-theme .docs-story a,
+.light-theme #storybook-docs a,
+.light-theme .docblock-argstable a,
+.dark-theme .sbdocs a,
+.dark-theme .docs-story a,
+.dark-theme #storybook-docs a,
+.dark-theme .docblock-argstable a {
+	color: #7084ff !important;
+	text-decoration: underline;
+}
+
+.light-theme .sbdocs a:hover,
+.light-theme .docs-story a:hover,
+.light-theme #storybook-docs a:hover,
+.light-theme .docblock-argstable a:hover,
+.dark-theme .sbdocs a:hover,
+.dark-theme .docs-story a:hover,
+.dark-theme #storybook-docs a:hover,
+.dark-theme .docblock-argstable a:hover {
+	color: #2536a6 !important;
+	text-decoration: underline;
 }
 
 /* Custom scrollbar styling */
@@ -244,4 +368,41 @@ body,
 
 .dark-theme ::-webkit-scrollbar-thumb:hover {
 	background: #64748b;
+}
+
+/* FINAL OVERRIDE: Force all code elements in dark mode to use proper styling */
+html.dark-theme code,
+body.dark-theme code,
+.dark-theme * code {
+	background-color: #2d3239 !important;
+	color: #6de0f7 !important;
+	border-radius: 4px !important;
+	padding: 4px 8px !important;
+	font-weight: 400 !important;
+}
+
+/* Exception: Don't override actual Code component styling */
+html.dark-theme [class*='code_'] code,
+body.dark-theme [class*='code_'] code,
+.dark-theme [class*='code_'] code {
+	background-color: unset !important;
+	color: unset !important;
+	border-radius: unset !important;
+	padding: unset !important;
+	font-weight: unset !important;
+}
+
+/* Ensure sidebar background is correct in dark mode */
+.dark-theme .sidebar-container,
+.dark-theme [data-side='left'],
+.dark-theme .os-host-flexbox {
+	background-color: #23252a !important;
+}
+
+/* Sidebar item hover color */
+.sidebar-item:hover,
+[data-nodetype]:hover,
+.tree-node:hover,
+[role='treeitem']:hover {
+	background-color: rgba(84, 90, 98, 0.1) !important;
 }
