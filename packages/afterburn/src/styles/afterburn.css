@@ -1,0 +1,355 @@
+/**
+ * LaunchPad Afterburn - CSS-Only Highlighting System
+ * Lightweight, performant component highlighting with perfect positioning
+ */
+
+/* Main activation toggle - no overlay container needed */
+body.afterburn-active [data-launchpad] {
+	outline: 2px solid #3b82f6 !important;
+	outline-offset: 2px;
+	position: relative;
+	transition: outline 0.15s ease-in-out;
+}
+
+/* Hide Text and Heading components by default to reduce noise */
+body.afterburn-active [data-launchpad='Text'],
+body.afterburn-active [data-launchpad='Heading'] {
+	outline: none !important;
+}
+
+body.afterburn-active [data-launchpad='Text']::before,
+body.afterburn-active [data-launchpad='Heading']::before {
+	display: none !important;
+}
+
+/* Show Text and Heading components when explicitly enabled */
+body.afterburn-active.afterburn-show-text [data-launchpad='Text'],
+body.afterburn-active.afterburn-show-text [data-launchpad='Heading'] {
+	outline: 2px solid #3b82f6 !important;
+	outline-offset: 2px;
+	position: relative;
+	transition: outline 0.15s ease-in-out;
+}
+
+body.afterburn-active.afterburn-show-text [data-launchpad='Text']::before,
+body.afterburn-active.afterburn-show-text [data-launchpad='Heading']::before {
+	display: block !important;
+}
+
+/* Component name labels using pseudo-elements */
+body.afterburn-active [data-launchpad]::before {
+	content: attr(data-launchpad);
+	position: absolute;
+	top: -24px;
+	left: 0;
+	background: #3b82f6;
+	color: white;
+	padding: 2px 6px;
+	border-radius: 2px;
+	font-size: 11px;
+	font-family: ui-monospace, SFMono-Regular, 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono',
+		Consolas, 'Courier New', monospace;
+	font-weight: 500;
+	white-space: nowrap;
+	z-index: 999999;
+	pointer-events: none;
+	line-height: 1.2;
+}
+
+/* Enhanced hover state */
+body.afterburn-active [data-launchpad]:hover {
+	outline-color: #1d4ed8 !important;
+	outline-width: 3px !important;
+}
+
+body.afterburn-active [data-launchpad]:hover::before {
+	background: #1d4ed8;
+	font-weight: 600;
+}
+
+/* Handle edge cases where labels might be clipped */
+body.afterburn-active [data-launchpad]::before {
+	/* Ensure labels stay visible at viewport edges */
+	max-width: calc(100vw - 20px);
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+/* Tooltip popup styles */
+.afterburn-tooltip {
+	position: fixed;
+	background: white;
+	border: 1px solid #e5e7eb;
+	border-radius: 8px;
+	box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+	padding: 12px;
+	max-width: 280px;
+	z-index: 1000000;
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+	font-size: 13px;
+	line-height: 1.4;
+	pointer-events: auto;
+}
+
+.afterburn-tooltip-header {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	margin-bottom: 8px;
+}
+
+.afterburn-tooltip-title {
+	font-weight: 600;
+	font-size: 14px;
+	color: #111827;
+	font-family: ui-monospace, SFMono-Regular, 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono',
+		Consolas, 'Courier New', monospace;
+}
+
+.afterburn-tooltip-package {
+	font-size: 12px;
+	color: #6b7280;
+	background: #f3f4f6;
+	padding: 1px 4px;
+	border-radius: 3px;
+}
+
+.afterburn-tooltip-description {
+	color: #374151;
+	margin-bottom: 8px;
+}
+
+.afterburn-tooltip-links {
+	display: flex;
+	gap: 8px;
+}
+
+.afterburn-tooltip-link {
+	font-size: 12px;
+	color: #3b82f6;
+	text-decoration: none;
+	padding: 4px 8px;
+	border: 1px solid #e5e7eb;
+	border-radius: 4px;
+	transition: all 0.15s;
+}
+
+.afterburn-tooltip-link:hover {
+	background: #f8fafc;
+	border-color: #3b82f6;
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+	.afterburn-tooltip {
+		background: #1f2937;
+		border-color: #374151;
+		box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+	}
+
+	.afterburn-tooltip-title {
+		color: #f9fafb;
+	}
+
+	.afterburn-tooltip-package {
+		color: #9ca3af;
+		background: #374151;
+	}
+
+	.afterburn-tooltip-description {
+		color: #d1d5db;
+	}
+
+	.afterburn-tooltip-link {
+		color: #60a5fa;
+		border-color: #374151;
+	}
+
+	.afterburn-tooltip-link:hover {
+		background: #374151;
+		border-color: #60a5fa;
+	}
+}
+
+/* Settings panel styles */
+.afterburn-settings {
+	position: fixed;
+	background: white;
+	border: 1px solid #e5e7eb;
+	border-radius: 8px;
+	box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+	padding: 16px;
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+	font-size: 13px;
+	z-index: 1000001;
+	min-width: 220px;
+}
+
+.afterburn-settings-header {
+	font-weight: 600;
+	margin-bottom: 12px;
+	color: #111827;
+	font-size: 14px;
+}
+
+.afterburn-settings-option {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 8px 0;
+}
+
+.afterburn-settings-option:last-child {
+	padding-bottom: 0;
+}
+
+.afterburn-settings-label {
+	color: #374151;
+}
+
+.afterburn-toggle {
+	width: 36px;
+	height: 20px;
+	background: #d1d5db;
+	border-radius: 10px;
+	position: relative;
+	cursor: pointer;
+	transition: background-color 0.2s;
+}
+
+.afterburn-toggle.active {
+	background: #3b82f6;
+}
+
+.afterburn-toggle::after {
+	content: '';
+	position: absolute;
+	width: 16px;
+	height: 16px;
+	background: white;
+	border-radius: 50%;
+	top: 2px;
+	left: 2px;
+	transition: transform 0.2s;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.afterburn-toggle.active::after {
+	transform: translateX(16px);
+}
+
+/* Settings trigger button */
+.afterburn-settings-trigger {
+	position: fixed;
+	width: 32px;
+	height: 32px;
+	background: #3b82f6;
+	border: none;
+	border-radius: 6px;
+	color: white;
+	font-size: 14px;
+	cursor: grab;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+	z-index: 1000000;
+	transition: all 0.2s;
+	user-select: none;
+}
+
+/* Position variants */
+.afterburn-settings-trigger--top-right {
+	top: 20px;
+	right: 20px;
+}
+
+.afterburn-settings-trigger--top-left {
+	top: 20px;
+	left: 20px;
+}
+
+.afterburn-settings-trigger--bottom-right {
+	bottom: 20px;
+	right: 20px;
+}
+
+.afterburn-settings-trigger--bottom-left {
+	bottom: 20px;
+	left: 20px;
+}
+
+.afterburn-settings-trigger:hover {
+	background: #1d4ed8;
+	transform: translateY(-1px);
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.afterburn-settings-trigger:active {
+	cursor: grabbing;
+}
+
+/* Dragging state styles applied via JavaScript */
+.afterburn-settings-trigger.dragging {
+	opacity: 0.8;
+	transform: scale(1.1);
+	cursor: grabbing;
+	z-index: 1000001;
+}
+
+/* Dark mode support for settings */
+@media (prefers-color-scheme: dark) {
+	.afterburn-settings {
+		background: #1f2937;
+		border-color: #374151;
+		box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+	}
+
+	.afterburn-settings-header {
+		color: #f9fafb;
+	}
+
+	.afterburn-settings-label {
+		color: #d1d5db;
+	}
+
+	.afterburn-toggle {
+		background: #4b5563;
+	}
+
+	.afterburn-settings-links {
+		border-top-color: #374151;
+	}
+
+	.afterburn-settings-link {
+		color: #d1d5db;
+	}
+
+	.afterburn-settings-link:hover {
+		color: #60a5fa;
+	}
+}
+
+/* Settings links section */
+.afterburn-settings-links {
+	margin-top: 12px;
+	padding-top: 12px;
+	border-top: 1px solid #e5e7eb;
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+}
+
+.afterburn-settings-link {
+	color: #6b7280;
+	text-decoration: none;
+	font-size: 12px;
+	display: flex;
+	align-items: center;
+	gap: 6px;
+	transition: color 0.2s;
+}
+
+.afterburn-settings-link:hover {
+	color: #3b82f6;
+}
