@@ -11,7 +11,7 @@ figma.connect(
 	{
 		props: {
 			label: figma.boolean('Label?', {
-				true: figma.children(['Label']),
+				true: 'Select an option',
 				false: undefined,
 			}),
 		},

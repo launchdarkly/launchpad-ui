@@ -14,7 +14,9 @@ figma.connect(
 	LinkButton,
 	'https://www.figma.com/design/98HKKXL2dTle29ikJ3tzk7/%F0%9F%9A%80-LaunchPad?node-id=1%3A35126',
 	{
-		props: {},
-		example: (props) => <LinkButton {...props} />,
+		props: {
+			children: figma.children(['Button']),
+		},
+		example: ({ children }) => <LinkButton>{children}</LinkButton>,
 	},
 );
