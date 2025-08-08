@@ -1,15 +1,14 @@
 import type { LaunchPadContrailProps } from './types';
 
-import { useCallback, useEffect, useState } from 'react';
+import { useEffect, useMemo, useRef } from 'react';
 
-import { ComponentHighlighter } from './ComponentHighlighter';
+import { ContrailController } from './ContrailController';
 import { componentMetadata } from './metadata.generated';
-import { createShortcutHandler } from './utils/keyboard';
 
 import './styles/contrail.css';
 
 const DEFAULT_CONFIG: Required<Omit<LaunchPadContrailProps, 'metadata' | 'children'>> = {
-	shortcut: 'cmd+l',
+	shortcut: 'cmd+shift+l',
 	docsBaseUrl: 'https://launchpad.launchdarkly.com',
 	storybookUrl: '',
 	enabled: true,
@@ -19,43 +18,36 @@ const DEFAULT_CONFIG: Required<Omit<LaunchPadContrailProps, 'metadata' | 'childr
  * LaunchPad Contrail developer tool
  *
  * Provides keyboard shortcut-based component highlighting and documentation access
- * for LaunchPad components on the page.
+ * for LaunchPad components on the page. Uses CSS-only highlighting for perfect
+ * positioning and minimal vanilla JS for rich tooltips.
  */
 export function LaunchPadContrail(props: LaunchPadContrailProps) {
 	const config = { ...DEFAULT_CONFIG, ...props };
-	const metadata = { ...componentMetadata, ...config.metadata };
-
-	const [isActive, setIsActive] = useState(false);
-
-	const toggleActive = useCallback(() => {
-		setIsActive((prev) => !prev);
-	}, []);
+	const metadata = useMemo(() => ({ ...componentMetadata, ...config.metadata }), [config.metadata]);
+	const controllerRef = useRef<ContrailController | null>(null);
 
 	useEffect(() => {
+		// Don't initialize if disabled
 		if (!config.enabled) {
 			return;
 		}
 
-		const handleKeyDown = createShortcutHandler(config.shortcut, toggleActive);
+		// Create and initialize controller
+		controllerRef.current = new ContrailController({
+			shortcut: config.shortcut,
+			docsBaseUrl: config.docsBaseUrl,
+			storybookUrl: config.storybookUrl,
+			metadata,
+			enabled: config.enabled,
+		});
 
-		document.addEventListener('keydown', handleKeyDown);
-
+		// Cleanup on unmount
 		return () => {
-			document.removeEventListener('keydown', handleKeyDown);
+			controllerRef.current?.destroy();
+			controllerRef.current = null;
 		};
-	}, [config.enabled, config.shortcut, toggleActive]);
+	}, [config.enabled, config.shortcut, config.docsBaseUrl, config.storybookUrl, metadata]);
 
-	// Don't render if disabled
-	if (!config.enabled) {
-		return null;
-	}
-
-	return (
-		<ComponentHighlighter
-			active={isActive}
-			metadata={metadata}
-			docsBaseUrl={config.docsBaseUrl}
-			storybookUrl={config.storybookUrl}
-		/>
-	);
+	// No React rendering needed - everything handled by CSS + vanilla JS
+	return null;
 }

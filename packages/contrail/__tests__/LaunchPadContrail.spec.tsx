@@ -1,4 +1,4 @@
-import { fireEvent, render, screen, waitFor } from '@testing-library/react';
+import { fireEvent, render, waitFor } from '@testing-library/react';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 
 import { LaunchPadContrail } from '../src/LaunchPadContrail';
@@ -21,15 +21,11 @@ vi.mock('../src/metadata.generated', () => ({
 	},
 }));
 
-// Mock the ComponentHighlighter to avoid complex DOM manipulation in tests
-vi.mock('../src/ComponentHighlighter', () => ({
-	ComponentHighlighter: vi.fn(({ active }) =>
-		active ? <div data-testid="component-highlighter">Active Highlighter</div> : null,
-	),
-}));
-
-describe('LaunchPadContrail', () => {
+describe('LaunchPadContrail (CSS-only)', () => {
 	beforeEach(() => {
+		// Clear body classes
+		document.body.className = '';
+
 		// Add some test components to the DOM
 		document.body.innerHTML = `
       <div data-launchpad="Button">Test Button</div>
@@ -42,83 +38,81 @@ describe('LaunchPadContrail', () => {
 
 	afterEach(() => {
 		document.body.innerHTML = '';
+		document.body.className = '';
 	});
 
 	it('renders when enabled', () => {
 		render(<LaunchPadContrail enabled={true} />);
-		// Component should render but not be active initially (no highlighter visible)
-		expect(screen.queryByTestId('component-highlighter')).not.toBeInTheDocument();
+		// Component should render but body should not have contrail-active class initially
+		expect(document.body.classList.contains('contrail-active')).toBe(false);
 	});
 
-	it('does not render when disabled', () => {
+	it('does not initialize when disabled', () => {
 		render(<LaunchPadContrail enabled={false} />);
-		// Should not render anything
-		expect(screen.queryByTestId('component-highlighter')).not.toBeInTheDocument();
+		// Should not affect body classes or add event listeners
+		expect(document.body.classList.contains('contrail-active')).toBe(false);
 	});
 
-	it('activates on keyboard shortcut', async () => {
-		render(<LaunchPadContrail enabled={true} shortcut="cmd+l" />);
+	it('activates highlighting on keyboard shortcut', async () => {
+		render(<LaunchPadContrail enabled={true} shortcut="cmd+shift+l" />);
 
 		// Initially not active
-		expect(screen.queryByTestId('component-highlighter')).not.toBeInTheDocument();
+		expect(document.body.classList.contains('contrail-active')).toBe(false);
 
-		// Simulate Cmd+L keypress
+		// Simulate Cmd+Shift+L keypress
 		fireEvent.keyDown(document, {
 			key: 'l',
 			metaKey: true,
 			ctrlKey: false,
-			shiftKey: false,
+			shiftKey: true,
 			altKey: false,
 		});
 
-		// Should show component highlighter
+		// Should add contrail-active class to body
 		await waitFor(() => {
-			const highlighter = document.querySelector('[data-testid="component-highlighter"]');
-			expect(highlighter).toBeTruthy();
+			expect(document.body.classList.contains('contrail-active')).toBe(true);
 		});
 	});
 
-	it('toggles on repeated keyboard shortcut', async () => {
-		render(<LaunchPadContrail enabled={true} shortcut="cmd+l" />);
+	it('toggles highlighting on repeated keyboard shortcut', async () => {
+		render(<LaunchPadContrail enabled={true} shortcut="cmd+shift+l" />);
 
 		const keyEvent = {
 			key: 'l',
 			metaKey: true,
 			ctrlKey: false,
-			shiftKey: false,
+			shiftKey: true,
 			altKey: false,
 		};
 
 		// Initially not active
-		expect(screen.queryByTestId('component-highlighter')).not.toBeInTheDocument();
+		expect(document.body.classList.contains('contrail-active')).toBe(false);
 
 		// First press - activate
 		fireEvent.keyDown(document, keyEvent);
 		await waitFor(() => {
-			const highlighter = document.querySelector('[data-testid="component-highlighter"]');
-			expect(highlighter).toBeTruthy();
+			expect(document.body.classList.contains('contrail-active')).toBe(true);
 		});
 
 		// Second press - deactivate
 		fireEvent.keyDown(document, keyEvent);
 		await waitFor(() => {
-			const highlighter = document.querySelector('[data-testid="component-highlighter"]');
-			expect(highlighter).toBeNull();
+			expect(document.body.classList.contains('contrail-active')).toBe(false);
 		});
 	});
 
 	it('uses custom keyboard shortcut', async () => {
 		render(<LaunchPadContrail enabled={true} shortcut="ctrl+h" />);
 
-		// Cmd+L should not work
+		// Cmd+Shift+L should not work
 		fireEvent.keyDown(document, {
 			key: 'l',
 			metaKey: true,
 			ctrlKey: false,
-			shiftKey: false,
+			shiftKey: true,
 			altKey: false,
 		});
-		expect(screen.queryByTestId('component-highlighter')).not.toBeInTheDocument();
+		expect(document.body.classList.contains('contrail-active')).toBe(false);
 
 		// Ctrl+H should work
 		fireEvent.keyDown(document, {
@@ -128,9 +122,9 @@ describe('LaunchPadContrail', () => {
 			shiftKey: false,
 			altKey: false,
 		});
+
 		await waitFor(() => {
-			const highlighter = document.querySelector('[data-testid="component-highlighter"]');
-			expect(highlighter).toBeTruthy();
+			expect(document.body.classList.contains('contrail-active')).toBe(true);
 		});
 	});
 
@@ -144,8 +138,8 @@ describe('LaunchPadContrail', () => {
 
 		render(<LaunchPadContrail {...customConfig} />);
 
-		// Component should be rendered (even if not active)
-		expect(screen.queryByTestId('component-highlighter')).not.toBeInTheDocument();
+		// Initially not active
+		expect(document.body.classList.contains('contrail-active')).toBe(false);
 
 		// Activate with custom shortcut
 		fireEvent.keyDown(document, {
@@ -157,34 +151,66 @@ describe('LaunchPadContrail', () => {
 		});
 
 		await waitFor(() => {
-			const highlighter = document.querySelector('[data-testid="component-highlighter"]');
-			expect(highlighter).toBeTruthy();
+			expect(document.body.classList.contains('contrail-active')).toBe(true);
 		});
 	});
 
-	it('cleans up event listeners on unmount', () => {
-		const addEventListenerSpy = vi.spyOn(document, 'addEventListener');
-		const removeEventListenerSpy = vi.spyOn(document, 'removeEventListener');
-
+	it('cleans up on unmount', () => {
 		const { unmount } = render(<LaunchPadContrail enabled={true} />);
 
-		expect(addEventListenerSpy).toHaveBeenCalledWith('keydown', expect.any(Function));
+		// Activate highlighting
+		fireEvent.keyDown(document, {
+			key: 'l',
+			metaKey: true,
+			ctrlKey: false,
+			shiftKey: true,
+			altKey: false,
+		});
 
+		expect(document.body.classList.contains('contrail-active')).toBe(true);
+
+		// Unmount should clean up and remove the active class
 		unmount();
 
-		expect(removeEventListenerSpy).toHaveBeenCalledWith('keydown', expect.any(Function));
-
-		addEventListenerSpy.mockRestore();
-		removeEventListenerSpy.mockRestore();
+		// The class should be cleared by the cleanup
+		expect(document.body.classList.contains('contrail-active')).toBe(false);
 	});
 
-	it('does not add event listeners when disabled', () => {
+	it('does not initialize when disabled', () => {
 		const addEventListenerSpy = vi.spyOn(document, 'addEventListener');
 
 		render(<LaunchPadContrail enabled={false} />);
 
+		// Should not add any event listeners when disabled
 		expect(addEventListenerSpy).not.toHaveBeenCalled();
 
 		addEventListenerSpy.mockRestore();
+	});
+
+	it('highlights components with CSS when active', async () => {
+		render(<LaunchPadContrail enabled={true} />);
+
+		// Activate highlighting
+		fireEvent.keyDown(document, {
+			key: 'l',
+			metaKey: true,
+			ctrlKey: false,
+			shiftKey: true,
+			altKey: false,
+		});
+
+		await waitFor(() => {
+			expect(document.body.classList.contains('contrail-active')).toBe(true);
+		});
+
+		// CSS should make components visible with outline/pseudo-elements
+		// This is tested implicitly by the CSS rules in contrail.css
+		const buttonElement = document.querySelector('[data-launchpad="Button"]');
+		const modalElement = document.querySelector('[data-launchpad="Modal"]');
+
+		expect(buttonElement).toBeInTheDocument();
+		expect(modalElement).toBeInTheDocument();
+		expect(buttonElement?.getAttribute('data-launchpad')).toBe('Button');
+		expect(modalElement?.getAttribute('data-launchpad')).toBe('Modal');
 	});
 });

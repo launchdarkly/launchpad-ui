@@ -20,7 +20,7 @@ export interface ComponentMetadata {
  * Configuration for LaunchPad Contrail
  */
 export interface ContrailConfig {
-	/** Keyboard shortcut to toggle highlighting (default: "cmd+l") */
+	/** Keyboard shortcut to toggle highlighting (default: "cmd+shift+l") */
 	shortcut?: string;
 	/** Base URL for component documentation */
 	docsBaseUrl?: string;
@@ -33,7 +33,7 @@ export interface ContrailConfig {
 }
 
 /**
- * Props for the LaunchPadContrail component
+ * Props for the LaunchPad Contrail component
  */
 export interface LaunchPadContrailProps extends ContrailConfig {
 	/** Child components (optional) */

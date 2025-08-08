@@ -1,19 +1,20 @@
 // @ts-ignore - Storybook types are available at workspace root
 import type { Meta, StoryObj } from '@storybook/react';
+import type { LaunchPadContrailProps } from '../src/types';
 
 import { Button, Heading, Text } from '@launchpad-ui/components';
 
 import { LaunchPadContrail } from '../src';
 
 const meta: Meta<typeof LaunchPadContrail> = {
-	title: 'Tools/LaunchPadContrail',
+	title: 'Tools/LaunchPad Contrail',
 	component: LaunchPadContrail,
 	parameters: {
 		layout: 'fullscreen',
 		docs: {
 			description: {
 				component:
-					'Developer tool for visually identifying LaunchPad components. Press Cmd/Ctrl + L to toggle highlighting.',
+					'Developer tool for visually identifying LaunchPad components. Press Cmd/Ctrl + Shift + L to toggle highlighting, or double-click anywhere in the story area. Note: Keyboard shortcuts may not work in multi-story view - use double-click instead.',
 			},
 		},
 	},
@@ -46,8 +47,10 @@ const SamplePage = () => (
 		<Heading level={1}>LaunchPad Contrail Demo</Heading>
 
 		<Text>
-			This page contains various LaunchPad components. Press <strong>Cmd/Ctrl + L</strong> to toggle
-			component highlighting and hover over components to see their information.
+			This page contains various LaunchPad components. Press <strong>Cmd/Ctrl + Shift + L</strong>{' '}
+			or <strong>double-click anywhere</strong> to toggle component highlighting and hover over
+			components to see their information. (Note: Keyboard shortcuts may not work in multi-story
+			view - use double-click instead.)
 		</Text>
 
 		<div style={{ marginTop: '2rem', display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
@@ -111,11 +114,11 @@ const SamplePage = () => (
 export const Default: Story = {
 	args: {
 		enabled: true,
-		shortcut: 'cmd+l',
+		shortcut: 'cmd+shift+l',
 		docsBaseUrl: 'https://launchpad.launchdarkly.com',
 		storybookUrl: 'https://launchpad-storybook.com',
 	},
-	render: (args: any) => (
+	render: (args: LaunchPadContrailProps) => (
 		<>
 			<SamplePage />
 			<LaunchPadContrail {...args} />
@@ -126,13 +129,13 @@ export const Default: Story = {
 export const CustomShortcut: Story = {
 	args: {
 		...Default.args,
-		shortcut: 'ctrl+shift+h',
+		shortcut: 'shift+h',
 	},
 	render: Default.render,
 	parameters: {
 		docs: {
 			description: {
-				story: 'Use a custom keyboard shortcut (Ctrl+Shift+H) to toggle highlighting.',
+				story: 'Use a custom keyboard shortcut (Shift+H) to toggle highlighting.',
 			},
 		},
 	},
@@ -147,7 +150,7 @@ export const Disabled: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story: 'Contrail is disabled and will not respond to keyboard shortcuts.',
+				story: 'Contrail is disabled and will not respond to keyboard shortcuts or double-clicks.',
 			},
 		},
 	},

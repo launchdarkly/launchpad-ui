@@ -1,31 +1,44 @@
 /**
- * Contrail component highlighting styles
+ * LaunchPad Contrail - CSS-Only Highlighting System
+ * Lightweight, performant component highlighting with perfect positioning
  */
 
-/* Main contrail container */
-.contrail {
-	position: fixed;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	pointer-events: none;
-	z-index: 999999;
+/* Main activation toggle - no overlay container needed */
+body.contrail-active [data-launchpad] {
+	outline: 2px solid #3b82f6 !important;
+	outline-offset: 2px;
+	position: relative;
+	transition: outline 0.15s ease-in-out;
 }
 
-/* Component highlight overlay */
-.highlight {
-	position: absolute;
-	pointer-events: none;
-	border: 2px solid #3b82f6;
-	background: rgba(59, 130, 246, 0.1);
-	border-radius: 4px;
-	transition: all 0.15s ease-in-out;
-	box-shadow: 0 0 0 1px rgba(59, 130, 246, 0.2);
+/* Hide Text and Heading components by default to reduce noise */
+body.contrail-active [data-launchpad='Text'],
+body.contrail-active [data-launchpad='Heading'] {
+	outline: none !important;
 }
 
-.highlight::before {
-	content: attr(data-component-name);
+body.contrail-active [data-launchpad='Text']::before,
+body.contrail-active [data-launchpad='Heading']::before {
+	display: none !important;
+}
+
+/* Show Text and Heading components when explicitly enabled */
+body.contrail-active.contrail-show-text [data-launchpad='Text'],
+body.contrail-active.contrail-show-text [data-launchpad='Heading'] {
+	outline: 2px solid #3b82f6 !important;
+	outline-offset: 2px;
+	position: relative;
+	transition: outline 0.15s ease-in-out;
+}
+
+body.contrail-active.contrail-show-text [data-launchpad='Text']::before,
+body.contrail-active.contrail-show-text [data-launchpad='Heading']::before {
+	display: block !important;
+}
+
+/* Component name labels using pseudo-elements */
+body.contrail-active [data-launchpad]::before {
+	content: attr(data-launchpad);
 	position: absolute;
 	top: -24px;
 	left: 0;
@@ -38,23 +51,33 @@
 		Consolas, 'Courier New', monospace;
 	font-weight: 500;
 	white-space: nowrap;
-	z-index: 1;
+	z-index: 999999;
+	pointer-events: none;
+	line-height: 1.2;
 }
 
-/* Hover state */
-.highlight:hover {
-	border-color: #1d4ed8;
-	background: rgba(29, 78, 216, 0.15);
-	box-shadow: 0 0 0 1px rgba(29, 78, 216, 0.3);
+/* Enhanced hover state */
+body.contrail-active [data-launchpad]:hover {
+	outline-color: #1d4ed8 !important;
+	outline-width: 3px !important;
 }
 
-.highlight:hover::before {
+body.contrail-active [data-launchpad]:hover::before {
 	background: #1d4ed8;
+	font-weight: 600;
 }
 
-/* Info popover */
-.popover {
-	position: absolute;
+/* Handle edge cases where labels might be clipped */
+body.contrail-active [data-launchpad]::before {
+	/* Ensure labels stay visible at viewport edges */
+	max-width: calc(100vw - 20px);
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+/* Tooltip popup styles */
+.contrail-tooltip {
+	position: fixed;
 	background: white;
 	border: 1px solid #e5e7eb;
 	border-radius: 8px;
@@ -62,18 +85,20 @@
 	padding: 12px;
 	max-width: 280px;
 	z-index: 1000000;
-	pointer-events: auto;
 	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+	font-size: 13px;
+	line-height: 1.4;
+	pointer-events: auto;
 }
 
-.popover-header {
+.contrail-tooltip-header {
 	display: flex;
 	align-items: center;
 	gap: 8px;
 	margin-bottom: 8px;
 }
 
-.popover-title {
+.contrail-tooltip-title {
 	font-weight: 600;
 	font-size: 14px;
 	color: #111827;
@@ -81,7 +106,7 @@
 		Consolas, 'Courier New', monospace;
 }
 
-.popover-package {
+.contrail-tooltip-package {
 	font-size: 12px;
 	color: #6b7280;
 	background: #f3f4f6;
@@ -89,19 +114,17 @@
 	border-radius: 3px;
 }
 
-.popover-description {
-	font-size: 13px;
+.contrail-tooltip-description {
 	color: #374151;
-	line-height: 1.4;
 	margin-bottom: 8px;
 }
 
-.popover-links {
+.contrail-tooltip-links {
 	display: flex;
 	gap: 8px;
 }
 
-.popover-link {
+.contrail-tooltip-link {
 	font-size: 12px;
 	color: #3b82f6;
 	text-decoration: none;
@@ -111,39 +134,186 @@
 	transition: all 0.15s;
 }
 
-.popover-link:hover {
+.contrail-tooltip-link:hover {
 	background: #f8fafc;
 	border-color: #3b82f6;
 }
 
 /* Dark mode support */
 @media (prefers-color-scheme: dark) {
-	.popover {
+	.contrail-tooltip {
 		background: #1f2937;
 		border-color: #374151;
 		box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
 	}
 
-	.popover-title {
+	.contrail-tooltip-title {
 		color: #f9fafb;
 	}
 
-	.popover-package {
+	.contrail-tooltip-package {
 		color: #9ca3af;
 		background: #374151;
 	}
 
-	.popover-description {
+	.contrail-tooltip-description {
 		color: #d1d5db;
 	}
 
-	.popover-link {
+	.contrail-tooltip-link {
 		color: #60a5fa;
 		border-color: #374151;
 	}
 
-	.popover-link:hover {
+	.contrail-tooltip-link:hover {
 		background: #374151;
 		border-color: #60a5fa;
+	}
+}
+
+/* Settings panel styles */
+.contrail-settings {
+	position: fixed;
+	background: white;
+	border: 1px solid #e5e7eb;
+	border-radius: 8px;
+	box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+	padding: 16px;
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+	font-size: 13px;
+	z-index: 1000001;
+	min-width: 220px;
+}
+
+.contrail-settings-header {
+	font-weight: 600;
+	margin-bottom: 12px;
+	color: #111827;
+	font-size: 14px;
+}
+
+.contrail-settings-option {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 8px 0;
+}
+
+.contrail-settings-option:last-child {
+	padding-bottom: 0;
+}
+
+.contrail-settings-label {
+	color: #374151;
+}
+
+.contrail-toggle {
+	width: 36px;
+	height: 20px;
+	background: #d1d5db;
+	border-radius: 10px;
+	position: relative;
+	cursor: pointer;
+	transition: background-color 0.2s;
+}
+
+.contrail-toggle.active {
+	background: #3b82f6;
+}
+
+.contrail-toggle::after {
+	content: '';
+	position: absolute;
+	width: 16px;
+	height: 16px;
+	background: white;
+	border-radius: 50%;
+	top: 2px;
+	left: 2px;
+	transition: transform 0.2s;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.contrail-toggle.active::after {
+	transform: translateX(16px);
+}
+
+/* Settings trigger button */
+.contrail-settings-trigger {
+	position: fixed;
+	width: 32px;
+	height: 32px;
+	background: #3b82f6;
+	border: none;
+	border-radius: 6px;
+	color: white;
+	font-size: 14px;
+	cursor: grab;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+	z-index: 1000000;
+	transition: all 0.2s;
+	user-select: none;
+}
+
+/* Position variants */
+.contrail-settings-trigger--top-right {
+	top: 20px;
+	right: 20px;
+}
+
+.contrail-settings-trigger--top-left {
+	top: 20px;
+	left: 20px;
+}
+
+.contrail-settings-trigger--bottom-right {
+	bottom: 20px;
+	right: 20px;
+}
+
+.contrail-settings-trigger--bottom-left {
+	bottom: 20px;
+	left: 20px;
+}
+
+.contrail-settings-trigger:hover {
+	background: #1d4ed8;
+	transform: translateY(-1px);
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.contrail-settings-trigger:active {
+	cursor: grabbing;
+}
+
+/* Dragging state styles applied via JavaScript */
+.contrail-settings-trigger.dragging {
+	opacity: 0.8;
+	transform: scale(1.1);
+	cursor: grabbing;
+	z-index: 1000001;
+}
+
+/* Dark mode support for settings */
+@media (prefers-color-scheme: dark) {
+	.contrail-settings {
+		background: #1f2937;
+		border-color: #374151;
+		box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+	}
+
+	.contrail-settings-header {
+		color: #f9fafb;
+	}
+
+	.contrail-settings-label {
+		color: #d1d5db;
+	}
+
+	.contrail-toggle {
+		background: #4b5563;
 	}
 }

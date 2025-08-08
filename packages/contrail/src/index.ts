@@ -4,18 +4,14 @@ export type {
 	LaunchPadContrailProps,
 } from './types';
 
-export { ComponentHighlighter } from './ComponentHighlighter';
-export { InfoPopover } from './InfoPopover';
+export { ContrailController, ContrailTooltip } from './ContrailController';
 export { LaunchPadContrail } from './LaunchPadContrail';
 export { componentMetadata } from './metadata.generated';
 export {
-	createShortcutHandler,
 	findLaunchPadComponents,
 	generateDocsUrl,
 	generateStorybookUrl,
 	getComponentMetadata,
 	getComponentName,
 	isLaunchPadComponent,
-	matchesShortcut,
-	parseShortcut,
 } from './utils';
