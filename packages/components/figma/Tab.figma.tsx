@@ -9,7 +9,12 @@ figma.connect(
 		props: {
 			label: figma.string('Label'),
 			selected: figma.boolean('Selected'),
+			isDisabled: figma.enum('State', { Disabled: true }),
 		},
-		example: (props) => <Tab id="1">{props.label}</Tab>,
+		example: ({ label, isDisabled }) => (
+			<Tab id="<tab-id-here>" isDisabled={isDisabled}>
+				{label}
+			</Tab>
+		),
 	},
 );
