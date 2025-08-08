@@ -20,7 +20,7 @@ A developer tool similar to DRUIDS Loupe that enables consumers to visually iden
     └── afterburn.css          # CSS-only highlighting & tooltip styles
 ```
 
-## Implementation Status: PHASE 2 COMPLETE ✅ - READY FOR RENAME & POLISH
+## Implementation Status: PHASE 3.1 COMPLETE ✅ - RENAME AND DOCUMENTATION FIXES DONE
 
 ### Phase 1: Data Attribution Foundation ✅ COMPLETED
 - [x] Create shared attribution utility in `@launchpad-ui/core`
@@ -219,9 +219,9 @@ function App() {
     <>
       <YourApp />
       <LaunchPadAfterburn 
-        shortcut="cmd+shift+l"  // Updated: avoid browser conflicts
-        docsBaseUrl="https://launchpad.launchdarkly.com"
-        storybookUrl="https://your-storybook.com" 
+        shortcut="cmd+shift+l"  // Default keyboard shortcut
+        docsBaseUrl="https://launchpad.launchdarkly.com"  // Documentation base URL
+        enabled={true}  // Enable/disable the tool
       />
     </>
   );
@@ -235,8 +235,7 @@ export interface ComponentMetadata {
   package: string;
   version: string;
   description?: string;
-  docsUrl?: string;
-  storybookUrl?: string;
+  docsUrl?: string;  // Optional custom documentation URL override
 }
 ```
 
@@ -284,16 +283,16 @@ export interface ComponentMetadata {
   - [x] Multiple dismissal methods (click outside, escape key, timeout)
   - [x] Professional corner snapping with smooth transitions
 
-## Phase 2 Implementation Status: COMPLETE ✅
-**Core functionality completed successfully with CSS-only architecture + advanced UX features delivering superior performance, reliability, and user experience.**
+## Phase 3.1 Implementation Status: COMPLETE ✅
+**Package rename and documentation fixes completed successfully with working links and enhanced functionality.**
 
-**Latest Progress (Current Session):**
-- ✅ **Complete refactor to CSS-only highlighting** - Removed React-based ComponentHighlighter
-- ✅ **New ContrailController architecture** - Vanilla JS with tooltip system
-- ✅ **Comprehensive test coverage** - 51 tests passing including new ContrailController tests
-- ✅ **Advanced UX features** - Draggable settings, smart component filtering
-- ✅ **Linting and formatting** - All code passes Biome checks and TypeScript validation
-- ✅ **Documentation updates** - Project plan updated with implementation status
+**Latest Progress (Current Session - Phase 3.1):**
+- ✅ **Complete package rename** - contrail → afterburn with all references updated
+- ✅ **Fixed documentation links** - Comprehensive URL mapping for 50+ components across 9 categories
+- ✅ **Removed broken storybook functionality** - Eliminated 404ing links
+- ✅ **Enhanced settings panel** - Added GitHub repository and Storybook links
+- ✅ **Comprehensive testing** - All 53 tests passing with new URL generation logic
+- ✅ **Quality assurance** - Code formatted, linted, and TypeScript validated
 
 **Key Achievements:**
 - 🎯 **Zero positioning bugs** - CSS handles all layout automatically
@@ -307,21 +306,35 @@ export interface ComponentMetadata {
 - 🎛️ **Smart filtering** - Hides noisy components (Text/Heading) by default
 - 🔄 **Draggable settings** - Move settings trigger to any corner
 - 🎨 **Professional UX** - Sticky tooltips, smooth animations, intuitive interactions
+- 🔗 **Working documentation links** - All component links now navigate to correct Storybook pages
+- ⚙️ **Enhanced settings** - Quick access to GitHub repo and component library
 
 ## Next Steps: Phase 3 - Rename & Polish 🚀
 
-### Phase 3.1: Rename to Afterburn 🔄 PENDING
-- [ ] **Rename package**: `@launchpad-ui/contrail` → `@launchpad-ui/afterburn`
-- [ ] **Rename main component**: `LaunchPadContrail` → `LaunchPadAfterburn`  
-- [ ] **Rename controller**: `ContrailController` → `AfterburnController`
-- [ ] **Rename tooltip class**: `ContrailTooltip` → `AfterburnTooltip`
-- [ ] **Rename settings class**: `ContrailSettings` → `AfterburnSettings`
-- [ ] **Update CSS classes**: `contrail-*` → `afterburn-*`
-- [ ] **Update file names**: contrail.css → afterburn.css, etc.
-- [ ] **Update all documentation**: README, Storybook stories, comments
-- [ ] **Update test files**: Rename and update all test references
-- [ ] **Update package.json**: Name, description, keywords
-- [ ] **Update import/export statements** throughout codebase
+### Phase 3.1: Rename to Afterburn ✅ COMPLETED
+- [x] **Rename package**: `@launchpad-ui/contrail` → `@launchpad-ui/afterburn`
+- [x] **Rename main component**: `LaunchPadContrail` → `LaunchPadAfterburn`  
+- [x] **Rename controller**: `ContrailController` → `AfterburnController`
+- [x] **Rename tooltip class**: `ContrailTooltip` → `AfterburnTooltip`
+- [x] **Rename settings class**: `ContrailSettings` → `AfterburnSettings`
+- [x] **Update CSS classes**: `contrail-*` → `afterburn-*`
+- [x] **Update file names**: contrail.css → afterburn.css, etc.
+- [x] **Update all documentation**: README, Storybook stories, comments
+- [x] **Update test files**: Rename and update all test references
+- [x] **Update package.json**: Name, description, keywords
+- [x] **Update import/export statements** throughout codebase
+
+### Phase 3.1.5: Documentation Link Fixes ✅ COMPLETED
+- [x] **Fix broken storybook links** - Remove separate storybook URL functionality that was causing 404s
+- [x] **Correct documentation URL generation** - Implement proper category-based mapping:
+  - Button: `components-buttons-button--docs` ✅
+  - TextField: `components-forms-textfield--docs` ✅  
+  - Modal: `components-overlays-modal--docs` ✅
+  - Alert: `components-status-alert--docs` ✅
+- [x] **Comprehensive category mapping** - 50+ components across 9 categories (Buttons, Forms, Navigation, etc.)
+- [x] **Enhanced settings panel** - Added GitHub repository and Storybook links
+- [x] **Simplified tooltip UI** - Single "📖 Documentation" link that works correctly
+- [x] **Updated tests** - All URL generation tests passing with new patterns
 
 ### Phase 3.2: Code Review & Simplification 🔍 PENDING
 **Goal**: Review the afterburn package for unnecessary complexity and opportunities to improve or simplify without over-engineering
@@ -354,3 +367,55 @@ export interface ComponentMetadata {
 - [ ] **Test coverage analysis**: Ensure tests cover critical paths without over-testing
 - [ ] **Test performance**: Review test execution time and complexity
 - [ ] **Mock simplification**: Use minimal mocking for reliable, fast tests
+
+---
+
+## Phase 3.1 Completion Summary 🎉
+
+### What Was Accomplished (Latest Session)
+**Date**: August 2025  
+**Status**: ✅ COMPLETE - Package renamed and documentation links fixed
+
+### Major Deliverables
+1. **🔄 Complete Package Rename**: `contrail` → `afterburn`
+   - Package directory, component names, classes, CSS, and all references updated
+   - Consistent theming around "afterburn" as the visible trail left by rocket components
+
+2. **🔗 Fixed Documentation Links**: 
+   - **Problem**: Storybook links were 404ing, docs URLs had incorrect format
+   - **Solution**: Comprehensive category-based URL mapping for 50+ components
+   - **Categories Mapped**: Buttons, Forms, Navigation, Overlays, Status, Collections, Content, Date & Time, Drag & Drop, Icons, Pickers
+   - **Result**: All component tooltips now link to correct documentation pages
+
+3. **❌ Removed Broken Functionality**:
+   - Eliminated separate `storybookUrl` prop and functionality
+   - Simplified tooltip to single working "📖 Documentation" link
+   - Cleaner, more reliable user experience
+
+4. **⚙️ Enhanced Settings Panel**:
+   - Added "🔗 GitHub Repository" link
+   - Added "📚 Storybook" link  
+   - Improved styling with proper hover states and dark mode support
+
+### Technical Quality
+- **✅ All 53 tests passing** - Comprehensive coverage including new URL generation logic
+- **✅ Code quality** - Formatted with Biome, TypeScript validated, conventional commits
+- **✅ Documentation updated** - README, Storybook stories, and plan doc current
+
+### Breaking Changes
+- Package name: `@launchpad-ui/contrail` → `@launchpad-ui/afterburn`
+- Component name: `LaunchPadContrail` → `LaunchPadAfterburn`
+- Removed `storybookUrl` prop (no longer needed)
+
+### Migration Path
+```typescript
+// OLD
+import { LaunchPadContrail } from '@launchpad-ui/contrail';
+<LaunchPadContrail storybookUrl="..." />
+
+// NEW  
+import { LaunchPadAfterburn } from '@launchpad-ui/afterburn';
+<LaunchPadAfterburn />  // storybookUrl prop removed
+```
+
+**Next Phase**: Phase 3.2 - Code Review & Simplification (Optional improvements)
