@@ -418,6 +418,24 @@ body,
 	font-weight: 400 !important;
 }
 
+/* Fix docblock-source sb-unstyled container background in dark mode */
+.dark-theme .docblock-source.sb-unstyled,
+.dark-theme .docblock-source .sb-unstyled,
+.dark-theme .sb-unstyled.docblock-source,
+.dark-theme .docblock-source,
+.dark-theme [class*='docblock-source'] {
+	background-color: #2d3239 !important;
+	color: #eceff2 !important;
+}
+
+/* Additional specific targeting for pre and code elements within docblock-source */
+.dark-theme .docblock-source pre,
+.dark-theme .docblock-source.sb-unstyled pre,
+.dark-theme .sb-unstyled .docblock-source pre {
+	background-color: #2d3239 !important;
+	color: #eceff2 !important;
+}
+
 /* Exception: Don't override actual Code component styling or story content */
 .dark-theme [class*='code_'] code,
 .dark-theme .docs-story code,
