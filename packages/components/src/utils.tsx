@@ -2,7 +2,7 @@ import type { Href } from '@react-types/shared';
 import type { Context, Ref } from 'react';
 import type { ContextValue, SlotProps } from 'react-aria-components';
 
-import { addLaunchPadAttribution } from '@launchpad-ui/core';
+import { addLaunchPadAttribution } from '@launchpad-ui/attribution';
 import { mergeRefs } from '@react-aria/utils';
 import { useEffect, useLayoutEffect, useMemo, useState } from 'react';
 import { mergeProps } from 'react-aria';

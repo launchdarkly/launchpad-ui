@@ -1,5 +1,6 @@
 import type { ComponentProps, CSSProperties } from 'react';
 
+import { addLaunchPadAttribution } from '@launchpad-ui/attribution';
 import { cx } from 'classix';
 
 import { Label } from './Label';
@@ -38,7 +39,7 @@ const Radio = ({
 	}
 
 	return (
-		<>
+		<div {...addLaunchPadAttribution('Radio')}>
 			<input
 				{...rest}
 				aria-label={ariaLabel}
@@ -53,7 +54,7 @@ const Radio = ({
 			<Label className={labelClassName} htmlFor={id} style={labelStyle}>
 				{disabled ? <span className={styles.labelDisabled}>{children}</span> : children}
 			</Label>
-		</>
+		</div>
 	);
 };
 

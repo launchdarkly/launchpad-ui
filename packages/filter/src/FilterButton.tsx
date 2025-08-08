@@ -1,5 +1,6 @@
 import type { JSX, MouseEvent, ReactNode, SyntheticEvent } from 'react';
 
+import { addLaunchPadAttribution } from '@launchpad-ui/attribution';
 import { IconButton } from '@launchpad-ui/button';
 import { Icon } from '@launchpad-ui/icons';
 import { Tooltip } from '@launchpad-ui/tooltip';
@@ -62,7 +63,11 @@ const FilterButton = forwardRef<Ref, FilterButtonProps>((props, ref) => {
 	};
 
 	return (
-		<div className={styles.buttonContainer} data-test-id={testId}>
+		<div
+			{...addLaunchPadAttribution('FilterButton')}
+			className={styles.buttonContainer}
+			data-test-id={testId}
+		>
 			<button
 				{...rest}
 				type="button"

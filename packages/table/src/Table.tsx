@@ -1,5 +1,6 @@
 import type { ComponentProps } from 'react';
 
+import { addLaunchPadAttribution } from '@launchpad-ui/attribution';
 import { cx } from 'classix';
 
 import styles from './styles/Table.module.css';
@@ -35,7 +36,12 @@ const Table = ({
 	);
 
 	return (
-		<table {...rest} data-test-id={testId} className={classes}>
+		<table
+			{...addLaunchPadAttribution('Table')}
+			{...rest}
+			data-test-id={testId}
+			className={classes}
+		>
 			{children}
 		</table>
 	);

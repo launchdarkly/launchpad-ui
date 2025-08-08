@@ -1,5 +1,6 @@
 import type { ComponentProps } from 'react';
 
+import { addLaunchPadAttribution } from '@launchpad-ui/attribution';
 import { cx } from 'classix';
 
 import styles from './styles/Table.module.css';
@@ -43,7 +44,7 @@ const TableCell = ({ align = 'left', className, children, ...rest }: TableCellPr
 	}
 
 	return (
-		<td {...restProps} className={classes}>
+		<td {...addLaunchPadAttribution('TableCell')} {...restProps} className={classes}>
 			{children}
 		</td>
 	);

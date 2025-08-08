@@ -1,5 +1,6 @@
 import type { ComponentProps } from 'react';
 
+import { addLaunchPadAttribution } from '@launchpad-ui/attribution';
 import { cx } from 'classix';
 import { useRef } from 'react';
 
@@ -25,7 +26,13 @@ const ModalBody = ({
 	useOverflowY(ref);
 
 	return (
-		<div {...rest} ref={ref} className={cx(styles.body, className)} data-test-id={testId}>
+		<div
+			{...addLaunchPadAttribution('ModalBody')}
+			{...rest}
+			ref={ref}
+			className={cx(styles.body, className)}
+			data-test-id={testId}
+		>
 			{children}
 		</div>
 	);

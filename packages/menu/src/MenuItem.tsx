@@ -2,6 +2,7 @@ import type { IconProps } from '@launchpad-ui/icons';
 import type { PopoverPlacement } from '@launchpad-ui/popover';
 import type { ComponentPropsWithRef, ElementType, JSX, PropsWithRef, ReactElement } from 'react';
 
+import { addLaunchPadAttribution } from '@launchpad-ui/attribution';
 import { Tooltip } from '@launchpad-ui/tooltip';
 import { Slot } from '@radix-ui/react-slot';
 import { FocusRing } from '@react-aria/focus';
@@ -79,6 +80,7 @@ const MenuItem = <P, T extends ElementType = typeof defaultElement>({
 	const renderedItem = (
 		<FocusRing focusRingClass={styles['has-focus']}>
 			<Component
+				{...addLaunchPadAttribution('MenuItem')}
 				{...rest}
 				disabled={disabled}
 				aria-disabled={disabled ? disabled : undefined}

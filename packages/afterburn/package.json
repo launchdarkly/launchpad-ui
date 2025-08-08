@@ -38,8 +38,8 @@
 		"generate-metadata": "node scripts/generate-metadata.js"
 	},
 	"dependencies": {
+		"@launchpad-ui/attribution": "workspace:~",
 		"@launchpad-ui/components": "workspace:~",
-		"@launchpad-ui/core": "workspace:~",
 		"@launchpad-ui/icons": "workspace:~",
 		"@launchpad-ui/tokens": "workspace:~"
 	},

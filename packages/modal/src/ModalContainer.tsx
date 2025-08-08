@@ -2,6 +2,7 @@ import type { Variants } from 'framer-motion';
 import type { MouseEvent } from 'react';
 import type { ModalProps } from './Modal';
 
+import { addLaunchPadAttribution } from '@launchpad-ui/attribution';
 import { FocusTrap } from '@launchpad-ui/focus-trap';
 import { useFocusWithin } from '@react-aria/interactions';
 import { usePreventScroll } from '@react-aria/overlays';
@@ -123,6 +124,7 @@ const ModalContainer = ({
 	return (
 		<LazyMotion strict features={loadFeatures}>
 			<div
+				{...addLaunchPadAttribution('Modal')}
 				{...focusWithinProps}
 				className={styles.overlayContainer}
 				data-modal
