@@ -1,26 +1,26 @@
-# LaunchPad Contrail Implementation Plan
+# LaunchPad Afterburn Implementation Plan
 
 ## Overview
 
-A developer tool similar to DRUIDS Loupe that enables consumers to visually identify LaunchPad components on the page and access their documentation.
+A developer tool similar to DRUIDS Loupe that enables consumers to visually identify LaunchPad components on the page and access their documentation. The "afterburn" creates a visible highlighting effect on components, like the trail left by a rocket engine.
 
 **Goal**: Keyboard shortcut → Highlight LaunchPad components → Hover for info → Click through to docs
 
 ## Architecture (CSS-Only Implementation)
 
 ```
-@launchpad-ui/contrail
-├── LaunchPadContrail.tsx     # Minimal React wrapper for configuration
-├── ContrailController.ts     # Vanilla JS controller & tooltip system
-├── metadata.generated.ts     # Build-time generated component metadata
+@launchpad-ui/afterburn
+├── LaunchPadAfterburn.tsx     # Minimal React wrapper for configuration
+├── AfterburnController.ts     # Vanilla JS controller & tooltip system
+├── metadata.generated.ts      # Build-time generated component metadata
 ├── utils/
-│   ├── attribution.ts        # Shared data attribute utilities
-│   └── keyboard.ts           # Keyboard shortcut handling (legacy)
+│   ├── attribution.ts         # Shared data attribute utilities
+│   └── keyboard.ts            # Keyboard shortcut handling (legacy)
 └── styles/
-    └── contrail.css          # CSS-only highlighting & tooltip styles
+    └── afterburn.css          # CSS-only highlighting & tooltip styles
 ```
 
-## Implementation Status: COMPLETE ✅
+## Implementation Status: PHASE 2 COMPLETE ✅ - READY FOR RENAME & POLISH
 
 ### Phase 1: Data Attribution Foundation ✅ COMPLETED
 - [x] Create shared attribution utility in `@launchpad-ui/core`
@@ -35,8 +35,8 @@ A developer tool similar to DRUIDS Loupe that enables consumers to visually iden
   - [x] Write unit test for attribution utility (100% coverage)
   - [x] Verify attributes in Storybook components
 
-### Phase 2: Contrail Package Structure ✅ COMPLETED
-- [x] Create `@launchpad-ui/contrail` package
+### Phase 2: Afterburn Package Structure ✅ COMPLETED  
+- [x] Create `@launchpad-ui/afterburn` package (originally contrail)
   - [x] Initialize package.json with dependencies
   - [x] Set up TypeScript configuration
   - [x] Create complete file structure (src/, utils/, styles/, tests/, stories/)
@@ -44,7 +44,7 @@ A developer tool similar to DRUIDS Loupe that enables consumers to visually iden
   - [x] Create build script to scan packages and extract component info (59 components found)
   - [x] Generate component metadata with versions, docs URLs, descriptions
   - [x] Integrate with package build pipeline
-- [x] Create base LaunchPadContrail component
+- [x] Create base LaunchPadAfterburn component (originally LaunchPadContrail)
   - [x] Props interface (shortcut key, urls, enable/disable)
   - [x] Complete component structure with configuration defaults
 
@@ -65,7 +65,7 @@ A developer tool similar to DRUIDS Loupe that enables consumers to visually iden
   - [x] Ensure no conflicts with existing styles
 
 ### Phase 4: Vanilla JS Tooltip System ✅ COMPLETED
-- [x] Create ContrailTooltip class (vanilla JavaScript)
+- [x] Create AfterburnTooltip class (vanilla JavaScript, originally ContrailTooltip)
   - [x] Hover detection without React overhead
   - [x] Intelligent tooltip positioning (viewport boundary detection)
   - [x] Display component name, package, version, description
@@ -92,10 +92,11 @@ A developer tool similar to DRUIDS Loupe that enables consumers to visually iden
   - [x] Updated README with new keyboard shortcuts
   - [x] Storybook examples and demos
 - [x] Testing and validation
-  - [x] Unit tests for core functionality (39 tests passing)
+  - [x] Unit tests for core functionality (51 tests passing - updated with ContrailController tests)
   - [x] Keyboard shortcut integration tests
   - [x] CSS highlighting validation tests
   - [x] Attribution utility tests (100% coverage)
+  - [x] ContrailController comprehensive test suite
 
 ### Phase 5.5: Critical Issues Resolution ✅ COMPLETED
 **All critical issues from Storybook testing have been resolved:**
@@ -211,13 +212,13 @@ class ContrailController {
 
 ### Consumer Usage
 ```typescript
-import { LaunchPadContrail } from '@launchpad-ui/contrail';
+import { LaunchPadAfterburn } from '@launchpad-ui/afterburn';
 
 function App() {
   return (
     <>
       <YourApp />
-      <LaunchPadContrail 
+      <LaunchPadAfterburn 
         shortcut="cmd+shift+l"  // Updated: avoid browser conflicts
         docsBaseUrl="https://launchpad.launchdarkly.com"
         storybookUrl="https://your-storybook.com" 
@@ -283,8 +284,16 @@ export interface ComponentMetadata {
   - [x] Multiple dismissal methods (click outside, escape key, timeout)
   - [x] Professional corner snapping with smooth transitions
 
-## Final Implementation Status: COMPLETE 🎉
-**All phases completed successfully with CSS-only architecture + advanced UX features delivering superior performance, reliability, and user experience.**
+## Phase 2 Implementation Status: COMPLETE ✅
+**Core functionality completed successfully with CSS-only architecture + advanced UX features delivering superior performance, reliability, and user experience.**
+
+**Latest Progress (Current Session):**
+- ✅ **Complete refactor to CSS-only highlighting** - Removed React-based ComponentHighlighter
+- ✅ **New ContrailController architecture** - Vanilla JS with tooltip system
+- ✅ **Comprehensive test coverage** - 51 tests passing including new ContrailController tests
+- ✅ **Advanced UX features** - Draggable settings, smart component filtering
+- ✅ **Linting and formatting** - All code passes Biome checks and TypeScript validation
+- ✅ **Documentation updates** - Project plan updated with implementation status
 
 **Key Achievements:**
 - 🎯 **Zero positioning bugs** - CSS handles all layout automatically
@@ -298,3 +307,50 @@ export interface ComponentMetadata {
 - 🎛️ **Smart filtering** - Hides noisy components (Text/Heading) by default
 - 🔄 **Draggable settings** - Move settings trigger to any corner
 - 🎨 **Professional UX** - Sticky tooltips, smooth animations, intuitive interactions
+
+## Next Steps: Phase 3 - Rename & Polish 🚀
+
+### Phase 3.1: Rename to Afterburn 🔄 PENDING
+- [ ] **Rename package**: `@launchpad-ui/contrail` → `@launchpad-ui/afterburn`
+- [ ] **Rename main component**: `LaunchPadContrail` → `LaunchPadAfterburn`  
+- [ ] **Rename controller**: `ContrailController` → `AfterburnController`
+- [ ] **Rename tooltip class**: `ContrailTooltip` → `AfterburnTooltip`
+- [ ] **Rename settings class**: `ContrailSettings` → `AfterburnSettings`
+- [ ] **Update CSS classes**: `contrail-*` → `afterburn-*`
+- [ ] **Update file names**: contrail.css → afterburn.css, etc.
+- [ ] **Update all documentation**: README, Storybook stories, comments
+- [ ] **Update test files**: Rename and update all test references
+- [ ] **Update package.json**: Name, description, keywords
+- [ ] **Update import/export statements** throughout codebase
+
+### Phase 3.2: Code Review & Simplification 🔍 PENDING
+**Goal**: Review the afterburn package for unnecessary complexity and opportunities to improve or simplify without over-engineering
+
+#### Architecture Review
+- [ ] **Evaluate class structure**: Do we need separate Tooltip/Settings/Controller classes?
+- [ ] **Assess CSS complexity**: Can we simplify the positioning/styling system?
+- [ ] **Review configuration options**: Are all props necessary? Can we reduce API surface?
+- [ ] **Analyze bundle size**: Identify opportunities for further size reduction
+
+#### Code Quality Assessment  
+- [ ] **Dead code elimination**: Remove any unused functions, imports, or CSS rules
+- [ ] **DRY principle review**: Consolidate duplicate logic or styling
+- [ ] **Error handling**: Ensure robust error handling without over-complicating
+- [ ] **Performance optimization**: Review for unnecessary DOM operations or listeners
+
+#### API Simplification
+- [ ] **Prop interface**: Streamline LaunchPadAfterburnProps to essential options
+- [ ] **Default values**: Optimize defaults for most common use cases
+- [ ] **Method signatures**: Ensure controller methods are intuitive and minimal
+- [ ] **Event handling**: Simplify keyboard/mouse event logic where possible
+
+#### Documentation & Developer Experience
+- [ ] **README optimization**: Focus on essential setup and usage patterns  
+- [ ] **Code comments**: Remove over-documentation, keep essential explanations
+- [ ] **TypeScript types**: Ensure types are helpful without being overly complex
+- [ ] **Storybook stories**: Streamline examples to show core functionality clearly
+
+#### Testing Strategy Review
+- [ ] **Test coverage analysis**: Ensure tests cover critical paths without over-testing
+- [ ] **Test performance**: Review test execution time and complexity
+- [ ] **Mock simplification**: Use minimal mocking for reliable, fast tests
