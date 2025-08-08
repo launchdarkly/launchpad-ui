@@ -6,6 +6,12 @@ import { ProgressBar } from '../src/ProgressBar';
 const meta: Meta<typeof ProgressBar> = {
 	component: ProgressBar,
 	title: 'Components/Status/ProgressBar',
+	parameters: {
+		figma: {
+			design:
+				'https://www.figma.com/design/98HKKXL2dTle29ikJ3tzk7/%F0%9F%9A%80-LaunchPad?node-id=8079-96310&m=dev',
+		},
+	},
 };
 
 export default meta;

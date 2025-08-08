@@ -13,6 +13,12 @@ import { Text } from '../src/Text';
 const meta: Meta<typeof CheckboxGroup> = {
 	component: CheckboxGroup,
 	title: 'Components/Forms/CheckboxGroup',
+	parameters: {
+		figma: {
+			design:
+				'https://www.figma.com/design/98HKKXL2dTle29ikJ3tzk7/%F0%9F%9A%80-LaunchPad?node-id=1-33148&m=dev',
+		},
+	},
 };
 
 export default meta;

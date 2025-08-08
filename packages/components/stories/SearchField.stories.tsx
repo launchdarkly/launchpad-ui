@@ -14,6 +14,12 @@ import { Text } from '../src/Text';
 const meta: Meta<typeof SearchField> = {
 	component: SearchField,
 	title: 'Components/Forms/SearchField',
+	parameters: {
+		figma: {
+			design:
+				'https://www.figma.com/design/98HKKXL2dTle29ikJ3tzk7/%F0%9F%9A%80-LaunchPad?node-id=10833-25262&m=dev',
+		},
+	},
 	decorators: [
 		(Story) => (
 			<div style={{ width: vars.size[240] }}>

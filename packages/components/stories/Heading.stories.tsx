@@ -6,6 +6,10 @@ const meta: Meta<typeof Heading> = {
 	title: 'Components/Content/Heading',
 	component: Heading,
 	parameters: {
+		figma: {
+			design:
+				'https://www.figma.com/design/98HKKXL2dTle29ikJ3tzk7/%F0%9F%9A%80-LaunchPad?node-id=1-26765&m=dev',
+		},
 		docs: {
 			description: {
 				component: `
