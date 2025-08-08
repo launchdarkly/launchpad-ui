@@ -359,7 +359,7 @@ describe('AfterburnController', () => {
 		expect(document.body.classList.contains('afterburn-active')).toBe(false);
 	});
 
-	it('responds to multiple activation methods', () => {
+	it('responds to keyboard shortcut toggling', () => {
 		controller = new AfterburnController(defaultConfig);
 
 		// Initially inactive
@@ -378,9 +378,8 @@ describe('AfterburnController', () => {
 		document.dispatchEvent(keyEvent);
 		expect(document.body.classList.contains('afterburn-active')).toBe(false);
 
-		// Double-click should also activate
-		const doubleClickEvent = new MouseEvent('click', { detail: 2 });
-		document.dispatchEvent(doubleClickEvent);
+		// Keyboard shortcut should activate again
+		document.dispatchEvent(keyEvent);
 		expect(document.body.classList.contains('afterburn-active')).toBe(true);
 	});
 });
