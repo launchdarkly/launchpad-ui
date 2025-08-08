@@ -37,7 +37,7 @@ const ListBoxContext = createContext<ContextValue<ListBoxProps<any>, HTMLDivElem
  * https://react-spectrum.adobe.com/react-aria/ListBox.html
  */
 const ListBox = <T extends object>({ ref, ...props }: ListBoxProps<T>) => {
-	[props, ref] = useLPContextProps(props, ref, ListBoxContext);
+	[props, ref] = useLPContextProps(props, ref, ListBoxContext, 'ListBox');
 	return (
 		<AriaListBox
 			{...props}

@@ -14,6 +14,7 @@ import type {
 } from 'react';
 
 import { arrow, computePosition, flip, offset as floatOffset, shift } from '@floating-ui/dom';
+import { addLaunchPadAttribution } from '@launchpad-ui/attribution';
 import { FocusTrap } from '@launchpad-ui/focus-trap';
 import { Overlay } from '@launchpad-ui/overlay';
 import { cx } from 'classix';
@@ -401,6 +402,7 @@ const Popover = ({
 
 		return (
 			<div
+				{...addLaunchPadAttribution('Popover')}
 				id={popoverId.current}
 				ref={contentRef}
 				className={classes}

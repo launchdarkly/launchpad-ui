@@ -1,5 +1,7 @@
 import type { ComponentProps } from 'react';
 
+import { addLaunchPadAttribution } from '@launchpad-ui/attribution';
+
 import { DRAWER_LABELLED_BY } from './constants';
 
 type DrawerHeaderProps = ComponentProps<'div'> & {
@@ -19,7 +21,12 @@ const DrawerHeader = ({
 	...rest
 }: DrawerHeaderProps) => {
 	return (
-		<div data-test-id={testId} className={className} {...rest}>
+		<div
+			{...addLaunchPadAttribution('DrawerHeader')}
+			data-test-id={testId}
+			className={className}
+			{...rest}
+		>
 			<h2 id={DRAWER_LABELLED_BY} className={titleClassName}>
 				{children}
 			</h2>

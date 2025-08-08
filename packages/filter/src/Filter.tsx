@@ -2,6 +2,7 @@ import type { MenuProps } from '@launchpad-ui/menu';
 import type { ChangeEvent, ReactNode, SyntheticEvent } from 'react';
 import type { FilterOption } from './FilterMenu';
 
+import { addLaunchPadAttribution } from '@launchpad-ui/attribution';
 import { Dropdown } from '@launchpad-ui/dropdown';
 import { cx } from 'classix';
 
@@ -79,6 +80,7 @@ const Filter = ({
 
 	return (
 		<Dropdown
+			{...addLaunchPadAttribution('Filter')}
 			targetTestId={testId}
 			disabled={disabled}
 			targetClassName={dropdownClasses}

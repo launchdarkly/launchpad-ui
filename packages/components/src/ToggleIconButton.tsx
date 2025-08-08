@@ -26,7 +26,7 @@ const ToggleIconButtonContext =
  * https://react-spectrum.adobe.com/react-aria/ToggleButton.html
  */
 const ToggleIconButton = ({ ref, ...props }: ToggleIconButtonProps) => {
-	[props, ref] = useLPContextProps(props, ref, ToggleIconButtonContext);
+	[props, ref] = useLPContextProps(props, ref, ToggleIconButtonContext, 'ToggleIconButton');
 	const { size = 'medium', variant = 'default', icon } = props;
 
 	return (

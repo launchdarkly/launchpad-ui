@@ -38,8 +38,8 @@ const LabelContext = createContext<ContextValue<LabelProps, HTMLLabelElement>>(n
  * Built on top of [React Aria `Label` component](https://react-spectrum.adobe.com/react-spectrum/Label.html#label).
  */
 const Label = ({ ref, maxLines, style, size, ...props }: LabelProps) => {
-	const [contextProps, contextRef] = useLPContextProps(props, ref, LabelContext);
-	const { className } = contextProps as any;
+	const [contextProps, contextRef] = useLPContextProps(props, ref, LabelContext, 'Label');
+	const { className } = contextProps as LabelProps;
 
 	return (
 		<AriaLabel

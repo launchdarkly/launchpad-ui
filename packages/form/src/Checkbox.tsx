@@ -1,5 +1,6 @@
 import type { ComponentProps } from 'react';
 
+import { addLaunchPadAttribution } from '@launchpad-ui/attribution';
 import { forwardRef } from 'react';
 
 import { Label } from './Label';
@@ -40,7 +41,7 @@ const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
 		}
 
 		return (
-			<Label className={labelClassName}>
+			<Label {...addLaunchPadAttribution('Checkbox')} className={labelClassName}>
 				<input
 					{...rest}
 					ref={ref}

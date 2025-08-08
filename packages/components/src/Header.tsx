@@ -17,7 +17,7 @@ interface HeaderProps extends HTMLAttributes<HTMLElement> {
 const HeaderContext = createContext<ContextValue<HeaderProps, HTMLElement>>(null);
 
 const Header = ({ ref, ...props }: HeaderProps) => {
-	[props, ref] = useLPContextProps(props, ref, HeaderContext);
+	[props, ref] = useLPContextProps(props, ref, HeaderContext, 'Header');
 	const { className } = props;
 
 	return <AriaHeader {...props} ref={ref} className={headerStyles({ className })} />;

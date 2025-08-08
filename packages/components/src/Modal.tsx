@@ -73,7 +73,7 @@ const ModalContext = createContext<ContextValue<ModalProps, HTMLDivElement>>(nul
  * https://react-spectrum.adobe.com/react-aria/Modal.html
  */
 const Modal = ({ ref, ...props }: ModalProps) => {
-	[props, ref] = useLPContextProps(props, ref, ModalContext);
+	[props, ref] = useLPContextProps(props, ref, ModalContext, 'Modal');
 	const { size = 'medium', variant = 'default' } = props;
 
 	return (

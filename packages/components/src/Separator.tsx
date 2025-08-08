@@ -17,7 +17,7 @@ interface SeparatorProps extends AriaSeparatorProps {
 const SeparatorContext = createContext<ContextValue<SeparatorProps, HTMLElement>>(null);
 
 const Separator = ({ ref, ...props }: SeparatorProps) => {
-	[props, ref] = useLPContextProps(props, ref, SeparatorContext);
+	[props, ref] = useLPContextProps(props, ref, SeparatorContext, 'Separator');
 	const { className } = props;
 
 	return <AriaSeparator {...props} ref={ref} className={separatorStyles({ className })} />;

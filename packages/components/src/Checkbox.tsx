@@ -49,7 +49,7 @@ const CheckboxContext = createContext<ContextValue<CheckboxProps, HTMLLabelEleme
  * https://react-spectrum.adobe.com/react-aria/Checkbox.html
  */
 const Checkbox = ({ ref, ...props }: CheckboxProps) => {
-	[props, ref] = useLPContextProps(props, ref, CheckboxContext);
+	[props, ref] = useLPContextProps(props, ref, CheckboxContext, 'Checkbox');
 	return (
 		<AriaCheckbox
 			{...props}

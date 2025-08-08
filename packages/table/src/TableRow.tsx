@@ -1,5 +1,6 @@
 import type { HTMLProps } from 'react';
 
+import { addLaunchPadAttribution } from '@launchpad-ui/attribution';
 import { cx } from 'classix';
 
 import styles from './styles/Table.module.css';
@@ -25,7 +26,12 @@ const TableRow = ({
 	const classes = cx(styles['Table-row'], verticalAlignClass, className);
 
 	return (
-		<tr {...rest} className={classes} data-test-id={testId}>
+		<tr
+			{...addLaunchPadAttribution('TableRow')}
+			{...rest}
+			className={classes}
+			data-test-id={testId}
+		>
 			{children}
 		</tr>
 	);

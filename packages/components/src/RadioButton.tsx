@@ -20,7 +20,7 @@ const RadioButtonContext = createContext<ContextValue<RadioButtonProps, HTMLLabe
  * https://react-spectrum.adobe.com/react-aria/RadioGroup.html
  */
 const RadioButton = ({ ref, ...props }: RadioButtonProps) => {
-	[props, ref] = useLPContextProps(props, ref, RadioButtonContext);
+	[props, ref] = useLPContextProps(props, ref, RadioButtonContext, 'RadioButton');
 	const { size = 'medium', variant = 'default' } = props;
 
 	return (

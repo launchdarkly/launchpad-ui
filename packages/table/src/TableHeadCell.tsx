@@ -1,5 +1,6 @@
 import type { ComponentProps } from 'react';
 
+import { addLaunchPadAttribution } from '@launchpad-ui/attribution';
 import { cx } from 'classix';
 
 import styles from './styles/Table.module.css';
@@ -38,7 +39,7 @@ const TableHeadCell = ({
 	);
 
 	return (
-		<th {...rest} className={classes} scope={scope}>
+		<th {...addLaunchPadAttribution('TableHeadCell')} {...rest} className={classes} scope={scope}>
 			{children}
 		</th>
 	);

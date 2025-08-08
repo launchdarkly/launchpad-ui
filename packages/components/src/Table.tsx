@@ -87,7 +87,7 @@ const TableContext = createContext<ContextValue<TableProps, HTMLTableElement>>(n
  * https://react-spectrum.adobe.com/react-aria/Table.html
  */
 const Table = ({ ref, ...props }: TableProps) => {
-	[props, ref] = useLPContextProps(props, ref, TableContext);
+	[props, ref] = useLPContextProps(props, ref, TableContext, 'Table');
 	return (
 		<AriaTable
 			{...props}

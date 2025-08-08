@@ -34,7 +34,7 @@ const InputContext = createContext<ContextValue<InputProps, HTMLInputElement>>(n
  * https://react-spectrum.adobe.com/react-aria/TextField.html
  */
 const Input = ({ ref, ...props }: InputProps) => {
-	[props, ref] = useLPContextProps(props, ref, InputContext);
+	[props, ref] = useLPContextProps(props, ref, InputContext, 'Input');
 	const { variant = 'default' } = props;
 
 	return (

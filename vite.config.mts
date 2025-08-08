@@ -82,7 +82,7 @@ export default defineConfig({
 				statements: 85,
 			},
 			include: ['**/src/**'],
-			exclude: [...configDefaults.exclude, '**/types.ts'],
+			exclude: [...configDefaults.exclude, '**/types.ts', '**/*.generated.ts'],
 		},
 	},
 	build: {

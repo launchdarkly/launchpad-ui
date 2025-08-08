@@ -1,5 +1,6 @@
 import type { HTMLAttributes, ReactNode } from 'react';
 
+import { addLaunchPadAttribution } from '@launchpad-ui/attribution';
 import { ButtonGroup } from '@launchpad-ui/button';
 import { cx } from 'classix';
 import { forwardRef } from 'react';
@@ -22,7 +23,13 @@ const ModalFooter = forwardRef<HTMLDivElement, ModalFooterProps>(
 		{ secondaryButton, primaryButton, className, 'data-test-id': testId = 'modal-footer', ...rest },
 		ref,
 	) => (
-		<div {...rest} className={cx(className, styles.footer)} data-test-id={testId} ref={ref}>
+		<div
+			{...addLaunchPadAttribution('ModalFooter')}
+			{...rest}
+			className={cx(className, styles.footer)}
+			data-test-id={testId}
+			ref={ref}
+		>
 			<ButtonGroup className={styles.footerActions}>
 				{secondaryButton}
 				{primaryButton}

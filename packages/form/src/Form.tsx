@@ -1,5 +1,6 @@
 import type { ComponentProps } from 'react';
 
+import { addLaunchPadAttribution } from '@launchpad-ui/attribution';
 import { cx } from 'classix';
 
 import styles from './styles/Form.module.css';
@@ -37,7 +38,7 @@ const Form = (props: FormProps) => {
 	);
 
 	return (
-		<form {...rest} data-test-id={testId} className={classes}>
+		<form {...addLaunchPadAttribution('Form')} {...rest} data-test-id={testId} className={classes}>
 			{children}
 		</form>
 	);

@@ -25,7 +25,7 @@ const LinkIconButtonContext =
  * https://react-spectrum.adobe.com/react-aria/Link.html
  */
 const LinkIconButton = ({ ref, ...props }: LinkIconButtonProps) => {
-	[props, ref] = useLPContextProps(props, ref, LinkIconButtonContext);
+	[props, ref] = useLPContextProps(props, ref, LinkIconButtonContext, 'LinkIconButton');
 	const { size = 'medium', variant = 'default', icon } = props;
 
 	return (

@@ -1,6 +1,7 @@
 import type { Variants } from 'framer-motion';
 import type { MouseEvent, ReactNode } from 'react';
 
+import { addLaunchPadAttribution } from '@launchpad-ui/attribution';
 import { IconButton } from '@launchpad-ui/button';
 import { FocusTrap } from '@launchpad-ui/focus-trap';
 import { Icon } from '@launchpad-ui/icons';
@@ -120,6 +121,7 @@ const DrawerContainer = ({
 		<LazyMotion strict features={loadFeatures}>
 			<div
 				{...focusWithinProps}
+				{...addLaunchPadAttribution('Drawer')}
 				className={cx(styles.drawer, styles[size], className)}
 				data-drawer
 				data-test-id={testId}

@@ -49,7 +49,7 @@ const TabsContext = createContext<ContextValue<TabsProps, HTMLDivElement>>(null)
  * https://react-spectrum.adobe.com/react-aria/Tabs.html
  */
 const Tabs = ({ ref, ...props }: TabsProps) => {
-	[props, ref] = useLPContextProps(props, ref, TabsContext);
+	[props, ref] = useLPContextProps(props, ref, TabsContext, 'Tabs');
 	return (
 		<AriaTabs
 			{...props}

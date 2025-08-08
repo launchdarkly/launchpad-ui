@@ -29,7 +29,7 @@ const ToggleButtonGroupContext =
  * https://react-spectrum.adobe.com/react-aria/ToggleButtonGroup.html
  */
 const ToggleButtonGroup = ({ ref, ...props }: ToggleButtonGroupProps) => {
-	[props, ref] = useLPContextProps(props, ref, ToggleButtonGroupContext);
+	[props, ref] = useLPContextProps(props, ref, ToggleButtonGroupContext, 'ToggleButtonGroup');
 	return (
 		<AriaToggleButtonGroup
 			{...props}

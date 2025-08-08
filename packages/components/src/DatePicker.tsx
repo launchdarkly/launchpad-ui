@@ -50,7 +50,7 @@ const DateRangePickerContext =
  * https://react-spectrum.adobe.com/react-aria/DatePicker.html
  */
 const DatePicker = <T extends DateValue>({ ref, ...props }: DatePickerProps<T>) => {
-	[props, ref] = useLPContextProps(props, ref, DatePickerContext);
+	[props, ref] = useLPContextProps(props, ref, DatePickerContext, 'DatePicker');
 	const formContext = useSlottedContext(FormContext);
 	const buttonRef = useRef<HTMLButtonElement>(null);
 
@@ -116,7 +116,7 @@ const DatePicker = <T extends DateValue>({ ref, ...props }: DatePickerProps<T>) 
  * https://react-spectrum.adobe.com/react-aria/DateRangePicker.html
  */
 const DateRangePicker = <T extends DateValue>({ ref, ...props }: DateRangePickerProps<T>) => {
-	[props, ref] = useLPContextProps(props, ref, DateRangePickerContext);
+	[props, ref] = useLPContextProps(props, ref, DateRangePickerContext, 'DateRangePicker');
 	const formContext = useSlottedContext(FormContext);
 	const buttonRef = useRef<HTMLButtonElement>(null);
 

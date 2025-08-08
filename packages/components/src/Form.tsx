@@ -25,7 +25,7 @@ const FormContext = createContext<ContextValue<FormProps, HTMLFormElement>>(null
  * https://react-spectrum.adobe.com/react-aria/Form.html
  */
 const Form = ({ ref, ...props }: FormProps) => {
-	[props, ref] = useLPContextProps(props, ref, FormContext);
+	[props, ref] = useLPContextProps(props, ref, FormContext, 'Form');
 	const { className, orientation = 'vertical', children } = props;
 
 	return (

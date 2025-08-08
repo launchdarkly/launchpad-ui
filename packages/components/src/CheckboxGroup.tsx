@@ -25,7 +25,7 @@ const CheckboxGroupContext = createContext<ContextValue<CheckboxGroupProps, HTML
  * https://react-spectrum.adobe.com/react-aria/CheckboxGroup.html
  */
 const CheckboxGroup = ({ ref, ...props }: CheckboxGroupProps) => {
-	[props, ref] = useLPContextProps(props, ref, CheckboxGroupContext);
+	[props, ref] = useLPContextProps(props, ref, CheckboxGroupContext, 'CheckboxGroup');
 	return (
 		<AriaCheckboxGroup
 			{...props}

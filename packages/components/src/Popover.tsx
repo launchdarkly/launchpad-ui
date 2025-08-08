@@ -45,7 +45,7 @@ const overlayArrowStyles = cva(styles.arrow);
  * https://react-spectrum.adobe.com/react-aria/Popover.html
  */
 const Popover = ({ ref, ...props }: PopoverProps) => {
-	[props, ref] = useLPContextProps(props, ref, PopoverContext);
+	[props, ref] = useLPContextProps(props, ref, PopoverContext, 'Popover');
 	const { offset = 4, crossOffset = 0, width = 'default' } = props;
 
 	return (

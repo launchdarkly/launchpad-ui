@@ -42,7 +42,7 @@ const SelectValueContext =
  * https://react-spectrum.adobe.com/react-aria/Select.html
  */
 const Select = <T extends object>({ ref, ...props }: SelectProps<T>) => {
-	[props, ref] = useLPContextProps(props, ref, SelectContext);
+	[props, ref] = useLPContextProps(props, ref, SelectContext, 'Select');
 	return (
 		<AriaSelect
 			{...props}
@@ -77,7 +77,7 @@ const Select = <T extends object>({ ref, ...props }: SelectProps<T>) => {
  * https://react-spectrum.adobe.com/react-aria/Select.html
  */
 const SelectValue = <T extends object>({ ref, ...props }: SelectValueProps<T>) => {
-	[props, ref] = useLPContextProps(props, ref, SelectValueContext);
+	[props, ref] = useLPContextProps(props, ref, SelectValueContext, 'SelectValue');
 	return (
 		<AriaSelectValue
 			{...props}

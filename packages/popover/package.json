@@ -38,6 +38,7 @@
 	"dependencies": {
 		"@floating-ui/core": "1.7.0",
 		"@floating-ui/dom": "1.7.0",
+		"@launchpad-ui/attribution": "workspace:~",
 		"@launchpad-ui/focus-trap": "workspace:~",
 		"@launchpad-ui/overlay": "workspace:~",
 		"@launchpad-ui/tokens": "workspace:~",

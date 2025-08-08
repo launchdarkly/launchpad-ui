@@ -56,7 +56,7 @@ const IconButtonContext =
  * https://react-spectrum.adobe.com/react-aria/Button.html
  */
 const IconButton = ({ ref, ...props }: IconButtonProps) => {
-	[props, ref] = useLPContextProps(props, ref, IconButtonContext);
+	[props, ref] = useLPContextProps(props, ref, IconButtonContext, 'IconButton');
 	const perceivableProps = useContext(PerceivableContext);
 	const { size = 'medium', variant = 'default', icon } = props;
 

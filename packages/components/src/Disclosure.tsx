@@ -35,7 +35,7 @@ const DisclosureContext = createContext<ContextValue<DisclosureProps, HTMLDivEle
  * https://react-spectrum.adobe.com/react-aria/Disclosure.html
  */
 const Disclosure = ({ ref, ...props }: DisclosureProps) => {
-	[props, ref] = useLPContextProps(props, ref, DisclosureContext);
+	[props, ref] = useLPContextProps(props, ref, DisclosureContext, 'Disclosure');
 	return (
 		<AriaDisclosure
 			{...props}

@@ -22,7 +22,7 @@ const RadioGroupContext = createContext<ContextValue<RadioGroupProps, HTMLDivEle
  * https://react-spectrum.adobe.com/react-aria/RadioGroup.html
  */
 const RadioGroup = ({ ref, ...props }: RadioGroupProps) => {
-	[props, ref] = useLPContextProps(props, ref, RadioGroupContext);
+	[props, ref] = useLPContextProps(props, ref, RadioGroupContext, 'RadioGroup');
 	return (
 		<AriaRadioGroup
 			{...props}

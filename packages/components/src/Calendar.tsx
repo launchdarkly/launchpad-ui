@@ -63,7 +63,7 @@ const RangeCalendarContext =
  * https://react-spectrum.adobe.com/react-aria/Calendar.html
  */
 const Calendar = <T extends DateValue>({ ref, ...props }: CalendarProps<T>) => {
-	[props, ref] = useLPContextProps(props, ref, CalendarContext);
+	[props, ref] = useLPContextProps(props, ref, CalendarContext, 'Calendar');
 	return (
 		<AriaCalendar
 			{...props}
@@ -145,7 +145,7 @@ const CalendarGrid = ({ ref, className, weekdayStyle = 'short', ...props }: Cale
  * https://react-spectrum.adobe.com/react-aria/RangeCalendar.html
  */
 const RangeCalendar = <T extends DateValue>({ ref, ...props }: RangeCalendarProps<T>) => {
-	[props, ref] = useLPContextProps(props, ref, RangeCalendarContext);
+	[props, ref] = useLPContextProps(props, ref, RangeCalendarContext, 'RangeCalendar');
 	const { pageBehavior = 'single' } = props;
 
 	return (

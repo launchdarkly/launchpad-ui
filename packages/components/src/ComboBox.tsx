@@ -35,7 +35,7 @@ const ComboBoxContext = createContext<ContextValue<ComboBoxProps<any>, HTMLDivEl
  * https://react-spectrum.adobe.com/react-aria/ComboBox.html
  */
 const ComboBox = <T extends object>({ ref, ...props }: ComboBoxProps<T>) => {
-	[props, ref] = useLPContextProps(props, ref, ComboBoxContext);
+	[props, ref] = useLPContextProps(props, ref, ComboBoxContext, 'ComboBox');
 	const { menuTrigger = 'focus' } = props;
 	const groupRef = useRef<HTMLDivElement>(null);
 	// https://github.com/adobe/react-spectrum/blob/main/packages/react-aria-components/src/ComboBox.tsx#L152-L166

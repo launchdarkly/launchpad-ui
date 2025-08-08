@@ -1,5 +1,6 @@
 import type { KeyboardEvent, MouseEvent as ReactMouseEvent, ReactNode } from 'react';
 
+import { addLaunchPadAttribution } from '@launchpad-ui/attribution';
 import { Portal } from '@launchpad-ui/portal';
 import { useCallback, useEffect, useRef, useState } from 'react';
 
@@ -131,7 +132,11 @@ const Overlay = ({
 	}
 
 	return (
-		<Portal onKeyDown={handleKeyDown} ref={containerElement}>
+		<Portal
+			{...addLaunchPadAttribution('Overlay')}
+			onKeyDown={handleKeyDown}
+			ref={containerElement}
+		>
 			{isOpen ? children : null}
 		</Portal>
 	);

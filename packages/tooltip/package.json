@@ -36,6 +36,7 @@
 		"test": "vitest run --coverage"
 	},
 	"dependencies": {
+		"@launchpad-ui/attribution": "workspace:~",
 		"@launchpad-ui/popover": "workspace:~",
 		"@launchpad-ui/tokens": "workspace:~",
 		"classix": "2.2.0"

@@ -26,7 +26,7 @@ const RadioIconButtonContext =
  * https://react-spectrum.adobe.com/react-aria/RadioGroup.html
  */
 const RadioIconButton = ({ ref, ...props }: RadioIconButtonProps) => {
-	[props, ref] = useLPContextProps(props, ref, RadioIconButtonContext);
+	[props, ref] = useLPContextProps(props, ref, RadioIconButtonContext, 'RadioIconButton');
 	const { size = 'medium', variant = 'default', icon } = props;
 
 	return (

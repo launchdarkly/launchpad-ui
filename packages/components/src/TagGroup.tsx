@@ -68,7 +68,7 @@ const TagListContext = createContext<ContextValue<TagListProps<any>, HTMLDivElem
  * https://react-spectrum.adobe.com/react-aria/TagGroup.html
  */
 const TagGroup = ({ ref, ...props }: TagGroupProps) => {
-	[props, ref] = useLPContextProps(props, ref, TagGroupContext);
+	[props, ref] = useLPContextProps(props, ref, TagGroupContext, 'TagGroup');
 	const { className } = props;
 
 	return <AriaTagGroup {...props} ref={ref} className={tagGroupStyles({ className })} />;
@@ -78,7 +78,7 @@ const TagGroup = ({ ref, ...props }: TagGroupProps) => {
  * A tag list is a container for tags within a TagGroup.
  */
 const TagList = <T extends object>({ ref, ...props }: TagListProps<T>) => {
-	[props, ref] = useLPContextProps(props, ref, TagListContext);
+	[props, ref] = useLPContextProps(props, ref, TagListContext, 'TagList');
 	return (
 		<AriaTagList
 			{...props}

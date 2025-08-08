@@ -1,6 +1,7 @@
 import type { PopoverProps } from '@launchpad-ui/popover';
 import type { ReactNode } from 'react';
 
+import { addLaunchPadAttribution } from '@launchpad-ui/attribution';
 import { Popover } from '@launchpad-ui/popover';
 import { cx } from 'classix';
 import { forwardRef } from 'react';
@@ -28,6 +29,7 @@ const TooltipBase = ({
 }: TooltipProps) => {
 	return (
 		<Popover
+			{...addLaunchPadAttribution('Tooltip')}
 			enforceFocus={false}
 			interactionKind="hover-or-focus"
 			hoverCloseDelay={hoverCloseDelay}

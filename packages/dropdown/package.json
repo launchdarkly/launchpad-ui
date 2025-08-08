@@ -36,6 +36,7 @@
 		"test": "vitest run --coverage"
 	},
 	"dependencies": {
+		"@launchpad-ui/attribution": "workspace:~",
 		"@launchpad-ui/button": "workspace:~",
 		"@launchpad-ui/icons": "workspace:~",
 		"@launchpad-ui/popover": "workspace:~",

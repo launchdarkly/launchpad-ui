@@ -24,7 +24,7 @@ const GroupContext = createContext<ContextValue<GroupProps, HTMLDivElement>>(nul
  * https://react-spectrum.adobe.com/react-aria/Group.html
  */
 const Group = ({ ref, ...props }: GroupProps) => {
-	[props, ref] = useLPContextProps(props, ref, GroupContext);
+	[props, ref] = useLPContextProps(props, ref, GroupContext, 'Group');
 	const { variant = 'default' } = props;
 
 	return (

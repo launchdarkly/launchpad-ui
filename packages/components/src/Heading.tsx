@@ -69,7 +69,7 @@ const Heading = ({
 	level,
 	...props
 }: HeadingProps) => {
-	[props, ref] = useLPContextProps(props, ref, HeadingContext);
+	[props, ref] = useLPContextProps(props, ref, HeadingContext, 'Heading');
 
 	return (
 		<AriaHeading

@@ -1,5 +1,6 @@
 import type { ComponentProps, KeyboardEvent } from 'react';
 
+import { addLaunchPadAttribution } from '@launchpad-ui/attribution';
 import { cx } from 'classix';
 import { forwardRef } from 'react';
 
@@ -33,6 +34,7 @@ const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
 
 		return (
 			<textarea
+				{...addLaunchPadAttribution('TextArea')}
 				{...props}
 				className={cx(styles.formInput, className)}
 				ref={ref}

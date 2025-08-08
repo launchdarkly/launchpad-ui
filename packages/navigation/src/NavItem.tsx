@@ -1,6 +1,7 @@
 import type { ChipProps } from '@launchpad-ui/chip';
 import type { MouseEvent } from 'react';
 
+import { addLaunchPadAttribution } from '@launchpad-ui/attribution';
 import { Chip } from '@launchpad-ui/chip';
 import { cx } from 'classix';
 import { NavLink, useLocation } from 'react-router';
@@ -35,6 +36,7 @@ const NavItem = ({
 
 	return (
 		<NavLink
+			{...addLaunchPadAttribution('NavItem')}
 			{...other}
 			end={end}
 			to={to}

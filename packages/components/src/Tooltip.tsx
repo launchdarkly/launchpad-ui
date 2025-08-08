@@ -43,7 +43,7 @@ const tooltipStyles = cva(styles.base, {
  * https://react-spectrum.adobe.com/react-aria/Tooltip.html
  */
 const Tooltip = ({ ref, ...props }: TooltipProps) => {
-	[props, ref] = useLPContextProps(props, ref, TooltipContext);
+	[props, ref] = useLPContextProps(props, ref, TooltipContext, 'Tooltip');
 	const { variant = 'default' } = props;
 
 	return (

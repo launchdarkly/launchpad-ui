@@ -1,5 +1,6 @@
 import type { ButtonProps } from '@launchpad-ui/button';
 
+import { addLaunchPadAttribution } from '@launchpad-ui/attribution';
 import { Button } from '@launchpad-ui/button';
 import { Icon } from '@launchpad-ui/icons';
 import { forwardRef } from 'react';
@@ -12,7 +13,12 @@ const DropdownButton = forwardRef<HTMLButtonElement, DropdownButtonProps>((props
 	const { children, hideCaret, 'data-test-id': testId = 'dropdown-button', ...rest } = props;
 
 	return (
-		<Button {...rest} data-test-id={testId} ref={ref}>
+		<Button
+			{...addLaunchPadAttribution('DropdownButton')}
+			{...rest}
+			data-test-id={testId}
+			ref={ref}
+		>
 			{children} {!hideCaret && <Icon name="chevron-down" size="small" />}
 		</Button>
 	);

@@ -1,5 +1,6 @@
 import type { ComponentProps, Ref } from 'react';
 
+import { addLaunchPadAttribution } from '@launchpad-ui/attribution';
 import { cx } from 'classix';
 import { forwardRef } from 'react';
 
@@ -22,6 +23,7 @@ const NavBase = ({
 }: NavBaseProps) => {
 	return (
 		<nav
+			{...addLaunchPadAttribution('Nav')}
 			{...rest}
 			aria-label={ariaLabel ?? `${kind} navigation`}
 			className={cx(styles.Nav, styles[`Nav--${kind}`], className)}

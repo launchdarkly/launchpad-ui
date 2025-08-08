@@ -33,7 +33,7 @@ const MeterContext = createContext<ContextValue<MeterProps, HTMLDivElement>>(nul
  * https://react-spectrum.adobe.com/react-aria/Meter.html
  */
 const Meter = ({ ref, ...props }: MeterProps) => {
-	[props, ref] = useLPContextProps(props, ref, MeterContext);
+	[props, ref] = useLPContextProps(props, ref, MeterContext, 'Meter');
 	const { variant = 'donut' } = props;
 
 	const center = 64;

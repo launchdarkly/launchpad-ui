@@ -22,7 +22,7 @@ const NumberFieldContext = createContext<ContextValue<NumberFieldProps, HTMLDivE
  * https://react-spectrum.adobe.com/react-aria/NumberField.html
  */
 const NumberField = ({ ref, ...props }: NumberFieldProps) => {
-	[props, ref] = useLPContextProps(props, ref, NumberFieldContext);
+	[props, ref] = useLPContextProps(props, ref, NumberFieldContext, 'NumberField');
 	const {
 		formatOptions = {
 			maximumFractionDigits: 20,
