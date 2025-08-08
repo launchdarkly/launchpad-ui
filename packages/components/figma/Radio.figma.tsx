@@ -28,7 +28,7 @@ figma.connect(
 			// "focus": figma.boolean('Focus')
 		},
 		example: ({ isSelected, isDisabled }) => (
-			<Radio isSelected={isSelected} value="1" isDisabled={isDisabled}>
+			<Radio isSelected={isSelected} value="2" isDisabled={isDisabled}>
 				Radio label
 			</Radio>
 		),

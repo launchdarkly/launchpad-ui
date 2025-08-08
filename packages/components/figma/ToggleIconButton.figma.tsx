@@ -8,17 +8,20 @@ figma.connect(
 	{
 		props: {
 			isSelected: figma.boolean('Selected'),
+			isDisabled: figma.enum('State', { Disabled: true }),
 			size: figma.enum('Size', {
 				Small: 'small',
 				Medium: 'medium',
 			}),
+			iconProps: figma.instance('Icon').getProps(),
 		},
-		example: (props) => (
+		example: ({ isDisabled, isSelected, iconProps, size }) => (
 			<ToggleIconButton
-				isSelected={props.isSelected}
-				icon="arrow-up-right"
-				aria-label="Open documentation"
-				size={props.size}
+				isDisabled={isDisabled}
+				isSelected={isSelected}
+				icon={iconProps.name}
+				aria-label="Accessible label text"
+				size={size}
 			/>
 		),
 	},
