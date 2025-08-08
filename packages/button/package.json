@@ -36,7 +36,6 @@
 		"test": "vitest run --coverage"
 	},
 	"dependencies": {
-		"@launchpad-ui/core": "workspace:~",
 		"@launchpad-ui/icons": "workspace:~",
 		"@launchpad-ui/tokens": "workspace:~",
 		"@radix-ui/react-slot": "1.2.0",
