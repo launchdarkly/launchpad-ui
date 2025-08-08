@@ -309,4 +309,78 @@ describe('AfterburnController', () => {
 		const tooltip = document.querySelector('.afterburn-tooltip');
 		expect(tooltip).toBeInTheDocument();
 	});
+
+	it('can be enabled and disabled independently', () => {
+		controller = new AfterburnController({ ...defaultConfig, enabled: false });
+
+		// Controller should not respond to keyboard shortcuts initially
+		const keyEvent = new KeyboardEvent('keydown', {
+			key: 'l',
+			metaKey: true,
+			shiftKey: true,
+		});
+		document.dispatchEvent(keyEvent);
+		expect(document.body.classList.contains('afterburn-active')).toBe(false);
+
+		// Enable it
+		controller.enable();
+
+		// Now keyboard shortcut should work
+		document.dispatchEvent(keyEvent);
+		expect(document.body.classList.contains('afterburn-active')).toBe(true);
+
+		// Disable it
+		controller.disable();
+		expect(document.body.classList.contains('afterburn-active')).toBe(false);
+
+		// Keyboard shortcut should not work after disable
+		document.dispatchEvent(keyEvent);
+		expect(document.body.classList.contains('afterburn-active')).toBe(false);
+	});
+
+	it('properly cleans up on destroy', () => {
+		controller = new AfterburnController(defaultConfig);
+
+		// Activate afterburn first
+		const keyEvent = new KeyboardEvent('keydown', {
+			key: 'l',
+			metaKey: true,
+			shiftKey: true,
+		});
+		document.dispatchEvent(keyEvent);
+		expect(document.body.classList.contains('afterburn-active')).toBe(true);
+
+		// Destroy should clean up everything
+		controller.destroy();
+		expect(document.body.classList.contains('afterburn-active')).toBe(false);
+
+		// Keyboard shortcut should not work after destroy
+		document.dispatchEvent(keyEvent);
+		expect(document.body.classList.contains('afterburn-active')).toBe(false);
+	});
+
+	it('responds to multiple activation methods', () => {
+		controller = new AfterburnController(defaultConfig);
+
+		// Initially inactive
+		expect(document.body.classList.contains('afterburn-active')).toBe(false);
+
+		// Keyboard shortcut should activate
+		const keyEvent = new KeyboardEvent('keydown', {
+			key: 'l',
+			metaKey: true,
+			shiftKey: true,
+		});
+		document.dispatchEvent(keyEvent);
+		expect(document.body.classList.contains('afterburn-active')).toBe(true);
+
+		// Keyboard shortcut should deactivate
+		document.dispatchEvent(keyEvent);
+		expect(document.body.classList.contains('afterburn-active')).toBe(false);
+
+		// Double-click should also activate
+		const doubleClickEvent = new MouseEvent('click', { detail: 2 });
+		document.dispatchEvent(doubleClickEvent);
+		expect(document.body.classList.contains('afterburn-active')).toBe(true);
+	});
 });
