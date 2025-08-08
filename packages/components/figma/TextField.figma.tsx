@@ -12,7 +12,7 @@ figma.connect(
 		variant: { 'Multi Line': 'false' },
 		props: {
 			children: figma.boolean('Label?', {
-				true: figma.children(['Label', 'Input']),
+				true: figma.children(['Label']),
 				false: undefined,
 			}),
 			value: figma.boolean('Value?', {

@@ -1,22 +1,22 @@
 import figma from '@figma/code-connect';
 
-import { Label, Tag, TagGroup, TagList } from '../src';
+import { TagGroup, TagList } from '../src';
 
 figma.connect(
 	TagGroup,
 	'https://www.figma.com/design/98HKKXL2dTle29ikJ3tzk7/%F0%9F%9A%80-LaunchPad?node-id=1-32126',
 	{
 		props: {
-			hasLabel: figma.boolean('Has label'),
+			label: figma.boolean('Has label', {
+				true: figma.children(['Label']),
+				false: undefined,
+			}),
+			tags: figma.children('Tag'),
 		},
-		example: (props) => (
+		example: ({ tags, label }) => (
 			<TagGroup>
-				{props.hasLabel && <Label>Label text</Label>}
-				<TagList>
-					<Tag>One</Tag>
-					<Tag>Two</Tag>
-					<Tag>Three</Tag>
-				</TagList>
+				{label}
+				<TagList>{tags}</TagList>
 			</TagGroup>
 		),
 	},
