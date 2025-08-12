@@ -35,11 +35,11 @@
 }
 
 /* Code blocks in light mode - only target docs content, not Code components */
-:not(.dark-theme) .docblock-argstable code,
-:not(.dark-theme) .docblock-argstable-description code,
-:not(.dark-theme) .docblock-argstable-body code,
-.docs-light .docblock-argstable code,
-.docs-light .sbdocs code:not([class*='code_']) {
+:not(.dark-theme) .docblock-argstable code:not(.docs-story code),
+:not(.dark-theme) .docblock-argstable-description code:not(.docs-story code),
+:not(.dark-theme) .docblock-argstable-body code:not(.docs-story code),
+.docs-light .docblock-argstable code:not(.docs-story code),
+.docs-light .sbdocs code:not([class*='code_']):not(.docs-story code) {
 	background-color: #eceff2 !important; /* gray.50 - matching --lp-color-bg-ui-tertiary light */
 	color: #238ca3 !important; /* brand.cyan.dark - matching --lp-color-text-code-string light */
 	border-color: #d8dde3 !important; /* gray.100 */
@@ -169,16 +169,15 @@
 /* Removed overly broad selectors to preserve Code.tsx component styling */
 
 /* Storybook-specific code styling - only target docs and args table, not actual Code components */
-.sb-main-padded .docblock-argstable code,
-.sb-main-padded .sbdocs code,
-.sb-main-padded .docs-story code:not([class*='code_']),
-.docblock-argstable-description code,
-#storybook-docs code:not([class*='code_']),
+.sb-main-padded .docblock-argstable code:not(.docs-story code),
+.sb-main-padded .sbdocs code:not(.docs-story code),
+.docblock-argstable-description code:not(.docs-story code),
+#storybook-docs code:not([class*='code_']):not(.docs-story code),
 /* Additional specific selectors for argstable code */
 	.docblock-argstable td
-	code,
-.docblock-argstable-body code,
-.docblock-argstable-row code {
+	code:not(.docs-story code),
+.docblock-argstable-body code:not(.docs-story code),
+.docblock-argstable-row code:not(.docs-story code) {
 	background-color: #eceff2 !important; /* gray.50 - matching --lp-color-bg-ui-tertiary light */
 	color: #238ca3 !important; /* brand.cyan.dark - matching --lp-color-text-code-string light */
 	border-radius: 4px !important;
@@ -186,32 +185,25 @@
 	font-weight: 400 !important;
 }
 
-.dark-theme .sb-main-padded .docblock-argstable code,
-.dark-theme .sb-main-padded .sbdocs code,
-.dark-theme .sb-main-padded .docs-story code:not([class*='code_']),
-.dark-theme .docblock-argstable-description code,
-.dark-theme #storybook-docs code:not([class*='code_']),
+.dark-theme .sb-main-padded .docblock-argstable code:not(.docs-story code),
+.dark-theme .sb-main-padded .sbdocs code:not(.docs-story code),
+.dark-theme .docblock-argstable-description code:not(.docs-story code),
+.dark-theme #storybook-docs code:not([class*='code_']):not(.docs-story code),
 /* Additional specific selectors for argstable code in dark mode */
 	.dark-theme .docblock-argstable
 	td
-	code,
-.dark-theme .docblock-argstable-body code,
-.dark-theme .docblock-argstable-row code,
+	code:not(.docs-story code),
+.dark-theme .docblock-argstable-body code:not(.docs-story code),
+.dark-theme .docblock-argstable-row code:not(.docs-story code),
 /* More comprehensive selectors for all possible argstable code elements */
 	.dark-theme .docblock-argstable
-	code,
-.dark-theme table code,
-.dark-theme tbody code,
-.dark-theme tr code,
-.dark-theme td code,
-html.dark-theme .docblock-argstable code,
-html.dark-theme table code,
-[data-theme='dark'] .docblock-argstable code,
-[data-theme='dark'] table code,
+	code:not(.docs-story code),
+html.dark-theme .docblock-argstable code:not(.docs-story code),
+[data-theme='dark'] .docblock-argstable code:not(.docs-story code),
 /* Force override with highest specificity */
 	.dark-theme div[class*='docblock']
-	code,
-.dark-theme div[class*='argstable'] code {
+	code:not(.docs-story code),
+.dark-theme div[class*='argstable'] code:not(.docs-story code) {
 	background-color: #2d3239 !important; /* gray.800 - matching --lp-color-bg-ui-tertiary dark */
 	color: #6de0f7 !important; /* brand.cyan.light - matching --lp-color-text-code-string dark */
 	border-radius: 4px !important;
@@ -299,6 +291,14 @@ body,
 	fill: #3dd6f5 !important;
 }
 
+.dark-theme .search-result-item--label {
+	color: #eceff2 !important;
+}
+
+.search-result-item--label mark {
+	color: #7084ff !important;
+}
+
 /* Additional selectors for sidepanel items */
 .light-theme .sidebar-item[data-selected='true'],
 .dark-theme .sidebar-item[data-selected='true'],
@@ -362,20 +362,9 @@ body,
 	background-color: #000000 !important;
 }
 
-/* Nuclear option: Force any CSS module class in argstable to black background */
-.dark-theme .docblock-argstable [class^='css-'],
-.dark-theme .docblock-argstable [class*=' css-'],
-.dark-theme .docblock-argstable table [class^='css-'],
-.dark-theme .docblock-argstable table [class*=' css-'] {
-	background-color: #000000 !important;
-}
-
-/* Extra specificity for stubborn CSS module classes */
-.dark-theme .docblock-argstable.docblock-argstable [class^='css-'],
-.dark-theme .docblock-argstable.docblock-argstable [class*=' css-'],
-.dark-theme .docblock-argstable tbody > tr > td[class^='css-'],
-.dark-theme .docblock-argstable tbody > tr > td[class*=' css-'] {
-	background-color: #000000 !important;
+.dark-theme .docblock-argstable tbody tr * {
+	background-color: transparent !important;
+	color: #eceff2 !important;
 }
 
 /* Custom scrollbar styling */
@@ -403,10 +392,10 @@ body,
 	background: #64748b;
 }
 
-.dark-theme .sbdocs code:not(.docs-story code),
-.dark-theme #storybook-docs code:not(.docs-story code),
-.dark-theme .docblock-argstable code:not(.docs-story code),
-.dark-theme .sb-unstyled code:not(.docs-story code) {
+.dark-theme .sbdocs code:not(.docs-story code):not([class*='code_']),
+.dark-theme #storybook-docs code:not(.docs-story code):not([class*='code_']),
+.dark-theme .docblock-argstable code:not(.docs-story code):not([class*='code_']),
+.dark-theme .sb-unstyled code:not(.docs-story code):not([class*='code_']) {
 	background-color: #2d3239 !important;
 	color: #6de0f7 !important;
 	border-radius: 4px !important;
