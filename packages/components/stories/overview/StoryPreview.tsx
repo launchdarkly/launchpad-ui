@@ -2,7 +2,7 @@
 import type { ReactNode } from 'react';
 
 interface StoryType {
-	render?: (args?: Record<string, unknown>) => ReactNode;
+	render?: (args?: Record<string, unknown>, context?: any) => ReactNode;
 	args?: Record<string, unknown> & {
 		children?: ReactNode;
 	};
@@ -17,7 +17,7 @@ export const StoryPreview = ({ story, scale = 1 }: { story: StoryType; scale?: n
 	const renderStory = () => {
 		if (story.render) {
 			// Story has custom render function - use it with args
-			return story.render(story.args || {});
+			return story.render(story.args || {}, {});
 		}
 		if (story.args) {
 			// Story has args - need to render the component properly
