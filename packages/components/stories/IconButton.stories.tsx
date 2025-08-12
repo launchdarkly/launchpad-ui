@@ -5,6 +5,7 @@ import { IconButton } from '../src/IconButton';
 const meta: Meta<typeof IconButton> = {
 	component: IconButton,
 	title: 'Components/Buttons/IconButton',
+	tags: ['autodocs'],
 	parameters: {
 		design: {
 			type: 'figma',
@@ -24,10 +25,10 @@ export const Default: Story = {
 export const Variant: Story = {
 	render: () => (
 		<div style={{ display: 'flex', gap: '10px' }}>
-			<IconButton icon="add" variant="destructive" />
-			<IconButton icon="add" variant="primary" />
-			<IconButton icon="add" variant="minimal" />
-			<IconButton icon="add" variant="default" />
+			<IconButton icon="add" variant="destructive" aria-label="create" />
+			<IconButton icon="add" variant="primary" aria-label="create" />
+			<IconButton icon="add" variant="minimal" aria-label="create" />
+			<IconButton icon="add" variant="default" aria-label="create" />
 		</div>
 	),
 	args: { 'aria-label': 'create' },
@@ -36,8 +37,8 @@ export const Variant: Story = {
 export const Size: Story = {
 	render: () => (
 		<div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
-			<IconButton icon="add" size="small" />
-			<IconButton icon="add" size="medium" />
+			<IconButton icon="add" size="small" aria-label="create" />
+			<IconButton icon="add" size="medium" aria-label="create" />
 		</div>
 	),
 	args: { 'aria-label': 'create' },

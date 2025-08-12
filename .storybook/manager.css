@@ -163,6 +163,7 @@
 .dark-theme :not(.docs-story) .sbdocs span,
 .dark-theme :not(.docs-story) .sbdocs div {
 	color: #eceff2 !important; /* gray.50 */
+	text-decoration: none !important;
 }
 
 /* Removed overly broad selectors to preserve Code.tsx component styling */
@@ -298,12 +299,7 @@ body,
 	fill: #3dd6f5 !important;
 }
 
-/* Ensure proper contrast for interactive elements */
-.light-theme [data-selected='true'],
-.dark-theme [data-selected='true'],
 /* Additional selectors for sidepanel items */
-.light-theme [aria-selected='true'],
-.dark-theme [aria-selected='true'],
 .light-theme .sidebar-item[data-selected='true'],
 .dark-theme .sidebar-item[data-selected='true'],
 .light-theme .tree-node[data-selected='true'],
@@ -313,10 +309,10 @@ body,
 }
 
 /* Selected item icons should always be white */
-.light-theme [data-selected='true'] svg,
-.dark-theme [data-selected='true'] svg,
-.light-theme [aria-selected='true'] svg,
-.dark-theme [aria-selected='true'] svg,
+.light-theme .sidebar-item[data-selected='true'] svg,
+.dark-theme .sidebar-item[data-selected='true'] svg,
+.light-theme .tree-node[data-selected='true'] svg,
+.dark-theme .tree-node[data-selected='true'] svg,
 .light-theme .sidebar-item[data-selected='true'] svg,
 .dark-theme .sidebar-item[data-selected='true'] svg,
 .light-theme .tree-node[data-selected='true'] svg,

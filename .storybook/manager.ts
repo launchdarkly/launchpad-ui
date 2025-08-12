@@ -1,6 +1,6 @@
 import { addons } from 'storybook/internal/manager-api';
 
-import { lightTheme } from './themes';
+import { darkTheme, lightTheme } from './themes';
 
 // Set the default theme
 addons.setConfig({

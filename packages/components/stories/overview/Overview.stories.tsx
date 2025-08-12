@@ -4,39 +4,39 @@ import type React from 'react';
 import { Icon } from '@launchpad-ui/icons';
 import { vars } from '@launchpad-ui/vars';
 
-import { Avatar } from '../src/Avatar';
-import { Button } from '../src/Button';
-import { ButtonGroup } from '../src/ButtonGroup';
-import { Checkbox } from '../src/Checkbox';
-import { CheckboxGroup } from '../src/CheckboxGroup';
-import { Code } from '../src/Code';
-import { FieldGroup } from '../src/FieldGroup';
-import { FileTrigger } from '../src/FileTrigger';
-import { Group } from '../src/Group';
-import { Heading } from '../src/Heading';
-import { IconButton } from '../src/IconButton';
-import { Input } from '../src/Input';
-import { Label } from '../src/Label';
-import { Link } from '../src/Link';
-import { NumberField } from '../src/NumberField';
-import { RadioGroup } from '../src/RadioGroup';
-import { SearchField } from '../src/SearchField';
-import { Switch } from '../src/Switch';
-import { Text } from '../src/Text';
-import { TextField } from '../src/TextField';
-import { ToggleButton } from '../src/ToggleButton';
-import { ToggleButtonGroup } from '../src/ToggleButtonGroup';
-import { ToggleIconButton } from '../src/ToggleIconButton';
-import { Toolbar } from '../src/Toolbar';
-import { collectionsCategory } from './overview/Collections';
-import { dateAndTimeCategory } from './overview/DateAndTime';
-import { dragAndDropCategory } from './overview/DragAndDrop';
-import { navigationCategory } from './overview/Navigation';
-import { overlaysCategory } from './overview/Overlays';
-import { pickersCategory } from './overview/Pickers';
+import { Avatar } from '../../src/Avatar';
+import { Button } from '../../src/Button';
+import { ButtonGroup } from '../../src/ButtonGroup';
+import { Checkbox } from '../../src/Checkbox';
+import { CheckboxGroup } from '../../src/CheckboxGroup';
+import { Code } from '../../src/Code';
+import { FieldGroup } from '../../src/FieldGroup';
+import { FileTrigger } from '../../src/FileTrigger';
+import { Group } from '../../src/Group';
+import { Heading } from '../../src/Heading';
+import { IconButton } from '../../src/IconButton';
+import { Input } from '../../src/Input';
+import { Label } from '../../src/Label';
+import { Link } from '../../src/Link';
+import { NumberField } from '../../src/NumberField';
+import { RadioGroup } from '../../src/RadioGroup';
+import { SearchField } from '../../src/SearchField';
+import { Switch } from '../../src/Switch';
+import { Text } from '../../src/Text';
+import { TextField } from '../../src/TextField';
+import { ToggleButton } from '../../src/ToggleButton';
+import { ToggleButtonGroup } from '../../src/ToggleButtonGroup';
+import { ToggleIconButton } from '../../src/ToggleIconButton';
+import { Toolbar } from '../../src/Toolbar';
+import { collectionsCategory } from './Collections';
+import { dateAndTimeCategory } from './DateAndTime';
+import { dragAndDropCategory } from './DragAndDrop';
+import { navigationCategory } from './Navigation';
+import { overlaysCategory } from './Overlays';
+import { pickersCategory } from './Pickers';
 // Import modular sections from separate files
-import { recipesCategory } from './overview/Recipes';
-import { statusCategory } from './overview/Status';
+import { recipesCategory } from './Recipes';
+import { statusCategory } from './Status';
 
 // Component showcase data
 const componentCategories = [
@@ -318,10 +318,12 @@ const ComponentCard = ({
 	name,
 	component,
 	storyPath,
+	hideCodeLink = false,
 }: {
 	name: string;
 	component: React.ReactNode;
 	storyPath: string;
+	hideCodeLink?: boolean;
 }) => {
 	return (
 		<div style={cardStyles}>
@@ -346,17 +348,19 @@ const ComponentCard = ({
 					gap: vars.spacing[500],
 				}}
 			>
-				<Link
-					href={`https://github.com/launchdarkly/launchpad-ui/tree/main/packages/components/src/${name}.tsx`}
-					target="_blank"
-					rel="noopener noreferrer"
-					variant="subtle"
-				>
-					<Icon name="copy-code" size="small" />
-					<Text size="medium" style={{ padding: vars.spacing[200] }}>
-						Code
-					</Text>
-				</Link>
+				{!hideCodeLink && (
+					<Link
+						href={`https://github.com/launchdarkly/launchpad-ui/tree/main/packages/components/src/${name}.tsx`}
+						target="_blank"
+						rel="noopener noreferrer"
+						variant="subtle"
+					>
+						<Icon name="copy-code" size="small" />
+						<Text size="medium" style={{ padding: vars.spacing[200] }}>
+							Code
+						</Text>
+					</Link>
+				)}
 				<Link
 					href={`${window.location.origin}/?path=/docs/${storyPath}`}
 					target="_blank"
@@ -387,7 +391,13 @@ const Overview = () => {
 						}}
 					>
 						{components.map(({ name, component, storyPath }) => (
-							<ComponentCard key={name} name={name} component={component} storyPath={storyPath} />
+							<ComponentCard
+								key={name}
+								name={name}
+								component={component}
+								storyPath={storyPath}
+								hideCodeLink={category === 'Recipes'}
+							/>
 						))}
 					</div>
 				</div>
