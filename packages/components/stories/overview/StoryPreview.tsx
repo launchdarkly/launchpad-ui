@@ -1,9 +1,10 @@
 // Universal component to render any story at smaller scale for overview
+/** biome-ignore-all lint/suspicious/noExplicitAny: <explanation> */
 import type { ReactNode } from 'react';
 
 interface StoryType {
-	render?: (args?: Record<string, unknown>, context?: any) => ReactNode;
-	args?: Record<string, unknown> & {
+	render?: (args?: any, context?: any) => ReactNode;
+	args?: any & {
 		children?: ReactNode;
 	};
 }
