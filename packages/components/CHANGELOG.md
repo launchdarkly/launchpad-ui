@@ -1,5 +1,11 @@
 # @launchpad-ui/components
 
+## 0.13.0
+
+### Minor Changes
+
+- [#1739](https://github.com/launchdarkly/launchpad-ui/pull/1739) [`4b0dfe4`](https://github.com/launchdarkly/launchpad-ui/commit/4b0dfe4c2fa8e1d9d9221d04dc0f9cfef2626c98) Thanks [@vezaynk](https://github.com/vezaynk)! - Include .d.ts files in components package release
+
 ## 0.12.0
 
 ### Minor Changes
