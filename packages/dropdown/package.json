@@ -43,14 +43,14 @@
 		"classix": "2.2.0"
 	},
 	"peerDependencies": {
-		"react": "19.1.0",
-		"react-dom": "19.1.0",
-		"@react-aria/utils": "3.29.1"
+		"@react-aria/utils": "3.30.0",
+		"react": "19.1.1",
+		"react-dom": "19.1.1"
 	},
 	"devDependencies": {
-		"@react-types/shared": "3.30.0",
-		"react": "19.1.0",
-		"react-dom": "19.1.0",
-		"@react-aria/utils": "3.29.1"
+		"@react-aria/utils": "3.30.0",
+		"@react-types/shared": "3.31.0",
+		"react": "19.1.1",
+		"react-dom": "19.1.1"
 	}
 }
