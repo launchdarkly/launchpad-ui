@@ -1,5 +1,29 @@
 # @launchpad-ui/core
 
+## 0.58.0
+
+### Minor Changes
+
+- [#1743](https://github.com/launchdarkly/launchpad-ui/pull/1743) [`00198f0`](https://github.com/launchdarkly/launchpad-ui/commit/00198f0e3798741f45708f604380411bb2706cba) Thanks [@vezaynk](https://github.com/vezaynk)! - Bump all react-aria packages
+
+### Patch Changes
+
+- Updated dependencies [[`00198f0`](https://github.com/launchdarkly/launchpad-ui/commit/00198f0e3798741f45708f604380411bb2706cba)]:
+  - @launchpad-ui/focus-trap@0.4.0
+  - @launchpad-ui/navigation@0.15.0
+  - @launchpad-ui/dropdown@0.9.0
+  - @launchpad-ui/overlay@0.5.0
+  - @launchpad-ui/popover@0.13.0
+  - @launchpad-ui/tooltip@0.11.0
+  - @launchpad-ui/button@0.14.0
+  - @launchpad-ui/drawer@0.8.0
+  - @launchpad-ui/filter@0.10.0
+  - @launchpad-ui/portal@0.3.0
+  - @launchpad-ui/modal@0.20.0
+  - @launchpad-ui/table@0.8.0
+  - @launchpad-ui/form@0.14.0
+  - @launchpad-ui/menu@0.15.0
+
 ## 0.57.0
 
 ### Minor Changes

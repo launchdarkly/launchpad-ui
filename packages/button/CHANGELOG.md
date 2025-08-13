@@ -1,5 +1,17 @@
 # @launchpad-ui/button
 
+## 0.14.0
+
+### Minor Changes
+
+- [#1743](https://github.com/launchdarkly/launchpad-ui/pull/1743) [`00198f0`](https://github.com/launchdarkly/launchpad-ui/commit/00198f0e3798741f45708f604380411bb2706cba) Thanks [@vezaynk](https://github.com/vezaynk)! - Bump all react-aria packages
+
+### Patch Changes
+
+- Updated dependencies [[`00198f0`](https://github.com/launchdarkly/launchpad-ui/commit/00198f0e3798741f45708f604380411bb2706cba)]:
+  - @launchpad-ui/tokens@0.14.0
+  - @launchpad-ui/icons@0.23.0
+
 ## 0.13.0
 
 ### Minor Changes
