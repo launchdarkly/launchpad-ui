@@ -44,8 +44,8 @@
 		"classix": "2.2.0"
 	},
 	"peerDependencies": {
-		"react": "^18.0.0 || ^19.0.0",
-		"react-dom": "^18.0.0 || ^19.0.0",
+		"react": "19.1.0",
+		"react-dom": "19.1.0",
 		"@react-aria/button": "3.13.3",
 		"@react-aria/i18n": "3.12.10",
 		"@react-aria/numberfield": "3.11.16",
