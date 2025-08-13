@@ -11,6 +11,21 @@
       "specifierTypes": [
         "workspace-protocol"
       ]
+    },
+    {
+      "dependencyTypes": [
+        "peer",
+        "dev",
+        "prod"
+      ],
+      "label": "Peer deps must be up to date",
+      "dependencies": [
+        "*"
+      ],
+      "specifierTypes": [
+        "exact"
+      ],
+      "preferVersion": "highestSemver"
     }
   ]
 }

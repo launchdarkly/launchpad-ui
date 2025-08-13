@@ -45,11 +45,11 @@
 		"framer-motion": "12.20.5"
 	},
 	"peerDependencies": {
-		"react": "19.1.0",
-		"react-dom": "19.1.0"
+		"react": "19.1.1",
+		"react-dom": "19.1.1"
 	},
 	"devDependencies": {
-		"react": "19.1.0",
-		"react-dom": "19.1.0"
+		"react": "19.1.1",
+		"react-dom": "19.1.1"
 	}
 }
