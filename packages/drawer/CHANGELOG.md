@@ -1,5 +1,19 @@
 # @launchpad-ui/drawer
 
+## 0.7.0
+
+### Minor Changes
+
+- [#1741](https://github.com/launchdarkly/launchpad-ui/pull/1741) [`fbd9260`](https://github.com/launchdarkly/launchpad-ui/commit/fbd92603385f45426b8160e5ca05cef207a1e6b6) Thanks [@vezaynk](https://github.com/vezaynk)! - bump react version
+
+### Patch Changes
+
+- Updated dependencies [[`fbd9260`](https://github.com/launchdarkly/launchpad-ui/commit/fbd92603385f45426b8160e5ca05cef207a1e6b6)]:
+  - @launchpad-ui/focus-trap@0.3.0
+  - @launchpad-ui/button@0.13.0
+  - @launchpad-ui/portal@0.2.0
+  - @launchpad-ui/icons@0.22.0
+
 ## 0.6.4
 
 ### Patch Changes
