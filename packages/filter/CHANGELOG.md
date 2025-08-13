@@ -1,5 +1,20 @@
 # @launchpad-ui/filter
 
+## 0.9.0
+
+### Minor Changes
+
+- [#1741](https://github.com/launchdarkly/launchpad-ui/pull/1741) [`fbd9260`](https://github.com/launchdarkly/launchpad-ui/commit/fbd92603385f45426b8160e5ca05cef207a1e6b6) Thanks [@vezaynk](https://github.com/vezaynk)! - bump react version
+
+### Patch Changes
+
+- Updated dependencies [[`fbd9260`](https://github.com/launchdarkly/launchpad-ui/commit/fbd92603385f45426b8160e5ca05cef207a1e6b6)]:
+  - @launchpad-ui/dropdown@0.8.0
+  - @launchpad-ui/tooltip@0.10.0
+  - @launchpad-ui/button@0.13.0
+  - @launchpad-ui/icons@0.22.0
+  - @launchpad-ui/menu@0.14.0
+
 ## 0.8.4
 
 ### Patch Changes
