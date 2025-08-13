@@ -134,6 +134,9 @@ importers:
       storybook-addon-pseudo-states:
         specifier: ^9.0.9
         version: 9.0.9(storybook@9.0.9(@testing-library/dom@10.4.0)(prettier@3.5.3))
+      syncpack:
+        specifier: 14.0.0-alpha.19
+        version: 14.0.0-alpha.19
       tsx:
         specifier: ^4.20.3
         version: 4.20.3
@@ -5124,6 +5127,41 @@ packages:
 
   symbol-tree@3.2.4:
     resolution: {integrity: sha512-9QNk5KwDF+Bvz+PyObkmSYjI5ksVUYtjW7AU22r2NKcfLJcXp96hkDWU3+XndOsUb+AQ9QhfzfCT2O+CNWT5Tw==}
+
+  syncpack-darwin-arm64@14.0.0-alpha.19:
+    resolution: {integrity: sha512-Xw4Q86Cf/55hE4xYxYZCEr98CqPpCF1IXPvr8EI+grAb44cE3BeQsi7SnmQNMGQ9Nibu2kr7D1fxGpQWdR+odg==}
+    cpu: [arm64]
+    os: [darwin]
+
+  syncpack-darwin-x64@14.0.0-alpha.19:
+    resolution: {integrity: sha512-e+10rBn13KEfWYNY7/GUTnfv7XrvmRhTMbl+4m922/O2fx2v515mbHx5ku1KvN3Gz5Up3y459bslS9+aIx0kCA==}
+    cpu: [x64]
+    os: [darwin]
+
+  syncpack-linux-arm64@14.0.0-alpha.19:
+    resolution: {integrity: sha512-X8XeQ06uQ8ZyuK1hSXaHBneBUGSfe0/eA9ZCoARQr6TD6fF3CT45nDSVtV9y3qrmL3S2u4Rc0/wW6J5VbpIi/Q==}
+    cpu: [arm64]
+    os: [linux]
+
+  syncpack-linux-x64@14.0.0-alpha.19:
+    resolution: {integrity: sha512-eRaJcflvzZhawn67/0QZPS6VtOu2b8sl5DlpdmumgZ7yb1r77Q0Lxf5xHV3juYxnnL8xsZ8svXTvZMSpypsQkg==}
+    cpu: [x64]
+    os: [linux]
+
+  syncpack-windows-arm64@14.0.0-alpha.19:
+    resolution: {integrity: sha512-JRpr1xg4xJCdeitLjohtIN1d6njxE0/r/X2KVHUAAzUVSvl0y3OIk8j5QS9/qN8toOLwjO209zdRx03GNA+SGw==}
+    cpu: [arm64]
+    os: [win32]
+
+  syncpack-windows-x64@14.0.0-alpha.19:
+    resolution: {integrity: sha512-kxCMO0VJQU8M/5CfWD1v566QISzbQmMBkuQN/zrfDxQJa/Q0jkz+VeqJuUVL9m4bmPBik9FlpatCNPmHEV5hMA==}
+    cpu: [x64]
+    os: [win32]
+
+  syncpack@14.0.0-alpha.19:
+    resolution: {integrity: sha512-gFOMbycrzlGpYgnVwiKzW9p8y9cUPTDrfiofMFPt70/yVOwCBuEYZM/wfdkXVhZd7HwQQT0+MEYHiO+HqyaH2w==}
+    engines: {node: '>=14.17.0'}
+    hasBin: true
 
   tar-stream@2.2.0:
     resolution: {integrity: sha512-ujeqbceABgwMZxEJnk2HDY2DlnUZ+9oEcb1KzTVfYHio0UE6dG71n60d8D2I4qNvleWrrXpmjpt7vZeF1LnMZQ==}
@@ -10818,6 +10856,35 @@ snapshots:
   supports-preserve-symlinks-flag@1.0.0: {}
 
   symbol-tree@3.2.4: {}
+
+  syncpack-darwin-arm64@14.0.0-alpha.19:
+    optional: true
+
+  syncpack-darwin-x64@14.0.0-alpha.19:
+    optional: true
+
+  syncpack-linux-arm64@14.0.0-alpha.19:
+    optional: true
+
+  syncpack-linux-x64@14.0.0-alpha.19:
+    optional: true
+
+  syncpack-windows-arm64@14.0.0-alpha.19:
+    optional: true
+
+  syncpack-windows-x64@14.0.0-alpha.19:
+    optional: true
+
+  syncpack@14.0.0-alpha.19:
+    dependencies:
+      tsx: 4.20.3
+    optionalDependencies:
+      syncpack-darwin-arm64: 14.0.0-alpha.19
+      syncpack-darwin-x64: 14.0.0-alpha.19
+      syncpack-linux-arm64: 14.0.0-alpha.19
+      syncpack-linux-x64: 14.0.0-alpha.19
+      syncpack-windows-arm64: 14.0.0-alpha.19
+      syncpack-windows-x64: 14.0.0-alpha.19
 
   tar-stream@2.2.0:
     dependencies:
