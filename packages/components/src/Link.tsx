@@ -34,7 +34,7 @@ const LinkContext = createContext<ContextValue<LinkProps, HTMLAnchorElement>>(nu
  * https://react-spectrum.adobe.com/react-aria/Link.html
  */
 const Link = ({ ref, ...props }: LinkProps) => {
-	[props, ref] = useLPContextProps(props, ref, LinkContext);
+	[props, ref] = useLPContextProps(props, ref, LinkContext, 'Link');
 	const { variant = 'default' } = props;
 
 	return (

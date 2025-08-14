@@ -33,7 +33,7 @@ const DialogContext = createContext<ContextValue<DialogProps, HTMLElement>>(null
  * https://react-spectrum.adobe.com/react-aria/Dialog.html
  */
 const Dialog = ({ ref, ...props }: DialogProps) => {
-	[props, ref] = useLPContextProps(props, ref, DialogContext);
+	[props, ref] = useLPContextProps(props, ref, DialogContext, 'Dialog');
 	const { className } = props;
 	const descriptionId = useSlotId();
 

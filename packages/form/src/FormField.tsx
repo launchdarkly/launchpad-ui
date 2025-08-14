@@ -3,6 +3,7 @@ import type { FieldErrorProps } from './FieldError';
 import type { FormHintProps } from './FormHint';
 import type { LabelProps } from './Label';
 
+import { addLaunchPadAttribution } from '@launchpad-ui/attribution';
 import { cx } from 'classix';
 
 import { FieldError } from './FieldError';
@@ -57,6 +58,7 @@ const FormField = ({
 
 	return (
 		<FormGroup
+			{...addLaunchPadAttribution('FormField')}
 			className={cx(styles.field, className)}
 			name={name}
 			ignoreValidation={ignoreValidation}

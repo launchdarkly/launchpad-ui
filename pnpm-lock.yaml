@@ -181,6 +181,30 @@ importers:
         specifier: ^5.0.0
         version: 5.0.0
 
+  packages/afterburn:
+    dependencies:
+      '@launchpad-ui/attribution':
+        specifier: workspace:~
+        version: link:../attribution
+      '@launchpad-ui/components':
+        specifier: workspace:~
+        version: link:../components
+      '@launchpad-ui/icons':
+        specifier: workspace:~
+        version: link:../icons
+      '@launchpad-ui/tokens':
+        specifier: workspace:~
+        version: link:../tokens
+    devDependencies:
+      react:
+        specifier: 19.1.0
+        version: 19.1.0
+      react-dom:
+        specifier: 19.1.0
+        version: 19.1.0(react@19.1.0)
+
+  packages/attribution: {}
+
   packages/box:
     dependencies:
       '@launchpad-ui/tokens':
@@ -217,6 +241,9 @@ importers:
 
   packages/button:
     dependencies:
+      '@launchpad-ui/core':
+        specifier: workspace:~
+        version: link:../core
       '@launchpad-ui/icons':
         specifier: workspace:~
         version: link:../icons
@@ -242,6 +269,9 @@ importers:
       '@internationalized/date':
         specifier: 3.8.2
         version: 3.8.2
+      '@launchpad-ui/attribution':
+        specifier: workspace:~
+        version: link:../attribution
       '@launchpad-ui/icons':
         specifier: workspace:~
         version: link:../icons
@@ -346,6 +376,9 @@ importers:
 
   packages/drawer:
     dependencies:
+      '@launchpad-ui/attribution':
+        specifier: workspace:~
+        version: link:../attribution
       '@launchpad-ui/button':
         specifier: workspace:~
         version: link:../button
@@ -386,6 +419,9 @@ importers:
 
   packages/dropdown:
     dependencies:
+      '@launchpad-ui/attribution':
+        specifier: workspace:~
+        version: link:../attribution
       '@launchpad-ui/button':
         specifier: workspace:~
         version: link:../button
@@ -417,6 +453,9 @@ importers:
 
   packages/filter:
     dependencies:
+      '@launchpad-ui/attribution':
+        specifier: workspace:~
+        version: link:../attribution
       '@launchpad-ui/button':
         specifier: workspace:~
         version: link:../button
@@ -463,6 +502,9 @@ importers:
 
   packages/form:
     dependencies:
+      '@launchpad-ui/attribution':
+        specifier: workspace:~
+        version: link:../attribution
       '@launchpad-ui/button':
         specifier: workspace:~
         version: link:../button
@@ -519,6 +561,9 @@ importers:
 
   packages/menu:
     dependencies:
+      '@launchpad-ui/attribution':
+        specifier: workspace:~
+        version: link:../attribution
       '@launchpad-ui/form':
         specifier: workspace:~
         version: link:../form
@@ -559,6 +604,9 @@ importers:
 
   packages/modal:
     dependencies:
+      '@launchpad-ui/attribution':
+        specifier: workspace:~
+        version: link:../attribution
       '@launchpad-ui/button':
         specifier: workspace:~
         version: link:../button
@@ -596,6 +644,9 @@ importers:
 
   packages/navigation:
     dependencies:
+      '@launchpad-ui/attribution':
+        specifier: workspace:~
+        version: link:../attribution
       '@launchpad-ui/chip':
         specifier: 0.9.58
         version: 0.9.58(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
@@ -642,6 +693,9 @@ importers:
 
   packages/overlay:
     dependencies:
+      '@launchpad-ui/attribution':
+        specifier: workspace:~
+        version: link:../attribution
       '@launchpad-ui/portal':
         specifier: workspace:~
         version: link:../portal
@@ -661,6 +715,9 @@ importers:
       '@floating-ui/dom':
         specifier: 1.7.0
         version: 1.7.0
+      '@launchpad-ui/attribution':
+        specifier: workspace:~
+        version: link:../attribution
       '@launchpad-ui/focus-trap':
         specifier: workspace:~
         version: link:../focus-trap
@@ -695,6 +752,9 @@ importers:
 
   packages/table:
     dependencies:
+      '@launchpad-ui/attribution':
+        specifier: workspace:~
+        version: link:../attribution
       '@launchpad-ui/tokens':
         specifier: workspace:~
         version: link:../tokens
@@ -726,6 +786,9 @@ importers:
 
   packages/tooltip:
     dependencies:
+      '@launchpad-ui/attribution':
+        specifier: workspace:~
+        version: link:../attribution
       '@launchpad-ui/popover':
         specifier: workspace:~
         version: link:../popover

@@ -49,7 +49,7 @@ const ProgressBarContext = createContext<ContextValue<ProgressBarProps, HTMLDivE
  * https://react-spectrum.adobe.com/react-aria/ProgressBar.html
  */
 const ProgressBar = ({ ref, ...props }: ProgressBarProps) => {
-	[props, ref] = useLPContextProps(props, ref, ProgressBarContext);
+	[props, ref] = useLPContextProps(props, ref, ProgressBarContext, 'ProgressBar');
 	const { size = 'small', variant = 'spinner' } = props;
 
 	const center = 16;

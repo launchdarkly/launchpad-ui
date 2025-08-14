@@ -20,7 +20,7 @@ const FieldErrorContext = createContext<ContextValue<FieldErrorProps, HTMLElemen
  * A FieldError displays validation errors for a form field.
  */
 const FieldError = ({ ref, ...props }: FieldErrorProps) => {
-	[props, ref] = useLPContextProps(props, ref, FieldErrorContext);
+	[props, ref] = useLPContextProps(props, ref, FieldErrorContext, 'FieldError');
 	return (
 		<AriaFieldError
 			{...props}

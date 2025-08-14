@@ -1,6 +1,7 @@
 import type { ChangeEvent, ReactNode } from 'react';
 import type { FilterOption } from './FilterMenu';
 
+import { addLaunchPadAttribution } from '@launchpad-ui/attribution';
 import { Dropdown } from '@launchpad-ui/dropdown';
 
 import { AppliedFilterButton } from './AppliedFilterButton';
@@ -53,7 +54,13 @@ const AppliedFilter = ({
 		onSearchChange && (!!searchValue || options.length > SEARCH_INPUT_THRESHOLD || !isEmpty);
 
 	return (
-		<Dropdown targetClassName={className} placement="bottom-start" enableArrow={false} {...props}>
+		<Dropdown
+			{...addLaunchPadAttribution('AppliedFilter')}
+			targetClassName={className}
+			placement="bottom-start"
+			enableArrow={false}
+			{...props}
+		>
 			<AppliedFilterButton
 				data-test-id={testId}
 				name={name}

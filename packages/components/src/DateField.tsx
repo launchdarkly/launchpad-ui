@@ -53,7 +53,7 @@ const TimeFieldContext =
  * https://react-spectrum.adobe.com/react-aria/DateField.html
  */
 const DateField = <T extends DateValue>({ ref, ...props }: DateFieldProps<T>) => {
-	[props, ref] = useLPContextProps(props, ref, DateFieldContext);
+	[props, ref] = useLPContextProps(props, ref, DateFieldContext, 'DateField');
 	return (
 		<AriaDateField
 			{...props}
@@ -105,7 +105,7 @@ const DateSegment = ({ ref, ...props }: DateSegmentProps) => {
  * https://react-spectrum.adobe.com/react-aria/TimeField.html
  */
 const TimeField = <T extends TimeValue>({ ref, ...props }: TimeFieldProps<T>) => {
-	[props, ref] = useLPContextProps(props, ref, TimeFieldContext);
+	[props, ref] = useLPContextProps(props, ref, TimeFieldContext, 'TimeField');
 	return (
 		<AriaTimeField
 			{...props}

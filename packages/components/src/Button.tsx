@@ -54,7 +54,7 @@ const ButtonContext = createContext<ContextValue<ButtonContextValue, HTMLButtonE
  * https://react-spectrum.adobe.com/react-aria/Button.html
  */
 const Button = ({ ref, ...props }: ButtonProps) => {
-	[props, ref] = useLPContextProps(props, ref, ButtonContext);
+	[props, ref] = useLPContextProps(props, ref, ButtonContext, 'Button');
 	const perceivableProps = useContext(PerceivableContext);
 	const { size = 'medium', variant = 'default' } = props;
 

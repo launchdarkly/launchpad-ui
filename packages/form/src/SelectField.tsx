@@ -1,5 +1,6 @@
 import type { ComponentProps } from 'react';
 
+import { addLaunchPadAttribution } from '@launchpad-ui/attribution';
 import { cx } from 'classix';
 import { forwardRef } from 'react';
 
@@ -19,7 +20,13 @@ const SelectField = forwardRef<HTMLSelectElement, SelectFieldProps>(
 		const classes = cx(styles.formInput, className);
 
 		return (
-			<select {...rest} data-test-id={testId} className={classes} ref={ref}>
+			<select
+				{...addLaunchPadAttribution('SelectField')}
+				{...rest}
+				data-test-id={testId}
+				className={classes}
+				ref={ref}
+			>
 				{children}
 			</select>
 		);

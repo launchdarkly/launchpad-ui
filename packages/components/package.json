@@ -40,6 +40,7 @@
 	},
 	"dependencies": {
 		"@internationalized/date": "3.8.2",
+		"@launchpad-ui/attribution": "workspace:~",
 		"@launchpad-ui/icons": "workspace:~",
 		"@launchpad-ui/tokens": "workspace:~",
 		"class-variance-authority": "0.7.0"

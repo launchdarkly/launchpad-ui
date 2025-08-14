@@ -1,5 +1,6 @@
 import type { ReactNode } from 'react';
 
+import { addLaunchPadAttribution } from '@launchpad-ui/attribution';
 import { IconButton } from '@launchpad-ui/button';
 import { Icon } from '@launchpad-ui/icons';
 import { cx } from 'classix';
@@ -33,7 +34,11 @@ const ModalHeader = ({
 	const { onCancel, status } = useModalContext();
 
 	return (
-		<div className={cx(styles.header, className)} data-test-id={testId}>
+		<div
+			{...addLaunchPadAttribution('ModalHeader')}
+			className={cx(styles.header, className)}
+			data-test-id={testId}
+		>
 			<div className={styles.headerMain}>
 				{status === 'warning' && (
 					<Icon

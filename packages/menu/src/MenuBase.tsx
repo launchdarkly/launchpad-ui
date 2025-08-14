@@ -1,6 +1,7 @@
 import type { ComponentPropsWithRef } from 'react';
 import type { MenuProps } from './Menu';
 
+import { addLaunchPadAttribution } from '@launchpad-ui/attribution';
 import { cx } from 'classix';
 import { forwardRef } from 'react';
 
@@ -20,7 +21,13 @@ const MenuBase = forwardRef<HTMLDivElement, MenuBaseProps>(
 		);
 
 		return (
-			<div {...props} role="menu" className={classes} ref={ref}>
+			<div
+				{...addLaunchPadAttribution('Menu')}
+				{...props}
+				role="menu"
+				className={classes}
+				ref={ref}
+			>
 				{children}
 			</div>
 		);

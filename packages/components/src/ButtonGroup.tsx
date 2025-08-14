@@ -41,7 +41,7 @@ interface ButtonGroupProps extends GroupProps, VariantProps<typeof buttonGroupSt
 const ButtonGroupContext = createContext<ContextValue<ButtonGroupProps, HTMLDivElement>>(null);
 
 const ButtonGroup = ({ ref, ...props }: ButtonGroupProps) => {
-	[props, ref] = useLPContextProps(props, ref, ButtonGroupContext);
+	[props, ref] = useLPContextProps(props, ref, ButtonGroupContext, 'ButtonGroup');
 	const { spacing = 'basic', orientation = 'horizontal' } = props;
 
 	return (

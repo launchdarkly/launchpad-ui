@@ -38,7 +38,7 @@ const GridListContext = createContext<ContextValue<GridListProps<any>, HTMLDivEl
  * https://react-spectrum.adobe.com/react-aria/GridList.html
  */
 const GridList = <T extends object>({ ref, ...props }: GridListProps<T>) => {
-	[props, ref] = useLPContextProps(props, ref, GridListContext);
+	[props, ref] = useLPContextProps(props, ref, GridListContext, 'GridList');
 	return (
 		<AriaGridList
 			{...props}

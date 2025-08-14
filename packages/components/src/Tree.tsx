@@ -40,7 +40,7 @@ const TreeContext = createContext<ContextValue<TreeProps<any>, HTMLDivElement>>(
  * A tree displays a hierarchical list of items that can be expanded and collapsed.
  */
 const Tree = <T extends object>({ ref, ...props }: TreeProps<T>) => {
-	[props, ref] = useLPContextProps(props, ref, TreeContext);
+	[props, ref] = useLPContextProps(props, ref, TreeContext, 'Tree');
 	return (
 		<AriaTree
 			{...props}

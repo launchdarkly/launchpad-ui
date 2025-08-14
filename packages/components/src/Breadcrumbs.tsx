@@ -40,7 +40,7 @@ const BreadcrumbsContext =
  * https://react-spectrum.adobe.com/react-aria/Breadcrumbs.html
  */
 const Breadcrumbs = <T extends object>({ ref, ...props }: BreadcrumbsProps<T>) => {
-	[props, ref] = useLPContextProps(props, ref, BreadcrumbsContext);
+	[props, ref] = useLPContextProps(props, ref, BreadcrumbsContext, 'Breadcrumbs');
 	const { className } = props;
 
 	return <AriaBreadcrumbs {...props} ref={ref} className={breadCrumbsStyles({ className })} />;

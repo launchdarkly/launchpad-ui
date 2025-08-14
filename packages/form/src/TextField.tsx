@@ -1,5 +1,6 @@
 import type { ComponentProps } from 'react';
 
+import { addLaunchPadAttribution } from '@launchpad-ui/attribution';
 import { cx } from 'classix';
 import { forwardRef } from 'react';
 
@@ -44,6 +45,7 @@ const TextField = forwardRef<HTMLInputElement, TextFieldProps>(
 			return (
 				<div className={styles.suffixContainer}>
 					<input
+						{...addLaunchPadAttribution('TextField')}
 						{...rest}
 						type={type}
 						data-test-id={testId}
@@ -62,6 +64,7 @@ const TextField = forwardRef<HTMLInputElement, TextFieldProps>(
 
 		return (
 			<input
+				{...addLaunchPadAttribution('TextField')}
 				{...rest}
 				data-1p-ignore={disablePasswordManagers} // "data-1p-ignore" is added to prevent 1Password from injecting a password autofill icon
 				type={type}

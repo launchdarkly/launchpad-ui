@@ -1,6 +1,7 @@
 import type { MenuProps } from '@launchpad-ui/menu';
 import type { ChangeEvent, ReactNode } from 'react';
 
+import { addLaunchPadAttribution } from '@launchpad-ui/attribution';
 import { Button } from '@launchpad-ui/button';
 import { Icon } from '@launchpad-ui/icons';
 import { Menu, MenuDivider, MenuItem, MenuSearch } from '@launchpad-ui/menu';
@@ -54,7 +55,7 @@ const FilterMenu = ({
 		: options;
 
 	return (
-		<>
+		<div {...addLaunchPadAttribution('FilterMenu')}>
 			{onClearFilter && (
 				<Button
 					tabIndex={0}
@@ -106,7 +107,7 @@ const FilterMenu = ({
 					);
 				})}
 			</Menu>
-		</>
+		</div>
 	);
 };
 

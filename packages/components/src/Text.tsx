@@ -65,7 +65,7 @@ const Text = ({
 	style,
 	...props
 }: TextProps) => {
-	[props, ref] = useLPContextProps(props, ref, TextContext);
+	[props, ref] = useLPContextProps(props, ref, TextContext, 'Text');
 
 	return (
 		<AriaText

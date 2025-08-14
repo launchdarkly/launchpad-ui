@@ -1,5 +1,6 @@
 import type { ChangeEvent, FormEvent, ReactElement, ReactNode } from 'react';
 
+import { addLaunchPadAttribution } from '@launchpad-ui/attribution';
 import { VisuallyHidden } from '@react-aria/visually-hidden';
 import { Children, cloneElement, isValidElement, useRef } from 'react';
 
@@ -109,7 +110,7 @@ const RadioGroup = (props: RadioGroupProps) => {
 
 	const radios = Children.map(children, (child) => updateRadioElems(child));
 	return (
-		<fieldset data-test-id={testId} ref={fieldsetRef}>
+		<fieldset {...addLaunchPadAttribution('RadioGroup')} data-test-id={testId} ref={fieldsetRef}>
 			{legend && (
 				<legend>
 					<VisuallyHidden>{legend}</VisuallyHidden>

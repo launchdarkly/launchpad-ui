@@ -19,7 +19,7 @@ const LinkButtonContext = createContext<ContextValue<LinkButtonProps, HTMLAnchor
  * https://react-spectrum.adobe.com/react-aria/Link.html
  */
 const LinkButton = ({ ref, ...props }: LinkButtonProps) => {
-	[props, ref] = useLPContextProps(props, ref, LinkButtonContext);
+	[props, ref] = useLPContextProps(props, ref, LinkButtonContext, 'LinkButton');
 	const { size = 'medium', variant = 'default' } = props;
 
 	return (

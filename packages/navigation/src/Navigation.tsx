@@ -1,6 +1,7 @@
 import type { CollectionBase } from '@react-types/shared';
 import type { NavProps } from './Nav';
 
+import { addLaunchPadAttribution } from '@launchpad-ui/attribution';
 import { useResizeObserver, useValueEffect } from '@react-aria/utils';
 import { cx } from 'classix';
 import { useCallback, useLayoutEffect, useRef } from 'react';
@@ -61,6 +62,7 @@ const Navigation = <T extends object>(props: NavigationProps<T>) => {
 	useResizeObserver({ ref: wrapperRef, onResize: checkShouldCollapse });
 	return (
 		<div
+			{...addLaunchPadAttribution('Navigation')}
 			className={cx(
 				styles.Navigation,
 				shouldCollapse && styles['Navigation--collapsed'],

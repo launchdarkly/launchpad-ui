@@ -22,7 +22,7 @@ const SearchFieldContext = createContext<ContextValue<SearchFieldProps, HTMLDivE
  * https://react-spectrum.adobe.com/react-aria/SearchField.html
  */
 const SearchField = ({ ref, ...props }: SearchFieldProps) => {
-	[props, ref] = useLPContextProps(props, ref, SearchFieldContext);
+	[props, ref] = useLPContextProps(props, ref, SearchFieldContext, 'SearchField');
 	return (
 		<AriaSearchField
 			{...props}

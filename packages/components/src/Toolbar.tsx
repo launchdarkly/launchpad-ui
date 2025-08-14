@@ -41,7 +41,7 @@ const ToolbarContext = createContext<ContextValue<ToolbarProps, HTMLDivElement>>
  * https://react-spectrum.adobe.com/react-aria/Toolbar.html
  */
 const Toolbar = ({ ref, ...props }: ToolbarProps) => {
-	[props, ref] = useLPContextProps(props, ref, ToolbarContext);
+	[props, ref] = useLPContextProps(props, ref, ToolbarContext, 'Toolbar');
 	const { spacing = 'basic' } = props;
 
 	return (

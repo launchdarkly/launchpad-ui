@@ -1,6 +1,7 @@
 import type { PopoverProps } from '@launchpad-ui/popover';
 import type { AriaAttributes, ForwardedRef, FunctionComponentElement, ReactElement } from 'react';
 
+import { addLaunchPadAttribution } from '@launchpad-ui/attribution';
 import { Popover } from '@launchpad-ui/popover';
 import { mergeRefs } from '@react-aria/utils';
 import { cx } from 'classix';
@@ -112,6 +113,7 @@ const Dropdown = <T extends string | object | number>(props: DropdownProps<T>) =
 
 	return (
 		<Popover
+			{...addLaunchPadAttribution('Dropdown')}
 			isOpen={isOpen}
 			placement={placement}
 			onInteraction={onInteraction || handlePopoverInteraction}
