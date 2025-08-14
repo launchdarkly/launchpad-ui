@@ -8,6 +8,7 @@ export default {
 	component: Navigation,
 	subcomponents: { NavigationItem },
 	title: 'Legacy/Navigation',
+	tags: ['deprecated'],
 	description: 'An element used to provide navigation links to help users move through an app.',
 	parameters: {
 		chromatic: { disableSnapshot: true },

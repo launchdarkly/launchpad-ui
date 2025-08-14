@@ -5,6 +5,7 @@ import { FormGroup, FormHint, Label, RequiredAsterisk, TextField } from '../src'
 export default {
 	component: FormGroup,
 	title: 'Legacy/Form/FormGroup',
+	tags: ['deprecated'],
 	description: 'A group of form fields.',
 	parameters: {
 		chromatic: { disableSnapshot: true },

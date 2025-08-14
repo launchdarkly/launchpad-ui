@@ -5,6 +5,12 @@ import { Switch } from '../src/Switch';
 const meta: Meta<typeof Switch> = {
 	component: Switch,
 	title: 'Components/Forms/Switch',
+	parameters: {
+		figma: {
+			design:
+				'https://www.figma.com/design/98HKKXL2dTle29ikJ3tzk7/%F0%9F%9A%80-LaunchPad?node-id=1-34112&m=dev',
+		},
+	},
 };
 
 export default meta;
