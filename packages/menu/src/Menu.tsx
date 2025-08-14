@@ -3,18 +3,9 @@ import type { KeyboardEvent, ReactElement, ReactNode } from 'react';
 import type { MenuItemProps } from './MenuItem';
 
 import { useFocusManager } from '@react-aria/focus';
+import { useVirtualizer } from '@tanstack/react-virtual';
 import { cx } from 'classix';
-import {
-	Children,
-	cloneElement,
-	useCallback,
-	useEffect,
-	useId,
-	useMemo,
-	useRef,
-	useState,
-} from 'react';
-import { useVirtual } from 'react-virtual';
+import { Children, cloneElement, useCallback, useEffect, useId, useMemo, useRef } from 'react';
 
 import { MenuBase } from './MenuBase';
 import { MenuDivider } from './MenuDivider';
@@ -213,15 +204,13 @@ const ItemVirtualizer = <T extends number | string>(props: ItemVirtualizerProps<
 	const parentRef = useRef<HTMLDivElement | null>(null);
 	const searchRef = useRef<HTMLInputElement | null>(null);
 
-	const [nextFocusValue, setNextFocusValue] = useState<number | null>(null);
-
 	const hasSearch = !!searchElement;
 
 	const lastVirtualItemIndex = items ? items.length - 1 : 0;
 
-	const rowVirtualizer = useVirtual({
-		size: items !== null ? items.length : 0,
-		parentRef,
+	const rowVirtualizer = useVirtualizer({
+		count: items !== null ? items.length : 0,
+		getScrollElement: () => parentRef.current,
 		estimateSize: useCallback(() => itemHeight, [itemHeight]),
 		overscan,
 	});
@@ -238,7 +227,8 @@ const ItemVirtualizer = <T extends number | string>(props: ItemVirtualizerProps<
 	const focusMenuItem = useCallback(
 		(index: number) => {
 			rowVirtualizer.scrollToIndex(index);
-			setNextFocusValue(index);
+			const element = getNodeForIndex(index, menuId.current);
+			element?.focus();
 		},
 		[rowVirtualizer],
 	);
@@ -314,16 +304,10 @@ const ItemVirtualizer = <T extends number | string>(props: ItemVirtualizerProps<
 		},
 		[handleKeyboardFocusInteraction, menuItemClassName, onSelect],
 	);
-
 	useEffect(() => {
-		if (nextFocusValue !== null) {
-			requestAnimationFrame(() => {
-				const element = getNodeForIndex(nextFocusValue, menuId.current);
-				element?.focus();
-			});
-			setNextFocusValue(null);
-		}
-	}, [nextFocusValue]);
+		const element = getNodeForIndex(0, menuId.current);
+		element?.focus();
+	}, []);
 
 	/**
 	 * Calls handleFocusForward when the user is attempting to focus forward using
@@ -365,29 +349,25 @@ const ItemVirtualizer = <T extends number | string>(props: ItemVirtualizerProps<
 		[searchElement, lastVirtualItemIndex, focusMenuItem],
 	);
 
-	const renderItems = useMemo(
-		() =>
-			rowVirtualizer.virtualItems.map((virtualRow) => {
-				if (!items) {
-					return null;
-				}
-				const elem = items[virtualRow.index];
-				return (
-					<div
-						key={virtualRow.index}
-						ref={virtualRow.measureRef}
-						role="presentation"
-						className={styles['VirtualMenu-item']}
-						style={{
-							transform: `translateY(${virtualRow.start}px)`,
-						}}
-					>
-						{cloneElement(elem, getItemProps(elem, virtualRow.index))}
-					</div>
-				);
-			}),
-		[rowVirtualizer.virtualItems, items, getItemProps],
-	);
+	const renderItems = rowVirtualizer.getVirtualItems().map((virtualRow) => {
+		if (!items) {
+			return null;
+		}
+		const elem = items[virtualRow.index];
+		return (
+			<div
+				key={virtualRow.index}
+				ref={rowVirtualizer.measureElement}
+				role="presentation"
+				className={styles['VirtualMenu-item']}
+				style={{
+					transform: `translateY(${virtualRow.start}px)`,
+				}}
+			>
+				{cloneElement(elem, getItemProps(elem, virtualRow.index))}
+			</div>
+		);
+	});
 
 	return (
 		<>
@@ -397,7 +377,7 @@ const ItemVirtualizer = <T extends number | string>(props: ItemVirtualizerProps<
 					role="presentation"
 					className={styles['VirtualMenu-item-list']}
 					style={{
-						height: `${rowVirtualizer.totalSize}px`,
+						height: `${rowVirtualizer.getTotalSize()}px`,
 					}}
 				>
 					{renderItems}

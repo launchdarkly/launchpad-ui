@@ -1,7 +1,7 @@
 import type { MenuProps } from '../src';
 
 import { Popover } from '@launchpad-ui/popover';
-import { describe, expect, it, vi } from 'vitest';
+import { beforeEach, describe, expect, it, vi } from 'vitest';
 
 import { render, screen, userEvent, waitFor } from '../../../test/utils';
 import { Menu, MenuDivider, MenuItem, MenuSearch } from '../src';
@@ -31,6 +31,16 @@ const createMenu = ({
 );
 
 describe('Menu', () => {
+	// https://github.com/TanStack/virtual/issues/641#issuecomment-2851908893
+	beforeEach(() => {
+		Object.defineProperty(HTMLElement.prototype, 'offsetHeight', {
+			value: 800,
+		});
+		Object.defineProperty(HTMLElement.prototype, 'offsetWidth', {
+			value: 800,
+		});
+	});
+
 	it('renders', () => {
 		render(createMenu({ size: 'sm' }));
 		expect(screen.getByRole('menu')).toBeInTheDocument();
@@ -39,7 +49,7 @@ describe('Menu', () => {
 	it('renders with virtualization', () => {
 		render(createMenu({ enableVirtualization: true }));
 		const items = screen.getAllByRole('presentation');
-		expect(items).toHaveLength(5);
+		expect(items).toHaveLength(7);
 	});
 
 	it('renders the search field', () => {
@@ -155,7 +165,7 @@ describe('Menu', () => {
 
 		const user = userEvent.setup();
 		await user.click(screen.getByText('Target'));
-		const items = screen.getAllByRole('menuitem');
+		const items = await screen.findAllByRole('menuitem');
 
 		expect(items[0]).toHaveFocus();
 		await user.keyboard('{arrowdown}');

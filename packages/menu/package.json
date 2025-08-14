@@ -45,7 +45,7 @@
 		"@react-aria/focus": "3.21.0",
 		"@react-aria/separator": "3.4.11",
 		"classix": "2.2.0",
-		"react-virtual": "2.10.4"
+		"@tanstack/react-virtual": "3.13.12"
 	},
 	"peerDependencies": {
 		"react": "19.1.1",
