@@ -1,0 +1,31 @@
+{
+  "$schema": "./node_modules/syncpack/schema.json",
+  "sortPackages": true,
+  "strict": true,
+  "versionGroups": [
+    {
+      "label": "Enforce workspace protocol for workspace packages",
+      "dependencies": [
+        "@launchpad-ui/**"
+      ],
+      "specifierTypes": [
+        "workspace-protocol"
+      ]
+    },
+    {
+      "dependencyTypes": [
+        "peer",
+        "dev",
+        "prod"
+      ],
+      "label": "Peer deps must be up to date",
+      "dependencies": [
+        "*"
+      ],
+      "specifierTypes": [
+        "exact"
+      ],
+      "preferVersion": "highestSemver"
+    }
+  ]
+}

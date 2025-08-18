@@ -1,6 +1,6 @@
 {
 	"name": "@launchpad-ui/icons",
-	"version": "0.21.20",
+	"version": "0.23.0",
 	"status": "beta",
 	"publishConfig": {
 		"access": "public"
@@ -43,11 +43,11 @@
 		"class-variance-authority": "0.7.0"
 	},
 	"peerDependencies": {
-		"react": "^19.0.0",
-		"react-dom": "^19.0.0"
+		"react": "19.1.1",
+		"react-dom": "19.1.1"
 	},
 	"devDependencies": {
-		"react": "19.1.0",
-		"react-dom": "19.1.0"
+		"react": "19.1.1",
+		"react-dom": "19.1.1"
 	}
 }
