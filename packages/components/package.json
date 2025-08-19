@@ -1,6 +1,6 @@
 {
 	"name": "@launchpad-ui/components",
-	"version": "0.12.0",
+	"version": "0.15.0",
 	"status": "beta",
 	"publishConfig": {
 		"access": "public"
@@ -34,7 +34,9 @@
 	"scripts": {
 		"build": "vite build -c ../../vite.config.mts && tsc --project tsconfig.build.json",
 		"clean": "rm -rf dist",
-		"test": "vitest run --coverage"
+		"test": "vitest run --coverage",
+		"copy-dts": "copyfiles -u 1 \"src/**/*.d.ts\" dist",
+		"postbuild": "pnpm run copy-dts"
 	},
 	"dependencies": {
 		"@internationalized/date": "3.8.2",
@@ -43,29 +45,20 @@
 		"class-variance-authority": "0.7.0"
 	},
 	"peerDependencies": {
-		"react": "^19.0.0",
-		"react-dom": "^19.0.0",
-		"@react-aria/focus": "3.20.5",
-		"@react-aria/interactions": "3.25.3",
-		"@react-aria/utils": "3.29.1",
-		"@react-stately/utils": "3.10.7",
-		"@react-types/shared": "3.30.0",
-		"react-aria": "3.41.1",
-		"react-aria-components": "1.10.1",
+		"@react-aria/focus": "3.21.0",
+		"@react-aria/interactions": "3.25.4",
+		"@react-aria/utils": "3.30.0",
+		"@react-stately/utils": "3.10.8",
+		"@react-types/shared": "3.31.0",
+		"react": "19.1.1",
+		"react-aria": "3.42.0",
+		"react-aria-components": "1.11.0",
+		"react-dom": "19.1.1",
 		"react-router": "7.5.2"
 	},
 	"devDependencies": {
-		"react": "19.1.0",
-		"react-dom": "19.1.0",
+		"copyfiles": "2.4.1",
 		"react-hook-form": "7.59.0",
-		"react-stately": "3.39.0",
-		"@react-aria/focus": "3.20.5",
-		"@react-aria/interactions": "3.25.3",
-		"@react-aria/utils": "3.29.1",
-		"@react-stately/utils": "3.10.7",
-		"@react-types/shared": "3.30.0",
-		"react-aria": "3.41.1",
-		"react-aria-components": "1.10.1",
-		"react-router": "7.5.2"
+		"react-stately": "3.39.0"
 	}
 }

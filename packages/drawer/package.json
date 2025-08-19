@@ -1,6 +1,6 @@
 {
 	"name": "@launchpad-ui/drawer",
-	"version": "0.6.4",
+	"version": "0.8.0",
 	"status": "alpha",
 	"publishConfig": {
 		"access": "public"
@@ -46,15 +46,15 @@
 		"framer-motion": "12.20.5"
 	},
 	"peerDependencies": {
-		"react": "^18.0.0 || ^19.0.0",
-		"react-dom": "^18.0.0 || ^19.0.0",
-		"@react-aria/interactions": "3.25.3",
-		"@react-aria/overlays": "3.27.3"
+		"@react-aria/interactions": "3.25.4",
+		"@react-aria/overlays": "3.28.0",
+		"react": "19.1.1",
+		"react-dom": "19.1.1"
 	},
 	"devDependencies": {
-		"react": "19.1.0",
-		"react-dom": "19.1.0",
-		"@react-aria/interactions": "3.25.3",
-		"@react-aria/overlays": "3.27.3"
+		"@react-aria/interactions": "3.25.4",
+		"@react-aria/overlays": "3.28.0",
+		"react": "19.1.1",
+		"react-dom": "19.1.1"
 	}
 }

@@ -1,5 +1,36 @@
 # @launchpad-ui/filter
 
+## 0.10.0
+
+### Minor Changes
+
+- [#1743](https://github.com/launchdarkly/launchpad-ui/pull/1743) [`00198f0`](https://github.com/launchdarkly/launchpad-ui/commit/00198f0e3798741f45708f604380411bb2706cba) Thanks [@vezaynk](https://github.com/vezaynk)! - Bump all react-aria packages
+
+### Patch Changes
+
+- Updated dependencies [[`00198f0`](https://github.com/launchdarkly/launchpad-ui/commit/00198f0e3798741f45708f604380411bb2706cba)]:
+  - @launchpad-ui/dropdown@0.9.0
+  - @launchpad-ui/tooltip@0.11.0
+  - @launchpad-ui/button@0.14.0
+  - @launchpad-ui/tokens@0.14.0
+  - @launchpad-ui/icons@0.23.0
+  - @launchpad-ui/menu@0.15.0
+
+## 0.9.0
+
+### Minor Changes
+
+- [#1741](https://github.com/launchdarkly/launchpad-ui/pull/1741) [`fbd9260`](https://github.com/launchdarkly/launchpad-ui/commit/fbd92603385f45426b8160e5ca05cef207a1e6b6) Thanks [@vezaynk](https://github.com/vezaynk)! - bump react version
+
+### Patch Changes
+
+- Updated dependencies [[`fbd9260`](https://github.com/launchdarkly/launchpad-ui/commit/fbd92603385f45426b8160e5ca05cef207a1e6b6)]:
+  - @launchpad-ui/dropdown@0.8.0
+  - @launchpad-ui/tooltip@0.10.0
+  - @launchpad-ui/button@0.13.0
+  - @launchpad-ui/icons@0.22.0
+  - @launchpad-ui/menu@0.14.0
+
 ## 0.8.4
 
 ### Patch Changes

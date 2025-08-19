@@ -25,7 +25,7 @@ interface ListBoxProps<T> extends AriaListBoxProps<T> {
 	ref?: Ref<HTMLDivElement>;
 }
 interface ListBoxItemProps<T> extends AriaListBoxItemProps<T> {
-	ref?: Ref<T>;
+	ref?: Ref<HTMLDivElement>;
 }
 
 // biome-ignore lint/suspicious/noExplicitAny: ignore
