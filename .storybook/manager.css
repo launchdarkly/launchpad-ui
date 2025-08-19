@@ -48,6 +48,19 @@
 	font-weight: 400 !important; /* matching --lp-font-weight-regular */
 }
 
+.dark-theme .docblock-argstable tbody tr td > span,
+.dark-theme .docblock-argstable tbody tr td div > span {
+	border: none !important;
+	background-color: #2d3239 !important;
+}
+
+/** Code mode bar */
+.dark-theme .sb-bar .undefined {
+	box-shadow: none !important;
+	background-color: #2d3239 !important;
+	color: #eceff2 !important;
+}
+
 /* Dark theme docs content styling using LaunchPad design tokens */
 .docs-dark .docblock-argstable,
 .docs-dark .docblock-argstable table,
@@ -93,6 +106,7 @@
 	color: #6de0f7 !important; /* brand.cyan.light - matching --lp-color-text-code-string dark */
 	border-color: #3f454c !important; /* gray.700 */
 	border-radius: 4px !important; /* matching --lp-border-radius-regular */
+	border-width: 0 !important;
 	padding: 4px 8px !important; /* matching --lp-spacing-100 --lp-spacing-200 */
 	font-weight: 400 !important; /* matching --lp-font-weight-regular */
 }
@@ -101,6 +115,11 @@
 .docs-dark .prism-code:not([class*='code_']),
 .dark-theme .docblock-argstable .prism-code {
 	background-color: #2d3239 !important; /* gray.800 - matching --lp-color-bg-ui-tertiary dark */
+}
+
+.dark-theme #storybook-panel-root {
+	background-color: #2d3239 !important;
+	box-shadow: none !important;
 }
 
 /* Description and other text content using LaunchPad design tokens */
@@ -152,18 +171,24 @@
 }
 
 /* Text content in dark theme using LaunchPad design tokens */
-.dark-theme :not(.docs-story) .sbdocs p,
-.dark-theme :not(.docs-story) .sbdocs h1,
-.dark-theme :not(.docs-story) .sbdocs h2,
-.dark-theme :not(.docs-story) .sbdocs h3,
-.dark-theme :not(.docs-story) .sbdocs h4,
-.dark-theme :not(.docs-story) .sbdocs h5,
-.dark-theme :not(.docs-story) .sbdocs h6,
-.dark-theme :not(.docs-story) .sbdocs li,
-.dark-theme :not(.docs-story) .sbdocs span,
-.dark-theme :not(.docs-story) .sbdocs div {
+.dark-theme :not(.sbdocs-preview) .sbdocs p,
+.dark-theme :not(.sbdocs-preview) .sbdocs h1,
+.dark-theme :not(.sbdocs-preview) .sbdocs h2,
+.dark-theme :not(.sbdocs-preview) .sbdocs h3,
+.dark-theme :not(.sbdocs-preview) .sbdocs h4,
+.dark-theme :not(.sbdocs-preview) .sbdocs h5,
+.dark-theme :not(.sbdocs-preview) .sbdocs h6,
+.dark-theme :not(.sbdocs-preview) .sbdocs li,
+.dark-theme :not(.sbdocs-preview) .sbdocs span:not([class*='token']),
+.dark-theme :not(.sbdocs-preview) .sbdocs div:not([class*='token']) {
 	color: #eceff2 !important; /* gray.50 */
 	text-decoration: none !important;
+}
+
+.dark-theme .docblock-code-toggle {
+	background-color: black;
+	color: #eceff2;
+	border: 1px solid #eceff2;
 }
 
 /* Removed overly broad selectors to preserve Code.tsx component styling */
@@ -342,11 +367,6 @@ body,
 	text-decoration: underline;
 }
 
-/* Story content links should use their natural styling */
-.docs-story a {
-	all: revert !important;
-}
-
 /* Override specific CSS module classes for docblock-argstable in dark mode */
 /* Order by specificity: lowest to highest */
 .dark-theme .docblock-argstable tbody > tr > *,
@@ -460,8 +480,7 @@ body,
 }
 
 /* Remove border-right from side panel */
-div[style*='grid-area: sidebar'],
-div[style*='grid-area:sidebar'] {
+div[id='root'] > div > div {
 	border-right: none !important;
 }
 

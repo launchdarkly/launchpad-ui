@@ -385,17 +385,6 @@ const preview: Preview = {
 	argTypesEnhancers: [(context) => enhanceArgTypes(context)],
 	// Global argTypes that apply to all stories
 	argTypes: {
-		// Hide function props globally by default to keep the prop table skimmable
-		onPressStart: { table: { disable: true } },
-		onPressEnd: { table: { disable: true } },
-		onPressChange: { table: { disable: true } },
-		onPressUp: { table: { disable: true } },
-		onFocusChange: { table: { disable: true } },
-		onHoverStart: { table: { disable: true } },
-		onHoverEnd: { table: { disable: true } },
-		preventFocusOnPress: { table: { disable: true } },
-		excludeFromTabOrder: { table: { disable: true } },
-
 		// Hide technical props
 		style: { table: { disable: true } },
 		UNSAFE_className: { table: { disable: true } },

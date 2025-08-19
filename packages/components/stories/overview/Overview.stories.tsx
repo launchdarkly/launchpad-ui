@@ -38,6 +38,50 @@ import { pickersCategory } from './Pickers';
 import { recipesCategory } from './Recipes';
 import { statusCategory } from './Status';
 
+// Helper function to get current theme from URL
+const getCurrentTheme = (): string => {
+	const urlParams = new URLSearchParams(window.location.search);
+
+	// First check for explicit theme parameter
+	const explicitTheme = urlParams.get('theme');
+	if (explicitTheme) {
+		return explicitTheme;
+	}
+
+	// Then check for theme in globals parameter
+	const globals = urlParams.get('globals');
+	if (globals) {
+		const themeMatch = globals.match(/theme:([^,]+)/);
+		if (themeMatch) {
+			return themeMatch[1];
+		}
+	}
+	return 'light';
+};
+
+const buildDocsUrl = (storyPath: string): string => {
+	const urlParams = new URLSearchParams(window.location.search);
+	const currentTheme = getCurrentTheme();
+
+	// Create new URL params for the docs link
+	const docsParams = new URLSearchParams();
+	docsParams.set('path', `/docs/${storyPath}`);
+
+	const globals = urlParams.get('globals');
+	if (globals) {
+		// Preserve globals parameter but ensure theme is set correctly
+		const globalsWithoutTheme = globals.replace(/theme:[^,]+/, '').replace(/^,+|,+$/g, '');
+		const newGlobals = globalsWithoutTheme
+			? `${globalsWithoutTheme},theme:${currentTheme}`
+			: `theme:${currentTheme}`;
+		docsParams.set('globals', newGlobals);
+	} else {
+		docsParams.set('theme', currentTheme);
+	}
+
+	return `${window.location.origin}/?${docsParams.toString()}`;
+};
+
 // Component showcase data
 const componentCategories = [
 	{
@@ -362,7 +406,7 @@ const ComponentCard = ({
 					</Link>
 				)}
 				<Link
-					href={`${window.location.origin}/?path=/docs/${storyPath}`}
+					href={buildDocsUrl(storyPath)}
 					target="_blank"
 					rel="noopener noreferrer"
 					variant="subtle"
