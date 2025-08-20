@@ -22,7 +22,7 @@ interface RadioProps extends AriaRadioProps {
 const RadioContext = createContext<ContextValue<RadioProps, HTMLLabelElement>>(null);
 
 const RadioIcon = ({ isSelected }: Partial<RadioRenderProps>) => (
-	<div className={radioIconStyles()}>
+	<div data-radio-icon className={radioIconStyles()}>
 		{isSelected ? (
 			<svg aria-hidden="true" className={styles.icon} viewBox="0 0 16 16">
 				<path
