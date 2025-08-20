@@ -6,6 +6,7 @@ import { IconField, TextField } from '../src';
 export default {
 	component: IconField,
 	title: 'Legacy/Form/IconField',
+	tags: ['deprecated'],
 	description: 'An IconField renders an icon placed next to a passed field."',
 	parameters: {
 		chromatic: { disableSnapshot: true },

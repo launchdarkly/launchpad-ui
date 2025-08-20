@@ -5,6 +5,7 @@ import { SelectField } from '../src';
 export default {
 	component: SelectField,
 	title: 'Legacy/Form/SelectField',
+	tags: ['deprecated'],
 	description: 'A select field allows the user to select a value from a set of options."',
 	parameters: {
 		chromatic: { disableSnapshot: true },

@@ -9,6 +9,12 @@ import { Tag, TagGroup, TagList } from '../src/TagGroup';
 
 const meta: Meta<typeof TagGroup> = {
 	component: TagGroup,
+	parameters: {
+		figma: {
+			design:
+				'https://www.figma.com/design/98HKKXL2dTle29ikJ3tzk7/%F0%9F%9A%80-LaunchPad?node-id=1-32263&m=dev',
+		},
+	},
 	subcomponents: { TagList, Tag } as Record<string, ComponentType<unknown>>,
 	title: 'Components/Collections/TagGroup',
 };

@@ -8,6 +8,7 @@ export default {
 	component: Dropdown,
 	subcomponents: { DropdownButton },
 	title: 'Legacy/Dropdown',
+	tags: ['deprecated'],
 	description: 'Dropdowns display a list of actions or options to a user.',
 	parameters: {
 		chromatic: { disableSnapshot: true },

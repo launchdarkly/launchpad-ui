@@ -15,6 +15,10 @@ const meta: Meta<typeof TimeField> = {
 	subcomponents: { DateInput, DateSegment } as Record<string, ComponentType<unknown>>,
 	title: 'Components/Date and Time/TimeField',
 	parameters: {
+		figma: {
+			design:
+				'https://www.figma.com/design/98HKKXL2dTle29ikJ3tzk7/%F0%9F%9A%80-LaunchPad?node-id=10715-54568&m=dev',
+		},
 		a11y: {
 			options: {
 				rules: {

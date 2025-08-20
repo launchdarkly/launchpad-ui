@@ -4,6 +4,7 @@ import { Button } from '../../components/src/Button';
 
 export default {
 	title: 'Tokens/Themes',
+	tags: ['!dev'],
 };
 
 export const NestedThemes = {

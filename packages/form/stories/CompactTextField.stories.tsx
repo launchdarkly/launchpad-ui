@@ -5,6 +5,7 @@ import { CompactTextField } from '../src';
 export default {
 	component: CompactTextField,
 	title: 'Legacy/Form/CompactTextField',
+	tags: ['deprecated'],
 	description: 'A compact text field allows the user to provide values.',
 	parameters: {
 		chromatic: { disableSnapshot: true },

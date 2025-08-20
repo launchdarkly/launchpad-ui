@@ -6,6 +6,7 @@ import { Tooltip, TooltipTrigger } from '../../components/src/Tooltip';
 
 export default {
 	title: 'Tokens/Typography',
+	tags: ['!dev'],
 	parameters: {
 		docs: {
 			description: {

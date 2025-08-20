@@ -3,7 +3,7 @@ import { forwardRef } from 'react';
 
 import styles from './styles/Code.module.css';
 
-const codeStyles = cva(styles.default, {
+const codeStyles = cva(styles.code, {
 	variants: {
 		size: {
 			small: styles.small,
@@ -28,13 +28,15 @@ export interface CodeProps extends Omit<React.HTMLAttributes<HTMLElement>, 'clas
  *
  * For body text, use `Text`. For headings, use `Heading`. For labels, use `Label`.
  */
-const Code = forwardRef<HTMLElement, CodeProps>(({ children, size, className, ...props }, ref) => {
-	return (
-		<code {...props} ref={ref} className={cx(codeStyles({ size }), styles.code, className)}>
-			{children}
-		</code>
-	);
-});
+const Code = forwardRef<HTMLElement, CodeProps>(
+	({ children, size = 'small', className, ...props }, ref) => {
+		return (
+			<code {...props} ref={ref} className={cx(codeStyles({ size }), className)}>
+				{children}
+			</code>
+		);
+	},
+);
 
 Code.displayName = 'Code';
 
