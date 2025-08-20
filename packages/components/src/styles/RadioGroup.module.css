@@ -50,7 +50,7 @@
 
 	&[data-disabled] {
 		border-color: var(--lp-color-border-ui-secondary);
-		background: var(--lp-color-bg-ui-secondary);
+		background: white;
 		color: var(--lp-color-text-interactive-disabled);
 		cursor: not-allowed;
 	}
