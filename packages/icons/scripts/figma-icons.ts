@@ -1,21 +1,8 @@
-#!/usr/bin/env node
-
 /**
  * Updates icon assets from Figma and regenerates the sprite + types.
  *
  * Env vars required:
  *   FIGMA_TOKEN       - Personal access token
- *
- * Hard‑wired LaunchPad icons node:
- *   File: https://figma.com/file/98HKKXL2dTle29ikJ3tzk7
- *   Node: 1:1483
- *
- * Change from original behavior:
- *   - DOES NOT write individual SVG files to src/icons.
- *   - Compares Figma component names against types.ts.
- *   - For each new icon (not in types.ts), downloads + optimizes SVG
- *     and appends a <symbol> to the existing sprite (creating if missing).
- *   - Rewrites types.ts to include existing + new icon names.
  *
  * Optional env vars:
  *   DRY_RUN=1         - Show actions without writing files
