@@ -36,7 +36,8 @@
 		"build": "vite build -c ../../vite.config.mts && tsc --project tsconfig.build.json && cp src/img/sprite.svg dist",
 		"clean": "rm -rf dist",
 		"test": "vitest run --coverage",
-		"connect": "tsx scripts/figma-connect.ts"
+		"connect": "tsx scripts/figma-connect.ts",
+		"icons": "tsx scripts/figma-icons.ts"
 	},
 	"dependencies": {
 		"@launchpad-ui/tokens": "workspace:~",

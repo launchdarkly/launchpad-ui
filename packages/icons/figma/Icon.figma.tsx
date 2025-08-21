@@ -389,6 +389,13 @@ figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=6-14
 	example: () => <Icon name="shield-account" />,
 });
 
+figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=15864-150', {
+	props: {
+		name: 'share',
+	},
+	example: () => <Icon name="share" />,
+});
+
 figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=6-142000', {
 	props: {
 		name: 'search',
@@ -821,6 +828,13 @@ figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=6-14
 		name: 'lightbulb',
 	},
 	example: () => <Icon name="lightbulb" />,
+});
+
+figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=17108-128', {
+	props: {
+		name: 'layers-difference',
+	},
+	example: () => <Icon name="layers-difference" />,
 });
 
 figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=6-141803', {
@@ -1593,6 +1607,13 @@ figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=6-14
 	example: () => <Icon name="chart-histogram" />,
 });
 
+figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=14960-260', {
+	props: {
+		name: 'chart-forest',
+	},
+	example: () => <Icon name="chart-forest" />,
+});
+
 figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=6-141517', {
 	props: {
 		name: 'chart-dashboard',
@@ -1605,6 +1626,13 @@ figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=5495
 		name: 'chart-cube-root',
 	},
 	example: () => <Icon name="chart-cube-root" />,
+});
+
+figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=14960-261', {
+	props: {
+		name: 'chart-bell-curve',
+	},
+	example: () => <Icon name="chart-bell-curve" />,
 });
 
 figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=6-141516', {
@@ -1878,6 +1906,13 @@ figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=6-14
 		name: 'arrow-left-thin',
 	},
 	example: () => <Icon name="arrow-left-thin" />,
+});
+
+figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=15005-144', {
+	props: {
+		name: 'arrow-merge-both',
+	},
+	example: () => <Icon name="arrow-merge-both" />,
 });
 
 figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=6-141371', {
