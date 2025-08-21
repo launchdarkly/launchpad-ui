@@ -11,6 +11,14 @@ jobs:
   sync-icons:
     runs-on: ubuntu-latest
     steps:
+      - name: Get Tokens
+        uses: launchdarkly/gh-actions/actions/release-secrets@release-secrets-v1.2.0
+        with:
+          aws_assume_role: ${{ vars.AWS_ROLE_ARN }}
+          ssm_parameter_pairs: |
+            /production/common/launchpad-ui/figma-file-key = FIGMA_FILE_KEY,
+            /production/common/launchpad-ui/figma-token = FIGMA_TOKEN
+
       - name: Checkout
         uses: actions/checkout@v4
         with:
@@ -33,23 +41,12 @@ jobs:
 
       - name: Nx Sync Icons
         run: pnpm nx @launchpad-ui/icons:sync
-        with:
-          aws_assume_role: ${{ vars.AWS_ROLE_ARN }}
-          ssm_parameter_pairs: |
-            /production/common/launchpad-ui/figma-file-key = FIGMA_FILE_KEY,
-            /production/common/launchpad-ui/figma-token = FIGMA_TOKEN
-
         env:
           CI: true
           NX_NO_DAEMON: true
 
       - name: Nx Connect Icons
         run: pnpm nx @launchpad-ui/icons:connect
-        with:
-          aws_assume_role: ${{ vars.AWS_ROLE_ARN }}
-          ssm_parameter_pairs: |
-            /production/common/launchpad-ui/figma-file-key = FIGMA_FILE_KEY,
-            /production/common/launchpad-ui/figma-token = FIGMA_TOKEN
         env:
           CI: true
           NX_NO_DAEMON: true
