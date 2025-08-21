@@ -291,6 +291,13 @@ figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=6-14
 	example: () => <Icon name="sort" />,
 });
 
+figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=20448-382', {
+	props: {
+		name: 'slash',
+	},
+	example: () => <Icon name="slash" />,
+});
+
 figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=2432-30091', {
 	props: {
 		name: 'sidebar-right-expand',
@@ -1630,9 +1637,9 @@ figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=5495
 
 figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=14960-261', {
 	props: {
-		name: 'chart-bell-curve',
+		name: 'chart-bell',
 	},
-	example: () => <Icon name="chart-bell-curve" />,
+	example: () => <Icon name="chart-bell" />,
 });
 
 figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=6-141516', {
@@ -1910,9 +1917,9 @@ figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=6-14
 
 figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=15005-144', {
 	props: {
-		name: 'arrow-merge-both',
+		name: 'arrow-merge',
 	},
-	example: () => <Icon name="arrow-merge-both" />,
+	example: () => <Icon name="arrow-merge" />,
 });
 
 figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=6-141371', {
