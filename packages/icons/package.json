@@ -37,7 +37,7 @@
 		"clean": "rm -rf dist",
 		"test": "vitest run --coverage",
 		"connect": "tsx scripts/figma-connect.ts",
-		"icons": "tsx scripts/figma-icons.ts"
+		"sync": "tsx scripts/figma-sync.ts"
 	},
 	"dependencies": {
 		"@launchpad-ui/tokens": "workspace:~",
