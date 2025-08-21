@@ -1,0 +1,73 @@
+name: Sync Icons
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  sync-icons:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+            fetch-depth: 0
+
+      - name: Setup PNPM
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9
+          run_install: false
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Nx Sync Icons
+        run: pnpm nx @launchpad-ui/icons:sync
+        with:
+          aws_assume_role: ${{ vars.AWS_ROLE_ARN }}
+          ssm_parameter_pairs: |
+            /production/common/launchpad-ui/figma-file-key = FIGMA_FILE_KEY,
+            /production/common/launchpad-ui/figma-token = FIGMA_TOKEN
+
+        env:
+          CI: true
+          NX_NO_DAEMON: true
+
+      - name: Nx Connect Icons
+        run: pnpm nx @launchpad-ui/icons:connect
+        with:
+          aws_assume_role: ${{ vars.AWS_ROLE_ARN }}
+          ssm_parameter_pairs: |
+            /production/common/launchpad-ui/figma-file-key = FIGMA_FILE_KEY,
+            /production/common/launchpad-ui/figma-token = FIGMA_TOKEN
+        env:
+          CI: true
+          NX_NO_DAEMON: true
+
+      - name: Create Pull Request
+        id: cpr
+        uses: peter-evans/create-pull-request@v6
+        with:
+          branch: ci/sync-icons
+          delete-branch: true
+          commit-message: "chore(icons): sync & connect icons"
+          title: "chore(icons): sync & connect icons"
+          body: |
+            Automated icon sync & connect run.
+            Commands executed:
+            - pnpm nx @launchpad-ui/icons:sync
+            - pnpm nx @launchpad-ui/icons:connect
+          labels: |
+            chore
+            icons
+          assignees: ${{ github.actor }}
