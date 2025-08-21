@@ -298,8 +298,8 @@ const icons = [
 	'warning',
 	'warning-outline',
 ] as const;
-export type IconName = (typeof icons)[number];
-export const isIconName = (v: string): v is IconName => (icons as readonly string[]).includes(v);
-export type IconSymbolId = `lp-icon-${IconName}`;
+type IconName = (typeof icons)[number];
+
+export type { IconName };
 export { icons };
 // AUTO-GENERATED ICON IDS END
