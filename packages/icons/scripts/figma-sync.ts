@@ -353,7 +353,7 @@ async function main(): Promise<void> {
 		if (!nameMap.has(name)) nameMap.set(name, c);
 	}
 	const normalized = [...nameMap.entries()]
-		.map(([name, comp]) => ({ name, ...comp }))
+		.map(([name, comp]) => ({ ...comp, name }))
 		.sort((a, b) => a.name.localeCompare(b.name));
 	log('discover', `${normalized.length} unique normalized icon names`);
 
