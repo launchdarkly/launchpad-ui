@@ -255,6 +255,7 @@ const icons = [
 	'sidebar-left-expand',
 	'sidebar-right-collapse',
 	'sidebar-right-expand',
+	'slash',
 	'sort',
 	'sort-asc',
 	'sort-desc',
