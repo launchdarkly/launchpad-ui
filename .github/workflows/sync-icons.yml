@@ -1,7 +1,7 @@
-name: Sync Icons
+name: Sync icons
 
 on:
-  workflow_dispatch:
+  workflow_dispatch
 
 permissions:
   contents: write
