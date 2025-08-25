@@ -1,5 +1,11 @@
 # @launchpad-ui/components
 
+## 0.15.1
+
+### Patch Changes
+
+- [#1748](https://github.com/launchdarkly/launchpad-ui/pull/1748) [`feeca50`](https://github.com/launchdarkly/launchpad-ui/commit/feeca509132b444d270243e81aa3b006bca04212) Thanks [@pheggeseth](https://github.com/pheggeseth)! - Removal buttons within Tags of size "small" no longer overflow the Tag when hovered or focused
+
 ## 0.15.0
 
 ### Minor Changes
