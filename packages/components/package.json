@@ -30,7 +30,7 @@
 		"test": "vitest run --coverage"
 	},
 	"dependencies": {
-		"@internationalized/date": "3.8.2",
+		"@internationalized/date": "3.9.0",
 		"@launchpad-ui/icons": "workspace:~",
 		"@launchpad-ui/tokens": "workspace:~",
 		"class-variance-authority": "0.7.0"
