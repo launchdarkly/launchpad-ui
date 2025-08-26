@@ -1,34 +1,23 @@
 {
 	"name": "@launchpad-ui/overlay",
 	"version": "0.5.0",
-	"status": "beta",
-	"publishConfig": {
-		"access": "public"
-	},
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/launchdarkly/launchpad-ui"
-	},
 	"description": "An element that manages modals and popovers.",
+	"repository": "launchdarkly/launchpad-ui",
 	"license": "Apache-2.0",
+	"status": "beta",
+	"main": "dist/index.js",
+	"types": "dist/index.d.ts",
+	"module": "dist/index.es.js",
+	"source": "src/index.ts",
 	"files": [
 		"dist"
 	],
-	"main": "dist/index.js",
-	"module": "dist/index.es.js",
-	"types": "dist/index.d.ts",
+	"publishConfig": {
+		"access": "public"
+	},
 	"sideEffects": [
 		"**/*.css"
 	],
-	"exports": {
-		".": {
-			"types": "./dist/index.d.ts",
-			"import": "./dist/index.es.js",
-			"require": "./dist/index.js"
-		},
-		"./package.json": "./package.json"
-	},
-	"source": "src/index.ts",
 	"scripts": {
 		"build": "vite build -c ../../vite.config.mts && tsc --project tsconfig.build.json",
 		"clean": "rm -rf dist",
@@ -38,12 +27,20 @@
 	"dependencies": {
 		"@launchpad-ui/portal": "workspace:~"
 	},
+	"devDependencies": {
+		"react": "19.1.1",
+		"react-dom": "19.1.1"
+	},
 	"peerDependencies": {
 		"react": "19.1.1",
 		"react-dom": "19.1.1"
 	},
-	"devDependencies": {
-		"react": "19.1.1",
-		"react-dom": "19.1.1"
+	"exports": {
+		".": {
+			"types": "./dist/index.d.ts",
+			"import": "./dist/index.es.js",
+			"require": "./dist/index.js"
+		},
+		"./package.json": "./package.json"
 	}
 }
