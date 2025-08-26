@@ -1,5 +1,11 @@
 # @launchpad-ui/components
 
+## 0.16.1
+
+### Patch Changes
+
+- [#1753](https://github.com/launchdarkly/launchpad-ui/pull/1753) [`c85808e`](https://github.com/launchdarkly/launchpad-ui/commit/c85808e320c6cfcd07bdd934d179e5a66e845909) Thanks [@vezaynk](https://github.com/vezaynk)! - bump @internationalized/date
+
 ## 0.16.0
 
 ### Minor Changes
