@@ -1,5 +1,11 @@
 # @launchpad-ui/portal
 
+## 0.4.0
+
+### Minor Changes
+
+- [#1752](https://github.com/launchdarkly/launchpad-ui/pull/1752) [`a7b499e`](https://github.com/launchdarkly/launchpad-ui/commit/a7b499e6edc11ac166a75fd3cb8a72c75e956d9b) Thanks [@vezaynk](https://github.com/vezaynk)! - bump react-aria
+
 ## 0.3.0
 
 ### Minor Changes

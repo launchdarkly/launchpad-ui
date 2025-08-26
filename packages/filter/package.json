@@ -1,6 +1,6 @@
 {
 	"name": "@launchpad-ui/filter",
-	"version": "0.10.0",
+	"version": "0.11.0",
 	"description": "filter a list of results",
 	"repository": "launchdarkly/launchpad-ui",
 	"license": "Apache-2.0",

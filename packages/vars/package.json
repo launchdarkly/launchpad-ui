@@ -1,6 +1,6 @@
 {
 	"name": "@launchpad-ui/vars",
-	"version": "0.4.0",
+	"version": "0.5.0",
 	"description": "Vanilla Extract design token references for LaunchPad styles.",
 	"repository": "launchdarkly/launchpad-ui",
 	"license": "Apache-2.0",
