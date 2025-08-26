@@ -1,35 +1,23 @@
 {
 	"name": "@launchpad-ui/popover",
 	"version": "0.13.0",
-	"status": "beta",
-	"publishConfig": {
-		"access": "public"
-	},
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/launchdarkly/launchpad-ui"
-	},
 	"description": "An element that displays content within a portal triggered by user interactions.",
+	"repository": "launchdarkly/launchpad-ui",
 	"license": "Apache-2.0",
+	"status": "beta",
+	"main": "dist/index.js",
+	"types": "dist/index.d.ts",
+	"module": "dist/index.es.js",
+	"source": "src/index.ts",
 	"files": [
 		"dist"
 	],
-	"main": "dist/index.js",
-	"module": "dist/index.es.js",
-	"types": "dist/index.d.ts",
+	"publishConfig": {
+		"access": "public"
+	},
 	"sideEffects": [
 		"**/*.css"
 	],
-	"exports": {
-		".": {
-			"types": "./dist/index.d.ts",
-			"import": "./dist/index.es.js",
-			"require": "./dist/index.js"
-		},
-		"./package.json": "./package.json",
-		"./style.css": "./dist/style.css"
-	},
-	"source": "src/index.ts",
 	"scripts": {
 		"build": "vite build -c ../../vite.config.mts && tsc --project tsconfig.build.json",
 		"clean": "rm -rf dist",
@@ -44,12 +32,21 @@
 		"classix": "2.2.0",
 		"framer-motion": "12.20.5"
 	},
+	"devDependencies": {
+		"react": "19.1.1",
+		"react-dom": "19.1.1"
+	},
 	"peerDependencies": {
 		"react": "19.1.1",
 		"react-dom": "19.1.1"
 	},
-	"devDependencies": {
-		"react": "19.1.1",
-		"react-dom": "19.1.1"
+	"exports": {
+		".": {
+			"types": "./dist/index.d.ts",
+			"import": "./dist/index.es.js",
+			"require": "./dist/index.js"
+		},
+		"./package.json": "./package.json",
+		"./style.css": "./dist/style.css"
 	}
 }
