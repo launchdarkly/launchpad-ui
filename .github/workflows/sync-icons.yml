@@ -9,7 +9,11 @@ permissions:
 
 jobs:
   sync-icons:
+    if: github.repository == 'launchdarkly/launchpad-ui'
     runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: read
     steps:
       - name: Get Tokens
         uses: launchdarkly/gh-actions/actions/release-secrets@release-secrets-v1.2.0
@@ -26,14 +30,11 @@ jobs:
 
       - name: Setup PNPM
         uses: pnpm/action-setup@v4
-        with:
-          version: 9
-          run_install: false
 
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 22
           cache: pnpm
 
       - name: Install dependencies
@@ -41,15 +42,9 @@ jobs:
 
       - name: Sync Icons
         run: pnpm nx @launchpad-ui/icons:sync
-        env:
-          CI: true
-          NX_NO_DAEMON: true
 
       - name: Connect Icons
         run: pnpm nx @launchpad-ui/icons:connect
-        env:
-          CI: true
-          NX_NO_DAEMON: true
 
       - name: Detect changes
         id: changes
@@ -75,7 +70,7 @@ jobs:
         id: cpr
         uses: peter-evans/create-pull-request@v6
         with:
-          branch: ci/sync-icons
+          branch: ci/feat/sync-icons
           delete-branch: true
           commit-message: "feat(icons): sync & connect icons"
           title: "feat(icons): sync & connect icons"
@@ -84,9 +79,6 @@ jobs:
             Commands executed:
             - pnpm nx @launchpad-ui/icons:sync
             - pnpm nx @launchpad-ui/icons:connect
-
-            Diff:
-            ${{ env.DIFF_BODY }}
           labels: |
             icons
           assignees: ${{ github.actor }}
