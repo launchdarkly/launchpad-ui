@@ -23,7 +23,6 @@ import { optimize } from 'svgo';
 try {
 	const dotenvPath = path.resolve(process.cwd(), '.env');
 	if (fs.existsSync(dotenvPath)) {
-		// eslint-disable-next-line @typescript-eslint/no-var-requires
 		require('dotenv').config();
 	}
 } catch {
@@ -32,11 +31,11 @@ try {
 
 // Figma API constants
 const FIGMA_TOKEN = process.env.FIGMA_TOKEN;
-const FIGMA_FILE_KEY = process.env.FIGMA_FILE_KEY || '98HKKXL2dTle29ikJ3tzk7';
+const FIGMA_FILE_KEY = process.env.FIGMA_FILE_KEY;
 const FIGMA_NODE_ID = process.env.FIGMA_NODE_ID || '1:1483';
 const DRY_RUN = process.env.DRY_RUN === '1';
 
-if (!FIGMA_TOKEN) {
+if (!FIGMA_TOKEN || !FIGMA_FILE_KEY) {
 	console.error('Missing FIGMA_TOKEN.');
 	process.exit(1);
 }
