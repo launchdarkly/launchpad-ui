@@ -22,7 +22,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-            fetch-depth: 0
+          fetch-depth: 0
 
       - name: Setup PNPM
         uses: pnpm/action-setup@v4
@@ -37,16 +37,10 @@ jobs:
           cache: pnpm
 
       - name: Install dependencies
-        run: pnpm install --frozen-lockfile
+        run: pnpm install
 
       - name: Sync Icons
         run: pnpm nx @launchpad-ui/icons:sync
-        env:
-          CI: true
-          NX_NO_DAEMON: true
-
-      - name: Add changeset
-        run: npx changeset
         env:
           CI: true
           NX_NO_DAEMON: true
@@ -57,7 +51,29 @@ jobs:
           CI: true
           NX_NO_DAEMON: true
 
+      - name: Detect changes
+        id: changes
+        run: |
+          git status --short
+          if git diff --quiet && git diff --cached --quiet; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            echo "No changes detected."
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+            echo "Changes detected."
+          fi
+
+      - name: Add changeset
+        if: steps.changes.outputs.changed == 'true'
+        run: |
+          # Create a changeset (non-interactive). Adjust command if you prefer a specific bump.
+          npx changeset add --empty
+        env:
+          CI: true
+          NX_NO_DAEMON: true
+
       - name: Create Pull Request
+        if: steps.changes.outputs.changed == 'true'
         id: cpr
         uses: peter-evans/create-pull-request@v6
         with:
@@ -70,6 +86,13 @@ jobs:
             Commands executed:
             - pnpm nx @launchpad-ui/icons:sync
             - pnpm nx @launchpad-ui/icons:connect
+
+            Diff:
+            ${{ env.DIFF_BODY }}
           labels: |
             icons
           assignees: ${{ github.actor }}
+
+      - name: No-op (no changes)
+        if: steps.changes.outputs.changed != 'true'
+        run: echo "No changes detected, skipping changeset and PR creation."
