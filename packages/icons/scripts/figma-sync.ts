@@ -30,12 +30,12 @@ try {
 }
 
 // Figma API constants
-const FIGMA_TOKEN = process.env.FIGMA_TOKEN;
+const FIGMA_ACCESS_TOKEN = process.env.FIGMA_TOKEN;
 const FIGMA_FILE_KEY = process.env.FIGMA_FILE_KEY;
 const FIGMA_NODE_ID = process.env.FIGMA_NODE_ID || '1:1483';
 const DRY_RUN = process.env.DRY_RUN === '1';
 
-if (!FIGMA_TOKEN || !FIGMA_FILE_KEY) {
+if (!FIGMA_ACCESS_TOKEN || !FIGMA_FILE_KEY) {
 	console.error('Missing FIGMA_TOKEN.');
 	process.exit(1);
 }
@@ -110,7 +110,7 @@ async function http<T>(url: string, init?: RequestInit): Promise<T> {
 }
 
 async function figmaGet<T>(url: string): Promise<T> {
-	return http<T>(url, { headers: { 'X-Figma-Token': FIGMA_TOKEN as string } });
+	return http<T>(url, { headers: { 'X-Figma-Token': FIGMA_ACCESS_TOKEN as string } });
 }
 
 async function downloadText(url: string): Promise<string> {
