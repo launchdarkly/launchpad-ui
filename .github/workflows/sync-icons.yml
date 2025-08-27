@@ -45,6 +45,12 @@ jobs:
           CI: true
           NX_NO_DAEMON: true
 
+      - name: Add changeset
+        run: npx changeset
+        env:
+          CI: true
+          NX_NO_DAEMON: true
+
       - name: Nx Connect Icons
         run: pnpm nx @launchpad-ui/icons:connect
         env:
