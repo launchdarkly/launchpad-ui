@@ -30,13 +30,13 @@ try {
 }
 
 // Figma API constants
-const FIGMA_ACCESS_TOKEN = process.env.FIGMA_TOKEN;
+const FIGMA_ACCESS_TOKEN = process.env.FIGMA_ACCESS_TOKEN;
 const FIGMA_FILE_KEY = process.env.FIGMA_FILE_KEY;
 const FIGMA_NODE_ID = process.env.FIGMA_NODE_ID || '1:1483';
 const DRY_RUN = process.env.DRY_RUN === '1';
 
 if (!FIGMA_ACCESS_TOKEN || !FIGMA_FILE_KEY) {
-	console.error('Missing FIGMA_TOKEN.');
+	console.error('Missing FIGMA_ACCESS_TOKEN.');
 	process.exit(1);
 }
 
