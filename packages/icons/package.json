@@ -26,6 +26,7 @@
 		"build": "vite build -c ../../vite.config.mts && tsc --project tsconfig.build.json && cp src/img/sprite.svg dist",
 		"clean": "rm -rf dist",
 		"connect": "tsx scripts/figma-connect.ts",
+		"sync": "tsx scripts/figma-sync.ts",
 		"test": "vitest run --coverage"
 	},
 	"dependencies": {
@@ -34,7 +35,8 @@
 	},
 	"devDependencies": {
 		"react": "19.1.1",
-		"react-dom": "19.1.1"
+		"react-dom": "19.1.1",
+		"svgo": "4.0.0"
 	},
 	"peerDependencies": {
 		"react": "19.1.1",

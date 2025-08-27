@@ -20,8 +20,8 @@ ${components
 	.map(
 		(c) => `figma.connect(Icon, '${c.figmaUrl}', {
 	props: {
-    name: '${c.name}',
-  },
+		name: '${c.name}',
+	},
 	example: () => <Icon name="${c.name}" />,
 });`,
 	)
