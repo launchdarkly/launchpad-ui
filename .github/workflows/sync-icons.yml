@@ -65,9 +65,7 @@ jobs:
 
       - name: Add changeset
         if: steps.changes.outputs.changed == 'true'
-        run: |
-          # Create a changeset (non-interactive). Adjust command if you prefer a specific bump.
-          npx changeset add --empty
+        run: npx changeset add --empty
         env:
           CI: true
           NX_NO_DAEMON: true
