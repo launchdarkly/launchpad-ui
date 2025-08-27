@@ -31,7 +31,7 @@ try {
 
 // Figma API constants
 const FIGMA_ACCESS_TOKEN = process.env.FIGMA_ACCESS_TOKEN;
-const FIGMA_FILE_KEY = process.env.FIGMA_FILE_KEY;
+const FIGMA_FILE_KEY = process.env.FIGMA_FILE_KEY as string;
 const FIGMA_NODE_ID = process.env.FIGMA_NODE_ID || '1:1483';
 const DRY_RUN = process.env.DRY_RUN === '1';
 
@@ -50,6 +50,7 @@ const AUTO_GENERATED_BANNER =
 // Controls for batching and concurrency
 const IMAGES_BATCH_SIZE = 90; // Figma limit-friendly
 const DOWNLOAD_CONCURRENCY = 10; // parallel SVG downloads
+const URL_RESOLVE_CONCURRENCY = 4; // NEW: concurrent batches for URL resolution
 const MAX_RETRIES = 3;
 const FETCH_TIMEOUT_MS = 20_000;
 
@@ -73,6 +74,14 @@ type SvgSymbol = { name: string; svg: string };
 function log(step: string, msg: string, ...rest: unknown[]) {
 	const prefix = `[icons:${step}]`;
 	console.log(`${prefix.padEnd(20)} ${msg}`, ...rest);
+}
+
+// Helper: set-equality for arrays of strings (order-insensitive)
+function sameSet(a: string[], b: string[]): boolean {
+	if (a.length !== b.length) return false;
+	const s = new Set(a);
+	for (const x of b) if (!s.has(x)) return false;
+	return true;
 }
 
 // Helper: fetch with timeout
@@ -174,17 +183,25 @@ function iconNameToId(componentName: string): string {
 		.replace(/^-|-$/g, '');
 }
 
-// Get Figma SVG URLs to download
+// Get Figma URLs bounded-parallel URL resolution over batches
 async function fetchSvgUrls(components: ComponentRecord[]): Promise<Record<string, string>> {
 	const urls: Record<string, string> = {};
+	const batches: ComponentRecord[][] = [];
 	for (let i = 0; i < components.length; i += IMAGES_BATCH_SIZE) {
-		const batch = components.slice(i, i + IMAGES_BATCH_SIZE);
+		batches.push(components.slice(i, i + IMAGES_BATCH_SIZE));
+	}
+
+	await mapPool(batches, URL_RESOLVE_CONCURRENCY, async (batch, batchIdx) => {
 		const ids = batch.map((c) => c.id).join(',');
 		const url = `https://api.figma.com/v1/images/${FIGMA_FILE_KEY}?ids=${encodeURIComponent(ids)}&format=svg`;
-		log('fetch', `🔗 Requesting image URLs for ${batch.length} component(s)`);
+		log(
+			'fetch',
+			`🔗 Requesting image URLs for batch #${batchIdx + 1} (${batch.length} component(s))`,
+		);
 		const json = await figmaGet<{ images: Record<string, string> }>(url);
 		for (const c of batch) if (json.images[c.id]) urls[c.id] = json.images[c.id];
-	}
+	});
+
 	return urls;
 }
 
@@ -340,7 +357,7 @@ async function main(): Promise<void> {
 	const root = await fetchIconRoot();
 	const components = collectComponents(root);
 	if (components.length === 0) {
-		log('warn', 'No components found at the specified node.');
+		log('exit', '🙅 No icon components found in the file. Aborting sync.');
 		return;
 	}
 	log('discover', `🔍 Found ${components.length} component(s)`);
@@ -357,8 +374,21 @@ async function main(): Promise<void> {
 		.sort((a, b) => a.name.localeCompare(b.name));
 	log('discover', `🔍 ${normalized.length} unique normalized icon names`);
 
-	// 3) Diff against existing types.ts before generating outputs
+	// 3) Fast-path bail-out: if set of names hasn't changed and sprite exists, stop early
 	const existingIcons = readExistingIcons();
+	if (
+		existingIcons.length > 0 &&
+		sameSet(
+			existingIcons,
+			normalized.map((n) => n.name),
+		) &&
+		fs.existsSync(SPRITE_PATH)
+	) {
+		log('exit', '🙅 No icon name changes detected. Skipping fetch/optimize/build.');
+		return;
+	}
+
+	// 4) Diff output (kept from original for visibility)
 	if (existingIcons.length) {
 		const upcomingNames = normalized.map((n) => n.name);
 		const existingSet = new Set(existingIcons);
@@ -372,10 +402,10 @@ async function main(): Promise<void> {
 		log('diff', '🎁 No existing types.ts or no icons parsed; treating all as new.');
 	}
 
-	// 4) Resolve image URLs in batches
+	// 5) Resolve image URLs in bounded parallel batches (NEW)
 	const idToUrl = await fetchSvgUrls(normalized);
 
-	// 4) Download + SVGO in parallel (bounded)
+	// 6) Download + SVGO in parallel (bounded)
 	const symbols = await mapPool(normalized, DOWNLOAD_CONCURRENCY, async (item) => {
 		const url = idToUrl[item.id];
 		if (!url) throw new Error(`Missing image URL for ${item.name} (${item.id})`);
@@ -384,12 +414,12 @@ async function main(): Promise<void> {
 		return { name: item.name, svg: optimized } as SvgSymbol;
 	});
 
-	// 5) Build deterministic, alphabetically-sorted sprite
+	// 7) Build deterministic, alphabetically-sorted sprite
 	const sprite = buildSprite(symbols);
 	await writeFileAtomic(SPRITE_PATH, sprite);
 	log('build', `📦 sprite.svg written with ${symbols.length} symbol(s)`);
 
-	// 6) Write types.ts
+	// 8) Write types.ts
 	const namesBlock = symbols.map((s) => `\t'${s.name}',`).join('\n');
 	const typesContent = generateTypes(namesBlock);
 	await writeFileAtomic(TYPES_PATH, typesContent);
