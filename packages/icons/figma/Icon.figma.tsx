@@ -466,6 +466,13 @@ figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=6-14
 	example: () => <Icon name="robot" />,
 });
 
+figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=20672-218', {
+	props: {
+		name: 'quote',
+	},
+	example: () => <Icon name="quote" />,
+});
+
 figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=6-141996', {
 	props: {
 		name: 'quick-start',
@@ -1614,6 +1621,13 @@ figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=6-14
 	example: () => <Icon name="check" />,
 });
 
+figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=20672-216', {
+	props: {
+		name: 'chip-ai',
+	},
+	example: () => <Icon name="chip-ai" />,
+});
+
 figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=6-141525', {
 	props: {
 		name: 'chat-bubble-outline',
@@ -1878,6 +1892,13 @@ figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=6-14
 		name: 'border-all',
 	},
 	example: () => <Icon name="border-all" />,
+});
+
+figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=20672-217', {
+	props: {
+		name: 'book-shelf',
+	},
+	example: () => <Icon name="book-shelf" />,
 });
 
 figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=6-141410', {
