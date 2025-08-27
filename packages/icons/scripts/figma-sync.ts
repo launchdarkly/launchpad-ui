@@ -71,7 +71,8 @@ type SvgSymbol = { name: string; svg: string };
 
 // Helper: logging format
 function log(step: string, msg: string, ...rest: unknown[]) {
-	console.log(`[icons:${step}] ${msg}`, ...rest);
+	const prefix = `[icons:${step}]`;
+	console.log(`${prefix.padEnd(20)} ${msg}`, ...rest);
 }
 
 // Helper: fetch with timeout
@@ -134,7 +135,7 @@ async function downloadText(url: string): Promise<string> {
 
 // Get icon page node
 async function fetchIconRoot(): Promise<FigmaNode> {
-	log('figma', `Fetching node subtree ${FIGMA_NODE_ID}`);
+	log('fetch', `🔗 Fetching node subtree ${FIGMA_NODE_ID}`);
 	const url = `https://api.figma.com/v1/files/${FIGMA_FILE_KEY}/nodes?ids=${encodeURIComponent(FIGMA_NODE_ID)}`;
 	const data = await figmaGet<FigmaFileNodesResponse>(url);
 	const wrapper = data.nodes[FIGMA_NODE_ID];
@@ -180,7 +181,7 @@ async function fetchSvgUrls(components: ComponentRecord[]): Promise<Record<strin
 		const batch = components.slice(i, i + IMAGES_BATCH_SIZE);
 		const ids = batch.map((c) => c.id).join(',');
 		const url = `https://api.figma.com/v1/images/${FIGMA_FILE_KEY}?ids=${encodeURIComponent(ids)}&format=svg`;
-		log('figma', `Requesting image URLs for ${batch.length} component(s)`);
+		log('fetch', `🔗 Requesting image URLs for ${batch.length} component(s)`);
 		const json = await figmaGet<{ images: Record<string, string> }>(url);
 		for (const c of batch) if (json.images[c.id]) urls[c.id] = json.images[c.id];
 	}
@@ -342,7 +343,7 @@ async function main(): Promise<void> {
 		log('warn', 'No components found at the specified node.');
 		return;
 	}
-	log('discover', `Found ${components.length} component(s)`);
+	log('discover', `🔍 Found ${components.length} component(s)`);
 
 	// 2) Normalize names and dedupe by normalized name (first occurrence wins)
 	const nameMap = new Map<string, ComponentRecord>();
@@ -354,7 +355,7 @@ async function main(): Promise<void> {
 	const normalized = [...nameMap.entries()]
 		.map(([name, comp]) => ({ ...comp, name }))
 		.sort((a, b) => a.name.localeCompare(b.name));
-	log('discover', `${normalized.length} unique normalized icon names`);
+	log('discover', `🔍 ${normalized.length} unique normalized icon names`);
 
 	// 3) Diff against existing types.ts before generating outputs
 	const existingIcons = readExistingIcons();
@@ -364,14 +365,11 @@ async function main(): Promise<void> {
 		const upcomingSet = new Set(upcomingNames);
 		const added = upcomingNames.filter((n) => !existingSet.has(n));
 		const removed = existingIcons.filter((n) => !upcomingSet.has(n));
-		if (added.length) console.info('[icons:diff] New icon(s) to add:', added.join(', '));
+		if (added.length) log('added', `🆕 New icon(s) to add: ${added.join(', ')}`);
 		if (removed.length)
-			console.warn(
-				'[icons:diff] Icon(s) no longer present and will be removed:',
-				removed.join(', '),
-			);
+			log('removed', `✂️ Icon(s) no longer present and will be removed: ${removed.join(', ')}`);
 	} else {
-		console.info('[icons:diff] No existing types.ts or no icons parsed; treating all as new.');
+		log('diff', '🎁 No existing types.ts or no icons parsed; treating all as new.');
 	}
 
 	// 4) Resolve image URLs in batches
@@ -389,15 +387,15 @@ async function main(): Promise<void> {
 	// 5) Build deterministic, alphabetically-sorted sprite
 	const sprite = buildSprite(symbols);
 	await writeFileAtomic(SPRITE_PATH, sprite);
-	log('sprite', `sprite.svg written with ${symbols.length} symbol(s)`);
+	log('build', `📦 sprite.svg written with ${symbols.length} symbol(s)`);
 
 	// 6) Write types.ts
 	const namesBlock = symbols.map((s) => `\t'${s.name}',`).join('\n');
 	const typesContent = generateTypes(namesBlock);
 	await writeFileAtomic(TYPES_PATH, typesContent);
-	log('types', `types.ts written (${symbols.length} icons)`);
+	log('build', `📦 types.ts written (${symbols.length} icons)`);
 
-	log('done', 'Icon refresh complete.');
+	log('done', '✅ Icon refresh complete.');
 }
 
 main().catch((err) => {
