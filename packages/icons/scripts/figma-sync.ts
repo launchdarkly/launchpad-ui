@@ -271,15 +271,15 @@ function buildSprite(symbols: SvgSymbol[]): string {
 			.split('\n')
 			.map((l) => (l.trim() ? `\t${l}` : l))
 			.join('\n');
-		return `\t<symbol id="lp-icon-${name}" viewBox="${viewBox}">\n\t${inner}\n\t</symbol>`;
+		return `\t\t<symbol id="lp-icon-${name}" viewBox="${viewBox}">\n\t\t${inner}\n\t\t</symbol>`;
 	});
 
 	return [
 		`<!-- ${AUTO_GENERATED_BANNER}-->`,
 		`<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">`,
-		'<defs>',
+		'\t<defs>',
 		...blocks,
-		'</defs>',
+		'\t</defs>',
 		'</svg>',
 		'', // trailing newline
 	].join('\n');
