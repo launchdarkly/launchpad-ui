@@ -39,7 +39,7 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
-      - name: Nx Sync Icons
+      - name: Sync Icons
         run: pnpm nx @launchpad-ui/icons:sync
         env:
           CI: true
@@ -51,7 +51,7 @@ jobs:
           CI: true
           NX_NO_DAEMON: true
 
-      - name: Nx Connect Icons
+      - name: Connect Icons
         run: pnpm nx @launchpad-ui/icons:connect
         env:
           CI: true
@@ -63,14 +63,13 @@ jobs:
         with:
           branch: ci/sync-icons
           delete-branch: true
-          commit-message: "chore(icons): sync & connect icons"
-          title: "chore(icons): sync & connect icons"
+          commit-message: "feat(icons): sync & connect icons"
+          title: "feat(icons): sync & connect icons"
           body: |
             Automated icon sync & connect run.
             Commands executed:
             - pnpm nx @launchpad-ui/icons:sync
             - pnpm nx @launchpad-ui/icons:connect
           labels: |
-            chore
             icons
           assignees: ${{ github.actor }}
