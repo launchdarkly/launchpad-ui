@@ -185,16 +185,16 @@ $ pnpm test
 
 _Do not add icons manually. LaunchPad icons are managed in Figma and synced to the `@launchpad-ui/icons` package via a script._
 
-To add a new icon to LaunchPad:
+#### First, add your icon to the Figma library
 
-- Create a branch in the LaunchPad Figma library and add your icon to the /Icons page.
-- Make sure your new icon is reviewed by design. You can always ping `@uxteam` in #ask-launchpad-design-system if you need help making your icon or to get a review.
-- Merge the icon to the LaunchPad Figma library
-- Run the `sync-icons` GitHub action. This action does the following:
-  - Runs `pnpm nx run @launchpad-ui/icons:sync` to build the icons from Figma
-  - Runs `pnpm nx run @launchpad-ui/icons:connect` to update the icons [Figma Code Connect](https://github.com/figma/code-connect/blob/main/cli/scripts/README.md) file.
-  - Opens a pull request for you
-- Open the `Components/Icons` page on the PR deployed Chromatic storybook to ensure your icon was generated properly.
+1. Create a branch in the LaunchPad Figma library and add your icon to the [Icons](https://www.figma.com/design/98HKKXL2dTle29ikJ3tzk7/%F0%9F%9A%80-LaunchPad?m=auto&node-id=1-1483&t=YGNnNEonY474hKwo-1) page.
+1. Make sure your new icon is reviewed by Design. You can always ping the `@uxteam` in #ask-launchpad-design-system if you need help making your icon or to get a review.
+1. Merge the icon to the LaunchPad Figma library
+
+#### Then, sync `@launchpad-ui/icons` package with Figma
+
+1. Trigger the `sync-icons` workflow by going to [the actions tab](https://github.com/launchdarkly/launchpad-ui/actions/workflows/sync-icons.yml) and clicking "Run workflow". This action will generate a PR with your new icon.
+1. [Open your PR](https://github.com/launchdarkly/launchpad-ui/pulls?q=is%3Apr+is%3Aopen+label%3Aicons) and make sure your icons look correct by opening the Chromatic build preview for your PR
 
 
 ## Styleguides
