@@ -42,10 +42,10 @@ jobs:
         run: pnpm install
 
       - name: Sync Icons
-        run: pnpm nx @launchpad-ui/icons:sync
+        run: pnpm nx run @launchpad-ui/icons:sync
 
       - name: Connect Icons
-        run: pnpm nx @launchpad-ui/icons:connect
+        run: pnpm nx run @launchpad-ui/icons:connect
 
       - name: Detect changes
         id: changes
