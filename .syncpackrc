@@ -27,5 +27,36 @@
       ],
       "preferVersion": "highestSemver"
     }
+  ],
+  "sortFirst": [
+    "name",
+    "private",
+    "version",
+    "description",
+    "repository",
+    "author",
+    "bugs",
+    "homepage",
+    "license",
+    "status",
+    "workspaces",
+    "main",
+    "types",
+    "module",
+    "source",
+    "files",
+    "publishConfig",
+    "sideEffects",
+    "scripts",
+    "keywords",
+    "dependencies",
+    "devDependencies",
+    "peerDependencies",
+    "browserslist",
+    "engineStrict",
+    "engines",
+    "resolutions",
+    "packageManager",
+    "pnpm"
   ]
 }

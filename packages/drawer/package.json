@@ -1,35 +1,23 @@
 {
 	"name": "@launchpad-ui/drawer",
-	"version": "0.8.0",
-	"status": "alpha",
-	"publishConfig": {
-		"access": "public"
-	},
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/launchdarkly/launchpad-ui"
-	},
+	"version": "0.9.0",
 	"description": "A partial overlay that appears from the right side of the screen.",
+	"repository": "launchdarkly/launchpad-ui",
 	"license": "Apache-2.0",
+	"status": "alpha",
+	"main": "dist/index.js",
+	"types": "dist/index.d.ts",
+	"module": "dist/index.es.js",
+	"source": "src/index.ts",
 	"files": [
 		"dist"
 	],
-	"main": "dist/index.js",
-	"module": "dist/index.es.js",
-	"types": "dist/index.d.ts",
+	"publishConfig": {
+		"access": "public"
+	},
 	"sideEffects": [
 		"**/*.css"
 	],
-	"exports": {
-		".": {
-			"types": "./dist/index.d.ts",
-			"import": "./dist/index.es.js",
-			"require": "./dist/index.js"
-		},
-		"./package.json": "./package.json",
-		"./style.css": "./dist/style.css"
-	},
-	"source": "src/index.ts",
 	"scripts": {
 		"build": "vite build -c ../../vite.config.mts && tsc --project tsconfig.build.json",
 		"clean": "rm -rf dist",
@@ -45,16 +33,25 @@
 		"classix": "2.2.0",
 		"framer-motion": "12.20.5"
 	},
-	"peerDependencies": {
-		"@react-aria/interactions": "3.25.4",
-		"@react-aria/overlays": "3.28.0",
+	"devDependencies": {
+		"@react-aria/interactions": "3.25.5",
+		"@react-aria/overlays": "3.29.0",
 		"react": "19.1.1",
 		"react-dom": "19.1.1"
 	},
-	"devDependencies": {
-		"@react-aria/interactions": "3.25.4",
-		"@react-aria/overlays": "3.28.0",
+	"peerDependencies": {
+		"@react-aria/interactions": "3.25.5",
+		"@react-aria/overlays": "3.29.0",
 		"react": "19.1.1",
 		"react-dom": "19.1.1"
+	},
+	"exports": {
+		".": {
+			"types": "./dist/index.d.ts",
+			"import": "./dist/index.es.js",
+			"require": "./dist/index.js"
+		},
+		"./package.json": "./package.json",
+		"./style.css": "./dist/style.css"
 	}
 }

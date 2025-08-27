@@ -49,6 +49,16 @@
 .small {
 	font: var(--lp-text-label-2-medium);
 	height: var(--lp-size-20);
+
+	& [slot='remove'] {
+		height: var(--lp-size-20);
+		width: var(--lp-size-20);
+		background-color: transparent;
+
+		&[data-hovered] {
+			background-color: transparent;
+		}
+	}
 }
 
 .medium {

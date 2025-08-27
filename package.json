@@ -3,8 +3,12 @@
 	"private": true,
 	"version": "0.0.1",
 	"description": "LaunchDarkly's design system",
+	"repository": "launchdarkly/launchpad-ui.git",
+	"author": "Catamorphic Co.",
+	"bugs": "https://github.com/launchdarkly/launchpad-ui/issues",
+	"homepage": "https://github.com/launchdarkly/launchpad-ui#readme",
+	"license": "Apache-2.0",
 	"scripts": {
-		"postinstall": "syncpack lint",
 		"build": "nx run-many --target=build --all",
 		"build:packages": "nx affected --target=build",
 		"build:transform": "nx run-many --target=build --projects=@launchpad-ui/tokens",
@@ -12,27 +16,18 @@
 		"chromatic": "chromatic",
 		"clean": "nx run-many --target=clean --all",
 		"graph": "nx graph --affected",
+		"postinstall": "syncpack lint",
+		"prepare": "husky",
+		"release": "nx affected --target=build --base=HEAD~1 --head=HEAD --exclude=launchpad-design-system && changeset publish",
 		"storybook": "pnpm build:transform && storybook dev -p 3000",
 		"storybook:build": "pnpm build:transform && storybook build --quiet",
 		"test": "pnpm build:transform && vitest run --coverage",
 		"test:packages": "pnpm build:transform && nx affected --target=test",
 		"test:ui": "vitest --ui",
 		"test:watch": "vitest",
-		"prepare": "husky",
-		"release": "nx affected --target=build --base=HEAD~1 --head=HEAD --exclude=launchpad-design-system && changeset publish",
 		"typecheck": "pnpm build:transform && tsc --noEmit --emitDeclarationOnly false --skipLibCheck --moduleResolution bundler --lib 'es2024, dom, dom.iterable'",
 		"upgrade-react-aria": "pnpm up react-aria \"@react-aria/*\" \"@react-types/*\" \"@react-stately/*\" react-aria-components react react-dom @types/react @types/react-dom --latest -r"
 	},
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/launchdarkly/launchpad-ui.git"
-	},
-	"author": "Catamorphic Co.",
-	"license": "Apache-2.0",
-	"bugs": {
-		"url": "https://github.com/launchdarkly/launchpad-ui/issues"
-	},
-	"homepage": "https://github.com/launchdarkly/launchpad-ui#readme",
 	"devDependencies": {
 		"@biomejs/biome": "2.0.0-beta.5",
 		"@changesets/changelog-github": "^0.5.0",
@@ -52,8 +47,8 @@
 		"@testing-library/user-event": "^14.6.0",
 		"@types/css-modules": "^1.0.5",
 		"@types/node": "^22.15.3",
-		"@types/react": "^19.1.10",
-		"@types/react-dom": "^19.1.7",
+		"@types/react": "^19.1.11",
+		"@types/react-dom": "^19.1.8",
 		"@vanilla-extract/css": "^1.17.1",
 		"@vanilla-extract/vite-plugin": "^5.1.0",
 		"@vitejs/plugin-react-oxc": "^0.2.0",
@@ -83,6 +78,11 @@
 		"vite": "npm:rolldown-vite@6.3.16",
 		"vitest": "^3.2.0"
 	},
+	"browserslist": [
+		"last 2 versions",
+		"not dead",
+		"not IE 11"
+	],
 	"packageManager": "pnpm@10.12.4",
 	"pnpm": {
 		"onlyBuiltDependencies": [
@@ -104,10 +104,5 @@
 		"overrides": {
 			"vite": "npm:rolldown-vite@6.3.16"
 		}
-	},
-	"browserslist": [
-		"last 2 versions",
-		"not dead",
-		"not IE 11"
-	]
+	}
 }
