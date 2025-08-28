@@ -71,7 +71,6 @@ jobs:
           branch: ci/feat/sync-icons
           delete-branch: true
           draft: true
-          assignees: ${{ github.actor }}
           commit-message: "feat(icons): sync & connect icons"
           title: "feat(icons): sync & connect icons"
           body: Automated icon sync & connect run.
