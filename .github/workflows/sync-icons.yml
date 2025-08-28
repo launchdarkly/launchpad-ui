@@ -15,6 +15,7 @@ jobs:
     permissions:
       id-token: write
       contents: read
+      pull-requests: write
     steps:
       - name: Get Tokens
         uses: launchdarkly/gh-actions/actions/release-secrets@release-secrets-v1.2.0
