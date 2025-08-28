@@ -290,6 +290,7 @@ const icons = [
 	'tag',
 	'temperature',
 	'terminal',
+	'test',
 	'text-box-search',
 	'theme-dark',
 	'theme-light',
