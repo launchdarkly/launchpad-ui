@@ -1,6 +1,7 @@
 name: Sync icons
 
 on:
+  push:
   workflow_dispatch:
 
 permissions:
