@@ -51,15 +51,18 @@ jobs:
             echo "changed=false" >> $GITHUB_OUTPUT
           fi
 
-      - name: Changeset
+      - name: Create changeset
+        id: create-changeset
         if: steps.changes.outputs.changed == 'true'
-        uses: generates/changeset-action@v3.0.0
-        with:
-          type: patch
-          name: "@launchpad-ui/icons"
-          summary: |
-            feat(icons): sync icons with figma library
-            ${{ env.CHANGESET_SUMMARY }}
+        run: npx changeset add --empty
+
+      - name: Write to created changeset file
+        if: steps.create-changeset.outputs.id
+        run: |
+          CHANGESET_FILE=$(ls -t .changeset/*.md | head -n1)
+          CHANGE_TYPE="---\n\"@launchpad-ui/icons\": patch\n---"
+          CHANGE_SUMMARY="feat(icons): sync icons with figma library\n${{ env.CHANGESET_SUMMARY }}"
+          echo -e "$CHANGE_TYPE\n\n$CHANGE_SUMMARY" > "$CHANGESET_FILE"
 
       - name: Create Pull Request
         if: steps.changes.outputs.changed == 'true'
