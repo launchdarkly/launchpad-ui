@@ -1,7 +1,6 @@
 name: Sync icons
 
 on:
-  push:
   workflow_dispatch:
 
 jobs:
@@ -55,9 +54,15 @@ jobs:
             echo "Changes detected."
           fi
 
-      - name: Add changeset
+      - name: Changeset
         if: steps.changes.outputs.changed == 'true'
-        run: npx changeset add --empty
+        uses: generates/changeset-action@v3.0.0
+        with:
+          type: patch
+          name: "@launchpad-ui/icons"
+          summary: |
+            feat(icons): sync icons with figma library
+            ${{ env.CHANGESET_SUMMARY }}
 
       - name: Create Pull Request
         if: steps.changes.outputs.changed == 'true'
@@ -69,7 +74,9 @@ jobs:
           draft: true
           commit-message: "feat(icons): sync & connect icons"
           title: "feat(icons): sync & connect icons"
-          body: Automated icon sync & connect run.
+          body: |
+            Automated icon sync & connect run.
+            ${{ env.CHANGESET_SUMMARY }}
           labels: |
             icons
             ci
