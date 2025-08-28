@@ -4,17 +4,13 @@ on:
   push:
   workflow_dispatch:
 
-permissions:
-  contents: write
-  pull-requests: write
-
 jobs:
   sync-icons:
     if: github.repository == 'launchdarkly/launchpad-ui'
     runs-on: ubuntu-latest
     permissions:
       id-token: write
-      contents: read
+      contents: write
       pull-requests: write
     steps:
       - name: Get Tokens
