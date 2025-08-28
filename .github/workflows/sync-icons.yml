@@ -75,13 +75,10 @@ jobs:
           delete-branch: true
           commit-message: "feat(icons): sync & connect icons"
           title: "feat(icons): sync & connect icons"
-          body: |
-            Automated icon sync & connect run.
-            Commands executed:
-            - pnpm nx @launchpad-ui/icons:sync
-            - pnpm nx @launchpad-ui/icons:connect
+          body: Automated icon sync & connect run.
           labels: |
             icons
+            ci
           assignees: ${{ github.actor }}
 
       - name: No-op (no changes)
