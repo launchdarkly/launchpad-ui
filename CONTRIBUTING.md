@@ -183,7 +183,7 @@ $ pnpm test
 
 ### Adding Icons to LaunchPad
 
-_Do not add icons manually. LaunchPad icons are managed in Figma and synced to the `@launchpad-ui/icons` package via a script._
+_Do not add icons manually to launchpad-ui. Icons are managed in Figma and synced to the `@launchpad-ui/icons` package via a script._
 
 #### First, add your icon to the Figma library
 
@@ -194,7 +194,7 @@ _Do not add icons manually. LaunchPad icons are managed in Figma and synced to t
 #### Then, sync `@launchpad-ui/icons` package with Figma
 
 1. Trigger the `sync-icons` workflow by going to [the actions tab](https://github.com/launchdarkly/launchpad-ui/actions/workflows/sync-icons.yml) and clicking "Run workflow". This action will generate a PR with your new icon.
-1. [Open your PR](https://github.com/launchdarkly/launchpad-ui/pulls?q=is%3Apr+is%3Aopen+label%3Aicons) and make sure your icons look correct by opening the Chromatic build preview for your PR
+1. [Open your PR](https://github.com/launchdarkly/launchpad-ui/pulls?q=is%3Apr+is%3Aopen+label%3Aicons). Make sure your icons look correct by opening the Chromatic build preview for your PR. Reviewers will be auto assigned.
 
 
 ## Styleguides

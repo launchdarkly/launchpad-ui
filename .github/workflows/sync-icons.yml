@@ -70,12 +70,11 @@ jobs:
         with:
           branch: ci/feat/sync-icons
           delete-branch: true
-          draft: true
           commit-message: "feat(icons): sync and connect icons with figma library"
           title: "feat(icons): sync and connect icons with figma library"
           body: |
             ## Summary
-            This PR is an automated icon sync with LaunchPad Figma library.
+            This PR is an automated icon sync with LaunchPad Figma library. If you resync while this PR is open, the updated changes will be added to this same PR.
             ${{ env.CHANGESET_SUMMARY }}
           labels: |
             icons
