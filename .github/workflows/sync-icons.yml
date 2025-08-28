@@ -74,7 +74,8 @@ jobs:
           commit-message: "feat(icons): sync and connect icons with figma library"
           title: "feat(icons): sync and connect icons with figma library"
           body: |
-            ## Automated icon sync & connect run.
+            ## Summary
+            This PR is an automated icon sync with LaunchPad Figma library.
             ${{ env.CHANGESET_SUMMARY }}
           labels: |
             icons
