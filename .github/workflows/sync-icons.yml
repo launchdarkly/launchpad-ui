@@ -57,12 +57,12 @@ jobs:
         run: npx changeset add --empty
 
       - name: Write to created changeset file
-        if: steps.create-changeset.outputs.id
+        if: steps.changes.outputs.changed == 'true'
         run: |
           CHANGESET_FILE=$(ls -t .changeset/*.md | head -n1)
           CHANGE_TYPE="---\n\"@launchpad-ui/icons\": patch\n---"
-          CHANGE_SUMMARY="feat(icons): sync icons with figma library\n${{ env.CHANGESET_SUMMARY }}"
-          echo -e "$CHANGE_TYPE\n\n$CHANGE_SUMMARY" > "$CHANGESET_FILE"
+          CHANGE_SUMMARY="feat(icons): sync and connect icons with figma library\n${{ env.CHANGESET_SUMMARY }}"
+          echo -e "$CHANGE_TYPE\n\n$CHANGE_SUMMARY" > $CHANGESET_FILE
 
       - name: Create Pull Request
         if: steps.changes.outputs.changed == 'true'
@@ -71,10 +71,10 @@ jobs:
           branch: ci/feat/sync-icons
           delete-branch: true
           draft: true
-          commit-message: "feat(icons): sync & connect icons"
-          title: "feat(icons): sync & connect icons"
+          commit-message: "feat(icons): sync and connect icons with figma library"
+          title: "feat(icons): sync and connect icons with figma library"
           body: |
-            Automated icon sync & connect run.
+            ## Automated icon sync & connect run.
             ${{ env.CHANGESET_SUMMARY }}
           labels: |
             icons
