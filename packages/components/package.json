@@ -10,7 +10,7 @@
 	"license": "Apache-2.0",
 	"status": "beta",
 	"main": "dist/index.js",
-	"types": "dist/index.d.ts",
+	"types": "dist/typesIndex.d.ts",
 	"module": "dist/index.es.js",
 	"source": "src/index.ts",
 	"files": [
