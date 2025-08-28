@@ -392,14 +392,14 @@ async function main(): Promise<void> {
 		return;
 	}
 
-	// 4) Diff output (kept from original for visibility)
+	// 4) Diff output (kept from original for visibility) and set a change summary
+	let changesetSummary = '';
 	if (existingIcons.length) {
 		const upcomingNames = normalized.map((n) => n.name);
 		const existingSet = new Set(existingIcons);
 		const upcomingSet = new Set(upcomingNames);
 		const added = upcomingNames.filter((n) => !existingSet.has(n));
 		const removed = existingIcons.filter((n) => !upcomingSet.has(n));
-		let changesetSummary = '';
 
 		if (added.length) {
 			const addedSummary = `New icons: ${added.join(', ')}`;
@@ -412,11 +412,11 @@ async function main(): Promise<void> {
 			changesetSummary += `\n${removedSummary}`;
 			log('removed', `✂️ ${removedSummary}`);
 		}
-
-		fs.appendFileSync(ENV_FILE, `CHANGESET_SUMMARY=${changesetSummary}\n`);
 	} else {
-		log('diff', '🎁 No existing types.ts or no icons parsed; treating all as new.');
+		changesetSummary += '\ninitial sync of icons from Figma';
+		log('diff', '🎁 No existing icons. Treating all as new.');
 	}
+	fs.appendFileSync(ENV_FILE, `CHANGESET_SUMMARY<<EOF\n${changesetSummary}\nEOF\n`);
 
 	// 5) Resolve image URLs in bounded parallel batches (NEW)
 	const idToUrl = await fetchSvgUrls(normalized);
