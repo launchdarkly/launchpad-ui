@@ -18,7 +18,7 @@ describe('TagGroup', () => {
 		expect(screen.getByRole('grid')).toBeVisible();
 	});
 
-	it('renders remove buttons', () => {
+	it('renders remove buttons with correct accessible names', () => {
 		render(
 			<TagGroup onRemove={() => undefined}>
 				<Label>Label</Label>
@@ -29,10 +29,20 @@ describe('TagGroup', () => {
 				</TagList>
 			</TagGroup>,
 		);
+
+		// Verify all buttons are visible
 		const buttons = screen.getAllByRole('button');
+		expect(buttons).toHaveLength(3);
 		for (const button of buttons) {
 			expect(button).toBeVisible();
 		}
-		expect(buttons[0].getAttribute('aria-label')).toBe('Remove One');
+
+		// Verify accessible names are correct for each tag
+		expect(screen.getByRole('button', { name: 'Remove One' })).toBeVisible();
+		expect(screen.getByRole('button', { name: 'Remove Two' })).toBeVisible();
+		expect(screen.getByRole('button', { name: 'Remove Three' })).toBeVisible();
+
+		// Verify the aria-label attribute is just "Remove"
+		expect(buttons[0].getAttribute('aria-label')).toBe('Remove');
 	});
 });

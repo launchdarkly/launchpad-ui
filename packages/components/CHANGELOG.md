@@ -1,5 +1,31 @@
 # @launchpad-ui/components
 
+## 0.16.1
+
+### Patch Changes
+
+- [#1753](https://github.com/launchdarkly/launchpad-ui/pull/1753) [`c85808e`](https://github.com/launchdarkly/launchpad-ui/commit/c85808e320c6cfcd07bdd934d179e5a66e845909) Thanks [@vezaynk](https://github.com/vezaynk)! - bump @internationalized/date
+
+## 0.16.0
+
+### Minor Changes
+
+- [#1752](https://github.com/launchdarkly/launchpad-ui/pull/1752) [`a7b499e`](https://github.com/launchdarkly/launchpad-ui/commit/a7b499e6edc11ac166a75fd3cb8a72c75e956d9b) Thanks [@vezaynk](https://github.com/vezaynk)! - bump react-aria
+
+### Patch Changes
+
+- [#1750](https://github.com/launchdarkly/launchpad-ui/pull/1750) [`c36b68d`](https://github.com/launchdarkly/launchpad-ui/commit/c36b68dc6374776211f471222a382220471cce1b) Thanks [@pheggeseth](https://github.com/pheggeseth)! - Set min-width on Alert content wrapper to let it shrink to fit flex container
+
+- Updated dependencies [[`a7b499e`](https://github.com/launchdarkly/launchpad-ui/commit/a7b499e6edc11ac166a75fd3cb8a72c75e956d9b)]:
+  - @launchpad-ui/tokens@0.15.0
+  - @launchpad-ui/icons@0.24.0
+
+## 0.15.1
+
+### Patch Changes
+
+- [#1748](https://github.com/launchdarkly/launchpad-ui/pull/1748) [`feeca50`](https://github.com/launchdarkly/launchpad-ui/commit/feeca509132b444d270243e81aa3b006bca04212) Thanks [@pheggeseth](https://github.com/pheggeseth)! - Removal buttons within Tags of size "small" no longer overflow the Tag when hovered or focused
+
 ## 0.15.0
 
 ### Minor Changes

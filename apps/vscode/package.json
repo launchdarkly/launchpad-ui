@@ -1,47 +1,29 @@
 {
 	"name": "launchpad-design-system",
 	"private": true,
-	"displayName": "LaunchPad Design System",
-	"version": "0.2.0",
-	"publisher": "launchdarklyofficial",
+	"version": "0.3.0",
+	"description": "LaunchPad VS Code extension",
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/launchdarkly/launchpad-ui",
 		"directory": "apps/vscode"
 	},
+	"bugs": "https://github.com/launchdarkly/launchpad-ui/issues",
 	"homepage": "https://github.com/launchdarkly/launchpad-ui/blob/main/apps/vscode/README.md",
-	"bugs": {
-		"url": "https://github.com/launchdarkly/launchpad-ui/issues"
-	},
-	"description": "LaunchPad VS Code extension",
 	"license": "SEE LICENSE IN LICENSE.txt",
-	"keywords": [
-		"launchpad",
-		"launchdarkly",
-		"design system",
-		"design tokens"
-	],
-	"engines": {
-		"vscode": "^1.101.2"
-	},
-	"categories": [
-		"Other"
-	],
-	"icon": "images/osmo.png",
-	"galleryBanner": {
-		"color": "#FFFFFF",
-		"theme": "light"
-	},
-	"activationEvents": [
-		"onLanguage:css"
-	],
 	"main": "dist/client.js",
 	"scripts": {
-		"vscode:prepublish": "esbuild ./src/client.ts ./src/server.ts --bundle --outdir=dist --external:vscode --format=cjs --platform=node",
 		"build": "pnpm dlx @vscode/vsce package --no-dependencies",
 		"publish": "pnpm dlx @vscode/vsce publish --no-dependencies",
+		"vscode:prepublish": "esbuild ./src/client.ts ./src/server.ts --bundle --outdir=dist --external:vscode --format=cjs --platform=node",
 		"watch": "pnpm vscode:prepublish --watch"
 	},
+	"keywords": [
+		"design system",
+		"design tokens",
+		"launchdarkly",
+		"launchpad"
+	],
 	"dependencies": {
 		"@launchpad-ui/tokens": "workspace:~",
 		"vscode-css-languageservice": "^6.3.0",
@@ -53,5 +35,21 @@
 		"@types/vscode": "^1.101.0",
 		"esbuild": "0.25.0",
 		"style-dictionary": "^5.0.0"
-	}
+	},
+	"engines": {
+		"vscode": "^1.101.2"
+	},
+	"activationEvents": [
+		"onLanguage:css"
+	],
+	"categories": [
+		"Other"
+	],
+	"displayName": "LaunchPad Design System",
+	"galleryBanner": {
+		"color": "#FFFFFF",
+		"theme": "light"
+	},
+	"icon": "images/osmo.png",
+	"publisher": "launchdarklyofficial"
 }

@@ -1,0 +1,86 @@
+name: Sync icons
+
+on:
+  workflow_dispatch:
+
+jobs:
+  sync-icons:
+    if: github.repository == 'launchdarkly/launchpad-ui'
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: write
+      pull-requests: write
+    steps:
+      - name: Get Tokens
+        uses: launchdarkly/gh-actions/actions/release-secrets@release-secrets-v1.2.0
+        with:
+          aws_assume_role: ${{ vars.AWS_ROLE_ARN }}
+          ssm_parameter_pairs: |
+            /production/common/launchpad-ui/figma-access-token = FIGMA_ACCESS_TOKEN
+
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup PNPM
+        uses: pnpm/action-setup@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Sync Icons
+        run: pnpm nx run @launchpad-ui/icons:sync
+
+      - name: Connect Icons
+        run: pnpm nx run @launchpad-ui/icons:connect
+
+      - name: Detect changes
+        id: changes
+        run: |
+          if [[ -n "$(git status --porcelain)" ]]; then
+            echo "changed=true" >> $GITHUB_OUTPUT
+          else
+            echo "changed=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Create changeset
+        id: create-changeset
+        if: steps.changes.outputs.changed == 'true'
+        run: npx changeset add --empty
+
+      - name: Write to created changeset file
+        if: steps.changes.outputs.changed == 'true'
+        run: |
+          CHANGESET_FILE=$(ls -t .changeset/*.md | head -n1)
+          CHANGE_TYPE="---\n\"@launchpad-ui/icons\": patch\n---"
+          CHANGE_SUMMARY="feat(icons): sync and connect icons with figma library\n${{ env.CHANGESET_SUMMARY }}"
+          echo -e "$CHANGE_TYPE\n\n$CHANGE_SUMMARY" > $CHANGESET_FILE
+
+      - name: Create Pull Request
+        if: steps.changes.outputs.changed == 'true'
+        uses: peter-evans/create-pull-request@v6
+        with:
+          branch: ci/feat/sync-icons
+          delete-branch: true
+          commit-message: "feat(icons): sync and connect icons with figma library"
+          title: "feat(icons): sync and connect icons with figma library"
+          body: |
+            ## Summary
+            This PR is an automated icon sync with LaunchPad Figma library. If you resync while this PR is open, the updated changes will be added to this same PR.
+            ${{ env.CHANGESET_SUMMARY }}
+          labels: |
+            icons
+            ci
+          assignees: ${{ github.actor }}
+
+      - name: No-op (when no changes to icons)
+        if: steps.changes.outputs.changed != 'true'
+        run: echo "No changes detected, skipping changeset and PR creation."
