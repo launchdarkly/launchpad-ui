@@ -42,10 +42,10 @@ We welcome contributions! See the [contributing docs](https://github.com/launchd
 
 ## Figma MCP Server Setup
 
-If you'd like to generate new components or recipes with AI using [Figma MCP Server](https://www.figma.com/blog/introducing-figmas-dev-mode-mcp-server/), follow the instructions [here](https://help.figma.com/hc/en-us/articles/32132100833559-Guide-to-the-Dev-Mode-MCP-Server).
+If you'd like to generate new components or recipes with AI using [Figma MCP Server](https://www.figma.com/blog/introducing-figmas-dev-mode-mcp-server/), follow the instructions in [Figma's MCP Guide](https://help.figma.com/hc/en-us/articles/32132100833559-Guide-to-the-Dev-Mode-MCP-Server).
 
 Note that using Figma MCP server requires Dev or Full seat in Figma. For the best results it's recommended to use LaunchPad components and auto layout in your designs to ensure the generated code is mapped correctly to components and tokens instead of generating raw HTML code and styles.
 
 Once the MCP is enabled in your Figma and IDE, open the AI chat as usual and use prompt like:
 
-<strong>Create a new code example in recipes that displays the selected Figma File layout. Use the design system components and use figma.tsx files to help with the mapping.</strong>
+**Create a new code example in recipes that displays the selected Figma File layout. Use the design system components and use figma.tsx files to help with the mapping.**
