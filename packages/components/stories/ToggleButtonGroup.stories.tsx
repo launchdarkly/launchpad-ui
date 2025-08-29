@@ -13,7 +13,7 @@ const meta: Meta<typeof ToggleButtonGroup> = {
 	parameters: {
 		design: {
 			type: 'figma',
-			url: 'https://www.figma.com/design/98HKKXL2dTle29ikJ3tzk7/%F0%9F%9A%80-LaunchPad?node-id=1-37543',
+			url: 'https://www.figma.com/design/98HKKXL2dTle29ikJ3tzk7/%F0%9F%9A%80-LaunchPad?node-id=1-29275&m=dev',
 		},
 	},
 };

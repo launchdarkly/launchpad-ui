@@ -13,7 +13,7 @@ const meta: Meta<typeof ButtonGroup> = {
 	parameters: {
 		design: {
 			type: 'figma',
-			url: 'https://www.figma.com/design/98HKKXL2dTle29ikJ3tzk7/%F0%9F%9A%80-LaunchPad?node-id=14332-4328&m=dev',
+			url: 'https://www.figma.com/design/98HKKXL2dTle29ikJ3tzk7/%F0%9F%9A%80-LaunchPad?node-id=1-28638&m=dev',
 		},
 	},
 };
