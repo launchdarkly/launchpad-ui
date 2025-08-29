@@ -48,4 +48,4 @@ Note that using Figma MCP server requires Dev or Full seat in Figma. For the bes
 
 Once the MCP is enabled in your Figma and IDE, open the AI chat as usual and use prompt like:
 
-<strong>Create a new code example in recipes that displays the selected Figma File layout. Use the design system components and use figma.tsx files to help with the mapping.</strong>
+Create a new code example in recipes that displays the selected Figma File layout. Use the design system components and use figma.tsx files to help with the mapping.

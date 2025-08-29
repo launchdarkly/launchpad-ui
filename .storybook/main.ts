@@ -26,15 +26,19 @@ const config: StorybookConfig = {
 	previewHead: (head) => `
 		${head}
 		<link rel="stylesheet" href="./manager.css" />
+		<link rel="stylesheet" href="/static/fonts.css" />
+		<link rel="stylesheet" href="/static/index.css" />
+		<link rel="stylesheet" href="/static/media-queries.css" />
+		<link rel="stylesheet" href="/static/themes.css" />
 		<style>
-			/* Ensure docs content gets proper theme styling using LaunchPad design tokens */
+			/* Ensure docs bg gets proper theme styling using LaunchPad design tokens */
 			.dark-theme .docs-story,
 			.dark-theme [data-docs-story] {
 				background-color: #181A1F !important; /* gray.950 */
 				color: #ECEFF2 !important; /* gray.50 */
 			}
 			
-			/* Light theme docs styling */
+			/* Light theme bg styling */
 			.light-theme .docs-story,
 			.light-theme [data-docs-story] {
 				background-color: #FFFFFF !important; /* white.950 */

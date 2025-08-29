@@ -44,6 +44,8 @@ export const lightTheme = create({
 	// Toolbar colors
 	barTextColor: '#6C727A', // gray.500
 	barHoverColor: '#7084FF', // brand.blue.light
+	barBg: '#FFFFFF', // white.950
+	barSelectedColor: '#405BFF', // brand.blue.base
 
 	// Button colors
 	buttonBg: '#F7F9FB', // gray.0

@@ -3,6 +3,7 @@ import type React from 'react';
 
 import { Icon } from '@launchpad-ui/icons';
 import { vars } from '@launchpad-ui/vars';
+import { useEffect, useState } from 'react';
 
 import { Avatar } from '../../src/Avatar';
 import { Button } from '../../src/Button';
@@ -343,20 +344,7 @@ const componentCategories = [
 	recipesCategory,
 ];
 
-// Component card styling
-const cardStyles = {
-	borderRadius: vars.borderRadius.medium,
-	padding: vars.spacing[400],
-	aspectRatio: '1',
-	display: 'flex',
-	flexDirection: 'column' as const,
-	justifyContent: 'space-between',
-	alignItems: 'flex-start',
-	backgroundColor: vars.color.bg.ui.secondary,
-	textDecoration: 'none',
-	color: 'inherit',
-	transition: 'all 0.2s ease',
-};
+// Component card styling now handled per component with React state
 
 const ComponentCard = ({
 	name,
@@ -369,6 +357,51 @@ const ComponentCard = ({
 	storyPath: string;
 	hideCodeLink?: boolean;
 }) => {
+	const [isDark, setIsDark] = useState(() => {
+		return (
+			document.documentElement.classList.contains('dark-theme') ||
+			window.location.search.includes('theme:dark') ||
+			window.location.search.includes('theme=dark')
+		);
+	});
+
+	useEffect(() => {
+		const checkTheme = () => {
+			const newIsDark =
+				document.documentElement.classList.contains('dark-theme') ||
+				window.location.search.includes('theme:dark') ||
+				window.location.search.includes('theme=dark');
+			setIsDark(newIsDark);
+		};
+
+		// Listen for theme changes
+		const observer = new MutationObserver(checkTheme);
+		observer.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
+
+		// Listen for custom theme events
+		window.addEventListener('storybookThemeChange', checkTheme);
+
+		return () => {
+			observer.disconnect();
+			window.removeEventListener('storybookThemeChange', checkTheme);
+		};
+	}, []);
+
+	const cardStyles = {
+		borderRadius: vars.borderRadius.medium,
+		padding: vars.spacing[400],
+		aspectRatio: '1',
+		display: 'flex',
+		flexDirection: 'column' as const,
+		justifyContent: 'space-between',
+		alignItems: 'flex-start',
+		backgroundColor: isDark ? '#23252A' : '#F7F9FB', // gray.900 : gray.0
+		textDecoration: 'none',
+		color: 'inherit',
+		transition: 'all 0.2s ease',
+		border: isDark ? '1px solid #3F454C' : '1px solid #D8DDE3', // gray.700 : gray.100
+	};
+
 	return (
 		<div style={cardStyles}>
 			<Heading size="medium">{name}</Heading>
@@ -380,6 +413,8 @@ const ComponentCard = ({
 					justifyContent: 'center',
 					width: '100%',
 				}}
+				className={isDark ? 'dark-theme' : 'light-theme'}
+				data-theme={isDark ? 'dark' : 'light'}
 			>
 				{component}
 			</div>
@@ -422,8 +457,44 @@ const ComponentCard = ({
 };
 
 const Overview = () => {
+	const [isDark, setIsDark] = useState(() => {
+		return (
+			document.documentElement.classList.contains('dark-theme') ||
+			window.location.search.includes('theme:dark') ||
+			window.location.search.includes('theme=dark')
+		);
+	});
+
+	useEffect(() => {
+		const checkTheme = () => {
+			const newIsDark =
+				document.documentElement.classList.contains('dark-theme') ||
+				window.location.search.includes('theme:dark') ||
+				window.location.search.includes('theme=dark');
+			setIsDark(newIsDark);
+		};
+
+		// Listen for theme changes
+		const observer = new MutationObserver(checkTheme);
+		observer.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
+
+		// Listen for custom theme events
+		window.addEventListener('storybookThemeChange', checkTheme);
+
+		return () => {
+			observer.disconnect();
+			window.removeEventListener('storybookThemeChange', checkTheme);
+		};
+	}, []);
+
 	return (
-		<div style={{ padding: vars.spacing[400] }}>
+		<div
+			style={{
+				padding: vars.spacing[400],
+				backgroundColor: isDark ? '#181A1F' : '#FFFFFF', // gray.950 : white
+				minHeight: '100vh',
+			}}
+		>
 			{componentCategories.map(({ category, components }) => (
 				<div key={category} style={{ marginBottom: vars.spacing[600] }}>
 					<Heading size="large">{category}</Heading>
