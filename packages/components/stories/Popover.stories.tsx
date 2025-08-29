@@ -14,6 +14,12 @@ const meta: Meta<typeof Popover> = {
 	component: Popover,
 	subcomponents: { OverlayArrow, DialogTrigger } as Record<string, ComponentType<unknown>>,
 	title: 'Components/Overlays/Popover',
+	parameters: {
+		figma: {
+			design:
+				'https://www.figma.com/design/98HKKXL2dTle29ikJ3tzk7/%F0%9F%9A%80-LaunchPad?node-id=8079-94800&m=dev',
+		},
+	},
 	decorators: [
 		(Story) => (
 			<div style={{ height: 'var(--lp-size-144)' }}>

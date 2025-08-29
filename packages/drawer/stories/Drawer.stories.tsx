@@ -10,6 +10,7 @@ export default {
 	component: Drawer,
 	subcomponents: { DrawerHeader },
 	title: 'Legacy/Drawer',
+	tags: ['deprecated'],
 	description: 'A partial overlay that appears from the right side of the screen.',
 	parameters: {
 		docs: {

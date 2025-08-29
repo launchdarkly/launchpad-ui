@@ -10,6 +10,7 @@ import tokens from '../dist/index.es.js';
 
 export default {
 	title: 'Tokens/Size',
+	tags: ['!dev'],
 };
 
 const sizes: typeof Tokens.size = tokens.size;

@@ -13,6 +13,10 @@ const meta: Meta<typeof RangeCalendar> = {
 	subcomponents: { CalendarCell, CalendarGrid, Heading } as Record<string, ComponentType<unknown>>,
 	title: 'Components/Date and Time/RangeCalendar',
 	parameters: {
+		figma: {
+			design:
+				'https://www.figma.com/design/98HKKXL2dTle29ikJ3tzk7/%F0%9F%9A%80-LaunchPad?node-id=10675-15846&m=dev',
+		},
 		a11y: {
 			options: {
 				rules: {
