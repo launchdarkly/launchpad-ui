@@ -1,26 +1,47 @@
 {
 	"name": "@launchpad-ui/icons",
-	"version": "0.23.0",
-	"status": "beta",
-	"publishConfig": {
-		"access": "public"
-	},
+	"version": "0.24.0",
+	"description": "An element that supplements content and represents an action or feature within LaunchDarkly.",
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/launchdarkly/launchpad-ui.git",
 		"directory": "packages/icons"
 	},
-	"description": "An element that supplements content and represents an action or feature within LaunchDarkly.",
 	"license": "Apache-2.0",
+	"status": "beta",
+	"main": "dist/index.js",
+	"types": "dist/index.d.ts",
+	"module": "dist/index.es.js",
+	"source": "src/index.ts",
 	"files": [
 		"dist"
 	],
-	"main": "dist/index.js",
-	"module": "dist/index.es.js",
-	"types": "dist/index.d.ts",
+	"publishConfig": {
+		"access": "public"
+	},
 	"sideEffects": [
 		"**/*.css"
 	],
+	"scripts": {
+		"build": "vite build -c ../../vite.config.mts && tsc --project tsconfig.build.json && cp src/img/sprite.svg dist",
+		"clean": "rm -rf dist",
+		"connect": "tsx scripts/figma-connect.ts",
+		"sync": "tsx scripts/figma-sync.ts",
+		"test": "vitest run --coverage"
+	},
+	"dependencies": {
+		"@launchpad-ui/tokens": "workspace:~",
+		"class-variance-authority": "0.7.0"
+	},
+	"devDependencies": {
+		"react": "19.1.1",
+		"react-dom": "19.1.1",
+		"svgo": "4.0.0"
+	},
+	"peerDependencies": {
+		"react": "19.1.1",
+		"react-dom": "19.1.1"
+	},
 	"exports": {
 		".": {
 			"types": "./dist/index.d.ts",
@@ -30,24 +51,5 @@
 		"./package.json": "./package.json",
 		"./style.css": "./dist/style.css",
 		"./sprite.svg": "./dist/sprite.svg"
-	},
-	"source": "src/index.ts",
-	"scripts": {
-		"build": "vite build -c ../../vite.config.mts && tsc --project tsconfig.build.json && cp src/img/sprite.svg dist",
-		"clean": "rm -rf dist",
-		"test": "vitest run --coverage",
-		"connect": "tsx scripts/figma-connect.ts"
-	},
-	"dependencies": {
-		"@launchpad-ui/tokens": "workspace:~",
-		"class-variance-authority": "0.7.0"
-	},
-	"peerDependencies": {
-		"react": "19.1.1",
-		"react-dom": "19.1.1"
-	},
-	"devDependencies": {
-		"react": "19.1.1",
-		"react-dom": "19.1.1"
 	}
 }

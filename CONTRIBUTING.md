@@ -9,9 +9,13 @@ The following is a set of guidelines for contributing to LaunchPad and its packa
 - [How Can I Contribute?](#how-can-i-contribute)
 - [Code Contribution Guide](#code-contribution-guide)
 - [Common Tasks](#common-tasks)
+  - [Installation](#installation)
+  - [Storybook](#storybook)
+  - [Running Tests](#running-tests)
+  - [Adding Dependencies to Packages](#adding-dependencies-to-packages)
+  - [Adding Icons to LaunchPad](#adding-icons-to-launchpad)
 - [Styleguides](#styleguides)
 
----
 
 ## How Can I Contribute?
 
@@ -42,7 +46,6 @@ If you'd like to help by writing code and filing a pull request for a feature en
 
 To learn how to contribute code in LaunchPad, follow the guide below.
 
----
 
 ## Code Contribution Guide
 
@@ -136,13 +139,10 @@ $ pnpm chromatic --project-token PROJECT_TOKEN --branch-name FORKED_BRANCH --bui
 
 If you updated the `components`, `icons`, or `tokens` package your PR will be decorated with preview releases ([example](https://github.com/launchdarkly/launchpad-ui/pull/1686#issuecomment-2898653450)) which will allow you to install them to your project to test/verify. This is helpful for bug fixes or ensuring no regressions result from a refactoring and/or style changes.
 
----
 
 ## Common Tasks
 
-## Running LaunchPad locally
-
-### Installation
+### Local setup
 
 [pnpm](https://pnpm.io/) is the package manager used in this monorepo.
 
@@ -201,12 +201,19 @@ $ pnpm test
 
 ### Adding Icons to LaunchPad
 
-- Add the SVG body content into a new symbol entry with id `lp-icon-{name}` in the `/src/image/sprite.svg` file in the `@launchpad/icons` package.
-- Add its `id` (minus prefix `lp-icon`) to the icons array in `/src/types.ts`.
-- Run `pnpm storybook` and visit the `Components/Icons` page to ensure your icon was generated properly.
-- Run `pnpm nx run @launchpad-ui/icons:connect` (https://github.com/figma/code-connect/blob/main/cli/scripts/README.md) to update the icons Figma Code Connect file.
+_Do not add icons manually to launchpad-ui. Icons are managed in Figma and synced to the `@launchpad-ui/icons` package via a script._
 
----
+#### First, add your icon to the Figma library
+
+1. Create a branch in the LaunchPad Figma library and add your icon to the [Icons](https://www.figma.com/design/98HKKXL2dTle29ikJ3tzk7/%F0%9F%9A%80-LaunchPad?m=auto&node-id=1-1483&t=YGNnNEonY474hKwo-1) page.
+1. Make sure your new icon is reviewed by Design. You can always ping the `@uxteam` in #ask-launchpad-design-system if you need help making your icon or to get a review.
+1. Merge the icon to the LaunchPad Figma library
+
+#### Then, sync `@launchpad-ui/icons` package with Figma
+
+1. Trigger the `sync-icons` workflow by going to [the actions tab](https://github.com/launchdarkly/launchpad-ui/actions/workflows/sync-icons.yml) and clicking "Run workflow". This action will generate a PR with your new icon.
+1. [Open your PR](https://github.com/launchdarkly/launchpad-ui/pulls?q=is%3Apr+is%3Aopen+label%3Aicons). Make sure your icons look correct by opening the Chromatic build preview for your PR. Reviewers will be auto assigned.
+
 
 ## Styleguides
 

@@ -110,7 +110,7 @@ const Tag = ({ size = 'medium', variant = 'default', ref, ...props }: TagProps) 
 					{children}
 					{allowsRemoving && (
 						<IconButton
-							aria-label={`Remove ${textValue ?? ''}`.trim()}
+							aria-label="Remove"
 							size="small"
 							variant="minimal"
 							icon="cancel-circle-outline"

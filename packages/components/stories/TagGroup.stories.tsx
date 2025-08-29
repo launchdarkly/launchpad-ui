@@ -71,6 +71,24 @@ export const Removable: Story = {
 	},
 };
 
+export const SmallRemovable: Story = {
+	render: (args) => {
+		const list = useListData({
+			initialItems: [
+				{ id: 1, name: 'One' },
+				{ id: 2, name: 'Two' },
+				{ id: 3, name: 'Three' },
+			],
+		});
+		return (
+			<TagGroup onRemove={(keys) => list.remove(...keys)} {...args}>
+				<Label>Label</Label>
+				<TagList items={list.items}>{(item) => <Tag size="small">{item.name}</Tag>}</TagList>
+			</TagGroup>
+		);
+	},
+};
+
 export const States: Story = {
 	args: {
 		children: (

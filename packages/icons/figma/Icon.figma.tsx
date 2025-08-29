@@ -4,6 +4,13 @@ import figma from '@figma/code-connect';
 
 import { Icon } from '../src';
 
+figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=20642-301', {
+	props: {
+		name: 'workflow',
+	},
+	example: () => <Icon name="workflow" />,
+});
+
 figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=6-142083', {
 	props: {
 		name: 'warning-outline',
@@ -100,6 +107,13 @@ figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=6-14
 		name: 'timeline-text',
 	},
 	example: () => <Icon name="timeline-text" />,
+});
+
+figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=20642-291', {
+	props: {
+		name: 'thumb-up',
+	},
+	example: () => <Icon name="thumb-up" />,
 });
 
 figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=7081-6', {
@@ -249,6 +263,13 @@ figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=6-14
 	example: () => <Icon name="star" />,
 });
 
+figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=20642-274', {
+	props: {
+		name: 'stack',
+	},
+	example: () => <Icon name="stack" />,
+});
+
 figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=6-142016', {
 	props: {
 		name: 'speedometer',
@@ -289,6 +310,13 @@ figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=6-14
 		name: 'sort',
 	},
 	example: () => <Icon name="sort" />,
+});
+
+figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=20448-382', {
+	props: {
+		name: 'slash',
+	},
+	example: () => <Icon name="slash" />,
 });
 
 figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=2432-30091', {
@@ -389,11 +417,25 @@ figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=6-14
 	example: () => <Icon name="shield-account" />,
 });
 
+figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=15864-150', {
+	props: {
+		name: 'share',
+	},
+	example: () => <Icon name="share" />,
+});
+
 figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=6-142000', {
 	props: {
 		name: 'search',
 	},
 	example: () => <Icon name="search" />,
+});
+
+figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=20642-266', {
+	props: {
+		name: 'sandbox',
+	},
+	example: () => <Icon name="sandbox" />,
 });
 
 figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=6-141999', {
@@ -410,11 +452,25 @@ figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=6-14
 	example: () => <Icon name="ruler" />,
 });
 
+figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=20642-256', {
+	props: {
+		name: 'rocket',
+	},
+	example: () => <Icon name="rocket" />,
+});
+
 figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=6-141997', {
 	props: {
 		name: 'robot',
 	},
 	example: () => <Icon name="robot" />,
+});
+
+figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=20672-218', {
+	props: {
+		name: 'quote',
+	},
+	example: () => <Icon name="quote" />,
 });
 
 figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=6-141996', {
@@ -620,6 +676,13 @@ figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=6-14
 	example: () => <Icon name="package" />,
 });
 
+figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=20647-111518', {
+	props: {
+		name: 'osmo',
+	},
+	example: () => <Icon name="osmo" />,
+});
+
 figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=6-141898', {
 	props: {
 		name: 'notifications-tilt',
@@ -767,6 +830,13 @@ figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=6-14
 	example: () => <Icon name="map-code" />,
 });
 
+figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=20642-246', {
+	props: {
+		name: 'map-check',
+	},
+	example: () => <Icon name="map-check" />,
+});
+
 figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=6-141811', {
 	props: {
 		name: 'map',
@@ -823,11 +893,25 @@ figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=6-14
 	example: () => <Icon name="lightbulb" />,
 });
 
+figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=17108-128', {
+	props: {
+		name: 'layers-difference',
+	},
+	example: () => <Icon name="layers-difference" />,
+});
+
 figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=6-141803', {
 	props: {
 		name: 'key',
 	},
 	example: () => <Icon name="key" />,
+});
+
+figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=20642-203', {
+	props: {
+		name: 'json',
+	},
+	example: () => <Icon name="json" />,
 });
 
 figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=6-141764', {
@@ -1348,6 +1432,13 @@ figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=6-14
 	example: () => <Icon name="compass" />,
 });
 
+figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=20642-218', {
+	props: {
+		name: 'coins',
+	},
+	example: () => <Icon name="coins" />,
+});
+
 figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=6-141589', {
 	props: {
 		name: 'code-circle-outline',
@@ -1530,6 +1621,13 @@ figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=6-14
 	example: () => <Icon name="check" />,
 });
 
+figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=20672-216', {
+	props: {
+		name: 'chip-ai',
+	},
+	example: () => <Icon name="chip-ai" />,
+});
+
 figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=6-141525', {
 	props: {
 		name: 'chat-bubble-outline',
@@ -1593,6 +1691,13 @@ figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=6-14
 	example: () => <Icon name="chart-histogram" />,
 });
 
+figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=14960-260', {
+	props: {
+		name: 'chart-forest',
+	},
+	example: () => <Icon name="chart-forest" />,
+});
+
 figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=6-141517', {
 	props: {
 		name: 'chart-dashboard',
@@ -1605,6 +1710,13 @@ figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=5495
 		name: 'chart-cube-root',
 	},
 	example: () => <Icon name="chart-cube-root" />,
+});
+
+figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=14960-261', {
+	props: {
+		name: 'chart-bell',
+	},
+	example: () => <Icon name="chart-bell" />,
 });
 
 figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=6-141516', {
@@ -1782,6 +1894,13 @@ figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=6-14
 	example: () => <Icon name="border-all" />,
 });
 
+figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=20672-217', {
+	props: {
+		name: 'book-shelf',
+	},
+	example: () => <Icon name="book-shelf" />,
+});
+
 figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=6-141410', {
 	props: {
 		name: 'book-outline',
@@ -1824,6 +1943,13 @@ figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=6-14
 	example: () => <Icon name="binary" />,
 });
 
+figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=20642-311', {
+	props: {
+		name: 'backslash',
+	},
+	example: () => <Icon name="backslash" />,
+});
+
 figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=6-141379', {
 	props: {
 		name: 'article',
@@ -1843,6 +1969,13 @@ figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=6-14
 		name: 'arrow-up-thin',
 	},
 	example: () => <Icon name="arrow-up-thin" />,
+});
+
+figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=20642-229', {
+	props: {
+		name: 'arrow-up-right',
+	},
+	example: () => <Icon name="arrow-up-right" />,
 });
 
 figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=6-141376', {
@@ -1878,6 +2011,13 @@ figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=6-14
 		name: 'arrow-left-thin',
 	},
 	example: () => <Icon name="arrow-left-thin" />,
+});
+
+figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=15005-144', {
+	props: {
+		name: 'arrow-merge',
+	},
+	example: () => <Icon name="arrow-merge" />,
 });
 
 figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=6-141371', {
