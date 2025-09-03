@@ -1,5 +1,13 @@
 # @launchpad-ui/icons
 
+## 0.24.1
+
+### Patch Changes
+
+- [#1747](https://github.com/launchdarkly/launchpad-ui/pull/1747) [`88d2b81`](https://github.com/launchdarkly/launchpad-ui/commit/88d2b81720738dca52b910eea8151317d1a82132) Thanks [@matthewferry](https://github.com/matthewferry)! - feat: add script to sync icon package from Figma file and initial sync of icons
+
+- [#1756](https://github.com/launchdarkly/launchpad-ui/pull/1756) [`34660b0`](https://github.com/launchdarkly/launchpad-ui/commit/34660b0dbfc499e8c5c7e1affcf4c9ff4dd4f106) Thanks [@matthewferry](https://github.com/matthewferry)! - fix: update sync script to reference the correct file
+
 ## 0.24.0
 
 ### Minor Changes
