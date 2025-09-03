@@ -87,11 +87,12 @@
 		"onlyBuiltDependencies": [
 			"@biomejs/biome",
 			"@bundled-es-modules/glob",
+			"@parcel/watcher",
 			"@swc/core",
 			"esbuild",
 			"nx",
-			"style-dictionary",
-			"rolldown"
+			"rolldown",
+			"style-dictionary"
 		],
 		"peerDependencyRules": {
 			"allowedVersions": {
