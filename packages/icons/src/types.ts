@@ -183,6 +183,7 @@ const icons = [
 	'info-circle-outline',
 	'json',
 	'key',
+	'keyboard',
 	'layers-difference',
 	'lightbulb',
 	'link',
