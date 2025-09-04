@@ -1,5 +1,14 @@
 # @launchpad-ui/components
 
+## 0.16.3
+
+### Patch Changes
+
+- [#1765](https://github.com/launchdarkly/launchpad-ui/pull/1765) [`313c968`](https://github.com/launchdarkly/launchpad-ui/commit/313c968a831f9eb5ce02405ffd40b5f5e7cc024d) Thanks [@apucacao](https://github.com/apucacao)! - Fix collection item layout for descriptions when selection is active
+
+- Updated dependencies [[`54ef093`](https://github.com/launchdarkly/launchpad-ui/commit/54ef093501d87a2822121be5975ddae1197fc1c6)]:
+  - @launchpad-ui/icons@0.24.2
+
 ## 0.16.2
 
 ### Patch Changes
