@@ -187,6 +187,35 @@ export const Icons: Story = {
 	...open,
 };
 
+export const IconsAndDescriptions: Story = {
+	render: (args) => {
+		return (
+			<MenuTrigger>
+				<Button>Trigger</Button>
+				<Popover>
+					<Menu {...args}>
+						<MenuItem>
+							<Text slot="label">
+								<Icon name="add" size="small" /> Add
+							</Text>
+							<Text slot="description">Add a new item</Text>
+						</MenuItem>
+						<MenuItem>
+							<Icon name="edit" size="small" /> Edit
+							<Text slot="description">Edit the selected item</Text>
+						</MenuItem>
+						<MenuItem variant="destructive">
+							<Icon name="delete" size="small" /> Delete
+							<Text slot="description">Delete the selected item</Text>
+						</MenuItem>
+					</Menu>
+				</Popover>
+			</MenuTrigger>
+		);
+	},
+	...open,
+};
+
 export const States: Story = {
 	render: (args) => {
 		return (

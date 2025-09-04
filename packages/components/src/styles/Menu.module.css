@@ -84,7 +84,7 @@
 		word-break: break-all;
 	}
 
-	&:has([data-icon]) [slot='description'] {
+	&:has([slot='label']:has([data-icon])) [slot='description'] {
 		padding-inline-start: calc(var(--lp-size-16) + var(--lp-spacing-300));
 	}
 
