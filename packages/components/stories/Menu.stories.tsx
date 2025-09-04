@@ -47,7 +47,7 @@ const renderMenu = (args: Story['args']) => (
 		<Popover>
 			<Menu {...args}>
 				<MenuItem>
-					<Text slot="label">Item one</Text>
+					<Text slot="label"><Icon name="add" size="small" /> Item one</Text>
 					<Text slot="description">Item one description</Text>
 				</MenuItem>
 				<MenuItem>
