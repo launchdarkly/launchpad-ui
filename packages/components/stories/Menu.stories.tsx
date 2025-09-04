@@ -46,7 +46,10 @@ const renderMenu = (args: Story['args']) => (
 		<Button>Trigger</Button>
 		<Popover>
 			<Menu {...args}>
-				<MenuItem>Item one</MenuItem>
+				<MenuItem>
+					<Text slot="label">Item one</Text>
+					<Text slot="description">Item one description</Text>
+				</MenuItem>
 				<MenuItem>
 					<Text slot="label">Item two</Text>
 				</MenuItem>
