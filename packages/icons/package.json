@@ -1,6 +1,6 @@
 {
 	"name": "@launchpad-ui/icons",
-	"version": "0.24.0",
+	"version": "0.24.1",
 	"description": "An element that supplements content and represents an action or feature within LaunchDarkly.",
 	"repository": {
 		"type": "git",
