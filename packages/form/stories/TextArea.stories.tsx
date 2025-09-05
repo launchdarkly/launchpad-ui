@@ -39,6 +39,7 @@ const withRestingAndDisabledStates: Decorator = (story, context) => {
 export default {
 	component: TextArea,
 	title: 'Legacy/Form/TextArea',
+	tags: ['deprecated'],
 	description: 'A styled form textarea component',
 	decorators: [
 		createWithClassesDecorator(testingChromaticClassNames, (args, originalStory, context) => {

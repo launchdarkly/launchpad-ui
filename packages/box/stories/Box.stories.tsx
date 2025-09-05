@@ -6,6 +6,7 @@ import { Box } from '../src';
 export default {
 	component: Box,
 	title: 'Legacy/Experimental/Box',
+	tags: ['deprecated'],
 	description: '',
 };
 
