@@ -1,6 +1,6 @@
 {
 	"name": "@launchpad-ui/core",
-	"version": "0.59.2",
+	"version": "0.59.3",
 	"description": "Contains all LaunchPad design system packages.",
 	"repository": {
 		"type": "git",

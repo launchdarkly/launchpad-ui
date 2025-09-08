@@ -1,5 +1,16 @@
 # @launchpad-ui/modal
 
+## 0.21.3
+
+### Patch Changes
+
+- [#1766](https://github.com/launchdarkly/launchpad-ui/pull/1766) [`b036a77`](https://github.com/launchdarkly/launchpad-ui/commit/b036a77baaf2f27783ef4a94190a796d626272fc) Thanks [@vezaynk](https://github.com/vezaynk)! - version bump @react-aria/overlays
+
+- Updated dependencies [[`217b7c4`](https://github.com/launchdarkly/launchpad-ui/commit/217b7c4b47e44fd7ad7eb1b0ba8367308da596b3)]:
+  - @launchpad-ui/button@0.15.3
+  - @launchpad-ui/portal@0.4.1
+  - @launchpad-ui/icons@0.24.3
+
 ## 0.21.2
 
 ### Patch Changes

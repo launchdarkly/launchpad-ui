@@ -1,6 +1,6 @@
 {
 	"name": "@launchpad-ui/dropdown",
-	"version": "0.10.2",
+	"version": "0.10.3",
 	"description": "An element that displays a list of actions or options to a user.",
 	"repository": "launchdarkly/launchpad-ui",
 	"license": "Apache-2.0",
