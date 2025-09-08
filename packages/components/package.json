@@ -1,6 +1,6 @@
 {
 	"name": "@launchpad-ui/components",
-	"version": "0.16.3",
+	"version": "0.16.4",
 	"description": "An implementation of LaunchDarkly's LaunchPad Design System using React Aria Components.",
 	"repository": {
 		"type": "git",
