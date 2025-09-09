@@ -1,6 +1,6 @@
 {
 	"name": "@launchpad-ui/drawer",
-	"version": "0.9.0",
+	"version": "0.9.3",
 	"description": "A partial overlay that appears from the right side of the screen.",
 	"repository": "launchdarkly/launchpad-ui",
 	"license": "Apache-2.0",
@@ -35,13 +35,13 @@
 	},
 	"devDependencies": {
 		"@react-aria/interactions": "3.25.5",
-		"@react-aria/overlays": "3.29.0",
+		"@react-aria/overlays": "3.29.1",
 		"react": "19.1.1",
 		"react-dom": "19.1.1"
 	},
 	"peerDependencies": {
 		"@react-aria/interactions": "3.25.5",
-		"@react-aria/overlays": "3.29.0",
+		"@react-aria/overlays": "3.29.1",
 		"react": "19.1.1",
 		"react-dom": "19.1.1"
 	},

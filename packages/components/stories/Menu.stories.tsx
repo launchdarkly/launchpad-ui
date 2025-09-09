@@ -52,7 +52,12 @@ const renderMenu = (args: Story['args']) => (
 		<Button>Trigger</Button>
 		<Popover>
 			<Menu {...args}>
-				<MenuItem>Item one</MenuItem>
+				<MenuItem>
+					<Text slot="label">
+						<Icon name="add" size="small" /> Item one
+					</Text>
+					<Text slot="description">Item one description</Text>
+				</MenuItem>
 				<MenuItem>
 					<Text slot="label">Item two</Text>
 				</MenuItem>
@@ -184,6 +189,39 @@ export const Icons: Story = {
 						</MenuItem>
 						<MenuItem variant="destructive">
 							<Icon name="delete" size="small" /> Delete
+						</MenuItem>
+					</Menu>
+				</Popover>
+			</MenuTrigger>
+		);
+	},
+	...open,
+};
+
+export const IconsAndDescriptions: Story = {
+	render: (args) => {
+		return (
+			<MenuTrigger>
+				<Button>Trigger</Button>
+				<Popover>
+					<Menu {...args}>
+						<MenuItem>
+							<Text slot="label">
+								<Icon name="add" size="small" /> Add
+							</Text>
+							<Text slot="description">Add a new item</Text>
+						</MenuItem>
+						<MenuItem>
+							<Text slot="label">
+								<Icon name="edit" size="small" /> Edit
+							</Text>
+							<Text slot="description">Edit the selected item</Text>
+						</MenuItem>
+						<MenuItem variant="destructive">
+							<Text slot="label">
+								<Icon name="delete" size="small" /> Delete
+							</Text>
+							<Text slot="description">Delete the selected item</Text>
 						</MenuItem>
 					</Menu>
 				</Popover>

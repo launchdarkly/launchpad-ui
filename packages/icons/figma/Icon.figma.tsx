@@ -900,6 +900,13 @@ figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=1710
 	example: () => <Icon name="layers-difference" />,
 });
 
+figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=20864-41460', {
+	props: {
+		name: 'keyboard',
+	},
+	example: () => <Icon name="keyboard" />,
+});
+
 figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=6-141803', {
 	props: {
 		name: 'key',
