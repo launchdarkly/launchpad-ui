@@ -1,5 +1,52 @@
 # @launchpad-ui/core
 
+## 0.59.3
+
+### Patch Changes
+
+- Updated dependencies [[`217b7c4`](https://github.com/launchdarkly/launchpad-ui/commit/217b7c4b47e44fd7ad7eb1b0ba8367308da596b3), [`b036a77`](https://github.com/launchdarkly/launchpad-ui/commit/b036a77baaf2f27783ef4a94190a796d626272fc)]:
+  - @launchpad-ui/overlay@0.6.1
+  - @launchpad-ui/tooltip@0.12.1
+  - @launchpad-ui/button@0.15.3
+  - @launchpad-ui/portal@0.4.1
+  - @launchpad-ui/table@0.9.1
+  - @launchpad-ui/form@0.15.3
+  - @launchpad-ui/drawer@0.9.3
+  - @launchpad-ui/modal@0.21.3
+  - @launchpad-ui/popover@0.14.1
+  - @launchpad-ui/filter@0.11.3
+  - @launchpad-ui/menu@0.16.3
+  - @launchpad-ui/navigation@0.16.3
+  - @launchpad-ui/dropdown@0.10.3
+
+## 0.59.2
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @launchpad-ui/button@0.15.2
+  - @launchpad-ui/drawer@0.9.2
+  - @launchpad-ui/dropdown@0.10.2
+  - @launchpad-ui/filter@0.11.2
+  - @launchpad-ui/form@0.15.2
+  - @launchpad-ui/menu@0.16.2
+  - @launchpad-ui/modal@0.21.2
+  - @launchpad-ui/navigation@0.16.2
+
+## 0.59.1
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @launchpad-ui/button@0.15.1
+  - @launchpad-ui/drawer@0.9.1
+  - @launchpad-ui/dropdown@0.10.1
+  - @launchpad-ui/filter@0.11.1
+  - @launchpad-ui/form@0.15.1
+  - @launchpad-ui/menu@0.16.1
+  - @launchpad-ui/modal@0.21.1
+  - @launchpad-ui/navigation@0.16.1
+
 ## 0.59.0
 
 ### Minor Changes

@@ -47,8 +47,8 @@
 		"@testing-library/user-event": "^14.6.0",
 		"@types/css-modules": "^1.0.5",
 		"@types/node": "^22.15.3",
-		"@types/react": "^19.1.11",
-		"@types/react-dom": "^19.1.8",
+		"@types/react": "^19.1.12",
+		"@types/react-dom": "^19.1.9",
 		"@vanilla-extract/css": "^1.17.1",
 		"@vanilla-extract/vite-plugin": "^5.1.0",
 		"@vitejs/plugin-react-oxc": "^0.2.0",
@@ -87,11 +87,12 @@
 		"onlyBuiltDependencies": [
 			"@biomejs/biome",
 			"@bundled-es-modules/glob",
+			"@parcel/watcher",
 			"@swc/core",
 			"esbuild",
 			"nx",
-			"style-dictionary",
-			"rolldown"
+			"rolldown",
+			"style-dictionary"
 		],
 		"peerDependencyRules": {
 			"allowedVersions": {
