@@ -26,7 +26,7 @@
 		"test:ui": "vitest --ui",
 		"test:watch": "vitest",
 		"typecheck": "pnpm build:transform && tsc --noEmit --emitDeclarationOnly false --skipLibCheck --moduleResolution bundler --lib 'es2024, dom, dom.iterable'",
-		"upgrade-react-aria": "pnpm up react-aria \"@react-aria/*\" \"@react-types/*\" \"@react-stately/*\" react-aria-components react react-dom @types/react @types/react-dom --latest -r"
+		"upgrade-react-aria": "pnpm up react-aria \"@internationalized/*\"  \"@react-aria/*\" \"@react-types/*\" \"@react-stately/*\" react-stately react-aria-components react react-dom @types/react @types/react-dom --latest -r"
 	},
 	"devDependencies": {
 		"@biomejs/biome": "2.0.0-beta.5",

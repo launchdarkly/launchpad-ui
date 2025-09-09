@@ -46,7 +46,8 @@
 		"react-aria": "3.43.1",
 		"react-aria-components": "1.12.1",
 		"react-dom": "19.1.1",
-		"react-router": "7.5.2"
+		"react-router": "7.5.2",
+		"react-stately": "3.41.0"
 	},
 	"peerDependencies": {
 		"@react-aria/focus": "3.21.1",
@@ -60,7 +61,7 @@
 		"react-dom": "19.1.1",
 		"react-hook-form": "7.59.0",
 		"react-router": "7.5.2",
-		"react-stately": "3.39.0"
+		"react-stately": "3.41.0"
 	},
 	"exports": {
 		".": {
