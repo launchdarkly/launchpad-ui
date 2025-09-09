@@ -37,7 +37,7 @@
 	}
 
 	&[data-trigger='DialogTrigger'] {
-		padding: var(--lp-spacing-400) var(--lp-spacing-500);
+		padding: var(--lp-size-12) var(--lp-size-16);
 	}
 
 	&[data-trigger='ComboBoxDialog'] {
