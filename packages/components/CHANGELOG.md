@@ -1,5 +1,11 @@
 # @launchpad-ui/components
 
+## 0.16.6
+
+### Patch Changes
+
+- [#1771](https://github.com/launchdarkly/launchpad-ui/pull/1771) [`bc79743`](https://github.com/launchdarkly/launchpad-ui/commit/bc797439d8ad479c7fba276baca6fc2c94ca3034) Thanks [@vezaynk](https://github.com/vezaynk)! - bump react-stately
+
 ## 0.16.5
 
 ### Patch Changes
