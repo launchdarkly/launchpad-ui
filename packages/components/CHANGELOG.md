@@ -1,5 +1,34 @@
 # @launchpad-ui/components
 
+## 0.16.4
+
+### Patch Changes
+
+- Updated dependencies [[`217b7c4`](https://github.com/launchdarkly/launchpad-ui/commit/217b7c4b47e44fd7ad7eb1b0ba8367308da596b3)]:
+  - @launchpad-ui/icons@0.24.3
+
+## 0.16.3
+
+### Patch Changes
+
+- [#1765](https://github.com/launchdarkly/launchpad-ui/pull/1765) [`313c968`](https://github.com/launchdarkly/launchpad-ui/commit/313c968a831f9eb5ce02405ffd40b5f5e7cc024d) Thanks [@apucacao](https://github.com/apucacao)! - Fix collection item layout for descriptions when selection is active
+
+- Updated dependencies [[`54ef093`](https://github.com/launchdarkly/launchpad-ui/commit/54ef093501d87a2822121be5975ddae1197fc1c6)]:
+  - @launchpad-ui/icons@0.24.2
+
+## 0.16.2
+
+### Patch Changes
+
+- [#1758](https://github.com/launchdarkly/launchpad-ui/pull/1758) [`bf40864`](https://github.com/launchdarkly/launchpad-ui/commit/bf40864bd7abccf86fc506a0baf1689e055ee6cd) Thanks [@vezaynk](https://github.com/vezaynk)! - react-aria-component type override should be picked up automatically
+
+- [#1762](https://github.com/launchdarkly/launchpad-ui/pull/1762) [`4434d41`](https://github.com/launchdarkly/launchpad-ui/commit/4434d418a67d6429dfbb36913f7fd46a60509352) Thanks [@apucacao](https://github.com/apucacao)! - tweak layout of collection items with icons and descriptions
+
+- [#1759](https://github.com/launchdarkly/launchpad-ui/pull/1759) [`5d666ae`](https://github.com/launchdarkly/launchpad-ui/commit/5d666aeabaec4cd7b003164005ed145919dba9ae) Thanks [@pheggeseth](https://github.com/pheggeseth)! - Remove Tag textValue from Tag removal IconButton aria-label, as it results in the Tag textValue getting included twice in the accessible name of the removal button, such as "Remove tag-name tag-name" instead of "Remove tag-name"
+
+- Updated dependencies [[`88d2b81`](https://github.com/launchdarkly/launchpad-ui/commit/88d2b81720738dca52b910eea8151317d1a82132), [`34660b0`](https://github.com/launchdarkly/launchpad-ui/commit/34660b0dbfc499e8c5c7e1affcf4c9ff4dd4f106)]:
+  - @launchpad-ui/icons@0.24.1
+
 ## 0.16.1
 
 ### Patch Changes

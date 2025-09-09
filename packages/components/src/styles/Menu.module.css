@@ -66,7 +66,7 @@
 			& .content {
 				grid-template-areas:
 					'label kbd'
-					'desc kbd';
+					'desc -';
 				grid-template-columns: 1fr min-content;
 			}
 		}
@@ -81,6 +81,11 @@
 
 	& [slot='description'] {
 		grid-area: desc;
+		word-break: break-all;
+	}
+
+	& [slot='label']:has([data-icon]) ~ [slot='description'] {
+		padding-inline-start: calc(var(--lp-size-16) + var(--lp-spacing-300));
 	}
 
 	& kbd {

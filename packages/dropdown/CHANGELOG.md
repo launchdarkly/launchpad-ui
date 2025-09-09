@@ -1,5 +1,30 @@
 # @launchpad-ui/dropdown
 
+## 0.10.3
+
+### Patch Changes
+
+- Updated dependencies [[`217b7c4`](https://github.com/launchdarkly/launchpad-ui/commit/217b7c4b47e44fd7ad7eb1b0ba8367308da596b3)]:
+  - @launchpad-ui/button@0.15.3
+  - @launchpad-ui/icons@0.24.3
+  - @launchpad-ui/popover@0.14.1
+
+## 0.10.2
+
+### Patch Changes
+
+- Updated dependencies [[`54ef093`](https://github.com/launchdarkly/launchpad-ui/commit/54ef093501d87a2822121be5975ddae1197fc1c6)]:
+  - @launchpad-ui/icons@0.24.2
+  - @launchpad-ui/button@0.15.2
+
+## 0.10.1
+
+### Patch Changes
+
+- Updated dependencies [[`88d2b81`](https://github.com/launchdarkly/launchpad-ui/commit/88d2b81720738dca52b910eea8151317d1a82132), [`34660b0`](https://github.com/launchdarkly/launchpad-ui/commit/34660b0dbfc499e8c5c7e1affcf4c9ff4dd4f106)]:
+  - @launchpad-ui/icons@0.24.1
+  - @launchpad-ui/button@0.15.1
+
 ## 0.10.0
 
 ### Minor Changes

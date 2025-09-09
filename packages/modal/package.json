@@ -1,6 +1,6 @@
 {
 	"name": "@launchpad-ui/modal",
-	"version": "0.21.0",
+	"version": "0.21.3",
 	"description": "An element that presents users information and actions over a page.",
 	"repository": "launchdarkly/launchpad-ui",
 	"license": "Apache-2.0",
@@ -34,13 +34,13 @@
 	},
 	"devDependencies": {
 		"@react-aria/interactions": "3.25.5",
-		"@react-aria/overlays": "3.29.0",
+		"@react-aria/overlays": "3.29.1",
 		"react": "19.1.1",
 		"react-dom": "19.1.1"
 	},
 	"peerDependencies": {
 		"@react-aria/interactions": "3.25.5",
-		"@react-aria/overlays": "3.29.0",
+		"@react-aria/overlays": "3.29.1",
 		"react": "19.1.1",
 		"react-dom": "19.1.1"
 	},

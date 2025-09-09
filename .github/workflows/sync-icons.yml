@@ -17,6 +17,7 @@ jobs:
         with:
           aws_assume_role: ${{ vars.AWS_ROLE_ARN }}
           ssm_parameter_pairs: |
+            /production/common/launchpad-ui/gh-pat-token = CUSTOM_GITHUB_TOKEN,
             /production/common/launchpad-ui/figma-access-token = FIGMA_ACCESS_TOKEN
 
       - name: Checkout
@@ -70,8 +71,13 @@ jobs:
         with:
           branch: ci/feat/sync-icons
           delete-branch: true
-          commit-message: "feat(icons): sync and connect icons with figma library"
+          commit-message: |
+            feat(icons): sync and connect icons with figma library
+
+            ${{ env.CHANGESET_SUMMARY }}
           title: "feat(icons): sync and connect icons with figma library"
+          token: ${{ env.CUSTOM_GITHUB_TOKEN }}
+          draft: true
           body: |
             ## Summary
             This PR is an automated icon sync with LaunchPad Figma library. If you resync while this PR is open, the updated changes will be added to this same PR.
