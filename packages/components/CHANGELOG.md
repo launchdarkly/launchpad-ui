@@ -1,5 +1,11 @@
 # @launchpad-ui/components
 
+## 0.16.5
+
+### Patch Changes
+
+- [#1769](https://github.com/launchdarkly/launchpad-ui/pull/1769) [`d1a8152`](https://github.com/launchdarkly/launchpad-ui/commit/d1a815245a8bcfc0201cf3605daf5701301e9e7b) Thanks [@vezaynk](https://github.com/vezaynk)! - bump react-aria, react-aria-components, copy to devDependencies
+
 ## 0.16.4
 
 ### Patch Changes
