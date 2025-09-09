@@ -254,9 +254,6 @@ importers:
       react-hook-form:
         specifier: 7.59.0
         version: 7.59.0(react@19.1.1)
-      react-stately:
-        specifier: 3.39.0
-        version: 3.39.0(react@19.1.1)
     devDependencies:
       '@react-aria/focus':
         specifier: 3.21.1
@@ -291,6 +288,9 @@ importers:
       react-router:
         specifier: 7.5.2
         version: 7.5.2(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
+      react-stately:
+        specifier: 3.41.0
+        version: 3.41.0(react@19.1.1)
 
   packages/core:
     dependencies:
@@ -4732,11 +4732,6 @@ packages:
     peerDependenciesMeta:
       react-dom:
         optional: true
-
-  react-stately@3.39.0:
-    resolution: {integrity: sha512-/8JC3Tmj7G8fHn47F88c6t5kFNhQAufwqjEKxYeNi7TPz9UL+35BeoH1poMmDHJsPz8qM/z4sWMzaW5AwYK8lQ==}
-    peerDependencies:
-      react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0 || ^19.0.0-rc.1
 
   react-stately@3.41.0:
     resolution: {integrity: sha512-Fe8PaZPm9Ue9kDXVa8KaOz6gzbmZPuzftxeVQwKVX3u/kyFhbRkr/LeAFvgP7a+EeX+Bjmdht/9ixDsBXj4qbQ==}
@@ -10392,36 +10387,6 @@ snapshots:
       turbo-stream: 2.4.0
     optionalDependencies:
       react-dom: 19.1.1(react@19.1.1)
-
-  react-stately@3.39.0(react@19.1.1):
-    dependencies:
-      '@react-stately/calendar': 3.8.4(react@19.1.1)
-      '@react-stately/checkbox': 3.7.1(react@19.1.1)
-      '@react-stately/collections': 3.12.7(react@19.1.1)
-      '@react-stately/color': 3.9.1(react@19.1.1)
-      '@react-stately/combobox': 3.11.1(react@19.1.1)
-      '@react-stately/data': 3.14.0(react@19.1.1)
-      '@react-stately/datepicker': 3.15.1(react@19.1.1)
-      '@react-stately/disclosure': 3.0.7(react@19.1.1)
-      '@react-stately/dnd': 3.7.0(react@19.1.1)
-      '@react-stately/form': 3.2.1(react@19.1.1)
-      '@react-stately/list': 3.13.0(react@19.1.1)
-      '@react-stately/menu': 3.9.7(react@19.1.1)
-      '@react-stately/numberfield': 3.10.1(react@19.1.1)
-      '@react-stately/overlays': 3.6.19(react@19.1.1)
-      '@react-stately/radio': 3.11.1(react@19.1.1)
-      '@react-stately/searchfield': 3.5.15(react@19.1.1)
-      '@react-stately/select': 3.7.1(react@19.1.1)
-      '@react-stately/selection': 3.20.5(react@19.1.1)
-      '@react-stately/slider': 3.7.1(react@19.1.1)
-      '@react-stately/table': 3.15.0(react@19.1.1)
-      '@react-stately/tabs': 3.8.5(react@19.1.1)
-      '@react-stately/toast': 3.1.2(react@19.1.1)
-      '@react-stately/toggle': 3.9.1(react@19.1.1)
-      '@react-stately/tooltip': 3.5.7(react@19.1.1)
-      '@react-stately/tree': 3.9.2(react@19.1.1)
-      '@react-types/shared': 3.32.0(react@19.1.1)
-      react: 19.1.1
 
   react-stately@3.41.0(react@19.1.1):
     dependencies:
