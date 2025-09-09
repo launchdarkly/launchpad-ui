@@ -4,9 +4,16 @@
 .sidebar-header img,
 [data-item-id='brand'] img,
 .sidebar-brand img {
-	width: 90% !important;
 	height: auto !important;
-	max-width: none !important;
+	max-width: 200px !important;
+	border-radius: 12px !important;
+	object-fit: contain !important;
+}
+
+.sidebar-header div {
+	margin-right: 0 !important;
+	width: inherit !important;
+	padding-left: 0 !important;
 }
 
 /* Light theme additional styles */
