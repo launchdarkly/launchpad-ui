@@ -233,6 +233,7 @@ const icons = [
 	'person-outline',
 	'person-password',
 	'person-remove',
+	'photo',
 	'play',
 	'play-circle',
 	'play-circle-outline',
