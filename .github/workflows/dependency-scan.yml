@@ -13,8 +13,16 @@ jobs:
       id-token: write
       contents: read
     steps:
+      - name: Get Tokens
+        uses: launchdarkly/gh-actions/actions/release-secrets@release-secrets-v1.2.0
+        with:
+          aws_assume_role: ${{ vars.AWS_ROLE_ARN }}
+          ssm_parameter_pairs: '/production/common/launchpad-ui/gh-pat-token = CUSTOM_GITHUB_TOKEN'
+
       - uses: runs-on/action@cd2b598b0515d39d78c38a02d529db87d2196d1e # v2.0.3
       - uses: launchdarkly/common-actions/init@main
+        with:
+          token: ${{ env.CUSTOM_GITHUB_TOKEN }}
 
       - name: Generate SBOM
         uses: launchdarkly/common-actions/dependency-scan/generate-sbom@main
@@ -29,8 +37,16 @@ jobs:
     needs:
       - generate-nodejs-sbom
     steps:
+      - name: Get Tokens
+        uses: launchdarkly/gh-actions/actions/release-secrets@release-secrets-v1.2.0
+        with:
+          aws_assume_role: ${{ vars.AWS_ROLE_ARN }}
+          ssm_parameter_pairs: '/production/common/launchpad-ui/gh-pat-token = CUSTOM_GITHUB_TOKEN'
+
       - uses: runs-on/action@cd2b598b0515d39d78c38a02d529db87d2196d1e # v2.0.3
       - name: Evaluate SBOM Policy
         uses: launchdarkly/common-actions/dependency-scan/evaluate-policy@main
         with:
           artifacts-pattern: bom-*
+        env:
+          GITHUB_TOKEN: ${{ env.CUSTOM_GITHUB_TOKEN }}
