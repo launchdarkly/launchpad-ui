@@ -18,6 +18,12 @@ const meta: Meta<typeof TextField> = {
 		ComponentType<unknown>
 	>,
 	title: 'Components/Forms/TextField',
+	parameters: {
+		figma: {
+			design:
+				'https://www.figma.com/design/98HKKXL2dTle29ikJ3tzk7/%F0%9F%9A%80-LaunchPad?node-id=1-34456&m=dev',
+		},
+	},
 	decorators: [
 		(Story) => (
 			<div style={{ width: vars.size[240] }}>

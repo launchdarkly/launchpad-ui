@@ -8,7 +8,14 @@ import { ToggleIconButton } from '../src/ToggleIconButton';
 const meta: Meta<typeof ToggleButtonGroup> = {
 	component: ToggleButtonGroup,
 	subcomponents: { ToggleButton } as Record<string, ComponentType<unknown>>,
-	title: 'Components/Buttons/ToggleButtonGroup',
+	title: 'Components/Buttons/ToggleButton/ToggleButtonGroup',
+	tags: ['autodocs'],
+	parameters: {
+		design: {
+			type: 'figma',
+			url: 'https://www.figma.com/design/98HKKXL2dTle29ikJ3tzk7/%F0%9F%9A%80-LaunchPad?node-id=1-29275&m=dev',
+		},
+	},
 };
 
 export default meta;

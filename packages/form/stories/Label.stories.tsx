@@ -5,7 +5,7 @@ import { Label } from '../src';
 export default {
 	component: Label,
 	title: 'Legacy/Form/Label',
-
+	tags: ['deprecated'],
 	parameters: {
 		chromatic: { disableSnapshot: true },
 		docs: {

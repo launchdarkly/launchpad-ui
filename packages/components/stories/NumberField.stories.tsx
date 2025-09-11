@@ -12,6 +12,12 @@ import { NumberField } from '../src/NumberField';
 const meta: Meta<typeof NumberField> = {
 	component: NumberField,
 	title: 'Components/Forms/NumberField',
+	parameters: {
+		figma: {
+			design:
+				'https://www.figma.com/design/98HKKXL2dTle29ikJ3tzk7/%F0%9F%9A%80-LaunchPad?node-id=10876-33196&m=dev',
+		},
+	},
 	decorators: [
 		(Story) => (
 			<div style={{ width: vars.size[240] }}>

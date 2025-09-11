@@ -9,6 +9,12 @@ import { Text } from '../src/Text';
 const meta: Meta<typeof Alert> = {
 	component: Alert,
 	title: 'Components/Status/Alert',
+	parameters: {
+		figma: {
+			design:
+				'https://www.figma.com/design/98HKKXL2dTle29ikJ3tzk7/%F0%9F%9A%80-LaunchPad?node-id=8225-704&m=dev',
+		},
+	},
 };
 
 export default meta;
