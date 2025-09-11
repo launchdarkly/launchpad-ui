@@ -557,6 +557,13 @@ figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=6-14
 	example: () => <Icon name="play" />,
 });
 
+figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=21105-218', {
+	props: {
+		name: 'photo',
+	},
+	example: () => <Icon name="photo" />,
+});
+
 figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=6-141915', {
 	props: {
 		name: 'person-remove',
