@@ -1,20 +1,30 @@
 name: Dependency Scan
 
-on: pull_request
+on:
+  pull_request:
+  push:
+    branches:
+      - main
 
 jobs:
-  dependency-scan:
-    runs-on: ubuntu-latest
+  generate-nodejs-sbom:
+    runs-on: runs-on=${{ github.run_id }}/runner=ubuntu22-2cpu-8gb-x64
     steps:
-      - name: Setup Go
-        uses: actions/setup-go@v5
-        with:
-          go-version: 'stable'
+      - uses: runs-on/action@cd2b598b0515d39d78c38a02d529db87d2196d1e # v2.0.3
+      - uses: launchdarkly/common-actions/init@main
 
       - name: Generate SBOM
-        uses: launchdarkly/gh-actions/actions/dependency-scan/generate-sbom@main
+        uses: launchdarkly/common-actions/dependency-scan/generate-sbom@main
         with:
-          types: 'go,nodejs'
+          types: 'nodejs'
 
+  evaluate-policy:
+    runs-on: runs-on=${{ github.run_id }}/runner=ubuntu22-2cpu-8gb-x64
+    needs:
+      - generate-nodejs-sbom
+    steps:
+      - uses: runs-on/action@cd2b598b0515d39d78c38a02d529db87d2196d1e # v2.0.3
       - name: Evaluate SBOM Policy
-        uses: launchdarkly/gh-actions/actions/dependency-scan/evaluate-policy@main
+        uses: launchdarkly/common-actions/dependency-scan/evaluate-policy@main
+        with:
+          artifacts-pattern: bom-*
