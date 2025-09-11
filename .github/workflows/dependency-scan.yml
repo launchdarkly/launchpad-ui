@@ -9,6 +9,9 @@ on:
 jobs:
   generate-nodejs-sbom:
     runs-on: runs-on=${{ github.run_id }}/runner=ubuntu22-2cpu-8gb-x64
+    permissions:
+      id-token: write
+      contents: read
     steps:
       - uses: runs-on/action@cd2b598b0515d39d78c38a02d529db87d2196d1e # v2.0.3
       - uses: launchdarkly/common-actions/init@main
@@ -20,6 +23,9 @@ jobs:
 
   evaluate-policy:
     runs-on: runs-on=${{ github.run_id }}/runner=ubuntu22-2cpu-8gb-x64
+    permissions:
+      id-token: write
+      contents: read
     needs:
       - generate-nodejs-sbom
     steps:
