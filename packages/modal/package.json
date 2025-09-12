@@ -1,6 +1,6 @@
 {
 	"name": "@launchpad-ui/modal",
-	"version": "0.21.3",
+	"version": "0.21.4",
 	"description": "An element that presents users information and actions over a page.",
 	"repository": "launchdarkly/launchpad-ui",
 	"license": "Apache-2.0",
