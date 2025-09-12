@@ -1,5 +1,15 @@
 # @launchpad-ui/modal
 
+## 0.21.4
+
+### Patch Changes
+
+- [#1776](https://github.com/launchdarkly/launchpad-ui/pull/1776) [`501f0d7`](https://github.com/launchdarkly/launchpad-ui/commit/501f0d7a366ad546a07e7fde83cf6782e7cc027a) Thanks [@pheggeseth](https://github.com/pheggeseth)! - Increase modal close button style specificity
+
+- Updated dependencies [[`1cc0b74`](https://github.com/launchdarkly/launchpad-ui/commit/1cc0b74e97c403856ff05700e3e027bdc479feea)]:
+  - @launchpad-ui/icons@0.24.4
+  - @launchpad-ui/button@0.15.4
+
 ## 0.21.3
 
 ### Patch Changes
