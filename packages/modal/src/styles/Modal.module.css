@@ -50,6 +50,17 @@
 	flex-direction: column;
 	gap: 0.25rem;
 	padding: 1rem;
+
+	& > .headerMain {
+		display: flex;
+		gap: 0.5rem;
+		align-items: flex-start;
+
+		& > .closeButton {
+			margin-left: auto;
+			transform: translateY(-1px);
+		}
+	}
 }
 
 .title {
@@ -66,12 +77,6 @@
 	fill: var(--lp-color-brand-yellow-dark);
 }
 
-.headerMain {
-	display: flex;
-	gap: 0.5rem;
-	align-items: flex-start;
-}
-
 .headerDescription {
 	font-size: 0.875rem;
 	color: var(--lp-color-text-ui-secondary);
@@ -86,11 +91,6 @@
 
 .requiredAsterisk {
 	color: var(--lp-color-text-feedback-error);
-}
-
-.closeButton {
-	margin-left: auto;
-	transform: translateY(-1px);
 }
 
 .body {
