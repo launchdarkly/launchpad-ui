@@ -6,6 +6,12 @@ import { FileTrigger } from '../src/FileTrigger';
 const meta: Meta<typeof FileTrigger> = {
 	component: FileTrigger,
 	title: 'Components/Buttons/FileTrigger',
+	parameters: {
+		design: {
+			type: 'figma',
+			url: 'https://www.figma.com/design/98HKKXL2dTle29ikJ3tzk7/%F0%9F%9A%80-LaunchPad?node-id=1-28804&m=dev',
+		},
+	},
 };
 
 export default meta;

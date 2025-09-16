@@ -1,6 +1,6 @@
 # Contributing to LaunchPad UI
 
-:+1::tada: First off, thanks for taking the time to read our contribution docs! :tada::+1:
+First off, thanks for taking the time to read our contribution docs!
 
 The following is a set of guidelines for contributing to LaunchPad and its packages, which are hosted in the [LaunchDarkly Organization](https://github.com/launchdarkly) on GitHub. These are mostly guidelines, not rules. Use your best judgment, and feel free to propose changes to this document in a pull request.
 
@@ -160,6 +160,24 @@ Run this command to start a local instance in your browser:
 
 ```sh
 $ pnpm storybook
+```
+
+### Figma Code Connect
+
+Figma Code Connect is a tool to connect LaunchPad code with LaunchPad Figma Design System real-time. When developers will click component or its insance in design, they will be directed which component and code they should use for implementing the design. 
+
+Using Figma connect requires generating an access Token in LaunchDarkly Figma. You can learn more about code connect [here](https://www.figma.com/code-connect-docs/).
+
+Test Code Connect Build locally:
+
+```
+npx figma connect publish --dry-run
+```
+
+Publish all changes to Figma Dev Mode:
+
+```
+npx figma connect publish
 ```
 
 ### Running Tests

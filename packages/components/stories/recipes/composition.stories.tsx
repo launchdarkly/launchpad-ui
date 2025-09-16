@@ -132,8 +132,6 @@ export const RadioButtonGroup: Story = {
 						<RadioButton value="1">First</RadioButton>
 						<RadioButton value="2">Second</RadioButton>
 						<RadioButton value="3">Third</RadioButton>
-						<RadioButton value="4">Fourth</RadioButton>
-						<RadioButton value="5">Fifth</RadioButton>
 					</ButtonGroup>
 				</RadioGroup>
 				<RadioGroup defaultValue="1">
@@ -142,8 +140,6 @@ export const RadioButtonGroup: Story = {
 						<RadioIconButton icon="flag" value="1" aria-label="flag" />
 						<RadioIconButton icon="flask" value="2" aria-label="flask" />
 						<RadioIconButton icon="key" value="3" aria-label="key" />
-						<RadioIconButton icon="lock" value="4" aria-label="lock" />
-						<RadioIconButton icon="robot" value="5" aria-label="robot" />
 					</ButtonGroup>
 				</RadioGroup>
 			</div>

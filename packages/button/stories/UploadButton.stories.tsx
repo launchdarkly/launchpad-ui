@@ -5,6 +5,7 @@ import { UploadButton } from '../src';
 export default {
 	component: UploadButton,
 	title: 'Legacy/Button/UploadButton',
+	tags: ['deprecated'],
 	description: 'UploadButtons trigger a native file upload experience.',
 	parameters: {
 		chromatic: { disableSnapshot: true },

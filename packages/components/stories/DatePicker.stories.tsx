@@ -22,6 +22,12 @@ const meta: Meta<typeof DatePicker> = {
 	component: DatePicker,
 	subcomponents: { DatePickerValue } as Record<string, ComponentType<unknown>>,
 	title: 'Components/Date and Time/DatePicker',
+	parameters: {
+		figma: {
+			design:
+				'https://www.figma.com/design/98HKKXL2dTle29ikJ3tzk7/%F0%9F%9A%80-LaunchPad?node-id=10826-35493&m=dev',
+		},
+	},
 	decorators: [
 		(Story) => (
 			<div style={{ width: vars.size[320], height: vars.size[480] }}>

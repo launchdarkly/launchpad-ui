@@ -8,6 +8,7 @@ import { Popover } from '../src';
 export default {
 	component: Popover,
 	title: 'Legacy/Popover',
+	tags: ['deprecated'],
 	description: 'Popovers display content within a portal triggered by user interactions.',
 	parameters: {
 		chromatic: { disableSnapshot: true },

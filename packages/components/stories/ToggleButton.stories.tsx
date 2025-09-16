@@ -7,6 +7,12 @@ import { ToggleButton } from '../src/ToggleButton';
 const meta: Meta<typeof ToggleButton> = {
 	component: ToggleButton,
 	title: 'Components/Buttons/ToggleButton',
+	parameters: {
+		figma: {
+			design:
+				'https://www.figma.com/design/98HKKXL2dTle29ikJ3tzk7/%F0%9F%9A%80-LaunchPad?node-id=8085-111168&t=T9MyIVWIOcqcOoT1-4',
+		},
+	},
 };
 
 export default meta;
