@@ -1,5 +1,13 @@
 # @launchpad-ui/icons
 
+## 0.24.5
+
+### Patch Changes
+
+- [#1783](https://github.com/launchdarkly/launchpad-ui/pull/1783) [`c689b72`](https://github.com/launchdarkly/launchpad-ui/commit/c689b72725749d3a40b68e389e62a38b4cbf7b63) Thanks [@pd-sa-github-launchpad-ui](https://github.com/pd-sa-github-launchpad-ui)! - feat(icons): sync and connect icons with figma library
+
+  New icons: bold, code, italic, list-numbers
+
 ## 0.24.4
 
 ### Patch Changes

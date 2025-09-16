@@ -1,6 +1,6 @@
 {
 	"name": "@launchpad-ui/button",
-	"version": "0.15.4",
+	"version": "0.15.5",
 	"description": "An element that triggers an action based on user interaction.",
 	"repository": "launchdarkly/launchpad-ui",
 	"license": "Apache-2.0",
