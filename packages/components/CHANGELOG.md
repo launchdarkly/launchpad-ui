@@ -1,5 +1,17 @@
 # @launchpad-ui/components
 
+## 0.16.9
+
+### Patch Changes
+
+- [#1781](https://github.com/launchdarkly/launchpad-ui/pull/1781) [`46dc020`](https://github.com/launchdarkly/launchpad-ui/commit/46dc020c68c9ce8228431e9c0691e49c5402fe00) Thanks [@vezaynk](https://github.com/vezaynk)! - fix: expose router types
+
+## 0.16.8
+
+### Patch Changes
+
+- [#1779](https://github.com/launchdarkly/launchpad-ui/pull/1779) [`7dec6fa`](https://github.com/launchdarkly/launchpad-ui/commit/7dec6fa2e5309855bb93714f69d67871eeb62204) Thanks [@ld-ahartmann](https://github.com/ld-ahartmann)! - bumped react aria components, react aria, @types/react
+
 ## 0.16.7
 
 ### Patch Changes
