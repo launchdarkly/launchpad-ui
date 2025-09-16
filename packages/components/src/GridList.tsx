@@ -26,7 +26,7 @@ interface GridListProps<T extends object> extends AriaGridListProps<T> {
 }
 
 interface GridListItemProps<T extends object> extends AriaGridListItemProps<T> {
-	ref?: Ref<HTMLDivElement>;
+	ref?: Ref<T>;
 }
 
 // biome-ignore lint/suspicious/noExplicitAny: ignore
