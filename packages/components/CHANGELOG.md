@@ -1,5 +1,14 @@
 # @launchpad-ui/components
 
+## 0.16.10
+
+### Patch Changes
+
+- [#1735](https://github.com/launchdarkly/launchpad-ui/pull/1735) [`f83142a`](https://github.com/launchdarkly/launchpad-ui/commit/f83142ae74d1cc82a74f13a4c373d49e5a5998e5) Thanks [@Zuzze](https://github.com/Zuzze)! - Figma code connect files, design links and component overview added
+
+- Updated dependencies [[`c689b72`](https://github.com/launchdarkly/launchpad-ui/commit/c689b72725749d3a40b68e389e62a38b4cbf7b63)]:
+  - @launchpad-ui/icons@0.24.5
+
 ## 0.16.9
 
 ### Patch Changes
