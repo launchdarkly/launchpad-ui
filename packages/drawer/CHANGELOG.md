@@ -1,5 +1,13 @@
 # @launchpad-ui/drawer
 
+## 0.9.6
+
+### Patch Changes
+
+- Updated dependencies [[`936980f`](https://github.com/launchdarkly/launchpad-ui/commit/936980f5c0e9eef54c35b621dc138813168baa73)]:
+  - @launchpad-ui/icons@0.24.6
+  - @launchpad-ui/button@0.15.6
+
 ## 0.9.5
 
 ### Patch Changes

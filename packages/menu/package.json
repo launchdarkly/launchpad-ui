@@ -1,6 +1,6 @@
 {
 	"name": "@launchpad-ui/menu",
-	"version": "0.16.5",
+	"version": "0.16.6",
 	"description": "An element that presents a list of items a user can choose from.",
 	"repository": "launchdarkly/launchpad-ui",
 	"license": "Apache-2.0",
