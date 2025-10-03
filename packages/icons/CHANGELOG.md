@@ -1,5 +1,11 @@
 # @launchpad-ui/icons
 
+## 0.24.6
+
+### Patch Changes
+
+- [#1788](https://github.com/launchdarkly/launchpad-ui/pull/1788) [`936980f`](https://github.com/launchdarkly/launchpad-ui/commit/936980f5c0e9eef54c35b621dc138813168baa73) Thanks [@apucacao](https://github.com/apucacao)! - Export icon names
+
 ## 0.24.5
 
 ### Patch Changes

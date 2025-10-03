@@ -1,6 +1,6 @@
 {
 	"name": "@launchpad-ui/form",
-	"version": "0.15.5",
+	"version": "0.15.6",
 	"description": "Elements for composing forms, such as input fields, labels, radio buttons, etc.",
 	"repository": "launchdarkly/launchpad-ui",
 	"license": "Apache-2.0",
