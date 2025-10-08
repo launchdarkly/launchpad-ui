@@ -1320,6 +1320,13 @@ figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=6-14
 	example: () => <Icon name="document-question" />,
 });
 
+figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=21720-158', {
+	props: {
+		name: 'diamonds',
+	},
+	example: () => <Icon name="diamonds" />,
+});
+
 figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=6-141635', {
 	props: {
 		name: 'diamond-outline',
