@@ -129,6 +129,7 @@ const icons = [
 	'devices',
 	'diamond',
 	'diamond-outline',
+	'diamonds',
 	'document-question',
 	'door-exit',
 	'download',
