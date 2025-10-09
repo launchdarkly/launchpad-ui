@@ -25,7 +25,7 @@ jobs:
           aws_assume_role: ${{ vars.AWS_ROLE_ARN }}
           ssm_parameter_pairs: '/production/common/launchpad-ui/figma-access-token = FIGMA_ACCESS_TOKEN'
 
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         with:
           fetch-depth: 0
 

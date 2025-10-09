@@ -26,7 +26,7 @@ jobs:
             /production/common/launchpad-ui/figma-file-key = FIGMA_FILE_KEY,
             /production/common/launchpad-ui/figma-token = FIGMA_TOKEN
 
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         with:
           fetch-depth: 0
 
