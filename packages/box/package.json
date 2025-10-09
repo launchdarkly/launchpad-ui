@@ -1,6 +1,6 @@
 {
 	"name": "@launchpad-ui/box",
-	"version": "0.4.1",
+	"version": "0.4.2",
 	"description": "A polymorphic React component with design token sprinkles.",
 	"repository": "launchdarkly/launchpad-ui",
 	"license": "Apache-2.0",
