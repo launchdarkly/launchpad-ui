@@ -1,5 +1,18 @@
 # @launchpad-ui/icons
 
+## 0.24.7
+
+### Patch Changes
+
+- [#1790](https://github.com/launchdarkly/launchpad-ui/pull/1790) [`674d160`](https://github.com/launchdarkly/launchpad-ui/commit/674d160366c660794e66fa94b3af421118570ef7) Thanks [@pd-sa-github-launchpad-ui](https://github.com/pd-sa-github-launchpad-ui)! - feat(icons): sync and connect icons with figma library
+
+  New icons: diamonds
+
+- [#1792](https://github.com/launchdarkly/launchpad-ui/pull/1792) [`bd49c43`](https://github.com/launchdarkly/launchpad-ui/commit/bd49c431bf39e8a69adc95961977af21d5f36617) Thanks [@vezaynk](https://github.com/vezaynk)! - bumping dependencies: axios, react, react-dom, react-aria
+
+- Updated dependencies [[`bd49c43`](https://github.com/launchdarkly/launchpad-ui/commit/bd49c431bf39e8a69adc95961977af21d5f36617)]:
+  - @launchpad-ui/tokens@0.15.1
+
 ## 0.24.6
 
 ### Patch Changes

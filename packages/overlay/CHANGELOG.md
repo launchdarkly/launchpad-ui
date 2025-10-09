@@ -1,5 +1,14 @@
 # @launchpad-ui/overlay
 
+## 0.6.2
+
+### Patch Changes
+
+- [#1792](https://github.com/launchdarkly/launchpad-ui/pull/1792) [`bd49c43`](https://github.com/launchdarkly/launchpad-ui/commit/bd49c431bf39e8a69adc95961977af21d5f36617) Thanks [@vezaynk](https://github.com/vezaynk)! - bumping dependencies: axios, react, react-dom, react-aria
+
+- Updated dependencies [[`bd49c43`](https://github.com/launchdarkly/launchpad-ui/commit/bd49c431bf39e8a69adc95961977af21d5f36617)]:
+  - @launchpad-ui/portal@0.4.2
+
 ## 0.6.1
 
 ### Patch Changes

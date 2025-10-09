@@ -1,6 +1,6 @@
 {
 	"name": "@launchpad-ui/overlay",
-	"version": "0.6.1",
+	"version": "0.6.2",
 	"description": "An element that manages modals and popovers.",
 	"repository": "launchdarkly/launchpad-ui",
 	"license": "Apache-2.0",

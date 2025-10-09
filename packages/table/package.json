@@ -1,6 +1,6 @@
 {
 	"name": "@launchpad-ui/table",
-	"version": "0.9.1",
+	"version": "0.9.2",
 	"description": "An element used to organize and display data to users.",
 	"repository": "launchdarkly/launchpad-ui",
 	"license": "Apache-2.0",

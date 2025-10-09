@@ -1,5 +1,17 @@
 # @launchpad-ui/form
 
+## 0.15.7
+
+### Patch Changes
+
+- [#1792](https://github.com/launchdarkly/launchpad-ui/pull/1792) [`bd49c43`](https://github.com/launchdarkly/launchpad-ui/commit/bd49c431bf39e8a69adc95961977af21d5f36617) Thanks [@vezaynk](https://github.com/vezaynk)! - bumping dependencies: axios, react, react-dom, react-aria
+
+- Updated dependencies [[`674d160`](https://github.com/launchdarkly/launchpad-ui/commit/674d160366c660794e66fa94b3af421118570ef7), [`bd49c43`](https://github.com/launchdarkly/launchpad-ui/commit/bd49c431bf39e8a69adc95961977af21d5f36617)]:
+  - @launchpad-ui/icons@0.24.7
+  - @launchpad-ui/tooltip@0.12.2
+  - @launchpad-ui/button@0.15.7
+  - @launchpad-ui/tokens@0.15.1
+
 ## 0.15.6
 
 ### Patch Changes

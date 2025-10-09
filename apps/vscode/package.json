@@ -1,7 +1,7 @@
 {
 	"name": "launchpad-design-system",
 	"private": true,
-	"version": "0.3.0",
+	"version": "0.3.1",
 	"description": "LaunchPad VS Code extension",
 	"repository": {
 		"type": "git",
