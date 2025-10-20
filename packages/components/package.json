@@ -33,7 +33,10 @@
 		"@internationalized/date": "3.10.0",
 		"@launchpad-ui/icons": "workspace:~",
 		"@launchpad-ui/tokens": "workspace:~",
-		"class-variance-authority": "0.7.0"
+		"@react-aria/live-announcer": "3.4.4",
+		"class-variance-authority": "0.7.0",
+		"prism-themes": "1.9.0",
+		"prismjs": "1.30.0"
 	},
 	"devDependencies": {
 		"@react-aria/focus": "3.21.2",
@@ -41,6 +44,7 @@
 		"@react-aria/utils": "3.31.0",
 		"@react-stately/utils": "3.10.8",
 		"@react-types/shared": "3.32.1",
+		"@types/prismjs": "1.26.5",
 		"copyfiles": "2.4.1",
 		"react": "19.2.0",
 		"react-aria": "3.44.0",

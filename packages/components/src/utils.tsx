@@ -1,7 +1,9 @@
 import type { Href } from '@react-types/shared';
-import type { Context, Ref } from 'react';
+import type { Context, ReactNode, Ref } from 'react';
 import type { ContextValue, SlotProps } from 'react-aria-components';
 
+import { toastQueue } from '@launchpad-ui/components';
+import { announce } from '@react-aria/live-announcer';
 import { mergeRefs } from '@react-aria/utils';
 import { useEffect, useLayoutEffect, useMemo, useState } from 'react';
 import { mergeProps } from 'react-aria';
@@ -91,4 +93,69 @@ const useLPContextProps = <T, U extends SlotProps, E>(
 	return [mergedProps, mergedRef];
 };
 
-export { useHref, useImageLoadingStatus, useLPContextProps, useMedia };
+const fallbackCopyToClipboard = (text: string) =>
+	new Promise<boolean>((resolve, reject) => {
+		// Using setTimeout to ensure we focus the text area after the DOM is updated
+		// in cases of dropdown menus
+		setTimeout(() => {
+			try {
+				const textArea = document.createElement('textarea');
+				textArea.value = text;
+
+				textArea.style.position = 'fixed';
+				textArea.style.left = '-999999px';
+				textArea.style.top = '-999999px';
+				document.body.appendChild(textArea);
+
+				textArea.focus();
+				textArea.select();
+
+				const successful = document.execCommand('copy');
+				document.body.removeChild(textArea);
+
+				if (successful) {
+					resolve(true);
+				} else {
+					reject(new Error('execCommand failed'));
+				}
+			} catch (error) {
+				reject(error);
+			}
+		}, 10); // Small delay to ensure focus operations complete
+	});
+
+// navigator.clipboard is only available in secure contexts (https)
+// We need to use document.execCommand for insecure contexts (http)
+// for example when testing the Sandbox locally
+const copyToClipboard = async (
+	text: string,
+	toastMessage?: string | ReactNode,
+	errorMessage?: string | ReactNode,
+) => {
+	const MAX_WIDTH = 80;
+
+	try {
+		if ('clipboard' in navigator) {
+			console.log({ text });
+			await navigator.clipboard.writeText(text);
+		} else {
+			await fallbackCopyToClipboard(text);
+		}
+
+		toastQueue.add({
+			title:
+				toastMessage ??
+				`'${text.length > MAX_WIDTH ? `${text.slice(0, MAX_WIDTH)}...` : text}' copied to clipboard.`,
+			status: 'success',
+		});
+		announce('Copied!', 'polite', 300);
+		return true;
+	} catch (error) {
+		announce('Failed to copy', 'polite', 300);
+		console.error(`Unable to copy: ${error}`);
+		toastQueue.add({ title: errorMessage ?? 'Unable to copy', status: 'error' });
+		return false;
+	}
+};
+
+export { copyToClipboard, useHref, useImageLoadingStatus, useLPContextProps, useMedia };
