@@ -6,6 +6,7 @@ export default {
 	component: Table,
 	subcomponents: { TableBody, TableCell, TableHead, TableHeadCell, TableRow },
 	title: 'Legacy/Table',
+	tags: ['deprecated'],
 	description: 'An element used to organize and display data to users.',
 	parameters: {
 		chromatic: { disableSnapshot: true },

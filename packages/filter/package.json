@@ -1,6 +1,6 @@
 {
 	"name": "@launchpad-ui/filter",
-	"version": "0.11.3",
+	"version": "0.11.7",
 	"description": "filter a list of results",
 	"repository": "launchdarkly/launchpad-ui",
 	"license": "Apache-2.0",
@@ -33,14 +33,14 @@
 		"classix": "2.2.0"
 	},
 	"devDependencies": {
-		"@react-aria/visually-hidden": "3.8.27",
-		"react": "19.1.1",
-		"react-dom": "19.1.1"
+		"@react-aria/visually-hidden": "3.8.28",
+		"react": "19.2.0",
+		"react-dom": "19.2.0"
 	},
 	"peerDependencies": {
-		"@react-aria/visually-hidden": "3.8.27",
-		"react": "19.1.1",
-		"react-dom": "19.1.1"
+		"@react-aria/visually-hidden": "3.8.28",
+		"react": "19.2.0",
+		"react-dom": "19.2.0"
 	},
 	"exports": {
 		".": {

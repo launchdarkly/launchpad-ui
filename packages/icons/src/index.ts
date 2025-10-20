@@ -6,3 +6,4 @@ export type { IconName } from './types';
 export { BadgeIcon } from './BadgeIcon';
 export { Icon } from './Icon';
 export { StatusIcon } from './StatusIcon';
+export { icons as iconsNames } from './types';

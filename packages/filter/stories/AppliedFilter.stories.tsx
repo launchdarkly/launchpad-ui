@@ -5,6 +5,7 @@ import { AppliedFilter } from '../src';
 export default {
 	component: AppliedFilter,
 	title: 'Legacy/Filter/AppliedFilter',
+	tags: ['deprecated'],
 	description: 'We use filters to filter our lists based on search critera.',
 	parameters: {
 		chromatic: { disableSnapshot: true },

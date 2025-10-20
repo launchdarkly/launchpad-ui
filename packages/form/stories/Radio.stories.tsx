@@ -5,6 +5,7 @@ import { Radio } from '../src';
 export default {
 	component: Radio,
 	title: 'Legacy/Form/Radio',
+	tags: ['deprecated'],
 	description: 'A radio button allows the user to select one of a set of options."',
 	parameters: {
 		chromatic: { disableSnapshot: true },

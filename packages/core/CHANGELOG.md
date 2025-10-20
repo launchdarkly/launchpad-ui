@@ -1,5 +1,69 @@
 # @launchpad-ui/core
 
+## 0.59.7
+
+### Patch Changes
+
+- [#1792](https://github.com/launchdarkly/launchpad-ui/pull/1792) [`bd49c43`](https://github.com/launchdarkly/launchpad-ui/commit/bd49c431bf39e8a69adc95961977af21d5f36617) Thanks [@vezaynk](https://github.com/vezaynk)! - bumping dependencies: axios, react, react-dom, react-aria
+
+- Updated dependencies [[`bd49c43`](https://github.com/launchdarkly/launchpad-ui/commit/bd49c431bf39e8a69adc95961977af21d5f36617)]:
+  - @launchpad-ui/focus-trap@0.5.1
+  - @launchpad-ui/navigation@0.16.7
+  - @launchpad-ui/dropdown@0.10.7
+  - @launchpad-ui/overlay@0.6.2
+  - @launchpad-ui/popover@0.14.2
+  - @launchpad-ui/tooltip@0.12.2
+  - @launchpad-ui/button@0.15.7
+  - @launchpad-ui/drawer@0.9.7
+  - @launchpad-ui/filter@0.11.7
+  - @launchpad-ui/portal@0.4.2
+  - @launchpad-ui/modal@0.21.7
+  - @launchpad-ui/table@0.9.2
+  - @launchpad-ui/form@0.15.7
+  - @launchpad-ui/menu@0.16.7
+
+## 0.59.6
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @launchpad-ui/button@0.15.6
+  - @launchpad-ui/drawer@0.9.6
+  - @launchpad-ui/dropdown@0.10.6
+  - @launchpad-ui/filter@0.11.6
+  - @launchpad-ui/form@0.15.6
+  - @launchpad-ui/menu@0.16.6
+  - @launchpad-ui/modal@0.21.6
+  - @launchpad-ui/navigation@0.16.6
+
+## 0.59.5
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @launchpad-ui/button@0.15.5
+  - @launchpad-ui/drawer@0.9.5
+  - @launchpad-ui/dropdown@0.10.5
+  - @launchpad-ui/filter@0.11.5
+  - @launchpad-ui/form@0.15.5
+  - @launchpad-ui/menu@0.16.5
+  - @launchpad-ui/modal@0.21.5
+  - @launchpad-ui/navigation@0.16.5
+
+## 0.59.4
+
+### Patch Changes
+
+- Updated dependencies [[`501f0d7`](https://github.com/launchdarkly/launchpad-ui/commit/501f0d7a366ad546a07e7fde83cf6782e7cc027a)]:
+  - @launchpad-ui/modal@0.21.4
+  - @launchpad-ui/button@0.15.4
+  - @launchpad-ui/drawer@0.9.4
+  - @launchpad-ui/dropdown@0.10.4
+  - @launchpad-ui/filter@0.11.4
+  - @launchpad-ui/form@0.15.4
+  - @launchpad-ui/menu@0.16.4
+  - @launchpad-ui/navigation@0.16.4
+
 ## 0.59.3
 
 ### Patch Changes

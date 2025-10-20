@@ -16,6 +16,12 @@ const meta: Meta<typeof Select> = {
 	component: Select,
 	subcomponents: { SelectValue } as Record<string, ComponentType<unknown>>,
 	title: 'Components/Pickers/Select',
+	parameters: {
+		figma: {
+			design:
+				'https://www.figma.com/design/98HKKXL2dTle29ikJ3tzk7/%F0%9F%9A%80-LaunchPad?node-id=8079-95299&m=dev',
+		},
+	},
 	decorators: [
 		(Story) => (
 			<div style={{ width: vars.size[240], height: vars.size[240] }}>

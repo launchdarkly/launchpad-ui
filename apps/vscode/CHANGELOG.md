@@ -1,5 +1,12 @@
 # launchpad-design-system
 
+## 0.3.1
+
+### Patch Changes
+
+- Updated dependencies [[`bd49c43`](https://github.com/launchdarkly/launchpad-ui/commit/bd49c431bf39e8a69adc95961977af21d5f36617)]:
+  - @launchpad-ui/tokens@0.15.1
+
 ## 0.3.0
 
 ### Minor Changes

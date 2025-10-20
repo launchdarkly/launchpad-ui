@@ -28,6 +28,12 @@ const meta: Meta<typeof Menu> = {
 		Separator,
 	} as Record<string, ComponentType<unknown>>,
 	title: 'Components/Collections/Menu',
+	parameters: {
+		figma: {
+			design:
+				'https://www.figma.com/design/98HKKXL2dTle29ikJ3tzk7/%F0%9F%9A%80-LaunchPad?node-id=3583-13908&m=dev',
+		},
+	},
 	decorators: [
 		(Story) => (
 			<div style={{ height: 'var(--lp-size-320)' }}>

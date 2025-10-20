@@ -1,5 +1,44 @@
 # @launchpad-ui/modal
 
+## 0.21.7
+
+### Patch Changes
+
+- [#1792](https://github.com/launchdarkly/launchpad-ui/pull/1792) [`bd49c43`](https://github.com/launchdarkly/launchpad-ui/commit/bd49c431bf39e8a69adc95961977af21d5f36617) Thanks [@vezaynk](https://github.com/vezaynk)! - bumping dependencies: axios, react, react-dom, react-aria
+
+- Updated dependencies [[`674d160`](https://github.com/launchdarkly/launchpad-ui/commit/674d160366c660794e66fa94b3af421118570ef7), [`bd49c43`](https://github.com/launchdarkly/launchpad-ui/commit/bd49c431bf39e8a69adc95961977af21d5f36617)]:
+  - @launchpad-ui/icons@0.24.7
+  - @launchpad-ui/focus-trap@0.5.1
+  - @launchpad-ui/button@0.15.7
+  - @launchpad-ui/portal@0.4.2
+  - @launchpad-ui/tokens@0.15.1
+
+## 0.21.6
+
+### Patch Changes
+
+- Updated dependencies [[`936980f`](https://github.com/launchdarkly/launchpad-ui/commit/936980f5c0e9eef54c35b621dc138813168baa73)]:
+  - @launchpad-ui/icons@0.24.6
+  - @launchpad-ui/button@0.15.6
+
+## 0.21.5
+
+### Patch Changes
+
+- Updated dependencies [[`c689b72`](https://github.com/launchdarkly/launchpad-ui/commit/c689b72725749d3a40b68e389e62a38b4cbf7b63)]:
+  - @launchpad-ui/icons@0.24.5
+  - @launchpad-ui/button@0.15.5
+
+## 0.21.4
+
+### Patch Changes
+
+- [#1776](https://github.com/launchdarkly/launchpad-ui/pull/1776) [`501f0d7`](https://github.com/launchdarkly/launchpad-ui/commit/501f0d7a366ad546a07e7fde83cf6782e7cc027a) Thanks [@pheggeseth](https://github.com/pheggeseth)! - Increase modal close button style specificity
+
+- Updated dependencies [[`1cc0b74`](https://github.com/launchdarkly/launchpad-ui/commit/1cc0b74e97c403856ff05700e3e027bdc479feea)]:
+  - @launchpad-ui/icons@0.24.4
+  - @launchpad-ui/button@0.15.4
+
 ## 0.21.3
 
 ### Patch Changes

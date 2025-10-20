@@ -1,0 +1,523 @@
+/* Additional custom styles for Storybook manager UI */
+
+/* Brand logo styling */
+.sidebar-header img,
+[data-item-id='brand'] img,
+.sidebar-brand img {
+	height: auto !important;
+	max-width: 200px !important;
+	border-radius: 12px !important;
+	object-fit: contain !important;
+}
+
+.sidebar-header div {
+	margin-right: 0 !important;
+	width: inherit !important;
+	padding-left: 0 !important;
+}
+
+/* Light theme additional styles */
+.light-theme {
+	/* Custom CSS variables using LaunchPad design tokens */
+	--storybook-accent-color: #405bff; /* brand.blue.base */
+	--storybook-accent-hover: #7084ff; /* brand.blue.light */
+}
+
+/* Dark theme additional styles */
+.dark-theme {
+	/* Custom CSS variables using LaunchPad design tokens */
+	--storybook-accent-color: #7084ff; /* brand.blue.light */
+	--storybook-accent-hover: #405bff; /* brand.blue.base */
+}
+
+/* Docs container theming using LaunchPad design tokens */
+.docs-dark {
+	background-color: #181a1f !important; /* gray.950 */
+	color: #eceff2 !important; /* gray.50 */
+}
+
+.docs-light {
+	background-color: #ffffff !important; /* white.950 */
+	color: #23252a !important; /* gray.900 */
+}
+
+/* Code blocks in light mode - only target docs content, not Code components */
+:not(.dark-theme) .docblock-argstable code:not(.docs-story code),
+:not(.dark-theme) .docblock-argstable-description code:not(.docs-story code),
+:not(.dark-theme) .docblock-argstable-body code:not(.docs-story code),
+.docs-light .docblock-argstable code:not(.docs-story code),
+.docs-light .sbdocs code:not([class*='code_']):not(.docs-story code) {
+	background-color: #eceff2 !important; /* gray.50 - matching --lp-color-bg-ui-tertiary light */
+	color: #238ca3 !important; /* brand.cyan.dark - matching --lp-color-text-code-string light */
+	border-color: #d8dde3 !important; /* gray.100 */
+	border-radius: 4px !important; /* matching --lp-border-radius-regular */
+	padding: 4px 8px !important; /* matching --lp-spacing-100 --lp-spacing-200 */
+	font-weight: 400 !important; /* matching --lp-font-weight-regular */
+}
+
+.dark-theme .docblock-argstable tbody tr td > span,
+.dark-theme .docblock-argstable tbody tr td div > span {
+	border: none !important;
+	background-color: #2d3239 !important;
+}
+
+/** Code mode bar */
+.dark-theme .sb-bar .undefined {
+	box-shadow: none !important;
+	background-color: #2d3239 !important;
+	color: #eceff2 !important;
+}
+
+/* Dark theme docs content styling using LaunchPad design tokens */
+.docs-dark .docblock-argstable,
+.docs-dark .docblock-argstable table,
+.docs-dark .docblock-argstable tbody,
+.docs-dark .docblock-argstable tr,
+.docs-dark .docblock-argstable td,
+.docs-dark .docblock-argstable th {
+	background-color: #23252a !important; /* gray.900 */
+	color: #eceff2 !important; /* gray.50 */
+	border-color: #3f454c !important; /* gray.700 */
+}
+
+.docs-dark .docblock-argstable th {
+	background-color: #3f454c !important; /* gray.700 */
+	color: #eceff2 !important; /* gray.50 */
+}
+
+.docs-dark .docblock-argstable-body {
+	background-color: #23252a !important; /* gray.900 */
+}
+
+.docs-dark .docblock-code-toggle,
+.docs-dark .docblock-code-toggle button {
+	background-color: #3f454c !important; /* gray.700 */
+	color: #eceff2 !important; /* gray.50 */
+	border-color: #545a62 !important; /* gray.600 */
+}
+
+.docs-dark .docblock-code-toggle:hover,
+.docs-dark .docblock-code-toggle button:hover {
+	background-color: #545a62 !important; /* gray.600 */
+}
+
+/* Code blocks in docs - only target docs content, not Code components */
+.docs-dark .docblock-argstable code,
+.docs-dark .sbdocs code:not([class*='code_']),
+/* Target specific args table elements only in dark theme */
+	.dark-theme .docblock-argstable
+	code,
+.dark-theme .docblock-argstable-description code,
+.dark-theme .docblock-argstable-body code {
+	background-color: #2d3239 !important; /* gray.800 - matching --lp-color-bg-ui-tertiary dark */
+	color: #6de0f7 !important; /* brand.cyan.light - matching --lp-color-text-code-string dark */
+	border-color: #3f454c !important; /* gray.700 */
+	border-radius: 4px !important; /* matching --lp-border-radius-regular */
+	border-width: 0 !important;
+	padding: 4px 8px !important; /* matching --lp-spacing-100 --lp-spacing-200 */
+	font-weight: 400 !important; /* matching --lp-font-weight-regular */
+}
+
+/* Only target Storybook-specific prism code blocks */
+.docs-dark .prism-code:not([class*='code_']),
+.dark-theme .docblock-argstable .prism-code {
+	background-color: #2d3239 !important; /* gray.800 - matching --lp-color-bg-ui-tertiary dark */
+}
+
+.dark-theme #storybook-panel-root {
+	background-color: #2d3239 !important;
+	box-shadow: none !important;
+}
+
+/* Description and other text content using LaunchPad design tokens */
+.docs-dark .sbdocs-content,
+.docs-dark .sbdocs-wrapper,
+.docs-dark .sbdocs-preview,
+.docs-dark .sbdocs p,
+.docs-dark .sbdocs h1,
+.docs-dark .sbdocs h2,
+.docs-dark .sbdocs h3,
+.docs-dark .sbdocs h4,
+.docs-dark .sbdocs h5,
+.docs-dark .sbdocs h6 {
+	color: #eceff2 !important; /* gray.50 */
+}
+
+.docs-dark .sbdocs-wrapper {
+	background-color: #181a1f !important; /* gray.950 */
+}
+
+/* Global dark theme styling for docs using LaunchPad design tokens */
+.dark-theme .sbdocs,
+.dark-theme .sbdocs-content,
+.dark-theme .sbdocs-wrapper,
+.dark-theme .sbdocs-preview {
+	background-color: #181a1f !important; /* gray.950 */
+	color: #eceff2 !important; /* gray.50 */
+}
+
+/* Args table styling for dark theme using LaunchPad design tokens */
+.dark-theme .docblock-argstable,
+.dark-theme .docblock-argstable table,
+.dark-theme .docblock-argstable tbody,
+.dark-theme .docblock-argstable tr,
+.dark-theme .docblock-argstable td,
+.dark-theme .docblock-argstable th {
+	background-color: #23252a !important; /* gray.900 */
+	color: #eceff2 !important; /* gray.50 */
+	border-color: #3f454c !important; /* gray.700 */
+}
+
+.dark-theme .docblock-argstable th {
+	background-color: #3f454c !important; /* gray.700 */
+	color: #eceff2 !important; /* gray.50 */
+}
+
+.dark-theme .docblock-argstable-body {
+	background-color: #23252a !important; /* gray.900 */
+}
+
+/* Text content in dark theme using LaunchPad design tokens */
+.dark-theme :not(.sbdocs-preview) .sbdocs p,
+.dark-theme :not(.sbdocs-preview) .sbdocs h1,
+.dark-theme :not(.sbdocs-preview) .sbdocs h2,
+.dark-theme :not(.sbdocs-preview) .sbdocs h3,
+.dark-theme :not(.sbdocs-preview) .sbdocs h4,
+.dark-theme :not(.sbdocs-preview) .sbdocs h5,
+.dark-theme :not(.sbdocs-preview) .sbdocs h6,
+.dark-theme :not(.sbdocs-preview) .sbdocs li,
+.dark-theme :not(.sbdocs-preview) .sbdocs span:not([class*='token']),
+.dark-theme :not(.sbdocs-preview) .sbdocs div:not([class*='token']) {
+	color: #eceff2 !important; /* gray.50 */
+	text-decoration: none !important;
+}
+
+.dark-theme .docblock-code-toggle {
+	background-color: black;
+	color: #eceff2;
+	border: 1px solid #eceff2;
+}
+
+/* Removed overly broad selectors to preserve Code.tsx component styling */
+
+/* Storybook-specific code styling - only target docs and args table, not actual Code components */
+.sb-main-padded .docblock-argstable code:not(.docs-story code),
+.sb-main-padded .sbdocs code:not(.docs-story code),
+.docblock-argstable-description code:not(.docs-story code),
+#storybook-docs code:not([class*='code_']):not(.docs-story code),
+/* Additional specific selectors for argstable code */
+	.docblock-argstable td
+	code:not(.docs-story code),
+.docblock-argstable-body code:not(.docs-story code),
+.docblock-argstable-row code:not(.docs-story code) {
+	background-color: #eceff2 !important; /* gray.50 - matching --lp-color-bg-ui-tertiary light */
+	color: #238ca3 !important; /* brand.cyan.dark - matching --lp-color-text-code-string light */
+	border-radius: 4px !important;
+	padding: 4px 8px !important;
+	font-weight: 400 !important;
+}
+
+.dark-theme .sb-main-padded .docblock-argstable code:not(.docs-story code),
+.dark-theme .sb-main-padded .sbdocs code:not(.docs-story code),
+.dark-theme .docblock-argstable-description code:not(.docs-story code),
+.dark-theme #storybook-docs code:not([class*='code_']):not(.docs-story code),
+/* Additional specific selectors for argstable code in dark mode */
+	.dark-theme .docblock-argstable
+	td
+	code:not(.docs-story code),
+.dark-theme .docblock-argstable-body code:not(.docs-story code),
+.dark-theme .docblock-argstable-row code:not(.docs-story code),
+/* More comprehensive selectors for all possible argstable code elements */
+	.dark-theme .docblock-argstable
+	code:not(.docs-story code),
+html.dark-theme .docblock-argstable code:not(.docs-story code),
+[data-theme='dark'] .docblock-argstable code:not(.docs-story code),
+/* Force override with highest specificity */
+	.dark-theme div[class*='docblock']
+	code:not(.docs-story code),
+.dark-theme div[class*='argstable'] code:not(.docs-story code) {
+	background-color: #2d3239 !important; /* gray.800 - matching --lp-color-bg-ui-tertiary dark */
+	color: #6de0f7 !important; /* brand.cyan.light - matching --lp-color-text-code-string dark */
+	border-radius: 4px !important;
+	padding: 4px 8px !important;
+	font-weight: 400 !important;
+}
+
+/* Override any remaining light backgrounds using LaunchPad design tokens */
+.dark-theme .docs-story,
+.dark-theme [data-docs-story] {
+	background-color: #181a1f !important; /* gray.950 */
+}
+
+/* Only apply text color to docs story wrapper, not story content */
+.dark-theme .docs-story > div:first-child,
+.dark-theme [data-docs-story] > div:first-child {
+	color: #eceff2 !important; /* gray.50 */
+}
+
+/* Smooth transitions for theme changes */
+html,
+body,
+#storybook-root {
+	transition:
+		background-color 0.3s ease,
+		color 0.3s ease;
+}
+
+/* Custom styling for sidebar and toolbar */
+.light-theme .sidebar {
+	background: #ffffff;
+	border-color: rgba(0, 0, 0, 0.1);
+}
+
+.dark-theme .sidebar {
+	background: #1e293b;
+	border-color: rgba(255, 255, 255, 0.1);
+}
+
+/* All non-docs icon styling - folders and other items */
+.light-theme [data-ref-id*='--'] svg,
+.dark-theme [data-ref-id*='--'] svg,
+.light-theme .tree-node[data-nodetype='group'] svg,
+.dark-theme .tree-node[data-nodetype='group'] svg,
+.light-theme [data-item-id*='--'] svg,
+.dark-theme [data-item-id*='--'] svg,
+/* Target folder icons specifically */
+	.light-theme .sidebar-item
+	svg[data-icon='folder'],
+.dark-theme .sidebar-item svg[data-icon='folder'],
+.light-theme .tree-folder-icon svg,
+.dark-theme .tree-folder-icon svg,
+/* Additional selectors for various folder icon implementations */
+	.light-theme [data-nodetype='group']
+	svg,
+.dark-theme [data-nodetype='group'] svg,
+.light-theme [data-parent-id] svg,
+.dark-theme [data-parent-id] svg,
+.light-theme .sidebar-subheading svg,
+.dark-theme .sidebar-subheading svg {
+	color: #405bff !important;
+	fill: #405bff !important;
+}
+
+/* Docs icon styling */
+.light-theme [data-nodetype='component'] svg,
+.dark-theme [data-nodetype='component'] svg,
+.light-theme [data-ref-id*='docs'] svg,
+.dark-theme [data-ref-id*='docs'] svg,
+.light-theme [data-item-id*='docs'] svg,
+.dark-theme [data-item-id*='docs'] svg,
+/* Target docs icons specifically */
+	.light-theme .sidebar-item
+	svg[data-icon='document'],
+.dark-theme .sidebar-item svg[data-icon='document'],
+.light-theme .sidebar-item svg[data-icon='doc'],
+.dark-theme .sidebar-item svg[data-icon='doc'],
+.light-theme .tree-leaf-icon svg,
+.dark-theme .tree-leaf-icon svg,
+/* Additional selectors for docs icon implementations */
+	.light-theme [data-nodetype='story']
+	svg,
+.dark-theme [data-nodetype='story'] svg {
+	color: #3dd6f5 !important;
+	fill: #3dd6f5 !important;
+}
+
+.dark-theme .search-result-item--label {
+	color: #eceff2 !important;
+}
+
+.search-result-item--label mark {
+	color: #7084ff !important;
+}
+
+/* Additional selectors for sidepanel items */
+.light-theme .sidebar-item[data-selected='true'],
+.dark-theme .sidebar-item[data-selected='true'],
+.light-theme .tree-node[data-selected='true'],
+.dark-theme .tree-node[data-selected='true'] {
+	background-color: #425eff !important;
+	color: white !important;
+}
+
+/* Selected item icons should always be white */
+.light-theme .sidebar-item[data-selected='true'] svg,
+.dark-theme .sidebar-item[data-selected='true'] svg,
+.light-theme .tree-node[data-selected='true'] svg,
+.dark-theme .tree-node[data-selected='true'] svg,
+.light-theme .sidebar-item[data-selected='true'] svg,
+.dark-theme .sidebar-item[data-selected='true'] svg,
+.light-theme .tree-node[data-selected='true'] svg,
+.dark-theme .tree-node[data-selected='true'] svg {
+	color: white !important;
+	fill: white !important;
+}
+
+/* Documentation links styling - excluding story content */
+.light-theme .sbdocs a:not(.docs-story a),
+.light-theme #storybook-docs a:not(.docs-story a),
+.light-theme .docblock-argstable a:not(.docs-story a),
+.dark-theme .sbdocs a:not(.docs-story a),
+.dark-theme #storybook-docs a:not(.docs-story a),
+.dark-theme .docblock-argstable a:not(.docs-story a) {
+	color: #7084ff !important;
+	text-decoration: underline;
+}
+
+.light-theme .sbdocs a:hover:not(.docs-story a:hover),
+.light-theme #storybook-docs a:hover:not(.docs-story a:hover),
+.light-theme .docblock-argstable a:hover:not(.docs-story a:hover),
+.dark-theme .sbdocs a:hover:not(.docs-story a:hover),
+.dark-theme #storybook-docs a:hover:not(.docs-story a:hover),
+.dark-theme .docblock-argstable a:hover:not(.docs-story a:hover) {
+	color: #2536a6 !important;
+	text-decoration: underline;
+}
+
+/* Override specific CSS module classes for docblock-argstable in dark mode */
+/* Order by specificity: lowest to highest */
+.dark-theme .docblock-argstable tbody > tr > *,
+.dark-theme .docblock-argstable [class*='css-'] tbody > tr > *,
+.dark-theme .docblock-argstable .css-19yaz2m tbody > tr > *,
+.dark-theme .docblock-argstable .css-19yaz2m.css-19yaz2m tbody > tr > * {
+	background-color: #000000 !important;
+}
+
+/* Ensure table cells in dark mode argstable have proper black background */
+.dark-theme .docblock-argstable tbody tr td,
+.dark-theme .docblock-argstable tbody tr th {
+	background-color: #000000 !important;
+}
+
+.dark-theme .docblock-argstable tbody tr * {
+	background-color: transparent !important;
+	color: #eceff2 !important;
+}
+
+/* Custom scrollbar styling */
+.light-theme ::-webkit-scrollbar-track {
+	background: #f8fafc;
+}
+
+.light-theme ::-webkit-scrollbar-thumb {
+	background: #cbd5e1;
+}
+
+.light-theme ::-webkit-scrollbar-thumb:hover {
+	background: #94a3b8;
+}
+
+.dark-theme ::-webkit-scrollbar-track {
+	background: #1e293b;
+}
+
+.dark-theme ::-webkit-scrollbar-thumb {
+	background: #475569;
+}
+
+.dark-theme ::-webkit-scrollbar-thumb:hover {
+	background: #64748b;
+}
+
+.dark-theme .sbdocs code:not(.docs-story code):not([class*='code_']),
+.dark-theme #storybook-docs code:not(.docs-story code):not([class*='code_']),
+.dark-theme .docblock-argstable code:not(.docs-story code):not([class*='code_']),
+.dark-theme .sb-unstyled code:not(.docs-story code):not([class*='code_']) {
+	background-color: #2d3239 !important;
+	color: #6de0f7 !important;
+	border-radius: 4px !important;
+	padding: 4px 8px !important;
+	font-weight: 400 !important;
+}
+
+/* Fix docblock-source sb-unstyled container background in dark mode */
+.dark-theme .docblock-source.sb-unstyled,
+.dark-theme .docblock-source .sb-unstyled,
+.dark-theme .sb-unstyled.docblock-source,
+.dark-theme .docblock-source,
+.dark-theme [class*='docblock-source'] {
+	background-color: #2d3239 !important;
+	color: #eceff2 !important;
+}
+
+/* Additional specific targeting for pre and code elements within docblock-source */
+.dark-theme .docblock-source pre,
+.dark-theme .docblock-source.sb-unstyled pre,
+.dark-theme .sb-unstyled .docblock-source pre {
+	background-color: #2d3239 !important;
+	color: #eceff2 !important;
+}
+
+/* Exception: Don't override actual Code component styling or story content */
+.dark-theme [class*='code_'] code,
+.dark-theme .docs-story code,
+.dark-theme [data-docs-story] code {
+	background-color: unset !important;
+	color: unset !important;
+	border-radius: unset !important;
+	padding: unset !important;
+	font-weight: unset !important;
+}
+
+/* Ensure sidebar background is correct in dark mode */
+.dark-theme .sidebar-container,
+.dark-theme [data-side='left'],
+.dark-theme .os-host-flexbox {
+	background-color: #23252a !important;
+}
+
+/* Sidebar item hover color */
+.sidebar-item:hover,
+[data-nodetype]:hover,
+.tree-node:hover,
+[role='treeitem']:hover {
+	background-color: rgba(84, 90, 98, 0.1) !important;
+}
+
+/* Sidebar text color in dark mode */
+.dark-theme .sidebar-item,
+.dark-theme [data-nodetype],
+.dark-theme .tree-node,
+.dark-theme [role='treeitem'],
+.dark-theme .sidebar-item span,
+.dark-theme [data-nodetype] span,
+.dark-theme .tree-node span,
+.dark-theme [role='treeitem'] span {
+	color: white !important;
+}
+
+/* Remove border-right from side panel */
+div[id='root'] > div > div {
+	border-right: none !important;
+}
+
+/* Dark mode styling for preview toolbar */
+.dark-theme [data-test-id='sb-preview-toolbar'],
+html.dark-theme [data-test-id='sb-preview-toolbar'],
+body.dark-theme [data-test-id='sb-preview-toolbar'],
+.dark-theme .sb-preview-toolbar,
+html.dark-theme .sb-preview-toolbar,
+body.dark-theme .sb-preview-toolbar {
+	background-color: #23252a !important;
+	color: #eceff2 !important;
+	border-color: #3f454c !important;
+	border-top: 1px solid #3f454c !important;
+}
+
+/* Dark mode styling for toolbar buttons */
+.dark-theme [data-test-id='sb-preview-toolbar'] button,
+.dark-theme [data-test-id='sb-preview-toolbar'] [role='button'],
+.dark-theme .sb-preview-toolbar button,
+.dark-theme .sb-preview-toolbar [role='button'] {
+	background-color: transparent !important;
+	color: #eceff2 !important;
+	border-color: #3f454c !important;
+}
+
+.dark-theme [data-test-id='sb-preview-toolbar'] button:hover,
+.dark-theme [data-test-id='sb-preview-toolbar'] [role='button']:hover,
+.dark-theme .sb-preview-toolbar button:hover,
+.dark-theme .sb-preview-toolbar [role='button']:hover {
+	background-color: #3f454c !important;
+	color: #ffffff !important;
+}

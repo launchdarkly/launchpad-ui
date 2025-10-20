@@ -4,6 +4,7 @@ import { container, local } from './Story.css';
 
 export default {
 	title: 'Tokens/Vars',
+	tags: ['!dev'],
 };
 
 type Story = StoryObj;

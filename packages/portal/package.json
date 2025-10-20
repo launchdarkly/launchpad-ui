@@ -1,6 +1,6 @@
 {
 	"name": "@launchpad-ui/portal",
-	"version": "0.4.1",
+	"version": "0.4.2",
 	"description": "An element that renders a subtree in a different part of the DOM.",
 	"repository": "launchdarkly/launchpad-ui",
 	"license": "Apache-2.0",
@@ -23,12 +23,12 @@
 		"test": "vitest run --coverage"
 	},
 	"devDependencies": {
-		"react": "19.1.1",
-		"react-dom": "19.1.1"
+		"react": "19.2.0",
+		"react-dom": "19.2.0"
 	},
 	"peerDependencies": {
-		"react": "19.1.1",
-		"react-dom": "19.1.1"
+		"react": "19.2.0",
+		"react-dom": "19.2.0"
 	},
 	"exports": {
 		".": {

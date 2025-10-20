@@ -8,6 +8,12 @@ import { Link } from '../src/Link';
 const meta: Meta<typeof Link> = {
 	component: Link,
 	title: 'Components/Navigation/Link',
+	parameters: {
+		figma: {
+			design:
+				'https://www.figma.com/design/98HKKXL2dTle29ikJ3tzk7/%F0%9F%9A%80-LaunchPad?node-id=8079-92170&m=dev',
+		},
+	},
 };
 
 export default meta;

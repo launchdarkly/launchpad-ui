@@ -1,5 +1,50 @@
 # @launchpad-ui/components
 
+## 0.16.12
+
+### Patch Changes
+
+- [#1792](https://github.com/launchdarkly/launchpad-ui/pull/1792) [`bd49c43`](https://github.com/launchdarkly/launchpad-ui/commit/bd49c431bf39e8a69adc95961977af21d5f36617) Thanks [@vezaynk](https://github.com/vezaynk)! - bumping dependencies: axios, react, react-dom, react-aria
+
+- Updated dependencies [[`674d160`](https://github.com/launchdarkly/launchpad-ui/commit/674d160366c660794e66fa94b3af421118570ef7), [`bd49c43`](https://github.com/launchdarkly/launchpad-ui/commit/bd49c431bf39e8a69adc95961977af21d5f36617)]:
+  - @launchpad-ui/icons@0.24.7
+  - @launchpad-ui/tokens@0.15.1
+
+## 0.16.11
+
+### Patch Changes
+
+- Updated dependencies [[`936980f`](https://github.com/launchdarkly/launchpad-ui/commit/936980f5c0e9eef54c35b621dc138813168baa73)]:
+  - @launchpad-ui/icons@0.24.6
+
+## 0.16.10
+
+### Patch Changes
+
+- [#1735](https://github.com/launchdarkly/launchpad-ui/pull/1735) [`f83142a`](https://github.com/launchdarkly/launchpad-ui/commit/f83142ae74d1cc82a74f13a4c373d49e5a5998e5) Thanks [@Zuzze](https://github.com/Zuzze)! - Figma code connect files, design links and component overview added
+
+- Updated dependencies [[`c689b72`](https://github.com/launchdarkly/launchpad-ui/commit/c689b72725749d3a40b68e389e62a38b4cbf7b63)]:
+  - @launchpad-ui/icons@0.24.5
+
+## 0.16.9
+
+### Patch Changes
+
+- [#1781](https://github.com/launchdarkly/launchpad-ui/pull/1781) [`46dc020`](https://github.com/launchdarkly/launchpad-ui/commit/46dc020c68c9ce8228431e9c0691e49c5402fe00) Thanks [@vezaynk](https://github.com/vezaynk)! - fix: expose router types
+
+## 0.16.8
+
+### Patch Changes
+
+- [#1779](https://github.com/launchdarkly/launchpad-ui/pull/1779) [`7dec6fa`](https://github.com/launchdarkly/launchpad-ui/commit/7dec6fa2e5309855bb93714f69d67871eeb62204) Thanks [@ld-ahartmann](https://github.com/ld-ahartmann)! - bumped react aria components, react aria, @types/react
+
+## 0.16.7
+
+### Patch Changes
+
+- Updated dependencies [[`1cc0b74`](https://github.com/launchdarkly/launchpad-ui/commit/1cc0b74e97c403856ff05700e3e027bdc479feea)]:
+  - @launchpad-ui/icons@0.24.4
+
 ## 0.16.6
 
 ### Patch Changes

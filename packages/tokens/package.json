@@ -1,6 +1,6 @@
 {
 	"name": "@launchpad-ui/tokens",
-	"version": "0.15.0",
+	"version": "0.15.1",
 	"description": "LaunchPad design tokens delivered as CSS custom properties, CommonJS modules, and ES modules.",
 	"repository": {
 		"type": "git",
@@ -30,7 +30,7 @@
 	},
 	"devDependencies": {
 		"@figma/rest-api-spec": "^0.32.0",
-		"axios": "^1.11.0",
+		"axios": "^1.12.2",
 		"json-to-ts": "^2.1.0",
 		"style-dictionary": "^5.0.0"
 	},
