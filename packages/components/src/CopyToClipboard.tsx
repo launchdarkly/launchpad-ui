@@ -1,8 +1,8 @@
 import type { ReactNode } from 'react';
 
-import { Tooltip, TooltipTrigger } from '@launchpad-ui/components';
 import { PressResponder } from '@react-aria/interactions';
 
+import { Tooltip, TooltipTrigger } from './Tooltip';
 import { copyToClipboard } from './utils';
 
 type CopyToClipboardProps = {

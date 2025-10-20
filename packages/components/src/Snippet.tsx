@@ -1,6 +1,7 @@
-import { IconButton } from '@launchpad-ui/components';
 import Prism from 'prismjs';
 import { type JSX, useLayoutEffect, useRef } from 'react';
+
+import { IconButton } from './IconButton';
 
 // Import languages based on what you need
 import 'prismjs/components/prism-apex';
