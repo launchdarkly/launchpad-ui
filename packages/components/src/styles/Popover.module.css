@@ -36,16 +36,14 @@
 		stroke-width: 1px;
 	}
 
-	&[data-trigger='DialogTrigger'] {
-		padding: var(--lp-spacing-300);
-	}
-
-	&[data-trigger='ComboBoxDialog'] {
+	&[data-trigger='DialogTrigger'],
+	&[data-trigger='ComboBoxDialog'],
+	&[data-trigger='SubmenuTrigger'] {
 		padding: var(--lp-spacing-300);
 	}
 
 	&:is([data-trigger='DatePicker'], [data-trigger='DateRangePicker']) {
-		padding: var(--lp-spacing-600);
+		padding: var(--lp-spacing-300);
 	}
 
 	&[data-placement='top'] {
