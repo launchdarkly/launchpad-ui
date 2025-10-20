@@ -43,7 +43,7 @@
 	}
 
 	&:is([data-trigger='DatePicker'], [data-trigger='DateRangePicker']) {
-		padding: var(--lp-spacing-600);
+		padding: var(--lp-spacing-300);
 	}
 
 	&[data-placement='top'] {
