@@ -1,5 +1,11 @@
 # @launchpad-ui/components
 
+## 0.16.13
+
+### Patch Changes
+
+- [#1793](https://github.com/launchdarkly/launchpad-ui/pull/1793) [`cf6976c`](https://github.com/launchdarkly/launchpad-ui/commit/cf6976c0a956219568e0f7a9ed3bc03814b631bf) Thanks [@apucacao](https://github.com/apucacao)! - fix date picker layout in submenus
+
 ## 0.16.12
 
 ### Patch Changes

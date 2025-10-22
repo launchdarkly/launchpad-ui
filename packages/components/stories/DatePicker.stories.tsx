@@ -16,6 +16,7 @@ import { Group } from '../src/Group';
 import { Heading } from '../src/Heading';
 import { IconButton } from '../src/IconButton';
 import { Label } from '../src/Label';
+import { Menu, MenuItem, MenuTrigger, SubmenuTrigger } from '../src/Menu';
 import { Popover } from '../src/Popover';
 
 const meta: Meta<typeof DatePicker> = {
@@ -137,5 +138,47 @@ export const InForms: Story = {
 		await userEvent.click(canvas.getByRole('button'));
 		const body = canvasElement.ownerDocument.body;
 		await expect(await within(body).findByRole('application'));
+	},
+};
+
+export const InSubmenu: Story = {
+	args: {
+		children: (
+			<MenuTrigger>
+				<Button>Select</Button>
+				<Popover>
+					<Menu>
+						<SubmenuTrigger>
+							<MenuItem id="calendar">Choose custom date</MenuItem>
+							<Popover>
+								<Dialog>
+									<Calendar>
+										<header>
+											<IconButton
+												slot="previous"
+												icon="chevron-left"
+												aria-label="previous"
+												size="small"
+												variant="minimal"
+											/>
+											<Heading />
+											<IconButton
+												slot="next"
+												icon="chevron-right"
+												aria-label="next"
+												size="small"
+												variant="minimal"
+											/>
+										</header>
+										<CalendarGrid>{(date) => <CalendarCell date={date} />}</CalendarGrid>
+									</Calendar>
+								</Dialog>
+							</Popover>
+						</SubmenuTrigger>
+					</Menu>
+				</Popover>
+			</MenuTrigger>
+		),
+		defaultValue: parseDate('2025-01-01'),
 	},
 };
