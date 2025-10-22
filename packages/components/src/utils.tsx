@@ -137,7 +137,6 @@ const copyToClipboard = async (
 
 	try {
 		if ('clipboard' in navigator) {
-			console.log({ text });
 			await navigator.clipboard.writeText(text);
 		} else {
 			await fallbackCopyToClipboard(text);
@@ -151,9 +150,8 @@ const copyToClipboard = async (
 		});
 		announce('Copied!', 'polite', 300);
 		return true;
-	} catch (error) {
+	} catch {
 		announce('Failed to copy', 'polite', 300);
-		console.error(`Unable to copy: ${error}`);
 		toastQueue.add({ title: errorMessage ?? 'Unable to copy', status: 'error' });
 		return false;
 	}
