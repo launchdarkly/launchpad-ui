@@ -1,5 +1,11 @@
 # @launchpad-ui/components
 
+## 0.17.2
+
+### Patch Changes
+
+- [#1801](https://github.com/launchdarkly/launchpad-ui/pull/1801) [`10bfd72`](https://github.com/launchdarkly/launchpad-ui/commit/10bfd72e39e5f968000fcf15af43a8e165483319) Thanks [@ari-launchdarkly](https://github.com/ari-launchdarkly)! - export SnippetLang type
+
 ## 0.17.1
 
 ### Patch Changes
