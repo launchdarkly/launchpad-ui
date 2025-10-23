@@ -1,5 +1,11 @@
 # @launchpad-ui/components
 
+## 0.17.1
+
+### Patch Changes
+
+- [#1798](https://github.com/launchdarkly/launchpad-ui/pull/1798) [`8a79fcc`](https://github.com/launchdarkly/launchpad-ui/commit/8a79fccc386997ede86fd25e4566cf8da44645e8) Thanks [@ari-launchdarkly](https://github.com/ari-launchdarkly)! - export the Snippet and CopyToClipboard components
+
 ## 0.17.0
 
 ### Minor Changes
