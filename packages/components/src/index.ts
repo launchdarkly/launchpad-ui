@@ -65,6 +65,7 @@ export type { SearchFieldProps } from './SearchField';
 export type { ListBoxSectionProps, MenuSectionProps } from './Section';
 export type { SelectProps, SelectValueProps } from './Select';
 export type { SeparatorProps } from './Separator';
+export type { SnippetLang } from './Snippet';
 export type { SwitchProps } from './Switch';
 export type {
 	CellProps,
