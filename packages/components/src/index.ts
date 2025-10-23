@@ -224,7 +224,6 @@ export {
 	modalOverlayStyles,
 	modalStyles,
 } from './Modal';
-export { NewTabLink } from './NewTabLink';
 export {
 	NumberField,
 	NumberFieldContext,

@@ -2,4 +2,4 @@
 "@launchpad-ui/components": patch
 ---
 
-export the SnippetLang and port over the NewTabLink
+export SnippetLang type
