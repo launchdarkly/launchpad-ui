@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 
 import { Code } from '../src/Code';
+import { Text } from '../src/Text';
 
 const meta: Meta<typeof Code> = {
 	title: 'Components/Content/Code',
@@ -59,5 +60,15 @@ export const Size: Story = {
 			<Code size="small">const size = "small";</Code>
 			<Code size="medium">const size = "medium";</Code>
 		</div>
+	),
+};
+
+export const Inline: Story = {
+	render: () => (
+		<Text>
+			This paragraph contains inline code like <Code>const variable = "value";</Code> which should
+			flow naturally within the text. The code component should behave as an inline element, not
+			breaking the text flow.
+		</Text>
 	),
 };
