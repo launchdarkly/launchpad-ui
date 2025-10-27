@@ -431,6 +431,13 @@ figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=6-14
 	example: () => <Icon name="search" />,
 });
 
+figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=22283-162', {
+	props: {
+		name: 'scale',
+	},
+	example: () => <Icon name="scale" />,
+});
+
 figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=20642-266', {
 	props: {
 		name: 'sandbox',
@@ -534,6 +541,13 @@ figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=6-14
 		name: 'plug',
 	},
 	example: () => <Icon name="plug" />,
+});
+
+figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=22002-157', {
+	props: {
+		name: 'play-outline',
+	},
+	example: () => <Icon name="play-outline" />,
 });
 
 figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=6-141918', {
