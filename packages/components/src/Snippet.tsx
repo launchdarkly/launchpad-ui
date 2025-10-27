@@ -44,7 +44,7 @@ import { CopyToClipboard } from './CopyToClipboard';
 
 import 'prismjs/plugins/line-numbers/prism-line-numbers.css';
 
-import styles from './styles/Snippet.module.css';
+import './styles/Snippet.css';
 
 export const languages = [
 	'bash',
@@ -146,16 +146,16 @@ export function Snippet({
 	return (
 		<>
 			{withHeader && (
-				<div className={styles.header}>
+				<div className="header">
 					{label && <span>{label}</span>}
 					{lang && <span>{lang}</span>}
 				</div>
 			)}
 			<div
-				className={`${styles.snippet} ${className ?? ''} ${withCopyButton ? styles.copyable : ''} ${useDefaultHighlighting ? styles.useDefaultHighlighting : ''}`}
+				className={`snippet ${className ?? ''} ${withCopyButton ? 'copyable' : ''} ${useDefaultHighlighting ? 'useDefaultHighlighting' : ''}`}
 			>
 				<pre
-					className={withLineNumbers ? styles['line-numbers'] : ''}
+					className={withLineNumbers ? 'line-numbers' : ''}
 					data-start={1}
 					data-line-offset={highlightOffset ? highlightOffset.toString() : ''}
 					data-line={highlightRange}
@@ -166,7 +166,7 @@ export function Snippet({
 					{withCopyButton && (
 						<CopyToClipboard text={children as string} showTooltip={false}>
 							<IconButton
-								className={styles.copyButton}
+								className="copyButton"
 								aria-label="Copy code snippet"
 								variant="minimal"
 								icon="copy-code"
