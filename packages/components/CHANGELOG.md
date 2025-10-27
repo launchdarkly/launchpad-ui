@@ -1,5 +1,11 @@
 # @launchpad-ui/components
 
+## 0.17.3
+
+### Patch Changes
+
+- [#1803](https://github.com/launchdarkly/launchpad-ui/pull/1803) [`7293dee`](https://github.com/launchdarkly/launchpad-ui/commit/7293dee6ffb10a9eb572fbc818640cbe33586d70) Thanks [@Zuzze](https://github.com/Zuzze)! - Code component inline style bug fix
+
 ## 0.17.2
 
 ### Patch Changes
