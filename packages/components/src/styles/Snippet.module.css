@@ -83,7 +83,7 @@
 	background: #3c4200;
 }
 
-.snippet pre[class*='language-'].line-numbers {
+.snippet :global(pre[class*='language-'].line-numbers) {
 	line-height: 0.625rem;
 	padding-bottom: var(--lp-spacing-400);
 	padding-top: var(--lp-spacing-400);
@@ -92,36 +92,36 @@
 	z-index: var(--stacking-above-new-context);
 }
 
-.snippet .line-numbers .line-numbers-rows {
+.snippet :global(.line-numbers .line-numbers-rows) {
 	border: none;
 	left: -3em;
 	width: 2em;
 }
 
-.snippet .token.operator,
-.snippet .token.punctuation {
+.snippet :global(.token.operator),
+.snippet :global(.token.punctuation) {
 	color: var(--lp-color-text-ui-primary-base);
 }
 
-.snippet .token.function {
+.snippet :global(.token.function) {
 	color: var(--lp-color-text-code-function);
 	font-weight: var(--lp-font-weight-regular);
 }
 
-.snippet .token.tag {
+.snippet :global(.token.tag) {
 	color: var(--lp-color-text-code-tag);
 }
 
-.token.attr-value,
-.token.string {
+.snippet :global(.token.attr-value),
+.snippet :global(.token.string) {
 	color: var(--lp-color-text-code-string);
 }
 
-.snippet .token.property {
+.snippet :global(.token.property) {
 	color: var(--lp-color-text-code-keyword);
 }
 
-.snippet .token.keyword {
+.snippet :global(.token.keyword) {
 	color: var(--lp-color-text-code-keyword);
 }
 

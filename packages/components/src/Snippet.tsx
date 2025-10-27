@@ -1,3 +1,4 @@
+import { cx } from 'classix';
 import Prism from 'prismjs';
 import { type JSX, useLayoutEffect, useRef } from 'react';
 
@@ -44,7 +45,7 @@ import { CopyToClipboard } from './CopyToClipboard';
 
 import 'prismjs/plugins/line-numbers/prism-line-numbers.css';
 
-import './styles/Snippet.css';
+import styles from './styles/Snippet.module.css';
 
 export const languages = [
 	'bash',
@@ -146,16 +147,19 @@ export function Snippet({
 	return (
 		<>
 			{withHeader && (
-				<div className="header">
+				<div className={styles.header}>
 					{label && <span>{label}</span>}
 					{lang && <span>{lang}</span>}
 				</div>
 			)}
 			<div
-				className={`snippet ${className ?? ''} ${withCopyButton ? 'copyable' : ''} ${useDefaultHighlighting ? 'useDefaultHighlighting' : ''}`}
+				className={cx(styles.snippet, className, {
+					[styles.copyable]: withCopyButton,
+					[styles.useDefaultHighlighting]: useDefaultHighlighting,
+				})}
 			>
 				<pre
-					className={withLineNumbers ? 'line-numbers' : ''}
+					className={withLineNumbers ? styles['line-numbers'] : ''}
 					data-start={1}
 					data-line-offset={highlightOffset ? highlightOffset.toString() : ''}
 					data-line={highlightRange}
@@ -166,7 +170,7 @@ export function Snippet({
 					{withCopyButton && (
 						<CopyToClipboard text={children as string} showTooltip={false}>
 							<IconButton
-								className="copyButton"
+								className={styles.copyButton}
 								aria-label="Copy code snippet"
 								variant="minimal"
 								icon="copy-code"
