@@ -1,5 +1,14 @@
 # @launchpad-ui/components
 
+## 0.17.4
+
+### Patch Changes
+
+- [#1807](https://github.com/launchdarkly/launchpad-ui/pull/1807) [`a3cd616`](https://github.com/launchdarkly/launchpad-ui/commit/a3cd61617031c7a8885fc7c00a206dd30c673fe4) Thanks [@ari-launchdarkly](https://github.com/ari-launchdarkly)! - remove snippet from the components
+
+- Updated dependencies [[`2d8a9f2`](https://github.com/launchdarkly/launchpad-ui/commit/2d8a9f2a258a37ee734e1ab7879abfc412db0980)]:
+  - @launchpad-ui/icons@0.24.8
+
 ## 0.17.3
 
 ### Patch Changes
