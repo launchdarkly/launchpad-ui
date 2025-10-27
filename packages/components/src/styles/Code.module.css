@@ -6,7 +6,6 @@
 	width: fit-content;
 	background-color: var(--lp-color-bg-ui-tertiary);
 	padding: var(--lp-spacing-100) var(--lp-spacing-200);
-	display: flex;
 	border: none;
 	outline: none;
 }
