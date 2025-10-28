@@ -1,3 +1,4 @@
+import type { VariantProps } from 'class-variance-authority';
 import type { Ref } from 'react';
 import type { RadioGroupProps as AriaRadioGroupProps, ContextValue } from 'react-aria-components';
 
@@ -8,9 +9,19 @@ import { RadioGroup as AriaRadioGroup, composeRenderProps } from 'react-aria-com
 import styles from './styles/RadioGroup.module.css';
 import { useLPContextProps } from './utils';
 
-const radioGroupStyles = cva(styles.group);
+const radioGroupStyles = cva(styles.group, {
+	variants: {
+		variant: {
+			default: '',
+			card: styles.card,
+		},
+	},
+	defaultVariants: {
+		variant: 'default',
+	},
+});
 
-interface RadioGroupProps extends AriaRadioGroupProps {
+interface RadioGroupProps extends AriaRadioGroupProps, VariantProps<typeof radioGroupStyles> {
 	ref?: Ref<HTMLDivElement>;
 }
 
@@ -23,12 +34,15 @@ const RadioGroupContext = createContext<ContextValue<RadioGroupProps, HTMLDivEle
  */
 const RadioGroup = ({ ref, ...props }: RadioGroupProps) => {
 	[props, ref] = useLPContextProps(props, ref, RadioGroupContext);
+	const { variant = 'default', ...restProps } = props;
+
 	return (
 		<AriaRadioGroup
-			{...props}
+			{...restProps}
 			ref={ref}
+			data-variant={variant}
 			className={composeRenderProps(props.className, (className, renderProps) =>
-				radioGroupStyles({ ...renderProps, className }),
+				radioGroupStyles({ ...renderProps, variant, className }),
 			)}
 		/>
 	);
