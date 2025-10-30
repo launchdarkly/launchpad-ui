@@ -11,6 +11,7 @@ type CopyToClipboardProps = {
 	text: string;
 	tooltip?: string;
 	showTooltip?: boolean;
+	toastMessage?: string;
 };
 
 export const CopyToClipboard = ({
@@ -19,9 +20,10 @@ export const CopyToClipboard = ({
 	text,
 	tooltip = 'Copy to clipboard',
 	showTooltip = true,
+	toastMessage = 'Copied!',
 }: CopyToClipboardProps) => {
 	const handlePress = async () => {
-		await copyToClipboard(text, 'Copied!');
+		await copyToClipboard(text, toastMessage);
 		if (onCopy) {
 			onCopy();
 		}
