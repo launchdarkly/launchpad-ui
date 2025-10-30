@@ -1,5 +1,11 @@
 # @launchpad-ui/components
 
+## 0.17.5
+
+### Patch Changes
+
+- [#1808](https://github.com/launchdarkly/launchpad-ui/pull/1808) [`164148d`](https://github.com/launchdarkly/launchpad-ui/commit/164148da2ecb603a83b6d2e72eff5b0061a0a4d4) Thanks [@Andrewjeska](https://github.com/Andrewjeska)! - Add `toastMessage` prop to `CopyToClipboard` to allow a customizeable toast message
+
 ## 0.17.4
 
 ### Patch Changes
