@@ -1,7 +1,9 @@
-import { CopyToClipboard, IconButton } from '@launchpad-ui/components';
 import { cx } from 'classix';
 import Prism from 'prismjs';
 import { type JSX, useLayoutEffect, useRef } from 'react';
+
+import { CopyToClipboard } from './CopyToClipboard';
+import { IconButton } from './IconButton';
 
 // Import languages based on what you need
 import 'prismjs/components/prism-apex';
