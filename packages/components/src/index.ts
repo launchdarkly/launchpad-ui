@@ -145,7 +145,6 @@ export {
 	ComboBoxContext,
 	comboBoxStyles,
 } from './ComboBox';
-export { CopyToClipboard } from './CopyToClipboard';
 export {
 	DateField,
 	DateFieldContext,
