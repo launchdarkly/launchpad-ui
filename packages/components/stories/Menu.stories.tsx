@@ -4,14 +4,20 @@ import type { Selection as AriaSelection } from 'react-aria-components';
 
 import { Icon } from '@launchpad-ui/icons';
 import { useState } from 'react';
+import { useFilter } from 'react-aria-components';
 import { expect, fireEvent, userEvent, waitFor, within } from 'storybook/test';
 
+import { Autocomplete as AutocompleteComponent } from '../src/Autocomplete';
 import { Button } from '../src/Button';
+import { Group } from '../src/Group';
 import { Header } from '../src/Header';
+import { IconButton } from '../src/IconButton';
+import { Input } from '../src/Input';
 import { Keyboard } from '../src/Keyboard';
 import { Menu, MenuItem, MenuTrigger, SubmenuTrigger } from '../src/Menu';
 import { Popover } from '../src/Popover';
 import { Pressable } from '../src/Pressable';
+import { SearchField } from '../src/SearchField';
 import { MenuSection } from '../src/Section';
 import { Separator } from '../src/Separator';
 import { Text } from '../src/Text';
@@ -335,4 +341,60 @@ export const CustomTrigger: Story = {
 		);
 	},
 	...open,
+};
+
+export const Autocomplete: Story = {
+	render: (args) => {
+		const { contains } = useFilter({ sensitivity: 'base' });
+
+		return (
+			<MenuTrigger>
+				<Button>Trigger</Button>
+				<Popover>
+					<AutocompleteComponent filter={contains}>
+						<SearchField aria-label="search" autoFocus>
+							<Group>
+								<Icon name="search" size="small" />
+								<Input placeholder="Search" />
+								<IconButton
+									icon="cancel-circle-outline"
+									aria-label="clear"
+									size="small"
+									variant="minimal"
+								/>
+							</Group>
+						</SearchField>
+						<Menu {...args}>
+							<MenuItem>Item one</MenuItem>
+							<MenuItem>Item two</MenuItem>
+							<MenuItem>Item three</MenuItem>
+							<SubmenuTrigger>
+								<MenuItem>Item four</MenuItem>
+								<Popover>
+									<AutocompleteComponent filter={contains}>
+										<SearchField aria-label="search" autoFocus>
+											<Group>
+												<Icon name="search" size="small" />
+												<Input placeholder="Search" />
+												<IconButton
+													icon="cancel-circle-outline"
+													aria-label="clear"
+													size="small"
+													variant="minimal"
+												/>
+											</Group>
+										</SearchField>
+										<Menu {...args}>
+											<MenuItem>Item five</MenuItem>
+											<MenuItem>Item six</MenuItem>
+										</Menu>
+									</AutocompleteComponent>
+								</Popover>
+							</SubmenuTrigger>
+						</Menu>
+					</AutocompleteComponent>
+				</Popover>
+			</MenuTrigger>
+		);
+	},
 };

@@ -3,12 +3,18 @@ import type { ComponentType } from 'react';
 
 import { Icon } from '@launchpad-ui/icons';
 import { vars } from '@launchpad-ui/vars';
+import { useFilter } from 'react-aria-components';
 import { expect, userEvent, within } from 'storybook/test';
 
+import { Autocomplete as AutocompleteComponent } from '../src/Autocomplete';
 import { Button } from '../src/Button';
+import { Group } from '../src/Group';
+import { IconButton } from '../src/IconButton';
+import { Input } from '../src/Input';
 import { Label } from '../src/Label';
 import { ListBox, ListBoxItem } from '../src/ListBox';
 import { Popover } from '../src/Popover';
+import { SearchField } from '../src/SearchField';
 import { Select, SelectValue } from '../src/Select';
 import { Text } from '../src/Text';
 
@@ -156,5 +162,43 @@ export const States: Story = {
 		const body = canvasElement.ownerDocument.body;
 		body.click();
 		await userEvent.tab();
+	},
+};
+
+export const Autocomplete: Story = {
+	render: (args) => {
+		const { contains } = useFilter({ sensitivity: 'base' });
+
+		return (
+			<Select {...args}>
+				<Label>Label</Label>
+				<Button>
+					<SelectValue />
+					<Icon name="chevron-down" size="small" />
+				</Button>
+				<Text slot="description">Description</Text>
+				<Popover>
+					<AutocompleteComponent filter={contains}>
+						<SearchField aria-label="search" autoFocus>
+							<Group>
+								<Icon name="search" size="small" />
+								<Input placeholder="Search" />
+								<IconButton
+									icon="cancel-circle-outline"
+									aria-label="clear"
+									size="small"
+									variant="minimal"
+								/>
+							</Group>
+						</SearchField>
+						<ListBox>
+							<ListBoxItem>Item one</ListBoxItem>
+							<ListBoxItem>Item two</ListBoxItem>
+							<ListBoxItem>Item three</ListBoxItem>
+						</ListBox>
+					</AutocompleteComponent>
+				</Popover>
+			</Select>
+		);
 	},
 };
