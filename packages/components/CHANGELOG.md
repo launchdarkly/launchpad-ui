@@ -1,5 +1,15 @@
 # @launchpad-ui/components
 
+## 0.17.6
+
+### Patch Changes
+
+- [#1816](https://github.com/launchdarkly/launchpad-ui/pull/1816) [`fc8a904`](https://github.com/launchdarkly/launchpad-ui/commit/fc8a90401e7f40d665c2e89f1b1c79ac469ef1ba) Thanks [@apucacao](https://github.com/apucacao)! - align popover padding for filtered collections
+
+- [#1815](https://github.com/launchdarkly/launchpad-ui/pull/1815) [`623fa6f`](https://github.com/launchdarkly/launchpad-ui/commit/623fa6f8f87313a1d98394c70ead16ebb4ce5e49) Thanks [@ari-launchdarkly](https://github.com/ari-launchdarkly)! - remove the copyToClipboard utility method
+
+- [#1813](https://github.com/launchdarkly/launchpad-ui/pull/1813) [`1e97e24`](https://github.com/launchdarkly/launchpad-ui/commit/1e97e24d0a6c8d88a96b7949ec127b7489e00273) Thanks [@ari-launchdarkly](https://github.com/ari-launchdarkly)! - remove the CopyToClipboard component
+
 ## 0.17.5
 
 ### Patch Changes
