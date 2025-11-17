@@ -43,7 +43,7 @@
 		padding: var(--lp-spacing-200);
 	}
 
-	&:has(input[type='search']):is(
+	&:has(input[type='search']):where(
 			[data-trigger='Select'],
 			[data-trigger='MenuTrigger'],
 			[data-trigger='SubmenuTrigger']
