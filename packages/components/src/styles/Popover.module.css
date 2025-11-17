@@ -37,14 +37,16 @@
 	}
 
 	&[data-trigger='DialogTrigger'],
-	&[data-trigger='ComboBoxDialog'] {
+	&[data-trigger='ComboBoxDialog'],
+	&[data-trigger='DatePicker'],
+	&[data-trigger='DateRangePicker'] {
 		padding: var(--lp-spacing-200);
 	}
 
 	&:has(input[type='search']):is(
+			[data-trigger='Select'],
 			[data-trigger='MenuTrigger'],
-			[data-trigger='SubmenuTrigger'],
-			[data-trigger='Select']
+			[data-trigger='SubmenuTrigger']
 		) {
 		padding: var(--lp-spacing-200);
 	}
