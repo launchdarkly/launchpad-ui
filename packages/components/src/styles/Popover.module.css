@@ -51,6 +51,10 @@
 		padding: var(--lp-spacing-200);
 	}
 
+	&[data-trigger='SubmenuTrigger']:has(div[role='application']) {
+		padding: var(--lp-spacing-200);
+	}
+
 	&[data-placement='top'] {
 		--origin: translateY(4px);
 
