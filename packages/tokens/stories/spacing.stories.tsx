@@ -7,7 +7,6 @@ import { ToastRegion, toastQueue } from '../../components/src/Toast';
 import { Tooltip, TooltipTrigger } from '../../components/src/Tooltip';
 // @ts-expect-error ts not detecting d.ts for es file
 import tokens from '../dist/index.es.js';
-// @ts-expect-error import JSON for mapping
 import spacingJson from '../tokens/spacing.json';
 
 export default {
