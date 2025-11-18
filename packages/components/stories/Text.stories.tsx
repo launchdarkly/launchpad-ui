@@ -200,9 +200,7 @@ export const CustomTooltip: Story = {
 			</div>
 
 			<div>
-				<p style={{ marginBottom: '0.5rem', fontSize: '14px', color: '#666' }}>
-					Bottom placement:
-				</p>
+				<p style={{ marginBottom: '0.5rem', fontSize: '14px', color: '#666' }}>Bottom placement:</p>
 				<Text maxLines={1} showTooltipOnOverflow tooltipPlacement="bottom">
 					Hover to see tooltip below this text. This text is long enough to be truncated.
 				</Text>
