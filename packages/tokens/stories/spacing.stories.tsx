@@ -7,6 +7,8 @@ import { ToastRegion, toastQueue } from '../../components/src/Toast';
 import { Tooltip, TooltipTrigger } from '../../components/src/Tooltip';
 // @ts-expect-error ts not detecting d.ts for es file
 import tokens from '../dist/index.es.js';
+// @ts-expect-error import JSON for mapping
+import spacingJson from '../tokens/spacing.json';
 
 export default {
 	title: 'Tokens/Spacing',
@@ -14,13 +16,22 @@ export default {
 
 const spacing: typeof Tokens.spacing = tokens.spacing;
 
+const spacingToSize = Object.fromEntries(
+	Object.entries(spacingJson.spacing)
+		.filter(([k]) => !k.startsWith('$'))
+		.map(([k, v]: [string, any]) => {
+			const m = typeof v.$value === 'string' ? v.$value.match(/\{size\.(\d+)\}/) : null;
+			return [k, m ? m[1] : ''];
+		}),
+);
+
 export const Spacing = {
 	render: () => (
 		<>
 			<div
 				style={{
 					display: 'grid',
-					gridTemplateColumns: 'max-content auto max-content',
+					gridTemplateColumns: 'max-content max-content auto max-content',
 					alignItems: 'center',
 					gap: 'var(--lp-size-24)',
 				}}
@@ -40,6 +51,9 @@ export const Spacing = {
 							</Button>
 							<Tooltip placement="bottom">Copy to clipboard</Tooltip>
 						</TooltipTrigger>
+						<div style={{ font: 'var(--lp-text-code-1-regular)' }}>
+							{spacingToSize[key] ? `--lp-size-${spacingToSize[key]}` : ''}
+						</div>
 						<div>{value}</div>
 						<div
 							style={{
