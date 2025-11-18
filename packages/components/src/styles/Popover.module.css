@@ -40,7 +40,7 @@
 	&[data-trigger='ComboBoxDialog'],
 	&[data-trigger='DatePicker'],
 	&[data-trigger='DateRangePicker'] {
-		padding: var(--lp-spacing-200);
+		padding: var(--lp-spacing-300);
 	}
 
 	&:has(input[type='search']):is(
@@ -48,11 +48,11 @@
 			[data-trigger='MenuTrigger'],
 			[data-trigger='SubmenuTrigger']
 		) {
-		padding: var(--lp-spacing-200);
+		padding: var(--lp-spacing-300);
 	}
 
 	&[data-trigger='SubmenuTrigger']:has(div[role='application']) {
-		padding: var(--lp-spacing-200);
+		padding: var(--lp-spacing-300);
 	}
 
 	&[data-placement='top'] {
