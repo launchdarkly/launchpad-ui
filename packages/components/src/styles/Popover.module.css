@@ -36,7 +36,6 @@
 		stroke-width: 1px;
 	}
 
-	&[data-trigger='DialogTrigger'],
 	&[data-trigger='ComboBoxDialog'],
 	&[data-trigger='DatePicker'],
 	&[data-trigger='DateRangePicker'] {
