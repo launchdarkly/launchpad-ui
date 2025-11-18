@@ -1,5 +1,6 @@
 import type { default as Tokens } from '../dist';
 
+import { vars } from '@launchpad-ui/vars';
 import { Fragment } from 'react';
 
 import { Button } from '../../components/src/Button';
@@ -27,12 +28,17 @@ const spacingToSize = Object.fromEntries(
 export const Spacing = {
 	render: () => (
 		<>
+			<div style={{ marginBottom: 'var(--lp-spacing-500)', font: vars.text.body[1].regular }}>
+				Use <code style={{ font: vars.text.code[1].regular }}>var(--space-*)</code> for margin,
+				padding, and gap. Need a negative offset? Wrap in{' '}
+				<code style={{ font: vars.text.code[1].regular }}>calc()</code>
+			</div>
 			<div
 				style={{
 					display: 'grid',
-					gridTemplateColumns: 'max-content max-content auto max-content',
+					gridTemplateColumns: 'max-content max-content min-content auto',
 					alignItems: 'center',
-					gap: 'var(--lp-size-24)',
+					gap: 'var(--lp-spacing-700)',
 				}}
 			>
 				{Object.entries(spacing).map(([key, value]) => (
@@ -58,7 +64,7 @@ export const Spacing = {
 							style={{
 								backgroundColor: 'var(--lp-color-green-500)',
 								width: value,
-								height: 'var(--lp-size-16)',
+								height: 'var(--lp-spacing-500)',
 							}}
 						/>
 					</Fragment>
