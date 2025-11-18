@@ -1,5 +1,6 @@
 import type { ReactNode, Ref } from 'react';
 import type { TextProps as AriaTextProps, ContextValue } from 'react-aria-components';
+import type { TooltipProps } from './Tooltip';
 
 import { cva, cx } from 'class-variance-authority';
 import { createContext, useCallback, useEffect, useRef, useState } from 'react';
@@ -8,7 +9,6 @@ import { Text as AriaText } from 'react-aria-components';
 
 import { Focusable } from './Focusable';
 import styles from './styles/Text.module.css';
-import type { TooltipProps } from './Tooltip';
 import { Tooltip, TooltipTrigger } from './Tooltip';
 import { useLPContextProps } from './utils';
 

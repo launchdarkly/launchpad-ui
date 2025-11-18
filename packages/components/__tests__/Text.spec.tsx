@@ -48,4 +48,3 @@ describe('Text', () => {
 		expect(screen.getByText('Truncated text')).toBeVisible();
 	});
 });
-
