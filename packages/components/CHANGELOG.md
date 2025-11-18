@@ -1,5 +1,11 @@
 # @launchpad-ui/components
 
+## 0.17.7
+
+### Patch Changes
+
+- [#1817](https://github.com/launchdarkly/launchpad-ui/pull/1817) [`8b925e9`](https://github.com/launchdarkly/launchpad-ui/commit/8b925e92799d7dc5dafea9f2e1ba54d9e73b3e35) Thanks [@apucacao](https://github.com/apucacao)! - bump popover padding back to where it used to be
+
 ## 0.17.6
 
 ### Patch Changes
