@@ -43,11 +43,7 @@
 		padding: var(--lp-size-12) var(--lp-size-16);
 	}
 
-	&:has(input[type='search']):is(
-			[data-trigger='Select'],
-			[data-trigger='MenuTrigger'],
-			[data-trigger='SubmenuTrigger']
-		) {
+	&:has(input[type='search']) {
 		padding: var(--lp-spacing-300);
 	}
 
