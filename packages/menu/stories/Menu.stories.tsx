@@ -11,6 +11,7 @@ export default {
 	component: Menu,
 	subcomponents: { MenuDivider, MenuItem, MenuSearch },
 	title: 'Legacy/Menu',
+	tags: ['deprecated'],
 	description: 'Menus present a list of items a user can choose from.',
 	parameters: {
 		chromatic: { disableSnapshot: true },

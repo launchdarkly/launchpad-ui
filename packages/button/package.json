@@ -1,6 +1,6 @@
 {
 	"name": "@launchpad-ui/button",
-	"version": "0.15.0",
+	"version": "0.15.8",
 	"description": "An element that triggers an action based on user interaction.",
 	"repository": "launchdarkly/launchpad-ui",
 	"license": "Apache-2.0",
@@ -30,12 +30,12 @@
 		"classix": "2.2.0"
 	},
 	"devDependencies": {
-		"react": "19.1.1",
-		"react-dom": "19.1.1"
+		"react": "19.2.0",
+		"react-dom": "19.2.0"
 	},
 	"peerDependencies": {
-		"react": "19.1.1",
-		"react-dom": "19.1.1"
+		"react": "19.2.0",
+		"react-dom": "19.2.0"
 	},
 	"exports": {
 		".": {

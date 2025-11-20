@@ -7,6 +7,7 @@ import { Tooltip, TooltipTrigger } from '../../components/src/Tooltip';
 
 export default {
 	title: 'Tokens/Color',
+	tags: ['!dev'],
 };
 
 const ALIAS = ['bg', 'border', 'fill', 'shadow', 'text', 'data'];

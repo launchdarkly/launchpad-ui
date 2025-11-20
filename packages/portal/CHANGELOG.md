@@ -1,5 +1,17 @@
 # @launchpad-ui/portal
 
+## 0.4.2
+
+### Patch Changes
+
+- [#1792](https://github.com/launchdarkly/launchpad-ui/pull/1792) [`bd49c43`](https://github.com/launchdarkly/launchpad-ui/commit/bd49c431bf39e8a69adc95961977af21d5f36617) Thanks [@vezaynk](https://github.com/vezaynk)! - bumping dependencies: axios, react, react-dom, react-aria
+
+## 0.4.1
+
+### Patch Changes
+
+- [#1767](https://github.com/launchdarkly/launchpad-ui/pull/1767) [`217b7c4`](https://github.com/launchdarkly/launchpad-ui/commit/217b7c4b47e44fd7ad7eb1b0ba8367308da596b3) Thanks [@vezaynk](https://github.com/vezaynk)! - add skipLibCheck for tsconfing.build.json
+
 ## 0.4.0
 
 ### Minor Changes

@@ -4,14 +4,20 @@ import type { Selection as AriaSelection } from 'react-aria-components';
 
 import { Icon } from '@launchpad-ui/icons';
 import { useState } from 'react';
+import { useFilter } from 'react-aria-components';
 import { expect, fireEvent, userEvent, waitFor, within } from 'storybook/test';
 
+import { Autocomplete as AutocompleteComponent } from '../src/Autocomplete';
 import { Button } from '../src/Button';
+import { Group } from '../src/Group';
 import { Header } from '../src/Header';
+import { IconButton } from '../src/IconButton';
+import { Input } from '../src/Input';
 import { Keyboard } from '../src/Keyboard';
 import { Menu, MenuItem, MenuTrigger, SubmenuTrigger } from '../src/Menu';
 import { Popover } from '../src/Popover';
 import { Pressable } from '../src/Pressable';
+import { SearchField } from '../src/SearchField';
 import { MenuSection } from '../src/Section';
 import { Separator } from '../src/Separator';
 import { Text } from '../src/Text';
@@ -28,6 +34,12 @@ const meta: Meta<typeof Menu> = {
 		Separator,
 	} as Record<string, ComponentType<unknown>>,
 	title: 'Components/Collections/Menu',
+	parameters: {
+		figma: {
+			design:
+				'https://www.figma.com/design/98HKKXL2dTle29ikJ3tzk7/%F0%9F%9A%80-LaunchPad?node-id=3583-13908&m=dev',
+		},
+	},
 	decorators: [
 		(Story) => (
 			<div style={{ height: 'var(--lp-size-320)' }}>
@@ -46,7 +58,12 @@ const renderMenu = (args: Story['args']) => (
 		<Button>Trigger</Button>
 		<Popover>
 			<Menu {...args}>
-				<MenuItem>Item one</MenuItem>
+				<MenuItem>
+					<Text slot="label">
+						<Icon name="add" size="small" /> Item one
+					</Text>
+					<Text slot="description">Item one description</Text>
+				</MenuItem>
 				<MenuItem>
 					<Text slot="label">Item two</Text>
 				</MenuItem>
@@ -187,6 +204,39 @@ export const Icons: Story = {
 	...open,
 };
 
+export const IconsAndDescriptions: Story = {
+	render: (args) => {
+		return (
+			<MenuTrigger>
+				<Button>Trigger</Button>
+				<Popover>
+					<Menu {...args}>
+						<MenuItem>
+							<Text slot="label">
+								<Icon name="add" size="small" /> Add
+							</Text>
+							<Text slot="description">Add a new item</Text>
+						</MenuItem>
+						<MenuItem>
+							<Text slot="label">
+								<Icon name="edit" size="small" /> Edit
+							</Text>
+							<Text slot="description">Edit the selected item</Text>
+						</MenuItem>
+						<MenuItem variant="destructive">
+							<Text slot="label">
+								<Icon name="delete" size="small" /> Delete
+							</Text>
+							<Text slot="description">Delete the selected item</Text>
+						</MenuItem>
+					</Menu>
+				</Popover>
+			</MenuTrigger>
+		);
+	},
+	...open,
+};
+
 export const States: Story = {
 	render: (args) => {
 		return (
@@ -291,4 +341,60 @@ export const CustomTrigger: Story = {
 		);
 	},
 	...open,
+};
+
+export const Autocomplete: Story = {
+	render: (args) => {
+		const { contains } = useFilter({ sensitivity: 'base' });
+
+		return (
+			<MenuTrigger>
+				<Button>Trigger</Button>
+				<Popover>
+					<AutocompleteComponent filter={contains}>
+						<SearchField aria-label="search" autoFocus>
+							<Group>
+								<Icon name="search" size="small" />
+								<Input placeholder="Search" />
+								<IconButton
+									icon="cancel-circle-outline"
+									aria-label="clear"
+									size="small"
+									variant="minimal"
+								/>
+							</Group>
+						</SearchField>
+						<Menu {...args}>
+							<MenuItem>Item one</MenuItem>
+							<MenuItem>Item two</MenuItem>
+							<MenuItem>Item three</MenuItem>
+							<SubmenuTrigger>
+								<MenuItem>Item four</MenuItem>
+								<Popover>
+									<AutocompleteComponent filter={contains}>
+										<SearchField aria-label="search" autoFocus>
+											<Group>
+												<Icon name="search" size="small" />
+												<Input placeholder="Search" />
+												<IconButton
+													icon="cancel-circle-outline"
+													aria-label="clear"
+													size="small"
+													variant="minimal"
+												/>
+											</Group>
+										</SearchField>
+										<Menu {...args}>
+											<MenuItem>Item five</MenuItem>
+											<MenuItem>Item six</MenuItem>
+										</Menu>
+									</AutocompleteComponent>
+								</Popover>
+							</SubmenuTrigger>
+						</Menu>
+					</AutocompleteComponent>
+				</Popover>
+			</MenuTrigger>
+		);
+	},
 };

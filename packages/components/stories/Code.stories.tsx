@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 
 import { Code } from '../src/Code';
+import { Text } from '../src/Text';
 
 const meta: Meta<typeof Code> = {
 	title: 'Components/Content/Code',
@@ -14,6 +15,10 @@ A component for displaying inline code snippets.
 For body text, use [Text](/docs/components-content-text--docs ). For headings, use [Heading](/docs/components-content-heading--docs). For labels, use [Label](/docs/components-content-label--docs).
         `,
 			},
+		},
+		design: {
+			type: 'figma',
+			url: 'https://www.figma.com/design/98HKKXL2dTle29ikJ3tzk7/%F0%9F%9A%80-LaunchPad?node-id=1-29955&m=dev',
 		},
 	},
 	argTypes: {
@@ -55,5 +60,15 @@ export const Size: Story = {
 			<Code size="small">const size = "small";</Code>
 			<Code size="medium">const size = "medium";</Code>
 		</div>
+	),
+};
+
+export const Inline: Story = {
+	render: () => (
+		<Text>
+			This paragraph contains inline code like <Code>const variable = "value";</Code> which should
+			flow naturally within the text. The code component should behave as an inline element, not
+			breaking the text flow.
+		</Text>
 	),
 };

@@ -53,13 +53,6 @@ figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=7676
 	example: () => <Icon name="upload" />,
 });
 
-figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=7081-18', {
-	props: {
-		name: 'tokens',
-	},
-	example: () => <Icon name="tokens" />,
-});
-
 figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=6-142078', {
 	props: {
 		name: 'triangle-square-circle',
@@ -72,6 +65,13 @@ figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=6-14
 		name: 'tools',
 	},
 	example: () => <Icon name="tools" />,
+});
+
+figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=7081-18', {
+	props: {
+		name: 'tokens',
+	},
+	example: () => <Icon name="tokens" />,
 });
 
 figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=6-142076', {
@@ -109,18 +109,18 @@ figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=6-14
 	example: () => <Icon name="timeline-text" />,
 });
 
-figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=20642-291', {
-	props: {
-		name: 'thumb-up',
-	},
-	example: () => <Icon name="thumb-up" />,
-});
-
 figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=7081-6', {
 	props: {
 		name: 'thumb-up-outline',
 	},
 	example: () => <Icon name="thumb-up-outline" />,
+});
+
+figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=20642-291', {
+	props: {
+		name: 'thumb-up',
+	},
+	example: () => <Icon name="thumb-up" />,
 });
 
 figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=7081-12', {
@@ -431,6 +431,13 @@ figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=6-14
 	example: () => <Icon name="search" />,
 });
 
+figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=22283-162', {
+	props: {
+		name: 'scale',
+	},
+	example: () => <Icon name="scale" />,
+});
+
 figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=20642-266', {
 	props: {
 		name: 'sandbox',
@@ -536,6 +543,13 @@ figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=6-14
 	example: () => <Icon name="plug" />,
 });
 
+figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=22002-157', {
+	props: {
+		name: 'play-outline',
+	},
+	example: () => <Icon name="play-outline" />,
+});
+
 figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=6-141918', {
 	props: {
 		name: 'play-circle-outline',
@@ -555,6 +569,13 @@ figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=6-14
 		name: 'play',
 	},
 	example: () => <Icon name="play" />,
+});
+
+figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=21105-218', {
+	props: {
+		name: 'photo',
+	},
+	example: () => <Icon name="photo" />,
 });
 
 figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=6-141915', {
@@ -620,18 +641,18 @@ figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=6-14
 	example: () => <Icon name="person-add" />,
 });
 
-figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=6817-42', {
-	props: {
-		name: 'percentage',
-	},
-	example: () => <Icon name="percentage" />,
-});
-
 figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=6-141906', {
 	props: {
 		name: 'person',
 	},
 	example: () => <Icon name="person" />,
+});
+
+figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=6817-42', {
+	props: {
+		name: 'percentage',
+	},
+	example: () => <Icon name="percentage" />,
 });
 
 figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=6-141905', {
@@ -802,18 +823,18 @@ figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=2432
 	example: () => <Icon name="menu" />,
 });
 
-figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=7084-12', {
-	props: {
-		name: 'markdown-off',
-	},
-	example: () => <Icon name="markdown-off" />,
-});
-
 figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=7084-6', {
 	props: {
 		name: 'markdown-on',
 	},
 	example: () => <Icon name="markdown-on" />,
+});
+
+figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=7084-12', {
+	props: {
+		name: 'markdown-off',
+	},
+	example: () => <Icon name="markdown-off" />,
 });
 
 figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=6-141813', {
@@ -865,6 +886,13 @@ figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=6-14
 	example: () => <Icon name="lock" />,
 });
 
+figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=21147-281', {
+	props: {
+		name: 'list-numbers',
+	},
+	example: () => <Icon name="list-numbers" />,
+});
+
 figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=6-141807', {
 	props: {
 		name: 'list',
@@ -900,6 +928,13 @@ figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=1710
 	example: () => <Icon name="layers-difference" />,
 });
 
+figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=20864-41460', {
+	props: {
+		name: 'keyboard',
+	},
+	example: () => <Icon name="keyboard" />,
+});
+
 figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=6-141803', {
 	props: {
 		name: 'key',
@@ -912,6 +947,13 @@ figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=2064
 		name: 'json',
 	},
 	example: () => <Icon name="json" />,
+});
+
+figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=21147-283', {
+	props: {
+		name: 'italic',
+	},
+	example: () => <Icon name="italic" />,
 });
 
 figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=6-141764', {
@@ -1180,18 +1222,18 @@ figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=6-14
 	example: () => <Icon name="flask" />,
 });
 
-figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=6-141682', {
-	props: {
-		name: 'flag-outline',
-	},
-	example: () => <Icon name="flag-outline" />,
-});
-
 figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=4166-38', {
 	props: {
 		name: 'flag-heart',
 	},
 	example: () => <Icon name="flag-heart" />,
+});
+
+figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=6-141682', {
+	props: {
+		name: 'flag-outline',
+	},
+	example: () => <Icon name="flag-outline" />,
 });
 
 figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=6-141681', {
@@ -1290,6 +1332,13 @@ figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=6-14
 		name: 'document-question',
 	},
 	example: () => <Icon name="document-question" />,
+});
+
+figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=21720-158', {
+	props: {
+		name: 'diamonds',
+	},
+	example: () => <Icon name="diamonds" />,
 });
 
 figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=6-141635', {
@@ -1453,6 +1502,13 @@ figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=6-14
 	example: () => <Icon name="code-circle" />,
 });
 
+figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=21147-279', {
+	props: {
+		name: 'code',
+	},
+	example: () => <Icon name="code" />,
+});
+
 figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=6-141587', {
 	props: {
 		name: 'cloud-search',
@@ -1474,18 +1530,18 @@ figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=6-14
 	example: () => <Icon name="cloud" />,
 });
 
-figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=6-141584', {
-	props: {
-		name: 'clock-history',
-	},
-	example: () => <Icon name="clock-history" />,
-});
-
 figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=5698-12', {
 	props: {
 		name: 'clock-x',
 	},
 	example: () => <Icon name="clock-x" />,
+});
+
+figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=6-141584', {
+	props: {
+		name: 'clock-history',
+	},
+	example: () => <Icon name="clock-history" />,
 });
 
 figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=6-141544', {
@@ -1535,6 +1591,13 @@ figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=6-14
 		name: 'circle',
 	},
 	example: () => <Icon name="circle" />,
+});
+
+figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=20672-216', {
+	props: {
+		name: 'chip-ai',
+	},
+	example: () => <Icon name="chip-ai" />,
 });
 
 figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=6-141537', {
@@ -1619,13 +1682,6 @@ figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=6-14
 		name: 'check',
 	},
 	example: () => <Icon name="check" />,
-});
-
-figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=20672-216', {
-	props: {
-		name: 'chip-ai',
-	},
-	example: () => <Icon name="chip-ai" />,
 });
 
 figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=6-141525', {
@@ -1936,6 +1992,13 @@ figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=6-14
 	example: () => <Icon name="bolt" />,
 });
 
+figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=21147-285', {
+	props: {
+		name: 'bold',
+	},
+	example: () => <Icon name="bold" />,
+});
+
 figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=6-141406', {
 	props: {
 		name: 'binary',
@@ -1971,13 +2034,6 @@ figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=6-14
 	example: () => <Icon name="arrow-up-thin" />,
 });
 
-figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=20642-229', {
-	props: {
-		name: 'arrow-up-right',
-	},
-	example: () => <Icon name="arrow-up-right" />,
-});
-
 figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=6-141376', {
 	props: {
 		name: 'arrow-up-right-circle-outline',
@@ -1990,6 +2046,13 @@ figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=6-14
 		name: 'arrow-up-right-circle',
 	},
 	example: () => <Icon name="arrow-up-right-circle" />,
+});
+
+figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=20642-229', {
+	props: {
+		name: 'arrow-up-right',
+	},
+	example: () => <Icon name="arrow-up-right" />,
 });
 
 figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=6-141374', {
@@ -2006,18 +2069,18 @@ figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=6-14
 	example: () => <Icon name="arrow-right-thin" />,
 });
 
-figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=6-141372', {
-	props: {
-		name: 'arrow-left-thin',
-	},
-	example: () => <Icon name="arrow-left-thin" />,
-});
-
 figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=15005-144', {
 	props: {
 		name: 'arrow-merge',
 	},
 	example: () => <Icon name="arrow-merge" />,
+});
+
+figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=6-141372', {
+	props: {
+		name: 'arrow-left-thin',
+	},
+	example: () => <Icon name="arrow-left-thin" />,
 });
 
 figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=6-141371', {

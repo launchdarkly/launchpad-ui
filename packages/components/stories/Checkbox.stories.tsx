@@ -8,6 +8,12 @@ import { Checkbox } from '../src/Checkbox';
 const meta: Meta<typeof Checkbox> = {
 	component: Checkbox,
 	title: 'Components/Forms/Checkbox',
+	parameters: {
+		figma: {
+			design:
+				'https://www.figma.com/design/98HKKXL2dTle29ikJ3tzk7/%F0%9F%9A%80-LaunchPad?node-id=1-32733&p=f&m=dev',
+		},
+	},
 	decorators: [
 		(Story) => (
 			<div style={{ width: vars.size[240] }}>

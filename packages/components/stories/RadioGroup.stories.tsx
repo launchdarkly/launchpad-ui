@@ -15,6 +15,12 @@ const meta: Meta<typeof RadioGroup> = {
 	component: RadioGroup,
 	subcomponents: { Radio } as Record<string, ComponentType<unknown>>,
 	title: 'Components/Forms/RadioGroup',
+	parameters: {
+		figma: {
+			design:
+				'https://www.figma.com/design/98HKKXL2dTle29ikJ3tzk7/%F0%9F%9A%80-LaunchPad?node-id=1-33616&m=dev',
+		},
+	},
 };
 
 export default meta;

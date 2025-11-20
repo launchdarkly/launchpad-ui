@@ -1,5 +1,152 @@
 # @launchpad-ui/components
 
+## 0.17.7
+
+### Patch Changes
+
+- [#1817](https://github.com/launchdarkly/launchpad-ui/pull/1817) [`8b925e9`](https://github.com/launchdarkly/launchpad-ui/commit/8b925e92799d7dc5dafea9f2e1ba54d9e73b3e35) Thanks [@apucacao](https://github.com/apucacao)! - bump popover padding back to where it used to be
+
+## 0.17.6
+
+### Patch Changes
+
+- [#1816](https://github.com/launchdarkly/launchpad-ui/pull/1816) [`fc8a904`](https://github.com/launchdarkly/launchpad-ui/commit/fc8a90401e7f40d665c2e89f1b1c79ac469ef1ba) Thanks [@apucacao](https://github.com/apucacao)! - align popover padding for filtered collections
+
+- [#1815](https://github.com/launchdarkly/launchpad-ui/pull/1815) [`623fa6f`](https://github.com/launchdarkly/launchpad-ui/commit/623fa6f8f87313a1d98394c70ead16ebb4ce5e49) Thanks [@ari-launchdarkly](https://github.com/ari-launchdarkly)! - remove the copyToClipboard utility method
+
+- [#1813](https://github.com/launchdarkly/launchpad-ui/pull/1813) [`1e97e24`](https://github.com/launchdarkly/launchpad-ui/commit/1e97e24d0a6c8d88a96b7949ec127b7489e00273) Thanks [@ari-launchdarkly](https://github.com/ari-launchdarkly)! - remove the CopyToClipboard component
+
+## 0.17.5
+
+### Patch Changes
+
+- [#1808](https://github.com/launchdarkly/launchpad-ui/pull/1808) [`164148d`](https://github.com/launchdarkly/launchpad-ui/commit/164148da2ecb603a83b6d2e72eff5b0061a0a4d4) Thanks [@Andrewjeska](https://github.com/Andrewjeska)! - Add `toastMessage` prop to `CopyToClipboard` to allow a customizeable toast message
+
+## 0.17.4
+
+### Patch Changes
+
+- [#1807](https://github.com/launchdarkly/launchpad-ui/pull/1807) [`a3cd616`](https://github.com/launchdarkly/launchpad-ui/commit/a3cd61617031c7a8885fc7c00a206dd30c673fe4) Thanks [@ari-launchdarkly](https://github.com/ari-launchdarkly)! - remove snippet from the components
+
+- Updated dependencies [[`2d8a9f2`](https://github.com/launchdarkly/launchpad-ui/commit/2d8a9f2a258a37ee734e1ab7879abfc412db0980)]:
+  - @launchpad-ui/icons@0.24.8
+
+## 0.17.3
+
+### Patch Changes
+
+- [#1803](https://github.com/launchdarkly/launchpad-ui/pull/1803) [`7293dee`](https://github.com/launchdarkly/launchpad-ui/commit/7293dee6ffb10a9eb572fbc818640cbe33586d70) Thanks [@Zuzze](https://github.com/Zuzze)! - Code component inline style bug fix
+
+## 0.17.2
+
+### Patch Changes
+
+- [#1801](https://github.com/launchdarkly/launchpad-ui/pull/1801) [`10bfd72`](https://github.com/launchdarkly/launchpad-ui/commit/10bfd72e39e5f968000fcf15af43a8e165483319) Thanks [@ari-launchdarkly](https://github.com/ari-launchdarkly)! - export SnippetLang type
+
+## 0.17.1
+
+### Patch Changes
+
+- [#1798](https://github.com/launchdarkly/launchpad-ui/pull/1798) [`8a79fcc`](https://github.com/launchdarkly/launchpad-ui/commit/8a79fccc386997ede86fd25e4566cf8da44645e8) Thanks [@ari-launchdarkly](https://github.com/ari-launchdarkly)! - export the Snippet and CopyToClipboard components
+
+## 0.17.0
+
+### Minor Changes
+
+- [#1795](https://github.com/launchdarkly/launchpad-ui/pull/1795) [`9ec37fc`](https://github.com/launchdarkly/launchpad-ui/commit/9ec37fcf403df0cf6e09e7b61ac667212e5c1ee3) Thanks [@ari-launchdarkly](https://github.com/ari-launchdarkly)! - added the CopyToClipboard and Snippet components
+
+## 0.16.13
+
+### Patch Changes
+
+- [#1793](https://github.com/launchdarkly/launchpad-ui/pull/1793) [`cf6976c`](https://github.com/launchdarkly/launchpad-ui/commit/cf6976c0a956219568e0f7a9ed3bc03814b631bf) Thanks [@apucacao](https://github.com/apucacao)! - fix date picker layout in submenus
+
+## 0.16.12
+
+### Patch Changes
+
+- [#1792](https://github.com/launchdarkly/launchpad-ui/pull/1792) [`bd49c43`](https://github.com/launchdarkly/launchpad-ui/commit/bd49c431bf39e8a69adc95961977af21d5f36617) Thanks [@vezaynk](https://github.com/vezaynk)! - bumping dependencies: axios, react, react-dom, react-aria
+
+- Updated dependencies [[`674d160`](https://github.com/launchdarkly/launchpad-ui/commit/674d160366c660794e66fa94b3af421118570ef7), [`bd49c43`](https://github.com/launchdarkly/launchpad-ui/commit/bd49c431bf39e8a69adc95961977af21d5f36617)]:
+  - @launchpad-ui/icons@0.24.7
+  - @launchpad-ui/tokens@0.15.1
+
+## 0.16.11
+
+### Patch Changes
+
+- Updated dependencies [[`936980f`](https://github.com/launchdarkly/launchpad-ui/commit/936980f5c0e9eef54c35b621dc138813168baa73)]:
+  - @launchpad-ui/icons@0.24.6
+
+## 0.16.10
+
+### Patch Changes
+
+- [#1735](https://github.com/launchdarkly/launchpad-ui/pull/1735) [`f83142a`](https://github.com/launchdarkly/launchpad-ui/commit/f83142ae74d1cc82a74f13a4c373d49e5a5998e5) Thanks [@Zuzze](https://github.com/Zuzze)! - Figma code connect files, design links and component overview added
+
+- Updated dependencies [[`c689b72`](https://github.com/launchdarkly/launchpad-ui/commit/c689b72725749d3a40b68e389e62a38b4cbf7b63)]:
+  - @launchpad-ui/icons@0.24.5
+
+## 0.16.9
+
+### Patch Changes
+
+- [#1781](https://github.com/launchdarkly/launchpad-ui/pull/1781) [`46dc020`](https://github.com/launchdarkly/launchpad-ui/commit/46dc020c68c9ce8228431e9c0691e49c5402fe00) Thanks [@vezaynk](https://github.com/vezaynk)! - fix: expose router types
+
+## 0.16.8
+
+### Patch Changes
+
+- [#1779](https://github.com/launchdarkly/launchpad-ui/pull/1779) [`7dec6fa`](https://github.com/launchdarkly/launchpad-ui/commit/7dec6fa2e5309855bb93714f69d67871eeb62204) Thanks [@ld-ahartmann](https://github.com/ld-ahartmann)! - bumped react aria components, react aria, @types/react
+
+## 0.16.7
+
+### Patch Changes
+
+- Updated dependencies [[`1cc0b74`](https://github.com/launchdarkly/launchpad-ui/commit/1cc0b74e97c403856ff05700e3e027bdc479feea)]:
+  - @launchpad-ui/icons@0.24.4
+
+## 0.16.6
+
+### Patch Changes
+
+- [#1771](https://github.com/launchdarkly/launchpad-ui/pull/1771) [`bc79743`](https://github.com/launchdarkly/launchpad-ui/commit/bc797439d8ad479c7fba276baca6fc2c94ca3034) Thanks [@vezaynk](https://github.com/vezaynk)! - bump react-stately
+
+## 0.16.5
+
+### Patch Changes
+
+- [#1769](https://github.com/launchdarkly/launchpad-ui/pull/1769) [`d1a8152`](https://github.com/launchdarkly/launchpad-ui/commit/d1a815245a8bcfc0201cf3605daf5701301e9e7b) Thanks [@vezaynk](https://github.com/vezaynk)! - bump react-aria, react-aria-components, copy to devDependencies
+
+## 0.16.4
+
+### Patch Changes
+
+- Updated dependencies [[`217b7c4`](https://github.com/launchdarkly/launchpad-ui/commit/217b7c4b47e44fd7ad7eb1b0ba8367308da596b3)]:
+  - @launchpad-ui/icons@0.24.3
+
+## 0.16.3
+
+### Patch Changes
+
+- [#1765](https://github.com/launchdarkly/launchpad-ui/pull/1765) [`313c968`](https://github.com/launchdarkly/launchpad-ui/commit/313c968a831f9eb5ce02405ffd40b5f5e7cc024d) Thanks [@apucacao](https://github.com/apucacao)! - Fix collection item layout for descriptions when selection is active
+
+- Updated dependencies [[`54ef093`](https://github.com/launchdarkly/launchpad-ui/commit/54ef093501d87a2822121be5975ddae1197fc1c6)]:
+  - @launchpad-ui/icons@0.24.2
+
+## 0.16.2
+
+### Patch Changes
+
+- [#1758](https://github.com/launchdarkly/launchpad-ui/pull/1758) [`bf40864`](https://github.com/launchdarkly/launchpad-ui/commit/bf40864bd7abccf86fc506a0baf1689e055ee6cd) Thanks [@vezaynk](https://github.com/vezaynk)! - react-aria-component type override should be picked up automatically
+
+- [#1762](https://github.com/launchdarkly/launchpad-ui/pull/1762) [`4434d41`](https://github.com/launchdarkly/launchpad-ui/commit/4434d418a67d6429dfbb36913f7fd46a60509352) Thanks [@apucacao](https://github.com/apucacao)! - tweak layout of collection items with icons and descriptions
+
+- [#1759](https://github.com/launchdarkly/launchpad-ui/pull/1759) [`5d666ae`](https://github.com/launchdarkly/launchpad-ui/commit/5d666aeabaec4cd7b003164005ed145919dba9ae) Thanks [@pheggeseth](https://github.com/pheggeseth)! - Remove Tag textValue from Tag removal IconButton aria-label, as it results in the Tag textValue getting included twice in the accessible name of the removal button, such as "Remove tag-name tag-name" instead of "Remove tag-name"
+
+- Updated dependencies [[`88d2b81`](https://github.com/launchdarkly/launchpad-ui/commit/88d2b81720738dca52b910eea8151317d1a82132), [`34660b0`](https://github.com/launchdarkly/launchpad-ui/commit/34660b0dbfc499e8c5c7e1affcf4c9ff4dd4f106)]:
+  - @launchpad-ui/icons@0.24.1
+
 ## 0.16.1
 
 ### Patch Changes

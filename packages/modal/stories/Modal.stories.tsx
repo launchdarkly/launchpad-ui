@@ -13,6 +13,7 @@ import { AbsoluteModalFooter, Modal, ModalBody, ModalFooter, ModalHeader } from 
 export default {
 	component: Modal,
 	title: 'Legacy/Modal',
+	tags: ['deprecated'],
 	description: 'Modals presents users information and actions over a page.',
 	parameters: {
 		controls: { sort: 'requiredFirst' },

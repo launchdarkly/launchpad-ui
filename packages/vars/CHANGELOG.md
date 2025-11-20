@@ -1,5 +1,18 @@
 # @launchpad-ui/vars
 
+## 0.5.2
+
+### Patch Changes
+
+- Updated dependencies [[`bd49c43`](https://github.com/launchdarkly/launchpad-ui/commit/bd49c431bf39e8a69adc95961977af21d5f36617)]:
+  - @launchpad-ui/tokens@0.15.1
+
+## 0.5.1
+
+### Patch Changes
+
+- [#1767](https://github.com/launchdarkly/launchpad-ui/pull/1767) [`217b7c4`](https://github.com/launchdarkly/launchpad-ui/commit/217b7c4b47e44fd7ad7eb1b0ba8367308da596b3) Thanks [@vezaynk](https://github.com/vezaynk)! - add skipLibCheck for tsconfing.build.json
+
 ## 0.5.0
 
 ### Minor Changes

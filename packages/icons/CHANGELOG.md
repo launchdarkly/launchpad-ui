@@ -1,5 +1,70 @@
 # @launchpad-ui/icons
 
+## 0.24.8
+
+### Patch Changes
+
+- [#1800](https://github.com/launchdarkly/launchpad-ui/pull/1800) [`2d8a9f2`](https://github.com/launchdarkly/launchpad-ui/commit/2d8a9f2a258a37ee734e1ab7879abfc412db0980) Thanks [@pd-sa-github-launchpad-ui](https://github.com/pd-sa-github-launchpad-ui)! - feat(icons): sync and connect icons with figma library
+
+  New icons: play-outline, scale
+
+## 0.24.7
+
+### Patch Changes
+
+- [#1790](https://github.com/launchdarkly/launchpad-ui/pull/1790) [`674d160`](https://github.com/launchdarkly/launchpad-ui/commit/674d160366c660794e66fa94b3af421118570ef7) Thanks [@pd-sa-github-launchpad-ui](https://github.com/pd-sa-github-launchpad-ui)! - feat(icons): sync and connect icons with figma library
+
+  New icons: diamonds
+
+- [#1792](https://github.com/launchdarkly/launchpad-ui/pull/1792) [`bd49c43`](https://github.com/launchdarkly/launchpad-ui/commit/bd49c431bf39e8a69adc95961977af21d5f36617) Thanks [@vezaynk](https://github.com/vezaynk)! - bumping dependencies: axios, react, react-dom, react-aria
+
+- Updated dependencies [[`bd49c43`](https://github.com/launchdarkly/launchpad-ui/commit/bd49c431bf39e8a69adc95961977af21d5f36617)]:
+  - @launchpad-ui/tokens@0.15.1
+
+## 0.24.6
+
+### Patch Changes
+
+- [#1788](https://github.com/launchdarkly/launchpad-ui/pull/1788) [`936980f`](https://github.com/launchdarkly/launchpad-ui/commit/936980f5c0e9eef54c35b621dc138813168baa73) Thanks [@apucacao](https://github.com/apucacao)! - Export icon names
+
+## 0.24.5
+
+### Patch Changes
+
+- [#1783](https://github.com/launchdarkly/launchpad-ui/pull/1783) [`c689b72`](https://github.com/launchdarkly/launchpad-ui/commit/c689b72725749d3a40b68e389e62a38b4cbf7b63) Thanks [@pd-sa-github-launchpad-ui](https://github.com/pd-sa-github-launchpad-ui)! - feat(icons): sync and connect icons with figma library
+
+  New icons: bold, code, italic, list-numbers
+
+## 0.24.4
+
+### Patch Changes
+
+- [#1773](https://github.com/launchdarkly/launchpad-ui/pull/1773) [`1cc0b74`](https://github.com/launchdarkly/launchpad-ui/commit/1cc0b74e97c403856ff05700e3e027bdc479feea) Thanks [@pd-sa-github-launchpad-ui](https://github.com/pd-sa-github-launchpad-ui)! - feat(icons): sync and connect icons with figma library
+
+  New icons: photo
+
+## 0.24.3
+
+### Patch Changes
+
+- [#1767](https://github.com/launchdarkly/launchpad-ui/pull/1767) [`217b7c4`](https://github.com/launchdarkly/launchpad-ui/commit/217b7c4b47e44fd7ad7eb1b0ba8367308da596b3) Thanks [@vezaynk](https://github.com/vezaynk)! - add skipLibCheck for tsconfing.build.json
+
+## 0.24.2
+
+### Patch Changes
+
+- [#1761](https://github.com/launchdarkly/launchpad-ui/pull/1761) [`54ef093`](https://github.com/launchdarkly/launchpad-ui/commit/54ef093501d87a2822121be5975ddae1197fc1c6) Thanks [@github-actions](https://github.com/apps/github-actions)! - feat(icons): sync and connect icons with figma library
+
+  New icons: keyboard
+
+## 0.24.1
+
+### Patch Changes
+
+- [#1747](https://github.com/launchdarkly/launchpad-ui/pull/1747) [`88d2b81`](https://github.com/launchdarkly/launchpad-ui/commit/88d2b81720738dca52b910eea8151317d1a82132) Thanks [@matthewferry](https://github.com/matthewferry)! - feat: add script to sync icon package from Figma file and initial sync of icons
+
+- [#1756](https://github.com/launchdarkly/launchpad-ui/pull/1756) [`34660b0`](https://github.com/launchdarkly/launchpad-ui/commit/34660b0dbfc499e8c5c7e1affcf4c9ff4dd4f106) Thanks [@matthewferry](https://github.com/matthewferry)! - fix: update sync script to reference the correct file
+
 ## 0.24.0
 
 ### Minor Changes

@@ -24,7 +24,7 @@ jobs:
             /production/common/launchpad-ui/gh-pat-token = CUSTOM_GITHUB_TOKEN,
             /production/common/releasing/npm/token = NODE_AUTH_TOKEN
 
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         with:
           # This makes Actions fetch all Git history so that Changesets can generate changelogs with the correct commits
           fetch-depth: 0
@@ -36,7 +36,7 @@ jobs:
         uses: nrwl/nx-set-shas@v4
 
       - name: Setup Node
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v5
         with:
           node-version: 22
           cache: pnpm
