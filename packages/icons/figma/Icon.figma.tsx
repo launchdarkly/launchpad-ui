@@ -165,6 +165,13 @@ figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=7081
 	example: () => <Icon name="temperature" />,
 });
 
+figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=23238-111', {
+	props: {
+		name: 'telescope',
+	},
+	example: () => <Icon name="telescope" />,
+});
+
 figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=6-142066', {
 	props: {
 		name: 'tag',

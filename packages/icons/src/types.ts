@@ -297,6 +297,7 @@ const icons = [
 	'swap-vertical',
 	'sync',
 	'tag',
+	'telescope',
 	'temperature',
 	'terminal',
 	'text-box-search',
