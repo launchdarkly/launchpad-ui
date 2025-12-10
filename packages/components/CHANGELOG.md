@@ -1,5 +1,13 @@
 # @launchpad-ui/components
 
+## 0.17.8
+
+### Patch Changes
+
+- [#1825](https://github.com/launchdarkly/launchpad-ui/pull/1825) [`05c9661`](https://github.com/launchdarkly/launchpad-ui/commit/05c96611b5cb92b159365d959a840f50c4976465) Thanks [@zmdavis](https://github.com/zmdavis)! - menu descriptions should not wrap mid-word
+
+- [#1826](https://github.com/launchdarkly/launchpad-ui/pull/1826) [`07752a3`](https://github.com/launchdarkly/launchpad-ui/commit/07752a387846a7b7200e3811bcd1325d47822dcd) Thanks [@zmdavis](https://github.com/zmdavis)! - remove font-styling from Link
+
 ## 0.17.7
 
 ### Patch Changes
