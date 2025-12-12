@@ -57,12 +57,25 @@ jobs:
         if: steps.changes.outputs.changed == 'true'
         run: npx changeset add --empty
 
+      # NEW STEP: wrap the CHANGESET_SUMMARY to 100 chars per line
+      - name: Wrap changeset summary
+        if: steps.changes.outputs.changed == 'true'
+        run: |
+          if [ -n "${{ env.CHANGESET_SUMMARY }}" ]; then
+            wrapped=$(printf '%s\n' "${{ env.CHANGESET_SUMMARY }}" | fold -s -w 100)
+            {
+              echo 'WRAPPED_CHANGESET_SUMMARY<<EOF'
+              echo "$wrapped"
+              echo 'EOF'
+            } >> "$GITHUB_ENV"
+          fi
+
       - name: Write to created changeset file
         if: steps.changes.outputs.changed == 'true'
         run: |
           CHANGESET_FILE=$(ls -t .changeset/*.md | head -n1)
           CHANGE_TYPE="---\n\"@launchpad-ui/icons\": patch\n---"
-          CHANGE_SUMMARY="feat(icons): sync and connect icons with figma library\n${{ env.CHANGESET_SUMMARY }}"
+          CHANGE_SUMMARY="feat(icons): sync and connect icons with figma library\n${{ env.WRAPPED_CHANGESET_SUMMARY }}"
           echo -e "$CHANGE_TYPE\n\n$CHANGE_SUMMARY" > $CHANGESET_FILE
 
       - name: Create Pull Request
@@ -74,14 +87,14 @@ jobs:
           commit-message: |
             feat(icons): sync and connect icons with figma library
 
-            ${{ env.CHANGESET_SUMMARY }}
+            ${{ env.WRAPPED_CHANGESET_SUMMARY }}
           title: "feat(icons): sync and connect icons with figma library"
           token: ${{ env.CUSTOM_GITHUB_TOKEN }}
           draft: true
           body: |
             ## Summary
             This PR is an automated icon sync with LaunchPad Figma library. If you resync while this PR is open, the updated changes will be added to this same PR.
-            ${{ env.CHANGESET_SUMMARY }}
+            ${{ env.WRAPPED_CHANGESET_SUMMARY }}
           labels: |
             icons
             ci
