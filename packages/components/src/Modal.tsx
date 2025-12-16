@@ -94,6 +94,19 @@ const ModalOverlay = ({ isDismissable = true, ref, ...props }: ModalOverlayProps
 	return (
 		<AriaModalOverlay
 			isDismissable={isDismissable}
+			shouldCloseOnInteractOutside={(element) => {
+				// Don't close when the element being checked is HTML or BODY.
+				// This indicates a portal interaction (e.g., spawning a toast from a button).
+				//
+				// Why this is safe:
+				// - When users click the modal backdrop, the element is the overlay <div>, NOT HTML/BODY
+				// - HTML/BODY only appear here during React portal rendering edge cases
+				// - This prevents the modal from incorrectly closing when triggering toasts from modal buttons
+				// - Legitimate outside clicks (backdrop, other UI) still close the modal as expected
+				const isRootElement = element.tagName === 'HTML' || element.tagName === 'BODY';
+
+				return !isRootElement;
+			}}
 			{...props}
 			ref={ref}
 			className={composeRenderProps(props.className, (className, renderProps) =>
