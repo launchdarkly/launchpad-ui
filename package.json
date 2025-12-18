@@ -68,7 +68,7 @@
 		"react-dom": "19.2.0",
 		"react-router": "7.5.2",
 		"rollup-plugin-pure": "^0.4.0",
-		"storybook": "^9.0.9",
+		"storybook": "^9.1.17",
 		"storybook-addon-pseudo-states": "^9.0.9",
 		"syncpack": "14.0.0-alpha.19",
 		"tsx": "^4.20.3",
