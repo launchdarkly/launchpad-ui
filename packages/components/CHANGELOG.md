@@ -1,5 +1,11 @@
 # @launchpad-ui/components
 
+## 0.17.9
+
+### Patch Changes
+
+- [#1829](https://github.com/launchdarkly/launchpad-ui/pull/1829) [`669bd06`](https://github.com/launchdarkly/launchpad-ui/commit/669bd06c11a385c17db22b545205d5100f23581a) Thanks [@ari-launchdarkly](https://github.com/ari-launchdarkly)! - fix a bug around autoclose behavior in modals when a toast is present
+
 ## 0.17.8
 
 ### Patch Changes
