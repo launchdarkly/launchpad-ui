@@ -21,7 +21,7 @@ jobs:
             /production/common/launchpad-ui/figma-access-token = FIGMA_ACCESS_TOKEN
 
       - name: Checkout
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
         with:
           fetch-depth: 0
 
