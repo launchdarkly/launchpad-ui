@@ -11,6 +11,7 @@ import { Heading } from '../src/Heading';
 import { IconButton } from '../src/IconButton';
 import { Modal, ModalOverlay } from '../src/Modal';
 import { Text } from '../src/Text';
+import { ToastRegion, toastQueue } from '../src/Toast';
 
 const meta: Meta<typeof Modal> = {
 	component: Modal,
@@ -108,5 +109,75 @@ export const Drawer: Story = {
 				mobile: allModes.mobile,
 			},
 		},
+	},
+};
+
+/**
+ * Bug reproduction: Dialog closes when clicking a button inside it while Toast is active.
+ *
+ * Steps to reproduce:
+ * 1. Click "Show Toast" to display a toast notification
+ * 2. Click "Open Dialog" to open the modal
+ * 3. Click "Click Me" button inside the dialog
+ *
+ * Expected: Button click should work normally, dialog stays open
+ * Actual: Dialog closes unexpectedly
+ */
+export const DialogWithActiveToast: Story = {
+	render: (args) => {
+		return (
+			<>
+				<ToastRegion />
+				<div style={{ display: 'flex', gap: '1rem', marginBottom: '1rem' }}>
+					<DialogTrigger>
+						<Button variant="primary">Open Dialog</Button>
+						<ModalOverlay>
+							<Modal {...args}>
+								<Dialog>
+									{({ close }) => (
+										<>
+											<div slot="header">
+												<Heading slot="title">Dialog with Toast Active</Heading>
+												<IconButton
+													aria-label="close"
+													icon="cancel"
+													size="small"
+													variant="minimal"
+													onPress={close}
+												/>
+												<Text slot="subtitle">Try clicking the button below with toast active</Text>
+											</div>
+											<div slot="body">
+												<p>
+													When a toast is visible, clicking the button below should NOT close the
+													dialog.
+												</p>
+												<div style={{ marginTop: '1rem' }}>
+													<Button
+														onPress={() => {
+															toastQueue.add({
+																title: 'Toast is active',
+																description: 'Now try clicking the button inside the dialog',
+																status: 'info',
+															});
+														}}
+													>
+														Show Toast
+													</Button>{' '}
+												</div>
+											</div>
+											<div slot="footer">
+												<Button slot="close">Cancel</Button>
+												<Button variant="primary">Confirm</Button>
+											</div>
+										</>
+									)}
+								</Dialog>
+							</Modal>
+						</ModalOverlay>
+					</DialogTrigger>
+				</div>
+			</>
+		);
 	},
 };
