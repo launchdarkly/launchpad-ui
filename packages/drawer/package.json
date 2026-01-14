@@ -1,6 +1,6 @@
 {
 	"name": "@launchpad-ui/drawer",
-	"version": "0.9.8",
+	"version": "0.9.9",
 	"description": "A partial overlay that appears from the right side of the screen.",
 	"repository": "launchdarkly/launchpad-ui",
 	"license": "Apache-2.0",
