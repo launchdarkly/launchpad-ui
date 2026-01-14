@@ -402,15 +402,17 @@ async function main(): Promise<void> {
 		const removed = existingIcons.filter((n) => !upcomingSet.has(n));
 
 		if (added.length) {
-			const addedSummary = `New icons: ${added.join(', ')}`;
+			const addedList = added.map((name) => `  - ${name}`).join('\n');
+			const addedSummary = `New icons:\n${addedList}`;
 			changesetSummary += `\n${addedSummary}`;
-			log('added', `🆕 ${addedSummary}`);
+			log('added', `🆕 New icons: ${added.join(', ')}`);
 		}
 
 		if (removed.length) {
-			const removedSummary = `Removed icons: ${removed.join(', ')}`;
+			const removedList = removed.map((name) => `  - ${name}`).join('\n');
+			const removedSummary = `Removed icons:\n${removedList}`;
 			changesetSummary += `\n${removedSummary}`;
-			log('removed', `✂️ ${removedSummary}`);
+			log('removed', `✂️ Removed icons: ${removed.join(', ')}`);
 		}
 	} else {
 		changesetSummary += '\ninitial sync of icons from Figma';
