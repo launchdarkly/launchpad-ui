@@ -7,6 +7,8 @@ import { expect, userEvent, within } from 'storybook/test';
 import { Button } from '../src/Button';
 import { Dialog, DialogTrigger } from '../src/Dialog';
 import { Heading } from '../src/Heading';
+import { HoverTrigger } from '../src/HoverTrigger';
+import { Link } from '../src/Link';
 import { OverlayArrow, Popover } from '../src/Popover';
 import { Pressable } from '../src/Pressable';
 
@@ -106,4 +108,27 @@ export const CustomTrigger: Story = {
 		);
 	},
 	play,
+};
+
+export const Hover: Story = {
+	render: (args) => {
+		return (
+			<HoverTrigger>
+				<Link href="/test">Link</Link>
+				<Popover {...args} data-testid="popover">
+					<Heading slot="title">Title</Heading>
+					<div>Message</div>
+					<Link href="/more">View more</Link>
+				</Popover>
+			</HoverTrigger>
+		);
+	},
+	play: async ({ canvasElement }: { canvasElement: HTMLElement }) => {
+		const canvas = within(canvasElement);
+
+		await userEvent.hover(canvasElement);
+		await userEvent.hover(canvas.getByRole('link'));
+		const body = canvasElement.ownerDocument.body;
+		await expect(await within(body).findByTestId('popover'));
+	},
 };

@@ -39,6 +39,7 @@ export type { FormProps } from './Form';
 export type { GridListItemProps, GridListProps } from './GridList';
 export type { GroupProps } from './Group';
 export type { HeadingProps } from './Heading';
+export type { HoverTriggerProps } from './HoverTrigger';
 export type { IconButtonProps } from './IconButton';
 export type { InputProps } from './Input';
 export type { LabelProps } from './Label';
@@ -191,6 +192,7 @@ export {
 export { Group, GroupContext, groupStyles } from './Group';
 export { Header, HeaderContext, headerStyles } from './Header';
 export { Heading, HeadingContext, headingStyles } from './Heading';
+export { HoverTrigger } from './HoverTrigger';
 export { IconButton, IconButtonContext, iconButtonStyles } from './IconButton';
 export { Input, InputContext, inputStyles } from './Input';
 export { Keyboard } from './Keyboard';
