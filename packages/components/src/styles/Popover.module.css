@@ -40,7 +40,7 @@
 	&[data-trigger='ComboBoxDialog'],
 	&[data-trigger='DatePicker'],
 	&[data-trigger='DateRangePicker'] {
-		padding: var(--lp-spacing-300);
+		padding: var(--lp-size-12) var(--lp-size-16);
 	}
 
 	&:has(input[type='search']):is(

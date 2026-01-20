@@ -6,12 +6,12 @@ import { expect, userEvent, within } from 'storybook/test';
 
 import { Autocomplete } from '../src/Autocomplete';
 import { Button } from '../src/Button';
-import { Dialog, DialogTrigger } from '../src/Dialog';
+import { Dialog } from '../src/Dialog';
 import { Group } from '../src/Group';
 import { IconButton } from '../src/IconButton';
 import { Input } from '../src/Input';
 import { ListBox, ListBoxItem } from '../src/ListBox';
-import { Menu, MenuItem } from '../src/Menu';
+import { Menu, MenuItem, MenuTrigger } from '../src/Menu';
 import { Popover } from '../src/Popover';
 import { SearchField } from '../src/SearchField';
 
@@ -45,7 +45,7 @@ export const Example: Story = {
 		];
 
 		return (
-			<DialogTrigger>
+			<MenuTrigger>
 				<Button>Trigger</Button>
 				<Popover placement="bottom start">
 					<Dialog aria-label="dialog with autocomplete">
@@ -73,7 +73,7 @@ export const Example: Story = {
 						</Autocomplete>
 					</Dialog>
 				</Popover>
-			</DialogTrigger>
+			</MenuTrigger>
 		);
 	},
 	...open,
@@ -89,7 +89,7 @@ export const ListBoxExample: Story = {
 		];
 
 		return (
-			<DialogTrigger>
+			<MenuTrigger>
 				<Button>Trigger</Button>
 				<Popover placement="bottom start">
 					<Dialog aria-label="dialog with autocomplete">
@@ -118,7 +118,7 @@ export const ListBoxExample: Story = {
 						</Autocomplete>
 					</Dialog>
 				</Popover>
-			</DialogTrigger>
+			</MenuTrigger>
 		);
 	},
 	...open,
