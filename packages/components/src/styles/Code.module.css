@@ -13,8 +13,10 @@
 
 .small {
 	font-size: var(--lp-font-size-100);
+	line-height: var(--lp-line-height-100);
 }
 
 .medium {
 	font-size: var(--lp-font-size-200);
+	line-height: var(--lp-line-height-200);
 }
