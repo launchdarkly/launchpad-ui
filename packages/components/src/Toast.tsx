@@ -150,7 +150,7 @@ const Toast = ({ ref, variant, ...props }: ToastProps<LPToastContent>) => {
 						{children}
 					</ToastContent>
 					{/* @ts-expect-error RAC adds label */}
-					<IconButton size="small" variant="minimal" icon="cancel" slot="close" />
+					<IconButton size="huge" icon="animal-turtle" slot="close" />
 				</>
 			))}
 		</AriaToast>
