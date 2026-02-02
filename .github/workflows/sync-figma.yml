@@ -26,14 +26,14 @@ jobs:
             /production/common/launchpad-ui/figma-file-key = FIGMA_FILE_KEY,
             /production/common/launchpad-ui/figma-token = FIGMA_TOKEN
 
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
         with:
           fetch-depth: 0
 
       - uses: pnpm/action-setup@v4
 
       - name: Setup Node
-        uses: actions/setup-node@v5
+        uses: actions/setup-node@v6
         with:
           node-version: 22
           cache: pnpm
