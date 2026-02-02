@@ -1,5 +1,11 @@
 # @launchpad-ui/icons
 
+## 0.25.0
+
+### Minor Changes
+
+- [#1831](https://github.com/launchdarkly/launchpad-ui/pull/1831) [`e6ae250`](https://github.com/launchdarkly/launchpad-ui/commit/e6ae250ddf07741a5bd2ad4427edcece801233c0) Thanks [@priyanshu-09](https://github.com/priyanshu-09)! - Changed the format of the changeset summary when running sync icons workflow manually
+
 ## 0.24.8
 
 ### Patch Changes
