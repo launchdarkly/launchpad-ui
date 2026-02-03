@@ -1,5 +1,11 @@
 # @launchpad-ui/navigation
 
+## 0.16.10
+
+### Patch Changes
+
+- [#1845](https://github.com/launchdarkly/launchpad-ui/pull/1845) [`1931e02`](https://github.com/launchdarkly/launchpad-ui/commit/1931e020278112ad805a2ff338790cdb4db232e5) Thanks [@zmdavis](https://github.com/zmdavis)! - Update react-router to 7.9.6 to fix security vulnerability
+
 ## 0.16.9
 
 ### Patch Changes

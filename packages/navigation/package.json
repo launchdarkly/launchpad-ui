@@ -1,6 +1,6 @@
 {
 	"name": "@launchpad-ui/navigation",
-	"version": "0.16.9",
+	"version": "0.16.10",
 	"description": "An element used to provide navigation links to help users move through an app.",
 	"repository": "launchdarkly/launchpad-ui",
 	"license": "Apache-2.0",
