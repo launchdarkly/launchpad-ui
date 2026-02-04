@@ -24,6 +24,8 @@ jobs:
         uses: actions/checkout@v6
         with:
           fetch-depth: 0
+          token: ${{ env.CUSTOM_GITHUB_TOKEN }}
+          persist-credentials: false
 
       - name: Setup PNPM
         uses: pnpm/action-setup@v4
