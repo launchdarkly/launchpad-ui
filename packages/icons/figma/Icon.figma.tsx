@@ -2313,3 +2313,10 @@ figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=6-14
 	},
 	example: () => <Icon name="a-to-b" />,
 });
+
+figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=24052-34317', {
+	props: {
+		name: 'Icon',
+	},
+	example: () => <Icon name="Icon" />,
+});
