@@ -123,8 +123,8 @@ importers:
         specifier: 19.2.0
         version: 19.2.0(react@19.2.0)
       react-router:
-        specifier: 7.9.6
-        version: 7.9.6(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
+        specifier: 7.13.0
+        version: 7.13.0(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
       rollup-plugin-pure:
         specifier: ^0.4.0
         version: 0.4.0(rollup@4.41.1)
@@ -289,8 +289,8 @@ importers:
         specifier: 19.2.0
         version: 19.2.0(react@19.2.0)
       react-router:
-        specifier: 7.9.6
-        version: 7.9.6(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
+        specifier: 7.13.0
+        version: 7.13.0(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
       react-stately:
         specifier: 3.42.0
         version: 3.42.0(react@19.2.0)
@@ -643,8 +643,8 @@ importers:
         specifier: 19.2.0
         version: 19.2.0(react@19.2.0)
       react-router:
-        specifier: 7.9.6
-        version: 7.9.6(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
+        specifier: 7.13.0
+        version: 7.13.0(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
 
   packages/overlay:
     dependencies:
@@ -4746,8 +4746,8 @@ packages:
   react-is@18.3.1:
     resolution: {integrity: sha512-/LLMVyas0ljjAtoYiPqYiL8VWXzUUdThrmU5+n20DZv+a+ClRoevUzw5JxU+Ieh5/c87ytoTBV9G1FiKfNJdmg==}
 
-  react-router@7.9.6:
-    resolution: {integrity: sha512-Y1tUp8clYRXpfPITyuifmSoE2vncSME18uVLgaqyxh9H35JWpIfzHo+9y3Fzh5odk/jxPW29IgLgzcdwxGqyNA==}
+  react-router@7.13.0:
+    resolution: {integrity: sha512-PZgus8ETambRT17BUm/LL8lX3Of+oiLaPuVTRH3l1eLvSPpKO3AvhAEb5N7ihAFZQrYDqkvvWfFh9p0z9VsjLw==}
     engines: {node: '>=20.0.0'}
     peerDependencies:
       react: '>=18'
@@ -10412,7 +10412,7 @@ snapshots:
 
   react-is@18.3.1: {}
 
-  react-router@7.9.6(react-dom@19.2.0(react@19.2.0))(react@19.2.0):
+  react-router@7.13.0(react-dom@19.2.0(react@19.2.0))(react@19.2.0):
     dependencies:
       cookie: 1.0.2
       react: 19.2.0
