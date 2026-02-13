@@ -27,6 +27,7 @@
 		"clean": "rm -rf dist",
 		"connect": "tsx scripts/figma-connect.ts",
 		"sync": "tsx scripts/figma-sync.ts",
+		"sync:full": "FORCE_SYNC=1 tsx scripts/figma-sync.ts",
 		"test": "vitest run --coverage"
 	},
 	"dependencies": {
