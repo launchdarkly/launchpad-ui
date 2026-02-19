@@ -3,6 +3,7 @@ import type { ReactNode } from 'react';
 import type { DecoratorFunction, GlobalTypes, Parameters } from 'storybook/internal/types';
 
 import { Box } from '@launchpad-ui/box';
+import { FocusTrapContext } from '@launchpad-ui/focus-trap';
 import sprite from '@launchpad-ui/icons/img/sprite.svg';
 import { withThemeByDataAttribute } from '@storybook/addon-themes';
 import { BrowserRouter, useNavigate } from 'react-router';
@@ -156,29 +157,31 @@ const decorators: DecoratorFunction<ReactRenderer>[] = [
 		return (
 			<BrowserRouter>
 				<RouterProvider>
-					{mirror ? (
-						<Box display="flex" flexDirection={sideBySide ? 'row' : 'column'} minHeight="100vh">
-							<Box
-								padding="$400"
-								width={sideBySide ? '50vw' : undefined}
-								height={stacked ? '50vh' : undefined}
-							>
+					<FocusTrapContext.Provider value={{ contain: false }}>
+						{mirror ? (
+							<Box display="flex" flexDirection={sideBySide ? 'row' : 'column'} minHeight="100vh">
+								<Box
+									padding="$400"
+									width={sideBySide ? '50vw' : undefined}
+									height={stacked ? '50vh' : undefined}
+								>
+									<StoryFn />
+								</Box>
+								<Box
+									data-theme="dark"
+									padding="$400"
+									width={sideBySide ? '50vw' : undefined}
+									height={stacked ? '50vh' : undefined}
+								>
+									<StoryFn />
+								</Box>
+							</Box>
+						) : (
+							<Box padding="$400">
 								<StoryFn />
 							</Box>
-							<Box
-								data-theme="dark"
-								padding="$400"
-								width={sideBySide ? '50vw' : undefined}
-								height={stacked ? '50vh' : undefined}
-							>
-								<StoryFn />
-							</Box>
-						</Box>
-					) : (
-						<Box padding="$400">
-							<StoryFn />
-						</Box>
-					)}
+						)}
+					</FocusTrapContext.Provider>
 				</RouterProvider>
 			</BrowserRouter>
 		);

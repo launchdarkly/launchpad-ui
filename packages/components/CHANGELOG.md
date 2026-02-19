@@ -1,5 +1,11 @@
 # @launchpad-ui/components
 
+## 0.17.13
+
+### Patch Changes
+
+- [#1851](https://github.com/launchdarkly/launchpad-ui/pull/1851) [`04425eb`](https://github.com/launchdarkly/launchpad-ui/commit/04425eb5802c67b745090998c113d1cb2eb76e67) Thanks [@zmdavis](https://github.com/zmdavis)! - Update react-router to 7.13.0
+
 ## 0.17.12
 
 ### Patch Changes
