@@ -81,7 +81,7 @@
 
 	& [slot='description'] {
 		grid-area: desc;
-		word-break: break-all;
+		word-break: break-word;
 	}
 
 	& [slot='label']:has([data-icon]) ~ [slot='description'] {
