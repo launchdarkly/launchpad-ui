@@ -165,6 +165,13 @@ figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=7081
 	example: () => <Icon name="temperature" />,
 });
 
+figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=23238-111', {
+	props: {
+		name: 'telescope',
+	},
+	example: () => <Icon name="telescope" />,
+});
+
 figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=6-142066', {
 	props: {
 		name: 'tag',
@@ -781,6 +788,27 @@ figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=6-14
 	example: () => <Icon name="money" />,
 });
 
+figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=24020-117', {
+	props: {
+		name: 'mood-sad',
+	},
+	example: () => <Icon name="mood-sad" />,
+});
+
+figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=24020-116', {
+	props: {
+		name: 'mood-neutral',
+	},
+	example: () => <Icon name="mood-neutral" />,
+});
+
+figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=24020-115', {
+	props: {
+		name: 'mood-happy',
+	},
+	example: () => <Icon name="mood-happy" />,
+});
+
 figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=6-141818', {
 	props: {
 		name: 'minus-circle-outline',
@@ -1048,6 +1076,13 @@ figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=6-14
 });
 
 figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=6-141751', {
+	props: {
+		name: 'hash-circle',
+	},
+	example: () => <Icon name="hash-circle" />,
+});
+
+figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=24046-124', {
 	props: {
 		name: 'hash',
 	},
@@ -2027,6 +2062,34 @@ figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=6-14
 	example: () => <Icon name="arrows-maximize" />,
 });
 
+figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=24938-121', {
+	props: {
+		name: 'arrows-diagonal-minimize-tr-bl',
+	},
+	example: () => <Icon name="arrows-diagonal-minimize-tr-bl" />,
+});
+
+figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=24911-200', {
+	props: {
+		name: 'arrows-diagonal-minimize-tl-br',
+	},
+	example: () => <Icon name="arrows-diagonal-minimize-tl-br" />,
+});
+
+figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=24911-201', {
+	props: {
+		name: 'arrows-diagonal-expand-tr-bl',
+	},
+	example: () => <Icon name="arrows-diagonal-expand-tr-bl" />,
+});
+
+figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=24911-202', {
+	props: {
+		name: 'arrows-diagonal-expand-tl-br',
+	},
+	example: () => <Icon name="arrows-diagonal-expand-tl-br" />,
+});
+
 figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=6-141377', {
 	props: {
 		name: 'arrow-up-thin',
@@ -2235,6 +2298,13 @@ figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=6-14
 		name: 'add',
 	},
 	example: () => <Icon name="add" />,
+});
+
+figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=24046-118', {
+	props: {
+		name: 'abc',
+	},
+	example: () => <Icon name="abc" />,
 });
 
 figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=6-141306', {

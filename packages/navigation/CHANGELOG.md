@@ -1,5 +1,35 @@
 # @launchpad-ui/navigation
 
+## 0.16.12
+
+### Patch Changes
+
+- [#1851](https://github.com/launchdarkly/launchpad-ui/pull/1851) [`04425eb`](https://github.com/launchdarkly/launchpad-ui/commit/04425eb5802c67b745090998c113d1cb2eb76e67) Thanks [@zmdavis](https://github.com/zmdavis)! - Update react-router to 7.13.0
+
+## 0.16.11
+
+### Patch Changes
+
+- Updated dependencies [[`c2c19e7`](https://github.com/launchdarkly/launchpad-ui/commit/c2c19e76475cb4b8de8c521def34f40ea57380f7)]:
+  - @launchpad-ui/icons@0.25.1
+  - @launchpad-ui/dropdown@0.10.10
+  - @launchpad-ui/menu@0.16.10
+
+## 0.16.10
+
+### Patch Changes
+
+- [#1845](https://github.com/launchdarkly/launchpad-ui/pull/1845) [`1931e02`](https://github.com/launchdarkly/launchpad-ui/commit/1931e020278112ad805a2ff338790cdb4db232e5) Thanks [@zmdavis](https://github.com/zmdavis)! - Update react-router to 7.9.6 to fix security vulnerability
+
+## 0.16.9
+
+### Patch Changes
+
+- Updated dependencies [[`e6ae250`](https://github.com/launchdarkly/launchpad-ui/commit/e6ae250ddf07741a5bd2ad4427edcece801233c0)]:
+  - @launchpad-ui/icons@0.25.0
+  - @launchpad-ui/dropdown@0.10.9
+  - @launchpad-ui/menu@0.16.9
+
 ## 0.16.8
 
 ### Patch Changes

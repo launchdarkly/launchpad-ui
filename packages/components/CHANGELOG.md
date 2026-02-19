@@ -1,5 +1,37 @@
 # @launchpad-ui/components
 
+## 0.17.13
+
+### Patch Changes
+
+- [#1851](https://github.com/launchdarkly/launchpad-ui/pull/1851) [`04425eb`](https://github.com/launchdarkly/launchpad-ui/commit/04425eb5802c67b745090998c113d1cb2eb76e67) Thanks [@zmdavis](https://github.com/zmdavis)! - Update react-router to 7.13.0
+
+## 0.17.12
+
+### Patch Changes
+
+- Updated dependencies [[`c2c19e7`](https://github.com/launchdarkly/launchpad-ui/commit/c2c19e76475cb4b8de8c521def34f40ea57380f7)]:
+  - @launchpad-ui/icons@0.25.1
+
+## 0.17.11
+
+### Patch Changes
+
+- [#1845](https://github.com/launchdarkly/launchpad-ui/pull/1845) [`1931e02`](https://github.com/launchdarkly/launchpad-ui/commit/1931e020278112ad805a2ff338790cdb4db232e5) Thanks [@zmdavis](https://github.com/zmdavis)! - Update react-router to 7.9.6 to fix security vulnerability
+
+## 0.17.10
+
+### Patch Changes
+
+- Updated dependencies [[`e6ae250`](https://github.com/launchdarkly/launchpad-ui/commit/e6ae250ddf07741a5bd2ad4427edcece801233c0)]:
+  - @launchpad-ui/icons@0.25.0
+
+## 0.17.9
+
+### Patch Changes
+
+- [#1829](https://github.com/launchdarkly/launchpad-ui/pull/1829) [`669bd06`](https://github.com/launchdarkly/launchpad-ui/commit/669bd06c11a385c17db22b545205d5100f23581a) Thanks [@ari-launchdarkly](https://github.com/ari-launchdarkly)! - fix a bug around autoclose behavior in modals when a toast is present
+
 ## 0.17.8
 
 ### Patch Changes

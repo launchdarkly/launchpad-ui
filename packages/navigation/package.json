@@ -1,6 +1,6 @@
 {
 	"name": "@launchpad-ui/navigation",
-	"version": "0.16.8",
+	"version": "0.16.12",
 	"description": "An element used to provide navigation links to help users move through an app.",
 	"repository": "launchdarkly/launchpad-ui",
 	"license": "Apache-2.0",
@@ -39,14 +39,14 @@
 		"@react-types/shared": "3.32.1",
 		"react": "19.2.0",
 		"react-dom": "19.2.0",
-		"react-router": "7.5.2"
+		"react-router": "7.13.0"
 	},
 	"peerDependencies": {
 		"@react-aria/utils": "3.31.0",
 		"@react-stately/list": "3.13.1",
 		"react": "19.2.0",
 		"react-dom": "19.2.0",
-		"react-router": "7.5.2"
+		"react-router": "7.13.0"
 	},
 	"exports": {
 		".": {
