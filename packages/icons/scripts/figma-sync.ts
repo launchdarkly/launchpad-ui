@@ -10,6 +10,7 @@
  *  FIGMA_FILE_KEY     (optional; default from code)
  *  FIGMA_NODE_ID      (optional; default from code)
  *  DRY_RUN=1          (optional) Log actions without writing files
+ *  FORCE_SYNC=1       (optional) Bypass fast-path bail-out and re-download all SVGs
  */
 
 import fs from 'node:fs';
@@ -34,6 +35,7 @@ const FIGMA_ACCESS_TOKEN = process.env.FIGMA_ACCESS_TOKEN;
 const FIGMA_FILE_KEY = '98HKKXL2dTle29ikJ3tzk7';
 const FIGMA_NODE_ID = '1:1483';
 const DRY_RUN = process.env.DRY_RUN === '1';
+const FORCE_SYNC = process.env.FORCE_SYNC === '1';
 
 if (!FIGMA_ACCESS_TOKEN || !FIGMA_FILE_KEY) {
 	console.error('Missing FIGMA_ACCESS_TOKEN.');
@@ -381,6 +383,7 @@ async function main(): Promise<void> {
 	// 3) Fast-path bail-out: if set of names hasn't changed and sprite exists, stop early
 	const existingIcons = readExistingIcons();
 	if (
+		!FORCE_SYNC &&
 		existingIcons.length > 0 &&
 		sameSet(
 			existingIcons,
@@ -390,6 +393,9 @@ async function main(): Promise<void> {
 	) {
 		log('exit', '🙅 No icon name changes detected. Skipping fetch/optimize/build.');
 		return;
+	}
+	if (FORCE_SYNC) {
+		log('force', '🔄 Full sync enabled — re-downloading all icons.');
 	}
 
 	// 4) Diff output (kept from original for visibility) and set a change summary
