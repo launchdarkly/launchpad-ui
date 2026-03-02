@@ -2,6 +2,11 @@ name: Sync icons
 
 on:
   workflow_dispatch:
+    inputs:
+      full_sync:
+        description: 'Re-download existing icon SVGs'
+        type: boolean
+        default: false
 
 jobs:
   sync-icons:
@@ -40,7 +45,7 @@ jobs:
         run: pnpm install
 
       - name: Sync Icons
-        run: pnpm nx run @launchpad-ui/icons:sync
+        run: pnpm nx run @launchpad-ui/icons:${{ inputs.full_sync && 'sync:full' || 'sync' }}
 
       - name: Connect Icons
         run: pnpm nx run @launchpad-ui/icons:connect
