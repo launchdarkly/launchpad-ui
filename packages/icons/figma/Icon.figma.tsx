@@ -949,6 +949,27 @@ figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=6-14
 	example: () => <Icon name="lightbulb" />,
 });
 
+figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=25769-134', {
+	props: {
+		name: 'layout-structured',
+	},
+	example: () => <Icon name="layout-structured" />,
+});
+
+figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=25769-128', {
+	props: {
+		name: 'layout-side-by-side',
+	},
+	example: () => <Icon name="layout-side-by-side" />,
+});
+
+figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=25769-122', {
+	props: {
+		name: 'layout-stack',
+	},
+	example: () => <Icon name="layout-stack" />,
+});
+
 figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=17108-128', {
 	props: {
 		name: 'layers-difference',
@@ -1360,6 +1381,13 @@ figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=6-14
 		name: 'door-exit',
 	},
 	example: () => <Icon name="door-exit" />,
+});
+
+figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=25777-125', {
+	props: {
+		name: 'document-time',
+	},
+	example: () => <Icon name="document-time" />,
 });
 
 figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=6-141636', {
