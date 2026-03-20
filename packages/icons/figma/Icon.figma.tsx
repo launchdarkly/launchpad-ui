@@ -347,7 +347,7 @@ figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=6-14
 	example: () => <Icon name="sidebar-left-expand" />,
 });
 
-figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=6-142011', {
+figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=25934-175', {
 	props: {
 		name: 'sidebar-left-collapse',
 	},
