@@ -37,7 +37,7 @@ jobs:
 
       - name: Publish to Chromatic
         id: chromatic
-        uses: chromaui/action@30047ab459164cf99ae8f097f6aa5c7ef4fcc869 # v13
+        uses: chromaui/action@07791f8243f4cb2698bf4d00426baf4b2d1cb7e0 # v13
         with:
           projectToken: ${{ env.CHROMATIC_TOKEN }}
           buildScriptName: 'storybook:build'
