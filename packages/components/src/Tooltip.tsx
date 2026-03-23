@@ -5,6 +5,7 @@ import type {
 	ContextValue,
 	TooltipTriggerComponentProps,
 } from 'react-aria-components';
+import type { PopoverProps } from './Popover';
 
 import { cva } from 'class-variance-authority';
 import { createContext } from 'react';
@@ -20,6 +21,7 @@ import { useLPContextProps } from './utils';
 
 interface TooltipProps extends AriaTooltipProps, VariantProps<typeof tooltipStyles> {
 	ref?: Ref<HTMLDivElement>;
+	width?: PopoverProps['width'];
 }
 interface TooltipTriggerProps extends TooltipTriggerComponentProps {}
 
@@ -44,7 +46,7 @@ const tooltipStyles = cva(styles.base, {
  */
 const Tooltip = ({ ref, ...props }: TooltipProps) => {
 	[props, ref] = useLPContextProps(props, ref, TooltipContext);
-	const { variant = 'default' } = props;
+	const { variant = 'default', width = 'default' } = props;
 
 	return (
 		<AriaTooltip
@@ -54,7 +56,13 @@ const Tooltip = ({ ref, ...props }: TooltipProps) => {
 			{...props}
 			ref={ref}
 			className={composeRenderProps(props.className, (className, renderProps) =>
-				tooltipStyles({ ...renderProps, variant, className }),
+				variant === 'popover'
+					? tooltipStyles({
+							...renderProps,
+							variant: null,
+							className: popoverStyles({ width, className }),
+						})
+					: tooltipStyles({ ...renderProps, variant, className }),
 			)}
 			data-trigger={variant === 'popover' ? 'DialogTrigger' : undefined}
 		/>
