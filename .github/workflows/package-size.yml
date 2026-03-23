@@ -11,7 +11,7 @@ jobs:
         with:
           fetch-depth: 0
 
-      - uses: pnpm/action-setup@v4
+      - uses: pnpm/action-setup@fc06bc1257f339d1d5d8b3a19a8cae5388b55320 # v4
 
       - name: Setup Node
         uses: actions/setup-node@v6
@@ -19,6 +19,6 @@ jobs:
           node-version: 22
           cache: pnpm
 
-      - uses: preactjs/compressed-size-action@v2
+      - uses: preactjs/compressed-size-action@8518045ed95e94e971b83333085e1cb99aa18aa8 # v2
         with:
           pattern: '**/dist/**/*.{css,js}'
