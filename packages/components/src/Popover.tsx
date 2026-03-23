@@ -30,6 +30,7 @@ const popoverStyles = cva(styles.popover, {
 	variants: {
 		width: {
 			default: styles.default,
+			fit: styles.fit,
 			trigger: styles.trigger,
 		},
 	},

@@ -91,6 +91,20 @@ export const WithHeading: Story = {
 	play,
 };
 
+export const FitWidth: Story = {
+	render: (args) => {
+		return (
+			<DialogTrigger>
+				<Button>Trigger</Button>
+				<Popover width="fit" {...args}>
+					<Dialog>Message</Dialog>
+				</Popover>
+			</DialogTrigger>
+		);
+	},
+	play,
+};
+
 export const CustomTrigger: Story = {
 	render: (args) => {
 		return (
