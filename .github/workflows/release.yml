@@ -30,10 +30,10 @@ jobs:
           fetch-depth: 0
           token: ${{ env.CUSTOM_GITHUB_TOKEN }}
 
-      - uses: pnpm/action-setup@v4
+      - uses: pnpm/action-setup@fc06bc1257f339d1d5d8b3a19a8cae5388b55320 # v4
 
       - name: Derive appropriate SHAs for base and head for `nx affected` commands
-        uses: nrwl/nx-set-shas@v4
+        uses: nrwl/nx-set-shas@3e9ad7370203c1e93d109be57f3b72eb0eb511b1 # v4
 
       - name: Setup Node
         uses: actions/setup-node@v6
@@ -45,7 +45,7 @@ jobs:
         run: pnpm install
 
       - name: Create Release Pull Request or Publish to npm
-        uses: changesets/action@v1
+        uses: changesets/action@6a0a831ff30acef54f2c6aa1cbbc1096b066edaf # v1
         with:
           commit: 'chore: version packages'
           title: 'chore: version packages'
