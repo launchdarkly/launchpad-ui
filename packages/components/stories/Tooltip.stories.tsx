@@ -84,3 +84,17 @@ export const Popover: Story = {
 	},
 	play,
 };
+
+export const PopoverFitWidth: Story = {
+	render: (args) => {
+		return (
+			<TooltipTrigger>
+				<Button>Trigger</Button>
+				<Tooltip variant="popover" width="fit" {...args}>
+					Message
+				</Tooltip>
+			</TooltipTrigger>
+		);
+	},
+	play,
+};
