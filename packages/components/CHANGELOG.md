@@ -1,5 +1,18 @@
 # @launchpad-ui/components
 
+## 0.18.0
+
+### Minor Changes
+
+- [#1864](https://github.com/launchdarkly/launchpad-ui/pull/1864) [`d76de10`](https://github.com/launchdarkly/launchpad-ui/commit/d76de10177ab0054c2d720ea028c5d0caf36accc) Thanks [@cpurps22](https://github.com/cpurps22)! - Add `fit` width variant to Popover component that sets `width: fit-content` with no min-width constraint
+
+- [#1868](https://github.com/launchdarkly/launchpad-ui/pull/1868) [`c7dbbbc`](https://github.com/launchdarkly/launchpad-ui/commit/c7dbbbcd6089ae3698ac349afe1bbe385a4c7e19) Thanks [@cpurps22](https://github.com/cpurps22)! - Forward `width` prop from Tooltip to Popover styles when `variant="popover"`
+
+### Patch Changes
+
+- Updated dependencies [[`afd337e`](https://github.com/launchdarkly/launchpad-ui/commit/afd337e6a64a72f6803224144d18d878a9895c13)]:
+  - @launchpad-ui/icons@0.25.3
+
 ## 0.17.14
 
 ### Patch Changes

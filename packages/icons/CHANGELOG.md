@@ -1,5 +1,25 @@
 # @launchpad-ui/icons
 
+## 0.25.3
+
+### Patch Changes
+
+- [#1870](https://github.com/launchdarkly/launchpad-ui/pull/1870) [`afd337e`](https://github.com/launchdarkly/launchpad-ui/commit/afd337e6a64a72f6803224144d18d878a9895c13) Thanks [@cmwinters](https://github.com/cmwinters)! - feat(icons): sync and connect icons with figma library
+
+  Updated icons
+
+  - sidebar-left-collapse
+  - sidebar-left-expand
+  - sidebar-right-collapse
+  - sidebar-right-expand
+
+  Removed icons:
+
+  - size-large-40x40
+  - size-medium-20x20
+  - size-small-16x16
+  - size-tiny-14x14
+
 ## 0.25.2
 
 ### Patch Changes
