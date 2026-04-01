@@ -74,7 +74,7 @@
 		"tsx": "^4.20.3",
 		"typescript": "^5.8.2",
 		"typescript-plugin-css-modules": "^5.1.0",
-		"vite": "npm:rolldown-vite@6.3.16",
+		"vite": "npm:rolldown-vite@7.3.1",
 		"vitest": "^3.2.0"
 	},
 	"browserslist": [
@@ -102,7 +102,7 @@
 			}
 		},
 		"overrides": {
-			"vite": "npm:rolldown-vite@6.3.16"
+			"vite": "npm:rolldown-vite@7.3.1"
 		}
 	}
 }
