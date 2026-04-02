@@ -266,6 +266,7 @@ const icons = [
 	'pulse',
 	'quick-start',
 	'quote',
+	'restore',
 	'robot',
 	'rocket',
 	'ruler',
