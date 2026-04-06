@@ -1,3 +1,30 @@
+/* Temporary color aliases for Alerts. This block should be removed when the new color system is implemented. */
+:root,
+[data-theme='default'] {
+	--alert-color-border-neutral: var(--lp-color-gray-200);
+	--alert-color-bg-neutral: var(--lp-color-gray-0);
+	--alert-color-border-error: var(--lp-color-red-200);
+	--alert-color-bg-error: var(--lp-color-red-0);
+	--alert-color-border-info: var(--lp-color-blue-200);
+	--alert-color-bg-info: var(--lp-color-blue-0);
+	--alert-color-border-success: var(--lp-color-green-200);
+	--alert-color-bg-success: var(--lp-color-green-0);
+	--alert-color-border-warning: #fad88f;
+	--alert-color-bg-warning: #fdfae4;
+}
+[data-theme='dark'] {
+	--alert-color-border-neutral: var(--lp-color-gray-800);
+	--alert-color-bg-neutral: var(--lp-color-gray-900);
+	--alert-color-border-error: var(--lp-color-red-700);
+	--alert-color-bg-error: #391620;
+	--alert-color-border-info: var(--lp-color-blue-700);
+	--alert-color-bg-info: #192142;
+	--alert-color-border-success: var(--lp-color-green-700);
+	--alert-color-bg-success: #14260d;
+	--alert-color-border-warning: #932c00;
+	--alert-color-bg-warning: #3c170c;
+}
+
 .base {
 	display: flex;
 	border-radius: var(--lp-border-radius-medium);
@@ -17,39 +44,39 @@
 	}
 
 	&.warning .icon {
-		fill: var(--lp-color-brand-orange-base);
+		fill: #e65d00;
 	}
 }
 
 .default {
 	padding: var(--lp-spacing-700);
-	background-color: var(--lp-color-bg-ui-primary);
-	border: 1px solid var(--lp-color-border-ui-primary);
+	background-color: var(--alert-color-bg-neutral);
+	border: 1px solid var(--alert-color-border-neutral);
 	position: relative;
 
 	&.neutral {
-		--color-1: var(--lp-color-gray-500);
-		--color-2: var(--lp-color-gray-400);
+		border-color: var(--alert-color-border-neutral);
+		background-color: var(--alert-color-bg-neutral);
 	}
 
 	&.error {
-		--color-1: var(--lp-color-red-500);
-		--color-2: var(--lp-color-red-400);
+		border-color: var(--alert-color-border-error);
+		background-color: var(--alert-color-bg-error);
 	}
 
 	&.info {
-		--color-1: var(--lp-color-blue-500);
-		--color-2: var(--lp-color-blue-400);
+		border-color: var(--alert-color-border-info);
+		background-color: var(--alert-color-bg-info);
 	}
 
 	&.success {
-		--color-1: var(--lp-color-green-500);
-		--color-2: var(--lp-color-green-400);
+		border-color: var(--alert-color-border-success);
+		background-color: var(--alert-color-bg-success);
 	}
 
 	&.warning {
-		--color-1: var(--lp-color-brand-orange-base);
-		--color-2: #ffb052;
+		border-color: var(--alert-color-border-warning);
+		background-color: var(--alert-color-bg-warning);
 	}
 
 	&:has(.heading) {
@@ -73,17 +100,6 @@
 	& .close {
 		margin-left: var(--lp-spacing-300);
 	}
-}
-
-.bar {
-	position: absolute;
-	background: linear-gradient(91deg, var(--color-1) 0%, var(--color-2) 100%);
-	border-radius: calc(var(--lp-border-radius-medium) - 1px)
-		calc(var(--lp-border-radius-medium) - 1px) 0 0;
-	width: 100%;
-	height: var(--lp-size-8);
-	top: 0;
-	left: 0;
 }
 
 .content {
