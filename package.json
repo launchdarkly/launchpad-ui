@@ -18,7 +18,7 @@
 		"graph": "nx graph --affected",
 		"postinstall": "syncpack lint",
 		"prepare": "husky",
-		"release": "nx affected --target=build --base=HEAD~1 --head=HEAD --exclude=launchpad-design-system && changeset publish",
+		"release": "nx run-many --target=build --all --exclude=launchpad-design-system && changeset publish",
 		"storybook": "pnpm build:transform && storybook dev -p 3000",
 		"storybook:build": "pnpm build:transform && storybook build --quiet",
 		"test": "pnpm build:transform && vitest run --coverage",
