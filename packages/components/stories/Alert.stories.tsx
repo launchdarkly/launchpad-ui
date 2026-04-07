@@ -222,3 +222,16 @@ export const HiddenIcon: Story = {
 		hideIcon: true,
 	},
 };
+
+export const InlineWithAction: Story = {
+	args: {
+		children: (
+			<>
+				<Text>Your session will expire in 5 minutes.</Text>
+				<Button>Extend session</Button>
+			</>
+		),
+		variant: 'inline',
+		status: 'warning',
+	},
+};

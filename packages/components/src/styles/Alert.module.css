@@ -100,6 +100,17 @@
 	& .close {
 		margin-left: var(--lp-spacing-300);
 	}
+
+	& .content {
+		flex-direction: row;
+		align-items: center;
+		gap: var(--lp-spacing-400);
+	}
+}
+
+.inlineAction {
+	flex-shrink: 0;
+	margin-left: auto;
 }
 
 .content {

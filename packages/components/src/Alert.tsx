@@ -6,6 +6,7 @@ import { useControlledState } from '@react-stately/utils';
 import { cva } from 'class-variance-authority';
 import { HeadingContext, Provider } from 'react-aria-components';
 
+import { ButtonContext } from './Button';
 import { ButtonGroupContext } from './ButtonGroup';
 import { IconButton } from './IconButton';
 import styles from './styles/Alert.module.css';
@@ -72,6 +73,16 @@ const Alert = ({
 							{
 								className: styles.buttonGroup,
 							},
+						],
+						[
+							ButtonContext,
+							variant === 'inline'
+								? {
+										className: styles.inlineAction,
+										size: 'medium' as const,
+										variant: 'default' as const,
+									}
+								: {},
 						],
 					]}
 				>
