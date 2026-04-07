@@ -25,6 +25,11 @@
 	--alert-color-bg-warning: #3c170c;
 }
 
+strong,
+b {
+	font-weight: var(--lp-font-weight-semibold);
+}
+
 .base {
 	display: flex;
 	border-radius: var(--lp-border-radius-medium);
