@@ -15,6 +15,16 @@ const meta: Meta<typeof Alert> = {
 				'https://www.figma.com/design/98HKKXL2dTle29ikJ3tzk7/%F0%9F%9A%80-LaunchPad?node-id=8225-704&m=dev',
 		},
 	},
+	argTypes: {
+		hideIcon: {
+			control: 'boolean',
+			description: 'Hides the status icon',
+			table: {
+				type: { summary: 'boolean' },
+				defaultValue: { summary: 'false' },
+			},
+		},
+	},
 };
 
 export default meta;
@@ -197,5 +207,18 @@ export const Actions: Story = {
 			</>
 		),
 		isDismissable: true,
+	},
+};
+
+export const HiddenIcon: Story = {
+	args: {
+		children: (
+			<>
+				<Heading>Custom notification</Heading>
+				<Text>This alert displays without a status icon for a cleaner appearance.</Text>
+			</>
+		),
+		status: 'info',
+		hideIcon: true,
 	},
 };

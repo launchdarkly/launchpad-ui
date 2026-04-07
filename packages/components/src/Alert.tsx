@@ -33,8 +33,13 @@ const alertStyles = cva(styles.base, {
 interface AlertVariants extends VariantProps<typeof alertStyles> {}
 
 interface AlertProps extends HTMLAttributes<HTMLDivElement>, AlertVariants {
+	/** Hides the status icon. */
+	hideIcon?: boolean;
+	/** Whether the alert can be dismissed. */
 	isDismissable?: boolean;
+	/** Whether the alert is open (controlled). */
 	isOpen?: boolean;
+	/** Handler called when the alert is dismissed. */
 	onDismiss?: () => void;
 	ref?: Ref<HTMLDivElement>;
 }
@@ -47,6 +52,7 @@ const Alert = ({
 	isDismissable,
 	isOpen,
 	onDismiss,
+	hideIcon,
 	ref,
 	...props
 }: AlertProps) => {
@@ -54,7 +60,7 @@ const Alert = ({
 
 	return open ? (
 		<div ref={ref} {...props} role="alert" className={alertStyles({ status, variant, className })}>
-			{status !== 'neutral' && (
+			{!hideIcon && status !== 'neutral' && (
 				<StatusIcon size="small" kind={status || 'info'} className={styles.icon} />
 			)}
 			<div className={styles.content}>
