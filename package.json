@@ -82,6 +82,10 @@
 		"not dead",
 		"not IE 11"
 	],
+	"engines": {
+		"node": ">=22.14.0",
+		"npm": ">=11.5.1"
+	},
 	"packageManager": "pnpm@10.12.4",
 	"pnpm": {
 		"onlyBuiltDependencies": [

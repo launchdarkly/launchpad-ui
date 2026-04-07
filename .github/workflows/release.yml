@@ -14,15 +14,16 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       id-token: write
-      contents: read
+      contents: write
+      pull-requests: write
+      issues: write
     steps:
       - name: Get Tokens
         uses: launchdarkly/gh-actions/actions/release-secrets@release-secrets-v1.2.0
         with:
           aws_assume_role: ${{ vars.AWS_ROLE_ARN }}
           ssm_parameter_pairs: |
-            /production/common/launchpad-ui/gh-pat-token = CUSTOM_GITHUB_TOKEN,
-            /production/common/releasing/npm/token = NODE_AUTH_TOKEN
+            /production/common/launchpad-ui/gh-pat-token = CUSTOM_GITHUB_TOKEN
 
       - uses: actions/checkout@v6
         with:
@@ -38,8 +39,11 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v6
         with:
-          node-version: 22
+          node-version: 22.14.0
           cache: pnpm
+
+      - name: Upgrade npm
+        run: npm install -g npm@11.5.1
 
       - name: Install Dependencies
         run: pnpm install
@@ -53,5 +57,4 @@ jobs:
           cwd: ${{ github.workspace }}
         env:
           GITHUB_TOKEN: ${{ env.CUSTOM_GITHUB_TOKEN }}
-          NPM_TOKEN: ${{ env.NODE_AUTH_TOKEN }}
           NPM_CONFIG_PROVENANCE: true
