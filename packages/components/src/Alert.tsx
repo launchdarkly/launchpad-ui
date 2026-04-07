@@ -54,7 +54,9 @@ const Alert = ({
 
 	return open ? (
 		<div ref={ref} {...props} role="alert" className={alertStyles({ status, variant, className })}>
-			{status !== 'neutral' && <StatusIcon kind={status || 'info'} className={styles.icon} />}
+			{status !== 'neutral' && (
+				<StatusIcon size="small" kind={status || 'info'} className={styles.icon} />
+			)}
 			<div className={styles.content}>
 				<Provider
 					values={[

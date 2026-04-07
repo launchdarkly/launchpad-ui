@@ -28,7 +28,7 @@
 .base {
 	display: flex;
 	border-radius: var(--lp-border-radius-medium);
-	gap: var(--lp-spacing-500);
+	gap: var(--lp-spacing-300);
 	align-items: flex-start;
 
 	&.error .icon {
@@ -48,8 +48,9 @@
 	}
 }
 
-.default {
-	padding: var(--lp-spacing-700);
+.default,
+.inline {
+	padding: var(--lp-spacing-400);
 	background-color: var(--alert-color-bg-neutral);
 	border: 1px solid var(--alert-color-border-neutral);
 	position: relative;
@@ -82,14 +83,13 @@
 	&:has(.heading) {
 		/* biome-ignore lint/style/noDescendingSpecificity: ignore */
 		& .icon {
-			transform: translateY(2px);
+			transform: translateY(4px);
 		}
 	}
 
+	/* Let's keep the close button in the default position, but position relative in case we want to move it later. */
 	& .close {
-		position: absolute;
-		right: var(--lp-spacing-300);
-		top: var(--lp-spacing-500);
+		position: relative;
 	}
 }
 
@@ -111,11 +111,11 @@
 	align-items: flex-start;
 }
 
-.heading {
-	font: var(--lp-text-heading-2-semibold);
-	margin-bottom: var(--lp-spacing-200);
+.content .heading {
+	font-size: var(--lp-text-body-2-semibold);
+	/* margin-bottom: var(--lp-spacing-200); */
 }
 
 .buttonGroup {
-	margin-top: var(--lp-spacing-700);
+	margin-top: var(--lp-spacing-500);
 }
