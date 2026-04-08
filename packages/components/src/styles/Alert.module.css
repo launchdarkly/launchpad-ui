@@ -79,7 +79,7 @@
 	&:has(.heading) {
 		/* biome-ignore lint/style/noDescendingSpecificity: ignore */
 		& .icon {
-			transform: translateY(4px);
+			transform: translateY(2px);
 		}
 	}
 
@@ -136,6 +136,11 @@
 
 .buttonGroup {
 	margin-top: var(--lp-spacing-500);
+}
+
+.default .close {
+	top: -4px;
+	right: -4px;
 }
 
 /* Sometimes we want to make text bold, but we need to make sure this maps to the correct font weight. */
