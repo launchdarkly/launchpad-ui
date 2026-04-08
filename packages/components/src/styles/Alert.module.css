@@ -136,7 +136,7 @@
 }
 
 .content .heading {
-	font-size: var(--lp-text-body-2-semibold);
+	font: var(--lp-text-body-2-semibold);
 }
 
 .buttonGroup {
