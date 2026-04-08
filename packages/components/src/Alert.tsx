@@ -94,7 +94,7 @@ const Alert = ({
 					aria-label="Close"
 					icon="cancel"
 					variant="minimal"
-					size="medium"
+					size="small"
 					className={styles.close}
 					onPress={() => setOpen(false)}
 				/>

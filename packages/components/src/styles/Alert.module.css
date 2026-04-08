@@ -139,8 +139,8 @@
 }
 
 .default .close {
-	top: -4px;
-	right: -4px;
+	bottom: var(--lp-spacing-200);
+	left: var(--lp-spacing-200);
 }
 
 /* Sometimes we want to make text bold, but we need to make sure this maps to the correct font weight. */
