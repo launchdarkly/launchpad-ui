@@ -133,7 +133,6 @@
 
 .content .heading {
 	font: var(--lp-text-body-2-semibold);
-	/* margin-top: var(--lp-spacing-200); */
 }
 
 .buttonGroup {
