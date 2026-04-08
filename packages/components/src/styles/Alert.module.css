@@ -25,11 +25,6 @@
 	--alert-color-bg-warning: #3c170c;
 }
 
-strong,
-b {
-	font-weight: var(--lp-font-weight-semibold);
-}
-
 .base {
 	display: flex;
 	border-radius: var(--lp-border-radius-medium);
@@ -59,6 +54,7 @@ b {
 	background-color: var(--alert-color-bg-neutral);
 	border: 1px solid var(--alert-color-border-neutral);
 	position: relative;
+	min-height: var(--lp-size-48);
 
 	&.neutral {
 		border-color: var(--alert-color-border-neutral);
@@ -111,6 +107,18 @@ b {
 		align-items: center;
 		gap: var(--lp-spacing-400);
 	}
+
+	/* Adjust padding so the alert maintains the same height if there's an inline action or close button. We have to hardcode the vertical values because of the way borders get calculated as a part of an element's dimensions. */
+	&:has(.inlineAction),
+	&:has(.close) {
+		padding: 7px var(--lp-spacing-300) 7px var(--lp-spacing-400);
+	}
+
+	&:has(.inlineAction) {
+		.close {
+			margin-left: 0;
+		}
+	}
 }
 
 .inlineAction {
@@ -129,9 +137,14 @@ b {
 
 .content .heading {
 	font-size: var(--lp-text-body-2-semibold);
-	/* margin-bottom: var(--lp-spacing-200); */
 }
 
 .buttonGroup {
 	margin-top: var(--lp-spacing-500);
+}
+
+/* Sometimes we want to make text bold, but we need to make sure this maps to the correct font weight. */
+strong,
+b {
+	font-weight: var(--lp-font-weight-semibold);
 }
