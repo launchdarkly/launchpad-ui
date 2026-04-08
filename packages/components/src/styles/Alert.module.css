@@ -144,7 +144,7 @@
 }
 
 /* Sometimes we want to make text bold, but we need to make sure this maps to the correct font weight. */
-strong,
-b {
+.content strong,
+.content b {
 	font-weight: var(--lp-font-weight-semibold);
 }
