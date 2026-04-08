@@ -6,6 +6,7 @@ import { useControlledState } from '@react-stately/utils';
 import { cva } from 'class-variance-authority';
 import { HeadingContext, Provider } from 'react-aria-components';
 
+import { ButtonContext } from './Button';
 import { ButtonGroupContext } from './ButtonGroup';
 import { IconButton } from './IconButton';
 import styles from './styles/Alert.module.css';
@@ -33,8 +34,13 @@ const alertStyles = cva(styles.base, {
 interface AlertVariants extends VariantProps<typeof alertStyles> {}
 
 interface AlertProps extends HTMLAttributes<HTMLDivElement>, AlertVariants {
+	/** Hides the status icon. */
+	hideIcon?: boolean;
+	/** Whether the alert can be dismissed. */
 	isDismissable?: boolean;
+	/** Whether the alert is open (controlled). */
 	isOpen?: boolean;
+	/** Handler called when the alert is dismissed. */
 	onDismiss?: () => void;
 	ref?: Ref<HTMLDivElement>;
 }
@@ -47,6 +53,7 @@ const Alert = ({
 	isDismissable,
 	isOpen,
 	onDismiss,
+	hideIcon,
 	ref,
 	...props
 }: AlertProps) => {
@@ -54,8 +61,9 @@ const Alert = ({
 
 	return open ? (
 		<div ref={ref} {...props} role="alert" className={alertStyles({ status, variant, className })}>
-			{variant === 'default' && <div role="presentation" className={styles.bar} />}
-			{status !== 'neutral' && <StatusIcon kind={status || 'info'} className={styles.icon} />}
+			{!hideIcon && status !== 'neutral' && (
+				<StatusIcon size="small" kind={status || 'info'} className={styles.icon} />
+			)}
 			<div className={styles.content}>
 				<Provider
 					values={[
@@ -65,6 +73,16 @@ const Alert = ({
 							{
 								className: styles.buttonGroup,
 							},
+						],
+						[
+							ButtonContext,
+							variant === 'inline'
+								? {
+										className: styles.inlineAction,
+										size: 'medium' as const,
+										variant: 'default' as const,
+									}
+								: {},
 						],
 					]}
 				>
@@ -76,7 +94,7 @@ const Alert = ({
 					aria-label="Close"
 					icon="cancel"
 					variant="minimal"
-					size="small"
+					size="medium"
 					className={styles.close}
 					onPress={() => setOpen(false)}
 				/>
