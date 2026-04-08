@@ -56,11 +56,6 @@
 	position: relative;
 	min-height: var(--lp-size-48);
 
-	&.neutral {
-		border-color: var(--alert-color-border-neutral);
-		background-color: var(--alert-color-bg-neutral);
-	}
-
 	&.error {
 		border-color: var(--alert-color-border-error);
 		background-color: var(--alert-color-bg-error);
