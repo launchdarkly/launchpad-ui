@@ -107,7 +107,6 @@ export const InlineInfo: Story = {
 			</Text>
 		),
 		variant: 'inline',
-		isDismissable: true,
 		status: 'info',
 	},
 };
