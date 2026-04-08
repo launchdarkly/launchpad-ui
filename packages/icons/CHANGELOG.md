@@ -1,5 +1,15 @@
 # @launchpad-ui/icons
 
+## 0.25.4
+
+### Patch Changes
+
+- [#1875](https://github.com/launchdarkly/launchpad-ui/pull/1875) [`c21e7b3`](https://github.com/launchdarkly/launchpad-ui/commit/c21e7b3da7c97182c4b37782b0e339f2afae1808) Thanks [@pd-sa-github-launchpad-ui](https://github.com/pd-sa-github-launchpad-ui)! - feat(icons): sync and connect icons with figma library
+
+  New icons:
+
+  - restore
+
 ## 0.25.3
 
 ### Patch Changes
