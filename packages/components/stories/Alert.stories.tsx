@@ -55,7 +55,7 @@ export const InlineDefault: Story = {
 	args: {
 		children: (
 			<Text>
-				Flag a prerequisite of <strong>1 other flag</strong> in <strong>production</strong>
+				Flag is a prerequisite of <strong>1 other flag</strong> in <strong>production</strong>
 			</Text>
 		),
 		variant: 'inline',
@@ -103,7 +103,7 @@ export const InlineInfo: Story = {
 	args: {
 		children: (
 			<Text>
-				Flag a prerequisite of <strong>1 other flag</strong> in <strong>production</strong>
+				Flag is a prerequisite of <strong>1 other flag</strong> in <strong>production</strong>
 			</Text>
 		),
 		variant: 'inline',
