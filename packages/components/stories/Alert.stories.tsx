@@ -161,10 +161,16 @@ export const BlockWithoutHeader: Story = {
 				<Text>Something went wrong.</Text>
 			</Alert>
 			<Alert status="info" actionsLayout="inline" isDismissable>
-				<Text>A new version of the SDK is available.</Text>
+				<Text>
+					Test drive to verify SSO is working. If successful, you'll be redirected to this page by
+					your ldP. This will not require all account members to sign in with SSO.
+				</Text>
 				<ButtonGroup>
 					<Button>Update now</Button>
 				</ButtonGroup>
+			</Alert>
+			<Alert status="neutral" actionsLayout="inline">
+				<Text>A new version of the SDK is available with performance improvements.</Text>
 			</Alert>
 		</div>
 	),
