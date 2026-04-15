@@ -48,8 +48,7 @@
 	}
 }
 
-.default,
-.inline {
+.default {
 	padding: var(--lp-spacing-500);
 	background-color: var(--alert-color-bg-neutral);
 	border: 1px solid var(--alert-color-border-neutral);
@@ -76,14 +75,10 @@
 		background-color: var(--alert-color-bg-warning);
 	}
 
-	&:has(.heading) {
-		/* biome-ignore lint/style/noDescendingSpecificity: ignore */
-		& .icon {
-			transform: translateY(var(--lp-size-2));
-		}
+	& .icon {
+		transform: translateY(var(--lp-size-2));
 	}
 
-	/* Let's keep the close button in the default position, but position relative in case we want to move it later. */
 	& .close {
 		position: relative;
 	}
@@ -92,34 +87,10 @@
 .inline {
 	align-items: center;
 	gap: var(--lp-spacing-300);
-	padding: var(--lp-spacing-400) var(--lp-spacing-500);
 
 	& .close {
 		margin-left: var(--lp-spacing-300);
 	}
-
-	& .content {
-		flex-direction: row;
-		align-items: center;
-		gap: var(--lp-spacing-400);
-	}
-
-	/* Adjust padding so the alert maintains the same height if there's an inline action or close button. We have to hardcode the vertical values because of the way borders get calculated as a part of an element's dimensions. */
-	&:has(.inlineAction),
-	&:has(.close) {
-		padding: 7px var(--lp-spacing-300) 7px var(--lp-spacing-500);
-	}
-
-	&:has(.inlineAction) {
-		.close {
-			margin-left: 0;
-		}
-	}
-}
-
-.inlineAction {
-	flex-shrink: 0;
-	margin-left: auto;
 }
 
 .content {
@@ -131,6 +102,14 @@
 	align-items: flex-start;
 }
 
+.text {
+	display: flex;
+	flex-direction: column;
+	flex: 1;
+	min-width: 0;
+}
+
+.text .heading,
 .content .heading {
 	font: var(--lp-text-body-2-semibold);
 }
@@ -139,9 +118,41 @@
 	margin-top: var(--lp-spacing-500);
 }
 
-.default .close {
-	bottom: var(--lp-spacing-300);
-	left: var(--lp-spacing-300);
+.actionsStacked:not(.inline) {
+	.close {
+		bottom: var(--lp-spacing-300);
+		left: var(--lp-spacing-300);
+	}
+}
+
+.actionsInline {
+	& .content {
+		flex-direction: row;
+		align-items: flex-start;
+		gap: var(--lp-spacing-500);
+	}
+
+	& .buttonGroup {
+		margin-top: 0;
+		margin-left: auto;
+		/* bottom: var(--lp-spacing-300); */
+	}
+
+	&:has(.buttonGroup),
+	&:has(.close) {
+		padding: 7px var(--lp-spacing-300) 7px var(--lp-spacing-400);
+	}
+	& .text {
+		padding: 6px 0;
+	}
+	& .icon {
+		transform: translateY(8px);
+	}
+	/* & .close {
+		position: relative;
+		bottom: var(--lp-spacing-100);
+		left: var(--lp-spacing-300);
+	} */
 }
 
 /* Sometimes we want to make text bold, but we need to make sure this maps to the correct font weight. */

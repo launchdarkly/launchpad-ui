@@ -40,7 +40,7 @@ interface ButtonGroupProps extends GroupProps, VariantProps<typeof buttonGroupSt
 
 const ButtonGroupContext = createContext<ContextValue<ButtonGroupProps, HTMLDivElement>>(null);
 
-const ButtonGroup = ({ ref, ...props }: ButtonGroupProps) => {
+const ButtonGroup = ({ ref, ...props }: ButtonGroupProps): React.JSX.Element => {
 	[props, ref] = useLPContextProps(props, ref, ButtonGroupContext);
 	const { spacing = 'basic', orientation = 'horizontal' } = props;
 
@@ -66,6 +66,8 @@ const ButtonGroup = ({ ref, ...props }: ButtonGroupProps) => {
 		</Group>
 	);
 };
+
+ButtonGroup.displayName = 'ButtonGroup';
 
 export { ButtonGroup, ButtonGroupContext, buttonGroupStyles };
 export type { ButtonGroupProps };

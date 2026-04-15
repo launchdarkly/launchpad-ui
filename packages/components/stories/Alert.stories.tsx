@@ -16,9 +16,18 @@ const meta: Meta<typeof Alert> = {
 		},
 	},
 	argTypes: {
+		actionsLayout: {
+			control: 'radio',
+			options: ['stacked', 'inline'],
+			description: 'Controls the layout of actions (block variant only)',
+			table: {
+				type: { summary: "'stacked' | 'inline'" },
+				defaultValue: { summary: 'stacked' },
+			},
+		},
 		hideIcon: {
 			control: 'boolean',
-			description: 'Hides the status icon',
+			description: 'Hides the status icon (block variant only)',
 			table: {
 				type: { summary: 'boolean' },
 				defaultValue: { summary: 'false' },
@@ -222,15 +231,54 @@ export const HiddenIcon: Story = {
 	},
 };
 
-export const InlineWithAction: Story = {
+export const ActionsInline: Story = {
 	args: {
 		children: (
 			<>
 				<Text>Your session will expire in 5 minutes.</Text>
-				<Button>Extend session</Button>
+				<ButtonGroup>
+					<Button>Extend session</Button>
+				</ButtonGroup>
 			</>
 		),
-		variant: 'inline',
 		status: 'warning',
+		actionsLayout: 'inline',
 	},
+	name: 'Actions Inline',
+};
+
+export const ActionsInlineWithDismiss: Story = {
+	args: {
+		children: (
+			<>
+				<Text>A new version of the SDK is available.</Text>
+				<ButtonGroup>
+					<Button variant="minimal">Learn more</Button>
+					<Button>Update now</Button>
+				</ButtonGroup>
+			</>
+		),
+		status: 'info',
+		actionsLayout: 'inline',
+		isDismissable: true,
+	},
+	name: 'Actions Inline with Dismiss',
+};
+
+export const ActionsInlineWithHeading: Story = {
+	args: {
+		children: (
+			<>
+				<Heading>SDK Update Available</Heading>
+				<Text>A new version of the SDK is available with performance improvements.</Text>
+				<ButtonGroup>
+					<Button>Update now</Button>
+				</ButtonGroup>
+			</>
+		),
+		status: 'info',
+		actionsLayout: 'inline',
+		isDismissable: true,
+	},
+	name: 'Actions Inline with Heading',
 };

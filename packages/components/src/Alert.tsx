@@ -1,15 +1,56 @@
 import type { VariantProps } from 'class-variance-authority';
-import type { HTMLAttributes, Ref } from 'react';
+import type { HTMLAttributes, ReactNode, Ref } from 'react';
 
 import { StatusIcon } from '@launchpad-ui/icons';
 import { useControlledState } from '@react-stately/utils';
 import { cva } from 'class-variance-authority';
+import { Children, Fragment, isValidElement } from 'react';
 import { HeadingContext, Provider } from 'react-aria-components';
 
-import { ButtonContext } from './Button';
-import { ButtonGroupContext } from './ButtonGroup';
+import { ButtonGroup, ButtonGroupContext } from './ButtonGroup';
 import { IconButton } from './IconButton';
 import styles from './styles/Alert.module.css';
+
+const isButtonGroup = (child: ReactNode): boolean => {
+	if (!isValidElement(child)) return false;
+	const type = child.type as { displayName?: string; name?: string };
+	return (
+		child.type === ButtonGroup || type.displayName === 'ButtonGroup' || type.name === 'ButtonGroup'
+	);
+};
+
+const flattenChildren = (children: ReactNode): ReactNode[] => {
+	const result: ReactNode[] = [];
+
+	Children.forEach(children, (child) => {
+		if (isValidElement<{ children?: ReactNode }>(child) && child.type === Fragment) {
+			result.push(...flattenChildren(child.props.children));
+		} else {
+			result.push(child);
+		}
+	});
+
+	return result;
+};
+
+const separateChildren = (
+	children: ReactNode,
+): { textContent: ReactNode[]; actions: ReactNode } => {
+	const textContent: ReactNode[] = [];
+	let actions: ReactNode = null;
+
+	const flatChildren = flattenChildren(children);
+
+	for (const child of flatChildren) {
+		if (isButtonGroup(child)) {
+			actions = child;
+		} else {
+			textContent.push(child);
+		}
+	}
+
+	return { textContent, actions };
+};
 
 const alertStyles = cva(styles.base, {
 	variants: {
@@ -24,17 +65,24 @@ const alertStyles = cva(styles.base, {
 			default: styles.default,
 			inline: styles.inline,
 		},
+		actionsLayout: {
+			stacked: styles.actionsStacked,
+			inline: styles.actionsInline,
+		},
 	},
 	defaultVariants: {
 		status: 'neutral',
 		variant: 'default',
+		actionsLayout: 'stacked',
 	},
 });
 
 interface AlertVariants extends VariantProps<typeof alertStyles> {}
 
 interface AlertProps extends HTMLAttributes<HTMLDivElement>, AlertVariants {
-	/** Hides the status icon. */
+	/** Controls the layout of actions within the alert (block variant only). */
+	actionsLayout?: 'stacked' | 'inline';
+	/** Hides the status icon (block variant only). */
 	hideIcon?: boolean;
 	/** Whether the alert can be dismissed. */
 	isDismissable?: boolean;
@@ -50,6 +98,7 @@ const Alert = ({
 	children,
 	status = 'neutral',
 	variant = 'default',
+	actionsLayout = 'stacked',
 	isDismissable,
 	isOpen,
 	onDismiss,
@@ -59,11 +108,18 @@ const Alert = ({
 }: AlertProps) => {
 	const [open, setOpen] = useControlledState(isOpen, true, (val) => !val && onDismiss?.());
 
+	const showIcon = status !== 'neutral' && !(hideIcon && variant === 'default');
+	const resolvedActionsLayout = variant === 'default' ? actionsLayout : undefined;
+	const { textContent, actions } = separateChildren(children);
+
 	return open ? (
-		<div ref={ref} {...props} role="alert" className={alertStyles({ status, variant, className })}>
-			{!hideIcon && status !== 'neutral' && (
-				<StatusIcon size="small" kind={status || 'info'} className={styles.icon} />
-			)}
+		<div
+			ref={ref}
+			{...props}
+			role="alert"
+			className={alertStyles({ status, variant, actionsLayout: resolvedActionsLayout, className })}
+		>
+			{showIcon && <StatusIcon size="small" kind={status || 'info'} className={styles.icon} />}
 			<div className={styles.content}>
 				<Provider
 					values={[
@@ -74,19 +130,10 @@ const Alert = ({
 								className: styles.buttonGroup,
 							},
 						],
-						[
-							ButtonContext,
-							variant === 'inline'
-								? {
-										className: styles.inlineAction,
-										size: 'medium' as const,
-										variant: 'default' as const,
-									}
-								: {},
-						],
 					]}
 				>
-					{children}
+					<div className={styles.text}>{textContent}</div>
+					{actions}
 				</Provider>
 			</div>
 			{isDismissable && (
