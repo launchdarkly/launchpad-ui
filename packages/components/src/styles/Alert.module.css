@@ -48,6 +48,7 @@
 	}
 }
 
+/* Stacked actions variant */
 .default {
 	padding: var(--lp-spacing-500);
 	background-color: var(--alert-color-bg-neutral);
@@ -84,8 +85,13 @@
 		bottom: var(--lp-spacing-300);
 		left: var(--lp-spacing-300);
 	}
+
+	.buttonGroup {
+		margin-top: var(--lp-spacing-500);
+	}
 }
 
+/* Inline actions variant */
 .actionsInline {
 	padding: var(--lp-spacing-300) var(--lp-spacing-300) var(--lp-spacing-300) var(--lp-spacing-500);
 
@@ -95,29 +101,23 @@
 		gap: var(--lp-spacing-500);
 	}
 
-	& .buttonGroup {
-		margin-top: 0;
-		margin-left: auto;
-	}
-
-	& .text {
-		padding: calc(var(--lp-spacing-300) - 2px) 0;
-	}
 	& .icon {
 		transform: translateY(var(--lp-spacing-300));
 	}
+
+	/* This magic number is used to ensure the text baseline is aligned with the trailing actions and dismiss buttons */
+	& .text {
+		padding: calc(var(--lp-spacing-300) - 2px) 0;
+	}
+
+	& .buttonGroup {
+		margin-top: unset;
+		margin-left: auto;
+	}
+
 	& .close {
 		bottom: unset;
 		left: unset;
-	}
-}
-
-.inline {
-	align-items: center;
-	gap: var(--lp-spacing-300);
-
-	& .close {
-		margin-left: var(--lp-spacing-300);
 	}
 }
 
@@ -130,32 +130,22 @@
 	align-items: flex-start;
 }
 
-.text {
-	display: flex;
-	flex-direction: column;
-	flex: 1;
-	min-width: 0;
-}
-
 .text .heading,
 .content .heading {
 	font: var(--lp-text-body-2-semibold);
-}
-
-.buttonGroup {
-	margin-top: var(--lp-spacing-500);
-}
-
-/* Tweak the placement of the close button in the stacked variant, but avoid moving it in the inline variant. */
-.actionsStacked:not(.inline) {
-	.close {
-		bottom: var(--lp-spacing-300);
-		left: var(--lp-spacing-300);
-	}
 }
 
 /* Sometimes we want to make text bold, but we need to make sure this maps to the correct font weight. */
 .content strong,
 .content b {
 	font-weight: var(--lp-font-weight-semibold);
+}
+
+/* Inline variant styles */
+.inline {
+	align-items: center;
+
+	& .close {
+		margin-left: var(--lp-spacing-300);
+	}
 }
