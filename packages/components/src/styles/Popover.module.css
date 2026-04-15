@@ -36,7 +36,7 @@
 		stroke-width: 1px;
 	}
 
-	&[data-trigger='DialogTrigger'],
+	&[data-trigger='DialogTrigger']:not(:has([role='menu'], [role='listbox'])),
 	&[data-trigger='ComboBoxDialog'],
 	&[data-trigger='DatePicker'],
 	&[data-trigger='DateRangePicker'] {
