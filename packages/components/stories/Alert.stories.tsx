@@ -17,21 +17,21 @@ const meta: Meta<typeof Alert> = {
 	},
 	argTypes: {
 		actionsLayout: {
-			control: 'radio',
+			control: 'inline-radio',
 			options: ['stacked', 'inline'],
 			description: 'Controls the layout of actions (block variant only)',
-			table: {
-				type: { summary: "'stacked' | 'inline'" },
-				defaultValue: { summary: 'stacked' },
-			},
 		},
 		hideIcon: {
 			control: 'boolean',
 			description: 'Hides the status icon (block variant only)',
-			table: {
-				type: { summary: 'boolean' },
-				defaultValue: { summary: 'false' },
-			},
+		},
+		status: {
+			control: 'select',
+			options: ['neutral', 'info', 'error', 'success', 'warning'],
+		},
+		variant: {
+			control: 'inline-radio',
+			options: ['default', 'inline'],
 		},
 	},
 };
@@ -40,7 +40,11 @@ export default meta;
 
 type Story = StoryObj<typeof Alert>;
 
-export const Default: Story = {
+// =============================================================================
+// Block Variant Stories
+// =============================================================================
+
+export const BlockDefault: Story = {
 	args: {
 		children: (
 			<>
@@ -57,43 +61,55 @@ export const Default: Story = {
 		),
 		status: 'info',
 		isDismissable: true,
+		actionsLayout: 'stacked',
 	},
+	name: 'Block/Default',
 };
 
-export const InlineDefault: Story = {
-	args: {
-		children: (
-			<Text>
-				Flag is a prerequisite of <strong>1 other flag</strong> in <strong>production</strong>
-			</Text>
-		),
-		variant: 'inline',
-		status: 'info',
-		isDismissable: true,
-	},
-	name: 'Inline',
+export const BlockTones: Story = {
+	render: () => (
+		<div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+			<Alert>
+				<Heading>Neutral alert</Heading>
+				<Text>This is a neutral alert with no specific status.</Text>
+			</Alert>
+			<Alert status="info">
+				<Heading>Info alert</Heading>
+				<Text>This is an informational alert.</Text>
+			</Alert>
+			<Alert status="error">
+				<Heading>Error alert</Heading>
+				<Text>This is an error alert.</Text>
+			</Alert>
+			<Alert status="success">
+				<Heading>Success alert</Heading>
+				<Text>This is a success alert.</Text>
+			</Alert>
+			<Alert status="warning">
+				<Heading>Warning alert</Heading>
+				<Text>This is a warning alert.</Text>
+			</Alert>
+		</div>
+	),
+	name: 'Block/Tones',
 };
 
-export const Neutral: Story = {
+export const BlockDismissable: Story = {
 	args: {
 		children: (
 			<>
-				<Heading>Let's squash some bugs!</Heading>
-				<Text>View a recent error or find a specific error message, URL, or segment.</Text>
+				<Heading>Session expiring soon</Heading>
+				<Text>Your session will expire in 5 minutes due to inactivity.</Text>
 			</>
 		),
-	},
-};
-
-export const InlineNeutral: Story = {
-	args: {
-		children: <Text>View a recent error or find a specific error message, URL, or segment.</Text>,
-		variant: 'inline',
+		status: 'warning',
 		isDismissable: true,
+		actionsLayout: 'stacked',
 	},
+	name: 'Block/Dismissable',
 };
 
-export const Info: Story = {
+export const BlockWithActions: Story = {
 	args: {
 		children: (
 			<>
@@ -102,170 +118,19 @@ export const Info: Story = {
 					Test drive to verify SSO is working. If successful, you'll be redirected to this page by
 					your ldP. This will not require all account members to sign in with SSO.
 				</Text>
-			</>
-		),
-		status: 'info',
-	},
-};
-
-export const InlineInfo: Story = {
-	args: {
-		children: (
-			<Text>
-				Flag is a prerequisite of <strong>1 other flag</strong> in <strong>production</strong>
-			</Text>
-		),
-		variant: 'inline',
-		status: 'info',
-	},
-};
-
-export const ErrorAlert: Story = {
-	args: {
-		children: (
-			<>
-				<Heading>Unable to connect to identity provider</Heading>
-				<Text>
-					We couldn't establish a connection to your SSO provider. Please verify your configuration
-					settings and try again.
-				</Text>
-			</>
-		),
-		status: 'error',
-	},
-	name: 'Error',
-};
-
-export const InlineError: Story = {
-	args: {
-		children: <Text>Failed to save changes. Please check your connection and try again.</Text>,
-		variant: 'inline',
-		isDismissable: true,
-		status: 'error',
-	},
-};
-
-export const Success: Story = {
-	args: {
-		children: (
-			<>
-				<Heading>SSO configuration complete</Heading>
-				<Text>
-					Your team can now sign in using your identity provider. All existing sessions will remain
-					active until they expire.
-				</Text>
-			</>
-		),
-		status: 'success',
-	},
-};
-
-export const InlineSuccess: Story = {
-	args: {
-		children: <Text>Your changes have been saved and deployed to production.</Text>,
-		variant: 'inline',
-		isDismissable: true,
-		status: 'success',
-	},
-};
-
-export const Warning: Story = {
-	args: {
-		children: (
-			<>
-				<Heading>Move with caution</Heading>
-				<Text>
-					We are currently in a period of merge caution until the end of the week.{' '}
-					<strong>All Production flag changes should be guarded releases.</strong> Read our{' '}
-					<a href="https://launchpad.launchdarkly.com/?path=/docs/getting-started--docs">
-						Holiday Readiness Plan
-					</a>{' '}
-					for more information.
-				</Text>
-			</>
-		),
-		status: 'warning',
-	},
-};
-
-export const InlineWarning: Story = {
-	args: {
-		children: (
-			<Text>
-				Changing the payload will immediately affect all SDKs using this key and may cause
-				unexpected behavior in existing applications.
-			</Text>
-		),
-		variant: 'inline',
-		isDismissable: true,
-		status: 'warning',
-	},
-};
-
-export const Actions: Story = {
-	args: {
-		children: (
-			<>
-				<Heading>Heading</Heading>
-				<Text>Content</Text>
 				<ButtonGroup>
-					<Button>Label</Button>
-					<Button variant="minimal">Label</Button>
-				</ButtonGroup>
-			</>
-		),
-		isDismissable: true,
-	},
-};
-
-export const HiddenIcon: Story = {
-	args: {
-		children: (
-			<>
-				<Heading>Custom notification</Heading>
-				<Text>This alert displays without a status icon for a cleaner appearance.</Text>
-			</>
-		),
-		status: 'info',
-		hideIcon: true,
-	},
-};
-
-export const ActionsInline: Story = {
-	args: {
-		children: (
-			<>
-				<Text>Your session will expire in 5 minutes.</Text>
-				<ButtonGroup>
-					<Button>Extend session</Button>
-				</ButtonGroup>
-			</>
-		),
-		status: 'warning',
-		actionsLayout: 'inline',
-	},
-	name: 'Actions Inline',
-};
-
-export const ActionsInlineWithDismiss: Story = {
-	args: {
-		children: (
-			<>
-				<Text>A new version of the SDK is available.</Text>
-				<ButtonGroup>
-					<Button variant="minimal">Learn more</Button>
-					<Button>Update now</Button>
+					<Button>Test drive SSO</Button>
+					<Button variant="minimal">Secondary action</Button>
 				</ButtonGroup>
 			</>
 		),
 		status: 'info',
-		actionsLayout: 'inline',
-		isDismissable: true,
+		actionsLayout: 'stacked',
 	},
-	name: 'Actions Inline with Dismiss',
+	name: 'Block/With Actions',
 };
 
-export const ActionsInlineWithHeading: Story = {
+export const BlockInlineActions: Story = {
 	args: {
 		children: (
 			<>
@@ -280,5 +145,69 @@ export const ActionsInlineWithHeading: Story = {
 		actionsLayout: 'inline',
 		isDismissable: true,
 	},
-	name: 'Actions Inline with Heading',
+	name: 'Block/Inline Actions',
+};
+
+export const BlockWithoutHeader: Story = {
+	render: () => (
+		<div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+			<Alert status="warning" actionsLayout="inline">
+				<Text>Your session will expire in 5 minutes.</Text>
+				<ButtonGroup>
+					<Button>Extend session</Button>
+				</ButtonGroup>
+			</Alert>
+			<Alert status="error" actionsLayout="inline" isDismissable>
+				<Text>Something went wrong.</Text>
+			</Alert>
+			<Alert status="info" actionsLayout="inline" isDismissable>
+				<Text>A new version of the SDK is available.</Text>
+				<ButtonGroup>
+					<Button>Update now</Button>
+				</ButtonGroup>
+			</Alert>
+		</div>
+	),
+	name: 'Block/Without Header',
+};
+
+// =============================================================================
+// Inline Variant Stories
+// =============================================================================
+
+export const InlineDefault: Story = {
+	args: {
+		children: (
+			<Text>
+				Flag is a prerequisite of <strong>1 other flag</strong> in <strong>production</strong>
+			</Text>
+		),
+		variant: 'inline',
+		status: 'info',
+		isDismissable: true,
+	},
+	name: 'Inline/Default',
+};
+
+export const InlineTones: Story = {
+	render: () => (
+		<div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+			<Alert variant="inline">
+				<Text>This is a neutral inline alert.</Text>
+			</Alert>
+			<Alert variant="inline" status="info">
+				<Text>This is an info inline alert.</Text>
+			</Alert>
+			<Alert variant="inline" status="error">
+				<Text>This is an error inline alert.</Text>
+			</Alert>
+			<Alert variant="inline" status="success">
+				<Text>This is a success inline alert.</Text>
+			</Alert>
+			<Alert variant="inline" status="warning">
+				<Text>This is a warning inline alert.</Text>
+			</Alert>
+		</div>
+	),
+	name: 'Inline/Tones',
 };
