@@ -37,6 +37,7 @@
 	}
 
 	&[data-trigger='DialogTrigger']:not(:has([role='menu'], [role='listbox'])),
+	&[data-trigger='DialogTrigger']:has(input[type='search']),
 	&[data-trigger='ComboBoxDialog'],
 	&[data-trigger='DatePicker'],
 	&[data-trigger='DateRangePicker'] {
