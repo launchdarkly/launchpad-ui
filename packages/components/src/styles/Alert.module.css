@@ -145,9 +145,15 @@
 	align-items: flex-start;
 }
 
-.text .heading,
-.content .heading {
-	font: var(--lp-text-body-2-semibold);
+.text {
+	display: flex;
+	flex-direction: column;
+	flex: 1;
+	min-width: 0;
+}
+
+.heading {
+	font: var(--lp-text-body-2-semibold) !important;
 }
 
 /* Sometimes we want to make text bold, but we need to make sure this maps to the correct font weight. */

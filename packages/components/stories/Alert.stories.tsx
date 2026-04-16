@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 
-import { Alert } from '../src/Alert';
+import { Alert, AlertText } from '../src/Alert';
 import { Button } from '../src/Button';
 import { ButtonGroup } from '../src/ButtonGroup';
 import { Heading } from '../src/Heading';
@@ -134,8 +134,10 @@ export const BlockInlineActions: Story = {
 	args: {
 		children: (
 			<>
-				<Heading>SDK Update Available</Heading>
-				<Text>A new version of the SDK is available with performance improvements.</Text>
+				<AlertText>
+					<Heading>SDK Update Available</Heading>
+					<Text>A new version of the SDK is available with performance improvements.</Text>
+				</AlertText>
 				<ButtonGroup>
 					<Button>Update now</Button>
 				</ButtonGroup>
@@ -152,25 +154,33 @@ export const BlockWithoutHeader: Story = {
 	render: () => (
 		<div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
 			<Alert status="warning" actionsLayout="inline">
-				<Text>Your session will expire in 5 minutes.</Text>
+				<AlertText>
+					<Text>Your session will expire in 5 minutes.</Text>
+				</AlertText>
 				<ButtonGroup>
 					<Button>Extend session</Button>
 				</ButtonGroup>
 			</Alert>
 			<Alert status="error" actionsLayout="inline" isDismissable>
-				<Text>Something went wrong.</Text>
+				<AlertText>
+					<Text>Something went wrong.</Text>
+				</AlertText>
 			</Alert>
 			<Alert status="info" actionsLayout="inline" isDismissable>
-				<Text>
-					Test drive to verify SSO is working. If successful, you'll be redirected to this page by
-					your ldP. This will not require all account members to sign in with SSO.
-				</Text>
+				<AlertText>
+					<Text>
+						Test drive to verify SSO is working. If successful, you'll be redirected to this page by
+						your ldP. This will not require all account members to sign in with SSO.
+					</Text>
+				</AlertText>
 				<ButtonGroup>
 					<Button>Update now</Button>
 				</ButtonGroup>
 			</Alert>
 			<Alert status="neutral" actionsLayout="inline">
-				<Text>A new version of the SDK is available with performance improvements.</Text>
+				<AlertText>
+					<Text>A new version of the SDK is available with performance improvements.</Text>
+				</AlertText>
 			</Alert>
 		</div>
 	),
