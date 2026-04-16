@@ -41,9 +41,8 @@ const alertStyles = cva(styles.base, {
 		},
 	},
 	defaultVariants: {
-		status: 'neutral',
+		status: 'info',
 		variant: 'default',
-		actionsLayout: 'stacked',
 	},
 });
 

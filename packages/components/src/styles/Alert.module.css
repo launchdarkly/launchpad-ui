@@ -58,7 +58,7 @@
 	background-color: var(--alert-color-bg-neutral);
 	border: 1px solid var(--alert-color-border-neutral);
 	position: relative;
-	/* min-height: var(--lp-size-48); */
+	min-height: var(--lp-size-48);
 
 	&.error {
 		border-color: var(--alert-color-border-error);
@@ -116,7 +116,7 @@
 
 		/* This magic number is used to ensure the text baseline is aligned with the trailing actions and dismiss buttons */
 		& .text {
-			padding: calc(var(--lp-spacing-300) - 2px) 0;
+			padding: calc(var(--lp-spacing-300) - var(--lp-size-2)) 0;
 		}
 
 		& .buttonGroup {
