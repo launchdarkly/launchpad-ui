@@ -113,39 +113,45 @@ const Alert = ({
 	const { textContent, actions } = separateChildren(children);
 
 	return open ? (
-		<div
-			ref={ref}
-			{...props}
-			role="alert"
-			className={alertStyles({ status, variant, actionsLayout: resolvedActionsLayout, className })}
-		>
-			{showIcon && <StatusIcon size="small" kind={status || 'info'} className={styles.icon} />}
-			<div className={styles.content}>
-				<Provider
-					values={[
-						[HeadingContext, { className: styles.heading }],
-						[
-							ButtonGroupContext,
-							{
-								className: styles.buttonGroup,
-							},
-						],
-					]}
-				>
-					<div className={styles.text}>{textContent}</div>
-					{actions}
-				</Provider>
+		<div ref={ref} className={styles.container}>
+			<div
+				{...props}
+				role="alert"
+				className={alertStyles({
+					status,
+					variant,
+					actionsLayout: resolvedActionsLayout,
+					className,
+				})}
+			>
+				{showIcon && <StatusIcon size="small" kind={status || 'info'} className={styles.icon} />}
+				<div className={styles.content}>
+					<Provider
+						values={[
+							[HeadingContext, { className: styles.heading }],
+							[
+								ButtonGroupContext,
+								{
+									className: styles.buttonGroup,
+								},
+							],
+						]}
+					>
+						<div className={styles.text}>{textContent}</div>
+						{actions}
+					</Provider>
+				</div>
+				{isDismissable && (
+					<IconButton
+						aria-label="Close"
+						icon="cancel"
+						variant="minimal"
+						size="medium"
+						className={styles.close}
+						onPress={() => setOpen(false)}
+					/>
+				)}
 			</div>
-			{isDismissable && (
-				<IconButton
-					aria-label="Close"
-					icon="cancel"
-					variant="minimal"
-					size="medium"
-					className={styles.close}
-					onPress={() => setOpen(false)}
-				/>
-			)}
 		</div>
 	) : null;
 };

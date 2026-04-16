@@ -73,7 +73,7 @@ export const BlockTones: Story = {
 				<Heading>Neutral alert</Heading>
 				<Text>This is a neutral alert with no specific status.</Text>
 			</Alert>
-			<Alert status="info">
+			<Alert status="info" isDismissable>
 				<Heading>Info alert</Heading>
 				<Text>This is an informational alert.</Text>
 			</Alert>
