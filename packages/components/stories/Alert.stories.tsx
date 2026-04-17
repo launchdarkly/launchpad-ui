@@ -50,12 +50,12 @@ export const BlockDefault: Story = {
 			<>
 				<Heading>Test drive SSO</Heading>
 				<Text>
-					Test drive to verify SSO is working. If successful, you'll be redirected to this page by
-					your ldP. This will not require all account members to sign in with SSO.
+					Verify your SSO configuration is working. You'll be redirected back here after a
+					successful test; this won't require all members to sign in with SSO yet.
 				</Text>
 				<ButtonGroup>
 					<Button>Test drive SSO</Button>
-					<Button variant="minimal">Secondary action</Button>
+					<Button variant="minimal">Cancel</Button>
 				</ButtonGroup>
 			</>
 		),
@@ -147,11 +147,11 @@ export const BlockInlineActions: Story = {
 		children: (
 			<>
 				<AlertText>
-					<Heading>SDK Update Available</Heading>
-					<Text>A new version of the SDK is available with performance improvements.</Text>
+					<Heading>SDK update available</Heading>
+					<Text>A new SDK version is available with performance improvements and bug fixes.</Text>
 				</AlertText>
 				<ButtonGroup>
-					<Button>Update now</Button>
+					<Button>Update</Button>
 				</ButtonGroup>
 			</>
 		),
@@ -175,23 +175,24 @@ export const BlockWithoutHeader: Story = {
 			</Alert>
 			<Alert status="error" actionsLayout="inline" isDismissable>
 				<AlertText>
-					<Text>Something went wrong.</Text>
+					<Text>
+						Unable to save your changes. Try again, or contact support if the problem continues.
+					</Text>
 				</AlertText>
 			</Alert>
 			<Alert status="info" actionsLayout="inline" isDismissable>
 				<AlertText>
 					<Text>
-						Test drive to verify SSO is working. If successful, you'll be redirected to this page by
-						your ldP. This will not require all account members to sign in with SSO.
+						A new relay proxy is available. Update to stay compatible with the latest SDK features.
 					</Text>
 				</AlertText>
 				<ButtonGroup>
-					<Button>Update now</Button>
+					<Button>Update</Button>
 				</ButtonGroup>
 			</Alert>
 			<Alert status="neutral" actionsLayout="inline">
 				<AlertText>
-					<Text>A new version of the SDK is available with performance improvements.</Text>
+					<Text>A new SDK version is available with performance improvements and bug fixes.</Text>
 				</AlertText>
 			</Alert>
 		</div>
@@ -205,11 +206,7 @@ export const BlockWithoutHeader: Story = {
 
 export const InlineDefault: Story = {
 	args: {
-		children: (
-			<Text>
-				Flag is a prerequisite of <strong>1 other flag</strong> in <strong>production</strong>
-			</Text>
-		),
+		children: <Text>This flag is a prerequisite of 1 other flag in production.</Text>,
 		variant: 'inline',
 		status: 'info',
 		isDismissable: true,
