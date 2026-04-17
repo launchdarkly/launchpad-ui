@@ -65,7 +65,7 @@ interface AlertProps extends HTMLAttributes<HTMLDivElement>, AlertVariants {
 const Alert = ({
 	className,
 	children,
-	status = 'neutral',
+	status = 'info',
 	variant = 'default',
 	actionsLayout = 'stacked',
 	isDismissable,
@@ -81,39 +81,38 @@ const Alert = ({
 	const resolvedActionsLayout = variant === 'default' ? actionsLayout : undefined;
 
 	return open ? (
-		<div ref={ref} className={styles.container}>
-			<div
-				{...props}
-				role="alert"
-				className={alertStyles({
-					status,
-					variant,
-					actionsLayout: resolvedActionsLayout,
-					className,
-				})}
-			>
-				{showIcon && <StatusIcon size="small" kind={status || 'info'} className={styles.icon} />}
-				<div className={styles.content}>
-					<Provider
-						values={[
-							[HeadingContext, { className: styles.heading }],
-							[ButtonGroupContext, { className: styles.buttonGroup }],
-						]}
-					>
-						{children}
-					</Provider>
-				</div>
-				{isDismissable && (
-					<IconButton
-						aria-label="Close"
-						icon="cancel"
-						variant="minimal"
-						size="medium"
-						className={styles.close}
-						onPress={() => setOpen(false)}
-					/>
-				)}
+		<div
+			ref={ref}
+			{...props}
+			role="alert"
+			className={alertStyles({
+				status,
+				variant,
+				actionsLayout: resolvedActionsLayout,
+				className,
+			})}
+		>
+			{showIcon && <StatusIcon size="small" kind={status || 'info'} className={styles.icon} />}
+			<div className={styles.content}>
+				<Provider
+					values={[
+						[HeadingContext, { className: styles.heading }],
+						[ButtonGroupContext, { className: styles.buttonGroup }],
+					]}
+				>
+					{children}
+				</Provider>
 			</div>
+			{isDismissable && (
+				<IconButton
+					aria-label="Close"
+					icon="cancel"
+					variant="minimal"
+					size="medium"
+					className={styles.close}
+					onPress={() => setOpen(false)}
+				/>
+			)}
 		</div>
 	) : null;
 };

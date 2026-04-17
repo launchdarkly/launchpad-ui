@@ -48,13 +48,10 @@
 	}
 }
 
-.container {
-	container-type: inline-size;
-}
-
 /* Stacked actions variant */
 .default {
-	padding: var(--lp-spacing-500);
+	container-type: inline-size;
+	padding: var(--lp-spacing-300) var(--lp-spacing-300) var(--lp-spacing-300) var(--lp-spacing-500);
 	background-color: var(--alert-color-bg-neutral);
 	border: 1px solid var(--alert-color-border-neutral);
 	position: relative;
@@ -81,7 +78,11 @@
 	}
 
 	& .icon {
-		transform: translateY(var(--lp-size-2));
+		transform: translateY(var(--lp-size-10));
+	}
+
+	.content {
+		padding: var(--lp-spacing-300) 0;
 	}
 
 	.close {
@@ -90,24 +91,28 @@
 		right: var(--lp-spacing-300);
 	}
 
-	&:has(.close) {
+	&:has(.close) .content {
 		padding-right: calc(var(--lp-spacing-300) + var(--lp-size-32) + var(--lp-spacing-300));
 	}
 
 	.buttonGroup {
-		margin-top: var(--lp-spacing-300);
+		margin-top: var(--lp-spacing-400);
 	}
 }
 
 /* Inline actions variant - only applies when container is wide enough */
 @container (min-width: 480px) {
 	.actionsInline {
-		padding: var(--lp-spacing-300) var(--lp-spacing-300) var(--lp-spacing-300) var(--lp-spacing-500);
+		&:has(.close) .content {
+			padding-right: 0;
+		}
 
 		& .content {
 			flex-direction: row;
 			align-items: flex-start;
+			flex: 1;
 			gap: var(--lp-spacing-500);
+			padding: 0;
 		}
 
 		& .icon {
@@ -121,6 +126,7 @@
 
 		& .buttonGroup {
 			margin-top: unset;
+			margin-bottom: unset;
 			margin-left: auto;
 		}
 
