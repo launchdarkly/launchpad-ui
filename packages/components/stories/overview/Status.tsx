@@ -3,7 +3,7 @@ import { Alert } from '../../src/Alert';
 import { Meter } from '../../src/Meter';
 import { ProgressBar } from '../../src/ProgressBar';
 // Import actual status stories
-import { Neutral as AlertExample } from '../Alert.stories';
+import { BlockDefault as AlertExample } from '../Alert.stories';
 import { Example as MeterExample } from '../Meter.stories';
 import { Example as ProgressBarExample } from '../ProgressBar.stories';
 import { Example as ToastExample } from '../Toast.stories';

@@ -135,10 +135,6 @@
 			top: unset;
 			right: unset;
 		}
-
-		&:has(.close) {
-			padding-right: var(--lp-spacing-300);
-		}
 	}
 }
 
