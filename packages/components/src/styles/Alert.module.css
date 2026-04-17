@@ -25,6 +25,7 @@
 	--alert-color-bg-warning: #3c170c;
 }
 
+/* Shared styles for both variants */
 .base {
 	display: flex;
 	border-radius: var(--lp-border-radius-medium);
@@ -48,7 +49,7 @@
 	}
 }
 
-/* Stacked actions variant */
+/* Base styles for the block variant */
 .default {
 	container-type: inline-size;
 	padding: var(--lp-spacing-300) var(--lp-spacing-300) var(--lp-spacing-300) var(--lp-spacing-500);

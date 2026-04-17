@@ -94,6 +94,18 @@ export const BlockTones: Story = {
 	name: 'Block/Tones',
 };
 
+export const Neutral: Story = {
+	args: {
+		children: (
+			<>
+				<Heading>Let's squash some bugs!</Heading>
+				<Text>View a recent error or find a specific error message, URL, or segment.</Text>
+			</>
+		),
+	},
+	name: 'Block/Neutral',
+};
+
 export const BlockDismissable: Story = {
 	args: {
 		children: (
