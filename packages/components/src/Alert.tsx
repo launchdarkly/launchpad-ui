@@ -41,7 +41,7 @@ const alertStyles = cva(styles.base, {
 		},
 	},
 	defaultVariants: {
-		status: 'info',
+		status: 'neutral',
 		variant: 'default',
 	},
 });
@@ -65,7 +65,7 @@ interface AlertProps extends HTMLAttributes<HTMLDivElement>, AlertVariants {
 const Alert = ({
 	className,
 	children,
-	status = 'info',
+	status = 'neutral',
 	variant = 'default',
 	actionsLayout = 'stacked',
 	isDismissable,
