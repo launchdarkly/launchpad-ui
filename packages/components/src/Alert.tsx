@@ -36,7 +36,7 @@ const alertStyles = cva(styles.base, {
 			inline: styles.inline,
 		},
 		actionsLayout: {
-			stacked: styles.actionsStacked,
+			stacked: null,
 			inline: styles.actionsInline,
 		},
 	},
