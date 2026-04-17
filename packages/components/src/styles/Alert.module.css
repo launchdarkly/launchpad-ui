@@ -86,7 +86,7 @@
 
 	/* Add another layer of vertical padding to the Alert content (text and actions). This will align the basline of the text with the baseline of the dismiss button. */
 	.content {
-		padding: var(--lp-spacing-300) 0;
+		padding: var(--lp-spacing-300) var(--lp-spacing-300) var(--lp-spacing-300) 0;
 	}
 
 	/* Add a little space at the top of the button group to separate it from the text */
