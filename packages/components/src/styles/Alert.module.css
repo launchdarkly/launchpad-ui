@@ -25,13 +25,14 @@
 	--alert-color-bg-warning: #3c170c;
 }
 
-/* Shared styles for both variants */
+/* Shared styles for both the block and inline variants */
 .base {
 	display: flex;
 	border-radius: var(--lp-border-radius-medium);
 	gap: var(--lp-spacing-300);
 	align-items: flex-start;
 
+	/* Status icon styles */
 	&.error .icon {
 		fill: var(--lp-color-fill-feedback-error);
 	}
@@ -51,12 +52,14 @@
 
 /* Base styles for the block variant */
 .default {
+	/* Add a base layer of padding on the Alert itself. This is just enough to create some breathing room in case any buttons are present. */
 	padding: var(--lp-spacing-300) var(--lp-spacing-300) var(--lp-spacing-300) var(--lp-spacing-500);
 	background-color: var(--alert-color-bg-neutral);
 	border: 1px solid var(--alert-color-border-neutral);
 	position: relative;
 	min-height: var(--lp-size-48);
 
+	/* Status borders and background colors */
 	&.error {
 		border-color: var(--alert-color-border-error);
 		background-color: var(--alert-color-bg-error);
@@ -81,61 +84,72 @@
 		transform: translateY(var(--lp-size-10));
 	}
 
+	/* Add another layer of vertical padding to the Alert content (text and actions). This will align the basline of the text with the baseline of the dismiss button. */
 	.content {
 		padding: var(--lp-spacing-300) 0;
 	}
 
+	/* Add a little space at the top of the button group to separate it from the text */
+	.buttonGroup {
+		margin-top: var(--lp-spacing-400);
+	}
+
+	/* We need to position the close button absolutely so we can adjust its position without affecting the layout of the Alert content. */
 	.close {
 		position: absolute;
 		top: var(--lp-spacing-300);
 		right: var(--lp-spacing-300);
 	}
 
+	/* Add extra right padding when there's a close button to prevent text from overlapping the button */
 	&:has(.close) .content {
-		padding-right: calc(var(--lp-spacing-300) + var(--lp-size-32) + var(--lp-spacing-300));
-	}
-
-	.buttonGroup {
-		margin-top: var(--lp-spacing-400);
+		padding-right: var(--lp-size-48);
 	}
 }
 
 /* Inline actions variant */
 .actionsInline {
-	&:has(.close) .content {
-		padding-right: 0;
-	}
-
+	/* Switch the direction of the content to row and make sure it fills its container. */
 	& .content {
 		flex-direction: row;
 		align-items: flex-start;
 		flex: 1;
 		gap: var(--lp-spacing-500);
-		padding: 0;
+
+		/* Unset padding on content to prevent it looking too big if there are actions present. */
+		padding: unset;
 	}
 
-	& .icon {
-		transform: translateY(var(--lp-spacing-300));
-	}
-
-	/* This magic number is used to ensure the text baseline is aligned with the trailing actions and dismiss buttons */
+	/* Move vertical padding from the content container to the text container. This ensures the text baseline is aligned with the trailing actions and dismiss buttons. We need to do some fancy calc stuff to make it look right. */
 	& .text {
 		padding: calc(var(--lp-spacing-300) - var(--lp-size-2)) 0;
 	}
 
+	/* Need a specific selector to override the padding on the content container when there is a close button. */
+	&:has(.close) .content {
+		padding-right: unset;
+	}
+
+	/* Adjust icon position to compensate for the different padding */
+	& .icon {
+		transform: translateY(var(--lp-spacing-300));
+	}
+
+	/* Move the button group into position. We don't need a top margin here, and we want to flush it to the right */
 	& .buttonGroup {
 		margin-top: unset;
-		margin-bottom: unset;
 		margin-left: auto;
 	}
 
+	/* Remove the absolute positioning from the close button so that it can participate in the flex layout. */
 	& .close {
-		position: relative;
+		position: unset;
 		top: unset;
 		right: unset;
 	}
 }
 
+/* Base styles for the content container */
 .content {
 	min-width: 0;
 	flex: 1;
@@ -145,6 +159,7 @@
 	align-items: flex-start;
 }
 
+/* Base styles for the text container */
 .text {
 	display: flex;
 	flex-direction: column;
@@ -152,11 +167,12 @@
 	min-width: 0;
 }
 
+/* Make sure the heading is the right size and weight regardless of which element is used */
 .heading {
 	font: var(--lp-text-body-2-semibold) !important;
 }
 
-/* Sometimes we want to make text bold, but we need to make sure this maps to the correct font weight. */
+/* Sometimes we want to make text bold, but we need to make sure this maps to semibold, not bold. */
 .content strong,
 .content b {
 	font-weight: var(--lp-font-weight-semibold);
