@@ -51,7 +51,6 @@
 
 /* Base styles for the block variant */
 .default {
-	container-type: inline-size;
 	padding: var(--lp-spacing-300) var(--lp-spacing-300) var(--lp-spacing-300) var(--lp-spacing-500);
 	background-color: var(--alert-color-bg-neutral);
 	border: 1px solid var(--alert-color-border-neutral);
@@ -101,41 +100,39 @@
 	}
 }
 
-/* Inline actions variant - only applies when container is wide enough */
-@container (min-width: 480px) {
-	.actionsInline {
-		&:has(.close) .content {
-			padding-right: 0;
-		}
+/* Inline actions variant */
+.actionsInline {
+	&:has(.close) .content {
+		padding-right: 0;
+	}
 
-		& .content {
-			flex-direction: row;
-			align-items: flex-start;
-			flex: 1;
-			gap: var(--lp-spacing-500);
-			padding: 0;
-		}
+	& .content {
+		flex-direction: row;
+		align-items: flex-start;
+		flex: 1;
+		gap: var(--lp-spacing-500);
+		padding: 0;
+	}
 
-		& .icon {
-			transform: translateY(var(--lp-spacing-300));
-		}
+	& .icon {
+		transform: translateY(var(--lp-spacing-300));
+	}
 
-		/* This magic number is used to ensure the text baseline is aligned with the trailing actions and dismiss buttons */
-		& .text {
-			padding: calc(var(--lp-spacing-300) - var(--lp-size-2)) 0;
-		}
+	/* This magic number is used to ensure the text baseline is aligned with the trailing actions and dismiss buttons */
+	& .text {
+		padding: calc(var(--lp-spacing-300) - var(--lp-size-2)) 0;
+	}
 
-		& .buttonGroup {
-			margin-top: unset;
-			margin-bottom: unset;
-			margin-left: auto;
-		}
+	& .buttonGroup {
+		margin-top: unset;
+		margin-bottom: unset;
+		margin-left: auto;
+	}
 
-		& .close {
-			position: relative;
-			top: unset;
-			right: unset;
-		}
+	& .close {
+		position: relative;
+		top: unset;
+		right: unset;
 	}
 }
 
