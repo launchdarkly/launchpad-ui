@@ -23,7 +23,7 @@ const meta: Meta<typeof Alert> = {
 		},
 		hideIcon: {
 			control: 'boolean',
-			description: 'Hides the status icon (block variant only)',
+			description: 'Hides the status icon',
 		},
 		status: {
 			control: 'select',

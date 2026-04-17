@@ -51,7 +51,7 @@ interface AlertVariants extends VariantProps<typeof alertStyles> {}
 interface AlertProps extends HTMLAttributes<HTMLDivElement>, AlertVariants {
 	/** Controls the layout of actions within the alert (block variant only). */
 	actionsLayout?: 'stacked' | 'inline';
-	/** Hides the status icon (block variant only). */
+	/** Hides the status icon. */
 	hideIcon?: boolean;
 	/** Whether the alert can be dismissed. */
 	isDismissable?: boolean;
@@ -77,7 +77,7 @@ const Alert = ({
 }: AlertProps) => {
 	const [open, setOpen] = useControlledState(isOpen, true, (val) => !val && onDismiss?.());
 
-	const showIcon = status !== 'neutral' && !(hideIcon && variant === 'default');
+	const showIcon = !hideIcon && status !== 'neutral';
 	const resolvedActionsLayout = variant === 'default' ? actionsLayout : undefined;
 
 	return open ? (
