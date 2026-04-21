@@ -269,6 +269,7 @@ const enhanceArgTypes = (context: any) => {
 						'appearance',
 						'position',
 						'placement',
+						'actionsLayout',
 					];
 
 					if (componentProps.includes(key)) {
@@ -326,6 +327,7 @@ const enhanceArgTypes = (context: any) => {
 					'appearance',
 					'position',
 					'placement',
+					'actionsLayout',
 				];
 
 				if (componentProps.includes(key)) {
