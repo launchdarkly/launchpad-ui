@@ -445,6 +445,13 @@ figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=2228
 	example: () => <Icon name="scale" />,
 });
 
+figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=26870-207', {
+	props: {
+		name: 'save',
+	},
+	example: () => <Icon name="save" />,
+});
+
 figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=20642-266', {
 	props: {
 		name: 'sandbox',
@@ -1346,6 +1353,13 @@ figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=6-14
 		name: 'filter',
 	},
 	example: () => <Icon name="filter" />,
+});
+
+figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=26870-206', {
+	props: {
+		name: 'file',
+	},
+	example: () => <Icon name="file" />,
 });
 
 figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=6-141674', {
