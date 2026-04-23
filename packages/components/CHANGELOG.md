@@ -1,5 +1,27 @@
 # @launchpad-ui/components
 
+## 0.19.0
+
+### Minor Changes
+
+- [#1876](https://github.com/launchdarkly/launchpad-ui/pull/1876) [`655be42`](https://github.com/launchdarkly/launchpad-ui/commit/655be4296119c0b1f84df2c8282511b5ad0246e9) Thanks [@cmwinters](https://github.com/cmwinters)! - This change updates the Alert styles to more closely resemble a traditional alert banner. The block and inline variants now share the same styles, and there are some small prop updates to the inline variant.
+
+- [#1885](https://github.com/launchdarkly/launchpad-ui/pull/1885) [`698c573`](https://github.com/launchdarkly/launchpad-ui/commit/698c573e903f269ed8d7849b6db4c0732dcf9f7c) Thanks [@cmwinters](https://github.com/cmwinters)! - Add AlertText component and actionsLayout prop for block variant
+
+  - Add new `AlertText` component to wrap heading and description content
+  - Add `actionsLayout` prop with "stacked" (default) and "inline" options for block variant
+  - Add `hideIcon` prop to hide the status icon
+  - Refactor block variant styles with new color system and layout improvements
+  - Reorganize Storybook stories with clearer naming (Block/_ and Inline/_)
+  - Export AlertText and AlertTextProps from components package
+
+### Patch Changes
+
+- [#1881](https://github.com/launchdarkly/launchpad-ui/pull/1881) [`64cccc5`](https://github.com/launchdarkly/launchpad-ui/commit/64cccc5567faad67a5851b772826b221bc0b6bc4) Thanks [@cmwinters](https://github.com/cmwinters)! - Update Alert padding and icon position
+
+- Updated dependencies [[`84d26d5`](https://github.com/launchdarkly/launchpad-ui/commit/84d26d5289fe043ebbb8de20be238f5cfc01c598)]:
+  - @launchpad-ui/icons@0.25.5
+
 ## 0.18.1
 
 ### Patch Changes
