@@ -1,0 +1,554 @@
+{
+	"Neutral Light": {
+		"0": {
+			"value": "oklch(1 0 103.861)",
+			"type": "color"
+		},
+		"25": {
+			"value": "oklch(0.983 0.002 247.319)",
+			"type": "color"
+		},
+		"50": {
+			"value": "oklch(0.97 0.003 247.802)",
+			"type": "color"
+		},
+		"100": {
+			"value": "oklch(0.94 0.007 248.194)",
+			"type": "color"
+		},
+		"200": {
+			"value": "oklch(0.923 0.008 249.437)",
+			"type": "color"
+		},
+		"300": {
+			"value": "oklch(0.895 0.008 252.798)",
+			"type": "color"
+		},
+		"400": {
+			"value": "oklch(0.63 0.01 252.852)",
+			"type": "color"
+		},
+		"500": {
+			"value": "oklch(0.55 0.01 255.55)",
+			"type": "color"
+		},
+		"600": {
+			"value": "oklch(0.481 0.012 255.576)",
+			"type": "color"
+		},
+		"700": {
+			"value": "oklch(0.388 0.01 261.096)",
+			"type": "color"
+		},
+		"800": {
+			"value": "oklch(0.264 0.01 268.306)",
+			"type": "color"
+		}
+	},
+	"Action Light": {
+		"0": {
+			"value": "oklch(1 0 103.861)",
+			"type": "color"
+		},
+		"25": {
+			"value": "oklch(0.975 0.012 278.379)",
+			"type": "color"
+		},
+		"50": {
+			"value": "oklch(0.968 0.017 276.082)",
+			"type": "color"
+		},
+		"100": {
+			"value": "oklch(0.947 0.023 277.081)",
+			"type": "color"
+		},
+		"200": {
+			"value": "oklch(0.927 0.034 277.051)",
+			"type": "color"
+		},
+		"300": {
+			"value": "oklch(0.891 0.053 276.021)",
+			"type": "color"
+		},
+		"400": {
+			"value": "oklch(0.638 0.206 273.046)",
+			"type": "color"
+		},
+		"500": {
+			"value": "oklch(0.562 0.238 270.635)",
+			"type": "color"
+		},
+		"600": {
+			"value": "oklch(0.485 0.269 267.008)",
+			"type": "color"
+		},
+		"700": {
+			"value": "oklch(0.401 0.179 268.001)",
+			"type": "color"
+		},
+		"800": {
+			"value": "oklch(0.273 0.125 266.675)",
+			"type": "color"
+		}
+	},
+	"Negative Light": {
+		"0": {
+			"value": "oklch(1 0 103.861)",
+			"type": "color"
+		},
+		"25": {
+			"value": "oklch(0.983 0.011 20.662)",
+			"type": "color"
+		},
+		"50": {
+			"value": "oklch(0.968 0.018 23.063)",
+			"type": "color"
+		},
+		"100": {
+			"value": "oklch(0.948 0.029 23.133)",
+			"type": "color"
+		},
+		"200": {
+			"value": "oklch(0.927 0.043 23.062)",
+			"type": "color"
+		},
+		"300": {
+			"value": "oklch(0.9 0.065 22.064)",
+			"type": "color"
+		},
+		"400": {
+			"value": "oklch(0.65 0.253 25.722)",
+			"type": "color"
+		},
+		"500": {
+			"value": "oklch(0.577 0.232 23.022)",
+			"type": "color"
+		},
+		"600": {
+			"value": "oklch(0.512 0.206 19.805)",
+			"type": "color"
+		},
+		"700": {
+			"value": "oklch(0.409 0.173 14.562)",
+			"type": "color"
+		},
+		"800": {
+			"value": "oklch(0.278 0.122 5.97)",
+			"type": "color"
+		}
+	},
+	"Warning Light": {
+		"0": {
+			"value": "oklch(1 0 103.861)",
+			"type": "color"
+		},
+		"25": {
+			"value": "oklch(0.981 0.029 99.183)",
+			"type": "color"
+		},
+		"50": {
+			"value": "oklch(0.968 0.04 92.905)",
+			"type": "color"
+		},
+		"100": {
+			"value": "oklch(0.954 0.064 92.938)",
+			"type": "color"
+		},
+		"200": {
+			"value": "oklch(0.929 0.086 92.987)",
+			"type": "color"
+		},
+		"300": {
+			"value": "oklch(0.895 0.099 85.542)",
+			"type": "color"
+		},
+		"400": {
+			"value": "oklch(0.646 0.191 46.498)",
+			"type": "color"
+		},
+		"500": {
+			"value": "oklch(0.575 0.187 42.111)",
+			"type": "color"
+		},
+		"600": {
+			"value": "oklch(0.507 0.164 38.346)",
+			"type": "color"
+		},
+		"700": {
+			"value": "oklch(0.405 0.148 38.515)",
+			"type": "color"
+		},
+		"800": {
+			"value": "oklch(0.274 0.092 42.271)",
+			"type": "color"
+		}
+	},
+	"Positive Light": {
+		"0": {
+			"value": "oklch(1 0 103.861)",
+			"type": "color"
+		},
+		"25": {
+			"value": "oklch(0.977 0.041 131.34)",
+			"type": "color"
+		},
+		"50": {
+			"value": "oklch(0.961 0.056 131.804)",
+			"type": "color"
+		},
+		"100": {
+			"value": "oklch(0.943 0.073 131.827)",
+			"type": "color"
+		},
+		"200": {
+			"value": "oklch(0.918 0.087 131.837)",
+			"type": "color"
+		},
+		"300": {
+			"value": "oklch(0.885 0.115 132.956)",
+			"type": "color"
+		},
+		"400": {
+			"value": "oklch(0.615 0.192 134.913)",
+			"type": "color"
+		},
+		"500": {
+			"value": "oklch(0.54 0.175 134.842)",
+			"type": "color"
+		},
+		"600": {
+			"value": "oklch(0.478 0.139 135.11)",
+			"type": "color"
+		},
+		"700": {
+			"value": "oklch(0.38 0.109 135.822)",
+			"type": "color"
+		},
+		"800": {
+			"value": "oklch(0.258 0.074 137.839)",
+			"type": "color"
+		}
+	},
+	"Info Light": {
+		"0": {
+			"value": "oklch(1 0 103.861)",
+			"type": "color"
+		},
+		"25": {
+			"value": "oklch(0.979 0.018 321.072)",
+			"type": "color"
+		},
+		"50": {
+			"value": "oklch(0.968 0.025 315.028)",
+			"type": "color"
+		},
+		"100": {
+			"value": "oklch(0.953 0.036 314.54)",
+			"type": "color"
+		},
+		"200": {
+			"value": "oklch(0.927 0.04 314.514)",
+			"type": "color"
+		},
+		"300": {
+			"value": "oklch(0.895 0.071 305.727)",
+			"type": "color"
+		},
+		"400": {
+			"value": "oklch(0.644 0.2 295.937)",
+			"type": "color"
+		},
+		"500": {
+			"value": "oklch(0.572 0.216 292.893)",
+			"type": "color"
+		},
+		"600": {
+			"value": "oklch(0.516 0.229 292.778)",
+			"type": "color"
+		},
+		"700": {
+			"value": "oklch(0.417 0.211 293.431)",
+			"type": "color"
+		},
+		"800": {
+			"value": "oklch(0.276 0.113 295.869)",
+			"type": "color"
+		}
+	},
+	"Neutral Dark": {
+		"0": {
+			"value": "oklch(0.218 0.01 268.211)",
+			"type": "color"
+		},
+		"25": {
+			"value": "oklch(0.242 0.01 268.269)",
+			"type": "color"
+		},
+		"50": {
+			"value": "oklch(0.276 0.01 268.318)",
+			"type": "color"
+		},
+		"100": {
+			"value": "oklch(0.317 0.01 268.323)",
+			"type": "color"
+		},
+		"200": {
+			"value": "oklch(0.34 0.009 268.369)",
+			"type": "color"
+		},
+		"300": {
+			"value": "oklch(0.451 0.01 253.928)",
+			"type": "color"
+		},
+		"400": {
+			"value": "oklch(0.6 0.01 252.857)",
+			"type": "color"
+		},
+		"500": {
+			"value": "oklch(0.745 0.008 249.671)",
+			"type": "color"
+		},
+		"600": {
+			"value": "oklch(0.785 0.005 252.757)",
+			"type": "color"
+		},
+		"700": {
+			"value": "oklch(0.89 0.005 252.737)",
+			"type": "color"
+		},
+		"800": {
+			"value": "oklch(0.956 0.004 247.788)",
+			"type": "color"
+		}
+	},
+	"Action Dark": {
+		"0": {
+			"value": "oklch(0.218 0.01 268.211)",
+			"type": "color"
+		},
+		"25": {
+			"value": "oklch(0.26 0.063 270.362)",
+			"type": "color"
+		},
+		"50": {
+			"value": "oklch(0.295 0.071 269.443)",
+			"type": "color"
+		},
+		"100": {
+			"value": "oklch(0.345 0.12 269.468)",
+			"type": "color"
+		},
+		"200": {
+			"value": "oklch(0.432 0.199 268.947)",
+			"type": "color"
+		},
+		"300": {
+			"value": "oklch(0.467 0.224 270.903)",
+			"type": "color"
+		},
+		"400": {
+			"value": "oklch(0.581 0.227 273.305)",
+			"type": "color"
+		},
+		"500": {
+			"value": "oklch(0.748 0.132 274.601)",
+			"type": "color"
+		},
+		"600": {
+			"value": "oklch(0.776 0.122 274.653)",
+			"type": "color"
+		},
+		"700": {
+			"value": "oklch(0.892 0.047 277.03)",
+			"type": "color"
+		},
+		"800": {
+			"value": "oklch(0.957 0.023 277.229)",
+			"type": "color"
+		}
+	},
+	"Negative Dark": {
+		"0": {
+			"value": "oklch(0.218 0.01 268.211)",
+			"type": "color"
+		},
+		"25": {
+			"value": "oklch(0.258 0.057 3.833)",
+			"type": "color"
+		},
+		"50": {
+			"value": "oklch(0.301 0.067 353.942)",
+			"type": "color"
+		},
+		"100": {
+			"value": "oklch(0.348 0.11 7.757)",
+			"type": "color"
+		},
+		"200": {
+			"value": "oklch(0.445 0.176 13.766)",
+			"type": "color"
+		},
+		"300": {
+			"value": "oklch(0.489 0.189 22.715)",
+			"type": "color"
+		},
+		"400": {
+			"value": "oklch(0.589 0.232 24.008)",
+			"type": "color"
+		},
+		"500": {
+			"value": "oklch(0.75 0.16 25.039)",
+			"type": "color"
+		},
+		"600": {
+			"value": "oklch(0.777 0.155 23.514)",
+			"type": "color"
+		},
+		"700": {
+			"value": "oklch(0.896 0.07 23.006)",
+			"type": "color"
+		},
+		"800": {
+			"value": "oklch(0.958 0.027 20.732)",
+			"type": "color"
+		}
+	},
+	"Warning Dark": {
+		"0": {
+			"value": "oklch(0.218 0.01 268.211)",
+			"type": "color"
+		},
+		"25": {
+			"value": "oklch(0.26 0.062 37.757)",
+			"type": "color"
+		},
+		"50": {
+			"value": "oklch(0.301 0.074 42.64)",
+			"type": "color"
+		},
+		"100": {
+			"value": "oklch(0.347 0.1 41.089)",
+			"type": "color"
+		},
+		"200": {
+			"value": "oklch(0.447 0.147 40.021)",
+			"type": "color"
+		},
+		"300": {
+			"value": "oklch(0.484 0.154 45.983)",
+			"type": "color"
+		},
+		"400": {
+			"value": "oklch(0.61 0.163 47.105)",
+			"type": "color"
+		},
+		"500": {
+			"value": "oklch(0.75 0.184 63.165)",
+			"type": "color"
+		},
+		"600": {
+			"value": "oklch(0.778 0.186 68.979)",
+			"type": "color"
+		},
+		"700": {
+			"value": "oklch(0.891 0.115 78.966)",
+			"type": "color"
+		},
+		"800": {
+			"value": "oklch(0.955 0.048 93.976)",
+			"type": "color"
+		}
+	},
+	"Positive Dark": {
+		"0": {
+			"value": "oklch(0.218 0.008 268.42)",
+			"type": "color"
+		},
+		"25": {
+			"value": "oklch(0.245 0.05 138.258)",
+			"type": "color"
+		},
+		"50": {
+			"value": "oklch(0.272 0.066 138.226)",
+			"type": "color"
+		},
+		"100": {
+			"value": "oklch(0.327 0.105 137.849)",
+			"type": "color"
+		},
+		"200": {
+			"value": "oklch(0.422 0.144 136.9)",
+			"type": "color"
+		},
+		"300": {
+			"value": "oklch(0.478 0.156 135.748)",
+			"type": "color"
+		},
+		"400": {
+			"value": "oklch(0.599 0.183 136.355)",
+			"type": "color"
+		},
+		"500": {
+			"value": "oklch(0.721 0.174 134.78)",
+			"type": "color"
+		},
+		"600": {
+			"value": "oklch(0.766 0.193 132.761)",
+			"type": "color"
+		},
+		"700": {
+			"value": "oklch(0.878 0.111 135.663)",
+			"type": "color"
+		},
+		"800": {
+			"value": "oklch(0.952 0.046 129.688)",
+			"type": "color"
+		}
+	},
+	"Info Dark": {
+		"0": {
+			"value": "oklch(0.218 0.008 268.42)",
+			"type": "color"
+		},
+		"25": {
+			"value": "oklch(0.258 0.061 295.971)",
+			"type": "color"
+		},
+		"50": {
+			"value": "oklch(0.288 0.073 295.963)",
+			"type": "color"
+		},
+		"100": {
+			"value": "oklch(0.342 0.106 295.198)",
+			"type": "color"
+		},
+		"200": {
+			"value": "oklch(0.45 0.191 293.578)",
+			"type": "color"
+		},
+		"300": {
+			"value": "oklch(0.482 0.214 293.543)",
+			"type": "color"
+		},
+		"400": {
+			"value": "oklch(0.599 0.199 294.444)",
+			"type": "color"
+		},
+		"500": {
+			"value": "oklch(0.748 0.137 296.051)",
+			"type": "color"
+		},
+		"600": {
+			"value": "oklch(0.775 0.132 300.527)",
+			"type": "color"
+		},
+		"700": {
+			"value": "oklch(0.896 0.06 305.038)",
+			"type": "color"
+		},
+		"800": {
+			"value": "oklch(0.96 0.026 316.814)",
+			"type": "color"
+		}
+	}
+}
