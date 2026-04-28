@@ -54,9 +54,9 @@
 	}
 
 	& kbd {
-		color: var(--lp-color-gray-100);
-		background-color: var(--lp-color-gray-900);
-		border: 1px solid var(--lp-color-gray-700);
-		box-shadow: inset 0 -1px 0 var(--lp-color-gray-700);
+		color: var(--lp-color-neutral-100);
+		background-color: var(--lp-color-neutral-800);
+		border: 1px solid var(--lp-color-neutral-700);
+		box-shadow: inset 0 -1px 0 var(--lp-color-neutral-700);
 	}
 }

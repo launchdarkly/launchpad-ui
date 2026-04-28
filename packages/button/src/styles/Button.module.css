@@ -7,50 +7,52 @@
 	--lp-component-button-color-bg-destructive-active: var(
 		--lp-color-bg-interactive-destructive-active
 	);
-	--lp-color-border-interactive-primary-flair-base: var(--lp-color-purple-500);
-	--lp-color-border-interactive-primary-flair-hover: var(--lp-color-purple-600);
-	--lp-color-border-interactive-primary-flair-focus: var(--lp-color-purple-800);
-	--lp-color-border-interactive-primary-flair-active: var(--lp-color-purple-800);
-	--lp-color-bg-interactive-secondary-flair-base: var(--lp-color-purple-100);
-	--lp-color-bg-interactive-secondary-flair-hover: var(--lp-color-purple-300);
-	--lp-color-bg-interactive-secondary-flair-focus: var(--lp-color-purple-400);
-	--lp-color-bg-interactive-secondary-flair-active: var(--lp-color-purple-400);
-	--lp-color-border-interactive-secondary-flair-base: var(--lp-color-purple-600);
-	--lp-color-border-interactive-secondary-flair-hover: var(--lp-color-purple-700);
-	--lp-color-border-interactive-secondary-flair-focus: var(--lp-color-purple-800);
-	--lp-color-border-interactive-secondary-flair-active: var(--lp-color-purple-800);
-	--lp-color-text-interactive-flair-base: var(--lp-color-purple-700);
-	--lp-color-text-interactive-flair-hover: var(--lp-color-purple-800);
-	--lp-color-text-interactive-flair-focus: var(--lp-color-purple-900);
-	--lp-color-text-interactive-flair-active: var(--lp-color-purple-900);
+	--lp-color-border-interactive-primary-flair-base: var(--lp-color-info-500);
+	--lp-color-border-interactive-primary-flair-hover: var(--lp-color-info-600);
+	--lp-color-border-interactive-primary-flair-focus: var(--lp-color-info-800);
+	--lp-color-border-interactive-primary-flair-active: var(--lp-color-info-800);
+	--lp-color-bg-interactive-secondary-flair-base: var(--lp-color-info-100);
+	--lp-color-bg-interactive-secondary-flair-hover: var(--lp-color-info-300);
+	--lp-color-bg-interactive-secondary-flair-focus: var(--lp-color-info-400);
+	--lp-color-bg-interactive-secondary-flair-active: var(--lp-color-info-400);
+	--lp-color-border-interactive-secondary-flair-base: var(--lp-color-info-600);
+	--lp-color-border-interactive-secondary-flair-hover: var(--lp-color-info-700);
+	--lp-color-border-interactive-secondary-flair-focus: var(--lp-color-info-800);
+	--lp-color-border-interactive-secondary-flair-active: var(--lp-color-info-800);
+	--lp-color-text-interactive-flair-base: var(--lp-color-info-700);
+	--lp-color-text-interactive-flair-hover: var(--lp-color-info-800);
+	--lp-color-text-interactive-flair-focus: var(--lp-color-info-800);
+	--lp-color-text-interactive-flair-active: var(--lp-color-info-800);
 	--lp-color-bg-interactive-tertiary-flair-base: transparent;
-	--lp-color-bg-interactive-tertiary-flair-hover: var(--lp-color-purple-100);
-	--lp-color-bg-interactive-tertiary-flair-focus: var(--lp-color-purple-300);
-	--lp-color-bg-interactive-tertiary-flair-active: var(--lp-color-purple-300);
+	--lp-color-bg-interactive-tertiary-flair-hover: var(--lp-color-info-100);
+	--lp-color-bg-interactive-tertiary-flair-focus: var(--lp-color-info-300);
+	--lp-color-bg-interactive-tertiary-flair-active: var(--lp-color-info-300);
 }
 
 [data-theme='dark'] {
 	--lp-component-button-color-bg-default: transparent;
-	--lp-component-button-color-border-destructive: var(--lp-color-red-600);
-	--lp-component-button-color-bg-destructive-hover: var(--lp-color-red-900);
-	--lp-component-button-color-bg-destructive-focus: var(--lp-color-red-900);
-	--lp-component-button-color-bg-destructive-active: var(--lp-color-red-900);
-	--lp-color-border-interactive-primary-flair-base: var(--lp-color-purple-600);
-	--lp-color-border-interactive-primary-flair-hover: var(--lp-color-purple-700);
-	--lp-color-bg-interactive-secondary-flair-base: var(--lp-color-purple-950);
-	--lp-color-bg-interactive-secondary-flair-hover: var(--lp-color-purple-900);
-	--lp-color-bg-interactive-secondary-flair-focus: var(--lp-color-purple-950);
-	--lp-color-bg-interactive-secondary-flair-active: var(--lp-color-purple-950);
-	--lp-color-border-interactive-secondary-flair-hover: var(--lp-color-purple-500);
-	--lp-color-border-interactive-secondary-flair-focus: var(--lp-color-purple-700);
-	--lp-color-border-interactive-secondary-flair-active: var(--lp-color-purple-700);
-	--lp-color-text-interactive-flair-base: var(--lp-color-purple-400);
-	--lp-color-text-interactive-flair-hover: var(--lp-color-purple-400);
-	--lp-color-text-interactive-flair-focus: var(--lp-color-purple-400);
-	--lp-color-text-interactive-flair-active: var(--lp-color-purple-400);
-	--lp-color-bg-interactive-tertiary-flair-hover: var(--lp-color-purple-900);
-	--lp-color-bg-interactive-tertiary-flair-focus: var(--lp-color-purple-950);
-	--lp-color-bg-interactive-tertiary-flair-active: var(--lp-color-purple-950);
+	--lp-component-button-color-border-destructive: var(--lp-color-border-interactive-destructive);
+	--lp-component-button-color-bg-destructive-hover: var(--lp-color-bg-interactive-destructive-hover);
+	--lp-component-button-color-bg-destructive-focus: var(--lp-color-bg-interactive-destructive-focus);
+	--lp-component-button-color-bg-destructive-active: var(
+		--lp-color-bg-interactive-destructive-active
+	);
+	--lp-color-border-interactive-primary-flair-base: var(--lp-color-info-600);
+	--lp-color-border-interactive-primary-flair-hover: var(--lp-color-info-700);
+	--lp-color-bg-interactive-secondary-flair-base: var(--lp-color-info-800);
+	--lp-color-bg-interactive-secondary-flair-hover: var(--lp-color-info-800);
+	--lp-color-bg-interactive-secondary-flair-focus: var(--lp-color-info-800);
+	--lp-color-bg-interactive-secondary-flair-active: var(--lp-color-info-800);
+	--lp-color-border-interactive-secondary-flair-hover: var(--lp-color-info-500);
+	--lp-color-border-interactive-secondary-flair-focus: var(--lp-color-info-700);
+	--lp-color-border-interactive-secondary-flair-active: var(--lp-color-info-700);
+	--lp-color-text-interactive-flair-base: var(--lp-color-info-400);
+	--lp-color-text-interactive-flair-hover: var(--lp-color-info-400);
+	--lp-color-text-interactive-flair-focus: var(--lp-color-info-400);
+	--lp-color-text-interactive-flair-active: var(--lp-color-info-400);
+	--lp-color-bg-interactive-tertiary-flair-hover: var(--lp-color-info-800);
+	--lp-color-bg-interactive-tertiary-flair-focus: var(--lp-color-info-800);
+	--lp-color-bg-interactive-tertiary-flair-active: var(--lp-color-info-800);
 }
 
 .Button,
@@ -58,15 +60,15 @@
 	/* Remaining Legacy Tokens */
 	--Button-border-default: 1px solid transparent;
 	--Button-box-shadow-default-active: none;
-	--Button-color-boxShadow-1-default-active: var(--lp-color-white-950);
+	--Button-color-boxShadow-1-default-active: var(--lp-color-neutral-0);
 	--Button-color-boxShadow-2-default-active: hsl(231.5 100% 62.5% / 0.1);
 	--Button-color-boxShadow-1-default-withIcon-focus: var(--lp-color-shadow-interactive-focus);
 	--Button-color-boxShadow-2-default-withIcon-focus: hsl(231.5 100% 62.5% / 0.1);
 	--Button-box-shadow-withIcon-focus: 0 0 0 1px
 		var(--Button-color-boxShadow-1-default-withIcon-focus), 0 0 0 4px
 		var(--Button-color-boxShadow-2-default-withIcon-focus);
-	--Button-color-text-destructive-focus: var(--lp-color-white-950);
-	--Button-color-background-disabled-withIcon: var(--lp-color-white-950);
+	--Button-color-text-destructive-focus: var(--lp-color-neutral-0);
+	--Button-color-background-disabled-withIcon: var(--lp-color-neutral-0);
 	--Button-color-border-disabled-withIcon: transparent;
 
 	/* End Remaining Legacy Tokens */
@@ -204,8 +206,8 @@
 	--Button-icon-color-fill-disabled-active: var(--lp-color-text-interactive-disabled);
 
 	/* SEARCH BAR CLEAR BUTTON ICON */
-	--Button-icon-clear-color-fill: var(--lp-color-blue-700);
-	--Button-icon-clear-color-text: var(--lp-color-blue-700);
+	--Button-icon-clear-color-fill: var(--lp-color-action-700);
+	--Button-icon-clear-color-text: var(--lp-color-action-700);
 
 	/* ------- PRIMARY FLAIR ------- */
 	--Button-color-border-primary-flair: var(--lp-color-border-interactive-primary-flair-base);
@@ -447,7 +449,7 @@
 
 .Button.Button--close {
 	background-color: transparent;
-	fill: var(--lp-color-gray-700);
+	fill: var(--lp-color-neutral-700);
 	color: var(--lp-color-text-ui-primary-base);
 }
 
@@ -472,9 +474,9 @@
 .Button.Button--close:active {
 	background-color: hsl(0 0% 12.9% / 0.7);
 	box-shadow:
-		0 0 0 1px var(--lp-color-gray-950),
+		0 0 0 1px var(--lp-color-neutral-800),
 		0 0 0 4px hsl(0 0% 12.9% / 0.1);
-	color: var(--lp-color-white-950);
+	color: var(--lp-color-fill-interactive-primary);
 }
 
 /* ------- DESTRUCTIVE ------- */

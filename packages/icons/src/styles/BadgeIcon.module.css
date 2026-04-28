@@ -97,7 +97,8 @@
 .gradient5,
 .gradient6 {
 	& [data-icon] {
-		fill: var(--lp-color-white-900);
+		/* brand backgrounds are theme-constant; icon fill must be too */
+		fill: rgb(255 255 255 / 0.9);
 	}
 }
 
@@ -105,6 +106,6 @@
 .green,
 .gradient7 {
 	& [data-icon] {
-		fill: var(--lp-color-black-700);
+		fill: var(--lp-color-neutral-700);
 	}
 }

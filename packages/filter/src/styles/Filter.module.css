@@ -2,13 +2,13 @@
 [data-theme='default'] {
 	--lp-component-filter-color-bg-clearable: rgb(0 0 0 / 0.15);
 	--lp-component-filter-color-bg-clearable-focus: rgb(0 0 0 / 0.2);
-	--lp-component-filter-color-border-clearable-focus: var(--lp-color-gray-800);
+	--lp-component-filter-color-border-clearable-focus: var(--lp-color-neutral-800);
 }
 
 [data-theme='dark'] {
 	--lp-component-filter-color-bg-clearable: rgb(248 248 248 / 0.15);
 	--lp-component-filter-color-bg-clearable-focus: rgb(248 248 248 / 0.2);
-	--lp-component-filter-color-border-clearable-focus: var(--lp-color-gray-500);
+	--lp-component-filter-color-border-clearable-focus: var(--lp-color-neutral-500);
 }
 
 .filter {
