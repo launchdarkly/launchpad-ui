@@ -31,12 +31,12 @@ describe('Link', () => {
 		expect(screen.getByRole('link')).toHaveAttribute('href', 'https://www.test.com');
 	});
 
-	it('renders with underline', () => {
+	it('renders with evident', () => {
 		const navigate = vi.fn();
 		render(
 			<RouterProvider navigate={navigate} useHref={useHref}>
 				<MemoryRouter>
-					<Link href="/test" underline>
+					<Link href="/test" evident>
 						Link
 					</Link>
 				</MemoryRouter>
