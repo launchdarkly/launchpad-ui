@@ -35,11 +35,11 @@ export const Subtle: Story = {
 	},
 };
 
-export const Evident: Story = {
+export const Underline: Story = {
 	args: {
 		children: 'Link',
 		href: '/test',
-		evident: true,
+		variant: 'underline',
 	},
 };
 

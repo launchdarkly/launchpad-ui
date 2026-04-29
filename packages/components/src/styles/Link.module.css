@@ -42,6 +42,8 @@
 	color: var(--lp-color-text-ui-secondary);
 }
 
-.evident {
+.underline {
+	composes: link;
+	color: var(--lp-color-text-interactive-base);
 	text-decoration: underline;
 }
