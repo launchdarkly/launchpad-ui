@@ -209,10 +209,10 @@
 			},
 			"ui": {
 				"primary": {
-					"$value": "{color.neutral.100}"
+					"$value": "{color.neutral.300}"
 				},
 				"secondary": {
-					"$value": "{color.neutral.50}"
+					"$value": "{color.neutral.200}"
 				}
 			}
 		},
@@ -245,7 +245,7 @@
 			},
 			"ui": {
 				"primary": {
-					"$value": "{color.neutral.700}"
+					"$value": "{color.neutral.600}"
 				},
 				"secondary": {
 					"$value": "{color.neutral.500}"

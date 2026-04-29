@@ -483,14 +483,14 @@ exports[`Tokens > builds default tokens 1`] = `
   --lp-color-border-field-focus: var(--lp-color-action-500);
   --lp-color-border-interactive-focus: var(--lp-color-action-500);
   --lp-color-border-interactive-selected: var(--lp-color-action-500);
-  --lp-color-border-ui-primary: var(--lp-color-neutral-100);
-  --lp-color-border-ui-secondary: var(--lp-color-neutral-50);
+  --lp-color-border-ui-primary: var(--lp-color-neutral-300);
+  --lp-color-border-ui-secondary: var(--lp-color-neutral-200);
   --lp-color-fill-feedback-error: var(--lp-color-negative-500);
   --lp-color-fill-feedback-info: var(--lp-color-action-500);
   --lp-color-fill-feedback-success: var(--lp-color-positive-500);
   --lp-color-fill-interactive-primary: var(--lp-color-neutral-0);
   --lp-color-fill-interactive-destructive: var(--lp-color-negative-500);
-  --lp-color-fill-ui-primary: var(--lp-color-neutral-700);
+  --lp-color-fill-ui-primary: var(--lp-color-neutral-600);
   --lp-color-fill-ui-secondary: var(--lp-color-neutral-500);
   --lp-color-fill-field-base: var(--lp-color-neutral-600);
   --lp-color-shadow-interactive-focus: var(--lp-color-action-600);
