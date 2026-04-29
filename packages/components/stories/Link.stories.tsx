@@ -35,11 +35,19 @@ export const Subtle: Story = {
 	},
 };
 
-export const Underline: Story = {
+export const UnderlineAlways: Story = {
 	args: {
 		children: 'Link',
 		href: '/test',
-		variant: 'underline',
+		underline: 'always',
+	},
+};
+
+export const UnderlineNone: Story = {
+	args: {
+		children: 'Link',
+		href: '/test',
+		underline: 'none',
 	},
 };
 

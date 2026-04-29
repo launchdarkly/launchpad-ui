@@ -42,8 +42,17 @@
 	color: var(--lp-color-text-ui-secondary);
 }
 
-.underline {
-	composes: link;
-	color: var(--lp-color-text-interactive-base);
+.underlineAlways {
 	text-decoration: underline;
+}
+
+.underlineHover {
+}
+
+.underlineNone {
+	text-decoration: none;
+
+	&[data-hovered] {
+		text-decoration: none;
+	}
 }
