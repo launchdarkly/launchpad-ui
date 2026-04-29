@@ -75,7 +75,7 @@
 }
 
 .content section + section {
-	border-top: 1px dotted var(--lp-color-gray-100);
+	border-top: 1px dotted var(--lp-color-neutral-100);
 }
 
 .closeButton {

@@ -39,7 +39,7 @@ describe('Tokens', () => {
 	it('builds default tokens', async () => {
 		const config = css('default');
 		config.source = [
-			path.resolve(__dirname, '../tokens/color-primitives.default.json'),
+			path.resolve(__dirname, '../tokens/color-primitives-map.default.json'),
 			path.resolve(__dirname, '../tokens/*.default.json'),
 		];
 
@@ -52,7 +52,7 @@ describe('Tokens', () => {
 	it('builds dark tokens', async () => {
 		const config = css('dark');
 		config.source = [
-			path.resolve(__dirname, '../tokens/color-primitives.default.json'),
+			path.resolve(__dirname, '../tokens/color-primitives-map.default.json'),
 			path.resolve(__dirname, '../tokens/*.dark.json'),
 		];
 
