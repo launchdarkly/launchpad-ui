@@ -16,14 +16,20 @@ const linkStyles = cva(styles.base, {
 			default: styles.default,
 			subtle: styles.subtle,
 		},
+		underline: {
+			true: styles.underline,
+		},
 	},
 	defaultVariants: {
 		variant: 'default',
+		underline: false,
 	},
 });
 
 interface LinkProps extends AriaLinkProps, VariantProps<typeof linkStyles>, DOMProps {
 	ref?: Ref<HTMLAnchorElement>;
+	/** Whether the link should always be underlined, not just on hover. */
+	underline?: boolean;
 }
 
 const LinkContext = createContext<ContextValue<LinkProps, HTMLAnchorElement>>(null);
@@ -35,14 +41,14 @@ const LinkContext = createContext<ContextValue<LinkProps, HTMLAnchorElement>>(nu
  */
 const Link = ({ ref, ...props }: LinkProps) => {
 	[props, ref] = useLPContextProps(props, ref, LinkContext);
-	const { variant = 'default' } = props;
+	const { variant = 'default', underline = false } = props;
 
 	return (
 		<AriaLink
 			{...props}
 			ref={ref}
 			className={composeRenderProps(props.className, (className, renderProps) =>
-				linkStyles({ ...renderProps, variant, className }),
+				linkStyles({ ...renderProps, variant, underline, className }),
 			)}
 		/>
 	);

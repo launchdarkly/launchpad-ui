@@ -41,3 +41,7 @@
 	composes: link;
 	color: var(--lp-color-text-ui-secondary);
 }
+
+.underline {
+	text-decoration: underline;
+}

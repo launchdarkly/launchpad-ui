@@ -35,6 +35,14 @@ export const Subtle: Story = {
 	},
 };
 
+export const Underline: Story = {
+	args: {
+		children: 'Link',
+		href: '/test',
+		underline: true,
+	},
+};
+
 export const States: Story = {
 	render: (args) => {
 		const styles = { width: 'fit-content' };
