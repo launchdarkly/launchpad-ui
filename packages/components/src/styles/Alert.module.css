@@ -157,11 +157,6 @@
 	flex-direction: column;
 	font: var(--lp-text-body-2-regular);
 	align-items: flex-start;
-
-	/* Ensure all direct children stack vertically by default (handles inline elements like <span>) */
-	& > * {
-		display: block;
-	}
 }
 
 /* Base styles for the text container */
