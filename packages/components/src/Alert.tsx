@@ -25,7 +25,7 @@ const AlertText = ({ className, ref, ...props }: AlertTextProps) => {
 const alertStyles = cva(styles.base, {
 	variants: {
 		status: {
-			neutral: styles.neutral,
+			neutral: null,
 			error: styles.error,
 			info: styles.info,
 			success: styles.success,
