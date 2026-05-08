@@ -1,7 +1,7 @@
 import './styles/base.css';
 import './styles/themes.css';
 
-export type { AlertProps } from './Alert';
+export type { AlertProps, AlertTextProps } from './Alert';
 export type { AutocompleteProps } from './Autocomplete';
 export type { AvatarProps, InitialsAvatarProps } from './Avatar';
 export type { BreadcrumbProps, BreadcrumbsProps } from './Breadcrumbs';
@@ -94,7 +94,7 @@ export type {
 	TreeProps,
 } from './Tree';
 
-export { Alert, alertStyles } from './Alert';
+export { Alert, AlertText, alertStyles } from './Alert';
 export { Autocomplete } from './Autocomplete';
 export { Avatar, avatarStyles, InitialsAvatar } from './Avatar';
 export {
