@@ -1,5 +1,13 @@
 # @launchpad-ui/components
 
+## 0.19.0
+
+### Minor Changes
+
+- [#1892](https://github.com/launchdarkly/launchpad-ui/pull/1892) [`857f7ae`](https://github.com/launchdarkly/launchpad-ui/commit/857f7ae6463a8faa645b15b765930e895c6cc59f) Thanks [@cmwinters](https://github.com/cmwinters)! - - Update **Alert** visuals (block backgrounds, borders, spacing, and icon sizing) and add **`AlertText`** for grouping heading and body when using **`actionsLayout="inline"`**.
+  - New optional props: **`actionsLayout`** (`stacked` | `inline`, block variant only) and **`hideIcon`**.
+  - Dismiss control uses a medium icon button for alignment with the refreshed layout.
+
 ## 0.18.2
 
 ### Patch Changes
