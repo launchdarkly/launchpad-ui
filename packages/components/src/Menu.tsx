@@ -3,21 +3,21 @@ import type { Ref } from 'react';
 import type {
 	MenuItemProps as AriaMenuItemProps,
 	MenuProps as AriaMenuProps,
-	ContextValue,
 	MenuTriggerProps,
 	SubmenuTriggerProps,
-} from 'react-aria-components';
+} from 'react-aria-components/Menu';
+import type { ContextValue } from 'react-aria-components/slots';
 
 import { Icon } from '@launchpad-ui/icons';
 import { cva } from 'class-variance-authority';
 import { createContext } from 'react';
+import { composeRenderProps } from 'react-aria-components/composeRenderProps';
 import {
 	Menu as AriaMenu,
 	MenuItem as AriaMenuItem,
-	composeRenderProps,
 	MenuTrigger,
 	SubmenuTrigger,
-} from 'react-aria-components';
+} from 'react-aria-components/Menu';
 
 import { CheckboxIcon, checkboxStyles } from './Checkbox';
 import styles from './styles/Menu.module.css';
@@ -40,7 +40,7 @@ interface MenuProps<T> extends AriaMenuProps<T> {
 	ref?: Ref<HTMLDivElement>;
 }
 interface MenuItemProps<T> extends AriaMenuItemProps<T>, VariantProps<typeof menuItemStyles> {
-	ref?: Ref<T>;
+	ref?: Ref<HTMLDivElement>;
 }
 
 // biome-ignore lint/suspicious/noExplicitAny: ignore

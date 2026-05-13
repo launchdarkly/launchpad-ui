@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import type { ComponentType } from 'react';
-import type { SortDescriptor } from 'react-aria-components';
+import type { SortDescriptor } from 'react-aria-components/Table';
 
 import { useState } from 'react';
-import { useDragAndDrop } from 'react-aria-components';
-import { useListData } from 'react-stately';
+import { useDragAndDrop } from 'react-aria-components/useDragAndDrop';
+import { useListData } from 'react-stately/useListData';
 
 import { DropIndicator } from '../src/DropIndicator';
 import {

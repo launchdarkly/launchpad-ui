@@ -1,10 +1,12 @@
 import type { VariantProps } from 'class-variance-authority';
 import type { Ref } from 'react';
-import type { InputProps as AriaInputProps, ContextValue } from 'react-aria-components';
+import type { InputProps as AriaInputProps } from 'react-aria-components/Input';
+import type { ContextValue } from 'react-aria-components/slots';
 
 import { cva } from 'class-variance-authority';
 import { createContext } from 'react';
-import { Input as AriaInput, composeRenderProps } from 'react-aria-components';
+import { composeRenderProps } from 'react-aria-components/composeRenderProps';
+import { Input as AriaInput } from 'react-aria-components/Input';
 
 import styles from './styles/Input.module.css';
 import { useLPContextProps } from './utils';

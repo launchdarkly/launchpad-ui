@@ -1,4 +1,5 @@
 import type { Ref } from 'react';
+import type { ContextValue } from 'react-aria-components/slots';
 import type {
 	CellProps as AriaCellProps,
 	ColumnProps as AriaColumnProps,
@@ -8,13 +9,14 @@ import type {
 	TableBodyProps as AriaTableBodyProps,
 	TableHeaderProps as AriaTableHeaderProps,
 	TableProps as AriaTableProps,
-	ContextValue,
-} from 'react-aria-components';
+} from 'react-aria-components/Table';
 
 import { Icon } from '@launchpad-ui/icons';
 import { cva } from 'class-variance-authority';
 import { createContext, useContext } from 'react';
-import { VisuallyHidden } from 'react-aria';
+import { VisuallyHidden } from 'react-aria/VisuallyHidden';
+import { composeRenderProps } from 'react-aria-components/composeRenderProps';
+import { Provider } from 'react-aria-components/slots';
 import {
 	Cell as AriaCell,
 	Column as AriaColumn,
@@ -25,10 +27,8 @@ import {
 	TableBody as AriaTableBody,
 	TableHeader as AriaTableHeader,
 	Collection,
-	composeRenderProps,
-	Provider,
 	useTableOptions,
-} from 'react-aria-components';
+} from 'react-aria-components/Table';
 
 import { Checkbox } from './Checkbox';
 import { IconButton } from './IconButton';

@@ -1,15 +1,11 @@
 import type { Ref } from 'react';
-import type {
-	ToggleButtonGroupProps as AriaToggleButtonGroupProps,
-	ContextValue,
-} from 'react-aria-components';
+import type { ContextValue } from 'react-aria-components/slots';
+import type { ToggleButtonGroupProps as AriaToggleButtonGroupProps } from 'react-aria-components/ToggleButtonGroup';
 
 import { cva } from 'class-variance-authority';
 import { createContext } from 'react';
-import {
-	ToggleButtonGroup as AriaToggleButtonGroup,
-	composeRenderProps,
-} from 'react-aria-components';
+import { composeRenderProps } from 'react-aria-components/composeRenderProps';
+import { ToggleButtonGroup as AriaToggleButtonGroup } from 'react-aria-components/ToggleButtonGroup';
 
 import styles from './styles/ToggleButtonGroup.module.css';
 import { useLPContextProps } from './utils';

@@ -2,13 +2,15 @@ import type { IconProps } from '@launchpad-ui/icons';
 import type { AriaLabelingProps } from '@react-types/shared';
 import type { VariantProps } from 'class-variance-authority';
 import type { Ref } from 'react';
-import type { ButtonProps as AriaButtonProps, ContextValue } from 'react-aria-components';
+import type { ButtonProps as AriaButtonProps } from 'react-aria-components/Button';
+import type { ContextValue } from 'react-aria-components/slots';
 import type { ButtonVariants } from './Button';
 
 import { Icon } from '@launchpad-ui/icons';
 import { cva, cx } from 'class-variance-authority';
 import { createContext, useContext } from 'react';
-import { Button as AriaButton, composeRenderProps } from 'react-aria-components';
+import { Button as AriaButton } from 'react-aria-components/Button';
+import { composeRenderProps } from 'react-aria-components/composeRenderProps';
 
 import { buttonStyles } from './Button';
 import { PerceivableContext } from './Perceivable';

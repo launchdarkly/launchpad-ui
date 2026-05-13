@@ -2,16 +2,16 @@ import type { Ref } from 'react';
 import type {
 	GridListItemProps as AriaGridListItemProps,
 	GridListProps as AriaGridListProps,
-	ContextValue,
-} from 'react-aria-components';
+} from 'react-aria-components/GridList';
+import type { ContextValue } from 'react-aria-components/slots';
 
 import { cva } from 'class-variance-authority';
 import { createContext } from 'react';
+import { composeRenderProps } from 'react-aria-components/composeRenderProps';
 import {
 	GridList as AriaGridList,
 	GridListItem as AriaGridListItem,
-	composeRenderProps,
-} from 'react-aria-components';
+} from 'react-aria-components/GridList';
 
 import { Checkbox } from './Checkbox';
 import { IconButton } from './IconButton';
@@ -26,7 +26,7 @@ interface GridListProps<T extends object> extends AriaGridListProps<T> {
 }
 
 interface GridListItemProps<T extends object> extends AriaGridListItemProps<T> {
-	ref?: Ref<T>;
+	ref?: Ref<HTMLDivElement>;
 }
 
 // biome-ignore lint/suspicious/noExplicitAny: ignore

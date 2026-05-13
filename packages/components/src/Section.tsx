@@ -1,14 +1,10 @@
 import type { Ref } from 'react';
-import type {
-	ListBoxSectionProps as AriaListBoxSectionProps,
-	MenuSectionProps as AriaMenuSectionProps,
-} from 'react-aria-components';
+import type { ListBoxSectionProps as AriaListBoxSectionProps } from 'react-aria-components/ListBox';
+import type { MenuSectionProps as AriaMenuSectionProps } from 'react-aria-components/Menu';
 
 import { cva } from 'class-variance-authority';
-import {
-	ListBoxSection as AriaListBoxSection,
-	MenuSection as AriaMenuSection,
-} from 'react-aria-components';
+import { ListBoxSection as AriaListBoxSection } from 'react-aria-components/ListBox';
+import { MenuSection as AriaMenuSection } from 'react-aria-components/Menu';
 
 import styles from './styles/Section.module.css';
 

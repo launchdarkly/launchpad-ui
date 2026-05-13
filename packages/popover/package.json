@@ -33,12 +33,12 @@
 		"framer-motion": "12.23.22"
 	},
 	"devDependencies": {
-		"react": "19.2.0",
-		"react-dom": "19.2.0"
+		"react": "19.2.6",
+		"react-dom": "19.2.6"
 	},
 	"peerDependencies": {
-		"react": "19.2.0",
-		"react-dom": "19.2.0"
+		"react": "19.2.6",
+		"react-dom": "19.2.6"
 	},
 	"exports": {
 		".": {

@@ -1,20 +1,20 @@
 import type { VariantProps } from 'class-variance-authority';
 import type { Ref } from 'react';
+import type { ContextValue } from 'react-aria-components/slots';
 import type {
 	TagGroupProps as AriaTagGroupProps,
 	TagListProps as AriaTagListProps,
 	TagProps as AriaTagProps,
-	ContextValue,
-} from 'react-aria-components';
+} from 'react-aria-components/TagGroup';
 
 import { cva } from 'class-variance-authority';
 import { createContext } from 'react';
+import { composeRenderProps } from 'react-aria-components/composeRenderProps';
 import {
 	Tag as AriaTag,
 	TagGroup as AriaTagGroup,
 	TagList as AriaTagList,
-	composeRenderProps,
-} from 'react-aria-components';
+} from 'react-aria-components/TagGroup';
 
 import { IconButton } from './IconButton';
 import styles from './styles/TagGroup.module.css';

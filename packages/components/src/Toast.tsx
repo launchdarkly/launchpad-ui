@@ -4,19 +4,19 @@ import type {
 	ToastProps as AriaToastProps,
 	ToastRegionProps as AriaToastRegionProps,
 	ToastOptions,
-} from 'react-aria-components';
+} from 'react-aria-components/Toast';
 
 import { StatusIcon } from '@launchpad-ui/icons';
 import { PressResponder } from '@react-aria/interactions';
 import { cva } from 'class-variance-authority';
+import { composeRenderProps } from 'react-aria-components/composeRenderProps';
 import {
 	UNSTABLE_Toast as AriaToast,
 	UNSTABLE_ToastContent as AriaToastContent,
 	UNSTABLE_ToastQueue as AriaToastQueue,
 	UNSTABLE_ToastRegion as AriaToastRegion,
-	composeRenderProps,
 	Text,
-} from 'react-aria-components';
+} from 'react-aria-components/Toast';
 import { flushSync } from 'react-dom';
 
 import { IconButton } from './IconButton';

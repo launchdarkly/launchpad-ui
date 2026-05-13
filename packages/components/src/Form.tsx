@@ -1,10 +1,12 @@
 import type { Orientation } from '@react-types/shared';
 import type { Ref } from 'react';
-import type { FormProps as AriaFormProps, ContextValue } from 'react-aria-components';
+import type { FormProps as AriaFormProps } from 'react-aria-components/Form';
+import type { ContextValue } from 'react-aria-components/slots';
 
 import { cva } from 'class-variance-authority';
 import { createContext } from 'react';
-import { Form as AriaForm, Provider } from 'react-aria-components';
+import { Form as AriaForm } from 'react-aria-components/Form';
+import { Provider } from 'react-aria-components/slots';
 
 import { LabelContext } from './Label';
 import styles from './styles/Form.module.css';

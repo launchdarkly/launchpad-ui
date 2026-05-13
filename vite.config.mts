@@ -95,8 +95,14 @@ export default defineConfig({
 		},
 		rollupOptions: {
 			external: [
-				...Object.keys(packageJSON.dependencies || {}),
-				...Object.keys(packageJSON.peerDependencies || {}),
+				...Object.keys(packageJSON.dependencies || {}).flatMap((name) => [
+					name,
+					new RegExp(`^${name.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}/`),
+				]),
+				...Object.keys(packageJSON.peerDependencies || {}).flatMap((name) => [
+					name,
+					new RegExp(`^${name.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}/`),
+				]),
 				'react/jsx-runtime',
 				'rainbow-sprinkles/createRuntimeFn',
 			],

@@ -2,7 +2,7 @@ import type { CollectionBase } from '@react-types/shared';
 import type { MouseEvent } from 'react';
 import type { NavProps } from './Nav';
 
-import { useListState } from '@react-stately/list';
+import { useListState } from 'react-stately/useListState';
 
 import { Nav } from './Nav';
 import { NavItem } from './NavItem';

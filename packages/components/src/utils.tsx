@@ -1,11 +1,11 @@
 import type { Href } from '@react-types/shared';
 import type { Context, Ref } from 'react';
-import type { ContextValue, SlotProps } from 'react-aria-components';
+import type { ContextValue, SlotProps } from 'react-aria-components/slots';
 
 import { mergeRefs } from '@react-aria/utils';
 import { useEffect, useLayoutEffect, useMemo, useState } from 'react';
-import { mergeProps } from 'react-aria';
-import { useSlottedContext } from 'react-aria-components';
+import { mergeProps } from 'react-aria/mergeProps';
+import { useSlottedContext } from 'react-aria-components/slots';
 import { useHref as useRouterHref } from 'react-router';
 
 type ImageLoadingStatus = 'idle' | 'loading' | 'loaded' | 'error';

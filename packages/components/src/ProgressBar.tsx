@@ -1,10 +1,13 @@
 import type { VariantProps } from 'class-variance-authority';
 import type { Ref } from 'react';
-import type { ProgressBarProps as AriaProgressBarProps, ContextValue } from 'react-aria-components';
+import type { ProgressBarProps as AriaProgressBarProps } from 'react-aria-components/ProgressBar';
+import type { ContextValue } from 'react-aria-components/slots';
 
 import { cva, cx } from 'class-variance-authority';
 import { createContext } from 'react';
-import { ProgressBar as AriaProgressBar, composeRenderProps, Text } from 'react-aria-components';
+import { composeRenderProps } from 'react-aria-components/composeRenderProps';
+import { ProgressBar as AriaProgressBar } from 'react-aria-components/ProgressBar';
+import { Text } from 'react-aria-components/Text';
 
 import styles from './styles/ProgressBar.module.css';
 import { useLPContextProps } from './utils';

@@ -1,9 +1,11 @@
 import type { Ref } from 'react';
-import type { RadioGroupProps as AriaRadioGroupProps, ContextValue } from 'react-aria-components';
+import type { RadioGroupProps as AriaRadioGroupProps } from 'react-aria-components/RadioGroup';
+import type { ContextValue } from 'react-aria-components/slots';
 
 import { cva } from 'class-variance-authority';
 import { createContext } from 'react';
-import { RadioGroup as AriaRadioGroup, composeRenderProps } from 'react-aria-components';
+import { composeRenderProps } from 'react-aria-components/composeRenderProps';
+import { RadioGroup as AriaRadioGroup } from 'react-aria-components/RadioGroup';
 
 import styles from './styles/RadioGroup.module.css';
 import { useLPContextProps } from './utils';

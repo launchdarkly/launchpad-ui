@@ -2,8 +2,8 @@ import type { Ref } from 'react';
 import type {
 	BreadcrumbProps as AriaBreadcrumbProps,
 	BreadcrumbsProps as AriaBreadcrumbsProps,
-	ContextValue,
-} from 'react-aria-components';
+} from 'react-aria-components/Breadcrumbs';
+import type { ContextValue } from 'react-aria-components/slots';
 
 import { Icon } from '@launchpad-ui/icons';
 import { cva } from 'class-variance-authority';
@@ -11,9 +11,9 @@ import { createContext } from 'react';
 import {
 	Breadcrumb as AriaBreadcrumb,
 	Breadcrumbs as AriaBreadcrumbs,
-	composeRenderProps,
-	Provider,
-} from 'react-aria-components';
+} from 'react-aria-components/Breadcrumbs';
+import { composeRenderProps } from 'react-aria-components/composeRenderProps';
+import { Provider } from 'react-aria-components/slots';
 
 import { LinkContext } from './Link';
 import styles from './styles/Breadcrumbs.module.css';

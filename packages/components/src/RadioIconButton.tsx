@@ -1,11 +1,13 @@
 import type { Ref } from 'react';
-import type { ContextValue, RadioProps } from 'react-aria-components';
+import type { RadioProps } from 'react-aria-components/RadioGroup';
+import type { ContextValue } from 'react-aria-components/slots';
 import type { IconButtonBaseProps } from './IconButton';
 
 import { Icon } from '@launchpad-ui/icons';
 import { cx } from 'class-variance-authority';
 import { createContext } from 'react';
-import { Radio as AriaRadio, composeRenderProps } from 'react-aria-components';
+import { composeRenderProps } from 'react-aria-components/composeRenderProps';
+import { Radio as AriaRadio } from 'react-aria-components/RadioGroup';
 
 import { buttonStyles } from './Button';
 import { iconButtonStyles } from './IconButton';

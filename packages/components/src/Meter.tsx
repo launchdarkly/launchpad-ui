@@ -1,10 +1,13 @@
 import type { VariantProps } from 'class-variance-authority';
 import type { Ref } from 'react';
-import type { MeterProps as AriaMeterProps, ContextValue } from 'react-aria-components';
+import type { MeterProps as AriaMeterProps } from 'react-aria-components/Meter';
+import type { ContextValue } from 'react-aria-components/slots';
 
 import { cva, cx } from 'class-variance-authority';
 import { createContext } from 'react';
-import { Meter as AriaMeter, composeRenderProps, Text } from 'react-aria-components';
+import { composeRenderProps } from 'react-aria-components/composeRenderProps';
+import { Meter as AriaMeter } from 'react-aria-components/Meter';
+import { Text } from 'react-aria-components/Text';
 
 import styles from './styles/Meter.module.css';
 import { useLPContextProps } from './utils';
