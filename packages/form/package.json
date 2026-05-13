@@ -28,19 +28,18 @@
 		"@launchpad-ui/icons": "workspace:~",
 		"@launchpad-ui/tokens": "workspace:~",
 		"@launchpad-ui/tooltip": "workspace:~",
-		"classix": "2.2.0"
+		"classix": "2.2.0",
+		"react-stately": "3.46.0"
 	},
 	"devDependencies": {
 		"react": "19.2.6",
 		"react-aria": "3.48.0",
-		"react-dom": "19.2.6",
-		"react-stately": "3.46.0"
+		"react-dom": "19.2.6"
 	},
 	"peerDependencies": {
 		"react": "19.2.6",
 		"react-aria": "3.48.0",
-		"react-dom": "19.2.6",
-		"react-stately": "3.46.0"
+		"react-dom": "19.2.6"
 	},
 	"exports": {
 		".": {

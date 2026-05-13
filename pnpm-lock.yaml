@@ -481,6 +481,9 @@ importers:
       classix:
         specifier: 2.2.0
         version: 2.2.0
+      react-stately:
+        specifier: 3.46.0
+        version: 3.46.0(react@19.2.6)
     devDependencies:
       react:
         specifier: 19.2.6
@@ -491,9 +494,6 @@ importers:
       react-dom:
         specifier: 19.2.6
         version: 19.2.6(react@19.2.6)
-      react-stately:
-        specifier: 3.46.0
-        version: 3.46.0(react@19.2.6)
 
   packages/icons:
     dependencies:
@@ -537,6 +537,9 @@ importers:
       classix:
         specifier: 2.2.0
         version: 2.2.0
+      react-aria:
+        specifier: 3.48.0
+        version: 3.48.0(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
       react-virtual:
         specifier: 2.10.4
         version: 2.10.4(react@19.2.6)
@@ -544,9 +547,6 @@ importers:
       react:
         specifier: 19.2.6
         version: 19.2.6
-      react-aria:
-        specifier: 3.48.0
-        version: 3.48.0(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
       react-dom:
         specifier: 19.2.6
         version: 19.2.6(react@19.2.6)
