@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import type { ComponentType } from 'react';
-import type { Selection as AriaSelection } from 'react-aria-components/GridList';
+import type { Selection as AriaSelection } from 'react-aria-components/ListBox';
 
 import { Icon } from '@launchpad-ui/icons';
 import { useState } from 'react';
