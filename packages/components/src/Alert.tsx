@@ -4,7 +4,8 @@ import type { ComponentProps, HTMLAttributes, Ref } from 'react';
 import { StatusIcon } from '@launchpad-ui/icons';
 import { useControlledState } from '@react-stately/utils';
 import { cva } from 'class-variance-authority';
-import { HeadingContext, Provider } from 'react-aria-components';
+import { HeadingContext } from 'react-aria-components/Heading';
+import { Provider } from 'react-aria-components/slots';
 
 import { ButtonGroupContext } from './ButtonGroup';
 import { IconButton } from './IconButton';

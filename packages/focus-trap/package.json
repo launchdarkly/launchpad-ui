@@ -23,14 +23,14 @@
 		"test": "vitest run --coverage"
 	},
 	"devDependencies": {
-		"@react-aria/focus": "3.21.2",
-		"react": "19.2.0",
-		"react-dom": "19.2.0"
+		"react": "19.2.6",
+		"react-aria": "3.48.0",
+		"react-dom": "19.2.6"
 	},
 	"peerDependencies": {
-		"@react-aria/focus": "3.21.2",
-		"react": "19.2.0",
-		"react-dom": "19.2.0"
+		"react": "19.2.6",
+		"react-aria": "3.48.0",
+		"react-dom": "19.2.6"
 	},
 	"exports": {
 		".": {

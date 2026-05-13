@@ -2,12 +2,13 @@ import type { Ref } from 'react';
 import type {
 	CheckboxProps as AriaCheckboxProps,
 	CheckboxRenderProps,
-	ContextValue,
-} from 'react-aria-components';
+} from 'react-aria-components/Checkbox';
+import type { ContextValue } from 'react-aria-components/slots';
 
 import { cva } from 'class-variance-authority';
 import { createContext } from 'react';
-import { Checkbox as AriaCheckbox, composeRenderProps } from 'react-aria-components';
+import { Checkbox as AriaCheckbox } from 'react-aria-components/Checkbox';
+import { composeRenderProps } from 'react-aria-components/composeRenderProps';
 
 import styles from './styles/Checkbox.module.css';
 import { useLPContextProps } from './utils';

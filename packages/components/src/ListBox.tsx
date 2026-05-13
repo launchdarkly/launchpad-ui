@@ -2,17 +2,17 @@ import type { Ref } from 'react';
 import type {
 	ListBoxItemProps as AriaListBoxItemProps,
 	ListBoxProps as AriaListBoxProps,
-	ContextValue,
-} from 'react-aria-components';
+} from 'react-aria-components/ListBox';
+import type { ContextValue } from 'react-aria-components/slots';
 
 import { Icon } from '@launchpad-ui/icons';
 import { cva } from 'class-variance-authority';
 import { createContext } from 'react';
+import { composeRenderProps } from 'react-aria-components/composeRenderProps';
 import {
 	ListBox as AriaListBox,
 	ListBoxItem as AriaListBoxItem,
-	composeRenderProps,
-} from 'react-aria-components';
+} from 'react-aria-components/ListBox';
 
 import { CheckboxIcon, checkboxStyles } from './Checkbox';
 import styles from './styles/ListBox.module.css';
@@ -25,7 +25,7 @@ interface ListBoxProps<T> extends AriaListBoxProps<T> {
 	ref?: Ref<HTMLDivElement>;
 }
 interface ListBoxItemProps<T> extends AriaListBoxItemProps<T> {
-	ref?: Ref<T>;
+	ref?: Ref<HTMLDivElement>;
 }
 
 // biome-ignore lint/suspicious/noExplicitAny: ignore

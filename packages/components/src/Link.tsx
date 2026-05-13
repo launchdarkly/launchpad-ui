@@ -1,11 +1,13 @@
 import type { DOMProps } from '@react-types/shared';
 import type { VariantProps } from 'class-variance-authority';
 import type { Ref } from 'react';
-import type { LinkProps as AriaLinkProps, ContextValue } from 'react-aria-components';
+import type { LinkProps as AriaLinkProps } from 'react-aria-components/Link';
+import type { ContextValue } from 'react-aria-components/slots';
 
 import { cva } from 'class-variance-authority';
 import { createContext } from 'react';
-import { Link as AriaLink, composeRenderProps } from 'react-aria-components';
+import { composeRenderProps } from 'react-aria-components/composeRenderProps';
+import { Link as AriaLink } from 'react-aria-components/Link';
 
 import styles from './styles/Link.module.css';
 import { useLPContextProps } from './utils';

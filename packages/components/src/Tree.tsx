@@ -1,21 +1,21 @@
 import type { Ref } from 'react';
+import type { ContextValue } from 'react-aria-components/slots';
 import type {
 	TreeItemProps as AriaTreeItemProps,
 	TreeProps as AriaTreeProps,
-	ContextValue,
 	TreeItemContentProps,
 	TreeItemContentRenderProps,
-} from 'react-aria-components';
+} from 'react-aria-components/Tree';
 
 import { Icon } from '@launchpad-ui/icons';
 import { cva } from 'class-variance-authority';
 import { createContext } from 'react';
+import { composeRenderProps } from 'react-aria-components/composeRenderProps';
 import {
 	Tree as AriaTree,
 	TreeItem as AriaTreeItem,
 	TreeItemContent as AriaTreeItemContent,
-	composeRenderProps,
-} from 'react-aria-components';
+} from 'react-aria-components/Tree';
 
 import { Button } from './Button';
 import { CheckboxIcon, checkboxStyles } from './Checkbox';

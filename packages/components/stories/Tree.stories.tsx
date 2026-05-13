@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import type { Selection } from 'react-aria-components';
+import type { Selection } from 'react-aria-components/GridList';
 
 import { Icon } from '@launchpad-ui/icons';
 import { useState } from 'react';

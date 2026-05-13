@@ -4,9 +4,9 @@ import type { ComponentPropsWithRef, ElementType, JSX, PropsWithRef, ReactElemen
 
 import { Tooltip } from '@launchpad-ui/tooltip';
 import { Slot } from '@radix-ui/react-slot';
-import { FocusRing } from '@react-aria/focus';
 import { cx } from 'classix';
 import { cloneElement } from 'react';
+import { FocusRing } from 'react-aria/FocusRing';
 
 import styles from './styles/Menu.module.css';
 

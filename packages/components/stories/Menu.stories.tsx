@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import type { ComponentType } from 'react';
-import type { Selection as AriaSelection } from 'react-aria-components';
+import type { Selection as AriaSelection } from 'react-aria-components/GridList';
 
 import { Icon } from '@launchpad-ui/icons';
 import { useState } from 'react';
-import { useFilter } from 'react-aria-components';
+import { useFilter } from 'react-aria-components/Autocomplete';
 import { expect, fireEvent, userEvent, waitFor, within } from 'storybook/test';
 
 import { Autocomplete as AutocompleteComponent } from '../src/Autocomplete';

@@ -1,16 +1,15 @@
 import type { VariantProps } from 'class-variance-authority';
 import type { Ref } from 'react';
-import type { ToolbarProps as AriaToolbarProps, ContextValue } from 'react-aria-components';
+import type { ContextValue } from 'react-aria-components/slots';
+import type { ToolbarProps as AriaToolbarProps } from 'react-aria-components/Toolbar';
 
 import { cva } from 'class-variance-authority';
 import { createContext } from 'react';
-import {
-	Toolbar as AriaToolbar,
-	composeRenderProps,
-	Provider,
-	SeparatorContext,
-	ToggleButtonGroupContext,
-} from 'react-aria-components';
+import { composeRenderProps } from 'react-aria-components/composeRenderProps';
+import { SeparatorContext } from 'react-aria-components/Separator';
+import { Provider } from 'react-aria-components/slots';
+import { ToggleButtonGroupContext } from 'react-aria-components/ToggleButtonGroup';
+import { Toolbar as AriaToolbar } from 'react-aria-components/Toolbar';
 
 import { ButtonGroupContext } from './ButtonGroup';
 import styles from './styles/Toolbar.module.css';

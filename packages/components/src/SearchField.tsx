@@ -1,9 +1,11 @@
 import type { Ref } from 'react';
-import type { SearchFieldProps as AriaSearchFieldProps, ContextValue } from 'react-aria-components';
+import type { SearchFieldProps as AriaSearchFieldProps } from 'react-aria-components/SearchField';
+import type { ContextValue } from 'react-aria-components/slots';
 
 import { cva } from 'class-variance-authority';
 import { createContext } from 'react';
-import { SearchField as AriaSearchField, composeRenderProps } from 'react-aria-components';
+import { composeRenderProps } from 'react-aria-components/composeRenderProps';
+import { SearchField as AriaSearchField } from 'react-aria-components/SearchField';
 
 import styles from './styles/SearchField.module.css';
 import { useLPContextProps } from './utils';

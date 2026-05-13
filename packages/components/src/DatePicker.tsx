@@ -1,28 +1,29 @@
 import type { CSSProperties, Ref } from 'react';
 import type {
 	DatePickerProps as AriaDatePickerProps,
-	DateRangePickerProps as AriaDateRangePickerProps,
-	ContextValue,
 	DateValue,
-} from 'react-aria-components';
+} from 'react-aria-components/DatePicker';
+import type { DateRangePickerProps as AriaDateRangePickerProps } from 'react-aria-components/DateRangePicker';
+import type { ContextValue } from 'react-aria-components/slots';
 
 import { Icon } from '@launchpad-ui/icons';
 import { useResizeObserver } from '@react-aria/utils';
 import { cva, cx } from 'class-variance-authority';
 import { createContext, useCallback, useContext, useRef, useState } from 'react';
-import { useLocale } from 'react-aria';
+import { useLocale } from 'react-aria/I18nProvider';
+import { composeRenderProps } from 'react-aria-components/composeRenderProps';
 import {
 	DatePicker as AriaDatePicker,
-	DateRangePicker as AriaDateRangePicker,
-	composeRenderProps,
 	DatePickerStateContext,
-	DateRangePickerStateContext,
-	FormContext,
-	PopoverContext,
-	Provider,
 	Text,
-	useSlottedContext,
-} from 'react-aria-components';
+} from 'react-aria-components/DatePicker';
+import {
+	DateRangePicker as AriaDateRangePicker,
+	DateRangePickerStateContext,
+} from 'react-aria-components/DateRangePicker';
+import { FormContext } from 'react-aria-components/Form';
+import { PopoverContext } from 'react-aria-components/Popover';
+import { Provider, useSlottedContext } from 'react-aria-components/slots';
 
 import { ButtonContext } from './Button';
 import baseStyles from './styles/base.module.css';

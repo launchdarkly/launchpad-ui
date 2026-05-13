@@ -1,8 +1,9 @@
-import type { LabelProps as AriaLabelProps, ContextValue } from 'react-aria-components';
+import type { LabelProps as AriaLabelProps } from 'react-aria-components/Label';
+import type { ContextValue } from 'react-aria-components/slots';
 
 import { cva, cx } from 'class-variance-authority';
 import { createContext, type Ref } from 'react';
-import { Label as AriaLabel } from 'react-aria-components';
+import { Label as AriaLabel } from 'react-aria-components/Label';
 
 import styles from './styles/Label.module.css';
 import { useLPContextProps } from './utils';

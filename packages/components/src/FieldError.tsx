@@ -1,9 +1,11 @@
 import type { Ref } from 'react';
-import type { FieldErrorProps as AriaFieldErrorProps, ContextValue } from 'react-aria-components';
+import type { FieldErrorProps as AriaFieldErrorProps } from 'react-aria-components/FieldError';
+import type { ContextValue } from 'react-aria-components/slots';
 
 import { cva } from 'class-variance-authority';
 import { createContext } from 'react';
-import { FieldError as AriaFieldError, composeRenderProps } from 'react-aria-components';
+import { composeRenderProps } from 'react-aria-components/composeRenderProps';
+import { FieldError as AriaFieldError } from 'react-aria-components/FieldError';
 
 import styles from './styles/FieldError.module.css';
 import { useLPContextProps } from './utils';

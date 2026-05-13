@@ -1,15 +1,14 @@
 import type { VariantProps } from 'class-variance-authority';
 import type { Ref } from 'react';
-import type { ButtonProps as AriaButtonProps, ContextValue } from 'react-aria-components';
+import type { ButtonProps as AriaButtonProps } from 'react-aria-components/Button';
+import type { ContextValue } from 'react-aria-components/slots';
 
 import { cva } from 'class-variance-authority';
 import { createContext, useContext } from 'react';
-import {
-	Button as AriaButton,
-	composeRenderProps,
-	Provider,
-	TextContext,
-} from 'react-aria-components';
+import { Button as AriaButton } from 'react-aria-components/Button';
+import { composeRenderProps } from 'react-aria-components/composeRenderProps';
+import { Provider } from 'react-aria-components/slots';
+import { TextContext } from 'react-aria-components/Text';
 
 import { PerceivableContext } from './Perceivable';
 import { ProgressBar } from './ProgressBar';
