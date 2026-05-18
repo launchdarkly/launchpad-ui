@@ -12,7 +12,7 @@
 }
 
 .spinner {
-	--fill-color: var(--lp-color-gray-500);
+	--fill-color: var(--lp-color-neutral-500);
 	display: inline-flex;
 }
 
@@ -27,7 +27,7 @@
 }
 
 .outerCircle {
-	stroke: var(--lp-color-white-100);
+	stroke: rgb(255 255 255 / 0.15);
 }
 
 .innerCircle {

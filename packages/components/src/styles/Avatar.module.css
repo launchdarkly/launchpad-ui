@@ -28,7 +28,7 @@
 }
 
 .blue {
-	background-color: var(--lp-color-blue-600);
+	background-color: var(--lp-color-brand-blue-base);
 }
 
 .pink {
@@ -40,11 +40,12 @@
 }
 
 .purple {
-	background-color: var(--lp-color-purple-600);
+	background-color: var(--lp-color-brand-purple-base);
 }
 
 .text {
-	fill: var(--lp-color-white-950);
+	/* brand backgrounds are theme-constant; text must be too */
+	fill: white;
 	text-anchor: middle;
 	dominant-baseline: central;
 }

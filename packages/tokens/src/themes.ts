@@ -6,7 +6,8 @@ export const themes = ['default', 'dark'] as const;
 export type Theme = (typeof themes)[number];
 
 export const css = (theme: Theme): Config => ({
-	source: ['tokens/color-primitives.default.json', `tokens/*.${theme}.json`],
+	log: { verbosity: 'verbose' },
+	source: ['tokens/color-primitives-map.default.json', `tokens/*.${theme}.json`],
 	platforms: {
 		css: {
 			prefix: 'lp',

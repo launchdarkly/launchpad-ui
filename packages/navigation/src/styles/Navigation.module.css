@@ -133,7 +133,7 @@
 }
 
 .NavItem:focus .NavItem-name {
-	box-shadow: 0 0 0 0.125rem var(--lp-color-blue-600);
+	box-shadow: 0 0 0 0.125rem var(--lp-color-action-600);
 	border-radius: 0.375rem;
 }
 
