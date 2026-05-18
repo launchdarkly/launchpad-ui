@@ -28,3 +28,6 @@ peerDependencyRules:
     vite: "6 || 7"
 
 strictPeerDependencies: true
+minimumReleaseAgeExclude:
+  # Renovate security update: axios@1.15.2
+  - axios@1.15.2
