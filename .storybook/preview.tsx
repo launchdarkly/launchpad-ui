@@ -66,6 +66,7 @@ const parameters: Parameters = {
 			order: [
 				'Getting started',
 				'Component Overview',
+				'Content Guidelines',
 				'Contributing',
 				'Guidelines',
 				'Tokens',
