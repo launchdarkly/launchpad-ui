@@ -1,7 +1,7 @@
 {
 	"name": "launchpad-design-system",
 	"private": true,
-	"version": "0.3.1",
+	"version": "0.3.2",
 	"description": "LaunchPad VS Code extension",
 	"repository": {
 		"type": "git",
@@ -13,8 +13,8 @@
 	"license": "SEE LICENSE IN LICENSE.txt",
 	"main": "dist/client.js",
 	"scripts": {
-		"build": "pnpm dlx @vscode/vsce package --no-dependencies",
-		"publish": "pnpm dlx @vscode/vsce publish --no-dependencies",
+		"build": "pnpm dlx --allow-build=@vscode/vsce-sign --allow-build=keytar @vscode/vsce package --no-dependencies",
+		"publish": "pnpm dlx --allow-build=@vscode/vsce-sign --allow-build=keytar @vscode/vsce publish --no-dependencies",
 		"vscode:prepublish": "esbuild ./src/client.ts ./src/server.ts --bundle --outdir=dist --external:vscode --format=cjs --platform=node",
 		"watch": "pnpm vscode:prepublish --watch"
 	},

@@ -1,10 +1,12 @@
 import type { Ref } from 'react';
-import type { TextAreaProps as AriaTextAreaProps, ContextValue } from 'react-aria-components';
+import type { ContextValue } from 'react-aria-components/slots';
+import type { TextAreaProps as AriaTextAreaProps } from 'react-aria-components/TextArea';
 import type { InputVariants } from './Input';
 
 import { cva, cx } from 'class-variance-authority';
 import { createContext } from 'react';
-import { TextArea as AriaTextArea, composeRenderProps } from 'react-aria-components';
+import { composeRenderProps } from 'react-aria-components/composeRenderProps';
+import { TextArea as AriaTextArea } from 'react-aria-components/TextArea';
 
 import { inputStyles } from './Input';
 import styles from './styles/TextArea.module.css';

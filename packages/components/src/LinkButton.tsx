@@ -1,9 +1,9 @@
-import type { ContextValue } from 'react-aria-components';
+import type { ContextValue } from 'react-aria-components/slots';
 import type { ButtonVariants } from './Button';
 import type { LinkProps } from './Link';
 
 import { createContext } from 'react';
-import { composeRenderProps } from 'react-aria-components';
+import { composeRenderProps } from 'react-aria-components/composeRenderProps';
 
 import { buttonStyles } from './Button';
 import { Link } from './Link';

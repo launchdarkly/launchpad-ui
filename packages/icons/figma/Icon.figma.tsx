@@ -347,7 +347,7 @@ figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=6-14
 	example: () => <Icon name="sidebar-left-expand" />,
 });
 
-figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=6-142011', {
+figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=25934-175', {
 	props: {
 		name: 'sidebar-left-collapse',
 	},
@@ -445,6 +445,13 @@ figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=2228
 	example: () => <Icon name="scale" />,
 });
 
+figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=26870-207', {
+	props: {
+		name: 'save',
+	},
+	example: () => <Icon name="save" />,
+});
+
 figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=20642-266', {
 	props: {
 		name: 'sandbox',
@@ -478,6 +485,13 @@ figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=6-14
 		name: 'robot',
 	},
 	example: () => <Icon name="robot" />,
+});
+
+figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=26292-150', {
+	props: {
+		name: 'restore',
+	},
+	example: () => <Icon name="restore" />,
 });
 
 figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=20672-218', {
@@ -949,6 +963,27 @@ figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=6-14
 	example: () => <Icon name="lightbulb" />,
 });
 
+figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=25769-134', {
+	props: {
+		name: 'layout-structured',
+	},
+	example: () => <Icon name="layout-structured" />,
+});
+
+figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=25769-128', {
+	props: {
+		name: 'layout-side-by-side',
+	},
+	example: () => <Icon name="layout-side-by-side" />,
+});
+
+figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=25769-122', {
+	props: {
+		name: 'layout-stack',
+	},
+	example: () => <Icon name="layout-stack" />,
+});
+
 figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=17108-128', {
 	props: {
 		name: 'layers-difference',
@@ -1320,6 +1355,13 @@ figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=6-14
 	example: () => <Icon name="filter" />,
 });
 
+figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=26870-206', {
+	props: {
+		name: 'file',
+	},
+	example: () => <Icon name="file" />,
+});
+
 figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=6-141674', {
 	props: {
 		name: 'extension',
@@ -1360,6 +1402,13 @@ figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=6-14
 		name: 'door-exit',
 	},
 	example: () => <Icon name="door-exit" />,
+});
+
+figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=25777-125', {
+	props: {
+		name: 'document-time',
+	},
+	example: () => <Icon name="document-time" />,
 });
 
 figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=6-141636', {

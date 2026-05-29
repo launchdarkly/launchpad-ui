@@ -3,16 +3,16 @@ import type { Ref } from 'react';
 import type {
 	OverlayArrowProps as AriaOverlayArrowProps,
 	PopoverProps as AriaPopoverProps,
-	ContextValue,
-} from 'react-aria-components';
+} from 'react-aria-components/Popover';
+import type { ContextValue } from 'react-aria-components/slots';
 
 import { cva } from 'class-variance-authority';
 import { createContext } from 'react';
+import { composeRenderProps } from 'react-aria-components/composeRenderProps';
 import {
 	OverlayArrow as AriaOverlayArrow,
 	Popover as AriaPopover,
-	composeRenderProps,
-} from 'react-aria-components';
+} from 'react-aria-components/Popover';
 
 import styles from './styles/Popover.module.css';
 import { useLPContextProps } from './utils';
@@ -30,6 +30,7 @@ const popoverStyles = cva(styles.popover, {
 	variants: {
 		width: {
 			default: styles.default,
+			fit: styles.fit,
 			trigger: styles.trigger,
 		},
 	},

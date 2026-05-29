@@ -1,5 +1,72 @@
 # @launchpad-ui/icons
 
+## 0.25.6
+
+### Patch Changes
+
+- [#1898](https://github.com/launchdarkly/launchpad-ui/pull/1898) [`9e0dbf9`](https://github.com/launchdarkly/launchpad-ui/commit/9e0dbf944d0c976fb70bb59d2052ce8a54fd83ac) Thanks [@apucacao](https://github.com/apucacao)! - Upgrade `react-aria-components` to 1.17.0 along with aligned `react-aria`, `react-stately`, and `@react-aria/*` packages. Imports migrated to subpath form (e.g. `react-aria-components/Menu`) via Adobe's `use-subpaths` codemod, which reduces consumer bundle size without relying on tree-shaking.
+
+  Two upstream behavior changes worth noting:
+
+  - `DateField` and `DatePicker` now constrain invalid input on blur instead of while typing (RAC 1.15).
+  - `Tabs` defaults `shouldSelectOnPressUp` to `true` when an item is a link (RAC 1.17).
+
+## 0.25.5
+
+### Patch Changes
+
+- [#1886](https://github.com/launchdarkly/launchpad-ui/pull/1886) [`84d26d5`](https://github.com/launchdarkly/launchpad-ui/commit/84d26d5289fe043ebbb8de20be238f5cfc01c598) Thanks [@pd-sa-github-launchpad-ui](https://github.com/pd-sa-github-launchpad-ui)! - feat(icons): sync and connect icons with figma library
+
+  New icons:
+
+  - file
+  - save
+
+## 0.25.4
+
+### Patch Changes
+
+- [#1875](https://github.com/launchdarkly/launchpad-ui/pull/1875) [`c21e7b3`](https://github.com/launchdarkly/launchpad-ui/commit/c21e7b3da7c97182c4b37782b0e339f2afae1808) Thanks [@pd-sa-github-launchpad-ui](https://github.com/pd-sa-github-launchpad-ui)! - feat(icons): sync and connect icons with figma library
+
+  New icons:
+
+  - restore
+
+## 0.25.3
+
+### Patch Changes
+
+- [#1870](https://github.com/launchdarkly/launchpad-ui/pull/1870) [`afd337e`](https://github.com/launchdarkly/launchpad-ui/commit/afd337e6a64a72f6803224144d18d878a9895c13) Thanks [@cmwinters](https://github.com/cmwinters)! - feat(icons): sync and connect icons with figma library
+
+  Updated icons
+
+  - sidebar-left-collapse
+  - sidebar-left-expand
+  - sidebar-right-collapse
+  - sidebar-right-expand
+
+  Removed icons:
+
+  - size-large-40x40
+  - size-medium-20x20
+  - size-small-16x16
+  - size-tiny-14x14
+
+## 0.25.2
+
+### Patch Changes
+
+- [#1862](https://github.com/launchdarkly/launchpad-ui/pull/1862) [`b640bf3`](https://github.com/launchdarkly/launchpad-ui/commit/b640bf3cb8e5d7c4296f475ea79e06f0143cb440) Thanks [@pd-sa-github-launchpad-ui](https://github.com/pd-sa-github-launchpad-ui)! - feat(icons): sync and connect icons with figma library
+
+  New icons:
+
+  - document-time
+  - layout-side-by-side
+  - layout-stack
+  - layout-structured
+
+- [#1858](https://github.com/launchdarkly/launchpad-ui/pull/1858) [`92331c2`](https://github.com/launchdarkly/launchpad-ui/commit/92331c29fe6245c2da0d0545f1939d7b18b736dc) Thanks [@pd-sa-github-launchpad-ui](https://github.com/pd-sa-github-launchpad-ui)! - feat(icons): sync and connect icons with figma library
+
 ## 0.25.1
 
 ### Patch Changes

@@ -1,6 +1,6 @@
 {
 	"name": "@launchpad-ui/core",
-	"version": "0.59.12",
+	"version": "0.59.17",
 	"description": "Contains all LaunchPad design system packages.",
 	"repository": {
 		"type": "git",
@@ -45,12 +45,12 @@
 		"@launchpad-ui/tooltip": "workspace:~"
 	},
 	"devDependencies": {
-		"react": "19.2.0",
-		"react-dom": "19.2.0"
+		"react": "19.2.6",
+		"react-dom": "19.2.6"
 	},
 	"peerDependencies": {
-		"react": "19.2.0",
-		"react-dom": "19.2.0"
+		"react": "19.2.6",
+		"react-dom": "19.2.6"
 	},
 	"exports": {
 		".": {

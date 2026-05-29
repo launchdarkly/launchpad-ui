@@ -12,8 +12,8 @@ jobs:
     name: Validate PR title
     runs-on: ubuntu-latest
     steps:
-      - uses: amannn/action-semantic-pull-request@7e7756342d687a84eff23acb7b5bd1c0e7b17750
         # Pinned to commit SHA for security: https://github.com/amannn/action-semantic-pull-request/commit/7e7756342d687a84eff23acb7b5bd1c0e7b17750
+      - uses: amannn/action-semantic-pull-request@7e7756342d687a84eff23acb7b5bd1c0e7b17750
         with:
           validateSingleCommit: true
         env:

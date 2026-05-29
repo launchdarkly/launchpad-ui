@@ -1,3 +1,3 @@
-import { Keyboard } from 'react-aria-components';
+import { Keyboard } from 'react-aria-components/Keyboard';
 
 export { Keyboard };

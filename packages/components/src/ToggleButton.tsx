@@ -1,12 +1,11 @@
 import type { Ref } from 'react';
-import type {
-	ToggleButtonProps as AriaToggleButtonProps,
-	ContextValue,
-} from 'react-aria-components';
+import type { ContextValue } from 'react-aria-components/slots';
+import type { ToggleButtonProps as AriaToggleButtonProps } from 'react-aria-components/ToggleButton';
 import type { ButtonVariants } from './Button';
 
 import { createContext } from 'react';
-import { ToggleButton as AriaToggleButton, composeRenderProps } from 'react-aria-components';
+import { composeRenderProps } from 'react-aria-components/composeRenderProps';
+import { ToggleButton as AriaToggleButton } from 'react-aria-components/ToggleButton';
 
 import { buttonStyles } from './Button';
 import { useLPContextProps } from './utils';

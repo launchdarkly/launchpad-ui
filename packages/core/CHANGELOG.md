@@ -1,5 +1,88 @@
 # @launchpad-ui/core
 
+## 0.59.17
+
+### Patch Changes
+
+- [#1898](https://github.com/launchdarkly/launchpad-ui/pull/1898) [`9e0dbf9`](https://github.com/launchdarkly/launchpad-ui/commit/9e0dbf944d0c976fb70bb59d2052ce8a54fd83ac) Thanks [@apucacao](https://github.com/apucacao)! - Upgrade `react-aria-components` to 1.17.0 along with aligned `react-aria`, `react-stately`, and `@react-aria/*` packages. Imports migrated to subpath form (e.g. `react-aria-components/Menu`) via Adobe's `use-subpaths` codemod, which reduces consumer bundle size without relying on tree-shaking.
+
+  Two upstream behavior changes worth noting:
+
+  - `DateField` and `DatePicker` now constrain invalid input on blur instead of while typing (RAC 1.15).
+  - `Tabs` defaults `shouldSelectOnPressUp` to `true` when an item is a link (RAC 1.17).
+
+- Updated dependencies [[`9e0dbf9`](https://github.com/launchdarkly/launchpad-ui/commit/9e0dbf944d0c976fb70bb59d2052ce8a54fd83ac)]:
+  - @launchpad-ui/focus-trap@0.5.2
+  - @launchpad-ui/navigation@0.16.17
+  - @launchpad-ui/dropdown@0.10.15
+  - @launchpad-ui/overlay@0.6.3
+  - @launchpad-ui/popover@0.14.3
+  - @launchpad-ui/tooltip@0.12.3
+  - @launchpad-ui/button@0.15.15
+  - @launchpad-ui/drawer@0.9.15
+  - @launchpad-ui/filter@0.11.15
+  - @launchpad-ui/portal@0.4.3
+  - @launchpad-ui/modal@0.21.15
+  - @launchpad-ui/table@0.9.3
+  - @launchpad-ui/form@0.15.15
+  - @launchpad-ui/menu@0.16.15
+
+## 0.59.16
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @launchpad-ui/button@0.15.14
+  - @launchpad-ui/drawer@0.9.14
+  - @launchpad-ui/dropdown@0.10.14
+  - @launchpad-ui/filter@0.11.14
+  - @launchpad-ui/form@0.15.14
+  - @launchpad-ui/menu@0.16.14
+  - @launchpad-ui/modal@0.21.14
+  - @launchpad-ui/navigation@0.16.16
+
+## 0.59.15
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @launchpad-ui/button@0.15.13
+  - @launchpad-ui/drawer@0.9.13
+  - @launchpad-ui/dropdown@0.10.13
+  - @launchpad-ui/filter@0.11.13
+  - @launchpad-ui/form@0.15.13
+  - @launchpad-ui/menu@0.16.13
+  - @launchpad-ui/modal@0.21.13
+  - @launchpad-ui/navigation@0.16.15
+
+## 0.59.14
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @launchpad-ui/button@0.15.12
+  - @launchpad-ui/drawer@0.9.12
+  - @launchpad-ui/dropdown@0.10.12
+  - @launchpad-ui/filter@0.11.12
+  - @launchpad-ui/form@0.15.12
+  - @launchpad-ui/menu@0.16.12
+  - @launchpad-ui/modal@0.21.12
+  - @launchpad-ui/navigation@0.16.14
+
+## 0.59.13
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @launchpad-ui/button@0.15.11
+  - @launchpad-ui/drawer@0.9.11
+  - @launchpad-ui/dropdown@0.10.11
+  - @launchpad-ui/filter@0.11.11
+  - @launchpad-ui/form@0.15.11
+  - @launchpad-ui/menu@0.16.11
+  - @launchpad-ui/modal@0.21.11
+  - @launchpad-ui/navigation@0.16.13
+
 ## 0.59.12
 
 ### Patch Changes

@@ -5,9 +5,9 @@ import { Chip } from '@launchpad-ui/chip';
 import { Dropdown, DropdownButton } from '@launchpad-ui/dropdown';
 import { Icon } from '@launchpad-ui/icons';
 import { Menu, MenuItem } from '@launchpad-ui/menu';
-import { useListState } from '@react-stately/list';
 import { useEffect, useRef, useState } from 'react';
 import { NavLink, useLocation } from 'react-router';
+import { useListState } from 'react-stately/useListState';
 
 import styles from './styles/Navigation.module.css';
 import { titlecase } from './utils';

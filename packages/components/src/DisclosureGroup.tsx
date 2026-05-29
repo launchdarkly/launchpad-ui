@@ -1,8 +1,8 @@
 import type { Ref } from 'react';
-import type { DisclosureGroupProps as AriaDisclosureGroupProps } from 'react-aria-components';
+import type { DisclosureGroupProps as AriaDisclosureGroupProps } from 'react-aria-components/DisclosureGroup';
 
 import { cva } from 'class-variance-authority';
-import { DisclosureGroup as AriaDisclosureGroup } from 'react-aria-components';
+import { DisclosureGroup as AriaDisclosureGroup } from 'react-aria-components/DisclosureGroup';
 
 import styles from './styles/DisclosureGroup.module.css';
 

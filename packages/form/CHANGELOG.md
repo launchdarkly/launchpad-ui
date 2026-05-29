@@ -1,5 +1,53 @@
 # @launchpad-ui/form
 
+## 0.15.15
+
+### Patch Changes
+
+- [#1898](https://github.com/launchdarkly/launchpad-ui/pull/1898) [`9e0dbf9`](https://github.com/launchdarkly/launchpad-ui/commit/9e0dbf944d0c976fb70bb59d2052ce8a54fd83ac) Thanks [@apucacao](https://github.com/apucacao)! - Upgrade `react-aria-components` to 1.17.0 along with aligned `react-aria`, `react-stately`, and `@react-aria/*` packages. Imports migrated to subpath form (e.g. `react-aria-components/Menu`) via Adobe's `use-subpaths` codemod, which reduces consumer bundle size without relying on tree-shaking.
+
+  Two upstream behavior changes worth noting:
+
+  - `DateField` and `DatePicker` now constrain invalid input on blur instead of while typing (RAC 1.15).
+  - `Tabs` defaults `shouldSelectOnPressUp` to `true` when an item is a link (RAC 1.17).
+
+- Updated dependencies [[`9e0dbf9`](https://github.com/launchdarkly/launchpad-ui/commit/9e0dbf944d0c976fb70bb59d2052ce8a54fd83ac)]:
+  - @launchpad-ui/tooltip@0.12.3
+  - @launchpad-ui/button@0.15.15
+  - @launchpad-ui/icons@0.25.6
+
+## 0.15.14
+
+### Patch Changes
+
+- Updated dependencies [[`84d26d5`](https://github.com/launchdarkly/launchpad-ui/commit/84d26d5289fe043ebbb8de20be238f5cfc01c598)]:
+  - @launchpad-ui/icons@0.25.5
+  - @launchpad-ui/button@0.15.14
+
+## 0.15.13
+
+### Patch Changes
+
+- Updated dependencies [[`c21e7b3`](https://github.com/launchdarkly/launchpad-ui/commit/c21e7b3da7c97182c4b37782b0e339f2afae1808)]:
+  - @launchpad-ui/icons@0.25.4
+  - @launchpad-ui/button@0.15.13
+
+## 0.15.12
+
+### Patch Changes
+
+- Updated dependencies [[`afd337e`](https://github.com/launchdarkly/launchpad-ui/commit/afd337e6a64a72f6803224144d18d878a9895c13)]:
+  - @launchpad-ui/icons@0.25.3
+  - @launchpad-ui/button@0.15.12
+
+## 0.15.11
+
+### Patch Changes
+
+- Updated dependencies [[`b640bf3`](https://github.com/launchdarkly/launchpad-ui/commit/b640bf3cb8e5d7c4296f475ea79e06f0143cb440), [`92331c2`](https://github.com/launchdarkly/launchpad-ui/commit/92331c29fe6245c2da0d0545f1939d7b18b736dc)]:
+  - @launchpad-ui/icons@0.25.2
+  - @launchpad-ui/button@0.15.11
+
 ## 0.15.10
 
 ### Patch Changes

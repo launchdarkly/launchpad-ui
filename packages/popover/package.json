@@ -1,6 +1,6 @@
 {
 	"name": "@launchpad-ui/popover",
-	"version": "0.14.2",
+	"version": "0.14.3",
 	"description": "An element that displays content within a portal triggered by user interactions.",
 	"repository": "launchdarkly/launchpad-ui",
 	"license": "Apache-2.0",
@@ -33,12 +33,12 @@
 		"framer-motion": "12.23.22"
 	},
 	"devDependencies": {
-		"react": "19.2.0",
-		"react-dom": "19.2.0"
+		"react": "19.2.6",
+		"react-dom": "19.2.6"
 	},
 	"peerDependencies": {
-		"react": "19.2.0",
-		"react-dom": "19.2.0"
+		"react": "19.2.6",
+		"react-dom": "19.2.6"
 	},
 	"exports": {
 		".": {

@@ -1,6 +1,6 @@
 {
 	"name": "@launchpad-ui/form",
-	"version": "0.15.10",
+	"version": "0.15.15",
 	"description": "Elements for composing forms, such as input fields, labels, radio buttons, etc.",
 	"repository": "launchdarkly/launchpad-ui",
 	"license": "Apache-2.0",
@@ -28,24 +28,18 @@
 		"@launchpad-ui/icons": "workspace:~",
 		"@launchpad-ui/tokens": "workspace:~",
 		"@launchpad-ui/tooltip": "workspace:~",
-		"@react-stately/numberfield": "3.10.2",
-		"classix": "2.2.0"
+		"classix": "2.2.0",
+		"react-stately": "3.46.0"
 	},
 	"devDependencies": {
-		"@react-aria/button": "3.14.2",
-		"@react-aria/i18n": "3.12.13",
-		"@react-aria/numberfield": "3.12.2",
-		"@react-aria/visually-hidden": "3.8.28",
-		"react": "19.2.0",
-		"react-dom": "19.2.0"
+		"react": "19.2.6",
+		"react-aria": "3.48.0",
+		"react-dom": "19.2.6"
 	},
 	"peerDependencies": {
-		"@react-aria/button": "3.14.2",
-		"@react-aria/i18n": "3.12.13",
-		"@react-aria/numberfield": "3.12.2",
-		"@react-aria/visually-hidden": "3.8.28",
-		"react": "19.2.0",
-		"react-dom": "19.2.0"
+		"react": "19.2.6",
+		"react-aria": "3.48.0",
+		"react-dom": "19.2.6"
 	},
 	"exports": {
 		".": {

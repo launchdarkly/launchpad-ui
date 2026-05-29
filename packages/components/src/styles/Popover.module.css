@@ -132,6 +132,10 @@
 	}
 }
 
+.fit {
+	width: fit-content;
+}
+
 .trigger {
 	&[data-trigger] {
 		width: var(--trigger-width);

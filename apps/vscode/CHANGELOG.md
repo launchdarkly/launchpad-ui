@@ -1,5 +1,11 @@
 # launchpad-design-system
 
+## 0.3.2
+
+### Patch Changes
+
+- [#1895](https://github.com/launchdarkly/launchpad-ui/pull/1895) [`5734388`](https://github.com/launchdarkly/launchpad-ui/commit/57343885a5296a2b3f5bcf89ce3b1d13df42cfbe) Thanks [@apucacao](https://github.com/apucacao)! - Upgrade the repo to pnpm 11. The VS Code extension's `build` and `publish` scripts now pass `--allow-build` flags to `pnpm dlx` so that `@vscode/vsce-sign` and `keytar` postinstalls run under pnpm 11's stricter build-script policy.
+
 ## 0.3.1
 
 ### Patch Changes

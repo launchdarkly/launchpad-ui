@@ -1,9 +1,11 @@
 import type { Ref } from 'react';
-import type { DropZoneProps as AriaDropZoneProps, ContextValue } from 'react-aria-components';
+import type { DropZoneProps as AriaDropZoneProps } from 'react-aria-components/DropZone';
+import type { ContextValue } from 'react-aria-components/slots';
 
 import { cva } from 'class-variance-authority';
 import { createContext } from 'react';
-import { DropZone as AriaDropZone, composeRenderProps } from 'react-aria-components';
+import { composeRenderProps } from 'react-aria-components/composeRenderProps';
+import { DropZone as AriaDropZone } from 'react-aria-components/DropZone';
 
 import styles from './styles/DropZone.module.css';
 import { useLPContextProps } from './utils';

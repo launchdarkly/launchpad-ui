@@ -1,20 +1,17 @@
 import type { Ref } from 'react';
 import type {
 	DialogProps as AriaDialogProps,
-	ContextValue,
 	DialogTriggerProps,
-} from 'react-aria-components';
+} from 'react-aria-components/Dialog';
+import type { ContextValue } from 'react-aria-components/slots';
 
 import { useSlotId } from '@react-aria/utils';
 import { cva } from 'class-variance-authority';
 import { createContext } from 'react';
-import {
-	Dialog as AriaDialog,
-	composeRenderProps,
-	DialogTrigger,
-	Provider,
-	TextContext,
-} from 'react-aria-components';
+import { composeRenderProps } from 'react-aria-components/composeRenderProps';
+import { Dialog as AriaDialog, DialogTrigger } from 'react-aria-components/Dialog';
+import { Provider } from 'react-aria-components/slots';
+import { TextContext } from 'react-aria-components/Text';
 
 import styles from './styles/Dialog.module.css';
 import { useLPContextProps } from './utils';

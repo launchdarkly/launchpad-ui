@@ -3,13 +3,13 @@ import type {
 	CalendarCellProps as AriaCalendarCellProps,
 	CalendarGridProps as AriaCalendarGridProps,
 	CalendarProps as AriaCalendarProps,
-	RangeCalendarProps as AriaRangeCalendarProps,
 	CalendarGridBodyProps,
 	CalendarGridHeaderProps,
 	CalendarHeaderCellProps,
-	ContextValue,
 	DateValue,
-} from 'react-aria-components';
+} from 'react-aria-components/Calendar';
+import type { RangeCalendarProps as AriaRangeCalendarProps } from 'react-aria-components/RangeCalendar';
+import type { ContextValue } from 'react-aria-components/slots';
 
 import { getLocalTimeZone, isToday } from '@internationalized/date';
 import { cva, cx } from 'class-variance-authority';
@@ -19,14 +19,16 @@ import {
 	CalendarCell as AriaCalendarCell,
 	CalendarContext as AriaCalendarContext,
 	CalendarGrid as AriaCalendarGrid,
-	RangeCalendar as AriaRangeCalendar,
-	RangeCalendarContext as AriaRangeCalendarContext,
 	CalendarGridBody,
 	CalendarGridHeader,
 	CalendarHeaderCell,
-	composeRenderProps,
-	useSlottedContext,
-} from 'react-aria-components';
+} from 'react-aria-components/Calendar';
+import { composeRenderProps } from 'react-aria-components/composeRenderProps';
+import {
+	RangeCalendar as AriaRangeCalendar,
+	RangeCalendarContext as AriaRangeCalendarContext,
+} from 'react-aria-components/RangeCalendar';
+import { useSlottedContext } from 'react-aria-components/slots';
 
 import { buttonStyles } from './Button';
 import styles from './styles/Calendar.module.css';

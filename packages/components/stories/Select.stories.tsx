@@ -3,7 +3,7 @@ import type { ComponentType } from 'react';
 
 import { Icon } from '@launchpad-ui/icons';
 import { vars } from '@launchpad-ui/vars';
-import { useFilter } from 'react-aria-components';
+import { useFilter } from 'react-aria-components/Autocomplete';
 import { expect, userEvent, within } from 'storybook/test';
 
 import { Autocomplete as AutocompleteComponent } from '../src/Autocomplete';
