@@ -13,6 +13,7 @@ allowBuilds:
   style-dictionary: true
 
 autoInstallPeers: true
+minimumReleaseAge: 10080 # 7 days
 
 overrides:
   vite: "npm:rolldown-vite@7.3.1"
@@ -27,3 +28,6 @@ peerDependencyRules:
     vite: "6 || 7"
 
 strictPeerDependencies: true
+minimumReleaseAgeExclude:
+  # Renovate security update: axios@1.15.2
+  - axios@1.15.2
