@@ -29,6 +29,51 @@ Files under `packages/components/stories/recipes/` are **compositions/examples**
 - The public-API, changeset, and "low-level primitive leakage" checks do **not** apply.
 - The accessibility, design token, and theme checks **still** apply — recipes are reference material and should model good practice.
 
+## PR readiness criteria
+
+Before reviewing code, evaluate whether the PR itself is reviewable. Flag these issues as top-level comments, not inline.
+
+### Size
+
+- **Ideal: ≤ 400 lines changed** (excluding `pnpm-lock.yaml`, `dist/`, `*.d.ts`, and generated icon/token files). PRs above this threshold should be flagged unless the bulk is mechanical (e.g., a rename across many files, a generated sync, or a token update cascade).
+- **Single concern per PR.** Adding a component and refactoring an unrelated package are two PRs. Mixing a new component with token renaming is a flag unless the naming change is what motivated the component.
+- **New component ≙ one PR per component** unless the components are compositional siblings (e.g., `RadioButton` + `RadioGroup`) that make no sense separated. Flag bundles of three or more unrelated new components.
+- Flag PRs that touch `packages/tokens` or `packages/vars` *and* multiple other packages simultaneously — token changes cascade to every consumer and deserve isolated, deliberate review.
+
+### Description quality
+
+A reviewable PR description answers three questions. Flag as `needs-description` if any are missing or too vague to act on:
+
+1. **What changed?** Not a restatement of the commit title — an actual summary of the diff. "Updated styles" is not sufficient. "Replaced hardcoded `16px` spacing with `var(--lp-space-400)` token across Button variants" is.
+2. **Why?** The motivation: a design spec update, a bug, a new feature request, an accessibility finding. PRs from AI agents often omit this entirely — flag it.
+3. **How was it verified?** Screenshots for visual changes, test IDs for behavior changes, Chromatic snapshot approval note for token/theme changes. If Storybook was used for manual verification, say so.
+
+AI-agent-generated PRs frequently produce descriptions like *"Updated the component to improve functionality"*. Flag these explicitly: the description must be specific enough that a reviewer can understand the change without reading every line of the diff.
+
+### Changeset accuracy
+
+- A `patch` changeset is appropriate for bug fixes and internal refactors with no API surface change.
+- A `minor` changeset is appropriate for new exported components, new props on existing components, or additive behavior changes.
+- A `major` changeset is appropriate for removed exports, renamed props, changed default values, or breaking type changes. This is rare; if the diff warrants `major`, call it out even if the changeset says `patch` or `minor`.
+- Flag when the changeset summary is generic boilerplate (`"Updated component"`, `"Fixed issue"`) — changelogs are consumed by engineers across the org and must be human-readable.
+
+### Automated checks (reference)
+
+These CI checks now run on every PR and surface results automatically:
+
+| Check | What it catches |
+|---|---|
+| **PR comment bot** | Packages changed, API surface diff, token changes, story coverage gaps |
+| **Story Coverage** (`verify.yml`) | New exported components without a `.stories.tsx` file |
+| **Export Check** (`verify.yml`) | Broken `package.json` exports maps (`publint`) and broken TypeScript resolution (`attw`) |
+| **Storybook Accessibility** | Axe violations (WCAG 2.0/2.1 A/AA) across all stories |
+| **Chromatic** | Visual regression snapshots |
+| **Package Size** | Bundle size diff on `dist/` artifacts |
+
+If any of these checks are failing and the PR description doesn't acknowledge why, flag it.
+
+---
+
 ## What to focus on
 
 Prioritize findings in this order:
