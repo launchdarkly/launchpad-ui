@@ -69,6 +69,62 @@ const removeExtensions = (slice: DesignTokens | DesignToken): PreprocessedTokens
 	return slice as PreprocessedTokens;
 };
 
+// OKLch → sRGB hex conversion.
+// Style Dictionary's built-in colorRgb transform uses tinycolor2, which does not
+// support the oklch() color format. This preprocessor converts oklch values to hex
+// before any transforms run, so downstream consumers receive standard hex colors.
+function oklchToHex(str: string): string {
+	const match = str.match(/oklch\(\s*([\d.]+)\s+([\d.]+)\s+([\d.]+)\s*\)/);
+	if (!match) return str;
+
+	const L = Number.parseFloat(match[1]);
+	const C = Number.parseFloat(match[2]);
+	const H = Number.parseFloat(match[3]);
+
+	const hRad = (H * Math.PI) / 180;
+	const a = C * Math.cos(hRad);
+	const b = C * Math.sin(hRad);
+
+	const l_ = L + 0.3963377774 * a + 0.2158037573 * b;
+	const m_ = L - 0.1055613458 * a - 0.0638541728 * b;
+	const s_ = L - 0.0894841775 * a - 1.291485548 * b;
+
+	const l3 = l_ * l_ * l_;
+	const m3 = m_ * m_ * m_;
+	const s3 = s_ * s_ * s_;
+
+	const rLin = +4.0767416621 * l3 - 3.3077115913 * m3 + 0.2309699292 * s3;
+	const gLin = -1.2684380046 * l3 + 2.6097574011 * m3 - 0.3413193965 * s3;
+	const bLin = -0.0041960863 * l3 - 0.7034186147 * m3 + 1.707614701 * s3;
+
+	const linearToSrgb = (x: number) => {
+		const c = Math.max(0, Math.min(1, x));
+		return c <= 0.0031308 ? 12.92 * c : 1.055 * c ** (1 / 2.4) - 0.055;
+	};
+
+	const toHex = (v: number) =>
+		Math.round(linearToSrgb(v) * 255)
+			.toString(16)
+			.padStart(2, '0');
+
+	return `#${toHex(rLin)}${toHex(gLin)}${toHex(bLin)}`;
+}
+
+const convertOklchValues = (slice: DesignTokens | DesignToken): PreprocessedTokens => {
+	const clone = structuredClone(slice);
+	const recurse = (node: DesignTokens | DesignToken) => {
+		for (const [key, val] of Object.entries(node)) {
+			if (key === '$value' && typeof val === 'string' && val.startsWith('oklch(')) {
+				(node as Record<string, unknown>)[key] = oklchToHex(val);
+			} else if (typeof val === 'object' && val !== null) {
+				recurse(val as DesignTokens);
+			}
+		}
+	};
+	recurse(clone);
+	return clone as PreprocessedTokens;
+};
+
 const getResolvedType = (value: DesignToken['$value']) => {
 	switch (typeof value) {
 		case 'object':
@@ -85,11 +141,19 @@ const getResolvedType = (value: DesignToken['$value']) => {
 };
 
 const sd = new StyleDictionary({
-	source: ['tokens/*.json'],
+	log: { verbosity: 'verbose' },
+	source: [
+		'tokens/*.json',
+		'!tokens/color-aliases.dark.json',
+		'!tokens/color-primitives.dark.json',
+		'!tokens/color-primitives-map.dark.json',
+		'!tokens/color-tokens.json',
+	],
 	hooks: {
 		preprocessors: {
 			extensions: extensionsDtcgDelegate,
 			'strip-extensions': removeExtensions,
+			'convert-oklch': convertOklchValues,
 		},
 	},
 	platforms: {
@@ -135,6 +199,7 @@ const sd = new StyleDictionary({
 			basePxFontSize: 16,
 			transformGroup: transformGroups.js,
 			transforms: [transforms.sizePxToRem, transforms.colorRgb],
+			preprocessors: ['convert-oklch'],
 			buildPath: 'dist/',
 			options: {
 				outputReferences: true,
@@ -177,7 +242,7 @@ const sd = new StyleDictionary({
 		figma: {
 			buildPath: 'dist/',
 			transforms: [transforms.nameKebab, transforms.attributeColor],
-			preprocessors: ['extensions'],
+			preprocessors: ['convert-oklch', 'extensions'],
 			options: {
 				outputReferences: true,
 				usesDtcg: true,
@@ -209,11 +274,18 @@ const sd = new StyleDictionary({
 });
 
 const modes = new StyleDictionary({
-	source: [`tokens/*.${light}.json`, `tokens/*.${dark}.json`],
+	log: { verbosity: 'verbose' },
+	source: [`tokens/*.${light}.json`, `tokens/*.${dark}.json`, 'tokens/color-primitives-map.json'],
+	hooks: {
+		preprocessors: {
+			'convert-oklch': convertOklchValues,
+		},
+	},
 	platforms: {
 		figma: {
 			buildPath: 'dist/',
 			transforms: [transforms.nameKebab, transforms.attributeColor],
+			preprocessors: ['convert-oklch'],
 			options: {
 				outputReferences: true,
 				usesDtcg: true,

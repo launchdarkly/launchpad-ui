@@ -1,0 +1,32 @@
+{
+	"color": {
+		"$type": "color",
+		"$extensions": {
+			"com.figma": {
+				"hiddenFromPublishing": true,
+				"scopes": ["ALL_SCOPES"],
+				"codeSyntax": {}
+			}
+		},
+		"gray": {
+			"900": { "$value": "{color.neutral.25}" },
+			"950": { "$value": "{color.neutral.0}" }
+		},
+		"blue": {
+			"900": { "$value": "{color.action.25}" },
+			"950": { "$value": "{color.action.0}" }
+		},
+		"red": {
+			"900": { "$value": "{color.negative.25}" },
+			"950": { "$value": "{color.negative.0}" }
+		},
+		"green": {
+			"900": { "$value": "{color.positive.25}" },
+			"950": { "$value": "{color.positive.0}" }
+		},
+		"purple": {
+			"900": { "$value": "{color.info.25}" },
+			"950": { "$value": "{color.info.0}" }
+		}
+	}
+}

@@ -8,349 +8,214 @@
 				"codeSyntax": {}
 			}
 		},
-		"gray": {
+		"neutral": {
 			"0": {
-				"$value": "#F7F9FB"
+				"$value": "oklch(1 0 103.861)"
+			},
+			"25": {
+				"$value": "oklch(0.983 0.002 247.319)"
 			},
 			"50": {
-				"$value": "#ECEFF2"
+				"$value": "oklch(0.97 0.003 247.802)"
 			},
 			"100": {
-				"$value": "#D8DDE3"
+				"$value": "oklch(0.94 0.007 248.194)"
 			},
 			"200": {
-				"$value": "#C6CBD1"
+				"$value": "oklch(0.923 0.008 249.437)"
 			},
 			"300": {
-				"$value": "#A9AFB4"
+				"$value": "oklch(0.895 0.008 252.798)"
 			},
 			"400": {
-				"$value": "#898E94"
+				"$value": "oklch(0.63 0.01 252.852)"
 			},
 			"500": {
-				"$value": "#6C727A"
+				"$value": "oklch(0.55 0.01 255.55)"
 			},
 			"600": {
-				"$value": "#545A62"
+				"$value": "oklch(0.481 0.012 255.576)"
 			},
 			"700": {
-				"$value": "#3F454C"
+				"$value": "oklch(0.388 0.01 261.096)"
 			},
 			"800": {
-				"$value": "#2D3239"
-			},
-			"900": {
-				"$value": "#23252A"
-			},
-			"950": {
-				"$value": "#181A1F"
+				"$value": "oklch(0.264 0.01 268.306)"
 			}
 		},
-		"blue": {
+		"action": {
 			"0": {
-				"$value": "#F6F8FF"
+				"$value": "oklch(1 0 103.861)"
+			},
+			"25": {
+				"$value": "oklch(0.975 0.012 278.379)"
 			},
 			"50": {
-				"$value": "#E4EAFF"
+				"$value": "oklch(0.968 0.017 276.082)"
 			},
 			"100": {
-				"$value": "#CFD9FF"
+				"$value": "oklch(0.947 0.023 277.081)"
 			},
 			"200": {
-				"$value": "#AFBFFF"
+				"$value": "oklch(0.927 0.034 277.051)"
 			},
 			"300": {
-				"$value": "#8A9EFF"
+				"$value": "oklch(0.891 0.053 276.021)"
 			},
 			"400": {
-				"$value": "#7084FF"
+				"$value": "oklch(0.638 0.206 273.046)"
 			},
 			"500": {
-				"$value": "#425EFF"
+				"$value": "oklch(0.562 0.238 270.635)"
 			},
 			"600": {
-				"$value": "#3144D9"
+				"$value": "oklch(0.485 0.269 267.008)"
 			},
 			"700": {
-				"$value": "#2536A6"
+				"$value": "oklch(0.401 0.179 268.001)"
 			},
 			"800": {
-				"$value": "#19267D"
-			},
-			"900": {
-				"$value": "#121D61"
-			},
-			"950": {
-				"$value": "#0B144D"
+				"$value": "oklch(0.273 0.125 266.675)"
 			}
 		},
-		"purple": {
+		"negative": {
 			"0": {
-				"$value": "#FBF6FF"
+				"$value": "oklch(1 0 103.861)"
+			},
+			"25": {
+				"$value": "oklch(0.983 0.011 20.662)"
 			},
 			"50": {
-				"$value": "#F4E9FF"
+				"$value": "oklch(0.968 0.018 23.063)"
 			},
 			"100": {
-				"$value": "#E6D0FF"
+				"$value": "oklch(0.948 0.029 23.133)"
 			},
 			"200": {
-				"$value": "#DCB9FF"
+				"$value": "oklch(0.927 0.043 23.062)"
 			},
 			"300": {
-				"$value": "#CB91FF"
+				"$value": "oklch(0.9 0.065 22.064)"
 			},
 			"400": {
-				"$value": "#BD61FF"
+				"$value": "oklch(0.65 0.253 25.722)"
 			},
 			"500": {
-				"$value": "#A636EC"
+				"$value": "oklch(0.577 0.232 23.022)"
 			},
 			"600": {
-				"$value": "#8717CD"
+				"$value": "oklch(0.512 0.206 19.805)"
 			},
 			"700": {
-				"$value": "#6A00A9"
+				"$value": "oklch(0.409 0.173 14.562)"
 			},
 			"800": {
-				"$value": "#4E007E"
-			},
-			"900": {
-				"$value": "#3C0262"
-			},
-			"950": {
-				"$value": "#2E004D"
+				"$value": "oklch(0.278 0.122 5.97)"
 			}
 		},
-		"green": {
+		"warning": {
 			"0": {
-				"$value": "#E5FFE8"
+				"$value": "oklch(1 0 103.861)"
+			},
+			"25": {
+				"$value": "oklch(0.981 0.029 99.183)"
 			},
 			"50": {
-				"$value": "#C7FBCE"
+				"$value": "oklch(0.968 0.04 92.905)"
 			},
 			"100": {
-				"$value": "#A3F2B4"
+				"$value": "oklch(0.954 0.064 92.938)"
 			},
 			"200": {
-				"$value": "#6CE090"
+				"$value": "oklch(0.929 0.086 92.987)"
 			},
 			"300": {
-				"$value": "#1ECB6A"
+				"$value": "oklch(0.895 0.099 85.542)"
 			},
 			"400": {
-				"$value": "#00A455"
+				"$value": "oklch(0.646 0.191 46.498)"
 			},
 			"500": {
-				"$value": "#008344"
+				"$value": "oklch(0.575 0.187 42.111)"
 			},
 			"600": {
-				"$value": "#006933"
+				"$value": "oklch(0.507 0.164 38.346)"
 			},
 			"700": {
-				"$value": "#005025"
+				"$value": "oklch(0.405 0.148 38.515)"
 			},
 			"800": {
-				"$value": "#003B1B"
-			},
-			"900": {
-				"$value": "#092C17"
-			},
-			"950": {
-				"$value": "#00210D"
+				"$value": "oklch(0.274 0.092 42.271)"
 			}
 		},
-		"red": {
+		"positive": {
 			"0": {
-				"$value": "#FFF5F6"
+				"$value": "oklch(1 0 103.861)"
+			},
+			"25": {
+				"$value": "oklch(0.977 0.041 131.34)"
 			},
 			"50": {
-				"$value": "#FFE8EB"
+				"$value": "oklch(0.961 0.056 131.804)"
 			},
 			"100": {
-				"$value": "#FFCDD6"
+				"$value": "oklch(0.943 0.073 131.827)"
 			},
 			"200": {
-				"$value": "#FFB5BD"
+				"$value": "oklch(0.918 0.087 131.837)"
 			},
 			"300": {
-				"$value": "#FF8A96"
+				"$value": "oklch(0.885 0.115 132.956)"
 			},
 			"400": {
-				"$value": "#F84F6E"
+				"$value": "oklch(0.615 0.192 134.913)"
 			},
 			"500": {
-				"$value": "#DB2251"
+				"$value": "oklch(0.54 0.175 134.842)"
 			},
 			"600": {
-				"$value": "#B6073C"
+				"$value": "oklch(0.478 0.139 135.11)"
 			},
 			"700": {
-				"$value": "#8C062B"
+				"$value": "oklch(0.38 0.109 135.822)"
 			},
 			"800": {
-				"$value": "#6B001C"
-			},
-			"900": {
-				"$value": "#4E0B16"
-			},
-			"950": {
-				"$value": "#3C040D"
+				"$value": "oklch(0.258 0.074 137.839)"
 			}
 		},
-		"black": {
+		"info": {
 			"0": {
-				"$value": "#07080C0D"
+				"$value": "oklch(1 0 103.861)"
+			},
+			"25": {
+				"$value": "oklch(0.979 0.018 321.072)"
 			},
 			"50": {
-				"$value": "#07080C1A"
+				"$value": "oklch(0.968 0.025 315.028)"
 			},
 			"100": {
-				"$value": "#07080C26"
+				"$value": "oklch(0.953 0.036 314.54)"
 			},
 			"200": {
-				"$value": "#07080C33"
+				"$value": "oklch(0.927 0.04 314.514)"
 			},
 			"300": {
-				"$value": "#07080C4D"
+				"$value": "oklch(0.895 0.071 305.727)"
 			},
 			"400": {
-				"$value": "#07080C66"
+				"$value": "oklch(0.644 0.2 295.937)"
 			},
 			"500": {
-				"$value": "#07080C80"
+				"$value": "oklch(0.572 0.216 292.893)"
 			},
 			"600": {
-				"$value": "#07080C99"
+				"$value": "oklch(0.516 0.229 292.778)"
 			},
 			"700": {
-				"$value": "#07080CB3"
+				"$value": "oklch(0.417 0.211 293.431)"
 			},
 			"800": {
-				"$value": "#07080CCC"
-			},
-			"900": {
-				"$value": "#07080CE6"
-			},
-			"950": {
-				"$value": "#07080C"
-			}
-		},
-		"white": {
-			"0": {
-				"$value": "#FFFFFF0D"
-			},
-			"50": {
-				"$value": "#FFFFFF1A"
-			},
-			"100": {
-				"$value": "#FFFFFF26"
-			},
-			"200": {
-				"$value": "#FFFFFF33"
-			},
-			"300": {
-				"$value": "#FFFFFF4D"
-			},
-			"400": {
-				"$value": "#FFFFFF66"
-			},
-			"500": {
-				"$value": "#FFFFFF80"
-			},
-			"600": {
-				"$value": "#FFFFFF99"
-			},
-			"700": {
-				"$value": "#FFFFFFB3"
-			},
-			"800": {
-				"$value": "#FFFFFFCC"
-			},
-			"900": {
-				"$value": "#FFFFFFE6"
-			},
-			"950": {
-				"$value": "#FFFFFF"
-			}
-		},
-		"brand": {
-			"blue": {
-				"light": {
-					"$value": "#7084FF"
-				},
-				"base": {
-					"$value": "#405BFF"
-				},
-				"dark": {
-					"$value": "#2A3BA6"
-				}
-			},
-			"cyan": {
-				"light": {
-					"$value": "#6DE0F7"
-				},
-				"base": {
-					"$value": "#3DD6F5"
-				},
-				"dark": {
-					"$value": "#238CA3"
-				}
-			},
-			"purple": {
-				"light": {
-					"$value": "#B675E4"
-				},
-				"base": {
-					"$value": "#A34FDE"
-				},
-				"dark": {
-					"$value": "#6A3390"
-				}
-			},
-			"pink": {
-				"light": {
-					"$value": "#EE5DAC"
-				},
-				"base": {
-					"$value": "#FF35A2"
-				},
-				"dark": {
-					"$value": "#810B4B"
-				}
-			},
-			"orange": {
-				"light": {
-					"$value": "#FFD099"
-				},
-				"base": {
-					"$value": "#FF9D29"
-				},
-				"dark": {
-					"$value": "#A35901"
-				}
-			},
-			"yellow": {
-				"light": {
-					"$value": "#F7FFAF"
-				},
-				"base": {
-					"$value": "#EBFF38"
-				},
-				"dark": {
-					"$value": "#818C1F"
-				}
-			},
-			"green": {
-				"light": {
-					"$value": "#E1FFC8"
-				},
-				"base": {
-					"$value": "#8BEF34"
-				},
-				"dark": {
-					"$value": "#439000"
-				}
+				"$value": "oklch(0.276 0.113 295.869)"
 			}
 		}
 	}
