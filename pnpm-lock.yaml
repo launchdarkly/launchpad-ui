@@ -706,7 +706,7 @@ importers:
         specifier: ^0.32.0
         version: 0.32.0
       axios:
-        specifier: ^1.12.2
+        specifier: ^1.15.2
         version: 1.15.2
       json-to-ts:
         specifier: ^2.1.0
