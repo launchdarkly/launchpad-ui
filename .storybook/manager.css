@@ -130,13 +130,16 @@
 }
 
 /* Description and other text content using LaunchPad design tokens */
-.docs-dark .sbdocs p:not(.sbdocs-preview *),
-.docs-dark .sbdocs h1:not(.sbdocs-preview *),
-.docs-dark .sbdocs h2:not(.sbdocs-preview *),
-.docs-dark .sbdocs h3:not(.sbdocs-preview *),
-.docs-dark .sbdocs h4:not(.sbdocs-preview *),
-.docs-dark .sbdocs h5:not(.sbdocs-preview *),
-.docs-dark .sbdocs h6:not(.sbdocs-preview *) {
+.docs-dark .sbdocs-content,
+.docs-dark .sbdocs-wrapper,
+.docs-dark .sbdocs-preview,
+.docs-dark .sbdocs p,
+.docs-dark .sbdocs h1,
+.docs-dark .sbdocs h2,
+.docs-dark .sbdocs h3,
+.docs-dark .sbdocs h4,
+.docs-dark .sbdocs h5,
+.docs-dark .sbdocs h6 {
 	color: #eceff2 !important; /* gray.50 */
 }
 
@@ -150,6 +153,7 @@
 .dark-theme .sbdocs-wrapper,
 .dark-theme .sbdocs-preview {
 	background-color: #181a1f !important; /* gray.950 */
+	color: #eceff2 !important; /* gray.50 */
 }
 
 /* Args table styling for dark theme using LaunchPad design tokens */
@@ -173,18 +177,17 @@
 	background-color: #23252a !important; /* gray.900 */
 }
 
-/* Text content in dark theme using LaunchPad design tokens.
-   Exclude .sbdocs-preview descendants so component token colors apply in story embeds. */
-.dark-theme .sbdocs p:not(.sbdocs-preview *),
-.dark-theme .sbdocs h1:not(.sbdocs-preview *),
-.dark-theme .sbdocs h2:not(.sbdocs-preview *),
-.dark-theme .sbdocs h3:not(.sbdocs-preview *),
-.dark-theme .sbdocs h4:not(.sbdocs-preview *),
-.dark-theme .sbdocs h5:not(.sbdocs-preview *),
-.dark-theme .sbdocs h6:not(.sbdocs-preview *),
-.dark-theme .sbdocs li:not(.sbdocs-preview *),
-.dark-theme .sbdocs span:not([class*='token']):not(.sbdocs-preview *),
-.dark-theme .sbdocs div:not([class*='token']):not(.sbdocs-preview *) {
+/* Text content in dark theme using LaunchPad design tokens */
+.dark-theme :not(.sbdocs-preview) .sbdocs p,
+.dark-theme :not(.sbdocs-preview) .sbdocs h1,
+.dark-theme :not(.sbdocs-preview) .sbdocs h2,
+.dark-theme :not(.sbdocs-preview) .sbdocs h3,
+.dark-theme :not(.sbdocs-preview) .sbdocs h4,
+.dark-theme :not(.sbdocs-preview) .sbdocs h5,
+.dark-theme :not(.sbdocs-preview) .sbdocs h6,
+.dark-theme :not(.sbdocs-preview) .sbdocs li,
+.dark-theme :not(.sbdocs-preview) .sbdocs span:not([class*='token']),
+.dark-theme :not(.sbdocs-preview) .sbdocs div:not([class*='token']) {
 	color: #eceff2 !important; /* gray.50 */
 	text-decoration: none !important;
 }
@@ -246,17 +249,10 @@ html.dark-theme .docblock-argstable code:not(.docs-story code),
 	background-color: #181a1f !important; /* gray.950 */
 }
 
-/* Let component previews inherit LaunchPad token colors instead of docs prose color */
-.dark-theme .sbdocs-preview,
-.dark-theme .docs-story,
-.dark-theme [data-docs-story] {
-	color: var(--lp-color-text-ui-primary-base);
-}
-
-.light-theme .sbdocs-preview,
-.light-theme .docs-story,
-.light-theme [data-docs-story] {
-	color: var(--lp-color-text-ui-primary-base);
+/* Only apply text color to docs story wrapper, not story content */
+.dark-theme .docs-story > div:first-child,
+.dark-theme [data-docs-story] > div:first-child {
+	color: #eceff2 !important; /* gray.50 */
 }
 
 /* Smooth transitions for theme changes */

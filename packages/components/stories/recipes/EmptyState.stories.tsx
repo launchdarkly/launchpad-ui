@@ -8,9 +8,18 @@ import { EmptyState } from '../../src/EmptyState';
 import { Heading } from '../../src/Heading';
 import { Text } from '../../src/Text';
 
+import './EmptyState.stories.css';
+
 const meta: Meta<typeof EmptyState> = {
 	component: EmptyState,
 	title: 'Recipes/EmptyState',
+	decorators: [
+		(Story) => (
+			<div className="lp-empty-state-docs-embed">
+				<Story />
+			</div>
+		),
+	],
 	parameters: {
 		figma: {
 			design:
