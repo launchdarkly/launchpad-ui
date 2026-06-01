@@ -4,7 +4,7 @@ import figma from '@figma/code-connect';
 import { BadgeIcon, Icon } from '@launchpad-ui/icons';
 
 import { Button } from '../src/Button';
-import { EmptyState, EmptyStateIllustration } from '../src/EmptyState';
+import { EmptyState } from '../src/EmptyState';
 import { Heading } from '../src/Heading';
 import { Text } from '../src/Text';
 
@@ -21,9 +21,9 @@ figma.connect(
 		},
 		example: ({ hasBorder, heading, description, icon, action }) => (
 			<EmptyState hasBorder={hasBorder}>
-				<EmptyStateIllustration aria-hidden>
-					<BadgeIcon size="large">{icon}</BadgeIcon>
-				</EmptyStateIllustration>
+				<BadgeIcon size="large" aria-hidden>
+					{icon}
+				</BadgeIcon>
 				<Heading>{heading}</Heading>
 				<Text>{description}</Text>
 				<Button variant="primary">{action}</Button>

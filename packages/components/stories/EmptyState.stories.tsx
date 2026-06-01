@@ -4,7 +4,7 @@ import { BadgeIcon, Icon } from '@launchpad-ui/icons';
 
 import { Button } from '../src/Button';
 import { ButtonGroup } from '../src/ButtonGroup';
-import { EmptyState, EmptyStateIllustration } from '../src/EmptyState';
+import { EmptyState } from '../src/EmptyState';
 import { Heading } from '../src/Heading';
 import { Text } from '../src/Text';
 
@@ -44,11 +44,9 @@ type Story = StoryObj<typeof EmptyState>;
 export const Default: Story = {
 	render: () => (
 		<EmptyState>
-			<EmptyStateIllustration aria-hidden>
-				<BadgeIcon size="large">
-					<Icon name="crown" />
-				</BadgeIcon>
-			</EmptyStateIllustration>
+			<BadgeIcon size="large" aria-hidden>
+				<Icon name="crown" />
+			</BadgeIcon>
 			<Heading>No projects yet</Heading>
 			<Text>Create a project to get started.</Text>
 			<Button variant="primary">Create project</Button>
@@ -59,11 +57,9 @@ export const Default: Story = {
 export const Bordered: Story = {
 	render: () => (
 		<EmptyState hasBorder>
-			<EmptyStateIllustration aria-hidden>
-				<BadgeIcon size="large">
-					<Icon name="crown" />
-				</BadgeIcon>
-			</EmptyStateIllustration>
+			<BadgeIcon size="large" aria-hidden>
+				<Icon name="crown" />
+			</BadgeIcon>
 			<Heading>No projects yet</Heading>
 			<Text>Create a project to get started.</Text>
 			<Button variant="primary">Create project</Button>
@@ -74,11 +70,9 @@ export const Bordered: Story = {
 export const WithSecondaryAction: Story = {
 	render: () => (
 		<EmptyState>
-			<EmptyStateIllustration aria-hidden>
-				<BadgeIcon size="large">
-					<Icon name="crown" />
-				</BadgeIcon>
-			</EmptyStateIllustration>
+			<BadgeIcon size="large" aria-hidden>
+				<Icon name="crown" />
+			</BadgeIcon>
 			<Heading>No projects yet</Heading>
 			<Text>Create a project to get started.</Text>
 			<ButtonGroup>

@@ -2,14 +2,12 @@
 	display: grid;
 	grid-template-areas:
 		'illustration'
-		'.'
 		'heading'
 		'.'
 		'content'
 		'actions';
 	grid-template-rows:
 		min-content
-		var(--lp-size-24)
 		min-content
 		var(--lp-size-8)
 		min-content
@@ -21,6 +19,7 @@
 
 .illustration {
 	grid-area: illustration;
+	margin-block-end: var(--lp-size-24);
 }
 
 .large {

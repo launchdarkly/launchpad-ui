@@ -2,17 +2,15 @@ import { BadgeIcon, Icon } from '@launchpad-ui/icons';
 import { describe, expect, it } from 'vitest';
 
 import { render, screen } from '../../../test/utils';
-import { Button, EmptyState, EmptyStateIllustration, Heading, Text } from '../src';
+import { Button, EmptyState, Heading, Text } from '../src';
 
 describe('EmptyState', () => {
 	it('renders heading and description', () => {
 		render(
 			<EmptyState>
-				<EmptyStateIllustration aria-hidden>
-					<BadgeIcon size="large">
-						<Icon name="folders" />
-					</BadgeIcon>
-				</EmptyStateIllustration>
+				<BadgeIcon size="large" aria-hidden>
+					<Icon name="folders" />
+				</BadgeIcon>
 				<Heading>No projects yet</Heading>
 				<Text>Create a project to get started.</Text>
 				<Button variant="primary">Create project</Button>
