@@ -38,7 +38,7 @@ exports[`Tokens > builds dark tokens 1`] = `
   --lp-color-bg-ui-secondary: var(--lp-color-gray-900);
   --lp-color-bg-ui-tertiary: var(--lp-color-gray-800);
   --lp-color-bg-product-beta: var(--lp-color-purple-900);
-  --lp-color-bg-product-federal: var(--lp-color-brand-yellow-dark);
+  --lp-color-bg-product-federal: var(--lp-color-brand-lime-dark);
   --lp-color-border-feedback-error: var(--lp-color-red-400);
   --lp-color-border-feedback-info: var(--lp-color-blue-400);
   --lp-color-border-feedback-success: var(--lp-color-green-400);
@@ -186,12 +186,9 @@ exports[`Tokens > builds default tokens 1`] = `
   --lp-color-brand-orange-light: rgb(255, 208, 153);
   --lp-color-brand-orange-base: rgb(255, 157, 41);
   --lp-color-brand-orange-dark: rgb(163, 89, 1);
-  --lp-color-brand-yellow-light: rgb(247, 255, 175);
-  --lp-color-brand-yellow-base: rgb(235, 255, 56);
-  --lp-color-brand-yellow-dark: rgb(129, 140, 31);
-  --lp-color-brand-green-light: rgb(225, 255, 200);
-  --lp-color-brand-green-base: rgb(139, 239, 52);
-  --lp-color-brand-green-dark: rgb(67, 144, 0);
+  --lp-color-brand-lime-light: rgb(232, 255, 173); /** LD Lime light step */
+  --lp-color-brand-lime-base: rgb(221, 255, 70); /** LD Lime — brand doc base */
+  --lp-color-brand-lime-dark: rgb(111, 138, 42); /** LD Lime dark step */
   --lp-color-bg-interactive-tertiary-base: rgba(0, 0, 0, 0);
   --lp-color-bg-interactive-tertiary-active: rgba(0, 0, 0, 0);
   --lp-color-border-interactive-primary-base: rgba(0, 0, 0, 0);
@@ -208,6 +205,12 @@ exports[`Tokens > builds default tokens 1`] = `
   --lp-color-data-series-2: rgb(254, 190, 112);
   --lp-color-data-series-3: rgb(137, 96, 194);
   --lp-color-data-series-4: rgb(0, 131, 68);
+  --lp-color-brand-yellow-light: var(--lp-color-brand-lime-light); /** Deprecated. Use color.brand.lime.light. */
+  --lp-color-brand-yellow-base: var(--lp-color-brand-lime-base); /** Deprecated. Use color.brand.lime.base. */
+  --lp-color-brand-yellow-dark: var(--lp-color-brand-lime-dark); /** Deprecated. Use color.brand.lime.dark. */
+  --lp-color-brand-green-light: var(--lp-color-brand-lime-light); /** Deprecated. Use color.brand.lime.light. */
+  --lp-color-brand-green-base: var(--lp-color-brand-lime-base); /** Deprecated. Use color.brand.lime.base. */
+  --lp-color-brand-green-dark: var(--lp-color-brand-lime-dark); /** Deprecated. Use color.brand.lime.dark. */
   --lp-color-bg-feedback-primary: var(--lp-color-gray-800);
   --lp-color-bg-feedback-error: var(--lp-color-red-50);
   --lp-color-bg-feedback-info: var(--lp-color-blue-50);
@@ -232,7 +235,7 @@ exports[`Tokens > builds default tokens 1`] = `
   --lp-color-bg-ui-secondary: var(--lp-color-gray-0);
   --lp-color-bg-ui-tertiary: var(--lp-color-gray-50);
   --lp-color-bg-product-beta: var(--lp-color-purple-100);
-  --lp-color-bg-product-federal: var(--lp-color-brand-yellow-base);
+  --lp-color-bg-product-federal: var(--lp-color-brand-lime-base);
   --lp-color-border-feedback-error: var(--lp-color-red-500);
   --lp-color-border-feedback-info: var(--lp-color-blue-500);
   --lp-color-border-feedback-success: var(--lp-color-green-500);

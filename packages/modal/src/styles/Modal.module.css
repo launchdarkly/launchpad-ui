@@ -74,7 +74,7 @@
 
 .headerIcon {
 	transform: translateY(2px);
-	fill: var(--lp-color-brand-yellow-dark);
+	fill: var(--lp-color-brand-lime-dark);
 }
 
 .headerDescription {

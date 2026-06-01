@@ -20,6 +20,7 @@ figma.connect(
 				Purple: 'purple',
 				Pink: 'pink',
 				Orange: 'orange',
+				Lime: 'lime',
 				Yellow: 'yellow',
 				Green: 'green',
 				Gradient1: 'gradient-1',

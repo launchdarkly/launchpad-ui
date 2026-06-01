@@ -38,10 +38,16 @@ export const Orange: Story = {
 	args: { children, variant: 'orange' },
 };
 
+export const Lime: Story = {
+	args: { children, variant: 'lime' },
+};
+
+/** @deprecated Use `Lime` instead */
 export const Yellow: Story = {
 	args: { children, variant: 'yellow' },
 };
 
+/** @deprecated Use `Lime` instead */
 export const Green: Story = {
 	args: { children, variant: 'green' },
 };
