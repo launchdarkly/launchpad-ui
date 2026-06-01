@@ -2,7 +2,8 @@ import { BadgeIcon, Icon } from '@launchpad-ui/icons';
 import { describe, expect, it } from 'vitest';
 
 import { render, screen } from '../../../test/utils';
-import { Button, EmptyState, Heading, Text } from '../src';
+import { Button, ButtonGroup, EmptyState, Heading, Text } from '../src';
+import emptyStateStyles from '../src/styles/EmptyState.module.css';
 
 describe('EmptyState', () => {
 	it('renders heading and description', () => {
@@ -31,5 +32,37 @@ describe('EmptyState', () => {
 		);
 
 		expect(container.firstChild).toHaveClass(/bordered/);
+	});
+
+	it('applies action layout to a single button but not to buttons inside a ButtonGroup', () => {
+		render(
+			<EmptyState>
+				<Heading>No projects yet</Heading>
+				<Text>Create a project to get started.</Text>
+				<ButtonGroup>
+					<Button variant="primary">Create project</Button>
+					<Button variant="minimal">Learn more</Button>
+				</ButtonGroup>
+			</EmptyState>,
+		);
+
+		const group = screen.getByRole('group');
+		const buttons = screen.getAllByRole('button');
+
+		expect(group).toHaveClass(emptyStateStyles.actions);
+		for (const button of buttons) {
+			expect(button).not.toHaveClass(emptyStateStyles.actions);
+		}
+
+		const { container: singleButtonContainer } = render(
+			<EmptyState>
+				<Heading>No projects yet</Heading>
+				<Text>Create a project to get started.</Text>
+				<Button variant="primary">Create project</Button>
+			</EmptyState>,
+		);
+
+		const singleButton = singleButtonContainer.querySelector('button');
+		expect(singleButton?.parentElement).toHaveClass(emptyStateStyles.base);
 	});
 });

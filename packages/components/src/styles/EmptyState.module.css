@@ -51,3 +51,9 @@
 	grid-area: actions;
 	margin-block-start: var(--lp-size-24);
 }
+
+/* Direct child buttons participate in the grid; nested buttons inside ButtonGroup do not. */
+.base > button {
+	grid-area: actions;
+	margin-block-start: var(--lp-size-24);
+}

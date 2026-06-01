@@ -60,7 +60,6 @@ const EmptyState = ({
 							ButtonContext,
 							{
 								size: size === 'large' ? 'large' : 'medium',
-								className: styles.actions,
 							},
 						],
 						[ButtonGroupContext, { className: styles.actions }],
