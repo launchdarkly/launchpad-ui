@@ -2,4 +2,4 @@
 '@launchpad-ui/components': minor
 ---
 
-Add `EmptyState` component for empty content views, following the React Spectrum IllustratedMessage composition pattern.
+Add `EmptyState` to display empty content views with an illustration, heading, description, and optional action button
