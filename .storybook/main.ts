@@ -31,14 +31,12 @@ const config: StorybookConfig = {
 			.dark-theme .docs-story,
 			.dark-theme [data-docs-story] {
 				background-color: #181A1F !important; /* gray.950 */
-				color: #ECEFF2 !important; /* gray.50 */
 			}
 			
 			/* Light theme docs styling */
 			.light-theme .docs-story,
 			.light-theme [data-docs-story] {
 				background-color: #FFFFFF !important; /* white.950 */
-				color: #23252A !important; /* gray.900 */
 			}
 		</style>
 	`,

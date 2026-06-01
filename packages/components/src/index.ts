@@ -32,6 +32,7 @@ export type { DisclosurePanelProps, DisclosureProps } from './Disclosure';
 export type { DisclosureGroupProps } from './DisclosureGroup';
 export type { DropIndicatorProps } from './DropIndicator';
 export type { DropZoneProps } from './DropZone';
+export type { EmptyStateIllustrationProps, EmptyStateProps } from './EmptyState';
 export type { FieldErrorProps } from './FieldError';
 export type { FieldGroupProps } from './FieldGroup';
 export type { FileTriggerProps } from './FileTrigger';
@@ -176,6 +177,7 @@ export {
 export { DisclosureGroup, disclosureGroupStyles } from './DisclosureGroup';
 export { DropIndicator, dropIndicatorStyles } from './DropIndicator';
 export { DropZone, DropZoneContext, dropZoneStyles } from './DropZone';
+export { EmptyState, EmptyStateIllustration, emptyStateStyles } from './EmptyState';
 export { FieldError, FieldErrorContext, fieldErrorStyles } from './FieldError';
 export { FieldGroup, fieldGroupStyles } from './FieldGroup';
 export { FileTrigger } from './FileTrigger';
