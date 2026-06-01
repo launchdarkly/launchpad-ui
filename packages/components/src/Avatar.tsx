@@ -24,7 +24,7 @@ const avatarStyles = cva(styles.base, {
 const colors = cva(null, {
 	variants: {
 		color: {
-			0: styles.yellow,
+			0: styles.lime,
 			1: styles.blue,
 			2: styles.pink,
 			3: styles.cyan,

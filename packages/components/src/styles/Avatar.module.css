@@ -23,8 +23,9 @@
 	font-size: var(--lp-font-size-100);
 }
 
+.lime,
 .yellow {
-	background-color: var(--lp-color-brand-yellow-dark);
+	background-color: var(--lp-color-brand-lime-dark);
 }
 
 .blue {

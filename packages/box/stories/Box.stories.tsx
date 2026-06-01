@@ -24,7 +24,7 @@ export const Example: Story = {
 
 export const Composition: Story = {
 	args: {
-		background: '$yellow-cyan',
+		background: '$lime-cyan',
 		borderColor: '$brand.cyan.base',
 		color: '$black.900',
 		asChild: true,

@@ -99,6 +99,12 @@ const TokenTable = ({ tokens }: { tokens: Record<string, string> }) => {
 	);
 };
 
+const DEPRECATED_BRAND = ['brand-yellow', 'brand-green'];
+const DEPRECATED_GRADIENTS = ['yellow-cyan', 'yellow-pink', 'yellow-blue-pale'];
+
+const isDeprecatedToken = (key: string) =>
+	DEPRECATED_BRAND.some((prefix) => key.startsWith(prefix)) || DEPRECATED_GRADIENTS.includes(key);
+
 const global = Object.keys(vars.color)
 	.filter((key) => !ALIAS.includes(key))
 	.reduce((obj, key) => {
@@ -108,7 +114,15 @@ const global = Object.keys(vars.color)
 	}, {});
 
 export const Global = {
-	render: () => <TokenTable tokens={{ ...flatten(global), ...vars.gradient }} />,
+	render: () => (
+		<TokenTable
+			tokens={Object.fromEntries(
+				Object.entries({ ...flatten(global), ...vars.gradient }).filter(
+					([key]) => !isDeprecatedToken(key),
+				),
+			)}
+		/>
+	),
 };
 
 const alias = Object.keys(vars.color)
