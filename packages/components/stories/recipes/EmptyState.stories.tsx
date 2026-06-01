@@ -2,15 +2,15 @@ import type { Meta, StoryObj } from '@storybook/react-vite';
 
 import { BadgeIcon, Icon } from '@launchpad-ui/icons';
 
-import { Button } from '../src/Button';
-import { ButtonGroup } from '../src/ButtonGroup';
-import { EmptyState } from '../src/EmptyState';
-import { Heading } from '../src/Heading';
-import { Text } from '../src/Text';
+import { Button } from '../../src/Button';
+import { ButtonGroup } from '../../src/ButtonGroup';
+import { EmptyState } from '../../src/EmptyState';
+import { Heading } from '../../src/Heading';
+import { Text } from '../../src/Text';
 
 const meta: Meta<typeof EmptyState> = {
 	component: EmptyState,
-	title: 'Components/Content/EmptyState',
+	title: 'Recipes/EmptyState',
 	parameters: {
 		figma: {
 			design:
