@@ -1,7 +1,6 @@
 import type { VariantProps } from 'class-variance-authority';
 import type { HTMLAttributes, Ref } from 'react';
 
-import { BadgeIconContext } from '@launchpad-ui/icons';
 import { cva } from 'class-variance-authority';
 import { HeadingContext } from 'react-aria-components/Heading';
 import { Provider } from 'react-aria-components/slots';
@@ -51,23 +50,21 @@ const EmptyState = ({
 }: EmptyStateProps) => {
 	return (
 		<div ref={ref} {...props} className={emptyStateStyles({ size, hasBorder, className })}>
-			<BadgeIconContext.Provider value={{ className: styles.illustration }}>
-				<Provider
-					values={[
-						[HeadingContext, { className: styles.heading }],
-						[TextContext, { className: styles.description }],
-						[
-							ButtonContext,
-							{
-								size: size === 'large' ? 'large' : 'medium',
-							},
-						],
-						[ButtonGroupContext, { className: styles.actions }],
-					]}
-				>
-					{children}
-				</Provider>
-			</BadgeIconContext.Provider>
+			<Provider
+				values={[
+					[HeadingContext, { className: styles.heading }],
+					[TextContext, { className: styles.description }],
+					[
+						ButtonContext,
+						{
+							size: size === 'large' ? 'large' : 'medium',
+						},
+					],
+					[ButtonGroupContext, { className: styles.actions }],
+				]}
+			>
+				{children}
+			</Provider>
 		</div>
 	);
 };

@@ -1,9 +1,9 @@
-export type { BadgeIconContextValue, BadgeIconProps } from './BadgeIcon';
+export type { BadgeIconProps } from './BadgeIcon';
 export type { IconProps } from './Icon';
 export type { StatusIconProps } from './StatusIcon';
 export type { IconName } from './types';
 
-export { BadgeIcon, BadgeIconContext } from './BadgeIcon';
+export { BadgeIcon } from './BadgeIcon';
 export { Icon } from './Icon';
 export { StatusIcon } from './StatusIcon';
 export { icons as iconsNames } from './types';

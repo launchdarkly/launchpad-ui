@@ -17,7 +17,8 @@
 	text-align: center;
 }
 
-.illustration {
+/* BadgeIcon is the first direct child div in the composition pattern. */
+.base > div:first-child:not([role='group']) {
 	grid-area: illustration;
 	margin-block-end: var(--lp-size-24);
 }
