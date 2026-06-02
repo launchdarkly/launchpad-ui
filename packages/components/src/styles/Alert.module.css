@@ -9,8 +9,8 @@
 	--alert-color-bg-info: var(--lp-color-blue-0);
 	--alert-color-border-success: var(--lp-color-green-200);
 	--alert-color-bg-success: var(--lp-color-green-0);
-	--alert-color-border-warning: #fad88f;
-	--alert-color-bg-warning: #fdfae4;
+	--alert-color-border-warning: var(--lp-color-yellow-200);
+	--alert-color-bg-warning: var(--lp-color-yellow-0);
 }
 [data-theme='dark'] {
 	--alert-color-border-neutral: var(--lp-color-gray-800);
@@ -21,8 +21,8 @@
 	--alert-color-bg-info: #192142;
 	--alert-color-border-success: var(--lp-color-green-700);
 	--alert-color-bg-success: #14260d;
-	--alert-color-border-warning: #932c00;
-	--alert-color-bg-warning: #3c170c;
+	--alert-color-border-warning: var(--lp-color-yellow-700);
+	--alert-color-bg-warning: var(--lp-color-yellow-900);
 }
 
 /* Shared styles for both the block and inline variants */
@@ -46,7 +46,7 @@
 	}
 
 	&.warning .icon {
-		fill: #e65d00;
+		fill: var(--lp-color-fill-feedback-warning);
 	}
 }
 

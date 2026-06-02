@@ -23,7 +23,7 @@
 					"$value": "{color.green.50}"
 				},
 				"warning": {
-					"$value": "{color.brand.orange.light}"
+					"$value": "{color.yellow.50}"
 				}
 			},
 			"interactive": {
@@ -146,6 +146,9 @@
 				},
 				"success": {
 					"$value": "{color.green.500}"
+				},
+				"warning": {
+					"$value": "{color.yellow.500}"
 				}
 			},
 			"field": {
@@ -233,6 +236,9 @@
 				},
 				"success": {
 					"$value": "{color.green.500}"
+				},
+				"warning": {
+					"$value": "{color.yellow.500}"
 				}
 			},
 			"interactive": {
@@ -304,7 +310,7 @@
 					"$value": "{color.blue.600}"
 				},
 				"warning": {
-					"$value": "{color.brand.orange.dark}"
+					"$value": "{color.yellow.800}"
 				}
 			},
 			"interactive": {

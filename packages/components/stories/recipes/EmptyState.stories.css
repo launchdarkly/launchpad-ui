@@ -1,0 +1,15 @@
+/*
+ * Counteract Storybook docs prose color overrides for EmptyState autodocs embeds.
+ * Target only the description Text (direct child span of EmptyState), not Button labels.
+ */
+.dark-theme .sbdocs .sbdocs-preview .lp-empty-state-docs-embed > div > span:not([class*='token']),
+.dark-theme .docs-story .lp-empty-state-docs-embed > div > span:not([class*='token']),
+.dark-theme [data-docs-story] .lp-empty-state-docs-embed > div > span:not([class*='token']),
+.docs-dark .sbdocs .sbdocs-preview .lp-empty-state-docs-embed > div > span:not([class*='token']) {
+	color: var(--lp-color-text-ui-secondary) !important;
+}
+
+.light-theme .docs-story .lp-empty-state-docs-embed > div > span:not([class*='token']),
+.light-theme [data-docs-story] .lp-empty-state-docs-embed > div > span:not([class*='token']) {
+	color: var(--lp-color-text-ui-secondary) !important;
+}
