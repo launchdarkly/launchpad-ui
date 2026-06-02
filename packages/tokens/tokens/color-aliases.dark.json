@@ -13,7 +13,7 @@
 					"$value": "{color.green.900}"
 				},
 				"warning": {
-					"$value": "{color.brand.orange.dark}"
+					"$value": "{color.yellow.900}"
 				}
 			},
 			"interactive": {
@@ -111,6 +111,9 @@
 				},
 				"success": {
 					"$value": "{color.green.400}"
+				},
+				"warning": {
+					"$value": "{color.yellow.400}"
 				}
 			},
 			"field": {
@@ -139,6 +142,11 @@
 			}
 		},
 		"fill": {
+			"feedback": {
+				"warning": {
+					"$value": "{color.yellow.500}"
+				}
+			},
 			"ui": {
 				"primary": {
 					"$value": "{color.gray.200}"
@@ -180,7 +188,7 @@
 					"$value": "{color.blue.400}"
 				},
 				"warning": {
-					"$value": "{color.brand.orange.light}"
+					"$value": "{color.yellow.400}"
 				}
 			},
 			"interactive": {
