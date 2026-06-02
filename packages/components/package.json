@@ -30,39 +30,39 @@
 		"test": "vitest run --coverage"
 	},
 	"dependencies": {
-		"@internationalized/date": "3.12.1",
+		"@internationalized/date": "3.12.2",
 		"@launchpad-ui/icons": "workspace:~",
 		"@launchpad-ui/tokens": "workspace:~",
-		"@react-aria/live-announcer": "3.5.0",
+		"@react-aria/live-announcer": "3.5.1",
 		"class-variance-authority": "0.7.0"
 	},
 	"devDependencies": {
-		"@react-aria/focus": "3.22.0",
-		"@react-aria/interactions": "3.28.0",
-		"@react-aria/utils": "3.34.0",
-		"@react-stately/utils": "3.12.0",
-		"@react-types/shared": "3.34.0",
+		"@react-aria/focus": "3.22.1",
+		"@react-aria/interactions": "3.28.1",
+		"@react-aria/utils": "3.34.1",
+		"@react-stately/utils": "3.12.1",
+		"@react-types/shared": "3.35.0",
 		"copyfiles": "2.4.1",
 		"react": "19.2.6",
-		"react-aria": "3.48.0",
-		"react-aria-components": "1.17.0",
+		"react-aria": "3.49.0",
+		"react-aria-components": "1.18.0",
 		"react-dom": "19.2.6",
 		"react-router": "7.15.1",
-		"react-stately": "3.46.0"
+		"react-stately": "3.47.0"
 	},
 	"peerDependencies": {
-		"@react-aria/focus": "3.22.0",
-		"@react-aria/interactions": "3.28.0",
-		"@react-aria/utils": "3.34.0",
-		"@react-stately/utils": "3.12.0",
-		"@react-types/shared": "3.34.0",
+		"@react-aria/focus": "3.22.1",
+		"@react-aria/interactions": "3.28.1",
+		"@react-aria/utils": "3.34.1",
+		"@react-stately/utils": "3.12.1",
+		"@react-types/shared": "3.35.0",
 		"react": "19.2.6",
-		"react-aria": "3.48.0",
-		"react-aria-components": "1.17.0",
+		"react-aria": "3.49.0",
+		"react-aria-components": "1.18.0",
 		"react-dom": "19.2.6",
 		"react-hook-form": "7.59.0",
 		"react-router": "7.15.1",
-		"react-stately": "3.46.0"
+		"react-stately": "3.47.0"
 	},
 	"exports": {
 		".": {
