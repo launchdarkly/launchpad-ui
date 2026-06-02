@@ -316,23 +316,23 @@
 					"$value": "#FF35A2"
 				},
 				"dark": {
-					"$value": "#810B4B"
+					"$value": "#C51A77"
 				}
 			},
 			"orange": {
 				"light": {
-					"$value": "#FFD099"
+					"$value": "#FFB660"
 				},
 				"base": {
 					"$value": "#FF9D29"
 				},
 				"dark": {
-					"$value": "#A35901"
+					"$value": "#D57B10"
 				}
 			},
 			"lime": {
 				"light": {
-					"$value": "#E8FFAD",
+					"$value": "#EDFF9E",
 					"$description": "LD Lime light step"
 				},
 				"base": {
@@ -340,7 +340,7 @@
 					"$description": "LD Lime — brand doc base"
 				},
 				"dark": {
-					"$value": "#6F8A2A",
+					"$value": "#ADD300",
 					"$description": "LD Lime dark step"
 				}
 			},
