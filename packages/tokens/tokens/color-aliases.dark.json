@@ -113,7 +113,7 @@
 					"$value": "{color.green.400}"
 				},
 				"warning": {
-					"$value": "{color.yellow.700}"
+					"$value": "{color.yellow.400}"
 				}
 			},
 			"field": {
