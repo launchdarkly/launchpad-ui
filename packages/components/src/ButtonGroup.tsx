@@ -1,17 +1,16 @@
 import type { Orientation } from '@react-types/shared';
 import type { VariantProps } from 'class-variance-authority';
 import type { Ref } from 'react';
-import type { ContextValue, GroupProps } from 'react-aria-components';
+import type { GroupProps } from 'react-aria-components/Group';
+import type { ContextValue } from 'react-aria-components/slots';
 
 import { cva } from 'class-variance-authority';
 import { createContext } from 'react';
-import {
-	ButtonContext,
-	composeRenderProps,
-	Group,
-	Provider,
-	ToggleButtonContext,
-} from 'react-aria-components';
+import { ButtonContext } from 'react-aria-components/Button';
+import { composeRenderProps } from 'react-aria-components/composeRenderProps';
+import { Group } from 'react-aria-components/Group';
+import { Provider } from 'react-aria-components/slots';
+import { ToggleButtonContext } from 'react-aria-components/ToggleButton';
 
 import styles from './styles/ButtonGroup.module.css';
 import { useLPContextProps } from './utils';

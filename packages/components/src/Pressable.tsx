@@ -1,3 +1,3 @@
-import { Pressable } from 'react-aria-components';
+import { Pressable } from 'react-aria-components/Pressable';
 
 export { Pressable };

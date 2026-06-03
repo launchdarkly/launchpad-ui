@@ -1,9 +1,11 @@
 import type { Ref } from 'react';
-import type { SwitchProps as AriaSwitchProps, ContextValue } from 'react-aria-components';
+import type { SwitchProps as AriaSwitchProps } from 'react-aria-components/Switch';
+import type { ContextValue } from 'react-aria-components/slots';
 
 import { cva } from 'class-variance-authority';
 import { createContext } from 'react';
-import { Switch as AriaSwitch, composeRenderProps } from 'react-aria-components';
+import { composeRenderProps } from 'react-aria-components/composeRenderProps';
+import { Switch as AriaSwitch } from 'react-aria-components/Switch';
 
 import styles from './styles/Switch.module.css';
 import { useLPContextProps } from './utils';

@@ -1,21 +1,21 @@
 import type { Ref } from 'react';
+import type { ContextValue } from 'react-aria-components/slots';
 import type {
 	TabListProps as AriaTabListProps,
 	TabPanelProps as AriaTabPanelProps,
 	TabProps as AriaTabProps,
 	TabsProps as AriaTabsProps,
-	ContextValue,
-} from 'react-aria-components';
+} from 'react-aria-components/Tabs';
 
 import { cva } from 'class-variance-authority';
 import { createContext } from 'react';
+import { composeRenderProps } from 'react-aria-components/composeRenderProps';
 import {
 	Tab as AriaTab,
 	TabList as AriaTabList,
 	TabPanel as AriaTabPanel,
 	Tabs as AriaTabs,
-	composeRenderProps,
-} from 'react-aria-components';
+} from 'react-aria-components/Tabs';
 
 import styles from './styles/Tabs.module.css';
 import { useLPContextProps } from './utils';

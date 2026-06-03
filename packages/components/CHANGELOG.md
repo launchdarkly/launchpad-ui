@@ -1,5 +1,27 @@
 # @launchpad-ui/components
 
+## 0.19.1
+
+### Patch Changes
+
+- [#1898](https://github.com/launchdarkly/launchpad-ui/pull/1898) [`9e0dbf9`](https://github.com/launchdarkly/launchpad-ui/commit/9e0dbf944d0c976fb70bb59d2052ce8a54fd83ac) Thanks [@apucacao](https://github.com/apucacao)! - Upgrade `react-aria-components` to 1.17.0 along with aligned `react-aria`, `react-stately`, and `@react-aria/*` packages. Imports migrated to subpath form (e.g. `react-aria-components/Menu`) via Adobe's `use-subpaths` codemod, which reduces consumer bundle size without relying on tree-shaking.
+
+  Two upstream behavior changes worth noting:
+
+  - `DateField` and `DatePicker` now constrain invalid input on blur instead of while typing (RAC 1.15).
+  - `Tabs` defaults `shouldSelectOnPressUp` to `true` when an item is a link (RAC 1.17).
+
+- Updated dependencies [[`9e0dbf9`](https://github.com/launchdarkly/launchpad-ui/commit/9e0dbf944d0c976fb70bb59d2052ce8a54fd83ac)]:
+  - @launchpad-ui/icons@0.25.6
+
+## 0.19.0
+
+### Minor Changes
+
+- [#1892](https://github.com/launchdarkly/launchpad-ui/pull/1892) [`857f7ae`](https://github.com/launchdarkly/launchpad-ui/commit/857f7ae6463a8faa645b15b765930e895c6cc59f) Thanks [@cmwinters](https://github.com/cmwinters)! - - Update **Alert** visuals (block backgrounds, borders, spacing, and icon sizing) and add **`AlertText`** for grouping heading and body when using **`actionsLayout="inline"`**.
+  - New optional props: **`actionsLayout`** (`stacked` | `inline`, block variant only) and **`hideIcon`**.
+  - Dismiss control uses a medium icon button for alignment with the refreshed layout.
+
 ## 0.18.2
 
 ### Patch Changes

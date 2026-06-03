@@ -1,3 +1,3 @@
-import { Collection } from 'react-aria-components';
+import { Collection } from 'react-aria-components/Collection';
 
 export { Collection };

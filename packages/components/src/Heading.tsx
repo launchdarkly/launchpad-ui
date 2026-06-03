@@ -1,9 +1,10 @@
 import type { Ref } from 'react';
-import type { HeadingProps as AriaHeadingProps, ContextValue } from 'react-aria-components';
+import type { HeadingProps as AriaHeadingProps } from 'react-aria-components/Heading';
+import type { ContextValue } from 'react-aria-components/slots';
 
 import { cva, cx } from 'class-variance-authority';
 import { createContext } from 'react';
-import { Heading as AriaHeading } from 'react-aria-components';
+import { Heading as AriaHeading } from 'react-aria-components/Heading';
 
 import styles from './styles/Heading.module.css';
 import { useLPContextProps } from './utils';

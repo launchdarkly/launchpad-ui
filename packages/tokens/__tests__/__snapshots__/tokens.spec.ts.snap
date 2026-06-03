@@ -19,7 +19,7 @@ exports[`Tokens > builds dark tokens 1`] = `
   --lp-color-bg-feedback-error: var(--lp-color-red-900);
   --lp-color-bg-feedback-info: var(--lp-color-blue-900);
   --lp-color-bg-feedback-success: var(--lp-color-green-900);
-  --lp-color-bg-feedback-warning: var(--lp-color-brand-orange-dark);
+  --lp-color-bg-feedback-warning: var(--lp-color-yellow-900);
   --lp-color-bg-interactive-primary-base: var(--lp-color-blue-600);
   --lp-color-bg-interactive-primary-active: var(--lp-color-blue-600);
   --lp-color-bg-interactive-primary-focus: var(--lp-color-blue-500);
@@ -38,16 +38,18 @@ exports[`Tokens > builds dark tokens 1`] = `
   --lp-color-bg-ui-secondary: var(--lp-color-gray-900);
   --lp-color-bg-ui-tertiary: var(--lp-color-gray-800);
   --lp-color-bg-product-beta: var(--lp-color-purple-900);
-  --lp-color-bg-product-federal: var(--lp-color-brand-yellow-dark);
+  --lp-color-bg-product-federal: var(--lp-color-brand-lime-dark);
   --lp-color-border-feedback-error: var(--lp-color-red-400);
   --lp-color-border-feedback-info: var(--lp-color-blue-400);
   --lp-color-border-feedback-success: var(--lp-color-green-400);
+  --lp-color-border-feedback-warning: var(--lp-color-yellow-400);
   --lp-color-border-field-active: var(--lp-color-blue-400);
   --lp-color-border-field-focus: var(--lp-color-blue-400);
   --lp-color-border-interactive-focus: var(--lp-color-blue-400);
   --lp-color-border-interactive-selected: var(--lp-color-blue-400);
   --lp-color-border-ui-primary: var(--lp-color-gray-700);
   --lp-color-border-ui-secondary: var(--lp-color-gray-800);
+  --lp-color-fill-feedback-warning: var(--lp-color-yellow-500);
   --lp-color-fill-ui-primary: var(--lp-color-gray-200);
   --lp-color-fill-field-base: var(--lp-color-gray-400);
   --lp-color-shadow-interactive-focus: var(--lp-color-blue-400);
@@ -57,7 +59,7 @@ exports[`Tokens > builds dark tokens 1`] = `
   --lp-color-text-feedback-error: var(--lp-color-red-400);
   --lp-color-text-feedback-success: var(--lp-color-green-400);
   --lp-color-text-feedback-info: var(--lp-color-blue-400);
-  --lp-color-text-feedback-warning: var(--lp-color-brand-orange-light);
+  --lp-color-text-feedback-warning: var(--lp-color-yellow-400);
   --lp-color-text-interactive-base: var(--lp-color-blue-400);
   --lp-color-text-interactive-active: var(--lp-color-purple-400);
   --lp-color-text-interactive-secondary: var(--lp-color-gray-400);
@@ -147,6 +149,18 @@ exports[`Tokens > builds default tokens 1`] = `
   --lp-color-red-800: rgb(107, 0, 28);
   --lp-color-red-900: rgb(78, 11, 22);
   --lp-color-red-950: rgb(60, 4, 13);
+  --lp-color-yellow-0: rgb(255, 248, 229);
+  --lp-color-yellow-50: rgb(255, 241, 204);
+  --lp-color-yellow-100: rgb(255, 228, 153);
+  --lp-color-yellow-200: rgb(255, 214, 102);
+  --lp-color-yellow-300: rgb(255, 208, 80);
+  --lp-color-yellow-400: rgb(255, 201, 51);
+  --lp-color-yellow-500: rgb(255, 187, 0);
+  --lp-color-yellow-600: rgb(204, 150, 0);
+  --lp-color-yellow-700: rgb(153, 112, 0);
+  --lp-color-yellow-800: rgb(102, 75, 0);
+  --lp-color-yellow-900: rgb(51, 37, 0);
+  --lp-color-yellow-950: rgb(36, 26, 0);
   --lp-color-black-0: rgba(7, 8, 12, 0.05);
   --lp-color-black-50: rgba(7, 8, 12, 0.1);
   --lp-color-black-100: rgba(7, 8, 12, 0.15);
@@ -182,16 +196,13 @@ exports[`Tokens > builds default tokens 1`] = `
   --lp-color-brand-purple-dark: rgb(106, 51, 144);
   --lp-color-brand-pink-light: rgb(238, 93, 172);
   --lp-color-brand-pink-base: rgb(255, 53, 162);
-  --lp-color-brand-pink-dark: rgb(129, 11, 75);
-  --lp-color-brand-orange-light: rgb(255, 208, 153);
+  --lp-color-brand-pink-dark: rgb(197, 26, 119);
+  --lp-color-brand-orange-light: rgb(255, 182, 96);
   --lp-color-brand-orange-base: rgb(255, 157, 41);
-  --lp-color-brand-orange-dark: rgb(163, 89, 1);
-  --lp-color-brand-yellow-light: rgb(247, 255, 175);
-  --lp-color-brand-yellow-base: rgb(235, 255, 56);
-  --lp-color-brand-yellow-dark: rgb(129, 140, 31);
-  --lp-color-brand-green-light: rgb(225, 255, 200);
-  --lp-color-brand-green-base: rgb(139, 239, 52);
-  --lp-color-brand-green-dark: rgb(67, 144, 0);
+  --lp-color-brand-orange-dark: rgb(213, 123, 16);
+  --lp-color-brand-lime-light: rgb(237, 255, 158); /** LD Lime light step */
+  --lp-color-brand-lime-base: rgb(221, 255, 70); /** LD Lime — brand doc base */
+  --lp-color-brand-lime-dark: rgb(173, 211, 0); /** LD Lime dark step */
   --lp-color-bg-interactive-tertiary-base: rgba(0, 0, 0, 0);
   --lp-color-bg-interactive-tertiary-active: rgba(0, 0, 0, 0);
   --lp-color-border-interactive-primary-base: rgba(0, 0, 0, 0);
@@ -208,11 +219,17 @@ exports[`Tokens > builds default tokens 1`] = `
   --lp-color-data-series-2: rgb(254, 190, 112);
   --lp-color-data-series-3: rgb(137, 96, 194);
   --lp-color-data-series-4: rgb(0, 131, 68);
+  --lp-color-brand-yellow-light: var(--lp-color-brand-lime-light); /** Deprecated. Use color.brand.lime.light. */
+  --lp-color-brand-yellow-base: var(--lp-color-brand-lime-base); /** Deprecated. Use color.brand.lime.base. */
+  --lp-color-brand-yellow-dark: var(--lp-color-brand-lime-dark); /** Deprecated. Use color.brand.lime.dark. */
+  --lp-color-brand-green-light: var(--lp-color-brand-lime-light); /** Deprecated. Use color.brand.lime.light. */
+  --lp-color-brand-green-base: var(--lp-color-brand-lime-base); /** Deprecated. Use color.brand.lime.base. */
+  --lp-color-brand-green-dark: var(--lp-color-brand-lime-dark); /** Deprecated. Use color.brand.lime.dark. */
   --lp-color-bg-feedback-primary: var(--lp-color-gray-800);
   --lp-color-bg-feedback-error: var(--lp-color-red-50);
   --lp-color-bg-feedback-info: var(--lp-color-blue-50);
   --lp-color-bg-feedback-success: var(--lp-color-green-50);
-  --lp-color-bg-feedback-warning: var(--lp-color-brand-orange-light);
+  --lp-color-bg-feedback-warning: var(--lp-color-yellow-50);
   --lp-color-bg-interactive-primary-base: var(--lp-color-blue-500);
   --lp-color-bg-interactive-primary-active: var(--lp-color-blue-500);
   --lp-color-bg-interactive-primary-focus: var(--lp-color-blue-600);
@@ -232,10 +249,11 @@ exports[`Tokens > builds default tokens 1`] = `
   --lp-color-bg-ui-secondary: var(--lp-color-gray-0);
   --lp-color-bg-ui-tertiary: var(--lp-color-gray-50);
   --lp-color-bg-product-beta: var(--lp-color-purple-100);
-  --lp-color-bg-product-federal: var(--lp-color-brand-yellow-base);
+  --lp-color-bg-product-federal: var(--lp-color-brand-lime-base);
   --lp-color-border-feedback-error: var(--lp-color-red-500);
   --lp-color-border-feedback-info: var(--lp-color-blue-500);
   --lp-color-border-feedback-success: var(--lp-color-green-500);
+  --lp-color-border-feedback-warning: var(--lp-color-yellow-500);
   --lp-color-border-field-active: var(--lp-color-blue-500);
   --lp-color-border-field-focus: var(--lp-color-blue-500);
   --lp-color-border-interactive-focus: var(--lp-color-blue-500);
@@ -245,6 +263,7 @@ exports[`Tokens > builds default tokens 1`] = `
   --lp-color-fill-feedback-error: var(--lp-color-red-500);
   --lp-color-fill-feedback-info: var(--lp-color-blue-500);
   --lp-color-fill-feedback-success: var(--lp-color-green-500);
+  --lp-color-fill-feedback-warning: var(--lp-color-yellow-500);
   --lp-color-fill-interactive-primary: var(--lp-color-white-950);
   --lp-color-fill-interactive-destructive: var(--lp-color-red-500);
   --lp-color-fill-ui-primary: var(--lp-color-gray-700);
@@ -257,7 +276,7 @@ exports[`Tokens > builds default tokens 1`] = `
   --lp-color-text-feedback-error: var(--lp-color-red-600);
   --lp-color-text-feedback-success: var(--lp-color-green-600);
   --lp-color-text-feedback-info: var(--lp-color-blue-600);
-  --lp-color-text-feedback-warning: var(--lp-color-brand-orange-dark);
+  --lp-color-text-feedback-warning: var(--lp-color-yellow-800);
   --lp-color-text-interactive-base: var(--lp-color-blue-600);
   --lp-color-text-interactive-active: var(--lp-color-purple-700);
   --lp-color-text-interactive-primary-base: var(--lp-color-white-950);

@@ -1,9 +1,11 @@
 import type { Ref } from 'react';
-import type { NumberFieldProps as AriaNumberFieldProps, ContextValue } from 'react-aria-components';
+import type { NumberFieldProps as AriaNumberFieldProps } from 'react-aria-components/NumberField';
+import type { ContextValue } from 'react-aria-components/slots';
 
 import { cva } from 'class-variance-authority';
 import { createContext } from 'react';
-import { NumberField as AriaNumberField, composeRenderProps } from 'react-aria-components';
+import { composeRenderProps } from 'react-aria-components/composeRenderProps';
+import { NumberField as AriaNumberField } from 'react-aria-components/NumberField';
 
 import styles from './styles/NumberField.module.css';
 import { useLPContextProps } from './utils';

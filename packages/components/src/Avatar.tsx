@@ -1,8 +1,9 @@
 import type { VariantProps } from 'class-variance-authority';
 import type { ImgHTMLAttributes, Ref, SVGAttributes } from 'react';
 
-import { mergeProps, useLabels } from '@react-aria/utils';
+import { useLabels } from '@react-aria/utils';
 import { cva, cx } from 'class-variance-authority';
+import { mergeProps } from 'react-aria/mergeProps';
 
 import styles from './styles/Avatar.module.css';
 import { useImageLoadingStatus } from './utils';
@@ -23,7 +24,7 @@ const avatarStyles = cva(styles.base, {
 const colors = cva(null, {
 	variants: {
 		color: {
-			0: styles.yellow,
+			0: styles.lime,
 			1: styles.blue,
 			2: styles.pink,
 			3: styles.cyan,

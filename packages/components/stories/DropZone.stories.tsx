@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import type { FileDropItem } from 'react-aria';
+import type { FileDropItem } from 'react-aria/useClipboard';
 
 import { useState } from 'react';
 

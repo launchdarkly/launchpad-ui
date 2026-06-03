@@ -198,6 +198,44 @@
 				"$value": "#3C040D"
 			}
 		},
+		"yellow": {
+			"0": {
+				"$value": "#FFF8E5"
+			},
+			"50": {
+				"$value": "#FFF1CC"
+			},
+			"100": {
+				"$value": "#FFE499"
+			},
+			"200": {
+				"$value": "#FFD666"
+			},
+			"300": {
+				"$value": "#FFD050"
+			},
+			"400": {
+				"$value": "#FFC933"
+			},
+			"500": {
+				"$value": "#FFBB00"
+			},
+			"600": {
+				"$value": "#CC9600"
+			},
+			"700": {
+				"$value": "#997000"
+			},
+			"800": {
+				"$value": "#664B00"
+			},
+			"900": {
+				"$value": "#332500"
+			},
+			"950": {
+				"$value": "#241A00"
+			}
+		},
 		"black": {
 			"0": {
 				"$value": "#07080C0D"
@@ -316,40 +354,60 @@
 					"$value": "#FF35A2"
 				},
 				"dark": {
-					"$value": "#810B4B"
+					"$value": "#C51A77"
 				}
 			},
 			"orange": {
 				"light": {
-					"$value": "#FFD099"
+					"$value": "#FFB660"
 				},
 				"base": {
 					"$value": "#FF9D29"
 				},
 				"dark": {
-					"$value": "#A35901"
+					"$value": "#D57B10"
+				}
+			},
+			"lime": {
+				"light": {
+					"$value": "#EDFF9E",
+					"$description": "LD Lime light step"
+				},
+				"base": {
+					"$value": "#DDFF46",
+					"$description": "LD Lime — brand doc base"
+				},
+				"dark": {
+					"$value": "#ADD300",
+					"$description": "LD Lime dark step"
 				}
 			},
 			"yellow": {
 				"light": {
-					"$value": "#F7FFAF"
+					"$value": "{color.brand.lime.light}",
+					"$description": "Deprecated. Use color.brand.lime.light."
 				},
 				"base": {
-					"$value": "#EBFF38"
+					"$value": "{color.brand.lime.base}",
+					"$description": "Deprecated. Use color.brand.lime.base."
 				},
 				"dark": {
-					"$value": "#818C1F"
+					"$value": "{color.brand.lime.dark}",
+					"$description": "Deprecated. Use color.brand.lime.dark."
 				}
 			},
 			"green": {
 				"light": {
-					"$value": "#E1FFC8"
+					"$value": "{color.brand.lime.light}",
+					"$description": "Deprecated. Use color.brand.lime.light."
 				},
 				"base": {
-					"$value": "#8BEF34"
+					"$value": "{color.brand.lime.base}",
+					"$description": "Deprecated. Use color.brand.lime.base."
 				},
 				"dark": {
-					"$value": "#439000"
+					"$value": "{color.brand.lime.dark}",
+					"$description": "Deprecated. Use color.brand.lime.dark."
 				}
 			}
 		}

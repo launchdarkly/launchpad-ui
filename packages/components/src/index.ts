@@ -1,7 +1,7 @@
 import './styles/base.css';
 import './styles/themes.css';
 
-export type { AlertProps } from './Alert';
+export type { AlertProps, AlertTextProps } from './Alert';
 export type { AutocompleteProps } from './Autocomplete';
 export type { AvatarProps, InitialsAvatarProps } from './Avatar';
 export type { BreadcrumbProps, BreadcrumbsProps } from './Breadcrumbs';
@@ -32,6 +32,7 @@ export type { DisclosurePanelProps, DisclosureProps } from './Disclosure';
 export type { DisclosureGroupProps } from './DisclosureGroup';
 export type { DropIndicatorProps } from './DropIndicator';
 export type { DropZoneProps } from './DropZone';
+export type { EmptyStateProps } from './EmptyState';
 export type { FieldErrorProps } from './FieldError';
 export type { FieldGroupProps } from './FieldGroup';
 export type { FileTriggerProps } from './FileTrigger';
@@ -94,7 +95,7 @@ export type {
 	TreeProps,
 } from './Tree';
 
-export { Alert, alertStyles } from './Alert';
+export { Alert, AlertText, alertStyles } from './Alert';
 export { Autocomplete } from './Autocomplete';
 export { Avatar, avatarStyles, InitialsAvatar } from './Avatar';
 export {
@@ -176,6 +177,7 @@ export {
 export { DisclosureGroup, disclosureGroupStyles } from './DisclosureGroup';
 export { DropIndicator, dropIndicatorStyles } from './DropIndicator';
 export { DropZone, DropZoneContext, dropZoneStyles } from './DropZone';
+export { EmptyState, emptyStateStyles } from './EmptyState';
 export { FieldError, FieldErrorContext, fieldErrorStyles } from './FieldError';
 export { FieldGroup, fieldGroupStyles } from './FieldGroup';
 export { FileTrigger } from './FileTrigger';

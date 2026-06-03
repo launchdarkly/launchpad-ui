@@ -2,16 +2,16 @@ import type { Ref } from 'react';
 import type {
 	DisclosurePanelProps as AriaDisclosurePanelProps,
 	DisclosureProps as AriaDisclosureProps,
-	ContextValue,
-} from 'react-aria-components';
+} from 'react-aria-components/Disclosure';
+import type { ContextValue } from 'react-aria-components/slots';
 
 import { cva } from 'class-variance-authority';
 import { createContext } from 'react';
+import { composeRenderProps } from 'react-aria-components/composeRenderProps';
 import {
 	Disclosure as AriaDisclosure,
 	DisclosurePanel as AriaDisclosurePanel,
-	composeRenderProps,
-} from 'react-aria-components';
+} from 'react-aria-components/Disclosure';
 
 import styles from './styles/Disclosure.module.css';
 import { useLPContextProps } from './utils';

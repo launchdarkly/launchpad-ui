@@ -1,12 +1,11 @@
 import type { Ref } from 'react';
-import type {
-	CheckboxGroupProps as AriaCheckboxGroupProps,
-	ContextValue,
-} from 'react-aria-components';
+import type { CheckboxGroupProps as AriaCheckboxGroupProps } from 'react-aria-components/CheckboxGroup';
+import type { ContextValue } from 'react-aria-components/slots';
 
 import { cva } from 'class-variance-authority';
 import { createContext } from 'react';
-import { CheckboxGroup as AriaCheckboxGroup, composeRenderProps } from 'react-aria-components';
+import { CheckboxGroup as AriaCheckboxGroup } from 'react-aria-components/CheckboxGroup';
+import { composeRenderProps } from 'react-aria-components/composeRenderProps';
 
 import styles from './styles/CheckboxGroup.module.css';
 import { useLPContextProps } from './utils';

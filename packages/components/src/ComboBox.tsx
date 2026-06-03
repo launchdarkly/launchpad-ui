@@ -1,17 +1,15 @@
 import type { CSSProperties, Ref } from 'react';
-import type { ComboBoxProps as AriaComboBoxProps, ContextValue } from 'react-aria-components';
+import type { ComboBoxProps as AriaComboBoxProps } from 'react-aria-components/ComboBox';
+import type { ContextValue } from 'react-aria-components/slots';
 import type { IconButtonProps } from './IconButton';
 
 import { useResizeObserver } from '@react-aria/utils';
 import { cva } from 'class-variance-authority';
 import { createContext, useCallback, useContext, useRef, useState } from 'react';
-import {
-	ComboBox as AriaComboBox,
-	ComboBoxStateContext,
-	composeRenderProps,
-	GroupContext,
-	Provider,
-} from 'react-aria-components';
+import { ComboBox as AriaComboBox, ComboBoxStateContext } from 'react-aria-components/ComboBox';
+import { composeRenderProps } from 'react-aria-components/composeRenderProps';
+import { GroupContext } from 'react-aria-components/Group';
+import { Provider } from 'react-aria-components/slots';
 
 import { IconButton } from './IconButton';
 import { PopoverContext } from './Popover';

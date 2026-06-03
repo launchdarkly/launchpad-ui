@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import type { ComponentType } from 'react';
 
-import { useListData } from 'react-stately';
+import { useListData } from 'react-stately/useListData';
 import { userEvent } from 'storybook/test';
 
 import { Label } from '../src/Label';

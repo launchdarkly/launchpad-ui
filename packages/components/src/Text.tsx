@@ -1,9 +1,10 @@
 import type { Ref } from 'react';
-import type { TextProps as AriaTextProps, ContextValue } from 'react-aria-components';
+import type { ContextValue } from 'react-aria-components/slots';
+import type { TextProps as AriaTextProps } from 'react-aria-components/Text';
 
 import { cva, cx } from 'class-variance-authority';
 import { createContext } from 'react';
-import { Text as AriaText } from 'react-aria-components';
+import { Text as AriaText } from 'react-aria-components/Text';
 
 import styles from './styles/Text.module.css';
 import { useLPContextProps } from './utils';

@@ -6,7 +6,7 @@ import { Box } from '@launchpad-ui/box';
 import { Icon } from '@launchpad-ui/icons';
 import { vars } from '@launchpad-ui/vars';
 import { type Fragment, useRef, useState } from 'react';
-import { VisuallyHidden } from 'react-aria';
+import { VisuallyHidden } from 'react-aria/VisuallyHidden';
 import { expect, userEvent, within } from 'storybook/test';
 
 import { Button } from '../../src/Button';

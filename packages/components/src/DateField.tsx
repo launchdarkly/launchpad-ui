@@ -3,21 +3,23 @@ import type {
 	DateFieldProps as AriaDateFieldProps,
 	DateInputProps as AriaDateInputProps,
 	DateSegmentProps as AriaDateSegmentProps,
-	TimeFieldProps as AriaTimeFieldProps,
-	ContextValue,
 	DateValue,
+} from 'react-aria-components/DateField';
+import type { ContextValue } from 'react-aria-components/slots';
+import type {
+	TimeFieldProps as AriaTimeFieldProps,
 	TimeValue,
-} from 'react-aria-components';
+} from 'react-aria-components/TimeField';
 
 import { cva } from 'class-variance-authority';
 import { createContext } from 'react';
+import { composeRenderProps } from 'react-aria-components/composeRenderProps';
 import {
 	DateField as AriaDateField,
 	DateInput as AriaDateInput,
 	DateSegment as AriaDateSegment,
-	TimeField as AriaTimeField,
-	composeRenderProps,
-} from 'react-aria-components';
+} from 'react-aria-components/DateField';
+import { TimeField as AriaTimeField } from 'react-aria-components/TimeField';
 
 import styles from './styles/DateField.module.css';
 import { useLPContextProps } from './utils';

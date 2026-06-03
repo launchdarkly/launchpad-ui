@@ -2,17 +2,14 @@ import type { Ref } from 'react';
 import type {
 	SelectProps as AriaSelectProps,
 	SelectValueProps as AriaSelectValueProps,
-	ContextValue,
-} from 'react-aria-components';
+} from 'react-aria-components/Select';
+import type { ContextValue } from 'react-aria-components/slots';
 
 import { cva, cx } from 'class-variance-authority';
 import { createContext } from 'react';
-import {
-	Select as AriaSelect,
-	SelectValue as AriaSelectValue,
-	composeRenderProps,
-	Provider,
-} from 'react-aria-components';
+import { composeRenderProps } from 'react-aria-components/composeRenderProps';
+import { Select as AriaSelect, SelectValue as AriaSelectValue } from 'react-aria-components/Select';
+import { Provider } from 'react-aria-components/slots';
 
 import { ButtonContext } from './Button';
 import baseStyles from './styles/base.module.css';
