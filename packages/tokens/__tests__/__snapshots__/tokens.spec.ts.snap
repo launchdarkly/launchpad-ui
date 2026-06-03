@@ -196,13 +196,13 @@ exports[`Tokens > builds default tokens 1`] = `
   --lp-color-brand-purple-dark: rgb(106, 51, 144);
   --lp-color-brand-pink-light: rgb(238, 93, 172);
   --lp-color-brand-pink-base: rgb(255, 53, 162);
-  --lp-color-brand-pink-dark: rgb(129, 11, 75);
-  --lp-color-brand-orange-light: rgb(255, 208, 153);
+  --lp-color-brand-pink-dark: rgb(197, 26, 119);
+  --lp-color-brand-orange-light: rgb(255, 182, 96);
   --lp-color-brand-orange-base: rgb(255, 157, 41);
-  --lp-color-brand-orange-dark: rgb(163, 89, 1);
-  --lp-color-brand-lime-light: rgb(232, 255, 173); /** LD Lime light step */
+  --lp-color-brand-orange-dark: rgb(213, 123, 16);
+  --lp-color-brand-lime-light: rgb(237, 255, 158); /** LD Lime light step */
   --lp-color-brand-lime-base: rgb(221, 255, 70); /** LD Lime — brand doc base */
-  --lp-color-brand-lime-dark: rgb(111, 138, 42); /** LD Lime dark step */
+  --lp-color-brand-lime-dark: rgb(173, 211, 0); /** LD Lime dark step */
   --lp-color-bg-interactive-tertiary-base: rgba(0, 0, 0, 0);
   --lp-color-bg-interactive-tertiary-active: rgba(0, 0, 0, 0);
   --lp-color-border-interactive-primary-base: rgba(0, 0, 0, 0);
