@@ -1,0 +1,18 @@
+---
+description: LaunchPad design-system authoring standards and PR workflow
+alwaysApply: true
+---
+
+You are working in LaunchDarkly's LaunchPad design system. Non-negotiables:
+
+- **Components stay generic** — no business logic, product-domain terms (flag/segment/project), app-specific fetching, or hardcoded LaunchDarkly URLs.
+- **React Aria Components is the foundation** — wrap/theme RAC primitives; never reimplement keyboard/ARIA/focus behavior.
+- **Named exports only** (no `export default` outside stories/config).
+- **Design tokens exclusively** via `--lp-*` CSS variables; prefer semantic aliases (`--lp-color-bg-ui-primary`) over primitives (`--lp-color-blue-500`); every style must work in light and dark themes.
+- **String union prop types**, never enums (`size="medium"`).
+- **CSS Modules** (`styles.foo`) + `class-variance-authority` for variants.
+- New public components need a `*.stories.tsx`; non-trivial package changes need a `.changeset/*.md`.
+
+The full standards, commands, architecture, and the step-by-step pull-request flow (branch naming, changeset, conventional commits, draft `gh pr create`) live in the canonical guidance:
+
+@AGENTS.md

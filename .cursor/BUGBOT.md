@@ -1,5 +1,7 @@
 # Bugbot Instructions — launchpad-ui
 
+> This file is the **PR-review** rubric for Cursor Bugbot. Authoring standards (what to follow when *writing* code) live in [`AGENTS.md`](../AGENTS.md) — keep the two consistent.
+
 LaunchDarkly's design system. Public, versioned, consumed across LaunchDarkly frontend apps. Components here have been **vetted by design** and have corresponding Figma definitions. They are foundational and reused widely.
 
 ## Repo shape
