@@ -1,3 +1,4 @@
+import type { VariantProps } from 'class-variance-authority';
 import type { Ref } from 'react';
 import type { SwitchProps as AriaSwitchProps } from 'react-aria-components/Switch';
 import type { ContextValue } from 'react-aria-components/slots';
@@ -25,12 +26,9 @@ const switchStyles = cva(styles.switch, {
 	},
 });
 
-interface SwitchProps extends AriaSwitchProps {
+interface SwitchVariants extends VariantProps<typeof switchStyles> {}
+interface SwitchProps extends AriaSwitchProps, SwitchVariants {
 	ref?: Ref<HTMLLabelElement>;
-	/** Hide the On/Off labels inside the track. */
-	hideLabels?: boolean;
-	/** Color variant for the selected state. */
-	variant?: 'default' | 'primary';
 }
 
 const SwitchContext = createContext<ContextValue<SwitchProps, HTMLLabelElement>>(null);
@@ -40,8 +38,9 @@ const SwitchContext = createContext<ContextValue<SwitchProps, HTMLLabelElement>>
  *
  * https://react-spectrum.adobe.com/react-aria/Switch.html
  */
-const Switch = ({ ref, hideLabels, variant, ...props }: SwitchProps) => {
+const Switch = ({ ref, ...props }: SwitchProps) => {
 	[props, ref] = useLPContextProps(props, ref, SwitchContext);
+	const { hideLabels, variant } = props;
 	return (
 		<AriaSwitch
 			{...props}
@@ -65,4 +64,4 @@ const Switch = ({ ref, hideLabels, variant, ...props }: SwitchProps) => {
 };
 
 export { Switch, SwitchContext, switchStyles };
-export type { SwitchProps };
+export type { SwitchProps, SwitchVariants };
