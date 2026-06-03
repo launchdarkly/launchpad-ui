@@ -75,6 +75,25 @@
 	}
 }
 
+.switch.primary[data-selected] {
+	& .track {
+		background-color: var(--lp-color-bg-interactive-primary-base);
+		border-color: var(--lp-color-bg-interactive-primary-base);
+	}
+}
+
+.switch.compact {
+	& .track {
+		width: var(--lp-size-40);
+	}
+}
+
+.switch.compact[data-selected] {
+	& .handle {
+		transform: translateX(100%);
+	}
+}
+
 .switch[data-disabled] {
 	opacity: 60%;
 }

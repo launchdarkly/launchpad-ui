@@ -8,4 +8,15 @@ describe('Switch', () => {
 		render(<Switch />);
 		expect(screen.getByRole('switch')).toBeVisible();
 	});
+
+	it('renders with hideLabels', () => {
+		render(<Switch hideLabels defaultSelected />);
+		expect(screen.getByRole('switch')).toBeVisible();
+		expect(screen.queryByText('On')).not.toBeInTheDocument();
+	});
+
+	it('renders with primary variant', () => {
+		render(<Switch variant="primary" defaultSelected />);
+		expect(screen.getByRole('switch')).toBeVisible();
+	});
 });

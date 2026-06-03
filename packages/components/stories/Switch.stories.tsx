@@ -5,6 +5,12 @@ import { Switch } from '../src/Switch';
 const meta: Meta<typeof Switch> = {
 	component: Switch,
 	title: 'Components/Forms/Switch',
+	argTypes: {
+		variant: {
+			control: 'select',
+			options: ['default', 'primary'],
+		},
+	},
 	parameters: {
 		figma: {
 			design:
@@ -27,4 +33,16 @@ export const On: Story = {
 
 export const States: Story = {
 	args: { isDisabled: true },
+};
+
+export const Primary: Story = {
+	args: { defaultSelected: true, variant: 'primary' },
+};
+
+export const HideLabels: Story = {
+	args: { hideLabels: true },
+};
+
+export const PrimaryHideLabels: Story = {
+	args: { defaultSelected: true, variant: 'primary', hideLabels: true },
 };
