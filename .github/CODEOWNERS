@@ -1,3 +1,3 @@
-* @launchdarkly/team-fm-foundations
-/packages/icons @launchdarkly/team-fm-foundations @launchdarkly/div-ux
-/packages/tokens @launchdarkly/team-fm-foundations @launchdarkly/div-ux
+* @launchdarkly/team-launchpad-ui-reviewers
+/packages/icons @launchdarkly/team-launchpad-ui-reviewers @launchdarkly/div-ux
+/packages/tokens @launchdarkly/team-launchpad-ui-reviewers @launchdarkly/div-ux
