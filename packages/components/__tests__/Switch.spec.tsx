@@ -19,8 +19,8 @@ describe('Switch', () => {
 		expect(screen.getByText('On')).toBeVisible();
 	});
 
-	it('hides labels when hideLabels is set', () => {
-		render(<Switch hideLabels />);
+	it('hides labels when switchLabels is false', () => {
+		render(<Switch switchLabels={false} />);
 		expect(screen.queryByText('Off')).not.toBeInTheDocument();
 		expect(screen.queryByText('On')).not.toBeInTheDocument();
 	});

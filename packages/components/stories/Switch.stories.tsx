@@ -40,9 +40,9 @@ export const Primary: Story = {
 };
 
 export const HideLabels: Story = {
-	args: { hideLabels: true },
+	args: { switchLabels: false },
 };
 
 export const PrimaryHideLabels: Story = {
-	args: { defaultSelected: true, variant: 'primary', hideLabels: true },
+	args: { defaultSelected: true, variant: 'primary', switchLabels: false },
 };

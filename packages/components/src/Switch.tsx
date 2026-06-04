@@ -17,7 +17,7 @@ const switchStyles = cva(styles.switch, {
 			default: '',
 			primary: styles.primary,
 		},
-		hideLabels: {
+		compact: {
 			true: styles.compact,
 		},
 	},
@@ -26,9 +26,10 @@ const switchStyles = cva(styles.switch, {
 	},
 });
 
-interface SwitchVariants extends VariantProps<typeof switchStyles> {}
-interface SwitchProps extends AriaSwitchProps, SwitchVariants {
+interface SwitchProps extends AriaSwitchProps, Omit<VariantProps<typeof switchStyles>, 'compact'> {
 	ref?: Ref<HTMLLabelElement>;
+	/** Pass `false` to hide On/Off labels and render a compact track. */
+	switchLabels?: false;
 }
 
 const SwitchContext = createContext<ContextValue<SwitchProps, HTMLLabelElement>>(null);
@@ -40,13 +41,14 @@ const SwitchContext = createContext<ContextValue<SwitchProps, HTMLLabelElement>>
  */
 const Switch = ({ ref, ...props }: SwitchProps) => {
 	[props, ref] = useLPContextProps(props, ref, SwitchContext);
-	const { hideLabels, variant } = props;
+	const { switchLabels, variant } = props;
+	const hideLabels = switchLabels === false ? true : undefined;
 	return (
 		<AriaSwitch
 			{...props}
 			ref={ref}
 			className={composeRenderProps(props.className, (className, renderProps) =>
-				switchStyles({ ...renderProps, variant, hideLabels, className }),
+				switchStyles({ ...renderProps, variant, compact: hideLabels, className }),
 			)}
 		>
 			{composeRenderProps(props.children, (children, { isSelected }) => (
@@ -64,4 +66,4 @@ const Switch = ({ ref, ...props }: SwitchProps) => {
 };
 
 export { Switch, SwitchContext, switchStyles };
-export type { SwitchProps, SwitchVariants };
+export type { SwitchProps };
