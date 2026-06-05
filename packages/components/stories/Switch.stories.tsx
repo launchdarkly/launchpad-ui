@@ -40,9 +40,18 @@ export const Primary: Story = {
 };
 
 export const HideLabels: Story = {
-	args: { switchLabels: false },
+	args: { switchLabels: false, 'aria-label': 'Toggle setting' },
 };
 
 export const PrimaryHideLabels: Story = {
-	args: { defaultSelected: true, variant: 'primary', switchLabels: false },
+	args: {
+		defaultSelected: true,
+		variant: 'primary',
+		switchLabels: false,
+		'aria-label': 'Toggle setting',
+	},
+};
+
+export const WithChildren: Story = {
+	args: { children: 'Dark mode' },
 };

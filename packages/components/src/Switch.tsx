@@ -37,6 +37,8 @@ const SwitchContext = createContext<ContextValue<SwitchProps, HTMLLabelElement>>
 /**
  * A switch allows a user to turn a setting on or off.
  *
+ * Provide an accessible name via `children` (visible label) or `aria-label` (visually hidden label).
+ *
  * https://react-spectrum.adobe.com/react-aria/Switch.html
  */
 const Switch = ({ ref, ...props }: SwitchProps) => {
