@@ -31,15 +31,16 @@
 		"@launchpad-ui/tooltip": "workspace:~",
 		"@radix-ui/react-slot": "1.2.0",
 		"classix": "2.2.0",
-		"react-aria": "3.49.0",
 		"react-virtual": "2.10.4"
 	},
 	"devDependencies": {
 		"react": "19.2.6",
+		"react-aria": "3.49.0",
 		"react-dom": "19.2.6"
 	},
 	"peerDependencies": {
 		"react": "19.2.6",
+		"react-aria": "3.49.0",
 		"react-dom": "19.2.6"
 	},
 	"exports": {

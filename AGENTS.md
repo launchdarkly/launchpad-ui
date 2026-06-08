@@ -65,7 +65,7 @@ Follow these when writing or changing component code:
 - **Context + prop merging:** public components with overridable props use a `ComponentContext` + `useLPContextProps` pattern (see Button, Menu). Export both component and context.
 - **Prefer mid-level purpose-driven components** (`Picker`, `Menu`) over re-exposing raw `Popover + ListBox + Input` combinations to consumers.
 - **No cross-package relative imports** — packages reference each other via `@launchpad-ui/*` workspace specifiers, never `../../other-package/src`.
-- **React and React Aria belong in `peerDependencies`**, not `dependencies`, in component packages.
+- **React and React Aria belong in `peerDependencies`**, not `dependencies`, in component packages. This is enforced by syncpack (`.syncpackrc` bans `react`, `react-dom`, `react-aria`, `react-aria-components`, `react-stately`, `react-router`, `react-hook-form`, and `@react-aria`/`@react-stately`/`@react-types` scopes from `dependencies`); `syncpack lint` runs in pre-commit, `postinstall`, and the **Dependency Policy** CI job. Add the package to `peerDependencies` and `devDependencies` instead.
 - **JSDoc** is expected on exported components and public utilities (describe props, usage, and link relevant React Aria docs). Not required on internal helpers.
 - **Accessibility is a hard requirement** — components must pass axe (WCAG 2.0/2.1 A/AA), have proper ARIA + keyboard support, and manage focus correctly. (`docs/adr-001-automated-a11y-tests.md`, `docs/adr-007-a11y-tests-on-stories.md`)
 - **Stories are required** for new public components/variants (`*.stories.tsx`) — they drive discoverability plus Chromatic visual regression and axe a11y checks in CI.
