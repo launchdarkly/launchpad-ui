@@ -251,9 +251,6 @@ importers:
       '@launchpad-ui/tokens':
         specifier: workspace:~
         version: link:../tokens
-      '@react-aria/live-announcer':
-        specifier: 3.5.1
-        version: 3.5.1(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
       class-variance-authority:
         specifier: 0.7.0
         version: 0.7.0
@@ -481,9 +478,6 @@ importers:
       classix:
         specifier: 2.2.0
         version: 2.2.0
-      react-stately:
-        specifier: 3.47.0
-        version: 3.47.0(react@19.2.6)
     devDependencies:
       react:
         specifier: 19.2.6
@@ -494,6 +488,9 @@ importers:
       react-dom:
         specifier: 19.2.6
         version: 19.2.6(react@19.2.6)
+      react-stately:
+        specifier: 3.47.0
+        version: 3.47.0(react@19.2.6)
 
   packages/icons:
     dependencies:
@@ -537,9 +534,6 @@ importers:
       classix:
         specifier: 2.2.0
         version: 2.2.0
-      react-aria:
-        specifier: 3.49.0
-        version: 3.49.0(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
       react-virtual:
         specifier: 2.10.4
         version: 2.10.4(react@19.2.6)
@@ -547,6 +541,9 @@ importers:
       react:
         specifier: 19.2.6
         version: 19.2.6
+      react-aria:
+        specifier: 3.49.0
+        version: 3.49.0(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
       react-dom:
         specifier: 19.2.6
         version: 19.2.6(react@19.2.6)
@@ -1697,12 +1694,6 @@ packages:
 
   '@react-aria/interactions@3.28.1':
     resolution: {integrity: sha512-Bqb+HrD5I5MHS2SKBhISYqo2SW8Y2dfzgF/Y1lIJq7xqLxheo9vzxPGEHhz+XzkgGfoqEJx8A6a3C7uiqS3HWA==}
-    peerDependencies:
-      react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0 || ^19.0.0-rc.1
-      react-dom: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0 || ^19.0.0-rc.1
-
-  '@react-aria/live-announcer@3.5.1':
-    resolution: {integrity: sha512-kLvwHjM3D7KgdquiAhUpRnMLKFrvl2r8naDXqPUlSWGRG15wsJRLhQOHLxGp0Umyg7KcSA+OD1mhQV5aRv0P1w==}
     peerDependencies:
       react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0 || ^19.0.0-rc.1
       react-dom: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0 || ^19.0.0-rc.1
@@ -6292,13 +6283,6 @@ snapshots:
   '@react-aria/interactions@3.28.1(react-dom@19.2.6(react@19.2.6))(react@19.2.6)':
     dependencies:
       '@react-types/shared': 3.35.0(react@19.2.6)
-      '@swc/helpers': 0.5.23
-      react: 19.2.6
-      react-aria: 3.49.0(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
-      react-dom: 19.2.6(react@19.2.6)
-
-  '@react-aria/live-announcer@3.5.1(react-dom@19.2.6(react@19.2.6))(react@19.2.6)':
-    dependencies:
       '@swc/helpers': 0.5.23
       react: 19.2.6
       react-aria: 3.49.0(react-dom@19.2.6(react@19.2.6))(react@19.2.6)

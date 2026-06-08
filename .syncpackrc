@@ -13,6 +13,25 @@
       ]
     },
     {
+      "label": "React and React Aria must be peerDependencies (+ devDependencies), never dependencies",
+      "dependencies": [
+        "react",
+        "react-dom",
+        "react-aria",
+        "react-aria-components",
+        "react-stately",
+        "react-router",
+        "react-hook-form",
+        "@react-aria/**",
+        "@react-stately/**",
+        "@react-types/**"
+      ],
+      "dependencyTypes": [
+        "prod"
+      ],
+      "isBanned": true
+    },
+    {
       "dependencyTypes": [
         "peer",
         "dev",

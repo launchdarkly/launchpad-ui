@@ -92,3 +92,27 @@ jobs:
 
       - name: Run Biome
         run: biome ci .
+
+  dependencies:
+    name: Dependency Policy
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+
+      - uses: pnpm/action-setup@fc06bc1257f339d1d5d8b3a19a8cae5388b55320 # v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v6
+        with:
+          node-version: 22
+          cache: pnpm
+
+      # --ignore-scripts skips the postinstall syncpack run so the lint below is
+      # the single, clearly-attributed signal for dependency-type violations.
+      - name: Install Dependencies
+        run: pnpm install --ignore-scripts
+
+      # Enforces the peerDependencies policy in AGENTS.md (React & React Aria must
+      # never be in `dependencies`). Config lives in .syncpackrc.
+      - name: Lint dependency types (syncpack)
+        run: pnpm syncpack lint
