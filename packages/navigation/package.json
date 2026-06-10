@@ -34,19 +34,19 @@
 		"classix": "2.2.0"
 	},
 	"devDependencies": {
-		"@react-aria/utils": "3.34.0",
-		"@react-types/shared": "3.34.0",
+		"@react-aria/utils": "3.34.1",
+		"@react-types/shared": "3.35.0",
 		"react": "19.2.6",
 		"react-dom": "19.2.6",
 		"react-router": "7.15.1",
-		"react-stately": "3.46.0"
+		"react-stately": "3.47.0"
 	},
 	"peerDependencies": {
-		"@react-aria/utils": "3.34.0",
+		"@react-aria/utils": "3.34.1",
 		"react": "19.2.6",
 		"react-dom": "19.2.6",
 		"react-router": "7.15.1",
-		"react-stately": "3.46.0"
+		"react-stately": "3.47.0"
 	},
 	"exports": {
 		".": {
