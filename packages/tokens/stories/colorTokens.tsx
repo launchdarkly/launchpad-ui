@@ -1,3 +1,5 @@
+import type { ReactNode } from 'react';
+
 export type ComputedValue = { color: string; image: string };
 
 // Converts a computed `rgb()`/`rgba()` string to an uppercase hex string.
@@ -33,29 +35,43 @@ export const rgbToHex = (rgb: string): string | null => {
 	return hex.toUpperCase();
 };
 
-export const TokenValue = ({ computed }: { computed?: ComputedValue }) => {
+const isGradient = (computed: ComputedValue) =>
+	Boolean(computed.image && computed.image !== 'none');
+
+// Hex value for solid color tokens. Gradient tokens have no single hex value.
+export const getTokenHex = (computed?: ComputedValue): string | null => {
+	if (!computed || isGradient(computed)) {
+		return null;
+	}
+
+	return rgbToHex(computed.color);
+};
+
+// The raw value, kept for backwards compatibility: the gradient definition for
+// gradient tokens, otherwise the computed rgba string. Gradients are painted via
+// `background-image`, so their `background-color` is the meaningless transparent
+// default (`rgba(0, 0, 0, 0)`), which we intentionally avoid surfacing.
+export const getTokenValue = (computed?: ComputedValue): string | null => {
 	if (!computed) {
 		return null;
 	}
 
-	// Gradient tokens are painted via `background-image`, so `background-color`
-	// resolves to the transparent default (`rgba(0, 0, 0, 0)`). Show the gradient
-	// definition instead of a meaningless color value.
-	if (computed.image && computed.image !== 'none') {
-		return <span style={{ font: 'var(--lp-text-code-1-regular)' }}>{computed.image}</span>;
-	}
+	return isGradient(computed) ? computed.image : computed.color;
+};
 
-	const hex = rgbToHex(computed.color);
-
-	if (!hex) {
-		return <span style={{ font: 'var(--lp-text-code-1-regular)' }}>{computed.color}</span>;
+export const TokenCode = ({ children, muted }: { children: ReactNode; muted?: boolean }) => {
+	if (children == null) {
+		return null;
 	}
 
 	return (
-		<span style={{ font: 'var(--lp-text-code-1-regular)' }}>
-			<span>{hex}</span>{' '}
-			{/* rgba is kept for backwards compatibility even though hex is now shown. */}
-			<span style={{ color: 'var(--lp-color-text-ui-secondary)' }}>{computed.color}</span>
+		<span
+			style={{
+				font: 'var(--lp-text-code-1-regular)',
+				...(muted ? { color: 'var(--lp-color-text-ui-secondary)' } : {}),
+			}}
+		>
+			{children}
 		</span>
 	);
 };

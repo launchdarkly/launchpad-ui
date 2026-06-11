@@ -1,7 +1,9 @@
 import { render, screen } from '@testing-library/react';
 import { describe, expect, it } from 'vitest';
 
-import { rgbToHex, TokenValue } from '../stories/colorTokens';
+import { getTokenHex, getTokenValue, rgbToHex, TokenCode } from '../stories/colorTokens';
+
+const GRADIENT = 'linear-gradient(136deg, rgb(61, 214, 245) 22.68%, rgb(64, 91, 255) 127.6%)';
 
 describe('rgbToHex', () => {
 	it('converts an opaque rgb() string to 6-digit hex', () => {
@@ -21,29 +23,47 @@ describe('rgbToHex', () => {
 	});
 
 	it('returns null for non-color values such as gradients', () => {
-		expect(rgbToHex('linear-gradient(136deg, rgb(61, 214, 245), rgb(64, 91, 255))')).toBeNull();
+		expect(rgbToHex(GRADIENT)).toBeNull();
 	});
 });
 
-describe('TokenValue', () => {
-	it('shows both hex and the original rgba for solid colors', () => {
-		render(<TokenValue computed={{ color: 'rgb(61, 214, 245)', image: 'none' }} />);
+describe('getTokenHex', () => {
+	it('returns the hex for a solid color', () => {
+		expect(getTokenHex({ color: 'rgb(61, 214, 245)', image: 'none' })).toBe('#3DD6F5');
+	});
+
+	it('returns null for a gradient token', () => {
+		expect(getTokenHex({ color: 'rgba(0, 0, 0, 0)', image: GRADIENT })).toBeNull();
+	});
+
+	it('returns null when the value is not yet computed', () => {
+		expect(getTokenHex(undefined)).toBeNull();
+	});
+});
+
+describe('getTokenValue', () => {
+	it('returns the rgba string for a solid color (kept for backwards compatibility)', () => {
+		expect(getTokenValue({ color: 'rgb(61, 214, 245)', image: 'none' })).toBe('rgb(61, 214, 245)');
+	});
+
+	it('returns the gradient definition instead of the transparent fallback', () => {
+		expect(getTokenValue({ color: 'rgba(0, 0, 0, 0)', image: GRADIENT })).toBe(GRADIENT);
+	});
+
+	it('returns null when the value is not yet computed', () => {
+		expect(getTokenValue(undefined)).toBeNull();
+	});
+});
+
+describe('TokenCode', () => {
+	it('renders its content', () => {
+		render(<TokenCode>#3DD6F5</TokenCode>);
 
 		expect(screen.getByText('#3DD6F5')).toBeInTheDocument();
-		// rgba is kept alongside the hex for backwards compatibility.
-		expect(screen.getByText('rgb(61, 214, 245)')).toBeInTheDocument();
 	});
 
-	it('shows the gradient definition instead of the transparent fallback', () => {
-		const gradient = 'linear-gradient(136deg, rgb(61, 214, 245) 22.68%, rgb(64, 91, 255) 127.6%)';
-		render(<TokenValue computed={{ color: 'rgba(0, 0, 0, 0)', image: gradient }} />);
-
-		expect(screen.getByText(gradient)).toBeInTheDocument();
-		expect(screen.queryByText('rgba(0, 0, 0, 0)')).not.toBeInTheDocument();
-	});
-
-	it('renders nothing before the computed value is available', () => {
-		const { container } = render(<TokenValue />);
+	it('renders nothing when there is no content', () => {
+		const { container } = render(<TokenCode>{null}</TokenCode>);
 
 		expect(container).toBeEmptyDOMElement();
 	});
