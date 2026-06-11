@@ -38,6 +38,31 @@ export const rgbToHex = (rgb: string): string | null => {
 const isGradient = (computed: ComputedValue) =>
 	Boolean(computed.image && computed.image !== 'none');
 
+// Normalizes a computed `rgb()`/`rgba()` string to the `rgba()` form. Opaque
+// colors come back from `getComputedStyle` as `rgb(...)`, so add an explicit
+// alpha of `1` to keep the displayed value consistently rgba.
+export const toRgba = (color: string): string => {
+	const match = color.trim().match(/^rgba?\(([^)]+)\)$/);
+
+	if (!match) {
+		return color;
+	}
+
+	const parts = match[1]
+		.split(/[\s,/]+/)
+		.map((part) => part.trim())
+		.filter(Boolean);
+
+	if (parts.length < 3) {
+		return color;
+	}
+
+	const [r, g, b] = parts;
+	const alpha = parts[3] ?? '1';
+
+	return `rgba(${r}, ${g}, ${b}, ${alpha})`;
+};
+
 // Hex value for solid color tokens. Gradient tokens have no single hex value.
 export const getTokenHex = (computed?: ComputedValue): string | null => {
 	if (!computed || isGradient(computed)) {
@@ -56,7 +81,7 @@ export const getTokenValue = (computed?: ComputedValue): string | null => {
 		return null;
 	}
 
-	return isGradient(computed) ? computed.image : computed.color;
+	return isGradient(computed) ? computed.image : toRgba(computed.color);
 };
 
 export const TokenCode = ({ children, muted }: { children: ReactNode; muted?: boolean }) => {

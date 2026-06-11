@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import { describe, expect, it } from 'vitest';
 
-import { getTokenHex, getTokenValue, rgbToHex, TokenCode } from '../stories/colorTokens';
+import { getTokenHex, getTokenValue, rgbToHex, TokenCode, toRgba } from '../stories/colorTokens';
 
 const GRADIENT = 'linear-gradient(136deg, rgb(61, 214, 245) 22.68%, rgb(64, 91, 255) 127.6%)';
 
@@ -41,9 +41,25 @@ describe('getTokenHex', () => {
 	});
 });
 
+describe('toRgba', () => {
+	it('adds an explicit alpha to opaque rgb() values', () => {
+		expect(toRgba('rgb(61, 214, 245)')).toBe('rgba(61, 214, 245, 1)');
+	});
+
+	it('preserves an existing alpha channel', () => {
+		expect(toRgba('rgba(0, 0, 0, 0.5)')).toBe('rgba(0, 0, 0, 0.5)');
+	});
+
+	it('leaves non-color values untouched', () => {
+		expect(toRgba(GRADIENT)).toBe(GRADIENT);
+	});
+});
+
 describe('getTokenValue', () => {
 	it('returns the rgba string for a solid color (kept for backwards compatibility)', () => {
-		expect(getTokenValue({ color: 'rgb(61, 214, 245)', image: 'none' })).toBe('rgb(61, 214, 245)');
+		expect(getTokenValue({ color: 'rgb(61, 214, 245)', image: 'none' })).toBe(
+			'rgba(61, 214, 245, 1)',
+		);
 	});
 
 	it('returns the gradient definition instead of the transparent fallback', () => {
