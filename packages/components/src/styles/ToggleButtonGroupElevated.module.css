@@ -43,7 +43,7 @@
 }
 
 .button[data-hovered] {
-	background: var(--lp-color-bg-interactive-secondary-hover);
+	background: var(--lp-color-bg-ui-secondary);
 }
 
 .button[data-selected] {
