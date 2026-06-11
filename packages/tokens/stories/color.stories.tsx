@@ -33,13 +33,78 @@ const flatten = (obj: Record<string, unknown>) => {
 	return result;
 };
 
+// Converts a computed `rgb()`/`rgba()` string to an uppercase hex string.
+// Alpha is appended as an 8-digit hex only when the color is not fully opaque.
+const rgbToHex = (rgb: string): string | null => {
+	const match = rgb.match(/rgba?\(([^)]+)\)/);
+
+	if (!match) {
+		return null;
+	}
+
+	const parts = match[1].split(/[,/]/).map((part) => part.trim());
+	const [r, g, b] = parts.map((part) => Number.parseFloat(part));
+
+	if ([r, g, b].some((channel) => Number.isNaN(channel))) {
+		return null;
+	}
+
+	const toHex = (channel: number) => Math.round(channel).toString(16).padStart(2, '0');
+	let hex = `#${toHex(r)}${toHex(g)}${toHex(b)}`;
+
+	const alpha = parts[3] !== undefined ? Number.parseFloat(parts[3]) : 1;
+
+	if (!Number.isNaN(alpha) && alpha < 1) {
+		hex += toHex(alpha * 255);
+	}
+
+	return hex.toUpperCase();
+};
+
+type ComputedValue = { color: string; image: string };
+
+const TokenValue = ({ computed }: { computed?: ComputedValue }) => {
+	if (!computed) {
+		return null;
+	}
+
+	// Gradient tokens are painted via `background-image`, so `background-color`
+	// resolves to the transparent default (`rgba(0, 0, 0, 0)`). Show the gradient
+	// definition instead of a meaningless color value.
+	if (computed.image && computed.image !== 'none') {
+		return <span style={{ font: 'var(--lp-text-code-1-regular)' }}>{computed.image}</span>;
+	}
+
+	const hex = rgbToHex(computed.color);
+
+	return (
+		<span style={{ font: 'var(--lp-text-code-1-regular)' }}>
+			{hex ? (
+				<>
+					{hex} {/* rgba is kept for backwards compatibility even though hex is now shown. */}
+					<span style={{ color: 'var(--lp-color-text-ui-secondary)' }}>{computed.color}</span>
+				</>
+			) : (
+				computed.color
+			)}
+		</span>
+	);
+};
+
 const TokenTable = ({ tokens }: { tokens: Record<string, string> }) => {
 	const itemEls = useRef<Record<string, HTMLDivElement | null>>({});
-	const [colors, setColors] = useState<Record<string, string>>({});
+	const [colors, setColors] = useState<Record<string, ComputedValue>>({});
 
 	useEffect(() => {
 		for (const [key, value] of Object.entries(itemEls.current)) {
-			const item = { [key]: getComputedStyle(value as Element).backgroundColor };
+			if (!value) {
+				continue;
+			}
+
+			const styles = getComputedStyle(value);
+			const item = {
+				[key]: { color: styles.backgroundColor, image: styles.backgroundImage },
+			};
 			setColors((c) => ({ ...c, ...item }));
 		}
 	}, []);
@@ -51,7 +116,7 @@ const TokenTable = ({ tokens }: { tokens: Record<string, string> }) => {
 					<tr>
 						<th />
 						<th style={{ textAlign: 'left' }}>Name</th>
-						<th style={{ textAlign: 'left' }}>Value</th>
+						<th style={{ textAlign: 'left' }}>Value (hex / rgba)</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -88,7 +153,9 @@ const TokenTable = ({ tokens }: { tokens: Record<string, string> }) => {
 										<Tooltip placement="bottom">Copy to clipboard</Tooltip>
 									</TooltipTrigger>
 								</td>
-								<td>{colors[key]}</td>
+								<td>
+									<TokenValue computed={colors[key]} />
+								</td>
 							</tr>
 						);
 					})}
