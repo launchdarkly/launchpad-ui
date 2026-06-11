@@ -53,6 +53,10 @@
 		0 0 1px 0 var(--lp-color-shadow-ui-primary),
 		0 1px 2px 0 var(--lp-color-shadow-ui-primary),
 		0 2px 8px 0 var(--lp-color-shadow-ui-secondary);
+
+	& [data-icon] {
+		color: var(--lp-color-fill-ui-secondary);
+	}
 }
 
 .button[data-disabled] {
