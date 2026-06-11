@@ -1,5 +1,6 @@
 .group {
 	display: flex;
+	gap: var(--lp-spacing-200);
 	background: var(--lp-color-bg-ui-tertiary);
 	border-radius: var(--lp-border-radius-medium);
 	padding: var(--lp-spacing-200);
