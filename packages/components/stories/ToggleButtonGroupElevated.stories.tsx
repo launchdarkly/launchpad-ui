@@ -3,32 +3,34 @@ import type { ComponentType } from 'react';
 
 import { Icon } from '@launchpad-ui/icons';
 
-import { ToggleButtonElevated, ToggleButtonGroupElevated } from '../src/ToggleButtonGroupElevated';
+import { ToggleButton } from '../src/ToggleButton';
+import { ToggleButtonGroup } from '../src/ToggleButtonGroup';
 
-const meta: Meta<typeof ToggleButtonGroupElevated> = {
-	component: ToggleButtonGroupElevated,
-	subcomponents: { ToggleButtonElevated } as Record<string, ComponentType<unknown>>,
+const meta: Meta<typeof ToggleButtonGroup> = {
+	component: ToggleButtonGroup,
+	subcomponents: { ToggleButton } as Record<string, ComponentType<unknown>>,
 	title: 'Components/Buttons/ToggleButton/ToggleButtonGroupElevated',
 	tags: ['autodocs'],
 };
 
 export default meta;
 
-type Story = StoryObj<typeof ToggleButtonGroupElevated>;
+type Story = StoryObj<typeof ToggleButtonGroup>;
 
 export const Example: Story = {
 	args: {
+		appearance: 'elevated',
 		children: (
 			<>
-				<ToggleButtonElevated id="first">
+				<ToggleButton appearance="elevated" id="first">
 					<Icon name="flask" size="small" /> First
-				</ToggleButtonElevated>
-				<ToggleButtonElevated id="second">
+				</ToggleButton>
+				<ToggleButton appearance="elevated" id="second">
 					<Icon name="flag" size="small" /> Second
-				</ToggleButtonElevated>
-				<ToggleButtonElevated id="third">
+				</ToggleButton>
+				<ToggleButton appearance="elevated" id="third">
 					<Icon name="toggle-on" size="small" /> Third
-				</ToggleButtonElevated>
+				</ToggleButton>
 			</>
 		),
 		defaultSelectedKeys: ['first'],
@@ -38,17 +40,18 @@ export const Example: Story = {
 
 export const MultipleSelection: Story = {
 	args: {
+		appearance: 'elevated',
 		children: (
 			<>
-				<ToggleButtonElevated id="first">
+				<ToggleButton appearance="elevated" id="first">
 					<Icon name="flask" size="small" /> First
-				</ToggleButtonElevated>
-				<ToggleButtonElevated id="second">
+				</ToggleButton>
+				<ToggleButton appearance="elevated" id="second">
 					<Icon name="flag" size="small" /> Second
-				</ToggleButtonElevated>
-				<ToggleButtonElevated id="third">
+				</ToggleButton>
+				<ToggleButton appearance="elevated" id="third">
 					<Icon name="toggle-on" size="small" /> Third
-				</ToggleButtonElevated>
+				</ToggleButton>
 			</>
 		),
 		selectionMode: 'multiple',
@@ -59,17 +62,18 @@ export const MultipleSelection: Story = {
 
 export const Orientation: Story = {
 	args: {
+		appearance: 'elevated',
 		children: (
 			<>
-				<ToggleButtonElevated id="first">
+				<ToggleButton appearance="elevated" id="first">
 					<Icon name="flask" size="small" /> First
-				</ToggleButtonElevated>
-				<ToggleButtonElevated id="second">
+				</ToggleButton>
+				<ToggleButton appearance="elevated" id="second">
 					<Icon name="flag" size="small" /> Second
-				</ToggleButtonElevated>
-				<ToggleButtonElevated id="third">
+				</ToggleButton>
+				<ToggleButton appearance="elevated" id="third">
 					<Icon name="toggle-on" size="small" /> Third
-				</ToggleButtonElevated>
+				</ToggleButton>
 			</>
 		),
 		orientation: 'vertical',
@@ -79,17 +83,18 @@ export const Orientation: Story = {
 
 export const Disabled: Story = {
 	args: {
+		appearance: 'elevated',
 		children: (
 			<>
-				<ToggleButtonElevated id="first">
+				<ToggleButton appearance="elevated" id="first">
 					<Icon name="flask" size="small" /> First
-				</ToggleButtonElevated>
-				<ToggleButtonElevated id="second">
+				</ToggleButton>
+				<ToggleButton appearance="elevated" id="second">
 					<Icon name="flag" size="small" /> Second
-				</ToggleButtonElevated>
-				<ToggleButtonElevated id="third">
+				</ToggleButton>
+				<ToggleButton appearance="elevated" id="third">
 					<Icon name="toggle-on" size="small" /> Third
-				</ToggleButtonElevated>
+				</ToggleButton>
 			</>
 		),
 		isDisabled: true,

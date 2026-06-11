@@ -84,11 +84,7 @@ export type { TextAreaProps } from './TextArea';
 export type { TextFieldProps } from './TextField';
 export type { ToastOptions, ToastValue } from './Toast';
 export type { ToggleButtonProps } from './ToggleButton';
-export type { ToggleButtonGroupProps } from './ToggleButtonGroup';
-export type {
-	ToggleButtonElevatedProps,
-	ToggleButtonGroupElevatedProps,
-} from './ToggleButtonGroupElevated';
+export type { ToggleButtonGroupProps, ToggleButtonGroupVariants } from './ToggleButtonGroup';
 export type { ToggleIconButtonProps } from './ToggleIconButton';
 export type { ToolbarProps } from './Toolbar';
 export type { TooltipProps, TooltipTriggerProps } from './Tooltip';
@@ -325,20 +321,12 @@ export {
 	toastRegionStyles,
 	toastStyles,
 } from './Toast';
-export { ToggleButton, ToggleButtonContext } from './ToggleButton';
+export { ToggleButton, ToggleButtonContext, toggleButtonElevatedStyles } from './ToggleButton';
 export {
 	ToggleButtonGroup,
 	ToggleButtonGroupContext,
 	toggleButtonGroupStyles,
 } from './ToggleButtonGroup';
-export {
-	ToggleButtonElevated,
-	ToggleButtonElevatedContext,
-	ToggleButtonGroupElevated,
-	ToggleButtonGroupElevatedContext,
-	toggleButtonElevatedStyles,
-	toggleButtonGroupElevatedStyles,
-} from './ToggleButtonGroupElevated';
 export { ToggleIconButton, ToggleIconButtonContext } from './ToggleIconButton';
 export { Toolbar, ToolbarContext, toolbarStyles } from './Toolbar';
 export {

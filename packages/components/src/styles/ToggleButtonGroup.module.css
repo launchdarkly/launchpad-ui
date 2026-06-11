@@ -1,9 +1,19 @@
 .group {
-	composes: buttonGroup from './base.module.css';
 	display: flex;
 
 	&[data-orientation='vertical'] {
 		flex-direction: column;
 		width: fit-content;
 	}
+}
+
+.default {
+	composes: buttonGroup from './base.module.css';
+}
+
+.elevated {
+	gap: var(--lp-spacing-200);
+	background: var(--lp-color-bg-ui-tertiary);
+	border-radius: var(--lp-border-radius-medium);
+	padding: var(--lp-spacing-200);
 }

@@ -1,26 +1,36 @@
 import { describe, expect, it } from 'vitest';
 
 import { render, screen } from '../../../test/utils';
-import { ToggleButtonElevated, ToggleButtonGroupElevated } from '../src';
+import { ToggleButton, ToggleButtonGroup } from '../src';
 
-describe('ToggleButtonGroupElevated', () => {
+describe('ToggleButtonGroup appearance="elevated"', () => {
 	it('renders', () => {
 		render(
-			<ToggleButtonGroupElevated>
-				<ToggleButtonElevated id="first">First</ToggleButtonElevated>
-				<ToggleButtonElevated id="second">Second</ToggleButtonElevated>
-				<ToggleButtonElevated id="third">Third</ToggleButtonElevated>
-			</ToggleButtonGroupElevated>,
+			<ToggleButtonGroup appearance="elevated">
+				<ToggleButton appearance="elevated" id="first">
+					First
+				</ToggleButton>
+				<ToggleButton appearance="elevated" id="second">
+					Second
+				</ToggleButton>
+				<ToggleButton appearance="elevated" id="third">
+					Third
+				</ToggleButton>
+			</ToggleButtonGroup>,
 		);
 		expect(screen.getByRole('radiogroup')).toBeVisible();
 	});
 
 	it('supports selection', async () => {
 		render(
-			<ToggleButtonGroupElevated defaultSelectedKeys={['first']}>
-				<ToggleButtonElevated id="first">First</ToggleButtonElevated>
-				<ToggleButtonElevated id="second">Second</ToggleButtonElevated>
-			</ToggleButtonGroupElevated>,
+			<ToggleButtonGroup appearance="elevated" defaultSelectedKeys={['first']}>
+				<ToggleButton appearance="elevated" id="first">
+					First
+				</ToggleButton>
+				<ToggleButton appearance="elevated" id="second">
+					Second
+				</ToggleButton>
+			</ToggleButtonGroup>,
 		);
 		expect(screen.getByRole('radio', { name: 'First', checked: true })).toBeVisible();
 		expect(screen.getByRole('radio', { name: 'Second', checked: false })).toBeVisible();
@@ -28,11 +38,21 @@ describe('ToggleButtonGroupElevated', () => {
 
 	it('supports multiple selection', () => {
 		render(
-			<ToggleButtonGroupElevated selectionMode="multiple" defaultSelectedKeys={['first', 'second']}>
-				<ToggleButtonElevated id="first">First</ToggleButtonElevated>
-				<ToggleButtonElevated id="second">Second</ToggleButtonElevated>
-				<ToggleButtonElevated id="third">Third</ToggleButtonElevated>
-			</ToggleButtonGroupElevated>,
+			<ToggleButtonGroup
+				appearance="elevated"
+				selectionMode="multiple"
+				defaultSelectedKeys={['first', 'second']}
+			>
+				<ToggleButton appearance="elevated" id="first">
+					First
+				</ToggleButton>
+				<ToggleButton appearance="elevated" id="second">
+					Second
+				</ToggleButton>
+				<ToggleButton appearance="elevated" id="third">
+					Third
+				</ToggleButton>
+			</ToggleButtonGroup>,
 		);
 		expect(screen.getByRole('button', { name: 'First' })).toHaveAttribute('aria-pressed', 'true');
 		expect(screen.getByRole('button', { name: 'Second' })).toHaveAttribute('aria-pressed', 'true');
@@ -41,9 +61,11 @@ describe('ToggleButtonGroupElevated', () => {
 
 	it('supports disabled state', () => {
 		render(
-			<ToggleButtonGroupElevated isDisabled>
-				<ToggleButtonElevated id="first">First</ToggleButtonElevated>
-			</ToggleButtonGroupElevated>,
+			<ToggleButtonGroup appearance="elevated" isDisabled>
+				<ToggleButton appearance="elevated" id="first">
+					First
+				</ToggleButton>
+			</ToggleButtonGroup>,
 		);
 		expect(screen.getByRole('radio', { name: 'First' })).toBeDisabled();
 	});
