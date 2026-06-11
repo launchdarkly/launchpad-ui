@@ -11,7 +11,7 @@
 }
 
 .button {
-	flex: 1;
+	flex: 1 1 0;
 	border: none;
 	border-radius: var(--lp-border-radius-medium);
 	font-family: var(--lp-font-family-base);

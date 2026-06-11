@@ -32,7 +32,7 @@ export const Example: Story = {
 			</>
 		),
 		defaultSelectedKeys: ['first'],
-		style: { width: '220px' },
+		style: { width: '300px' },
 	},
 };
 
@@ -53,7 +53,7 @@ export const MultipleSelection: Story = {
 		),
 		selectionMode: 'multiple',
 		defaultSelectedKeys: ['first', 'second'],
-		style: { width: '220px' },
+		style: { width: '300px' },
 	},
 };
 
@@ -73,7 +73,7 @@ export const Orientation: Story = {
 			</>
 		),
 		orientation: 'vertical',
-		style: { width: '220px' },
+		style: { width: '300px' },
 	},
 };
 
@@ -94,6 +94,6 @@ export const Disabled: Story = {
 		),
 		isDisabled: true,
 		defaultSelectedKeys: ['first'],
-		style: { width: '220px' },
+		style: { width: '300px' },
 	},
 };
