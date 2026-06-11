@@ -50,6 +50,7 @@
 .button[data-selected] {
 	background: var(--lp-color-bg-interactive-secondary-active);
 	color: var(--lp-color-text-ui-primary-base);
+	font-weight: var(--lp-font-weight-semibold);
 	box-shadow:
 		0 0 1px 0 var(--lp-color-shadow-ui-primary),
 		0 1px 2px 0 var(--lp-color-shadow-ui-primary),
