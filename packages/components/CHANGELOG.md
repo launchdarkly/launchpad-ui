@@ -1,5 +1,11 @@
 # @launchpad-ui/components
 
+## 0.21.0
+
+### Minor Changes
+
+- [#1930](https://github.com/launchdarkly/launchpad-ui/pull/1930) [`7316a40`](https://github.com/launchdarkly/launchpad-ui/commit/7316a40bbda0ead95cca22dddbb512829e072d60) Thanks [@devin-ai-integration](https://github.com/apps/devin-ai-integration)! - Add `appearance` variant to `ToggleButtonGroup` and `ToggleButton` — set `appearance="elevated"` for a filled container background, custom button states, and distinct typography tokens.
+
 ## 0.20.0
 
 ### Minor Changes
