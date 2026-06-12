@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from 'react';
 import { Button } from '../../components/src/Button';
 import { ToastRegion, toastQueue } from '../../components/src/Toast';
 import { Tooltip, TooltipTrigger } from '../../components/src/Tooltip';
+import { type ComputedValue, getTokenHex, getTokenValue, TokenCode } from './colorTokens';
 
 export default {
 	title: 'Tokens/Color',
@@ -35,11 +36,18 @@ const flatten = (obj: Record<string, unknown>) => {
 
 const TokenTable = ({ tokens }: { tokens: Record<string, string> }) => {
 	const itemEls = useRef<Record<string, HTMLDivElement | null>>({});
-	const [colors, setColors] = useState<Record<string, string>>({});
+	const [colors, setColors] = useState<Record<string, ComputedValue>>({});
 
 	useEffect(() => {
 		for (const [key, value] of Object.entries(itemEls.current)) {
-			const item = { [key]: getComputedStyle(value as Element).backgroundColor };
+			if (!value) {
+				continue;
+			}
+
+			const styles = getComputedStyle(value);
+			const item = {
+				[key]: { color: styles.backgroundColor, image: styles.backgroundImage },
+			};
 			setColors((c) => ({ ...c, ...item }));
 		}
 	}, []);
@@ -51,11 +59,15 @@ const TokenTable = ({ tokens }: { tokens: Record<string, string> }) => {
 					<tr>
 						<th />
 						<th style={{ textAlign: 'left' }}>Name</th>
-						<th style={{ textAlign: 'left' }}>Value</th>
+						<th style={{ textAlign: 'left' }}>Hex</th>
+						<th style={{ textAlign: 'left' }}>rgba</th>
 					</tr>
 				</thead>
 				<tbody>
 					{Object.entries(tokens).map(([key, value]) => {
+						const computed = colors[key];
+						const hex = getTokenHex(computed);
+
 						return (
 							<tr key={key}>
 								<td>
@@ -88,7 +100,14 @@ const TokenTable = ({ tokens }: { tokens: Record<string, string> }) => {
 										<Tooltip placement="bottom">Copy to clipboard</Tooltip>
 									</TooltipTrigger>
 								</td>
-								<td>{colors[key]}</td>
+								<td>
+									{/* Gradients have no single hex value. */}
+									<TokenCode>{hex ?? (computed ? '—' : null)}</TokenCode>
+								</td>
+								<td>
+									{/* rgba is kept for backwards compatibility now that hex is shown. */}
+									<TokenCode muted={Boolean(hex)}>{getTokenValue(computed)}</TokenCode>
+								</td>
 							</tr>
 						);
 					})}
