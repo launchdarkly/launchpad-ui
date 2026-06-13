@@ -17,7 +17,7 @@ minimumReleaseAge: 10080 # 7 days
 
 overrides:
   vite: "npm:rolldown-vite@7.3.1"
-  esbuild: "^0.27.0"
+  esbuild: "^0.28.1"
   "@emnapi/core": "^1.7.1"
   "@emnapi/runtime": "^1.7.1"
 
@@ -31,3 +31,5 @@ strictPeerDependencies: true
 minimumReleaseAgeExclude:
   # Renovate security update: axios@1.15.2
   - axios@1.15.2
+  # Renovate security update: esbuild@0.28.1
+  - esbuild@0.28.1
