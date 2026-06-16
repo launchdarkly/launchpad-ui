@@ -14,16 +14,16 @@
 					"$value": "{color.gray.800}"
 				},
 				"error": {
-					"$value": "{color.red.50}"
+					"$value": "{color.red.0}"
 				},
 				"info": {
-					"$value": "{color.blue.50}"
+					"$value": "{color.blue.0}"
 				},
 				"success": {
-					"$value": "{color.green.50}"
+					"$value": "{color.green.0}"
 				},
 				"warning": {
-					"$value": "{color.yellow.50}"
+					"$value": "{color.yellow.0}"
 				}
 			},
 			"interactive": {
@@ -139,16 +139,16 @@
 			},
 			"feedback": {
 				"error": {
-					"$value": "{color.red.500}"
+					"$value": "{color.red.100}"
 				},
 				"info": {
-					"$value": "{color.blue.500}"
+					"$value": "{color.blue.100}"
 				},
 				"success": {
-					"$value": "{color.green.500}"
+					"$value": "{color.green.100}"
 				},
 				"warning": {
-					"$value": "{color.yellow.500}"
+					"$value": "{color.yellow.100}"
 				}
 			},
 			"field": {
@@ -162,7 +162,7 @@
 					"$value": "{color.blue.500}"
 				},
 				"error": {
-					"$value": "{color.border.feedback.error}"
+					"$value": "{color.red.500}"
 				},
 				"disabled": {
 					"$value": "{color.border.ui.secondary}"
@@ -201,7 +201,7 @@
 					}
 				},
 				"destructive": {
-					"$value": "{color.border.feedback.error}"
+					"$value": "{color.red.500}"
 				},
 				"disabled": {
 					"$value": "transparent"
@@ -238,7 +238,7 @@
 					"$value": "{color.green.500}"
 				},
 				"warning": {
-					"$value": "{color.yellow.500}"
+					"$value": "{color.yellow.600}"
 				}
 			},
 			"interactive": {
