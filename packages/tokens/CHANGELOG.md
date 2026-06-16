@@ -1,5 +1,19 @@
 # @launchpad-ui/tokens
 
+## 0.16.0
+
+### Minor Changes
+
+- [#1912](https://github.com/launchdarkly/launchpad-ui/pull/1912) [`56ff3d1`](https://github.com/launchdarkly/launchpad-ui/commit/56ff3d1c89b9ff842af9d40f2eac6f9e11461906) Thanks [@cpurps22](https://github.com/cpurps22)! - Update brand color hex values to match the latest [LD brand guidelines](https://launchdarkly.atlassian.net/wiki/spaces/MKT/pages/2342354958/LaunchDarkly+Brand+Control+Panel): `brand.orange` light (`#FFB660`) and dark (`#D57B10`), `brand.pink` dark (`#C51A77`), and `brand.lime` light (`#EDFF9E`) and dark (`#ADD300`).
+
+- [#1907](https://github.com/launchdarkly/launchpad-ui/pull/1907) [`7fe9bc5`](https://github.com/launchdarkly/launchpad-ui/commit/7fe9bc5e6918ca651fc722cd49278870e4b6f657) Thanks [@cmwinters](https://github.com/cmwinters)! - Add canonical `brand.lime` tokens aligned with [LD brand guidelines](https://launchdarkly.atlassian.net/wiki/spaces/MKT/pages/2342354958/LaunchDarkly+Brand+Control+Panel) (`#DDFF46`). Deprecate `brand.yellow` and `brand.green` as aliases to lime for backward compatibility. Add BadgeIcon `lime` variant and lime-based gradients.
+
+- [#1913](https://github.com/launchdarkly/launchpad-ui/pull/1913) [`091ba18`](https://github.com/launchdarkly/launchpad-ui/commit/091ba18d34b207940c4e0b0b9413460d67b48b97) Thanks [@cmwinters](https://github.com/cmwinters)! - Add core `color.yellow` primitives and wire `feedback.warning` semantic aliases (bg, text, border, fill) in default and dark themes. Migrate Alert warning styles off temporary hardcoded colors to the new tokens.
+
+### Patch Changes
+
+- [#1915](https://github.com/launchdarkly/launchpad-ui/pull/1915) [`f3bf657`](https://github.com/launchdarkly/launchpad-ui/commit/f3bf65722390d448079b79d3e300d12b891cdbf0) Thanks [@cmwinters](https://github.com/cmwinters)! - Retune `color.yellow` warning primitives and adjust dark mode Alert warning border token step.
+
 ## 0.15.1
 
 ### Patch Changes

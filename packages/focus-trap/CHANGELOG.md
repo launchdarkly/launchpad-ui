@@ -1,5 +1,15 @@
 # @launchpad-ui/focus-trap
 
+## 0.5.3
+
+### Patch Changes
+
+- [#1914](https://github.com/launchdarkly/launchpad-ui/pull/1914) [`68cf6f3`](https://github.com/launchdarkly/launchpad-ui/commit/68cf6f3f5b1e69b05f3d041509a90fcc78f2c6f6) Thanks [@apucacao](https://github.com/apucacao)! - Upgrade `react-aria-components` to 1.18.0 along with aligned `react-aria` (3.49.0), `react-stately` (3.47.0), `@react-aria/*`, `@react-stately/*`, `@react-types/*`, and `@internationalized/*` packages.
+
+  Upstream behavior change worth noting:
+
+  - `Checkbox`, `Radio`, and `Switch` are now soft-deprecated in favor of `CheckboxField`/`RadioField`/`SwitchField` (which add `description`/`FieldError` slot support). The deprecated components still work, but they now render an additional DOM wrapper around the label element.
+
 ## 0.5.2
 
 ### Patch Changes
