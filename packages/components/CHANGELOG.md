@@ -1,5 +1,41 @@
 # @launchpad-ui/components
 
+## 0.21.0
+
+### Minor Changes
+
+- [#1930](https://github.com/launchdarkly/launchpad-ui/pull/1930) [`7316a40`](https://github.com/launchdarkly/launchpad-ui/commit/7316a40bbda0ead95cca22dddbb512829e072d60) Thanks [@devin-ai-integration](https://github.com/apps/devin-ai-integration)! - Add `appearance` variant to `ToggleButtonGroup` and `ToggleButton` — set `appearance="elevated"` for a filled container background, custom button states, and distinct typography tokens.
+
+## 0.20.0
+
+### Minor Changes
+
+- [#1909](https://github.com/launchdarkly/launchpad-ui/pull/1909) [`0e8c60b`](https://github.com/launchdarkly/launchpad-ui/commit/0e8c60bfc81d9503b8f3238f7fa33cf0c8b5e198) Thanks [@cmwinters](https://github.com/cmwinters)! - Add `EmptyState` to display empty content views with an illustration, heading, description, and optional action button.
+
+- [#1917](https://github.com/launchdarkly/launchpad-ui/pull/1917) [`d226c3a`](https://github.com/launchdarkly/launchpad-ui/commit/d226c3a3f3cb3d1a8238bf048492fa72015abdf9) Thanks [@maheskett](https://github.com/maheskett)! - Add `switchLabels` prop and `variant` prop to `Switch`. Pass `switchLabels={false}` to hide On/Off labels and render a compact track. `variant: "primary"` uses a blue background color for the selected state.
+
+### Patch Changes
+
+- [#1910](https://github.com/launchdarkly/launchpad-ui/pull/1910) [`d54fac2`](https://github.com/launchdarkly/launchpad-ui/commit/d54fac253230ef1919f2eb7d3b75a4417c6719ef) Thanks [@cmwinters](https://github.com/cmwinters)! - Adjust dark mode Alert warning variant colors to read more yellow/gold and distinguish from error. Use theme-aware `--alert-color-icon-warning` token for the warning icon fill.
+
+- [#1924](https://github.com/launchdarkly/launchpad-ui/pull/1924) [`200541e`](https://github.com/launchdarkly/launchpad-ui/commit/200541e51e8d5adc4e602a418b714a62dc31aa27) Thanks [@pkaeding](https://github.com/pkaeding)! - Update `react-router` peer dependency to 7.15.1 to address high-severity vulnerabilities (RCE, XSS, DoS).
+
+- [#1915](https://github.com/launchdarkly/launchpad-ui/pull/1915) [`f3bf657`](https://github.com/launchdarkly/launchpad-ui/commit/f3bf65722390d448079b79d3e300d12b891cdbf0) Thanks [@cmwinters](https://github.com/cmwinters)! - Retune `color.yellow` warning primitives and adjust dark mode Alert warning border token step.
+
+- [#1907](https://github.com/launchdarkly/launchpad-ui/pull/1907) [`7fe9bc5`](https://github.com/launchdarkly/launchpad-ui/commit/7fe9bc5e6918ca651fc722cd49278870e4b6f657) Thanks [@cmwinters](https://github.com/cmwinters)! - Add canonical `brand.lime` tokens aligned with [LD brand guidelines](https://launchdarkly.atlassian.net/wiki/spaces/MKT/pages/2342354958/LaunchDarkly+Brand+Control+Panel) (`#DDFF46`). Deprecate `brand.yellow` and `brand.green` as aliases to lime for backward compatibility. Add BadgeIcon `lime` variant and lime-based gradients.
+
+- [#1914](https://github.com/launchdarkly/launchpad-ui/pull/1914) [`68cf6f3`](https://github.com/launchdarkly/launchpad-ui/commit/68cf6f3f5b1e69b05f3d041509a90fcc78f2c6f6) Thanks [@apucacao](https://github.com/apucacao)! - Upgrade `react-aria-components` to 1.18.0 along with aligned `react-aria` (3.49.0), `react-stately` (3.47.0), `@react-aria/*`, `@react-stately/*`, `@react-types/*`, and `@internationalized/*` packages.
+
+  Upstream behavior change worth noting:
+
+  - `Checkbox`, `Radio`, and `Switch` are now soft-deprecated in favor of `CheckboxField`/`RadioField`/`SwitchField` (which add `description`/`FieldError` slot support). The deprecated components still work, but they now render an additional DOM wrapper around the label element.
+
+- [#1913](https://github.com/launchdarkly/launchpad-ui/pull/1913) [`091ba18`](https://github.com/launchdarkly/launchpad-ui/commit/091ba18d34b207940c4e0b0b9413460d67b48b97) Thanks [@cmwinters](https://github.com/cmwinters)! - Add core `color.yellow` primitives and wire `feedback.warning` semantic aliases (bg, text, border, fill) in default and dark themes. Migrate Alert warning styles off temporary hardcoded colors to the new tokens.
+
+- Updated dependencies [[`f3bf657`](https://github.com/launchdarkly/launchpad-ui/commit/f3bf65722390d448079b79d3e300d12b891cdbf0), [`56ff3d1`](https://github.com/launchdarkly/launchpad-ui/commit/56ff3d1c89b9ff842af9d40f2eac6f9e11461906), [`7fe9bc5`](https://github.com/launchdarkly/launchpad-ui/commit/7fe9bc5e6918ca651fc722cd49278870e4b6f657), [`091ba18`](https://github.com/launchdarkly/launchpad-ui/commit/091ba18d34b207940c4e0b0b9413460d67b48b97)]:
+  - @launchpad-ui/tokens@0.16.0
+  - @launchpad-ui/icons@0.26.0
+
 ## 0.19.1
 
 ### Patch Changes
