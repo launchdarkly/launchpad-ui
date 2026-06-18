@@ -31,3 +31,5 @@ strictPeerDependencies: true
 minimumReleaseAgeExclude:
   # Renovate security update: axios@1.15.2
   - axios@1.15.2
+  # Renovate security update: lodash@4.18.1
+  - lodash@4.18.1
