@@ -41,28 +41,28 @@
 		"@react-aria/interactions": "3.28.1",
 		"@react-aria/utils": "3.34.1",
 		"@react-stately/utils": "3.12.1",
-		"@react-types/shared": "3.35.0",
+		"@react-types/shared": "3.36.0",
 		"copyfiles": "2.4.1",
 		"react": "19.2.6",
-		"react-aria": "3.49.0",
-		"react-aria-components": "1.18.0",
+		"react-aria": "3.50.0",
+		"react-aria-components": "1.19.0",
 		"react-dom": "19.2.6",
 		"react-router": "7.15.1",
-		"react-stately": "3.47.0"
+		"react-stately": "3.48.0"
 	},
 	"peerDependencies": {
 		"@react-aria/focus": "3.22.1",
 		"@react-aria/interactions": "3.28.1",
 		"@react-aria/utils": "3.34.1",
 		"@react-stately/utils": "3.12.1",
-		"@react-types/shared": "3.35.0",
+		"@react-types/shared": "3.36.0",
 		"react": "19.2.6",
-		"react-aria": "3.49.0",
-		"react-aria-components": "1.18.0",
+		"react-aria": "3.50.0",
+		"react-aria-components": "1.19.0",
 		"react-dom": "19.2.6",
 		"react-hook-form": "7.59.0",
 		"react-router": "7.15.1",
-		"react-stately": "3.47.0"
+		"react-stately": "3.48.0"
 	},
 	"exports": {
 		".": {
