@@ -84,7 +84,10 @@
 		gap: var(--lp-size-10);
 	}
 
-	& [slot='subtitle'] {
+	/* Scope to the overlay's own subtitle. The `:not()` keeps this from reaching into a
+	   nested Alert's slotted text, which reuses the `subtitle` slot and would otherwise
+	   inherit the overlay's title/subtitle grid styling. */
+	& [slot='subtitle']:not([role='alert'] *) {
 		font: var(--lp-text-body-1-regular);
 		color: var(--lp-color-text-ui-secondary);
 		grid-row: 2;

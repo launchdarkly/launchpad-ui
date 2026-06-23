@@ -5,7 +5,8 @@ import { StatusIcon } from '@launchpad-ui/icons';
 import { useControlledState } from '@react-stately/utils';
 import { cva } from 'class-variance-authority';
 import { HeadingContext } from 'react-aria-components/Heading';
-import { Provider } from 'react-aria-components/slots';
+import { DEFAULT_SLOT, Provider } from 'react-aria-components/slots';
+import { TextContext } from 'react-aria-components/Text';
 
 import { ButtonGroupContext } from './ButtonGroup';
 import { IconButton } from './IconButton';
@@ -99,6 +100,19 @@ const Alert = ({
 					values={[
 						[HeadingContext, { className: styles.heading }],
 						[ButtonGroupContext, { className: styles.buttonGroup }],
+						// Establish Alert's own Text context so an ancestor overlay (e.g. a Dialog,
+						// which sets a `subtitle` slot with its own id/elementType/CSS) cannot leak
+						// into Alert content. Provides a default slot so a bare <Text> works, plus a
+						// `subtitle` slot for backward compatibility with existing usage.
+						[
+							TextContext,
+							{
+								slots: {
+									[DEFAULT_SLOT]: {},
+									subtitle: {},
+								},
+							},
+						],
 					]}
 				>
 					{children}

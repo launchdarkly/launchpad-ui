@@ -1,9 +1,13 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 
+import { expect, userEvent, waitFor, within } from 'storybook/test';
+
 import { Alert, AlertText } from '../src/Alert';
 import { Button } from '../src/Button';
 import { ButtonGroup } from '../src/ButtonGroup';
+import { Dialog, DialogTrigger } from '../src/Dialog';
 import { Heading } from '../src/Heading';
+import { Modal, ModalOverlay } from '../src/Modal';
 import { Text } from '../src/Text';
 
 const meta: Meta<typeof Alert> = {
@@ -235,4 +239,57 @@ export const InlineTones: Story = {
 		</div>
 	),
 	name: 'Inline/Tones',
+};
+
+// =============================================================================
+// Nested overlay regression (DSYS-157)
+// =============================================================================
+
+/**
+ * Regression coverage for DSYS-157. When Alerts are nested inside a Dialog/Modal, the
+ * overlay's `subtitle` slot context (styling + semantics) must not leak into the Alert's
+ * text. The Dialog's own subtitle keeps the overlay styling, while both nested Alerts
+ * render with the Alert's body-text styling — identical to how they look outside a modal.
+ */
+export const NestedInDialog: Story = {
+	render: () => (
+		<DialogTrigger>
+			<Button>Open dialog</Button>
+			<ModalOverlay>
+				<Modal>
+					<Dialog
+						style={{ display: 'flex', flexDirection: 'column', gap: 'var(--lp-spacing-400)' }}
+					>
+						<Heading slot="title">Archive flag?</Heading>
+						<Text slot="subtitle">
+							The Dialog's own subtitle — this keeps the overlay subtitle styling.
+						</Text>
+						<Alert status="warning">
+							<Heading>Heads up before archiving</Heading>
+							<Text slot="subtitle">
+								Scenario alert body. Inside the dialog this must use the Alert's text styling, not
+								the Dialog's subtitle styling.
+							</Text>
+						</Alert>
+						<Alert status="info">
+							<Heading>No critical environments to check</Heading>
+							{/* Bare <Text> now works inside an Alert, even within a Dialog. */}
+							<Text>
+								No checks were run because you don't have any critical environments set up.
+							</Text>
+						</Alert>
+					</Dialog>
+				</Modal>
+			</ModalOverlay>
+		</DialogTrigger>
+	),
+	play: async ({ canvasElement }) => {
+		const canvas = within(canvasElement);
+		await userEvent.click(canvas.getByRole('button'));
+		const body = canvasElement.ownerDocument.body;
+		await waitFor(async () => {
+			expect(await within(body).findByRole('dialog')).toBeVisible();
+		});
+	},
+	name: 'Nested in Dialog (DSYS-157)',
 };
