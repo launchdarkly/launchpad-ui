@@ -16,6 +16,9 @@
 		},
 		"display": {
 			"$value": "Audimat\\ 3000 Regulier"
+		},
+		"sora": {
+			"$value": "Sora, Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, Helvetica, Arial, sans-serif"
 		}
 	},
 	"fontSize": {
@@ -50,6 +53,47 @@
 		},
 		"800": {
 			"$value": 60
+		},
+		"editorial": {
+			"14": {
+				"$value": "{size.14}"
+			},
+			"16": {
+				"$value": "{size.16}"
+			},
+			"18": {
+				"$value": "{size.18}"
+			},
+			"20": {
+				"$value": "{size.20}"
+			},
+			"24": {
+				"$value": "{size.24}"
+			},
+			"30": {
+				"$value": "{size.30}"
+			},
+			"32": {
+				"$value": "{size.32}"
+			},
+			"40": {
+				"$value": "{size.40}"
+			},
+			"48": {
+				"$value": "{size.48}"
+			},
+			"50": {
+				"$value": "{size.50}"
+			},
+			"56": {
+				"$value": "{size.56}"
+			},
+			"64": {
+				"$value": "{size.64}"
+			},
+			"80": {
+				"$value": "{size.80}"
+			}
 		}
 	},
 	"fontWeight": {
@@ -78,6 +122,17 @@
 		},
 		"extrabold": {
 			"$value": 800
+		},
+		"editorial": {
+			"medium": {
+				"$value": 500
+			},
+			"semibold": {
+				"$value": 600
+			},
+			"bold": {
+				"$value": 700
+			}
 		}
 	},
 	"lineHeight": {
@@ -103,6 +158,62 @@
 		},
 		"500": {
 			"$value": "{size.72}"
+		},
+		"editorial": {
+			"tight": {
+				"$value": 1
+			},
+			"snug": {
+				"$value": 1.05
+			},
+			"close": {
+				"$value": 1.1
+			},
+			"default": {
+				"$value": 1.15
+			},
+			"relaxed": {
+				"$value": 1.5
+			}
+		}
+	},
+	"letterSpacing": {
+		"$type": "dimension",
+		"$extensions": {
+			"com.figma": {
+				"hiddenFromPublishing": false,
+				"scopes": ["LETTER_SPACING"],
+				"codeSyntax": {}
+			}
+		},
+		"editorial": {
+			"tight-2px": {
+				"$value": "-2px"
+			},
+			"tight-1px": {
+				"$value": "-1px"
+			},
+			"tight-em-05": {
+				"$value": "-0.05em"
+			},
+			"tight-em-03": {
+				"$value": "-0.03em"
+			},
+			"tight-px-065": {
+				"$value": "-0.65px"
+			},
+			"tight-px-050": {
+				"$value": "-0.5px"
+			},
+			"tight-px-025": {
+				"$value": "-0.25px"
+			},
+			"wide-em-06": {
+				"$value": "0.06em"
+			},
+			"normal": {
+				"$value": 0
+			}
 		}
 	}
 }
