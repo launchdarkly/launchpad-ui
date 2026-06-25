@@ -48,20 +48,20 @@ const renderModal = (args: Story['args']) => (
 		<Button>Trigger</Button>
 		<ModalOverlay>
 			<Modal {...args}>
-				<div slot="header">
-					<Heading slot="title">Title</Heading>
-					<IconButton
-						aria-label="close"
-						icon="cancel"
-						size="small"
-						variant="minimal"
-						onPress={close}
-					/>
-					<Text slot="subtitle">Subtitle</Text>
-				</div>
 				<Dialog>
 					{({ close }) => (
 						<>
+							<div slot="header">
+								<Heading slot="title">Title</Heading>
+								<IconButton
+									aria-label="close"
+									icon="cancel"
+									size="small"
+									variant="minimal"
+									onPress={close}
+								/>
+								<Text slot="subtitle">Subtitle</Text>
+							</div>
 							<div slot="body">Body text</div>
 							<div slot="footer">
 								<Button slot="close">Cancel</Button>
@@ -124,27 +124,27 @@ export const WithHeader: Story = {
 			<Button>Trigger</Button>
 			<ModalOverlay>
 				<Modal {...args}>
-					<div slot="header">
-						<Heading slot="title">Invite teammates</Heading>
-						<IconButton
-							aria-label="close"
-							icon="cancel"
-							size="small"
-							variant="minimal"
-							onPress={close}
-						/>
-						<Text slot="subtitle">They'll get an email with a link to join.</Text>
-						<Alert status="warning">
-							<Heading>Heads up before archiving</Heading>
-							<Text slot="subtitle">
-								Scenario alert body. Inside the dialog this must use the Alert's text styling, not
-								the Dialog's subtitle styling.
-							</Text>
-						</Alert>
-					</div>
 					<Dialog>
 						{({ close }) => (
 							<>
+								<div slot="header">
+									<Heading slot="title">Invite teammates</Heading>
+									<IconButton
+										aria-label="close"
+										icon="cancel"
+										size="small"
+										variant="minimal"
+										onPress={close}
+									/>
+									<Text slot="subtitle">They'll get an email with a link to join.</Text>
+									<Alert status="warning">
+										<Heading>Heads up before archiving</Heading>
+										<Text slot="subtitle">
+											Scenario alert body. Inside the dialog this must use the Alert's text styling,
+											not the Dialog's subtitle styling.
+										</Text>
+									</Alert>
+								</div>
 								<div slot="body">Body text</div>
 								<div slot="footer">
 									<Button slot="close">Cancel</Button>
