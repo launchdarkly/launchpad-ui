@@ -2,6 +2,7 @@ import type { Meta, ReactRenderer, StoryObj } from '@storybook/react-vite';
 import type { ComponentType } from 'react';
 import type { PlayFunction } from 'storybook/internal/types';
 
+import { Alert } from '@launchpad-ui/components';
 import { expect, userEvent, waitFor, within } from 'storybook/test';
 
 import { allModes } from '../../../.storybook/modes';
@@ -133,6 +134,13 @@ export const WithHeader: Story = {
 							onPress={close}
 						/>
 						<Text slot="subtitle">They'll get an email with a link to join.</Text>
+						<Alert status="warning">
+							<Heading>Heads up before archiving</Heading>
+							<Text slot="subtitle">
+								Scenario alert body. Inside the dialog this must use the Alert's text styling, not
+								the Dialog's subtitle styling.
+							</Text>
+						</Alert>
 					</div>
 					<Dialog>
 						{({ close }) => (
@@ -193,6 +201,14 @@ export const DialogWithActiveToast: Story = {
 													onPress={close}
 												/>
 												<Text slot="subtitle">Try clicking the button below with toast active</Text>
+												<Alert status="info">
+													<Heading>No critical environments to check</Heading>
+													{/* Bare <Text> now works inside an Alert, even within a Dialog. */}
+													<Text>
+														No checks were run because you don't have any critical environments set
+														up.
+													</Text>
+												</Alert>
 											</div>
 											<div slot="body">
 												<p>
