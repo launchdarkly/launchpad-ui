@@ -61,6 +61,14 @@
 		height: 100%;
 	}
 
+	& [role='dialog'] > [slot='subtitle'],
+	& [slot='header'] > [slot='subtitle'] {
+		font: var(--lp-text-body-1-regular);
+		color: var(--lp-color-text-ui-secondary);
+		grid-row: 2;
+		grid-column: 1 / span 2;
+	}
+
 	& [slot='header'] {
 		display: grid;
 		grid-template-columns: 1fr;
@@ -82,16 +90,6 @@
 		justify-content: flex-end;
 		align-items: center;
 		gap: var(--lp-size-10);
-	}
-
-	/* Scope to the overlay's own subtitle. The `:not()` keeps this from reaching into a
-	   nested Alert's slotted text, which reuses the `subtitle` slot and would otherwise
-	   inherit the overlay's title/subtitle grid styling. */
-	& [slot='subtitle']:not([role='alert'] *) {
-		font: var(--lp-text-body-1-regular);
-		color: var(--lp-color-text-ui-secondary);
-		grid-row: 2;
-		grid-column: 1 / span 2;
 	}
 }
 
