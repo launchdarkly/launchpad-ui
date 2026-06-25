@@ -100,10 +100,6 @@ const Alert = ({
 					values={[
 						[HeadingContext, { className: styles.heading }],
 						[ButtonGroupContext, { className: styles.buttonGroup }],
-						// Establish Alert's own Text context so an ancestor overlay (e.g. a Dialog,
-						// which sets a `subtitle` slot with its own id/elementType/CSS) cannot leak
-						// into Alert content. Provides a default slot so a bare <Text> works, plus a
-						// `subtitle` slot for backward compatibility with existing usage.
 						[
 							TextContext,
 							{

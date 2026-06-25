@@ -69,6 +69,10 @@
 		grid-column: 1 / span 2;
 	}
 
+	> [slot='header'] {
+		margin-bottom: var(--lp-size-20);
+	}
+
 	& [slot='header'] {
 		display: grid;
 		grid-template-columns: 1fr;

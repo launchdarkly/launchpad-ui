@@ -47,20 +47,20 @@ const renderModal = (args: Story['args']) => (
 		<Button>Trigger</Button>
 		<ModalOverlay>
 			<Modal {...args}>
+				<div slot="header">
+					<Heading slot="title">Title</Heading>
+					<IconButton
+						aria-label="close"
+						icon="cancel"
+						size="small"
+						variant="minimal"
+						onPress={close}
+					/>
+					<Text slot="subtitle">Subtitle</Text>
+				</div>
 				<Dialog>
 					{({ close }) => (
 						<>
-							<div slot="header">
-								<Heading slot="title">Title</Heading>
-								<IconButton
-									aria-label="close"
-									icon="cancel"
-									size="small"
-									variant="minimal"
-									onPress={close}
-								/>
-								<Text slot="subtitle">Subtitle</Text>
-							</div>
 							<div slot="body">Body text</div>
 							<div slot="footer">
 								<Button slot="close">Cancel</Button>
@@ -112,26 +112,31 @@ export const Drawer: Story = {
 	},
 };
 
+/**
+ * A Modal with a slotted `header`. The `header` groups the `title`, an optional
+ * `subtitle`, and the close button into the overlay's header grid, separate from the
+ * `body` and `footer`.
+ */
 export const WithHeader: Story = {
 	render: (args) => (
 		<DialogTrigger>
 			<Button>Trigger</Button>
 			<ModalOverlay>
 				<Modal {...args}>
+					<div slot="header">
+						<Heading slot="title">Invite teammates</Heading>
+						<IconButton
+							aria-label="close"
+							icon="cancel"
+							size="small"
+							variant="minimal"
+							onPress={close}
+						/>
+						<Text slot="subtitle">They'll get an email with a link to join.</Text>
+					</div>
 					<Dialog>
 						{({ close }) => (
 							<>
-								<div slot="header">
-									<Heading slot="title">Invite teammates</Heading>
-									<IconButton
-										aria-label="close"
-										icon="cancel"
-										size="small"
-										variant="minimal"
-										onPress={close}
-									/>
-									<Text slot="subtitle">They'll get an email with a link to join.</Text>
-								</div>
 								<div slot="body">Body text</div>
 								<div slot="footer">
 									<Button slot="close">Cancel</Button>
