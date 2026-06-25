@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react-vite';
 import type { ComponentType } from 'react';
 
 import { vars } from '@launchpad-ui/vars';
-import { userEvent, within } from 'storybook/test';
+import { expect, userEvent, within } from 'storybook/test';
 
 import { FieldError } from '../src/FieldError';
 import { Input } from '../src/Input';
@@ -38,6 +38,34 @@ export default meta;
 type Story = StoryObj<typeof TextField>;
 
 export const Example: Story = {
+	args: {
+		description: 'Description',
+		children: (
+			<>
+				<Label>Label</Label>
+				<Input placeholder="Enter a value" />
+			</>
+		),
+	},
+	play: async ({ canvasElement }) => {
+		const canvas = within(canvasElement);
+		const input = canvas.getByRole('textbox');
+		const description = canvas.getByText('Description');
+
+		// The description prop renders helper text and links it to the input for screen readers.
+		await expect(description).toBeInTheDocument();
+		await expect(input).toHaveAttribute(
+			'aria-describedby',
+			expect.stringContaining(description.id),
+		);
+	},
+};
+
+/**
+ * The `description` prop is a convenience for rendering helper text. The same result can still be
+ * achieved by passing a `<Text slot="description">` child directly, which remains fully supported.
+ */
+export const DescriptionAsSlot: Story = {
 	args: {
 		children: (
 			<>

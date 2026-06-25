@@ -11,6 +11,7 @@ import { composeRenderProps } from 'react-aria-components/composeRenderProps';
 import { GroupContext } from 'react-aria-components/Group';
 import { Provider } from 'react-aria-components/slots';
 
+import { type FieldHelperProps, renderFieldHelpers } from './fieldHelpers';
 import { IconButton } from './IconButton';
 import { PopoverContext } from './Popover';
 import styles from './styles/ComboBox.module.css';
@@ -18,7 +19,7 @@ import { useLPContextProps } from './utils';
 
 const comboBoxStyles = cva(styles.box);
 
-interface ComboBoxProps<T extends object> extends AriaComboBoxProps<T> {
+interface ComboBoxProps<T extends object> extends AriaComboBoxProps<T>, FieldHelperProps {
 	ref?: Ref<HTMLDivElement>;
 }
 
@@ -32,7 +33,12 @@ const ComboBoxContext = createContext<ContextValue<ComboBoxProps<any>, HTMLDivEl
  *
  * https://react-spectrum.adobe.com/react-aria/ComboBox.html
  */
-const ComboBox = <T extends object>({ ref, ...props }: ComboBoxProps<T>) => {
+const ComboBox = <T extends object>({
+	ref,
+	description,
+	errorMessage,
+	...props
+}: ComboBoxProps<T>) => {
 	[props, ref] = useLPContextProps(props, ref, ComboBoxContext);
 	const { menuTrigger = 'focus' } = props;
 	const groupRef = useRef<HTMLDivElement>(null);
@@ -72,7 +78,7 @@ const ComboBox = <T extends object>({ ref, ...props }: ComboBoxProps<T>) => {
 						],
 					]}
 				>
-					{children}
+					{renderFieldHelpers(children, { description, errorMessage })}
 				</Provider>
 			))}
 		</AriaComboBox>

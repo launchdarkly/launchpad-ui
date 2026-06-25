@@ -11,11 +11,20 @@ figma.connect(
 				true: 10,
 				false: undefined,
 			}),
+			description: figma.boolean('Description?', {
+				true: figma.string('Description'),
+				false: undefined,
+			}),
 			isInvalid: figma.enum('State', { Invalid: true }),
 			isDisabled: figma.enum('State', { Disabled: true }),
 		},
-		example: ({ isInvalid, isDisabled, defaultValue }) => (
-			<NumberField isInvalid={isInvalid} isDisabled={isDisabled} defaultValue={defaultValue} />
+		example: ({ isInvalid, isDisabled, defaultValue, description }) => (
+			<NumberField
+				isInvalid={isInvalid}
+				isDisabled={isDisabled}
+				defaultValue={defaultValue}
+				description={description}
+			/>
 		),
 	},
 );
@@ -34,13 +43,22 @@ figma.connect(
 				true: 10,
 				false: undefined,
 			}),
+			description: figma.boolean('Description?', {
+				true: figma.string('Description'),
+				false: undefined,
+			}),
 			isInvalid: figma.enum('State', { Invalid: true }),
 			isDisabled: figma.enum('State', { Disabled: true }),
 		},
-		example: ({ isInvalid, isDisabled, defaultValue, label }) => (
+		example: ({ isInvalid, isDisabled, defaultValue, label, description }) => (
 			<>
 				{label}
-				<NumberField isInvalid={isInvalid} isDisabled={isDisabled} defaultValue={defaultValue} />
+				<NumberField
+					isInvalid={isInvalid}
+					isDisabled={isDisabled}
+					defaultValue={defaultValue}
+					description={description}
+				/>
 			</>
 		),
 	},

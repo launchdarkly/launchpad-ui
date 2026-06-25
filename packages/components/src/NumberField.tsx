@@ -7,12 +7,13 @@ import { createContext } from 'react';
 import { composeRenderProps } from 'react-aria-components/composeRenderProps';
 import { NumberField as AriaNumberField } from 'react-aria-components/NumberField';
 
+import { type FieldHelperProps, renderFieldHelpers } from './fieldHelpers';
 import styles from './styles/NumberField.module.css';
 import { useLPContextProps } from './utils';
 
 const numberFieldStyles = cva(styles.number);
 
-interface NumberFieldProps extends AriaNumberFieldProps {
+interface NumberFieldProps extends AriaNumberFieldProps, FieldHelperProps {
 	ref?: Ref<HTMLDivElement>;
 }
 
@@ -23,7 +24,7 @@ const NumberFieldContext = createContext<ContextValue<NumberFieldProps, HTMLDivE
  *
  * https://react-spectrum.adobe.com/react-aria/NumberField.html
  */
-const NumberField = ({ ref, ...props }: NumberFieldProps) => {
+const NumberField = ({ ref, description, errorMessage, ...props }: NumberFieldProps) => {
 	[props, ref] = useLPContextProps(props, ref, NumberFieldContext);
 	const {
 		formatOptions = {
@@ -40,7 +41,11 @@ const NumberField = ({ ref, ...props }: NumberFieldProps) => {
 			className={composeRenderProps(props.className, (className, renderProps) =>
 				numberFieldStyles({ ...renderProps, className }),
 			)}
-		/>
+		>
+			{composeRenderProps(props.children, (children) =>
+				renderFieldHelpers(children, { description, errorMessage }),
+			)}
+		</AriaNumberField>
 	);
 };
 

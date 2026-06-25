@@ -11,11 +11,15 @@ figma.connect(
 				true: figma.children(['Label']),
 				false: undefined,
 			}),
+			description: figma.boolean('Description?', {
+				true: figma.string('Description'),
+				false: undefined,
+			}),
 			isInvalid: figma.enum('State', { Invalid: true }),
 			isDisabled: figma.enum('State', { Disabled: true }),
 		},
-		example: ({ label, isInvalid, isDisabled }) => (
-			<SearchField isInvalid={isInvalid} isDisabled={isDisabled}>
+		example: ({ label, isInvalid, isDisabled, description }) => (
+			<SearchField isInvalid={isInvalid} isDisabled={isDisabled} description={description}>
 				{label}
 				<Group>
 					{/* <Icon name="search" size="small" /> */}

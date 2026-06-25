@@ -14,9 +14,17 @@ figma.connect(
 				true: 'Select an option',
 				false: undefined,
 			}),
+			description: figma.boolean('Description?', {
+				true: figma.string('Description'),
+				false: undefined,
+			}),
 		},
-		example: ({ label }) => (
-			<Select selectedKey="1" onSelectionChange={(key) => console.log(key)}>
+		example: ({ label, description }) => (
+			<Select
+				selectedKey="1"
+				onSelectionChange={(key) => console.log(key)}
+				description={description}
+			>
 				{label}
 				<Button>
 					<SelectValue />

@@ -19,6 +19,10 @@ figma.connect(
 				true: figma.textContent('Value'),
 				false: undefined,
 			}),
+			description: figma.boolean('Description?', {
+				true: figma.textContent('Description'),
+				false: undefined,
+			}),
 			multiline: figma.boolean('Multi Line'),
 			variant: figma.boolean('Minimal', {
 				true: 'minimal',
@@ -32,9 +36,9 @@ figma.connect(
 			isDisabled: figma.enum('State', { Disabled: true }),
 			validationMessage: figma.textContent('Validation message'),
 		},
-		example: ({ children, variant, placeholder, value, isDisabled }) => {
+		example: ({ children, variant, placeholder, value, isDisabled, description }) => {
 			return (
-				<TextField isDisabled={isDisabled}>
+				<TextField isDisabled={isDisabled} description={description}>
 					{children}
 					<Input variant={variant} placeholder={placeholder} value={value} />
 				</TextField>
@@ -66,6 +70,10 @@ figma.connect(
 				true: figma.textContent('Value'),
 				false: undefined,
 			}),
+			description: figma.boolean('Description?', {
+				true: figma.textContent('Description'),
+				false: undefined,
+			}),
 			isDisabled: figma.enum('State', { Disabled: true }),
 			validationMessage: figma.textContent('Validation message'),
 		},
@@ -77,9 +85,10 @@ figma.connect(
 			isDisabled,
 			isInvalid,
 			validationMessage,
+			description,
 		}) => {
 			return (
-				<TextField isDisabled={isDisabled} isInvalid={isInvalid}>
+				<TextField isDisabled={isDisabled} isInvalid={isInvalid} description={description}>
 					{children}
 					<Input variant={variant} placeholder={placeholder} value={value} />
 					<FieldError>{validationMessage}</FieldError>
@@ -107,11 +116,15 @@ figma.connect(
 				true: figma.textContent('Value'),
 				false: undefined,
 			}),
+			description: figma.boolean('Description?', {
+				true: figma.textContent('Description'),
+				false: undefined,
+			}),
 			isDisabled: figma.enum('State', { Disabled: true }),
 		},
-		example: ({ children, placeholder, value, isDisabled }) => {
+		example: ({ children, placeholder, value, isDisabled, description }) => {
 			return (
-				<TextField isDisabled={isDisabled}>
+				<TextField isDisabled={isDisabled} description={description}>
 					{children}
 					<TextArea placeholder={placeholder} value={value} />
 				</TextField>
@@ -136,12 +149,24 @@ figma.connect(
 				false: undefined,
 			}),
 			value: figma.textContent('Value'),
+			description: figma.boolean('Description?', {
+				true: figma.textContent('Description'),
+				false: undefined,
+			}),
 			isDisabled: figma.enum('State', { Disabled: true }),
 			validationMessage: figma.textContent('Validation message'),
 		},
-		example: ({ children, placeholder, value, isDisabled, isInvalid, validationMessage }) => {
+		example: ({
+			children,
+			placeholder,
+			value,
+			isDisabled,
+			isInvalid,
+			validationMessage,
+			description,
+		}) => {
 			return (
-				<TextField isDisabled={isDisabled} isInvalid={isInvalid}>
+				<TextField isDisabled={isDisabled} isInvalid={isInvalid} description={description}>
 					{children}
 					<TextArea placeholder={placeholder} value={value} />
 					<FieldError>{validationMessage}</FieldError>

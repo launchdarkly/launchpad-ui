@@ -11,10 +11,14 @@ figma.connect(
 				true: figma.children(['Label']),
 				false: undefined,
 			}),
+			description: figma.boolean('Description?', {
+				true: figma.string('Description'),
+				false: undefined,
+			}),
 			radios: figma.children(['.Radio']),
 		},
-		example: ({ label, radios }) => (
-			<RadioGroup defaultValue="1">
+		example: ({ label, radios, description }) => (
+			<RadioGroup defaultValue="1" description={description}>
 				{label}
 				<ButtonGroup role="presentation" spacing="compact">
 					{radios}

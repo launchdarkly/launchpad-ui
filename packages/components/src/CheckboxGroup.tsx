@@ -7,12 +7,13 @@ import { createContext } from 'react';
 import { CheckboxGroup as AriaCheckboxGroup } from 'react-aria-components/CheckboxGroup';
 import { composeRenderProps } from 'react-aria-components/composeRenderProps';
 
+import { type FieldHelperProps, renderFieldHelpers } from './fieldHelpers';
 import styles from './styles/CheckboxGroup.module.css';
 import { useLPContextProps } from './utils';
 
 const checkboxGroupStyles = cva(styles.group);
 
-interface CheckboxGroupProps extends AriaCheckboxGroupProps {
+interface CheckboxGroupProps extends AriaCheckboxGroupProps, FieldHelperProps {
 	ref?: Ref<HTMLDivElement>;
 }
 
@@ -23,7 +24,7 @@ const CheckboxGroupContext = createContext<ContextValue<CheckboxGroupProps, HTML
  *
  * https://react-spectrum.adobe.com/react-aria/CheckboxGroup.html
  */
-const CheckboxGroup = ({ ref, ...props }: CheckboxGroupProps) => {
+const CheckboxGroup = ({ ref, description, errorMessage, ...props }: CheckboxGroupProps) => {
 	[props, ref] = useLPContextProps(props, ref, CheckboxGroupContext);
 	return (
 		<AriaCheckboxGroup
@@ -32,7 +33,11 @@ const CheckboxGroup = ({ ref, ...props }: CheckboxGroupProps) => {
 			className={composeRenderProps(props.className, (className, renderProps) =>
 				checkboxGroupStyles({ ...renderProps, className }),
 			)}
-		/>
+		>
+			{composeRenderProps(props.children, (children) =>
+				renderFieldHelpers(children, { description, errorMessage }),
+			)}
+		</AriaCheckboxGroup>
 	);
 };
 

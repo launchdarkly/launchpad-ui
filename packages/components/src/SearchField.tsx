@@ -7,12 +7,13 @@ import { createContext } from 'react';
 import { composeRenderProps } from 'react-aria-components/composeRenderProps';
 import { SearchField as AriaSearchField } from 'react-aria-components/SearchField';
 
+import { type FieldHelperProps, renderFieldHelpers } from './fieldHelpers';
 import styles from './styles/SearchField.module.css';
 import { useLPContextProps } from './utils';
 
 const searchFieldStyles = cva(styles.search);
 
-interface SearchFieldProps extends AriaSearchFieldProps {
+interface SearchFieldProps extends AriaSearchFieldProps, FieldHelperProps {
 	ref?: Ref<HTMLDivElement>;
 }
 
@@ -23,7 +24,7 @@ const SearchFieldContext = createContext<ContextValue<SearchFieldProps, HTMLDivE
  *
  * https://react-spectrum.adobe.com/react-aria/SearchField.html
  */
-const SearchField = ({ ref, ...props }: SearchFieldProps) => {
+const SearchField = ({ ref, description, errorMessage, ...props }: SearchFieldProps) => {
 	[props, ref] = useLPContextProps(props, ref, SearchFieldContext);
 	return (
 		<AriaSearchField
@@ -32,7 +33,11 @@ const SearchField = ({ ref, ...props }: SearchFieldProps) => {
 			className={composeRenderProps(props.className, (className, renderProps) =>
 				searchFieldStyles({ ...renderProps, className }),
 			)}
-		/>
+		>
+			{composeRenderProps(props.children, (children) =>
+				renderFieldHelpers(children, { description, errorMessage }),
+			)}
+		</AriaSearchField>
 	);
 };
 

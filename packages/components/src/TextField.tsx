@@ -9,12 +9,13 @@ import { GroupContext } from 'react-aria-components/Group';
 import { Provider } from 'react-aria-components/slots';
 import { TextField as AriaTextField } from 'react-aria-components/TextField';
 
+import { type FieldHelperProps, renderFieldHelpers } from './fieldHelpers';
 import styles from './styles/TextField.module.css';
 import { useLPContextProps } from './utils';
 
 const textFieldStyles = cva(styles.field);
 
-interface TextFieldProps extends AriaTextFieldProps {
+interface TextFieldProps extends AriaTextFieldProps, FieldHelperProps {
 	ref?: Ref<HTMLDivElement>;
 }
 
@@ -25,7 +26,7 @@ const TextFieldContext = createContext<ContextValue<TextFieldProps, HTMLDivEleme
  *
  * https://react-spectrum.adobe.com/react-aria/TextField.html
  */
-const TextField = ({ ref, ...props }: TextFieldProps) => {
+const TextField = ({ ref, description, errorMessage, ...props }: TextFieldProps) => {
 	[props, ref] = useLPContextProps(props, ref, TextFieldContext);
 	return (
 		<AriaTextField
@@ -36,7 +37,9 @@ const TextField = ({ ref, ...props }: TextFieldProps) => {
 			)}
 		>
 			{composeRenderProps(props.children, (children, { isInvalid, isDisabled }) => (
-				<Provider values={[[GroupContext, { isInvalid, isDisabled }]]}>{children}</Provider>
+				<Provider values={[[GroupContext, { isInvalid, isDisabled }]]}>
+					{renderFieldHelpers(children, { description, errorMessage })}
+				</Provider>
 			))}
 		</AriaTextField>
 	);

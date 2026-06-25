@@ -12,6 +12,7 @@ import { Select as AriaSelect, SelectValue as AriaSelectValue } from 'react-aria
 import { Provider } from 'react-aria-components/slots';
 
 import { ButtonContext } from './Button';
+import { type FieldHelperProps, renderFieldHelpers } from './fieldHelpers';
 import baseStyles from './styles/base.module.css';
 import styles from './styles/Select.module.css';
 import { useLPContextProps } from './utils';
@@ -19,7 +20,7 @@ import { useLPContextProps } from './utils';
 const selectStyles = cva(styles.select);
 const selectValueStyles = cva(styles.value);
 
-interface SelectProps<T extends object> extends AriaSelectProps<T> {
+interface SelectProps<T extends object> extends AriaSelectProps<T>, FieldHelperProps {
 	ref?: Ref<HTMLDivElement>;
 }
 
@@ -38,7 +39,7 @@ const SelectValueContext =
  *
  * https://react-spectrum.adobe.com/react-aria/Select.html
  */
-const Select = <T extends object>({ ref, ...props }: SelectProps<T>) => {
+const Select = <T extends object>({ ref, description, errorMessage, ...props }: SelectProps<T>) => {
 	[props, ref] = useLPContextProps(props, ref, SelectContext);
 	return (
 		<AriaSelect
@@ -61,7 +62,7 @@ const Select = <T extends object>({ ref, ...props }: SelectProps<T>) => {
 						],
 					]}
 				>
-					{children}
+					{renderFieldHelpers(children, { description, errorMessage })}
 				</Provider>
 			))}
 		</AriaSelect>

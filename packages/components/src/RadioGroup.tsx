@@ -7,12 +7,13 @@ import { createContext } from 'react';
 import { composeRenderProps } from 'react-aria-components/composeRenderProps';
 import { RadioGroup as AriaRadioGroup } from 'react-aria-components/RadioGroup';
 
+import { type FieldHelperProps, renderFieldHelpers } from './fieldHelpers';
 import styles from './styles/RadioGroup.module.css';
 import { useLPContextProps } from './utils';
 
 const radioGroupStyles = cva(styles.group);
 
-interface RadioGroupProps extends AriaRadioGroupProps {
+interface RadioGroupProps extends AriaRadioGroupProps, FieldHelperProps {
 	ref?: Ref<HTMLDivElement>;
 }
 
@@ -23,7 +24,7 @@ const RadioGroupContext = createContext<ContextValue<RadioGroupProps, HTMLDivEle
  *
  * https://react-spectrum.adobe.com/react-aria/RadioGroup.html
  */
-const RadioGroup = ({ ref, ...props }: RadioGroupProps) => {
+const RadioGroup = ({ ref, description, errorMessage, ...props }: RadioGroupProps) => {
 	[props, ref] = useLPContextProps(props, ref, RadioGroupContext);
 	return (
 		<AriaRadioGroup
@@ -32,7 +33,11 @@ const RadioGroup = ({ ref, ...props }: RadioGroupProps) => {
 			className={composeRenderProps(props.className, (className, renderProps) =>
 				radioGroupStyles({ ...renderProps, className }),
 			)}
-		/>
+		>
+			{composeRenderProps(props.children, (children) =>
+				renderFieldHelpers(children, { description, errorMessage }),
+			)}
+		</AriaRadioGroup>
 	);
 };
 

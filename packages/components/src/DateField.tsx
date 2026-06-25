@@ -21,6 +21,7 @@ import {
 } from 'react-aria-components/DateField';
 import { TimeField as AriaTimeField } from 'react-aria-components/TimeField';
 
+import { type FieldHelperProps, renderFieldHelpers } from './fieldHelpers';
 import styles from './styles/DateField.module.css';
 import { useLPContextProps } from './utils';
 
@@ -28,7 +29,7 @@ const dateFieldStyles = cva(styles.field);
 const dateInputStyles = cva(styles.input);
 const dateSegmentStyles = cva(styles.segment);
 
-interface DateFieldProps<T extends DateValue> extends AriaDateFieldProps<T> {
+interface DateFieldProps<T extends DateValue> extends AriaDateFieldProps<T>, FieldHelperProps {
 	ref?: Ref<HTMLDivElement>;
 }
 
@@ -40,7 +41,7 @@ interface DateSegmentProps extends AriaDateSegmentProps {
 	ref?: Ref<HTMLDivElement>;
 }
 
-interface TimeFieldProps<T extends TimeValue> extends AriaTimeFieldProps<T> {
+interface TimeFieldProps<T extends TimeValue> extends AriaTimeFieldProps<T>, FieldHelperProps {
 	ref?: Ref<HTMLDivElement>;
 }
 
@@ -54,7 +55,12 @@ const TimeFieldContext =
  *
  * https://react-spectrum.adobe.com/react-aria/DateField.html
  */
-const DateField = <T extends DateValue>({ ref, ...props }: DateFieldProps<T>) => {
+const DateField = <T extends DateValue>({
+	ref,
+	description,
+	errorMessage,
+	...props
+}: DateFieldProps<T>) => {
 	[props, ref] = useLPContextProps(props, ref, DateFieldContext);
 	return (
 		<AriaDateField
@@ -63,7 +69,11 @@ const DateField = <T extends DateValue>({ ref, ...props }: DateFieldProps<T>) =>
 			className={composeRenderProps(props.className, (className, renderProps) =>
 				dateFieldStyles({ ...renderProps, className }),
 			)}
-		/>
+		>
+			{composeRenderProps(props.children, (children) =>
+				renderFieldHelpers(children, { description, errorMessage }),
+			)}
+		</AriaDateField>
 	);
 };
 
@@ -106,7 +116,12 @@ const DateSegment = ({ ref, ...props }: DateSegmentProps) => {
  *
  * https://react-spectrum.adobe.com/react-aria/TimeField.html
  */
-const TimeField = <T extends TimeValue>({ ref, ...props }: TimeFieldProps<T>) => {
+const TimeField = <T extends TimeValue>({
+	ref,
+	description,
+	errorMessage,
+	...props
+}: TimeFieldProps<T>) => {
 	[props, ref] = useLPContextProps(props, ref, TimeFieldContext);
 	return (
 		<AriaTimeField
@@ -115,7 +130,11 @@ const TimeField = <T extends TimeValue>({ ref, ...props }: TimeFieldProps<T>) =>
 			className={composeRenderProps(props.className, (className, renderProps) =>
 				dateFieldStyles({ ...renderProps, className }),
 			)}
-		/>
+		>
+			{composeRenderProps(props.children, (children) =>
+				renderFieldHelpers(children, { description, errorMessage }),
+			)}
+		</AriaTimeField>
 	);
 };
 

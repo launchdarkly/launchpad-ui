@@ -11,17 +11,17 @@ figma.connect(
 				true: figma.children(['Label']),
 				false: undefined,
 			}),
-			helpText: figma.boolean('Help text?', {
+			description: figma.boolean('Help text?', {
 				true: figma.string('Help text'),
 				false: undefined,
 			}),
 			isInvalid: figma.enum('State', { Invalid: true }),
 			isDisabled: figma.enum('State', { Disabled: true }),
 		},
-		example: ({ label, isInvalid, isDisabled }) => (
+		example: ({ label, isInvalid, isDisabled, description }) => (
 			<>
 				{label}
-				<DateField isInvalid={isInvalid} isDisabled={isDisabled} />
+				<DateField isInvalid={isInvalid} isDisabled={isDisabled} description={description} />
 			</>
 		),
 	},
