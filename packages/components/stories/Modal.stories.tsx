@@ -112,6 +112,48 @@ export const Drawer: Story = {
 	},
 };
 
+export const WithHeader: Story = {
+	render: (args) => (
+		<DialogTrigger>
+			<Button>Trigger</Button>
+			<ModalOverlay>
+				<Modal {...args}>
+					<Dialog>
+						{({ close }) => (
+							<>
+								<div slot="header">
+									<Heading slot="title">Invite teammates</Heading>
+									<IconButton
+										aria-label="close"
+										icon="cancel"
+										size="small"
+										variant="minimal"
+										onPress={close}
+									/>
+									<Text slot="subtitle">They'll get an email with a link to join.</Text>
+								</div>
+								<div slot="body">Body text</div>
+								<div slot="footer">
+									<Button slot="close">Cancel</Button>
+									<Button variant="primary">Send invites</Button>
+								</div>
+							</>
+						)}
+					</Dialog>
+				</Modal>
+			</ModalOverlay>
+		</DialogTrigger>
+	),
+	play,
+	parameters: {
+		chromatic: {
+			modes: {
+				mobile: allModes.mobile,
+			},
+		},
+	},
+};
+
 /**
  * Bug reproduction: Dialog closes when clicking a button inside it while Toast is active.
  *
