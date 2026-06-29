@@ -5,7 +5,7 @@ import { createRainbowSprinkles, defineProperties } from 'rainbow-sprinkles';
 
 // biome-ignore lint/correctness/noUnusedVariables: ignore
 const { bg, border, fill, shadow, text, ...global } = vars.color;
-const { text: typography, gradient } = vars;
+const { text: typography, gradient, fontSize, fontWeight, lineHeight } = vars;
 
 type FlattenObjectKeys<T extends Record<string, unknown>, Key = keyof T> = Key extends string
 	? T[Key] extends Record<string, unknown>
@@ -19,6 +19,9 @@ type BorderKeys = FlattenObjectKeys<typeof border>;
 type FillKeys = FlattenObjectKeys<typeof fill>;
 type TextKeys = FlattenObjectKeys<typeof text>;
 type TypographyKeys = FlattenObjectKeys<typeof typography>;
+type FontSizeKeys = FlattenObjectKeys<typeof fontSize>;
+type FontWeightKeys = FlattenObjectKeys<typeof fontWeight>;
+type LineHeightKeys = FlattenObjectKeys<typeof lineHeight>;
 
 const colors = flatten<typeof global, Record<GlobalKeys, string>>(global);
 const backgrounds = flatten<typeof bg, Record<BackgroundKeys, string>>(bg);
@@ -26,6 +29,9 @@ const borders = flatten<typeof border, Record<BorderKeys, string>>(border);
 const fills = flatten<typeof fill, Record<FillKeys, string>>(fill);
 const texts = flatten<typeof text, Record<TextKeys, string>>(text);
 const typographies = flatten<typeof typography, Record<TypographyKeys, string>>(typography);
+const fontSizes = flatten<typeof fontSize, Record<FontSizeKeys, string>>(fontSize);
+const fontWeights = flatten<typeof fontWeight, Record<FontWeightKeys, string>>(fontWeight);
+const lineHeights = flatten<typeof lineHeight, Record<LineHeightKeys, string>>(lineHeight);
 
 const responsiveProperties = defineProperties({
 	conditions: {
@@ -70,9 +76,9 @@ const responsiveProperties = defineProperties({
 		borderWidth: vars.borderWidth,
 		font: typographies,
 		fontFamily: vars.fontFamily,
-		fontSize: vars.fontSize,
-		fontWeight: vars.fontWeight,
-		lineHeight: vars.lineHeight,
+		fontSize: fontSizes,
+		fontWeight: fontWeights,
+		lineHeight: lineHeights,
 		width: vars.size,
 		height: vars.size,
 		maxHeight: vars.size,

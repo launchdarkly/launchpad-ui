@@ -248,6 +248,71 @@
 					"lineHeight": "{lineHeight.500}"
 				}
 			}
+		},
+		"editorial": {
+			"display": {
+				"$value": {
+					"fontFamily": "{fontFamily.sora}",
+					"fontWeight": "{fontWeight.editorial.bold}",
+					"fontSize": "{fontSize.editorial.80}",
+					"lineHeight": "{lineHeight.editorial.tight}",
+					"letterSpacing": "{letterSpacing.editorial.tight-2px}"
+				}
+			},
+			"h1": {
+				"$value": {
+					"fontFamily": "{fontFamily.sora}",
+					"fontWeight": "{fontWeight.editorial.bold}",
+					"fontSize": "{fontSize.editorial.64}",
+					"lineHeight": "{lineHeight.editorial.tight}",
+					"letterSpacing": "{letterSpacing.editorial.tight-em-05}"
+				}
+			},
+			"h1-alt": {
+				"$value": {
+					"fontFamily": "{fontFamily.sora}",
+					"fontWeight": "{fontWeight.editorial.bold}",
+					"fontSize": "{fontSize.editorial.64}",
+					"lineHeight": "{lineHeight.editorial.tight}",
+					"letterSpacing": "{letterSpacing.editorial.tight-em-05}"
+				}
+			},
+			"h2": {
+				"$value": {
+					"fontFamily": "{fontFamily.sora}",
+					"fontWeight": "{fontWeight.editorial.semibold}",
+					"fontSize": "{fontSize.editorial.56}",
+					"lineHeight": "{lineHeight.editorial.tight}",
+					"letterSpacing": "{letterSpacing.editorial.tight-em-05}"
+				}
+			},
+			"h2-alt": {
+				"$value": {
+					"fontFamily": "{fontFamily.sora}",
+					"fontWeight": "{fontWeight.editorial.medium}",
+					"fontSize": "{fontSize.editorial.50}",
+					"lineHeight": "{lineHeight.editorial.tight}",
+					"letterSpacing": "{letterSpacing.editorial.tight-em-05}"
+				}
+			},
+			"h2-medium": {
+				"$value": {
+					"fontFamily": "{fontFamily.sora}",
+					"fontWeight": "{fontWeight.editorial.medium}",
+					"fontSize": "{fontSize.editorial.48}",
+					"lineHeight": "{lineHeight.editorial.tight}",
+					"letterSpacing": "{letterSpacing.editorial.tight-em-05}"
+				}
+			},
+			"h3": {
+				"$value": {
+					"fontFamily": "{fontFamily.sora}",
+					"fontWeight": "{fontWeight.editorial.semibold}",
+					"fontSize": "{fontSize.editorial.40}",
+					"lineHeight": "{lineHeight.editorial.snug}",
+					"letterSpacing": "{letterSpacing.editorial.tight-1px}"
+				}
+			}
 		}
 	}
 }
