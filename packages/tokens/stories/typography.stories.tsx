@@ -81,7 +81,24 @@ const getSemanticElement = (token: string, font: string) => {
 	const category = parts[0]; // heading, body, etc.
 	const size = parts[1]; // 1, 2, etc.
 
-	console.log({ category, token });
+	// Editorial tokens are keyed as editorial-<variant>[-modifier] (e.g. editorial-h1-alt),
+	// so the heading level lives in parts[1]. Map it to the matching tag instead of falling
+	// through to the generic div below.
+	if (category === 'editorial') {
+		const variant = parts[1]; // display, h1, h2, h3
+		const match = /^h(\d+)$/.exec(variant);
+		if (match) {
+			const Tag = `h${match[1]}` as 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
+			return {
+				element: Tag,
+				render: (text: string) => <Tag style={{ font }}>{text}</Tag>,
+			};
+		}
+		return {
+			element: 'div',
+			render: (text: string) => <div style={{ font }}>{text}</div>,
+		};
+	}
 
 	switch (category) {
 		case 'display':
