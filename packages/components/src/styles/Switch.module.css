@@ -75,6 +75,32 @@
 	}
 }
 
+.switch.primary[data-selected] {
+	& .track {
+		background-color: var(--lp-color-bg-interactive-primary-base);
+		border: 1px solid var(--lp-color-bg-interactive-primary-base);
+	}
+
+	& .handle {
+		box-shadow:
+			0 0 1px 0 rgb(64 91 255 / 0.75),
+			0 0 2px 0 rgb(64 91 255 / 0.06),
+			0 0 1px 0 rgb(64 91 255 / 0.35);
+	}
+}
+
+.switch.compact {
+	& .track {
+		width: var(--lp-size-40);
+	}
+}
+
+.switch.compact[data-selected] {
+	& .handle {
+		transform: translateX(100%);
+	}
+}
+
 .switch[data-disabled] {
 	opacity: 60%;
 }

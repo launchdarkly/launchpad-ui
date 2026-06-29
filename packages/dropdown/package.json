@@ -1,6 +1,6 @@
 {
 	"name": "@launchpad-ui/dropdown",
-	"version": "0.10.15",
+	"version": "0.10.16",
 	"description": "An element that displays a list of actions or options to a user.",
 	"repository": "launchdarkly/launchpad-ui",
 	"license": "Apache-2.0",
@@ -32,13 +32,13 @@
 		"classix": "2.2.0"
 	},
 	"devDependencies": {
-		"@react-aria/utils": "3.34.0",
-		"@react-types/shared": "3.34.0",
+		"@react-aria/utils": "3.34.1",
+		"@react-types/shared": "3.36.0",
 		"react": "19.2.6",
 		"react-dom": "19.2.6"
 	},
 	"peerDependencies": {
-		"@react-aria/utils": "3.34.0",
+		"@react-aria/utils": "3.34.1",
 		"react": "19.2.6",
 		"react-dom": "19.2.6"
 	},

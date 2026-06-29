@@ -7,6 +7,7 @@ import {
 	Pagination as PaginationStory,
 	RadioButtonGroup as RadioButtonGroupStory,
 } from '../recipes/composition.stories';
+import { Default as EmptyStateStory } from '../recipes/EmptyState.stories';
 // Import shared preview component
 import { StoryPreview } from './StoryPreview';
 
@@ -28,6 +29,11 @@ export const recipesCategory = {
 			name: 'DisabledWithTooltip',
 			component: <StoryPreview story={DisabledWithTooltipStory} />,
 			storyPath: 'recipes-disabledwithtooltip--docs',
+		},
+		{
+			name: 'EmptyState',
+			component: <StoryPreview story={EmptyStateStory} />,
+			storyPath: 'recipes-emptystate--docs',
 		},
 		{
 			name: 'ListBoxTooltip',

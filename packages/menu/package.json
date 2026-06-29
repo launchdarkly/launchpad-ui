@@ -1,6 +1,6 @@
 {
 	"name": "@launchpad-ui/menu",
-	"version": "0.16.15",
+	"version": "0.16.16",
 	"description": "An element that presents a list of items a user can choose from.",
 	"repository": "launchdarkly/launchpad-ui",
 	"license": "Apache-2.0",
@@ -31,7 +31,7 @@
 		"@launchpad-ui/tooltip": "workspace:~",
 		"@radix-ui/react-slot": "1.2.0",
 		"classix": "2.2.0",
-		"react-aria": "3.48.0",
+		"react-aria": "3.50.0",
 		"react-virtual": "2.10.4"
 	},
 	"devDependencies": {

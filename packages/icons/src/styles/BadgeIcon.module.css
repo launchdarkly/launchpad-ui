@@ -49,20 +49,16 @@
 	background: var(--lp-color-brand-orange-base);
 }
 
-.yellow {
-	background: var(--lp-color-brand-yellow-base);
-}
-
-.green {
-	background: var(--lp-color-brand-green-base);
+.lime {
+	background: var(--lp-color-brand-lime-base);
 }
 
 .gradient1 {
-	background: var(--lp-gradient-yellow-cyan);
+	background: var(--lp-gradient-lime-cyan);
 }
 
 .gradient2 {
-	background: var(--lp-gradient-yellow-pink);
+	background: var(--lp-gradient-lime-pink);
 }
 
 .gradient3 {
@@ -82,7 +78,7 @@
 }
 
 .gradient7 {
-	background: var(--lp-gradient-yellow-blue-pale);
+	background: var(--lp-gradient-lime-blue-pale);
 }
 
 .blue,
@@ -101,8 +97,7 @@
 	}
 }
 
-.yellow,
-.green,
+.lime,
 .gradient7 {
 	& [data-icon] {
 		fill: var(--lp-color-black-700);
