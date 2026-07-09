@@ -17,11 +17,14 @@
 	border-radius: var(--lp-border-radius-medium);
 	color: var(--lp-color-text-ui-primary-base);
 	background-color: var(--lp-color-bg-overlay-secondary);
+	border: 1px solid light-dark(transparent, var(--lp-color-border-ui-primary));
 	box-shadow:
 		0px 0px 1px 0px var(--lp-color-shadow-ui-secondary),
 		0px 0px 4px 0px var(--lp-color-shadow-ui-secondary),
 		0px 4px 8px 0px var(--lp-color-shadow-ui-secondary),
-		0px 2px 12px 0px var(--lp-color-shadow-ui-secondary);
+		0px 2px 12px 0px var(--lp-color-shadow-ui-secondary),
+		0px 20px 60px 0px light-dark(transparent, var(--lp-color-black-500)),
+		0px 0px 0px 1px light-dark(transparent, var(--lp-color-white-0));
 	transform: translate3d(0, 0, 0);
 	will-change: transform, opacity;
 
