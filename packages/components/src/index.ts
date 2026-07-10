@@ -20,6 +20,8 @@ export type { CheckboxProps } from './Checkbox';
 export type { CheckboxGroupProps } from './CheckboxGroup';
 export type { CodeProps } from './Code';
 export type { ComboBoxProps } from './ComboBox';
+export type { DataTableProps } from './DataTable';
+export type { DeltaValueProps, StatusTone, TwoLineCellProps } from './DataTableCells';
 export type {
 	DateFieldProps,
 	DateInputProps,
@@ -145,6 +147,15 @@ export {
 	ComboBoxContext,
 	comboBoxStyles,
 } from './ComboBox';
+export { DataTable } from './DataTable';
+export {
+	DeltaValue,
+	MonoValue,
+	NumericValue,
+	StatusCell,
+	TagCell,
+	TwoLineCell,
+} from './DataTableCells';
 export {
 	DateField,
 	DateFieldContext,

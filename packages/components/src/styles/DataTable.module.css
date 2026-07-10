@@ -1,0 +1,104 @@
+.root {
+	display: flex;
+	flex-direction: column;
+	gap: var(--lp-spacing-400);
+	width: 100%;
+}
+
+.toolbar {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: var(--lp-spacing-400);
+}
+
+.search {
+	flex: 1 1 auto;
+	max-width: 320px;
+}
+
+/* Keep the column-settings control pinned right, even when the search field is hidden. */
+.columnMenu {
+	margin-left: auto;
+}
+
+/* Header treatment per the o11y traces design (node 2829-54659): muted text, medium (not
+   semibold) weight, a subtle bg-ui-secondary fill, and a border-ui-primary underline. */
+.root :is(th) {
+	color: var(--lp-color-text-ui-secondary);
+	font: var(--lp-text-label-1-medium);
+	background-color: var(--lp-color-bg-ui-secondary);
+}
+
+.root thead {
+	border-color: var(--lp-color-border-ui-primary);
+}
+
+/* Row dividers use border-ui-primary (#d8dde3), a touch darker than the base table's
+   border-ui-secondary — matching the design. */
+.root :is(td) {
+	border-bottom-color: var(--lp-color-border-ui-primary);
+}
+
+/* Column drag-reorder: a grip handle (revealed on header hover) is the drag origin, and the
+   drop-target column shows a left insertion line. */
+.reorderHeader {
+	display: flex;
+	align-items: center;
+	gap: var(--lp-spacing-200);
+	width: 100%;
+}
+
+.grip {
+	display: inline-flex;
+	align-items: center;
+	flex: 0 0 auto;
+	cursor: grab;
+	color: var(--lp-color-fill-ui-secondary);
+	opacity: 0;
+}
+
+.grip:active {
+	cursor: grabbing;
+}
+
+.root th:hover .grip,
+.root th:focus-within .grip {
+	opacity: 1;
+}
+
+.dropTarget {
+	box-shadow: inset 2px 0 0 0 var(--lp-color-bg-interactive-primary-base);
+}
+
+/* Right-align numeric/currency/delta columns (header label + cells). Scoped under
+   .root and element-qualified so it beats the base Table's `text-align: left`. */
+.root :is(th, td).alignEnd {
+	text-align: right;
+}
+
+.root th.alignEnd > div {
+	justify-content: flex-end;
+}
+
+/* Interactive-row affordances for the list/detail (click-row-to-open) pattern — the base
+   LP Table styles only cursor + focus ring, so hover/selected backgrounds live here. */
+.root tbody [role='row'][data-hovered] {
+	background-color: var(--lp-color-bg-ui-secondary);
+}
+
+.root tbody [role='row'][data-selected] {
+	background-color: var(--lp-color-bg-ui-tertiary);
+}
+
+/* Row density, mapped to LP spacing tokens: default 8 / compact 4 / tight 0.
+   Overrides the base Table cell's vertical padding without touching horizontal. */
+.root[data-density='compact'] :is(th, td) {
+	padding-top: var(--lp-spacing-200);
+	padding-bottom: var(--lp-spacing-200);
+}
+
+.root[data-density='tight'] :is(th, td) {
+	padding-top: var(--lp-spacing-100);
+	padding-bottom: var(--lp-spacing-100);
+}

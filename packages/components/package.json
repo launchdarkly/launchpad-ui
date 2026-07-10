@@ -34,6 +34,7 @@
 		"@launchpad-ui/icons": "workspace:~",
 		"@launchpad-ui/tokens": "workspace:~",
 		"@react-aria/live-announcer": "3.4.4",
+		"@tanstack/react-table": "^8.21.3",
 		"class-variance-authority": "0.7.0"
 	},
 	"devDependencies": {

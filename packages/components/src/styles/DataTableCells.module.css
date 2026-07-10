@@ -1,0 +1,85 @@
+.twoLine {
+	display: flex;
+	flex-direction: column;
+	min-width: 0;
+}
+
+.primary {
+	font: var(--lp-text-label-1-medium);
+	color: var(--lp-color-text-ui-primary-base);
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.secondary {
+	font: var(--lp-text-small-1-regular);
+	color: var(--lp-color-text-ui-secondary);
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.media {
+	display: flex;
+	align-items: center;
+	gap: var(--lp-spacing-300);
+	min-width: 0;
+}
+
+/* Leading media (avatar/icon) keeps its intrinsic size; the text block takes the rest and
+   truncates. Without this the media gets squished into an oval when the text is long. */
+.media > :first-child {
+	flex: 0 0 auto;
+}
+
+.media > .twoLine {
+	flex: 1 1 auto;
+}
+
+.numeric {
+	font-variant-numeric: tabular-nums;
+}
+
+.up {
+	color: var(--lp-color-text-feedback-success);
+}
+
+.down {
+	color: var(--lp-color-text-feedback-error);
+}
+
+.zero {
+	color: var(--lp-color-text-ui-secondary);
+}
+
+.status {
+	display: flex;
+	align-items: center;
+	gap: var(--lp-spacing-300);
+}
+
+.dot {
+	width: var(--lp-size-8, 0.5rem);
+	height: var(--lp-size-8, 0.5rem);
+	border-radius: var(--lp-border-radius-large);
+	flex: 0 0 auto;
+}
+
+.dot-success {
+	background-color: var(--lp-color-fill-feedback-success);
+}
+
+.dot-error {
+	background-color: var(--lp-color-fill-feedback-error);
+}
+
+.dot-info {
+	background-color: var(--lp-color-fill-feedback-info);
+}
+
+.dot-neutral {
+	background-color: var(--lp-color-fill-ui-secondary);
+}
+
+.mono {
+	font: var(--lp-text-code-1-regular);
+}
