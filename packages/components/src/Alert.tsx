@@ -5,7 +5,8 @@ import { StatusIcon } from '@launchpad-ui/icons';
 import { useControlledState } from '@react-stately/utils';
 import { cva } from 'class-variance-authority';
 import { HeadingContext } from 'react-aria-components/Heading';
-import { Provider } from 'react-aria-components/slots';
+import { DEFAULT_SLOT, Provider } from 'react-aria-components/slots';
+import { TextContext } from 'react-aria-components/Text';
 
 import { ButtonGroupContext } from './ButtonGroup';
 import { IconButton } from './IconButton';
@@ -99,6 +100,15 @@ const Alert = ({
 					values={[
 						[HeadingContext, { className: styles.heading }],
 						[ButtonGroupContext, { className: styles.buttonGroup }],
+						[
+							TextContext,
+							{
+								slots: {
+									[DEFAULT_SLOT]: {},
+									subtitle: {},
+								},
+							},
+						],
 					]}
 				>
 					{children}

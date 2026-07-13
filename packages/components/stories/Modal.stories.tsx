@@ -2,6 +2,7 @@ import type { Meta, ReactRenderer, StoryObj } from '@storybook/react-vite';
 import type { ComponentType } from 'react';
 import type { PlayFunction } from 'storybook/internal/types';
 
+import { Alert } from '@launchpad-ui/components';
 import { expect, userEvent, waitFor, within } from 'storybook/test';
 
 import { allModes } from '../../../.storybook/modes';
@@ -113,6 +114,60 @@ export const Drawer: Story = {
 };
 
 /**
+ * A Modal with a slotted `header`. The `header` groups the `title`, an optional
+ * `subtitle`, and the close button into the overlay's header grid, separate from the
+ * `body` and `footer`.
+ */
+export const WithHeader: Story = {
+	render: (args) => (
+		<DialogTrigger>
+			<Button>Trigger</Button>
+			<ModalOverlay>
+				<Modal {...args}>
+					<Dialog>
+						{({ close }) => (
+							<>
+								<div slot="header">
+									<Heading slot="title">Invite teammates</Heading>
+									<IconButton
+										aria-label="close"
+										icon="cancel"
+										size="small"
+										variant="minimal"
+										onPress={close}
+									/>
+									<Text slot="subtitle">They'll get an email with a link to join.</Text>
+									<Alert status="warning">
+										<Heading>Heads up before archiving</Heading>
+										<Text slot="subtitle">
+											Scenario alert body. Inside the dialog this must use the Alert's text styling,
+											not the Dialog's subtitle styling.
+										</Text>
+									</Alert>
+								</div>
+								<div slot="body">Body text</div>
+								<div slot="footer">
+									<Button slot="close">Cancel</Button>
+									<Button variant="primary">Send invites</Button>
+								</div>
+							</>
+						)}
+					</Dialog>
+				</Modal>
+			</ModalOverlay>
+		</DialogTrigger>
+	),
+	play,
+	parameters: {
+		chromatic: {
+			modes: {
+				mobile: allModes.mobile,
+			},
+		},
+	},
+};
+
+/**
  * Bug reproduction: Dialog closes when clicking a button inside it while Toast is active.
  *
  * Steps to reproduce:
@@ -146,6 +201,14 @@ export const DialogWithActiveToast: Story = {
 													onPress={close}
 												/>
 												<Text slot="subtitle">Try clicking the button below with toast active</Text>
+												<Alert status="info">
+													<Heading>No critical environments to check</Heading>
+													{/* Bare <Text> now works inside an Alert, even within a Dialog. */}
+													<Text>
+														No checks were run because you don't have any critical environments set
+														up.
+													</Text>
+												</Alert>
 											</div>
 											<div slot="body">
 												<p>
