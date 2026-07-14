@@ -89,13 +89,13 @@ div-core-engineering     div-measure-engineering   div-service-platform-engineer
 
 The team-membership API is keyed by GitHub **login**, but the session reliably gives you the requester's **email** (git author email), not their login. Don't brute-force login variants from their name (`dberkowitz`, `dberkowitz-ld`, `daniel-berkowitz`, …) — that's slow and usually 404s. Resolve the login in **one** call from the email (GitHub attributes commits to a user by author email), then check that single login:
 
-```sh
-LD_GH_TOKEN=$(awk '$1=="github.com/launchdarkly"{print $2}' /opt/.devin/.devin-integration-gh-credentials)
+The org-team API needs a `launchdarkly` org token (the default agent token only sees `launchdarkly-labs` and 404s on `launchdarkly/*`). Use whatever `launchdarkly` org token your agent has available as `GH_TOKEN` — don't hardcode a token or a credentials path.
 
+```sh
 # Prefer a definite GitHub login from the session (REQUESTER); otherwise resolve it
 # from the requester's email in one call (GitHub attributes commits to a user by author
 # email). maps e.g. dberkowitz@launchdarkly.com -> danberk-ld; hsadhvani@… -> hsadhvani
-REQUESTER="${REQUESTER:-$(GH_TOKEN="$LD_GH_TOKEN" gh api \
+REQUESTER="${REQUESTER:-$(gh api \
   -H "Accept: application/vnd.github.cloak-preview+json" \
   "/search/commits?q=author-email:${REQUESTER_EMAIL}&per_page=1" \
   --jq '.items[0].author.login // empty' 2>/dev/null)}"
@@ -103,8 +103,7 @@ REQUESTER="${REQUESTER:-$(GH_TOKEN="$LD_GH_TOKEN" gh api \
 # no login resolved => fail open (treat as engineer, no warning); don't run the membership check with an empty login
 [ -z "${REQUESTER:-}" ] && { echo "engineer"; exit 0; }
 
-# org-team API needs the `launchdarkly` org token (default gh token 404s on launchdarkly/*)
-GH_TOKEN="$LD_GH_TOKEN" gh api "/orgs/launchdarkly/teams/<team>/memberships/${REQUESTER}" --jq '.state'   # "active" == member
+gh api "/orgs/launchdarkly/teams/<team>/memberships/${REQUESTER}" --jq '.state'   # "active" == member
 ```
 
 - **Engineer → no warning, proceed normally.**
