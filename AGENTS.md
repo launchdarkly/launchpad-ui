@@ -92,22 +92,23 @@ The team-membership API is keyed by GitHub **login**, but the session reliably g
 ```sh
 LD_GH_TOKEN=$(awk '$1=="github.com/launchdarkly"{print $2}' /opt/.devin/.devin-integration-gh-credentials)
 
-# email -> login (maps e.g. dberkowitz@launchdarkly.com -> danberk-ld; hsadhvani@… -> hsadhvani)
-REQUESTER=$(GH_TOKEN="$LD_GH_TOKEN" gh api \
+# Prefer a definite GitHub login from the session (REQUESTER); otherwise resolve it
+# from the requester's email in one call (GitHub attributes commits to a user by author
+# email). maps e.g. dberkowitz@launchdarkly.com -> danberk-ld; hsadhvani@… -> hsadhvani
+REQUESTER="${REQUESTER:-$(GH_TOKEN="$LD_GH_TOKEN" gh api \
   -H "Accept: application/vnd.github.cloak-preview+json" \
   "/search/commits?q=author-email:${REQUESTER_EMAIL}&per_page=1" \
-  --jq '.items[0].author.login // empty' 2>/dev/null)
+  --jq '.items[0].author.login // empty' 2>/dev/null)}"
 
-# no login resolved => fail open (treat as engineer, no warning); don't run the membership loop with an empty login
+# no login resolved => fail open (treat as engineer, no warning); don't run the membership check with an empty login
 [ -z "${REQUESTER:-}" ] && { echo "engineer"; exit 0; }
 
 # org-team API needs the `launchdarkly` org token (default gh token 404s on launchdarkly/*)
-gh api "/orgs/launchdarkly/teams/<team>/memberships/${REQUESTER}" --jq '.state'   # "active" == member
+GH_TOKEN="$LD_GH_TOKEN" gh api "/orgs/launchdarkly/teams/<team>/memberships/${REQUESTER}" --jq '.state'   # "active" == member
 ```
 
 - **Engineer → no warning, proceed normally.**
 - **Fail-open:** if the email doesn't resolve to a login, or a membership lookup errors (API/token/unknown user, non-404), treat as engineer and proceed — never block a real engineer on an API hiccup. Only a genuine 404 counts as "not on that team".
-- If the session already hands you a definite GitHub login, use it directly (still set `LD_GH_TOKEN`).
 
 ### 2. Estimate complexity and detect out-of-scope signals (non-engineers only)
 
