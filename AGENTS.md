@@ -73,6 +73,55 @@ Follow these when writing or changing component code:
 
 The full component list lives in `packages/components/src/index.ts`.
 
+## Non-engineer scope warning (warn, don't block)
+
+Some requests come from people who are **not engineers** (designers, PMs, CX/revenue teammates) and are framed as a "small tweak" but actually ask for a feature change or a large/complex change. When that happens, give an honest heads-up *before* writing code — say how big it looks and recommend an engineer own or review it — **then proceed if they still want to.** This is a *warning*, not a gate: it never blocks anyone, and engineers never see it. Run this check at the **start** of an implementation request.
+
+### 1. Determine the requester's role
+
+You know the requester's GitHub username from the session/request context. Resolve role by checking membership in the **engineer allowlist** of `launchdarkly` org teams — in **any** of these → engineer; otherwise → non-engineer:
+
+```
+role-product-engineers   role-infrastructure-administrators
+div-product-engineering  div-platform-engineering  div-release-engineering
+div-core-engineering     div-measure-engineering   div-service-platform-engineering
+```
+
+```sh
+# org-team API needs the `launchdarkly` org token (default gh token 404s on launchdarkly/*)
+gh api "/orgs/launchdarkly/teams/<team>/memberships/<username>" --jq '.state'   # "active" == member
+```
+
+- **Engineer → no warning, proceed normally.**
+- **Fail-open:** if the lookup errors (API/token/unknown user), treat as engineer and proceed — never block a real engineer on an API hiccup.
+
+### 2. Estimate complexity and detect out-of-scope signals (non-engineers only)
+
+Size buckets (from the real distribution of merged LaunchPad PRs — typical PR ≈ 4 files / <60 lines): **Small** ≤3 files & presentation-only; **Medium** 4–7 files; **Large** 8–15 files or ~250–700 lines or any signal below; **X-large** >15 files or >~700 lines or a new dependency.
+
+Out-of-scope signals (any one bumps the work to at least Large — LaunchPad components must stay generic):
+
+- **Business logic, product-domain terms** (flag/segment/project/environment/member/metric), **app-specific data fetching**, or **hardcoded LaunchDarkly URLs/copy** in a component — these belong in the consuming app, not here.
+- A **new package**, a **new public component/variant** with non-trivial behavior, or a change to a broadly-consumed component (imported in **≥10 files or ≥3 packages** — estimate with `grep -rlw "ComponentName" packages | wc -l` (bare name, no angle brackets — real usages are `<ComponentName …>`/`</ComponentName>`/imports, so brackets would miss them; `-w` keeps it from matching longer names)).
+- **New dependency:** adding/bumping a dependency in any `package.json` or lockfile — **always flag** (X-large signal on its own); new deps carry security/supply-chain, bundle-size, and licensing implications a non-engineer can't vet.
+- Changes spanning **many files** or **more than one package**.
+
+### 3. Warn (don't block)
+
+For a non-engineer + Large/X-large/out-of-scope signal, before writing code say plainly, e.g.:
+
+> Heads-up: this looks like a **{Large/X-large}** change — {concrete reason, e.g. "it adds product-specific logic to a generic component" / "it adds a new dependency (`foo`)" / "it touches ~9 files across 2 packages"}. That's **feature / engineering-scope work an engineer usually owns**, not a small design-system tweak. I'd recommend looping in an engineer or opening it for engineering review. I can still proceed if you'd like — want me to, or scope it down first?
+
+Then recommend an engineer own it / open it for engineering review (or ask clarifying questions), and **proceed if they still want to**. Keep components generic even when you proceed.
+
+### 4. If a warned requester proceeds anyway, flag it on the PR
+
+If you gave the heads-up and the non-engineer chose to proceed, make that **visible to engineers on the resulting PR** so it gets the right review scrutiny — an overridden warning must not disappear into a normal-looking PR. When you open (or update) the PR, add a clearly-marked callout at the top of the description, e.g.:
+
+> ⚠️ **Scope note (non-engineer request):** This change was flagged as a **{Large/X-large}** / feature-scope change and was requested by a non-engineer (@{requester}). They were given a heads-up recommending engineer involvement and chose to proceed. **Please review accordingly** — {concrete reason}.
+
+If the repo has a suitable label (e.g. `needs-engineer-review`), apply it too. Don't invent a required label or block the merge — this is a heads-up for reviewers, not a gate. Keep it factual and neutral. If the requester scoped the work back down to something small/presentation-only, no PR note is needed.
+
 ## Opening a pull request
 
 Follow this flow end to end. The repo's PR gates are strict — a missing changeset or a non-conventional title will block the merge.
