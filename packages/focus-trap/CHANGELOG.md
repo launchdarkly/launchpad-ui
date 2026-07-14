@@ -1,5 +1,18 @@
 # @launchpad-ui/focus-trap
 
+## 0.5.4
+
+### Patch Changes
+
+- [#1938](https://github.com/launchdarkly/launchpad-ui/pull/1938) [`941f77c`](https://github.com/launchdarkly/launchpad-ui/commit/941f77c91ae47f19533496a9ab3a542c479c6a68) Thanks [@apucacao](https://github.com/apucacao)! - Upgrade `react-aria-components` to 1.19.0 along with the aligned `react-aria` (3.50.0), `react-stately` (3.48.0), and `@react-types/shared` (3.36.0) packages from the same release. The `@react-aria/*`, `@react-stately/*`, and `@internationalized/*` sub-packages were already at the matching versions and are unchanged.
+
+  This release is additive — no breaking changes. Notable upstream additions:
+
+  - `GridList` and `Tree` support full keyboard interaction with embedded text fields and other interactive elements via the `keyboardNavigationBehavior` prop.
+  - `Autocomplete` and `Popover` gain inline-completion support, including a new `getTargetRect` prop on `Popover` for positioning overlays relative to arbitrary character positions.
+  - `Menu`'s `onAction` callback now provides both the item key and its value.
+  - `DragTypes.has()` accepts multiple MIME types and wildcards.
+
 ## 0.5.3
 
 ### Patch Changes

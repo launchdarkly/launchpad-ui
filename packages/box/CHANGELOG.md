@@ -1,5 +1,17 @@
 # @launchpad-ui/box
 
+## 0.4.5
+
+### Patch Changes
+
+- [#1940](https://github.com/launchdarkly/launchpad-ui/pull/1940) [`ccc97d8`](https://github.com/launchdarkly/launchpad-ui/commit/ccc97d8ab2119437a81a8a17affb5f7fd7c1373a) Thanks [@OneHunnid](https://github.com/OneHunnid)! - Add a Sora-based editorial typography token family for brand-themed surfaces (empty states, hero moments, announcements). Adds `fontFamily.sora` (with an Inter fallback), pixel-named `fontSize.editorial.*`, `fontWeight.editorial.*`, unitless `lineHeight.editorial.*`, a new top-level `letterSpacing.editorial.*` group, seven `text.editorial.*` compositions, and `size.30`/`size.50` primitives. All values mirror the `ai-refresh` `_typography.scss` source of truth. Existing utility `text.*` compositions are unchanged.
+
+  Box's `rainbow-sprinkles` now flattens the `fontSize`, `fontWeight`, and `lineHeight` token groups (matching how the `font` typography group is already handled) so the nested `editorial.*` sub-namespaces don't break `defineProperties`' flat-record typing.
+
+- Updated dependencies [[`ccc97d8`](https://github.com/launchdarkly/launchpad-ui/commit/ccc97d8ab2119437a81a8a17affb5f7fd7c1373a), [`b85c820`](https://github.com/launchdarkly/launchpad-ui/commit/b85c8200af8e6dbcaf3f1fa733bc94450ab48c50)]:
+  - @launchpad-ui/tokens@0.17.0
+  - @launchpad-ui/vars@0.5.4
+
 ## 0.4.4
 
 ### Patch Changes
