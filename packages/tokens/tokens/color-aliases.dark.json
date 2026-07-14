@@ -97,7 +97,7 @@
 					"$value": "{color.purple.900}"
 				},
 				"federal": {
-					"$value": "{color.brand.lime.dark}"
+					"$value": "{color.brand.yellow.dark}"
 				}
 			}
 		},
