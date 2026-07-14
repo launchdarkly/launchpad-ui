@@ -384,30 +384,24 @@
 			},
 			"yellow": {
 				"light": {
-					"$value": "{color.brand.lime.light}",
-					"$description": "Deprecated. Use color.brand.lime.light."
+					"$value": "#F7FFAF"
 				},
 				"base": {
-					"$value": "{color.brand.lime.base}",
-					"$description": "Deprecated. Use color.brand.lime.base."
+					"$value": "#EBFF38"
 				},
 				"dark": {
-					"$value": "{color.brand.lime.dark}",
-					"$description": "Deprecated. Use color.brand.lime.dark."
+					"$value": "#818C1F"
 				}
 			},
 			"green": {
 				"light": {
-					"$value": "{color.brand.lime.light}",
-					"$description": "Deprecated. Use color.brand.lime.light."
+					"$value": "#E1FFC8"
 				},
 				"base": {
-					"$value": "{color.brand.lime.base}",
-					"$description": "Deprecated. Use color.brand.lime.base."
+					"$value": "#8BEF34"
 				},
 				"dark": {
-					"$value": "{color.brand.lime.dark}",
-					"$description": "Deprecated. Use color.brand.lime.dark."
+					"$value": "#439000"
 				}
 			}
 		}
