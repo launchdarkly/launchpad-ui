@@ -79,7 +79,7 @@ Some requests come from people who are **not engineers** (designers, PMs, CX/rev
 
 ### 1. Determine the requester's role
 
-You know the requester's GitHub username from the session/request context. Resolve role by checking membership in the **engineer allowlist** of `launchdarkly` org teams — in **any** of these → engineer; otherwise → non-engineer:
+Resolve role by checking membership in the **engineer allowlist** of `launchdarkly` org teams — in **any** of these → engineer; otherwise → non-engineer:
 
 ```
 role-product-engineers   role-infrastructure-administrators
@@ -87,13 +87,27 @@ div-product-engineering  div-platform-engineering  div-release-engineering
 div-core-engineering     div-measure-engineering   div-service-platform-engineering
 ```
 
+The team-membership API is keyed by GitHub **login**, but the session reliably gives you the requester's **email** (git author email), not their login. Don't brute-force login variants from their name (`dberkowitz`, `dberkowitz-ld`, `daniel-berkowitz`, …) — that's slow and usually 404s. Resolve the login in **one** call from the email (GitHub attributes commits to a user by author email), then check that single login:
+
+The org-team API needs a `launchdarkly` org token (the default agent token only sees `launchdarkly-labs` and 404s on `launchdarkly/*`). Use whatever `launchdarkly` org token your agent has available as `GH_TOKEN` — don't hardcode a token or a credentials path.
+
 ```sh
-# org-team API needs the `launchdarkly` org token (default gh token 404s on launchdarkly/*)
-gh api "/orgs/launchdarkly/teams/<team>/memberships/<username>" --jq '.state'   # "active" == member
+# Prefer a definite GitHub login from the session (REQUESTER); otherwise resolve it
+# from the requester's email in one call (GitHub attributes commits to a user by author
+# email). maps e.g. dberkowitz@launchdarkly.com -> danberk-ld; hsadhvani@… -> hsadhvani
+REQUESTER="${REQUESTER:-$(gh api \
+  -H "Accept: application/vnd.github.cloak-preview+json" \
+  "/search/commits?q=author-email:${REQUESTER_EMAIL}&per_page=1" \
+  --jq '.items[0].author.login // empty' 2>/dev/null)}"
+
+# no login resolved => fail open (treat as engineer, no warning); don't run the membership check with an empty login
+[ -z "${REQUESTER:-}" ] && { echo "engineer"; exit 0; }
+
+gh api "/orgs/launchdarkly/teams/<team>/memberships/${REQUESTER}" --jq '.state'   # "active" == member
 ```
 
 - **Engineer → no warning, proceed normally.**
-- **Fail-open:** if the lookup errors (API/token/unknown user), treat as engineer and proceed — never block a real engineer on an API hiccup.
+- **Fail-open:** if the email doesn't resolve to a login, or a membership lookup errors (API/token/unknown user, non-404), treat as engineer and proceed — never block a real engineer on an API hiccup. Only a genuine 404 counts as "not on that team".
 
 ### 2. Estimate complexity and detect out-of-scope signals (non-engineers only)
 
