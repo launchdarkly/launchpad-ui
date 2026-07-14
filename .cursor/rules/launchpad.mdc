@@ -12,7 +12,7 @@ You are working in LaunchDarkly's LaunchPad design system. Non-negotiables:
 - **String union prop types**, never enums (`size="medium"`).
 - **CSS Modules** (`styles.foo`) + `class-variance-authority` for variants.
 - New public components need a `*.stories.tsx`; non-trivial package changes need a `.changeset/*.md`.
-- **Warn non-engineers on feature/large-scope work** — if the requester isn't an engineer (resolve via GitHub org team membership) and the ask is really a feature change or a large/complex change (business logic or product-domain terms in a component, a new dependency, a new package, or many-file changes), give an up-front complexity estimate and recommend an engineer own or review it before proceeding. It's a warning, not a block; engineers never see it. See the "Non-engineer scope warning" section in `AGENTS.md`.
+- **Warn non-engineers on feature/large-scope work** — if the requester isn't an engineer (resolve via GitHub org team membership) and the ask is really a feature change or a large/complex change (business logic or product-domain terms in a component, a new dependency, a new package, or many-file changes), give an up-front complexity estimate and recommend an engineer own or review it before proceeding. It's a warning, not a block; engineers never see it. If a warned requester proceeds anyway, add a visible scope note to the PR description (and a review label if one exists) so engineers know to review it more closely. See the "Non-engineer scope warning" section in `AGENTS.md`.
 
 The full standards, commands, architecture, and the step-by-step pull-request flow (branch naming, changeset, conventional commits, draft `gh pr create`) live in the canonical guidance:
 

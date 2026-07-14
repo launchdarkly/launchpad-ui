@@ -114,6 +114,14 @@ For a non-engineer + Large/X-large/out-of-scope signal, before writing code say 
 
 Then recommend an engineer own it / open it for engineering review (or ask clarifying questions), and **proceed if they still want to**. Keep components generic even when you proceed.
 
+### 4. If a warned requester proceeds anyway, flag it on the PR
+
+If you gave the heads-up and the non-engineer chose to proceed, make that **visible to engineers on the resulting PR** so it gets the right review scrutiny — an overridden warning must not disappear into a normal-looking PR. When you open (or update) the PR, add a clearly-marked callout at the top of the description, e.g.:
+
+> ⚠️ **Scope note (non-engineer request):** This change was flagged as a **{Large/X-large}** / feature-scope change and was requested by a non-engineer (@{requester}). They were given a heads-up recommending engineer involvement and chose to proceed. **Please review accordingly** — {concrete reason}.
+
+If the repo has a suitable label (e.g. `needs-engineer-review`), apply it too. Don't invent a required label or block the merge — this is a heads-up for reviewers, not a gate. Keep it factual and neutral. If the requester scoped the work back down to something small/presentation-only, no PR note is needed.
+
 ## Opening a pull request
 
 Follow this flow end to end. The repo's PR gates are strict — a missing changeset or a non-conventional title will block the merge.
