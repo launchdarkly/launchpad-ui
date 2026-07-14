@@ -102,7 +102,7 @@ Size buckets (from the real distribution of merged LaunchPad PRs — typical PR 
 Out-of-scope signals (any one bumps the work to at least Large — LaunchPad components must stay generic):
 
 - **Business logic, product-domain terms** (flag/segment/project/environment/member/metric), **app-specific data fetching**, or **hardcoded LaunchDarkly URLs/copy** in a component — these belong in the consuming app, not here.
-- A **new package**, a **new public component/variant** with non-trivial behavior, or a change to a broadly-consumed component (imported in **≥10 files or ≥3 packages** — estimate with `grep -rl "<ComponentName>" packages | wc -l`).
+- A **new package**, a **new public component/variant** with non-trivial behavior, or a change to a broadly-consumed component (imported in **≥10 files or ≥3 packages** — estimate with `grep -rlw "ComponentName" packages | wc -l` (bare name, no angle brackets — real usages are `<ComponentName …>`/`</ComponentName>`/imports, so brackets would miss them; `-w` keeps it from matching longer names)).
 - **New dependency:** adding/bumping a dependency in any `package.json` or lockfile — **always flag** (X-large signal on its own); new deps carry security/supply-chain, bundle-size, and licensing implications a non-engineer can't vet.
 - Changes spanning **many files** or **more than one package**.
 
