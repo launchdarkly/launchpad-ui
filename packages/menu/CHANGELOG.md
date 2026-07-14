@@ -1,5 +1,25 @@
 # @launchpad-ui/menu
 
+## 0.16.17
+
+### Patch Changes
+
+- [#1938](https://github.com/launchdarkly/launchpad-ui/pull/1938) [`941f77c`](https://github.com/launchdarkly/launchpad-ui/commit/941f77c91ae47f19533496a9ab3a542c479c6a68) Thanks [@apucacao](https://github.com/apucacao)! - Upgrade `react-aria-components` to 1.19.0 along with the aligned `react-aria` (3.50.0), `react-stately` (3.48.0), and `@react-types/shared` (3.36.0) packages from the same release. The `@react-aria/*`, `@react-stately/*`, and `@internationalized/*` sub-packages were already at the matching versions and are unchanged.
+
+  This release is additive — no breaking changes. Notable upstream additions:
+
+  - `GridList` and `Tree` support full keyboard interaction with embedded text fields and other interactive elements via the `keyboardNavigationBehavior` prop.
+  - `Autocomplete` and `Popover` gain inline-completion support, including a new `getTargetRect` prop on `Popover` for positioning overlays relative to arbitrary character positions.
+  - `Menu`'s `onAction` callback now provides both the item key and its value.
+  - `DragTypes.has()` accepts multiple MIME types and wildcards.
+
+- Updated dependencies [[`ccc97d8`](https://github.com/launchdarkly/launchpad-ui/commit/ccc97d8ab2119437a81a8a17affb5f7fd7c1373a), [`b85c820`](https://github.com/launchdarkly/launchpad-ui/commit/b85c8200af8e6dbcaf3f1fa733bc94450ab48c50), [`941f77c`](https://github.com/launchdarkly/launchpad-ui/commit/941f77c91ae47f19533496a9ab3a542c479c6a68)]:
+  - @launchpad-ui/tokens@0.17.0
+  - @launchpad-ui/form@0.15.17
+  - @launchpad-ui/icons@0.26.1
+  - @launchpad-ui/popover@0.14.5
+  - @launchpad-ui/tooltip@0.12.5
+
 ## 0.16.16
 
 ### Patch Changes
