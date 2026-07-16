@@ -19,6 +19,7 @@ Copy this into your first message, then add your request:
 - Keep components **generic** — no business logic, product-domain terms, or hardcoded LaunchDarkly URLs.
 - Meet **WCAG 2.0/2.1 A/AA** accessibility; new public components need a `*.stories.tsx` and tests using the project's `render()` util.
 - Use the `ComponentContext` + `useLPContextProps` pattern for overridable props; include JSDoc on exported components.
+- If you're **not an engineer** and the request is really a feature change or a large/complex change (business logic or product-domain terms in a component, a new dependency, a new package, or many-file changes), the assistant should give a complexity estimate and recommend an engineer own or review it before proceeding (a warning, not a block) — and if it proceeds anyway, add a visible scope note to the PR so engineers know to review it more closely. See the "Non-engineer scope warning" section in `AGENTS.md`.
 
 ---
 
