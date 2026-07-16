@@ -13,6 +13,10 @@ overrides:
 importers:
 
   .:
+    dependencies:
+      lodash:
+        specifier: 4.18.1
+        version: 4.18.1
     devDependencies:
       '@biomejs/biome':
         specifier: 2.0.0-beta.5
@@ -3234,6 +3238,7 @@ packages:
   git-raw-commits@5.0.1:
     resolution: {integrity: sha512-Y+csSm2GD/PCSh6Isd/WiMjNAydu0VBiG9J7EdQsNA5P9uXvLayqjmTsNlK5Gs9IhblFZqOU0yid5Il5JPoLiQ==}
     engines: {node: '>=18'}
+    deprecated: Deprecated and no longer maintained. Use @conventional-changelog/git-client instead.
     hasBin: true
 
   glob-parent@5.1.2:
