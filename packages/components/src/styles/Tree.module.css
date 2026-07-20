@@ -50,7 +50,7 @@
 	}
 
 	& .chevron {
-		padding: var(--lp-spacing-100);
+		padding: 0;
 		border-radius: var(--lp-border-radius-regular);
 		color: var(--lp-color-text-ui-primary-base);
 

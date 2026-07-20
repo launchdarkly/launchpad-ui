@@ -8,9 +8,6 @@
 				"codeSyntax": {}
 			}
 		},
-		"100": {
-			"$value": "{size.0}"
-		},
 		"200": {
 			"$value": "{size.4}"
 		},

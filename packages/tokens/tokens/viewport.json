@@ -9,7 +9,7 @@
 			}
 		},
 		"mobile": {
-			"$value": "{size.0}"
+			"$value": 0
 		},
 		"tablet": {
 			"$value": 740
