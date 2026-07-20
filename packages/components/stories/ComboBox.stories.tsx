@@ -333,6 +333,31 @@ export const MultipleSelectionStates: Story = {
 	),
 };
 
+export const MultipleSelectionCustomValue: Story = {
+	render: () => (
+		<ComboBox selectionMode="multiple" defaultValue={['CA', 'NY']} items={states}>
+			<Label>States with custom value</Label>
+			<Group>
+				<ComboBoxTagGroup<StateItem> aria-label="Selected states">
+					{({ value, textValue }) => (value ? `${value.id}: ${value.name}` : textValue)}
+				</ComboBoxTagGroup>
+				<Input placeholder="Filter states" />
+				<IconButton
+					aria-label="Show suggestions"
+					icon="chevron-down"
+					size="small"
+					variant="minimal"
+				/>
+			</Group>
+			<Popover>
+				<ListBox items={states}>
+					{(item) => <ListBoxItem id={item.id}>{item.name}</ListBoxItem>}
+				</ListBox>
+			</Popover>
+		</ComboBox>
+	),
+};
+
 export const CustomValue: Story = {
 	render: () => (
 		<ComboBox defaultValue="react-aria-2">
