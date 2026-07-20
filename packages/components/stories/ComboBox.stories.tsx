@@ -208,7 +208,6 @@ const MultipleField = ({ placeholder = 'Filter states' }: { placeholder?: string
 			{({ value, textValue }) => value?.name ?? textValue}
 		</ComboBoxTagGroup>
 		<Input placeholder={placeholder} />
-		<ComboBoxClearButton />
 		<IconButton aria-label="Show suggestions" icon="chevron-down" size="small" variant="minimal" />
 	</Group>
 );
