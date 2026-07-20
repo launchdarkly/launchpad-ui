@@ -1,11 +1,13 @@
+import type { Key } from '@react-types/shared';
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import type { ComponentType } from 'react';
 
 import { Icon } from '@launchpad-ui/icons';
 import { vars } from '@launchpad-ui/vars';
+import { useState } from 'react';
 import { expect, userEvent, within } from 'storybook/test';
 
-import { ComboBox, ComboBoxClearButton } from '../src/ComboBox';
+import { ComboBox, ComboBoxClearButton, ComboBoxTagGroup, ComboBoxValue } from '../src/ComboBox';
 import { Group } from '../src/Group';
 import { IconButton } from '../src/IconButton';
 import { Input } from '../src/Input';
@@ -16,7 +18,11 @@ import { Text } from '../src/Text';
 
 const meta: Meta<typeof ComboBox> = {
 	component: ComboBox,
-	subcomponents: { ComboBoxClearButton } as Record<string, ComponentType<unknown>>,
+	subcomponents: {
+		ComboBoxClearButton,
+		ComboBoxTagGroup,
+		ComboBoxValue,
+	} as Record<string, ComponentType<unknown>>,
 	title: 'Components/Pickers/ComboBox',
 	decorators: [
 		(Story) => (
@@ -35,7 +41,7 @@ const open = {
 	play: async ({ canvasElement }: { canvasElement: HTMLElement }) => {
 		const canvas = within(canvasElement);
 
-		await userEvent.click(canvas.getByRole('button'));
+		await userEvent.click(canvas.getByRole('button', { name: /^Show suggestions/ }));
 		const body = canvasElement.ownerDocument.body;
 		await expect(await within(body).findByRole('listbox'));
 	},
@@ -180,4 +186,209 @@ export const States: Story = {
 			},
 		},
 	},
+};
+
+interface StateItem {
+	id: string;
+	name: string;
+}
+
+const states: StateItem[] = [
+	{ id: 'CA', name: 'California' },
+	{ id: 'CO', name: 'Colorado' },
+	{ id: 'FL', name: 'Florida' },
+	{ id: 'NY', name: 'New York' },
+	{ id: 'TX', name: 'Texas' },
+	{ id: 'WA', name: 'Washington' },
+];
+
+const MultipleField = ({ placeholder = 'Filter states' }: { placeholder?: string }) => (
+	<Group>
+		<ComboBoxTagGroup<StateItem> aria-label="Selected states">
+			{({ value, textValue }) => value?.name ?? textValue}
+		</ComboBoxTagGroup>
+		<Input placeholder={placeholder} />
+		<IconButton aria-label="Show suggestions" icon="chevron-down" size="small" variant="minimal" />
+	</Group>
+);
+
+export const MultipleSelection: Story = {
+	render: () => (
+		<ComboBox selectionMode="multiple" defaultValue={['CA', 'NY']} items={states}>
+			<Label>States</Label>
+			<MultipleField />
+			<Popover>
+				<ListBox items={states}>
+					{(item) => <ListBoxItem id={item.id}>{item.name}</ListBoxItem>}
+				</ListBox>
+			</Popover>
+		</ComboBox>
+	),
+	play: async ({ canvasElement }) => {
+		const canvas = within(canvasElement);
+		const input = canvas.getByRole('combobox', { name: 'States' });
+		await userEvent.type(input, 'Tex');
+
+		const body = canvasElement.ownerDocument.body;
+		await userEvent.click(await within(body).findByRole('option', { name: 'Texas' }));
+
+		await expect(input).toHaveValue('');
+		await expect(canvas.getByText('Texas')).toBeVisible();
+	},
+};
+
+export const MultipleSelectionControlledItems: Story = {
+	render: () => {
+		const [value, setValue] = useState<Key[]>(['CA', 'NY']);
+		const [inputValue, setInputValue] = useState('');
+		const filteredStates = states.filter((item) =>
+			item.name.toLowerCase().includes(inputValue.toLowerCase()),
+		);
+
+		return (
+			<ComboBox
+				selectionMode="multiple"
+				value={value}
+				onChange={(nextValue) => {
+					setValue(nextValue);
+					setInputValue('');
+				}}
+				inputValue={inputValue}
+				onInputChange={setInputValue}
+				items={filteredStates}
+			>
+				<Label>Controlled states</Label>
+				<MultipleField placeholder="Filter controlled states" />
+				<Popover>
+					<ListBox items={filteredStates}>
+						{(item) => <ListBoxItem id={item.id}>{item.name}</ListBoxItem>}
+					</ListBox>
+				</Popover>
+			</ComboBox>
+		);
+	},
+};
+
+export const MultipleSelectionDefaultRenderer: Story = {
+	render: () => (
+		<ComboBox selectionMode="multiple" defaultValue={['alpha', 'gamma']}>
+			<Label>Greek letters</Label>
+			<Group>
+				<ComboBoxTagGroup aria-label="Selected letters" />
+				<Input placeholder="Filter letters" />
+				<IconButton
+					aria-label="Show suggestions"
+					icon="chevron-down"
+					size="small"
+					variant="minimal"
+				/>
+			</Group>
+			<Popover>
+				<ListBox>
+					<ListBoxItem id="alpha">Alpha</ListBoxItem>
+					<ListBoxItem id="beta">Beta</ListBoxItem>
+					<ListBoxItem id="gamma">Gamma</ListBoxItem>
+				</ListBox>
+			</Popover>
+		</ComboBox>
+	),
+};
+
+const MultipleStateExample = ({
+	label,
+	isDisabled,
+	isInvalid,
+	isReadOnly,
+}: {
+	label: string;
+	isDisabled?: boolean;
+	isInvalid?: boolean;
+	isReadOnly?: boolean;
+}) => (
+	<ComboBox
+		selectionMode="multiple"
+		defaultValue={['CA', 'NY']}
+		items={states}
+		isDisabled={isDisabled}
+		isInvalid={isInvalid}
+		isReadOnly={isReadOnly}
+	>
+		<Label>{label}</Label>
+		<MultipleField />
+		<Popover>
+			<ListBox items={states}>
+				{(item) => <ListBoxItem id={item.id}>{item.name}</ListBoxItem>}
+			</ListBox>
+		</Popover>
+	</ComboBox>
+);
+
+export const MultipleSelectionStates: Story = {
+	render: () => (
+		<div style={{ display: 'flex', flexDirection: 'column', gap: vars.spacing[400] }}>
+			<MultipleStateExample label="Invalid" isInvalid />
+			<MultipleStateExample label="Disabled" isDisabled />
+			<MultipleStateExample label="Read only" isReadOnly />
+		</div>
+	),
+};
+
+export const MultipleSelectionCustomValue: Story = {
+	render: () => (
+		<ComboBox selectionMode="multiple" defaultValue={['CA', 'NY']} items={states} allowsCustomValue>
+			<Label>States with custom value</Label>
+			<Group>
+				<ComboBoxTagGroup<StateItem> aria-label="Selected states" />
+				<Input placeholder="Type or filter states" />
+				<IconButton
+					aria-label="Show suggestions"
+					icon="chevron-down"
+					size="small"
+					variant="minimal"
+				/>
+			</Group>
+			<Popover>
+				<ListBox items={states}>
+					{(item) => <ListBoxItem id={item.id}>{item.name}</ListBoxItem>}
+				</ListBox>
+			</Popover>
+		</ComboBox>
+	),
+	play: async ({ canvasElement }) => {
+		const canvas = within(canvasElement);
+		const input = canvas.getByRole('combobox', { name: 'States with custom value' });
+		await userEvent.type(input, 'Atlantis');
+		await userEvent.tab();
+
+		await expect(input).toHaveValue('Atlantis');
+		await expect(canvas.getByText('California')).toBeVisible();
+		await expect(canvas.getByText('New York')).toBeVisible();
+	},
+};
+
+export const CustomValue: Story = {
+	render: () => (
+		<ComboBox defaultValue="react-aria-2">
+			<Label>Custom value</Label>
+			<Group>
+				<Input />
+				<IconButton
+					aria-label="Show suggestions"
+					icon="chevron-down"
+					size="small"
+					variant="minimal"
+				/>
+			</Group>
+			<ComboBoxValue>
+				{({ selectedText }) => `Current selection: ${selectedText || 'None'}`}
+			</ComboBoxValue>
+			<Popover>
+				<ListBox>
+					<ListBoxItem id="react-aria-1">Item one</ListBoxItem>
+					<ListBoxItem id="react-aria-2">Item two</ListBoxItem>
+					<ListBoxItem id="react-aria-3">Item three</ListBoxItem>
+				</ListBox>
+			</Popover>
+		</ComboBox>
+	),
 };

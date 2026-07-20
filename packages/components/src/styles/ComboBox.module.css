@@ -10,3 +10,13 @@
 		width: 100%;
 	}
 }
+
+.value,
+.tagValue {
+	display: contents;
+}
+
+.tagGroup.tagGroup,
+.tagList.tagList {
+	display: contents;
+}
