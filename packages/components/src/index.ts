@@ -19,7 +19,12 @@ export type {
 export type { CheckboxProps } from './Checkbox';
 export type { CheckboxGroupProps } from './CheckboxGroup';
 export type { CodeProps } from './Code';
-export type { ComboBoxProps } from './ComboBox';
+export type {
+	ComboBoxProps,
+	ComboBoxTagGroupProps,
+	ComboBoxTagItem,
+	ComboBoxValueProps,
+} from './ComboBox';
 export type {
 	DateFieldProps,
 	DateInputProps,
@@ -151,7 +156,12 @@ export {
 	ComboBox,
 	ComboBoxClearButton,
 	ComboBoxContext,
+	ComboBoxTagGroup,
+	ComboBoxTagGroupContext,
+	ComboBoxValue,
+	ComboBoxValueContext,
 	comboBoxStyles,
+	comboBoxValueStyles,
 } from './ComboBox';
 export {
 	DateField,
