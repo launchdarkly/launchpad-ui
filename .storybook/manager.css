@@ -51,7 +51,7 @@
 	color: #238ca3 !important; /* brand.cyan.dark - matching --lp-color-text-code-string light */
 	border-color: #d8dde3 !important; /* gray.100 */
 	border-radius: 4px !important; /* matching --lp-border-radius-regular */
-	padding: 4px 8px !important; /* matching --lp-spacing-100 --lp-spacing-200 */
+	padding: 4px 8px !important; /* matching --lp-spacing-200 --lp-spacing-300 */
 	font-weight: 400 !important; /* matching --lp-font-weight-regular */
 }
 
@@ -114,7 +114,7 @@
 	border-color: #3f454c !important; /* gray.700 */
 	border-radius: 4px !important; /* matching --lp-border-radius-regular */
 	border-width: 0 !important;
-	padding: 4px 8px !important; /* matching --lp-spacing-100 --lp-spacing-200 */
+	padding: 4px 8px !important; /* matching --lp-spacing-200 --lp-spacing-300 */
 	font-weight: 400 !important; /* matching --lp-font-weight-regular */
 }
 
