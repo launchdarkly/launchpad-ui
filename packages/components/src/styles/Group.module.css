@@ -16,6 +16,7 @@
 	&:has([data-combobox-tags]) {
 		position: relative;
 		flex-wrap: wrap;
+		column-gap: var(--lp-spacing-200);
 		row-gap: var(--lp-spacing-200);
 
 		& input[data-rac] {
