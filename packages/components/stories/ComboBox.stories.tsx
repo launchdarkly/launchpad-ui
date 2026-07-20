@@ -333,6 +333,39 @@ export const MultipleSelectionStates: Story = {
 	),
 };
 
+export const MultipleSelectionCustomValue: Story = {
+	render: () => (
+		<ComboBox selectionMode="multiple" defaultValue={['CA', 'NY']} items={states} allowsCustomValue>
+			<Label>States with custom value</Label>
+			<Group>
+				<ComboBoxTagGroup<StateItem> aria-label="Selected states" />
+				<Input placeholder="Type or filter states" />
+				<IconButton
+					aria-label="Show suggestions"
+					icon="chevron-down"
+					size="small"
+					variant="minimal"
+				/>
+			</Group>
+			<Popover>
+				<ListBox items={states}>
+					{(item) => <ListBoxItem id={item.id}>{item.name}</ListBoxItem>}
+				</ListBox>
+			</Popover>
+		</ComboBox>
+	),
+	play: async ({ canvasElement }) => {
+		const canvas = within(canvasElement);
+		const input = canvas.getByRole('combobox', { name: 'States with custom value' });
+		await userEvent.type(input, 'Atlantis');
+		await userEvent.tab();
+
+		await expect(input).toHaveValue('Atlantis');
+		await expect(canvas.getByText('California')).toBeVisible();
+		await expect(canvas.getByText('New York')).toBeVisible();
+	},
+};
+
 export const CustomValue: Story = {
 	render: () => (
 		<ComboBox defaultValue="react-aria-2">
