@@ -1,8 +1,7 @@
 .base {
 	composes: field from './base.module.css';
-	font: var(--lp-text-body-2-regular);
 	color: var(--lp-color-text-ui-primary-base);
-	padding: 5px var(--lp-spacing-300);
+	padding-inline: var(--lp-spacing-300);
 	border-radius: var(--lp-border-radius-medium);
 	border-width: var(--lp-border-width-200);
 	border-style: solid;
@@ -28,6 +27,16 @@
 	&::placeholder {
 		color: var(--lp-color-text-field-placeholder);
 	}
+}
+
+.small {
+	font: var(--lp-text-small-1-regular);
+	padding-block: 3px;
+}
+
+.medium {
+	font: var(--lp-text-body-2-regular);
+	padding-block: 5px;
 }
 
 ._default {
