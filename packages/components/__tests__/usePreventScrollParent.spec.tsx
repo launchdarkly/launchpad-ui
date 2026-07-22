@@ -59,6 +59,38 @@ describe('usePreventScrollParent', () => {
 		expect(scroller.style.overflow).toBe('auto');
 	});
 
+	it('locks a scroll parent that is not currently overflowing', async () => {
+		const user = userEvent.setup();
+		render(<NotOverflowingHarness />);
+
+		const scroller = screen.getByTestId('scroller');
+		expect(scroller.style.overflow).toBe('auto');
+
+		await user.click(screen.getByRole('button'));
+		expect(scroller.style.overflow).toBe('hidden');
+
+		await user.click(screen.getByRole('button'));
+		expect(scroller.style.overflow).toBe('auto');
+	});
+
+	it('locks every nested scroll container between the trigger and the document', async () => {
+		const user = userEvent.setup();
+		render(<NestedScrollersHarness />);
+
+		const outer = screen.getByTestId('outer');
+		const inner = screen.getByTestId('inner');
+		expect(outer.style.overflow).toBe('auto');
+		expect(inner.style.overflow).toBe('auto');
+
+		await user.click(screen.getByRole('button'));
+		expect(outer.style.overflow).toBe('hidden');
+		expect(inner.style.overflow).toBe('hidden');
+
+		await user.click(screen.getByRole('button'));
+		expect(outer.style.overflow).toBe('auto');
+		expect(inner.style.overflow).toBe('auto');
+	});
+
 	it('does not lock when disabled (non-modal)', async () => {
 		const user = userEvent.setup();
 		render(<Harness isNonModal />);
@@ -86,6 +118,63 @@ describe('usePreventScrollParent', () => {
 		expect(scroller.style.overflow).toBe('auto');
 	});
 });
+
+const NotOverflowingHarness = ({ isNonModal }: { isNonModal?: boolean }) => {
+	const triggerRef = useRef<HTMLButtonElement>(null);
+	const [isOpen, setIsOpen] = useState(false);
+
+	usePreventScrollParent({ triggerRef, isOpen, isDisabled: isNonModal });
+
+	return (
+		<div
+			data-test-id="scroller"
+			ref={(node) => {
+				if (node) {
+					node.style.overflow = 'auto';
+					defineDimensions(node, {
+						scrollHeight: 500,
+						clientHeight: 500,
+						offsetWidth: 500,
+						clientWidth: 500,
+					});
+				}
+			}}
+		>
+			<button type="button" ref={triggerRef} onClick={() => setIsOpen((open) => !open)}>
+				toggle
+			</button>
+		</div>
+	);
+};
+
+const NestedScrollersHarness = () => {
+	const triggerRef = useRef<HTMLButtonElement>(null);
+	const [isOpen, setIsOpen] = useState(false);
+
+	usePreventScrollParent({ triggerRef, isOpen });
+
+	const makeScroller = (node: HTMLDivElement | null) => {
+		if (node) {
+			node.style.overflow = 'auto';
+			defineDimensions(node, {
+				scrollHeight: 1000,
+				clientHeight: 500,
+				offsetWidth: 500,
+				clientWidth: 485,
+			});
+		}
+	};
+
+	return (
+		<div data-test-id="outer" ref={makeScroller}>
+			<div data-test-id="inner" ref={makeScroller}>
+				<button type="button" ref={triggerRef} onClick={() => setIsOpen((open) => !open)}>
+					toggle
+				</button>
+			</div>
+		</div>
+	);
+};
 
 const NestedOverlay = ({ label }: { label: string }) => {
 	const triggerRef = useRef<HTMLButtonElement>(null);

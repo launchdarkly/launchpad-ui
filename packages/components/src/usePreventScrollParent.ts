@@ -3,7 +3,7 @@ import type { RefObject } from 'react';
 import { isScrollable, useLayoutEffect } from '@react-aria/utils';
 
 interface PreventScrollParentOptions {
-	/** Ref to the element that triggers the overlay. Its nearest scrollable ancestor is locked. */
+	/** Ref to the element that triggers the overlay. Its scrollable ancestors are locked. */
 	triggerRef?: RefObject<Element | null> | null;
 	/** Whether the overlay is currently open. */
 	isOpen: boolean;
@@ -66,30 +66,36 @@ const unlock = (element: HTMLElement) => {
 };
 
 /**
- * Finds the nearest ancestor of `start` to lock. An element already locked by this hook is a valid
- * target even though its `overflow` is now `hidden` (which `isScrollable` would otherwise reject),
- * so nested overlays sharing a scroll container reference-count the same element. Returns `null`
- * when the document itself is the scroller, leaving those apps to React Aria's own lock.
+ * Collects the scrollable ancestors of `start` that should be locked while an overlay is open.
+ *
+ * Ancestors are matched by their `overflow` being scrollable, regardless of whether they currently
+ * overflow — React Aria's own lock also fires unconditionally, and content can grow to overflow
+ * while the overlay is open. Every scrollable ancestor is returned (not just the nearest) because
+ * app shells often nest several scroll containers; locking all of them mirrors a document-level
+ * lock. An element already locked by this hook is included even though its `overflow` is now
+ * `hidden` (which `isScrollable` would otherwise reject), so nested overlays reference-count the
+ * same containers. `document.body` and the document root are skipped, leaving those to React Aria.
  */
-const findScrollParent = (start: Element): HTMLElement | null => {
+const findScrollParents = (start: Element): HTMLElement[] => {
 	const root = document.scrollingElement ?? document.documentElement;
+	const parents: HTMLElement[] = [];
 	let node = start.parentElement;
 	while (node && node !== document.body && node !== root) {
-		if (locks.has(node) || isScrollable(node, true)) {
-			return node;
+		if (locks.has(node) || isScrollable(node, false)) {
+			parents.push(node);
 		}
 		node = node.parentElement;
 	}
-	return null;
+	return parents;
 };
 
 /**
- * Prevents scrolling of the trigger's nearest scrollable ancestor while an overlay is open.
+ * Prevents scrolling of the trigger's scrollable ancestors while an overlay is open.
  *
  * React Aria's `usePreventScroll` only locks `document.documentElement`. When an app scrolls in a
  * nested container (e.g. an app shell with `overflow: auto` on a layout element) rather than on the
  * document, that lock is a no-op and the page keeps scrolling behind an open overlay. This hook
- * complements it by locking the actual scroll container. It is a no-op when the document itself is
+ * complements it by locking the actual scroll containers. It is a no-op when the document itself is
  * the scroller, so apps already handled by React Aria are unaffected.
  */
 const usePreventScrollParent = ({
@@ -102,13 +108,19 @@ const usePreventScrollParent = ({
 			return;
 		}
 
-		const scrollParent = findScrollParent(triggerRef.current);
-		if (!scrollParent) {
+		const scrollParents = findScrollParents(triggerRef.current);
+		if (scrollParents.length === 0) {
 			return;
 		}
 
-		lock(scrollParent);
-		return () => unlock(scrollParent);
+		for (const parent of scrollParents) {
+			lock(parent);
+		}
+		return () => {
+			for (const parent of scrollParents) {
+				unlock(parent);
+			}
+		};
 	}, [triggerRef, isOpen, isDisabled]);
 };
 
