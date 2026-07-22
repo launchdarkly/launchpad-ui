@@ -157,10 +157,7 @@
 
 .picker {
 	composes: base from './Input.module.css';
-	/* Picker triggers render as a medium-height input, so pull in that size's
-	   font + vertical padding (Input's `.base` is size-agnostic). */
 	/* biome-ignore lint/suspicious/noDuplicateProperties: safe */
-	composes: medium from './Input.module.css';
 	composes: _default from './Input.module.css';
 	composes: group from './Group.module.css';
 

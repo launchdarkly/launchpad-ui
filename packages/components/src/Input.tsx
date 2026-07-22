@@ -15,7 +15,7 @@ const inputStyles = cva(styles.base, {
 	variants: {
 		size: {
 			small: styles.small,
-			medium: styles.medium,
+			medium: null,
 		},
 		variant: {
 			default: styles._default,
