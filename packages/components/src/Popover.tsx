@@ -7,15 +7,27 @@ import type {
 import type { ContextValue } from 'react-aria-components/slots';
 
 import { cva } from 'class-variance-authority';
-import { createContext } from 'react';
+import { createContext, useContext } from 'react';
 import { composeRenderProps } from 'react-aria-components/composeRenderProps';
+import { OverlayTriggerStateContext } from 'react-aria-components/Dialog';
 import {
 	OverlayArrow as AriaOverlayArrow,
 	Popover as AriaPopover,
+	PopoverContext as AriaPopoverContext,
 } from 'react-aria-components/Popover';
 
 import styles from './styles/Popover.module.css';
+import { usePreventScrollParent } from './usePreventScrollParent';
 import { useLPContextProps } from './utils';
+
+const getTriggerRef = (
+	contextValue: ContextValue<AriaPopoverProps, HTMLElement>,
+): AriaPopoverProps['triggerRef'] | undefined => {
+	if (contextValue && typeof contextValue === 'object' && 'triggerRef' in contextValue) {
+		return contextValue.triggerRef;
+	}
+	return undefined;
+};
 
 interface PopoverProps extends AriaPopoverProps, VariantProps<typeof popoverStyles> {
 	ref?: Ref<HTMLElement>;
@@ -48,6 +60,13 @@ const overlayArrowStyles = cva(styles.arrow);
 const Popover = ({ ref, ...props }: PopoverProps) => {
 	[props, ref] = useLPContextProps(props, ref, PopoverContext);
 	const { offset = 4, crossOffset = 0, width = 'default' } = props;
+
+	const triggerState = useContext(OverlayTriggerStateContext);
+	const ariaPopoverContext = useContext(AriaPopoverContext);
+	const triggerRef = props.triggerRef ?? getTriggerRef(ariaPopoverContext);
+	const isOpen = props.isOpen ?? triggerState?.isOpen ?? false;
+
+	usePreventScrollParent({ triggerRef, isOpen, isDisabled: props.isNonModal ?? false });
 
 	return (
 		<AriaPopover
