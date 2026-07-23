@@ -20,6 +20,13 @@ const comboBoxStyles = cva(styles.box);
 
 interface ComboBoxProps<T extends object> extends AriaComboBoxProps<T> {
 	ref?: Ref<HTMLDivElement>;
+	/**
+	 * Whether the app-level scroll lock should engage while this combo box's popover is open.
+	 * When `false`, the popover is marked with `data-no-scroll-lock` so a consuming app
+	 * (e.g. Gonfalon) can exclude this instance from its background scroll lock.
+	 * @default true
+	 */
+	hasScrollLock?: boolean;
 }
 
 interface ComboBoxClearButtonProps extends Partial<IconButtonProps> {}
@@ -34,7 +41,7 @@ const ComboBoxContext = createContext<ContextValue<ComboBoxProps<any>, HTMLDivEl
  */
 const ComboBox = <T extends object>({ ref, ...props }: ComboBoxProps<T>) => {
 	[props, ref] = useLPContextProps(props, ref, ComboBoxContext);
-	const { menuTrigger = 'focus' } = props;
+	const { menuTrigger = 'focus', hasScrollLock = true, ...comboBoxProps } = props;
 	const groupRef = useRef<HTMLDivElement>(null);
 	// https://github.com/adobe/react-spectrum/blob/main/packages/react-aria-components/src/ComboBox.tsx#L152-L166
 	const [groupWidth, setGroupWidth] = useState<string | null>(null);
@@ -53,13 +60,13 @@ const ComboBox = <T extends object>({ ref, ...props }: ComboBoxProps<T>) => {
 	return (
 		<AriaComboBox
 			menuTrigger={menuTrigger}
-			{...props}
+			{...comboBoxProps}
 			ref={ref}
-			className={composeRenderProps(props.className, (className, renderProps) =>
+			className={composeRenderProps(comboBoxProps.className, (className, renderProps) =>
 				comboBoxStyles({ ...renderProps, className }),
 			)}
 		>
-			{composeRenderProps(props.children, (children, { isInvalid, isDisabled }) => (
+			{composeRenderProps(comboBoxProps.children, (children, { isInvalid, isDisabled }) => (
 				<Provider
 					values={[
 						[GroupContext, { ref: groupRef, isInvalid, isDisabled }],
@@ -68,6 +75,7 @@ const ComboBox = <T extends object>({ ref, ...props }: ComboBoxProps<T>) => {
 							{
 								triggerRef: groupRef,
 								style: { '--trigger-width': groupWidth } as CSSProperties,
+								...(hasScrollLock ? {} : { 'data-no-scroll-lock': true }),
 							},
 						],
 					]}

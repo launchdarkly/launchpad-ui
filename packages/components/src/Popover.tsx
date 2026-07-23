@@ -19,6 +19,12 @@ import { useLPContextProps } from './utils';
 
 interface PopoverProps extends AriaPopoverProps, VariantProps<typeof popoverStyles> {
 	ref?: Ref<HTMLElement>;
+	/**
+	 * Marks the popover element with the `data-no-scroll-lock` attribute so a consuming app
+	 * can exclude it from any app-level background scroll lock. Set indirectly via the
+	 * `hasScrollLock` prop on `Select`/`ComboBox`.
+	 */
+	'data-no-scroll-lock'?: boolean;
 }
 interface OverlayArrowProps extends Omit<AriaOverlayArrowProps, 'children'> {
 	ref?: Ref<HTMLDivElement>;

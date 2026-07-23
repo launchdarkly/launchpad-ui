@@ -66,4 +66,43 @@ describe('ComboBox', () => {
 		await user.click(screen.getByRole('button'));
 		expect(await screen.findByRole('combobox')).toHaveValue('');
 	});
+
+	const renderComboBox = (hasScrollLock?: boolean) =>
+		render(
+			<ComboBox hasScrollLock={hasScrollLock}>
+				<Label>Label</Label>
+				<Group>
+					<Input />
+					<IconButton
+						icon="chevron-down"
+						size="small"
+						variant="minimal"
+						aria-label="Show suggestions"
+					/>
+				</Group>
+				<Popover>
+					<ListBox>
+						<ListBoxItem>Item one</ListBoxItem>
+					</ListBox>
+				</Popover>
+			</ComboBox>,
+		);
+
+	it('does not mark the popover when hasScrollLock defaults to true', async () => {
+		const user = userEvent.setup();
+		renderComboBox();
+
+		await user.click(screen.getByRole('button'));
+		const popover = (await screen.findByRole('listbox')).closest('[data-trigger="ComboBox"]');
+		expect(popover).not.toHaveAttribute('data-no-scroll-lock');
+	});
+
+	it('marks the popover with data-no-scroll-lock when hasScrollLock is false', async () => {
+		const user = userEvent.setup();
+		renderComboBox(false);
+
+		await user.click(screen.getByRole('button'));
+		const popover = (await screen.findByRole('listbox')).closest('[data-trigger="ComboBox"]');
+		expect(popover).toHaveAttribute('data-no-scroll-lock');
+	});
 });

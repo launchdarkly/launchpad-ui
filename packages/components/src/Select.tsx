@@ -12,6 +12,7 @@ import { Select as AriaSelect, SelectValue as AriaSelectValue } from 'react-aria
 import { Provider } from 'react-aria-components/slots';
 
 import { ButtonContext } from './Button';
+import { PopoverContext } from './Popover';
 import baseStyles from './styles/base.module.css';
 import styles from './styles/Select.module.css';
 import { useLPContextProps } from './utils';
@@ -21,6 +22,13 @@ const selectValueStyles = cva(styles.value);
 
 interface SelectProps<T extends object> extends AriaSelectProps<T> {
 	ref?: Ref<HTMLDivElement>;
+	/**
+	 * Whether the app-level scroll lock should engage while this select's popover is open.
+	 * When `false`, the popover is marked with `data-no-scroll-lock` so a consuming app
+	 * (e.g. Gonfalon) can exclude this instance from its background scroll lock.
+	 * @default true
+	 */
+	hasScrollLock?: boolean;
 }
 
 interface SelectValueProps<T extends object> extends AriaSelectValueProps<T> {
@@ -40,15 +48,16 @@ const SelectValueContext =
  */
 const Select = <T extends object>({ ref, ...props }: SelectProps<T>) => {
 	[props, ref] = useLPContextProps(props, ref, SelectContext);
+	const { hasScrollLock = true, ...selectProps } = props;
 	return (
 		<AriaSelect
-			{...props}
+			{...selectProps}
 			ref={ref}
-			className={composeRenderProps(props.className, (className, renderProps) =>
+			className={composeRenderProps(selectProps.className, (className, renderProps) =>
 				selectStyles({ ...renderProps, className }),
 			)}
 		>
-			{composeRenderProps(props.children, (children, { isInvalid }) => (
+			{composeRenderProps(selectProps.children, (children, { isInvalid }) => (
 				<Provider
 					values={[
 						[
@@ -59,6 +68,7 @@ const Select = <T extends object>({ ref, ...props }: SelectProps<T>) => {
 								size: null,
 							},
 						],
+						[PopoverContext, hasScrollLock ? {} : { 'data-no-scroll-lock': true }],
 					]}
 				>
 					{children}
