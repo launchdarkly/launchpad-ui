@@ -3,7 +3,7 @@ import type { Ref } from 'react';
 import type { ButtonProps as AriaButtonProps } from 'react-aria-components/Button';
 import type { ContextValue } from 'react-aria-components/slots';
 
-import { cva } from 'class-variance-authority';
+import { cva, cx } from 'class-variance-authority';
 import { createContext, useContext } from 'react';
 import { Button as AriaButton } from 'react-aria-components/Button';
 import { composeRenderProps } from 'react-aria-components/composeRenderProps';
@@ -13,6 +13,7 @@ import { TextContext } from 'react-aria-components/Text';
 import { PerceivableContext } from './Perceivable';
 import { ProgressBar } from './ProgressBar';
 import styles from './styles/Button.module.css';
+import fieldStyles from './styles/field.module.css';
 import { Text } from './Text';
 import { useLPContextProps } from './utils';
 
@@ -63,7 +64,10 @@ const Button = ({ ref, ...props }: ButtonProps) => {
 			{...perceivableProps}
 			ref={ref}
 			className={composeRenderProps(props.className, (className, renderProps) =>
-				buttonStyles({ ...renderProps, size, variant, className }),
+				cx(
+					buttonStyles({ ...renderProps, size, variant, className }),
+					variant === 'picker' && size === 'small' && fieldStyles.small,
+				),
 			)}
 		>
 			{composeRenderProps(props.children, (children, { isPending }) => (

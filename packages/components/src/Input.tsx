@@ -8,7 +8,7 @@ import { createContext } from 'react';
 import { composeRenderProps } from 'react-aria-components/composeRenderProps';
 import { Input as AriaInput } from 'react-aria-components/Input';
 
-import styles from './styles/Input.module.css';
+import styles from './styles/field.module.css';
 import { useLPContextProps } from './utils';
 
 const inputStyles = cva(styles.base, {

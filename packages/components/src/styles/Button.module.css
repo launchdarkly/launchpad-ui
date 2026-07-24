@@ -156,9 +156,9 @@
 }
 
 .picker {
-	composes: base from './Input.module.css';
+	composes: base from './field.module.css';
 	/* biome-ignore lint/suspicious/noDuplicateProperties: safe */
-	composes: _default from './Input.module.css';
+	composes: _default from './field.module.css';
 	composes: group from './Group.module.css';
 
 	& [data-icon]:last-child {
