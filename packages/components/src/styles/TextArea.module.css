@@ -1,3 +1,5 @@
 .area {
 	flex: unset;
+	/* +1 to align with input elements who are granted a 1px useragent buffer  */
+	padding-block: calc(var(--lp-size-4) + var(--lp-size-1));
 }

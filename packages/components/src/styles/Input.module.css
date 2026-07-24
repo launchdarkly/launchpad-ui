@@ -2,12 +2,12 @@
 	composes: field from './base.module.css';
 	font: var(--lp-text-body-2-regular);
 	color: var(--lp-color-text-ui-primary-base);
-	height: var(--lp-size-32);
+	min-height: var(--lp-size-32);
 	padding-inline: var(--lp-spacing-300);
 	border-radius: var(--lp-border-radius-medium);
 	border-width: var(--lp-border-width-200);
 	border-style: solid;
-	flex: auto;
+	flex: 1;
 	min-width: 0;
 
 	&:is([data-focused], [data-focus-within]) {
@@ -33,7 +33,7 @@
 
 .small {
 	font: var(--lp-text-small-1-regular);
-	height: var(--lp-size-24);
+	min-height: var(--lp-size-24);
 }
 
 ._default {
