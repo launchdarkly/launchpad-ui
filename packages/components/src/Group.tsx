@@ -14,7 +14,7 @@ import { useLPContextProps } from './utils';
 
 const groupStyles = cva(styles.group);
 
-interface GroupProps extends AriaGroupProps, InputVariants {
+interface GroupProps extends AriaGroupProps, Omit<InputVariants, 'size'> {
 	ref?: Ref<HTMLDivElement>;
 }
 
@@ -27,11 +27,11 @@ const GroupContext = createContext<ContextValue<GroupProps, HTMLDivElement>>(nul
  */
 const Group = ({ ref, ...props }: GroupProps) => {
 	[props, ref] = useLPContextProps(props, ref, GroupContext);
-	const { variant = 'default' } = props;
+	const { variant = 'default', ...rest } = props;
 
 	return (
 		<AriaGroup
-			{...props}
+			{...rest}
 			ref={ref}
 			className={composeRenderProps(props.className, (className, renderProps) =>
 				cx(inputStyles({ variant }), groupStyles({ ...renderProps, className })),

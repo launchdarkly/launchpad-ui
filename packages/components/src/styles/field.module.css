@@ -2,7 +2,8 @@
 	composes: field from './base.module.css';
 	font: var(--lp-text-body-2-regular);
 	color: var(--lp-color-text-ui-primary-base);
-	padding: 5px var(--lp-spacing-300);
+	min-height: var(--lp-size-32);
+	padding-inline: var(--lp-spacing-300);
 	border-radius: var(--lp-border-radius-medium);
 	border-width: var(--lp-border-width-200);
 	border-style: solid;
@@ -10,8 +11,8 @@
 	min-width: 0;
 
 	&:is([data-focused], [data-focus-within]) {
-		outline: 2px solid var(--lp-color-shadow-interactive-focus);
-		outline-offset: -2px;
+		outline: var(--lp-size-2) solid var(--lp-color-shadow-interactive-focus);
+		outline-offset: calc(-1 * var(--lp-size-2));
 		z-index: 1;
 	}
 
@@ -30,6 +31,11 @@
 	}
 }
 
+.small {
+	font: var(--lp-text-small-1-regular);
+	min-height: var(--lp-size-24);
+}
+
 ._default {
 	border-color: var(--lp-color-border-field-base);
 	background-color: var(--lp-color-bg-field-base);
@@ -37,7 +43,7 @@
 
 .minimal {
 	background-color: inherit;
-	margin-left: calc(-1 * var(--lp-spacing-300) - 1px);
+	margin-left: calc(-1 * var(--lp-spacing-300) - var(--lp-size-1));
 
 	&:not([data-invalid]) {
 		border-color: transparent;
