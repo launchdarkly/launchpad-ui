@@ -35,10 +35,10 @@
 						"$value": "{color.black.950}"
 					},
 					"focus": {
-						"$value": "{color.black.900}"
+						"$value": "{color.black.800}"
 					},
 					"hover": {
-						"$value": "{color.black.900}"
+						"$value": "{color.black.800}"
 					}
 				},
 				"secondary": {

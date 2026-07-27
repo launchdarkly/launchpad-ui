@@ -232,8 +232,8 @@ exports[`Tokens > builds default tokens 1`] = `
   --lp-color-bg-feedback-warning: var(--lp-color-yellow-50);
   --lp-color-bg-interactive-primary-base: var(--lp-color-black-950);
   --lp-color-bg-interactive-primary-active: var(--lp-color-black-950);
-  --lp-color-bg-interactive-primary-focus: var(--lp-color-black-900);
-  --lp-color-bg-interactive-primary-hover: var(--lp-color-black-900);
+  --lp-color-bg-interactive-primary-focus: var(--lp-color-black-800);
+  --lp-color-bg-interactive-primary-hover: var(--lp-color-black-800);
   --lp-color-bg-interactive-secondary-focus: var(--lp-color-gray-50);
   --lp-color-bg-interactive-secondary-hover: var(--lp-color-gray-50);
   --lp-color-bg-interactive-tertiary-focus: var(--lp-color-gray-50);
