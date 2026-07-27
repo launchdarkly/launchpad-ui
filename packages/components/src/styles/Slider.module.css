@@ -60,7 +60,10 @@
 	height: var(--slider-thumb-size);
 	border-radius: var(--lp-border-radius-large);
 	background-color: var(--lp-color-white-950);
-	border: 1px solid var(--lp-color-border-interactive-secondary-base);
+	/* The thumb straddles the filled and unfilled track, so it can't invert with
+	   the theme. It stays white and relies on this border for definition against
+	   the white fill in dark mode. */
+	border: var(--lp-border-width-200) solid var(--lp-color-border-interactive-secondary-base);
 	box-shadow:
 		0 0 1px 0 rgb(33 33 33 / 0.75),
 		0 0 2px 0 rgb(33 33 33 / 0.06),

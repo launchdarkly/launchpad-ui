@@ -27,3 +27,12 @@ export const Example: Story = {
 		await userEvent.click(canvas.getByRole('button'));
 	},
 };
+
+/**
+ * A selected `primary` toggle takes its background from the shared selected state
+ * rather than the CTA fill, so its label needs the selected text color to stay
+ * readable in both themes.
+ */
+export const PrimarySelected: Story = {
+	args: { children: 'Toggle', variant: 'primary', defaultSelected: true },
+};
