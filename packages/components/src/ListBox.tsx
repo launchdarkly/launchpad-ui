@@ -70,7 +70,7 @@ const ListBoxItem = <T extends object>({ ref, ...props }: ListBoxItemProps<T>) =
 				<>
 					{selectionMode === 'multiple' && (
 						<div
-							className={checkboxStyles()}
+							className={checkboxStyles({ className: styles.checkbox })}
 							data-selected={isSelected || undefined}
 							data-disabled={isDisabled || undefined}
 						>

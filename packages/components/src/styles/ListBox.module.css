@@ -4,6 +4,16 @@
 
 .item {
 	composes: item from './Menu.module.css';
+	align-items: start;
+
+	& > [data-icon] {
+		align-self: center;
+	}
+
+	& .checkbox {
+		height: 1lh;
+		align-items: center;
+	}
 }
 
 .content {
