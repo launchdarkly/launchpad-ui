@@ -114,10 +114,17 @@
 	--Button-color-text-default-active: var(--lp-color-text-ui-primary-base);
 
 	/* ------- PRIMARY ------- */
-	--Button-color-background-primary: var(--lp-color-bg-interactive-primary-base);
-	--Button-color-background-primary-hover: var(--lp-color-bg-interactive-primary-hover);
-	--Button-color-background-primary-focus: var(--lp-color-bg-interactive-primary-focus);
-	--Button-color-background-primary-active: var(--lp-color-bg-interactive-primary-active);
+	/* This deprecated package is pinned to the previous blue rather than tracking
+	   bg-interactive-primary, which is now the black/white brand CTA color. Its
+	   --Button-color-text-primary and --Button-icon-color-fill-primary-* are
+	   shared with the destructive variant, so it cannot adopt an inverting label
+	   without splitting them across 11 call sites. Pinning keeps the deprecated
+	   package visually unchanged; use @launchpad-ui/components for the new CTA.
+	   Dark-mode values are restored in the [data-theme='dark'] rule below. */
+	--Button-color-background-primary: var(--lp-color-blue-500);
+	--Button-color-background-primary-hover: var(--lp-color-blue-600);
+	--Button-color-background-primary-focus: var(--lp-color-blue-600);
+	--Button-color-background-primary-active: var(--lp-color-blue-500);
 	--Button-color-border-primary: var(--lp-color-border-interactive-primary-base);
 	--Button-color-border-primary-hover: var(--lp-color-border-interactive-primary-hover);
 	--Button-color-border-primary-focus: var(--lp-color-border-interactive-primary-focus);
@@ -126,7 +133,7 @@
 	--Button-color-text-primary-hover: var(--lp-color-text-interactive-primary-hover);
 
 	/* PRIMARY WITH ICON */
-	--Button-color-background-primary-withIcon: var(--lp-color-bg-interactive-primary-base);
+	--Button-color-background-primary-withIcon: var(--lp-color-blue-500);
 	--Button-color-border-primary-withIcon: var(--lp-color-border-interactive-primary-base);
 	--Button-color-text-primary-withIcon: var(--lp-color-text-interactive-primary-base);
 
@@ -253,6 +260,17 @@
 	--Button-color-text-minimal-flair-hover: var(--lp-color-text-interactive-flair-hover);
 	--Button-color-text-minimal-flair-focus: var(--lp-color-text-interactive-flair-focus);
 	--Button-color-text-minimal-flair-active: var(--lp-color-text-interactive-flair-active);
+}
+
+/* Dark-mode half of the primary pin described above. These custom properties are
+   declared on .Button itself, so an ancestor [data-theme] rule cannot override
+   them — the selector has to match the element too. */
+[data-theme='dark'] :is(.Button, .ButtonGroup) {
+	--Button-color-background-primary: var(--lp-color-blue-600);
+	--Button-color-background-primary-hover: var(--lp-color-blue-500);
+	--Button-color-background-primary-focus: var(--lp-color-blue-500);
+	--Button-color-background-primary-active: var(--lp-color-blue-600);
+	--Button-color-background-primary-withIcon: var(--lp-color-blue-600);
 }
 
 .Button {
