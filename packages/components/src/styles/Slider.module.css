@@ -1,0 +1,97 @@
+.slider {
+	/*
+	 * Single source of truth for the control's sizing. The rail/fill take the
+	 * track thickness; the thumb scales from it, so overriding one variable
+	 * resizes the whole slider proportionally.
+	 */
+	--slider-track-size: var(--lp-size-8);
+	--slider-thumb-size: calc(var(--slider-track-size) * 2.5);
+
+	display: grid;
+	grid-template-areas:
+		'label output'
+		'track track';
+	grid-template-columns: 1fr auto;
+	align-items: center;
+	gap: var(--lp-spacing-200);
+}
+
+.slider[data-orientation='vertical'] {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: fit-content;
+	height: 100%;
+}
+
+.output {
+	grid-area: output;
+	font: var(--lp-text-label-1-medium);
+	color: var(--lp-color-text-ui-primary-base);
+}
+
+/* The track element is itself the visible rail; the fill (which RAC sizes to
+   100% of the track) inherits this thickness. */
+.track {
+	grid-area: track;
+	position: relative;
+	background-color: var(--lp-color-bg-ui-tertiary);
+	border-radius: var(--lp-border-radius-large);
+}
+
+.slider[data-orientation='horizontal'] .track {
+	width: 100%;
+	height: var(--slider-track-size);
+}
+
+.slider[data-orientation='vertical'] .track {
+	width: var(--slider-track-size);
+	height: 100%;
+	min-height: var(--lp-size-160);
+}
+
+.fill {
+	background-color: var(--lp-color-bg-interactive-primary-base);
+	border-radius: var(--lp-border-radius-large);
+}
+
+.thumb {
+	width: var(--slider-thumb-size);
+	height: var(--slider-thumb-size);
+	border-radius: var(--lp-border-radius-large);
+	background-color: var(--lp-color-white-950);
+	border: 1px solid var(--lp-color-border-interactive-secondary-base);
+	box-shadow:
+		0 0 1px 0 rgb(33 33 33 / 0.75),
+		0 0 2px 0 rgb(33 33 33 / 0.06),
+		0 0 1px 0 rgb(33 33 33 / 0.35);
+	transition: outline var(--lp-duration-200) ease-in-out;
+}
+
+/* RAC positions the thumb along the track axis and applies
+   translate(-50%, -50%); the app centers it on the cross axis. */
+.slider[data-orientation='horizontal'] .thumb {
+	top: 50%;
+}
+
+.slider[data-orientation='vertical'] .thumb {
+	left: 50%;
+}
+
+.thumb[data-hovered],
+.thumb[data-dragging] {
+	background-color: var(--lp-color-bg-ui-secondary);
+}
+
+.thumb[data-focus-visible] {
+	outline: 2px solid var(--lp-color-shadow-interactive-focus);
+	outline-offset: 2px;
+}
+
+.slider[data-disabled] {
+	opacity: 60%;
+}
+
+.slider[data-disabled] .fill {
+	background-color: var(--lp-color-bg-ui-tertiary);
+}

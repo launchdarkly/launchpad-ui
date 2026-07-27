@@ -1,5 +1,32 @@
 # @launchpad-ui/components
 
+## 0.22.0
+
+### Minor Changes
+
+- [#1888](https://github.com/launchdarkly/launchpad-ui/pull/1888) [`51b495e`](https://github.com/launchdarkly/launchpad-ui/commit/51b495edb66f7ebdc07a5e12af24fed823656236) Thanks [@hsadhvani](https://github.com/hsadhvani)! - Add `underline` prop to Link component with `'always' | 'hover' | 'none'` values
+
+- [#1942](https://github.com/launchdarkly/launchpad-ui/pull/1942) [`e6a820b`](https://github.com/launchdarkly/launchpad-ui/commit/e6a820bf34386dbe2ea05e37c1aaaa0ac279462d) Thanks [@zakk-verrilli-ld](https://github.com/zakk-verrilli-ld)! - Add `Slider`, `SliderTrack`, `SliderThumb`, `SliderFill`, and `SliderOutput` for selecting one or more values within a range. Supports single and range values, horizontal and vertical orientation, and composes with `Label` for an accessible name.
+
+### Patch Changes
+
+- [#1939](https://github.com/launchdarkly/launchpad-ui/pull/1939) [`caa0539`](https://github.com/launchdarkly/launchpad-ui/commit/caa05399e77232c8cd75f02782e88158fe1e9e4e) Thanks [@ShreyasGit51283](https://github.com/ShreyasGit51283)! - Fix `Alert` text styling and semantics leaking when nested inside an overlay (`Dialog`/`Modal`). `Alert` now establishes its own `TextContext`, so an ancestor overlay's `subtitle` slot no longer captures the Alert's `Text` (which previously forced `slot="subtitle"`, inherited the overlay's `id`/`h3` element, and picked up the overlay's subtitle CSS). The `Modal` subtitle rule is also scoped to skip alert-nested text. A bare `<Text>` now works inside an `Alert`, including within a `Dialog`.
+
+- [#1943](https://github.com/launchdarkly/launchpad-ui/pull/1943) [`00a77b6`](https://github.com/launchdarkly/launchpad-ui/commit/00a77b6b97e6a9b4c63725185d04daeae81b5470) Thanks [@devin-ai-integration](https://github.com/apps/devin-ai-integration)! - Improve dark-mode differentiation for `Modal` and `Popover` surfaces by adding a subtle border and a deeper drop shadow with a hairline ring. The additions are scoped to dark themes via `light-dark()`, so light themes are unchanged.
+
+- [#1938](https://github.com/launchdarkly/launchpad-ui/pull/1938) [`941f77c`](https://github.com/launchdarkly/launchpad-ui/commit/941f77c91ae47f19533496a9ab3a542c479c6a68) Thanks [@apucacao](https://github.com/apucacao)! - Upgrade `react-aria-components` to 1.19.0 along with the aligned `react-aria` (3.50.0), `react-stately` (3.48.0), and `@react-types/shared` (3.36.0) packages from the same release. The `@react-aria/*`, `@react-stately/*`, and `@internationalized/*` sub-packages were already at the matching versions and are unchanged.
+
+  This release is additive — no breaking changes. Notable upstream additions:
+
+  - `GridList` and `Tree` support full keyboard interaction with embedded text fields and other interactive elements via the `keyboardNavigationBehavior` prop.
+  - `Autocomplete` and `Popover` gain inline-completion support, including a new `getTargetRect` prop on `Popover` for positioning overlays relative to arbitrary character positions.
+  - `Menu`'s `onAction` callback now provides both the item key and its value.
+  - `DragTypes.has()` accepts multiple MIME types and wildcards.
+
+- Updated dependencies [[`ccc97d8`](https://github.com/launchdarkly/launchpad-ui/commit/ccc97d8ab2119437a81a8a17affb5f7fd7c1373a), [`b85c820`](https://github.com/launchdarkly/launchpad-ui/commit/b85c8200af8e6dbcaf3f1fa733bc94450ab48c50)]:
+  - @launchpad-ui/tokens@0.17.0
+  - @launchpad-ui/icons@0.26.1
+
 ## 0.21.0
 
 ### Minor Changes

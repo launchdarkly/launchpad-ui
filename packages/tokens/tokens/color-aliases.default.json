@@ -125,7 +125,7 @@
 					"$value": "{color.purple.100}"
 				},
 				"federal": {
-					"$value": "{color.brand.lime.base}"
+					"$value": "{color.brand.yellow.base}"
 				}
 			}
 		},

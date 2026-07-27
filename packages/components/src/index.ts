@@ -66,6 +66,13 @@ export type { SearchFieldProps } from './SearchField';
 export type { ListBoxSectionProps, MenuSectionProps } from './Section';
 export type { SelectProps, SelectValueProps } from './Select';
 export type { SeparatorProps } from './Separator';
+export type {
+	SliderFillProps,
+	SliderOutputProps,
+	SliderProps,
+	SliderThumbProps,
+	SliderTrackProps,
+} from './Slider';
 export type { SwitchProps } from './Switch';
 export type {
 	CellProps,
@@ -269,6 +276,19 @@ export {
 	selectValueStyles,
 } from './Select';
 export { Separator, SeparatorContext, separatorStyles } from './Separator';
+export {
+	Slider,
+	SliderContext,
+	SliderFill,
+	SliderOutput,
+	SliderThumb,
+	SliderTrack,
+	sliderFillStyles,
+	sliderOutputStyles,
+	sliderStyles,
+	sliderThumbStyles,
+	sliderTrackStyles,
+} from './Slider';
 export { Switch, SwitchContext, switchStyles } from './Switch';
 export {
 	Cell,
