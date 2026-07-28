@@ -4,10 +4,9 @@
 
 .item {
 	composes: item from './Menu.module.css';
-	align-items: start;
 
-	& > [data-icon] {
-		align-self: center;
+	&:has(.checkbox) {
+		align-items: start;
 	}
 
 	& .checkbox {
