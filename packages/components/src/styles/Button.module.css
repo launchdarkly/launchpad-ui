@@ -27,6 +27,17 @@
 	opacity: 0.64;
 }
 
+/* Filled buttons have no border, so a compact group needs a divider between halves. */
+:global([data-spacing='compact'][data-orientation='horizontal'])
+	> :is(.primary, .destructive):not(:first-child) {
+	border-inline-start: 1px solid var(--lp-button-divider-color);
+}
+
+:global([data-spacing='compact'][data-orientation='vertical'])
+	> :is(.primary, .destructive):not(:first-child) {
+	border-block-start: 1px solid var(--lp-button-divider-color);
+}
+
 .small {
 	font: var(--lp-text-label-2-semibold);
 	padding: calc(3px + var(--lp-button-padding, 0px)) var(--lp-spacing-300);
@@ -65,6 +76,11 @@
 .primary {
 	composes: button;
 	--lp-button-padding: 1px;
+	--lp-button-divider-color: color-mix(
+		in oklab,
+		var(--lp-color-text-interactive-primary-base) 40%,
+		transparent
+	);
 	background-color: var(--lp-color-bg-interactive-primary-base);
 	color: var(--lp-color-text-interactive-primary-base);
 	z-index: 1;
@@ -93,6 +109,11 @@
 .destructive {
 	composes: button;
 	--lp-button-padding: 1px;
+	--lp-button-divider-color: color-mix(
+		in oklab,
+		var(--lp-color-text-interactive-primary-base) 40%,
+		transparent
+	);
 	background-color: var(--lp-color-bg-interactive-destructive-base);
 	color: var(--lp-color-text-interactive-primary-base);
 

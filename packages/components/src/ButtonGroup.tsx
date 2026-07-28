@@ -51,6 +51,7 @@ const ButtonGroup = ({ ref, ...props }: ButtonGroupProps) => {
 				buttonGroupStyles({ ...renderProps, spacing, orientation, className }),
 			)}
 			data-orientation={orientation ?? undefined}
+			data-spacing={spacing}
 		>
 			{composeRenderProps(props.children, (children, { isDisabled }) => (
 				<Provider

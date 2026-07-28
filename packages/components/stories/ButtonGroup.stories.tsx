@@ -62,6 +62,26 @@ export const SplitButton: Story = {
 	},
 };
 
+export const PrimarySplitButton: Story = {
+	args: {
+		children: [
+			<Button key="button" variant="primary">
+				Split button
+			</Button>,
+			<MenuTrigger key="trigger">
+				<IconButton variant="primary" icon="chevron-down" aria-label="open" />
+				<Popover placement="bottom end">
+					<Menu>
+						<MenuItem>Item one</MenuItem>
+						<MenuItem>Item two</MenuItem>
+					</Menu>
+				</Popover>
+			</MenuTrigger>,
+		],
+		spacing: 'compact',
+	},
+};
+
 export const SplitLinkButton: Story = {
 	args: {
 		children: [
