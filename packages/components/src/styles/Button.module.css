@@ -14,7 +14,7 @@
 	border: none;
 	--lp-button-divider-color: color-mix(
 		in oklab,
-		var(--lp-color-border-interactive-secondary-base) 60%,
+		var(--lp-color-shadow-interactive-primary) 40%,
 		transparent
 	);
 	outline: none;
