@@ -1,14 +1,8 @@
 import { Meta, Canvas } from '@storybook/addon-docs/blocks';
 
-import {
-	Anatomy,
-	FieldSpacing,
-	GroupedControls,
-	States,
-	Validation,
-} from './forms.stories';
+import { Anatomy, FieldSpacing, GroupedControls, States, Validation } from './Forms.stories';
 
-<Meta title="Guidelines/Forms" parameters={{ docs: { toc: true } }} />
+<Meta title="Components/Forms" parameters={{ docs: { toc: true } }} />
 
 # Forms
 
@@ -16,11 +10,12 @@ How to compose, validate and lay out forms in LaunchPad.
 
 Form components are thin wrappers around [React Aria Components](https://react-aria.adobe.com/) (RAC). LaunchPad styles them and adds a small number of variant props; the behaviour, ARIA wiring and keyboard support come from RAC. When you need to know what a prop does, RAC's docs are the source of truth.
 
-Form components are spread across three areas of this sidebar:
+The components nested under this page cover most form needs, but three field types live elsewhere in the sidebar:
 
-- **Components/Forms** — Form, TextField, NumberField, SearchField, Checkbox, CheckboxGroup, RadioGroup, Switch, Slider, FieldGroup
 - **Components/Pickers** — [Select](/docs/components-pickers-select--docs), [ComboBox](/docs/components-pickers-combobox--docs)
 - **Components/Date and Time** — [DateField](/docs/components-date-and-time-datefield--docs), [TimeField](/docs/components-date-and-time-timefield--docs)
+
+Everything on this page applies to those too.
 
 ## Anatomy
 

@@ -3,25 +3,29 @@ import type { ComponentPropsWithoutRef, Fragment } from 'react';
 
 import { vars } from '@launchpad-ui/vars';
 
-import { Button } from '../../src/Button';
-import { Checkbox } from '../../src/Checkbox';
-import { CheckboxGroup } from '../../src/CheckboxGroup';
-import { FieldError } from '../../src/FieldError';
-import { Form } from '../../src/Form';
-import { Input } from '../../src/Input';
-import { Label } from '../../src/Label';
-import { Radio } from '../../src/Radio';
-import { RadioGroup } from '../../src/RadioGroup';
-import { Text } from '../../src/Text';
-import { TextField } from '../../src/TextField';
+import { Button } from '../src/Button';
+import { Checkbox } from '../src/Checkbox';
+import { CheckboxGroup } from '../src/CheckboxGroup';
+import { FieldError } from '../src/FieldError';
+import { Form } from '../src/Form';
+import { Input } from '../src/Input';
+import { Label } from '../src/Label';
+import { Radio } from '../src/Radio';
+import { RadioGroup } from '../src/RadioGroup';
+import { Text } from '../src/Text';
+import { TextField } from '../src/TextField';
 
 /**
- * Examples for the `Guidelines/Forms` documentation page.
+ * Examples embedded in `Forms.mdx`, the overview page at the root of the
+ * `Components/Forms` group.
  *
- * These stories exist only to be embedded via `<Canvas of={...} />` in `Forms.mdx`,
- * so the meta is tagged `['!dev', '!autodocs']` to keep them out of the sidebar.
- * Writing them as real stories rather than fenced code blocks means the samples on
- * the docs page are type-checked and cannot drift from the component APIs.
+ * These are cross-cutting form examples, not the `Form` component's own stories —
+ * those live in `Form.stories.tsx`. The meta is tagged `['!dev', '!autodocs']` so
+ * these contribute no sidebar entries and no Docs tab; they are reachable only
+ * through `<Canvas of={...} />`.
+ *
+ * They are written as real stories rather than fenced code blocks in the MDX so
+ * the samples on the page are type-checked and cannot drift from the component APIs.
  */
 const Container = (props: ComponentPropsWithoutRef<typeof Fragment>) => <>{props.children}</>;
 
