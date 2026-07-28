@@ -1,0 +1,137 @@
+import { Meta, Canvas } from '@storybook/addon-docs/blocks';
+
+import { Anatomy, FieldSpacing, GroupedControls, States, Validation } from './Forms.stories';
+
+<Meta title="Components/Forms" parameters={{ docs: { toc: true } }} />
+
+# Forms
+
+How to compose, validate and lay out forms in LaunchPad.
+
+Form components are thin wrappers around [React Aria Components](https://react-aria.adobe.com/) (RAC). LaunchPad styles them and adds a small number of variant props; the behaviour, ARIA wiring and keyboard support come from RAC. When you need to know what a prop does, RAC's docs are the source of truth.
+
+The components nested under this page cover most form needs, but three field types live elsewhere in the sidebar:
+
+- **Components/Pickers** — [Select](/docs/components-pickers-select--docs), [ComboBox](/docs/components-pickers-combobox--docs)
+- **Components/Date and Time** — [DateField](/docs/components-date-and-time-datefield--docs), [TimeField](/docs/components-date-and-time-timefield--docs)
+
+Everything on this page applies to those too.
+
+## Anatomy
+
+A field is assembled from composed children: a label, the control, optional helper text, and a validation message.
+
+<Canvas of={Anatomy} sourceState="shown" />
+
+## Composition: children, not props
+
+This is the rule that catches people most often.
+
+**No LaunchPad form component accepts `label`, `description`, `errorMessage` or `placeholder` as a prop.** Those belong to React Spectrum, a different Adobe library. RAC deliberately removes them in favour of slot-based composition. From `react-aria-components/dist/types/src/TextField.d.ts`:
+
+```ts
+export interface TextFieldProps extends Omit<AriaTextFieldProps,
+  'label' | 'placeholder' | 'description' | 'errorMessage' | 'validationState' | 'validationBehavior'
+>, RACValidation, ... {}
+```
+
+The same `Omit` appears on `NumberField`, `SearchField`, `Select`, `ComboBox`, `RadioGroup`, `CheckboxGroup`, `DateField` and `TimeField`. So instead of passing text in, you compose it:
+
+```tsx
+// Correct
+<TextField isRequired>
+	<Label>Email</Label>
+	<Input placeholder="Enter a value" />
+	<Text slot="description">Helper text</Text>
+	<FieldError />
+</TextField>
+
+// Will not compile — these props do not exist
+<TextField label="Email" description="Helper text" errorMessage="Required" />
+```
+
+Two details worth remembering:
+
+- **`placeholder` lives on `Input`**, not on the field wrapper.
+- **Helper text is `<Text slot="description">`**. The `slot` is what associates it with the field for screen readers via `aria-describedby`.
+
+Grouped controls follow the same shape: the group owns the label, helper text and error, and each child carries only its own label.
+
+<Canvas of={GroupedControls} sourceState="shown" />
+
+## Validation
+
+Every field exposes `isRequired`, `isInvalid`, `isDisabled`, `isReadOnly` and `validate`. Two exceptions: **`Switch` cannot be required or invalid** (RAC omits those props — a switch always has a value), and **`Slider` has no validation surface** at all.
+
+`FieldError` takes no message prop:
+
+- **Omit its children** and it renders the browser's native validation message, or whatever your `validate` function returns.
+- **Pass children** only to override the message.
+
+<Canvas of={Validation} sourceState="shown" />
+
+### `validationBehavior`
+
+Defaults to `'native'`, which uses the browser's constraint validation. Set `validationBehavior="aria"` when a form library owns validation state — react-hook-form in particular, where you also pass `isInvalid` and the message yourself. See the `ReactHookForm` story on the [Form page](/docs/components-forms-form--docs).
+
+## Layout and spacing
+
+Wrap fields in [`Form`](/docs/components-forms-form--docs) and let it own the rhythm. In its default vertical orientation it applies `gap: var(--lp-spacing-300)`.
+
+<Canvas of={FieldSpacing} sourceState="shown" />
+
+Two things to know:
+
+- `Form` sets `align-items: start`, so fields size to their content rather than filling the form. Constrain width on a wrapper when you need fields to line up.
+- **`FieldGroup` uses a different scale** (`--lp-spacing-500`), so nesting one inside a `Form` mixes two spacing rhythms. Be deliberate about it.
+
+### `FieldGroup` is not like the others
+
+[`FieldGroup`](/docs/components-forms-fieldgroup--docs) predates the RAC conventions above. It renders a raw `<fieldset>` and takes `title`, `errorMessage` and `isDisabled` as **string and boolean props** rather than composed children.
+
+It also propagates `isInvalid` to every field inside it, so setting `errorMessage` on a `FieldGroup` marks all its children invalid at once. Reach for it only when you genuinely need a `<fieldset>` grouping; otherwise compose a `Form` with individual fields.
+
+## States
+
+<Canvas of={States} sourceState="shown" />
+
+## Content guidelines
+
+> **This section is a scaffold and needs an owner.** LaunchPad has no written copy standards today, and the guidance below is deliberately left blank rather than invented here — wording rules are a content design decision, not an engineering one. If a canonical LaunchDarkly content standard exists, this section should link to it rather than restate it.
+
+Questions this section needs to answer:
+
+- **Label capitalization** — sentence case or title case? Any trailing punctuation?
+- **Helper text vs. placeholder** — when does guidance belong in `Text slot="description"` versus inside the input? (Placeholders disappear on input and are not a substitute for a label or for persistent guidance.)
+- **Error message phrasing** — does the message state what went wrong, how to fix it, or both? Does it end in a period? Is "Please" used?
+- **Required vs. optional marking** — mark required fields, or mark optional ones? See the gap noted below, since neither is currently rendered.
+- **Button copy** — is the submit action named for what it does ("Save changes") or generic ("Submit")?
+
+For raw material, the conventions currently observable in our stories are: submit buttons say "Submit"; validation messages are sentence case with a trailing period ("Name is required."); placeholders read "Enter a value".
+
+## Accessibility
+
+Accessibility is a hard requirement — components must pass axe against WCAG 2.0/2.1 A and AA.
+
+RAC handles most of it for you, provided you compose correctly:
+
+- `Label` is associated with the control automatically. **There is no need for `htmlFor`.**
+- `Text slot="description"` and `FieldError` are wired to the control via `aria-describedby` by virtue of their slots. Plain text placed in a field without a `slot` is *not* announced.
+- `isRequired` sets both `aria-required` and the native `required` attribute.
+- Keyboard interaction, focus management and error announcement on submit come from RAC.
+
+### Known gaps
+
+Three things are missing today. They are listed here so you can work around them, not because they are intended.
+
+1. **Required fields have no visible marker.** `isRequired` is announced to screen readers but nothing renders visually — `Label` has no `isRequired` awareness. The deprecated `@launchpad-ui/form` package had a `RequiredAsterisk` and an "(optional)" suffix; neither has a modern equivalent. Until one exists, put any marker in the `Label` children yourself.
+2. **`FieldError` has no icon and no live region.** It is styled text only. The deprecated package rendered an alert icon with `aria-live="polite"`, so error announcement outside of form submission is weaker than it used to be.
+3. **Helper text fails colour contrast inside picker items.** The `Select` and `ComboBox` stories currently suppress the axe `color-contrast` rule for `[slot="description"]` rather than fixing the token. Treat item-level descriptions as a known issue.
+
+## Related
+
+- [Form](/docs/components-forms-form--docs) · [TextField](/docs/components-forms-textfield--docs) · [NumberField](/docs/components-forms-numberfield--docs) · [SearchField](/docs/components-forms-searchfield--docs)
+- [Checkbox](/docs/components-forms-checkbox--docs) · [CheckboxGroup](/docs/components-forms-checkboxgroup--docs) · [RadioGroup](/docs/components-forms-radiogroup--docs) · [Switch](/docs/components-forms-switch--docs) · [Slider](/docs/components-forms-slider--docs)
+- [Select](/docs/components-pickers-select--docs) · [ComboBox](/docs/components-pickers-combobox--docs) · [FieldGroup](/docs/components-forms-fieldgroup--docs)
+- [Label](/docs/components-content-label--docs) · [Text](/docs/components-content-text--docs)
+- [React Aria Forms guide](https://react-aria.adobe.com/forms.html)

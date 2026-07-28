@@ -118,6 +118,42 @@
 	font-weight: 400 !important; /* matching --lp-font-weight-regular */
 }
 
+/* Prose tables in MDX docs pages. GFM tables (enabled via remark-gfm in main.ts)
+   render as bare <table> elements that Storybook does not style at all — only
+   .docblock-argstable is themed, elsewhere in this file.
+
+   Deliberately scoped to DIRECT children of .sbdocs-content: MDX renders top-level
+   prose elements there, while a <Canvas> nests story content deeper. That keeps
+   these rules off tables rendered by the Table component's own stories.
+
+   These use --lp-* tokens rather than this file's hardcoded-hex convention because
+   .sbdocs only exists in the preview frame, where the token CSS is loaded and
+   [data-theme] flips the values for dark mode. Text color is deliberately left to
+   the .sbdocs prose rules below, which set it with !important for both themes.
+
+   The .sbdocs.sbdocs-content compound matches the docs container (which carries both
+   classes) and keeps specificity level with the argstable rules above, so this does
+   not read as a descending-specificity conflict. */
+.sbdocs.sbdocs-content > table {
+	border-collapse: collapse;
+	width: 100%;
+	margin: var(--lp-spacing-400) 0;
+	font: var(--lp-text-body-2-regular);
+}
+
+.sbdocs.sbdocs-content > table th,
+.sbdocs.sbdocs-content > table td {
+	border: 1px solid var(--lp-color-border-ui-primary);
+	padding: var(--lp-spacing-200) var(--lp-spacing-300);
+	text-align: start;
+	vertical-align: top;
+}
+
+.sbdocs.sbdocs-content > table th {
+	background-color: var(--lp-color-bg-ui-secondary);
+	font: var(--lp-text-label-1-semibold);
+}
+
 /* Only target Storybook-specific prism code blocks */
 .docs-dark .prism-code:not([class*='code_']),
 .dark-theme .docblock-argstable .prism-code {
