@@ -12,11 +12,6 @@
 	appearance: none;
 	border-radius: var(--lp-border-radius-medium);
 	border: none;
-	--lp-button-divider-color: color-mix(
-		in oklab,
-		var(--lp-color-shadow-interactive-primary) 40%,
-		transparent
-	);
 	outline: none;
 	white-space: nowrap;
 	position: relative;
@@ -81,6 +76,11 @@
 .primary {
 	composes: button;
 	--lp-button-padding: 1px;
+	--lp-button-divider-color: color-mix(
+		in oklab,
+		var(--lp-color-shadow-interactive-primary) 40%,
+		var(--lp-color-bg-interactive-primary-base)
+	);
 	background-color: var(--lp-color-bg-interactive-primary-base);
 	color: var(--lp-color-text-interactive-primary-base);
 	z-index: 1;
@@ -109,6 +109,11 @@
 .destructive {
 	composes: button;
 	--lp-button-padding: 1px;
+	--lp-button-divider-color: color-mix(
+		in oklab,
+		var(--lp-color-shadow-interactive-primary) 40%,
+		var(--lp-color-bg-interactive-destructive-base)
+	);
 	background-color: var(--lp-color-bg-interactive-destructive-base);
 	color: var(--lp-color-text-interactive-primary-base);
 
