@@ -1,6 +1,8 @@
 import type { StorybookConfig } from '@storybook/react-vite';
 import type { UserConfig } from 'vite';
 
+import remarkGfm from 'remark-gfm';
+
 const config: StorybookConfig = {
 	stories: [
 		'../docs/stories/**/*.mdx',
@@ -9,7 +11,18 @@ const config: StorybookConfig = {
 	],
 	addons: [
 		'@storybook/addon-a11y',
-		'@storybook/addon-docs',
+		{
+			name: '@storybook/addon-docs',
+			options: {
+				// MDX only implements CommonMark, so GFM syntax — tables, strikethrough,
+				// task lists, bare-URL autolinks — renders as literal text without this.
+				mdxPluginOptions: {
+					mdxCompileOptions: {
+						remarkPlugins: [remarkGfm],
+					},
+				},
+			},
+		},
 		'@storybook/addon-designs',
 		'@storybook/addon-themes',
 		'storybook-addon-pseudo-states',
