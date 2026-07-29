@@ -1082,6 +1082,13 @@ figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=6-14
 	example: () => <Icon name="hub" />,
 });
 
+figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=28986-147', {
+	props: {
+		name: 'home',
+	},
+	example: () => <Icon name="home" />,
+});
+
 figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=6-141755', {
 	props: {
 		name: 'holdout',
@@ -2221,6 +2228,13 @@ figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=6-14
 		name: 'arrow-connect',
 	},
 	example: () => <Icon name="arrow-connect" />,
+});
+
+figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=28986-146', {
+	props: {
+		name: 'arrow-brand-right',
+	},
+	example: () => <Icon name="arrow-brand-right" />,
 });
 
 figma.connect(Icon, 'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7/?node-id=6-141367', {
