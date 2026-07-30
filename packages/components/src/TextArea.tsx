@@ -14,7 +14,7 @@ import { useLPContextProps } from './utils';
 
 const textAreaStyles = cva(styles.area);
 
-interface TextAreaProps extends AriaTextAreaProps, InputVariants {
+interface TextAreaProps extends AriaTextAreaProps, Omit<InputVariants, 'size'> {
 	ref?: Ref<HTMLTextAreaElement>;
 }
 
@@ -27,11 +27,11 @@ const TextAreaContext = createContext<ContextValue<TextAreaProps, HTMLTextAreaEl
  */
 const TextArea = ({ ref, ...props }: TextAreaProps) => {
 	[props, ref] = useLPContextProps(props, ref, TextAreaContext);
-	const { variant = 'default' } = props;
+	const { variant = 'default', ...rest } = props;
 
 	return (
 		<AriaTextArea
-			{...props}
+			{...rest}
 			ref={ref}
 			className={composeRenderProps(props.className, (className, renderProps) =>
 				cx(inputStyles({ variant }), textAreaStyles({ ...renderProps, className })),

@@ -73,6 +73,40 @@ export const Example: Story = {
 	},
 };
 
+export const Sizes: Story = {
+	render: (args) => {
+		const items = (
+			<Popover>
+				<ListBox>
+					<ListBoxItem>Item one</ListBoxItem>
+					<ListBoxItem>Item two</ListBoxItem>
+					<ListBoxItem>Item three</ListBoxItem>
+				</ListBox>
+			</Popover>
+		);
+		return (
+			<div style={{ display: 'flex', flexDirection: 'column', gap: vars.spacing[400] }}>
+				<Select {...args}>
+					<Label>Small</Label>
+					<Button size="small">
+						<SelectValue />
+						<Icon name="chevron-down" size="tiny" />
+					</Button>
+					{items}
+				</Select>
+				<Select {...args}>
+					<Label>Medium</Label>
+					<Button size="medium">
+						<SelectValue />
+						<Icon name="chevron-down" size="small" />
+					</Button>
+					{items}
+				</Select>
+			</div>
+		);
+	},
+};
+
 export const Descriptions: Story = {
 	args: {
 		children: (
