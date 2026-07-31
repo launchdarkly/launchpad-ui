@@ -1,5 +1,14 @@
 # @launchpad-ui/components
 
+## 0.22.1
+
+### Patch Changes
+
+- [#1959](https://github.com/launchdarkly/launchpad-ui/pull/1959) [`370ecbd`](https://github.com/launchdarkly/launchpad-ui/commit/370ecbd388df984752df5e3f4f066e6b4db4ac7b) Thanks [@devin-ai-integration](https://github.com/apps/devin-ai-integration)! - Add a divider between `primary` and `destructive` buttons in a compact `ButtonGroup` so split buttons no longer read as one solid fill
+
+- Updated dependencies [[`5ded7a9`](https://github.com/launchdarkly/launchpad-ui/commit/5ded7a9e7ed77045c4a88b80ffa37cd05507813c)]:
+  - @launchpad-ui/icons@0.26.2
+
 ## 0.22.0
 
 ### Minor Changes
