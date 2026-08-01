@@ -24,13 +24,13 @@
 		"test": "vitest run --coverage"
 	},
 	"dependencies": {
-		"@floating-ui/core": "1.7.0",
-		"@floating-ui/dom": "1.7.0",
+		"@floating-ui/core": "1.8.0",
+		"@floating-ui/dom": "1.8.0",
 		"@launchpad-ui/focus-trap": "workspace:~",
 		"@launchpad-ui/overlay": "workspace:~",
 		"@launchpad-ui/tokens": "workspace:~",
 		"classix": "2.2.0",
-		"framer-motion": "12.23.22"
+		"framer-motion": "12.43.0"
 	},
 	"devDependencies": {
 		"react": "19.2.6",

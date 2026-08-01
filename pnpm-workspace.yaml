@@ -18,8 +18,8 @@ minimumReleaseAge: 10080 # 7 days
 overrides:
   vite: "npm:rolldown-vite@7.3.1"
   esbuild: "^0.27.0"
-  "@emnapi/core": "^1.7.1"
-  "@emnapi/runtime": "^1.7.1"
+  "@emnapi/core": "^1.11.3"
+  "@emnapi/runtime": "^1.11.3"
 
 peerDependencyRules:
   allowedVersions:
