@@ -88,9 +88,6 @@ importers:
       '@vitest/ui':
         specifier: ^4.1.8
         version: 4.1.8(vitest@4.1.8)
-      axe-core:
-        specifier: ^4.10.3
-        version: 4.11.4
       browserslist:
         specifier: ^4.24.0
         version: 4.28.2
@@ -139,9 +136,6 @@ importers:
       syncpack:
         specifier: 14.0.0-alpha.19
         version: 14.0.0-alpha.19
-      tsx:
-        specifier: ^4.20.3
-        version: 4.22.3
       typescript:
         specifier: ^5.8.2
         version: 5.9.3
@@ -204,6 +198,9 @@ importers:
         specifier: 1.0.0
         version: 1.0.0(@vanilla-extract/css@1.20.1)(@vanilla-extract/dynamic@2.1.2)
     devDependencies:
+      '@vanilla-extract/css':
+        specifier: ^1.17.1
+        version: 1.20.1
       flat:
         specifier: ^6.0.1
         version: 6.0.1
@@ -509,6 +506,9 @@ importers:
       svgo:
         specifier: 4.0.1
         version: 4.0.1
+      tsx:
+        specifier: ^4.20.3
+        version: 4.22.3
 
   packages/menu:
     dependencies:
@@ -701,6 +701,9 @@ importers:
       '@figma/rest-api-spec':
         specifier: ^0.32.0
         version: 0.32.0
+      '@testing-library/react':
+        specifier: ^16.3.0
+        version: 16.3.2(@testing-library/dom@10.4.1)(@types/react-dom@19.2.3(@types/react@19.2.15))(@types/react@19.2.15)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
       axios:
         specifier: ^1.17.0
         version: 1.17.0
@@ -710,6 +713,9 @@ importers:
       style-dictionary:
         specifier: ^5.0.0
         version: 5.4.1
+      tsx:
+        specifier: ^4.20.3
+        version: 4.22.3
 
   packages/tooltip:
     dependencies:

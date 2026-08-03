@@ -37,7 +37,8 @@
 	"devDependencies": {
 		"react": "19.2.8",
 		"react-dom": "19.2.8",
-		"svgo": "4.0.1"
+		"svgo": "4.0.1",
+		"tsx": "^4.20.3"
 	},
 	"peerDependencies": {
 		"react": "^19",

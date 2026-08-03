@@ -30,9 +30,11 @@
 	},
 	"devDependencies": {
 		"@figma/rest-api-spec": "^0.32.0",
+		"@testing-library/react": "^16.3.0",
 		"axios": "^1.17.0",
 		"json-to-ts": "^2.1.0",
-		"style-dictionary": "^5.0.0"
+		"style-dictionary": "^5.0.0",
+		"tsx": "^4.20.3"
 	},
 	"exports": {
 		".": {
