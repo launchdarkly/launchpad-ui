@@ -1,16 +1,16 @@
-import type { Plugin, ResolvedConfig } from 'vite';
+import type { Plugin, ResolvedConfig } from "vite";
 
-import fs from 'fs';
-import path from 'path';
+import fs from "fs";
+import path from "path";
 
 const cssImport = (): Plugin => {
 	let config: ResolvedConfig;
 	let cssFile: string | undefined;
 
 	return {
-		name: 'css-import',
-		apply: 'build',
-		enforce: 'post',
+		name: "css-import",
+		apply: "build",
+		enforce: "post",
 
 		configResolved(resolvedConfig) {
 			config = resolvedConfig;
@@ -23,8 +23,8 @@ const cssImport = (): Plugin => {
 
 			const files = Object.keys(bundle);
 
-			if (option.format === 'es') {
-				cssFile = files.find((v) => v.endsWith('.css'));
+			if (option.format === "es") {
+				cssFile = files.find((v) => v.endsWith(".css"));
 			}
 
 			if (cssFile === undefined) {
@@ -32,18 +32,18 @@ const cssImport = (): Plugin => {
 			}
 
 			for (const file of files) {
-				// @ts-ignore
+				// @ts-expect-error: Rollup's OutputAsset/OutputChunk union doesn't expose `isEntry` uniformly
 				if (!bundle[file].isEntry) {
 					continue;
 				}
-				const filePath = path.resolve('dist', file);
+				const filePath = path.resolve("dist", file);
 				const data = fs.readFileSync(filePath, {
-					encoding: 'utf8',
+					encoding: "utf8",
 				});
 
-				const cssImport =
-					option.format === 'es' ? `import './style.css'` : `require('./style.css')`;
-				fs.writeFileSync(filePath, `${cssImport};\n${data}`);
+				const importStatement =
+					option.format === "es" ? `import './style.css'` : `require('./style.css')`;
+				fs.writeFileSync(filePath, `${importStatement};\n${data}`);
 			}
 		},
 	};
