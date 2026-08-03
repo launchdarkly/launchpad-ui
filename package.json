@@ -51,7 +51,6 @@
 		"@types/react-dom": "^19.2.3",
 		"@vanilla-extract/css": "^1.17.1",
 		"@vanilla-extract/vite-plugin": "^5.1.0",
-		"@vitejs/plugin-react-oxc": "^0.2.0",
 		"@vitejs/plugin-react-swc": "^3.9.0",
 		"@vitest/coverage-v8": "^4.1.8",
 		"@vitest/ui": "^4.1.8",
@@ -75,7 +74,7 @@
 		"tsx": "^4.20.3",
 		"typescript": "^5.8.2",
 		"typescript-plugin-css-modules": "^5.1.0",
-		"vite": "npm:rolldown-vite@7.3.1",
+		"vite": "^7.3.6",
 		"vitest": "^4.1.8"
 	},
 	"browserslist": [
