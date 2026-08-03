@@ -55,6 +55,7 @@ const Avatar = ({ className, children, size = 'medium', ref, src, ...props }: Av
 
 	// biome-ignore lint/a11y/useAltText: ignore
 	return (
+		// oxlint-disable-next-line jsx-a11y/alt-text -- `alt`/`aria-label` are spread in dynamically via mergeProps, not statically visible to the linter
 		<img
 			ref={ref}
 			src={src}

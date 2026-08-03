@@ -51,8 +51,8 @@ const CompactTextField = forwardRef<HTMLInputElement, CompactTextFieldProps>(
 		};
 
 		const handleBlur = (event: FocusEvent<HTMLInputElement>) => {
-			const value = event.target.value || '';
-			setIsActive(value.trim().length !== 0);
+			const inputValue = event.target.value || '';
+			setIsActive(inputValue.trim().length !== 0);
 			if (onBlur) {
 				onBlur(event);
 			}

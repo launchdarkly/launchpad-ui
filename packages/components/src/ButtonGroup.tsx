@@ -40,6 +40,7 @@ interface ButtonGroupProps extends GroupProps, VariantProps<typeof buttonGroupSt
 const ButtonGroupContext = createContext<ContextValue<ButtonGroupProps, HTMLDivElement>>(null);
 
 const ButtonGroup = ({ ref, ...props }: ButtonGroupProps) => {
+	// oxlint-disable-next-line no-param-reassign -- sanctioned useLPContextProps merge pattern (see AGENTS.md context+prop-merging convention)
 	[props, ref] = useLPContextProps(props, ref, ButtonGroupContext);
 	const { spacing = 'basic', orientation = 'horizontal' } = props;
 

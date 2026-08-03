@@ -96,7 +96,7 @@ export const ColumnResizing: Story = {
 			{ name: 'Name 3', description: 'Some data', id: '003' },
 			{ name: 'Name 4', description: 'Some data', id: '004' },
 		].sort((a, b) => {
-			// @ts-ignore
+			// @ts-expect-error indexing by a dynamic sort column key isn't narrowed to the item shape
 			const d = a[sortDescriptor.column].localeCompare(b[sortDescriptor.column]);
 			return sortDescriptor.direction === 'descending' ? -d : d;
 		});

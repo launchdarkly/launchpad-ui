@@ -16,12 +16,12 @@ const ALIAS = ['bg', 'border', 'fill', 'shadow', 'text', 'data'];
 const flatten = (obj: Record<string, unknown>) => {
 	const result = {};
 
-	for (const i in obj) {
+	for (const i of Object.keys(obj)) {
 		if (typeof obj[i] === 'object' && !Array.isArray(obj[i])) {
 			// @ts-expect-error fixme
 			const temp = flatten(obj[i]);
 
-			for (const j in temp) {
+			for (const j of Object.keys(temp)) {
 				const key = j !== ' ' ? `${i}-${j}` : i;
 				// @ts-expect-error fixme
 				result[key] = temp[j];
@@ -122,6 +122,7 @@ const global = Object.keys(vars.color)
 	.filter((key) => !ALIAS.includes(key))
 	.reduce((obj, key) => {
 		// @ts-expect-error fixme
+		// oxlint-disable-next-line no-param-reassign -- reduce-accumulator mutation pattern
 		obj[key] = vars.color[key];
 		return obj;
 	}, {});
@@ -134,6 +135,7 @@ const alias = Object.keys(vars.color)
 	.filter((key) => ALIAS.includes(key))
 	.reduce((obj, key) => {
 		// @ts-expect-error fixme
+		// oxlint-disable-next-line no-param-reassign -- reduce-accumulator mutation pattern
 		obj[key] = vars.color[key];
 		return obj;
 	}, {});

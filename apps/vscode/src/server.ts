@@ -27,8 +27,9 @@ const cssLanguageService = getCSSLanguageService();
  * Grouped VS Code `CompletionItem`s for LP custom properties
  */
 const groupedTokens = Object.entries(tokens).reduce(
-	(accum, [key, value]) => {
-		accum[key] = value.map(
+	(accum, [key, value]) => ({
+		...accum,
+		[key]: value.map(
 			(token: TransformedToken) =>
 				({
 					label: `lp-${token.name}`,
@@ -37,9 +38,8 @@ const groupedTokens = Object.entries(tokens).reduce(
 					documentation: token.$description,
 					kind: key === 'color' ? CompletionItemKind.Color : CompletionItemKind.Variable,
 				}) satisfies CompletionItem,
-		);
-		return accum;
-	},
+		),
+	}),
 	{} as Record<string, CompletionItem[]>,
 );
 
@@ -98,7 +98,9 @@ connection.onCompletion(
 		});
 
 		for (const [tokenGroupName, pattern] of Object.entries(groupPatterns)) {
-			if (!pattern.test(currentText)) continue;
+			if (!pattern.test(currentText)) {
+				continue;
+			}
 
 			const currentCompletionItems = groupedTokens[tokenGroupName as keyof typeof groupPatterns];
 
@@ -140,7 +142,7 @@ connection.onHover(({ textDocument, position }): Hover => {
 		currentText.lastIndexOf(')'),
 	);
 
-	const token = allTokens.find((token) => token.label === property);
+	const token = allTokens.find((t) => t.label === property);
 
 	return {
 		contents: {
@@ -164,7 +166,7 @@ connection.onDocumentColor(({ textDocument }) => {
 		let match: RegExpExecArray | null;
 
 		// biome-ignore lint/suspicious/noAssignInExpressions: ignore
-		while ((match = cssVarRegExp.exec(text)) != null) {
+		while ((match = cssVarRegExp.exec(text)) !== null) {
 			const offset = match.index;
 			const length = match[0].length;
 
@@ -174,7 +176,7 @@ connection.onDocumentColor(({ textDocument }) => {
 				match[0].lastIndexOf(')'),
 			);
 
-			const token = allTokens.find((token) => token.label === property);
+			const token = allTokens.find((t) => t.label === property);
 			if (
 				property.startsWith('lp-color') &&
 				token?.detail &&

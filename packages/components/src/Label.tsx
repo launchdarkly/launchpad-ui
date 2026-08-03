@@ -40,7 +40,7 @@ const LabelContext = createContext<ContextValue<LabelProps, HTMLLabelElement>>(n
  */
 const Label = ({ ref, maxLines, style, size, ...props }: LabelProps) => {
 	const [contextProps, contextRef] = useLPContextProps(props, ref, LabelContext);
-	const { className } = contextProps as any;
+	const { className } = contextProps;
 
 	return (
 		<AriaLabel

@@ -25,6 +25,7 @@ interface ComboBoxProps<T extends object> extends AriaComboBoxProps<T> {
 interface ComboBoxClearButtonProps extends Partial<IconButtonProps> {}
 
 // biome-ignore lint/suspicious/noExplicitAny: ignore
+// oxlint-disable-next-line typescript/no-explicit-any -- Context objects can't carry an open generic; matches existing biome-ignore precedent
 const ComboBoxContext = createContext<ContextValue<ComboBoxProps<any>, HTMLDivElement>>(null);
 
 /**
@@ -33,6 +34,7 @@ const ComboBoxContext = createContext<ContextValue<ComboBoxProps<any>, HTMLDivEl
  * https://react-spectrum.adobe.com/react-aria/ComboBox.html
  */
 const ComboBox = <T extends object>({ ref, ...props }: ComboBoxProps<T>) => {
+	// oxlint-disable-next-line no-param-reassign -- sanctioned useLPContextProps merge pattern (see AGENTS.md context+prop-merging convention)
 	[props, ref] = useLPContextProps(props, ref, ComboBoxContext);
 	const { menuTrigger = 'focus' } = props;
 	const groupRef = useRef<HTMLDivElement>(null);
@@ -47,7 +49,7 @@ const ComboBox = <T extends object>({ ref, ...props }: ComboBoxProps<T>) => {
 
 	useResizeObserver({
 		ref: groupRef,
-		onResize: onResize,
+		onResize,
 	});
 
 	return (

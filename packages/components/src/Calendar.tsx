@@ -65,6 +65,7 @@ const RangeCalendarContext =
  * https://react-spectrum.adobe.com/react-aria/Calendar.html
  */
 const Calendar = <T extends DateValue>({ ref, ...props }: CalendarProps<T>) => {
+	// oxlint-disable-next-line no-param-reassign -- sanctioned useLPContextProps merge pattern (see AGENTS.md context+prop-merging convention)
 	[props, ref] = useLPContextProps(props, ref, CalendarContext);
 	return (
 		<AriaCalendar
@@ -147,6 +148,7 @@ const CalendarGrid = ({ ref, className, weekdayStyle = 'short', ...props }: Cale
  * https://react-spectrum.adobe.com/react-aria/RangeCalendar.html
  */
 const RangeCalendar = <T extends DateValue>({ ref, ...props }: RangeCalendarProps<T>) => {
+	// oxlint-disable-next-line no-param-reassign -- sanctioned useLPContextProps merge pattern (see AGENTS.md context+prop-merging convention)
 	[props, ref] = useLPContextProps(props, ref, RangeCalendarContext);
 	const { pageBehavior = 'single' } = props;
 

@@ -36,6 +36,7 @@ const MeterContext = createContext<ContextValue<MeterProps, HTMLDivElement>>(nul
  * https://react-spectrum.adobe.com/react-aria/Meter.html
  */
 const Meter = ({ ref, ...props }: MeterProps) => {
+	// oxlint-disable-next-line no-param-reassign -- sanctioned useLPContextProps merge pattern (see AGENTS.md context+prop-merging convention)
 	[props, ref] = useLPContextProps(props, ref, MeterContext);
 	const { variant = 'donut' } = props;
 

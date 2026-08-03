@@ -98,7 +98,7 @@ const parameters: Parameters = {
 	},
 };
 
-const decorators: DecoratorFunction<ReactRenderer>[] = [
+const decorators: Array<DecoratorFunction<ReactRenderer>> = [
 	// Dynamic theme updater for Storybook UI
 	(StoryFn, context) => {
 		const currentTheme = context.globals.theme || 'default';

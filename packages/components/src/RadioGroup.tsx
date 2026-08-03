@@ -24,6 +24,7 @@ const RadioGroupContext = createContext<ContextValue<RadioGroupProps, HTMLDivEle
  * https://react-spectrum.adobe.com/react-aria/RadioGroup.html
  */
 const RadioGroup = ({ ref, ...props }: RadioGroupProps) => {
+	// oxlint-disable-next-line no-param-reassign -- sanctioned useLPContextProps merge pattern (see AGENTS.md context+prop-merging convention)
 	[props, ref] = useLPContextProps(props, ref, RadioGroupContext);
 	return (
 		<AriaRadioGroup

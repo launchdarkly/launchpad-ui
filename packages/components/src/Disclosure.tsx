@@ -35,6 +35,7 @@ const DisclosureContext = createContext<ContextValue<DisclosureProps, HTMLDivEle
  * https://react-spectrum.adobe.com/react-aria/Disclosure.html
  */
 const Disclosure = ({ ref, ...props }: DisclosureProps) => {
+	// oxlint-disable-next-line no-param-reassign -- sanctioned useLPContextProps merge pattern (see AGENTS.md context+prop-merging convention)
 	[props, ref] = useLPContextProps(props, ref, DisclosureContext);
 	return (
 		<AriaDisclosure

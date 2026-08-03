@@ -8,6 +8,7 @@ import { Menu, MenuDivider, MenuItem, MenuSearch } from '@launchpad-ui/menu';
 import styles from './styles/Filter.module.css';
 
 // biome-ignore lint/suspicious/noExplicitAny: ignore
+// oxlint-disable-next-line typescript/no-explicit-any -- generic default; matches existing biome-ignore precedent
 type FilterOption<T = any> = {
 	name?: ReactNode;
 	isDisabled?: boolean;

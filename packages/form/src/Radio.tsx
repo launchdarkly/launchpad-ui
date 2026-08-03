@@ -32,6 +32,7 @@ const Radio = ({
 	const hasAriaLabel = ariaLabel !== undefined || ariaLabelledby !== undefined;
 
 	if (!children && !hasAriaLabel) {
+		// oxlint-disable-next-line no-console -- deliberate dev-time accessibility warning, not debug output
 		console.warn(
 			'If you do not provide children, you must specify an aria-label for accessibility',
 		);

@@ -57,7 +57,9 @@ const FilterButton = forwardRef<Ref, FilterButtonProps>((props, ref) => {
 	const isDisabled = disabled;
 
 	const handleClick = (event: MouseEvent<HTMLButtonElement>) => {
-		if (isDisabled) return event.preventDefault();
+		if (isDisabled) {
+			return event.preventDefault();
+		}
 		onClickFilterButton?.();
 	};
 

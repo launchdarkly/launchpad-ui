@@ -28,6 +28,7 @@ const RadioIconButtonContext =
  * https://react-spectrum.adobe.com/react-aria/RadioGroup.html
  */
 const RadioIconButton = ({ ref, ...props }: RadioIconButtonProps) => {
+	// oxlint-disable-next-line no-param-reassign -- sanctioned useLPContextProps merge pattern (see AGENTS.md context+prop-merging convention)
 	[props, ref] = useLPContextProps(props, ref, RadioIconButtonContext);
 	const { size = 'medium', variant = 'default', icon } = props;
 

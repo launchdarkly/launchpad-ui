@@ -19,6 +19,7 @@ const LinkButtonContext = createContext<ContextValue<LinkButtonProps, HTMLAnchor
  * https://react-spectrum.adobe.com/react-aria/Link.html
  */
 const LinkButton = ({ ref, ...props }: LinkButtonProps) => {
+	// oxlint-disable-next-line no-param-reassign -- sanctioned useLPContextProps merge pattern (see AGENTS.md context+prop-merging convention)
 	[props, ref] = useLPContextProps(props, ref, LinkButtonContext);
 	const { size = 'medium', variant = 'default' } = props;
 

@@ -30,6 +30,7 @@ interface GridListItemProps<T extends object> extends AriaGridListItemProps<T> {
 }
 
 // biome-ignore lint/suspicious/noExplicitAny: ignore
+// oxlint-disable-next-line typescript/no-explicit-any -- Context objects can't carry an open generic; matches existing biome-ignore precedent
 const GridListContext = createContext<ContextValue<GridListProps<any>, HTMLDivElement>>(null);
 
 /**
@@ -38,6 +39,7 @@ const GridListContext = createContext<ContextValue<GridListProps<any>, HTMLDivEl
  * https://react-spectrum.adobe.com/react-aria/GridList.html
  */
 const GridList = <T extends object>({ ref, ...props }: GridListProps<T>) => {
+	// oxlint-disable-next-line no-param-reassign -- sanctioned useLPContextProps merge pattern (see AGENTS.md context+prop-merging convention)
 	[props, ref] = useLPContextProps(props, ref, GridListContext);
 	return (
 		<AriaGridList

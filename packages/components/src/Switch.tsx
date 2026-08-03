@@ -42,6 +42,7 @@ const SwitchContext = createContext<ContextValue<SwitchProps, HTMLLabelElement>>
  * https://react-spectrum.adobe.com/react-aria/Switch.html
  */
 const Switch = ({ ref, ...props }: SwitchProps) => {
+	// oxlint-disable-next-line no-param-reassign -- sanctioned useLPContextProps merge pattern (see AGENTS.md context+prop-merging convention)
 	[props, ref] = useLPContextProps(props, ref, SwitchContext);
 	const { switchLabels, variant } = props;
 	const hideLabels = switchLabels === false ? true : undefined;

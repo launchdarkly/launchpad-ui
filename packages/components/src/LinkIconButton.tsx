@@ -25,6 +25,7 @@ const LinkIconButtonContext =
  * https://react-spectrum.adobe.com/react-aria/Link.html
  */
 const LinkIconButton = ({ ref, ...props }: LinkIconButtonProps) => {
+	// oxlint-disable-next-line no-param-reassign -- sanctioned useLPContextProps merge pattern (see AGENTS.md context+prop-merging convention)
 	[props, ref] = useLPContextProps(props, ref, LinkIconButtonContext);
 	const { size = 'medium', variant = 'default', icon } = props;
 

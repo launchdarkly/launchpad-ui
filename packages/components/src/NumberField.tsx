@@ -24,6 +24,7 @@ const NumberFieldContext = createContext<ContextValue<NumberFieldProps, HTMLDivE
  * https://react-spectrum.adobe.com/react-aria/NumberField.html
  */
 const NumberField = ({ ref, ...props }: NumberFieldProps) => {
+	// oxlint-disable-next-line no-param-reassign -- sanctioned useLPContextProps merge pattern (see AGENTS.md context+prop-merging convention)
 	[props, ref] = useLPContextProps(props, ref, NumberFieldContext);
 	const {
 		formatOptions = {

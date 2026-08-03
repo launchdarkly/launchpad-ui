@@ -22,6 +22,7 @@ const RadioButtonContext = createContext<ContextValue<RadioButtonProps, HTMLLabe
  * https://react-spectrum.adobe.com/react-aria/RadioGroup.html
  */
 const RadioButton = ({ ref, ...props }: RadioButtonProps) => {
+	// oxlint-disable-next-line no-param-reassign -- sanctioned useLPContextProps merge pattern (see AGENTS.md context+prop-merging convention)
 	[props, ref] = useLPContextProps(props, ref, RadioButtonContext);
 	const { size = 'medium', variant = 'default' } = props;
 

@@ -45,6 +45,7 @@ const tooltipStyles = cva(styles.base, {
  * https://react-spectrum.adobe.com/react-aria/Tooltip.html
  */
 const Tooltip = ({ ref, ...props }: TooltipProps) => {
+	// oxlint-disable-next-line no-param-reassign -- sanctioned useLPContextProps merge pattern (see AGENTS.md context+prop-merging convention)
 	[props, ref] = useLPContextProps(props, ref, TooltipContext);
 	const { variant = 'default', width = 'default' } = props;
 

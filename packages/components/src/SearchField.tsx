@@ -24,6 +24,7 @@ const SearchFieldContext = createContext<ContextValue<SearchFieldProps, HTMLDivE
  * https://react-spectrum.adobe.com/react-aria/SearchField.html
  */
 const SearchField = ({ ref, ...props }: SearchFieldProps) => {
+	// oxlint-disable-next-line no-param-reassign -- sanctioned useLPContextProps merge pattern (see AGENTS.md context+prop-merging convention)
 	[props, ref] = useLPContextProps(props, ref, SearchFieldContext);
 	return (
 		<AriaSearchField

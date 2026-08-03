@@ -25,7 +25,7 @@ const handleKeyboardInteractions = (
 };
 
 const chainEventHandlers =
-	(...handlers: (EventHandler<SyntheticEvent> | undefined)[]) =>
+	(...handlers: Array<EventHandler<SyntheticEvent> | undefined>) =>
 	(event: SyntheticEvent) => {
 		for (const h of handlers) {
 			typeof h === 'function' && h(event);

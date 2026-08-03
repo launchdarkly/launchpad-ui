@@ -41,8 +41,8 @@ export const WithFileTrigger: Story = {
 		return (
 			<DropZone
 				onDrop={(e) => {
-					const files = e.items.filter((file) => file.kind === 'file') as FileDropItem[];
-					const filenames = files.map((file) => file.name);
+					const droppedFiles = e.items.filter((file) => file.kind === 'file') as FileDropItem[];
+					const filenames = droppedFiles.map((file) => file.name);
 					setFiles(filenames.join(', '));
 				}}
 				{...args}
@@ -51,8 +51,8 @@ export const WithFileTrigger: Story = {
 					allowsMultiple
 					onSelect={(e) => {
 						if (e) {
-							const files = Array.from(e);
-							const filenames = files.map((file) => file.name);
+							const selectedFiles = Array.from(e);
+							const filenames = selectedFiles.map((file) => file.name);
 							setFiles(filenames.join(', '));
 						}
 					}}

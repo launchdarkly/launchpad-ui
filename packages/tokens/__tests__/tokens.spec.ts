@@ -12,7 +12,7 @@ import primitiveDark from '../tokens/color-primitives.dark.json' with { type: 'j
 import primitiveDefault from '../tokens/color-primitives.default.json' with { type: 'json' };
 
 const sameKeys = (tokens1: DesignTokens, tokens2: DesignTokens) => {
-	for (const key in tokens1) {
+	for (const key of Object.keys(tokens1)) {
 		if (!(key in tokens2)) {
 			return false;
 		}

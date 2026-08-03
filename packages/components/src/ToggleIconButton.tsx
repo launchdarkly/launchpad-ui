@@ -28,6 +28,7 @@ const ToggleIconButtonContext =
  * https://react-spectrum.adobe.com/react-aria/ToggleButton.html
  */
 const ToggleIconButton = ({ ref, ...props }: ToggleIconButtonProps) => {
+	// oxlint-disable-next-line no-param-reassign -- sanctioned useLPContextProps merge pattern (see AGENTS.md context+prop-merging convention)
 	[props, ref] = useLPContextProps(props, ref, ToggleIconButtonContext);
 	const { size = 'medium', variant = 'default', icon } = props;
 

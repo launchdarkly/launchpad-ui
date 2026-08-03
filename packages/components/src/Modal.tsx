@@ -68,6 +68,7 @@ const ModalContext = createContext<ContextValue<ModalProps, HTMLDivElement>>(nul
  * https://react-spectrum.adobe.com/react-aria/Modal.html
  */
 const Modal = ({ ref, ...props }: ModalProps) => {
+	// oxlint-disable-next-line no-param-reassign -- sanctioned useLPContextProps merge pattern (see AGENTS.md context+prop-merging convention)
 	[props, ref] = useLPContextProps(props, ref, ModalContext);
 	const { size = 'medium', variant = 'default' } = props;
 

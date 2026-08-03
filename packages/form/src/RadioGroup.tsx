@@ -68,6 +68,7 @@ const RadioGroup = (props: RadioGroupProps) => {
 		}
 
 		// biome-ignore lint/suspicious/noExplicitAny: ignore
+		// oxlint-disable-next-line typescript/no-explicit-any -- matches existing biome-ignore precedent
 		const item = elem as ReactElement<any>;
 
 		if (item?.type && item.type === Radio) {

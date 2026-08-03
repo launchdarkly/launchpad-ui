@@ -385,7 +385,6 @@ const Popover = ({
 					transition={{ duration: 0.15 }}
 					initial={{ opacity: 0 }}
 					animate={{ opacity: 1 }}
-					/* @ts-ignore framer */
 					className={cx(
 						styles['Popover-content'],
 						restrictWidth && styles['Popover-content--restrictWidth'],
@@ -423,6 +422,7 @@ const Popover = ({
 		content === null || content === undefined || (typeof content === 'string' && !content);
 	const isTargetDisabled = isValidElement(target)
 		? // biome-ignore lint/suspicious/noExplicitAny: ignore
+			// oxlint-disable-next-line typescript/no-explicit-any -- matches existing biome-ignore precedent
 			!!(target as ReactElement<any>)?.props?.disabled
 		: false;
 
@@ -458,6 +458,7 @@ const Popover = ({
 		rootElementTag,
 		targetProps,
 		// biome-ignore lint/suspicious/noExplicitAny: ignore
+		// oxlint-disable-next-line typescript/no-explicit-any -- matches existing biome-ignore precedent
 		cloneElement(target as ReactElement<any>, {
 			ref: targetElementRef,
 			...(isOpen && { 'aria-describedby': popoverId.current }),

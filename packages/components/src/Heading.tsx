@@ -50,6 +50,7 @@ const getDefaultLevel = (size: 'small' | 'medium' | 'large'): AriaHeadingProps['
 			return 2;
 		case 'small':
 			return 3;
+		// skip default: `size` is a closed union and every member is handled above.
 	}
 };
 
@@ -70,6 +71,7 @@ const Heading = ({
 	level,
 	...props
 }: HeadingProps) => {
+	// oxlint-disable-next-line no-param-reassign -- sanctioned useLPContextProps merge pattern (see AGENTS.md context+prop-merging convention)
 	[props, ref] = useLPContextProps(props, ref, HeadingContext);
 
 	return (

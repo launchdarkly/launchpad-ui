@@ -114,6 +114,7 @@ const Menu = <T extends number | string>(props: MenuProps<T>) => {
 			(
 				{ items, searchElement }: { items: ReactElement[]; searchElement: null | ReactElement },
 				// biome-ignore lint/suspicious/noExplicitAny: ignore
+				// oxlint-disable-next-line typescript/no-explicit-any -- matches existing biome-ignore precedent
 				child: ReactElement<any>,
 			) => {
 				switch (child.type) {
@@ -352,6 +353,7 @@ const ItemVirtualizer = <T extends number | string>(props: ItemVirtualizerProps<
 		() =>
 			searchElement
 				? // biome-ignore lint/suspicious/noExplicitAny: ignore
+					// oxlint-disable-next-line typescript/no-explicit-any -- matches existing biome-ignore precedent
 					cloneElement(searchElement as ReactElement<any>, {
 						onKeyDown: (e: KeyboardEvent) =>
 							handleKeyboardFocusKeydown(e, {

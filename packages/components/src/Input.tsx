@@ -36,6 +36,7 @@ const InputContext = createContext<ContextValue<InputProps, HTMLInputElement>>(n
  * https://react-spectrum.adobe.com/react-aria/TextField.html
  */
 const Input = ({ ref, ...props }: InputProps) => {
+	// oxlint-disable-next-line no-param-reassign -- sanctioned useLPContextProps merge pattern (see AGENTS.md context+prop-merging convention)
 	[props, ref] = useLPContextProps(props, ref, InputContext);
 	const { variant = 'default' } = props;
 

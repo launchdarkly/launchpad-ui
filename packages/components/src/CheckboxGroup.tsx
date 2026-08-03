@@ -24,6 +24,7 @@ const CheckboxGroupContext = createContext<ContextValue<CheckboxGroupProps, HTML
  * https://react-spectrum.adobe.com/react-aria/CheckboxGroup.html
  */
 const CheckboxGroup = ({ ref, ...props }: CheckboxGroupProps) => {
+	// oxlint-disable-next-line no-param-reassign -- sanctioned useLPContextProps merge pattern (see AGENTS.md context+prop-merging convention)
 	[props, ref] = useLPContextProps(props, ref, CheckboxGroupContext);
 	return (
 		<AriaCheckboxGroup

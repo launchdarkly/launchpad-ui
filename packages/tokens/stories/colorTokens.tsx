@@ -85,7 +85,7 @@ export const getTokenValue = (computed?: ComputedValue): string | null => {
 };
 
 export const TokenCode = ({ children, muted }: { children: ReactNode; muted?: boolean }) => {
-	if (children == null) {
+	if (children === null || children === undefined) {
 		return null;
 	}
 

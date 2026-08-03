@@ -22,6 +22,7 @@ const FieldErrorContext = createContext<ContextValue<FieldErrorProps, HTMLElemen
  * A FieldError displays validation errors for a form field.
  */
 const FieldError = ({ ref, ...props }: FieldErrorProps) => {
+	// oxlint-disable-next-line no-param-reassign -- sanctioned useLPContextProps merge pattern (see AGENTS.md context+prop-merging convention)
 	[props, ref] = useLPContextProps(props, ref, FieldErrorContext);
 	return (
 		<AriaFieldError

@@ -28,6 +28,7 @@ const ToggleButtonContext = createContext<ContextValue<ToggleButtonProps, HTMLBu
  * https://react-spectrum.adobe.com/react-aria/ToggleButton.html
  */
 const ToggleButton = ({ ref, ...props }: ToggleButtonProps) => {
+	// oxlint-disable-next-line no-param-reassign -- sanctioned useLPContextProps merge pattern (see AGENTS.md context+prop-merging convention)
 	[props, ref] = useLPContextProps(props, ref, ToggleButtonContext);
 	const { appearance = 'default', size = 'medium', variant = 'default' } = props;
 

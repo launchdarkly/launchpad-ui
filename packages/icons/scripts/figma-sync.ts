@@ -24,6 +24,9 @@ import { optimize } from 'svgo';
 try {
 	const dotenvPath = path.resolve(process.cwd(), '.env');
 	if (fs.existsSync(dotenvPath)) {
+		// dotenv is optional and may not be installed; requiring it dynamically here (rather than a
+		// static ESM import) is what lets the surrounding try/catch degrade gracefully when it's absent.
+		// oxlint-disable-next-line typescript/no-require-imports, typescript/no-var-requires
 		require('dotenv').config();
 	}
 } catch {
@@ -82,9 +85,15 @@ function log(step: string, msg: string, ...rest: unknown[]) {
 
 // Helper: set-equality for arrays of strings (order-insensitive)
 function sameSet(a: string[], b: string[]): boolean {
-	if (a.length !== b.length) return false;
+	if (a.length !== b.length) {
+		return false;
+	}
 	const s = new Set(a);
-	for (const x of b) if (!s.has(x)) return false;
+	for (const x of b) {
+		if (!s.has(x)) {
+			return false;
+		}
+	}
 	return true;
 }
 
@@ -115,7 +124,9 @@ async function http<T>(url: string, init?: RequestInit): Promise<T> {
 			attempt++;
 			const msg = String((err as Error)?.message || err);
 			const retriable = /^(4(?:29)|5)/.test(msg) || /timed out/i.test(msg);
-			if (!retriable || attempt >= MAX_RETRIES) throw err;
+			if (!retriable || attempt >= MAX_RETRIES) {
+				throw err;
+			}
 			const backoff = Math.min(1000 * 2 ** (attempt - 1), 5000);
 			log('retry', `Retrying ${url} in ${backoff}ms (attempt ${attempt}/${MAX_RETRIES})`);
 			await delay(backoff);
@@ -130,7 +141,9 @@ async function figmaGet<T>(url: string): Promise<T> {
 async function downloadText(url: string): Promise<string> {
 	const doOnce = async () => {
 		const res = await fetchWithTimeout(fetch(url), FETCH_TIMEOUT_MS);
-		if (!res.ok) throw new Error(`HTTP ${res.status} ${res.statusText}`);
+		if (!res.ok) {
+			throw new Error(`HTTP ${res.status} ${res.statusText}`);
+		}
 		return res.text();
 	};
 	let attempt = 0;
@@ -140,7 +153,9 @@ async function downloadText(url: string): Promise<string> {
 		} catch (err) {
 			attempt++;
 			const retriable = attempt < MAX_RETRIES;
-			if (!retriable) throw err;
+			if (!retriable) {
+				throw err;
+			}
 			await delay(Math.min(1000 * 2 ** (attempt - 1), 4000));
 		}
 	}
@@ -152,7 +167,9 @@ async function fetchIconRoot(): Promise<FigmaNode> {
 	const url = `https://api.figma.com/v1/files/${FIGMA_FILE_KEY}/nodes?ids=${encodeURIComponent(FIGMA_NODE_ID)}`;
 	const data = await figmaGet<FigmaFileNodesResponse>(url);
 	const wrapper = data.nodes[FIGMA_NODE_ID];
-	if (!wrapper) throw new Error(`Icon node ${FIGMA_NODE_ID} not found in file ${FIGMA_FILE_KEY}`);
+	if (!wrapper) {
+		throw new Error(`Icon node ${FIGMA_NODE_ID} not found in file ${FIGMA_FILE_KEY}`);
+	}
 	return wrapper.document;
 }
 
@@ -163,14 +180,20 @@ function traverseFigmaNodes(
 	parents: FigmaNode[] = [],
 ) {
 	fn(node, parents);
-	if (node.children) for (const c of node.children) traverseFigmaNodes(c, fn, parents.concat(node));
+	if (node.children) {
+		for (const c of node.children) {
+			traverseFigmaNodes(c, fn, parents.concat(node));
+		}
+	}
 }
 
 // Collect all icon components
 function collectComponents(root: FigmaNode): ComponentRecord[] {
 	const list: ComponentRecord[] = [];
 	traverseFigmaNodes(root, (n) => {
-		if (n.type === 'COMPONENT') list.push({ id: n.id, name: n.name });
+		if (n.type === 'COMPONENT') {
+			list.push({ id: n.id, name: n.name });
+		}
 	});
 	return list;
 }
@@ -203,7 +226,11 @@ async function fetchSvgUrls(components: ComponentRecord[]): Promise<Record<strin
 			`🔗 Requesting image URLs for batch #${batchIdx + 1} (${batch.length} component(s))`,
 		);
 		const json = await figmaGet<{ images: Record<string, string> }>(url);
-		for (const c of batch) if (json.images[c.id]) urls[c.id] = json.images[c.id];
+		for (const c of batch) {
+			if (json.images[c.id]) {
+				urls[c.id] = json.images[c.id];
+			}
+		}
 	});
 
 	return urls;
@@ -317,18 +344,24 @@ export { icons };
 // Read existing icons from types.ts so we can diff with the icons read from the Figma File
 function readExistingIcons(): string[] {
 	try {
-		if (!fs.existsSync(TYPES_PATH)) return [];
+		if (!fs.existsSync(TYPES_PATH)) {
+			return [];
+		}
 		const src = fs.readFileSync(TYPES_PATH, 'utf8');
 		// Extract between const icons = [ ... ] as const
 		const m = src.match(/const\s+icons\s*=\s*\[(.*?)\]\s+as\s+const/s);
-		if (!m) return [];
+		if (!m) {
+			return [];
+		}
 		const body = m[1];
 		const names: string[] = [];
 		const rx = /['"]([^'"]+)['"]/g;
 		let mm: RegExpExecArray | null;
 		while (true) {
 			mm = rx.exec(body);
-			if (!mm) break;
+			if (!mm) {
+				break;
+			}
 			names.push(mm[1]);
 		}
 		return names;
@@ -343,12 +376,14 @@ async function mapPool<T, R>(
 	limit: number,
 	worker: (item: T, idx: number) => Promise<R>,
 ): Promise<R[]> {
-	const results: R[] = new Array(items.length);
+	const results: R[] = Array.from({ length: items.length });
 	let i = 0;
 	const run = async () => {
 		while (true) {
 			const idx = i++;
-			if (idx >= items.length) return;
+			if (idx >= items.length) {
+				return;
+			}
 			results[idx] = await worker(items[idx], idx);
 		}
 	};
@@ -372,8 +407,12 @@ async function main(): Promise<void> {
 	const nameMap = new Map<string, ComponentRecord>();
 	for (const c of components) {
 		const name = iconNameToId(c.name);
-		if (!name) continue;
-		if (!nameMap.has(name)) nameMap.set(name, c);
+		if (!name) {
+			continue;
+		}
+		if (!nameMap.has(name)) {
+			nameMap.set(name, c);
+		}
 	}
 	const normalized = [...nameMap.entries()]
 		.map(([name, comp]) => ({ ...comp, name }))
@@ -432,7 +471,9 @@ async function main(): Promise<void> {
 	// 6) Download + SVGO in parallel (bounded)
 	const symbols = await mapPool(normalized, DOWNLOAD_CONCURRENCY, async (item) => {
 		const url = idToUrl[item.id];
-		if (!url) throw new Error(`Missing image URL for ${item.name} (${item.id})`);
+		if (!url) {
+			throw new Error(`Missing image URL for ${item.name} (${item.id})`);
+		}
 		const raw = await downloadText(url);
 		const optimized = optimizeSvg(raw, item.name);
 		return { name: item.name, svg: optimized } as SvgSymbol;

@@ -19,7 +19,7 @@ describe('Checkbox', () => {
 				checked={false}
 				aria-label="Test checkbox"
 				onChange={() => undefined}
-				disabled={true}
+				disabled
 			>
 				Label
 			</Checkbox>,
@@ -29,7 +29,7 @@ describe('Checkbox', () => {
 
 	it('warns about a11y requirements', () => {
 		console.warn = vi.fn();
-		render(<Checkbox checked={true} onChange={() => undefined} />);
+		render(<Checkbox checked onChange={() => undefined} />);
 		expect(console.warn).toHaveBeenCalledWith(
 			'If you do not provide children, you must specify an aria-label for accessibility',
 		);

@@ -227,11 +227,11 @@ We are using [major version zero (0.y.z) semantic versioning](https://semver.org
 
 ### Javascript Styleguide
 
-All Javascript code is linted with [Biome](https://biomejs.dev/).
+All Javascript code is linted with [oxlint](https://oxc.rs/docs/guide/usage/linter.html) and formatted with [oxfmt](https://oxc.rs/).
 
 ### CSS Styleguide
 
-All CSS code is linted with [Biome](https://biomejs.dev/).
+CSS Modules are not currently linted by an automated tool (stylelint coverage lands once this package merges into the gonfalon monorepo).
 
 ### Specs Styleguide
 
