@@ -1,5 +1,16 @@
 # @launchpad-ui/icons
 
+## 0.26.2
+
+### Patch Changes
+
+- [#1962](https://github.com/launchdarkly/launchpad-ui/pull/1962) [`5ded7a9`](https://github.com/launchdarkly/launchpad-ui/commit/5ded7a9e7ed77045c4a88b80ffa37cd05507813c) Thanks [@cmwinters](https://github.com/cmwinters) via [@pd-sa-github-launchpad-ui](https://github.com/pd-sa-github-launchpad-ui)! - feat(icons): sync and connect icons with figma library
+
+  New icons:
+
+  - arrow-brand-right
+  - home
+
 ## 0.26.1
 
 ### Patch Changes
