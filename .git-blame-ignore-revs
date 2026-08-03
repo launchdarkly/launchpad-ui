@@ -3,7 +3,7 @@
 #   git config blame.ignoreRevsFile .git-blame-ignore-revs
 
 # chore: reformat repository with oxfmt
-4b66546271df9071711a90f8b9ce6147a90a3960
+882dbcfd113aa59e7f00861105310743d8b63012
 # TODO: this is the LOCAL commit hash from the isolated reformat branch. The repo
 # squash-merges PRs, so once this PR merges, append the resulting SQUASH-MERGE hash
 # on main here too (the local hash above will differ from — and not replace — the

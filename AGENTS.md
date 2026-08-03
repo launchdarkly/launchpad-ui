@@ -20,7 +20,7 @@ pnpm test:ui            # vitest UI
 pnpm test:packages      # test only Nx-affected packages
 pnpm typecheck          # tsc --noEmit across the repo (builds tokens first)
 pnpm oxlint:js          # oxlint (lint)
-pnpm fmt:check          # oxfmt --check (format check; not yet CI/hook-enforced)
+pnpm fmt:check          # oxfmt --check (format check; enforced in CI and the pre-commit hook)
 pnpm fmt:write          # oxfmt --write (format)
 pnpm build              # build all packages (nx run-many)
 pnpm build:packages     # build only Nx-affected packages
