@@ -32,9 +32,9 @@
 		"react-stately": "3.48.0"
 	},
 	"devDependencies": {
-		"react": "19.2.6",
+		"react": "19.2.8",
 		"react-aria": "3.50.0",
-		"react-dom": "19.2.6"
+		"react-dom": "19.2.8"
 	},
 	"peerDependencies": {
 		"react": "^19",

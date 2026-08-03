@@ -28,8 +28,8 @@
 		"@launchpad-ui/portal": "workspace:~"
 	},
 	"devDependencies": {
-		"react": "19.2.6",
-		"react-dom": "19.2.6"
+		"react": "19.2.8",
+		"react-dom": "19.2.8"
 	},
 	"peerDependencies": {
 		"react": "^19",
