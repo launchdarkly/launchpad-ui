@@ -47,6 +47,7 @@
 		"react-aria": "3.50.0",
 		"react-aria-components": "1.19.0",
 		"react-dom": "19.2.8",
+		"react-hook-form": "^7.59.0",
 		"react-router": "8.2.0",
 		"react-stately": "3.48.0"
 	},
