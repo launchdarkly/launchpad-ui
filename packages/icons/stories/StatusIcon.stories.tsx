@@ -6,8 +6,7 @@ export default {
 	component: StatusIcon,
 	title: 'Legacy/Icon/StatusIcon',
 	tags: ['deprecated'],
-	description:
-		'Flair icons can be used as either square or circular icons with gradient backgrounds.',
+	description: 'Flair icons can be used as either square or circular icons with gradient backgrounds.',
 	parameters: {
 		chromatic: { disableSnapshot: true },
 	},

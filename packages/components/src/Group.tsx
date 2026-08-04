@@ -1,16 +1,16 @@
 import type { Ref } from 'react';
-import type { GroupProps as AriaGroupProps } from 'react-aria-components/Group';
-import type { ContextValue } from 'react-aria-components/slots';
-import type { InputVariants } from './Input';
-
-import { cva, cx } from 'class-variance-authority';
 import { createContext } from 'react';
 import { composeRenderProps } from 'react-aria-components/composeRenderProps';
+import type { GroupProps as AriaGroupProps } from 'react-aria-components/Group';
 import { Group as AriaGroup } from 'react-aria-components/Group';
+import type { ContextValue } from 'react-aria-components/slots';
+import { cva, cx } from 'class-variance-authority';
 
+import type { InputVariants } from './Input';
 import { inputStyles } from './Input';
-import styles from './styles/Group.module.css';
 import { useLPContextProps } from './utils';
+
+import styles from './styles/Group.module.css';
 
 const groupStyles = cva(styles.group);
 

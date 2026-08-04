@@ -100,3 +100,6 @@ jobs:
 
       - name: Run Oxlint
         run: pnpm oxlint:js
+
+      - name: Check formatting
+        run: pnpm fmt:check

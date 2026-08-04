@@ -1,22 +1,20 @@
 import type { Ref } from 'react';
+import { createContext } from 'react';
+import { composeRenderProps } from 'react-aria-components/composeRenderProps';
 import type {
 	ListBoxItemProps as AriaListBoxItemProps,
 	ListBoxProps as AriaListBoxProps,
 } from 'react-aria-components/ListBox';
+import { ListBox as AriaListBox, ListBoxItem as AriaListBoxItem } from 'react-aria-components/ListBox';
 import type { ContextValue } from 'react-aria-components/slots';
+import { cva } from 'class-variance-authority';
 
 import { Icon } from '@launchpad-ui/icons';
-import { cva } from 'class-variance-authority';
-import { createContext } from 'react';
-import { composeRenderProps } from 'react-aria-components/composeRenderProps';
-import {
-	ListBox as AriaListBox,
-	ListBoxItem as AriaListBoxItem,
-} from 'react-aria-components/ListBox';
 
 import { CheckboxIcon, checkboxStyles } from './Checkbox';
-import styles from './styles/ListBox.module.css';
 import { useLPContextProps } from './utils';
+
+import styles from './styles/ListBox.module.css';
 
 const listBoxStyles = cva(styles.box);
 const listBoxItemStyles = cva(styles.item);
@@ -57,8 +55,7 @@ const ListBox = <T extends object>({ ref, ...props }: ListBoxProps<T>) => {
  * https://react-spectrum.adobe.com/react-aria/ListBox.html
  */
 const ListBoxItem = <T extends object>({ ref, ...props }: ListBoxItemProps<T>) => {
-	const textValue =
-		props.textValue || (typeof props.children === 'string' ? props.children : undefined);
+	const textValue = props.textValue || (typeof props.children === 'string' ? props.children : undefined);
 	return (
 		<AriaListBoxItem
 			textValue={textValue}

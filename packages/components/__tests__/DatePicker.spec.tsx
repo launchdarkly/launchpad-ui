@@ -32,21 +32,9 @@ describe('DatePicker', () => {
 					<Dialog>
 						<Calendar>
 							<header>
-								<IconButton
-									slot="previous"
-									icon="chevron-left"
-									aria-label="previous"
-									size="small"
-									variant="minimal"
-								/>
+								<IconButton slot="previous" icon="chevron-left" aria-label="previous" size="small" variant="minimal" />
 								<Heading />
-								<IconButton
-									slot="next"
-									icon="chevron-right"
-									aria-label="next"
-									size="small"
-									variant="minimal"
-								/>
+								<IconButton slot="next" icon="chevron-right" aria-label="next" size="small" variant="minimal" />
 							</header>
 							<CalendarGrid>{(date) => <CalendarCell date={date} />}</CalendarGrid>
 						</Calendar>
@@ -77,21 +65,9 @@ describe('DateRangePicker', () => {
 					<Dialog>
 						<RangeCalendar>
 							<header>
-								<IconButton
-									slot="previous"
-									icon="chevron-left"
-									aria-label="previous"
-									size="small"
-									variant="minimal"
-								/>
+								<IconButton slot="previous" icon="chevron-left" aria-label="previous" size="small" variant="minimal" />
 								<Heading />
-								<IconButton
-									slot="next"
-									icon="chevron-right"
-									aria-label="next"
-									size="small"
-									variant="minimal"
-								/>
+								<IconButton slot="next" icon="chevron-right" aria-label="next" size="small" variant="minimal" />
 							</header>
 							<CalendarGrid>{(date) => <CalendarCell date={date} />}</CalendarGrid>
 						</RangeCalendar>

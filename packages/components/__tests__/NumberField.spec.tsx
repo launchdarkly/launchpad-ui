@@ -10,20 +10,8 @@ describe('NumberField', () => {
 				<Label>Label</Label>
 				<Group>
 					<Input />
-					<IconButton
-						icon="minus"
-						aria-label="decrement"
-						size="small"
-						variant="minimal"
-						slot="decrement"
-					/>
-					<IconButton
-						icon="add"
-						aria-label="increment"
-						size="small"
-						variant="minimal"
-						slot="increment"
-					/>
+					<IconButton icon="minus" aria-label="decrement" size="small" variant="minimal" slot="decrement" />
+					<IconButton icon="add" aria-label="increment" size="small" variant="minimal" slot="increment" />
 				</Group>
 			</NumberField>,
 		);

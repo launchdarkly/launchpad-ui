@@ -1,7 +1,6 @@
 import type { ComponentProps, Ref } from 'react';
-
-import { cx } from 'classix';
 import { forwardRef } from 'react';
+import { cx } from 'classix';
 
 import styles from './styles/Navigation.module.css';
 
@@ -35,9 +34,7 @@ const NavBase = ({
 
 type NavProps = Omit<NavBaseProps, 'innerRef'>;
 
-const Nav = forwardRef<HTMLDivElement, NavBaseProps>((props, ref) => (
-	<NavBase {...props} innerRef={ref} />
-));
+const Nav = forwardRef<HTMLDivElement, NavBaseProps>((props, ref) => <NavBase {...props} innerRef={ref} />);
 
 Nav.displayName = 'Nav';
 

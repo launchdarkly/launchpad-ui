@@ -1,16 +1,16 @@
-import type { Orientation } from '@react-types/shared';
 import type { Ref } from 'react';
-import type { FormProps as AriaFormProps } from 'react-aria-components/Form';
-import type { ContextValue } from 'react-aria-components/slots';
-
-import { cva } from 'class-variance-authority';
 import { createContext } from 'react';
+import type { FormProps as AriaFormProps } from 'react-aria-components/Form';
 import { Form as AriaForm } from 'react-aria-components/Form';
+import type { ContextValue } from 'react-aria-components/slots';
 import { Provider } from 'react-aria-components/slots';
+import type { Orientation } from '@react-types/shared';
+import { cva } from 'class-variance-authority';
 
 import { LabelContext } from './Label';
-import styles from './styles/Form.module.css';
 import { useLPContextProps } from './utils';
+
+import styles from './styles/Form.module.css';
 
 const formStyles = cva(styles.form);
 
@@ -32,12 +32,7 @@ const Form = ({ ref, ...props }: FormProps) => {
 	const { className, orientation = 'vertical', children } = props;
 
 	return (
-		<AriaForm
-			{...props}
-			ref={ref}
-			className={formStyles({ className })}
-			data-orientation={orientation || undefined}
-		>
+		<AriaForm {...props} ref={ref} className={formStyles({ className })} data-orientation={orientation || undefined}>
 			<Provider values={[[LabelContext, { className: styles.label }]]}>{children}</Provider>
 		</AriaForm>
 	);

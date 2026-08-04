@@ -1,16 +1,16 @@
-import type { VariantProps } from 'class-variance-authority';
 import type { Ref } from 'react';
-import type { MeterProps as AriaMeterProps } from 'react-aria-components/Meter';
-import type { ContextValue } from 'react-aria-components/slots';
-
-import { cva, cx } from 'class-variance-authority';
 import { createContext } from 'react';
 import { composeRenderProps } from 'react-aria-components/composeRenderProps';
+import type { MeterProps as AriaMeterProps } from 'react-aria-components/Meter';
 import { Meter as AriaMeter } from 'react-aria-components/Meter';
+import type { ContextValue } from 'react-aria-components/slots';
 import { Text } from 'react-aria-components/Text';
+import type { VariantProps } from 'class-variance-authority';
+import { cva, cx } from 'class-variance-authority';
+
+import { useLPContextProps } from './utils';
 
 import styles from './styles/Meter.module.css';
-import { useLPContextProps } from './utils';
 
 const meterStyles = cva(styles.meter, {
 	variants: {
@@ -57,19 +57,8 @@ const Meter = ({ ref, ...props }: MeterProps) => {
 				<>
 					{variant === 'donut' && (
 						// biome-ignore lint/a11y/noSvgWithoutTitle: ignore
-						<svg
-							viewBox="0 0 128 128"
-							fill="none"
-							strokeWidth={strokeWidth}
-							className={styles.icon}
-						>
-							<circle
-								cx={center}
-								cy={center}
-								r={r}
-								strokeWidth={strokeWidth}
-								className={styles.outerCircle}
-							/>
+						<svg viewBox="0 0 128 128" fill="none" strokeWidth={strokeWidth} className={styles.icon}>
+							<circle cx={center} cy={center} r={r} strokeWidth={strokeWidth} className={styles.outerCircle} />
 							<circle
 								cx={center}
 								cy={center}

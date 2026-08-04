@@ -31,9 +31,7 @@ export const Range: Story = {
 	render: (args) => (
 		<Slider {...args}>
 			<Label>Price range</Label>
-			<SliderOutput>
-				{({ state }) => state.values.map((_, i) => state.getThumbValueLabel(i)).join(' – ')}
-			</SliderOutput>
+			<SliderOutput>{({ state }) => state.values.map((_, i) => state.getThumbValueLabel(i)).join(' – ')}</SliderOutput>
 			<SliderTrack>
 				{({ state }) => (
 					<>

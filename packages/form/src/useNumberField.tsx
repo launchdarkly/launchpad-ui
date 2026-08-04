@@ -1,18 +1,16 @@
 import type { JSX } from 'react';
-
-import { Icon } from '@launchpad-ui/icons';
-import { cx } from 'classix';
 import { useRef } from 'react';
 import { useLocale } from 'react-aria/I18nProvider';
 import { type AriaButtonProps, useButton } from 'react-aria/useButton';
-import {
-	type AriaNumberFieldProps,
-	useNumberField as useReactAriaNumberField,
-} from 'react-aria/useNumberField';
+import { type AriaNumberFieldProps, useNumberField as useReactAriaNumberField } from 'react-aria/useNumberField';
 import { useNumberFieldState } from 'react-stately/useNumberFieldState';
+import { cx } from 'classix';
+
+import { Icon } from '@launchpad-ui/icons';
+
+import { useObjectMemo } from './utils';
 
 import styles from './styles/Form.module.css';
-import { useObjectMemo } from './utils';
 
 type UseNumberFieldProps = AriaNumberFieldProps & {
 	className?: string;
@@ -92,12 +90,7 @@ const Stepper = (props: AriaButtonProps) => {
 	const { buttonProps } = useButton(props, buttonRef);
 
 	return (
-		<button
-			type="button"
-			{...buttonProps}
-			className={styles['numberField-stepper']}
-			ref={buttonRef}
-		>
+		<button type="button" {...buttonProps} className={styles['numberField-stepper']} ref={buttonRef}>
 			{props.children}
 		</button>
 	);

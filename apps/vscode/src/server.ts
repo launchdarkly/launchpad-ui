@@ -1,4 +1,6 @@
 import type { TransformedToken } from 'style-dictionary/types';
+import { getCSSLanguageService } from 'vscode-css-languageservice/lib/esm/cssLanguageService';
+import { TextDocument } from 'vscode-languageserver-textdocument';
 import type {
 	ColorInformation,
 	CompletionItem,
@@ -6,9 +8,6 @@ import type {
 	InitializeResult,
 	TextDocumentPositionParams,
 } from 'vscode-languageserver/node';
-
-import tokens from '@launchpad-ui/tokens/dist/tokens.json';
-import { getCSSLanguageService } from 'vscode-css-languageservice/lib/esm/cssLanguageService';
 import {
 	Color,
 	CompletionItemKind,
@@ -19,7 +18,8 @@ import {
 	TextDocumentSyncKind,
 	TextDocuments,
 } from 'vscode-languageserver/node';
-import { TextDocument } from 'vscode-languageserver-textdocument';
+
+import tokens from '@launchpad-ui/tokens/dist/tokens.json';
 
 const cssLanguageService = getCSSLanguageService();
 
@@ -83,37 +83,35 @@ connection.onInitialize(() => {
 });
 
 // This handler provides the initial list of the completion items.
-connection.onCompletion(
-	({ textDocument, position }: TextDocumentPositionParams): CompletionItem[] => {
-		const doc = documents.get(textDocument.uri);
-		let matches: CompletionItem[] = [];
+connection.onCompletion(({ textDocument, position }: TextDocumentPositionParams): CompletionItem[] => {
+	const doc = documents.get(textDocument.uri);
+	let matches: CompletionItem[] = [];
 
-		if (!doc) {
-			return [];
+	if (!doc) {
+		return [];
+	}
+
+	const currentText = doc.getText({
+		start: { line: position.line, character: 0 },
+		end: { line: position.line, character: 1000 },
+	});
+
+	for (const [tokenGroupName, pattern] of Object.entries(groupPatterns)) {
+		if (!pattern.test(currentText)) {
+			continue;
 		}
 
-		const currentText = doc.getText({
-			start: { line: position.line, character: 0 },
-			end: { line: position.line, character: 1000 },
-		});
+		const currentCompletionItems = groupedTokens[tokenGroupName as keyof typeof groupPatterns];
 
-		for (const [tokenGroupName, pattern] of Object.entries(groupPatterns)) {
-			if (!pattern.test(currentText)) {
-				continue;
-			}
+		matches = matches.concat(currentCompletionItems);
+	}
 
-			const currentCompletionItems = groupedTokens[tokenGroupName as keyof typeof groupPatterns];
+	if (matches.length > 0) {
+		return matches;
+	}
 
-			matches = matches.concat(currentCompletionItems);
-		}
-
-		if (matches.length > 0) {
-			return matches;
-		}
-
-		return allTokens;
-	},
-);
+	return allTokens;
+});
 
 connection.onHover(({ textDocument, position }): Hover => {
 	const doc = documents.get(textDocument.uri);
@@ -137,19 +135,14 @@ connection.onHover(({ textDocument, position }): Hover => {
 		};
 	}
 
-	const property = currentText.substring(
-		currentText.lastIndexOf('--') + 2,
-		currentText.lastIndexOf(')'),
-	);
+	const property = currentText.substring(currentText.lastIndexOf('--') + 2, currentText.lastIndexOf(')'));
 
 	const token = allTokens.find((t) => t.label === property);
 
 	return {
 		contents: {
 			kind: MarkupKind.Markdown,
-			value: token
-				? ['```css', ':root {', `  --${token.label}: ${token.detail};`, '}', '```'].join('\n')
-				: '',
+			value: token ? ['```css', ':root {', `  --${token.label}: ${token.detail};`, '}', '```'].join('\n') : '',
 		},
 	};
 });
@@ -171,17 +164,10 @@ connection.onDocumentColor(({ textDocument }) => {
 			const length = match[0].length;
 
 			const range = Range.create(doc.positionAt(offset), doc.positionAt(offset + length));
-			const property = match[0].substring(
-				match[0].lastIndexOf('--') + 2,
-				match[0].lastIndexOf(')'),
-			);
+			const property = match[0].substring(match[0].lastIndexOf('--') + 2, match[0].lastIndexOf(')'));
 
 			const token = allTokens.find((t) => t.label === property);
-			if (
-				property.startsWith('lp-color') &&
-				token?.detail &&
-				!token?.detail.includes('linear-gradient')
-			) {
+			if (property.startsWith('lp-color') && token?.detail && !token?.detail.includes('linear-gradient')) {
 				const rgb = token.detail
 					.trim()
 					.split('(')[1]
@@ -204,12 +190,7 @@ connection.onColorPresentation(({ textDocument, color, range }) => {
 		return undefined;
 	}
 
-	return cssLanguageService.getColorPresentations(
-		doc,
-		cssLanguageService.parseStylesheet(doc),
-		color,
-		range,
-	);
+	return cssLanguageService.getColorPresentations(doc, cssLanguageService.parseStylesheet(doc), color, range);
 });
 
 // Make the text document manager listen on the connection

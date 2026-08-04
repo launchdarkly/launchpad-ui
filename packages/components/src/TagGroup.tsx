@@ -1,24 +1,20 @@
-import type { VariantProps } from 'class-variance-authority';
 import type { Ref } from 'react';
+import { createContext } from 'react';
+import { composeRenderProps } from 'react-aria-components/composeRenderProps';
 import type { ContextValue } from 'react-aria-components/slots';
 import type {
 	TagGroupProps as AriaTagGroupProps,
 	TagListProps as AriaTagListProps,
 	TagProps as AriaTagProps,
 } from 'react-aria-components/TagGroup';
-
+import { Tag as AriaTag, TagGroup as AriaTagGroup, TagList as AriaTagList } from 'react-aria-components/TagGroup';
+import type { VariantProps } from 'class-variance-authority';
 import { cva } from 'class-variance-authority';
-import { createContext } from 'react';
-import { composeRenderProps } from 'react-aria-components/composeRenderProps';
-import {
-	Tag as AriaTag,
-	TagGroup as AriaTagGroup,
-	TagList as AriaTagList,
-} from 'react-aria-components/TagGroup';
 
 import { IconButton } from './IconButton';
-import styles from './styles/TagGroup.module.css';
 import { useLPContextProps } from './utils';
+
+import styles from './styles/TagGroup.module.css';
 
 const tagGroupStyles = cva(styles.group);
 const tagListStyles = cva(styles.list);
@@ -112,13 +108,7 @@ const Tag = ({ size = 'medium', variant = 'default', ref, ...props }: TagProps) 
 				<>
 					{children}
 					{allowsRemoving && (
-						<IconButton
-							aria-label="Remove"
-							size="small"
-							variant="minimal"
-							icon="cancel-circle-outline"
-							slot="remove"
-						/>
+						<IconButton aria-label="Remove" size="small" variant="minimal" icon="cancel-circle-outline" slot="remove" />
 					)}
 				</>
 			))}
@@ -126,14 +116,5 @@ const Tag = ({ size = 'medium', variant = 'default', ref, ...props }: TagProps) 
 	);
 };
 
-export {
-	TagGroup,
-	TagGroupContext,
-	TagList,
-	TagListContext,
-	Tag,
-	tagGroupStyles,
-	tagListStyles,
-	tagStyles,
-};
+export { TagGroup, TagGroupContext, TagList, TagListContext, Tag, tagGroupStyles, tagListStyles, tagStyles };
 export type { TagGroupProps, TagListProps, TagProps, TagVariants };

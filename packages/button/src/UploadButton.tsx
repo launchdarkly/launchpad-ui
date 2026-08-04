@@ -1,8 +1,7 @@
 import type { ChangeEventHandler, KeyboardEvent } from 'react';
-import type { ButtonProps } from './Button';
-
 import { useRef } from 'react';
 
+import type { ButtonProps } from './Button';
 import { Button } from './Button';
 
 type UploadButtonProps = Omit<ButtonProps, 'onSelect'> & {

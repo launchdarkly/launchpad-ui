@@ -1,15 +1,9 @@
-import type { IconProps } from '@launchpad-ui/icons';
-import type {
-	ButtonHTMLAttributes,
-	ElementType,
-	KeyboardEventHandler,
-	MouseEvent,
-	ReactElement,
-} from 'react';
-
+import type { ButtonHTMLAttributes, ElementType, KeyboardEventHandler, MouseEvent, ReactElement } from 'react';
+import { cloneElement, forwardRef, isValidElement, memo } from 'react';
 import { Slot } from '@radix-ui/react-slot';
 import { cx } from 'classix';
-import { cloneElement, forwardRef, isValidElement, memo } from 'react';
+
+import type { IconProps } from '@launchpad-ui/icons';
 
 import styles from './styles/Button.module.css';
 

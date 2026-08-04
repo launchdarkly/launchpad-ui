@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
+import { userEvent } from 'storybook/test';
 
 import { Icon } from '@launchpad-ui/icons';
 import { vars } from '@launchpad-ui/vars';
-import { userEvent } from 'storybook/test';
 
 import { Group } from '../src/Group';
 import { IconButton } from '../src/IconButton';
@@ -16,8 +16,7 @@ const meta: Meta<typeof SearchField> = {
 	title: 'Components/Forms/SearchField',
 	parameters: {
 		figma: {
-			design:
-				'https://www.figma.com/design/98HKKXL2dTle29ikJ3tzk7/%F0%9F%9A%80-LaunchPad?node-id=10833-25262&m=dev',
+			design: 'https://www.figma.com/design/98HKKXL2dTle29ikJ3tzk7/%F0%9F%9A%80-LaunchPad?node-id=10833-25262&m=dev',
 		},
 	},
 	decorators: [
@@ -41,12 +40,7 @@ export const Example: Story = {
 				<Group>
 					<Icon name="search" size="small" />
 					<Input placeholder="Enter a value" />
-					<IconButton
-						icon="cancel-circle-outline"
-						aria-label="clear"
-						size="small"
-						variant="minimal"
-					/>
+					<IconButton icon="cancel-circle-outline" aria-label="clear" size="small" variant="minimal" />
 				</Group>
 				<Text slot="description">Description</Text>
 			</>
@@ -59,12 +53,7 @@ export const States: Story = {
 		const ExampleGroup = (
 			<Group>
 				<Input placeholder="Enter a value" />
-				<IconButton
-					icon="cancel-circle-outline"
-					aria-label="clear"
-					size="small"
-					variant="minimal"
-				/>
+				<IconButton icon="cancel-circle-outline" aria-label="clear" size="small" variant="minimal" />
 			</Group>
 		);
 

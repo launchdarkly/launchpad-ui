@@ -1,5 +1,4 @@
 import type { ComponentProps } from 'react';
-
 import { cx } from 'classix';
 
 import styles from './styles/Form.module.css';
@@ -20,14 +19,7 @@ type FormProps = ComponentProps<'form'> & {
  * https://launchpad.launchdarkly.com/?path=/docs/components-forms-form--docs
  */
 const Form = (props: FormProps) => {
-	const {
-		className,
-		inline,
-		children,
-		hasIncreasedErrorMargin,
-		'data-test-id': testId = 'form',
-		...rest
-	} = props;
+	const { className, inline, children, hasIncreasedErrorMargin, 'data-test-id': testId = 'form', ...rest } = props;
 
 	const classes = cx(
 		styles.form,

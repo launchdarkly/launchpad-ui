@@ -1,8 +1,8 @@
-import type { ButtonProps } from '@launchpad-ui/button';
+import { forwardRef } from 'react';
 
+import type { ButtonProps } from '@launchpad-ui/button';
 import { Button } from '@launchpad-ui/button';
 import { Icon } from '@launchpad-ui/icons';
-import { forwardRef } from 'react';
 
 type DropdownButtonProps = ButtonProps & {
 	hideCaret?: boolean;

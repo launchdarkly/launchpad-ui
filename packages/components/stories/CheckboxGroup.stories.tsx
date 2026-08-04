@@ -1,5 +1,4 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-
 import { userEvent, within } from 'storybook/test';
 
 import { Button } from '../src/Button';
@@ -15,8 +14,7 @@ const meta: Meta<typeof CheckboxGroup> = {
 	title: 'Components/Forms/CheckboxGroup',
 	parameters: {
 		figma: {
-			design:
-				'https://www.figma.com/design/98HKKXL2dTle29ikJ3tzk7/%F0%9F%9A%80-LaunchPad?node-id=1-33148&m=dev',
+			design: 'https://www.figma.com/design/98HKKXL2dTle29ikJ3tzk7/%F0%9F%9A%80-LaunchPad?node-id=1-33148&m=dev',
 		},
 	},
 };

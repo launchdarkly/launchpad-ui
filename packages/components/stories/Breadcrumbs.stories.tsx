@@ -1,5 +1,5 @@
-import type { Meta, StoryObj } from '@storybook/react-vite';
 import type { ComponentType } from 'react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 
 import { Breadcrumb, Breadcrumbs } from '../src/Breadcrumbs';
 import { Link } from '../src/Link';

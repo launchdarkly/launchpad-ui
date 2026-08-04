@@ -1,13 +1,13 @@
 import type { Ref } from 'react';
-import type { HeadingProps as AriaHeadingProps } from 'react-aria-components/Heading';
-import type { ContextValue } from 'react-aria-components/slots';
-
-import { cva, cx } from 'class-variance-authority';
 import { createContext } from 'react';
+import type { HeadingProps as AriaHeadingProps } from 'react-aria-components/Heading';
 import { Heading as AriaHeading } from 'react-aria-components/Heading';
+import type { ContextValue } from 'react-aria-components/slots';
+import { cva, cx } from 'class-variance-authority';
+
+import { useLPContextProps } from './utils';
 
 import styles from './styles/Heading.module.css';
-import { useLPContextProps } from './utils';
 
 const headingStyles = cva(styles.heading, {
 	variants: {
@@ -61,16 +61,7 @@ const getDefaultLevel = (size: 'small' | 'medium' | 'large'): AriaHeadingProps['
  *
  * Built on top of [React Aria `Heading` component](https://react-spectrum.adobe.com/react-spectrum/Heading.html#heading).
  */
-const Heading = ({
-	ref,
-	size = 'medium',
-	bold = true,
-	maxLines,
-	className,
-	style,
-	level,
-	...props
-}: HeadingProps) => {
+const Heading = ({ ref, size = 'medium', bold = true, maxLines, className, style, level, ...props }: HeadingProps) => {
 	// oxlint-disable-next-line no-param-reassign -- sanctioned useLPContextProps merge pattern (see AGENTS.md context+prop-merging convention)
 	[props, ref] = useLPContextProps(props, ref, HeadingContext);
 

@@ -1,10 +1,10 @@
-import type { PopoverProps } from '@launchpad-ui/popover';
 import type { AriaAttributes, ForwardedRef, FunctionComponentElement, ReactElement } from 'react';
-
-import { Popover } from '@launchpad-ui/popover';
+import { Children, cloneElement, useEffect, useRef, useState } from 'react';
 import { mergeRefs } from '@react-aria/utils';
 import { cx } from 'classix';
-import { Children, cloneElement, useEffect, useRef, useState } from 'react';
+
+import type { PopoverProps } from '@launchpad-ui/popover';
+import { Popover } from '@launchpad-ui/popover';
 
 type DropdownState = {
 	isOpen?: boolean;

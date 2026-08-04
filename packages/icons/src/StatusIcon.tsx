@@ -1,5 +1,4 @@
 import type { IconProps } from './Icon';
-
 import { Icon } from './Icon';
 
 type StatusIconProps = Omit<IconProps, 'name'> & {

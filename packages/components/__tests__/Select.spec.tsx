@@ -1,5 +1,6 @@
-import { Icon } from '@launchpad-ui/icons';
 import { describe, expect, it } from 'vitest';
+
+import { Icon } from '@launchpad-ui/icons';
 
 import { render, screen, userEvent } from '../../../test/utils';
 import { Button, Label, ListBox, ListBoxItem, Popover, Select, SelectValue } from '../src';

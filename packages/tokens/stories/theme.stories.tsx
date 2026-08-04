@@ -37,8 +37,8 @@ export const NestedThemes = {
 								<h1>Inverted theme</h1>
 
 								<p>
-									By adding <code>data-theme=&quot;dark&quot;</code> to a container, you can make
-									the children adopt that theme.
+									By adding <code>data-theme=&quot;dark&quot;</code> to a container, you can make the children adopt
+									that theme.
 								</p>
 
 								<Button>Click me</Button>

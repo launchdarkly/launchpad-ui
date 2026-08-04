@@ -1,12 +1,12 @@
-import type { IconProps } from '@launchpad-ui/icons';
-import type { PopoverPlacement } from '@launchpad-ui/popover';
 import type { ComponentPropsWithRef, ElementType, JSX, PropsWithRef, ReactElement } from 'react';
-
-import { Tooltip } from '@launchpad-ui/tooltip';
-import { Slot } from '@radix-ui/react-slot';
-import { cx } from 'classix';
 import { cloneElement } from 'react';
 import { FocusRing } from 'react-aria/FocusRing';
+import { Slot } from '@radix-ui/react-slot';
+import { cx } from 'classix';
+
+import type { IconProps } from '@launchpad-ui/icons';
+import type { PopoverPlacement } from '@launchpad-ui/popover';
+import { Tooltip } from '@launchpad-ui/tooltip';
 
 import styles from './styles/Menu.module.css';
 
@@ -16,9 +16,7 @@ type Merge<T, U> = Omit<T, keyof U> & U;
 type PropsWithComponent<P, T extends ElementType> = P & { component?: T };
 
 type PolymorphicPropsWithRef<P, T extends ElementType> = Merge<
-	T extends keyof JSX.IntrinsicElements
-		? PropsWithRef<JSX.IntrinsicElements[T]>
-		: ComponentPropsWithRef<T>,
+	T extends keyof JSX.IntrinsicElements ? PropsWithRef<JSX.IntrinsicElements[T]> : ComponentPropsWithRef<T>,
 	PropsWithComponent<P, T>
 >;
 
@@ -47,9 +45,7 @@ type MenuItemProps<P, T extends ElementType = typeof defaultElement> = Polymorph
 	T
 >;
 
-const MenuItem = <P, T extends ElementType = typeof defaultElement>({
-	...props
-}: MenuItemProps<P, T>) => {
+const MenuItem = <P, T extends ElementType = typeof defaultElement>({ ...props }: MenuItemProps<P, T>) => {
 	const {
 		// TODO: remove component prop once we migrate over to asChild format
 		component,

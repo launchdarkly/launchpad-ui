@@ -1,6 +1,4 @@
 import type { ContextType, FieldsetHTMLAttributes, Ref } from 'react';
-
-import { cva } from 'class-variance-authority';
 import { useId } from 'react';
 import { ComboBoxContext } from 'react-aria-components/ComboBox';
 import { DateFieldContext } from 'react-aria-components/DateField';
@@ -12,6 +10,7 @@ import { SelectContext } from 'react-aria-components/Select';
 import { Provider } from 'react-aria-components/slots';
 import { TextFieldContext } from 'react-aria-components/TextField';
 import { TimeFieldContext } from 'react-aria-components/TimeField';
+import { cva } from 'class-variance-authority';
 
 import errorStyles from './styles/FieldError.module.css';
 import styles from './styles/FieldGroup.module.css';
@@ -28,15 +27,7 @@ const fieldGroupStyles = cva(styles.group);
 /**
  * A field group represents a set of related form elements in a form.
  */
-const FieldGroup = ({
-	title,
-	children,
-	errorMessage,
-	isDisabled,
-	className,
-	ref,
-	...props
-}: FieldGroupProps) => {
+const FieldGroup = ({ title, children, errorMessage, isDisabled, className, ref, ...props }: FieldGroupProps) => {
 	const errorId = useId();
 	const state = {
 		isInvalid: !!errorMessage,

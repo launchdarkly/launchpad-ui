@@ -1,23 +1,17 @@
-import type { VariantProps } from 'class-variance-authority';
 import type { Ref } from 'react';
-import type { ContextValue } from 'react-aria-components/slots';
-import type {
-	TooltipProps as AriaTooltipProps,
-	TooltipTriggerComponentProps,
-} from 'react-aria-components/Tooltip';
-import type { PopoverProps } from './Popover';
-
-import { cva } from 'class-variance-authority';
 import { createContext } from 'react';
 import { composeRenderProps } from 'react-aria-components/composeRenderProps';
-import {
-	Tooltip as AriaTooltip,
-	TooltipTrigger as AriaTooltipTrigger,
-} from 'react-aria-components/Tooltip';
+import type { ContextValue } from 'react-aria-components/slots';
+import type { TooltipProps as AriaTooltipProps, TooltipTriggerComponentProps } from 'react-aria-components/Tooltip';
+import { Tooltip as AriaTooltip, TooltipTrigger as AriaTooltipTrigger } from 'react-aria-components/Tooltip';
+import type { VariantProps } from 'class-variance-authority';
+import { cva } from 'class-variance-authority';
 
+import type { PopoverProps } from './Popover';
 import { popoverStyles } from './Popover';
-import styles from './styles/Tooltip.module.css';
 import { useLPContextProps } from './utils';
+
+import styles from './styles/Tooltip.module.css';
 
 interface TooltipProps extends AriaTooltipProps, VariantProps<typeof tooltipStyles> {
 	ref?: Ref<HTMLDivElement>;

@@ -1,10 +1,9 @@
-import type { KeyboardEvents, PressEvents } from '@react-types/shared';
 import type { ReactNode } from 'react';
-
-import { FocusableProvider } from '@react-aria/focus';
-import { ClearPressResponder } from '@react-aria/interactions';
 import { createContext } from 'react';
 import { Provider } from 'react-aria-components/slots';
+import { FocusableProvider } from '@react-aria/focus';
+import { ClearPressResponder } from '@react-aria/interactions';
+import type { KeyboardEvents, PressEvents } from '@react-types/shared';
 
 interface InteractionProps extends KeyboardEvents, PressEvents {}
 

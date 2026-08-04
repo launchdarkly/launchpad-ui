@@ -1,10 +1,10 @@
-import type { Meta, StoryObj } from '@storybook/react-vite';
 import type { ComponentType } from 'react';
+import { useFilter } from 'react-aria-components/Autocomplete';
+import type { Meta, StoryObj } from '@storybook/react-vite';
+import { expect, userEvent, within } from 'storybook/test';
 
 import { Icon } from '@launchpad-ui/icons';
 import { vars } from '@launchpad-ui/vars';
-import { useFilter } from 'react-aria-components/Autocomplete';
-import { expect, userEvent, within } from 'storybook/test';
 
 import { Autocomplete as AutocompleteComponent } from '../src/Autocomplete';
 import { Button } from '../src/Button';
@@ -24,8 +24,7 @@ const meta: Meta<typeof Select> = {
 	title: 'Components/Pickers/Select',
 	parameters: {
 		figma: {
-			design:
-				'https://www.figma.com/design/98HKKXL2dTle29ikJ3tzk7/%F0%9F%9A%80-LaunchPad?node-id=8079-95299&m=dev',
+			design: 'https://www.figma.com/design/98HKKXL2dTle29ikJ3tzk7/%F0%9F%9A%80-LaunchPad?node-id=8079-95299&m=dev',
 		},
 	},
 	decorators: [
@@ -183,12 +182,7 @@ export const Autocomplete: Story = {
 							<Group>
 								<Icon name="search" size="small" />
 								<Input placeholder="Search" />
-								<IconButton
-									icon="cancel-circle-outline"
-									aria-label="clear"
-									size="small"
-									variant="minimal"
-								/>
+								<IconButton icon="cancel-circle-outline" aria-label="clear" size="small" variant="minimal" />
 							</Group>
 						</SearchField>
 						<ListBox>

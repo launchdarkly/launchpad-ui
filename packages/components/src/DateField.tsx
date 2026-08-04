@@ -1,28 +1,25 @@
 import type { Ref } from 'react';
+import { createContext } from 'react';
+import { composeRenderProps } from 'react-aria-components/composeRenderProps';
 import type {
 	DateFieldProps as AriaDateFieldProps,
 	DateInputProps as AriaDateInputProps,
 	DateSegmentProps as AriaDateSegmentProps,
 	DateValue,
 } from 'react-aria-components/DateField';
-import type { ContextValue } from 'react-aria-components/slots';
-import type {
-	TimeFieldProps as AriaTimeFieldProps,
-	TimeValue,
-} from 'react-aria-components/TimeField';
-
-import { cva } from 'class-variance-authority';
-import { createContext } from 'react';
-import { composeRenderProps } from 'react-aria-components/composeRenderProps';
 import {
 	DateField as AriaDateField,
 	DateInput as AriaDateInput,
 	DateSegment as AriaDateSegment,
 } from 'react-aria-components/DateField';
+import type { ContextValue } from 'react-aria-components/slots';
+import type { TimeFieldProps as AriaTimeFieldProps, TimeValue } from 'react-aria-components/TimeField';
 import { TimeField as AriaTimeField } from 'react-aria-components/TimeField';
+import { cva } from 'class-variance-authority';
+
+import { useLPContextProps } from './utils';
 
 import styles from './styles/DateField.module.css';
-import { useLPContextProps } from './utils';
 
 const dateFieldStyles = cva(styles.field);
 const dateInputStyles = cva(styles.input);
@@ -44,10 +41,8 @@ interface TimeFieldProps<T extends TimeValue> extends AriaTimeFieldProps<T> {
 	ref?: Ref<HTMLDivElement>;
 }
 
-const DateFieldContext =
-	createContext<ContextValue<DateFieldProps<DateValue>, HTMLDivElement>>(null);
-const TimeFieldContext =
-	createContext<ContextValue<TimeFieldProps<TimeValue>, HTMLDivElement>>(null);
+const DateFieldContext = createContext<ContextValue<DateFieldProps<DateValue>, HTMLDivElement>>(null);
+const TimeFieldContext = createContext<ContextValue<TimeFieldProps<TimeValue>, HTMLDivElement>>(null);
 
 /**
  * A date field allows users to enter and edit date and time values using a keyboard. Each part of a date value is displayed in an individually editable segment.

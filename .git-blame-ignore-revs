@@ -1,0 +1,10 @@
+# Commits listed here are ignored by `git blame` (see `git blame --ignore-revs-file`).
+# Configure locally with:
+#   git config blame.ignoreRevsFile .git-blame-ignore-revs
+
+# chore: reformat repository with oxfmt
+882dbcfd113aa59e7f00861105310743d8b63012
+# TODO: this is the LOCAL commit hash from the isolated reformat branch. The repo
+# squash-merges PRs, so once this PR merges, append the resulting SQUASH-MERGE hash
+# on main here too (the local hash above will differ from — and not replace — the
+# squash hash; keep both so blame is ignored regardless of which history a checkout has).

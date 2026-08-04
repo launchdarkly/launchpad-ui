@@ -1,8 +1,6 @@
-import type { DesignTokens } from 'style-dictionary/types';
-
 import path from 'path';
-
 import StyleDictionary from 'style-dictionary';
+import type { DesignTokens } from 'style-dictionary/types';
 import { describe, expect, it } from 'vitest';
 
 import { css } from '../src/themes';

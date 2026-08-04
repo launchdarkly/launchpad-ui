@@ -1,8 +1,8 @@
+import { Controller, useForm } from 'react-hook-form';
 import type { Meta, StoryObj } from '@storybook/react-vite';
 
 import { Icon } from '@launchpad-ui/icons';
 import { vars } from '@launchpad-ui/vars';
-import { Controller, useForm } from 'react-hook-form';
 
 import { Button } from '../src/Button';
 import { FieldError } from '../src/FieldError';
@@ -104,10 +104,7 @@ export const ReactHookForm: Story = {
 					control={control}
 					name="name"
 					rules={{ required: 'Name is required.' }}
-					render={({
-						field: { name, value, onChange, onBlur, ref },
-						fieldState: { invalid, error },
-					}) => (
+					render={({ field: { name, value, onChange, onBlur, ref }, fieldState: { invalid, error } }) => (
 						<TextField
 							name={name}
 							value={value}

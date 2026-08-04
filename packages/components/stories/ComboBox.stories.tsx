@@ -1,9 +1,9 @@
-import type { Meta, StoryObj } from '@storybook/react-vite';
 import type { ComponentType } from 'react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
+import { expect, userEvent, within } from 'storybook/test';
 
 import { Icon } from '@launchpad-ui/icons';
 import { vars } from '@launchpad-ui/vars';
-import { expect, userEvent, within } from 'storybook/test';
 
 import { ComboBox, ComboBoxClearButton } from '../src/ComboBox';
 import { Group } from '../src/Group';
@@ -48,12 +48,7 @@ export const Example: Story = {
 				<Label>Label</Label>
 				<Group>
 					<Input />
-					<IconButton
-						icon="chevron-down"
-						size="small"
-						variant="minimal"
-						aria-label="Show suggestions"
-					/>
+					<IconButton icon="chevron-down" size="small" variant="minimal" aria-label="Show suggestions" />
 				</Group>
 				<Text slot="description">Description</Text>
 				<Popover>
@@ -76,12 +71,7 @@ export const Descriptions: Story = {
 				<Group>
 					<Icon name="search" size="small" />
 					<Input />
-					<IconButton
-						icon="chevron-down"
-						size="small"
-						variant="minimal"
-						aria-label="Show suggestions"
-					/>
+					<IconButton icon="chevron-down" size="small" variant="minimal" aria-label="Show suggestions" />
 				</Group>
 				<Popover>
 					<ListBox>
@@ -124,12 +114,7 @@ export const States: Story = {
 			<>
 				<Group>
 					<Input />
-					<IconButton
-						icon="chevron-down"
-						size="small"
-						variant="minimal"
-						aria-label="Show suggestions"
-					/>
+					<IconButton icon="chevron-down" size="small" variant="minimal" aria-label="Show suggestions" />
 				</Group>
 				<Popover>
 					<ListBox>

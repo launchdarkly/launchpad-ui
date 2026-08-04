@@ -1,7 +1,6 @@
-import type { Decorator, StoryObj } from '@storybook/react-vite';
 import type { ReactNode } from 'react';
-
 import { Fragment } from 'react';
+import type { Decorator, StoryObj } from '@storybook/react-vite';
 
 import { Icon } from '../../icons/src';
 import { Button } from '../src';

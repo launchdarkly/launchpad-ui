@@ -1,13 +1,13 @@
-import type { VariantProps } from 'class-variance-authority';
 import type { HTMLAttributes, Ref } from 'react';
-
-import { cva } from 'class-variance-authority';
 import { HeadingContext } from 'react-aria-components/Heading';
 import { Provider } from 'react-aria-components/slots';
 import { TextContext } from 'react-aria-components/Text';
+import type { VariantProps } from 'class-variance-authority';
+import { cva } from 'class-variance-authority';
 
 import { ButtonContext } from './Button';
 import { ButtonGroupContext } from './ButtonGroup';
+
 import styles from './styles/EmptyState.module.css';
 
 const emptyStateStyles = cva(styles.base, {
@@ -40,14 +40,7 @@ interface EmptyStateProps extends HTMLAttributes<HTMLDivElement>, EmptyStateVari
  *
  * https://react-spectrum.adobe.com/v3/IllustratedMessage.html
  */
-const EmptyState = ({
-	className,
-	children,
-	size = 'large',
-	hasBorder = false,
-	ref,
-	...props
-}: EmptyStateProps) => {
+const EmptyState = ({ className, children, size = 'large', hasBorder = false, ref, ...props }: EmptyStateProps) => {
 	return (
 		<div ref={ref} {...props} className={emptyStateStyles({ size, hasBorder, className })}>
 			<Provider

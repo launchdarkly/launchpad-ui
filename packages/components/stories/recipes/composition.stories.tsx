@@ -1,13 +1,12 @@
-import type { Meta, StoryObj } from '@storybook/react-vite';
 import type { ComponentPropsWithoutRef, Fragment } from 'react';
-import type { ListBoxItemProps } from '../../src/ListBox';
+import { useRef, useState } from 'react';
+import { VisuallyHidden } from 'react-aria/VisuallyHidden';
+import type { Meta, StoryObj } from '@storybook/react-vite';
+import { expect, userEvent, within } from 'storybook/test';
 
 import { Box } from '@launchpad-ui/box';
 import { Icon } from '@launchpad-ui/icons';
 import { vars } from '@launchpad-ui/vars';
-import { useRef, useState } from 'react';
-import { VisuallyHidden } from 'react-aria/VisuallyHidden';
-import { expect, userEvent, within } from 'storybook/test';
 
 import { Button } from '../../src/Button';
 import { ButtonGroup } from '../../src/ButtonGroup';
@@ -18,6 +17,7 @@ import { Heading } from '../../src/Heading';
 import { IconButton } from '../../src/IconButton';
 import { Input } from '../../src/Input';
 import { Label } from '../../src/Label';
+import type { ListBoxItemProps } from '../../src/ListBox';
 import { ListBox, ListBoxItem } from '../../src/ListBox';
 import { Modal, ModalOverlay } from '../../src/Modal';
 import { Perceivable } from '../../src/Perceivable';
@@ -256,13 +256,7 @@ export const DisabledWithTooltip: Story = {
 										<>
 											<div slot="header">
 												<Heading slot="title">Title</Heading>
-												<IconButton
-													aria-label="close"
-													icon="cancel"
-													size="small"
-													variant="minimal"
-													onPress={close}
-												/>
+												<IconButton aria-label="close" icon="cancel" size="small" variant="minimal" onPress={close} />
 												<Text slot="subtitle">Subtitle</Text>
 											</div>
 											<div slot="body">Body text</div>

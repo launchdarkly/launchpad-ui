@@ -1,17 +1,18 @@
-import type { Variants } from 'framer-motion';
 import type { MouseEvent } from 'react';
-import type { ModalProps } from './Modal';
-
-import { FocusTrap } from '@launchpad-ui/focus-trap';
-import { cx } from 'classix';
-import { LazyMotion, m } from 'framer-motion';
 import { useEffect, useRef, useState } from 'react';
 import { useFocusWithin } from 'react-aria/useFocusWithin';
 import { usePreventScroll } from 'react-aria/usePreventScroll';
+import { cx } from 'classix';
+import type { Variants } from 'framer-motion';
+import { LazyMotion, m } from 'framer-motion';
+
+import { FocusTrap } from '@launchpad-ui/focus-trap';
 
 import { MODAL_DESCRIBED_BY, MODAL_LABELLED_BY } from './constants';
-import styles from './styles/Modal.module.css';
+import type { ModalProps } from './Modal';
 import { useMediaQuery } from './utils';
+
+import styles from './styles/Modal.module.css';
 
 const overlay: Variants = {
 	visible: { opacity: 1, transition: { duration: 0.15 } },
@@ -42,14 +43,7 @@ const loadFeatures = () =>
 
 type ModalContainerProps = Pick<
 	ModalProps,
-	| 'children'
-	| 'cancelWithOverlayClick'
-	| 'onCancel'
-	| 'size'
-	| 'className'
-	| 'onReady'
-	| 'theme'
-	| 'data-test-id'
+	'children' | 'cancelWithOverlayClick' | 'onCancel' | 'size' | 'className' | 'onReady' | 'theme' | 'data-test-id'
 >;
 
 const ModalContainer = ({

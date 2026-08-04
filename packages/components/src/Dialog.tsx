@@ -1,20 +1,17 @@
 import type { Ref } from 'react';
-import type {
-	DialogProps as AriaDialogProps,
-	DialogTriggerProps,
-} from 'react-aria-components/Dialog';
-import type { ContextValue } from 'react-aria-components/slots';
-
-import { useSlotId } from '@react-aria/utils';
-import { cva } from 'class-variance-authority';
 import { createContext } from 'react';
 import { composeRenderProps } from 'react-aria-components/composeRenderProps';
+import type { DialogProps as AriaDialogProps, DialogTriggerProps } from 'react-aria-components/Dialog';
 import { Dialog as AriaDialog, DialogTrigger } from 'react-aria-components/Dialog';
+import type { ContextValue } from 'react-aria-components/slots';
 import { Provider } from 'react-aria-components/slots';
 import { TextContext } from 'react-aria-components/Text';
+import { useSlotId } from '@react-aria/utils';
+import { cva } from 'class-variance-authority';
+
+import { useLPContextProps } from './utils';
 
 import styles from './styles/Dialog.module.css';
-import { useLPContextProps } from './utils';
 
 const dialogStyles = cva(styles.dialog);
 

@@ -1,13 +1,13 @@
 import type { Ref } from 'react';
-import type { SeparatorProps as AriaSeparatorProps } from 'react-aria-components/Separator';
-import type { ContextValue } from 'react-aria-components/slots';
-
-import { cva } from 'class-variance-authority';
 import { createContext } from 'react';
+import type { SeparatorProps as AriaSeparatorProps } from 'react-aria-components/Separator';
 import { Separator as AriaSeparator } from 'react-aria-components/Separator';
+import type { ContextValue } from 'react-aria-components/slots';
+import { cva } from 'class-variance-authority';
+
+import { useLPContextProps } from './utils';
 
 import styles from './styles/Separator.module.css';
-import { useLPContextProps } from './utils';
 
 const separatorStyles = cva(styles.separator);
 

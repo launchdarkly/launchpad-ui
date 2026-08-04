@@ -1,10 +1,10 @@
 import type { ComponentProps, KeyboardEvent } from 'react';
-
-import { cx } from 'classix';
 import { forwardRef } from 'react';
+import { cx } from 'classix';
+
+import { createFieldErrorId } from './utils';
 
 import styles from './styles/Form.module.css';
-import { createFieldErrorId } from './utils';
 
 type TextAreaProps = ComponentProps<'textarea'> & {
 	'data-test-id'?: string;
@@ -18,12 +18,7 @@ type TextAreaProps = ComponentProps<'textarea'> & {
 const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
 	({ className, 'data-test-id': testId = 'text-area', ...props }, ref) => {
 		const onKeyDown = (e: KeyboardEvent<HTMLTextAreaElement>) => {
-			if (
-				e.key === 'ArrowRight' ||
-				e.key === 'ArrowDown' ||
-				e.key === 'ArrowUp' ||
-				e.key === 'ArrowLeft'
-			) {
+			if (e.key === 'ArrowRight' || e.key === 'ArrowDown' || e.key === 'ArrowUp' || e.key === 'ArrowLeft') {
 				e.stopPropagation();
 			}
 			if (e.key === 'Escape') {

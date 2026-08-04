@@ -1,5 +1,5 @@
-import type { Meta, StoryObj } from '@storybook/react-vite';
 import type React from 'react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 
 import { Icon } from '@launchpad-ui/icons';
 import { vars } from '@launchpad-ui/vars';
@@ -28,6 +28,7 @@ import { ToggleButton } from '../../src/ToggleButton';
 import { ToggleButtonGroup } from '../../src/ToggleButtonGroup';
 import { ToggleIconButton } from '../../src/ToggleIconButton';
 import { Toolbar } from '../../src/Toolbar';
+
 import { collectionsCategory } from './Collections';
 import { dateAndTimeCategory } from './DateAndTime';
 import { dragAndDropCategory } from './DragAndDrop';
@@ -71,9 +72,7 @@ const buildDocsUrl = (storyPath: string): string => {
 	if (globals) {
 		// Preserve globals parameter but ensure theme is set correctly
 		const globalsWithoutTheme = globals.replace(/theme:[^,]+/, '').replace(/^,+|,+$/g, '');
-		const newGlobals = globalsWithoutTheme
-			? `${globalsWithoutTheme},theme:${currentTheme}`
-			: `theme:${currentTheme}`;
+		const newGlobals = globalsWithoutTheme ? `${globalsWithoutTheme},theme:${currentTheme}` : `theme:${currentTheme}`;
 		docsParams.set('globals', newGlobals);
 	} else {
 		docsParams.set('theme', currentTheme);
@@ -405,12 +404,7 @@ const ComponentCard = ({
 						</Text>
 					</Link>
 				)}
-				<Link
-					href={buildDocsUrl(storyPath)}
-					target="_blank"
-					rel="noopener noreferrer"
-					variant="subtle"
-				>
+				<Link href={buildDocsUrl(storyPath)} target="_blank" rel="noopener noreferrer" variant="subtle">
 					<Icon name="arrow-up-right" size="small" />
 					<Text size="medium" style={{ padding: vars.spacing[200] }}>
 						Docs

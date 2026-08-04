@@ -1,8 +1,8 @@
+import { useState } from 'react';
 import type { Meta, StoryObj } from '@storybook/react-vite';
 
 import { Icon } from '@launchpad-ui/icons';
 import { vars } from '@launchpad-ui/vars';
-import { useState } from 'react';
 
 import { Group } from '../src/Group';
 import { IconButton } from '../src/IconButton';
@@ -32,12 +32,7 @@ export const Example: Story = {
 		const [text, setText] = useState('');
 
 		return (
-			<TextField
-				isDisabled={args.isDisabled}
-				isInvalid={args.isInvalid}
-				value={text}
-				onChange={setText}
-			>
+			<TextField isDisabled={args.isDisabled} isInvalid={args.isInvalid} value={text} onChange={setText}>
 				<Label>Label</Label>
 				<Group {...args}>
 					<Icon name="search" size="small" />

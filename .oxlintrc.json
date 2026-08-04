@@ -1,507 +1,507 @@
 {
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "jsx-a11y", "unicorn", "typescript", "oxc", "import", "vitest"],
-  "jsPlugins": ["./.oxlint/gonfalonOxlintPlugin.mjs"],
-  "env": {
-    "builtin": true
-  },
-  "categories": {
-    "correctness": "error",
-    "suspicious": "warn"
-  },
-  "rules": {
-    // "correctness" rules we explicitly disable ("off")
-    "react/react-in-jsx-scope": "off",
-    "jsx-a11y/no-autofocus": "off",
-    "jsx-a11y/prefer-tag-over-role": "off",
-    "unicorn/no-array-reverse": "off", // false positives for Immutable.js collections
-    "unicorn/no-array-sort": "off", // false positives for Immutable.js collections
-    "preserve-caught-error": "off",
-    "typescript/no-unsafe-type-assertion": "off", // would be nice to enforce this but there are thousands of existing violations
-    "typescript/unbound-method": "off", // high number of existing violations; we might want to fix these at some point?
+	"$schema": "./node_modules/oxlint/configuration_schema.json",
+	"plugins": ["react", "jsx-a11y", "unicorn", "typescript", "oxc", "import", "vitest"],
+	"jsPlugins": ["./.oxlint/gonfalonOxlintPlugin.mjs"],
+	"env": {
+		"builtin": true
+	},
+	"categories": {
+		"correctness": "error",
+		"suspicious": "warn"
+	},
+	"rules": {
+		// "correctness" rules we explicitly disable ("off")
+		"react/react-in-jsx-scope": "off",
+		"jsx-a11y/no-autofocus": "off",
+		"jsx-a11y/prefer-tag-over-role": "off",
+		"unicorn/no-array-reverse": "off", // false positives for Immutable.js collections
+		"unicorn/no-array-sort": "off", // false positives for Immutable.js collections
+		"preserve-caught-error": "off",
+		"typescript/no-unsafe-type-assertion": "off", // would be nice to enforce this but there are thousands of existing violations
+		"typescript/unbound-method": "off", // high number of existing violations; we might want to fix these at some point?
 
-    // "correctness" rules we downgrade to "warn"
-    // In general we should work towards fixing these, they shouldn't stay in warn forever
-    "react-hooks/exhaustive-deps": "warn",
-    "no-extra-boolean-cast": "warn",
-    // Keep the base rule enabled so JS files get shadow checks; TypeScript files use the TS-aware rule below.
-    "no-shadow": "error",
-    "typescript/restrict-template-expressions": "warn",
-    "typescript/no-duplicate-type-constituents": "warn",
-    "typescript/no-redundant-type-constituents": "warn",
-    "typescript/no-meaningless-void-operator": "warn",
-    "typescript/no-misused-spread": "warn",
-    "typescript/no-base-to-string": "warn",
-    "typescript/require-array-sort-compare": "warn",
-    "typescript/no-useless-default-assignment": "warn",
-    "react/no-did-update-set-state": "warn",
-    "jsx-a11y/control-has-associated-label": "warn",
-    "vitest/no-conditional-expect": "warn",
-    "vitest/expect-expect": "warn",
-    "vitest/require-mock-type-parameters": "off",
+		// "correctness" rules we downgrade to "warn"
+		// In general we should work towards fixing these, they shouldn't stay in warn forever
+		"react-hooks/exhaustive-deps": "warn",
+		"no-extra-boolean-cast": "warn",
+		// Keep the base rule enabled so JS files get shadow checks; TypeScript files use the TS-aware rule below.
+		"no-shadow": "error",
+		"typescript/restrict-template-expressions": "warn",
+		"typescript/no-duplicate-type-constituents": "warn",
+		"typescript/no-redundant-type-constituents": "warn",
+		"typescript/no-meaningless-void-operator": "warn",
+		"typescript/no-misused-spread": "warn",
+		"typescript/no-base-to-string": "warn",
+		"typescript/require-array-sort-compare": "warn",
+		"typescript/no-useless-default-assignment": "warn",
+		"react/no-did-update-set-state": "warn",
+		"jsx-a11y/control-has-associated-label": "warn",
+		"vitest/no-conditional-expect": "warn",
+		"vitest/expect-expect": "warn",
+		"vitest/require-mock-type-parameters": "off",
 
-    // Type-aware rules: these will only run when `pnpm oxlint:js:full` is used or `--type-aware` is set
-    "typescript/await-thenable": "error",
-    "typescript/no-array-constructor": "error",
-    "typescript/no-floating-promises": "error",
-    "typescript/no-for-in-array": "error",
-    "typescript/no-namespace": "error",
-    "typescript/dot-notation": "error",
-    "typescript/no-restricted-types": [
-      "error",
-      {
-        "types": {
-          "React.FunctionComponent": {
-            "message": "Add argument and return type instead."
-          },
-          "FunctionComponent": {
-            "message": "Add argument and return type instead."
-          }
-        }
-      }
-    ],
-    "typescript/no-shadow": "error",
-    "typescript/no-unnecessary-qualifier": "error",
-    "typescript/prefer-namespace-keyword": "error",
-    "typescript/prefer-readonly": "error",
-    "typescript/require-await": "error",
-    "typescript/restrict-plus-operands": "error",
-    "typescript/unified-signatures": "error",
+		// Type-aware rules: these will only run when `pnpm oxlint:js:full` is used or `--type-aware` is set
+		"typescript/await-thenable": "error",
+		"typescript/no-array-constructor": "error",
+		"typescript/no-floating-promises": "error",
+		"typescript/no-for-in-array": "error",
+		"typescript/no-namespace": "error",
+		"typescript/dot-notation": "error",
+		"typescript/no-restricted-types": [
+			"error",
+			{
+				"types": {
+					"React.FunctionComponent": {
+						"message": "Add argument and return type instead."
+					},
+					"FunctionComponent": {
+						"message": "Add argument and return type instead."
+					}
+				}
+			}
+		],
+		"typescript/no-shadow": "error",
+		"typescript/no-unnecessary-qualifier": "error",
+		"typescript/prefer-namespace-keyword": "error",
+		"typescript/prefer-readonly": "error",
+		"typescript/require-await": "error",
+		"typescript/restrict-plus-operands": "error",
+		"typescript/unified-signatures": "error",
 
-    "import/no-cycle": "error",
-    "no-useless-constructor": "error",
-    "import/no-empty-named-blocks": "error",
-    "unicorn/require-module-specifiers": "error",
-    "no-unused-vars": [
-      "error",
-      {
-        "ignoreRestSiblings": true,
-        "varsIgnorePattern": "^(_|.*(ActionCreators|Schema)$)",
-        "argsIgnorePattern": "^_",
-        "caughtErrorsIgnorePattern": "^_"
-      }
-    ],
-    "import/no-namespace": "error",
-    "import/default": "error",
-    "import/no-default-export": "error",
-    "import/export": "warn",
-    "import/no-self-import": "error",
-    "prefer-const": "error",
-    "prefer-arrow-callback": "error",
-    "object-shorthand": ["error", "properties"],
-    "no-restricted-properties": [
-      "error",
-      {
-        "property": "_ctx",
-        "message": "Use an existing query cache function or create a new one in @gonfalon/rest-api."
-      },
-      {
-        "property": "_def",
-        "message": "Use an existing query cache function or create a new one in @gonfalon/rest-api."
-      }
-    ],
-    "no-restricted-imports": [
-      "error",
-      {
-        "paths": [
-          {
-            "name": "react",
-            "importNames": ["default"],
-            "message": "React default is automatically imported by the bundler."
-          },
-          {
-            "name": "launchdarkly-js-sdk-common",
-            "importNames": [
-              "LDContext",
-              "LDSingleKindContext",
-              "LDMultiKindContext",
-              "LDContextCommon",
-              "LDEvaluationReason"
-            ],
-            "message": "Import context types from '@gonfalon/contexts/types' instead."
-          },
-          {
-            "name": "launchdarkly-js-client-sdk",
-            "importNames": [
-              "LDContext",
-              "LDSingleKindContext",
-              "LDMultiKindContext",
-              "LDContextCommon",
-              "LDEvaluationReason"
-            ],
-            "message": "Import context types from '@gonfalon/contexts/types' instead."
-          },
-          {
-            "name": "react-router-dom",
-            "message": "Import from 'react-router' for consistency"
-          },
-          {
-            "name": "react-redux",
-            "importNames": ["useDispatch", "useSelector"],
-            "message": "Import our strongly-typed version from the 'hooks' directory instead. See https://launchdarkly.atlassian.net/wiki/spaces/~630988316/blog/2022/06/24/2116649099/Improving+Redux+type+safety+with+a+global+typed+useDispatch+hook"
-          },
-          {
-            "name": "@gonfalon/router",
-            "importNames": ["appRoute", "unauthenticatedRoute"],
-            "message": "Create a function in @gonfalon/navigator instead."
-          },
-          {
-            "name": "react-router",
-            "importNames": ["generatePath", "matchPath"],
-            "message": "Create a function in @gonfalon/navigator instead."
-          },
-          {
-            "name": "@launchpad-ui/core",
-            "importNames": ["Progress", "Toggle"],
-            "message": "Import the equivalent from `@launchpad-ui/components` instead."
-          },
-          {
-            "name": "vitest",
-            "message": "Do not import from vitest for non-test files"
-          },
-          {
-            "name": "react-router",
-            "importNames": ["useParams"],
-            "message": "Use useParam from @gonfalon/router instead"
-          },
-          {
-            "name": "@gonfalon/react-query-client",
-            "importNames": ["ReactQueryClientProvider"],
-            "message": "The query client is configured in our entry points. Use getQueryClient() or the @tanstack/react-query hooks."
-          },
-          {
-            "name": "@gonfalon/billing",
-            "importNames": ["ModernSubscription"],
-            "message": "Use isModernSubscription instead."
-          },
-          {
-            "name": "@gonfalon/testing",
-            "importNames": ["render", "TestProviders"],
-            "message": "Import from \"testing\" instead of the \"@gonfalon/testing\" package"
-          },
-          {
-            "name": "reducers/usage",
-            "importNames": ["relayDetectionSelector"],
-            "message": "Use useRelayProxyDetection instead."
-          },
-          {
-            "name": "actions/usage",
-            "importNames": ["isRelaySetup"],
-            "message": "Use useRelayProxyDetection instead."
-          },
-          {
-            "name": "react-router",
-            "importNames": ["useRouteError"],
-            "message": "Use useTrackRouteError from @gonfalon/error-boundaries instead"
-          },
-          {
-            "name": "react-error-boundary",
-            "importNames": ["ErrorBoundary"],
-            "message": "Use ErrorBoundary from @gonfalon/error-boundaries instead."
-          },
-          {
-            "name": "immutable",
-            "message": "Use the immutable-shim instead."
-          },
-          {
-            "name": "@gonfalon/sdk-setup",
-            "importNames": ["OnboardingSnippet", "OnboardingCopyToClipboard"],
-            "message": "Use Snippet, OnboardingCopyToClipboard from @gonfalon/launchpad-experimental instead."
-          },
-          {
-            "name": "zod",
-            "message": "zod v3 is being migrated to v4: import from 'zod/v4' instead. To temporarily keep a v3 import, add the line: // oxlint-disable-next-line no-restricted-imports -- TODO(zod-4): migrate to 'zod/v4'"
-          },
-          {
-            "name": "zod/v3",
-            "message": "zod v3 is being migrated to v4: import from 'zod/v4' instead. To temporarily keep a v3 import, add the line: // oxlint-disable-next-line no-restricted-imports -- TODO(zod-4): migrate to 'zod/v4'"
-          }
-        ],
-        "patterns": [
-          {
-            "group": ["@gonfalon/*"],
-            "message": "Import from a package subpath, not its root (e.g. '@gonfalon/pkg/thing'). Root barrels have been removed."
-          },
-          {
-            "group": ["*/dist/*"],
-            "message": "bypassing a package's entrypoint declaration is forbidden."
-          },
-          {
-            "group": ["node_modules/**"],
-            "message": "Never import directly from node_modules"
-          }
-        ]
-      }
-    ],
-    "no-debugger": "error",
-    "array-callback-return": "error",
-    "curly": ["error", "all"],
-    "no-return-assign": "error",
-    "no-self-compare": "error",
-    "radix": "error",
-    "no-array-constructor": "error",
-    "no-new-wrappers": "error",
-    "gonfalon/no-for-in": "error",
-    "eqeqeq": "error",
-    "no-object-constructor": "error",
-    "no-sequences": "error",
-    "no-var": "error",
-    "new-cap": [
-      "error",
-      {
-        "capIsNewExceptions": [
-          "Collection",
-          "DropTarget",
-          "DragDropContext",
-          "DragSource",
-          "Map",
-          "List",
-          "OrderedMap",
-          "OrderedSet",
-          "Record",
-          "ImmutableRecord",
-          "Seq",
-          "Set",
-          "Ok",
-          "Err",
-          "JsonToTS"
-        ]
-      }
-    ],
-    "no-console": "error",
-    "no-useless-concat": "error",
-    "no-new-func": "error",
-    "no-bitwise": "error",
-    "no-throw-literal": "error",
-    "no-extra-bind": "error",
-    "no-empty": "error",
-    "no-fallthrough": "error",
-    "no-redeclare": "warn",
-    "no-duplicates": "warn",
-    "yoda": "error",
-    "prefer-object-spread": "error",
-    "prefer-spread": "error",
-    "prefer-rest-params": "error",
-    "default-case": [
-      "error",
-      {
-        "commentPattern": "^skip\\sdefault"
-      }
-    ],
-    "import/no-duplicates": "error",
-    "typescript/consistent-type-imports": "error",
-    "typescript/no-extraneous-class": "error",
-    "typescript/prefer-for-of": "error",
-    "typescript/prefer-function-type": "error",
-    "typescript/no-unsafe-function-type": "error",
-    "typescript/no-unused-expressions": [
-      "error",
-      {
-        "allowShortCircuit": true,
-        "allowTernary": true
-      }
-    ],
-    "typescript/no-var-requires": "error",
-    "typescript/no-inferrable-types": [
-      "error",
-      {
-        "ignoreParameters": true
-      }
-    ],
-    "typescript/no-require-imports": "error",
-    "typescript/ban-ts-comment": "error",
-    "typescript/no-explicit-any": "error",
-    "typescript/no-non-null-assertion": "error",
-    "typescript/array-type": [
-      "error",
-      {
-        "default": "array-simple"
-      }
-    ],
-    "react/jsx-no-undef": "error",
-    "react/no-direct-mutation-state": "error",
-    "react/jsx-boolean-value": "error",
-    "react/jsx-key": "error",
-    "react/no-unknown-property": "error",
-    "react/jsx-no-target-blank": "error",
-    "react/no-string-refs": "error",
-    "react/void-dom-elements-no-children": "error",
-    "react/no-danger": "error",
-    "react/jsx-curly-brace-presence": [
-      "error",
-      {
-        "props": "never",
-        "children": "never",
-        "propElementValues": "always"
-      }
-    ],
-    "react/rules-of-hooks": "error",
-    "no-restricted-globals": "error",
-    "prefer-template": "error",
-    "no-useless-computed-key": "error",
-    "no-template-curly-in-string": "error",
-    "no-param-reassign": [
-      "error",
-      {
-        "props": true
-      }
-    ],
-    "oxc/no-barrel-file": [
-      "error",
-      {
-        "threshold": 10
-      }
-    ],
+		"import/no-cycle": "error",
+		"no-useless-constructor": "error",
+		"import/no-empty-named-blocks": "error",
+		"unicorn/require-module-specifiers": "error",
+		"no-unused-vars": [
+			"error",
+			{
+				"ignoreRestSiblings": true,
+				"varsIgnorePattern": "^(_|.*(ActionCreators|Schema)$)",
+				"argsIgnorePattern": "^_",
+				"caughtErrorsIgnorePattern": "^_"
+			}
+		],
+		"import/no-namespace": "error",
+		"import/default": "error",
+		"import/no-default-export": "error",
+		"import/export": "warn",
+		"import/no-self-import": "error",
+		"prefer-const": "error",
+		"prefer-arrow-callback": "error",
+		"object-shorthand": ["error", "properties"],
+		"no-restricted-properties": [
+			"error",
+			{
+				"property": "_ctx",
+				"message": "Use an existing query cache function or create a new one in @gonfalon/rest-api."
+			},
+			{
+				"property": "_def",
+				"message": "Use an existing query cache function or create a new one in @gonfalon/rest-api."
+			}
+		],
+		"no-restricted-imports": [
+			"error",
+			{
+				"paths": [
+					{
+						"name": "react",
+						"importNames": ["default"],
+						"message": "React default is automatically imported by the bundler."
+					},
+					{
+						"name": "launchdarkly-js-sdk-common",
+						"importNames": [
+							"LDContext",
+							"LDSingleKindContext",
+							"LDMultiKindContext",
+							"LDContextCommon",
+							"LDEvaluationReason"
+						],
+						"message": "Import context types from '@gonfalon/contexts/types' instead."
+					},
+					{
+						"name": "launchdarkly-js-client-sdk",
+						"importNames": [
+							"LDContext",
+							"LDSingleKindContext",
+							"LDMultiKindContext",
+							"LDContextCommon",
+							"LDEvaluationReason"
+						],
+						"message": "Import context types from '@gonfalon/contexts/types' instead."
+					},
+					{
+						"name": "react-router-dom",
+						"message": "Import from 'react-router' for consistency"
+					},
+					{
+						"name": "react-redux",
+						"importNames": ["useDispatch", "useSelector"],
+						"message": "Import our strongly-typed version from the 'hooks' directory instead. See https://launchdarkly.atlassian.net/wiki/spaces/~630988316/blog/2022/06/24/2116649099/Improving+Redux+type+safety+with+a+global+typed+useDispatch+hook"
+					},
+					{
+						"name": "@gonfalon/router",
+						"importNames": ["appRoute", "unauthenticatedRoute"],
+						"message": "Create a function in @gonfalon/navigator instead."
+					},
+					{
+						"name": "react-router",
+						"importNames": ["generatePath", "matchPath"],
+						"message": "Create a function in @gonfalon/navigator instead."
+					},
+					{
+						"name": "@launchpad-ui/core",
+						"importNames": ["Progress", "Toggle"],
+						"message": "Import the equivalent from `@launchpad-ui/components` instead."
+					},
+					{
+						"name": "vitest",
+						"message": "Do not import from vitest for non-test files"
+					},
+					{
+						"name": "react-router",
+						"importNames": ["useParams"],
+						"message": "Use useParam from @gonfalon/router instead"
+					},
+					{
+						"name": "@gonfalon/react-query-client",
+						"importNames": ["ReactQueryClientProvider"],
+						"message": "The query client is configured in our entry points. Use getQueryClient() or the @tanstack/react-query hooks."
+					},
+					{
+						"name": "@gonfalon/billing",
+						"importNames": ["ModernSubscription"],
+						"message": "Use isModernSubscription instead."
+					},
+					{
+						"name": "@gonfalon/testing",
+						"importNames": ["render", "TestProviders"],
+						"message": "Import from \"testing\" instead of the \"@gonfalon/testing\" package"
+					},
+					{
+						"name": "reducers/usage",
+						"importNames": ["relayDetectionSelector"],
+						"message": "Use useRelayProxyDetection instead."
+					},
+					{
+						"name": "actions/usage",
+						"importNames": ["isRelaySetup"],
+						"message": "Use useRelayProxyDetection instead."
+					},
+					{
+						"name": "react-router",
+						"importNames": ["useRouteError"],
+						"message": "Use useTrackRouteError from @gonfalon/error-boundaries instead"
+					},
+					{
+						"name": "react-error-boundary",
+						"importNames": ["ErrorBoundary"],
+						"message": "Use ErrorBoundary from @gonfalon/error-boundaries instead."
+					},
+					{
+						"name": "immutable",
+						"message": "Use the immutable-shim instead."
+					},
+					{
+						"name": "@gonfalon/sdk-setup",
+						"importNames": ["OnboardingSnippet", "OnboardingCopyToClipboard"],
+						"message": "Use Snippet, OnboardingCopyToClipboard from @gonfalon/launchpad-experimental instead."
+					},
+					{
+						"name": "zod",
+						"message": "zod v3 is being migrated to v4: import from 'zod/v4' instead. To temporarily keep a v3 import, add the line: // oxlint-disable-next-line no-restricted-imports -- TODO(zod-4): migrate to 'zod/v4'"
+					},
+					{
+						"name": "zod/v3",
+						"message": "zod v3 is being migrated to v4: import from 'zod/v4' instead. To temporarily keep a v3 import, add the line: // oxlint-disable-next-line no-restricted-imports -- TODO(zod-4): migrate to 'zod/v4'"
+					}
+				],
+				"patterns": [
+					{
+						"group": ["@gonfalon/*"],
+						"message": "Import from a package subpath, not its root (e.g. '@gonfalon/pkg/thing'). Root barrels have been removed."
+					},
+					{
+						"group": ["*/dist/*"],
+						"message": "bypassing a package's entrypoint declaration is forbidden."
+					},
+					{
+						"group": ["node_modules/**"],
+						"message": "Never import directly from node_modules"
+					}
+				]
+			}
+		],
+		"no-debugger": "error",
+		"array-callback-return": "error",
+		"curly": ["error", "all"],
+		"no-return-assign": "error",
+		"no-self-compare": "error",
+		"radix": "error",
+		"no-array-constructor": "error",
+		"no-new-wrappers": "error",
+		"gonfalon/no-for-in": "error",
+		"eqeqeq": "error",
+		"no-object-constructor": "error",
+		"no-sequences": "error",
+		"no-var": "error",
+		"new-cap": [
+			"error",
+			{
+				"capIsNewExceptions": [
+					"Collection",
+					"DropTarget",
+					"DragDropContext",
+					"DragSource",
+					"Map",
+					"List",
+					"OrderedMap",
+					"OrderedSet",
+					"Record",
+					"ImmutableRecord",
+					"Seq",
+					"Set",
+					"Ok",
+					"Err",
+					"JsonToTS"
+				]
+			}
+		],
+		"no-console": "error",
+		"no-useless-concat": "error",
+		"no-new-func": "error",
+		"no-bitwise": "error",
+		"no-throw-literal": "error",
+		"no-extra-bind": "error",
+		"no-empty": "error",
+		"no-fallthrough": "error",
+		"no-redeclare": "warn",
+		"no-duplicates": "warn",
+		"yoda": "error",
+		"prefer-object-spread": "error",
+		"prefer-spread": "error",
+		"prefer-rest-params": "error",
+		"default-case": [
+			"error",
+			{
+				"commentPattern": "^skip\\sdefault"
+			}
+		],
+		"import/no-duplicates": "error",
+		"typescript/consistent-type-imports": "error",
+		"typescript/no-extraneous-class": "error",
+		"typescript/prefer-for-of": "error",
+		"typescript/prefer-function-type": "error",
+		"typescript/no-unsafe-function-type": "error",
+		"typescript/no-unused-expressions": [
+			"error",
+			{
+				"allowShortCircuit": true,
+				"allowTernary": true
+			}
+		],
+		"typescript/no-var-requires": "error",
+		"typescript/no-inferrable-types": [
+			"error",
+			{
+				"ignoreParameters": true
+			}
+		],
+		"typescript/no-require-imports": "error",
+		"typescript/ban-ts-comment": "error",
+		"typescript/no-explicit-any": "error",
+		"typescript/no-non-null-assertion": "error",
+		"typescript/array-type": [
+			"error",
+			{
+				"default": "array-simple"
+			}
+		],
+		"react/jsx-no-undef": "error",
+		"react/no-direct-mutation-state": "error",
+		"react/jsx-boolean-value": "error",
+		"react/jsx-key": "error",
+		"react/no-unknown-property": "error",
+		"react/jsx-no-target-blank": "error",
+		"react/no-string-refs": "error",
+		"react/void-dom-elements-no-children": "error",
+		"react/no-danger": "error",
+		"react/jsx-curly-brace-presence": [
+			"error",
+			{
+				"props": "never",
+				"children": "never",
+				"propElementValues": "always"
+			}
+		],
+		"react/rules-of-hooks": "error",
+		"no-restricted-globals": "error",
+		"prefer-template": "error",
+		"no-useless-computed-key": "error",
+		"no-template-curly-in-string": "error",
+		"no-param-reassign": [
+			"error",
+			{
+				"props": true
+			}
+		],
+		"oxc/no-barrel-file": [
+			"error",
+			{
+				"threshold": 10
+			}
+		],
 
-    // From gonfalon's root .oxlintrc.json (which extends the base file above and layers
-    // these on top). Kept as top-level rule overrides here since launchpad-ui inlines
-    // what would otherwise be an `extends` chain. See REPORT.md for why this is flattened.
-    "jsx-a11y/aria-props": "warn",
-    "jsx-a11y/role-has-required-aria-props": "warn",
-    "jsx-a11y/label-has-associated-control": "warn"
-  },
-  "overrides": [
-    {
-      "files": ["**/vitest*.config.{js,mjs,cjs,ts,mts,cts}"],
-      "rules": {
-        "import/no-default-export": "off"
-      }
-    },
-    {
-      // Storybook/Code-Connect-only files: not part of any published bundle. Deviation from
-      // gonfalon-verbatim (see REPORT.md) -- launchpad-ui's Storybook CSF format requires a
-      // default-exported `meta` object, `render:`/decorator arrow functions trip the
-      // hooks-in-anonymous-function false positive, and `console.log` is used for illustrative
-      // demo handlers. Mirrors the existing biome.json override for `**/*.stories.tsx`,
-      // `**/*.config.*`, `**/.storybook/**`.
-      "files": ["**/*.stories.*", "**/stories/**", "**/*.config.*", "**/.storybook/**", "**/*.figma.tsx"],
-      "rules": {
-        "import/no-default-export": "off",
-        "react-hooks/rules-of-hooks": "off",
-        "no-console": "off",
-        "no-param-reassign": "off",
-        "typescript/no-explicit-any": "off"
-      }
-    },
-    {
-      // Standalone build/codegen scripts (Figma sync, Style Dictionary sync) -- not part of any
-      // published bundle; console output is the intended UI of these CLI scripts. Deviation from
-      // gonfalon-verbatim, documented in REPORT.md.
-      "files": ["packages/icons/scripts/**", "packages/tokens/src/sync.ts", "packages/tokens/src/variables.ts"],
-      "rules": {
-        "no-console": "off"
-      }
-    },
-    {
-      "files": ["**/*-test.*", "**/*.scenarios.*", "**/__tests__/**", "test/**"],
-      "rules": {
-        "no-restricted-globals": "off",
-        "no-console": "off",
-        "typescript/no-explicit-any": "off",
+		// From gonfalon's root .oxlintrc.json (which extends the base file above and layers
+		// these on top). Kept as top-level rule overrides here since launchpad-ui inlines
+		// what would otherwise be an `extends` chain. See REPORT.md for why this is flattened.
+		"jsx-a11y/aria-props": "warn",
+		"jsx-a11y/role-has-required-aria-props": "warn",
+		"jsx-a11y/label-has-associated-control": "warn"
+	},
+	"overrides": [
+		{
+			"files": ["**/vitest*.config.{js,mjs,cjs,ts,mts,cts}"],
+			"rules": {
+				"import/no-default-export": "off"
+			}
+		},
+		{
+			// Storybook/Code-Connect-only files: not part of any published bundle. Deviation from
+			// gonfalon-verbatim (see REPORT.md) -- launchpad-ui's Storybook CSF format requires a
+			// default-exported `meta` object, `render:`/decorator arrow functions trip the
+			// hooks-in-anonymous-function false positive, and `console.log` is used for illustrative
+			// demo handlers. Mirrors the existing biome.json override for `**/*.stories.tsx`,
+			// `**/*.config.*`, `**/.storybook/**`.
+			"files": ["**/*.stories.*", "**/stories/**", "**/*.config.*", "**/.storybook/**", "**/*.figma.tsx"],
+			"rules": {
+				"import/no-default-export": "off",
+				"react-hooks/rules-of-hooks": "off",
+				"no-console": "off",
+				"no-param-reassign": "off",
+				"typescript/no-explicit-any": "off"
+			}
+		},
+		{
+			// Standalone build/codegen scripts (Figma sync, Style Dictionary sync) -- not part of any
+			// published bundle; console output is the intended UI of these CLI scripts. Deviation from
+			// gonfalon-verbatim, documented in REPORT.md.
+			"files": ["packages/icons/scripts/**", "packages/tokens/src/sync.ts", "packages/tokens/src/variables.ts"],
+			"rules": {
+				"no-console": "off"
+			}
+		},
+		{
+			"files": ["**/*-test.*", "**/*.scenarios.*", "**/__tests__/**", "test/**"],
+			"rules": {
+				"no-restricted-globals": "off",
+				"no-console": "off",
+				"typescript/no-explicit-any": "off",
 
-        "vitest/no-disabled-tests": "warn",
+				"vitest/no-disabled-tests": "warn",
 
-        "vitest/no-focused-tests": "error",
-        "vitest/consistent-test-it": "error",
-        "vitest/no-identical-title": "error",
-        "no-restricted-imports": [
-          "error",
-          {
-            "paths": [
-              {
-                "name": "launchdarkly-js-sdk-common",
-                "importNames": [
-                  "LDContext",
-                  "LDSingleKindContext",
-                  "LDMultiKindContext",
-                  "LDContextCommon",
-                  "LDEvaluationReason"
-                ],
-                "message": "Import context types from '@gonfalon/contexts/types' instead."
-              },
-              {
-                "name": "launchdarkly-js-client-sdk",
-                "importNames": [
-                  "LDContext",
-                  "LDSingleKindContext",
-                  "LDMultiKindContext",
-                  "LDContextCommon",
-                  "LDEvaluationReason"
-                ],
-                "message": "Import context types from '@gonfalon/contexts/types' instead."
-              },
-              {
-                "name": "zod",
-                "message": "zod v3 is being migrated to v4: import from 'zod/v4' instead. To temporarily keep a v3 import, add the line: // oxlint-disable-next-line no-restricted-imports -- TODO(zod-4): migrate to 'zod/v4'"
-              },
-              {
-                "name": "zod/v3",
-                "message": "zod v3 is being migrated to v4: import from 'zod/v4' instead. To temporarily keep a v3 import, add the line: // oxlint-disable-next-line no-restricted-imports -- TODO(zod-4): migrate to 'zod/v4'"
-              }
-            ],
-            "patterns": [
-              {
-                "group": ["@gonfalon/*"],
-                "message": "Import from a package subpath, not its root (e.g. '@gonfalon/pkg/thing'). Root barrels have been removed."
-              }
-            ]
-          }
-        ]
-      }
-    },
-    {
-      "files": ["**/*.stories.*"],
-      "rules": {
-        "no-restricted-imports": [
-          "error",
-          {
-            "paths": [
-              {
-                "name": "launchdarkly-js-sdk-common",
-                "importNames": [
-                  "LDContext",
-                  "LDSingleKindContext",
-                  "LDMultiKindContext",
-                  "LDContextCommon",
-                  "LDEvaluationReason"
-                ],
-                "message": "Import context types from '@gonfalon/contexts/types' instead."
-              },
-              {
-                "name": "launchdarkly-js-client-sdk",
-                "importNames": [
-                  "LDContext",
-                  "LDSingleKindContext",
-                  "LDMultiKindContext",
-                  "LDContextCommon",
-                  "LDEvaluationReason"
-                ],
-                "message": "Import context types from '@gonfalon/contexts/types' instead."
-              },
-              {
-                "name": "zod",
-                "message": "zod v3 is being migrated to v4: import from 'zod/v4' instead. To temporarily keep a v3 import, add the line: // oxlint-disable-next-line no-restricted-imports -- TODO(zod-4): migrate to 'zod/v4'"
-              },
-              {
-                "name": "zod/v3",
-                "message": "zod v3 is being migrated to v4: import from 'zod/v4' instead. To temporarily keep a v3 import, add the line: // oxlint-disable-next-line no-restricted-imports -- TODO(zod-4): migrate to 'zod/v4'"
-              }
-            ],
-            "patterns": [
-              {
-                "group": ["@gonfalon/*"],
-                "message": "Import from a package subpath, not its root (e.g. '@gonfalon/pkg/thing'). Root barrels have been removed."
-              }
-            ]
-          }
-        ]
-      }
-    },
-    {
-      "files": ["**/__mocks__/**", "**/mocks/**"],
-      "rules": {
-        "no-restricted-globals": "off"
-      }
-    }
-  ]
+				"vitest/no-focused-tests": "error",
+				"vitest/consistent-test-it": "error",
+				"vitest/no-identical-title": "error",
+				"no-restricted-imports": [
+					"error",
+					{
+						"paths": [
+							{
+								"name": "launchdarkly-js-sdk-common",
+								"importNames": [
+									"LDContext",
+									"LDSingleKindContext",
+									"LDMultiKindContext",
+									"LDContextCommon",
+									"LDEvaluationReason"
+								],
+								"message": "Import context types from '@gonfalon/contexts/types' instead."
+							},
+							{
+								"name": "launchdarkly-js-client-sdk",
+								"importNames": [
+									"LDContext",
+									"LDSingleKindContext",
+									"LDMultiKindContext",
+									"LDContextCommon",
+									"LDEvaluationReason"
+								],
+								"message": "Import context types from '@gonfalon/contexts/types' instead."
+							},
+							{
+								"name": "zod",
+								"message": "zod v3 is being migrated to v4: import from 'zod/v4' instead. To temporarily keep a v3 import, add the line: // oxlint-disable-next-line no-restricted-imports -- TODO(zod-4): migrate to 'zod/v4'"
+							},
+							{
+								"name": "zod/v3",
+								"message": "zod v3 is being migrated to v4: import from 'zod/v4' instead. To temporarily keep a v3 import, add the line: // oxlint-disable-next-line no-restricted-imports -- TODO(zod-4): migrate to 'zod/v4'"
+							}
+						],
+						"patterns": [
+							{
+								"group": ["@gonfalon/*"],
+								"message": "Import from a package subpath, not its root (e.g. '@gonfalon/pkg/thing'). Root barrels have been removed."
+							}
+						]
+					}
+				]
+			}
+		},
+		{
+			"files": ["**/*.stories.*"],
+			"rules": {
+				"no-restricted-imports": [
+					"error",
+					{
+						"paths": [
+							{
+								"name": "launchdarkly-js-sdk-common",
+								"importNames": [
+									"LDContext",
+									"LDSingleKindContext",
+									"LDMultiKindContext",
+									"LDContextCommon",
+									"LDEvaluationReason"
+								],
+								"message": "Import context types from '@gonfalon/contexts/types' instead."
+							},
+							{
+								"name": "launchdarkly-js-client-sdk",
+								"importNames": [
+									"LDContext",
+									"LDSingleKindContext",
+									"LDMultiKindContext",
+									"LDContextCommon",
+									"LDEvaluationReason"
+								],
+								"message": "Import context types from '@gonfalon/contexts/types' instead."
+							},
+							{
+								"name": "zod",
+								"message": "zod v3 is being migrated to v4: import from 'zod/v4' instead. To temporarily keep a v3 import, add the line: // oxlint-disable-next-line no-restricted-imports -- TODO(zod-4): migrate to 'zod/v4'"
+							},
+							{
+								"name": "zod/v3",
+								"message": "zod v3 is being migrated to v4: import from 'zod/v4' instead. To temporarily keep a v3 import, add the line: // oxlint-disable-next-line no-restricted-imports -- TODO(zod-4): migrate to 'zod/v4'"
+							}
+						],
+						"patterns": [
+							{
+								"group": ["@gonfalon/*"],
+								"message": "Import from a package subpath, not its root (e.g. '@gonfalon/pkg/thing'). Root barrels have been removed."
+							}
+						]
+					}
+				]
+			}
+		},
+		{
+			"files": ["**/__mocks__/**", "**/mocks/**"],
+			"rules": {
+				"no-restricted-globals": "off"
+			}
+		}
+	]
 }

@@ -1,9 +1,4 @@
-import type {
-	GetLocalVariablesResponse,
-	PostVariablesRequestBody,
-	PostVariablesResponse,
-} from '@figma/rest-api-spec';
-
+import type { GetLocalVariablesResponse, PostVariablesRequestBody, PostVariablesResponse } from '@figma/rest-api-spec';
 import axios from 'axios';
 
 class FigmaApi {

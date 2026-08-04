@@ -1,5 +1,3 @@
-import type { OffsetOptions } from '@floating-ui/core';
-import type { ComputePositionConfig, Placement, Strategy } from '@floating-ui/dom';
 import type {
 	CSSProperties,
 	FocusEvent,
@@ -12,12 +10,6 @@ import type {
 	Ref,
 	RefObject,
 } from 'react';
-
-import { arrow, computePosition, flip, offset as floatOffset, shift } from '@floating-ui/dom';
-import { FocusTrap } from '@launchpad-ui/focus-trap';
-import { Overlay } from '@launchpad-ui/overlay';
-import { cx } from 'classix';
-import { LazyMotion, m } from 'framer-motion';
 import {
 	Children,
 	cloneElement,
@@ -29,6 +21,14 @@ import {
 	useRef,
 	useState,
 } from 'react';
+import type { OffsetOptions } from '@floating-ui/core';
+import type { ComputePositionConfig, Placement, Strategy } from '@floating-ui/dom';
+import { arrow, computePosition, flip, offset as floatOffset, shift } from '@floating-ui/dom';
+import { cx } from 'classix';
+import { LazyMotion, m } from 'framer-motion';
+
+import { FocusTrap } from '@launchpad-ui/focus-trap';
+import { Overlay } from '@launchpad-ui/overlay';
 
 import styles from './styles/Popover.module.css';
 
@@ -227,15 +227,7 @@ const Popover = ({
 				});
 			}
 		}
-	}, [
-		allowBoundaryElementOverflow,
-		disablePlacementFlip,
-		enableArrow,
-		isFixed,
-		offset,
-		placement,
-		popoverElement,
-	]);
+	}, [allowBoundaryElementOverflow, disablePlacementFlip, enableArrow, isFixed, offset, placement, popoverElement]);
 
 	useEffect(() => {
 		return () => {
@@ -418,8 +410,7 @@ const Popover = ({
 	};
 
 	const { target, content } = parseChildren();
-	const hasEmptyContent =
-		content === null || content === undefined || (typeof content === 'string' && !content);
+	const hasEmptyContent = content === null || content === undefined || (typeof content === 'string' && !content);
 	const isTargetDisabled = isValidElement(target)
 		? // biome-ignore lint/suspicious/noExplicitAny: ignore
 			// oxlint-disable-next-line typescript/no-explicit-any -- matches existing biome-ignore precedent
@@ -428,20 +419,12 @@ const Popover = ({
 
 	const targetProps: PopoverTargetProps = {
 		ref: targetRef as RefObject<HTMLElement>,
-		className: cx(
-			styles['Popover-target'],
-			targetClassName,
-			isTargetDisabled && styles['Popover-target--disabled'],
-		),
+		className: cx(styles['Popover-target'], targetClassName, isTargetDisabled && styles['Popover-target--disabled']),
 		style: rootElementStyle,
 		'data-test-id': targetTestId || 'popover-target',
 	};
 
-	if (
-		interactionKind === 'hover' ||
-		interactionKind === 'hover-target-only' ||
-		interactionKind === 'hover-or-focus'
-	) {
+	if (interactionKind === 'hover' || interactionKind === 'hover-target-only' || interactionKind === 'hover-or-focus') {
 		targetProps.onMouseEnter = handleMouseEnter;
 		targetProps.onMouseLeave = handleMouseLeave;
 		targetProps.onPointerEnter = handleMouseEnter;

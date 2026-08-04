@@ -22,8 +22,7 @@ const meta: Meta<typeof EmptyState> = {
 	],
 	parameters: {
 		figma: {
-			design:
-				'https://www.figma.com/design/98HKKXL2dTle29ikJ3tzk7/%F0%9F%9A%80-LaunchPad?node-id=10559-2269&m=dev',
+			design: 'https://www.figma.com/design/98HKKXL2dTle29ikJ3tzk7/%F0%9F%9A%80-LaunchPad?node-id=10559-2269&m=dev',
 		},
 		docs: {
 			description: {

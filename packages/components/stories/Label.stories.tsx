@@ -7,8 +7,7 @@ const meta: Meta<typeof Label> = {
 	component: Label,
 	parameters: {
 		figma: {
-			design:
-				'https://www.figma.com/design/98HKKXL2dTle29ikJ3tzk7/%F0%9F%9A%80-LaunchPad?node-id=1-26765&m=dev',
+			design: 'https://www.figma.com/design/98HKKXL2dTle29ikJ3tzk7/%F0%9F%9A%80-LaunchPad?node-id=1-26765&m=dev',
 		},
 		docs: {
 			description: {
@@ -75,12 +74,11 @@ export const Truncation: Story = {
 	render: () => (
 		<div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', width: '200px' }}>
 			<Label maxLines={1}>
-				This is a very long label that should be truncated after one line when the maxLines prop is
-				set to 1.
+				This is a very long label that should be truncated after one line when the maxLines prop is set to 1.
 			</Label>
 			<Label maxLines={2}>
-				This is a longer label that should be truncated after two lines when the maxLines prop is
-				set to 2. It continues for several lines to demonstrate the truncation behavior.
+				This is a longer label that should be truncated after two lines when the maxLines prop is set to 2. It continues
+				for several lines to demonstrate the truncation behavior.
 			</Label>
 		</div>
 	),

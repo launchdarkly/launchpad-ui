@@ -1,12 +1,13 @@
-import type { ChipProps } from '@launchpad-ui/chip';
 import type { MouseEvent } from 'react';
-
-import { Chip } from '@launchpad-ui/chip';
-import { cx } from 'classix';
 import { NavLink, useLocation } from 'react-router';
+import { cx } from 'classix';
+
+import type { ChipProps } from '@launchpad-ui/chip';
+import { Chip } from '@launchpad-ui/chip';
+
+import { titlecase } from './utils';
 
 import styles from './styles/Navigation.module.css';
-import { titlecase } from './utils';
 
 type NavItemProps = {
 	to: string | { pathname: string; search: string };
@@ -50,12 +51,7 @@ const NavItem = ({
 				<div style={{ display: 'flex', alignItems: 'flex-end' }}>
 					<span className={styles['NavItem-name']}>
 						{name}
-						<Chip
-							className={styles['NavItem-chip']}
-							size="tiny"
-							data-test-id="nav-item-chip"
-							kind={status}
-						>
+						<Chip className={styles['NavItem-chip']} size="tiny" data-test-id="nav-item-chip" kind={status}>
 							{titlecase(status)}
 						</Chip>
 					</span>

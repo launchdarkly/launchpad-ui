@@ -1,9 +1,8 @@
-import type { NavigationItemProps } from '../src';
-
 import { MemoryRouter } from 'react-router';
 import { describe, expect, it, vi } from 'vitest';
 
 import { render, screen, userEvent, waitFor } from '../../../test/utils';
+import type { NavigationItemProps } from '../src';
 import { Navigation, NavigationItem } from '../src';
 // biome-ignore lint/performance/noNamespaceImport: ignore
 // oxlint-disable-next-line import/no-namespace -- mocking the module's named exports requires importing the whole namespace object

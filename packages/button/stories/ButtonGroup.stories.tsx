@@ -1,6 +1,5 @@
-import type { Decorator, StoryObj } from '@storybook/react-vite';
-
 import { Fragment } from 'react';
+import type { Decorator, StoryObj } from '@storybook/react-vite';
 
 import { Button } from '../src';
 import { ButtonGroup } from '../src/ButtonGroup';

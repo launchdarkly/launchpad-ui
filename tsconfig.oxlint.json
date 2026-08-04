@@ -1,8 +1,8 @@
 {
-  "$schema": "https://json.schemastore.org/tsconfig",
-  "compilerOptions": {
-    "noEmit": true
-  },
-  "extends": ["./tsconfig.json"],
-  "include": ["./apps/**/*", "./packages/**/*", "./test/**/*", "./types/**/*", ".storybook/**/*", "*.ts"]
+	"$schema": "https://json.schemastore.org/tsconfig",
+	"compilerOptions": {
+		"noEmit": true
+	},
+	"extends": ["./tsconfig.json"],
+	"include": ["./apps/**/*", "./packages/**/*", "./test/**/*", "./types/**/*", ".storybook/**/*", "*.ts"]
 }

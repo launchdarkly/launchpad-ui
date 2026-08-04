@@ -1,9 +1,9 @@
-import type { VariantProps } from 'class-variance-authority';
 import type { Ref, SVGAttributes } from 'react';
-import type { IconName } from './types';
-
-import { cva } from 'class-variance-authority';
 import { createContext, useContext } from 'react';
+import type { VariantProps } from 'class-variance-authority';
+import { cva } from 'class-variance-authority';
+
+import type { IconName } from './types';
 
 import styles from './styles/Icon.module.css';
 
