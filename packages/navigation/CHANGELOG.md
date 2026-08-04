@@ -1,5 +1,25 @@
 # @launchpad-ui/navigation
 
+## 0.17.0
+
+### Minor Changes
+
+- [#1965](https://github.com/launchdarkly/launchpad-ui/pull/1965) [`a0bb548`](https://github.com/launchdarkly/launchpad-ui/commit/a0bb548a5f693c52a958b7981af537ac36df244a) Thanks [@apucacao](https://github.com/apucacao)! - Widen peer dependency ranges so these packages work with either React Router 7 or 8: the `react-router` peer range changes from an exact `7.15.1` to `^7.15.1 || ^8.2.0`. Consuming apps can now upgrade to React Router 8 without waiting on a major bump here, and apps still on React Router 7 continue to resolve correctly.
+
+  All other exact peer pins on these two packages (`react`, `react-dom`, and, where present, `@react-aria/*`, `react-aria`, `react-aria-components`, `react-stately`, `@react-stately/*`, `@react-types/*`, `react-hook-form`) also relax from exact versions to caret ranges, for the same reason as the sibling patch across the rest of the workspace.
+
+### Patch Changes
+
+- [#1967](https://github.com/launchdarkly/launchpad-ui/pull/1967) [`c90b767`](https://github.com/launchdarkly/launchpad-ui/commit/c90b76725d99eef1ef42a7df738442073d77234f) Thanks [@apucacao](https://github.com/apucacao)! - Replace the `rolldown-vite` override with stock `vite`, and swap the build-time `@vitejs/plugin-react-oxc` plugin for `@vitejs/plugin-react-swc` (already used by tests). No public API changed. Build output was verified equivalent: for every published package, the emitted `.d.ts`/`.json`/`.svg` files are byte-identical, CSS output is byte-identical apart from one dropped `rolldown-vite`-specific comment marker, and JS output is semantically identical (confirmed by diffing `esbuild --minify`-normalized bundles, which strips only bundler-specific formatting).
+
+- Updated dependencies [[`124c71f`](https://github.com/launchdarkly/launchpad-ui/commit/124c71faa5d5b9cca91b007d8ef0b67b7c4b93a9), [`a4d383f`](https://github.com/launchdarkly/launchpad-ui/commit/a4d383f697466b2901f1fabca93eb311fdbc73ff), [`a0bb548`](https://github.com/launchdarkly/launchpad-ui/commit/a0bb548a5f693c52a958b7981af537ac36df244a), [`c90b767`](https://github.com/launchdarkly/launchpad-ui/commit/c90b76725d99eef1ef42a7df738442073d77234f), [`124c71f`](https://github.com/launchdarkly/launchpad-ui/commit/124c71faa5d5b9cca91b007d8ef0b67b7c4b93a9)]:
+  - @launchpad-ui/menu@0.16.18
+  - @launchpad-ui/dropdown@0.10.18
+  - @launchpad-ui/popover@0.14.6
+  - @launchpad-ui/tokens@0.17.1
+  - @launchpad-ui/icons@0.26.3
+  - @launchpad-ui/tooltip@0.12.6
+
 ## 0.16.19
 
 ### Patch Changes

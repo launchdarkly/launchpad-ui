@@ -1,5 +1,14 @@
 # @launchpad-ui/vars
 
+## 0.5.5
+
+### Patch Changes
+
+- [#1967](https://github.com/launchdarkly/launchpad-ui/pull/1967) [`c90b767`](https://github.com/launchdarkly/launchpad-ui/commit/c90b76725d99eef1ef42a7df738442073d77234f) Thanks [@apucacao](https://github.com/apucacao)! - Replace the `rolldown-vite` override with stock `vite`, and swap the build-time `@vitejs/plugin-react-oxc` plugin for `@vitejs/plugin-react-swc` (already used by tests). No public API changed. Build output was verified equivalent: for every published package, the emitted `.d.ts`/`.json`/`.svg` files are byte-identical, CSS output is byte-identical apart from one dropped `rolldown-vite`-specific comment marker, and JS output is semantically identical (confirmed by diffing `esbuild --minify`-normalized bundles, which strips only bundler-specific formatting).
+
+- Updated dependencies [[`a4d383f`](https://github.com/launchdarkly/launchpad-ui/commit/a4d383f697466b2901f1fabca93eb311fdbc73ff), [`c90b767`](https://github.com/launchdarkly/launchpad-ui/commit/c90b76725d99eef1ef42a7df738442073d77234f)]:
+  - @launchpad-ui/tokens@0.17.1
+
 ## 0.5.4
 
 ### Patch Changes

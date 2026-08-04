@@ -1,5 +1,26 @@
 # @launchpad-ui/button
 
+## 0.15.18
+
+### Patch Changes
+
+- [#1973](https://github.com/launchdarkly/launchpad-ui/pull/1973) [`124c71f`](https://github.com/launchdarkly/launchpad-ui/commit/124c71faa5d5b9cca91b007d8ef0b67b7c4b93a9) Thanks [@apucacao](https://github.com/apucacao)! - Cosmetic CSS cleanups from adding stylelint (blank-line spacing before declarations/comments, shorthand hex color notation, a redundant duplicate selector removed, and `0` used instead of the deprecated `--lp-spacing-100`/`--lp-size-0` tokens, which both resolve to `0`). No computed styles changed.
+
+- [#1976](https://github.com/launchdarkly/launchpad-ui/pull/1976) [`a4d383f`](https://github.com/launchdarkly/launchpad-ui/commit/a4d383f697466b2901f1fabca93eb311fdbc73ff) Thanks [@apucacao](https://github.com/apucacao)! - Internal refactor: no more parameter reassignment in context/prop merging; no behavior change.
+
+- [#1965](https://github.com/launchdarkly/launchpad-ui/pull/1965) [`a0bb548`](https://github.com/launchdarkly/launchpad-ui/commit/a0bb548a5f693c52a958b7981af537ac36df244a) Thanks [@apucacao](https://github.com/apucacao)! - Relax exact-pinned peer dependencies to caret ranges so consumers aren't forced onto a single exact React (or, where applicable, React Aria) version.
+
+  - `react` and `react-dom` peer ranges change from an exact `19.2.6` to `^19`, matching how these packages already declare their other peers.
+  - Where present, `react-aria`, `@react-aria/utils` peer pins also move from an exact version to a caret range on the same version — no functional change, just a wider accepted range for downstream apps managing their own React Aria versions.
+
+  No runtime behavior changes; devDependencies used for local development and testing remain pinned exactly.
+
+- [#1967](https://github.com/launchdarkly/launchpad-ui/pull/1967) [`c90b767`](https://github.com/launchdarkly/launchpad-ui/commit/c90b76725d99eef1ef42a7df738442073d77234f) Thanks [@apucacao](https://github.com/apucacao)! - Replace the `rolldown-vite` override with stock `vite`, and swap the build-time `@vitejs/plugin-react-oxc` plugin for `@vitejs/plugin-react-swc` (already used by tests). No public API changed. Build output was verified equivalent: for every published package, the emitted `.d.ts`/`.json`/`.svg` files are byte-identical, CSS output is byte-identical apart from one dropped `rolldown-vite`-specific comment marker, and JS output is semantically identical (confirmed by diffing `esbuild --minify`-normalized bundles, which strips only bundler-specific formatting).
+
+- Updated dependencies [[`a4d383f`](https://github.com/launchdarkly/launchpad-ui/commit/a4d383f697466b2901f1fabca93eb311fdbc73ff), [`a0bb548`](https://github.com/launchdarkly/launchpad-ui/commit/a0bb548a5f693c52a958b7981af537ac36df244a), [`c90b767`](https://github.com/launchdarkly/launchpad-ui/commit/c90b76725d99eef1ef42a7df738442073d77234f)]:
+  - @launchpad-ui/tokens@0.17.1
+  - @launchpad-ui/icons@0.26.3
+
 ## 0.15.17
 
 ### Patch Changes
