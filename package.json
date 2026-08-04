@@ -99,7 +99,7 @@
 	"pnpm": {
 		"overrides": {
 			"axios": "^1.17.0",
-			"fast-uri": "^3.1.2",
+			"fast-uri": "^4.1.2",
 			"immutable": "^5.1.5",
 			"lodash": "^4.17.24",
 			"rollup": "^4.59.0"
