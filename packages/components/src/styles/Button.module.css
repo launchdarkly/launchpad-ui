@@ -54,6 +54,7 @@
 .default {
 	composes: button;
 	--lp-button-padding: 0px;
+
 	background-color: var(--lp-color-bg-interactive-secondary-base);
 	border: 1px solid var(--lp-color-border-interactive-secondary-base);
 	color: var(--lp-color-text-ui-primary-base);
@@ -79,6 +80,7 @@
 		var(--lp-color-shadow-interactive-primary) 40%,
 		var(--lp-color-bg-interactive-primary-base)
 	);
+
 	background-color: var(--lp-color-bg-interactive-primary-base);
 	color: var(--lp-color-text-interactive-primary-base);
 	z-index: 1;
@@ -112,6 +114,7 @@
 		var(--lp-color-shadow-interactive-primary) 40%,
 		var(--lp-color-bg-interactive-destructive-base)
 	);
+
 	background-color: var(--lp-color-bg-interactive-destructive-base);
 	color: var(--lp-color-text-interactive-primary-base);
 
@@ -136,6 +139,7 @@
 .minimal {
 	composes: button;
 	--lp-button-padding: 1px;
+
 	background-color: var(--lp-color-bg-interactive-tertiary-base);
 	color: var(--lp-color-text-ui-primary-base);
 }
@@ -176,6 +180,7 @@
 
 .picker {
 	composes: base from './Input.module.css';
+
 	/* biome-ignore lint/suspicious/noDuplicateProperties: safe */
 	composes: _default from './Input.module.css';
 	composes: group from './Group.module.css';

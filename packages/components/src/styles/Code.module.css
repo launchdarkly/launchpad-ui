@@ -5,7 +5,7 @@
 	color: var(--lp-color-text-code-string);
 	width: fit-content;
 	background-color: var(--lp-color-bg-ui-tertiary);
-	padding: var(--lp-spacing-100) var(--lp-spacing-200);
+	padding: 0 var(--lp-spacing-200);
 	display: inline-flex;
 	border: none;
 	outline: none;

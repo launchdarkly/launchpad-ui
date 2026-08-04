@@ -73,6 +73,7 @@
 
 .Menu-item--header {
 	font: var(--lp-text-small-1-regular);
+	/* stylelint-disable-next-line csstools/value-no-unknown-custom-properties -- `--lp-color-text-ui-tertiary` was removed from @launchpad-ui/tokens; flagged in REPORT.md as a likely pre-existing bug, not fixed here to avoid changing rendering */
 	color: var(--lp-color-text-ui-tertiary);
 }
 

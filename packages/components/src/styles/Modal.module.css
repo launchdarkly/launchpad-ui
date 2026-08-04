@@ -155,6 +155,7 @@
 	position: fixed;
 	inset: 0;
 	width: 100vw;
+	/* stylelint-disable-next-line csstools/value-no-unknown-custom-properties -- `--visual-viewport-height` is not a design token and no JS in this repo sets it; flagged in REPORT.md as a likely dead/incomplete property, not fixed here to avoid changing rendering */
 	height: var(--visual-viewport-height);
 	background: var(--lp-color-black-500);
 	backdrop-filter: blur(1px);

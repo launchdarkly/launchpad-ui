@@ -10,6 +10,7 @@
 	}
 }
 
+/* stylelint-disable-next-line block-no-empty -- exported as a stable cva() base class token; consumed via `styles.base` in Tooltip.tsx */
 .base {
 }
 
