@@ -12,7 +12,7 @@ allowBuilds:
   rolldown: true
   style-dictionary: true
 
-autoInstallPeers: true
+autoInstallPeers: false
 minimumReleaseAge: 10080 # 7 days
 
 overrides:
