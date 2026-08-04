@@ -49,13 +49,12 @@ const TabsContext = createContext<ContextValue<TabsProps, HTMLDivElement>>(null)
  * https://react-spectrum.adobe.com/react-aria/Tabs.html
  */
 const Tabs = ({ ref, ...props }: TabsProps) => {
-	// oxlint-disable-next-line no-param-reassign -- sanctioned useLPContextProps merge pattern (see AGENTS.md context+prop-merging convention)
-	[props, ref] = useLPContextProps(props, ref, TabsContext);
+	const [mergedProps, mergedRef] = useLPContextProps(props, ref, TabsContext);
 	return (
 		<AriaTabs
-			{...props}
-			ref={ref}
-			className={composeRenderProps(props.className, (className, renderProps) =>
+			{...mergedProps}
+			ref={mergedRef}
+			className={composeRenderProps(mergedProps.className, (className, renderProps) =>
 				tabsStyles({ ...renderProps, className }),
 			)}
 		/>

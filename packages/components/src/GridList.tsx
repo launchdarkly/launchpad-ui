@@ -26,8 +26,9 @@ interface GridListItemProps<T extends object> extends AriaGridListItemProps<T> {
 	ref?: Ref<HTMLDivElement>;
 }
 
-// biome-ignore lint/suspicious/noExplicitAny: ignore
-// oxlint-disable-next-line typescript/no-explicit-any -- Context objects can't carry an open generic; matches existing biome-ignore precedent
+// react-aria-components types this identically: `GridListContext: React.Context<ContextValue<GridListProps<any>, HTMLDivElement>>`
+// (react-aria-components/dist/types/src/GridList.d.ts) — a context can't carry the open generic `T`, so RAC itself erases it to `any` here.
+// oxlint-disable-next-line typescript/no-explicit-any -- mirrors react-aria-components' own GridListContext declaration (see comment above)
 const GridListContext = createContext<ContextValue<GridListProps<any>, HTMLDivElement>>(null);
 
 /**
@@ -36,13 +37,12 @@ const GridListContext = createContext<ContextValue<GridListProps<any>, HTMLDivEl
  * https://react-spectrum.adobe.com/react-aria/GridList.html
  */
 const GridList = <T extends object>({ ref, ...props }: GridListProps<T>) => {
-	// oxlint-disable-next-line no-param-reassign -- sanctioned useLPContextProps merge pattern (see AGENTS.md context+prop-merging convention)
-	[props, ref] = useLPContextProps(props, ref, GridListContext);
+	const [mergedProps, mergedRef] = useLPContextProps(props, ref, GridListContext);
 	return (
 		<AriaGridList
-			{...props}
-			ref={ref}
-			className={composeRenderProps(props.className, (className, renderProps) =>
+			{...mergedProps}
+			ref={mergedRef}
+			className={composeRenderProps(mergedProps.className, (className, renderProps) =>
 				gridListStyles({ ...renderProps, className }),
 			)}
 		/>

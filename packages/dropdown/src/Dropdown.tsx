@@ -102,9 +102,7 @@ const Dropdown = <T extends string | object | number>(props: DropdownProps<T>) =
 			target: targetChild as FunctionComponentElement<
 				AriaAttributes & { ref: ForwardedRef<HTMLElement | undefined>; isopen: string }
 			>,
-			// biome-ignore lint/suspicious/noExplicitAny: ignore
-			// oxlint-disable-next-line typescript/no-explicit-any -- matches existing biome-ignore precedent
-			content: contentChild as ReactElement<any>,
+			content: contentChild as ReactElement<{ onSelect?: (item: T) => void }>,
 		};
 	};
 

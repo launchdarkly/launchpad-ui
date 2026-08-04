@@ -27,12 +27,16 @@ const FormContext = createContext<ContextValue<FormProps, HTMLFormElement>>(null
  * https://react-spectrum.adobe.com/react-aria/Form.html
  */
 const Form = ({ ref, ...props }: FormProps) => {
-	// oxlint-disable-next-line no-param-reassign -- sanctioned useLPContextProps merge pattern (see AGENTS.md context+prop-merging convention)
-	[props, ref] = useLPContextProps(props, ref, FormContext);
-	const { className, orientation = 'vertical', children } = props;
+	const [mergedProps, mergedRef] = useLPContextProps(props, ref, FormContext);
+	const { className, orientation = 'vertical', children } = mergedProps;
 
 	return (
-		<AriaForm {...props} ref={ref} className={formStyles({ className })} data-orientation={orientation || undefined}>
+		<AriaForm
+			{...mergedProps}
+			ref={mergedRef}
+			className={formStyles({ className })}
+			data-orientation={orientation || undefined}
+		>
 			<Provider values={[[LabelContext, { className: styles.label }]]}>{children}</Provider>
 		</AriaForm>
 	);

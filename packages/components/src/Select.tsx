@@ -27,12 +27,14 @@ interface SelectValueProps<T extends object> extends AriaSelectValueProps<T> {
 	ref?: Ref<HTMLSpanElement>;
 }
 
-// biome-ignore lint/suspicious/noExplicitAny: ignore
-// oxlint-disable-next-line typescript/no-explicit-any -- Context objects can't carry an open generic; matches existing biome-ignore precedent
+// react-aria-components types this identically: `SelectContext: React.Context<ContextValue<SelectProps<any, SelectionMode>, HTMLDivElement>>`
+// (react-aria-components/dist/types/src/Select.d.ts) — a context can't carry the open generic `T`, so RAC itself erases it to `any` here.
+// oxlint-disable-next-line typescript/no-explicit-any -- mirrors react-aria-components' own SelectContext declaration (see comment above)
 const SelectContext = createContext<ContextValue<SelectProps<any>, HTMLDivElement>>(null);
 const SelectValueContext =
-	// biome-ignore lint/suspicious/noExplicitAny: ignore
-	// oxlint-disable-next-line typescript/no-explicit-any -- Context objects can't carry an open generic; matches existing biome-ignore precedent
+	// react-aria-components types this identically: `SelectValueContext: React.Context<ContextValue<SelectValueProps<any>, HTMLSpanElement>>`
+	// (react-aria-components/dist/types/src/Select.d.ts) — a context can't carry the open generic `T`, so RAC itself erases it to `any` here.
+	// oxlint-disable-next-line typescript/no-explicit-any -- mirrors react-aria-components' own SelectValueContext declaration (see comment above)
 	createContext<ContextValue<SelectValueProps<any>, HTMLSpanElement>>(null);
 
 /**
@@ -41,17 +43,16 @@ const SelectValueContext =
  * https://react-spectrum.adobe.com/react-aria/Select.html
  */
 const Select = <T extends object>({ ref, ...props }: SelectProps<T>) => {
-	// oxlint-disable-next-line no-param-reassign -- sanctioned useLPContextProps merge pattern (see AGENTS.md context+prop-merging convention)
-	[props, ref] = useLPContextProps(props, ref, SelectContext);
+	const [mergedProps, mergedRef] = useLPContextProps(props, ref, SelectContext);
 	return (
 		<AriaSelect
-			{...props}
-			ref={ref}
-			className={composeRenderProps(props.className, (className, renderProps) =>
+			{...mergedProps}
+			ref={mergedRef}
+			className={composeRenderProps(mergedProps.className, (className, renderProps) =>
 				selectStyles({ ...renderProps, className }),
 			)}
 		>
-			{composeRenderProps(props.children, (children, { isInvalid }) => (
+			{composeRenderProps(mergedProps.children, (children, { isInvalid }) => (
 				<Provider
 					values={[
 						[
@@ -77,13 +78,12 @@ const Select = <T extends object>({ ref, ...props }: SelectProps<T>) => {
  * https://react-spectrum.adobe.com/react-aria/Select.html
  */
 const SelectValue = <T extends object>({ ref, ...props }: SelectValueProps<T>) => {
-	// oxlint-disable-next-line no-param-reassign -- sanctioned useLPContextProps merge pattern (see AGENTS.md context+prop-merging convention)
-	[props, ref] = useLPContextProps(props, ref, SelectValueContext);
+	const [mergedProps, mergedRef] = useLPContextProps(props, ref, SelectValueContext);
 	return (
 		<AriaSelectValue
-			{...props}
-			ref={ref}
-			className={composeRenderProps(props.className, (className, renderProps) =>
+			{...mergedProps}
+			ref={mergedRef}
+			className={composeRenderProps(mergedProps.className, (className, renderProps) =>
 				selectValueStyles({ ...renderProps, className }),
 			)}
 		/>

@@ -57,13 +57,12 @@ const getDefaultElementType = (size: 'small' | 'medium' | 'large'): string => {
  * Built on top of [React Aria `Text` component](https://react-spectrum.adobe.com/react-spectrum/Text.html#text).
  */
 const Text = ({ ref, size = 'medium', bold = false, maxLines, elementType, className, style, ...props }: TextProps) => {
-	// oxlint-disable-next-line no-param-reassign -- sanctioned useLPContextProps merge pattern (see AGENTS.md context+prop-merging convention)
-	[props, ref] = useLPContextProps(props, ref, TextContext);
+	const [mergedProps, mergedRef] = useLPContextProps(props, ref, TextContext);
 
 	return (
 		<AriaText
-			{...props}
-			ref={ref}
+			{...mergedProps}
+			ref={mergedRef}
 			elementType={elementType || getDefaultElementType(size)}
 			className={cx(textStyles({ size, bold }), maxLines && styles.truncate, className)}
 			style={{
@@ -73,7 +72,7 @@ const Text = ({ ref, size = 'medium', bold = false, maxLines, elementType, class
 				}),
 			}}
 		>
-			{props.children}
+			{mergedProps.children}
 		</AriaText>
 	);
 };

@@ -7,8 +7,15 @@ import { Menu, MenuDivider, MenuItem, MenuSearch } from '@launchpad-ui/menu';
 
 import styles from './styles/Filter.module.css';
 
-// biome-ignore lint/suspicious/noExplicitAny: ignore
-// oxlint-disable-next-line typescript/no-explicit-any -- generic default; matches existing biome-ignore precedent
+// `FilterOption` is never parameterized by call sites in this codebase (always used bare as
+// `FilterOption[]`), yet real usages populate `value` with heterogeneous primitive types
+// (strings in some tests/stories, numbers in others) and downstream code reads `value` both
+// as a React `Key` (`key={option.value}`) and via string methods (`option.value.includes(...)`)
+// without narrowing first. `unknown` and `string` were tried and both broke real call sites
+// (see git history on this line) because the actual runtime values aren't homogeneous. `any` is
+// the honest type for "whatever primitive the consumer's data uses" until FilterMenu is
+// refactored to require callers to parameterize `FilterOption<T>` explicitly.
+// oxlint-disable-next-line typescript/no-explicit-any -- open generic default; see comment above for why unknown/string don't work here
 type FilterOption<T = any> = {
 	name?: ReactNode;
 	isDisabled?: boolean;

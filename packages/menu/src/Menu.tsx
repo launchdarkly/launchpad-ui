@@ -1,4 +1,4 @@
-import type { KeyboardEvent, ReactElement, ReactNode } from 'react';
+import type { EventHandler, KeyboardEvent, ReactElement, ReactNode, SyntheticEvent } from 'react';
 import { Children, cloneElement, useCallback, useEffect, useId, useMemo, useRef, useState } from 'react';
 import { type FocusManager, useFocusManager } from 'react-aria/FocusScope';
 import { useVirtual } from 'react-virtual';
@@ -96,13 +96,21 @@ const Menu = <T extends number | string>(props: MenuProps<T>) => {
 			return { items: elements, searchElement: searchElem };
 		}
 
-		return (childrenProps as ReactElement[]).reduce(
-			(
-				{ items, searchElement }: { items: ReactElement[]; searchElement: null | ReactElement },
-				// biome-ignore lint/suspicious/noExplicitAny: ignore
-				// oxlint-disable-next-line typescript/no-explicit-any -- matches existing biome-ignore precedent
-				child: ReactElement<any>,
-			) => {
+		type MenuChildProps = {
+			disabled?: boolean;
+			className?: string;
+			item?: unknown;
+			onClick?: EventHandler<SyntheticEvent>;
+			onKeyDown?: (e: KeyboardEvent) => void;
+			tabIndex?: number;
+		};
+
+		return (childrenProps as ReactElement[]).reduce<{
+			items: ReactElement[];
+			searchElement: null | ReactElement;
+		}>(
+			({ items, searchElement }, childElement) => {
+				const child = childElement as ReactElement<MenuChildProps>;
 				switch (child.type) {
 					case MenuSearch:
 						return {
@@ -131,7 +139,7 @@ const Menu = <T extends number | string>(props: MenuProps<T>) => {
 											item: child.props.item ?? items.length,
 											// set focus on the first menu item if there is no search input, and set in the tab order
 											onClick: chainEventHandlers(child.props.onClick, () => {
-												onSelect?.(child.props.item ?? items.length);
+												onSelect?.((child.props.item ?? items.length) as T);
 											}),
 											onKeyDown: (e: KeyboardEvent) =>
 												handleKeyboardInteractions(e, {
@@ -326,16 +334,20 @@ const ItemVirtualizer = <T extends number | string>(props: ItemVirtualizerProps<
 	const renderSearch = useMemo(
 		() =>
 			searchElement
-				? // biome-ignore lint/suspicious/noExplicitAny: ignore
-					// oxlint-disable-next-line typescript/no-explicit-any -- matches existing biome-ignore precedent
-					cloneElement(searchElement as ReactElement<any>, {
-						onKeyDown: (e: KeyboardEvent) =>
-							handleKeyboardFocusKeydown(e, {
-								handleFocusBackward: () => focusMenuItem(lastVirtualItemIndex),
-								handleFocusForward: () => focusMenuItem(0),
-							}),
-						ref: searchRef,
-					})
+				? cloneElement(
+						searchElement as ReactElement<{
+							onKeyDown?: (e: KeyboardEvent) => void;
+							ref?: unknown;
+						}>,
+						{
+							onKeyDown: (e: KeyboardEvent) =>
+								handleKeyboardFocusKeydown(e, {
+									handleFocusBackward: () => focusMenuItem(lastVirtualItemIndex),
+									handleFocusForward: () => focusMenuItem(0),
+								}),
+							ref: searchRef,
+						},
+					)
 				: null,
 		[searchElement, lastVirtualItemIndex, focusMenuItem],
 	);

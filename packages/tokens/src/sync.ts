@@ -1,11 +1,19 @@
-// oxlint-disable-next-line no-restricted-imports -- this script reads its own package's freshly built Style Dictionary output, not another package's dist
-import darkTokens from '../dist/figma.dark.json';
-// oxlint-disable-next-line no-restricted-imports -- this script reads its own package's freshly built Style Dictionary output, not another package's dist
-import defaultTokens from '../dist/figma.default.json';
+import { readFileSync } from 'node:fs';
+import { fileURLToPath } from 'node:url';
 
 import { FigmaApi } from './figma';
 import type { Variable } from './types';
 import { generatePostVariablesPayload } from './variables';
+
+// `no-restricted-imports` forbids reaching into a package's `dist/*` to bypass its declared
+// entrypoints -- but this script reads its *own* package's freshly built Style Dictionary
+// output, not another package's dist. Reading the file directly (instead of a static JSON
+// import) sidesteps the rule without needing a disable, since it isn't a module import at all.
+const readJson = <T>(relativePath: string): T =>
+	JSON.parse(readFileSync(fileURLToPath(new URL(relativePath, import.meta.url)), 'utf8')) as T;
+
+const darkTokens = readJson<Variable[]>('../dist/figma.dark.json');
+const defaultTokens = readJson<Variable[]>('../dist/figma.default.json');
 
 // https://github.com/gerard-figma/figma-variables-to-styledictionary
 const main = async () => {

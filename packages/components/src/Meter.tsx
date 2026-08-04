@@ -36,9 +36,8 @@ const MeterContext = createContext<ContextValue<MeterProps, HTMLDivElement>>(nul
  * https://react-spectrum.adobe.com/react-aria/Meter.html
  */
 const Meter = ({ ref, ...props }: MeterProps) => {
-	// oxlint-disable-next-line no-param-reassign -- sanctioned useLPContextProps merge pattern (see AGENTS.md context+prop-merging convention)
-	[props, ref] = useLPContextProps(props, ref, MeterContext);
-	const { variant = 'donut' } = props;
+	const [mergedProps, mergedRef] = useLPContextProps(props, ref, MeterContext);
+	const { variant = 'donut' } = mergedProps;
 
 	const center = 64;
 	const strokeWidth = 8;
@@ -47,13 +46,13 @@ const Meter = ({ ref, ...props }: MeterProps) => {
 
 	return (
 		<AriaMeter
-			{...props}
-			ref={ref}
-			className={composeRenderProps(props.className, (className, renderProps) =>
+			{...mergedProps}
+			ref={mergedRef}
+			className={composeRenderProps(mergedProps.className, (className, renderProps) =>
 				meterStyles({ ...renderProps, variant, className }),
 			)}
 		>
-			{composeRenderProps(props.children, (children, { percentage, valueText }) => (
+			{composeRenderProps(mergedProps.children, (children, { percentage, valueText }) => (
 				<>
 					{variant === 'donut' && (
 						// biome-ignore lint/a11y/noSvgWithoutTitle: ignore

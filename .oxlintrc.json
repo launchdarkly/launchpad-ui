@@ -502,6 +502,15 @@
 			"rules": {
 				"no-restricted-globals": "off"
 			}
+		},
+		{
+			// Type declaration files are erased entirely at build time -- `export * from "./x"` here
+			// has no runtime module-loading cost, so oxc/no-barrel-file's perf rationale doesn't apply.
+			// Scoped here instead of per-line disables (see packages/components/src/typesIndex.d.ts).
+			"files": ["**/*.d.ts"],
+			"rules": {
+				"oxc/no-barrel-file": "off"
+			}
 		}
 	]
 }

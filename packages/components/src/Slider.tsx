@@ -58,13 +58,12 @@ const SliderContext = createContext<ContextValue<SliderProps<number | number[]>,
  * https://react-spectrum.adobe.com/react-aria/Slider.html
  */
 const Slider = <T extends number | number[]>({ ref, ...props }: SliderProps<T>) => {
-	// oxlint-disable-next-line no-param-reassign -- sanctioned useLPContextProps merge pattern (see AGENTS.md context+prop-merging convention)
-	[props, ref] = useLPContextProps(props, ref, SliderContext);
+	const [mergedProps, mergedRef] = useLPContextProps(props, ref, SliderContext);
 	return (
 		<AriaSlider
-			{...props}
-			ref={ref}
-			className={composeRenderProps(props.className, (className, renderProps) =>
+			{...mergedProps}
+			ref={mergedRef}
+			className={composeRenderProps(mergedProps.className, (className, renderProps) =>
 				sliderStyles({ ...renderProps, className }),
 			)}
 		/>

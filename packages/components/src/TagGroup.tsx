@@ -55,8 +55,9 @@ interface TagListProps<T> extends AriaTagListProps<T> {
 }
 
 const TagGroupContext = createContext<ContextValue<TagGroupProps, HTMLDivElement>>(null);
-// biome-ignore lint/suspicious/noExplicitAny: ignore
-// oxlint-disable-next-line typescript/no-explicit-any -- Context objects can't carry an open generic; matches existing biome-ignore precedent
+// react-aria-components types this identically: `TagListContext: React.Context<ContextValue<TagListProps<any>, HTMLDivElement>>`
+// (react-aria-components/dist/types/src/TagGroup.d.ts) — a context can't carry the open generic `T`, so RAC itself erases it to `any` here.
+// oxlint-disable-next-line typescript/no-explicit-any -- mirrors react-aria-components' own TagListContext declaration (see comment above)
 const TagListContext = createContext<ContextValue<TagListProps<any>, HTMLDivElement>>(null);
 
 /**
@@ -65,24 +66,22 @@ const TagListContext = createContext<ContextValue<TagListProps<any>, HTMLDivElem
  * https://react-spectrum.adobe.com/react-aria/TagGroup.html
  */
 const TagGroup = ({ ref, ...props }: TagGroupProps) => {
-	// oxlint-disable-next-line no-param-reassign -- sanctioned useLPContextProps merge pattern (see AGENTS.md context+prop-merging convention)
-	[props, ref] = useLPContextProps(props, ref, TagGroupContext);
-	const { className } = props;
+	const [mergedProps, mergedRef] = useLPContextProps(props, ref, TagGroupContext);
+	const { className } = mergedProps;
 
-	return <AriaTagGroup {...props} ref={ref} className={tagGroupStyles({ className })} />;
+	return <AriaTagGroup {...mergedProps} ref={mergedRef} className={tagGroupStyles({ className })} />;
 };
 
 /**
  * A tag list is a container for tags within a TagGroup.
  */
 const TagList = <T extends object>({ ref, ...props }: TagListProps<T>) => {
-	// oxlint-disable-next-line no-param-reassign -- sanctioned useLPContextProps merge pattern (see AGENTS.md context+prop-merging convention)
-	[props, ref] = useLPContextProps(props, ref, TagListContext);
+	const [mergedProps, mergedRef] = useLPContextProps(props, ref, TagListContext);
 	return (
 		<AriaTagList
-			{...props}
-			ref={ref}
-			className={composeRenderProps(props.className, (className, renderProps) =>
+			{...mergedProps}
+			ref={mergedRef}
+			className={composeRenderProps(mergedProps.className, (className, renderProps) =>
 				tagListStyles({ ...renderProps, className }),
 			)}
 		/>

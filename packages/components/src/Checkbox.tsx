@@ -43,17 +43,16 @@ const CheckboxContext = createContext<ContextValue<CheckboxProps, HTMLLabelEleme
  * https://react-spectrum.adobe.com/react-aria/Checkbox.html
  */
 const Checkbox = ({ ref, ...props }: CheckboxProps) => {
-	// oxlint-disable-next-line no-param-reassign -- sanctioned useLPContextProps merge pattern (see AGENTS.md context+prop-merging convention)
-	[props, ref] = useLPContextProps(props, ref, CheckboxContext);
+	const [mergedProps, mergedRef] = useLPContextProps(props, ref, CheckboxContext);
 	return (
 		<AriaCheckbox
-			{...props}
-			ref={ref}
-			className={composeRenderProps(props.className, (className, renderProps) =>
+			{...mergedProps}
+			ref={mergedRef}
+			className={composeRenderProps(mergedProps.className, (className, renderProps) =>
 				checkboxStyles({ ...renderProps, className }),
 			)}
 		>
-			{composeRenderProps(props.children, (children, { isSelected, isIndeterminate }) => (
+			{composeRenderProps(mergedProps.children, (children, { isSelected, isIndeterminate }) => (
 				<>
 					<div className={styles.container}>
 						<CheckboxIcon isSelected={isSelected} isIndeterminate={isIndeterminate} />

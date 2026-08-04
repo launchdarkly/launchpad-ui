@@ -29,8 +29,9 @@ interface BreadcrumbProps extends AriaBreadcrumbProps {
 }
 
 const BreadcrumbsContext =
-	// biome-ignore lint/suspicious/noExplicitAny: ignore
-	// oxlint-disable-next-line typescript/no-explicit-any -- Context objects can't carry an open generic; matches existing biome-ignore precedent
+	// react-aria-components types this identically: `BreadcrumbsContext: React.Context<ContextValue<BreadcrumbsProps<any>, HTMLOListElement>>`
+	// (react-aria-components/dist/types/src/Breadcrumbs.d.ts) — a context can't carry the open generic `T`, so RAC itself erases it to `any` here.
+	// oxlint-disable-next-line typescript/no-explicit-any -- mirrors react-aria-components' own BreadcrumbsContext declaration (see comment above)
 	createContext<ContextValue<BreadcrumbsProps<any>, HTMLOListElement>>(null);
 
 /**
@@ -39,11 +40,10 @@ const BreadcrumbsContext =
  * https://react-spectrum.adobe.com/react-aria/Breadcrumbs.html
  */
 const Breadcrumbs = <T extends object>({ ref, ...props }: BreadcrumbsProps<T>) => {
-	// oxlint-disable-next-line no-param-reassign -- sanctioned useLPContextProps merge pattern (see AGENTS.md context+prop-merging convention)
-	[props, ref] = useLPContextProps(props, ref, BreadcrumbsContext);
-	const { className } = props;
+	const [mergedProps, mergedRef] = useLPContextProps(props, ref, BreadcrumbsContext);
+	const { className } = mergedProps;
 
-	return <AriaBreadcrumbs {...props} ref={ref} className={breadCrumbsStyles({ className })} />;
+	return <AriaBreadcrumbs {...mergedProps} ref={mergedRef} className={breadCrumbsStyles({ className })} />;
 };
 
 /**

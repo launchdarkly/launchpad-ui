@@ -99,9 +99,7 @@ const ButtonComponent = forwardRef<HTMLButtonElement, ButtonProps>((props, ref) 
 			return cloneElement(
 				children,
 				undefined,
-				// biome-ignore lint/suspicious/noExplicitAny: ignore
-				// oxlint-disable-next-line typescript/no-explicit-any -- matches existing biome-ignore precedent
-				getFinalChildren((children as ReactElement<any>).props.children),
+				getFinalChildren((children as ReactElement<{ children?: ReactNode }>).props.children),
 			);
 		}
 

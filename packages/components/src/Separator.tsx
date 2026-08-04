@@ -18,11 +18,10 @@ interface SeparatorProps extends AriaSeparatorProps {
 const SeparatorContext = createContext<ContextValue<SeparatorProps, HTMLElement>>(null);
 
 const Separator = ({ ref, ...props }: SeparatorProps) => {
-	// oxlint-disable-next-line no-param-reassign -- sanctioned useLPContextProps merge pattern (see AGENTS.md context+prop-merging convention)
-	[props, ref] = useLPContextProps(props, ref, SeparatorContext);
-	const { className } = props;
+	const [mergedProps, mergedRef] = useLPContextProps(props, ref, SeparatorContext);
+	const { className } = mergedProps;
 
-	return <AriaSeparator {...props} ref={ref} className={separatorStyles({ className })} />;
+	return <AriaSeparator {...mergedProps} ref={mergedRef} className={separatorStyles({ className })} />;
 };
 
 export { Separator, SeparatorContext, separatorStyles };

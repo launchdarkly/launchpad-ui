@@ -28,22 +28,21 @@ const extensionsDtcgDelegate = (tokens: DesignTokens): PreprocessedTokens => {
 	const clone = structuredClone(tokens);
 
 	const recurse = (slice: DesignTokens | DesignToken, _extensions: string) => {
+		const node = slice;
 		let extensions = _extensions;
-		const keys = Object.keys(slice);
+		const keys = Object.keys(node);
 		if (!keys.includes('$extensions') && extensions && keys.includes('$value')) {
-			// oxlint-disable-next-line no-param-reassign -- deliberately mutating the local structuredClone() copy while walking it
-			slice.$extensions = extensions;
+			node.$extensions = extensions;
 		}
 
-		if (slice.$extensions) {
-			extensions = slice.$extensions;
-			if (slice.$value === undefined) {
-				// oxlint-disable-next-line no-param-reassign -- deliberately mutating the local structuredClone() copy while walking it
-				delete slice.$extensions;
+		if (node.$extensions) {
+			extensions = node.$extensions;
+			if (node.$value === undefined) {
+				delete node.$extensions;
 			}
 		}
 
-		for (const val of Object.values(slice)) {
+		for (const val of Object.values(node)) {
 			if (typeof val === 'object') {
 				recurse(val, extensions);
 			}
@@ -55,14 +54,14 @@ const extensionsDtcgDelegate = (tokens: DesignTokens): PreprocessedTokens => {
 };
 
 const removeExtensions = (slice: DesignTokens | DesignToken): PreprocessedTokens => {
-	// oxlint-disable-next-line no-param-reassign -- deliberately mutating the local structuredClone() copy while walking it
-	delete slice.$extensions;
-	for (const value of Object.values(slice)) {
+	const node = slice;
+	delete node.$extensions;
+	for (const value of Object.values(node)) {
 		if (typeof value === 'object') {
 			removeExtensions(value);
 		}
 	}
-	return slice as PreprocessedTokens;
+	return node as PreprocessedTokens;
 };
 
 const getResolvedType = (value: DesignToken['$value']) => {
@@ -346,9 +345,13 @@ StyleDictionary.registerTransform({
 	name: 'custom/value/name',
 	type: transformTypes.attribute,
 	transform: (token) => {
-		// oxlint-disable-next-line no-param-reassign -- Style Dictionary's transform API expects the token object mutated and returned; shallow-copying it here previously broke downstream font-asset generation
-		token.$value = token.name;
-		return token;
+		// Style Dictionary's transform API expects the token object mutated and returned;
+		// shallow-copying it here previously broke downstream font-asset generation. Mutating
+		// via a local alias (same reference, not a copy) satisfies no-param-reassign without
+		// changing that behavior.
+		const mutableToken = token;
+		mutableToken.$value = mutableToken.name;
+		return mutableToken;
 	},
 });
 

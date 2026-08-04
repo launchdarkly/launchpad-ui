@@ -4,9 +4,15 @@ import { describe, expect, it, vi } from 'vitest';
 import { render, screen, userEvent, waitFor } from '../../../test/utils';
 import type { NavigationItemProps } from '../src';
 import { Navigation, NavigationItem } from '../src';
-// biome-ignore lint/performance/noNamespaceImport: ignore
-// oxlint-disable-next-line import/no-namespace -- mocking the module's named exports requires importing the whole namespace object
-import * as ctx from '../src/NavigationContext';
+import { useNavigationContext } from '../src/NavigationContext';
+
+vi.mock('../src/NavigationContext', async (importOriginal) => {
+	const actual = (await importOriginal()) as Record<string, unknown>;
+	return {
+		...actual,
+		useNavigationContext: vi.fn(actual.useNavigationContext as typeof useNavigationContext),
+	};
+});
 
 globalThis.matchMedia = vi.fn().mockReturnValue({
 	matches: true,
@@ -94,7 +100,7 @@ describe('Navigation', () => {
 	});
 
 	it('renders collapsed dropdown', () => {
-		vi.spyOn(ctx, 'useNavigationContext').mockReturnValue({
+		vi.mocked(useNavigationContext).mockReturnValue({
 			shouldCollapse: true,
 			refs: { wrapperRef: { current: null }, itemListRef: { current: null } },
 		});

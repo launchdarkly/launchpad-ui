@@ -41,6 +41,21 @@ const loadFeatures = () =>
 
 type Offset = OffsetOptions;
 
+/**
+ * Minimal shape for the caller-supplied `target` element. The Popover clones
+ * arbitrary target elements (any host component or custom component the
+ * consumer renders), reading `disabled` for styling and injecting a DOM ref
+ * plus a couple of data/aria attributes. We can't know the target's real
+ * prop type without knowing what the consumer rendered, so this narrows just
+ * far enough to type-check the specific reads/writes below.
+ */
+type PopoverTargetElementProps = {
+	disabled?: boolean;
+	ref?: Ref<Element>;
+	'aria-describedby'?: string;
+	'data-state'?: 'open' | 'closed';
+};
+
 type PopoverProps = {
 	allowBoundaryElementOverflow?: boolean;
 	content?: string | JSX.Element | JSX.Element[];
@@ -412,9 +427,7 @@ const Popover = ({
 	const { target, content } = parseChildren();
 	const hasEmptyContent = content === null || content === undefined || (typeof content === 'string' && !content);
 	const isTargetDisabled = isValidElement(target)
-		? // biome-ignore lint/suspicious/noExplicitAny: ignore
-			// oxlint-disable-next-line typescript/no-explicit-any -- matches existing biome-ignore precedent
-			!!(target as ReactElement<any>)?.props?.disabled
+		? !!(target as ReactElement<PopoverTargetElementProps>)?.props?.disabled
 		: false;
 
 	const targetProps: PopoverTargetProps = {
@@ -440,9 +453,7 @@ const Popover = ({
 	return createElement(
 		rootElementTag,
 		targetProps,
-		// biome-ignore lint/suspicious/noExplicitAny: ignore
-		// oxlint-disable-next-line typescript/no-explicit-any -- matches existing biome-ignore precedent
-		cloneElement(target as ReactElement<any>, {
+		cloneElement(target as ReactElement<PopoverTargetElementProps>, {
 			ref: targetElementRef,
 			...(isOpen && { 'aria-describedby': popoverId.current }),
 			'data-state': isOpen ? 'open' : 'closed',

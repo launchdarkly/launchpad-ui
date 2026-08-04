@@ -24,8 +24,9 @@ interface ComboBoxProps<T extends object> extends AriaComboBoxProps<T> {
 
 interface ComboBoxClearButtonProps extends Partial<IconButtonProps> {}
 
-// biome-ignore lint/suspicious/noExplicitAny: ignore
-// oxlint-disable-next-line typescript/no-explicit-any -- Context objects can't carry an open generic; matches existing biome-ignore precedent
+// react-aria-components types this identically: `ComboBoxContext: React.Context<ContextValue<ComboBoxProps<any, SelectionMode>, HTMLDivElement>>`
+// (react-aria-components/dist/types/src/ComboBox.d.ts) — a context can't carry the open generic `T`, so RAC itself erases it to `any` here.
+// oxlint-disable-next-line typescript/no-explicit-any -- mirrors react-aria-components' own ComboBoxContext declaration (see comment above)
 const ComboBoxContext = createContext<ContextValue<ComboBoxProps<any>, HTMLDivElement>>(null);
 
 /**
@@ -34,9 +35,8 @@ const ComboBoxContext = createContext<ContextValue<ComboBoxProps<any>, HTMLDivEl
  * https://react-spectrum.adobe.com/react-aria/ComboBox.html
  */
 const ComboBox = <T extends object>({ ref, ...props }: ComboBoxProps<T>) => {
-	// oxlint-disable-next-line no-param-reassign -- sanctioned useLPContextProps merge pattern (see AGENTS.md context+prop-merging convention)
-	[props, ref] = useLPContextProps(props, ref, ComboBoxContext);
-	const { menuTrigger = 'focus' } = props;
+	const [mergedProps, mergedRef] = useLPContextProps(props, ref, ComboBoxContext);
+	const { menuTrigger = 'focus' } = mergedProps;
 	const groupRef = useRef<HTMLDivElement>(null);
 	// https://github.com/adobe/react-spectrum/blob/main/packages/react-aria-components/src/ComboBox.tsx#L152-L166
 	const [groupWidth, setGroupWidth] = useState<string | null>(null);
@@ -55,13 +55,13 @@ const ComboBox = <T extends object>({ ref, ...props }: ComboBoxProps<T>) => {
 	return (
 		<AriaComboBox
 			menuTrigger={menuTrigger}
-			{...props}
-			ref={ref}
-			className={composeRenderProps(props.className, (className, renderProps) =>
+			{...mergedProps}
+			ref={mergedRef}
+			className={composeRenderProps(mergedProps.className, (className, renderProps) =>
 				comboBoxStyles({ ...renderProps, className }),
 			)}
 		>
-			{composeRenderProps(props.children, (children, { isInvalid, isDisabled }) => (
+			{composeRenderProps(mergedProps.children, (children, { isInvalid, isDisabled }) => (
 				<Provider
 					values={[
 						[GroupContext, { ref: groupRef, isInvalid, isDisabled }],

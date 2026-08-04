@@ -40,19 +40,18 @@ const ToolbarContext = createContext<ContextValue<ToolbarProps, HTMLDivElement>>
  * https://react-spectrum.adobe.com/react-aria/Toolbar.html
  */
 const Toolbar = ({ ref, ...props }: ToolbarProps) => {
-	// oxlint-disable-next-line no-param-reassign -- sanctioned useLPContextProps merge pattern (see AGENTS.md context+prop-merging convention)
-	[props, ref] = useLPContextProps(props, ref, ToolbarContext);
-	const { spacing = 'basic' } = props;
+	const [mergedProps, mergedRef] = useLPContextProps(props, ref, ToolbarContext);
+	const { spacing = 'basic' } = mergedProps;
 
 	return (
 		<AriaToolbar
-			{...props}
-			ref={ref}
-			className={composeRenderProps(props.className, (className, renderProps) =>
+			{...mergedProps}
+			ref={mergedRef}
+			className={composeRenderProps(mergedProps.className, (className, renderProps) =>
 				toolbarStyles({ ...renderProps, spacing, className }),
 			)}
 		>
-			{composeRenderProps(props.children, (children, { orientation }) => (
+			{composeRenderProps(mergedProps.children, (children, { orientation }) => (
 				<Provider
 					values={[
 						[SeparatorContext, { orientation: orientation === 'horizontal' ? 'vertical' : 'horizontal' }],

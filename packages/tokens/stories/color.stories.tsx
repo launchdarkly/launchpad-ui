@@ -124,9 +124,7 @@ const global = Object.keys(vars.color)
 	.filter((key) => !ALIAS.includes(key))
 	.reduce((obj, key) => {
 		// @ts-expect-error fixme
-		// oxlint-disable-next-line no-param-reassign -- reduce-accumulator mutation pattern
-		obj[key] = vars.color[key];
-		return obj;
+		return { ...obj, [key]: vars.color[key] };
 	}, {});
 
 export const Global = {
@@ -137,9 +135,7 @@ const alias = Object.keys(vars.color)
 	.filter((key) => ALIAS.includes(key))
 	.reduce((obj, key) => {
 		// @ts-expect-error fixme
-		// oxlint-disable-next-line no-param-reassign -- reduce-accumulator mutation pattern
-		obj[key] = vars.color[key];
-		return obj;
+		return { ...obj, [key]: vars.color[key] };
 	}, {});
 
 export const Alias = {

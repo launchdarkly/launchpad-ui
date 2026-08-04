@@ -36,15 +36,14 @@ const InputContext = createContext<ContextValue<InputProps, HTMLInputElement>>(n
  * https://react-spectrum.adobe.com/react-aria/TextField.html
  */
 const Input = ({ ref, ...props }: InputProps) => {
-	// oxlint-disable-next-line no-param-reassign -- sanctioned useLPContextProps merge pattern (see AGENTS.md context+prop-merging convention)
-	[props, ref] = useLPContextProps(props, ref, InputContext);
-	const { variant = 'default' } = props;
+	const [mergedProps, mergedRef] = useLPContextProps(props, ref, InputContext);
+	const { variant = 'default' } = mergedProps;
 
 	return (
 		<AriaInput
-			{...props}
-			ref={ref}
-			className={composeRenderProps(props.className, (className, renderProps) =>
+			{...mergedProps}
+			ref={mergedRef}
+			className={composeRenderProps(mergedProps.className, (className, renderProps) =>
 				inputStyles({ ...renderProps, variant, className }),
 			)}
 		/>

@@ -35,17 +35,16 @@ const RadioIcon = ({ isSelected }: Partial<RadioRenderProps>) => (
  * https://react-spectrum.adobe.com/react-aria/RadioGroup.html
  */
 const Radio = ({ ref, ...props }: RadioProps) => {
-	// oxlint-disable-next-line no-param-reassign -- sanctioned useLPContextProps merge pattern (see AGENTS.md context+prop-merging convention)
-	[props, ref] = useLPContextProps(props, ref, RadioContext);
+	const [mergedProps, mergedRef] = useLPContextProps(props, ref, RadioContext);
 	return (
 		<AriaRadio
-			{...props}
-			ref={ref}
-			className={composeRenderProps(props.className, (className, renderProps) =>
+			{...mergedProps}
+			ref={mergedRef}
+			className={composeRenderProps(mergedProps.className, (className, renderProps) =>
 				radioStyles({ ...renderProps, className }),
 			)}
 		>
-			{composeRenderProps(props.children, (children, { isSelected }) => (
+			{composeRenderProps(mergedProps.children, (children, { isSelected }) => (
 				<>
 					<RadioIcon isSelected={isSelected} />
 					{children}

@@ -53,21 +53,20 @@ const ButtonContext = createContext<ContextValue<ButtonContextValue, HTMLButtonE
  * https://react-spectrum.adobe.com/react-aria/Button.html
  */
 const Button = ({ ref, ...props }: ButtonProps) => {
-	// oxlint-disable-next-line no-param-reassign -- sanctioned useLPContextProps merge pattern (see AGENTS.md context+prop-merging convention)
-	[props, ref] = useLPContextProps(props, ref, ButtonContext);
+	const [mergedProps, mergedRef] = useLPContextProps(props, ref, ButtonContext);
 	const perceivableProps = useContext(PerceivableContext);
-	const { size = 'medium', variant = 'default' } = props;
+	const { size = 'medium', variant = 'default' } = mergedProps;
 
 	return (
 		<AriaButton
-			{...props}
+			{...mergedProps}
 			{...perceivableProps}
-			ref={ref}
-			className={composeRenderProps(props.className, (className, renderProps) =>
+			ref={mergedRef}
+			className={composeRenderProps(mergedProps.className, (className, renderProps) =>
 				buttonStyles({ ...renderProps, size, variant, className }),
 			)}
 		>
-			{composeRenderProps(props.children, (children, { isPending }) => (
+			{composeRenderProps(mergedProps.children, (children, { isPending }) => (
 				<Provider values={[[TextContext, { className: isPending ? styles.pending : undefined }]]}>
 					{isPending && <ProgressBar isIndeterminate aria-label="loading" className={styles.progress} />}
 					{typeof children === 'string' ? (
