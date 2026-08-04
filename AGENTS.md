@@ -8,7 +8,7 @@ LaunchPad is LaunchDarkly's design system: a pnpm + Nx monorepo of independently
 
 Components **must stay generic** — no business logic, no product-domain terms (flag/segment/project/environment/member/metric), no app-specific data fetching, and no hardcoded LaunchDarkly URLs or copy. If a feature needs any of that, it belongs in the consuming app, not here. (Exception: files under `packages/components/stories/recipes/` are example compositions, not components — they may combine primitives and use example copy, but accessibility, token, and theme rules still apply.)
 
-Node `>=22.14.0` (see `.nvmrc`), pnpm `11.0.1`. Run `pnpm install` to set up.
+Node `>=22.22.0` (see `.nvmrc`), pnpm `11.0.1`. Run `pnpm install` to set up.
 
 ## Commands
 
