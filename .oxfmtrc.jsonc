@@ -1,0 +1,71 @@
+{
+  "$schema": "./node_modules/oxfmt/configuration_schema.json",
+  "singleQuote": true,
+  "trailingComma": "all",
+  "printWidth": 120,
+  "tabWidth": 2,
+  "sortPackageJson": false,
+  "sortImports": {
+    "groups": [
+      "vitest-mocks",
+      "react",
+      { "newlinesBetween": false },
+      ["builtin", "external"],
+      "app-aliases",
+      ["side_effect", "app-alias-side-effects"],
+      "parent",
+      ["sibling", "index"],
+      "external-style",
+      { "newlinesBetween": false },
+      "side_effect_style",
+      { "newlinesBetween": false },
+      "style"
+    ],
+    "customGroups": [
+      {
+        // __mocks__ side-effect imports must precede the real module they mock.
+        // vi.mock() inside an imported file is not auto-hoisted by Vitest, so load order matters.
+        "groupName": "vitest-mocks",
+        "elementNamePattern": ["**/__mocks__/**", "**/_shared-mocks"],
+        "modifiers": ["side_effect"]
+      },
+      {
+        // CSS side effect imports (e.g. import './styles.css').
+        // Must come first — otherwise the react customGroup claims react-*/**.css imports first.
+        "groupName": "external-style",
+        "elementNamePattern": ["**/*.css"],
+        "modifiers": ["side_effect"]
+      },
+      {
+        "groupName": "react",
+        "elementNamePattern": ["react", "react/**", "react-*", "react-*/**"]
+      },
+      {
+        // Cross-package @launchpad-ui/* workspace imports used only for side effects.
+        // Kept for parity with gonfalon's app-alias-side-effects group even though no
+        // current source file imports a @launchpad-ui/* package purely for side effects.
+        "groupName": "app-alias-side-effects",
+        "elementNamePattern": ["@launchpad-ui/**"],
+        "modifiers": ["side_effect"]
+      },
+      {
+        // Cross-package @launchpad-ui/* workspace imports (this repo's equivalent of
+        // gonfalon's #-prefixed app aliases).
+        "groupName": "app-aliases",
+        "elementNamePattern": ["@launchpad-ui/**"]
+      }
+    ],
+    "newlinesBetween": true,
+    "sortSideEffects": false
+  },
+  "ignorePatterns": [
+    // --- Generated files ---
+    "**/dist/",
+    "/storybook-static/",
+
+    // --- File types not covered by oxfmt ---
+    // TOML is not supported. Consider removing if oxfmt TOML support is added.
+    "**/*.toml"
+  ],
+  "overrides": []
+}
