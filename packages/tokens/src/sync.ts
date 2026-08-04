@@ -51,4 +51,4 @@ const main = async () => {
 	console.log('%c ✅ Figma file has been updated with the new tokens', 'color:green;');
 };
 
-main();
+void main();

@@ -71,7 +71,7 @@ const play: PlayFunction<ReactRenderer> = async ({ canvasElement }) => {
 	await userEvent.click(canvas.getByRole('button'));
 	const body = canvasElement.ownerDocument.body;
 	await waitFor(async () => {
-		expect(await within(body).findByRole('dialog')).toBeVisible();
+		await expect(await within(body).findByRole('dialog')).toBeVisible();
 	});
 };
 

@@ -99,7 +99,7 @@ jobs:
         run: pnpm install
 
       - name: Run Oxlint
-        run: pnpm oxlint:js
+        run: pnpm oxlint:js:full
 
       - name: Check formatting
         run: pnpm fmt:check

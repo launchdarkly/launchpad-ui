@@ -89,7 +89,9 @@ const TokenTable = ({ tokens }: { tokens: Record<string, string> }) => {
 									<TooltipTrigger>
 										<Button
 											onPress={() => {
-												navigator.clipboard.writeText(value.substring(value.lastIndexOf('--'), value.lastIndexOf(')')));
+												void navigator.clipboard.writeText(
+													value.substring(value.lastIndexOf('--'), value.lastIndexOf(')')),
+												);
 												toastQueue.add({ title: 'Copied!', status: 'success' });
 											}}
 											style={{ font: 'var(--lp-text-code-1-regular)' }}

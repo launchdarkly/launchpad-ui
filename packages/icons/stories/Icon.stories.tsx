@@ -61,7 +61,7 @@ export const Gallery: Story = {
 								<Button
 									size="small"
 									onPress={() => {
-										navigator.clipboard.writeText(item);
+										void navigator.clipboard.writeText(item);
 										toastQueue.add({ title: 'Copied!', status: 'success' });
 									}}
 									variant="minimal"

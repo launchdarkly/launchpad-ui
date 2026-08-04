@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { expect, userEvent, within } from 'storybook/test';
+import { userEvent, within } from 'storybook/test';
 
 import { Button } from '../src/Button';
 import { ButtonGroup } from '../src/ButtonGroup';
@@ -55,7 +55,7 @@ export const Example: Story = {
 
 		await userEvent.click(canvas.getAllByRole('button')[0]);
 		const body = canvasElement.ownerDocument.body;
-		await expect(await within(body).findByRole('alert'));
+		await within(body).findByRole('alert');
 	},
 };
 
@@ -95,6 +95,6 @@ export const Snackbar: Story = {
 
 		await userEvent.click(canvas.getAllByRole('button')[0]);
 		const body = canvasElement.ownerDocument.body;
-		await expect(await within(body).findByRole('alert'));
+		await within(body).findByRole('alert');
 	},
 };

@@ -222,7 +222,7 @@ const modes = new StyleDictionary({
 
 StyleDictionary.registerFormat({
 	name: 'css/themes',
-	format: async () => {
+	format: () => {
 		const lightMode = aliasTokens[`${light}.css`];
 		const darkMode = aliasTokens[`${dark}.css`];
 
@@ -232,7 +232,7 @@ StyleDictionary.registerFormat({
 
 StyleDictionary.registerFormat({
 	name: 'custom/font-face',
-	format: async ({ dictionary }) => {
+	format: ({ dictionary }) => {
 		return dictionary.allTokens
 			.map((token) => {
 				const {
@@ -252,14 +252,14 @@ StyleDictionary.registerFormat({
 
 StyleDictionary.registerFormat({
 	name: 'custom/json',
-	format: async ({ dictionary, options }) => {
+	format: ({ dictionary, options }) => {
 		return `${JSON.stringify(minifyDictionary(dictionary.tokens, options.usesDtcg), null, 2)}\n`;
 	},
 });
 
 StyleDictionary.registerFormat({
 	name: 'custom/media-query',
-	format: async ({ dictionary }) => {
+	format: ({ dictionary }) => {
 		return dictionary.allTokens
 			.map((token) => {
 				const { attributes, $value } = token;
@@ -284,7 +284,7 @@ StyleDictionary.registerFormat({
 
 StyleDictionary.registerFormat({
 	name: 'typescript/accurate-module-declarations',
-	format: async ({ dictionary, options }) => {
+	format: ({ dictionary, options }) => {
 		return `declare const root: RootObject\nexport default root\n${JsonToTS(
 			minifyDictionary(dictionary.tokens, options.usesDtcg),
 		).join('\n')}`;
@@ -293,7 +293,7 @@ StyleDictionary.registerFormat({
 
 StyleDictionary.registerFormat({
 	name: 'json/category',
-	format: async ({ dictionary }) => {
+	format: ({ dictionary }) => {
 		const groups = dictionary.allTokens.reduce((acc: TransformedToken, obj) => {
 			const key = obj.attributes?.category as string;
 			const group = acc[key] ?? [];
@@ -306,7 +306,7 @@ StyleDictionary.registerFormat({
 
 StyleDictionary.registerFormat({
 	name: 'json/figma',
-	format: async ({ dictionary }) => {
+	format: ({ dictionary }) => {
 		const tokens = dictionary.allTokens.map((token) => {
 			const { attributes, $description: description = '', $extensions } = token;
 			const { hiddenFromPublishing, scopes } = $extensions?.['com.figma'] || {};

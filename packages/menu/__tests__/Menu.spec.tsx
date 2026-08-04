@@ -126,7 +126,7 @@ describe('Menu', () => {
 		expect(items[0]).toHaveFocus();
 	});
 
-	it('can render items into child slot', async () => {
+	it('can render items into child slot', () => {
 		const text = 'Click me';
 		render(
 			<Menu>

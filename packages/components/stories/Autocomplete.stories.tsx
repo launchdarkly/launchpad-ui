@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { expect, userEvent, within } from 'storybook/test';
+import { userEvent, within } from 'storybook/test';
 
 import { Icon } from '@launchpad-ui/icons';
 
@@ -30,7 +30,7 @@ const open = {
 
 		await userEvent.click(canvas.getByRole('button'));
 		const body = canvasElement.ownerDocument.body;
-		await expect(await within(body).findByRole('dialog'));
+		await within(body).findByRole('dialog');
 		await userEvent.keyboard('{arrowdown}');
 	},
 };

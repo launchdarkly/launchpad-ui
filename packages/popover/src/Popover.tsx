@@ -249,7 +249,7 @@ const Popover = ({
 				window.removeEventListener('resize', updatePosition);
 			}
 		};
-		updatePopover();
+		void updatePopover();
 	}, [isOpen, contentProp, popoverElement, updatePosition]);
 
 	useEffect(() => {

@@ -2,8 +2,8 @@ import type { GetLocalVariablesResponse, PostVariablesRequestBody, PostVariables
 import axios from 'axios';
 
 class FigmaApi {
-	private baseUrl = 'https://api.figma.com';
-	private token: string;
+	private readonly baseUrl = 'https://api.figma.com';
+	private readonly token: string;
 
 	constructor(token: string) {
 		this.token = token;

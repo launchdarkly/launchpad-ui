@@ -1,7 +1,6 @@
 {
 	"extends": "./tsconfig.base.json",
 	"compilerOptions": {
-		"baseUrl": ".",
 		"paths": {
 			"@launchpad-ui/box": ["./packages/box/src"],
 			"@launchpad-ui/button": ["./packages/button/src"],

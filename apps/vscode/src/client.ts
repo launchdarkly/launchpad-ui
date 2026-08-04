@@ -31,7 +31,7 @@ export function activate(context: ExtensionContext) {
 	client = new LanguageClient('LaunchPadDesignSystem', 'LaunchPad Design System', serverOptions, clientOptions);
 
 	// Start the client. This will also launch the server
-	client.start();
+	void client.start();
 }
 
 export function deactivate(): Thenable<void> | undefined {
