@@ -1,5 +1,31 @@
 # @launchpad-ui/components
 
+## 0.23.0
+
+### Minor Changes
+
+- [#1965](https://github.com/launchdarkly/launchpad-ui/pull/1965) [`a0bb548`](https://github.com/launchdarkly/launchpad-ui/commit/a0bb548a5f693c52a958b7981af537ac36df244a) Thanks [@apucacao](https://github.com/apucacao)! - Widen peer dependency ranges so these packages work with either React Router 7 or 8: the `react-router` peer range changes from an exact `7.15.1` to `^7.15.1 || ^8.2.0`. Consuming apps can now upgrade to React Router 8 without waiting on a major bump here, and apps still on React Router 7 continue to resolve correctly.
+
+  All other exact peer pins on these two packages (`react`, `react-dom`, and, where present, `@react-aria/*`, `react-aria`, `react-aria-components`, `react-stately`, `@react-stately/*`, `@react-types/*`, `react-hook-form`) also relax from exact versions to caret ranges, for the same reason as the sibling patch across the rest of the workspace.
+
+### Patch Changes
+
+- [#1973](https://github.com/launchdarkly/launchpad-ui/pull/1973) [`124c71f`](https://github.com/launchdarkly/launchpad-ui/commit/124c71faa5d5b9cca91b007d8ef0b67b7c4b93a9) Thanks [@apucacao](https://github.com/apucacao)! - Cosmetic CSS cleanups from adding stylelint (blank-line spacing before declarations/comments, shorthand hex color notation, a redundant duplicate selector removed, and `0` used instead of the deprecated `--lp-spacing-100`/`--lp-size-0` tokens, which both resolve to `0`). No computed styles changed.
+
+- [#1976](https://github.com/launchdarkly/launchpad-ui/pull/1976) [`a4d383f`](https://github.com/launchdarkly/launchpad-ui/commit/a4d383f697466b2901f1fabca93eb311fdbc73ff) Thanks [@apucacao](https://github.com/apucacao)! - Internal refactor: no more parameter reassignment in context/prop merging; no behavior change.
+
+- [#1958](https://github.com/launchdarkly/launchpad-ui/pull/1958) [`5918729`](https://github.com/launchdarkly/launchpad-ui/commit/591872922f5d707cae03e63ee59d73100f059781) Thanks [@sruthykumar](https://github.com/sruthykumar)! - Align the multi-select `ListBoxItem` checkbox to the item's primary line instead of vertically centering it against the whole item, so items with a stacked label and description keep the checkbox next to the label.
+
+- [#1970](https://github.com/launchdarkly/launchpad-ui/pull/1970) [`fadff31`](https://github.com/launchdarkly/launchpad-ui/commit/fadff3145d503436bb9b3b9dccf8770b765574de) Thanks [@apucacao](https://github.com/apucacao)! - Fix ProgressBar stroke offset when a determinate percentage is provided; an operator-precedence bug made any truthy percentage render as if nearly complete.
+
+- [#1967](https://github.com/launchdarkly/launchpad-ui/pull/1967) [`c90b767`](https://github.com/launchdarkly/launchpad-ui/commit/c90b76725d99eef1ef42a7df738442073d77234f) Thanks [@apucacao](https://github.com/apucacao)! - Replace the `rolldown-vite` override with stock `vite`, and swap the build-time `@vitejs/plugin-react-oxc` plugin for `@vitejs/plugin-react-swc` (already used by tests). No public API changed. Build output was verified equivalent: for every published package, the emitted `.d.ts`/`.json`/`.svg` files are byte-identical, CSS output is byte-identical apart from one dropped `rolldown-vite`-specific comment marker, and JS output is semantically identical (confirmed by diffing `esbuild --minify`-normalized bundles, which strips only bundler-specific formatting).
+
+- [#1973](https://github.com/launchdarkly/launchpad-ui/pull/1973) [`124c71f`](https://github.com/launchdarkly/launchpad-ui/commit/124c71faa5d5b9cca91b007d8ef0b67b7c4b93a9) Thanks [@apucacao](https://github.com/apucacao)! - Fix `Header` and the menu section-header label (`Menu-item--header`) rendering with an unresolved (browser-default) text color: `--lp-color-text-ui-tertiary`, referenced by both, was dropped from `@launchpad-ui/tokens` during a past color refresh without updating these consumers. Restored using `--lp-color-text-ui-secondary`, which now carries tertiary's former value. Also fixes `Tree`'s item description text, which referenced a token that never existed (`--lp-color-text-ui-secondary-base`) instead of `--lp-color-text-ui-secondary`.
+
+- Updated dependencies [[`a4d383f`](https://github.com/launchdarkly/launchpad-ui/commit/a4d383f697466b2901f1fabca93eb311fdbc73ff), [`a0bb548`](https://github.com/launchdarkly/launchpad-ui/commit/a0bb548a5f693c52a958b7981af537ac36df244a), [`c90b767`](https://github.com/launchdarkly/launchpad-ui/commit/c90b76725d99eef1ef42a7df738442073d77234f)]:
+  - @launchpad-ui/tokens@0.17.1
+  - @launchpad-ui/icons@0.26.3
+
 ## 0.22.1
 
 ### Patch Changes
