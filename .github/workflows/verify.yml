@@ -80,7 +80,7 @@ jobs:
         run: pnpm typecheck
 
   oxlint:
-    name: Oxlint
+    name: Quality
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
