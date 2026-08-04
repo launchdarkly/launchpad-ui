@@ -1,6 +1,7 @@
 .header {
 	font: var(--lp-text-label-2-medium);
-	/* stylelint-disable-next-line csstools/value-no-unknown-custom-properties -- `--lp-color-text-ui-tertiary` was removed from @launchpad-ui/tokens; flagged in REPORT.md as a likely pre-existing bug, not fixed here to avoid changing rendering */
-	color: var(--lp-color-text-ui-tertiary);
+
+	/* `--lp-color-text-ui-tertiary` was removed from @launchpad-ui/tokens in the color refresh (launchdarkly/launchpad-ui#1438); `--lp-color-text-ui-secondary` was redefined in the same commit to carry tertiary's former value, so it's the correct restored token here. */
+	color: var(--lp-color-text-ui-secondary);
 	padding-inline: var(--lp-spacing-200);
 }

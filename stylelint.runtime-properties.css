@@ -1,0 +1,34 @@
+/**
+ * Custom properties injected at runtime by third-party libraries, not by
+ * `@launchpad-ui/tokens`. `csstools/value-no-unknown-custom-properties`
+ * (see `.stylelintrc.js`) only recognizes custom properties declared in a
+ * CSS file, so this file exists purely to teach that rule about properties
+ * that are set via JS `style` props instead of CSS. Values here are
+ * placeholders (never applied) - only the property names matter to the
+ * linter.
+ *
+ * When you rely on one of these in a CSS Module, add a code comment there
+ * pointing back to this file so the connection stays discoverable.
+ */
+:root {
+	/*
+	 * Set by React Aria Components' `ModalOverlay` (private `Modal`
+	 * component) on every render, via an inline `style` prop - not a
+	 * design token. Source: `react-aria-components`
+	 * `src/Modal.tsx` / `dist/private/Modal.mjs`, computed from
+	 * `useViewportSize()` and the scrolling element's dimensions.
+	 * Used in `packages/components/src/styles/Modal.module.css` to size
+	 * `.overlay` to the visible (keyboard-aware) viewport on mobile.
+	 */
+	--visual-viewport-width: 0;
+	--visual-viewport-height: 0;
+
+	/*
+	 * Same `ModalOverlay` render, alongside the two properties above -
+	 * the full page's scroll dimensions rather than the visible
+	 * viewport. Not currently consumed by any launchpad CSS Module, but
+	 * documented here since it comes from the same source and rule.
+	 */
+	--page-width: 0;
+	--page-height: 0;
+}

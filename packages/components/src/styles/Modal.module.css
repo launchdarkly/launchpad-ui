@@ -155,7 +155,8 @@
 	position: fixed;
 	inset: 0;
 	width: 100vw;
-	/* stylelint-disable-next-line csstools/value-no-unknown-custom-properties -- `--visual-viewport-height` is not a design token and no JS in this repo sets it; flagged in REPORT.md as a likely dead/incomplete property, not fixed here to avoid changing rendering */
+
+	/* `--visual-viewport-height` is set at runtime by React Aria Components' ModalOverlay; see `stylelint.runtime-properties.css` */
 	height: var(--visual-viewport-height);
 	background: var(--lp-color-black-500);
 	backdrop-filter: blur(1px);
