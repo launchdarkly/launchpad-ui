@@ -1,5 +1,4 @@
 import type { StorybookConfig } from '@storybook/react-vite';
-import type { UserConfig } from 'vite';
 
 const config: StorybookConfig = {
 	stories: [
@@ -42,17 +41,6 @@ const config: StorybookConfig = {
 			}
 		</style>
 	`,
-	async viteFinal(config, { configType }) {
-		const { mergeConfig } = await import('vite');
-
-		// https://github.com/vitejs/rolldown-vite/issues/182#issuecomment-2909038168
-		const custom: UserConfig =
-			configType === 'PRODUCTION'
-				? { build: { rollupOptions: { experimental: { strictExecutionOrder: true } } } }
-				: {};
-
-		return mergeConfig(config, custom);
-	},
 	docs: {
 		defaultName: 'Docs',
 	},
