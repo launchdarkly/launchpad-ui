@@ -1,5 +1,8 @@
 import type { StorybookConfig } from '@storybook/react-vite';
 
+import { dirname } from 'node:path';
+import { fileURLToPath } from 'node:url';
+
 const config: StorybookConfig = {
 	stories: [
 		'../docs/stories/**/*.mdx',
@@ -7,13 +10,13 @@ const config: StorybookConfig = {
 		'../packages/**/*.stories.{mdx,tsx}',
 	],
 	addons: [
-		'@storybook/addon-a11y',
-		'@storybook/addon-docs',
-		'@storybook/addon-designs',
-		'@storybook/addon-themes',
-		'storybook-addon-pseudo-states',
+		getAbsolutePath('@storybook/addon-a11y'),
+		getAbsolutePath('@storybook/addon-docs'),
+		getAbsolutePath('@storybook/addon-designs'),
+		getAbsolutePath('@storybook/addon-themes'),
+		getAbsolutePath('storybook-addon-pseudo-states'),
 	],
-	framework: '@storybook/react-vite',
+	framework: getAbsolutePath('@storybook/react-vite'),
 	core: {
 		disableTelemetry: true,
 	},
@@ -62,3 +65,7 @@ const config: StorybookConfig = {
 };
 
 export default config;
+
+function getAbsolutePath(value: string): any {
+	return dirname(fileURLToPath(import.meta.resolve(`${value}/package.json`)));
+}
