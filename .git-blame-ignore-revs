@@ -1,10 +1,17 @@
-# Commits listed here are ignored by `git blame` (see `git blame --ignore-revs-file`).
-# Configure locally with:
+# What this file is:
+#
+# `git blame` answers "who last touched this line?". When a commit reformats
+# every file at once, it becomes the answer for almost every line, and the
+# person who actually wrote the code disappears from blame.
+#
+# This file lists commits like that, so blame can skip them and point at the
+# real author instead. GitHub's blame view reads it automatically ("ignoring
+# revisions in .git-blame-ignore-revs"). For local git, opt in once with:
+#
 #   git config blame.ignoreRevsFile .git-blame-ignore-revs
+#
+# Only add commits that change how code looks, never what it does (reformats,
+# whitespace sweeps). Use the hash of the commit as it exists on main.
 
-# chore: reformat repository with oxfmt
-882dbcfd113aa59e7f00861105310743d8b63012
-# TODO: this is the LOCAL commit hash from the isolated reformat branch. The repo
-# squash-merges PRs, so once this PR merges, append the resulting SQUASH-MERGE hash
-# on main here too (the local hash above will differ from — and not replace — the
-# squash hash; keep both so blame is ignored regardless of which history a checkout has).
+# chore: reformat repository with oxfmt (#1971, squash-merge commit on main)
+dd83557174d5d942182b92ff64888119572312b5
