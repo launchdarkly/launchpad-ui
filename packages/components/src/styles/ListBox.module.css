@@ -4,6 +4,15 @@
 
 .item {
 	composes: item from './Menu.module.css';
+
+	&:has(.checkbox) {
+		align-items: start;
+	}
+
+	& .checkbox {
+		height: 1lh;
+		align-items: center;
+	}
 }
 
 .content {
