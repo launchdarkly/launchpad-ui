@@ -28,9 +28,11 @@ interface SelectValueProps<T extends object> extends AriaSelectValueProps<T> {
 }
 
 // biome-ignore lint/suspicious/noExplicitAny: ignore
+// oxlint-disable-next-line typescript/no-explicit-any -- Context objects can't carry an open generic; matches existing biome-ignore precedent
 const SelectContext = createContext<ContextValue<SelectProps<any>, HTMLDivElement>>(null);
 const SelectValueContext =
 	// biome-ignore lint/suspicious/noExplicitAny: ignore
+	// oxlint-disable-next-line typescript/no-explicit-any -- Context objects can't carry an open generic; matches existing biome-ignore precedent
 	createContext<ContextValue<SelectValueProps<any>, HTMLSpanElement>>(null);
 
 /**
@@ -39,6 +41,7 @@ const SelectValueContext =
  * https://react-spectrum.adobe.com/react-aria/Select.html
  */
 const Select = <T extends object>({ ref, ...props }: SelectProps<T>) => {
+	// oxlint-disable-next-line no-param-reassign -- sanctioned useLPContextProps merge pattern (see AGENTS.md context+prop-merging convention)
 	[props, ref] = useLPContextProps(props, ref, SelectContext);
 	return (
 		<AriaSelect
@@ -74,6 +77,7 @@ const Select = <T extends object>({ ref, ...props }: SelectProps<T>) => {
  * https://react-spectrum.adobe.com/react-aria/Select.html
  */
 const SelectValue = <T extends object>({ ref, ...props }: SelectValueProps<T>) => {
+	// oxlint-disable-next-line no-param-reassign -- sanctioned useLPContextProps merge pattern (see AGENTS.md context+prop-merging convention)
 	[props, ref] = useLPContextProps(props, ref, SelectValueContext);
 	return (
 		<AriaSelectValue

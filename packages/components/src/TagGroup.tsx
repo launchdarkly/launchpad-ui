@@ -60,6 +60,7 @@ interface TagListProps<T> extends AriaTagListProps<T> {
 
 const TagGroupContext = createContext<ContextValue<TagGroupProps, HTMLDivElement>>(null);
 // biome-ignore lint/suspicious/noExplicitAny: ignore
+// oxlint-disable-next-line typescript/no-explicit-any -- Context objects can't carry an open generic; matches existing biome-ignore precedent
 const TagListContext = createContext<ContextValue<TagListProps<any>, HTMLDivElement>>(null);
 
 /**
@@ -68,6 +69,7 @@ const TagListContext = createContext<ContextValue<TagListProps<any>, HTMLDivElem
  * https://react-spectrum.adobe.com/react-aria/TagGroup.html
  */
 const TagGroup = ({ ref, ...props }: TagGroupProps) => {
+	// oxlint-disable-next-line no-param-reassign -- sanctioned useLPContextProps merge pattern (see AGENTS.md context+prop-merging convention)
 	[props, ref] = useLPContextProps(props, ref, TagGroupContext);
 	const { className } = props;
 
@@ -78,6 +80,7 @@ const TagGroup = ({ ref, ...props }: TagGroupProps) => {
  * A tag list is a container for tags within a TagGroup.
  */
 const TagList = <T extends object>({ ref, ...props }: TagListProps<T>) => {
+	// oxlint-disable-next-line no-param-reassign -- sanctioned useLPContextProps merge pattern (see AGENTS.md context+prop-merging convention)
 	[props, ref] = useLPContextProps(props, ref, TagListContext);
 	return (
 		<AriaTagList

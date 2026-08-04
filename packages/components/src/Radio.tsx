@@ -42,6 +42,7 @@ const RadioIcon = ({ isSelected }: Partial<RadioRenderProps>) => (
  * https://react-spectrum.adobe.com/react-aria/RadioGroup.html
  */
 const Radio = ({ ref, ...props }: RadioProps) => {
+	// oxlint-disable-next-line no-param-reassign -- sanctioned useLPContextProps merge pattern (see AGENTS.md context+prop-merging convention)
 	[props, ref] = useLPContextProps(props, ref, RadioContext);
 	return (
 		<AriaRadio

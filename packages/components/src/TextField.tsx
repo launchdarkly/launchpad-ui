@@ -26,6 +26,7 @@ const TextFieldContext = createContext<ContextValue<TextFieldProps, HTMLDivEleme
  * https://react-spectrum.adobe.com/react-aria/TextField.html
  */
 const TextField = ({ ref, ...props }: TextFieldProps) => {
+	// oxlint-disable-next-line no-param-reassign -- sanctioned useLPContextProps merge pattern (see AGENTS.md context+prop-merging convention)
 	[props, ref] = useLPContextProps(props, ref, TextFieldContext);
 	return (
 		<AriaTextField

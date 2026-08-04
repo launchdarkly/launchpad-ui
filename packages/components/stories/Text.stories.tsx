@@ -83,19 +83,19 @@ export const Bold: Story = {
 			<Text size="large" bold={false}>
 				Large regular
 			</Text>
-			<Text size="large" bold={true}>
+			<Text size="large" bold>
 				Large bold
 			</Text>
 			<Text size="medium" bold={false}>
 				Medium regular
 			</Text>
-			<Text size="medium" bold={true}>
+			<Text size="medium" bold>
 				Medium bold
 			</Text>
 			<Text size="small" bold={false}>
 				Small regular
 			</Text>
-			<Text size="small" bold={true}>
+			<Text size="small" bold>
 				Small bold
 			</Text>
 		</div>

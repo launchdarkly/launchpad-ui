@@ -15,6 +15,7 @@ const customRender = (ui: ReactElement, options = {}): ReturnType<typeof render>
 	});
 
 // biome-ignore lint/performance/noReExportAll: ignore
+// oxlint-disable-next-line oxc/no-barrel-file -- test-only helper, never shipped in a published bundle
 export * from '@testing-library/react';
 export { default as userEvent } from '@testing-library/user-event';
 // override render export

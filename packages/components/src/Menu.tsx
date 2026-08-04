@@ -44,6 +44,7 @@ interface MenuItemProps<T> extends AriaMenuItemProps<T>, VariantProps<typeof men
 }
 
 // biome-ignore lint/suspicious/noExplicitAny: ignore
+// oxlint-disable-next-line typescript/no-explicit-any -- Context objects can't carry an open generic; matches existing biome-ignore precedent
 const MenuContext = createContext<ContextValue<MenuProps<any>, HTMLDivElement>>(null);
 
 /**
@@ -52,6 +53,7 @@ const MenuContext = createContext<ContextValue<MenuProps<any>, HTMLDivElement>>(
  * https://react-spectrum.adobe.com/react-aria/Menu.html
  */
 const Menu = <T extends object>({ ref, ...props }: MenuProps<T>) => {
+	// oxlint-disable-next-line no-param-reassign -- sanctioned useLPContextProps merge pattern (see AGENTS.md context+prop-merging convention)
 	[props, ref] = useLPContextProps(props, ref, MenuContext);
 	return (
 		<AriaMenu

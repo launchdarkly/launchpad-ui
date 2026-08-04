@@ -100,6 +100,7 @@ const ButtonComponent = forwardRef<HTMLButtonElement, ButtonProps>((props, ref) 
 				children,
 				undefined,
 				// biome-ignore lint/suspicious/noExplicitAny: ignore
+				// oxlint-disable-next-line typescript/no-explicit-any -- matches existing biome-ignore precedent
 				getFinalChildren((children as ReactElement<any>).props.children),
 			);
 		}
@@ -110,7 +111,9 @@ const ButtonComponent = forwardRef<HTMLButtonElement, ButtonProps>((props, ref) 
 	const isDisabled = disabled || isLoading;
 
 	const handleClick = (event: MouseEvent<HTMLAnchorElement> & MouseEvent<HTMLButtonElement>) => {
-		if (disabled) return event.preventDefault();
+		if (disabled) {
+			return event.preventDefault();
+		}
 
 		onClick?.(event);
 	};

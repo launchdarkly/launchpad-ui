@@ -60,7 +60,9 @@ const useImageLoadingStatus = (src?: string) => {
 		const image = new window.Image();
 
 		const updateStatus = (status: ImageLoadingStatus) => () => {
-			if (!isMounted) return;
+			if (!isMounted) {
+				return;
+			}
 			setLoadingStatus(status);
 		};
 
@@ -83,7 +85,7 @@ const useLPContextProps = <T, U extends SlotProps, E>(
 	context: Context<ContextValue<U, E>>,
 ): [T, Ref<E | null>] => {
 	const ctx = useSlottedContext(context, props.slot) || {};
-	// @ts-expect-error
+	// @ts-expect-error -- `ctx` is `U | {}`; the `{}` branch has no `ref` property to destructure
 	const { ref: contextRef, ...contextProps } = ctx;
 	const mergedRef = useMemo(() => mergeRefs(ref, contextRef), [ref, contextRef]);
 	const mergedProps = mergeProps(contextProps, props) as unknown as T;

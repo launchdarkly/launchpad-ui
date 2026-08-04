@@ -58,6 +58,7 @@ const IconButtonContext =
  * https://react-spectrum.adobe.com/react-aria/Button.html
  */
 const IconButton = ({ ref, ...props }: IconButtonProps) => {
+	// oxlint-disable-next-line no-param-reassign -- sanctioned useLPContextProps merge pattern (see AGENTS.md context+prop-merging convention)
 	[props, ref] = useLPContextProps(props, ref, IconButtonContext);
 	const perceivableProps = useContext(PerceivableContext);
 	const { size = 'medium', variant = 'default', icon } = props;

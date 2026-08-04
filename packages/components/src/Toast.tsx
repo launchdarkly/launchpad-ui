@@ -71,13 +71,11 @@ interface ToastValue {
 
 interface LPToastContent extends ToastValue, IconVariants {}
 
-interface ToastProps<LPToastContent> extends AriaToastProps<LPToastContent>, ToastVariants {
+interface ToastProps<T> extends AriaToastProps<T>, ToastVariants {
 	ref?: Ref<HTMLDivElement>;
 }
 
-interface ToastRegionProps<LPToastContent>
-	extends Partial<AriaToastRegionProps<LPToastContent>>,
-		RegionVariants {}
+interface ToastRegionProps<T> extends Partial<AriaToastRegionProps<T>>, RegionVariants {}
 
 const animate = (fn: () => void) => {
 	if ('startViewTransition' in document) {

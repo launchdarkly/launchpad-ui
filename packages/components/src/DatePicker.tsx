@@ -51,6 +51,7 @@ const DateRangePickerContext =
  * https://react-spectrum.adobe.com/react-aria/DatePicker.html
  */
 const DatePicker = <T extends DateValue>({ ref, ...props }: DatePickerProps<T>) => {
+	// oxlint-disable-next-line no-param-reassign -- sanctioned useLPContextProps merge pattern (see AGENTS.md context+prop-merging convention)
 	[props, ref] = useLPContextProps(props, ref, DatePickerContext);
 	const formContext = useSlottedContext(FormContext);
 	const buttonRef = useRef<HTMLButtonElement>(null);
@@ -65,7 +66,7 @@ const DatePicker = <T extends DateValue>({ ref, ...props }: DatePickerProps<T>) 
 
 	useResizeObserver({
 		ref: buttonRef,
-		onResize: onResize,
+		onResize,
 	});
 
 	return (
@@ -117,6 +118,7 @@ const DatePicker = <T extends DateValue>({ ref, ...props }: DatePickerProps<T>) 
  * https://react-spectrum.adobe.com/react-aria/DateRangePicker.html
  */
 const DateRangePicker = <T extends DateValue>({ ref, ...props }: DateRangePickerProps<T>) => {
+	// oxlint-disable-next-line no-param-reassign -- sanctioned useLPContextProps merge pattern (see AGENTS.md context+prop-merging convention)
 	[props, ref] = useLPContextProps(props, ref, DateRangePickerContext);
 	const formContext = useSlottedContext(FormContext);
 	const buttonRef = useRef<HTMLButtonElement>(null);
@@ -131,7 +133,7 @@ const DateRangePicker = <T extends DateValue>({ ref, ...props }: DateRangePicker
 
 	useResizeObserver({
 		ref: buttonRef,
-		onResize: onResize,
+		onResize,
 	});
 
 	return (

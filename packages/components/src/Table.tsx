@@ -87,6 +87,7 @@ const TableContext = createContext<ContextValue<TableProps, HTMLTableElement>>(n
  * https://react-spectrum.adobe.com/react-aria/Table.html
  */
 const Table = ({ ref, ...props }: TableProps) => {
+	// oxlint-disable-next-line no-param-reassign -- sanctioned useLPContextProps merge pattern (see AGENTS.md context+prop-merging convention)
 	[props, ref] = useLPContextProps(props, ref, TableContext);
 	return (
 		<AriaTable

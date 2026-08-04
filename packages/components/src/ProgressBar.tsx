@@ -52,6 +52,7 @@ const ProgressBarContext = createContext<ContextValue<ProgressBarProps, HTMLDivE
  * https://react-spectrum.adobe.com/react-aria/ProgressBar.html
  */
 const ProgressBar = ({ ref, ...props }: ProgressBarProps) => {
+	// oxlint-disable-next-line no-param-reassign -- sanctioned useLPContextProps merge pattern (see AGENTS.md context+prop-merging convention)
 	[props, ref] = useLPContextProps(props, ref, ProgressBarContext);
 	const { size = 'small', variant = 'spinner' } = props;
 
@@ -92,7 +93,7 @@ const ProgressBar = ({ ref, ...props }: ProgressBarProps) => {
 									cy={center}
 									r={r}
 									strokeDasharray={`${c} ${c}`}
-									strokeDashoffset={c - (isIndeterminate ? 0.34 : percentage || 0 / 100) * c}
+									strokeDashoffset={c - (isIndeterminate ? 0.34 : (percentage || 0) / 100) * c}
 									transform="rotate(-90 16 16)"
 									className={styles.innerCircle}
 								/>

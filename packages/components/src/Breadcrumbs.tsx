@@ -32,6 +32,7 @@ interface BreadcrumbProps extends AriaBreadcrumbProps {
 
 const BreadcrumbsContext =
 	// biome-ignore lint/suspicious/noExplicitAny: ignore
+	// oxlint-disable-next-line typescript/no-explicit-any -- Context objects can't carry an open generic; matches existing biome-ignore precedent
 	createContext<ContextValue<BreadcrumbsProps<any>, HTMLOListElement>>(null);
 
 /**
@@ -40,6 +41,7 @@ const BreadcrumbsContext =
  * https://react-spectrum.adobe.com/react-aria/Breadcrumbs.html
  */
 const Breadcrumbs = <T extends object>({ ref, ...props }: BreadcrumbsProps<T>) => {
+	// oxlint-disable-next-line no-param-reassign -- sanctioned useLPContextProps merge pattern (see AGENTS.md context+prop-merging convention)
 	[props, ref] = useLPContextProps(props, ref, BreadcrumbsContext);
 	const { className } = props;
 

@@ -38,6 +38,7 @@ const ToggleButtonGroupContext =
  * https://react-spectrum.adobe.com/react-aria/ToggleButtonGroup.html
  */
 const ToggleButtonGroup = ({ ref, ...props }: ToggleButtonGroupProps) => {
+	// oxlint-disable-next-line no-param-reassign -- sanctioned useLPContextProps merge pattern (see AGENTS.md context+prop-merging convention)
 	[props, ref] = useLPContextProps(props, ref, ToggleButtonGroupContext);
 	const { appearance = 'default' } = props;
 

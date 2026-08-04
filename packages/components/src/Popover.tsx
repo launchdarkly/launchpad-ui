@@ -46,6 +46,7 @@ const overlayArrowStyles = cva(styles.arrow);
  * https://react-spectrum.adobe.com/react-aria/Popover.html
  */
 const Popover = ({ ref, ...props }: PopoverProps) => {
+	// oxlint-disable-next-line no-param-reassign -- sanctioned useLPContextProps merge pattern (see AGENTS.md context+prop-merging convention)
 	[props, ref] = useLPContextProps(props, ref, PopoverContext);
 	const { offset = 4, crossOffset = 0, width = 'default' } = props;
 

@@ -40,6 +40,7 @@ const ToolbarContext = createContext<ContextValue<ToolbarProps, HTMLDivElement>>
  * https://react-spectrum.adobe.com/react-aria/Toolbar.html
  */
 const Toolbar = ({ ref, ...props }: ToolbarProps) => {
+	// oxlint-disable-next-line no-param-reassign -- sanctioned useLPContextProps merge pattern (see AGENTS.md context+prop-merging convention)
 	[props, ref] = useLPContextProps(props, ref, ToolbarContext);
 	const { spacing = 'basic' } = props;
 

@@ -38,12 +38,14 @@ const extensionsDtcgDelegate = (tokens: DesignTokens): PreprocessedTokens => {
 		let extensions = _extensions;
 		const keys = Object.keys(slice);
 		if (!keys.includes('$extensions') && extensions && keys.includes('$value')) {
+			// oxlint-disable-next-line no-param-reassign -- deliberately mutating the local structuredClone() copy while walking it
 			slice.$extensions = extensions;
 		}
 
 		if (slice.$extensions) {
 			extensions = slice.$extensions;
 			if (slice.$value === undefined) {
+				// oxlint-disable-next-line no-param-reassign -- deliberately mutating the local structuredClone() copy while walking it
 				delete slice.$extensions;
 			}
 		}
@@ -54,12 +56,13 @@ const extensionsDtcgDelegate = (tokens: DesignTokens): PreprocessedTokens => {
 			}
 		}
 	};
-	//@ts-ignore
+	// @ts-expect-error clone's shape is widened by the recursive walk below
 	recurse(clone);
 	return clone as PreprocessedTokens;
 };
 
 const removeExtensions = (slice: DesignTokens | DesignToken): PreprocessedTokens => {
+	// oxlint-disable-next-line no-param-reassign -- deliberately mutating the local structuredClone() copy while walking it
 	delete slice.$extensions;
 	for (const value of Object.values(slice)) {
 		if (typeof value === 'object') {
@@ -247,10 +250,10 @@ StyleDictionary.registerFormat({
 				const {
 					// @ts-expect-error attr
 					attributes: { family, weight, style },
-					formats,
+					formats: fontFormats,
 					$value,
 				} = token;
-				const urls = formats.map(
+				const urls = fontFormats.map(
 					(extension: string) => `url("./assets/${$value}.${extension}") format("${extension}")`,
 				);
 				return `@font-face {\n\tfont-family: "${family}";\n\tfont-style: ${style};\n\tfont-weight: ${weight};\n\tsrc: ${urls.join(',\n\t\t\t ')};\n\tfont-display: swap;\n}\n`;
@@ -355,6 +358,7 @@ StyleDictionary.registerTransform({
 	name: 'custom/value/name',
 	type: transformTypes.attribute,
 	transform: (token) => {
+		// oxlint-disable-next-line no-param-reassign -- Style Dictionary's transform API expects the token object mutated and returned; shallow-copying it here previously broke downstream font-asset generation
 		token.$value = token.name;
 		return token;
 	},

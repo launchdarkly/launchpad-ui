@@ -25,10 +25,12 @@ const useOverflowY = (ref: MutableRefObject<HTMLDivElement | null>) => {
 		(target: HTMLElement | null) =>
 			new ResizeObserver(() => {
 				if (target) {
+					// oxlint-disable-next-line no-param-reassign -- setting inline styles on the observed DOM element, not a React prop
 					target.style.overflowY = 'auto';
 
 					const overflow = target.scrollHeight > target.clientHeight ? 'auto' : 'initial';
 
+					// oxlint-disable-next-line no-param-reassign -- setting inline styles on the observed DOM element, not a React prop
 					target.style.overflowY = overflow;
 				}
 			}),

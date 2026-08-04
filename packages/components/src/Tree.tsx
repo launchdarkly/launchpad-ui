@@ -34,12 +34,14 @@ interface TreeItemProps<T> extends AriaTreeItemProps<T> {
 }
 
 // biome-ignore lint/suspicious/noExplicitAny: ignore
+// oxlint-disable-next-line typescript/no-explicit-any -- Context objects can't carry an open generic; matches existing biome-ignore precedent
 const TreeContext = createContext<ContextValue<TreeProps<any>, HTMLDivElement>>(null);
 
 /**
  * A tree displays a hierarchical list of items that can be expanded and collapsed.
  */
 const Tree = <T extends object>({ ref, ...props }: TreeProps<T>) => {
+	// oxlint-disable-next-line no-param-reassign -- sanctioned useLPContextProps merge pattern (see AGENTS.md context+prop-merging convention)
 	[props, ref] = useLPContextProps(props, ref, TreeContext);
 	return (
 		<AriaTree

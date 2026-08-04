@@ -31,6 +31,7 @@ const StatusIcon = ({ kind, size = 'medium', ...rest }: StatusIconProps) => {
 			name = 'notifications';
 			ariaLabel = 'Notification';
 			break;
+		// skip default: `kind` is a closed union and every member is handled above.
 	}
 
 	return <Icon aria-label={`${ariaLabel} icon`} role="img" size={size} {...rest} name={name} />;

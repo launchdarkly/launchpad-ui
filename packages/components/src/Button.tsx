@@ -53,6 +53,7 @@ const ButtonContext = createContext<ContextValue<ButtonContextValue, HTMLButtonE
  * https://react-spectrum.adobe.com/react-aria/Button.html
  */
 const Button = ({ ref, ...props }: ButtonProps) => {
+	// oxlint-disable-next-line no-param-reassign -- sanctioned useLPContextProps merge pattern (see AGENTS.md context+prop-merging convention)
 	[props, ref] = useLPContextProps(props, ref, ButtonContext);
 	const perceivableProps = useContext(PerceivableContext);
 	const { size = 'medium', variant = 'default' } = props;

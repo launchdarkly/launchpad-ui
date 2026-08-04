@@ -27,10 +27,10 @@ const NavigationMenuDropdown = <T extends object>(props: NavigationMenuDropdownP
 	// ...recreate the `isActive` behavior of a NavLink to map the current route to the selected option
 	const [selectedItem] = useState<string>(() => {
 		return (
-			[...state.collection].find(({ props }) => {
+			[...state.collection].find(({ props: itemProps }) => {
 				return (
-					pathname === props.to ||
-					(pathname.startsWith(props.to) && pathname.charAt(props.to.length) === '/')
+					pathname === itemProps.to ||
+					(pathname.startsWith(itemProps.to) && pathname.charAt(itemProps.to.length) === '/')
 				);
 			})?.props.name || props.title
 		);

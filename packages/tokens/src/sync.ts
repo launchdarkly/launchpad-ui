@@ -1,6 +1,8 @@
 import type { Variable } from './types';
 
+// oxlint-disable-next-line no-restricted-imports -- this script reads its own package's freshly built Style Dictionary output, not another package's dist
 import darkTokens from '../dist/figma.dark.json';
+// oxlint-disable-next-line no-restricted-imports -- this script reads its own package's freshly built Style Dictionary output, not another package's dist
 import defaultTokens from '../dist/figma.default.json';
 import { FigmaApi } from './figma';
 import { generatePostVariablesPayload } from './variables';
