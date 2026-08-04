@@ -83,7 +83,7 @@
 		"not IE 11"
 	],
 	"engines": {
-		"node": ">=22.14.0",
+		"node": ">=22.22.0",
 		"npm": ">=11.5.1"
 	},
 	"packageManager": "pnpm@11.0.1",
