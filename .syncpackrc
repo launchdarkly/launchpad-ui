@@ -2,6 +2,30 @@
   "$schema": "./node_modules/syncpack/schema.json",
   "sortPackages": true,
   "strict": true,
+  "semverGroups": [
+    {
+      "label": "VS Code extension is intentionally left unpinned (engines.vscode compatibility)",
+      "packages": [
+        "launchpad-design-system"
+      ],
+      "isIgnored": true
+    },
+    {
+      "label": "Require fixed external dependency versions",
+      "dependencyTypes": [
+        "prod",
+        "dev"
+      ],
+      "dependencies": [
+        "**",
+        "!@launchpad-ui/**"
+      ],
+      "packages": [
+        "**"
+      ],
+      "range": ""
+    }
+  ],
   "versionGroups": [
     {
       "label": "Enforce workspace protocol for workspace packages",
