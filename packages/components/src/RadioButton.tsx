@@ -1,12 +1,11 @@
 import type { Ref } from 'react';
-import type { RadioProps } from 'react-aria-components/RadioGroup';
-import type { ContextValue } from 'react-aria-components/slots';
-import type { ButtonVariants } from './Button';
-
 import { createContext } from 'react';
 import { composeRenderProps } from 'react-aria-components/composeRenderProps';
+import type { RadioProps } from 'react-aria-components/RadioGroup';
 import { Radio as AriaRadio } from 'react-aria-components/RadioGroup';
+import type { ContextValue } from 'react-aria-components/slots';
 
+import type { ButtonVariants } from './Button';
 import { buttonStyles } from './Button';
 import { useLPContextProps } from './utils';
 

@@ -28,13 +28,11 @@
 }
 
 /* Filled buttons have no border, so a compact group needs a divider between halves. */
-:global([data-spacing='compact'][data-orientation='horizontal'])
-	> :is(.primary, .destructive):not(:first-child) {
+:global([data-spacing='compact'][data-orientation='horizontal']) > :is(.primary, .destructive):not(:first-child) {
 	border-inline-start: 1px solid var(--lp-button-divider-color);
 }
 
-:global([data-spacing='compact'][data-orientation='vertical'])
-	> :is(.primary, .destructive):not(:first-child) {
+:global([data-spacing='compact'][data-orientation='vertical']) > :is(.primary, .destructive):not(:first-child) {
 	border-block-start: 1px solid var(--lp-button-divider-color);
 }
 

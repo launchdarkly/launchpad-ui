@@ -1,6 +1,5 @@
-import type { Config } from 'style-dictionary/types';
-
 import { formats, transformGroups, transforms } from 'style-dictionary/enums';
+import type { Config } from 'style-dictionary/types';
 
 export const themes = ['default', 'dark'] as const;
 export type Theme = (typeof themes)[number];

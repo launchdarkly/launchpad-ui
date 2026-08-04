@@ -1,7 +1,6 @@
-import type { ToggleButtonProps } from '../src';
-
 import figma from '@figma/code-connect';
 
+import type { ToggleButtonProps } from '../src';
 import { ToggleButton } from '../src';
 
 figma.connect(

@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
+import { userEvent, within } from 'storybook/test';
 
 import { vars } from '@launchpad-ui/vars';
-import { userEvent, within } from 'storybook/test';
 
 import { Checkbox } from '../src/Checkbox';
 
@@ -10,8 +10,7 @@ const meta: Meta<typeof Checkbox> = {
 	title: 'Components/Forms/Checkbox',
 	parameters: {
 		figma: {
-			design:
-				'https://www.figma.com/design/98HKKXL2dTle29ikJ3tzk7/%F0%9F%9A%80-LaunchPad?node-id=1-32733&p=f&m=dev',
+			design: 'https://www.figma.com/design/98HKKXL2dTle29ikJ3tzk7/%F0%9F%9A%80-LaunchPad?node-id=1-32733&p=f&m=dev',
 		},
 	},
 	decorators: [

@@ -7,9 +7,7 @@ const getNodeForIndex = (index: number | null, menuId: string) =>
 
 const handleKeyboardInteractions = (
 	event: KeyboardEvent,
-	keyHandlers: Partial<
-		Record<'handleUp' | 'handleDown' | 'handleEnter', (e: KeyboardEvent) => void>
-	>,
+	keyHandlers: Partial<Record<'handleUp' | 'handleDown' | 'handleEnter', (e: KeyboardEvent) => void>>,
 ) => {
 	const ops = {
 		ArrowUp: keyHandlers.handleUp,

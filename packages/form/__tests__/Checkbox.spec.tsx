@@ -15,12 +15,7 @@ describe('Checkbox', () => {
 
 	it('renders disabled', () => {
 		render(
-			<Checkbox
-				checked={false}
-				aria-label="Test checkbox"
-				onChange={() => undefined}
-				disabled
-			>
+			<Checkbox checked={false} aria-label="Test checkbox" onChange={() => undefined} disabled>
 				Label
 			</Checkbox>,
 		);

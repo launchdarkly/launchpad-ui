@@ -20,12 +20,7 @@ figma.connect(
 				<Group>
 					{/* <Icon name="search" size="small" /> */}
 					<Input placeholder="Enter a value" />
-					<IconButton
-						aria-label="clear"
-						icon="cancel-circle-outline"
-						size="small"
-						variant="minimal"
-					/>
+					<IconButton aria-label="clear" icon="cancel-circle-outline" size="small" variant="minimal" />
 				</Group>
 			</SearchField>
 		),

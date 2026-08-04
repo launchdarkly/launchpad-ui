@@ -1,7 +1,7 @@
-import type { Meta, StoryObj } from '@storybook/react-vite';
 import type { ComponentType } from 'react';
-
 import { parseDate } from '@internationalized/date';
+import type { Meta, StoryObj } from '@storybook/react-vite';
+
 import { vars } from '@launchpad-ui/vars';
 
 import { CalendarCell, CalendarGrid, RangeCalendar } from '../src/Calendar';
@@ -14,8 +14,7 @@ const meta: Meta<typeof RangeCalendar> = {
 	title: 'Components/Date and Time/RangeCalendar',
 	parameters: {
 		figma: {
-			design:
-				'https://www.figma.com/design/98HKKXL2dTle29ikJ3tzk7/%F0%9F%9A%80-LaunchPad?node-id=10675-15846&m=dev',
+			design: 'https://www.figma.com/design/98HKKXL2dTle29ikJ3tzk7/%F0%9F%9A%80-LaunchPad?node-id=10675-15846&m=dev',
 		},
 		a11y: {
 			options: {
@@ -36,21 +35,9 @@ export const Example: Story = {
 		children: (
 			<>
 				<header>
-					<IconButton
-						slot="previous"
-						icon="chevron-left"
-						aria-label="previous"
-						size="small"
-						variant="minimal"
-					/>
+					<IconButton slot="previous" icon="chevron-left" aria-label="previous" size="small" variant="minimal" />
 					<Heading />
-					<IconButton
-						slot="next"
-						icon="chevron-right"
-						aria-label="next"
-						size="small"
-						variant="minimal"
-					/>
+					<IconButton slot="next" icon="chevron-right" aria-label="next" size="small" variant="minimal" />
 				</header>
 				<CalendarGrid>{(date) => <CalendarCell date={date} />}</CalendarGrid>
 			</>
@@ -67,27 +54,13 @@ export const MultipleMonths: Story = {
 		children: (
 			<>
 				<header>
-					<IconButton
-						slot="previous"
-						icon="chevron-left"
-						aria-label="previous"
-						size="small"
-						variant="minimal"
-					/>
+					<IconButton slot="previous" icon="chevron-left" aria-label="previous" size="small" variant="minimal" />
 					<Heading />
-					<IconButton
-						slot="next"
-						icon="chevron-right"
-						aria-label="next"
-						size="small"
-						variant="minimal"
-					/>
+					<IconButton slot="next" icon="chevron-right" aria-label="next" size="small" variant="minimal" />
 				</header>
 				<div style={{ display: 'flex', gap: vars.spacing[900], overflow: 'auto' }}>
 					<CalendarGrid>{(date) => <CalendarCell date={date} />}</CalendarGrid>
-					<CalendarGrid offset={{ months: 1 }}>
-						{(date) => <CalendarCell date={date} />}
-					</CalendarGrid>
+					<CalendarGrid offset={{ months: 1 }}>{(date) => <CalendarCell date={date} />}</CalendarGrid>
 				</div>
 			</>
 		),

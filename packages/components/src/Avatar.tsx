@@ -1,12 +1,12 @@
-import type { VariantProps } from 'class-variance-authority';
 import type { ImgHTMLAttributes, Ref, SVGAttributes } from 'react';
-
-import { useLabels } from '@react-aria/utils';
-import { cva, cx } from 'class-variance-authority';
 import { mergeProps } from 'react-aria/mergeProps';
+import { useLabels } from '@react-aria/utils';
+import type { VariantProps } from 'class-variance-authority';
+import { cva, cx } from 'class-variance-authority';
+
+import { useImageLoadingStatus } from './utils';
 
 import styles from './styles/Avatar.module.css';
-import { useImageLoadingStatus } from './utils';
 
 const avatarStyles = cva(styles.base, {
 	variants: {
@@ -56,24 +56,12 @@ const Avatar = ({ className, children, size = 'medium', ref, src, ...props }: Av
 	// biome-ignore lint/a11y/useAltText: ignore
 	return (
 		// oxlint-disable-next-line jsx-a11y/alt-text -- `alt`/`aria-label` are spread in dynamically via mergeProps, not statically visible to the linter
-		<img
-			ref={ref}
-			src={src}
-			{...mergeProps(props, labelProps)}
-			className={avatarStyles({ size, className })}
-		/>
+		<img ref={ref} src={src} {...mergeProps(props, labelProps)} className={avatarStyles({ size, className })} />
 	);
 };
 
-const InitialsAvatar = ({
-	className,
-	size = 'medium',
-	children,
-	...props
-}: InitialsAvatarProps) => {
-	const color = children
-		? (children.toString().charCodeAt(0) + children.toString().charCodeAt(1)) % 5
-		: 0;
+const InitialsAvatar = ({ className, size = 'medium', children, ...props }: InitialsAvatarProps) => {
+	const color = children ? (children.toString().charCodeAt(0) + children.toString().charCodeAt(1)) % 5 : 0;
 	return (
 		// biome-ignore lint/a11y/noSvgWithoutTitle: ignore
 		<svg

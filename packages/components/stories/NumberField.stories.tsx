@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
+import { userEvent } from 'storybook/test';
 
 import { vars } from '@launchpad-ui/vars';
-import { userEvent } from 'storybook/test';
 
 import { Group } from '../src/Group';
 import { IconButton } from '../src/IconButton';
@@ -14,8 +14,7 @@ const meta: Meta<typeof NumberField> = {
 	title: 'Components/Forms/NumberField',
 	parameters: {
 		figma: {
-			design:
-				'https://www.figma.com/design/98HKKXL2dTle29ikJ3tzk7/%F0%9F%9A%80-LaunchPad?node-id=10876-33196&m=dev',
+			design: 'https://www.figma.com/design/98HKKXL2dTle29ikJ3tzk7/%F0%9F%9A%80-LaunchPad?node-id=10876-33196&m=dev',
 		},
 	},
 	decorators: [
@@ -38,20 +37,8 @@ export const Example: Story = {
 				<Label>Label</Label>
 				<Group>
 					<Input />
-					<IconButton
-						icon="minus"
-						aria-label="decrement"
-						size="small"
-						variant="minimal"
-						slot="decrement"
-					/>
-					<IconButton
-						icon="add"
-						aria-label="increment"
-						size="small"
-						variant="minimal"
-						slot="increment"
-					/>
+					<IconButton icon="minus" aria-label="decrement" size="small" variant="minimal" slot="decrement" />
+					<IconButton icon="add" aria-label="increment" size="small" variant="minimal" slot="increment" />
 				</Group>
 			</>
 		),
@@ -64,20 +51,8 @@ export const States: Story = {
 		const ExampleGroup = (
 			<Group>
 				<Input />
-				<IconButton
-					icon="minus"
-					aria-label="decrement"
-					size="small"
-					variant="minimal"
-					slot="decrement"
-				/>
-				<IconButton
-					icon="add"
-					aria-label="increment"
-					size="small"
-					variant="minimal"
-					slot="increment"
-				/>
+				<IconButton icon="minus" aria-label="decrement" size="small" variant="minimal" slot="decrement" />
+				<IconButton icon="add" aria-label="increment" size="small" variant="minimal" slot="increment" />
 			</Group>
 		);
 

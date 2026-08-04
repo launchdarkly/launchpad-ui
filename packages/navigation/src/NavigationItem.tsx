@@ -1,4 +1,5 @@
 import type { MouseEvent, ReactElement } from 'react';
+
 import type { NavItemProps } from './NavItem';
 import type { NavItemWithTooltipProps } from './NavItemWithTooltip';
 

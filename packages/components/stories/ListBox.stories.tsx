@@ -1,10 +1,10 @@
-import type { Meta, StoryObj } from '@storybook/react-vite';
 import type { ComponentType } from 'react';
+import { useState } from 'react';
 import type { Selection as AriaSelection } from 'react-aria-components/ListBox';
+import type { Meta, StoryObj } from '@storybook/react-vite';
+import { fireEvent, userEvent, within } from 'storybook/test';
 
 import { Icon } from '@launchpad-ui/icons';
-import { useState } from 'react';
-import { fireEvent, userEvent, within } from 'storybook/test';
 
 import { Header } from '../src/Header';
 import { ListBox, ListBoxItem } from '../src/ListBox';
@@ -118,12 +118,7 @@ export const Icons: Story = {
 export const States: Story = {
 	render: (args) => {
 		return (
-			<ListBox
-				aria-label="Items"
-				selectionMode="single"
-				disabledKeys={new Set(['react-aria-4'])}
-				{...args}
-			>
+			<ListBox aria-label="Items" selectionMode="single" disabledKeys={new Set(['react-aria-4'])} {...args}>
 				<ListBoxItem>Resting</ListBoxItem>
 				<ListBoxItem>Active</ListBoxItem>
 				<ListBoxItem>Focus Visible</ListBoxItem>

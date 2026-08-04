@@ -1,12 +1,13 @@
-import type { MenuProps } from '@launchpad-ui/menu';
 import type { ChangeEvent, ReactNode, SyntheticEvent } from 'react';
-import type { FilterOption } from './FilterMenu';
-
-import { Dropdown } from '@launchpad-ui/dropdown';
 import { cx } from 'classix';
 
+import { Dropdown } from '@launchpad-ui/dropdown';
+import type { MenuProps } from '@launchpad-ui/menu';
+
 import { FilterButton } from './FilterButton';
+import type { FilterOption } from './FilterMenu';
 import { FilterMenu } from './FilterMenu';
+
 import styles from './styles/Filter.module.css';
 
 const SEARCH_INPUT_THRESHOLD = 4;
@@ -67,8 +68,7 @@ const Filter = ({
 	clearAriaLabel,
 	...props
 }: FilterProps) => {
-	const enableSearch =
-		onSearchChange && (!!searchValue || options.length > SEARCH_INPUT_THRESHOLD || !isEmpty);
+	const enableSearch = onSearchChange && (!!searchValue || options.length > SEARCH_INPUT_THRESHOLD || !isEmpty);
 
 	const dropdownClasses = cx(styles.filter, className);
 
@@ -78,12 +78,7 @@ const Filter = ({
 	};
 
 	return (
-		<Dropdown
-			targetTestId={testId}
-			disabled={disabled}
-			targetClassName={dropdownClasses}
-			{...props}
-		>
+		<Dropdown targetTestId={testId} disabled={disabled} targetClassName={dropdownClasses} {...props}>
 			<FilterButton
 				isClearable={isClearable}
 				onClear={handleClear}

@@ -57,9 +57,7 @@ describe('toRgba', () => {
 
 describe('getTokenValue', () => {
 	it('returns the rgba string for a solid color (kept for backwards compatibility)', () => {
-		expect(getTokenValue({ color: 'rgb(61, 214, 245)', image: 'none' })).toBe(
-			'rgba(61, 214, 245, 1)',
-		);
+		expect(getTokenValue({ color: 'rgb(61, 214, 245)', image: 'none' })).toBe('rgba(61, 214, 245, 1)');
 	});
 
 	it('returns the gradient definition instead of the transparent fallback', () => {

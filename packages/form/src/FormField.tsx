@@ -1,14 +1,14 @@
 import type { JSX } from 'react';
-import type { FieldErrorProps } from './FieldError';
-import type { FormHintProps } from './FormHint';
-import type { LabelProps } from './Label';
-
 import { cx } from 'classix';
 
+import type { FieldErrorProps } from './FieldError';
 import { FieldError } from './FieldError';
 import { FormGroup } from './FormGroup';
+import type { FormHintProps } from './FormHint';
 import { FormHint } from './FormHint';
+import type { LabelProps } from './Label';
 import { Label } from './Label';
+
 import styles from './styles/Form.module.css';
 
 type FormFieldProps = {
@@ -75,12 +75,7 @@ const FormField = ({
 				</FormHint>
 			)}
 			{children}
-			<FieldError
-				className={styles.fieldErrorMessage}
-				name={name}
-				errorMessage={errorMessage}
-				{...FieldErrorProps}
-			/>
+			<FieldError className={styles.fieldErrorMessage} name={name} errorMessage={errorMessage} {...FieldErrorProps} />
 		</FormGroup>
 	);
 };

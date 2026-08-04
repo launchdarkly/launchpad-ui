@@ -66,9 +66,8 @@ export const Size: Story = {
 export const Inline: Story = {
 	render: () => (
 		<Text>
-			This paragraph contains inline code like <Code>const variable = "value";</Code> which should
-			flow naturally within the text. The code component should behave as an inline element, not
-			breaking the text flow.
+			This paragraph contains inline code like <Code>const variable = "value";</Code> which should flow naturally within
+			the text. The code component should behave as an inline element, not breaking the text flow.
 		</Text>
 	),
 };

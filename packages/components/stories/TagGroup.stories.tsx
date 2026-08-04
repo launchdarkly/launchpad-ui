@@ -1,7 +1,6 @@
-import type { Meta, StoryObj } from '@storybook/react-vite';
 import type { ComponentType } from 'react';
-
 import { useListData } from 'react-stately/useListData';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import { userEvent } from 'storybook/test';
 
 import { Label } from '../src/Label';
@@ -11,8 +10,7 @@ const meta: Meta<typeof TagGroup> = {
 	component: TagGroup,
 	parameters: {
 		figma: {
-			design:
-				'https://www.figma.com/design/98HKKXL2dTle29ikJ3tzk7/%F0%9F%9A%80-LaunchPad?node-id=1-32263&m=dev',
+			design: 'https://www.figma.com/design/98HKKXL2dTle29ikJ3tzk7/%F0%9F%9A%80-LaunchPad?node-id=1-32263&m=dev',
 		},
 	},
 	subcomponents: { TagList, Tag } as Record<string, ComponentType<unknown>>,

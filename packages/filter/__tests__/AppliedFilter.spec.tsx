@@ -65,9 +65,7 @@ describe('AppliedFilter', () => {
 	describe('menu search', () => {
 		it('should display a search field when a searchValue is provided', async () => {
 			const user = userEvent.setup();
-			render(
-				createComponent({ options: oneOption, onSearchChange: vi.fn(), searchValue: 'something' }),
-			);
+			render(createComponent({ options: oneOption, onSearchChange: vi.fn(), searchValue: 'something' }));
 			await user.click(screen.getByRole('button'));
 
 			await waitFor(() => {

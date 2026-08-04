@@ -1,27 +1,23 @@
-import type { VariantProps } from 'class-variance-authority';
 import type { Ref } from 'react';
+import { createContext } from 'react';
+import { composeRenderProps } from 'react-aria-components/composeRenderProps';
 import type {
 	MenuItemProps as AriaMenuItemProps,
 	MenuProps as AriaMenuProps,
 	MenuTriggerProps,
 	SubmenuTriggerProps,
 } from 'react-aria-components/Menu';
+import { Menu as AriaMenu, MenuItem as AriaMenuItem, MenuTrigger, SubmenuTrigger } from 'react-aria-components/Menu';
 import type { ContextValue } from 'react-aria-components/slots';
+import type { VariantProps } from 'class-variance-authority';
+import { cva } from 'class-variance-authority';
 
 import { Icon } from '@launchpad-ui/icons';
-import { cva } from 'class-variance-authority';
-import { createContext } from 'react';
-import { composeRenderProps } from 'react-aria-components/composeRenderProps';
-import {
-	Menu as AriaMenu,
-	MenuItem as AriaMenuItem,
-	MenuTrigger,
-	SubmenuTrigger,
-} from 'react-aria-components/Menu';
 
 import { CheckboxIcon, checkboxStyles } from './Checkbox';
-import styles from './styles/Menu.module.css';
 import { useLPContextProps } from './utils';
+
+import styles from './styles/Menu.module.css';
 
 const menuStyles = cva(styles.menu);
 const menuItemStyles = cva(styles.item, {
@@ -78,25 +74,22 @@ const MenuItem = <T extends object>({ variant = 'default', ref, ...props }: Menu
 				menuItemStyles({ ...renderProps, variant, className }),
 			)}
 		>
-			{composeRenderProps(
-				props.children,
-				(children, { selectionMode, isSelected, hasSubmenu, isDisabled }) => (
-					<>
-						{selectionMode === 'multiple' && (
-							<div
-								className={checkboxStyles()}
-								data-selected={isSelected || undefined}
-								data-disabled={isDisabled || undefined}
-							>
-								<CheckboxIcon isSelected={isSelected} />
-							</div>
-						)}
-						<span className={styles.content}>{children}</span>
-						{selectionMode === 'single' && isSelected && <Icon name="check-circle" size="small" />}
-						{hasSubmenu && <Icon name="chevron-right" size="small" />}
-					</>
-				),
-			)}
+			{composeRenderProps(props.children, (children, { selectionMode, isSelected, hasSubmenu, isDisabled }) => (
+				<>
+					{selectionMode === 'multiple' && (
+						<div
+							className={checkboxStyles()}
+							data-selected={isSelected || undefined}
+							data-disabled={isDisabled || undefined}
+						>
+							<CheckboxIcon isSelected={isSelected} />
+						</div>
+					)}
+					<span className={styles.content}>{children}</span>
+					{selectionMode === 'single' && isSelected && <Icon name="check-circle" size="small" />}
+					{hasSubmenu && <Icon name="chevron-right" size="small" />}
+				</>
+			))}
 		</AriaMenuItem>
 	);
 };

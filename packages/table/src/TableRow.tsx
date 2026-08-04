@@ -1,5 +1,4 @@
 import type { HTMLProps } from 'react';
-
 import { cx } from 'classix';
 
 import styles from './styles/Table.module.css';

@@ -1,7 +1,3 @@
 {
-	"recommendations": [
-		"oxc.oxc-vscode",
-		"GitHub.vscode-github-actions",
-		"connor4312.esbuild-problem-matchers"
-	]
+	"recommendations": ["oxc.oxc-vscode", "GitHub.vscode-github-actions", "connor4312.esbuild-problem-matchers"]
 }

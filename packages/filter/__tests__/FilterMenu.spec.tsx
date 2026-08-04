@@ -1,13 +1,10 @@
-import type { FilterMenuProps } from '../src/FilterMenu';
-
 import { describe, expect, it, vi } from 'vitest';
 
 import { render, screen, userEvent, waitFor } from '../../../test/utils';
+import type { FilterMenuProps } from '../src/FilterMenu';
 import { FilterMenu } from '../src/FilterMenu';
 
-const createComponent = (props?: Partial<FilterMenuProps>) => (
-	<FilterMenu options={[]} {...props} />
-);
+const createComponent = (props?: Partial<FilterMenuProps>) => <FilterMenu options={[]} {...props} />;
 
 const oneOption = [
 	{
@@ -38,9 +35,7 @@ describe('FilterMenu', () => {
 		expect(screen.getByRole('menuitemradio', { name: 'two' })).not.toBeChecked();
 
 		expect(
-			screen
-				.getByRole('menuitemradio', { name: 'two' })
-				.parentElement?.querySelector('[class*="_Menu-divider"]'),
+			screen.getByRole('menuitemradio', { name: 'two' }).parentElement?.querySelector('[class*="_Menu-divider"]'),
 		).toBeVisible();
 	});
 

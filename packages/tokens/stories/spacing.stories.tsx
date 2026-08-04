@@ -1,11 +1,11 @@
-import type { default as Tokens } from '../dist';
+import { Fragment } from 'react';
 
 import { vars } from '@launchpad-ui/vars';
-import { Fragment } from 'react';
 
 import { Button } from '../../components/src/Button';
 import { ToastRegion, toastQueue } from '../../components/src/Toast';
 import { Tooltip, TooltipTrigger } from '../../components/src/Tooltip';
+import type { default as Tokens } from '../dist';
 // @ts-expect-error ts not detecting d.ts for es file
 import tokens from '../dist/index.es.js';
 import spacingJson from '../tokens/spacing.json';
@@ -29,9 +29,8 @@ export const Spacing = {
 	render: () => (
 		<>
 			<div style={{ marginBottom: 'var(--lp-spacing-500)', font: vars.text.body[1].regular }}>
-				Use <code style={{ font: vars.text.code[1].regular }}>var(--space-*)</code> for margin,
-				padding, and gap. Need a negative offset? Wrap in{' '}
-				<code style={{ font: vars.text.code[1].regular }}>calc()</code>
+				Use <code style={{ font: vars.text.code[1].regular }}>var(--space-*)</code> for margin, padding, and gap. Need a
+				negative offset? Wrap in <code style={{ font: vars.text.code[1].regular }}>calc()</code>
 			</div>
 			<div
 				style={{

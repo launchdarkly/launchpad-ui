@@ -1,5 +1,4 @@
 import type { RefObject } from 'react';
-
 import { type SeparatorProps, useSeparator } from 'react-aria/useSeparator';
 
 import styles from './styles/Menu.module.css';
@@ -20,14 +19,7 @@ const MenuDivider = ({
 		elementType,
 	});
 
-	return (
-		<div
-			{...separatorProps}
-			data-test-id={testId}
-			ref={innerRef}
-			className={styles['Menu-divider']}
-		/>
-	);
+	return <div {...separatorProps} data-test-id={testId} ref={innerRef} className={styles['Menu-divider']} />;
 };
 
 export { MenuDivider };

@@ -1,8 +1,8 @@
 import type { ComponentPropsWithRef } from 'react';
-import type { MenuProps } from './Menu';
-
-import { cx } from 'classix';
 import { forwardRef } from 'react';
+import { cx } from 'classix';
+
+import type { MenuProps } from './Menu';
 
 import styles from './styles/Menu.module.css';
 
@@ -11,21 +11,15 @@ type MenuBaseProps = ComponentPropsWithRef<'div'> & {
 	size?: MenuProps<string>['size'];
 };
 
-const MenuBase = forwardRef<HTMLDivElement, MenuBaseProps>(
-	({ children, size, isVirtual, ...props }, ref) => {
-		const classes = cx(
-			styles.Menu,
-			isVirtual && styles['Menu--isVirtual'],
-			size && styles[`MenuSize--${size}`],
-		);
+const MenuBase = forwardRef<HTMLDivElement, MenuBaseProps>(({ children, size, isVirtual, ...props }, ref) => {
+	const classes = cx(styles.Menu, isVirtual && styles['Menu--isVirtual'], size && styles[`MenuSize--${size}`]);
 
-		return (
-			<div {...props} role="menu" className={classes} ref={ref}>
-				{children}
-			</div>
-		);
-	},
-);
+	return (
+		<div {...props} role="menu" className={classes} ref={ref}>
+			{children}
+		</div>
+	);
+});
 
 MenuBase.displayName = 'MenuBase';
 

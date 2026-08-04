@@ -1,9 +1,8 @@
 import type { ChangeEvent } from 'react';
-import type { FilterOption } from '../src/FilterMenu';
-
 import { useState } from 'react';
 
 import { Filter, type FilterProps } from '../src/Filter';
+import type { FilterOption } from '../src/FilterMenu';
 
 const FilterTestWrapper = (props?: Partial<FilterProps>) => {
 	const initialDescription = { name: 'osmo', value: 'osmo' } as FilterOption;

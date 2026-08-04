@@ -7,8 +7,7 @@ const meta: Meta<typeof LinkButton> = {
 	title: 'Components/Navigation/LinkButton',
 	parameters: {
 		figma: {
-			design:
-				'https://www.figma.com/design/98HKKXL2dTle29ikJ3tzk7/%F0%9F%9A%80-LaunchPad?node-id=8079-92439&m=dev',
+			design: 'https://www.figma.com/design/98HKKXL2dTle29ikJ3tzk7/%F0%9F%9A%80-LaunchPad?node-id=8079-92439&m=dev',
 		},
 	},
 };

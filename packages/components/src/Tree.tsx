@@ -1,4 +1,6 @@
 import type { Ref } from 'react';
+import { createContext } from 'react';
+import { composeRenderProps } from 'react-aria-components/composeRenderProps';
 import type { ContextValue } from 'react-aria-components/slots';
 import type {
 	TreeItemProps as AriaTreeItemProps,
@@ -6,21 +8,20 @@ import type {
 	TreeItemContentProps,
 	TreeItemContentRenderProps,
 } from 'react-aria-components/Tree';
-
-import { Icon } from '@launchpad-ui/icons';
-import { cva } from 'class-variance-authority';
-import { createContext } from 'react';
-import { composeRenderProps } from 'react-aria-components/composeRenderProps';
 import {
 	Tree as AriaTree,
 	TreeItem as AriaTreeItem,
 	TreeItemContent as AriaTreeItemContent,
 } from 'react-aria-components/Tree';
+import { cva } from 'class-variance-authority';
+
+import { Icon } from '@launchpad-ui/icons';
 
 import { Button } from './Button';
 import { CheckboxIcon, checkboxStyles } from './Checkbox';
-import styles from './styles/Tree.module.css';
 import { useLPContextProps } from './utils';
+
+import styles from './styles/Tree.module.css';
 
 const treeStyles = cva(styles.tree);
 const treeItemStyles = cva(styles.item);
@@ -57,9 +58,7 @@ const Tree = <T extends object>({ ref, ...props }: TreeProps<T>) => {
 /**
  * A TreeItemContent wrapper component that handles the chevron button and layout.
  */
-function TreeItemContent(
-	props: Omit<TreeItemContentProps, 'children'> & { children?: React.ReactNode },
-) {
+function TreeItemContent(props: Omit<TreeItemContentProps, 'children'> & { children?: React.ReactNode }) {
 	return (
 		<AriaTreeItemContent>
 			{({

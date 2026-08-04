@@ -1,9 +1,8 @@
 import type { Ref } from 'react';
-import type { DropIndicatorProps as AriaDropIndicatorProps } from 'react-aria-components/useDragAndDrop';
-
-import { cva } from 'class-variance-authority';
 import { composeRenderProps } from 'react-aria-components/composeRenderProps';
+import type { DropIndicatorProps as AriaDropIndicatorProps } from 'react-aria-components/useDragAndDrop';
 import { DropIndicator as AriaDropIndicator } from 'react-aria-components/useDragAndDrop';
+import { cva } from 'class-variance-authority';
 
 import styles from './styles/DropIndicator.module.css';
 

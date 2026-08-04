@@ -1,32 +1,18 @@
 import type { KeyboardEvent, ReactElement, ReactNode } from 'react';
-import type { MenuItemProps } from './MenuItem';
-
-import { cx } from 'classix';
-import {
-	Children,
-	cloneElement,
-	useCallback,
-	useEffect,
-	useId,
-	useMemo,
-	useRef,
-	useState,
-} from 'react';
+import { Children, cloneElement, useCallback, useEffect, useId, useMemo, useRef, useState } from 'react';
 import { type FocusManager, useFocusManager } from 'react-aria/FocusScope';
 import { useVirtual } from 'react-virtual';
+import { cx } from 'classix';
 
 import { MenuBase } from './MenuBase';
 import { MenuDivider } from './MenuDivider';
+import type { MenuItemProps } from './MenuItem';
 import { MenuItem } from './MenuItem';
 import { MenuItemList } from './MenuItemList';
 import { MenuSearch } from './MenuSearch';
+import { chainEventHandlers, createItemId, getNodeForIndex, handleKeyboardInteractions } from './utils';
+
 import styles from './styles/Menu.module.css';
-import {
-	chainEventHandlers,
-	createItemId,
-	getNodeForIndex,
-	handleKeyboardInteractions,
-} from './utils';
 
 type ControlledMenuProps<T> = {
 	children: ReactNode;
@@ -197,15 +183,7 @@ type ItemVirtualizerProps<T> = Omit<ControlledMenuProps<T>, 'children'> & {
 };
 
 const ItemVirtualizer = <T extends number | string>(props: ItemVirtualizerProps<T>) => {
-	const {
-		overscan,
-		searchElement,
-		itemHeight = 31.5,
-		menuItemClassName,
-		items,
-		focusManager,
-		onSelect,
-	} = props;
+	const { overscan, searchElement, itemHeight = 31.5, menuItemClassName, items, focusManager, onSelect } = props;
 
 	const menuId = useRef(`menu-ctrl-${useId()}`);
 
@@ -248,8 +226,7 @@ const ItemVirtualizer = <T extends number | string>(props: ItemVirtualizerProps<
 			if (focusedItemIndex.current === null || focusedItemIndex.current === undefined) {
 				return;
 			}
-			const nextIndex =
-				direction === 'next' ? focusedItemIndex.current + 1 : focusedItemIndex.current - 1;
+			const nextIndex = direction === 'next' ? focusedItemIndex.current + 1 : focusedItemIndex.current - 1;
 			const shouldWrap =
 				(direction === 'next' && focusedItemIndex.current === lastVirtualItemIndex) ||
 				(direction === 'previous' && focusedItemIndex.current === 0);
@@ -331,10 +308,7 @@ const ItemVirtualizer = <T extends number | string>(props: ItemVirtualizerProps<
 	 */
 	const handleKeyboardFocusKeydown = (
 		e: KeyboardEvent,
-		callbacks: Record<
-			'handleFocusForward' | 'handleFocusBackward',
-			(direction: 'next' | 'previous') => void
-		>,
+		callbacks: Record<'handleFocusForward' | 'handleFocusBackward', (direction: 'next' | 'previous') => void>,
 	) => {
 		const keyOps = ['Tab', 'ArrowUp', 'ArrowDown'];
 		if (keyOps.includes(e.key)) {

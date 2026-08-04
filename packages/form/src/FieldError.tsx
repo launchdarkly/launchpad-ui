@@ -1,11 +1,12 @@
 import type { ComponentProps } from 'react';
-import type { FieldPath } from './utils';
-
-import { Icon } from '@launchpad-ui/icons';
 import { cx } from 'classix';
 
-import styles from './styles/Form.module.css';
+import { Icon } from '@launchpad-ui/icons';
+
+import type { FieldPath } from './utils';
 import { createFieldErrorId } from './utils';
+
+import styles from './styles/Form.module.css';
 
 type FieldErrorProps = ComponentProps<'span'> & {
 	name: FieldPath;

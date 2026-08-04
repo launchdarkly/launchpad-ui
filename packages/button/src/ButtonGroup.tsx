@@ -1,5 +1,4 @@
 import type { ComponentProps } from 'react';
-
 import { cx } from 'classix';
 
 import styles from './styles/Button.module.css';

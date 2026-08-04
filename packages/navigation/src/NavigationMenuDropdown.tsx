@@ -1,16 +1,17 @@
+import { useEffect, useRef, useState } from 'react';
+import { NavLink, useLocation } from 'react-router';
+import { useListState } from 'react-stately/useListState';
 import type { CollectionBase } from '@react-types/shared';
-import type { NavProps } from './Nav';
 
 import { Chip } from '@launchpad-ui/chip';
 import { Dropdown, DropdownButton } from '@launchpad-ui/dropdown';
 import { Icon } from '@launchpad-ui/icons';
 import { Menu, MenuItem } from '@launchpad-ui/menu';
-import { useEffect, useRef, useState } from 'react';
-import { NavLink, useLocation } from 'react-router';
-import { useListState } from 'react-stately/useListState';
+
+import type { NavProps } from './Nav';
+import { titlecase } from './utils';
 
 import styles from './styles/Navigation.module.css';
-import { titlecase } from './utils';
 
 type NavigationMenuDropdownProps<T extends object> = CollectionBase<T> & {
 	kind: NavProps['kind'];

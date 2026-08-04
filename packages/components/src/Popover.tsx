@@ -1,21 +1,18 @@
-import type { VariantProps } from 'class-variance-authority';
 import type { Ref } from 'react';
+import { createContext } from 'react';
+import { composeRenderProps } from 'react-aria-components/composeRenderProps';
 import type {
 	OverlayArrowProps as AriaOverlayArrowProps,
 	PopoverProps as AriaPopoverProps,
 } from 'react-aria-components/Popover';
+import { OverlayArrow as AriaOverlayArrow, Popover as AriaPopover } from 'react-aria-components/Popover';
 import type { ContextValue } from 'react-aria-components/slots';
-
+import type { VariantProps } from 'class-variance-authority';
 import { cva } from 'class-variance-authority';
-import { createContext } from 'react';
-import { composeRenderProps } from 'react-aria-components/composeRenderProps';
-import {
-	OverlayArrow as AriaOverlayArrow,
-	Popover as AriaPopover,
-} from 'react-aria-components/Popover';
+
+import { useLPContextProps } from './utils';
 
 import styles from './styles/Popover.module.css';
-import { useLPContextProps } from './utils';
 
 interface PopoverProps extends AriaPopoverProps, VariantProps<typeof popoverStyles> {
 	ref?: Ref<HTMLElement>;

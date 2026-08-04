@@ -1,8 +1,8 @@
-import type { Meta, StoryObj } from '@storybook/react-vite';
 import type { ComponentType } from 'react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
+import { userEvent, within } from 'storybook/test';
 
 import { vars } from '@launchpad-ui/vars';
-import { userEvent, within } from 'storybook/test';
 
 import { FieldError } from '../src/FieldError';
 import { Input } from '../src/Input';
@@ -13,15 +13,11 @@ import { TextField } from '../src/TextField';
 
 const meta: Meta<typeof TextField> = {
 	component: TextField,
-	subcomponents: { Label, Text, Input, TextArea, FieldError } as Record<
-		string,
-		ComponentType<unknown>
-	>,
+	subcomponents: { Label, Text, Input, TextArea, FieldError } as Record<string, ComponentType<unknown>>,
 	title: 'Components/Forms/TextField',
 	parameters: {
 		figma: {
-			design:
-				'https://www.figma.com/design/98HKKXL2dTle29ikJ3tzk7/%F0%9F%9A%80-LaunchPad?node-id=1-34456&m=dev',
+			design: 'https://www.figma.com/design/98HKKXL2dTle29ikJ3tzk7/%F0%9F%9A%80-LaunchPad?node-id=1-34456&m=dev',
 		},
 	},
 	decorators: [

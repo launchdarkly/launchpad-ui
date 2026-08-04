@@ -1,19 +1,12 @@
 import type { RGBA, VariableValue } from '@figma/rest-api-spec';
-import type {
-	Config,
-	DesignToken,
-	DesignTokens,
-	PreprocessedTokens,
-	TransformedToken,
-} from 'style-dictionary/types';
-import type { Variable } from './types';
-
 import JsonToTS from 'json-to-ts';
 import StyleDictionary from 'style-dictionary';
 import { formats, transformGroups, transforms, transformTypes } from 'style-dictionary/enums';
+import type { Config, DesignToken, DesignTokens, PreprocessedTokens, TransformedToken } from 'style-dictionary/types';
 import { fileHeader, minifyDictionary, usesReferences } from 'style-dictionary/utils';
 
 import { css, themes } from './themes';
+import type { Variable } from './types';
 
 const [light, dark] = themes;
 const configs = themes.map(css);
@@ -100,12 +93,7 @@ const sd = new StyleDictionary({
 			prefix: 'lp',
 			basePxFontSize: 16,
 			transformGroup: transformGroups.css,
-			transforms: [
-				transforms.nameKebab,
-				transforms.sizePxToRem,
-				transforms.colorRgb,
-				'attribute/font',
-			],
+			transforms: [transforms.nameKebab, transforms.sizePxToRem, transforms.colorRgb, 'attribute/font'],
 			buildPath: 'dist/',
 			options: {
 				outputReferences: true,

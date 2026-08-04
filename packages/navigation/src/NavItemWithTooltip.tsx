@@ -1,9 +1,10 @@
-import type { Offset, PopoverPlacement } from '@launchpad-ui/popover';
 import type { JSX, MouseEvent } from 'react';
 
+import type { Offset, PopoverPlacement } from '@launchpad-ui/popover';
 import { Tooltip } from '@launchpad-ui/tooltip';
 
 import { NavItem } from './NavItem';
+
 import styles from './styles/Navigation.module.css';
 
 type NavItemWithTooltipProps = {
@@ -51,15 +52,7 @@ const NavItemWithTooltip = ({
 			targetClassName={styles['NavPopover-target']}
 			data-test-id={testId}
 		>
-			<NavItem
-				end={end}
-				to={to}
-				name={name}
-				onClick={onClick}
-				role={role}
-				id={id}
-				aria-controls={ariaControls}
-			/>
+			<NavItem end={end} to={to} name={name} onClick={onClick} role={role} id={id} aria-controls={ariaControls} />
 		</Tooltip>
 	);
 };

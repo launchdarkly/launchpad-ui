@@ -1,15 +1,15 @@
-import type { VariantProps } from 'class-variance-authority';
 import type { Ref } from 'react';
-import type { ModalOverlayProps as AriaModalOverlayProps } from 'react-aria-components/Modal';
-import type { ContextValue } from 'react-aria-components/slots';
-
-import { cva } from 'class-variance-authority';
 import { createContext } from 'react';
 import { composeRenderProps } from 'react-aria-components/composeRenderProps';
+import type { ModalOverlayProps as AriaModalOverlayProps } from 'react-aria-components/Modal';
 import { Modal as AriaModal, ModalOverlay as AriaModalOverlay } from 'react-aria-components/Modal';
+import type { ContextValue } from 'react-aria-components/slots';
+import type { VariantProps } from 'class-variance-authority';
+import { cva } from 'class-variance-authority';
+
+import { useLPContextProps } from './utils';
 
 import styles from './styles/Modal.module.css';
-import { useLPContextProps } from './utils';
 
 const modalStyles = cva(styles.base, {
 	variants: {

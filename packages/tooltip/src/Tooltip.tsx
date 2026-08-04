@@ -1,9 +1,9 @@
-import type { PopoverProps } from '@launchpad-ui/popover';
 import type { ReactNode } from 'react';
-
-import { Popover } from '@launchpad-ui/popover';
-import { cx } from 'classix';
 import { forwardRef } from 'react';
+import { cx } from 'classix';
+
+import type { PopoverProps } from '@launchpad-ui/popover';
+import { Popover } from '@launchpad-ui/popover';
 
 import styles from './styles/Tooltip.module.css';
 
@@ -47,9 +47,7 @@ const TooltipBase = ({
  *
  * https://launchpad.launchdarkly.com/?path=/docs/components-overlays-tooltip--docs
  */
-const Tooltip = forwardRef<Element, TooltipProps>((props, ref) => (
-	<TooltipBase {...props} targetElementRef={ref} />
-));
+const Tooltip = forwardRef<Element, TooltipProps>((props, ref) => <TooltipBase {...props} targetElementRef={ref} />);
 
 Tooltip.displayName = 'Tooltip';
 

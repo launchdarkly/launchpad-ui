@@ -1,5 +1,4 @@
 import type { ChangeEvent, FormEvent, ReactElement, ReactNode } from 'react';
-
 import { Children, cloneElement, isValidElement, useRef } from 'react';
 import { VisuallyHidden } from 'react-aria/VisuallyHidden';
 
@@ -50,16 +49,7 @@ type RadioGroupProps = {
  * https://launchpad.launchdarkly.com/?path=/docs/components-forms-radiogroup--docs
  */
 const RadioGroup = (props: RadioGroupProps) => {
-	const {
-		name,
-		value,
-		onChange,
-		children,
-		disabled,
-		legend,
-		'data-test-id': testId = 'radio-group',
-		...rest
-	} = props;
+	const { name, value, onChange, children, disabled, legend, 'data-test-id': testId = 'radio-group', ...rest } = props;
 	const fieldsetRef = useRef<HTMLFieldSetElement>(null);
 
 	function updateRadioElems(elem: ReactNode): ReactNode {

@@ -1,8 +1,7 @@
-import type { AppliedFilterButtonProps } from '../src/AppliedFilterButton';
-
 import { describe, expect, it, vi } from 'vitest';
 
 import { render, screen, userEvent } from '../../../test/utils';
+import type { AppliedFilterButtonProps } from '../src/AppliedFilterButton';
 import { AppliedFilterButton } from '../src/AppliedFilterButton';
 
 const createComponent = ({ children, ...rest }: Partial<AppliedFilterButtonProps>) => (

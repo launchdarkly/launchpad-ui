@@ -1,12 +1,12 @@
 import type { FocusEvent } from 'react';
-import type { TextFieldProps } from './TextField';
-
-import { cx } from 'classix';
 import { forwardRef, useState } from 'react';
+import { cx } from 'classix';
 
 import { Label } from './Label';
-import styles from './styles/Form.module.css';
+import type { TextFieldProps } from './TextField';
 import { TextField } from './TextField';
+
+import styles from './styles/Form.module.css';
 
 type CompactTextFieldProps = TextFieldProps & {
 	label: string;

@@ -1,17 +1,7 @@
 import { describe, expect, it } from 'vitest';
 
 import { render, screen, userEvent } from '../../../test/utils';
-import {
-	ComboBox,
-	ComboBoxClearButton,
-	Group,
-	IconButton,
-	Input,
-	Label,
-	ListBox,
-	ListBoxItem,
-	Popover,
-} from '../src';
+import { ComboBox, ComboBoxClearButton, Group, IconButton, Input, Label, ListBox, ListBoxItem, Popover } from '../src';
 
 describe('ComboBox', () => {
 	it('renders', async () => {
@@ -21,12 +11,7 @@ describe('ComboBox', () => {
 				<Label>Label</Label>
 				<Group>
 					<Input />
-					<IconButton
-						icon="chevron-down"
-						size="small"
-						variant="minimal"
-						aria-label="Show suggestions"
-					/>
+					<IconButton icon="chevron-down" size="small" variant="minimal" aria-label="Show suggestions" />
 				</Group>
 				<Popover>
 					<ListBox>

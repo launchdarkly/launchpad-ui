@@ -1,21 +1,22 @@
-import type { IconProps } from '@launchpad-ui/icons';
-import type { AriaLabelingProps } from '@react-types/shared';
-import type { VariantProps } from 'class-variance-authority';
 import type { Ref } from 'react';
-import type { ButtonProps as AriaButtonProps } from 'react-aria-components/Button';
-import type { ContextValue } from 'react-aria-components/slots';
-import type { ButtonVariants } from './Button';
-
-import { Icon } from '@launchpad-ui/icons';
-import { cva, cx } from 'class-variance-authority';
 import { createContext, useContext } from 'react';
+import type { ButtonProps as AriaButtonProps } from 'react-aria-components/Button';
 import { Button as AriaButton } from 'react-aria-components/Button';
 import { composeRenderProps } from 'react-aria-components/composeRenderProps';
+import type { ContextValue } from 'react-aria-components/slots';
+import type { AriaLabelingProps } from '@react-types/shared';
+import type { VariantProps } from 'class-variance-authority';
+import { cva, cx } from 'class-variance-authority';
 
+import type { IconProps } from '@launchpad-ui/icons';
+import { Icon } from '@launchpad-ui/icons';
+
+import type { ButtonVariants } from './Button';
 import { buttonStyles } from './Button';
 import { PerceivableContext } from './Perceivable';
-import styles from './styles/IconButton.module.css';
 import { useLPContextProps } from './utils';
+
+import styles from './styles/IconButton.module.css';
 
 const iconButtonStyles = cva(styles.base, {
 	variants: {
@@ -33,15 +34,11 @@ interface IconButtonVariants extends VariantProps<typeof iconButtonStyles> {
 	variant?: Extract<ButtonVariants['variant'], 'default' | 'primary' | 'destructive' | 'minimal'>;
 }
 
-interface IconButtonBaseProps
-	extends Required<Pick<AriaLabelingProps, 'aria-label'>>,
-		IconButtonVariants {
+interface IconButtonBaseProps extends Required<Pick<AriaLabelingProps, 'aria-label'>>, IconButtonVariants {
 	icon: IconProps['name'];
 	children?: never;
 }
-interface IconButtonProps
-	extends Omit<AriaButtonProps, 'children' | 'aria-label'>,
-		IconButtonBaseProps {
+interface IconButtonProps extends Omit<AriaButtonProps, 'children' | 'aria-label'>, IconButtonBaseProps {
 	ref?: Ref<HTMLButtonElement>;
 }
 
@@ -49,8 +46,7 @@ interface IconButtonContextValue extends IconButtonProps {
 	isPressed?: boolean;
 }
 
-const IconButtonContext =
-	createContext<ContextValue<IconButtonContextValue, HTMLButtonElement>>(null);
+const IconButtonContext = createContext<ContextValue<IconButtonContextValue, HTMLButtonElement>>(null);
 
 /**
  * A button allows a user to perform an action, with mouse, touch, and keyboard interactions.

@@ -1,12 +1,12 @@
-import type { CollectionBase } from '@react-types/shared';
-import type { NavProps } from './Nav';
-
-import { useResizeObserver, useValueEffect } from '@react-aria/utils';
-import { cx } from 'classix';
 import { useCallback, useLayoutEffect, useRef } from 'react';
+import { useResizeObserver, useValueEffect } from '@react-aria/utils';
+import type { CollectionBase } from '@react-types/shared';
+import { cx } from 'classix';
 
+import type { NavProps } from './Nav';
 import { NavigationContext } from './NavigationContext';
 import { NavigationList } from './NavigationList';
+
 import styles from './styles/Navigation.module.css';
 
 type NavigationProps<T extends object> = CollectionBase<T> & {
@@ -61,11 +61,7 @@ const Navigation = <T extends object>(props: NavigationProps<T>) => {
 	useResizeObserver({ ref: wrapperRef, onResize: checkShouldCollapse });
 	return (
 		<div
-			className={cx(
-				styles.Navigation,
-				shouldCollapse && styles['Navigation--collapsed'],
-				className,
-			)}
+			className={cx(styles.Navigation, shouldCollapse && styles['Navigation--collapsed'], className)}
 			data-test-id={testId}
 		>
 			<NavigationContext.Provider

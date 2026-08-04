@@ -1,12 +1,12 @@
 import type { HTMLAttributes, Ref } from 'react';
-import type { ContextValue } from 'react-aria-components/slots';
-
-import { cva } from 'class-variance-authority';
 import { createContext } from 'react';
 import { Header as AriaHeader } from 'react-aria-components/Header';
+import type { ContextValue } from 'react-aria-components/slots';
+import { cva } from 'class-variance-authority';
+
+import { useLPContextProps } from './utils';
 
 import styles from './styles/Header.module.css';
-import { useLPContextProps } from './utils';
 
 const headerStyles = cva(styles.header);
 

@@ -1,8 +1,7 @@
-import type { FilterProps } from '../src';
-
 import { describe, expect, it, vi } from 'vitest';
 
 import { render, screen, userEvent, waitFor } from '../../../test/utils';
+import type { FilterProps } from '../src';
 import { Filter } from '../src';
 
 const createComponent = (props?: Partial<FilterProps>) => (
@@ -85,9 +84,7 @@ describe('Filter', () => {
 	describe('menu search', () => {
 		it('should display a search field when a searchValue is provided', async () => {
 			const user = userEvent.setup();
-			render(
-				createComponent({ options: oneOption, onSearchChange: vi.fn(), searchValue: 'something' }),
-			);
+			render(createComponent({ options: oneOption, onSearchChange: vi.fn(), searchValue: 'something' }));
 			await user.click(screen.getByRole('button'));
 
 			await waitFor(() => {

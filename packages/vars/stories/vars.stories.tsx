@@ -10,9 +10,7 @@ export default {
 type Story = StoryObj;
 
 export const Example: Story = {
-	render: () => (
-		<div className={container}>I&apos;m styled by Vanilla Extract using our tokens</div>
-	),
+	render: () => <div className={container}>I&apos;m styled by Vanilla Extract using our tokens</div>,
 };
 
 export const LocalScoped: Story = {

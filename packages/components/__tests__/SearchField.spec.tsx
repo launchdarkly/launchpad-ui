@@ -10,12 +10,7 @@ describe('SearchField', () => {
 				<Label>Label</Label>
 				<Group>
 					<Input />
-					<IconButton
-						icon="cancel-circle-outline"
-						aria-label="clear"
-						size="small"
-						variant="minimal"
-					/>
+					<IconButton icon="cancel-circle-outline" aria-label="clear" size="small" variant="minimal" />
 				</Group>
 			</SearchField>,
 		);

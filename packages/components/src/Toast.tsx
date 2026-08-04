@@ -1,15 +1,10 @@
-import type { VariantProps } from 'class-variance-authority';
 import type { ComponentProps, ReactNode, Ref } from 'react';
+import { composeRenderProps } from 'react-aria-components/composeRenderProps';
 import type {
 	ToastProps as AriaToastProps,
 	ToastRegionProps as AriaToastRegionProps,
 	ToastOptions,
 } from 'react-aria-components/Toast';
-
-import { StatusIcon } from '@launchpad-ui/icons';
-import { PressResponder } from '@react-aria/interactions';
-import { cva } from 'class-variance-authority';
-import { composeRenderProps } from 'react-aria-components/composeRenderProps';
 import {
 	UNSTABLE_Toast as AriaToast,
 	UNSTABLE_ToastContent as AriaToastContent,
@@ -18,8 +13,14 @@ import {
 	Text,
 } from 'react-aria-components/Toast';
 import { flushSync } from 'react-dom';
+import { PressResponder } from '@react-aria/interactions';
+import type { VariantProps } from 'class-variance-authority';
+import { cva } from 'class-variance-authority';
+
+import { StatusIcon } from '@launchpad-ui/icons';
 
 import { IconButton } from './IconButton';
+
 import styles from './styles/Toast.module.css';
 
 const toastRegionStyles = cva(styles.region, {
@@ -124,21 +125,14 @@ const Toast = ({ ref, variant, ...props }: ToastProps<LPToastContent>) => {
 		>
 			{composeRenderProps(props.children, (children, { toast }) => (
 				<>
-					<StatusIcon
-						kind={toast.content.status || 'info'}
-						className={iconStyles({ status: toast.content.status })}
-					/>
+					<StatusIcon kind={toast.content.status || 'info'} className={iconStyles({ status: toast.content.status })} />
 					<ToastContent>
 						<Text slot="title">{toast.content.title}</Text>
 						<Text slot="description">
 							{toast.content.description}
 							{toast.content.action && (
 								<PressResponder
-									onPress={() =>
-										variant === 'default'
-											? toastQueue.close(toast.key)
-											: snackbarQueue.close(toast.key)
-									}
+									onPress={() => (variant === 'default' ? toastQueue.close(toast.key) : snackbarQueue.close(toast.key))}
 								>
 									{' '}
 									{toast.content.action}
@@ -183,8 +177,7 @@ const ToastRegion = ({
 			)}
 			{...props}
 		>
-			{children ??
-				(({ toast }) => <Toast style={{ viewTransitionName: toast.key }} toast={toast} />)}
+			{children ?? (({ toast }) => <Toast style={{ viewTransitionName: toast.key }} toast={toast} />)}
 		</AriaToastRegion>
 	);
 };
@@ -209,21 +202,10 @@ const SnackbarRegion = ({
 			{...props}
 		>
 			{children ??
-				(({ toast }) => (
-					<Toast style={{ viewTransitionName: toast.key }} toast={toast} variant="snackbar" />
-				))}
+				(({ toast }) => <Toast style={{ viewTransitionName: toast.key }} toast={toast} variant="snackbar" />)}
 		</AriaToastRegion>
 	);
 };
 
-export {
-	snackbarQueue,
-	toastQueue,
-	Toast,
-	ToastContent,
-	ToastRegion,
-	SnackbarRegion,
-	toastStyles,
-	toastRegionStyles,
-};
+export { snackbarQueue, toastQueue, Toast, ToastContent, ToastRegion, SnackbarRegion, toastStyles, toastRegionStyles };
 export type { ToastOptions, ToastValue };

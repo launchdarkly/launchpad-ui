@@ -1,8 +1,8 @@
-import type { MenuProps } from '@launchpad-ui/menu';
 import type { ChangeEvent, ReactNode } from 'react';
 
 import { Button } from '@launchpad-ui/button';
 import { Icon } from '@launchpad-ui/icons';
+import type { MenuProps } from '@launchpad-ui/menu';
 import { Menu, MenuDivider, MenuItem, MenuSearch } from '@launchpad-ui/menu';
 
 import styles from './styles/Filter.module.css';
@@ -50,9 +50,7 @@ const FilterMenu = ({
 	size,
 	'data-test-id': testId = 'filter-menu',
 }: FilterMenuProps) => {
-	const filterOptions = isLoading
-		? [{ name: 'loading...', value: 'loading...', isDisabled: true }]
-		: options;
+	const filterOptions = isLoading ? [{ name: 'loading...', value: 'loading...', isDisabled: true }] : options;
 
 	return (
 		<>
@@ -67,12 +65,7 @@ const FilterMenu = ({
 					CLEAR FILTER
 				</Button>
 			)}
-			<Menu
-				enableVirtualization={enableVirtualization}
-				size={size}
-				data-test-id={testId}
-				onSelect={onSelect}
-			>
+			<Menu enableVirtualization={enableVirtualization} size={size} data-test-id={testId} onSelect={onSelect}>
 				{enableSearch && (
 					<MenuSearch
 						value={searchValue}
@@ -97,9 +90,7 @@ const FilterMenu = ({
 							aria-checked={option.isChecked ? 'true' : undefined}
 							nested={option.nested}
 							groupHeader={option.groupHeader}
-							tooltip={
-								option.isDisabled && disabledOptionTooltip ? disabledOptionTooltip : undefined
-							}
+							tooltip={option.isDisabled && disabledOptionTooltip ? disabledOptionTooltip : undefined}
 							tooltipPlacement="right"
 						>
 							{option.name}

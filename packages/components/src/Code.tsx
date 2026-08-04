@@ -1,5 +1,5 @@
-import { cva, cx } from 'class-variance-authority';
 import { forwardRef } from 'react';
+import { cva, cx } from 'class-variance-authority';
 
 import styles from './styles/Code.module.css';
 
@@ -28,15 +28,13 @@ export interface CodeProps extends Omit<React.HTMLAttributes<HTMLElement>, 'clas
  *
  * For body text, use `Text`. For headings, use `Heading`. For labels, use `Label`.
  */
-const Code = forwardRef<HTMLElement, CodeProps>(
-	({ children, size = 'small', className, ...props }, ref) => {
-		return (
-			<code {...props} ref={ref} className={cx(codeStyles({ size }), className)}>
-				{children}
-			</code>
-		);
-	},
-);
+const Code = forwardRef<HTMLElement, CodeProps>(({ children, size = 'small', className, ...props }, ref) => {
+	return (
+		<code {...props} ref={ref} className={cx(codeStyles({ size }), className)}>
+			{children}
+		</code>
+	);
+});
 
 Code.displayName = 'Code';
 

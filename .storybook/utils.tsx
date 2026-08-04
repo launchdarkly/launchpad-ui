@@ -1,9 +1,8 @@
-import type { Args, Decorator, ReactRenderer } from '@storybook/react-vite';
 import type { JSX } from 'react';
-import type { AnnotatedStoryFn, StoryContext } from 'storybook/internal/types';
-
-import merge from 'deepmerge';
 import { Fragment } from 'react';
+import type { Args, Decorator, ReactRenderer } from '@storybook/react-vite';
+import merge from 'deepmerge';
+import type { AnnotatedStoryFn, StoryContext } from 'storybook/internal/types';
 
 /**
  * Creates a decorator function that returns a new component with that class name added.
@@ -41,11 +40,7 @@ export const createWithClassesDecorator = (
 				if (!originalStoryFn) {
 					throw new Error('No story was exported. Please export one when using this decorator.');
 				}
-				return (
-					<Fragment key={componentKey}>
-						{renderFunc(modifiedProps, originalStoryFn, Context)}
-					</Fragment>
-				);
+				return <Fragment key={componentKey}>{renderFunc(modifiedProps, originalStoryFn, Context)}</Fragment>;
 			}
 			return <DecoratedComponent key={componentKey} {...modifiedProps} />;
 		});

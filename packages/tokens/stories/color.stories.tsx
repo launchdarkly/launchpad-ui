@@ -1,9 +1,11 @@
-import { vars } from '@launchpad-ui/vars';
 import { useEffect, useRef, useState } from 'react';
+
+import { vars } from '@launchpad-ui/vars';
 
 import { Button } from '../../components/src/Button';
 import { ToastRegion, toastQueue } from '../../components/src/Toast';
 import { Tooltip, TooltipTrigger } from '../../components/src/Tooltip';
+
 import { type ComputedValue, getTokenHex, getTokenValue, TokenCode } from './colorTokens';
 
 export default {
@@ -87,9 +89,7 @@ const TokenTable = ({ tokens }: { tokens: Record<string, string> }) => {
 									<TooltipTrigger>
 										<Button
 											onPress={() => {
-												navigator.clipboard.writeText(
-													value.substring(value.lastIndexOf('--'), value.lastIndexOf(')')),
-												);
+												navigator.clipboard.writeText(value.substring(value.lastIndexOf('--'), value.lastIndexOf(')')));
 												toastQueue.add({ title: 'Copied!', status: 'success' });
 											}}
 											style={{ font: 'var(--lp-text-code-1-regular)' }}

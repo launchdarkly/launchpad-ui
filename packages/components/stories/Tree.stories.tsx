@@ -1,8 +1,8 @@
-import type { Meta, StoryObj } from '@storybook/react-vite';
+import { useState } from 'react';
 import type { Selection } from 'react-aria-components/Tree';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 
 import { Icon } from '@launchpad-ui/icons';
-import { useState } from 'react';
 
 import { Text } from '../src/Text';
 import { Tree, TreeItem, TreeItemContent } from '../src/Tree';

@@ -1,5 +1,4 @@
 import type { MutableRefObject } from 'react';
-
 import { useEffect, useRef, useState } from 'react';
 
 const useMediaQuery = (query: string, defaultValue = false) => {

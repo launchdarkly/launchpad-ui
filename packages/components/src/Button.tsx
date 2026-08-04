@@ -1,20 +1,20 @@
-import type { VariantProps } from 'class-variance-authority';
 import type { Ref } from 'react';
-import type { ButtonProps as AriaButtonProps } from 'react-aria-components/Button';
-import type { ContextValue } from 'react-aria-components/slots';
-
-import { cva } from 'class-variance-authority';
 import { createContext, useContext } from 'react';
+import type { ButtonProps as AriaButtonProps } from 'react-aria-components/Button';
 import { Button as AriaButton } from 'react-aria-components/Button';
 import { composeRenderProps } from 'react-aria-components/composeRenderProps';
+import type { ContextValue } from 'react-aria-components/slots';
 import { Provider } from 'react-aria-components/slots';
 import { TextContext } from 'react-aria-components/Text';
+import type { VariantProps } from 'class-variance-authority';
+import { cva } from 'class-variance-authority';
 
 import { PerceivableContext } from './Perceivable';
 import { ProgressBar } from './ProgressBar';
-import styles from './styles/Button.module.css';
 import { Text } from './Text';
 import { useLPContextProps } from './utils';
+
+import styles from './styles/Button.module.css';
 
 const buttonStyles = cva(styles.base, {
 	variants: {
@@ -69,9 +69,7 @@ const Button = ({ ref, ...props }: ButtonProps) => {
 		>
 			{composeRenderProps(props.children, (children, { isPending }) => (
 				<Provider values={[[TextContext, { className: isPending ? styles.pending : undefined }]]}>
-					{isPending && (
-						<ProgressBar isIndeterminate aria-label="loading" className={styles.progress} />
-					)}
+					{isPending && <ProgressBar isIndeterminate aria-label="loading" className={styles.progress} />}
 					{typeof children === 'string' ? (
 						<Text size={size as 'small' | 'medium' | 'large'}>{children}</Text>
 					) : (

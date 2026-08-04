@@ -1,5 +1,6 @@
 // Import actual drag and drop stories
 import { Example as DropZoneExample } from '../DropZone.stories';
+
 // Import shared preview component
 import { StoryPreview } from './StoryPreview';
 

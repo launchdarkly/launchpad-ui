@@ -1,10 +1,10 @@
-import type { Meta, StoryObj } from '@storybook/react-vite';
 import type { ComponentType } from 'react';
-
 import { parseDate } from '@internationalized/date';
+import type { Meta, StoryObj } from '@storybook/react-vite';
+import { expect, userEvent, within } from 'storybook/test';
+
 import { Icon } from '@launchpad-ui/icons';
 import { vars } from '@launchpad-ui/vars';
-import { expect, userEvent, within } from 'storybook/test';
 
 import { Button } from '../src/Button';
 import { Calendar, CalendarCell, CalendarGrid } from '../src/Calendar';
@@ -25,8 +25,7 @@ const meta: Meta<typeof DatePicker> = {
 	title: 'Components/Date and Time/DatePicker',
 	parameters: {
 		figma: {
-			design:
-				'https://www.figma.com/design/98HKKXL2dTle29ikJ3tzk7/%F0%9F%9A%80-LaunchPad?node-id=10826-35493&m=dev',
+			design: 'https://www.figma.com/design/98HKKXL2dTle29ikJ3tzk7/%F0%9F%9A%80-LaunchPad?node-id=10826-35493&m=dev',
 		},
 	},
 	decorators: [
@@ -58,21 +57,9 @@ export const Example: Story = {
 					<Dialog>
 						<Calendar>
 							<header>
-								<IconButton
-									slot="previous"
-									icon="chevron-left"
-									aria-label="previous"
-									size="small"
-									variant="minimal"
-								/>
+								<IconButton slot="previous" icon="chevron-left" aria-label="previous" size="small" variant="minimal" />
 								<Heading />
-								<IconButton
-									slot="next"
-									icon="chevron-right"
-									aria-label="next"
-									size="small"
-									variant="minimal"
-								/>
+								<IconButton slot="next" icon="chevron-right" aria-label="next" size="small" variant="minimal" />
 							</header>
 							<CalendarGrid>{(date) => <CalendarCell date={date} />}</CalendarGrid>
 						</Calendar>
@@ -113,13 +100,7 @@ export const InForms: Story = {
 										variant="minimal"
 									/>
 									<Heading />
-									<IconButton
-										slot="next"
-										icon="chevron-right"
-										aria-label="next"
-										size="small"
-										variant="minimal"
-									/>
+									<IconButton slot="next" icon="chevron-right" aria-label="next" size="small" variant="minimal" />
 								</header>
 								<CalendarGrid>{(date) => <CalendarCell date={date} />}</CalendarGrid>
 							</Calendar>
@@ -162,13 +143,7 @@ export const InSubmenu: Story = {
 												variant="minimal"
 											/>
 											<Heading />
-											<IconButton
-												slot="next"
-												icon="chevron-right"
-												aria-label="next"
-												size="small"
-												variant="minimal"
-											/>
+											<IconButton slot="next" icon="chevron-right" aria-label="next" size="small" variant="minimal" />
 										</header>
 										<CalendarGrid>{(date) => <CalendarCell date={date} />}</CalendarGrid>
 									</Calendar>
