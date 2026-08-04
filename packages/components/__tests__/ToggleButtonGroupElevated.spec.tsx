@@ -21,7 +21,7 @@ describe('ToggleButtonGroup appearance="elevated"', () => {
 		expect(screen.getByRole('radiogroup')).toBeVisible();
 	});
 
-	it('supports selection', async () => {
+	it('supports selection', () => {
 		render(
 			<ToggleButtonGroup appearance="elevated" defaultSelectedKeys={['first']}>
 				<ToggleButton appearance="elevated" id="first">

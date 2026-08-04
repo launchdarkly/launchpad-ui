@@ -2,7 +2,7 @@ import type { ComponentPropsWithoutRef, Fragment } from 'react';
 import { useRef, useState } from 'react';
 import { VisuallyHidden } from 'react-aria/VisuallyHidden';
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { expect, userEvent, within } from 'storybook/test';
+import { userEvent, within } from 'storybook/test';
 
 import { Box } from '@launchpad-ui/box';
 import { Icon } from '@launchpad-ui/icons';
@@ -62,7 +62,7 @@ export const CopyToClipboard: Story = {
 					<Button
 						size="small"
 						onPress={() => {
-							navigator.clipboard.writeText('content');
+							void navigator.clipboard.writeText('content');
 							toastQueue.add({ title: 'Copied!', status: 'success' });
 						}}
 					>
@@ -80,7 +80,7 @@ export const CopyToClipboard: Story = {
 		await userEvent.hover(canvasElement);
 		await userEvent.hover(canvas.getByRole('button'));
 		const body = canvasElement.ownerDocument.body;
-		await expect(await within(body).findByRole('tooltip'));
+		await within(body).findByRole('tooltip');
 	},
 };
 

@@ -1,7 +1,7 @@
 import type { ComponentType } from 'react';
 import { parseDate } from '@internationalized/date';
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { expect, userEvent, within } from 'storybook/test';
+import { userEvent, within } from 'storybook/test';
 
 import { Icon } from '@launchpad-ui/icons';
 import { vars } from '@launchpad-ui/vars';
@@ -74,7 +74,7 @@ export const Example: Story = {
 
 		await userEvent.click(canvas.getByRole('button'));
 		const body = canvasElement.ownerDocument.body;
-		await expect(await within(body).findByRole('application'));
+		await within(body).findByRole('application');
 	},
 };
 
@@ -118,7 +118,7 @@ export const InForms: Story = {
 
 		await userEvent.click(canvas.getByRole('button'));
 		const body = canvasElement.ownerDocument.body;
-		await expect(await within(body).findByRole('application'));
+		await within(body).findByRole('application');
 	},
 };
 

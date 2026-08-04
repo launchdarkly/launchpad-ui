@@ -75,7 +75,7 @@ describe('Navigation', () => {
 		});
 	});
 
-	it('can render items with a chip', async () => {
+	it('can render items with a chip', () => {
 		render(
 			createComponent([
 				{
@@ -93,7 +93,7 @@ describe('Navigation', () => {
 		expect(screen.getByTestId('nav-item-chip')).not.toBeNull();
 	});
 
-	it('renders collapsed dropdown', async () => {
+	it('renders collapsed dropdown', () => {
 		vi.spyOn(ctx, 'useNavigationContext').mockReturnValue({
 			shouldCollapse: true,
 			refs: { wrapperRef: { current: null }, itemListRef: { current: null } },

@@ -38,7 +38,7 @@ describe('FocusTrap', () => {
 		expect(screen.getByTestId('out-trap')).toHaveFocus();
 	});
 
-	it('returns context when useFocusTrapContext is called', async () => {
+	it('returns context when useFocusTrapContext is called', () => {
 		const { result } = renderHook(() => useFocusTrapContext());
 		expect(result.current.contain).toBeTruthy();
 	});

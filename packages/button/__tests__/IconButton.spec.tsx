@@ -52,7 +52,7 @@ describe('Button', () => {
 		expect(screen.getByRole('button', { name: 'Close' })).toHaveFocus();
 	});
 
-	it('can render an icon', async () => {
+	it('can render an icon', () => {
 		const { container } = render(<IconButton aria-label="Close" icon={<Icon name="cancel" />} />);
 		expect(container.querySelector('svg')).not.toBeNull();
 	});

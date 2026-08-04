@@ -78,7 +78,7 @@ const open = {
 
 		await userEvent.click(canvas.getByRole('button'));
 		const body = canvasElement.ownerDocument.body;
-		await expect(await within(body).findByRole('menu'));
+		await within(body).findByRole('menu');
 	},
 };
 

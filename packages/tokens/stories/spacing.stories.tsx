@@ -45,7 +45,7 @@ export const Spacing = {
 						<TooltipTrigger>
 							<Button
 								onPress={() => {
-									navigator.clipboard.writeText(`--lp-spacing-${key}`);
+									void navigator.clipboard.writeText(`--lp-spacing-${key}`);
 									toastQueue.add({ title: 'Copied!', status: 'success' });
 								}}
 								style={{ font: 'var(--lp-text-code-1-regular)' }}

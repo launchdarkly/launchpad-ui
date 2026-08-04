@@ -30,7 +30,7 @@ describe('Drawer', () => {
 		expect(spy).toHaveBeenCalledTimes(1);
 	});
 
-	it('hides cancel button when hideCancel is passed in', async () => {
+	it('hides cancel button when hideCancel is passed in', () => {
 		render(
 			<Drawer hideCancel>
 				<DrawerHeader>Drawer</DrawerHeader>

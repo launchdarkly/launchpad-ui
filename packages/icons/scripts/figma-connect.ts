@@ -27,4 +27,4 @@ ${components
 	);
 };
 
-generateIcons();
+void generateIcons();

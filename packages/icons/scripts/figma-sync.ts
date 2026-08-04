@@ -310,7 +310,7 @@ function buildSprite(symbols: SvgSymbol[]): string {
 }
 
 // Write file contents. Used to write the svg symbols to the sprite and to write the ids to types.ts
-async function writeFileAtomic(filePath: string, contents: string) {
+function writeFileAtomic(filePath: string, contents: string) {
 	if (DRY_RUN) {
 		log('fs', `(dry-run) would write ${path.relative(ROOT, filePath)} (${contents.length} bytes)`);
 		return;
@@ -470,13 +470,13 @@ async function main(): Promise<void> {
 
 	// 7) Build deterministic, alphabetically-sorted sprite
 	const sprite = buildSprite(symbols);
-	await writeFileAtomic(SPRITE_PATH, sprite);
+	writeFileAtomic(SPRITE_PATH, sprite);
 	log('build', `📦 sprite.svg written with ${symbols.length} symbol(s)`);
 
 	// 8) Write types.ts
 	const namesBlock = symbols.map((s) => `\t'${s.name}',`).join('\n');
 	const typesContent = generateTypes(namesBlock);
-	await writeFileAtomic(TYPES_PATH, typesContent);
+	writeFileAtomic(TYPES_PATH, typesContent);
 	log('build', `📦 types.ts written (${symbols.length} icons)`);
 
 	log('done', '✅ Icon refresh complete.');

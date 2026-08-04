@@ -46,7 +46,7 @@ describe('Modal', () => {
 		expect(spy).toHaveBeenCalledTimes(1);
 	});
 
-	it('calls onReady when modal is rendered', async () => {
+	it('calls onReady when modal is rendered', () => {
 		const spy = vi.fn();
 
 		render(<Modal onReady={spy}>Body</Modal>);
@@ -81,7 +81,7 @@ describe('Modal', () => {
 		expect(spy).toHaveBeenCalledTimes(1);
 	});
 
-	it('renders header icon when warning status is passed', async () => {
+	it('renders header icon when warning status is passed', () => {
 		render(
 			<Modal status="warning">
 				<ModalHeader title="Title" />
@@ -94,7 +94,7 @@ describe('Modal', () => {
 		expect(component).toBeInTheDocument();
 	});
 
-	it('renders required field when prop is passed', async () => {
+	it('renders required field when prop is passed', () => {
 		render(
 			<Modal>
 				<ModalHeader title="Title" hasRequiredField />
@@ -107,7 +107,7 @@ describe('Modal', () => {
 		expect(component).toBeInTheDocument();
 	});
 
-	it('renders description when passed', async () => {
+	it('renders description when passed', () => {
 		const content = 'test';
 
 		render(
