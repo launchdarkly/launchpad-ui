@@ -8,7 +8,7 @@ LaunchPad is LaunchDarkly's design system: a pnpm + Nx monorepo of independently
 
 Components **must stay generic** — no business logic, no product-domain terms (flag/segment/project/environment/member/metric), no app-specific data fetching, and no hardcoded LaunchDarkly URLs or copy. If a feature needs any of that, it belongs in the consuming app, not here. (Exception: files under `packages/components/stories/recipes/` are example compositions, not components — they may combine primitives and use example copy, but accessibility, token, and theme rules still apply.)
 
-Node `>=22.14.0` (see `.nvmrc`), pnpm `11.0.1`. Run `pnpm install` to set up.
+Node `>=22.22.0` (see `.nvmrc`), pnpm `11.0.1`. Run `pnpm install` to set up.
 
 ## Commands
 
@@ -19,7 +19,9 @@ pnpm test:watch         # vitest watch mode
 pnpm test:ui            # vitest UI
 pnpm test:packages      # test only Nx-affected packages
 pnpm typecheck          # tsc --noEmit across the repo (builds tokens first)
-pnpm check              # biome check . --write (lint + format + organize imports)
+pnpm oxlint:js          # oxlint (lint)
+pnpm fmt:check          # oxfmt --check (format check; enforced in CI and the pre-commit hook)
+pnpm fmt:write          # oxfmt --write (format)
 pnpm build              # build all packages (nx run-many)
 pnpm build:packages     # build only Nx-affected packages
 pnpm build:transform    # build @launchpad-ui/tokens only (prerequisite for many tasks)
@@ -39,7 +41,7 @@ Tests live in each package's `__tests__/*.spec.{ts,tsx}` folder (the only glob V
 - **Vite + Rolldown** (`vite: npm:rolldown-vite`) builds each package in ESM + CJS via library mode; a single shared `vite.config.mts` is referenced by every package's `build` script (`vite build -c ../../vite.config.mts && tsc`). Type declarations come from `tsc`.
 - **Nx** runs build/test/typecheck only on affected packages and caches results. `build` depends on `^build` (upstream packages build first).
 - **Lightning CSS** transforms CSS Modules (class pattern `[hash]_[local]`) and handles browserslist targeting.
-- **Biome** is the single tool for lint + format + import organization (100-char line width, single quotes for JS / double for JSX, type imports grouped first). It replaces ESLint/Prettier/Stylelint. `dist/` and other generated dirs are excluded.
+- **oxlint** lints JS/TS and **oxfmt** formats + organizes imports (single quotes for JS / double for JSX, type imports grouped first). CSS Modules currently have no linter (a gap accepted until this package merges into gonfalon and picks up stylelint coverage). `dist/` and other generated dirs are excluded.
 - **Vanilla Extract** is wired into the build and being evaluated for new components (see `docs/adr-006-scoped-styles.md`), but most existing components use CSS Modules.
 
 ### Packages (`packages/*`)
@@ -59,7 +61,7 @@ Follow these when writing or changing component code:
 - **React Aria Components is the foundation.** Wrap and theme RAC primitives; do not reimplement keyboard/ARIA/focus behavior. The sanctioned escape hatches are `defaultProps`, slots, `useContextProps`, and render-props composition — see https://react-aria.adobe.com/customization. **Follow RAC's API conventions, not only its behavior:** when adding a prop, variant, or composition pattern, mirror the names and shapes RAC — and its reference implementation, [React Spectrum](https://react-spectrum.adobe.com) — already use (e.g. `description`/`errorMessage` for helper and validation text, `isDisabled`/`isInvalid` booleans, slot-based composition) rather than inventing new ones. Deviate only with a reason noted in the PR. (`docs/adr-008-component-foundation.md`)
 - **Consult React Aria when exploring a new problem.** Before designing a new component, prop, or interaction, check how RAC and React Spectrum model the same thing and follow their lead. Their docs are the default starting reference, not a fallback — reaching for a blank-slate or external design when RAC already has a sanctioned pattern is the most common source of API drift (including drift from the Figma library, which mirrors these conventions).
 - **Fetch those docs as Markdown.** When retrieving React Aria / React Spectrum docs programmatically, use the Markdown version: append `.md` to the page URL (e.g. `react-aria.adobe.com/customization.md`), or replace a trailing `.html` with `.md`. It's far more token-efficient than the rendered HTML page.
-- **Named exports only.** `export default` is reserved for stories and config files (Biome-enforced).
+- **Named exports only.** `export default` is reserved for stories and config files (oxlint-enforced).
 - **Named imports** following `import { Button, Alert } from '@launchpad-ui/components'` and `import { Icon } from '@launchpad-ui/icons'`.
 - **String union prop types, never enums** (`size="medium"`, not `Size.Medium`). (`docs/adr-002-string-unions-for-prop-types.md`)
 - **Design tokens exclusively** via `--lp-*` CSS variables. Never hardcode colors/spacing/radii/shadows/z-index. **Prefer semantic alias tokens** (`var(--lp-color-bg-ui-primary)`) over primitives (`var(--lp-color-blue-500)`). If no suitable alias exists, the right fix is usually to add one in `packages/tokens`. All styles must work in both light and dark themes via `[data-theme]`.
@@ -134,7 +136,7 @@ Follow this flow end to end. The repo's PR gates are strict — a missing change
    Add `EmptyState` to display empty content views with an illustration, heading, and optional action.
    ```
    Bump rules: `patch` = bugfix/internal refactor (no API change); `minor` = new exported component, new prop, additive behavior; `major` = removed/renamed export, changed default, breaking type. The summary is consumed in changelogs org-wide — make it specific and human-readable, not boilerplate. `changeset-check.yml` **blocks merge** if no changeset is present.
-4. **Commit** with Conventional Commits (`feat(components): add EmptyState`) — enforced by commitlint via the `commit-msg` git hook. The `pre-commit` hook auto-runs Biome + syncpack, so let it format your staged files.
+4. **Commit** with Conventional Commits (`feat(components): add EmptyState`) — enforced by commitlint via the `commit-msg` git hook. The `pre-commit` hook auto-runs oxlint (via lint-staged) + syncpack on your staged files.
 5. **Push** the branch.
 6. **Open a draft PR:**
    ```sh
@@ -154,7 +156,7 @@ Follow this flow end to end. The repo's PR gates are strict — a missing change
    ```
    The PR title must be a valid Conventional Commit — `lint-pr-title.yml` validates it (the title becomes the squash-merge commit). The body fills the three-section template in `.github/pull_request_template.md`.
 7. **A human reviews and marks the PR ready.** Draft is intentional: a design system warrants a human gate before review and Chromatic sign-off. Do not flip it to ready yourself.
-8. **CI checks to expect:** `verify.yml` (test / typecheck / Biome), `changeset-check.yml`, Chromatic visual snapshots (**visual diffs require human approval**), `package-size.yml`, `dependency-scan.yml`, plus the PR-comment bot (API-surface diff, story-coverage gaps). New public components need a `*.stories.tsx` or Story Coverage will flag them.
+8. **CI checks to expect:** `verify.yml` (test / typecheck / oxlint), `changeset-check.yml`, Chromatic visual snapshots (**visual diffs require human approval**), `package-size.yml`, `dependency-scan.yml`, plus the PR-comment bot (API-surface diff, story-coverage gaps). New public components need a `*.stories.tsx` or Story Coverage will flag them.
 
 Note: the Claude Code harness auto-appends `Co-Authored-By` trailers to commits and PR bodies — don't add them by hand.
 

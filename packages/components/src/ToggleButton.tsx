@@ -1,16 +1,16 @@
 import type { Ref } from 'react';
-import type { ContextValue } from 'react-aria-components/slots';
-import type { ToggleButtonProps as AriaToggleButtonProps } from 'react-aria-components/ToggleButton';
-import type { ButtonVariants } from './Button';
-
-import { cva } from 'class-variance-authority';
 import { createContext } from 'react';
 import { composeRenderProps } from 'react-aria-components/composeRenderProps';
+import type { ContextValue } from 'react-aria-components/slots';
+import type { ToggleButtonProps as AriaToggleButtonProps } from 'react-aria-components/ToggleButton';
 import { ToggleButton as AriaToggleButton } from 'react-aria-components/ToggleButton';
+import { cva } from 'class-variance-authority';
 
+import type { ButtonVariants } from './Button';
 import { buttonStyles } from './Button';
-import elevatedStyles from './styles/ToggleButton.module.css';
 import { useLPContextProps } from './utils';
+
+import elevatedStyles from './styles/ToggleButton.module.css';
 
 const toggleButtonElevatedStyles = cva(elevatedStyles.elevated);
 
@@ -28,14 +28,14 @@ const ToggleButtonContext = createContext<ContextValue<ToggleButtonProps, HTMLBu
  * https://react-spectrum.adobe.com/react-aria/ToggleButton.html
  */
 const ToggleButton = ({ ref, ...props }: ToggleButtonProps) => {
-	[props, ref] = useLPContextProps(props, ref, ToggleButtonContext);
-	const { appearance = 'default', size = 'medium', variant = 'default' } = props;
+	const [mergedProps, mergedRef] = useLPContextProps(props, ref, ToggleButtonContext);
+	const { appearance = 'default', size = 'medium', variant = 'default' } = mergedProps;
 
 	return (
 		<AriaToggleButton
-			{...props}
-			ref={ref}
-			className={composeRenderProps(props.className, (className, renderProps) =>
+			{...mergedProps}
+			ref={mergedRef}
+			className={composeRenderProps(mergedProps.className, (className, renderProps) =>
 				appearance === 'elevated'
 					? toggleButtonElevatedStyles({ ...renderProps, className })
 					: buttonStyles({ ...renderProps, size, variant, className }),

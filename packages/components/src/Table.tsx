@@ -1,5 +1,8 @@
 import type { Ref } from 'react';
+import { createContext, useContext } from 'react';
+import { composeRenderProps } from 'react-aria-components/composeRenderProps';
 import type { ContextValue } from 'react-aria-components/slots';
+import { Provider } from 'react-aria-components/slots';
 import type {
 	CellProps as AriaCellProps,
 	ColumnProps as AriaColumnProps,
@@ -10,13 +13,6 @@ import type {
 	TableHeaderProps as AriaTableHeaderProps,
 	TableProps as AriaTableProps,
 } from 'react-aria-components/Table';
-
-import { Icon } from '@launchpad-ui/icons';
-import { cva } from 'class-variance-authority';
-import { createContext, useContext } from 'react';
-import { VisuallyHidden } from 'react-aria/VisuallyHidden';
-import { composeRenderProps } from 'react-aria-components/composeRenderProps';
-import { Provider } from 'react-aria-components/slots';
 import {
 	Cell as AriaCell,
 	Column as AriaColumn,
@@ -29,11 +25,16 @@ import {
 	Collection,
 	useTableOptions,
 } from 'react-aria-components/Table';
+import { VisuallyHidden } from 'react-aria/VisuallyHidden';
+import { cva } from 'class-variance-authority';
+
+import { Icon } from '@launchpad-ui/icons';
 
 import { Checkbox } from './Checkbox';
 import { IconButton } from './IconButton';
-import styles from './styles/Table.module.css';
 import { useLPContextProps } from './utils';
+
+import styles from './styles/Table.module.css';
 
 const cellStyles = cva(styles.cell);
 const columnResizerStyles = cva(styles.resizer);
@@ -87,12 +88,12 @@ const TableContext = createContext<ContextValue<TableProps, HTMLTableElement>>(n
  * https://react-spectrum.adobe.com/react-aria/Table.html
  */
 const Table = ({ ref, ...props }: TableProps) => {
-	[props, ref] = useLPContextProps(props, ref, TableContext);
+	const [mergedProps, mergedRef] = useLPContextProps(props, ref, TableContext);
 	return (
 		<AriaTable
-			{...props}
-			ref={ref}
-			className={composeRenderProps(props.className, (className, renderProps) =>
+			{...mergedProps}
+			ref={mergedRef}
+			className={composeRenderProps(mergedProps.className, (className, renderProps) =>
 				tableStyles({ ...renderProps, className }),
 			)}
 		/>
@@ -236,9 +237,7 @@ const ColumnResizer = ({ ref, ...props }: ColumnResizerProps) => {
 const ResizableTableContainer = ({ children, ref, ...props }: ResizableTableContainerProps) => {
 	return (
 		<AriaResizableTableContainer {...props} ref={ref}>
-			<Provider values={[[ResizableTableContainerContext, { resizable: true }]]}>
-				{children}
-			</Provider>
+			<Provider values={[[ResizableTableContainerContext, { resizable: true }]]}>{children}</Provider>
 		</AriaResizableTableContainer>
 	);
 };

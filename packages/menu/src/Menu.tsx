@@ -1,32 +1,18 @@
-import type { KeyboardEvent, ReactElement, ReactNode } from 'react';
-import type { MenuItemProps } from './MenuItem';
-
-import { cx } from 'classix';
-import {
-	Children,
-	cloneElement,
-	useCallback,
-	useEffect,
-	useId,
-	useMemo,
-	useRef,
-	useState,
-} from 'react';
+import type { EventHandler, KeyboardEvent, ReactElement, ReactNode, SyntheticEvent } from 'react';
+import { Children, cloneElement, useCallback, useEffect, useId, useMemo, useRef, useState } from 'react';
 import { type FocusManager, useFocusManager } from 'react-aria/FocusScope';
 import { useVirtual } from 'react-virtual';
+import { cx } from 'classix';
 
 import { MenuBase } from './MenuBase';
 import { MenuDivider } from './MenuDivider';
+import type { MenuItemProps } from './MenuItem';
 import { MenuItem } from './MenuItem';
 import { MenuItemList } from './MenuItemList';
 import { MenuSearch } from './MenuSearch';
+import { chainEventHandlers, createItemId, getNodeForIndex, handleKeyboardInteractions } from './utils';
+
 import styles from './styles/Menu.module.css';
-import {
-	chainEventHandlers,
-	createItemId,
-	getNodeForIndex,
-	handleKeyboardInteractions,
-} from './utils';
 
 type ControlledMenuProps<T> = {
 	children: ReactNode;
@@ -110,12 +96,21 @@ const Menu = <T extends number | string>(props: MenuProps<T>) => {
 			return { items: elements, searchElement: searchElem };
 		}
 
-		return (childrenProps as ReactElement[]).reduce(
-			(
-				{ items, searchElement }: { items: ReactElement[]; searchElement: null | ReactElement },
-				// biome-ignore lint/suspicious/noExplicitAny: ignore
-				child: ReactElement<any>,
-			) => {
+		type MenuChildProps = {
+			disabled?: boolean;
+			className?: string;
+			item?: unknown;
+			onClick?: EventHandler<SyntheticEvent>;
+			onKeyDown?: (e: KeyboardEvent) => void;
+			tabIndex?: number;
+		};
+
+		return (childrenProps as ReactElement[]).reduce<{
+			items: ReactElement[];
+			searchElement: null | ReactElement;
+		}>(
+			({ items, searchElement }, childElement) => {
+				const child = childElement as ReactElement<MenuChildProps>;
 				switch (child.type) {
 					case MenuSearch:
 						return {
@@ -144,7 +139,7 @@ const Menu = <T extends number | string>(props: MenuProps<T>) => {
 											item: child.props.item ?? items.length,
 											// set focus on the first menu item if there is no search input, and set in the tab order
 											onClick: chainEventHandlers(child.props.onClick, () => {
-												onSelect?.(child.props.item ?? items.length);
+												onSelect?.((child.props.item ?? items.length) as T);
 											}),
 											onKeyDown: (e: KeyboardEvent) =>
 												handleKeyboardInteractions(e, {
@@ -196,15 +191,7 @@ type ItemVirtualizerProps<T> = Omit<ControlledMenuProps<T>, 'children'> & {
 };
 
 const ItemVirtualizer = <T extends number | string>(props: ItemVirtualizerProps<T>) => {
-	const {
-		overscan,
-		searchElement,
-		itemHeight = 31.5,
-		menuItemClassName,
-		items,
-		focusManager,
-		onSelect,
-	} = props;
+	const { overscan, searchElement, itemHeight = 31.5, menuItemClassName, items, focusManager, onSelect } = props;
 
 	const menuId = useRef(`menu-ctrl-${useId()}`);
 
@@ -247,8 +234,7 @@ const ItemVirtualizer = <T extends number | string>(props: ItemVirtualizerProps<
 			if (focusedItemIndex.current === null || focusedItemIndex.current === undefined) {
 				return;
 			}
-			const nextIndex =
-				direction === 'next' ? focusedItemIndex.current + 1 : focusedItemIndex.current - 1;
+			const nextIndex = direction === 'next' ? focusedItemIndex.current + 1 : focusedItemIndex.current - 1;
 			const shouldWrap =
 				(direction === 'next' && focusedItemIndex.current === lastVirtualItemIndex) ||
 				(direction === 'previous' && focusedItemIndex.current === 0);
@@ -330,10 +316,7 @@ const ItemVirtualizer = <T extends number | string>(props: ItemVirtualizerProps<
 	 */
 	const handleKeyboardFocusKeydown = (
 		e: KeyboardEvent,
-		callbacks: Record<
-			'handleFocusForward' | 'handleFocusBackward',
-			(direction: 'next' | 'previous') => void
-		>,
+		callbacks: Record<'handleFocusForward' | 'handleFocusBackward', (direction: 'next' | 'previous') => void>,
 	) => {
 		const keyOps = ['Tab', 'ArrowUp', 'ArrowDown'];
 		if (keyOps.includes(e.key)) {
@@ -351,15 +334,20 @@ const ItemVirtualizer = <T extends number | string>(props: ItemVirtualizerProps<
 	const renderSearch = useMemo(
 		() =>
 			searchElement
-				? // biome-ignore lint/suspicious/noExplicitAny: ignore
-					cloneElement(searchElement as ReactElement<any>, {
-						onKeyDown: (e: KeyboardEvent) =>
-							handleKeyboardFocusKeydown(e, {
-								handleFocusBackward: () => focusMenuItem(lastVirtualItemIndex),
-								handleFocusForward: () => focusMenuItem(0),
-							}),
-						ref: searchRef,
-					})
+				? cloneElement(
+						searchElement as ReactElement<{
+							onKeyDown?: (e: KeyboardEvent) => void;
+							ref?: unknown;
+						}>,
+						{
+							onKeyDown: (e: KeyboardEvent) =>
+								handleKeyboardFocusKeydown(e, {
+									handleFocusBackward: () => focusMenuItem(lastVirtualItemIndex),
+									handleFocusForward: () => focusMenuItem(0),
+								}),
+							ref: searchRef,
+						},
+					)
 				: null,
 		[searchElement, lastVirtualItemIndex, focusMenuItem],
 	);

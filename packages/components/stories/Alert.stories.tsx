@@ -11,8 +11,7 @@ const meta: Meta<typeof Alert> = {
 	title: 'Components/Status/Alert',
 	parameters: {
 		figma: {
-			design:
-				'https://www.figma.com/design/98HKKXL2dTle29ikJ3tzk7/%F0%9F%9A%80-LaunchPad?node-id=8225-704&m=dev',
+			design: 'https://www.figma.com/design/98HKKXL2dTle29ikJ3tzk7/%F0%9F%9A%80-LaunchPad?node-id=8225-704&m=dev',
 		},
 	},
 	argTypes: {
@@ -50,8 +49,8 @@ export const BlockDefault: Story = {
 			<>
 				<Heading>Test drive SSO</Heading>
 				<Text>
-					Verify your SSO configuration is working. You'll be redirected back here after a
-					successful test; this won't require all members to sign in with SSO yet.
+					Verify your SSO configuration is working. You'll be redirected back here after a successful test; this won't
+					require all members to sign in with SSO yet.
 				</Text>
 				<ButtonGroup>
 					<Button>Test drive SSO</Button>
@@ -127,8 +126,8 @@ export const BlockWithActions: Story = {
 			<>
 				<Heading>Test drive SSO</Heading>
 				<Text>
-					Test drive to verify SSO is working. If successful, you'll be redirected to this page by
-					your ldP. This will not require all account members to sign in with SSO.
+					Test drive to verify SSO is working. If successful, you'll be redirected to this page by your ldP. This will
+					not require all account members to sign in with SSO.
 				</Text>
 				<ButtonGroup>
 					<Button>Test drive SSO</Button>
@@ -175,16 +174,12 @@ export const BlockWithoutHeader: Story = {
 			</Alert>
 			<Alert status="error" actionsLayout="inline" isDismissable>
 				<AlertText>
-					<Text>
-						Unable to save your changes. Try again, or contact support if the problem continues.
-					</Text>
+					<Text>Unable to save your changes. Try again, or contact support if the problem continues.</Text>
 				</AlertText>
 			</Alert>
 			<Alert status="info" actionsLayout="inline" isDismissable>
 				<AlertText>
-					<Text>
-						A new relay proxy is available. Update to stay compatible with the latest SDK features.
-					</Text>
+					<Text>A new relay proxy is available. Update to stay compatible with the latest SDK features.</Text>
 				</AlertText>
 				<ButtonGroup>
 					<Button>Update</Button>

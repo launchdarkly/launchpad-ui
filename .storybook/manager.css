@@ -37,7 +37,7 @@
 }
 
 .docs-light {
-	background-color: #ffffff !important; /* white.950 */
+	background-color: #fff !important; /* white.950 */
 	color: #23252a !important; /* gray.900 */
 }
 
@@ -266,7 +266,7 @@ body,
 
 /* Custom styling for sidebar and toolbar */
 .light-theme .sidebar {
-	background: #ffffff;
+	background: #fff;
 	border-color: rgba(0, 0, 0, 0.1);
 }
 
@@ -344,10 +344,6 @@ body,
 .light-theme .sidebar-item[data-selected='true'] svg,
 .dark-theme .sidebar-item[data-selected='true'] svg,
 .light-theme .tree-node[data-selected='true'] svg,
-.dark-theme .tree-node[data-selected='true'] svg,
-.light-theme .sidebar-item[data-selected='true'] svg,
-.dark-theme .sidebar-item[data-selected='true'] svg,
-.light-theme .tree-node[data-selected='true'] svg,
 .dark-theme .tree-node[data-selected='true'] svg {
 	color: white !important;
 	fill: white !important;
@@ -375,18 +371,19 @@ body,
 }
 
 /* Override specific CSS module classes for docblock-argstable in dark mode */
+
 /* Order by specificity: lowest to highest */
 .dark-theme .docblock-argstable tbody > tr > *,
 .dark-theme .docblock-argstable [class*='css-'] tbody > tr > *,
 .dark-theme .docblock-argstable .css-19yaz2m tbody > tr > *,
 .dark-theme .docblock-argstable .css-19yaz2m.css-19yaz2m tbody > tr > * {
-	background-color: #000000 !important;
+	background-color: #000 !important;
 }
 
 /* Ensure table cells in dark mode argstable have proper black background */
 .dark-theme .docblock-argstable tbody tr td,
 .dark-theme .docblock-argstable tbody tr th {
-	background-color: #000000 !important;
+	background-color: #000 !important;
 }
 
 .dark-theme .docblock-argstable tbody tr * {
@@ -519,5 +516,5 @@ body.dark-theme .sb-preview-toolbar {
 .dark-theme .sb-preview-toolbar button:hover,
 .dark-theme .sb-preview-toolbar [role='button']:hover {
 	background-color: #3f454c !important;
-	color: #ffffff !important;
+	color: #fff !important;
 }

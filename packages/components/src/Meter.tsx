@@ -1,16 +1,16 @@
-import type { VariantProps } from 'class-variance-authority';
 import type { Ref } from 'react';
-import type { MeterProps as AriaMeterProps } from 'react-aria-components/Meter';
-import type { ContextValue } from 'react-aria-components/slots';
-
-import { cva, cx } from 'class-variance-authority';
 import { createContext } from 'react';
 import { composeRenderProps } from 'react-aria-components/composeRenderProps';
+import type { MeterProps as AriaMeterProps } from 'react-aria-components/Meter';
 import { Meter as AriaMeter } from 'react-aria-components/Meter';
+import type { ContextValue } from 'react-aria-components/slots';
 import { Text } from 'react-aria-components/Text';
+import type { VariantProps } from 'class-variance-authority';
+import { cva, cx } from 'class-variance-authority';
+
+import { useLPContextProps } from './utils';
 
 import styles from './styles/Meter.module.css';
-import { useLPContextProps } from './utils';
 
 const meterStyles = cva(styles.meter, {
 	variants: {
@@ -36,8 +36,8 @@ const MeterContext = createContext<ContextValue<MeterProps, HTMLDivElement>>(nul
  * https://react-spectrum.adobe.com/react-aria/Meter.html
  */
 const Meter = ({ ref, ...props }: MeterProps) => {
-	[props, ref] = useLPContextProps(props, ref, MeterContext);
-	const { variant = 'donut' } = props;
+	const [mergedProps, mergedRef] = useLPContextProps(props, ref, MeterContext);
+	const { variant = 'donut' } = mergedProps;
 
 	const center = 64;
 	const strokeWidth = 8;
@@ -46,29 +46,18 @@ const Meter = ({ ref, ...props }: MeterProps) => {
 
 	return (
 		<AriaMeter
-			{...props}
-			ref={ref}
-			className={composeRenderProps(props.className, (className, renderProps) =>
+			{...mergedProps}
+			ref={mergedRef}
+			className={composeRenderProps(mergedProps.className, (className, renderProps) =>
 				meterStyles({ ...renderProps, variant, className }),
 			)}
 		>
-			{composeRenderProps(props.children, (children, { percentage, valueText }) => (
+			{composeRenderProps(mergedProps.children, (children, { percentage, valueText }) => (
 				<>
 					{variant === 'donut' && (
 						// biome-ignore lint/a11y/noSvgWithoutTitle: ignore
-						<svg
-							viewBox="0 0 128 128"
-							fill="none"
-							strokeWidth={strokeWidth}
-							className={styles.icon}
-						>
-							<circle
-								cx={center}
-								cy={center}
-								r={r}
-								strokeWidth={strokeWidth}
-								className={styles.outerCircle}
-							/>
+						<svg viewBox="0 0 128 128" fill="none" strokeWidth={strokeWidth} className={styles.icon}>
+							<circle cx={center} cy={center} r={r} strokeWidth={strokeWidth} className={styles.outerCircle} />
 							<circle
 								cx={center}
 								cy={center}

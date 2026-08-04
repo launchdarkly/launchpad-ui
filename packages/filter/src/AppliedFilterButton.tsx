@@ -1,8 +1,8 @@
 import type { ReactNode } from 'react';
+import { Children, forwardRef } from 'react';
+import { cx } from 'classix';
 
 import { Icon } from '@launchpad-ui/icons';
-import { cx } from 'classix';
-import { Children, forwardRef } from 'react';
 
 import styles from './styles/Filter.module.css';
 
@@ -17,13 +17,7 @@ type AppliedFilterButtonProps = {
 type Ref = HTMLButtonElement;
 
 const AppliedFilterButton = forwardRef<Ref, AppliedFilterButtonProps>((props, ref) => {
-	const {
-		name,
-		className,
-		children,
-		onClickFilterButton,
-		'data-test-id': testId = 'applied-filter-button',
-	} = props;
+	const { name, className, children, onClickFilterButton, 'data-test-id': testId = 'applied-filter-button' } = props;
 
 	const hasDescription = Children.count(children) !== 0;
 

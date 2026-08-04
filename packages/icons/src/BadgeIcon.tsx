@@ -1,9 +1,9 @@
-import type { VariantProps } from 'class-variance-authority';
 import type { HTMLAttributes } from 'react';
-
+import type { VariantProps } from 'class-variance-authority';
 import { cva } from 'class-variance-authority';
 
 import { IconContext } from './Icon';
+
 import styles from './styles/BadgeIcon.module.css';
 
 const badge = cva(styles.base, {
@@ -41,13 +41,7 @@ const badge = cva(styles.base, {
 
 interface BadgeIconProps extends HTMLAttributes<HTMLDivElement>, VariantProps<typeof badge> {}
 
-const BadgeIcon = ({
-	children,
-	className,
-	size = 'medium',
-	variant = 'default',
-	...props
-}: BadgeIconProps) => {
+const BadgeIcon = ({ children, className, size = 'medium', variant = 'default', ...props }: BadgeIconProps) => {
 	return (
 		<div className={badge({ size, variant, className })} {...props}>
 			<IconContext.Provider value={{ size }}>{children}</IconContext.Provider>

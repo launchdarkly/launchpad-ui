@@ -25,15 +25,13 @@ export const Example: Story = {
 			<>
 				<ButtonGroup>
 					<Button variant="minimal">
-						<Icon name="filter-list" size="small" /> Filter{' '}
-						<Icon name="chevron-down" size="small" />
+						<Icon name="filter-list" size="small" /> Filter <Icon name="chevron-down" size="small" />
 					</Button>
 					<Button variant="minimal">
 						<Icon name="sort" size="small" /> Sort <Icon name="chevron-down" size="small" />
 					</Button>
 					<Button variant="minimal">
-						<Icon name="filter-tune" size="small" /> Display{' '}
-						<Icon name="chevron-down" size="small" />
+						<Icon name="filter-tune" size="small" /> Display <Icon name="chevron-down" size="small" />
 					</Button>
 				</ButtonGroup>
 				<Separator />

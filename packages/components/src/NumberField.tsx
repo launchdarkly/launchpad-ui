@@ -1,14 +1,14 @@
 import type { Ref } from 'react';
-import type { NumberFieldProps as AriaNumberFieldProps } from 'react-aria-components/NumberField';
-import type { ContextValue } from 'react-aria-components/slots';
-
-import { cva } from 'class-variance-authority';
 import { createContext } from 'react';
 import { composeRenderProps } from 'react-aria-components/composeRenderProps';
+import type { NumberFieldProps as AriaNumberFieldProps } from 'react-aria-components/NumberField';
 import { NumberField as AriaNumberField } from 'react-aria-components/NumberField';
+import type { ContextValue } from 'react-aria-components/slots';
+import { cva } from 'class-variance-authority';
+
+import { useLPContextProps } from './utils';
 
 import styles from './styles/NumberField.module.css';
-import { useLPContextProps } from './utils';
 
 const numberFieldStyles = cva(styles.number);
 
@@ -24,20 +24,20 @@ const NumberFieldContext = createContext<ContextValue<NumberFieldProps, HTMLDivE
  * https://react-spectrum.adobe.com/react-aria/NumberField.html
  */
 const NumberField = ({ ref, ...props }: NumberFieldProps) => {
-	[props, ref] = useLPContextProps(props, ref, NumberFieldContext);
+	const [mergedProps, mergedRef] = useLPContextProps(props, ref, NumberFieldContext);
 	const {
 		formatOptions = {
 			maximumFractionDigits: 20,
 			useGrouping: false,
 		},
-	} = props;
+	} = mergedProps;
 
 	return (
 		<AriaNumberField
 			formatOptions={formatOptions}
-			{...props}
-			ref={ref}
-			className={composeRenderProps(props.className, (className, renderProps) =>
+			{...mergedProps}
+			ref={mergedRef}
+			className={composeRenderProps(mergedProps.className, (className, renderProps) =>
 				numberFieldStyles({ ...renderProps, className }),
 			)}
 		/>

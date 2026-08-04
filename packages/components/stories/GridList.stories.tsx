@@ -1,8 +1,7 @@
-import type { Meta, StoryObj } from '@storybook/react-vite';
 import type { ComponentType } from 'react';
-
 import { useDragAndDrop } from 'react-aria-components/useDragAndDrop';
 import { useListData } from 'react-stately/useListData';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 
 import { DropIndicator } from '../src/DropIndicator';
 import { GridList, GridListItem } from '../src/GridList';

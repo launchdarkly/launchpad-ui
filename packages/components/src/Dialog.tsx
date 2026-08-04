@@ -1,20 +1,17 @@
 import type { Ref } from 'react';
-import type {
-	DialogProps as AriaDialogProps,
-	DialogTriggerProps,
-} from 'react-aria-components/Dialog';
-import type { ContextValue } from 'react-aria-components/slots';
-
-import { useSlotId } from '@react-aria/utils';
-import { cva } from 'class-variance-authority';
 import { createContext } from 'react';
 import { composeRenderProps } from 'react-aria-components/composeRenderProps';
+import type { DialogProps as AriaDialogProps, DialogTriggerProps } from 'react-aria-components/Dialog';
 import { Dialog as AriaDialog, DialogTrigger } from 'react-aria-components/Dialog';
+import type { ContextValue } from 'react-aria-components/slots';
 import { Provider } from 'react-aria-components/slots';
 import { TextContext } from 'react-aria-components/Text';
+import { useSlotId } from '@react-aria/utils';
+import { cva } from 'class-variance-authority';
+
+import { useLPContextProps } from './utils';
 
 import styles from './styles/Dialog.module.css';
-import { useLPContextProps } from './utils';
 
 const dialogStyles = cva(styles.dialog);
 
@@ -30,18 +27,18 @@ const DialogContext = createContext<ContextValue<DialogProps, HTMLElement>>(null
  * https://react-spectrum.adobe.com/react-aria/Dialog.html
  */
 const Dialog = ({ ref, ...props }: DialogProps) => {
-	[props, ref] = useLPContextProps(props, ref, DialogContext);
-	const { className } = props;
+	const [mergedProps, mergedRef] = useLPContextProps(props, ref, DialogContext);
+	const { className } = mergedProps;
 	const descriptionId = useSlotId();
 
 	return (
 		<AriaDialog
-			{...props}
-			ref={ref}
+			{...mergedProps}
+			ref={mergedRef}
 			className={dialogStyles({ className })}
-			aria-describedby={props['aria-describedby'] || descriptionId}
+			aria-describedby={mergedProps['aria-describedby'] || descriptionId}
 		>
-			{composeRenderProps(props.children, (children) => (
+			{composeRenderProps(mergedProps.children, (children) => (
 				<Provider
 					values={[
 						[

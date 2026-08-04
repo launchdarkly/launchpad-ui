@@ -5,14 +5,7 @@ import { TextField } from '../src';
 
 describe('TextField', () => {
 	it('renders', () => {
-		render(
-			<TextField
-				value="my text"
-				aria-label="My Text Field"
-				name="myTextField"
-				onChange={() => undefined}
-			/>,
-		);
+		render(<TextField value="my text" aria-label="My Text Field" name="myTextField" onChange={() => undefined} />);
 		expect(screen.getByLabelText('My Text Field')).toBeInTheDocument();
 	});
 

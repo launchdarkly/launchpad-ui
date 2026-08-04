@@ -23,5 +23,5 @@
 		}
 	],
 	"rangeStrategy": "bump",
-	"ignoreDeps": ["react-router", "@biomejs/biome"]
+	"ignoreDeps": ["react-router", "oxlint", "oxfmt", "oxlint-tsgolint"]
 }

@@ -1,20 +1,20 @@
 import type { CSSProperties, Ref } from 'react';
-import type { ComboBoxProps as AriaComboBoxProps } from 'react-aria-components/ComboBox';
-import type { ContextValue } from 'react-aria-components/slots';
-import type { IconButtonProps } from './IconButton';
-
-import { useResizeObserver } from '@react-aria/utils';
-import { cva } from 'class-variance-authority';
 import { createContext, useCallback, useContext, useRef, useState } from 'react';
+import type { ComboBoxProps as AriaComboBoxProps } from 'react-aria-components/ComboBox';
 import { ComboBox as AriaComboBox, ComboBoxStateContext } from 'react-aria-components/ComboBox';
 import { composeRenderProps } from 'react-aria-components/composeRenderProps';
 import { GroupContext } from 'react-aria-components/Group';
+import type { ContextValue } from 'react-aria-components/slots';
 import { Provider } from 'react-aria-components/slots';
+import { useResizeObserver } from '@react-aria/utils';
+import { cva } from 'class-variance-authority';
 
+import type { IconButtonProps } from './IconButton';
 import { IconButton } from './IconButton';
 import { PopoverContext } from './Popover';
-import styles from './styles/ComboBox.module.css';
 import { useLPContextProps } from './utils';
+
+import styles from './styles/ComboBox.module.css';
 
 const comboBoxStyles = cva(styles.box);
 
@@ -24,7 +24,9 @@ interface ComboBoxProps<T extends object> extends AriaComboBoxProps<T> {
 
 interface ComboBoxClearButtonProps extends Partial<IconButtonProps> {}
 
-// biome-ignore lint/suspicious/noExplicitAny: ignore
+// react-aria-components types this identically: `ComboBoxContext: React.Context<ContextValue<ComboBoxProps<any, SelectionMode>, HTMLDivElement>>`
+// (react-aria-components/dist/types/src/ComboBox.d.ts) — a context can't carry the open generic `T`, so RAC itself erases it to `any` here.
+// oxlint-disable-next-line typescript/no-explicit-any -- mirrors react-aria-components' own ComboBoxContext declaration (see comment above)
 const ComboBoxContext = createContext<ContextValue<ComboBoxProps<any>, HTMLDivElement>>(null);
 
 /**
@@ -33,8 +35,8 @@ const ComboBoxContext = createContext<ContextValue<ComboBoxProps<any>, HTMLDivEl
  * https://react-spectrum.adobe.com/react-aria/ComboBox.html
  */
 const ComboBox = <T extends object>({ ref, ...props }: ComboBoxProps<T>) => {
-	[props, ref] = useLPContextProps(props, ref, ComboBoxContext);
-	const { menuTrigger = 'focus' } = props;
+	const [mergedProps, mergedRef] = useLPContextProps(props, ref, ComboBoxContext);
+	const { menuTrigger = 'focus' } = mergedProps;
 	const groupRef = useRef<HTMLDivElement>(null);
 	// https://github.com/adobe/react-spectrum/blob/main/packages/react-aria-components/src/ComboBox.tsx#L152-L166
 	const [groupWidth, setGroupWidth] = useState<string | null>(null);
@@ -47,19 +49,19 @@ const ComboBox = <T extends object>({ ref, ...props }: ComboBoxProps<T>) => {
 
 	useResizeObserver({
 		ref: groupRef,
-		onResize: onResize,
+		onResize,
 	});
 
 	return (
 		<AriaComboBox
 			menuTrigger={menuTrigger}
-			{...props}
-			ref={ref}
-			className={composeRenderProps(props.className, (className, renderProps) =>
+			{...mergedProps}
+			ref={mergedRef}
+			className={composeRenderProps(mergedProps.className, (className, renderProps) =>
 				comboBoxStyles({ ...renderProps, className }),
 			)}
 		>
-			{composeRenderProps(props.children, (children, { isInvalid, isDisabled }) => (
+			{composeRenderProps(mergedProps.children, (children, { isInvalid, isDisabled }) => (
 				<Provider
 					values={[
 						[GroupContext, { ref: groupRef, isInvalid, isDisabled }],

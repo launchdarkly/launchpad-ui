@@ -27,6 +27,15 @@
 	opacity: 0.64;
 }
 
+/* Filled buttons have no border, so a compact group needs a divider between halves. */
+:global([data-spacing='compact'][data-orientation='horizontal']) > :is(.primary, .destructive):not(:first-child) {
+	border-inline-start: 1px solid var(--lp-button-divider-color);
+}
+
+:global([data-spacing='compact'][data-orientation='vertical']) > :is(.primary, .destructive):not(:first-child) {
+	border-block-start: 1px solid var(--lp-button-divider-color);
+}
+
 .small {
 	font: var(--lp-text-label-2-semibold);
 	padding: calc(3px + var(--lp-button-padding, 0px)) var(--lp-spacing-300);
@@ -45,6 +54,7 @@
 .default {
 	composes: button;
 	--lp-button-padding: 0px;
+
 	background-color: var(--lp-color-bg-interactive-secondary-base);
 	border: 1px solid var(--lp-color-border-interactive-secondary-base);
 	color: var(--lp-color-text-ui-primary-base);
@@ -65,6 +75,12 @@
 .primary {
 	composes: button;
 	--lp-button-padding: 1px;
+	--lp-button-divider-color: color-mix(
+		in oklab,
+		var(--lp-color-shadow-interactive-primary) 40%,
+		var(--lp-color-bg-interactive-primary-base)
+	);
+
 	background-color: var(--lp-color-bg-interactive-primary-base);
 	color: var(--lp-color-text-interactive-primary-base);
 	z-index: 1;
@@ -93,6 +109,12 @@
 .destructive {
 	composes: button;
 	--lp-button-padding: 1px;
+	--lp-button-divider-color: color-mix(
+		in oklab,
+		var(--lp-color-shadow-interactive-primary) 40%,
+		var(--lp-color-bg-interactive-destructive-base)
+	);
+
 	background-color: var(--lp-color-bg-interactive-destructive-base);
 	color: var(--lp-color-text-interactive-primary-base);
 
@@ -117,6 +139,7 @@
 .minimal {
 	composes: button;
 	--lp-button-padding: 1px;
+
 	background-color: var(--lp-color-bg-interactive-tertiary-base);
 	color: var(--lp-color-text-ui-primary-base);
 }
@@ -157,6 +180,7 @@
 
 .picker {
 	composes: base from './Input.module.css';
+
 	/* biome-ignore lint/suspicious/noDuplicateProperties: safe */
 	composes: _default from './Input.module.css';
 	composes: group from './Group.module.css';

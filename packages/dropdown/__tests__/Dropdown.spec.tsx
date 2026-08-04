@@ -1,8 +1,8 @@
+import { useRef } from 'react';
 import type { RefObject } from '@react-types/shared';
+import { describe, expect, it, vi } from 'vitest';
 
 import { Menu, MenuItem } from '@launchpad-ui/menu';
-import { useRef } from 'react';
-import { describe, expect, it, vi } from 'vitest';
 
 import { render, screen, userEvent } from '../../../test/utils';
 import { Dropdown, DropdownButton } from '../src';

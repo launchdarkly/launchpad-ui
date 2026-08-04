@@ -1,9 +1,9 @@
-import type { Meta, StoryObj } from '@storybook/react-vite';
 import type { ComponentType } from 'react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
+import { userEvent } from 'storybook/test';
 
 import { Icon } from '@launchpad-ui/icons';
 import { vars } from '@launchpad-ui/vars';
-import { userEvent } from 'storybook/test';
 
 import { DateInput, DateSegment, TimeField } from '../src/DateField';
 import { Group } from '../src/Group';
@@ -16,8 +16,7 @@ const meta: Meta<typeof TimeField> = {
 	title: 'Components/Date and Time/TimeField',
 	parameters: {
 		figma: {
-			design:
-				'https://www.figma.com/design/98HKKXL2dTle29ikJ3tzk7/%F0%9F%9A%80-LaunchPad?node-id=10715-54568&m=dev',
+			design: 'https://www.figma.com/design/98HKKXL2dTle29ikJ3tzk7/%F0%9F%9A%80-LaunchPad?node-id=10715-54568&m=dev',
 		},
 		a11y: {
 			options: {

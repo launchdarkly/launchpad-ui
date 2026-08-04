@@ -1,34 +1,28 @@
 import type { CSSProperties, Ref } from 'react';
-import type {
-	DatePickerProps as AriaDatePickerProps,
-	DateValue,
-} from 'react-aria-components/DatePicker';
-import type { DateRangePickerProps as AriaDateRangePickerProps } from 'react-aria-components/DateRangePicker';
-import type { ContextValue } from 'react-aria-components/slots';
-
-import { Icon } from '@launchpad-ui/icons';
-import { useResizeObserver } from '@react-aria/utils';
-import { cva, cx } from 'class-variance-authority';
 import { createContext, useCallback, useContext, useRef, useState } from 'react';
-import { useLocale } from 'react-aria/I18nProvider';
 import { composeRenderProps } from 'react-aria-components/composeRenderProps';
-import {
-	DatePicker as AriaDatePicker,
-	DatePickerStateContext,
-	Text,
-} from 'react-aria-components/DatePicker';
+import type { DatePickerProps as AriaDatePickerProps, DateValue } from 'react-aria-components/DatePicker';
+import { DatePicker as AriaDatePicker, DatePickerStateContext, Text } from 'react-aria-components/DatePicker';
+import type { DateRangePickerProps as AriaDateRangePickerProps } from 'react-aria-components/DateRangePicker';
 import {
 	DateRangePicker as AriaDateRangePicker,
 	DateRangePickerStateContext,
 } from 'react-aria-components/DateRangePicker';
 import { FormContext } from 'react-aria-components/Form';
 import { PopoverContext } from 'react-aria-components/Popover';
+import type { ContextValue } from 'react-aria-components/slots';
 import { Provider, useSlottedContext } from 'react-aria-components/slots';
+import { useLocale } from 'react-aria/I18nProvider';
+import { useResizeObserver } from '@react-aria/utils';
+import { cva, cx } from 'class-variance-authority';
+
+import { Icon } from '@launchpad-ui/icons';
 
 import { ButtonContext } from './Button';
+import { useLPContextProps } from './utils';
+
 import baseStyles from './styles/base.module.css';
 import styles from './styles/DatePicker.module.css';
-import { useLPContextProps } from './utils';
 
 const datePickerStyles = cva(styles.picker);
 
@@ -40,10 +34,8 @@ interface DateRangePickerProps<T extends DateValue> extends AriaDateRangePickerP
 	ref?: Ref<HTMLDivElement>;
 }
 
-const DatePickerContext =
-	createContext<ContextValue<DatePickerProps<DateValue>, HTMLDivElement>>(null);
-const DateRangePickerContext =
-	createContext<ContextValue<DateRangePickerProps<DateValue>, HTMLDivElement>>(null);
+const DatePickerContext = createContext<ContextValue<DatePickerProps<DateValue>, HTMLDivElement>>(null);
+const DateRangePickerContext = createContext<ContextValue<DateRangePickerProps<DateValue>, HTMLDivElement>>(null);
 
 /**
  * A date picker combines a DateField and a Calendar popover to allow users to enter or select a date and time value.
@@ -51,7 +43,7 @@ const DateRangePickerContext =
  * https://react-spectrum.adobe.com/react-aria/DatePicker.html
  */
 const DatePicker = <T extends DateValue>({ ref, ...props }: DatePickerProps<T>) => {
-	[props, ref] = useLPContextProps(props, ref, DatePickerContext);
+	const [mergedProps, mergedRef] = useLPContextProps(props, ref, DatePickerContext);
 	const formContext = useSlottedContext(FormContext);
 	const buttonRef = useRef<HTMLButtonElement>(null);
 
@@ -65,18 +57,18 @@ const DatePicker = <T extends DateValue>({ ref, ...props }: DatePickerProps<T>) 
 
 	useResizeObserver({
 		ref: buttonRef,
-		onResize: onResize,
+		onResize,
 	});
 
 	return (
 		<AriaDatePicker
-			{...props}
-			ref={ref}
-			className={composeRenderProps(props.className, (className, renderProps) =>
+			{...mergedProps}
+			ref={mergedRef}
+			className={composeRenderProps(mergedProps.className, (className, renderProps) =>
 				datePickerStyles({ ...renderProps, className }),
 			)}
 		>
-			{composeRenderProps(props.children, (children, { isDisabled, isInvalid }) =>
+			{composeRenderProps(mergedProps.children, (children, { isDisabled, isInvalid }) =>
 				formContext ? (
 					children
 				) : (
@@ -117,7 +109,7 @@ const DatePicker = <T extends DateValue>({ ref, ...props }: DatePickerProps<T>) 
  * https://react-spectrum.adobe.com/react-aria/DateRangePicker.html
  */
 const DateRangePicker = <T extends DateValue>({ ref, ...props }: DateRangePickerProps<T>) => {
-	[props, ref] = useLPContextProps(props, ref, DateRangePickerContext);
+	const [mergedProps, mergedRef] = useLPContextProps(props, ref, DateRangePickerContext);
 	const formContext = useSlottedContext(FormContext);
 	const buttonRef = useRef<HTMLButtonElement>(null);
 
@@ -131,18 +123,18 @@ const DateRangePicker = <T extends DateValue>({ ref, ...props }: DateRangePicker
 
 	useResizeObserver({
 		ref: buttonRef,
-		onResize: onResize,
+		onResize,
 	});
 
 	return (
 		<AriaDateRangePicker
-			{...props}
-			ref={ref}
-			className={composeRenderProps(props.className, (className, renderProps) =>
+			{...mergedProps}
+			ref={mergedRef}
+			className={composeRenderProps(mergedProps.className, (className, renderProps) =>
 				datePickerStyles({ ...renderProps, className }),
 			)}
 		>
-			{composeRenderProps(props.children, (children, { isDisabled, isInvalid }) =>
+			{composeRenderProps(mergedProps.children, (children, { isDisabled, isInvalid }) =>
 				formContext ? (
 					children
 				) : (

@@ -1,14 +1,14 @@
 import type { Ref } from 'react';
-import type { DropZoneProps as AriaDropZoneProps } from 'react-aria-components/DropZone';
-import type { ContextValue } from 'react-aria-components/slots';
-
-import { cva } from 'class-variance-authority';
 import { createContext } from 'react';
 import { composeRenderProps } from 'react-aria-components/composeRenderProps';
+import type { DropZoneProps as AriaDropZoneProps } from 'react-aria-components/DropZone';
 import { DropZone as AriaDropZone } from 'react-aria-components/DropZone';
+import type { ContextValue } from 'react-aria-components/slots';
+import { cva } from 'class-variance-authority';
+
+import { useLPContextProps } from './utils';
 
 import styles from './styles/DropZone.module.css';
-import { useLPContextProps } from './utils';
 
 const dropZoneStyles = cva(styles.zone);
 
@@ -24,12 +24,12 @@ const DropZoneContext = createContext<ContextValue<DropZoneProps, HTMLDivElement
  * https://react-spectrum.adobe.com/react-aria/DropZone.html
  */
 const DropZone = ({ ref, ...props }: DropZoneProps) => {
-	[props, ref] = useLPContextProps(props, ref, DropZoneContext);
+	const [mergedProps, mergedRef] = useLPContextProps(props, ref, DropZoneContext);
 	return (
 		<AriaDropZone
-			{...props}
-			ref={ref}
-			className={composeRenderProps(props.className, (className, renderProps) =>
+			{...mergedProps}
+			ref={mergedRef}
+			className={composeRenderProps(mergedProps.className, (className, renderProps) =>
 				dropZoneStyles({ ...renderProps, className }),
 			)}
 		/>

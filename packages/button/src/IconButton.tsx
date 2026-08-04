@@ -1,15 +1,9 @@
-import type { IconProps } from '@launchpad-ui/icons';
-import type {
-	ButtonHTMLAttributes,
-	ElementType,
-	KeyboardEventHandler,
-	MouseEvent,
-	ReactElement,
-} from 'react';
-
+import type { ButtonHTMLAttributes, ElementType, KeyboardEventHandler, MouseEvent, ReactElement } from 'react';
+import { cloneElement, forwardRef, isValidElement, memo } from 'react';
 import { Slot } from '@radix-ui/react-slot';
 import { cx } from 'classix';
-import { cloneElement, forwardRef, isValidElement, memo } from 'react';
+
+import type { IconProps } from '@launchpad-ui/icons';
 
 import styles from './styles/Button.module.css';
 
@@ -50,7 +44,9 @@ const IconButtonComponent = forwardRef<HTMLButtonElement, IconButtonProps>((prop
 	);
 
 	const iconSize = () => {
-		if (props.size === 'small') return 'small';
+		if (props.size === 'small') {
+			return 'small';
+		}
 
 		return 'medium';
 	};
@@ -71,7 +67,9 @@ const IconButtonComponent = forwardRef<HTMLButtonElement, IconButtonProps>((prop
 	};
 
 	const handleClick = (event: MouseEvent<HTMLAnchorElement> & MouseEvent<HTMLButtonElement>) => {
-		if (disabled) return event.preventDefault();
+		if (disabled) {
+			return event.preventDefault();
+		}
 
 		onClick?.(event);
 	};

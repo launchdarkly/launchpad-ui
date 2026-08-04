@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
+import { userEvent, within } from 'storybook/test';
 
 import { Button } from '@launchpad-ui/button';
-import { userEvent, within } from 'storybook/test';
 
 import { Tooltip } from '../src';
 

@@ -1,12 +1,9 @@
-import fs from 'fs';
-
 import { client } from '@figma/code-connect';
+import fs from 'fs';
 
 // https://github.com/figma/code-connect/blob/main/cli/scripts/README.md
 const generateIcons = async () => {
-	const components = await client.getComponents(
-		'https://figma.com/file/98HKKXL2dTle29ikJ3tzk7?node-id=1-1483',
-	);
+	const components = await client.getComponents('https://figma.com/file/98HKKXL2dTle29ikJ3tzk7?node-id=1-1483');
 
 	fs.writeFileSync(
 		'figma/Icon.figma.tsx',
@@ -30,4 +27,4 @@ ${components
 	);
 };
 
-generateIcons();
+void generateIcons();

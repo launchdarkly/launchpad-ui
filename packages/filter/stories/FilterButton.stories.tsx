@@ -6,8 +6,7 @@ export default {
 	component: FilterButton,
 	title: 'Legacy/Filter/FilterButton',
 	tags: ['deprecated'],
-	description:
-		"When the Filter component doesn't suffice, construct your own custom filter using the FilterButton.",
+	description: "When the Filter component doesn't suffice, construct your own custom filter using the FilterButton.",
 	parameters: {
 		chromatic: { disableSnapshot: true },
 	},

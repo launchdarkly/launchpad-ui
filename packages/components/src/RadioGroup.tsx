@@ -1,14 +1,14 @@
 import type { Ref } from 'react';
-import type { RadioGroupProps as AriaRadioGroupProps } from 'react-aria-components/RadioGroup';
-import type { ContextValue } from 'react-aria-components/slots';
-
-import { cva } from 'class-variance-authority';
 import { createContext } from 'react';
 import { composeRenderProps } from 'react-aria-components/composeRenderProps';
+import type { RadioGroupProps as AriaRadioGroupProps } from 'react-aria-components/RadioGroup';
 import { RadioGroup as AriaRadioGroup } from 'react-aria-components/RadioGroup';
+import type { ContextValue } from 'react-aria-components/slots';
+import { cva } from 'class-variance-authority';
+
+import { useLPContextProps } from './utils';
 
 import styles from './styles/RadioGroup.module.css';
-import { useLPContextProps } from './utils';
 
 const radioGroupStyles = cva(styles.group);
 
@@ -24,12 +24,12 @@ const RadioGroupContext = createContext<ContextValue<RadioGroupProps, HTMLDivEle
  * https://react-spectrum.adobe.com/react-aria/RadioGroup.html
  */
 const RadioGroup = ({ ref, ...props }: RadioGroupProps) => {
-	[props, ref] = useLPContextProps(props, ref, RadioGroupContext);
+	const [mergedProps, mergedRef] = useLPContextProps(props, ref, RadioGroupContext);
 	return (
 		<AriaRadioGroup
-			{...props}
-			ref={ref}
-			className={composeRenderProps(props.className, (className, renderProps) =>
+			{...mergedProps}
+			ref={mergedRef}
+			className={composeRenderProps(mergedProps.className, (className, renderProps) =>
 				radioGroupStyles({ ...renderProps, className }),
 			)}
 		/>

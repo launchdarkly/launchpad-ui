@@ -1,13 +1,13 @@
 import type { Ref } from 'react';
+import { createContext } from 'react';
 import type { ContextValue } from 'react-aria-components/slots';
 import type { TextProps as AriaTextProps } from 'react-aria-components/Text';
-
-import { cva, cx } from 'class-variance-authority';
-import { createContext } from 'react';
 import { Text as AriaText } from 'react-aria-components/Text';
+import { cva, cx } from 'class-variance-authority';
+
+import { useLPContextProps } from './utils';
 
 import styles from './styles/Text.module.css';
-import { useLPContextProps } from './utils';
 
 const textStyles = cva(styles.text, {
 	variants: {
@@ -56,22 +56,13 @@ const getDefaultElementType = (size: 'small' | 'medium' | 'large'): string => {
  *
  * Built on top of [React Aria `Text` component](https://react-spectrum.adobe.com/react-spectrum/Text.html#text).
  */
-const Text = ({
-	ref,
-	size = 'medium',
-	bold = false,
-	maxLines,
-	elementType,
-	className,
-	style,
-	...props
-}: TextProps) => {
-	[props, ref] = useLPContextProps(props, ref, TextContext);
+const Text = ({ ref, size = 'medium', bold = false, maxLines, elementType, className, style, ...props }: TextProps) => {
+	const [mergedProps, mergedRef] = useLPContextProps(props, ref, TextContext);
 
 	return (
 		<AriaText
-			{...props}
-			ref={ref}
+			{...mergedProps}
+			ref={mergedRef}
 			elementType={elementType || getDefaultElementType(size)}
 			className={cx(textStyles({ size, bold }), maxLines && styles.truncate, className)}
 			style={{
@@ -81,7 +72,7 @@ const Text = ({
 				}),
 			}}
 		>
-			{props.children}
+			{mergedProps.children}
 		</AriaText>
 	);
 };

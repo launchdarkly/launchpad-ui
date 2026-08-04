@@ -1,4 +1,6 @@
 import type { Ref } from 'react';
+import { createContext } from 'react';
+import { composeRenderProps } from 'react-aria-components/composeRenderProps';
 import type {
 	SliderFillProps as AriaSliderFillProps,
 	SliderOutputProps as AriaSliderOutputProps,
@@ -6,11 +8,6 @@ import type {
 	SliderThumbProps as AriaSliderThumbProps,
 	SliderTrackProps as AriaSliderTrackProps,
 } from 'react-aria-components/Slider';
-import type { ContextValue } from 'react-aria-components/slots';
-
-import { cva } from 'class-variance-authority';
-import { createContext } from 'react';
-import { composeRenderProps } from 'react-aria-components/composeRenderProps';
 import {
 	Slider as AriaSlider,
 	SliderFill as AriaSliderFill,
@@ -18,9 +15,12 @@ import {
 	SliderThumb as AriaSliderThumb,
 	SliderTrack as AriaSliderTrack,
 } from 'react-aria-components/Slider';
+import type { ContextValue } from 'react-aria-components/slots';
+import { cva } from 'class-variance-authority';
+
+import { useLPContextProps } from './utils';
 
 import styles from './styles/Slider.module.css';
-import { useLPContextProps } from './utils';
 
 const sliderStyles = cva(styles.slider);
 const sliderTrackStyles = cva(styles.track);
@@ -48,8 +48,7 @@ interface SliderOutputProps extends AriaSliderOutputProps {
 	ref?: Ref<HTMLOutputElement>;
 }
 
-const SliderContext =
-	createContext<ContextValue<SliderProps<number | number[]>, HTMLDivElement>>(null);
+const SliderContext = createContext<ContextValue<SliderProps<number | number[]>, HTMLDivElement>>(null);
 
 /**
  * A slider allows a user to select one or more values within a range.
@@ -59,12 +58,12 @@ const SliderContext =
  * https://react-spectrum.adobe.com/react-aria/Slider.html
  */
 const Slider = <T extends number | number[]>({ ref, ...props }: SliderProps<T>) => {
-	[props, ref] = useLPContextProps(props, ref, SliderContext);
+	const [mergedProps, mergedRef] = useLPContextProps(props, ref, SliderContext);
 	return (
 		<AriaSlider
-			{...props}
-			ref={ref}
-			className={composeRenderProps(props.className, (className, renderProps) =>
+			{...mergedProps}
+			ref={mergedRef}
+			className={composeRenderProps(mergedProps.className, (className, renderProps) =>
 				sliderStyles({ ...renderProps, className }),
 			)}
 		/>

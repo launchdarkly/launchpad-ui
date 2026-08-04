@@ -1,8 +1,7 @@
-import type { Meta, ReactRenderer, StoryObj } from '@storybook/react-vite';
 import type { ComponentType } from 'react';
+import type { Meta, ReactRenderer, StoryObj } from '@storybook/react-vite';
 import type { PlayFunction } from 'storybook/internal/types';
-
-import { expect, userEvent, within } from 'storybook/test';
+import { userEvent, within } from 'storybook/test';
 
 import { Button } from '../src/Button';
 import { Dialog, DialogTrigger } from '../src/Dialog';
@@ -16,8 +15,7 @@ const meta: Meta<typeof Popover> = {
 	title: 'Components/Overlays/Popover',
 	parameters: {
 		figma: {
-			design:
-				'https://www.figma.com/design/98HKKXL2dTle29ikJ3tzk7/%F0%9F%9A%80-LaunchPad?node-id=8079-94800&m=dev',
+			design: 'https://www.figma.com/design/98HKKXL2dTle29ikJ3tzk7/%F0%9F%9A%80-LaunchPad?node-id=8079-94800&m=dev',
 		},
 	},
 	decorators: [
@@ -33,16 +31,12 @@ export default meta;
 
 type Story = StoryObj<typeof Popover>;
 
-const play: PlayFunction<ReactRenderer> = async ({
-	canvasElement,
-}: {
-	canvasElement: HTMLElement;
-}) => {
+const play: PlayFunction<ReactRenderer> = async ({ canvasElement }: { canvasElement: HTMLElement }) => {
 	const canvas = within(canvasElement);
 
 	await userEvent.click(canvas.getByRole('button'));
 	const body = canvasElement.ownerDocument.body;
-	await expect(await within(body).findByRole('dialog'));
+	await within(body).findByRole('dialog');
 };
 
 export const Example: Story = {

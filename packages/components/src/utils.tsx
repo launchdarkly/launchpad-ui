@@ -1,12 +1,11 @@
-import type { Href } from '@react-types/shared';
 import type { Context, Ref } from 'react';
-import type { ContextValue, SlotProps } from 'react-aria-components/slots';
-
-import { mergeRefs } from '@react-aria/utils';
 import { useEffect, useLayoutEffect, useMemo, useState } from 'react';
-import { mergeProps } from 'react-aria/mergeProps';
+import type { ContextValue, SlotProps } from 'react-aria-components/slots';
 import { useSlottedContext } from 'react-aria-components/slots';
+import { mergeProps } from 'react-aria/mergeProps';
 import { useHref as useRouterHref } from 'react-router';
+import { mergeRefs } from '@react-aria/utils';
+import type { Href } from '@react-types/shared';
 
 type ImageLoadingStatus = 'idle' | 'loading' | 'loaded' | 'error';
 
@@ -60,7 +59,9 @@ const useImageLoadingStatus = (src?: string) => {
 		const image = new window.Image();
 
 		const updateStatus = (status: ImageLoadingStatus) => () => {
-			if (!isMounted) return;
+			if (!isMounted) {
+				return;
+			}
 			setLoadingStatus(status);
 		};
 
@@ -83,7 +84,7 @@ const useLPContextProps = <T, U extends SlotProps, E>(
 	context: Context<ContextValue<U, E>>,
 ): [T, Ref<E | null>] => {
 	const ctx = useSlottedContext(context, props.slot) || {};
-	// @ts-expect-error
+	// @ts-expect-error -- `ctx` is `U | {}`; the `{}` branch has no `ref` property to destructure
 	const { ref: contextRef, ...contextProps } = ctx;
 	const mergedRef = useMemo(() => mergeRefs(ref, contextRef), [ref, contextRef]);
 	const mergedProps = mergeProps(contextProps, props) as unknown as T;

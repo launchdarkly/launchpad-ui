@@ -1,13 +1,12 @@
+import type { ComponentPropsWithoutRef, Fragment } from 'react';
+import { useRef, useState } from 'react';
+import { VisuallyHidden } from 'react-aria/VisuallyHidden';
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import type { ComponentPropsWithoutRef } from 'react';
-import type { ListBoxItemProps } from '../../src/ListBox';
+import { userEvent, within } from 'storybook/test';
 
 import { Box } from '@launchpad-ui/box';
 import { Icon } from '@launchpad-ui/icons';
 import { vars } from '@launchpad-ui/vars';
-import { type Fragment, useRef, useState } from 'react';
-import { VisuallyHidden } from 'react-aria/VisuallyHidden';
-import { expect, userEvent, within } from 'storybook/test';
 
 import { Button } from '../../src/Button';
 import { ButtonGroup } from '../../src/ButtonGroup';
@@ -18,6 +17,7 @@ import { Heading } from '../../src/Heading';
 import { IconButton } from '../../src/IconButton';
 import { Input } from '../../src/Input';
 import { Label } from '../../src/Label';
+import type { ListBoxItemProps } from '../../src/ListBox';
 import { ListBox, ListBoxItem } from '../../src/ListBox';
 import { Modal, ModalOverlay } from '../../src/Modal';
 import { Perceivable } from '../../src/Perceivable';
@@ -62,7 +62,7 @@ export const CopyToClipboard: Story = {
 					<Button
 						size="small"
 						onPress={() => {
-							navigator.clipboard.writeText('content');
+							void navigator.clipboard.writeText('content');
 							toastQueue.add({ title: 'Copied!', status: 'success' });
 						}}
 					>
@@ -80,7 +80,7 @@ export const CopyToClipboard: Story = {
 		await userEvent.hover(canvasElement);
 		await userEvent.hover(canvas.getByRole('button'));
 		const body = canvasElement.ownerDocument.body;
-		await expect(await within(body).findByRole('tooltip'));
+		await within(body).findByRole('tooltip');
 	},
 };
 
@@ -256,13 +256,7 @@ export const DisabledWithTooltip: Story = {
 										<>
 											<div slot="header">
 												<Heading slot="title">Title</Heading>
-												<IconButton
-													aria-label="close"
-													icon="cancel"
-													size="small"
-													variant="minimal"
-													onPress={close}
-												/>
+												<IconButton aria-label="close" icon="cancel" size="small" variant="minimal" onPress={close} />
 												<Text slot="subtitle">Subtitle</Text>
 											</div>
 											<div slot="body">Body text</div>

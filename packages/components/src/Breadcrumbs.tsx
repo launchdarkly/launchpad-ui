@@ -1,23 +1,21 @@
 import type { Ref } from 'react';
+import { createContext } from 'react';
 import type {
 	BreadcrumbProps as AriaBreadcrumbProps,
 	BreadcrumbsProps as AriaBreadcrumbsProps,
 } from 'react-aria-components/Breadcrumbs';
+import { Breadcrumb as AriaBreadcrumb, Breadcrumbs as AriaBreadcrumbs } from 'react-aria-components/Breadcrumbs';
+import { composeRenderProps } from 'react-aria-components/composeRenderProps';
 import type { ContextValue } from 'react-aria-components/slots';
+import { Provider } from 'react-aria-components/slots';
+import { cva } from 'class-variance-authority';
 
 import { Icon } from '@launchpad-ui/icons';
-import { cva } from 'class-variance-authority';
-import { createContext } from 'react';
-import {
-	Breadcrumb as AriaBreadcrumb,
-	Breadcrumbs as AriaBreadcrumbs,
-} from 'react-aria-components/Breadcrumbs';
-import { composeRenderProps } from 'react-aria-components/composeRenderProps';
-import { Provider } from 'react-aria-components/slots';
 
 import { LinkContext } from './Link';
-import styles from './styles/Breadcrumbs.module.css';
 import { useLPContextProps } from './utils';
+
+import styles from './styles/Breadcrumbs.module.css';
 
 const breadCrumbsStyles = cva(styles.crumbs);
 const breadCrumbStyles = cva(styles.crumb);
@@ -31,7 +29,9 @@ interface BreadcrumbProps extends AriaBreadcrumbProps {
 }
 
 const BreadcrumbsContext =
-	// biome-ignore lint/suspicious/noExplicitAny: ignore
+	// react-aria-components types this identically: `BreadcrumbsContext: React.Context<ContextValue<BreadcrumbsProps<any>, HTMLOListElement>>`
+	// (react-aria-components/dist/types/src/Breadcrumbs.d.ts) — a context can't carry the open generic `T`, so RAC itself erases it to `any` here.
+	// oxlint-disable-next-line typescript/no-explicit-any -- mirrors react-aria-components' own BreadcrumbsContext declaration (see comment above)
 	createContext<ContextValue<BreadcrumbsProps<any>, HTMLOListElement>>(null);
 
 /**
@@ -40,10 +40,10 @@ const BreadcrumbsContext =
  * https://react-spectrum.adobe.com/react-aria/Breadcrumbs.html
  */
 const Breadcrumbs = <T extends object>({ ref, ...props }: BreadcrumbsProps<T>) => {
-	[props, ref] = useLPContextProps(props, ref, BreadcrumbsContext);
-	const { className } = props;
+	const [mergedProps, mergedRef] = useLPContextProps(props, ref, BreadcrumbsContext);
+	const { className } = mergedProps;
 
-	return <AriaBreadcrumbs {...props} ref={ref} className={breadCrumbsStyles({ className })} />;
+	return <AriaBreadcrumbs {...mergedProps} ref={mergedRef} className={breadCrumbsStyles({ className })} />;
 };
 
 /**

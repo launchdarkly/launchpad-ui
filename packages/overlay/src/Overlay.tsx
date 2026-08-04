@@ -1,7 +1,7 @@
 import type { KeyboardEvent, MouseEvent as ReactMouseEvent, ReactNode } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 
 import { Portal } from '@launchpad-ui/portal';
-import { useCallback, useEffect, useRef, useState } from 'react';
 
 type OverlayProps = {
 	isOpen: boolean;
@@ -51,12 +51,8 @@ const Overlay = ({
 			}
 
 			if (!containerElement.current.contains(document.activeElement)) {
-				const autofocusElement = containerElement.current.querySelector(
-					'[autofocus]',
-				) as HTMLDivElement;
-				const tabbableElement = containerElement.current.querySelector(
-					'[tabindex]',
-				) as HTMLDivElement;
+				const autofocusElement = containerElement.current.querySelector('[autofocus]') as HTMLDivElement;
+				const tabbableElement = containerElement.current.querySelector('[tabindex]') as HTMLDivElement;
 				if (autofocusElement) {
 					autofocusElement.focus();
 				} else if (tabbableElement) {
@@ -70,11 +66,7 @@ const Overlay = ({
 		(event: Event) => {
 			const eventTarget = event.target as Element;
 
-			if (
-				enforceFocus &&
-				containerElement.current &&
-				!containerElement.current.contains(eventTarget)
-			) {
+			if (enforceFocus && containerElement.current && !containerElement.current.contains(eventTarget)) {
 				event.stopImmediatePropagation();
 				focusContainer();
 			}

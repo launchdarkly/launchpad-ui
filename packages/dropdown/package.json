@@ -34,13 +34,13 @@
 	"devDependencies": {
 		"@react-aria/utils": "3.34.1",
 		"@react-types/shared": "3.36.0",
-		"react": "19.2.6",
-		"react-dom": "19.2.6"
+		"react": "19.2.8",
+		"react-dom": "19.2.8"
 	},
 	"peerDependencies": {
-		"@react-aria/utils": "3.34.1",
-		"react": "19.2.6",
-		"react-dom": "19.2.6"
+		"@react-aria/utils": "^3.34.1",
+		"react": "^19",
+		"react-dom": "^19"
 	},
 	"exports": {
 		".": {

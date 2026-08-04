@@ -1,19 +1,12 @@
 import type { RGBA, VariableValue } from '@figma/rest-api-spec';
-import type {
-	Config,
-	DesignToken,
-	DesignTokens,
-	PreprocessedTokens,
-	TransformedToken,
-} from 'style-dictionary/types';
-import type { Variable } from './types';
-
 import JsonToTS from 'json-to-ts';
 import StyleDictionary from 'style-dictionary';
 import { formats, transformGroups, transforms, transformTypes } from 'style-dictionary/enums';
+import type { Config, DesignToken, DesignTokens, PreprocessedTokens, TransformedToken } from 'style-dictionary/types';
 import { fileHeader, minifyDictionary, usesReferences } from 'style-dictionary/utils';
 
 import { css, themes } from './themes';
+import type { Variable } from './types';
 
 const [light, dark] = themes;
 const configs = themes.map(css);
@@ -35,38 +28,40 @@ const extensionsDtcgDelegate = (tokens: DesignTokens): PreprocessedTokens => {
 	const clone = structuredClone(tokens);
 
 	const recurse = (slice: DesignTokens | DesignToken, _extensions: string) => {
+		const node = slice;
 		let extensions = _extensions;
-		const keys = Object.keys(slice);
+		const keys = Object.keys(node);
 		if (!keys.includes('$extensions') && extensions && keys.includes('$value')) {
-			slice.$extensions = extensions;
+			node.$extensions = extensions;
 		}
 
-		if (slice.$extensions) {
-			extensions = slice.$extensions;
-			if (slice.$value === undefined) {
-				delete slice.$extensions;
+		if (node.$extensions) {
+			extensions = node.$extensions;
+			if (node.$value === undefined) {
+				delete node.$extensions;
 			}
 		}
 
-		for (const val of Object.values(slice)) {
+		for (const val of Object.values(node)) {
 			if (typeof val === 'object') {
 				recurse(val, extensions);
 			}
 		}
 	};
-	//@ts-ignore
+	// @ts-expect-error clone's shape is widened by the recursive walk below
 	recurse(clone);
 	return clone as PreprocessedTokens;
 };
 
 const removeExtensions = (slice: DesignTokens | DesignToken): PreprocessedTokens => {
-	delete slice.$extensions;
-	for (const value of Object.values(slice)) {
+	const node = slice;
+	delete node.$extensions;
+	for (const value of Object.values(node)) {
 		if (typeof value === 'object') {
 			removeExtensions(value);
 		}
 	}
-	return slice as PreprocessedTokens;
+	return node as PreprocessedTokens;
 };
 
 const getResolvedType = (value: DesignToken['$value']) => {
@@ -97,12 +92,7 @@ const sd = new StyleDictionary({
 			prefix: 'lp',
 			basePxFontSize: 16,
 			transformGroup: transformGroups.css,
-			transforms: [
-				transforms.nameKebab,
-				transforms.sizePxToRem,
-				transforms.colorRgb,
-				'attribute/font',
-			],
+			transforms: [transforms.nameKebab, transforms.sizePxToRem, transforms.colorRgb, 'attribute/font'],
 			buildPath: 'dist/',
 			options: {
 				outputReferences: true,
@@ -231,7 +221,7 @@ const modes = new StyleDictionary({
 
 StyleDictionary.registerFormat({
 	name: 'css/themes',
-	format: async () => {
+	format: () => {
 		const lightMode = aliasTokens[`${light}.css`];
 		const darkMode = aliasTokens[`${dark}.css`];
 
@@ -241,16 +231,16 @@ StyleDictionary.registerFormat({
 
 StyleDictionary.registerFormat({
 	name: 'custom/font-face',
-	format: async ({ dictionary }) => {
+	format: ({ dictionary }) => {
 		return dictionary.allTokens
 			.map((token) => {
 				const {
 					// @ts-expect-error attr
 					attributes: { family, weight, style },
-					formats,
+					formats: fontFormats,
 					$value,
 				} = token;
-				const urls = formats.map(
+				const urls = fontFormats.map(
 					(extension: string) => `url("./assets/${$value}.${extension}") format("${extension}")`,
 				);
 				return `@font-face {\n\tfont-family: "${family}";\n\tfont-style: ${style};\n\tfont-weight: ${weight};\n\tsrc: ${urls.join(',\n\t\t\t ')};\n\tfont-display: swap;\n}\n`;
@@ -261,14 +251,14 @@ StyleDictionary.registerFormat({
 
 StyleDictionary.registerFormat({
 	name: 'custom/json',
-	format: async ({ dictionary, options }) => {
+	format: ({ dictionary, options }) => {
 		return `${JSON.stringify(minifyDictionary(dictionary.tokens, options.usesDtcg), null, 2)}\n`;
 	},
 });
 
 StyleDictionary.registerFormat({
 	name: 'custom/media-query',
-	format: async ({ dictionary }) => {
+	format: ({ dictionary }) => {
 		return dictionary.allTokens
 			.map((token) => {
 				const { attributes, $value } = token;
@@ -293,7 +283,7 @@ StyleDictionary.registerFormat({
 
 StyleDictionary.registerFormat({
 	name: 'typescript/accurate-module-declarations',
-	format: async ({ dictionary, options }) => {
+	format: ({ dictionary, options }) => {
 		return `declare const root: RootObject\nexport default root\n${JsonToTS(
 			minifyDictionary(dictionary.tokens, options.usesDtcg),
 		).join('\n')}`;
@@ -302,7 +292,7 @@ StyleDictionary.registerFormat({
 
 StyleDictionary.registerFormat({
 	name: 'json/category',
-	format: async ({ dictionary }) => {
+	format: ({ dictionary }) => {
 		const groups = dictionary.allTokens.reduce((acc: TransformedToken, obj) => {
 			const key = obj.attributes?.category as string;
 			const group = acc[key] ?? [];
@@ -315,7 +305,7 @@ StyleDictionary.registerFormat({
 
 StyleDictionary.registerFormat({
 	name: 'json/figma',
-	format: async ({ dictionary }) => {
+	format: ({ dictionary }) => {
 		const tokens = dictionary.allTokens.map((token) => {
 			const { attributes, $description: description = '', $extensions } = token;
 			const { hiddenFromPublishing, scopes } = $extensions?.['com.figma'] || {};
@@ -355,8 +345,13 @@ StyleDictionary.registerTransform({
 	name: 'custom/value/name',
 	type: transformTypes.attribute,
 	transform: (token) => {
-		token.$value = token.name;
-		return token;
+		// Style Dictionary's transform API expects the token object mutated and returned;
+		// shallow-copying it here previously broke downstream font-asset generation. Mutating
+		// via a local alias (same reference, not a copy) satisfies no-param-reassign without
+		// changing that behavior.
+		const mutableToken = token;
+		mutableToken.$value = mutableToken.name;
+		return mutableToken;
 	},
 });
 

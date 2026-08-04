@@ -1,7 +1,8 @@
-import tokens from '@launchpad-ui/tokens';
-import { vars } from '@launchpad-ui/vars';
 import { flatten } from 'flat';
 import { createRainbowSprinkles, defineProperties } from 'rainbow-sprinkles';
+
+import tokens from '@launchpad-ui/tokens';
+import { vars } from '@launchpad-ui/vars';
 
 // biome-ignore lint/correctness/noUnusedVariables: ignore
 const { bg, border, fill, shadow, text, ...global } = vars.color;
@@ -151,10 +152,6 @@ const unconditionalProperties = defineProperties({
 	shorthands: {},
 });
 
-export const rainbowSprinkles = createRainbowSprinkles(
-	responsiveProperties,
-	themedProperties,
-	unconditionalProperties,
-);
+export const rainbowSprinkles = createRainbowSprinkles(responsiveProperties, themedProperties, unconditionalProperties);
 
 export type Sprinkles = Parameters<typeof rainbowSprinkles>[0];

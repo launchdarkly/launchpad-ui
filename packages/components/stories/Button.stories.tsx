@@ -1,10 +1,10 @@
+import { useEffect, useRef, useState } from 'react';
 import type { Meta, ReactRenderer, StoryObj } from '@storybook/react-vite';
 import type { PlayFunction } from 'storybook/internal/types';
+import { fireEvent, userEvent, within } from 'storybook/test';
 
 import { Icon } from '@launchpad-ui/icons';
 import { vars } from '@launchpad-ui/vars';
-import { useEffect, useRef, useState } from 'react';
-import { fireEvent, userEvent, within } from 'storybook/test';
 
 import { Button } from '../src/Button';
 import { Text } from '../src/Text';
@@ -23,9 +23,7 @@ const meta: Meta<typeof Button> = {
 	},
 	decorators: [
 		(Story) => (
-			<div
-				style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: '1rem' }}
-			>
+			<div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: '1rem' }}>
 				<Story />
 			</div>
 		),
@@ -63,11 +61,7 @@ const renderStates = (args: Story['args']) => (
 	</div>
 );
 
-const play: PlayFunction<ReactRenderer> = async ({
-	canvasElement,
-}: {
-	canvasElement: HTMLElement;
-}) => {
+const play: PlayFunction<ReactRenderer> = async ({ canvasElement }: { canvasElement: HTMLElement }) => {
 	const canvas = within(canvasElement);
 
 	const buttons = canvas.getAllByRole('button');
@@ -94,8 +88,7 @@ export const Minimal: Story = {
 };
 
 export const Destructive: Story = {
-	render: (args) =>
-		renderStates({ children: <Text>Destructive</Text>, variant: 'destructive', ...args }),
+	render: (args) => renderStates({ children: <Text>Destructive</Text>, variant: 'destructive', ...args }),
 	play,
 	parameters: {
 		a11y: {

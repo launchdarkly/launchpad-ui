@@ -1,4 +1,3 @@
-import type { IconProps } from '@launchpad-ui/icons';
 import type {
 	ButtonHTMLAttributes,
 	ElementType,
@@ -8,10 +7,11 @@ import type {
 	ReactElement,
 	ReactNode,
 } from 'react';
-
+import { cloneElement, forwardRef, isValidElement, memo } from 'react';
 import { Slot } from '@radix-ui/react-slot';
 import { cx } from 'classix';
-import { cloneElement, forwardRef, isValidElement, memo } from 'react';
+
+import type { IconProps } from '@launchpad-ui/icons';
 
 import styles from './styles/Button.module.css';
 
@@ -99,8 +99,7 @@ const ButtonComponent = forwardRef<HTMLButtonElement, ButtonProps>((props, ref) 
 			return cloneElement(
 				children,
 				undefined,
-				// biome-ignore lint/suspicious/noExplicitAny: ignore
-				getFinalChildren((children as ReactElement<any>).props.children),
+				getFinalChildren((children as ReactElement<{ children?: ReactNode }>).props.children),
 			);
 		}
 
@@ -110,7 +109,9 @@ const ButtonComponent = forwardRef<HTMLButtonElement, ButtonProps>((props, ref) 
 	const isDisabled = disabled || isLoading;
 
 	const handleClick = (event: MouseEvent<HTMLAnchorElement> & MouseEvent<HTMLButtonElement>) => {
-		if (disabled) return event.preventDefault();
+		if (disabled) {
+			return event.preventDefault();
+		}
 
 		onClick?.(event);
 	};

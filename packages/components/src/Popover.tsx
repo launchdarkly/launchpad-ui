@@ -1,21 +1,18 @@
-import type { VariantProps } from 'class-variance-authority';
 import type { Ref } from 'react';
+import { createContext } from 'react';
+import { composeRenderProps } from 'react-aria-components/composeRenderProps';
 import type {
 	OverlayArrowProps as AriaOverlayArrowProps,
 	PopoverProps as AriaPopoverProps,
 } from 'react-aria-components/Popover';
+import { OverlayArrow as AriaOverlayArrow, Popover as AriaPopover } from 'react-aria-components/Popover';
 import type { ContextValue } from 'react-aria-components/slots';
-
+import type { VariantProps } from 'class-variance-authority';
 import { cva } from 'class-variance-authority';
-import { createContext } from 'react';
-import { composeRenderProps } from 'react-aria-components/composeRenderProps';
-import {
-	OverlayArrow as AriaOverlayArrow,
-	Popover as AriaPopover,
-} from 'react-aria-components/Popover';
+
+import { useLPContextProps } from './utils';
 
 import styles from './styles/Popover.module.css';
-import { useLPContextProps } from './utils';
 
 interface PopoverProps extends AriaPopoverProps, VariantProps<typeof popoverStyles> {
 	ref?: Ref<HTMLElement>;
@@ -46,16 +43,16 @@ const overlayArrowStyles = cva(styles.arrow);
  * https://react-spectrum.adobe.com/react-aria/Popover.html
  */
 const Popover = ({ ref, ...props }: PopoverProps) => {
-	[props, ref] = useLPContextProps(props, ref, PopoverContext);
-	const { offset = 4, crossOffset = 0, width = 'default' } = props;
+	const [mergedProps, mergedRef] = useLPContextProps(props, ref, PopoverContext);
+	const { offset = 4, crossOffset = 0, width = 'default' } = mergedProps;
 
 	return (
 		<AriaPopover
 			offset={offset}
 			crossOffset={crossOffset}
-			{...props}
-			ref={ref}
-			className={composeRenderProps(props.className, (className, renderProps) =>
+			{...mergedProps}
+			ref={mergedRef}
+			className={composeRenderProps(mergedProps.className, (className, renderProps) =>
 				popoverStyles({ ...renderProps, width, className }),
 			)}
 		/>

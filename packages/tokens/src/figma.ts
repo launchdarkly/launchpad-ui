@@ -1,14 +1,9 @@
-import type {
-	GetLocalVariablesResponse,
-	PostVariablesRequestBody,
-	PostVariablesResponse,
-} from '@figma/rest-api-spec';
-
+import type { GetLocalVariablesResponse, PostVariablesRequestBody, PostVariablesResponse } from '@figma/rest-api-spec';
 import axios from 'axios';
 
 class FigmaApi {
-	private baseUrl = 'https://api.figma.com';
-	private token: string;
+	private readonly baseUrl = 'https://api.figma.com';
+	private readonly token: string;
 
 	constructor(token: string) {
 		this.token = token;

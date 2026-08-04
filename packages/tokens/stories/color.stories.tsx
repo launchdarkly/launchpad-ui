@@ -1,9 +1,11 @@
-import { vars } from '@launchpad-ui/vars';
 import { useEffect, useRef, useState } from 'react';
+
+import { vars } from '@launchpad-ui/vars';
 
 import { Button } from '../../components/src/Button';
 import { ToastRegion, toastQueue } from '../../components/src/Toast';
 import { Tooltip, TooltipTrigger } from '../../components/src/Tooltip';
+
 import { type ComputedValue, getTokenHex, getTokenValue, TokenCode } from './colorTokens';
 
 export default {
@@ -16,12 +18,12 @@ const ALIAS = ['bg', 'border', 'fill', 'shadow', 'text', 'data'];
 const flatten = (obj: Record<string, unknown>) => {
 	const result = {};
 
-	for (const i in obj) {
+	for (const i of Object.keys(obj)) {
 		if (typeof obj[i] === 'object' && !Array.isArray(obj[i])) {
 			// @ts-expect-error fixme
 			const temp = flatten(obj[i]);
 
-			for (const j in temp) {
+			for (const j of Object.keys(temp)) {
 				const key = j !== ' ' ? `${i}-${j}` : i;
 				// @ts-expect-error fixme
 				result[key] = temp[j];
@@ -87,7 +89,7 @@ const TokenTable = ({ tokens }: { tokens: Record<string, string> }) => {
 									<TooltipTrigger>
 										<Button
 											onPress={() => {
-												navigator.clipboard.writeText(
+												void navigator.clipboard.writeText(
 													value.substring(value.lastIndexOf('--'), value.lastIndexOf(')')),
 												);
 												toastQueue.add({ title: 'Copied!', status: 'success' });
@@ -122,8 +124,7 @@ const global = Object.keys(vars.color)
 	.filter((key) => !ALIAS.includes(key))
 	.reduce((obj, key) => {
 		// @ts-expect-error fixme
-		obj[key] = vars.color[key];
-		return obj;
+		return { ...obj, [key]: vars.color[key] };
 	}, {});
 
 export const Global = {
@@ -134,8 +135,7 @@ const alias = Object.keys(vars.color)
 	.filter((key) => ALIAS.includes(key))
 	.reduce((obj, key) => {
 		// @ts-expect-error fixme
-		obj[key] = vars.color[key];
-		return obj;
+		return { ...obj, [key]: vars.color[key] };
 	}, {});
 
 export const Alias = {

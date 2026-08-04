@@ -1,16 +1,16 @@
-import type { DOMProps } from '@react-types/shared';
-import type { VariantProps } from 'class-variance-authority';
 import type { Ref } from 'react';
-import type { LinkProps as AriaLinkProps } from 'react-aria-components/Link';
-import type { ContextValue } from 'react-aria-components/slots';
-
-import { cva } from 'class-variance-authority';
 import { createContext } from 'react';
 import { composeRenderProps } from 'react-aria-components/composeRenderProps';
+import type { LinkProps as AriaLinkProps } from 'react-aria-components/Link';
 import { Link as AriaLink } from 'react-aria-components/Link';
+import type { ContextValue } from 'react-aria-components/slots';
+import type { DOMProps } from '@react-types/shared';
+import type { VariantProps } from 'class-variance-authority';
+import { cva } from 'class-variance-authority';
+
+import { useLPContextProps } from './utils';
 
 import styles from './styles/Link.module.css';
-import { useLPContextProps } from './utils';
 
 const linkStyles = cva(styles.base, {
 	variants: {
@@ -44,14 +44,14 @@ const LinkContext = createContext<ContextValue<LinkProps, HTMLAnchorElement>>(nu
  * https://react-spectrum.adobe.com/react-aria/Link.html
  */
 const Link = ({ ref, ...props }: LinkProps) => {
-	[props, ref] = useLPContextProps(props, ref, LinkContext);
-	const { variant = 'default', underline = 'hover' } = props;
+	const [mergedProps, mergedRef] = useLPContextProps(props, ref, LinkContext);
+	const { variant = 'default', underline = 'hover' } = mergedProps;
 
 	return (
 		<AriaLink
-			{...props}
-			ref={ref}
-			className={composeRenderProps(props.className, (className, renderProps) =>
+			{...mergedProps}
+			ref={mergedRef}
+			className={composeRenderProps(mergedProps.className, (className, renderProps) =>
 				linkStyles({ ...renderProps, variant, underline, className }),
 			)}
 		/>

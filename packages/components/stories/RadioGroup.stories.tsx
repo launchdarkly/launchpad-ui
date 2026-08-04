@@ -1,6 +1,5 @@
-import type { Meta, StoryObj } from '@storybook/react-vite';
 import type { ComponentType } from 'react';
-
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import { userEvent, within } from 'storybook/test';
 
 import { Button } from '../src/Button';
@@ -17,8 +16,7 @@ const meta: Meta<typeof RadioGroup> = {
 	title: 'Components/Forms/RadioGroup',
 	parameters: {
 		figma: {
-			design:
-				'https://www.figma.com/design/98HKKXL2dTle29ikJ3tzk7/%F0%9F%9A%80-LaunchPad?node-id=1-33616&m=dev',
+			design: 'https://www.figma.com/design/98HKKXL2dTle29ikJ3tzk7/%F0%9F%9A%80-LaunchPad?node-id=1-33616&m=dev',
 		},
 	},
 };

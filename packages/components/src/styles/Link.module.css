@@ -1,3 +1,4 @@
+/* stylelint-disable-next-line block-no-empty -- exported as a stable cva() base class token; consumed via `styles.base` in Link.tsx */
 .base {
 }
 
@@ -46,6 +47,7 @@
 	text-decoration: underline;
 }
 
+/* stylelint-disable-next-line block-no-empty -- exported as a stable cva() variant class token; consumed via `styles.underlineHover` in Link.tsx */
 .underlineHover {
 }
 

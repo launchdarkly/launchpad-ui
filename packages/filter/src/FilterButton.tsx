@@ -1,11 +1,11 @@
 import type { JSX, MouseEvent, ReactNode, SyntheticEvent } from 'react';
+import { Children, forwardRef, useId } from 'react';
+import { VisuallyHidden } from 'react-aria/VisuallyHidden';
+import { cx } from 'classix';
 
 import { IconButton } from '@launchpad-ui/button';
 import { Icon } from '@launchpad-ui/icons';
 import { Tooltip } from '@launchpad-ui/tooltip';
-import { cx } from 'classix';
-import { Children, forwardRef, useId } from 'react';
-import { VisuallyHidden } from 'react-aria/VisuallyHidden';
 
 import styles from './styles/Filter.module.css';
 
@@ -57,7 +57,9 @@ const FilterButton = forwardRef<Ref, FilterButtonProps>((props, ref) => {
 	const isDisabled = disabled;
 
 	const handleClick = (event: MouseEvent<HTMLButtonElement>) => {
-		if (isDisabled) return event.preventDefault();
+		if (isDisabled) {
+			return event.preventDefault();
+		}
 		onClickFilterButton?.();
 	};
 
@@ -74,11 +76,7 @@ const FilterButton = forwardRef<Ref, FilterButtonProps>((props, ref) => {
 				ref={ref}
 				onClick={handleClick}
 			>
-				{hideName ? (
-					<VisuallyHidden id={nameId}>{nameElement}</VisuallyHidden>
-				) : (
-					<span id={nameId}>{nameElement}</span>
-				)}
+				{hideName ? <VisuallyHidden id={nameId}>{nameElement}</VisuallyHidden> : <span id={nameId}>{nameElement}</span>}
 				{hasDescription && (
 					<span id={descriptionId} className={styles.description}>
 						{children}

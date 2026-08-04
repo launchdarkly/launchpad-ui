@@ -1,7 +1,7 @@
 import type { StoryObj } from '@storybook/react-vite';
-import type { NavigationItemProps } from '../src';
 
 import { allModes } from '../../../.storybook/modes';
+import type { NavigationItemProps } from '../src';
 import { Navigation, NavigationItem } from '../src';
 
 export default {

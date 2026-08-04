@@ -38,7 +38,7 @@ To test for visual regressions and accessibility we use [Chromatic](https://www.
 
 ## Code Style
 
-We use [Biome](https://biomejs.dev/) to highlight problems in our code and [Biome](https://biomejs.dev/) to format it to be consistent across the repo.
+We use [oxlint](https://oxc.rs/docs/guide/usage/linter.html) to highlight problems in our JavaScript/TypeScript code and [oxfmt](https://oxc.rs/) to format it to be consistent across the repo. CSS Modules are not currently linted or formatted by a dedicated tool (this is picked up by stylelint once this package merges into the gonfalon monorepo).
 
 ## Git
 

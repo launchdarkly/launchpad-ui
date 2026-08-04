@@ -1,17 +1,18 @@
-import type { Variants } from 'framer-motion';
 import type { MouseEvent } from 'react';
-import type { ModalProps } from './Modal';
-
-import { FocusTrap } from '@launchpad-ui/focus-trap';
-import { cx } from 'classix';
-import { LazyMotion, m } from 'framer-motion';
 import { useEffect, useRef, useState } from 'react';
 import { useFocusWithin } from 'react-aria/useFocusWithin';
 import { usePreventScroll } from 'react-aria/usePreventScroll';
+import { cx } from 'classix';
+import type { Variants } from 'framer-motion';
+import { LazyMotion, m } from 'framer-motion';
+
+import { FocusTrap } from '@launchpad-ui/focus-trap';
 
 import { MODAL_DESCRIBED_BY, MODAL_LABELLED_BY } from './constants';
-import styles from './styles/Modal.module.css';
+import type { ModalProps } from './Modal';
 import { useMediaQuery } from './utils';
+
+import styles from './styles/Modal.module.css';
 
 const overlay: Variants = {
 	visible: { opacity: 1, transition: { duration: 0.15 } },
@@ -42,14 +43,7 @@ const loadFeatures = () =>
 
 type ModalContainerProps = Pick<
 	ModalProps,
-	| 'children'
-	| 'cancelWithOverlayClick'
-	| 'onCancel'
-	| 'size'
-	| 'className'
-	| 'onReady'
-	| 'theme'
-	| 'data-test-id'
+	'children' | 'cancelWithOverlayClick' | 'onCancel' | 'size' | 'className' | 'onReady' | 'theme' | 'data-test-id'
 >;
 
 const ModalContainer = ({
@@ -66,7 +60,7 @@ const ModalContainer = ({
 	const initialized = useRef(false);
 	const [isFocusWithin, setIsFocusWithin] = useState(false);
 	const { focusWithinProps } = useFocusWithin({
-		onFocusWithinChange: (isFocusWithin) => setIsFocusWithin(isFocusWithin),
+		onFocusWithinChange: (focusWithin) => setIsFocusWithin(focusWithin),
 	});
 
 	usePreventScroll();
@@ -135,7 +129,6 @@ const ModalContainer = ({
 					animate="visible"
 					variants={overlay}
 					transition={{ duration: 0.15 }}
-					/* @ts-ignore framer */
 					role="presentation"
 					className={styles.overlay}
 					data-test-id="modal-overlay"
@@ -146,7 +139,6 @@ const ModalContainer = ({
 							initial="hidden"
 							animate="visible"
 							variants={isDesktopViewport ? transitions.desktopPop : transitions.mobileSlideUp}
-							/* @ts-ignore framer */
 							role="dialog"
 							aria-labelledby={MODAL_LABELLED_BY}
 							aria-describedby={MODAL_DESCRIBED_BY}

@@ -1,5 +1,6 @@
-import { Icon } from '@launchpad-ui/icons';
 import { describe, expect, it, vi } from 'vitest';
+
+import { Icon } from '@launchpad-ui/icons';
 
 import { render, screen, userEvent } from '../../../test/utils';
 import { Button } from '../src';
@@ -51,12 +52,12 @@ describe('Button', () => {
 		expect(screen.getByRole('button')).toHaveFocus();
 	});
 
-	it('can render an icon', async () => {
+	it('can render an icon', () => {
 		const { container } = render(<Button kind="primary" icon={<Icon name="add" />} />);
 		expect(container.querySelector('svg')).not.toBeNull();
 	});
 
-	it('shows loading text when loading', async () => {
+	it('shows loading text when loading', () => {
 		render(
 			<Button isLoading loadingText="loading">
 				Primary Button

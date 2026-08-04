@@ -73,6 +73,6 @@ describe('Perceivable', () => {
 		);
 
 		await user.click(screen.getByRole('button', { hidden: true }));
-		expect(await screen.queryByRole('dialog')).toBeNull();
+		expect(screen.queryByRole('dialog')).toBeNull();
 	});
 });

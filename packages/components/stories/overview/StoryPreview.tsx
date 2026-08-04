@@ -35,9 +35,7 @@ export const StoryPreview = ({ story, scale = 1 }: { story: StoryType; scale?: n
 			}
 
 			// Fallback for other arg patterns
-			return (
-				storyArgs.children || <div style={{ fontSize: '12px', color: '#666' }}>Story Preview</div>
-			);
+			return storyArgs.children || <div style={{ fontSize: '12px', color: '#666' }}>Story Preview</div>;
 		}
 		// Fallback: render placeholder
 		return <div style={{ fontSize: '12px', color: '#666' }}>Story Preview</div>;

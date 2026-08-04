@@ -3,6 +3,7 @@ import { Select } from '../../src/Select';
 import { Example as ComboBoxExample } from '../ComboBox.stories';
 // Import actual picker stories
 import { Example as SelectExample } from '../Select.stories';
+
 // Import shared preview component
 import { StoryPreview } from './StoryPreview';
 

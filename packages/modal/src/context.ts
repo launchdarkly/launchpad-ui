@@ -1,6 +1,6 @@
-import type { ModalProps } from './Modal';
-
 import { createContext, useContext } from 'react';
+
+import type { ModalProps } from './Modal';
 
 type ModalContextState = {
 	onCancel: ModalProps['onCancel'];

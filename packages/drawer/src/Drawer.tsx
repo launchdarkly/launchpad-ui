@@ -1,18 +1,19 @@
-import type { Variants } from 'framer-motion';
 import type { MouseEvent, ReactNode } from 'react';
+import { Suspense, useEffect, useRef, useState } from 'react';
+import { useFocusWithin } from 'react-aria/useFocusWithin';
+import { usePreventScroll } from 'react-aria/usePreventScroll';
+import { cx } from 'classix';
+import type { Variants } from 'framer-motion';
+import { LazyMotion, m } from 'framer-motion';
 
 import { IconButton } from '@launchpad-ui/button';
 import { FocusTrap } from '@launchpad-ui/focus-trap';
 import { Icon } from '@launchpad-ui/icons';
 import { Portal } from '@launchpad-ui/portal';
 import { Progress } from '@launchpad-ui/progress';
-import { cx } from 'classix';
-import { LazyMotion, m } from 'framer-motion';
-import { Suspense, useEffect, useRef, useState } from 'react';
-import { useFocusWithin } from 'react-aria/useFocusWithin';
-import { usePreventScroll } from 'react-aria/usePreventScroll';
 
 import { DRAWER_LABELLED_BY } from './constants';
+
 import styles from './styles/Drawer.module.css';
 
 const overlay: Variants = {
@@ -69,7 +70,7 @@ const DrawerContainer = ({
 	const ref = useRef<HTMLDivElement>(null);
 	const [isFocusWithin, setIsFocusWithin] = useState(false);
 	const { focusWithinProps } = useFocusWithin({
-		onFocusWithinChange: (isFocusWithin) => setIsFocusWithin(isFocusWithin),
+		onFocusWithinChange: (focusWithin) => setIsFocusWithin(focusWithin),
 	});
 
 	usePreventScroll();
@@ -130,7 +131,6 @@ const DrawerContainer = ({
 					animate="visible"
 					variants={overlay}
 					transition={{ duration: 0.15 }}
-					/* @ts-ignore framer */
 					role="presentation"
 					className={styles.overlay}
 					onMouseDown={handleOverlayClick}
@@ -140,7 +140,6 @@ const DrawerContainer = ({
 							initial="hidden"
 							animate="visible"
 							variants={slideRight}
-							/* @ts-ignore framer */
 							role="dialog"
 							aria-labelledby={DRAWER_LABELLED_BY}
 							aria-describedby={DRAWER_LABELLED_BY}

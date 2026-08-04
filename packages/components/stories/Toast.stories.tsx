@@ -1,6 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-
-import { expect, userEvent, within } from 'storybook/test';
+import { userEvent, within } from 'storybook/test';
 
 import { Button } from '../src/Button';
 import { ButtonGroup } from '../src/ButtonGroup';
@@ -12,8 +11,7 @@ const meta: Meta<typeof ToastRegion> = {
 	title: 'Components/Status/Toast',
 	parameters: {
 		figma: {
-			design:
-				'https://www.figma.com/design/98HKKXL2dTle29ikJ3tzk7/%F0%9F%9A%80-LaunchPad?node-id=8079-96656&m=dev',
+			design: 'https://www.figma.com/design/98HKKXL2dTle29ikJ3tzk7/%F0%9F%9A%80-LaunchPad?node-id=8079-96656&m=dev',
 		},
 	},
 	decorators: [
@@ -38,9 +36,7 @@ export const Example: Story = {
 			<>
 				<ToastRegion {...args} />
 				<ButtonGroup>
-					<Button onPress={() => toastQueue.add({ title: 'A success toast!', status: 'success' })}>
-						Show toast
-					</Button>
+					<Button onPress={() => toastQueue.add({ title: 'A success toast!', status: 'success' })}>Show toast</Button>
 					<Button
 						onPress={() => {
 							for (const toast of toastQueue.visibleToasts) {
@@ -59,7 +55,7 @@ export const Example: Story = {
 
 		await userEvent.click(canvas.getAllByRole('button')[0]);
 		const body = canvasElement.ownerDocument.body;
-		await expect(await within(body).findByRole('alert'));
+		await within(body).findByRole('alert');
 	},
 };
 
@@ -99,6 +95,6 @@ export const Snackbar: Story = {
 
 		await userEvent.click(canvas.getAllByRole('button')[0]);
 		const body = canvasElement.ownerDocument.body;
-		await expect(await within(body).findByRole('alert'));
+		await within(body).findByRole('alert');
 	},
 };

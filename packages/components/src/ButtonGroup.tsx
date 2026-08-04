@@ -1,19 +1,19 @@
-import type { Orientation } from '@react-types/shared';
-import type { VariantProps } from 'class-variance-authority';
 import type { Ref } from 'react';
-import type { GroupProps } from 'react-aria-components/Group';
-import type { ContextValue } from 'react-aria-components/slots';
-
-import { cva } from 'class-variance-authority';
 import { createContext } from 'react';
 import { ButtonContext } from 'react-aria-components/Button';
 import { composeRenderProps } from 'react-aria-components/composeRenderProps';
+import type { GroupProps } from 'react-aria-components/Group';
 import { Group } from 'react-aria-components/Group';
+import type { ContextValue } from 'react-aria-components/slots';
 import { Provider } from 'react-aria-components/slots';
 import { ToggleButtonContext } from 'react-aria-components/ToggleButton';
+import type { Orientation } from '@react-types/shared';
+import type { VariantProps } from 'class-variance-authority';
+import { cva } from 'class-variance-authority';
+
+import { useLPContextProps } from './utils';
 
 import styles from './styles/ButtonGroup.module.css';
-import { useLPContextProps } from './utils';
 
 const buttonGroupStyles = cva(styles.base, {
 	variants: {
@@ -40,19 +40,20 @@ interface ButtonGroupProps extends GroupProps, VariantProps<typeof buttonGroupSt
 const ButtonGroupContext = createContext<ContextValue<ButtonGroupProps, HTMLDivElement>>(null);
 
 const ButtonGroup = ({ ref, ...props }: ButtonGroupProps) => {
-	[props, ref] = useLPContextProps(props, ref, ButtonGroupContext);
-	const { spacing = 'basic', orientation = 'horizontal' } = props;
+	const [mergedProps, mergedRef] = useLPContextProps(props, ref, ButtonGroupContext);
+	const { spacing = 'basic', orientation = 'horizontal' } = mergedProps;
 
 	return (
 		<Group
-			{...props}
-			ref={ref}
-			className={composeRenderProps(props.className, (className, renderProps) =>
+			{...mergedProps}
+			ref={mergedRef}
+			className={composeRenderProps(mergedProps.className, (className, renderProps) =>
 				buttonGroupStyles({ ...renderProps, spacing, orientation, className }),
 			)}
 			data-orientation={orientation ?? undefined}
+			data-spacing={spacing}
 		>
-			{composeRenderProps(props.children, (children, { isDisabled }) => (
+			{composeRenderProps(mergedProps.children, (children, { isDisabled }) => (
 				<Provider
 					values={[
 						[ButtonContext, { isDisabled }],

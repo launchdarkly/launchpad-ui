@@ -1,24 +1,20 @@
-import type { VariantProps } from 'class-variance-authority';
 import type { Ref } from 'react';
+import { createContext } from 'react';
+import { composeRenderProps } from 'react-aria-components/composeRenderProps';
 import type { ContextValue } from 'react-aria-components/slots';
 import type {
 	TagGroupProps as AriaTagGroupProps,
 	TagListProps as AriaTagListProps,
 	TagProps as AriaTagProps,
 } from 'react-aria-components/TagGroup';
-
+import { Tag as AriaTag, TagGroup as AriaTagGroup, TagList as AriaTagList } from 'react-aria-components/TagGroup';
+import type { VariantProps } from 'class-variance-authority';
 import { cva } from 'class-variance-authority';
-import { createContext } from 'react';
-import { composeRenderProps } from 'react-aria-components/composeRenderProps';
-import {
-	Tag as AriaTag,
-	TagGroup as AriaTagGroup,
-	TagList as AriaTagList,
-} from 'react-aria-components/TagGroup';
 
 import { IconButton } from './IconButton';
-import styles from './styles/TagGroup.module.css';
 import { useLPContextProps } from './utils';
+
+import styles from './styles/TagGroup.module.css';
 
 const tagGroupStyles = cva(styles.group);
 const tagListStyles = cva(styles.list);
@@ -59,7 +55,9 @@ interface TagListProps<T> extends AriaTagListProps<T> {
 }
 
 const TagGroupContext = createContext<ContextValue<TagGroupProps, HTMLDivElement>>(null);
-// biome-ignore lint/suspicious/noExplicitAny: ignore
+// react-aria-components types this identically: `TagListContext: React.Context<ContextValue<TagListProps<any>, HTMLDivElement>>`
+// (react-aria-components/dist/types/src/TagGroup.d.ts) — a context can't carry the open generic `T`, so RAC itself erases it to `any` here.
+// oxlint-disable-next-line typescript/no-explicit-any -- mirrors react-aria-components' own TagListContext declaration (see comment above)
 const TagListContext = createContext<ContextValue<TagListProps<any>, HTMLDivElement>>(null);
 
 /**
@@ -68,22 +66,22 @@ const TagListContext = createContext<ContextValue<TagListProps<any>, HTMLDivElem
  * https://react-spectrum.adobe.com/react-aria/TagGroup.html
  */
 const TagGroup = ({ ref, ...props }: TagGroupProps) => {
-	[props, ref] = useLPContextProps(props, ref, TagGroupContext);
-	const { className } = props;
+	const [mergedProps, mergedRef] = useLPContextProps(props, ref, TagGroupContext);
+	const { className } = mergedProps;
 
-	return <AriaTagGroup {...props} ref={ref} className={tagGroupStyles({ className })} />;
+	return <AriaTagGroup {...mergedProps} ref={mergedRef} className={tagGroupStyles({ className })} />;
 };
 
 /**
  * A tag list is a container for tags within a TagGroup.
  */
 const TagList = <T extends object>({ ref, ...props }: TagListProps<T>) => {
-	[props, ref] = useLPContextProps(props, ref, TagListContext);
+	const [mergedProps, mergedRef] = useLPContextProps(props, ref, TagListContext);
 	return (
 		<AriaTagList
-			{...props}
-			ref={ref}
-			className={composeRenderProps(props.className, (className, renderProps) =>
+			{...mergedProps}
+			ref={mergedRef}
+			className={composeRenderProps(mergedProps.className, (className, renderProps) =>
 				tagListStyles({ ...renderProps, className }),
 			)}
 		/>
@@ -109,13 +107,7 @@ const Tag = ({ size = 'medium', variant = 'default', ref, ...props }: TagProps) 
 				<>
 					{children}
 					{allowsRemoving && (
-						<IconButton
-							aria-label="Remove"
-							size="small"
-							variant="minimal"
-							icon="cancel-circle-outline"
-							slot="remove"
-						/>
+						<IconButton aria-label="Remove" size="small" variant="minimal" icon="cancel-circle-outline" slot="remove" />
 					)}
 				</>
 			))}
@@ -123,14 +115,5 @@ const Tag = ({ size = 'medium', variant = 'default', ref, ...props }: TagProps) 
 	);
 };
 
-export {
-	TagGroup,
-	TagGroupContext,
-	TagList,
-	TagListContext,
-	Tag,
-	tagGroupStyles,
-	tagListStyles,
-	tagStyles,
-};
+export { TagGroup, TagGroupContext, TagList, TagListContext, Tag, tagGroupStyles, tagListStyles, tagStyles };
 export type { TagGroupProps, TagListProps, TagProps, TagVariants };

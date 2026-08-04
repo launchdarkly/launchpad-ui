@@ -1,16 +1,16 @@
-import type { Orientation } from '@react-types/shared';
 import type { Ref } from 'react';
-import type { FormProps as AriaFormProps } from 'react-aria-components/Form';
-import type { ContextValue } from 'react-aria-components/slots';
-
-import { cva } from 'class-variance-authority';
 import { createContext } from 'react';
+import type { FormProps as AriaFormProps } from 'react-aria-components/Form';
 import { Form as AriaForm } from 'react-aria-components/Form';
+import type { ContextValue } from 'react-aria-components/slots';
 import { Provider } from 'react-aria-components/slots';
+import type { Orientation } from '@react-types/shared';
+import { cva } from 'class-variance-authority';
 
 import { LabelContext } from './Label';
-import styles from './styles/Form.module.css';
 import { useLPContextProps } from './utils';
+
+import styles from './styles/Form.module.css';
 
 const formStyles = cva(styles.form);
 
@@ -27,13 +27,13 @@ const FormContext = createContext<ContextValue<FormProps, HTMLFormElement>>(null
  * https://react-spectrum.adobe.com/react-aria/Form.html
  */
 const Form = ({ ref, ...props }: FormProps) => {
-	[props, ref] = useLPContextProps(props, ref, FormContext);
-	const { className, orientation = 'vertical', children } = props;
+	const [mergedProps, mergedRef] = useLPContextProps(props, ref, FormContext);
+	const { className, orientation = 'vertical', children } = mergedProps;
 
 	return (
 		<AriaForm
-			{...props}
-			ref={ref}
+			{...mergedProps}
+			ref={mergedRef}
 			className={formStyles({ className })}
 			data-orientation={orientation || undefined}
 		>

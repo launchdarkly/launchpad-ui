@@ -1,8 +1,6 @@
+import path from 'path';
 import type { ExtensionContext } from 'vscode';
 import type { LanguageClientOptions, ServerOptions } from 'vscode-languageclient/node';
-
-import path from 'path';
-
 import { LanguageClient, TransportKind } from 'vscode-languageclient/node';
 
 let client: LanguageClient;
@@ -30,15 +28,10 @@ export function activate(context: ExtensionContext) {
 	};
 
 	// Create the language client and start the client.
-	client = new LanguageClient(
-		'LaunchPadDesignSystem',
-		'LaunchPad Design System',
-		serverOptions,
-		clientOptions,
-	);
+	client = new LanguageClient('LaunchPadDesignSystem', 'LaunchPad Design System', serverOptions, clientOptions);
 
 	// Start the client. This will also launch the server
-	client.start();
+	void client.start();
 }
 
 export function deactivate(): Thenable<void> | undefined {

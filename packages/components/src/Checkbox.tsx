@@ -1,17 +1,14 @@
 import type { Ref } from 'react';
-import type {
-	CheckboxProps as AriaCheckboxProps,
-	CheckboxRenderProps,
-} from 'react-aria-components/Checkbox';
-import type { ContextValue } from 'react-aria-components/slots';
-
-import { cva } from 'class-variance-authority';
 import { createContext } from 'react';
+import type { CheckboxProps as AriaCheckboxProps, CheckboxRenderProps } from 'react-aria-components/Checkbox';
 import { Checkbox as AriaCheckbox } from 'react-aria-components/Checkbox';
 import { composeRenderProps } from 'react-aria-components/composeRenderProps';
+import type { ContextValue } from 'react-aria-components/slots';
+import { cva } from 'class-variance-authority';
+
+import { useLPContextProps } from './utils';
 
 import styles from './styles/Checkbox.module.css';
-import { useLPContextProps } from './utils';
 
 const checkboxStyles = cva(styles.checkbox);
 const checkboxIconStyles = cva(styles.box);
@@ -20,11 +17,7 @@ const CheckboxIcon = ({ isSelected, isIndeterminate }: Partial<CheckboxRenderPro
 	<div className={checkboxIconStyles()}>
 		{isIndeterminate ? (
 			<svg aria-hidden="true" className={styles.icon} viewBox="0 0 16 16">
-				<path
-					fillRule="evenodd"
-					clipPath="evenodd"
-					d="M3.5 8a1 1 0 0 1 1-1h7a1 1 0 1 1 0 2h-7a1 1 0 0 1-1-1Z"
-				/>
+				<path fillRule="evenodd" clipPath="evenodd" d="M3.5 8a1 1 0 0 1 1-1h7a1 1 0 1 1 0 2h-7a1 1 0 0 1-1-1Z" />
 			</svg>
 		) : isSelected ? (
 			<svg aria-hidden="true" className={styles.icon} viewBox="0 0 16 16">
@@ -50,16 +43,16 @@ const CheckboxContext = createContext<ContextValue<CheckboxProps, HTMLLabelEleme
  * https://react-spectrum.adobe.com/react-aria/Checkbox.html
  */
 const Checkbox = ({ ref, ...props }: CheckboxProps) => {
-	[props, ref] = useLPContextProps(props, ref, CheckboxContext);
+	const [mergedProps, mergedRef] = useLPContextProps(props, ref, CheckboxContext);
 	return (
 		<AriaCheckbox
-			{...props}
-			ref={ref}
-			className={composeRenderProps(props.className, (className, renderProps) =>
+			{...mergedProps}
+			ref={mergedRef}
+			className={composeRenderProps(mergedProps.className, (className, renderProps) =>
 				checkboxStyles({ ...renderProps, className }),
 			)}
 		>
-			{composeRenderProps(props.children, (children, { isSelected, isIndeterminate }) => (
+			{composeRenderProps(mergedProps.children, (children, { isSelected, isIndeterminate }) => (
 				<>
 					<div className={styles.container}>
 						<CheckboxIcon isSelected={isSelected} isIndeterminate={isIndeterminate} />

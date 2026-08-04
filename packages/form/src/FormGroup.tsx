@@ -1,5 +1,4 @@
 import type { ComponentProps } from 'react';
-
 import { cx } from 'classix';
 
 import styles from './styles/Form.module.css';
@@ -28,11 +27,7 @@ const FormGroup = (props: FormGroupProps) => {
 		...rest
 	} = props;
 
-	const classes = cx(
-		styles.formGroup,
-		className,
-		!ignoreValidation && isInvalid && styles.isInvalid,
-	);
+	const classes = cx(styles.formGroup, className, !ignoreValidation && isInvalid && styles.isInvalid);
 
 	return (
 		<fieldset className={classes} data-test-id={testId} {...rest}>

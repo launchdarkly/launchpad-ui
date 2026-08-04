@@ -1,26 +1,23 @@
 import type { Ref } from 'react';
-import type { ContextValue } from 'react-aria-components/slots';
-import type { ToggleButtonProps } from 'react-aria-components/ToggleButton';
-import type { IconButtonBaseProps } from './IconButton';
-
-import { Icon } from '@launchpad-ui/icons';
-import { cx } from 'class-variance-authority';
 import { createContext } from 'react';
 import { composeRenderProps } from 'react-aria-components/composeRenderProps';
+import type { ContextValue } from 'react-aria-components/slots';
+import type { ToggleButtonProps } from 'react-aria-components/ToggleButton';
 import { ToggleButton } from 'react-aria-components/ToggleButton';
+import { cx } from 'class-variance-authority';
+
+import { Icon } from '@launchpad-ui/icons';
 
 import { buttonStyles } from './Button';
+import type { IconButtonBaseProps } from './IconButton';
 import { iconButtonStyles } from './IconButton';
 import { useLPContextProps } from './utils';
 
-interface ToggleIconButtonProps
-	extends Omit<ToggleButtonProps, 'children' | 'aria-label'>,
-		IconButtonBaseProps {
+interface ToggleIconButtonProps extends Omit<ToggleButtonProps, 'children' | 'aria-label'>, IconButtonBaseProps {
 	ref?: Ref<HTMLButtonElement>;
 }
 
-const ToggleIconButtonContext =
-	createContext<ContextValue<ToggleIconButtonProps, HTMLButtonElement>>(null);
+const ToggleIconButtonContext = createContext<ContextValue<ToggleIconButtonProps, HTMLButtonElement>>(null);
 
 /**
  * A toggle button allows a user to toggle a selection on or off, for example switching between two states or modes.
@@ -28,14 +25,14 @@ const ToggleIconButtonContext =
  * https://react-spectrum.adobe.com/react-aria/ToggleButton.html
  */
 const ToggleIconButton = ({ ref, ...props }: ToggleIconButtonProps) => {
-	[props, ref] = useLPContextProps(props, ref, ToggleIconButtonContext);
-	const { size = 'medium', variant = 'default', icon } = props;
+	const [mergedProps, mergedRef] = useLPContextProps(props, ref, ToggleIconButtonContext);
+	const { size = 'medium', variant = 'default', icon } = mergedProps;
 
 	return (
 		<ToggleButton
-			{...props}
-			ref={ref}
-			className={composeRenderProps(props.className, (className, renderProps) =>
+			{...mergedProps}
+			ref={mergedRef}
+			className={composeRenderProps(mergedProps.className, (className, renderProps) =>
 				cx(buttonStyles({ ...renderProps, size, variant, className }), iconButtonStyles({ size })),
 			)}
 		>

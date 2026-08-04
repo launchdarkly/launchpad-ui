@@ -1,4 +1,5 @@
 import type { Ref } from 'react';
+import { createContext } from 'react';
 import type {
 	CalendarCellProps as AriaCalendarCellProps,
 	CalendarGridProps as AriaCalendarGridProps,
@@ -8,12 +9,6 @@ import type {
 	CalendarHeaderCellProps,
 	DateValue,
 } from 'react-aria-components/Calendar';
-import type { RangeCalendarProps as AriaRangeCalendarProps } from 'react-aria-components/RangeCalendar';
-import type { ContextValue } from 'react-aria-components/slots';
-
-import { getLocalTimeZone, isToday } from '@internationalized/date';
-import { cva, cx } from 'class-variance-authority';
-import { createContext } from 'react';
 import {
 	Calendar as AriaCalendar,
 	CalendarCell as AriaCalendarCell,
@@ -24,15 +19,20 @@ import {
 	CalendarHeaderCell,
 } from 'react-aria-components/Calendar';
 import { composeRenderProps } from 'react-aria-components/composeRenderProps';
+import type { RangeCalendarProps as AriaRangeCalendarProps } from 'react-aria-components/RangeCalendar';
 import {
 	RangeCalendar as AriaRangeCalendar,
 	RangeCalendarContext as AriaRangeCalendarContext,
 } from 'react-aria-components/RangeCalendar';
+import type { ContextValue } from 'react-aria-components/slots';
 import { useSlottedContext } from 'react-aria-components/slots';
+import { getLocalTimeZone, isToday } from '@internationalized/date';
+import { cva, cx } from 'class-variance-authority';
 
 import { buttonStyles } from './Button';
-import styles from './styles/Calendar.module.css';
 import { useLPContextProps } from './utils';
+
+import styles from './styles/Calendar.module.css';
 
 const calendarStyles = cva(styles.calendar);
 const calendarCellStyles = cva(styles.cell);
@@ -56,8 +56,7 @@ interface RangeCalendarProps<T extends DateValue> extends AriaRangeCalendarProps
 }
 
 const CalendarContext = createContext<ContextValue<CalendarProps<DateValue>, HTMLDivElement>>(null);
-const RangeCalendarContext =
-	createContext<ContextValue<RangeCalendarProps<DateValue>, HTMLDivElement>>(null);
+const RangeCalendarContext = createContext<ContextValue<RangeCalendarProps<DateValue>, HTMLDivElement>>(null);
 
 /**
  * A calendar displays one or more date grids and allows users to select a single date.
@@ -65,12 +64,12 @@ const RangeCalendarContext =
  * https://react-spectrum.adobe.com/react-aria/Calendar.html
  */
 const Calendar = <T extends DateValue>({ ref, ...props }: CalendarProps<T>) => {
-	[props, ref] = useLPContextProps(props, ref, CalendarContext);
+	const [mergedProps, mergedRef] = useLPContextProps(props, ref, CalendarContext);
 	return (
 		<AriaCalendar
-			{...props}
-			ref={ref}
-			className={composeRenderProps(props.className, (className, renderProps) =>
+			{...mergedProps}
+			ref={mergedRef}
+			className={composeRenderProps(mergedProps.className, (className, renderProps) =>
 				calendarStyles({ ...renderProps, className }),
 			)}
 		/>
@@ -132,12 +131,7 @@ const CalendarCell = ({ ref, ...props }: CalendarCellProps) => {
  */
 const CalendarGrid = ({ ref, className, weekdayStyle = 'short', ...props }: CalendarGridProps) => {
 	return (
-		<AriaCalendarGrid
-			weekdayStyle={weekdayStyle}
-			{...props}
-			ref={ref}
-			className={calendarGridStyles({ className })}
-		/>
+		<AriaCalendarGrid weekdayStyle={weekdayStyle} {...props} ref={ref} className={calendarGridStyles({ className })} />
 	);
 };
 
@@ -147,15 +141,15 @@ const CalendarGrid = ({ ref, className, weekdayStyle = 'short', ...props }: Cale
  * https://react-spectrum.adobe.com/react-aria/RangeCalendar.html
  */
 const RangeCalendar = <T extends DateValue>({ ref, ...props }: RangeCalendarProps<T>) => {
-	[props, ref] = useLPContextProps(props, ref, RangeCalendarContext);
-	const { pageBehavior = 'single' } = props;
+	const [mergedProps, mergedRef] = useLPContextProps(props, ref, RangeCalendarContext);
+	const { pageBehavior = 'single' } = mergedProps;
 
 	return (
 		<AriaRangeCalendar
 			pageBehavior={pageBehavior}
-			{...props}
-			ref={ref}
-			className={composeRenderProps(props.className, (className, renderProps) =>
+			{...mergedProps}
+			ref={mergedRef}
+			className={composeRenderProps(mergedProps.className, (className, renderProps) =>
 				cx(calendarStyles(), rangeCalendarStyles({ ...renderProps, className })),
 			)}
 		/>

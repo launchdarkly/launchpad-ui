@@ -1,12 +1,12 @@
 import type { HTMLAttributes, Ref } from 'react';
-import type { ContextValue } from 'react-aria-components/slots';
-
-import { cva } from 'class-variance-authority';
 import { createContext } from 'react';
 import { Header as AriaHeader } from 'react-aria-components/Header';
+import type { ContextValue } from 'react-aria-components/slots';
+import { cva } from 'class-variance-authority';
+
+import { useLPContextProps } from './utils';
 
 import styles from './styles/Header.module.css';
-import { useLPContextProps } from './utils';
 
 const headerStyles = cva(styles.header);
 
@@ -17,10 +17,10 @@ interface HeaderProps extends HTMLAttributes<HTMLElement> {
 const HeaderContext = createContext<ContextValue<HeaderProps, HTMLElement>>(null);
 
 const Header = ({ ref, ...props }: HeaderProps) => {
-	[props, ref] = useLPContextProps(props, ref, HeaderContext);
-	const { className } = props;
+	const [mergedProps, mergedRef] = useLPContextProps(props, ref, HeaderContext);
+	const { className } = mergedProps;
 
-	return <AriaHeader {...props} ref={ref} className={headerStyles({ className })} />;
+	return <AriaHeader {...mergedProps} ref={mergedRef} className={headerStyles({ className })} />;
 };
 
 export { Header, HeaderContext, headerStyles };

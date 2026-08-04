@@ -1,14 +1,14 @@
 import type { Ref } from 'react';
-import type { CheckboxGroupProps as AriaCheckboxGroupProps } from 'react-aria-components/CheckboxGroup';
-import type { ContextValue } from 'react-aria-components/slots';
-
-import { cva } from 'class-variance-authority';
 import { createContext } from 'react';
+import type { CheckboxGroupProps as AriaCheckboxGroupProps } from 'react-aria-components/CheckboxGroup';
 import { CheckboxGroup as AriaCheckboxGroup } from 'react-aria-components/CheckboxGroup';
 import { composeRenderProps } from 'react-aria-components/composeRenderProps';
+import type { ContextValue } from 'react-aria-components/slots';
+import { cva } from 'class-variance-authority';
+
+import { useLPContextProps } from './utils';
 
 import styles from './styles/CheckboxGroup.module.css';
-import { useLPContextProps } from './utils';
 
 const checkboxGroupStyles = cva(styles.group);
 
@@ -24,12 +24,12 @@ const CheckboxGroupContext = createContext<ContextValue<CheckboxGroupProps, HTML
  * https://react-spectrum.adobe.com/react-aria/CheckboxGroup.html
  */
 const CheckboxGroup = ({ ref, ...props }: CheckboxGroupProps) => {
-	[props, ref] = useLPContextProps(props, ref, CheckboxGroupContext);
+	const [mergedProps, mergedRef] = useLPContextProps(props, ref, CheckboxGroupContext);
 	return (
 		<AriaCheckboxGroup
-			{...props}
-			ref={ref}
-			className={composeRenderProps(props.className, (className, renderProps) =>
+			{...mergedProps}
+			ref={mergedRef}
+			className={composeRenderProps(mergedProps.className, (className, renderProps) =>
 				checkboxGroupStyles({ ...renderProps, className }),
 			)}
 		/>

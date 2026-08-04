@@ -1,21 +1,12 @@
-import type { Meta, StoryObj } from '@storybook/react-vite';
 import type { ComponentType } from 'react';
-import type { SortDescriptor } from 'react-aria-components/Table';
-
 import { useState } from 'react';
+import type { SortDescriptor } from 'react-aria-components/Table';
 import { useDragAndDrop } from 'react-aria-components/useDragAndDrop';
 import { useListData } from 'react-stately/useListData';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 
 import { DropIndicator } from '../src/DropIndicator';
-import {
-	Cell,
-	Column,
-	ResizableTableContainer,
-	Row,
-	Table,
-	TableBody,
-	TableHeader,
-} from '../src/Table';
+import { Cell, Column, ResizableTableContainer, Row, Table, TableBody, TableHeader } from '../src/Table';
 
 const meta: Meta<typeof Table> = {
 	component: Table,
@@ -26,8 +17,7 @@ const meta: Meta<typeof Table> = {
 	title: 'Components/Collections/Table',
 	parameters: {
 		figma: {
-			design:
-				'https://www.figma.com/design/98HKKXL2dTle29ikJ3tzk7/%F0%9F%9A%80-LaunchPad?node-id=8066-61462&m=dev',
+			design: 'https://www.figma.com/design/98HKKXL2dTle29ikJ3tzk7/%F0%9F%9A%80-LaunchPad?node-id=8066-61462&m=dev',
 		},
 	},
 };
@@ -96,15 +86,13 @@ export const ColumnResizing: Story = {
 			{ name: 'Name 3', description: 'Some data', id: '003' },
 			{ name: 'Name 4', description: 'Some data', id: '004' },
 		].sort((a, b) => {
-			// @ts-ignore
+			// @ts-expect-error indexing by a dynamic sort column key isn't narrowed to the item shape
 			const d = a[sortDescriptor.column].localeCompare(b[sortDescriptor.column]);
 			return sortDescriptor.direction === 'descending' ? -d : d;
 		});
 
 		return (
-			<ResizableTableContainer
-				style={{ height: 400, width: 500, overflow: 'auto', scrollPaddingTop: 25 }}
-			>
+			<ResizableTableContainer style={{ height: 400, width: 500, overflow: 'auto', scrollPaddingTop: 25 }}>
 				<Table sortDescriptor={sortDescriptor} onSortChange={setSortDescriptor} {...args}>
 					<TableHeader>
 						<Column id="name" isRowHeader allowsSorting>

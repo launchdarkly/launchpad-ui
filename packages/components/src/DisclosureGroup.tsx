@@ -1,8 +1,7 @@
 import type { Ref } from 'react';
 import type { DisclosureGroupProps as AriaDisclosureGroupProps } from 'react-aria-components/DisclosureGroup';
-
-import { cva } from 'class-variance-authority';
 import { DisclosureGroup as AriaDisclosureGroup } from 'react-aria-components/DisclosureGroup';
+import { cva } from 'class-variance-authority';
 
 import styles from './styles/DisclosureGroup.module.css';
 
@@ -18,9 +17,7 @@ interface DisclosureGroupProps extends AriaDisclosureGroupProps {
  * https://react-spectrum.adobe.com/react-aria/DisclosureGroup.html
  */
 const DisclosureGroup = ({ className, ref, ...props }: DisclosureGroupProps) => {
-	return (
-		<AriaDisclosureGroup {...props} ref={ref} className={disclosureGroupStyles({ className })} />
-	);
+	return <AriaDisclosureGroup {...props} ref={ref} className={disclosureGroupStyles({ className })} />;
 };
 
 export { DisclosureGroup, disclosureGroupStyles };

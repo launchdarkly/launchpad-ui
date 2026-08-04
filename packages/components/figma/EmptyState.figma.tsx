@@ -1,6 +1,6 @@
-import type { IconProps } from '@launchpad-ui/icons';
-
 import figma from '@figma/code-connect';
+
+import type { IconProps } from '@launchpad-ui/icons';
 import { BadgeIcon, Icon } from '@launchpad-ui/icons';
 
 import { Button } from '../src/Button';

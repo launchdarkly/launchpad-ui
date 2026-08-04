@@ -1,8 +1,8 @@
 import type { ComponentProps, CSSProperties } from 'react';
-
 import { cx } from 'classix';
 
 import { Label } from './Label';
+
 import styles from './styles/Form.module.css';
 
 type RadioProps = Omit<ComponentProps<'input'>, 'type'> & {
@@ -32,9 +32,8 @@ const Radio = ({
 	const hasAriaLabel = ariaLabel !== undefined || ariaLabelledby !== undefined;
 
 	if (!children && !hasAriaLabel) {
-		console.warn(
-			'If you do not provide children, you must specify an aria-label for accessibility',
-		);
+		// oxlint-disable-next-line no-console -- deliberate dev-time accessibility warning, not debug output
+		console.warn('If you do not provide children, you must specify an aria-label for accessibility');
 	}
 
 	return (

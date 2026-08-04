@@ -1,16 +1,16 @@
-import type { VariantProps } from 'class-variance-authority';
 import type { Ref } from 'react';
-import type { ProgressBarProps as AriaProgressBarProps } from 'react-aria-components/ProgressBar';
-import type { ContextValue } from 'react-aria-components/slots';
-
-import { cva, cx } from 'class-variance-authority';
 import { createContext } from 'react';
 import { composeRenderProps } from 'react-aria-components/composeRenderProps';
+import type { ProgressBarProps as AriaProgressBarProps } from 'react-aria-components/ProgressBar';
 import { ProgressBar as AriaProgressBar } from 'react-aria-components/ProgressBar';
+import type { ContextValue } from 'react-aria-components/slots';
 import { Text } from 'react-aria-components/Text';
+import type { VariantProps } from 'class-variance-authority';
+import { cva, cx } from 'class-variance-authority';
+
+import { useLPContextProps } from './utils';
 
 import styles from './styles/ProgressBar.module.css';
-import { useLPContextProps } from './utils';
 
 const progressBarStyles = cva(styles.progress, {
 	variants: {
@@ -38,9 +38,7 @@ const iconStyles = cva(styles.base, {
 });
 
 interface ProgressBarProps
-	extends AriaProgressBarProps,
-		VariantProps<typeof iconStyles>,
-		VariantProps<typeof progressBarStyles> {
+	extends AriaProgressBarProps, VariantProps<typeof iconStyles>, VariantProps<typeof progressBarStyles> {
 	ref?: Ref<HTMLDivElement>;
 }
 
@@ -52,8 +50,8 @@ const ProgressBarContext = createContext<ContextValue<ProgressBarProps, HTMLDivE
  * https://react-spectrum.adobe.com/react-aria/ProgressBar.html
  */
 const ProgressBar = ({ ref, ...props }: ProgressBarProps) => {
-	[props, ref] = useLPContextProps(props, ref, ProgressBarContext);
-	const { size = 'small', variant = 'spinner' } = props;
+	const [mergedProps, mergedRef] = useLPContextProps(props, ref, ProgressBarContext);
+	const { size = 'small', variant = 'spinner' } = mergedProps;
 
 	const center = 16;
 	const strokeWidth = 4;
@@ -62,57 +60,48 @@ const ProgressBar = ({ ref, ...props }: ProgressBarProps) => {
 
 	return (
 		<AriaProgressBar
-			{...props}
-			ref={ref}
-			className={composeRenderProps(props.className, (className, renderProps) =>
+			{...mergedProps}
+			ref={mergedRef}
+			className={composeRenderProps(mergedProps.className, (className, renderProps) =>
 				progressBarStyles({ ...renderProps, variant, className }),
 			)}
 		>
-			{composeRenderProps(
-				props.children,
-				(children, { isIndeterminate, percentage, valueText }) => (
-					<>
-						{variant === 'spinner' && (
-							// biome-ignore lint/a11y/noSvgWithoutTitle: ignore
-							<svg
-								viewBox="0 0 32 32"
-								fill="none"
-								strokeWidth={strokeWidth}
-								className={cx(iconStyles({ size }), isIndeterminate && styles.indeterminate)}
-							>
-								<circle
-									cx={center}
-									cy={center}
-									r={r}
-									strokeWidth={strokeWidth}
-									className={styles.outerCircle}
+			{composeRenderProps(mergedProps.children, (children, { isIndeterminate, percentage, valueText }) => (
+				<>
+					{variant === 'spinner' && (
+						// biome-ignore lint/a11y/noSvgWithoutTitle: ignore
+						<svg
+							viewBox="0 0 32 32"
+							fill="none"
+							strokeWidth={strokeWidth}
+							className={cx(iconStyles({ size }), isIndeterminate && styles.indeterminate)}
+						>
+							<circle cx={center} cy={center} r={r} strokeWidth={strokeWidth} className={styles.outerCircle} />
+							<circle
+								cx={center}
+								cy={center}
+								r={r}
+								strokeDasharray={`${c} ${c}`}
+								strokeDashoffset={c - (isIndeterminate ? 0.34 : (percentage || 0) / 100) * c}
+								transform="rotate(-90 16 16)"
+								className={styles.innerCircle}
+							/>
+						</svg>
+					)}
+					{variant === 'bar' && (
+						<>
+							{children}
+							<Text className={styles.value}>{valueText}</Text>
+							<div className={styles.track}>
+								<div
+									className={cx(styles.fill, { [styles.max]: percentage === 100 })}
+									style={{ width: `${percentage}%` }}
 								/>
-								<circle
-									cx={center}
-									cy={center}
-									r={r}
-									strokeDasharray={`${c} ${c}`}
-									strokeDashoffset={c - (isIndeterminate ? 0.34 : percentage || 0 / 100) * c}
-									transform="rotate(-90 16 16)"
-									className={styles.innerCircle}
-								/>
-							</svg>
-						)}
-						{variant === 'bar' && (
-							<>
-								{children}
-								<Text className={styles.value}>{valueText}</Text>
-								<div className={styles.track}>
-									<div
-										className={cx(styles.fill, { [styles.max]: percentage === 100 })}
-										style={{ width: `${percentage}%` }}
-									/>
-								</div>
-							</>
-						)}
-					</>
-				),
-			)}
+							</div>
+						</>
+					)}
+				</>
+			))}
 		</AriaProgressBar>
 	);
 };

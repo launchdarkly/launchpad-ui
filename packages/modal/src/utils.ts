@@ -1,5 +1,4 @@
 import type { MutableRefObject } from 'react';
-
 import { useEffect, useRef, useState } from 'react';
 
 const useMediaQuery = (query: string, defaultValue = false) => {
@@ -24,12 +23,13 @@ const useOverflowY = (ref: MutableRefObject<HTMLDivElement | null>) => {
 	const observerRef = useRef(
 		(target: HTMLElement | null) =>
 			new ResizeObserver(() => {
-				if (target) {
-					target.style.overflowY = 'auto';
+				const element = target;
+				if (element) {
+					element.style.overflowY = 'auto';
 
-					const overflow = target.scrollHeight > target.clientHeight ? 'auto' : 'initial';
+					const overflow = element.scrollHeight > element.clientHeight ? 'auto' : 'initial';
 
-					target.style.overflowY = overflow;
+					element.style.overflowY = overflow;
 				}
 			}),
 	);

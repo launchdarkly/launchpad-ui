@@ -1,13 +1,13 @@
 import type { Ref } from 'react';
-import type { HeadingProps as AriaHeadingProps } from 'react-aria-components/Heading';
-import type { ContextValue } from 'react-aria-components/slots';
-
-import { cva, cx } from 'class-variance-authority';
 import { createContext } from 'react';
+import type { HeadingProps as AriaHeadingProps } from 'react-aria-components/Heading';
 import { Heading as AriaHeading } from 'react-aria-components/Heading';
+import type { ContextValue } from 'react-aria-components/slots';
+import { cva, cx } from 'class-variance-authority';
+
+import { useLPContextProps } from './utils';
 
 import styles from './styles/Heading.module.css';
-import { useLPContextProps } from './utils';
 
 const headingStyles = cva(styles.heading, {
 	variants: {
@@ -50,6 +50,7 @@ const getDefaultLevel = (size: 'small' | 'medium' | 'large'): AriaHeadingProps['
 			return 2;
 		case 'small':
 			return 3;
+		// skip default: `size` is a closed union and every member is handled above.
 	}
 };
 
@@ -60,22 +61,13 @@ const getDefaultLevel = (size: 'small' | 'medium' | 'large'): AriaHeadingProps['
  *
  * Built on top of [React Aria `Heading` component](https://react-spectrum.adobe.com/react-spectrum/Heading.html#heading).
  */
-const Heading = ({
-	ref,
-	size = 'medium',
-	bold = true,
-	maxLines,
-	className,
-	style,
-	level,
-	...props
-}: HeadingProps) => {
-	[props, ref] = useLPContextProps(props, ref, HeadingContext);
+const Heading = ({ ref, size = 'medium', bold = true, maxLines, className, style, level, ...props }: HeadingProps) => {
+	const [mergedProps, mergedRef] = useLPContextProps(props, ref, HeadingContext);
 
 	return (
 		<AriaHeading
-			{...props}
-			ref={ref}
+			{...mergedProps}
+			ref={mergedRef}
 			level={level || getDefaultLevel(size)}
 			className={cx(headingStyles({ size, bold }), maxLines && styles.truncate, className)}
 			style={{
@@ -85,7 +77,7 @@ const Heading = ({
 				}),
 			}}
 		>
-			{props.children}
+			{mergedProps.children}
 		</AriaHeading>
 	);
 };

@@ -1,7 +1,7 @@
-import type { Meta, StoryObj } from '@storybook/react-vite';
 import type { ComponentType } from 'react';
-
 import { parseDate } from '@internationalized/date';
+import type { Meta, StoryObj } from '@storybook/react-vite';
+
 import { vars } from '@launchpad-ui/vars';
 
 import { Calendar, CalendarCell, CalendarGrid } from '../src/Calendar';
@@ -14,8 +14,7 @@ const meta: Meta<typeof Calendar> = {
 	title: 'Components/Date and Time/Calendar',
 	parameters: {
 		figma: {
-			design:
-				'https://www.figma.com/design/98HKKXL2dTle29ikJ3tzk7/%F0%9F%9A%80-LaunchPad?node-id=10675-7409&m=dev',
+			design: 'https://www.figma.com/design/98HKKXL2dTle29ikJ3tzk7/%F0%9F%9A%80-LaunchPad?node-id=10675-7409&m=dev',
 		},
 		a11y: {
 			options: {
@@ -34,21 +33,9 @@ type Story = StoryObj<typeof Calendar>;
 const renderCalendar = (args: Story['args']) => (
 	<Calendar defaultValue={parseDate('2025-01-01')} {...args}>
 		<header>
-			<IconButton
-				slot="previous"
-				icon="chevron-left"
-				aria-label="previous"
-				size="small"
-				variant="minimal"
-			/>
+			<IconButton slot="previous" icon="chevron-left" aria-label="previous" size="small" variant="minimal" />
 			<Heading />
-			<IconButton
-				slot="next"
-				icon="chevron-right"
-				aria-label="next"
-				size="small"
-				variant="minimal"
-			/>
+			<IconButton slot="next" icon="chevron-right" aria-label="next" size="small" variant="minimal" />
 		</header>
 		<CalendarGrid>{(date) => <CalendarCell date={date} />}</CalendarGrid>
 	</Calendar>

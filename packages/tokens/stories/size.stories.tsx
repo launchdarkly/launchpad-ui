@@ -1,10 +1,9 @@
-import type { default as Tokens } from '../dist';
-
 import { Fragment } from 'react';
 
 import { Button } from '../../components/src/Button';
 import { ToastRegion, toastQueue } from '../../components/src/Toast';
 import { Tooltip, TooltipTrigger } from '../../components/src/Tooltip';
+import type { default as Tokens } from '../dist';
 // @ts-expect-error ts not detecting d.ts for es file
 import tokens from '../dist/index.es.js';
 
@@ -31,7 +30,7 @@ export const Size = {
 						<TooltipTrigger>
 							<Button
 								onPress={() => {
-									navigator.clipboard.writeText(`--lp-size-${key}`);
+									void navigator.clipboard.writeText(`--lp-size-${key}`);
 									toastQueue.add({ title: 'Copied!', status: 'success' });
 								}}
 								style={{ font: 'var(--lp-text-code-1-regular)' }}

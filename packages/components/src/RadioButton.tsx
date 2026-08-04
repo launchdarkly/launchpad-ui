@@ -1,12 +1,11 @@
 import type { Ref } from 'react';
-import type { RadioProps } from 'react-aria-components/RadioGroup';
-import type { ContextValue } from 'react-aria-components/slots';
-import type { ButtonVariants } from './Button';
-
 import { createContext } from 'react';
 import { composeRenderProps } from 'react-aria-components/composeRenderProps';
+import type { RadioProps } from 'react-aria-components/RadioGroup';
 import { Radio as AriaRadio } from 'react-aria-components/RadioGroup';
+import type { ContextValue } from 'react-aria-components/slots';
 
+import type { ButtonVariants } from './Button';
 import { buttonStyles } from './Button';
 import { useLPContextProps } from './utils';
 
@@ -22,14 +21,14 @@ const RadioButtonContext = createContext<ContextValue<RadioButtonProps, HTMLLabe
  * https://react-spectrum.adobe.com/react-aria/RadioGroup.html
  */
 const RadioButton = ({ ref, ...props }: RadioButtonProps) => {
-	[props, ref] = useLPContextProps(props, ref, RadioButtonContext);
-	const { size = 'medium', variant = 'default' } = props;
+	const [mergedProps, mergedRef] = useLPContextProps(props, ref, RadioButtonContext);
+	const { size = 'medium', variant = 'default' } = mergedProps;
 
 	return (
 		<AriaRadio
-			{...props}
-			ref={ref}
-			className={composeRenderProps(props.className, (className, renderProps) =>
+			{...mergedProps}
+			ref={mergedRef}
+			className={composeRenderProps(mergedProps.className, (className, renderProps) =>
 				buttonStyles({ ...renderProps, size, variant, className }),
 			)}
 		/>

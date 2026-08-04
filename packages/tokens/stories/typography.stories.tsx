@@ -1,5 +1,6 @@
-import { vars } from '@launchpad-ui/vars';
 import { Description, Stories, Title } from '@storybook/addon-docs/blocks';
+
+import { vars } from '@launchpad-ui/vars';
 
 import { Button } from '../../components/src/Button';
 import { ToastRegion, toastQueue } from '../../components/src/Toast';
@@ -189,7 +190,7 @@ const TokenTable = ({ tokens }: { tokens: Record<string, string> }) => {
 									<TooltipTrigger>
 										<Button
 											onPress={() => {
-												navigator.clipboard.writeText(`<${element} style="font: ${value}" />`);
+												void navigator.clipboard.writeText(`<${element} style="font: ${value}" />`);
 												toastQueue.add({ title: 'Copied!', status: 'success' });
 											}}
 											style={{ font: 'var(--lp-text-code-1-regular)' }}
@@ -216,14 +217,10 @@ const EDITORIAL_DESCRIPTION =
 	'Carries the LaunchDarkly brand voice into the product by using Sora for display headings. Used on first-time onboarding empty states, in-app banners, feature announcements, and educational moments where the user has paused. Should feel intentional and slightly different from the rest of the UI.';
 
 const utilityTokens = () =>
-	Object.fromEntries(
-		Object.entries(flatten(vars.text)).filter(([key]) => !key.startsWith('editorial-')),
-	);
+	Object.fromEntries(Object.entries(flatten(vars.text)).filter(([key]) => !key.startsWith('editorial-')));
 
 const editorialTokens = () =>
-	Object.fromEntries(
-		Object.entries(flatten(vars.text)).filter(([key]) => key.startsWith('editorial-')),
-	);
+	Object.fromEntries(Object.entries(flatten(vars.text)).filter(([key]) => key.startsWith('editorial-')));
 
 export const Utility = {
 	parameters: {

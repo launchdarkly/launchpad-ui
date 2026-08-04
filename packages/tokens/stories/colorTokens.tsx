@@ -35,8 +35,7 @@ export const rgbToHex = (rgb: string): string | null => {
 	return hex.toUpperCase();
 };
 
-const isGradient = (computed: ComputedValue) =>
-	Boolean(computed.image && computed.image !== 'none');
+const isGradient = (computed: ComputedValue) => Boolean(computed.image && computed.image !== 'none');
 
 // Normalizes a computed `rgb()`/`rgba()` string to the `rgba()` form. Opaque
 // colors come back from `getComputedStyle` as `rgb(...)`, so add an explicit
@@ -85,7 +84,7 @@ export const getTokenValue = (computed?: ComputedValue): string | null => {
 };
 
 export const TokenCode = ({ children, muted }: { children: ReactNode; muted?: boolean }) => {
-	if (children == null) {
+	if (children === null || children === undefined) {
 		return null;
 	}
 

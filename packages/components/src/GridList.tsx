@@ -1,22 +1,19 @@
 import type { Ref } from 'react';
+import { createContext } from 'react';
+import { composeRenderProps } from 'react-aria-components/composeRenderProps';
 import type {
 	GridListItemProps as AriaGridListItemProps,
 	GridListProps as AriaGridListProps,
 } from 'react-aria-components/GridList';
+import { GridList as AriaGridList, GridListItem as AriaGridListItem } from 'react-aria-components/GridList';
 import type { ContextValue } from 'react-aria-components/slots';
-
 import { cva } from 'class-variance-authority';
-import { createContext } from 'react';
-import { composeRenderProps } from 'react-aria-components/composeRenderProps';
-import {
-	GridList as AriaGridList,
-	GridListItem as AriaGridListItem,
-} from 'react-aria-components/GridList';
 
 import { Checkbox } from './Checkbox';
 import { IconButton } from './IconButton';
-import styles from './styles/GridList.module.css';
 import { useLPContextProps } from './utils';
+
+import styles from './styles/GridList.module.css';
 
 const gridListStyles = cva(styles.list);
 const gridListItemStyles = cva(styles.item);
@@ -29,7 +26,9 @@ interface GridListItemProps<T extends object> extends AriaGridListItemProps<T> {
 	ref?: Ref<HTMLDivElement>;
 }
 
-// biome-ignore lint/suspicious/noExplicitAny: ignore
+// react-aria-components types this identically: `GridListContext: React.Context<ContextValue<GridListProps<any>, HTMLDivElement>>`
+// (react-aria-components/dist/types/src/GridList.d.ts) — a context can't carry the open generic `T`, so RAC itself erases it to `any` here.
+// oxlint-disable-next-line typescript/no-explicit-any -- mirrors react-aria-components' own GridListContext declaration (see comment above)
 const GridListContext = createContext<ContextValue<GridListProps<any>, HTMLDivElement>>(null);
 
 /**
@@ -38,12 +37,12 @@ const GridListContext = createContext<ContextValue<GridListProps<any>, HTMLDivEl
  * https://react-spectrum.adobe.com/react-aria/GridList.html
  */
 const GridList = <T extends object>({ ref, ...props }: GridListProps<T>) => {
-	[props, ref] = useLPContextProps(props, ref, GridListContext);
+	const [mergedProps, mergedRef] = useLPContextProps(props, ref, GridListContext);
 	return (
 		<AriaGridList
-			{...props}
-			ref={ref}
-			className={composeRenderProps(props.className, (className, renderProps) =>
+			{...mergedProps}
+			ref={mergedRef}
+			className={composeRenderProps(mergedProps.className, (className, renderProps) =>
 				gridListStyles({ ...renderProps, className }),
 			)}
 		/>
@@ -56,8 +55,7 @@ const GridList = <T extends object>({ ref, ...props }: GridListProps<T>) => {
  * https://react-spectrum.adobe.com/react-aria/GridList.html
  */
 const GridListItem = <T extends object>({ ref, ...props }: GridListItemProps<T>) => {
-	const textValue =
-		props.textValue || (typeof props.children === 'string' ? props.children : undefined);
+	const textValue = props.textValue || (typeof props.children === 'string' ? props.children : undefined);
 	return (
 		<AriaGridListItem
 			textValue={textValue}
@@ -67,21 +65,16 @@ const GridListItem = <T extends object>({ ref, ...props }: GridListItemProps<T>)
 				gridListItemStyles({ ...renderProps, className }),
 			)}
 		>
-			{composeRenderProps(
-				props.children,
-				(children, { allowsDragging, selectionMode, selectionBehavior }) => (
-					<>
-						{allowsDragging && (
-							/* @ts-expect-error RAC adds label */
-							<IconButton slot="drag" icon="grip-horiz" size="small" variant="minimal" />
-						)}
-						{selectionMode === 'multiple' && selectionBehavior === 'toggle' && (
-							<Checkbox slot="selection" />
-						)}
-						{children}
-					</>
-				),
-			)}
+			{composeRenderProps(props.children, (children, { allowsDragging, selectionMode, selectionBehavior }) => (
+				<>
+					{allowsDragging && (
+						/* @ts-expect-error RAC adds label */
+						<IconButton slot="drag" icon="grip-horiz" size="small" variant="minimal" />
+					)}
+					{selectionMode === 'multiple' && selectionBehavior === 'toggle' && <Checkbox slot="selection" />}
+					{children}
+				</>
+			))}
 		</AriaGridListItem>
 	);
 };

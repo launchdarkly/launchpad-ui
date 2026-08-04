@@ -1,5 +1,6 @@
-import { Icon } from '@launchpad-ui/icons';
 import { describe, expect, it, vi } from 'vitest';
+
+import { Icon } from '@launchpad-ui/icons';
 
 import { render, screen, userEvent } from '../../../test/utils';
 import { IconButton } from '../src';
@@ -51,7 +52,7 @@ describe('Button', () => {
 		expect(screen.getByRole('button', { name: 'Close' })).toHaveFocus();
 	});
 
-	it('can render an icon', async () => {
+	it('can render an icon', () => {
 		const { container } = render(<IconButton aria-label="Close" icon={<Icon name="cancel" />} />);
 		expect(container.querySelector('svg')).not.toBeNull();
 	});

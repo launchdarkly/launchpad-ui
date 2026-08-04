@@ -1,12 +1,12 @@
 import type { FocusEvent } from 'react';
-import type { TextFieldProps } from './TextField';
-
-import { cx } from 'classix';
 import { forwardRef, useState } from 'react';
+import { cx } from 'classix';
 
 import { Label } from './Label';
-import styles from './styles/Form.module.css';
+import type { TextFieldProps } from './TextField';
 import { TextField } from './TextField';
+
+import styles from './styles/Form.module.css';
 
 type CompactTextFieldProps = TextFieldProps & {
 	label: string;
@@ -51,8 +51,8 @@ const CompactTextField = forwardRef<HTMLInputElement, CompactTextFieldProps>(
 		};
 
 		const handleBlur = (event: FocusEvent<HTMLInputElement>) => {
-			const value = event.target.value || '';
-			setIsActive(value.trim().length !== 0);
+			const inputValue = event.target.value || '';
+			setIsActive(inputValue.trim().length !== 0);
 			if (onBlur) {
 				onBlur(event);
 			}

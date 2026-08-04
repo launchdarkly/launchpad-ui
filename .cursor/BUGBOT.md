@@ -7,7 +7,7 @@ LaunchDarkly's design system. Public, versioned, consumed across LaunchDarkly fr
 ## Repo shape
 
 - pnpm + Nx monorepo. Component packages under `packages/*`, each published independently to npm under `@launchpad-ui/*`.
-- React 19, TypeScript, React Aria Components foundation, CSS Modules + `class-variance-authority`, Biome for lint/format, Vitest + RTL for tests, Storybook + axe-core for a11y.
+- React 19, TypeScript, React Aria Components foundation, CSS Modules + `class-variance-authority`, oxlint for lint / oxfmt for format, Vitest + RTL for tests, Storybook + axe-core for a11y.
 - Changesets manages versioning — non-trivial package changes should include a `.changeset/*.md` file.
 
 ## Scope: what belongs in LaunchPad
@@ -86,16 +86,16 @@ Prioritize findings in this order:
 4. **Theme support gaps.** New styles that only work in light mode, hardcoded `white`/`black` instead of semantic tokens, or token references that don't resolve in dark mode. Every visual rule should respect `[data-theme]` via `--lp-*` tokens.
 5. **Design token violations.** Hardcoded colors (`#fff`, `rgb(...)`), spacing (`16px`, `1rem`), radii, font sizes, shadows, or z-index values in `.css`/`.module.css` files. All values should reference `var(--lp-*)` tokens defined in `packages/tokens`. **Prefer semantic alias tokens over primitives** — e.g., `var(--lp-color-bg-ui-primary)` over `var(--lp-color-blue-500)`, `var(--lp-color-text-success)` over a raw palette ramp. Primitives carry no intent and bypass theming; aliases are what keep dark mode and future re-theming working. Flag any new raw value, and flag primitive-token usage in component styles unless no suitable alias exists (in which case the right fix is usually to add the alias in `packages/tokens`).
 6. **Low-level primitive leakage.** When a feature could be expressed as a purpose-driven mid-level component (e.g., `Picker`, `Menu`), prefer that over re-exposing `Popover + ListBox + Input` combinations to consumers. Flag new public APIs that force consumers to re-assemble primitives — that's how UX drift happens.
-7. **Default exports.** Biome enforces named exports everywhere except stories and config files. Flag new `export default` in component source.
+7. **Default exports.** oxlint enforces named exports everywhere except stories and config files. Flag new `export default` in component source.
 8. **React Aria escape hatches.** Components should compose React Aria primitives rather than reimplement keyboard/ARIA behavior. Flag hand-rolled `onKeyDown` for arrow-key navigation, custom focus rings, or duplicated ARIA logic when an RAC primitive exists. RAC's architectural constraints are accepted — don't work around them with parallel implementations. For wrapping/theming patterns (most components here wrap RAC), see the [React Aria customization guide](https://react-aria.adobe.com/customization) — `defaultProps`, slots, `useContextProps`, and render-props composition are the sanctioned escape hatches.
 9. **Context + prop-merging pattern.** New components that take user-overridable props should use `ComponentContext` + `useLPContextProps` (see existing components like Button, Menu). Flag missing context plumbing on new public components.
 10. **Missing Storybook coverage.** New public component or new visual variant without a corresponding `*.stories.tsx`. Stories are how the component becomes discoverable and how a11y/visual regressions are caught.
 11. **Test coverage gaps on new public behavior.** New exported component or new prop with no test or no story update. RTL tests should use the project's `render()` from test utils, not RTL directly.
-12. **Type-only import discipline.** `import type` for type-only imports. Imports should be organized (Biome will reformat — but flag if a hand-edited PR has obvious unsorted/mixed imports that Biome didn't catch).
+12. **Type-only import discipline.** `import type` for type-only imports. Imports should be organized (oxfmt will reformat — but flag if a hand-edited PR has obvious unsorted/mixed imports that oxfmt didn't catch).
 
 ## What to ignore / de-prioritize
 
-- Formatting nits — Biome and lint-staged handle this. Don't flag whitespace, quote style, or trailing commas.
+- Formatting nits — oxlint and lint-staged handle this. Don't flag whitespace, quote style, or trailing commas.
 - Comment style preferences, JSDoc wording, or missing JSDoc on internal (non-exported) helpers. JSDoc *is* expected on exported components and public utilities.
 - `pnpm-lock.yaml`, `storybook-static/`, `coverage/`, `dist/`, generated `.d.ts`, and snapshot files. Don't review machine-generated content.
 - Changeset file *content* (wording is human judgment) — only flag if a changeset is *missing* for a package source change.

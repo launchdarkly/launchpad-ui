@@ -1,15 +1,16 @@
-import type { Preview, ReactRenderer } from '@storybook/react-vite';
 import type { ReactNode } from 'react';
+import { BrowserRouter, useNavigate } from 'react-router';
+import { withThemeByDataAttribute } from '@storybook/addon-themes';
+import type { Preview, ReactRenderer } from '@storybook/react-vite';
 import type { DecoratorFunction, GlobalTypes, Parameters } from 'storybook/internal/types';
 
 import { Box } from '@launchpad-ui/box';
 import { FocusTrapContext } from '@launchpad-ui/focus-trap';
 import sprite from '@launchpad-ui/icons/img/sprite.svg';
-import { withThemeByDataAttribute } from '@storybook/addon-themes';
-import { BrowserRouter, useNavigate } from 'react-router';
 
 import { RouterProvider as AriaRouterProvider } from '../packages/components/src/RouterProvider';
 import { useHref } from '../packages/components/src/utils';
+
 import custom from './custom.svg';
 import { allModes } from './modes';
 import { darkTheme, lightTheme } from './themes';
@@ -98,7 +99,7 @@ const parameters: Parameters = {
 	},
 };
 
-const decorators: DecoratorFunction<ReactRenderer>[] = [
+const decorators: Array<DecoratorFunction<ReactRenderer>> = [
 	// Dynamic theme updater for Storybook UI
 	(StoryFn, context) => {
 		const currentTheme = context.globals.theme || 'default';
@@ -160,11 +161,7 @@ const decorators: DecoratorFunction<ReactRenderer>[] = [
 					<FocusTrapContext.Provider value={{ contain: false }}>
 						{mirror ? (
 							<Box display="flex" flexDirection={sideBySide ? 'row' : 'column'} minHeight="100vh">
-								<Box
-									padding="$400"
-									width={sideBySide ? '50vw' : undefined}
-									height={stacked ? '50vh' : undefined}
-								>
+								<Box padding="$400" width={sideBySide ? '50vw' : undefined} height={stacked ? '50vh' : undefined}>
 									<StoryFn />
 								</Box>
 								<Box

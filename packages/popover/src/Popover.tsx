@@ -1,5 +1,3 @@
-import type { OffsetOptions } from '@floating-ui/core';
-import type { ComputePositionConfig, Placement, Strategy } from '@floating-ui/dom';
 import type {
 	CSSProperties,
 	FocusEvent,
@@ -12,12 +10,6 @@ import type {
 	Ref,
 	RefObject,
 } from 'react';
-
-import { arrow, computePosition, flip, offset as floatOffset, shift } from '@floating-ui/dom';
-import { FocusTrap } from '@launchpad-ui/focus-trap';
-import { Overlay } from '@launchpad-ui/overlay';
-import { cx } from 'classix';
-import { LazyMotion, m } from 'framer-motion';
 import {
 	Children,
 	cloneElement,
@@ -29,6 +21,14 @@ import {
 	useRef,
 	useState,
 } from 'react';
+import type { OffsetOptions } from '@floating-ui/core';
+import type { ComputePositionConfig, Placement, Strategy } from '@floating-ui/dom';
+import { arrow, computePosition, flip, offset as floatOffset, shift } from '@floating-ui/dom';
+import { cx } from 'classix';
+import { LazyMotion, m } from 'framer-motion';
+
+import { FocusTrap } from '@launchpad-ui/focus-trap';
+import { Overlay } from '@launchpad-ui/overlay';
 
 import styles from './styles/Popover.module.css';
 
@@ -40,6 +40,21 @@ const loadFeatures = () =>
 	).then((res) => res.domAnimation);
 
 type Offset = OffsetOptions;
+
+/**
+ * Minimal shape for the caller-supplied `target` element. The Popover clones
+ * arbitrary target elements (any host component or custom component the
+ * consumer renders), reading `disabled` for styling and injecting a DOM ref
+ * plus a couple of data/aria attributes. We can't know the target's real
+ * prop type without knowing what the consumer rendered, so this narrows just
+ * far enough to type-check the specific reads/writes below.
+ */
+type PopoverTargetElementProps = {
+	disabled?: boolean;
+	ref?: Ref<Element>;
+	'aria-describedby'?: string;
+	'data-state'?: 'open' | 'closed';
+};
 
 type PopoverProps = {
 	allowBoundaryElementOverflow?: boolean;
@@ -227,15 +242,7 @@ const Popover = ({
 				});
 			}
 		}
-	}, [
-		allowBoundaryElementOverflow,
-		disablePlacementFlip,
-		enableArrow,
-		isFixed,
-		offset,
-		placement,
-		popoverElement,
-	]);
+	}, [allowBoundaryElementOverflow, disablePlacementFlip, enableArrow, isFixed, offset, placement, popoverElement]);
 
 	useEffect(() => {
 		return () => {
@@ -257,7 +264,7 @@ const Popover = ({
 				window.removeEventListener('resize', updatePosition);
 			}
 		};
-		updatePopover();
+		void updatePopover();
 	}, [isOpen, contentProp, popoverElement, updatePosition]);
 
 	useEffect(() => {
@@ -385,7 +392,6 @@ const Popover = ({
 					transition={{ duration: 0.15 }}
 					initial={{ opacity: 0 }}
 					animate={{ opacity: 1 }}
-					/* @ts-ignore framer */
 					className={cx(
 						styles['Popover-content'],
 						restrictWidth && styles['Popover-content--restrictWidth'],
@@ -419,29 +425,19 @@ const Popover = ({
 	};
 
 	const { target, content } = parseChildren();
-	const hasEmptyContent =
-		content === null || content === undefined || (typeof content === 'string' && !content);
+	const hasEmptyContent = content === null || content === undefined || (typeof content === 'string' && !content);
 	const isTargetDisabled = isValidElement(target)
-		? // biome-ignore lint/suspicious/noExplicitAny: ignore
-			!!(target as ReactElement<any>)?.props?.disabled
+		? !!(target as ReactElement<PopoverTargetElementProps>)?.props?.disabled
 		: false;
 
 	const targetProps: PopoverTargetProps = {
 		ref: targetRef as RefObject<HTMLElement>,
-		className: cx(
-			styles['Popover-target'],
-			targetClassName,
-			isTargetDisabled && styles['Popover-target--disabled'],
-		),
+		className: cx(styles['Popover-target'], targetClassName, isTargetDisabled && styles['Popover-target--disabled']),
 		style: rootElementStyle,
 		'data-test-id': targetTestId || 'popover-target',
 	};
 
-	if (
-		interactionKind === 'hover' ||
-		interactionKind === 'hover-target-only' ||
-		interactionKind === 'hover-or-focus'
-	) {
+	if (interactionKind === 'hover' || interactionKind === 'hover-target-only' || interactionKind === 'hover-or-focus') {
 		targetProps.onMouseEnter = handleMouseEnter;
 		targetProps.onMouseLeave = handleMouseLeave;
 		targetProps.onPointerEnter = handleMouseEnter;
@@ -457,8 +453,7 @@ const Popover = ({
 	return createElement(
 		rootElementTag,
 		targetProps,
-		// biome-ignore lint/suspicious/noExplicitAny: ignore
-		cloneElement(target as ReactElement<any>, {
+		cloneElement(target as ReactElement<PopoverTargetElementProps>, {
 			ref: targetElementRef,
 			...(isOpen && { 'aria-describedby': popoverId.current }),
 			'data-state': isOpen ? 'open' : 'closed',

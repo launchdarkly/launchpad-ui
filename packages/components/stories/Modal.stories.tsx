@@ -1,9 +1,9 @@
-import type { Meta, ReactRenderer, StoryObj } from '@storybook/react-vite';
 import type { ComponentType } from 'react';
+import type { Meta, ReactRenderer, StoryObj } from '@storybook/react-vite';
 import type { PlayFunction } from 'storybook/internal/types';
+import { expect, userEvent, waitFor, within } from 'storybook/test';
 
 import { Alert } from '@launchpad-ui/components';
-import { expect, userEvent, waitFor, within } from 'storybook/test';
 
 import { allModes } from '../../../.storybook/modes';
 import { Button } from '../src/Button';
@@ -16,15 +16,11 @@ import { ToastRegion, toastQueue } from '../src/Toast';
 
 const meta: Meta<typeof Modal> = {
 	component: Modal,
-	subcomponents: { ModalOverlay, Dialog, DialogTrigger, Heading } as Record<
-		string,
-		ComponentType<unknown>
-	>,
+	subcomponents: { ModalOverlay, Dialog, DialogTrigger, Heading } as Record<string, ComponentType<unknown>>,
 	title: 'Components/Overlays/Modal',
 	parameters: {
 		figma: {
-			design:
-				'https://www.figma.com/design/98HKKXL2dTle29ikJ3tzk7/%F0%9F%9A%80-LaunchPad?node-id=8079-93230&m=dev',
+			design: 'https://www.figma.com/design/98HKKXL2dTle29ikJ3tzk7/%F0%9F%9A%80-LaunchPad?node-id=8079-93230&m=dev',
 		},
 	},
 	decorators: [
@@ -53,13 +49,7 @@ const renderModal = (args: Story['args']) => (
 						<>
 							<div slot="header">
 								<Heading slot="title">Title</Heading>
-								<IconButton
-									aria-label="close"
-									icon="cancel"
-									size="small"
-									variant="minimal"
-									onPress={close}
-								/>
+								<IconButton aria-label="close" icon="cancel" size="small" variant="minimal" onPress={close} />
 								<Text slot="subtitle">Subtitle</Text>
 							</div>
 							<div slot="body">Body text</div>
@@ -81,7 +71,7 @@ const play: PlayFunction<ReactRenderer> = async ({ canvasElement }) => {
 	await userEvent.click(canvas.getByRole('button'));
 	const body = canvasElement.ownerDocument.body;
 	await waitFor(async () => {
-		expect(await within(body).findByRole('dialog')).toBeVisible();
+		await expect(await within(body).findByRole('dialog')).toBeVisible();
 	});
 };
 
@@ -129,19 +119,13 @@ export const WithHeader: Story = {
 							<>
 								<div slot="header">
 									<Heading slot="title">Invite teammates</Heading>
-									<IconButton
-										aria-label="close"
-										icon="cancel"
-										size="small"
-										variant="minimal"
-										onPress={close}
-									/>
+									<IconButton aria-label="close" icon="cancel" size="small" variant="minimal" onPress={close} />
 									<Text slot="subtitle">They'll get an email with a link to join.</Text>
 									<Alert status="warning">
 										<Heading>Heads up before archiving</Heading>
 										<Text slot="subtitle">
-											Scenario alert body. Inside the dialog this must use the Alert's text styling,
-											not the Dialog's subtitle styling.
+											Scenario alert body. Inside the dialog this must use the Alert's text styling, not the Dialog's
+											subtitle styling.
 										</Text>
 									</Alert>
 								</div>
@@ -193,28 +177,16 @@ export const DialogWithActiveToast: Story = {
 										<>
 											<div slot="header">
 												<Heading slot="title">Dialog with Toast Active</Heading>
-												<IconButton
-													aria-label="close"
-													icon="cancel"
-													size="small"
-													variant="minimal"
-													onPress={close}
-												/>
+												<IconButton aria-label="close" icon="cancel" size="small" variant="minimal" onPress={close} />
 												<Text slot="subtitle">Try clicking the button below with toast active</Text>
 												<Alert status="info">
 													<Heading>No critical environments to check</Heading>
 													{/* Bare <Text> now works inside an Alert, even within a Dialog. */}
-													<Text>
-														No checks were run because you don't have any critical environments set
-														up.
-													</Text>
+													<Text>No checks were run because you don't have any critical environments set up.</Text>
 												</Alert>
 											</div>
 											<div slot="body">
-												<p>
-													When a toast is visible, clicking the button below should NOT close the
-													dialog.
-												</p>
+												<p>When a toast is visible, clicking the button below should NOT close the dialog.</p>
 												<div style={{ marginTop: '1rem' }}>
 													<Button
 														onPress={() => {

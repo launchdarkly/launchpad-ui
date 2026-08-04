@@ -1,4 +1,6 @@
 import type { Ref } from 'react';
+import { createContext } from 'react';
+import { composeRenderProps } from 'react-aria-components/composeRenderProps';
 import type { ContextValue } from 'react-aria-components/slots';
 import type {
 	TabListProps as AriaTabListProps,
@@ -6,19 +8,17 @@ import type {
 	TabProps as AriaTabProps,
 	TabsProps as AriaTabsProps,
 } from 'react-aria-components/Tabs';
-
-import { cva } from 'class-variance-authority';
-import { createContext } from 'react';
-import { composeRenderProps } from 'react-aria-components/composeRenderProps';
 import {
 	Tab as AriaTab,
 	TabList as AriaTabList,
 	TabPanel as AriaTabPanel,
 	Tabs as AriaTabs,
 } from 'react-aria-components/Tabs';
+import { cva } from 'class-variance-authority';
+
+import { useLPContextProps } from './utils';
 
 import styles from './styles/Tabs.module.css';
-import { useLPContextProps } from './utils';
 
 const tabListStyles = cva(styles.list);
 const tabPanelStyles = cva(styles.panel);
@@ -49,12 +49,12 @@ const TabsContext = createContext<ContextValue<TabsProps, HTMLDivElement>>(null)
  * https://react-spectrum.adobe.com/react-aria/Tabs.html
  */
 const Tabs = ({ ref, ...props }: TabsProps) => {
-	[props, ref] = useLPContextProps(props, ref, TabsContext);
+	const [mergedProps, mergedRef] = useLPContextProps(props, ref, TabsContext);
 	return (
 		<AriaTabs
-			{...props}
-			ref={ref}
-			className={composeRenderProps(props.className, (className, renderProps) =>
+			{...mergedProps}
+			ref={mergedRef}
+			className={composeRenderProps(mergedProps.className, (className, renderProps) =>
 				tabsStyles({ ...renderProps, className }),
 			)}
 		/>
@@ -113,15 +113,5 @@ const TabPanel = ({ ref, ...props }: TabPanelProps) => {
 	);
 };
 
-export {
-	Tab,
-	Tabs,
-	TabsContext,
-	TabList,
-	TabPanel,
-	tabListStyles,
-	tabPanelStyles,
-	tabStyles,
-	tabsStyles,
-};
+export { Tab, Tabs, TabsContext, TabList, TabPanel, tabListStyles, tabPanelStyles, tabStyles, tabsStyles };
 export type { TabProps, TabsProps, TabListProps, TabPanelProps };

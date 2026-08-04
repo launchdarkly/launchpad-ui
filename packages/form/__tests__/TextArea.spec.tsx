@@ -5,14 +5,7 @@ import { TextArea } from '../src';
 
 describe('TextArea', () => {
 	it('renders', () => {
-		render(
-			<TextArea
-				value="my text"
-				aria-label="My Text Area"
-				name="mytextarea"
-				onChange={() => undefined}
-			/>,
-		);
+		render(<TextArea value="my text" aria-label="My Text Area" name="mytextarea" onChange={() => undefined} />);
 		expect(screen.getByLabelText('My Text Area')).toBeInTheDocument();
 	});
 

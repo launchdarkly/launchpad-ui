@@ -1,15 +1,16 @@
-import type { VariantProps } from 'class-variance-authority';
 import type { ComponentProps, HTMLAttributes, Ref } from 'react';
-
-import { StatusIcon } from '@launchpad-ui/icons';
-import { useControlledState } from '@react-stately/utils';
-import { cva } from 'class-variance-authority';
 import { HeadingContext } from 'react-aria-components/Heading';
 import { DEFAULT_SLOT, Provider } from 'react-aria-components/slots';
 import { TextContext } from 'react-aria-components/Text';
+import { useControlledState } from '@react-stately/utils';
+import type { VariantProps } from 'class-variance-authority';
+import { cva } from 'class-variance-authority';
+
+import { StatusIcon } from '@launchpad-ui/icons';
 
 import { ButtonGroupContext } from './ButtonGroup';
 import { IconButton } from './IconButton';
+
 import styles from './styles/Alert.module.css';
 
 interface AlertTextProps extends ComponentProps<'div'> {

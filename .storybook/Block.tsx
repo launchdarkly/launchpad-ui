@@ -1,7 +1,6 @@
 import styles from './Block.module.css';
 
-const toCSSValue = (v: number | string) =>
-	typeof v === 'string' && Number.isFinite(+v) ? `${v}px` : v;
+const toCSSValue = (v: number | string) => (typeof v === 'string' && Number.isFinite(+v) ? `${v}px` : v);
 
 type BlockProps = {
 	text?: string;

@@ -1,16 +1,16 @@
 import type { Ref } from 'react';
-import type { ContextValue } from 'react-aria-components/slots';
-import type { TextAreaProps as AriaTextAreaProps } from 'react-aria-components/TextArea';
-import type { InputVariants } from './Input';
-
-import { cva, cx } from 'class-variance-authority';
 import { createContext } from 'react';
 import { composeRenderProps } from 'react-aria-components/composeRenderProps';
+import type { ContextValue } from 'react-aria-components/slots';
+import type { TextAreaProps as AriaTextAreaProps } from 'react-aria-components/TextArea';
 import { TextArea as AriaTextArea } from 'react-aria-components/TextArea';
+import { cva, cx } from 'class-variance-authority';
 
+import type { InputVariants } from './Input';
 import { inputStyles } from './Input';
-import styles from './styles/TextArea.module.css';
 import { useLPContextProps } from './utils';
+
+import styles from './styles/TextArea.module.css';
 
 const textAreaStyles = cva(styles.area);
 
@@ -26,14 +26,14 @@ const TextAreaContext = createContext<ContextValue<TextAreaProps, HTMLTextAreaEl
  * https://react-spectrum.adobe.com/react-aria/TextField.html
  */
 const TextArea = ({ ref, ...props }: TextAreaProps) => {
-	[props, ref] = useLPContextProps(props, ref, TextAreaContext);
-	const { variant = 'default' } = props;
+	const [mergedProps, mergedRef] = useLPContextProps(props, ref, TextAreaContext);
+	const { variant = 'default' } = mergedProps;
 
 	return (
 		<AriaTextArea
-			{...props}
-			ref={ref}
-			className={composeRenderProps(props.className, (className, renderProps) =>
+			{...mergedProps}
+			ref={mergedRef}
+			className={composeRenderProps(mergedProps.className, (className, renderProps) =>
 				cx(inputStyles({ variant }), textAreaStyles({ ...renderProps, className })),
 			)}
 		/>

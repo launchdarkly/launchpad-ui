@@ -1,5 +1,4 @@
 import type { ComponentProps } from 'react';
-
 import { cx } from 'classix';
 
 import styles from './styles/Table.module.css';
@@ -13,12 +12,7 @@ type TableBodyProps = ComponentProps<'tbody'> & {
  *
  * https://launchpad.launchdarkly.com/?path=/docs/components-collections-table--docs
  */
-const TableBody = ({
-	className,
-	children,
-	'data-test-id': testId = 'table-body',
-	...rest
-}: TableBodyProps) => {
+const TableBody = ({ className, children, 'data-test-id': testId = 'table-body', ...rest }: TableBodyProps) => {
 	const classes = cx(styles['Table-body'], className);
 
 	return (

@@ -1,15 +1,15 @@
-import type { VariantProps } from 'class-variance-authority';
 import type { Ref } from 'react';
-import type { SwitchProps as AriaSwitchProps } from 'react-aria-components/Switch';
-import type { ContextValue } from 'react-aria-components/slots';
-
-import { cva } from 'class-variance-authority';
 import { createContext } from 'react';
 import { composeRenderProps } from 'react-aria-components/composeRenderProps';
+import type { ContextValue } from 'react-aria-components/slots';
+import type { SwitchProps as AriaSwitchProps } from 'react-aria-components/Switch';
 import { Switch as AriaSwitch } from 'react-aria-components/Switch';
+import type { VariantProps } from 'class-variance-authority';
+import { cva } from 'class-variance-authority';
+
+import { useLPContextProps } from './utils';
 
 import styles from './styles/Switch.module.css';
-import { useLPContextProps } from './utils';
 
 const switchStyles = cva(styles.switch, {
 	variants: {
@@ -42,18 +42,18 @@ const SwitchContext = createContext<ContextValue<SwitchProps, HTMLLabelElement>>
  * https://react-spectrum.adobe.com/react-aria/Switch.html
  */
 const Switch = ({ ref, ...props }: SwitchProps) => {
-	[props, ref] = useLPContextProps(props, ref, SwitchContext);
-	const { switchLabels, variant } = props;
+	const [mergedProps, mergedRef] = useLPContextProps(props, ref, SwitchContext);
+	const { switchLabels, variant } = mergedProps;
 	const hideLabels = switchLabels === false ? true : undefined;
 	return (
 		<AriaSwitch
-			{...props}
-			ref={ref}
-			className={composeRenderProps(props.className, (className, renderProps) =>
+			{...mergedProps}
+			ref={mergedRef}
+			className={composeRenderProps(mergedProps.className, (className, renderProps) =>
 				switchStyles({ ...renderProps, variant, compact: hideLabels, className }),
 			)}
 		>
-			{composeRenderProps(props.children, (children, { isSelected }) => (
+			{composeRenderProps(mergedProps.children, (children, { isSelected }) => (
 				<>
 					<div className={styles.track}>
 						{!hideLabels && isSelected && <div className={styles.label}>On</div>}

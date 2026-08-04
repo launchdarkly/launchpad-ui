@@ -1,8 +1,8 @@
 import type { ComponentProps } from 'react';
-
 import { cx } from 'classix';
 
 import { RequiredAsterisk } from './RequiredAsterisk';
+
 import styles from './styles/Form.module.css';
 
 type LabelProps = ComponentProps<'label'> & {

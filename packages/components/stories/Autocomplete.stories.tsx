@@ -1,8 +1,8 @@
+import { useState } from 'react';
 import type { Meta, StoryObj } from '@storybook/react-vite';
+import { userEvent, within } from 'storybook/test';
 
 import { Icon } from '@launchpad-ui/icons';
-import { useState } from 'react';
-import { expect, userEvent, within } from 'storybook/test';
 
 import { Autocomplete } from '../src/Autocomplete';
 import { Button } from '../src/Button';
@@ -30,7 +30,7 @@ const open = {
 
 		await userEvent.click(canvas.getByRole('button'));
 		const body = canvasElement.ownerDocument.body;
-		await expect(await within(body).findByRole('dialog'));
+		await within(body).findByRole('dialog');
 		await userEvent.keyboard('{arrowdown}');
 	},
 };
@@ -54,18 +54,11 @@ export const Example: Story = {
 								<Group>
 									<Icon name="search" size="small" />
 									<Input placeholder="Search" />
-									<IconButton
-										icon="cancel-circle-outline"
-										aria-label="clear"
-										size="small"
-										variant="minimal"
-									/>
+									<IconButton icon="cancel-circle-outline" aria-label="clear" size="small" variant="minimal" />
 								</Group>
 							</SearchField>
 							<Menu
-								items={items.filter((item) =>
-									item.name.toLowerCase().includes(search.toLowerCase()),
-								)}
+								items={items.filter((item) => item.name.toLowerCase().includes(search.toLowerCase()))}
 								selectionMode="multiple"
 							>
 								{(item) => <MenuItem id={item.id}>{item.name}</MenuItem>}
@@ -98,19 +91,12 @@ export const ListBoxExample: Story = {
 								<Group>
 									<Icon name="search" size="small" />
 									<Input placeholder="Search" />
-									<IconButton
-										icon="cancel-circle-outline"
-										aria-label="clear"
-										size="small"
-										variant="minimal"
-									/>
+									<IconButton icon="cancel-circle-outline" aria-label="clear" size="small" variant="minimal" />
 								</Group>
 							</SearchField>
 							<ListBox
 								selectionMode="single"
-								items={items.filter((item) =>
-									item.name.toLowerCase().includes(search.toLowerCase()),
-								)}
+								items={items.filter((item) => item.name.toLowerCase().includes(search.toLowerCase()))}
 								shouldFocusWrap
 							>
 								{(item) => <ListBoxItem id={item.id}>{item.name}</ListBoxItem>}

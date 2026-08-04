@@ -1,12 +1,18 @@
-import type { NavigationItemProps } from '../src';
-
 import { MemoryRouter } from 'react-router';
 import { describe, expect, it, vi } from 'vitest';
 
 import { render, screen, userEvent, waitFor } from '../../../test/utils';
+import type { NavigationItemProps } from '../src';
 import { Navigation, NavigationItem } from '../src';
-// biome-ignore lint/performance/noNamespaceImport: ignore
-import * as ctx from '../src/NavigationContext';
+import { useNavigationContext } from '../src/NavigationContext';
+
+vi.mock('../src/NavigationContext', async (importOriginal) => {
+	const actual = (await importOriginal()) as Record<string, unknown>;
+	return {
+		...actual,
+		useNavigationContext: vi.fn(actual.useNavigationContext as typeof useNavigationContext),
+	};
+});
 
 globalThis.matchMedia = vi.fn().mockReturnValue({
 	matches: true,
@@ -75,7 +81,7 @@ describe('Navigation', () => {
 		});
 	});
 
-	it('can render items with a chip', async () => {
+	it('can render items with a chip', () => {
 		render(
 			createComponent([
 				{
@@ -93,8 +99,8 @@ describe('Navigation', () => {
 		expect(screen.getByTestId('nav-item-chip')).not.toBeNull();
 	});
 
-	it('renders collapsed dropdown', async () => {
-		vi.spyOn(ctx, 'useNavigationContext').mockReturnValue({
+	it('renders collapsed dropdown', () => {
+		vi.mocked(useNavigationContext).mockReturnValue({
 			shouldCollapse: true,
 			refs: { wrapperRef: { current: null }, itemListRef: { current: null } },
 		});

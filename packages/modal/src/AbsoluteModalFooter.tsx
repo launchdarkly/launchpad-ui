@@ -1,11 +1,11 @@
-import type { ModalFooterProps } from './ModalFooter';
-
-import { cx } from 'classix';
 import { useRef } from 'react';
+import { cx } from 'classix';
 
+import type { ModalFooterProps } from './ModalFooter';
 import { ModalFooter } from './ModalFooter';
-import styles from './styles/Modal.module.css';
 import { useAbsoluteFooter } from './utils';
+
+import styles from './styles/Modal.module.css';
 
 /**
  * @deprecated use `div[slot='footer']` with `Modal` from `@launchpad-ui/components` instead

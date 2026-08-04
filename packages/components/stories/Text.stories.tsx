@@ -7,8 +7,7 @@ const meta: Meta<typeof Text> = {
 	component: Text,
 	parameters: {
 		figma: {
-			design:
-				'https://www.figma.com/design/98HKKXL2dTle29ikJ3tzk7/%F0%9F%9A%80-LaunchPad?node-id=1-26765&m=dev',
+			design: 'https://www.figma.com/design/98HKKXL2dTle29ikJ3tzk7/%F0%9F%9A%80-LaunchPad?node-id=1-26765&m=dev',
 		},
 		docs: {
 			description: {
@@ -83,19 +82,19 @@ export const Bold: Story = {
 			<Text size="large" bold={false}>
 				Large regular
 			</Text>
-			<Text size="large" bold={true}>
+			<Text size="large" bold>
 				Large bold
 			</Text>
 			<Text size="medium" bold={false}>
 				Medium regular
 			</Text>
-			<Text size="medium" bold={true}>
+			<Text size="medium" bold>
 				Medium bold
 			</Text>
 			<Text size="small" bold={false}>
 				Small regular
 			</Text>
-			<Text size="small" bold={true}>
+			<Text size="small" bold>
 				Small bold
 			</Text>
 		</div>
@@ -109,17 +108,15 @@ export const Truncation: Story = {
 	render: () => (
 		<div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', width: '200px' }}>
 			<Text maxLines={1}>
-				This is a very long text that should be truncated after one line when the maxLines prop is
-				set to 1.
+				This is a very long text that should be truncated after one line when the maxLines prop is set to 1.
 			</Text>
 			<Text maxLines={2}>
-				This is a longer text that should be truncated after two lines when the maxLines prop is set
-				to 2. It continues for several lines to demonstrate the truncation behavior.
+				This is a longer text that should be truncated after two lines when the maxLines prop is set to 2. It continues
+				for several lines to demonstrate the truncation behavior.
 			</Text>
 			<Text maxLines={3}>
-				This is an even longer text that should be truncated after three lines when the maxLines
-				prop is set to 3. It continues for many more lines to demonstrate how the truncation works
-				with the ellipsis at the end.
+				This is an even longer text that should be truncated after three lines when the maxLines prop is set to 3. It
+				continues for many more lines to demonstrate how the truncation works with the ellipsis at the end.
 			</Text>
 		</div>
 	),

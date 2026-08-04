@@ -1,14 +1,14 @@
-import type { CollectionBase } from '@react-types/shared';
 import type { MouseEvent } from 'react';
-import type { NavProps } from './Nav';
-
 import { useListState } from 'react-stately/useListState';
+import type { CollectionBase } from '@react-types/shared';
 
+import type { NavProps } from './Nav';
 import { Nav } from './Nav';
-import { NavItem } from './NavItem';
-import { NavItemWithTooltip } from './NavItemWithTooltip';
 import { useNavigationContext } from './NavigationContext';
 import { NavigationMenuDropdown } from './NavigationMenuDropdown';
+import { NavItem } from './NavItem';
+import { NavItemWithTooltip } from './NavItemWithTooltip';
+
 import styles from './styles/Navigation.module.css';
 
 type NavigationListProps<T extends object> = CollectionBase<T> & {
@@ -16,11 +16,7 @@ type NavigationListProps<T extends object> = CollectionBase<T> & {
 	kind?: NavProps['kind'];
 };
 
-const NavigationList = <T extends object>({
-	kind = 'primary',
-	title,
-	...rest
-}: NavigationListProps<T>) => {
+const NavigationList = <T extends object>({ kind = 'primary', title, ...rest }: NavigationListProps<T>) => {
 	const state = useListState(rest);
 
 	const { shouldCollapse, refs } = useNavigationContext();
@@ -46,9 +42,7 @@ const NavigationList = <T extends object>({
 								name={item.props.name}
 								role={item.props.role}
 								aria-controls={item.props['aria-controls']}
-								tooltipContent={
-									typeof item.props.tooltip === 'boolean' ? undefined : item.props.tooltip
-								}
+								tooltipContent={typeof item.props.tooltip === 'boolean' ? undefined : item.props.tooltip}
 								tooltipOffset={item.props.tooltipOffset}
 								tooltipPlacement={item.props.tooltipPlacement}
 								onClick={onClick}

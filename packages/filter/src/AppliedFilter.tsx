@@ -1,9 +1,9 @@
 import type { ChangeEvent, ReactNode } from 'react';
-import type { FilterOption } from './FilterMenu';
 
 import { Dropdown } from '@launchpad-ui/dropdown';
 
 import { AppliedFilterButton } from './AppliedFilterButton';
+import type { FilterOption } from './FilterMenu';
 import { FilterMenu } from './FilterMenu';
 
 const SEARCH_INPUT_THRESHOLD = 4;
@@ -49,16 +49,11 @@ const AppliedFilter = ({
 	'data-test-id': testId = 'applied-filter',
 	...props
 }: AppliedFilterProps) => {
-	const enableSearch =
-		onSearchChange && (!!searchValue || options.length > SEARCH_INPUT_THRESHOLD || !isEmpty);
+	const enableSearch = onSearchChange && (!!searchValue || options.length > SEARCH_INPUT_THRESHOLD || !isEmpty);
 
 	return (
 		<Dropdown targetClassName={className} placement="bottom-start" enableArrow={false} {...props}>
-			<AppliedFilterButton
-				data-test-id={testId}
-				name={name}
-				onClickFilterButton={onClickFilterButton}
-			>
+			<AppliedFilterButton data-test-id={testId} name={name} onClickFilterButton={onClickFilterButton}>
 				{description}
 			</AppliedFilterButton>
 			<FilterMenu

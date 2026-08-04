@@ -1,7 +1,6 @@
-import type { Plugin, ResolvedConfig } from 'vite';
-
 import fs from 'fs';
 import path from 'path';
+import type { Plugin, ResolvedConfig } from 'vite';
 
 const cssImport = (): Plugin => {
 	let config: ResolvedConfig;
@@ -32,7 +31,7 @@ const cssImport = (): Plugin => {
 			}
 
 			for (const file of files) {
-				// @ts-ignore
+				// @ts-expect-error: Rollup's OutputAsset/OutputChunk union doesn't expose `isEntry` uniformly
 				if (!bundle[file].isEntry) {
 					continue;
 				}
@@ -41,9 +40,8 @@ const cssImport = (): Plugin => {
 					encoding: 'utf8',
 				});
 
-				const cssImport =
-					option.format === 'es' ? `import './style.css'` : `require('./style.css')`;
-				fs.writeFileSync(filePath, `${cssImport};\n${data}`);
+				const importStatement = option.format === 'es' ? `import './style.css'` : `require('./style.css')`;
+				fs.writeFileSync(filePath, `${importStatement};\n${data}`);
 			}
 		},
 	};

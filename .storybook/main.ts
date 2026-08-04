@@ -1,20 +1,17 @@
 import type { StorybookConfig } from '@storybook/react-vite';
-import type { UserConfig } from 'vite';
+import { dirname } from 'node:path';
+import { fileURLToPath } from 'node:url';
 
 const config: StorybookConfig = {
-	stories: [
-		'../docs/stories/**/*.mdx',
-		'../packages/**/*.mdx',
-		'../packages/**/*.stories.{mdx,tsx}',
-	],
+	stories: ['../docs/stories/**/*.mdx', '../packages/**/*.mdx', '../packages/**/*.stories.{mdx,tsx}'],
 	addons: [
-		'@storybook/addon-a11y',
-		'@storybook/addon-docs',
-		'@storybook/addon-designs',
-		'@storybook/addon-themes',
-		'storybook-addon-pseudo-states',
+		getAbsolutePath('@storybook/addon-a11y'),
+		getAbsolutePath('@storybook/addon-docs'),
+		getAbsolutePath('@storybook/addon-designs'),
+		getAbsolutePath('@storybook/addon-themes'),
+		getAbsolutePath('storybook-addon-pseudo-states'),
 	],
-	framework: '@storybook/react-vite',
+	framework: getAbsolutePath('@storybook/react-vite'),
 	core: {
 		disableTelemetry: true,
 	},
@@ -42,17 +39,6 @@ const config: StorybookConfig = {
 			}
 		</style>
 	`,
-	async viteFinal(config, { configType }) {
-		const { mergeConfig } = await import('vite');
-
-		// https://github.com/vitejs/rolldown-vite/issues/182#issuecomment-2909038168
-		const custom: UserConfig =
-			configType === 'PRODUCTION'
-				? { build: { rollupOptions: { experimental: { strictExecutionOrder: true } } } }
-				: {};
-
-		return mergeConfig(config, custom);
-	},
 	docs: {
 		defaultName: 'Docs',
 	},
@@ -64,7 +50,7 @@ const config: StorybookConfig = {
 			shouldRemoveUndefinedFromOptional: true,
 			propFilter: (prop) =>
 				prop.parent
-					? !/launchpad-ui\/node_modules\/.pnpm\/(?!react-aria-components|react-aria|react-stately|@react-types|@react-aria|@react-stately|react-router|class-variance-authority|@internationalized)/.test(
+					? !/node_modules\/\.pnpm\/(?!react-aria-components|react-aria|react-stately|@react-types|@react-aria|@react-stately|react-router|class-variance-authority|@internationalized)/.test(
 							prop.parent.fileName,
 						)
 					: true,
@@ -74,3 +60,7 @@ const config: StorybookConfig = {
 };
 
 export default config;
+
+function getAbsolutePath(value: string): any {
+	return dirname(fileURLToPath(import.meta.resolve(`${value}/package.json`)));
+}

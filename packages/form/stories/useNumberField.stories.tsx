@@ -1,6 +1,6 @@
 import type { StoryObj } from '@storybook/react-vite';
-import type { FormFieldProps } from '../src/FormField';
 
+import type { FormFieldProps } from '../src/FormField';
 import { FormField } from '../src/FormField';
 import { useNumberField } from '../src/useNumberField';
 

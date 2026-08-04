@@ -1,14 +1,14 @@
 import type { Ref } from 'react';
-import type { SearchFieldProps as AriaSearchFieldProps } from 'react-aria-components/SearchField';
-import type { ContextValue } from 'react-aria-components/slots';
-
-import { cva } from 'class-variance-authority';
 import { createContext } from 'react';
 import { composeRenderProps } from 'react-aria-components/composeRenderProps';
+import type { SearchFieldProps as AriaSearchFieldProps } from 'react-aria-components/SearchField';
 import { SearchField as AriaSearchField } from 'react-aria-components/SearchField';
+import type { ContextValue } from 'react-aria-components/slots';
+import { cva } from 'class-variance-authority';
+
+import { useLPContextProps } from './utils';
 
 import styles from './styles/SearchField.module.css';
-import { useLPContextProps } from './utils';
 
 const searchFieldStyles = cva(styles.search);
 
@@ -24,12 +24,12 @@ const SearchFieldContext = createContext<ContextValue<SearchFieldProps, HTMLDivE
  * https://react-spectrum.adobe.com/react-aria/SearchField.html
  */
 const SearchField = ({ ref, ...props }: SearchFieldProps) => {
-	[props, ref] = useLPContextProps(props, ref, SearchFieldContext);
+	const [mergedProps, mergedRef] = useLPContextProps(props, ref, SearchFieldContext);
 	return (
 		<AriaSearchField
-			{...props}
-			ref={ref}
-			className={composeRenderProps(props.className, (className, renderProps) =>
+			{...mergedProps}
+			ref={mergedRef}
+			className={composeRenderProps(mergedProps.className, (className, renderProps) =>
 				searchFieldStyles({ ...renderProps, className }),
 			)}
 		/>

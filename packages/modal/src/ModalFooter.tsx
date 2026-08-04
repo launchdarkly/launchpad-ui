@@ -1,8 +1,8 @@
 import type { HTMLAttributes, ReactNode } from 'react';
+import { forwardRef } from 'react';
+import { cx } from 'classix';
 
 import { ButtonGroup } from '@launchpad-ui/button';
-import { cx } from 'classix';
-import { forwardRef } from 'react';
 
 import styles from './styles/Modal.module.css';
 
@@ -18,10 +18,7 @@ type ModalFooterProps = HTMLAttributes<HTMLDivElement> & {
  * https://launchpad.launchdarkly.com/?path=/docs/components-overlays-modal--docs
  */
 const ModalFooter = forwardRef<HTMLDivElement, ModalFooterProps>(
-	(
-		{ secondaryButton, primaryButton, className, 'data-test-id': testId = 'modal-footer', ...rest },
-		ref,
-	) => (
+	({ secondaryButton, primaryButton, className, 'data-test-id': testId = 'modal-footer', ...rest }, ref) => (
 		<div {...rest} className={cx(className, styles.footer)} data-test-id={testId} ref={ref}>
 			<ButtonGroup className={styles.footerActions}>
 				{secondaryButton}

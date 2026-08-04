@@ -19,9 +19,7 @@ describe('Toast', () => {
 		render(
 			<>
 				<ToastRegion />
-				<Button onPress={() => toastQueue.add({ title: 'A toast!', status: 'info' })}>
-					Show toast
-				</Button>
+				<Button onPress={() => toastQueue.add({ title: 'A toast!', status: 'info' })}>Show toast</Button>
 			</>,
 		);
 
@@ -35,9 +33,7 @@ describe('Toast', () => {
 		render(
 			<>
 				<SnackbarRegion />
-				<Button onPress={() => snackbarQueue.add({ description: 'A snackbar!', status: 'info' })}>
-					Show toast
-				</Button>
+				<Button onPress={() => snackbarQueue.add({ description: 'A snackbar!', status: 'info' })}>Show toast</Button>
 			</>,
 		);
 

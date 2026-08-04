@@ -1,19 +1,16 @@
-import type { MenuProps } from '../src';
-
-import { Popover } from '@launchpad-ui/popover';
 import { describe, expect, it, vi } from 'vitest';
 
+import { Popover } from '@launchpad-ui/popover';
+
 import { render, screen, userEvent, waitFor } from '../../../test/utils';
+import type { MenuProps } from '../src';
 import { Menu, MenuDivider, MenuItem, MenuSearch } from '../src';
 
 type TestMenu = {
 	hideSearch?: boolean;
 };
 
-const createMenu = ({
-	hideSearch,
-	...props
-}: Omit<MenuProps<string>, 'children'> & TestMenu = {}) => (
+const createMenu = ({ hideSearch, ...props }: Omit<MenuProps<string>, 'children'> & TestMenu = {}) => (
 	<Menu<string> {...props}>
 		{hideSearch ? null : <MenuSearch />}
 		<MenuItem item="one">one</MenuItem>
@@ -129,7 +126,7 @@ describe('Menu', () => {
 		expect(items[0]).toHaveFocus();
 	});
 
-	it('can render items into child slot', async () => {
+	it('can render items into child slot', () => {
 		const text = 'Click me';
 		render(
 			<Menu>
