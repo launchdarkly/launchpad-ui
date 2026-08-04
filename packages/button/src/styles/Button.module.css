@@ -306,6 +306,7 @@
 
 .Button--default {
 	--Button-padding: 0px;
+
 	border: var(--Button-border-default);
 	background-color: var(--lp-component-button-color-bg-default);
 	border-color: var(--Button-color-border-default);
@@ -342,6 +343,7 @@
 
 .Button--primary {
 	--Button-padding: 1px;
+
 	background-color: var(--Button-color-background-primary);
 	color: var(--Button-color-text-primary);
 
@@ -396,6 +398,7 @@
 
 .Button.Button--minimal {
 	--Button-padding: 1px;
+
 	background-color: var(--lp-color-bg-interactive-tertiary-base);
 	color: var(--lp-color-text-ui-primary-base);
 }
@@ -447,6 +450,7 @@
 
 .Button--destructive {
 	--Button-padding: 1px;
+
 	background-color: var(--Button-color-background-destructive);
 	color: var(--Button-color-text-primary);
 
@@ -579,6 +583,7 @@
 
 .Button--primaryFlair {
 	--Button-padding: 1px;
+
 	background: var(
 		--lp-color-bg-interactive-primary-flair-base-dark,
 		linear-gradient(124deg, #a34fde 0%, #405bff 98.05%)
@@ -624,6 +629,7 @@
 
 .Button--defaultFlair {
 	--Button-padding: 1px;
+
 	background-color: var(--Button-color-background-default-flair);
 	color: var(--Button-color-text-default-flair);
 }
@@ -659,6 +665,7 @@
 
 .Button.Button--minimalFlair {
 	--Button-padding: 1px;
+
 	background-color: var(--Button-color-background-minimal-flair);
 	color: var(--Button-color-text-minimal-flair);
 }

@@ -94,6 +94,7 @@
 	}
 }
 
+/* stylelint-disable-next-line block-no-empty -- exported as a stable cva() variant class token; consumed via `styles.default` in Menu.tsx */
 .default {
 }
 

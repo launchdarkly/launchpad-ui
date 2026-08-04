@@ -64,6 +64,7 @@
 			height: 100%;
 			content: '';
 			transform: translateZ(-1px);
+
 			/* Width of cell + 2 * border-spacing + 2 * space from border-radius */
 			width: calc(var(--lp-size-32) + (2 * var(--lp-spacing-200)) + (2 * var(--lp-size-6)));
 		}

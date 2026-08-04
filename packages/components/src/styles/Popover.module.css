@@ -127,10 +127,12 @@
 	}
 
 	&[data-trigger='Select'] {
+		/* stylelint-disable-next-line csstools/value-no-unknown-custom-properties -- `--trigger-width` is set via inline React style props in ComboBox.tsx/DatePicker.tsx, not a design token */
 		min-width: var(--trigger-width);
 	}
 
 	&[data-trigger='ComboBox'] {
+		/* stylelint-disable-next-line csstools/value-no-unknown-custom-properties -- `--trigger-width` is set via inline React style props in ComboBox.tsx/DatePicker.tsx, not a design token */
 		min-width: var(--trigger-width);
 	}
 }
@@ -141,6 +143,7 @@
 
 .trigger {
 	&[data-trigger] {
+		/* stylelint-disable-next-line csstools/value-no-unknown-custom-properties -- `--trigger-width` is set via inline React style props in ComboBox.tsx/DatePicker.tsx, not a design token */
 		width: var(--trigger-width);
 	}
 }

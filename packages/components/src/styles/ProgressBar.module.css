@@ -8,16 +8,19 @@
 	}
 }
 
+/* stylelint-disable-next-line block-no-empty -- exported as a stable cva() base class token; consumed via `styles.progress` in ProgressBar.tsx */
 .progress {
 }
 
 .spinner {
 	--fill-color: var(--lp-color-gray-500);
+
 	display: inline-flex;
 }
 
 .bar {
 	--fill-color: var(--lp-color-brand-cyan-base);
+
 	display: grid;
 	grid-template-areas:
 		'label value'
