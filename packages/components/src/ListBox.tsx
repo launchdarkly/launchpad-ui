@@ -26,8 +26,9 @@ interface ListBoxItemProps<T> extends AriaListBoxItemProps<T> {
 	ref?: Ref<HTMLDivElement>;
 }
 
-// biome-ignore lint/suspicious/noExplicitAny: ignore
-// oxlint-disable-next-line typescript/no-explicit-any -- Context objects can't carry an open generic; matches existing biome-ignore precedent
+// react-aria-components types this identically: `ListBoxContext: React.Context<ContextValue<ListBoxProps<any>, HTMLDivElement>>`
+// (react-aria-components/dist/types/src/ListBox.d.ts) — a context can't carry the open generic `T`, so RAC itself erases it to `any` here.
+// oxlint-disable-next-line typescript/no-explicit-any -- mirrors react-aria-components' own ListBoxContext declaration (see comment above)
 const ListBoxContext = createContext<ContextValue<ListBoxProps<any>, HTMLDivElement>>(null);
 
 /**
@@ -36,13 +37,12 @@ const ListBoxContext = createContext<ContextValue<ListBoxProps<any>, HTMLDivElem
  * https://react-spectrum.adobe.com/react-aria/ListBox.html
  */
 const ListBox = <T extends object>({ ref, ...props }: ListBoxProps<T>) => {
-	// oxlint-disable-next-line no-param-reassign -- sanctioned useLPContextProps merge pattern (see AGENTS.md context+prop-merging convention)
-	[props, ref] = useLPContextProps(props, ref, ListBoxContext);
+	const [mergedProps, mergedRef] = useLPContextProps(props, ref, ListBoxContext);
 	return (
 		<AriaListBox
-			{...props}
-			ref={ref}
-			className={composeRenderProps(props.className, (className, renderProps) =>
+			{...mergedProps}
+			ref={mergedRef}
+			className={composeRenderProps(mergedProps.className, (className, renderProps) =>
 				listBoxStyles({ ...renderProps, className }),
 			)}
 		/>

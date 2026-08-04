@@ -28,15 +28,14 @@ const ToggleButtonContext = createContext<ContextValue<ToggleButtonProps, HTMLBu
  * https://react-spectrum.adobe.com/react-aria/ToggleButton.html
  */
 const ToggleButton = ({ ref, ...props }: ToggleButtonProps) => {
-	// oxlint-disable-next-line no-param-reassign -- sanctioned useLPContextProps merge pattern (see AGENTS.md context+prop-merging convention)
-	[props, ref] = useLPContextProps(props, ref, ToggleButtonContext);
-	const { appearance = 'default', size = 'medium', variant = 'default' } = props;
+	const [mergedProps, mergedRef] = useLPContextProps(props, ref, ToggleButtonContext);
+	const { appearance = 'default', size = 'medium', variant = 'default' } = mergedProps;
 
 	return (
 		<AriaToggleButton
-			{...props}
-			ref={ref}
-			className={composeRenderProps(props.className, (className, renderProps) =>
+			{...mergedProps}
+			ref={mergedRef}
+			className={composeRenderProps(mergedProps.className, (className, renderProps) =>
 				appearance === 'elevated'
 					? toggleButtonElevatedStyles({ ...renderProps, className })
 					: buttonStyles({ ...renderProps, size, variant, className }),

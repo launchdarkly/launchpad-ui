@@ -64,13 +64,12 @@ const RangeCalendarContext = createContext<ContextValue<RangeCalendarProps<DateV
  * https://react-spectrum.adobe.com/react-aria/Calendar.html
  */
 const Calendar = <T extends DateValue>({ ref, ...props }: CalendarProps<T>) => {
-	// oxlint-disable-next-line no-param-reassign -- sanctioned useLPContextProps merge pattern (see AGENTS.md context+prop-merging convention)
-	[props, ref] = useLPContextProps(props, ref, CalendarContext);
+	const [mergedProps, mergedRef] = useLPContextProps(props, ref, CalendarContext);
 	return (
 		<AriaCalendar
-			{...props}
-			ref={ref}
-			className={composeRenderProps(props.className, (className, renderProps) =>
+			{...mergedProps}
+			ref={mergedRef}
+			className={composeRenderProps(mergedProps.className, (className, renderProps) =>
 				calendarStyles({ ...renderProps, className }),
 			)}
 		/>
@@ -142,16 +141,15 @@ const CalendarGrid = ({ ref, className, weekdayStyle = 'short', ...props }: Cale
  * https://react-spectrum.adobe.com/react-aria/RangeCalendar.html
  */
 const RangeCalendar = <T extends DateValue>({ ref, ...props }: RangeCalendarProps<T>) => {
-	// oxlint-disable-next-line no-param-reassign -- sanctioned useLPContextProps merge pattern (see AGENTS.md context+prop-merging convention)
-	[props, ref] = useLPContextProps(props, ref, RangeCalendarContext);
-	const { pageBehavior = 'single' } = props;
+	const [mergedProps, mergedRef] = useLPContextProps(props, ref, RangeCalendarContext);
+	const { pageBehavior = 'single' } = mergedProps;
 
 	return (
 		<AriaRangeCalendar
 			pageBehavior={pageBehavior}
-			{...props}
-			ref={ref}
-			className={composeRenderProps(props.className, (className, renderProps) =>
+			{...mergedProps}
+			ref={mergedRef}
+			className={composeRenderProps(mergedProps.className, (className, renderProps) =>
 				cx(calendarStyles(), rangeCalendarStyles({ ...renderProps, className })),
 			)}
 		/>

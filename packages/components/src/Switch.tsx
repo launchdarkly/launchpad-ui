@@ -42,19 +42,18 @@ const SwitchContext = createContext<ContextValue<SwitchProps, HTMLLabelElement>>
  * https://react-spectrum.adobe.com/react-aria/Switch.html
  */
 const Switch = ({ ref, ...props }: SwitchProps) => {
-	// oxlint-disable-next-line no-param-reassign -- sanctioned useLPContextProps merge pattern (see AGENTS.md context+prop-merging convention)
-	[props, ref] = useLPContextProps(props, ref, SwitchContext);
-	const { switchLabels, variant } = props;
+	const [mergedProps, mergedRef] = useLPContextProps(props, ref, SwitchContext);
+	const { switchLabels, variant } = mergedProps;
 	const hideLabels = switchLabels === false ? true : undefined;
 	return (
 		<AriaSwitch
-			{...props}
-			ref={ref}
-			className={composeRenderProps(props.className, (className, renderProps) =>
+			{...mergedProps}
+			ref={mergedRef}
+			className={composeRenderProps(mergedProps.className, (className, renderProps) =>
 				switchStyles({ ...renderProps, variant, compact: hideLabels, className }),
 			)}
 		>
-			{composeRenderProps(props.children, (children, { isSelected }) => (
+			{composeRenderProps(mergedProps.children, (children, { isSelected }) => (
 				<>
 					<div className={styles.track}>
 						{!hideLabels && isSelected && <div className={styles.label}>On</div>}

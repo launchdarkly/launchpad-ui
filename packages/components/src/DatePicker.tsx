@@ -43,8 +43,7 @@ const DateRangePickerContext = createContext<ContextValue<DateRangePickerProps<D
  * https://react-spectrum.adobe.com/react-aria/DatePicker.html
  */
 const DatePicker = <T extends DateValue>({ ref, ...props }: DatePickerProps<T>) => {
-	// oxlint-disable-next-line no-param-reassign -- sanctioned useLPContextProps merge pattern (see AGENTS.md context+prop-merging convention)
-	[props, ref] = useLPContextProps(props, ref, DatePickerContext);
+	const [mergedProps, mergedRef] = useLPContextProps(props, ref, DatePickerContext);
 	const formContext = useSlottedContext(FormContext);
 	const buttonRef = useRef<HTMLButtonElement>(null);
 
@@ -63,13 +62,13 @@ const DatePicker = <T extends DateValue>({ ref, ...props }: DatePickerProps<T>) 
 
 	return (
 		<AriaDatePicker
-			{...props}
-			ref={ref}
-			className={composeRenderProps(props.className, (className, renderProps) =>
+			{...mergedProps}
+			ref={mergedRef}
+			className={composeRenderProps(mergedProps.className, (className, renderProps) =>
 				datePickerStyles({ ...renderProps, className }),
 			)}
 		>
-			{composeRenderProps(props.children, (children, { isDisabled, isInvalid }) =>
+			{composeRenderProps(mergedProps.children, (children, { isDisabled, isInvalid }) =>
 				formContext ? (
 					children
 				) : (
@@ -110,8 +109,7 @@ const DatePicker = <T extends DateValue>({ ref, ...props }: DatePickerProps<T>) 
  * https://react-spectrum.adobe.com/react-aria/DateRangePicker.html
  */
 const DateRangePicker = <T extends DateValue>({ ref, ...props }: DateRangePickerProps<T>) => {
-	// oxlint-disable-next-line no-param-reassign -- sanctioned useLPContextProps merge pattern (see AGENTS.md context+prop-merging convention)
-	[props, ref] = useLPContextProps(props, ref, DateRangePickerContext);
+	const [mergedProps, mergedRef] = useLPContextProps(props, ref, DateRangePickerContext);
 	const formContext = useSlottedContext(FormContext);
 	const buttonRef = useRef<HTMLButtonElement>(null);
 
@@ -130,13 +128,13 @@ const DateRangePicker = <T extends DateValue>({ ref, ...props }: DateRangePicker
 
 	return (
 		<AriaDateRangePicker
-			{...props}
-			ref={ref}
-			className={composeRenderProps(props.className, (className, renderProps) =>
+			{...mergedProps}
+			ref={mergedRef}
+			className={composeRenderProps(mergedProps.className, (className, renderProps) =>
 				datePickerStyles({ ...renderProps, className }),
 			)}
 		>
-			{composeRenderProps(props.children, (children, { isDisabled, isInvalid }) =>
+			{composeRenderProps(mergedProps.children, (children, { isDisabled, isInvalid }) =>
 				formContext ? (
 					children
 				) : (

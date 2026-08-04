@@ -50,13 +50,12 @@ const TimeFieldContext = createContext<ContextValue<TimeFieldProps<TimeValue>, H
  * https://react-spectrum.adobe.com/react-aria/DateField.html
  */
 const DateField = <T extends DateValue>({ ref, ...props }: DateFieldProps<T>) => {
-	// oxlint-disable-next-line no-param-reassign -- sanctioned useLPContextProps merge pattern (see AGENTS.md context+prop-merging convention)
-	[props, ref] = useLPContextProps(props, ref, DateFieldContext);
+	const [mergedProps, mergedRef] = useLPContextProps(props, ref, DateFieldContext);
 	return (
 		<AriaDateField
-			{...props}
-			ref={ref}
-			className={composeRenderProps(props.className, (className, renderProps) =>
+			{...mergedProps}
+			ref={mergedRef}
+			className={composeRenderProps(mergedProps.className, (className, renderProps) =>
 				dateFieldStyles({ ...renderProps, className }),
 			)}
 		/>
@@ -103,13 +102,12 @@ const DateSegment = ({ ref, ...props }: DateSegmentProps) => {
  * https://react-spectrum.adobe.com/react-aria/TimeField.html
  */
 const TimeField = <T extends TimeValue>({ ref, ...props }: TimeFieldProps<T>) => {
-	// oxlint-disable-next-line no-param-reassign -- sanctioned useLPContextProps merge pattern (see AGENTS.md context+prop-merging convention)
-	[props, ref] = useLPContextProps(props, ref, TimeFieldContext);
+	const [mergedProps, mergedRef] = useLPContextProps(props, ref, TimeFieldContext);
 	return (
 		<AriaTimeField
-			{...props}
-			ref={ref}
-			className={composeRenderProps(props.className, (className, renderProps) =>
+			{...mergedProps}
+			ref={mergedRef}
+			className={composeRenderProps(mergedProps.className, (className, renderProps) =>
 				dateFieldStyles({ ...renderProps, className }),
 			)}
 		/>

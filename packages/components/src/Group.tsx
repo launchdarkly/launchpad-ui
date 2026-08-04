@@ -26,15 +26,14 @@ const GroupContext = createContext<ContextValue<GroupProps, HTMLDivElement>>(nul
  * https://react-spectrum.adobe.com/react-aria/Group.html
  */
 const Group = ({ ref, ...props }: GroupProps) => {
-	// oxlint-disable-next-line no-param-reassign -- sanctioned useLPContextProps merge pattern (see AGENTS.md context+prop-merging convention)
-	[props, ref] = useLPContextProps(props, ref, GroupContext);
-	const { variant = 'default' } = props;
+	const [mergedProps, mergedRef] = useLPContextProps(props, ref, GroupContext);
+	const { variant = 'default' } = mergedProps;
 
 	return (
 		<AriaGroup
-			{...props}
-			ref={ref}
-			className={composeRenderProps(props.className, (className, renderProps) =>
+			{...mergedProps}
+			ref={mergedRef}
+			className={composeRenderProps(mergedProps.className, (className, renderProps) =>
 				cx(inputStyles({ variant }), groupStyles({ ...renderProps, className })),
 			)}
 		/>

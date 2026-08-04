@@ -23,10 +23,13 @@ import { optimize } from 'svgo';
 try {
 	const dotenvPath = path.resolve(process.cwd(), '.env');
 	if (fs.existsSync(dotenvPath)) {
-		// dotenv is optional and may not be installed; requiring it dynamically here (rather than a
-		// static ESM import) is what lets the surrounding try/catch degrade gracefully when it's absent.
-		// oxlint-disable-next-line typescript/no-require-imports, typescript/no-var-requires
-		require('dotenv').config();
+		// dotenv is optional and may not be installed; importing it dynamically via a non-literal
+		// specifier here (rather than a static ESM import) is what lets the surrounding try/catch
+		// degrade gracefully when it's absent, and avoids a `Cannot find module 'dotenv'` type error
+		// for a package that's intentionally not a declared dependency.
+		const dotenvSpecifier = 'dotenv';
+		const dotenv = await import(dotenvSpecifier);
+		dotenv.default?.config?.();
 	}
 } catch {
 	/* ignore */

@@ -39,8 +39,9 @@ interface MenuItemProps<T> extends AriaMenuItemProps<T>, VariantProps<typeof men
 	ref?: Ref<HTMLDivElement>;
 }
 
-// biome-ignore lint/suspicious/noExplicitAny: ignore
-// oxlint-disable-next-line typescript/no-explicit-any -- Context objects can't carry an open generic; matches existing biome-ignore precedent
+// react-aria-components types this identically: `MenuContext: React.Context<ContextValue<MenuProps<any>, HTMLDivElement>>`
+// (react-aria-components/dist/types/src/Menu.d.ts) — a context can't carry the open generic `T`, so RAC itself erases it to `any` here.
+// oxlint-disable-next-line typescript/no-explicit-any -- mirrors react-aria-components' own MenuContext declaration (see comment above)
 const MenuContext = createContext<ContextValue<MenuProps<any>, HTMLDivElement>>(null);
 
 /**
@@ -49,13 +50,12 @@ const MenuContext = createContext<ContextValue<MenuProps<any>, HTMLDivElement>>(
  * https://react-spectrum.adobe.com/react-aria/Menu.html
  */
 const Menu = <T extends object>({ ref, ...props }: MenuProps<T>) => {
-	// oxlint-disable-next-line no-param-reassign -- sanctioned useLPContextProps merge pattern (see AGENTS.md context+prop-merging convention)
-	[props, ref] = useLPContextProps(props, ref, MenuContext);
+	const [mergedProps, mergedRef] = useLPContextProps(props, ref, MenuContext);
 	return (
 		<AriaMenu
-			{...props}
-			ref={ref}
-			className={composeRenderProps(props.className, (className, renderProps) =>
+			{...mergedProps}
+			ref={mergedRef}
+			className={composeRenderProps(mergedProps.className, (className, renderProps) =>
 				menuStyles({ ...renderProps, className }),
 			)}
 		/>

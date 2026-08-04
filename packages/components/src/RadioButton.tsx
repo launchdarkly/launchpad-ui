@@ -21,15 +21,14 @@ const RadioButtonContext = createContext<ContextValue<RadioButtonProps, HTMLLabe
  * https://react-spectrum.adobe.com/react-aria/RadioGroup.html
  */
 const RadioButton = ({ ref, ...props }: RadioButtonProps) => {
-	// oxlint-disable-next-line no-param-reassign -- sanctioned useLPContextProps merge pattern (see AGENTS.md context+prop-merging convention)
-	[props, ref] = useLPContextProps(props, ref, RadioButtonContext);
-	const { size = 'medium', variant = 'default' } = props;
+	const [mergedProps, mergedRef] = useLPContextProps(props, ref, RadioButtonContext);
+	const { size = 'medium', variant = 'default' } = mergedProps;
 
 	return (
 		<AriaRadio
-			{...props}
-			ref={ref}
-			className={composeRenderProps(props.className, (className, renderProps) =>
+			{...mergedProps}
+			ref={mergedRef}
+			className={composeRenderProps(mergedProps.className, (className, renderProps) =>
 				buttonStyles({ ...renderProps, size, variant, className }),
 			)}
 		/>

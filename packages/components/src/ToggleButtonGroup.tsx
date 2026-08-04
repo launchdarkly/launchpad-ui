@@ -37,16 +37,15 @@ const ToggleButtonGroupContext = createContext<ContextValue<ToggleButtonGroupPro
  * https://react-spectrum.adobe.com/react-aria/ToggleButtonGroup.html
  */
 const ToggleButtonGroup = ({ ref, ...props }: ToggleButtonGroupProps) => {
-	// oxlint-disable-next-line no-param-reassign -- sanctioned useLPContextProps merge pattern (see AGENTS.md context+prop-merging convention)
-	[props, ref] = useLPContextProps(props, ref, ToggleButtonGroupContext);
-	const { appearance = 'default' } = props;
+	const [mergedProps, mergedRef] = useLPContextProps(props, ref, ToggleButtonGroupContext);
+	const { appearance = 'default' } = mergedProps;
 
 	return (
 		<AriaToggleButtonGroup
-			{...props}
-			ref={ref}
+			{...mergedProps}
+			ref={mergedRef}
 			data-appearance={appearance}
-			className={composeRenderProps(props.className, (className, renderProps) =>
+			className={composeRenderProps(mergedProps.className, (className, renderProps) =>
 				toggleButtonGroupStyles({ ...renderProps, appearance, className }),
 			)}
 		/>

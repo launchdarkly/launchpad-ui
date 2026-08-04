@@ -3,6 +3,7 @@ import { Children, cloneElement, isValidElement, useRef } from 'react';
 import { VisuallyHidden } from 'react-aria/VisuallyHidden';
 
 import { Label } from './Label';
+import type { RadioProps } from './Radio';
 import { Radio } from './Radio';
 
 type RadioGroupProps = {
@@ -57,9 +58,7 @@ const RadioGroup = (props: RadioGroupProps) => {
 			return elem;
 		}
 
-		// biome-ignore lint/suspicious/noExplicitAny: ignore
-		// oxlint-disable-next-line typescript/no-explicit-any -- matches existing biome-ignore precedent
-		const item = elem as ReactElement<any>;
+		const item = elem as ReactElement<RadioProps>;
 
 		if (item?.type && item.type === Radio) {
 			return cloneElement(item, {

@@ -27,19 +27,18 @@ const DialogContext = createContext<ContextValue<DialogProps, HTMLElement>>(null
  * https://react-spectrum.adobe.com/react-aria/Dialog.html
  */
 const Dialog = ({ ref, ...props }: DialogProps) => {
-	// oxlint-disable-next-line no-param-reassign -- sanctioned useLPContextProps merge pattern (see AGENTS.md context+prop-merging convention)
-	[props, ref] = useLPContextProps(props, ref, DialogContext);
-	const { className } = props;
+	const [mergedProps, mergedRef] = useLPContextProps(props, ref, DialogContext);
+	const { className } = mergedProps;
 	const descriptionId = useSlotId();
 
 	return (
 		<AriaDialog
-			{...props}
-			ref={ref}
+			{...mergedProps}
+			ref={mergedRef}
 			className={dialogStyles({ className })}
-			aria-describedby={props['aria-describedby'] || descriptionId}
+			aria-describedby={mergedProps['aria-describedby'] || descriptionId}
 		>
-			{composeRenderProps(props.children, (children) => (
+			{composeRenderProps(mergedProps.children, (children) => (
 				<Provider
 					values={[
 						[

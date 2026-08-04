@@ -24,13 +24,12 @@ const DropZoneContext = createContext<ContextValue<DropZoneProps, HTMLDivElement
  * https://react-spectrum.adobe.com/react-aria/DropZone.html
  */
 const DropZone = ({ ref, ...props }: DropZoneProps) => {
-	// oxlint-disable-next-line no-param-reassign -- sanctioned useLPContextProps merge pattern (see AGENTS.md context+prop-merging convention)
-	[props, ref] = useLPContextProps(props, ref, DropZoneContext);
+	const [mergedProps, mergedRef] = useLPContextProps(props, ref, DropZoneContext);
 	return (
 		<AriaDropZone
-			{...props}
-			ref={ref}
-			className={composeRenderProps(props.className, (className, renderProps) =>
+			{...mergedProps}
+			ref={mergedRef}
+			className={composeRenderProps(mergedProps.className, (className, renderProps) =>
 				dropZoneStyles({ ...renderProps, className }),
 			)}
 		/>

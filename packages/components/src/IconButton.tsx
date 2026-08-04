@@ -54,17 +54,16 @@ const IconButtonContext = createContext<ContextValue<IconButtonContextValue, HTM
  * https://react-spectrum.adobe.com/react-aria/Button.html
  */
 const IconButton = ({ ref, ...props }: IconButtonProps) => {
-	// oxlint-disable-next-line no-param-reassign -- sanctioned useLPContextProps merge pattern (see AGENTS.md context+prop-merging convention)
-	[props, ref] = useLPContextProps(props, ref, IconButtonContext);
+	const [mergedProps, mergedRef] = useLPContextProps(props, ref, IconButtonContext);
 	const perceivableProps = useContext(PerceivableContext);
-	const { size = 'medium', variant = 'default', icon } = props;
+	const { size = 'medium', variant = 'default', icon } = mergedProps;
 
 	return (
 		<AriaButton
-			{...props}
+			{...mergedProps}
 			{...perceivableProps}
-			ref={ref}
-			className={composeRenderProps(props.className, (className, renderProps) =>
+			ref={mergedRef}
+			className={composeRenderProps(mergedProps.className, (className, renderProps) =>
 				cx(buttonStyles({ ...renderProps, size, variant, className }), iconButtonStyles({ size })),
 			)}
 		>

@@ -40,21 +40,20 @@ interface ButtonGroupProps extends GroupProps, VariantProps<typeof buttonGroupSt
 const ButtonGroupContext = createContext<ContextValue<ButtonGroupProps, HTMLDivElement>>(null);
 
 const ButtonGroup = ({ ref, ...props }: ButtonGroupProps) => {
-	// oxlint-disable-next-line no-param-reassign -- sanctioned useLPContextProps merge pattern (see AGENTS.md context+prop-merging convention)
-	[props, ref] = useLPContextProps(props, ref, ButtonGroupContext);
-	const { spacing = 'basic', orientation = 'horizontal' } = props;
+	const [mergedProps, mergedRef] = useLPContextProps(props, ref, ButtonGroupContext);
+	const { spacing = 'basic', orientation = 'horizontal' } = mergedProps;
 
 	return (
 		<Group
-			{...props}
-			ref={ref}
-			className={composeRenderProps(props.className, (className, renderProps) =>
+			{...mergedProps}
+			ref={mergedRef}
+			className={composeRenderProps(mergedProps.className, (className, renderProps) =>
 				buttonGroupStyles({ ...renderProps, spacing, orientation, className }),
 			)}
 			data-orientation={orientation ?? undefined}
 			data-spacing={spacing}
 		>
-			{composeRenderProps(props.children, (children, { isDisabled }) => (
+			{composeRenderProps(mergedProps.children, (children, { isDisabled }) => (
 				<Provider
 					values={[
 						[ButtonContext, { isDisabled }],

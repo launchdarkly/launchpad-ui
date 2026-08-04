@@ -50,9 +50,8 @@ const ProgressBarContext = createContext<ContextValue<ProgressBarProps, HTMLDivE
  * https://react-spectrum.adobe.com/react-aria/ProgressBar.html
  */
 const ProgressBar = ({ ref, ...props }: ProgressBarProps) => {
-	// oxlint-disable-next-line no-param-reassign -- sanctioned useLPContextProps merge pattern (see AGENTS.md context+prop-merging convention)
-	[props, ref] = useLPContextProps(props, ref, ProgressBarContext);
-	const { size = 'small', variant = 'spinner' } = props;
+	const [mergedProps, mergedRef] = useLPContextProps(props, ref, ProgressBarContext);
+	const { size = 'small', variant = 'spinner' } = mergedProps;
 
 	const center = 16;
 	const strokeWidth = 4;
@@ -61,13 +60,13 @@ const ProgressBar = ({ ref, ...props }: ProgressBarProps) => {
 
 	return (
 		<AriaProgressBar
-			{...props}
-			ref={ref}
-			className={composeRenderProps(props.className, (className, renderProps) =>
+			{...mergedProps}
+			ref={mergedRef}
+			className={composeRenderProps(mergedProps.className, (className, renderProps) =>
 				progressBarStyles({ ...renderProps, variant, className }),
 			)}
 		>
-			{composeRenderProps(props.children, (children, { isIndeterminate, percentage, valueText }) => (
+			{composeRenderProps(mergedProps.children, (children, { isIndeterminate, percentage, valueText }) => (
 				<>
 					{variant === 'spinner' && (
 						// biome-ignore lint/a11y/noSvgWithoutTitle: ignore

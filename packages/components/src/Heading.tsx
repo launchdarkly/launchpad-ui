@@ -62,13 +62,12 @@ const getDefaultLevel = (size: 'small' | 'medium' | 'large'): AriaHeadingProps['
  * Built on top of [React Aria `Heading` component](https://react-spectrum.adobe.com/react-spectrum/Heading.html#heading).
  */
 const Heading = ({ ref, size = 'medium', bold = true, maxLines, className, style, level, ...props }: HeadingProps) => {
-	// oxlint-disable-next-line no-param-reassign -- sanctioned useLPContextProps merge pattern (see AGENTS.md context+prop-merging convention)
-	[props, ref] = useLPContextProps(props, ref, HeadingContext);
+	const [mergedProps, mergedRef] = useLPContextProps(props, ref, HeadingContext);
 
 	return (
 		<AriaHeading
-			{...props}
-			ref={ref}
+			{...mergedProps}
+			ref={mergedRef}
 			level={level || getDefaultLevel(size)}
 			className={cx(headingStyles({ size, bold }), maxLines && styles.truncate, className)}
 			style={{
@@ -78,7 +77,7 @@ const Heading = ({ ref, size = 'medium', bold = true, maxLines, className, style
 				}),
 			}}
 		>
-			{props.children}
+			{mergedProps.children}
 		</AriaHeading>
 	);
 };

@@ -34,21 +34,21 @@ interface TreeItemProps<T> extends AriaTreeItemProps<T> {
 	ref?: Ref<HTMLDivElement>;
 }
 
-// biome-ignore lint/suspicious/noExplicitAny: ignore
-// oxlint-disable-next-line typescript/no-explicit-any -- Context objects can't carry an open generic; matches existing biome-ignore precedent
+// react-aria-components types this identically: `TreeContext: React.Context<ContextValue<TreeProps<any>, HTMLDivElement>>`
+// (react-aria-components/dist/types/src/Tree.d.ts) — a context can't carry the open generic `T`, so RAC itself erases it to `any` here.
+// oxlint-disable-next-line typescript/no-explicit-any -- mirrors react-aria-components' own TreeContext declaration (see comment above)
 const TreeContext = createContext<ContextValue<TreeProps<any>, HTMLDivElement>>(null);
 
 /**
  * A tree displays a hierarchical list of items that can be expanded and collapsed.
  */
 const Tree = <T extends object>({ ref, ...props }: TreeProps<T>) => {
-	// oxlint-disable-next-line no-param-reassign -- sanctioned useLPContextProps merge pattern (see AGENTS.md context+prop-merging convention)
-	[props, ref] = useLPContextProps(props, ref, TreeContext);
+	const [mergedProps, mergedRef] = useLPContextProps(props, ref, TreeContext);
 	return (
 		<AriaTree
-			{...props}
-			ref={ref}
-			className={composeRenderProps(props.className, (className, renderProps) =>
+			{...mergedProps}
+			ref={mergedRef}
+			className={composeRenderProps(mergedProps.className, (className, renderProps) =>
 				treeStyles({ ...renderProps, className }),
 			)}
 		/>

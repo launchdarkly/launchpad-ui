@@ -17,11 +17,10 @@ interface HeaderProps extends HTMLAttributes<HTMLElement> {
 const HeaderContext = createContext<ContextValue<HeaderProps, HTMLElement>>(null);
 
 const Header = ({ ref, ...props }: HeaderProps) => {
-	// oxlint-disable-next-line no-param-reassign -- sanctioned useLPContextProps merge pattern (see AGENTS.md context+prop-merging convention)
-	[props, ref] = useLPContextProps(props, ref, HeaderContext);
-	const { className } = props;
+	const [mergedProps, mergedRef] = useLPContextProps(props, ref, HeaderContext);
+	const { className } = mergedProps;
 
-	return <AriaHeader {...props} ref={ref} className={headerStyles({ className })} />;
+	return <AriaHeader {...mergedProps} ref={mergedRef} className={headerStyles({ className })} />;
 };
 
 export { Header, HeaderContext, headerStyles };
