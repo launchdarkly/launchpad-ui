@@ -152,6 +152,49 @@ export const WithHeader: Story = {
 };
 
 /**
+ * A Modal whose content is taller than the viewport. The overlay caps the modal's
+ * height, so the `body` slot scrolls while the `header` and `footer` stay visible.
+ */
+export const LongContent: Story = {
+	render: (args) => (
+		<DialogTrigger>
+			<Button>Trigger</Button>
+			<ModalOverlay>
+				<Modal {...args}>
+					<Dialog>
+						{({ close }) => (
+							<>
+								<div slot="header">
+									<Heading slot="title">Title</Heading>
+									<IconButton aria-label="close" icon="cancel" size="small" variant="minimal" onPress={close} />
+								</div>
+								<div slot="body">
+									{Array.from({ length: 40 }, (_, index) => (
+										<p key={index}>Body text {index + 1}</p>
+									))}
+								</div>
+								<div slot="footer">
+									<Button slot="close">Cancel</Button>
+									<Button variant="primary">Confirm</Button>
+								</div>
+							</>
+						)}
+					</Dialog>
+				</Modal>
+			</ModalOverlay>
+		</DialogTrigger>
+	),
+	play,
+	parameters: {
+		chromatic: {
+			modes: {
+				mobile: allModes.mobile,
+			},
+		},
+	},
+};
+
+/**
  * Bug reproduction: Dialog closes when clicking a button inside it while Toast is active.
  *
  * Steps to reproduce:
