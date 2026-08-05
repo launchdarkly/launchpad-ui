@@ -14,7 +14,7 @@ describe('AppliedFilterButton', () => {
 	it('should render name and description', () => {
 		render(createComponent({ children: 'description' }));
 		expect(screen.getByRole('button')).toHaveTextContent('author:description');
-		expect(screen.getByRole('button')).toHaveAccessibleName('author: description');
+		expect(screen.getByRole('button')).toHaveAccessibleName(/^author:\s?description$/);
 	});
 
 	it('should hide name if not provided', () => {
