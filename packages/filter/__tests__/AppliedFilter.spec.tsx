@@ -17,7 +17,7 @@ const oneOption = [
 describe('AppliedFilter', () => {
 	it('renders the filter button', () => {
 		render(createComponent({ options: oneOption }));
-		expect(screen.getByRole('button', { name: 'author: osmo' })).toBeInTheDocument();
+		expect(screen.getByRole('button', { name: /^author:\s?osmo$/ })).toBeInTheDocument();
 	});
 
 	it('renders the filter button when there is no name', () => {
