@@ -53,7 +53,7 @@
 		"axios": "1.17.0",
 		"json-to-ts": "2.1.0",
 		"style-dictionary": "5.4.1",
-		"tsx": "4.22.3"
+		"tsx": "4.23.8"
 	},
 	"status": "beta"
 }
