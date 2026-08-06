@@ -4,16 +4,16 @@
 		"bg": {
 			"feedback": {
 				"error": {
-					"$value": "{color.red.900}"
+					"$value": "{color.red.950}"
 				},
 				"info": {
-					"$value": "{color.blue.900}"
+					"$value": "{color.blue.950}"
 				},
 				"success": {
-					"$value": "{color.green.900}"
+					"$value": "{color.green.950}"
 				},
 				"warning": {
-					"$value": "{color.yellow.900}"
+					"$value": "{color.yellow.950}"
 				}
 			},
 			"interactive": {
@@ -104,16 +104,16 @@
 		"border": {
 			"feedback": {
 				"error": {
-					"$value": "{color.red.400}"
+					"$value": "{color.red.800}"
 				},
 				"info": {
-					"$value": "{color.blue.400}"
+					"$value": "{color.blue.800}"
 				},
 				"success": {
-					"$value": "{color.green.400}"
+					"$value": "{color.green.800}"
 				},
 				"warning": {
-					"$value": "{color.yellow.400}"
+					"$value": "{color.yellow.800}"
 				}
 			},
 			"field": {
@@ -122,6 +122,9 @@
 				},
 				"focus": {
 					"$value": "{color.blue.400}"
+				},
+				"error": {
+					"$value": "{color.red.400}"
 				}
 			},
 			"interactive": {
@@ -130,6 +133,9 @@
 				},
 				"selected": {
 					"$value": "{color.blue.400}"
+				},
+				"destructive": {
+					"$value": "{color.red.400}"
 				}
 			},
 			"ui": {
@@ -188,7 +194,7 @@
 					"$value": "{color.blue.400}"
 				},
 				"warning": {
-					"$value": "{color.yellow.400}"
+					"$value": "{color.yellow.600}"
 				}
 			},
 			"interactive": {
