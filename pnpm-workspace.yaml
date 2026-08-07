@@ -29,3 +29,5 @@ strictPeerDependencies: true
 minimumReleaseAgeExclude:
   # Renovate security update: axios@1.15.2
   - axios@1.15.2
+  # Renovate security update: nx@22.7.7
+  - nx@22.7.7
