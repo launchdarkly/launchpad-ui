@@ -1,5 +1,11 @@
 # @launchpad-ui/menu
 
+## 0.16.19
+
+### Patch Changes
+
+- [#1981](https://github.com/launchdarkly/launchpad-ui/pull/1981) [`33107af`](https://github.com/launchdarkly/launchpad-ui/commit/33107afc0f590a607a4fec3199b2b798831b532d) Thanks [@apucacao](https://github.com/apucacao)! - Bump `@radix-ui/react-slot` from 1.2.0 to 1.2.3 to match the version pinned elsewhere in the workspace.
+
 ## 0.16.18
 
 ### Patch Changes

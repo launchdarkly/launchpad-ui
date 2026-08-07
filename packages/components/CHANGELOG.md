@@ -1,5 +1,11 @@
 # @launchpad-ui/components
 
+## 0.23.1
+
+### Patch Changes
+
+- [#1979](https://github.com/launchdarkly/launchpad-ui/pull/1979) [`41b89d6`](https://github.com/launchdarkly/launchpad-ui/commit/41b89d6a0f23d8d865965e7157a0f455528c7ad2) Thanks [@devin-ai-integration](https://github.com/apps/devin-ai-integration)! - Cap the default `Modal` variant's height to the viewport and lay the modal out as a flex column, so a dialog with a `body` slot scrolls its body instead of overflowing off the top and bottom of the screen
+
 ## 0.23.0
 
 ### Minor Changes
