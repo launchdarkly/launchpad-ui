@@ -50,9 +50,9 @@
 	"devDependencies": {
 		"@figma/rest-api-spec": "0.32.0",
 		"@testing-library/react": "16.3.2",
-		"axios": "1.17.0",
+		"axios": "1.18.0",
 		"json-to-ts": "2.1.0",
-		"style-dictionary": "5.4.1",
+		"style-dictionary": "5.4.4",
 		"tsx": "4.23.8"
 	},
 	"status": "beta"
