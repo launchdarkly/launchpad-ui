@@ -75,6 +75,9 @@
 	}
 }
 
+/* The primary track is the brand CTA color — black in light mode, white in dark.
+   Both the handle and the label sit on it, so each has to invert with the theme
+   rather than inherit the white treatment the default (green) variant uses. */
 .switch.primary[data-selected] {
 	& .track {
 		background-color: var(--lp-color-bg-interactive-primary-base);
@@ -82,10 +85,19 @@
 	}
 
 	& .handle {
+		background-color: var(--lp-color-text-ui-primary-inverted);
+		/* Neutral, matching the unselected handle. The selected rule above tints
+		   this green for the default variant, which would clash with a black or
+		   white track. */
 		box-shadow:
-			0 0 1px 0 rgb(64 91 255 / 0.75),
-			0 0 2px 0 rgb(64 91 255 / 0.06),
-			0 0 1px 0 rgb(64 91 255 / 0.35);
+			0 0 1px 0 rgb(33 33 33 / 0.75),
+			0 0 2px 0 rgb(33 33 33 / 0.06),
+			0 0 1px 0 rgb(33 33 33 / 0.35);
+	}
+
+	& .label {
+		color: var(--lp-color-text-ui-primary-inverted);
+		text-shadow: none;
 	}
 }
 

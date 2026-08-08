@@ -13,7 +13,9 @@
 		outline-offset 0ms;
 
 	& .icon {
-		fill: var(--lp-color-fill-interactive-primary);
+		/* Sits on bg-interactive-primary when selected, so it must invert with
+		   the theme — white on the black fill, dark on the white fill. */
+		fill: var(--lp-color-text-ui-primary-inverted);
 		width: var(--lp-size-16);
 		height: var(--lp-size-16);
 	}
