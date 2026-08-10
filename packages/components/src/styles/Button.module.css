@@ -72,6 +72,10 @@
 	background-color: var(--lp-color-bg-interactive-secondary-focus);
 }
 
+/* variant="primary" is the brand CTA: black in light mode, white in dark mode.
+   The label uses text-ui-primary-inverted rather than text-interactive-primary
+   because the latter is white in BOTH themes — .destructive below depends on
+   that for its white-on-red label, so it must not be made to flip. */
 .primary {
 	composes: button;
 	--lp-button-padding: 1px;
@@ -82,28 +86,27 @@
 	);
 
 	background-color: var(--lp-color-bg-interactive-primary-base);
-	color: var(--lp-color-text-interactive-primary-base);
+	color: var(--lp-color-text-ui-primary-inverted);
 	z-index: 1;
 
 	& [data-icon] {
-		fill: var(--lp-color-text-interactive-primary-base);
+		fill: var(--lp-color-text-ui-primary-inverted);
 	}
 }
 
+/* The state rules only shift the fill; the label color is identical across
+   states, so it stays declared once above. */
 .primary[data-hovered] {
 	background-color: var(--lp-color-bg-interactive-primary-hover);
-	color: var(--lp-color-text-interactive-primary-hover);
 }
 
 .primary[data-pressed] {
 	background-color: var(--lp-color-bg-interactive-primary-active);
-	color: var(--lp-color-text-interactive-primary-active);
 }
 
 .primary[data-focus-visible] {
 	background-color: var(--lp-color-bg-interactive-primary-focus);
 	box-shadow: inset 0 0 0 3px var(--lp-color-shadow-interactive-primary);
-	color: var(--lp-color-text-interactive-primary-focus);
 }
 
 .destructive {
@@ -160,6 +163,15 @@
 	background-color: var(--lp-color-bg-interactive-selected);
 	border-color: var(--lp-color-border-interactive-selected);
 	z-index: 1;
+}
+
+/* The rule above swaps the fill but not the label, so a selected primary toggle
+   would keep the CTA's inverted label on a pale/dark blue fill — unreadable in
+   both themes. The :where(button, label) guard mirrors the rule above so this
+   does not reach Calendar's selected date cell, which RAC renders as a div and
+   which should keep its inverted label on the CTA fill. */
+.primary[data-selected]:where(button, label) {
+	color: var(--lp-color-text-interactive-selected);
 }
 
 .button[data-pending] {

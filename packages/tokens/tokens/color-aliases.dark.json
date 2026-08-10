@@ -19,16 +19,16 @@
 			"interactive": {
 				"primary": {
 					"base": {
-						"$value": "{color.blue.600}"
+						"$value": "{color.white.950}"
 					},
 					"active": {
-						"$value": "{color.blue.600}"
+						"$value": "{color.white.950}"
 					},
 					"focus": {
-						"$value": "{color.blue.500}"
+						"$value": "{color.white.900}"
 					},
 					"hover": {
-						"$value": "{color.blue.500}"
+						"$value": "{color.white.900}"
 					}
 				},
 				"secondary": {
