@@ -1,5 +1,14 @@
 # @launchpad-ui/icons
 
+## 0.26.4
+
+### Patch Changes
+
+- [#1986](https://github.com/launchdarkly/launchpad-ui/pull/1986) [`93dc042`](https://github.com/launchdarkly/launchpad-ui/commit/93dc0422893242eb0e52b1da82501b88ce447ece) Thanks [@pkaeding](https://github.com/pkaeding)! - fix(deps): remediate HIGH/CRITICAL Dependabot alerts (axios, style-dictionary, svgo, and transitive form-data, undici, shell-quote, immutable, fast-uri, minimatch, brace-expansion, js-yaml)
+
+- Updated dependencies [[`93dc042`](https://github.com/launchdarkly/launchpad-ui/commit/93dc0422893242eb0e52b1da82501b88ce447ece)]:
+  - @launchpad-ui/tokens@0.17.2
+
 ## 0.26.3
 
 ### Patch Changes
