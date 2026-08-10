@@ -1,5 +1,11 @@
 # @launchpad-ui/components
 
+## 0.23.2
+
+### Patch Changes
+
+- [#1985](https://github.com/launchdarkly/launchpad-ui/pull/1985) [`3d5a567`](https://github.com/launchdarkly/launchpad-ui/commit/3d5a5675e14430f09a53adad484d9c666ed88f77) Thanks [@apucacao](https://github.com/apucacao)! - Revert the default Modal height cap introduced in 0.23.1. Making the modal container a flex column changed layout behavior for consumers that pass custom children or style the dialog (content could shrink to fit-content width, and consumer `min-height` rules were overridden). The cap will return in a follow-up scoped so it cannot affect consumer-provided content.
+
 ## 0.23.1
 
 ### Patch Changes
