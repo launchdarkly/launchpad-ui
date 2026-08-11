@@ -1,5 +1,11 @@
 # @launchpad-ui/components
 
+## 0.24.0
+
+### Minor Changes
+
+- [#1990](https://github.com/launchdarkly/launchpad-ui/pull/1990) [`b240b87`](https://github.com/launchdarkly/launchpad-ui/commit/b240b87ad2242007b4b3cefa60fce52aa828cb54) Thanks [@apucacao](https://github.com/apucacao)! - Expose stable public `data-lp-variant` attributes on `Button`, `IconButton`, `ToggleButton`, `ToggleIconButton`, `LinkButton`, `LinkIconButton`, `RadioButton`, and `RadioIconButton`, and `data-lp-indicator` attributes (`"checkbox"` / `"radio"`) on the `Checkbox` and `Radio` indicator elements. These attributes let consumers and tests target components by a documented contract instead of compiled CSS Module class names, following the same pattern already used by the `data-icon` attribute.
+
 ## 0.23.2
 
 ### Patch Changes
