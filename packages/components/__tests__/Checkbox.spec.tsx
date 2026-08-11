@@ -18,4 +18,9 @@ describe('Checkbox', () => {
 		render(<Checkbox isSelected>Label</Checkbox>);
 		expect(screen.getByRole('checkbox')).toBeVisible();
 	});
+
+	it('exposes a stable indicator hook for styling and tests', () => {
+		const { container } = render(<Checkbox>Label</Checkbox>);
+		expect(container.querySelector('[data-lp-indicator="checkbox"]')).toBeInTheDocument();
+	});
 });

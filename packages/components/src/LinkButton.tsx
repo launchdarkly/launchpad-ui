@@ -25,6 +25,7 @@ const LinkButton = ({ ref, ...props }: LinkButtonProps) => {
 		<Link
 			{...mergedProps}
 			ref={mergedRef}
+			data-lp-variant={variant}
 			className={composeRenderProps(mergedProps.className, (className, renderProps) =>
 				buttonStyles({ ...renderProps, size, variant, className }),
 			)}

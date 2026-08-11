@@ -16,6 +16,16 @@ describe('Radio', () => {
 		expect(screen.getByRole('radiogroup')).toBeVisible();
 	});
 
+	it('exposes a stable indicator hook for styling and tests', () => {
+		const { container } = render(
+			<RadioGroup>
+				<Label>Label</Label>
+				<Radio value="1">First</Radio>
+			</RadioGroup>,
+		);
+		expect(container.querySelector('[data-lp-indicator="radio"]')).toBeInTheDocument();
+	});
+
 	it('renders selected', () => {
 		render(
 			<RadioGroup defaultValue="2">
