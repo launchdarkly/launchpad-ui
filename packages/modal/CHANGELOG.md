@@ -1,5 +1,11 @@
 # @launchpad-ui/modal
 
+## 0.21.19
+
+### Patch Changes
+
+- [#1992](https://github.com/launchdarkly/launchpad-ui/pull/1992) [`2cbd47a`](https://github.com/launchdarkly/launchpad-ui/commit/2cbd47ad8570d8e08aa1ade36d763a21f0f6faed) Thanks [@apucacao](https://github.com/apucacao)! - Fix the modal header warning icon losing its color depending on stylesheet order: the `headerIcon` fill now outranks the icon's default fill by specificity instead of tying with it.
+
 ## 0.21.18
 
 ### Patch Changes
