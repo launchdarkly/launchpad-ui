@@ -72,7 +72,10 @@
 	overflow-wrap: anywhere;
 }
 
-.headerIcon {
+/* Scoped under .header so the fill outranks the icon's own single-class
+   default instead of tying with it, where the winner would depend on
+   stylesheet order in the consuming bundle. */
+.header .headerIcon {
 	transform: translateY(2px);
 	fill: var(--lp-color-brand-lime-dark);
 }
