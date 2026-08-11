@@ -14,7 +14,7 @@ const checkboxStyles = cva(styles.checkbox);
 const checkboxIconStyles = cva(styles.box);
 
 const CheckboxIcon = ({ isSelected, isIndeterminate }: Partial<CheckboxRenderProps>) => (
-	<div className={checkboxIconStyles()}>
+	<div className={checkboxIconStyles()} data-indicator="checkbox">
 		{isIndeterminate ? (
 			<svg aria-hidden="true" className={styles.icon} viewBox="0 0 16 16">
 				<path fillRule="evenodd" clipPath="evenodd" d="M3.5 8a1 1 0 0 1 1-1h7a1 1 0 1 1 0 2h-7a1 1 0 0 1-1-1Z" />

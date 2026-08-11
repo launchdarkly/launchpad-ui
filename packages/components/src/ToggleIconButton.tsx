@@ -32,6 +32,7 @@ const ToggleIconButton = ({ ref, ...props }: ToggleIconButtonProps) => {
 		<ToggleButton
 			{...mergedProps}
 			ref={mergedRef}
+			data-variant={variant}
 			className={composeRenderProps(mergedProps.className, (className, renderProps) =>
 				cx(buttonStyles({ ...renderProps, size, variant, className }), iconButtonStyles({ size })),
 			)}
