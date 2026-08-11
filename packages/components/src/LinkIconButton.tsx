@@ -29,7 +29,7 @@ const LinkIconButton = ({ ref, ...props }: LinkIconButtonProps) => {
 		<Link
 			{...mergedProps}
 			ref={mergedRef}
-			data-variant={variant}
+			data-lp-variant={variant}
 			className={composeRenderProps(mergedProps.className, (className, renderProps) =>
 				cx(buttonStyles({ ...renderProps, size, variant, className }), iconButtonStyles({ size })),
 			)}

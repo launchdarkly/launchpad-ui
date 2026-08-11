@@ -32,7 +32,7 @@ const RadioIconButton = ({ ref, ...props }: RadioIconButtonProps) => {
 		<AriaRadio
 			{...mergedProps}
 			ref={mergedRef}
-			data-variant={variant}
+			data-lp-variant={variant}
 			className={composeRenderProps(mergedProps.className, (className, renderProps) =>
 				cx(buttonStyles({ ...renderProps, size, variant, className }), iconButtonStyles({ size })),
 			)}

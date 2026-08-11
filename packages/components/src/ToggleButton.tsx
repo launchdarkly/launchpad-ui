@@ -35,7 +35,7 @@ const ToggleButton = ({ ref, ...props }: ToggleButtonProps) => {
 		<AriaToggleButton
 			{...mergedProps}
 			ref={mergedRef}
-			data-variant={variant}
+			data-lp-variant={variant}
 			className={composeRenderProps(mergedProps.className, (className, renderProps) =>
 				appearance === 'elevated'
 					? toggleButtonElevatedStyles({ ...renderProps, className })

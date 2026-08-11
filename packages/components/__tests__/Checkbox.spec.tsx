@@ -21,6 +21,6 @@ describe('Checkbox', () => {
 
 	it('exposes a stable indicator hook for styling and tests', () => {
 		const { container } = render(<Checkbox>Label</Checkbox>);
-		expect(container.querySelector('[data-indicator="checkbox"]')).toBeInTheDocument();
+		expect(container.querySelector('[data-lp-indicator="checkbox"]')).toBeInTheDocument();
 	});
 });

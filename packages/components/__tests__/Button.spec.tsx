@@ -16,11 +16,11 @@ describe('Button', () => {
 
 	it('exposes the resolved variant as a data attribute', () => {
 		render(<Button>Button</Button>);
-		expect(screen.getByRole('button')).toHaveAttribute('data-variant', 'default');
+		expect(screen.getByRole('button')).toHaveAttribute('data-lp-variant', 'default');
 	});
 
 	it('exposes an explicit variant as a data attribute', () => {
 		render(<Button variant="primary">Button</Button>);
-		expect(screen.getByRole('button')).toHaveAttribute('data-variant', 'primary');
+		expect(screen.getByRole('button')).toHaveAttribute('data-lp-variant', 'primary');
 	});
 });

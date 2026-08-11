@@ -23,7 +23,7 @@ describe('Radio', () => {
 				<Radio value="1">First</Radio>
 			</RadioGroup>,
 		);
-		expect(container.querySelector('[data-indicator="radio"]')).toBeInTheDocument();
+		expect(container.querySelector('[data-lp-indicator="radio"]')).toBeInTheDocument();
 	});
 
 	it('renders selected', () => {

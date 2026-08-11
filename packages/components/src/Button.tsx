@@ -62,7 +62,7 @@ const Button = ({ ref, ...props }: ButtonProps) => {
 			{...mergedProps}
 			{...perceivableProps}
 			ref={mergedRef}
-			data-variant={variant}
+			data-lp-variant={variant}
 			className={composeRenderProps(mergedProps.className, (className, renderProps) =>
 				buttonStyles({ ...renderProps, size, variant, className }),
 			)}
