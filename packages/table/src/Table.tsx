@@ -34,7 +34,7 @@ const Table = ({
 	);
 
 	return (
-		<table {...rest} data-test-id={testId} className={classes}>
+		<table {...rest} data-lp-table="" data-test-id={testId} className={classes}>
 			{children}
 		</table>
 	);
