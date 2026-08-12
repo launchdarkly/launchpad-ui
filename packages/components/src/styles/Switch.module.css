@@ -6,6 +6,10 @@
 	isolation: isolate;
 }
 
+.switch.labelStart {
+	flex-direction: row-reverse;
+}
+
 .track {
 	position: relative;
 	display: flex;
