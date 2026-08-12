@@ -1,5 +1,11 @@
 # @launchpad-ui/table
 
+## 0.9.8
+
+### Patch Changes
+
+- [#1999](https://github.com/launchdarkly/launchpad-ui/pull/1999) [`0cd2544`](https://github.com/launchdarkly/launchpad-ui/commit/0cd254414b5e94843c3e95e25d53c5f63d99fb73) Thanks [@apucacao](https://github.com/apucacao)! - Add a `data-lp-table` attribute to the table element so consumers can target the component without matching generated class names.
+
 ## 0.9.7
 
 ### Patch Changes
