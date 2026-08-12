@@ -50,7 +50,7 @@ export default defineConfig({
 				customMedia: true,
 			},
 			cssModules: {
-				pattern: '[hash]_[local]',
+				pattern: '[content-hash]_[local]',
 			},
 		},
 		devSourcemap: true,
