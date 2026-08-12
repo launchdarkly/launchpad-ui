@@ -62,3 +62,7 @@ export const WithChildren: Story = {
 export const LabelStart: Story = {
 	args: { children: 'Dark mode', labelPosition: 'start' },
 };
+
+export const LabelStartHideLabels: Story = {
+	args: { children: 'Dark mode', labelPosition: 'start', switchLabels: false },
+};
