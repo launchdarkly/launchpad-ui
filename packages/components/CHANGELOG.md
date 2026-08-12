@@ -1,5 +1,11 @@
 # @launchpad-ui/components
 
+## 0.24.2
+
+### Patch Changes
+
+- [#1997](https://github.com/launchdarkly/launchpad-ui/pull/1997) [`566eb9b`](https://github.com/launchdarkly/launchpad-ui/commit/566eb9bea948e6ba8cd40eb1aa2e371957bdf93c) Thanks [@apucacao](https://github.com/apucacao)! - Make the Breadcrumbs separator color independent of stylesheet order.
+
 ## 0.24.1
 
 ### Patch Changes
