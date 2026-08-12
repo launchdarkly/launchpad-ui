@@ -19,7 +19,10 @@
 	}
 }
 
-.separator {
+/* Scoped under .crumb so the fill outranks the icon's own single-class
+   default instead of tying with it, where the winner would depend on
+   stylesheet order in the consuming bundle. */
+.crumb .separator {
 	fill: var(--lp-color-fill-ui-secondary);
 	height: var(--lp-size-24);
 	width: var(--lp-size-24);
