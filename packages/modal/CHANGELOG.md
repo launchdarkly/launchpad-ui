@@ -1,5 +1,15 @@
 # @launchpad-ui/modal
 
+## 0.21.20
+
+### Patch Changes
+
+- [#1994](https://github.com/launchdarkly/launchpad-ui/pull/1994) [`79cdd05`](https://github.com/launchdarkly/launchpad-ui/commit/79cdd0503318f7c29844bd9521e77eacdc652420) Thanks [@apucacao](https://github.com/apucacao)! - Use content hashing for CSS module class names so same-named module files in different packages no longer produce colliding class names.
+
+- Updated dependencies [[`79cdd05`](https://github.com/launchdarkly/launchpad-ui/commit/79cdd0503318f7c29844bd9521e77eacdc652420)]:
+  - @launchpad-ui/button@0.15.20
+  - @launchpad-ui/icons@0.26.5
+
 ## 0.21.19
 
 ### Patch Changes
