@@ -7,7 +7,9 @@
 }
 
 .switch.labelStart {
-	flex-direction: row-reverse;
+	& .track {
+		order: 1;
+	}
 }
 
 .track {
