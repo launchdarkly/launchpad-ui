@@ -24,8 +24,8 @@
 		"test": "vitest run --coverage"
 	},
 	"dependencies": {
-		"@floating-ui/core": "1.7.0",
-		"@floating-ui/dom": "1.7.0",
+		"@floating-ui/core": "1.7.4",
+		"@floating-ui/dom": "1.7.4",
 		"@launchpad-ui/focus-trap": "workspace:~",
 		"@launchpad-ui/overlay": "workspace:~",
 		"@launchpad-ui/tokens": "workspace:~",
