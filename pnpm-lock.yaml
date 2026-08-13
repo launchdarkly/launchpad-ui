@@ -671,11 +671,11 @@ importers:
   packages/popover:
     dependencies:
       '@floating-ui/core':
-        specifier: 1.7.0
-        version: 1.7.0
+        specifier: 1.7.4
+        version: 1.7.4
       '@floating-ui/dom':
-        specifier: 1.7.0
-        version: 1.7.0
+        specifier: 1.7.4
+        version: 1.7.4
       '@launchpad-ui/focus-trap':
         specifier: workspace:~
         version: link:../focus-trap
@@ -1315,11 +1315,11 @@ packages:
     peerDependencies:
       react: ^16.14.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
 
-  '@floating-ui/core@1.7.0':
-    resolution: {integrity: sha512-FRdBLykrPPA6P76GGGqlex/e7fbe0F1ykgxHYNXQsH/iTEtjMj/f9bpY5oQqbjt5VgZvgz/uKXbGuROijh3VLA==}
+  '@floating-ui/core@1.7.4':
+    resolution: {integrity: sha512-C3HlIdsBxszvm5McXlB8PeOEWfBhcGBTZGkGlWc2U0KFY5IwG5OQEuQ8rq52DZmcHDlPLd+YFBK+cZcytwIFWg==}
 
-  '@floating-ui/dom@1.7.0':
-    resolution: {integrity: sha512-lGTor4VlXcesUMh1cupTUTDoCxMb0V6bm3CnxHzQcw8Eaf1jQbgQX4i02fYgT0vJ82tb5MZ4CZk1LRGkktJCzg==}
+  '@floating-ui/dom@1.7.4':
+    resolution: {integrity: sha512-OOchDgh4F2CchOX94cRVqhvy7b3AFb+/rQXyswmzmGakRfkMgoWVjfnLWkRirfLEfuD4ysVW16eXzwt3jHIzKA==}
 
   '@floating-ui/utils@0.2.11':
     resolution: {integrity: sha512-RiB/yIh78pcIxl6lLMG0CgBXAZ2Y0eVHqMPYugu+9U0AeT6YBeiJpf7lbdJNIugFP5SIjwNRgo4DhR1Qxi26Gg==}
@@ -6508,13 +6508,13 @@ snapshots:
     transitivePeerDependencies:
       - '@types/react'
 
-  '@floating-ui/core@1.7.0':
+  '@floating-ui/core@1.7.4':
     dependencies:
       '@floating-ui/utils': 0.2.11
 
-  '@floating-ui/dom@1.7.0':
+  '@floating-ui/dom@1.7.4':
     dependencies:
-      '@floating-ui/core': 1.7.0
+      '@floating-ui/core': 1.7.4
       '@floating-ui/utils': 0.2.11
 
   '@floating-ui/utils@0.2.11': {}
