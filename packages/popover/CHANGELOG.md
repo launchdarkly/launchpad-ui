@@ -1,5 +1,11 @@
 # @launchpad-ui/popover
 
+## 0.14.8
+
+### Patch Changes
+
+- [#2001](https://github.com/launchdarkly/launchpad-ui/pull/2001) [`dfab63b`](https://github.com/launchdarkly/launchpad-ui/commit/dfab63b5a4a5862c0dc4964e0e33931ccecbcaaf) Thanks [@apucacao](https://github.com/apucacao)! - Bump the pinned `@floating-ui/core` and `@floating-ui/dom` to a matched pair.
+
 ## 0.14.7
 
 ### Patch Changes
