@@ -78,7 +78,7 @@ const MenuItem = <T extends object>({ variant = 'default', ref, ...props }: Menu
 				<>
 					{selectionMode === 'multiple' && (
 						<div
-							className={checkboxStyles()}
+							className={checkboxStyles({ className: styles.checkbox })}
 							data-selected={isSelected || undefined}
 							data-disabled={isDisabled || undefined}
 						>

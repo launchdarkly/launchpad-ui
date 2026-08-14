@@ -28,6 +28,15 @@
 	forced-color-adjust: none;
 	text-decoration: none;
 
+	&:has(.checkbox) {
+		align-items: start;
+	}
+
+	& .checkbox {
+		height: 1lh;
+		align-items: center;
+	}
+
 	&[data-hovered] {
 		background-color: var(--lp-color-bg-interactive-secondary-hover);
 	}
