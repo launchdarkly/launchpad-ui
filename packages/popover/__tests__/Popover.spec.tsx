@@ -14,6 +14,18 @@ describe('Popover', () => {
 		expect(screen.getByRole('tooltip')).toBeInTheDocument();
 	});
 
+	it('marks its target and content with the attributes other packages style', () => {
+		render(
+			<Popover isOpen>
+				<button type="button">Target</button>
+				<span>Content</span>
+			</Popover>,
+		);
+
+		expect(screen.getByRole('button').closest('[data-popover-target]')).toBeInTheDocument();
+		expect(screen.getByText('Content').closest('[data-popover-content]')).toBeInTheDocument();
+	});
+
 	it('opens on click of the target', async () => {
 		const user = userEvent.setup();
 		render(

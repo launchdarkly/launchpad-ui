@@ -111,7 +111,8 @@ select.formInput {
 }
 
 .inlineForm .formGroup + .formGroup,
-.inlineForm .formGroup + :global([class*='_Button']) {
+.inlineForm .formGroup + :global([data-button]),
+.inlineForm .formGroup + :global([data-button-group]) {
 	margin-left: 0.625rem;
 }
 
@@ -354,7 +355,7 @@ input[type='checkbox']:disabled {
 	fill: var(--lp-color-fill-field-base);
 }
 
-[class*='_Popover-target'].iconFieldButton {
+[data-popover-target].iconFieldButton {
 	display: block;
 }
 
