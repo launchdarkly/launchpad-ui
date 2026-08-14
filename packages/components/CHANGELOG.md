@@ -1,5 +1,11 @@
 # @launchpad-ui/components
 
+## 0.24.4
+
+### Patch Changes
+
+- [#2004](https://github.com/launchdarkly/launchpad-ui/pull/2004) [`567a715`](https://github.com/launchdarkly/launchpad-ui/commit/567a7153d8238e202f6b5fc11e1bacbce9302f79) Thanks [@cmwinters](https://github.com/cmwinters)! - Top-align the `MenuItem` selection checkbox with the item label so it matches icon alignment when a description is present.
+
 ## 0.24.3
 
 ### Patch Changes
