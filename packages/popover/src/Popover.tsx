@@ -101,6 +101,7 @@ type PopoverTargetProps = {
 	isopen?: boolean;
 	'data-test-id'?: string;
 	style?: CSSProperties;
+	'data-popover-target'?: string;
 };
 
 type PopoverContentProps = {
@@ -397,6 +398,7 @@ const Popover = ({
 						restrictWidth && styles['Popover-content--restrictWidth'],
 						popoverContentClassName,
 					)}
+					data-popover-content=""
 					tabIndex={interactionKind === 'click' ? -1 : undefined}
 				>
 					{enableArrow && <div id="arrow" ref={arrowRef} />}
@@ -435,6 +437,7 @@ const Popover = ({
 		className: cx(styles['Popover-target'], targetClassName, isTargetDisabled && styles['Popover-target--disabled']),
 		style: rootElementStyle,
 		'data-test-id': targetTestId || 'popover-target',
+		'data-popover-target': '',
 	};
 
 	if (interactionKind === 'hover' || interactionKind === 'hover-target-only' || interactionKind === 'hover-or-focus') {
