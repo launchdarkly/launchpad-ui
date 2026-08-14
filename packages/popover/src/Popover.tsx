@@ -21,8 +21,7 @@ import {
 	useRef,
 	useState,
 } from 'react';
-import type { OffsetOptions } from '@floating-ui/core';
-import type { ComputePositionConfig, Placement, Strategy } from '@floating-ui/dom';
+import type { ComputePositionConfig, OffsetOptions, Placement, Strategy } from '@floating-ui/dom';
 import { arrow, computePosition, flip, offset as floatOffset, shift } from '@floating-ui/dom';
 import { cx } from 'classix';
 import { LazyMotion, m } from 'framer-motion';
