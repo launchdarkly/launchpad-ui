@@ -95,6 +95,7 @@ const IconButtonComponent = forwardRef<HTMLButtonElement, IconButtonProps>((prop
 			onKeyDown={onKeyDown || handleKeyDown}
 			type={type}
 			data-test-id={testId}
+			data-button=""
 			{...rest}
 		>
 			{renderChildren()}

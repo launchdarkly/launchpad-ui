@@ -23,7 +23,7 @@ const ButtonGroup = ({
 	const classes = cx(styles.ButtonGroup, styles[`ButtonGroup--${spacing}`], className);
 
 	return (
-		<div className={classes} data-test-id={testId} {...rest}>
+		<div className={classes} data-test-id={testId} data-button-group="" {...rest}>
 			{children}
 		</div>
 	);

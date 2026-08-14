@@ -137,6 +137,7 @@ const ButtonComponent = forwardRef<HTMLButtonElement, ButtonProps>((props, ref) 
 			disabled={isDisabled}
 			type={asChild ? undefined : type}
 			data-test-id={testId}
+			data-button=""
 			{...rest}
 		>
 			{renderChildren()}
