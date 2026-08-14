@@ -1,5 +1,21 @@
 # @launchpad-ui/form
 
+## 0.15.20
+
+### Patch Changes
+
+- [#2006](https://github.com/launchdarkly/launchpad-ui/pull/2006) [`6e790db`](https://github.com/launchdarkly/launchpad-ui/commit/6e790dbf257ffd3172c78d68767eeaa7a81ae56c) Thanks [@apucacao](https://github.com/apucacao)! - Replace class-name substring selectors with stable data attributes for cross-package styling.
+
+  `Popover` now renders `data-popover-target` on its target element and `data-popover-content` on its content element. `Button` and `IconButton` render `data-button`, and `ButtonGroup` renders `data-button-group`. Stylesheets in `button`, `tooltip`, `menu` and `form` that previously matched one of those elements by a substring of its generated CSS module class name (`[class*='_Popover-target']`, `[class*='_Popover-content']`, `[class*='_Button']`) now match the data attribute instead.
+
+  A generated class name is a build output, and its format follows the CSS module loader configuration rather than any published contract. A data attribute holds still. The selectors match the same elements as before.
+
+- Updated dependencies [[`6e790db`](https://github.com/launchdarkly/launchpad-ui/commit/6e790dbf257ffd3172c78d68767eeaa7a81ae56c), [`df6666b`](https://github.com/launchdarkly/launchpad-ui/commit/df6666b5247c7f5d0833b528d94599d5d976d512)]:
+  - @launchpad-ui/button@0.15.21
+  - @launchpad-ui/tooltip@0.12.8
+  - @launchpad-ui/tokens@0.18.0
+  - @launchpad-ui/icons@0.26.6
+
 ## 0.15.19
 
 ### Patch Changes
