@@ -13,7 +13,7 @@ export default {
 		docs: {
 			description: {
 				component:
-					'Typography tokens for the LaunchPad design system. Our typography is split between two type sets: Utility and Editorial. For components using these tokens, see [Text](/docs/components-content-text--docs), [Heading](/docs/components-content-heading--docs), [Label](/docs/components-content-label--docs), and [Code](/docs/components-content-code--docs). For the full framework, see the [Utility & Editorial Type System for LaunchPad](https://launchdarkly.atlassian.net/wiki/spaces/~712020490f77e4363240f1888e975e52e895be/pages/4939022523/) proposal.',
+					'Typography tokens for the LaunchPad design system. Our typography is split between two type sets: Utility and Editorial. For components using these tokens, see [Text](/docs/components-content-text--docs), [Heading](/docs/components-content-heading--docs), [Label](/docs/components-content-label--docs), and [Code](/docs/components-content-code--docs).',
 			},
 			page: () => (
 				<>
@@ -49,18 +49,14 @@ const getDisplayText = (key: string) => {
 
 	if (parts[0] === 'editorial') {
 		const variant = parts[1]; // display, h1, h2, h3
-		const modifiers = parts.slice(2); // alt, medium, etc. all treated as variant suffixes
 
-		let base: string;
 		if (variant === 'display') {
-			base = 'Display';
-		} else if (/^h\d+$/.test(variant)) {
-			base = `Heading ${variant.slice(1)}`;
-		} else {
-			base = capitalize(variant);
+			return 'Display';
 		}
-
-		return modifiers.length ? `${base} ${modifiers.map(capitalize).join(' ')}` : base;
+		if (/^h\d+$/.test(variant)) {
+			return `Heading ${variant.slice(1)}`;
+		}
+		return capitalize(variant);
 	}
 
 	const category = parts[0]; // heading, body, etc.
@@ -82,8 +78,8 @@ const getSemanticElement = (token: string, font: string) => {
 	const category = parts[0]; // heading, body, etc.
 	const size = parts[1]; // 1, 2, etc.
 
-	// Editorial tokens are keyed as editorial-<variant>[-modifier] (e.g. editorial-h1-alt),
-	// so the heading level lives in parts[1]. Map it to the matching tag instead of falling
+	// Editorial tokens are keyed as editorial-<variant> (e.g. editorial-h1), so the heading
+	// level lives in parts[1]. Map it to the matching tag instead of falling
 	// through to the generic div below.
 	if (category === 'editorial') {
 		const variant = parts[1]; // display, h1, h2, h3
