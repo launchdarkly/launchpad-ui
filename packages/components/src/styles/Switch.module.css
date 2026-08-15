@@ -6,6 +6,12 @@
 	isolation: isolate;
 }
 
+.switch.labelStart {
+	& .track {
+		order: 1;
+	}
+}
+
 .track {
 	position: relative;
 	display: flex;

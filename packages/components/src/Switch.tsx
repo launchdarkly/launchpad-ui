@@ -20,9 +20,14 @@ const switchStyles = cva(styles.switch, {
 		compact: {
 			true: styles.compact,
 		},
+		labelPosition: {
+			start: styles.labelStart,
+			end: '',
+		},
 	},
 	defaultVariants: {
 		variant: 'default',
+		labelPosition: 'end',
 	},
 });
 
@@ -38,19 +43,21 @@ const SwitchContext = createContext<ContextValue<SwitchProps, HTMLLabelElement>>
  * A switch allows a user to turn a setting on or off.
  *
  * Provide an accessible name via `children` (visible label) or `aria-label` (visually hidden label).
+ * A visible label renders after the track by default; pass `labelPosition="start"` to render it
+ * before the track while keeping it part of the switch's label and click target.
  *
  * https://react-spectrum.adobe.com/react-aria/Switch.html
  */
 const Switch = ({ ref, ...props }: SwitchProps) => {
 	const [mergedProps, mergedRef] = useLPContextProps(props, ref, SwitchContext);
-	const { switchLabels, variant } = mergedProps;
+	const { switchLabels, variant, labelPosition } = mergedProps;
 	const hideLabels = switchLabels === false ? true : undefined;
 	return (
 		<AriaSwitch
 			{...mergedProps}
 			ref={mergedRef}
 			className={composeRenderProps(mergedProps.className, (className, renderProps) =>
-				switchStyles({ ...renderProps, variant, compact: hideLabels, className }),
+				switchStyles({ ...renderProps, variant, labelPosition, compact: hideLabels, className }),
 			)}
 		>
 			{composeRenderProps(mergedProps.children, (children, { isSelected }) => (
