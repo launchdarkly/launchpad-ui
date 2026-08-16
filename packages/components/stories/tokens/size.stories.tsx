@@ -1,11 +1,11 @@
 import { Fragment } from 'react';
 
-import { Button } from '../../components/src/Button';
-import { ToastRegion, toastQueue } from '../../components/src/Toast';
-import { Tooltip, TooltipTrigger } from '../../components/src/Tooltip';
-import type { default as Tokens } from '../dist';
-// @ts-expect-error ts not detecting d.ts for es file
-import tokens from '../dist/index.es.js';
+import type { default as Tokens } from '@launchpad-ui/tokens';
+import tokens from '@launchpad-ui/tokens';
+
+import { Button } from '../../src/Button';
+import { ToastRegion, toastQueue } from '../../src/Toast';
+import { Tooltip, TooltipTrigger } from '../../src/Tooltip';
 
 export default {
 	title: 'Tokens/Size',

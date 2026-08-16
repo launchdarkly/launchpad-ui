@@ -1,6 +1,6 @@
 import type { Args, StoryContext } from '@storybook/react-vite';
 
-import { Button } from '../../components/src/Button';
+import { Button } from '../../src/Button';
 
 export default {
 	title: 'Tokens/Themes',

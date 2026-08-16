@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 
-import { Button } from '../../components/src/Button';
-import { ToastRegion, toastQueue } from '../../components/src/Toast';
-import { Tooltip, TooltipTrigger } from '../../components/src/Tooltip';
-import { Icon } from '../src/Icon';
-import { icons } from '../src/types';
+import { Icon, iconsNames } from '@launchpad-ui/icons';
+
+import { Button } from '../../src/Button';
+import { ToastRegion, toastQueue } from '../../src/Toast';
+import { Tooltip, TooltipTrigger } from '../../src/Tooltip';
 
 const meta: Meta<typeof Icon> = {
 	component: Icon,
@@ -35,7 +35,7 @@ export const Gallery: Story = {
 						columnGap: '1rem',
 					}}
 				>
-					{icons.map((item, index) => (
+					{iconsNames.map((item, index) => (
 						<div
 							style={{
 								display: 'flex',
