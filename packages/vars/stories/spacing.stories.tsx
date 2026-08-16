@@ -2,15 +2,12 @@ import { Fragment } from 'react';
 
 import type { default as Tokens } from '@launchpad-ui/tokens';
 import tokens from '@launchpad-ui/tokens';
+import tokenList from '@launchpad-ui/tokens/tokens.json';
 import { vars } from '@launchpad-ui/vars';
 
 import { Button } from '../../components/src/Button';
 import { ToastRegion, toastQueue } from '../../components/src/Toast';
 import { Tooltip, TooltipTrigger } from '../../components/src/Tooltip';
-// The raw token source, not the built output. It carries the per-token metadata that
-// style-dictionary drops on the way to dist. tokens sets `files: ['dist']`, so this file is
-// never published and cannot be reached through the package's exports map.
-import spacingJson from '../../tokens/tokens/spacing.json';
 
 export default {
 	title: 'Tokens/Spacing',
@@ -18,13 +15,14 @@ export default {
 
 const spacing: typeof Tokens.spacing = tokens.spacing;
 
+// Each spacing token records the reference it was authored as, e.g. `{size.4}`, alongside
+// the resolved value. The table shows both, so read the size back off the reference.
 const spacingToSize = Object.fromEntries(
-	Object.entries(spacingJson.spacing)
-		.filter(([k]) => !k.startsWith('$'))
-		.map(([k, v]: [string, any]) => {
-			const m = typeof v.$value === 'string' ? v.$value.match(/\{size\.(\d+)\}/) : null;
-			return [k, m ? m[1] : ''];
-		}),
+	tokenList.spacing.map((token) => {
+		const authored = token.original.$value;
+		const m = typeof authored === 'string' ? authored.match(/\{size\.(\d+)\}/) : null;
+		return [token.path[1], m ? m[1] : ''];
+	}),
 );
 
 export const Spacing = {
