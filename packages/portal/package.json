@@ -23,6 +23,7 @@
 		"test": "vitest run --coverage"
 	},
 	"devDependencies": {
+		"@launchpad-ui/test-utils": "workspace:~",
 		"react": "19.2.8",
 		"react-dom": "19.2.8"
 	},

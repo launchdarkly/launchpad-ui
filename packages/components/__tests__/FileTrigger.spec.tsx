@@ -1,6 +1,7 @@
 import { describe, expect, it } from 'vitest';
 
-import { render } from '../../../test/utils';
+import { render } from '@launchpad-ui/test-utils';
+
 import { Button, FileTrigger } from '../src';
 
 describe('FileTrigger', () => {

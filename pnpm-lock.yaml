@@ -229,6 +229,9 @@ importers:
       '@launchpad-ui/components':
         specifier: workspace:~
         version: link:../components
+      '@launchpad-ui/test-utils':
+        specifier: workspace:~
+        version: link:../test-utils
       '@vanilla-extract/css':
         specifier: 1.20.1
         version: 1.20.1
@@ -257,6 +260,9 @@ importers:
         specifier: 2.2.0
         version: 2.2.0
     devDependencies:
+      '@launchpad-ui/test-utils':
+        specifier: workspace:~
+        version: link:../test-utils
       react:
         specifier: 19.2.8
         version: 19.2.8
@@ -282,6 +288,9 @@ importers:
         specifier: 0.7.0
         version: 0.7.0
     devDependencies:
+      '@launchpad-ui/test-utils':
+        specifier: workspace:~
+        version: link:../test-utils
       '@react-aria/focus':
         specifier: 3.22.1
         version: 3.22.1(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
@@ -401,6 +410,9 @@ importers:
         specifier: 12.23.22
         version: 12.23.22(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
     devDependencies:
+      '@launchpad-ui/test-utils':
+        specifier: workspace:~
+        version: link:../test-utils
       react:
         specifier: 19.2.8
         version: 19.2.8
@@ -429,6 +441,9 @@ importers:
         specifier: 2.2.0
         version: 2.2.0
     devDependencies:
+      '@launchpad-ui/test-utils':
+        specifier: workspace:~
+        version: link:../test-utils
       '@react-aria/utils':
         specifier: 3.34.1
         version: 3.34.1(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
@@ -466,6 +481,9 @@ importers:
         specifier: 2.2.0
         version: 2.2.0
     devDependencies:
+      '@launchpad-ui/test-utils':
+        specifier: workspace:~
+        version: link:../test-utils
       react:
         specifier: 19.2.8
         version: 19.2.8
@@ -478,6 +496,9 @@ importers:
 
   packages/focus-trap:
     devDependencies:
+      '@launchpad-ui/test-utils':
+        specifier: workspace:~
+        version: link:../test-utils
       react:
         specifier: 19.2.8
         version: 19.2.8
@@ -509,6 +530,9 @@ importers:
         specifier: 3.48.0
         version: 3.48.0(react@19.2.8)
     devDependencies:
+      '@launchpad-ui/test-utils':
+        specifier: workspace:~
+        version: link:../test-utils
       react:
         specifier: 19.2.8
         version: 19.2.8
@@ -528,6 +552,9 @@ importers:
         specifier: 0.7.0
         version: 0.7.0
     devDependencies:
+      '@launchpad-ui/test-utils':
+        specifier: workspace:~
+        version: link:../test-utils
       react:
         specifier: 19.2.8
         version: 19.2.8
@@ -571,6 +598,9 @@ importers:
         specifier: 2.10.4
         version: 2.10.4(react@19.2.8)
     devDependencies:
+      '@launchpad-ui/test-utils':
+        specifier: workspace:~
+        version: link:../test-utils
       react:
         specifier: 19.2.8
         version: 19.2.8
@@ -602,6 +632,9 @@ importers:
         specifier: 12.23.22
         version: 12.23.22(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
     devDependencies:
+      '@launchpad-ui/test-utils':
+        specifier: workspace:~
+        version: link:../test-utils
       react:
         specifier: 19.2.8
         version: 19.2.8
@@ -639,6 +672,9 @@ importers:
         specifier: 2.2.0
         version: 2.2.0
     devDependencies:
+      '@launchpad-ui/test-utils':
+        specifier: workspace:~
+        version: link:../test-utils
       '@react-aria/utils':
         specifier: 3.34.1
         version: 3.34.1(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
@@ -664,6 +700,9 @@ importers:
         specifier: workspace:~
         version: link:../portal
     devDependencies:
+      '@launchpad-ui/test-utils':
+        specifier: workspace:~
+        version: link:../test-utils
       react:
         specifier: 19.2.8
         version: 19.2.8
@@ -692,6 +731,9 @@ importers:
         specifier: 12.23.22
         version: 12.23.22(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
     devDependencies:
+      '@launchpad-ui/test-utils':
+        specifier: workspace:~
+        version: link:../test-utils
       react:
         specifier: 19.2.8
         version: 19.2.8
@@ -701,6 +743,9 @@ importers:
 
   packages/portal:
     devDependencies:
+      '@launchpad-ui/test-utils':
+        specifier: workspace:~
+        version: link:../test-utils
       react:
         specifier: 19.2.8
         version: 19.2.8
@@ -716,6 +761,25 @@ importers:
       classix:
         specifier: 2.2.0
         version: 2.2.0
+    devDependencies:
+      '@launchpad-ui/test-utils':
+        specifier: workspace:~
+        version: link:../test-utils
+      react:
+        specifier: 19.2.8
+        version: 19.2.8
+      react-dom:
+        specifier: 19.2.8
+        version: 19.2.8(react@19.2.8)
+
+  packages/test-utils:
+    dependencies:
+      '@testing-library/react':
+        specifier: 16.3.2
+        version: 16.3.2(@testing-library/dom@10.4.1)(@types/react-dom@19.2.3(@types/react@19.2.15))(@types/react@19.2.15)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
+      '@testing-library/user-event':
+        specifier: 14.6.1
+        version: 14.6.1(@testing-library/dom@10.4.1)
     devDependencies:
       react:
         specifier: 19.2.8
@@ -757,6 +821,9 @@ importers:
         specifier: 2.2.0
         version: 2.2.0
     devDependencies:
+      '@launchpad-ui/test-utils':
+        specifier: workspace:~
+        version: link:../test-utils
       react:
         specifier: 19.2.8
         version: 19.2.8

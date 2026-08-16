@@ -1,6 +1,7 @@
 import { describe, expect, it, vi } from 'vitest';
 
-import { render, screen } from '../../../test/utils';
+import { render, screen } from '@launchpad-ui/test-utils';
+
 import { Checkbox } from '../src';
 
 describe('Checkbox', () => {

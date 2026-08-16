@@ -1,7 +1,8 @@
 import type { ReactNode } from 'react';
 import { describe, expect, it } from 'vitest';
 
-import { render, renderHook, screen, userEvent } from '../../../test/utils';
+import { render, renderHook, screen, userEvent } from '@launchpad-ui/test-utils';
+
 import { FocusTrap, FocusTrapContext, useFocusTrapContext } from '../src';
 
 const createComponent = () => (

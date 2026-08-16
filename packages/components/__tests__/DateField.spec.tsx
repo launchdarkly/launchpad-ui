@@ -1,6 +1,7 @@
 import { describe, expect, it } from 'vitest';
 
-import { render, screen } from '../../../test/utils';
+import { render, screen } from '@launchpad-ui/test-utils';
+
 import { DateField, DateInput, DateSegment, Label, TimeField } from '../src';
 
 describe('DateField', () => {

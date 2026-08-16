@@ -1,6 +1,7 @@
 import { afterAll, beforeAll, describe, expect, it } from 'vitest';
 
-import { render, screen } from '../../../test/utils';
+import { render, screen } from '@launchpad-ui/test-utils';
+
 import { Avatar } from '../src';
 
 class MockImage {

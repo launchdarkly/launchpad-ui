@@ -3,8 +3,8 @@ import type { RefObject } from '@react-types/shared';
 import { describe, expect, it, vi } from 'vitest';
 
 import { Menu, MenuItem } from '@launchpad-ui/menu';
+import { render, screen, userEvent } from '@launchpad-ui/test-utils';
 
-import { render, screen, userEvent } from '../../../test/utils';
 import { Dropdown, DropdownButton } from '../src';
 
 describe('Dropdown', () => {

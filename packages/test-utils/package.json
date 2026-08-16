@@ -1,0 +1,28 @@
+{
+	"name": "@launchpad-ui/test-utils",
+	"version": "0.0.0",
+	"private": true,
+	"description": "Shared render helper for LaunchPad component tests.",
+	"repository": "launchdarkly/launchpad-ui",
+	"license": "Apache-2.0",
+	"main": "src/index.tsx",
+	"types": "src/index.tsx",
+	"source": "src/index.tsx",
+	"scripts": {
+		"lint": "exit 0",
+		"test": "exit 0"
+	},
+	"dependencies": {
+		"@testing-library/react": "16.3.2",
+		"@testing-library/user-event": "14.6.1"
+	},
+	"devDependencies": {
+		"react": "19.2.8",
+		"react-dom": "19.2.8"
+	},
+	"peerDependencies": {
+		"react": "^19",
+		"react-dom": "^19",
+		"vitest": "^4.0.0"
+	}
+}

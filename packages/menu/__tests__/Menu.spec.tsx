@@ -1,8 +1,8 @@
 import { describe, expect, it, vi } from 'vitest';
 
 import { Popover } from '@launchpad-ui/popover';
+import { render, screen, userEvent, waitFor } from '@launchpad-ui/test-utils';
 
-import { render, screen, userEvent, waitFor } from '../../../test/utils';
 import type { MenuProps } from '../src';
 import { Menu, MenuDivider, MenuItem, MenuSearch } from '../src';
 
