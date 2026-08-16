@@ -1,10 +1,7 @@
 import { Description, Stories, Title } from '@storybook/addon-docs/blocks';
 
+import { Button, ToastRegion, toastQueue, Tooltip, TooltipTrigger } from '@launchpad-ui/components';
 import { vars } from '@launchpad-ui/vars';
-
-import { Button } from '../../components/src/Button';
-import { ToastRegion, toastQueue } from '../../components/src/Toast';
-import { Tooltip, TooltipTrigger } from '../../components/src/Tooltip';
 
 export default {
 	title: 'Tokens/Typography',

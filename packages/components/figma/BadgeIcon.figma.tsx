@@ -1,6 +1,6 @@
 import figma from '@figma/code-connect';
 
-import { BadgeIcon } from '../../icons/src/BadgeIcon';
+import { BadgeIcon } from '@launchpad-ui/icons';
 
 figma.connect(
 	BadgeIcon,

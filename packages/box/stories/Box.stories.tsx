@@ -1,6 +1,7 @@
 import type { StoryObj } from '@storybook/react-vite';
 
-import { Button } from '../../components/src/Button';
+import { Button } from '@launchpad-ui/components';
+
 import { Box } from '../src';
 
 export default {

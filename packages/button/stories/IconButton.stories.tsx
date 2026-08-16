@@ -1,7 +1,8 @@
 import { Fragment } from 'react';
 import type { Decorator, StoryObj } from '@storybook/react-vite';
 
-import { Icon } from '../../icons/src';
+import { Icon } from '@launchpad-ui/icons';
+
 import { IconButton } from '../src';
 
 import './Button.stories.css';

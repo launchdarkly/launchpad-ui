@@ -1,13 +1,10 @@
 import { Fragment } from 'react';
 
+import { Button, ToastRegion, toastQueue, Tooltip, TooltipTrigger } from '@launchpad-ui/components';
 import type { default as Tokens } from '@launchpad-ui/tokens';
 import tokens from '@launchpad-ui/tokens';
 import tokenList from '@launchpad-ui/tokens/tokens.json';
 import { vars } from '@launchpad-ui/vars';
-
-import { Button } from '../../components/src/Button';
-import { ToastRegion, toastQueue } from '../../components/src/Toast';
-import { Tooltip, TooltipTrigger } from '../../components/src/Tooltip';
 
 export default {
 	title: 'Tokens/Spacing',
