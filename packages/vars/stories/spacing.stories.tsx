@@ -5,10 +5,10 @@ import { vars } from '@launchpad-ui/vars';
 import { Button } from '../../components/src/Button';
 import { ToastRegion, toastQueue } from '../../components/src/Toast';
 import { Tooltip, TooltipTrigger } from '../../components/src/Tooltip';
-import type { default as Tokens } from '../dist';
+import type { default as Tokens } from '../../tokens/dist';
 // @ts-expect-error ts not detecting d.ts for es file
-import tokens from '../dist/index.es.js';
-import spacingJson from '../tokens/spacing.json';
+import tokens from '../../tokens/dist/index.es.js';
+import spacingJson from '../../tokens/tokens/spacing.json';
 
 export default {
 	title: 'Tokens/Spacing',
