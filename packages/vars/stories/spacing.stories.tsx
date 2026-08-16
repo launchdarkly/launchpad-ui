@@ -1,13 +1,15 @@
 import { Fragment } from 'react';
 
+import type { default as Tokens } from '@launchpad-ui/tokens';
+import tokens from '@launchpad-ui/tokens';
 import { vars } from '@launchpad-ui/vars';
 
 import { Button } from '../../components/src/Button';
 import { ToastRegion, toastQueue } from '../../components/src/Toast';
 import { Tooltip, TooltipTrigger } from '../../components/src/Tooltip';
-import type { default as Tokens } from '../../tokens/dist';
-// @ts-expect-error ts not detecting d.ts for es file
-import tokens from '../../tokens/dist/index.es.js';
+// The raw token source, not the built output. It carries the per-token metadata that
+// style-dictionary drops on the way to dist. tokens sets `files: ['dist']`, so this file is
+// never published and cannot be reached through the package's exports map.
 import spacingJson from '../../tokens/tokens/spacing.json';
 
 export default {
