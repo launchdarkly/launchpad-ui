@@ -10,9 +10,9 @@ import { IconButton } from '@launchpad-ui/button';
 import { FocusTrap } from '@launchpad-ui/focus-trap';
 import { Icon } from '@launchpad-ui/icons';
 import { Portal } from '@launchpad-ui/portal';
-import { Progress } from '@launchpad-ui/progress';
 
 import { DRAWER_LABELLED_BY } from './constants';
+import { Progress } from './Progress';
 
 import styles from './styles/Drawer.module.css';
 
