@@ -44,6 +44,9 @@ importers:
       '@figma/code-connect':
         specifier: 1.4.7
         version: 1.4.7
+      '@launchpad-ui/story-utils':
+        specifier: workspace:~
+        version: link:packages/story-utils
       '@storybook/addon-a11y':
         specifier: 10.2.19
         version: 10.2.19(storybook@10.2.19(@testing-library/dom@10.4.1)(prettier@3.8.3)(react@19.2.8))
@@ -288,6 +291,9 @@ importers:
         specifier: 0.7.0
         version: 0.7.0
     devDependencies:
+      '@launchpad-ui/story-utils':
+        specifier: workspace:~
+        version: link:../story-utils
       '@launchpad-ui/test-utils':
         specifier: workspace:~
         version: link:../test-utils
@@ -530,6 +536,9 @@ importers:
         specifier: 3.48.0
         version: 3.48.0(react@19.2.8)
     devDependencies:
+      '@launchpad-ui/story-utils':
+        specifier: workspace:~
+        version: link:../story-utils
       '@launchpad-ui/test-utils':
         specifier: workspace:~
         version: link:../test-utils
@@ -632,6 +641,9 @@ importers:
         specifier: 12.23.22
         version: 12.23.22(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
     devDependencies:
+      '@launchpad-ui/story-utils':
+        specifier: workspace:~
+        version: link:../story-utils
       '@launchpad-ui/test-utils':
         specifier: workspace:~
         version: link:../test-utils
@@ -672,6 +684,9 @@ importers:
         specifier: 2.2.0
         version: 2.2.0
     devDependencies:
+      '@launchpad-ui/story-utils':
+        specifier: workspace:~
+        version: link:../story-utils
       '@launchpad-ui/test-utils':
         specifier: workspace:~
         version: link:../test-utils
@@ -752,6 +767,12 @@ importers:
       react-dom:
         specifier: 19.2.8
         version: 19.2.8(react@19.2.8)
+
+  packages/story-utils:
+    dependencies:
+      deepmerge:
+        specifier: 4.3.1
+        version: 4.3.1
 
   packages/table:
     dependencies:
