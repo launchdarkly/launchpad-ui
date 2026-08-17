@@ -247,9 +247,6 @@ importers:
       '@launchpad-ui/button':
         specifier: workspace:~
         version: link:../button
-      '@launchpad-ui/components':
-        specifier: workspace:~
-        version: link:../components
       '@launchpad-ui/test-utils':
         specifier: workspace:~
         version: link:../test-utils
