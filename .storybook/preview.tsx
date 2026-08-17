@@ -5,21 +5,19 @@ import type { Preview, ReactRenderer } from '@storybook/react-vite';
 import type { DecoratorFunction, GlobalTypes, Parameters } from 'storybook/internal/types';
 
 import { Box } from '@launchpad-ui/box';
+import { RouterProvider as AriaRouterProvider, useHref } from '@launchpad-ui/components';
 import { FocusTrapContext } from '@launchpad-ui/focus-trap';
 import sprite from '@launchpad-ui/icons/img/sprite.svg';
-
-import { RouterProvider as AriaRouterProvider } from '../packages/components/src/RouterProvider';
-import { useHref } from '../packages/components/src/utils';
+import { allModes } from '@launchpad-ui/story-utils';
 
 import custom from './custom.svg';
-import { allModes } from '@launchpad-ui/story-utils';
 import { darkTheme, lightTheme } from './themes';
 
-import '../packages/components/src/styles/base.css';
-import '../packages/components/src/styles/themes.css';
-import '../packages/tokens/dist/index.css';
-import '../packages/tokens/dist/media-queries.css';
-import '../packages/tokens/dist/themes.css';
+import '@launchpad-ui/components/styles/base.css';
+import '@launchpad-ui/components/styles/themes.css';
+import '@launchpad-ui/tokens/index.css';
+import '@launchpad-ui/tokens/media-queries.css';
+import '@launchpad-ui/tokens/themes.css';
 
 fetch(sprite)
 	.then(async (response) => response.text())

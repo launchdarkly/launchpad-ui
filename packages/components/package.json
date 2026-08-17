@@ -74,6 +74,8 @@
 			"require": "./dist/index.js"
 		},
 		"./package.json": "./package.json",
-		"./style.css": "./dist/style.css"
+		"./style.css": "./dist/style.css",
+		"./styles/base.css": "./src/styles/base.css",
+		"./styles/themes.css": "./src/styles/themes.css"
 	}
 }

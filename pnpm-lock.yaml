@@ -44,9 +44,24 @@ importers:
       '@figma/code-connect':
         specifier: 1.4.7
         version: 1.4.7
+      '@launchpad-ui/box':
+        specifier: workspace:~
+        version: link:packages/box
+      '@launchpad-ui/components':
+        specifier: workspace:~
+        version: link:packages/components
+      '@launchpad-ui/focus-trap':
+        specifier: workspace:~
+        version: link:packages/focus-trap
+      '@launchpad-ui/icons':
+        specifier: workspace:~
+        version: link:packages/icons
       '@launchpad-ui/story-utils':
         specifier: workspace:~
         version: link:packages/story-utils
+      '@launchpad-ui/tokens':
+        specifier: workspace:~
+        version: link:packages/tokens
       '@storybook/addon-a11y':
         specifier: 10.2.19
         version: 10.2.19(storybook@10.2.19(@testing-library/dom@10.4.1)(prettier@3.8.3)(react@19.2.8))
