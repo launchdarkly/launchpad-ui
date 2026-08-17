@@ -424,9 +424,6 @@ importers:
       '@launchpad-ui/portal':
         specifier: workspace:~
         version: link:../portal
-      '@launchpad-ui/progress':
-        specifier: 0.5.57
-        version: 0.5.57(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
       '@launchpad-ui/tokens':
         specifier: workspace:~
         version: link:../tokens
@@ -689,9 +686,6 @@ importers:
 
   packages/navigation:
     dependencies:
-      '@launchpad-ui/chip':
-        specifier: 0.9.58
-        version: 0.9.58(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
       '@launchpad-ui/dropdown':
         specifier: workspace:~
         version: link:../dropdown
@@ -1627,32 +1621,6 @@ packages:
 
   '@keyv/serialize@1.1.1':
     resolution: {integrity: sha512-dXn3FZhPv0US+7dtJsIi2R+c7qWYiReoEh5zUntWCf4oSpMNib8FDhSoed6m3QyZdx5hK7iLFkYk3rNxwt8vTA==}
-
-  '@launchpad-ui/chip@0.9.58':
-    resolution: {integrity: sha512-57XRCU+XCLNGUS3pjdls0Oi2GDhly/QF4C4mEhswnhKg96pZ1pURKIV9AD3yEdLqMHgeNZKJBCNg78UHoZQFcA==}
-    deprecated: Use components from @launchpad-ui/components instead
-    peerDependencies:
-      react: ^18.0.0 || ^19.0.0
-      react-dom: ^18.0.0 || ^19.0.0
-
-  '@launchpad-ui/icons@0.21.20':
-    resolution: {integrity: sha512-5tDvc9bT/nii3YkGGEXO7Ij7LsFrgwP82j3gb2OutLy15dbLuaNXVroHtukUAoHN+X/FVnFbPAFpP0MqjVXwFQ==}
-    peerDependencies:
-      react: ^19.0.0
-      react-dom: ^19.0.0
-
-  '@launchpad-ui/progress@0.5.57':
-    resolution: {integrity: sha512-tRVb8Zo4DTrNEEFgB9cOLExC6LvOaPbo/KIGSFuSPO3u1VPwgnar92LMICm5U8gFfLIOUnkh8X0EuN4VvxAp2Q==}
-    deprecated: Use components from @launchpad-ui/components instead
-    peerDependencies:
-      react: ^18.0.0 || ^19.0.0
-      react-dom: ^18.0.0 || ^19.0.0
-
-  '@launchpad-ui/tokens@0.12.7':
-    resolution: {integrity: sha512-dEGzJV7hRvajB/9m9m9Fbg1lF6lSP/B4Jy7N4gIolKQ0dNRWtBCYIG5RE2S0li8T3IpZ9JfwX5Xy1CDFZ9YWVw==}
-
-  '@launchpad-ui/tokens@0.13.1':
-    resolution: {integrity: sha512-vmmtDgYvtHGvkVP9ASeotcIxpZnixhyYjHv+flN8/lB/tDKxYVIIJG0n8vHDh3ceIDhKwmszYoHeyxErx8kUww==}
 
   '@lit-labs/react@2.1.3':
     resolution: {integrity: sha512-OD9h2JynerBQUMNzb563jiVpxfvPF0HjQkKY2mx0lpVYvD7F+rtJpOGz6ek+6ufMidV3i+MPT9SX62OKWHFrQg==}
@@ -6829,32 +6797,6 @@ snapshots:
       keyv: 5.6.0
 
   '@keyv/serialize@1.1.1': {}
-
-  '@launchpad-ui/chip@0.9.58(react-dom@19.2.8(react@19.2.8))(react@19.2.8)':
-    dependencies:
-      '@launchpad-ui/icons': 0.21.20(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
-      '@launchpad-ui/tokens': 0.12.7
-      classix: 2.2.0
-      react: 19.2.8
-      react-dom: 19.2.8(react@19.2.8)
-
-  '@launchpad-ui/icons@0.21.20(react-dom@19.2.8(react@19.2.8))(react@19.2.8)':
-    dependencies:
-      '@launchpad-ui/tokens': 0.13.1
-      class-variance-authority: 0.7.0
-      react: 19.2.8
-      react-dom: 19.2.8(react@19.2.8)
-
-  '@launchpad-ui/progress@0.5.57(react-dom@19.2.8(react@19.2.8))(react@19.2.8)':
-    dependencies:
-      '@launchpad-ui/tokens': 0.12.7
-      classix: 2.2.0
-      react: 19.2.8
-      react-dom: 19.2.8(react@19.2.8)
-
-  '@launchpad-ui/tokens@0.12.7': {}
-
-  '@launchpad-ui/tokens@0.13.1': {}
 
   '@lit-labs/react@2.1.3(@types/react@19.2.15)':
     dependencies:

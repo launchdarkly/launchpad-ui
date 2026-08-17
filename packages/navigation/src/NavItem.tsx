@@ -2,9 +2,8 @@ import type { MouseEvent } from 'react';
 import { NavLink, useLocation } from 'react-router';
 import { cx } from 'classix';
 
-import type { ChipProps } from '@launchpad-ui/chip';
-import { Chip } from '@launchpad-ui/chip';
-
+import type { ChipProps } from './Chip';
+import { Chip } from './Chip';
 import { titlecase } from './utils';
 
 import styles from './styles/Navigation.module.css';

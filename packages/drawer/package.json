@@ -28,7 +28,6 @@
 		"@launchpad-ui/focus-trap": "workspace:~",
 		"@launchpad-ui/icons": "workspace:~",
 		"@launchpad-ui/portal": "workspace:~",
-		"@launchpad-ui/progress": "0.5.57",
 		"@launchpad-ui/tokens": "workspace:~",
 		"classix": "2.2.0",
 		"framer-motion": "12.23.22"

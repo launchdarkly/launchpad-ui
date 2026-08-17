@@ -3,11 +3,11 @@ import { NavLink, useLocation } from 'react-router';
 import { useListState } from 'react-stately/useListState';
 import type { CollectionBase } from '@react-types/shared';
 
-import { Chip } from '@launchpad-ui/chip';
 import { Dropdown, DropdownButton } from '@launchpad-ui/dropdown';
 import { Icon } from '@launchpad-ui/icons';
 import { Menu, MenuItem } from '@launchpad-ui/menu';
 
+import { Chip } from './Chip';
 import type { NavProps } from './Nav';
 import { titlecase } from './utils';
 
