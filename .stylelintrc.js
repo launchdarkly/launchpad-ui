@@ -10,15 +10,16 @@ module.exports = {
 			true,
 			{
 				// Gonfalon's `static/ld/...` and `packages/vega/...` entries dropped:
-				// those files don't exist in launchpad. Repointed from
-				// `node_modules/@launchpad-ui/tokens/dist/*` to `packages/tokens/dist/*`
-				// since tokens live in-repo here rather than as a published dependency.
-				// `packages/tokens/dist` is built by `build:transform`, which `lint:css`
-				// runs first (mirrors `test`/`typecheck`).
+				// those files don't exist in launchpad. Each stylesheet is resolved
+				// through the `@launchpad-ui/tokens` exports map rather than by a path
+				// into that package, so this file stays correct wherever the package
+				// is installed from. The build output it resolves to is produced by
+				// `build:transform`, which `lint:css` runs first (mirrors
+				// `test`/`typecheck`).
 				importFrom: [
-					'packages/tokens/dist/index.css',
-					'packages/tokens/dist/media-queries.css',
-					'packages/tokens/dist/themes.css',
+					require.resolve('@launchpad-ui/tokens/index.css'),
+					require.resolve('@launchpad-ui/tokens/media-queries.css'),
+					require.resolve('@launchpad-ui/tokens/themes.css'),
 					// Custom properties injected at runtime by third-party libraries
 					// (e.g. React Aria Components), not by @launchpad-ui/tokens.
 					'stylelint.runtime-properties.css',

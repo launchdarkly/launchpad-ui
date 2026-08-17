@@ -1,8 +1,8 @@
 import { describe, expect, it } from 'vitest';
 
 import { BadgeIcon, Icon } from '@launchpad-ui/icons';
+import { render, screen } from '@launchpad-ui/test-utils';
 
-import { render, screen } from '../../../test/utils';
 import { Button, ButtonGroup, EmptyState, Heading, Text } from '../src';
 
 import emptyStateStyles from '../src/styles/EmptyState.module.css';

@@ -1,7 +1,8 @@
 import { MemoryRouter } from 'react-router';
 import { describe, expect, it } from 'vitest';
 
-import { render, screen } from '../../../test/utils';
+import { render, screen } from '@launchpad-ui/test-utils';
+
 import { Breadcrumb, Breadcrumbs, Link } from '../src';
 
 describe('Breadcrumbs', () => {

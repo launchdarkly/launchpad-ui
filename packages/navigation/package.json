@@ -34,6 +34,8 @@
 		"classix": "2.2.0"
 	},
 	"devDependencies": {
+		"@launchpad-ui/story-utils": "workspace:~",
+		"@launchpad-ui/test-utils": "workspace:~",
 		"@react-aria/utils": "3.34.1",
 		"@react-types/shared": "3.36.0",
 		"react": "19.2.8",

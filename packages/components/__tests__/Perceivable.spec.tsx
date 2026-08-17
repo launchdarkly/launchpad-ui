@@ -1,6 +1,7 @@
 import { describe, expect, it, vi } from 'vitest';
 
-import { render, screen, userEvent, waitFor } from '../../../test/utils';
+import { render, screen, userEvent, waitFor } from '@launchpad-ui/test-utils';
+
 import { Button, DialogTrigger, Form, Perceivable, Popover, Tooltip, TooltipTrigger } from '../src';
 
 describe('Perceivable', () => {

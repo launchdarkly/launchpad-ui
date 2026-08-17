@@ -30,6 +30,7 @@
 		"classix": "2.2.0"
 	},
 	"devDependencies": {
+		"@launchpad-ui/test-utils": "workspace:~",
 		"react": "19.2.8",
 		"react-dom": "19.2.8"
 	},

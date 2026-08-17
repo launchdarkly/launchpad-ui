@@ -1,7 +1,8 @@
 import { MemoryRouter } from 'react-router';
 import { describe, expect, it, vi } from 'vitest';
 
-import { render, screen, userEvent, waitFor } from '../../../test/utils';
+import { render, screen, userEvent, waitFor } from '@launchpad-ui/test-utils';
+
 import type { NavigationItemProps } from '../src';
 import { Navigation, NavigationItem } from '../src';
 import { useNavigationContext } from '../src/NavigationContext';

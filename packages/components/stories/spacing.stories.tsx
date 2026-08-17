@@ -1,14 +1,13 @@
 import { Fragment } from 'react';
 
+import type { default as Tokens } from '@launchpad-ui/tokens';
+import tokens from '@launchpad-ui/tokens';
+import tokenList from '@launchpad-ui/tokens/tokens.json';
 import { vars } from '@launchpad-ui/vars';
 
-import { Button } from '../../components/src/Button';
-import { ToastRegion, toastQueue } from '../../components/src/Toast';
-import { Tooltip, TooltipTrigger } from '../../components/src/Tooltip';
-import type { default as Tokens } from '../dist';
-// @ts-expect-error ts not detecting d.ts for es file
-import tokens from '../dist/index.es.js';
-import spacingJson from '../tokens/spacing.json';
+import { Button } from '../src/Button';
+import { ToastRegion, toastQueue } from '../src/Toast';
+import { Tooltip, TooltipTrigger } from '../src/Tooltip';
 
 export default {
 	title: 'Tokens/Spacing',
@@ -16,13 +15,14 @@ export default {
 
 const spacing: typeof Tokens.spacing = tokens.spacing;
 
+// Each spacing token records the reference it was authored as, e.g. `{size.4}`, alongside
+// the resolved value. The table shows both, so read the size back off the reference.
 const spacingToSize = Object.fromEntries(
-	Object.entries(spacingJson.spacing)
-		.filter(([k]) => !k.startsWith('$'))
-		.map(([k, v]: [string, any]) => {
-			const m = typeof v.$value === 'string' ? v.$value.match(/\{size\.(\d+)\}/) : null;
-			return [k, m ? m[1] : ''];
-		}),
+	tokenList.spacing.map((token) => {
+		const authored = token.original.$value;
+		const m = typeof authored === 'string' ? authored.match(/\{size\.(\d+)\}/) : null;
+		return [token.path[1], m ? m[1] : ''];
+	}),
 );
 
 export const Spacing = {

@@ -1,6 +1,7 @@
 import { describe, expect, it } from 'vitest';
 
-import { render, screen, userEvent } from '../../../test/utils';
+import { render, screen, userEvent } from '@launchpad-ui/test-utils';
+
 import { Button, Dialog, DialogTrigger, OverlayArrow, Popover } from '../src';
 
 describe('Popover', () => {

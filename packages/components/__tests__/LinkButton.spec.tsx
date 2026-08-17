@@ -2,7 +2,8 @@ import { RouterProvider } from 'react-aria-components';
 import { MemoryRouter } from 'react-router';
 import { describe, expect, it, vi } from 'vitest';
 
-import { render, screen, userEvent } from '../../../test/utils';
+import { render, screen, userEvent } from '@launchpad-ui/test-utils';
+
 import { LinkButton } from '../src';
 
 describe('LinkButton', () => {

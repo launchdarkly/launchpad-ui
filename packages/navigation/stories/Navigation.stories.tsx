@@ -1,6 +1,7 @@
 import type { StoryObj } from '@storybook/react-vite';
 
-import { allModes } from '../../../.storybook/modes';
+import { allModes } from '@launchpad-ui/story-utils';
+
 import type { NavigationItemProps } from '../src';
 import { Navigation, NavigationItem } from '../src';
 

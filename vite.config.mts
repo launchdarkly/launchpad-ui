@@ -1,11 +1,10 @@
 /// <reference types="vitest" />
 
-import path from 'path';
-
 import { vanillaExtractPlugin } from '@vanilla-extract/vite-plugin';
 import react from '@vitejs/plugin-react-swc';
 import browserslist from 'browserslist';
 import { browserslistToTargets } from 'lightningcss';
+import path from 'path';
 import { PluginPure } from 'rollup-plugin-pure';
 import { defineConfig } from 'vite';
 import { configDefaults } from 'vitest/config';
@@ -83,7 +82,11 @@ export default defineConfig({
 				statements: 75,
 			},
 			include: ['**/src/**'],
-			exclude: [...configDefaults.exclude, '**/types.ts'],
+			// `test-utils` and `story-utils` are test and story scaffolding rather than
+			// shipped code, so they are measured by the suites that use them, not counted
+			// as coverage of their own. They used to sit outside `src/`, so including them
+			// would move these numbers for a reason unrelated to any component.
+			exclude: [...configDefaults.exclude, '**/types.ts', 'packages/test-utils/**', 'packages/story-utils/**'],
 		},
 	},
 	build: {

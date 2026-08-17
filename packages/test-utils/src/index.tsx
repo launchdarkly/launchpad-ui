@@ -1,3 +1,6 @@
+// This package must never depend on another @launchpad-ui/* package. Every
+// package in this workspace may depend on it for tests, so a dependency in
+// the other direction would create a cycle.
 import type { ReactElement } from 'react';
 import { cleanup, render } from '@testing-library/react';
 import { afterEach } from 'vitest';

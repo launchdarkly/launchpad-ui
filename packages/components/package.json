@@ -14,7 +14,9 @@
 	"module": "dist/index.es.js",
 	"source": "src/index.ts",
 	"files": [
-		"dist"
+		"dist",
+		"src/styles/base.css",
+		"src/styles/themes.css"
 	],
 	"publishConfig": {
 		"access": "public"
@@ -37,6 +39,10 @@
 		"class-variance-authority": "0.7.0"
 	},
 	"devDependencies": {
+		"@launchpad-ui/box": "workspace:~",
+		"@launchpad-ui/story-utils": "workspace:~",
+		"@launchpad-ui/test-utils": "workspace:~",
+		"@launchpad-ui/vars": "workspace:~",
 		"@react-aria/focus": "3.22.1",
 		"@react-aria/interactions": "3.28.1",
 		"@react-aria/utils": "3.34.1",
@@ -72,6 +78,8 @@
 			"require": "./dist/index.js"
 		},
 		"./package.json": "./package.json",
-		"./style.css": "./dist/style.css"
+		"./style.css": "./dist/style.css",
+		"./styles/base.css": "./src/styles/base.css",
+		"./styles/themes.css": "./src/styles/themes.css"
 	}
 }

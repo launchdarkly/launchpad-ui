@@ -1,6 +1,7 @@
 import type { StoryObj } from '@storybook/react-vite';
 
-import { Icon } from '../../icons/src';
+import { Icon } from '@launchpad-ui/icons';
+
 import { IconField, TextField } from '../src';
 
 export default {

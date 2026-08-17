@@ -1,4 +1,4 @@
-@import '../../../tokens/dist/media-queries.css';
+@import '@launchpad-ui/tokens/media-queries.css';
 
 :root,
 [data-theme='default'] {

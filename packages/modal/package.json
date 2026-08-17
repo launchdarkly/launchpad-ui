@@ -33,6 +33,9 @@
 		"framer-motion": "12.23.22"
 	},
 	"devDependencies": {
+		"@launchpad-ui/story-utils": "workspace:~",
+		"@launchpad-ui/test-utils": "workspace:~",
+		"@launchpad-ui/tooltip": "workspace:~",
 		"react": "19.2.8",
 		"react-aria": "3.50.0",
 		"react-dom": "19.2.8"

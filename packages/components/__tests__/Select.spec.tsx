@@ -1,8 +1,8 @@
 import { describe, expect, it } from 'vitest';
 
 import { Icon } from '@launchpad-ui/icons';
+import { render, screen, userEvent } from '@launchpad-ui/test-utils';
 
-import { render, screen, userEvent } from '../../../test/utils';
 import { Button, Label, ListBox, ListBoxItem, Popover, Select, SelectValue } from '../src';
 
 describe('Select', () => {
