@@ -35,6 +35,7 @@
 	},
 	"devDependencies": {
 		"@launchpad-ui/test-utils": "workspace:~",
+		"@launchpad-ui/tooltip": "workspace:~",
 		"react": "19.2.8",
 		"react-aria": "3.50.0",
 		"react-dom": "19.2.8"
