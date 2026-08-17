@@ -19,5 +19,12 @@
 		"@storybook/react-vite": "^10",
 		"react": "^19",
 		"storybook": "^10"
+	},
+	"exports": {
+		".": {
+			"types": "./src/index.tsx",
+			"default": "./src/index.tsx"
+		},
+		"./package.json": "./package.json"
 	}
 }
