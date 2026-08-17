@@ -1,5 +1,33 @@
 # @launchpad-ui/box
 
+## 0.4.9
+
+### Patch Changes
+
+- [#2009](https://github.com/launchdarkly/launchpad-ui/pull/2009) [`52a9e67`](https://github.com/launchdarkly/launchpad-ui/commit/52a9e67bdd97f51792d3bc64a0d48823f7f7e497) Thanks [@apucacao](https://github.com/apucacao)! - Broke a circular workspace dependency between `box`, `components` and `vars`. box's own
+  story used `@launchpad-ui/components` only for `Button`, which `@launchpad-ui/button`
+  already exports, so the story now imports `Button` from there and box no longer needs
+  components at all. With that edge gone, components can declare `@launchpad-ui/box` and
+  `@launchpad-ui/vars` as devDependencies, which its own stories already imported without
+  declaring. The stories that document tokens and icons using higher-level components moved
+  into components, the package that sits above the ones they document, so no lower-level
+  package needs a dependency that points back up. Story titles are unchanged, and no test or
+  story behaviour changed; the only visible effect is each package's published manifest.
+
+- [#2009](https://github.com/launchdarkly/launchpad-ui/pull/2009) [`52a9e67`](https://github.com/launchdarkly/launchpad-ui/commit/52a9e67bdd97f51792d3bc64a0d48823f7f7e497) Thanks [@apucacao](https://github.com/apucacao)! - Moved the shared test render helper each package's tests used into its own workspace
+  package, `@launchpad-ui/test-utils`, and declared it as a devDependency instead of
+  reaching for it by relative path. No test behaviour changed. The only visible effect
+  is a new devDependency entry in this package's published manifest, which is not
+  installed by consumers.
+
+- [#2009](https://github.com/launchdarkly/launchpad-ui/pull/2009) [`52a9e67`](https://github.com/launchdarkly/launchpad-ui/commit/52a9e67bdd97f51792d3bc64a0d48823f7f7e497) Thanks [@apucacao](https://github.com/apucacao)! - Declared, as a devDependency, the sibling workspace package each of these packages'
+  own stories or tests already imported by specifier. No test or story behaviour
+  changed. The only visible effect is a new devDependency entry in each package's
+  published manifest, which is not installed by consumers.
+- Updated dependencies [[`52a9e67`](https://github.com/launchdarkly/launchpad-ui/commit/52a9e67bdd97f51792d3bc64a0d48823f7f7e497)]:
+  - @launchpad-ui/tokens@0.19.0
+  - @launchpad-ui/vars@0.5.7
+
 ## 0.4.8
 
 ### Patch Changes

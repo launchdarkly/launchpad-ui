@@ -1,5 +1,35 @@
 # @launchpad-ui/navigation
 
+## 0.17.3
+
+### Patch Changes
+
+- [#2009](https://github.com/launchdarkly/launchpad-ui/pull/2009) [`52a9e67`](https://github.com/launchdarkly/launchpad-ui/commit/52a9e67bdd97f51792d3bc64a0d48823f7f7e497) Thanks [@apucacao](https://github.com/apucacao)! - Every generated CSS Module class name in this package gets a new hash prefix. One
+  stylesheet here now imports the shared media queries through
+  `@launchpad-ui/tokens/media-queries.css` instead of a path into that package's build
+  output, and scoped class names are hashed from stylesheet content, so changing that line
+  reseeds every class the package emits. Each class keeps its readable suffix and changes
+  only in the prefix.
+
+  The styles themselves are unchanged: comparing the built CSS with the hash prefixes renamed
+  consistently gives an identical file. The published JavaScript and CSS are generated
+  together and agree with each other, so importing this package normally is unaffected. If
+  you have a selector or a test that targets one of these generated class names directly, it
+  needs updating.
+
+- [#2009](https://github.com/launchdarkly/launchpad-ui/pull/2009) [`52a9e67`](https://github.com/launchdarkly/launchpad-ui/commit/52a9e67bdd97f51792d3bc64a0d48823f7f7e497) Thanks [@apucacao](https://github.com/apucacao)! - Moved the shared test render helper each package's tests used into its own workspace
+  package, `@launchpad-ui/test-utils`, and declared it as a devDependency instead of
+  reaching for it by relative path. No test behaviour changed. The only visible effect
+  is a new devDependency entry in this package's published manifest, which is not
+  installed by consumers.
+- Updated dependencies [[`52a9e67`](https://github.com/launchdarkly/launchpad-ui/commit/52a9e67bdd97f51792d3bc64a0d48823f7f7e497), [`52a9e67`](https://github.com/launchdarkly/launchpad-ui/commit/52a9e67bdd97f51792d3bc64a0d48823f7f7e497), [`52a9e67`](https://github.com/launchdarkly/launchpad-ui/commit/52a9e67bdd97f51792d3bc64a0d48823f7f7e497)]:
+  - @launchpad-ui/tokens@0.19.0
+  - @launchpad-ui/dropdown@0.10.20
+  - @launchpad-ui/icons@0.26.7
+  - @launchpad-ui/menu@0.16.22
+  - @launchpad-ui/popover@0.14.11
+  - @launchpad-ui/tooltip@0.12.9
+
 ## 0.17.2
 
 ### Patch Changes
