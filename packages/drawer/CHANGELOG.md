@@ -1,5 +1,39 @@
 # @launchpad-ui/drawer
 
+## 0.9.21
+
+### Patch Changes
+
+- [#2009](https://github.com/launchdarkly/launchpad-ui/pull/2009) [`52a9e67`](https://github.com/launchdarkly/launchpad-ui/commit/52a9e67bdd97f51792d3bc64a0d48823f7f7e497) Thanks [@apucacao](https://github.com/apucacao)! - Every generated CSS Module class name in this package gets a new hash prefix. One
+  stylesheet here now imports the shared media queries through
+  `@launchpad-ui/tokens/media-queries.css` instead of a path into that package's build
+  output, and scoped class names are hashed from stylesheet content, so changing that line
+  reseeds every class the package emits. Each class keeps its readable suffix and changes
+  only in the prefix.
+
+  The styles themselves are unchanged: comparing the built CSS with the hash prefixes renamed
+  consistently gives an identical file. The published JavaScript and CSS are generated
+  together and agree with each other, so importing this package normally is unaffected. If
+  you have a selector or a test that targets one of these generated class names directly, it
+  needs updating.
+
+- [#2009](https://github.com/launchdarkly/launchpad-ui/pull/2009) [`52a9e67`](https://github.com/launchdarkly/launchpad-ui/commit/52a9e67bdd97f51792d3bc64a0d48823f7f7e497) Thanks [@apucacao](https://github.com/apucacao)! - Moved the shared test render helper each package's tests used into its own workspace
+  package, `@launchpad-ui/test-utils`, and declared it as a devDependency instead of
+  reaching for it by relative path. No test behaviour changed. The only visible effect
+  is a new devDependency entry in this package's published manifest, which is not
+  installed by consumers.
+
+- [#2009](https://github.com/launchdarkly/launchpad-ui/pull/2009) [`52a9e67`](https://github.com/launchdarkly/launchpad-ui/commit/52a9e67bdd97f51792d3bc64a0d48823f7f7e497) Thanks [@apucacao](https://github.com/apucacao)! - Declared, as a devDependency, the sibling workspace package each of these packages'
+  own stories or tests already imported by specifier. No test or story behaviour
+  changed. The only visible effect is a new devDependency entry in each package's
+  published manifest, which is not installed by consumers.
+- Updated dependencies [[`52a9e67`](https://github.com/launchdarkly/launchpad-ui/commit/52a9e67bdd97f51792d3bc64a0d48823f7f7e497), [`52a9e67`](https://github.com/launchdarkly/launchpad-ui/commit/52a9e67bdd97f51792d3bc64a0d48823f7f7e497)]:
+  - @launchpad-ui/tokens@0.19.0
+  - @launchpad-ui/button@0.15.22
+  - @launchpad-ui/focus-trap@0.5.6
+  - @launchpad-ui/icons@0.26.7
+  - @launchpad-ui/portal@0.4.5
+
 ## 0.9.20
 
 ### Patch Changes

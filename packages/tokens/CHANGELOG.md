@@ -1,5 +1,11 @@
 # @launchpad-ui/tokens
 
+## 0.19.0
+
+### Minor Changes
+
+- [#2009](https://github.com/launchdarkly/launchpad-ui/pull/2009) [`52a9e67`](https://github.com/launchdarkly/launchpad-ui/commit/52a9e67bdd97f51792d3bc64a0d48823f7f7e497) Thanks [@apucacao](https://github.com/apucacao)! - Add a `@launchpad-ui/tokens/tokens.json` subpath export so consumers can read the flat token list without a path into the package's build output.
+
 ## 0.18.0
 
 ### Minor Changes

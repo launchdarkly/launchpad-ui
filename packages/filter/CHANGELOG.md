@@ -1,5 +1,22 @@
 # @launchpad-ui/filter
 
+## 0.11.21
+
+### Patch Changes
+
+- [#2009](https://github.com/launchdarkly/launchpad-ui/pull/2009) [`52a9e67`](https://github.com/launchdarkly/launchpad-ui/commit/52a9e67bdd97f51792d3bc64a0d48823f7f7e497) Thanks [@apucacao](https://github.com/apucacao)! - Moved the shared test render helper each package's tests used into its own workspace
+  package, `@launchpad-ui/test-utils`, and declared it as a devDependency instead of
+  reaching for it by relative path. No test behaviour changed. The only visible effect
+  is a new devDependency entry in this package's published manifest, which is not
+  installed by consumers.
+- Updated dependencies [[`52a9e67`](https://github.com/launchdarkly/launchpad-ui/commit/52a9e67bdd97f51792d3bc64a0d48823f7f7e497), [`52a9e67`](https://github.com/launchdarkly/launchpad-ui/commit/52a9e67bdd97f51792d3bc64a0d48823f7f7e497), [`52a9e67`](https://github.com/launchdarkly/launchpad-ui/commit/52a9e67bdd97f51792d3bc64a0d48823f7f7e497)]:
+  - @launchpad-ui/tokens@0.19.0
+  - @launchpad-ui/button@0.15.22
+  - @launchpad-ui/dropdown@0.10.20
+  - @launchpad-ui/icons@0.26.7
+  - @launchpad-ui/menu@0.16.22
+  - @launchpad-ui/tooltip@0.12.9
+
 ## 0.11.20
 
 ### Patch Changes
