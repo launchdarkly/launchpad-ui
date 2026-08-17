@@ -4,9 +4,9 @@ import { userEvent, within } from 'storybook/test';
 
 import { Button } from '@launchpad-ui/button';
 import { Icon } from '@launchpad-ui/icons';
+import { allModes, REACT_NODE_TYPE_DOCS } from '@launchpad-ui/story-utils';
 import { Tooltip } from '@launchpad-ui/tooltip';
 
-import { allModes, REACT_NODE_TYPE_DOCS } from '@launchpad-ui/story-utils';
 import { AbsoluteModalFooter, Modal, ModalBody, ModalFooter, ModalHeader } from '../src';
 
 export default {
