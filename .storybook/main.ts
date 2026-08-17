@@ -15,7 +15,7 @@ const config: StorybookConfig = {
 	core: {
 		disableTelemetry: true,
 	},
-	staticDirs: ['.', { from: '../packages/tokens/dist', to: '/static' }],
+	staticDirs: ['.', { from: `${getAbsolutePath('@launchpad-ui/tokens')}/dist`, to: '/static' }],
 	managerHead: (head) => `
 		${head}
 		<link rel="stylesheet" href="./manager.css" />
