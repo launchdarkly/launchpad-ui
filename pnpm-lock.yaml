@@ -306,12 +306,18 @@ importers:
         specifier: 0.7.0
         version: 0.7.0
     devDependencies:
+      '@launchpad-ui/box':
+        specifier: workspace:~
+        version: link:../box
       '@launchpad-ui/story-utils':
         specifier: workspace:~
         version: link:../story-utils
       '@launchpad-ui/test-utils':
         specifier: workspace:~
         version: link:../test-utils
+      '@launchpad-ui/vars':
+        specifier: workspace:~
+        version: link:../vars
       '@react-aria/focus':
         specifier: 3.22.1
         version: 3.22.1(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
@@ -888,9 +894,6 @@ importers:
         specifier: workspace:~
         version: link:../tokens
     devDependencies:
-      '@launchpad-ui/components':
-        specifier: workspace:~
-        version: link:../components
       '@vanilla-extract/css':
         specifier: 1.20.1
         version: 1.20.1

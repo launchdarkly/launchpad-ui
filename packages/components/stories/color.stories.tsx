@@ -1,7 +1,10 @@
 import { useEffect, useRef, useState } from 'react';
 
-import { Button, ToastRegion, toastQueue, Tooltip, TooltipTrigger } from '@launchpad-ui/components';
 import { vars } from '@launchpad-ui/vars';
+
+import { Button } from '../src/Button';
+import { ToastRegion, toastQueue } from '../src/Toast';
+import { Tooltip, TooltipTrigger } from '../src/Tooltip';
 
 import { type ComputedValue, getTokenHex, getTokenValue, TokenCode } from './colorTokens';
 
