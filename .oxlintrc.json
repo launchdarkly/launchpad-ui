@@ -393,7 +393,7 @@
 			}
 		},
 		{
-			"files": ["**/*-test.*", "**/*.scenarios.*", "**/__tests__/**", "test/**", "packages/test-utils/**"],
+			"files": ["**/*-test.*", "**/*.scenarios.*", "**/__tests__/**", "test/**", "packages/test-utils/src/index.tsx"],
 			"rules": {
 				"no-restricted-globals": "off",
 				"no-console": "off",

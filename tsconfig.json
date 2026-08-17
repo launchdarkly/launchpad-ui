@@ -18,6 +18,7 @@
 			"@launchpad-ui/overlay": ["./packages/overlay/src"],
 			"@launchpad-ui/popover": ["./packages/popover/src"],
 			"@launchpad-ui/portal": ["./packages/portal/src"],
+			"@launchpad-ui/story-utils": ["./packages/story-utils/src"],
 			"@launchpad-ui/table": ["./packages/table/src"],
 			"@launchpad-ui/test-utils": ["./packages/test-utils/src"],
 			"@launchpad-ui/tooltip": ["./packages/tooltip/src"],

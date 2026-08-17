@@ -19,7 +19,7 @@ import {
 	TextDocuments,
 } from 'vscode-languageserver/node';
 
-import tokens from '@launchpad-ui/tokens/dist/tokens.json';
+import tokens from '@launchpad-ui/tokens/tokens.json';
 
 const cssLanguageService = getCSSLanguageService();
 
