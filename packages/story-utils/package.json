@@ -1,0 +1,23 @@
+{
+	"name": "@launchpad-ui/story-utils",
+	"version": "0.0.0",
+	"private": true,
+	"description": "Shared decorators and viewport modes for LaunchPad stories.",
+	"repository": "launchdarkly/launchpad-ui",
+	"license": "Apache-2.0",
+	"main": "src/index.tsx",
+	"types": "src/index.tsx",
+	"source": "src/index.tsx",
+	"scripts": {
+		"lint": "exit 0",
+		"test": "exit 0"
+	},
+	"dependencies": {
+		"deepmerge": "4.3.1"
+	},
+	"peerDependencies": {
+		"@storybook/react-vite": "^10",
+		"react": "^19",
+		"storybook": "^10"
+	}
+}

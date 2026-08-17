@@ -6,8 +6,7 @@ import { Button } from '@launchpad-ui/button';
 import { Icon } from '@launchpad-ui/icons';
 import { Tooltip } from '@launchpad-ui/tooltip';
 
-import { allModes } from '../../../.storybook/modes';
-import { REACT_NODE_TYPE_DOCS } from '../../../.storybook/utils';
+import { allModes, REACT_NODE_TYPE_DOCS } from '@launchpad-ui/story-utils';
 import { AbsoluteModalFooter, Modal, ModalBody, ModalFooter, ModalHeader } from '../src';
 
 export default {

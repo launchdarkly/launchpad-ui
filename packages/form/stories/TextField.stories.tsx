@@ -1,6 +1,6 @@
 import type { Decorator, StoryFn, StoryObj } from '@storybook/react-vite';
 
-import { createWithClassesDecorator, PseudoClasses } from '../../../.storybook/utils';
+import { createWithClassesDecorator, PseudoClasses } from '@launchpad-ui/story-utils';
 import { TextField } from '../src';
 
 import './TextArea.stories.css';

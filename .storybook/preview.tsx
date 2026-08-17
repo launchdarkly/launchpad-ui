@@ -12,7 +12,7 @@ import { RouterProvider as AriaRouterProvider } from '../packages/components/src
 import { useHref } from '../packages/components/src/utils';
 
 import custom from './custom.svg';
-import { allModes } from './modes';
+import { allModes } from '@launchpad-ui/story-utils';
 import { darkTheme, lightTheme } from './themes';
 
 import '../packages/components/src/styles/base.css';

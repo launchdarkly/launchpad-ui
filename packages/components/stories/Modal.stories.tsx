@@ -5,7 +5,7 @@ import { expect, userEvent, waitFor, within } from 'storybook/test';
 
 import { Alert } from '@launchpad-ui/components';
 
-import { allModes } from '../../../.storybook/modes';
+import { allModes } from '@launchpad-ui/story-utils';
 import { Button } from '../src/Button';
 import { Dialog, DialogTrigger } from '../src/Dialog';
 import { Heading } from '../src/Heading';

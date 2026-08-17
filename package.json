@@ -41,6 +41,7 @@
 		"@commitlint/config-conventional": "20.5.3",
 		"@commitlint/types": "20.5.0",
 		"@figma/code-connect": "1.4.7",
+		"@launchpad-ui/story-utils": "workspace:~",
 		"@storybook/addon-a11y": "10.2.19",
 		"@storybook/addon-designs": "11.1.4",
 		"@storybook/addon-docs": "10.2.19",
