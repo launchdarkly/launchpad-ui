@@ -285,6 +285,15 @@
 					"lineHeight": "{lineHeight.editorial.snug}",
 					"letterSpacing": "{letterSpacing.editorial.tight-2px}"
 				}
+			},
+			"h4": {
+				"$value": {
+					"fontFamily": "{fontFamily.sora}",
+					"fontWeight": "{fontWeight.editorial.bold}",
+					"fontSize": "{fontSize.500}",
+					"lineHeight": "{lineHeight.400}",
+					"letterSpacing": "{letterSpacing.editorial.tight-1px}"
+				}
 			}
 		}
 	}
