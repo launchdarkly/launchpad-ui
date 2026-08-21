@@ -3,7 +3,7 @@ import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { act, fireEvent, render, screen, userEvent } from '@launchpad-ui/test-utils';
 
 import type { MediaItem } from '../src';
-import { ButtonGroup, Heading, LinkButton, OnboardingEmptyState, Text } from '../src';
+import { OnboardingEmptyState } from '../src';
 
 const stubMatchMedia = (matches: boolean) => {
 	globalThis.matchMedia = vi.fn().mockReturnValue({
@@ -26,18 +26,13 @@ const carouselMedia: MediaItem[] = [
 	{ src: 'c.png', alt: 'Evaluate', caption: 'Evaluate' },
 ];
 
-const Content = () => (
+const heading = 'Release code safely';
+const description = (
 	<>
-		<Heading size="large">Release code safely</Heading>
-		<Text>Control how and when changes reach users.</Text>
-		<ButtonGroup>
-			<LinkButton variant="primary" href="https://example.com/start">
-				Get started
-			</LinkButton>
-			<LinkButton href="https://example.com/docs">See an example</LinkButton>
-		</ButtonGroup>
+		Control how and when changes reach users. <a href="https://example.com/docs">Learn more</a>
 	</>
 );
+const primaryAction = { label: 'Get started', href: 'https://example.com/start' };
 
 const selectedTabIndex = () =>
 	screen.getAllByRole('tab').findIndex((tab) => tab.getAttribute('aria-selected') === 'true');
@@ -52,44 +47,90 @@ describe('OnboardingEmptyState', () => {
 		vi.restoreAllMocks();
 	});
 
-	it('renders slotted heading (h1), body, and CTAs', () => {
+	it('renders the heading as an h1 with the given text', () => {
+		render(<OnboardingEmptyState heading={heading} media={singleMedia} primaryAction={primaryAction} />);
+		expect(screen.getByRole('heading', { level: 1, name: heading })).toBeVisible();
+	});
+
+	it('renders the description including an inline link', () => {
 		render(
-			<OnboardingEmptyState media={singleMedia}>
-				<Content />
-			</OnboardingEmptyState>,
+			<OnboardingEmptyState
+				heading={heading}
+				description={description}
+				media={singleMedia}
+				primaryAction={primaryAction}
+			/>,
 		);
-		expect(screen.getByRole('heading', { level: 1, name: 'Release code safely' })).toBeVisible();
-		expect(screen.getByText('Control how and when changes reach users.')).toBeVisible();
+		expect(screen.getByText(/Control how and when changes reach users\./)).toBeVisible();
+		expect(screen.getByRole('link', { name: 'Learn more' })).toHaveAttribute('href', 'https://example.com/docs');
+	});
+
+	it('always renders the primary action', () => {
+		render(<OnboardingEmptyState heading={heading} media={singleMedia} primaryAction={primaryAction} />);
 		expect(screen.getByRole('link', { name: 'Get started' })).toBeVisible();
-		expect(screen.getByRole('link', { name: 'See an example' })).toBeVisible();
+	});
+
+	it('renders an action with href as an anchor', () => {
+		render(
+			<OnboardingEmptyState
+				heading={heading}
+				media={singleMedia}
+				primaryAction={{ label: 'Get started', href: 'https://example.com/start' }}
+			/>,
+		);
+		expect(screen.getByRole('link', { name: 'Get started' })).toHaveAttribute('href', 'https://example.com/start');
+	});
+
+	it('renders an action with onPress as a button and fires the handler on click', async () => {
+		const onPress = vi.fn();
+		const user = userEvent.setup();
+		render(
+			<OnboardingEmptyState
+				heading={heading}
+				media={singleMedia}
+				primaryAction={{ label: 'Create project', onPress }}
+			/>,
+		);
+		const button = screen.getByRole('button', { name: 'Create project' });
+		expect(button).toBeVisible();
+		await user.click(button);
+		expect(onPress).toHaveBeenCalledTimes(1);
+	});
+
+	it('renders secondaryActions as default-variant buttons', () => {
+		render(
+			<OnboardingEmptyState
+				heading={heading}
+				media={singleMedia}
+				primaryAction={primaryAction}
+				secondaryActions={[
+					{ label: 'See an example', href: 'https://example.com/docs' },
+					{ label: 'Contact sales', onPress: () => {} },
+				]}
+			/>,
+		);
+		const secondaryLink = screen.getByRole('link', { name: 'See an example' });
+		expect(secondaryLink).toHaveAttribute('data-lp-variant', 'default');
+		const secondaryButton = screen.getByRole('button', { name: 'Contact sales' });
+		expect(secondaryButton).toHaveAttribute('data-lp-variant', 'default');
+		// The primary action keeps the primary variant.
+		expect(screen.getByRole('link', { name: 'Get started' })).toHaveAttribute('data-lp-variant', 'primary');
 	});
 
 	it('renders a single static image with no carousel controls when media has one item', () => {
-		render(
-			<OnboardingEmptyState media={singleMedia}>
-				<Content />
-			</OnboardingEmptyState>,
-		);
+		render(<OnboardingEmptyState heading={heading} media={singleMedia} primaryAction={primaryAction} />);
 		expect(screen.queryByRole('tablist')).not.toBeInTheDocument();
 		expect(screen.getAllByAltText('Feature targeting').length).toBeGreaterThan(0);
 	});
 
 	it('renders nothing in the gallery when media is empty', () => {
-		render(
-			<OnboardingEmptyState media={[]}>
-				<Content />
-			</OnboardingEmptyState>,
-		);
+		render(<OnboardingEmptyState heading={heading} media={[]} primaryAction={primaryAction} />);
 		expect(screen.queryByRole('tablist')).not.toBeInTheDocument();
 		expect(screen.queryByRole('img')).not.toBeInTheDocument();
 	});
 
 	it('renders a carousel with one tab per slide, first selected', () => {
-		render(
-			<OnboardingEmptyState media={carouselMedia}>
-				<Content />
-			</OnboardingEmptyState>,
-		);
+		render(<OnboardingEmptyState heading={heading} media={carouselMedia} primaryAction={primaryAction} />);
 		expect(screen.getByRole('tablist', { name: 'Gallery navigation' })).toBeVisible();
 		const tabs = screen.getAllByRole('tab');
 		expect(tabs).toHaveLength(3);
@@ -101,22 +142,14 @@ describe('OnboardingEmptyState', () => {
 
 	it('selects a slide when its dot is clicked', async () => {
 		const user = userEvent.setup();
-		render(
-			<OnboardingEmptyState media={carouselMedia}>
-				<Content />
-			</OnboardingEmptyState>,
-		);
+		render(<OnboardingEmptyState heading={heading} media={carouselMedia} primaryAction={primaryAction} />);
 		await user.click(screen.getAllByRole('tab')[2]);
 		expect(selectedTabIndex()).toBe(2);
 	});
 
 	it('moves selection with the arrow keys', async () => {
 		const user = userEvent.setup();
-		render(
-			<OnboardingEmptyState media={carouselMedia}>
-				<Content />
-			</OnboardingEmptyState>,
-		);
+		render(<OnboardingEmptyState heading={heading} media={carouselMedia} primaryAction={primaryAction} />);
 		await user.click(screen.getAllByRole('tab')[0]);
 		await user.keyboard('{ArrowRight}');
 		expect(selectedTabIndex()).toBe(1);
@@ -124,11 +157,7 @@ describe('OnboardingEmptyState', () => {
 
 	it('auto-advances after the interval', () => {
 		vi.useFakeTimers();
-		render(
-			<OnboardingEmptyState media={carouselMedia}>
-				<Content />
-			</OnboardingEmptyState>,
-		);
+		render(<OnboardingEmptyState heading={heading} media={carouselMedia} primaryAction={primaryAction} />);
 		expect(selectedTabIndex()).toBe(0);
 		act(() => {
 			vi.advanceTimersByTime(7000);
@@ -138,11 +167,7 @@ describe('OnboardingEmptyState', () => {
 
 	it('pauses auto-advance while hovered and resumes on unhover', () => {
 		vi.useFakeTimers();
-		render(
-			<OnboardingEmptyState media={carouselMedia}>
-				<Content />
-			</OnboardingEmptyState>,
-		);
+		render(<OnboardingEmptyState heading={heading} media={carouselMedia} primaryAction={primaryAction} />);
 		const gallery = screen.getByRole('tablist').parentElement?.parentElement as HTMLElement;
 		act(() => {
 			fireEvent.mouseEnter(gallery);
@@ -164,11 +189,7 @@ describe('OnboardingEmptyState', () => {
 	it('does not auto-advance under reduced motion', () => {
 		stubMatchMedia(true);
 		vi.useFakeTimers();
-		render(
-			<OnboardingEmptyState media={carouselMedia}>
-				<Content />
-			</OnboardingEmptyState>,
-		);
+		render(<OnboardingEmptyState heading={heading} media={carouselMedia} primaryAction={primaryAction} />);
 		act(() => {
 			vi.advanceTimersByTime(7000);
 		});
