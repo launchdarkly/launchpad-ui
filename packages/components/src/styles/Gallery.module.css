@@ -11,7 +11,7 @@
 	width: 100%;
 	overflow: hidden;
 	border-radius: var(--lp-border-radius-large);
-	border: 1px solid var(--lp-color-bg-interactive-primary-base);
+	border: 1px solid var(--lp-color-fill-ui-primary);
 }
 
 .image {

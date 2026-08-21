@@ -1,8 +1,8 @@
 import type { Key } from 'react';
 import { useCallback, useEffect, useReducer, useRef, useState } from 'react';
+import { Tab, TabList, TabPanel, Tabs } from 'react-aria-components/Tabs';
 import { cx } from 'class-variance-authority';
 
-import { Tab, TabList, TabPanel, Tabs } from './Tabs';
 import { useMedia } from './utils';
 
 import styles from './styles/Gallery.module.css';

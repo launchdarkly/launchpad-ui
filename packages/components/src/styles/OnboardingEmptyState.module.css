@@ -32,7 +32,9 @@
 	font: var(--lp-text-editorial-h3) !important;
 	letter-spacing: var(--lp-letter-spacing-editorial-tight-1px);
 	color: var(--lp-color-text-ui-primary-base);
-	white-space: normal;
+	white-space: normal !important;
+	overflow: visible !important;
+	text-overflow: unset !important;
 	overflow-wrap: break-word;
 	word-break: break-word;
 }
