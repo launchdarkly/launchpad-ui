@@ -68,22 +68,26 @@
 
 .default {
 	color: var(--lp-color-text-ui-secondary);
-	background-color: var(--lp-color-bg-ui-tertiary);
+	background-color: var(--lp-color-bg-ui-secondary);
+	border: 1px solid var(--lp-color-border-ui-primary);
 }
 
 .success {
 	color: var(--lp-color-text-feedback-success);
 	background-color: var(--lp-color-bg-feedback-success);
+	border: 1px solid var(--lp-color-border-feedback-success);
 }
 
 .error {
 	color: var(--lp-color-text-feedback-error);
 	background-color: var(--lp-color-bg-feedback-error);
+	border: 1px solid var(--lp-color-border-feedback-error);
 }
 
 .warning {
 	color: var(--lp-color-text-feedback-warning);
 	background-color: var(--lp-color-bg-feedback-warning);
+	border: 1px solid var(--lp-color-border-feedback-warning);
 }
 
 .beta {
@@ -99,9 +103,11 @@
 .new {
 	color: var(--lp-color-text-feedback-success);
 	background-color: var(--lp-color-bg-feedback-success);
+	border: 1px solid var(--lp-color-border-feedback-success);
 }
 
 .info {
 	color: var(--lp-color-text-feedback-info);
 	background-color: var(--lp-color-bg-feedback-info);
+	border: 1px solid var(--lp-color-border-feedback-info);
 }

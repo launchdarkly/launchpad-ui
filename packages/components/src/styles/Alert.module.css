@@ -1,28 +1,28 @@
 /* Temporary color aliases for Alerts. This block should be removed when the new color system is implemented. */
 :root,
 [data-theme='default'] {
-	--alert-color-border-neutral: var(--lp-color-gray-200);
-	--alert-color-bg-neutral: var(--lp-color-gray-0);
-	--alert-color-border-error: var(--lp-color-red-200);
-	--alert-color-bg-error: var(--lp-color-red-0);
-	--alert-color-border-info: var(--lp-color-blue-200);
-	--alert-color-bg-info: var(--lp-color-blue-0);
-	--alert-color-border-success: var(--lp-color-green-200);
-	--alert-color-bg-success: var(--lp-color-green-0);
-	--alert-color-border-warning: var(--lp-color-yellow-200);
-	--alert-color-bg-warning: var(--lp-color-yellow-0);
+	--alert-color-border-neutral: var(--lp-color-border-ui-primary);
+	--alert-color-bg-neutral: var(--lp-color-bg-ui-secondary);
+	--alert-color-border-error: var(--lp-color-border-feedback-error);
+	--alert-color-bg-error: var(--lp-color-bg-feedback-error);
+	--alert-color-border-info: var(--lp-color-border-feedback-info);
+	--alert-color-bg-info: var(--lp-color-bg-feedback-info);
+	--alert-color-border-success: var(--lp-color-border-feedback-success);
+	--alert-color-bg-success: var(--lp-color-bg-feedback-success);
+	--alert-color-border-warning: var(--lp-color-border-feedback-warning);
+	--alert-color-bg-warning: var(--lp-color-bg-feedback-warning);
 }
 [data-theme='dark'] {
-	--alert-color-border-neutral: var(--lp-color-gray-800);
-	--alert-color-bg-neutral: var(--lp-color-gray-900);
-	--alert-color-border-error: var(--lp-color-red-700);
-	--alert-color-bg-error: #391620;
-	--alert-color-border-info: var(--lp-color-blue-700);
-	--alert-color-bg-info: #192142;
-	--alert-color-border-success: var(--lp-color-green-700);
-	--alert-color-bg-success: #14260d;
-	--alert-color-border-warning: var(--lp-color-yellow-800);
-	--alert-color-bg-warning: var(--lp-color-yellow-900);
+	--alert-color-border-neutral: var(--lp-color-border-ui-primary);
+	--alert-color-bg-neutral: var(--lp-color-bg-ui-secondary);
+	--alert-color-border-error: var(--lp-color-border-feedback-error);
+	--alert-color-bg-error: var(--lp-color-bg-feedback-error);
+	--alert-color-border-info: var(--lp-color-border-feedback-info);
+	--alert-color-bg-info: var(--lp-color-bg-feedback-info);
+	--alert-color-border-success: var(--lp-color-border-feedback-success);
+	--alert-color-bg-success: var(--lp-color-bg-feedback-success);
+	--alert-color-border-warning: var(--lp-color-border-feedback-warning);
+	--alert-color-bg-warning: var(--lp-color-bg-feedback-warning);
 }
 
 /* Shared styles for both the block and inline variants */
