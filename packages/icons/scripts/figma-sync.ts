@@ -19,33 +19,32 @@ import process from 'node:process';
 import { setTimeout as delay } from 'node:timers/promises';
 import { optimize } from 'svgo';
 
-// Load .env file if it exists
-try {
-	const dotenvPath = path.resolve(process.cwd(), '.env');
-	if (fs.existsSync(dotenvPath)) {
-		// dotenv is optional and may not be installed; importing it dynamically via a non-literal
-		// specifier here (rather than a static ESM import) is what lets the surrounding try/catch
-		// degrade gracefully when it's absent, and avoids a `Cannot find module 'dotenv'` type error
-		// for a package that's intentionally not a declared dependency.
-		const dotenvSpecifier = 'dotenv';
-		const dotenv = await import(dotenvSpecifier);
-		dotenv.default?.config?.();
+// oxlint no longer allows require(), and tsx compiles this .ts file as CommonJS
+// (no "type": "module" in package.json), which cannot use top-level await.
+// Dynamic import() is therefore wrapped in this async function and awaited from main().
+async function loadOptionalDotenv(): Promise<void> {
+	try {
+		const dotenvPath = path.resolve(process.cwd(), '.env');
+		if (fs.existsSync(dotenvPath)) {
+			// dotenv is optional and may not be installed; importing it dynamically via a non-literal
+			// specifier here (rather than a static ESM import) is what lets the surrounding try/catch
+			// degrade gracefully when it's absent, and avoids a `Cannot find module 'dotenv'` type error
+			// for a package that's intentionally not a declared dependency.
+			const dotenvSpecifier = 'dotenv';
+			const dotenv = await import(dotenvSpecifier);
+			dotenv.default?.config?.();
+		}
+	} catch {
+		/* ignore */
 	}
-} catch {
-	/* ignore */
 }
 
 // Figma API constants
-const FIGMA_ACCESS_TOKEN = process.env.FIGMA_ACCESS_TOKEN;
 const FIGMA_FILE_KEY = '98HKKXL2dTle29ikJ3tzk7';
 const FIGMA_NODE_ID = '1:1483';
-const DRY_RUN = process.env.DRY_RUN === '1';
-const FORCE_SYNC = process.env.FORCE_SYNC === '1';
-
-if (!FIGMA_ACCESS_TOKEN || !FIGMA_FILE_KEY) {
-	console.error('Missing FIGMA_ACCESS_TOKEN.');
-	process.exit(1);
-}
+let FIGMA_ACCESS_TOKEN: string | undefined;
+let DRY_RUN = false;
+let FORCE_SYNC = false;
 
 const ROOT = path.resolve(process.cwd());
 const SPRITE_PATH = path.join(ROOT, 'src/img/sprite.svg');
@@ -386,6 +385,16 @@ async function mapPool<T, R>(items: T[], limit: number, worker: (item: T, idx: n
 
 // Main: bring it all together to generate icon sprite and type files
 async function main(): Promise<void> {
+	await loadOptionalDotenv();
+	FIGMA_ACCESS_TOKEN = process.env.FIGMA_ACCESS_TOKEN;
+	DRY_RUN = process.env.DRY_RUN === '1';
+	FORCE_SYNC = process.env.FORCE_SYNC === '1';
+
+	if (!FIGMA_ACCESS_TOKEN || !FIGMA_FILE_KEY) {
+		console.error('Missing FIGMA_ACCESS_TOKEN.');
+		process.exit(1);
+	}
+
 	// 1) Get icon components
 	const root = await fetchIconRoot();
 	const components = collectComponents(root);
