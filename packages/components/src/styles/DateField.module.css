@@ -24,7 +24,9 @@
 
 	&:is([data-focus-visible], [data-focused]) {
 		background-color: var(--lp-color-bg-interactive-primary-base);
-		color: var(--lp-color-text-interactive-primary-base);
+		/* Must invert with the theme: caret-color is transparent below, so if the
+		   digits matched the fill the focused segment would render blank. */
+		color: var(--lp-color-text-ui-primary-inverted);
 		caret-color: transparent;
 		border-radius: var(--lp-border-radius-regular);
 	}
