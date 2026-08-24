@@ -10,6 +10,10 @@ const meta: Meta<typeof Switch> = {
 			control: 'select',
 			options: ['default', 'primary'],
 		},
+		labelPosition: {
+			control: 'inline-radio',
+			options: ['start', 'end'],
+		},
 	},
 	parameters: {
 		figma: {
@@ -53,4 +57,12 @@ export const PrimaryHideLabels: Story = {
 
 export const WithChildren: Story = {
 	args: { children: 'Dark mode' },
+};
+
+export const LabelStart: Story = {
+	args: { children: 'Dark mode', labelPosition: 'start' },
+};
+
+export const LabelStartHideLabels: Story = {
+	args: { children: 'Dark mode', labelPosition: 'start', switchLabels: false },
 };
