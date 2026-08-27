@@ -11,6 +11,14 @@ const meta: Meta<typeof ToggleButtonGroup> = {
 	subcomponents: { ToggleButton } as Record<string, ComponentType<unknown>>,
 	title: 'Components/Buttons/ToggleButton/ToggleButtonGroupElevated',
 	tags: ['autodocs'],
+	parameters: {
+		docs: {
+			description: {
+				component:
+					'Unlike the default appearance, an elevated toggle button shows no icon when selected — the raised surface already makes the selection legible. Pass `selectedIcon` explicitly to opt back in.',
+			},
+		},
+	},
 };
 
 export default meta;
