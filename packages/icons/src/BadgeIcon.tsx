@@ -1,4 +1,5 @@
 import type { HTMLAttributes } from 'react';
+import { createContext, useContext } from 'react';
 import type { VariantProps } from 'class-variance-authority';
 import { cva } from 'class-variance-authority';
 
@@ -41,13 +42,22 @@ const badge = cva(styles.base, {
 
 interface BadgeIconProps extends HTMLAttributes<HTMLDivElement>, VariantProps<typeof badge> {}
 
+/**
+ * Lets a composing component drive the badge size. As with `IconContext`, the context value takes
+ * precedence over the prop so the badge cannot drift out of scale with its container.
+ */
+const BadgeIconContext = createContext<BadgeIconProps>({});
+
 const BadgeIcon = ({ children, className, size = 'medium', variant = 'default', ...props }: BadgeIconProps) => {
+	const ctx = useContext(BadgeIconContext);
+	const resolvedSize = ctx.size || size;
+
 	return (
-		<div className={badge({ size, variant, className })} {...props}>
-			<IconContext.Provider value={{ size }}>{children}</IconContext.Provider>
+		<div className={badge({ size: resolvedSize, variant, className })} {...props}>
+			<IconContext.Provider value={{ size: resolvedSize }}>{children}</IconContext.Provider>
 		</div>
 	);
 };
 
-export { BadgeIcon };
+export { BadgeIcon, BadgeIconContext };
 export type { BadgeIconProps };
