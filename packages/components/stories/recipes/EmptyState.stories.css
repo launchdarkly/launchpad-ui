@@ -1,4 +1,12 @@
 /*
+ * Medium and small empty states have no padding of their own, so the docs examples stand in for the
+ * card, panel, or table body that would normally provide it.
+ */
+.lp-empty-state-docs-inset {
+	padding: var(--lp-spacing-700);
+}
+
+/*
  * Counteract Storybook docs prose color overrides for EmptyState autodocs embeds.
  * Target only the description Text (direct child span of EmptyState), not Button labels.
  */

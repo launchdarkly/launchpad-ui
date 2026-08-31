@@ -22,7 +22,7 @@ const meta: Meta<typeof EmptyState> = {
 	],
 	parameters: {
 		figma: {
-			design: 'https://www.figma.com/design/98HKKXL2dTle29ikJ3tzk7/%F0%9F%9A%80-LaunchPad?node-id=10559-2269&m=dev',
+			design: 'https://www.figma.com/design/98HKKXL2dTle29ikJ3tzk7/%F0%9F%9A%80-LaunchPad?node-id=29920-114&m=dev',
 		},
 		docs: {
 			description: {
@@ -30,6 +30,14 @@ const meta: Meta<typeof EmptyState> = {
 An empty state displays an illustration and a message, usually when there is no content to show.
 
 Follows the [React Spectrum IllustratedMessage](https://react-spectrum.adobe.com/v3/IllustratedMessage.html) composition pattern.
+
+An empty state should have a \`BadgeIcon\`, a short heading with no ending punctuation, a description
+that highlights the value of the feature, and a button that creates the object — or, when it can't be
+created in the UI, links to the setup documentation.
+
+\`EmptyState\` scales its \`BadgeIcon\`, heading, description, and buttons together, so set \`size\` on
+\`EmptyState\` rather than on the children. Spacing is the same at every size; only the type scale and
+the control sizes change.
 				`,
 			},
 		},
@@ -40,7 +48,7 @@ Follows the [React Spectrum IllustratedMessage](https://react-spectrum.adobe.com
 		},
 		size: {
 			control: 'inline-radio',
-			options: ['large'],
+			options: ['large', 'medium', 'small'],
 		},
 	},
 };
@@ -52,7 +60,57 @@ type Story = StoryObj<typeof EmptyState>;
 export const Default: Story = {
 	render: () => (
 		<EmptyState>
-			<BadgeIcon size="large" aria-hidden>
+			<BadgeIcon aria-hidden>
+				<Icon name="crown" />
+			</BadgeIcon>
+			<Heading>No projects yet</Heading>
+			<Text>Create a project to get started.</Text>
+			<Button variant="primary">Create project</Button>
+		</EmptyState>
+	),
+};
+
+/**
+ * Use `large` for full-page and main-content empty states. It is the default size and the only one
+ * with padding of its own.
+ */
+export const Large: Story = {
+	render: () => (
+		<EmptyState size="large" hasBorder>
+			<BadgeIcon aria-hidden>
+				<Icon name="crown" />
+			</BadgeIcon>
+			<Heading>No projects yet</Heading>
+			<Text>Create a project to get started.</Text>
+			<Button variant="primary">Create project</Button>
+		</EmptyState>
+	),
+};
+
+/**
+ * Use `medium` inside cards, panels, and table bodies, where `large` would dominate the layout.
+ * Medium and small carry no padding, so the surrounding container sets it.
+ */
+export const Medium: Story = {
+	render: () => (
+		<EmptyState size="medium" hasBorder className="lp-empty-state-docs-inset">
+			<BadgeIcon aria-hidden>
+				<Icon name="crown" />
+			</BadgeIcon>
+			<Heading>No projects yet</Heading>
+			<Text>Create a project to get started.</Text>
+			<Button variant="primary">Create project</Button>
+		</EmptyState>
+	),
+};
+
+/**
+ * Use `small` in dense containers where `medium` still crowds the layout.
+ */
+export const Small: Story = {
+	render: () => (
+		<EmptyState size="small" hasBorder className="lp-empty-state-docs-inset">
+			<BadgeIcon aria-hidden>
 				<Icon name="crown" />
 			</BadgeIcon>
 			<Heading>No projects yet</Heading>
@@ -65,7 +123,7 @@ export const Default: Story = {
 export const Bordered: Story = {
 	render: () => (
 		<EmptyState hasBorder>
-			<BadgeIcon size="large" aria-hidden>
+			<BadgeIcon aria-hidden>
 				<Icon name="crown" />
 			</BadgeIcon>
 			<Heading>No projects yet</Heading>
@@ -78,7 +136,7 @@ export const Bordered: Story = {
 export const WithSecondaryAction: Story = {
 	render: () => (
 		<EmptyState>
-			<BadgeIcon size="large" aria-hidden>
+			<BadgeIcon aria-hidden>
 				<Icon name="crown" />
 			</BadgeIcon>
 			<Heading>No projects yet</Heading>

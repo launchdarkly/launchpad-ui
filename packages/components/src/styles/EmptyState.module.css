@@ -1,4 +1,8 @@
 .base {
+	/* Large is the default size, so its type scale lives here and .medium / .small override it. */
+	--empty-state-heading-font: var(--lp-text-heading-1-semibold);
+	--empty-state-description-font: var(--lp-text-body-1-regular);
+
 	display: grid;
 	grid-template-areas:
 		'illustration'
@@ -9,7 +13,7 @@
 	grid-template-rows:
 		min-content
 		min-content
-		var(--lp-size-8)
+		var(--lp-spacing-300)
 		min-content
 		min-content;
 	grid-template-columns: 1fr;
@@ -20,11 +24,22 @@
 /* BadgeIcon is the first direct child div in the composition pattern. */
 .base > div:first-child:not([role='group']) {
 	grid-area: illustration;
-	margin-block-end: var(--lp-size-24);
+	margin-block-end: var(--lp-spacing-700);
 }
 
 .large {
 	padding: var(--lp-spacing-800);
+}
+
+/* Medium and small carry no padding; the surrounding card, panel, or table body owns it. */
+.medium {
+	--empty-state-heading-font: var(--lp-text-heading-2-medium);
+	--empty-state-description-font: var(--lp-text-body-2-regular);
+}
+
+.small {
+	--empty-state-heading-font: var(--lp-text-heading-3-medium);
+	--empty-state-description-font: var(--lp-text-small-1-regular);
 }
 
 .bordered {
@@ -34,7 +49,7 @@
 
 .heading {
 	grid-area: heading;
-	font: var(--lp-text-heading-1-semibold) !important;
+	font: var(--empty-state-heading-font) !important;
 	margin: 0;
 	white-space: normal;
 	overflow: visible;
@@ -43,18 +58,18 @@
 
 .description {
 	grid-area: content;
-	font: var(--lp-text-body-1-regular) !important;
+	font: var(--empty-state-description-font) !important;
 	color: var(--lp-color-text-ui-secondary);
 	margin: 0;
 }
 
 .actions {
 	grid-area: actions;
-	margin-block-start: var(--lp-size-24);
+	margin-block-start: var(--lp-spacing-700);
 }
 
 /* Direct child buttons participate in the grid; nested buttons inside ButtonGroup do not. */
 .base > button {
 	grid-area: actions;
-	margin-block-start: var(--lp-size-24);
+	margin-block-start: var(--lp-spacing-700);
 }
