@@ -49,11 +49,11 @@
 		"test": "vitest run"
 	},
 	"devDependencies": {
-		"@figma/rest-api-spec": "0.32.0",
+		"@figma/rest-api-spec": "0.42.0",
 		"@testing-library/react": "16.3.2",
-		"axios": "1.18.0",
+		"axios": "1.20.0",
 		"json-to-ts": "2.1.0",
-		"style-dictionary": "5.4.4",
+		"style-dictionary": "5.5.2",
 		"tsx": "4.23.8"
 	},
 	"status": "beta"

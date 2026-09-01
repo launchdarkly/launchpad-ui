@@ -24,12 +24,12 @@
 		"test": "vitest run --coverage"
 	},
 	"dependencies": {
-		"@floating-ui/dom": "1.7.4",
+		"@floating-ui/dom": "1.8.0",
 		"@launchpad-ui/focus-trap": "workspace:~",
 		"@launchpad-ui/overlay": "workspace:~",
 		"@launchpad-ui/tokens": "workspace:~",
 		"classix": "2.2.0",
-		"framer-motion": "12.23.22"
+		"framer-motion": "12.43.0"
 	},
 	"devDependencies": {
 		"@launchpad-ui/button": "workspace:~",
