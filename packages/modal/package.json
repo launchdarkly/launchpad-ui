@@ -30,7 +30,7 @@
 		"@launchpad-ui/portal": "workspace:~",
 		"@launchpad-ui/tokens": "workspace:~",
 		"classix": "2.2.0",
-		"framer-motion": "12.23.22"
+		"motion": "12.23.22"
 	},
 	"devDependencies": {
 		"@launchpad-ui/story-utils": "workspace:~",
