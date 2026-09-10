@@ -42,3 +42,5 @@ strictPeerDependencies: true
 minimumReleaseAgeExclude:
   # Renovate security update: axios@1.15.2
   - axios@1.15.2
+  # Renovate security update: svgo@4.1.0
+  - svgo@4.1.0
