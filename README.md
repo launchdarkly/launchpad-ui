@@ -1,3 +1,6 @@
+> [!WARNING]
+> This repository is archived. These packages are no longer maintained or published from this repository.
+
 # LaunchPad
 
 A modern, intuitive, and accessible design system built and used by the LaunchDarkly team.
